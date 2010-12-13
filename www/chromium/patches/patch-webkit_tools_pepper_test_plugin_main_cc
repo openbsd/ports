@@ -1,0 +1,57 @@
+$OpenBSD: patch-webkit_tools_pepper_test_plugin_main_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- webkit/tools/pepper_test_plugin/main.cc.orig	Tue Mar 30 07:25:28 2010
++++ webkit/tools/pepper_test_plugin/main.cc	Sun Nov 28 00:11:26 2010
+@@ -113,7 +113,7 @@ void Log(NPP instance, const char* format, ...) {
+ extern "C" {
+ 
+ EXPORT NPError API_CALL NP_Initialize(NPNetscapeFuncs* browser_funcs
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+                             , NPPluginFuncs* plugin_funcs
+ #endif
+                             );
+@@ -125,7 +125,7 @@ EXPORT void API_CALL NP_Shutdown() {
+ #endif
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ EXPORT NPError API_CALL NP_GetValue(NPP instance,
+                                     NPPVariable variable,
+                                     void* value);
+@@ -136,7 +136,7 @@ EXPORT const char* API_CALL NP_GetMIMEDescription();
+ 
+ // Plugin entry points
+ EXPORT NPError API_CALL NP_Initialize(NPNetscapeFuncs* browser_funcs
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+                             , NPPluginFuncs* plugin_funcs
+ #endif
+                             ) {
+@@ -144,7 +144,7 @@ EXPORT NPError API_CALL NP_Initialize(NPNetscapeFuncs*
+ #if !defined(INDEPENDENT_PLUGIN)
+   pglInitialize();
+ #endif
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   return NP_GetEntryPoints(plugin_funcs);
+ #else
+   return NPERR_NO_ERROR;
+@@ -250,7 +250,7 @@ NPError NPP_GetValue(NPP instance, NPPVariable variabl
+   NPError err = NPERR_NO_ERROR;
+ 
+   switch (variable) {
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     case NPPVpluginNameString:
+       *((const char**)value) = "Pepper Test PlugIn";
+       break;
+@@ -282,7 +282,7 @@ NPError NPP_SetValue(NPP instance, NPNVariable variabl
+   return NPERR_GENERIC_ERROR;
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ NPError API_CALL NP_GetValue(NPP instance, NPPVariable variable, void* value) {
+   return NPP_GetValue(instance, variable, value);
+ }

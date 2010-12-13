@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_WebCore_bindings_v8_V8Proxy_cpp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/WebKit/WebCore/bindings/v8/V8Proxy.cpp.orig	Tue Mar 30 07:35:16 2010
++++ third_party/WebKit/WebCore/bindings/v8/V8Proxy.cpp	Sun Nov 28 00:11:32 2010
+@@ -875,7 +875,7 @@ int V8Proxy::contextDebugId(v8::Handle<v8::Context> co
+     if (!context->GetData()->IsString())
+         return -1;
+     v8::String::AsciiValue ascii(context->GetData());
+-    char* comma = strnstr(*ascii, ",", ascii.length());
++    char* comma = strstr(*ascii, ",");
+     if (!comma)
+         return -1;
+     return atoi(comma + 1);

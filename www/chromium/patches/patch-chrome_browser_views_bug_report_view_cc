@@ -1,0 +1,30 @@
+$OpenBSD: patch-chrome_browser_views_bug_report_view_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/views/bug_report_view.cc.orig	Tue Mar 30 07:29:38 2010
++++ chrome/browser/views/bug_report_view.cc	Sun Nov 28 00:11:31 2010
+@@ -30,7 +30,7 @@
+ #include "views/window/client_view.h"
+ #include "views/window/window.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(USE_X11)
+ #include "app/x11_util.h"
+ #else
+ #include "app/win_util.h"
+@@ -98,7 +98,7 @@ void ShowBugReportView(views::Window* parent,
+   // rendered--do not re-render, and include windowed plugins).
+   std::vector<unsigned char> *screenshot_png = new std::vector<unsigned char>;
+ 
+-#if defined(OS_LINUX)
++#if defined(USE_X11)
+   x11_util::GrabWindowSnapshot(parent->GetNativeWindow(), screenshot_png);
+ #else
+   win_util::GrabWindowSnapshot(parent->GetNativeWindow(), screenshot_png);
+@@ -167,7 +167,7 @@ void BugReportView::SetupControl() {
+ 
+   description_label_ = new views::Label(
+       l10n_util::GetString(IDS_BUGREPORT_DESCRIPTION_LABEL));
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+   // TODO(davemoore) Remove this when gtk textfields support multiline.
+   description_text_ = new views::Textfield;
+ #else

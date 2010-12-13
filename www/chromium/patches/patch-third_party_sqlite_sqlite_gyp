@@ -1,0 +1,21 @@
+$OpenBSD: patch-third_party_sqlite_sqlite_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/sqlite/sqlite.gyp.orig	Tue Mar 30 07:33:15 2010
++++ third_party/sqlite/sqlite.gyp	Sun Nov 28 00:11:29 2010
+@@ -29,7 +29,7 @@
+             ],
+           },
+         }],
+-        ['OS=="linux" and use_system_sqlite', {
++        ['(OS=="linux" or OS=="freebsd" or OS=="openbsd") and use_system_sqlite', {
+           'type': 'settings',
+           'direct_dependent_settings': {
+             'cflags': [
+@@ -226,7 +226,7 @@
+     },
+   ],
+   'conditions': [
+-    ['OS=="linux" and not use_system_sqlite', {
++    ['(OS=="linux" or OS=="freebsd" or OS=="openbsd") and not use_system_sqlite', {
+       'targets': [
+         {
+           'target_name': 'sqlite_shell',

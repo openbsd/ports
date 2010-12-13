@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_renderer_host_render_widget_host_h,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/renderer_host/render_widget_host.h.orig	Tue Mar 30 07:29:15 2010
++++ chrome/browser/renderer_host/render_widget_host.h	Sun Nov 28 00:11:31 2010
+@@ -449,7 +449,7 @@ class RenderWidgetHost : public IPC::Channel::Listener
+   // channel.
+   void OnMsgEstablishGpuChannel();
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   void OnMsgCreatePluginContainer(gfx::PluginWindowHandle id);
+   void OnMsgDestroyPluginContainer(gfx::PluginWindowHandle id);
+ #elif defined(OS_MACOSX)

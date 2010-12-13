@@ -1,0 +1,12 @@
+$OpenBSD: patch-native_client_build_common_gypi,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- native_client/build/common.gypi.orig	Tue Mar 30 07:26:22 2010
++++ native_client/build/common.gypi	Sun Nov 28 00:11:32 2010
+@@ -347,7 +347,7 @@
+     },
+   },
+   'conditions': [
+-    ['OS=="linux"', {
++    ['OS=="linux" or OS=="openbsd"', {
+       'target_defaults': {
+         # Enable -Werror by default, but put it in a variable so it can
+         # be disabled in ~/.gyp/include.gypi on the valgrind builders.

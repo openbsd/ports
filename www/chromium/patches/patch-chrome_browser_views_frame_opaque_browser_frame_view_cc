@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_views_frame_opaque_browser_frame_view_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/views/frame/opaque_browser_frame_view.cc.orig	Tue Mar 30 07:29:34 2010
++++ chrome/browser/views/frame/opaque_browser_frame_view.cc	Sun Nov 28 00:11:31 2010
+@@ -31,7 +31,7 @@
+ #include "app/win_util.h"
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "views/window/hit_test.h"
+ #endif
+ 

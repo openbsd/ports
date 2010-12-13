@@ -1,0 +1,16 @@
+$OpenBSD: patch-media_ffmpeg_file_protocol_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- media/ffmpeg/file_protocol.cc.orig	Tue Mar 30 07:20:42 2010
++++ media/ffmpeg/file_protocol.cc	Sun Nov 28 00:11:25 2010
+@@ -54,9 +54,11 @@ int WriteContext(URLContext* h, unsigned char* buf, in
+   return write(GetHandle(h), buf, size);
+ }
+ 
+-offset_t SeekContext(URLContext* h, offset_t offset, int whence) {
++int64_t SeekContext(URLContext* h, int64_t offset, int whence) {
+ #if defined(OS_WIN)
+   return lseek(GetHandle(h), static_cast<long>(offset), whence);
++#elif defined(OS_OPENBSD)
++  return lseek(GetHandle(h), static_cast<int64_t>(offset), whence);
+ #else
+   return lseek(GetHandle(h), offset, whence);
+ #endif

@@ -1,0 +1,12 @@
+$OpenBSD: patch-ipc_ipc_channel_posix_h,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- ipc/ipc_channel_posix.h.orig	Tue Mar 30 07:28:46 2010
++++ ipc/ipc_channel_posix.h	Sun Nov 28 00:11:30 2010
+@@ -86,7 +86,7 @@ class Channel::ChannelImpl : public MessageLoopForIO::
+   // pipe_ that is passed to the client.
+   int client_pipe_;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   // Linux uses a dedicated socketpair() for passing file descriptors.
+   int fd_pipe_;
+   int remote_fd_pipe_;

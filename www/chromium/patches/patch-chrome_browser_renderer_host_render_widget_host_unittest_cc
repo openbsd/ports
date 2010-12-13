@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_renderer_host_render_widget_host_unittest_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/renderer_host/render_widget_host_unittest.cc.orig	Tue Mar 30 07:29:15 2010
++++ chrome/browser/renderer_host/render_widget_host_unittest.cc	Sun Nov 28 00:11:31 2010
+@@ -369,7 +369,7 @@ TEST_F(RenderWidgetHostTest, ResizeThenCrash) {
+ 
+ // Tests setting custom background
+ TEST_F(RenderWidgetHostTest, Background) {
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+   scoped_ptr<RenderWidgetHostView> view(
+       RenderWidgetHostView::CreateViewForWidget(host_.get()));
+   host_->set_view(view.get());

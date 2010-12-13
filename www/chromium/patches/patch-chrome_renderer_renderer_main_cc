@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_renderer_renderer_main_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- chrome/renderer/renderer_main.cc.orig	Tue Mar 30 07:31:33 2010
++++ chrome/renderer/renderer_main.cc	Sun Nov 28 00:11:31 2010
+@@ -264,7 +264,7 @@ int RendererMain(const MainFunctionParams& parameters)
+   }
+ 
+   {
+-#if !defined(OS_LINUX)
++#if !defined(OS_NIX)
+     // TODO(markus): Check if it is OK to unconditionally move this
+     // instruction down.
+     RenderProcessImpl render_process;
+@@ -274,7 +274,7 @@ int RendererMain(const MainFunctionParams& parameters)
+     if (!no_sandbox) {
+       run_loop = platform.EnableSandbox();
+     }
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     RenderProcessImpl render_process;
+     render_process.set_main_thread(new RenderThread());
+ #endif

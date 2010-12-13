@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_gyp_test_library_src_library_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- tools/gyp/test/library/src/library.gyp.orig	Tue Mar 30 07:25:57 2010
++++ tools/gyp/test/library/src/library.gyp	Sun Nov 28 00:11:32 2010
+@@ -48,7 +48,7 @@
+     },
+   ],
+   'conditions': [
+-    ['OS=="linux"', {
++    ['OS=="linux" or OS=="openbsd"', {
+       'target_defaults': {
+         # Support 64-bit shared libs (also works fine for 32-bit).
+         'cflags': ['-fPIC'],

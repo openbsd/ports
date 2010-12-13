@@ -1,0 +1,36 @@
+$OpenBSD: patch-base_third_party_symbolize_symbolize_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- base/third_party/symbolize/symbolize.cc.orig	Tue Mar 30 07:28:37 2010
++++ base/third_party/symbolize/symbolize.cc	Sun Nov 28 00:11:25 2010
+@@ -52,6 +52,7 @@
+ 
+ #include <limits>
+ 
++typedef uint64_t uint64;
+ #include "symbolize.h"
+ #include "demangle.h"
+ 
+@@ -95,7 +96,11 @@ _END_GOOGLE_NAMESPACE_
+ #if defined(__ELF__)
+ 
+ #include <dlfcn.h>
++#if defined(__OpenBSD__)
++#include <sys/exec_elf.h>
++#else
+ #include <elf.h>
++#endif
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <limits.h>
+@@ -105,9 +110,11 @@ _END_GOOGLE_NAMESPACE_
+ #include <stdlib.h>
+ #include <stddef.h>
+ #include <string.h>
+-#include <sys/stat.h>
++#include <sys/stdint.h>
+ #include <sys/types.h>
++#include <sys/stat.h>
+ #include <unistd.h>
++
+ 
+ #include "symbolize.h"
+ #include "config.h"

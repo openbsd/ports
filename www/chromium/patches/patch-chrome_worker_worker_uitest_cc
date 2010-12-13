@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_worker_worker_uitest_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- chrome/worker/worker_uitest.cc.orig	Tue Mar 30 07:31:33 2010
++++ chrome/worker/worker_uitest.cc	Sun Nov 28 00:11:31 2010
+@@ -59,7 +59,7 @@ class WorkerTest : public UILayoutTest {
+     // The 1 is for the browser process.
+     int number_of_processes = 1 + workers +
+         (UITest::in_process_renderer() ? 0 : tabs);
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     // On Linux, we also have a zygote process and a sandbox host process.
+     number_of_processes += 2;
+ #endif

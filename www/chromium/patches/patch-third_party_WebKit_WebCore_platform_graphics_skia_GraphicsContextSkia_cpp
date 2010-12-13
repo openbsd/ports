@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_WebCore_platform_graphics_skia_GraphicsContextSkia_cpp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/WebKit/WebCore/platform/graphics/skia/GraphicsContextSkia.cpp.orig	Tue Mar 30 07:34:56 2010
++++ third_party/WebKit/WebCore/platform/graphics/skia/GraphicsContextSkia.cpp	Sun Nov 28 00:11:32 2010
+@@ -434,7 +434,7 @@ void GraphicsContext::clipToImageBuffer(const FloatRec
+     if (paintingDisabled())
+         return;
+ 
+-#if OS(LINUX) || OS(WINDOWS)
++#if OS(LINUX) || OS(OPENBSD) || OS(WINDOWS)
+     platformContext()->beginLayerClippedToImage(rect, imageBuffer);
+ #endif
+ }

@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_search_engines_template_url_prepopulate_data_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/search_engines/template_url_prepopulate_data.cc.orig	Tue Mar 30 07:29:04 2010
++++ chrome/browser/search_engines/template_url_prepopulate_data.cc	Sun Nov 28 00:11:31 2010
+@@ -4,7 +4,7 @@
+ 
+ #include "chrome/browser/search_engines/template_url_prepopulate_data.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include <locale.h>
+ #endif
+ 

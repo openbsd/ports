@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_tab_contents_interstitial_page_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/tab_contents/interstitial_page.cc.orig	Tue Mar 30 07:29:07 2010
++++ chrome/browser/tab_contents/interstitial_page.cc	Sun Nov 28 00:11:31 2010
+@@ -479,7 +479,7 @@ void InterstitialPage::CancelForNavigation() {
+ }
+ 
+ void InterstitialPage::SetSize(const gfx::Size& size) {
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+   // When a tab is closed, we might be resized after our view was NULLed
+   // (typically if there was an info-bar).
+   if (render_view_host_->view())

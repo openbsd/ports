@@ -1,0 +1,24 @@
+$OpenBSD: patch-chrome_test_chrome_process_util_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- chrome/test/chrome_process_util.cc.orig	Tue Mar 30 07:31:13 2010
++++ chrome/test/chrome_process_util.cc	Sun Nov 28 00:11:30 2010
+@@ -86,7 +86,7 @@ ChromeProcessList GetRunningChromeProcesses(base::Proc
+ #endif
+   }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   // On Linux we might be running with a zygote process for the renderers.
+   // Because of that we sweep the list of processes again and pick those which
+   // are children of one of the processes that we've already seen.
+@@ -97,9 +97,9 @@ ChromeProcessList GetRunningChromeProcesses(base::Proc
+     while ((process_entry = it.NextProcessEntry()))
+       result.push_back(process_entry->pid);
+   }
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_NIX)
+ 
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_POSIX)
+   // On Mac OS X we run the subprocesses with a different bundle, and
+   // on Linux via /proc/self/exe, so they end up with a different
+   // name.  We must collect them in a second pass.

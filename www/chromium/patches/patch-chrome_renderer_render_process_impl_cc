@@ -1,0 +1,25 @@
+$OpenBSD: patch-chrome_renderer_render_process_impl_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/renderer/render_process_impl.cc.orig	Tue Mar 30 07:31:33 2010
++++ chrome/renderer/render_process_impl.cc	Sun Nov 28 00:11:31 2010
+@@ -170,10 +170,10 @@ bool RenderProcessImpl::InProcessPlugins() {
+ // Platform specific code for dealing with bitmap transport...
+ 
+ TransportDIB* RenderProcessImpl::CreateTransportDIB(size_t size) {
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+   // Windows and Linux create transport DIBs inside the renderer
+   return TransportDIB::Create(size, transport_dib_next_sequence_number_++);
+-#elif defined(OS_MACOSX)  // defined(OS_WIN) || defined(OS_LINUX)
++#elif defined(OS_MACOSX)  // defined(OS_WIN) || defined(OS_NIX)
+   // Mac creates transport DIBs in the browser, so we need to do a sync IPC to
+   // get one.
+   TransportDIB::Handle handle;
+@@ -208,7 +208,7 @@ skia::PlatformCanvas* RenderProcessImpl::GetDrawingCan
+   int width = rect.width();
+   int height = rect.height();
+   const size_t stride = skia::PlatformCanvas::StrideForWidth(rect.width());
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   const size_t max_size = base::SysInfo::MaxSharedMemorySize();
+ #else
+   const size_t max_size = 0;

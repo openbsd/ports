@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_gyp_test_additional-targets_src_dir1_actions_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- tools/gyp/test/additional-targets/src/dir1/actions.gyp.orig	Tue Mar 30 07:25:49 2010
++++ tools/gyp/test/additional-targets/src/dir1/actions.gyp	Sun Nov 28 00:11:32 2010
+@@ -47,7 +47,7 @@
+     },
+   ],
+   'conditions': [
+-    ['OS=="linux"', {
++    ['OS=="linux" or OS=="openbsd"', {
+       'target_defaults': {
+         'cflags': ['-fPIC'],
+       },

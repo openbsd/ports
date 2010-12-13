@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_renderer_host_render_view_host_delegate_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/renderer_host/render_view_host_delegate.cc.orig	Tue Mar 30 07:29:15 2010
++++ chrome/browser/renderer_host/render_view_host_delegate.cc	Sun Nov 28 00:11:31 2010
+@@ -10,7 +10,7 @@
+ #include "googleurl/src/gurl.h"
+ #include "webkit/glue/webpreferences.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include "chrome/browser/gtk/gtk_util.h"
+ #endif
+ 

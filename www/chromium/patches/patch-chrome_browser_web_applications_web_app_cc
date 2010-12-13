@@ -1,0 +1,24 @@
+$OpenBSD: patch-chrome_browser_web_applications_web_app_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/web_applications/web_app.cc.orig	Tue Mar 30 07:29:44 2010
++++ chrome/browser/web_applications/web_app.cc	Sun Nov 28 00:11:31 2010
+@@ -31,9 +31,9 @@
+ #include "chrome/common/url_constants.h"
+ #include "webkit/glue/dom_operations.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "base/linux_util.h"
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_NIX)
+ 
+ #if defined(OS_WIN)
+ #include "base/win_util.h"
+@@ -259,7 +259,7 @@ void CreateShortcutTask::Run() {
+ bool CreateShortcutTask::CreateShortcut() {
+   DCHECK(ChromeThread::CurrentlyOn(ChromeThread::FILE));
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   scoped_ptr<base::EnvironmentVariableGetter> env_getter(
+       base::EnvironmentVariableGetter::Create());
+ 

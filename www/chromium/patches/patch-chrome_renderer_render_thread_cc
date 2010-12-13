@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_renderer_render_thread_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/renderer/render_thread.cc.orig	Tue Mar 30 07:31:33 2010
++++ chrome/renderer/render_thread.cc	Sun Nov 28 00:11:31 2010
+@@ -827,7 +827,7 @@ void RenderThread::EnsureWebKitInitialized() {
+ }
+ 
+ void RenderThread::IdleHandler() {
+-#if (defined(OS_WIN) || defined(OS_LINUX)) && defined(USE_TCMALLOC)
++#if !defined(OS_MACOSX) && defined(USE_TCMALLOC)
+   MallocExtension::instance()->ReleaseFreeMemory();
+ #endif
+ 
+@@ -901,7 +901,7 @@ void RenderThread::OnPurgeMemory() {
+   while (!v8::V8::IdleNotification()) {
+   }
+ 
+-#if (defined(OS_WIN) || defined(OS_LINUX)) && defined(USE_TCMALLOC)
++#if !defined(OS_MACOSX) && defined(USE_TCMALLOC)
+   // Tell tcmalloc to release any free pages it's still holding.
+   MallocExtension::instance()->ReleaseFreeMemory();
+ #endif

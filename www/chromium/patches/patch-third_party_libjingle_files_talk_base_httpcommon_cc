@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_libjingle_files_talk_base_httpcommon_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/libjingle/files/talk/base/httpcommon.cc.orig	Tue Mar 30 07:32:32 2010
++++ third_party/libjingle/files/talk/base/httpcommon.cc	Sun Nov 28 00:11:28 2010
+@@ -369,7 +369,7 @@ bool HttpDateToSeconds(const std::string& date, unsign
+     }
+     gmt = non_gmt + kTimeZoneOffsets[zindex] * 60 * 60;
+   }
+-#ifdef OSX
++#if defined(OSX) || defined(BSD)
+   tm *tm_for_timezone = localtime((time_t *)&gmt);
+   *seconds = gmt + tm_for_timezone->tm_gmtoff;
+ #else

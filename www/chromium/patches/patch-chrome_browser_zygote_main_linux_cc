@@ -1,0 +1,73 @@
+$OpenBSD: patch-chrome_browser_zygote_main_linux_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/zygote_main_linux.cc.orig	Tue Mar 30 07:29:49 2010
++++ chrome/browser/zygote_main_linux.cc	Sun Nov 28 00:11:31 2010
+@@ -2,11 +2,17 @@
+ // Use of this source code is governed by a BSD-style license that can be
+ // found in the LICENSE file.
+ 
++#include "build/build_config.h"
++
+ #include <dlfcn.h>
+ #include <fcntl.h>
++#if defined(OS_OPENBSD)
++#include <signal.h>
++#else
+ #include <sys/epoll.h>
+ #include <sys/prctl.h>
+ #include <sys/signal.h>
++#endif
+ #include <sys/socket.h>
+ #include <sys/stat.h>
+ #include <sys/types.h>
+@@ -47,7 +53,7 @@
+ 
+ #include "unicode/timezone.h"
+ 
+-#if defined(ARCH_CPU_X86_FAMILY) && !defined(CHROMIUM_SELINUX)
++#if defined(ARCH_CPU_X86_FAMILY) && defined(OS_LINUX) && !defined(CHROMIUM_SELINUX)
+ // The seccomp sandbox is enabled on all ia32 and x86-64 processor as long as
+ // we aren't using SELinux.
+ #define SECCOMP_SANDBOX
+@@ -207,7 +213,11 @@ class Zygote {
+     int argc, numfds;
+     base::GlobalDescriptors::Mapping mapping;
+     base::ProcessId child;
++#if defined(OS_OPENBSD)
++    uint32_t dummy_inode = 0;
++#elif
+     uint64_t dummy_inode = 0;
++#endif
+     int dummy_fd = -1;
+ 
+     if (!pickle.ReadInt(&iter, &argc))
+@@ -250,10 +260,13 @@ class Zygote {
+ #if defined(SECCOMP_SANDBOX)
+       // Try to open /proc/self/maps as the seccomp sandbox needs access to it
+       if (g_proc_fd >= 0) {
++#if defined(OS_LINUX)
++// BSD: Removing all Seccomp Sandbox code if not on linux
+         int proc_self_maps = openat(g_proc_fd, "self/maps", O_RDONLY);
+         if (proc_self_maps >= 0) {
+           SeccompSandboxSetProcSelfMaps(proc_self_maps);
+         }
++#endif
+         close(g_proc_fd);
+         g_proc_fd = -1;
+       }
+@@ -544,6 +557,8 @@ static bool EnterSandbox() {
+ 
+     SkiaFontConfigUseIPCImplementation(kMagicSandboxIPCDescriptor);
+ 
++    // TODO(benl): Do something for FreeBSD...
++#if !defined(OS_OPENBSD)
+     // Previously, we required that the binary be non-readable. This causes the
+     // kernel to mark the process as non-dumpable at startup. The thinking was
+     // that, although we were putting the renderers into a PID namespace (with
+@@ -569,6 +584,7 @@ static bool EnterSandbox() {
+         return false;
+       }
+     }
++#endif
+   } else {
+     SkiaFontConfigUseDirectImplementation();
+   }

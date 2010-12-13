@@ -1,0 +1,12 @@
+$OpenBSD: patch-webkit_tools_test_shell_event_sending_controller_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- webkit/tools/test_shell/event_sending_controller.cc.orig	Tue Mar 30 07:25:27 2010
++++ webkit/tools/test_shell/event_sending_controller.cc	Sun Nov 28 00:11:26 2010
+@@ -159,7 +159,7 @@ bool ApplyKeyModifier(const std::wstring& arg, WebInpu
+     event->modifiers |= WebInputEvent::ShiftKey;
+   } else if (!wcscmp(arg_string, L"altKey")) {
+     event->modifiers |= WebInputEvent::AltKey;
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if !defined(OS_MACOSX)
+     // On Windows all keys with Alt modifier will be marked as system key.
+     // We keep the same behavior on Linux, see:
+     // third_party/WebKit/WebKit/chromium/src/gtk/WebInputEventFactory.cpp

@@ -1,0 +1,53 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/chrome_browser.gypi.orig	Tue Mar 30 07:31:34 2010
++++ chrome/chrome_browser.gypi	Sun Nov 28 00:11:31 2010
+@@ -2373,7 +2373,7 @@
+             ['exclude', '^browser/chromeos'],
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:dbus-glib',
+             # Temporarily disabled while we figure some stuff out.
+@@ -2384,12 +2384,6 @@
+             '../build/linux/system.gyp:nss',
+             '../base/base.gyp:linux_versioninfo',
+           ],
+-          'link_settings': {
+-            'libraries': [
+-              # For dlsym() in 'browser/zygote_main_linux.cc'
+-              '-ldl',
+-            ],
+-          },
+           'sources!': [
+              # Exclude extension shelf for toolstrips.
+             'browser/views/extensions/extension_shelf.cc',
+@@ -2436,7 +2430,7 @@
+             'browser/file_watcher_inotify.cc',
+           ],
+         }],
+-        ['OS=="freebsd" or OS=="openbsd"', {
++        ['OS=="freebsd" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+             '../build/linux/system.gyp:gtkprint',
+@@ -2445,6 +2439,9 @@
+           'sources': [
+             'browser/file_watcher_stub.cc',
+           ],
++          'sources!': [
++            'browser/file_watcher_inotify.cc',
++          ],
+         }],
+         ['OS=="mac"', {
+           'sources!': [
+@@ -2940,7 +2937,7 @@
+               ],
+             }],
+             # GTK build only
+-            ['OS=="linux" and chromeos==0 and toolkit_views==0', {
++            ['(OS=="linux" or OS=="freebsd" or OS=="openbsd") and chromeos==0 and toolkit_views==0', {
+               'sources/': [
+                 ['include', '^browser/printing/print_dialog_gtk.cc'],
+                 ['include', '^browser/printing/print_dialog_gtk.h'],

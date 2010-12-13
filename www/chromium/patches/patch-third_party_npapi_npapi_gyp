@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_npapi_npapi_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/npapi/npapi.gyp.orig	Tue Mar 30 07:32:42 2010
++++ third_party/npapi/npapi.gyp	Sun Nov 28 00:11:28 2010
+@@ -24,7 +24,7 @@
+         'bindings/npruntime.h',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'sources': [
+             'bindings/npapi_x11.h',
+           ],

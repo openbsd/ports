@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_views_dropdown_bar_host_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/views/dropdown_bar_host.cc.orig	Tue Mar 30 07:29:37 2010
++++ chrome/browser/views/dropdown_bar_host.cc	Sun Nov 28 00:11:31 2010
+@@ -20,7 +20,7 @@
+ #include "views/focus/view_storage.h"
+ #include "views/widget/widget.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include "app/scoped_handle_gtk.h"
+ #endif
+ 

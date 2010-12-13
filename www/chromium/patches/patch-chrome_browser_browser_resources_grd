@@ -1,0 +1,19 @@
+$OpenBSD: patch-chrome_browser_browser_resources_grd,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/browser_resources.grd.orig	Tue Mar 30 07:29:49 2010
++++ chrome/browser/browser_resources.grd	Sun Nov 28 00:11:31 2010
+@@ -14,13 +14,13 @@ without changes to the corresponding grd file. fbt1 --
+       <include name="IDR_ABOUT_PLUGINS_HTML" file="resources\about_plugins.html" type="BINDATA" />
+       <include name="IDR_ABOUT_VERSION_HTML" file="resources\about_version.html" flattenhtml="true" type="BINDATA" />
+ 
+-      <if expr="os == 'linux2' or os == 'freebsd7' or os == 'openbsd4'">
++      <if expr="os == 'linux2' or os.find('bsd') != -1">
+         <include name="IDR_ABOUT_MEMORY_HTML" file="resources\about_memory_linux.html" flattenhtml="true" type="BINDATA" />
+       </if>
+       <if expr="os == 'darwin'">
+         <include name="IDR_ABOUT_MEMORY_HTML" file="resources\about_memory_mac.html" flattenhtml="true" type="BINDATA" />
+       </if>
+-      <if expr="os != 'linux2' and os != 'darwin' and os != 'freebsd' and os != 'openbsd'">
++      <if expr="os != 'linux2' and os != 'darwin' and os.find('bsd') == -1">
+         <include name="IDR_ABOUT_MEMORY_HTML" file="resources\about_memory.html" flattenhtml="true" type="BINDATA" />
+       </if>
+ 

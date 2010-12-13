@@ -1,0 +1,14 @@
+$OpenBSD: patch-net_base_net_util_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- net/base/net_util.cc.orig	Tue Mar 30 07:28:07 2010
++++ net/base/net_util.cc	Sun Nov 28 00:11:27 2010
+@@ -24,8 +24,9 @@
+ #include <fcntl.h>
+ #include <ifaddrs.h>
+ #include <netdb.h>
+-#include <net/if.h>
+ #include <sys/socket.h>
++#include <net/if.h>
++#include <netinet/in.h>
+ #endif
+ 
+ #include "base/base64.h"

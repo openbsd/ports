@@ -1,0 +1,30 @@
+$OpenBSD: patch-chrome_browser_memory_details_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/memory_details.cc.orig	Tue Mar 30 07:29:49 2010
++++ chrome/browser/memory_details.cc	Sun Nov 28 00:11:31 2010
+@@ -18,7 +18,7 @@
+ #include "chrome/common/url_constants.h"
+ #include "grit/chromium_strings.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "chrome/browser/zygote_host_linux.h"
+ #include "chrome/browser/renderer_host/render_sandbox_host_linux.h"
+ #endif
+@@ -73,7 +73,7 @@ void MemoryDetails::CollectChildInfoOnIOThread() {
+ void MemoryDetails::CollectChildInfoOnUIThread() {
+   DCHECK(ChromeThread::CurrentlyOn(ChromeThread::UI));
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   const pid_t zygote_pid = Singleton<ZygoteHost>()->pid();
+   const pid_t sandbox_helper_pid = Singleton<RenderSandboxHostLinux>()->pid();
+ #endif
+@@ -152,7 +152,7 @@ void MemoryDetails::CollectChildInfoOnUIThread() {
+       }
+     }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+     if (process.pid == zygote_pid) {
+       process.type = ChildProcessInfo::ZYGOTE_PROCESS;
+     } else if (process.pid == sandbox_helper_pid) {

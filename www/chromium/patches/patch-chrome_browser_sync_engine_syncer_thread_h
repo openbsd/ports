@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_sync_engine_syncer_thread_h,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/sync/engine/syncer_thread.h.orig	Tue Mar 30 07:29:41 2010
++++ chrome/browser/sync/engine/syncer_thread.h	Sun Nov 28 00:11:31 2010
+@@ -21,7 +21,7 @@
+ #include "base/time.h"
+ #include "base/waitable_event.h"
+ #include "chrome/browser/sync/engine/all_status.h"
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "chrome/browser/sync/engine/idle_query_linux.h"
+ #endif
+ #include "chrome/browser/sync/sessions/sync_session.h"
+@@ -310,7 +310,7 @@ class SyncerThread : public base::RefCountedThreadSafe
+   scoped_ptr<EventListenerHookup> directory_manager_hookup_;
+   scoped_ptr<EventListenerHookup> syncer_events_;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   // On Linux, we need this information in order to query idle time.
+   scoped_ptr<IdleQueryLinux> idle_query_;
+ #endif

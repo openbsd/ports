@@ -1,0 +1,12 @@
+$OpenBSD: patch-media_base_yuv_row_h,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- media/base/yuv_row.h.orig	Tue Mar 30 07:20:43 2010
++++ media/base/yuv_row.h	Sun Nov 28 00:11:25 2010
+@@ -64,7 +64,7 @@ void ScaleYUVToRGB32Row(const uint8* y_buf,
+ 
+ #if !defined(USE_MMX)
+ // Windows, Mac and Linux use MMX
+-#if defined(ARCH_CPU_X86) || (defined(ARCH_CPU_X86_64) && defined(OS_LINUX))
++#if defined(ARCH_CPU_X86) || (defined(ARCH_CPU_X86_64) && defined(OS_NIX))
+ #define USE_MMX 1
+ #else
+ #define USE_MMX 0

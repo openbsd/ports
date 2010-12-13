@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_test_ui_ui_test_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- chrome/test/ui/ui_test.cc.orig	Tue Mar 30 07:31:12 2010
++++ chrome/test/ui/ui_test.cc	Sun Nov 28 00:11:30 2010
+@@ -55,7 +55,7 @@ const wchar_t UITestBase::kFailedNoCrashService[] =
+     L"NOTE: This test is expected to fail if crash_service.exe is not "
+     L"running. Start it manually before running this test (see the build "
+     L"output directory).";
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+     L"NOTE: This test is expected to fail if breakpad is not built in "
+     L"or if chromium is not running headless (try CHROME_HEADLESS=1).";
+ #else
+@@ -1444,7 +1444,7 @@ void UITestBase::PrintMemoryUsageInfo(const char* test
+   PrintResult("ws_final_t", "", "ws_f_t" + trace_name,
+               total_working_set_size, "bytes",
+               false /* not important */);
+-#elif defined(OS_LINUX) || defined(OS_MACOSX)
++#elif defined(OS_POSIX)
+   PrintResult("vm_size_final_b", "", "vm_size_f_b" + trace_name,
+               browser_virtual_size, "bytes",
+               true /* important */);

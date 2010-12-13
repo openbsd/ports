@@ -1,0 +1,12 @@
+$OpenBSD: patch-webkit_tools_pepper_test_plugin_pepper_test_plugin_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- webkit/tools/pepper_test_plugin/pepper_test_plugin.gyp.orig	Tue Mar 30 07:25:28 2010
++++ webkit/tools/pepper_test_plugin/pepper_test_plugin.gyp	Sun Nov 28 00:11:26 2010
+@@ -54,7 +54,7 @@
+           # it.
+           'cflags!': ['-gstabs'],
+         }],
+-        ['OS=="linux" and (target_arch=="x64" or target_arch=="arm") and linux_fpic!=1', {
++        ['(OS=="linux" or OS=="openbsd") and (target_arch=="x64" or target_arch=="arm") and linux_fpic!=1', {
+           'product_name': 'pepper_test_plugin',
+           # Shared libraries need -fPIC on x86-64
+           'cflags': ['-fPIC'],

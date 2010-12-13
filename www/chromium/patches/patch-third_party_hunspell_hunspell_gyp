@@ -1,0 +1,17 @@
+$OpenBSD: patch-third_party_hunspell_hunspell_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/hunspell/hunspell.gyp.orig	Tue Mar 30 07:37:20 2010
++++ third_party/hunspell/hunspell.gyp	Sun Nov 28 00:11:32 2010
+@@ -63,11 +63,12 @@
+         ],
+       },
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="openbsd"', {
+           'cflags': [
+             '-Wno-unused-value',
+             '-Wno-unused-variable',
+             '-Wno-write-strings',
++            '-Wno-parentheses',
+           ],
+         }],
+       ],

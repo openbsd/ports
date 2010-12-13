@@ -1,0 +1,64 @@
+$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- media/audio/openbsd/audio_manager_openbsd.cc.orig	Sun Nov 28 00:11:32 2010
++++ media/audio/openbsd/audio_manager_openbsd.cc	Sun Nov 28 00:11:32 2010
+@@ -0,0 +1,60 @@
++// Copyright (c) 2006-2009 The Chromium Authors. All rights reserved.
++// Use of this source code is governed by a BSD-style license that can be
++// found in the LICENSE file.
++
++#include "media/audio/openbsd/audio_manager_openbsd.h"
++
++#include "base/at_exit.h"
++#include "base/logging.h"
++//#include "media/audio/fake_audio_output_stream.h"
++//#include "media/audio/linux/alsa_output.h"
++//#include "media/audio/linux/alsa_wrapper.h"
++
++namespace {
++AudioManagerOpenBSD* g_audio_manager = NULL;
++}  // namespace
++
++// Implementation of AudioManager.
++bool AudioManagerOpenBSD::HasAudioDevices() {
++  NOTIMPLEMENTED();
++  return false;
++}
++
++AudioOutputStream* AudioManagerOpenBSD::MakeAudioStream(Format format,
++                                                        int channels,
++                                                        int sample_rate,
++                                                        char bits_per_sample) {
++  NOTIMPLEMENTED();
++  return NULL;
++}
++
++AudioManagerOpenBSD::AudioManagerOpenBSD() {
++}
++
++AudioManagerOpenBSD::~AudioManagerOpenBSD() {
++}
++
++void AudioManagerOpenBSD::Init() {
++}
++
++void AudioManagerOpenBSD::MuteAll() {
++  NOTIMPLEMENTED();
++}
++
++void AudioManagerOpenBSD::UnMuteAll() {
++  NOTIMPLEMENTED();
++}
++
++void DestroyAudioManagerOpenBSD(void* not_used) {
++  delete g_audio_manager;
++  g_audio_manager = NULL;
++}
++
++AudioManager* AudioManager::GetAudioManager() {
++  if (!g_audio_manager) {
++    g_audio_manager = new AudioManagerOpenBSD();
++    g_audio_manager->Init();
++    base::AtExitManager::RegisterCallback(&DestroyAudioManagerOpenBSD, NULL);
++  }
++  return g_audio_manager;
++}

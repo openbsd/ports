@@ -1,0 +1,12 @@
+$OpenBSD: patch-media_base_media_switches_h,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- media/base/media_switches.h.orig	Tue Mar 30 07:20:43 2010
++++ media/base/media_switches.h	Sun Nov 28 00:11:25 2010
+@@ -11,7 +11,7 @@
+ 
+ namespace switches {
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ extern const char kAlsaDevice[];
+ #endif
+ 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-third_party_libjingle_libjingle_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/libjingle/libjingle.gyp.orig	Tue Mar 30 07:32:34 2010
++++ third_party/libjingle/libjingle.gyp	Sun Nov 28 00:11:28 2010
+@@ -46,6 +46,11 @@
+           'POSIX',
+         ],
+       }],
++      ['OS=="openbsd" or OS=="freebsd"', {
++        'defines': [
++          'BSD',
++        ],
++      }],
+     ],
+   },
+   'targets': [

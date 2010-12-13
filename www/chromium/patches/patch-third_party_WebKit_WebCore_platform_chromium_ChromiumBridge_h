@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_WebCore_platform_chromium_ChromiumBridge_h,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/WebKit/WebCore/platform/chromium/ChromiumBridge.h.orig	Tue Mar 30 07:35:06 2010
++++ third_party/WebKit/WebCore/platform/chromium/ChromiumBridge.h	Sun Nov 28 00:11:32 2010
+@@ -114,7 +114,7 @@ namespace WebCore {
+ #if OS(WINDOWS)
+         static bool ensureFontLoaded(HFONT font);
+ #endif
+-#if OS(LINUX)
++#if OS(LINUX) || OS(OPENBSD)
+         static void getRenderStyleForStrike(const char* family, int sizeAndStyle, FontRenderStyle* result);
+         static String getFontFamilyForCharacters(const UChar*, size_t numCharacters);
+ #endif

@@ -1,0 +1,21 @@
+$OpenBSD: patch-gpu_gpu_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- gpu/gpu.gyp.orig	Tue Mar 30 07:25:37 2010
++++ gpu/gpu.gyp	Sun Nov 28 00:11:26 2010
+@@ -53,7 +53,7 @@
+         '../third_party/glew/src/glew.c',
+       ],
+       'conditions': [
+-        [ 'OS=="linux"',
++        [ 'OS=="linux" or OS=="freebsd" or OS=="openbsd"',
+           {
+             'all_dependent_settings': {
+               'defines': [
+@@ -260,7 +260,7 @@
+         'command_buffer/service/precompile.h',
+       ],
+       'conditions': [
+-        ['OS == "linux"',
++        ['OS == "linux" or OS == "freebsd" or OS == "openbsd"',
+           {
+             'sources': [
+               'command_buffer/service/gpu_processor_linux.cc',

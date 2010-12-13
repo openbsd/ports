@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_options_util_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/options_util.cc.orig	Tue Mar 30 07:29:49 2010
++++ chrome/browser/options_util.cc	Sun Nov 28 00:11:30 2010
+@@ -27,7 +27,7 @@ void OptionsUtil::ResetToDefaults(Profile* profile) {
+     prefs::kCookieBehavior,
+     prefs::kDefaultCharset,
+     prefs::kDnsPrefetchingEnabled,
+-#if defined(OS_LINUX) || defined(OS_FREEBSD) || defined(OS_OPENBSD)
++#if defined(OS_NIX)
+     prefs::kCertRevocationCheckingEnabled,
+     prefs::kSSL2Enabled,
+     prefs::kSSL3Enabled,

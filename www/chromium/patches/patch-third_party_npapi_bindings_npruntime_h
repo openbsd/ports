@@ -1,0 +1,14 @@
+$OpenBSD: patch-third_party_npapi_bindings_npruntime_h,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/npapi/bindings/npruntime.h.orig	Tue Mar 30 07:32:42 2010
++++ third_party/npapi/bindings/npruntime.h	Sun Nov 28 00:11:25 2010
+@@ -78,8 +78,10 @@ typedef uint16 uint16_t;
+ typedef int16 int16_t;
+ typedef uint32 uint32_t;
+ typedef int32 int32_t;
++#ifndef __OpenBSD__
+ typedef int64 int64_t;
+ typedef uint64 uint64_t;
++#endif
+ #endif  /* __native_client__ */
+ // END GOOGLE MODIFICATIONS
+ 

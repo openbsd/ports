@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/13 09:51:45 espie Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		Chromium browser
 
 DISTNAME=		chromium-5.0.359.1
-REVISION=		2
+REVISION=		3
 
 CATEGORIES =		www
 
@@ -26,6 +26,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 jpeg m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs xcb xml2
 WANTLIB += z execinfo bz2 nss3 nssutil3 ssl3 smime3 softokn3 gconf-2
+WANTLIB += GL Xxf86vm drm stdc++ xcb-render xcb-shm
 
 MASTER_SITES=	${MASTER_SITE_BACKUP} \
 		${HOMEPAGE}

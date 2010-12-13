@@ -1,0 +1,11 @@
+$OpenBSD: patch-net_base_sys_addrinfo_h,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- net/base/sys_addrinfo.h.orig	Tue Mar 30 07:28:07 2010
++++ net/base/sys_addrinfo.h	Sun Nov 28 00:11:27 2010
+@@ -22,3 +22,7 @@
+ #include <netdb.h>
+ #endif
+ 
++#if defined(OS_OPENBSD)
++#include <netinet/in.h>
++#include <sys/socket.h>
++#endif

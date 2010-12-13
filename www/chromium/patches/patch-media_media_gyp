@@ -1,0 +1,72 @@
+$OpenBSD: patch-media_media_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- media/media.gyp.orig	Tue Mar 30 07:20:43 2010
++++ media/media.gyp	Sun Nov 28 00:11:26 2010
+@@ -32,6 +32,8 @@
+         'audio/linux/alsa_output.h',
+         'audio/linux/alsa_wrapper.cc',
+         'audio/linux/alsa_wrapper.h',
++        'audio/openbsd/audio_manager_openbsd.cc',
++        'audio/openbsd/audio_manager_openbsd.h',
+         'audio/mac/audio_manager_mac.cc',
+         'audio/mac/audio_manager_mac.h',
+         'audio/mac/audio_output_mac.cc',
+@@ -131,13 +133,22 @@
+         ],
+       },
+       'conditions': [
+-        ['OS =="linux"', {
++        ['OS =="linux" or OS=="freebsd"', {
+           'link_settings': {
+             'libraries': [
+               '-lasound',
+             ],
+           },
+         }],
++        ['OS =="openbsd"', {
++          'sources/': [ ['exclude', 'alsa_' ],
++                        ['exclude', 'audio_manager_linux' ],
++                        ['exclude', '\\.mm?$' ] ],
++          'link_settings': {
++            'libraries': [
++            ],
++          },
++        }],
+         ['OS =="mac"', {
+           'link_settings': {
+             'libraries': [
+@@ -166,7 +177,7 @@
+       ],
+       'sources': [
+         'audio/audio_util_unittest.cc',
+-        'audio/linux/alsa_output_unittest.cc',
++        'audio/linux/alsa_output_unittest.cc'
+         'audio/mac/audio_output_mac_unittest.cc',
+         'audio/simple_sources_unittest.cc',
+         'audio/win/audio_output_win_unittest.cc',
+@@ -203,7 +214,7 @@
+         'omx/omx_input_buffer_unittest.cc',
+       ],
+       'conditions': [
+-        ['OS=="linux" or OS=="freebsd" or OS=="solaris"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd" or OS=="solaris"', {
+           'dependencies': [
+             # Needed for the following #include chain:
+             #   base/run_all_unittests.cc
+@@ -292,7 +303,7 @@
+         '../testing/gtest.gyp:gtest',
+       ],
+       'conditions': [
+-        ['OS=="linux" or OS=="freebsd" or OS=="solaris"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd" or OS=="solaris"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+           ],
+@@ -362,7 +373,7 @@
+         },
+       ],
+     }],
+-    ['OS=="linux"', {
++    ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+       'targets': [
+         {
+           'target_name': 'player_x11',

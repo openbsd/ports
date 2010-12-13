@@ -1,0 +1,16 @@
+$OpenBSD: patch-third_party_zlib_zlib_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/zlib/zlib.gyp.orig	Tue Mar 30 07:32:35 2010
++++ third_party/zlib/zlib.gyp	Sun Nov 28 00:11:28 2010
+@@ -5,10 +5,10 @@
+ {
+   'variables': {
+     'conditions': [
+-      [ 'OS=="linux"', {
++      [ 'OS=="linux" or OS=="freebsd" or OS=="XXXXbsd"', {
+         # Link to system .so since we already use it due to GTK.
+         'use_system_zlib%': 1,
+-      }, {  # OS!="linux"
++      }, {  # OS!="linux" and OS!="freebsd" and OS!="openbsd"
+         'use_system_zlib%': 0,
+       }],
+     ],

@@ -1,0 +1,13 @@
+$OpenBSD: patch-net_base_listen_socket_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- net/base/listen_socket.cc.orig	Tue Mar 30 07:28:07 2010
++++ net/base/listen_socket.cc	Sun Nov 28 00:11:27 2010
+@@ -10,7 +10,9 @@
+ #include <winsock2.h>
+ #elif defined(OS_POSIX)
+ #include <errno.h>
++#include <sys/types.h>
+ #include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include "net/base/net_errors.h"
+ #if defined(USE_SYSTEM_LIBEVENT)

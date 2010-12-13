@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_views_create_application_shortcut_view_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/views/create_application_shortcut_view.cc.orig	Tue Mar 30 07:29:38 2010
++++ chrome/browser/views/create_application_shortcut_view.cc	Sun Nov 28 00:11:31 2010
+@@ -267,7 +267,7 @@ void CreateApplicationShortcutView::Init() {
+         l10n_util::GetString(IDS_PIN_TO_TASKBAR_CHKBOX) :
+         l10n_util::GetString(IDS_CREATE_SHORTCUTS_QUICK_LAUNCH_BAR_CHKBOX),
+       profile->GetPrefs()->GetBoolean(prefs::kWebAppCreateInQuickLaunchBar));
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+   menu_check_box_ = AddCheckbox(
+       l10n_util::GetString(IDS_CREATE_SHORTCUTS_MENU_CHKBOX),
+       profile->GetPrefs()->GetBoolean(prefs::kWebAppCreateInAppsMenu));

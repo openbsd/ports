@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_views_extensions_extension_view_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/views/extensions/extension_view.cc.orig	Tue Mar 30 07:29:36 2010
++++ chrome/browser/views/extensions/extension_view.cc	Sun Nov 28 00:11:31 2010
+@@ -12,7 +12,7 @@
+ 
+ #if defined(OS_WIN)
+ #include "chrome/browser/renderer_host/render_widget_host_view_win.h"
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+ #include "chrome/browser/renderer_host/render_widget_host_view_gtk.h"
+ #endif
+ 
+@@ -100,7 +100,7 @@ void ExtensionView::CreateWidgetHostView() {
+   HWND hwnd = view_win->Create(GetWidget()->GetNativeView());
+   view_win->ShowWindow(SW_SHOW);
+   Attach(hwnd);
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   RenderWidgetHostViewGtk* view_gtk =
+       static_cast<RenderWidgetHostViewGtk*>(view);
+   view_gtk->InitAsChild();

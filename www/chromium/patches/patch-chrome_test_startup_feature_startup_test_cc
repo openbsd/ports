@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_test_startup_feature_startup_test_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- chrome/test/startup/feature_startup_test.cc.orig	Tue Mar 30 07:31:12 2010
++++ chrome/test/startup/feature_startup_test.cc	Sun Nov 28 00:11:30 2010
+@@ -192,7 +192,7 @@ TEST_F(NewTabUIStartupTest, NewTabTimingTestsCold) {
+   RunNewTabTimingTest();
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ TEST_F(NewTabUIStartupTest, GtkThemeCold) {
+   RunStartupTest("tab_gtk_theme_cold", false /* cold */,
+                  false /* not important */,

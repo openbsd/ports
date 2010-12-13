@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_i18n_number_formatting_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- base/i18n/number_formatting.cc.orig	Tue Mar 30 07:28:39 2010
++++ base/i18n/number_formatting.cc	Sun Nov 28 00:11:25 2010
+@@ -41,7 +41,7 @@ string16 FormatNumber(int64 number) {
+     return UTF8ToUTF16(StringPrintf("%" PRId64, number));
+   }
+   icu::UnicodeString ustr;
+-  number_format->format(number, ustr);
++  number_format->format((int64_t)number, ustr);
+ 
+   return string16(ustr.getBuffer(), static_cast<size_t>(ustr.length()));
+ }

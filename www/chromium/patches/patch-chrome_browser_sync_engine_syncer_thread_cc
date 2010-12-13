@@ -1,0 +1,30 @@
+$OpenBSD: patch-chrome_browser_sync_engine_syncer_thread_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/sync/engine/syncer_thread.cc.orig	Tue Mar 30 07:29:41 2010
++++ chrome/browser/sync/engine/syncer_thread.cc	Sun Nov 28 00:11:31 2010
+@@ -215,7 +215,7 @@ void SyncerThread::ThreadMainLoop() {
+   bool initial_sync_for_thread = true;
+   bool continue_sync_cycle = false;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   idle_query_.reset(new IdleQueryLinux());
+ #endif
+ 
+@@ -294,7 +294,7 @@ void SyncerThread::ThreadMainLoop() {
+         static_cast<int>(vault_.current_wait_interval_.poll_delta.InSeconds()),
+         &user_idle_milliseconds, &continue_sync_cycle, nudged);
+   }
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   idle_query_.reset();
+ #endif
+ }
+@@ -695,7 +695,7 @@ int SyncerThread::UserIdleTime() {
+   } else {
+     return idle_time / 1000000;  // nano to milli
+   }
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+   if (idle_query_.get()) {
+     return idle_query_->IdleTime();
+   } else {

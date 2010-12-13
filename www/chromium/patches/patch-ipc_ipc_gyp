@@ -1,0 +1,12 @@
+$OpenBSD: patch-ipc_ipc_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- ipc/ipc.gyp.orig	Tue Mar 30 07:28:46 2010
++++ ipc/ipc.gyp	Sun Nov 28 00:11:30 2010
+@@ -63,7 +63,7 @@
+             '../views/views.gyp:views',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd"', {
+           'conditions': [
+             ['linux_use_tcmalloc==1', {
+               'dependencies': [

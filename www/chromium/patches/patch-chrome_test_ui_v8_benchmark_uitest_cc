@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_test_ui_v8_benchmark_uitest_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- chrome/test/ui/v8_benchmark_uitest.cc.orig	Tue Mar 30 07:31:12 2010
++++ chrome/test/ui/v8_benchmark_uitest.cc	Sun Nov 28 00:11:30 2010
+@@ -129,7 +129,7 @@ class V8BenchmarkReferenceTest : public V8BenchmarkTes
+     dir = dir.AppendASCII("reference_build");
+ #if defined(OS_WIN)
+     dir = dir.AppendASCII("chrome");
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+     dir = dir.AppendASCII("chrome_linux");
+ #elif defined(OS_MACOSX)
+     dir = dir.AppendASCII("chrome_mac");

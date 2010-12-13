@@ -1,0 +1,11 @@
+$OpenBSD: patch-net_base_listen_socket_unittest_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- net/base/listen_socket_unittest.cc.orig	Tue Mar 30 07:28:07 2010
++++ net/base/listen_socket_unittest.cc	Sun Nov 28 00:11:27 2010
+@@ -5,6 +5,7 @@
+ #include "net/base/listen_socket_unittest.h"
+ 
+ #include <fcntl.h>
++#include <netinet/in.h>
+ 
+ #include "base/eintr_wrapper.h"
+ #include "net/base/net_util.h"

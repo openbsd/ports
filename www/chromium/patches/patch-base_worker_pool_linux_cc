@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_worker_pool_linux_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- base/worker_pool_linux.cc.orig	Tue Mar 30 07:28:45 2010
++++ base/worker_pool_linux.cc	Sun Nov 28 00:11:30 2010
+@@ -17,7 +17,7 @@ namespace {
+ const int kIdleSecondsBeforeExit = 10 * 60;
+ // A stack size of 64 KB is too small for the CERT_PKIXVerifyCert
+ // function of NSS because of NSS bug 439169.
+-const int kWorkerThreadStackSize = 128 * 1024;
++const int kWorkerThreadStackSize = 256 * 1024;
+ 
+ class WorkerPoolImpl {
+  public:

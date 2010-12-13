@@ -1,0 +1,16 @@
+$OpenBSD: patch-base_string_util_posix_h,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- base/string_util_posix.h.orig	Tue Mar 30 07:28:45 2010
++++ base/string_util_posix.h	Sun Nov 28 00:11:30 2010
+@@ -44,7 +44,12 @@ inline int strncmp16(const char16* s1, const char16* s
+ inline int vswprintf(wchar_t* buffer, size_t size,
+                      const wchar_t* format, va_list arguments) {
+   DCHECK(IsWprintfFormatPortable(format));
++#if defined(OS_OPENBSD)
++  // OpenBSD does not have a wide-char equivalent
++  return ::vsnprintf((char *)buffer, size, (const char *)format, arguments);
++#else
+   return ::vswprintf(buffer, size, format, arguments);
++#endif
+ }
+ 
+ }  // namespace base

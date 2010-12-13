@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_common_native_web_keyboard_event_h,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/common/native_web_keyboard_event.h.orig	Tue Mar 30 07:30:01 2010
++++ chrome/common/native_web_keyboard_event.h	Sun Nov 28 00:11:31 2010
+@@ -32,7 +32,7 @@ struct NativeWebKeyboardEvent : public WebKit::WebKeyb
+   NativeWebKeyboardEvent(wchar_t character,
+                          int state,
+                          double time_stamp_seconds);
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   explicit NativeWebKeyboardEvent(const GdkEventKey* event);
+   NativeWebKeyboardEvent(wchar_t character,
+                          int state,
+@@ -48,7 +48,7 @@ struct NativeWebKeyboardEvent : public WebKit::WebKeyb
+   MSG os_event;
+ #elif defined(OS_MACOSX)
+   NSEvent* os_event;
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   GdkEventKey* os_event;
+ #endif
+ 

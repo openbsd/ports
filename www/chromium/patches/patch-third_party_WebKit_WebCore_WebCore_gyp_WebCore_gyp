@@ -1,0 +1,21 @@
+$OpenBSD: patch-third_party_WebKit_WebCore_WebCore_gyp_WebCore_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/WebKit/WebCore/WebCore.gyp/WebCore.gyp.orig	Tue Mar 30 07:34:30 2010
++++ third_party/WebKit/WebCore/WebCore.gyp/WebCore.gyp	Sun Nov 28 00:11:32 2010
+@@ -891,7 +891,7 @@
+             ['exclude', 'rendering/SVG'],
+           ],
+         }],
+-        ['OS=="linux" or OS=="freebsd"', {
++        ['OS=="linux" or OS=="openbsd"', {
+           'dependencies': [
+             '<(chromium_src_dir)/build/linux/system.gyp:fontconfig',
+             '<(chromium_src_dir)/build/linux/system.gyp:gtk',
+@@ -1094,7 +1094,7 @@
+             'include_dirs+++': ['../dom'],
+           },
+         }],
+-        ['OS!="linux" and OS!="freebsd"', {
++        ['OS!="linux" and OS!="openbsd"', {
+           'sources/': [['exclude', '(Gtk|Linux)\\.cpp$']]
+         }],
+         ['OS!="mac"', {

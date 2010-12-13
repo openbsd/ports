@@ -1,0 +1,19 @@
+$OpenBSD: patch-sandbox_sandbox_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- sandbox/sandbox.gyp.orig	Tue Mar 30 07:28:30 2010
++++ sandbox/sandbox.gyp	Sun Nov 28 00:11:29 2010
+@@ -126,6 +126,15 @@
+     ],
+   },
+   'conditions': [
++    [ 'OS=="freebsd" or OS=="openbsd"', {
++      # GYP requires that each file have at least one target defined.
++      'targets': [
++        {
++          'target_name': 'sandbox',
++          'type': 'settings',
++        },
++      ],
++    }],
+     [ 'OS=="linux" and selinux==0', {
+       'targets': [
+         {

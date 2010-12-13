@@ -1,0 +1,48 @@
+$OpenBSD: patch-v8_tools_gyp_v8_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- v8/tools/gyp/v8.gyp.orig	Tue Mar 30 07:31:48 2010
++++ v8/tools/gyp/v8.gyp	Sun Nov 28 00:11:32 2010
+@@ -74,10 +74,15 @@
+             'LinkIncremental': '2',
+           },
+         },
++        'conditions': [
++         ['OS=="openbsd"', {
++           'cflags': [ '-I/usr/local/include' ],
++         }],
++       ],
+       },
+       'Release': {
+         'conditions': [
+-          ['OS=="linux"', {
++          ['OS=="linux" or OS=="openbsd"', {
+             'cflags!': [
+               '-O2',
+               '-Os',
+@@ -97,6 +102,9 @@
+               }],
+             ],
+           }],
++         ['OS=="openbsd"', {
++           'cflags': [ '-I/usr/local/include' ],
++         }],
+           ['OS=="mac"', {
+             'xcode_settings': {
+               'GCC_OPTIMIZATION_LEVEL': '3',  # -O3
+@@ -511,6 +519,17 @@
+             ]},
+             'sources': [
+               '../../src/platform-linux.cc',
++              '../../src/platform-posix.cc'
++            ],
++          }
++        ],
++        ['OS=="openbsd"', {
++            'link_settings': {
++              'libraries': [
++                '-L/usr/local/lib -lexecinfo',
++            ]},
++            'sources': [
++              '../../src/platform-openbsd.cc',
+               '../../src/platform-posix.cc'
+             ],
+           }

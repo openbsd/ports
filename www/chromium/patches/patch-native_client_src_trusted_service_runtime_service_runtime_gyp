@@ -1,0 +1,12 @@
+$OpenBSD: patch-native_client_src_trusted_service_runtime_service_runtime_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- native_client/src/trusted/service_runtime/service_runtime.gyp.orig	Tue Mar 30 07:26:54 2010
++++ native_client/src/trusted/service_runtime/service_runtime.gyp	Sun Nov 28 00:11:32 2010
+@@ -31,7 +31,7 @@
+ {
+   'variables': {
+     'conditions': [
+-      ['OS=="linux"', {
++      ['OS=="linux" or OS=="openbsd"', {
+         'syscall_handler': [
+           'linux/nacl_syscall_impl.c'
+         ],

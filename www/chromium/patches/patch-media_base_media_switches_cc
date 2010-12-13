@@ -1,0 +1,12 @@
+$OpenBSD: patch-media_base_media_switches_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- media/base/media_switches.cc.orig	Tue Mar 30 07:20:43 2010
++++ media/base/media_switches.cc	Sun Nov 28 00:11:25 2010
+@@ -6,7 +6,7 @@
+ 
+ namespace switches {
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ // The Alsa device to use when opening an audio stream.
+ const char kAlsaDevice[] = "alsa-device";
+ #endif

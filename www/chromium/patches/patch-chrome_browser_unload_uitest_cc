@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_unload_uitest_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/unload_uitest.cc.orig	Tue Mar 30 07:29:49 2010
++++ chrome/browser/unload_uitest.cc	Sun Nov 28 00:11:31 2010
+@@ -166,7 +166,7 @@ class UnloadTest : public UITest {
+   }
+ 
+   void ClickModalDialogButton(MessageBoxFlags::DialogButton button) {
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+     bool modal_dialog_showing = false;
+     MessageBoxFlags::DialogButton available_buttons;
+     EXPECT_TRUE(automation()->WaitForAppModalDialog(action_timeout_ms()));

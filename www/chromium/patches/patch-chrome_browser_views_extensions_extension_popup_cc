@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_views_extensions_extension_popup_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/views/extensions/extension_popup.cc.orig	Tue Mar 30 07:29:36 2010
++++ chrome/browser/views/extensions/extension_popup.cc	Sun Nov 28 00:11:30 2010
+@@ -22,7 +22,7 @@
+ #include "views/widget/root_view.h"
+ #include "views/window/window.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include "views/widget/widget_gtk.h"
+ #endif
+ 
+@@ -91,7 +91,7 @@ ExtensionPopup::ExtensionPopup(ExtensionHost* host,
+   // The bubble chrome requires a separate window, so construct it here.
+   if (BUBBLE_CHROME == popup_chrome_) {
+     gfx::NativeView native_window = frame->GetNativeView();
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+     border_widget_ = new views::WidgetGtk(views::WidgetGtk::TYPE_WINDOW);
+     static_cast<views::WidgetGtk*>(border_widget_)->MakeTransparent();
+     static_cast<views::WidgetGtk*>(border_widget_)->make_transient_to_parent();

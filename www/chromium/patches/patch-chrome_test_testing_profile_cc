@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_test_testing_profile_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- chrome/test/testing_profile.cc.orig	Tue Mar 30 07:31:13 2010
++++ chrome/test/testing_profile.cc	Sun Nov 28 00:11:30 2010
+@@ -19,7 +19,7 @@
+ #include "net/url_request/url_request_context.h"
+ #include "webkit/database/database_tracker.h"
+ 
+-#if defined(OS_LINUX) && !defined(TOOLKIT_VIEWS)
++#if defined(TOOLKIT_GTK) && !defined(TOOLKIT_VIEWS)
+ #include "chrome/browser/gtk/gtk_theme_provider.h"
+ #endif
+ 
+@@ -258,7 +258,7 @@ webkit_database::DatabaseTracker* TestingProfile::GetD
+ 
+ void TestingProfile::InitThemes() {
+   if (!created_theme_provider_) {
+-#if defined(OS_LINUX) && !defined(TOOLKIT_VIEWS)
++#if defined(TOOLKIT_GTK) && !defined(TOOLKIT_VIEWS)
+     theme_provider_.reset(new GtkThemeProvider);
+ #else
+     theme_provider_.reset(new BrowserThemeProvider);

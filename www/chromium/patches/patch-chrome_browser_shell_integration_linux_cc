@@ -1,0 +1,20 @@
+$OpenBSD: patch-chrome_browser_shell_integration_linux_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/shell_integration_linux.cc.orig	Tue Mar 30 07:29:49 2010
++++ chrome/browser/shell_integration_linux.cc	Sun Nov 28 00:11:31 2010
+@@ -131,6 +131,8 @@ void CreateShortcutOnDesktop(const FilePath& shortcut_
+   if (!PathService::Get(chrome::DIR_USER_DESKTOP, &desktop_path))
+     return;
+ 
++#if !defined(OS_OPENBSD)
++// BSD: Linux-specific calls like openat are used so defined out for BSD.
+   int desktop_fd = open(desktop_path.value().c_str(), O_RDONLY | O_DIRECTORY);
+   if (desktop_fd < 0)
+     return;
+@@ -156,6 +158,7 @@ void CreateShortcutOnDesktop(const FilePath& shortcut_
+   }
+ 
+   HANDLE_EINTR(close(desktop_fd));
++#endif  // !defined(OS_OPENBSD)
+ }
+ 
+ void CreateShortcutInApplicationsMenu(const FilePath& shortcut_filename,

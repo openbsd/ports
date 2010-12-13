@@ -1,0 +1,34 @@
+$OpenBSD: patch-net_base_mime_util_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- net/base/mime_util.cc.orig	Tue Mar 30 07:28:07 2010
++++ net/base/mime_util.cc	Sun Nov 28 00:11:27 2010
+@@ -189,7 +189,7 @@ static const char* const supported_media_types[] = {
+   "audio/ogg",
+   "application/ogg",
+ 
+-#if defined(GOOGLE_CHROME_BUILD)
++//#if defined(GOOGLE_CHROME_BUILD)
+   // MPEG-4.
+   "video/mp4",
+   "video/x-m4v",
+@@ -200,7 +200,7 @@ static const char* const supported_media_types[] = {
+   "audio/mp3",
+   "audio/x-mp3",
+   "audio/mpeg",
+-#endif
++//#endif
+ };
+ 
+ // List of supported codecs when passed in with <source type="...">.
+@@ -208,10 +208,10 @@ static const char* const supported_media_types[] = {
+ // Refer to http://wiki.whatwg.org/wiki/Video_type_parameters#Browser_Support
+ // for more information.
+ static const char* const supported_media_codecs[] = {
+-#if defined(GOOGLE_CHROME_BUILD)
++//#if defined(GOOGLE_CHROME_BUILD)
+   "avc1",
+   "mp4a",
+-#endif
++//#endif
+   "theora",
+   "vorbis",
+ };

@@ -1,0 +1,165 @@
+$OpenBSD: patch-chrome_chrome_tests_gypi,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/chrome_tests.gypi.orig	Tue Mar 30 07:31:34 2010
++++ chrome/chrome_tests.gypi	Sun Nov 28 00:11:31 2010
+@@ -122,7 +122,7 @@
+         'test/ui_test_utils_win.cc',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+           ],
+@@ -167,7 +167,7 @@
+         'test/ui/ui_test_suite.h',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+           ],
+@@ -197,7 +197,7 @@
+         'test/unit/run_all_unittests.cc',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             # Needed for the following #include chain:
+             #   test/unit/run_all_unittests.cc
+@@ -232,7 +232,7 @@
+         'test/automated_ui_tests/automated_ui_tests.h',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+           ],
+@@ -333,7 +333,7 @@
+             '../webkit/webkit.gyp:npapi_test_plugin',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+             '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+@@ -982,7 +982,7 @@
+             '../sandbox/sandbox.gyp:*',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'conditions': [
+             [ 'gcc_version==44', {
+               # Avoid gcc 4.4 strict aliasing issues in stl_tree.h when
+@@ -1297,7 +1297,7 @@
+             },
+           }
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+             '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+@@ -1311,7 +1311,7 @@
+             '<@(browser_tests_sources_views_specific)',
+           ],
+         }],
+-        ['OS=="linux" and toolkit_views==0 and chromeos==0', {
++        ['(OS=="linux" or OS=="freebsd" or OS=="openbsd") and toolkit_views==0 and chromeos==0', {
+           'sources': [
+             'browser/extensions/browser_action_test_util_gtk.cc',
+             'browser/gtk/view_id_util_browsertest.cc',
+@@ -1371,7 +1371,7 @@
+         'test/startup/startup_test.cc',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+             '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+@@ -1431,7 +1431,7 @@
+             '<(allocator_target)',
+           ],
+         },],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+           ],
+@@ -1457,7 +1457,7 @@
+         'test/page_cycler/page_cycler_test.cc',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+             '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+@@ -1494,7 +1494,7 @@
+         'test/tab_switching/tab_switching_test.cc',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+             '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+@@ -1528,7 +1528,7 @@
+         'test/memory_test/memory_test.cc',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+             '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+@@ -1666,7 +1666,7 @@
+             'browser/sync/util/data_encryption_unittest.cc',
+           ],
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+             'packed_resources'
+@@ -1736,7 +1736,7 @@
+       ],
+       'conditions': [
+         # Plugin code.
+-        ['OS=="linux" or OS=="win"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd" or OS=="win"', {
+           'dependencies': [
+             'plugin',
+            ],
+@@ -1745,7 +1745,7 @@
+           ],
+         }],
+         # Linux-specific rules.
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+            'dependencies': [
+              '../build/linux/system.gyp:gtk',
+            ],
+@@ -1816,7 +1816,7 @@
+             'test/perf/url_parse_perftest.cc',
+           ],
+           'conditions': [
+-            ['OS=="linux"', {
++            ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+               'dependencies': [
+                 '../build/linux/system.gyp:gtk',
+                 '../tools/xdisplaycheck/xdisplaycheck.gyp:xdisplaycheck',
+@@ -1955,7 +1955,7 @@
+       ]},  # 'targets'
+     ],  # OS=="win"
+     # Build on linux x86_64 only if linux_fpic==1
+-    ['OS=="mac" or OS=="win" or (OS=="linux" and target_arch==python_arch '
++    ['OS=="mac" or OS=="win" or ((OS=="linux" or OS=="freebsd" or OS=="openbsd") and target_arch==python_arch '
+      'and (target_arch!="x64" or linux_fpic==1))', {
+       'targets': [
+         {

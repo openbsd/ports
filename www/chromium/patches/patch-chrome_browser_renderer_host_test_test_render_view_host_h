@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_renderer_host_test_test_render_view_host_h,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/renderer_host/test/test_render_view_host.h.orig	Tue Mar 30 07:29:13 2010
++++ chrome/browser/renderer_host/test/test_render_view_host.h	Sun Nov 28 00:11:31 2010
+@@ -97,7 +97,7 @@ class TestRenderWidgetHostView : public RenderWidgetHo
+ #endif
+   virtual void SetVisuallyDeemphasized(bool deemphasized) { }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   virtual void CreatePluginContainer(gfx::PluginWindowHandle id) { }
+   virtual void DestroyPluginContainer(gfx::PluginWindowHandle id) { }
+ #endif

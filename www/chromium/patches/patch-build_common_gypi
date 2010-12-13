@@ -1,0 +1,47 @@
+$OpenBSD: patch-build_common_gypi,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- build/common.gypi.orig	Tue Mar 30 07:28:31 2010
++++ build/common.gypi	Sun Nov 28 00:11:29 2010
+@@ -84,7 +84,7 @@
+       'linux_fpic%': 0,
+ 
+       # Python version.
+-      'python_ver%': '2.5',
++      'python_ver%': '2.6',
+ 
+       # Set ARM-v7 compilation flags
+       'armv7%': 0,
+@@ -203,14 +203,14 @@
+     'linux_strip_binary%': 0,
+ 
+     # Enable TCMalloc.
+-    'linux_use_tcmalloc%': 1,
++    'linux_use_tcmalloc%': 0,
+ 
+     # Set to select the Title Case versions of strings in GRD files.
+     'use_titlecase_in_grd_files%': 0,
+ 
+     # Used to disable Native Client at compile time, for platforms where it
+     # isn't supported
+-    'disable_nacl%': 0,
++    'disable_nacl%': 1,
+ 
+     # Set Thumb compilation flags.
+     'arm_thumb%': 0,
+@@ -225,7 +225,7 @@
+         # This is used to tweak build flags for gcc 4.4.
+         'gcc_version%': '<!(python <(DEPTH)/build/compiler_version.py)',
+         # Figure out the python architecture to decide if we build pyauto.
+-        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/lib/libpython<(python_ver).so.1.0)',
++        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/local/lib/libpython<(python_ver).so.1)',
+         'conditions': [
+           ['branding=="Chrome" or linux_chromium_breakpad==1', {
+             'linux_breakpad%': 1,
+@@ -486,7 +486,7 @@
+               ['exclude', '/(gtk|x11)_[^/]*\\.cc$'],
+             ],
+           }],
+-          ['OS!="linux"', {
++          ['OS!="linux" and OS!="freebsd" and OS!="openbsd"', {
+             'sources/': [
+               ['exclude', '_linux(_unittest)?\\.cc$'],
+               ['exclude', '/linux/'],

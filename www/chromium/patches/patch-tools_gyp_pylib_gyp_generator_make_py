@@ -1,0 +1,40 @@
+$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- tools/gyp/pylib/gyp/generator/make.py.orig	Tue Mar 30 07:25:49 2010
++++ tools/gyp/pylib/gyp/generator/make.py	Sun Nov 28 00:11:32 2010
+@@ -34,7 +34,7 @@ import pprint
+ generator_default_variables = {
+   'EXECUTABLE_PREFIX': '',
+   'EXECUTABLE_SUFFIX': '',
+-  'OS': 'linux',
++# 'OS': 'linux',
+   'STATIC_LIB_PREFIX': 'lib',
+   'SHARED_LIB_PREFIX': 'lib',
+   'STATIC_LIB_SUFFIX': '.a',
+@@ -147,7 +147,7 @@ DEPFLAGS = -MMD -MF $(depfile).tmp
+ # and dollar signs past make, the shell, and sed at the same time."""
+ r"""
+ define fixup_dep
+-sed -i -e "s|^$(notdir $@)|$@|" $(depfile).tmp
++sed -e "s|^$(notdir $@)|$@|" $(depfile).tmp > $(depfile).tmp2 && mv $(depfile).tmp2 $(depfile).tmp
+ sed -e "s|^[^:]*: *||" -e "s| *\\\\$$||" -e 's|^ *||' \
+     -e "/./s|$$|:|" $(depfile).tmp >> $(depfile).tmp
+ cat $(depfile).tmp >> $(depfile)
+@@ -784,12 +784,14 @@ class MakefileWriter:
+ # CFLAGS et al overrides must be target-local.
+ # See "Target-specific Variable Values" in the GNU Make manual.""")
+       self.WriteLn("$(OBJS): TOOLSET := $(TOOLSET)")
+-      self.WriteLn("$(OBJS): GYP_CFLAGS := $(CFLAGS_$(BUILDTYPE)) "
++      self.WriteLn("$(OBJS): GYP_CFLAGS := $(INCS_$(BUILDTYPE)) "
++                   "$(CFLAGS_$(BUILDTYPE)) "
+                    "$(CFLAGS_C_$(BUILDTYPE)) "
+-                   "$(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))")
+-      self.WriteLn("$(OBJS): GYP_CXXFLAGS := $(CFLAGS_$(BUILDTYPE)) "
++                   "$(DEFS_$(BUILDTYPE))")
++      self.WriteLn("$(OBJS): GYP_CXXFLAGS := $(INCS_$(BUILDTYPE)) "
++                   "$(CFLAGS_$(BUILDTYPE)) "
+                    "$(CFLAGS_CC_$(BUILDTYPE)) "
+-                   "$(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))")
++                   "$(DEFS_$(BUILDTYPE))")
+ 
+     self.WriteLn()
+ 

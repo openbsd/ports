@@ -1,0 +1,40 @@
+$OpenBSD: patch-base_base_paths_posix_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- base/base_paths_posix.cc.orig	Tue Mar 30 07:28:46 2010
++++ base/base_paths_posix.cc	Sun Nov 28 00:11:30 2010
+@@ -16,13 +16,15 @@
+ #include "base/scoped_ptr.h"
+ #include "base/sys_string_conversions.h"
+ 
++extern char *__progname;
++
+ namespace base {
+ 
+ #if defined(OS_LINUX)
+ const char kSelfExe[] = "/proc/self/exe";
+ #elif defined(OS_SOLARIS)
+ const char kSelfExe[] = getexecname();
+-#elif defined(OS_FREEBSD)
++#elif defined(OS_FREEBSD) || defined(OS_OPENBSD)
+ const char kSelfExe[] = "/proc/curproc/file";
+ #endif
+ 
+@@ -31,6 +33,7 @@ bool PathProviderPosix(int key, FilePath* result) {
+   switch (key) {
+     case base::FILE_EXE:
+     case base::FILE_MODULE: {  // TODO(evanm): is this correct?
++#if !defined(OS_OPENBSD)
+       char bin_dir[PATH_MAX + 1];
+       int bin_dir_size = readlink(kSelfExe, bin_dir, PATH_MAX);
+       if (bin_dir_size < 0 || bin_dir_size > PATH_MAX) {
+@@ -39,6 +42,11 @@ bool PathProviderPosix(int key, FilePath* result) {
+       }
+       bin_dir[bin_dir_size] = 0;
+       *result = FilePath(bin_dir);
++#else
++      //*result = FilePath("/p/chrome-2/src/out/Release/chrome");
++      *result = FilePath("/usr/local/chrome/chrome");
++      fprintf(stderr, "Called PathProviderLinux once");
++#endif
+       return true;
+     }
+     case base::DIR_SOURCE_ROOT:

@@ -1,0 +1,21 @@
+$OpenBSD: patch-third_party_WebKit_WebKit_chromium_src_WebFrameImpl_cpp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/WebKit/WebKit/chromium/src/WebFrameImpl.cpp.orig	Tue Mar 30 07:35:48 2010
++++ third_party/WebKit/WebKit/chromium/src/WebFrameImpl.cpp	Sun Nov 28 00:11:32 2010
+@@ -150,7 +150,7 @@
+ #include "LocalCurrentGraphicsContext.h"
+ #endif
+ 
+-#if OS(LINUX)
++#if OS(LINUX) || OS(OPENBSD)
+ #include <gdk/gdk.h>
+ #endif
+ 
+@@ -1243,7 +1243,7 @@ float WebFrameImpl::printPage(int page, WebCanvas* can
+         return 0;
+     }
+ 
+-#if OS(WINDOWS) || OS(LINUX) || OS(FREEBSD) || OS(SOLARIS)
++#if OS(WINDOWS) || OS(LINUX) || OS(OPENBSD) || OS(SOLARIS)
+     PlatformContextSkia context(canvas);
+     GraphicsContext spool(&context);
+ #elif OS(DARWIN)

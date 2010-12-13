@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_common_chrome_constants_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/common/chrome_constants.cc.orig	Tue Mar 30 07:30:00 2010
++++ chrome/common/chrome_constants.cc	Sun Nov 28 00:11:31 2010
+@@ -27,7 +27,7 @@ namespace chrome {
+ #if defined(OS_WIN)
+ const wchar_t kBrowserProcessExecutableName[] = L"chrome.exe";
+ const wchar_t kHelperProcessExecutableName[] = L"chrome.exe";
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+ const wchar_t kBrowserProcessExecutableName[] = L"chrome";
+ // Helper processes end up with a name of "exe" due to execing via
+ // /proc/self/exe.  See bug 22703.
+@@ -39,7 +39,7 @@ const wchar_t kHelperProcessExecutableName[] = PRODUCT
+ #if defined(OS_WIN)
+ const wchar_t kBrowserProcessExecutablePath[] = L"chrome.exe";
+ const FilePath::CharType kHelperProcessExecutablePath[] = FPL("chrome.exe");
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+ const wchar_t kBrowserProcessExecutablePath[] = L"chrome";
+ const FilePath::CharType kHelperProcessExecutablePath[] = FPL("chrome");
+ #elif defined(OS_MACOSX)

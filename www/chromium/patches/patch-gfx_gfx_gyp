@@ -1,0 +1,13 @@
+$OpenBSD: patch-gfx_gfx_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- gfx/gfx.gyp.orig	Sun Nov 28 15:14:06 2010
++++ gfx/gfx.gyp	Sun Nov 28 15:14:51 2010
+@@ -92,6 +92,9 @@
+         'skia_utils_gtk.cc',
+         'skia_utils_gtk.h',
+       ],
++      'include_dirs': [
++        '/usr/local/include',
++      ],
+       'conditions': [
+         ['OS=="win"', {
+           'sources': [

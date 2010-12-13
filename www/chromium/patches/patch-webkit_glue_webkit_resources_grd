@@ -1,0 +1,12 @@
+$OpenBSD: patch-webkit_glue_webkit_resources_grd,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- webkit/glue/webkit_resources.grd.orig	Tue Mar 30 07:25:32 2010
++++ webkit/glue/webkit_resources.grd	Sun Nov 28 00:11:26 2010
+@@ -27,7 +27,7 @@
+       <include name="IDR_MEDIA_SLIDER_THUMB" file="resources\media_slider_thumb.png" type="BINDATA" />
+       <include name="IDR_MEDIA_VOLUME_SLIDER_THUMB" file="resources\media_volume_slider_thumb.png" type="BINDATA" />
+ 
+-      <if expr="os == 'linux2' or os == 'freebsd7' or os == 'openbsd4' or os == 'sunos5'">
++      <if expr="os == 'linux2' or os.find('bsd') != -1 or os == 'sunos5'">
+         <include name="IDR_LINUX_CHECKBOX_OFF" file="resources\linux-checkbox-off.png" type="BINDATA" />
+         <include name="IDR_LINUX_CHECKBOX_ON" file="resources\linux-checkbox-on.png" type="BINDATA" />
+         <include name="IDR_LINUX_CHECKBOX_DISABLED_OFF" file="resources\linux-checkbox-disabled-off.png" type="BINDATA" />

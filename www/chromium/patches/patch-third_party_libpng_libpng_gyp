@@ -1,0 +1,16 @@
+$OpenBSD: patch-third_party_libpng_libpng_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/libpng/libpng.gyp.orig	Tue Mar 30 07:34:29 2010
++++ third_party/libpng/libpng.gyp	Sun Nov 28 00:11:29 2010
+@@ -5,10 +5,10 @@
+ {
+   'variables': {
+     'conditions': [
+-      [ 'OS=="linux"', {
++      [ 'OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+         # Link to system .so since we already use it due to GTK.
+         'use_system_libpng%': 1,
+-      }, {  # OS!="linux"
++      }, {  # OS!="linux" and OS!="freebsd" and OS!="openbsd"
+         'use_system_libpng%': 0,
+       }],
+     ],

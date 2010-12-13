@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_views_tabs_dragged_tab_view_h,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/views/tabs/dragged_tab_view.h.orig	Tue Mar 30 07:29:34 2010
++++ chrome/browser/views/tabs/dragged_tab_view.h	Sun Nov 28 00:11:31 2010
+@@ -17,7 +17,7 @@
+ namespace views {
+ #if defined(OS_WIN)
+ class WidgetWin;
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+ class WidgetGtk;
+ #endif
+ }
+@@ -96,7 +96,7 @@ class DraggedTabView : public views::View,
+   // The window that contains the DraggedTabView.
+ #if defined(OS_WIN)
+   scoped_ptr<views::WidgetWin> container_;
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   scoped_ptr<views::WidgetGtk> container_;
+ #endif
+ 

@@ -1,0 +1,11 @@
+$OpenBSD: patch-chrome_chrome_renderer_gypi,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/chrome_renderer.gypi.orig	Tue Mar 30 07:31:34 2010
++++ chrome/chrome_renderer.gypi	Sun Nov 28 00:11:31 2010
+@@ -102,7 +102,6 @@
+         'renderer/gpu_channel_host.h',
+         'renderer/localized_error.cc',
+         'renderer/localized_error.h',
+-        'renderer/nacl_desc_wrapper_chrome.cc',
+         'renderer/navigation_state.h',
+         'renderer/notification_provider.cc',
+         'renderer/notification_provider.h',

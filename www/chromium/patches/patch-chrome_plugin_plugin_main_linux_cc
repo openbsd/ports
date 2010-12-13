@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_plugin_plugin_main_linux_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/plugin/plugin_main_linux.cc.orig	Tue Mar 30 07:31:14 2010
++++ chrome/plugin/plugin_main_linux.cc	Sun Nov 28 00:11:31 2010
+@@ -11,7 +11,7 @@
+ #include "build/build_config.h"
+ 
+ // This whole file is only useful on 64-bit architectures.
+-#if defined(ARCH_CPU_64_BITS)
++#if defined(ARCH_CPU_64_BITS) && !defined(OS_OPENBSD)
+ 
+ namespace {
+ 

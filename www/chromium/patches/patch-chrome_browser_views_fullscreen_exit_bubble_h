@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_views_fullscreen_exit_bubble_h,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/views/fullscreen_exit_bubble.h.orig	Tue Mar 30 07:29:38 2010
++++ chrome/browser/views/fullscreen_exit_bubble.h	Sun Nov 28 00:11:30 2010
+@@ -10,7 +10,7 @@
+ #include "chrome/browser/command_updater.h"
+ #include "views/controls/link.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ namespace views {
+ class WidgetGtk;
+ }
+@@ -72,7 +72,7 @@ class FullscreenExitBubble : public views::LinkControl
+   // The popup itself, which is a slightly modified WidgetWin.  We need to use
+   // a WidgetWin (and thus an HWND) to make the popup float over other HWNDs.
+   FullscreenExitPopup* popup_;
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   views::WidgetGtk* popup_;
+ #endif
+ 

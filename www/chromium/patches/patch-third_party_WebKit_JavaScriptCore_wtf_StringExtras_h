@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_JavaScriptCore_wtf_StringExtras_h,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/WebKit/JavaScriptCore/wtf/StringExtras.h.orig	Tue Mar 30 07:36:27 2010
++++ third_party/WebKit/JavaScriptCore/wtf/StringExtras.h	Sun Nov 28 00:11:32 2010
+@@ -86,7 +86,7 @@ inline int strcasecmp(const char* s1, const char* s2)
+ 
+ #endif
+ 
+-#if OS(WINDOWS) || OS(LINUX) || OS(SOLARIS)
++#if OS(WINDOWS) || OS(LINUX) || OS(SOLARIS) || OS(OPENBSD)
+ // FIXME: should check HAVE_STRNSTR
+ 
+ inline char* strnstr(const char* buffer, const char* target, size_t bufferLength)

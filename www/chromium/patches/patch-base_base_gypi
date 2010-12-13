@@ -1,0 +1,22 @@
+$OpenBSD: patch-base_base_gypi,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- base/base.gypi.orig	Tue Mar 30 07:28:45 2010
++++ base/base.gypi	Sun Nov 28 12:01:44 2010
+@@ -275,7 +275,7 @@
+           'worker_pool_win.cc',
+         ],
+         'include_dirs': [
+-          '..',
++          '..', '/usr/local/include'
+         ],
+         # These warnings are needed for the files in third_party\dmg_fp.
+         'msvs_disabled_warnings': [
+@@ -409,6 +409,9 @@
+           ],
+         },],
+         [ 'OS == "freebsd" or OS == "openbsd"', {
++             'sources!': [
++             'process_linux.cc',
++             ],
+             'link_settings': {
+               'libraries': [
+                 '-L/usr/local/lib -lexecinfo',

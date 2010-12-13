@@ -1,0 +1,15 @@
+$OpenBSD: patch-ipc_sync_socket_unittest_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- ipc/sync_socket_unittest.cc.orig	Tue Mar 30 07:28:46 2010
++++ ipc/sync_socket_unittest.cc	Sun Nov 28 00:11:30 2010
+@@ -8,9 +8,9 @@
+ #include <sstream>
+ 
+ #include "base/message_loop.h"
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_POSIX)
+ #include "base/file_descriptor_posix.h"
+-#endif  // defined(OS_LINUX) || defined(OS_MACOSX)
++#endif  // defined(OS_POSIX)
+ #include "base/platform_thread.h"
+ #include "base/process_util.h"
+ #include "base/sync_socket.h"

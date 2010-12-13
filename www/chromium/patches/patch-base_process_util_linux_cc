@@ -1,0 +1,69 @@
+$OpenBSD: patch-base_process_util_linux_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- base/process_util_linux.cc.orig	Tue Mar 30 07:28:45 2010
++++ base/process_util_linux.cc	Sun Nov 28 00:11:30 2010
+@@ -515,6 +515,7 @@ void OnNoMemory() {
+ extern "C" {
+ #if !defined(USE_TCMALLOC)
+ 
++#if 0
+ extern "C" {
+ void* __libc_malloc(size_t size);
+ void* __libc_realloc(void* ptr, size_t size);
+@@ -523,6 +524,16 @@ void* __libc_valloc(size_t size);
+ void* __libc_pvalloc(size_t size);
+ void* __libc_memalign(size_t alignment, size_t size);
+ }  // extern "C"
++#else
++extern "C" {
++void* malloc(size_t size);
++void* realloc(void* ptr, size_t size);
++void* calloc(size_t nmemb, size_t size);
++void* valloc(size_t size);
++void* pvalloc(size_t size);
++void* memalign(size_t alignment, size_t size);
++}  // extern "C"
++#endif
+ 
+ // Overriding the system memory allocation functions:
+ //
+@@ -554,7 +565,7 @@ void* __libc_memalign(size_t alignment, size_t size);
+   void* function_name(size_t) __attribute__ ((visibility("default"))); \
+   \
+   void* function_name(size_t size) { \
+-    void* ret = __libc_##function_name(size); \
++    void* ret = ##function_name(size); \
+     if (ret == NULL && size != 0) \
+       OnNoMemorySize(size); \
+     return ret; \
+@@ -565,12 +576,13 @@ void* __libc_memalign(size_t alignment, size_t size);
+       __attribute__ ((visibility("default"))); \
+   \
+   void* function_name(arg1_type arg1, size_t size) { \
+-    void* ret = __libc_##function_name(arg1, size); \
++    void* ret = ##function_name(arg1, size); \
+     if (ret == NULL && size != 0) \
+       OnNoMemorySize(size); \
+     return ret; \
+   }
+ 
++#if 0
+ DIE_ON_OOM_1(malloc)
+ DIE_ON_OOM_1(valloc)
+ DIE_ON_OOM_1(pvalloc)
+@@ -578,6 +590,7 @@ DIE_ON_OOM_1(pvalloc)
+ DIE_ON_OOM_2(calloc, size_t)
+ DIE_ON_OOM_2(realloc, void*)
+ DIE_ON_OOM_2(memalign, size_t)
++#endif
+ 
+ // posix_memalign has a unique signature and doesn't have a __libc_ variant.
+ int posix_memalign(void** ptr, size_t alignment, size_t size)
+@@ -585,7 +598,7 @@ int posix_memalign(void** ptr, size_t alignment, size_
+ 
+ int posix_memalign(void** ptr, size_t alignment, size_t size) {
+   // This will use the safe version of memalign, above.
+-  *ptr = memalign(alignment, size);
++//  *ptr = memalign(alignment, size);
+   return 0;
+ }
+ 

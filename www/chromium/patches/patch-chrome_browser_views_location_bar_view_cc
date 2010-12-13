@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_views_location_bar_view_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/views/location_bar_view.cc.orig	Tue Mar 30 07:29:37 2010
++++ chrome/browser/views/location_bar_view.cc	Sun Nov 28 00:11:31 2010
+@@ -4,7 +4,7 @@
+ 
+ #include "chrome/browser/views/location_bar_view.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include <gtk/gtk.h>
+ #endif
+ 

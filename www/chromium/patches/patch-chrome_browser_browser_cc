@@ -1,0 +1,51 @@
+$OpenBSD: patch-chrome_browser_browser_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/browser.cc.orig	Tue Mar 30 07:29:49 2010
++++ chrome/browser/browser.cc	Sun Nov 28 00:11:31 2010
+@@ -199,7 +199,7 @@ Browser::~Browser() {
+ 
+   BrowserList::RemoveBrowser(this);
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+   if (!BrowserList::HasBrowserWithProfile(profile_)) {
+     // We're the last browser window with this profile. We need to nuke the
+     // TabRestoreService, which will start the shutdown of the
+@@ -583,7 +583,7 @@ string16 Browser::GetWindowTitleForCurrentTab() const 
+   // On Mac or ChromeOS, we don't want to suffix the page title with
+   // the application name.
+   return title;
+-#elif defined(OS_WIN) || defined(OS_LINUX)
++#elif defined(OS_WIN) || defined(OS_NIX)
+   int string_id = IDS_BROWSER_WINDOW_TITLE_FORMAT;
+   // Don't append the app name to window titles when we're not displaying a
+   // distributor logo for the frame.
+@@ -640,7 +640,7 @@ void Browser::OnWindowClosing() {
+ 
+   bool exiting = false;
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+   // We don't want to do this on Mac since closing all windows isn't a sign
+   // that the app is shutting down.
+   if (BrowserList::size() == 1) {
+@@ -1127,9 +1127,9 @@ void Browser::ToggleFullscreenMode() {
+ 
+   UserMetrics::RecordAction("ToggleFullscreen", profile_);
+   window_->SetFullscreen(!window_->IsFullscreen());
+-  // On Linux, setting fullscreen mode is an async call to the X server, which
++  // On X11, setting fullscreen mode is an async call to the X server, which
+   // may or may not support fullscreen mode.
+-#if !defined(OS_LINUX)
++#if !defined(USE_X11)
+   UpdateCommandsForFullscreenMode(window_->IsFullscreen());
+ #endif
+ }
+@@ -1931,7 +1931,7 @@ void Browser::DuplicateContentsAt(int index) {
+ }
+ 
+ void Browser::CloseFrameAfterDragSession() {
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_NIX)
+   // This is scheduled to run after we return to the message loop because
+   // otherwise the frame will think the drag session is still active and ignore
+   // the request.

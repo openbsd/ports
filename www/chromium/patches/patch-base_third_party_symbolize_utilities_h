@@ -1,0 +1,10 @@
+$OpenBSD: patch-base_third_party_symbolize_utilities_h,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- base/third_party/symbolize/utilities.h.orig	Tue Mar 30 07:28:37 2010
++++ base/third_party/symbolize/utilities.h	Sun Nov 28 00:11:25 2010
+@@ -6,6 +6,5 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
+-typedef uint64_t uint64;
+ #define HAVE_SYMBOLIZE 1
+ #define ATTRIBUTE_NOINLINE __attribute__ ((noinline))

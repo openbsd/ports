@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_libevent_event-config_h,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/libevent/event-config.h.orig	Tue Mar 30 07:32:44 2010
++++ third_party/libevent/event-config.h	Sun Nov 28 00:11:28 2010
+@@ -9,6 +9,8 @@
+ #include "mac/event-config.h"
+ #elif defined(__linux__)
+ #include "linux/event-config.h"
++#elif defined(__OpenBSD__)
++#include "openbsd/event-config.h"
+ #else
+ #error generate event-config.h for your platform
+ #endif

@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_WebCore_page_EventHandler_cpp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/WebKit/WebCore/page/EventHandler.cpp.orig	Tue Mar 30 07:34:51 2010
++++ third_party/WebKit/WebCore/page/EventHandler.cpp	Sun Nov 28 00:11:32 2010
+@@ -1822,7 +1822,7 @@ bool EventHandler::dispatchMouseEvent(const AtomicStri
+     return swallowEvent;
+ }
+ 
+-#if !PLATFORM(GTK) && !(PLATFORM(CHROMIUM) && OS(LINUX))
++#if !PLATFORM(GTK) && !(PLATFORM(CHROMIUM) && (OS(LINUX) || OS(OPENBSD)))
+ bool EventHandler::shouldTurnVerticalTicksIntoHorizontal(const HitTestResult&) const
+ {
+     return false;

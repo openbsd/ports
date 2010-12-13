@@ -1,0 +1,12 @@
+$OpenBSD: patch-native_client_src_shared_platform_platform_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- native_client/src/shared/platform/platform.gyp.orig	Tue Mar 30 07:26:37 2010
++++ native_client/src/shared/platform/platform.gyp	Sun Nov 28 00:11:32 2010
+@@ -58,7 +58,7 @@
+       'time.h',
+     ],
+     'conditions': [
+-      ['OS=="linux"', {
++      ['OS=="linux" or OS=="openbsd"', {
+         'platform_sources': [
+           'linux/condition_variable.cc',
+           'linux/lock.cc',

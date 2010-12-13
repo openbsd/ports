@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_tab_contents_tab_contents_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/tab_contents/tab_contents.cc.orig	Tue Mar 30 07:29:07 2010
++++ chrome/browser/tab_contents/tab_contents.cc	Sun Nov 28 00:11:31 2010
+@@ -319,7 +319,7 @@ TabContents::TabContents(Profile* profile,
+                  NotificationService::AllSources());
+   registrar_.Add(this, NotificationType::RENDER_WIDGET_HOST_DESTROYED,
+                  NotificationService::AllSources());
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+   registrar_.Add(this, NotificationType::BROWSER_THEME_CHANGED,
+                  NotificationService::AllSources());
+ #endif
+@@ -2797,7 +2797,7 @@ void TabContents::Observe(NotificationType type,
+       break;
+     }
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+     case NotificationType::BROWSER_THEME_CHANGED: {
+       renderer_preferences_util::UpdateFromSystemSettings(
+           &renderer_preferences_, profile());

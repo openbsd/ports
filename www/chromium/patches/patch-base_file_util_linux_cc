@@ -1,0 +1,16 @@
+$OpenBSD: patch-base_file_util_linux_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- base/file_util_linux.cc.orig	Tue Mar 30 07:28:46 2010
++++ base/file_util_linux.cc	Sun Nov 28 00:11:30 2010
+@@ -25,7 +25,12 @@ bool GetTempDir(FilePath* path) {
+ }
+ 
+ bool GetShmemTempDir(FilePath* path) {
++#if defined(OS_LINUX)
+   *path = FilePath("/dev/shm");
++#else
++//BSD not sure this is the best way to do this but it works for now
++  *path = FilePath("/tmp");
++#endif
+   return true;
+ }
+ 

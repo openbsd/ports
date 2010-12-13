@@ -1,0 +1,9 @@
+$OpenBSD: patch-build_gyp_chromium,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- build/gyp_chromium.orig	Tue Mar 30 07:28:31 2010
++++ build/gyp_chromium	Sun Nov 28 00:11:29 2010
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/local/bin/python2.6
+ 
+ # Copyright (c) 2009 The Chromium Authors. All rights reserved.
+ # Use of this source code is governed by a BSD-style license that can be

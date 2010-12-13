@@ -1,0 +1,12 @@
+$OpenBSD: patch-net_tools_hresolv_hresolv_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- net/tools/hresolv/hresolv.cc.orig	Tue Mar 30 07:27:53 2010
++++ net/tools/hresolv/hresolv.cc	Sun Nov 28 00:11:27 2010
+@@ -50,7 +50,7 @@ static const FlagName kAddrinfoFlagNames[] = {
+   {AI_V4MAPPED, "AI_V4MAPPED"},
+   {AI_ALL, "AI_ALL"},
+   {AI_ADDRCONFIG, "AI_ADDRCONFIG"},
+-#if defined(OS_LINUX) || defined(OS_WIN)
++#if !defined(OS_MACOSX)
+   {AI_NUMERICSERV, "AI_NUMERICSERV"},
+ #endif
+ };

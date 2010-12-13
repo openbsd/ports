@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_linux_system_gyp,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- build/linux/system.gyp.orig	Tue Mar 30 07:28:30 2010
++++ build/linux/system.gyp	Sun Nov 28 00:11:29 2010
+@@ -13,7 +13,7 @@
+         'pkg-config': 'pkg-config'
+       },
+     }],
+-    [ 'OS=="linux"', {
++    [ 'OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+       'variables': {
+         # We use our own copy of libssl, although we still need to link against
+         # the rest of NSS.

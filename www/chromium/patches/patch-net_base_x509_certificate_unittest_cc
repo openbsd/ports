@@ -1,0 +1,12 @@
+$OpenBSD: patch-net_base_x509_certificate_unittest_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- net/base/x509_certificate_unittest.cc.orig	Tue Mar 30 07:28:07 2010
++++ net/base/x509_certificate_unittest.cc	Sun Nov 28 00:11:27 2010
+@@ -294,7 +294,7 @@ TEST(X509CertificateTest, PaypalNullCertParsing) {
+   // Either the system crypto library should correctly report a certificate
+   // name mismatch, or our certificate blacklist should cause us to report an
+   // invalid certificate.
+-#if defined(OS_LINUX) || defined(OS_WIN)
++#if !defined(OS_MACOSX)
+   EXPECT_NE(0, verify_result.cert_status &
+             (CERT_STATUS_COMMON_NAME_INVALID | CERT_STATUS_INVALID));
+ #endif

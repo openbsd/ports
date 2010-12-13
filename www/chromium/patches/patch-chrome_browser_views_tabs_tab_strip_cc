@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_views_tabs_tab_strip_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/views/tabs/tab_strip.cc.orig	Tue Mar 30 07:29:34 2010
++++ chrome/browser/views/tabs/tab_strip.cc	Sun Nov 28 00:11:31 2010
+@@ -35,7 +35,7 @@
+ #if defined(OS_WIN)
+ #include "app/win_util.h"
+ #include "views/widget/widget_win.h"
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+ #include "views/widget/widget_gtk.h"
+ #endif
+ 
+@@ -1659,7 +1659,7 @@ bool TabStrip::IsCursorInTabStripZone() const {
+ #if defined(OS_WIN)
+   DWORD pos = GetMessagePos();
+   gfx::Point cursor_point(pos);
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   // TODO: make sure this is right with multiple monitors.
+   GdkScreen* screen = gdk_screen_get_default();
+   GdkDisplay* display = gdk_screen_get_display(screen);

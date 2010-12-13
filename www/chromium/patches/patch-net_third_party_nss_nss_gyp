@@ -1,0 +1,21 @@
+$OpenBSD: patch-net_third_party_nss_nss_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- net/third_party/nss/nss.gyp.orig	Tue Mar 30 07:27:52 2010
++++ net/third_party/nss/nss.gyp	Sun Nov 28 00:11:27 2010
+@@ -4,7 +4,7 @@
+ 
+ {
+   'conditions': [
+-    [ 'OS == "linux"', {
++    [ 'OS == "linux" or OS == "freebsd" or OS == "openbsd"', {
+       'conditions': [
+         ['sysroot!=""', {
+           'variables': {
+@@ -77,7 +77,7 @@
+         'NO_NSPR_10_SUPPORT',
+       ],
+       'conditions': [
+-        [ 'OS == "linux"', {
++        [ 'OS == "linux" or OS == "freebsd" or OS == "openbsd"', {
+           'sources!': [
+             'ssl/os2_err.c',
+             'ssl/os2_err.h',

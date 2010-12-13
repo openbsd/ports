@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_views_notifications_balloon_view_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/browser/views/notifications/balloon_view.cc.orig	Tue Mar 30 07:29:34 2010
++++ chrome/browser/views/notifications/balloon_view.cc	Sun Nov 28 00:11:31 2010
+@@ -35,7 +35,7 @@
+ #if defined(OS_WIN)
+ #include "views/widget/widget_win.h"
+ #endif
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ #include "views/widget/widget_gtk.h"
+ #endif
+ 

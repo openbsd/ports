@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_renderer_render_view_h,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- chrome/renderer/render_view.h.orig	Tue Mar 30 07:31:33 2010
++++ chrome/renderer/render_view.h	Sun Nov 28 00:11:31 2010
+@@ -857,7 +857,7 @@ class RenderView : public RenderWidget,
+ 
+   void Print(WebKit::WebFrame* frame, bool script_initiated);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+   void UpdateFontRenderingFromRendererPrefs();
+ #else
+   void UpdateFontRenderingFromRendererPrefs() { }

@@ -1,0 +1,19 @@
+$OpenBSD: patch-base_message_pump_glib_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- base/message_pump_glib.cc.orig	Tue Mar 30 07:28:45 2010
++++ base/message_pump_glib.cc	Sun Nov 28 00:11:30 2010
+@@ -158,6 +158,7 @@ MessagePumpForUI::~MessagePumpForUI() {
+ 
+ void MessagePumpForUI::RunWithDispatcher(Delegate* delegate,
+                                          Dispatcher* dispatcher) {
++#if 0
+ #ifndef NDEBUG
+   // Make sure we only run this on one thread.  GTK only has one message pump
+   // so we can only have one UI loop per process.
+@@ -165,6 +166,7 @@ void MessagePumpForUI::RunWithDispatcher(Delegate* del
+   DCHECK(thread_id == PlatformThread::CurrentId()) <<
+       "Running MessagePumpForUI on two different threads; "
+       "this is unsupported by GLib!";
++#endif
+ #endif
+ 
+   RunState state;

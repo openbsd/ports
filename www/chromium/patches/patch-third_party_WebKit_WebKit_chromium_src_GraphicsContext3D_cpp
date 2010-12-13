@@ -1,0 +1,75 @@
+$OpenBSD: patch-third_party_WebKit_WebKit_chromium_src_GraphicsContext3D_cpp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/WebKit/WebKit/chromium/src/GraphicsContext3D.cpp.orig	Tue Mar 30 07:35:48 2010
++++ third_party/WebKit/WebKit/chromium/src/GraphicsContext3D.cpp	Sun Nov 28 00:11:32 2010
+@@ -75,7 +75,7 @@
+ #define USE_TEXTURE_RECTANGLE_FOR_FRAMEBUFFER
+ #endif
+ 
+-#if OS(LINUX)
++#if OS(OPENBSD)
+ #include <dlfcn.h>
+ #include "GL/glxew.h"
+ #endif
+@@ -188,7 +188,7 @@ class GraphicsContext3DInternal { (private)
+     CGLPBufferObj m_pbuffer;
+     CGLContextObj m_contextObj;
+     unsigned char* m_renderOutput;
+-#elif OS(LINUX)
++#elif OS(OPENBSD)
+     GLXContext m_contextObj;
+     GLXPbuffer m_pbuffer;
+ 
+@@ -280,7 +280,7 @@ class GraphicsContext3DInternal { (private)
+ 
+ bool GraphicsContext3DInternal::s_initializedGLEW = false;
+ 
+-#if OS(LINUX)
++#if OS(OPENBSD)
+ GraphicsContext3DInternal::GLConnection* GraphicsContext3DInternal::s_gl = 0;
+ 
+ GraphicsContext3DInternal::GLConnection* GraphicsContext3DInternal::GLConnection::create()
+@@ -333,7 +333,7 @@ GraphicsContext3DInternal::GLConnection::~GLConnection
+     dlclose(m_libGL);
+ }
+ 
+-#endif // OS(LINUX)
++#endif // OS(OPENBSD)
+ 
+ GraphicsContext3DInternal::VertexAttribPointerState::VertexAttribPointerState()
+     : enabled(false)
+@@ -368,7 +368,7 @@ GraphicsContext3DInternal::GraphicsContext3DInternal(G
+     , m_pbuffer(0)
+     , m_contextObj(0)
+     , m_renderOutput(0)
+-#elif OS(LINUX)
++#elif OS(OPENBSD)
+     , m_contextObj(0)
+     , m_pbuffer(0)
+ #else
+@@ -497,7 +497,7 @@ GraphicsContext3DInternal::GraphicsContext3DInternal(G
+     }
+     m_pbuffer = pbuffer;
+     m_contextObj = context;
+-#elif OS(LINUX)
++#elif OS(OPENBSD)
+     if (!s_gl) {
+         s_gl = GLConnection::create();
+         if (!s_gl)
+@@ -595,7 +595,7 @@ GraphicsContext3DInternal::~GraphicsContext3DInternal(
+     CGLDestroyPBuffer(m_pbuffer);
+     if (m_renderOutput)
+         delete[] m_renderOutput;
+-#elif OS(LINUX)
++#elif OS(OPENBSD)
+     s_gl->makeCurrent(0, 0);
+     s_gl->destroyContext(m_contextObj);
+     s_gl->destroyPbuffer(m_pbuffer);
+@@ -615,7 +615,7 @@ bool GraphicsContext3DInternal::makeContextCurrent()
+     if (CGLGetCurrentContext() != m_contextObj)
+         if (CGLSetCurrentContext(m_contextObj) == kCGLNoError)
+             return true;
+-#elif OS(LINUX)
++#elif OS(OPENBSD)
+     if (s_gl->getCurrentContext() != m_contextObj)
+         if (s_gl->makeCurrent(m_pbuffer, m_contextObj))
+             return true;

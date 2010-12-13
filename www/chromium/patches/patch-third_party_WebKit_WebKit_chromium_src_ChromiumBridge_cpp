@@ -1,0 +1,21 @@
+$OpenBSD: patch-third_party_WebKit_WebKit_chromium_src_ChromiumBridge_cpp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/WebKit/WebKit/chromium/src/ChromiumBridge.cpp.orig	Tue Mar 30 07:35:48 2010
++++ third_party/WebKit/WebKit/chromium/src/ChromiumBridge.cpp	Sun Nov 28 00:11:32 2010
+@@ -62,7 +62,7 @@
+ #include "WebThemeEngine.h"
+ #endif
+ 
+-#if OS(LINUX)
++#if OS(LINUX) || OS(OPENBSD)
+ #include "WebSandboxSupport.h"
+ #include "WebFontInfo.h"
+ #include "WebFontRenderStyle.h"
+@@ -340,7 +340,7 @@ bool ChromiumBridge::ensureFontLoaded(HFONT font)
+ }
+ #endif
+ 
+-#if OS(LINUX)
++#if OS(LINUX) || OS(OPENBSD)
+ String ChromiumBridge::getFontFamilyForCharacters(const UChar* characters, size_t numCharacters)
+ {
+     if (webKitClient()->sandboxSupport())

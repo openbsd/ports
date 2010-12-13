@@ -1,0 +1,12 @@
+$OpenBSD: patch-v8_src_globals_h,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- v8/src/globals.h.orig	Tue Mar 30 07:31:56 2010
++++ v8/src/globals.h	Sun Nov 28 00:11:32 2010
+@@ -107,7 +107,7 @@ typedef byte* Address;
+ #define V8PRIxPTR "lx"
+ #endif
+ 
+-#if defined(__APPLE__) && defined(__MACH__)
++#if (defined(__APPLE__) && defined(__MACH__)) || defined(__OpenBSD__)
+ #define USING_MAC_ABI
+ #endif
+ 

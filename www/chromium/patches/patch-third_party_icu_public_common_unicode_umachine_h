@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_icu_public_common_unicode_umachine_h,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/icu/public/common/unicode/umachine.h.orig	Tue Mar 30 07:37:28 2010
++++ third_party/icu/public/common/unicode/umachine.h	Sun Nov 28 00:11:32 2010
+@@ -49,6 +49,8 @@
+ #   include "unicode/pmac.h"
+ #elif defined(__linux__)
+ #   include "unicode/plinux.h"
++#elif defined(__OpenBSD__)
++#   include "unicode/pfreebsd.h"
+ #else
+ #   include "unicode/platform.h"
+ #endif

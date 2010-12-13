@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_test_test_suite_h,v 1.1 2010/12/13 09:51:45 espie Exp $
+--- base/test/test_suite.h.orig	Tue Mar 30 07:28:36 2010
++++ base/test/test_suite.h	Sun Nov 28 00:11:30 2010
+@@ -59,7 +59,7 @@ class TestSuite {
+ #if defined(OS_POSIX) && !defined(OS_MACOSX)
+     g_thread_init(NULL);
+     gtk_init_check(&argc, &argv);
+-#endif  // defined(OS_LINUX)
++#endif  // defined(OS_POSIX) && !defined(OS_MACOSX)
+     // Don't add additional code to this constructor.  Instead add it to
+     // Initialize().  See bug 6436.
+   }

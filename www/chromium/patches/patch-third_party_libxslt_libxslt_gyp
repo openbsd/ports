@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_libxslt_libxslt_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/libxslt/libxslt.gyp.orig	Tue Mar 30 07:32:50 2010
++++ third_party/libxslt/libxslt.gyp	Sun Nov 28 00:11:28 2010
+@@ -17,7 +17,7 @@
+     {
+       'target_name': 'libxslt',
+       'conditions': [
+-        ['OS=="linux" and use_system_libxslt', {
++        ['(OS=="linux" or OS=="freebsd" or OS=="openbsd") and use_system_libxslt', {
+           'type': 'settings',
+           'direct_dependent_settings': {
+             'cflags': [

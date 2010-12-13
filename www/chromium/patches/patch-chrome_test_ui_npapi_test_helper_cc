@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_test_ui_npapi_test_helper_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- chrome/test/ui/npapi_test_helper.cc.orig	Tue Mar 30 07:31:12 2010
++++ chrome/test/ui/npapi_test_helper.cc	Sun Nov 28 00:11:30 2010
+@@ -22,7 +22,7 @@ static const char kPepperTestPluginName[] = "pepper_te
+ static const char kNpapiTestPluginName[] = "npapi_test_plugin.plugin";
+ static const char kPepperTestPluginName[] = "PepperTestPlugin.plugin";
+ static const char kLayoutPluginName[] = "TestNetscapePlugIn.plugin";
+-#elif defined(OS_LINUX)
++#elif defined(OS_NIX)
+ static const char kNpapiTestPluginName[] = "libnpapi_test_plugin.so";
+ static const char kPepperTestPluginName[] = "libpepper_test_plugin.so";
+ #endif

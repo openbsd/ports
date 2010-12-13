@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_WebKit_chromium_WebKit_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- third_party/WebKit/WebKit/chromium/WebKit.gyp.orig	Tue Mar 30 07:35:50 2010
++++ third_party/WebKit/WebKit/chromium/WebKit.gyp	Sun Nov 28 00:11:32 2010
+@@ -383,7 +383,7 @@
+                 'src/win/WebScreenInfoFactory.cpp',
+             ],
+             'conditions': [
+-                ['OS=="linux" or OS=="freebsd"', {
++                ['OS=="linux" or OS=="openbsd"', {
+                     'dependencies': [
+                         '<(chromium_src_dir)/build/linux/system.gyp:fontconfig',
+                         '<(chromium_src_dir)/build/linux/system.gyp:gtk',

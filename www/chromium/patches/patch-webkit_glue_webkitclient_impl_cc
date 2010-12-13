@@ -1,0 +1,12 @@
+$OpenBSD: patch-webkit_glue_webkitclient_impl_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
+--- webkit/glue/webkitclient_impl.cc.orig	Tue Mar 30 07:25:32 2010
++++ webkit/glue/webkitclient_impl.cc	Sun Nov 28 00:11:26 2010
+@@ -40,7 +40,7 @@
+ #include "webkit/glue/websocketstreamhandle_impl.h"
+ #include "webkit/glue/weburlloader_impl.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_NIX)
+ #include "v8/include/v8.h"
+ #endif
+ 
