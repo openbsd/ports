@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/06/26 21:22:00 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/13 08:27:43 jasper Exp $
 
-COMMENT=	AVR microcontroller hardware in-system programmer
+COMMENT=	in-system programmer for Teensy boards
 
 DISTNAME=	teensy_loader_cli.2.0
 PKGNAME=	teensyloader-2.0
+REVISION=	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.pjrc.com/teensy/
@@ -17,11 +18,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=		http://www.pjrc.com/teensy/
+MASTER_SITES=		${HOMEPAGE}
 
 CONFIGURE_STYLE=	None
-WRKDIST=${WRKDIR}/teensy_loader_cli
-MAKE_FILE=Makefile.bsd
+WRKDIST=		${WRKDIR}/teensy_loader_cli
+MAKE_FILE=		Makefile.bsd
+
+NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/teensyloader ${PREFIX}/bin
