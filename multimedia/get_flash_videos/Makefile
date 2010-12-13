@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/02 21:49:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/13 12:00:33 jasper Exp $
 
 COMMENT=		download flash video files from various sites
 
@@ -29,8 +29,6 @@ RUN_DEPENDS=		devel/p5-Term-ReadKey \
 			www/p5-libwww \
 			www/p5-URI \
 			www/p5-WWW-Mechanize
-
-PKG_ARCH=		*
 
 pre-configure:
 	cd ${WRKSRC}; perl -pi -e \
