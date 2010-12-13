@@ -1,6 +1,6 @@
-$OpenBSD: patch-gst___init___py,v 1.4 2010/07/22 19:22:08 ajacoutot Exp $
---- gst/__init__.py.orig	Thu Apr 22 00:23:44 2010
-+++ gst/__init__.py	Wed Jul 21 21:41:30 2010
+$OpenBSD: patch-gst___init___py_in,v 1.1 2010/12/13 06:37:06 ajacoutot Exp $
+--- gst/__init__.py.in.orig	Mon Dec 13 07:30:03 2010
++++ gst/__init__.py.in	Mon Dec 13 07:30:41 2010
 @@ -156,7 +156,7 @@ class Fraction(Value):
  
  try:

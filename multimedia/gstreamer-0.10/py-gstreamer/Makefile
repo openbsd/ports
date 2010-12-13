@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/12/02 14:05:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2010/12/13 06:37:06 ajacoutot Exp $
 
 COMMENT =		Python bindings for GStreamer
 
 V =			0.10.20
 DISTNAME =		gst-python-$V
 PKGNAME =		py-gstreamer-$V
+REVISION =		0
 
 HOMEPAGE =		http://gstreamer.freedesktop.org/modules/gst-python.html
 
