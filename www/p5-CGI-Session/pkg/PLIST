@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/01 22:00:35 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/12/13 13:15:06 sthen Exp $
+${P5SITE}/CGI/
 ${P5SITE}/CGI/Session/
 ${P5SITE}/CGI/Session.pm
 ${P5SITE}/CGI/Session/Driver/
@@ -17,9 +18,7 @@ ${P5SITE}/CGI/Session/ID/static.pm
 ${P5SITE}/CGI/Session/Serialize/
 ${P5SITE}/CGI/Session/Serialize/default.pm
 ${P5SITE}/CGI/Session/Serialize/freezethaw.pm
-${P5SITE}/CGI/Session/Serialize/json.pm
 ${P5SITE}/CGI/Session/Serialize/storable.pm
-${P5SITE}/CGI/Session/Serialize/yaml.pm
 ${P5SITE}/CGI/Session/Test/
 ${P5SITE}/CGI/Session/Test/Default.pm
 ${P5SITE}/CGI/Session/Tutorial.pm
@@ -37,8 +36,6 @@ ${P5SITE}/CGI/Session/Tutorial.pm
 @man man/man3p/CGI::Session::ID::static.3p
 @man man/man3p/CGI::Session::Serialize::default.3p
 @man man/man3p/CGI::Session::Serialize::freezethaw.3p
-@man man/man3p/CGI::Session::Serialize::json.3p
 @man man/man3p/CGI::Session::Serialize::storable.3p
-@man man/man3p/CGI::Session::Serialize::yaml.3p
 @man man/man3p/CGI::Session::Test::Default.3p
 @man man/man3p/CGI::Session::Tutorial.3p
