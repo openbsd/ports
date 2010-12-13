@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2010/12/02 14:04:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2010/12/13 07:56:14 ajacoutot Exp $
 
 COMMENT =		multimedia framework
 
 V =			0.10.31
+REVISION =		0
 
 PKGNAME =		gstreamer-${V}
 
@@ -16,7 +17,7 @@ SHARED_LIBS +=  gstcheck-0.10        1.2      # .26.0
 SHARED_LIBS +=  gstnet-0.10          2.2      # .26.0
 
 WANTLIB += c m pcre pthread z xml2 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 util
+WANTLIB += gthread-2.0
 
 MASTER_SITES =		${MASTER_SITE_GST:=gstreamer/}
 
@@ -30,11 +31,6 @@ LIB_DEPENDS =		textproc/libxml \
 CPPFLAGS +=		-D_POSIX_MONOTONIC_CLOCK=200112L
 
 REGRESS_DEPENDS =	${BASE_PKGPATH}
-
-# XXX when dlopening libgstpython.so (from py-gstreamer), we get 
-# libpython2.6.so.1.0: undefined symbol 'openpty'
-# libpython2.6.so.1.0: undefined symbol 'forkpty'
-LDFLAGS +=	-lutil
 
 CONFIGURE_ENV +=	FLEX_PATH=${LOCALBASE}/bin/gflex \
 			ac_cv_path_PYTHON=""

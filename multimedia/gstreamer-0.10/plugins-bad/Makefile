@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/12/06 19:15:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2010/12/13 07:56:14 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
@@ -11,9 +11,9 @@ PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
 
-REVISION-main =		7
-REVISION-neon =		1
-REVISION-mjpeg =	1
+REVISION-main =		8
+REVISION-neon =		2
+REVISION-mjpeg =	2
 
 MULTI_PACKAGES =	-main -neon -mjpeg
 
@@ -25,7 +25,7 @@ MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}
 MODULES =		devel/gettext
 
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2 \
-			z m pcre gstreamer-0.10 util
+			z m pcre gstreamer-0.10
 
 .for i in ${MULTI_PACKAGES}
 REGRESS_DEPENDS +=	${BASE_PKGPATH},${i}
