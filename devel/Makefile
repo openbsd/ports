@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.873 2010/12/13 08:28:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.874 2010/12/13 09:54:48 espie Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -421,6 +421,7 @@
      SUBDIR += p5-Config-Simple
      SUBDIR += p5-Config-Tiny
      SUBDIR += p5-Context-Preserve
+     SUBDIR += p5-Coro
      SUBDIR += p5-Curses
      SUBDIR += p5-Curses-UI
      SUBDIR += p5-Curses-Widgets
@@ -546,6 +547,7 @@
      SUBDIR += p5-Getopt-Simple
      SUBDIR += p5-Glib2
      SUBDIR += p5-Graph
+     SUBDIR += p5-Guard
      SUBDIR += p5-Hash-AutoHash
      SUBDIR += p5-Hash-AutoHash-Args
      SUBDIR += p5-Hash-Merge
