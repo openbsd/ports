@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/11/26 07:07:56 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2010/12/13 18:34:05 jasper Exp $
 
 COMMENT =		Music Player Daemon
 DISTNAME =		mpd-0.15.12
@@ -16,8 +16,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		c m pthread ogg z stdc++ sndio curl glib-2.0 gthread-2.0
 WANTLIB +=		audiofile ao samplerate FLAC id3tag mad mikmod
 
-MASTER_SITES =		${HOMEPAGE}/uploads/files/ \
-			${MASTER_SITE_SOURCEFORGE:=musicpd/}
+MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=musicpd/}
 
 MODULES =		devel/gettext
 
