@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/22 08:37:04 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/12/13 09:50:12 jasper Exp $
 
 COMMENT=		terminal emulator for X
 
@@ -32,7 +32,6 @@ LIB_DEPENDS=		devel/vte \
 
 RUN_DEPENDS=		devel/desktop-file-utils
 
-USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
