@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/12/11 14:21:08 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/12/13 18:30:10 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -1904,7 +1904,7 @@ lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/stamp.make
 @bin sbin/sogo-slapd-sockd
 @bin sbin/sogo-tool
 @bin sbin/sogod
-share/doc/pkg-readmes/sogo-${VERSION}
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/sogo/
 share/doc/sogo/SOGo_Installation_Guide.odt
 share/doc/sogo/SOGo_Mobile_Devices_Configuration.odt

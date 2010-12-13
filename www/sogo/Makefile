@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/11 14:21:08 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/13 18:30:10 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
@@ -44,8 +44,6 @@ MAKE_FLAGS +=		libGDLContentStore_INTERFACE_VERSION=${SHLIB_VERSION} \
 			libSOGoUI_INTERFACE_VERSION=${SHLIB_VERSION} \
 			SOGo_INTERFACE_VERSION=${SHLIB_VERSION}
 			
-SUBST_VARS =		VERSION
-
 pre-configure:
 .for f in SOGo_Installation_Guide SOGo_Mobile_Devices_Configuration \
     SOGo_Mozilla_Thunderbird_Configuration
