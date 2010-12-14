@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/11/30 16:37:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2010/12/14 14:55:02 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -6,7 +6,7 @@ COMMENT-mono=	mono (.NET) bindings for avahi
 COMMENT-qt3=	qt3 bindings for avahi
 COMMENT-qt4=	qt4 bindings for avahi
 
-V=		0.6.27
+V=		0.6.28
 DISTNAME=	avahi-${V}
 CATEGORIES=	net devel
 
@@ -15,11 +15,6 @@ PKGNAME-gtk=	avahi-gtk-${V}
 PKGNAME-mono=	mono-avahi-${V}
 PKGNAME-qt3=	avahi-qt3-${V}
 PKGNAME-qt4=	avahi-qt4-${V}
-
-REVISION-main=	6
-REVISION-gtk=	1
-REVISION-qt3=	0
-REVISION-qt4=	0
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -57,12 +52,12 @@ USE_GROFF =	Yes
 BUILD_DEPENDS=	converters/xmltoman
 
 WANTLIB-main=	c expat glib-2.0 gobject-2.0 pcre pthread \
-		gthread-2.0 gdbm  daemon dbus-1 \
+		gthread-2.0 gdbm daemon dbus-1 \
 		${MODGETTEXT_WANTLIB}
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		devel/glib2 \
 		databases/gdbm \
-		devel/libdaemon \
+		devel/libdaemon>=0.14 \
 		x11/dbus
 
 # keep in sync with lang/mono/mono.port.mk
@@ -112,7 +107,7 @@ WANTLIB-gtk=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb z \
-		xcb-render xcb-render-util avahi-client avahi-common \
+		xcb-render avahi-client avahi-common GL Xxf86vm drm xcb-shm \
 		avahi-core avahi-glib ${MODGETTEXT_WANTLIB}
 .else
 CONFIGURE_ARGS+= -disable-gtk \
@@ -130,7 +125,8 @@ LIB_DEPENDS-qt3= ${MODGETTEXT_LIB_DEPENDS} \
 WANTLIB-qt3=	GL ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xi \
 		Xinerama Xmu Xrandr Xrender Xt expat fontconfig \
 		freetype jpeg lcms m mng png pthread-stubs xcb z \
-		avahi-common stdc++ ${MODQT3_WANTLIB} ${MODGETTEXT_WANTLIB}
+		avahi-common stdc++ ${MODQT3_WANTLIB} ${MODGETTEXT_WANTLIB} \
+		Xdamage Xxf86vm drm
 .else
 CONFIGURE_ARGS+= --disable-qt3
 .endif
@@ -141,7 +137,8 @@ MODULES+=	x11/qt4
 LIB_DEPENDS-qt4= ${MODGETTEXT_LIB_DEPENDS} \
 		x11/qt4 \
 		net/avahi
-WANTLIB-qt4=	QtCore avahi-common m stdc++ ${MODGETTEXT_WANTLIB}
+WANTLIB-qt4=	QtCore avahi-common m stdc++ ${MODGETTEXT_WANTLIB} \
+		glib-2.0 gthread-2.0 pcre z
 .else
 CONFIGURE_ARGS+= --disable-qt4
 .endif

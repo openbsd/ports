@@ -1,15 +1,3 @@
-For proper function, multicast(4) needs to be enabled. To do so, add the
-following line to /etc/rc.conf.local:
+For proper functionality, multicast(4) needs to be enabled. To do so,
+add the following line to /etc/rc.conf.local:
     multicast_host=YES
-
-To start avahi automatically, add the following to /etc/rc.local:
-(after dbus-daemon but before Zeroconf-aware applications startup)
-
-if [ -x ${PREFIX}/sbin/avahi-daemon ]; then
-	echo -n ' avahi-daemon'; ${PREFIX}/sbin/avahi-daemon -D
-fi
-
-Optionally to start the unicast DNS server configuration daemon, add
-if [ -x ${PREFIX}/sbin/avahi-dnsconfd ]; then
-	echo -n ' avahi-dnsconfd'; ${PREFIX}/sbin/avahi-dnsconfd -D
-fi
