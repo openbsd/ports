@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/14 09:33:03 ajacoutot Exp $
 
 COMMENT=		simple desktop recording tool
 
 GNOME_VERSION=		0.2.2
 GNOME_PROJECT=		byzanz
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		multimedia
 
@@ -20,17 +20,19 @@ MODULES=		devel/gconf2 \
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common
-WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 c
+WANTLIB += Xrender art_lgpl_2 atk-1.0 GL Xxf86vm canberra drm
+WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c gnome-2 ltdl ogg
 WANTLIB += cairo crypto dbus-1 dbus-glib-1 expat fontconfig freetype
 WANTLIB += gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnomecanvas-2 gnomevfs-2 gobject-2.0
 WANTLIB += gstapp-0.10 gstbase-0.10 gstreamer-0.10 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png popt pthread pthread-stubs ssl util
-WANTLIB += xcb xcb-render xcb-render-util xml2 z panel-applet-2
+WANTLIB += xcb xcb-render xml2 z panel-applet-2
+WANTLIB += xcb-shm vorbis vorbisfile
 
-LIB_DEPENDS=		x11/gnome/panel
+LIB_DEPENDS=		x11/gnome/panel \
+			multimedia/gstreamer-0.10/plugins-base
 
 MODGCONF2_SCHEMAS_DIR=	byzanz
 
