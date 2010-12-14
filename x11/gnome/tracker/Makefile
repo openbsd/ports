@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2010/12/14 09:54:17 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -8,7 +8,7 @@ GNOME_VERSION=	0.8.17
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
 PKGNAME=	meta-tracker-${VERSION}
-REVISION=	4
+REVISION=	5
 
 EVO_VERSION=	2.32
 SUBST_VARS=	EVO_VERSION
