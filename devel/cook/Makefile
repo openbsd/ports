@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 17:47:51 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/14 11:04:32 espie Exp $
 # $FreeBSD: Makefile,v 1.5 2000/05/30 23:19:09 jasone Exp $
 
 COMMENT=	like make(1), but more powerful and clean
@@ -13,6 +13,7 @@ MODULES=	devel/gettext
 
 MAINTAINER=	Gregory Steuck <greg@nest.cx>
 
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
