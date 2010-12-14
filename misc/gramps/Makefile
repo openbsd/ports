@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/19 07:23:11 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/14 23:40:14 jasper Exp $
 
 COMMENT=	genealogical research and analysis management program system
 
-DISTNAME=	gramps-3.2.1
-REVISION =	0
+DISTNAME=	gramps-3.2.5
 
 CATEGORIES=	misc x11
 
@@ -36,7 +35,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--localedir=${LOCALBASE}/share/locale \
-		--disable-scrollkeeper \
 		--enable-packager-mode
 USE_GROFF =	Yes
 
