@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/10 21:42:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/12/14 14:54:35 ajacoutot Exp $
 %%SHARED%%
 include/libdaemon/
 include/libdaemon/daemon.h
@@ -12,3 +12,6 @@ lib/libdaemon.a
 lib/libdaemon.la
 lib/pkgconfig/
 lib/pkgconfig/libdaemon.pc
+share/doc/libdaemon/
+share/doc/libdaemon/README.html
+share/doc/libdaemon/style.css
