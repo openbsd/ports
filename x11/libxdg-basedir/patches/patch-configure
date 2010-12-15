@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2010/03/31 12:31:21 dcoppa Exp $
---- configure.orig	Wed Mar 31 10:51:09 2010
-+++ configure	Wed Mar 31 10:51:32 2010
-@@ -12888,7 +12888,7 @@ done
+$OpenBSD: patch-configure,v 1.2 2010/12/15 13:22:03 dcoppa Exp $
+--- configure.orig	Tue Jul 13 07:50:22 2010
++++ configure	Wed Dec 15 14:13:49 2010
+@@ -12943,7 +12943,7 @@ done
  
  
    case $host in
