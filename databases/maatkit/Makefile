@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/26 07:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2010/12/15 12:20:57 jasper Exp $
 
 COMMENT =	MySQL maatkit tools
 
-DISTNAME =	maatkit-6926
+DISTNAME =	maatkit-7119
 CATEGORIES =	databases perl5
 
 HOMEPAGE =	http://www.maatkit.org/
@@ -22,7 +22,6 @@ RUN_DEPENDS =	databases/p5-DBD-mysql>=1.0 \
 BUILD_DEPENDS =	${RUN_DEPENDS}
 
 CONFIGURE_STYLE = perl
-USE_GROFF =	Yes
 PKG_ARCH =	*
 
 .include <bsd.port.mk>
