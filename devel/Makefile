@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.874 2010/12/13 09:54:48 espie Exp $
+# $OpenBSD: Makefile,v 1.875 2010/12/15 00:09:12 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -570,8 +570,8 @@
      SUBDIR += p5-IO-Tty
      SUBDIR += p5-IO-stringy
      SUBDIR += p5-IPC-Run
-     SUBDIR += p5-IPC-Run3
      SUBDIR += p5-IPC-Run-SafeHandles
+     SUBDIR += p5-IPC-Run3
      SUBDIR += p5-IPC-ShareLite
      SUBDIR += p5-IPC-Shareable
      SUBDIR += p5-Inline
@@ -616,14 +616,14 @@
      SUBDIR += p5-MooseX-Getopt
      SUBDIR += p5-MooseX-Has-Sugar
      SUBDIR += p5-MooseX-LazyRequire
-     SUBDIR += p5-MooseX-LogDispatch
      SUBDIR += p5-MooseX-Log-Log4perl
+     SUBDIR += p5-MooseX-LogDispatch
      SUBDIR += p5-MooseX-Meta-TypeConstraint-ForceCoercion
-     SUBDIR += p5-MooseX-MethodAttributes
      SUBDIR += p5-MooseX-Method-Signatures
+     SUBDIR += p5-MooseX-MethodAttributes
      SUBDIR += p5-MooseX-MultiInitArg
-     SUBDIR += p5-MooseX-Params-Validate
      SUBDIR += p5-MooseX-POE
+     SUBDIR += p5-MooseX-Params-Validate
      SUBDIR += p5-MooseX-Role-Parameterized
      SUBDIR += p5-MooseX-Role-WithOverloading
      SUBDIR += p5-MooseX-SemiAffordanceAccessor
@@ -738,8 +738,8 @@
      SUBDIR += p5-Test-Base
      SUBDIR += p5-Test-Class
      SUBDIR += p5-Test-ClassAPI
-     SUBDIR += p5-Test-Corpus-Audio-MPD
      SUBDIR += p5-Test-Cmd
+     SUBDIR += p5-Test-Corpus-Audio-MPD
      SUBDIR += p5-Test-Deep
      SUBDIR += p5-Test-Differences
      SUBDIR += p5-Test-Distribution
@@ -938,8 +938,8 @@
      SUBDIR += pyrex
      SUBDIR += pyusb
      SUBDIR += qgit
-     SUBDIR += qt4-eventsview
      SUBDIR += qt-creator
+     SUBDIR += qt4-eventsview
      SUBDIR += quirks
      SUBDIR += rapidsvn
      SUBDIR += rats
