@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1 2010/12/15 09:31:46 jasper Exp $
+--- tests/Makefile.in.orig	Mon Sep 27 04:24:45 2010
++++ tests/Makefile.in	Wed Dec 15 01:15:09 2010
+@@ -481,7 +481,7 @@ install-dvi: install-dvi-am
+ 
+ install-dvi-am:
+ 
+-install-exec-am: install-binPROGRAMS
++install-exec-am:
+ 
+ install-html: install-html-am
+ 
