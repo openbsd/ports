@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/06/09 08:04:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/12/15 16:01:45 ajacoutot Exp $
 @bin bin/stellarium
 @man man/man1/stellarium.1
 share/applications/stellarium.desktop
@@ -22,6 +22,9 @@ share/locale/bn/
 share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/bn/LC_MESSAGES/stellarium.mo
+share/locale/bo/
+share/locale/bo/LC_MESSAGES/
+share/locale/bo/LC_MESSAGES/stellarium.mo
 share/locale/br/
 share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/stellarium.mo
@@ -41,6 +44,10 @@ share/locale/da/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/da/LC_MESSAGES/stellarium.mo
 share/locale/de/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/de/LC_MESSAGES/stellarium.mo
+share/locale/dv/
+share/locale/dv/LC_MESSAGES/
+share/locale/dv/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/dv/LC_MESSAGES/stellarium.mo
 share/locale/el/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/el/LC_MESSAGES/stellarium.mo
 share/locale/en/LC_MESSAGES/stellarium-skycultures.mo
@@ -84,6 +91,13 @@ share/locale/ga/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ga/LC_MESSAGES/stellarium.mo
 share/locale/gl/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/gl/LC_MESSAGES/stellarium.mo
+share/locale/gu/
+share/locale/gu/LC_MESSAGES/
+share/locale/gu/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/gu/LC_MESSAGES/stellarium.mo
+share/locale/gv/
+share/locale/gv/LC_MESSAGES/
+share/locale/gv/LC_MESSAGES/stellarium.mo
 share/locale/haw/
 share/locale/haw/LC_MESSAGES/
 share/locale/haw/LC_MESSAGES/stellarium-skycultures.mo
@@ -93,8 +107,12 @@ share/locale/he/LC_MESSAGES/stellarium.mo
 share/locale/hi/
 share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/hi/LC_MESSAGES/stellarium.mo
 share/locale/hr/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/hr/LC_MESSAGES/stellarium.mo
+share/locale/hrx/
+share/locale/hrx/LC_MESSAGES/
+share/locale/hrx/LC_MESSAGES/stellarium.mo
 share/locale/hu/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/hu/LC_MESSAGES/stellarium.mo
 share/locale/hy/
@@ -103,6 +121,7 @@ share/locale/hy/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/hy/LC_MESSAGES/stellarium.mo
 share/locale/ia/
 share/locale/ia/LC_MESSAGES/
+share/locale/ia/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ia/LC_MESSAGES/stellarium.mo
 share/locale/id/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/id/LC_MESSAGES/stellarium.mo
@@ -150,12 +169,19 @@ share/locale/mt/
 share/locale/mt/LC_MESSAGES/
 share/locale/mt/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/mt/LC_MESSAGES/stellarium.mo
+share/locale/nan/
+share/locale/nan/LC_MESSAGES/
+share/locale/nan/LC_MESSAGES/stellarium-skycultures.mo
+share/locale/nan/LC_MESSAGES/stellarium.mo
 share/locale/nb/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/nb/LC_MESSAGES/stellarium.mo
 share/locale/nl/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/nl/LC_MESSAGES/stellarium.mo
 share/locale/nn/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/nn/LC_MESSAGES/stellarium.mo
+share/locale/oc/
+share/locale/oc/LC_MESSAGES/
+share/locale/oc/LC_MESSAGES/stellarium.mo
 share/locale/pl/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/pl/LC_MESSAGES/stellarium.mo
 share/locale/pt/LC_MESSAGES/stellarium-skycultures.mo
@@ -166,6 +192,9 @@ share/locale/ro/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ro/LC_MESSAGES/stellarium.mo
 share/locale/ru/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/ru/LC_MESSAGES/stellarium.mo
+share/locale/sco/
+share/locale/sco/LC_MESSAGES/
+share/locale/sco/LC_MESSAGES/stellarium.mo
 share/locale/se/
 share/locale/se/LC_MESSAGES/
 share/locale/se/LC_MESSAGES/stellarium-skycultures.mo
@@ -186,6 +215,9 @@ share/locale/sr/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/sr/LC_MESSAGES/stellarium.mo
 share/locale/sv/LC_MESSAGES/stellarium-skycultures.mo
 share/locale/sv/LC_MESSAGES/stellarium.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
+share/locale/ta/LC_MESSAGES/stellarium.mo
 share/locale/te/
 share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/stellarium-skycultures.mo
@@ -416,12 +448,14 @@ share/stellarium/skycultures/aztec/constellationship.fab
 share/stellarium/skycultures/aztec/description.ar.utf8
 share/stellarium/skycultures/aztec/description.en.utf8
 share/stellarium/skycultures/aztec/description.es.utf8
+share/stellarium/skycultures/aztec/description.ru.utf8
 share/stellarium/skycultures/aztec/edificios.png
 share/stellarium/skycultures/aztec/info.ini
 share/stellarium/skycultures/aztec/mamalhuaztli.png
 share/stellarium/skycultures/aztec/mamalhuaztli_image.png
 share/stellarium/skycultures/aztec/mamalhuaztli_t.png
 share/stellarium/skycultures/aztec/nanahuatzin.png
+share/stellarium/skycultures/aztec/star_names.fab
 share/stellarium/skycultures/aztec/tianquiztli.png
 share/stellarium/skycultures/aztec/tiaquitztli_image.png
 share/stellarium/skycultures/aztec/xonecuilli.png
@@ -433,6 +467,7 @@ share/stellarium/skycultures/chinese/constellationship.fab
 share/stellarium/skycultures/chinese/description.ar.utf8
 share/stellarium/skycultures/chinese/description.en.utf8
 share/stellarium/skycultures/chinese/description.it.utf8
+share/stellarium/skycultures/chinese/description.ru.utf8
 share/stellarium/skycultures/chinese/info.ini
 share/stellarium/skycultures/chinese/star_names.fab
 share/stellarium/skycultures/egyptian/
@@ -441,6 +476,7 @@ share/stellarium/skycultures/egyptian/constellationship.fab
 share/stellarium/skycultures/egyptian/description.ar.utf8
 share/stellarium/skycultures/egyptian/description.en.utf8
 share/stellarium/skycultures/egyptian/description.it.utf8
+share/stellarium/skycultures/egyptian/description.ru.utf8
 share/stellarium/skycultures/egyptian/info.ini
 share/stellarium/skycultures/egyptian/star_names.fab
 share/stellarium/skycultures/inuit/
@@ -454,6 +490,7 @@ share/stellarium/skycultures/inuit/constellationship.fab
 share/stellarium/skycultures/inuit/description.ar.utf8
 share/stellarium/skycultures/inuit/description.en.utf8
 share/stellarium/skycultures/inuit/description.it.utf8
+share/stellarium/skycultures/inuit/description.ru.utf8
 share/stellarium/skycultures/inuit/dogs.png
 share/stellarium/skycultures/inuit/info.ini
 share/stellarium/skycultures/inuit/lamp-stand.png
@@ -471,6 +508,7 @@ share/stellarium/skycultures/korean/constellationship.fab
 share/stellarium/skycultures/korean/description.ar.utf8
 share/stellarium/skycultures/korean/description.en.utf8
 share/stellarium/skycultures/korean/description.it.utf8
+share/stellarium/skycultures/korean/description.ru.utf8
 share/stellarium/skycultures/korean/info.ini
 share/stellarium/skycultures/korean/on_korea_constellations.txt
 share/stellarium/skycultures/korean/star_names.fab
@@ -480,6 +518,7 @@ share/stellarium/skycultures/lakota/constellationship.fab
 share/stellarium/skycultures/lakota/description.ar.utf8
 share/stellarium/skycultures/lakota/description.en.utf8
 share/stellarium/skycultures/lakota/description.it.utf8
+share/stellarium/skycultures/lakota/description.ru.utf8
 share/stellarium/skycultures/lakota/info.ini
 share/stellarium/skycultures/lakota/star_names.fab
 share/stellarium/skycultures/maori/
@@ -488,6 +527,7 @@ share/stellarium/skycultures/maori/constellationship.fab
 share/stellarium/skycultures/maori/description.ar.utf8
 share/stellarium/skycultures/maori/description.en.utf8
 share/stellarium/skycultures/maori/description.it.utf8
+share/stellarium/skycultures/maori/description.ru.utf8
 share/stellarium/skycultures/maori/info.ini
 share/stellarium/skycultures/maori/references.txt
 share/stellarium/skycultures/maori/star_names.fab
@@ -497,6 +537,7 @@ share/stellarium/skycultures/navajo/constellationship.fab
 share/stellarium/skycultures/navajo/description.ar.utf8
 share/stellarium/skycultures/navajo/description.en.utf8
 share/stellarium/skycultures/navajo/description.it.utf8
+share/stellarium/skycultures/navajo/description.ru.utf8
 share/stellarium/skycultures/navajo/info.ini
 share/stellarium/skycultures/navajo/star_names.fab
 share/stellarium/skycultures/norse/
@@ -505,6 +546,7 @@ share/stellarium/skycultures/norse/constellationship.fab
 share/stellarium/skycultures/norse/description.ar.utf8
 share/stellarium/skycultures/norse/description.en.utf8
 share/stellarium/skycultures/norse/description.it.utf8
+share/stellarium/skycultures/norse/description.ru.utf8
 share/stellarium/skycultures/norse/info.ini
 share/stellarium/skycultures/norse/star_names.fab
 share/stellarium/skycultures/polynesian/
@@ -514,6 +556,7 @@ share/stellarium/skycultures/polynesian/constellationship.fab
 share/stellarium/skycultures/polynesian/description.ar.utf8
 share/stellarium/skycultures/polynesian/description.en.utf8
 share/stellarium/skycultures/polynesian/description.it.utf8
+share/stellarium/skycultures/polynesian/description.ru.utf8
 share/stellarium/skycultures/polynesian/info.ini
 share/stellarium/skycultures/polynesian/star_names.fab
 share/stellarium/skycultures/sami/
@@ -521,13 +564,16 @@ share/stellarium/skycultures/sami/constellation_names.eng.fab
 share/stellarium/skycultures/sami/constellationship.fab
 share/stellarium/skycultures/sami/description.ar.utf8
 share/stellarium/skycultures/sami/description.en.utf8
+share/stellarium/skycultures/sami/description.ru.utf8
 share/stellarium/skycultures/sami/info.ini
+share/stellarium/skycultures/sami/star_names.fab
 share/stellarium/skycultures/tupi/
 share/stellarium/skycultures/tupi/constellation_names.eng.fab
 share/stellarium/skycultures/tupi/constellationship.fab
 share/stellarium/skycultures/tupi/description.ar.utf8
 share/stellarium/skycultures/tupi/description.en.utf8
 share/stellarium/skycultures/tupi/description.it.utf8
+share/stellarium/skycultures/tupi/description.ru.utf8
 share/stellarium/skycultures/tupi/info.ini
 share/stellarium/skycultures/tupi/star_names.fab
 share/stellarium/skycultures/western/
@@ -569,6 +615,7 @@ share/stellarium/skycultures/western/delphinus.png
 share/stellarium/skycultures/western/description.ar.utf8
 share/stellarium/skycultures/western/description.en.utf8
 share/stellarium/skycultures/western/description.it.utf8
+share/stellarium/skycultures/western/description.ru.utf8
 share/stellarium/skycultures/western/dorado.png
 share/stellarium/skycultures/western/draco.png
 share/stellarium/skycultures/western/equuleus.png

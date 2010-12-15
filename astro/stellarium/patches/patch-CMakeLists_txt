@@ -1,18 +1,18 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.2 2010/06/09 08:04:28 ajacoutot Exp $
---- CMakeLists.txt.orig	Wed Jun  2 16:23:55 2010
-+++ CMakeLists.txt	Tue Jun  8 19:49:55 2010
-@@ -32,8 +32,8 @@ ENDIF()
+$OpenBSD: patch-CMakeLists_txt,v 1.3 2010/12/15 16:01:45 ajacoutot Exp $
+--- CMakeLists.txt.orig	Sun Dec  5 17:31:01 2010
++++ CMakeLists.txt	Wed Dec 15 16:37:26 2010
+@@ -33,8 +33,8 @@ ENDIF()
  
  
  IF(UNIX AND NOT WIN32)
-- SET(CMAKE_C_FLAGS "-Wall -Wextra -Wno-unused-parameter")       # additional C compile flags
-- SET(CMAKE_CXX_FLAGS "-Wall -Wextra")     # additional CPP compile flags
-+ SET(CMAKE_C_FLAGS "-Wall -Wno-unused-parameter")       # additional C compile flags
-+ SET(CMAKE_CXX_FLAGS "-Wall")     # additional CPP compile flags
+- SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wno-unused-parameter")       # additional C compile flags
+- SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wextra")     # additional CPP compile flags
++ SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wno-unused-parameter")       # additional C compile flags
++ SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall")     # additional CPP compile flags
  ELSE()
-  SET(CMAKE_C_FLAGS "-Wall -fexceptions -fident -mthreads")
-  SET(CMAKE_CXX_FLAGS "-Wall -Wsign-promo -fexceptions -fident -mthreads")
-@@ -151,12 +151,12 @@ IF (BUILD_STATIC_PLUGINS)
+  SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -fexceptions -fident -mthreads")
+  SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wsign-promo -fexceptions -fident -mthreads")
+@@ -150,12 +150,12 @@ IF (BUILD_STATIC_PLUGINS)
  	## Library for loading FITS image files
  	FIND_PATH(CFITSIO_INCLUDE_DIR fitsio.h
  	  /usr/include
@@ -27,7 +27,7 @@ $OpenBSD: patch-CMakeLists_txt,v 1.2 2010/06/09 08:04:28 ajacoutot Exp $
  	  /opt/local/lib
  	  DOC "cfitsio link options")
  	SET(QT_USE_QTXML TRUE) # For VirGO we also need QtXml module
-@@ -195,12 +195,12 @@ IF(ENABLE_NLS)
+@@ -194,12 +194,12 @@ IF(ENABLE_NLS)
  	PATHS
  	/usr/include
  	/sw/include

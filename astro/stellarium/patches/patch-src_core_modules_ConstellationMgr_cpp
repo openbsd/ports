@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_core_modules_ConstellationMgr_cpp,v 1.1 2010/06/09 08:04:28 ajacoutot Exp $
+$OpenBSD: patch-src_core_modules_ConstellationMgr_cpp,v 1.2 2010/12/15 16:01:45 ajacoutot Exp $
 
 From pkgsrc:
 -prefix uses of "exception" with "std::" to avoid conflict with
 a similar definition in new "boost".
 
---- src/core/modules/ConstellationMgr.cpp.orig	Tue Jun  8 20:03:10 2010
-+++ src/core/modules/ConstellationMgr.cpp	Tue Jun  8 20:03:49 2010
-@@ -390,7 +390,7 @@ void ConstellationMgr::loadLinesAndArt(const QString &
+--- src/core/modules/ConstellationMgr.cpp.orig	Sun Dec  5 17:31:00 2010
++++ src/core/modules/ConstellationMgr.cpp	Wed Dec 15 16:35:33 2010
+@@ -411,7 +411,7 @@ void ConstellationMgr::loadLinesAndArt(const QString &
  				{
  					texturePath = StelFileMgr::findFile(QString("textures/")+texfile);
  				}

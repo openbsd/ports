@@ -1,8 +1,8 @@
-$OpenBSD: patch-data_default_config_ini,v 1.6 2010/06/09 08:04:28 ajacoutot Exp $
---- data/default_config.ini.orig	Wed Jun  2 16:23:45 2010
-+++ data/default_config.ini	Tue Jun  8 18:35:57 2010
-@@ -3,9 +3,9 @@ version                        = 0.10.5
- invert_screenshots_colors      = false
+$OpenBSD: patch-data_default_config_ini,v 1.7 2010/12/15 16:01:45 ajacoutot Exp $
+--- data/default_config.ini.orig	Sun Dec  5 17:31:00 2010
++++ data/default_config.ini	Wed Dec 15 16:35:33 2010
+@@ -9,9 +9,9 @@ SolarSystemEditor              = true
+ TimeZoneConfiguration          = true
  
  [video]
 -fullscreen                     = true
