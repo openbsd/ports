@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.6 2009/10/11 23:47:12 ajacoutot Exp $
---- configure.orig	Sat May 23 11:44:37 2009
-+++ configure	Mon Oct 12 01:44:00 2009
-@@ -18088,7 +18088,7 @@ if test "x$ac_cv_lib_aspell_get_aspell_dict_info_list"
+$OpenBSD: patch-configure,v 1.7 2010/12/15 16:57:39 ajacoutot Exp $
+--- configure.orig	Thu Apr  1 22:56:39 2010
++++ configure	Wed Dec 15 17:54:01 2010
+@@ -18213,7 +18213,7 @@ if test "x$ac_cv_lib_aspell_get_aspell_dict_info_list"
  fi
  
  
