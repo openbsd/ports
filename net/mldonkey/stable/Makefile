@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.37 2010/11/19 22:31:34 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2010/12/15 15:40:21 dcoppa Exp $
 
 COMMENT =	e-donkey client
-DISTNAME =	mldonkey-3.0.5
-REVISION =	0
+DISTNAME =	mldonkey-3.0.6
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
@@ -18,15 +17,15 @@ PERMIT_DISTFILES_CDROM =Yes
 
 EXTRACT_SUFX =		.tar.bz2
 
-WANTLIB +=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB +=		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 bz2
-WANTLIB +=		c cairo charset expat fontconfig freetype gd
-WANTLIB +=		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB +=		gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB +=		gtk-x11-2.0 iconv intl jpeg m magic pango-1.0
-WANTLIB +=		pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB +=		pthread pthread-stubs rsvg-2 stdc++ xcb
-WANTLIB +=		xcb-render xcb-render-util z
+WANTLIB +=		GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB +=		Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB +=		atk-1.0 bz2 c cairo charset curses drm expat
+WANTLIB +=		fontconfig freetype gd gdk-x11-2.0
+WANTLIB +=		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB +=		gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv intl
+WANTLIB +=		jpeg m magic pixman-1 pango-1.0 pangocairo-1.0
+WANTLIB +=		pangoft2-1.0 png pthread pthread-stubs rsvg-2
+WANTLIB +=		stdc++ xcb xcb-render xcb-shm z
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 AUTOCONF_DIR =		${WRKSRC}/config
