@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.17 2010/11/26 17:27:38 espie Exp $
+# $OpenBSD: ghc.port.mk,v 1.18 2010/12/15 13:59:54 ajacoutot Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -25,7 +25,7 @@ BUILD_DEPENDS +=	lang/ghc
 # necessary tags to your PLIST by hand).
 # Add "nort" if the port doesn't depend on the GHC runtime. This will
 # also turn off the default "hs-" prefix for PKGNAME.
-# Finally, set it to or add "hackage" if the distfiles are avialable on
+# Finally, set it to or add "hackage" if the distfiles are available on
 # hackage.haskell.org.
 
 MODGHC_BUILD ?=
