@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/12/13 10:26:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/12/16 12:05:04 jasper Exp $
 bin/bp_aacomp.pl
 bin/bp_biblio.pl
 bin/bp_biofetch_genbank_proxy.pl
@@ -7,27 +7,28 @@ bin/bp_biogetseq.pl
 bin/bp_blast2tree.pl
 bin/bp_bulk_load_gff.pl
 bin/bp_chaos_plot.pl
+bin/bp_classify_hits_kingdom.pl
 bin/bp_composite_LD.pl
-bin/bp_contig_draw.pl
 bin/bp_dbsplit.pl
-bin/bp_embl2picture.pl
+bin/bp_download_query_genbank.pl
+bin/bp_einfo.pl
 bin/bp_extract_feature_seq.pl
 bin/bp_fast_load_gff.pl
 bin/bp_fastam9_to_table.pl
-bin/bp_feature_draw.pl
 bin/bp_fetch.pl
 bin/bp_filter_search.pl
 bin/bp_flanks.pl
-bin/bp_frend.pl
 bin/bp_gccalc.pl
 bin/bp_genbank2gff.pl
 bin/bp_genbank2gff3.pl
 bin/bp_generate_histogram.pl
-bin/bp_glyphs2-demo.pl
 bin/bp_heterogeneity_test.pl
+bin/bp_hivq.pl
+bin/bp_hmmer_to_table.pl
 bin/bp_index.pl
 bin/bp_load_gff.pl
 bin/bp_local_taxonomydb_query.pl
+bin/bp_make_mrna_protein.pl
 bin/bp_mask_by_search.pl
 bin/bp_meta_gff.pl
 bin/bp_mrtrans.pl
@@ -36,22 +37,29 @@ bin/bp_nexus2nh.pl
 bin/bp_nrdb.pl
 bin/bp_oligo_count.pl
 bin/bp_pairwise_kaks.pl
-bin/bp_pg_bulk_load_gff.pl
+bin/bp_parse_hmmsearch.pl
 bin/bp_process_gadfly.pl
 bin/bp_process_sgd.pl
 bin/bp_process_wormbase.pl
+bin/bp_query_entrez_taxa.pl
 bin/bp_remote_blast.pl
+bin/bp_revtrans-motif.pl
 bin/bp_search2BSML.pl
 bin/bp_search2alnblocks.pl
 bin/bp_search2gff.pl
 bin/bp_search2table.pl
 bin/bp_search2tribe.pl
-bin/bp_search_overview.pl
 bin/bp_seq_length.pl
 bin/bp_seqconvert.pl
+bin/bp_seqfeature_delete.pl
+bin/bp_seqfeature_gff3.pl
+bin/bp_seqfeature_load.pl
+bin/bp_seqret.pl
+bin/bp_seqretsplit.pl
 bin/bp_split_seq.pl
 bin/bp_sreformat.pl
 bin/bp_taxid4species.pl
+bin/bp_taxonomy2tree.pl
 bin/bp_translate_seq.pl
 bin/bp_tree2pag.pl
 bin/bp_unflatten_seq.pl
@@ -65,6 +73,9 @@ ${P5SITE}/Bio/Align/StatisticsI.pm
 ${P5SITE}/Bio/Align/Utilities.pm
 ${P5SITE}/Bio/AlignIO/
 ${P5SITE}/Bio/AlignIO.pm
+${P5SITE}/Bio/AlignIO/Handler/
+${P5SITE}/Bio/AlignIO/Handler/GenericAlignHandler.pm
+${P5SITE}/Bio/AlignIO/arp.pm
 ${P5SITE}/Bio/AlignIO/bl2seq.pm
 ${P5SITE}/Bio/AlignIO/clustalw.pm
 ${P5SITE}/Bio/AlignIO/emboss.pm
@@ -80,10 +91,12 @@ ${P5SITE}/Bio/AlignIO/nexus.pm
 ${P5SITE}/Bio/AlignIO/pfam.pm
 ${P5SITE}/Bio/AlignIO/phylip.pm
 ${P5SITE}/Bio/AlignIO/po.pm
+${P5SITE}/Bio/AlignIO/proda.pm
 ${P5SITE}/Bio/AlignIO/prodom.pm
 ${P5SITE}/Bio/AlignIO/psi.pm
 ${P5SITE}/Bio/AlignIO/selex.pm
 ${P5SITE}/Bio/AlignIO/stockholm.pm
+${P5SITE}/Bio/AlignIO/xmfa.pm
 ${P5SITE}/Bio/AnalysisI.pm
 ${P5SITE}/Bio/AnalysisParserI.pm
 ${P5SITE}/Bio/AnalysisResultI.pm
@@ -95,9 +108,12 @@ ${P5SITE}/Bio/Annotation/Comment.pm
 ${P5SITE}/Bio/Annotation/DBLink.pm
 ${P5SITE}/Bio/Annotation/OntologyTerm.pm
 ${P5SITE}/Bio/Annotation/Reference.pm
+${P5SITE}/Bio/Annotation/Relation.pm
 ${P5SITE}/Bio/Annotation/SimpleValue.pm
 ${P5SITE}/Bio/Annotation/StructuredValue.pm
+${P5SITE}/Bio/Annotation/TagTree.pm
 ${P5SITE}/Bio/Annotation/Target.pm
+${P5SITE}/Bio/Annotation/Tree.pm
 ${P5SITE}/Bio/Annotation/TypeManager.pm
 ${P5SITE}/Bio/AnnotationCollectionI.pm
 ${P5SITE}/Bio/AnnotationI.pm
@@ -108,9 +124,12 @@ ${P5SITE}/Bio/Assembly/IO/
 ${P5SITE}/Bio/Assembly/IO.pm
 ${P5SITE}/Bio/Assembly/IO/ace.pm
 ${P5SITE}/Bio/Assembly/IO/phrap.pm
+${P5SITE}/Bio/Assembly/IO/tigr.pm
 ${P5SITE}/Bio/Assembly/Scaffold.pm
 ${P5SITE}/Bio/Assembly/ScaffoldI.pm
 ${P5SITE}/Bio/Assembly/Singlet.pm
+${P5SITE}/Bio/Assembly/Tools/
+${P5SITE}/Bio/Assembly/Tools/ContigSpectrum.pm
 ${P5SITE}/Bio/Biblio/
 ${P5SITE}/Bio/Biblio.pm
 ${P5SITE}/Bio/Biblio/Article.pm
@@ -182,6 +201,11 @@ ${P5SITE}/Bio/DB/BioFetch.pm
 ${P5SITE}/Bio/DB/CUTG.pm
 ${P5SITE}/Bio/DB/DBFetch.pm
 ${P5SITE}/Bio/DB/EMBL.pm
+${P5SITE}/Bio/DB/EUtilities.pm
+${P5SITE}/Bio/DB/EntrezGene.pm
+${P5SITE}/Bio/DB/Expression/
+${P5SITE}/Bio/DB/Expression.pm
+${P5SITE}/Bio/DB/Expression/geo.pm
 ${P5SITE}/Bio/DB/Failover.pm
 ${P5SITE}/Bio/DB/Fasta.pm
 ${P5SITE}/Bio/DB/FileCache.pm
@@ -193,13 +217,14 @@ ${P5SITE}/Bio/DB/Flat/BDB/embl.pm
 ${P5SITE}/Bio/DB/Flat/BDB/fasta.pm
 ${P5SITE}/Bio/DB/Flat/BDB/genbank.pm
 ${P5SITE}/Bio/DB/Flat/BDB/swiss.pm
-${P5SITE}/Bio/DB/Flat/BDB/swissprot.pm
 ${P5SITE}/Bio/DB/Flat/BinarySearch.pm
-${P5SITE}/Bio/DB/GDB.pm
 ${P5SITE}/Bio/DB/GFF/
 ${P5SITE}/Bio/DB/GFF.pm
 ${P5SITE}/Bio/DB/GFF/Adaptor/
 ${P5SITE}/Bio/DB/GFF/Adaptor/ace.pm
+${P5SITE}/Bio/DB/GFF/Adaptor/berkeleydb/
+${P5SITE}/Bio/DB/GFF/Adaptor/berkeleydb.pm
+${P5SITE}/Bio/DB/GFF/Adaptor/berkeleydb/iterator.pm
 ${P5SITE}/Bio/DB/GFF/Adaptor/biofetch.pm
 ${P5SITE}/Bio/DB/GFF/Adaptor/biofetch_oracle.pm
 ${P5SITE}/Bio/DB/GFF/Adaptor/dbi/
@@ -208,20 +233,27 @@ ${P5SITE}/Bio/DB/GFF/Adaptor/dbi/caching_handle.pm
 ${P5SITE}/Bio/DB/GFF/Adaptor/dbi/iterator.pm
 ${P5SITE}/Bio/DB/GFF/Adaptor/dbi/mysql.pm
 ${P5SITE}/Bio/DB/GFF/Adaptor/dbi/mysqlace.pm
+${P5SITE}/Bio/DB/GFF/Adaptor/dbi/mysqlcmap.pm
 ${P5SITE}/Bio/DB/GFF/Adaptor/dbi/mysqlopt.pm
 ${P5SITE}/Bio/DB/GFF/Adaptor/dbi/oracle.pm
 ${P5SITE}/Bio/DB/GFF/Adaptor/dbi/oracleace.pm
 ${P5SITE}/Bio/DB/GFF/Adaptor/dbi/pg.pm
+${P5SITE}/Bio/DB/GFF/Adaptor/dbi/pg_fts.pm
+${P5SITE}/Bio/DB/GFF/Adaptor/memory/
 ${P5SITE}/Bio/DB/GFF/Adaptor/memory.pm
-${P5SITE}/Bio/DB/GFF/Adaptor/memory_iterator.pm
+${P5SITE}/Bio/DB/GFF/Adaptor/memory/feature_serializer.pm
+${P5SITE}/Bio/DB/GFF/Adaptor/memory/iterator.pm
 ${P5SITE}/Bio/DB/GFF/Aggregator/
 ${P5SITE}/Bio/DB/GFF/Aggregator.pm
 ${P5SITE}/Bio/DB/GFF/Aggregator/alignment.pm
 ${P5SITE}/Bio/DB/GFF/Aggregator/clone.pm
 ${P5SITE}/Bio/DB/GFF/Aggregator/coding.pm
+${P5SITE}/Bio/DB/GFF/Aggregator/gene.pm
 ${P5SITE}/Bio/DB/GFF/Aggregator/match.pm
 ${P5SITE}/Bio/DB/GFF/Aggregator/none.pm
+${P5SITE}/Bio/DB/GFF/Aggregator/orf.pm
 ${P5SITE}/Bio/DB/GFF/Aggregator/processed_transcript.pm
+${P5SITE}/Bio/DB/GFF/Aggregator/so_transcript.pm
 ${P5SITE}/Bio/DB/GFF/Aggregator/transcript.pm
 ${P5SITE}/Bio/DB/GFF/Aggregator/ucsc_acembly.pm
 ${P5SITE}/Bio/DB/GFF/Aggregator/ucsc_ensgene.pm
@@ -243,29 +275,65 @@ ${P5SITE}/Bio/DB/GFF/Util/Binning.pm
 ${P5SITE}/Bio/DB/GFF/Util/Rearrange.pm
 ${P5SITE}/Bio/DB/GenBank.pm
 ${P5SITE}/Bio/DB/GenPept.pm
+${P5SITE}/Bio/DB/GenericWebAgent.pm
+${P5SITE}/Bio/DB/HIV/
+${P5SITE}/Bio/DB/HIV.pm
+${P5SITE}/Bio/DB/HIV/HIVAnnotProcessor.pm
+${P5SITE}/Bio/DB/HIV/HIVQueryHelper.pm
+${P5SITE}/Bio/DB/HIV/lanl-schema.xml
 ${P5SITE}/Bio/DB/InMemoryCache.pm
-${P5SITE}/Bio/DB/MANIFEST
-${P5SITE}/Bio/DB/Makefile.PL
+${P5SITE}/Bio/DB/LocationI.pm
 ${P5SITE}/Bio/DB/MeSH.pm
 ${P5SITE}/Bio/DB/NCBIHelper.pm
+${P5SITE}/Bio/DB/Qual.pm
 ${P5SITE}/Bio/DB/Query/
 ${P5SITE}/Bio/DB/Query/GenBank.pm
+${P5SITE}/Bio/DB/Query/HIVQuery.pm
 ${P5SITE}/Bio/DB/Query/WebQuery.pm
 ${P5SITE}/Bio/DB/QueryI.pm
 ${P5SITE}/Bio/DB/RandomAccessI.pm
 ${P5SITE}/Bio/DB/RefSeq.pm
+${P5SITE}/Bio/DB/ReferenceI.pm
 ${P5SITE}/Bio/DB/Registry.pm
+${P5SITE}/Bio/DB/SeqFeature/
+${P5SITE}/Bio/DB/SeqFeature.pm
+${P5SITE}/Bio/DB/SeqFeature/NormalizedFeature.pm
+${P5SITE}/Bio/DB/SeqFeature/NormalizedFeatureI.pm
+${P5SITE}/Bio/DB/SeqFeature/NormalizedTableFeatureI.pm
+${P5SITE}/Bio/DB/SeqFeature/Segment.pm
+${P5SITE}/Bio/DB/SeqFeature/Store/
+${P5SITE}/Bio/DB/SeqFeature/Store.pm
+${P5SITE}/Bio/DB/SeqFeature/Store/DBI/
+${P5SITE}/Bio/DB/SeqFeature/Store/DBI/Iterator.pm
+${P5SITE}/Bio/DB/SeqFeature/Store/DBI/Pg.pm
+${P5SITE}/Bio/DB/SeqFeature/Store/DBI/SQLite.pm
+${P5SITE}/Bio/DB/SeqFeature/Store/DBI/mysql.pm
+${P5SITE}/Bio/DB/SeqFeature/Store/FeatureFileLoader.pm
+${P5SITE}/Bio/DB/SeqFeature/Store/GFF2Loader.pm
+${P5SITE}/Bio/DB/SeqFeature/Store/GFF3Loader.pm
+${P5SITE}/Bio/DB/SeqFeature/Store/LoadHelper.pm
+${P5SITE}/Bio/DB/SeqFeature/Store/Loader.pm
+${P5SITE}/Bio/DB/SeqFeature/Store/bdb.pm
+${P5SITE}/Bio/DB/SeqFeature/Store/berkeleydb.pm
+${P5SITE}/Bio/DB/SeqFeature/Store/berkeleydb3.pm
+${P5SITE}/Bio/DB/SeqFeature/Store/memory.pm
+${P5SITE}/Bio/DB/SeqHound.pm
 ${P5SITE}/Bio/DB/SeqI.pm
+${P5SITE}/Bio/DB/SeqVersion/
+${P5SITE}/Bio/DB/SeqVersion.pm
+${P5SITE}/Bio/DB/SeqVersion/gi.pm
 ${P5SITE}/Bio/DB/SwissProt.pm
+${P5SITE}/Bio/DB/TFBS/
+${P5SITE}/Bio/DB/TFBS.pm
+${P5SITE}/Bio/DB/TFBS/transfac_pro.pm
 ${P5SITE}/Bio/DB/Taxonomy/
 ${P5SITE}/Bio/DB/Taxonomy.pm
 ${P5SITE}/Bio/DB/Taxonomy/entrez.pm
 ${P5SITE}/Bio/DB/Taxonomy/flatfile.pm
+${P5SITE}/Bio/DB/Taxonomy/list.pm
 ${P5SITE}/Bio/DB/Universal.pm
 ${P5SITE}/Bio/DB/UpdateableSeqI.pm
 ${P5SITE}/Bio/DB/WebDBSeqI.pm
-${P5SITE}/Bio/DB/XEMBL.pm
-${P5SITE}/Bio/DB/XEMBLService.pm
 ${P5SITE}/Bio/DBLinkContainerI.pm
 ${P5SITE}/Bio/Das/
 ${P5SITE}/Bio/Das/FeatureTypeI.pm
@@ -276,24 +344,27 @@ ${P5SITE}/Bio/Event/
 ${P5SITE}/Bio/Event/EventGeneratorI.pm
 ${P5SITE}/Bio/Event/EventHandlerI.pm
 ${P5SITE}/Bio/Expression/
+${P5SITE}/Bio/Expression/Contact.pm
+${P5SITE}/Bio/Expression/DataSet.pm
 ${P5SITE}/Bio/Expression/FeatureGroup/
 ${P5SITE}/Bio/Expression/FeatureGroup.pm
 ${P5SITE}/Bio/Expression/FeatureGroup/FeatureGroupMas50.pm
 ${P5SITE}/Bio/Expression/FeatureI.pm
 ${P5SITE}/Bio/Expression/FeatureSet/
 ${P5SITE}/Bio/Expression/FeatureSet/FeatureSetMas50.pm
+${P5SITE}/Bio/Expression/Platform.pm
+${P5SITE}/Bio/Expression/ProbeI.pm
+${P5SITE}/Bio/Expression/Sample.pm
 ${P5SITE}/Bio/Factory/
 ${P5SITE}/Bio/Factory/AnalysisI.pm
 ${P5SITE}/Bio/Factory/ApplicationFactoryI.pm
 ${P5SITE}/Bio/Factory/DriverFactory.pm
 ${P5SITE}/Bio/Factory/FTLocationFactory.pm
-${P5SITE}/Bio/Factory/HitFactoryI.pm
 ${P5SITE}/Bio/Factory/LocationFactoryI.pm
 ${P5SITE}/Bio/Factory/MapFactoryI.pm
 ${P5SITE}/Bio/Factory/ObjectBuilderI.pm
 ${P5SITE}/Bio/Factory/ObjectFactory.pm
 ${P5SITE}/Bio/Factory/ObjectFactoryI.pm
-${P5SITE}/Bio/Factory/ResultFactoryI.pm
 ${P5SITE}/Bio/Factory/SeqAnalysisParserFactory.pm
 ${P5SITE}/Bio/Factory/SeqAnalysisParserFactoryI.pm
 ${P5SITE}/Bio/Factory/SequenceFactoryI.pm
@@ -307,95 +378,23 @@ ${P5SITE}/Bio/FeatureIO/bed.pm
 ${P5SITE}/Bio/FeatureIO/gff.pm
 ${P5SITE}/Bio/FeatureIO/gtf.pm
 ${P5SITE}/Bio/FeatureIO/interpro.pm
-${P5SITE}/Bio/Graph/
-${P5SITE}/Bio/Graph/Edge.pm
-${P5SITE}/Bio/Graph/IO/
-${P5SITE}/Bio/Graph/IO.pm
-${P5SITE}/Bio/Graph/IO/dip.pm
-${P5SITE}/Bio/Graph/IO/psi_xml.pm
-${P5SITE}/Bio/Graph/ProteinGraph.pm
-${P5SITE}/Bio/Graph/SimpleGraph/
-${P5SITE}/Bio/Graph/SimpleGraph.pm
-${P5SITE}/Bio/Graph/SimpleGraph/Traversal.pm
-${P5SITE}/Bio/Graphics/
-${P5SITE}/Bio/Graphics.pm
-${P5SITE}/Bio/Graphics/ConfiguratorI.pm
-${P5SITE}/Bio/Graphics/Feature.pm
-${P5SITE}/Bio/Graphics/FeatureFile/
-${P5SITE}/Bio/Graphics/FeatureFile.pm
-${P5SITE}/Bio/Graphics/FeatureFile/Iterator.pm
-${P5SITE}/Bio/Graphics/Glyph/
-${P5SITE}/Bio/Graphics/Glyph.pm
-${P5SITE}/Bio/Graphics/Glyph/Factory.pm
-${P5SITE}/Bio/Graphics/Glyph/alignment.pm
-${P5SITE}/Bio/Graphics/Glyph/anchored_arrow.pm
-${P5SITE}/Bio/Graphics/Glyph/arrow.pm
-${P5SITE}/Bio/Graphics/Glyph/box.pm
-${P5SITE}/Bio/Graphics/Glyph/broken_line.pm
-${P5SITE}/Bio/Graphics/Glyph/cds.pm
-${P5SITE}/Bio/Graphics/Glyph/christmas_arrow.pm
-${P5SITE}/Bio/Graphics/Glyph/crossbox.pm
-${P5SITE}/Bio/Graphics/Glyph/dashed_line.pm
-${P5SITE}/Bio/Graphics/Glyph/diamond.pm
-${P5SITE}/Bio/Graphics/Glyph/dna.pm
-${P5SITE}/Bio/Graphics/Glyph/dot.pm
-${P5SITE}/Bio/Graphics/Glyph/dumbbell.pm
-${P5SITE}/Bio/Graphics/Glyph/ellipse.pm
-${P5SITE}/Bio/Graphics/Glyph/ex.pm
-${P5SITE}/Bio/Graphics/Glyph/extending_arrow.pm
-${P5SITE}/Bio/Graphics/Glyph/flag.pm
-${P5SITE}/Bio/Graphics/Glyph/generic.pm
-${P5SITE}/Bio/Graphics/Glyph/graded_segments.pm
-${P5SITE}/Bio/Graphics/Glyph/group.pm
-${P5SITE}/Bio/Graphics/Glyph/heterogeneous_segments.pm
-${P5SITE}/Bio/Graphics/Glyph/lightning.pm
-${P5SITE}/Bio/Graphics/Glyph/line.pm
-${P5SITE}/Bio/Graphics/Glyph/minmax.pm
-${P5SITE}/Bio/Graphics/Glyph/oval.pm
-${P5SITE}/Bio/Graphics/Glyph/pentagram.pm
-${P5SITE}/Bio/Graphics/Glyph/pinsertion.pm
-${P5SITE}/Bio/Graphics/Glyph/primers.pm
-${P5SITE}/Bio/Graphics/Glyph/processed_transcript.pm
-${P5SITE}/Bio/Graphics/Glyph/ragged_ends.pm
-${P5SITE}/Bio/Graphics/Glyph/redgreen_box.pm
-${P5SITE}/Bio/Graphics/Glyph/redgreen_segment.pm
-${P5SITE}/Bio/Graphics/Glyph/repeating_shape.pm
-${P5SITE}/Bio/Graphics/Glyph/rndrect.pm
-${P5SITE}/Bio/Graphics/Glyph/ruler_arrow.pm
-${P5SITE}/Bio/Graphics/Glyph/saw_teeth.pm
-${P5SITE}/Bio/Graphics/Glyph/segmented_keyglyph.pm
-${P5SITE}/Bio/Graphics/Glyph/segments.pm
-${P5SITE}/Bio/Graphics/Glyph/span.pm
-${P5SITE}/Bio/Graphics/Glyph/splice_site.pm
-${P5SITE}/Bio/Graphics/Glyph/text_in_box.pm
-${P5SITE}/Bio/Graphics/Glyph/three_letters.pm
-${P5SITE}/Bio/Graphics/Glyph/tic_tac_toe.pm
-${P5SITE}/Bio/Graphics/Glyph/toomany.pm
-${P5SITE}/Bio/Graphics/Glyph/track.pm
-${P5SITE}/Bio/Graphics/Glyph/transcript.pm
-${P5SITE}/Bio/Graphics/Glyph/transcript2.pm
-${P5SITE}/Bio/Graphics/Glyph/translation.pm
-${P5SITE}/Bio/Graphics/Glyph/triangle.pm
-${P5SITE}/Bio/Graphics/Glyph/two_bolts.pm
-${P5SITE}/Bio/Graphics/Glyph/wave.pm
-${P5SITE}/Bio/Graphics/Glyph/weighted_arrow.pm
-${P5SITE}/Bio/Graphics/Glyph/xyplot.pm
-${P5SITE}/Bio/Graphics/Panel.pm
-${P5SITE}/Bio/Graphics/Pictogram.pm
-${P5SITE}/Bio/Graphics/RendererI.pm
-${P5SITE}/Bio/Graphics/Util.pm
+${P5SITE}/Bio/FeatureIO/ptt.pm
+${P5SITE}/Bio/FeatureIO/vecscreen_simple.pm
+${P5SITE}/Bio/HandlerBaseI.pm
 ${P5SITE}/Bio/IdCollectionI.pm
 ${P5SITE}/Bio/IdentifiableI.pm
 ${P5SITE}/Bio/Index/
 ${P5SITE}/Bio/Index/Abstract.pm
 ${P5SITE}/Bio/Index/AbstractSeq.pm
 ${P5SITE}/Bio/Index/Blast.pm
+${P5SITE}/Bio/Index/BlastTable.pm
 ${P5SITE}/Bio/Index/EMBL.pm
 ${P5SITE}/Bio/Index/Fasta.pm
 ${P5SITE}/Bio/Index/Fastq.pm
 ${P5SITE}/Bio/Index/GenBank.pm
 ${P5SITE}/Bio/Index/Hmmer.pm
 ${P5SITE}/Bio/Index/Qual.pm
+${P5SITE}/Bio/Index/Stockholm.pm
 ${P5SITE}/Bio/Index/SwissPfam.pm
 ${P5SITE}/Bio/Index/Swissprot.pm
 ${P5SITE}/Bio/LiveSeq/
@@ -408,8 +407,6 @@ ${P5SITE}/Bio/LiveSeq/Gene.pm
 ${P5SITE}/Bio/LiveSeq/IO/
 ${P5SITE}/Bio/LiveSeq/IO/BioPerl.pm
 ${P5SITE}/Bio/LiveSeq/IO/Loader.pm
-${P5SITE}/Bio/LiveSeq/IO/README
-${P5SITE}/Bio/LiveSeq/IO/SRS.pm
 ${P5SITE}/Bio/LiveSeq/Intron.pm
 ${P5SITE}/Bio/LiveSeq/Mutation.pm
 ${P5SITE}/Bio/LiveSeq/Mutator.pm
@@ -439,10 +436,16 @@ ${P5SITE}/Bio/Map/Contig.pm
 ${P5SITE}/Bio/Map/CytoMap.pm
 ${P5SITE}/Bio/Map/CytoMarker.pm
 ${P5SITE}/Bio/Map/CytoPosition.pm
+${P5SITE}/Bio/Map/EntityI.pm
 ${P5SITE}/Bio/Map/FPCMarker.pm
+${P5SITE}/Bio/Map/Gene.pm
+${P5SITE}/Bio/Map/GeneMap.pm
+${P5SITE}/Bio/Map/GenePosition.pm
+${P5SITE}/Bio/Map/GeneRelative.pm
 ${P5SITE}/Bio/Map/LinkageMap.pm
 ${P5SITE}/Bio/Map/LinkagePosition.pm
 ${P5SITE}/Bio/Map/MapI.pm
+${P5SITE}/Bio/Map/Mappable.pm
 ${P5SITE}/Bio/Map/MappableI.pm
 ${P5SITE}/Bio/Map/Marker.pm
 ${P5SITE}/Bio/Map/MarkerI.pm
@@ -451,8 +454,15 @@ ${P5SITE}/Bio/Map/OrderedPosition.pm
 ${P5SITE}/Bio/Map/OrderedPositionWithDistance.pm
 ${P5SITE}/Bio/Map/Physical.pm
 ${P5SITE}/Bio/Map/Position.pm
+${P5SITE}/Bio/Map/PositionHandler.pm
+${P5SITE}/Bio/Map/PositionHandlerI.pm
 ${P5SITE}/Bio/Map/PositionI.pm
+${P5SITE}/Bio/Map/PositionWithSequence.pm
+${P5SITE}/Bio/Map/Prediction.pm
+${P5SITE}/Bio/Map/Relative.pm
+${P5SITE}/Bio/Map/RelativeI.pm
 ${P5SITE}/Bio/Map/SimpleMap.pm
+${P5SITE}/Bio/Map/TranscriptionFactor.pm
 ${P5SITE}/Bio/MapIO/
 ${P5SITE}/Bio/MapIO.pm
 ${P5SITE}/Bio/MapIO/fpc.pm
@@ -461,9 +471,11 @@ ${P5SITE}/Bio/Matrix/
 ${P5SITE}/Bio/Matrix/Generic.pm
 ${P5SITE}/Bio/Matrix/IO/
 ${P5SITE}/Bio/Matrix/IO.pm
+${P5SITE}/Bio/Matrix/IO/mlagan.pm
 ${P5SITE}/Bio/Matrix/IO/phylip.pm
 ${P5SITE}/Bio/Matrix/IO/scoring.pm
 ${P5SITE}/Bio/Matrix/MatrixI.pm
+${P5SITE}/Bio/Matrix/Mlagan.pm
 ${P5SITE}/Bio/Matrix/PSM/
 ${P5SITE}/Bio/Matrix/PSM/IO/
 ${P5SITE}/Bio/Matrix/PSM/IO.pm
@@ -484,10 +496,14 @@ ${P5SITE}/Bio/Matrix/PSM/SiteMatrix.pm
 ${P5SITE}/Bio/Matrix/PSM/SiteMatrixI.pm
 ${P5SITE}/Bio/Matrix/PhylipDist.pm
 ${P5SITE}/Bio/Matrix/Scoring.pm
+${P5SITE}/Bio/MolEvol/
+${P5SITE}/Bio/MolEvol/CodonModel.pm
 ${P5SITE}/Bio/Ontology/
 ${P5SITE}/Bio/Ontology/DocumentRegistry.pm
 ${P5SITE}/Bio/Ontology/GOterm.pm
 ${P5SITE}/Bio/Ontology/InterProTerm.pm
+${P5SITE}/Bio/Ontology/OBOEngine.pm
+${P5SITE}/Bio/Ontology/OBOterm.pm
 ${P5SITE}/Bio/Ontology/Ontology.pm
 ${P5SITE}/Bio/Ontology/OntologyEngineI.pm
 ${P5SITE}/Bio/Ontology/OntologyI.pm
@@ -498,7 +514,9 @@ ${P5SITE}/Bio/Ontology/Relationship.pm
 ${P5SITE}/Bio/Ontology/RelationshipFactory.pm
 ${P5SITE}/Bio/Ontology/RelationshipI.pm
 ${P5SITE}/Bio/Ontology/RelationshipType.pm
-${P5SITE}/Bio/Ontology/SimpleGOEngine.pm
+${P5SITE}/Bio/Ontology/SimpleGOEngine/
+${P5SITE}/Bio/Ontology/SimpleGOEngine/GraphAdaptor.pm
+${P5SITE}/Bio/Ontology/SimpleGOEngine/GraphAdaptor02.pm
 ${P5SITE}/Bio/Ontology/SimpleOntologyEngine.pm
 ${P5SITE}/Bio/Ontology/Term.pm
 ${P5SITE}/Bio/Ontology/TermFactory.pm
@@ -512,8 +530,10 @@ ${P5SITE}/Bio/OntologyIO/Handlers/InterPro_BioSQL_Handler.pm
 ${P5SITE}/Bio/OntologyIO/InterProParser.pm
 ${P5SITE}/Bio/OntologyIO/dagflat.pm
 ${P5SITE}/Bio/OntologyIO/goflat.pm
+${P5SITE}/Bio/OntologyIO/obo.pm
 ${P5SITE}/Bio/OntologyIO/simplehierarchy.pm
 ${P5SITE}/Bio/OntologyIO/soflat.pm
+${P5SITE}/Bio/ParameterBaseI.pm
 ${P5SITE}/Bio/Perl.pm
 ${P5SITE}/Bio/Phenotype/
 ${P5SITE}/Bio/Phenotype/Correlate.pm
@@ -528,6 +548,16 @@ ${P5SITE}/Bio/Phenotype/OMIM/OMIMentryAllelicVariant.pm
 ${P5SITE}/Bio/Phenotype/OMIM/OMIMparser.pm
 ${P5SITE}/Bio/Phenotype/Phenotype.pm
 ${P5SITE}/Bio/Phenotype/PhenotypeI.pm
+${P5SITE}/Bio/PhyloNetwork/
+${P5SITE}/Bio/PhyloNetwork.pm
+${P5SITE}/Bio/PhyloNetwork/Factory.pm
+${P5SITE}/Bio/PhyloNetwork/FactoryX.pm
+${P5SITE}/Bio/PhyloNetwork/GraphViz.pm
+${P5SITE}/Bio/PhyloNetwork/RandomFactory.pm
+${P5SITE}/Bio/PhyloNetwork/TreeFactory.pm
+${P5SITE}/Bio/PhyloNetwork/TreeFactoryMulti.pm
+${P5SITE}/Bio/PhyloNetwork/TreeFactoryX.pm
+${P5SITE}/Bio/PhyloNetwork/muVector.pm
 ${P5SITE}/Bio/PopGen/
 ${P5SITE}/Bio/PopGen/Genotype.pm
 ${P5SITE}/Bio/PopGen/GenotypeI.pm
@@ -553,6 +583,7 @@ ${P5SITE}/Bio/PopGen/TagHaplotype.pm
 ${P5SITE}/Bio/PopGen/Utilities.pm
 ${P5SITE}/Bio/PrimarySeq.pm
 ${P5SITE}/Bio/PrimarySeqI.pm
+${P5SITE}/Bio/PullParserI.pm
 ${P5SITE}/Bio/Range.pm
 ${P5SITE}/Bio/RangeI.pm
 ${P5SITE}/Bio/Restriction/
@@ -568,22 +599,21 @@ ${P5SITE}/Bio/Restriction/IO.pm
 ${P5SITE}/Bio/Restriction/IO/bairoch.pm
 ${P5SITE}/Bio/Restriction/IO/base.pm
 ${P5SITE}/Bio/Restriction/IO/itype2.pm
+${P5SITE}/Bio/Restriction/IO/prototype.pm
 ${P5SITE}/Bio/Restriction/IO/withrefm.pm
 ${P5SITE}/Bio/Root/
-${P5SITE}/Bio/Root/Err.pm
+${P5SITE}/Bio/Root/Build.pm
 ${P5SITE}/Bio/Root/Exception.pm
-${P5SITE}/Bio/Root/Global.pm
 ${P5SITE}/Bio/Root/HTTPget.pm
 ${P5SITE}/Bio/Root/IO.pm
-${P5SITE}/Bio/Root/IOManager.pm
-${P5SITE}/Bio/Root/Object.pm
 ${P5SITE}/Bio/Root/Root.pm
 ${P5SITE}/Bio/Root/RootI.pm
 ${P5SITE}/Bio/Root/Storable.pm
+${P5SITE}/Bio/Root/Test/
+${P5SITE}/Bio/Root/Test.pm
+${P5SITE}/Bio/Root/Test/Warn.pm
 ${P5SITE}/Bio/Root/Utilities.pm
-${P5SITE}/Bio/Root/Vector.pm
 ${P5SITE}/Bio/Root/Version.pm
-${P5SITE}/Bio/Root/Xref.pm
 ${P5SITE}/Bio/Search/
 ${P5SITE}/Bio/Search/BlastStatistics.pm
 ${P5SITE}/Bio/Search/BlastUtils.pm
@@ -592,35 +622,51 @@ ${P5SITE}/Bio/Search/GenericDatabase.pm
 ${P5SITE}/Bio/Search/GenericStatistics.pm
 ${P5SITE}/Bio/Search/HSP/
 ${P5SITE}/Bio/Search/HSP/BlastHSP.pm
+${P5SITE}/Bio/Search/HSP/BlastPullHSP.pm
 ${P5SITE}/Bio/Search/HSP/FastaHSP.pm
 ${P5SITE}/Bio/Search/HSP/GenericHSP.pm
 ${P5SITE}/Bio/Search/HSP/HMMERHSP.pm
 ${P5SITE}/Bio/Search/HSP/HSPFactory.pm
 ${P5SITE}/Bio/Search/HSP/HSPI.pm
+${P5SITE}/Bio/Search/HSP/HmmpfamHSP.pm
+${P5SITE}/Bio/Search/HSP/ModelHSP.pm
 ${P5SITE}/Bio/Search/HSP/PSLHSP.pm
 ${P5SITE}/Bio/Search/HSP/PsiBlastHSP.pm
+${P5SITE}/Bio/Search/HSP/PullHSPI.pm
 ${P5SITE}/Bio/Search/HSP/WABAHSP.pm
 ${P5SITE}/Bio/Search/Hit/
 ${P5SITE}/Bio/Search/Hit/BlastHit.pm
+${P5SITE}/Bio/Search/Hit/BlastPullHit.pm
 ${P5SITE}/Bio/Search/Hit/Fasta.pm
 ${P5SITE}/Bio/Search/Hit/GenericHit.pm
 ${P5SITE}/Bio/Search/Hit/HMMERHit.pm
 ${P5SITE}/Bio/Search/Hit/HitFactory.pm
 ${P5SITE}/Bio/Search/Hit/HitI.pm
+${P5SITE}/Bio/Search/Hit/HmmpfamHit.pm
+${P5SITE}/Bio/Search/Hit/ModelHit.pm
 ${P5SITE}/Bio/Search/Hit/PsiBlastHit.pm
+${P5SITE}/Bio/Search/Hit/PullHitI.pm
 ${P5SITE}/Bio/Search/Iteration/
 ${P5SITE}/Bio/Search/Iteration/GenericIteration.pm
 ${P5SITE}/Bio/Search/Iteration/IterationI.pm
 ${P5SITE}/Bio/Search/Processor.pm
 ${P5SITE}/Bio/Search/Result/
+${P5SITE}/Bio/Search/Result/BlastPullResult.pm
 ${P5SITE}/Bio/Search/Result/BlastResult.pm
+${P5SITE}/Bio/Search/Result/CrossMatchResult.pm
 ${P5SITE}/Bio/Search/Result/GenericResult.pm
 ${P5SITE}/Bio/Search/Result/HMMERResult.pm
+${P5SITE}/Bio/Search/Result/HmmpfamResult.pm
+${P5SITE}/Bio/Search/Result/PullResultI.pm
 ${P5SITE}/Bio/Search/Result/ResultFactory.pm
 ${P5SITE}/Bio/Search/Result/ResultI.pm
 ${P5SITE}/Bio/Search/Result/WABAResult.pm
 ${P5SITE}/Bio/Search/SearchUtils.pm
 ${P5SITE}/Bio/Search/StatisticsI.pm
+${P5SITE}/Bio/Search/Tiling/
+${P5SITE}/Bio/Search/Tiling/MapTileUtils.pm
+${P5SITE}/Bio/Search/Tiling/MapTiling.pm
+${P5SITE}/Bio/Search/Tiling/TilingI.pm
 ${P5SITE}/Bio/SearchDist.pm
 ${P5SITE}/Bio/SearchIO/
 ${P5SITE}/Bio/SearchIO.pm
@@ -637,15 +683,25 @@ ${P5SITE}/Bio/SearchIO/Writer/HTMLResultWriter.pm
 ${P5SITE}/Bio/SearchIO/Writer/HitTableWriter.pm
 ${P5SITE}/Bio/SearchIO/Writer/ResultTableWriter.pm
 ${P5SITE}/Bio/SearchIO/Writer/TextResultWriter.pm
+${P5SITE}/Bio/SearchIO/XML/
+${P5SITE}/Bio/SearchIO/XML/BlastHandler.pm
+${P5SITE}/Bio/SearchIO/XML/PsiBlastHandler.pm
 ${P5SITE}/Bio/SearchIO/axt.pm
 ${P5SITE}/Bio/SearchIO/blast.pm
+${P5SITE}/Bio/SearchIO/blast_pull.pm
 ${P5SITE}/Bio/SearchIO/blasttable.pm
 ${P5SITE}/Bio/SearchIO/blastxml.pm
+${P5SITE}/Bio/SearchIO/cross_match.pm
+${P5SITE}/Bio/SearchIO/erpin.pm
 ${P5SITE}/Bio/SearchIO/exonerate.pm
 ${P5SITE}/Bio/SearchIO/fasta.pm
+${P5SITE}/Bio/SearchIO/gmap_f9.pm
 ${P5SITE}/Bio/SearchIO/hmmer.pm
+${P5SITE}/Bio/SearchIO/hmmer_pull.pm
+${P5SITE}/Bio/SearchIO/infernal.pm
 ${P5SITE}/Bio/SearchIO/megablast.pm
 ${P5SITE}/Bio/SearchIO/psl.pm
+${P5SITE}/Bio/SearchIO/rnamotif.pm
 ${P5SITE}/Bio/SearchIO/sim4.pm
 ${P5SITE}/Bio/SearchIO/waba.pm
 ${P5SITE}/Bio/SearchIO/wise.pm
@@ -664,6 +720,7 @@ ${P5SITE}/Bio/Seq/MetaI.pm
 ${P5SITE}/Bio/Seq/PrimaryQual.pm
 ${P5SITE}/Bio/Seq/PrimedSeq.pm
 ${P5SITE}/Bio/Seq/QualI.pm
+${P5SITE}/Bio/Seq/Quality.pm
 ${P5SITE}/Bio/Seq/RichSeq.pm
 ${P5SITE}/Bio/Seq/RichSeqI.pm
 ${P5SITE}/Bio/Seq/SeqBuilder.pm
@@ -673,6 +730,10 @@ ${P5SITE}/Bio/Seq/SeqWithQuality.pm
 ${P5SITE}/Bio/Seq/SequenceTrace.pm
 ${P5SITE}/Bio/Seq/TraceI.pm
 ${P5SITE}/Bio/SeqAnalysisParserI.pm
+${P5SITE}/Bio/SeqEvolution/
+${P5SITE}/Bio/SeqEvolution/DNAPoint.pm
+${P5SITE}/Bio/SeqEvolution/EvolutionI.pm
+${P5SITE}/Bio/SeqEvolution/Factory.pm
 ${P5SITE}/Bio/SeqFeature/
 ${P5SITE}/Bio/SeqFeature/Annotated.pm
 ${P5SITE}/Bio/SeqFeature/AnnotationAdaptor.pm
@@ -693,6 +754,7 @@ ${P5SITE}/Bio/SeqFeature/Gene/Transcript.pm
 ${P5SITE}/Bio/SeqFeature/Gene/TranscriptI.pm
 ${P5SITE}/Bio/SeqFeature/Gene/UTR.pm
 ${P5SITE}/Bio/SeqFeature/Generic.pm
+${P5SITE}/Bio/SeqFeature/Lite.pm
 ${P5SITE}/Bio/SeqFeature/PositionProxy.pm
 ${P5SITE}/Bio/SeqFeature/Primer.pm
 ${P5SITE}/Bio/SeqFeature/SiRNA/
@@ -705,11 +767,14 @@ ${P5SITE}/Bio/SeqFeature/Tools/FeatureNamer.pm
 ${P5SITE}/Bio/SeqFeature/Tools/IDHandler.pm
 ${P5SITE}/Bio/SeqFeature/Tools/TypeMapper.pm
 ${P5SITE}/Bio/SeqFeature/Tools/Unflattener.pm
+${P5SITE}/Bio/SeqFeature/TypedSeqFeatureI.pm
 ${P5SITE}/Bio/SeqFeatureI.pm
 ${P5SITE}/Bio/SeqI.pm
 ${P5SITE}/Bio/SeqIO/
 ${P5SITE}/Bio/SeqIO.pm
 ${P5SITE}/Bio/SeqIO/FTHelper.pm
+${P5SITE}/Bio/SeqIO/Handler/
+${P5SITE}/Bio/SeqIO/Handler/GenericRichSeqHandler.pm
 ${P5SITE}/Bio/SeqIO/MultiFile.pm
 ${P5SITE}/Bio/SeqIO/abi.pm
 ${P5SITE}/Bio/SeqIO/ace.pm
@@ -723,9 +788,13 @@ ${P5SITE}/Bio/SeqIO/chaos.pm
 ${P5SITE}/Bio/SeqIO/chaosxml.pm
 ${P5SITE}/Bio/SeqIO/ctf.pm
 ${P5SITE}/Bio/SeqIO/embl.pm
+${P5SITE}/Bio/SeqIO/embldriver.pm
+${P5SITE}/Bio/SeqIO/entrezgene.pm
+${P5SITE}/Bio/SeqIO/excel.pm
 ${P5SITE}/Bio/SeqIO/exp.pm
 ${P5SITE}/Bio/SeqIO/fasta.pm
 ${P5SITE}/Bio/SeqIO/fastq.pm
+${P5SITE}/Bio/SeqIO/flybase_chadoxml.pm
 ${P5SITE}/Bio/SeqIO/game/
 ${P5SITE}/Bio/SeqIO/game.pm
 ${P5SITE}/Bio/SeqIO/game/featHandler.pm
@@ -733,11 +802,13 @@ ${P5SITE}/Bio/SeqIO/game/gameHandler.pm
 ${P5SITE}/Bio/SeqIO/game/gameSubs.pm
 ${P5SITE}/Bio/SeqIO/game/gameWriter.pm
 ${P5SITE}/Bio/SeqIO/game/seqHandler.pm
+${P5SITE}/Bio/SeqIO/gbdriver.pm
 ${P5SITE}/Bio/SeqIO/gcg.pm
 ${P5SITE}/Bio/SeqIO/genbank.pm
 ${P5SITE}/Bio/SeqIO/interpro.pm
 ${P5SITE}/Bio/SeqIO/kegg.pm
 ${P5SITE}/Bio/SeqIO/largefasta.pm
+${P5SITE}/Bio/SeqIO/lasergene.pm
 ${P5SITE}/Bio/SeqIO/locuslink.pm
 ${P5SITE}/Bio/SeqIO/metafasta.pm
 ${P5SITE}/Bio/SeqIO/phd.pm
@@ -746,8 +817,11 @@ ${P5SITE}/Bio/SeqIO/pln.pm
 ${P5SITE}/Bio/SeqIO/qual.pm
 ${P5SITE}/Bio/SeqIO/raw.pm
 ${P5SITE}/Bio/SeqIO/scf.pm
+${P5SITE}/Bio/SeqIO/strider.pm
 ${P5SITE}/Bio/SeqIO/swiss.pm
+${P5SITE}/Bio/SeqIO/swissdriver.pm
 ${P5SITE}/Bio/SeqIO/tab.pm
+${P5SITE}/Bio/SeqIO/table.pm
 ${P5SITE}/Bio/SeqIO/tigr.pm
 ${P5SITE}/Bio/SeqIO/tigrxml.pm
 ${P5SITE}/Bio/SeqIO/tinyseq/
@@ -778,9 +852,9 @@ ${P5SITE}/Bio/Symbol/Alphabet.pm
 ${P5SITE}/Bio/Symbol/AlphabetI.pm
 ${P5SITE}/Bio/Symbol/DNAAlphabet.pm
 ${P5SITE}/Bio/Symbol/ProteinAlphabet.pm
-${P5SITE}/Bio/Symbol/README.Symbol
 ${P5SITE}/Bio/Symbol/Symbol.pm
 ${P5SITE}/Bio/Symbol/SymbolI.pm
+${P5SITE}/Bio/Taxon.pm
 ${P5SITE}/Bio/Taxonomy/
 ${P5SITE}/Bio/Taxonomy.pm
 ${P5SITE}/Bio/Taxonomy/FactoryI.pm
@@ -806,20 +880,6 @@ ${P5SITE}/Bio/Tools/Analysis/Protein/Scansite.pm
 ${P5SITE}/Bio/Tools/Analysis/Protein/Sopma.pm
 ${P5SITE}/Bio/Tools/Analysis/SimpleAnalysisBase.pm
 ${P5SITE}/Bio/Tools/AnalysisResult.pm
-${P5SITE}/Bio/Tools/BPbl2seq.pm
-${P5SITE}/Bio/Tools/BPlite/
-${P5SITE}/Bio/Tools/BPlite.pm
-${P5SITE}/Bio/Tools/BPlite/HSP.pm
-${P5SITE}/Bio/Tools/BPlite/Iteration.pm
-${P5SITE}/Bio/Tools/BPlite/Sbjct.pm
-${P5SITE}/Bio/Tools/BPpsilite.pm
-${P5SITE}/Bio/Tools/Blast/
-${P5SITE}/Bio/Tools/Blast.pm
-${P5SITE}/Bio/Tools/Blast/CHANGES
-${P5SITE}/Bio/Tools/Blast/HSP.pm
-${P5SITE}/Bio/Tools/Blast/HTML.pm
-${P5SITE}/Bio/Tools/Blast/README
-${P5SITE}/Bio/Tools/Blast/Sbjct.pm
 ${P5SITE}/Bio/Tools/Blat.pm
 ${P5SITE}/Bio/Tools/CodonTable.pm
 ${P5SITE}/Bio/Tools/Coil.pm
@@ -827,7 +887,31 @@ ${P5SITE}/Bio/Tools/ECnumber.pm
 ${P5SITE}/Bio/Tools/EMBOSS/
 ${P5SITE}/Bio/Tools/EMBOSS/Palindrome.pm
 ${P5SITE}/Bio/Tools/EPCR.pm
+${P5SITE}/Bio/Tools/ERPIN.pm
 ${P5SITE}/Bio/Tools/ESTScan.pm
+${P5SITE}/Bio/Tools/EUtilities/
+${P5SITE}/Bio/Tools/EUtilities.pm
+${P5SITE}/Bio/Tools/EUtilities/Cookie.pm
+${P5SITE}/Bio/Tools/EUtilities/EUtilDataI.pm
+${P5SITE}/Bio/Tools/EUtilities/EUtilParameters.pm
+${P5SITE}/Bio/Tools/EUtilities/History.pm
+${P5SITE}/Bio/Tools/EUtilities/HistoryI.pm
+${P5SITE}/Bio/Tools/EUtilities/Info/
+${P5SITE}/Bio/Tools/EUtilities/Info.pm
+${P5SITE}/Bio/Tools/EUtilities/Info/FieldInfo.pm
+${P5SITE}/Bio/Tools/EUtilities/Info/LinkInfo.pm
+${P5SITE}/Bio/Tools/EUtilities/Link/
+${P5SITE}/Bio/Tools/EUtilities/Link.pm
+${P5SITE}/Bio/Tools/EUtilities/Link/LinkSet.pm
+${P5SITE}/Bio/Tools/EUtilities/Link/UrlLink.pm
+${P5SITE}/Bio/Tools/EUtilities/Query/
+${P5SITE}/Bio/Tools/EUtilities/Query.pm
+${P5SITE}/Bio/Tools/EUtilities/Query/GlobalQuery.pm
+${P5SITE}/Bio/Tools/EUtilities/Summary/
+${P5SITE}/Bio/Tools/EUtilities/Summary.pm
+${P5SITE}/Bio/Tools/EUtilities/Summary/DocSum.pm
+${P5SITE}/Bio/Tools/EUtilities/Summary/Item.pm
+${P5SITE}/Bio/Tools/EUtilities/Summary/ItemContainerI.pm
 ${P5SITE}/Bio/Tools/Eponine.pm
 ${P5SITE}/Bio/Tools/Est2Genome.pm
 ${P5SITE}/Bio/Tools/Fgenesh.pm
@@ -848,10 +932,14 @@ ${P5SITE}/Bio/Tools/HMMER/Results.pm
 ${P5SITE}/Bio/Tools/HMMER/Set.pm
 ${P5SITE}/Bio/Tools/Hmmpfam.pm
 ${P5SITE}/Bio/Tools/IUPAC.pm
+${P5SITE}/Bio/Tools/Infernal.pm
 ${P5SITE}/Bio/Tools/Lucy.pm
 ${P5SITE}/Bio/Tools/MZEF.pm
+${P5SITE}/Bio/Tools/Match.pm
 ${P5SITE}/Bio/Tools/OddCodes.pm
 ${P5SITE}/Bio/Tools/Phylo/
+${P5SITE}/Bio/Tools/Phylo/Gerp.pm
+${P5SITE}/Bio/Tools/Phylo/Gumby.pm
 ${P5SITE}/Bio/Tools/Phylo/Molphy/
 ${P5SITE}/Bio/Tools/Phylo/Molphy.pm
 ${P5SITE}/Bio/Tools/Phylo/Molphy/Result.pm
@@ -875,21 +963,24 @@ ${P5SITE}/Bio/Tools/Prints.pm
 ${P5SITE}/Bio/Tools/Profile.pm
 ${P5SITE}/Bio/Tools/Promoterwise.pm
 ${P5SITE}/Bio/Tools/PrositeScan.pm
+${P5SITE}/Bio/Tools/Protparam.pm
 ${P5SITE}/Bio/Tools/Pseudowise.pm
 ${P5SITE}/Bio/Tools/QRNA.pm
+${P5SITE}/Bio/Tools/RNAMotif.pm
 ${P5SITE}/Bio/Tools/RandomDistFunctions.pm
 ${P5SITE}/Bio/Tools/RepeatMasker.pm
-${P5SITE}/Bio/Tools/RestrictionEnzyme.pm
 ${P5SITE}/Bio/Tools/Run/
 ${P5SITE}/Bio/Tools/Run/GenericParameters.pm
 ${P5SITE}/Bio/Tools/Run/ParametersI.pm
-${P5SITE}/Bio/Tools/Run/README
 ${P5SITE}/Bio/Tools/Run/RemoteBlast.pm
 ${P5SITE}/Bio/Tools/Run/StandAloneBlast.pm
+${P5SITE}/Bio/Tools/Run/StandAloneNCBIBlast.pm
+${P5SITE}/Bio/Tools/Run/StandAloneWUBlast.pm
 ${P5SITE}/Bio/Tools/Run/WrapperBase.pm
 ${P5SITE}/Bio/Tools/Seg.pm
-${P5SITE}/Bio/Tools/SeqAnal.pm
+${P5SITE}/Bio/Tools/SeqPattern/
 ${P5SITE}/Bio/Tools/SeqPattern.pm
+${P5SITE}/Bio/Tools/SeqPattern/Backtranslate.pm
 ${P5SITE}/Bio/Tools/SeqStats.pm
 ${P5SITE}/Bio/Tools/SeqWords.pm
 ${P5SITE}/Bio/Tools/SiRNA/
@@ -898,24 +989,31 @@ ${P5SITE}/Bio/Tools/SiRNA/Ruleset/
 ${P5SITE}/Bio/Tools/SiRNA/Ruleset/saigo.pm
 ${P5SITE}/Bio/Tools/SiRNA/Ruleset/tuschl.pm
 ${P5SITE}/Bio/Tools/Sigcleave.pm
+${P5SITE}/Bio/Tools/Signalp/
 ${P5SITE}/Bio/Tools/Signalp.pm
+${P5SITE}/Bio/Tools/Signalp/ExtendedSignalp.pm
 ${P5SITE}/Bio/Tools/Sim4/
 ${P5SITE}/Bio/Tools/Sim4/Exon.pm
 ${P5SITE}/Bio/Tools/Sim4/Results.pm
 ${P5SITE}/Bio/Tools/Spidey/
 ${P5SITE}/Bio/Tools/Spidey/Exon.pm
 ${P5SITE}/Bio/Tools/Spidey/Results.pm
+${P5SITE}/Bio/Tools/TandemRepeatsFinder.pm
+${P5SITE}/Bio/Tools/TargetP.pm
 ${P5SITE}/Bio/Tools/Tmhmm.pm
-${P5SITE}/Bio/Tools/WWW.pm
-${P5SITE}/Bio/Tools/WebBlat.pm
 ${P5SITE}/Bio/Tools/dpAlign.pm
+${P5SITE}/Bio/Tools/ipcress.pm
+${P5SITE}/Bio/Tools/isPcr.pm
 ${P5SITE}/Bio/Tools/pICalculator.pm
 ${P5SITE}/Bio/Tools/pSW.pm
 ${P5SITE}/Bio/Tools/tRNAscanSE.pm
 ${P5SITE}/Bio/Tree/
 ${P5SITE}/Bio/Tree/AlleleNode.pm
-${P5SITE}/Bio/Tree/Cladogram.pm
+${P5SITE}/Bio/Tree/AnnotatableNode.pm
+${P5SITE}/Bio/Tree/Compatible.pm
 ${P5SITE}/Bio/Tree/DistanceFactory.pm
+${P5SITE}/Bio/Tree/Draw/
+${P5SITE}/Bio/Tree/Draw/Cladogram.pm
 ${P5SITE}/Bio/Tree/Node.pm
 ${P5SITE}/Bio/Tree/NodeI.pm
 ${P5SITE}/Bio/Tree/NodeNHX.pm
@@ -933,6 +1031,7 @@ ${P5SITE}/Bio/TreeIO/newick.pm
 ${P5SITE}/Bio/TreeIO/nexus.pm
 ${P5SITE}/Bio/TreeIO/nhx.pm
 ${P5SITE}/Bio/TreeIO/pag.pm
+${P5SITE}/Bio/TreeIO/phyloxml.pm
 ${P5SITE}/Bio/TreeIO/svggraph.pm
 ${P5SITE}/Bio/TreeIO/tabtree.pm
 ${P5SITE}/Bio/UpdateableSeqI.pm
@@ -945,17 +1044,930 @@ ${P5SITE}/Bio/Variation/IO/
 ${P5SITE}/Bio/Variation/IO.pm
 ${P5SITE}/Bio/Variation/IO/flat.pm
 ${P5SITE}/Bio/Variation/IO/xml.pm
-${P5SITE}/Bio/Variation/README
 ${P5SITE}/Bio/Variation/RNAChange.pm
 ${P5SITE}/Bio/Variation/SNP.pm
 ${P5SITE}/Bio/Variation/SeqDiff.pm
 ${P5SITE}/Bio/Variation/VariantI.pm
 ${P5SITE}/Bio/WebAgent.pm
-${P5SITE}/biodatabases.pod
-${P5SITE}/biodesign.pod
-${P5SITE}/bioperl.pod
-${P5SITE}/bioscripts.pod
-${P5SITE}/bptutorial.pl
+@man man/man1/bp_aacomp.pl.1
+@man man/man1/bp_biblio.pl.1
+@man man/man1/bp_biofetch_genbank_proxy.pl.1
+@man man/man1/bp_bioflat_index.pl.1
+@man man/man1/bp_biogetseq.pl.1
+@man man/man1/bp_blast2tree.pl.1
+@man man/man1/bp_bulk_load_gff.pl.1
+@man man/man1/bp_chaos_plot.pl.1
+@man man/man1/bp_classify_hits_kingdom.pl.1
+@man man/man1/bp_composite_LD.pl.1
+@man man/man1/bp_dbsplit.pl.1
+@man man/man1/bp_download_query_genbank.pl.1
+@man man/man1/bp_einfo.pl.1
+@man man/man1/bp_extract_feature_seq.pl.1
+@man man/man1/bp_fast_load_gff.pl.1
+@man man/man1/bp_fastam9_to_table.pl.1
+@man man/man1/bp_fetch.pl.1
+@man man/man1/bp_filter_search.pl.1
+@man man/man1/bp_flanks.pl.1
+@man man/man1/bp_gccalc.pl.1
+@man man/man1/bp_genbank2gff.pl.1
+@man man/man1/bp_genbank2gff3.pl.1
+@man man/man1/bp_generate_histogram.pl.1
+@man man/man1/bp_heterogeneity_test.pl.1
+@man man/man1/bp_hivq.pl.1
+@man man/man1/bp_hmmer_to_table.pl.1
+@man man/man1/bp_index.pl.1
+@man man/man1/bp_load_gff.pl.1
+@man man/man1/bp_local_taxonomydb_query.pl.1
+@man man/man1/bp_make_mrna_protein.pl.1
+@man man/man1/bp_mask_by_search.pl.1
+@man man/man1/bp_meta_gff.pl.1
+@man man/man1/bp_mrtrans.pl.1
+@man man/man1/bp_mutate.pl.1
+@man man/man1/bp_nexus2nh.pl.1
+@man man/man1/bp_nrdb.pl.1
+@man man/man1/bp_oligo_count.pl.1
+@man man/man1/bp_pairwise_kaks.pl.1
+@man man/man1/bp_parse_hmmsearch.pl.1
+@man man/man1/bp_process_gadfly.pl.1
+@man man/man1/bp_process_sgd.pl.1
+@man man/man1/bp_process_wormbase.pl.1
+@man man/man1/bp_query_entrez_taxa.pl.1
+@man man/man1/bp_remote_blast.pl.1
+@man man/man1/bp_revtrans-motif.pl.1
+@man man/man1/bp_search2BSML.pl.1
+@man man/man1/bp_search2alnblocks.pl.1
+@man man/man1/bp_search2gff.pl.1
+@man man/man1/bp_search2table.pl.1
+@man man/man1/bp_search2tribe.pl.1
+@man man/man1/bp_seq_length.pl.1
+@man man/man1/bp_seqconvert.pl.1
+@man man/man1/bp_seqret.pl.1
+@man man/man1/bp_seqretsplit.pl.1
+@man man/man1/bp_split_seq.pl.1
+@man man/man1/bp_sreformat.pl.1
+@man man/man1/bp_taxid4species.pl.1
+@man man/man1/bp_taxonomy2tree.pl.1
+@man man/man1/bp_translate_seq.pl.1
+@man man/man1/bp_tree2pag.pl.1
+@man man/man1/bp_unflatten_seq.pl.1
+@man man/man3p/Bio::Align::AlignI.3p
+@man man/man3p/Bio::Align::DNAStatistics.3p
+@man man/man3p/Bio::Align::PairwiseStatistics.3p
+@man man/man3p/Bio::Align::ProteinStatistics.3p
+@man man/man3p/Bio::Align::StatisticsI.3p
+@man man/man3p/Bio::Align::Utilities.3p
+@man man/man3p/Bio::AlignIO.3p
+@man man/man3p/Bio::AlignIO::Handler::GenericAlignHandler.3p
+@man man/man3p/Bio::AlignIO::arp.3p
+@man man/man3p/Bio::AlignIO::bl2seq.3p
+@man man/man3p/Bio::AlignIO::clustalw.3p
+@man man/man3p/Bio::AlignIO::emboss.3p
+@man man/man3p/Bio::AlignIO::fasta.3p
+@man man/man3p/Bio::AlignIO::largemultifasta.3p
+@man man/man3p/Bio::AlignIO::maf.3p
+@man man/man3p/Bio::AlignIO::mase.3p
+@man man/man3p/Bio::AlignIO::mega.3p
+@man man/man3p/Bio::AlignIO::meme.3p
+@man man/man3p/Bio::AlignIO::metafasta.3p
+@man man/man3p/Bio::AlignIO::msf.3p
+@man man/man3p/Bio::AlignIO::nexus.3p
+@man man/man3p/Bio::AlignIO::pfam.3p
+@man man/man3p/Bio::AlignIO::phylip.3p
+@man man/man3p/Bio::AlignIO::po.3p
+@man man/man3p/Bio::AlignIO::proda.3p
+@man man/man3p/Bio::AlignIO::prodom.3p
+@man man/man3p/Bio::AlignIO::psi.3p
+@man man/man3p/Bio::AlignIO::selex.3p
+@man man/man3p/Bio::AlignIO::stockholm.3p
+@man man/man3p/Bio::AlignIO::xmfa.3p
+@man man/man3p/Bio::AnalysisI.3p
+@man man/man3p/Bio::AnalysisParserI.3p
+@man man/man3p/Bio::AnalysisResultI.3p
+@man man/man3p/Bio::AnnotatableI.3p
+@man man/man3p/Bio::Annotation::AnnotationFactory.3p
+@man man/man3p/Bio::Annotation::Collection.3p
+@man man/man3p/Bio::Annotation::Comment.3p
+@man man/man3p/Bio::Annotation::DBLink.3p
+@man man/man3p/Bio::Annotation::OntologyTerm.3p
+@man man/man3p/Bio::Annotation::Reference.3p
+@man man/man3p/Bio::Annotation::Relation.3p
+@man man/man3p/Bio::Annotation::SimpleValue.3p
+@man man/man3p/Bio::Annotation::StructuredValue.3p
+@man man/man3p/Bio::Annotation::TagTree.3p
+@man man/man3p/Bio::Annotation::Target.3p
+@man man/man3p/Bio::Annotation::Tree.3p
+@man man/man3p/Bio::Annotation::TypeManager.3p
+@man man/man3p/Bio::AnnotationCollectionI.3p
+@man man/man3p/Bio::AnnotationI.3p
+@man man/man3p/Bio::Assembly::Contig.3p
+@man man/man3p/Bio::Assembly::ContigAnalysis.3p
+@man man/man3p/Bio::Assembly::IO.3p
+@man man/man3p/Bio::Assembly::IO::ace.3p
+@man man/man3p/Bio::Assembly::IO::phrap.3p
+@man man/man3p/Bio::Assembly::IO::tigr.3p
+@man man/man3p/Bio::Assembly::Scaffold.3p
+@man man/man3p/Bio::Assembly::ScaffoldI.3p
+@man man/man3p/Bio::Assembly::Singlet.3p
+@man man/man3p/Bio::Assembly::Tools::ContigSpectrum.3p
+@man man/man3p/Bio::Biblio.3p
+@man man/man3p/Bio::Biblio::Article.3p
+@man man/man3p/Bio::Biblio::BiblioBase.3p
+@man man/man3p/Bio::Biblio::Book.3p
+@man man/man3p/Bio::Biblio::BookArticle.3p
+@man man/man3p/Bio::Biblio::IO.3p
+@man man/man3p/Bio::Biblio::IO::medline2ref.3p
+@man man/man3p/Bio::Biblio::IO::medlinexml.3p
+@man man/man3p/Bio::Biblio::IO::pubmed2ref.3p
+@man man/man3p/Bio::Biblio::IO::pubmedxml.3p
+@man man/man3p/Bio::Biblio::Journal.3p
+@man man/man3p/Bio::Biblio::JournalArticle.3p
+@man man/man3p/Bio::Biblio::MedlineArticle.3p
+@man man/man3p/Bio::Biblio::MedlineBook.3p
+@man man/man3p/Bio::Biblio::MedlineBookArticle.3p
+@man man/man3p/Bio::Biblio::MedlineJournal.3p
+@man man/man3p/Bio::Biblio::MedlineJournalArticle.3p
+@man man/man3p/Bio::Biblio::Organisation.3p
+@man man/man3p/Bio::Biblio::Patent.3p
+@man man/man3p/Bio::Biblio::Person.3p
+@man man/man3p/Bio::Biblio::Proceeding.3p
+@man man/man3p/Bio::Biblio::Provider.3p
+@man man/man3p/Bio::Biblio::PubmedArticle.3p
+@man man/man3p/Bio::Biblio::PubmedBookArticle.3p
+@man man/man3p/Bio::Biblio::PubmedJournalArticle.3p
+@man man/man3p/Bio::Biblio::Ref.3p
+@man man/man3p/Bio::Biblio::Service.3p
+@man man/man3p/Bio::Biblio::TechReport.3p
+@man man/man3p/Bio::Biblio::Thesis.3p
+@man man/man3p/Bio::Biblio::WebResource.3p
+@man man/man3p/Bio::Cluster::ClusterFactory.3p
+@man man/man3p/Bio::Cluster::FamilyI.3p
+@man man/man3p/Bio::Cluster::SequenceFamily.3p
+@man man/man3p/Bio::Cluster::UniGene.3p
+@man man/man3p/Bio::Cluster::UniGeneI.3p
+@man man/man3p/Bio::ClusterI.3p
+@man man/man3p/Bio::ClusterIO.3p
+@man man/man3p/Bio::ClusterIO::dbsnp.3p
+@man man/man3p/Bio::ClusterIO::unigene.3p
+@man man/man3p/Bio::CodonUsage::IO.3p
+@man man/man3p/Bio::CodonUsage::Table.3p
+@man man/man3p/Bio::Coordinate::Chain.3p
+@man man/man3p/Bio::Coordinate::Collection.3p
+@man man/man3p/Bio::Coordinate::ExtrapolatingPair.3p
+@man man/man3p/Bio::Coordinate::GeneMapper.3p
+@man man/man3p/Bio::Coordinate::Graph.3p
+@man man/man3p/Bio::Coordinate::MapperI.3p
+@man man/man3p/Bio::Coordinate::Pair.3p
+@man man/man3p/Bio::Coordinate::Result.3p
+@man man/man3p/Bio::Coordinate::Result::Gap.3p
+@man man/man3p/Bio::Coordinate::Result::Match.3p
+@man man/man3p/Bio::Coordinate::ResultI.3p
+@man man/man3p/Bio::Coordinate::Utils.3p
+@man man/man3p/Bio::DB::Ace.3p
+@man man/man3p/Bio::DB::Biblio::biofetch.3p
+@man man/man3p/Bio::DB::Biblio::eutils.3p
+@man man/man3p/Bio::DB::Biblio::soap.3p
+@man man/man3p/Bio::DB::BiblioI.3p
+@man man/man3p/Bio::DB::BioFetch.3p
+@man man/man3p/Bio::DB::CUTG.3p
+@man man/man3p/Bio::DB::DBFetch.3p
+@man man/man3p/Bio::DB::EMBL.3p
+@man man/man3p/Bio::DB::EUtilities.3p
+@man man/man3p/Bio::DB::EntrezGene.3p
+@man man/man3p/Bio::DB::Expression.3p
+@man man/man3p/Bio::DB::Expression::geo.3p
+@man man/man3p/Bio::DB::Failover.3p
+@man man/man3p/Bio::DB::Fasta.3p
+@man man/man3p/Bio::DB::FileCache.3p
+@man man/man3p/Bio::DB::Flat.3p
+@man man/man3p/Bio::DB::Flat::BDB.3p
+@man man/man3p/Bio::DB::Flat::BDB::embl.3p
+@man man/man3p/Bio::DB::Flat::BDB::fasta.3p
+@man man/man3p/Bio::DB::Flat::BDB::genbank.3p
+@man man/man3p/Bio::DB::Flat::BDB::swiss.3p
+@man man/man3p/Bio::DB::Flat::BinarySearch.3p
+@man man/man3p/Bio::DB::GFF.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::ace.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::berkeleydb.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::berkeleydb::iterator.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::biofetch.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::biofetch_oracle.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::dbi.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::dbi::caching_handle.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::dbi::iterator.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::dbi::mysql.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::dbi::mysqlace.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::dbi::mysqlcmap.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::dbi::mysqlopt.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::dbi::oracle.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::dbi::oracleace.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::dbi::pg.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::dbi::pg_fts.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::memory.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::memory::feature_serializer.3p
+@man man/man3p/Bio::DB::GFF::Adaptor::memory::iterator.3p
+@man man/man3p/Bio::DB::GFF::Aggregator.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::alignment.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::clone.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::coding.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::gene.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::match.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::none.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::orf.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::processed_transcript.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::so_transcript.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::transcript.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::ucsc_acembly.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::ucsc_ensgene.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::ucsc_genscan.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::ucsc_refgene.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::ucsc_sanger22.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::ucsc_sanger22pseudo.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::ucsc_softberry.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::ucsc_twinscan.3p
+@man man/man3p/Bio::DB::GFF::Aggregator::ucsc_unigene.3p
+@man man/man3p/Bio::DB::GFF::Featname.3p
+@man man/man3p/Bio::DB::GFF::Feature.3p
+@man man/man3p/Bio::DB::GFF::Homol.3p
+@man man/man3p/Bio::DB::GFF::RelSegment.3p
+@man man/man3p/Bio::DB::GFF::Segment.3p
+@man man/man3p/Bio::DB::GFF::Typename.3p
+@man man/man3p/Bio::DB::GFF::Util::Binning.3p
+@man man/man3p/Bio::DB::GFF::Util::Rearrange.3p
+@man man/man3p/Bio::DB::GenBank.3p
+@man man/man3p/Bio::DB::GenPept.3p
+@man man/man3p/Bio::DB::GenericWebAgent.3p
+@man man/man3p/Bio::DB::HIV.3p
+@man man/man3p/Bio::DB::HIV::HIVAnnotProcessor.3p
+@man man/man3p/Bio::DB::HIV::HIVQueryHelper.3p
+@man man/man3p/Bio::DB::InMemoryCache.3p
+@man man/man3p/Bio::DB::LocationI.3p
+@man man/man3p/Bio::DB::MeSH.3p
+@man man/man3p/Bio::DB::NCBIHelper.3p
+@man man/man3p/Bio::DB::Qual.3p
+@man man/man3p/Bio::DB::Query::GenBank.3p
+@man man/man3p/Bio::DB::Query::HIVQuery.3p
+@man man/man3p/Bio::DB::Query::WebQuery.3p
+@man man/man3p/Bio::DB::QueryI.3p
+@man man/man3p/Bio::DB::RandomAccessI.3p
+@man man/man3p/Bio::DB::RefSeq.3p
+@man man/man3p/Bio::DB::ReferenceI.3p
+@man man/man3p/Bio::DB::Registry.3p
+@man man/man3p/Bio::DB::SeqFeature.3p
+@man man/man3p/Bio::DB::SeqFeature::NormalizedFeature.3p
+@man man/man3p/Bio::DB::SeqFeature::NormalizedFeatureI.3p
+@man man/man3p/Bio::DB::SeqFeature::NormalizedTableFeatureI.3p
+@man man/man3p/Bio::DB::SeqFeature::Segment.3p
+@man man/man3p/Bio::DB::SeqFeature::Store.3p
+@man man/man3p/Bio::DB::SeqFeature::Store::DBI::Iterator.3p
+@man man/man3p/Bio::DB::SeqFeature::Store::DBI::Pg.3p
+@man man/man3p/Bio::DB::SeqFeature::Store::DBI::SQLite.3p
+@man man/man3p/Bio::DB::SeqFeature::Store::DBI::mysql.3p
+@man man/man3p/Bio::DB::SeqFeature::Store::FeatureFileLoader.3p
+@man man/man3p/Bio::DB::SeqFeature::Store::GFF2Loader.3p
+@man man/man3p/Bio::DB::SeqFeature::Store::GFF3Loader.3p
+@man man/man3p/Bio::DB::SeqFeature::Store::LoadHelper.3p
+@man man/man3p/Bio::DB::SeqFeature::Store::Loader.3p
+@man man/man3p/Bio::DB::SeqFeature::Store::bdb.3p
+@man man/man3p/Bio::DB::SeqFeature::Store::berkeleydb.3p
+@man man/man3p/Bio::DB::SeqFeature::Store::berkeleydb3.3p
+@man man/man3p/Bio::DB::SeqFeature::Store::memory.3p
+@man man/man3p/Bio::DB::SeqHound.3p
+@man man/man3p/Bio::DB::SeqI.3p
+@man man/man3p/Bio::DB::SeqVersion.3p
+@man man/man3p/Bio::DB::SeqVersion::gi.3p
+@man man/man3p/Bio::DB::SwissProt.3p
+@man man/man3p/Bio::DB::TFBS.3p
+@man man/man3p/Bio::DB::TFBS::transfac_pro.3p
+@man man/man3p/Bio::DB::Taxonomy.3p
+@man man/man3p/Bio::DB::Taxonomy::entrez.3p
+@man man/man3p/Bio::DB::Taxonomy::flatfile.3p
+@man man/man3p/Bio::DB::Taxonomy::list.3p
+@man man/man3p/Bio::DB::Universal.3p
+@man man/man3p/Bio::DB::UpdateableSeqI.3p
+@man man/man3p/Bio::DB::WebDBSeqI.3p
+@man man/man3p/Bio::DBLinkContainerI.3p
+@man man/man3p/Bio::Das::FeatureTypeI.3p
+@man man/man3p/Bio::Das::SegmentI.3p
+@man man/man3p/Bio::DasI.3p
+@man man/man3p/Bio::DescribableI.3p
+@man man/man3p/Bio::Event::EventGeneratorI.3p
+@man man/man3p/Bio::Event::EventHandlerI.3p
+@man man/man3p/Bio::Expression::Contact.3p
+@man man/man3p/Bio::Expression::DataSet.3p
+@man man/man3p/Bio::Expression::FeatureGroup.3p
+@man man/man3p/Bio::Expression::FeatureGroup::FeatureGroupMas50.3p
+@man man/man3p/Bio::Expression::FeatureI.3p
+@man man/man3p/Bio::Expression::FeatureSet::FeatureSetMas50.3p
+@man man/man3p/Bio::Expression::Platform.3p
+@man man/man3p/Bio::Expression::ProbeI.3p
+@man man/man3p/Bio::Expression::Sample.3p
+@man man/man3p/Bio::Factory::AnalysisI.3p
+@man man/man3p/Bio::Factory::ApplicationFactoryI.3p
+@man man/man3p/Bio::Factory::DriverFactory.3p
+@man man/man3p/Bio::Factory::FTLocationFactory.3p
+@man man/man3p/Bio::Factory::LocationFactoryI.3p
+@man man/man3p/Bio::Factory::MapFactoryI.3p
+@man man/man3p/Bio::Factory::ObjectBuilderI.3p
+@man man/man3p/Bio::Factory::ObjectFactory.3p
+@man man/man3p/Bio::Factory::ObjectFactoryI.3p
+@man man/man3p/Bio::Factory::SeqAnalysisParserFactory.3p
+@man man/man3p/Bio::Factory::SeqAnalysisParserFactoryI.3p
+@man man/man3p/Bio::Factory::SequenceFactoryI.3p
+@man man/man3p/Bio::Factory::SequenceProcessorI.3p
+@man man/man3p/Bio::Factory::SequenceStreamI.3p
+@man man/man3p/Bio::Factory::TreeFactoryI.3p
+@man man/man3p/Bio::FeatureHolderI.3p
+@man man/man3p/Bio::FeatureIO.3p
+@man man/man3p/Bio::FeatureIO::bed.3p
+@man man/man3p/Bio::FeatureIO::gff.3p
+@man man/man3p/Bio::FeatureIO::gtf.3p
+@man man/man3p/Bio::FeatureIO::interpro.3p
+@man man/man3p/Bio::FeatureIO::ptt.3p
+@man man/man3p/Bio::FeatureIO::vecscreen_simple.3p
+@man man/man3p/Bio::HandlerBaseI.3p
+@man man/man3p/Bio::IdCollectionI.3p
+@man man/man3p/Bio::IdentifiableI.3p
+@man man/man3p/Bio::Index::Abstract.3p
+@man man/man3p/Bio::Index::AbstractSeq.3p
+@man man/man3p/Bio::Index::Blast.3p
+@man man/man3p/Bio::Index::BlastTable.3p
+@man man/man3p/Bio::Index::EMBL.3p
+@man man/man3p/Bio::Index::Fasta.3p
+@man man/man3p/Bio::Index::Fastq.3p
+@man man/man3p/Bio::Index::GenBank.3p
+@man man/man3p/Bio::Index::Hmmer.3p
+@man man/man3p/Bio::Index::Qual.3p
+@man man/man3p/Bio::Index::Stockholm.3p
+@man man/man3p/Bio::Index::SwissPfam.3p
+@man man/man3p/Bio::Index::Swissprot.3p
+@man man/man3p/Bio::LiveSeq::AARange.3p
+@man man/man3p/Bio::LiveSeq::Chain.3p
+@man man/man3p/Bio::LiveSeq::ChainI.3p
+@man man/man3p/Bio::LiveSeq::DNA.3p
+@man man/man3p/Bio::LiveSeq::Exon.3p
+@man man/man3p/Bio::LiveSeq::Gene.3p
+@man man/man3p/Bio::LiveSeq::IO::BioPerl.3p
+@man man/man3p/Bio::LiveSeq::IO::Loader.3p
+@man man/man3p/Bio::LiveSeq::Intron.3p
+@man man/man3p/Bio::LiveSeq::Mutation.3p
+@man man/man3p/Bio::LiveSeq::Mutator.3p
+@man man/man3p/Bio::LiveSeq::Prim_Transcript.3p
+@man man/man3p/Bio::LiveSeq::Range.3p
+@man man/man3p/Bio::LiveSeq::Repeat_Region.3p
+@man man/man3p/Bio::LiveSeq::Repeat_Unit.3p
+@man man/man3p/Bio::LiveSeq::SeqI.3p
+@man man/man3p/Bio::LiveSeq::Transcript.3p
+@man man/man3p/Bio::LiveSeq::Translation.3p
+@man man/man3p/Bio::LocatableSeq.3p
+@man man/man3p/Bio::Location::Atomic.3p
+@man man/man3p/Bio::Location::AvWithinCoordPolicy.3p
+@man man/man3p/Bio::Location::CoordinatePolicyI.3p
+@man man/man3p/Bio::Location::Fuzzy.3p
+@man man/man3p/Bio::Location::FuzzyLocationI.3p
+@man man/man3p/Bio::Location::NarrowestCoordPolicy.3p
+@man man/man3p/Bio::Location::Simple.3p
+@man man/man3p/Bio::Location::Split.3p
+@man man/man3p/Bio::Location::SplitLocationI.3p
+@man man/man3p/Bio::Location::WidestCoordPolicy.3p
+@man man/man3p/Bio::LocationI.3p
+@man man/man3p/Bio::Map::Clone.3p
+@man man/man3p/Bio::Map::Contig.3p
+@man man/man3p/Bio::Map::CytoMap.3p
+@man man/man3p/Bio::Map::CytoMarker.3p
+@man man/man3p/Bio::Map::CytoPosition.3p
+@man man/man3p/Bio::Map::EntityI.3p
+@man man/man3p/Bio::Map::FPCMarker.3p
+@man man/man3p/Bio::Map::Gene.3p
+@man man/man3p/Bio::Map::GeneMap.3p
+@man man/man3p/Bio::Map::GenePosition.3p
+@man man/man3p/Bio::Map::GeneRelative.3p
+@man man/man3p/Bio::Map::LinkageMap.3p
+@man man/man3p/Bio::Map::LinkagePosition.3p
+@man man/man3p/Bio::Map::MapI.3p
+@man man/man3p/Bio::Map::Mappable.3p
+@man man/man3p/Bio::Map::MappableI.3p
+@man man/man3p/Bio::Map::Marker.3p
+@man man/man3p/Bio::Map::MarkerI.3p
+@man man/man3p/Bio::Map::Microsatellite.3p
+@man man/man3p/Bio::Map::OrderedPosition.3p
+@man man/man3p/Bio::Map::OrderedPositionWithDistance.3p
+@man man/man3p/Bio::Map::Physical.3p
+@man man/man3p/Bio::Map::Position.3p
+@man man/man3p/Bio::Map::PositionHandler.3p
+@man man/man3p/Bio::Map::PositionHandlerI.3p
+@man man/man3p/Bio::Map::PositionI.3p
+@man man/man3p/Bio::Map::PositionWithSequence.3p
+@man man/man3p/Bio::Map::Prediction.3p
+@man man/man3p/Bio::Map::Relative.3p
+@man man/man3p/Bio::Map::RelativeI.3p
+@man man/man3p/Bio::Map::SimpleMap.3p
+@man man/man3p/Bio::Map::TranscriptionFactor.3p
+@man man/man3p/Bio::MapIO.3p
+@man man/man3p/Bio::MapIO::fpc.3p
+@man man/man3p/Bio::MapIO::mapmaker.3p
+@man man/man3p/Bio::Matrix::Generic.3p
+@man man/man3p/Bio::Matrix::IO.3p
+@man man/man3p/Bio::Matrix::IO::mlagan.3p
+@man man/man3p/Bio::Matrix::IO::phylip.3p
+@man man/man3p/Bio::Matrix::IO::scoring.3p
+@man man/man3p/Bio::Matrix::MatrixI.3p
+@man man/man3p/Bio::Matrix::Mlagan.3p
+@man man/man3p/Bio::Matrix::PSM::IO.3p
+@man man/man3p/Bio::Matrix::PSM::IO::mast.3p
+@man man/man3p/Bio::Matrix::PSM::IO::masta.3p
+@man man/man3p/Bio::Matrix::PSM::IO::meme.3p
+@man man/man3p/Bio::Matrix::PSM::IO::psiblast.3p
+@man man/man3p/Bio::Matrix::PSM::IO::transfac.3p
+@man man/man3p/Bio::Matrix::PSM::InstanceSite.3p
+@man man/man3p/Bio::Matrix::PSM::InstanceSiteI.3p
+@man man/man3p/Bio::Matrix::PSM::ProtMatrix.3p
+@man man/man3p/Bio::Matrix::PSM::ProtPsm.3p
+@man man/man3p/Bio::Matrix::PSM::Psm.3p
+@man man/man3p/Bio::Matrix::PSM::PsmHeader.3p
+@man man/man3p/Bio::Matrix::PSM::PsmHeaderI.3p
+@man man/man3p/Bio::Matrix::PSM::PsmI.3p
+@man man/man3p/Bio::Matrix::PSM::SiteMatrix.3p
+@man man/man3p/Bio::Matrix::PSM::SiteMatrixI.3p
+@man man/man3p/Bio::Matrix::PhylipDist.3p
+@man man/man3p/Bio::Matrix::Scoring.3p
+@man man/man3p/Bio::MolEvol::CodonModel.3p
+@man man/man3p/Bio::Ontology::DocumentRegistry.3p
+@man man/man3p/Bio::Ontology::GOterm.3p
+@man man/man3p/Bio::Ontology::InterProTerm.3p
+@man man/man3p/Bio::Ontology::OBOEngine.3p
+@man man/man3p/Bio::Ontology::OBOterm.3p
+@man man/man3p/Bio::Ontology::Ontology.3p
+@man man/man3p/Bio::Ontology::OntologyEngineI.3p
+@man man/man3p/Bio::Ontology::OntologyI.3p
+@man man/man3p/Bio::Ontology::OntologyStore.3p
+@man man/man3p/Bio::Ontology::Path.3p
+@man man/man3p/Bio::Ontology::PathI.3p
+@man man/man3p/Bio::Ontology::Relationship.3p
+@man man/man3p/Bio::Ontology::RelationshipFactory.3p
+@man man/man3p/Bio::Ontology::RelationshipI.3p
+@man man/man3p/Bio::Ontology::RelationshipType.3p
+@man man/man3p/Bio::Ontology::SimpleGOEngine::GraphAdaptor.3p
+@man man/man3p/Bio::Ontology::SimpleGOEngine::GraphAdaptor02.3p
+@man man/man3p/Bio::Ontology::SimpleOntologyEngine.3p
+@man man/man3p/Bio::Ontology::Term.3p
+@man man/man3p/Bio::Ontology::TermFactory.3p
+@man man/man3p/Bio::Ontology::TermI.3p
+@man man/man3p/Bio::OntologyIO.3p
+@man man/man3p/Bio::OntologyIO::Handlers::BaseSAXHandler.3p
+@man man/man3p/Bio::OntologyIO::Handlers::InterProHandler.3p
+@man man/man3p/Bio::OntologyIO::Handlers::InterPro_BioSQL_Handler.3p
+@man man/man3p/Bio::OntologyIO::InterProParser.3p
+@man man/man3p/Bio::OntologyIO::dagflat.3p
+@man man/man3p/Bio::OntologyIO::goflat.3p
+@man man/man3p/Bio::OntologyIO::obo.3p
+@man man/man3p/Bio::OntologyIO::simplehierarchy.3p
+@man man/man3p/Bio::OntologyIO::soflat.3p
+@man man/man3p/Bio::ParameterBaseI.3p
+@man man/man3p/Bio::Perl.3p
+@man man/man3p/Bio::Phenotype::Correlate.3p
+@man man/man3p/Bio::Phenotype::MeSH::Term.3p
+@man man/man3p/Bio::Phenotype::MeSH::Twig.3p
+@man man/man3p/Bio::Phenotype::Measure.3p
+@man man/man3p/Bio::Phenotype::OMIM::MiniMIMentry.3p
+@man man/man3p/Bio::Phenotype::OMIM::OMIMentry.3p
+@man man/man3p/Bio::Phenotype::OMIM::OMIMentryAllelicVariant.3p
+@man man/man3p/Bio::Phenotype::OMIM::OMIMparser.3p
+@man man/man3p/Bio::Phenotype::Phenotype.3p
+@man man/man3p/Bio::Phenotype::PhenotypeI.3p
+@man man/man3p/Bio::PhyloNetwork.3p
+@man man/man3p/Bio::PhyloNetwork::Factory.3p
+@man man/man3p/Bio::PhyloNetwork::FactoryX.3p
+@man man/man3p/Bio::PhyloNetwork::GraphViz.3p
+@man man/man3p/Bio::PhyloNetwork::RandomFactory.3p
+@man man/man3p/Bio::PhyloNetwork::TreeFactory.3p
+@man man/man3p/Bio::PhyloNetwork::TreeFactoryMulti.3p
+@man man/man3p/Bio::PhyloNetwork::TreeFactoryX.3p
+@man man/man3p/Bio::PhyloNetwork::muVector.3p
+@man man/man3p/Bio::PopGen::Genotype.3p
+@man man/man3p/Bio::PopGen::GenotypeI.3p
+@man man/man3p/Bio::PopGen::HtSNP.3p
+@man man/man3p/Bio::PopGen::IO.3p
+@man man/man3p/Bio::PopGen::IO::csv.3p
+@man man/man3p/Bio::PopGen::IO::hapmap.3p
+@man man/man3p/Bio::PopGen::IO::phase.3p
+@man man/man3p/Bio::PopGen::IO::prettybase.3p
+@man man/man3p/Bio::PopGen::Individual.3p
+@man man/man3p/Bio::PopGen::IndividualI.3p
+@man man/man3p/Bio::PopGen::Marker.3p
+@man man/man3p/Bio::PopGen::MarkerI.3p
+@man man/man3p/Bio::PopGen::PopStats.3p
+@man man/man3p/Bio::PopGen::Population.3p
+@man man/man3p/Bio::PopGen::PopulationI.3p
+@man man/man3p/Bio::PopGen::Simulation::Coalescent.3p
+@man man/man3p/Bio::PopGen::Simulation::GeneticDrift.3p
+@man man/man3p/Bio::PopGen::Statistics.3p
+@man man/man3p/Bio::PopGen::TagHaplotype.3p
+@man man/man3p/Bio::PopGen::Utilities.3p
+@man man/man3p/Bio::PrimarySeq.3p
+@man man/man3p/Bio::PrimarySeqI.3p
+@man man/man3p/Bio::PullParserI.3p
+@man man/man3p/Bio::Range.3p
+@man man/man3p/Bio::RangeI.3p
+@man man/man3p/Bio::Restriction::Analysis.3p
+@man man/man3p/Bio::Restriction::Enzyme.3p
+@man man/man3p/Bio::Restriction::Enzyme::MultiCut.3p
+@man man/man3p/Bio::Restriction::Enzyme::MultiSite.3p
+@man man/man3p/Bio::Restriction::EnzymeCollection.3p
+@man man/man3p/Bio::Restriction::EnzymeI.3p
+@man man/man3p/Bio::Restriction::IO.3p
+@man man/man3p/Bio::Restriction::IO::bairoch.3p
+@man man/man3p/Bio::Restriction::IO::base.3p
+@man man/man3p/Bio::Restriction::IO::itype2.3p
+@man man/man3p/Bio::Restriction::IO::prototype.3p
+@man man/man3p/Bio::Restriction::IO::withrefm.3p
+@man man/man3p/Bio::Root::Build.3p
+@man man/man3p/Bio::Root::Exception.3p
+@man man/man3p/Bio::Root::HTTPget.3p
+@man man/man3p/Bio::Root::IO.3p
+@man man/man3p/Bio::Root::Root.3p
+@man man/man3p/Bio::Root::RootI.3p
+@man man/man3p/Bio::Root::Storable.3p
+@man man/man3p/Bio::Root::Test.3p
+@man man/man3p/Bio::Root::Test::Warn.3p
+@man man/man3p/Bio::Root::Utilities.3p
+@man man/man3p/Bio::Root::Version.3p
+@man man/man3p/Bio::Search::BlastStatistics.3p
+@man man/man3p/Bio::Search::BlastUtils.3p
+@man man/man3p/Bio::Search::DatabaseI.3p
+@man man/man3p/Bio::Search::GenericDatabase.3p
+@man man/man3p/Bio::Search::GenericStatistics.3p
+@man man/man3p/Bio::Search::HSP::BlastHSP.3p
+@man man/man3p/Bio::Search::HSP::BlastPullHSP.3p
+@man man/man3p/Bio::Search::HSP::FastaHSP.3p
+@man man/man3p/Bio::Search::HSP::GenericHSP.3p
+@man man/man3p/Bio::Search::HSP::HMMERHSP.3p
+@man man/man3p/Bio::Search::HSP::HSPFactory.3p
+@man man/man3p/Bio::Search::HSP::HSPI.3p
+@man man/man3p/Bio::Search::HSP::HmmpfamHSP.3p
+@man man/man3p/Bio::Search::HSP::ModelHSP.3p
+@man man/man3p/Bio::Search::HSP::PSLHSP.3p
+@man man/man3p/Bio::Search::HSP::PsiBlastHSP.3p
+@man man/man3p/Bio::Search::HSP::PullHSPI.3p
+@man man/man3p/Bio::Search::HSP::WABAHSP.3p
+@man man/man3p/Bio::Search::Hit::BlastHit.3p
+@man man/man3p/Bio::Search::Hit::BlastPullHit.3p
+@man man/man3p/Bio::Search::Hit::Fasta.3p
+@man man/man3p/Bio::Search::Hit::GenericHit.3p
+@man man/man3p/Bio::Search::Hit::HMMERHit.3p
+@man man/man3p/Bio::Search::Hit::HitFactory.3p
+@man man/man3p/Bio::Search::Hit::HitI.3p
+@man man/man3p/Bio::Search::Hit::HmmpfamHit.3p
+@man man/man3p/Bio::Search::Hit::ModelHit.3p
+@man man/man3p/Bio::Search::Hit::PsiBlastHit.3p
+@man man/man3p/Bio::Search::Hit::PullHitI.3p
+@man man/man3p/Bio::Search::Iteration::GenericIteration.3p
+@man man/man3p/Bio::Search::Iteration::IterationI.3p
+@man man/man3p/Bio::Search::Processor.3p
+@man man/man3p/Bio::Search::Result::BlastPullResult.3p
+@man man/man3p/Bio::Search::Result::BlastResult.3p
+@man man/man3p/Bio::Search::Result::CrossMatchResult.3p
+@man man/man3p/Bio::Search::Result::GenericResult.3p
+@man man/man3p/Bio::Search::Result::HMMERResult.3p
+@man man/man3p/Bio::Search::Result::HmmpfamResult.3p
+@man man/man3p/Bio::Search::Result::PullResultI.3p
+@man man/man3p/Bio::Search::Result::ResultFactory.3p
+@man man/man3p/Bio::Search::Result::ResultI.3p
+@man man/man3p/Bio::Search::Result::WABAResult.3p
+@man man/man3p/Bio::Search::SearchUtils.3p
+@man man/man3p/Bio::Search::StatisticsI.3p
+@man man/man3p/Bio::Search::Tiling::MapTileUtils.3p
+@man man/man3p/Bio::Search::Tiling::MapTiling.3p
+@man man/man3p/Bio::Search::Tiling::TilingI.3p
+@man man/man3p/Bio::SearchDist.3p
+@man man/man3p/Bio::SearchIO.3p
+@man man/man3p/Bio::SearchIO::EventHandlerI.3p
+@man man/man3p/Bio::SearchIO::FastHitEventBuilder.3p
+@man man/man3p/Bio::SearchIO::IteratedSearchResultEventBuilder.3p
+@man man/man3p/Bio::SearchIO::SearchResultEventBuilder.3p
+@man man/man3p/Bio::SearchIO::SearchWriterI.3p
+@man man/man3p/Bio::SearchIO::Writer::BSMLResultWriter.3p
+@man man/man3p/Bio::SearchIO::Writer::GbrowseGFF.3p
+@man man/man3p/Bio::SearchIO::Writer::HSPTableWriter.3p
+@man man/man3p/Bio::SearchIO::Writer::HTMLResultWriter.3p
+@man man/man3p/Bio::SearchIO::Writer::HitTableWriter.3p
+@man man/man3p/Bio::SearchIO::Writer::ResultTableWriter.3p
+@man man/man3p/Bio::SearchIO::Writer::TextResultWriter.3p
+@man man/man3p/Bio::SearchIO::XML::BlastHandler.3p
+@man man/man3p/Bio::SearchIO::XML::PsiBlastHandler.3p
+@man man/man3p/Bio::SearchIO::axt.3p
+@man man/man3p/Bio::SearchIO::blast.3p
+@man man/man3p/Bio::SearchIO::blast_pull.3p
+@man man/man3p/Bio::SearchIO::blasttable.3p
+@man man/man3p/Bio::SearchIO::blastxml.3p
+@man man/man3p/Bio::SearchIO::cross_match.3p
+@man man/man3p/Bio::SearchIO::erpin.3p
+@man man/man3p/Bio::SearchIO::exonerate.3p
+@man man/man3p/Bio::SearchIO::fasta.3p
+@man man/man3p/Bio::SearchIO::gmap_f9.3p
+@man man/man3p/Bio::SearchIO::hmmer.3p
+@man man/man3p/Bio::SearchIO::hmmer_pull.3p
+@man man/man3p/Bio::SearchIO::infernal.3p
+@man man/man3p/Bio::SearchIO::megablast.3p
+@man man/man3p/Bio::SearchIO::psl.3p
+@man man/man3p/Bio::SearchIO::rnamotif.3p
+@man man/man3p/Bio::SearchIO::sim4.3p
+@man man/man3p/Bio::SearchIO::waba.3p
+@man man/man3p/Bio::SearchIO::wise.3p
+@man man/man3p/Bio::Seq.3p
+@man man/man3p/Bio::Seq::BaseSeqProcessor.3p
+@man man/man3p/Bio::Seq::EncodedSeq.3p
+@man man/man3p/Bio::Seq::LargeLocatableSeq.3p
+@man man/man3p/Bio::Seq::LargePrimarySeq.3p
+@man man/man3p/Bio::Seq::LargeSeq.3p
+@man man/man3p/Bio::Seq::LargeSeqI.3p
+@man man/man3p/Bio::Seq::Meta.3p
+@man man/man3p/Bio::Seq::Meta::Array.3p
+@man man/man3p/Bio::Seq::MetaI.3p
+@man man/man3p/Bio::Seq::PrimaryQual.3p
+@man man/man3p/Bio::Seq::PrimedSeq.3p
+@man man/man3p/Bio::Seq::QualI.3p
+@man man/man3p/Bio::Seq::Quality.3p
+@man man/man3p/Bio::Seq::RichSeq.3p
+@man man/man3p/Bio::Seq::RichSeqI.3p
+@man man/man3p/Bio::Seq::SeqBuilder.3p
+@man man/man3p/Bio::Seq::SeqFactory.3p
+@man man/man3p/Bio::Seq::SeqFastaSpeedFactory.3p
+@man man/man3p/Bio::Seq::SeqWithQuality.3p
+@man man/man3p/Bio::Seq::SequenceTrace.3p
+@man man/man3p/Bio::Seq::TraceI.3p
+@man man/man3p/Bio::SeqAnalysisParserI.3p
+@man man/man3p/Bio::SeqEvolution::DNAPoint.3p
+@man man/man3p/Bio::SeqEvolution::EvolutionI.3p
+@man man/man3p/Bio::SeqEvolution::Factory.3p
+@man man/man3p/Bio::SeqFeature::Annotated.3p
+@man man/man3p/Bio::SeqFeature::AnnotationAdaptor.3p
+@man man/man3p/Bio::SeqFeature::Collection.3p
+@man man/man3p/Bio::SeqFeature::CollectionI.3p
+@man man/man3p/Bio::SeqFeature::Computation.3p
+@man man/man3p/Bio::SeqFeature::FeaturePair.3p
+@man man/man3p/Bio::SeqFeature::Gene::Exon.3p
+@man man/man3p/Bio::SeqFeature::Gene::ExonI.3p
+@man man/man3p/Bio::SeqFeature::Gene::GeneStructure.3p
+@man man/man3p/Bio::SeqFeature::Gene::GeneStructureI.3p
+@man man/man3p/Bio::SeqFeature::Gene::Intron.3p
+@man man/man3p/Bio::SeqFeature::Gene::NC_Feature.3p
+@man man/man3p/Bio::SeqFeature::Gene::Poly_A_site.3p
+@man man/man3p/Bio::SeqFeature::Gene::Promoter.3p
+@man man/man3p/Bio::SeqFeature::Gene::Transcript.3p
+@man man/man3p/Bio::SeqFeature::Gene::TranscriptI.3p
+@man man/man3p/Bio::SeqFeature::Gene::UTR.3p
+@man man/man3p/Bio::SeqFeature::Generic.3p
+@man man/man3p/Bio::SeqFeature::Lite.3p
+@man man/man3p/Bio::SeqFeature::PositionProxy.3p
+@man man/man3p/Bio::SeqFeature::Primer.3p
+@man man/man3p/Bio::SeqFeature::SiRNA::Oligo.3p
+@man man/man3p/Bio::SeqFeature::SiRNA::Pair.3p
+@man man/man3p/Bio::SeqFeature::Similarity.3p
+@man man/man3p/Bio::SeqFeature::SimilarityPair.3p
+@man man/man3p/Bio::SeqFeature::Tools::FeatureNamer.3p
+@man man/man3p/Bio::SeqFeature::Tools::IDHandler.3p
+@man man/man3p/Bio::SeqFeature::Tools::TypeMapper.3p
+@man man/man3p/Bio::SeqFeature::Tools::Unflattener.3p
+@man man/man3p/Bio::SeqFeature::TypedSeqFeatureI.3p
+@man man/man3p/Bio::SeqFeatureI.3p
+@man man/man3p/Bio::SeqI.3p
+@man man/man3p/Bio::SeqIO.3p
+@man man/man3p/Bio::SeqIO::FTHelper.3p
+@man man/man3p/Bio::SeqIO::Handler::GenericRichSeqHandler.3p
+@man man/man3p/Bio::SeqIO::MultiFile.3p
+@man man/man3p/Bio::SeqIO::abi.3p
+@man man/man3p/Bio::SeqIO::ace.3p
+@man man/man3p/Bio::SeqIO::agave.3p
+@man man/man3p/Bio::SeqIO::alf.3p
+@man man/man3p/Bio::SeqIO::asciitree.3p
+@man man/man3p/Bio::SeqIO::bsml.3p
+@man man/man3p/Bio::SeqIO::bsml_sax.3p
+@man man/man3p/Bio::SeqIO::chadoxml.3p
+@man man/man3p/Bio::SeqIO::chaos.3p
+@man man/man3p/Bio::SeqIO::chaosxml.3p
+@man man/man3p/Bio::SeqIO::ctf.3p
+@man man/man3p/Bio::SeqIO::embl.3p
+@man man/man3p/Bio::SeqIO::embldriver.3p
+@man man/man3p/Bio::SeqIO::entrezgene.3p
+@man man/man3p/Bio::SeqIO::excel.3p
+@man man/man3p/Bio::SeqIO::exp.3p
+@man man/man3p/Bio::SeqIO::fasta.3p
+@man man/man3p/Bio::SeqIO::fastq.3p
+@man man/man3p/Bio::SeqIO::flybase_chadoxml.3p
+@man man/man3p/Bio::SeqIO::game.3p
+@man man/man3p/Bio::SeqIO::game::featHandler.3p
+@man man/man3p/Bio::SeqIO::game::gameHandler.3p
+@man man/man3p/Bio::SeqIO::game::gameSubs.3p
+@man man/man3p/Bio::SeqIO::game::gameWriter.3p
+@man man/man3p/Bio::SeqIO::game::seqHandler.3p
+@man man/man3p/Bio::SeqIO::gbdriver.3p
+@man man/man3p/Bio::SeqIO::gcg.3p
+@man man/man3p/Bio::SeqIO::genbank.3p
+@man man/man3p/Bio::SeqIO::interpro.3p
+@man man/man3p/Bio::SeqIO::kegg.3p
+@man man/man3p/Bio::SeqIO::largefasta.3p
+@man man/man3p/Bio::SeqIO::lasergene.3p
+@man man/man3p/Bio::SeqIO::locuslink.3p
+@man man/man3p/Bio::SeqIO::metafasta.3p
+@man man/man3p/Bio::SeqIO::phd.3p
+@man man/man3p/Bio::SeqIO::pir.3p
+@man man/man3p/Bio::SeqIO::pln.3p
+@man man/man3p/Bio::SeqIO::qual.3p
+@man man/man3p/Bio::SeqIO::raw.3p
+@man man/man3p/Bio::SeqIO::scf.3p
+@man man/man3p/Bio::SeqIO::strider.3p
+@man man/man3p/Bio::SeqIO::swiss.3p
+@man man/man3p/Bio::SeqIO::swissdriver.3p
+@man man/man3p/Bio::SeqIO::tab.3p
+@man man/man3p/Bio::SeqIO::table.3p
+@man man/man3p/Bio::SeqIO::tigr.3p
+@man man/man3p/Bio::SeqIO::tigrxml.3p
+@man man/man3p/Bio::SeqIO::tinyseq.3p
+@man man/man3p/Bio::SeqIO::tinyseq::tinyseqHandler.3p
+@man man/man3p/Bio::SeqIO::ztr.3p
+@man man/man3p/Bio::SeqUtils.3p
+@man man/man3p/Bio::SimpleAlign.3p
+@man man/man3p/Bio::SimpleAnalysisI.3p
+@man man/man3p/Bio::Species.3p
+@man man/man3p/Bio::Structure::Atom.3p
+@man man/man3p/Bio::Structure::Chain.3p
+@man man/man3p/Bio::Structure::Entry.3p
+@man man/man3p/Bio::Structure::IO.3p
+@man man/man3p/Bio::Structure::IO::pdb.3p
+@man man/man3p/Bio::Structure::Model.3p
+@man man/man3p/Bio::Structure::Residue.3p
+@man man/man3p/Bio::Structure::SecStr::DSSP::Res.3p
+@man man/man3p/Bio::Structure::SecStr::STRIDE::Res.3p
+@man man/man3p/Bio::Structure::StructureI.3p
+@man man/man3p/Bio::Symbol::Alphabet.3p
+@man man/man3p/Bio::Symbol::AlphabetI.3p
+@man man/man3p/Bio::Symbol::DNAAlphabet.3p
+@man man/man3p/Bio::Symbol::ProteinAlphabet.3p
+@man man/man3p/Bio::Symbol::Symbol.3p
+@man man/man3p/Bio::Symbol::SymbolI.3p
+@man man/man3p/Bio::Taxon.3p
+@man man/man3p/Bio::Taxonomy.3p
+@man man/man3p/Bio::Taxonomy::FactoryI.3p
+@man man/man3p/Bio::Taxonomy::Node.3p
+@man man/man3p/Bio::Taxonomy::Taxon.3p
+@man man/man3p/Bio::Taxonomy::Tree.3p
+@man man/man3p/Bio::Tools::AlignFactory.3p
+@man man/man3p/Bio::Tools::Alignment::Consed.3p
+@man man/man3p/Bio::Tools::Alignment::Trim.3p
+@man man/man3p/Bio::Tools::Analysis::DNA::ESEfinder.3p
+@man man/man3p/Bio::Tools::Analysis::Protein::Domcut.3p
+@man man/man3p/Bio::Tools::Analysis::Protein::ELM.3p
+@man man/man3p/Bio::Tools::Analysis::Protein::GOR4.3p
+@man man/man3p/Bio::Tools::Analysis::Protein::HNN.3p
+@man man/man3p/Bio::Tools::Analysis::Protein::Mitoprot.3p
+@man man/man3p/Bio::Tools::Analysis::Protein::NetPhos.3p
+@man man/man3p/Bio::Tools::Analysis::Protein::Scansite.3p
+@man man/man3p/Bio::Tools::Analysis::Protein::Sopma.3p
+@man man/man3p/Bio::Tools::Analysis::SimpleAnalysisBase.3p
+@man man/man3p/Bio::Tools::AnalysisResult.3p
+@man man/man3p/Bio::Tools::Blat.3p
+@man man/man3p/Bio::Tools::CodonTable.3p
+@man man/man3p/Bio::Tools::Coil.3p
+@man man/man3p/Bio::Tools::ECnumber.3p
+@man man/man3p/Bio::Tools::EMBOSS::Palindrome.3p
+@man man/man3p/Bio::Tools::EPCR.3p
+@man man/man3p/Bio::Tools::ERPIN.3p
+@man man/man3p/Bio::Tools::ESTScan.3p
+@man man/man3p/Bio::Tools::EUtilities.3p
+@man man/man3p/Bio::Tools::EUtilities::Cookie.3p
+@man man/man3p/Bio::Tools::EUtilities::EUtilDataI.3p
+@man man/man3p/Bio::Tools::EUtilities::EUtilParameters.3p
+@man man/man3p/Bio::Tools::EUtilities::History.3p
+@man man/man3p/Bio::Tools::EUtilities::HistoryI.3p
+@man man/man3p/Bio::Tools::EUtilities::Info.3p
+@man man/man3p/Bio::Tools::EUtilities::Info::FieldInfo.3p
+@man man/man3p/Bio::Tools::EUtilities::Info::LinkInfo.3p
+@man man/man3p/Bio::Tools::EUtilities::Link.3p
+@man man/man3p/Bio::Tools::EUtilities::Link::LinkSet.3p
+@man man/man3p/Bio::Tools::EUtilities::Link::UrlLink.3p
+@man man/man3p/Bio::Tools::EUtilities::Query.3p
+@man man/man3p/Bio::Tools::EUtilities::Query::GlobalQuery.3p
+@man man/man3p/Bio::Tools::EUtilities::Summary.3p
+@man man/man3p/Bio::Tools::EUtilities::Summary::DocSum.3p
+@man man/man3p/Bio::Tools::EUtilities::Summary::Item.3p
+@man man/man3p/Bio::Tools::EUtilities::Summary::ItemContainerI.3p
+@man man/man3p/Bio::Tools::Eponine.3p
+@man man/man3p/Bio::Tools::Est2Genome.3p
+@man man/man3p/Bio::Tools::Fgenesh.3p
+@man man/man3p/Bio::Tools::FootPrinter.3p
+@man man/man3p/Bio::Tools::GFF.3p
+@man man/man3p/Bio::Tools::Gel.3p
+@man man/man3p/Bio::Tools::Geneid.3p
+@man man/man3p/Bio::Tools::Genemark.3p
+@man man/man3p/Bio::Tools::Genewise.3p
+@man man/man3p/Bio::Tools::Genomewise.3p
+@man man/man3p/Bio::Tools::Genscan.3p
+@man man/man3p/Bio::Tools::Glimmer.3p
+@man man/man3p/Bio::Tools::Grail.3p
+@man man/man3p/Bio::Tools::GuessSeqFormat.3p
+@man man/man3p/Bio::Tools::HMMER::Domain.3p
+@man man/man3p/Bio::Tools::HMMER::Results.3p
+@man man/man3p/Bio::Tools::HMMER::Set.3p
+@man man/man3p/Bio::Tools::Hmmpfam.3p
+@man man/man3p/Bio::Tools::IUPAC.3p
+@man man/man3p/Bio::Tools::Infernal.3p
+@man man/man3p/Bio::Tools::Lucy.3p
+@man man/man3p/Bio::Tools::MZEF.3p
+@man man/man3p/Bio::Tools::Match.3p
+@man man/man3p/Bio::Tools::OddCodes.3p
+@man man/man3p/Bio::Tools::Phylo::Gerp.3p
+@man man/man3p/Bio::Tools::Phylo::Gumby.3p
+@man man/man3p/Bio::Tools::Phylo::Molphy.3p
+@man man/man3p/Bio::Tools::Phylo::Molphy::Result.3p
+@man man/man3p/Bio::Tools::Phylo::PAML.3p
+@man man/man3p/Bio::Tools::Phylo::PAML::ModelResult.3p
+@man man/man3p/Bio::Tools::Phylo::PAML::Result.3p
+@man man/man3p/Bio::Tools::Phylo::Phylip::ProtDist.3p
+@man man/man3p/Bio::Tools::Prediction::Exon.3p
+@man man/man3p/Bio::Tools::Prediction::Gene.3p
+@man man/man3p/Bio::Tools::Primer3.3p
+@man man/man3p/Bio::Tools::Primer::Assessor::Base.3p
+@man man/man3p/Bio::Tools::Primer::AssessorI.3p
+@man man/man3p/Bio::Tools::Primer::Feature.3p
+@man man/man3p/Bio::Tools::Primer::Pair.3p
+@man man/man3p/Bio::Tools::Prints.3p
+@man man/man3p/Bio::Tools::Profile.3p
+@man man/man3p/Bio::Tools::Promoterwise.3p
+@man man/man3p/Bio::Tools::PrositeScan.3p
+@man man/man3p/Bio::Tools::Protparam.3p
+@man man/man3p/Bio::Tools::Pseudowise.3p
+@man man/man3p/Bio::Tools::QRNA.3p
+@man man/man3p/Bio::Tools::RNAMotif.3p
+@man man/man3p/Bio::Tools::RandomDistFunctions.3p
+@man man/man3p/Bio::Tools::RepeatMasker.3p
+@man man/man3p/Bio::Tools::Run::GenericParameters.3p
+@man man/man3p/Bio::Tools::Run::ParametersI.3p
+@man man/man3p/Bio::Tools::Run::RemoteBlast.3p
+@man man/man3p/Bio::Tools::Run::StandAloneBlast.3p
+@man man/man3p/Bio::Tools::Run::StandAloneNCBIBlast.3p
+@man man/man3p/Bio::Tools::Run::StandAloneWUBlast.3p
+@man man/man3p/Bio::Tools::Run::WrapperBase.3p
+@man man/man3p/Bio::Tools::Seg.3p
+@man man/man3p/Bio::Tools::SeqPattern.3p
+@man man/man3p/Bio::Tools::SeqPattern::Backtranslate.3p
+@man man/man3p/Bio::Tools::SeqStats.3p
+@man man/man3p/Bio::Tools::SeqWords.3p
+@man man/man3p/Bio::Tools::SiRNA.3p
+@man man/man3p/Bio::Tools::SiRNA::Ruleset::saigo.3p
+@man man/man3p/Bio::Tools::SiRNA::Ruleset::tuschl.3p
+@man man/man3p/Bio::Tools::Sigcleave.3p
+@man man/man3p/Bio::Tools::Signalp.3p
+@man man/man3p/Bio::Tools::Signalp::ExtendedSignalp.3p
+@man man/man3p/Bio::Tools::Sim4::Exon.3p
+@man man/man3p/Bio::Tools::Sim4::Results.3p
+@man man/man3p/Bio::Tools::Spidey::Exon.3p
+@man man/man3p/Bio::Tools::Spidey::Results.3p
+@man man/man3p/Bio::Tools::TandemRepeatsFinder.3p
+@man man/man3p/Bio::Tools::TargetP.3p
+@man man/man3p/Bio::Tools::Tmhmm.3p
+@man man/man3p/Bio::Tools::dpAlign.3p
+@man man/man3p/Bio::Tools::ipcress.3p
+@man man/man3p/Bio::Tools::isPcr.3p
+@man man/man3p/Bio::Tools::pICalculator.3p
+@man man/man3p/Bio::Tools::pSW.3p
+@man man/man3p/Bio::Tools::tRNAscanSE.3p
+@man man/man3p/Bio::Tree::AlleleNode.3p
+@man man/man3p/Bio::Tree::AnnotatableNode.3p
+@man man/man3p/Bio::Tree::Compatible.3p
+@man man/man3p/Bio::Tree::DistanceFactory.3p
+@man man/man3p/Bio::Tree::Draw::Cladogram.3p
+@man man/man3p/Bio::Tree::Node.3p
+@man man/man3p/Bio::Tree::NodeI.3p
+@man man/man3p/Bio::Tree::NodeNHX.3p
+@man man/man3p/Bio::Tree::RandomFactory.3p
+@man man/man3p/Bio::Tree::Statistics.3p
+@man man/man3p/Bio::Tree::Tree.3p
+@man man/man3p/Bio::Tree::TreeFunctionsI.3p
+@man man/man3p/Bio::Tree::TreeI.3p
+@man man/man3p/Bio::TreeIO.3p
+@man man/man3p/Bio::TreeIO::TreeEventBuilder.3p
+@man man/man3p/Bio::TreeIO::cluster.3p
+@man man/man3p/Bio::TreeIO::lintree.3p
+@man man/man3p/Bio::TreeIO::newick.3p
+@man man/man3p/Bio::TreeIO::nexus.3p
+@man man/man3p/Bio::TreeIO::nhx.3p
+@man man/man3p/Bio::TreeIO::pag.3p
+@man man/man3p/Bio::TreeIO::phyloxml.3p
+@man man/man3p/Bio::TreeIO::svggraph.3p
+@man man/man3p/Bio::TreeIO::tabtree.3p
+@man man/man3p/Bio::UpdateableSeqI.3p
+@man man/man3p/Bio::Variation::AAChange.3p
+@man man/man3p/Bio::Variation::AAReverseMutate.3p
+@man man/man3p/Bio::Variation::Allele.3p
+@man man/man3p/Bio::Variation::DNAMutation.3p
+@man man/man3p/Bio::Variation::IO.3p
+@man man/man3p/Bio::Variation::IO::flat.3p
+@man man/man3p/Bio::Variation::IO::xml.3p
+@man man/man3p/Bio::Variation::RNAChange.3p
+@man man/man3p/Bio::Variation::SNP.3p
+@man man/man3p/Bio::Variation::SeqDiff.3p
+@man man/man3p/Bio::Variation::VariantI.3p
+@man man/man3p/Bio::WebAgent.3p
 share/examples/bioperl/
 share/examples/bioperl/Bio-DB-GFF/
 share/examples/bioperl/Bio-DB-GFF/load_ucsc.pl
@@ -965,15 +1977,9 @@ share/examples/bioperl/align/aligntutorial.pl
 share/examples/bioperl/align/clustalw.pl
 share/examples/bioperl/align/simplealign.pl
 share/examples/bioperl/biblio/
-share/examples/bioperl/biblio/biblio_examples.pl
+share/examples/bioperl/biblio/biblio-eutils-example.pl
+share/examples/bioperl/biblio/biblio-soap-example.pl
 share/examples/bioperl/biblio/biblio_soap.pl
-share/examples/bioperl/biographics/
-share/examples/bioperl/biographics/all_glyphs.pl
-share/examples/bioperl/biographics/dynamic_glyphs.pl
-share/examples/bioperl/biographics/feature_data.gff
-share/examples/bioperl/biographics/feature_data.txt
-share/examples/bioperl/biographics/lots_of_glyphs.pl
-share/examples/bioperl/biographics/render_sequence.pl
 share/examples/bioperl/bioperl.pl
 share/examples/bioperl/cluster/
 share/examples/bioperl/cluster/dbsnp.pl
@@ -993,10 +1999,11 @@ share/examples/bioperl/generate_random_seq.pl
 share/examples/bioperl/liveseq/
 share/examples/bioperl/liveseq/change_gene.pl
 share/examples/bioperl/longorf.pl
-share/examples/bioperl/make_mrna_protein.pl
 share/examples/bioperl/make_primers.pl
 share/examples/bioperl/popgen/
 share/examples/bioperl/popgen/parse_calc_stats.pl
+share/examples/bioperl/quality/
+share/examples/bioperl/quality/svgtrace.pl
 share/examples/bioperl/rev_and_trans.pl
 share/examples/bioperl/revcom_dir.pl
 share/examples/bioperl/root/
@@ -1011,7 +2018,6 @@ share/examples/bioperl/root/lib/Bio/PrimarySeq.pm
 share/examples/bioperl/root/lib/Bio/PrimarySeqI.pm
 share/examples/bioperl/root/lib/Bio/Seq.pm
 share/examples/bioperl/root/lib/Bio/SeqI.pm
-share/examples/bioperl/root/lib/Error.pm
 share/examples/bioperl/root/lib/TestInterface.pm
 share/examples/bioperl/root/lib/TestObject.pm
 share/examples/bioperl/searchio/
@@ -1036,11 +2042,14 @@ share/examples/bioperl/tk/
 share/examples/bioperl/tk/gsequence.pl
 share/examples/bioperl/tk/hitdisplay.pl
 share/examples/bioperl/tools/
+share/examples/bioperl/tools/extract_genes.pl
 share/examples/bioperl/tools/gb_to_gff.pl
 share/examples/bioperl/tools/gff2ps.pl
 share/examples/bioperl/tools/parse_codeml.pl
 share/examples/bioperl/tools/psw.pl
+share/examples/bioperl/tools/reverse-translate.pl
 share/examples/bioperl/tools/run_genscan.pl
+share/examples/bioperl/tools/run_primer3.pl
 share/examples/bioperl/tools/seq_pattern.pl
 share/examples/bioperl/tools/standaloneblast.pl
 share/examples/bioperl/tree/
