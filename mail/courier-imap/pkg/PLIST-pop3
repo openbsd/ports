@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-pop3,v 1.7 2010/02/26 18:55:21 espie Exp $
+@comment $OpenBSD: PLIST-pop3,v 1.8 2010/12/16 17:55:10 giovanni Exp $
 @pkgpath courier/imap,-pop3,no_trashquota
 @pkgpath courier/imap,-pop3,no_trashquota,imap_bugs
 @pkgpath courier/imap,-pop3,imap_bugs
@@ -19,3 +19,5 @@ share/examples/courier/pop3d.dist
 @sample ${SYSCONFDIR}/pop3d
 @extraunexec rm -rf ${SYSCONFDIR}/
 @extraunexec rm -rf ${COURIERSTATE}
+@rcscript ${RCDIR}/courier_pop3
+@rcscript ${RCDIR}/courier_pop3-ssl

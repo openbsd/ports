@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2010/12/16 17:55:10 giovanni Exp $
 
 COMMENT-main=		imap server for maildir format mailboxes
 COMMENT-pop3=		pop3 server for maildir format mailboxes
@@ -6,9 +6,9 @@ COMMENT-pop3=		pop3 server for maildir format mailboxes
 V=			4.8.0
 DISTNAME=		courier-imap-${V}
 PKGNAME-main=		${DISTNAME}
-REVISION-main=		1
+REVISION-main=		2
 FULLPKGNAME-pop3=	courier-pop3-${V}
-REVISION-pop3=		1
+REVISION-pop3=		2
 FULLPKGPATH-pop3=	mail/courier-imap,-pop3
 
 CATEGORIES=		mail
@@ -26,10 +26,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c courierauth courierauthsasl gdbm idn
+WANTLIB-pop3=		c courierauth courierauthsasl idn ${MODGETTEXT_WANTLIB}
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \

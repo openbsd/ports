@@ -6,10 +6,3 @@ necessary. You MUST set the CN in imapd.cnf to the hostname by which
 your IMAP server is accessed, or else clients will complain. When this
 is done, you can use the 'mkimapdcert' script to automatically generate
 a server certificate, which is installed into /etc/ssl/private/imapd.pem
-
-To control the daemon use ${PREFIX}/libexec/imapd.rc and
-${PREFIX}/libexec/imapd-ssl.rc, and to run the authdaemon, place the
-following in /etc/rc.local:
-
-mkdir -p /var/run/courier{,-auth}/
-${PREFIX}/sbin/authdaemond start
