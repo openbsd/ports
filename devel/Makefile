@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.875 2010/12/15 00:09:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.876 2010/12/16 19:13:36 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -36,6 +36,7 @@
      SUBDIR += boehm-gc
      SUBDIR += boost
      SUBDIR += bouml
+     SUBDIR += bustle
      SUBDIR += bzr
      SUBDIR += c2hs
      SUBDIR += cabal-install
