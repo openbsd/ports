@@ -1,0 +1,11 @@
+$OpenBSD: patch-dbus-1_pc_in,v 1.6 2010/12/16 07:13:58 ajacoutot Exp $
+--- dbus-1.pc.in.orig	Fri Apr  4 11:24:08 2008
++++ dbus-1.pc.in	Fri Jul  4 21:14:27 2008
+@@ -10,6 +10,6 @@ daemondir=@DBUS_DAEMONDIR@
+ Name: dbus
+ Description: Free desktop message bus
+ Version: @VERSION@
+-Libs: -L${libdir} -ldbus-1 @DBUS_CLIENT_LIBS@ 
++Libs: -L${libdir} -ldbus-1 -pthread @DBUS_CLIENT_LIBS@ 
+ Cflags: -I${includedir}/dbus-1.0 -I${libdir}/dbus-1.0/include
+ 

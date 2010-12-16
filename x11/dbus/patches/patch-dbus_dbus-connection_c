@@ -1,4 +1,4 @@
-$OpenBSD: patch-dbus_dbus-connection_c,v 1.2 2010/12/13 10:41:22 ajacoutot Exp $
+$OpenBSD: patch-dbus_dbus-connection_c,v 1.3 2010/12/16 07:13:58 ajacoutot Exp $
 
 From FreeBSD:
 Linux is more relaxed when it comes to the timeout argument to poll(2).
@@ -6,9 +6,9 @@ Linux will accept aby negative number to mean an infinite timeout.  FreeBSD
 will only accept -1.  Make sure we do not pass an aribtrary negative number
 to poll(2) to avoid an infinite EINVAL loop.
 
---- dbus/dbus-connection.c.orig	Tue Aug 31 23:44:19 2010
-+++ dbus/dbus-connection.c	Mon Dec 13 10:48:47 2010
-@@ -2364,7 +2364,7 @@ _dbus_connection_block_pending_call (DBusPendingCall *
+--- dbus/dbus-connection.c.orig	Tue Mar 23 20:01:32 2010
++++ dbus/dbus-connection.c	Tue Apr 20 19:43:43 2010
+@@ -2287,7 +2287,7 @@ _dbus_connection_block_pending_call (DBusPendingCall *
    DBusConnection *connection;
    dbus_uint32_t client_serial;
    DBusTimeout *timeout;
@@ -17,20 +17,18 @@ to poll(2) to avoid an infinite EINVAL loop.
  
    _dbus_assert (pending != NULL);
  
-@@ -2445,7 +2445,11 @@ _dbus_connection_block_pending_call (DBusPendingCall *
+@@ -2367,6 +2367,10 @@ _dbus_connection_block_pending_call (DBusPendingCall *
    _dbus_get_current_time (&tv_sec, &tv_usec);
    elapsed_milliseconds = (tv_sec - start_tv_sec) * 1000 +
  	  (tv_usec - start_tv_usec) / 1000;
--  
 +  if (timeout_milliseconds != -1)
 +    remain_milliseconds = timeout_milliseconds - elapsed_milliseconds;
 +  else
 +    remain_milliseconds = -1;
-+
+   
    if (!_dbus_connection_get_is_connected_unlocked (connection))
      {
-       DBusMessage *error_msg;
-@@ -2471,7 +2475,7 @@ _dbus_connection_block_pending_call (DBusPendingCall *
+@@ -2393,7 +2397,7 @@ _dbus_connection_block_pending_call (DBusPendingCall *
             */
            _dbus_verbose ("dbus_connection_send_with_reply_and_block() waiting for more memory\n");
  
@@ -39,8 +37,8 @@ to poll(2) to avoid an infinite EINVAL loop.
          }
        else
          {          
-@@ -2480,7 +2484,7 @@ _dbus_connection_block_pending_call (DBusPendingCall *
-                                                   pending,
+@@ -2401,7 +2405,7 @@ _dbus_connection_block_pending_call (DBusPendingCall *
+           _dbus_connection_do_iteration_unlocked (connection,
                                                    DBUS_ITERATION_DO_READING |
                                                    DBUS_ITERATION_BLOCK,
 -                                                  timeout_milliseconds - elapsed_milliseconds);
@@ -48,7 +46,7 @@ to poll(2) to avoid an infinite EINVAL loop.
          }
  
        goto recheck_status;
-@@ -2489,7 +2493,7 @@ _dbus_connection_block_pending_call (DBusPendingCall *
+@@ -2410,7 +2414,7 @@ _dbus_connection_block_pending_call (DBusPendingCall *
      _dbus_verbose ("dbus_connection_send_with_reply_and_block(): clock set backward\n");
    else if (elapsed_milliseconds < timeout_milliseconds)
      {
@@ -57,7 +55,7 @@ to poll(2) to avoid an infinite EINVAL loop.
        
        if (status == DBUS_DISPATCH_NEED_MEMORY)
          {
-@@ -2499,7 +2503,7 @@ _dbus_connection_block_pending_call (DBusPendingCall *
+@@ -2420,7 +2424,7 @@ _dbus_connection_block_pending_call (DBusPendingCall *
             */
            _dbus_verbose ("dbus_connection_send_with_reply_and_block() waiting for more memory\n");
  
@@ -66,8 +64,8 @@ to poll(2) to avoid an infinite EINVAL loop.
          }
        else
          {          
-@@ -2508,7 +2512,7 @@ _dbus_connection_block_pending_call (DBusPendingCall *
-                                                   NULL,
+@@ -2428,7 +2432,7 @@ _dbus_connection_block_pending_call (DBusPendingCall *
+           _dbus_connection_do_iteration_unlocked (connection,
                                                    DBUS_ITERATION_DO_READING |
                                                    DBUS_ITERATION_BLOCK,
 -                                                  timeout_milliseconds - elapsed_milliseconds);
