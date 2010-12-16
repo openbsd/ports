@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.94 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.95 2010/12/16 17:40:20 giovanni Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
 
 MODPY_EGG_VERSION=	5.21
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
-REVISION-main=		2
-REVISION-zenmap=	0
+REVISION-main=		3
+REVISION-zenmap=	1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
 
@@ -27,7 +27,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=	-main -zenmap
 
 USE_GMAKE=	yes
-USE_GROFF =	Yes
 MODULES=	lang/python
 
 CONFIGURE_STYLE=gnu
@@ -60,9 +59,6 @@ NO_REGRESS=		Yes
 post-extract:
 	@cp ${WRKSRC}/libdnet-stripped/include/dnet/sctp.h ${WRKSRC}/sctp.h
 	@cd ${WRKSRC} && rm -rf libpcap/ libdnet-stripped/ liblua/ libpcre/
-	sh files/prepman.sh ${WRKSRC}/ncat/docs/ncat.1
-	sh files/prepman.sh ${WRKSRC}/docs/nmap.1
-	sh files/prepman.sh ${WRKSRC}/docs/zenmap.1
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/zenmap/install_scripts/unix/su-to-zenmap.sh
