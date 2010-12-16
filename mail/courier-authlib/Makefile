@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/16 17:52:12 giovanni Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -13,7 +13,7 @@ PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
 PKGNAME-pgsql=		${DISTNAME:S/lib-/lib-pgsql-/}
 PKGNAME-userdb=		${DISTNAME:S/lib-/lib-userdb-/}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-ldap=		0
 REVISION-mysql=		0
 REVISION-pgsql=		0
@@ -46,7 +46,6 @@ EXTRACT_SUFX=		.tar.bz2
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib" \

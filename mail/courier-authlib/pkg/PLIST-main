@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2009/10/28 14:18:05 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2010/12/16 17:52:12 giovanni Exp $
 @conflict courier-authlib-*
 @pkgpath mail/courier-authlib
 @newgroup _courier:571
@@ -55,3 +55,4 @@ share/examples/courier-authlib/
 @sample ${SYSCONFDIR}/courier/
 share/examples/courier-authlib/authdaemonrc.dist
 @sample ${SYSCONFDIR}/courier/authdaemonrc
+@rcscript ${RCDIR}/courier_authdaemond
