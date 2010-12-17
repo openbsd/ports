@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/17 00:00:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/17 22:06:46 jasper Exp $
 
 COMMENT=	client and server-side SOAP implementation
 
 DISTNAME=	SOAP-Lite-0.712
+REVISION=	0
 CATEGORIES=	www
 USE_GROFF =	Yes
 
@@ -20,7 +21,6 @@ RUN_DEPENDS=	devel/p5-Task-Weaken \
 		devel/p5-Class-Inspector \
 		mail/p5-MIME-Lite \
 		mail/p5-MIME-tools \
-		net/p5-Net-Jabber \
 		security/p5-Crypt-SSLeay \
 		security/p5-IO-Socket-SSL \
 		textproc/p5-XML-Parser \
