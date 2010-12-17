@@ -1,0 +1,15 @@
+$OpenBSD: patch-Modules_Preferences_Build_PCBuildPrefs_h,v 1.1 2010/12/17 15:04:58 sebastia Exp $
+
+GNUstep requires gmake, so let it point to gmake by default.
+
+--- Modules/Preferences/Build/PCBuildPrefs.h.orig	Mon Dec 13 19:12:14 2010
++++ Modules/Preferences/Build/PCBuildPrefs.h	Mon Dec 13 19:12:28 2010
+@@ -27,7 +27,7 @@
+ #import <Protocols/Preferences.h>
+ 
+ #ifndef PCDefaultBuildTool 
+-#define PCDefaultBuildTool @"/usr/bin/make"
++#define PCDefaultBuildTool @"${LOCALBASE}/bin/gmake"
+ #endif
+ 
+ #define SuccessSound            @"SuccessSound"
