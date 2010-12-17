@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2007/12/15 20:14:16 simon Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/12/17 00:00:45 jasper Exp $
 bin/SOAPsh.pl
 bin/XMLRPCsh.pl
 bin/stubmaker.pl
@@ -9,32 +9,38 @@ ${P5SITE}/Apache/XMLRPC/Lite.pm
 ${P5SITE}/IO/SessionData.pm
 ${P5SITE}/IO/SessionSet.pm
 ${P5SITE}/SOAP/
-${P5SITE}/SOAP/Client.pm
+${P5SITE}/SOAP/Client.pod
 ${P5SITE}/SOAP/Constants.pm
-${P5SITE}/SOAP/Data.pm
-${P5SITE}/SOAP/Deserializer.pm
-${P5SITE}/SOAP/Fault.pm
-${P5SITE}/SOAP/Header.pm
+${P5SITE}/SOAP/Data.pod
+${P5SITE}/SOAP/Deserializer.pod
+${P5SITE}/SOAP/Fault.pod
+${P5SITE}/SOAP/Header.pod
+${P5SITE}/SOAP/Lite/
 ${P5SITE}/SOAP/Lite.pm
+${P5SITE}/SOAP/Lite/Deserializer/
+${P5SITE}/SOAP/Lite/Deserializer/XMLSchema1999.pm
+${P5SITE}/SOAP/Lite/Deserializer/XMLSchema2001.pm
+${P5SITE}/SOAP/Lite/Deserializer/XMLSchemaSOAP1_1.pm
+${P5SITE}/SOAP/Lite/Deserializer/XMLSchemaSOAP1_2.pm
+${P5SITE}/SOAP/Lite/Packager.pm
+${P5SITE}/SOAP/Lite/Utils.pm
 ${P5SITE}/SOAP/Packager.pm
-${P5SITE}/SOAP/SOM.pm
-${P5SITE}/SOAP/Schema.pm
-${P5SITE}/SOAP/Serializer.pm
-${P5SITE}/SOAP/Server.pm
+${P5SITE}/SOAP/SOM.pod
+${P5SITE}/SOAP/Schema.pod
+${P5SITE}/SOAP/Serializer.pod
+${P5SITE}/SOAP/Server.pod
 ${P5SITE}/SOAP/Test.pm
-${P5SITE}/SOAP/Trace.pm
+${P5SITE}/SOAP/Trace.pod
 ${P5SITE}/SOAP/Transport/
-${P5SITE}/SOAP/Transport.pm
-${P5SITE}/SOAP/Transport/FTP.pm
+${P5SITE}/SOAP/Transport.pod
 ${P5SITE}/SOAP/Transport/HTTP.pm
 ${P5SITE}/SOAP/Transport/IO.pm
-${P5SITE}/SOAP/Transport/JABBER.pm
 ${P5SITE}/SOAP/Transport/LOCAL.pm
+${P5SITE}/SOAP/Transport/LOOPBACK.pm
 ${P5SITE}/SOAP/Transport/MAILTO.pm
-${P5SITE}/SOAP/Transport/MQ.pm
 ${P5SITE}/SOAP/Transport/POP3.pm
 ${P5SITE}/SOAP/Transport/TCP.pm
-${P5SITE}/SOAP/Utils.pm
+${P5SITE}/SOAP/Utils.pod
 ${P5SITE}/UDDI/
 ${P5SITE}/UDDI/Lite.pm
 ${P5SITE}/XML/Parser/
@@ -58,6 +64,7 @@ ${P5SITE}/XMLRPC/Transport/TCP.pm
 @man man/man3p/SOAP::Fault.3p
 @man man/man3p/SOAP::Header.3p
 @man man/man3p/SOAP::Lite.3p
+@man man/man3p/SOAP::Lite::Packager.3p
 @man man/man3p/SOAP::Packager.3p
 @man man/man3p/SOAP::SOM.3p
 @man man/man3p/SOAP::Schema.3p
@@ -66,6 +73,7 @@ ${P5SITE}/XMLRPC/Transport/TCP.pm
 @man man/man3p/SOAP::Test.3p
 @man man/man3p/SOAP::Trace.3p
 @man man/man3p/SOAP::Transport.3p
+@man man/man3p/SOAP::Transport::LOOPBACK.3p
 @man man/man3p/SOAP::Transport::POP3.3p
 @man man/man3p/SOAP::Utils.3p
 @man man/man3p/UDDI::Lite.3p
@@ -75,3 +83,111 @@ ${P5SITE}/XMLRPC/Transport/TCP.pm
 @man man/man3p/XMLRPC::Transport::HTTP.3p
 @man man/man3p/XMLRPC::Transport::POP3.3p
 @man man/man3p/XMLRPC::Transport::TCP.3p
+share/examples/p5-SOAP-Lite/
+share/examples/p5-SOAP-Lite/COM/
+share/examples/p5-SOAP-Lite/COM/README
+share/examples/p5-SOAP-Lite/COM/SOAP-Lite-COM-minimal.ctrl
+share/examples/p5-SOAP-Lite/COM/SOAP-Lite-COM-standalone.ctrl
+share/examples/p5-SOAP-Lite/COM/hash.vbs
+share/examples/p5-SOAP-Lite/COM/hashecho.vbs
+share/examples/p5-SOAP-Lite/COM/local.vbs
+share/examples/p5-SOAP-Lite/COM/make-com-minimal.bat
+share/examples/p5-SOAP-Lite/COM/make-com-standalone.bat
+share/examples/p5-SOAP-Lite/COM/make-com.args
+share/examples/p5-SOAP-Lite/COM/remote.cs
+share/examples/p5-SOAP-Lite/COM/remote.vba
+share/examples/p5-SOAP-Lite/COM/remote.vbs
+share/examples/p5-SOAP-Lite/COM/remote.xls
+share/examples/p5-SOAP-Lite/COM/service.vbs
+share/examples/p5-SOAP-Lite/COM/soap.asp
+share/examples/p5-SOAP-Lite/COM/soap.vbs
+share/examples/p5-SOAP-Lite/COM/soap_perl.asp
+share/examples/p5-SOAP-Lite/COM/states.html
+share/examples/p5-SOAP-Lite/COM/states.pl
+share/examples/p5-SOAP-Lite/COM/states.vba
+share/examples/p5-SOAP-Lite/COM/states.vbs
+share/examples/p5-SOAP-Lite/COM/states.xls
+share/examples/p5-SOAP-Lite/COM/temper.vbs
+share/examples/p5-SOAP-Lite/COM/xmlrpc.vbs
+share/examples/p5-SOAP-Lite/My/
+share/examples/p5-SOAP-Lite/My/Chat.pm
+share/examples/p5-SOAP-Lite/My/Examples.pm
+share/examples/p5-SOAP-Lite/My/Parameters.pm
+share/examples/p5-SOAP-Lite/My/PersistentIterator.pm
+share/examples/p5-SOAP-Lite/My/PingPong.pm
+share/examples/p5-SOAP-Lite/My/SessionIterator.pm
+share/examples/p5-SOAP-Lite/SOAP/
+share/examples/p5-SOAP-Lite/SOAP/Transport/
+share/examples/p5-SOAP-Lite/SOAP/Transport/HTTP/
+share/examples/p5-SOAP-Lite/SOAP/Transport/HTTP/Daemon/
+share/examples/p5-SOAP-Lite/SOAP/Transport/HTTP/Daemon/ForkAfterProcessing.pm
+share/examples/p5-SOAP-Lite/SOAP/Transport/HTTP/Daemon/ForkOnAccept.pm
+share/examples/p5-SOAP-Lite/SOAP/simple1.pl
+share/examples/p5-SOAP-Lite/SOAP/simple2.pl
+share/examples/p5-SOAP-Lite/SOAP/simple3.pl
+share/examples/p5-SOAP-Lite/UDDI/
+share/examples/p5-SOAP-Lite/UDDI/inquire1.pl
+share/examples/p5-SOAP-Lite/UDDI/publish1.pl
+share/examples/p5-SOAP-Lite/UDDI/simple1.pl
+share/examples/p5-SOAP-Lite/UDDI/simple2.pl
+share/examples/p5-SOAP-Lite/UDDI/syntax1.pl
+share/examples/p5-SOAP-Lite/UDDI/syntax2.pl
+share/examples/p5-SOAP-Lite/UDDI/syntax3.pl
+share/examples/p5-SOAP-Lite/WSDL/
+share/examples/p5-SOAP-Lite/WSDL/dynamic1.pl
+share/examples/p5-SOAP-Lite/WSDL/dynamic2.pl
+share/examples/p5-SOAP-Lite/WSDL/dynamic3.pl
+share/examples/p5-SOAP-Lite/WSDL/dynamic4.pl
+share/examples/p5-SOAP-Lite/WSDL/stub1.pl
+share/examples/p5-SOAP-Lite/WSDL/stub2.pl
+share/examples/p5-SOAP-Lite/WSDL/stub3.pl
+share/examples/p5-SOAP-Lite/XML/
+share/examples/p5-SOAP-Lite/XML/customxml.pl
+share/examples/p5-SOAP-Lite/XMLRPC/
+share/examples/p5-SOAP-Lite/XMLRPC/mod_xmlrpc.htaccess
+share/examples/p5-SOAP-Lite/XMLRPC/simple1.pl
+share/examples/p5-SOAP-Lite/XMLRPC/xmlrpc.cgi
+share/examples/p5-SOAP-Lite/XMLRPC/xmlrpc.daemon
+share/examples/p5-SOAP-Lite/allclients.pl
+share/examples/p5-SOAP-Lite/authentication.pl
+share/examples/p5-SOAP-Lite/autoexamples.pl
+share/examples/p5-SOAP-Lite/chat.pl
+share/examples/p5-SOAP-Lite/compress.pl
+share/examples/p5-SOAP-Lite/cookie.pl
+share/examples/p5-SOAP-Lite/cookieauth.pl
+share/examples/p5-SOAP-Lite/customschema.pl
+share/examples/p5-SOAP-Lite/forms/
+share/examples/p5-SOAP-Lite/forms/style.cgi
+share/examples/p5-SOAP-Lite/forms/style.html
+share/examples/p5-SOAP-Lite/fullsearch.pl
+share/examples/p5-SOAP-Lite/getdom.pl
+share/examples/p5-SOAP-Lite/google.pl
+share/examples/p5-SOAP-Lite/inline.daemon
+share/examples/p5-SOAP-Lite/iterator.pl
+share/examples/p5-SOAP-Lite/joke.pl
+share/examples/p5-SOAP-Lite/oneliners
+share/examples/p5-SOAP-Lite/oo-apache.pl
+share/examples/p5-SOAP-Lite/parametersbyname.pl
+share/examples/p5-SOAP-Lite/pingpong.pl
+share/examples/p5-SOAP-Lite/server/
+share/examples/p5-SOAP-Lite/server/Apache.pm
+share/examples/p5-SOAP-Lite/server/mod_soap.htaccess
+share/examples/p5-SOAP-Lite/server/soap.asp
+share/examples/p5-SOAP-Lite/server/soap.cgi
+share/examples/p5-SOAP-Lite/server/soap.daemon
+share/examples/p5-SOAP-Lite/server/soap.daemon.forkafterprocessing
+share/examples/p5-SOAP-Lite/server/soap.daemon.forkonaccept
+share/examples/p5-SOAP-Lite/server/soap.fcgi
+share/examples/p5-SOAP-Lite/server/soap.io
+share/examples/p5-SOAP-Lite/server/soap.jabber
+share/examples/p5-SOAP-Lite/server/soap.mod_cgi
+share/examples/p5-SOAP-Lite/server/soap.mq
+share/examples/p5-SOAP-Lite/server/soap.pop3
+share/examples/p5-SOAP-Lite/server/soap.tcp
+share/examples/p5-SOAP-Lite/server/soap.vbs
+share/examples/p5-SOAP-Lite/server/soap_perl.asp
+share/examples/p5-SOAP-Lite/soapmark.pl
+share/examples/p5-SOAP-Lite/soapsmtp.pl
+share/examples/p5-SOAP-Lite/tcpclient.pl
+share/examples/p5-SOAP-Lite/terraserver.pl
+share/examples/p5-SOAP-Lite/weblog.pl
