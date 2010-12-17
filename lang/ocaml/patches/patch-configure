@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.13 2010/12/07 15:01:35 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.14 2010/12/17 18:42:04 dcoppa Exp $
 --- configure.orig	Wed Jul 28 15:18:22 2010
 +++ configure	Thu Nov 18 10:07:33 2010
 @@ -629,6 +629,8 @@ if test $withsharedlibs = "yes"; then
@@ -6,7 +6,7 @@ $OpenBSD: patch-configure,v 1.13 2010/12/07 15:01:35 dcoppa Exp $
      x86_64-*-kfreebsd*)           natdynlink=true;;
      i386-*-gnu0.3)                natdynlink=true;;
 +    i[3456]86-*-openbsd*)         natdynlink=true;;
-+    amd64-*-openbsd*)             natdynlink=true;;
++    x86_64-*-openbsd*)            natdynlink=true;;
    esac
  fi
  
@@ -30,15 +30,7 @@ $OpenBSD: patch-configure,v 1.13 2010/12/07 15:01:35 dcoppa Exp $
    ia64-*-linux*)                arch=ia64; system=linux;;
    ia64-*-gnu*)                  arch=ia64; system=gnu;;
    ia64-*-freebsd*)              arch=ia64; system=freebsd;;
-@@ -694,6 +700,7 @@ case "$host" in
-   x86_64-*-netbsd*)             arch=amd64; system=netbsd;;
-   x86_64-*-openbsd*)            arch=amd64; system=openbsd;;
-   x86_64-*-darwin9.5)           arch=amd64; system=macosx;;
-+  amd64-*-openbsd*)             arch=amd64; system=openbsd;;
- esac
- 
- # Some platforms exist both in 32-bit and 64-bit variants, not distinguished
-@@ -784,11 +791,15 @@ if test -n "$asppoption"; then aspp="$asppoption"; fi
+@@ -784,11 +790,15 @@ if test -n "$asppoption"; then aspp="$asppoption"; fi
  cc_profile='-pg'
  case "$arch,$model,$system" in
    alpha,*,digital) profiling='prof';;
@@ -54,7 +46,7 @@ $OpenBSD: patch-configure,v 1.13 2010/12/07 15:01:35 dcoppa Exp $
    sparc,*,solaris)
      profiling='prof'
      case "$nativecc" in gcc*) ;; *) cc_profile='-xpg';; esac;;
-@@ -1570,11 +1581,11 @@ fi
+@@ -1570,11 +1580,11 @@ fi
  
  # Look for BFD library
  
