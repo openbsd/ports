@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2010/12/10 23:25:35 robert Exp $
+# $OpenBSD: Makefile,v 1.72 2010/12/17 09:26:03 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,24 +7,21 @@ COMMENT-kde=	optional integration of OpenOffice to the KDE environment
 COMMENT-java=	optional integration of OpenOffice java features
 
 MR=		3.3
-VERSION=	${MR}.0rc7_20101126
+VERSION=	${MR}.0rc8
+RCDATE=		20101214
 DISTNAME=	OOo_${VERSION}
-WRKDIST=	${WRKDIR}/OOO330_m17
+WRKDIST=	${WRKDIR}/OOO330_m18
 PKGNAME=	openoffice-${VERSION}
 PKGNAME-main=	openoffice-${VERSION}
 PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
-REVISION-main=	3
-REVISION-kde=	0
-REVISION-java=	0
-
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 HOMEPAGE=	http://www.openoffice.org/
 MASTER_SITES=	http://www.bsd.hu/~robert/ooo/ \
-		http://vlaai.snt.utwente.nl/pub/software/openoffice/extended/3.3.0rc7/ \
+		http://vlaai.snt.utwente.nl/pub/software/openoffice/extended/${VERSION}/ \
 		http://vlaai.snt.utwente.nl/pub/software/openoffice/stable/${VERSION}/ \
 		http://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Sources/ \
 		http://humppa.hu/ooo/ \
@@ -41,7 +38,7 @@ MASTER_SITES1=	http://hg.services.openoffice.org/binaries/ \
 
 EDISTFILES=	ooo-desktop-0.2.tar.gz:0
 .for dfile in binfilter core extensions l10n system
-EDISTFILES+=	${DISTNAME}_src_${dfile}.tar.bz2
+EDISTFILES+=	${DISTNAME}_${RCDATE}_src_${dfile}.tar.bz2
 .endfor
 EXTRACT_ONLY=	${EDISTFILES:C/:[0-9]$//}
 
@@ -85,10 +82,6 @@ DISTFILES+=	${EDISTFILES} \
 		fe5b3e2b7c4577f30dc001054365653e-dejavu-fonts-ttf-2.30.zip:1 \
 		599dc4cc65a07ee868cf92a667a913d2-xpdf-3.02.tar.gz:1 \
 		3ade8cfe7e59ca8e65052644fed9fca4-epm-3.7.tar.gz:1
-
-.for dfile in binfilter core extensions l10n system
-DISTFILES+=	${DISTNAME}_src_${dfile}.tar.bz2
-.endfor
 
 DIST_SUBDIR=	openoffice
 
@@ -271,7 +264,7 @@ CONFIGURE_ARGS+=	--enable-symbols \
 			--enable-debug
 .endif
 
-MAKE_ENV+=	envcflags="${CFLAGS}" LOCALBASE="${LOCALBASE}"
+MAKE_ENV+=	LOCALBASE="${LOCALBASE}"
 MAKE_ENV+=	TMP=${WRKSRC} PYTHON="${MODPY_BIN}"
 
 # kludge
