@@ -1,0 +1,18 @@
+$OpenBSD: patch-lib_iconv_rb,v 1.1 2010/12/18 21:13:46 tedu Exp $
+iconv symbol names have lib prefix in openbsd port
+
+--- lib/iconv.rb.orig	Sat Dec 18 16:11:26 2010
++++ lib/iconv.rb	Sat Dec 18 16:10:26 2010
+@@ -8,9 +8,9 @@ class Iconv
+   # process.
+   ffi_lib ["libiconv", FFI::CURRENT_PROCESS]
+ 
+-  attach_function :create,  "iconv_open", [:string, :string], :pointer
+-  attach_function :close,   "iconv_close", [:pointer], :int
+-  attach_function :convert, "iconv",
++  attach_function :create,  "libiconv_open", [:string, :string], :pointer
++  attach_function :close,   "libiconv_close", [:pointer], :int
++  attach_function :convert, "libiconv",
+                             [:pointer, :pointer, :pointer, :pointer, :pointer], :long
+ 
+   module Failure
