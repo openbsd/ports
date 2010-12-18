@@ -1,10 +1,10 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.8 2010/11/09 18:40:04 robert Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.9 2010/12/18 13:19:40 robert Exp $
 openoffice.org/basis${MR}/program/basprovob.uno.so
 openoffice.org/basis${MR}/program/canvasfactory.uno.so
 openoffice.org/basis${MR}/program/cmdmail.uno.so
 openoffice.org/basis${MR}/program/configmgr.uno.so
-openoffice.org/basis${MR}/program/deploymentob.uno.so
 openoffice.org/basis${MR}/program/deploymentguiob.uno.so
+openoffice.org/basis${MR}/program/deploymentob.uno.so
 openoffice.org/basis${MR}/program/desktopbe1.uno.so
 openoffice.org/basis${MR}/program/dlgprovob.uno.so
 openoffice.org/basis${MR}/program/fastsax.uno.so
@@ -32,8 +32,8 @@ openoffice.org/basis${MR}/program/libbf_goob.so
 openoffice.org/basis${MR}/program/libbf_migratefilterob.so
 openoffice.org/basis${MR}/program/libbf_ofaob.so
 openoffice.org/basis${MR}/program/libbf_sbob.so
-openoffice.org/basis${MR}/program/libbf_scob.so
 openoffice.org/basis${MR}/program/libbf_schob.so
+openoffice.org/basis${MR}/program/libbf_scob.so
 openoffice.org/basis${MR}/program/libbf_sdob.so
 openoffice.org/basis${MR}/program/libbf_smob.so
 openoffice.org/basis${MR}/program/libbf_soob.so
@@ -58,8 +58,8 @@ openoffice.org/basis${MR}/program/libcppcanvasob.so
 openoffice.org/basis${MR}/program/libctlob.so
 openoffice.org/basis${MR}/program/libcuiob.so
 openoffice.org/basis${MR}/program/libdateob.so
-openoffice.org/basis${MR}/program/libdbaob.so
 openoffice.org/basis${MR}/program/libdbacfgob.so
+openoffice.org/basis${MR}/program/libdbaob.so
 openoffice.org/basis${MR}/program/libdbaseob.so
 openoffice.org/basis${MR}/program/libdbaxmlob.so
 openoffice.org/basis${MR}/program/libdbmmob.so
@@ -87,8 +87,8 @@ openoffice.org/basis${MR}/program/liberaob.so
 openoffice.org/basis${MR}/program/libetiob.so
 openoffice.org/basis${MR}/program/libevtatt.so
 openoffice.org/basis${MR}/program/libexpob.so
-openoffice.org/basis${MR}/program/libfileob.so
 openoffice.org/basis${MR}/program/libfileacc.so
+openoffice.org/basis${MR}/program/libfileob.so
 openoffice.org/basis${MR}/program/libfilterconfig1.so
 openoffice.org/basis${MR}/program/libflashob.so
 openoffice.org/basis${MR}/program/libflatob.so
@@ -136,8 +136,8 @@ openoffice.org/basis${MR}/program/libmsfilterob.so
 openoffice.org/basis${MR}/program/libmsformsob.uno.so
 openoffice.org/basis${MR}/program/libmswordob.so
 openoffice.org/basis${MR}/program/libmysqlob.so
-openoffice.org/basis${MR}/program/libodbcob.so
 openoffice.org/basis${MR}/program/libodbcbaseob.so
+openoffice.org/basis${MR}/program/libodbcob.so
 openoffice.org/basis${MR}/program/liboffaccob.so
 openoffice.org/basis${MR}/program/liboooimprovecoreob.so
 openoffice.org/basis${MR}/program/libooxob.so
@@ -156,22 +156,22 @@ openoffice.org/basis${MR}/program/librptuiob.so
 openoffice.org/basis${MR}/program/librptxmlob.so
 openoffice.org/basis${MR}/program/libsaxob.so
 openoffice.org/basis${MR}/program/libsbob.so
-openoffice.org/basis${MR}/program/libscob.so
 openoffice.org/basis${MR}/program/libscdob.so
 openoffice.org/basis${MR}/program/libscfiltob.so
 openoffice.org/basis${MR}/program/libscnob.so
+openoffice.org/basis${MR}/program/libscob.so
 openoffice.org/basis${MR}/program/libscriptframe.so
 openoffice.org/basis${MR}/program/libscuiob.so
-openoffice.org/basis${MR}/program/libsdob.so
 openoffice.org/basis${MR}/program/libsdbc2.so
 openoffice.org/basis${MR}/program/libsdbtob.so
 openoffice.org/basis${MR}/program/libsddob.so
 openoffice.org/basis${MR}/program/libsdfiltob.so
+openoffice.org/basis${MR}/program/libsdob.so
 openoffice.org/basis${MR}/program/libsduiob.so
 openoffice.org/basis${MR}/program/libsfxob.so
 openoffice.org/basis${MR}/program/libsimplecmob.so
-openoffice.org/basis${MR}/program/libsmob.so
 openoffice.org/basis${MR}/program/libsmdob.so
+openoffice.org/basis${MR}/program/libsmob.so
 openoffice.org/basis${MR}/program/libsofficeapp.so
 openoffice.org/basis${MR}/program/libsolverob.so
 openoffice.org/basis${MR}/program/libsotob.so
@@ -183,10 +183,10 @@ openoffice.org/basis${MR}/program/libstsob.so
 openoffice.org/basis${MR}/program/libsvgfilterob.so
 openoffice.org/basis${MR}/program/libsvlob.so
 openoffice.org/basis${MR}/program/libsvtob.so
-openoffice.org/basis${MR}/program/libsvxob.so
 openoffice.org/basis${MR}/program/libsvxcoreob.so
-openoffice.org/basis${MR}/program/libswob.so
+openoffice.org/basis${MR}/program/libsvxob.so
 openoffice.org/basis${MR}/program/libswdob.so
+openoffice.org/basis${MR}/program/libswob.so
 openoffice.org/basis${MR}/program/libswuiob.so
 openoffice.org/basis${MR}/program/libt602filterob.so
 openoffice.org/basis${MR}/program/libtextcat.so
@@ -223,8 +223,8 @@ openoffice.org/basis${MR}/program/libxcrob.so
 openoffice.org/basis${MR}/program/libxmlfaob.so
 openoffice.org/basis${MR}/program/libxmlfdob.so
 openoffice.org/basis${MR}/program/libxmxob.so
-openoffice.org/basis${MR}/program/libxoob.so
 openoffice.org/basis${MR}/program/libxofob.so
+openoffice.org/basis${MR}/program/libxoob.so
 openoffice.org/basis${MR}/program/libxsltdlgob.so
 openoffice.org/basis${MR}/program/libxsltfilterob.so
 openoffice.org/basis${MR}/program/libxstor.so
