@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/03/20 17:06:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2010/12/19 22:11:56 kili Exp $
 share/sgml/catalog
 share/sgml/docbook/2.4.1/
 share/sgml/docbook/2.4.1/241chg.txt
@@ -259,6 +259,40 @@ share/xml/docbook/4.4/ent/isopub.ent
 share/xml/docbook/4.4/ent/isotech.ent
 share/xml/docbook/4.4/htmltblx.mod
 share/xml/docbook/4.4/soextblx.dtd
+share/xml/docbook/4.5/
+share/xml/docbook/4.5/calstblx.dtd
+share/xml/docbook/4.5/catalog
+share/xml/docbook/4.5/catalog.xml
+share/xml/docbook/4.5/dbcentx.mod
+share/xml/docbook/4.5/dbgenent.mod
+share/xml/docbook/4.5/dbhierx.mod
+share/xml/docbook/4.5/dbnotnx.mod
+share/xml/docbook/4.5/dbpoolx.mod
+share/xml/docbook/4.5/docbook.cat
+share/xml/docbook/4.5/docbookx.dtd
+share/xml/docbook/4.5/ent/
+share/xml/docbook/4.5/ent/README
+share/xml/docbook/4.5/ent/isoamsa.ent
+share/xml/docbook/4.5/ent/isoamsb.ent
+share/xml/docbook/4.5/ent/isoamsc.ent
+share/xml/docbook/4.5/ent/isoamsn.ent
+share/xml/docbook/4.5/ent/isoamso.ent
+share/xml/docbook/4.5/ent/isoamsr.ent
+share/xml/docbook/4.5/ent/isobox.ent
+share/xml/docbook/4.5/ent/isocyr1.ent
+share/xml/docbook/4.5/ent/isocyr2.ent
+share/xml/docbook/4.5/ent/isodia.ent
+share/xml/docbook/4.5/ent/isogrk1.ent
+share/xml/docbook/4.5/ent/isogrk2.ent
+share/xml/docbook/4.5/ent/isogrk3.ent
+share/xml/docbook/4.5/ent/isogrk4.ent
+share/xml/docbook/4.5/ent/isolat1.ent
+share/xml/docbook/4.5/ent/isolat2.ent
+share/xml/docbook/4.5/ent/isonum.ent
+share/xml/docbook/4.5/ent/isopub.ent
+share/xml/docbook/4.5/ent/isotech.ent
+share/xml/docbook/4.5/htmltblx.mod
+share/xml/docbook/4.5/soextblx.dtd
 share/xml/docbook/catalog
 share/xml/docbook/catalog.xml
 share/libxml2/docbook.spec

@@ -9,6 +9,7 @@ MD5 (docbook/xml/4.1/docbkx41.zip) = kK/slZoqjIY2sSHBmKMN6A==
 MD5 (docbook/xml/4.2/docbook-xml-4.2.zip) = c/5Q3+dMpjHBYC9VjtiWHw==
 MD5 (docbook/xml/4.3/docbook-xml-4.3.zip) = qyACArnhNqFE2x4IZMRQdA==
 MD5 (docbook/xml/4.4/docbook-xml-4.4.zip) = y7BOmnAJVdiMUJYu8iwWNA==
+MD5 (docbook/xml/4.5/docbook-xml-4.5.zip) = Awg+KI6Hp+gp5Dc1jafvng==
 RMD160 (docbook/examples.zip) = wOpVRTl54aINmzkMyvmEfokz950=
 RMD160 (docbook/sgml/2.4.1/docbk241.zip) = inh1jUDaZLsMwBCscTY00HHpA5Q=
 RMD160 (docbook/sgml/3.0/docbk30.zip) = KfI2DA7u8PFnzrAt2R734S8AQTY=
@@ -20,6 +21,7 @@ RMD160 (docbook/xml/4.1/docbkx41.zip) = V05otsWQJfHjhvJIcdGYIpoaGkE=
 RMD160 (docbook/xml/4.2/docbook-xml-4.2.zip) = O6F7+Wqyq4/m3J/4LajiKq+c5eA=
 RMD160 (docbook/xml/4.3/docbook-xml-4.3.zip) = 3usp7TNrzObtGZxRbwG7FULqFu4=
 RMD160 (docbook/xml/4.4/docbook-xml-4.4.zip) = aRqSMEQr4U0BmvnQfpTyaYJNhcw=
+RMD160 (docbook/xml/4.5/docbook-xml-4.5.zip) = cjNH7xeVDFyOgafJ1EgSJh3K3F0=
 SHA1 (docbook/examples.zip) = 9s/x+DW7ioE06F411W8evsyXbyM=
 SHA1 (docbook/sgml/2.4.1/docbk241.zip) = +zFMoqHt3vLB4ts+s//RX+/y+GU=
 SHA1 (docbook/sgml/3.0/docbk30.zip) = g7IrJI7Rfmht86BElKxpa5cQ5a8=
@@ -31,6 +33,7 @@ SHA1 (docbook/xml/4.1/docbkx41.zip) = C0xtgij0UmGF3lG4r7z+DsiTmEk=
 SHA1 (docbook/xml/4.2/docbook-xml-4.2.zip) = Xjo1ZjzQKMXF+7lZw4WP7C1/i54=
 SHA1 (docbook/xml/4.3/docbook-xml-4.3.zip) = 55pZ6RZMEBO4zJ9k+W+QmhhMoBY=
 SHA1 (docbook/xml/4.4/docbook-xml-4.4.zip) = fE2RyCrTdH4bVgDJF4J1jl2Rwis=
+SHA1 (docbook/xml/4.5/docbook-xml-4.5.zip) = uRJCM7UGaPtQh3OqKz68Yx18FiA=
 SHA256 (docbook/examples.zip) = +sNVgFbNS2yL42WXJGm2E7VxtPazUo8ByQN77EvC3xs=
 SHA256 (docbook/sgml/2.4.1/docbk241.zip) = 26wGlOm8rsQ8q4DHVf+wLPj2E794X/hQbl7XLvp2onI=
 SHA256 (docbook/sgml/3.0/docbk30.zip) = 7Pccvo3brXSU/1INW07fc6QowLFZF4ywy2GcumheYcY=
@@ -42,6 +45,7 @@ SHA256 (docbook/xml/4.1/docbkx41.zip) = SfOZK9YtB6rOJVmtZgTXR9o4uXenb5Qnw1n2o470
 SHA256 (docbook/xml/4.2/docbook-xml-4.2.zip) = rMRgHk+XoZYHa35ks2jZJIsHx6vyazSgLMpA7uvmD6I=
 SHA256 (docbook/xml/4.3/docbook-xml-4.3.zip) = IwaKlOpv1ISwBMWnPsNqZqpH6o8Na2LMFpWTH1wUNGQ=
 SHA256 (docbook/xml/4.4/docbook-xml-4.4.zip) = AvFZ64jEJU2V6DHFHBRLGGOyFtkJtf9FdDoc5vUnMJA=
+SHA256 (docbook/xml/4.5/docbook-xml-4.5.zip) = Tk4DeiuDyYxslIGDkNS90/bhD27GLdeRiFlOJhkNx7Q=
 SIZE (docbook/examples.zip) = 59246
 SIZE (docbook/sgml/2.4.1/docbk241.zip) = 55653
 SIZE (docbook/sgml/3.0/docbk30.zip) = 43441
@@ -53,3 +57,4 @@ SIZE (docbook/xml/4.1/docbkx41.zip) = 74627
 SIZE (docbook/xml/4.2/docbook-xml-4.2.zip) = 78428
 SIZE (docbook/xml/4.3/docbook-xml-4.3.zip) = 83865
 SIZE (docbook/xml/4.4/docbook-xml-4.4.zip) = 96107
+SIZE (docbook/xml/4.5/docbook-xml-4.5.zip) = 98497

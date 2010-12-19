@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/20 19:56:48 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2010/12/19 22:11:56 kili Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	technical documentation XML/SGML definitions
 
-DISTNAME=	docbook-4.4
-REVISION =	0
+DISTNAME=	docbook-4.5
 DIST_SUBDIR=	docbook
 CATEGORIES=	textproc
 
@@ -24,6 +23,7 @@ DISTFILES=	sgml/2.4.1/docbk241.zip \
 		xml/4.2/docbook-xml-4.2.zip \
 		xml/4.3/docbook-xml-4.3.zip \
 		xml/4.4/docbook-xml-4.4.zip \
+		xml/4.5/docbook-xml-4.5.zip \
 		examples.zip:0
 
 # permission granted in dtd copyright notice
@@ -38,7 +38,7 @@ SEPARATE_BUILD=	concurrent
 
 SGML_VERSIONS=		2.4.1 3.0 3.1 4.0 4.1
 XML_VERSIONS_OLD=	4.1 4.1.2
-XML_VERSIONS_NEW=	4.2 4.3 4.4
+XML_VERSIONS_NEW=	4.2 4.3 4.4 4.5
 
 SGML_INSTDIR=	${PREFIX}/share/sgml/docbook
 XML_INSTDIR=	${PREFIX}/share/xml/docbook
