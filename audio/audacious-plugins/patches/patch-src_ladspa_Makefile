@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_ladspa_Makefile,v 1.1 2010/12/19 18:19:56 shadchin Exp $
+--- src/ladspa/Makefile.orig	Sat Dec  4 22:38:57 2010
++++ src/ladspa/Makefile	Sat Dec  4 22:39:04 2010
+@@ -9,4 +9,4 @@ plugindir := ${plugindir}/${EFFECT_PLUGIN_DIR}
+ 
+ CFLAGS += ${PLUGIN_CFLAGS}
+ CPPFLAGS += ${PLUGIN_CPPFLAGS} ${MOWGLI_CFLAGS} ${GTK_CFLAGS} ${GLIB_CFLAGS}  -I../..
+-LIBS += ${GTK_LIBS} ${GLIB_LIBS} -ldl
++LIBS += ${GTK_LIBS} ${GLIB_LIBS}

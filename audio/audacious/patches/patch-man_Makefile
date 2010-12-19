@@ -1,0 +1,13 @@
+$OpenBSD: patch-man_Makefile,v 1.1 2010/12/19 18:17:55 shadchin Exp $
+--- man/Makefile.orig	Sat Dec  4 19:09:37 2010
++++ man/Makefile	Sat Dec  4 19:09:47 2010
+@@ -7,9 +7,7 @@ include ../buildsys.mk
+ install-extra:
+ 	${MKDIR_P} "${DESTDIR}${mandir}/${mansubdir}"
+ 	if test -h "${DESTDIR}${mandir}/${mansubdir}/audacious.1" ; then ${RM} "${DESTDIR}${mandir}/${mansubdir}/audacious.1" ; fi
+-	${LN_S} audacious2.1 "${DESTDIR}${mandir}/${mansubdir}/audacious.1"
+ 	if test -h "${DESTDIR}${mandir}/${mansubdir}/audtool.1" ; then ${RM} "${DESTDIR}${mandir}/${mansubdir}/audtool.1" ; fi
+-	${LN_S} audtool2.1 "${DESTDIR}${mandir}/${mansubdir}/audtool.1"
+ 
+ uninstall-extra:
+ 	if test -h "${DESTDIR}${mandir}/${mansubdir}/audacious.1" ; then ${RM} "${DESTDIR}${mandir}/${mansubdir}/audacious.1" ; fi

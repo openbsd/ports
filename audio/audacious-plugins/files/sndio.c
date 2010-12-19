@@ -19,18 +19,22 @@
 #include <string.h>
 
 #include <gtk/gtk.h>
+#include <libmcs/mcs.h>
 #include <sndio.h>
+#include <audacious/configdb.h>
 #include <audacious/i18n.h>
 #include <audacious/plugin.h>
+#include <libaudgui/libaudgui.h>
+#include <libaudgui/libaudgui-gtk.h>
 
 #include "config.h"
 
-void	sndio_init(void);
+OutputPluginInitStatus	sndio_init(void);
 void	sndio_about(void);
 void	sndio_configure(void);
 void	sndio_get_volume(gint *, gint *);
 void	sndio_set_volume(gint, gint);
-gint	sndio_open(AFormat, gint, gint);
+gint	sndio_open(gint, gint, gint);
 void	sndio_write(gpointer, gint);
 void	sndio_close(void);
 void	sndio_flush(gint);
@@ -82,22 +86,15 @@ SIMPLE_OUTPUT_PLUGIN(sndio, sndio_oplist);
 void
 sndio_about(void)
 {
-	static GtkWidget *about;
+	static GtkWidget *about = NULL;
 
-	if (about != NULL)
-		return;
-
-	about = audacious_info_dialog(
+	audgui_simple_message(&about, GTK_MESSAGE_INFO,
 	    _("About Sndio Output Plugin"),
 	    _("Sndio Output Plugin\n\n"
-	    "Written by Thomas Pfaff <tpfaff@tp76.info>\n"),
-	    _("Ok"), FALSE, NULL, NULL);
-
-	gtk_signal_connect(GTK_OBJECT(about), "destroy",
-		GTK_SIGNAL_FUNC(gtk_widget_destroyed), &about);
+	    "Written by Thomas Pfaff <tpfaff@tp76.info>\n"));
 }
 
-void
+OutputPluginInitStatus
 sndio_init(void)
 {
 	mcs_handle_t *cfgfile;
@@ -111,6 +108,8 @@ sndio_init(void)
 		volume = 100;
 	if (!audiodev)
 		audiodev = g_strdup("");
+
+	return (OUTPUT_PLUGIN_INIT_FOUND_DEVICES);
 }
 
 void
@@ -129,7 +128,7 @@ sndio_set_volume(gint l, gint r)
 }
 
 gint
-sndio_open(AFormat fmt, gint rate, gint nch)
+sndio_open(gint fmt, gint rate, gint nch)
 {
 	struct sio_par askpar;
 
@@ -159,11 +158,6 @@ sndio_open(AFormat fmt, gint rate, gint nch)
 		par.sig = 0;
 		par.le = 0;
 		break;
-	case FMT_U16_NE:
-		par.bits = 16;
-		par.sig = 0;
-		par.le = SIO_LE_NATIVE;
-		break;
 	case FMT_S16_LE:
 		par.bits = 16;
 		par.sig = 1;
@@ -173,11 +167,6 @@ sndio_open(AFormat fmt, gint rate, gint nch)
 		par.bits = 16;
 		par.sig = 1;
 		par.le = 0;
-	case FMT_S16_NE:
-		par.bits = 16;
-		par.sig = 1;
-		par.le = SIO_LE_NATIVE;
-		break;
 	default:
 		g_warning("unknown format %d requested", fmt);
 		sndio_close();
@@ -201,12 +190,13 @@ sndio_open(AFormat fmt, gint rate, gint nch)
 	    par.sig != askpar.sig ||
 	    par.pchan != askpar.pchan ||
             par.rate != askpar.rate) {
+		GtkWidget *dialog = NULL;
 		g_warning("parameters not supported");
-		audacious_info_dialog(_("Unsupported format"),
+		audgui_simple_message(&dialog, GTK_MESSAGE_INFO,
+		    _("Unsupported format"),
 		    _("A format not supported by the audio device "
 		    "was requested.\n\n"
-		    "Please try again with the aucat(1) server running."),
-		    _("OK"), FALSE, NULL, NULL);
+		    "Please try again with the aucat(1) server running."));
 		sndio_close();
 		return (0);
 	}

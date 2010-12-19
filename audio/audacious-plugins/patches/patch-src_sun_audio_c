@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_sun_audio_c,v 1.2 2009/01/25 02:07:06 fgsch Exp $
---- src/sun/audio.c.orig	Fri May 23 23:44:20 2008
-+++ src/sun/audio.c	Wed Jan 21 08:29:52 2009
-@@ -121,14 +121,12 @@ static void sun_setformat(AFormat fmt, int rate, int n
- 	
+$OpenBSD: patch-src_sun_audio_c,v 1.3 2010/12/19 18:19:56 shadchin Exp $
+--- src/sun/audio.c.orig	Thu Aug 26 05:07:50 2010
++++ src/sun/audio.c	Sat Dec  4 19:18:52 2010
+@@ -109,14 +109,12 @@ static void sun_setformat(gint fmt, int rate, int nch)
+ 
  	sun = sun_format(fmt);
  
 -	effect.format.sun = sun;
@@ -16,7 +16,7 @@ $OpenBSD: patch-src_sun_audio_c,v 1.2 2009/01/25 02:07:06 fgsch Exp $
  	output.frequency = rate;
  	output.channels = nch;
  	sun_setparams();
-@@ -473,7 +471,7 @@ int sun_open(AFormat fmt, int rate, int nch)
+@@ -461,7 +459,7 @@ int sun_open(gint fmt, int rate, int nch)
  
  	if ((audio.fd = open(audio.devaudio, O_RDWR)) < 0)
  	{

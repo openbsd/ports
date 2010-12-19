@@ -1,12 +1,24 @@
-$OpenBSD: patch-buildsys_mk_in,v 1.2 2009/09/15 21:49:01 fgsch Exp $
---- buildsys.mk.in.orig	Mon Jul  6 23:39:11 2009
-+++ buildsys.mk.in	Sat Aug  1 15:21:49 2009
-@@ -81,7 +81,7 @@ OBJS6 = ${OBJS5:.m=.o}
- OBJS7 = ${OBJS6:.py=.pyc}
- OBJS += ${OBJS7:.xpm=.o}
+$OpenBSD: patch-buildsys_mk_in,v 1.3 2010/12/19 18:17:55 shadchin Exp $
+--- buildsys.mk.in.orig	Wed Dec  8 04:14:31 2010
++++ buildsys.mk.in	Sun Dec 19 20:50:13 2010
+@@ -34,9 +34,9 @@ LD = ${CC}
+ RANLIB = @RANLIB@
+ PYTHON = @PYTHON@
+ ASFLAGS = @ASFLAGS@
+-CFLAGS = @CFLAGS@
++CFLAGS = -I.. @CFLAGS@
+ CXXFLAGS = @CXXFLAGS@
+-CPPFLAGS = @CPPFLAGS@
++CPPFLAGS = -I.. @CPPFLAGS@
+ DFLAGS = @DFLAGS@
+ ERLCFLAGS = @ERLCFLAGS@
+ OBJCFLAGS = @OBJCFLAGS@
+@@ -92,7 +92,7 @@ OBJS += ${OBJS9:.S=.o}
+ 
+ MO_FILES = ${LOCALES:.po=.mo}
  
 -.SILENT:
 +#.SILENT:
  .SUFFIXES:
- .SUFFIXES: .beam .c .cc .cxx .d .dep .erl .m .o .py .pyc .xpm
+ .SUFFIXES: .beam .c .cc .cxx .d .dep .erl .mo .m .mm .o .po .py .pyc .xpm .S
  .PHONY: all subdirs pre-depend depend install install-extra uninstall uninstall-extra clean distclean

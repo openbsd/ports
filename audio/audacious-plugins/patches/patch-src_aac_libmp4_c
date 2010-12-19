@@ -1,30 +1,21 @@
-$OpenBSD: patch-src_aac_libmp4_c,v 1.5 2009/09/15 21:49:55 fgsch Exp $
---- src/aac/libmp4.c.orig	Mon Jul  6 23:40:36 2009
-+++ src/aac/libmp4.c	Sat Aug  1 16:52:50 2009
-@@ -10,6 +10,8 @@
- #include <audacious/output.h>
- #include <audacious/i18n.h>
- 
-+#include "../../config.h"
-+
- #define MP4_VERSION VERSION
- #define SBR_DEC
- 
-@@ -93,7 +95,7 @@ static guint32 mp4_read_callback(void *data, void *buf
-     return aud_vfs_fread(buffer, 1, len, (VFSFile *) data);
+$OpenBSD: patch-src_aac_libmp4_c,v 1.6 2010/12/19 18:19:56 shadchin Exp $
+--- src/aac/libmp4.c.orig	Wed Dec  8 04:14:55 2010
++++ src/aac/libmp4.c	Fri Dec 17 23:07:16 2010
+@@ -63,7 +63,7 @@ static guint32 mp4_read_callback(void *data, void *buf
+     return vfs_fread(buffer, 1, len, (VFSFile *) data);
  }
  
--static guint32 mp4_seek_callback(void *data, guint64 pos)
-+static guint32 mp4_seek_callback(void *data, uint64_t pos)
+-static guint32 mp4_seek_callback (void * data, guint64 pos)
++static guint32 mp4_seek_callback (void * data, uint64_t pos)
  {
-     if (data == NULL)
-         return -1;
-@@ -648,7 +650,7 @@ void my_decode_aac( InputPlayback *playback, char *fil
-     faacDecHandle   decoder = 0;
-     guchar      streambuffer[BUFFER_SIZE];
-     gulong      bufferconsumed = 0;
+     g_return_val_if_fail (data != NULL, -1);
+     g_return_val_if_fail (pos <= G_MAXINT64, -1);
+@@ -578,7 +578,7 @@ static int my_decode_mp4( InputPlayback *playback, cha
+     NeAACDecHandle   decoder;
+     guchar      *buffer = NULL;
+     guint       bufferSize = 0;
 -    gulong      samplerate = 0;
 +    guint       samplerate = 0;
      guchar      channels = 0;
-     gulong      buffervalid = 0;
-     gulong	ret = 0;
+     guint       numSamples;
+     gulong      sampleID = 1;

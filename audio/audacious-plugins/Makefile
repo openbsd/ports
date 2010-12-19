@@ -1,46 +1,46 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/26 07:07:56 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2010/12/19 18:19:56 shadchin Exp $
 
-SHARED_ONLY =	Yes
+SHARED_ONLY =		Yes
 
-COMMENT-main =	input and output plugins for audacious
-COMMENT-jack =	jack plugin for audacious
+COMMENT-main =		input and output plugins for audacious
+COMMENT-jack =		jack plugin for audacious
 
-V =		2.1
-DISTNAME =	audacious-plugins-$V
-PKGNAME-main =	${DISTNAME}
-REVISION-main =	1
-PKGNAME-jack =	audacious-jack-$V
-REVISION-jack =	1
+V =			2.4.2
+DISTNAME =		audacious-plugins-$V
+PKGNAME-main =		${DISTNAME}
+PKGNAME-jack =		audacious-jack-$V
 
-CATEGORIES =	audio multimedia
+CATEGORIES =		audio multimedia
 
-HOMEPAGE =	http://audacious-media-player.org/
+HOMEPAGE =		http://audacious-media-player.org/
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \
-		freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 iconv \
-		intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
-		png pthread-stubs xcb xcb-render xcb-render-util z
-WANTLIB-main =	${WANTLIB} cddb dbus-1 dbus-glib-1 mowgli ogg sndio stdc++ \
-		faad>=2 mp4ff>=1 FLAC>=7 mp3lame mad cdio cdio_cdda \
-		mpcdec>=2 sndfile>=2 vorbis>=5 vorbisfile>=4 vorbisenc \
-		tag>=6 wavpack SDL>=6 curl>=5 neon>=26 xml2
-WANTLIB-jack =	${WANTLIB} jack samplerate
+WANTLIB =	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
+		Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo dbus-1 \
+		dbus-glib-1 drm expat fontconfig freetype gdk-x11-2.0 \
+		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
+		gthread-2.0 gtk-x11-2.0 iconv intl m mcs mowgli pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread-stubs \
+		samplerate xcb xcb-render xcb-shm z
+WANTLIB-main =	${WANTLIB} FLAC>=7 SDL>=6 avcodec avformat avutil bz2 cddb \
+		cdio cdio_cdda cue curl>=5 faac faad>=2 gsm mp3lame neon>=26 \
+		notify ogg orc-0.4 schroedinger-1.0 sndfile>=2 sndio speex \
+		stdc++ theora vorbis>=5 vorbisenc vorbisfile>=4 wavpack x264 \
+		xml2
+WANTLIB-jack =	${WANTLIB} jack
 
-MASTER_SITES =	http://distfiles.atheme.org/
+MASTER_SITES =		http://distfiles.atheme.org/
 
-EXTRACT_SUFX =	.tgz
+EXTRACT_SUFX =		.tgz
 
 MULTI_PACKAGES =	-main
 
-BUILD_DEPENDS =	${RUN_DEPENDS-main}
+BUILD_DEPENDS =		${RUN_DEPENDS-main}
 
 RUN_DEPENDS-main =	audio/audacious>=1.5.1
 RUN_DEPENDS-jack =	audio/audacious-plugins,-main
@@ -50,12 +50,16 @@ LIB_DEPENDS-main =	audio/faad \
 			audio/lame \
 			audio/libmad \
 			audio/libcdio \
+			audio/libcue \
 			audio/libmpcdec \
+			audio/libsamplerate \
 			audio/libsndfile \
 			audio/libvorbis \
 			audio/taglib>=1.4 \
 			audio/wavpack \
+			devel/libnotify \
 			devel/sdl \
+			graphics/ffmpeg \
 			net/curl \
 			net/neon \
 			textproc/libxml
@@ -65,25 +69,22 @@ PSEUDO_FLAVORS =	no_jack
 FLAVOR ?=
 
 .if ${FLAVOR:Mno_jack}
-CONFIGURE_ARGS += --disable-jack
+CONFIGURE_ARGS +=	--disable-jack
 .else
-MULTI_PACKAGES += -jack
+MULTI_PACKAGES +=	-jack
 .endif
 
-USE_GMAKE =	Yes
+USE_GMAKE =		Yes
 
 AUTOCONF_VERSION =	2.61
 
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS +=	--enable-ipv6 \
 			--enable-sndio \
-			--disable-esd \
 			--disable-pulse \
 			--disable-altivec \
 			--disable-lirc \
-			--disable-rootvis \
 			--disable-adplug \
-			--disable-arts \
 			--disable-sid \
 			--disable-oss \
 			--disable-alsa \
@@ -99,7 +100,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS +=	--disable-sse2
 .endif
 
-NO_REGRESS =	Yes
+NO_REGRESS =		Yes
 
 post-patch:
 	@mkdir -p ${WRKSRC}/src/sndio
