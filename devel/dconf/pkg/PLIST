@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/27 10:50:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/12/19 10:25:05 ajacoutot Exp $
+@conflict vala-<0.10
 @bin bin/dconf
 @bin bin/dconf-editor
 include/dconf/
