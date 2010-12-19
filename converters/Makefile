@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/09/16 07:28:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2010/12/19 22:46:12 landry Exp $
 #
 
     SUBDIR =
@@ -39,6 +39,7 @@
     SUBDIR += p5-Net-IDN-Encode
     SUBDIR += p5-Net-IDN-Nameprep
     SUBDIR += p5-Text-Iconv
+    SUBDIR += p5-Unicode-LineBreak
     SUBDIR += p5-Unicode-Map
     SUBDIR += p5-Unicode-Map8
     SUBDIR += p5-Unicode-MapUTF8
