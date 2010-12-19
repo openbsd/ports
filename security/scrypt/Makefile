@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/20 17:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/19 21:54:51 jasper Exp $
 
 COMMENT =	command-line encryption using scrypt key derivation function
 
-DISTNAME =	scrypt-1.1.4
+DISTNAME =	scrypt-1.1.6
 
 CATEGORIES =	security
 
@@ -20,7 +20,6 @@ MASTER_SITES =	${HOMEPAGE}
 EXTRACT_SUFX =	.tgz
 
 CONFIGURE_STYLE =	gnu
-USE_GROFF =		Yes
 
 NO_REGRESS =		Yes
 
