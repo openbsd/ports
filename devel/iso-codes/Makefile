@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/12/14 22:25:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2010/12/19 17:47:46 jasper Exp $
 
 COMMENT=	lists of the country, language and currency iso names
 
@@ -14,7 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/
+MASTER_SITES=	ftp://pkg-isocodes.alioth.debian.org/pub/pkg-isocodes/ \
+		http://distfiles.nl/
 EXTRACT_SUFX=	.tar.bz2
 
 USE_GMAKE=	Yes
