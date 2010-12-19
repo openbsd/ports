@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2010/12/12 19:13:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2010/12/19 22:03:47 jasper Exp $
 
 COMMENT=	small and fast window manager
 
 DISTNAME=	icewm-1.3.7
+REVISION=	0
 CATEGORIES=	x11	
 
 HOMEPAGE=	http://www.icewm.org/
@@ -22,7 +23,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=icewm/}
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	x11/gtk+2
+# XXX: x11/gtk+2 depends on gdk-pixbuf2...yes pkg_add can't find the libs?
+LIB_DEPENDS=	graphics/gdk-pixbuf2 \
+		x11/gtk+2
 
 CONFIGURE_STYLE=gnu		
 CONFIGURE_ARGS=	--with-docdir=${PREFIX}/share/doc \
