@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/12/19 23:37:10 jasper Exp $
 
 COMMENT=	primitives drawing/other support functions for SDL
 
-DISTNAME=	SDL_gfx-2.0.21
+DISTNAME=	SDL_gfx-2.0.22
 PKGNAME=	${DISTNAME:L:S/_/-/}
-REVISION=	0
 CATEGORIES=	devel graphics x11
 MASTER_SITES=	http://www.ferzkopp.net/Software/SDL_gfx-2.0/
 
-SHARED_LIBS=	SDL_gfx	14.0
+SHARED_LIBS=	SDL_gfx	14.1
 
 HOMEPAGE=	http://www.ferzkopp.net/joomla/content/view/19/14/
 
