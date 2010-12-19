@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/19 22:45:32 landry Exp $
+${P5ARCH}/
+${P5ARCH}/Text/
+${P5ARCH}/Text/LineFold/
+${P5ARCH}/Text/LineFold.pm
+${P5ARCH}/Text/LineFold/JA_JP.pod
+${P5ARCH}/Unicode/
+${P5ARCH}/Unicode/GCString/
+${P5ARCH}/Unicode/GCString.pm
+${P5ARCH}/Unicode/GCString/JA_JP.pod
+${P5ARCH}/Unicode/LineBreak/
+${P5ARCH}/Unicode/LineBreak.pm
+${P5ARCH}/Unicode/LineBreak.pod
+${P5ARCH}/Unicode/LineBreak/Constants.pm
+${P5ARCH}/Unicode/LineBreak/Defaults.pm.sample
+${P5ARCH}/Unicode/LineBreak/JA_JP.pod
+${P5ARCH}/auto/
+${P5ARCH}/auto/Unicode/
+${P5ARCH}/auto/Unicode/LineBreak/
+${P5ARCH}/auto/Unicode/LineBreak/LineBreak.bs
+${P5ARCH}/auto/Unicode/LineBreak/LineBreak.so
+@man man/man3p/Text::LineFold.3p
+@man man/man3p/Text::LineFold::JA_JP.3p
+@man man/man3p/Unicode::GCString.3p
+@man man/man3p/Unicode::GCString::JA_JP.3p
+@man man/man3p/Unicode::LineBreak.3p
+@man man/man3p/Unicode::LineBreak::JA_JP.3p
