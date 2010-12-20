@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1066 2010/12/14 11:37:38 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1067 2010/12/20 13:05:40 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1713,7 +1713,8 @@ ${_PACKAGE_COOKIE${_S}}:
 	@cd ${.CURDIR} && \
 	tmp=${_TMP_REPO}${_PKGFILE${_S}} && \
 	if deps=`SUBPACKAGE=${_S} ${MAKE} _print-package-args` && \
-		${SUDO} ${_PKG_CREATE} $$deps ${PKG_ARGS${_S}} $$tmp && \
+		${SUDO} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
+			$$deps ${PKG_ARGS${_S}} $$tmp && \
 		${_check_lib_depends} $$tmp && \
 		${_register_plist} $$tmp && \
 		mv $$tmp ${_PACKAGE_COOKIE${_S}} && \
