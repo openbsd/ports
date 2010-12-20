@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2010/12/09 20:58:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.190 2010/12/20 18:49:47 jeremy Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -6,6 +6,7 @@
      SUBDIR += architect
      SUBDIR += db
      SUBDIR += dbh
+     SUBDIR += dbic++
      SUBDIR += directoryassistant
      SUBDIR += evolution-data-server
      SUBDIR += freetds
@@ -149,6 +150,8 @@
      SUBDIR += qt3-sqlite3-plugin
      SUBDIR += redis
      SUBDIR += ruby-activerecord
+     SUBDIR += ruby-amalgalite
+     SUBDIR += ruby-amalgalite,ruby19
      SUBDIR += ruby-arel
      SUBDIR += ruby-bdb
      SUBDIR += ruby-couch_potato
@@ -157,6 +160,12 @@
      SUBDIR += ruby-data_objects,ruby19
      SUBDIR += ruby-data_objects,rbx
      SUBDIR += ruby-datamapper
+     SUBDIR += ruby-do_mysql
+     SUBDIR += ruby-do_mysql,ruby19
+     SUBDIR += ruby-do_mysql,rbx
+     SUBDIR += ruby-do_postgres
+     SUBDIR += ruby-do_postgres,ruby19
+     SUBDIR += ruby-do_postgres,rbx
      SUBDIR += ruby-do_sqlite3
      SUBDIR += ruby-do_sqlite3,ruby19
      SUBDIR += ruby-do_sqlite3,rbx
@@ -169,6 +178,9 @@
      SUBDIR += ruby-mysql
      SUBDIR += ruby-mysql,ruby19
      SUBDIR += ruby-mysql,rbx
+     SUBDIR += ruby-mysql2
+     SUBDIR += ruby-mysql2,ruby19
+     SUBDIR += ruby-mysqlplus
      SUBDIR += ruby-pg
      SUBDIR += ruby-pg,ruby19
      SUBDIR += ruby-pg,rbx
@@ -182,6 +194,7 @@
      SUBDIR += ruby-sqlite3
      SUBDIR += ruby-sqlite3,ruby19
      SUBDIR += ruby-sqlite3,rbx
+     SUBDIR += ruby-swift
      SUBDIR += ruby-validatable
      SUBDIR += sharedance
      SUBDIR += skytools
