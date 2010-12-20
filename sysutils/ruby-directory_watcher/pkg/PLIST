@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 18:19:54 jeremy Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/History.txt
+${GEM_LIB}/gems/${DISTNAME}/README.txt
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/directory_watcher/
+${GEM_LIB}/gems/${DISTNAME}/lib/directory_watcher.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/directory_watcher/em_scanner.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/directory_watcher/rev_scanner.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/directory_watcher/scanner.rb
+${GEM_LIB}/gems/${DISTNAME}/version.txt
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
