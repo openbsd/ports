@@ -1,0 +1,12 @@
+$OpenBSD: patch-admin_CTK_Makefile_in,v 1.1 2010/12/20 07:51:58 ajacoutot Exp $
+--- admin/CTK/Makefile.in.orig	Wed Dec 15 17:18:18 2010
++++ admin/CTK/Makefile.in	Wed Dec 15 17:18:54 2010
+@@ -672,7 +672,7 @@ uninstall-am: uninstall-binSCRIPTS
+ 
+ 
+ CTK-run: CTK-run.pre
+-	sed -e "s|%sysconfdir%|${sysconfdir}|g; s|%sbindir%|${sbindir}|g; s|%docdir%|${docdir}|g; s|%prefix%|${prefix}|g; s|%localstatedir%|${localstatedir}|g; s|%libdir%|${libdir}|g; s|%wwwroot%|${WWW_ROOT}|g; s|%version%|${PACKAGE_VERSION}|g; s|%phpcgi%|${PHPCGI}|g; s|%datadir%|${datadir}|g; s|%localedir%|${localedir}|g" $< > $@
++	sed -e "s|%sysconfdir%|${sysconfdir}|g; s|%sbindir%|${sbindir}|g; s|%docdir%|${docdir}|g; s|%prefix%|${prefix}|g; s|%localstatedir%|${localstatedir}|g; s|%libdir%|${libdir}|g; s|%wwwroot%|${WWW_ROOT}|g; s|%version%|${PACKAGE_VERSION}|g; s|%phpcgi%|${PHPCGI}|g; s|%datadir%|${datadir}|g; s|%localedir%|${localedir}|g" CTK-run.pre > $@
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

@@ -1,12 +1,13 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2010/09/10 22:39:13 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2010/12/20 07:51:58 ajacoutot Exp $
 @newgroup _cherokee:608
 @newuser _cherokee:608:_cherokee:daemon:Cherokee HTTP Server:/var/empty:/sbin/nologin
+bin/CTK-run
 @bin bin/cget
+bin/cherokee-admin-launcher
 bin/cherokee-config
 bin/cherokee-panic
-@bin bin/cherokee-tweak
+bin/cherokee-tweak
 include/cherokee/
-include/cherokee/admin_client.h
 include/cherokee/avl.h
 include/cherokee/avl_r.h
 include/cherokee/buffer.h
@@ -84,6 +85,8 @@ lib/cherokee/libplugin_evhost.so
 lib/cherokee/libplugin_exists.so
 @comment lib/cherokee/libplugin_extensions.la
 lib/cherokee/libplugin_extensions.so
+@comment lib/cherokee/libplugin_failover.la
+lib/cherokee/libplugin_failover.so
 @comment lib/cherokee/libplugin_fcgi.la
 lib/cherokee/libplugin_fcgi.so
 @comment lib/cherokee/libplugin_file.la
@@ -148,18 +151,19 @@ lib/cherokee/libplugin_tls.so
 lib/cherokee/libplugin_url_arg.so
 @comment lib/cherokee/libplugin_uwsgi.la
 lib/cherokee/libplugin_uwsgi.so
+@comment lib/cherokee/libplugin_v_or.la
+lib/cherokee/libplugin_v_or.so
 @comment lib/cherokee/libplugin_wildcard.la
 lib/cherokee/libplugin_wildcard.so
 lib/libcherokee-base.la
 @lib lib/libcherokee-base.so.${LIBcherokee-base_VERSION}
 lib/libcherokee-client.la
 @lib lib/libcherokee-client.so.${LIBcherokee-client_VERSION}
-lib/libcherokee-config.la
-@lib lib/libcherokee-config.so.${LIBcherokee-config_VERSION}
 lib/libcherokee-server.la
 @lib lib/libcherokee-server.so.${LIBcherokee-server_VERSION}
 lib/pkgconfig/cherokee.pc
 @man man/man1/cget.1
+@man man/man1/cherokee-admin-launcher.1
 @man man/man1/cherokee-admin.1
 @man man/man1/cherokee-config.1
 @man man/man1/cherokee-tweak.1
@@ -172,10 +176,10 @@ share/aclocal/
 share/aclocal/cherokee.m4
 share/cherokee/
 share/cherokee/admin/
+share/cherokee/admin/About.py
+share/cherokee/admin/About.pyc
 share/cherokee/admin/Auth.py
 share/cherokee/admin/Auth.pyc
-share/cherokee/admin/Backup.py
-share/cherokee/admin/Backup.pyc
 share/cherokee/admin/Balancer.py
 share/cherokee/admin/Balancer.pyc
 share/cherokee/admin/CTK/
@@ -186,8 +190,12 @@ share/cherokee/admin/CTK/CTK/Box.py
 share/cherokee/admin/CTK/CTK/Box.pyc
 share/cherokee/admin/CTK/CTK/Button.py
 share/cherokee/admin/CTK/CTK/Button.pyc
+share/cherokee/admin/CTK/CTK/Carousel.py
+share/cherokee/admin/CTK/CTK/Carousel.pyc
 share/cherokee/admin/CTK/CTK/Checkbox.py
 share/cherokee/admin/CTK/CTK/Checkbox.pyc
+share/cherokee/admin/CTK/CTK/Collapsible.py
+share/cherokee/admin/CTK/CTK/Collapsible.pyc
 share/cherokee/admin/CTK/CTK/Combobox.py
 share/cherokee/admin/CTK/CTK/Combobox.pyc
 share/cherokee/admin/CTK/CTK/Config.py
@@ -212,6 +220,8 @@ share/cherokee/admin/CTK/CTK/Image.py
 share/cherokee/admin/CTK/CTK/Image.pyc
 share/cherokee/admin/CTK/CTK/Indenter.py
 share/cherokee/admin/CTK/CTK/Indenter.pyc
+share/cherokee/admin/CTK/CTK/Init.py
+share/cherokee/admin/CTK/CTK/Init.pyc
 share/cherokee/admin/CTK/CTK/JS.py
 share/cherokee/admin/CTK/CTK/JS.pyc
 share/cherokee/admin/CTK/CTK/Link.py
@@ -224,6 +234,8 @@ share/cherokee/admin/CTK/CTK/Page.py
 share/cherokee/admin/CTK/CTK/Page.pyc
 share/cherokee/admin/CTK/CTK/PageCleaner.py
 share/cherokee/admin/CTK/CTK/PageCleaner.pyc
+share/cherokee/admin/CTK/CTK/Paginator.py
+share/cherokee/admin/CTK/CTK/Paginator.pyc
 share/cherokee/admin/CTK/CTK/Plugin.py
 share/cherokee/admin/CTK/CTK/Plugin.pyc
 share/cherokee/admin/CTK/CTK/Post.py
@@ -244,6 +256,8 @@ share/cherokee/admin/CTK/CTK/Server.py
 share/cherokee/admin/CTK/CTK/Server.pyc
 share/cherokee/admin/CTK/CTK/SortableList.py
 share/cherokee/admin/CTK/CTK/SortableList.pyc
+share/cherokee/admin/CTK/CTK/StarRating.py
+share/cherokee/admin/CTK/CTK/StarRating.pyc
 share/cherokee/admin/CTK/CTK/Submitter.py
 share/cherokee/admin/CTK/CTK/Submitter.pyc
 share/cherokee/admin/CTK/CTK/Tab.py
@@ -286,18 +300,15 @@ share/cherokee/admin/CTK/static/css/jquery-ui-1.7.2.custom.css
 share/cherokee/admin/CTK/static/css/jquery.ibutton.css
 share/cherokee/admin/CTK/static/images/
 share/cherokee/admin/CTK/static/images/arrow_ns.png
-share/cherokee/admin/CTK/static/images/bg-body.png
 share/cherokee/admin/CTK/static/images/bg-dialog-buttonpane.png
 share/cherokee/admin/CTK/static/images/bg-dialog-titlebar-close.gif
 share/cherokee/admin/CTK/static/images/bg-dialog-titlebar.png
 share/cherokee/admin/CTK/static/images/bg-dialog.png
 share/cherokee/admin/CTK/static/images/bg-filter.png
-share/cherokee/admin/CTK/static/images/bg-help-a.png
-share/cherokee/admin/CTK/static/images/bg-help-span.png
 share/cherokee/admin/CTK/static/images/bg-sel-actions-sel.png
 share/cherokee/admin/CTK/static/images/bg-sel-actions.png
-share/cherokee/admin/CTK/static/images/bg-td-even.png
-share/cherokee/admin/CTK/static/images/bg-th.png
+share/cherokee/admin/CTK/static/images/carousel-left-arrow.png
+share/cherokee/admin/CTK/static/images/carousel-right-arrow.png
 share/cherokee/admin/CTK/static/images/del-hover.png
 share/cherokee/admin/CTK/static/images/del.png
 share/cherokee/admin/CTK/static/images/dialog-error.png
@@ -305,6 +316,7 @@ share/cherokee/admin/CTK/static/images/dialog-information.png
 share/cherokee/admin/CTK/static/images/dialog-warning.png
 share/cherokee/admin/CTK/static/images/ibutton-slider-default.png
 share/cherokee/admin/CTK/static/images/input-bg.png
+share/cherokee/admin/CTK/static/images/jquery.ui.stars.gif
 share/cherokee/admin/CTK/static/images/loader.gif
 share/cherokee/admin/CTK/static/images/loading.gif
 share/cherokee/admin/CTK/static/images/off.png
@@ -323,6 +335,7 @@ share/cherokee/admin/CTK/static/images/ui-icons_cd0a0a_256x240.png
 share/cherokee/admin/CTK/static/images/uploadify.cancel.png
 share/cherokee/admin/CTK/static/js/
 share/cherokee/admin/CTK/static/js/Help.js
+share/cherokee/admin/CTK/static/js/StarRating.js
 share/cherokee/admin/CTK/static/js/Submitter.js
 share/cherokee/admin/CTK/static/js/ajaxupload.3.6.js
 share/cherokee/admin/CTK/static/js/common.js
@@ -345,10 +358,16 @@ share/cherokee/admin/Handler.py
 share/cherokee/admin/Handler.pyc
 share/cherokee/admin/Icons.py
 share/cherokee/admin/Icons.pyc
-share/cherokee/admin/Login.py
-share/cherokee/admin/Login.pyc
 share/cherokee/admin/Mime.py
 share/cherokee/admin/Mime.pyc
+share/cherokee/admin/OWS_Backup.py
+share/cherokee/admin/OWS_Backup.pyc
+share/cherokee/admin/OWS_Cherokee_Info.py
+share/cherokee/admin/OWS_Cherokee_Info.pyc
+share/cherokee/admin/OWS_Login.py
+share/cherokee/admin/OWS_Login.pyc
+share/cherokee/admin/OWS_Market_Info.py
+share/cherokee/admin/OWS_Market_Info.pyc
 share/cherokee/admin/Page.py
 share/cherokee/admin/Page.pyc
 share/cherokee/admin/PageAdvanced.py
@@ -383,8 +402,16 @@ share/cherokee/admin/Rule.py
 share/cherokee/admin/Rule.pyc
 share/cherokee/admin/RuleSimple.py
 share/cherokee/admin/RuleSimple.pyc
+share/cherokee/admin/SaveButton.py
+share/cherokee/admin/SaveButton.pyc
 share/cherokee/admin/SelectionPanel.py
 share/cherokee/admin/SelectionPanel.pyc
+share/cherokee/admin/SystemInfo.py
+share/cherokee/admin/SystemInfo.pyc
+share/cherokee/admin/SystemStats.py
+share/cherokee/admin/SystemStats.pyc
+share/cherokee/admin/SystemStatsWidgets.py
+share/cherokee/admin/SystemStatsWidgets.pyc
 share/cherokee/admin/Wizard.py
 share/cherokee/admin/Wizard.pyc
 share/cherokee/admin/XMLServerDigest.py
@@ -398,6 +425,37 @@ share/cherokee/admin/consts.py
 share/cherokee/admin/consts.pyc
 share/cherokee/admin/exception.html
 share/cherokee/admin/help.html
+share/cherokee/admin/market/
+share/cherokee/admin/market/CommandProgress.py
+share/cherokee/admin/market/CommandProgress.pyc
+share/cherokee/admin/market/Install.py
+share/cherokee/admin/market/Install.pyc
+share/cherokee/admin/market/InstallUtil.py
+share/cherokee/admin/market/InstallUtil.pyc
+share/cherokee/admin/market/Install_Log.py
+share/cherokee/admin/market/Install_Log.pyc
+share/cherokee/admin/market/Library.py
+share/cherokee/admin/market/Library.pyc
+share/cherokee/admin/market/Maintenance.py
+share/cherokee/admin/market/Maintenance.pyc
+share/cherokee/admin/market/Menu.py
+share/cherokee/admin/market/Menu.pyc
+share/cherokee/admin/market/PageApp.py
+share/cherokee/admin/market/PageApp.pyc
+share/cherokee/admin/market/PageCategory.py
+share/cherokee/admin/market/PageCategory.pyc
+share/cherokee/admin/market/PageIndex.py
+share/cherokee/admin/market/PageIndex.pyc
+share/cherokee/admin/market/PageSearch.py
+share/cherokee/admin/market/PageSearch.pyc
+share/cherokee/admin/market/Review.py
+share/cherokee/admin/market/Review.pyc
+share/cherokee/admin/market/Util.py
+share/cherokee/admin/market/Util.pyc
+share/cherokee/admin/market/__init__.py
+share/cherokee/admin/market/__init__.pyc
+share/cherokee/admin/market/ows_consts.py
+share/cherokee/admin/market/ows_consts.pyc
 share/cherokee/admin/performance.conf.sample
 share/cherokee/admin/plugins/
 share/cherokee/admin/plugins/admin.py
@@ -414,6 +472,8 @@ share/cherokee/admin/plugins/custom_error.py
 share/cherokee/admin/plugins/custom_error.pyc
 share/cherokee/admin/plugins/dbslayer.py
 share/cherokee/admin/plugins/dbslayer.pyc
+share/cherokee/admin/plugins/deflate.py
+share/cherokee/admin/plugins/deflate.pyc
 share/cherokee/admin/plugins/directory.py
 share/cherokee/admin/plugins/directory.pyc
 share/cherokee/admin/plugins/dirlist.py
@@ -430,6 +490,8 @@ share/cherokee/admin/plugins/exists.py
 share/cherokee/admin/plugins/exists.pyc
 share/cherokee/admin/plugins/extensions.py
 share/cherokee/admin/plugins/extensions.pyc
+share/cherokee/admin/plugins/failover.py
+share/cherokee/admin/plugins/failover.pyc
 share/cherokee/admin/plugins/fcgi.py
 share/cherokee/admin/plugins/fcgi.pyc
 share/cherokee/admin/plugins/file.py
@@ -440,6 +502,8 @@ share/cherokee/admin/plugins/fullpath.py
 share/cherokee/admin/plugins/fullpath.pyc
 share/cherokee/admin/plugins/geoip.py
 share/cherokee/admin/plugins/geoip.pyc
+share/cherokee/admin/plugins/gzip.py
+share/cherokee/admin/plugins/gzip.pyc
 share/cherokee/admin/plugins/header.py
 share/cherokee/admin/plugins/header.pyc
 share/cherokee/admin/plugins/htdigest.py
@@ -494,6 +558,8 @@ share/cherokee/admin/plugins/uwsgi.py
 share/cherokee/admin/plugins/uwsgi.pyc
 share/cherokee/admin/plugins/wildcard.py
 share/cherokee/admin/plugins/wildcard.pyc
+share/cherokee/admin/popen.py
+share/cherokee/admin/popen.pyc
 share/cherokee/admin/server.py
 share/cherokee/admin/server.pyc
 share/cherokee/admin/static/
@@ -501,9 +567,19 @@ share/cherokee/admin/static/css/
 share/cherokee/admin/static/css/cherokee-admin.css
 share/cherokee/admin/static/images/
 share/cherokee/admin/static/images/advanced.png
+share/cherokee/admin/static/images/backup.png
 share/cherokee/admin/static/images/bg-bar.png
+share/cherokee/admin/static/images/bg-body.png
+share/cherokee/admin/static/images/bg-help-a.png
+share/cherokee/admin/static/images/bg-help-span.png
+share/cherokee/admin/static/images/bg-td-even.png
+share/cherokee/admin/static/images/bg-th.png
 share/cherokee/admin/static/images/cherokee-logo-bar.png
+share/cherokee/admin/static/images/cpu.png
+share/cherokee/admin/static/images/disk.png
 share/cherokee/admin/static/images/favicon.ico
+share/cherokee/admin/static/images/featured-list-bg.png
+share/cherokee/admin/static/images/featured-list-selected.png
 share/cherokee/admin/static/images/flags/
 share/cherokee/admin/static/images/flags/ad.png
 share/cherokee/admin/static/images/flags/ae.png
@@ -753,22 +829,36 @@ share/cherokee/admin/static/images/flags/zm.png
 share/cherokee/admin/static/images/flags/zw.png
 share/cherokee/admin/static/images/general.png
 share/cherokee/admin/static/images/home.png
+share/cherokee/admin/static/images/host.png
 share/cherokee/admin/static/images/icons.png
-share/cherokee/admin/static/images/kid-running.png
-share/cherokee/admin/static/images/kid-stopped.png
+share/cherokee/admin/static/images/information.png
+share/cherokee/admin/static/images/market.png
 share/cherokee/admin/static/images/mime.png
 share/cherokee/admin/static/images/nav-selected.gif
 share/cherokee/admin/static/images/nav-sep.png
+share/cherokee/admin/static/images/network.png
 share/cherokee/admin/static/images/other/
 share/cherokee/admin/static/images/other/contact-bug.png
-share/cherokee/admin/static/images/other/contact-irc.png
 share/cherokee/admin/static/images/other/contact-list.png
 share/cherokee/admin/static/images/other/facebook.png
+share/cherokee/admin/static/images/other/irc.png
+share/cherokee/admin/static/images/other/latest.png
+share/cherokee/admin/static/images/other/left.png
+share/cherokee/admin/static/images/other/linkedin.png
 share/cherokee/admin/static/images/other/octality-logo.png
 share/cherokee/admin/static/images/other/proud.png
+share/cherokee/admin/static/images/other/right.png
 share/cherokee/admin/static/images/other/twitter.png
+share/cherokee/admin/static/images/other/web.png
+share/cherokee/admin/static/images/panel-clone.png
+share/cherokee/admin/static/images/panel-new.png
+share/cherokee/admin/static/images/ram.png
+share/cherokee/admin/static/images/remote.png
+share/cherokee/admin/static/images/sidebar-bg.png
+share/cherokee/admin/static/images/sidebar-market.png
 share/cherokee/admin/static/images/sources.png
 share/cherokee/admin/static/images/status.png
+share/cherokee/admin/static/images/uptime.png
 share/cherokee/admin/static/images/vservers.png
 share/cherokee/admin/static/images/wizards/
 share/cherokee/admin/static/images/wizards/alfresco.png
@@ -844,6 +934,8 @@ share/cherokee/admin/wizards/moinmoin.py
 share/cherokee/admin/wizards/moinmoin.pyc
 share/cherokee/admin/wizards/mono.py
 share/cherokee/admin/wizards/mono.pyc
+share/cherokee/admin/wizards/moodle.py
+share/cherokee/admin/wizards/moodle.pyc
 share/cherokee/admin/wizards/php.py
 share/cherokee/admin/wizards/php.pyc
 share/cherokee/admin/wizards/phpbb.py
@@ -930,6 +1022,11 @@ share/cherokee/themes/plain/entry.html
 share/cherokee/themes/plain/footer.html
 share/cherokee/themes/plain/header.html
 share/cherokee/themes/plain/theme.css
+share/cherokee/themes/white/
+share/cherokee/themes/white/entry.html
+share/cherokee/themes/white/footer.html
+share/cherokee/themes/white/header.html
+share/cherokee/themes/white/theme.css
 share/doc/cherokee/
 share/doc/cherokee/basics.html
 share/doc/cherokee/basics_download.html
@@ -965,6 +1062,7 @@ share/doc/cherokee/cookbook_django.html
 share/doc/cherokee/cookbook_drupal.html
 share/doc/cherokee/cookbook_embedding_cherokee.html
 share/doc/cherokee/cookbook_glassfish.html
+share/doc/cherokee/cookbook_http_to_https.html
 share/doc/cherokee/cookbook_https_accelerator.html
 share/doc/cherokee/cookbook_joomla.html
 share/doc/cherokee/cookbook_kumbia.html
@@ -994,6 +1092,7 @@ share/doc/cherokee/dev_cherokee.conf.html
 share/doc/cherokee/dev_debug.html
 share/doc/cherokee/dev_issues.html
 share/doc/cherokee/dev_qa.html
+share/doc/cherokee/dev_quickstart.html
 share/doc/cherokee/index.html
 share/doc/cherokee/media/
 share/doc/cherokee/media/css/
@@ -1103,6 +1202,7 @@ share/doc/cherokee/media/images/cookbook_phpmyadmin_denied.png
 share/doc/cherokee/media/images/cookbook_redir_behavior.png
 share/doc/cherokee/media/images/cookbook_redir_domains.png
 share/doc/cherokee/media/images/cookbook_redir_handler.png
+share/doc/cherokee/media/images/cookbook_redir_https.png
 share/doc/cherokee/media/images/cookbook_ror.png
 share/doc/cherokee/media/images/cookbook_ror_common.png
 share/doc/cherokee/media/images/cookbook_ror_fcgi.png
@@ -1133,6 +1233,7 @@ share/doc/cherokee/media/images/screencast.png
 share/doc/cherokee/media/images/tracelor.png
 share/doc/cherokee/modules.html
 share/doc/cherokee/modules_balancers.html
+share/doc/cherokee/modules_balancers_failover.html
 share/doc/cherokee/modules_balancers_ip_hash.html
 share/doc/cherokee/modules_balancers_round_robin.html
 share/doc/cherokee/modules_encoders.html
@@ -1177,7 +1278,6 @@ share/doc/cherokee/other_bundle_cherokee-config.html
 share/doc/cherokee/other_bundle_cherokee-tweak.html
 share/doc/cherokee/other_bundle_cherokee-worker.html
 share/doc/cherokee/other_bundle_cherokee.html
-share/doc/cherokee/other_bundle_spawn-fcgi.html
 share/doc/cherokee/other_community.html
 share/doc/cherokee/other_errors.html
 share/doc/cherokee/other_faq.html
@@ -1194,8 +1294,9 @@ share/examples/cherokee/blank
 @sample /var/log/cherokee/
 @sample /var/log/cherokee/cherokee.access
 @sample /var/log/cherokee/cherokee.error
-@extraunexec rm -rf /var/db/cherokee
-@extraunexec rm -rf /var/log/cherokee
+@extraunexec rm -f ${SYSCONFDIR}/cherokee/*.conf.backup
+@extraunexec rm -rf /var/db/cherokee/
+@extraunexec rm -rf /var/log/cherokee/
 @owner
 share/examples/cherokee/etc/
 @sample ${SYSCONFDIR}/cherokee/
@@ -1216,3 +1317,4 @@ share/examples/cherokee/www/images/powered_by_cherokee.png
 @sample /var/cherokee/images/powered_by_cherokee.png
 share/examples/cherokee/www/index.html
 @sample /var/cherokee/index.html
+@rcscript ${RCDIR}/cherokee

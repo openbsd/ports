@@ -1,6 +1,6 @@
-$OpenBSD: patch-constants_h_pre,v 1.1 2010/01/13 08:47:57 ajacoutot Exp $
---- constants.h.pre.orig	Tue Jan 12 10:51:31 2010
-+++ constants.h.pre	Tue Jan 12 10:51:58 2010
+$OpenBSD: patch-constants_h_pre,v 1.2 2010/12/20 07:51:58 ajacoutot Exp $
+--- constants.h.pre.orig	Tue Jan 12 09:52:45 2010
++++ constants.h.pre	Wed Dec 15 16:37:42 2010
 @@ -16,6 +16,6 @@
  # define CHEROKEE_ICONSDIR    "%prefix%/share/cherokee/icons"
  # define CHEROKEE_THEMEDIR    "%prefix%/share/cherokee/themes"

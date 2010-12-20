@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2010/12/20 07:51:58 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ COMMENT-mysql =	MySQL module for Cherokee web server
 COMMENT-streaming = Streaming module for Cherokee web server
 
 DIR =		1.0
-VERSION =	${DIR}.8
+VERSION =	${DIR}.14
 DISTNAME =	cherokee-${VERSION}
 
 PKGNAME-main =	${DISTNAME}
@@ -20,7 +20,6 @@ PKGNAME-streaming = cherokee-streaming-${VERSION}
 
 SHARED_LIBS =	cherokee-base		0.0 \
 		cherokee-client		0.0 \
-		cherokee-config		0.0 \
 		cherokee-server		0.0
 
 CATEGORIES =	www
@@ -58,7 +57,7 @@ WANTLIB-geoip =		crypto GeoIP>=6
 RUN_DEPENDS-geoip =	${BASE_PKGPATH}
 
 LIB_DEPENDS-ldap =	databases/openldap
-WANTLIB-ldap =		asn1 com_err crypto gssapi krb5 lber>=9 ldap sasl2 ssl
+WANTLIB-ldap =		asn1 com_err crypto gssapi krb5 lber-2.3 ldap-2.3 sasl2 ssl
 RUN_DEPENDS-ldap =	${BASE_PKGPATH}
 
 LIB_DEPENDS-mysql =	databases/mysql
@@ -67,7 +66,9 @@ RUN_DEPENDS-mysql =	${BASE_PKGPATH}
 
 LIB_DEPENDS-streaming =	graphics/ffmpeg \
 			archivers/bzip2
-WANTLIB-streaming =	avcodec>=13 avformat>=12 avutil>=6 bz2 crypto m
+WANTLIB-streaming += avcodec>=13 avformat>=12 avutil>=6 bz2 crypto m
+WANTLIB-streaming += faac faad gsm mp3lame ogg orc-0.4 schroedinger-1.0
+WANTLIB-streaming += speex theora vorbis vorbisenc x264 z
 RUN_DEPENDS-streaming = ${BASE_PKGPATH}
 
 USE_LIBTOOL =	Yes
@@ -102,14 +103,14 @@ CFLAGS +=		-O0 -g3
 CONFIGURE_ARGS +=	--enable-trace
 .endif
 
-SUBST_PY =		admin/server.py qa/fcgi.py qa/run-tests.py \
-			contrib/06to07.py contrib/tracelor.py \
-			contrib/07to08.py contrib/05to06.py
+MODPY_ADJ_FILES= admin/CTK/CTK-run.pre admin/upgrade_config.py \
+		cherokee/cherokee-admin-launcher \
+		cherokee/cherokee-tweak doc/test_images.py \
+		gitlog2changelog.py po/po_stats.py svnlog2changelog.py \
+		admin/server.py qa/run-tests.py contrib/tracelor.py
 
 pre-configure:
-.for i in ${SUBST_PY}
-	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},s' ${WRKSRC}/${i}
-.endfor
+	${SUBST_CMD} ${WRKSRC}/cherokee/main_admin.c
 
 post-install:
 	cd ${PREFIX}/share/cherokee/admin && find . -name "*.py" | \

@@ -1,15 +1,16 @@
-$OpenBSD: patch-configure,v 1.8 2010/07/12 06:22:45 ajacoutot Exp $
---- configure.orig	Tue Jul  6 19:30:31 2010
-+++ configure	Thu Jul  8 14:27:45 2010
-@@ -16759,13 +16759,13 @@ $as_echo "no" >&6; }
+$OpenBSD: patch-configure,v 1.9 2010/12/20 07:51:58 ajacoutot Exp $
+--- configure.orig	Mon Dec 13 14:49:57 2010
++++ configure	Wed Dec 15 16:37:42 2010
+@@ -17414,13 +17414,14 @@ $as_echo "no" >&6; }
       esac
  
  	if test "$have_pthread" != "yes"; then
 -        { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -lpthread" >&5
 -$as_echo_n "checking for main in -lpthread... " >&6; }
-+        { $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -pthread" >&5
++		{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for main in -pthread" >&5 
 +$as_echo_n "checking for main in -pthread... " >&6; }
- if test "${ac_cv_lib_pthread_main+set}" = set; then :
++
+ if ${ac_cv_lib_pthread_main+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -18,7 +19,7 @@ $OpenBSD: patch-configure,v 1.8 2010/07/12 06:22:45 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -16796,7 +16796,7 @@ else
+@@ -17451,7 +17452,7 @@ else
  fi
  
  	   if test "$have_pthread" = "yes"; then
@@ -27,7 +28,7 @@ $OpenBSD: patch-configure,v 1.8 2010/07/12 06:22:45 ajacoutot Exp $
  	   fi
       fi
  
-@@ -20396,7 +20396,7 @@ if test "${ac_cv_lib_avformat_main+set}" = set; then :
+@@ -21048,7 +21049,7 @@ if ${ac_cv_lib_avformat_main+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS

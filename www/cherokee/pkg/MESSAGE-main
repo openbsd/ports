@@ -1,22 +1,5 @@
-To complete the installation, you need to configure cherokee.  As root:
-    # cherokee-admin [-b bind-to-IP] [-p port]
-(without parameters it will bind to 127.0.0.1 on port 9090).
+To complete the installation, you need to configure cherokee. As root:
 
-If you want to run cherokee on boot, add these lines to /etc/rc.local:
+    # ${TRUEPREFIX}/sbin/cherokee-admin -b[IP] -p[PORT]
 
-if [ X"${cherokee_flags}" != X"NO" ]; then
-	echo -n ' cherokee'
-	${PREFIX}/sbin/cherokee ${cherokee_flags} 1> /dev/null
-fi
-
-for admin management:
-
-if [ X"${cherokee-admin_flags}" != X"NO" ]; then
-	echo -n ' cherokee-admin'
-	${PREFIX}/sbin/cherokee-admin ${cherokee_admin_flags} 1> /dev/null &
-fi
-
-and in /etc/rc.conf.local:
-
-cherokee_flags="-d"	# use -d to run in daemon mode
-cherokee-admin_flags=NO	# use -b if you want listen on ALL interfaces
+(by default it will bind to 127.0.0.1 on port 9090).

@@ -1,0 +1,12 @@
+$OpenBSD: patch-cherokee_main_admin_c,v 1.1 2010/12/20 07:51:58 ajacoutot Exp $
+--- cherokee/main_admin.c.orig	Mon Dec 13 14:01:05 2010
++++ cherokee/main_admin.c	Mon Dec 20 07:52:33 2010
+@@ -496,7 +496,7 @@ check_for_python (void)
+ 	int         re;
+ 	pid_t       pid;
+ 	int         exitcode = -1;
+-	char *const args[]   = {"env", "python", "-c", "raise SystemExit", NULL};
++	char *const args[]   = {"env", "python${MODPY_VERSION}", "-c", "raise SystemExit", NULL};
+ 
+ 	pid = fork();
+ 	if (pid == -1) {
