@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/24 21:35:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2010/12/20 17:28:43 jeremy Exp $
 
 COMMENT =	DSL for quickly creating web-applications in Ruby
 
-DISTNAME =	sinatra-1.0
-REVISION =	1
+DISTNAME =	sinatra-1.1.0
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.sinatrarb.com/
@@ -19,8 +18,8 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/ruby-tilt,${MODRUBY_FLAVOR} \
-			www/ruby-rack,${MODRUBY_FLAVOR}>=1.0.0
+RUN_DEPENDS =		devel/ruby-tilt,${MODRUBY_FLAVOR}>=1.1,<2.0 \
+			www/ruby-rack,${MODRUBY_FLAVOR}>=1.1,<2.0
 
 MODRUBY_REGRESS =	rake
 
