@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.482 2010/12/15 00:10:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.483 2010/12/20 18:52:43 jeremy Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -388,6 +388,7 @@
      SUBDIR += ruby-addressable
      SUBDIR += ruby-fcgi
      SUBDIR += ruby-httpclient
+     SUBDIR += ruby-jekyll
      SUBDIR += ruby-mechanize
      SUBDIR += ruby-merb
      SUBDIR += ruby-mongrel
