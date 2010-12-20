@@ -1,0 +1,15 @@
+$OpenBSD: patch-source_preferences_c,v 1.3 2010/12/20 12:02:12 jasper Exp $
+
+Add .pp to the list of extensions for Pascal source files.
+
+--- source/preferences.c.orig	Mon Dec 20 01:41:55 2010
++++ source/preferences.c	Mon Dec 20 01:42:05 2010
+@@ -695,7 +695,7 @@ static PrefDescripRec PrefDescrip[] = {
+         Makefile:Makefile makefile .gmk:::None:8:8::\n\
+         Matlab:.m .oct .sci:::::::\n\
+         NEdit Macro:.nm .neditmacro:::::::\n\
+-        Pascal:.pas .p .int:::::::\n\
++        Pascal:.pas .p pp .int:::::::\n\
+         Perl:.pl .pm .p5 .PL:\"^[ \\t]*#[ \\t]*!.*perl\":Auto:None:::\".,/\\\\`'!$@#%^&*()-=+{}[]\"\":;<>?~|\":\n\
+         PostScript:.ps .eps .epsf .epsi:\"^%!\":::::\"/%(){}[]<>\":\n\
+         Python:.py:\"^#!.*python\":Auto:None:::\"!\"\"#$%&'()*+,-./:;<=>?@[\\\\]^`{|}~\":\n\
