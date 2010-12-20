@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.310 2010/12/08 16:23:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.311 2010/12/20 18:52:03 jeremy Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -269,23 +269,29 @@
      SUBDIR += rman
      SUBDIR += ruby-ascii85
      SUBDIR += ruby-builder
+     SUBDIR += ruby-classifier
      SUBDIR += ruby-erubis
      SUBDIR += ruby-fastercsv
      SUBDIR += ruby-fastri
+     SUBDIR += ruby-fast-stemmer
      SUBDIR += ruby-haml
      SUBDIR += ruby-hpricot
      SUBDIR += ruby-htmlentities
      SUBDIR += ruby-hyperestraier
      SUBDIR += ruby-icalendar
+     SUBDIR += ruby-liquid
      SUBDIR += ruby-markaby
+     SUBDIR += ruby-maruku
      SUBDIR += ruby-nokogiri
      SUBDIR += ruby-pdf-reader
      SUBDIR += ruby-pdf-writer
      SUBDIR += ruby-prawn
      SUBDIR += ruby-randexp
+     SUBDIR += ruby-rdiscount
      SUBDIR += ruby-redcloth
      SUBDIR += ruby-rss
      SUBDIR += ruby-rubigen
+     SUBDIR += ruby-syntax
      SUBDIR += ruby-templater
      SUBDIR += ruby-treetop
      SUBDIR += rxp
