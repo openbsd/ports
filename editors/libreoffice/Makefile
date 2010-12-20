@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/12/13 14:16:46 robert Exp $
+# $OpenBSD: Makefile,v 1.14 2010/12/20 09:07:48 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,8 +7,8 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		3.3
-OV=		${VERSION:C/\.1$/rc1/}
-VERSION=	3.3.0.1
+OV=		${VERSION:C/\.2$/rc2/}
+VERSION=	3.3.0.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-build-${VERSION}
 PKGNAME=	libreoffice-${OV}
@@ -233,15 +233,17 @@ OA=		x86_64
 SUBST_VARS+=	BV OA
 
 pre-patch:
-	@mkdir -p ${WRKSRC}/build/libreoffice
 	@ln -fs /bin/md5 ${WRKDIR}/bin/md5sum
 	@ln -fs /usr/local/bin/gfind ${WRKDIR}/bin/find
 	@ln -fs /usr/local/bin/gcat ${WRKDIR}/bin/cat
+	@mkdir -p ${WRKSRC}/build/libreoffice
+	@mkdir -p ${WRKSRC}/clone
 .for _c in ${COMPONENTS} 
 	@mv ${WRKDIR}/libreoffice-${_c}-${VERSION}/* ${WRKSRC}/build/libreoffice/
 	@rmdir ${WRKDIR}/libreoffice-${_c}-${VERSION}
 .endfor
 	@touch ${WRKSRC}/build/libreoffice/unpack
+	@touch ${WRKSRC}/clone/repos_changed
 
 post-install:
 	cd ${PREFIX}/bin && \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ko,v 1.5 2010/12/02 09:23:37 robert Exp $
+@comment $OpenBSD: PLIST-i18n-ko,v 1.6 2010/12/20 09:07:49 robert Exp $
 @conflict openoffice-i18n-ko-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/ko/
@@ -157,9 +157,6 @@ lib/libreoffice/basis${BV}/share/template/ko/internal/
 lib/libreoffice/basis${BV}/share/template/ko/internal/html.stw
 lib/libreoffice/basis${BV}/share/template/ko/internal/idxexample.odt
 lib/libreoffice/basis${BV}/share/template/ko/internal/url_transfer.htm
-lib/libreoffice/basis${BV}/share/template/ko/layout/
-lib/libreoffice/basis${BV}/share/template/ko/layout/lyt-cool.otp
-lib/libreoffice/basis${BV}/share/template/ko/layout/lyt-darkblue.otp
 lib/libreoffice/basis${BV}/share/template/ko/presnt/
 lib/libreoffice/basis${BV}/share/template/ko/presnt/prs-novelty.otp
 lib/libreoffice/basis${BV}/share/template/ko/presnt/prs-strategy.otp
@@ -269,16 +266,11 @@ lib/libreoffice/basis${BV}/share/template/wizard/letter/ko/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/wordbook/ko/
 lib/libreoffice/basis${BV}/share/wordbook/ko/oracle.dic
 lib/libreoffice/basis${BV}/share/wordbook/ko/soffice.dic
-lib/libreoffice/licenses/LICENSE_ko
 lib/libreoffice/program/resource/oooko.res
 lib/libreoffice/readmes/README_ko
-lib/libreoffice/share/extensions/pdfimport/registration/LICENSE_ko
-lib/libreoffice/share/extensions/presentation-minimizer/registration/LICENSE_ko
 @comment lib/libreoffice/share/extensions/presenter-screen/help/ko/caption/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/ko/caption/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
 @comment lib/libreoffice/share/extensions/presenter-screen/help/ko/content/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/ko/content/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
-lib/libreoffice/share/readme/LICENSE_ko
-lib/libreoffice/share/readme/README_ko
 lib/libreoffice/share/registry/cjk_ko.xcd
 lib/libreoffice/share/registry/korea.xcd

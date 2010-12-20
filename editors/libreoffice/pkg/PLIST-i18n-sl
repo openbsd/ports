@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-sl,v 1.4 2010/12/02 09:23:38 robert Exp $
+@comment $OpenBSD: PLIST-i18n-sl,v 1.5 2010/12/20 09:07:49 robert Exp $
 @conflict openoffice-i18n-sl-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/sl/
@@ -158,9 +158,6 @@ lib/libreoffice/basis${BV}/share/template/sl/internal/html.stw
 lib/libreoffice/basis${BV}/share/template/sl/internal/idxexample.odt
 lib/libreoffice/basis${BV}/share/template/sl/internal/idxexample.sxw
 lib/libreoffice/basis${BV}/share/template/sl/internal/url_transfer.htm
-lib/libreoffice/basis${BV}/share/template/sl/layout/
-lib/libreoffice/basis${BV}/share/template/sl/layout/lyt-cool.otp
-lib/libreoffice/basis${BV}/share/template/sl/layout/lyt-darkblue.otp
 lib/libreoffice/basis${BV}/share/template/sl/presnt/
 lib/libreoffice/basis${BV}/share/template/sl/presnt/prs-novelty.otp
 lib/libreoffice/basis${BV}/share/template/sl/presnt/prs-strategy.otp
@@ -270,7 +267,6 @@ lib/libreoffice/basis${BV}/share/template/wizard/letter/sl/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/wordbook/sl/
 lib/libreoffice/basis${BV}/share/wordbook/sl/oracle.dic
 lib/libreoffice/basis${BV}/share/wordbook/sl/soffice.dic
-lib/libreoffice/licenses/LICENSE_sl
 lib/libreoffice/program/resource/ooosl.res
 lib/libreoffice/readmes/README_sl
 lib/libreoffice/share/extensions/dict-sl/
@@ -288,11 +284,7 @@ lib/libreoffice/share/extensions/dict-sl/sl_SI.aff
 lib/libreoffice/share/extensions/dict-sl/sl_SI.dic
 lib/libreoffice/share/extensions/dict-sl/th_sl_SI_v2.dat
 lib/libreoffice/share/extensions/dict-sl/th_sl_SI_v2.idx
-lib/libreoffice/share/extensions/pdfimport/registration/LICENSE_sl
-lib/libreoffice/share/extensions/presentation-minimizer/registration/LICENSE_sl
 @comment lib/libreoffice/share/extensions/presenter-screen/help/sl/caption/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/sl/caption/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
 @comment lib/libreoffice/share/extensions/presenter-screen/help/sl/content/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/sl/content/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
-lib/libreoffice/share/readme/LICENSE_sl
-lib/libreoffice/share/readme/README_sl

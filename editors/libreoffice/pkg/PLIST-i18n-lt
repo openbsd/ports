@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-lt,v 1.4 2010/12/02 09:23:37 robert Exp $
+@comment $OpenBSD: PLIST-i18n-lt,v 1.5 2010/12/20 09:07:49 robert Exp $
 @conflict openoffice-i18n-lt-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/lt/
@@ -157,32 +157,6 @@ lib/libreoffice/basis${BV}/share/template/lt/internal/
 lib/libreoffice/basis${BV}/share/template/lt/internal/html.stw
 lib/libreoffice/basis${BV}/share/template/lt/internal/idxexample.odt
 lib/libreoffice/basis${BV}/share/template/lt/internal/url_transfer.htm
-lib/libreoffice/basis${BV}/share/template/lt/layout/
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-aqua.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-blackandwhite.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-bluegrey.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-bluelinesgrad.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-bluetitledown.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-book.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-brown.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-charglow.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-forest.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-frepa.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-glacier.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-greengradlines.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-keyboard.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-movwaves.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-numdark.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-ocean.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-organic.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-paper.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-rededges.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-roundedrect.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-sunrise.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-techpoly.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-tunnel.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-water.otp
-lib/libreoffice/basis${BV}/share/template/lt/layout/lyt-wine.otp
 lib/libreoffice/basis${BV}/share/template/lt/presnt/
 lib/libreoffice/basis${BV}/share/template/lt/presnt/prs-novelty.otp
 lib/libreoffice/basis${BV}/share/template/lt/presnt/prs-strategy.otp
@@ -281,7 +255,6 @@ lib/libreoffice/basis${BV}/share/template/lt/wizard/styles/xos.ots
 lib/libreoffice/basis${BV}/share/wordbook/lt/
 lib/libreoffice/basis${BV}/share/wordbook/lt/oracle.dic
 lib/libreoffice/basis${BV}/share/wordbook/lt/soffice.dic
-lib/libreoffice/licenses/LICENSE_lt
 lib/libreoffice/program/resource/ooolt.res
 lib/libreoffice/readmes/README_lt
 lib/libreoffice/share/extensions/dict-lt/
@@ -295,11 +268,7 @@ lib/libreoffice/share/extensions/dict-lt/dictionaries.xcu
 lib/libreoffice/share/extensions/dict-lt/hyph_lt_LT.dic
 lib/libreoffice/share/extensions/dict-lt/lt_LT.aff
 lib/libreoffice/share/extensions/dict-lt/lt_LT.dic
-lib/libreoffice/share/extensions/pdfimport/registration/LICENSE_lt
-lib/libreoffice/share/extensions/presentation-minimizer/registration/LICENSE_lt
 @comment lib/libreoffice/share/extensions/presenter-screen/help/lt/caption/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/lt/caption/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
 @comment lib/libreoffice/share/extensions/presenter-screen/help/lt/content/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/lt/content/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
-lib/libreoffice/share/readme/LICENSE_lt
-lib/libreoffice/share/readme/README_lt

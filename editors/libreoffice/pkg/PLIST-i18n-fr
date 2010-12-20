@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-fr,v 1.4 2010/12/02 09:23:37 robert Exp $
+@comment $OpenBSD: PLIST-i18n-fr,v 1.5 2010/12/20 09:07:49 robert Exp $
 @conflict openoffice-i18n-fr-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/fr/
@@ -157,9 +157,6 @@ lib/libreoffice/basis${BV}/share/template/fr/internal/
 lib/libreoffice/basis${BV}/share/template/fr/internal/html.stw
 lib/libreoffice/basis${BV}/share/template/fr/internal/idxexample.odt
 lib/libreoffice/basis${BV}/share/template/fr/internal/url_transfer.htm
-lib/libreoffice/basis${BV}/share/template/fr/layout/
-lib/libreoffice/basis${BV}/share/template/fr/layout/lyt-cool.otp
-lib/libreoffice/basis${BV}/share/template/fr/layout/lyt-darkblue.otp
 lib/libreoffice/basis${BV}/share/template/fr/presnt/
 lib/libreoffice/basis${BV}/share/template/fr/presnt/prs-novelty.otp
 lib/libreoffice/basis${BV}/share/template/fr/presnt/prs-strategy.otp
@@ -269,7 +266,6 @@ lib/libreoffice/basis${BV}/share/template/wizard/letter/fr/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/wordbook/fr/
 lib/libreoffice/basis${BV}/share/wordbook/fr/oracle.dic
 lib/libreoffice/basis${BV}/share/wordbook/fr/soffice.dic
-lib/libreoffice/licenses/LICENSE_fr
 lib/libreoffice/program/resource/ooofr.res
 lib/libreoffice/readmes/README_fr
 lib/libreoffice/share/extensions/dict-fr/
@@ -288,11 +284,7 @@ lib/libreoffice/share/extensions/dict-fr/hyph_fr.dic
 lib/libreoffice/share/extensions/dict-fr/package-description.txt
 lib/libreoffice/share/extensions/dict-fr/thes_fr.dat
 lib/libreoffice/share/extensions/dict-fr/thes_fr.idx
-lib/libreoffice/share/extensions/pdfimport/registration/LICENSE_fr
-lib/libreoffice/share/extensions/presentation-minimizer/registration/LICENSE_fr
 @comment lib/libreoffice/share/extensions/presenter-screen/help/fr/caption/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/fr/caption/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
 @comment lib/libreoffice/share/extensions/presenter-screen/help/fr/content/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/fr/content/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
-lib/libreoffice/share/readme/LICENSE_fr
-lib/libreoffice/share/readme/README_fr

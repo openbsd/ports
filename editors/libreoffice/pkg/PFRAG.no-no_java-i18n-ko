@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_java-i18n-ko,v 1.2 2010/12/02 09:23:37 robert Exp $
+@comment $OpenBSD: PFRAG.no-no_java-i18n-ko,v 1.3 2010/12/20 09:07:49 robert Exp $
 lib/libreoffice/basis${BV}/help/ko/sbasic.idxl/
 lib/libreoffice/basis${BV}/help/ko/sbasic.idxl/_0.cfs
 lib/libreoffice/basis${BV}/help/ko/sbasic.idxl/segments.gen
@@ -31,7 +31,17 @@ lib/libreoffice/basis${BV}/help/ko/swriter.idxl/
 lib/libreoffice/basis${BV}/help/ko/swriter.idxl/_0.cfs
 lib/libreoffice/basis${BV}/help/ko/swriter.idxl/segments.gen
 lib/libreoffice/basis${BV}/help/ko/swriter.idxl/segments_3
-lib/libreoffice/share/extensions/report-builder/registration/LICENSE_ko
+lib/libreoffice/share/extensions/presenter-screen/help/ko/
+lib/libreoffice/share/extensions/presenter-screen/help/ko/com.sun.PresenterScreen-openbsd_${OA}/
+lib/libreoffice/share/extensions/presenter-screen/help/ko/com.sun.PresenterScreen-openbsd_${OA}/presenter.xhp
+lib/libreoffice/share/extensions/presenter-screen/help/ko/help.db_
+lib/libreoffice/share/extensions/presenter-screen/help/ko/help.ht_
+lib/libreoffice/share/extensions/presenter-screen/help/ko/help.idxl/
+lib/libreoffice/share/extensions/presenter-screen/help/ko/help.idxl/_0.cfs
+lib/libreoffice/share/extensions/presenter-screen/help/ko/help.idxl/segments.gen
+lib/libreoffice/share/extensions/presenter-screen/help/ko/help.idxl/segments_3
+lib/libreoffice/share/extensions/presenter-screen/help/ko/help.jar
+lib/libreoffice/share/extensions/presenter-screen/help/ko/help.key_
 lib/libreoffice/share/extensions/wiki-publisher/help/ko/
 lib/libreoffice/share/extensions/wiki-publisher/help/ko/com.sun.wiki-publisher/
 lib/libreoffice/share/extensions/wiki-publisher/help/ko/com.sun.wiki-publisher/wiki.xhp

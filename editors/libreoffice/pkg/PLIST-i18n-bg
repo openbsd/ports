@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-bg,v 1.4 2010/12/02 09:23:37 robert Exp $
+@comment $OpenBSD: PLIST-i18n-bg,v 1.5 2010/12/20 09:07:49 robert Exp $
 @conflict openoffice-i18n-bg-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/bg/
@@ -156,9 +156,6 @@ lib/libreoffice/basis${BV}/share/template/bg/internal/
 lib/libreoffice/basis${BV}/share/template/bg/internal/html.stw
 lib/libreoffice/basis${BV}/share/template/bg/internal/idxexample.odt
 lib/libreoffice/basis${BV}/share/template/bg/internal/url_transfer.htm
-lib/libreoffice/basis${BV}/share/template/bg/layout/
-lib/libreoffice/basis${BV}/share/template/bg/layout/lyt-cool.otp
-lib/libreoffice/basis${BV}/share/template/bg/layout/lyt-darkblue.otp
 lib/libreoffice/basis${BV}/share/template/bg/presnt/
 lib/libreoffice/basis${BV}/share/template/bg/presnt/prs-novelty.otp
 lib/libreoffice/basis${BV}/share/template/bg/presnt/prs-strategy.otp
@@ -268,14 +265,9 @@ lib/libreoffice/basis${BV}/share/template/wizard/letter/bg/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/wordbook/bg/
 lib/libreoffice/basis${BV}/share/wordbook/bg/oracle.dic
 lib/libreoffice/basis${BV}/share/wordbook/bg/soffice.dic
-lib/libreoffice/licenses/LICENSE_bg
 lib/libreoffice/program/resource/ooobg.res
 lib/libreoffice/readmes/README_bg
-lib/libreoffice/share/extensions/pdfimport/registration/LICENSE_bg
-lib/libreoffice/share/extensions/presentation-minimizer/registration/LICENSE_bg
 @comment lib/libreoffice/share/extensions/presenter-screen/help/bg/caption/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/bg/caption/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
 @comment lib/libreoffice/share/extensions/presenter-screen/help/bg/content/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/bg/content/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
-lib/libreoffice/share/readme/LICENSE_bg
-lib/libreoffice/share/readme/README_bg

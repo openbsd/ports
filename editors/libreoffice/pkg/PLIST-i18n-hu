@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-hu,v 1.4 2010/12/02 09:23:37 robert Exp $
+@comment $OpenBSD: PLIST-i18n-hu,v 1.5 2010/12/20 09:07:49 robert Exp $
 @conflict openoffice-i18n-hu-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/hu/
@@ -157,9 +157,6 @@ lib/libreoffice/basis${BV}/share/template/hu/internal/
 lib/libreoffice/basis${BV}/share/template/hu/internal/html.stw
 lib/libreoffice/basis${BV}/share/template/hu/internal/idxexample.odt
 lib/libreoffice/basis${BV}/share/template/hu/internal/url_transfer.htm
-lib/libreoffice/basis${BV}/share/template/hu/layout/
-lib/libreoffice/basis${BV}/share/template/hu/layout/lyt-cool.otp
-lib/libreoffice/basis${BV}/share/template/hu/layout/lyt-darkblue.otp
 lib/libreoffice/basis${BV}/share/template/hu/presnt/
 lib/libreoffice/basis${BV}/share/template/hu/presnt/prs-novelty.otp
 lib/libreoffice/basis${BV}/share/template/hu/presnt/prs-strategy.otp
@@ -269,7 +266,6 @@ lib/libreoffice/basis${BV}/share/template/wizard/letter/hu/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/wordbook/hu/
 lib/libreoffice/basis${BV}/share/wordbook/hu/oracle.dic
 lib/libreoffice/basis${BV}/share/wordbook/hu/soffice.dic
-lib/libreoffice/licenses/LICENSE_hu
 lib/libreoffice/program/resource/ooohu.res
 lib/libreoffice/readmes/README_hu
 lib/libreoffice/share/extensions/dict-hu/
@@ -292,11 +288,7 @@ lib/libreoffice/share/extensions/dict-hu/hu_HU.dic
 lib/libreoffice/share/extensions/dict-hu/hyph_hu_HU.dic
 lib/libreoffice/share/extensions/dict-hu/th_hu_HU_v2.dat
 lib/libreoffice/share/extensions/dict-hu/th_hu_HU_v2.idx
-lib/libreoffice/share/extensions/pdfimport/registration/LICENSE_hu
-lib/libreoffice/share/extensions/presentation-minimizer/registration/LICENSE_hu
 @comment lib/libreoffice/share/extensions/presenter-screen/help/hu/caption/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/hu/caption/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
 @comment lib/libreoffice/share/extensions/presenter-screen/help/hu/content/
 @comment lib/libreoffice/share/extensions/presenter-screen/help/hu/content/com.sun.PresenterScreen-openbsd_${OA}%2Fpresenter.xhp
-lib/libreoffice/share/readme/LICENSE_hu
-lib/libreoffice/share/readme/README_hu
