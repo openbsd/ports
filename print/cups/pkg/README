@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2010/12/20 11:39:48 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2010/12/20 14:43:42 ajacoutot Exp $
 
 Using CUPS under OpenBSD
 ========================
@@ -14,7 +14,9 @@ package like (non-exhaustive list): hplip, gutenprint, foo2zjs, splix...
 This package supports both ulpt(4) and libusb for printing to USB
 devices. ulpt(4) should work out of the box, however:
 * it needs to claim the entire USB port, so it will not be possible to
-access the scanner part of multi-function devices
+access the scanner part of a multi-function device
+* ulpt(4) does not support select() which is used by CUPS to know when
+the device can accept more data (http://www.cups.org/str.php?L3028)
 * it won't be able to automatically detect the corresponding driver/PPD
 * it is deprecated upstream in favor of libusb
 
