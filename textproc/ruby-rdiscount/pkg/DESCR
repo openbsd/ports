@@ -1,0 +1,4 @@
+Discount is an implementation of John Gruber's Markdown markup language
+in C. It implements all of the language described in the markdown syntax
+document and passes the Markdown 1.0 test suite. rdiscount is a ruby C
+extension that wraps Discount.
