@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 17:32:49 jeremy Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/README.tmpl
+${GEM_LIB}/gems/${DISTNAME}/gemspec.rb
+${GEM_LIB}/gems/${DISTNAME}/gen_readme.rb
+${GEM_LIB}/gems/${DISTNAME}/install.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/arrayfields.rb
+${GEM_LIB}/gems/${DISTNAME}/sample/
+${GEM_LIB}/gems/${DISTNAME}/sample/a.rb
+${GEM_LIB}/gems/${DISTNAME}/sample/b.rb
+${GEM_LIB}/gems/${DISTNAME}/sample/c.rb
+${GEM_LIB}/gems/${DISTNAME}/sample/d.rb
+${GEM_LIB}/gems/${DISTNAME}/sample/e.rb
+${GEM_LIB}/gems/${DISTNAME}/test/
+${GEM_LIB}/gems/${DISTNAME}/test/arrayfields.rb
+${GEM_LIB}/gems/${DISTNAME}/test/memtest.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
