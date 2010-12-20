@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/20 00:00:21 jasper Exp $
 
-COMMENT= 	set of integers
+COMMENT= 	sets of integers
 
 MODULES=	cpan
-USE_GROFF =	Yes
 
-DISTNAME=	Set-IntRange-5.1
-REVISION=	0
+DISTNAME=	Set-IntRange-5.2
 CATEGORIES=	devel
 
 # perl
