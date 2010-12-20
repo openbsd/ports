@@ -1,4 +1,7 @@
-$OpenBSD: patch-backend_usb-unix_c,v 1.1 2010/12/20 11:39:48 ajacoutot Exp $
+$OpenBSD: patch-backend_usb-unix_c,v 1.2 2010/12/20 15:53:05 ajacoutot Exp $
+
+http://www.cups.org/str.php?L3028
+
 --- backend/usb-unix.c.orig	Mon Dec 20 11:51:35 2010
 +++ backend/usb-unix.c	Mon Dec 20 11:51:56 2010
 @@ -181,7 +181,7 @@ print_device(const char *uri,		/* I - Device URI */
