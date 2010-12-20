@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2010/12/11 09:55:51 landry Exp $
+# $OpenBSD: Makefile,v 1.220 2010/12/20 18:50:27 jeremy Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -133,6 +133,7 @@
      SUBDIR += rsyslog
      SUBDIR += rtty
      SUBDIR += ruby-capistrano
+     SUBDIR += ruby-directory_watcher
      SUBDIR += ruby-facter
      SUBDIR += ruby-mongrel_cluster
      SUBDIR += ruby-puppet
