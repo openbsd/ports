@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2010/11/19 09:06:28 shadchin Exp $
+# $OpenBSD: Makefile,v 1.101 2010/12/20 18:43:18 shadchin Exp $
 #
 
      SUBDIR =
@@ -98,6 +98,7 @@
      SUBDIR += umfpack
      SUBDIR += wcalc
      SUBDIR += wmcalc
+     SUBDIR += wxMaxima
      SUBDIR += xspread
      SUBDIR += yorick
 
