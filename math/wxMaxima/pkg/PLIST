@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 18:34:17 shadchin Exp $
+@bin bin/wxmaxima
+share/applications/wxmaxima.desktop
+share/locale/cs/LC_MESSAGES/wxMaxima.mo
+share/locale/da/LC_MESSAGES/wxMaxima.mo
+share/locale/de/LC_MESSAGES/wxMaxima.mo
+share/locale/el/LC_MESSAGES/wxMaxima.mo
+share/locale/es/LC_MESSAGES/wxMaxima.mo
+share/locale/fr/LC_MESSAGES/wxMaxima.mo
+share/locale/hu/LC_MESSAGES/wxMaxima.mo
+share/locale/it/LC_MESSAGES/wxMaxima.mo
+share/locale/ja/LC_MESSAGES/wxMaxima.mo
+share/locale/pl/LC_MESSAGES/wxMaxima.mo
+share/locale/pt_BR/LC_MESSAGES/wxMaxima.mo
+share/locale/ru/LC_MESSAGES/wxMaxima.mo
+share/locale/uk/LC_MESSAGES/wxMaxima.mo
+share/locale/zh_TW/LC_MESSAGES/wxMaxima.mo
+share/pixmaps/
+share/pixmaps/wxmaxima.png
+share/wxMaxima/
+share/wxMaxima/COPYING
+share/wxMaxima/README
+share/wxMaxima/autocomplete.txt
+share/wxMaxima/tips.txt
+share/wxMaxima/wxmathml.lisp
+share/wxMaxima/wxmaxima.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
