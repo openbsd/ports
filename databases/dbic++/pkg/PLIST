@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 17:39:55 jeremy Exp $
+include/dbic++/
+include/dbic++.h
+include/dbic++/abstract_handle.h
+include/dbic++/abstract_result.h
+include/dbic++/abstract_statement.h
+include/dbic++/container.h
+include/dbic++/cpool.h
+include/dbic++/error.h
+include/dbic++/handle.h
+include/dbic++/io.h
+include/dbic++/io_filestream.h
+include/dbic++/io_stream.h
+include/dbic++/param.h
+include/dbic++/reactor.h
+include/dbic++/result_row.h
+include/dbic++/result_row_hash.h
+include/dbic++/socketinfo.h
+include/dbic++/statement.h
+include/dbic++/util.h
+lib/dbic++/
+@lib lib/dbic++/libdbdmysql.so.${LIBdbdmysql_VERSION}
+@lib lib/dbic++/libdbdpg.so.${LIBdbdpg_VERSION}
+lib/libdbic++.a
+lib/pkgconfig/dbic++.pc
