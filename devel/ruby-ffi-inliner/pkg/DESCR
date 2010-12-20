@@ -1,0 +1,8 @@
+With ffi-inliner you can run C code within your ruby script:
+* Mix C snippets in your Ruby code and gulp it on the fly!
+* It's based on Ruby-FFI so the C code you inject is portable across
+  Ruby implementations!
+* Yep, it means that you can run it on JRuby too!
+* Fast compilation through tcc
+* But it can use the system's compiler (e.g. gcc) on those platforms
+  that don't support tcc (e.g. OSX) or that don't have it installed
