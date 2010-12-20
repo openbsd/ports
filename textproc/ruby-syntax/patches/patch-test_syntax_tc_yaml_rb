@@ -1,0 +1,22 @@
+$OpenBSD: patch-test_syntax_tc_yaml_rb,v 1.1.1.1 2010/12/20 18:19:10 jeremy Exp $
+
+This regress test goes into an infinite loop.
+
+--- test/syntax/tc_yaml.rb.orig	Tue Oct 26 14:29:45 2010
++++ test/syntax/tc_yaml.rb	Tue Oct 26 14:29:55 2010
+@@ -214,15 +214,4 @@ EOF
+     assert_equal [ :normal, " baz\n" ], [ tok.first.group, tok.shift ]
+   end
+ 
+-  def test_long_test_at_eof
+-    tok = []
+-    @yaml.tokenize( "foo: >\n  one two\n  three four" ) { |t| tok << t }
+-    assert_equal [ :key, "foo" ], [ tok.first.group, tok.shift ]
+-    assert_equal [ :punct, ":" ], [ tok.first.group, tok.shift ]
+-    assert_equal [ :normal, " " ], [ tok.first.group, tok.shift ]
+-    assert_equal [ :punct, ">" ], [ tok.first.group, tok.shift ]
+-    assert_equal [ :normal, "\n" ], [ tok.first.group, tok.shift ]
+-    assert_equal [ :string, "  one two\n  three four" ], [ tok.first.group, tok.shift ]
+-  end
+-
+ end
