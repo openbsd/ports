@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/11/08 23:24:39 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/12/20 17:31:08 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.require_paths
@@ -31,12 +31,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/pg_ext.so
 ${GEM_LIB}/gems/${DISTNAME}/rake/
 ${GEM_LIB}/gems/${DISTNAME}/rake/191_compat.rb
 ${GEM_LIB}/gems/${DISTNAME}/rake/dependencies.rb
+${GEM_LIB}/gems/${DISTNAME}/rake/documentation.rb
 ${GEM_LIB}/gems/${DISTNAME}/rake/helpers.rb
 ${GEM_LIB}/gems/${DISTNAME}/rake/hg.rb
 ${GEM_LIB}/gems/${DISTNAME}/rake/manual.rb
 ${GEM_LIB}/gems/${DISTNAME}/rake/packaging.rb
 ${GEM_LIB}/gems/${DISTNAME}/rake/publishing.rb
-${GEM_LIB}/gems/${DISTNAME}/rake/rdoc.rb
 ${GEM_LIB}/gems/${DISTNAME}/rake/style.rb
 ${GEM_LIB}/gems/${DISTNAME}/rake/svn.rb
 ${GEM_LIB}/gems/${DISTNAME}/rake/testing.rb
