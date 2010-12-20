@@ -1,0 +1,30 @@
+$OpenBSD: patch-ext_extconf_rb,v 1.1.1.1 2010/12/20 17:43:58 jeremy Exp $
+--- ext/extconf.rb.orig	Thu Oct 28 17:03:48 2010
++++ ext/extconf.rb	Thu Oct 28 17:05:57 2010
+@@ -4,7 +4,7 @@ require 'mkmf'
+ Config::CONFIG['CC']  = 'g++'
+ Config::CONFIG['CPP'] = 'g++'
+ 
+-$CFLAGS  = '-fPIC -Os'
++$CFLAGS  = '-fPIC'
+ 
+ def apt_install_hint pkg
+   "sudo apt-get install #{pkg}"
+@@ -34,7 +34,7 @@ end
+ 
+ def assert_dbicpp_version ver
+   passed  = false
+-  header  = '/usr/include/dbic++.h'
++  header  = "#{ENV['LOCALBASE']}/include/dbic++.h"
+   message = "Swift needs dbic++ >= #{ver}. Please update your dbic++ installation."
+ 
+   if File.exists?(header) && match = File.read(header).match(/DBI_VERSION\s+(.*?)\n/mi)
+@@ -52,7 +52,7 @@ def assert_dbicpp_version ver
+ end
+ 
+ exit 1 unless library_installed? 'pcrecpp', apt_install_hint('libpcre3-dev')
+-exit 1 unless library_installed? 'uuid',    apt_install_hint('uuid-dev')
++exit 1 unless library_installed? 'e2fs-uuid',    apt_install_hint('uuid-dev')
+ exit 1 unless library_installed? 'dbic++',  apt_install_hint('dbic++-dev')
+ 
+ assert_dbicpp_version '0.4.0'
