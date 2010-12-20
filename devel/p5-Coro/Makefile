@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/13 09:53:47 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2010/12/20 22:21:25 jasper Exp $
 
 COMMENT =	coroutines for perl
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-
+BUILD_DEPENDS = ${RUN_DEPENDS}
 RUN_DEPENDS = 	devel/p5-Event>=0.89 \
 		devel/p5-AnyEvent>=5.00 \
 		devel/p5-EV>=3.3 \
