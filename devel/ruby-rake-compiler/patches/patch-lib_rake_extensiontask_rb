@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_rake_extensiontask_rb,v 1.1.1.1 2010/12/20 18:03:17 jeremy Exp $
+
+Don't have it accidently use gmake, because the makefiles
+created can use BSD make extensions.
+
+--- lib/rake/extensiontask.rb.orig	Fri Dec 10 12:15:51 2010
++++ lib/rake/extensiontask.rb	Fri Dec 10 12:16:20 2010
+@@ -349,7 +349,5 @@ Rerun `rake` under MRI Ruby 1.8.x/1.9.x to cross/nativ
+           if RUBY_PLATFORM =~ /mswin/ then
+             'nmake'
+           else
+-            ENV['MAKE'] || %w[gmake make].find { |c|
++            ENV['MAKE'] || 'make'
+-              system("#{c} -v >> #{dev_null} 2>&1")
+-            }
+           end

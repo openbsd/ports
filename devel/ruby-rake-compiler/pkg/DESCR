@@ -1,0 +1,10 @@
+rake-compiler aims to help Gem developers deal with Ruby extensions,
+simplifying code and reducing duplication.
+
+It follows convention over configuration and sets a standardized
+structure to build and package both C and Java extensions in your gems.
+
+This is the result of experiences dealing with several Gems that
+required native extensions across platforms and different user
+configurations where details like portability and clarity of code were
+lacking.
