@@ -1,0 +1,11 @@
+This module provides both a C and pure ruby simple subset sum problem
+solver. The subset sum problem is, given a set of numbers, can the sum
+of any subset of those numbers equal a given number. This problem is
+NP-complete.
+
+Both the C and pure ruby versions implement a fairly simple
+meet-in-the-middle algorithm. The C version uses an AVL tree to store
+the data, while the pure ruby version uses a ruby hash. For the C
+version to be used, the sum of the positive numbers and the sum of the
+negative numbers in the set, as well as the wanted number, must all be
+Fixnums. Additionally, max_seconds should be nil or a Fixnum.

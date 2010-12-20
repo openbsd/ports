@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 18:09:01 jeremy Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.require_paths
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/Makefile
+${GEM_LIB}/gems/${DISTNAME}/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/
+${GEM_LIB}/gems/${DISTNAME}/spec/subset_sum_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/subset_sum.c
+${GEM_LIB}/gems/${DISTNAME}/subset_sum.o
+${GEM_LIB}/gems/${DISTNAME}/subset_sum.rb
+${GEM_LIB}/gems/${DISTNAME}/subset_sum.so
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
