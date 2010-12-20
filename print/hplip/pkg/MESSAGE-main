@@ -1,7 +1,6 @@
-USB printers must attach as a ugen(4) device which means you need to
-disable ulpt(4) in your kernel - see config(8).
-Since HPLIP communication with the printer is done via CUPS, you need
-to give the _cups user rw access to /dev/{usb,ugen}*
+Communication with the printer is done via CUPS over libusb, make sure
+you read the OpenBSD specific documentation that comes with the cups
+package to enable libusb support and disable ulpt(4) before using HPLIP.
 
 To make the hpaio backend available to SANE, simply add "hpaio" to
 its configuration file.  As root:
