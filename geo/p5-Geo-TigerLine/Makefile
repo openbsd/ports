@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:45:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/20 00:00:33 jasper Exp $
 
 COMMENT=	parse TIGER/Line geographic data
 MODULES=	cpan
-DISTNAME=	Geo-TigerLine-0.02
-REVISION=	0
+DISTNAME=	Geo-TigerLine-0.03
 CATEGORIES=	geo
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_DISTFILES_CDROM=	Yes
