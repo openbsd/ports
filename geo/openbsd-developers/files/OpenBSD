@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.67 2010/12/19 20:36:38 rpointel Exp $
+# $OpenBSD: OpenBSD,v 1.68 2010/12/20 20:16:58 miod Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -39,7 +39,6 @@
 43.355902	-5.849892	"sobrado"	# Igor Sobrado
 43.5312		13.2519		"giovanni"	# Giovanni Bechis
 43.61495	1.44094		"matthieu"	# Matthieu Herrb
-43.5826		1.4376		"miod"		# Miod Vallat
 43.633		-79.500		"brad"		# Brad Smith
 43.66		7.18		"pyr"		# Pierre-Yves Ritschard
 43.70		-79.42		"krw"		# Kenneth R. Westerback
@@ -67,6 +66,7 @@
 48.2		16.367		"martin"	# Martin Reindl
 48.35		7.46		"couderc"	# Damien Couderc
 48.750		2.317		"saad"		# Saad Kadhi
+48.839722	1.701111	"miod"		# Miod Vallat
 48.85		2.40		"rpointel"	# Remi Pointel
 48.8571		2.44		"chl"		# Charles Longeau
 48.8640		2.3555		"ajacoutot"	# Antoine Jacoutot
