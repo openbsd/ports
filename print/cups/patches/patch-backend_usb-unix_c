@@ -1,0 +1,12 @@
+$OpenBSD: patch-backend_usb-unix_c,v 1.1 2010/12/20 11:39:48 ajacoutot Exp $
+--- backend/usb-unix.c.orig	Mon Dec 20 11:51:35 2010
++++ backend/usb-unix.c	Mon Dec 20 11:51:56 2010
+@@ -181,7 +181,7 @@ print_device(const char *uri,		/* I - Device URI */
+       lseek(print_fd, 0, SEEK_SET);
+     }
+ 
+-#ifdef __sun
++#if defined(__sun) || defined(__OpenBSD__)
+    /*
+     * CUPS STR #3028: Solaris' usbprn driver apparently does not support
+     * select() or poll(), so we can't support the sidechannel either...

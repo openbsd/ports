@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2010/11/30 08:09:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2010/12/20 11:39:48 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
@@ -6,7 +6,13 @@ VERSION=	1.4.5
 DISTNAME=	cups-${VERSION}-source
 PKGNAME=	cups-${VERSION}
 
-REVISION=	0
+REVISION=	1
+
+# Allow both ulpt(4) and libusb based backends to work together.
+# See http://www.cups.org/str.php?L3357
+PATCHFILES=	usb-backend-both-usblp-and-libusb.dpatch:0
+MASTER_SITES0=	http://www.cups.org/strfiles/3357/
+PATCH_DIST_STRIP= -p1
 
 CATEGORIES=	print sysutils
 
@@ -29,7 +35,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += 	asn1 c crypto dbus-1>=7 gssapi jpeg krb5 m png>=3 pthread
-WANTLIB +=	ssl stdc++ tiff>=35 z
+WANTLIB +=	ssl stdc++ tiff>=35 z usb
 
 MASTER_SITES=	http://ftp.easysw.com/pub/cups/${VERSION}/ \
 		http://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/cups/${VERSION}/ \
@@ -51,6 +57,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 
 LIB_DEPENDS=	graphics/png \
 		graphics/tiff \
+		devel/libusb \
 		x11/dbus
 
 LIBS_ENV=	LIBcups_VERSION=${LIBcups_VERSION} \
@@ -73,7 +80,7 @@ AUTOCONF_VERSION= 2.62
 AUTOMAKE_VERSION= 1.9
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
@@ -96,8 +103,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-raw-printing \
 		--enable-gssapi \
 		--enable-openssl \
+		--enable-libusb \
 		--disable-gnutls \
-		--disable-libusb \
 		--disable-pam \
 		--disable-launchd \
 		--disable-pap \
@@ -106,7 +113,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib -pthread" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		${LIBS_ENV}
 
 FLAVORS=	ldap

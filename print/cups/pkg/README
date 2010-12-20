@@ -1,0 +1,45 @@
+$OpenBSD: README,v 1.1 2010/12/20 11:39:48 ajacoutot Exp $
+
+Using CUPS under OpenBSD
+========================
+
+If you want to print to non-Postscript printers or use CUPS bundled PPD
+files (i.e. drivers), you'll need to install ghostscript.  You will also
+most probably want to install the foomatic-filters package which
+provides a universal filter script.
+
+Depending on your printer model you may need to install some driver
+package like (non-exhaustive list): hplip, gutenprint, foo2zjs, splix...
+
+This package supports both ulpt(4) and libusb for printing to USB
+devices. ulpt(4) should work out of the box, however:
+* it needs to claim the entire USB port, so it will not be possible to
+access the scanner part of multi-function devices
+* it won't be able to automatically detect the corresponding driver/PPD
+* it is deprecated upstream in favor of libusb
+
+Required steps for libusb based printing
+----------------------------------------
+If you choose to make your USB printer use libusb, you'll have to
+disable ulpt(4) in your kernel - see config(8) - which will allow libusb
+to claim your device.
+
+Since USB printing will be handled by libusb, you need to allow the
+_cups user rw access to the corresponding USB endpoint. To do so, find
+where your printer is attached to using dmesg(8) then change the
+ownerships accordingly.
+ugenX = /dev/ugenX
+uhubX = /dev/usbX
+
+e.g.
+$ dmesg | grep ugen
+ugen0 at uhub1 port 1 "EPSON USB MFP" rev 1.10/1.00 addr 2
+$ sudo chown _cups /dev/ugen0.* /dev/usb1
+
+The reason we are changing the user and not the group is that it will
+allow for multi-function devices to work for both printing and scanning
+(e.g. by being owned by _cups:_saned).
+
+To preserve your changes after a system update, use rc.local(8).
+e.g. for a multi-function printer/scanner add the following lines:
+chown _cups:_saned /dev/ugen0.* /dev/usb1

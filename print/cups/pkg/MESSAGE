@@ -1,4 +1,0 @@
-If you want to print to non-Postscript printers or use CUPS bundled PPD
-files (i.e. drivers), you'll need to install ghostscript.  You will also
-most probably want to install the foomatic-filters package which
-provides a universal filter script.
