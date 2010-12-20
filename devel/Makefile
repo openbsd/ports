@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.876 2010/12/16 19:13:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.877 2010/12/20 18:44:01 jeremy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -952,6 +952,7 @@
      SUBDIR += ruby-actionpack
      SUBDIR += ruby-activemodel
      SUBDIR += ruby-activesupport
+     SUBDIR += ruby-arrayfields
      SUBDIR += ruby-assistance
      SUBDIR += ruby-bacon
      SUBDIR += ruby-bundler
@@ -968,12 +969,15 @@
      SUBDIR += ruby-extlib
      SUBDIR += ruby-facets
      SUBDIR += ruby-fastthread
+     SUBDIR += ruby-ffi
+     SUBDIR += ruby-ffi-inliner
      SUBDIR += ruby-flexmock
      SUBDIR += ruby-gem_plugin
      SUBDIR += ruby-gems
      SUBDIR += ruby-gettext
      SUBDIR += ruby-highline
      SUBDIR += ruby-hoe
+     SUBDIR += ruby-home_run
      SUBDIR += ruby-i18n
      SUBDIR += ruby-isolate
      SUBDIR += ruby-kgio
@@ -981,13 +985,16 @@
      SUBDIR += ruby-locale
      SUBDIR += ruby-minitest
      SUBDIR += ruby-mocha
+     SUBDIR += ruby-mspec
      SUBDIR += ruby-ncurses
      SUBDIR += ruby-needle
      SUBDIR += ruby-open4
      SUBDIR += ruby-parsetree
      SUBDIR += ruby-polyglot
+     SUBDIR += ruby-prof
      SUBDIR += ruby-rack-test
      SUBDIR += ruby-rake
+     SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rcov
      SUBDIR += ruby-rparsec
      SUBDIR += ruby-rspec
@@ -998,6 +1005,7 @@
      SUBDIR += ruby-sexp
      SUBDIR += ruby-sexp_processor
      SUBDIR += ruby-stringex
+     SUBDIR += ruby-subset_sum
      SUBDIR += ruby-systemtimer
      SUBDIR += ruby-term-ansicolor
      SUBDIR += ruby-tilt
