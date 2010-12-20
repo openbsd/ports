@@ -1,0 +1,2 @@
+An enhanced MySQL database driver. With support for async operations and
+threaded database access.
