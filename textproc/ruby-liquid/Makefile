@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/20 18:17:03 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2010/12/20 18:20:16 ajacoutot Exp $
 
 COMMENT =	safe, customer facing template language
 
 DISTNAME =	liquid-2.2.2
 CATEGORIES =	textproc
+
+REVISION =	0
 
 HOMEPAGE =	http://www.liquidmarkup.org/
 

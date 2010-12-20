@@ -12,4 +12,3 @@ which your users wrote.
 so that the expensive parsing and compiling can be done once and later
 on you can just render it passing in a hash with local variables and
 objects.
-
