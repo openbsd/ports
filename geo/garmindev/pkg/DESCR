@@ -1,0 +1,3 @@
+Garmin GPS device driver plugins. They are no real device drivers, they
+are just converting data into a bytestream on the USB or serial
+interface and vice versa.
