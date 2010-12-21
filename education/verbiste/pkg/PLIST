@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/07/16 19:49:18 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/12/21 18:50:07 naddy Exp $
 %%SHARED%%
 @bin bin/french-conjugator
 @bin bin/french-deconjugator
@@ -23,7 +23,9 @@ man/fr/man3/
 @man man/man1/french-conjugator.1
 @man man/man1/french-deconjugator.1
 @man man/man3/verbiste.3
+share/locale/da/LC_MESSAGES/verbiste.mo
 share/locale/de/LC_MESSAGES/verbiste.mo
+share/locale/el/LC_MESSAGES/verbiste.mo
 share/locale/fr/LC_MESSAGES/verbiste.mo
 share/pixmaps/
 share/pixmaps/verbiste.png
