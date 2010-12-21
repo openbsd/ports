@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2010/12/21 21:47:26 ajacoutot Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
@@ -78,8 +78,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-control-center-embedding=no \
 			--with-connectivity=no \
 			--with-eds \
-			--disable-schemas-compile \
-			--enable-gtk3=no
+			--disable-schemas-compile
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =		Yes
