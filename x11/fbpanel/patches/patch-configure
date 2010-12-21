@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure,v 1.1 2010/04/13 16:28:44 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.2 2010/12/21 10:29:48 dcoppa Exp $
 
 fix bash and system directory paths
 
---- configure.orig	Sun Feb 21 11:05:12 2010
-+++ configure	Thu Apr  8 11:10:43 2010
+--- configure.orig	Sun Apr  4 11:02:40 2010
++++ configure	Tue Dec 21 06:56:28 2010
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!${LOCALBASE}/bin/bash
+ PID=$$
  
- export LANG="POSIX"
- 
-@@ -312,18 +312,18 @@ add_var host  "stab: configure for arch" ""
+ # NLS nuisances.
+@@ -324,18 +324,18 @@ add_var host  "stab: configure for arch" ""
  add_var target "stab: configure for arch" ""
  
  # N.B. order is important

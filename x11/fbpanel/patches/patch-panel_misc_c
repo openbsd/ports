@@ -1,10 +1,10 @@
-$OpenBSD: patch-panel_misc_c,v 1.1 2010/04/13 16:28:44 dcoppa Exp $
+$OpenBSD: patch-panel_misc_c,v 1.2 2010/12/21 10:29:48 dcoppa Exp $
 
 use g_snprintf instead of g_sprintf
 
---- panel/misc.c.orig	Tue Apr  6 16:23:27 2010
-+++ panel/misc.c	Tue Apr  6 16:23:47 2010
-@@ -678,7 +678,7 @@ gchar *
+--- panel/misc.c.orig	Wed Apr 28 13:39:31 2010
++++ panel/misc.c	Tue Dec 21 06:56:28 2010
+@@ -687,7 +687,7 @@ gchar *
  gdk_color_to_RRGGBB(GdkColor *color)
  {
      static gchar str[10]; // #RRGGBB + \0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/04/13 16:28:44 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/12/21 10:29:48 dcoppa Exp $
 @bin bin/fbpanel
 lib/fbpanel/
 lib/fbpanel/dclock.so
@@ -23,6 +23,25 @@ share/examples/fbpanel/
 share/examples/fbpanel/default
 share/fbpanel/
 share/fbpanel/images/
+@comment share/fbpanel/images/battery_0.png
+@comment share/fbpanel/images/battery_1.png
+@comment share/fbpanel/images/battery_2.png
+@comment share/fbpanel/images/battery_3.png
+@comment share/fbpanel/images/battery_4.png
+@comment share/fbpanel/images/battery_5.png
+@comment share/fbpanel/images/battery_6.png
+@comment share/fbpanel/images/battery_7.png
+@comment share/fbpanel/images/battery_8.png
+@comment share/fbpanel/images/battery_charging_0.png
+@comment share/fbpanel/images/battery_charging_1.png
+@comment share/fbpanel/images/battery_charging_2.png
+@comment share/fbpanel/images/battery_charging_3.png
+@comment share/fbpanel/images/battery_charging_4.png
+@comment share/fbpanel/images/battery_charging_5.png
+@comment share/fbpanel/images/battery_charging_6.png
+@comment share/fbpanel/images/battery_charging_7.png
+@comment share/fbpanel/images/battery_charging_8.png
+@comment share/fbpanel/images/battery_na.png
 share/fbpanel/images/dclock_glyphs.png
 share/fbpanel/images/default.xpm
 share/fbpanel/images/gnome-session-halt.png

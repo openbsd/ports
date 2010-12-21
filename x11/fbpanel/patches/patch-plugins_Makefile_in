@@ -1,14 +1,16 @@
-$OpenBSD: patch-plugins_Makefile_in,v 1.1 2010/04/13 16:28:44 dcoppa Exp $
+$OpenBSD: patch-plugins_Makefile_in,v 1.2 2010/12/21 10:29:48 dcoppa Exp $
 
 remove linux-only plugins
 
---- plugins/Makefile.in.orig	Tue Apr  6 13:34:55 2010
-+++ plugins/Makefile.in	Tue Apr  6 13:35:13 2010
-@@ -1,6 +1,6 @@
+--- plugins/Makefile.in.orig	Wed Mar 31 14:44:34 2010
++++ plugins/Makefile.in	Tue Dec 21 06:58:36 2010
+@@ -1,7 +1,7 @@
  include %%topdir%%/config.mk
  
 -SUBDIRS = taskbar launchbar space menu pager mem chart cpu net
 +SUBDIRS = taskbar launchbar space menu pager
  SUBDIRS += systray dclock wincmd icons separator image
- SUBDIRS += deskno tclock genmon deskno2
+-SUBDIRS += deskno tclock genmon deskno2 meter volume battery
++SUBDIRS += deskno tclock genmon deskno2
  
+ include %%topdir%%/rules.mk
