@@ -1,0 +1,57 @@
+$OpenBSD: patch-fontforge_fvimportbdf_c,v 1.1 2010/12/21 18:41:37 jasper Exp $
+
+Security fix for CVE-2010-4259
+FontForge: Stack-based buffer overflow by processing specially-crafted CHARSET_REGISTRY font file header
+
+Patch from: https://bugzilla.redhat.com/show_bug.cgi?id=659359
+
+--- fontforge/fvimportbdf.c.orig	Fri Apr 16 05:02:02 2010
++++ fontforge/fvimportbdf.c	Tue Dec 21 19:32:52 2010
+@@ -560,7 +560,7 @@ static int slurp_header(FILE *bdf, int *_as, int *_ds,
+ 	}
+     
+ 	if ( strcmp(tok,"FONT")==0 ) {
+-	    if ( sscanf(buf,"-%*[^-]-%[^-]-%[^-]-%[^-]-%*[^-]-", family, weight, italic )!=0 ) {
++	    if ( sscanf(buf,"-%*[^-]-%99[^-]-%99[^-]-%99[^-]-%*[^-]-", family, weight, italic )!=0 ) {
+ 		char *pt=buf;
+ 		int dcnt=0;
+ 		while ( *pt=='-' && dcnt<7 ) { ++pt; ++dcnt; }
+@@ -616,26 +616,30 @@ static int slurp_header(FILE *bdf, int *_as, int *_ds,
+ 	    sscanf(buf, "%d", &defs->metricsset );
+ 	else if ( strcmp(tok,"VVECTOR")==0 )
+ 	    sscanf(buf, "%*d %d", &defs->vertical_origin );
++	/* For foundry, fontname and encname, only copy up to the buffer size */
+ 	else if ( strcmp(tok,"FOUNDRY")==0 )
+-	    sscanf(buf, "%[^\"]", foundry );
++	    sscanf(buf, "%99[^\"]", foundry );
+ 	else if ( strcmp(tok,"FONT_NAME")==0 )
+-	    sscanf(buf, "%[^\"]", fontname );
++	    sscanf(buf, "%99[^\"]", fontname );
+ 	else if ( strcmp(tok,"CHARSET_REGISTRY")==0 )
+-	    sscanf(buf, "%[^\"]", encname );
++	    sscanf(buf, "%99[^\"]", encname );
+ 	else if ( strcmp(tok,"CHARSET_ENCODING")==0 ) {
+ 	    enc = 0;
+ 	    if ( sscanf(buf, " %d", &enc )!=1 )
+ 		sscanf(buf, "%d", &enc );
++	/* These properties should be copied up to the buffer length too */
+ 	} else if ( strcmp(tok,"FAMILY_NAME")==0 ) {
+-	    strcpy(family,buf);
++	    strlcpy(family,buf,99);
+ 	} else if ( strcmp(tok,"FULL_NAME")==0 || strcmp(tok,"FACE_NAME")==0 ) {
+-	    strcpy(full,buf);
++	    strlcpy(full,buf,99);
+ 	} else if ( strcmp(tok,"WEIGHT_NAME")==0 )
+-	    strcpy(weight,buf);
++	    strlcpy(weight,buf,99);
+ 	else if ( strcmp(tok,"SLANT")==0 )
+-	    strcpy(italic,buf);
++	    strlcpy(italic,buf,99);
+ 	else if ( strcmp(tok,"COPYRIGHT")==0 ) {
+-	    strcpy(comments,buf);
++		/* LS: Assume the size of the passed-in buffer is 1000, see below in
++		 * COMMENT */
++	    strlcpy(comments,buf,999);
+ 	    found_copyright = true;
+ 	} else if ( strcmp(tok,"COMMENT")==0 && !found_copyright ) {
+ 	    char *pt = comments+strlen(comments);
