@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_CDlgProjWizzard_cpp,v 1.1.1.1 2010/12/21 09:05:17 sebastia Exp $
+
+rename structure, due to name clash with gdal
+
+--- src/CDlgProjWizzard.cpp.orig	Thu Dec  9 15:00:02 2010
++++ src/CDlgProjWizzard.cpp	Thu Dec  9 15:00:33 2010
+@@ -39,7 +39,7 @@ CDlgProjWizzard::CDlgProjWizzard(QLineEdit& line, QWid
+     mitab_entry_t           entry;
+     QList<mitab_entry_t>    list;
+     int idx                 = 0;
+-    const MapInfoDatumInfo * di   = asDatumInfoList;
++    const MapInfoDatumInfo * di   = asDatumInfoListQL;
+ 
+     while(di->nMapInfoDatumID != -1)
+     {
+@@ -99,7 +99,7 @@ void CDlgProjWizzard::slotChange()
+     }
+ 
+     int idx = comboDatum->itemData(comboDatum->currentIndex()).toInt();
+-    const MapInfoDatumInfo      di = asDatumInfoList[idx];
++    const MapInfoDatumInfo      di = asDatumInfoListQL[idx];
+     if(di.pszOGCDatumName != QString(""))
+     {
+         const MapInfoSpheroidInfo * si = asSpheroidInfoList;
