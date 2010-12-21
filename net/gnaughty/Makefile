@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2010/12/21 17:41:54 ajacoutot Exp $
 
 COMMENT=	fast and easy porn downloader
 
@@ -7,7 +7,7 @@ CATEGORIES=	net graphics biology productivity education
 
 REVISION=	1
 
-HOMEPAGE= http://gnaughty.sourceforge.net/
+HOMEPAGE=	http://gnaughty.sourceforge.net/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
