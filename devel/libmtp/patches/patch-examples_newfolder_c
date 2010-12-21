@@ -1,10 +1,10 @@
-$OpenBSD: patch-examples_newfolder_c,v 1.1 2009/03/31 13:37:16 jasper Exp $
+$OpenBSD: patch-examples_newfolder_c,v 1.2 2010/12/21 18:16:04 jasper Exp $
 
 Fix compilation with GCC2.
 
---- examples/newfolder.c.orig	Tue Mar 31 15:29:03 2009
-+++ examples/newfolder.c	Tue Mar 31 15:29:03 2009
-@@ -52,11 +52,12 @@ void newfolder_command (int argc, char **argv)
+--- examples/newfolder.c.orig	Thu May  7 01:04:19 2009
++++ examples/newfolder.c	Tue Dec 21 14:03:42 2010
+@@ -54,11 +54,12 @@ void newfolder_command (int argc, char **argv)
  void
  newfolder_function(char * path)
  {
@@ -12,7 +12,7 @@ Fix compilation with GCC2.
    char * parent = dirname(path);
    char * folder = basename(path);
    int id = parse_path (parent,files,folders);
-   int newid = LIBMTP_Create_Folder(device, folder, id);
+   int newid = LIBMTP_Create_Folder(device, folder, id, 0);
 +
 +  printf("Creating new folder %s\n",path);
    if (newid == 0) {

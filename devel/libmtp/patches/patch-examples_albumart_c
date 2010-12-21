@@ -1,10 +1,10 @@
-$OpenBSD: patch-examples_albumart_c,v 1.1 2009/03/31 13:37:16 jasper Exp $
+$OpenBSD: patch-examples_albumart_c,v 1.2 2010/12/21 18:16:04 jasper Exp $
 
 Fix compilation with GCC2.
 
---- examples/albumart.c.orig	Tue Mar 31 15:35:04 2009
-+++ examples/albumart.c	Tue Mar 31 15:39:40 2009
-@@ -35,8 +35,11 @@ int main (int argc, char **argv) {
+--- examples/albumart.c.orig	Wed Oct  7 01:14:54 2009
++++ examples/albumart.c	Tue Dec 21 13:57:21 2010
+@@ -43,8 +43,11 @@ int main (int argc, char **argv) {
    extern int optind;
    extern char *optarg;
    LIBMTP_mtpdevice_t *device = NULL;
@@ -16,7 +16,7 @@ Fix compilation with GCC2.
    uint32_t *ids = NULL;
    uint32_t *tmp = NULL;
    uint64_t filesize;
-@@ -116,16 +119,16 @@ int main (int argc, char **argv) {
+@@ -135,18 +138,18 @@ int main (int argc, char **argv) {
      return 0;
    }
  
@@ -31,8 +31,10 @@ Fix compilation with GCC2.
    album->name = albumname;
    album->no_tracks = idcount;
    album->tracks = ids;
--  int ret = LIBMTP_Create_New_Album(device,album,0);
-+  ret = LIBMTP_Create_New_Album(device,album,0);
+   album->parent_id = parentid;
+   album->storage_id = storageid;
+-  int ret = LIBMTP_Create_New_Album(device,album);
++  ret = LIBMTP_Create_New_Album(device,album);
    if (ret == 0) {
      ret = LIBMTP_Send_Representative_Sample(device,album->album_id, albumart);
      if (ret != 0) {
