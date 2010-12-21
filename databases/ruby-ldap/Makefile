@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/24 21:35:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2010/12/21 17:10:58 jeremy Exp $
 
 COMMENT=	Ruby interface to some common LDAP libraries
 
@@ -29,6 +29,7 @@ CONFIGURE_STYLE=	ruby extconf
 
 REGRESS_TARGET=		test
 REGRESS_DEPENDS=	databases/openldap,-server
+REGRESS_IS_INTERACTIVE = Yes
 
 do-regress:
 	cd ${WRKSRC} &&	/bin/sh ./test/test.sh ruby openldap2 \

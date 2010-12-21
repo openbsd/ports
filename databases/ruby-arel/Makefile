@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/08 21:21:45 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2010/12/21 17:10:58 jeremy Exp $
 
 COMMENT =	relational algebra for ruby
 
@@ -16,5 +16,8 @@ PERMIT_DISTFILES_FTP =		Yes
 MODULES =	lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
+
+# Currently fails with a superclass mismatch exception
+MODRUBY_REGRESS =	rake
 
 .include <bsd.port.mk>

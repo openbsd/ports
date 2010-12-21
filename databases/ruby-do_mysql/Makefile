@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/20 17:36:22 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2010/12/21 17:10:58 jeremy Exp $
 
 COMMENT=		ruby-data_objects driver for MySQL
 
@@ -22,6 +22,7 @@ WANTLIB=		mysqlclient
 LIB_DEPENDS=		databases/mysql
 
 # Requires running MySQL database
+REGRESS_IS_INTERACTIVE = Yes
 REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
 			devel/ruby-bacon,${MODRUBY_FLAVOR}
 do-regress:

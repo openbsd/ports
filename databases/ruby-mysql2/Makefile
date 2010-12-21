@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/20 18:00:52 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2010/12/21 17:10:59 jeremy Exp $
 
 COMMENT=	modern, simple and very fast Mysql library for Ruby
 
@@ -25,6 +25,7 @@ CONFIGURE_STYLE=ruby gem ext
 
 # Regress tests currently don't work, probably because they
 # need RSpec2.  They also need a running MySQL server.
+REGRESS_IS_INTERACTIVE = Yes
 REGRESS_DEPENDS=databases/mysql,-server \
 		${FULLPKGNAME}:${BUILD_PKGPATH}
 MODRUBY_REGRESS=rake rspec

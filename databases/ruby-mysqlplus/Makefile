@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/20 17:45:27 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2010/12/21 17:10:59 jeremy Exp $
 
 COMMENT=	enhanced ruby mysql driver, supporting async and threading
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=	databases/mysql
 CONFIGURE_STYLE=ruby gem ext
 
 # Requires running mysql server
+REGRESS_IS_INTERACTIVE = Yes
 REGRESS_DEPENDS=databases/mysql,-server \
 		${FULLPKGNAME}:${BUILD_PKGPATH}
 MODRUBY_REGRESS=rake

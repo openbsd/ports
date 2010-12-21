@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/24 21:35:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.18 2010/12/21 17:10:59 jeremy Exp $
 
 COMMENT=	access a MySQL database from Ruby
 
@@ -25,6 +25,8 @@ CONFIGURE_STYLE=ruby gem ext
 REGRESS_DEPENDS=databases/mysql,-server
 
 # A running mysqld is required to run the regression tests.
+REGRESS_IS_INTERACTIVE = Yes
+
 do-regress:
 	@cd ${WRKBUILD} && ${RUBY} test.rb
 

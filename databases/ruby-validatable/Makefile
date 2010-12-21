@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/24 21:35:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/21 17:10:59 jeremy Exp $
 
 COMMENT =		provide ActiveRecord looking validations
 
@@ -18,6 +18,7 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
 
+# Fails due to using deprecated Gem.manage_gems method
 REGRESS_DEPENDS =	devel/ruby-mocha,${MODRUBY_FLAVOR}
 MODRUBY_REGRESS =	rake
 
