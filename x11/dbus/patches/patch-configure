@@ -1,33 +1,59 @@
-$OpenBSD: patch-configure,v 1.7 2010/12/16 07:13:58 ajacoutot Exp $
---- configure.orig	Tue Mar 23 20:11:22 2010
-+++ configure	Tue Apr 20 16:38:22 2010
-@@ -22230,13 +22230,13 @@ fi
- { $as_echo "$as_me:$LINENO: result: $ac_cv_func_pthread_cond_timedwait" >&5
- $as_echo "$ac_cv_func_pthread_cond_timedwait" >&6; }
- if test "x$ac_cv_func_pthread_cond_timedwait" = x""yes; then
--  { $as_echo "$as_me:$LINENO: checking for pthread_cond_timedwait in -lpthread" >&5
+$OpenBSD: patch-configure,v 1.8 2010/12/21 05:57:42 ajacoutot Exp $
+--- configure.orig	Mon Sep  6 14:52:24 2010
++++ configure	Mon Dec 13 10:45:09 2010
+@@ -18447,13 +18447,13 @@ fi
+ # Thread lib detection
+ ac_fn_c_check_func "$LINENO" "pthread_cond_timedwait" "ac_cv_func_pthread_cond_timedwait"
+ if test "x$ac_cv_func_pthread_cond_timedwait" = x""yes; then :
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_cond_timedwait in -lpthread" >&5
 -$as_echo_n "checking for pthread_cond_timedwait in -lpthread... " >&6; }
-+  { $as_echo "$as_me:$LINENO: checking for pthread_cond_timedwait in -pthread" >&5
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_cond_timedwait in -pthread" >&5
 +$as_echo_n "checking for pthread_cond_timedwait in -pthread... " >&6; }
- if test "${ac_cv_lib_pthread_pthread_cond_timedwait+set}" = set; then
+ if test "${ac_cv_lib_pthread_pthread_cond_timedwait+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -22296,7 +22296,7 @@ fi
- { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_cond_timedwait" >&5
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -18484,7 +18484,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_cond_timedwait" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_cond_timedwait" >&6; }
- if test "x$ac_cv_lib_pthread_pthread_cond_timedwait" = x""yes; then
+ if test "x$ac_cv_lib_pthread_pthread_cond_timedwait" = x""yes; then :
 -  THREAD_LIBS="-lpthread"
 +  THREAD_LIBS="-pthread"
  fi
  
  fi
-@@ -25294,7 +25294,10 @@ if test "x$GCC" = "xyes"; then
+@@ -18699,13 +18699,13 @@ if test x$have_selinux = xyes ; then
+ if test "x$ac_cv_func_pthread_create" = x""yes; then :
+ 
+ else
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthread" >&5
+-$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -pthread" >&5
++$as_echo_n "checking for pthread_create in -pthread... " >&6; }
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -18736,7 +18736,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
+ $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
+ if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then :
+-  SELINUX_THREAD_LIBS="-lpthread"
++  SELINUX_THREAD_LIBS="-pthread"
+ fi
+ 
+ fi
+@@ -19954,7 +19954,10 @@ if test "x$GCC" = "xyes"; then
       ;;
    esac
  
@@ -37,9 +63,9 @@ $OpenBSD: patch-configure,v 1.7 2010/12/16 07:13:58 ajacoutot Exp $
 +  hppa-*-openbsd*) ;;
 +  *) case " $CFLAGS " in
    *[\ \	]-fPIE[\ \	]*) ;;
-   *) if cc_supports_flag -fPIE; then
+   *) if test x$dbus_win = xno && cc_supports_flag -fPIE; then
          PIE_CFLAGS="-fPIE"
-@@ -25306,6 +25309,7 @@ if test "x$GCC" = "xyes"; then
+@@ -19966,6 +19969,7 @@ if test "x$GCC" = "xyes"; then
       fi
       ;;
    esac
@@ -47,7 +73,7 @@ $OpenBSD: patch-configure,v 1.7 2010/12/16 07:13:58 ajacoutot Exp $
  
    ### Disabled warnings, and compiler flag overrides
  
-@@ -25322,13 +25326,6 @@ if test "x$GCC" = "xyes"; then
+@@ -19982,13 +19986,6 @@ if test "x$GCC" = "xyes"; then
    case " $CFLAGS " in
    *[\ \	]-Wno-sign-compare[\ \	]*) ;;
    *) CFLAGS="$CFLAGS -Wno-sign-compare" ;;

@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.53 2010/12/16 07:13:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2010/12/21 05:57:42 ajacoutot Exp $
 
 # XXX patches/patch-configure_in disables PIE on arm/hppa. This is just a
 # temporary workaround until PIE works.
 
 COMMENT=	message bus system
 
-DISTNAME=	dbus-1.2.24
+DISTNAME=	dbus-1.4.0
 EPOCH=		0
 
-REVISION=	14
-
-SHARED_LIBS +=	dbus-1	8.0 # .7.0
+SHARED_LIBS +=	dbus-1	9.0 # .8.2
 CATEGORIES=	x11
 
 HOMEPAGE=	http://dbus.freedesktop.org/
@@ -42,7 +40,11 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-silent-rules \
 		--disable-xml-docs \
 		--disable-doxygen-docs \
-		--disable-abstract-sockets
+		--disable-abstract-sockets \
+		--disable-selinux \
+		--disable-libaudit \
+		--disable-dnotify \
+		--disable-inotify
 
 # Tests are disabled as they change the final dbus binaries
 #CONFIGURE_ARGS+=	--enable-tests

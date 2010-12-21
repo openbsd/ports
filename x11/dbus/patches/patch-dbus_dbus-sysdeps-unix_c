@@ -1,15 +1,15 @@
-$OpenBSD: patch-dbus_dbus-sysdeps-unix_c,v 1.7 2010/12/16 07:13:58 ajacoutot Exp $
---- dbus/dbus-sysdeps-unix.c.orig	Tue Mar 23 20:01:27 2010
-+++ dbus/dbus-sysdeps-unix.c	Wed Jun 30 21:41:34 2010
-@@ -1224,7 +1224,11 @@ _dbus_read_credentials_socket  (int              clien
+$OpenBSD: patch-dbus_dbus-sysdeps-unix_c,v 1.8 2010/12/21 05:57:42 ajacoutot Exp $
+--- dbus/dbus-sysdeps-unix.c.orig	Mon Sep  6 19:30:26 2010
++++ dbus/dbus-sysdeps-unix.c	Mon Dec 20 19:16:38 2010
+@@ -1650,7 +1650,11 @@ _dbus_read_credentials_socket  (int              clien
  
    {
  #ifdef SO_PEERCRED
 +#ifndef __OpenBSD__
-     struct ucred cr;   
+     struct ucred cr;
 +#else
 +    struct sockpeercred cr;
 +#endif
      int cr_len = sizeof (cr);
-     
+ 
      if (getsockopt (client_fd, SOL_SOCKET, SO_PEERCRED, &cr, &cr_len) == 0 &&

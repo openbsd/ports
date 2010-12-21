@@ -1,24 +1,25 @@
-$OpenBSD: patch-bus_Makefile_in,v 1.8 2010/12/16 07:13:58 ajacoutot Exp $
---- bus/Makefile.in.orig	Tue Mar 23 20:11:23 2010
-+++ bus/Makefile.in	Tue Apr 20 16:38:21 2010
-@@ -1438,20 +1438,12 @@ install-data-hook:
- 		chmod 755 $(DESTDIR)$(DBUS_DAEMONDIR); \
- 	fi
- 	$(INSTALL_PROGRAM) dbus-daemon $(DESTDIR)$(DBUS_DAEMONDIR)
+$OpenBSD: patch-bus_Makefile_in,v 1.9 2010/12/21 05:57:42 ajacoutot Exp $
+--- bus/Makefile.in.orig	Mon Sep  6 14:52:22 2010
++++ bus/Makefile.in	Mon Dec 13 10:39:09 2010
+@@ -2563,7 +2563,6 @@ uninstall-hook:
+ 	rm -f $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper$(EXEEXT)
+ 
+ install-data-hook:
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/run/dbus
  	$(mkinstalldirs) $(DESTDIR)$(configdir)/system.d
  	$(mkinstalldirs) $(DESTDIR)$(configdir)/session.d
  	$(mkinstalldirs) $(DESTDIR)$(datadir)/dbus-1/services
- 	$(mkinstalldirs) $(DESTDIR)$(datadir)/dbus-1/system-services
- 	$(mkinstalldirs) $(DESTDIR)$(libexecdir)/dbus-1
- 	$(INSTALL_PROGRAM) dbus-daemon-launch-helper $(DESTDIR)$(libexecdir)
--	if test `id -u` -eq 0; then \
--		chown root:$(DBUS_USER) $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper; \
--		chmod 4750 $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper; \
--	else \
--		echo "Not installing $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper binary setuid!"; \
--		echo "You'll need to manually set permissions to root:$(DBUS_USER) and permissions 4750"; \
--	fi
- 
- # Tell versions [3.59,3.63) of GNU make to not export all variables.
- # Otherwise a system limit (for SysV at least) may be exceeded.
+@@ -2576,13 +2575,6 @@ install-data-hook:
+ @DBUS_UNIX_TRUE@	$(mkinstalldirs) $(DESTDIR)$(libexecdir)/dbus-1
+ @DBUS_UNIX_TRUE@	if test -f dbus-daemon-launch-helper$(EXEEXT) ; then \
+ @DBUS_UNIX_TRUE@	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) dbus-daemon-launch-helper$(EXEEXT) $(DESTDIR)$(libexecdir); \
+-@DBUS_UNIX_TRUE@	if test `id -u` -eq 0; then \
+-@DBUS_UNIX_TRUE@		chown root:$(DBUS_USER) $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper$(EXEEXT); \
+-@DBUS_UNIX_TRUE@		chmod 4750 $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper$(EXEEXT); \
+-@DBUS_UNIX_TRUE@	else \
+-@DBUS_UNIX_TRUE@		echo "Not installing $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper binary setuid!"; \
+-@DBUS_UNIX_TRUE@		echo "You'll need to manually set permissions to root:$(DBUS_USER) and permissions 4750"; \
+-@DBUS_UNIX_TRUE@	fi \
+ @DBUS_UNIX_TRUE@	fi
+ # Install dbus.socket as default implementation of a D-Bus stack
+ @HAVE_SYSTEMD_TRUE@	$(mkinstalldirs) $(DESTDIR)$(systemdsystemunitdir)/dbus.target.wants
