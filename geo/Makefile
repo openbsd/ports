@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.31 2010/10/23 15:40:46 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2010/12/21 09:06:41 sebastia Exp $
 # $FreeBSD: Makefile,v 1.4 1997/06/03 09:14:50 asami Exp $
  
      SUBDIR =
      SUBDIR += emerillon
+     SUBDIR += garmindev
      SUBDIR += gdal
      SUBDIR += geoclue
      SUBDIR += geos
@@ -37,6 +38,7 @@
      SUBDIR += py-proj
      SUBDIR += qgis
      SUBDIR += qlandkarte
+     SUBDIR += qlandkartegt
      SUBDIR += ruby-findmyiphone
      SUBDIR += tangogps
      SUBDIR += tilecache
