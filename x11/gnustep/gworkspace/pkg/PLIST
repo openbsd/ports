@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/07/01 21:04:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/12/22 09:20:00 sebastia Exp $
 bin/GWorkspace
 bin/Recycler
 @bin bin/ddbd
@@ -17,7 +17,7 @@ include/FSNode
 include/Inspector
 include/Operation
 lib/GNUstep/Bundles/AppViewer.inspector/
-lib/GNUstep/Bundles/AppViewer.inspector/AppViewer.so
+@bin lib/GNUstep/Bundles/AppViewer.inspector/AppViewer
 lib/GNUstep/Bundles/AppViewer.inspector/Resources/
 lib/GNUstep/Bundles/AppViewer.inspector/Resources/English.lproj/
 lib/GNUstep/Bundles/AppViewer.inspector/Resources/English.lproj/Help.rtfd/
@@ -27,7 +27,7 @@ lib/GNUstep/Bundles/AppViewer.inspector/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/AppViewer.inspector/Resources/InspectorInfo.plist
 lib/GNUstep/Bundles/AppViewer.inspector/stamp.make
 lib/GNUstep/Bundles/FModuleAnnotations.finder/
-lib/GNUstep/Bundles/FModuleAnnotations.finder/FModuleAnnotations.so
+@bin lib/GNUstep/Bundles/FModuleAnnotations.finder/FModuleAnnotations
 lib/GNUstep/Bundles/FModuleAnnotations.finder/Resources/
 lib/GNUstep/Bundles/FModuleAnnotations.finder/Resources/FModuleAnnotations.gorm/
 lib/GNUstep/Bundles/FModuleAnnotations.finder/Resources/FModuleAnnotations.gorm/data.classes
@@ -36,7 +36,7 @@ lib/GNUstep/Bundles/FModuleAnnotations.finder/Resources/FModuleAnnotations.gorm/
 lib/GNUstep/Bundles/FModuleAnnotations.finder/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/FModuleAnnotations.finder/stamp.make
 lib/GNUstep/Bundles/FModuleContents.finder/
-lib/GNUstep/Bundles/FModuleContents.finder/FModuleContents.so
+@bin lib/GNUstep/Bundles/FModuleContents.finder/FModuleContents
 lib/GNUstep/Bundles/FModuleContents.finder/Resources/
 lib/GNUstep/Bundles/FModuleContents.finder/Resources/FModuleContents.gorm/
 lib/GNUstep/Bundles/FModuleContents.finder/Resources/FModuleContents.gorm/data.classes
@@ -45,7 +45,7 @@ lib/GNUstep/Bundles/FModuleContents.finder/Resources/FModuleContents.gorm/object
 lib/GNUstep/Bundles/FModuleContents.finder/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/FModuleContents.finder/stamp.make
 lib/GNUstep/Bundles/FModuleCrDate.finder/
-lib/GNUstep/Bundles/FModuleCrDate.finder/FModuleCrDate.so
+@bin lib/GNUstep/Bundles/FModuleCrDate.finder/FModuleCrDate
 lib/GNUstep/Bundles/FModuleCrDate.finder/Resources/
 lib/GNUstep/Bundles/FModuleCrDate.finder/Resources/FModuleCrDate.gorm/
 lib/GNUstep/Bundles/FModuleCrDate.finder/Resources/FModuleCrDate.gorm/data.classes
@@ -54,7 +54,7 @@ lib/GNUstep/Bundles/FModuleCrDate.finder/Resources/FModuleCrDate.gorm/objects.go
 lib/GNUstep/Bundles/FModuleCrDate.finder/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/FModuleCrDate.finder/stamp.make
 lib/GNUstep/Bundles/FModuleKind.finder/
-lib/GNUstep/Bundles/FModuleKind.finder/FModuleKind.so
+@bin lib/GNUstep/Bundles/FModuleKind.finder/FModuleKind
 lib/GNUstep/Bundles/FModuleKind.finder/Resources/
 lib/GNUstep/Bundles/FModuleKind.finder/Resources/FModuleKind.gorm/
 lib/GNUstep/Bundles/FModuleKind.finder/Resources/FModuleKind.gorm/data.classes
@@ -63,7 +63,7 @@ lib/GNUstep/Bundles/FModuleKind.finder/Resources/FModuleKind.gorm/objects.gorm
 lib/GNUstep/Bundles/FModuleKind.finder/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/FModuleKind.finder/stamp.make
 lib/GNUstep/Bundles/FModuleModDate.finder/
-lib/GNUstep/Bundles/FModuleModDate.finder/FModuleModDate.so
+@bin lib/GNUstep/Bundles/FModuleModDate.finder/FModuleModDate
 lib/GNUstep/Bundles/FModuleModDate.finder/Resources/
 lib/GNUstep/Bundles/FModuleModDate.finder/Resources/FModuleModDate.gorm/
 lib/GNUstep/Bundles/FModuleModDate.finder/Resources/FModuleModDate.gorm/data.classes
@@ -72,7 +72,7 @@ lib/GNUstep/Bundles/FModuleModDate.finder/Resources/FModuleModDate.gorm/objects.
 lib/GNUstep/Bundles/FModuleModDate.finder/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/FModuleModDate.finder/stamp.make
 lib/GNUstep/Bundles/FModuleName.finder/
-lib/GNUstep/Bundles/FModuleName.finder/FModuleName.so
+@bin lib/GNUstep/Bundles/FModuleName.finder/FModuleName
 lib/GNUstep/Bundles/FModuleName.finder/Resources/
 lib/GNUstep/Bundles/FModuleName.finder/Resources/FModuleName.gorm/
 lib/GNUstep/Bundles/FModuleName.finder/Resources/FModuleName.gorm/data.classes
@@ -81,7 +81,7 @@ lib/GNUstep/Bundles/FModuleName.finder/Resources/FModuleName.gorm/objects.gorm
 lib/GNUstep/Bundles/FModuleName.finder/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/FModuleName.finder/stamp.make
 lib/GNUstep/Bundles/FModuleOwner.finder/
-lib/GNUstep/Bundles/FModuleOwner.finder/FModuleOwner.so
+@bin lib/GNUstep/Bundles/FModuleOwner.finder/FModuleOwner
 lib/GNUstep/Bundles/FModuleOwner.finder/Resources/
 lib/GNUstep/Bundles/FModuleOwner.finder/Resources/FModuleOwner.gorm/
 lib/GNUstep/Bundles/FModuleOwner.finder/Resources/FModuleOwner.gorm/data.classes
@@ -90,7 +90,7 @@ lib/GNUstep/Bundles/FModuleOwner.finder/Resources/FModuleOwner.gorm/objects.gorm
 lib/GNUstep/Bundles/FModuleOwner.finder/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/FModuleOwner.finder/stamp.make
 lib/GNUstep/Bundles/FModuleSize.finder/
-lib/GNUstep/Bundles/FModuleSize.finder/FModuleSize.so
+@bin lib/GNUstep/Bundles/FModuleSize.finder/FModuleSize
 lib/GNUstep/Bundles/FModuleSize.finder/Resources/
 lib/GNUstep/Bundles/FModuleSize.finder/Resources/FModuleSize.gorm/
 lib/GNUstep/Bundles/FModuleSize.finder/Resources/FModuleSize.gorm/data.classes
@@ -99,7 +99,7 @@ lib/GNUstep/Bundles/FModuleSize.finder/Resources/FModuleSize.gorm/objects.gorm
 lib/GNUstep/Bundles/FModuleSize.finder/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/FModuleSize.finder/stamp.make
 lib/GNUstep/Bundles/FolderViewer.inspector/
-lib/GNUstep/Bundles/FolderViewer.inspector/FolderViewer.so
+@bin lib/GNUstep/Bundles/FolderViewer.inspector/FolderViewer
 lib/GNUstep/Bundles/FolderViewer.inspector/Resources/
 lib/GNUstep/Bundles/FolderViewer.inspector/Resources/English.lproj/
 lib/GNUstep/Bundles/FolderViewer.inspector/Resources/English.lproj/Help.rtfd/
@@ -109,7 +109,7 @@ lib/GNUstep/Bundles/FolderViewer.inspector/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/FolderViewer.inspector/Resources/InspectorInfo.plist
 lib/GNUstep/Bundles/FolderViewer.inspector/stamp.make
 lib/GNUstep/Bundles/IBViewViewer.inspector/
-lib/GNUstep/Bundles/IBViewViewer.inspector/IBViewViewer.so
+@bin lib/GNUstep/Bundles/IBViewViewer.inspector/IBViewViewer
 lib/GNUstep/Bundles/IBViewViewer.inspector/Resources/
 lib/GNUstep/Bundles/IBViewViewer.inspector/Resources/English.lproj/
 lib/GNUstep/Bundles/IBViewViewer.inspector/Resources/English.lproj/Help.rtfd/
@@ -120,12 +120,12 @@ lib/GNUstep/Bundles/IBViewViewer.inspector/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/IBViewViewer.inspector/Resources/InspectorInfo.plist
 lib/GNUstep/Bundles/IBViewViewer.inspector/stamp.make
 lib/GNUstep/Bundles/ImageThumbnailer.thumb/
-lib/GNUstep/Bundles/ImageThumbnailer.thumb/ImageThumbnailer.so
+@bin lib/GNUstep/Bundles/ImageThumbnailer.thumb/ImageThumbnailer
 lib/GNUstep/Bundles/ImageThumbnailer.thumb/Resources/
 lib/GNUstep/Bundles/ImageThumbnailer.thumb/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/ImageThumbnailer.thumb/stamp.make
 lib/GNUstep/Bundles/ImageViewer.inspector/
-lib/GNUstep/Bundles/ImageViewer.inspector/ImageViewer.so
+@bin lib/GNUstep/Bundles/ImageViewer.inspector/ImageViewer
 lib/GNUstep/Bundles/ImageViewer.inspector/Resources/
 lib/GNUstep/Bundles/ImageViewer.inspector/Resources/English.lproj/
 lib/GNUstep/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/
@@ -136,12 +136,12 @@ lib/GNUstep/Bundles/ImageViewer.inspector/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/ImageViewer.inspector/Resources/InspectorInfo.plist
 lib/GNUstep/Bundles/ImageViewer.inspector/stamp.make
 lib/GNUstep/Bundles/MDModuleAnnotations.mdm/
-lib/GNUstep/Bundles/MDModuleAnnotations.mdm/MDModuleAnnotations.so
+@bin lib/GNUstep/Bundles/MDModuleAnnotations.mdm/MDModuleAnnotations
 lib/GNUstep/Bundles/MDModuleAnnotations.mdm/Resources/
 lib/GNUstep/Bundles/MDModuleAnnotations.mdm/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/MDModuleAnnotations.mdm/stamp.make
 lib/GNUstep/Bundles/NSColorViewer.inspector/
-lib/GNUstep/Bundles/NSColorViewer.inspector/NSColorViewer.so
+@bin lib/GNUstep/Bundles/NSColorViewer.inspector/NSColorViewer
 lib/GNUstep/Bundles/NSColorViewer.inspector/Resources/
 lib/GNUstep/Bundles/NSColorViewer.inspector/Resources/English.lproj/
 lib/GNUstep/Bundles/NSColorViewer.inspector/Resources/English.lproj/Help.rtfd/
@@ -152,7 +152,7 @@ lib/GNUstep/Bundles/NSColorViewer.inspector/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/NSColorViewer.inspector/Resources/InspectorInfo.plist
 lib/GNUstep/Bundles/NSColorViewer.inspector/stamp.make
 lib/GNUstep/Bundles/NSRTFViewer.inspector/
-lib/GNUstep/Bundles/NSRTFViewer.inspector/NSRTFViewer.so
+@bin lib/GNUstep/Bundles/NSRTFViewer.inspector/NSRTFViewer
 lib/GNUstep/Bundles/NSRTFViewer.inspector/Resources/
 lib/GNUstep/Bundles/NSRTFViewer.inspector/Resources/English.lproj/
 lib/GNUstep/Bundles/NSRTFViewer.inspector/Resources/English.lproj/Help.rtfd/
@@ -162,7 +162,7 @@ lib/GNUstep/Bundles/NSRTFViewer.inspector/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/NSRTFViewer.inspector/Resources/InspectorInfo.plist
 lib/GNUstep/Bundles/NSRTFViewer.inspector/stamp.make
 lib/GNUstep/Bundles/NSTIFFViewer.inspector/
-lib/GNUstep/Bundles/NSTIFFViewer.inspector/NSTIFFViewer.so
+@bin lib/GNUstep/Bundles/NSTIFFViewer.inspector/NSTIFFViewer
 lib/GNUstep/Bundles/NSTIFFViewer.inspector/Resources/
 lib/GNUstep/Bundles/NSTIFFViewer.inspector/Resources/English.lproj/
 lib/GNUstep/Bundles/NSTIFFViewer.inspector/Resources/English.lproj/Help.rtfd/
@@ -174,7 +174,7 @@ lib/GNUstep/Bundles/NSTIFFViewer.inspector/stamp.make
 lib/GNUstep/Bundles/Role.extinfo/
 lib/GNUstep/Bundles/Role.extinfo/Resources/
 lib/GNUstep/Bundles/Role.extinfo/Resources/Info-gnustep.plist
-lib/GNUstep/Bundles/Role.extinfo/Role.so
+@bin lib/GNUstep/Bundles/Role.extinfo/Role
 lib/GNUstep/Bundles/Role.extinfo/stamp.make
 lib/GNUstep/Bundles/RtfViewer.inspector/
 lib/GNUstep/Bundles/RtfViewer.inspector/Resources/
@@ -184,7 +184,7 @@ lib/GNUstep/Bundles/RtfViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rt
 lib/GNUstep/Bundles/RtfViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
 lib/GNUstep/Bundles/RtfViewer.inspector/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/RtfViewer.inspector/Resources/InspectorInfo.plist
-lib/GNUstep/Bundles/RtfViewer.inspector/RtfViewer.so
+@bin lib/GNUstep/Bundles/RtfViewer.inspector/RtfViewer
 lib/GNUstep/Bundles/RtfViewer.inspector/stamp.make
 lib/GNUstep/Bundles/SoundViewer.inspector/
 lib/GNUstep/Bundles/SoundViewer.inspector/Resources/
@@ -199,7 +199,7 @@ lib/GNUstep/Bundles/SoundViewer.inspector/Resources/play.tiff
 lib/GNUstep/Bundles/SoundViewer.inspector/Resources/progind.tiff
 lib/GNUstep/Bundles/SoundViewer.inspector/Resources/progind10.tiff
 lib/GNUstep/Bundles/SoundViewer.inspector/Resources/stop.tiff
-lib/GNUstep/Bundles/SoundViewer.inspector/SoundViewer.so
+@bin lib/GNUstep/Bundles/SoundViewer.inspector/SoundViewer
 lib/GNUstep/Bundles/SoundViewer.inspector/stamp.make
 lib/GNUstep/Frameworks/
 lib/GNUstep/Frameworks/FSNode.framework/

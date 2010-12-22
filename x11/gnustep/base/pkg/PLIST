@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/08/01 12:52:42 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.10 2010/12/22 09:20:00 sebastia Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -895,7 +895,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Zulu
 ${LIBDIR}/Resources/SSL.bundle/
 ${LIBDIR}/Resources/SSL.bundle/Resources/
 ${LIBDIR}/Resources/SSL.bundle/Resources/Info-gnustep.plist
-${LIBDIR}/Resources/SSL.bundle/SSL.so
+@bin ${LIBDIR}/Resources/SSL.bundle/SSL
 ${LIBDIR}/Resources/SSL.bundle/stamp.make
 ${LIBDIR}/Resources/Spanish.lproj/
 ${LIBDIR}/Resources/Spanish.lproj/Localizable.strings

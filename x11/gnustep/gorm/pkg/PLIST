@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/25 09:43:28 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/12/22 09:20:00 sebastia Exp $
 bin/Gorm
 include/GormCore/
 include/GormCore/GormBoxEditor.h
@@ -377,13 +377,13 @@ libexec/GNUstep/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/data
 libexec/GNUstep/Gorm.app/Resources/English.lproj/GormViewSizeInspector.gorm/objects.gorm
 libexec/GNUstep/Gorm.app/Resources/FileIcon_gmodel.tiff
 libexec/GNUstep/Gorm.app/Resources/GModel.plugin/
-libexec/GNUstep/Gorm.app/Resources/GModel.plugin/GModel.so
+@bin libexec/GNUstep/Gorm.app/Resources/GModel.plugin/GModel
 libexec/GNUstep/Gorm.app/Resources/GModel.plugin/Resources/
 libexec/GNUstep/Gorm.app/Resources/GModel.plugin/Resources/Info-gnustep.plist
 libexec/GNUstep/Gorm.app/Resources/GModel.plugin/stamp.make
 libexec/GNUstep/Gorm.app/Resources/Gorm.desktop
 libexec/GNUstep/Gorm.app/Resources/Gorm.plugin/
-libexec/GNUstep/Gorm.app/Resources/Gorm.plugin/Gorm.so
+@bin libexec/GNUstep/Gorm.app/Resources/Gorm.plugin/Gorm
 libexec/GNUstep/Gorm.app/Resources/Gorm.plugin/Resources/
 libexec/GNUstep/Gorm.app/Resources/Gorm.plugin/Resources/Info-gnustep.plist
 libexec/GNUstep/Gorm.app/Resources/Gorm.plugin/stamp.make
@@ -422,7 +422,7 @@ libexec/GNUstep/Gorm.app/Resources/GormWindow.tiff
 libexec/GNUstep/Gorm.app/Resources/Info-gnustep.plist
 libexec/GNUstep/Gorm.app/Resources/LeftArr.tiff
 libexec/GNUstep/Gorm.app/Resources/Nib.plugin/
-libexec/GNUstep/Gorm.app/Resources/Nib.plugin/Nib.so
+@bin libexec/GNUstep/Gorm.app/Resources/Nib.plugin/Nib
 libexec/GNUstep/Gorm.app/Resources/Nib.plugin/Resources/
 libexec/GNUstep/Gorm.app/Resources/Nib.plugin/Resources/Info-gnustep.plist
 libexec/GNUstep/Gorm.app/Resources/Nib.plugin/stamp.make

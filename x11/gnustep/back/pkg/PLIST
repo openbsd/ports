@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/25 17:38:57 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/12/22 09:20:00 sebastia Exp $
 @pkgpath ${BASE_PKGPATH},cairo
 @pkgpath ${BASE_PKGPATH},libart
 @pkgpath ${BASE_PKGPATH},xlib
@@ -10,7 +10,7 @@ lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/English.lproj/n
 lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/Swedish.lproj/
 lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/Resources/Swedish.lproj/nfontFaceNames.strings
-lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/libgnustep-back-${BACKENDV}.so
+@bin lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/libgnustep-back-${BACKENDV}
 lib/GNUstep/Bundles/libgnustep-back-${BACKENDV}.bundle/stamp.make
 lib/GNUstep/Fonts/
 lib/GNUstep/Fonts/Helvetica.nfont/

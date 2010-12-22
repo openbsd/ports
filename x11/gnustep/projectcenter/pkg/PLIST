@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/12/17 15:04:58 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.3 2010/12/22 09:20:00 sebastia Exp $
 bin/ProjectCenter
 include/ProjectCenter
 lib/GNUstep/Frameworks/
@@ -114,7 +114,7 @@ libexec/GNUstep/ProjectCenter.app/
 @bin libexec/GNUstep/ProjectCenter.app/ProjectCenter
 libexec/GNUstep/ProjectCenter.app/Resources/
 libexec/GNUstep/ProjectCenter.app/Resources/Aggregate.project/
-libexec/GNUstep/ProjectCenter.app/Resources/Aggregate.project/Aggregate.so
+@bin libexec/GNUstep/ProjectCenter.app/Resources/Aggregate.project/Aggregate
 libexec/GNUstep/ProjectCenter.app/Resources/Aggregate.project/Resources/
 libexec/GNUstep/ProjectCenter.app/Resources/Aggregate.project/Resources/Info-gnustep.plist
 libexec/GNUstep/ProjectCenter.app/Resources/Aggregate.project/Resources/Info.table
@@ -125,7 +125,7 @@ libexec/GNUstep/ProjectCenter.app/Resources/Aggregate.project/Resources/Inspecto
 libexec/GNUstep/ProjectCenter.app/Resources/Aggregate.project/Resources/PC.project
 libexec/GNUstep/ProjectCenter.app/Resources/Aggregate.project/stamp.make
 libexec/GNUstep/ProjectCenter.app/Resources/Application.project/
-libexec/GNUstep/ProjectCenter.app/Resources/Application.project/Application.so
+@bin libexec/GNUstep/ProjectCenter.app/Resources/Application.project/Application
 libexec/GNUstep/ProjectCenter.app/Resources/Application.project/Resources/
 libexec/GNUstep/ProjectCenter.app/Resources/Application.project/Resources/AppController.h
 libexec/GNUstep/ProjectCenter.app/Resources/Application.project/Resources/AppController.m
@@ -147,7 +147,7 @@ libexec/GNUstep/ProjectCenter.app/Resources/Application.project/Resources/PC.pro
 libexec/GNUstep/ProjectCenter.app/Resources/Application.project/Resources/main.m
 libexec/GNUstep/ProjectCenter.app/Resources/Application.project/stamp.make
 libexec/GNUstep/ProjectCenter.app/Resources/Build.preferences/
-libexec/GNUstep/ProjectCenter.app/Resources/Build.preferences/Build.so
+@bin libexec/GNUstep/ProjectCenter.app/Resources/Build.preferences/Build
 libexec/GNUstep/ProjectCenter.app/Resources/Build.preferences/Resources/
 libexec/GNUstep/ProjectCenter.app/Resources/Build.preferences/Resources/BuildPrefs.gorm/
 libexec/GNUstep/ProjectCenter.app/Resources/Build.preferences/Resources/BuildPrefs.gorm/data.classes
@@ -158,7 +158,7 @@ libexec/GNUstep/ProjectCenter.app/Resources/Build.preferences/Resources/Info.tab
 libexec/GNUstep/ProjectCenter.app/Resources/Build.preferences/stamp.make
 libexec/GNUstep/ProjectCenter.app/Resources/Build.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/Bundle.project/
-libexec/GNUstep/ProjectCenter.app/Resources/Bundle.project/Bundle.so
+@bin libexec/GNUstep/ProjectCenter.app/Resources/Bundle.project/Bundle
 libexec/GNUstep/ProjectCenter.app/Resources/Bundle.project/Resources/
 libexec/GNUstep/ProjectCenter.app/Resources/Bundle.project/Resources/Info-gnustep.plist
 libexec/GNUstep/ProjectCenter.app/Resources/Bundle.project/Resources/Info.table
@@ -171,7 +171,7 @@ libexec/GNUstep/ProjectCenter.app/Resources/Bundle.project/stamp.make
 libexec/GNUstep/ProjectCenter.app/Resources/Clean.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/Debug.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/EditorFSC.preferences/
-libexec/GNUstep/ProjectCenter.app/Resources/EditorFSC.preferences/EditorFSC.so
+@bin libexec/GNUstep/ProjectCenter.app/Resources/EditorFSC.preferences/EditorFSC
 libexec/GNUstep/ProjectCenter.app/Resources/EditorFSC.preferences/Resources/
 libexec/GNUstep/ProjectCenter.app/Resources/EditorFSC.preferences/Resources/EditorFSCPrefs.gorm/
 libexec/GNUstep/ProjectCenter.app/Resources/EditorFSC.preferences/Resources/EditorFSCPrefs.gorm/data.classes
@@ -202,7 +202,7 @@ libexec/GNUstep/ProjectCenter.app/Resources/FileProject.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/Files.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/Find.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/Framework.project/
-libexec/GNUstep/ProjectCenter.app/Resources/Framework.project/Framework.so
+@bin libexec/GNUstep/ProjectCenter.app/Resources/Framework.project/Framework
 libexec/GNUstep/ProjectCenter.app/Resources/Framework.project/Resources/
 libexec/GNUstep/ProjectCenter.app/Resources/Framework.project/Resources/Info-gnustep.plist
 libexec/GNUstep/ProjectCenter.app/Resources/Framework.project/Resources/Info.table
@@ -216,7 +216,7 @@ libexec/GNUstep/ProjectCenter.app/Resources/Info-gnustep.plist
 libexec/GNUstep/ProjectCenter.app/Resources/Inspector.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/Install.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/Library.project/
-libexec/GNUstep/ProjectCenter.app/Resources/Library.project/Library.so
+@bin libexec/GNUstep/ProjectCenter.app/Resources/Library.project/Library
 libexec/GNUstep/ProjectCenter.app/Resources/Library.project/Resources/
 libexec/GNUstep/ProjectCenter.app/Resources/Library.project/Resources/Info-gnustep.plist
 libexec/GNUstep/ProjectCenter.app/Resources/Library.project/Resources/Info.table
@@ -228,7 +228,7 @@ libexec/GNUstep/ProjectCenter.app/Resources/Library.project/Resources/PC.project
 libexec/GNUstep/ProjectCenter.app/Resources/Library.project/Resources/Version
 libexec/GNUstep/ProjectCenter.app/Resources/Library.project/stamp.make
 libexec/GNUstep/ProjectCenter.app/Resources/Misc.preferences/
-libexec/GNUstep/ProjectCenter.app/Resources/Misc.preferences/Misc.so
+@bin libexec/GNUstep/ProjectCenter.app/Resources/Misc.preferences/Misc
 libexec/GNUstep/ProjectCenter.app/Resources/Misc.preferences/Resources/
 libexec/GNUstep/ProjectCenter.app/Resources/Misc.preferences/Resources/Info-gnustep.plist
 libexec/GNUstep/ProjectCenter.app/Resources/Misc.preferences/Resources/Info.table
@@ -240,7 +240,7 @@ libexec/GNUstep/ProjectCenter.app/Resources/Misc.preferences/stamp.make
 libexec/GNUstep/ProjectCenter.app/Resources/MultiFiles.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/Options.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.debugger/
-libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.debugger/ProjectCenter.so
+@bin libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.debugger/ProjectCenter
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.debugger/Resources/
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.debugger/Resources/Info-gnustep.plist
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.debugger/Resources/Info.table
@@ -260,7 +260,7 @@ libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.debugger/Resources/up_
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.debugger/stamp.make
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.desktop
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/
-libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/ProjectCenter.so
+@bin libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/ProjectCenter
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/C.syntax
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/FileC.tiff
@@ -275,7 +275,7 @@ libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/ObjC.
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/Resources/Plist.syntax
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.editor/stamp.make
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.parser/
-libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.parser/ProjectCenter.so
+@bin libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.parser/ProjectCenter
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.parser/Resources/
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.parser/Resources/Info-gnustep.plist
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter.parser/Resources/Info.table
@@ -289,7 +289,7 @@ libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter_profile.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter_rpm.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/ProjectCenter_uml.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/ResourceSet.project/
-libexec/GNUstep/ProjectCenter.app/Resources/ResourceSet.project/ResourceSet.so
+@bin libexec/GNUstep/ProjectCenter.app/Resources/ResourceSet.project/ResourceSet
 libexec/GNUstep/ProjectCenter.app/Resources/ResourceSet.project/Resources/
 libexec/GNUstep/ProjectCenter.app/Resources/ResourceSet.project/Resources/Info-gnustep.plist
 libexec/GNUstep/ProjectCenter.app/Resources/ResourceSet.project/Resources/Info.table
@@ -308,7 +308,7 @@ libexec/GNUstep/ProjectCenter.app/Resources/Saving.preferences/Resources/SavingP
 libexec/GNUstep/ProjectCenter.app/Resources/Saving.preferences/Resources/SavingPrefs.gorm/data.classes
 libexec/GNUstep/ProjectCenter.app/Resources/Saving.preferences/Resources/SavingPrefs.gorm/data.info
 libexec/GNUstep/ProjectCenter.app/Resources/Saving.preferences/Resources/SavingPrefs.gorm/objects.gorm
-libexec/GNUstep/ProjectCenter.app/Resources/Saving.preferences/Saving.so
+@bin libexec/GNUstep/ProjectCenter.app/Resources/Saving.preferences/Saving
 libexec/GNUstep/ProjectCenter.app/Resources/Saving.preferences/stamp.make
 libexec/GNUstep/ProjectCenter.app/Resources/Tool.project/
 libexec/GNUstep/ProjectCenter.app/Resources/Tool.project/Resources/
@@ -321,7 +321,7 @@ libexec/GNUstep/ProjectCenter.app/Resources/Tool.project/Resources/Inspector.gor
 libexec/GNUstep/ProjectCenter.app/Resources/Tool.project/Resources/Inspector.gorm/objects.gorm
 libexec/GNUstep/ProjectCenter.app/Resources/Tool.project/Resources/PC.project
 libexec/GNUstep/ProjectCenter.app/Resources/Tool.project/Resources/main.m
-libexec/GNUstep/ProjectCenter.app/Resources/Tool.project/Tool.so
+@bin libexec/GNUstep/ProjectCenter.app/Resources/Tool.project/Tool
 libexec/GNUstep/ProjectCenter.app/Resources/Tool.project/stamp.make
 libexec/GNUstep/ProjectCenter.app/Resources/classSuitcase.tiff
 libexec/GNUstep/ProjectCenter.app/Resources/classSuitcaseH.tiff

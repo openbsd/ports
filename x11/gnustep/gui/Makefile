@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2010/12/22 09:20:00 sebastia Exp $
 
 COMMENT=	GNUstep gui library
 
 DISTNAME=	gnustep-gui-0.18.0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 
@@ -13,8 +13,8 @@ SHARED_LIBS=	gnustep-gui 0.18	# .0.18.0
 
 HOMEPAGE=	http://www.gnustep.org/
 
-WANTLIB += asn1 crypto gssapi krb5 ssl stdc++ sndfile
-WANTLIB += tiff z ao jpeg ungif png cups aspell c m pthread
+WANTLIB += objc gnustep-base asn1 crypto gssapi krb5 ssl stdc++
+WANTLIB += tiff z ao jpeg ungif png cups aspell c m pthread sndfile
 
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=core/}
 

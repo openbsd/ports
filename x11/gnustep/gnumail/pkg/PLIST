@@ -1,34 +1,34 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/26 12:39:10 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/12/22 09:20:00 sebastia Exp $
 bin/GNUMail
 include/GNUMail
 lib/GNUstep/ApplicationSupport/
 lib/GNUstep/ApplicationSupport/GNUMail/
 lib/GNUstep/ApplicationSupport/GNUMail/Account.prefs/
-lib/GNUstep/ApplicationSupport/GNUMail/Account.prefs/Account.so
+@bin lib/GNUstep/ApplicationSupport/GNUMail/Account.prefs/Account
 lib/GNUstep/ApplicationSupport/GNUMail/Account.prefs/Resources/
 lib/GNUstep/ApplicationSupport/GNUMail/Account.prefs/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GNUMail/Account.prefs/Resources/account.tiff
 lib/GNUstep/ApplicationSupport/GNUMail/Account.prefs/stamp.make
 lib/GNUstep/ApplicationSupport/GNUMail/Advanced.prefs/
-lib/GNUstep/ApplicationSupport/GNUMail/Advanced.prefs/Advanced.so
+@bin lib/GNUstep/ApplicationSupport/GNUMail/Advanced.prefs/Advanced
 lib/GNUstep/ApplicationSupport/GNUMail/Advanced.prefs/Resources/
 lib/GNUstep/ApplicationSupport/GNUMail/Advanced.prefs/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GNUMail/Advanced.prefs/Resources/advanced.tiff
 lib/GNUstep/ApplicationSupport/GNUMail/Advanced.prefs/stamp.make
 lib/GNUstep/ApplicationSupport/GNUMail/Colors.prefs/
-lib/GNUstep/ApplicationSupport/GNUMail/Colors.prefs/Colors.so
+@bin lib/GNUstep/ApplicationSupport/GNUMail/Colors.prefs/Colors
 lib/GNUstep/ApplicationSupport/GNUMail/Colors.prefs/Resources/
 lib/GNUstep/ApplicationSupport/GNUMail/Colors.prefs/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GNUMail/Colors.prefs/Resources/colors.tiff
 lib/GNUstep/ApplicationSupport/GNUMail/Colors.prefs/stamp.make
 lib/GNUstep/ApplicationSupport/GNUMail/Compose.prefs/
-lib/GNUstep/ApplicationSupport/GNUMail/Compose.prefs/Compose.so
+@bin lib/GNUstep/ApplicationSupport/GNUMail/Compose.prefs/Compose
 lib/GNUstep/ApplicationSupport/GNUMail/Compose.prefs/Resources/
 lib/GNUstep/ApplicationSupport/GNUMail/Compose.prefs/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GNUMail/Compose.prefs/Resources/MailIcon_create.tiff
 lib/GNUstep/ApplicationSupport/GNUMail/Compose.prefs/stamp.make
 lib/GNUstep/ApplicationSupport/GNUMail/Emoticon.bundle/
-lib/GNUstep/ApplicationSupport/GNUMail/Emoticon.bundle/Emoticon.so
+@bin lib/GNUstep/ApplicationSupport/GNUMail/Emoticon.bundle/Emoticon
 lib/GNUstep/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/
 lib/GNUstep/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face1.tiff
@@ -47,36 +47,36 @@ lib/GNUstep/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face8.
 lib/GNUstep/ApplicationSupport/GNUMail/Emoticon.bundle/Resources/emoticon-face9.tiff
 lib/GNUstep/ApplicationSupport/GNUMail/Emoticon.bundle/stamp.make
 lib/GNUstep/ApplicationSupport/GNUMail/Face.bundle/
-lib/GNUstep/ApplicationSupport/GNUMail/Face.bundle/Face.so
+@bin lib/GNUstep/ApplicationSupport/GNUMail/Face.bundle/Face
 lib/GNUstep/ApplicationSupport/GNUMail/Face.bundle/Resources/
 lib/GNUstep/ApplicationSupport/GNUMail/Face.bundle/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GNUMail/Face.bundle/Resources/stamp.tiff
 lib/GNUstep/ApplicationSupport/GNUMail/Face.bundle/stamp.make
 lib/GNUstep/ApplicationSupport/GNUMail/Filtering.prefs/
-lib/GNUstep/ApplicationSupport/GNUMail/Filtering.prefs/Filtering.so
+@bin lib/GNUstep/ApplicationSupport/GNUMail/Filtering.prefs/Filtering
 lib/GNUstep/ApplicationSupport/GNUMail/Filtering.prefs/Resources/
 lib/GNUstep/ApplicationSupport/GNUMail/Filtering.prefs/Resources/Filtering.tiff
 lib/GNUstep/ApplicationSupport/GNUMail/Filtering.prefs/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GNUMail/Filtering.prefs/stamp.make
 lib/GNUstep/ApplicationSupport/GNUMail/Fonts.prefs/
-lib/GNUstep/ApplicationSupport/GNUMail/Fonts.prefs/Fonts.so
+@bin lib/GNUstep/ApplicationSupport/GNUMail/Fonts.prefs/Fonts
 lib/GNUstep/ApplicationSupport/GNUMail/Fonts.prefs/Resources/
 lib/GNUstep/ApplicationSupport/GNUMail/Fonts.prefs/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GNUMail/Fonts.prefs/Resources/fonts.tiff
 lib/GNUstep/ApplicationSupport/GNUMail/Fonts.prefs/stamp.make
 lib/GNUstep/ApplicationSupport/GNUMail/Import.bundle/
-lib/GNUstep/ApplicationSupport/GNUMail/Import.bundle/Import.so
+@bin lib/GNUstep/ApplicationSupport/GNUMail/Import.bundle/Import
 lib/GNUstep/ApplicationSupport/GNUMail/Import.bundle/Resources/
 lib/GNUstep/ApplicationSupport/GNUMail/Import.bundle/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GNUMail/Import.bundle/stamp.make
 lib/GNUstep/ApplicationSupport/GNUMail/MIME.prefs/
-lib/GNUstep/ApplicationSupport/GNUMail/MIME.prefs/MIME.so
+@bin lib/GNUstep/ApplicationSupport/GNUMail/MIME.prefs/MIME
 lib/GNUstep/ApplicationSupport/GNUMail/MIME.prefs/Resources/
 lib/GNUstep/ApplicationSupport/GNUMail/MIME.prefs/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GNUMail/MIME.prefs/Resources/mime.tiff
 lib/GNUstep/ApplicationSupport/GNUMail/MIME.prefs/stamp.make
 lib/GNUstep/ApplicationSupport/GNUMail/PGP.bundle/
-lib/GNUstep/ApplicationSupport/GNUMail/PGP.bundle/PGP.so
+@bin lib/GNUstep/ApplicationSupport/GNUMail/PGP.bundle/PGP
 lib/GNUstep/ApplicationSupport/GNUMail/PGP.bundle/Resources/
 lib/GNUstep/ApplicationSupport/GNUMail/PGP.bundle/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GNUMail/PGP.bundle/Resources/clear_20.tiff
@@ -93,7 +93,7 @@ lib/GNUstep/ApplicationSupport/GNUMail/PGP.bundle/Resources/unsigned_20.tiff
 lib/GNUstep/ApplicationSupport/GNUMail/PGP.bundle/Resources/unsigned_48.tiff
 lib/GNUstep/ApplicationSupport/GNUMail/PGP.bundle/stamp.make
 lib/GNUstep/ApplicationSupport/GNUMail/Receiving.prefs/
-lib/GNUstep/ApplicationSupport/GNUMail/Receiving.prefs/Receiving.so
+@bin lib/GNUstep/ApplicationSupport/GNUMail/Receiving.prefs/Receiving
 lib/GNUstep/ApplicationSupport/GNUMail/Receiving.prefs/Resources/
 lib/GNUstep/ApplicationSupport/GNUMail/Receiving.prefs/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GNUMail/Receiving.prefs/Resources/MailIcon_retrieve.tiff
@@ -102,13 +102,13 @@ lib/GNUstep/ApplicationSupport/GNUMail/Sending.prefs/
 lib/GNUstep/ApplicationSupport/GNUMail/Sending.prefs/Resources/
 lib/GNUstep/ApplicationSupport/GNUMail/Sending.prefs/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GNUMail/Sending.prefs/Resources/MailIcon_send.tiff
-lib/GNUstep/ApplicationSupport/GNUMail/Sending.prefs/Sending.so
+@bin lib/GNUstep/ApplicationSupport/GNUMail/Sending.prefs/Sending
 lib/GNUstep/ApplicationSupport/GNUMail/Sending.prefs/stamp.make
 lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/
 lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/Resources/
 lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/Resources/Info-gnustep.plist
 lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/Resources/viewing.tiff
-lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/Viewing.so
+@bin lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/Viewing
 lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/stamp.make
 lib/GNUstep/Frameworks/GNUMail.framework/
 lib/GNUstep/Frameworks/GNUMail.framework/Headers

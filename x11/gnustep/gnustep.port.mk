@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.12 2010/11/24 07:14:44 sebastia Exp $
+# $OpenBSD: gnustep.port.mk,v 1.13 2010/12/22 09:20:00 sebastia Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS =	i386 amd64
@@ -10,7 +10,7 @@ CATEGORIES +=	x11/gnustep
 USE_GMAKE ?=	Yes
 MAKE_FILE ?=	GNUmakefile
 
-BUILD_DEPENDS +=		x11/gnustep/make>=2.4.0p4
+BUILD_DEPENDS +=		x11/gnustep/make>=2.4.0p5
 MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/make
 
 MAKE_FLAGS +=	CC="${CC}" CPP="${CC} -E" OPTFLAG="${CFLAGS}"
@@ -25,14 +25,13 @@ MODGNUSTEP_NEEDS_GUI ?=		Yes
 MODGNUSTEP_NEEDS_BACK ?=	Yes
 
 .if ${MODGNUSTEP_NEEDS_GUI:L} == yes 
-MODGNUSTEP_WANTLIB +=		gnustep-gui
+MODGNUSTEP_WANTLIB +=		objc gnustep-base gnustep-gui
 MODGNUSTEP_LIB_DEPENDS +=	x11/gnustep/gui
 .  if ${MODGNUSTEP_NEEDS_BACK:L} == yes
 MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/back
 .  endif
 .endif
 .if ${MODGNUSTEP_NEEDS_BASE:L} == yes
-MODGNUSTEP_WANTLIB +=		objc gnustep-base
 MODGNUSTEP_LIB_DEPENDS +=	x11/gnustep/base
 .endif
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/05/12 16:44:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2010/12/22 09:20:00 sebastia Exp $
 @bin bin/gclose
 @bin bin/gcloseall
 @bin bin/gopen
@@ -280,40 +280,40 @@ include/gnustep/gui/IMCustomObject.h
 include/gnustep/gui/IMLoading.h
 lib/GNUstep/Bundles/
 lib/GNUstep/Bundles/AudioOutput.nssound/
-lib/GNUstep/Bundles/AudioOutput.nssound/AudioOutput.so
+@bin lib/GNUstep/Bundles/AudioOutput.nssound/AudioOutput
 lib/GNUstep/Bundles/AudioOutput.nssound/Resources/
 lib/GNUstep/Bundles/AudioOutput.nssound/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/AudioOutput.nssound/stamp.make
 lib/GNUstep/Bundles/GSPrinting/
 lib/GNUstep/Bundles/GSPrinting/GSCUPS.bundle/
-lib/GNUstep/Bundles/GSPrinting/GSCUPS.bundle/GSCUPS.so
+@bin lib/GNUstep/Bundles/GSPrinting/GSCUPS.bundle/GSCUPS
 lib/GNUstep/Bundles/GSPrinting/GSCUPS.bundle/Resources/
 lib/GNUstep/Bundles/GSPrinting/GSCUPS.bundle/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/GSPrinting/GSCUPS.bundle/stamp.make
 lib/GNUstep/Bundles/GSPrinting/GSLPR.bundle/
-lib/GNUstep/Bundles/GSPrinting/GSLPR.bundle/GSLPR.so
+@bin lib/GNUstep/Bundles/GSPrinting/GSLPR.bundle/GSLPR
 lib/GNUstep/Bundles/GSPrinting/GSLPR.bundle/Resources/
 lib/GNUstep/Bundles/GSPrinting/GSLPR.bundle/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/GSPrinting/GSLPR.bundle/stamp.make
 lib/GNUstep/Bundles/Sndfile.nssound/
 lib/GNUstep/Bundles/Sndfile.nssound/Resources/
 lib/GNUstep/Bundles/Sndfile.nssound/Resources/Info-gnustep.plist
-lib/GNUstep/Bundles/Sndfile.nssound/Sndfile.so
+@bin lib/GNUstep/Bundles/Sndfile.nssound/Sndfile
 lib/GNUstep/Bundles/Sndfile.nssound/stamp.make
 lib/GNUstep/Bundles/TextConverters/
 lib/GNUstep/Bundles/TextConverters/RTFConverter.bundle/
-lib/GNUstep/Bundles/TextConverters/RTFConverter.bundle/RTFConverter.so
+@bin lib/GNUstep/Bundles/TextConverters/RTFConverter.bundle/RTFConverter
 lib/GNUstep/Bundles/TextConverters/RTFConverter.bundle/Resources/
 lib/GNUstep/Bundles/TextConverters/RTFConverter.bundle/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/TextConverters/RTFConverter.bundle/stamp.make
 lib/GNUstep/Bundles/libgmodel.bundle/
 lib/GNUstep/Bundles/libgmodel.bundle/Resources/
 lib/GNUstep/Bundles/libgmodel.bundle/Resources/Info-gnustep.plist
-lib/GNUstep/Bundles/libgmodel.bundle/libgmodel.so
+@bin lib/GNUstep/Bundles/libgmodel.bundle/libgmodel
 lib/GNUstep/Bundles/libgmodel.bundle/stamp.make
 lib/GNUstep/ColorPickers/
 lib/GNUstep/ColorPickers/NamedPicker.bundle/
-lib/GNUstep/ColorPickers/NamedPicker.bundle/NamedPicker.so
+@bin lib/GNUstep/ColorPickers/NamedPicker.bundle/NamedPicker
 lib/GNUstep/ColorPickers/NamedPicker.bundle/Resources/
 lib/GNUstep/ColorPickers/NamedPicker.bundle/Resources/GSNamedColorPicker.tiff
 lib/GNUstep/ColorPickers/NamedPicker.bundle/Resources/Info-gnustep.plist
@@ -333,13 +333,13 @@ lib/GNUstep/ColorPickers/StandardPicker.bundle/Resources/Spanish.lproj/
 lib/GNUstep/ColorPickers/StandardPicker.bundle/Resources/Spanish.lproj/StandardPicker.strings
 lib/GNUstep/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj/
 lib/GNUstep/ColorPickers/StandardPicker.bundle/Resources/Swedish.lproj/StandardPicker.strings
-lib/GNUstep/ColorPickers/StandardPicker.bundle/StandardPicker.so
+@bin lib/GNUstep/ColorPickers/StandardPicker.bundle/StandardPicker
 lib/GNUstep/ColorPickers/StandardPicker.bundle/stamp.make
 lib/GNUstep/ColorPickers/WheelPicker.bundle/
 lib/GNUstep/ColorPickers/WheelPicker.bundle/Resources/
 lib/GNUstep/ColorPickers/WheelPicker.bundle/Resources/GSWheelColorPicker.tiff
 lib/GNUstep/ColorPickers/WheelPicker.bundle/Resources/Info-gnustep.plist
-lib/GNUstep/ColorPickers/WheelPicker.bundle/WheelPicker.so
+@bin lib/GNUstep/ColorPickers/WheelPicker.bundle/WheelPicker
 lib/GNUstep/ColorPickers/WheelPicker.bundle/stamp.make
 lib/GNUstep/Images/
 lib/GNUstep/Images/GNUstep.tiff
