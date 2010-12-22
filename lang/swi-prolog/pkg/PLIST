@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/08/29 12:30:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2010/12/22 23:24:21 jasper Exp $
 %%SHARED%%
 bin/plld
 bin/plrc
@@ -8,12 +8,12 @@ bin/xpce
 lib/swipl-${V}/
 lib/swipl-${V}/Makefile
 lib/swipl-${V}/bin/
+lib/swipl-${V}/bin/swipl
 lib/swipl-${V}/bin/${FULLARCH}/
 @bin lib/swipl-${V}/bin/${FULLARCH}/plld
 @bin lib/swipl-${V}/bin/${FULLARCH}/plrc
 @bin lib/swipl-${V}/bin/${FULLARCH}/swipl
 lib/swipl-${V}/bin/${FULLARCH}/xpce
-lib/swipl-${V}/bin/swipl
 lib/swipl-${V}/boot/
 lib/swipl-${V}/boot/apply.pl
 lib/swipl-${V}/boot/attvar.pl
@@ -259,26 +259,26 @@ lib/swipl-${V}/doc/packages/examples/plunit/read.pl
 lib/swipl-${V}/doc/packages/examples/plunit/simple.pl
 lib/swipl-${V}/doc/packages/examples/ssl/
 lib/swipl-${V}/doc/packages/examples/ssl/client.pl
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/Makefile
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/README
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/client/
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/client/client-cert.pem
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/client/client-key.pem
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/demoCA/
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/demoCA/cacert.pem
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/demoCA/careq.pem
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/demoCA/index.txt
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/demoCA/index.txt.attr
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/demoCA/newcerts/
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/demoCA/newcerts/A611836B46298A71.pem
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/demoCA/newcerts/A611836B46298A72.pem
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/demoCA/private/
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/demoCA/private/cakey.pem
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/demoCA/serial
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/server/
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/server/server-cert.pem
-lib/swipl-${V}/doc/packages/examples/ssl${SYSCONFDIR}/server/server-key.pem
+lib/swipl-${V}/doc/packages/examples/ssl/etc/
+lib/swipl-${V}/doc/packages/examples/ssl/etc/Makefile
+lib/swipl-${V}/doc/packages/examples/ssl/etc/README
+lib/swipl-${V}/doc/packages/examples/ssl/etc/client/
+lib/swipl-${V}/doc/packages/examples/ssl/etc/client/client-cert.pem
+lib/swipl-${V}/doc/packages/examples/ssl/etc/client/client-key.pem
+lib/swipl-${V}/doc/packages/examples/ssl/etc/demoCA/
+lib/swipl-${V}/doc/packages/examples/ssl/etc/demoCA/cacert.pem
+lib/swipl-${V}/doc/packages/examples/ssl/etc/demoCA/careq.pem
+lib/swipl-${V}/doc/packages/examples/ssl/etc/demoCA/index.txt
+lib/swipl-${V}/doc/packages/examples/ssl/etc/demoCA/index.txt.attr
+lib/swipl-${V}/doc/packages/examples/ssl/etc/demoCA/newcerts/
+lib/swipl-${V}/doc/packages/examples/ssl/etc/demoCA/newcerts/A611836B46298A71.pem
+lib/swipl-${V}/doc/packages/examples/ssl/etc/demoCA/newcerts/A611836B46298A72.pem
+lib/swipl-${V}/doc/packages/examples/ssl/etc/demoCA/private/
+lib/swipl-${V}/doc/packages/examples/ssl/etc/demoCA/private/cakey.pem
+lib/swipl-${V}/doc/packages/examples/ssl/etc/demoCA/serial
+lib/swipl-${V}/doc/packages/examples/ssl/etc/server/
+lib/swipl-${V}/doc/packages/examples/ssl/etc/server/server-cert.pem
+lib/swipl-${V}/doc/packages/examples/ssl/etc/server/server-key.pem
 lib/swipl-${V}/doc/packages/examples/ssl/https.pl
 lib/swipl-${V}/doc/packages/examples/ssl/server.pl
 lib/swipl-${V}/doc/packages/http.html
