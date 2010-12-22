@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/13 18:30:10 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/22 09:23:01 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
-REVISION =	0
+REVISION =	1
 VERSION =	1.3.4
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
@@ -30,6 +30,7 @@ MODGNUSTEP_NEEDS_GUI =	No
 WANTLIB +=		c m pthread crypto memcached WOExtensions SBJson
 WANTLIB +=		DOM EOControl GDLAccess NGExtensions NGLdap XmlRpc
 WANTLIB +=		NGMime NGObjWeb NGStreams SaxObjC WEExtensions
+WANTLIB +=		objc gnustep-base
 
 LIB_DEPENDS +=		devel/libmemcached \
 			www/sope=${VERSION}

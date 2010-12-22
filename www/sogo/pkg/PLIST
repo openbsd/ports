@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/12/13 18:30:10 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/12/22 09:23:01 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -544,7 +544,7 @@ lib/GNUstep/OCSTypeModels/contact-oracle.ocs
 lib/GNUstep/OCSTypeModels/contact.ocs
 lib/GNUstep/SOGo/
 lib/GNUstep/SOGo/AdministrationUI.SOGo/
-lib/GNUstep/SOGo/AdministrationUI.SOGo/AdministrationUI.so
+@bin lib/GNUstep/SOGo/AdministrationUI.SOGo/AdministrationUI
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/BrazilianPortuguese.lproj/
 lib/GNUstep/SOGo/AdministrationUI.SOGo/Resources/BrazilianPortuguese.lproj/Localizable.strings
@@ -620,7 +620,7 @@ lib/GNUstep/SOGo/Appointments.SOGo/Resources/Welsh.lproj/Localizable.strings
 lib/GNUstep/SOGo/Appointments.SOGo/Resources/product.plist
 lib/GNUstep/SOGo/Appointments.SOGo/bundle-info.plist
 lib/GNUstep/SOGo/CommonUI.SOGo/
-lib/GNUstep/SOGo/CommonUI.SOGo/CommonUI.so
+@bin lib/GNUstep/SOGo/CommonUI.SOGo/CommonUI
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/BrazilianPortuguese.lproj/
 lib/GNUstep/SOGo/CommonUI.SOGo/Resources/BrazilianPortuguese.lproj/Localizable.strings
@@ -658,7 +658,7 @@ lib/GNUstep/SOGo/CommonUI.SOGo/Resources/product.plist
 lib/GNUstep/SOGo/CommonUI.SOGo/bundle-info.plist
 lib/GNUstep/SOGo/CommonUI.SOGo/stamp.make
 lib/GNUstep/SOGo/Contacts.SOGo/
-lib/GNUstep/SOGo/Contacts.SOGo/Contacts.so
+@bin lib/GNUstep/SOGo/Contacts.SOGo/Contacts
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/BrazilianPortuguese.lproj/
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/BrazilianPortuguese.lproj/Localizable.strings
@@ -695,7 +695,7 @@ lib/GNUstep/SOGo/Contacts.SOGo/Resources/Welsh.lproj/Localizable.strings
 lib/GNUstep/SOGo/Contacts.SOGo/Resources/product.plist
 lib/GNUstep/SOGo/Contacts.SOGo/stamp.make
 lib/GNUstep/SOGo/ContactsUI.SOGo/
-lib/GNUstep/SOGo/ContactsUI.SOGo/ContactsUI.so
+@bin lib/GNUstep/SOGo/ContactsUI.SOGo/ContactsUI
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/BrazilianPortuguese.lproj/
 lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/BrazilianPortuguese.lproj/Localizable.strings
@@ -734,7 +734,7 @@ lib/GNUstep/SOGo/ContactsUI.SOGo/Resources/product.plist
 lib/GNUstep/SOGo/ContactsUI.SOGo/bundle-info.plist
 lib/GNUstep/SOGo/ContactsUI.SOGo/stamp.make
 lib/GNUstep/SOGo/MailPartViewers.SOGo/
-lib/GNUstep/SOGo/MailPartViewers.SOGo/MailPartViewers.so
+@bin lib/GNUstep/SOGo/MailPartViewers.SOGo/MailPartViewers
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/BrazilianPortuguese.lproj/
 lib/GNUstep/SOGo/MailPartViewers.SOGo/Resources/BrazilianPortuguese.lproj/Localizable.strings
@@ -863,7 +863,7 @@ lib/GNUstep/SOGo/Mailer.SOGo/Resources/WebServer/
 lib/GNUstep/SOGo/Mailer.SOGo/Resources/product.plist
 lib/GNUstep/SOGo/Mailer.SOGo/bundle-info.plist
 lib/GNUstep/SOGo/MailerUI.SOGo/
-lib/GNUstep/SOGo/MailerUI.SOGo/MailerUI.so
+@bin lib/GNUstep/SOGo/MailerUI.SOGo/MailerUI
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/BrazilianPortuguese.lproj/
 lib/GNUstep/SOGo/MailerUI.SOGo/Resources/BrazilianPortuguese.lproj/Localizable.strings
@@ -903,7 +903,7 @@ lib/GNUstep/SOGo/MailerUI.SOGo/Resources/product.plist
 lib/GNUstep/SOGo/MailerUI.SOGo/bundle-info.plist
 lib/GNUstep/SOGo/MailerUI.SOGo/stamp.make
 lib/GNUstep/SOGo/MainUI.SOGo/
-lib/GNUstep/SOGo/MainUI.SOGo/MainUI.so
+@bin lib/GNUstep/SOGo/MainUI.SOGo/MainUI
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/BrazilianPortuguese.lproj/
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/BrazilianPortuguese.lproj/Locale
@@ -959,7 +959,7 @@ lib/GNUstep/SOGo/MainUI.SOGo/Resources/Welsh.lproj/Localizable.strings
 lib/GNUstep/SOGo/MainUI.SOGo/Resources/product.plist
 lib/GNUstep/SOGo/MainUI.SOGo/stamp.make
 lib/GNUstep/SOGo/PreferencesUI.SOGo/
-lib/GNUstep/SOGo/PreferencesUI.SOGo/PreferencesUI.so
+@bin lib/GNUstep/SOGo/PreferencesUI.SOGo/PreferencesUI
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/BrazilianPortuguese.lproj/
 lib/GNUstep/SOGo/PreferencesUI.SOGo/Resources/BrazilianPortuguese.lproj/Localizable.strings
@@ -1040,7 +1040,7 @@ lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Welsh.lproj/
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/Welsh.lproj/Localizable.strings
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/cycles.plist
 lib/GNUstep/SOGo/SchedulerUI.SOGo/Resources/product.plist
-lib/GNUstep/SOGo/SchedulerUI.SOGo/SchedulerUI.so
+@bin lib/GNUstep/SOGo/SchedulerUI.SOGo/SchedulerUI
 lib/GNUstep/SOGo/SchedulerUI.SOGo/bundle-info.plist
 lib/GNUstep/SOGo/SchedulerUI.SOGo/stamp.make
 lib/GNUstep/SOGo/Templates/
@@ -1885,14 +1885,14 @@ lib/GNUstep/SaxDrivers-4.9/versitCardsSaxDriver.sax/Resources/Info-gnustep.plist
 lib/GNUstep/SaxDrivers-4.9/versitCardsSaxDriver.sax/Resources/bundle-info.plist
 lib/GNUstep/SaxDrivers-4.9/versitCardsSaxDriver.sax/bundle-info.plist
 lib/GNUstep/SaxDrivers-4.9/versitCardsSaxDriver.sax/stamp.make
-lib/GNUstep/SaxDrivers-4.9/versitCardsSaxDriver.sax/versitCardsSaxDriver.so
+@bin lib/GNUstep/SaxDrivers-4.9/versitCardsSaxDriver.sax/versitCardsSaxDriver
 lib/GNUstep/SaxMappings/
 lib/GNUstep/SaxMappings/NGCards.xmap
 lib/GNUstep/WOxElemBuilders-4.9/
 lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/
 lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/Resources/
 lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/Resources/Info-gnustep.plist
-lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/SOGoElements.so
+@bin lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/SOGoElements
 lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/bundle-info.plist
 lib/GNUstep/WOxElemBuilders-4.9/SOGoElements.wox/stamp.make
 @lib lib/libGDLContentStore.so.${LIBGDLContentStore_VERSION}
