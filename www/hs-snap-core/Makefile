@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/14 08:57:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/22 23:59:49 jasper Exp $
 
 COMMENT =		Snap Haskell Web Framework
 
 DISTNAME =		snap-core-0.2.16
-REVISION =		0
+REVISION =		1
 CATEGORIES =		www
 HOMEPAGE =		http://snapframework.com/
 
@@ -15,11 +15,12 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MODULES =		lang/ghc
+MODULES =		converters/libiconv \
+			lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-WANTLIB +=		c gmp iconv m pthread util z
+WANTLIB +=		c gmp m pthread util z
 
 RUN_DEPENDS +=		archivers/hs-zlib \
 			devel/hs-cereal \
