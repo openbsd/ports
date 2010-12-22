@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.877 2010/12/20 18:44:01 jeremy Exp $
+# $OpenBSD: Makefile,v 1.878 2010/12/22 20:24:02 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -327,6 +327,7 @@
      SUBDIR += p5-Algorithm-Dependency
      SUBDIR += p5-Algorithm-Diff
      SUBDIR += p5-Algorithm-IncludeExclude
+     SUBDIR += p5-Algorithm-Munkres
      SUBDIR += p5-Algorithm-MDiff
      SUBDIR += p5-Algorithm-MarkovChain
      SUBDIR += p5-Algorithm-Permute
@@ -405,6 +406,7 @@
      SUBDIR += p5-Class-ReturnValue
      SUBDIR += p5-Class-Singleton
      SUBDIR += p5-Class-Std
+     SUBDIR += p5-Class-Std-Fast
      SUBDIR += p5-Class-Std-Utils
      SUBDIR += p5-Class-Throwable
      SUBDIR += p5-Class-Trigger
