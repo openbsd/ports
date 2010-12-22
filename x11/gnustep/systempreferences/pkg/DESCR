@@ -1,0 +1,6 @@
+System Preferences is an application which allows to manage the settings
+of many aspects of the gnustep environment and its applications.  System
+Preferences are made of Modules, each one a bundle representing a single
+control panel, and is thus extensible and modular.  Technically, it is a
+clone of the Apple OS X System Preferences and offers a compatible
+framework.
