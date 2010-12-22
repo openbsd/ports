@@ -1,0 +1,4 @@
+SOAP::WSDL provides easy access to Web Services with WSDL descriptions.
+The WSDL is parsed and stored in memory. Your data is serialized
+according to the rules in the WSDL.  The only transport mechanisms
+currently supported are http and https.

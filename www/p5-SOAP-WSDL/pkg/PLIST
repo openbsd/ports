@@ -1,0 +1,382 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/22 20:25:22 jasper Exp $
+bin/wsdl2perl.pl
+${P5SITE}/SOAP/
+${P5SITE}/SOAP/WSDL/
+${P5SITE}/SOAP/WSDL.pm
+${P5SITE}/SOAP/WSDL/Base.pm
+${P5SITE}/SOAP/WSDL/Binding.pm
+${P5SITE}/SOAP/WSDL/Client/
+${P5SITE}/SOAP/WSDL/Client.pm
+${P5SITE}/SOAP/WSDL/Client/Base.pm
+${P5SITE}/SOAP/WSDL/Definitions.pm
+${P5SITE}/SOAP/WSDL/Deserializer/
+${P5SITE}/SOAP/WSDL/Deserializer/Hash.pm
+${P5SITE}/SOAP/WSDL/Deserializer/SOM.pm
+${P5SITE}/SOAP/WSDL/Deserializer/XSD.pm
+${P5SITE}/SOAP/WSDL/Expat/
+${P5SITE}/SOAP/WSDL/Expat/Base.pm
+${P5SITE}/SOAP/WSDL/Expat/Message2Hash.pm
+${P5SITE}/SOAP/WSDL/Expat/MessageParser.pm
+${P5SITE}/SOAP/WSDL/Expat/MessageStreamParser.pm
+${P5SITE}/SOAP/WSDL/Expat/WSDLParser.pm
+${P5SITE}/SOAP/WSDL/Factory/
+${P5SITE}/SOAP/WSDL/Factory/Deserializer.pm
+${P5SITE}/SOAP/WSDL/Factory/Generator.pm
+${P5SITE}/SOAP/WSDL/Factory/Serializer.pm
+${P5SITE}/SOAP/WSDL/Factory/Transport.pm
+${P5SITE}/SOAP/WSDL/Generator/
+${P5SITE}/SOAP/WSDL/Generator/Iterator/
+${P5SITE}/SOAP/WSDL/Generator/Iterator/WSDL11.pm
+${P5SITE}/SOAP/WSDL/Generator/PrefixResolver.pm
+${P5SITE}/SOAP/WSDL/Generator/Template/
+${P5SITE}/SOAP/WSDL/Generator/Template.pm
+${P5SITE}/SOAP/WSDL/Generator/Template/Plugin/
+${P5SITE}/SOAP/WSDL/Generator/Template/Plugin/XSD.pm
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD.pm
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Interface/
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Interface.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Interface/Body.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Interface/Header.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Interface/Operation.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Interface/POD/
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Interface/POD/Element.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Interface/POD/Message.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Interface/POD/Operation.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Interface/POD/Part.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Interface/POD/Type.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Interface/POD/method_info.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/POD/
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/POD/annotation.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Server/
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Server.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Server/POD/
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Server/POD/Message.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Server/POD/Operation.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Server/POD/OutPart.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Server/POD/method_info.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/Typemap.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/attribute.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/POD/
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/POD/all.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/POD/attributeSet.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/POD/choice.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/POD/complexContent.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/POD/content_model.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/POD/restriction.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/POD/simpleContent/
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/POD/simpleContent.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/POD/simpleContent/extension.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/POD/simpleContent/restriction.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/POD/structure/
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/POD/structure.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/POD/structure/restriction.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/POD/structure/simpleContent.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/all.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/atomicTypes.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/attributeSet.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/complexContent.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/contentModel.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/extension.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/restriction.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/simpleContent/
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/simpleContent.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/simpleContent/extension.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/complexType/variety.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/element/
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/element.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/element/POD/
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/element/POD/contentModel.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/element/POD/structure.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/simpleType/
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/simpleType.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/simpleType/POD/
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/simpleType/POD/contentModel.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/simpleType/POD/list.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/simpleType/POD/restriction.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/simpleType/POD/structure.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/simpleType/POD/union.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/simpleType/atomicType.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/simpleType/contentModel.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/simpleType/list.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/simpleType/restriction.tt
+${P5SITE}/SOAP/WSDL/Generator/Template/XSD/simpleType/union.tt
+${P5SITE}/SOAP/WSDL/Generator/Visitor/
+${P5SITE}/SOAP/WSDL/Generator/Visitor.pm
+${P5SITE}/SOAP/WSDL/Generator/Visitor/Typemap.pm
+${P5SITE}/SOAP/WSDL/Manual/
+${P5SITE}/SOAP/WSDL/Manual.pod
+${P5SITE}/SOAP/WSDL/Manual/CodeFirst.pod
+${P5SITE}/SOAP/WSDL/Manual/Cookbook.pod
+${P5SITE}/SOAP/WSDL/Manual/Deserializer.pod
+${P5SITE}/SOAP/WSDL/Manual/FAQ.pod
+${P5SITE}/SOAP/WSDL/Manual/Glossary.pod
+${P5SITE}/SOAP/WSDL/Manual/Parser.pod
+${P5SITE}/SOAP/WSDL/Manual/Serializer.pod
+${P5SITE}/SOAP/WSDL/Manual/WS_I.pod
+${P5SITE}/SOAP/WSDL/Manual/XSD.pod
+${P5SITE}/SOAP/WSDL/Message.pm
+${P5SITE}/SOAP/WSDL/OpMessage.pm
+${P5SITE}/SOAP/WSDL/Operation.pm
+${P5SITE}/SOAP/WSDL/Part.pm
+${P5SITE}/SOAP/WSDL/Port.pm
+${P5SITE}/SOAP/WSDL/PortType.pm
+${P5SITE}/SOAP/WSDL/SOAP/
+${P5SITE}/SOAP/WSDL/SOAP/Address.pm
+${P5SITE}/SOAP/WSDL/SOAP/Body.pm
+${P5SITE}/SOAP/WSDL/SOAP/Header.pm
+${P5SITE}/SOAP/WSDL/SOAP/HeaderFault.pm
+${P5SITE}/SOAP/WSDL/SOAP/Operation.pm
+${P5SITE}/SOAP/WSDL/SOAP/Typelib/
+${P5SITE}/SOAP/WSDL/SOAP/Typelib/Fault.pm
+${P5SITE}/SOAP/WSDL/SOAP/Typelib/Fault11.pm
+${P5SITE}/SOAP/WSDL/Serializer/
+${P5SITE}/SOAP/WSDL/Serializer/XSD.pm
+${P5SITE}/SOAP/WSDL/Server/
+${P5SITE}/SOAP/WSDL/Server.pm
+${P5SITE}/SOAP/WSDL/Server/CGI.pm
+${P5SITE}/SOAP/WSDL/Server/Mod_Perl2.pm
+${P5SITE}/SOAP/WSDL/Server/Simple.pm
+${P5SITE}/SOAP/WSDL/Service.pm
+${P5SITE}/SOAP/WSDL/Transport/
+${P5SITE}/SOAP/WSDL/Transport/HTTP.pm
+${P5SITE}/SOAP/WSDL/Transport/Loopback.pm
+${P5SITE}/SOAP/WSDL/Transport/Test.pm
+${P5SITE}/SOAP/WSDL/TypeLookup.pm
+${P5SITE}/SOAP/WSDL/Types.pm
+${P5SITE}/SOAP/WSDL/XSD/
+${P5SITE}/SOAP/WSDL/XSD/Annotation.pm
+${P5SITE}/SOAP/WSDL/XSD/Attribute.pm
+${P5SITE}/SOAP/WSDL/XSD/AttributeGroup.pm
+${P5SITE}/SOAP/WSDL/XSD/Builtin.pm
+${P5SITE}/SOAP/WSDL/XSD/ComplexType.pm
+${P5SITE}/SOAP/WSDL/XSD/Element.pm
+${P5SITE}/SOAP/WSDL/XSD/Enumeration.pm
+${P5SITE}/SOAP/WSDL/XSD/FractionDigits.pm
+${P5SITE}/SOAP/WSDL/XSD/Group.pm
+${P5SITE}/SOAP/WSDL/XSD/Length.pm
+${P5SITE}/SOAP/WSDL/XSD/MaxExclusive.pm
+${P5SITE}/SOAP/WSDL/XSD/MaxInclusive.pm
+${P5SITE}/SOAP/WSDL/XSD/MaxLength.pm
+${P5SITE}/SOAP/WSDL/XSD/MinExclusive.pm
+${P5SITE}/SOAP/WSDL/XSD/MinInclusive.pm
+${P5SITE}/SOAP/WSDL/XSD/MinLength.pm
+${P5SITE}/SOAP/WSDL/XSD/Pattern.pm
+${P5SITE}/SOAP/WSDL/XSD/Schema/
+${P5SITE}/SOAP/WSDL/XSD/Schema.pm
+${P5SITE}/SOAP/WSDL/XSD/Schema/Builtin.pm
+${P5SITE}/SOAP/WSDL/XSD/SimpleType.pm
+${P5SITE}/SOAP/WSDL/XSD/TotalDigits.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Attribute.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/AttributeSet.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/ENTITY.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/ID.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/IDREF.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/IDREFS.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/NCName.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/NMTOKEN.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/NMTOKENS.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/NOTATION.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/Name.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/QName.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/anySimpleType.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/anyType.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/anyURI.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/base64Binary.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/boolean.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/byte.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/date.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/dateTime.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/decimal.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/double.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/duration.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/float.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/gDay.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/gMonth.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/gMonthDay.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/gYear.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/gYearMonth.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/hexBinary.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/int.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/integer.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/language.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/list.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/long.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/negativeInteger.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/nonNegativeInteger.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/nonPositiveInteger.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/normalizedString.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/positiveInteger.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/short.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/string.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/time.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/token.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/unsignedByte.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/unsignedInt.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/unsignedLong.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Builtin/unsignedShort.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/ComplexType.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/Element.pm
+${P5SITE}/SOAP/WSDL/XSD/Typelib/SimpleType.pm
+${P5SITE}/SOAP/WSDL/XSD/WhiteSpace.pm
+@man man/man1/wsdl2perl.pl.1
+@man man/man3p/SOAP::WSDL.3p
+@man man/man3p/SOAP::WSDL::Client.3p
+@man man/man3p/SOAP::WSDL::Client::Base.3p
+@man man/man3p/SOAP::WSDL::Definitions.3p
+@man man/man3p/SOAP::WSDL::Deserializer::Hash.3p
+@man man/man3p/SOAP::WSDL::Deserializer::SOM.3p
+@man man/man3p/SOAP::WSDL::Deserializer::XSD.3p
+@man man/man3p/SOAP::WSDL::Expat::Base.3p
+@man man/man3p/SOAP::WSDL::Expat::Message2Hash.3p
+@man man/man3p/SOAP::WSDL::Expat::MessageParser.3p
+@man man/man3p/SOAP::WSDL::Expat::MessageStreamParser.3p
+@man man/man3p/SOAP::WSDL::Expat::WSDLParser.3p
+@man man/man3p/SOAP::WSDL::Factory::Deserializer.3p
+@man man/man3p/SOAP::WSDL::Factory::Generator.3p
+@man man/man3p/SOAP::WSDL::Factory::Serializer.3p
+@man man/man3p/SOAP::WSDL::Factory::Transport.3p
+@man man/man3p/SOAP::WSDL::Generator::Iterator::WSDL11.3p
+@man man/man3p/SOAP::WSDL::Generator::PrefixResolver.3p
+@man man/man3p/SOAP::WSDL::Generator::Template.3p
+@man man/man3p/SOAP::WSDL::Generator::Template::Plugin::XSD.3p
+@man man/man3p/SOAP::WSDL::Generator::Template::XSD.3p
+@man man/man3p/SOAP::WSDL::Generator::Template::XSD::complexType.tt.3p
+@man man/man3p/SOAP::WSDL::Generator::Template::XSD::complexType::POD::attributeSet.tt.3p
+@man man/man3p/SOAP::WSDL::Generator::Template::XSD::element.tt.3p
+@man man/man3p/SOAP::WSDL::Generator::Visitor.3p
+@man man/man3p/SOAP::WSDL::Generator::Visitor::Typemap.3p
+@man man/man3p/SOAP::WSDL::Manual.3p
+@man man/man3p/SOAP::WSDL::Manual::CodeFirst.3p
+@man man/man3p/SOAP::WSDL::Manual::Cookbook.3p
+@man man/man3p/SOAP::WSDL::Manual::Deserializer.3p
+@man man/man3p/SOAP::WSDL::Manual::FAQ.3p
+@man man/man3p/SOAP::WSDL::Manual::Glossary.3p
+@man man/man3p/SOAP::WSDL::Manual::Parser.3p
+@man man/man3p/SOAP::WSDL::Manual::Serializer.3p
+@man man/man3p/SOAP::WSDL::Manual::WS_I.3p
+@man man/man3p/SOAP::WSDL::Manual::XSD.3p
+@man man/man3p/SOAP::WSDL::SOAP::Typelib::Fault11.3p
+@man man/man3p/SOAP::WSDL::Serializer::XSD.3p
+@man man/man3p/SOAP::WSDL::Server.3p
+@man man/man3p/SOAP::WSDL::Server::CGI.3p
+@man man/man3p/SOAP::WSDL::Server::Mod_Perl2.3p
+@man man/man3p/SOAP::WSDL::Server::Simple.3p
+@man man/man3p/SOAP::WSDL::Transport::HTTP.3p
+@man man/man3p/SOAP::WSDL::Transport::Loopback.3p
+@man man/man3p/SOAP::WSDL::Transport::Test.3p
+@man man/man3p/SOAP::WSDL::XSD::Schema::Builtin.3p
+@man man/man3p/SOAP::WSDL::XSD::Typelib::Builtin.3p
+@man man/man3p/SOAP::WSDL::XSD::Typelib::Builtin::list.3p
+@man man/man3p/SOAP::WSDL::XSD::Typelib::ComplexType.3p
+@man man/man3p/SOAP::WSDL::XSD::Typelib::Element.3p
+@man man/man3p/SOAP::WSDL::XSD::Typelib::SimpleType.3p
+share/examples/p5-SOAP-WSDL/
+share/examples/p5-SOAP-WSDL/cgi-bin/
+share/examples/p5-SOAP-WSDL/cgi-bin/helloworld.pl
+share/examples/p5-SOAP-WSDL/cgi-bin/person.pl
+share/examples/p5-SOAP-WSDL/fortune.pl
+share/examples/p5-SOAP-WSDL/genericbarcode.pl
+share/examples/p5-SOAP-WSDL/hello.pl
+share/examples/p5-SOAP-WSDL/hello_compile.pl
+share/examples/p5-SOAP-WSDL/hello_lite.pl
+share/examples/p5-SOAP-WSDL/java/
+share/examples/p5-SOAP-WSDL/java/cxf/
+share/examples/p5-SOAP-WSDL/java/cxf/.classpath
+share/examples/p5-SOAP-WSDL/java/cxf/.settings/
+share/examples/p5-SOAP-WSDL/java/cxf/.settings/org.eclipse.jdt.core.prefs
+share/examples/p5-SOAP-WSDL/java/cxf/.settings/org.maven.ide.eclipse.prefs
+share/examples/p5-SOAP-WSDL/java/cxf/11_helloworld.wsdl
+share/examples/p5-SOAP-WSDL/java/cxf/README
+share/examples/p5-SOAP-WSDL/java/cxf/jax-binding.xml
+share/examples/p5-SOAP-WSDL/java/cxf/pom.xml
+share/examples/p5-SOAP-WSDL/java/cxf/src/
+share/examples/p5-SOAP-WSDL/java/cxf/src/main/
+share/examples/p5-SOAP-WSDL/java/cxf/src/main/resources/
+share/examples/p5-SOAP-WSDL/java/cxf/src/main/resources/cxf.xml
+share/examples/p5-SOAP-WSDL/java/cxf/src/test/
+share/examples/p5-SOAP-WSDL/java/cxf/src/test/java/
+share/examples/p5-SOAP-WSDL/java/cxf/src/test/java/helloworld/
+share/examples/p5-SOAP-WSDL/java/cxf/src/test/java/helloworld/HelloWorldTest.java
+share/examples/p5-SOAP-WSDL/java/cxf/src/test/resources/
+share/examples/p5-SOAP-WSDL/java/cxf/src/test/resources/test-context.xml
+share/examples/p5-SOAP-WSDL/lib/
+share/examples/p5-SOAP-WSDL/lib/MyElements/
+share/examples/p5-SOAP-WSDL/lib/MyElements/CountCookies.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/CountCookiesResponse.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/GenerateBarCode.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/GenerateBarCodeResponse.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/GetCitiesByCountry.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/GetCitiesByCountryResponse.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/GetFortuneCookie.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/GetFortuneCookieResponse.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/GetSpecificCookie.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/GetSpecificCookieResponse.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/GetWeather.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/GetWeatherResponse.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/ListPerson.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/ListPersonResponse.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/int.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/readNodeCount.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/readNodeCountResponse.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/sayHello.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/sayHelloResponse.pm
+share/examples/p5-SOAP-WSDL/lib/MyElements/string.pm
+share/examples/p5-SOAP-WSDL/lib/MyInterfaces/
+share/examples/p5-SOAP-WSDL/lib/MyInterfaces/BarCode/
+share/examples/p5-SOAP-WSDL/lib/MyInterfaces/BarCode/BarCodeSoap.pm
+share/examples/p5-SOAP-WSDL/lib/MyInterfaces/FullerData_x0020_Fortune_x0020_Cookie/
+share/examples/p5-SOAP-WSDL/lib/MyInterfaces/FullerData_x0020_Fortune_x0020_Cookie/FullerData_x0020_Fortune_x0020_CookieSoap.pm
+share/examples/p5-SOAP-WSDL/lib/MyInterfaces/GlobalWeather/
+share/examples/p5-SOAP-WSDL/lib/MyInterfaces/GlobalWeather/GlobalWeatherSoap.pm
+share/examples/p5-SOAP-WSDL/lib/MyInterfaces/HelloWorld/
+share/examples/p5-SOAP-WSDL/lib/MyInterfaces/HelloWorld/HelloWorldSoap.pm
+share/examples/p5-SOAP-WSDL/lib/MyInterfaces/TestService/
+share/examples/p5-SOAP-WSDL/lib/MyInterfaces/TestService/TestPort.pm
+share/examples/p5-SOAP-WSDL/lib/MyServer/
+share/examples/p5-SOAP-WSDL/lib/MyServer/HelloWorld/
+share/examples/p5-SOAP-WSDL/lib/MyServer/HelloWorld/HelloWorldSoap.pm
+share/examples/p5-SOAP-WSDL/lib/MyServer/TestService/
+share/examples/p5-SOAP-WSDL/lib/MyServer/TestService/TestPort.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypemaps/
+share/examples/p5-SOAP-WSDL/lib/MyTypemaps/BarCode.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypemaps/FullerData_x0020_Fortune_x0020_Cookie.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypemaps/GlobalWeather.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypemaps/HelloWorld.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypemaps/TestService.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypes/
+share/examples/p5-SOAP-WSDL/lib/MyTypes/Address.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypes/ArrayOfContract.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypes/ArrayOfPerson.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypes/BarCodeData.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypes/BarcodeOption.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypes/BarcodeType.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypes/CheckSumMethod.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypes/Contract.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypes/ImageFormats.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypes/Person.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypes/PersonID.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypes/PhoneNumber.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypes/ShowTextPosition.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypes/test2.pm
+share/examples/p5-SOAP-WSDL/lib/MyTypes/testExtended.pm
+share/examples/p5-SOAP-WSDL/person.pl
+share/examples/p5-SOAP-WSDL/person_compile.pl
+share/examples/p5-SOAP-WSDL/server/
+share/examples/p5-SOAP-WSDL/server/hello_simple.pl
+share/examples/p5-SOAP-WSDL/visitor/
+share/examples/p5-SOAP-WSDL/visitor/visitor.pl
+share/examples/p5-SOAP-WSDL/weather.pl
+share/examples/p5-SOAP-WSDL/weather_wsdl.pl
+share/examples/p5-SOAP-WSDL/wsdl/
+share/examples/p5-SOAP-WSDL/wsdl/11_helloworld.wsdl
+share/examples/p5-SOAP-WSDL/wsdl/FortuneCookie.xml
+share/examples/p5-SOAP-WSDL/wsdl/Person.wsdl
+share/examples/p5-SOAP-WSDL/wsdl/genericbarcode.xml
+share/examples/p5-SOAP-WSDL/wsdl/globalweather.xml
+share/examples/p5-SOAP-WSDL/wsdl/person.xml
