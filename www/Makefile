@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.485 2010/12/22 18:39:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.486 2010/12/22 20:26:04 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -277,6 +277,7 @@
      SUBDIR += p5-Rose-URI
      SUBDIR += p5-SCGI
      SUBDIR += p5-SOAP-Lite
+     SUBDIR += p5-SOAP-WSDL
      SUBDIR += p5-Test-HTTP-Server-Simple
      SUBDIR += p5-URI
      SUBDIR += p5-URI-Fetch
