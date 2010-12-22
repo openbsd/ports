@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/22 18:51:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2010/12/22 20:24:57 jasper Exp $
 
 COMMENT=	perl tools for bioinformatics
 
 DISTNAME=	BioPerl-1.6.1
 PKGNAME=	${DISTNAME:L}	# No p5-prefix here.
-REVISION=	0
+REVISION=	1
 CATEGORIES=	biology
 
 HOMEPAGE=	http://bioperl.org/
@@ -27,6 +27,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	biology/AcePerl \
 		databases/p5-DBD-mysql \
 		converters/p5-Convert-Binary-C \
+		devel/p5-Algorithm-Munkres \
 		devel/p5-Array-Compare \
 		devel/p5-Class-AutoClass \
 		devel/p5-Clone \
@@ -45,6 +46,7 @@ RUN_DEPENDS=	biology/AcePerl \
 		misc/p5-Spreadsheet-WriteExcel \
 		textproc/p5-XML-DOM \
 		textproc/p5-Libxml \
+		textproc/p5-XML-DOM-XPath \
 		textproc/p5-XML-Parser \
 		textproc/p5-XML-SAX-Writer \
 		textproc/p5-XML-Simple \
@@ -58,10 +60,8 @@ RUN_DEPENDS=	biology/AcePerl \
 REGRESS_DEPENDS=${RUN_DEPENDS}
 
 # Optional (not ported) dependencies:
-# Algorithm-Munkres
 # Postscript-TextBlock
 # Tie-Cacher
-# XML-Dom-XPath
 
 CONFIGURE_ENV+= 	PERL_MM_USE_DEFAULT=Yes
 
