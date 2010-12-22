@@ -1,0 +1,4 @@
+Class::Std::Fast allows you to use the beautiful API of Class::Std in a
+faster way than Class::Std does.  You can get the object's ident via
+scalarifiyng your object.  Getting the objects ident is still possible
+via the ident method, but it's faster to scalarify your object.
