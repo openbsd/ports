@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/16 12:05:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/22 18:51:49 jasper Exp $
 
 COMMENT=	perl tools for bioinformatics
 
 DISTNAME=	BioPerl-1.6.1
 PKGNAME=	${DISTNAME:L}	# No p5-prefix here.
+REVISION=	0
 CATEGORIES=	biology
 
 HOMEPAGE=	http://bioperl.org/
@@ -40,6 +41,8 @@ RUN_DEPENDS=	biology/AcePerl \
 		graphics/p5-GD-SVG \
 		graphics/p5-SVG-Graph \
 		math/p5-GraphViz \
+		misc/p5-Spreadsheet-ParseExcel \
+		misc/p5-Spreadsheet-WriteExcel \
 		textproc/p5-XML-DOM \
 		textproc/p5-Libxml \
 		textproc/p5-XML-Parser \
@@ -57,7 +60,6 @@ REGRESS_DEPENDS=${RUN_DEPENDS}
 # Optional (not ported) dependencies:
 # Algorithm-Munkres
 # Postscript-TextBlock
-# Spreadsheet-ParseExcel
 # Tie-Cacher
 # XML-Dom-XPath
 
