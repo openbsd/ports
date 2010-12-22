@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/22 09:20:34 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/22 06:50:30 espie Exp $
 
 COMMENT-main =	tilt the floor to roll a ball through an obstacle course
 COMMENT-data =	data for Neverball/Neverputt
@@ -8,6 +8,7 @@ DISTNAME =	neverball-$V
 PKGNAME-main =	neverball-$V
 PKGNAME-data =	neverball-data-$V
 EPOCH =		0
+REVISION-main = 0
 
 CATEGORIES =	games x11
 
@@ -37,7 +38,7 @@ LIB_DEPENDS-main =	audio/libogg \
 LIB_DEPENDS-data =
 WANTLIB-data =
 
-RUN_DEPENDS-main =	${PKGNAME-data}:${BUILD_PKGPATH},-data
+RUN_DEPENDS-main =	${FULLPKGNAME-data}:${BUILD_PKGPATH},-data
 
 MODULES =	devel/gettext
 
