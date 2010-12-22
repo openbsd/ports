@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2010/11/24 18:07:45 sebastia Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2010/12/22 09:21:44 sebastia Exp $
 @bin bin/connect-EOAdaptor
 @bin bin/load-EOAdaptor
 @bin bin/wod
@@ -472,21 +472,21 @@ lib/sope-4.9/products/SoCore.sxp/Resources/
 lib/sope-4.9/products/SoCore.sxp/Resources/Info-gnustep.plist
 lib/sope-4.9/products/SoCore.sxp/Resources/Version
 lib/sope-4.9/products/SoCore.sxp/Resources/product.plist
-lib/sope-4.9/products/SoCore.sxp/SoCore.so
+@bin lib/sope-4.9/products/SoCore.sxp/SoCore
 lib/sope-4.9/products/SoCore.sxp/stamp.make
 lib/sope-4.9/products/SoOFS.sxp/
 lib/sope-4.9/products/SoOFS.sxp/Resources/
 lib/sope-4.9/products/SoOFS.sxp/Resources/Info-gnustep.plist
 lib/sope-4.9/products/SoOFS.sxp/Resources/Version
 lib/sope-4.9/products/SoOFS.sxp/Resources/product.plist
-lib/sope-4.9/products/SoOFS.sxp/SoOFS.so
+@bin lib/sope-4.9/products/SoOFS.sxp/SoOFS
 lib/sope-4.9/products/SoOFS.sxp/stamp.make
 lib/sope-4.9/saxdrivers/
 lib/sope-4.9/saxdrivers/STXSaxDriver.sax/
 lib/sope-4.9/saxdrivers/STXSaxDriver.sax/Resources/
 lib/sope-4.9/saxdrivers/STXSaxDriver.sax/Resources/Info-gnustep.plist
 lib/sope-4.9/saxdrivers/STXSaxDriver.sax/Resources/Version
-lib/sope-4.9/saxdrivers/STXSaxDriver.sax/STXSaxDriver.so
+@bin lib/sope-4.9/saxdrivers/STXSaxDriver.sax/STXSaxDriver
 lib/sope-4.9/saxdrivers/STXSaxDriver.sax/bundle-info.plist
 lib/sope-4.9/saxdrivers/STXSaxDriver.sax/stamp.make
 lib/sope-4.9/saxdrivers/libxmlSAXDriver.sax/
@@ -495,25 +495,25 @@ lib/sope-4.9/saxdrivers/libxmlSAXDriver.sax/Resources/Info-gnustep.plist
 lib/sope-4.9/saxdrivers/libxmlSAXDriver.sax/Resources/Version
 lib/sope-4.9/saxdrivers/libxmlSAXDriver.sax/Resources/bundle-info.plist
 lib/sope-4.9/saxdrivers/libxmlSAXDriver.sax/bundle-info.plist
-lib/sope-4.9/saxdrivers/libxmlSAXDriver.sax/libxmlSAXDriver.so
+@bin lib/sope-4.9/saxdrivers/libxmlSAXDriver.sax/libxmlSAXDriver
 lib/sope-4.9/saxdrivers/libxmlSAXDriver.sax/stamp.make
 lib/sope-4.9/wox-builders/
 lib/sope-4.9/wox-builders/WEExtensions.wox/
 lib/sope-4.9/wox-builders/WEExtensions.wox/Resources/
 lib/sope-4.9/wox-builders/WEExtensions.wox/Resources/Info-gnustep.plist
-lib/sope-4.9/wox-builders/WEExtensions.wox/WEExtensions.so
+@bin lib/sope-4.9/wox-builders/WEExtensions.wox/WEExtensions
 lib/sope-4.9/wox-builders/WEExtensions.wox/bundle-info.plist
 lib/sope-4.9/wox-builders/WEExtensions.wox/stamp.make
 lib/sope-4.9/wox-builders/WEPrototype.wox/
 lib/sope-4.9/wox-builders/WEPrototype.wox/Resources/
 lib/sope-4.9/wox-builders/WEPrototype.wox/Resources/Info-gnustep.plist
-lib/sope-4.9/wox-builders/WEPrototype.wox/WEPrototype.so
+@bin lib/sope-4.9/wox-builders/WEPrototype.wox/WEPrototype
 lib/sope-4.9/wox-builders/WEPrototype.wox/bundle-info.plist
 lib/sope-4.9/wox-builders/WEPrototype.wox/stamp.make
 lib/sope-4.9/wox-builders/WOExtensions.wox/
 lib/sope-4.9/wox-builders/WOExtensions.wox/Resources/
 lib/sope-4.9/wox-builders/WOExtensions.wox/Resources/Info-gnustep.plist
-lib/sope-4.9/wox-builders/WOExtensions.wox/WOExtensions.so
+@bin lib/sope-4.9/wox-builders/WOExtensions.wox/WOExtensions
 lib/sope-4.9/wox-builders/WOExtensions.wox/bundle-info.plist
 lib/sope-4.9/wox-builders/WOExtensions.wox/stamp.make
 sbin/${MODAPACHE_ENABLE}
