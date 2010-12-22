@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/12/19 22:03:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2010/12/22 14:53:26 espie Exp $
 
 COMMENT=	small and fast window manager
 
@@ -23,7 +23,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=icewm/}
 
 MODULES=	devel/gettext
 
-# XXX: x11/gtk+2 depends on gdk-pixbuf2...yes pkg_add can't find the libs?
+# XXX LIB_DEPENDS are only checked directly. Indirect dependencies are not
+# enough for a @depends line
 LIB_DEPENDS=	graphics/gdk-pixbuf2 \
 		x11/gtk+2
 
