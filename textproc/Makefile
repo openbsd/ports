@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.311 2010/12/20 18:52:03 jeremy Exp $
+# $OpenBSD: Makefile,v 1.312 2010/12/22 20:16:35 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -195,6 +195,7 @@
      SUBDIR += p5-XML-AutoWriter
      SUBDIR += p5-XML-Checker
      SUBDIR += p5-XML-DOM
+     SUBDIR += p5-XML-DOM-XPath
      SUBDIR += p5-XML-Dumper
      SUBDIR += p5-XML-Elemental
      SUBDIR += p5-XML-Filter-BufferText
