@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2010/12/22 18:38:03 jasper Exp $
+
+Somehow the installation directory doesn't get propagated correctly
+and configure bails out.
+
+--- configure.orig	Sat Sep 25 14:42:14 2010
++++ configure	Tue Dec 21 15:18:52 2010
+@@ -2230,7 +2230,7 @@ $as_echo "no" >&6; }
+ fi
+ 
+ 
+-ERLBINDIR=`dirname "$ERL"` ; ERLBINDIR=`dirname "$ERLBINDIR"`/lib/erlang/bin
++ERLBINDIR=${LOCALBASE}/lib/erlang/bin
+ 
+ 
+ 
+@@ -2289,7 +2289,7 @@ fi
+ 
+ 
+ 
+-ERLDIR=`"${ERL}" -noshell -eval 'io:format("~s",[code:root_dir()]), erlang:halt().'`
++ERLDIR=${LOCALBASE}/lib/erlang/
+ ERL_DLL_LIB="${ERLDIR}/usr/lib/erl_dll.lib"
+ 
+ 

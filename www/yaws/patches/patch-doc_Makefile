@@ -1,0 +1,25 @@
+$OpenBSD: patch-doc_Makefile,v 1.1.1.1 2010/12/22 18:38:03 jasper Exp $
+
+Only build and install the postscript file, as generating the
+pdf file make ghostscript unhappy.
+
+--- doc/Makefile.orig	Tue Dec 21 16:03:07 2010
++++ doc/Makefile	Tue Dec 21 16:03:23 2010
+@@ -8,7 +8,7 @@ IMG_PDF = $(IMG_EPS:.eps=.pdf)
+ all debug:	
+ 	echo "To build the docs, please use make docs before doing make install"
+ 
+-docs:	check yaws.ps yaws.pdf
++docs:	yaws.ps# yaws.pdf
+ 
+ check:
+ 	@if [ -z "$(DVIPS)" ]; then \
+@@ -43,6 +43,6 @@ clean:
+ 	rm  -f *.ps *.dvi *.log *.aux *.pdf *.toc *.beam 2> /dev/null || true
+ 
+ install:
+-	-install -d $(DESTDIR)$(PREFIX)/share/doc/yaws-$(YAWS_VSN)
+-	-cp yaws.pdf $(DESTDIR)$(PREFIX)/share/doc/yaws-$(YAWS_VSN)
++	-install -d $(DESTDIR)$(PREFIX)/share/doc/yaws/
++	-cp yaws.ps $(DESTDIR)$(PREFIX)/share/doc/yaws/
+  

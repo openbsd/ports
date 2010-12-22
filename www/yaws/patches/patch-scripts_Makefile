@@ -1,0 +1,42 @@
+$OpenBSD: patch-scripts_Makefile,v 1.1.1.1 2010/12/22 18:38:03 jasper Exp $
+
+- Set the correct path for the logging directory in the config file.
+- Don't set the hostname of the machine the package was built on.
+- Install the config files to share/examples/yaws/ and we'll
+  @sample them later to the right location.
+
+--- scripts/Makefile.orig	Sat Sep 25 14:41:31 2010
++++ scripts/Makefile	Tue Dec 21 19:42:53 2010
+@@ -25,7 +25,7 @@ local_install:	../bin/yaws
+ 	cat yaws.conf.template | \
+ 		./Subst %yawsdir% "`pwd`/.."  | \
+ 		./Subst %logdir% $$HOME/yaws_logs  | \
+-		./Subst %host% `hostname`  | \
++		./Subst %host% `FULL_HOSTNAME_HERE`  | \
+ 		./Subst %port% 8000  | \
+ 		./Subst %vardir% "$(VARDIR)"  | \
+ 		./Subst %docroot% `pwd`/../www  | \
+@@ -41,7 +41,7 @@ yaws.conf:
+ 	@echo PREFIX is $(PREFIX)
+ 	cat yaws.conf.template | \
+ 		./Subst %yawsdir% "$(PREFIX)/lib/yaws"  | \
+-		./Subst %logdir% "$(PREFIX)/var/log/yaws"  | \
++		./Subst %logdir% "/var/log/yaws"  | \
+ 		./Subst %vardir% "$(VARDIR)"  | \
+ 		./Subst %host% `hostname`  | \
+ 		./Subst %port% 80  | \
+@@ -62,9 +62,9 @@ install:	.install
+ 		then echo "Keeping old config file "; \
+ 		cp yaws.conf $(DESTDIR)$(ETCDIR)/yaws/yaws.conf.template; \
+ 	else \
+-		echo "Installing $(DESTDIR)$(ETCDIR)/yaws/yaws.conf"; \
+-		mkdir -p $(DESTDIR)$(ETCDIR)/yaws; \
+-		cp yaws.conf $(DESTDIR)$(ETCDIR)/yaws/yaws.conf; \
++		echo "Installing $(DESTDIR)$(PREFIX)/share/examples/yaws/yaws.conf"; \
++		mkdir -p $(DESTDIR)$(PREFIX)/share/examples/yaws; \
++		cp yaws.conf $(DESTDIR)$(PREFIX)/share/examples/yaws/yaws.conf; \
+ 	fi
+-	@cp ../ssl/yaws-cert.pem $(DESTDIR)$(ETCDIR)/yaws
+-	@cp ../ssl/yaws-key.pem $(DESTDIR)$(ETCDIR)/yaws
++	@cp ../ssl/yaws-cert.pem $(DESTDIR)$(PREFIX)/share/examples/yaws
++	@cp ../ssl/yaws-key.pem $(DESTDIR)$(PREFIX)/share/examples/yaws

@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_mk_in,v 1.1.1.1 2010/12/22 18:38:03 jasper Exp $
+--- include.mk.in.orig	Tue Dec 21 15:38:41 2010
++++ include.mk.in	Tue Dec 21 15:38:54 2010
+@@ -4,7 +4,7 @@
+ PREFIX             = @prefix@
+ prefix             = ${PREFIX}
+ ETCDIR             = @sysconfdir@
+-VARDIR             = @localstatedir@
++VARDIR             = /var
+ 
+ DVILATEX = @DVILATEX@
+ PDFLATEX = @PDFLATEX@
