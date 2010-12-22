@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/21 09:02:15 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/12/22 12:01:50 sebastia Exp $
 include/garmin/
 include/garmin/IDevice.h
 lib/qlandkartegt/
@@ -29,5 +29,4 @@ lib/qlandkartegt/libGPSMap76Cx.so
 lib/qlandkartegt/libGPSMap76S.so
 lib/qlandkartegt/libQuest.so
 lib/qlandkartegt/libRino120.so
-lib/qlandkartegt/libgarmin.a
 lib/qlandkartegt/libwhatGarmin.so
