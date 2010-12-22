@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/12/21 18:17:27 kili Exp $
+# $OpenBSD: Makefile,v 1.31 2010/12/22 19:55:00 sthen Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
@@ -34,7 +34,8 @@ RUN_DEPENDS=	databases/py-sqlite2 \
 		clearsilver-*-python:www/clearsilver,python \
 		www/py-genshi>=0.6
 
-BUILD_DEPENDS=	devel/py-babel
+BUILD_DEPENDS=	devel/py-babel \
+		www/py-genshi>=0.6
 
 do-regress:
 	@cd ${WRKSRC} && PYTHONPATH=. ${MODPY_BIN} ./trac/test.py
