@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.45 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2010/12/22 22:08:45 jasper Exp $
+
+SHARED_ONLY=	Yes
 
 COMMENT=	graphics library for GNOME
 
 GNOME_PROJECT=	libgnomecanvas
 GNOME_VERSION=	2.30.2
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	gnomecanvas-2        2002.0   # .2001.0
 
