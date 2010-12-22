@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/12/20 07:51:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2010/12/22 07:28:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,6 +17,8 @@ PKGNAME-ldap =	cherokee-ldap-${VERSION}
 PKGNAME-mysql =	cherokee-mysql-${VERSION}
 PKGNAME-geoip =	cherokee-geoip-${VERSION}
 PKGNAME-streaming = cherokee-streaming-${VERSION}
+
+REVISION-main=	0
 
 SHARED_LIBS =	cherokee-base		0.0 \
 		cherokee-client		0.0 \
@@ -109,6 +111,8 @@ MODPY_ADJ_FILES= admin/CTK/CTK-run.pre admin/upgrade_config.py \
 		gitlog2changelog.py po/po_stats.py svnlog2changelog.py \
 		admin/server.py qa/run-tests.py contrib/tracelor.py
 
+LANGUAGES =	en es de nl sv_SE zh_CN fr pt_BR pl ca it gl
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cherokee/main_admin.c
 
@@ -116,5 +120,10 @@ post-install:
 	cd ${PREFIX}/share/cherokee/admin && find . -name "*.py" | \
 		xargs ${MODPY_BIN} ${MODPY_LIBDIR}/py_compile.py
 	touch ${PREFIX}/share/examples/cherokee/blank
+.for i in ${LANGUAGES}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/locale/$i/LC_MESSAGES
+	${INSTALL_DATA} ${WRKSRC}/po/admin/$i.gmo \
+		${PREFIX}/share/locale/$i/LC_MESSAGES/cherokee.mo
+.endfor
 
 .include <bsd.port.mk>

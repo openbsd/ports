@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2010/12/20 07:51:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2010/12/22 07:28:04 ajacoutot Exp $
 @newgroup _cherokee:608
 @newuser _cherokee:608:_cherokee:daemon:Cherokee HTTP Server:/var/empty:/sbin/nologin
 bin/CTK-run
@@ -1317,4 +1317,41 @@ share/examples/cherokee/www/images/powered_by_cherokee.png
 @sample /var/cherokee/images/powered_by_cherokee.png
 share/examples/cherokee/www/index.html
 @sample /var/cherokee/index.html
+share/locale/
+share/locale/ca/
+share/locale/ca/LC_MESSAGES/
+share/locale/ca/LC_MESSAGES/cherokee.mo
+share/locale/de/
+share/locale/de/LC_MESSAGES/
+share/locale/de/LC_MESSAGES/cherokee.mo
+share/locale/en/
+share/locale/en/LC_MESSAGES/
+share/locale/en/LC_MESSAGES/cherokee.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
+share/locale/es/LC_MESSAGES/cherokee.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
+share/locale/fr/LC_MESSAGES/cherokee.mo
+share/locale/gl/
+share/locale/gl/LC_MESSAGES/
+share/locale/gl/LC_MESSAGES/cherokee.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
+share/locale/it/LC_MESSAGES/cherokee.mo
+share/locale/nl/
+share/locale/nl/LC_MESSAGES/
+share/locale/nl/LC_MESSAGES/cherokee.mo
+share/locale/pl/
+share/locale/pl/LC_MESSAGES/
+share/locale/pl/LC_MESSAGES/cherokee.mo
+share/locale/pt_BR/
+share/locale/pt_BR/LC_MESSAGES/
+share/locale/pt_BR/LC_MESSAGES/cherokee.mo
+share/locale/sv_SE/
+share/locale/sv_SE/LC_MESSAGES/
+share/locale/sv_SE/LC_MESSAGES/cherokee.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
+share/locale/zh_CN/LC_MESSAGES/cherokee.mo
 @rcscript ${RCDIR}/cherokee
