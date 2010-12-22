@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/10 17:26:40 sebastia Exp $
+# $OpenBSD: Makefile,v 1.16 2010/12/22 12:22:20 sebastia Exp $
 
      SUBDIR =
      SUBDIR += addresses
@@ -21,6 +21,7 @@
      SUBDIR += projectcenter
      SUBDIR += remotedesk
      SUBDIR += simpleagenda
+     SUBDIR += systempreferences
      SUBDIR += terminal
      SUBDIR += timemon
 
