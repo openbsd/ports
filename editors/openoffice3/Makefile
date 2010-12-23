@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2010/12/17 09:26:03 robert Exp $
+# $OpenBSD: Makefile,v 1.73 2010/12/23 10:21:20 espie Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -8,6 +8,7 @@ COMMENT-java=	optional integration of OpenOffice java features
 
 MR=		3.3
 VERSION=	${MR}.0rc8
+EPOCH = 	0
 RCDATE=		20101214
 DISTNAME=	OOo_${VERSION}
 WRKDIST=	${WRKDIR}/OOO330_m18
@@ -23,8 +24,8 @@ HOMEPAGE=	http://www.openoffice.org/
 MASTER_SITES=	http://www.bsd.hu/~robert/ooo/ \
 		http://vlaai.snt.utwente.nl/pub/software/openoffice/extended/${VERSION}/ \
 		http://vlaai.snt.utwente.nl/pub/software/openoffice/stable/${VERSION}/ \
-		http://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Sources/ \
 		http://humppa.hu/ooo/ \
+		http://ftp.linux.cz/pub/localization/OpenOffice.org/devel/build/Sources/ \
 		ftp://ftp.ussg.iu.edu/pub/openoffice/stable/${VERSION}/ \
 		ftp://sunsite.informatik.rwth-aachen.de/pub/mirror/OpenOffice/stable/${VERSION}/ \
 		ftp://ftp.tu-chemnitz.de/pub/openoffice/stable/${VERSION}/ \
