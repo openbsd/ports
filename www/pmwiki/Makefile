@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/23 13:06:50 jasper Exp $
 
 COMMENT=	wiki-based system for collaborative creation of websites
 
-DISTNAME=	pmwiki-2.1.27
-REVISION=	0
+DISTNAME=	pmwiki-2.2.21
 EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	www
 HOMEPAGE=	http://pmwiki.org/
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

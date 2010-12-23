@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/11/14 10:44:11 robert Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/12/23 13:06:51 jasper Exp $
 @group daemon
 pmwiki/
 pmwiki/README.txt
@@ -62,8 +62,9 @@ pmwiki/scripts/
 pmwiki/scripts/.htaccess
 pmwiki/scripts/author.php
 pmwiki/scripts/authuser.php
+pmwiki/scripts/blocklist.php
 pmwiki/scripts/caches.php
-pmwiki/scripts/compat1x.php
+pmwiki/scripts/creole.php
 pmwiki/scripts/crypt.php
 pmwiki/scripts/diag.php
 pmwiki/scripts/draft.php
@@ -72,7 +73,7 @@ pmwiki/scripts/forms.php
 pmwiki/scripts/guiedit.php
 pmwiki/scripts/httpauth.php
 pmwiki/scripts/intermap.txt
-pmwiki/scripts/mailposts.php
+pmwiki/scripts/markupexpr.php
 pmwiki/scripts/notify.php
 pmwiki/scripts/pagelist.php
 pmwiki/scripts/pagerev.php
@@ -87,19 +88,25 @@ pmwiki/scripts/stdconfig.php
 pmwiki/scripts/stdmarkup.php
 pmwiki/scripts/trails.php
 pmwiki/scripts/transition.php
+pmwiki/scripts/upgrades.php
 pmwiki/scripts/upload.php
 pmwiki/scripts/urlapprove.php
 pmwiki/scripts/vardoc.php
 pmwiki/scripts/version.php
 pmwiki/scripts/wikistyles.php
+pmwiki/scripts/wikiwords.php
+pmwiki/scripts/xlpage-iso-8859-13.php
+pmwiki/scripts/xlpage-iso-8859-2.php
+pmwiki/scripts/xlpage-iso-8859-9.php
 pmwiki/scripts/xlpage-utf-8.php
-@group www
 @mode 775
+@group www
 pmwiki/uploads/
 pmwiki/wiki.d/
-@group daemon
 @mode
+@group daemon
 pmwiki/wikilib.d/
+pmwiki/wikilib.d/Category.GroupFooter
 pmwiki/wikilib.d/Main.HomePage
 pmwiki/wikilib.d/Main.WikiSandbox
 pmwiki/wikilib.d/PmWiki.AccessKeys
@@ -109,9 +116,9 @@ pmwiki/wikilib.d/PmWiki.AvailableActions
 pmwiki/wikilib.d/PmWiki.BackupAndRestore
 pmwiki/wikilib.d/PmWiki.BasicEditing
 pmwiki/wikilib.d/PmWiki.BasicVariables
+pmwiki/wikilib.d/PmWiki.Blocklist
 pmwiki/wikilib.d/PmWiki.Categories
 pmwiki/wikilib.d/PmWiki.ChangeLog
-pmwiki/wikilib.d/PmWiki.ChangesFromPmWiki1
 pmwiki/wikilib.d/PmWiki.ConditionalMarkup
 pmwiki/wikilib.d/PmWiki.Contributors
 pmwiki/wikilib.d/PmWiki.CreatingNewPages
@@ -122,12 +129,16 @@ pmwiki/wikilib.d/PmWiki.DebugVariables
 pmwiki/wikilib.d/PmWiki.DeletingPages
 pmwiki/wikilib.d/PmWiki.DesignNotes
 pmwiki/wikilib.d/PmWiki.DocumentationIndex
+pmwiki/wikilib.d/PmWiki.Drafts
 pmwiki/wikilib.d/PmWiki.EditVariables
 pmwiki/wikilib.d/PmWiki.FAQ
 pmwiki/wikilib.d/PmWiki.FilePermissions
 pmwiki/wikilib.d/PmWiki.FmtPageName
+pmwiki/wikilib.d/PmWiki.Forms
 pmwiki/wikilib.d/PmWiki.Functions
 pmwiki/wikilib.d/PmWiki.Glossary
+pmwiki/wikilib.d/PmWiki.GroupCustomizations
+pmwiki/wikilib.d/PmWiki.GroupFooter
 pmwiki/wikilib.d/PmWiki.GroupHeader
 pmwiki/wikilib.d/PmWiki.GroupHeaders
 pmwiki/wikilib.d/PmWiki.I18nVariables
@@ -137,19 +148,22 @@ pmwiki/wikilib.d/PmWiki.InitialSetupTasks
 pmwiki/wikilib.d/PmWiki.Installation
 pmwiki/wikilib.d/PmWiki.InterMap
 pmwiki/wikilib.d/PmWiki.Internationalizations
+pmwiki/wikilib.d/PmWiki.Introduction
 pmwiki/wikilib.d/PmWiki.LayoutVariables
 pmwiki/wikilib.d/PmWiki.LinkVariables
 pmwiki/wikilib.d/PmWiki.Links
 pmwiki/wikilib.d/PmWiki.LocalCustomizations
-pmwiki/wikilib.d/PmWiki.MailPosts
 pmwiki/wikilib.d/PmWiki.MailingLists
+pmwiki/wikilib.d/PmWiki.MarkupExpressions
 pmwiki/wikilib.d/PmWiki.MarkupMasterIndex
 pmwiki/wikilib.d/PmWiki.Notify
 pmwiki/wikilib.d/PmWiki.OtherVariables
 pmwiki/wikilib.d/PmWiki.PageDirectives
 pmwiki/wikilib.d/PmWiki.PageFileFormat
 pmwiki/wikilib.d/PmWiki.PageHistory
+pmwiki/wikilib.d/PmWiki.PageListTemplates
 pmwiki/wikilib.d/PmWiki.PageLists
+pmwiki/wikilib.d/PmWiki.PageTextVariables
 pmwiki/wikilib.d/PmWiki.PageVariables
 pmwiki/wikilib.d/PmWiki.PagelistVariables
 pmwiki/wikilib.d/PmWiki.Passwords
@@ -162,9 +176,11 @@ pmwiki/wikilib.d/PmWiki.PmWikiPhilosophy
 pmwiki/wikilib.d/PmWiki.RefCount
 pmwiki/wikilib.d/PmWiki.ReleaseNotes
 pmwiki/wikilib.d/PmWiki.Requirements
+pmwiki/wikilib.d/PmWiki.Search
 pmwiki/wikilib.d/PmWiki.Security
 pmwiki/wikilib.d/PmWiki.SecurityVariables
 pmwiki/wikilib.d/PmWiki.SimultaneousEdits
+pmwiki/wikilib.d/PmWiki.SitePageActions
 pmwiki/wikilib.d/PmWiki.SitePreferences
 pmwiki/wikilib.d/PmWiki.SkinTemplates
 pmwiki/wikilib.d/PmWiki.Skins
@@ -173,6 +189,7 @@ pmwiki/wikilib.d/PmWiki.TableDirectives
 pmwiki/wikilib.d/PmWiki.Tables
 pmwiki/wikilib.d/PmWiki.TextFormattingRules
 pmwiki/wikilib.d/PmWiki.Troubleshooting
+pmwiki/wikilib.d/PmWiki.UTF-8
 pmwiki/wikilib.d/PmWiki.Upgrades
 pmwiki/wikilib.d/PmWiki.UpgradingFromPmWiki1
 pmwiki/wikilib.d/PmWiki.UploadVariables
@@ -180,6 +197,7 @@ pmwiki/wikilib.d/PmWiki.Uploads
 pmwiki/wikilib.d/PmWiki.UploadsAdmin
 pmwiki/wikilib.d/PmWiki.UrlApprovals
 pmwiki/wikilib.d/PmWiki.Variables
+pmwiki/wikilib.d/PmWiki.Version
 pmwiki/wikilib.d/PmWiki.WebFeeds
 pmwiki/wikilib.d/PmWiki.WikiAdministrator
 pmwiki/wikilib.d/PmWiki.WikiFarmTerminology
@@ -208,3 +226,8 @@ pmwiki/wikilib.d/Site.Search
 pmwiki/wikilib.d/Site.SideBar
 pmwiki/wikilib.d/Site.Site
 pmwiki/wikilib.d/Site.UploadQuickReference
+pmwiki/wikilib.d/SiteAdmin.AuthList
+pmwiki/wikilib.d/SiteAdmin.AuthUser
+pmwiki/wikilib.d/SiteAdmin.GroupAttributes
+pmwiki/wikilib.d/SiteAdmin.SiteAdmin
+pmwiki/wikilib.d/SiteAdmin.Status

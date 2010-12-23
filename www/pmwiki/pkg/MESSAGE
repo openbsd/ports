@@ -6,3 +6,6 @@ You should point this to the DocumentRoot of your web-server:
 
 You can ensure you have a working install by accessing:
 http://<localhost>/pmwiki/pmwiki.php
+
+If you are doing an upgrade from a previous version, please take
+a moment to read http://www.pmwiki.org/wiki/PmWiki/ReleaseNotes .
