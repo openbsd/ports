@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_rtex_framework_rails_rb,v 1.1.1.1 2010/12/23 13:58:04 claudio Exp $
+--- lib/rtex/framework/rails.rb.orig	Thu Jan  1 01:00:00 1970
++++ lib/rtex/framework/rails.rb	Mon Oct 25 17:05:20 2010
+@@ -47,7 +47,7 @@ module RTeX
+               serve_file.close
+             end
+           end
+-          
++          return result
+         end
+       end
+       

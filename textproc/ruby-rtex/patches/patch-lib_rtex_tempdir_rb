@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_rtex_tempdir_rb,v 1.1.1.1 2010/12/23 13:58:04 claudio Exp $
+--- lib/rtex/tempdir.rb.orig	Thu Jan  1 01:00:00 1970
++++ lib/rtex/tempdir.rb	Sun Dec 19 20:05:25 2010
+@@ -40,13 +40,15 @@ module RTeX
+     # a poor-man's UUID; timestamp, thread & object hashes
+     # Note: I don't want to add any dependencies (so no UUID library)
+     def uuid
+-      if (result = `uuidgen`.strip rescue nil).empty?
+-        "#{Time.now.to_i}-#{Thread.current.hash}-#{hash}"
+-      else
+-        result
++      begin
++	result = `uuidgen`.strip
++	raise if result == ""
++      rescue
++        result = "#{Time.now.to_i}-#{Thread.current.hash}-#{hash}"
+       end
++      return result
+     end
+     
+   end
+   
+-end
+\ No newline at end of file
++end

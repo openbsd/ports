@@ -1,0 +1,5 @@
+RTeX is a Ruby library (and web framework plugin) used to generate
+PDF documents on-the-fly using the LaTeX typesetting system.
+
+RTeX is a general-purpose Ruby library that happens to also act as Rails
+plugin.
