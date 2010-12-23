@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.312 2010/12/22 20:16:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.313 2010/12/23 13:59:48 claudio Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -291,6 +291,7 @@
      SUBDIR += ruby-rdiscount
      SUBDIR += ruby-redcloth
      SUBDIR += ruby-rss
+     SUBDIR += ruby-rtex
      SUBDIR += ruby-rubigen
      SUBDIR += ruby-syntax
      SUBDIR += ruby-templater
