@@ -1,0 +1,8 @@
+PaperTrail lets you track changes to your models' data.  It's good for auditing
+or versioning.  You can see how a model looked at any stage in its lifecycle,
+revert it to any version, and even undelete it after it's been destroyed.
+
+* Stores every create, update and destroy.
+* Does not store updates which don't change anything
+* Allows you to get at every version, including the original
+* Stores everything in a single database table
