@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/23 10:46:10 jasper Exp $
 
 COMMENT=	cryptographic framework for the Objective-ML language
 CATEGORIES=	security
 
 DISTNAME=	cryptokit-1.3
 PKGNAME=	${DISTNAME}
-REVISION =	2
+REVISION =	3
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
@@ -33,6 +33,7 @@ pre-install:
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOC_DIR}
-	${LOCALBASE}/bin/ocamldoc -html -I ${WRKSRC} -d ${DOC_DIR} ${WRKSRC}/cryptokit.mli
+	${LOCALBASE}/bin/ocamldoc -html -I ${WRKSRC} -d ${DOC_DIR} \
+		${WRKSRC}/cryptokit.mli
 
 .include <bsd.port.mk>
