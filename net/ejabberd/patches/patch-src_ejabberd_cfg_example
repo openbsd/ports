@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ejabberd_cfg_example,v 1.3 2010/04/11 10:07:10 sthen Exp $
+$OpenBSD: patch-src_ejabberd_cfg_example,v 1.4 2010/12/23 22:54:39 jasper Exp $
 --- src/ejabberd.cfg.example.orig	Fri Mar 12 11:40:41 2010
 +++ src/ejabberd.cfg.example	Sat Mar 13 12:41:08 2010
 @@ -115,7 +115,7 @@
@@ -30,11 +30,11 @@ $OpenBSD: patch-src_ejabberd_cfg_example,v 1.3 2010/04/11 10:07:10 sthen Exp $
    {5269, ejabberd_s2s_in, [
  			   {shaper, s2s_shaper},
 @@ -172,18 +172,18 @@
- %% Allowed values are: true or false.
+ %% Allowed values are: false optional required required_trusted
  %% You must specify a certificate file.
  %%
--%%{s2s_use_starttls, true}.
-+{s2s_use_starttls, true}.
+-%%{s2s_use_starttls, optional}.
++{s2s_use_starttls, optional}.
  
  %%
  %% s2s_certfile: Specify a certificate file.

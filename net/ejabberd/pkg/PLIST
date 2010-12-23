@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/10/28 21:47:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2010/12/23 22:54:39 jasper Exp $
 @newgroup _ejabberd:594
 @newuser _ejabberd:594:_ejabberd:daemon:ejabberd account:/var/db/ejabberd:/bin/sh
 %%SHARED%%
@@ -8,6 +8,8 @@ lib/ejabberd/ebin/ELDAPv3.beam
 lib/ejabberd/ebin/XmppAddr.beam
 lib/ejabberd/ebin/acl.beam
 lib/ejabberd/ebin/adhoc.beam
+lib/ejabberd/ebin/cache_tab.beam
+lib/ejabberd/ebin/cache_tab_sup.beam
 lib/ejabberd/ebin/cyrsasl.beam
 lib/ejabberd/ebin/cyrsasl_anonymous.beam
 lib/ejabberd/ebin/cyrsasl_digest.beam
@@ -108,10 +110,12 @@ lib/ejabberd/ebin/mod_proxy65_stream.beam
 lib/ejabberd/ebin/mod_pubsub.beam
 lib/ejabberd/ebin/mod_pubsub_odbc.beam
 lib/ejabberd/ebin/mod_register.beam
+lib/ejabberd/ebin/mod_register_web.beam
 lib/ejabberd/ebin/mod_roster.beam
 lib/ejabberd/ebin/mod_roster_odbc.beam
 lib/ejabberd/ebin/mod_service_log.beam
 lib/ejabberd/ebin/mod_shared_roster.beam
+lib/ejabberd/ebin/mod_shared_roster_ldap.beam
 lib/ejabberd/ebin/mod_sic.beam
 lib/ejabberd/ebin/mod_stats.beam
 lib/ejabberd/ebin/mod_time.beam
@@ -140,6 +144,7 @@ lib/ejabberd/ebin/nodetree_virtual.beam
 lib/ejabberd/ebin/odbc_queries.beam
 lib/ejabberd/ebin/p1_fsm.beam
 lib/ejabberd/ebin/p1_mnesia.beam
+lib/ejabberd/ebin/pg2_backport.beam
 lib/ejabberd/ebin/pubsub_db_odbc.beam
 lib/ejabberd/ebin/pubsub_index.beam
 lib/ejabberd/ebin/pubsub_subscription.beam
@@ -219,6 +224,10 @@ share/doc/ejabberd/features.html
 share/doc/ejabberd/guide.html
 share/doc/ejabberd/guide.pdf
 share/doc/ejabberd/logo.png
+share/doc/ejabberd/msrl-dit-deep.png
+share/doc/ejabberd/msrl-dit-flat.png
+share/doc/ejabberd/msrl-roster-deep.png
+share/doc/ejabberd/msrl-roster-flat.png
 share/doc/ejabberd/webadmmain.png
 share/doc/ejabberd/webadmmainru.png
 share/doc/ejabberd/yozhikheader.png

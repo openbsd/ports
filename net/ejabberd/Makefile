@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2010/12/23 22:54:39 jasper Exp $
 
 COMMENT=		jabber server written in Erlang
 
-V=			2.1.5
+V=			2.1.6
 DISTNAME=		ejabberd-$V
-REVISION=		4
 
 CATEGORIES=		net
 
@@ -49,7 +48,8 @@ CONFIGURE_ARGS+=	--disable-pam \
 			--enable-ejabberd_zlib \
 			--disable-roster-gateway-workaround \
 			--disable-mssql
-CONFIGURE_ENV=		HOME=${WRKDIST}
+CONFIGURE_ENV=		HOME=${WRKDIST} \
+			ac_cv_header_openssl_md2_h=no
 
 JABBERDUSER=            _ejabberd
 JABBERDGROUP=           _ejabberd
