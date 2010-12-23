@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/23 10:29:52 stephan Exp $
+# $OpenBSD: Makefile,v 1.2 2010/12/23 14:26:40 jasper Exp $
 
 COMMENT =		Ruby interface to LBL pcap library (Metasploit fork)
 
@@ -21,7 +21,6 @@ PERMIT_DISTFILES_FTP =	Yes
 WRKDIST =		${WRKDIR}/pcaprub-msf
 WANTLIB =		pcap 
 MODULES =		lang/ruby
-NO_REGRESS =		yes
 CONFIGURE_STYLE =	ruby extconf
 
 .include <bsd.port.mk>
