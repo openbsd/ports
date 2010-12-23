@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/12/23 13:09:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/12/23 16:36:16 jasper Exp $
 %%SHARED%%
 @bin bin/mtp-albumart
 @bin bin/mtp-albums
@@ -37,7 +37,7 @@ share/doc/libmtp/html/delfile_8c-example.html
 share/doc/libmtp/html/detect_8c-example.html
 share/doc/libmtp/html/device-flags_8h.html
 share/doc/libmtp/html/device-flags_8h_source.html
-share/doc/libmtp/html/dir_b54bfe4838a2f024ee87bdaabe483dbe.html
+@comment share/doc/libmtp/html/dir_b54bfe4838a2f024ee87bdaabe483dbe.html
 share/doc/libmtp/html/dirs.html
 share/doc/libmtp/html/doxygen.css
 share/doc/libmtp/html/doxygen.png
