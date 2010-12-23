@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.880 2010/12/23 13:45:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.881 2010/12/23 14:03:10 claudio Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -991,6 +991,7 @@
      SUBDIR += ruby-needle
      SUBDIR += ruby-ole
      SUBDIR += ruby-open4
+     SUBDIR += ruby-paper_trail
      SUBDIR += ruby-parsetree
      SUBDIR += ruby-polyglot
      SUBDIR += ruby-prof
