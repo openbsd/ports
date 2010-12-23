@@ -1,10 +1,10 @@
-$OpenBSD: patch-tools_g-ir-scanner_in,v 1.2 2010/10/24 13:40:27 jasper Exp $
+$OpenBSD: patch-tools_g-ir-scanner_in,v 1.3 2010/12/23 14:34:49 jasper Exp $
 
 Pickup files from the correct directory.
 
---- tools/g-ir-scanner.in.orig	Tue Sep  7 16:24:51 2010
-+++ tools/g-ir-scanner.in	Thu Sep 30 15:25:34 2010
-@@ -37,7 +37,7 @@ if current_name == 'tools':
+--- tools/g-ir-scanner.in.orig	Fri Nov 12 04:40:03 2010
++++ tools/g-ir-scanner.in	Thu Dec 23 15:21:17 2010
+@@ -35,7 +35,7 @@ if srcdir is not None:
  else:
      # This is a private directory, we don't want to pollute the global
      # namespace.
