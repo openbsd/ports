@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.249 2010/12/09 16:08:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.250 2010/12/23 12:42:27 stephan Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -92,6 +92,7 @@
      SUBDIR += luasec
      SUBDIR += lxnb
      SUBDIR += mcrypt
+     SUBDIR += metasploit
      SUBDIR += mhash
      SUBDIR += nbaudit
      SUBDIR += nessus
