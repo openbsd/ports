@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2010/10/24 19:17:31 steven Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2010/12/23 23:25:25 steven Exp $
 @conflict gaim-*
 @pkgpath net/pidgin
 @bin bin/pidgin
@@ -152,6 +152,9 @@ share/locale/lo/LC_MESSAGES/
 share/locale/lo/LC_MESSAGES/pidgin.mo
 share/locale/lt/LC_MESSAGES/pidgin.mo
 share/locale/mai/LC_MESSAGES/pidgin.mo
+share/locale/mhr/
+share/locale/mhr/LC_MESSAGES/
+share/locale/mhr/LC_MESSAGES/pidgin.mo
 share/locale/mk/LC_MESSAGES/pidgin.mo
 share/locale/mn/LC_MESSAGES/pidgin.mo
 share/locale/mr/LC_MESSAGES/pidgin.mo
@@ -600,6 +603,7 @@ share/pixmaps/pidgin/protocols/
 share/pixmaps/pidgin/protocols/16/
 share/pixmaps/pidgin/protocols/16/aim.png
 share/pixmaps/pidgin/protocols/16/bonjour.png
+share/pixmaps/pidgin/protocols/16/facebook.png
 share/pixmaps/pidgin/protocols/16/gadu-gadu.png
 share/pixmaps/pidgin/protocols/16/google-talk.png
 share/pixmaps/pidgin/protocols/16/icq.png
@@ -618,6 +622,7 @@ share/pixmaps/pidgin/protocols/16/zephyr.png
 share/pixmaps/pidgin/protocols/22/
 share/pixmaps/pidgin/protocols/22/aim.png
 share/pixmaps/pidgin/protocols/22/bonjour.png
+share/pixmaps/pidgin/protocols/22/facebook.png
 share/pixmaps/pidgin/protocols/22/gadu-gadu.png
 share/pixmaps/pidgin/protocols/22/google-talk.png
 share/pixmaps/pidgin/protocols/22/icq.png
@@ -635,6 +640,7 @@ share/pixmaps/pidgin/protocols/22/zephyr.png
 share/pixmaps/pidgin/protocols/48/
 share/pixmaps/pidgin/protocols/48/aim.png
 share/pixmaps/pidgin/protocols/48/bonjour.png
+share/pixmaps/pidgin/protocols/48/facebook.png
 share/pixmaps/pidgin/protocols/48/gadu-gadu.png
 share/pixmaps/pidgin/protocols/48/icq.png
 share/pixmaps/pidgin/protocols/48/irc.png
