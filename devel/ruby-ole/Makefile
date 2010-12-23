@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/23 13:26:41 claudio Exp $
+# $OpenBSD: Makefile,v 1.2 2010/12/23 13:41:05 claudio Exp $
 
-COMMENT =	Provides read/write access to OLE2 structured storage files
+COMMENT =	provides read/write access to OLE2 structured storage files
 
 DISTNAME =	ruby-ole-1.2.11.1
 PKGNAME =	${DISTNAME:S/ruby-//}
@@ -17,5 +17,7 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem
 
 MODRUBY_REGRESS =	rake
+
+RUN_DEPENDS =		${MODRUBY_ICONV_DEPENDS}
 
 .include <bsd.port.mk>
