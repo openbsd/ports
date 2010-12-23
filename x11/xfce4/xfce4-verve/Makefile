@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/11 08:19:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2010/12/23 16:42:33 landry Exp $
 
 COMMENT=	Xfce4 command line panel plugin
 
-XFCE_VERSION=	0.3.5
+XFCE_VERSION=	1.0.0
 XFCE_PLUGIN=	verve
-DISTNAME=	${XFCE_PLUGIN}-plugin-${XFCE_VERSION}
-PKGNAME=	xfce4-${XFCE_PLUGIN}-${XFCE_VERSION}
-REVISION=	9
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -23,6 +20,6 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 png pthread startup-notification-1 xfce4util z \
 		dbus-glib-1 pcre xfcegui4 pthread-stubs xcb execinfo \
-		xcb-atom xcb-aux xcb-event xcb-render xcb-render-util
+		xcb-atom xcb-aux xcb-event xcb-render GL Xxf86vm drm xcb-shm
 
 .include <bsd.port.mk>
