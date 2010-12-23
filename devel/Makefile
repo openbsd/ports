@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.878 2010/12/22 20:24:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.879 2010/12/23 08:56:12 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -328,7 +328,6 @@
      SUBDIR += p5-Algorithm-Diff
      SUBDIR += p5-Algorithm-IncludeExclude
      SUBDIR += p5-Algorithm-Munkres
-     SUBDIR += p5-Algorithm-MDiff
      SUBDIR += p5-Algorithm-MarkovChain
      SUBDIR += p5-Algorithm-Permute
      SUBDIR += p5-Alien-wxWidgets
