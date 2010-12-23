@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_main_C,v 1.2 2010/12/01 07:33:05 dcoppa Exp $
---- src/main.C.orig	Wed Nov  3 22:00:52 2010
-+++ src/main.C	Wed Dec  1 08:18:19 2010
+$OpenBSD: patch-src_main_C,v 1.3 2010/12/23 08:45:57 dcoppa Exp $
+--- src/main.C.orig	Mon Dec 13 17:37:52 2010
++++ src/main.C	Thu Dec 23 09:34:09 2010
 @@ -80,7 +80,7 @@ rxvt_set_locale (const char *locale) NOTHROW
  void
  rxvt_push_locale (const char *locale) NOTHROW
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_main_C,v 1.2 2010/12/01 07:33:05 dcoppa Exp $
    rxvt_set_locale (locale);
  }
  
-@@ -390,14 +390,16 @@ print_x_error (Display *dpy, XErrorEvent *event)
+@@ -402,14 +402,16 @@ print_x_error (Display *dpy, XErrorEvent *event)
      rxvt_warn ("An X Error occurred, trying to continue after report.\n");
      rxvt_warn ("%s:  %s\n", mesg, buffer);
      XGetErrorDatabaseText(dpy, mtype, "MajorCode", "Request Major code %d", mesg, BUFSIZ);
@@ -30,7 +30,7 @@ $OpenBSD: patch-src_main_C,v 1.2 2010/12/01 07:33:05 dcoppa Exp $
      }
      if ((event->error_code == BadWindow) ||
                 (event->error_code == BadPixmap) ||
-@@ -418,11 +420,13 @@ print_x_error (Display *dpy, XErrorEvent *event)
+@@ -430,11 +432,13 @@ print_x_error (Display *dpy, XErrorEvent *event)
          else
              XGetErrorDatabaseText(dpy, mtype, "ResourceID", "ResourceID 0x%x",
                                    mesg, BUFSIZ);
@@ -46,7 +46,7 @@ $OpenBSD: patch-src_main_C,v 1.2 2010/12/01 07:33:05 dcoppa Exp $
  }
  #endif
  
-@@ -705,6 +709,8 @@ rxvt_term::window_calc (unsigned int newwidth, unsigne
+@@ -717,6 +721,8 @@ rxvt_term::window_calc (unsigned int newwidth, unsigne
  
    ncol = width  / fwidth;
    nrow = height / fheight;
@@ -55,7 +55,7 @@ $OpenBSD: patch-src_main_C,v 1.2 2010/12/01 07:33:05 dcoppa Exp $
  }
  
  /*----------------------------------------------------------------------*/
-@@ -950,26 +956,26 @@ rxvt_term::set_colorfgbg ()
+@@ -962,26 +968,26 @@ rxvt_term::set_colorfgbg ()
    const char *xpmb = "";
    char fstr[sizeof ("default") + 1], bstr[sizeof ("default") + 1];
  
@@ -87,7 +87,7 @@ $OpenBSD: patch-src_main_C,v 1.2 2010/12/01 07:33:05 dcoppa Exp $
  }
  
  /*----------------------------------------------------------------------*/
-@@ -1170,8 +1176,8 @@ rxvt_term::IMisRunning ()
+@@ -1182,8 +1188,8 @@ rxvt_term::IMisRunning ()
    /* get current locale modifier */
    if (char *p = XSetLocaleModifiers (0))
      {
@@ -98,7 +98,7 @@ $OpenBSD: patch-src_main_C,v 1.2 2010/12/01 07:33:05 dcoppa Exp $
  
        if (p = strchr (server + 1, '@'))      /* first one only */
          *p = '\0';
-@@ -1400,16 +1406,16 @@ foundpet:
+@@ -1412,16 +1418,16 @@ foundpet:
        char *def_string;
        char pat[512];
  
@@ -125,7 +125,7 @@ $OpenBSD: patch-src_main_C,v 1.2 2010/12/01 07:33:05 dcoppa Exp $
  
        fs = XCreateFontSet (dpy, rs[Rs_imFont] ? rs[Rs_imFont] : pat,
                             &missing_charset_list, &missing_charset_count, &def_string);
-@@ -1548,8 +1554,8 @@ rxvt_term::im_cb ()
+@@ -1560,8 +1566,8 @@ rxvt_term::im_cb ()
          {
            if (*s[i])
              {

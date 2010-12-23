@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_rxvtfont_C,v 1.1 2010/11/25 13:19:36 dcoppa Exp $
---- src/rxvtfont.C.orig	Sun Oct 24 19:52:47 2010
-+++ src/rxvtfont.C	Sun Nov 14 14:23:05 2010
-@@ -682,10 +682,13 @@ replace_field (char **ptr, const char *name, int index
+$OpenBSD: patch-src_rxvtfont_C,v 1.2 2010/12/23 08:45:57 dcoppa Exp $
+--- src/rxvtfont.C.orig	Wed Dec  1 04:55:56 2010
++++ src/rxvtfont.C	Thu Dec 23 09:34:10 2010
+@@ -686,10 +686,13 @@ replace_field (char **ptr, const char *name, int index
    if (slashes >= 13 && (!old || *field == old))
      {
        size_t len = field - name;
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_rxvtfont_C,v 1.1 2010/11/25 13:19:36 dcoppa Exp $
  
        return true;
      }
-@@ -746,8 +749,8 @@ rxvt_font_x11::load (const rxvt_fontprop &prop, bool f
+@@ -750,8 +753,8 @@ rxvt_font_x11::load (const rxvt_fontprop &prop, bool f
          }
      }
  

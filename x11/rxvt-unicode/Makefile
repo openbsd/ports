@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/01 09:22:49 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/23 08:45:57 dcoppa Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
-DISTNAME =	rxvt-unicode-9.09
-REVISION =	0
+DISTNAME =	rxvt-unicode-9.10
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2

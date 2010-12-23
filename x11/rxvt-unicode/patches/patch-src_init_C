@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_init_C,v 1.1 2010/11/25 13:19:35 dcoppa Exp $
---- src/init.C.orig	Sat Oct 16 00:06:26 2010
-+++ src/init.C	Sun Nov 14 14:23:05 2010
+$OpenBSD: patch-src_init_C,v 1.2 2010/12/23 08:45:57 dcoppa Exp $
+--- src/init.C.orig	Fri Dec  3 22:08:19 2010
++++ src/init.C	Thu Dec 23 09:34:09 2010
 @@ -108,7 +108,7 @@ rxvt_network_display (const char *display)
      {
        struct ifreq ifr2;
@@ -30,7 +30,7 @@ $OpenBSD: patch-src_init_C,v 1.1 2010/11/25 13:19:35 dcoppa Exp $
                break;
              }
          }
-@@ -918,11 +919,12 @@ rxvt_term::init_env ()
+@@ -917,11 +918,12 @@ rxvt_term::init_env ()
      rs[Rs_display_name] = val;   /* use broken `:0' value */
  
    i = strlen (val);
@@ -46,7 +46,7 @@ $OpenBSD: patch-src_init_C,v 1.1 2010/11/25 13:19:35 dcoppa Exp $
  
    /* add entries to the environment:
     * @ DISPLAY:   in case we started with -display
-@@ -949,8 +951,9 @@ rxvt_term::init_env ()
+@@ -948,8 +950,9 @@ rxvt_term::init_env ()
  
    if (rs[Rs_term_name] != NULL)
      {
@@ -58,7 +58,7 @@ $OpenBSD: patch-src_init_C,v 1.1 2010/11/25 13:19:35 dcoppa Exp $
        putenv (env_term);
      }
    else
-@@ -1749,10 +1752,11 @@ rxvt_term::run_child (const char *const *argv)
+@@ -1748,10 +1751,11 @@ rxvt_term::run_child (const char *const *argv)
  
        if (option (Opt_loginShell))
          {

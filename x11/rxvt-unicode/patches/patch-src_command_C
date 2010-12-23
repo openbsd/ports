@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_command_C,v 1.1 2010/11/25 13:19:35 dcoppa Exp $
---- src/command.C.orig	Sun Oct 24 19:52:47 2010
-+++ src/command.C	Sun Nov 14 14:25:00 2010
+$OpenBSD: patch-src_command_C,v 1.2 2010/12/23 08:45:57 dcoppa Exp $
+--- src/command.C.orig	Wed Dec  1 04:55:56 2010
++++ src/command.C	Thu Dec 23 09:34:09 2010
 @@ -186,15 +186,15 @@ rxvt_term::iso14755_51 (unicode_t ch, rend_t r, int x,
  
    char attr[80]; // plenty
@@ -110,7 +110,7 @@ $OpenBSD: patch-src_command_C,v 1.1 2010/11/25 13:19:35 dcoppa Exp $
            len = 3;
          }
        else
-@@ -3439,7 +3439,7 @@ rxvt_term::process_xterm_seq (int op, char *str, char 
+@@ -3473,7 +3473,7 @@ rxvt_term::process_xterm_seq (int op, char *str, char 
            {
              char str[256];
  
