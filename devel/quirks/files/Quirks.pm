@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.39 2010/11/28 15:22:59 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.40 2010/12/23 23:04:56 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -166,6 +166,8 @@ my $stem_extensions = {
 	'nmap-parser' => 'ruby-nmap-parser',
 	'tracker-search' => 'meta-tracker',
 	'gpsd-motif' => 'gpsd-x11',
+	'uuid' => 'ossp-uuid',
+	'p5-UUID' => 'p5-ossp-uuid',
 };
 
 # ->is_base_system($handle, $state):

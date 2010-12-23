@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2010/12/23 23:04:56 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,8 +7,8 @@ COMMENT-perl=	UUID modules for Perl
 
 VERSION=		1.6.2
 DISTNAME=		uuid-${VERSION}
-FULLPKGNAME-main=	uuid-${VERSION}
-FULLPKGNAME-perl= 	p5-UUID-${VERSION}
+FULLPKGNAME-main=	ossp-uuid-${VERSION}
+FULLPKGNAME-perl= 	p5-ossp-UUID-${VERSION}
 CATEGORIES=		devel
 SHARED_LIBS=		uuid	13.22 \
 			uuid++	14.21
@@ -36,7 +36,7 @@ WANTLIB-main=		c m stdc++
 
 CATEGORIES-perl=	devel perl5
 WANTLIB-perl=		uuid>=12
-LIB_DEPENDS-perl=	devel/uuid
+LIB_DEPENDS-perl=	${BASE_PKGPATH}
 
 USE_LIBTOOL=		Yes
 
