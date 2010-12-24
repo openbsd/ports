@@ -1,10 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: courier_pop3-ssl.rc,v 1.1 2010/12/16 17:55:10 giovanni Exp $
+# $OpenBSD: courier_pop3-ssl.rc,v 1.2 2010/12/24 10:40:05 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
 daemon="${TRUEPREFIX}/libexec/pop3d-ssl.rc"
+
+rc_conf
+
 pexp=".*courierlogger.*pop3d-ssl.pid"
 
 rc_start() {

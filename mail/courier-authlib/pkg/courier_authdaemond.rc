@@ -1,10 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: courier_authdaemond.rc,v 1.1 2010/12/16 17:52:12 giovanni Exp $
+# $OpenBSD: courier_authdaemond.rc,v 1.2 2010/12/24 10:40:05 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
 daemon="${TRUEPREFIX}/sbin/authdaemond"
+
+rc_conf
+
 pexp=".*courierlogger.*-start ${TRUEPREFIX}/libexec/courier-authlib/authdaemond"
 
 rc_start() {

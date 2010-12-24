@@ -1,11 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: cyrus_imapd.rc,v 1.5 2010/12/14 18:45:54 ajacoutot Exp $
+# $OpenBSD: cyrus_imapd.rc,v 1.6 2010/12/24 10:40:06 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
 daemon="${TRUEPREFIX}/libexec/cyrus-imapd/master"
 daemon_flags="-d"
+
+rc_conf
 
 # chdir needed when using the BerkeleyDB backend to prevent:
 # DBERROR db4: no absolute path for the current directory: No such file or directory

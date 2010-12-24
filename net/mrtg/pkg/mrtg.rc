@@ -1,11 +1,14 @@
 #!/bin/sh
 #
-# $OpenBSD: mrtg.rc,v 1.1 2010/12/03 00:10:09 ian Exp $
+# $OpenBSD: mrtg.rc,v 1.2 2010/12/24 10:40:05 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
 daemon="${TRUEPREFIX}/bin/mrtg"
 daemon_flags="--daemon --user _mrtg --group _mrtg --confcache-file /tmp/mrtg.ok --lock-file /tmp/mrtg_lock --pid-file /var/run/mrtg.pid"
+
+rc_conf
+
 pexp="/usr/bin/perl -w ${daemon} ${daemon_flags}"
 
 rc_cmd $1

@@ -1,10 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: conserver.rc,v 1.2 2010/12/11 08:05:38 ajacoutot Exp $
+# $OpenBSD: conserver.rc,v 1.3 2010/12/24 10:40:04 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
 daemon="${TRUEPREFIX}/sbin/conserver"
 daemon_flags="-d -n"
+
+rc_conf
 
 rc_cmd $1

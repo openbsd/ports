@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2010/12/01 09:58:43 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2010/12/24 10:40:05 ajacoutot Exp $
 
 COMMENT=		Dynamic DNS service update client
 
-REVISION=		1
+REVISION=		2
 DISTNAME=		ddclient-3.8.0
 CATEGORIES=		net
 

@@ -1,11 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: avahi_dnsconfd.rc,v 1.3 2010/11/30 16:37:21 ajacoutot Exp $
+# $OpenBSD: avahi_dnsconfd.rc,v 1.4 2010/12/24 10:40:05 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
 daemon="${TRUEPREFIX}/sbin/avahi-dnsconfd"
 daemon_flags="-D"
+
+rc_conf
 
 rc_check() {
 	${daemon} --check

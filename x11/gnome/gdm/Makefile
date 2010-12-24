@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2010/12/13 16:13:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.96 2010/12/24 10:40:06 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		GNOME display manager
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		2.20.11
 
-REVISION=		15
+REVISION=		16
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 

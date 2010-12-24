@@ -1,11 +1,14 @@
 #!/bin/sh
 #
-# $OpenBSD: saned.rc,v 1.5 2010/12/20 11:40:39 ajacoutot Exp $
+# $OpenBSD: saned.rc,v 1.6 2010/12/24 10:40:05 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
 daemon="${TRUEPREFIX}/libexec/saned"
 daemon_flags="-a _saned"
+
+rc_conf
+
 rc_reload=NO
 
 rc_cmd $1

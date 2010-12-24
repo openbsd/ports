@@ -1,10 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: smtp_vilter.rc,v 1.3 2010/11/04 12:01:42 sthen Exp $
+# $OpenBSD: smtp_vilter.rc,v 1.4 2010/12/24 10:40:06 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
 daemon="${TRUEPREFIX}/sbin/smtp-vilter"
+
+rc_conf
+
 pexp="smtp-vilter:"
 
 rc_cmd $1

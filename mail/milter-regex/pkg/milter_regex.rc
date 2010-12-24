@@ -1,10 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: milter_regex.rc,v 1.2 2010/12/11 12:57:37 ajacoutot Exp $
+# $OpenBSD: milter_regex.rc,v 1.3 2010/12/24 10:40:05 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
 daemon="${TRUEPREFIX}/libexec/milter-regex"
+
+rc_conf
+
 rc_reload=NO
 
 rc_cmd $1

@@ -1,16 +1,19 @@
 #!/bin/sh
 #
-# $OpenBSD: mailman.rc,v 1.5 2010/12/13 16:13:04 ajacoutot Exp $
+# $OpenBSD: mailman.rc,v 1.6 2010/12/24 10:40:05 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
 daemon="${TRUEPREFIX}/lib/mailman/bin/mailmanctl"
 daemon_flags="-s -q"
+
+rc_conf
+
 rc_reload=NO
 
 rc_start() {
-	su -l -c ${daemon_class:-daemon} -s ${daemon_shell:-/bin/sh} \
-		${daemon_user:-root} -c "${daemon} ${daemon_flags} start"
+	su -l -c ${daemon_class} -s ${daemon_shell} ${daemon_user} \
+		-c "${daemon} ${daemon_flags} start"
 }
 
 rc_stop() {

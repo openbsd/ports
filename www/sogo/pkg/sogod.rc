@@ -1,10 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: sogod.rc,v 1.2 2010/12/11 14:21:08 sebastia Exp $
+# $OpenBSD: sogod.rc,v 1.3 2010/12/24 10:40:06 ajacoutot Exp $
 
 . /etc/rc.d/rc.subr
 
 daemon="${TRUEPREFIX}/sbin/sogod"
 daemon_user="_sogo"
+
+rc_conf
 
 rc_cmd $1
