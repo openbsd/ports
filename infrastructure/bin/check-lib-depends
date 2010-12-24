@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.6 2010/09/15 09:36:57 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.7 2010/12/24 10:31:40 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -302,7 +302,7 @@ sub handle_dependency
 	}
 
 	register_dependencies($plist);
-	OpenBSD::SharedLibs::add_libs_from_plist($plist);
+	OpenBSD::SharedLibs::add_libs_from_plist($plist, $state);
 
 	return $plist->pkgname;
 }
@@ -323,7 +323,7 @@ sub report_lib_issue
 {
 	my ($self, $state, $plist, $lib, $binary) = @_;
 
-	OpenBSD::SharedLibs::add_libs_from_system('/');
+	OpenBSD::SharedLibs::add_libs_from_system('/', $state);
 	my $libspec = "$lib.0";
 	my $want = $lib;
 	$want =~ s/\.\d+$//;
@@ -406,7 +406,7 @@ sub analyze
 
 	if (!defined $dependencies->{$pkgname}) {
 		register_dependencies($plist);
-		OpenBSD::SharedLibs::add_libs_from_plist($plist);
+		OpenBSD::SharedLibs::add_libs_from_plist($plist, $state);
 	}
 	my $r = { wantlib => {}, libdepends => {}, wantlib2 => {} };
 	for my $lib (sort $needed_libs->libs) {
