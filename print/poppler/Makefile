@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2010/11/20 09:48:39 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2010/12/24 14:02:12 kili Exp $
 .include <bsd.own.mk>
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 
-V=		0.14.4
+V=		0.14.5
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
@@ -13,7 +13,7 @@ REVISION-main=	0
 FULLPKGNAME-qt=	poppler-qt-$V
 FULLPKGNAME-qt4=poppler-qt4-$V
 
-SHARED_LIBS +=	poppler              8.0
+SHARED_LIBS +=	poppler              9.0
 SHARED_LIBS +=	poppler-glib         7.0
 SHARED_LIBS +=	poppler-qt           7.0
 SHARED_LIBS +=	poppler-qt4          6.0
@@ -90,11 +90,10 @@ CONFIGURE_ARGS+= --enable-xpdf-headers \
 		--disable-utils \
 		--enable-zlib
 
-CONFIGURE_ENV+= LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
-
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng
 
 .include <bsd.port.mk>
