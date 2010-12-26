@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2010/12/17 16:17:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2010/12/26 08:32:07 landry Exp $
 
 COMMENT =	open source web browser engine
 
 DISTNAME =	webkit-1.2.5
 EPOCH =		0
-REVISION = 	0
+REVISION = 	1
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/
@@ -49,6 +49,7 @@ MAKE_FILE =	GNUmakefile
 MAKE_FLAGS =	STDCPPLIB=${STDCPPLIB}
 
 RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-ffmpeg \
+		multimedia/gstreamer-0.10/plugins-bad \
 		multimedia/gstreamer-0.10/plugins-good
 
 WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
