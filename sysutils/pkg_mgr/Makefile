@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/26 19:51:05 landry Exp $
 
 COMMENT=	user-friendly package browser and manager
 
-DISTNAME=	pkg_mgr-0.1
-REVISION =	1
+DISTNAME=	pkg_mgr-0.2
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://rhaalovely.net/pkg_mgr.html
@@ -24,7 +23,7 @@ NO_REGRESS=	yes
 
 RUN_DEPENDS=	devel/p5-Curses-UI \
 		databases/p5-DBD-SQLite \
-		databases/sqlports
+		databases/sqlports,-compact
 
 PKG_ARCH=	*
 
