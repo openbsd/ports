@@ -1,7 +1,7 @@
-$OpenBSD: patch-sql_sql_parse_cc,v 1.6 2010/11/10 21:03:38 sthen Exp $
---- sql/sql_parse.cc.orig	Mon Oct 11 16:34:16 2010
-+++ sql/sql_parse.cc	Tue Nov  9 20:07:50 2010
-@@ -1000,19 +1000,6 @@ bool dispatch_command(enum enum_server_command command
+$OpenBSD: patch-sql_sql_parse_cc,v 1.7 2010/12/26 08:23:17 ajacoutot Exp $
+--- sql/sql_parse.cc.orig	Mon Nov 29 05:37:59 2010
++++ sql/sql_parse.cc	Tue Dec 14 20:37:51 2010
+@@ -1001,19 +1001,6 @@ bool dispatch_command(enum enum_server_command command
    thd->enable_slow_log= TRUE;
    thd->lex->sql_command= SQLCOM_END; /* to avoid confusing VIEW detectors */
    thd->set_time();
@@ -21,7 +21,7 @@ $OpenBSD: patch-sql_sql_parse_cc,v 1.6 2010/11/10 21:03:38 sthen Exp $
    VOID(pthread_mutex_lock(&LOCK_thread_count));
    thd->query_id= global_query_id;
  
-@@ -1516,11 +1503,8 @@ bool dispatch_command(enum enum_server_command command
+@@ -1517,11 +1504,8 @@ bool dispatch_command(enum enum_server_command command
        SHUTDOWN_DEFAULT is 0. If client is >= 4.1.3, the shutdown level is in
        packet[0].
      */

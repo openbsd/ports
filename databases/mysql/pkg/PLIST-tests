@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.44 2010/11/26 10:21:17 sthen Exp $
+@comment $OpenBSD: PLIST-tests,v 1.45 2010/12/26 08:23:17 ajacoutot Exp $
 @man man/man1/mysql-stress-test.pl.1
 @man man/man1/mysql-test-run.pl.1
 @man man/man1/mysql_client_test.1
@@ -105,6 +105,8 @@ share/mysql-test/collections/default.daily
 share/mysql-test/collections/default.experimental
 share/mysql-test/collections/default.push
 share/mysql-test/collections/default.weekly
+share/mysql-test/collections/mysql-5.1-bugteam.daily
+share/mysql-test/collections/mysql-5.1-bugteam.push
 share/mysql-test/extra/
 share/mysql-test/extra/binlog_tests/
 share/mysql-test/extra/binlog_tests/binlog.test
@@ -1022,6 +1024,7 @@ share/mysql-test/r/varbinary.result
 share/mysql-test/r/variables-big.result
 share/mysql-test/r/variables-notembedded.result
 share/mysql-test/r/variables.result
+@comment share/mysql-test/r/variables.result.orig
 share/mysql-test/r/variables_community.result
 share/mysql-test/r/variables_debug.result
 share/mysql-test/r/view.result
@@ -1254,6 +1257,7 @@ share/mysql-test/suite/binlog/t/binlog_delete_and_flush_index.test
 share/mysql-test/suite/binlog/t/binlog_grant.test
 share/mysql-test/suite/binlog/t/binlog_incident-master.opt
 share/mysql-test/suite/binlog/t/binlog_incident.test
+share/mysql-test/suite/binlog/t/binlog_index-master.opt
 share/mysql-test/suite/binlog/t/binlog_index.test
 share/mysql-test/suite/binlog/t/binlog_innodb.test
 share/mysql-test/suite/binlog/t/binlog_innodb_row.test
@@ -2797,6 +2801,7 @@ share/mysql-test/suite/innodb_plugin/r/innodb-autoinc-44030.result
 share/mysql-test/suite/innodb_plugin/r/innodb-autoinc-optimize.result
 share/mysql-test/suite/innodb_plugin/r/innodb-autoinc.result
 share/mysql-test/suite/innodb_plugin/r/innodb-consistent.result
+share/mysql-test/suite/innodb_plugin/r/innodb-create-options.result
 share/mysql-test/suite/innodb_plugin/r/innodb-index.result
 share/mysql-test/suite/innodb_plugin/r/innodb-index_ucs2.result
 share/mysql-test/suite/innodb_plugin/r/innodb-lock.result
@@ -2839,6 +2844,7 @@ share/mysql-test/suite/innodb_plugin/r/innodb_bug51378.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug51920.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug52663.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug52745.result
+share/mysql-test/suite/innodb_plugin/r/innodb_bug53046.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug53290.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug53591.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug53592.result
@@ -2846,9 +2852,7 @@ share/mysql-test/suite/innodb_plugin/r/innodb_bug53674.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug53756.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug54044.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug54453.result
-share/mysql-test/suite/innodb_plugin/r/innodb_bug54679.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug56143.result
-share/mysql-test/suite/innodb_plugin/r/innodb_bug56632.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug56680.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug56716.result
 share/mysql-test/suite/innodb_plugin/r/innodb_bug56947.result
@@ -2872,6 +2876,7 @@ share/mysql-test/suite/innodb_plugin/t/innodb-autoinc-optimize.test
 share/mysql-test/suite/innodb_plugin/t/innodb-autoinc.test
 share/mysql-test/suite/innodb_plugin/t/innodb-consistent-master.opt
 share/mysql-test/suite/innodb_plugin/t/innodb-consistent.test
+share/mysql-test/suite/innodb_plugin/t/innodb-create-options.test
 share/mysql-test/suite/innodb_plugin/t/innodb-index.test
 share/mysql-test/suite/innodb_plugin/t/innodb-index_ucs2.test
 share/mysql-test/suite/innodb_plugin/t/innodb-lock.test
@@ -2921,6 +2926,7 @@ share/mysql-test/suite/innodb_plugin/t/innodb_bug51378.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug51920.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug52663.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug52745.test
+share/mysql-test/suite/innodb_plugin/t/innodb_bug53046.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug53290.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug53591.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug53592.test
@@ -2930,9 +2936,7 @@ share/mysql-test/suite/innodb_plugin/t/innodb_bug53756-master.opt
 share/mysql-test/suite/innodb_plugin/t/innodb_bug53756.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug54044.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug54453.test
-share/mysql-test/suite/innodb_plugin/t/innodb_bug54679.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug56143.test
-share/mysql-test/suite/innodb_plugin/t/innodb_bug56632.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug56680.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug56716.test
 share/mysql-test/suite/innodb_plugin/t/innodb_bug56947.test
@@ -3959,6 +3963,7 @@ share/mysql-test/suite/rpl/t/rpl_create_tmp_table_if_not_exists.test
 share/mysql-test/suite/rpl/t/rpl_critical_errors.test
 share/mysql-test/suite/rpl/t/rpl_cross_version-master.opt
 share/mysql-test/suite/rpl/t/rpl_cross_version.test
+share/mysql-test/suite/rpl/t/rpl_current_user-master.opt
 share/mysql-test/suite/rpl/t/rpl_current_user.cnf
 share/mysql-test/suite/rpl/t/rpl_current_user.test
 share/mysql-test/suite/rpl/t/rpl_ddl.test
@@ -4190,6 +4195,7 @@ share/mysql-test/suite/rpl/t/rpl_slave_grp_exec.test
 share/mysql-test/suite/rpl/t/rpl_slave_load_in.test
 share/mysql-test/suite/rpl/t/rpl_slave_load_remove_tmpfile-slave.opt
 share/mysql-test/suite/rpl/t/rpl_slave_load_remove_tmpfile.test
+share/mysql-test/suite/rpl/t/rpl_slave_load_tmpdir_not_exist-master.opt
 share/mysql-test/suite/rpl/t/rpl_slave_load_tmpdir_not_exist-slave.opt
 share/mysql-test/suite/rpl/t/rpl_slave_load_tmpdir_not_exist.test
 share/mysql-test/suite/rpl/t/rpl_slave_skip.test
@@ -4987,6 +4993,7 @@ share/mysql-test/t/variables-big.test
 share/mysql-test/t/variables-notembedded-master.opt
 share/mysql-test/t/variables-notembedded.test
 share/mysql-test/t/variables.test
+@comment share/mysql-test/t/variables.test.orig
 share/mysql-test/t/variables_community.test
 share/mysql-test/t/variables_debug.test
 share/mysql-test/t/view.test
