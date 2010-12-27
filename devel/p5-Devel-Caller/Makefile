@@ -4,11 +4,9 @@ COMMENT =		meatier versions of caller
 
 SHARED_ONLY =		Yes
 MODULES =		cpan
-DISTNAME =		Devel-Caller-2.03
-REVISION=		1
+DISTNAME =		Devel-Caller-2.05
 CATEGORIES =		devel
 CPAN_AUTHOR =		RCLAMP
-USE_GROFF =		Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,5 +15,8 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 RUN_DEPENDS =		devel/p5-PadWalker
+
+pre-configure:
+	@rm -f ${WRKSRC}/lib/Devel/Caller.pm.orig
 
 .include <bsd.port.mk>
