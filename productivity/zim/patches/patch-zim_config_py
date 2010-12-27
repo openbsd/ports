@@ -1,0 +1,14 @@
+$OpenBSD: patch-zim_config_py,v 1.1.1.1 2010/12/27 12:05:13 rpointel Exp $
+--- zim/config.py.orig	Sat Dec 11 11:09:55 2010
++++ zim/config.py	Sat Dec 11 11:10:22 2010
+@@ -40,8 +40,8 @@ if os.name == 'nt':
+ 			home = os.environ['HOMEDRIVE'] + os.environ['HOMEPATH']
+ 			os.environ['HOME'] = home
+ 
+-assert isdir(os.environ['HOME']), \
+-	'ERROR: environment variable $HOME not set correctly'
++#assert isdir(os.environ['HOME']), \
++#	'ERROR: environment variable $HOME not set correctly'
+ 
+ if not 'USER' in os.environ or not os.environ['USER']:
+ 	# E.g. Maemo doesn't define $USER

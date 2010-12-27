@@ -1,0 +1,35 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2010/12/27 12:05:13 rpointel Exp $
+--- setup.py.orig	Sun Dec 26 20:58:41 2010
++++ setup.py	Sun Dec 26 21:00:14 2010
+@@ -75,7 +75,7 @@
+ def collect_data_files():
+ 	# Search for data files to be installed in share/
+ 	data_files = [
+-		('share/man/man1', ['man/zim.1']),
++		('man/man1', ['man/zim.1']),
+ 		('share/applications', ['xdg/zim.desktop']),
+ 		('share/mime/packages', ['xdg/zim.xml']),
+ 		('share/pixmaps', ['xdg/hicolor/48x48/apps/zim.png']),
+@@ -88,6 +88,13 @@
+ 			files = [os.path.join(dir, f) for f in files]
+ 			data_files.append((target, files))
+ 
++	for dir, dirs, files in os.walk('man'):
++		if files:
++			target = os.path.join('man', dir[4:])
++			files = [os.path.join(dir, f) for f in files]
++			data_files.append((target, files))
++
++
+ 	# data -> PREFIX/share/zim
+ 	for dir, dirs, files in os.walk('data'):
+ 		if '.zim' in dirs:
+@@ -240,7 +247,7 @@
+ 
+ 	def initialize_options(self):
+ 		install_class.initialize_options(self)
+-		self.skip_xdg_cmd = 0
++		self.skip_xdg_cmd = 1
+ 	
+ 	def run(self):
+ 		install_class.run(self)
