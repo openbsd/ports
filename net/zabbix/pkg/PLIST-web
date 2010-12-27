@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.11 2010/11/06 09:01:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.12 2010/12/27 17:19:17 ajacoutot Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 conf/modules.sample/zabbix.conf
@@ -257,6 +257,7 @@ zabbix/include/classes/class.ccolor.php
 zabbix/include/classes/class.ccolorcell.php
 zabbix/include/classes/class.ccombobox.php
 zabbix/include/classes/class.ccomboitem.php
+zabbix/include/classes/class.cconfigfile.php
 zabbix/include/classes/class.cdiv.php
 zabbix/include/classes/class.ceditablecombobox.php
 zabbix/include/classes/class.cfile.php
@@ -277,6 +278,7 @@ zabbix/include/classes/class.cimg.php
 zabbix/include/classes/class.cipbox.php
 zabbix/include/classes/class.cjson.php
 zabbix/include/classes/class.cjsscript.php
+zabbix/include/classes/class.clabel.php
 zabbix/include/classes/class.cldap.php
 zabbix/include/classes/class.clink.php
 zabbix/include/classes/class.clist.php
@@ -365,6 +367,8 @@ zabbix/include/triggers.inc.php
 zabbix/include/users.inc.php
 zabbix/include/validate.inc.php
 zabbix/include/valuemap.inc.php
+zabbix/include/xmlschemas/
+zabbix/include/xmlschemas/screens.rng
 zabbix/index.php
 zabbix/instal.php
 zabbix/items.php
@@ -451,6 +455,8 @@ zabbix/styles/default.css
 zabbix/styles/div.css
 zabbix/styles/form.css
 zabbix/styles/ie.css
+zabbix/styles/ie_css_bb.css
+zabbix/styles/ie_css_ob.css
 zabbix/styles/ie_css_od.css
 zabbix/styles/link.css
 zabbix/styles/p.css
