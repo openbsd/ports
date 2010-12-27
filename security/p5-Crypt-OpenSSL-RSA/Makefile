@@ -1,29 +1,27 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/20 17:22:44 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2010/12/27 10:55:16 jasper Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY =	Yes
 
-COMMENT=	RSA encoding and decoding using OpenSSL
+COMMENT =	RSA encoding and decoding using OpenSSL
 
-MODULES=	cpan
-USE_GROFF =	Yes
+MODULES =	cpan
 
-DISTNAME=	Crypt-OpenSSL-RSA-0.25
-REVISION=	1
-CATEGORIES=	security
-HOMEPAGE=	http://perl-openssl.sourceforge.net/
+DISTNAME =	Crypt-OpenSSL-RSA-0.26
+CATEGORIES =	security
+HOMEPAGE =	http://perl-openssl.sourceforge.net/
 
-MAINTAINER=	Andreas Voegele <andreas@kurzegasse.de>
+MAINTAINER =	Andreas Voegele <ports@andreasvoegele.com>
 
 # Perl
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM = Yes
+PERMIT_PACKAGE_FTP = Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP = Yes
 
-WANTLIB=		crypto ssl
+WANTLIB =	crypto ssl
 
-RUN_DEPENDS=	security/p5-Crypt-OpenSSL-Random>=0.03 \
+RUN_DEPENDS =	security/p5-Crypt-OpenSSL-Random>=0.03 \
 		security/p5-Crypt-OpenSSL-Bignum>=0.03
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS =	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
