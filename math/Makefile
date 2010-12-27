@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2010/12/20 18:43:18 shadchin Exp $
+# $OpenBSD: Makefile,v 1.102 2010/12/27 21:14:13 benoit Exp $
 #
 
      SUBDIR =
@@ -64,6 +64,7 @@
      SUBDIR += p5-Data-PowerSet
      SUBDIR += p5-GraphViz
      SUBDIR += p5-Math-Base36
+     SUBDIR += p5-Math-Base85
      SUBDIR += p5-Math-Bezier
      SUBDIR += p5-Math-BigInt-GMP
      SUBDIR += p5-Math-Calc-Units
