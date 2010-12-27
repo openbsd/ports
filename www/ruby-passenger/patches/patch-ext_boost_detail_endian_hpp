@@ -1,0 +1,22 @@
+$OpenBSD: patch-ext_boost_detail_endian_hpp,v 1.1 2010/12/27 15:48:01 jasper Exp $
+
+Sync with ports/devel/boost/patches/patch-boost_detail_endian_hpp
+
+--- ext/boost/detail/endian.hpp.orig	Mon Dec 27 14:15:06 2010
++++ ext/boost/detail/endian.hpp	Mon Dec 27 14:15:25 2010
+@@ -65,6 +65,15 @@
+ 
+ # define BOOST_LITTLE_ENDIAN
+ # define BOOST_BYTE_ORDER 1234
++#elif defined(__OpenBSD__)
++# include <sys/types.h>
++# if (_BYTE_ORDER == _LITTLE_ENDIAN)
++#  define BOOST_LITTLE_ENDIAN
++#  define BOOST_BYTE_ORDER 1234
++# elif (_BYTE_ORDER == _BIG_ENDIAN)
++#  define BOOST_BIG_ENDIAN
++#  define BOOST_BYTE_ORDER 4321
++# endif
+ #else
+ # error The file boost/detail/endian.hpp needs to be set up for your CPU type.
+ #endif
