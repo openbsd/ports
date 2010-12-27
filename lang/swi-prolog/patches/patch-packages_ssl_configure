@@ -1,0 +1,15 @@
+$OpenBSD: patch-packages_ssl_configure,v 1.1 2010/12/27 16:07:08 jasper Exp $
+
+We need -lcrypto when linking with -ssl.
+
+--- packages/ssl/configure.orig	Thu Dec 23 10:57:53 2010
++++ packages/ssl/configure	Thu Dec 23 10:58:00 2010
+@@ -4035,7 +4035,7 @@ if test "${ac_cv_lib_ssl_SSL_library_init+set}" = set;
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lssl  $LIBS"
++LIBS="-lssl -lcrypto $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 

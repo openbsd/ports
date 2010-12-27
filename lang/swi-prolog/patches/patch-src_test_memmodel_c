@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_test_memmodel_c,v 1.1.1.1 2006/10/09 10:20:24 espie Exp $
---- src/test/memmodel.c.orig	Wed Sep  6 19:42:06 2006
-+++ src/test/memmodel.c	Wed Sep  6 19:42:27 2006
+$OpenBSD: patch-src_test_memmodel_c,v 1.2 2010/12/27 16:07:08 jasper Exp $
+--- src/test/memmodel.c.orig	Thu Oct 28 21:38:25 2010
++++ src/test/memmodel.c	Thu Dec 23 01:18:30 2010
 @@ -84,8 +84,11 @@ char *argv[];
    else if ( (gva & 0xf0000000L) == 0x10000000L )
      decl[ndecl++] = "DATA_AT_0X1=1;";
@@ -12,5 +12,5 @@ $OpenBSD: patch-src_test_memmodel_c,v 1.1.1.1 2006/10/09 10:20:24 espie Exp $
      exit(1);
 +#endif
    }
-   
+ 
    if ( stack_up )

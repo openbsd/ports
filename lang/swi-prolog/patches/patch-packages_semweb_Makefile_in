@@ -1,10 +1,10 @@
-$OpenBSD: patch-packages_semweb_Makefile_in,v 1.1 2007/07/10 20:53:59 kili Exp $
+$OpenBSD: patch-packages_semweb_Makefile_in,v 1.2 2010/12/27 16:07:08 jasper Exp $
 
 Honor CFLAGS.
 
---- packages/semweb/Makefile.in.orig	Tue Jun 26 13:02:46 2007
-+++ packages/semweb/Makefile.in	Tue Jun 26 13:17:25 2007
-@@ -29,7 +29,7 @@ COFLAGS=@COFLAGS@
+--- packages/semweb/Makefile.in.orig	Thu Oct 28 21:38:25 2010
++++ packages/semweb/Makefile.in	Thu Dec 23 01:18:33 2010
+@@ -28,7 +28,7 @@ COFLAGS=@COFLAGS@
  CWFLAGS=@CWFLAGS@
  CMFLAGS=@CMFLAGS@
  CIFLAGS=-I.

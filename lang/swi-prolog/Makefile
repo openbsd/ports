@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2010/12/22 23:24:21 jasper Exp $
-
-BROKEN-hppa =		build stalls during bootstrap in packages/chr 
+# $OpenBSD: Makefile,v 1.28 2010/12/27 16:07:08 jasper Exp $
 
 COMMENT =		Prolog for the real world
 
-V =			5.6.59
-XV =			6.6.58
+V =			5.10.2
+XV =			6.6.66
 DISTNAME =		pl-$V
 PKGNAME =		swi-prolog-$V
-REVISION =		6
 CATEGORIES =		lang
 
-SHARED_LIBS =		pl	2.0
+SHARED_LIBS =		pl	3.0
 
 HOMEPAGE =		http://www.swi-prolog.org/
 
@@ -21,10 +18,11 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes 
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		http://distfiles.nl/
+MASTER_SITES =		${HOMEPAGE}/download/stable/src/ \
+			http://distfiles.nl/
 
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.60
+AUTOCONF_VERSION =	2.61 # 2.64
 AUTOCONF_DIR =		${WRKSRC}/src ${WRKSRC}/packages/semweb
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/src \
 				${WRKSRC}/packages/jpl \
@@ -32,9 +30,7 @@ MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/src \
 CONFIGURE_ARGS =	--enable-mt \
 			--disable-custom-flags \
 			--with-world \
-			--disable-gmp \
 			--with-jpeg=${LOCALBASE} \
-			--without-sgml \
 			${CONFIGURE_SHARED}
 
 USE_GMAKE =		Yes
@@ -52,6 +48,11 @@ LIB_DEPENDS =		graphics/jpeg
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS =		V XV FULLARCH BOOT
 
+post-extract:
+	@rm -fr ${WRKSRC}/packages/{sgml,RDF}
+
+# Don't build sgml (and dependant RDF), as it requires having swprintf()
+# and the like.
 post-install:
 	cd ${PREFIX}/lib && ln -s swipl-$V/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
 

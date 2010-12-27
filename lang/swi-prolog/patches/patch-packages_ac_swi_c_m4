@@ -1,0 +1,20 @@
+$OpenBSD: patch-packages_ac_swi_c_m4,v 1.1 2010/12/27 16:07:08 jasper Exp $
+
+Don't override CFLAGS, don't force -O2 (but keep -fno-strict-aliasing).
+
+--- packages/ac_swi_c.m4.orig	Thu Dec 23 01:08:41 2010
++++ packages/ac_swi_c.m4	Thu Dec 23 01:08:52 2010
+@@ -57,12 +57,11 @@ AC_CHECK_PROGS(ETAGS, etags ctags, ":")
+ AC_PROG_INSTALL
+ AC_ISC_POSIX
+ AC_HEADER_STDC
+-CFLAGS="$CMFLAGS"
+ AC_FUNC_ALLOCA
+ AC_C_BIGENDIAN
+ 
+ if test ! -z "$GCC"; then
+-    COFLAGS="${COFLAGS--O2 -fno-strict-aliasing}"
++    COFLAGS="${COFLAGS} -fno-strict-aliasing}"
+     CWFLAGS="${CWFLAGS--Wall}"
+ else
+     COFLAGS="${COFLAGS--O}"

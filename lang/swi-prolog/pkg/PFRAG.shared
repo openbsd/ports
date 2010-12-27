@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2008/08/29 12:30:21 espie Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2010/12/27 16:07:08 jasper Exp $
 @lib lib/libpl.so.${LIBpl_VERSION}
 lib/swipl-${V}/lib/${FULLARCH}/cgi.so
 lib/swipl-${V}/lib/${FULLARCH}/crypt.so
@@ -6,21 +6,26 @@ lib/swipl-${V}/lib/${FULLARCH}/double_metaphone.so
 lib/swipl-${V}/lib/${FULLARCH}/files.so
 lib/swipl-${V}/lib/${FULLARCH}/http_stream.so
 lib/swipl-${V}/lib/${FULLARCH}/json.so
-lib/swipl-${V}/lib/${FULLARCH}/libpl.so
 @lib lib/swipl-${V}/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
+lib/swipl-${V}/lib/${FULLARCH}/libswipl.so
 lib/swipl-${V}/lib/${FULLARCH}/memfile.so
 lib/swipl-${V}/lib/${FULLARCH}/mime.so
 lib/swipl-${V}/lib/${FULLARCH}/porter_stem.so
 lib/swipl-${V}/lib/${FULLARCH}/process.so
+lib/swipl-${V}/lib/${FULLARCH}/protobufs.so
 lib/swipl-${V}/lib/${FULLARCH}/random.so
 lib/swipl-${V}/lib/${FULLARCH}/rdf_db.so
 lib/swipl-${V}/lib/${FULLARCH}/readutil.so
 lib/swipl-${V}/lib/${FULLARCH}/rlimit.so
 lib/swipl-${V}/lib/${FULLARCH}/sha4pl.so
+lib/swipl-${V}/lib/${FULLARCH}/snowball.so
 lib/swipl-${V}/lib/${FULLARCH}/socket.so
+lib/swipl-${V}/lib/${FULLARCH}/ssl4pl.so
+lib/swipl-${V}/lib/${FULLARCH}/streaminfo.so
 lib/swipl-${V}/lib/${FULLARCH}/table.so
 lib/swipl-${V}/lib/${FULLARCH}/time.so
+lib/swipl-${V}/lib/${FULLARCH}/turtle.so
 lib/swipl-${V}/lib/${FULLARCH}/unix.so
+lib/swipl-${V}/lib/${FULLARCH}/uri.so
 lib/swipl-${V}/lib/${FULLARCH}/zlib4pl.so
-lib/swipl-${V}/library/chr/chr_support.so
 lib/swipl-${V}/xpce-${XV}/lib/${FULLARCH}/pl2xpce.so
