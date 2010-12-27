@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2009/12/16 15:03:28 pea Exp $
+@comment $OpenBSD: PLIST,v 1.30 2010/12/27 14:04:32 pea Exp $
 @pkgpath shells/zsh,-main
 @shell bin/zsh
 %%SHARED%%
@@ -24,6 +24,8 @@
 share/zsh/
 share/zsh/${V}/
 share/zsh/${V}/functions/
+share/zsh/${V}/functions/VCS_INFO_hook
+share/zsh/${V}/functions/VCS_INFO_quilt
 share/zsh/${V}/functions/_a2ps
 share/zsh/${V}/functions/_a2utils
 share/zsh/${V}/functions/_aap
@@ -58,6 +60,7 @@ share/zsh/${V}/functions/_attr
 share/zsh/${V}/functions/_auto-apt
 share/zsh/${V}/functions/_autocd
 share/zsh/${V}/functions/_awk
+share/zsh/${V}/functions/_axi-cache
 share/zsh/${V}/functions/_bash_completions
 share/zsh/${V}/functions/_baz
 share/zsh/${V}/functions/_bind_addresses
@@ -84,6 +87,7 @@ share/zsh/${V}/functions/_ccal
 share/zsh/${V}/functions/_cd
 share/zsh/${V}/functions/_cdbs-edit-patch
 share/zsh/${V}/functions/_cdcd
+share/zsh/${V}/functions/_cdr
 share/zsh/${V}/functions/_cdrdao
 share/zsh/${V}/functions/_cdrecord
 share/zsh/${V}/functions/_chflags
@@ -184,14 +188,17 @@ share/zsh/${V}/functions/_enable
 share/zsh/${V}/functions/_enscript
 share/zsh/${V}/functions/_env
 share/zsh/${V}/functions/_equal
+share/zsh/${V}/functions/_espeak
 share/zsh/${V}/functions/_ethtool
 share/zsh/${V}/functions/_expand
 share/zsh/${V}/functions/_expand_alias
 share/zsh/${V}/functions/_expand_word
 share/zsh/${V}/functions/_fakeroot
 share/zsh/${V}/functions/_fc
+share/zsh/${V}/functions/_feh
 share/zsh/${V}/functions/_fetch
 share/zsh/${V}/functions/_fetchmail
+share/zsh/${V}/functions/_ffmpeg
 share/zsh/${V}/functions/_figlet
 share/zsh/${V}/functions/_file_descriptors
 share/zsh/${V}/functions/_file_systems
@@ -207,6 +214,7 @@ share/zsh/${V}/functions/_floppy
 share/zsh/${V}/functions/_fortune
 share/zsh/${V}/functions/_freebsd-update
 share/zsh/${V}/functions/_fsh
+share/zsh/${V}/functions/_fstat
 share/zsh/${V}/functions/_functions
 share/zsh/${V}/functions/_fuse_arguments
 share/zsh/${V}/functions/_fuse_values
@@ -223,6 +231,7 @@ share/zsh/${V}/functions/_getent
 share/zsh/${V}/functions/_getfacl
 share/zsh/${V}/functions/_getmail
 share/zsh/${V}/functions/_git
+share/zsh/${V}/functions/_git-buildpackage
 share/zsh/${V}/functions/_global
 share/zsh/${V}/functions/_global_tags
 share/zsh/${V}/functions/_globflags
@@ -236,6 +245,7 @@ share/zsh/${V}/functions/_gpg
 share/zsh/${V}/functions/_gphoto2
 share/zsh/${V}/functions/_gprof
 share/zsh/${V}/functions/_gqview
+share/zsh/${V}/functions/_graphicsmagick
 share/zsh/${V}/functions/_grep
 share/zsh/${V}/functions/_grep-excuses
 share/zsh/${V}/functions/_groff
@@ -249,6 +259,7 @@ share/zsh/${V}/functions/_gzip
 share/zsh/${V}/functions/_hash
 share/zsh/${V}/functions/_have_glob_qual
 share/zsh/${V}/functions/_hdiutil
+share/zsh/${V}/functions/_hg
 share/zsh/${V}/functions/_history
 share/zsh/${V}/functions/_history_complete_word
 share/zsh/${V}/functions/_history_modifiers
@@ -329,7 +340,6 @@ share/zsh/${V}/functions/_mdadm
 share/zsh/${V}/functions/_members
 share/zsh/${V}/functions/_mencal
 share/zsh/${V}/functions/_menu
-share/zsh/${V}/functions/_mercurial
 share/zsh/${V}/functions/_mere
 share/zsh/${V}/functions/_mergechanges
 share/zsh/${V}/functions/_message
@@ -378,6 +388,7 @@ share/zsh/${V}/functions/_open
 share/zsh/${V}/functions/_options
 share/zsh/${V}/functions/_options_set
 share/zsh/${V}/functions/_options_unset
+share/zsh/${V}/functions/_osc
 share/zsh/${V}/functions/_other_accounts
 share/zsh/${V}/functions/_pack
 share/zsh/${V}/functions/_parameter
@@ -387,6 +398,7 @@ share/zsh/${V}/functions/_path_commands
 share/zsh/${V}/functions/_path_files
 share/zsh/${V}/functions/_pax
 share/zsh/${V}/functions/_pbm
+share/zsh/${V}/functions/_pbuilder
 share/zsh/${V}/functions/_pdf
 share/zsh/${V}/functions/_perforce
 share/zsh/${V}/functions/_perl
@@ -412,6 +424,7 @@ share/zsh/${V}/functions/_pkgtool
 share/zsh/${V}/functions/_pon
 share/zsh/${V}/functions/_portaudit
 share/zsh/${V}/functions/_portlint
+share/zsh/${V}/functions/_portmaster
 share/zsh/${V}/functions/_ports
 share/zsh/${V}/functions/_portsnap
 share/zsh/${V}/functions/_postfix
@@ -422,6 +435,7 @@ share/zsh/${V}/functions/_prefix
 share/zsh/${V}/functions/_print
 share/zsh/${V}/functions/_printenv
 share/zsh/${V}/functions/_printers
+share/zsh/${V}/functions/_procstat
 share/zsh/${V}/functions/_prompt
 share/zsh/${V}/functions/_ps
 share/zsh/${V}/functions/_pscp
@@ -567,6 +581,7 @@ share/zsh/${V}/functions/_user_at_host
 share/zsh/${V}/functions/_user_expand
 share/zsh/${V}/functions/_users
 share/zsh/${V}/functions/_users_on
+share/zsh/${V}/functions/_uzbl
 share/zsh/${V}/functions/_valgrind
 share/zsh/${V}/functions/_value
 share/zsh/${V}/functions/_values
@@ -650,7 +665,9 @@ share/zsh/${V}/functions/_zmodload
 share/zsh/${V}/functions/_zmv
 share/zsh/${V}/functions/_zpool
 share/zsh/${V}/functions/_zpty
+share/zsh/${V}/functions/_zsh-mime-handler
 share/zsh/${V}/functions/_zstyle
+share/zsh/${V}/functions/_ztodo
 share/zsh/${V}/functions/add-zsh-hook
 share/zsh/${V}/functions/age
 share/zsh/${V}/functions/allopt
@@ -669,7 +686,11 @@ share/zsh/${V}/functions/calendar_showdate
 share/zsh/${V}/functions/calendar_sort
 share/zsh/${V}/functions/capitalize-word-match
 share/zsh/${V}/functions/catch
+share/zsh/${V}/functions/cdr
 share/zsh/${V}/functions/checkmail
+share/zsh/${V}/functions/chpwd_recent_add
+share/zsh/${V}/functions/chpwd_recent_dirs
+share/zsh/${V}/functions/chpwd_recent_filehandler
 share/zsh/${V}/functions/colors
 share/zsh/${V}/functions/compaudit
 share/zsh/${V}/functions/compdump
@@ -727,11 +748,15 @@ share/zsh/${V}/functions/promptinit
 share/zsh/${V}/functions/promptnl
 share/zsh/${V}/functions/quote-and-complete-word
 share/zsh/${V}/functions/read-from-minibuffer
+share/zsh/${V}/functions/regexp-replace
 share/zsh/${V}/functions/relative
 share/zsh/${V}/functions/replace-string
 share/zsh/${V}/functions/replace-string-again
 share/zsh/${V}/functions/run-help
 share/zsh/${V}/functions/run-help-git
+share/zsh/${V}/functions/run-help-openssl
+share/zsh/${V}/functions/run-help-p4
+share/zsh/${V}/functions/run-help-sudo
 share/zsh/${V}/functions/run-help-svk
 share/zsh/${V}/functions/run-help-svn
 share/zsh/${V}/functions/select-word-style
@@ -740,6 +765,7 @@ share/zsh/${V}/functions/split-shell-arguments
 share/zsh/${V}/functions/sticky-note
 share/zsh/${V}/functions/tetris
 share/zsh/${V}/functions/throw
+share/zsh/${V}/functions/transpose-lines
 share/zsh/${V}/functions/transpose-words-match
 share/zsh/${V}/functions/up-case-word-match
 share/zsh/${V}/functions/up-line-or-beginning-search
@@ -761,5 +787,6 @@ share/zsh/${V}/functions/zrecompile
 share/zsh/${V}/functions/zsh-mime-handler
 share/zsh/${V}/functions/zsh-mime-setup
 share/zsh/${V}/functions/zstyle+
+share/zsh/${V}/functions/ztodo
 share/zsh/${V}/scripts/
 share/zsh/site-functions/
