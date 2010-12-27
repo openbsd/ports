@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/20 18:04:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2010/12/27 18:58:40 jasper Exp $
 
 COMMENT =	cross-platform dynamic library loading for ruby
 
 DISTNAME =	ffi-0.6.3
+REVISION =	0
 CATEGORIES =	devel
 
 HOMEPAGE=	http://github.com/ffi/ffi
@@ -16,6 +17,9 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	lang/ruby
+
+BUILD_DEPENDS = ${RUN_DEPENDS}
+RUN_DEPENDS =	${MODRUBY_RAKE_DEPENDS}
 
 CONFIGURE_STYLE = ruby gem ext
 
