@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/12/22 12:22:20 sebastia Exp $
+# $OpenBSD: Makefile,v 1.17 2010/12/27 12:06:08 sebastia Exp $
 
      SUBDIR =
      SUBDIR += addresses
@@ -9,6 +9,7 @@
      SUBDIR += ftp
      SUBDIR += gnumail
      SUBDIR += gorm
+     SUBDIR += graphos
      SUBDIR += gshisen
      SUBDIR += gspdf
      SUBDIR += gui
