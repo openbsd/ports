@@ -1,4 +1,4 @@
-# $OpenBSD $
+# $OpenBSD: Makefile,v 1.7 2010/12/27 11:02:05 jasper Exp $
 
 COMMENT =		meatier versions of caller
 
