@@ -1,11 +1,11 @@
 #!/bin/sh
 #
-# $OpenBSD: dbus_daemon.rc,v 1.5 2010/12/16 07:13:59 ajacoutot Exp $
-
-. /etc/rc.d/rc.subr
+# $OpenBSD: dbus_daemon.rc,v 1.6 2010/12/27 14:50:24 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/dbus-daemon"
 daemon_flags="--system"
+
+. /etc/rc.d/rc.subr
 
 rc_pre() {
 	rm -f /var/run/dbus/pid

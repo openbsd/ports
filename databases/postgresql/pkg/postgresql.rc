@@ -1,13 +1,11 @@
 #!/bin/sh
 #
-# $OpenBSD: postgresql.rc,v 1.4 2010/12/24 10:40:05 ajacoutot Exp $
-
-. /etc/rc.d/rc.subr
+# $OpenBSD: postgresql.rc,v 1.5 2010/12/27 14:50:22 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/postgres"
 daemon_user="_postgresql"
 
-rc_conf
+. /etc/rc.d/rc.subr
 
 bin="${TRUEPREFIX}/bin/pg_ctl"
 datadir="/var/postgresql/data"

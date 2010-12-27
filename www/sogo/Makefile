@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/24 10:40:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/27 14:50:24 ajacoutot Exp $
 
 COMMENT = 	web based groupware server
 
-REVISION =	2
+REVISION =	3
 VERSION =	1.3.4
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}

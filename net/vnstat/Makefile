@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/24 10:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/27 14:50:23 ajacoutot Exp $
 
 COMMENT = 	network traffic monitor
 
 DISTNAME = 	vnstat-1.10
 CATEGORIES = 	net sysutils
 
-REVISION = 	2
+REVISION = 	3
 
 HOMEPAGE = 	http://humdi.net/vnstat/
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2010/12/24 10:40:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2010/12/27 14:50:22 ajacoutot Exp $
 
 COMMENT=	API for accessing scanners, backends
 
 DISTNAME=	sane-backends-1.0.21
-REVISION=	10
+REVISION=	11
 
 PATCHFILES=	sane-backends-1.0.21-i18n.patch
 PATCH_DIST_STRIP= -p1

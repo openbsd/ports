@@ -1,12 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: munin_node.rc,v 1.3 2010/12/24 10:40:05 ajacoutot Exp $
-
-. /etc/rc.d/rc.subr
+# $OpenBSD: munin_node.rc,v 1.4 2010/12/27 14:50:22 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/munin-node"
 
-rc_conf
+. /etc/rc.d/rc.subr
 
 pexp="perl: ${daemon}"
 

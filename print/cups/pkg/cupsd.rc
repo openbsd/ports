@@ -1,12 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: cupsd.rc,v 1.5 2010/12/24 10:40:06 ajacoutot Exp $
-
-. /etc/rc.d/rc.subr
+# $OpenBSD: cupsd.rc,v 1.6 2010/12/27 14:50:23 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/cupsd"
 
-rc_conf
+. /etc/rc.d/rc.subr
 
 pexp="${daemon} -C ${SYSCONFDIR}/cups/cupsd.conf"
 

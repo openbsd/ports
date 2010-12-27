@@ -1,12 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: sogod.rc,v 1.3 2010/12/24 10:40:06 ajacoutot Exp $
-
-. /etc/rc.d/rc.subr
+# $OpenBSD: sogod.rc,v 1.4 2010/12/27 14:50:24 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/sogod"
 daemon_user="_sogo"
 
-rc_conf
+. /etc/rc.d/rc.subr
 
 rc_cmd $1

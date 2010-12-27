@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2010/12/24 10:40:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2010/12/27 14:50:24 ajacoutot Exp $
 
 COMMENT =		VNC server for real X displays
 
 DISTNAME =		x11vnc-0.9.12
 
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		x11
 HOMEPAGE =		http://www.karlrunge.com/x11vnc/

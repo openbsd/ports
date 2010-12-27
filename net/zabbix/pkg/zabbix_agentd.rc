@@ -1,12 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: zabbix_agentd.rc,v 1.3 2010/12/24 10:40:05 ajacoutot Exp $
-
-. /etc/rc.d/rc.subr
+# $OpenBSD: zabbix_agentd.rc,v 1.4 2010/12/27 14:50:23 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/zabbix_agentd"
 
-rc_conf
+. /etc/rc.d/rc.subr
 
 pexp="zabbix_agentd: main process"
 rc_reload=NO
