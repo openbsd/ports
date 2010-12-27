@@ -1,6 +1,6 @@
-$OpenBSD: patch-openbsd__netstat_c,v 1.2 2007/07/25 16:43:45 ajacoutot Exp $
+$OpenBSD: patch-openbsd__netstat_c,v 1.3 2010/12/27 19:03:48 jasper Exp $
 --- openbsd/_netstat.c.orig	Tue Dec 21 07:32:04 2004
-+++ openbsd/_netstat.c	Mon Jul 23 18:59:18 2007
++++ openbsd/_netstat.c	Mon Dec 27 20:00:16 2010
 @@ -54,10 +54,6 @@
  #include <netinet/ip_esp.h>
  #include <netinet/ip_ipip.h>
@@ -12,3 +12,11 @@ $OpenBSD: patch-openbsd__netstat_c,v 1.2 2007/07/25 16:43:45 ajacoutot Exp $
  #include <kvm.h>
  #include <Python.h>
  
+@@ -186,7 +182,6 @@ PyObject *ip6stats(PyObject *self, PyObject *args){
+     //FIXME m2m, an array of 32 long longs. 
+     if (!addULongLong(retdict, "mext1",         (unsigned long long)ip6s.ip6s_mext1))           return NULL;
+     if (!addULongLong(retdict, "mext2m",        (unsigned long long)ip6s.ip6s_mext2m))          return NULL;
+-    if (!addULongLong(retdict, "exthdrtoolong", (unsigned long long)ip6s.ip6s_exthdrtoolong))   return NULL;
+     if (!addULongLong(retdict, "nogif",         (unsigned long long)ip6s.ip6s_nogif))           return NULL;
+     if (!addULongLong(retdict, "toomanyhdr",    (unsigned long long)ip6s.ip6s_toomanyhdr))      return NULL;
+ 	return retdict;
