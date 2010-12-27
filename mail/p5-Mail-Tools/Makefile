@@ -1,11 +1,10 @@
-#   $OpenBSD: Makefile,v 1.21 2010/12/03 11:45:39 ajacoutot Exp $
+#   $OpenBSD: Makefile,v 1.22 2010/12/27 11:49:06 jasper Exp $
 
 COMMENT=	modules for handling mail with perl
 
 MODULES=	cpan
-DISTNAME=	MailTools-2.04
-PKGNAME=	p5-Mail-Tools-2.04
-REVISION=	0
+DISTNAME=	MailTools-2.07
+PKGNAME=	p5-Mail-Tools-2.07
 CATEGORIES=	mail devel
 MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Mail/}
 USE_GROFF =	Yes
