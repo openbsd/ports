@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/10/29 12:42:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2010/12/28 11:03:13 jasper Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -7,6 +7,7 @@ ${P5SITE}/Image/
 ${P5SITE}/Image/ExifTool/
 ${P5SITE}/Image/ExifTool.pm
 ${P5SITE}/Image/ExifTool.pod
+${P5SITE}/Image/ExifTool/AES.pm
 ${P5SITE}/Image/ExifTool/AFCP.pm
 ${P5SITE}/Image/ExifTool/AIFF.pm
 ${P5SITE}/Image/ExifTool/APE.pm
@@ -48,6 +49,7 @@ ${P5SITE}/Image/ExifTool/Charset/MacRoman.pm
 ${P5SITE}/Image/ExifTool/Charset/MacRomanian.pm
 ${P5SITE}/Image/ExifTool/Charset/MacThai.pm
 ${P5SITE}/Image/ExifTool/Charset/MacTurkish.pm
+${P5SITE}/Image/ExifTool/Charset/PDFDoc.pm
 ${P5SITE}/Image/ExifTool/Charset/ShiftJIS.pm
 ${P5SITE}/Image/ExifTool/Charset/Symbol.pm
 ${P5SITE}/Image/ExifTool/Charset/Thai.pm
@@ -66,6 +68,7 @@ ${P5SITE}/Image/ExifTool/Font.pm
 ${P5SITE}/Image/ExifTool/FotoStation.pm
 ${P5SITE}/Image/ExifTool/FujiFilm.pm
 ${P5SITE}/Image/ExifTool/GIF.pm
+${P5SITE}/Image/ExifTool/GIMP.pm
 ${P5SITE}/Image/ExifTool/GPS.pm
 ${P5SITE}/Image/ExifTool/GeoTiff.pm
 ${P5SITE}/Image/ExifTool/Geotag.pm
@@ -114,6 +117,7 @@ ${P5SITE}/Image/ExifTool/MPF.pm
 ${P5SITE}/Image/ExifTool/MWG.pm
 ${P5SITE}/Image/ExifTool/MakerNotes.pm
 ${P5SITE}/Image/ExifTool/Matroska.pm
+${P5SITE}/Image/ExifTool/Microsoft.pm
 ${P5SITE}/Image/ExifTool/Minolta.pm
 ${P5SITE}/Image/ExifTool/MinoltaRaw.pm
 ${P5SITE}/Image/ExifTool/Nikon.pm
@@ -171,6 +175,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man1/exiftool.1
 @man man/man3p/File::RandomAccess.3p
 @man man/man3p/Image::ExifTool.3p
+@man man/man3p/Image::ExifTool::AES.3p
 @man man/man3p/Image::ExifTool::AFCP.3p
 @man man/man3p/Image::ExifTool::AIFF.3p
 @man man/man3p/Image::ExifTool::APE.3p
@@ -200,6 +205,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::FotoStation.3p
 @man man/man3p/Image::ExifTool::FujiFilm.3p
 @man man/man3p/Image::ExifTool::GIF.3p
+@man man/man3p/Image::ExifTool::GIMP.3p
 @man man/man3p/Image::ExifTool::GPS.3p
 @man man/man3p/Image::ExifTool::GeoTiff.3p
 @man man/man3p/Image::ExifTool::Geotag.3p
@@ -247,6 +253,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::MWG.3p
 @man man/man3p/Image::ExifTool::MakerNotes.3p
 @man man/man3p/Image::ExifTool::Matroska.3p
+@man man/man3p/Image::ExifTool::Microsoft.3p
 @man man/man3p/Image::ExifTool::Minolta.3p
 @man man/man3p/Image::ExifTool::MinoltaRaw.3p
 @man man/man3p/Image::ExifTool::Nikon.3p
