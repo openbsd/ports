@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:54 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2010/12/28 17:46:20 ajacoutot Exp $
 
 COMMENT=	search engine library
 
-V=		1.2.3
+V=		1.2.4
 DISTNAME=	xapian-core-${V}
 
 SHARED_LIBS +=  xapian               2.0      # .23.2
