@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/28 19:49:09 dhill Exp $
+${P5SITE}/Log/
+${P5SITE}/Log/Any/
+${P5SITE}/Log/Any.pm
+${P5SITE}/Log/Any/Adapter/
+${P5SITE}/Log/Any/Adapter/Core.pm
+${P5SITE}/Log/Any/Adapter/Null.pm
+${P5SITE}/Log/Any/Adapter/Test.pm
+${P5SITE}/Log/Any/Test.pm
+@man man/man3p/Log::Any.3p
+@man man/man3p/Log::Any::Adapter::Core.3p
+@man man/man3p/Log::Any::Adapter::Null.3p
+@man man/man3p/Log::Any::Test.3p
