@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.881 2010/12/23 14:03:10 claudio Exp $
+# $OpenBSD: Makefile,v 1.882 2010/12/28 19:52:09 dhill Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -590,6 +590,7 @@
      SUBDIR += p5-Locale-gettext
      SUBDIR += p5-LockFile-Simple
      SUBDIR += p5-Log-Agent
+     SUBDIR += p5-Log-Any
      SUBDIR += p5-Log-Dispatch
      SUBDIR += p5-Log-Dispatch-Binlog
      SUBDIR += p5-Log-Dispatch-Config
