@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/28 22:29:43 benoit Exp $
 
 COMMENT=	superclass for representing nodes in a tree
 
 MODULES=	cpan
-DISTNAME=	Tree-DAG_Node-1.05
-REVISION=	1
+DISTNAME=	Tree-DAG_Node-1.06
 CATEGORIES=	devel
 USE_GROFF =	Yes
 
