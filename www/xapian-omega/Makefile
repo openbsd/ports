@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/28 17:46:49 ajacoutot Exp $
 
 COMMENT=	web search application
 
-V=		1.2.3
+V=		1.2.4
 DISTNAME=	xapian-omega-${V}
 
 CATEGORIES=	www textproc
@@ -15,17 +15,20 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += c m e2fs-uuid stdc++ z xapian pcre
+WANTLIB += c m e2fs-uuid stdc++ z xapian pcre magic
 
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${V}/
 
 USE_LIBTOOL=	Yes
 
-LIB_DEPENDS=	databases/xapian-core>=1.2.3 \
-		devel/pcre
+LIB_DEPENDS=	databases/xapian-core>=1.2.4 \
+		devel/pcre \
+		devel/libmagic
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/xapian-omega \
 		pkglibbindir=${PREFIX}/libexec/xapian-omega/cgi-bin

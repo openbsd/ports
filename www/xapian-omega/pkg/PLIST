@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/07/23 15:16:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2010/12/28 17:46:49 ajacoutot Exp $
 bin/dbi2omega
 bin/htdig2omega
 bin/mbox2omega
@@ -9,6 +9,8 @@ libexec/xapian-omega/cgi-bin/
 @mode 111
 @bin libexec/xapian-omega/cgi-bin/omega
 @sample /var/www/cgi-bin/omega
+libexec/xapian-omega/cgi-bin/outlookmsg2html
+@sample /var/www/cgi-bin/outlookmsg2html
 @mode
 @man man/man1/omindex.1
 @man man/man1/scriptindex.1
