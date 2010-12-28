@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/12/21 17:10:58 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/28 11:02:27 jasper Exp $
 
 COMMENT=		DataObjects driver for PostgreSQL
 
 DISTNAME=		do_postgres-0.10.2
+REVISION=		0
 CATEGORIES=		databases
 
 # MIT
@@ -19,7 +20,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		databases/ruby-data_objects,${MODRUBY_FLAVOR}
 
 WANTLIB=		pq
-LIB_DEPENDS=		databases/postgresql,-server
+LIB_DEPENDS=		databases/postgresql,-main
 
 # Requires running PostgreSQL database
 REGRESS_IS_INTERACTIVE = Yes
