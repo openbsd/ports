@@ -1,0 +1,29 @@
+$OpenBSD: patch-xpath_c,v 1.1 2010/12/28 10:53:02 jasper Exp $
+
+Fix for CVE-2010-4494, Libxml2 XPath Double Free Vulnerability.
+
+From upstream git:
+http://git.gnome.org/browse/libxml2/commit/?id=df83c17e5a2646bd923f75e5e507bc80d73c9722
+
+--- xpath.c.orig	Wed Nov  3 20:18:27 2010
++++ xpath.c	Tue Dec 28 11:35:16 2010
+@@ -11763,11 +11763,15 @@ xmlXPathCompOpEvalPositionalPredicate(xmlXPathParserCo
+ 
+ 	    if ((ctxt->error != XPATH_EXPRESSION_OK) || (res == -1)) {
+ 	        xmlXPathObjectPtr tmp;
+-		/* pop the result */
++		/* pop the result if any */
+ 		tmp = valuePop(ctxt);
+-		xmlXPathReleaseObject(xpctxt, tmp);
+-		/* then pop off contextObj, which will be freed later */
+-		valuePop(ctxt);
++                if (tmp != contextObj)
++                    /*
++                     * Free up the result
++                     * then pop off contextObj, which will be freed later
++                     */
++                    xmlXPathReleaseObject(xpctxt, tmp);
++                    valuePop(ctxt);
+ 		goto evaluation_error;
+ 	    }
+ 
