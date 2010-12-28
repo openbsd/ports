@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_wafadmin_Tools_python_py,v 1.1.1.1 2010/12/28 18:19:28 jasper Exp $
+--- tools/wafadmin/Tools/python.py.orig	Sun Oct 24 23:45:39 2010
++++ tools/wafadmin/Tools/python.py	Fri Oct 29 12:05:02 2010
+@@ -374,7 +374,7 @@ def detect(conf):
+ 	if not conf.env.PYTHON:
+ 		conf.env.PYTHON = sys.executable
+ 
+-	python = conf.find_program('python', var='PYTHON')
++	python = conf.find_program('${MODPY_BIN}', var='PYTHON')
+ 	if not python:
+ 		conf.fatal('Could not find the path of the python executable')
+ 

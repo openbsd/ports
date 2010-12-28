@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_wafadmin_Tools_config_c_py,v 1.1.1.1 2010/12/28 18:19:28 jasper Exp $
+--- tools/wafadmin/Tools/config_c.py.orig	Fri Oct 29 14:26:54 2010
++++ tools/wafadmin/Tools/config_c.py	Fri Oct 29 14:27:24 2010
+@@ -399,7 +399,7 @@ def post_check(self, *k, **kw):
+ 
+ 	is_success = False
+ 	if kw['execute']:
+-		if kw['success']:
++		if kw['success'] is not None:
+ 			is_success = True
+ 	else:
+ 		is_success = (kw['success'] == 0)
