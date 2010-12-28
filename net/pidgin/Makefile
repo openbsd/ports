@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2010/12/23 23:25:25 steven Exp $
+# $OpenBSD: Makefile,v 1.84 2010/12/28 18:18:02 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.7.8
+VERSION=	2.7.9
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
