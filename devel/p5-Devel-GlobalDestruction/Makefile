@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/28 22:28:26 benoit Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		expose the flag which marks global destruction
 
-DISTNAME =		Devel-GlobalDestruction-0.02
-REVISION =		1
+DISTNAME =		Devel-GlobalDestruction-0.03
 CATEGORIES =		devel
 
 # perl

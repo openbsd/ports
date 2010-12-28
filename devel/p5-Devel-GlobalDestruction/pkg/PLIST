@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/06 16:47:54 jasper Exp $
-${P5ARCH}/
+@comment $OpenBSD: PLIST,v 1.2 2010/12/28 22:28:28 benoit Exp $
 ${P5ARCH}/Devel/
 ${P5ARCH}/Devel/GlobalDestruction.pm
-${P5ARCH}/auto/
 ${P5ARCH}/auto/Devel/
 ${P5ARCH}/auto/Devel/GlobalDestruction/
 ${P5ARCH}/auto/Devel/GlobalDestruction/GlobalDestruction.bs
