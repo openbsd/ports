@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.10 2010/11/01 12:24:47 espie Exp $
+# $OpenBSD: dpb,v 1.11 2010/12/29 12:28:23 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -20,10 +20,11 @@
 use strict;
 use warnings;
 my $ports1;
+use FindBin;
 BEGIN {
 	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
 }
-use lib "$ports1/infrastructure/lib";
+use lib ("$ports1/infrastructure/lib", "$FindBin::Bin/../lib");
 use DPB::PkgPath;
 use DPB::Core;
 use DPB::Vars;

@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.29 2010/12/07 08:46:28 espie Exp $
+# $OpenBSD: libtool,v 1.30 2010/12/29 12:28:23 espie Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -24,11 +24,12 @@ use File::Glob ':glob';
 use File::Path;
 use Getopt::Long;
 use Getopt::Std;
+use FindBin;
 my $ports1;
 BEGIN {
 	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
 }
-use lib "$ports1/infrastructure/lib/LibTool";
+use lib ("$ports1/infrastructure/lib/LibTool", "$FindBin::Bin/../lib/LibTool");
 use Trace;
 use Exec;
 use Parser;
