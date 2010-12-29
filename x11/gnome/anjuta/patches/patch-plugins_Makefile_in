@@ -1,10 +1,10 @@
-$OpenBSD: patch-plugins_Makefile_in,v 1.6 2010/11/12 15:05:17 ajacoutot Exp $
+$OpenBSD: patch-plugins_Makefile_in,v 1.7 2010/12/29 19:48:04 ajacoutot Exp $
 
 Disable the symbol-db plugin, OpenBSD lacks shm_open().
 
---- plugins/Makefile.in.orig	Fri Nov 12 14:54:50 2010
-+++ plugins/Makefile.in	Fri Nov 12 15:15:33 2010
-@@ -341,7 +341,6 @@ SUBDIRS = . \
+--- plugins/Makefile.in.orig	Wed Dec 29 18:44:29 2010
++++ plugins/Makefile.in	Wed Dec 29 20:14:07 2010
+@@ -349,7 +349,6 @@ SUBDIRS = . \
  	glade \
  	devhelp \
  	language-manager \

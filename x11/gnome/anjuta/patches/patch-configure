@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.2 2010/11/12 15:05:17 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.3 2010/12/29 19:48:04 ajacoutot Exp $
 
 Be sure to pickup the right Python.
 
---- configure.orig	Fri Nov 12 14:54:47 2010
-+++ configure	Fri Nov 12 15:16:18 2010
-@@ -2878,14 +2878,6 @@ echo timestamp > conftest.file
+--- configure.orig	Wed Dec 29 18:44:17 2010
++++ configure	Wed Dec 29 20:14:07 2010
+@@ -2889,14 +2889,6 @@ echo timestamp > conftest.file
  # name.  Accept space and tab only in the latter.
  am_lf='
  '
@@ -19,7 +19,7 @@ Be sure to pickup the right Python.
  
  # Do `set' in a subshell so we don't clobber the current shell's
  # arguments.  Must try -L first in case configure is actually a
-@@ -16063,7 +16055,7 @@ fi
+@@ -16159,7 +16151,7 @@ fi
  
          # Find any Python interpreter.
      if test -z "$PYTHON"; then
