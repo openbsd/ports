@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/29 11:50:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2010/12/29 12:37:27 jasper Exp $
 
 COMMENT-main=		high performance webserver written in Erlang, libraries
 COMMENT-web=		high performance webserver written in Erlang, docroot
@@ -30,7 +30,8 @@ RUN_DEPENDS=		lang/erlang
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-pam \
-			--disable-sendfile
+			--disable-sendfile \
+			--localstatedir="/var"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
