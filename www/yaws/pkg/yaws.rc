@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# $OpenBSD: yaws.rc,v 1.1 2010/12/29 09:45:50 jasper Exp $
+
+daemon="${TRUEPREFIX}/bin/yaws"
+daemon_flags="--daemon --conf ${SYSCONFDIR}/yaws/yaws.conf"
+
+. /etc/rc.d/rc.subr
+
+pexp="${LOCALBASE}/lib/erlang/erts.*${TRUEPREFIX}/lib/yaws/ebin -run yaws"
+
+rc_stop(){
+	${daemon} --stop
+}
+
+rc_reload(){
+	${daemon} --hup
+}
+
+rc_cmd $1
