@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: register-plist,v 1.4 2010/11/26 07:17:10 espie Exp $
+# $OpenBSD: register-plist,v 1.5 2010/12/29 12:33:38 espie Exp $
 # Copyright (c) 2005
 # Marc Espie.  All rights reserved.
 # Redistribution and use in source and binary forms, with or without
@@ -442,6 +442,41 @@ sub compare_lists
 	return act_on_compare($r, $p1, $p2, $result, $state);
 }
 
+sub compare_versions
+{
+	my ($dir, $plist, $state) = @_;
+
+	opendir (my $dirhandle, $dir) or return 0;
+	my (@parsed) = OpenBSD::PackageName::splitname($plist->pkgname);
+	$parsed[1] = '*';
+	my $reference = join('-', @parsed);
+	my $n = OpenBSD::PackageName->from_string($plist->pkgname);
+	my $result = 0;
+	my $re = qr{^\Q$parsed[0]\E\-\d};
+	while (my $d = readdir $dirhandle) {
+		next unless $d =~ $re;
+		my (@cmp) = OpenBSD::PackageName::splitname($d);
+		$cmp[1] = '*';
+		next if  join('-', @cmp) ne $reference;
+
+		my $p2 = OpenBSD::PackingList->fromfile("$dir/$d",
+			\&OpenBSD::PackingList::ExtraInfoOnly);
+		next if $p2->fullpkgpath ne $plist->fullpkgpath;
+		my $n2 = OpenBSD::PackageName->from_string($p2->pkgname);
+		my $c = $n->compare($n2);
+		if ($c < 0) {
+			$state->errsay("Found newer package #1 in #2", 
+			    $p2->pkgname, $dir);
+			$result = 1;
+		} elsif ($c == 0) {
+			$state->errsay("Found package with different name that compares equal in #2: #1", 
+			    $p2->pkgname, $dir);
+			$result = 1;
+		}
+	}
+	return $result;
+}
+
 my $state = OpenBSD::State->new('register-plist');
 $state->handle_options('tp', '[-t p1 p2] dir pkg ...');
 if (@ARGV < 2 && !$state->opt('p')) {
@@ -507,6 +542,7 @@ for my $pkgfile (@ARGV) {
 			    $state);
 			last;
 		}
+		$error += compare_versions($dir, $plist, $state);
 	}
 	if (!$error) {
 		my $result = $dirs[0].'/'.$plist->pkgname;
