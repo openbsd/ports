@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/28 18:19:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2010/12/29 12:24:39 jasper Exp $
 
 # XXX:
-# - mksnapshot links with -lpthread.
 # - Build fails on some amd64 machines?
 # - Honor CXXFLAGS.
 # - Test on ARM.
