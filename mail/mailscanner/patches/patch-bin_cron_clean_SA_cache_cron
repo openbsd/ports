@@ -1,14 +1,19 @@
-$OpenBSD: patch-bin_cron_clean_SA_cache_cron,v 1.1 2009/10/07 20:59:29 sthen Exp $
---- bin/cron/clean.SA.cache.cron.orig	Fri Aug 28 18:24:48 2009
-+++ bin/cron/clean.SA.cache.cron	Fri Aug 28 18:25:40 2009
-@@ -7,8 +7,8 @@ unless (eval { require "DBD/SQLite.pm" }) {
+$OpenBSD: patch-bin_cron_clean_SA_cache_cron,v 1.2 2010/12/29 06:42:16 ajacoutot Exp $
+--- bin/cron/clean.SA.cache.cron.orig	Sat Nov 13 10:16:14 2010
++++ bin/cron/clean.SA.cache.cron	Sun Dec 26 14:16:01 2010
+@@ -7,11 +7,11 @@ unless (eval { require "DBD/SQLite.pm" }) {
    exit 0;
  }
  
 -#$cachefile = `perl -n -e 'print "$_" if chomp && s/^\s*SpamAssassin\s*Cache\s*Database\s*File\s*=\s*(\S+)/$1/i' /etc/MailScanner/MailScanner.conf`;
--$cachefile = `/opt/MailScanner/bin/Quick.Peek spamassassincachedatabasefile /etc/MailScanner/MailScanner.conf`;
+-#$cachefile = `/opt/MailScanner/bin/Quick.Peek spamassassincachedatabasefile /etc/MailScanner/MailScanner.conf`;
 +#$cachefile = `perl -n -e 'print "$_" if chomp && s/^\s*SpamAssassin\s*Cache\s*Database\s*File\s*=\s*(\S+)/$1/i' %SYSCONFDIR%/MailScanner/MailScanner.conf`;
-+$cachefile = `%PREFIX%/bin/Quick.Peek spamassassincachedatabasefile %SYSCONFDIR%/MailScanner/MailScanner.conf`;
++#$cachefile = `%PREFIX%/bin/Quick.Peek spamassassincachedatabasefile %SYSCONFDIR%/MailScanner/MailScanner.conf`;
+ # Allow alternative locations for MailScanner (noel.butler@ausics.net)
+-$cachefile = `/opt/MailScanner/bin/Quick.Peek spamassassincachedatabasefile /etc/MailScanner/MailScanner.conf` if (-e "/etc/MailScanner/MailScanner.conf");
+-$cachefile = `/opt/MailScanner/bin/Quick.Peek spamassassincachedatabasefile /opt/MailScanner/etc/MailScanner.conf` if (-e "/opt/MailScanner/etc/MailScanner.conf");
++$cachefile = `%PREFIX%/bin/Quick.Peek spamassassincachedatabasefile %SYSCONFDIR%/MailScanner/MailScanner.conf` if (-e "%SYSCONFDIR%/MailScanner/MailScanner.conf");
++$cachefile = `%PREFIX%/bin/Quick.Peek spamassassincachedatabasefile %SYSCONFDIR%/MailScanner/MailScanner.conf` if (-e "%SYSCONFDIR%/MailScanner/MailScanner.conf");
+ 
  chomp $cachefile;
  $cachefile = '/var/spool/MailScanner/incoming/SpamAssassin.cache.db' unless $cachefile;
- 
