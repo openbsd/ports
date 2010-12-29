@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/29 13:47:53 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2010/12/29 14:57:17 stsp Exp $
 
 COMMENT =		python interface to subversion
 
 MODPY_EGG_VERSION =	1.7.2
 DISTNAME = 		pysvn-${MODPY_EGG_VERSION}
+REVISION = 		0
 PKGNAME = 		py-pysvn-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 
@@ -20,11 +21,10 @@ PERMIT_DISTFILES_FTP = 		Yes
 MASTER_SITES =	http://pysvn.barrys-emacs.org/source_kits/
 
 MODULES = 	lang/python
-LIB_DEPENDS = 	devel/apr \
-		devel/subversion,-main
+LIB_DEPENDS = 	devel/subversion,-main
+WANTLIB = 	com_err expat m neon stdc++ svn_client-1 svn_diff-1 svn_repos-1
 
 USE_GMAKE = 	Yes
-SHARED_ONLY = 	Yes
 _PYSVN_PYVERSION = ${MODPY_VERSION:S/./_/}
 SUBST_VARS += 	_PYSVN_PYVERSION
 
@@ -39,16 +39,16 @@ do-configure:
 	cd ${WRKSRC} && ${MODPY_BIN} ./${MODPY_SETUP} configure ${CONFIGURE_FLAGS}
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/pysvn
+	${INSTALL_DATA_DIR} ${WRKINST}/${MODPY_SITEPKG}/pysvn
 	${INSTALL_SCRIPT} ${WRKSRC}/pysvn/__init__.py \
-		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/pysvn/__init__.py
+		${WRKINST}/${MODPY_SITEPKG}/pysvn/__init__.py
 	${INSTALL_DATA} ${WRKSRC}/pysvn/_pysvn_${_PYSVN_PYVERSION}.so \
-		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/pysvn/_pysvn_${_PYSVN_PYVERSION}.so
+		${WRKINST}/${MODPY_SITEPKG}/pysvn/_pysvn_${_PYSVN_PYVERSION}.so
 
 do-regress:
-	cd ${WRKDIST}/Tests && ${GMAKE}
+	cd ${WRKDIST}/Tests && ${MAKE_PROGRAM}
 
 .include <bsd.port.mk>
