@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/29 10:15:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/29 10:26:35 jasper Exp $
 
 COMMENT-main=		high performance webserver written in Erlang, libraries
 COMMENT-web=		high performance webserver written in Erlang, docroot
@@ -6,7 +6,7 @@ COMMENT-web=		high performance webserver written in Erlang, docroot
 VERSION=		1.89
 DISTNAME=		yaws-${VERSION}
 PKGNAME-main=		yaws-${VERSION}
-REVISION-main=		1
+REVISION-main=		2
 PKGNAME-web=		yaws-web-${VERSION}
 CATEGORIES=		www
 
@@ -34,7 +34,7 @@ CONFIGURE_ARGS+=	--disable-pam \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-RUN_DEPENDS-web=	${BASE_PKGPATH},-main
+RUN_DEPENDS-main=	${BASE_PKGPATH},-web
 
 USE_GMAKE=		Yes
 
