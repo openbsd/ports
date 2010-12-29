@@ -1,0 +1,24 @@
+$OpenBSD: patch-gio_tests_gdbus-connection_c,v 1.1 2010/12/29 09:58:45 sebastia Exp $
+
+Fix for gcc-2.95
+
+--- gio/tests/gdbus-connection.c.orig	Wed Dec 29 09:41:16 2010
++++ gio/tests/gdbus-connection.c	Wed Dec 29 09:48:35 2010
+@@ -529,6 +529,8 @@ test_connection_signals (void)
+   GError *error;
+   gboolean ret;
+   GVariant *result;
++  gboolean quit_mainloop_fired;
++  guint quit_mainloop_id;
+ 
+   error = NULL;
+ 
+@@ -686,8 +688,6 @@ test_connection_signals (void)
+    * Also to check the total amount of NameOwnerChanged signals - use a 5 second ceiling
+    * to avoid spinning forever
+    */
+-  gboolean quit_mainloop_fired;
+-  guint quit_mainloop_id;
+   quit_mainloop_fired = FALSE;
+   quit_mainloop_id = g_timeout_add (30000, test_connection_quit_mainloop, &quit_mainloop_fired);
+   while (count_name_owner_changed < 2 && !quit_mainloop_fired)
