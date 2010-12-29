@@ -1,0 +1,2 @@
+Pure perl bindings for redis. This version supports protocol 
+1.2 or later of Redis.
