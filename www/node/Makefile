@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/29 15:06:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2010/12/29 17:49:41 jasper Exp $
 
 # XXX:
 # - Build fails on some amd64 machines?
-# - Test on ARM.
 
 ONLY_FOR_ARCHS=	amd64 i386
 
