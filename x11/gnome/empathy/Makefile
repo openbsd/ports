@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2010/12/21 21:47:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2010/12/29 12:28:36 jasper Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
@@ -86,7 +86,7 @@ USE_GROFF =		Yes
 FAKE_FLAGS+=		pkgdatadir=${PREFIX}/share/
 
 pre-configure:
-	@ln -s ${LOCALBASE}/bin/python${MODPY_VERSION}-config \
+	@ln -sf ${LOCALBASE}/bin/python${MODPY_VERSION}-config \
 		${WRKDIR}/bin/python-config
 
 .include <bsd.port.mk>
