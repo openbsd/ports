@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/12/22 22:39:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2010/12/29 07:33:08 ajacoutot Exp $
 
 COMMENT =	npapi vte-based terminal for web browsers
 
@@ -18,14 +18,13 @@ WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread-stubs xcb z gdk_pixbuf-2.0
 WANTLIB += vte gdk-x11-2.0 gtk-x11-2.0
-WANTLIB += L Xxf86vm drm gthread-2.0 xcb-render xcb-shm
+WANTLIB += GL Xxf86vm drm gthread-2.0 xcb-render xcb-shm
 
 EXTRACT_SUFX=.tar.bz2
 
 MASTER_SITES =	http://blog.renevier.net/public/
 MODULES =	devel/gettext \
 		devel/waf
-
 
 LIB_DEPENDS =	x11/gtk+2 \
 		devel/vte
