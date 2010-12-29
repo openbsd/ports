@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/29 12:37:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/29 12:39:54 jasper Exp $
 
 COMMENT-main=		high performance webserver written in Erlang, libraries
 COMMENT-web=		high performance webserver written in Erlang, docroot
@@ -8,6 +8,7 @@ DISTNAME=		yaws-${VERSION}
 PKGNAME-main=		yaws-${VERSION}
 REVISION-main=		3
 PKGNAME-web=		yaws-web-${VERSION}
+REVISION-web=		0
 CATEGORIES=		www
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -42,6 +43,8 @@ USE_GMAKE=		Yes
 NO_REGRESS=		Yes
 
 PREFIX-web=		/var
+
+ALL_TARGET=		all docs
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure
