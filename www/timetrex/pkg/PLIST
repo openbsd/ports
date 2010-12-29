@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2010/11/25 08:56:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2010/12/29 12:20:40 ajacoutot Exp $
 timetrex/
 timetrex/INSTALL.txt
 timetrex/LICENSE
@@ -480,6 +480,7 @@ timetrex/classes/modules/install/InstallSchema_1014T.class.php
 timetrex/classes/modules/install/InstallSchema_1015A.class.php
 timetrex/classes/modules/install/InstallSchema_1015T.class.php
 timetrex/classes/modules/install/InstallSchema_1016A.class.php
+timetrex/classes/modules/install/InstallSchema_1016T.class.php
 timetrex/classes/modules/install/InstallSchema_1017A.class.php
 timetrex/classes/modules/install/InstallSchema_1018A.class.php
 timetrex/classes/modules/install/InstallSchema_1019A.class.php
@@ -540,6 +541,7 @@ timetrex/classes/modules/install/sql/mysql/1014T.sql
 timetrex/classes/modules/install/sql/mysql/1015A.sql
 timetrex/classes/modules/install/sql/mysql/1015T.sql
 timetrex/classes/modules/install/sql/mysql/1016A.sql
+timetrex/classes/modules/install/sql/mysql/1016T.sql
 timetrex/classes/modules/install/sql/mysql/1017A.sql
 timetrex/classes/modules/install/sql/mysql/1018A.sql
 timetrex/classes/modules/install/sql/mysql/1019A.sql
@@ -598,6 +600,7 @@ timetrex/classes/modules/install/sql/postgresql/1014T.sql
 timetrex/classes/modules/install/sql/postgresql/1015A.sql
 timetrex/classes/modules/install/sql/postgresql/1015T.sql
 timetrex/classes/modules/install/sql/postgresql/1016A.sql
+timetrex/classes/modules/install/sql/postgresql/1016T.sql
 timetrex/classes/modules/install/sql/postgresql/1017A.sql
 timetrex/classes/modules/install/sql/postgresql/1018A.sql
 timetrex/classes/modules/install/sql/postgresql/1019A.sql
@@ -718,6 +721,7 @@ timetrex/classes/modules/report/InvoiceTransactionSummaryReport.class.php
 timetrex/classes/modules/report/Report.class.php
 timetrex/classes/modules/report/TimesheetDetailReport.class.php
 timetrex/classes/modules/report/TimesheetSummaryReport.class.php
+timetrex/classes/modules/report/UserSummaryReport.class.php
 timetrex/classes/modules/request/
 timetrex/classes/modules/request/RequestFactory.class.php
 timetrex/classes/modules/request/RequestListFactory.class.php
@@ -2906,6 +2910,8 @@ timetrex/unit_tests/CAPayrollDeductionTest2009.csv
 timetrex/unit_tests/CAPayrollDeductionTest2009.php
 timetrex/unit_tests/CAPayrollDeductionTest2010.csv
 timetrex/unit_tests/CAPayrollDeductionTest2010.php
+timetrex/unit_tests/CAPayrollDeductionTest2011.csv
+timetrex/unit_tests/CAPayrollDeductionTest2011.php
 timetrex/unit_tests/CRPayrollDeductionTest.php
 timetrex/unit_tests/DateTimeTest.php
 timetrex/unit_tests/DependencyTreeTest.php
@@ -2922,6 +2928,8 @@ timetrex/unit_tests/USPayrollDeductionTest2009.csv
 timetrex/unit_tests/USPayrollDeductionTest2009.php
 timetrex/unit_tests/USPayrollDeductionTest2010.csv
 timetrex/unit_tests/USPayrollDeductionTest2010.php
+timetrex/unit_tests/USPayrollDeductionTest2011.csv
+timetrex/unit_tests/USPayrollDeductionTest2011.php
 @mode 775
 @group www
 @sample timetrex/log/
