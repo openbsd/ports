@@ -1,0 +1,20 @@
+$OpenBSD: README-main,v 1.1 2010/12/29 11:50:34 jasper Exp $
+
+Running Yaws on OpenBSD
+==============================
+
+Initial setup:
+---------------
+A configuration file has been installed to ${SYSCONFDIR}/yaws/yaws.conf
+which may need further tweaking according to your setup. SSL is enabled
+by default.
+
+The default document root for Yaws is /var/www/yaws .
+
+References:
+---------------
+
+Apart from the documentation that is included in the package, there is
+more information available at:
+
+  https://github.com/klacke/yaws/wiki
