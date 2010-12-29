@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2010/12/20 18:49:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.191 2010/12/29 08:35:04 benoit Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -91,6 +91,7 @@
      SUBDIR += p5-GDBM_File
      SUBDIR += p5-Ima-DBI
      SUBDIR += p5-Jifty-DBI
+     SUBDIR += p5-Redis
      SUBDIR += p5-Rose-DB
      SUBDIR += p5-Rose-DB-Object
      SUBDIR += p5-Rose-DateTime
