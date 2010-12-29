@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_rss_c,v 1.7 2010/12/29 19:50:46 ajacoutot Exp $
+--- src/rss.c.orig	Wed Dec 29 18:05:09 2010
++++ src/rss.c	Wed Dec 29 18:06:39 2010
+@@ -1476,6 +1476,7 @@ webkit_click (GtkEntry *entry,
+ 	return TRUE;
+ }
+ 
++#ifdef HAVE_WEBKIT
+ void webkit_hook_actions(void);
+ 
+ void
+@@ -1505,6 +1506,7 @@ webkit_hook_actions(void)
+ 		G_CALLBACK (embed_zoom_100_cb), NULL);
+ #endif
+ }
++#endif
+ 
+ #if 0
+ #if EVOLUTION_VERSION >= 22900
+@@ -5055,7 +5057,9 @@ e_plugin_ui_init (GtkUIManager *ui_manager,
+ 		rss_shell_view);
+ #if EVOLUTION_VERSION >= 22900
+ /*	rss_search_bar_hook();*/
++#ifdef HAVE_WEBKIT
+ 	webkit_hook_actions();
++#endif
+ #endif
+ 	return TRUE;
+ }
