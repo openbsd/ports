@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.882 2010/12/28 19:52:09 dhill Exp $
+# $OpenBSD: Makefile,v 1.883 2010/12/29 13:50:00 stsp Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -939,6 +939,7 @@
      SUBDIR += pygame
      SUBDIR += pylint
      SUBDIR += pyrex
+     SUBDIR += pysvn
      SUBDIR += pyusb
      SUBDIR += qgit
      SUBDIR += qt-creator
