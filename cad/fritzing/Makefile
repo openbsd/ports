@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/29 15:21:39 edd Exp $
 
 ONLY_FOR_ARCHS =${GCC4_ARCHS}
 
@@ -6,6 +6,7 @@ COMMENT=	interactive electronics designing software
 
 V=		0.4.3b
 DISTNAME=	fritzing.2010.10.01.source
+REVISION =	0
 PKGNAME=	fritzing-$V
 CATEGORIES=	cad
 
@@ -23,13 +24,14 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES=	${HOMEPAGE}/download/$V/source-tarball/
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB +=	QtDBus QtGui QtNetwork QtSql QtSvg QtWebKit QtXml QtXmlPatterns
-WANTLIB +=	phonon c m pthread sqlite3 stdc++ z
+WANTLIB +=	QtGui QtNetwork QtSql QtSvg QtWebKit QtXml
+WANTLIB +=	c m pthread stdc++ z
 
 MODULES=        x11/qt4
 NO_REGRESS=	Yes
 
-RUN_DEPENDS=	devel/desktop-file-utils
+RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/qt4,-sqlite
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/fapplication.cpp
