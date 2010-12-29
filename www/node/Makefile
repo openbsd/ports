@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2010/12/29 12:24:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2010/12/29 15:06:48 jasper Exp $
 
 # XXX:
 # - Build fails on some amd64 machines?
-# - Honor CXXFLAGS.
 # - Test on ARM.
 
 ONLY_FOR_ARCHS=	amd64 i386
@@ -43,7 +42,7 @@ NO_REGRESS=	Yes
 
 SUBST_VARS+=	CFLAGS
 
-MAKE_ENV+=	CXX=c++ CCFLAGS+="${CFLAGS}" CXXFLAGS+="${CXXFLAGS}"
+MAKE_ENV+=	CXX=c++ CCFLAGS+="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
 post-extract:
 	rm -f ${WRKSRC}/deps/v8/src/SConscript.orig \
