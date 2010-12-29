@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2010/12/29 13:41:51 ajacoutot Exp $
 
 COMMENT=	Cyrus imapd administration GUI
 
 GNOME_PROJECT=	gyrus
-GNOME_VERSION=	0.3.9
-REVISION=	2
+GNOME_VERSION=	0.3.10
 
 CATEGORIES=	mail
 
@@ -17,19 +16,17 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
+WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gconf-2
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 gnet-2.0
-WANTLIB += pixman-1 png pthread xml2 z pthread-stubs xcb glade-2.0
-WANTLIB += xcb-render xcb-render-util
+WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pixman-1 png pthread z pthread-stubs xcb
+WANTLIB += xcb-render GL Xxf86vm drm xcb-shm
 
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	devel/gconf2 \
-		net/gnet \
-		devel/libglade2
+LIB_DEPENDS=	devel/gconf2
 
 DESKTOP_FILES=	Yes
 
