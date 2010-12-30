@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.486 2010/12/22 20:26:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.487 2010/12/30 08:54:52 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -126,6 +126,7 @@
      SUBDIR += netsurf
      SUBDIR += nginx
      SUBDIR += nginx,passenger
+     SUBDIR += node
      SUBDIR += nostromo
      SUBDIR += ntlmaps
      SUBDIR += opera

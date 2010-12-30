@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/29 17:49:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/30 08:54:52 jasper Exp $
 
 # XXX:
 # - Build fails on some amd64 machines?
+# - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
+# - Needs bundled libcares as arpa/nameser.h does not include ns_t_a.
 
 ONLY_FOR_ARCHS=	amd64 i386
 
