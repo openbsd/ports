@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_etc_script_sympa_in,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
---- src/etc/script/sympa.in.orig	Tue Aug  4 08:36:44 2009
-+++ src/etc/script/sympa.in	Sat Nov 14 18:46:40 2009
+$OpenBSD: patch-src_etc_script_sympa_in,v 1.2 2010/12/30 17:51:25 landry Exp $
+--- src/etc/script/sympa.in.orig	Wed Aug 25 11:40:43 2010
++++ src/etc/script/sympa.in	Tue Dec 21 13:11:24 2010
 @@ -14,43 +14,11 @@
  # chkconfig: 345 95 05
  # description: sympa is a powerfull mailing lists management system.
@@ -69,12 +69,12 @@ $OpenBSD: patch-src_etc_script_sympa_in,v 1.1.1.1 2010/03/27 11:47:13 landry Exp
 -    else
         # First try "/u1/home/sympa/*.pid" files
         if [ -f --piddir--/$1.pid ] ; then
-              pid=`head -1 --piddir--/$1.pid`
+              pid=`head -1 --piddir--/$1.pid | tr -s ' ' '|'`
               if [ "$pid" != "" ] ; then
--                 running=`ps -A | grep "$pid"`
+-                 running=`ps -A | egrep "$pid"`
 +                 running=`pgrep -f $1.pl`
                   if [ "$running" != "" ]; then
-                      echo "$1 (pid $pid) is active..."
+                      echo "$1 (pid(s) $pid) is active..."
                       return 0
 @@ -97,7 +55,6 @@ sympa_status() {
          fi
@@ -154,7 +154,25 @@ $OpenBSD: patch-src_etc_script_sympa_in,v 1.1.1.1 2010/03/27 11:47:13 landry Exp
  	else
  
  		echo "Sympa seems active. No action will be taken."
-@@ -248,7 +176,6 @@ case "$1" in
+@@ -236,19 +164,24 @@ case "$1" in
+ 		echo "Status file for subsystem found."
+ 	else
+ 		echo "Status file for subsystem NOT found."
++		exit 1
+ 	fi
+ 	sympa_status sympa
++	[ $? = 0 ] || exit 1
+ 	sympa_status bulk
++	[ $? = 0 ] || exit 1
+ 	sympa_status archived
++	[ $? = 0 ] || exit 1
+ 	sympa_status bounced
++	[ $? = 0 ] || exit 1
+ 	sympa_status task_manager
++	[ $? = 0 ] || exit 1
+ 	;;
+   restart)
+ 	echo "Restarting Sympa subsystem: "
  	$0 stop
  	sleep 3
  	$0 start

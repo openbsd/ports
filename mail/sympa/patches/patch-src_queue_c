@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_queue_c,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
---- src/queue.c.orig	Tue Jul 28 14:12:59 2009
-+++ src/queue.c	Wed Nov 11 22:24:21 2009
+$OpenBSD: patch-src_queue_c,v 1.2 2010/12/30 17:51:25 landry Exp $
+--- src/queue.c.orig	Wed Jun  9 11:50:04 2010
++++ src/queue.c	Sun Dec 19 11:31:07 2010
 @@ -25,6 +25,9 @@
  #include <sysexits.h>
  #include <string.h>
@@ -9,5 +9,5 @@ $OpenBSD: patch-src_queue_c,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
 +#include <sys/stat.h>
 +#include <unistd.h>
  
- static char rcsid[] = "(@)$Id: patch-src_queue_c,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $";
+ static char rcsid[] = "(@)$Id: patch-src_queue_c,v 1.2 2010/12/30 17:51:25 landry Exp $";
  

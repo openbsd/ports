@@ -1,14 +1,14 @@
-$OpenBSD: README,v 1.2 2010/11/12 16:17:36 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2010/12/30 17:51:25 landry Exp $
 
 SYMPA is now installed, and sample configuration files were created in
-${SYSCONFDIR}/sympa.conf and ${SYSCONFDIR}/wwsympa.conf
+${SYMPA_HOME}/${SYSCONFDIR}/sympa.conf and ${SYMPA_HOME}/${SYSCONFDIR}/wwsympa.conf
 
 Basic configuration
 ===================
 
 You should first edit them to suit your needs, at least http_host,
 domain, listmaster, db_type, db_host, db_user, db_passwd, wwsympa_url
-settings in ${SYSCONFDIR}/sympa.conf, and then configure the needed
+settings in ${SYMPA_HOME}/${SYSCONFDIR}/sympa.conf, and then configure the needed
 database with one of the ${TRUEPREFIX}/share/examples/sympa/create_db.*
 provided schemas.
 You should also install the corresponding p5-DBD-{mysql,SQLite,Pg} module.
@@ -20,40 +20,22 @@ Start sympa using the init.d-style ${TRUEPREFIX}/sbin/sympa script.
 WWSympa configuration
 =====================
 
-Then, add the following lines to your httpd.conf :
+To enable WWSympa within httpd once wwsympa.fcgi has been spawned,
+please create a symbolic link from /var/www/conf/modules.sample/sympa.conf
+to /var/www/conf/modules/sympa.conf
 
-Alias /wwsicons ${SYMPA_HOME}/static/icons/
-Alias /static-sympa ${SYMPA_HOME}/static/
-ScriptAlias /sympa ${TRUEPREFIX}/libexec/sympa/wwsympa-wrapper.fcgi
-FastCgiServer ${TRUEPREFIX}/libexec/sympa/wwsympa.fcgi -processes 2
-<Location /sympa>
-	SetHandler fastcgi-script
-</Location>
-
-For optimal performance you also need to enable mod_fastcgi.
-
-As WWSympa needs to access ${SYMPA_HOME} and ${SYSCONFDIR}/sympa.conf
-files, you have to run httpd unchrooted with httpd -u, or chroot the
-whole sympa package and its dependencies otherwise.
+# ln -s /var/www/conf/modules.sample/sympa.conf \
+        /var/www/conf/modules
+# apachectl stop
+# apachectl start
 
 WWSympa should be available at http://domain.tld/sympa/
 
 Startup/Shutdown configuration
 ==============================
 
-You can start sympa upon boot by adding the following lines to
-${SYSCONFDIR}/rc.local after starting your DB server :
-
-if [ -x ${TRUEPREFIX}/sbin/sympa ]; then
-	echo -n ' sympa' ; ${TRUEPREFIX}/sbin/sympa start
-fi
-
-You should also cleanly stop sympa upon shutdown by adding the
-following lines to ${SYSCONFDIR}/rc.shutdown :
-
-if [ -x ${TRUEPREFIX}/sbin/sympa ]; then
-	echo -n 'stopping sympa' ; ${TRUEPREFIX}/sbin/sympa stop
-fi
+You can control sympa/wwsympa.fcgi daemons using the rc scripts in
+${SYSCONFDIR}/rc.d/.
 
 Mail aliases configuration
 ==========================

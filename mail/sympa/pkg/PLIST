@@ -1,6 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/12 16:10:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2010/12/30 17:51:25 landry Exp $
 @newgroup _sympa:648
 @newuser _sympa:648:648:daemon:Sympa Daemon:/var/empty:/sbin/nologin
+@mode 755
+@owner _sympa
+@group _sympa
+@sample /var/spool/sympa/
+@sample /var/sympa/
+@sample /var/sympa/archives/
+@sample /var/sympa/bounces/
+@sample /var/sympa/etc/
+@sample /var/sympa/list_data/
+@sample /var/sympa/tmp/
+@sample /var/www/sympa/
+@mode
+@owner
+@group
 bin/arc2webarc.pl
 bin/crypt_passwd.pl
 bin/init_comment.pl
@@ -74,6 +88,7 @@ libexec/sympa/
 @group
 libexec/sympa/sympa_soap_server.fcgi
 libexec/sympa/wwsympa.fcgi
+@sample /var/www/wwsympa.fcgi
 @man man/man8/alias_manager.8
 @man man/man8/archived.8
 @man man/man8/bounced.8
@@ -99,6 +114,14 @@ share/examples/sympa/create_db.Pg
 share/examples/sympa/create_db.SQLite
 share/examples/sympa/create_db.Sybase
 share/examples/sympa/create_db.mysql
+@owner _sympa
+@group _sympa
+share/examples/sympa/data_structure.version
+@sample /var/sympa/etc/data_structure.version
+@owner
+@group
+share/examples/sympa/httpd-sympa.conf
+@sample /var/www/conf/modules.sample/sympa.conf
 share/examples/sympa/sample/
 share/examples/sympa/sample/README
 share/examples/sympa/sample/employees.ldap
@@ -111,9 +134,9 @@ share/examples/sympa/sample/test/web_tt2/
 share/examples/sympa/sample/test/web_tt2/welcome.tt2
 share/examples/sympa/sample/trusted_applications.conf
 share/examples/sympa/sympa.conf
-@sample ${SYSCONFDIR}/sympa.conf
+@sample /var/sympa/${SYSCONFDIR}/sympa.conf
 share/examples/sympa/wwsympa.conf
-@sample ${SYSCONFDIR}/wwsympa.conf
+@sample /var/sympa/${SYSCONFDIR}/wwsympa.conf
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/sympa.mo
@@ -391,6 +414,7 @@ share/sympa/scenari/send.public_nobcc
 share/sympa/scenari/send.publickey
 share/sympa/scenari/send.publicnoattachment
 share/sympa/scenari/send.publicnomultipart
+share/sympa/scenari/spam_status.x-spam-status
 share/sympa/scenari/subscribe.auth
 share/sympa/scenari/subscribe.auth_notify
 share/sympa/scenari/subscribe.auth_owner
@@ -433,9 +457,11 @@ share/sympa/web_tt2/arc_protect.tt2
 share/sympa/web_tt2/arcsearch.tt2
 share/sympa/web_tt2/arcsearch_form.tt2
 share/sympa/web_tt2/authorization_reject.tt2
+share/sympa/web_tt2/auto_signoff.tt2
 share/sympa/web_tt2/blacklist.tt2
 share/sympa/web_tt2/button_footer.tt2
 share/sympa/web_tt2/button_header.tt2
+share/sympa/web_tt2/ca.tt2
 share/sympa/web_tt2/change_email.tt2
 share/sympa/web_tt2/change_email_request.tt2
 share/sympa/web_tt2/choosepasswd.tt2
@@ -455,6 +481,7 @@ share/sympa/web_tt2/d_upload.tt2
 share/sympa/web_tt2/dump_scenario.tt2
 share/sympa/web_tt2/dumpvars.tt2
 share/sympa/web_tt2/edit_attributes.tt2
+share/sympa/web_tt2/edit_config.tt2
 share/sympa/web_tt2/edit_list_request.tt2
 share/sympa/web_tt2/edit_template.tt2
 share/sympa/web_tt2/editfile.tt2
@@ -486,6 +513,7 @@ share/sympa/web_tt2/javascript.tt2
 share/sympa/web_tt2/latest_arc.tt2
 share/sympa/web_tt2/latest_d_read.tt2
 share/sympa/web_tt2/latest_lists.tt2
+share/sympa/web_tt2/lca.tt2
 share/sympa/web_tt2/list_button_footer.tt2
 share/sympa/web_tt2/list_button_header.tt2
 share/sympa/web_tt2/list_menu.tt2
@@ -524,6 +552,7 @@ share/sympa/web_tt2/serveradmin.tt2
 share/sympa/web_tt2/set_pending_list_request.tt2
 share/sympa/web_tt2/setlang.tt2
 share/sympa/web_tt2/show_cert.tt2
+share/sympa/web_tt2/show_exclude.tt2
 share/sympa/web_tt2/show_sessions.tt2
 share/sympa/web_tt2/sigrequest.tt2
 share/sympa/web_tt2/skinsedit.tt2
@@ -532,6 +561,8 @@ share/sympa/web_tt2/stats.tt2
 share/sympa/web_tt2/subindex.tt2
 share/sympa/web_tt2/suboptions.tt2
 share/sympa/web_tt2/subrequest.tt2
+share/sympa/web_tt2/subscriber_table.tt2
+share/sympa/web_tt2/suspend_request.tt2
 share/sympa/web_tt2/ticket.tt2
 share/sympa/web_tt2/title.tt2
 share/sympa/web_tt2/tt2_error.tt2
@@ -541,16 +572,8 @@ share/sympa/web_tt2/viewlogs.tt2
 share/sympa/web_tt2/viewmod.tt2
 share/sympa/web_tt2/which.tt2
 share/sympa/web_tt2/your_lists.tt2
-@mode 755
-@owner _sympa
-@group _sympa
-@sample /var/spool/sympa/
-@sample /var/sympa/
-@sample /var/sympa/static/
-@sample /var/sympa/archives/
-@sample /var/sympa/bounces/
-@sample /var/sympa/list_data/
-@sample /var/sympa/tmp/
-@exec ln -s ${PREFIX}/share/sympa/icons /var/sympa/static/
-@unexec rm -f /var/sympa/static/icons
+@exec cp -r ${PREFIX}/share/sympa/icons /var/www/sympa/
+@unexec rm -Rf /var/www/sympa/icons
 @extraunexec rm -rf /var/sympa
+@rcscript ${RCDIR}/sympa
+@rcscript ${RCDIR}/wwsympa

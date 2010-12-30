@@ -1,19 +1,16 @@
-$OpenBSD: patch-src_lib_confdef_pm,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
---- src/lib/confdef.pm.orig	Mon Sep 14 17:36:47 2009
-+++ src/lib/confdef.pm	Sat Nov 14 18:27:15 2009
-@@ -402,11 +402,6 @@ our @params = (
-         optional => '1',
+$OpenBSD: patch-src_lib_confdef_pm,v 1.2 2010/12/30 17:51:25 landry Exp $
+--- src/lib/confdef.pm.orig	Mon Nov 15 09:32:17 2010
++++ src/lib/confdef.pm	Mon Dec 20 16:55:44 2010
+@@ -47,7 +47,7 @@ our @params = (
      },
      {
--        name    => 'cookie_cas_expire',
--        default => '6',
--	file   => 'wwsympa.conf',
--    },
--    {
-         name   => 'legacy_character_support_feature',
-         default => 'off',
-         query  => 'If set to "on", enables support of legacy characters',
-@@ -625,7 +620,7 @@ our @params = (
+         name    => 'etc',
+-        default => Sympa::Constants::SYSCONFDIR,
++        default => "${SYMPA_HOME}/".Sympa::Constants::SYSCONFDIR,
+         query   => 'Directory for configuration files ; it also contains scenari/ and templates/ directories',
+         file    => 'sympa.conf',
+     },
+@@ -639,7 +639,7 @@ our @params = (
      },
      {
          name    => 'mhonarc',
@@ -22,7 +19,7 @@ $OpenBSD: patch-src_lib_confdef_pm,v 1.1.1.1 2010/03/27 11:47:13 landry Exp $
          query   => 'Path to MhOnarc mail2html pluggin',
          file    => 'wwsympa.conf',
          edit    => '1',
-@@ -634,7 +629,7 @@ our @params = (
+@@ -704,7 +704,7 @@ our @params = (
      { 'title' => 'S/MIME pluggin' },
      {
          name   => 'openssl',

@@ -1,0 +1,88 @@
+$OpenBSD: patch-src_etc_script_create_db_SQLite,v 1.1 2010/12/30 17:51:25 landry Exp $
+fix typos: https://sourcesup.cru.fr/tracker/?func=detail&atid=167&aid=7371&group_id=23 
+--- src/etc/script/create_db.SQLite.orig	Mon Jun  7 11:00:38 2010
++++ src/etc/script/create_db.SQLite	Mon Dec 20 17:52:29 2010
+@@ -5,7 +5,7 @@ CREATE TABLE user_table (
+   	password_user		text,
+ 	last_login_date_user	integer,	
+ 	last_login_host_user	text,
+-        wrong_login_count_user  integer,,
++        wrong_login_count_user  integer,
+ 	cookie_delay_user	integer,
+ 	lang_user		text,
+ 	attributes_user		text,
+@@ -26,11 +26,11 @@ CREATE TABLE subscriber_table (
+ 	bounce_subscriber	text,
+ 	bounce_address_subscriber text,
+ 	comment_subscriber	text,
+-	subscribed_subscriber 	boolean,
+-	included_subscriber 	boolean,
++	subscribed_subscriber 	numeric,
++	included_subscriber 	numeric,
+ 	include_sources_subscriber text,
+ 	bounce_score_subscriber integer,
+-	suspend_subscriber	boolean,
++	suspend_subscriber	numeric,
+ 	suspend_start_date_subscriber	integer,
+ 	suspend_end_date_subscriber	integer,	
+ 	PRIMARY KEY (robot_subscriber, list_subscriber, user_subscriber)
+@@ -47,8 +47,8 @@ CREATE TABLE admin_table (
+ 	reception_admin 	text,
+ 	visibility_admin 	text,
+ 	comment_admin 		text,
+-	subscribed_admin  	boolean,
+-	included_admin  	boolean,
++	subscribed_admin  	numeric,
++	included_admin  	numeric,
+ 	include_sources_admin  	text,
+ 	info_admin   		text,
+ 	profile_admin  		text,
+@@ -117,34 +117,34 @@ CREATE TABLE one_time_ticket_table (
+ CREATE	INDEX one_time_ticket_idx ON one_time_ticket_table(ticket_one_time_ticket);
+ 
+ CREATE TABLE bulkmailer_table(
+-  	messagekey_bulkmailer  	varchar(80) NOT NULL,
+-	packetid_bulkmailer 	varchar(33) NOT NULL,
+-  	messageid_bulkmailer  	varchar(100),
++  	messagekey_bulkmailer  	text NOT NULL,
++	packetid_bulkmailer 	text NOT NULL,
++  	messageid_bulkmailer  	text,
+ 	receipients_bulkmailer 	text,
+-	returnpath_bulkmailer 	varchar(100),
+-	robot_bulkmailer 	varchar(80),
+-	listname_bulkmailer 	varchar(50),
++	returnpath_bulkmailer 	text,
++	robot_bulkmailer 	text,
++	listname_bulkmailer 	text,
+ 	verp_bulkmailer 	integer,
+ 	merge_bulkmailer 	integer,
+ 	priority_message_bulkmailer 	integer,
+ 	priority_packet_bulkmailer 	integer,
+ 	reception_date_bulkmailer 	integer,
+ 	delivery_date_bulkmailer 	integer,
+-	lock_bulkmailer 	varchar(30),
++	lock_bulkmailer 	text,
+ 	PRIMARY KEY (messagekey_bulkmailer, packetid_bulkmailer)
+ );
+ CREATE INDEX bulkmailer_idx ON bulkmailer_table(messagekey_bulkmailer,packetid_bulkmailer);
+ 
+ CREATE TABLE bulkspool_table (
+-  	messagekey_bulkspool  	varchar(33) NOT NULL,
+-  	messageid_bulkspool  	varchar(100),
++  	messagekey_bulkspool  	text NOT NULL,
++  	messageid_bulkspool  	text,
+ 	message_bulkspool 	text,
+ 	lock_bulkspool 	integer,
+-        dkim_privatekey_bulkspool  varchar(100),
+-	dkim_selector_bulkspool varchar(50),
+-	dkim_d_bulkspool varchar(50),
+-	dkim_i_bulkspool varchar(50),
+-	dkim_header_list_bulkspool' varchar(500),
++        dkim_privatekey_bulkspool  text,
++	dkim_selector_bulkspool text,
++	dkim_d_bulkspool text,
++	dkim_i_bulkspool text,
++	dkim_header_list_bulkspool text,
+ 	PRIMARY KEY (messagekey_bulkspool)
+ );
+ CREATE INDEX bulkspool_idx ON bulkspool_table(messagekey_bulkspool);

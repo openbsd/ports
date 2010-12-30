@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $OpenBSD: sympa.rc,v 1.1 2010/12/30 17:51:25 landry Exp $
+
+daemon="${TRUEPREFIX}/sbin/sympa"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_start() {
+	${daemon} start >/dev/null 2>&1
+}
+
+rc_stop() {
+	${daemon} stop >/dev/null 2>&1
+}
+
+rc_check() {
+	${daemon} status >/dev/null 2>&1
+}
+
+rc_cmd $1
