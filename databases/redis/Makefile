@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/17 08:44:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.5 2010/12/30 11:17:10 dcoppa Exp $
 
 COMMENT =		persistent key-value database
 DISTNAME =		redis-2.0.4
+REVISION =		0
 CATEGORIES =		databases
-HOMEPAGE =		http://redis.googlecode.com/
+HOMEPAGE =		http://redis.io/
 
 MAINTAINER = 		David Coppa <dcoppa@openbsd.org>
 
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		${HOMEPAGE}files/
+MASTER_SITES =		http://redis.googlecode.com/files/
 
 MODULES =		lang/tcl
 
