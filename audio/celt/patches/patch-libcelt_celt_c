@@ -1,0 +1,19 @@
+$OpenBSD: patch-libcelt_celt_c,v 1.1 2010/12/30 13:36:09 dcoppa Exp $
+
+Missing commas (from upstream git)
+
+--- libcelt/celt.c.orig	Tue Dec 21 03:14:48 2010
++++ libcelt/celt.c	Thu Dec 30 14:11:11 2010
+@@ -428,9 +428,9 @@ static void comb_filter(celt_word32 *y, celt_word32 *x
+ 
+ static const signed char tf_select_table[4][8] = {
+       {0, -1, 0, -1,    0,-1, 0,-1},
+-      {0, -1, 0, -2,    1, 0, 1 -1},
+-      {0, -2, 0, -3,    2, 0, 1 -1},
+-      {0, -2, 0, -3,    2, 0, 1 -1},
++      {0, -1, 0, -2,    1, 0, 1,-1},
++      {0, -2, 0, -3,    2, 0, 1,-1},
++      {0, -2, 0, -3,    2, 0, 1,-1},
+ };
+ 
+ static celt_word32 l1_metric(const celt_norm *tmp, int N, int LM, int width)
