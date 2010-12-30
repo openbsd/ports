@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/29 12:39:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2010/12/30 08:33:24 jasper Exp $
 
 COMMENT-main=		high performance webserver written in Erlang, libraries
 COMMENT-web=		high performance webserver written in Erlang, docroot
@@ -34,7 +34,9 @@ CONFIGURE_ARGS+=	--disable-pam \
 			--disable-sendfile \
 			--localstatedir="/var"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+# erl(1) needs $HOME to be set.
+CONFIGURE_ENV+=		HOME="${WRKDIST}"
 
 RUN_DEPENDS-main=	${BASE_PKGPATH},-web
 
