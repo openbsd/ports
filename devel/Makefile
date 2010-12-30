@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.883 2010/12/29 13:50:00 stsp Exp $
+# $OpenBSD: Makefile,v 1.884 2010/12/30 12:57:52 benoit Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -578,6 +578,8 @@
      SUBDIR += p5-IPC-Shareable
      SUBDIR += p5-Inline
      SUBDIR += p5-Internals
+     SUBDIR += p5-Iterator
+     SUBDIR += p5-Iterator-Util
      SUBDIR += p5-Lchown
      SUBDIR += p5-List-Cycle
      SUBDIR += p5-List-MoreUtils
