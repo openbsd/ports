@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2010/12/26 08:32:07 landry Exp $
+# $OpenBSD: Makefile,v 1.41 2010/12/30 17:55:32 landry Exp $
 
 COMMENT =	open source web browser engine
 
-DISTNAME =	webkit-1.2.5
+DISTNAME =	webkit-1.2.6
 EPOCH =		0
-REVISION = 	1
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/
@@ -59,7 +58,7 @@ WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 gailutil \
 		gstreamer-0.10 gstbase-0.10 gstvideo-0.10 gstapp-0.10 gstpbutils-0.10 \
 		icudata icui18n icuuc sqlite3 xslt enchant soup-2.4 \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread xcb-render-util \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread GL Xxf86vm drm xcb-shm \
 		tasn1 z cairo pixman-1 png pthread-stubs xcb xml2 ${STDCPPLIB}
 
 LIB_DEPENDS =	x11/gtk+2,-main \
