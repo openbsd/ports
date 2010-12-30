@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/12/30 16:32:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2010/12/30 19:09:03 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -43,7 +43,7 @@ RUN_DEPENDS-main=	# empty
 WANTLIB-main=		c m sndio
 
 BUILD_DEPENDS-audacious= audio/audacious
-RUN__DEPENDS-audacious= audio/audacious ${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-audacious= audio/audacious ${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-audacious=	x11/gtk+2 devel/mcs x11/dbus-glib
 WANTLIB-audacious=	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo dbus-1 \
