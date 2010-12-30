@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2010/12/30 11:11:41 jasper Exp $
 
 COMMENT=	extract various archive file formats
 
@@ -45,6 +45,8 @@ RUN_DEPENDS=	archivers/arc \
 		rpm2cpio-*|rpm-*:converters/rpm2cpio
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -D_BSD_SOURCE"
+
+NO_REGRESS=	Yes
 
 do-build:
 	cd ${DECO} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
