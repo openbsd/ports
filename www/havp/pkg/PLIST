@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/05/13 16:24:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2010/12/30 10:21:25 giovanni Exp $
 @newgroup _havp:602
 @newuser _havp:602:_havp:daemon:Havp Account:/nonexistent:/sbin/nologin
 @bin sbin/havp
@@ -143,3 +143,4 @@ share/examples/havp/whitelist
 @owner _havp
 @group _havp
 @sample /var/log/havp/
+@rcscript ${RCDIR}/havp
