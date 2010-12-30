@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/30 10:07:01 benoit Exp $
 
 COMMENT=		parse and create PostGresql date objects
 
 MODULES=		cpan
-DISTNAME=		DateTime-Format-Pg-0.16003
-REVISION =		0
+DISTNAME=		DateTime-Format-Pg-0.16005
 CATEGORIES=		devel converters
 USE_GROFF =		Yes
 
