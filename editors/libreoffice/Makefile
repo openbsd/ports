@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/12/20 09:07:48 robert Exp $
+# $OpenBSD: Makefile,v 1.15 2010/12/30 16:49:23 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -16,6 +16,8 @@ PKGNAME-main=	libreoffice-${OV}
 PKGNAME-kde=	libreoffice-kde-${OV}
 PKGNAME-java=	libreoffice-java-${OV}
 CATEGORIES=	editors productivity
+
+REVISION-main=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 

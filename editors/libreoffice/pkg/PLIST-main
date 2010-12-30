@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2010/12/20 09:07:49 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2010/12/30 16:49:23 ajacoutot Exp $
 @conflict openoffice-*
 %%SHARED%%
 bin/libreoffice
@@ -15,10 +15,6 @@ bin/ooweb${BV}
 bin/oowriter${BV}
 bin/soffice
 bin/soffice${BV}
-@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
 bin/unopkg${BV}
 lib/libreoffice/
 lib/libreoffice/CREDITS.odt
@@ -2484,3 +2480,9 @@ share/pixmaps/ooo-math${BV}.png
 share/pixmaps/ooo-template${BV}.png
 share/pixmaps/ooo-web${BV}.png
 share/pixmaps/ooo-writer${BV}.png
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
