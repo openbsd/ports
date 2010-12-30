@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.no_mips64,v 1.1 2010/12/30 09:01:09 jasper Exp $
+lib/libassl_pic.a
