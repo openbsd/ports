@@ -1,11 +1,11 @@
-$OpenBSD: patch-os_hpp,v 1.5 2009/09/11 16:14:01 naddy Exp $
---- os.hpp.orig	Sun Aug 16 13:09:36 2009
-+++ os.hpp	Mon Sep  7 17:50:51 2009
-@@ -245,12 +245,12 @@
+$OpenBSD: patch-os_hpp,v 1.6 2010/12/30 07:51:31 benoit Exp $
+--- os.hpp.orig	Fri Nov 26 08:20:01 2010
++++ os.hpp	Mon Dec  6 07:49:22 2010
+@@ -262,12 +262,12 @@
    #endif
  #endif
  
--#if !defined(BIG_ENDIAN) && !defined(_WIN_CE) && defined(_WIN_32)
+-#if !defined(BIG_ENDIAN) && !defined(_WIN_CE) && defined(_WIN_ALL)
 +#if defined(ALLOW_NOT_ALIGNED_INT)
  /* allow not aligned integer access, increases speed in some operations */
 -#define ALLOW_NOT_ALIGNED_INT
