@@ -1,18 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/09/14 23:16:56 espie Exp $
-bin/xhippo
+@comment $OpenBSD: PLIST,v 1.9 2010/12/30 08:53:36 jasper Exp $
+@bin bin/xhippo
+@info info/xhippo.info
 @man man/man1/xhippo.1
 share/doc/xhippo/
-share/doc/xhippo/ChangeLog
-share/doc/xhippo/gnu-xhippo.html
-share/doc/xhippo/screenshot.jpeg
-share/doc/xhippo/xhippo.html.gz
-share/doc/xhippo/xhippo.info.gz
-share/doc/xhippo/xhippo.ps.gz
-share/doc/xhippo/xhippo.sgml
-share/doc/xhippo/xhippo.txt.gz
-share/doc/xhippo/xhippo_toc.html
 share/examples/xhippo/
 share/examples/xhippo/xhippo.config-sample
 @sample ${SYSCONFDIR}/xhippo.config
-share/examples/xhippo/xhippo.gtkrc
 share/locale/de/LC_MESSAGES/xhippo.mo
