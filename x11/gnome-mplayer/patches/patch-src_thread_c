@@ -1,4 +1,10 @@
-$OpenBSD: patch-src_thread_c,v 1.6 2010/12/24 13:19:20 dcoppa Exp $
+$OpenBSD: patch-src_thread_c,v 1.7 2010/12/31 12:03:55 dcoppa Exp $
+
+fix an assertion failure
+
+fix from upstream: set the MEDIAENDED state correctly when running
+as plugin
+
 --- src/thread.c.orig	Fri Nov  5 17:16:22 2010
 +++ src/thread.c	Fri Dec 24 14:13:53 2010
 @@ -448,7 +448,7 @@ gboolean thread_reader(GIOChannel * source, GIOConditi

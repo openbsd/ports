@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_libgmlib_gm_file_c,v 1.1 2010/11/23 08:51:29 dcoppa Exp $
+$OpenBSD: patch-src_libgmlib_gm_file_c,v 1.2 2010/12/31 12:03:55 dcoppa Exp $
+
+from upstream: remove useless socket.h declaration
+
 --- src/libgmlib/gm_file.c.orig	Tue Nov 23 08:44:47 2010
 +++ src/libgmlib/gm_file.c	Tue Nov 23 08:46:25 2010
 @@ -26,7 +26,6 @@

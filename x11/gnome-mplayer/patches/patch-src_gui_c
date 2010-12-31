@@ -1,7 +1,8 @@
-$OpenBSD: patch-src_gui_c,v 1.10 2010/11/15 11:11:34 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.11 2010/12/31 12:03:55 dcoppa Exp $
 
 adapt audio/video device selection gui
 set DVD device to /dev/rcd0c instead of /dev/dvd
+use the right icon for the "Open iPod" menu
 
 fix from upstream: don't hide controls and mouse in fullscreen mode
 when mouse is over controls

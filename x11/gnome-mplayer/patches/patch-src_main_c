@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_main_c,v 1.8 2010/11/15 11:11:34 dcoppa Exp $
+$OpenBSD: patch-src_main_c,v 1.9 2010/12/31 12:03:55 dcoppa Exp $
 
 set some sane defaults:
 use mplayer's software volume control (see pkg/MESSAGE)
 disable bar animation in full screen
 use xscrnsaver controls over gnome-power-manager
+start with volume at 50% by default
 
 --- src/main.c.orig	Tue Oct 19 18:33:40 2010
 +++ src/main.c	Mon Nov 15 11:49:10 2010
