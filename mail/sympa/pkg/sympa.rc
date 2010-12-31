@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: sympa.rc,v 1.1 2010/12/30 17:51:25 landry Exp $
+# $OpenBSD: sympa.rc,v 1.2 2010/12/31 06:50:46 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/sympa"
 
@@ -9,15 +9,15 @@ daemon="${TRUEPREFIX}/sbin/sympa"
 rc_reload=NO
 
 rc_start() {
-	${daemon} start >/dev/null 2>&1
+	${daemon} start >/dev/null
 }
 
 rc_stop() {
-	${daemon} stop >/dev/null 2>&1
+	${daemon} stop >/dev/null
 }
 
 rc_check() {
-	${daemon} status >/dev/null 2>&1
+	${daemon} status >/dev/null
 }
 
 rc_cmd $1
