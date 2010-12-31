@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2010/11/22 10:16:09 espie Exp $
+# $OpenBSD: Makefile,v 1.110 2010/12/31 06:58:18 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 V=		1.0.6
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	12
+REVISION-main=	13
 REVISION-jack=	2
 REVISION-web=	4
 CATEGORIES=	x11
@@ -71,7 +71,7 @@ WANTLIB-main=	FLAC GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
 		png postproc proxy pthread-stubs pthread stdc++>=46.0 \
 		schroedinger-1.0>=2.0 sndio speex swscale tag tiff theora \
 		usbhid vorbis vorbisenc x264 xcb-keysyms xcb-render \
-		xcb-render-util xcb xml2 z ${WANTLIB}
+		drm xcb-shm xcb xml2 z ${WANTLIB}
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
@@ -141,7 +141,8 @@ LIB_DEPENDS-web=${LIB_DEPENDS} \
 		devel/nspr
 RUN_DEPENDS-web=${BUILD_PKGPATH}
 WANTLIB-web=	ICE SM X11 Xau Xdmcp Xt Xpm m nspr4 plc4 plds4 \
-		pthread-stubs stdc++ vlc vlccore xcb ${WANTLIB}
+		pthread-stubs stdc++ vlc vlccore xcb dbus-1 \
+		${WANTLIB}
 .endif
 
 .if !${FLAVOR:L:Mno_jack}
@@ -155,7 +156,7 @@ LIB_DEPENDS-jack=${LIB_DEPENDS} \
 		 audio/jack
 # any FLAVOR of VLC will do
 RUN_DEPENDS-jack=${BASE_PKGPATH}
-WANTLIB-jack=	${WANTLIB} m jack vlccore
+WANTLIB-jack=	${WANTLIB} m jack vlccore dbus-1
 .endif
 
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
