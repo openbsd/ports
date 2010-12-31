@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/30 17:51:25 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2010/12/31 06:44:21 ajacoutot Exp $
 
 COMMENT =	mailing list manager with web interface
 
@@ -22,8 +22,6 @@ MASTER_SITES =		${HOMEPAGE}/distribution/ \
 MODULES =	perl
 USE_GMAKE =	Yes
 
-SYMPA_USER =	_sympa
-SYMPA_GROUP =	_sympa
 SYMPA_HOME =	/var/sympa
 
 SUBST_VARS +=	SYMPA_HOME
@@ -31,8 +29,8 @@ SUBST_VARS +=	SYMPA_HOME
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-modulesdir=${PREFIX}/${P5SITE}/Sympa \
 			--with-initdir=${PREFIX}/sbin \
-			--with-user=${SYMPA_USER} \
-			--with-group=${SYMPA_GROUP} \
+			--with-user=_sympa \
+			--with-group=_sympa \
 			--with-sendmail_aliases=${SYMPA_HOME}/sympa_aliases \
 			--with-virtual_aliases=${SYMPA_HOME}/sympa_virtual \
 			--with-confdir=${SYMPA_HOME}/etc/ \
@@ -88,7 +86,6 @@ post-install:
 		${PREFIX}/sbin/sympa_wizard.pl --create sympa.conf \
 		--target ${PREFIX}/share/examples/sympa/sympa.conf
 	echo ${VERSION} > ${PREFIX}/share/examples/sympa/data_structure.version
-	chown ${SYMPA_USER}:${SYMPA_GROUP} ${PREFIX}/share/examples/sympa/data_structure.version
 	mv ${PREFIX}/bin/create_db.* ${PREFIX}/share/examples/sympa/
 	${INSTALL_DATA} ${FILESDIR}/httpd-sympa.conf ${PREFIX}/share/examples/sympa/
 
