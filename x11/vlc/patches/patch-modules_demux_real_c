@@ -1,0 +1,74 @@
+$OpenBSD: patch-modules_demux_real_c,v 1.1 2010/12/31 06:58:44 ajacoutot Exp $
+
+- Fix heap buffer overflow (CVE-2010-3907).
+- Fix potential division by 0.
+
+--- modules/demux/real.c.orig	Sun Mar  7 13:38:01 2010
++++ modules/demux/real.c	Thu Dec 30 22:43:22 2010
+@@ -247,11 +247,8 @@ static void Close( vlc_object_t *p_this )
+             if( tk->p_subpackets[ j ] )
+                 block_Release( tk->p_subpackets[ j ] );
+         }
+-        if( tk->i_subpackets )
+-        {
+-            free( tk->p_subpackets );
+-            free( tk->p_subpackets_timecode );
+-        }
++        free( tk->p_subpackets );
++        free( tk->p_subpackets_timecode );
+         free( tk );
+     }
+     if( p_sys->i_track > 0 )
+@@ -631,6 +628,11 @@ static void DemuxAudioMethod1( demux_t *p_demux, real_
+ 
+         for( int i = 0; i < i_num; i++ )
+         {
++            int i_index = tk->i_subpacket_h * i +
++                          ((tk->i_subpacket_h + 1) / 2) * (y&1) + (y>>1);
++            if( i_index >= tk->i_subpackets )
++                return;
++
+             block_t *p_block = block_New( p_demux, tk->i_subpacket_size );
+             if( !p_block )
+                 return;
+@@ -643,9 +645,6 @@ static void DemuxAudioMethod1( demux_t *p_demux, real_
+ 
+             p_buf += tk->i_subpacket_size;
+ 
+-            int i_index = tk->i_subpacket_h * i +
+-                          ((tk->i_subpacket_h + 1) / 2) * (y&1) + (y>>1);
+-
+             if( tk->p_subpackets[i_index] != NULL )
+             {
+                 msg_Dbg(p_demux, "p_subpackets[ %d ] not null!",  i_index );
+@@ -665,14 +664,16 @@ static void DemuxAudioMethod1( demux_t *p_demux, real_
+ 
+         for( int i = 0; i < tk->i_subpacket_h / 2; i++ )
+         {
++            int i_index = (i * 2 * tk->i_frame_size / tk->i_coded_frame_size) + y;
++            if( i_index >= tk->i_subpackets )
++                return;
++
+             block_t *p_block = block_New( p_demux, tk->i_coded_frame_size);
+             if( !p_block )
+                 return;
+             if( &p_buf[tk->i_coded_frame_size] > &p_sys->buffer[p_sys->i_buffer] )
+                 return;
+ 
+-            int i_index = (i * 2 * tk->i_frame_size / tk->i_coded_frame_size) + y;
+-
+             memcpy( p_block->p_buffer, p_buf, tk->i_coded_frame_size );
+             p_block->i_dts =
+             p_block->i_pts = i_index == 0 ? i_pts : 0;
+@@ -1455,6 +1456,11 @@ static int CodecAudioParse( demux_t *p_demux, int i_tk
+         break;
+ 
+     case VLC_FOURCC('2','8','_','8'):
++        if( i_coded_frame_size <= 0 )
++        {
++            es_format_Clean( &fmt );
++            return VLC_EGENERIC;
++        }
+         fmt.audio.i_blockalign = i_coded_frame_size;
+         break;
+ 
