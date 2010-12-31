@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/12/30 16:49:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2010/12/31 08:35:47 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -17,7 +17,7 @@ PKGNAME-kde=	libreoffice-kde-${OV}
 PKGNAME-java=	libreoffice-java-${OV}
 CATEGORIES=	editors productivity
 
-REVISION-main=	0
+REVISION-main=	1
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -156,7 +156,8 @@ WANTLIB-main+=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 WANTLIB-main+=	GL GLU Xxf86vm drm python2.6 stdc++ xcb-render xcb-shm
 WANTLIB-main+=	${MODPY_WANTLIB}
 
-RUN_DEPENDS-main=	devel/desktop-file-utils
+RUN_DEPENDS-main=	devel/desktop-file-utils \
+			misc/shared-mime-info
 
 MODULES+=		x11/qt3
 RUN_DEPENDS-kde=	editors/libreoffice
