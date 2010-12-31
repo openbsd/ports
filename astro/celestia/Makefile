@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2010/12/31 07:10:02 ajacoutot Exp $
 
 COMMENT=	free space simulator and planetarium
 
 DISTNAME=	celestia-1.6.0
+
+REVISION=	5
 
 CATEGORIES=	astro x11
 
@@ -18,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=celestia/}
 
-REVISION =	5
 WANTLIB += GL GLU ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xmu Xrandr Xrender Xt atk-1.0
 WANTLIB += c cairo expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
