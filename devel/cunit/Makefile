@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/01/01 16:14:41 rpointel Exp $
 
 COMMENT =		c unit testing framework
 
 VER =			2.1-0
 DISTNAME =		CUnit-${VER}
 PKGNAME =		cunit-${VER:S/-/./}
+REVISION =		0
 
 SHARED_LIBS =		cunit	0.0
 
@@ -26,7 +27,10 @@ EXTRACT_SUFX =		-src.tar.gz
 USE_LIBTOOL =		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	autoconf
+CONFIGURE_ENV =		LDFLAGS="-lncurses"
 CONFIGURE_ARGS +=	--enable-curses
 AUTOCONF_VERSION =	2.59
+
+WANTLIB += ncurses
 
 .include <bsd.port.mk>
