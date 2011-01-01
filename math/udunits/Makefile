@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/19 07:23:11 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/01/01 16:58:08 rpointel Exp $
 
 COMMENT =		library to manipulate units of physical quantities
-DISTNAME =		udunits-2.1.19
+DISTNAME =		udunits-2.1.20
 CATEGORIES =		math
 HOMEPAGE =		http://www.unidata.ucar.edu/software/udunits/
 
-MAINTAINER = 		Remi Pointel <remi.pointel@xiri.fr>
+MAINTAINER = 		Remi Pointel <rpointel@openbsd.org>
 
 # original BSD-like, with advertisement clause
 PERMIT_PACKAGE_CDROM =	Yes
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		ftp://ftp.unidata.ucar.edu/pub/udunits/
 
-LIB_DEPENDS =		devel/cunit
 SHARED_LIBS =		udunits2 0.0
 
 USE_LIBTOOL =		Yes
@@ -29,6 +28,7 @@ CONFIGURE_ENV =         CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 AUTOCONF_VERSION =	2.63
 AUTOMAKE_VERSION =	1.11
 
-WANTLIB +=      c expat m cunit
+REGRESS_DEPENDS =	devel/cunit
+WANTLIB +=		c expat m
 
 .include <bsd.port.mk>
