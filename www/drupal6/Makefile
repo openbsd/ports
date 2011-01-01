@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/11/29 15:07:21 stephan Exp $
+# $OpenBSD: Makefile,v 1.46 2011/01/01 11:56:53 stephan Exp $
 
 SUBDIR =
 SUBDIR += CKeditor
@@ -30,6 +30,7 @@ SUBDIR += faq
 SUBDIR += filefield
 SUBDIR += filefield_sources
 SUBDIR += globalredirect
+SUBDIR += image
 SUBDIR += imageapi
 SUBDIR += imagecache
 SUBDIR += imagecache_profiles
