@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2011/01/02 22:27:53 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2011/01/02 22:29:42 jasper Exp $
 
 COMMENT=	heavily customizable and extensible editor
 DISTNAME=	xemacs-${BRANCH}.${VERSION}
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.xemacs.org/pub/xemacs/xemacs-${BRANCH}/ \
+MASTER_SITES=	http://ftp.xemacs.org/pub/xemacs/xemacs-${BRANCH}/ \
 		ftp://ftp.oleane.net/pub/xemacs/xemacs-${BRANCH}/ \
 		ftp://ftp.pasteur.fr/pub/computing/xemacs/xemacs-${BRANCH}/ \
 		ftp://ftp.funet.fi/pub/mirrors/ftp.xemacs.org/pub/tux/xemacs/xemacs-${BRANCH}/
