@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2010/12/09 07:04:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2011/01/02 07:38:52 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @bin bin/arm2hpdl
 @bin bin/foo2hiperc
@@ -121,6 +121,8 @@ share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_1005.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_1018.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_1020.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_1022.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_1022n.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_1022nw.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_M1005_MFP.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_M1120_MFP.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/HP-LaserJet_M1319_MFP.ppd.gz
@@ -276,6 +278,8 @@ share/foomatic/db/source/printer/HP-LaserJet_1005.xml
 share/foomatic/db/source/printer/HP-LaserJet_1018.xml
 share/foomatic/db/source/printer/HP-LaserJet_1020.xml
 share/foomatic/db/source/printer/HP-LaserJet_1022.xml
+share/foomatic/db/source/printer/HP-LaserJet_1022n.xml
+share/foomatic/db/source/printer/HP-LaserJet_1022nw.xml
 share/foomatic/db/source/printer/HP-LaserJet_M1005_MFP.xml
 share/foomatic/db/source/printer/HP-LaserJet_M1120_MFP.xml
 share/foomatic/db/source/printer/HP-LaserJet_M1319_MFP.xml
