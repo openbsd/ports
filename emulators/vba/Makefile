@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 23:22:08 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/01/02 07:46:54 ajacoutot Exp $
 
 COMMENT=		Gameboy Advance emulator
 
 VERSION=		1.7.2
 DISTNAME=		VisualBoyAdvance-src-${VERSION}
 PKGNAME=		vba-${VERSION}
-REVISION=		6
+REVISION=		7
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://vba.ngemu.com/
@@ -23,7 +23,8 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 gtkmm-2.4 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 \
 		pixman-1 pthread pthread-stubs sigc-2.0 stdc++ xml2 xcb z \
-		glademm-2.4 SDL cairo png
+		glademm-2.4 SDL cairo png GL Xxf86vm drm gthread-2.0 \
+		xcb-render xcb-shm
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=vba/}
 
@@ -39,9 +40,7 @@ USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
 LIB_DEPENDS=		devel/libglademm \
-			devel/sdl \
-			graphics/cairo \
-			graphics/png
+			devel/sdl
 
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.59
