@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/28 13:39:12 marco Exp $
+# $OpenBSD: Makefile,v 1.10 2011/01/02 22:15:13 marco Exp $
 
 COMMENT =		vi-like minimalists web browser
 
-DISTNAME =		xxxterm-1.159
+DISTNAME =		xxxterm-1.187
 
 CATEGORIES =		www
 
