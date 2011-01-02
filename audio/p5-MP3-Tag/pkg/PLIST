@@ -1,27 +1,47 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/08 07:04:59 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/01/02 13:31:56 benoit Exp $
 bin/audio_rename
 bin/mp3info2
 bin/typeset_audio_dir
+${P5SITE}/Encode/
+${P5SITE}/Encode/transliterate_win1251.pm
 ${P5SITE}/MP3/
-${P5SITE}/MP3/ID3v2-Data.pod
 ${P5SITE}/MP3/Tag/
 ${P5SITE}/MP3/Tag.pm
 ${P5SITE}/MP3/Tag/CDDB_File.pm
+${P5SITE}/MP3/Tag/Cue.pm
 ${P5SITE}/MP3/Tag/File.pm
 ${P5SITE}/MP3/Tag/ID3v1.pm
 ${P5SITE}/MP3/Tag/ID3v2.pm
+${P5SITE}/MP3/Tag/ID3v2_Data.pod
+${P5SITE}/MP3/Tag/ImageExifTool.pm
+${P5SITE}/MP3/Tag/ImageSize.pm
 ${P5SITE}/MP3/Tag/Inf.pm
 ${P5SITE}/MP3/Tag/LastResort.pm
 ${P5SITE}/MP3/Tag/ParseData.pm
+${P5SITE}/Normalize/
+${P5SITE}/Normalize/Text/
+${P5SITE}/Normalize/Text/Music_Fields/
+${P5SITE}/Normalize/Text/Music_Fields.pm
+${P5SITE}/Normalize/Text/Music_Fields/A_Dvor_k.comp
+${P5SITE}/Normalize/Text/Music_Fields/A_Schnittke.comp
+${P5SITE}/Normalize/Text/Music_Fields/D_Shostakovich.comp
+${P5SITE}/Normalize/Text/Music_Fields/G_Gershwin.comp
+${P5SITE}/Normalize/Text/Music_Fields/J_Brahms.comp
+${P5SITE}/Normalize/Text/Music_Fields/L_van_Beethoven.comp
+${P5SITE}/Normalize/Text/Music_Fields/Music_Fields-rus.lst
 @man man/man1/audio_rename.1
 @man man/man1/mp3info2.1
 @man man/man1/typeset_audio_dir.1
 @man man/man3p/MP3::Tag.3p
 @man man/man3p/MP3::Tag::CDDB_File.3p
+@man man/man3p/MP3::Tag::Cue.3p
 @man man/man3p/MP3::Tag::File.3p
 @man man/man3p/MP3::Tag::ID3v1.3p
-@man man/man3p/MP3::Tag::ID3v2-Data.3p
 @man man/man3p/MP3::Tag::ID3v2.3p
+@man man/man3p/MP3::Tag::ID3v2_Data.3p
+@man man/man3p/MP3::Tag::ImageExifTool.3p
+@man man/man3p/MP3::Tag::ImageSize.3p
 @man man/man3p/MP3::Tag::Inf.3p
 @man man/man3p/MP3::Tag::LastResort.3p
 @man man/man3p/MP3::Tag::ParseData.3p
+@man man/man3p/Normalize::Text::Music_Fields.3p
