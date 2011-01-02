@@ -1,11 +1,11 @@
-$OpenBSD: patch-foomaticrip_c,v 1.4 2010/05/07 16:08:54 ajacoutot Exp $
+$OpenBSD: patch-foomaticrip_c,v 1.5 2011/01/02 07:31:23 ajacoutot Exp $
 
 From pkgsrc.
 Prevent bogus 'Job does not start with "%!", is it PostScript?' errors.
 
---- foomaticrip.c.orig	Fri May  7 17:58:43 2010
-+++ foomaticrip.c	Fri May  7 18:00:38 2010
-@@ -1053,6 +1053,7 @@ int print_file(const char *filename, int convert)
+--- foomaticrip.c.orig	Wed Dec 15 17:19:21 2010
++++ foomaticrip.c	Sun Jan  2 08:01:07 2011
+@@ -1059,6 +1059,7 @@ int print_file(const char *filename, int convert)
                  if (dup2(fileno(out), fileno(stdin)) < 0)
                      rip_die(EXIT_PRNERR_NORETRY_BAD_SETTINGS,
                              "Couldn't dup stdout of pdf-to-ps\n");
@@ -13,7 +13,7 @@ Prevent bogus 'Job does not start with "%!", is it PostScript?' errors.
  
                  ret = print_file("<STDIN>", 0);
  
-@@ -1084,6 +1085,7 @@ int print_file(const char *filename, int convert)
+@@ -1090,6 +1091,7 @@ int print_file(const char *filename, int convert)
              /* Read further data from the file converter and not from STDIN */
              if (dup2(fileno(fchandle), fileno(stdin)) < 0)
                  rip_die(EXIT_PRNERR_NORETRY_BAD_SETTINGS, "Couldn't dup fileconverterhandle\n");
