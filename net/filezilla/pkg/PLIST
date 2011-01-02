@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/06/30 14:58:58 lum Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/01/02 23:34:16 lum Exp $
 @bin bin/filezilla
 @bin bin/fzputtygen
 @bin bin/fzsftp
@@ -47,6 +47,10 @@ share/filezilla/resources/16x16/synchronize.png
 share/filezilla/resources/16x16/unknown.png
 share/filezilla/resources/16x16/upload.png
 share/filezilla/resources/16x16/uploadadd.png
+share/filezilla/resources/20x20/
+share/filezilla/resources/20x20/unknown.png
+share/filezilla/resources/24x24/
+share/filezilla/resources/24x24/unknown.png
 share/filezilla/resources/32x32/
 share/filezilla/resources/32x32/file.png
 share/filezilla/resources/32x32/filezilla.png
@@ -356,6 +360,10 @@ share/filezilla/resources/opencrystal/16x16/speedlimits.png
 share/filezilla/resources/opencrystal/16x16/synchronize.png
 share/filezilla/resources/opencrystal/16x16/upload.png
 share/filezilla/resources/opencrystal/16x16/uploadadd.png
+share/filezilla/resources/opencrystal/20x20/
+share/filezilla/resources/opencrystal/20x20/server.png
+share/filezilla/resources/opencrystal/24x24/
+share/filezilla/resources/opencrystal/24x24/server.png
 share/filezilla/resources/opencrystal/32x32/
 share/filezilla/resources/opencrystal/32x32/ascii.png
 share/filezilla/resources/opencrystal/32x32/auto.png
@@ -482,6 +490,9 @@ share/locale/hr/LC_MESSAGES/filezilla.mo
 share/locale/hu_HU/
 share/locale/hu_HU/LC_MESSAGES/
 share/locale/hu_HU/LC_MESSAGES/filezilla.mo
+share/locale/hy/
+share/locale/hy/LC_MESSAGES/
+share/locale/hy/LC_MESSAGES/filezilla.mo
 share/locale/id_ID/
 share/locale/id_ID/LC_MESSAGES/
 share/locale/id_ID/LC_MESSAGES/filezilla.mo
@@ -543,6 +554,7 @@ share/locale/sk_SK/LC_MESSAGES/filezilla.mo
 share/locale/sl_SI/
 share/locale/sl_SI/LC_MESSAGES/
 share/locale/sl_SI/LC_MESSAGES/filezilla.mo
+share/locale/sr/LC_MESSAGES/filezilla.mo
 share/locale/sv/LC_MESSAGES/filezilla.mo
 share/locale/th_TH/
 share/locale/th_TH/LC_MESSAGES/
