@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/10/05 09:03:19 armani Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/01/02 22:04:10 rpointel Exp $
 bin/${LNAME}-admin.py
 lib/python${MODPY_VERSION}/site-packages/Django-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/
@@ -810,7 +810,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/admin/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/admin/prepopulated_fields_js.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/admin/search_form.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/admin/submit_line.html
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/admin/template_validator.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/registration/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/registration/logged_out.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/templates/registration/password_change_done.html
@@ -842,8 +841,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/views/decorators
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/views/decorators.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/views/main.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/views/main.pyc
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/views/template.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/views/template.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/widgets.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admin/widgets.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/admindocs/
@@ -927,7 +924,9 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/tests/remote_user
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/tests/remote_user.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/tests/templates/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/tests/templates/registration/
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/tests/templates/registration/logged_out.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/tests/templates/registration/login.html
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/tests/templates/registration/password_change_form.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/tests/templates/registration/password_reset_complete.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/tests/templates/registration/password_reset_confirm.html
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/auth/tests/templates/registration/password_reset_done.html
@@ -1279,6 +1278,8 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/geometry/backend/g
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/geometry/backend/geos.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/geometry/regex.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/geometry/regex.pyc
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/geometry/test_data.py
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/geometry/test_data.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/geos/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/geos/__init__.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/geos/__init__.pyc
@@ -1412,6 +1413,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/data/countie
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/data/counties/counties.dbf
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/data/counties/counties.shp
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/data/counties/counties.shx
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/data/geometries.json.gz
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/data/interstates/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/data/interstates/interstates.dbf
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/data/interstates/interstates.prj
@@ -1433,8 +1435,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/data/test_vr
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/distapp/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/distapp/__init__.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/distapp/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/distapp/data.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/distapp/data.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/distapp/models.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/distapp/models.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/distapp/tests.py
@@ -1454,7 +1454,7 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/geoapp/__ini
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/geoapp/feeds.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/geoapp/feeds.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/geoapp/fixtures/
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/geoapp/fixtures/initial_data.json
+lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/geoapp/fixtures/initial_data.json.gz
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/geoapp/models.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/geoapp/models.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/geoapp/sitemaps.py
@@ -1478,8 +1478,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/geogapp/mode
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/geogapp/models.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/geogapp/tests.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/geogapp/tests.pyc
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/geometries.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/geometries.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/layermap/
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/layermap/__init__.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/layermap/__init__.pyc
@@ -1502,8 +1500,6 @@ lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/test_measure
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/test_measure.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/test_spatialrefsys.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/test_spatialrefsys.pyc
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/urls.py
-lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/urls.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/utils.py
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/tests/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/contrib/gis/utils/
@@ -2598,6 +2594,7 @@ share/doc/${LNAME}/ref/contrib/admin/_images/flatfiles_admin.png
 share/doc/${LNAME}/ref/contrib/admin/_images/user_actions.png
 share/doc/${LNAME}/ref/contrib/admin/_images/users_changelist.png
 share/doc/${LNAME}/ref/contrib/admin/actions.txt
+share/doc/${LNAME}/ref/contrib/admin/admindocs.txt
 share/doc/${LNAME}/ref/contrib/admin/index.txt
 share/doc/${LNAME}/ref/contrib/auth.txt
 share/doc/${LNAME}/ref/contrib/comments/
@@ -2704,6 +2701,8 @@ share/doc/${LNAME}/releases/1.1.txt
 share/doc/${LNAME}/releases/1.2-alpha-1.txt
 share/doc/${LNAME}/releases/1.2-beta-1.txt
 share/doc/${LNAME}/releases/1.2-rc-1.txt
+share/doc/${LNAME}/releases/1.2.2.txt
+share/doc/${LNAME}/releases/${MODPY_EGG_VERSION}.txt
 share/doc/${LNAME}/releases/1.2.txt
 share/doc/${LNAME}/releases/index.txt
 share/doc/${LNAME}/topics/

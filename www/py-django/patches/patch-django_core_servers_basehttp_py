@@ -1,0 +1,24 @@
+$OpenBSD: patch-django_core_servers_basehttp_py,v 1.1 2011/01/02 22:04:10 rpointel Exp $
+--- django/core/servers/basehttp.py.orig	Fri Dec 24 13:26:15 2010
++++ django/core/servers/basehttp.py	Fri Dec 24 13:26:15 2010
+@@ -14,6 +14,7 @@ import re
+ import stat
+ import sys
+ import urllib
++import select
+ 
+ from django.core.management.color import color_style
+ from django.utils.http import http_date
+@@ -718,4 +719,11 @@ def run(addr, port, wsgi_handler):
+     server_address = (addr, port)
+     httpd = WSGIServer(server_address, WSGIRequestHandler)
+     httpd.set_app(wsgi_handler)
+-    httpd.serve_forever()
++
++    try:
++        httpd.serve_forever()
++    except select.error as (errno, msg):
++        # catch Interrupted system call exceptions
++        # (CTRL-C)
++        if errno != 4:
++            raise
