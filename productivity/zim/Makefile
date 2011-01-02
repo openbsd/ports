@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/27 12:05:13 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2011/01/02 12:53:45 jasper Exp $
 
 COMMENT =		desktop wiki
 
@@ -23,6 +23,7 @@ NO_REGRESS =		Yes
 
 MODULES =       	lang/python
 
+BUILD_DEPENDS = 	${RUN_DEPENDS}
 RUN_DEPENDS =		x11/py-gtk2 \
 			devel/py-gobject \
 			devel/py-xdg \
