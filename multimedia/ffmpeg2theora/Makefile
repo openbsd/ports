@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/19 07:23:13 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/01/02 07:42:01 ajacoutot Exp $
 
 COMMENT=	reencode many media file formats to Ogg Theora
 
 N=		ffmpeg2theora
-DISTNAME=	${N}-0.26
-REVISION=	0
+DISTNAME=	${N}-0.27
 CATEGORIES=	multimedia
 EXTRACT_SUFX=	.tar.bz2
 
