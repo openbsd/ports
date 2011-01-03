@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/26 14:50:09 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/01/03 19:38:40 jasper Exp $
 
 COMMENT=	X amateur station tracking and info reporting
 
 DISTNAME=	xastir-1.8.2
-REVISION=	10
+REVISION=	11
 CATEGORIES=    	comms hamradio geo
 
 HOMEPAGE=	http://www.xastir.org/
@@ -38,7 +38,7 @@ CONFIGURE_ARGS=		--with-shapelib					\
 			--with-bdb-incdir=$(LOCALBASE)/include/db4
 
 WANTLIB += ICE SM c pthread freetype Xt Xpm Xext m X11 z proj
-WANTLIB += tiff iconv curl shp geotiff MagickCore>=1
+WANTLIB += tiff curl shp geotiff MagickCore>=1
 WANTLIB += MagickWand>=1 lib/db4/db>=4 pcre
 
 MODULES=	devel/gettext
