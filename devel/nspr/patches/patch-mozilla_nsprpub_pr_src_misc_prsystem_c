@@ -1,0 +1,14 @@
+$OpenBSD: patch-mozilla_nsprpub_pr_src_misc_prsystem_c,v 1.1 2011/01/03 13:21:04 landry Exp $
+make sure to define PR_GetPhysicalMemorySize()
+https://bugzilla.mozilla.org/show_bug.cgi?id=622425
+--- mozilla/nsprpub/pr/src/misc/prsystem.c.orig	Sun Jan  2 17:19:49 2011
++++ mozilla/nsprpub/pr/src/misc/prsystem.c	Sun Jan  2 17:20:33 2011
+@@ -284,7 +284,7 @@ PR_IMPLEMENT(PRUint64) PR_GetPhysicalMemorySize(void)
+     long pageCount = sysconf(_SC_PHYS_PAGES);
+     bytes = (PRUint64) pageSize * pageCount;
+ 
+-#elif defined(NETBSD)
++#elif defined(NETBSD) || defined(OPENBSD)
+ 
+     int mib[2];
+     int rc;
