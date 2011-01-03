@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/01/02 19:32:50 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2011/01/03 08:25:17 jasper Exp $
 
 COMMENT =	object oriented interface to create salted hashes
 
@@ -8,6 +8,8 @@ CATEGORIES =	security
 USE_GROFF =	Yes
 
 MAINTAINER =	Jim Razmus II <jim@bonetruck.org>
+
+CPAN_AUTHOR =	ESSKAR
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
