@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/12/22 09:20:00 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/01/03 14:23:42 sebastia Exp $
 bin/GWorkspace
 bin/Recycler
 @bin bin/ddbd
@@ -171,6 +171,22 @@ lib/GNUstep/Bundles/NSTIFFViewer.inspector/Resources/English.lproj/Help.rtfd/dum
 lib/GNUstep/Bundles/NSTIFFViewer.inspector/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/NSTIFFViewer.inspector/Resources/InspectorInfo.plist
 lib/GNUstep/Bundles/NSTIFFViewer.inspector/stamp.make
+lib/GNUstep/Bundles/PdfViewer.inspector/
+@bin lib/GNUstep/Bundles/PdfViewer.inspector/PdfViewer
+lib/GNUstep/Bundles/PdfViewer.inspector/Resources/
+lib/GNUstep/Bundles/PdfViewer.inspector/Resources/English.lproj/
+lib/GNUstep/Bundles/PdfViewer.inspector/Resources/English.lproj/Help.rtfd/
+lib/GNUstep/Bundles/PdfViewer.inspector/Resources/English.lproj/Help.rtfd/TXT.rtf
+lib/GNUstep/Bundles/PdfViewer.inspector/Resources/English.lproj/Help.rtfd/dummy.tiff
+lib/GNUstep/Bundles/PdfViewer.inspector/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/PdfViewer.inspector/Resources/InspectorInfo.plist
+lib/GNUstep/Bundles/PdfViewer.inspector/Resources/left.tiff
+lib/GNUstep/Bundles/PdfViewer.inspector/Resources/page.tiff
+lib/GNUstep/Bundles/PdfViewer.inspector/Resources/pause.tiff
+lib/GNUstep/Bundles/PdfViewer.inspector/Resources/play.tiff
+lib/GNUstep/Bundles/PdfViewer.inspector/Resources/right.tiff
+lib/GNUstep/Bundles/PdfViewer.inspector/Resources/stop.tiff
+lib/GNUstep/Bundles/PdfViewer.inspector/stamp.make
 lib/GNUstep/Bundles/Role.extinfo/
 lib/GNUstep/Bundles/Role.extinfo/Resources/
 lib/GNUstep/Bundles/Role.extinfo/Resources/Info-gnustep.plist
@@ -201,7 +217,6 @@ lib/GNUstep/Bundles/SoundViewer.inspector/Resources/progind10.tiff
 lib/GNUstep/Bundles/SoundViewer.inspector/Resources/stop.tiff
 @bin lib/GNUstep/Bundles/SoundViewer.inspector/SoundViewer
 lib/GNUstep/Bundles/SoundViewer.inspector/stamp.make
-lib/GNUstep/Frameworks/
 lib/GNUstep/Frameworks/FSNode.framework/
 lib/GNUstep/Frameworks/FSNode.framework/Headers
 lib/GNUstep/Frameworks/FSNode.framework/Resources
