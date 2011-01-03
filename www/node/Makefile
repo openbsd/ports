@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/30 08:54:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/01/03 10:22:29 jasper Exp $
 
 # XXX:
 # - Build fails on some amd64 machines?
@@ -9,7 +9,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	V8 JavaScript for clients and servers
 
-DISTNAME=	node-v0.2.5
+DISTNAME=	node-v0.2.6
 PKGNAME=	${DISTNAME:S/v//g}
 
 CATEGORIES=	www devel
