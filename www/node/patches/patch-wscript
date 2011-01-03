@@ -1,7 +1,6 @@
-$OpenBSD: patch-wscript,v 1.2 2011/01/03 10:22:29 jasper Exp $
+$OpenBSD: patch-wscript,v 1.3 2011/01/03 10:50:51 jasper Exp $
 
 - OpenBSD can also use libkvm and libexecinfo.
-- The SSL tests fail as -lssl isn't appended to LDFLAGS, override it.
 
 --- wscript.orig	Fri Dec 31 06:00:01 2010
 +++ wscript	Mon Jan  3 11:03:56 2011
@@ -23,14 +22,6 @@ $OpenBSD: patch-wscript,v 1.2 2011/01/03 10:22:29 jasper Exp $
       if not conf.check(lib="execinfo",
                         includes=['/usr/include', '/usr/local/include'],
                         libpath=['/usr/lib', '/usr/local/lib'],
-@@ -321,6 +321,7 @@ def configure(conf):
-   default_compile_flags = ['-g', '-O3']
-   conf.env.append_value('CCFLAGS', default_compile_flags)
-   conf.env.append_value('CXXFLAGS', default_compile_flags)
-+  conf.env.append_value('${CFLAGS}', default_compile_flags)
-   conf.write_config_header("config.h")
- 
- 
 @@ -576,11 +577,10 @@ def build(bld):
    # Only install the man page if it exists.
    # Do 'make doc install' to build and install it.
