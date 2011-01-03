@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/11 09:51:31 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/01/03 09:30:33 jasper Exp $
 
 COMMENT =		interface between perl web frameworks and web servers
 
 MODULES =		cpan
 DISTNAME =		Plack-0.9956
+REVISION =		0
 CATEGORIES =		www
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
@@ -13,7 +14,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-BUILD_DEPENDS =		devel/p5-Devel-StackTrace>=1.23 \
+BUILD_DEPENDS = 	${RUN_DEPENDS}
+RUN_DEPENDS =		devel/p5-Devel-StackTrace>=1.23 \
 			devel/p5-Devel-StackTrace-AsHTML>=0.09 \
 			devel/p5-File-ShareDir>=1.00 \
 			devel/p5-Hash-MultiValue>=0.05 \
@@ -21,6 +23,7 @@ BUILD_DEPENDS =		devel/p5-Devel-StackTrace>=1.23 \
 			devel/p5-Try-Tiny \
 			net/p5-Test-TCP>=0.11 \
 			sysutils/p5-Filesys-Notify-Simple \
+			www/p5-libwww \
 			www/p5-HTTP-Body>=1.06 \
 			www/p5-URI>=1.36
 
