@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2011/01/03 10:44:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/01/03 18:56:37 espie Exp $
 
 BRANCH=		21.4
 VERSION=	22
+REVISION =	0
 
 WANTLIB=	c m ncurses util
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/01/03 10:44:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/01/03 18:56:37 espie Exp $
 @pkgpath editors/xemacs21
 %%mule%%
 @bin bin/ellcc
@@ -16,8 +16,6 @@ bin/xemacs-rcs-checkin
 info/xemacs-${BRANCH}.${VERSION}/
 @info info/xemacs-${BRANCH}.${VERSION}/cl.info
 @info info/xemacs-${BRANCH}.${VERSION}/custom.info
-@comment no checksum
-info/xemacs-${BRANCH}.${VERSION}/dir
 @info info/xemacs-${BRANCH}.${VERSION}/emodules.info
 @info info/xemacs-${BRANCH}.${VERSION}/external-widget.info
 @info info/xemacs-${BRANCH}.${VERSION}/info.info
@@ -31,6 +29,8 @@ info/xemacs-${BRANCH}.${VERSION}/dir
 @info info/xemacs-${BRANCH}.${VERSION}/widget.info
 @info info/xemacs-${BRANCH}.${VERSION}/xemacs-faq.info
 @info info/xemacs-${BRANCH}.${VERSION}/xemacs.info
+@comment no checksum
+info/xemacs-${BRANCH}.${VERSION}/dir
 lib/xemacs/
 lib/xemacs-${BRANCH}.${VERSION}/
 lib/xemacs-${BRANCH}.${VERSION}/${GCCARCH}/
