@@ -1,0 +1,15 @@
+$OpenBSD: patch-xpdf_xpdf-3_02_GNUmakefile_in,v 1.1.1.1 2011/01/03 14:20:28 sebastia Exp $
+
+propagate CPPFLAGS and LDFLAGS
+
+--- xpdf/xpdf-3.02/GNUmakefile.in.orig	Sun Dec 26 16:10:49 2010
++++ xpdf/xpdf-3.02/GNUmakefile.in	Sun Dec 26 16:11:28 2010
+@@ -38,7 +38,7 @@ all: compile
+ configure: Makefile
+ 
+ Makefile:
+-	CC=@CC@ CXX=@CXX@ ./configure --without-x \
++	CC=@CC@ CXX=@CXX@ CPPFLAGS=@CPPFLAGS@ LDFLAGS=@LDFLAGS@ ./configure --without-x \
+ 	    --with-freetype2-library=$(LIB_FREETYPE_LIBS) \
+ 	    --with-freetype2-includes=$(LIB_FREETYPE_INCLUDES) 
+ 

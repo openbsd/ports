@@ -1,0 +1,51 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2011/01/03 14:20:28 sebastia Exp $
+--- configure.orig	Thu Jun 24 17:11:51 2010
++++ configure	Wed Dec 22 17:09:45 2010
+@@ -1775,7 +1775,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ 
+ 
+-if test -z "$GNUSTEP_SYSTEM_ROOT"; then
++if test -z "$GNUSTEP_MAKEFILES"; then
+   as_fn_error "You must run the GNUstep initialization script first!" "$LINENO" 5
+ fi
+ 
+@@ -3009,6 +3009,9 @@ else
+     netbsd*)
+     	lib_freetype_libs=/usr/pkg/lib
+       ;;
++    openbsd*)
++    	lib_freetype_libs=${X11BASE}/lib
++      ;;
+     *)
+       lib_freetype_libs=$(sh freetype-config --prefix)/lib
+       ;;
+@@ -3016,7 +3019,7 @@ else
+ fi
+ 
+ if test -n "$with_freetype2_add_includes"; then
+-  lib_freetype_add_includes=-I$with_freetype2_add_includes
++  lib_freetype_add_includes=$with_freetype2_add_includes
+ else
+   case "$target_os" in
+     freebsd*)
+@@ -3025,6 +3028,9 @@ else
+     netbsd*)
+ 	lib_freetype_add_includes=/usr/pkg/include
+       ;;
++    openbsd*)
++	lib_freetype_add_includes=${X11BASE}/include
++      ;;
+     *)
+       lib_freetype_add_includes=$(sh freetype-config --cflags)
+       ;;
+@@ -3040,6 +3046,9 @@ else
+       ;;
+     netbsd*)
+     	lib_freetype_includes=/usr/pkg/include/freetype2
++      ;;
++    openbsd*)
++	lib_freetype_add_includes=${X11BASE}/include/freetype2
+       ;;
+     *)
+       lib_freetype_includes=$(sh freetype-config --prefix)/include/freetype2

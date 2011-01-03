@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/03 14:20:28 sebastia Exp $
+include/PDFKit
+lib/GNUstep/
+lib/GNUstep/Frameworks/
+lib/GNUstep/Frameworks/PDFKit.framework/
+lib/GNUstep/Frameworks/PDFKit.framework/Headers
+lib/GNUstep/Frameworks/PDFKit.framework/Resources
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Headers/
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Headers/PDFDocument.h
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Headers/PDFFontManager.h
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Headers/PDFImageRep.h
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Headers/PDFOutline.h
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Headers/PDFPrintView.h
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/Info-gnustep.plist
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/d050000l.pfb
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/n019003l.pfb
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/n019004l.pfb
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/n019023l.pfb
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/n019024l.pfb
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/n021003l.pfb
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/n021004l.pfb
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/n021023l.pfb
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/n021024l.pfb
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/n022003l.pfb
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/n022004l.pfb
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/n022023l.pfb
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/n022024l.pfb
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/0.0/Resources/s050000l.pfb
+lib/GNUstep/Frameworks/PDFKit.framework/Versions/Current
+@lib lib/libPDFKit.so.${LIBPDFKit_VERSION}

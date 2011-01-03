@@ -1,0 +1,2 @@
+PDFKit is a wrapper over the xpdf library v. 3.0.2.  It is used by
+GWorkspace for the PDF content inspector.

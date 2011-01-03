@@ -1,0 +1,24 @@
+$OpenBSD: patch-xpdf_xpdf-3_02_xpdf_Makefile_in,v 1.1.1.1 2011/01/03 14:20:28 sebastia Exp $
+
+The patches to xpdf need the DLOCALBASE
+
+--- xpdf/xpdf-3.02/xpdf/Makefile.in.orig	Sun Dec 26 15:39:05 2010
++++ xpdf/xpdf-3.02/xpdf/Makefile.in	Sun Dec 26 15:39:23 2010
+@@ -19,7 +19,7 @@ FOFILIBDIR = ../fofi
+ SPLASHSRCDIR = $(srcdir)/../splash
+ SPLASHLIBDIR = ../splash
+ 
+-CXXFLAGS = @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(SPLASHSRCDIR) -I$(srcdir) @freetype2_CFLAGS@ @Sgm_CFLAGS@ @Xm_CFLAGS@ @Xt_CFLAGS@ @Xp_CFLAGS@ @Xext_CFLAGS@ @Xpm_CFLAGS@ @X_CFLAGS@
++CXXFLAGS = @CPPFLAGS@ @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(SPLASHSRCDIR) -I$(srcdir) @freetype2_CFLAGS@ @Sgm_CFLAGS@ @Xm_CFLAGS@ @Xt_CFLAGS@ @Xp_CFLAGS@ @Xext_CFLAGS@ @Xpm_CFLAGS@ @X_CFLAGS@ -DLOCALBASE='"/usr/local"'
+ 
+ LDFLAGS = @LDFLAGS@
+ 
+@@ -31,7 +31,7 @@ SPLASHLIBS = -L$(SPLASHLIBDIR) -lsplash
+ 
+ OTHERLIBS = @LIBS@ \
+ 	-L$(FOFILIBDIR) -lfofi \
+-	-L$(GOOLIBDIR) -lGoo
++	-L$(GOOLIBDIR) -lGoo -pthread
+ 
+ CXX = @CXX@
+ 
