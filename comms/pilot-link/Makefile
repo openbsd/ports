@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2011/01/03 11:11:43 ajacoutot Exp $
 # $NetBSD: Makefile,v 1.37 2004/10/03 00:13:16 tv Exp $
 
 COMMENT=	tools to connect your PalmOS® compatible handheld
@@ -7,6 +7,8 @@ DISTNAME=	pilot-link-0.12.5
 SHARED_LIBS +=	pisock               11.0      # .9.2
 SHARED_LIBS +=	pisync               2.0      # .0.3
 
+REVISION=	0
+
 CATEGORIES=	comms palm
 
 MASTER_SITES=	http://downloads.pilot-link.org/ \
@@ -14,8 +16,6 @@ MASTER_SITES=	http://downloads.pilot-link.org/ \
 		http://gentoo.oregonstate.edu/distfiles/
 
 HOMEPAGE=	http://www.pilot-link.org/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 EXTRACT_SUFX=	.tar.bz2
 

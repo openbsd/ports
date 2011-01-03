@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.59 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2011/01/03 11:11:43 ajacoutot Exp $
 
 COMMENT=	desktop organizer software for the palm pilot
 
 DISTNAME=	jpilot-1.8.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	comms palm
 
 MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.jpilot.org/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

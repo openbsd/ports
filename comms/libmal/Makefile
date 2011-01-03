@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/01/03 11:11:43 ajacoutot Exp $
 
 COMMENT=	MAL convenience library
 
@@ -6,9 +6,9 @@ DISTNAME=	libmal-0.44.1
 SHARED_LIBS +=	mal 1.0				# .1.0
 CATEGORIES=	comms palm
 
-HOMEPAGE=	http://www.jlogday.com/code/libmal/
+REVISION=	0
 
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
+HOMEPAGE=	http://www.jlogday.com/code/libmal/
 
 # MPL
 PERMIT_PACKAGE_CDROM=	Yes
