@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.2 2010/12/21 17:10:58 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2011/01/03 22:23:06 jasper Exp $
+
+BROKEN-mips64el= hangs when compiling sqlite3.o
 
 COMMENT =	ruby SQLite3 embedded database library
 
