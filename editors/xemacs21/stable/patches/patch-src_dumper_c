@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_dumper_c,v 1.1 2007/09/18 18:56:03 aanriot Exp $
---- src/dumper.c.orig	Fri Jan  3 10:59:44 2003
-+++ src/dumper.c	Mon Feb 24 10:52:09 2003
+$OpenBSD: patch-src_dumper_c,v 1.2 2011/01/03 10:44:27 jasper Exp $
+--- src/dumper.c.orig	Wed May  9 14:36:22 2007
++++ src/dumper.c	Sun Jan  2 23:29:57 2011
 @@ -1050,7 +1050,7 @@ pdump (void)
    pdump_buf = xmalloc (max_size);
    /* Avoid use of the `open' macro.  We want the real function. */
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_dumper_c,v 1.1 2007/09/18 18:56:03 aanriot Exp $
  		   O_WRONLY | O_CREAT | O_TRUNC | OPEN_BINARY, 0666);
    pdump_out = fdopen (pdump_fd, "w");
  
-@@ -1330,23 +1330,7 @@ pdump_file_try (char *exe_path)
+@@ -1331,23 +1331,7 @@ pdump_file_try (char *exe_path)
  
    do
      {

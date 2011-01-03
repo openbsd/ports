@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_glyphs-eimage_c,v 1.1 2009/12/15 10:05:55 jasper Exp $
+$OpenBSD: patch-src_glyphs-eimage_c,v 1.2 2011/01/03 10:44:27 jasper Exp $
 
 Security fix for CVE-2009-2688, xemacs: multiple integer overflow flaws.
 
 Patch from gentoo.
 
---- src/glyphs-eimage.c.orig	Mon Jan 31 03:55:17 2005
-+++ src/glyphs-eimage.c	Tue Dec 15 10:57:11 2009
+--- src/glyphs-eimage.c.orig	Mon Aug 20 21:52:28 2007
++++ src/glyphs-eimage.c	Sun Jan  2 23:29:57 2011
 @@ -407,6 +407,7 @@ jpeg_instantiate (Lisp_Object image_instance, Lisp_Obj
     */
  
@@ -44,7 +44,7 @@ Patch from gentoo.
      unwind.eimage = (unsigned char*)
        xmalloc (width * height * 3 * unwind.giffile->ImageCount);
      if (!unwind.eimage)
-@@ -929,11 +937,15 @@ png_instantiate (Lisp_Object image_instance, Lisp_Obje
+@@ -937,11 +945,15 @@ png_instantiate (Lisp_Object image_instance, Lisp_Obje
    {
      int y;
      unsigned char **row_pointers;
@@ -61,7 +61,7 @@ Patch from gentoo.
      /* libpng expects that the image buffer passed in contains a
         picture to draw on top of if the png has any transparencies.
         This could be a good place to pass that in... */
-@@ -986,7 +998,7 @@ png_instantiate (Lisp_Object image_instance, Lisp_Obje
+@@ -994,7 +1006,7 @@ png_instantiate (Lisp_Object image_instance, Lisp_Obje
        png_set_expand (png_ptr);
      /* send grayscale images to RGB too */
      if (info_ptr->color_type == PNG_COLOR_TYPE_GRAY ||
@@ -70,7 +70,7 @@ Patch from gentoo.
        png_set_gray_to_rgb (png_ptr);
      /* we can't handle alpha values */
      if (info_ptr->color_type & PNG_COLOR_MASK_ALPHA)
-@@ -1260,6 +1272,7 @@ tiff_instantiate (Lisp_Object image_instance, Lisp_Obj
+@@ -1268,6 +1280,7 @@ tiff_instantiate (Lisp_Object image_instance, Lisp_Obj
  
      uint32 *raster;
      unsigned char *ep;
@@ -78,7 +78,7 @@ Patch from gentoo.
  
      assert (!NILP (data));
  
-@@ -1282,12 +1295,15 @@ tiff_instantiate (Lisp_Object image_instance, Lisp_Obj
+@@ -1290,12 +1303,15 @@ tiff_instantiate (Lisp_Object image_instance, Lisp_Obj
  
      TIFFGetField (unwind.tiff, TIFFTAG_IMAGEWIDTH, &width);
      TIFFGetField (unwind.tiff, TIFFTAG_IMAGELENGTH, &height);
