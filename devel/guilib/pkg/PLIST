@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/08/10 00:52:44 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/01/03 19:56:34 jasper Exp $
 include/GUI/
 include/GUI/GUI.h
 include/GUI/GUI_C.h
@@ -7,7 +7,9 @@ include/GUI/GUI_button.h
 include/GUI/GUI_font.h
 include/GUI/GUI_generic.h
 include/GUI/GUI_image.h
+include/GUI/GUI_loadimage.h
 include/GUI/GUI_menu.h
+include/GUI/GUI_output.h
 include/GUI/GUI_scroll.h
 include/GUI/GUI_scrollbar.h
 include/GUI/GUI_status.h
