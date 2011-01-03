@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.no_mips64,v 1.1 2011/01/03 13:47:57 jasper Exp $
+lib/libclog_pic.a
