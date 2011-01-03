@@ -1,6 +1,6 @@
---- configure.in.orig	Tue Dec  9 22:04:42 2008
-+++ configure.in	Tue Dec  9 22:07:03 2008
-@@ -354,8 +354,8 @@
+--- configure.in.orig	Mon Jan  3 14:34:43 2011
++++ configure.in	Mon Jan  3 14:34:45 2011
+@@ -352,8 +352,8 @@ AC_CHECK_LIB(m, sin)
  
  dnl Check for resolver routines.
  dnl Need to check for both res_search and __res_search
@@ -11,7 +11,7 @@
  
  dnl Check for inet_aton and dn_skipname
  dnl in -lc, -lbind and -lresolv
-@@ -931,7 +931,7 @@
+@@ -940,7 +940,7 @@ enable_static=yes
  
  case $php_build_target in
    program|static)
@@ -20,7 +20,7 @@
      if test -z "$PHP_MODULES" && test -z "$PHP_ZEND_EX"; then
          enable_shared=no
      fi
-@@ -940,10 +940,10 @@
+@@ -949,10 +949,10 @@ case $php_build_target in
      enable_static=no
      case $with_pic in
        yes)
@@ -33,7 +33,7 @@
          ;;
      esac
      EXTRA_LDFLAGS="$EXTRA_LDFLAGS -avoid-version -module"
-@@ -1136,7 +1136,7 @@
+@@ -1146,7 +1146,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
@@ -42,7 +42,7 @@
  
  exec_prefix=$old_exec_prefix
  libdir=$old_libdir
-@@ -1344,7 +1344,8 @@
+@@ -1357,7 +1357,8 @@ CFLAGS="\$(CFLAGS_CLEAN) $standard_libtool_flag"
  INLINE_CFLAGS="$INLINE_CFLAGS $standard_libtool_flag"
  CXXFLAGS="$CXXFLAGS $standard_libtool_flag"
  
@@ -52,7 +52,7 @@
  install_targets="$install_modules install-build install-headers install-programs $install_pear"
  
  case $PHP_SAPI in
-@@ -1388,7 +1389,7 @@
+@@ -1401,7 +1402,7 @@ esac
  PHP_ADD_SOURCES(Zend, \
      zend_language_parser.c zend_language_scanner.c \
      zend_ini_parser.c zend_ini_scanner.c \
@@ -61,7 +61,7 @@
      zend_execute_API.c zend_highlight.c zend_llist.c \
      zend_opcode.c zend_operators.c zend_ptr_stack.c zend_stack.c \
      zend_variables.c zend.c zend_API.c zend_extensions.c zend_hash.c \
-@@ -1409,6 +1410,7 @@
+@@ -1422,6 +1423,7 @@ else
  fi
  
  PHP_ADD_SOURCES_X(Zend, zend_execute.c,,PHP_GLOBAL_OBJS,,$flag)

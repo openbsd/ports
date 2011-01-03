@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/11/22 09:40:48 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2011/01/03 15:03:03 robert Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}
 FULLPKGPATH-main=	www/php5/extensions,-main
@@ -325,7 +325,7 @@ MULTI_PACKAGES+=	-snmp
 COMMENT-snmp=		snmp protocol extensions for php5
 CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
 LIB_DEPENDS-snmp =	net/net-snmp
-WANTLIB-snmp =		netsnmp>=6.2
+WANTLIB-snmp =		crypto netsnmp>=6.2
 .endif
 
 # sqlite
