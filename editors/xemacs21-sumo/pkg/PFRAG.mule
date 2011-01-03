@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.mule,v 1.9 2006/08/15 06:47:38 sturm Exp $
+@comment $OpenBSD: PFRAG.mule,v 1.10 2011/01/03 10:44:41 jasper Exp $
 lib/xemacs/${MULE}-packages/
 lib/xemacs/${MULE}-packages/etc/
 lib/xemacs/${MULE}-packages/etc/app-defaults/
@@ -10,6 +10,8 @@ lib/xemacs/${MULE}-packages/etc/app-defaults/ja/
 lib/xemacs/${MULE}-packages/etc/app-defaults/ja/Emacs
 lib/xemacs/${MULE}-packages/etc/app-defaults/ro/
 lib/xemacs/${MULE}-packages/etc/app-defaults/ro/Emacs
+lib/xemacs/${MULE}-packages/etc/app-defaults/sv/
+lib/xemacs/${MULE}-packages/etc/app-defaults/sv/Emacs
 lib/xemacs/${MULE}-packages/etc/edict/
 lib/xemacs/${MULE}-packages/etc/edict/ChangeLog.096
 lib/xemacs/${MULE}-packages/etc/edict/README
@@ -118,6 +120,15 @@ lib/xemacs/${MULE}-packages/etc/skk/SKK-JISYO.S
 lib/xemacs/${MULE}-packages/etc/skk/SKK.tut
 lib/xemacs/${MULE}-packages/etc/skk/SKK.tut.E
 lib/xemacs/${MULE}-packages/etc/start-files/
+lib/xemacs/${MULE}-packages/etc/start-files/French/
+lib/xemacs/${MULE}-packages/etc/start-files/French/locale-start.el
+lib/xemacs/${MULE}-packages/etc/start-files/French/locale-start.elc
+lib/xemacs/${MULE}-packages/etc/start-files/Japanese/
+lib/xemacs/${MULE}-packages/etc/start-files/Japanese/locale-start.el
+lib/xemacs/${MULE}-packages/etc/start-files/Japanese/locale-start.elc
+lib/xemacs/${MULE}-packages/etc/start-files/Romanian/
+lib/xemacs/${MULE}-packages/etc/start-files/Romanian/locale-start.el
+lib/xemacs/${MULE}-packages/etc/start-files/Romanian/locale-start.elc
 lib/xemacs/${MULE}-packages/etc/start-files/fr/
 lib/xemacs/${MULE}-packages/etc/start-files/fr/locale-start.el
 lib/xemacs/${MULE}-packages/etc/start-files/fr/locale-start.elc
@@ -272,6 +283,10 @@ lib/xemacs/${MULE}-packages/lisp/leim/auto-autoloads.el
 lib/xemacs/${MULE}-packages/lisp/leim/auto-autoloads.elc
 lib/xemacs/${MULE}-packages/lisp/leim/custom-load.el
 lib/xemacs/${MULE}-packages/lisp/leim/custom-load.elc
+lib/xemacs/${MULE}-packages/lisp/leim/cyrillic-tajik.el
+lib/xemacs/${MULE}-packages/lisp/leim/georgian.el
+lib/xemacs/${MULE}-packages/lisp/leim/ipa-21.5.el
+lib/xemacs/${MULE}-packages/lisp/leim/latin-ltx.el
 lib/xemacs/${MULE}-packages/lisp/leim/leim-list.el
 lib/xemacs/${MULE}-packages/lisp/leim/leim-list.elc
 lib/xemacs/${MULE}-packages/lisp/leim/quail/
@@ -283,10 +298,10 @@ lib/xemacs/${MULE}-packages/lisp/leim/quail/ARRAY30.el
 lib/xemacs/${MULE}-packages/lisp/leim/quail/ARRAY30.elc
 lib/xemacs/${MULE}-packages/lisp/leim/quail/CCDOSPY.el
 lib/xemacs/${MULE}-packages/lisp/leim/quail/CCDOSPY.elc
+lib/xemacs/${MULE}-packages/lisp/leim/quail/CTLau-b5.el
+lib/xemacs/${MULE}-packages/lisp/leim/quail/CTLau-b5.elc
 lib/xemacs/${MULE}-packages/lisp/leim/quail/CTLau.el
 lib/xemacs/${MULE}-packages/lisp/leim/quail/CTLau.elc
-lib/xemacs/${MULE}-packages/lisp/leim/quail/CTLauB.el
-lib/xemacs/${MULE}-packages/lisp/leim/quail/CTLauB.elc
 lib/xemacs/${MULE}-packages/lisp/leim/quail/ECDICT.el
 lib/xemacs/${MULE}-packages/lisp/leim/quail/ECDICT.elc
 lib/xemacs/${MULE}-packages/lisp/leim/quail/ETZY.el
@@ -319,6 +334,8 @@ lib/xemacs/${MULE}-packages/lisp/leim/quail/cyrillic.el
 lib/xemacs/${MULE}-packages/lisp/leim/quail/cyrillic.elc
 lib/xemacs/${MULE}-packages/lisp/leim/quail/czech.el
 lib/xemacs/${MULE}-packages/lisp/leim/quail/czech.elc
+lib/xemacs/${MULE}-packages/lisp/leim/quail/ethiopic.el
+lib/xemacs/${MULE}-packages/lisp/leim/quail/ethiopic.elc
 lib/xemacs/${MULE}-packages/lisp/leim/quail/greek.el
 lib/xemacs/${MULE}-packages/lisp/leim/quail/greek.elc
 lib/xemacs/${MULE}-packages/lisp/leim/quail/hangul.el
@@ -345,6 +362,10 @@ lib/xemacs/${MULE}-packages/lisp/leim/quail/quick-b5.el
 lib/xemacs/${MULE}-packages/lisp/leim/quail/quick-b5.elc
 lib/xemacs/${MULE}-packages/lisp/leim/quail/quick-cns.el
 lib/xemacs/${MULE}-packages/lisp/leim/quail/quick-cns.elc
+lib/xemacs/${MULE}-packages/lisp/leim/quail/sisheng.el
+lib/xemacs/${MULE}-packages/lisp/leim/quail/sisheng.elc
+lib/xemacs/${MULE}-packages/lisp/leim/quail/slovak.el
+lib/xemacs/${MULE}-packages/lisp/leim/quail/slovak.elc
 lib/xemacs/${MULE}-packages/lisp/leim/quail/symbol-ksc.el
 lib/xemacs/${MULE}-packages/lisp/leim/quail/symbol-ksc.elc
 lib/xemacs/${MULE}-packages/lisp/leim/quail/thai-xtis.el
@@ -353,6 +374,13 @@ lib/xemacs/${MULE}-packages/lisp/leim/quail/tsang-b5.el
 lib/xemacs/${MULE}-packages/lisp/leim/quail/tsang-b5.elc
 lib/xemacs/${MULE}-packages/lisp/leim/quail/tsang-cns.el
 lib/xemacs/${MULE}-packages/lisp/leim/quail/tsang-cns.elc
+lib/xemacs/${MULE}-packages/lisp/leim/quail/viqr.el
+lib/xemacs/${MULE}-packages/lisp/leim/quail/viqr.elc
+lib/xemacs/${MULE}-packages/lisp/leim/quail/vntelex.el
+lib/xemacs/${MULE}-packages/lisp/leim/quail/vntelex.elc
+lib/xemacs/${MULE}-packages/lisp/leim/rfc1345.el
+lib/xemacs/${MULE}-packages/lisp/leim/sgml-input.el
+lib/xemacs/${MULE}-packages/lisp/leim/welsh.el
 lib/xemacs/${MULE}-packages/lisp/locale/
 lib/xemacs/${MULE}-packages/lisp/locale/ChangeLog
 lib/xemacs/${MULE}-packages/lisp/locale/_pkg.el
@@ -438,6 +466,8 @@ lib/xemacs/${MULE}-packages/lisp/${MULE}-base/cyril-util.el
 lib/xemacs/${MULE}-packages/lisp/${MULE}-base/cyril-util.elc
 lib/xemacs/${MULE}-packages/lisp/${MULE}-base/ethio-util.el
 lib/xemacs/${MULE}-packages/lisp/${MULE}-base/ethio-util.elc
+lib/xemacs/${MULE}-packages/lisp/${MULE}-base/fsf-compat-unicode.el
+lib/xemacs/${MULE}-packages/lisp/${MULE}-base/fsf-compat-unicode.elc
 lib/xemacs/${MULE}-packages/lisp/${MULE}-base/isearch-${MULE}.el
 lib/xemacs/${MULE}-packages/lisp/${MULE}-base/isearch-${MULE}.elc
 lib/xemacs/${MULE}-packages/lisp/${MULE}-base/japan-util.el
