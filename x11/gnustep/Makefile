@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/12/27 12:06:08 sebastia Exp $
+# $OpenBSD: Makefile,v 1.18 2011/01/03 14:21:44 sebastia Exp $
 
      SUBDIR =
      SUBDIR += addresses
@@ -18,6 +18,7 @@
      SUBDIR += laternamagica
      SUBDIR += make
      SUBDIR += pantomime
+     SUBDIR += pdfkit
      SUBDIR += price
      SUBDIR += projectcenter
      SUBDIR += remotedesk
