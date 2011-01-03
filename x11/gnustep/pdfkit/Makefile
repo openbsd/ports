@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/03 14:20:28 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2011/01/03 18:00:16 sebastia Exp $
 
 COMMENT =	framework for accessing and rendering PDF content
 
+REVISION =	0
 DISTNAME =	PDFKit-0.9
 PKGNAME =	${DISTNAME:L}
 SHARED_LIBS +=	PDFKit	0.0
@@ -14,7 +15,7 @@ MODGNUSTEP_NEEDS_BASE =	No
 MODGNUSTEP_NEEDS_GUI =	No
 WANTLIB += 		freetype m
 BUILD_DEPENDS =		x11/gnustep/gui \
-			textproc/xpdf>=xpdf-3.02.5p0:patch
+			textproc/xpdf:patch
 
 CONFIGURE_STYLE =	gnu
 
@@ -24,6 +25,7 @@ CONFIGURE_ARGS =	--with-freetype2-add-includes=${X11BASE}/include \
 MAKE_FLAGS =		PDFKit_INTERFACE_VERSION=${LIBPDFKit_VERSION}
 
 pre-configure:
+	${SUBST_CMD} ${WRKSRC}/xpdf/xpdf-3.02/xpdf/Makefile.in
 	cp ${WRKSRC}/xpdf/xpdf-3.02/GNUmakefile.in ${WRKDIR}/textproc/xpdf/xpdf-3.02
 	cp ${WRKSRC}/xpdf/xpdf-3.02/Makefile.in ${WRKDIR}/textproc/xpdf/xpdf-3.02
 	cp ${WRKSRC}/xpdf/xpdf-3.02/xpdf/Makefile.in ${WRKDIR}/textproc/xpdf/xpdf-3.02/xpdf

@@ -1,4 +1,4 @@
-$OpenBSD: patch-xpdf_xpdf-3_02_xpdf_Makefile_in,v 1.1.1.1 2011/01/03 14:20:28 sebastia Exp $
+$OpenBSD: patch-xpdf_xpdf-3_02_xpdf_Makefile_in,v 1.2 2011/01/03 18:00:16 sebastia Exp $
 
 The patches to xpdf need the DLOCALBASE
 
@@ -9,7 +9,7 @@ The patches to xpdf need the DLOCALBASE
  SPLASHLIBDIR = ../splash
  
 -CXXFLAGS = @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(SPLASHSRCDIR) -I$(srcdir) @freetype2_CFLAGS@ @Sgm_CFLAGS@ @Xm_CFLAGS@ @Xt_CFLAGS@ @Xp_CFLAGS@ @Xext_CFLAGS@ @Xpm_CFLAGS@ @X_CFLAGS@
-+CXXFLAGS = @CPPFLAGS@ @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(SPLASHSRCDIR) -I$(srcdir) @freetype2_CFLAGS@ @Sgm_CFLAGS@ @Xm_CFLAGS@ @Xt_CFLAGS@ @Xp_CFLAGS@ @Xext_CFLAGS@ @Xpm_CFLAGS@ @X_CFLAGS@ -DLOCALBASE='"/usr/local"'
++CXXFLAGS = @CPPFLAGS@ @CXXFLAGS@ @DEFS@ -I.. -I$(GOOSRCDIR) -I$(FOFISRCDIR) -I$(SPLASHSRCDIR) -I$(srcdir) @freetype2_CFLAGS@ @Sgm_CFLAGS@ @Xm_CFLAGS@ @Xt_CFLAGS@ @Xp_CFLAGS@ @Xext_CFLAGS@ @Xpm_CFLAGS@ @X_CFLAGS@ -DLOCALBASE='"${LOCALBASE}"'
  
  LDFLAGS = @LDFLAGS@
  
