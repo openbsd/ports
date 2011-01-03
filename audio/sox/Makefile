@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2011/01/03 19:22:59 jasper Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
 DISTNAME=	sox-14.3.0
 SHARED_LIBS +=	sox 1.0 # .1.0
+REVISION=	0
 CATEGORIES=	audio
 HOMEPAGE=	http://sox.sourceforge.net/
 
@@ -13,7 +14,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c iconv m ogg sndio z
+MODULES=		converters/libiconv
+
+WANTLIB += c m ogg sndio z
 WANTLIB += vorbis vorbisenc vorbisfile FLAC magic
 WANTLIB += mad id3tag mp3lame wavpack png gsm
 
