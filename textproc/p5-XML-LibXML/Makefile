@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2010/12/03 11:46:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2011/01/03 19:14:28 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	perl interface to the libxml2 library
 
-MODULES=	cpan
 DISTNAME=	XML-LibXML-1.69
-REVISION=	2
+REVISION=	3
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 
@@ -21,6 +20,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		iconv m z xml2>=6
+MODULES=		cpan \
+			converters/libiconv
+
+WANTLIB=		m z xml2>=6
 
 .include <bsd.port.mk>
