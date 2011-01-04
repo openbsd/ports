@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2010/09/07 04:36:16 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.24 2011/01/04 10:32:39 kevlo Exp $
 @bin bin/lftp
 bin/lftpget
 @comment lib/charset.alias
@@ -7,6 +7,9 @@ lib/liblftp-jobs.a
 lib/liblftp-jobs.la
 lib/liblftp-tasks.a
 lib/liblftp-tasks.la
+@comment @man man/cat1/lftp.0
+@comment @man man/cat1/lftpget.0
+@comment @man man/cat5/lftp.conf.0
 @man man/man1/lftp.1
 @man man/man1/lftpget.1
 @man man/man5/lftp.conf.5
