@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.33 2010/11/16 21:58:52 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.34 2011/01/04 22:35:47 fgsch Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-ogg-*
 @conflict chan_unistim-*
@@ -1691,3 +1691,5 @@ share/examples/asterisk/voicemail/default/1234/en/busy.gsm
 share/examples/asterisk/voicemail/default/1234/en/unavail.gsm
 @owner _asterisk
 @sample /var/spool/asterisk/voicemail/default/1234/en/unavail.gsm
+@owner
+@rcscript ${RCDIR}/asterisk
