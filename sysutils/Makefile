@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2010/12/20 18:50:27 jeremy Exp $
+# $OpenBSD: Makefile,v 1.221 2011/01/04 17:42:01 rpointel Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -37,6 +37,7 @@
      SUBDIR += dellflash
      SUBDIR += diskrescue
      SUBDIR += dmassage
+     SUBDIR += downtimed
      SUBDIR += dmidecode
      SUBDIR += dtpstree
      SUBDIR += duplicity
