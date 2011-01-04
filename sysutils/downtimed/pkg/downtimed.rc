@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: downtimed.rc,v 1.1.1.1 2011/01/04 17:40:42 rpointel Exp $
+
+daemon="${TRUEPREFIX}/sbin/downtimed"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
