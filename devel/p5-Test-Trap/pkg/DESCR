@@ -1,0 +1,4 @@
+This module is for use in test scripts: A block eval on steroids, 
+configurable and extensible, but by default trapping (Perl) STDOUT, 
+STDERR, warnings, exceptions, would-be exit codes, and return values 
+from boxed blocks of test code.

@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/04 10:12:57 kevlo Exp $
+${P5SITE}/Test/Trap/
+${P5SITE}/Test/Trap.pm
+${P5SITE}/Test/Trap/Builder/
+${P5SITE}/Test/Trap/Builder.pm
+${P5SITE}/Test/Trap/Builder/PerlIO.pm
+${P5SITE}/Test/Trap/Builder/SystemSafe.pm
+${P5SITE}/Test/Trap/Builder/TempFile.pm
+@man man/man3p/Test::Trap.3p
+@man man/man3p/Test::Trap::Builder.3p
+@man man/man3p/Test::Trap::Builder::PerlIO.3p
+@man man/man3p/Test::Trap::Builder::SystemSafe.3p
+@man man/man3p/Test::Trap::Builder::TempFile.3p
