@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:48 espie Exp $ 
+# $OpenBSD: Makefile,v 1.8 2011/01/04 09:46:52 sthen Exp $ 
 
 COMMENT=	contact management module, for Horde
 
 # Horde license (BSD-like with some restrictions, see LICENSE)
-DISTNAME=	turba-h3-2.3.4
-REVISION=	2
+DISTNAME=	turba-h3-2.3.5
 
 RUN_DEPENDS=	www/horde/imp
 

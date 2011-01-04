@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:48 espie Exp $ 
+# $OpenBSD: Makefile,v 1.8 2011/01/04 09:46:51 sthen Exp $ 
 
 COMMENT=	memo application, for Horde
 
 HORDE_NAME=	Mnemo
 
 # Horde (BSD-like with some restrictions, see LICENSE)
-DISTNAME=	mnemo-h3-2.2.3
-REVISION=	2
+DISTNAME=	mnemo-h3-2.2.4
 CATEGORIES=	databases
 
 RUN_DEPENDS=	www/php5/extensions,-imap
