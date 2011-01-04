@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_master_master-settings_c,v 1.10 2011/01/04 13:59:17 pea Exp $
+--- src/master/master-settings.c.orig	Thu Dec  9 17:29:09 2010
++++ src/master/master-settings.c	Thu Dec  9 17:29:09 2010
+@@ -649,7 +649,8 @@ static void unlink_auth_sockets(const char *path, cons
+ 				i_error("lstat(%s) failed: %m", str_c(str));
+ 			continue;
+ 		}
+-		if (!S_ISSOCK(st.st_mode))
++		/* delete also FIFOs created by v2.0 */
++		if (!S_ISSOCK(st.st_mode) && !S_ISFIFO(st.st_mode))
+ 			continue;
+ 
+ 		/* try to avoid unlinking sockets if someone's already
+@@ -657,7 +658,7 @@ static void unlink_auth_sockets(const char *path, cons
+ 		   when SIGHUPing a child process might catch the new
+ 		   connection before it notices that it's supposed
+ 		   to die. null_fd == -1 check is a bit kludgy, but works.. */
+-		if (null_fd == -1) {
++		if (null_fd == -1 && S_ISSOCK(st.st_mode)) {
+ 			int fd = net_connect_unix(str_c(str));
+ 			if (fd != -1 || errno != ECONNREFUSED) {
+ 				i_fatal("Dovecot is already running? "

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_pop3-login_pop3-proxy_c,v 1.3 2011/01/04 13:59:17 pea Exp $
+--- src/pop3-login/pop3-proxy.c.orig	Thu Dec  9 17:41:09 2010
++++ src/pop3-login/pop3-proxy.c	Thu Dec  9 17:41:24 2010
+@@ -271,6 +271,11 @@ int pop3_proxy_new(struct pop3_client *client, const c
+ 		client_send_line(client, PROXY_FAILURE_MSG);
+ 		return -1;
+ 	}
++	if (host == NULL || *host == '\0') {
++		client_syslog_err(&client->common, "proxy: host not given");
++		client_send_line(client, PROXY_FAILURE_MSG);
++		return -1;
++	}
+ 
+ 	i_assert(client->refcount > 1);
+ 	connection_queue_add(1);
