@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.29 2010/11/26 20:32:38 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.30 2011/01/04 21:55:19 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -55,13 +55,14 @@ my $vars = {
     AUTOMAKE_VERSION => 'AutoVersionVar',
     BROKEN => 'BrokenVar',
     BUILD_DEPENDS => 'BuildDependsVar',
-    CATEGORIES=> 'CategoriesVar',
+    CATEGORIES => 'CategoriesVar',
     COMES_WITH => 'DefinedVar',
     COMMENT => 'AnyVar',
     CONFIGURE_ARGS => 'ConfigureArgsVar',
     CONFIGURE_STYLE => 'ConfigureVar',
     DESCR => 'FileVar',
     DISTFILES => 'AnyVar',
+    PATCHFILES => 'AnyVar',
     DISTNAME => 'AnyVar',
     DIST_SUBDIR => 'DefinedVar',
     EPOCH => 'AnyVar',
@@ -151,6 +152,7 @@ $inserter->finish_port;
 $inserter->commit_to_db;
 
 while (my ($k, $v) = each %$unknown) {
+	next if $k eq 'CHECKSUM_FILE';
 	print STDERR "Unknown variable $k in $v\n";
 }
 
