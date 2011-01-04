@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2010/11/23 18:14:19 jasper Exp $
+$OpenBSD: README,v 1.3 2011/01/04 14:54:28 pea Exp $
 
 Running pgbouncer on OpenBSD
 ============================
@@ -14,14 +14,7 @@ Post-installation steps:
    # install -d -o _pgbouncer /var/run/pgbouncer
    # pgbouncer -u _pgbouncer ${SYSCONFDIR}/pgbouncer/pgbouncer.ini
 
-3. Add the following to your /etc/rc.local:
-
-   if [ -x ${TRUEPREFIX}/bin/pgbouncer ]; then
-	echo -n 'pgbouncer'
-	install -d -o _pgbouncer /var/run/pgbouncer
-	${TRUEPREFIX}/bin/pgbouncer -d -u _pgbouncer \
-		${SYSCONFDIR}/pgbouncer/pgbouncer.ini
-   fi
+3. Launch pgbouncer with /etc/rc.d/pgbouncer start
 
 Random hints:
 -------------

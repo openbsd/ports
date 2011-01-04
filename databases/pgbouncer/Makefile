@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/23 18:14:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/01/04 14:54:28 pea Exp $
 
 COMMENT = 	lightweight connection pooler for PostgreSQL
 
-DISTNAME = 	pgbouncer-1.3.3	
-REVISION =	3
+DISTNAME = 	pgbouncer-1.3.4
 
 CATEGORIES = 	databases
 
@@ -19,7 +18,7 @@ PERMIT_DISTFILES_CDROM =Yes
 
 WANTLIB = 	c event
 
-MASTER_SITES = 	http://pgfoundry.org/frs/download.php/2677/
+MASTER_SITES = 	http://pgfoundry.org/frs/download.php/2797/
 
 BUILD_DEPENDS =	devel/libeventextra
 

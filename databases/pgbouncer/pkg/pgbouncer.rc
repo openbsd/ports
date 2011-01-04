@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD: pgbouncer.rc,v 1.1 2011/01/04 14:54:28 pea Exp $
+
+daemon="${TRUEPREFIX}/bin/pgbouncer"
+daemon_flags="-d -u _pgbouncer ${SYSCONFDIR}/pgbouncer/pgbouncer.ini"
+
+. /etc/rc.d/rc.subr
+
+rc_pre() {
+	/usr/bin/install -d -o _pgbouncer /var/run/pgbouncer
+}
+
+rc_cmd $1
