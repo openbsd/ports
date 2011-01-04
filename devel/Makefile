@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.884 2010/12/30 12:57:52 benoit Exp $
+# $OpenBSD: Makefile,v 1.885 2011/01/04 08:36:50 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -259,7 +259,6 @@
      SUBDIR += libopensync
      SUBDIR += libproplist
      SUBDIR += libregexp9
-     SUBDIR += libsigc++
      SUBDIR += libsigc++-2
      SUBDIR += libsigsegv
      SUBDIR += libslang
@@ -271,7 +270,6 @@
      SUBDIR += libunicode
      SUBDIR += libunique
      SUBDIR += libusb
-     SUBDIR += libuta
      SUBDIR += libutf
      SUBDIR += libvmime
      SUBDIR += libvstr
