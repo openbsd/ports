@@ -1,5 +1,3 @@
-Varconf is a configuration system designed for the STAGE server.
-Varconf can parse configuration files, command-line arguments and
-environment variables.  It supports callbacks and can store its
-configuration information in separate Config objects or in one
-global configuration instance.
+Server, client and tool developers can use varconf to handle the
+configuration of their application. Initially written for stage, varconf
+is now used by many WorldForge components.

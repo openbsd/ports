@@ -1,34 +1,12 @@
-$OpenBSD: patch-configure,v 1.1 2002/10/19 08:38:49 pvalchev Exp $
---- configure.orig	Mon Sep  2 14:25:39 2002
-+++ configure	Sun Oct 20 02:26:00 2002
-@@ -3495,8 +3495,8 @@ else
-     hardcode_direct=yes
-     hardcode_shlibpath_var=no
-     if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
--      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
--      hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-+      archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-+      hardcode_libdir_flag_spec='${wl}-R$libdir'
-       export_dynamic_flag_spec='${wl}-E'
-     else
-       case "$host_os" in
-@@ -3505,8 +3505,8 @@ else
- 	hardcode_libdir_flag_spec='-R$libdir'
-         ;;
-       *)
--        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $linker_flags'
--        hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
-+        archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
-+        hardcode_libdir_flag_spec='${wl}-R$libdir'
-         ;;
-       esac
-     fi
-@@ -4018,6 +4018,8 @@ openbsd*)
-   version_type=sunos
-   need_lib_prefix=no
-   need_version=no
-+  sys_lib_search_path_spec="/usr/lib"
-+  sys_lib_dlsearch_path_spec="/usr/lib /usr/local/lib"
-   if test -z "`echo __ELF__ | $CC -E - | grep __ELF__`" || test "$host_os-$host_cpu" = "openbsd2.8-powerpc"; then
-     case "$host_os" in
-     openbsd2.[89] | openbsd2.[89].*)
+$OpenBSD: patch-configure,v 1.2 2011/01/04 08:36:11 jasper Exp $
+--- configure.orig	Mon Jan  3 21:30:25 2011
++++ configure	Mon Jan  3 21:31:50 2011
+@@ -8773,7 +8773,7 @@ if test -z "$aix_libpath"; then aix_libpath="/usr/lib:
+ 	     ;;
+ 	   *)
+ 	     archive_cmds='$CC -shared $pic_flag -o $lib $libobjs $deplibs $compiler_flags'
+-	     hardcode_libdir_flag_spec='${wl}-rpath,$libdir'
++	     hardcode_libdir_flag_spec='${wl}-R$libdir'
+ 	     ;;
+ 	  esac
+         fi

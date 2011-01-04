@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2006/01/02 17:49:48 bernd Exp $
-@lib lib/libvarconf.so.${LIBvarconf_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.5 2011/01/04 08:36:11 jasper Exp $
+@lib lib/libvarconf-1.0.so.${LIBvarconf-1.0_VERSION}
