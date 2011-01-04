@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/28 11:02:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/01/04 00:17:39 jeremy Exp $
 
 COMMENT=		DataObjects driver for PostgreSQL
 
 DISTNAME=		do_postgres-0.10.2
-REVISION=		0
+REVISION=		1
 CATEGORIES=		databases
 
 # MIT
@@ -16,7 +16,9 @@ MODULES=		lang/ruby
 
 CONFIGURE_STYLE=	ruby gem ext
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+# databases/postgresql,-server needed for include files
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			databases/postgresql,-server
 RUN_DEPENDS=		databases/ruby-data_objects,${MODRUBY_FLAVOR}
 
 WANTLIB=		pq
