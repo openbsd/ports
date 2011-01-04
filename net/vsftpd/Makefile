@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.28 2010/10/18 18:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/01/04 22:06:13 benoit Exp $
 
 COMMENT=		ftp daemon which aims to be secure
 
-DISTNAME=		vsftpd-2.3.1
+DISTNAME=		vsftpd-2.3.2
 CATEGORIES=		net
 
-HOMEPAGE=		http://vsftpd.beasts.org/
+HOMEPAGE =		http://vsftpd.beasts.org/
+
+MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,8 +24,8 @@ ALL_TARGET=		vsftpd
 MAKE_FLAGS=		CC="${CC}" \
 			CFLAGS="${CFLAGS}"
 
-USE_GROFF =	Yes
-NO_REGRESS=		Yes
+USE_GROFF =		Yes
+NO_REGRESS =		Yes
 
 do-configure:
 	@perl -pi -e "s,%%SYSCONFDIR%%,${SYSCONFDIR}," ${WRKSRC}/defs.h
