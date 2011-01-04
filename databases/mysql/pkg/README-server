@@ -1,6 +1,7 @@
-$OpenBSD: README-server,v 1.1 2010/11/09 09:55:56 ajacoutot Exp $
+$OpenBSD: README-server,v 1.2 2011/01/04 16:03:00 ajacoutot Exp $
 
 Using MySQL in an OpenBSD environment
+=====================================
 
 If you are installing MySQL for the first time, you have to create
 a default database first. In order to create the database, please run
@@ -16,7 +17,7 @@ with tuned resources, such as more open file descriptors etc.
 
 For example, add this to the login.conf(5) file:
 
-        mysql:\
+        mysqld:\
                 :openfiles-cur=1024:\
                 :openfiles-max=2048:\
                 :tc=daemon:
@@ -25,16 +26,11 @@ Rebuild the login.conf.db file if necessary:
 
 	# cap_mkdb /etc/login.conf
 
-And then modify the rc.d script accordingly.
-
 mysqld_safe(1) is the recommended way to start a MySQL server,
 it creates the directory for the socket and adds some safety
 features such as restarting the server when an error occurs
 and logging runtime information to an error log file. Options
 may be passed in the [mysqld_safe] section of my.cnf.
-
-Note that the classes in login.conf(5) are used by login(1);
-they do not apply to normal process startup, hence the use of su(1).
 
 For larger servers and dedicated database servers, these numbers
 and memory limits (e.g. datasize and stacksize) may also need to be

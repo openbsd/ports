@@ -1,6 +1,7 @@
-$OpenBSD: README-server,v 1.2 2010/11/08 14:57:56 ajacoutot Exp $
+$OpenBSD: README-server,v 1.3 2011/01/04 16:03:00 ajacoutot Exp $
 
 Using PostgreSQL in an OpenBSD environment
+==========================================
 
 At least two different accounts are involved when working with PostgreSQL:
 One is an OpenBSD userid, '_postgresql', which is used as the userid of files
@@ -72,8 +73,6 @@ For example, add this to the login.conf(5) file:
 Rebuild the login.conf.db file if necessary:
 
 	# cap_mkdb /etc/login.conf
-
-Change the login class with either vipw(8) or chsh(8).
 
 For more than about 250 connections, these numbers should be
 increased. Please report any changes and experiences to the package

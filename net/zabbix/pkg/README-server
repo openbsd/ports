@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.2 2010/12/06 19:06:59 ajacoutot Exp $
+$OpenBSD: README-server,v 1.3 2011/01/04 16:03:00 ajacoutot Exp $
 
 Using Zabbix on OpenBSD
 =======================
@@ -31,12 +31,12 @@ Server and Proxy to work properly. You should set kern.shminfo.shmall
 according to your needs ("32768" is a good value for starter) -- see
 sysctl(8) and sysctl.conf(5).
 
-On a busy server, it may be advisable to put the _zabbix user and
-processes into their own login(1) class with tuned resources, such as
-more open file descriptors etc.
+On a busy server, it may be advisable to put the zabbix processes into
+their own login(1) class with tuned resources, such as more open file
+descriptors etc.
 e.g. add the following lines to login.conf(5):
 
-zabbix:\
+zabbix_server:\
 	:openfiles-cur=1024:\
 	:openfiles-max=2048:\
 	:tc=daemon
