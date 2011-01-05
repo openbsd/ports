@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2007/10/24 14:58:57 steven Exp $
---- configure.orig	Wed Oct 24 15:42:32 2007
-+++ configure	Wed Oct 24 15:42:55 2007
+$OpenBSD: patch-configure,v 1.2 2011/01/05 19:00:54 sebastia Exp $
+--- configure.orig	Sun Feb 18 23:20:32 2007
++++ configure	Thu Dec 23 11:59:42 2010
 @@ -5304,6 +5304,7 @@ TCL_H_PLACES=" \
  		/usr/local/lib/tcl$TCL_HI_VERS \
  		/usr/local/lib/tcl$TCL_ALT_VERS \
@@ -9,3 +9,48 @@ $OpenBSD: patch-configure,v 1.1 2007/10/24 14:58:57 steven Exp $
  		/usr/local/include/tcl$TCL_HI_VERS \
  		/usr/local/include/tcl$TCL_ALT_VERS \
  		/usr/local/include \
+@@ -5398,7 +5399,7 @@ else
+ echo "$as_me: error: $d is not a directory" >&2;}
+    { (exit 1); exit 1; }; }
+ 		fi
+-		places="$TCL_H_PLACES_D"
++		places="$TCL_H_PLACES_D $TCL_H_PLACES"
+ 	fi
+ 
+ 	V_INCLUDE_TCL=""
+@@ -5452,7 +5453,7 @@ else
+ echo "$as_me: error: $d is not a directory" >&2;}
+    { (exit 1); exit 1; }; }
+ 		fi
+-		places="$TCL_H_PLACES_D"
++		places="$TCL_H_PLACES_D $TCL_H_PLACES"
+ 	fi
+ 
+ 	V_INCLUDE_TCL=""
+@@ -5506,7 +5507,7 @@ else
+ echo "$as_me: error: $d is not a directory" >&2;}
+    { (exit 1); exit 1; }; }
+ 		fi
+-		places="$TCL_LIB_PLACES_D"
++		places="$TCL_LIB_PLACES_D $TCL_LIB_PLACES"
+ 	fi
+ 
+ 	V_LIB_TCL=""
+@@ -5965,7 +5966,7 @@ else
+ echo "$as_me: error: $d is not a directory" >&2;}
+    { (exit 1); exit 1; }; }
+ 		fi
+-		places="$TK_H_PLACES_D"
++		places="$TK_H_PLACES_D $TK_H_PLACES"
+ 	fi
+ 
+ 	V_INCLUDE_TK=""
+@@ -6019,7 +6020,7 @@ else
+ echo "$as_me: error: $d is not a directory" >&2;}
+    { (exit 1); exit 1; }; }
+ 		fi
+-		places="$TK_LIB_PLACES_D"
++		places="$TK_LIB_PLACES_D $TK_LIB_PLACES"
+ 	fi
+ 
+ 	V_LIB_TK=""

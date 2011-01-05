@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/10/24 14:58:57 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/01/05 19:00:54 sebastia Exp $
 bin/otcldoc
-bin/tcl2c++
+@bin bin/tcl2c++
 include/tclcl/
 include/tclcl/config.h
 include/tclcl/idlecallback.h
