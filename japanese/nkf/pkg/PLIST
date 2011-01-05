@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2005/02/28 01:22:25 espie Exp $
-bin/nkf
+@comment $OpenBSD: PLIST,v 1.7 2011/01/05 12:05:11 jasper Exp $
+@bin bin/nkf
 ${P5ARCH}/
 ${P5ARCH}/NKF.pm
 ${P5ARCH}/auto/

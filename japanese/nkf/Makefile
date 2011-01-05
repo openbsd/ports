@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 18:13:15 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/01/05 12:05:10 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Network Kanji code conversion Filter
 
-VERSION=	2.05
-DISTNAME=	nkf205
+VERSION=	2.1.1
+DISTNAME=	nkf-${VERSION}
 PKGNAME=	ja-nkf-${VERSION}
-REVISION=	1
 CATEGORIES=	japanese textproc
 
-HOMEPAGE=	http://www01.tcp-ip.or.jp/~furukawa/nkf_utf8/
-MASTER_SITES=	${HOMEPAGE}
+HOMEPAGE=	http://sourceforge.jp/projects/nkf/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=nkf/48945/}
 
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
@@ -24,7 +23,6 @@ WANTLIB=		c
 
 WRKSRC=		${WRKDIST}/NKF.mod
 CONFIGURE_STYLE=	perl
-USE_GROFF =	Yes
 
 post-build:
 	cd ${WRKDIST} && ${CC} -o nkf ${CFLAGS} nkf.c utf8tbl.c
