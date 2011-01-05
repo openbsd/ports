@@ -1,6 +1,23 @@
-$OpenBSD: patch-src_layout_c,v 1.1 2010/09/14 08:54:18 dcoppa Exp $
+$OpenBSD: patch-src_layout_c,v 1.2 2011/01/05 12:45:04 dcoppa Exp $
 --- src/layout.c.orig	Wed Jun  9 09:58:15 2010
-+++ src/layout.c	Thu Jul 15 14:43:03 2010
++++ src/layout.c	Wed Jan  5 13:08:03 2011
+@@ -454,12 +454,12 @@ void render_container(xcb_connection_t *conn, Containe
+                         /* Raise the stack window, but keep it below the first floating client
+                          * and below the fullscreen client (if any) */
+                         Client *first_floating = TAILQ_FIRST(&(container->workspace->floating_clients));
+-                        if (first_floating != TAILQ_END(&(container->workspace->floating_clients))) {
++                        if (container->workspace->fullscreen_client != NULL) {
+                                 mask |= XCB_CONFIG_WINDOW_SIBLING;
+-                                values[4] = first_floating->frame;
+-                        } else if (container->workspace->fullscreen_client != NULL) {
+-                                mask |= XCB_CONFIG_WINDOW_SIBLING;
+                                 values[4] = container->workspace->fullscreen_client->frame;
++                        } else if (first_floating != TAILQ_END(&(container->workspace->floating_clients))) {
++                                mask |= XCB_CONFIG_WINDOW_SIBLING;
++                                values[4] = first_floating->frame;
+                         }
+ 
+                         xcb_configure_window(conn, stack_win->window, mask, values);
 @@ -536,10 +536,11 @@ void render_container(xcb_connection_t *conn, Containe
                                  }
                                  offset_x = current_client++ * size_each;

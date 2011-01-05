@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_sighandler_c,v 1.1 2011/01/05 12:45:04 dcoppa Exp $
+--- src/sighandler.c.orig	Wed Jan  5 13:03:19 2011
++++ src/sighandler.c	Wed Jan  5 13:04:31 2011
+@@ -109,7 +109,6 @@ static int sig_handle_key_press(void *ignored, xcb_con
+  *
+  */
+ static xcb_window_t open_input_window(xcb_connection_t *conn, Rect screen_rect, uint32_t width, uint32_t height) {
+-        xcb_window_t root = xcb_setup_roots_iterator(xcb_get_setup(conn)).data->root;
+         xcb_window_t win = xcb_generate_id(conn);
+ 
+         uint32_t mask = 0;
