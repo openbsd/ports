@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/01/05 18:40:55 sebastia Exp $
 
 COMMENT =	Libedit interface to Tcl/Tk interpreters
 
 DISTNAME =	eltclsh-1.9
-REVISION=	4
+REVISION=	5
 CATEGORIES =	lang x11
 
 MASTER_SITES =	http://softs.laas.fr/openrobots/php/download.php/
@@ -18,13 +18,14 @@ PERMIT_PACKAGE_FTP =	 Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	 Yes
 
+MODULES +=	x11/tk
 WANTLIB += X11 Xau Xdmcp Xext Xft Xrender Xss c edit expat fontconfig
 WANTLIB += freetype m pthread-stubs termcap xcb z
 
 SEPARATE_BUILD =	concurrent
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--with-tcl=${LOCALBASE}/lib/tcl8.5 \
-			--with-tk=${LOCALBASE}/lib/tk8.5
+CONFIGURE_ARGS =	--with-tcl=${MODTCL_LIBDIR} \
+			--with-tk=${MODTK_LIBDIR}
 CONFIGURE_ENV =		MKDEP=/bin/false
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
@@ -32,9 +33,8 @@ FAKE_FLAGS =		"ELTCL_LIBRARY=${WRKINST}${PREFIX}/share/eltcl"
 
 NO_REGRESS =		Yes
 
-LIB_DEPENDS +=		tcl->=8.5,<8.6:lang/tcl/8.5
-LIB_DEPENDS +=		tk->=8.5,<8.6:x11/tk/8.5
+LIB_DEPENDS +=		${MODTK_LIB_DEPENDS}
 
-WANTLIB +=		tcl85 tk85
+WANTLIB +=		${MODTK_WANTLIB}
 
 .include <bsd.port.mk>
