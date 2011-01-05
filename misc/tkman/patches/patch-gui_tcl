@@ -1,0 +1,11 @@
+$OpenBSD: patch-gui_tcl,v 1.1 2011/01/05 17:34:17 stu Exp $
+--- gui.tcl.orig	Fri Dec 10 20:44:34 2010
++++ gui.tcl	Fri Dec 10 20:46:05 2010
+@@ -746,6 +746,7 @@ proc manManTabSet {w} {
+ 	set repstr "ETRNIOASM          aaabcdeeeefghiijklmnnooprrsttuy"; set replen [string length $repstr]
+ 
+ 	set rm [expr {[winfo width $t]-2*[$t cget -padx]-10}]
++	if {$rm <= 150} { set rm 151 }
+ 	$t tag configure info -tabs [list 0.3i $rm right]
+ 	$t tag configure census -tabs [list [expr {$rm-150}] right $rm right]
+ 	$t tag configure high -tabs [list $rm right]
