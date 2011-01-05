@@ -1,4 +1,4 @@
-$OpenBSD: patch-sapi_cgi_config9_m4,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
+$OpenBSD: patch-sapi_cgi_config9_m4,v 1.2 2011/01/05 09:31:23 robert Exp $
 --- sapi/cgi/config9.m4.orig	Thu Jul 12 01:20:36 2007
 +++ sapi/cgi/config9.m4	Fri Aug 31 09:33:21 2007
 @@ -25,7 +25,6 @@ PHP_ARG_ENABLE(path-info-check,,

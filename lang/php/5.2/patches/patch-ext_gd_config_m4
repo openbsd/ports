@@ -1,4 +1,4 @@
-$OpenBSD: patch-ext_gd_config_m4,v 1.1.1.1 2010/06/27 20:28:45 robert Exp $
+$OpenBSD: patch-ext_gd_config_m4,v 1.2 2011/01/05 09:31:23 robert Exp $
 --- ext/gd/config.m4.orig	Fri May  4 23:57:47 2007
 +++ ext/gd/config.m4	Mon Jul  2 10:38:20 2007
 @@ -111,13 +111,13 @@ AC_DEFUN([PHP_GD_PNG],[

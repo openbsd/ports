@@ -1,6 +1,6 @@
---- ext/standard/config.m4.orig	Wed Aug 12 02:07:35 2009
-+++ ext/standard/config.m4	Tue Dec  1 15:37:41 2009
-@@ -249,16 +249,16 @@
+--- ext/standard/config.m4.orig	Thu Jun 17 12:22:03 2010
++++ ext/standard/config.m4	Wed Jan  5 10:02:06 2011
+@@ -370,16 +370,16 @@ dnl
  dnl Detect library functions needed by php dns_xxx functions
  dnl ext/standard/php_dns.h will collect these in a single define: HAVE_FULL_DNS_FUNCS
  dnl

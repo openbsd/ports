@@ -1,6 +1,6 @@
---- sapi/cgi/cgi_main.c.orig	Wed Jun 17 23:28:52 2009
-+++ sapi/cgi/cgi_main.c	Tue Jun 30 13:43:12 2009
-@@ -1460,6 +1460,7 @@
+--- sapi/cgi/cgi_main.c.orig	Wed Jan  5 10:02:06 2011
++++ sapi/cgi/cgi_main.c	Wed Jan  5 10:02:06 2011
+@@ -1478,6 +1478,7 @@ int main(int argc, char *argv[])
  	char *orig_optarg = php_optarg;
  	char *script_file = NULL;
  	int ini_entries_len = 0;
@@ -8,7 +8,7 @@
  	/* end of temporary locals */
  
  #ifdef ZTS
-@@ -1509,8 +1510,12 @@
+@@ -1527,8 +1528,12 @@ int main(int argc, char *argv[])
  	tsrm_ls = ts_resource(0);
  #endif
  

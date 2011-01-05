@@ -1,6 +1,6 @@
-$OpenBSD: patch-sapi_cli_php_cli_c,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
---- sapi/cli/php_cli.c.orig	Sat Jun 26 16:34:41 2010
-+++ sapi/cli/php_cli.c	Sat Jun 26 16:34:42 2010
+$OpenBSD: patch-sapi_cli_php_cli_c,v 1.2 2011/01/05 09:31:23 robert Exp $
+--- sapi/cli/php_cli.c.orig	Mon Jan  3 14:34:43 2011
++++ sapi/cli/php_cli.c	Mon Jan  3 14:34:43 2011
 @@ -636,6 +636,7 @@ int main(int argc, char *argv[])
  	char *exec_direct=NULL, *exec_run=NULL, *exec_begin=NULL, *exec_end=NULL;
  	const char *param_error=NULL;

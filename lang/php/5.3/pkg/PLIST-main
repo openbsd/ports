@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2010/06/29 01:10:45 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2011/01/05 09:31:23 robert Exp $
 @option no-default-conflict
 @conflict php->=5.3,<5.4
 @conflict php-fastcgi->=5.3,<5.4
@@ -181,6 +181,7 @@ share/php-${PV}/include/ext/iconv/php_have_ibm_iconv.h
 share/php-${PV}/include/ext/iconv/php_have_iconv.h
 share/php-${PV}/include/ext/iconv/php_have_libiconv.h
 share/php-${PV}/include/ext/iconv/php_iconv.h
+share/php-${PV}/include/ext/iconv/php_iconv_aliased_libiconv.h
 share/php-${PV}/include/ext/iconv/php_iconv_supports_errno.h
 share/php-${PV}/include/ext/iconv/php_php_iconv_h_path.h
 share/php-${PV}/include/ext/iconv/php_php_iconv_impl.h
@@ -212,6 +213,8 @@ share/php-${PV}/include/ext/mbstring/oniguruma/
 share/php-${PV}/include/ext/mbstring/oniguruma/oniguruma.h
 share/php-${PV}/include/ext/mbstring/php_mbregex.h
 share/php-${PV}/include/ext/mbstring/php_onig_compat.h
+share/php-${PV}/include/ext/mysqli/
+share/php-${PV}/include/ext/mysqli/php_mysqli_structs.h
 share/php-${PV}/include/ext/mysqlnd/
 share/php-${PV}/include/ext/mysqlnd/config-win.h
 share/php-${PV}/include/ext/mysqlnd/mysqlnd.h
@@ -262,6 +265,9 @@ share/php-${PV}/include/ext/spl/spl_observer.h
 share/php-${PV}/include/ext/sqlite/
 share/php-${PV}/include/ext/sqlite/libsqlite/
 share/php-${PV}/include/ext/sqlite/libsqlite/src/
+share/php-${PV}/include/ext/sqlite3/
+share/php-${PV}/include/ext/sqlite3/libsqlite/
+share/php-${PV}/include/ext/sqlite3/libsqlite/sqlite3.h
 share/php-${PV}/include/ext/standard/
 share/php-${PV}/include/ext/standard/base64.h
 share/php-${PV}/include/ext/standard/basic_functions.h

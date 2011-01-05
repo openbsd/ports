@@ -1,6 +1,6 @@
---- main/php.h.orig	Mon Jul  2 10:34:20 2007
-+++ main/php.h	Mon Jul  2 10:34:20 2007
-@@ -150,7 +150,7 @@ char *strtok_r(char *s, const char *delim, char **last
+--- main/php.h.orig	Wed Jan  5 10:02:06 2011
++++ main/php.h	Wed Jan  5 10:02:06 2011
+@@ -146,7 +146,7 @@ char *strtok_r(char *s, const char *delim, char **last
  END_EXTERN_C()
  #endif
  

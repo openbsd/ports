@@ -1,5 +1,5 @@
---- sapi/cgi/cgi_main.c.orig	Sat Jun 26 16:34:41 2010
-+++ sapi/cgi/cgi_main.c	Sat Jun 26 16:34:42 2010
+--- sapi/cgi/cgi_main.c.orig	Mon Jan  3 14:34:43 2011
++++ sapi/cgi/cgi_main.c	Mon Jan  3 14:34:43 2011
 @@ -1327,7 +1327,7 @@ int main(int argc, char *argv[])
  	char *orig_optarg = php_optarg;
  	char *script_file = NULL;

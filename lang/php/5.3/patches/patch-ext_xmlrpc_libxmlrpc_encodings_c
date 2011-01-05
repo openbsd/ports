@@ -1,6 +1,6 @@
---- ext/xmlrpc/libxmlrpc/encodings.c.orig	Tue Mar  9 00:04:33 2004
-+++ ext/xmlrpc/libxmlrpc/encodings.c	Mon Jul  2 10:38:20 2007
-@@ -70,7 +70,7 @@ static char* convert(const char* src, int src_len, int
+--- ext/xmlrpc/libxmlrpc/encodings.c.orig	Wed Sep 26 17:44:16 2007
++++ ext/xmlrpc/libxmlrpc/encodings.c	Wed Jan  5 10:02:06 2011
+@@ -78,7 +78,7 @@ static char* convert(const char* src, int src_len, int
           if(outbuf) {
              out_ptr = (char*)outbuf;
              while(inlenleft) {

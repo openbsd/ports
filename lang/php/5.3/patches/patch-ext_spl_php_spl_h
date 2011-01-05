@@ -1,6 +1,6 @@
---- ext/spl/php_spl.h.orig	Tue Jun 30 14:40:44 2009
-+++ ext/spl/php_spl.h	Tue Jun 30 14:41:24 2009
-@@ -65,8 +65,8 @@
+--- ext/spl/php_spl.h.orig	Sun Jan  3 10:23:27 2010
++++ ext/spl/php_spl.h	Wed Jan  5 10:02:06 2011
+@@ -67,8 +67,8 @@ ZEND_BEGIN_MODULE_GLOBALS(spl)
  	HashTable *  autoload_functions;
  	int          autoload_running;
  	int          autoload_extensions_len;

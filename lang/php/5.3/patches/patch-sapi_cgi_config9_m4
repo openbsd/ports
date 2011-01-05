@@ -1,6 +1,6 @@
---- sapi/cgi/config9.m4.orig	Mon Oct  1 16:40:54 2007
-+++ sapi/cgi/config9.m4	Thu Jul  2 15:56:41 2009
-@@ -8,7 +8,6 @@
+--- sapi/cgi/config9.m4.orig	Mon Oct  1 14:40:54 2007
++++ sapi/cgi/config9.m4	Wed Jan  5 10:02:06 2011
+@@ -8,7 +8,6 @@ PHP_ARG_ENABLE(cgi,,
  dnl
  dnl CGI setup
  dnl
@@ -8,7 +8,7 @@
    AC_MSG_CHECKING(whether to build CGI binary)
    if test "$PHP_CGI" != "no"; then
      AC_MSG_RESULT(yes)
-@@ -54,8 +53,9 @@
+@@ -54,8 +53,9 @@ if test "$PHP_SAPI" = "default"; then
  
      dnl Set install target and select SAPI
      INSTALL_IT="@echo \"Installing PHP CGI binary: \$(INSTALL_ROOT)\$(bindir)/\"; \$(INSTALL) -m 0755 \$(SAPI_CGI_PATH) \$(INSTALL_ROOT)\$(bindir)/\$(program_prefix)php-cgi\$(program_suffix)\$(EXEEXT)"
@@ -20,7 +20,7 @@
      case $host_alias in
        *aix*)
          BUILD_CGI="echo '\#! .' > php.sym && echo >>php.sym && nm -BCpg \`echo \$(PHP_GLOBAL_OBJS) \$(PHP_SAPI_OBJS) | sed 's/\([A-Za-z0-9_]*\)\.lo/\1.o/g'\` | \$(AWK) '{ if (((\$\$2 == \"T\") || (\$\$2 == \"D\") || (\$\$2 == \"B\")) && (substr(\$\$3,1,1) != \".\")) { print \$\$3 } }' | sort -u >> php.sym && \$(LIBTOOL) --mode=link \$(CC) -export-dynamic \$(CFLAGS_CLEAN) \$(EXTRA_CFLAGS) \$(EXTRA_LDFLAGS_PROGRAM) \$(LDFLAGS) -Wl,-brtl -Wl,-bE:php.sym \$(PHP_RPATHS) \$(PHP_GLOBAL_OBJS) \$(PHP_SAPI_OBJS) \$(EXTRA_LIBS) \$(ZEND_EXTRA_LIBS) -o \$(SAPI_CGI_PATH)"
-@@ -64,17 +64,26 @@
+@@ -64,17 +64,26 @@ if test "$PHP_SAPI" = "default"; then
          BUILD_CGI="\$(CC) \$(CFLAGS_CLEAN) \$(EXTRA_CFLAGS) \$(EXTRA_LDFLAGS_PROGRAM) \$(LDFLAGS) \$(NATIVE_RPATHS) \$(PHP_GLOBAL_OBJS:.lo=.o) \$(PHP_SAPI_OBJS:.lo=.o) \$(PHP_FRAMEWORKS) \$(EXTRA_LIBS) \$(ZEND_EXTRA_LIBS) -o \$(SAPI_CGI_PATH)"
        ;;
        *)

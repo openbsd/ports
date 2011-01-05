@@ -1,6 +1,6 @@
---- ext/spl/php_spl.c.orig	Tue Jun 30 14:41:48 2009
-+++ ext/spl/php_spl.c	Tue Jun 30 14:42:14 2009
-@@ -708,7 +708,7 @@
+--- ext/spl/php_spl.c.orig	Sun Nov 14 19:40:08 2010
++++ ext/spl/php_spl.c	Wed Jan  5 10:02:06 2011
+@@ -736,7 +736,7 @@ PHP_FUNCTION(spl_object_hash)
  
  PHPAPI void php_spl_object_hash(zval *obj, char *result TSRMLS_DC) /* {{{*/
  {
@@ -9,7 +9,7 @@
  	char *hex;
  
  	if (!SPL_G(hash_mask_init)) {
-@@ -716,13 +716,13 @@
+@@ -744,13 +744,13 @@ PHPAPI void php_spl_object_hash(zval *obj, char *resul
  			php_mt_srand(GENERATE_SEED() TSRMLS_CC);
  		}
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-sapi_apache_mod_php5_c,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
---- sapi/apache/mod_php5.c.orig	Sat Jun 26 16:34:41 2010
-+++ sapi/apache/mod_php5.c	Sat Jun 26 16:34:42 2010
+$OpenBSD: patch-sapi_apache_mod_php5_c,v 1.2 2011/01/05 09:31:23 robert Exp $
+--- sapi/apache/mod_php5.c.orig	Mon Jan  3 14:34:43 2011
++++ sapi/apache/mod_php5.c	Mon Jan  3 14:34:43 2011
 @@ -940,12 +940,19 @@ static void php_child_exit_handler(server_rec *s, pool
   */
  static void php_init_handler(server_rec *s, pool *p)

@@ -1,5 +1,5 @@
---- aclocal.m4.orig	Wed Feb 24 13:27:25 2010
-+++ aclocal.m4	Sat Jun 26 16:34:46 2010
+--- aclocal.m4.orig	Wed Dec 15 14:44:59 2010
++++ aclocal.m4	Mon Jan  3 14:34:45 2011
 @@ -194,7 +194,7 @@ dnl the path is interpreted relative to the top build-
  dnl
  dnl which array to append to?
@@ -52,7 +52,7 @@
        PHP_ADD_INCLUDE($PHP_KERBEROS_DIR/include)
      fi
    fi
-@@ -4316,7 +4301,7 @@ bsdi[[45]]*)
+@@ -4319,7 +4304,7 @@ bsdi[[45]]*)
    need_version=no
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}$major $libname${shared_ext}'
    soname_spec='${libname}${release}${shared_ext}$major'

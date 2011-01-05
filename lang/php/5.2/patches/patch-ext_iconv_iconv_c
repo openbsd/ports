@@ -1,4 +1,4 @@
-$OpenBSD: patch-ext_iconv_iconv_c,v 1.1.1.1 2010/06/27 20:28:44 robert Exp $
+$OpenBSD: patch-ext_iconv_iconv_c,v 1.2 2011/01/05 09:31:23 robert Exp $
 --- ext/iconv/iconv.c.orig	Thu Nov  1 20:13:49 2007
 +++ ext/iconv/iconv.c	Tue Nov 13 11:45:09 2007
 @@ -345,7 +345,7 @@ static php_iconv_err_t _php_iconv_appendl(smart_str *d

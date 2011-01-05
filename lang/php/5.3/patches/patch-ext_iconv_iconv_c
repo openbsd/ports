@@ -1,6 +1,6 @@
---- ext/iconv/iconv.c.orig	Thu Nov  1 20:13:49 2007
-+++ ext/iconv/iconv.c	Tue Nov 13 11:45:09 2007
-@@ -345,7 +345,7 @@ static php_iconv_err_t _php_iconv_appendl(smart_str *d
+--- ext/iconv/iconv.c.orig	Wed Dec  1 15:03:36 2010
++++ ext/iconv/iconv.c	Wed Jan  5 10:02:06 2011
+@@ -334,7 +334,7 @@ static php_iconv_err_t _php_iconv_appendl(smart_str *d
  
  			out_p = (d)->c + (d)->len;
  
@@ -9,7 +9,7 @@
  #if ICONV_SUPPORTS_ERRNO
  				switch (errno) { 
  					case EINVAL:
-@@ -509,7 +509,7 @@ PHP_ICONV_API php_iconv_err_t php_iconv_string(const c
+@@ -498,7 +498,7 @@ PHP_ICONV_API php_iconv_err_t php_iconv_string(const c
  	out_p = out_buf;
  
  	while (in_left > 0) {
@@ -18,7 +18,7 @@
  		out_size = bsz - out_left;
  		if (result == (size_t)(-1)) {
  			if (errno == E2BIG && in_left > 0) {
-@@ -623,7 +623,7 @@ static php_iconv_err_t _php_iconv_strlen(unsigned int 
+@@ -612,7 +612,7 @@ static php_iconv_err_t _php_iconv_strlen(unsigned int 
  
  		prev_in_left = in_left;
  
@@ -27,7 +27,7 @@
  			if (prev_in_left == in_left) {
  				break;
  			}
-@@ -744,7 +744,7 @@ static php_iconv_err_t _php_iconv_substr(smart_str *pr
+@@ -733,7 +733,7 @@ static php_iconv_err_t _php_iconv_substr(smart_str *pr
  
  		prev_in_left = in_left;
  
@@ -36,7 +36,7 @@
  			if (prev_in_left == in_left) {
  				break;
  			}
-@@ -876,7 +876,7 @@ static php_iconv_err_t _php_iconv_strpos(unsigned int 
+@@ -865,7 +865,7 @@ static php_iconv_err_t _php_iconv_strpos(unsigned int 
  
  		prev_in_left = in_left;
  
@@ -45,7 +45,7 @@
  			if (prev_in_left == in_left) {
  #if ICONV_SUPPORTS_ERRNO
  				switch (errno) {
-@@ -1125,7 +1125,7 @@ static php_iconv_err_t _php_iconv_mime_encode(smart_st
+@@ -1114,7 +1114,7 @@ static php_iconv_err_t _php_iconv_mime_encode(smart_st
  
  					out_left = out_size - out_reserved;
  
@@ -54,7 +54,7 @@
  #if ICONV_SUPPORTS_ERRNO
  						switch (errno) {
  							case EINVAL:
-@@ -1225,7 +1225,7 @@ static php_iconv_err_t _php_iconv_mime_encode(smart_st
+@@ -1214,7 +1214,7 @@ static php_iconv_err_t _php_iconv_mime_encode(smart_st
  					out_p = buf;
  					out_left = out_size;
  
@@ -63,7 +63,7 @@
  #if ICONV_SUPPORTS_ERRNO
  						switch (errno) {
  							case EINVAL:
-@@ -2534,7 +2534,7 @@ static int php_iconv_stream_filter_append_bucket(
+@@ -2542,7 +2542,7 @@ static int php_iconv_stream_filter_append_bucket(
  		tcnt = self->stub_len;
  
  		while (tcnt > 0) {

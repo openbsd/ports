@@ -1,6 +1,7 @@
---- php.ini-development.orig	Thu Nov 12 20:20:01 2009
-+++ php.ini-development	Tue Dec  1 15:47:26 2009
-@@ -781,11 +781,8 @@
+$OpenBSD: patch-php_ini-development,v 1.2 2011/01/05 09:31:23 robert Exp $
+--- php.ini-development.orig	Wed Jan  5 10:02:31 2011
++++ php.ini-development	Wed Jan  5 10:03:52 2011
+@@ -781,11 +781,8 @@ default_mimetype = "text/html"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  
  ; UNIX: "/path1:/path2"
@@ -13,18 +14,15 @@
  ; PHP's default setting for include_path is ".;/path/to/php/pear"
  ; http://php.net/include-path
  
-@@ -804,9 +801,7 @@
- 
- ; Directory in which the loadable extensions (modules) reside.
- ; http://php.net/extension-dir
--; extension_dir = "./"
--; On windows:
--; extension_dir = "ext"
+@@ -807,6 +804,7 @@ user_dir =
+ ; extension_dir = "./"
+ ; On windows:
+ ; extension_dir = "ext"
 +extension_dir = "MODULES_DIR"
  
  ; Whether or not to enable the dl() function.  The dl() function does NOT work
  ; properly in multithreaded servers, such as IIS or Zeus, and is automatically
-@@ -887,7 +882,7 @@
+@@ -887,7 +885,7 @@ max_file_uploads = 20
  
  ; Whether to allow the treatment of URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-fopen
@@ -33,86 +31,7 @@
  
  ; Whether to allow include/require to open URLs (like http:// or ftp://) as files.
  ; http://php.net/allow-url-include
-@@ -914,78 +909,6 @@
- ; http://php.net/auto-detect-line-endings
- ;auto_detect_line_endings = Off
- 
--;;;;;;;;;;;;;;;;;;;;;;
--; Dynamic Extensions ;
--;;;;;;;;;;;;;;;;;;;;;;
--
--; If you wish to have an extension loaded automatically, use the following
--; syntax:
--;
--;   extension=modulename.extension
--;
--; For example, on Windows:
--;
--;   extension=msql.dll
--;
--; ... or under UNIX:
--;
--;   extension=msql.so
--;
--; ... or with a path:
--;
--;   extension=/path/to/extension/msql.so
--;
--; If you only provide the name of the extension, PHP will look for it in its
--; default extension directory.
--;
--; Windows Extensions
--; Note that ODBC support is built in, so no dll is needed for it.
--; Note that many DLL files are located in the extensions/ (PHP 4) ext/ (PHP 5)
--; extension folders as well as the separate PECL DLL download (PHP 5).
--; Be sure to appropriately set the extension_dir directive.
--;
--;extension=php_bz2.dll
--;extension=php_curl.dll
--;extension=php_dba.dll
--;extension=php_exif.dll
--;extension=php_fileinfo.dll
--;extension=php_gd2.dll
--;extension=php_gettext.dll
--;extension=php_gmp.dll
--;extension=php_intl.dll
--;extension=php_imap.dll
--;extension=php_interbase.dll
--;extension=php_ldap.dll
--;extension=php_mbstring.dll
--;extension=php_ming.dll
--;extension=php_mssql.dll
--;extension=php_mysql.dll
--;extension=php_mysqli.dll
--;extension=php_oci8.dll      ; Use with Oracle 10gR2 Instant Client
--;extension=php_oci8_11g.dll  ; Use with Oracle 11g Instant Client
--;extension=php_openssl.dll
--;extension=php_pdo_firebird.dll
--;extension=php_pdo_mssql.dll
--;extension=php_pdo_mysql.dll
--;extension=php_pdo_oci.dll
--;extension=php_pdo_odbc.dll
--;extension=php_pdo_pgsql.dll
--;extension=php_pdo_sqlite.dll
--;extension=php_pgsql.dll
--;extension=php_phar.dll
--;extension=php_pspell.dll
--;extension=php_shmop.dll
--;extension=php_snmp.dll
--;extension=php_soap.dll
--;extension=php_sockets.dll
--;extension=php_sqlite.dll
--;extension=php_sqlite3.dll
--;extension=php_sybase_ct.dll
--;extension=php_tidy.dll
--;extension=php_xmlrpc.dll
--;extension=php_xsl.dll
--;extension=php_zip.dll
--
- ;;;;;;;;;;;;;;;;;;;
- ; Module Settings ;
- ;;;;;;;;;;;;;;;;;;;
-@@ -1079,16 +1002,6 @@
+@@ -1076,16 +1074,6 @@ pdo_mysql.default_socket=
  define_syslog_variables  = Off
  
  [mail function]
@@ -129,13 +48,11 @@
  ; For Unix only.  You may supply arguments as well (default: "sendmail -t -i").
  ; http://php.net/sendmail-path
  ;sendmail_path =
-@@ -1887,6 +1800,441 @@
+@@ -1884,6 +1872,446 @@ ldap.max_links = -1
+ 
  [dba]
  ;dba.default_handler=
- 
--; Local Variables:
--; tab-width: 4
--; End:
++
 +[suhosin]
 +
 +; -----------------------------------------------------------------------------
@@ -266,7 +183,8 @@
 +; If you fear that Suhosin breaks your application, you can activate Suhosin's
 +; simulation mode with this flag. When Suhosin runs in simulation mode,
 +; violations are logged as usual, but nothing is blocked or removed from the
-+; request. (Transparent Encryptions are NOT deactivated in simulation mode.)
++; request. (Transparent features are NOT deactivated in simulation mode.)
++; (since v0.9.30 affects (dis)allowed functions)
 +;suhosin.simulation = Off
 +
 +; APC 3.0.12(p1/p2) uses reserved resources without requesting a resource slot
@@ -574,3 +492,6 @@
 +; .htaccess. The string "legcprsum" will allow logging, execution, get, 
 +; post, cookie, request, sql, upload, misc features in .htaccess
 +;suhosin.perdir = "0"
+ 
+ ; Local Variables:
+ ; tab-width: 4
