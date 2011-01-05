@@ -1,14 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/28 17:24:01 sebastia Exp $
-include/memchan.h
-include/memchanDecls.h
-lib/Memchan2.2.1/
-@lib lib/Memchan2.2.1/libMemchan221.so.${LIBMemchan221_VERSION}
-lib/Memchan2.2.1/libMemchanstub221.a
-lib/Memchan2.2.1/pkgIndex.tcl
+@comment $OpenBSD: PLIST,v 1.2 2011/01/05 18:16:58 sebastia Exp $
+include/memchan/
+include/memchan/buf.h
+include/memchan/bufDecls.h
+include/memchan/bufIntDecls.h
+include/memchan/memchan.h
+include/memchan/memchanDecls.h
+lib/tcl/memchan/
+@lib lib/tcl/memchan/libMemchan23.so.${LIBMemchan23_VERSION}
+lib/tcl/memchan/libMemchanstub23.a
+lib/tcl/memchan/pkgIndex.tcl
 @man man/mann/fifo.n
 @man man/mann/fifo2.n
-@man man/mann/mchan-random.n
 @man man/mann/memchan.n
 @man man/mann/memchanapi.n
 @man man/mann/null.n
+@man man/mann/random.n
 @man man/mann/zero.n

@@ -1,3 +1,4 @@
-Memchan is an extension to Tcl implementing memory channels, 
-i.e. channels storing the data placed into them in memory, 
-not on disk.
+A Tcl extension that provides several new channel types for in-memory
+channels and the appropriate commands for their creation. They are good
+for long dynamic strings and transferring large amounts of data between
+procedures or interpreters.
