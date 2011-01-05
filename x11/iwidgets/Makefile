@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/22 08:37:01 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/01/05 19:20:31 sebastia Exp $
 
 PKG_ARCH=	*
 
@@ -7,7 +7,7 @@ COMMENT=	Iwidgets Mega Widget Set
 VERSION=	4.0.1
 DISTNAME=	iwidgets${VERSION}
 PKGNAME=	iwidgets-${VERSION}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11 devel
 
@@ -39,10 +39,10 @@ CONFIGURE_STYLE=autoconf dest
 
 CONFIGURE_ARGS=	--with-tcl=${MODTCL_LIBDIR} \
 		--with-tk=${MODTK_LIBDIR} \
-		--with-itcl=${LOCALBASE}/itcl3.4
+		--libdir=${MODTCL_TCLDIR} \
+		--with-itcl=${MODTCL_TCLDIR}/itcl
 
-CONFIGURE_ENV=	ITCL_VERSION=3.4
-USE_GROFF =	Yes
+FAKE_FLAGS =	SCRIPT_INSTALL_DIR=${DESTDIR}${MODTCL_TCLDIR}/iwidgets
 
 pre-configure:
 	@perl -pi -e 's,^\.HS,\.TH,' ${WRKBUILD}/doc/*.n
