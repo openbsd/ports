@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.222 2011/01/04 18:08:40 rpointel Exp $
+# $OpenBSD: Makefile,v 1.223 2011/01/05 14:14:32 jasper Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -106,6 +106,7 @@
      SUBDIR += p5-Parse-DMIDecode
      SUBDIR += p5-Proc-ProcessTable
      SUBDIR += p5-Proc-Queue
+     SUBDIR += p5-Proc-Wait3
      SUBDIR += p5-Quota
      SUBDIR += p5-Schedule-At
      SUBDIR += p5-Set-Crontab
