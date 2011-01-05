@@ -1,0 +1,3 @@
+Net::Server::SS::PreFork is Net::Server personality, extending
+Net::Server::PreFork, that can be run by the start_server script of
+Server::Starter.
