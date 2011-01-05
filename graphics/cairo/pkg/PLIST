@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/10/17 12:50:53 eric Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/01/05 13:26:06 eric Exp $
 %%SHARED%%
 bin/cairo-trace
 include/cairo/
@@ -63,6 +63,7 @@ share/gtk-doc/html/cairo/cairo-Paths.html
 share/gtk-doc/html/cairo/cairo-PostScript-Surfaces.html
 share/gtk-doc/html/cairo/cairo-Quartz-(CGFont)-Fonts.html
 share/gtk-doc/html/cairo/cairo-Quartz-Surfaces.html
+share/gtk-doc/html/cairo/cairo-Recording-Surfaces.html
 share/gtk-doc/html/cairo/cairo-Regions.html
 share/gtk-doc/html/cairo/cairo-SVG-Surfaces.html
 share/gtk-doc/html/cairo/cairo-Transformations.html

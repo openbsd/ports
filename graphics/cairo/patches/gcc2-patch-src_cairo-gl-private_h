@@ -1,0 +1,21 @@
+remove unnamed union to please gcc-2.95
+
+$OpenBSD: gcc2-patch-src_cairo-gl-private_h,v 1.1 2011/01/05 13:26:05 eric Exp $
+--- src/cairo-gl-private.h.orig	Mon Jan  3 12:23:14 2011
++++ src/cairo-gl-private.h	Mon Jan  3 12:23:40 2011
+@@ -142,7 +142,6 @@ typedef enum cairo_gl_var_type {
+  */
+ typedef struct cairo_gl_operand {
+     cairo_gl_operand_type_t type;
+-    union {
+ 	struct {
+ 	    GLuint tex;
+ 	    cairo_gl_surface_t *surface;
+@@ -167,7 +166,6 @@ typedef struct cairo_gl_operand {
+ 	    float radius_1;
+             cairo_extend_t extend;
+ 	} radial;
+-    };
+     unsigned int vertex_offset;
+ } cairo_gl_operand_t;
+ 

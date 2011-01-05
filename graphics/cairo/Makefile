@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2011/01/05 13:26:05 eric Exp $
 
 COMMENT=		vector graphics library
 
-DISTNAME=		cairo-1.10.0
-REVISION=		0
+DISTNAME=		cairo-1.10.2
 SHARED_LIBS=		cairo 11.0
 SHARED_LIBS+=		cairo-trace 0.0
 SHARED_LIBS+=		cairo-gobject 0.0
@@ -45,3 +44,9 @@ CONFIGURE_ARGS=		--enable-gl \
 REGRESS_DEPENDS=	print/ghostscript/gnu
 
 .include <bsd.port.mk>
+
+.for i in ${GCC2_ARCHS}
+. if ${MACHINE_ARCH} == $i
+PATCH_LIST=	patch-* gcc2-patch-*
+. endif
+.endfor
