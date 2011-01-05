@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:47 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/01/05 18:00:10 sebastia Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -8,7 +8,7 @@ DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
 REVISION-main=	2
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION-tcl=	2
+REVISION-tcl=	3
 PKGNAME-iaxcomm= iaxcomm-1.1.0
 REVISION-iaxcomm= 3
 
@@ -86,6 +86,7 @@ CONFIGURE_ARGS=--enable-clients="testcall tkphone iaxcomm"
 # ALLOW_SMP_DANGERS is at least needed on sparc64 and mips64
 CFLAGS+=	-I${LOCALBASE}/include -DALLOW_SMP_DANGERS
 MAKE_ENV=	LDFLAGS='-L/usr/lib -lossaudio'
+FAKE_FLAGS =	iaxclidir=${MODTCL_TCLDIR}/tkphone
 
 pre-configure:
 	@# non-standard, not using MODTCL_WISH_ADJ
@@ -96,9 +97,12 @@ pre-configure:
 
 post-build:
 	cd ${WRKSRC}/contrib/tcl && ${CONFIGURE_ENV} ./configure \
-	--with-tcl=${MODTCL_LIBDIR} && ${MAKE_PROGRAM}
+	--libdir=${MODTCL_TCLDIR} --with-tcl=${MODTCL_LIBDIR} \
+	&& ${MAKE_PROGRAM}
 
 post-install:
-	cd ${WRKSRC}/contrib/tcl && ${MAKE_PROGRAM} install
+	cd ${WRKSRC}/contrib/tcl && \
+		${MAKE_PROGRAM} install PKG_DIR=tcliaxclient \
+		iaxclidir=${MODTCL_TCLDIR}/tkphone
 
 .include <bsd.port.mk>

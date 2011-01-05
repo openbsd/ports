@@ -1,6 +1,6 @@
-$OpenBSD: patch-simpleclient_tkphone_tkiaxphone,v 1.1 2010/06/18 17:32:21 sebastia Exp $
---- simpleclient/tkphone/tkiaxphone.orig	Mon Apr  7 17:05:28 2008
-+++ simpleclient/tkphone/tkiaxphone	Wed Dec  9 23:54:06 2009
+$OpenBSD: patch-simpleclient_tkphone_tkiaxphone,v 1.2 2011/01/05 18:00:10 sebastia Exp $
+--- simpleclient/tkphone/tkiaxphone.orig	Mon Apr  7 18:05:28 2008
++++ simpleclient/tkphone/tkiaxphone	Sun Dec 12 13:17:17 2010
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
@@ -29,7 +29,7 @@ $OpenBSD: patch-simpleclient_tkphone_tkiaxphone,v 1.1 2010/06/18 17:32:21 sebast
  	set base $env(IAXPHONEHOME)
      } else {
 -	set base [file dirname [file join [pwd] $argv0]]
-+	set base "${LOCALBASE}/lib/iaxclient/tkphone"
++	set base "${LOCALBASE}/lib/tcl/tkphone"
      }
      set result [file join $base $file]
      debug "$result"
