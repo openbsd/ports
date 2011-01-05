@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.435 2010/11/24 13:10:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.436 2011/01/05 19:03:10 ian Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -138,6 +138,7 @@
      SUBDIR += krusader
      SUBDIR += lablgtk
      SUBDIR += lablgtk2
+     SUBDIR += league-fonts
      SUBDIR += lesstif
      SUBDIR += libdnd
      SUBDIR += liberation-fonts
