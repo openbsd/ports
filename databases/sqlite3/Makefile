@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/11/15 00:22:54 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2011/01/05 16:39:44 stu Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
@@ -8,6 +8,7 @@ DISTNAME=	sqlite-${V}
 PKGNAME-main=	sqlite3-${V}
 REVISION-main =	0
 PKGNAME-tcl=	sqlite3-tcl-${V}
+REVISION-tcl =	0
 PKGNAME-lemon=	lemon-${V}
 CATEGORIES=	databases
 SHARED_LIBS +=	sqlite3              14.0      # .8.6
@@ -33,12 +34,12 @@ CFLAGS+=	-DSQLITE_ENABLE_COLUMN_METADATA \
 #		-DSQLITE_ENABLE_FTS3=1
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--enable-threads-override-locks \
-		--enable-load-extension
+		--enable-threads-override-locks
 
 PSEUDO_FLAVORS=	no_tcl
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
 FLAVOR?=
+CONFIGURE_ARGS +=	--enable-load-extension	
 .else
 FLAVOR=	no_tcl
 .endif
@@ -55,6 +56,7 @@ WANTLIB-tcl =	sqlite3
 
 .if ${MULTI_PACKAGES:M-tcl}
 CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR}
+CONFIGURE_ENV += TCLLIBDIR=${MODTCL_TCLDIR}/sqlite3
 
 REGRESS_TARGET=	test
 
