@@ -1,0 +1,220 @@
+$OpenBSD: patch-docs_tkconrc_5_man,v 1.1 2011/01/05 16:48:22 stu Exp $
+--- docs/tkconrc.5.man.orig	Thu Feb 26 19:17:21 2009
++++ docs/tkconrc.5.man	Tue Nov 30 08:28:57 2010
+@@ -37,98 +37,98 @@ might change or use:
+ 
+ [list_begin definitions]
+ 
+-[lst_item [cmd ::tkcon::COLOR(bg)]]
++[def [cmd ::tkcon::COLOR(bg)]]
+ The background color for tkcon text widgets.
+ Defaults to the operating system default (determined at startup).
+ 
+-[lst_item [cmd ::tkcon::COLOR(blink)]]
++[def [cmd ::tkcon::COLOR(blink)]]
+ The background color of the electric brace highlighting, if on.
+ Defaults to yellow.
+ 
+-[lst_item [cmd ::tkcon::COLOR(cursor)]]
++[def [cmd ::tkcon::COLOR(cursor)]]
+ The background color for the insertion cursor in tkcon.
+ Defaults to black.
+ 
+-[lst_item [cmd ::tkcon::COLOR(disabled)]]
++[def [cmd ::tkcon::COLOR(disabled)]]
+ The foreground color for disabled menu items.
+ Defaults to dark grey.
+ 
+-[lst_item [cmd ::tkcon::COLOR(proc)]]
++[def [cmd ::tkcon::COLOR(proc)]]
+ The foreground color of a recognized proc, if command highlighting is on.
+ Defaults to dark green.
+ 
+-[lst_item [cmd ::tkcon::COLOR(var)]]
++[def [cmd ::tkcon::COLOR(var)]]
+ The background color of a recognized var, if command highlighting is on.
+ Defaults to pink.
+ 
+-[lst_item [cmd ::tkcon::COLOR(prompt)]]
++[def [cmd ::tkcon::COLOR(prompt)]]
+ The foreground color of the prompt as output in the console.
+ Defaults to brown.
+ 
+-[lst_item [cmd ::tkcon::COLOR(stdin)]]
++[def [cmd ::tkcon::COLOR(stdin)]]
+ The foreground color of the stdin for the console.
+ Defaults to black.
+ 
+-[lst_item [cmd ::tkcon::COLOR(stdout)]]
++[def [cmd ::tkcon::COLOR(stdout)]]
+ The foreground color of the stdout as output in the console.
+ Defaults to blue.
+ 
+-[lst_item [cmd ::tkcon::COLOR(stderr)]]
++[def [cmd ::tkcon::COLOR(stderr)]]
+ The foreground color of stderr as output in the console.
+ Defaults to red.
+ 
+-[lst_item [cmd ::tkcon::OPT(autoload)]]
++[def [cmd ::tkcon::OPT(autoload)]]
+ Packages to automatically load into the slave interpreter (i.e. 'Tk').
+ This is a list.
+ Defaults to {} (none).
+ 
+-[lst_item [cmd ::tkcon::OPT(blinktime)]]
++[def [cmd ::tkcon::OPT(blinktime)]]
+ The amount of time (in millisecs) that braced sections should blink for.
+ Defaults to 500 (0.5 secs), must be at least 100.
+ 
+-[lst_item [cmd ::tkcon::OPT(blinkrange)]]
++[def [cmd ::tkcon::OPT(blinkrange)]]
+ Whether to blink the entire range for electric brace matching
+ or to just blink the actual matching braces (respectively 1 or 0,
+ defaults to 1).
+ 
+-[lst_item [cmd ::tkcon::OPT(buffer)]]
++[def [cmd ::tkcon::OPT(buffer)]]
+ The size of the console scroll buffer (in lines).
+ Defaults to 512.
+ 
+-[lst_item [cmd ::tkcon::OPT(calcmode)]]
++[def [cmd ::tkcon::OPT(calcmode)]]
+ Whether to allow expr commands to be run at the command line
+ without prefixing them with expr (just a convenience).
+ 
+-[lst_item [cmd ::tkcon::OPT(cols)]]
++[def [cmd ::tkcon::OPT(cols)]]
+ Number of columns for the console to start out with.
+ Defaults to 80.
+ 
+-[lst_item [cmd ::tkcon::OPT(dead)]]
++[def [cmd ::tkcon::OPT(dead)]]
+ What to do with dead connected interpreters.
+ If dead is leave, TkCon automatically exits the dead interpreter.
+ If dead is ignore then it remains attached waiting for the
+ interpreter to reappear.
+ Otherwise TkCon will prompt you.
+ 
+-[lst_item [cmd ::tkcon::OPT(exec)]]
++[def [cmd ::tkcon::OPT(exec)]]
+ This corresponds to the [cmd -exec] tkcon option (see [cmd tkcon](1)).
+ 
+-[lst_item [cmd ::tkcon::OPT(font)]]
++[def [cmd ::tkcon::OPT(font)]]
+ Font to use for tkcon text widgets (also specified with [cmd -font] option).
+ Defaults to the system default, or a fixed width equivalent.
+ 
+-[lst_item [cmd ::tkcon::OPT(gets)]]
++[def [cmd ::tkcon::OPT(gets)]]
+ Controls whether tkcon will overload the gets command to work with tkcon.
+ The valid values are: congets (the default), which will redirect
+ stdin requests to the tkcon window; gets, which will pop up a dialog to
+ get input; and {} (empty string) which tells tkcon not to overload gets.
+ This value must be set at startup to alter tkcon's behavior.
+ 
+-[lst_item [cmd ::tkcon::OPT(history)]]
++[def [cmd ::tkcon::OPT(history)]]
+ The size of the history list to keep.
+ Defaults to 48.
+ 
+-[lst_item [cmd ::tkcon::OPT(hoterrors)]]
++[def [cmd ::tkcon::OPT(hoterrors)]]
+ Whether hot errors are enabled or not.
+ When enabled, errors that are returned to the console are marked
+ with a link to the error info that will pop up in an minimal editor.
+@@ -137,65 +137,65 @@ maintain bindings for this feature, as long as the err
+ is in the text widget.
+ Defaults to on.
+ 
+-[lst_item [cmd ::tkcon::OPT(library)]]
++[def [cmd ::tkcon::OPT(library)]]
+ The path to any tcl library directories (these are appended
+ to the [cmd auto_path] when the after the resource file is loaded in).
+ 
+-[lst_item [cmd ::tkcon::OPT(lightbrace)]]
++[def [cmd ::tkcon::OPT(lightbrace)]]
+ Whether to use the brace highlighting feature or not
+ (respectively 1 or 0, defaults to 1).
+ 
+-[lst_item [cmd ::tkcon::OPT(lightcmd)]]
++[def [cmd ::tkcon::OPT(lightcmd)]]
+ Whether to use the command highlighting feature or not
+ (respectively 1 or 0, defaults to 1).
+ 
+-[lst_item [cmd ::tkcon::OPT(maineval)]]
++[def [cmd ::tkcon::OPT(maineval)]]
+ A tcl script to execute in the main interpreter after the
+ slave interpreter is created and the user interface is initialized.
+ 
+-[lst_item [cmd ::tkcon::OPT(maxlinelen)]]
++[def [cmd ::tkcon::OPT(maxlinelen)]]
+ A number that specifies the limit of long result lines.
+ True result is still captured in $_ (and 'puts $_' works).
+ Defaults to 0 (unlimited).
+ 
+-[lst_item [cmd ::tkcon::OPT(maxmenu)]]
++[def [cmd ::tkcon::OPT(maxmenu)]]
+ A number that specifies the maximum number of packages to
+ show vertically in the [arg Interp->Packages] menu before breaking
+ into another column.
+ Defaults to 15.
+ 
+-[lst_item [cmd ::tkcon::OPT(nontcl)]]
++[def [cmd ::tkcon::OPT(nontcl)]]
+ For those who might be using non-Tcl based Tk attachments, set this to 1.
+ It prevents TkCon from trying to evaluate its own Tcl
+ code in an attached interpreter.
+ Also see my notes for non-Tcl based Tk interpreters.
+ 
+-[lst_item [cmd ::tkcon::OPT(prompt1)]]
++[def [cmd ::tkcon::OPT(prompt1)]]
+ Like [cmd tcl_prompt1], except it doesn't require you use [cmd puts].
+ No equivalent for [cmd tcl_prompt2] is available (it's unnecessary IMHO).
+ Defaults to {([lb]file tail [lb]pwd[rb][rb]) [lb]history nextid[rb] % }.
+ 
+-[lst_item [cmd ::tkcon::OPT(rows)]]
++[def [cmd ::tkcon::OPT(rows)]]
+ Number of rows for the console to start out with.
+ Defaults to 20.
+ 
+-[lst_item [cmd ::tkcon::OPT(scollypos)]]
++[def [cmd ::tkcon::OPT(scollypos)]]
+ Y scrollbar position.
+ Valid values are left or right.
+ Defaults to right.
+ 
+-[lst_item [cmd ::tkcon::OPT(showmenu)]]
++[def [cmd ::tkcon::OPT(showmenu)]]
+ Show the menubar on startup (1 or 0, defaults to 1).
+ 
+-[lst_item [cmd ::tkcon::OPT(showmultiple)]]
++[def [cmd ::tkcon::OPT(showmultiple)]]
+ Show multiple matches for path/proc/var name expansion (1 or 0,
+ defaults to 1).
+ 
+-[lst_item [cmd ::tkcon::OPT(slaveeval)]]
++[def [cmd ::tkcon::OPT(slaveeval)]]
+ A tcl script to execute in each slave interpreter right after it's created.
+ This allows the user to have user defined info always available in a slave.
+ 
+-[nl]
++[para]
+ Example:
+ 
+ [example_begin]
+@@ -205,13 +205,13 @@ set ::tkcon::OPT(slaveeval) {
+ }
+ [example_end]
+ 
+-[lst_item [cmd ::tkcon::OPT(slaveexit)]]
++[def [cmd ::tkcon::OPT(slaveexit)]]
+ Allows the prevention of exit in slaves from exitting the entire application.
+ If it is equal to exit, exit will exit as usual, otherwise it will just close
+ down that interpreter (and any children).
+ Defaults to close.
+ 
+-[lst_item [cmd ::tkcon::OPT(subhistory)]]
++[def [cmd ::tkcon::OPT(subhistory)]]
+ Allow history substitution to occur (0 or 1, defaults to 1).
+ The history list is maintained in a single interpreter per TkCon console
+ instance.

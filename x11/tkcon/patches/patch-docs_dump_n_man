@@ -1,0 +1,28 @@
+$OpenBSD: patch-docs_dump_n_man,v 1.1 2011/01/05 16:48:22 stu Exp $
+--- docs/dump.n.man.orig	Thu Feb 26 19:17:21 2009
++++ docs/dump.n.man	Tue Nov 30 08:28:57 2010
+@@ -31,20 +31,20 @@ The various methods are:
+ 
+ [list_begin definitions]
+ 
+-[lst_item "[cmd dump] [arg command] [arg args]"]
++[def "[cmd dump] [arg command] [arg args]"]
+ Outputs one or more commands.
+ 
+-[lst_item "[cmd dump] [arg procedure] [arg args]"]
++[def "[cmd dump] [arg procedure] [arg args]"]
+ Outputs one or more procs in sourceable form.
+ 
+-[lst_item "[cmd dump] [arg variable] [arg args]"]
++[def "[cmd dump] [arg variable] [arg args]"]
+ Outputs the values of variables in sourceable form.
+ Recognizes nested arrays.
+ The -filter pattern is used as to filter array element
+ names and is interepreted as a glob pattern (defaults to {*}).
+ It is passed down for nested arrays.
+ 
+-[lst_item "[cmd dump] [arg widget] [arg args]"]
++[def "[cmd dump] [arg widget] [arg args]"]
+ Outputs one or more widgets by giving their configuration options.
+ The -filter pattern is used as to filter the config options and
+ is interpreted as a case insensitive regexp pattern (defaults to {.*}).

@@ -1,0 +1,303 @@
+$OpenBSD: patch-docs_tkcon_1_man,v 1.1 2011/01/05 16:48:22 stu Exp $
+--- docs/tkcon.1.man.orig	Thu Feb 26 19:17:21 2009
++++ docs/tkcon.1.man	Tue Nov 30 08:28:57 2010
+@@ -40,24 +40,24 @@ tkcon main set argv {}; tkcon main set argc 0
+ For these options, any unique substring is allowed.
+ 
+ [list_begin definitions]
+-[lst_item "[cmd -argv] (also [cmd --])"]
++[def "[cmd -argv] (also [cmd --])"]
+ Causes TkCon to stop evaluating arguments and set the remaining
+ args to be argv/argc (with [cmd --] prepended).
+ This carries over for any further consoles.
+ This is meant only for wrapping TkCon
+ around programs that require their own arguments.
+ 
+-[lst_item "[cmd -color-<color>] [arg color]"]
++[def "[cmd -color-<color>] [arg color]"]
+ Sets the requested color type to the specified color for tkcon.
+ See [cmd tkconrc](5) for the recognized [cmd <color>] names.
+ 
+-[lst_item "[cmd -eval] [arg tcl_script] (also [cmd -main] or [cmd -e])"]
++[def "[cmd -eval] [arg tcl_script] (also [cmd -main] or [cmd -e])"]
+ A Tcl script to eval in each main interpreter.
+ This is evaluated after the resource file is loaded and the
+ slave interpreter is created.
+ Multiple [cmd -eval] switches will be recognized (in order).
+ 
+-[lst_item "[cmd -exec] [arg slavename]"]
++[def "[cmd -exec] [arg slavename]"]
+ Sets the named slave that tkcon operates in.
+ In general, this is only useful to set to [arg {""}] (empty),
+ indicating to tkcon to avoid the multi-interpreter model and
+@@ -67,25 +67,25 @@ in the first tkcon console and not passed onto further
+ This is useful when using tkcon as a console for extended wish
+ executables that don't load there commands into slave interpreters.
+ 
+-[lst_item "[cmd -font] [arg font]"]
++[def "[cmd -font] [arg font]"]
+ Sets the font that tkcon uses for its text windows.
+ If this isn't a fixed width font, tkcon will override it.
+ 
+-[lst_item "[cmd -nontcl] [arg TCL_BOOLEAN]"]
++[def "[cmd -nontcl] [arg TCL_BOOLEAN]"]
+ Sets [cmd ::tkcon::OPT(nontcl)] to [arg TCL_BOOLEAN] (see
+ [cmd tkconrc](5)).
+ Needed when attaching to non-Tcl interpreters.
+ 
+-[lst_item "[cmd -package] [arg package_name] (also [cmd -load])"]
++[def "[cmd -package] [arg package_name] (also [cmd -load])"]
+ Packages to automatically load into the slave interpreters (i.e. "Tk").
+ 
+-[lst_item "[cmd -rcfile] [arg filename]"]
++[def "[cmd -rcfile] [arg filename]"]
+ Specify an alternate tkcon resource file name.
+ 
+-[lst_item "[cmd -root] [arg widgetname]"]
++[def "[cmd -root] [arg widgetname]"]
+ Makes the named widget the root name of all consoles (i.e. .tkcon).
+ 
+-[lst_item "[cmd -slave] [arg tcl_script]"]
++[def "[cmd -slave] [arg tcl_script]"]
+ A Tcl script to eval in each slave interpreter.
+ This will append the one specified in the tkcon resource file, if any.
+ 
+@@ -101,101 +101,101 @@ Only the modified or new bindings are listed here.
+ 
+ [list_begin definitions]
+ 
+-[lst_item "[cmd Control-x] or [cmd Cut] (on Sparc5 keyboards)"]
++[def "[cmd Control-x] or [cmd Cut] (on Sparc5 keyboards)"]
+ Cut.
+ 
+-[lst_item "[cmd Control-c] or [cmd Copy] (on Sparc5 keyboards)"]
++[def "[cmd Control-c] or [cmd Copy] (on Sparc5 keyboards)"]
+ Copy.
+ 
+-[lst_item "[cmd Control-v] or [cmd Paste] (on Sparc5 keyboards)"]
++[def "[cmd Control-v] or [cmd Paste] (on Sparc5 keyboards)"]
+ Paste.
+ 
+-[lst_item [cmd Insert]]
++[def [cmd Insert]]
+ Insert (duh).
+ 
+-[lst_item [cmd Up]]
++[def [cmd Up]]
+ Goes up one level in the commands line history when cursor is on
+ the prompt line, otherwise it moves through the buffer.
+ 
+-[lst_item [cmd Down]]
++[def [cmd Down]]
+ Goes down one level in the commands line history when cursor
+ is on the last line of the buffer, otherwise it moves through the buffer.
+ 
+-[lst_item [cmd Control-p]]
++[def [cmd Control-p]]
+ Goes up one level in the commands line history.
+ 
+-[lst_item [cmd Control-n]]
++[def [cmd Control-n]]
+ Goes down one level in the commands line history.
+ 
+-[lst_item [cmd Tab]]
++[def [cmd Tab]]
+ Tries to expand file path names, then variable names, then proc names.
+ 
+-[lst_item [cmd Escape]]
++[def [cmd Escape]]
+ Tries to expand file path names.
+ 
+-[lst_item [cmd Control-P]]
++[def [cmd Control-P]]
+ Tries to expand procedure names.
+ The procedure names will be those that are actually in the attached
+ interpreter (unless nontcl is specified, in which case it always
+ does the lookup in the default slave interpreter).
+ 
+-[lst_item [cmd Control-V]]
++[def [cmd Control-V]]
+ Tries to expand variable names (those returned by [lb]info vars[rb]).
+ It's search behavior is like that for procedure names.
+ 
+-[lst_item "[cmd Return] or [cmd Enter]"]
++[def "[cmd Return] or [cmd Enter]"]
+ Evaluates the current command line if it is a complete command,
+ otherwise it just goes to a new line.
+ 
+-[lst_item [cmd Control-a]]
++[def [cmd Control-a]]
+ Go to the beginning of the current command line.
+ 
+-[lst_item [cmd Control-l]]
++[def [cmd Control-l]]
+ Clear the entire console buffer.
+ 
+-[lst_item [cmd Control-r]]
++[def [cmd Control-r]]
+ Searches backwards in the history for any command that contains
+ the string in the current command line.
+ Repeatable to search farther back.
+ The matching substring off the found command will blink.
+ 
+-[lst_item [cmd Control-s]]
++[def [cmd Control-s]]
+ As above, but searches forward (only useful if you searched too far back).
+ 
+-[lst_item [cmd Control-t]]
++[def [cmd Control-t]]
+ Transposes characters.
+ 
+-[lst_item [cmd Control-u]]
++[def [cmd Control-u]]
+ Clears the current command line.
+ 
+-[lst_item [cmd Control-z]]
++[def [cmd Control-z]]
+ Saves current command line in a buffer that can be retrieved
+ with another [cmd Control-z].
+ If the current command line is empty, then any saved command
+ is retrieved without being overwritten, otherwise the current
+ contents get swapped with what's in the saved command buffer.
+ 
+-[lst_item [cmd Control-Key-1]]
++[def [cmd Control-Key-1]]
+ Attaches console to the console's slave interpreter.
+ 
+-[lst_item [cmd Control-Key-2]]
++[def [cmd Control-Key-2]]
+ Attaches console to the console's master interpreter.
+ 
+-[lst_item [cmd Control-Key-3]]
++[def [cmd Control-Key-3]]
+ Attaches console to main TkCon interpreter.
+ 
+-[lst_item [cmd Control-A]]
++[def [cmd Control-A]]
+ Pops up the "About" dialog.
+ 
+-[lst_item [cmd Control-N]]
++[def [cmd Control-N]]
+ Creates a new console. Each console has separate state, including
+ it's own widget hierarchy (it's a slave interpreter).
+ 
+-[lst_item [cmd Control-q]]
++[def [cmd Control-q]]
+ Close the current console OR Quit the program (depends on the
+ value of [cmd ::tkcon::TKCON(slaveexit)]).
+ 
+-[lst_item [cmd Control-w]]
++[def [cmd Control-w]]
+ Closes the current console.
+ Closing the main console will exit the program (something has
+ to control all the slaves...).
+@@ -223,44 +223,44 @@ Here is a non-comprehensive list:
+ 
+ [list_begin definitions]
+ 
+-[lst_item "[cmd alias] ?[arg sourceCmd] [arg targetCmd] ?[arg arg] [arg arg] ...??"]
++[def "[cmd alias] ?[arg sourceCmd] [arg targetCmd] ?[arg arg] [arg arg] ...??"]
+ Simple alias mechanism.
+ It will overwrite existing commands.
+ When called without args, it returns current aliases.
+ Note that TkCon makes some aliases for you (in slaves).
+ Don't delete those.
+ 
+-[lst_item "[cmd clear] ?[arg percentage]?"]
++[def "[cmd clear] ?[arg percentage]?"]
+ Clears the text widget.
+ Same as the <[cmd Control-l]> binding, except this will accept a
+ percentage of the buffer to clear (1-100, 100 default).
+ 
+-[lst_item "[cmd dir] ?[arg -all]? ?[arg -full]? ?[arg -long]?\
++[def "[cmd dir] ?[arg -all]? ?[arg -full]? ?[arg -long]?\
+ 	  ?[arg pattern] [arg pattern] ...?"]
+ Cheap way to get directory listings.
+ Uses glob style pattern matching.
+ 
+-[lst_item "[cmd dump] [arg type] ?[arg -nocomplain]? ?[arg {-filter pattern}]?\
++[def "[cmd dump] [arg type] ?[arg -nocomplain]? ?[arg {-filter pattern}]?\
+ 	  ?[cmd --]? [arg pattern] ?[arg pattern] ...?"]
+ The dump command provides a way for the user to spit out state
+ information about the interpreter in a Tcl readable (and
+ human readable) form.
+ See [cmd dump](n) for details.
+ 
+-[lst_item "[cmd echo] ?[arg arg] [arg arg] ...?"]
++[def "[cmd echo] ?[arg arg] [arg arg] ...?"]
+ Concatenates the args and spits the result to the console (stdout).
+ 
+-[lst_item "[cmd edit] ?[arg {-type type}]? ?[arg {-find str}]?\
++[def "[cmd edit] ?[arg {-type type}]? ?[arg {-find str}]?\
+ 	  ?[arg {-attach interp}]? [arg arg]"]
+ Opens an editor with the data from arg.
+ The optional type argument can be one of: [arg proc], [arg var] or [arg file].
+ For proc or var, the arg may be a pattern.
+ 
+-[lst_item "[cmd idebug] [arg command] ?[arg args]?"]
++[def "[cmd idebug] [arg command] ?[arg args]?"]
+ Interactive debugging command.
+ See [cmd idebug](n) for details.
+ 
+-[lst_item "[cmd lremove] ?[arg -all]? ?[arg -regexp] [arg -glob]?\
++[def "[cmd lremove] ?[arg -all]? ?[arg -regexp] [arg -glob]?\
+ 	  [arg list] [arg items]"]
+ Removes one or more items from a list and returns the new list.
+ If [arg -all] is specified, it removes all instances of each item
+@@ -268,28 +268,28 @@ in the list.
+ If [arg -regexp] or [arg -glob] is specified, it interprets each item in
+ the items list as a regexp or glob pattern to match against.
+ 
+-[lst_item [cmd less]]
++[def [cmd less]]
+ Aliased to [cmd edit].
+ 
+-[lst_item [cmd ls]]
++[def [cmd ls]]
+ Aliased to [cmd dir] [arg -full].
+ 
+-[lst_item [cmd more]]
++[def [cmd more]]
+ Aliased to [cmd edit].
+ 
+-[lst_item "[cmd observe] [arg type] ?[arg args]?"]
++[def "[cmd observe] [arg type] ?[arg args]?"]
+ This command provides passive runtime debugging output for
+ variables and commands.
+ See [cmd observe](n) for details.
+ 
+-[lst_item "[cmd puts] (same options as always)"]
++[def "[cmd puts] (same options as always)"]
+ Redefined to put the output into TkCon.
+ 
+-[lst_item "[cmd tkcon] [arg method] ?[arg args]?"]
++[def "[cmd tkcon] [arg method] ?[arg args]?"]
+ Multi-purpose command.
+ See [cmd tkcon](n) for details.
+ 
+-[lst_item "[cmd tclindex] [arg {?-extensions patternlist? ?-index TCL_BOOLEAN?\
++[def "[cmd tclindex] [arg {?-extensions patternlist? ?-index TCL_BOOLEAN?\
+ 	  ?-package TCL_BOOLEAN? ?dir1 dir2 ...?}]"]
+ Convenience proc to update the [file tclIndex] (controlled by [arg -index] switch)
+ and/or [file pkgIndex.tcl] (controlled by [arg -package] switch) file in the named
+@@ -299,17 +299,17 @@ with the directory defaulting to [lb]pwd[rb].
+ The extension defaults to *.tcl, with *.[lb]info sharelibextension[rb]
+ added when [arg -package] is true.
+ 
+-[lst_item "[cmd unalias] [arg cmd]"]
++[def "[cmd unalias] [arg cmd]"]
+ unaliases command.
+ 
+-[lst_item "[cmd what] [arg string]"]
++[def "[cmd what] [arg string]"]
+ The what command will identify the word given in string in
+ the Tcl environment and return a list of types that it was recognized as.
+ Possible types are: alias, procedure, command, array variable,
+ scalar variable, directory, file, widget, and executable.
+ Used by procedures dump and which.
+ 
+-[lst_item "[cmd which] [arg command]"]
++[def "[cmd which] [arg command]"]
+ Like the [syscmd which] command of Unix shells, this will tell you if a
+ particular command is known, and if so, whether it is internal or
+ external to the interpreter.
