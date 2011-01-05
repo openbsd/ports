@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_tcl,v 1.1 2009/03/19 16:54:32 sthen Exp $
---- installer.tcl.orig	Fri Dec 12 23:10:26 2008
-+++ installer.tcl	Sat Jan 17 05:58:53 2009
+$OpenBSD: patch-installer_tcl,v 1.2 2011/01/05 16:27:24 stu Exp $
+--- installer.tcl.orig	Mon Dec  7 09:56:53 2009
++++ installer.tcl	Mon Oct  4 23:59:02 2010
 @@ -79,21 +79,29 @@ if {![package vsatisfies [package provide Tcl] 8.0]} {
      puts  $index "unset maindir"
      puts  $index ""
@@ -39,3 +39,11 @@ $OpenBSD: patch-installer_tcl,v 1.1 2009/03/19 16:54:32 sthen Exp $
  }
  
  
+@@ -245,7 +254,6 @@ proc doinstall {} {
+     }
+     if {$config(pkg)}       {
+ 	xinstall   pkg $config(pkg,path)
+-	gen_main_index $config(pkg,path) $package_name $package_version
+ 	if {$config(doc,nroff)} {
+ 	    xinstall doc nroff n    $config(doc,nroff,path)
+ 	}
