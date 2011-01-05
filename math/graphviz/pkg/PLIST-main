@@ -1,28 +1,28 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2007/02/20 11:47:07 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/01/05 19:37:11 landry Exp $
 %%SHARED%%
-bin/acyclic
-bin/bcomps
-bin/ccomps
+@bin bin/acyclic
+@bin bin/bcomps
+@bin bin/ccomps
 bin/circo
-bin/dijkstra
-bin/dot
+@bin bin/dijkstra
+@bin bin/dot
 bin/dot2gxl
 bin/dotty
 bin/fdp
-bin/gc
-bin/gvcolor
-bin/gvpack
-bin/gvpr
-bin/gxl2dot
-bin/lefty
+@bin bin/gc
+@bin bin/gvcolor
+@bin bin/gvpack
+@bin bin/gvpr
+@bin bin/gxl2dot
+@bin bin/lefty
 bin/lneato
 bin/neato
-bin/nop
-bin/prune
-bin/sccmap
-bin/tred
+@bin bin/nop
+@bin bin/prune
+@bin bin/sccmap
+@bin bin/tred
 bin/twopi
-bin/unflatten
+@bin bin/unflatten
 include/graphviz/
 include/graphviz/aghdr.h
 include/graphviz/agraph.h
@@ -134,7 +134,6 @@ lib/libgvc_builtins.a
 lib/libgvc_builtins.la
 lib/libpathplan.a
 lib/libpathplan.la
-lib/pkgconfig/
 lib/pkgconfig/libagraph.pc
 lib/pkgconfig/libcdt.pc
 lib/pkgconfig/libexpr.pc

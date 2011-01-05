@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/22 09:28:34 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2011/01/05 19:37:11 landry Exp $
 
 COMMENT-main=	graph drawing software
 
 DISTNAME=	graphviz-2.12
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	12
+REVISION-main=	13
 CATEGORIES=	math devel graphics
 MULTI_PACKAGES=	-main
 
@@ -111,6 +111,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+		TCLCONFIG=${LOCALBASE}/lib/tcl/tcl8.4/tclConfig.sh \
+		TKCONFIG=${LOCALBASE}/lib/tcl/tk8.4/tkConfig.sh \
 		PKG_CONFIG=/usr/bin/pkg-config
 
 DOCBASE=	${PREFIX}/share/doc/graphviz
