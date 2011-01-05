@@ -1,0 +1,16 @@
+$OpenBSD: patch-unix_tkUnixKey_c,v 1.1 2011/01/05 16:18:09 stu Exp $
+--- unix/tkUnixKey.c.orig	Fri Sep 24 19:02:35 2010
++++ unix/tkUnixKey.c	Fri Sep 24 19:03:21 2010
+@@ -66,10 +66,10 @@ Tk_SetCaretPos(
+ 
+ 	spot.x = dispPtr->caret.x;
+ 	spot.y = dispPtr->caret.y + dispPtr->caret.height;
+-	preedit_attr = XVaCreateNestedList(0, XNSpotLocation, &spot, NULL);
++	preedit_attr = XVaCreateNestedList(0, XNSpotLocation, &spot, (void *) NULL);
+ 	XSetICValues(winPtr->inputContext,
+ 		XNPreeditAttributes, preedit_attr,
+-		NULL);
++		(void *) NULL);
+ 	XFree(preedit_attr);
+     }
+ #endif

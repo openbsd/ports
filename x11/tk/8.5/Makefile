@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/27 11:54:53 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/01/05 16:18:09 stu Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
-DISTNAME =		tk8.5.8
-PKGNAME =		tk-8.5.8
-REVISION=		1
-SHARED_LIBS =		tk85 0.5
+DISTNAME =		tk8.5.9
+PKGNAME =		tk-8.5.9
+SHARED_LIBS =		tk85 0.6
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -16,38 +15,49 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		X11 Xau Xdmcp Xext Xft Xrender Xss c expat fontconfig freetype m z
+WANTLIB =		X11 Xau Xdmcp Xext Xft Xrender Xss c expat fontconfig freetype m z \
+			tcl85
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		${DISTNAME}-src.tar.gz
 
-.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
-WANTLIB +=		pthread-stubs xcb
-MAKE_FLAGS +=		TK_BUILD_EXP_FILE="libtk85.a" \
-			TK_EXP_FILE="libtk85.a"
-.endif
+LIB_DEPENDS =		lang/tcl/8.5>=8.5.9,<8.5.10${FLAVOR:S/^/-/}
+
+MAKE_FLAGS +=		TK_LIBRARY='$$(prefix)/lib/tcl/tk$$(VERSION)'
 
 FAKE_FLAGS =		INSTALL_DATA_DIR="${INSTALL_DATA_DIR}" \
 			INSTALL_LIBRARY="${INSTALL_DATA}" \
 			INSTALL_DATA="${INSTALL_DATA}" \
 			INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-			CONFIG_INSTALL_DIR="${WRKINST}${TRUEPREFIX}/lib/tk8.5" \
-			DEMO_INSTALL_DIR="${WRKINST}${TRUEPREFIX}/share/examples/tk8.5"
+			CONFIG_INSTALL_DIR="${WRKINST}${TRUEPREFIX}/lib/tcl/tk8.5" \
+			DEMO_INSTALL_DIR="${WRKINST}${TRUEPREFIX}/share/examples/tk8.5" \
+			TK_PKG_DIR='tcl/tk$$(VERSION)'
 
 REGRESS_FLAGS =		HOME=${TESTHOME}
-
 SEPARATE_BUILD =	concurrent
-USE_GROFF =	Yes
-CONFIGURE_STYLE =	gnu old
+USE_GROFF =		Yes
+CONFIGURE_STYLE =	autoconf no-autoheader old
+
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--includedir="${PREFIX}/include/tk8.5" \
-			--mandir="${PREFIX}/lib/tk8.5/man" \
+			--mandir="${PREFIX}/man/tk8.5" \
 			--sysconfdir="${SYSCONFDIR}" \
 			--enable-man-symlinks \
 			--disable-rpath \
-			--with-tcl="${LOCALBASE}/lib/tcl8.5"
+			--with-tcl="${LOCALBASE}/lib/tcl/tcl8.5" \
+			EXTRA_INSTALL="install-private-headers" \
+			EXTRA_CC_SWITCHES="-I${LOCALBASE}/include/tcl8.5" \
+			SHLIB_VERSION="${LIBtk85_VERSION}"
 
-CONFIGURE_ENV +=	SHLIB_VERSION="${LIBtk85_VERSION}"
+AUTOCONF_VERSION =	2.59
+
+.if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
+WANTLIB +=		pthread-stubs xcb
+ALL_TARGET =		all libtk85.a
+CONFIGURE_ARGS +=	EXTRA_INSTALL_BINARIES='@echo "Installing libtk85.a to $$(LIB_INSTALL_DIR)/" \
+			&& $$(INSTALL_DATA) libtk85.a $$(LIB_INSTALL_DIR)/libtk85.a \
+			&& (cd $$(LIB_INSTALL_DIR) ; $$(RANLIB) libtk85.a)'
+.endif
 
 REGRESS_IS_INTERACTIVE = x11
 
@@ -57,11 +67,7 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mthreaded}
 CONFIGURE_ARGS +=	--enable-threads
 WANTLIB +=		pthread
-LIB_DEPENDS =		tcl->=8.5.8p0,<8.5.9-${FLAVOR}:lang/tcl/8.5
-.else
-LIB_DEPENDS =		tcl->=8.5.8p0,<8.5.9:lang/tcl/8.5
 .endif
-WANTLIB +=		tcl85
 
 WRKSRC =		${WRKDIST}/unix
 REGRESS_TARGET =	test
@@ -69,9 +75,10 @@ REGRESS_TARGET =	test
 TESTHOME =		${WRKDIR}/testhome
 
 pre-regress:
-	@mkdir -p ${TESTHOME}
+	mkdir -p ${TESTHOME}
 
 post-install:
+	${INSTALL_DATA} ${WRKDIST}/license.terms ${PREFIX}/man/tk8.5
 .if ${MACHINE_ARCH} != "m88k" && ${MACHINE_ARCH} != "vax"
 	ln -s libtk85.a ${PREFIX}/lib/libtk85_pic.a
 	ln -s libtkstub85.a ${PREFIX}/lib/libtkstub85_pic.a
