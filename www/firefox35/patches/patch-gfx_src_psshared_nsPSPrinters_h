@@ -1,0 +1,19 @@
+$OpenBSD: patch-gfx_src_psshared_nsPSPrinters_h,v 1.1 2011/01/05 08:22:30 dcoppa Exp $
+--- gfx/src/psshared/nsPSPrinters.h.orig	Tue Nov 30 14:49:19 2010
++++ gfx/src/psshared/nsPSPrinters.h	Mon Jan  3 16:24:18 2011
+@@ -42,7 +42,6 @@
+ #include "nsString.h"
+ #include "nsVoidArray.h"
+ #include "prtypes.h"
+-#include "nsCUPSShim.h"
+ #include "psSharedCore.h"
+ 
+ class nsIPrefService;
+@@ -96,7 +95,6 @@ class NS_PSSHARED nsPSPrinterList {
+     private:
+         nsCOMPtr<nsIPrefService> mPrefSvc;
+         nsCOMPtr<nsIPrefBranch> mPref;
+-        nsCUPSShim mCups;
+ };
+ 
+ #endif /* nsPSPrinters_h___ */

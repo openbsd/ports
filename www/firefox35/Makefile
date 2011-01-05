@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2010/12/10 10:36:00 landry Exp $
+# $OpenBSD: Makefile,v 1.56 2011/01/05 08:22:30 dcoppa Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -38,6 +38,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${MOZILLA_VERSION}/source/
 DISTNAME =	firefox-${MOZILLA_VERSION}.source
+REVISION =	0
 
 MODULES =	www/mozilla devel/gettext lang/python
 

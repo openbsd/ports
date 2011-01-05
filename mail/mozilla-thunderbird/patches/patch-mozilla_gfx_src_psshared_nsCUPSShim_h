@@ -1,0 +1,11 @@
+$OpenBSD: patch-mozilla_gfx_src_psshared_nsCUPSShim_h,v 1.1 2011/01/05 08:22:30 dcoppa Exp $
+--- mozilla/gfx/src/psshared/nsCUPSShim.h.orig	Tue Dec  7 17:35:40 2010
++++ mozilla/gfx/src/psshared/nsCUPSShim.h	Mon Jan  3 14:54:15 2011
+@@ -86,7 +86,6 @@ struct PRLibrary;
+ class NS_PSSHARED nsCUPSShim {
+     public:
+         nsCUPSShim() : mCupsLib(nsnull) { }
+-        ~nsCUPSShim();
+ 
+         /**
+          * Initialize this object. Attempt to load the CUPS shared
