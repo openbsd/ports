@@ -1,6 +1,24 @@
-$OpenBSD: patch-configure,v 1.2 2010/06/07 14:39:46 sthen Exp $
+$OpenBSD: patch-configure,v 1.3 2011/01/05 18:55:31 sebastia Exp $
 --- configure.orig	Fri May 25 00:15:40 2007
-+++ configure	Sun Jun  6 12:37:28 2010
++++ configure	Thu Dec 23 14:42:37 2010
+@@ -6340,7 +6340,7 @@ fi
+ 
+     echo "$as_me:$LINENO: checking for Tcl private include files" >&5
+ echo $ECHO_N "checking for Tcl private include files... $ECHO_C" >&6
+-
++    TCL_SRC_DIR=${LOCALBASE}/include/tcl8.5
+     TCL_SRC_DIR_NATIVE=`${CYGPATH} ${TCL_SRC_DIR}`
+     TCL_TOP_DIR_NATIVE=\"${TCL_SRC_DIR_NATIVE}\"
+     TCL_GENERIC_DIR_NATIVE=\"${TCL_SRC_DIR_NATIVE}/generic\"
+@@ -6369,7 +6369,7 @@ echo $ECHO_N "checking for Tcl private include files..
+ 	        ;;
+ 	esac
+     else
+-	if test ! -f "${TCL_SRC_DIR}/generic/tclInt.h" ; then
++	if test ! -f "${TCL_SRC_DIR}/tclInt.h" ; then
+ 	    { { echo "$as_me:$LINENO: error: Cannot find private header tclInt.h in ${TCL_SRC_DIR}" >&5
+ echo "$as_me: error: Cannot find private header tclInt.h in ${TCL_SRC_DIR}" >&2;}
+    { (exit 1); exit 1; }; }
 @@ -7729,7 +7729,7 @@ echo "${ECHO_T}$tcl_cv_ld_elf" >&6
  	    DL_LIBS=""
  	    CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
@@ -15,7 +33,19 @@ $OpenBSD: patch-configure,v 1.2 2010/06/07 14:39:46 sthen Exp $
  
  # pkglibdir must be a fully qualified path and (not ${exec_prefix}/lib)
 -eval pkglibdir="${libdir}/${PACKAGE_NAME}${PACKAGE_VERSION}"
-+eval pkglibdir="${libdir}"
++eval pkglibdir="${libdir}/${PACKAGE_NAME}"
  if test "${TCL_LIB_VERSIONS_OK}" = "ok"; then
      eval itcl_LIB_FLAG="-litcl${PACKAGE_VERSION}${DBGX}"
      eval itcl_STUB_LIB_FLAG="-litclstub${PACKAGE_VERSION}${DBGX}"
+@@ -9489,9 +9489,9 @@ itcl_BUILD_LIB_SPEC="-L`pwd` ${itcl_LIB_FLAG}"
+ itcl_LIB_SPEC="-L${pkglibdir} ${itcl_LIB_FLAG}"
+ 
+ itcl_BUILD_STUB_LIB_SPEC="-L`pwd` ${itcl_STUB_LIB_FLAG}"
+-itcl_STUB_LIB_SPEC="-L${pkglibdir} ${itcl_STUB_LIB_FLAG}"
++itcl_STUB_LIB_SPEC="-L${pkglibdir}/../../ ${itcl_STUB_LIB_FLAG}"
+ itcl_BUILD_STUB_LIB_PATH="`pwd`/${itcl_STUB_LIB_FILE}"
+-itcl_STUB_LIB_PATH="${pkglibdir}/${itcl_STUB_LIB_FILE}"
++itcl_STUB_LIB_PATH="${pkglibdir}/../../${itcl_STUB_LIB_FILE}"
+ 
+ 
+ 
