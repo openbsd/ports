@@ -1,0 +1,12 @@
+$OpenBSD: patch-unix_tkUnixEvent_c,v 1.1 2011/01/05 16:21:06 stu Exp $
+--- unix/tkUnixEvent.c.orig	Wed Sep 29 20:15:32 2010
++++ unix/tkUnixEvent.c	Wed Sep 29 20:16:09 2010
+@@ -669,7 +669,7 @@ OpenIM(dispPtr)
+     }
+ 
+     if ((XGetIMValues(dispPtr->inputMethod, XNQueryInputStyle, &stylePtr,
+-	    NULL) != NULL) || (stylePtr == NULL)) {
++	    (void *) NULL) != NULL) || (stylePtr == NULL)) {
+ 	goto error;
+     }
+ #if TK_XIM_SPOT

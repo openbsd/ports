@@ -1,0 +1,47 @@
+$OpenBSD: patch-generic_tkEvent_c,v 1.1 2011/01/05 16:21:06 stu Exp $
+--- generic/tkEvent.c.orig	Wed Sep 29 20:13:11 2010
++++ generic/tkEvent.c	Wed Sep 29 20:14:47 2010
+@@ -908,7 +908,7 @@ Tk_HandleEvent(eventPtr)
+ 		    }
+ 
+ 		    preedit_attr = XVaCreateNestedList(0, XNSpotLocation,
+-			    &spot, XNFontSet, dispPtr->inputXfs, NULL);
++			    &spot, XNFontSet, dispPtr->inputXfs, (void *) NULL);
+ 		    if (winPtr->inputContext != NULL)
+ 		        panic("inputContext not NULL");
+ 		    winPtr->inputContext = XCreateIC(dispPtr->inputMethod,
+@@ -916,7 +916,7 @@ Tk_HandleEvent(eventPtr)
+ 			    XNClientWindow, winPtr->window,
+ 			    XNFocusWindow, winPtr->window,
+ 			    XNPreeditAttributes, preedit_attr,
+-			    NULL);
++			    (void *) NULL);
+ 		    XFree(preedit_attr);
+ 		} else {
+ 		    if (winPtr->inputContext != NULL)
+@@ -925,7 +925,7 @@ Tk_HandleEvent(eventPtr)
+ 			    XNInputStyle, XIMPreeditNothing|XIMStatusNothing,
+ 			    XNClientWindow, winPtr->window,
+ 			    XNFocusWindow, winPtr->window,
+-			    NULL);
++			    (void *) NULL);
+ 		}
+ #else
+ 		if (winPtr->inputContext != NULL)
+@@ -934,14 +934,14 @@ Tk_HandleEvent(eventPtr)
+ 			XNInputStyle, XIMPreeditNothing|XIMStatusNothing,
+ 			XNClientWindow, winPtr->window,
+ 			XNFocusWindow, winPtr->window,
+-			NULL);
++			(void *) NULL);
+ #endif
+ 	    }
+ 	}
+ 	if (winPtr->inputContext != NULL &&
+ 	    (eventPtr->xany.type == FocusIn)) {
+ 	    XGetICValues(winPtr->inputContext,
+-			 XNFilterEvents, &im_event_mask, NULL);
++			 XNFilterEvents, &im_event_mask, (void *) NULL);
+ 	    if (im_event_mask != 0L) {
+ 		XSelectInput(winPtr->display, winPtr->window,
+ 			     winPtr->atts.event_mask | im_event_mask);
