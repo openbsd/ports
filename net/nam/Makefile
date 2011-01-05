@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2011/01/05 19:07:59 sebastia Exp $
 # $FreeBSD: ports/net/nam/Makefile,v 1.3 1999/11/29 03:46:08 steve Exp $
 
 COMMENT=	UCB/LBNL Network Animator
@@ -6,7 +6,7 @@ COMMENT=	UCB/LBNL Network Animator
 V=		1.13
 DISTNAME=	nam-src-$V
 PKGNAME=	nam-$V
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 MASTER_SITES= 	${MASTER_SITE_SOURCEFORGE:=nsnam/}
@@ -19,7 +19,11 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=		X11 Xext c m otcl pthread-stubs stdc++ tcl84 tk84 xcb z
+MODULES	+=		x11/tk
+MODTK_VERSION =		8.4
+WANTLIB +=		X11 Xext c m otcl stdc++ z
+WANTLIB +=		${MODTK_WANTLIB}
+LIB_DEPENDS +=		${MODTK_LIB_DEPENDS}
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/tclcl>=1.0b13p0
@@ -27,13 +31,15 @@ RUN_DEPENDS=	devel/tclcl>=1.0b13p0
 WRKDIST=	${WRKDIR}/nam-$V
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-tcl-ver=8.4 --with-tk-ver=8.4 \
+CONFIGURE_ARGS=	--with-tcl-ver=${MODTCL_VERSION} \
+		--with-tk-ver=${MODTK_VERSION} \
+		--with-tk=${MODTK_LIBDIR} \
+		--with-tcl=${MODTCL_LIBDIR} \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib
 
 ALL_TARGET=
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-configure:

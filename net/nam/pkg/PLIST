@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 18:17:42 espie Exp $
-bin/nam
+@comment $OpenBSD: PLIST,v 1.5 2011/01/05 19:07:59 sebastia Exp $
+@bin bin/nam
 @man man/man1/nam.1
 share/examples/nam/
 share/examples/nam/9nodetree.nam

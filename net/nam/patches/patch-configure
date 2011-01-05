@@ -1,6 +1,60 @@
-$OpenBSD: patch-configure,v 1.5 2010/10/12 20:13:47 jasper Exp $
+$OpenBSD: patch-configure,v 1.6 2011/01/05 19:07:59 sebastia Exp $
 --- configure.orig	Sun Feb 18 23:45:44 2007
-+++ configure	Sat Oct 13 22:18:21 2007
++++ configure	Thu Dec 23 13:24:03 2010
+@@ -1063,7 +1063,7 @@ do
+     -q | -quiet | --quiet | --quie | --qui | --qu | --q \
+     | -silent | --silent | --silen | --sile | --sil)
+       continue ;;
+-    *" "*|*"	"*|*[\[\]\~\#\$\^\&\*\(\)\{\}\\\|\;\<\>\?\"\']*)
++    *" "*|*"	"*|*[\[\]\~\#\$^\&\*\(\)\{\}\\\|\;\<\>\?\"\']*)
+       ac_arg=`echo "$ac_arg" | sed "s/'/'\\\\\\\\''/g"` ;;
+     esac
+     case $ac_pass in
+@@ -1279,7 +1279,7 @@ echo "$as_me:   current value: $ac_new_val" >&2;}
+   # Pass precious variables to config.status.
+   if test "$ac_new_set" = set; then
+     case $ac_new_val in
+-    *" "*|*"	"*|*[\[\]\~\#\$\^\&\*\(\)\{\}\\\|\;\<\>\?\"\']*)
++    *" "*|*"	"*|*[\[\]\~\#\$^\&\*\(\)\{\}\\\|\;\<\>\?\"\']*)
+       ac_arg=$ac_var=`echo "$ac_new_val" | sed "s/'/'\\\\\\\\''/g"` ;;
+     *) ac_arg=$ac_var=$ac_new_val ;;
+     esac
+@@ -5673,7 +5673,7 @@ else
+ echo "$as_me: error: $d is not a directory" >&2;}
+    { (exit 1); exit 1; }; }
+ 		fi
+-		places="$TCL_H_PLACES_D"
++		places="$TCL_H_PLACES_D $TCL_H_PLACES" 
+ 	fi
+ 
+ 	V_INCLUDE_TCL=""
+@@ -5732,7 +5732,7 @@ else
+ echo "$as_me: error: $d is not a directory" >&2;}
+    { (exit 1); exit 1; }; }
+ 		fi
+-		places="$TCL_LIB_PLACES_D"
++		places="$TCL_LIB_PLACES_D $TCL_LIB_PLACES"
+ 	fi
+ 
+ 	V_LIB_TCL=""
+@@ -6119,7 +6119,7 @@ else
+ echo "$as_me: error: $d is not a directory" >&2;}
+    { (exit 1); exit 1; }; }
+ 		fi
+-		places="$TK_H_PLACES_D"
++		places="$TK_H_PLACES_D $TK_H_PLACES"
+ 	fi
+ 
+ 	V_INCLUDE_TK=""
+@@ -6178,7 +6178,7 @@ else
+ echo "$as_me: error: $d is not a directory" >&2;}
+    { (exit 1); exit 1; }; }
+ 		fi
+-		places="$TK_LIB_PLACES_D"
++		places="$TK_LIB_PLACES_D $TK_LIB_PLACES"
+ 	fi
+ 
+ 	V_LIB_TK=""
 @@ -6739,7 +6739,7 @@ TCLCL_H_PLACES="\
                  /usr/src/local/Tcl \
                  /usr/src/local/Tcl-1.0 \
