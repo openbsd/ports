@@ -1,0 +1,20 @@
+$OpenBSD: patch-includes_OutputPage_php,v 1.1 2011/01/05 11:51:57 jasper Exp $
+
+Security fix for SA42810
+MediaWiki "Clickjacking" Security Bypass Vulnerability
+
+Patch from upstream svn:
+http://www.mediawiki.org/wiki/Special:Code/MediaWiki/79566
+
+--- includes/OutputPage.php.orig	Wed Jan  5 11:02:13 2011
++++ includes/OutputPage.php	Wed Jan  5 11:02:39 2011
+@@ -957,6 +957,9 @@ class OutputPage {
+ 		$wgRequest->response()->header( "Content-type: $wgMimeType; charset={$wgOutputEncoding}" );
+ 		$wgRequest->response()->header( 'Content-language: '.$wgContLanguageCode );
+ 
++		# To prevent clickjacking, do not allow this page to be inside a frame.
++		$wgRequest->response()->header( 'X-Frame-Options: DENY' );
++
+ 		if ($this->mArticleBodyOnly) {
+ 			$this->out($this->mBodytext);
+ 		} else {

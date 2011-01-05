@@ -1,0 +1,18 @@
+$OpenBSD: patch-config_index_php,v 1.1 2011/01/05 11:51:57 jasper Exp $
+
+Security fix for SA42810
+MediaWiki "Clickjacking" Security Bypass Vulnerability
+
+Patch from upstream svn:
+http://www.mediawiki.org/wiki/Special:Code/MediaWiki/79566
+
+--- config/index.php.orig	Wed Jan  5 11:03:02 2011
++++ config/index.php	Wed Jan  5 11:03:19 2011
+@@ -21,6 +21,7 @@
+ 
+ error_reporting( E_ALL );
+ header( "Content-type: text/html; charset=utf-8" );
++header( 'X-Frame-Options: DENY' );
+ @ini_set( "display_errors", true );
+ 
+ # In case of errors, let output be clean.
