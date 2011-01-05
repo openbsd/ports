@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/07/30 16:41:09 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2011/01/05 17:38:25 sebastia Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	drag n drop extension for Tk
 
-REVISION =	0
+REVISION =	1
 DISTNAME =	tkdnd-1.0a2
 SHARED_LIBS =	tkdnd 0.0
 CATEGORIES =	x11
@@ -31,13 +31,14 @@ WANTLIB += freetype m z pthread-stubs xcb
 USE_GMAKE =		yes
 WRKSRC =		${WRKDIR}/${DISTNAME}/unix
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS =	 ${CONFIGURE_SHARED} \
+			--libdir=${MODTCL_TCLDIR} \
 			--with-tclinclude=${MODTCL_INCDIR} \
 			--with-tcl=${MODTCL_LIBDIR} \
 			--with-tk=${MODTK_LIBDIR} \
 			--datadir=${PREFIX}/share/examples \
 			--prefix=${WRKINST}
-CONFIGURE_ENV =		CFLAGS+=-I${X11BASE}/include \
+CONFIGURE_ENV =		CFLAGS=-I${X11BASE}/include \
 			LIBtkdnd_VERSION=${LIBtkdnd_VERSION} \
 			DESTDIR=${DESTDIR}
 MAKE_ENV = 		MODTK_INCDIR=${MODTK_INCDIR}
@@ -49,7 +50,17 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/mkIndex.tcl.in
 	${MODTCL_TCLSH_ADJ} ${WRKSRC}/../demo/dnddemo.tcl ${WRKSRC}/../demo/newtest.tcl
 
-post-install:
-	${INSTALL_DATA} ${WRKBUILD}/../lib/tkdnd/pkgIndex.tcl ${PREFIX}/lib/tkdnd/
+do-install:
+	${INSTALL_PROGRAM_DIR} ${DESTDIR}${MODTCL_TCLDIR}/tkdnd
+	cd ${WRKBUILD}/../lib/tkdnd && \
+	${INSTALL_DATA} pkgIndex.tcl ${DESTDIR}${MODTCL_TCLDIR}/tkdnd
+	cd ${WRKBUILD}/../lib/tkdnd && \
+	${INSTALL_DATA} tkDND_Utils.tcl ${DESTDIR}${MODTCL_TCLDIR}/tkdnd
+	cd ${WRKBUILD}/../lib/tkdnd && \
+	${INSTALL_PROGRAM} libtkdnd.so.${LIBtkdnd_VERSION} ${DESTDIR}${MODTCL_TCLDIR}/tkdnd 
+	${INSTALL_DATA_DIR} ${PREFIX}/man/mann
+	cd ${WRKBUILD}/../doc && \
+	${INSTALL_MAN} tkDND.n ${PREFIX}/man/mann
+
 
 .include <bsd.port.mk>
