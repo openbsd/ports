@@ -1,28 +1,26 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2011/01/05 17:23:09 stu Exp $
 
-COMMENT=	Tk script to read GNU info files and display them
+COMMENT =	read and display GNU info files in Tk
 
-DISTNAME=	tkinfo-2.8
-REVISION=	0
-CATEGORIES=	misc 
-
-MASTER_SITES=	${HOMEPAGE}
-
-HOMEPAGE=	http://math-www.uni-paderborn.de/~axel/tkinfo/
+DISTNAME =	tkinfo-2.8
+REVISION =	0
+CATEGORIES =	misc 
+HOMEPAGE =	http://math-www.uni-paderborn.de/~axel/tkinfo/
+MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MODULES=	x11/tk
-RUN_DEPENDS=	${MODTK_RUN_DEPENDS}
-
-NO_BUILD=	Yes
-NO_REGRESS=	Yes
+MASTER_SITES =	${HOMEPAGE}
+MODULES =	x11/tk
+RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
+NO_BUILD =	Yes
+NO_REGRESS =	Yes
 USE_GROFF =	Yes
-PKG_ARCH=	*
+PKG_ARCH =	*
 
 pre-configure:
 	@${MODTCL_WISH_ADJ} ${WRKSRC}/tkinfo

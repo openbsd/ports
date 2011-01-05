@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2011/01/05 17:21:18 stu Exp $
 
 COMMENT =	Tk frontend to crontab
 
 DISTNAME =	tkcron-2.12
 REVISION =	0
 CATEGORIES =	misc 
-
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	ftp://ftp.tcl.tk/pub/tcl/mirror/ftp.procplace.com/alcatel/code/
