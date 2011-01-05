@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/07/29 11:42:56 sebastia Exp $
-lib/tkpng0.9/
-@lib lib/tkpng0.9/libtkpng09.so.${LIBtkpng09_VERSION}
-lib/tkpng0.9/pkgIndex.tcl
+@comment $OpenBSD: PLIST,v 1.3 2011/01/05 18:35:32 sebastia Exp $
+lib/tcl/tkpng/
+@lib lib/tcl/tkpng/libtkpng09.so.${LIBtkpng09_VERSION}
+lib/tcl/tkpng/pkgIndex.tcl
 share/doc/tkpng/
 share/doc/tkpng/README
 share/doc/tkpng/license.terms
