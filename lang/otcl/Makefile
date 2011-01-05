@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2011/01/05 18:49:20 sebastia Exp $
 # $FreeBSD: ports/lang/otcl/Makefile,v 1.6 1999/11/28 18:31:28 steve Exp $
 
 COMMENT=	MIT Object Tcl
@@ -18,20 +18,22 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xext c m pthread-stubs tcl84 xcb tk84
+MODULES +=	x11/tk
+MODTK_VERSION =	8.4
+WANTLIB=	X11 Xext c m ${MODTK_WANTLIB}
+LIB_DEPENDS =	${MODTK_LIB_DEPENDS}
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=otcl-tclcl/}
 WRKDIST=	${WRKDIR}/otcl-$V
 
-LIB_DEPENDS=    tk->=8.4,<8.5:x11/tk/8.4
-
 CONFIGURE_STYLE= gnu dest
-CONFIGURE_ARGS+=--includedir=${PREFIX}/include/tcl8.4/generic \
-		--with-tcl-ver=8.4 \
-		--with-tk-ver=8.4 \
-		--x-includes=${X11BASE}/include \
+CONFIGURE_ARGS+= --x-includes=${X11BASE}/include \
+		--with-tcl=${MODTCL_LIBDIR} \
+		--with-tk=${MODTK_LIBDIR} \
+		--with-tcl-ver=${MODTCL_VERSION} \
+		--with-tk-ver=${MODTCL_VERSION} \
 		--x-libraries=${X11BASE}/lib
-CONFIGURE_ENV=	LIBotcl_VERSION=${LIBotcl_VERSION}
+CONFIGURE_ENV=	LIBotcl_VERSION=${LIBotcl_VERSION} \
 
 NO_REGRESS=	Yes
 
