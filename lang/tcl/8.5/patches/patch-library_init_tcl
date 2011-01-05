@@ -1,0 +1,18 @@
+$OpenBSD: patch-library_init_tcl,v 1.1 2011/01/05 16:13:53 stu Exp $
+--- library/init.tcl.orig	Sat Oct  2 08:31:44 2010
++++ library/init.tcl	Sat Oct  2 08:33:17 2010
+@@ -53,11 +53,14 @@ namespace eval tcl {
+ 	    lappend ::auto_path $Dir
+ 	}
+     }
++# OpenBSD layout
++if {0} {
+     set Dir [file join [file dirname [file dirname \
+ 	    [info nameofexecutable]]] lib]
+     if {$Dir ni $::auto_path} {
+ 	lappend ::auto_path $Dir
+     }
++}
+     catch {
+ 	foreach Dir $::tcl_pkgPath {
+ 	    if {$Dir ni $::auto_path} {

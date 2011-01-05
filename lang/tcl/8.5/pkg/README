@@ -1,15 +1,15 @@
-# $OpenBSD: README,v 1.1 2010/11/15 18:26:39 jasper Exp $
+# $OpenBSD: README,v 1.2 2011/01/05 16:13:53 stu Exp $
 
 cat << "EOTEXT" > /dev/null
 
 The OpenBSD port of the Tcl dynamic language was designed to balance
 deriving the maximum value from the original software while keeping any
-modifications to a minimum. This document describes the differences and
+modifications to a minimum. This document describes these differences and
 includes a handy guide and patch for adding Tcl and Tk to /etc/man.conf.
 
-The principal change is to the installation. In order to be able to
-install multiple versions of Tcl on OpenBSD without conflict, some
-deviation from the original installation is required.
+The principal change is to the locations of installed files. In order to
+be able to install multiple versions of Tcl on OpenBSD without conflict,
+some deviation from the original installation has been performed.
 
 
 Tclsh / Wish
@@ -25,14 +25,21 @@ own links.
 
 Files / Directories
 
+Library files
+scripts, encoding files, etc.
+normally in
+${TRUEPREFIX}/lib/tcl8.5, ${TRUEPREFIX}/lib/tk8.5
+now in
+${TRUEPREFIX}/lib/tcl/tcl8.5, ${TRUEPREFIX}/lib/tcl/tk8.5
+
 Configuration files
 tclConfig.sh, tkConfig.sh
 normally in
 ${TRUEPREFIX}/lib
 now in
-${TRUEPREFIX}/lib/tcl8.5, ${TRUEPREFIX}/lib/tk8.5
+${TRUEPREFIX}/lib/tcl/tcl8.5, ${TRUEPREFIX}/lib/tcl/tk8.5
 
-Include files ('public' - see below)
+Header files
 *.h
 normally in
 ${TRUEPREFIX}/include
@@ -44,7 +51,7 @@ Manual pages
 normally in
 ${TRUEPREFIX}/man
 now in
-${TRUEPREFIX}/lib/tcl8.5/man, ${TRUEPREFIX}/lib/tk8.5/man
+${TRUEPREFIX}/man/tcl8.5, ${TRUEPREFIX}/man/tk8.5
 
 Demos
 *.tcl, *
@@ -53,17 +60,24 @@ ${TRUEPREFIX}/lib/tk8.5/demos
 now in
 ${TRUEPREFIX}/share/examples/tk8.5
 
+Bundled Modules
+*.tm
+normally in
+${TRUEPREFIX}/lib/tcl8/...
+now in
+${TRUEPREFIX}/lib/tcl/tcl8.5/modules/...
+
+Module Paths
+normally
+${TRUEPREFIX}/lib/tcl8/...
+now
+${TRUEPREFIX}/lib/tcl/modules/...
+
 
 Additional Header Files
 
-Additional (what Tcl/Tk calls 'private') include (.h) files are installed
-under ${TRUEPREFIX}/include/tcl8.5 and ${TRUEPREFIX}/include/tk8.5 in a
-directory structure which mimics the Tcl and Tk source code directory
-layouts.  Some software that compiles and links against Tcl or Tk
-requires these 'private' headers and therefore assumes that the Tcl or Tk
-source (containing the 'private' headers) is available.  This setup
-enables using such 'poorly-behaved' software without requiring the
-presence of the entire Tcl and Tk source trees.
+Additional ('private') header files are installed
+in ${TRUEPREFIX}/include/tcl8.5 and ${TRUEPREFIX}/include/tk8.5.
 
 
 Libraries
@@ -71,7 +85,7 @@ Libraries
 On architectures that support shared libraries, additional static
 libraries (libtcl85.a, libtk85.a) are built from the -fPIC compiled
 object (.o) files.  A soft link from any lib.a is created to lib_pic.a
-in order to satisfy l*btool (apparently).
+in order to satisfy libtool.
 
 
 Manual Page Configuration
@@ -106,44 +120,44 @@ EOTEXT
 # Patch to add Tcl and Tk to /etc/man.conf
 #
 # Run:
-# "$ sh README.OpenBSD > man.conf.new"
-# Examine and install in /etc
-# if it appeases you
+# "$ sh ${_README_DIR}/${FULLPKGNAME} > man.conf.new"
+# Examine and install as /etc/man.conf
+# if it appeases you.
 #
 cat << "EOPATCH" | patch -p0 -s -o - /etc/man.conf
---- man.conf.orig	Wed Aug 27 13:13:13 2008
-+++ man.conf	Wed Aug 27 15:08:27 2008
+--- man.conf.orig
++++ man.conf
 @@ -7,6 +7,8 @@
  _whatdb		/usr/share/man/whatis.db
  _whatdb		/usr/local/man/whatis.db
  _whatdb		/usr/X11R6/man/whatis.db
-+_whatdb		${TRUEPREFIX}/lib/tcl8.5/man/whatis.db
-+_whatdb		${TRUEPREFIX}/lib/tk8.5/man/whatis.db
++_whatdb		/usr/local/man/tcl8.5/whatis.db
++_whatdb		/usr/local/man/tk8.5/whatis.db
  
  # Subdirectories for paths ending in '/', IN SEARCH ORDER.
  _subdir		cat1 man1 cat8 man8 cat6 man6 cat2 man2 cat3 man3 cat5 man5 cat7 man7 cat4 man4 cat9 man9 cat3p man3p cat3f man3f catn mann
-@@ -33,12 +35,14 @@
+@@ -31,12 +33,14 @@
  # directory with all of the subdirectories listed for the keyword _subdir.
  
  # default
 -_default	/usr/{share,X11R6,local}/man/
-+_default	/usr/{share,X11R6,local,local/lib/{tcl,tk}8.5}/man/
++_default	/usr/{share,X11R6,local}/man/{,{tcl,tk}8.5/}
  
  # Other sections that represent complete man subdirectories.
  X11		/usr/X11R6/man/
  X11R6		/usr/X11R6/man/
  local		/usr/local/man/
-+tcl		${TRUEPREFIX}/lib/tcl8.5/man/
-+tk		${TRUEPREFIX}/lib/tk8.5/man/
++tcl		/usr/local/man/tcl8.5/
++tk		/usr/local/man/tk8.5/
  
  # Specific section/directory combinations.
  1		/usr/{share,X11R6,local}/man/{cat,man}1
-@@ -54,4 +58,4 @@
+@@ -52,4 +56,4 @@
  7		/usr/{share,X11R6,local}/man/{cat,man}7
  8		/usr/{share,X11R6,local}/man/{cat,man}8
  9		/usr/share/man/{cat,man}9
 -n		/usr/local/man/{cat,man}n
-+n		/usr/{local,local/lib/{tcl,tk}8.5}/man/{cat,man}n
++n		/usr/local/man/{,{tcl,tk}8.5/}{cat,man}n
 EOPATCH
 
 # EOF

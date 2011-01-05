@@ -1,0 +1,16 @@
+$OpenBSD: patch-library_safe_tcl,v 1.1 2011/01/05 16:13:53 stu Exp $
+--- library/safe.tcl.orig	Thu Sep 23 17:54:01 2010
++++ library/safe.tcl	Fri Sep 24 03:28:58 2010
+@@ -492,9 +492,9 @@ proc ::safe::InterpInit {
+     # Sync the paths used to search for Tcl modules. This can be done only
+     # now, after tm.tcl was loaded.
+     namespace upvar ::safe S$slave state
+-    ::interp eval $slave [list \
+-	      ::tcl::tm::add {*}$state(tm_path_slave)]
+-
++    if {[llength $state(tm_path_slave)] > 0} {
++	::interp eval $slave [list ::tcl::tm::add {*}$state(tm_path_slave)]
++    }
+     return $slave
+ }
+ 

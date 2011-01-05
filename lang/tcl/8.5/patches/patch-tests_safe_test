@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_safe_test,v 1.1 2011/01/05 16:13:53 stu Exp $
+--- tests/safe.test.orig	Sat Sep 25 11:21:37 2010
++++ tests/safe.test	Sat Sep 25 11:24:25 2010
+@@ -197,7 +197,7 @@ test safe-7.2 {tests specific path and interpFind/AddT
+ 	    [catch {interp eval $i {package require http 1}} msg] $msg \
+ 	    [safe::interpConfigure $i]\
+ 	    [safe::interpDelete $i]
+-} -match glob -result "{\$p(:0:)} {\$p(:*:)} 1 {can't find package http 1} {-accessPath {[list $tcl_library * /dummy/unixlike/test/path]} -statics 0 -nested 1 -deleteHook {}} {}"
++} -match glob -result "{\$p(:0:)} {\$p(:*:)} 1 {can't find package http 1} {-accessPath {[list $tcl_library */dummy/unixlike/test/path]} -statics 0 -nested 1 -deleteHook {}} {}"
+ 
+ 
+ # test source control on file name

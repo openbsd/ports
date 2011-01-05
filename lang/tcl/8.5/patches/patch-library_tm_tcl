@@ -1,0 +1,18 @@
+$OpenBSD: patch-library_tm_tcl,v 1.1 2011/01/05 16:13:53 stu Exp $
+--- library/tm.tcl.orig	Mon Nov 10 12:57:10 2008
++++ library/tm.tcl	Fri Oct  1 03:31:35 2010
+@@ -321,10 +321,10 @@ proc ::tcl::tm::Defaults {} {
+ 
+     # Note that we're using [::list], not [list] because [list] means
+     # something other than [::list] in this namespace.
+-    roots [::list \
+-	    [file dirname [info library]] \
+-	    [file join [file dirname [file dirname $exe]] lib] \
+-	    ]
++
++    # OpenBSD layout
++    add [file join [info library] modules [info tclversion]] \
++	[file join [file dirname [info library]] modules [info tclversion]]
+ 
+     if {$tcl_platform(platform) eq "windows"} {
+ 	set sep ";"
