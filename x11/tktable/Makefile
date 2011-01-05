@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/01/05 17:03:34 stu Exp $
 
 COMMENT =		table/matrix widget extension to Tcl/Tk
 
@@ -6,8 +6,7 @@ DOTVER =		2.10
 VER =			${DOTVER:S/.//}
 DISTNAME =		Tktable${DOTVER}
 PKGNAME =		Tktable-${DOTVER}
-TKTABLE_LIB =		libTktable${VER}
-SUBST_VARS +=		TKTABLE_LIB
+REVISION =		0
 SHARED_LIBS =		Tktable${VER} 0.0
 CATEGORIES =		x11
 HOMEPAGE =		http://tktable.sourceforge.net/
@@ -37,6 +36,9 @@ CONFIGURE_ENV +=	SHLIB_VERSION=${LIBTktable${VER}_VERSION}
 
 REGRESS_IS_INTERACTIVE =x11
 REGRESS_TARGET =	test
+SUBST_VARS +=		TKTABLE_LIB
+
+TKTABLE_LIB =		libTktable${VER}
 
 SCRIPTS_TCLSH =		basic.tcl buttons.tcl command.tcl debug.tcl dynarows.tcl \
 			maxsize.tcl spreadsheet.tcl valid.tcl
@@ -44,13 +46,13 @@ SCRIPTS_TCLSH =		basic.tcl buttons.tcl command.tcl debug.tcl dynarows.tcl \
 EXAMPLE_FILES =		loadtable.tcl tcllogo.gif tktable.py
 
 pre-configure:
-	${MODTCL_TCLSH_ADJ} ${SCRIPTS_TCLSH:S!^!${WRKSRC}/demos/!}
+	@${MODTCL_TCLSH_ADJ} ${SCRIPTS_TCLSH:S!^!${WRKSRC}/demos/!}
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/tktable
+	${INSTALL_DATA_DIR} ${DESTDIR}${MODTCL_TCLDIR}/tktable
 	${INSTALL_DATA} ${WRKBUILD}/${TKTABLE_LIB}.so.${LIBTktable${VER}_VERSION} \
 		${WRKBUILD}/pkgIndex.tcl ${WRKSRC}/library/tkTable.tcl \
-		${WRKSRC}/library/tktable.py ${PREFIX}/lib/tktable
+		${WRKSRC}/library/tktable.py ${DESTDIR}${MODTCL_TCLDIR}/tktable
 	${INSTALL_DATA_DIR} ${PREFIX}/man/mann
 	${INSTALL_DATA} ${WRKSRC}/doc/tkTable.n ${PREFIX}/man/mann/tktable.n
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tktable

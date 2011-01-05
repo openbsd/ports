@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/03/19 12:39:08 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/01/05 17:03:34 stu Exp $
 %%SHARED%%
-lib/tktable/
-lib/tktable/pkgIndex.tcl
-lib/tktable/tkTable.tcl
-lib/tktable/tktable.py
+lib/tcl/tktable/
+lib/tcl/tktable/pkgIndex.tcl
+lib/tcl/tktable/tkTable.tcl
+lib/tcl/tktable/tktable.py
 @man man/mann/tktable.n
 share/doc/tktable/
 share/doc/tktable/README.txt
