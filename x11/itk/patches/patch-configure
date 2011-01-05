@@ -1,6 +1,6 @@
 --- configure.orig	Fri Mar 25 20:39:53 2005
-+++ configure	Wed Oct 25 16:48:46 2006
-@@ -8830,11 +8830,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&
++++ configure	Wed Dec 22 15:24:32 2010
+@@ -8830,11 +8830,11 @@ if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
    $EGREP "yes" >/dev/null 2>&1; then
    echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6
@@ -14,7 +14,7 @@
  
  fi
  rm -f conftest*
-@@ -10117,21 +10117,6 @@ echo "${ECHO_T}enabled $tcl_ok debugging
+@@ -10117,21 +10117,6 @@ echo "${ECHO_T}enabled $tcl_ok debugging" >&6
  # link against the non-stubbed Tcl library.
  #--------------------------------------------------------------------
  

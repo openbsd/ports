@@ -1,0 +1,15 @@
+$OpenBSD: patch-generic_itk_cmds_c,v 1.1 2011/01/05 19:15:09 sebastia Exp $
+
+On OpenBSD we only install one version
+
+--- generic/itk_cmds.c.orig	Wed Dec 22 15:25:01 2010
++++ generic/itk_cmds.c	Wed Dec 22 15:25:12 2010
+@@ -67,7 +67,7 @@ namespace eval ::itk {\n\
+             if {[info exists env(ITK_LIBRARY)]} {\n\
+                 lappend dirs $env(ITK_LIBRARY)\n\
+             }\n\
+-            lappend dirs [file join [file dirname $tcl_library] itk$version]\n\
++            lappend dirs [file join [file dirname $tcl_library] itk]\n\
+             set bindir [file dirname [info nameofexecutable]]\n\
+             lappend dirs [file join $bindir .. lib itk$version]\n\
+             lappend dirs [file join $bindir .. library]\n\
