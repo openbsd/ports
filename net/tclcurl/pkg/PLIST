@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/03/16 10:38:09 sthen Exp $
-lib/tcl${MODTCL_VERSION}/tclcurl0.105/
-lib/tcl${MODTCL_VERSION}/tclcurl0.105/libtclcurl0105.so
-lib/tcl${MODTCL_VERSION}/tclcurl0.105/pkgIndex.tcl
-lib/tcl${MODTCL_VERSION}/tclcurl0.105/tclcurl.tcl
+@comment $OpenBSD: PLIST,v 1.5 2011/01/05 19:30:26 stu Exp $
+lib/tcl/tclcurl/
+@lib lib/tcl/tclcurl/libTclCurl7196.so.${LIBTclCurl7196_VERSION}
+lib/tcl/tclcurl/pkgIndex.tcl
+lib/tcl/tclcurl/tclcurl.tcl
 @man man/mann/tclcurl.n
 @man man/mann/tclcurl_multi.n
+@man man/mann/tclcurl_share.n
