@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/01/05 07:06:13 kevlo Exp $
 
 COMMENT=	secure concurrent multi-server terminal control
 
-DISTNAME=	clusterssh-3.27
+DISTNAME=	App-ClusterSSH-4.00_06
+PKGNAME=	clusterssh-4.00.06
 
 CATEGORIES=	security
 
@@ -18,17 +19,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=clusterssh/}
 
+MODULES=	cpan
 RUN_DEPENDS=	x11/p5-Tk \
 		x11/p5-X11-Protocol
 BUILD_DEPENDS=	${RUN_DEPENDS}
+REGRESS_DEPENDS=devel/p5-Test-Trap
 
-CONFIGURE_STYLE=gnu
-USE_GROFF =	Yes
+MAKE_ENV=	TEST_POD=Yes
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/src/cssh ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/src/cssh.1 ${PREFIX}/man/man1
-	ln -s cssh ${PREFIX}/bin/crsh
-	ln -s cssh ${PREFIX}/bin/ctel
+USE_GROFF=	Yes
 
 .include <bsd.port.mk>

@@ -1,5 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/01/04 14:04:10 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/01/05 07:06:13 kevlo Exp $
 bin/crsh
+bin/cscp
 bin/cssh
 bin/ctel
+${P5SITE}/App/
+${P5SITE}/App/ClusterSSH/
+${P5SITE}/App/ClusterSSH.pm
+${P5SITE}/App/ClusterSSH/Base.pm
+${P5SITE}/App/ClusterSSH/Host.pm
+${P5SITE}/App/ClusterSSH/L10N/
+${P5SITE}/App/ClusterSSH/L10N.pm
+${P5SITE}/App/ClusterSSH/L10N/en.pm
+@man man/man1/crsh.1
 @man man/man1/cssh.1
+@man man/man1/ctel.1
+@man man/man3p/App::ClusterSSH.3p
+@man man/man3p/App::ClusterSSH::Base.3p
+@man man/man3p/App::ClusterSSH::Host.3p
+@man man/man3p/App::ClusterSSH::L10N.3p
+@man man/man3p/App::ClusterSSH::L10N::en.3p
