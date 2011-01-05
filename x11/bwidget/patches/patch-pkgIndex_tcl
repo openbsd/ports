@@ -1,0 +1,12 @@
+$OpenBSD: patch-pkgIndex_tcl,v 1.1 2011/01/05 17:07:26 stu Exp $
+--- pkgIndex.tcl.orig	Fri Dec 17 22:37:15 2010
++++ pkgIndex.tcl	Fri Dec 17 22:37:21 2010
+@@ -1,7 +1,7 @@
+ if {[catch {package require Tcl}]} return
+ package ifneeded BWidget 1.9.4 "\
+     package require Tk 8.1.1;\
+-    [list tclPkgSetup $dir BWidget 1.9.3 {
++    [list tclPkgSetup $dir BWidget 1.9.4 {
+ {arrow.tcl source {ArrowButton ArrowButton::create ArrowButton::use}}
+ {labelframe.tcl source {LabelFrame LabelFrame::create LabelFrame::use}}
+ {labelentry.tcl source {LabelEntry LabelEntry::create LabelEntry::use}}
