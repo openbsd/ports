@@ -1,4 +1,4 @@
-# $OpenBSD: tcl.port.mk,v 1.10 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: tcl.port.mk,v 1.11 2011/01/05 16:03:44 stu Exp $
 
 CATEGORIES +=		lang/tcl
 
@@ -14,7 +14,9 @@ MODTCL_LIB ?=		tcl85
 
 MODTCL_BIN ?=		${LOCALBASE}/bin/tclsh${MODTCL_VERSION}
 MODTCL_INCDIR ?=	${LOCALBASE}/include/tcl${MODTCL_VERSION}
-MODTCL_LIBDIR ?=	${LOCALBASE}/lib/tcl${MODTCL_VERSION}
+MODTCL_TCLDIR ?=	${LOCALBASE}/lib/tcl
+MODTCL_MODDIR ?=	${LOCALBASE}/lib/tcl/modules
+MODTCL_LIBDIR ?=	${MODTCL_TCLDIR}/tcl${MODTCL_VERSION}
 MODTCL_CONFIG ?=	${MODTCL_LIBDIR}/tclConfig.sh
 
 MODTCL_BUILD_DEPENDS ?=	${_MODTCL_SPEC}:lang/tcl/${MODTCL_VERSION}

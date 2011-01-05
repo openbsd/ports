@@ -1,4 +1,4 @@
-# $OpenBSD: tk.port.mk,v 1.10 2010/11/22 08:37:04 espie Exp $
+# $OpenBSD: tk.port.mk,v 1.11 2011/01/05 16:04:14 stu Exp $
 
 CATEGORIES +=		x11/tk
 
@@ -15,7 +15,7 @@ MODTK_LIB ?=		tk85
 
 MODTK_BIN ?=		${LOCALBASE}/bin/wish${MODTK_VERSION}
 MODTK_INCDIR ?=		${LOCALBASE}/include/tk${MODTK_VERSION}
-MODTK_LIBDIR ?=		${LOCALBASE}/lib/tk${MODTK_VERSION}
+MODTK_LIBDIR ?=		${MODTCL_TCLDIR}/tk${MODTK_VERSION}
 MODTK_CONFIG ?=		${MODTK_LIBDIR}/tkConfig.sh
 
 
