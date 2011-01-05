@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/01/05 18:33:14 sebastia Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	image extension for Tcl/Tk
 
 V =		1.4
+REVISION =	0
 DISTNAME =	tkimg$V
 PKGNAME =	tkimg-$V
 SHLIB_VERSION =	0.0
@@ -40,7 +41,8 @@ REGRESS_DEPENDS =	${PKGPATH}
 
 SEPARATE_BUILD =	simple
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS= --with-tcl=${MODTCL_LIBDIR} \
+CONFIGURE_ARGS= --libdir=${MODTCL_TCLDIR} \
+		--with-tcl=${MODTCL_LIBDIR} \
 		--with-tclinclude=$(MODTCL_INCDIR) \
 		--with-tk=${MODTK_LIBDIR} \
 		--with-tkinclude=${MODTK_INCDIR} \
@@ -49,7 +51,11 @@ CONFIGURE_ARGS= --with-tcl=${MODTCL_LIBDIR} \
 REGRESS_IS_INTERACTIVE = X11
 REGRESS_TARGET =	test
 INSTALL_TARGET =	collate
-FAKE_FLAGS+=		INSTALL_ROOT=${DESTDIR}
+FAKE_FLAGS =		INSTALL_ROOT=${DESTDIR} LIB_RUNTIME_DIR=${MODTCL_TCLDIR}/tkimg
 CONFIGURE_ENV = 	SHLIB_VERSION=${SHLIB_VERSION}
+
+post-install:
+	echo 'set auto_path [concat $$auto_path $$dir]' > \
+		${DESTDIR}${MODTCL_TCLDIR}/tkimg/pkgIndex.tcl 
 
 .include <bsd.port.mk>
