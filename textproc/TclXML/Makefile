@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/20 19:56:47 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/01/05 19:28:35 landry Exp $
 
 COMMENT=	pure-Tcl implementation of XML parser
 
 DISTNAME=	TclXML-1.2.1
-REVISION =	0
+REVISION =	1
 CATEGORIES=	textproc
 
 MASTER_SITES=	ftp://ftp.zveno.com/TclXML/
@@ -24,7 +24,7 @@ NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
 
-INSTDIR=	${WRKINST}/${MODTCL_LIBDIR}/TclXML
+INSTDIR=	${WRKINST}/${MODTCL_TCLDIR}/TclXML
 DOCDIR=		${PREFIX}/share/doc/TclXML
 
 do-install:

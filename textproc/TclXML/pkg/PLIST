@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/03/18 19:45:02 sthen Exp $
-lib/tcl${MODTCL_VERSION}/TclXML/
-lib/tcl${MODTCL_VERSION}/TclXML/pkgIndex.tcl
-lib/tcl${MODTCL_VERSION}/TclXML/sgml.tcl
-lib/tcl${MODTCL_VERSION}/TclXML/xml.tcl
+@comment $OpenBSD: PLIST,v 1.7 2011/01/05 19:28:35 landry Exp $
+lib/tcl/TclXML/
+lib/tcl/TclXML/pkgIndex.tcl
+lib/tcl/TclXML/sgml.tcl
+lib/tcl/TclXML/xml.tcl
 share/doc/TclXML/
 share/doc/TclXML/reference.html
