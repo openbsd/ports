@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/01/05 12:04:32 ajacoutot Exp $
 
 COMMENT=	IDE for the .NET platform
 DISTNAME=	monodevelop-2.4
 CATEGORIES=	devel lang
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/monodevelop/
 EXTRACT_SUFX=	.tar.bz2
+
+REVISION=	0
 
 HOMEPAGE=	http://monodevelop.com/
 
@@ -15,7 +17,12 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
+
+# XXX
+# System.UnauthorizedAccessException:
+#     Access to the path "$HOME/.config/.mono" is denied.
+NO_SYSTRACE=	Yes
 
 MODULES=	lang/mono
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -36,7 +43,8 @@ CONFIGURE_ARGS=	--disable-update-mimedb \
 		--enable-gnomeplatform
 
 DLLMAP_FILES=	src/core/Mono.Texteditor/Mono.TextEditor.PopupWindow/TooltipWindow.cs \
-		src/core/MonoDevelop.Projects/MonoDevelop.Projects.dll.config \
+		src/core/Mono.Texteditor/Mono.TextEditor.dll.config \
+		src/core/MonoDevelop.Core/MonoDevelop.Core.dll.config \
 		src/addins/GnomePlatform/GnomePlatform.dll.config \
 		src/addins/VersionControl/MonoDevelop.VersionControl.Subversion/MonoDevelop.VersionControl.Subversion.dll.config \
 		src/addins/VersionControl/MonoDevelop.VersionControl.Subversion/MonoDevelop.VersionControl.Subversion/LibSvnClient.cs \
