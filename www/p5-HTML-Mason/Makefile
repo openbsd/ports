@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/22 08:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/01/05 17:43:48 dhill Exp $
 
 COMMENT=	high-performance dynamic web authoring system
 
 MODULES=	cpan
-DISTNAME=	HTML-Mason-1.42
+DISTNAME=	HTML-Mason-1.45
 CATEGORIES=	www
 USE_GROFF =	Yes
 
 HOMEPAGE=	http://www.masonhq.com/
-MAINTAINER=	Michael Coulter <mjc@openbsd.org>
+MAINTAINER=	David Hill <dhill@openbsd.org>
 
 # Artistic License
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,12 +17,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/p5-Params-Validate>=0.74 \
-		www/mod_perl>=1.27 \
-		www/p5-libapreq>=1.1 \
-		devel/p5-Exception-Class>=1.19 \
+RUN_DEPENDS=	devel/p5-Cache-Cache>=1.02 \
 		devel/p5-Class-Container>=0.10 \
-		devel/p5-Cache-Cache>=1.02
+		devel/p5-Exception-Class>=1.19 \
+		devel/p5-Params-Validate>=0.74 \
+		devel/p5-Log-Any \
+		devel/p5-Test-Deep \
+		www/p5-HTML-Parser \
+		www/p5-libapreq>=1.1 \
+		www/mod_perl>=1.27 
 
 MAKE_ENV=       TEST_POD=Yes
 
