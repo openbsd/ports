@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_player_c,v 1.2 2010/05/13 18:35:51 dcoppa Exp $
+$OpenBSD: patch-src_player_c,v 1.3 2011/01/05 14:06:51 dcoppa Exp $
 
 Our faad port uses a patched neaacdec.h header
+Fix audio playback on big-endian machines
 
---- src/player.c.orig	Tue Mar 16 20:29:34 2010
-+++ src/player.c	Mon Mar 29 15:44:59 2010
+--- src/player.c.orig	Sat Nov  6 13:38:14 2010
++++ src/player.c	Wed Jan  5 14:30:26 2011
 @@ -185,7 +185,7 @@ static WaitressCbReturn_t BarPlayerAACCb (void *ptr, s
  					/* +1+4 needs to be replaced by <something>! */
  					player->bufferRead += 1+4;
@@ -13,3 +14,21 @@ Our faad port uses a patched neaacdec.h header
  							&player->channels);
  					player->bufferRead += 5;
  					if (err != 0) {
+@@ -199,7 +199,7 @@ static WaitressCbReturn_t BarPlayerAACCb (void *ptr, s
+ 					format.bits = 16;
+ 					format.channels = player->channels;
+ 					format.rate = player->samplerate;
+-					format.byte_format = AO_FMT_LITTLE;
++					format.byte_format = AO_FMT_NATIVE;
+ 					if ((player->audioOutDevice = ao_open_live (audioOutDriver,
+ 							&format, NULL)) == NULL) {
+ 						/* we're not interested in the errno */
+@@ -358,7 +358,7 @@ static WaitressCbReturn_t BarPlayerMp3Cb (void *ptr, s
+ 			format.bits = 16;
+ 			format.channels = player->channels;
+ 			format.rate = player->samplerate;
+-			format.byte_format = AO_FMT_LITTLE;
++			format.byte_format = AO_FMT_NATIVE;
+ 			if ((player->audioOutDevice = ao_open_live (audioOutDriver,
+ 					&format, NULL)) == NULL) {
+ 				player->aoError = 1;
