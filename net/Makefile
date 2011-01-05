@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.673 2011/01/05 14:14:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.674 2011/01/05 23:09:44 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -297,6 +297,7 @@
      SUBDIR += p5-Net-Ping-External
      SUBDIR += p5-Net-Radius
      SUBDIR += p5-Net-RawIP
+     SUBDIR += p5-Net-Server-SS-PreFork
      SUBDIR += p5-Net-SFTP
      SUBDIR += p5-Net-SFTP-Foreign
      SUBDIR += p5-Net-SMTP-SSL
