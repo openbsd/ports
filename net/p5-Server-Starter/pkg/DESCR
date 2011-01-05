@@ -1,0 +1,8 @@
+It is often a pain to write a server program that supports graceful
+restarts, with no resource leaks. Server::Starter, solves the problem by
+splitting the task into two. One is start_server, a script provided as a
+part of the module, which works as a superdaemon that binds to zero or
+more TCP ports, and repeatedly spawns the server program that actually
+handles the necessary tasks (for example, responding to incoming
+commenctions). The spawned server programs under Server::Starter call
+accept(2) and handle the requests.
