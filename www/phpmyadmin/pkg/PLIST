@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2010/09/14 07:09:57 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.31 2011/01/05 11:48:02 jasper Exp $
 @group daemon
 phpMyAdmin/
 phpMyAdmin/CREDITS
@@ -603,12 +603,9 @@ phpMyAdmin/robots.txt
 phpMyAdmin/scripts/
 phpMyAdmin/scripts/check_lang.php
 phpMyAdmin/scripts/convertcfg.pl
-phpMyAdmin/scripts/create-release.sh
 phpMyAdmin/scripts/create_tables.sql
 phpMyAdmin/scripts/decode_bug.php
 phpMyAdmin/scripts/find_unused_messages.sh
-phpMyAdmin/scripts/lang-cleanup.sh
-phpMyAdmin/scripts/remove_control_m.sh
 phpMyAdmin/scripts/signon.php
 phpMyAdmin/scripts/update-from-po
 phpMyAdmin/scripts/upgrade.pl
