@@ -1,4 +1,5 @@
-@comment $OpenBSD: PFRAG.shared,v 1.9 2010/09/24 14:16:50 sebastia Exp $
-lib/expect5.44.1.15/
-@lib lib/expect5.44.1.15/libexpect544115.so.${LIBexpect544115_VERSION}
-lib/expect5.44.1.15/pkgIndex.tcl
+@comment $OpenBSD: PFRAG.shared,v 1.10 2011/01/05 18:45:45 sebastia Exp $
+@lib lib/libexpect544115.so.${LIBexpect544115_VERSION}
+lib/tcl/
+lib/tcl/expect/
+lib/tcl/expect/pkgIndex.tcl
