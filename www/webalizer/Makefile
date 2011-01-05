@@ -1,34 +1,38 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2011/01/05 08:19:18 giovanni Exp $
 
 COMMENT=	web server log file analysis program
 
-DISTNAME=	webalizer-2.01-10-RB21-src
-PKGNAME=	webalizer-2.01.10
-REVISION=	8
+V=		28
+DISTNAME=	webalizer-2.23-03-RB${V}-src
+PKGNAME=	webalizer-2.23.03.${V}
 CATEGORIES=	www
-MASTER_SITES=	http://www.patrickfrei.ch/webalizer/rb21/
+MASTER_SITES=	http://www.patrickfrei.ch/webalizer/rb${V}/
 
 HOMEPAGE=	http://www.patrickfrei.ch/webalizer/
 
-LIB_DEPENDS=	graphics/gd \
+MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
+
+LIB_DEPENDS=	databases/db/v4 \
+		graphics/gd \
 		net/GeoIP
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes 
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes 
-WANTLIB=		c jpeg m png z gd>=18 GeoIP>=5
+WANTLIB=		c db jpeg m png z gd>=18 GeoIP>=5
 
-MODULES=	converters/libiconv
-
-WRKDIST=	${WRKDIR}/webalizer-2.01-10-RB21
+WRKDIST=	${WRKDIR}/webalizer-2.23-03-RB${V}
 
 CONFIGURE_STYLE= gnu dest
-CONFIGURE_ARGS=	--enable-dns --enable-geoip
+CONFIGURE_ARGS=	--enable-dns --enable-geoip \
+		--with-db=${LOCALBASE}/include/db4 \
+		--with-dblib=${LOCALBASE}/lib/db4 \
+		--with-gd=${LOCALBASE}/include \
+		--mandir=${PREFIX}/man
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		LIBS="-ljpeg"
-USE_GROFF =	Yes
 
 NO_REGRESS=	Yes
 
@@ -37,7 +41,6 @@ pre-patch:
 	    mv ${WRKSRC}/sample.conf.new ${WRKSRC}/sample.conf
 
 post-install:
-	cd ${PREFIX}/bin && ln -s webalizer webazolver
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/webalizer
 	${INSTALL_DATA} ${WRKSRC}/DNS.README ${PREFIX}/share/doc/webalizer/
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/webalizer/

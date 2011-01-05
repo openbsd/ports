@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/11/08 16:52:12 pvalchev Exp $
-bin/webalizer
+@comment $OpenBSD: PLIST,v 1.6 2011/01/05 08:19:18 giovanni Exp $
+@bin bin/wcmgr
+@bin bin/webalizer
 bin/webazolver
+@man man/man1/wcmgr.1
 @man man/man1/webalizer.1
+@man man/man1/webazolver.1
 share/doc/webalizer/
 share/doc/webalizer/DNS.README
 share/doc/webalizer/README

@@ -1,26 +1,17 @@
-$OpenBSD: patch-dns_resolv_c,v 1.4 2008/01/30 20:06:48 mbalmer Exp $
---- dns_resolv.c.orig	Mon Aug  6 18:29:25 2007
-+++ dns_resolv.c	Wed Jan 30 13:24:39 2008
-@@ -158,7 +158,7 @@ void resolve_dns(struct log_struct *log_rec)
-       case  0:
-       {
-          memcpy(&alignedRecord, response.data, sizeof(struct dnsRecord));
--         strncpy (log_rec->hostname,
-+         strlcpy (log_rec->hostname,
-                   ((struct dnsRecord *)response.data)->hostName,
-                   MAXHOST);
-          log_rec->hostname[MAXHOST-1]=0;
-@@ -269,7 +269,7 @@ int dns_resolver(void *log_fp)
+$OpenBSD: patch-dns_resolv_c,v 1.5 2011/01/05 08:19:18 giovanni Exp $
+--- dns_resolv.c.orig	Mon Oct  4 19:30:36 2010
++++ dns_resolv.c	Mon Jan  3 11:45:53 2011
+@@ -244,7 +244,7 @@ int dns_resolver(void *log_fp)
+          continue;                        /* go get next record if any    */
        }
  
-       memset(tmp_buf, 0, sizeof(tmp_buf));
--      strncpy(tmp_buf, buffer, sizeof(tmp_buf)-1);            /* save buffer in case of error */
+-      strcpy(tmp_buf, buffer);            /* save buffer in case of error */
 +      strlcpy(tmp_buf, buffer, sizeof(tmp_buf));            /* save buffer in case of error */
        if(parse_record(buffer))            /* parse the record             */
        {
           struct addrinfo hints, *ares;
-@@ -460,8 +460,8 @@ static void process_list(DNODEPTR l_list)
- 
+@@ -418,8 +418,8 @@ static void process_list(DNODEPTR l_list)
+                      {
                          /* If long hostname, take max domain name part */
                          if ((size = strlen(hbuf)) > MAXHOST-2)
 -                           strcpy(child_buf,(hbuf+(size-MAXHOST+1)));

@@ -1,15 +1,7 @@
-$OpenBSD: patch-linklist_c,v 1.2 2008/01/30 20:06:48 mbalmer Exp $
---- linklist.c.orig	Tue Jan  2 14:20:19 2007
-+++ linklist.c	Wed Jan 30 13:41:00 2008
-@@ -38,6 +38,7 @@
- #include <ctype.h>
- #include <sys/utsname.h>
- #include <sys/times.h>
-+#include <sys/socket.h>
- 
- /* ensure getopt */
- #ifdef HAVE_GETOPT_H
-@@ -118,7 +119,7 @@ NLISTPTR new_nlist(char *str)
+$OpenBSD: patch-linklist_c,v 1.3 2011/01/05 08:19:18 giovanni Exp $
+--- linklist.c.orig	Mon Oct  4 19:30:36 2010
++++ linklist.c	Mon Jan  3 11:30:14 2011
+@@ -109,7 +109,7 @@ NLISTPTR new_nlist(char *str)
      fprintf(stderr,"[new_nlist] %s\n",msg_big_one);
     }
     if (( newptr = malloc(sizeof(struct nlist))) != NULL)
@@ -18,7 +10,7 @@ $OpenBSD: patch-linklist_c,v 1.2 2008/01/30 20:06:48 mbalmer Exp $
     return newptr;
  }
  
-@@ -176,8 +177,8 @@ GLISTPTR new_glist(char *str, char *name)
+@@ -167,8 +167,8 @@ GLISTPTR new_glist(char *str, char *name)
     }
     if (( newptr = malloc(sizeof(struct glist))) != NULL)
       {
@@ -29,13 +21,3 @@ $OpenBSD: patch-linklist_c,v 1.2 2008/01/30 20:06:48 mbalmer Exp $
         newptr->next=NULL;
       }
     return newptr;
-@@ -194,8 +195,7 @@ int add_glist(char *str, GLISTPTR *list)
-    char *name=temp_buf;
- 
-    /* make local copy of string */
--   strncpy(temp_buf,str,255);
--   temp_buf[255]=0;
-+   strlcpy(temp_buf,str,sizeof temp_buf);
- 
-    while (!isspace((int)*name)&&*name!=0) name++;
-    if (*name==0) name=temp_buf;

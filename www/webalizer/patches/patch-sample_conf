@@ -1,16 +1,16 @@
-$OpenBSD: patch-sample_conf,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
---- sample.conf.orig	Mon Aug  6 18:30:26 2007
-+++ sample.conf	Wed Jan 30 13:32:11 2008
-@@ -27,7 +27,7 @@
- # the log filename ends in '.gz' (ie: a gzip compressed file), it will
- # be decompressed on the fly as it is being read.
+$OpenBSD: patch-sample_conf,v 1.4 2011/01/05 08:19:18 giovanni Exp $
+--- sample.conf.orig	Mon Jan  3 11:30:14 2011
++++ sample.conf	Mon Jan  3 11:30:14 2011
+@@ -28,7 +28,7 @@
+ # (bzip2 compressed file), it will be decompressed on the fly as it
+ # is being read.
  
 -#LogFile        /var/lib/httpd/logs/access_log
 +#LogFile        /var/www/logs/access_log
  
  # LogType defines the log type being processed.  Normally, the Webalizer
  # expects a CLF or Combined web server log as input.  Using this option,
-@@ -41,7 +41,7 @@
+@@ -42,7 +42,7 @@
  # should be a full path name, however relative ones might work as well.
  # If no output directory is specified, the current directory will be used.
  
@@ -18,4 +18,4 @@ $OpenBSD: patch-sample_conf,v 1.3 2008/01/30 20:06:48 mbalmer Exp $
 +#OutputDir      /var/www/htdocs/usage
  
  # HistoryName allows you to specify the name of the history file produced
- # by the Webalizer.  The history file keeps the data for up to 12 months
+ # by the Webalizer.  The history file keeps the data for previous months,

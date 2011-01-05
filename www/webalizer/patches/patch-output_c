@@ -1,46 +1,32 @@
-$OpenBSD: patch-output_c,v 1.2 2008/01/30 20:06:48 mbalmer Exp $
---- output.c.orig	Tue Aug  7 13:28:49 2007
-+++ output.c	Wed Jan 30 13:42:20 2008
-@@ -38,6 +38,7 @@
- #include <ctype.h>
- #include <sys/utsname.h>
- #include <sys/times.h>
-+#include <sys/socket.h>
- #include <stddef.h>
+$OpenBSD: patch-output_c,v 1.3 2011/01/05 08:19:18 giovanni Exp $
+--- output.c.orig	Thu Dec 30 14:52:23 2010
++++ output.c	Mon Jan  3 11:50:14 2011
+@@ -321,8 +321,8 @@ int write_month_html()
+    /* fill in filenames */
+    snprintf(html_fname,sizeof(html_fname),"usage_%04d%02d.%s",
+             cur_year,cur_month,html_ext);
+-   sprintf(png1_fname,"daily_usage_%04d%02d.png",cur_year,cur_month);
+-   sprintf(png2_fname,"hourly_usage_%04d%02d.png",cur_year,cur_month);
++   snprintf(png1_fname, sizeof(png1_fname), "daily_usage_%04d%02d.png",cur_year,cur_month);
++   snprintf(png2_fname, sizeof(png2_fname), "hourly_usage_%04d%02d.png",cur_year,cur_month);
  
- /* ensure limits */
-@@ -569,7 +570,7 @@ void month_links()
-    char index_fname[256];
-    
-    fprintf(out_fp,"<SMALL>\n");
--   sprintf(index_fname,"index.%s",html_ext);
-+   snprintf(index_fname,sizeof index_fname, "index.%s",html_ext);
-    fprintf(out_fp, "<A HREF=\"%s\">[%s]</A>\n", index_fname, msg_hlnk_in);
-    if (ntop_notfound && response[21].count)
-       fprintf(out_fp,"<A HREF=\"#ERRORSTATS\">[%s]</A>\n",msg_hlnk_nf);
-@@ -818,8 +819,8 @@ void month_total_table()
-          }
+    /* create PNG images for web page */
+    if (daily_graph)
+@@ -2707,7 +2707,7 @@ void top_ctry_table()
        }
+       snprintf(pie_title,sizeof(pie_title),"%s %s %d",
+                msg_ctry_use,l_month[cur_month-1],cur_year);
+-      sprintf(pie_fname,"ctry_usage_%04d%02d.png",cur_year,cur_month);
++      snprintf(pie_fname, sizeof(pie_fname), "ctry_usage_%04d%02d.png",cur_year,cur_month);
  
--      sprintf(pie_title,"%s %s %d",msg_mtot_rc,l_month[cur_month-1],cur_year);
--      sprintf(pie_fname,"responses_%04d%02d.png",cur_year,cur_month);
-+      snprintf(pie_title,sizeof pie_title,"%s %s %d",msg_mtot_rc,l_month[cur_month-1],cur_year);
-+      snprintf(pie_fname,sizeof pie_fname,"responses_%04d%02d.png",cur_year,cur_month);
-       
-       pie_chart(pie_fname,pie_title,t_hit,pie_data,pie_legend);
-       
-@@ -971,12 +972,12 @@ int all_errors_page()
-    int i;
+       pie_chart(pie_fname,pie_title,t_hit,pie_data,pie_legend);  /* do it   */
  
-    /* generate file name */
--   sprintf(error_fname,"error_%04d%02d.%s",cur_year,cur_month,html_ext);
-+   snprintf(error_fname,sizeof error_fname,"error_%04d%02d.%s",cur_year,cur_month,html_ext);
- 
-    /* open file */
-    if ( (out_fp=open_out_file(error_fname))==NULL ) return 0;
- 
--   sprintf(buffer,"%s %d - %s",l_month[cur_month-1],cur_year,msg_h_url);
-+   snprintf(buffer,sizeof buffer,"%s %d - %s",l_month[cur_month-1],cur_year,msg_h_url);
-    write_html_head(buffer, out_fp);
- 
-    fprintf(out_fp,"<FONT SIZE=\"-1\"></CENTER><PRE>\n");
+@@ -3366,7 +3366,7 @@ int write_main_index()
+             --i; // reduce loop-counter to keep the number of required months
+             continue;
+          }
+-         sprintf(filename,"usage_%04d%02d.%s",last_year, last_month, html_ext);
++         snprintf(filename, sizeof(filename), "usage_%04d%02d.%s",last_year, last_month, html_ext);
+          if (stat(filename, &st)==0) // check if file exists
+          {
+             fprintf(out_fp,"<TD WIDTH=\"16.66%%\"><A HREF=\"usage_%04d%02d.%s\">" \

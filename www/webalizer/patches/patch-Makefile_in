@@ -1,16 +1,30 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2008/01/30 20:06:48 mbalmer Exp $
---- Makefile.in.orig	Tue Jan  2 14:04:23 2007
-+++ Makefile.in	Wed Jan 30 13:21:35 2008
-@@ -87,9 +87,9 @@ distclean: clean
+$OpenBSD: patch-Makefile_in,v 1.8 2011/01/05 08:19:18 giovanni Exp $
+--- Makefile.in.orig	Mon Oct  4 19:30:36 2010
++++ Makefile.in	Mon Jan  3 12:22:30 2011
+@@ -91,18 +91,14 @@ distclean: clean
+ 	@LN_S@ lang/webalizer_lang.@DEFAULT_LANG@ webalizer_lang.h
+ 
  install: all
- 	$(INSTALL_PROGRAM) webalizer ${BINDIR}/webalizer
- 	$(INSTALL_DATA) webalizer.1 ${MANDIR}/webalizer.1
--	$(INSTALL_DATA) sample.conf ${ETCDIR}/webalizer.conf.sample
--	rm -f ${BINDIR}/webazolver
--	@LN_S@ ${BINDIR}/webalizer ${BINDIR}/webazolver
-+#	$(INSTALL_DATA) sample.conf ${ETCDIR}/webalizer.conf.sample
-+#	rm -f ${BINDIR}/webazolver
-+#	@LN_S@ ${BINDIR}/webalizer ${BINDIR}/webazolver
+-	mkdir -p ${DESTDIR}${BINDIR}
+-	mkdir -p ${DESTDIR}${MANDIR}
+-	mkdir -p ${DESTDIR}${ETCDIR}
+-	$(INSTALL_PROGRAM) webalizer ${DESTDIR}${BINDIR}/webalizer
+-	$(INSTALL_PROGRAM) wcmgr ${DESTDIR}${BINDIR}/wcmgr
+-	rm -f ${DESTDIR}${BINDIR}/webazolver
+-	@LN_S@ webalizer ${DESTDIR}${BINDIR}/webazolver
+-	$(INSTALL_DATA) webalizer.1 ${DESTDIR}${MANDIR}/webalizer.1
+-	$(INSTALL_DATA) wcmgr.1 ${DESTDIR}${MANDIR}/wcmgr.1
+-	rm -f ${DESTDIR}${MANDIR}/webazolver.1
+-	@LN_S@ webalizer.1 ${DESTDIR}${MANDIR}/webazolver.1
+-	$(INSTALL_DATA) sample.conf ${DESTDIR}${ETCDIR}/webalizer.conf.sample
++	$(INSTALL_PROGRAM) webalizer ${BINDIR}/webalizer
++	$(INSTALL_PROGRAM) wcmgr ${BINDIR}/wcmgr
++	rm -f ${PREFIX}/bin/webazolver
++	@LN_S@ webalizer ${BINDIR}/webazolver
++	$(INSTALL_DATA) webalizer.1 ${PREFIX}/man/man1/webalizer.1
++	$(INSTALL_DATA) wcmgr.1 ${PREFIX}/man/man1/wcmgr.1
++	rm -f ${PREFIX}/man/man1/webazolver.1
++	@LN_S@ webalizer.1 ${PREFIX}/man/man1/webazolver.1
  
  uninstall:
- 	rm -f ${BINDIR}/webalizer
+ 	rm -f ${DESTDIR}${BINDIR}/webalizer
