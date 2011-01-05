@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:45 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/01/05 06:47:08 ajacoutot Exp $
 
 COMMENT=	tiny download accelerator
-DISTNAME=	axel-1.1
+DISTNAME=	axel-2.4
 CATEGORIES=	net
 
 HOMEPAGE=	http://axel.alioth.debian.org/
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes 
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/2287/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3015/
 
 WANTLIB=	c pthread
 
