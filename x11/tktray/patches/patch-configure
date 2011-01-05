@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.2 2010/07/16 11:25:12 sebastia Exp $
+$OpenBSD: patch-configure,v 1.3 2011/01/05 17:47:49 sebastia Exp $
 
 remove parameters that gcc2 doesn't know of, and do not overwrite CFLAGS_OPTIMIZE
 
---- configure.orig	Sat May 15 13:48:50 2010
-+++ configure	Fri Jul 16 12:36:32 2010
+--- configure.orig	Thu Jul 15 11:04:48 2010
++++ configure	Wed Dec  8 22:50:09 2010
 @@ -6401,12 +6401,12 @@ fi
      ECHO_VERSION='`echo ${PACKAGE_VERSION}`'
      TCL_LIB_VERSIONS_OK=ok
@@ -20,3 +20,11 @@ remove parameters that gcc2 doesn't know of, and do not overwrite CFLAGS_OPTIMIZ
  
  else
    CFLAGS_WARNING=""
+@@ -7517,7 +7517,6 @@ fi
+ 		# OpenBSD builds and links with -pthread, never -lpthread.
+ 		LIBS=`echo $LIBS | sed s/-lpthread//`
+ 		CFLAGS="$CFLAGS -pthread"
+-		SHLIB_CFLAGS="$SHLIB_CFLAGS -pthread"
+ 
+ fi
+ 	    # OpenBSD doesn't do version numbers with dots.

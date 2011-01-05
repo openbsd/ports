@@ -1,43 +1,45 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/19 08:13:59 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/01/05 17:47:49 sebastia Exp $
 
-SHARED_ONLY=    Yes
+SHARED_ONLY =	Yes
 
-COMMENT=	system tray icon support for Tk
+COMMENT =	system tray icon support for Tk
 
-VERSION=	1.3.9
-DISTNAME=	tktray${VERSION}
-PKGNAME=	tktray-${VERSION}
-SHARED_LIBS=	tktray${VERSION:S/.//g} 0.0
-CATEGORIES=	x11
-
-HOMEPAGE= 	http://code.google.com/p/tktray/
-
-MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
+DISTNAME =	tktray1.3.9
+PKGNAME =	tktray-1.3.9
+REVISION =	0
+SHARED_LIBS =	tktray139 0.0
+CATEGORIES =	x11
+HOMEPAGE =	http://code.google.com/p/tktray/
+MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=	http://tktray.googlecode.com/files/
+WANTLIB =	X11
 
-MODULES=	x11/tk
-BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS}
-RUN_DEPENDS=    ${MODTK_RUN_DEPENDS}
-WANTLIB+=	X11
+MASTER_SITES =	http://tktray.googlecode.com/files/
+MODULES =	x11/tk
+BUILD_DEPENDS =	${MODTK_BUILD_DEPENDS}
+RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 
-USE_GMAKE=	Yes
+FAKE_FLAGS =	PKG_DIR=tktray \
+		INSTALL_LIBRARY='${INSTALL_DATA}'
+
+SEPARATE_BUILD=	concurrent
 USE_GROFF =	Yes
-SEPARATE_BUILD= simple
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+
+CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--with-tcl=${MODTCL_LIBDIR} \
 		--with-tk=${MODTK_LIBDIR} \
-		--datadir=${PREFIX}/share/examples
-CONFIGURE_ENV=	SHLIB_VERSION=${LIBtktray139_VERSION}
-REGRESS_TARGET=	test
-REGRESS_IS_INTERACTIVE=	X11
-SUBST_VARS=	VERSION
+		--libdir=${MODTCL_TCLDIR} \
+		--datadir=${PREFIX}/share/examples \
+		SHLIB_VERSION=${LIBtktray139_VERSION}
+
+REGRESS_IS_INTERACTIVE = X11
+REGRESS_TARGET = test
 
 .include <bsd.port.mk>
