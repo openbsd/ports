@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/09/20 07:06:49 sebastia Exp $
-lib/treectrl${VERSION}/
-lib/treectrl${VERSION}/filelist-bindings.tcl
-@lib lib/treectrl${VERSION}/libtreectrl22.so.${LIBtreectrl22_VERSION}
-lib/treectrl${VERSION}/pkgIndex.tcl
-lib/treectrl${VERSION}/treectrl.tcl
+@comment $OpenBSD: PLIST,v 1.5 2011/01/05 17:57:00 sebastia Exp $
+lib/tcl/tktreectrl/
+lib/tcl/tktreectrl/filelist-bindings.tcl
+@lib lib/tcl/tktreectrl/libtreectrl23.so.${LIBtreectrl23_VERSION}
+lib/tcl/tktreectrl/pkgIndex.tcl
+lib/tcl/tktreectrl/treectrl.tcl
 @man man/mann/treectrl.n
 share/doc/tktreectrl/
 share/doc/tktreectrl/Whats_New_in_TkTreeCtrl.html
@@ -16,6 +16,9 @@ share/examples/tktreectrl/column-lock.tcl
 share/examples/tktreectrl/demo.tcl
 share/examples/tktreectrl/explorer.tcl
 share/examples/tktreectrl/firefox.tcl
+share/examples/tktreectrl/gradients.tcl
+share/examples/tktreectrl/gradients2.tcl
+share/examples/tktreectrl/gradients3.tcl
 share/examples/tktreectrl/help.tcl
 share/examples/tktreectrl/imovie.tcl
 share/examples/tktreectrl/layout.tcl
@@ -30,6 +33,7 @@ share/examples/tktreectrl/pics/big-file.gif
 share/examples/tktreectrl/pics/big-folder.gif
 share/examples/tktreectrl/pics/big-txt.gif
 share/examples/tktreectrl/pics/checked.gif
+share/examples/tktreectrl/pics/feather.gif
 share/examples/tktreectrl/pics/file.gif
 share/examples/tktreectrl/pics/folder-closed.gif
 share/examples/tktreectrl/pics/folder-open.gif
@@ -50,6 +54,8 @@ share/examples/tktreectrl/pics/internet-radio-off.gif
 share/examples/tktreectrl/pics/internet-radio-on.gif
 share/examples/tktreectrl/pics/internet-search.gif
 share/examples/tktreectrl/pics/internet-security.gif
+share/examples/tktreectrl/pics/logMedTrans.gif
+share/examples/tktreectrl/pics/logoMedTrans.gif
 share/examples/tktreectrl/pics/mac-collapse.gif
 share/examples/tktreectrl/pics/mac-expand.gif
 share/examples/tktreectrl/pics/outlook-arrow.gif

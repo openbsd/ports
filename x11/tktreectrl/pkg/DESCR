@@ -5,3 +5,6 @@ one or more columns. For each column of an item there is a style
 associated, which determines how to display the item's column taking
 into account the item's current state set. One column can be defined to
 display the data in a hierarchical structure.
+
+Additional documentation, with examples and pictures:
+http://tktreectrl.sourceforge.net/Understanding%20TkTreeCtrl.html

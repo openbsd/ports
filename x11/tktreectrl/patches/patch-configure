@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure,v 1.4 2011/01/05 17:57:00 sebastia Exp $
+--- configure.orig	Wed Dec  8 12:18:38 2010
++++ configure	Wed Dec  8 12:18:54 2010
+@@ -8168,7 +8168,6 @@ fi
+ 		# OpenBSD builds and links with -pthread, never -lpthread.
+ 		LIBS=`echo $LIBS | sed s/-lpthread//`
+ 		CFLAGS="$CFLAGS -pthread"
+-		SHLIB_CFLAGS="$SHLIB_CFLAGS -pthread"
+ 
+ fi
+ 	    # OpenBSD doesn't do version numbers with dots.
