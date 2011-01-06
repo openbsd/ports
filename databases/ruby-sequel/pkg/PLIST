@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/11/08 23:24:39 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/01/06 18:15:14 jeremy Exp $
 ${GEM_BIN}/sequel${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG
-${GEM_LIB}/gems/${DISTNAME}/COPYING
+${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/bin/
@@ -49,6 +49,9 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.13.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.14.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.15.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.16.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.17.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.18.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.19.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.2.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.3.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.4.0.txt
@@ -151,6 +154,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/schema_dumper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/sql_expr.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/string_date_time.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/thread_local_timezones.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/extensions/to_dot.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/metaprogramming.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/model/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/model.rb
@@ -267,6 +271,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/subclasses_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/tactical_eager_loading_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/thread_local_timezones_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/timestamps_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/to_dot_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/touch_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/tree_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/typecast_on_load_spec.rb
@@ -314,6 +319,12 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/files/missing_integer_migrations/003_create_alt
 ${GEM_LIB}/gems/${DISTNAME}/spec/files/missing_timestamped_migrations/
 ${GEM_LIB}/gems/${DISTNAME}/spec/files/missing_timestamped_migrations/1273253849_create_sessions.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/files/missing_timestamped_migrations/1273253853_3_create_users.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/files/reversible_migrations/
+${GEM_LIB}/gems/${DISTNAME}/spec/files/reversible_migrations/001_reversible.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/files/reversible_migrations/002_reversible.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/files/reversible_migrations/003_reversible.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/files/reversible_migrations/004_reversible.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/files/reversible_migrations/005_reversible.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/files/timestamped_migrations/
 ${GEM_LIB}/gems/${DISTNAME}/spec/files/timestamped_migrations/1273253849_create_sessions.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/files/timestamped_migrations/1273253851_create_nodes.rb
