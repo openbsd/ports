@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/19 19:27:49 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2011/01/06 04:14:10 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT =	Ruby virtual machine and core library
 
-V=		1.1.1
-DISTNAME =	rubinius-${V}-20101116
+V=		1.2.0
+DISTNAME =	rubinius-${V}-20101221
 PKGNAME =	rubinius-$V
-REVISION =	1
 
 CATEGORIES =	lang lang/ruby
 
@@ -35,35 +34,40 @@ MODULES =	lang/ruby
 USE_GMAKE =	Yes
 USE_LIBTOOL=	Yes
 
-M=		${V:R}
 RAKE_VER =	0.8.7
 RAKE_COMPILER_VER = 0.6.0
 RDOC_VER =	2.5.1
 RUBY_DEBUG_VER = 0.10.47
-SUBST_VARS=	V M RAKE_VER RAKE_COMPILER_VER RDOC_VER RUBY_DEBUG_VER
+SUBST_VARS=	V RAKE_VER RAKE_COMPILER_VER RDOC_VER RUBY_DEBUG_VER
 
 WRKDIST=	${WRKDIR}/rubinius-${V}
 
+CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib" \
+			CPPFLAGS="-DOPENSSL_NO_STATIC_ENGINE -I${LOCALBASE}/include" \
+			RELEASE=1
+
 do-configure:
-	cd ${WRKSRC} && ${RUBY} configure --prefix=${PREFIX}/lib \
-		--skip-prebuilt --disable-llvm --rake=${RAKE}
+	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${RUBY} configure \
+		--prefix=${PREFIX}/lib/rubinius --skip-prebuilt --disable-llvm \
+		--rake=${RAKE}
 
 do-build:
 	cd ${WRKSRC} && ${RAKE} build
 
 do-install:
 	cd ${WRKSRC} && FAKEROOT=${WRKINST} ${RAKE} install
-	ln -s ${TRUEPREFIX}/lib/rubinius/${M}/bin/rbx ${PREFIX}/bin/rbx
-	mkdir ${PREFIX}/lib/rubinius/${M}/gems/1.8/{,cache,doc,gems,specifications}
+	ln -s ${TRUEPREFIX}/lib/rubinius/bin/rbx ${PREFIX}/bin/rbx
+	mkdir ${PREFIX}/lib/rubinius/gems/1.8/{,cache,doc,gems,specifications}
 	for dir in sitelibdir sitearchdir; do \
-		mkdir -p ${WRKINST}/`RBX_RUNTIME=${PREFIX}/lib/rubinius/${M}/runtime \
-		RBX_LIB=${PREFIX}/lib/rubinius/${M}/lib \
-		${PREFIX}/lib/rubinius/${M}/bin/rbx -rrbconfig -e \
+		mkdir -p ${WRKINST}/`RBX_RUNTIME=${PREFIX}/lib/rubinius/runtime \
+		RBX_LIB=${PREFIX}/lib/rubinius/lib \
+		${PREFIX}/lib/rubinius/bin/rbx -rrbconfig -e \
 		"puts RbConfig::CONFIG['$$dir']"`; done
 
+# Some failures and likely infinite loop in mspec ci
 do-regress:
 	cd ${WRKSRC} && ${RAKE} vm:test
-	cd ${WRKSRC} && RUBY=${RUBY} ${RUBY} mspec/bin/mspec
+	cd ${WRKSRC} && RUBY=${RUBY} ${RUBY} mspec/bin/mspec ci --background --agent
 
 REGRESS_DEPENDS = ${FULLPKGNAME}:${BUILD_PKGPATH}
 
