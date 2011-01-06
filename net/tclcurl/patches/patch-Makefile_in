@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2011/01/06 14:52:10 stu Exp $
+--- Makefile.in.orig	Wed Sep 23 11:19:24 2009
++++ Makefile.in	Thu Jan  6 09:40:07 2011
+@@ -232,10 +232,7 @@ install-doc: doc
+ 	@echo "Installing documentation in $(DESTDIR)$(mandir)"
+ 	@list='$(srcdir)/doc/*.n'; for i in $$list; do \
+ 	    echo "Installing $$i"; \
+-    	    rm -f $(DESTDIR)$(mandir)/mann/`basename $$i`; \
+-	    gzip $$i; \
+-	    $(INSTALL_DATA) $$i.gz $(DESTDIR)$(mandir)/mann ; \
+-	    gunzip $$i.gz; \
++	    $(INSTALL_DATA) $$i $(DESTDIR)$(mandir)/mann ; \
+ 	done
+ 
+ test: binaries libraries
+@@ -423,7 +420,7 @@ install-bin-binaries: binaries
+ install-scripts: scripts
+ 		@for i in generic/$(TCLCURL_SCRIPTS) ; do    \
+ 		echo "Installing $$i" ;                      \
+-		$(INSTALL_DATA) $$i $(DESTDIR)$(pkglibdir) ; \
++		$(INSTALL_DATA) $(srcdir)/$$i $(DESTDIR)$(pkglibdir) ; \
+ 	done;
+ 
+ .SUFFIXES: .c .$(OBJEXT)
