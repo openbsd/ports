@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/11 09:44:52 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/01/06 20:20:03 landry Exp $
 
 COMMENT =		testing TCP program
 
 MODULES =		cpan
 DISTNAME =		Test-TCP-1.07
+REVISION =		0
 CATEGORIES =		net
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
-BUILD_DEPENDS =		devel/p5-Test-SharedFork>=0.14
+RUN_DEPENDS =		devel/p5-Test-SharedFork>=0.14
+BUILD_DEPENDS = 	${RUN_DEPENDS}
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
