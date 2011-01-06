@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/05 23:09:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/01/06 21:28:22 landry Exp $
 
 COMMENT =		hot-deployable variant of Net::Server::PreFork
 
 MODULES =		cpan
 DISTNAME =		Net-Server-SS-PreFork-0.05
+REVISION =		0
 CATEGORIES =		net
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
@@ -15,9 +16,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/p5-Net-Server \
+			net/p5-Test-TCP>=0.06 \
 			net/p5-Server-Starter>=0.02
-REGRESS_DEPENDS =	net/p5-Test-TCP>=0.06 \
-			www/p5-HTTP-Server-Simple \
+REGRESS_DEPENDS =	www/p5-HTTP-Server-Simple \
 			www/p5-libwww
 
 .include <bsd.port.mk>
