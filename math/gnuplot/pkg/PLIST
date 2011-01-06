@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2009/04/19 15:06:50 steven Exp $
+@comment $OpenBSD: PLIST,v 1.15 2011/01/06 23:45:07 jasper Exp $
 @bin bin/gnuplot
 bin/lasergnu
 @info info/gnuplot.info
@@ -10,6 +10,8 @@ share/gnuplot/${V}/PostScript/
 share/gnuplot/${V}/PostScript/8859-1.ps
 share/gnuplot/${V}/PostScript/8859-15.ps
 share/gnuplot/${V}/PostScript/8859-2.ps
+share/gnuplot/${V}/PostScript/8859-9.ps
+share/gnuplot/${V}/PostScript/aglfn.txt
 share/gnuplot/${V}/PostScript/cp1250.ps
 share/gnuplot/${V}/PostScript/cp437.ps
 share/gnuplot/${V}/PostScript/cp850.ps
@@ -17,6 +19,20 @@ share/gnuplot/${V}/PostScript/cp852.ps
 share/gnuplot/${V}/PostScript/koi8r.ps
 share/gnuplot/${V}/PostScript/koi8u.ps
 share/gnuplot/${V}/PostScript/prologue.ps
+share/gnuplot/${V}/PostScript/utf-8.ps
 share/gnuplot/${V}/gnuplot.gih
-share/gnuplot/${V}/patches
+share/gnuplot/${V}/js/
+share/gnuplot/${V}/js/README
+share/gnuplot/${V}/js/canvasmath.js
+share/gnuplot/${V}/js/canvastext.js
+share/gnuplot/${V}/js/gnuplot_common.js
+share/gnuplot/${V}/js/gnuplot_mouse.css
+share/gnuplot/${V}/js/gnuplot_mouse.js
+share/gnuplot/${V}/js/grid.png
+share/gnuplot/${V}/js/help.png
+share/gnuplot/${V}/js/nextzoom.png
+share/gnuplot/${V}/js/previouszoom.png
+share/gnuplot/${V}/js/textzoom.png
+share/gnuplot/${V}/lua/
+share/gnuplot/${V}/lua/gnuplot-tikz.lua
 !%%no_x11%%
