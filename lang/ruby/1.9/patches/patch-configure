@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1 2010/09/23 21:58:50 jeremy Exp $
+$OpenBSD: patch-configure,v 1.2 2011/01/06 04:04:37 jeremy Exp $
 
 Fix so name, checking for DOT and DOXYGEN, and use -pthread.
 
---- configure.orig	Tue Aug 17 22:56:27 2010
-+++ configure	Wed Sep  8 13:30:45 2010
-@@ -5798,7 +5798,7 @@ IFS=$as_save_IFS
+--- configure.orig	Sat Dec 25 02:50:49 2010
++++ configure	Sun Jan  2 17:26:32 2011
+@@ -5823,7 +5823,7 @@ IFS=$as_save_IFS
  
  fi
  fi
@@ -13,7 +13,7 @@ Fix so name, checking for DOT and DOXYGEN, and use -pthread.
  if test -n "$DOT"; then
    { $as_echo "$as_me:${as_lineno-$LINENO}: result: $DOT" >&5
  $as_echo "$DOT" >&6; }
-@@ -5856,10 +5856,10 @@ yes:)
+@@ -5881,10 +5881,10 @@ yes:)
  $as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
  ac_tool_warned=yes ;;
  esac
@@ -26,7 +26,7 @@ Fix so name, checking for DOT and DOXYGEN, and use -pthread.
  fi
  
  if test -n "$ac_tool_prefix"; then
-@@ -5890,7 +5890,7 @@ IFS=$as_save_IFS
+@@ -5915,7 +5915,7 @@ IFS=$as_save_IFS
  
  fi
  fi
@@ -35,7 +35,7 @@ Fix so name, checking for DOT and DOXYGEN, and use -pthread.
  if test -n "$DOXYGEN"; then
    { $as_echo "$as_me:${as_lineno-$LINENO}: result: $DOXYGEN" >&5
  $as_echo "$DOXYGEN" >&6; }
-@@ -5948,10 +5948,10 @@ yes:)
+@@ -5973,10 +5973,10 @@ yes:)
  $as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
  ac_tool_warned=yes ;;
  esac
@@ -48,7 +48,7 @@ Fix so name, checking for DOT and DOXYGEN, and use -pthread.
  fi
  
  if test x"$DOXYGEN" = x; then
-@@ -14446,13 +14446,13 @@ fi
+@@ -14777,13 +14777,13 @@ fi
  if test x"$enable_pthread" = xyes; then
      for pthread_lib in thr pthread pthreads c c_r root; do
  	as_ac_Lib=`$as_echo "ac_cv_lib_$pthread_lib''_pthread_kill" | $as_tr_sh`
@@ -56,7 +56,7 @@ Fix so name, checking for DOT and DOXYGEN, and use -pthread.
 -$as_echo_n "checking for pthread_kill in -l$pthread_lib... " >&6; }
 +{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -$pthread_lib" >&5
 +$as_echo_n "checking for pthread_kill in -$pthread_lib... " >&6; }
- if { as_var=$as_ac_Lib; eval "test \"\${$as_var+set}\" = set"; }; then :
+ if eval \${$as_ac_Lib+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -65,7 +65,7 @@ Fix so name, checking for DOT and DOXYGEN, and use -pthread.
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -14519,7 +14519,7 @@ done
+@@ -14849,7 +14849,7 @@ done
    c_r) :
      MAINLIBS="-pthread $MAINLIBS" ;; #(
    *) :
@@ -74,11 +74,11 @@ Fix so name, checking for DOT and DOXYGEN, and use -pthread.
  esac
      else
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: \"Don't know how to find pthread library on your system -- thread support disabled\"" >&5
-@@ -15369,7 +15369,7 @@ if test "$enable_shared" = 'yes'; then
+@@ -15697,7 +15697,7 @@ if test "$enable_shared" = 'yes'; then
    openbsd*) :
  
  	SOLIBS='$(LIBS)'
--	LIBRUBY_SO='lib$(RUBY_INSTALL_NAME).so.$(MAJOR).'`expr ${MINOR} \* 10 + ${TEENY}`
+-	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.$(MAJOR).'`expr ${MINOR} \* 10 + ${TEENY}`
 +	LIBRUBY_SO='lib$(RUBY_INSTALL_NAME).so.'${LIBruby19_VERSION}
  	 ;; #(
    solaris*) :

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/26 14:44:27 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/01/06 04:04:37 jeremy Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for Ruby
@@ -6,8 +6,7 @@ COMMENT-dbm =		Berkley DB interface for Ruby
 COMMENT-tk=		tk interface for ruby
 
 VERSION =		1.9.2
-REVISION =		0
-PATCHLEVEL =		0
+PATCHLEVEL =		136
 RUBYLIBREV =		1.9.1
 
 SHARED_LIBS =		ruby19 0.0
@@ -15,11 +14,6 @@ PKGNAME-main =		ruby-${VERSION}.${PATCHLEVEL}
 PKGNAME-gdbm =		ruby-gdbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-dbm =		ruby-dbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-tk =		ruby-tk-${VERSION}.${PATCHLEVEL}
-
-REVISION-main =		1
-REVISION-gdbm =		0
-REVISION-dbm =		1
-REVISION-tk =		0
 
 PKGSPEC-main =		ruby->=1.9,<1.10
 
@@ -70,7 +64,7 @@ RUN_DEPENDS-tk =
 # Known threading bootstraptest failures on i386 and macppc
 # Known endian issues in fiddle/dl on sparc64
 # Known bugs in OpenSSL extension on sparc64
-REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
+REGRESS_DEPENDS =	${FULLPKGNAME-main}:${BUILD_PKGPATH}
 SUBST_VARS +=		RUBYLIBREV
 
 .include <bsd.port.mk>
