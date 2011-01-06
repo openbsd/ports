@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/01/05 12:05:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/01/06 08:39:49 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	Network Kanji code conversion Filter
 VERSION=	2.1.1
 DISTNAME=	nkf-${VERSION}
 PKGNAME=	ja-nkf-${VERSION}
+EPOCH=		0
 CATEGORIES=	japanese textproc
 
 HOMEPAGE=	http://sourceforge.jp/projects/nkf/
