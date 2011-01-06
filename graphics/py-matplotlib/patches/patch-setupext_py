@@ -1,6 +1,6 @@
-$OpenBSD: patch-setupext_py,v 1.9 2009/01/19 07:10:28 djm Exp $
---- setupext.py.orig	Fri Dec 19 15:34:22 2008
-+++ setupext.py	Mon Jan 19 16:48:43 2009
+$OpenBSD: patch-setupext_py,v 1.10 2011/01/06 19:11:22 sebastia Exp $
+--- setupext.py.orig	Fri Dec 19 05:34:22 2008
++++ setupext.py	Thu Jan  6 10:23:22 2011
 @@ -46,6 +46,8 @@ import re
  import subprocess
  
@@ -59,7 +59,15 @@ $OpenBSD: patch-setupext_py,v 1.9 2009/01/19 07:10:28 djm Exp $
  
          pygtkLinker = getoutput('pkg-config --libs pygtk-2.0').split()
          gtkLinker =  getoutput('pkg-config --libs gtk+-2.0').split()
-@@ -1051,7 +1058,8 @@ so that setup can determine where your libraries are l
+@@ -784,6 +791,7 @@ def check_for_tk():
+             explanation = str(e)
+             gotit = False
+         else:
++	    add_pygtk_flags(module)
+             if not find_include_file(module.include_dirs, "tk.h"):
+                 message = 'Tkinter present, but header files are not found. ' + \
+                           'You may need to install development packages.'
+@@ -1051,7 +1059,8 @@ so that setup can determine where your libraries are l
          tcl_lib, tcl_inc, tk_lib, tk_inc = result
          module.include_dirs.extend([tcl_inc, tk_inc])
          module.library_dirs.extend([tcl_lib, tk_lib])
