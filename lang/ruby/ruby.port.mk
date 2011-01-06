@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.40 2010/12/02 01:38:40 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.41 2011/01/06 04:15:46 jeremy Exp $
 
 # ruby module
 
@@ -13,7 +13,7 @@ CATEGORIES+=		lang/ruby
 .if !defined(MODRUBY_REV)
 .  if ${CONFIGURE_STYLE:L:Mgem} || ${CONFIGURE_STYLE:L:Mextconf}
 .    if !defined(FLAVORS)
-FLAVORS?=		ruby18 ruby19 rbx
+FLAVORS?=		ruby19 rbx
 .      if !${CONFIGURE_STYLE:L:Mext} && !${CONFIGURE_STYLE:L:Mextconf}
 FLAVORS+=		jruby
 .      endif
@@ -34,32 +34,24 @@ FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
 # versions of ruby.
 SUBST_VARS+=		GEM_BIN_SUFFIX
 
-# The unset flavor is the same as the ruby18 FLAVOR, but the FLAVOR is
-# not set by default, as otherwise it breaks pkg_add -u for previously
-# installed ports.
 FLAVOR?=
+# Without a FLAVOR, assume the use of ruby 1.8.
 .     if empty(FLAVOR)
 MODRUBY_REV=		1.8
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    elif ${FLAVOR:L:Mruby18}
-.      if ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mjruby} || ${FLAVOR:L:Mrbx}
-ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
-.      endif
-FLAVOR=			${FLAVOR:L:Nruby18}
-MODRUBY_REV=		1.8
 .    elif ${FLAVOR:L:Mruby19}
-.      if ${FLAVOR:L:Mruby18} || ${FLAVOR:L:Mjruby} || ${FLAVOR:L:Mrbx}
+.      if ${FLAVOR:L:Mjruby} || ${FLAVOR:L:Mrbx}
 ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
 .      endif
 MODRUBY_REV=		1.9
 .    elif ${FLAVOR:L:Mjruby}
-.      if ${FLAVOR:L:Mruby18} || ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mrbx}
+.      if ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mrbx}
 ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
 .      endif
 MODRUBY_REV=		jruby
 .    elif ${FLAVOR:L:Mrbx}
-.      if ${FLAVOR:L:Mruby18} || ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mjruby}
+.      if ${FLAVOR:L:Mruby19} || ${FLAVOR:L:Mjruby}
 ERRORS+=		"Fatal: Conflicting flavors used: ${FLAVOR}"
 .      endif
 MODRUBY_REV=		rbx
@@ -103,7 +95,6 @@ MODRUBY_LIBREV =	1.8
 #.poison MODRUBY_WANTLIB
 MODRUBY_PKG_PREFIX =	rbx
 MODRUBY_FLAVOR =	rbx
-MODRUBY_RBX_VERSION =	1.1
 .endif
 
 MODRUBY_RAKE_DEPENDS =	
@@ -160,7 +151,7 @@ MODRUBY_ICONV_DEPENDS=	${MODRUBY_RUN_DEPENDS}
 .if ${MODRUBY_REV} == jruby
 MODRUBY_LIBDIR=		${LOCALBASE}/jruby/lib/ruby
 .elif ${MODRUBY_REV} == rbx
-MODRUBY_LIBDIR=		${LOCALBASE}/lib/rubinius/${MODRUBY_RBX_VERSION}
+MODRUBY_LIBDIR=		${LOCALBASE}/lib/rubinius
 .else
 MODRUBY_LIBDIR=		${LOCALBASE}/lib/ruby
 .endif
@@ -233,6 +224,12 @@ MODRUBY_WANTLIB_m?=	Yes
 WANTLIB+=	m
 .  endif
 LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
+
+.  if ${MODRUBY_REV} == rbx
+# Tighten dependency on rubinius when a C extension is used.  Rubinius
+# does not maintain binary compatibility across minor versions.
+MODRUBY_RUN_DEPENDS =	lang/rubinius>=1.2,<1.3
+.  endif
 .endif
 
 .if ${CONFIGURE_STYLE:L:Mextconf}
@@ -271,8 +268,8 @@ GEM_BASE_LIB=	${GEM_BASE}/jruby/${MODRUBY_LIBREV}
 .  elif ${MODRUBY_REV} == rbx
 GEM=		${RUBY} -S gem
 GEM_BASE_LIB=	${GEM_BASE}/rbx/${MODRUBY_LIBREV}
-GEM_BIN =	lib/rubinius/${MODRUBY_RBX_VERSION}/gems/bin
-GEM_LIB =	lib/rubinius/${MODRUBY_RBX_VERSION}/gems/${MODRUBY_LIBREV}
+GEM_BIN =	lib/rubinius/gems/bin
+GEM_LIB =	lib/rubinius/gems/${MODRUBY_LIBREV}
 .  else
 GEM=		${LOCALBASE}/bin/gem${MODRUBY_BINREV}
 GEM_BIN =	bin
