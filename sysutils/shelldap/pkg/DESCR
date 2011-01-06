@@ -1,0 +1,5 @@
+Shelldap is a handy shell-like interface for browsing LDAP servers
+and editing their content. It keeps command history, has sane
+autocompletes, credential caching, site-wide and individual configs,
+and it's fun to say.
+Shelldap documentation can be viewed using perldoc(1).

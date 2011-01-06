@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/06 12:16:39 landry Exp $
+bin/shelldap
