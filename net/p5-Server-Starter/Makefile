@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/05 14:12:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/01/06 08:46:16 jasper Exp $
 
 COMMENT =		superdaemon for hot-deploying server programs
 
 MODULES =		cpan
 DISTNAME =		Server-Starter-0.09
+REVISION =		0
 CATEGORIES =		net
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/p5-List-MoreUtils \
 			devel/p5-Scope-Guard \
+			net/p5-Test-TCP>=0.11 \
 			sysutils/p5-Proc-Wait3
-REGRESS_DEPENDS =	net/p5-Test-TCP>=0.11
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
