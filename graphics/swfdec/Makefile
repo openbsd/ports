@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2011/01/06 08:38:29 landry Exp $
 
 COMMENT=	flash rendering library
 
@@ -49,7 +49,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 AUTOCONF_VERSION=	2.61
 AUTOMAKE_VERSION=	1.9
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool #XXX needs libtoolize
 
 post-patch:
 	@cp ${FILESDIR}/swfdec_playback_sndio.c ${WRKSRC}/swfdec-gtk/
