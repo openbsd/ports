@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2011/01/05 14:14:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.224 2011/01/06 12:17:07 landry Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -147,6 +147,7 @@
      SUBDIR += sdd
      SUBDIR += sec
      SUBDIR += setquota
+     SUBDIR += shelldap
      SUBDIR += shmux
      SUBDIR += shunt
      SUBDIR += skill
