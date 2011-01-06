@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/05 19:01:25 ian Exp $
+# $OpenBSD: Makefile,v 1.2 2011/01/06 00:58:02 ian Exp $
 
 COMMENT =		fonts from the League of Moveable Type
 
 PKGNAME =		league-fonts-0.1
 PKG_ARCH =		*
+EXTRACT_SUFX =		.zip
 .for font in \
 			blackout chunk flaminia-type-system goudy-bookletter-1911 junction \
 			league-gothic league-script-1 linden-hill orbitron \
 			prociono raleway sniglet sorts-mill-goudy
-DISTFILES +=		${font}.zip
+DISTFILES +=		${font}${EXTRACT_SUFX}
 .endfor
-EXTRACT_SUFX =		.zip
 
 CATEGORIES =		x11
 
