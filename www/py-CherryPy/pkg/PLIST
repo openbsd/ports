@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/03/10 11:00:57 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/01/06 17:28:43 rpointel Exp $
 @conflict py-cherrypy2-*
+bin/cherryd
 lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/cherrypy/
 lib/python${MODPY_VERSION}/site-packages/cherrypy/LICENSE.txt
