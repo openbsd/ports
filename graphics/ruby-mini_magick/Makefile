@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/24 21:35:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2011/01/06 04:24:23 jeremy Exp $
 
 COMMENT =	wrapper for ImageMagick command line tools
 
 DISTNAME =	mini_magick-1.2.5
-REVISION =	2
+REVISION =	3
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://mini_magick.rubyforge.org/

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/08 22:26:19 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2011/01/06 04:24:22 jeremy Exp $
 
 COMMENT =	allows DataMapper models and collections to be serialized
 
 DISTNAME =	dm-serializer-${VERSION}
+REVISION =	0
 
 RUN_DEPENDS =	databases/ruby-datamapper/core,${MODRUBY_FLAVOR}${DM_REL_VER_SPEC} \
 		converters/ruby-json,${MODRUBY_FLAVOR}>=1.4,<2.0 \

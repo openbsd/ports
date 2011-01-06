@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/24 21:35:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2011/01/06 04:24:24 jeremy Exp $
 
 COMMENT =	Ruby implementation of Net::DNS
 
 DISTNAME =	net-dns-0.6.0
-REVISION =	2
+REVISION =	3
 CATEGORIES =	net
 
 # Ruby's license

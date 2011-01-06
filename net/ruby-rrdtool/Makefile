@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/24 21:35:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2011/01/06 04:24:24 jeremy Exp $
 
 COMMENT=	ruby bindings for RRDtool
 
 V=		0.6.0
 DISTNAME=	RubyRRDtool-$V
 PKGNAME=	rrdtool-$V
-REVISION=	6
+REVISION=	7
 CATEGORIES=	net
 
 HOMEPAGE=	http://rubyrrdtool.rubyforge.org/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/24 21:35:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2011/01/06 04:24:23 jeremy Exp $
 
 COMMENT=		library for making beautiful graphs
 
 DISTNAME=		gruff-0.3.4
-REVISION =		2
+REVISION =		3
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://nubyonrails.com/pages/gruff/

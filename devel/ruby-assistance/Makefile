@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/24 21:35:13 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2011/01/06 04:24:22 jeremy Exp $
 
 COMMENT =		light-weight application support
 
 DISTNAME =		assistance-0.1.5
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel lang/ruby
 
 MAINTAINER =		Clint Pachl <pachl@ecentryx.com>

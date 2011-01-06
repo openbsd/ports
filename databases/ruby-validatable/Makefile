@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/21 17:10:59 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2011/01/06 04:24:22 jeremy Exp $
 
 COMMENT =		provide ActiveRecord looking validations
 
 DISTNAME =		validatable-1.6.7
-REVISION =		2
+REVISION =		3
 CATEGORIES =		databases
 
 HOMEPAGE =		http://validatable.rubyforge.org/

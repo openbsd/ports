@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/24 21:35:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2011/01/06 04:24:24 jeremy Exp $
 
 COMMENT =	AMQP command line utilities
 
 DISTNAME =	amqp-utils-0.2.3
-REVISION =	1
+REVISION =	2
 CATEGORIES =	net
 
 # MIT

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2010/12/08 21:49:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.28 2011/01/06 04:24:22 jeremy Exp $
 
 COMMENT =	eases web-request routing, handling, and response
 
 VERSION =	3.0.3
 DISTNAME =	actionpack-${VERSION}
+REVISION =	0
 CATEGORIES =	devel
 
 # MIT License

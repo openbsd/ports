@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/24 21:35:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2011/01/06 04:24:24 jeremy Exp $
 
 COMMENT =		library for programmatically tunneling connections
 
 DISTNAME =		net-ssh-gateway-1.0.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		net
 
 # MIT

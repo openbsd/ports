@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/24 21:35:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2011/01/06 04:24:23 jeremy Exp $
 
 COMMENT=	a ruby timer based on SIGALRM
 
 DISTNAME=	SystemTimer-1.1.1
 PKGNAME=	${DISTNAME:L}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	devel
 
 # ruby or gpl

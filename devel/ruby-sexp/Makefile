@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/24 21:35:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2011/01/06 04:24:23 jeremy Exp $
 
 COMMENT =	parse strings of Lisp style s-expressions
 
 DISTNAME =	sexp-0.2.1
-REVISION =	2
+REVISION =	3
 CATEGORIES =	devel
 
 # MIT

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/12/20 17:28:43 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2011/01/06 04:24:25 jeremy Exp $
 
 COMMENT =	DSL for quickly creating web-applications in Ruby
 
 DISTNAME =	sinatra-1.1.0
+REVISION =	0
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.sinatrarb.com/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/24 21:35:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2011/01/06 04:24:24 jeremy Exp $
 
 COMMENT =	bindings for RRD functions
 
 DISTNAME =	errand-0.7.2
-REVISION =	1
+REVISION =	2
 CATEGORIES =	net
 
 # MIT

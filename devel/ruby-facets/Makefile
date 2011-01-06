@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/24 21:35:14 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2011/01/06 04:24:23 jeremy Exp $
 
 COMMENT =	collection of general purpose, pure-Ruby extensions
 
 DISTNAME =	facets-2.7.0
-REVISION =	2
+REVISION =	3
 CATEGORIES =	devel
 
 # Ruby license

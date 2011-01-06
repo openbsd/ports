@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/08 22:53:01 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2011/01/06 04:24:24 jeremy Exp $
 
 COMMENT =	Ruby-based DSL for text parsing and interpretation
 
 DISTNAME =	treetop-1.4.9
+REVISION =	0
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://treetop.rubyforge.org/

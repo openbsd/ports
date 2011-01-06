@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/12/08 21:45:30 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2011/01/06 04:24:24 jeremy Exp $
 
 COMMENT =	wraps web resources in model classes
 
 VERSION =	3.0.3
 DISTNAME =	activeresource-${VERSION}
+REVISION =	0
 CATEGORIES =	www
 
 # MIT License
