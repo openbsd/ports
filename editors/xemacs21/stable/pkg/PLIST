@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/01/03 18:56:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/01/06 08:47:58 jasper Exp $
 @pkgpath editors/xemacs21
 %%mule%%
 @bin bin/ellcc
@@ -1230,4 +1230,4 @@ lib/xemacs/site-modules/
 @man man/man1/xemacs-ctags.1
 @man man/man1/xemacs-etags.1
 @man man/man1/xemacs.1
-share/doc/pkg-readmes/xemacs-${BRANCH}.${VERSION}${FLAVORS}
+share/doc/pkg-readmes/xemacs-${FULLPKGNAME}
