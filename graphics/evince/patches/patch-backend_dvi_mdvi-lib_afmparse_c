@@ -1,0 +1,16 @@
+$OpenBSD: patch-backend_dvi_mdvi-lib_afmparse_c,v 1.1 2011/01/06 22:55:31 jasper Exp $
+
+Security fixes for CVE-2010-2640, CVE-2010-2641, CVE-2010-2642, CVE-2010-2643.
+Patch from upstream git: d4139205b010ed06310d14284e63114e88ec6de2.
+
+--- backend/dvi/mdvi-lib/afmparse.c.orig	Fri Apr 24 09:24:16 2009
++++ backend/dvi/mdvi-lib/afmparse.c	Thu Jan  6 23:35:24 2011
+@@ -160,7 +160,7 @@ static char *token(FILE *stream)
+     
+     idx = 0;
+     while (ch != EOF && ch != ' ' && ch != lineterm 
+-           && ch != '\t' && ch != ':' && ch != ';') 
++           && ch != '\t' && ch != ':' && ch != ';' && idx < MAX_NAME)
+     {
+         ident[idx++] = ch;
+         ch = fgetc(stream);

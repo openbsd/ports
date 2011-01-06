@@ -1,0 +1,18 @@
+$OpenBSD: patch-backend_dvi_mdvi-lib_dviread_c,v 1.1 2011/01/06 22:55:31 jasper Exp $
+
+Security fixes for CVE-2010-2640, CVE-2010-2641, CVE-2010-2642, CVE-2010-2643.
+Patch from upstream git: d4139205b010ed06310d14284e63114e88ec6de2.
+
+--- backend/dvi/mdvi-lib/dviread.c.orig	Wed Jul 14 09:54:39 2010
++++ backend/dvi/mdvi-lib/dviread.c	Thu Jan  6 23:35:24 2011
+@@ -1537,6 +1537,10 @@ int	special(DviContext *dvi, int opcode)
+ 	Int32	arg;
+ 	
+ 	arg = dugetn(dvi, opcode - DVI_XXX1 + 1);
++	if (arg <= 0) {
++		dvierr(dvi, _("malformed special length\n"));
++		return -1;
++	}
+ 	s = mdvi_malloc(arg + 1);
+ 	dread(dvi, s, arg);
+ 	s[arg] = 0;

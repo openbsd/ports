@@ -1,0 +1,32 @@
+$OpenBSD: patch-backend_dvi_mdvi-lib_pk_c,v 1.1 2011/01/06 22:55:31 jasper Exp $
+
+Security fixes for CVE-2010-2640, CVE-2010-2641, CVE-2010-2642, CVE-2010-2643.
+Patch from upstream git: d4139205b010ed06310d14284e63114e88ec6de2.
+
+--- backend/dvi/mdvi-lib/pk.c.orig	Wed Jul 14 09:54:39 2010
++++ backend/dvi/mdvi-lib/pk.c	Thu Jan  6 23:35:24 2011
+@@ -469,6 +469,15 @@ static int pk_load_font(DviParams *unused, DviFont *fo
+ 			}
+ 			if(feof(p))
+ 				break;
++
++			/* Although the PK format support bigger char codes,
++                         * XeTeX and other extended TeX engines support charcodes up to
++                         * 65536, while normal TeX engine supports only charcode up to 255.*/
++			if (cc < 0 || cc > 65536) {
++				mdvi_error (_("%s: unexpected charcode (%d)\n"),
++					    font->fontname,cc);
++				goto error;
++			} 
+ 			if(cc < loc)
+ 				loc = cc;
+ 			if(cc > hic)
+@@ -512,7 +521,7 @@ static int pk_load_font(DviParams *unused, DviFont *fo
+ 	}
+ 
+ 	/* resize font char data */
+-	if(loc > 0 || hic < maxch-1) {
++	if(loc > 0 && hic < maxch-1) {
+ 		memmove(font->chars, font->chars + loc, 
+ 			(hic - loc + 1) * sizeof(DviFontChar));
+ 		font->chars = xresize(font->chars,

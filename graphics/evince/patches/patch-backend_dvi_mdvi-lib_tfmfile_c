@@ -1,0 +1,17 @@
+$OpenBSD: patch-backend_dvi_mdvi-lib_tfmfile_c,v 1.1 2011/01/06 22:55:31 jasper Exp $
+
+Security fixes for CVE-2010-2640, CVE-2010-2641, CVE-2010-2642, CVE-2010-2643.
+Patch from upstream git: d4139205b010ed06310d14284e63114e88ec6de2.
+
+--- backend/dvi/mdvi-lib/tfmfile.c.orig	Wed Jul 14 09:54:39 2010
++++ backend/dvi/mdvi-lib/tfmfile.c	Thu Jan  6 23:35:24 2011
+@@ -172,7 +172,8 @@ int	tfm_load_file(const char *filename, TFMInfo *info)
+ 	/* We read the entire TFM file into core */
+ 	if(fstat(fileno(in), &st) < 0)
+ 		return -1;
+-	if(st.st_size == 0)
++	/* according to the spec, TFM files are smaller than 16K */
++	if(st.st_size == 0 || st.st_size >= 16384)
+ 		goto bad_tfm;
+ 
+ 	/* allocate a word-aligned buffer to hold the file */
