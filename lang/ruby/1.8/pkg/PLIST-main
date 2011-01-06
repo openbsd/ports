@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2010/09/23 21:58:50 jeremy Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/01/06 04:01:52 jeremy Exp $
 @option no-default-conflict
 @conflict ruby->=1.8,<1.9
 @pkgpath lang/ruby,-main
@@ -148,6 +148,7 @@ lib/ruby/${REV}/openssl.rb
 lib/ruby/${REV}/openssl/bn.rb
 lib/ruby/${REV}/openssl/buffering.rb
 lib/ruby/${REV}/openssl/cipher.rb
+lib/ruby/${REV}/openssl/config.rb
 lib/ruby/${REV}/openssl/digest.rb
 lib/ruby/${REV}/openssl/pkcs7.rb
 lib/ruby/${REV}/openssl/ssl-internal.rb
