@@ -1,0 +1,14 @@
+$OpenBSD: patch-ldap_c,v 1.1 2011/01/07 10:32:43 pea Exp $
+--- ldap.c.orig	Mon Nov  8 16:34:48 2010
++++ ldap.c	Mon Nov  8 16:35:55 2010
+@@ -420,8 +420,8 @@ Init_ldap ()
+ #ifdef LDAP_OPT_X_TLS
+   rb_ldap_define_opt (LDAP_OPT_X_TLS);
+ #endif
+-#ifdef LDAP_OPT_X_TLS_PROTOCOL
+-  rb_ldap_define_opt (LDAP_OPT_X_TLS_PROTOCOL);
++#ifdef LDAP_OPT_X_TLS_PROTOCOL_MIX
++  rb_ldap_define_opt (LDAP_OPT_X_TLS_PROTOCOL_MIN);
+ #endif
+ #ifdef LDAP_OPT_X_TLS_CIPHER_SUITE
+   rb_ldap_define_opt (LDAP_OPT_X_TLS_CIPHER_SUITE);
