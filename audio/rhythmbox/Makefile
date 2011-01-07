@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2011/01/07 11:01:36 jasper Exp $
 
 # coherence plugin is installed but not activated by default so we don't
 # enforce dependency on multimedia/coherence to lower requirements
@@ -8,7 +8,7 @@ COMMENT=		music management application for GNOME
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.12.8
 
-REVISION =		9
+REVISION =		10
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -25,17 +25,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp ffi
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 notify c cairo
-WANTLIB += dbus-1 dbus-glib-1 expat fontconfig gnutls freetype gcrypt
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 gmime-2.4 glib-2.0
-WANTLIB += gmodule-2.0 gnome-keyring avahi-glib gpod gobject-2.0
-WANTLIB += gpg-error gstbase-0.10 gstcontroller-0.10 gstinterfaces-0.10
-WANTLIB += gstpbutils-0.10 gstreamer-0.10   gthread-2.0 gtk-x11-2.0 m
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png proxy
-WANTLIB += pthread pthread-stubs soup-2.4 sqlite3 tasn1 util xcb xml2 z
-WANTLIB += eggdbus-1 xcb-render xcb-render-util gnome-media-profiles
-WANTLIB += totem-plparser soup-gnome-2.4 avahi-client avahi-common
+WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += atk-1.0 avahi-client avahi-common avahi-glib c cairo
+WANTLIB += dbus-1 dbus-glib-1 drm expat ffi fontconfig freetype
+WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmime-2.4 gmodule-2.0 gnome-keyring gnome-media-profiles
+WANTLIB += gnutls gobject-2.0 gpg-error gpod gstbase-0.10 gstcontroller-0.10
+WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
+WANTLIB += gthread-2.0 gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png proxy pthread pthread-stubs
+WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 tasn1 totem-plparser
+WANTLIB += util xcb xcb-render xcb-shm xml2 z
 WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/gettext \
