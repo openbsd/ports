@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.97 2010/11/15 00:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.98 2011/01/07 10:24:30 pea Exp $
 
 COMMENT-main=	Open source LDAP software (client)
 COMMENT-server=	Open source LDAP software (server)
 
-DISTNAME=		openldap-2.3.43
+DISTNAME=		openldap-2.4.23
 PKGNAME-main=		${DISTNAME:S/-/-client-/}
 PKGNAME-server=		${DISTNAME:S/-/-server-/}
-REVISION-main=		2
-REVISION-server= 	4
 
-SHARED_LIBS +=	lber                 9.1      # .2.15
-SHARED_LIBS +=	ldap                 9.1      # .2.15
-SHARED_LIBS +=	ldap_r               9.1      # .2.15
-SHARED_LIBS +=	lber-2.3             9.1      # .2.15
-SHARED_LIBS +=	ldap-2.3             9.1      # .2.15
-SHARED_LIBS +=	ldap_r-2.3           9.1      # .2.15
+SHARED_LIBS +=	lber                 10.0      # .7.6
+SHARED_LIBS +=	ldap                 10.0      # .7.6
+SHARED_LIBS +=	ldap_r               10.0      # .7.6
+SHARED_LIBS +=	lber-2.4             10.0      # .7.6
+SHARED_LIBS +=	ldap-2.4             10.0      # .7.6
+SHARED_LIBS +=	ldap_r-2.4           10.0      # .7.6
 CATEGORIES=	databases net
 
 HOMEPAGE=	http://www.openldap.org/
@@ -23,10 +21,11 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes 
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c crypto ssl asn1 com_err gssapi krb5
+
+WANTLIB += c crypto ssl asn1 com_err gssapi krb5 sasl2 
 
 MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/openldap-release/ \
+		http://mirror.switch.ch/ftp/mirror/OpenLDAP/openldap-release/ \
 		ftp://mirror.aarnet.edu.au/pub/openldap/openldap-release/ \
 		ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/openldap-release/ \
 		http://www.unibase.cz/ldapcz/Programy/Free/OpenLDAP/openldap-release/ \
@@ -35,12 +34,14 @@ MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
 EXTRACT_SUFX=		.tgz
 
 SEPARATE_BUILD=		concurrent
-CONFIGURE_STYLE=	gnu
-USE_GROFF =	Yes
+AUTOCONF_VERSION=	2.61
+CONFIGURE_STYLE=	gnu autoconf
+USE_GROFF=		Yes
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--localstatedir="/var" \
-			--enable-ipv6
+			--enable-ipv6 \
+			--with-tls=openssl
 
 # slapd options
 CONFIGURE_ARGS+=	--enable-slapd \
@@ -52,25 +53,21 @@ CONFIGURE_ARGS+=	--enable-slapd \
 			--enable-spasswd
 
 # slapd modules
-CONFIGURE_ARGS+=	--enable-dnssrv \
+CONFIGURE_ARGS+=	--enable-bdb \
+			--enable-dnssrv \
+			--enable-hdb \
 			--enable-ldap \
-			--enable-ldbm \
 			--enable-meta \
 			--enable-monitor \
 			--enable-null \
 			--enable-passwd \
 			--enable-perl \
-			--enable-shell
-
-# slurpd modules
-CONFIGURE_ARGS+=	 --enable-slurpd
+			--enable-shell \
+			--enable-overlay
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/build
 
 REGRESS_TARGET=	test
-
-FLAVORS=	bdb
-FLAVOR?=
 
 MULTI_PACKAGES=	-main -server
 
@@ -78,37 +75,21 @@ LIB_DEPENDS +=		security/cyrus-sasl2
 WANTLIB +=		sasl2
 CPPFLAGS +=		-I${LOCALBASE}/include/sasl
 
-.if ${FLAVOR:L:Mbdb}
-BROKEN =		OpenLDAP 2.3 is incompatible with Berkeley DB 4.6
-CONFIGURE_ARGS +=	--enable-bdb --enable-hdb
-LIB_DEPENDS +=		db->=4,<5:databases/db/v4
-WANTLIB +=		lib/db4/db>=4
-CPPFLAGS +=		-I${LOCALBASE}/include/db4
-LDFLAGS +=		-L${LOCALBASE}/lib/db4
-LIBS +=			-ldb
-.else
-CONFIGURE_ARGS+=	--disable-bdb --disable-hdb
-.endif
-
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
-			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
-			LIBS="${LIBS}"
+LIB_DEPENDS-server =	${LIB_DEPENDS-main} \
+			textproc/icu4c \
+			db->=4.6.21,<5:databases/db/v4
+			
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include/sasl -I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib/db4 -L${LOCALBASE}/lib" 
 
 RUN_DEPENDS-server=	${BASE_PKGPATH}
-WANTLIB-server=		${WANTLIB} perl util wrap m pthread
+WANTLIB-server += 	${WANTLIB} perl util wrap m pthread icudata icuuc
+WANTLIB-server += 	stdc++ lib/db4/db>=4
 
 USE_LIBTOOL=	Yes
 
 pre-build:
 	@cd ${WRKBUILD}; ${MAKE_PROGRAM} depend
-
-pre-configure:
-	@perl -pi -e 's,KRB5_LIBS=,KRB5_LIBS="-lgssapi -lkrb5 -lasn1 \
-		-lcom_err",g' ${WRKSRC}/configure
-.if ${FLAVOR} != "bdb"
-	@perl -pi -e 's,database	bdb,database	ldbm,' \
-		${WRKSRC}/servers/slapd/slapd.conf
-.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openldap
@@ -119,7 +100,6 @@ post-install:
 		 ${PREFIX}/share/examples/openldap/schema
 	${INSTALL_DATA} ${WRKSRC}/servers/slapd/DB_CONFIG \
 		${PREFIX}/share/examples/openldap
-	@rm -r ${DESTDIR}${SYSCONFDIR}/openldap
-	@rm -r ${DESTDIR}/var/openldap-data ${DESTDIR}/var/openldap-slurp
+	@rm -rf ${DESTDIR}${SYSCONFDIR}/openldap
 
 .include <bsd.port.mk>

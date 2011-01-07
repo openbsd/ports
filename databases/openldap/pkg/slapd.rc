@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD: slapd.rc,v 1.1 2011/01/07 10:24:30 pea Exp $
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/libexec/slapd"
+rc_reload=NO
+
+rc_pre() {
+	/usr/bin/install -d -o _openldap /var/run/openldap
+}
+
+rc_cmd $1

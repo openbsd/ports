@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2008/07/15 18:25:53 brad Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2011/01/07 10:24:30 pea Exp $
 @pkgpath ${BASE_PKGPATH}
 bin/ldapadd
 @bin bin/ldapcompare
 @bin bin/ldapdelete
+@bin bin/ldapexop
 @bin bin/ldapmodify
 @bin bin/ldapmodrdn
 @bin bin/ldappasswd
 @bin bin/ldapsearch
+@bin bin/ldapurl
 @bin bin/ldapwhoami
 include/lber.h
 include/lber_types.h
@@ -25,10 +27,12 @@ lib/libldap_r.la
 @man man/man1/ldapadd.1
 @man man/man1/ldapcompare.1
 @man man/man1/ldapdelete.1
+@man man/man1/ldapexop.1
 @man man/man1/ldapmodify.1
 @man man/man1/ldapmodrdn.1
 @man man/man1/ldappasswd.1
 @man man/man1/ldapsearch.1
+@man man/man1/ldapurl.1
 @man man/man1/ldapwhoami.1
 @man man/man3/ber_alloc_t.3
 @man man/man3/ber_bvarray_add.3
@@ -68,6 +72,7 @@ lib/libldap_r.la
 @man man/man3/lber-decode.3
 @man man/man3/lber-encode.3
 @man man/man3/lber-memory.3
+@man man/man3/lber-sockbuf.3
 @man man/man3/lber-types.3
 @man man/man3/ld_errno.3
 @man man/man3/ldap.3
@@ -86,6 +91,13 @@ lib/libldap_r.la
 @man man/man3/ldap_compare_ext.3
 @man man/man3/ldap_compare_ext_s.3
 @man man/man3/ldap_compare_s.3
+@man man/man3/ldap_control_create.3
+@man man/man3/ldap_control_dup.3
+@man man/man3/ldap_control_find.3
+@man man/man3/ldap_control_free.3
+@man man/man3/ldap_controls.3
+@man man/man3/ldap_controls_dup.3
+@man man/man3/ldap_controls_free.3
 @man man/man3/ldap_count_entries.3
 @man man/man3/ldap_count_messages.3
 @man man/man3/ldap_count_references.3
@@ -105,19 +117,30 @@ lib/libldap_r.la
 @man man/man3/ldap_error.3
 @man man/man3/ldap_explode_dn.3
 @man man/man3/ldap_explode_rdn.3
+@man man/man3/ldap_extended_operation.3
+@man man/man3/ldap_extended_operation_s.3
 @man man/man3/ldap_first_attribute.3
 @man man/man3/ldap_first_entry.3
 @man man/man3/ldap_first_message.3
 @man man/man3/ldap_first_reference.3
 @man man/man3/ldap_free_urldesc.3
 @man man/man3/ldap_get_dn.3
+@man man/man3/ldap_get_option.3
 @man man/man3/ldap_get_values.3
 @man man/man3/ldap_get_values_len.3
 @man man/man3/ldap_init.3
+@man man/man3/ldap_initialize.3
+@man man/man3/ldap_install_tls.3
 @man man/man3/ldap_is_ldap_url.3
 @man man/man3/ldap_matchingrule2name.3
 @man man/man3/ldap_matchingrule2str.3
 @man man/man3/ldap_matchingrule_free.3
+@man man/man3/ldap_memalloc.3
+@man man/man3/ldap_memcalloc.3
+@man man/man3/ldap_memfree.3
+@man man/man3/ldap_memory.3
+@man man/man3/ldap_memrealloc.3
+@man man/man3/ldap_memvfree.3
 @man man/man3/ldap_modify.3
 @man man/man3/ldap_modify_ext.3
 @man man/man3/ldap_modify_ext_s.3
@@ -142,7 +165,11 @@ lib/libldap_r.la
 @man man/man3/ldap_parse_reference.3
 @man man/man3/ldap_parse_result.3
 @man man/man3/ldap_parse_sasl_bind_result.3
+@man man/man3/ldap_parse_sort_control.3
+@man man/man3/ldap_parse_vlv_control.3
 @man man/man3/ldap_perror.3
+@man man/man3/ldap_rename.3
+@man man/man3/ldap_rename_s.3
 @man man/man3/ldap_result.3
 @man man/man3/ldap_result2error.3
 @man man/man3/ldap_sasl_bind.3
@@ -154,20 +181,28 @@ lib/libldap_r.la
 @man man/man3/ldap_search_ext_s.3
 @man man/man3/ldap_search_s.3
 @man man/man3/ldap_search_st.3
+@man man/man3/ldap_set_option.3
+@man man/man3/ldap_set_rebind_proc.3
 @man man/man3/ldap_simple_bind.3
 @man man/man3/ldap_simple_bind_s.3
 @man man/man3/ldap_sort.3
 @man man/man3/ldap_sort_entries.3
 @man man/man3/ldap_sort_strcasecmp.3
 @man man/man3/ldap_sort_values.3
+@man man/man3/ldap_start_tls.3
+@man man/man3/ldap_start_tls_s.3
 @man man/man3/ldap_str2attributetype.3
 @man man/man3/ldap_str2dn.3
 @man man/man3/ldap_str2matchingrule.3
 @man man/man3/ldap_str2objectclass.3
 @man man/man3/ldap_str2syntax.3
+@man man/man3/ldap_strdup.3
+@man man/man3/ldap_sync.3
 @man man/man3/ldap_syntax2name.3
 @man man/man3/ldap_syntax2str.3
 @man man/man3/ldap_syntax_free.3
+@man man/man3/ldap_tls.3
+@man man/man3/ldap_tls_inplace.3
 @man man/man3/ldap_unbind.3
 @man man/man3/ldap_unbind_ext.3
 @man man/man3/ldap_unbind_ext_s.3
@@ -178,20 +213,7 @@ lib/libldap_r.la
 @man man/man3/ldap_value_free_len.3
 @man man/man5/ldap.conf.5
 @man man/man5/ldif.5
-@man man/man5/slapo-accesslog.5
-@man man/man5/slapo-auditlog.5
-@man man/man5/slapo-chain.5
-@man man/man5/slapo-dynlist.5
-@man man/man5/slapo-lastmod.5
-@man man/man5/slapo-pcache.5
-@man man/man5/slapo-ppolicy.5
-@man man/man5/slapo-refint.5
-@man man/man5/slapo-retcode.5
-@man man/man5/slapo-rwm.5
-@man man/man5/slapo-syncprov.5
-@man man/man5/slapo-translucent.5
-@man man/man5/slapo-unique.5
-@man man/man5/slapo-valsort.5
+@man man/man5/slapo-pbind.5
 share/examples/openldap/
 @sample ${SYSCONFDIR}/openldap/
 share/examples/openldap/ldap.conf

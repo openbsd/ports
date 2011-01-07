@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST-server,v 1.18 2009/08/21 13:21:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST-server,v 1.19 2011/01/07 10:24:30 pea Exp $
 @conflict openldap-client->=2.3.11,<=2.3.11p3
+@pkgpath databases/openldap,-server,bdb
+@ask-update openldap-server-<2.4 Make sure your existing database is backed up
 @newgroup _openldap:544
 @newuser _openldap:544:_openldap:daemon:OpenLDAP Account:/nonexistent:/sbin/nologin
 @bin libexec/slapd
-@bin libexec/slurpd
 @man man/man5/slapd-bdb.5
+@man man/man5/slapd-config.5
 @man man/man5/slapd-dnssrv.5
 @man man/man5/slapd-hdb.5
 @man man/man5/slapd-ldap.5
@@ -12,17 +14,38 @@
 @man man/man5/slapd-ldif.5
 @man man/man5/slapd-meta.5
 @man man/man5/slapd-monitor.5
+@man man/man5/slapd-ndb.5
 @man man/man5/slapd-null.5
 @man man/man5/slapd-passwd.5
 @man man/man5/slapd-perl.5
 @man man/man5/slapd-relay.5
 @man man/man5/slapd-shell.5
+@man man/man5/slapd-sock.5
 @man man/man5/slapd-sql.5
-@man man/man5/slapd-tcl.5
 @man man/man5/slapd.access.5
+@man man/man5/slapd.backends.5
 @man man/man5/slapd.conf.5
+@man man/man5/slapd.overlays.5
 @man man/man5/slapd.plugin.5
-@man man/man5/slapd.replog.5
+@man man/man5/slapo-accesslog.5
+@man man/man5/slapo-auditlog.5
+@man man/man5/slapo-chain.5
+@man man/man5/slapo-collect.5
+@man man/man5/slapo-constraint.5
+@man man/man5/slapo-dds.5
+@man man/man5/slapo-dyngroup.5
+@man man/man5/slapo-dynlist.5
+@man man/man5/slapo-memberof.5
+@man man/man5/slapo-pcache.5
+@man man/man5/slapo-ppolicy.5
+@man man/man5/slapo-refint.5
+@man man/man5/slapo-retcode.5
+@man man/man5/slapo-rwm.5
+@man man/man5/slapo-sssvlv.5
+@man man/man5/slapo-syncprov.5
+@man man/man5/slapo-translucent.5
+@man man/man5/slapo-unique.5
+@man man/man5/slapo-valsort.5
 @man man/man8/slapacl.8
 @man man/man8/slapadd.8
 @man man/man8/slapauth.8
@@ -31,8 +54,8 @@
 @man man/man8/slapdn.8
 @man man/man8/slapindex.8
 @man man/man8/slappasswd.8
+@man man/man8/slapschema.8
 @man man/man8/slaptest.8
-@man man/man8/slurpd.8
 sbin/slapacl
 sbin/slapadd
 sbin/slapauth
@@ -40,15 +63,27 @@ sbin/slapcat
 sbin/slapdn
 sbin/slapindex
 sbin/slappasswd
+sbin/slapschema
 sbin/slaptest
+@mode 700
+@owner _openldap
+@sample /var/openldap-data/
+@group _openldap
+share/examples/openldap/DB_CONFIG
+@sample /var/openldap-data/DB_CONFIG
+@mode
+@owner
+@group
 share/examples/openldap/schema/
 @sample ${SYSCONFDIR}/openldap/schema/
+share/examples/openldap/schema/collective.schema
 share/examples/openldap/schema/corba.schema
 @sample ${SYSCONFDIR}/openldap/schema/corba.schema
 share/examples/openldap/schema/core.schema
 @sample ${SYSCONFDIR}/openldap/schema/core.schema
 share/examples/openldap/schema/cosine.schema
 @sample ${SYSCONFDIR}/openldap/schema/cosine.schema
+share/examples/openldap/schema/duaconf.schema
 share/examples/openldap/schema/dyngroup.schema
 @sample ${SYSCONFDIR}/openldap/schema/dyngroup.schema
 share/examples/openldap/schema/inetorgperson.schema
@@ -61,6 +96,7 @@ share/examples/openldap/schema/nis.schema
 @sample ${SYSCONFDIR}/openldap/schema/nis.schema
 share/examples/openldap/schema/openldap.schema
 @sample ${SYSCONFDIR}/openldap/schema/openldap.schema
+share/examples/openldap/schema/pmi.schema
 share/examples/openldap/schema/ppolicy.schema
 @sample ${SYSCONFDIR}/openldap/schema/ppolicy.schema
 @mode 0640
@@ -69,10 +105,4 @@ share/examples/openldap/slapd.conf
 @sample ${SYSCONFDIR}/openldap/slapd.conf
 @mode
 @group
-@mode 700
-@owner _openldap
-@group _openldap
-@sample /var/openldap-data/
-@sample /var/openldap-slurp/
-share/examples/openldap/DB_CONFIG
-@sample /var/openldap-data/DB_CONFIG
+@rcscript ${RCDIR}/slapd

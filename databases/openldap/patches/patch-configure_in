@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure_in,v 1.1 2011/01/07 10:24:30 pea Exp $
+--- configure.in.orig	Wed Sep 30 02:24:39 2009
++++ configure.in	Mon May  3 18:32:18 2010
+@@ -582,7 +582,7 @@ SLAPD_SQL_LIBS=
+ SLAPD_SQL_INCLUDES=
+ 
+ KRB4_LIBS=
+-KRB5_LIBS=
++KRB5_LIBS="-lgssapi -lkrb5 -lasn1 -lcom_err"
+ SASL_LIBS=
+ TLS_LIBS=
+ MODULES_LIBS=
+@@ -1901,6 +1901,7 @@ if test $ol_enable_wrappers != no ; then
+ 		save_LIBS="$LIBS"
+ 		LIBS="$LIBS -lwrap"
+ 		AC_LINK_IFELSE([AC_LANG_PROGRAM([[
++#include <sys/types.h>
+ #include <tcpd.h>
+ int allow_severity = 0;
+ int deny_severity  = 0;
