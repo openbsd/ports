@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/01/07 10:22:05 jasper Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
 GNOME_PROJECT=		gnome-python-desktop
 GNOME_VERSION=		2.32.0
 PKGNAME=		py-gnome-desktop-${VERSION}
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://www.pygtk.org/
 
@@ -15,26 +15,25 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite
-WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr rsvg-2
-WANTLIB += Xrender art_lgpl_2 asn1 atk-1.0 avahi-client avahi-common
-WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 bz2
-WANTLIB += cairo camel-1.2 canberra canberra-gtk com_err croco-0.6
-WANTLIB += crypto dbus-1 dbus-glib-1 ebook-1.2 ecal-1.2 edataserver-1.2
-WANTLIB += execinfo expat ffi fontconfig freetype gailutil gconf-2
-WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 gnomeprintui-2-2
-WANTLIB += glib-2.0 gmime-2.4 gmodule-2.0 gnome-2 gnome-desktop-2
-WANTLIB += gnome-keyring gnomecanvas-2 gnomeprint-2-2 gnomeui-2
-WANTLIB += gnomevfs-2 gnutls gobject-2.0 gpg-error gssapi
-WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 ical icalss eggdbus-1
-WANTLIB += icalvcal krb5 kvm ltdl m nspr4 nss3 ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png popt pthread-stubs
-WANTLIB += smime3 soup-2.4 sqlite3 ssl ssl3 startup-notification-1
-WANTLIB += tasn1 util vorbis vorbisfile wnck-1 xcb xcb-atom xcb-aux
-WANTLIB += xcb-event xcb-render xcb-render-util xml2 z gtop-2.0
-WANTLIB += gnome-media-profiles metacity-private panel-applet-2
-WANTLIB += totem-plparser gdata nssutil3 proxy pthread soup-gnome-2.4
-WANTLIB += pthread gsf-1
+WANTLIB += GL ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite
+WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender Xxf86vm art_lgpl_2 asn1 atk-1.0 bonobo-2 bonobo-activation
+WANTLIB += bonoboui-2 cairo camel-1.2 canberra canberra-gtk com_err
+WANTLIB += croco-0.6 crypto dbus-1 dbus-glib-1 drm ebook-1.2 ecal-1.2
+WANTLIB += edataserver-1.2 evdocument evview execinfo expat ffi
+WANTLIB += fontconfig freetype gailutil gconf-2 gcrypt gdata gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmime-2.4 gmodule-2.0
+WANTLIB += gnome-2 gnome-desktop-2 gnome-keyring gnome-media-profiles
+WANTLIB += gnomecanvas-2 gnomeprint-2-2 gnomeprintui-2-2 gnomeui-2
+WANTLIB += gnomevfs-2 gnutls gobject-2.0 gpg-error gssapi gstreamer-0.10
+WANTLIB += gthread-2.0 gtk-x11-2.0 gtop-2.0 ical icalss icalvcal
+WANTLIB += krb5 kvm ltdl m metacity-private nspr4 nss3 nssutil3
+WANTLIB += ogg panel-applet-2 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 plc4 plds4 png popt proxy pthread pthread-stubs
+WANTLIB += rsvg-2 smime3 soup-2.4 soup-gnome-2.4 sqlite3 ssl ssl3
+WANTLIB += startup-notification-1 tasn1 totem-plparser util vorbis
+WANTLIB += vorbisfile wnck-1 xcb xcb-atom xcb-aux xcb-event xcb-render
+WANTLIB += xcb-shm xml2 z
 
 MODULES=		devel/gettext \
 			lang/python \
