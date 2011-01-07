@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2011/01/07 15:34:53 benoit Exp $
+# $OpenBSD: Makefile,v 1.42 2011/01/07 16:26:26 benoit Exp $
 
-COMMENT-main =		extremely fast password cracker
+COMMENT =		extremely fast password cracker
 
-V =			1.7.6
-DISTNAME =		john-${V}
-PKGNAME-main =		${DISTNAME}
+DISTNAME =		john-1.7.6
 CATEGORIES =		security
 
 HOMEPAGE =		http://www.openwall.com/john/
@@ -20,12 +18,6 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		c
 
 MASTER_SITES =		${HOMEPAGE}/g/
-MASTER_SITES0 =		${HOMEPAGE}/contrib/
-                        
-MULTI_PACKAGES =	-main
-
-FLAVORS =		contrib
-FLAVOR ?=
 
 WRKSRC =		${WRKDIST}/src
 
@@ -56,18 +48,6 @@ ALL_TARGET=		openbsd-sparc64
 ALL_TARGET=		generic
 .endif
 
-.if ${FLAVOR:L:Mcontrib}
-MULTI_PACKAGES +=        -contrib
-COMMENT-contrib =        extremely fast password cracker
-PKGNAME-contrib =        john-contrib-${V}
-PATCH_DIST_STRIP =       -p1
-PATCHFILES +=            ${DISTNAME}-jumbo-9.diff.gz:0
-WANTLIB +=               m crypto ldap_r lber
-BUILD_DEPENDS +=         databases/mysql
-LIB_DEPENDS +=           databases/openldap
-MAKE_FLAGS +=            LDFLAGS="-lcrypto -lm"
-.endif
-
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/params.h
 
@@ -85,9 +65,6 @@ do-install:
 		ln -sf john unafs && \
 		ln -sf john unique
 	${INSTALL_DATA} ${WRKDIST}/run/john.conf ${PREFIX}/share/examples/john
-.if ${FLAVOR:L:Mcontrib}
-	@rm ${WRKDIST}/doc/*.bak.orig
-.endif
 	${INSTALL_DATA} ${WRKDIST}/doc/* ${PREFIX}/share/doc/john
 	${INSTALL_DATA} ${WRKDIST}/run/*.chr ${PREFIX}/share/john
 	${INSTALL_DATA} ${WRKDIST}/run/words.lst ${PREFIX}/share/john/password.lst
