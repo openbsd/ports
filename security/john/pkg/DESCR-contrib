@@ -1,0 +1,26 @@
+John the Ripper -- Password Cracker
+=====================================
+
+John the Ripper is designed to be both powerful and fast. It combines
+several cracking modes in one program, and is fully configurable for your
+particular needs (you can even define a custom cracking mode using the
+built-in compiler supporting a subset of C).
+
+Out of the box, John supports (and autodetects) the following ciphertext
+formats: standard and double-length DES-based, BSDI's extended DES-based,
+FreeBSD's (and not only) MD5-based and OpenBSD's Blowfish-based.
+
+With just one extra command (required to extract the passwords), John can
+crack AFS passwords and WinNT LM hashes.
+
+Unlike other crackers, John doesn't use a crypt(3)-style routine. Instead,
+it has its own highly optimized modules for different ciphertext formats
+and architectures. Some of the algorithms used couldn't be implemented in
+a crypt(3)-style routine: they require a more powerful interface (bitslice
+DES is an example). Additionally, there're assembly routines for several
+processors and architectures (special Intel Pentium version, x86 with MMX,
+generic x86, Alpha EV4, SPARC V8).
+
+This version integrates lots of contributed patches adding support for over 40
+of additional hash and cipher types (including popular ones such as NTLM,
+raw MD5, etc.), as well as some optimizations and features. 

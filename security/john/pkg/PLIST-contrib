@@ -1,0 +1,35 @@
+@comment $OpenBSD: PLIST-contrib,v 1.1 2011/01/07 15:34:56 benoit Exp $
+@comment share/doc/john/CREDITS
+@comment share/doc/john/CREDITS
+@bin bin/john
+bin/mailer
+bin/unafs
+bin/unique
+bin/unshadow
+share/doc/john/
+share/doc/john/CHANGES
+share/doc/john/CONFIG
+share/doc/john/CONTACT
+@comment share/doc/john/CREDITS
+@comment share/doc/john/CREDITS
+share/doc/john/EPi.patch.README
+share/doc/john/EXAMPLES
+share/doc/john/EXTERNAL
+share/doc/john/FAQ
+share/doc/john/INSTALL
+share/doc/john/LICENSE
+share/doc/john/MARKOV
+share/doc/john/MODES
+share/doc/john/OPTIONS
+share/doc/john/README
+share/doc/john/RULES
+share/examples/john/
+share/examples/john/john.conf
+@sample ${SYSCONFDIR}/john.conf
+share/john/
+share/john/all.chr
+share/john/alnum.chr
+share/john/alpha.chr
+share/john/digits.chr
+share/john/lanman.chr
+share/john/password.lst
