@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.116 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.117 2011/01/07 10:31:16 pea Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.32.1
+REVISION-main=		0
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -65,7 +66,7 @@ WANTLIB += icalss icalvcal nssutil3 softokn3 xcb-shm
 
 WANTLIB-main += ${WANTLIB} vorbisfile canberra-gtk
 WANTLIB-main += gweather icalss icalvcal ogg db gtkimageview
-WANTLIB-main += icalss icalvcal ldap-2.3 ltdl ogg pst softokn3
+WANTLIB-main += icalss icalvcal ldap ltdl ogg pst softokn3
 WANTLIB-main += ebackend-1.2 egroupwise-1.2 vorbis
 WANTLIB-main += canberra-gtk ltdl ogg vorbis vorbisfile
 
