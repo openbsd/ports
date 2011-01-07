@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.487 2010/12/30 08:54:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.488 2011/01/07 13:47:19 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -249,6 +249,7 @@
      SUBDIR += p5-HTTP-GHTTP
      SUBDIR += p5-HTTP-GetImages
      SUBDIR += p5-HTTP-Lite
+     SUBDIR += p5-HTTP-Parser-XS
      SUBDIR += p5-HTTP-Proxy
      SUBDIR += p5-HTTP-Recorder
      SUBDIR += p5-HTTP-Request-AsCGI
@@ -279,6 +280,7 @@
      SUBDIR += p5-SCGI
      SUBDIR += p5-SOAP-Lite
      SUBDIR += p5-SOAP-WSDL
+     SUBDIR += p5-Starman
      SUBDIR += p5-Test-HTTP-Server-Simple
      SUBDIR += p5-URI
      SUBDIR += p5-URI-Fetch
