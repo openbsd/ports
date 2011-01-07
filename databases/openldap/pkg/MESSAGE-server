@@ -1,5 +1,0 @@
-To start slapd, configure it in ${SYSCONFDIR}/openldap/slapd.conf then add
-the following line to /etc/rc.conf.local:
-
-slapd_flags="-u _openldap"
-
