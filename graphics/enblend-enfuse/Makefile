@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/22 10:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/01/07 18:14:08 jasper Exp $
 
 VMEM_WARNING =	Yes
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
@@ -12,6 +12,7 @@ COMMENT =	blend seams in panoramic image mosaics
 DISTNAME =	enblend-enfuse-4.0
 PKGNAME =	${DISTNAME:L}
 WRKDIST =	${WRKDIR}/enblend-enfuse-4.0-753b534c819d
+REVISION =	0
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://enblend.sourceforge.net/
@@ -64,5 +65,9 @@ CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS}" \
 #post-build:
 #	@cd ${WRKBUILD}/doc && \
 #	    ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} xhtml
+
+# Fix with newer GNUplot versions. From Gentoo bz #334331
+post-extract:
+	@perl -pi -e 's,FreeSans 10,"FreeSans\,10",g' ${WRKSRC}/doc/*.gp.in
 
 .include <bsd.port.mk>
