@@ -1,0 +1,6 @@
+HTTP::Parser::XS is a fast, primitive HTTP request/response parser.
+
+The request parser can be used either for writing a synchronous HTTP
+server or a event-driven server.
+
+The response parser can be used for writing HTTP clients.
