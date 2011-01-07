@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/07 07:33:32 sebastia Exp $
+include/HighlighterKit
+lib/GNUstep/
+lib/GNUstep/Frameworks/
+lib/GNUstep/Frameworks/HighlighterKit.framework/
+lib/GNUstep/Frameworks/HighlighterKit.framework/Headers
+lib/GNUstep/Frameworks/HighlighterKit.framework/Resources
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Headers/
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Headers/HKSyntaxDefinition.h
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Headers/HKSyntaxHighlighter.h
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Headers/HKTextPattern.h
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Headers/HighlighterKit.h
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/C++.syntax
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/C-Header.syntax
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/C.syntax
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/GNUmakefile.syntax
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/GSmarkup.syntax
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/Info-gnustep.plist
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/ObjC++.syntax
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/ObjC.syntax
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/Plist.syntax
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/0.0/Resources/Strings.syntax
+lib/GNUstep/Frameworks/HighlighterKit.framework/Versions/Current
+@lib lib/libHighlighterKit.so.${LIBHighlighterKit_VERSION}
