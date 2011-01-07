@@ -1,10 +1,11 @@
 #!/bin/sh
 #
-# $OpenBSD: slapd.rc,v 1.1.1.1 2011/01/07 10:17:04 pea Exp $
+# $OpenBSD: slapd.rc,v 1.2 2011/01/07 12:26:50 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/libexec/slapd"
 
 . /etc/rc.d/rc.subr
 
-daemon="${TRUEPREFIX}/libexec/slapd"
 rc_reload=NO
 
 rc_pre() {

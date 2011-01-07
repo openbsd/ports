@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/07 10:17:04 pea Exp $
+# $OpenBSD: Makefile,v 1.2 2011/01/07 12:26:50 ajacoutot Exp $
 
 COMMENT=	Open source LDAP software (server)
 
 DISTNAME=		openldap-2.3.43
 PKGNAME=		${DISTNAME:S/-/-server-/}
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=	databases net
 
