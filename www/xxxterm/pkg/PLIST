@@ -1,6 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.1 2010/03/25 09:40:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/01/07 22:40:52 laurent Exp $
 @bin bin/xxxterm
 man/man8/xxxterm.1
+share/applications/xxxterm.desktop
 share/examples/xxxterm/
 share/examples/xxxterm/favorites
 share/examples/xxxterm/xxxterm.conf
+share/xxxterm/
+share/xxxterm/xxxtermicon.png
+share/xxxterm/xxxtermicon128.png
+share/xxxterm/xxxtermicon16.png
+share/xxxterm/xxxtermicon32.png
+share/xxxterm/xxxtermicon48.png
+share/xxxterm/xxxtermicon64.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

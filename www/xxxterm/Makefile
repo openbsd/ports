@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2011/01/02 22:15:13 marco Exp $
+# $OpenBSD: Makefile,v 1.11 2011/01/07 22:40:52 laurent Exp $
 
 COMMENT =		vi-like minimalists web browser
 
-DISTNAME =		xxxterm-1.187
+DISTNAME =		xxxterm-1.221
 
 CATEGORIES =		www
 
@@ -29,6 +29,8 @@ WANTLIB += webkit-1.0
 
 LIB_DEPENDS =		www/webkit
 
+RUN_DEPENDS =		devel/desktop-file-utils
+
 MASTER_SITES =		http://opensource.conformal.com/snapshots/xxxterm/
 
 EXTRACT_SUFX =		.tgz
@@ -45,5 +47,11 @@ do-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/xxxterm.conf ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/favorites ${EXAMPLEDIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/xxxterm/
+	${INSTALL_DATA} ${WRKSRC}/xxxtermicon*.png ${PREFIX}/share/xxxterm/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	@${SUBST_CMD} -c ${WRKSRC}/xxxterm.desktop ${PREFIX}/share/applications/xxxterm.desktop
+	${INSTALL_DATA} ${WRKSRC}/xxxterm.desktop ${PREFIX}/share/applications/
+	${CHOWN} ${SHAREOWN}:${SHAREGRP} $(PREFIX)/share/applications/xxxterm.desktop
 
 .include <bsd.port.mk>
