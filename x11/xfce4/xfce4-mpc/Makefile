@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/22 08:37:06 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/01/07 16:58:40 landry Exp $
 
 COMMENT=	Xfce4 mpd client panel plugin
 
-XFCE_VERSION=	0.3.5
+XFCE_VERSION=	0.3.6
 XFCE_PLUGIN=	mpc
-REVISION=	1
 
 # BSD-ISC
 PERMIT_DISTFILES_CDROM=	Yes
@@ -23,6 +22,6 @@ WANTLIB=	X11 Xdmcp Xrender Xdamage Xau fontconfig freetype m z c \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
 		pangoft2-1.0 pangocairo-1.0 cairo png \
 		pixman-1 xfce4util xfcegui4 pthread-stubs xcb exo-0.3 \
-		gthread-2.0 pthread xcb-render xcb-render-util
+		gthread-2.0 pthread xcb-render GL Xxf86vm drm xcb-shm
 
 .include <bsd.port.mk>
