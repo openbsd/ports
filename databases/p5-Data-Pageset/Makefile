@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/01/07 09:03:15 benoit Exp $
 
 COMMENT=	pager utility
 
-DISTNAME=	Data-Pageset-1.05
-REVISION=	0
+DISTNAME=	Data-Pageset-1.06
 CATEGORIES=	databases
 MODULES=	cpan
 USE_GROFF =	Yes
-
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
