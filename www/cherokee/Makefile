@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/12/27 14:50:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/01/08 08:47:53 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,6 +19,7 @@ PKGNAME-geoip =	cherokee-geoip-${VERSION}
 PKGNAME-streaming = cherokee-streaming-${VERSION}
 
 REVISION-main=	2
+REVISION-ldap=	0
 
 SHARED_LIBS =	cherokee-base		0.0 \
 		cherokee-client		0.0 \
@@ -59,7 +60,7 @@ WANTLIB-geoip =		crypto GeoIP>=6
 RUN_DEPENDS-geoip =	${BASE_PKGPATH}
 
 LIB_DEPENDS-ldap =	databases/openldap
-WANTLIB-ldap =		asn1 com_err crypto gssapi krb5 lber-2.3 ldap-2.3 sasl2 ssl
+WANTLIB-ldap =		asn1 com_err crypto gssapi krb5 lber-2.4 ldap-2.4 sasl2 ssl
 RUN_DEPENDS-ldap =	${BASE_PKGPATH}
 
 LIB_DEPENDS-mysql =	databases/mysql
