@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/08/19 09:40:50 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/01/08 13:07:12 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}filefield/
@@ -18,10 +18,10 @@ ${DRUPAL_MODS}filefield/filefield.token.inc
 ${DRUPAL_MODS}filefield/filefield_field.inc
 ${DRUPAL_MODS}filefield/filefield_formatter.inc
 ${DRUPAL_MODS}filefield/filefield_meta/
-${DRUPAL_MODS}filefield/filefield_meta/fielfield_meta.token.inc
 ${DRUPAL_MODS}filefield/filefield_meta/filefield_meta.info
 ${DRUPAL_MODS}filefield/filefield_meta/filefield_meta.install
 ${DRUPAL_MODS}filefield/filefield_meta/filefield_meta.module
+${DRUPAL_MODS}filefield/filefield_meta/filefield_meta.token.inc
 ${DRUPAL_MODS}filefield/filefield_meta/includes/
 ${DRUPAL_MODS}filefield/filefield_meta/includes/filefield_meta.views.inc
 ${DRUPAL_MODS}filefield/filefield_meta/includes/filefield_meta_handler_field_bitrate.inc

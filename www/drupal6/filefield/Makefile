@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/22 08:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/01/08 13:07:12 stephan Exp $
 
 COMMENT =	file cck field
 
-DISTNAME = 	filefield-6.x-3.7
-PKGNAME =	drupal6-filefield-3.7
-REVISION =	0
+DISTNAME = 	filefield-6.x-3.9
+PKGNAME =	drupal6-filefield-3.9
 
 RUN_DEPENDS =	www/drupal6/cck
 
