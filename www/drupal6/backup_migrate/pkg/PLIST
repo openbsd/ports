@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/12/21 09:38:23 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/01/08 12:54:52 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_ROOT}/files/backup_migrate/
 ${DRUPAL_MODS}backup_migrate/
 ${DRUPAL_MODS}backup_migrate/LICENSE.txt
 ${DRUPAL_MODS}backup_migrate/README.txt
+${DRUPAL_MODS}backup_migrate/backup_migrate.css
 ${DRUPAL_MODS}backup_migrate/backup_migrate.info
 ${DRUPAL_MODS}backup_migrate/backup_migrate.install
 ${DRUPAL_MODS}backup_migrate/backup_migrate.js
@@ -30,3 +31,5 @@ ${DRUPAL_MODS}backup_migrate/includes/filters.statusnotify.inc
 ${DRUPAL_MODS}backup_migrate/includes/filters.utils.inc
 ${DRUPAL_MODS}backup_migrate/includes/profiles.inc
 ${DRUPAL_MODS}backup_migrate/includes/schedules.inc
+${DRUPAL_MODS}backup_migrate/translations/
+${DRUPAL_MODS}backup_migrate/translations/de.po
