@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/22 14:33:47 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/01/08 12:48:46 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}rules/
@@ -37,7 +37,6 @@ ${DRUPAL_MODS}rules/rules/translations/
 ${DRUPAL_MODS}rules/rules/translations/de.po
 ${DRUPAL_MODS}rules/rules/translations/ja.po
 ${DRUPAL_MODS}rules/rules/translations/rules.pot
-${DRUPAL_MODS}rules/rules/translations/sv.po
 ${DRUPAL_MODS}rules/rules_admin/
 ${DRUPAL_MODS}rules/rules_admin/icons/
 ${DRUPAL_MODS}rules/rules_admin/icons/action.png
@@ -62,7 +61,6 @@ ${DRUPAL_MODS}rules/rules_admin/translations/de.po
 ${DRUPAL_MODS}rules/rules_admin/translations/el.po
 ${DRUPAL_MODS}rules/rules_admin/translations/ja.po
 ${DRUPAL_MODS}rules/rules_admin/translations/rules_admin.pot
-${DRUPAL_MODS}rules/rules_admin/translations/sv.po
 ${DRUPAL_MODS}rules/rules_forms/
 ${DRUPAL_MODS}rules/rules_forms/README.txt
 ${DRUPAL_MODS}rules/rules_forms/rules_forms.admin.inc
@@ -91,7 +89,6 @@ ${DRUPAL_MODS}rules/rules_scheduler/translations/de.po
 ${DRUPAL_MODS}rules/rules_scheduler/translations/el.po
 ${DRUPAL_MODS}rules/rules_scheduler/translations/ja.po
 ${DRUPAL_MODS}rules/rules_scheduler/translations/rules_scheduler.pot
-${DRUPAL_MODS}rules/rules_scheduler/translations/sv.po
 ${DRUPAL_MODS}rules/rules_test/
 ${DRUPAL_MODS}rules/rules_test/rules_test.info
 ${DRUPAL_MODS}rules/rules_test/rules_test.module
@@ -102,9 +99,3 @@ ${DRUPAL_MODS}rules/rules_test/translations/
 ${DRUPAL_MODS}rules/rules_test/translations/el.po
 ${DRUPAL_MODS}rules/rules_test/translations/ja.po
 ${DRUPAL_MODS}rules/rules_test/translations/rules_test.pot
-${DRUPAL_MODS}rules/rules_test/translations/sv.po
-${DRUPAL_MODS}rules/translation/
-${DRUPAL_MODS}rules/translation/de.po
-${DRUPAL_MODS}rules/translation/rules.pot
-${DRUPAL_MODS}rules/translation/uk-ua.po
-${DRUPAL_MODS}rules/translation/uk.po
