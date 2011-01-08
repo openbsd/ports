@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/27 13:08:18 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/01/08 13:24:28 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}faq/
@@ -10,6 +10,7 @@ ${DRUPAL_MODS}faq/faq.info
 ${DRUPAL_MODS}faq/faq.install
 ${DRUPAL_MODS}faq/faq.js
 ${DRUPAL_MODS}faq/faq.module
+${DRUPAL_MODS}faq/faq.test
 ${DRUPAL_MODS}faq/includes/
 ${DRUPAL_MODS}faq/includes/faq-category-hide-answer.tpl.php
 ${DRUPAL_MODS}faq/includes/faq-category-new-page.tpl.php
@@ -35,3 +36,5 @@ ${DRUPAL_MODS}faq/translations/nl.po
 ${DRUPAL_MODS}faq/translations/pl.po
 ${DRUPAL_MODS}faq/translations/pt.po
 ${DRUPAL_MODS}faq/translations/ru.po
+${DRUPAL_MODS}faq/views/
+${DRUPAL_MODS}faq/views/faq.views.inc
