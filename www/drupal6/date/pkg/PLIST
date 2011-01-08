@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/08/19 15:10:50 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/01/08 13:21:17 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}date/
@@ -60,7 +60,7 @@ ${DRUPAL_MODS}date/date_locale/translations/date_locale.pot
 @comment ${DRUPAL_MODS}date/date_php4/translations/date_php4.de.po
 @comment ${DRUPAL_MODS}date/date_php4/translations/date_php4.es.po
 @comment ${DRUPAL_MODS}date/date_php4/translations/date_php4.fr.po
-${DRUPAL_MODS}date/date_php4/translations/date_php4.hu.po
+@comment ${DRUPAL_MODS}date/date_php4/translations/date_php4.hu.po
 @comment ${DRUPAL_MODS}date/date_php4/translations/date_php4.pot
 ${DRUPAL_MODS}date/date_popup/
 ${DRUPAL_MODS}date/date_popup/date_popup.info
@@ -145,16 +145,6 @@ ${DRUPAL_MODS}date/help/date.html
 ${DRUPAL_MODS}date/help/date_api.help.ini
 ${DRUPAL_MODS}date/help/embedding.html
 ${DRUPAL_MODS}date/help/form-elements.html
-${DRUPAL_MODS}date/help/ical-import.html
-${DRUPAL_MODS}date/help/ical-parser.html
-${DRUPAL_MODS}date/help/images/
-${DRUPAL_MODS}date/help/images/ical_feed_create.png
-${DRUPAL_MODS}date/help/images/ical_feed_map.png
-${DRUPAL_MODS}date/help/images/ical_feed_map2.png
-${DRUPAL_MODS}date/help/images/ical_feed_type_middle.png
-${DRUPAL_MODS}date/help/images/ical_feed_type_top.png
-${DRUPAL_MODS}date/help/images/ical_imported_event_list.png
-${DRUPAL_MODS}date/help/images/ical_modules.png
 ${DRUPAL_MODS}date/help/new-features.html
 ${DRUPAL_MODS}date/help/overview.html
 ${DRUPAL_MODS}date/images/
@@ -172,6 +162,7 @@ ${DRUPAL_MODS}date/tests/
 ${DRUPAL_MODS}date/tests/README.txt
 ${DRUPAL_MODS}date/tests/USHolidays.ics
 ${DRUPAL_MODS}date/tests/Yahoo.csv
+${DRUPAL_MODS}date/tests/date.test
 ${DRUPAL_MODS}date/tests/date_api.test
 ${DRUPAL_MODS}date/tests/date_repeat.test
 ${DRUPAL_MODS}date/tests/rrule.ics
