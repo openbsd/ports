@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/03/22 10:28:39 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/01/08 13:31:15 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}devel/
@@ -7,6 +7,7 @@ ${DRUPAL_MODS}devel/README.txt
 ${DRUPAL_MODS}devel/README_devel_node_access.txt
 ${DRUPAL_MODS}devel/devel-rtl.css
 ${DRUPAL_MODS}devel/devel.css
+${DRUPAL_MODS}devel/devel.drush.inc
 ${DRUPAL_MODS}devel/devel.info
 ${DRUPAL_MODS}devel/devel.install
 ${DRUPAL_MODS}devel/devel.module
@@ -116,13 +117,11 @@ ${DRUPAL_MODS}devel/krumo/skins/schablon.com/dotted.gif
 ${DRUPAL_MODS}devel/krumo/skins/schablon.com/empty.gif
 ${DRUPAL_MODS}devel/krumo/skins/schablon.com/expanded.gif
 ${DRUPAL_MODS}devel/krumo/skins/schablon.com/skin.css
-${DRUPAL_MODS}devel/loader-little.gif
 ${DRUPAL_MODS}devel/performance/
 ${DRUPAL_MODS}devel/performance/README.txt
 ${DRUPAL_MODS}devel/performance/performance.info
 ${DRUPAL_MODS}devel/performance/performance.install
 ${DRUPAL_MODS}devel/performance/performance.module
-${DRUPAL_MODS}devel/themer-bar.png
 ${DRUPAL_MODS}devel/translations/
 ${DRUPAL_MODS}devel/translations/da.po
 ${DRUPAL_MODS}devel/translations/de.po
@@ -131,5 +130,3 @@ ${DRUPAL_MODS}devel/translations/fr.po
 ${DRUPAL_MODS}devel/translations/hu.po
 ${DRUPAL_MODS}devel/translations/it.po
 ${DRUPAL_MODS}devel/translations/tr.po
-${DRUPAL_MODS}devel/ui.draggable.js
-${DRUPAL_MODS}devel/ui.mouse.js
