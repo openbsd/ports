@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_pthread_stub_c,v 1.1 2008/07/23 17:31:17 martynas Exp $
---- src/pthread_stub.c.orig	Wed Jul 23 10:44:20 2008
-+++ src/pthread_stub.c	Wed Jul 23 10:47:11 2008
+$OpenBSD: patch-src_pthread_stub_c,v 1.2 2011/01/09 19:11:34 landry Exp $
+--- src/pthread_stub.c.orig	Tue Nov 23 23:07:52 2010
++++ src/pthread_stub.c	Tue Nov 23 23:08:24 2010
 @@ -0,0 +1,28 @@
 +/* stubs for pthreads function, quick and dirty */
-+#if SQLITE_THREADSAFE && !defined(SQLITE_TEST) && SQLITE_THREAD_OVERRIDE_LOCK == 1
++#if SQLITE_THREADSAFE && !defined(SQLITE_TEST)
 +
 +#include <pthread.h>
 +
