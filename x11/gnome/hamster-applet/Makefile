@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2010/11/22 08:36:57 espie Exp $
-
-BROKEN=			needs sqlite fts3 module which is not buildable on NO_SHARED_ARCHES
+# $OpenBSD: Makefile,v 1.34 2011/01/09 20:21:43 ajacoutot Exp $
 
 COMMENT=		time tracker applet for GNOME
 BROKEN-sparc64=		waf stalls during build
