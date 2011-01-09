@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1068 2011/01/04 21:54:36 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1069 2011/01/09 13:07:53 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1941,7 +1941,16 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 				exit 1; \
 			fi; \
 			if $$early_exit; then \
-				break; \
+				list=`eval $$toset exec ${MAKE} show=PKGNAMES`; \
+				if ${PKG_INFO} ${PKGDB_LOCK} -r $$pkg $$list; \
+				then \
+						break; \
+				else \
+					: $${msg:= not found}; \
+					${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} depends on: $$what -$$msg"; \
+					${REPORT_PROBLEM}; \
+					exit 1; \
+				fi; \
 			fi; \
 		done; \
 	}
