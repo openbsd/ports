@@ -1,0 +1,12 @@
+$OpenBSD: patch-NYTProf_xs,v 1.1 2011/01/09 13:53:27 bluhm Exp $
+--- NYTProf.xs.orig	Tue Nov 30 23:15:41 2010
++++ NYTProf.xs	Sun Dec 12 23:27:43 2010
+@@ -1516,7 +1516,7 @@ DB_leave(pTHX_ OP *op, OP *prev_op)
+     prev_last_executed_fid  = last_executed_fid;
+     prev_last_executed_line = last_executed_line;
+ 
+-#ifdef CxMULTICALL && 0 /* disabled for now */
++#if defined(CxMULTICALL) && 0 /* disabled for now */
+     /* pp_return, pp_leavesub and pp_leavesublv
+      * return a NULL op when returning from a MULTICALL.
+      * See Lightweight Callbacks in perlcall.
