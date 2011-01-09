@@ -1,0 +1,15 @@
+$OpenBSD: patch-scripts_Jamfile,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
+No need to install init.d-like shell script
+--- scripts/Jamfile.orig	Thu Apr  8 23:46:46 2010
++++ scripts/Jamfile	Thu Apr  8 23:47:10 2010
+@@ -14,10 +14,6 @@ rule ShellScript {
+     Chmod $(t) ;
+ }
+ 
+-
+-ShellScript archiveopteryx ;
+-
+-
+ rule ContribScript {
+     local s t ;
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_archiveopteryx_conf_man,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
+--- doc/archiveopteryx.conf.man.orig	Fri Apr  9 23:54:06 2010
++++ doc/archiveopteryx.conf.man	Fri Apr  9 23:54:55 2010
+@@ -587,7 +587,7 @@ If
+ .I tls-certificate
+ is not specified, tlsproxy generates a private key and a self-signed
+ certificate at runtime and stores both in
+-.IR $CONFIGDIR/automatic-key.p15 .
++.IR /etc/ssl/archiveopteryx.p15 .
+ .IP tls-certificate-label
+ is a label that uniquely identifies the key and certificate to use in
+ the PKCS #15 key file identified by

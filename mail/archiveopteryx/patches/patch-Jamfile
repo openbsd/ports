@@ -1,0 +1,56 @@
+$OpenBSD: patch-Jamfile,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
+--- Jamfile.orig	Wed Mar 10 13:17:56 2010
++++ Jamfile	Fri Apr  9 21:07:19 2010
+@@ -14,7 +14,6 @@ SubInclude TOP recorder ;
+ SubInclude TOP sasl ;
+ SubInclude TOP schema ;
+ SubInclude TOP scripts ;
+-SubInclude TOP installer ;
+ SubInclude TOP extractors ;
+ SubInclude TOP archiveopteryx ;
+ SubInclude TOP aoximport ;
+@@ -50,9 +49,6 @@ actions together Prepare
+ }
+ 
+ 
+-Prepare $(INSTALLROOT)$(JAILDIR) ;
+-Prepare $(INSTALLROOT)$(MESSAGEDIR) ;
+-Prepare $(INSTALLROOT)$(PIDFILEDIR) ;
+ Prepare $(INSTALLROOT)$(CONFIGDIR) ;
+ Prepare $(INSTALLROOT)$(LIBDIR)/contrib ;
+ if ( $(LOGFILE:D) != "" && $(LOGFILE:D) != "syslog" ) {
+@@ -62,18 +58,6 @@ if ( $(USE_CRYPTLIB) = "yes" ) {
+     Prepare $(INSTALLROOT)$(LIBDIR)/tlsproxy/var/run ;
+ }
+ 
+-
+-# if we make JAILDIR, we should chmod it so noone can read it:
+-MODE on $(INSTALLROOT)$(JAILDIR) = 700 ;
+-Chmod $(INSTALLROOT)$(JAILDIR) ;
+-
+-# if we make MESSAGEDIR, we should chmod it similarly. AOXUSER needs to
+-# be able to write to it, but we can't chown here, because the user may
+-# not exist yet.
+-MODE on $(INSTALLROOT)$(MESSAGEDIR) = 700 ;
+-Chmod $(INSTALLROOT)$(MESSAGEDIR) ;
+-
+-
+ actions Message {
+ fmt <<EOM | sed 's/^/  /'
+ To set up the database and generate a configuration file, run
+@@ -95,14 +79,12 @@ info@aox.org for help.
+ EOM
+ }
+ 
+-Message install ;
+ 
+-
+ if $(BUILDDOC) {
+     local s u ;
+     local exceptions = canonical msgdump munger renderer logdmain tests
+     addressparser whip cram subscribe deliver aox recorder cmdsearch
+-    cryptlib installer archiveopteryx aoximport aoxexport dbtest ;
++    cryptlib archiveopteryx aoximport aoxexport dbtest ;
+     for s in $(sets) {
+         if ! $(s) in $(documented-sets) && ! $(s) in $(u) &&
+            ! $(s) in $(exceptions)

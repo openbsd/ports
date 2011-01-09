@@ -1,0 +1,53 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
+@newgroup _aox:661
+@newuser _aox:661:661:daemon:Archiveopteryx Daemon:/var/empty:/sbin/nologin
+@bin bin/aox
+@bin bin/aoxexport
+@bin bin/aoximport
+@bin bin/deliver
+libexec/archiveopteryx/
+libexec/archiveopteryx/contrib/
+libexec/archiveopteryx/contrib/rrdglue
+libexec/archiveopteryx/downgrades
+libexec/archiveopteryx/field-names
+libexec/archiveopteryx/flag-names
+libexec/archiveopteryx/fts.pg
+libexec/archiveopteryx/schema.pg
+@man man/man5/aoxsuper.conf.5
+@man man/man5/archiveopteryx.conf.5
+@man man/man8/aox.8
+@man man/man8/aoximport.8
+@man man/man8/archiveopteryx.8
+@man man/man8/deliver.8
+@man man/man8/installer.8
+@man man/man8/logd.8
+@man man/man8/recorder.8
+@bin sbin/archiveopteryx
+@bin sbin/logd
+@bin sbin/recorder
+share/doc/archiveopteryx/
+share/doc/archiveopteryx/COPYING
+share/doc/archiveopteryx/README
+share/doc/archiveopteryx/bsd.txt
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/archiveopteryx/
+share/examples/archiveopteryx/archiveopteryx-openssl.conf
+@sample ${SYSCONFDIR}/ssl/archiveopteryx-openssl.conf
+share/examples/archiveopteryx/aoxsuper.conf
+@mode 0400
+@sample ${SYSCONFDIR}/aoxsuper.conf
+@mode
+share/examples/archiveopteryx/archiveopteryx.conf
+@mode 0600
+@owner _aox
+@group _aox
+@sample ${SYSCONFDIR}/archiveopteryx.conf
+@mode 0700
+@sample /var/archiveopteryx/
+@sample /var/archiveopteryx/messages/
+@owner
+@group
+@sample /var/archiveopteryx/jail/
+@mode
+@extraunexec rm -rf /var/archiveopteryx
+@rcscript ${RCDIR}/aox

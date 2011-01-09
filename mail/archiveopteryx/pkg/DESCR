@@ -1,0 +1,3 @@
+Archiveopteryx is a mail server system optimised for long-term storage
+and heavy access. It comprises a set of server programs that provide
+access to mail stored in a relational database (PostgreSQL).

@@ -1,0 +1,53 @@
+$OpenBSD: patch-Jamsettings,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
+--- Jamsettings.orig	Wed Mar 10 13:17:56 2010
++++ Jamsettings	Mon Apr  5 23:33:00 2010
+@@ -28,7 +28,7 @@ MANDIR = $(PREFIX)/man ;
+ 
+ # Supporting files
+ #
+-LIBDIR = $(PREFIX)/lib ;
++LIBDIR = $(PREFIX)/libexec/archiveopteryx ;
+ 
+ # The startup/shutdown script's directory
+ #
+@@ -36,24 +36,24 @@ INITDIR = $(LIBDIR) ;
+ 
+ # Where to write pid files for the servers
+ #
+-PIDFILEDIR ?= $(PREFIX)/lib/pidfiles ;
++PIDFILEDIR ?= /var/run ;
+ 
+ # The servers chroot to an empty, unreadable jail directory at
+ # startup.
+ #
+-JAILDIR = $(PREFIX)/jail ;
++JAILDIR = /var/archiveopteryx/jail ;
+ 
+ # This is the default message-copy-directory.
+ #
+-MESSAGEDIR = $(PREFIX)/messages ;
++MESSAGEDIR = /var/archiveopteryx/messages ;
+ 
+ # The directory where the configuration file is located.
+ #
+-CONFIGDIR = $(PREFIX) ;
++CONFIGDIR = ${SYSCONFDIR} ;
+ 
+ # The directory where the README and other files are installed.
+ #
+-READMEDIR = $(PREFIX) ;
++READMEDIR = $(PREFIX)/share/doc/archiveopteryx ;
+ 
+ # The log file's default name. (This can be a file name or syslog/x,
+ # where x is a facility.)
+@@ -71,8 +71,8 @@ AOXGROUP ?= aox ;
+ 
+ # How to compile
+ 
+-C++FLAGS = -g -Werror -funsigned-char ;
+-LINKFLAGS = -g ;
++C++FLAGS = -I. -I.. -g -Werror -funsigned-char ;
++LINKFLAGS = -lcrypto -g ;
+ 
+ # Mode for installed binaries
+ 

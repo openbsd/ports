@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# $OpenBSD: aox.rc,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
+
+daemon="${TRUEPREFIX}/bin/aox"
+
+. /etc/rc.d/rc.subr
+
+pexp="${TRUEPREFIX}/sbin/archiveopteryx -f"
+rc_reload=NO
+
+rc_start() {
+	${daemon} start >/dev/null 2>&1
+}
+
+rc_stop() {
+	${daemon} stop >/dev/null 2>&1
+}
+
+rc_cmd $1

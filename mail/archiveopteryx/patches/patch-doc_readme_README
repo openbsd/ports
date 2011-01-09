@@ -1,0 +1,17 @@
+$OpenBSD: patch-doc_readme_README,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
+--- doc/readme/README.orig	Fri Apr  9 21:27:30 2010
++++ doc/readme/README	Fri Apr  9 21:28:48 2010
+@@ -33,12 +33,10 @@ Archiveopteryx for the first time (see below if you're
+    errors are likely to be minor, and if you tell us about them, we'd be
+    happy to help you resolve them.
+ 
+-2. Type "make install" as root to install the software into $PREFIX
++2. Type "make install" as root to install the software
+    (then switch to that directory to continue).
+ 
+    The archiveopteryx(7) manual page introduces the software.
+-
+-   (You may want to add $MANDIR to your MANPATH.)
+ 
+ 3. Run "lib/installer" to create a Unix user and group, a PostgreSQL
+    user, the necessary database tables, and to generate an initial

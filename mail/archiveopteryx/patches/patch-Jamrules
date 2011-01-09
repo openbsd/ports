@@ -1,0 +1,13 @@
+$OpenBSD: patch-Jamrules,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
+--- Jamrules.orig	Sun Mar 28 22:32:41 2010
++++ Jamrules	Sun Mar 28 22:32:54 2010
+@@ -30,9 +30,6 @@ else {
+     C++ = g++ ;
+     C++FLAGS += -W -Wall ;
+     BUILD = build/gcc ;
+-    if $(OPTIM) {
+-        BUILD = build/gcc$(OPTIM) ;
+-    }
+ 
+     if $(COV) {
+         C++FLAGS += -fprofile-arcs -ftest-coverage ;

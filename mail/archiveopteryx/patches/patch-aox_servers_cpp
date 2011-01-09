@@ -1,0 +1,79 @@
+$OpenBSD: patch-aox_servers_cpp,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
+--- aox/servers.cpp.orig	Fri Mar 12 07:25:36 2010
++++ aox/servers.cpp	Sun Apr 11 11:16:55 2010
+@@ -27,6 +27,7 @@
+ #include <pwd.h>
+ #include <grp.h>
+ 
++#include <err.h>
+ 
+ static const char * buildinfo[] = {
+ #include "buildinfo.inc"
+@@ -316,8 +317,7 @@ static void checkFilePermissions()
+         EString c = Configuration::text( Configuration::TlsCertFile );
+ #if !defined(USE_CRYPTLIB)
+         if ( c.isEmpty() ) {
+-            c = Configuration::compiledIn( Configuration::LibDir );
+-            c.append( "/automatic-key.pem" );
++            c = "/etc/ssl/archiveopteryx.pem";
+         }
+ #endif
+         addPath( Path::ReadableFile, Configuration::TlsCertFile );
+@@ -1092,54 +1092,14 @@ static void selfSignCertificate()
+     EString keyFile( Configuration::text( Configuration::TlsCertFile ) );
+ 
+     if ( keyFile.isEmpty() ) {
+-        keyFile = Configuration::compiledIn( Configuration::LibDir );
+-        keyFile.append( "/automatic-key.pem" );
++        keyFile = "/etc/ssl/archiveopteryx.pem";
+     }
+ 
+     File key( keyFile );
+     if ( !key.contents().isEmpty() )
+         return; // could verify here, for the expiry date
+-
+-    File osslcf( "/tmp/aox-ossl.conf", File::Write );
+-    osslcf.write( "[ req ]\n"
+-                  " default_bits = 1024\n"
+-                  " default_keyfile = privkey.pem\n"
+-                  " distinguished_name = req_distinguished_name\n"
+-                  " attributes = req_attributes\n"
+-                  " x509_extensions = v3_ca\n"
+-                  " prompt = no\n"
+-                  "\n"
+-                  " dirstring_type = nobmp\n"
+-                  "\n"
+-                  "[ req_distinguished_name ]\n"
+-                  " CN=" + Configuration::hostname() + "\n"
+-                  "\n"
+-                  "[ req_attributes ]\n"
+-                  " challengePassword = \"\"\n"
+-                  "\n"
+-                  " [ v3_ca ]\n"
+-                  "\n"
+-                  " nsCertType = server\n"
+-                  " nsComment = \"Automatically generated self-signed certificate\"\n"
+-                  " subjectKeyIdentifier=hash\n"
+-                  " authorityKeyIdentifier=keyid:always,issuer:always\n"
+-                  " basicConstraints = CA:true\n" );
+-
+-
+-
+-    system( "openssl req -config /tmp/aox-ossl.conf -x509 -days 1764 -newkey rsa: -nodes -keyout /tmp/aox-ossl.pem -out /tmp/aox-ossl.pem" );
+-
+-    // one one hand, File::write() does no checking. On the other,
+-    // this does at least not pass user-supplied data to the shell.
+-    File ossl( "/tmp/aox-ossl.pem" );
+-    File result( keyFile, File::Write );
+-    result.write( ossl.contents() );
+-    File::unlink( "/tmp/aox-ossl.pem" );
+-
+-    printf( "Created self-signed certificate for %s in %s.\n"
+-            "Please verify that file's permissions.\n",
+-            Configuration::hostname().cstr(),
+-            keyFile.cstr() );
++    else
++        errx(1, "Didn't found certificate in %s, exiting\n", keyFile.cstr());
+ #endif
+ }
+ 
