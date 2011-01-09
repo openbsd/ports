@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.255 2010/12/08 21:39:57 jeremy Exp $
+# $OpenBSD: Makefile,v 1.256 2011/01/09 09:36:57 landry Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -9,6 +9,7 @@
      SUBDIR += alpine
      SUBDIR += amavisd-new
      SUBDIR += archivemail
+     SUBDIR += archiveopteryx
      SUBDIR += asmail
      SUBDIR += avenger
      SUBDIR += avenger,sasl2
