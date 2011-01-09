@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/01/09 09:47:35 landry Exp $
 
 COMMENT =		mail server storing messages in a database
 
@@ -21,6 +21,7 @@ MASTER_SITES =		${HOMEPAGE}/download/
 EXTRACT_SUFX =		.tar.bz2
 
 BUILD_DEPENDS =		devel/jam
+NO_REGRESS =		yes
 
 JAMDEBUG =	-d x	# display command-lines
 JAMDEBUG +=	-q	# die quickly on build failure
