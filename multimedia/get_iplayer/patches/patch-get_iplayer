@@ -1,7 +1,7 @@
-$OpenBSD: patch-get_iplayer,v 1.41 2010/10/18 13:52:30 sthen Exp $
---- get_iplayer.orig	Fri May 28 15:24:50 2010
-+++ get_iplayer	Mon Oct 18 12:58:35 2010
-@@ -294,6 +294,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
+$OpenBSD: patch-get_iplayer,v 1.42 2011/01/09 17:31:58 sthen Exp $
+--- get_iplayer.orig	Sun Jan  9 16:13:43 2011
++++ get_iplayer	Sun Jan  9 17:29:21 2011
+@@ -295,6 +295,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
  $opt->{quiet} = 1 if $opt_pre->{quiet};
  $opt->{pvr} = 1 if $opt_pre->{pvr};
  $opt->{stdout} = 1 if $opt_pre->{stdout} || $opt_pre->{stream};
@@ -9,7 +9,7 @@ $OpenBSD: patch-get_iplayer,v 1.41 2010/10/18 13:52:30 sthen Exp $
  
  # show version and exit
  if ( $opt_pre->{showver} ) {
-@@ -330,7 +331,7 @@ mkpath $profile_dir if ! -d $profile_dir;
+@@ -331,7 +332,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
  # get list of additional user plugins and load plugin
@@ -18,7 +18,7 @@ $OpenBSD: patch-get_iplayer,v 1.41 2010/10/18 13:52:30 sthen Exp $
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
  	if ( opendir( DIR, $plugin_dir ) ) {
-@@ -658,7 +659,7 @@ sub init_search {
+@@ -659,7 +660,7 @@ sub init_search {
  	delete $binopts->{vlc};
  	push @{ $binopts->{vlc} }, '-vv' if $opt->{debug};
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-get_iplayer,v 1.41 2010/10/18 13:52:30 sthen Exp $
  	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
  
  	$bin->{tee}		= 'tee';
-@@ -1986,7 +1987,7 @@ sub update_script {
+@@ -1987,7 +1988,7 @@ sub update_script {
  		} elsif ( $opt->{packagemanager} =~ /disable/i ) {
  			logger "ERROR: get_iplayer should only be updated using your local package management system, for more information see http://linuxcentre.net/installation\n";
  		} else {
@@ -36,7 +36,7 @@ $OpenBSD: patch-get_iplayer,v 1.41 2010/10/18 13:52:30 sthen Exp $
  		}
  		exit 1;
  	} 
-@@ -4251,7 +4252,7 @@ sub tag_file {
+@@ -4253,7 +4254,7 @@ sub tag_file {
  		my ( $id3_name, $id3_episode, $id3_desc, $id3_channel ) = ( $prog->{name}, $prog->{episode}, $prog->{desc}, $prog->{channel} );
  		s|"|\\"|g for ($id3_name, $id3_episode, $id3_desc, $id3_channel);
  		# Only tag if the required tool exists
@@ -45,171 +45,3 @@ $OpenBSD: patch-get_iplayer,v 1.41 2010/10/18 13:52:30 sthen Exp $
  			main::logger "INFO: id3 tagging $prog->{ext} file\n";
  			my @cmd = (
  				$bin->{id3v2}, 
-@@ -5557,7 +5558,7 @@ sub parse_rdf_episode {
- 	# We don't really need the ver pids from here
- 	if ( ref$rdf->{'po:Episode'}->{'po:version'} eq 'ARRAY' ) {
- 		for my $verpid_element ( @{ $rdf->{'po:Episode'}->{'po:version'} } ) {
--			main::logger "INFO:        With Version PID '".extract_pid( %{ $verpid_element }->{'rdf:resource'} )."'\n" if $opt->{debug};
-+			main::logger "INFO:        With Version PID '".extract_pid( $verpid_element->{'rdf:resource'} )."'\n" if $opt->{debug};
- 		}
- 	} else {
- 		main::logger "INFO:        With Version PID '".extract_pid( $rdf->{'po:Episode'}->{'po:version'}->{'rdf:resource'} )."'\n" if $opt->{debug};
-@@ -5581,8 +5582,8 @@ sub parse_rdf_series {
- 	main::logger "INFO:    Series: '".$rdf->{'po:Series'}->{'dc:title'}."' ($spid)\n";
- 	main::logger "INFO:      From Brand PID '".$rdf->{'po:Brand'}->{'rdf:about'}."'\n" if $opt->{debug};
- 	for my $episode_element ( @{ $rdf->{'po:Series'}->{'po:episode'} } ) {
--		my $pid = extract_pid( %{ $episode_element }->{'po:Episode'}->{'rdf:about'} );
--		main::logger "INFO:      Episode '".%{ $episode_element }->{'po:Episode'}->{'dc:title'}."' ($pid)\n";
-+		my $pid = extract_pid( $episode_element->{'po:Episode'}->{'rdf:about'} );
-+		main::logger "INFO:      Episode '".$episode_element->{'po:Episode'}->{'dc:title'}."' ($pid)\n";
- 		push @pids, $pid;
- 		#parse_rdf_episode( $ua, $pid );
- 	}
-@@ -5603,14 +5604,14 @@ sub parse_rdf_brand {
- 	my $bpid = extract_pid( $uri );
- 	main::logger "INFO:  Brand: '".$rdf->{'po:Brand'}->{'dc:title'}."' ($bpid)\n";
- 	for my $series_element ( @{ $rdf->{'po:Brand'}->{'po:series'} } ) {
--		main::logger "INFO: With Series pid '".%{ $series_element }->{'rdf:resource'}."'\n" if $opt->{debug};
--		push @pids, parse_rdf_series( $ua, %{ $series_element }->{'rdf:resource'} );
-+		main::logger "INFO: With Series pid '".$series_element->{'rdf:resource'}."'\n" if $opt->{debug};
-+		push @pids, parse_rdf_series( $ua, $series_element->{'rdf:resource'} );
- 	}
- 	main::logger "INFO:    Series: <None>\n" if $#{ $rdf->{'po:Brand'}->{'po:episode'} };
- 	for my $episode_element ( @{ $rdf->{'po:Brand'}->{'po:episode'} } ) {
--		main::logger "INFO:      Episode pid: ".%{ $episode_element }->{'rdf:resource'}."\n" if $opt->{debug};
--		push @pids, extract_pid( %{ $episode_element }->{'rdf:resource'} );
--		parse_rdf_episode( $ua, %{ $episode_element }->{'rdf:resource'} );
-+		main::logger "INFO:      Episode pid: ".$episode_element->{'rdf:resource'}."\n" if $opt->{debug};
-+		push @pids, extract_pid( $episode_element->{'rdf:resource'} );
-+		parse_rdf_episode( $ua, $episode_element->{'rdf:resource'} );
- 	}
- 	return @pids;
- }
-@@ -5798,6 +5799,7 @@ sub get_stream_data_cdn {
- 	#	$data->{$mode}->{bitrate} = 480; # ??
- 
- 	my $count = 1;
-+	my $count_rtsp = 1;
- 	for my $cattribs ( @{ $mattribs->{connections} } ) {
- 
- 		# Get authstring from more specific mediaselector if this mode is specified - fails sometimes otherwise
-@@ -5820,7 +5822,7 @@ sub get_stream_data_cdn {
- 		# Common attributes
- 		# swfurl = Default iPlayer swf version
- 		my $conn = {
--			swfurl		=> "http://www.bbc.co.uk/emp/10player.swf?revision=18269_19216",
-+			swfurl		=> "http://www.bbc.co.uk/emp/10player.swf?revision=18269_21576",
- 			ext		=> $ext,
- 			streamer	=> $streamer,
- 			bitrate		=> $mattribs->{bitrate},
-@@ -5860,7 +5862,7 @@ sub get_stream_data_cdn {
- 
- 				if ( $cattribs->{authString} !~ /&slist=/ ) {
- 					$cattribs->{identifier} =~ s/^mp[34]://;
--					$cattribs->{authString} .= "&slist=&cattribs->{identifier}";
-+					$cattribs->{authString} .= "&slist=$cattribs->{identifier}";
- 				}
- 
- 				### ??? live and Live TV, Live EMP Video or Non-public EMP video:
-@@ -5932,6 +5934,40 @@ sub get_stream_data_cdn {
- 		# Add to data structure
- 		$data->{$mode.$count} = $conn;
- 		$count++;
-+
-+		# synthesized rtsp modes
-+		if ( $mode =~ /^flash/ && ! $conn->{live} ) {
-+			my $flashmode = $mode.$count_rtsp;
-+			my $rtspmode = $flashmode;
-+			$rtspmode =~ s/^flash/rtsp/g;
-+			$data->{$rtspmode}->{bitrate} = $data->{$flashmode}->{bitrate};
-+			$data->{$rtspmode}->{encoding} = $data->{$flashmode}->{encoding};
-+			$data->{$rtspmode}->{type} = $data->{$flashmode}->{type};
-+			$data->{$rtspmode}->{type} =~ s/streaming_/streaming_rtsp_/g;
-+			$data->{$rtspmode}->{identifier} =  $data->{$flashmode}->{identifier};
-+			# Audio
-+			if ($mode =~ /(audio|aac)/) {
-+				$data->{$rtspmode}->{identifier} =~ s|^mp[34]:secure/(\w+?)/(.+$)|$1/secure_auth/$2|;
-+			# Video
-+			} else {
-+				# convert from akamai format
-+				$data->{$rtspmode}->{identifier} =~ s|^mp[34]:secure/(\w+?/.+$)|iplayerstream/secure_auth/$1|;
-+				# convert from level3
-+				$data->{$rtspmode}->{identifier} =~ s|^mp[34]:(\d{3,4}\w+?/.+$)|iplayerstream/secure_auth/$1|;
-+			}
-+			$data->{$rtspmode}->{identifier} =~ s/^mp[34]://;
-+			$data->{$rtspmode}->{ext} = $data->{$flashmode}->{identifier};
-+			$data->{$rtspmode}->{ext} =~ s/^(mp[34]):.*$/$1/g;
-+			# use .aac ext for audio mp4
-+			$data->{$rtspmode}->{ext} = 'aac' if $data->{$rtspmode}->{ext} eq 'mp4' && $mode =~ /(audio|aac)/;
-+			$data->{$rtspmode}->{streamurl} = "rtsp://3gp-acl.bbc.net.uk:554/".$data->{$rtspmode}->{identifier};
-+			$data->{$rtspmode}->{streamurl} .= '.'.$data->{$rtspmode}->{ext} if $data->{$rtspmode}->{streamurl} !~ m{\.mp[34]$};
-+			# Mplayer fails fo some reason - use vlc for now
-+			# $data->{$rtspmode}->{streamer} = 'rtsp';
-+			$data->{$rtspmode}->{streamer} = '3gp';
-+			get_stream_set_type( $data->{$rtspmode} ) if ! $data->{$rtspmode}->{type};
-+			$count_rtsp++;
-+		}
- 	}
- 
- 	# Add to data structure hased by priority
-@@ -6026,6 +6062,11 @@ sub get_stream_data {
- 	} elsif ( $verpid =~ /http:/ ) {
- 		$xml = main::request_url_retry( $ua, $verpid, 3, undef, undef, 1 );
- 		main::logger "\n$xml\n" if $opt->{debug};
-+		if  ( $xml =~ m{<mediator identifier=\"(.+?)\"} ) {
-+		    $verpid = $media_stream_data_prefix.$1;
-+		    main::logger "new verpid $verpid" if $opt->{debug};
-+		    $xml = main::request_url_retry( $ua, $verpid, 3, undef, undef, 1 );
-+		}
- 		@medias = parse_metadata( $xml );
- 
- 	# Could also use Javascript based one: 'http://www.bbc.co.uk/iplayer/mediaselector/4/js/stream/$verpid?cb=NNNNN
-@@ -6192,48 +6233,6 @@ sub get_stream_data {
- 		} else {
- 			new_stream_report($mattribs, undef) if $opt->{verbose};
- 		}	
--	}
--
--	# if flashaaclow exists then rtspaaclow one usually does also.
--	if ( $data->{'flashaaclow1'} && $prog->{type} eq 'radio' ) {
--		my $mode = 'rtspaaclow1';
--		$data->{$mode}->{bitrate} = $data->{'flashaaclow1'}->{bitrate};
--		$data->{$mode}->{encoding} = $data->{'flashaaclow1'}->{encoding};
--		$data->{$mode}->{type} = "(iplayer_stream_aac_rtsp_lo) rtsp aac ".( $data->{$mode}->{bitrate} || '48' )."kbps stream";
--		$data->{$mode}->{identifier} =  $data->{'flashaaclow1'}->{identifier};
--		$data->{$mode}->{identifier} =~ s/^mp[34]://;
--		$data->{$mode}->{streamurl} = "rtsp://3gp-acl.bbc.net.uk:554/".$data->{$mode}->{identifier}.".mp4";
--		$data->{$mode}->{streamer} = 'rtsp';
--		$data->{$mode}->{ext} = 'aac';
--		get_stream_set_type( $data->{$mode} ) if ! $data->{$mode}->{type};
--	}
--
--	# if flashaacstd exists then rtspaacstd one usually does also.
--	if ( $data->{'flashaacstd1'} && $prog->{type} eq 'radio' ) {
--		my $mode = 'rtspaacstd1';
--		$data->{$mode}->{bitrate} = $data->{'flashaacstd1'}->{bitrate};
--		$data->{$mode}->{encoding} = $data->{'flashaacstd1'}->{encoding};
--		$data->{$mode}->{type} = "(iplayer_stream_aac_rtsp_med) rtsp aac ".( $data->{$mode}->{bitrate} || '128' )."kbps stream";
--		$data->{$mode}->{identifier} =  $data->{'flashaacstd1'}->{identifier};
--		$data->{$mode}->{identifier} =~ s/^mp[34]://;
--		$data->{$mode}->{streamurl} = "rtsp://3gp-acl.bbc.net.uk:554/".$data->{$mode}->{identifier}.".mp4";
--		$data->{$mode}->{streamer} = 'rtsp';
--		$data->{$mode}->{ext} = 'aac';
--		get_stream_set_type( $data->{$mode} ) if ! $data->{$mode}->{type};
--	}
--
--	# if flashaudio exists then rtspaudio one usually does also.
--	if ( $data->{'flashaudio1'} && $prog->{type} eq 'radio' ) {
--		my $mode = 'rtspaudio1';
--		$data->{$mode}->{bitrate} = $data->{'flashaudio1'}->{bitrate};
--		$data->{$mode}->{encoding} = $data->{'flashaudio1'}->{encoding};
--		$data->{$mode}->{type} = "(iplayer_stream_mp3_rtsp_med) rtsp mp3 ".( $data->{$mode}->{bitrate} || '128' )."kbps stream";
--		$data->{$mode}->{identifier} =  $data->{'flashaudio1'}->{identifier};
--		$data->{$mode}->{identifier} =~ s|^mp[34]:secure/(\w+?)/(.+$)|$1/secure_auth/$2|;
--		$data->{$mode}->{streamurl} = "rtsp://3gp-acl.bbc.net.uk:554/".$data->{$mode}->{identifier}.".mp3";
--		$data->{$mode}->{streamer} = 'rtsp';
--		$data->{$mode}->{ext} = 'mp3';
--		get_stream_set_type( $data->{$mode} ) if ! $data->{$mode}->{type};
- 	}
- 
- 	# Do iphone redirect check regardless of an xml entry for iphone (except for EMP/Live) - sometimes the iphone streams exist regardless
