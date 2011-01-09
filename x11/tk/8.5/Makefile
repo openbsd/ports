@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2011/01/05 16:18:09 stu Exp $
+# $OpenBSD: Makefile,v 1.21 2011/01/09 14:47:43 espie Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
 DISTNAME =		tk8.5.9
 PKGNAME =		tk-8.5.9
 SHARED_LIBS =		tk85 0.6
+REVISION =		0
 CATEGORIES =		x11 x11/tk
 HOMEPAGE =		http://www.tcl.tk/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
@@ -20,8 +21,6 @@ WANTLIB =		X11 Xau Xdmcp Xext Xft Xrender Xss c expat fontconfig freetype m z \
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		${DISTNAME}-src.tar.gz
-
-LIB_DEPENDS =		lang/tcl/8.5>=8.5.9,<8.5.10${FLAVOR:S/^/-/}
 
 MAKE_FLAGS +=		TK_LIBRARY='$$(prefix)/lib/tcl/tk$$(VERSION)'
 
@@ -67,6 +66,9 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mthreaded}
 CONFIGURE_ARGS +=	--enable-threads
 WANTLIB +=		pthread
+LIB_DEPENDS +=		tcl->=8.5.9,<8.5.10-threaded:lang/tcl/8.5,threaded
+.else
+LIB_DEPENDS +=		tcl->=8.5.9,<8.5.10-!threaded:lang/tcl/8.5
 .endif
 
 WRKSRC =		${WRKDIST}/unix
