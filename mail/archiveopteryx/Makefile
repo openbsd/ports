@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/01/09 09:47:35 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2011/01/09 18:30:02 landry Exp $
 
 COMMENT =		mail server storing messages in a database
 
@@ -8,7 +8,7 @@ CATEGORIES =		mail databases
 HOMEPAGE =		http://www.archiveopteryx.org/
 MAINTAINER =		Landry Breuil <gaston@gcu.info>
 
-# GPLv2
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =	Yes
