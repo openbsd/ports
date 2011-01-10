@@ -1,3 +1,0 @@
-TlsCertFile dans conf vs selfSignCertificate()
-tlsproxy only used when use_cryptlib=yes
-aox stop not stopping sometimes ?
