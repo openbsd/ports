@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_src_pro,v 1.3 2010/06/13 10:57:35 landry Exp $
+$OpenBSD: patch-src_src_pro,v 1.4 2011/01/10 09:34:24 landry Exp $
 Properly set translations/plugins paths
---- src/src.pro.orig	Sun Jun  6 16:41:25 2010
-+++ src/src.pro	Sat Jun 12 16:50:12 2010
-@@ -150,7 +150,7 @@ unix {
+--- src/src.pro.orig	Sun Dec 26 12:09:36 2010
++++ src/src.pro	Sun Jan  9 10:49:44 2011
+@@ -170,7 +170,7 @@ unix {
      isEmpty( LIBDIR ) {
          LIBDIR = $${PREFIX}/lib${LIB_SUFFIX}
      }
@@ -11,7 +11,7 @@ Properly set translations/plugins paths
      target.path = $${PREFIX}/bin
      SHARE_DIR = $${PREFIX}/share/merkaartor
  
-@@ -179,7 +179,7 @@ win32-msvc* {
+@@ -199,7 +199,7 @@ win32-msvc* {
  
  translations.path =  $${TRANSDIR_MERKAARTOR}
  translations.files = $${BINTRANSLATIONS}
@@ -20,7 +20,7 @@ Properly set translations/plugins paths
  INSTALLS += translations
  
  count(TRANSDIR_SYSTEM, 1) {
-@@ -224,7 +224,7 @@ world_shp.files = $$PWD/../share/world_background.osb
+@@ -248,7 +248,7 @@ contains (PROJ, 1) {
  macx {
      DEFINES += WORLD_SHP=world_background.osb
  } else {

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/06/13 10:57:35 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/01/10 09:34:24 landry Exp $
 %%SHARED%%
 @bin bin/merkaartor
 lib/merkaartor/
@@ -21,7 +21,10 @@ share/merkaartor/translations/merkaartor_ar.qm
 share/merkaartor/translations/merkaartor_cs.qm
 share/merkaartor/translations/merkaartor_de.qm
 share/merkaartor/translations/merkaartor_es.qm
+share/merkaartor/translations/merkaartor_et.qm
 share/merkaartor/translations/merkaartor_fr.qm
+share/merkaartor/translations/merkaartor_hr.qm
+share/merkaartor/translations/merkaartor_hu.qm
 share/merkaartor/translations/merkaartor_it.qm
 share/merkaartor/translations/merkaartor_ja.qm
 share/merkaartor/translations/merkaartor_nl.qm

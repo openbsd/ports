@@ -1,4 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2010/06/13 10:57:35 landry Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.4 2011/01/10 09:34:24 landry Exp $
+lib/merkaartor/plugins/background/libMCadastreFranceBackgroundPlugin.so
+lib/merkaartor/plugins/background/libMMsBingMapBackgroundPlugin.so
 lib/merkaartor/plugins/background/libMWalkingPapersBackgroundPlugin.so
 lib/merkaartor/plugins/background/libMYahooBackgroundPlugin.so
 lib/merkaartor/plugins/background/libMYahooTiledBackgroundPlugin.so

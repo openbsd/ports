@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_MainWindow_cpp,v 1.1 2010/06/13 10:57:35 landry Exp $
---- src/MainWindow.cpp.orig	Sun Jun  6 16:41:25 2010
-+++ src/MainWindow.cpp	Sun Jun 13 11:05:11 2010
-@@ -94,6 +94,7 @@
+$OpenBSD: patch-src_MainWindow_cpp,v 1.2 2011/01/10 09:34:24 landry Exp $
+--- src/MainWindow.cpp.orig	Sun Dec 26 12:09:36 2010
++++ src/MainWindow.cpp	Sun Jan  9 10:49:43 2011
+@@ -102,6 +102,7 @@
  #include <QStyleFactory>
  #include <QMenu>
  #include <QTcpServer>
 +#include <QTcpSocket>
  
- SlippyMapCache* SlippyMapWidget::theSlippyCache = 0;
+ #include "qttoolbardialog.h"
  
