@@ -1,14 +1,20 @@
-$OpenBSD: patch-Source_GNUmakefile,v 1.3 2010/05/12 16:43:47 jasper Exp $
---- Source/GNUmakefile.orig	Wed May 12 10:00:05 2010
-+++ Source/GNUmakefile	Wed May 12 10:00:24 2010
-@@ -91,10 +91,6 @@ GNU_MFILES = \
- GSLocale.m \
+$OpenBSD: patch-Source_GNUmakefile,v 1.4 2011/01/10 18:23:33 sebastia Exp $
+--- Source/GNUmakefile.orig	Fri Jan  7 16:06:08 2011
++++ Source/GNUmakefile	Fri Jan  7 16:06:42 2011
+@@ -92,7 +92,7 @@ GSLocale.m \
  preface.m
  
--ifeq ($(findstring openbsd, $(GNUSTEP_TARGET_OS)), openbsd)
+ ifeq ($(findstring openbsd, $(GNUSTEP_TARGET_OS)), openbsd)
 -  OBJC_LIBS += -lpthread
--endif
--
- ifeq ($(GNUSTEP_TARGET_OS), mingw32)
-   GNU_MFILES += libgnustep-base-entry.m
++  OBJC_LIBS += -pthread
  endif
+ 
+ ifeq ($(GNUSTEP_TARGET_OS), mingw32)
+@@ -127,6 +127,7 @@ NSDebug+GNUstepBase.h \
+ NSFileHandle+GNUstepBase.h \
+ NSLock+GNUstepBase.h \
+ NSMutableString+GNUstepBase.h \
++NSNetServices+GNUstepBase.h \
+ NSNumber+GNUstepBase.h \
+ NSObject+GNUstepBase.h \
+ NSProcessInfo+GNUstepBase.h \

@@ -1,6 +1,9 @@
-$OpenBSD: patch-Source_NSObject_m,v 1.7 2010/08/01 12:52:42 sebastia Exp $
+$OpenBSD: patch-Source_NSObject_m,v 1.8 2011/01/10 18:23:33 sebastia Exp $
+
+fix building on mips64
+
 --- Source/NSObject.m.orig	Thu Jun 10 12:13:51 2010
-+++ Source/NSObject.m	Sun Aug  1 12:38:13 2010
++++ Source/NSObject.m	Thu Dec 30 15:06:13 2010
 @@ -57,9 +57,11 @@
  #ifdef	HAVE_SYS_SIGNAL_H
  #include	<sys/signal.h>
@@ -14,3 +17,23 @@ $OpenBSD: patch-Source_NSObject_m,v 1.7 2010/08/01 12:52:42 sebastia Exp $
  
  #import "GSPrivate.h"
  
+@@ -318,7 +320,9 @@ GSAtomicIncrement(gsatomic_t X)
+   int tmp;
+ 
+   __asm__ __volatile__ (
++#if !defined(__mips64__)
+     "   .set  mips2  \n"
++#endif
+     "0: ll    %0, %1 \n"
+     "   addiu %0, 1  \n"
+     "   sc    %0, %1 \n"
+@@ -333,7 +337,9 @@ GSAtomicDecrement(gsatomic_t X)
+   int tmp;
+ 
+   __asm__ __volatile__ (
++#if !defined(__mips64__)
+     "   .set  mips2  \n"
++#endif
+     "0: ll    %0, %1 \n"
+     "   addiu %0, -1 \n"
+     "   sc    %0, %1 \n"

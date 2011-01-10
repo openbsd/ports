@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/12/22 09:20:00 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/01/10 18:23:33 sebastia Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -157,6 +157,7 @@ include/GNUstepBase/NSDebug+GNUstepBase.h
 include/GNUstepBase/NSFileHandle+GNUstepBase.h
 include/GNUstepBase/NSLock+GNUstepBase.h
 include/GNUstepBase/NSMutableString+GNUstepBase.h
+include/GNUstepBase/NSNetServices+GNUstepBase.h
 include/GNUstepBase/NSNumber+GNUstepBase.h
 include/GNUstepBase/NSObject+GNUstepBase.h
 include/GNUstepBase/NSProcessInfo+GNUstepBase.h
@@ -198,6 +199,7 @@ include/gnustep/base/NSDebug+GNUstepBase.h
 include/gnustep/base/NSFileHandle+GNUstepBase.h
 include/gnustep/base/NSLock+GNUstepBase.h
 include/gnustep/base/NSMutableString+GNUstepBase.h
+include/gnustep/base/NSNetServices+GNUstepBase.h
 include/gnustep/base/NSNumber+GNUstepBase.h
 include/gnustep/base/NSObject+GNUstepBase.h
 include/gnustep/base/NSProcessInfo+GNUstepBase.h
