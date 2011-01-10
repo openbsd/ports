@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.888 2011/01/10 20:22:12 eric Exp $
+# $OpenBSD: Makefile,v 1.889 2011/01/10 20:28:39 eric Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -38,6 +38,7 @@
      SUBDIR += bouml
      SUBDIR += bustle
      SUBDIR += bzr
+     SUBDIR += bzr-svn
      SUBDIR += c2hs
      SUBDIR += cabal-install
      SUBDIR += catalyst
