@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/01/03 14:23:42 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/01/10 18:28:01 sebastia Exp $
 bin/GWorkspace
+bin/MDFinder
 bin/Recycler
 @bin bin/ddbd
 @bin bin/fswatcher
+@bin bin/gmds
 @bin bin/lsfupdater
+@bin bin/mdextractor
+@bin bin/mdfind
 @bin bin/resizer
 @bin bin/searchtool
 @bin bin/wopen
@@ -15,7 +19,18 @@ include/DBKit/DBKPathsTree.h
 include/DBKit/DBKVarLenRecordsFile.h
 include/FSNode
 include/Inspector
+include/MDKit
 include/Operation
+lib/GNUstep/Bundles/AbiwordExtractor.extr/
+@bin lib/GNUstep/Bundles/AbiwordExtractor.extr/AbiwordExtractor
+lib/GNUstep/Bundles/AbiwordExtractor.extr/Resources/
+lib/GNUstep/Bundles/AbiwordExtractor.extr/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/AbiwordExtractor.extr/stamp.make
+lib/GNUstep/Bundles/AppExtractor.extr/
+@bin lib/GNUstep/Bundles/AppExtractor.extr/AppExtractor
+lib/GNUstep/Bundles/AppExtractor.extr/Resources/
+lib/GNUstep/Bundles/AppExtractor.extr/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/AppExtractor.extr/stamp.make
 lib/GNUstep/Bundles/AppViewer.inspector/
 @bin lib/GNUstep/Bundles/AppViewer.inspector/AppViewer
 lib/GNUstep/Bundles/AppViewer.inspector/Resources/
@@ -108,6 +123,11 @@ lib/GNUstep/Bundles/FolderViewer.inspector/Resources/English.lproj/Help.rtfd/dum
 lib/GNUstep/Bundles/FolderViewer.inspector/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/FolderViewer.inspector/Resources/InspectorInfo.plist
 lib/GNUstep/Bundles/FolderViewer.inspector/stamp.make
+lib/GNUstep/Bundles/HtmlExtractor.extr/
+@bin lib/GNUstep/Bundles/HtmlExtractor.extr/HtmlExtractor
+lib/GNUstep/Bundles/HtmlExtractor.extr/Resources/
+lib/GNUstep/Bundles/HtmlExtractor.extr/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/HtmlExtractor.extr/stamp.make
 lib/GNUstep/Bundles/IBViewViewer.inspector/
 @bin lib/GNUstep/Bundles/IBViewViewer.inspector/IBViewViewer
 lib/GNUstep/Bundles/IBViewViewer.inspector/Resources/
@@ -135,6 +155,35 @@ lib/GNUstep/Bundles/ImageViewer.inspector/Resources/English.lproj/Help.rtfd/dumm
 lib/GNUstep/Bundles/ImageViewer.inspector/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/ImageViewer.inspector/Resources/InspectorInfo.plist
 lib/GNUstep/Bundles/ImageViewer.inspector/stamp.make
+lib/GNUstep/Bundles/JpegExtractor.extr/
+@bin lib/GNUstep/Bundles/JpegExtractor.extr/JpegExtractor
+lib/GNUstep/Bundles/JpegExtractor.extr/Resources/
+lib/GNUstep/Bundles/JpegExtractor.extr/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/JpegExtractor.extr/stamp.make
+lib/GNUstep/Bundles/MDIndexing.prefPane/
+@bin lib/GNUstep/Bundles/MDIndexing.prefPane/MDIndexing
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/English.lproj/
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm/
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm/data.classes
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm/data.info
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/English.lproj/MDIndexing.gorm/objects.gorm
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/English.lproj/StartAppWin.gorm/
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/English.lproj/StartAppWin.gorm/data.classes
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/English.lproj/StartAppWin.gorm/objects.gorm
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/MDIndexing.tiff
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/applications.tiff
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/categories.plist
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/documents.tiff
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/folders.tiff
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/images.tiff
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/movies.tiff
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/music.tiff
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/pdfdocs.tiff
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/plainfiles.tiff
+lib/GNUstep/Bundles/MDIndexing.prefPane/Resources/sources.tiff
+lib/GNUstep/Bundles/MDIndexing.prefPane/stamp.make
 lib/GNUstep/Bundles/MDModuleAnnotations.mdm/
 @bin lib/GNUstep/Bundles/MDModuleAnnotations.mdm/MDModuleAnnotations
 lib/GNUstep/Bundles/MDModuleAnnotations.mdm/Resources/
@@ -171,6 +220,16 @@ lib/GNUstep/Bundles/NSTIFFViewer.inspector/Resources/English.lproj/Help.rtfd/dum
 lib/GNUstep/Bundles/NSTIFFViewer.inspector/Resources/Info-gnustep.plist
 lib/GNUstep/Bundles/NSTIFFViewer.inspector/Resources/InspectorInfo.plist
 lib/GNUstep/Bundles/NSTIFFViewer.inspector/stamp.make
+lib/GNUstep/Bundles/OpenOfficeExtractor.extr/
+@bin lib/GNUstep/Bundles/OpenOfficeExtractor.extr/OpenOfficeExtractor
+lib/GNUstep/Bundles/OpenOfficeExtractor.extr/Resources/
+lib/GNUstep/Bundles/OpenOfficeExtractor.extr/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/OpenOfficeExtractor.extr/stamp.make
+lib/GNUstep/Bundles/PdfExtractor.extr/
+@bin lib/GNUstep/Bundles/PdfExtractor.extr/PdfExtractor
+lib/GNUstep/Bundles/PdfExtractor.extr/Resources/
+lib/GNUstep/Bundles/PdfExtractor.extr/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/PdfExtractor.extr/stamp.make
 lib/GNUstep/Bundles/PdfViewer.inspector/
 @bin lib/GNUstep/Bundles/PdfViewer.inspector/PdfViewer
 lib/GNUstep/Bundles/PdfViewer.inspector/Resources/
@@ -192,6 +251,11 @@ lib/GNUstep/Bundles/Role.extinfo/Resources/
 lib/GNUstep/Bundles/Role.extinfo/Resources/Info-gnustep.plist
 @bin lib/GNUstep/Bundles/Role.extinfo/Role
 lib/GNUstep/Bundles/Role.extinfo/stamp.make
+lib/GNUstep/Bundles/RtfExtractor.extr/
+lib/GNUstep/Bundles/RtfExtractor.extr/Resources/
+lib/GNUstep/Bundles/RtfExtractor.extr/Resources/Info-gnustep.plist
+@bin lib/GNUstep/Bundles/RtfExtractor.extr/RtfExtractor
+lib/GNUstep/Bundles/RtfExtractor.extr/stamp.make
 lib/GNUstep/Bundles/RtfViewer.inspector/
 lib/GNUstep/Bundles/RtfViewer.inspector/Resources/
 lib/GNUstep/Bundles/RtfViewer.inspector/Resources/English.lproj/
@@ -217,6 +281,16 @@ lib/GNUstep/Bundles/SoundViewer.inspector/Resources/progind10.tiff
 lib/GNUstep/Bundles/SoundViewer.inspector/Resources/stop.tiff
 @bin lib/GNUstep/Bundles/SoundViewer.inspector/SoundViewer
 lib/GNUstep/Bundles/SoundViewer.inspector/stamp.make
+lib/GNUstep/Bundles/TextExtractor.extr/
+lib/GNUstep/Bundles/TextExtractor.extr/Resources/
+lib/GNUstep/Bundles/TextExtractor.extr/Resources/Info-gnustep.plist
+@bin lib/GNUstep/Bundles/TextExtractor.extr/TextExtractor
+lib/GNUstep/Bundles/TextExtractor.extr/stamp.make
+lib/GNUstep/Bundles/XmlExtractor.extr/
+lib/GNUstep/Bundles/XmlExtractor.extr/Resources/
+lib/GNUstep/Bundles/XmlExtractor.extr/Resources/Info-gnustep.plist
+@bin lib/GNUstep/Bundles/XmlExtractor.extr/XmlExtractor
+lib/GNUstep/Bundles/XmlExtractor.extr/stamp.make
 lib/GNUstep/Frameworks/FSNode.framework/
 lib/GNUstep/Frameworks/FSNode.framework/Headers
 lib/GNUstep/Frameworks/FSNode.framework/Resources
@@ -354,6 +428,77 @@ lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/switchOff.tiff
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/switchOn.tiff
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/tiffPboard.tiff
 lib/GNUstep/Frameworks/Inspector.framework/Versions/Current
+lib/GNUstep/Frameworks/MDKit.framework/
+lib/GNUstep/Frameworks/MDKit.framework/Headers
+lib/GNUstep/Frameworks/MDKit.framework/Resources
+lib/GNUstep/Frameworks/MDKit.framework/Versions/
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Headers/
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Headers/MDKAttribute.h
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Headers/MDKAttributeChooser.h
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Headers/MDKAttributeEditor.h
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Headers/MDKAttributeView.h
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Headers/MDKQuery.h
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Headers/MDKQueryManager.h
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Headers/MDKWindow.h
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Headers/MDKit.h
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Headers/SQLite.h
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/Help.rtfd/
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/Help.rtfd/TXT.rtf
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/Help.rtfd/dummy.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKArrayEditor.gorm/
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKArrayEditor.gorm/data.classes
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKArrayEditor.gorm/data.info
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKArrayEditor.gorm/objects.gorm
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKAttributeChooser.gorm/
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKAttributeChooser.gorm/data.classes
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKAttributeChooser.gorm/data.info
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKAttributeChooser.gorm/objects.gorm
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKAttributeView.gorm/
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKAttributeView.gorm/data.classes
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKAttributeView.gorm/data.info
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKAttributeView.gorm/objects.gorm
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKCategoryControls.gorm/
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKCategoryControls.gorm/data.classes
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKCategoryControls.gorm/data.info
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKCategoryControls.gorm/objects.gorm
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKDateEditor.gorm/
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKDateEditor.gorm/data.classes
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKDateEditor.gorm/data.info
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKDateEditor.gorm/objects.gorm
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKNumberEditor.gorm/
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKNumberEditor.gorm/data.classes
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKNumberEditor.gorm/data.info
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKNumberEditor.gorm/objects.gorm
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKStringEditor.gorm/
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKStringEditor.gorm/data.classes
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKStringEditor.gorm/data.info
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKStringEditor.gorm/objects.gorm
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKWindow.gorm/
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKWindow.gorm/data.classes
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKWindow.gorm/data.info
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/MDKWindow.gorm/objects.gorm
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/Info-gnustep.plist
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/MDFinder.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/add.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/anim-logo-0.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/anim-logo-1.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/anim-logo-2.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/anim-logo-3.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/anim-logo-4.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/anim-logo-5.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/anim-logo-6.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/anim-logo-7.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/attributes.plist
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/casesens.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/remove.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/switchOff.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/switchOn.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/whiteArrowDown.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/whiteArrowRight.tiff
+lib/GNUstep/Frameworks/MDKit.framework/Versions/Current
 lib/GNUstep/Frameworks/Operation.framework/
 lib/GNUstep/Frameworks/Operation.framework/Headers
 lib/GNUstep/Frameworks/Operation.framework/Resources
@@ -378,6 +523,7 @@ lib/GNUstep/Services/thumbnailer.service/Resources/Info-gnustep.plist
 @lib lib/libDBKit.so.${LIBDBKit_VERSION}
 @lib lib/libFSNode.so.${LIBFSNode_VERSION}
 @lib lib/libInspector.so.${LIBInspector_VERSION}
+@lib lib/libMDKit.so.${LIBMDKit_VERSION}
 @lib lib/libOperation.so.${LIBOperation_VERSION}
 libexec/GNUstep/
 libexec/GNUstep/GWorkspace.app/
@@ -657,6 +803,19 @@ libexec/GNUstep/GWorkspace.app/Resources/tabUnSelectedRight.tiff
 libexec/GNUstep/GWorkspace.app/Resources/tiffPboard.tiff
 libexec/GNUstep/GWorkspace.app/Resources/watch.tiff
 libexec/GNUstep/GWorkspace.app/stamp.make
+libexec/GNUstep/MDFinder.app/
+@bin libexec/GNUstep/MDFinder.app/MDFinder
+libexec/GNUstep/MDFinder.app/Resources/
+libexec/GNUstep/MDFinder.app/Resources/English.lproj/
+libexec/GNUstep/MDFinder.app/Resources/English.lproj/StartAppWin.gorm/
+libexec/GNUstep/MDFinder.app/Resources/English.lproj/StartAppWin.gorm/data.classes
+libexec/GNUstep/MDFinder.app/Resources/English.lproj/StartAppWin.gorm/data.info
+libexec/GNUstep/MDFinder.app/Resources/English.lproj/StartAppWin.gorm/objects.gorm
+libexec/GNUstep/MDFinder.app/Resources/Info-gnustep.plist
+libexec/GNUstep/MDFinder.app/Resources/MDFinder.desktop
+libexec/GNUstep/MDFinder.app/Resources/MDFinder.tiff
+libexec/GNUstep/MDFinder.app/Resources/SavedSearch.tiff
+libexec/GNUstep/MDFinder.app/stamp.make
 libexec/GNUstep/Recycler.app/
 @bin libexec/GNUstep/Recycler.app/Recycler
 libexec/GNUstep/Recycler.app/Resources/

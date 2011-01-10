@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2011/01/03 14:23:42 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2011/01/10 18:28:01 sebastia Exp $
 
 COMMENT=	GNUstep workspace manager
 
 DISTNAME=	gworkspace-0.8.8
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	x11
 
 SO_VERSION=	0.0
-.for _lib in DBKit FSNode Inspector Operation
+.for _lib in DBKit FSNode Inspector Operation MDKit
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
 .endfor
 
@@ -17,12 +17,14 @@ HOMEPAGE=	http://www.gnustep.org/experience/GWorkspace.html
 MASTER_SITES=	${MASTER_SITE_GNUSTEP:=usr-apps/}
 
 MODULES=	x11/gnustep
-WANTLIB=	c m pthread freetype PDFKit
-LIB_DEPENDS +=	x11/gnustep/pdfkit
+WANTLIB=	c m pthread freetype PDFKit sqlite3 PreferencePanes
+LIB_DEPENDS +=	x11/gnustep/pdfkit \
+		x11/gnustep/systempreferences
 
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS +=	--enable-gwmetadata
 CONFIGURE_ENV += GNUSTEP_MAKEFILES=`gnustep-config --variable=GNUSTEP_MAKEFILES` \
 		GNUSTEP_SYSTEM_HEADERS=${LOCALBASE}/include \
 		LDFLAGS=-L${X11BASE}/lib
@@ -38,6 +40,12 @@ MAKE_ENV+=	FSNode_VERSION=${LIBFSNode_VERSION} \
 		Inspector_INTERFACE_VERSION=${LIBInspector_VERSION} \
 		Operation_VERSION=${LIBOperation_VERSION} \
 		Operation_INTERFACE_VERSION=${LIBOperation_VERSION}
+
+pre-configure:
+	cp ${FILESDIR}/MDFinder_GNUmakefile ${WRKSRC}/GWMetadata/MDFinder/GNUmakefile
+	cp ${FILESDIR}/Preferences_GNUmakefile ${WRKSRC}/GWMetadata/Preferences/GNUmakefile
+	cd ${WRKSRC}/GWMetadata/gmds/mdextractor/Extractors/JpegExtractor && \
+		AUTOCONF_VERSION=2.52 autoconf
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/Inspector/ContentViewersProtocol.h \
