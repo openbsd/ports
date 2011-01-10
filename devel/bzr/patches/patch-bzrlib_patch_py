@@ -1,6 +1,6 @@
-$OpenBSD: patch-bzrlib_patch_py,v 1.1 2008/04/21 19:00:56 okan Exp $
---- bzrlib/patch.py.orig	Thu Mar 20 03:12:09 2008
-+++ bzrlib/patch.py	Wed Apr  2 23:11:25 2008
+$OpenBSD: patch-bzrlib_patch_py,v 1.2 2011/01/10 20:18:09 eric Exp $
+--- bzrlib/patch.py.orig	Mon Dec  6 17:52:07 2010
++++ bzrlib/patch.py	Mon Dec  6 17:52:44 2010
 @@ -65,7 +65,7 @@ def patch(patch_contents, filename, output_filename=No
      :type reverse: bool
      :return: 0 on success, 1 if some hunks failed

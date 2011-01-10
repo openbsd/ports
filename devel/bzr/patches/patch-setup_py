@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1 2011/01/10 20:18:09 eric Exp $
+--- setup.py.orig	Tue Dec  7 10:58:25 2010
++++ setup.py	Tue Dec  7 10:58:53 2010
+@@ -731,7 +731,7 @@ else:
+         # easy_install one
+         DATA_FILES = [('man/man1', ['bzr.1'])]
+ 
+-    if sys.platform != 'win32':
++    if False:
+         # see https://wiki.kubuntu.org/Apport/DeveloperHowTo
+         #
+         # checking the paths and hardcoding the check for root is a bit gross,
