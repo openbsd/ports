@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2011/01/09 19:11:34 landry Exp $
+# $OpenBSD: Makefile,v 1.56 2011/01/10 08:11:56 landry Exp $
 
 COMMENT-main=	embedded SQL implementation
 COMMENT-tcl=	TCL bindings for Sqlite3
@@ -50,7 +50,7 @@ MULTI_PACKAGES+=-tcl
 MODULES+=	lang/tcl
 
 BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS}
-LIB_DEPENDS-tcl = ${BUILD_PKGPATH},-main=>${V}
+LIB_DEPENDS-tcl = ${BUILD_PKGPATH},-main>=${V}
 WANTLIB-tcl =	sqlite3
 
 CONFIGURE_ARGS+=--with-tcl=${MODTCL_LIBDIR}
