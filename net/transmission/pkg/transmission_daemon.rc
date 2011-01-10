@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: transmission_daemon.rc,v 1.1 2011/01/10 08:35:16 fgsch Exp $
+
+daemon="${TRUEPREFIX}/bin/transmission-daemon"
+daemon_user="_transmission"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

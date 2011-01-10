@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2010/12/12 20:42:39 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2011/01/10 08:35:16 fgsch Exp $
+@newgroup _transmission:662
+@newuser _transmission:662:662:daemon:Transmission Account:/var/transmission:/sbin/nologin
 @pkgpath net/transmission
 @bin bin/transmission-cli
 @bin bin/transmission-create
@@ -65,3 +67,8 @@ share/transmission/web/stylesheets/common.css
 share/transmission/web/stylesheets/ie6.css
 share/transmission/web/stylesheets/ie7.css
 share/transmission/web/stylesheets/iphone.css
+@rcscript ${RCDIR}/transmission_daemon
+@mode 750
+@owner _transmission
+@group _transmission
+@sample /var/transmission/
