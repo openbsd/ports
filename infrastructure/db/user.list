@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.147 2010/12/21 13:57:37 landry Exp $
+$OpenBSD: user.list,v 1.148 2011/01/10 08:33:04 fgsch Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -170,3 +170,4 @@ id  user		group		port options
 659 _sogo		_sogo		www/sogo
 660 _srcpd		_srcpd		misc/srcpd
 661 _aox		_aox		mail/archiveopteryx
+662 _transmission	_transmission	net/transmission
