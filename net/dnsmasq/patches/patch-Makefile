@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile,v 1.1 2011/01/10 22:08:26 ajacoutot Exp $
+--- Makefile.orig	Tue Dec 28 18:57:01 2010
++++ Makefile	Tue Dec 28 18:57:18 2010
+@@ -24,7 +24,7 @@ MSGMERGE = msgmerge
+ MSGFMT = msgfmt
+ XGETTEXT = xgettext
+ 
+-CFLAGS = -Wall -W -O2
++CFLAGS += -Wall -W
+ 
+ #################################################################
+ 

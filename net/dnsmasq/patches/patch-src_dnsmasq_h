@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_dnsmasq_h,v 1.6 2009/06/14 17:07:25 kili Exp $
---- src/dnsmasq.h.orig	Mon Jun  8 23:05:30 2009
-+++ src/dnsmasq.h	Sat Jun 13 12:05:54 2009
-@@ -572,7 +572,7 @@ struct tftp_file {
+$OpenBSD: patch-src_dnsmasq_h,v 1.7 2011/01/10 22:08:26 ajacoutot Exp $
+--- src/dnsmasq.h.orig	Sun Jun  6 15:22:30 2010
++++ src/dnsmasq.h	Tue Dec 28 18:55:44 2010
+@@ -592,7 +592,7 @@ struct tftp_file {
    off_t size;
    dev_t dev;
    ino_t inode;

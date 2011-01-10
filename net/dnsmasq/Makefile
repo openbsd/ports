@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:46 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/01/10 22:08:26 ajacoutot Exp $
 
 COMMENT=	caching DNS forwarder and DHCP server
 
-DISTNAME=	dnsmasq-2.51
+DISTNAME=	dnsmasq-2.55
 CATEGORIES=	net
 
 MAINTAINER=	Rui Reis <rui@openbsd.org>
@@ -24,7 +24,7 @@ USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-build:
-	${SUBST_CMD} ${WRKSRC}/man/dnsmasq.8 \
+	@${SUBST_CMD} ${WRKSRC}/man/dnsmasq.8 \
 		${WRKSRC}/src/config.h \
 		${WRKSRC}/dnsmasq.conf.example
 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-man_dnsmasq_8,v 1.7 2009/12/27 19:34:33 sthen Exp $
---- man/dnsmasq.8.orig	Mon Oct  5 22:15:32 2009
-+++ man/dnsmasq.8	Thu Dec 24 14:21:01 2009
-@@ -106,13 +106,12 @@ Specify an alternate path for dnsmasq to record its pr
+$OpenBSD: patch-man_dnsmasq_8,v 1.8 2011/01/10 22:08:26 ajacoutot Exp $
+--- man/dnsmasq.8.orig	Sun Jun  6 15:22:30 2010
++++ man/dnsmasq.8	Tue Dec 28 18:55:44 2010
+@@ -113,13 +113,12 @@ Specify an alternate path for dnsmasq to record its pr
  .TP
  .B \-u, --user=<username>
  Specify the userid to which dnsmasq will change after startup. Dnsmasq must normally be started as root, but it will drop root 
@@ -17,7 +17,7 @@ $OpenBSD: patch-man_dnsmasq_8,v 1.7 2009/12/27 19:34:33 sthen Exp $
  .TP
  .B \-v, --version
  Print the version number.
-@@ -1011,7 +1010,7 @@ with # are always skipped. This flag may be given on t
+@@ -1133,7 +1132,7 @@ with # are always skipped. This flag may be given on t
  line or in a configuration file.
  .SH CONFIG FILE
  At startup, dnsmasq reads
@@ -26,7 +26,7 @@ $OpenBSD: patch-man_dnsmasq_8,v 1.7 2009/12/27 19:34:33 sthen Exp $
  if it exists. (On
  FreeBSD, the file is 
  .I /usr/local/etc/dnsmasq.conf
-@@ -1266,7 +1265,7 @@ dnsmasq has no direct way of determining the charset i
+@@ -1440,7 +1439,7 @@ dnsmasq has no direct way of determining the charset i
  assume that it is the system default. 
   
  .SH FILES
