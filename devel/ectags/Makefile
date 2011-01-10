@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/18 17:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/01/10 14:54:52 shadchin Exp $
 
 COMMENT=	multilanguage implementation of ctags
 
-DISTNAME=	ctags-5.6
+DISTNAME=	ctags-5.8
 PKGNAME=	e${DISTNAME}
 CATEGORIES=	devel
 HOMEPAGE=	http://ctags.sourceforge.net/
 
-MAINTAINER=	Jesper Louis Andersen <jlouis@mongers.org>
+MAINTAINER=	Alexandr Shadchin <shadchin@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
