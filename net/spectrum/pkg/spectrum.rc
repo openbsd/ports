@@ -1,0 +1,20 @@
+#!/bin/sh
+#
+# $OpenBSD: spectrum.rc,v 1.1 2011/01/10 18:34:31 sebastia Exp $
+
+. /etc/rc.d/rc.subr
+
+daemon="${TRUEPREFIX}/sbin/spectrumctl"
+SPECTRUM_PATH=${TRUEPREFIX}/sbin/spectrum
+
+rc_start() {
+        ${daemon} start
+}
+rc_stop() {
+        ${daemon} stop
+}
+rc_reload() {
+        ${daemon} reload
+}
+
+rc_cmd $1

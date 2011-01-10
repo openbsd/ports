@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/13 16:41:16 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/01/10 18:34:31 sebastia Exp $
 @newgroup _spectrum:654
 @newuser _spectrum:654:_spectrum:daemon:Spectrum User:/var/spectrum:/sbin/nologin
 lib/python${MODPY_VERSION}/site-packages/spectrum/
@@ -54,3 +54,7 @@ share/locale/ru/LC_MESSAGES/spectrum.mo
 @sample /var/log/spectrum/
 @mode 0750
 @sample /var/spectrum/
+@owner
+@group
+@mode
+@rcscript ${RCDIR}/spectrum

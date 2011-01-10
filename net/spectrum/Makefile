@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2011/01/06 13:41:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/01/10 18:34:31 sebastia Exp $
 
 COMMENT=        XMPP transport/gateway
 
-DISTNAME=       spectrum-1.4.3
-REVISION=	0
+DISTNAME=       spectrum-1.4.6
 CATEGORIES=     net
 
 HOMEPAGE=       http://spectrum.im/
-MASTER_SITES=   ${HOMEPAGE}/attachments/download/26/
+MASTER_SITES=   ${HOMEPAGE}/attachments/download/34/
 MAINTAINER=     Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
@@ -23,7 +22,7 @@ LIB_DEPENDS=	net/py-xmpppy \
 		net/gloox \
 		net/pidgin,-libpurple \
 		net/poco 
-RUN_DEPENDS=	net/py-xmpppy
+RUN_DEPENDS =	net/py-xmpppy
 
 SPVARDIR=	/var/spectrum
 # not using CONFIGURE_STYLE=cmake from cmake module, rolling own in 

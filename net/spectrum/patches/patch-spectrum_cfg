@@ -1,9 +1,9 @@
-$OpenBSD: patch-spectrum_cfg,v 1.1.1.1 2010/09/13 16:41:16 sebastia Exp $
+$OpenBSD: patch-spectrum_cfg,v 1.2 2011/01/10 18:34:31 sebastia Exp $
 
 Fix paths in var for OpenBSD usage
 
---- spectrum.cfg.orig	Sat Jul 31 13:41:41 2010
-+++ spectrum.cfg	Sat Jul 31 13:44:25 2010
+--- spectrum.cfg.orig	Tue Dec 28 17:58:40 2010
++++ spectrum.cfg	Thu Jan  6 17:12:20 2011
 @@ -30,7 +30,7 @@ password=secret
  # component port
  port=5347
@@ -22,7 +22,7 @@ Fix paths in var for OpenBSD usage
  
  # URL used to acces filestransfer_cache directory from the web.
  filetransfer_web=http://example.com/files/
-@@ -79,7 +79,7 @@ only_for_vip=0
+@@ -83,7 +83,7 @@ only_for_vip=0
  #vip_features = avatars;chatstate;filetransfer
  
  # pid file
@@ -31,7 +31,7 @@ Fix paths in var for OpenBSD usage
  
  # require_tls to connect legacy network
  #require_tls=false
-@@ -136,11 +136,11 @@ type=sqlite
+@@ -154,11 +154,11 @@ type=sqlite
  #password=password
  # sqlite: set path to database file here
  # mysql: set to name of database
