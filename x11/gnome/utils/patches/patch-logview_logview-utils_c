@@ -1,0 +1,19 @@
+$OpenBSD: patch-logview_logview-utils_c,v 1.1 2011/01/11 17:59:15 ajacoutot Exp $
+
+From 731213444231504c558216930a0bfe5010a2ea67 Mon Sep 17 00:00:00 2001
+From: Paolo Borelli <pborelli@gnome.org>
+Date: Fri, 05 Nov 2010 23:52:30 +0000
+Subject: [logview] Fix uninitialized variable
+
+--- logview/logview-utils.c.orig	Tue Jan 11 17:08:05 2011
++++ logview/logview-utils.c	Tue Jan 11 17:08:38 2011
+@@ -136,7 +136,8 @@ log_read_dates (const char **buffer_lines, time_t curr
+ {
+   int current_year, offsetyear, i, n, rangemin, rangemax, timestamp_len = 0;
+   GSList *days = NULL;
+-  GDate *date, *newdate;
++  GDate *date = NULL;
++  GDate *newdate;
+   struct tm *tmptm;
+   char *date_string;
+   Day *day;

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2011/01/11 17:59:15 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		2.32.0
-REVISION=	0
+REVISION=		1
 
 SHARED_LIBS +=  gdict-1.0      6.1      # .6.7
 
@@ -48,7 +48,8 @@ MODGCONF2_SCHEMAS_DIR=	gnome-utils
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
 			--with-grep="/usr/bin/grep" \
-			--enable-ipv6=yes
+			--disable-shave \
+			--enable-ipv6
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =	Yes
