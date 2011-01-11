@@ -1,17 +1,15 @@
 #!/bin/sh
 #
-# $OpenBSD: cupsd.rc,v 1.6 2010/12/27 14:50:23 ajacoutot Exp $
+# $OpenBSD: cupsd.rc,v 1.7 2011/01/11 12:13:59 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/cupsd"
 
 . /etc/rc.d/rc.subr
 
-pexp="${daemon} -C ${SYSCONFDIR}/cups/cupsd.conf"
-
 _lpfiles="/usr/bin/lpq /usr/bin/lpr /usr/bin/lprm /usr/sbin/lpc \
-         /usr/sbin/lpd /usr/share/man/cat1/lpq.0 /usr/share/man/cat1/lpr.0
-	 /usr/share/man/cat1/lprm.0 /usr/share/man/cat8/lpc.0
-	 /usr/share/man/cat8/lpd.0"
+	  /usr/sbin/lpd /usr/share/man/cat1/lpq.0 /usr/share/man/cat1/lpr.0 \
+	  /usr/share/man/cat1/lprm.0 /usr/share/man/cat8/lpc.0 \
+	  /usr/share/man/cat8/lpd.0"
 
 rc_pre() {
 	[ -e /dev/ulpt0 ] && chown _cups /dev/ulpt[0-1]
