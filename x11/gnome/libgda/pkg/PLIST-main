@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2010/11/27 17:13:42 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2011/01/11 10:59:25 ajacoutot Exp $
 @conflict libgda-db4-*
 @pkgpath x11/gnome/libgda,-odbc
 @pkgpath x11/gnome/libgda,-ldap
@@ -94,6 +94,7 @@ include/libgda-${GDA_MAJOR}/libgda/handlers/gda-handler-numerical.h
 include/libgda-${GDA_MAJOR}/libgda/handlers/gda-handler-string.h
 include/libgda-${GDA_MAJOR}/libgda/handlers/gda-handler-time.h
 include/libgda-${GDA_MAJOR}/libgda/handlers/gda-handler-type.h
+include/libgda-${GDA_MAJOR}/libgda/libgda-global-variables.h
 include/libgda-${GDA_MAJOR}/libgda/libgda.h
 include/libgda-${GDA_MAJOR}/libgda/providers-support/
 include/libgda-${GDA_MAJOR}/libgda/providers-support/gda-data-select-priv.h
@@ -333,6 +334,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/howto.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/i_s_data_types.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-1.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-2.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-3.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-deprecated.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index.html

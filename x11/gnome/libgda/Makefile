@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/27 17:13:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2011/01/11 10:59:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,17 +9,11 @@ COMMENT-mysql=		MySQL backend for libgda
 COMMENT-pgsql=		PostreSQL backend for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		4.2.2
+GNOME_VERSION=		4.2.3
 
 # NOTE: when major version changes, increment GDA_MAJOR accordingly and
 # bump "x11/gnome/libgdamm"
 GDA_MAJOR=		4.0
-
-#REVISION-main=		0
-#REVISION-ui=		0
-#REVISION-mdb=		0
-#REVISION-mysql= 	0
-#REVISION-pgsql= 	0
 
 PKGNAME-main=		${DISTNAME}
 EPOCH-main=		1
@@ -89,14 +83,15 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4/" \
 
 FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
 
-WANTLIB-main += ${WANTLIB} c gcrypt gpg-error ncurses pthread
-WANTLIB-main += readline tasn1 soup-2.4 gnutls xslt crypto
+WANTLIB-main += ${WANTLIB} c gcrypt gpg-error ncurses pthread png
+WANTLIB-main += readline tasn1 soup-2.4 gnutls xslt crypto gdk_pixbuf-2.0
 
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/libsoup \
 			textproc/libxslt \
-			x11/gnome/libgnome-keyring
+			x11/gnome/libgnome-keyring \
+			graphics/gdk-pixbuf2
 
 .if ${FLAVOR:L:Mno_ui}
 CONFIGURE_ARGS+=	--without-ui
