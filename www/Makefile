@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.489 2011/01/10 18:29:42 sebastia Exp $
+# $OpenBSD: Makefile,v 1.490 2011/01/11 18:01:09 jeremy Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -420,6 +420,7 @@
      SUBDIR += squid
      SUBDIR += squid,ldap
      SUBDIR += squid,ldap,snmp
+     SUBDIR += squid,ntlm
      SUBDIR += squid,snmp
      SUBDIR += squidguard
      SUBDIR += squidguard,ldap
