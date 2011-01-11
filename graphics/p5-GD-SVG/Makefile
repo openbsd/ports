@@ -1,9 +1,8 @@
-#	$OpenBSD: Makefile,v 1.9 2010/12/03 11:45:37 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.10 2011/01/11 18:33:04 jasper Exp $
 
 COMMENT=	allow GD perl scripts to output SVG
 
-DISTNAME=	GD-SVG-0.28
-REVISION=	1
+DISTNAME=	GD-SVG-0.33
 CATEGORIES=	graphics
 
 # perl licence
@@ -16,6 +15,9 @@ RUN_DEPENDS=	graphics/p5-GD \
 		graphics/p5-SVG
 
 MODULES=	cpan
+
+MODCPAN_EXAMPLES=Yes
+
 USE_GROFF =	Yes
 
 .include <bsd.port.mk>
