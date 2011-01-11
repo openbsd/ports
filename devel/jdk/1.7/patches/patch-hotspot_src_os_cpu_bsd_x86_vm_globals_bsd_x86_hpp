@@ -1,0 +1,29 @@
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_globals_bsd_x86_hpp,v 1.1 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/src/os_cpu/bsd_x86/vm/globals_bsd_x86.hpp.orig	Mon Oct 25 19:21:21 2010
++++ hotspot/src/os_cpu/bsd_x86/vm/globals_bsd_x86.hpp	Mon Oct 25 19:21:36 2010
+@@ -22,9 +22,10 @@
+  *
+  */
+ 
++//
+ // Sets the default values for platform dependent flags used by the runtime system.
+ // (see globals.hpp)
+-
++//
+ define_pd_global(bool, DontYieldALot,            false);
+ #ifdef AMD64
+ define_pd_global(intx, ThreadStackSize,          1024); // 0 => use system default
+@@ -38,10 +39,11 @@ define_pd_global(intx, VMThreadStackSize,        512);
+ #endif // AMD64
+ 
+ define_pd_global(intx, CompilerThreadStackSize,  0);
++define_pd_global(intx, SurvivorRatio,            8);
+ 
+-define_pd_global(uintx,JVMInvokeMethodSlack,     8192);
++define_pd_global(uintx, JVMInvokeMethodSlack,    8192);
+ 
+ // Only used on 64 bit platforms
+-define_pd_global(uintx,HeapBaseMinAddress,       2*G);
++define_pd_global(uintx, HeapBaseMinAddress,      2*G);
+ // Only used on 64 bit Windows platforms
+ define_pd_global(bool, UseVectoredExceptions,    false);

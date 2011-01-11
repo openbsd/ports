@@ -1,0 +1,12 @@
+$OpenBSD: patch-jdk_src_share_classes_sun_security_provider_SeedGenerator_java,v 1.1 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/share/classes/sun/security/provider/SeedGenerator.java.orig	Tue Jan  4 19:12:55 2011
++++ jdk/src/share/classes/sun/security/provider/SeedGenerator.java	Tue Jan  4 19:13:29 2011
+@@ -473,7 +473,7 @@ abstract class SeedGenerator {
+         }
+ 
+         URLSeedGenerator() throws IOException {
+-            this(SeedGenerator.URL_DEV_RANDOM);
++            this(SeedGenerator.URL_DEV_URANDOM);
+         }
+ 
+         private void init() throws IOException {

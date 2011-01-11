@@ -1,6 +1,6 @@
-$OpenBSD: patch-corba_make_common_Defs_gmk,v 1.3 2009/05/23 03:03:24 kurt Exp $
---- corba/make/common/Defs.gmk.orig	Fri May  8 03:29:39 2009
-+++ corba/make/common/Defs.gmk	Thu May 14 23:15:04 2009
+$OpenBSD: patch-corba_make_common_Defs_gmk,v 1.4 2011/01/11 15:47:49 kurt Exp $
+--- corba/make/common/Defs.gmk.orig	Thu Oct 28 20:16:47 2010
++++ corba/make/common/Defs.gmk	Mon Nov  1 13:15:37 2010
 @@ -53,6 +53,28 @@ endif
  
  _OUTPUTDIR=$(TOPDIR)/build/$(PLATFORM)-$(ARCH)
@@ -30,13 +30,3 @@ $OpenBSD: patch-corba_make_common_Defs_gmk,v 1.3 2009/05/23 03:03:24 kurt Exp $
  #
  # Get platform definitions
  #
-@@ -97,6 +119,9 @@ ifdef PROGRAM
-     LDLIBS_COMMON = -ldl
-   endif
- 
-+  ifeq ($(PLATFORM), bsd)
-+    LDLIBS_COMMON = -pthread
-+  endif
- endif # PROGRAM
- 
- LDLIBS_COMMON += $(EXTRA_LIBS)

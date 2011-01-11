@@ -1,9 +1,9 @@
-$OpenBSD: patch-jdk_src_share_bin_java_c,v 1.3 2009/10/07 01:53:54 kurt Exp $
---- jdk/src/share/bin/java.c.orig	Thu Sep 17 03:51:46 2009
-+++ jdk/src/share/bin/java.c	Sat Sep 26 10:00:48 2009
-@@ -68,6 +68,10 @@ static jboolean showVersion = JNI_FALSE;  /* print but
- static jboolean printUsage = JNI_FALSE;   /* print and exit*/
+$OpenBSD: patch-jdk_src_share_bin_java_c,v 1.4 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/share/bin/java.c.orig	Thu Dec 16 17:10:33 2010
++++ jdk/src/share/bin/java.c	Tue Jan  4 18:25:20 2011
+@@ -67,6 +67,10 @@ static jboolean printUsage = JNI_FALSE;   /* print and
  static jboolean printXUsage = JNI_FALSE;  /* print and exit*/
+ static char     *showSettings = NULL;      /* print but continue */
  
 +#ifdef __APPLE__
 +static jboolean continueInSameThread = JNI_FALSE; /* start VM in current thread */
@@ -12,7 +12,7 @@ $OpenBSD: patch-jdk_src_share_bin_java_c,v 1.3 2009/10/07 01:53:54 kurt Exp $
  static const char *_program_name;
  static const char *_launcher_name;
  static jboolean _is_java_args = JNI_FALSE;
-@@ -116,6 +120,10 @@ static void SetPaths(int argc, char **argv);
+@@ -117,6 +121,10 @@ static void SetPaths(int argc, char **argv);
  static void DumpState();
  static jboolean RemovableOption(char *option);
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-jdk_src_share_bin_java_c,v 1.3 2009/10/07 01:53:54 kurt Exp $
  /* Maximum supported entries from jvm.cfg. */
  #define INIT_MAX_KNOWN_VMS      10
  
-@@ -295,9 +303,16 @@ JLI_Launch(int argc, char ** argv,              /* mai
+@@ -303,9 +311,16 @@ JLI_Launch(int argc, char ** argv,              /* mai
  
      /* Show the splash screen if needed */
      ShowSplashScreen();
@@ -40,9 +40,9 @@ $OpenBSD: patch-jdk_src_share_bin_java_c,v 1.3 2009/10/07 01:53:54 kurt Exp $
 -
 +#endif
  }
- 
- #define CHECK_EXCEPTION_NULL_LEAVE(e) \
-@@ -975,6 +990,12 @@ ParseArguments(int *pargc, char ***pargv, char **pjarf
+ /*
+  * Always detach the main thread so that it appears to have ended when
+@@ -1028,6 +1043,12 @@ ParseArguments(int *pargc, char ***pargv, char **pjarf
          } else if (JLI_StrCmp(arg, "-X") == 0) {
              printXUsage = JNI_TRUE;
              return JNI_TRUE;
@@ -53,9 +53,9 @@ $OpenBSD: patch-jdk_src_share_bin_java_c,v 1.3 2009/10/07 01:53:54 kurt Exp $
 +           // XXXDARWIN: Apple VM supports configuration of Dock icon and name via -Xdock:
 +#endif            
  /*
-  * The following case provide backward compatibility with old-style
-  * command line options.
-@@ -1861,6 +1882,44 @@ ContinueInNewThread(InvocationFunctions* ifn, int argc
+  * The following case checks for -XshowSettings OR -XshowSetting:SUBOPT.
+  * In the latter case, any SUBOPT value not recognized will default to "all"
+@@ -1941,6 +1962,44 @@ ContinueInNewThread(InvocationFunctions* ifn, int argc
        return (ret != 0) ? ret : rslt;
      }
  }

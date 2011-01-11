@@ -1,9 +1,9 @@
-$OpenBSD: patch-jdk_src_share_native_com_sun_java_util_jar_pack_main_cpp,v 1.4 2009/10/07 01:53:54 kurt Exp $
---- jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp.orig	Thu Sep 17 03:52:25 2009
-+++ jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp	Sun Sep 27 09:58:28 2009
+$OpenBSD: patch-jdk_src_share_native_com_sun_java_util_jar_pack_main_cpp,v 1.5 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp.orig	Fri Aug 13 03:22:08 2010
++++ jdk/src/share/native/com/sun/java/util/jar/pack/main.cpp	Mon Oct 25 18:15:47 2010
 @@ -22,6 +22,9 @@
-  * CA 95054 USA or visit www.sun.com if you need additional information or
-  * have any questions.
+  * or visit www.oracle.com if you need additional information or have any
+  * questions.
   */
 +#ifdef _ALLBSD_SOURCE
 +#include <stdint.h>

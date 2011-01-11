@@ -1,9 +1,12 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_net_net_util_md_c,v 1.3 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/solaris/native/java/net/net_util_md.c.orig	Fri May  8 03:35:07 2009
-+++ jdk/src/solaris/native/java/net/net_util_md.c	Mon May 18 19:41:43 2009
-@@ -34,6 +34,15 @@
+$OpenBSD: patch-jdk_src_solaris_native_java_net_net_util_md_c,v 1.4 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/native/java/net/net_util_md.c.orig	Thu Dec 16 17:15:16 2010
++++ jdk/src/solaris/native/java/net/net_util_md.c	Tue Jan  4 19:20:11 2011
+@@ -33,8 +33,17 @@
+ #include <netdb.h>
  #include <stdlib.h>
  #include <dlfcn.h>
+-#include <values.h>
++#include <limits.h>
  
 +#ifdef _ALLBSD_SOURCE
 +#include <sys/param.h>
@@ -17,7 +20,16 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_net_util_md_c,v 1.3 2009/05/23 0
  #ifdef __solaris__
  #include <sys/sockio.h>
  #include <stropts.h>
-@@ -219,8 +228,16 @@ NET_GetFileDescriptorID(JNIEnv *env)
+@@ -127,7 +136,7 @@ getParam(char *driver, char *param)
+ 
+ static int findMaxBuf(int fd, int opt, int sotype) {
+     int a = 0;
+-    int b = MAXINT;
++    int b = INT_MAX;
+     int initial_guess;
+     int limit = -1;
+ 
+@@ -272,8 +281,16 @@ NET_GetFileDescriptorID(JNIEnv *env)
      return (*env)->GetFieldID(env, cls, "fd", "I");
  }
  
@@ -34,15 +46,15 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_net_util_md_c,v 1.3 2009/05/23 0
  #ifndef AF_INET6
      return JNI_FALSE;
  #endif
-@@ -355,6 +372,7 @@ jint  IPv6_supported()
-     close(fd);
+@@ -410,6 +427,7 @@ jint  IPv6_supported()
      return JNI_TRUE;
+ #endif /* AF_INET6 */
  }
 +#endif /* DONT_ENABLE_IPV6 */
  
- void
- NET_AllocSockaddr(struct sockaddr **him, int *len) {
-@@ -688,6 +706,10 @@ NET_InetAddressToSockaddr(JNIEnv *env, jobject iaObj, 
+ void ThrowUnknownHostExceptionWithGaiError(JNIEnv *env,
+                                            const char* hostname,
+@@ -772,6 +790,10 @@ NET_InetAddressToSockaddr(JNIEnv *env, jobject iaObj, 
          him6->sin6_family = AF_INET6;
          *len = sizeof(struct sockaddr_in6) ;
  
@@ -53,7 +65,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_net_util_md_c,v 1.3 2009/05/23 0
          /*
           * On Linux if we are connecting to a link-local address
           * we need to specify the interface in the scope_id (2.4 kernel only)
-@@ -1094,7 +1116,6 @@ NET_GetSockOpt(int fd, int level, int opt, void *resul
+@@ -1178,7 +1200,6 @@ NET_GetSockOpt(int fd, int level, int opt, void *resul
          *len = socklen;
      }
  #endif
@@ -61,7 +73,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_net_util_md_c,v 1.3 2009/05/23 0
      if (rv < 0) {
          return rv;
      }
-@@ -1141,6 +1162,24 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
+@@ -1224,6 +1245,24 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
  #define IPTOS_PREC_MASK 0xe0
  #endif
  
@@ -86,7 +98,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_net_util_md_c,v 1.3 2009/05/23 0
      /*
       * IPPROTO/IP_TOS :-
       * 1. IPv6 on Solaris: no-op and will be set in flowinfo
-@@ -1173,6 +1212,10 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
+@@ -1256,6 +1295,10 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
          *iptos &= (IPTOS_TOS_MASK | IPTOS_PREC_MASK);
      }
  
@@ -95,19 +107,19 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_net_util_md_c,v 1.3 2009/05/23 0
 +#endif
 +
      /*
-      * SOL_SOCKET/{SO_SNDBUF,SO_RCVBUF} - On Solaris need to
-      * ensure that value is <= max_buf as otherwise we get
-@@ -1181,7 +1224,8 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
+      * SOL_SOCKET/{SO_SNDBUF,SO_RCVBUF} - On Solaris we may need to clamp
+      * the value when it exceeds the system limit.
+@@ -1263,7 +1306,8 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
  #ifdef __solaris__
      if (level == SOL_SOCKET) {
          if (opt == SO_SNDBUF || opt == SO_RCVBUF) {
--            int sotype, arglen;
-+            int sotype;
+-            int sotype=0, arglen;
++            int sotype = 0;
 +            socklen_t arglen;
              int *bufsize, maxbuf;
+             int ret;
  
-             if (!init_max_buf) {
-@@ -1220,6 +1264,84 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
+@@ -1329,6 +1373,84 @@ NET_SetSockOpt(int fd, int level, int  opt, const void
      }
  #endif
  
@@ -192,7 +204,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_net_util_md_c,v 1.3 2009/05/23 0
      return setsockopt(fd, level, opt, arg, len);
  }
  
-@@ -1270,7 +1392,8 @@ NET_Bind(int fd, struct sockaddr *him, int len)
+@@ -1379,7 +1501,8 @@ NET_Bind(int fd, struct sockaddr *him, int len)
       * corresponding IPv4 port is in use.
       */
      if (ipv6_available()) {

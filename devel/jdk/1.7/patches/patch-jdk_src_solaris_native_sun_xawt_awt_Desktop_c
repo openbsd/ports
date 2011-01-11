@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_xawt_awt_Desktop_c,v 1.2 2009/10/07 01:53:54 kurt Exp $
---- jdk/src/solaris/native/sun/xawt/awt_Desktop.c.orig	Thu Sep 17 03:52:33 2009
-+++ jdk/src/solaris/native/sun/xawt/awt_Desktop.c	Fri Oct  2 08:47:21 2009
+$OpenBSD: patch-jdk_src_solaris_native_sun_xawt_awt_Desktop_c,v 1.3 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/native/sun/xawt/awt_Desktop.c.orig	Thu Oct 28 20:18:11 2010
++++ jdk/src/solaris/native/sun/xawt/awt_Desktop.c	Mon Nov  1 13:16:37 2010
 @@ -24,6 +24,7 @@
   */
  
@@ -9,8 +9,8 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_xawt_awt_Desktop_c,v 1.2 2009/10/07 0
  #include <dlfcn.h>
  
  typedef int gboolean;
-@@ -36,12 +37,15 @@ int init(){
-     gboolean (*gnome_vfs_init) (void);
+@@ -39,12 +40,15 @@ int init(){
+     void *gnome_handle;
      const char *errmsg;
  
 -    vfs_handle = dlopen("libgnomevfs-2.so.0", RTLD_LAZY);
@@ -27,8 +27,8 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_xawt_awt_Desktop_c,v 1.2 2009/10/07 0
 +        }
      }
      dlerror(); /* Clear errors */
-     gnome_vfs_init = dlsym(vfs_handle, "gnome_vfs_init");
-@@ -54,12 +58,15 @@ int init(){
+     gnome_vfs_init = (GNOME_VFS_INIT_TYPE*)dlsym(vfs_handle, "gnome_vfs_init");
+@@ -57,12 +61,15 @@ int init(){
      // call gonme_vfs_init()
      (*gnome_vfs_init)();
  
@@ -46,4 +46,4 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_xawt_awt_Desktop_c,v 1.2 2009/10/07 0
 +        }
      }
      dlerror(); /* Clear errors */
-     gnome_url_show = dlsym(gnome_handle, "gnome_url_show");
+     gnome_url_show = (GNOME_URL_SHOW_TYPE*)dlsym(gnome_handle, "gnome_url_show");

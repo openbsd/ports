@@ -1,19 +1,16 @@
-$OpenBSD: patch-jdk_src_share_lib_security_java_security-openbsd,v 1.2 2009/10/07 01:53:54 kurt Exp $
---- jdk/src/share/lib/security/java.security-openbsd.orig	Sat Sep 26 10:00:46 2009
-+++ jdk/src/share/lib/security/java.security-openbsd	Sat Sep 26 10:00:48 2009
-@@ -67,7 +67,14 @@ security.provider.9=sun.security.smartcardio.SunPCSC
+$OpenBSD: patch-jdk_src_share_lib_security_java_security-openbsd,v 1.3 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/share/lib/security/java.security-openbsd.orig	Tue Jan  4 18:25:18 2011
++++ jdk/src/share/lib/security/java.security-openbsd	Tue Jan  4 19:32:43 2011
+@@ -67,7 +67,11 @@ security.provider.9=sun.security.smartcardio.SunPCSC
  # On Windows systems, the URLs file:/dev/random and file:/dev/urandom
  # enables use of the Microsoft CryptoAPI seed functionality.
  #
 -securerandom.source=file:/dev/urandom
-+# On OpenBSD use file:///dev/srandom for strong but blocking random
-+# generator, file:/dev/random for hardware random generators,
++# On OpenBSD use file:/dev/random for hardware random generators or
 +# file:///dev/arandom for non-blocking high-quality pseudo-random
-+# data and file:///dev/urandom for non-blocking random data that
-+# does not guarantee the data to be strong. See random(4) for more
-+# info.
++# data. file:/dev/urandom is deprecated on OpenBSD.
 +#
-+securerandom.source=file:///dev/arandom
++securerandom.source=file:/dev/arandom
  #
  # The entropy gathering device is described as a URL and can also
  # be specified with the system property "java.security.egd". For example,

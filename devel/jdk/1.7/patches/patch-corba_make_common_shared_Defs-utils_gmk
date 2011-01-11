@@ -1,6 +1,6 @@
-$OpenBSD: patch-corba_make_common_shared_Defs-utils_gmk,v 1.3 2009/01/16 16:49:29 kurt Exp $
---- corba/make/common/shared/Defs-utils.gmk.orig	Fri Dec 19 03:41:17 2008
-+++ corba/make/common/shared/Defs-utils.gmk	Wed Jan 14 12:26:56 2009
+$OpenBSD: patch-corba_make_common_shared_Defs-utils_gmk,v 1.4 2011/01/11 15:47:49 kurt Exp $
+--- corba/make/common/shared/Defs-utils.gmk.orig	Fri Aug 13 03:17:47 2010
++++ corba/make/common/shared/Defs-utils.gmk	Mon Oct 25 18:38:15 2010
 @@ -53,6 +53,13 @@ ifeq ($(PLATFORM),linux)
    UTILS_DEVTOOL_PATH=$(USRBIN_PATH)
  endif
@@ -15,7 +15,7 @@ $OpenBSD: patch-corba_make_common_shared_Defs-utils_gmk,v 1.3 2009/01/16 16:49:2
  ifeq ($(PLATFORM),solaris)
    UTILS_COMMAND_PATH=$(UNIXCOMMAND_PATH)
    UTILS_USR_BIN_PATH=$(UNIXCOMMAND_PATH)
-@@ -199,3 +206,32 @@ ifeq ($(PLATFORM),solaris)
+@@ -198,3 +205,34 @@ ifeq ($(PLATFORM),solaris)
    ECHO           = /usr/bin/echo
  endif
  
@@ -43,7 +43,9 @@ $OpenBSD: patch-corba_make_common_shared_Defs-utils_gmk,v 1.3 2009/01/16 16:49:2
 +  else
 +    UNZIP      = $(UTILS_DEVTOOL_PATH)unzip
 +  endif
-+  ifneq ($(OS_VENDOR), OpenBSD)
++  ifeq ($(OS_VENDOR), OpenBSD)
++    NAWK       = $(UTILS_USR_BIN_PATH)awk
++  else
 +    CPIO       = $(UTILS_USR_BIN_PATH)cpio
 +    TAR        = $(UTILS_USR_BIN_PATH)tar
 +  endif

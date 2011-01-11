@@ -1,8 +1,8 @@
-$OpenBSD: patch-jdk_src_share_native_sun_font_AccelGlyphCache_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/share/native/sun/font/AccelGlyphCache.c.orig	Sat Dec  1 00:00:00 2007
-+++ jdk/src/share/native/sun/font/AccelGlyphCache.c	Tue Feb 26 18:50:57 2008
+$OpenBSD: patch-jdk_src_share_native_sun_font_AccelGlyphCache_c,v 1.2 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/share/native/sun/font/AccelGlyphCache.c.orig	Fri Aug 13 03:22:09 2010
++++ jdk/src/share/native/sun/font/AccelGlyphCache.c	Mon Oct 25 18:15:47 2010
 @@ -23,7 +23,11 @@
-  * have any questions.
+  * questions.
   */
  
 +#ifdef _ALLBSD_SOURCE

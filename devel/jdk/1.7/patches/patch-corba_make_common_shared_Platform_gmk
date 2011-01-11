@@ -1,7 +1,7 @@
-$OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.5 2009/10/07 01:53:54 kurt Exp $
---- corba/make/common/shared/Platform.gmk.orig	Thu Sep 17 03:47:23 2009
-+++ corba/make/common/shared/Platform.gmk	Mon Oct  5 14:53:53 2009
-@@ -262,6 +262,89 @@ ifeq ($(SYSTEM_UNAME), Linux)
+$OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.6 2011/01/11 15:47:49 kurt Exp $
+--- corba/make/common/shared/Platform.gmk.orig	Thu Oct 28 20:16:47 2010
++++ corba/make/common/shared/Platform.gmk	Mon Nov  1 13:16:10 2010
+@@ -231,6 +231,101 @@ ifeq ($(SYSTEM_UNAME), Linux)
    MB_OF_MEMORY := $(shell free -m | fgrep Mem: | sed -e 's@\ \ *@ @g' | cut -d' ' -f2)
  endif
  
@@ -9,14 +9,14 @@ $OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.5 2009/10/07 01:53:54 
 +  PLATFORM = bsd
 +  OS_NAME = freebsd
 +  OS_VENDOR = FreeBSD
-+ REQUIRED_OS_VERSION = 6.0
++  REQUIRED_OS_VERSION = 6.0
 +endif
 +
 +ifeq ($(SYSTEM_UNAME), Darwin)
 +  PLATFORM = bsd
 +  OS_NAME = darwin
 +  OS_VENDOR = Apple
-+ REQUIRED_OS_VERSION = 8.0
++  REQUIRED_OS_VERSION = 8.0
 +endif
 +
 +ifeq ($(SYSTEM_UNAME), NetBSD)
@@ -42,6 +42,18 @@ $OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.5 2009/10/07 01:53:54 
 +                i[3-9]86) \
 +                    echo i586 \
 +                    ;; \
++                sparc64) \
++                    echo sparcv9 \
++                    ;; \
++                sparc*) \
++                    echo sparc \
++                    ;; \
++                x86_64) \
++                    echo amd64 \
++                    ;; \
++                "Power Macintosh") \
++                    echo ppc \
++                    ;; \
 +                *) \
 +                    echo $(mach) \
 +                    ;; \
@@ -58,8 +70,8 @@ $OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.5 2009/10/07 01:53:54 
 +    endif
 +  endif
 +
-+  # i586 and sparc are 32 bit, amd64 and sparc64 are 64
-+  ifneq (,$(findstring $(ARCH), i586 sparc))
++  # i586, sparc, and ppc are 32 bit, amd64 and sparc64 are 64
++  ifneq (,$(findstring $(ARCH), i586 sparc ppc))
 +    ARCH_DATA_MODEL=32
 +  else
 +    ARCH_DATA_MODEL=64
@@ -91,10 +103,10 @@ $OpenBSD: patch-corba_make_common_shared_Platform_gmk,v 1.5 2009/10/07 01:53:54 
  # Windows with and without CYGWIN will be slightly different
  ifeq ($(SYSTEM_UNAME), Windows_NT)
    PLATFORM = windows
-@@ -411,6 +494,18 @@ else
-   LOW_MEMORY_MACHINE := true
-   MAX_VM_MEMORY      := 384
-   MIN_VM_MEMORY      := 128
+@@ -379,6 +474,18 @@ ifndef MAX_VM_MEMORY
+   export MIN_VM_MEMORY
+   export LOW_MEMORY_MACHINE
+   export MAX_VM_MEMORY
 +endif
 +
 +# for OpenBSD/i386 limit to 736 max

@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_src_cpu_zero_vm_globals_zero_hpp,v 1.1 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/src/cpu/zero/vm/globals_zero.hpp.orig	Tue Jan  4 18:53:00 2011
++++ hotspot/src/cpu/zero/vm/globals_zero.hpp	Tue Jan  4 18:53:18 2011
+@@ -46,4 +46,8 @@ define_pd_global(intx,  StackShadowPages,     5 LP64_O
+ define_pd_global(bool,  RewriteBytecodes,     true);
+ define_pd_global(bool,  RewriteFrequentPairs, true);
+ 
++#ifdef _ALLBSD_SOURCE
++define_pd_global(bool,  UseMembar,            true);
++#else
+ define_pd_global(bool,  UseMembar,            false);
++#endif

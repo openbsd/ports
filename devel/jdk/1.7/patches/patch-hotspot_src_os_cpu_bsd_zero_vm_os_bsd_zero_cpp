@@ -1,0 +1,119 @@
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_zero_vm_os_bsd_zero_cpp,v 1.1 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/src/os_cpu/bsd_zero/vm/os_bsd_zero.cpp.orig	Fri Oct 29 12:03:50 2010
++++ hotspot/src/os_cpu/bsd_zero/vm/os_bsd_zero.cpp	Fri Oct 29 12:03:57 2010
+@@ -23,6 +23,10 @@
+  *
+  */
+ 
++#if defined(_ALLBSD_SOURCE) && !defined(__APPLE__) && !defined(__NetBSD__)
++# include <pthread_np.h> /* For pthread_attr_get_np */
++#endif
++
+ // do not include precompiled header file
+ #include "incls/_os_bsd_zero.cpp.incl"
+ 
+@@ -145,6 +149,7 @@ JVM_handle_bsd_signal(int sig,
+           thread->disable_stack_red_zone();
+           ShouldNotCallThis();
+         }
++#ifndef _ALLBSD_SOURCE
+         else {
+           // Accessing stack address below sp may cause SEGV if
+           // current thread has MAP_GROWSDOWN stack. This should
+@@ -163,6 +168,7 @@ JVM_handle_bsd_signal(int sig,
+             fatal("recursive segv. expanding stack.");
+           }
+         }
++#endif
+       }
+     }
+ 
+@@ -230,6 +236,7 @@ void os::Bsd::init_thread_fpu_state(void) {
+   // Nothing to do
+ }
+ 
++#ifndef _ALLBSD_SOURCE
+ int os::Bsd::get_fpu_control_word() {
+   ShouldNotCallThis();
+ }
+@@ -237,6 +244,7 @@ int os::Bsd::get_fpu_control_word() {
+ void os::Bsd::set_fpu_control_word(int fpu) {
+   ShouldNotCallThis();
+ }
++#endif
+ 
+ bool os::is_allocatable(size_t bytes) {
+ #ifdef _LP64
+@@ -281,7 +289,49 @@ size_t os::Bsd::default_guard_size(os::ThreadType thr_
+ }
+ 
+ static void current_stack_region(address *bottom, size_t *size) {
++  address stack_bottom;
++  address stack_top;
++  size_t stack_bytes;
++
++#ifdef __APPLE__
++  pthread_t self = pthread_self();
++  stack_top = (address) pthread_get_stackaddr_np(self);
++  stack_bytes = pthread_get_stacksize_np(self);
++  stack_bottom = stack_top - stack_bytes;
++#elif defined(__OpenBSD__)
++  stack_t ss;
++  int rslt = pthread_stackseg_np(pthread_self(), &ss);
++
++  if (rslt != 0)
++    fatal(err_msg("pthread_stackseg_np failed with err = %d", rslt));
++
++  stack_top = (address) ss.ss_sp;
++  stack_bytes  = ss.ss_size;
++  stack_bottom = stacktop - stack_bytes;
++#elif defined(_ALLBSD_SOURCE)
+   pthread_attr_t attr;
++
++  int rslt = pthread_attr_init(&attr);
++
++  // JVM needs to know exact stack location, abort if it fails
++  if (rslt != 0)
++    fatal(err_msg("pthread_attr_init failed with err = %d", rslt));
++
++  rslt = pthread_attr_get_np(pthread_self(), &attr);
++
++  if (rslt != 0)
++    fatal(err_msg("pthread_attr_get_np failed with err = %d", rslt));
++
++  if (pthread_attr_getstackaddr(&attr, (void **) &stack_bottom) != 0 ||
++      pthread_attr_getstacksize(&attr, &stack_bytes) != 0) {
++    fatal("Can not locate current stack attributes!");
++  }
++
++  pthread_attr_destroy(&attr);
++
++  stack_top = stack_bottom + stack_bytes;
++#else /* Linux */
++  pthread_attr_t attr;
+   int res = pthread_getattr_np(pthread_self(), &attr);
+   if (res != 0) {
+     if (res == ENOMEM) {
+@@ -292,13 +342,11 @@ static void current_stack_region(address *bottom, size
+     }
+   }
+ 
+-  address stack_bottom;
+-  size_t stack_bytes;
+   res = pthread_attr_getstack(&attr, (void **) &stack_bottom, &stack_bytes);
+   if (res != 0) {
+     fatal(err_msg("pthread_attr_getstack failed with errno = %d", res));
+   }
+-  address stack_top = stack_bottom + stack_bytes;
++  stack_top = stack_bottom + stack_bytes;
+ 
+   // The block of memory returned by pthread_attr_getstack() includes
+   // guard pages where present.  We need to trim these off.
+@@ -340,6 +388,7 @@ static void current_stack_region(address *bottom, size
+ 
+     stack_bottom = stack_top - stack_bytes;
+   }
++#endif
+ 
+   assert(os::current_stack_pointer() >= stack_bottom, "should do");
+   assert(os::current_stack_pointer() < stack_top, "should do");

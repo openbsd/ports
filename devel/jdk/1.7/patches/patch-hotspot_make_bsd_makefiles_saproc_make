@@ -1,16 +1,24 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_saproc_make,v 1.4 2009/10/07 01:53:54 kurt Exp $
---- hotspot/make/bsd/makefiles/saproc.make.orig	Sat Sep 26 10:00:44 2009
-+++ hotspot/make/bsd/makefiles/saproc.make	Sat Sep 26 10:22:44 2009
-@@ -26,18 +26,30 @@
+$OpenBSD: patch-hotspot_make_bsd_makefiles_saproc_make,v 1.5 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/make/bsd/makefiles/saproc.make.orig	Mon Oct 25 18:02:18 2010
++++ hotspot/make/bsd/makefiles/saproc.make	Mon Oct 25 18:47:00 2010
+@@ -25,23 +25,34 @@
+ # Rules to build serviceability agent library, used by vm.make
  
  # libsaproc[_g].so: serviceability agent
- SAPROC = saproc$(G_SUFFIX)
+-
+-SAPROC = saproc
 -LIBSAPROC = lib$(SAPROC).so
+-
++SAPROC   = saproc
+ SAPROC_G = $(SAPROC)$(G_SUFFIX)
+-LIBSAPROC_G = lib$(SAPROC_G).so
  
 +ifeq ($(OS_VENDOR), Darwin)
-+  LIBSAPROC = lib$(SAPROC).dylib
++  LIBSAPROC   = lib$(SAPROC).dylib
++  LIBSAPROC_G = lib$(SAPROC_G).dylib
 +else
-+  LIBSAPROC = lib$(SAPROC).so
++  LIBSAPROC   = lib$(SAPROC).so
++  LIBSAPROC_G = lib$(SAPROC_G).so
 +endif
 +
  AGENT_DIR = $(GAMMADIR)/agent
@@ -33,7 +41,7 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_saproc_make,v 1.4 2009/10/07 01:53:54
  
  SAMAPFILE = $(SASRCDIR)/mapfile
  
-@@ -56,7 +68,10 @@ checkAndBuildSA:
+@@ -60,7 +71,10 @@ checkAndBuildSA:
  	   $(MAKE) -f vm.make $(LIBSAPROC); \
  	fi
  
@@ -45,7 +53,7 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_saproc_make,v 1.4 2009/10/07 01:53:54
  
  $(LIBSAPROC): $(SASRCFILES) $(SAMAPFILE)
  	$(QUIETLY) if [ "$(BOOT_JAVA_HOME)" = "" ]; then \
-@@ -69,12 +84,12 @@ $(LIBSAPROC): $(SASRCFILES) $(SAMAPFILE)
+@@ -73,12 +87,12 @@ $(LIBSAPROC): $(SASRCFILES) $(SAMAPFILE)
  	           -I$(SASRCDIR)                                        \
  	           -I$(GENERATED)                                       \
  	           -I$(BOOT_JAVA_HOME)/include                          \
@@ -57,6 +65,6 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_saproc_make,v 1.4 2009/10/07 01:53:54
  	           -o $@                                                \
 -	           -lthread_db
 +	           $(SALIBS)
+ 	$(QUIETLY) [ -f $(LIBSAPROC_G) ] || { ln -s $@ $(LIBSAPROC_G); }
  
  install_saproc: checkAndBuildSA
- 	$(QUIETLY) if [ -e $(LIBSAPROC) ] ; then             \

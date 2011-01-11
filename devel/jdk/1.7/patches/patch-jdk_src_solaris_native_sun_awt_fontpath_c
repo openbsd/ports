@@ -1,8 +1,8 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_awt_fontpath_c,v 1.2 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/solaris/native/sun/awt/fontpath.c.orig	Fri May  8 03:35:07 2009
-+++ jdk/src/solaris/native/sun/awt/fontpath.c	Mon May 18 20:19:13 2009
+$OpenBSD: patch-jdk_src_solaris_native_sun_awt_fontpath_c,v 1.3 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/native/sun/awt/fontpath.c.orig	Thu Dec 16 17:15:17 2010
++++ jdk/src/solaris/native/sun/awt/fontpath.c	Tue Jan  4 18:25:21 2011
 @@ -23,7 +23,7 @@
-  * have any questions.
+  * questions.
   */
  
 -#ifdef __linux__
@@ -97,7 +97,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_fontpath_c,v 1.2 2009/05/23 03:03
      NULL, /* terminates the list */
  };
  #endif
-@@ -351,7 +382,7 @@ static char **getX11FontPath ()
+@@ -362,7 +393,7 @@ static char **getX11FontPath ()
  
  #endif /* !HEADLESS */
  
@@ -106,7 +106,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_fontpath_c,v 1.2 2009/05/23 03:03
  /* from awt_LoadLibrary.c */
  JNIEXPORT jboolean JNICALL AWTIsHeadless();
  #endif
-@@ -476,8 +507,10 @@ static char *getPlatformFontPathChars(JNIEnv *env, jbo
+@@ -487,8 +518,10 @@ static char *getPlatformFontPathChars(JNIEnv *env, jbo
       */
      fcdirs = getFontConfigLocations();
  
@@ -118,7 +118,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_fontpath_c,v 1.2 2009/05/23 03:03
  #else /* IF SOLARIS */
      knowndirs = fullSolarisFontPath;
  #endif
-@@ -488,7 +521,8 @@ static char *getPlatformFontPathChars(JNIEnv *env, jbo
+@@ -499,7 +532,8 @@ static char *getPlatformFontPathChars(JNIEnv *env, jbo
       * be initialised.
       */
  #ifndef HEADLESS
@@ -128,7 +128,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_fontpath_c,v 1.2 2009/05/23 03:03
      if (!AWTIsHeadless()) { /* .. so need to call a function to check */
  #endif
      AWT_LOCK();
-@@ -496,7 +530,7 @@ static char *getPlatformFontPathChars(JNIEnv *env, jbo
+@@ -507,7 +541,7 @@ static char *getPlatformFontPathChars(JNIEnv *env, jbo
          x11dirs = getX11FontPath();
      }
      AWT_UNLOCK();
@@ -137,7 +137,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_fontpath_c,v 1.2 2009/05/23 03:03
      }
  #endif
  #endif /* !HEADLESS */
-@@ -608,7 +642,7 @@ Java_sun_font_FontManager_populateFontFileNameMap
+@@ -605,7 +639,7 @@ JNIEXPORT void JNICALL Java_sun_font_X11FontManager_se
  }
  
  #include <dlfcn.h>
@@ -146,7 +146,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_fontpath_c,v 1.2 2009/05/23 03:03
  #include <link.h>
  #endif
  
-@@ -654,9 +688,9 @@ static void* openFontConfig() {
+@@ -651,9 +685,9 @@ static void* openFontConfig() {
       * certain symbols - and functionality - to be available.
       * Also add explicit search for .so.1 in case .so symlink doesn't exist.
       */

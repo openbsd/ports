@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_launcher_make,v 1.1 2009/06/10 19:01:09 kurt Exp $
---- hotspot/make/bsd/makefiles/launcher.make.orig	Tue Jun  2 12:37:33 2009
-+++ hotspot/make/bsd/makefiles/launcher.make	Tue Jun  2 12:37:40 2009
-@@ -44,7 +44,7 @@ ifeq ($(LINK_INTO),AOUT)
+$OpenBSD: patch-hotspot_make_bsd_makefiles_launcher_make,v 1.2 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/make/bsd/makefiles/launcher.make.orig	Mon Oct 25 18:02:18 2010
++++ hotspot/make/bsd/makefiles/launcher.make	Mon Oct 25 18:15:44 2010
+@@ -46,7 +46,7 @@ ifeq ($(LINK_INTO),AOUT)
    LIBS_LAUNCHER             += $(STATIC_STDCXX) $(LIBS)
  else
    LAUNCHER.o                 = launcher.o

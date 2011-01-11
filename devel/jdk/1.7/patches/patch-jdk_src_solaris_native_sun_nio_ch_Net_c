@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_Net_c,v 1.2 2009/01/04 23:25:16 kurt Exp $
---- jdk/src/solaris/native/sun/nio/ch/Net.c.orig	Thu Oct 23 03:44:46 2008
-+++ jdk/src/solaris/native/sun/nio/ch/Net.c	Tue Dec 23 01:01:02 2008
+$OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_Net_c,v 1.3 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/native/sun/nio/ch/Net.c.orig	Thu Oct 28 20:18:11 2010
++++ jdk/src/solaris/native/sun/nio/ch/Net.c	Mon Nov  1 13:16:36 2010
 @@ -116,7 +116,48 @@ struct my_group_source_req {
  
  #endif   /* __linux__ */
@@ -50,7 +50,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_Net_c,v 1.2 2009/01/04 23:25:1
  #define COPY_INET6_ADDRESS(env, source, target) \
      (*env)->GetByteArrayRegion(env, source, 0, 16, target)
  
-@@ -250,8 +291,30 @@ Java_sun_nio_ch_Net_localPort(JNIEnv *env, jclass claz
+@@ -271,8 +312,30 @@ Java_sun_nio_ch_Net_localPort(JNIEnv *env, jclass claz
      SOCKADDR sa;
      socklen_t sa_len = SOCKADDR_LEN;
      if (getsockname(fdval(env, fdo), (struct sockaddr *)&sa, &sa_len) < 0) {
@@ -81,7 +81,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_Net_c,v 1.2 2009/01/04 23:25:1
      }
      return NET_GetPortFromSockaddr((struct sockaddr *)&sa);
  }
-@@ -263,8 +326,30 @@ Java_sun_nio_ch_Net_localInetAddress(JNIEnv *env, jcla
+@@ -284,8 +347,30 @@ Java_sun_nio_ch_Net_localInetAddress(JNIEnv *env, jcla
      socklen_t sa_len = SOCKADDR_LEN;
      int port;
      if (getsockname(fdval(env, fdo), (struct sockaddr *)&sa, &sa_len) < 0) {
@@ -112,17 +112,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_Net_c,v 1.2 2009/01/04 23:25:1
      }
      return NET_SockaddrToInetAddress(env, (struct sockaddr *)&sa, &port);
  }
-@@ -277,7 +362,8 @@ Java_sun_nio_ch_Net_getIntOption0(JNIEnv *env, jclass 
-     struct linger linger;
-     u_char carg;
-     void *arg;
--    int arglen, n;
-+    socklen_t arglen;
-+    int n;
- 
-     /* Option value is an int except for a few specific cases */
- 
-@@ -327,7 +413,8 @@ Java_sun_nio_ch_Net_setIntOption0(JNIEnv *env, jclass 
+@@ -349,7 +434,8 @@ Java_sun_nio_ch_Net_setIntOption0(JNIEnv *env, jclass 
      struct linger linger;
      u_char carg;
      void *parg;
@@ -132,7 +122,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_Net_c,v 1.2 2009/01/04 23:25:1
  
      /* Option value is an int except for a few specific cases */
  
-@@ -480,7 +567,7 @@ JNIEXPORT void JNICALL
+@@ -512,7 +598,7 @@ JNIEXPORT void JNICALL
  Java_sun_nio_ch_Net_setInterface4(JNIEnv* env, jobject this, jobject fdo, jint interf)
  {
      struct in_addr in;
@@ -141,16 +131,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_Net_c,v 1.2 2009/01/04 23:25:1
      int n;
  
      in.s_addr = htonl(interf);
-@@ -496,7 +583,7 @@ JNIEXPORT jint JNICALL
- Java_sun_nio_ch_Net_getInterface4(JNIEnv* env, jobject this, jobject fdo)
- {
-     struct in_addr in;
--    int arglen = sizeof(struct in_addr);
-+    socklen_t arglen = sizeof(struct in_addr);
-     int n;
- 
-     n = getsockopt(fdval(env, fdo), IPPROTO_IP, IP_MULTICAST_IF, (void*)&in, &arglen);
-@@ -511,7 +598,7 @@ JNIEXPORT void JNICALL
+@@ -543,7 +629,7 @@ JNIEXPORT void JNICALL
  Java_sun_nio_ch_Net_setInterface6(JNIEnv* env, jobject this, jobject fdo, jint index)
  {
      int value = (jint)index;
@@ -159,16 +140,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_Net_c,v 1.2 2009/01/04 23:25:1
      int n;
  
      n = setsockopt(fdval(env, fdo), IPPROTO_IPV6, IPV6_MULTICAST_IF,
-@@ -525,7 +612,7 @@ JNIEXPORT jint JNICALL
- Java_sun_nio_ch_Net_getInterface6(JNIEnv* env, jobject this, jobject fdo)
- {
-     int index;
--    int arglen = sizeof(index);
-+    socklen_t arglen = sizeof(index);
-     int n;
- 
-     n = getsockopt(fdval(env, fdo), IPPROTO_IPV6, IPV6_MULTICAST_IF, (void*)&index, &arglen);
-@@ -554,9 +641,11 @@ handleSocketError(JNIEnv *env, jint errorValue)
+@@ -586,9 +672,11 @@ handleSocketError(JNIEnv *env, jint errorValue)
      switch (errorValue) {
          case EINPROGRESS:       /* Non-blocking connect */
              return 0;

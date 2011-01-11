@@ -1,8 +1,8 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_lang_java_props_md_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/native/java/lang/java_props_md.c.orig	Sat Dec  1 00:00:00 2007
-+++ jdk/src/solaris/native/java/lang/java_props_md.c	Tue Feb 26 18:50:58 2008
+$OpenBSD: patch-jdk_src_solaris_native_java_lang_java_props_md_c,v 1.2 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/native/java/lang/java_props_md.c.orig	Thu Dec 16 17:15:16 2010
++++ jdk/src/solaris/native/java/lang/java_props_md.c	Tue Jan  4 18:25:21 2011
 @@ -23,7 +23,7 @@
-  * have any questions.
+  * questions.
   */
  
 -#ifdef __linux__
@@ -26,9 +26,9 @@ $OpenBSD: patch-jdk_src_solaris_native_java_lang_java_props_md_c,v 1.1 2008/03/1
  
 +#if !defined(_ALLBSD_SOURCE)
  #ifdef __linux__
- #define CODESET _NL_CTYPE_CODESET_NAME
- #else
-@@ -52,6 +60,7 @@
+   #ifndef CODESET
+   #define CODESET _NL_CTYPE_CODESET_NAME
+@@ -54,6 +62,7 @@
  #define CODESET ALT_CODESET_KEY
  #endif
  #endif
@@ -36,79 +36,9 @@ $OpenBSD: patch-jdk_src_solaris_native_java_lang_java_props_md_c,v 1.1 2008/03/1
  
  /* Take an array of string pairs (map of key->value) and a string (key).
   * Examine each pair in the map to see if the first string (key) matches the
-@@ -121,7 +130,7 @@ setPathEnvironment(char *envstring)
- java_props_t *
- GetJavaProperties(JNIEnv *env)
- {
--    static java_props_t sprops = {0};
-+    static java_props_t sprops = { 0 };
-     char *v; /* tmp var */
- 
-     if (sprops.user_dir) {
-@@ -188,7 +197,12 @@ GetJavaProperties(JNIEnv *env)
-     {
-         char *lc;
-         lc = setlocale(LC_CTYPE, "");
--#ifndef __linux__
-+#if defined(_ALLBSD_SOURCE)
-+	if (lc == NULL) {
-+	    lc = "C";
-+	}
-+	{
-+#elif !defined(__linux__)
-         if (lc == NULL) {
-             /*
-              * 'lc == null' means system doesn't support user's environment
-@@ -219,7 +233,7 @@ GetJavaProperties(JNIEnv *env)
-             char *p, encoding_variant[64];
-             int i, found;
- 
--#ifndef __linux__
-+#if !defined(__linux__) && !defined(_ALLBSD_SOURCE)
-             /*
-              * Workaround for Solaris bug 4201684: Xlib doesn't like @euro
-              * locales. Since we don't depend on the libc @euro behavior,
-@@ -236,6 +250,13 @@ GetJavaProperties(JNIEnv *env)
-                 *p = '\0';
-             setlocale(LC_ALL, temp);
- #endif
-+	    if (lc == NULL) {
-+		strncpy(temp, "C", sizeof(temp)-1);
-+		temp[sizeof(temp)-1] = '\0';
-+	    } else {
-+		strncpy(temp, lc, sizeof(temp)-1);
-+		temp[sizeof(temp)-1] = '\0';
-+	    }
- 
-             strcpy(temp, lc);
- 
-@@ -316,6 +337,9 @@ GetJavaProperties(JNIEnv *env)
-             else
-                 p = nl_langinfo(CODESET);
- 
-+	    if (p == NULL || !strcmp(p, "C") || !strcmp(p, "US-ASCII"))
-+		p = ""; // use default
-+
-             /* Convert the bare "646" used on Solaris to a proper IANA name */
-             if (strcmp(p, "646") == 0)
-                 p = "ISO646-US";
-@@ -325,6 +349,7 @@ GetJavaProperties(JNIEnv *env)
-             std_encoding = (*p != '\0') ? p : "ISO8859-1";
- 
- 
-+#if !defined(_ALLBSD_SOURCE)
- #ifdef __linux__
-             /*
-              * Remap the encoding string to a different value for japanese
-@@ -355,11 +380,19 @@ GetJavaProperties(JNIEnv *env)
-                     std_encoding = "Big5_Solaris";
-             }
- #endif
-+#endif /* !_ALLBSD_SOURCE */
-             sprops.encoding = std_encoding;
-             sprops.sun_jnu_encoding = sprops.encoding;
-         }
-     }
+@@ -397,6 +406,13 @@ GetJavaProperties(JNIEnv *env)
+     sprops.display_variant = sprops.variant;
+     sprops.sun_jnu_encoding = sprops.encoding;
  
 +#ifdef _ALLBSD_SOURCE
 +#if BYTE_ORDER == _LITTLE_ENDIAN
@@ -120,7 +50,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_lang_java_props_md_c,v 1.1 2008/03/1
  #ifdef __linux__
  #if __BYTE_ORDER == __LITTLE_ENDIAN
      sprops.unicode_encoding = "UnicodeLittle";
-@@ -369,6 +402,7 @@ GetJavaProperties(JNIEnv *env)
+@@ -406,6 +422,7 @@ GetJavaProperties(JNIEnv *env)
  #else
      sprops.unicode_encoding = "UnicodeBig";
  #endif
@@ -128,7 +58,7 @@ $OpenBSD: patch-jdk_src_solaris_native_java_lang_java_props_md_c,v 1.1 2008/03/1
  
      /* user properties */
      {
-@@ -405,12 +439,14 @@ GetJavaProperties(JNIEnv *env)
+@@ -442,12 +459,14 @@ GetJavaProperties(JNIEnv *env)
      sprops.path_separator = ":";
      sprops.line_separator = "\n";
  

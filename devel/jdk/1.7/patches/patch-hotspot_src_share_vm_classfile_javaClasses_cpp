@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_src_share_vm_classfile_javaClasses_cpp,v 1.1 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/src/share/vm/classfile/javaClasses.cpp.orig	Fri Oct 29 14:47:34 2010
++++ hotspot/src/share/vm/classfile/javaClasses.cpp	Fri Oct 29 14:47:42 2010
+@@ -952,7 +952,7 @@ char* java_lang_Throwable::print_stack_element_to_buff
+     }
+     nmethod* nm = method->code();
+     if (WizardMode && nm != NULL) {
+-      sprintf(buf + (int)strlen(buf), "(nmethod " PTR_FORMAT ")", (intptr_t)nm);
++      sprintf(buf + (int)strlen(buf), "(nmethod " INTPTR_FORMAT ")", (intptr_t)nm);
+     }
+   }
+ 

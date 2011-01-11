@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_share_vm_utilities_globalDefinitions_gcc_hpp,v 1.4 2009/05/23 03:03:25 kurt Exp $
---- hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp.orig	Fri May  8 03:30:37 2009
-+++ hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Fri May 15 17:50:50 2009
+$OpenBSD: patch-hotspot_src_share_vm_utilities_globalDefinitions_gcc_hpp,v 1.5 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp.orig	Thu Oct 28 20:17:03 2010
++++ hotspot/src/share/vm/utilities/globalDefinitions_gcc.hpp	Mon Nov  1 13:16:17 2010
 @@ -71,12 +71,25 @@
  # include <sys/procfs.h>
  # endif
@@ -56,7 +56,7 @@ $OpenBSD: patch-hotspot_src_share_vm_utilities_globalDefinitions_gcc_hpp,v 1.4 2
  
  // Additional Java basic types
  
-@@ -228,7 +241,9 @@ inline int g_isnan(float  f) { return isnanf(f); }
+@@ -236,7 +249,9 @@ inline int g_isnan(float  f) { return isnanf(f); }
  inline int g_isnan(float  f) { return isnand(f); }
  #endif
  inline int g_isnan(double f) { return isnand(f); }

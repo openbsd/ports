@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_agent_src_os_bsd_ps_proc_c,v 1.1 2009/06/10 19:01:09 kurt Exp $
---- hotspot/agent/src/os/bsd/ps_proc.c.orig	Tue Jun  2 13:07:59 2009
-+++ hotspot/agent/src/os/bsd/ps_proc.c	Tue Jun  2 13:20:36 2009
+$OpenBSD: patch-hotspot_agent_src_os_bsd_ps_proc_c,v 1.2 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/agent/src/os/bsd/ps_proc.c.orig	Mon Nov  1 13:14:52 2010
++++ hotspot/agent/src/os/bsd/ps_proc.c	Mon Nov  1 13:31:53 2010
 @@ -22,21 +22,23 @@
   *
   */
@@ -33,7 +33,7 @@ $OpenBSD: patch-hotspot_agent_src_os_bsd_ps_proc_c,v 1.1 2009/06/10 19:01:09 kur
  // This file has the libproc implementation specific to live process
  // For core files, refer to ps_core.c
  
-@@ -50,251 +52,359 @@ static inline uintptr_t align(uintptr_t ptr, size_t si
+@@ -50,255 +52,359 @@ static inline uintptr_t align(uintptr_t ptr, size_t si
  
  // read "size" bytes of data from "addr" within the target process.
  // unlike the standard ptrace() function, process_read_data() can handle
@@ -408,7 +408,11 @@ $OpenBSD: patch-hotspot_agent_src_os_bsd_ps_proc_c,v 1.1 2009/06/10 19:01:09 kur
 -    if (nwords > 5 && find_lib(ph, word[5]) == false) {
 -       intptr_t base;
 -       lib_info* lib;
+-#ifdef _LP64
 -       sscanf(word[0], "%lx", &base);
+-#else
+-       sscanf(word[0], "%x", &base);
+-#endif
 -       if ((lib = add_lib_info(ph, word[5], (uintptr_t)base)) == NULL)
 +  for (i = 0; i < cnt; i++) {
 +    kve = &freep[i];
@@ -533,7 +537,7 @@ $OpenBSD: patch-hotspot_agent_src_os_bsd_ps_proc_c,v 1.1 2009/06/10 19:01:09 kur
  };
  
  // attach to the process. One and only one exposed stuff
-@@ -321,21 +431,14 @@ struct ps_prochandle* Pgrab(pid_t pid) {
+@@ -325,21 +431,14 @@ struct ps_prochandle* Pgrab(pid_t pid) {
    // read library info and symbol tables, must do this before attaching threads,
    // as the symbols in the pthread library will be used to figure out
    // the list of threads within the same process.

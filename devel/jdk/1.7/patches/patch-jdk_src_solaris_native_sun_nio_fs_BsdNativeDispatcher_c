@@ -1,13 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_nio_fs_BsdNativeDispatcher_c,v 1.1 2009/06/10 19:01:09 kurt Exp $
---- jdk/src/solaris/native/sun/nio/fs/BsdNativeDispatcher.c.orig	Tue Jun  2 13:44:48 2009
-+++ jdk/src/solaris/native/sun/nio/fs/BsdNativeDispatcher.c	Wed Jun  3 16:14:03 2009
-@@ -1,5 +1,5 @@
- /*
-- * Copyright 2008-2009 Sun Microsystems, Inc.  All Rights Reserved.
-+ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
-  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-  *
-  * This code is free software; you can redistribute it and/or modify it
+$OpenBSD: patch-jdk_src_solaris_native_sun_nio_fs_BsdNativeDispatcher_c,v 1.2 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/native/sun/nio/fs/BsdNativeDispatcher.c.orig	Mon Oct 25 18:02:19 2010
++++ jdk/src/solaris/native/sun/nio/fs/BsdNativeDispatcher.c	Mon Oct 25 18:15:59 2010
 @@ -28,23 +28,35 @@
  #include "jvm.h"
  #include "jlong.h"

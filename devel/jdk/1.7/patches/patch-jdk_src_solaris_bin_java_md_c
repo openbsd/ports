@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_bin_java_md_c,v 1.3 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/solaris/bin/java_md.c.orig	Fri May  8 03:35:05 2009
-+++ jdk/src/solaris/bin/java_md.c	Mon May 18 16:44:36 2009
+$OpenBSD: patch-jdk_src_solaris_bin_java_md_c,v 1.4 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/bin/java_md.c.orig	Fri Aug 13 03:22:11 2010
++++ jdk/src/solaris/bin/java_md.c	Mon Oct 25 18:15:58 2010
 @@ -24,6 +24,7 @@
   */
  
@@ -75,38 +75,7 @@ $OpenBSD: patch-jdk_src_solaris_bin_java_md_c,v 1.3 2009/05/23 03:03:25 kurt Exp
  static const char *user_dir     = "/java";
  #else /* Solaris */
  static const char *system_dir   = "/usr/jdk";
-@@ -411,10 +442,10 @@ CreateExecutionEnvironment(int *_argcp,
-        * If not on Solaris, assume only a single LD_LIBRARY_PATH
-        * variable.
-        */
--      runpath = getenv("LD_LIBRARY_PATH");
-+      runpath = getenv(LD_LIBRARY_PATH);
- #endif /* __solaris__ */
- 
--#ifdef __linux
-+#if defined(__linux__) || defined(_ALLBSD_SOURCE)
-       /*
-        * On linux, if a binary is running as sgid or suid, glibc sets
-        * LD_LIBRARY_PATH to the empty string for security purposes.  (In
-@@ -438,7 +469,7 @@ CreateExecutionEnvironment(int *_argcp,
-       new_runpath = JLI_MemAlloc( ((runpath!=NULL)?JLI_StrLen(runpath):0) +
-                               2*JLI_StrLen(jrepath) + 2*JLI_StrLen(arch) +
-                               JLI_StrLen(jvmpath) + 52);
--      newpath = new_runpath + JLI_StrLen("LD_LIBRARY_PATH=");
-+      newpath = new_runpath + JLI_StrLen(LD_LIBRARY_PATH "=");
- 
- 
-       /*
-@@ -453,7 +484,7 @@ CreateExecutionEnvironment(int *_argcp,
- 
-         /* jvmpath, ((running != wanted)?((wanted==64)?"/"LIBARCH64NAME:"/.."):""), */
- 
--        sprintf(new_runpath, "LD_LIBRARY_PATH="
-+        sprintf(new_runpath, LD_LIBRARY_PATH "="
-                 "%s:"
-                 "%s/lib/%s:"
-                 "%s/../lib/%s",
-@@ -1209,9 +1240,23 @@ UnsetEnv(char *name)
+@@ -1030,9 +1061,23 @@ UnsetEnv(char *name)
      return(borrowed_unsetenv(name));
  }
  
@@ -131,7 +100,7 @@ $OpenBSD: patch-jdk_src_solaris_bin_java_md_c,v 1.3 2009/05/23 03:03:25 kurt Exp
  
  static void* hSplashLib = NULL;
  
-@@ -1247,7 +1292,7 @@ jlong_format_specifier() {
+@@ -1068,7 +1113,7 @@ jlong_format_specifier() {
  int
  ContinueInNewThread0(int (JNICALL *continuation)(void *), jlong stack_size, void * args) {
      int rslt;

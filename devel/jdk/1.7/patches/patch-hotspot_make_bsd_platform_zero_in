@@ -1,0 +1,9 @@
+$OpenBSD: patch-hotspot_make_bsd_platform_zero_in,v 1.1 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/make/bsd/platform_zero.in.orig	Mon Oct 25 18:54:32 2010
++++ hotspot/make/bsd/platform_zero.in	Mon Oct 25 18:54:40 2010
+@@ -14,4 +14,4 @@ compiler = gcc
+ 
+ gnu_dis_arch = zero
+ 
+-sysdefs = -DLINUX -D_GNU_SOURCE -DCC_INTERP -DZERO -D@ZERO_ARCHDEF@ -DZERO_LIBARCH=\"@ZERO_LIBARCH@\"
++sysdefs = -D_ALLBSD_SOURCE -D_GNU_SOURCE -DCC_INTERP -DZERO -D@ZERO_ARCHDEF@ -DZERO_LIBARCH=\"@ZERO_LIBARCH@\"

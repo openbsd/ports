@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_src_cpu_sparc_vm_globals_sparc_hpp,v 1.1 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/src/cpu/sparc/vm/globals_sparc.hpp.orig	Tue Jan  4 18:51:43 2011
++++ hotspot/src/cpu/sparc/vm/globals_sparc.hpp	Tue Jan  4 18:52:04 2011
+@@ -63,4 +63,8 @@ define_pd_global(intx, PreInflateSpin,       40);  // 
+ define_pd_global(bool, RewriteBytecodes,     true);
+ define_pd_global(bool, RewriteFrequentPairs, true);
+ 
++#ifdef _ALLBSD_SOURCE
++define_pd_global(bool, UseMembar,            true);
++#else
+ define_pd_global(bool, UseMembar,            false);
++#endif

@@ -1,0 +1,12 @@
+$OpenBSD: patch-jdk_src_share_classes_sun_font_SunFontManager_java,v 1.1 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/share/classes/sun/font/SunFontManager.java.orig	Tue Oct 26 10:45:03 2010
++++ jdk/src/share/classes/sun/font/SunFontManager.java	Tue Oct 26 10:45:10 2010
+@@ -413,7 +413,7 @@ public abstract class SunFontManager implements FontSu
+                          * registerFonts method as on-screen these JRE fonts
+                          * always go through the T2K rasteriser.
+                          */
+-                        if (FontUtilities.isLinux) {
++                        if (FontUtilities.isLinux || FontUtilities.isBSD) {
+                             /* Linux font configuration uses these fonts */
+                             registerFontDir(jreFontDirName);
+                         }

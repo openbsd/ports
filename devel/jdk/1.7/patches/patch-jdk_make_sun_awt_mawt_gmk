@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_sun_awt_mawt_gmk,v 1.4 2009/10/07 01:53:54 kurt Exp $
---- jdk/make/sun/awt/mawt.gmk.orig	Thu Sep 17 03:51:41 2009
-+++ jdk/make/sun/awt/mawt.gmk	Sat Sep 26 10:00:48 2009
+$OpenBSD: patch-jdk_make_sun_awt_mawt_gmk,v 1.5 2011/01/11 15:47:50 kurt Exp $
+--- jdk/make/sun/awt/mawt.gmk.orig	Fri Aug 13 03:21:37 2010
++++ jdk/make/sun/awt/mawt.gmk	Tue Oct 26 10:36:24 2010
 @@ -169,7 +169,7 @@ ifeq ($(PLATFORM), solaris)
  OTHER_LDLIBS = -lXt -lXext $(LIBXTST) $(LIBXMU) -lX11 -lXi
  endif
@@ -10,21 +10,16 @@ $OpenBSD: patch-jdk_make_sun_awt_mawt_gmk,v 1.4 2009/10/07 01:53:54 kurt Exp $
  OTHER_CFLAGS += -DMLIB_NO_LIBSUNMATH
  # XXX what is this define below? Isn't it motif-related?
  OTHER_CFLAGS += -DXMSTRINGDEFINES=1
-@@ -180,8 +180,12 @@ endif
+@@ -180,7 +180,7 @@ endif
  # !HEADLESS
  
  OTHER_LDLIBS += $(JVMLIB) $(LIBCXX) \
 -                -lawt $(LIBM) -ldl
-+                -lawt $(LIBM)
++                -lawt $(LIBM) $(LIBDL)
  
-+ifneq ($(PLATFORM), bsd)
-+OTHER_LDLIBS += -ldl
-+endif
-+
  #
  # Sun CC with -Xa misdefines __STDC__ to 0 (zero).
- # The following will force checking of X11 prototypes.
-@@ -198,6 +202,9 @@ CPPFLAGS += -I$(CUPS_HEADERS_PATH)
+@@ -198,6 +198,9 @@ CPPFLAGS += -I$(CUPS_HEADERS_PATH)
  ifndef HEADLESS
  CPPFLAGS += -I$(OPENWIN_HOME)/include 
  LDFLAGS  += -L$(OPENWIN_LIB)
@@ -34,7 +29,7 @@ $OpenBSD: patch-jdk_make_sun_awt_mawt_gmk,v 1.4 2009/10/07 01:53:54 kurt Exp $
  
  endif # !HEADLESS
  
-@@ -223,16 +230,33 @@ CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/debug \
+@@ -223,16 +226,33 @@ CPPFLAGS += -I$(SHARE_SRC)/native/$(PKGDIR)/debug \
          -I$(PLATFORM_SRC)/native/$(PKGDIR) \
          $(EVENT_MODEL)
  

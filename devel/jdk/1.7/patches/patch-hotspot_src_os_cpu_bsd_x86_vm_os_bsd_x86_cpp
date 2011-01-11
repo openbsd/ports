@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.4 2009/05/23 03:03:25 kurt Exp $
---- hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp.orig	Fri May 15 16:25:28 2009
-+++ hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Sat May 16 16:49:25 2009
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.5 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp.orig	Tue Jan  4 18:25:16 2011
++++ hotspot/src/os_cpu/bsd_x86/vm/os_bsd_x86.cpp	Tue Jan  4 19:03:34 2011
 @@ -44,23 +44,202 @@
  # include <sys/wait.h>
  # include <pwd.h>
@@ -422,7 +422,7 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.4 2009/05/23 03
 +  int rslt = pthread_stackseg_np(pthread_self(), &ss);
 +
 +  if (rslt != 0)
-+    fatal1("pthread_stackseg_np failed with err = %d", rslt);
++    fatal(err_msg("pthread_stackseg_np failed with err = %d", rslt));
 +
 +  *bottom = (address)((char *)ss.ss_sp - ss.ss_size);
 +  *size   = ss.ss_size;
@@ -433,12 +433,12 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.4 2009/05/23 03
 +
 +  // JVM needs to know exact stack location, abort if it fails
 +  if (rslt != 0)
-+    fatal1("pthread_attr_init failed with err = %d", rslt);
++    fatal(err_msg("pthread_attr_init failed with err = %d", rslt));
 +
 +  rslt = pthread_attr_get_np(pthread_self(), &attr);
 +
 +  if (rslt != 0)
-+    fatal1("pthread_attr_get_np failed with err = %d", rslt);
++    fatal(err_msg("pthread_attr_get_np failed with err = %d", rslt));
 +
 +  if (pthread_attr_getstackaddr(&attr, (void **)bottom) != 0 ||
 +    pthread_attr_getstacksize(&attr, size) != 0) {
@@ -499,11 +499,11 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.4 2009/05/23 03
 +  st->print(", R15=" INTPTR_FORMAT, uc->context_r15);
    st->cr();
 -  st->print(  "RIP=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_RIP]);
--  st->print(", EFL=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_EFL]);
+-  st->print(", EFLAGS=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_EFL]);
 -  st->print(", CSGSFS=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_CSGSFS]);
 -  st->print(", ERR=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_ERR]);
 +  st->print(  "RIP=" INTPTR_FORMAT, uc->context_rip);
-+  st->print(", EFL=" INTPTR_FORMAT, uc->context_flags);
++  st->print(", EFLAGS=" INTPTR_FORMAT, uc->context_flags);
 +  st->print(", ERR=" INTPTR_FORMAT, uc->context_err);
    st->cr();
 -  st->print("  TRAPNO=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_TRAPNO]);
@@ -528,10 +528,66 @@ $OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_os_bsd_x86_cpp,v 1.4 2009/05/23 03
 +  st->print(", EDI=" INTPTR_FORMAT, uc->context_edi);
    st->cr();
 -  st->print(  "EIP=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_EIP]);
--  st->print(", CR2=" INTPTR_FORMAT, uc->uc_mcontext.cr2);
 -  st->print(", EFLAGS=" INTPTR_FORMAT, uc->uc_mcontext.gregs[REG_EFL]);
+-  st->print(", CR2=" INTPTR_FORMAT, uc->uc_mcontext.cr2);
 +  st->print(  "EIP=" INTPTR_FORMAT, uc->context_eip);
 +  st->print(", EFLAGS=" INTPTR_FORMAT, uc->context_eflags);
  #endif // AMD64
    st->cr();
+   st->cr();
+@@ -791,31 +1051,31 @@ void os::print_register_info(outputStream *st, void *c
+   // this is only for the "general purpose" registers
+ 
+ #ifdef AMD64
+-  st->print("RAX="); print_location(st, uc->uc_mcontext.gregs[REG_RAX]);
+-  st->print("RBX="); print_location(st, uc->uc_mcontext.gregs[REG_RBX]);
+-  st->print("RCX="); print_location(st, uc->uc_mcontext.gregs[REG_RCX]);
+-  st->print("RDX="); print_location(st, uc->uc_mcontext.gregs[REG_RDX]);
+-  st->print("RSP="); print_location(st, uc->uc_mcontext.gregs[REG_RSP]);
+-  st->print("RBP="); print_location(st, uc->uc_mcontext.gregs[REG_RBP]);
+-  st->print("RSI="); print_location(st, uc->uc_mcontext.gregs[REG_RSI]);
+-  st->print("RDI="); print_location(st, uc->uc_mcontext.gregs[REG_RDI]);
+-  st->print("R8 ="); print_location(st, uc->uc_mcontext.gregs[REG_R8]);
+-  st->print("R9 ="); print_location(st, uc->uc_mcontext.gregs[REG_R9]);
+-  st->print("R10="); print_location(st, uc->uc_mcontext.gregs[REG_R10]);
+-  st->print("R11="); print_location(st, uc->uc_mcontext.gregs[REG_R11]);
+-  st->print("R12="); print_location(st, uc->uc_mcontext.gregs[REG_R12]);
+-  st->print("R13="); print_location(st, uc->uc_mcontext.gregs[REG_R13]);
+-  st->print("R14="); print_location(st, uc->uc_mcontext.gregs[REG_R14]);
+-  st->print("R15="); print_location(st, uc->uc_mcontext.gregs[REG_R15]);
++  st->print("RAX="); print_location(st, uc->context_rax);
++  st->print("RBX="); print_location(st, uc->context_rbx);
++  st->print("RCX="); print_location(st, uc->context_rcx);
++  st->print("RDX="); print_location(st, uc->context_rdx);
++  st->print("RSP="); print_location(st, uc->context_rsp);
++  st->print("RBP="); print_location(st, uc->context_rbp);
++  st->print("RSI="); print_location(st, uc->context_rsi);
++  st->print("RDI="); print_location(st, uc->context_rdi);
++  st->print("R8 ="); print_location(st, uc->context_r8);
++  st->print("R9 ="); print_location(st, uc->context_r9);
++  st->print("R10="); print_location(st, uc->context_r10);
++  st->print("R11="); print_location(st, uc->context_r11);
++  st->print("R12="); print_location(st, uc->context_r12);
++  st->print("R13="); print_location(st, uc->context_r13);
++  st->print("R14="); print_location(st, uc->context_r14);
++  st->print("R15="); print_location(st, uc->context_r15);
+ #else
+-  st->print("EAX="); print_location(st, uc->uc_mcontext.gregs[REG_EAX]);
+-  st->print("EBX="); print_location(st, uc->uc_mcontext.gregs[REG_EBX]);
+-  st->print("ECX="); print_location(st, uc->uc_mcontext.gregs[REG_ECX]);
+-  st->print("EDX="); print_location(st, uc->uc_mcontext.gregs[REG_EDX]);
+-  st->print("ESP="); print_location(st, uc->uc_mcontext.gregs[REG_ESP]);
+-  st->print("EBP="); print_location(st, uc->uc_mcontext.gregs[REG_EBP]);
+-  st->print("ESI="); print_location(st, uc->uc_mcontext.gregs[REG_ESI]);
+-  st->print("EDI="); print_location(st, uc->uc_mcontext.gregs[REG_EDI]);
++  st->print("EAX="); print_location(st, uc->context_eax);
++  st->print("EBX="); print_location(st, uc->context_ebx);
++  st->print("ECX="); print_location(st, uc->context_ecx);
++  st->print("EDX="); print_location(st, uc->context_edx);
++  st->print("ESP="); print_location(st, uc->context_esp);
++  st->print("EBP="); print_location(st, uc->context_ebp);
++  st->print("ESI="); print_location(st, uc->context_esi);
++  st->print("EDI="); print_location(st, uc->context_edi);
+ #endif // AMD64
+ 
    st->cr();

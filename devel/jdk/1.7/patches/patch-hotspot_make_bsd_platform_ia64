@@ -1,0 +1,11 @@
+$OpenBSD: patch-hotspot_make_bsd_platform_ia64,v 1.1 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/make/bsd/platform_ia64.orig	Mon Oct 25 18:53:53 2010
++++ hotspot/make/bsd/platform_ia64	Mon Oct 25 18:54:00 2010
+@@ -10,6 +10,6 @@ compiler = gcc
+ 
+ gnu_dis_arch = ia64
+ 
+-sysdefs = -DLINUX -D_GNU_SOURCE -DIA64 -DCC_INTERP
++sysdefs = -D_ALLBSD_SOURCE -D_GNU_SOURCE -DIA64 -DCC_INTERP
+ 
+ mark_style = alignment

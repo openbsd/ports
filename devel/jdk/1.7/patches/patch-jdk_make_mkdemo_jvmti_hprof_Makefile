@@ -1,0 +1,20 @@
+$OpenBSD: patch-jdk_make_mkdemo_jvmti_hprof_Makefile,v 1.1 2011/01/11 15:47:50 kurt Exp $
+--- jdk/make/mkdemo/jvmti/hprof/Makefile.orig	Tue Oct 26 10:35:30 2010
++++ jdk/make/mkdemo/jvmti/hprof/Makefile	Tue Oct 26 10:35:35 2010
+@@ -37,12 +37,11 @@ DEMO_OBJECTS    = java_crw_demo.$(OBJECT_SUFFIX)
+ 
+ ifeq ($(PLATFORM), windows)
+   EXTRA_LIBS += wsock32.lib winmm.lib
+-endif
+-ifeq ($(PLATFORM), solaris)
+-  OTHER_LDLIBS += $(LIBSOCKET) $(LIBNSL) -ldl
+-endif
++else
++  OTHER_LDLIBS += $(LIBSOCKET) $(LIBNSL) $(LIBDL)
+ ifeq ($(PLATFORM), linux)
+-  OTHER_LDLIBS += $(LIBSOCKET) $(LIBNSL) -ldl -lpthread
++  OTHER_LDLIBS += -lpthread
++endif
+ endif
+ 
+ #

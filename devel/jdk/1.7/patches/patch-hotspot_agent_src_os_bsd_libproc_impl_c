@@ -1,7 +1,12 @@
-$OpenBSD: patch-hotspot_agent_src_os_bsd_libproc_impl_c,v 1.1 2009/06/10 19:01:09 kurt Exp $
---- hotspot/agent/src/os/bsd/libproc_impl.c.orig	Tue Jun  2 13:04:27 2009
-+++ hotspot/agent/src/os/bsd/libproc_impl.c	Tue Jun  2 13:04:34 2009
-@@ -178,6 +178,9 @@ lib_info* add_lib_info_fd(struct ps_prochandle* ph, co
+$OpenBSD: patch-hotspot_agent_src_os_bsd_libproc_impl_c,v 1.2 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/agent/src/os/bsd/libproc_impl.c.orig	Mon Oct 25 18:02:17 2010
++++ hotspot/agent/src/os/bsd/libproc_impl.c	Mon Oct 25 18:40:51 2010
+@@ -174,10 +174,13 @@ lib_info* add_lib_info_fd(struct ps_prochandle* ph, co
+       return NULL;
+    }
+ 
+-   newlib->symtab = build_symtab(newlib->fd, libname);
++   newlib->symtab = build_symtab(newlib->fd);
     if (newlib->symtab == NULL) {
        print_debug("symbol table build failed for %s\n", newlib->name);
     }

@@ -1,0 +1,20 @@
+$OpenBSD: patch-jdk_make_sun_awt_mapfile-vers-bsd,v 1.1 2011/01/11 15:47:50 kurt Exp $
+--- jdk/make/sun/awt/mapfile-vers-bsd.orig	Tue Oct 26 10:36:00 2010
++++ jdk/make/sun/awt/mapfile-vers-bsd	Tue Oct 26 10:36:07 2010
+@@ -533,11 +533,11 @@ SUNWprivate_1.1 {
+ 
+ 		X11SurfaceData_GetOps;
+ 		getDefaultConfig;
+-                Java_sun_font_FontConfigManager_getFontConfig;
+-                Java_sun_font_FontConfigManager_getFontConfigAASettings;
+-		Java_sun_awt_X11FontManager_getFontPath;
+-		Java_sun_awt_X11FontManager_setNativeFontPath;
+-		Java_sun_font_SunFontManager_populateFontFileNameMap;
++                Java_sun_font_FontManager_getFontConfig;
++                Java_sun_font_FontManager_getFontConfigAASettings;
++		Java_sun_font_FontManager_getFontPath;
++		Java_sun_font_FontManager_setNativeFontPath;
++		Java_sun_font_FontManager_populateFontFileNameMap;
+ 
+ 		# CDE private entry point
+ 		Java_sun_awt_motif_XsessionWMcommand;

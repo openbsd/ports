@@ -1,0 +1,30 @@
+$OpenBSD: patch-jdk_make_java_redist_fonts_Makefile,v 1.1 2011/01/11 15:47:50 kurt Exp $
+--- jdk/make/java/redist/fonts/Makefile.orig	Tue Oct 26 10:34:30 2010
++++ jdk/make/java/redist/fonts/Makefile	Tue Oct 26 10:34:37 2010
+@@ -43,7 +43,7 @@ SHARED_FONTFILES =					\
+ 	$(LIBDIR)/fonts/LucidaSansRegular.ttf       	\
+ 	$(LIBDIR)/fonts/LucidaSansDemiBold.ttf       	\
+ 
+-ifeq ($(PLATFORM), linux)
++ifneq (,$(findstring $(PLATFORM), linux bsd))
+ 
+ # The oblique versions of the font are derived from the base versions
+ # and since 2D can do this derivation on the fly at run time there is no
+@@ -83,7 +83,7 @@ $(LIBDIR)/fonts/%.ttf: $(CLOSED_SRC)/share/lib/fonts/%
+ $(FONTSDIRFILE): $(PLATFORM_SRC)/classes/sun/awt/motif/java.fonts.dir
+ 	$(install-file)
+ 
+-ifeq ($(PLATFORM), linux)
++ifneq (,$(findstring $(PLATFORM), linux bsd))
+ 
+ # The oblique fonts are only needed/wanted on Linux.
+ 
+@@ -97,7 +97,7 @@ $(LIBDIR)/oblique-fonts/%.ttf: $(CLOSED_SRC)/share/lib
+ $(OBLFONTSDIRFILE): $(PLATFORM_SRC)/classes/sun/awt/motif/java.oblique-fonts.dir
+ 	$(install-file)
+ 
+-endif # linux
++endif # linux || bsd
+ 
+ all build : $(INTERNAL_IMPORT_LIST)
+ 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2009/10/07 01:53:54 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2011/01/11 15:47:50 kurt Exp $
 @option no-default-conflict
 @conflict jdk->=1.7,<1.8
 ${JDKHOME}/
@@ -216,6 +216,11 @@ ${JDKHOME}/demo/jpda/com/sun/tools/example/README
 ${JDKHOME}/demo/jpda/jpda.jar
 ${JDKHOME}/demo/jpda/src.zip
 ${JDKHOME}/demo/jvmti/
+${JDKHOME}/demo/jvmti/compiledMethodLoad/
+${JDKHOME}/demo/jvmti/compiledMethodLoad/README.txt
+${JDKHOME}/demo/jvmti/compiledMethodLoad/lib/
+${JDKHOME}/demo/jvmti/compiledMethodLoad/lib/libcompiledMethodLoad.so
+${JDKHOME}/demo/jvmti/compiledMethodLoad/src.zip
 ${JDKHOME}/demo/jvmti/gctest/
 ${JDKHOME}/demo/jvmti/gctest/README.txt
 ${JDKHOME}/demo/jvmti/gctest/lib/
@@ -380,6 +385,11 @@ ${JDKHOME}/demo/nbproject/scripting/jconsole-plugin/nbproject/file-targets.xml
 ${JDKHOME}/demo/nbproject/scripting/jconsole-plugin/nbproject/jdk.xml
 ${JDKHOME}/demo/nbproject/scripting/jconsole-plugin/nbproject/netbeans-targets.xml
 ${JDKHOME}/demo/nbproject/scripting/jconsole-plugin/nbproject/project.xml
+${JDKHOME}/demo/nio/
+${JDKHOME}/demo/nio/zipfs/
+${JDKHOME}/demo/nio/zipfs/README.txt
+${JDKHOME}/demo/nio/zipfs/src.zip
+${JDKHOME}/demo/nio/zipfs/zipfs.jar
 ${JDKHOME}/demo/scripting/
 ${JDKHOME}/demo/scripting/jconsole-plugin/
 ${JDKHOME}/demo/scripting/jconsole-plugin/README.txt
@@ -392,6 +402,7 @@ ${JDKHOME}/include/jawt.h
 ${JDKHOME}/include/jdwpTransport.h
 ${JDKHOME}/include/jni.h
 ${JDKHOME}/include/jvmti.h
+${JDKHOME}/include/jvmticmlr.h
 ${JDKHOME}/include/openbsd/
 ${JDKHOME}/include/openbsd/jawt_md.h
 ${JDKHOME}/include/openbsd/jni_md.h
@@ -411,6 +422,28 @@ ${JDKHOME}/jre/bin/
 @bin ${JDKHOME}/jre/bin/tnameserv
 @bin ${JDKHOME}/jre/bin/unpack200
 ${JDKHOME}/jre/lib/
+${JDKHOME}/jre/lib/applet/
+${JDKHOME}/jre/lib/calendars.properties
+${JDKHOME}/jre/lib/charsets.jar
+${JDKHOME}/jre/lib/classlist
+${JDKHOME}/jre/lib/cmm/
+${JDKHOME}/jre/lib/cmm/CIEXYZ.pf
+${JDKHOME}/jre/lib/cmm/GRAY.pf
+${JDKHOME}/jre/lib/cmm/LINEAR_RGB.pf
+${JDKHOME}/jre/lib/cmm/PYCC.pf
+${JDKHOME}/jre/lib/cmm/sRGB.pf
+${JDKHOME}/jre/lib/content-types.properties
+${JDKHOME}/jre/lib/currency.data
+${JDKHOME}/jre/lib/ext/
+${JDKHOME}/jre/lib/ext/dnsns.jar
+${JDKHOME}/jre/lib/ext/localedata.jar
+${JDKHOME}/jre/lib/ext/meta-index
+${JDKHOME}/jre/lib/ext/sunec.jar
+${JDKHOME}/jre/lib/ext/sunjce_provider.jar
+${JDKHOME}/jre/lib/ext/sunpkcs11.jar
+${JDKHOME}/jre/lib/flavormap.properties
+${JDKHOME}/jre/lib/fontconfig.bfc
+${JDKHOME}/jre/lib/fontconfig.properties.src
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/headless/libmawt.so
@@ -445,7 +478,7 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libnpt.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/librmi.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsaproc.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsplashscreen.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsunecc.so
+${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsunec.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libunpack.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libverify.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libzip.so
@@ -457,31 +490,6 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjsig.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjvm.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/xawt/libmawt.so
-${JDKHOME}/jre/lib/applet/
-${JDKHOME}/jre/lib/calendars.properties
-${JDKHOME}/jre/lib/charsets.jar
-${JDKHOME}/jre/lib/classlist
-${JDKHOME}/jre/lib/cmm/
-${JDKHOME}/jre/lib/cmm/CIEXYZ.pf
-${JDKHOME}/jre/lib/cmm/GRAY.pf
-${JDKHOME}/jre/lib/cmm/LINEAR_RGB.pf
-${JDKHOME}/jre/lib/cmm/PYCC.pf
-${JDKHOME}/jre/lib/cmm/sRGB.pf
-${JDKHOME}/jre/lib/content-types.properties
-${JDKHOME}/jre/lib/currency.data
-${JDKHOME}/jre/lib/ext/
-${JDKHOME}/jre/lib/ext/dnsns.jar
-${JDKHOME}/jre/lib/ext/localedata.jar
-${JDKHOME}/jre/lib/ext/meta-index
-${JDKHOME}/jre/lib/ext/sunec.jar
-${JDKHOME}/jre/lib/ext/sunjce_provider.jar
-${JDKHOME}/jre/lib/ext/sunpkcs11.jar
-${JDKHOME}/jre/lib/flavormap.properties
-${JDKHOME}/jre/lib/fontconfig.bfc
-${JDKHOME}/jre/lib/fontconfig.properties.src
-${JDKHOME}/jre/lib/im/
-${JDKHOME}/jre/lib/im/indicim.jar
-${JDKHOME}/jre/lib/im/thaiim.jar
 ${JDKHOME}/jre/lib/images/
 ${JDKHOME}/jre/lib/images/cursors/
 ${JDKHOME}/jre/lib/images/cursors/cursors.properties
@@ -593,6 +601,7 @@ ${JDKHOME}/jre/lib/zi/America/Aruba
 ${JDKHOME}/jre/lib/zi/America/Asuncion
 ${JDKHOME}/jre/lib/zi/America/Atikokan
 ${JDKHOME}/jre/lib/zi/America/Bahia
+${JDKHOME}/jre/lib/zi/America/Bahia_Banderas
 ${JDKHOME}/jre/lib/zi/America/Barbados
 ${JDKHOME}/jre/lib/zi/America/Belem
 ${JDKHOME}/jre/lib/zi/America/Belize
@@ -656,6 +665,7 @@ ${JDKHOME}/jre/lib/zi/America/Maceio
 ${JDKHOME}/jre/lib/zi/America/Managua
 ${JDKHOME}/jre/lib/zi/America/Manaus
 ${JDKHOME}/jre/lib/zi/America/Martinique
+${JDKHOME}/jre/lib/zi/America/Matamoros
 ${JDKHOME}/jre/lib/zi/America/Mazatlan
 ${JDKHOME}/jre/lib/zi/America/Menominee
 ${JDKHOME}/jre/lib/zi/America/Merida
@@ -674,6 +684,7 @@ ${JDKHOME}/jre/lib/zi/America/Noronha
 ${JDKHOME}/jre/lib/zi/America/North_Dakota/
 ${JDKHOME}/jre/lib/zi/America/North_Dakota/Center
 ${JDKHOME}/jre/lib/zi/America/North_Dakota/New_Salem
+${JDKHOME}/jre/lib/zi/America/Ojinaga
 ${JDKHOME}/jre/lib/zi/America/Panama
 ${JDKHOME}/jre/lib/zi/America/Pangnirtung
 ${JDKHOME}/jre/lib/zi/America/Paramaribo
@@ -688,6 +699,7 @@ ${JDKHOME}/jre/lib/zi/America/Recife
 ${JDKHOME}/jre/lib/zi/America/Regina
 ${JDKHOME}/jre/lib/zi/America/Resolute
 ${JDKHOME}/jre/lib/zi/America/Rio_Branco
+${JDKHOME}/jre/lib/zi/America/Santa_Isabel
 ${JDKHOME}/jre/lib/zi/America/Santarem
 ${JDKHOME}/jre/lib/zi/America/Santiago
 ${JDKHOME}/jre/lib/zi/America/Santo_Domingo
@@ -714,6 +726,7 @@ ${JDKHOME}/jre/lib/zi/Antarctica/
 ${JDKHOME}/jre/lib/zi/Antarctica/Casey
 ${JDKHOME}/jre/lib/zi/Antarctica/Davis
 ${JDKHOME}/jre/lib/zi/Antarctica/DumontDUrville
+${JDKHOME}/jre/lib/zi/Antarctica/Macquarie
 ${JDKHOME}/jre/lib/zi/Antarctica/Mawson
 ${JDKHOME}/jre/lib/zi/Antarctica/McMurdo
 ${JDKHOME}/jre/lib/zi/Antarctica/Palmer
@@ -768,6 +781,7 @@ ${JDKHOME}/jre/lib/zi/Asia/Makassar
 ${JDKHOME}/jre/lib/zi/Asia/Manila
 ${JDKHOME}/jre/lib/zi/Asia/Muscat
 ${JDKHOME}/jre/lib/zi/Asia/Nicosia
+${JDKHOME}/jre/lib/zi/Asia/Novokuznetsk
 ${JDKHOME}/jre/lib/zi/Asia/Novosibirsk
 ${JDKHOME}/jre/lib/zi/Asia/Omsk
 ${JDKHOME}/jre/lib/zi/Asia/Oral
@@ -924,6 +938,7 @@ ${JDKHOME}/jre/lib/zi/Pacific/
 ${JDKHOME}/jre/lib/zi/Pacific/Apia
 ${JDKHOME}/jre/lib/zi/Pacific/Auckland
 ${JDKHOME}/jre/lib/zi/Pacific/Chatham
+${JDKHOME}/jre/lib/zi/Pacific/Chuuk
 ${JDKHOME}/jre/lib/zi/Pacific/Easter
 ${JDKHOME}/jre/lib/zi/Pacific/Efate
 ${JDKHOME}/jre/lib/zi/Pacific/Enderbury
@@ -949,14 +964,13 @@ ${JDKHOME}/jre/lib/zi/Pacific/Noumea
 ${JDKHOME}/jre/lib/zi/Pacific/Pago_Pago
 ${JDKHOME}/jre/lib/zi/Pacific/Palau
 ${JDKHOME}/jre/lib/zi/Pacific/Pitcairn
-${JDKHOME}/jre/lib/zi/Pacific/Ponape
+${JDKHOME}/jre/lib/zi/Pacific/Pohnpei
 ${JDKHOME}/jre/lib/zi/Pacific/Port_Moresby
 ${JDKHOME}/jre/lib/zi/Pacific/Rarotonga
 ${JDKHOME}/jre/lib/zi/Pacific/Saipan
 ${JDKHOME}/jre/lib/zi/Pacific/Tahiti
 ${JDKHOME}/jre/lib/zi/Pacific/Tarawa
 ${JDKHOME}/jre/lib/zi/Pacific/Tongatapu
-${JDKHOME}/jre/lib/zi/Pacific/Truk
 ${JDKHOME}/jre/lib/zi/Pacific/Wake
 ${JDKHOME}/jre/lib/zi/Pacific/Wallis
 ${JDKHOME}/jre/lib/zi/SystemV/
@@ -984,44 +998,44 @@ ${JDKHOME}/lib/orb.idl
 ${JDKHOME}/lib/sa-jdi.jar
 ${JDKHOME}/lib/tools.jar
 @mandir ${JDKHOME}/man/
-${JDKHOME}/man/man1/
-@man ${JDKHOME}/man/man1/appletviewer.1
-@man ${JDKHOME}/man/man1/extcheck.1
-@man ${JDKHOME}/man/man1/idlj.1
-@man ${JDKHOME}/man/man1/jar.1
-@man ${JDKHOME}/man/man1/jarsigner.1
-@man ${JDKHOME}/man/man1/java.1
-@man ${JDKHOME}/man/man1/javac.1
-@man ${JDKHOME}/man/man1/javadoc.1
-@man ${JDKHOME}/man/man1/javah.1
-@man ${JDKHOME}/man/man1/javap.1
-@man ${JDKHOME}/man/man1/jconsole.1
-@man ${JDKHOME}/man/man1/jdb.1
-@man ${JDKHOME}/man/man1/jhat.1
-@man ${JDKHOME}/man/man1/jinfo.1
-@man ${JDKHOME}/man/man1/jmap.1
-@man ${JDKHOME}/man/man1/jps.1
-@man ${JDKHOME}/man/man1/jrunscript.1
-@man ${JDKHOME}/man/man1/jsadebugd.1
-@man ${JDKHOME}/man/man1/jstack.1
-@man ${JDKHOME}/man/man1/jstat.1
-@man ${JDKHOME}/man/man1/jstatd.1
-@man ${JDKHOME}/man/man1/keytool.1
-@man ${JDKHOME}/man/man1/native2ascii.1
-@man ${JDKHOME}/man/man1/orbd.1
-@man ${JDKHOME}/man/man1/pack200.1
-@man ${JDKHOME}/man/man1/policytool.1
-@man ${JDKHOME}/man/man1/rmic.1
-@man ${JDKHOME}/man/man1/rmid.1
-@man ${JDKHOME}/man/man1/rmiregistry.1
-@man ${JDKHOME}/man/man1/schemagen.1
-@man ${JDKHOME}/man/man1/serialver.1
-@man ${JDKHOME}/man/man1/servertool.1
-@man ${JDKHOME}/man/man1/tnameserv.1
-@man ${JDKHOME}/man/man1/unpack200.1
-@man ${JDKHOME}/man/man1/wsgen.1
-@man ${JDKHOME}/man/man1/wsimport.1
-@man ${JDKHOME}/man/man1/xjc.1
+@comment ${JDKHOME}/man/man1/
+@comment @man ${JDKHOME}/man/man1/appletviewer.1
+@comment @man ${JDKHOME}/man/man1/extcheck.1
+@comment @man ${JDKHOME}/man/man1/idlj.1
+@comment @man ${JDKHOME}/man/man1/jar.1
+@comment @man ${JDKHOME}/man/man1/jarsigner.1
+@comment @man ${JDKHOME}/man/man1/java.1
+@comment @man ${JDKHOME}/man/man1/javac.1
+@comment @man ${JDKHOME}/man/man1/javadoc.1
+@comment @man ${JDKHOME}/man/man1/javah.1
+@comment @man ${JDKHOME}/man/man1/javap.1
+@comment @man ${JDKHOME}/man/man1/jconsole.1
+@comment @man ${JDKHOME}/man/man1/jdb.1
+@comment @man ${JDKHOME}/man/man1/jhat.1
+@comment @man ${JDKHOME}/man/man1/jinfo.1
+@comment @man ${JDKHOME}/man/man1/jmap.1
+@comment @man ${JDKHOME}/man/man1/jps.1
+@comment @man ${JDKHOME}/man/man1/jrunscript.1
+@comment @man ${JDKHOME}/man/man1/jsadebugd.1
+@comment @man ${JDKHOME}/man/man1/jstack.1
+@comment @man ${JDKHOME}/man/man1/jstat.1
+@comment @man ${JDKHOME}/man/man1/jstatd.1
+@comment @man ${JDKHOME}/man/man1/keytool.1
+@comment @man ${JDKHOME}/man/man1/native2ascii.1
+@comment @man ${JDKHOME}/man/man1/orbd.1
+@comment @man ${JDKHOME}/man/man1/pack200.1
+@comment @man ${JDKHOME}/man/man1/policytool.1
+@comment @man ${JDKHOME}/man/man1/rmic.1
+@comment @man ${JDKHOME}/man/man1/rmid.1
+@comment @man ${JDKHOME}/man/man1/rmiregistry.1
+@comment @man ${JDKHOME}/man/man1/schemagen.1
+@comment @man ${JDKHOME}/man/man1/serialver.1
+@comment @man ${JDKHOME}/man/man1/servertool.1
+@comment @man ${JDKHOME}/man/man1/tnameserv.1
+@comment @man ${JDKHOME}/man/man1/unpack200.1
+@comment @man ${JDKHOME}/man/man1/wsgen.1
+@comment @man ${JDKHOME}/man/man1/wsimport.1
+@comment @man ${JDKHOME}/man/man1/xjc.1
 ${JDKHOME}/sample/
 ${JDKHOME}/sample/jmx/
 ${JDKHOME}/sample/jmx/jmx-scandir/

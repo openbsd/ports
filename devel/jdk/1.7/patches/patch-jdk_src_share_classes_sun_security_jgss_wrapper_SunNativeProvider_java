@@ -1,0 +1,14 @@
+$OpenBSD: patch-jdk_src_share_classes_sun_security_jgss_wrapper_SunNativeProvider_java,v 1.1 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java.orig	Tue Oct 26 10:45:52 2010
++++ jdk/src/share/classes/sun/security/jgss/wrapper/SunNativeProvider.java	Tue Oct 26 10:46:00 2010
+@@ -83,7 +83,9 @@ public final class SunNativeProvider extends Provider 
+                             String osname = System.getProperty("os.name");
+                             if (osname.startsWith("SunOS")) {
+                                 gssLibs = new String[]{ "libgss.so" };
+-                            } else if (osname.startsWith("Linux")) {
++                            } else if (osname.startsWith("Linux") ||
++				       osname.startsWith("Darwin") ||
++				       osname.endsWith("BSD")) {
+                                 gssLibs = new String[]{
+                                     "libgssapi.so",
+                                     "libgssapi_krb5.so",

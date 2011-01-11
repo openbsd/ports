@@ -1,0 +1,15 @@
+$OpenBSD: patch-jdk_src_share_native_sun_security_ec_impl_ecdecode_c,v 1.1 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/share/native/sun/security/ec/impl/ecdecode.c.orig	Tue Oct 26 10:51:55 2010
++++ jdk/src/share/native/sun/security/ec/impl/ecdecode.c	Tue Oct 26 10:52:01 2010
+@@ -60,9 +60,9 @@
+ #include <sys/types.h>
+ 
+ #ifndef _WIN32
+-#ifndef __linux__
++#if !defined(__linux__) && !defined(_ALLBSD_SOURCE)
+ #include <sys/systm.h>
+-#endif /* __linux__ */
++#endif /* __linux__ || _ALLBSD_SOURCE */
+ #include <sys/param.h>
+ #endif /* _WIN32 */
+ 

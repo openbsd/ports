@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_src_share_vm_prims_forte_cpp,v 1.1 2009/05/23 03:03:25 kurt Exp $
---- hotspot/src/share/vm/prims/forte.cpp.orig	Sat May 16 17:05:01 2009
-+++ hotspot/src/share/vm/prims/forte.cpp	Sat May 16 17:05:10 2009
-@@ -626,6 +626,11 @@ void AsyncGetCallTrace(ASGCT_CallTrace *trace, jint de
+$OpenBSD: patch-hotspot_src_share_vm_prims_forte_cpp,v 1.2 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/src/share/vm/prims/forte.cpp.orig	Fri Aug 13 03:28:24 2010
++++ hotspot/src/share/vm/prims/forte.cpp	Mon Oct 25 18:15:45 2010
+@@ -629,6 +629,11 @@ void AsyncGetCallTrace(ASGCT_CallTrace *trace, jint de
  // Method to let libcollector know about a dynamically loaded function.
  // Because it is weakly bound, the calls become NOP's when the library
  // isn't present.
@@ -13,7 +13,7 @@ $OpenBSD: patch-hotspot_src_share_vm_prims_forte_cpp,v 1.1 2009/05/23 03:03:25 k
  void    collector_func_load(char* name,
                              void* null_argument_1,
                              void* null_argument_2,
-@@ -636,6 +641,7 @@ void    collector_func_load(char* name,
+@@ -639,6 +644,7 @@ void    collector_func_load(char* name,
  #pragma weak collector_func_load
  #define collector_func_load(x0,x1,x2,x3,x4,x5,x6) \
          ( collector_func_load ? collector_func_load(x0,x1,x2,x3,x4,x5,x6),0 : 0 )

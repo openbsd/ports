@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_share_classes_sun_tools_jar_Main_java,v 1.3 2009/10/07 01:53:54 kurt Exp $
---- jdk/src/share/classes/sun/tools/jar/Main.java.orig	Thu Sep 17 03:52:21 2009
-+++ jdk/src/share/classes/sun/tools/jar/Main.java	Sat Sep 26 10:00:48 2009
+$OpenBSD: patch-jdk_src_share_classes_sun_tools_jar_Main_java,v 1.4 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/share/classes/sun/tools/jar/Main.java.orig	Fri Aug 13 03:22:05 2010
++++ jdk/src/share/classes/sun/tools/jar/Main.java	Mon Oct 25 18:15:47 2010
 @@ -50,6 +50,7 @@ class Main {
      String zname = "";
      String[] files;
@@ -9,7 +9,7 @@ $OpenBSD: patch-jdk_src_share_classes_sun_tools_jar_Main_java,v 1.3 2009/10/07 0
  
      // An entryName(path)->File map generated during "expand", it helps to
      // decide whether or not an existing entry in a jar file needs to be
-@@ -862,6 +863,19 @@ class Main {
+@@ -866,6 +867,19 @@ class Main {
       * Extracts specified entries from JAR file.
       */
      void extract(InputStream in, String files[]) throws IOException {
@@ -29,7 +29,7 @@ $OpenBSD: patch-jdk_src_share_classes_sun_tools_jar_Main_java,v 1.3 2009/10/07 0
          ZipInputStream zis = new ZipInputStream(in);
          ZipEntry e;
          // Set of all directory entries specified in archive.  Disallows
-@@ -892,6 +906,19 @@ class Main {
+@@ -896,6 +910,19 @@ class Main {
       * Extracts specified entries from JAR file, via ZipFile.
       */
      void extract(String fname, String files[]) throws IOException {
@@ -49,7 +49,7 @@ $OpenBSD: patch-jdk_src_share_classes_sun_tools_jar_Main_java,v 1.3 2009/10/07 0
          ZipFile zf = new ZipFile(fname);
          Set<ZipEntry> dirs = newDirSet();
          Enumeration<? extends ZipEntry> zes = zf.entries();
-@@ -923,6 +950,10 @@ class Main {
+@@ -927,6 +954,10 @@ class Main {
          ZipEntry rc = null;
          String name = e.getName();
          File f = new File(e.getName().replace('/', File.separatorChar));
@@ -60,7 +60,7 @@ $OpenBSD: patch-jdk_src_share_classes_sun_tools_jar_Main_java,v 1.3 2009/10/07 0
          if (e.isDirectory()) {
              if (f.exists()) {
                  if (!f.isDirectory()) {
-@@ -944,6 +975,10 @@ class Main {
+@@ -948,6 +979,10 @@ class Main {
          } else {
              if (f.getParent() != null) {
                  File d = new File(f.getParent());

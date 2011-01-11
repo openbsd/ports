@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_net_spi_DefaultProxySelector_c,v 1.2 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/solaris/native/sun/net/spi/DefaultProxySelector.c.orig	Fri May  8 03:35:08 2009
-+++ jdk/src/solaris/native/sun/net/spi/DefaultProxySelector.c	Mon May 18 20:26:12 2009
+$OpenBSD: patch-jdk_src_solaris_native_sun_net_spi_DefaultProxySelector_c,v 1.3 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/native/sun/net/spi/DefaultProxySelector.c.orig	Fri Aug 13 03:22:14 2010
++++ jdk/src/solaris/native/sun/net/spi/DefaultProxySelector.c	Mon Oct 25 18:15:59 2010
 @@ -26,11 +26,12 @@
  #include "jni.h"
  #include "jni_util.h"
@@ -15,7 +15,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_net_spi_DefaultProxySelector_c,v 1.2 
  #include <string.h>
  #else
  #include <strings.h>
-@@ -109,8 +110,9 @@ Java_sun_net_spi_DefaultProxySelector_init(JNIEnv *env
+@@ -110,8 +111,9 @@ Java_sun_net_spi_DefaultProxySelector_init(JNIEnv *env
    /**
     * Let's try to load le GConf-2 library
     */

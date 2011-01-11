@@ -1,7 +1,7 @@
-$OpenBSD: patch-jdk_make_java_nio_Makefile,v 1.5 2009/06/10 19:01:09 kurt Exp $
---- jdk/make/java/nio/Makefile.orig	Thu May 14 03:29:41 2009
-+++ jdk/make/java/nio/Makefile	Tue Jun  2 12:12:32 2009
-@@ -260,6 +260,69 @@ FILES_gen += \
+$OpenBSD: patch-jdk_make_java_nio_Makefile,v 1.6 2011/01/11 15:47:50 kurt Exp $
+--- jdk/make/java/nio/Makefile.orig	Fri Aug 13 03:21:37 2010
++++ jdk/make/java/nio/Makefile	Tue Oct 26 10:34:14 2010
+@@ -261,6 +261,69 @@ FILES_gen += \
  	sun/nio/fs/UnixConstants.java
  endif # PLATFORM = linux
  
@@ -71,7 +71,7 @@ $OpenBSD: patch-jdk_make_java_nio_Makefile,v 1.5 2009/06/10 19:01:09 kurt Exp $
  #
  # Find platform-specific C source files
  #
-@@ -284,6 +347,11 @@ OTHER_INCLUDES += \
+@@ -285,19 +348,28 @@ OTHER_INCLUDES += \
    -I$(PLATFORM_SRC)/native/java/net \
    -I$(CLASSHDRDIR)/../../../java.lang/java/CClassHeaders
  
@@ -83,17 +83,29 @@ $OpenBSD: patch-jdk_make_java_nio_Makefile,v 1.5 2009/06/10 19:01:09 kurt Exp $
  ifeq ($(PLATFORM),windows)
    OTHER_LDLIBS += $(JVMLIB) ws2_32.lib \
       -libpath:$(LIBDIR) java.lib \
-@@ -294,6 +362,9 @@ endif
+      $(OBJDIR)/../../../../sun/java.net/net/$(OBJDIRNAME)/net.lib \
+      $(OBJDIR)/../../../java.lang/java/$(OBJDIRNAME)/io_util.obj \
+      $(OBJDIR)/../../../java.lang/java/$(OBJDIRNAME)/FileDescriptor_md.obj
+-endif
++else
++ifeq ($(PLATFORM), solaris)
++OTHER_LDLIBS += $(JVMLIB) $(LIBSOCKET) -lposix4 $(LIBDL)
++endif # solaris
++OTHER_LDLIBS += -L$(LIBDIR)/$(LIBARCH) -ljava -lnet
  ifeq ($(PLATFORM), linux)
- OTHER_LDLIBS += -L$(LIBDIR)/$(LIBARCH) -ljava -lnet -lpthread -ldl
+-OTHER_LDLIBS += -L$(LIBDIR)/$(LIBARCH) -ljava -lnet -lpthread -ldl
++OTHER_LDLIBS += -lpthread $(LIBDL)
  endif
+-ifeq ($(PLATFORM), solaris)
+-OTHER_LDLIBS += $(JVMLIB) $(LIBSOCKET) -lposix4 -ldl \
+-		-L$(LIBDIR)/$(LIBARCH) -ljava -lnet
 +ifeq ($(PLATFORM), bsd)
-+OTHER_LDLIBS += -L$(LIBDIR)/$(LIBARCH) -ljava -lnet -pthread
++OTHER_LDLIBS += -pthread
 +endif
- ifeq ($(PLATFORM), solaris)
- OTHER_LDLIBS += $(JVMLIB) $(LIBSOCKET) -lposix4 -ldl \
- 		-L$(LIBDIR)/$(LIBARCH) -ljava -lnet
-@@ -315,6 +386,9 @@ FILES_m = mapfile-solaris
+ endif # PLATFORM
+ 
+ #
+@@ -320,6 +392,9 @@ FILES_m = mapfile-solaris
  endif
  ifeq ($(PLATFORM), linux)
  FILES_m = mapfile-linux

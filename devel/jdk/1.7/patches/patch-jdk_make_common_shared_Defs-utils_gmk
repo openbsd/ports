@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_common_shared_Defs-utils_gmk,v 1.5 2010/09/03 21:54:39 naddy Exp $
---- jdk/make/common/shared/Defs-utils.gmk.orig	Thu Sep 17 01:51:40 2009
-+++ jdk/make/common/shared/Defs-utils.gmk	Fri Sep  3 14:34:43 2010
+$OpenBSD: patch-jdk_make_common_shared_Defs-utils_gmk,v 1.6 2011/01/11 15:47:50 kurt Exp $
+--- jdk/make/common/shared/Defs-utils.gmk.orig	Thu Oct 28 20:18:01 2010
++++ jdk/make/common/shared/Defs-utils.gmk	Mon Nov  1 13:16:18 2010
 @@ -67,6 +67,13 @@ ifeq ($(PLATFORM),windows)
    UTILS_DEVTOOL_PATH=$(DEVTOOLS_PATH)
  endif
@@ -15,7 +15,7 @@ $OpenBSD: patch-jdk_make_common_shared_Defs-utils_gmk,v 1.5 2010/09/03 21:54:39 
  # Utilities
  ADB            = $(UTILS_COMMAND_PATH)adb
  AR             = $(UTILS_CCS_BIN_PATH)ar
-@@ -203,3 +210,39 @@ ifeq ($(PLATFORM),solaris)
+@@ -202,3 +209,39 @@ ifeq ($(PLATFORM),solaris)
    ECHO           = /usr/bin/echo
  endif
  

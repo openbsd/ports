@@ -1,0 +1,16 @@
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_zero_vm_orderAccess_bsd_zero_inline_hpp,v 1.1 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/src/os_cpu/bsd_zero/vm/orderAccess_bsd_zero.inline.hpp.orig	Fri Oct 29 12:03:21 2010
++++ hotspot/src/os_cpu/bsd_zero/vm/orderAccess_bsd_zero.inline.hpp	Fri Oct 29 12:03:27 2010
+@@ -40,7 +40,12 @@ typedef void (__kernel_dmb_t) (void);
+ 
+ #else // ARM
+ 
++#ifdef __APPLE__
++#include <libkern/OSAtomic.h>
++#define FULL_MEM_BARRIER OSMemoryBarrier()
++#else
+ #define FULL_MEM_BARRIER __sync_synchronize()
++#endif // __APPLE__
+ 
+ #ifdef PPC
+ 

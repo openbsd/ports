@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_agent_src_os_bsd_symtab_h,v 1.1 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/agent/src/os/bsd/symtab.h.orig	Mon Oct 25 18:43:18 2010
++++ hotspot/agent/src/os/bsd/symtab.h	Mon Oct 25 18:43:25 2010
+@@ -32,7 +32,7 @@
+ struct symtab;
+ 
+ // build symbol table for a given ELF file descriptor
+-struct symtab* build_symtab(int fd, const char *filename);
++struct symtab* build_symtab(int fd);
+ 
+ // destroy the symbol table
+ void destroy_symtab(struct symtab* symtab);

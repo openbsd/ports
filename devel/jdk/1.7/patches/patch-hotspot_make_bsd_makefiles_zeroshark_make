@@ -1,0 +1,27 @@
+$OpenBSD: patch-hotspot_make_bsd_makefiles_zeroshark_make,v 1.1 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/make/bsd/makefiles/zeroshark.make.orig	Mon Oct 25 18:52:01 2010
++++ hotspot/make/bsd/makefiles/zeroshark.make	Mon Oct 25 18:52:08 2010
+@@ -40,4 +40,23 @@ ifeq ($(ARCH_DATA_MODEL), 64)
+   CFLAGS += -D_LP64=1
+ endif
+ 
++# Specify the path to the FFI headers
++ifdef ALT_PACKAGE_PATH
++  PACKAGE_PATH = $(ALT_PACKAGE_PATH)
++else
++  ifeq ($(OS_VENDOR),Apple)
++    PACKAGE_PATH = /opt/local
++  else
++    ifeq ($(OS_VENDOR),NetBSD)
++      PACKAGE_PATH = /usr/pkg
++      LIBS += -Wl,-R${PACKAGE_PATH}/lib
++    else
++      PACKAGE_PATH = /usr/local
++    endif
++  endif
++endif
++
++CFLAGS += -I$(PACKAGE_PATH)/include
++LIBS += -L$(PACKAGE_PATH)/lib -lffi
++
+ OPT_CFLAGS/compactingPermGenGen.o = -O1

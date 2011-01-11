@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_common_shared_Platform_gmk,v 1.6 2009/10/07 01:53:54 kurt Exp $
---- jdk/make/common/shared/Platform.gmk.orig	Thu Sep 17 03:51:40 2009
-+++ jdk/make/common/shared/Platform.gmk	Mon Oct  5 14:54:16 2009
+$OpenBSD: patch-jdk_make_common_shared_Platform_gmk,v 1.7 2011/01/11 15:47:50 kurt Exp $
+--- jdk/make/common/shared/Platform.gmk.orig	Fri Aug 13 03:21:36 2010
++++ jdk/make/common/shared/Platform.gmk	Tue Oct 26 10:32:41 2010
 @@ -82,7 +82,7 @@ SYSTEM_UNAME := $(shell uname)
  SCM_DIRs = .hg .svn CVS RCS SCCS Codemgr_wsdata deleted_files .hgignore .hgtags
  # When changing SCM_DIRs also change SCM_DIRS_rexp and SCM_DIRS_prune:
@@ -10,7 +10,7 @@ $OpenBSD: patch-jdk_make_common_shared_Platform_gmk,v 1.6 2009/10/07 01:53:54 ku
  
  # Don't define this unless it's not defined
  ifndef VARIANT
-@@ -211,6 +211,89 @@ ifeq ($(SYSTEM_UNAME), Linux)
+@@ -214,6 +214,101 @@ ifeq ($(SYSTEM_UNAME), Linux)
    MB_OF_MEMORY := $(shell free -m | fgrep Mem: | awk '{print $$2;}' )
  endif
  
@@ -51,6 +51,18 @@ $OpenBSD: patch-jdk_make_common_shared_Platform_gmk,v 1.6 2009/10/07 01:53:54 ku
 +                i[3-9]86) \
 +                    echo i586 \
 +                    ;; \
++                sparc64) \
++                    echo sparcv9 \
++                    ;; \
++                sparc*) \
++                    echo sparc \
++                    ;; \
++                x86_64) \
++                    echo amd64 \
++                    ;; \
++                "Power Macintosh") \
++                    echo ppc \
++                    ;; \
 +                *) \
 +                    echo $(mach) \
 +                    ;; \
@@ -67,8 +79,8 @@ $OpenBSD: patch-jdk_make_common_shared_Platform_gmk,v 1.6 2009/10/07 01:53:54 ku
 +    endif
 +  endif
 +
-+  # i586 and sparc are 32 bit, amd64 and sparc64 are 64
-+  ifneq (,$(findstring $(ARCH), i586 sparc))
++  # i586, sparc, and ppc are 32 bit, amd64 and sparc64 are 64
++  ifneq (,$(findstring $(ARCH), i586 sparc ppc))
 +    ARCH_DATA_MODEL=32
 +  else
 +    ARCH_DATA_MODEL=64
@@ -100,7 +112,7 @@ $OpenBSD: patch-jdk_make_common_shared_Platform_gmk,v 1.6 2009/10/07 01:53:54 ku
  # Windows with and without CYGWIN will be slightly different
  ifeq ($(SYSTEM_UNAME), Windows_NT)
    PLATFORM = windows
-@@ -376,6 +459,14 @@ ifneq ($(PLATFORM), windows)
+@@ -404,6 +499,14 @@ ifneq ($(PLATFORM), windows)
    ARCH_VM_SUBDIR=jre/lib/$(LIBARCH)
  endif
  
@@ -115,7 +127,7 @@ $OpenBSD: patch-jdk_make_common_shared_Platform_gmk,v 1.6 2009/10/07 01:53:54 ku
  # Machines with 512Mb or less of real memory are considered low memory
  #    build machines and adjustments will be made to prevent excessing
  #    system swapping during the build.
-@@ -413,6 +504,18 @@ ifeq ($(JDK_HAS_MEM_INFO),)
+@@ -441,6 +544,18 @@ ifeq ($(JDK_HAS_MEM_INFO),)
    export LOW_MEMORY_MACHINE
    export MAX_VM_MEMORY
    export MIN_VM_MEMORY

@@ -1,22 +1,28 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_jsig_make,v 1.3 2009/10/07 01:53:54 kurt Exp $
---- hotspot/make/bsd/makefiles/jsig.make.orig	Sat Sep 26 10:00:44 2009
-+++ hotspot/make/bsd/makefiles/jsig.make	Sat Sep 26 10:21:25 2009
-@@ -26,8 +26,13 @@
+$OpenBSD: patch-hotspot_make_bsd_makefiles_jsig_make,v 1.4 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/make/bsd/makefiles/jsig.make.orig	Mon Oct 25 18:02:18 2010
++++ hotspot/make/bsd/makefiles/jsig.make	Mon Oct 25 18:46:39 2010
+@@ -25,11 +25,16 @@
+ # Rules to build signal interposition library, used by vm.make
  
  # libjsig[_g].so: signal interposition library
- JSIG = jsig$(G_SUFFIX)
+-JSIG = jsig
 -LIBJSIG = lib$(JSIG).so
++JSIG   = jsig
++JSIG_G = $(JSIG)$(G_SUFFIX)
  
+-JSIG_G    = $(JSIG)$(G_SUFFIX)
+-LIBJSIG_G = lib$(JSIG_G).so
 +ifeq ($(OS_VENDOR), Darwin)
-+  LIBJSIG = lib$(JSIG).dylib
++  LIBJSIG   = lib$(JSIG).dylib
++  LIBJSIG_G = lib$(JSIG_G).dylib
 +else
-+  LIBJSIG = lib$(JSIG).so
++  LIBJSIG   = lib$(JSIG).so
++  LIBJSIG_G = lib$(JSIG_G).so
 +endif
-+
+ 
  JSIGSRCDIR = $(GAMMADIR)/src/os/$(Platform_os_family)/vm
  
- DEST_JSIG  = $(JDK_LIBDIR)/$(LIBJSIG)
-@@ -39,7 +44,7 @@ LIBJSIG_MAPFILE = $(MAKEFILES_DIR)/mapfile-vers-jsig
+@@ -42,7 +47,7 @@ LIBJSIG_MAPFILE = $(MAKEFILES_DIR)/mapfile-vers-jsig
  # cause problems with interposing. See CR: 6466665
  # LFLAGS_JSIG += $(MAPFLAG:FILENAME=$(LIBJSIG_MAPFILE))
  
@@ -25,12 +31,12 @@ $OpenBSD: patch-hotspot_make_bsd_makefiles_jsig_make,v 1.3 2009/10/07 01:53:54 k
  
  # DEBUG_BINARIES overrides everything, use full -g debug information
  ifeq ($(DEBUG_BINARIES), true)
-@@ -49,7 +54,7 @@ endif
+@@ -52,7 +57,7 @@ endif
  $(LIBJSIG): $(JSIGSRCDIR)/jsig.c $(LIBJSIG_MAPFILE)
  	@echo Making signal interposition lib...
  	$(QUIETLY) $(CC) $(SYMFLAG) $(ARCHFLAG) $(SHARED_FLAG) $(PICFLAG) \
 -                         $(LFLAGS_JSIG) $(JSIG_DEBUG_CFLAGS) -o $@ $< -ldl
 +                         $(LFLAGS_JSIG) $(JSIG_DEBUG_CFLAGS) -o $@ $<
+ 	$(QUIETLY) [ -f $(LIBJSIG_G) ] || { ln -s $@ $(LIBJSIG_G); }
  
  install_jsig: $(LIBJSIG)
- 	@echo "Copying $(LIBJSIG) to $(DEST_JSIG)"

@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_src_os_bsd_launcher_java_md_c,v 1.1 2009/05/23 03:03:24 kurt Exp $
---- hotspot/src/os/bsd/launcher/java_md.c.orig	Fri May 15 17:19:44 2009
-+++ hotspot/src/os/bsd/launcher/java_md.c	Fri May 15 17:58:17 2009
+$OpenBSD: patch-hotspot_src_os_bsd_launcher_java_md_c,v 1.2 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/src/os/bsd/launcher/java_md.c.orig	Mon Nov  1 13:14:58 2010
++++ hotspot/src/os/bsd/launcher/java_md.c	Mon Nov  1 13:16:15 2010
 @@ -45,8 +45,15 @@
  #include "version_comp.h"
  #endif
@@ -17,7 +17,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_launcher_java_md_c,v 1.1 2009/05/23 03:03:24 
  
  #ifndef GAMMA   /* launcher.make defines ARCH */
  
-@@ -112,7 +119,7 @@ extern char **environ;
+@@ -116,7 +123,7 @@ extern char **environ;
   *      A collection of useful strings. One should think of these as #define
   *      entries, but actual strings can be more efficient (with many compilers).
   */
@@ -26,7 +26,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_launcher_java_md_c,v 1.1 2009/05/23 03:03:24 
  static const char *system_dir   = "/usr/java";
  static const char *user_dir     = "/java";
  #else /* Solaris */
-@@ -456,10 +463,10 @@ CreateExecutionEnvironment(int *_argcp,
+@@ -460,10 +467,10 @@ CreateExecutionEnvironment(int *_argcp,
         * If not on Solaris, assume only a single LD_LIBRARY_PATH
         * variable.
         */
@@ -39,7 +39,16 @@ $OpenBSD: patch-hotspot_src_os_bsd_launcher_java_md_c,v 1.1 2009/05/23 03:03:24 
        /*
         * On bsd, if a binary is running as sgid or suid, glibc sets
         * LD_LIBRARY_PATH to the empty string for security purposes.  (In
-@@ -483,7 +490,7 @@ CreateExecutionEnvironment(int *_argcp,
+@@ -476,7 +483,7 @@ CreateExecutionEnvironment(int *_argcp,
+        * return from the function now.  Getting the right libraries to
+        * be found must be handled through other mechanisms.
+        */
+-      if((getgid() != getegid()) || (getuid() != geteuid()) ) {
++      if(issetugid()) {
+         return;
+       }
+ #endif
+@@ -487,7 +494,7 @@ CreateExecutionEnvironment(int *_argcp,
        new_runpath = MemAlloc( ((runpath!=NULL)?strlen(runpath):0) +
                                2*strlen(jrepath) + 2*strlen(arch) +
                                strlen(jvmpath) + 52);
@@ -48,7 +57,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_launcher_java_md_c,v 1.1 2009/05/23 03:03:24 
  
  
        /*
-@@ -498,7 +505,7 @@ CreateExecutionEnvironment(int *_argcp,
+@@ -502,7 +509,7 @@ CreateExecutionEnvironment(int *_argcp,
  
          /* jvmpath, ((running != wanted)?((wanted==64)?"/"BIG_ARCH:"/.."):""), */
  
@@ -57,7 +66,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_launcher_java_md_c,v 1.1 2009/05/23 03:03:24 
                  "%s:"
                  "%s/lib/%s:"
                  "%s/../lib/%s",
-@@ -836,7 +843,7 @@ GetXUsagePath(char *buf, jint bufsize)
+@@ -840,7 +847,7 @@ GetXUsagePath(char *buf, jint bufsize)
  jboolean
  GetApplicationHome(char *buf, jint bufsize)
  {
@@ -66,7 +75,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_launcher_java_md_c,v 1.1 2009/05/23 03:03:24 
      char *execname = GetExecname();
      if (execname) {
          strncpy(buf, execname, bufsize-1);
-@@ -1005,7 +1012,7 @@ SetExecname(char **argv)
+@@ -1009,7 +1016,7 @@ SetExecname(char **argv)
              }
          }
      }
@@ -75,7 +84,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_launcher_java_md_c,v 1.1 2009/05/23 03:03:24 
      {
          const char* self = "/proc/self/exe";
          char buf[PATH_MAX+1];
-@@ -1015,7 +1022,7 @@ SetExecname(char **argv)
+@@ -1019,7 +1026,7 @@ SetExecname(char **argv)
              exec_path = strdup(buf);
          }
      }
@@ -84,7 +93,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_launcher_java_md_c,v 1.1 2009/05/23 03:03:24 
      {
          /* Not implemented */
      }
-@@ -1220,7 +1227,7 @@ get_cpuid(uint32_t arg,
+@@ -1224,7 +1231,7 @@ get_cpuid(uint32_t arg,
  
  #endif /* __sun && i586 */
  
@@ -93,7 +102,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_launcher_java_md_c,v 1.1 2009/05/23 03:03:24 
  
  /*
   * A utility method for asking the CPU about itself.
-@@ -1286,7 +1293,7 @@ get_cpuid(uint32_t arg,
+@@ -1290,7 +1297,7 @@ get_cpuid(uint32_t arg,
  #endif
  }
  
@@ -102,7 +111,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_launcher_java_md_c,v 1.1 2009/05/23 03:03:24 
  
  #ifdef i586
  /*
-@@ -1465,7 +1472,7 @@ solaris_i586_ServerClassMachine(void) {
+@@ -1469,7 +1476,7 @@ solaris_i586_ServerClassMachine(void) {
  
  #endif /* __sun && i586 */
  
@@ -111,7 +120,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_launcher_java_md_c,v 1.1 2009/05/23 03:03:24 
  
  /* The definition of a server-class machine for bsd-i586 */
  jboolean
-@@ -1496,7 +1503,7 @@ bsd_i586_ServerClassMachine(void) {
+@@ -1500,7 +1507,7 @@ bsd_i586_ServerClassMachine(void) {
    return result;
  }
  
@@ -120,7 +129,7 @@ $OpenBSD: patch-hotspot_src_os_bsd_launcher_java_md_c,v 1.1 2009/05/23 03:03:24 
  
  /* Dispatch to the platform-specific definition of "server-class" */
  jboolean
-@@ -1506,7 +1513,7 @@ ServerClassMachine(void) {
+@@ -1510,7 +1517,7 @@ ServerClassMachine(void) {
    result = solaris_sparc_ServerClassMachine();
  #elif defined(__sun) && defined(i586)
    result = solaris_i586_ServerClassMachine();

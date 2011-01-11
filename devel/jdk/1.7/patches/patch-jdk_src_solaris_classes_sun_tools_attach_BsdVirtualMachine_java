@@ -1,9 +1,9 @@
-$OpenBSD: patch-jdk_src_solaris_classes_sun_tools_attach_BsdVirtualMachine_java,v 1.1 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java.orig	Mon May 18 16:56:42 2009
-+++ jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Mon May 18 16:57:00 2009
-@@ -38,9 +38,6 @@ import java.util.Properties;
-  */
- public class BsdVirtualMachine extends HotSpotVirtualMachine {
+$OpenBSD: patch-jdk_src_solaris_classes_sun_tools_attach_BsdVirtualMachine_java,v 1.2 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java.orig	Tue Oct 26 09:56:36 2010
++++ jdk/src/solaris/classes/sun/tools/attach/BsdVirtualMachine.java	Tue Oct 26 10:58:55 2010
+@@ -40,9 +40,6 @@ public class BsdVirtualMachine extends HotSpotVirtualM
+     // temp directory for socket file
+     private static final String tmpdir = System.getProperty("java.io.tmpdir");
  
 -    // Indicates if this machine uses the old BsdThreads
 -    static boolean isBsdThreads;
@@ -11,12 +11,12 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_tools_attach_BsdVirtualMachine_java,
      // The patch to the socket file created by the target VM
      String path;
  
-@@ -65,25 +62,10 @@ public class BsdVirtualMachine extends HotSpotVirtualM
+@@ -67,25 +64,10 @@ public class BsdVirtualMachine extends HotSpotVirtualM
          // Then we attempt to find the socket file again.
          path = findSocketFile(pid);
          if (path == null) {
 -            File f = createAttachFile(pid);
-+            File f = new File("/tmp/.attach_pid" + pid);
++            File f = new File(tmpdir, ".attach_pid" + pid);
 +	    createAttachFile(f.getPath());
              try {
 -                // On BsdThreads each thread is a process and we don't have the
@@ -40,29 +40,26 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_tools_attach_BsdVirtualMachine_java,
  
                  // give the target VM time to start the attach mechanism
                  int i = 0;
-@@ -265,37 +247,14 @@ public class BsdVirtualMachine extends HotSpotVirtualM
+@@ -267,33 +249,10 @@ public class BsdVirtualMachine extends HotSpotVirtualM
          // First check for a .java_pid<pid> file in the working directory
          // of the target process
          String fn = ".java_pid" + pid;
 -        String path = "/proc/" + pid + "/cwd/" + fn;
-+        String path = "/tmp/" + fn;
-         File f = new File(path);
-         if (!f.exists()) {
--            // Not found, so try /tmp
--            path = "/tmp/" + fn;
--            f = new File(path);
--            if (!f.exists()) {
--                return null;            // not found
--            }
-+            return null;            // not found
-         }
-         return path;
+-        File f = new File(path);
+-        if (!f.exists()) {
+-            // Not found, so try temp directory
+-            f = new File(tmpdir, fn);
+-            path = f.exists() ? f.getPath() : null;
+-        }
+-        return path;
++        File f = new File(tmpdir, path);
++	return f.exists() ? f.getPath() : null;
      }
  
 -    // On Solaris/Bsd a simple handshake is used to start the attach mechanism
 -    // if not already started. The client creates a .attach_pid<pid> file in the
--    // target VM's working directory (or /tmp), and the SIGQUIT handler checks
--    // for the file.
+-    // target VM's working directory (or temp directory), and the SIGQUIT handler
+-    // checks for the file.
 -    private File createAttachFile(int pid) throws IOException {
 -        String fn = ".attach_pid" + pid;
 -        String path = "/proc/" + pid + "/cwd/" + fn;
@@ -70,8 +67,7 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_tools_attach_BsdVirtualMachine_java,
 -        try {
 -            f.createNewFile();
 -        } catch (IOException x) {
--            path = "/tmp/" + fn;
--            f = new File(path);
+-            f = new File(tmpdir, fn);
 -            f.createNewFile();
 -        }
 -        return f;
@@ -80,7 +76,7 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_tools_attach_BsdVirtualMachine_java,
      /*
       * Write/sends the given to the target VM. String is transmitted in
       * UTF-8 encoding.
-@@ -318,12 +277,6 @@ public class BsdVirtualMachine extends HotSpotVirtualM
+@@ -316,12 +275,6 @@ public class BsdVirtualMachine extends HotSpotVirtualM
  
      //-- native methods
  
@@ -93,7 +89,7 @@ $OpenBSD: patch-jdk_src_solaris_classes_sun_tools_attach_BsdVirtualMachine_java,
      static native void sendQuitTo(int pid) throws IOException;
  
      static native void checkPermissions(String path) throws IOException;
-@@ -338,8 +291,9 @@ public class BsdVirtualMachine extends HotSpotVirtualM
+@@ -336,8 +289,9 @@ public class BsdVirtualMachine extends HotSpotVirtualM
  
      static native void write(int fd, byte buf[], int off, int bufLen) throws IOException;
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_java_nio_mapfile-bsd,v 1.2 2009/10/07 01:53:54 kurt Exp $
---- jdk/make/java/nio/mapfile-bsd.orig	Sun Sep 27 09:39:53 2009
-+++ jdk/make/java/nio/mapfile-bsd	Sun Sep 27 09:51:12 2009
+$OpenBSD: patch-jdk_make_java_nio_mapfile-bsd,v 1.3 2011/01/11 15:47:50 kurt Exp $
+--- jdk/make/java/nio/mapfile-bsd.orig	Mon Oct 25 18:02:18 2010
++++ jdk/make/java/nio/mapfile-bsd	Mon Oct 25 18:15:45 2010
 @@ -36,25 +36,6 @@ SUNWprivate_1.1 {
                  Java_sun_nio_ch_DatagramDispatcher_readv0;
                  Java_sun_nio_ch_DatagramDispatcher_write0;
@@ -27,7 +27,7 @@ $OpenBSD: patch-jdk_make_java_nio_mapfile-bsd,v 1.2 2009/10/07 01:53:54 kurt Exp
                  Java_sun_nio_ch_FileChannelImpl_close0;
                  Java_sun_nio_ch_FileChannelImpl_initIDs;
                  Java_sun_nio_ch_FileChannelImpl_map0;
-@@ -122,26 +103,14 @@ SUNWprivate_1.1 {
+@@ -123,26 +104,14 @@ SUNWprivate_1.1 {
  		Java_sun_nio_ch_UnixAsynchronousServerSocketChannelImpl_accept0;
  		Java_sun_nio_ch_UnixAsynchronousServerSocketChannelImpl_initIDs;
  		Java_sun_nio_ch_UnixAsynchronousSocketChannelImpl_checkConnect;

@@ -1,16 +1,16 @@
-$OpenBSD: patch-jdk_src_share_classes_sun_awt_FontConfiguration_java,v 1.3 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/share/classes/sun/awt/FontConfiguration.java.orig	Fri May  8 03:34:45 2009
-+++ jdk/src/share/classes/sun/awt/FontConfiguration.java	Mon May 18 13:44:08 2009
-@@ -1121,7 +1121,7 @@ public abstract class FontConfiguration {
+$OpenBSD: patch-jdk_src_share_classes_sun_awt_FontConfiguration_java,v 1.4 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/share/classes/sun/awt/FontConfiguration.java.orig	Fri Aug 13 03:21:57 2010
++++ jdk/src/share/classes/sun/awt/FontConfiguration.java	Fri Oct 29 12:26:53 2010
+@@ -1122,7 +1122,7 @@ public abstract class FontConfiguration {
       */
      HashMap<String, Boolean> existsMap;
      public boolean needToSearchForFile(String fileName) {
--        if (!environment.isLinux) {
-+        if (!environment.isLinuxOrBSD) {
+-        if (!FontUtilities.isLinux) {
++        if (!FontUtilities.isLinux || FontUtilities.isBSD) {
              return false;
          } else if (existsMap == null) {
             existsMap = new HashMap<String, Boolean>();
-@@ -1361,7 +1361,7 @@ public abstract class FontConfiguration {
+@@ -1362,7 +1362,7 @@ public abstract class FontConfiguration {
                                     + "<filename."
                                     + getString(table_componentFontNameIDs[ii])
                                     + "> entry is missing!!!");

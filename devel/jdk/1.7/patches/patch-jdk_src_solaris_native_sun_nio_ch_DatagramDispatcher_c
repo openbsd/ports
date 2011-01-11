@@ -1,0 +1,21 @@
+$OpenBSD: patch-jdk_src_solaris_native_sun_nio_ch_DatagramDispatcher_c,v 1.1 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/native/sun/nio/ch/DatagramDispatcher.c.orig	Tue Oct 26 11:06:11 2010
++++ jdk/src/solaris/native/sun/nio/ch/DatagramDispatcher.c	Tue Oct 26 11:06:17 2010
+@@ -73,7 +73,7 @@ Java_sun_nio_ch_DatagramDispatcher_readv0(JNIEnv *env,
+     m.msg_accrightslen = 0;
+ #endif
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     m.msg_control = NULL;
+     m.msg_controllen = 0;
+ #endif
+@@ -121,7 +121,7 @@ Java_sun_nio_ch_DatagramDispatcher_writev0(JNIEnv *env
+     m.msg_accrightslen = 0;
+ #endif
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(_ALLBSD_SOURCE)
+     m.msg_control = NULL;
+     m.msg_controllen = 0;
+ #endif

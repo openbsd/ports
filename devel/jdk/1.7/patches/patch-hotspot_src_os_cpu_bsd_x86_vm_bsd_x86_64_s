@@ -1,8 +1,8 @@
-$OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_bsd_x86_64_s,v 1.1 2009/05/23 03:03:24 kurt Exp $
---- hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_64.s.orig	Fri May 15 17:43:50 2009
-+++ hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_64.s	Fri May 15 17:44:04 2009
+$OpenBSD: patch-hotspot_src_os_cpu_bsd_x86_vm_bsd_x86_64_s,v 1.2 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_64.s.orig	Mon Oct 25 18:02:18 2010
++++ hotspot/src/os_cpu/bsd_x86/vm/bsd_x86_64.s	Mon Oct 25 18:15:45 2010
 @@ -21,6 +21,14 @@
- # have any questions.
+ # questions.
  #
  
 +#ifdef __APPLE__

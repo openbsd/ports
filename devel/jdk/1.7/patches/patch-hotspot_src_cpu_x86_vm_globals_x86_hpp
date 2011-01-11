@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_src_cpu_x86_vm_globals_x86_hpp,v 1.1 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/src/cpu/x86/vm/globals_x86.hpp.orig	Tue Jan  4 18:52:24 2011
++++ hotspot/src/cpu/x86/vm/globals_x86.hpp	Tue Jan  4 18:52:45 2011
+@@ -64,4 +64,8 @@ define_pd_global(intx, PreInflateSpin,           10);
+ define_pd_global(bool, RewriteBytecodes,     true);
+ define_pd_global(bool, RewriteFrequentPairs, true);
+ 
++#ifdef _ALLBSD_SOURCE
++define_pd_global(bool, UseMembar,            true);
++#else
+ define_pd_global(bool, UseMembar,            false);
++#endif

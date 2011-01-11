@@ -1,20 +1,16 @@
-$OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.6 2009/10/07 01:53:54 kurt Exp $
---- jdk/make/common/Defs-bsd.gmk.orig	Sun Sep 27 09:39:53 2009
-+++ jdk/make/common/Defs-bsd.gmk	Sun Sep 27 09:48:31 2009
-@@ -43,12 +43,6 @@
- # Get shared JDK settings
- include $(JDK_MAKE_SHARED_DIR)/Defs.gmk
+$OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.7 2011/01/11 15:47:50 kurt Exp $
+--- jdk/make/common/Defs-bsd.gmk.orig	Tue Oct 26 09:56:36 2010
++++ jdk/make/common/Defs-bsd.gmk	Tue Oct 26 10:31:46 2010
+@@ -25,7 +25,7 @@
  
--# Part of INCREMENTAL_BUILD mechanism.
--#   Compiler emits things like:  path/file.o: file.h
--#   We want something like: relative_path/file.o relative_path/file.d: file.h
--CC_DEPEND	 = -MM
--CC_DEPEND_FILTER = $(SED) -e 's!$*\.$(OBJECT_SUFFIX)!$(dir $@)& $(dir $@)$*.$(DEPEND_SUFFIX)!g'
--
- ifndef PLATFORM_SRC
-   PLATFORM_SRC = $(BUILDDIR)/../src/solaris
- endif # PLATFORM_SRC
-@@ -61,7 +55,7 @@ ifndef OPENJDK
+ #
+ # Makefile to specify compiler flags for programs and libraries
+-# targeted to Bsd.  Should not contain any rules.
++# targeted to BSD.  Should not contain any rules.
+ #
+ # WARNING: This file is shared with other workspaces. 
+ #          So when it includes other files, it must use JDK_TOPDIR.
+@@ -61,7 +61,7 @@ ifndef OPENJDK
  endif
  
  # platform specific include files
@@ -23,33 +19,56 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.6 2009/10/07 01:53:54 kurt Exp 
  PLATFORM_INCLUDE      = $(INCLUDEDIR)/$(PLATFORM_INCLUDE_NAME)
  
  # suffix used for make dependencies files.
-@@ -109,8 +103,14 @@ CC_OPT          = $(CC_OPT/$(OPTIMIZATION_LEVEL))
+@@ -109,9 +109,11 @@ CC_OPT          = $(CC_OPT/$(OPTIMIZATION_LEVEL))
  #    We need this frame pointer to make it easy to walk the stacks.
  #    This should be the default on X86, but ia64 and amd64 may not have this
  #    as the default.
 -CFLAGS_REQUIRED_amd64   += -fno-omit-frame-pointer -D_LITTLE_ENDIAN
 -CFLAGS_REQUIRED_i586    += -fno-omit-frame-pointer -D_LITTLE_ENDIAN
+-CFLAGS_REQUIRED_ia64    += -fno-omit-frame-pointer -D_LITTLE_ENDIAN
 +CFLAGS_REQUIRED_amd64   += -m64 -fno-omit-frame-pointer -D_LITTLE_ENDIAN
 +LDFLAGS_COMMON_amd64    += -m64
 +CFLAGS_REQUIRED_i586    += -m32 -fno-omit-frame-pointer -D_LITTLE_ENDIAN
 +LDFLAGS_COMMON_i586     += -m32
++CFLAGS_REQUIRED_ia64    += -m64 -fno-omit-frame-pointer -D_LITTLE_ENDIAN
+ CFLAGS_REQUIRED_sparcv9 += -m64 -mcpu=v9
+ LDFLAGS_COMMON_sparcv9  += -m64 -mcpu=v9
+ CFLAGS_REQUIRED_sparc   += -m32 -mcpu=v9
+@@ -126,9 +128,13 @@ else
+   CFLAGS_REQUIRED       =  $(CFLAGS_REQUIRED_$(ARCH))
+   LDFLAGS_COMMON        += $(LDFLAGS_COMMON_$(ARCH))
+ endif
 +ifeq ($(OS_VENDOR),Apple)
 +  # 16-byte stack re-alignment on 32-bit Darwin
 +  CFLAGS_REQUIRED_i586 += -mstackrealign
 +endif
- CFLAGS_REQUIRED_ia64    += -fno-omit-frame-pointer -D_LITTLE_ENDIAN
- CFLAGS_REQUIRED_sparcv9 += -m64 -mcpu=v9
- LDFLAGS_COMMON_sparcv9  += -m64 -mcpu=v9
-@@ -186,7 +186,7 @@ ifeq ($(FASTDEBUG), true)
-   CXXFLAGS_DBG	+= $(CC_OPT/$(FASTDEBUG_OPTIMIZATION_LEVEL))
+ 
+ # If this is a --hash-style=gnu system, use --hash-style=both
+-#   The gnu .hash section won't work on some Bsd systems like SuSE 10.
++#   The gnu .hash section won't work on some Linux systems like SuSE 10.
+ _HAS_HASH_STYLE_GNU:=$(shell $(CC) -dumpspecs | $(GREP) -- '--hash-style=gnu')
+ ifneq ($(_HAS_HASH_STYLE_GNU),)
+   LDFLAGS_HASH_STYLE = -Wl,--hash-style=both
+@@ -165,7 +171,7 @@ ifeq ($(ARCH), amd64)
+  CFLAGS_COMMON += -pipe
  endif
  
--CPPFLAGS_COMMON = -D$(ARCH) -DARCH='"$(ARCH)"' -DLINUX $(VERSION_DEFINES) \
-+CPPFLAGS_COMMON = -D$(ARCH) -DARCH='"$(ARCH)"' -D_ALLBSD_SOURCE $(VERSION_DEFINES) \
+-# Bsd 64bit machines use Dwarf2, which can be HUGE, have fastdebug use -g1
++# BSD 64bit machines use Dwarf2, which can be HUGE, have fastdebug use -g1
+ DEBUG_FLAG = -g
+ ifeq ($(FASTDEBUG), true)
+   ifeq ($(ARCH_DATA_MODEL), 64)
+@@ -202,8 +208,7 @@ ifneq ($(ARCH),alpha)
+ else
+   CPP_ARCH_FLAGS += -D_$(ARCH)_
+ endif
+-
+-CPPFLAGS_COMMON = $(CPP_ARCH_FLAGS) -DLINUX $(VERSION_DEFINES) \
++CPPFLAGS_COMMON = $(CPP_ARCH_FLAGS) -D_ALLBSD_SOURCE $(VERSION_DEFINES) \
  		  -D_LARGEFILE64_SOURCE -D_GNU_SOURCE -D_REENTRANT
  
  ifeq ($(ARCH_DATA_MODEL), 64)
-@@ -199,33 +199,15 @@ ifneq ($(PRODUCT), java)
+@@ -216,33 +221,37 @@ ifneq ($(PRODUCT), java)
    CPPFLAGS_DBG    += -DLOGGING 
  endif
  
@@ -65,13 +84,31 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.6 2009/10/07 01:53:54 kurt Exp 
 -  #   The environment variable LD_LIBRARY_PATH will over-ride these runpaths.
 -  #   Try: 'readelf -d lib*.so' to see these settings in a library.
 -  #
--  LDFLAGS_COMMON += -Xlinker -z -Xlinker origin -Xlinker -rpath -Xlinker \$$ORIGIN
--  LDFLAGS_COMMON += $(LD_RUNPATH_EXTRAS:%=-Xlinker -z -Xlinker origin -Xlinker -rpath -Xlinker \$$ORIGIN/%)
--endif
--
++# Libraries need to locate other libraries at runtime, and you can tell
++#   a library where to look by way of the dynamic runpaths (RPATH or RUNPATH)
++#   buried inside the .{so,dylib}. The {$ORIGIN,@loader_path/} says to look
++#   relative to where the library itself is and it can be followed
++#   with relative paths from that. By default we always look in
++#   {$ORIGIN,@loader_path/}, optionally we add relative paths if the Makefile
++#   sets LD_RUNPATH_EXTRAS to those relative paths.
++#   Except on MacOS X we add a flag -z origin, not sure if this is necessary,
++#   but doesn't seem to hurt.
++#   The environment variable LD_LIBRARY_PATH will over-ride these runpaths.
++#   See 'man {dyld,rtld}' for more information.
++#   Try: 'readelf -d lib*.so' to see these settings in a library.
++#
++ifeq ($(OS_VENDOR), Apple)
++  LDFLAGS_COMMON += -Xlinker -rpath -Xlinker @loader_path/.
++  LDFLAGS_COMMON += $(LD_RUNPATH_EXTRAS:%=-Xlinker -rpath -Xlinker @loader_path/%)
++  LDFLAGS_COMMON += -Xlinker -install_name -Xlinker @rpath/$(@F)
++else
+   LDFLAGS_COMMON += -Xlinker -z -Xlinker origin -Xlinker -rpath -Xlinker \$$ORIGIN
+   LDFLAGS_COMMON += $(LD_RUNPATH_EXTRAS:%=-Xlinker -z -Xlinker origin -Xlinker -rpath -Xlinker \$$ORIGIN/%)
+ endif
+ 
 -EXTRA_LIBS += -lc
 -
--LDFLAGS_DEFS_OPTION  = -z defs
+-LDFLAGS_DEFS_OPTION  = -Xlinker -z -Xlinker defs
 -LDFLAGS_COMMON  += $(LDFLAGS_DEFS_OPTION)
 -
  #
@@ -87,7 +124,7 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.6 2009/10/07 01:53:54 kurt Exp 
  
  #
  # -static-libgcc is a gcc-3 flag to statically link libgcc, gcc-2.9x always
-@@ -247,9 +229,9 @@ AUTOMATIC_PCH_OPTION = 
+@@ -264,9 +273,9 @@ AUTOMATIC_PCH_OPTION = 
  ifeq ($(VARIANT), OPT)
    ifneq ($(NO_STRIP), true)
      ifneq ($(DEBUG_BINARIES), true)
@@ -99,24 +136,19 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.6 2009/10/07 01:53:54 kurt Exp 
      endif
    endif
  endif
-@@ -259,13 +241,9 @@ endif
- #
- LD_MAPFILE_FLAG = -Xlinker --version-script -Xlinker
+@@ -285,6 +294,11 @@ QUANTIFY_OPTIONS = -cache-dir=/tmp/quantify -always-us
+ LINK_PRE_CMD = $(QUANTIFY_CMD) $(QUANTIFY_OPTIONS)
+ endif
  
--#
--# Support for Quantify.
--#
--ifdef QUANTIFY
--QUANTIFY_CMD = quantify
--QUANTIFY_OPTIONS = -cache-dir=/tmp/quantify -always-use-cache-dir=yes
--LINK_PRE_CMD = $(QUANTIFY_CMD) $(QUANTIFY_OPTIONS)
 +# Darwin does not support linker map files.
 +ifeq ($(OS_VENDOR), Apple)
 +LDNOMAP=true
- endif
- 
++endif
++
  #
-@@ -294,7 +272,9 @@ override HAVE_ALTZONE            = false
+ # Path and option to link against the VM, if you have to.  Note that
+ # there are libraries that link against only -ljava, but they do get
+@@ -311,7 +325,9 @@ override HAVE_ALTZONE            = false
  override HAVE_FILIOH             = false
  override HAVE_GETHRTIME          = false
  override HAVE_GETHRVTIME         = false
@@ -126,8 +158,11 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.6 2009/10/07 01:53:54 kurt Exp 
  override LEX_LIBRARY             = -lfl
  ifeq ($(STATIC_CXX),true)
  override LIBCXX                  = -Wl,-Bstatic -lstdc++ -lgcc -Wl,-Bdynamic
-@@ -306,12 +286,8 @@ override LIBSOCKET               =
+@@ -322,14 +338,11 @@ override LIBPOSIX4               =
+ override LIBSOCKET               =
+ override LIBNSL                  =
  override LIBTHREAD               =
++override LIBDL                   =
  override MOOT_PRIORITIES         = true
  override NO_INTERRUPTIBLE_IO     = true
 -override OPENWIN_HOME            = /usr/X11R6
@@ -140,11 +175,10 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.6 2009/10/07 01:53:54 kurt Exp 
  override OTHER_M4FLAGS           = -D__GLIBC__ -DGNU_ASSEMBLER
  override SUN_CMM_SUBDIR          =
  override THREADS_FLAG            = native
-@@ -331,6 +307,14 @@ override USE_EXECNAME            = true
- # HAVE_DPS should only be "no" if the platform has no DPS headers or libs
+@@ -350,6 +363,14 @@ override USE_EXECNAME            = true
  # DPS (Displayable PostScript) is available on Solaris machines
  HAVE_DPS = no
-+
+ 
 +ifeq ($(OS_VENDOR), FreeBSD)
 +  SYSTEM_ZLIB = true
 +endif
@@ -152,6 +186,16 @@ $OpenBSD: patch-jdk_make_common_Defs-bsd_gmk,v 1.6 2009/10/07 01:53:54 kurt Exp 
 +ifeq ($(OS_VENDOR), OpenBSD)
 +  SYSTEM_ZLIB = true
 +endif
- 
++
  #
  # Japanese manpages
+ #
+@@ -361,7 +382,7 @@ HOTSPOT_SALIB_PATH   = $(HOTSPOT_IMPORT_PATH)/jre/lib/
+ SALIB_NAME = $(LIB_PREFIX)saproc.$(LIBRARY_SUFFIX)
+ 
+ # The JDI - Serviceability Agent binding is not currently supported
+-# on Bsd-ia64.
++# on ia64.
+ ifeq ($(ARCH), ia64)
+   INCLUDE_SA = false
+ else

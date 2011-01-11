@@ -1,8 +1,8 @@
-$OpenBSD: patch-jdk_src_solaris_hpi_include_largefile_bsd_h,v 1.2 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/solaris/hpi/include/largefile_bsd.h.orig	Mon May 11 10:48:21 2009
-+++ jdk/src/solaris/hpi/include/largefile_bsd.h	Mon May 11 13:02:43 2009
+$OpenBSD: patch-jdk_src_solaris_hpi_include_largefile_bsd_h,v 1.3 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/hpi/include/largefile_bsd.h.orig	Mon Oct 25 18:02:19 2010
++++ jdk/src/solaris/hpi/include/largefile_bsd.h	Mon Oct 25 18:15:58 2010
 @@ -23,14 +23,32 @@
-  * have any questions.
+  * questions.
   */
  
 -#ifndef _JAVASOFT_LINUX_LARGEFILE_SUPPORT_H_

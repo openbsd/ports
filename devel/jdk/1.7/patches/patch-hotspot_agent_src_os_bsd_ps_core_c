@@ -1,6 +1,6 @@
-$OpenBSD: patch-hotspot_agent_src_os_bsd_ps_core_c,v 1.1 2009/06/10 19:01:09 kurt Exp $
---- hotspot/agent/src/os/bsd/ps_core.c.orig	Tue Jun  2 13:06:41 2009
-+++ hotspot/agent/src/os/bsd/ps_core.c	Tue Jun  2 13:21:01 2009
+$OpenBSD: patch-hotspot_agent_src_os_bsd_ps_core_c,v 1.2 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/agent/src/os/bsd/ps_core.c.orig	Mon Oct 25 18:02:17 2010
++++ hotspot/agent/src/os/bsd/ps_core.c	Mon Oct 25 18:42:03 2010
 @@ -142,6 +142,7 @@ static map_info* add_class_share_map_info(struct ps_pr
  
     map->next = ph->core->class_share_maps;
@@ -264,7 +264,7 @@ $OpenBSD: patch-hotspot_agent_src_os_bsd_ps_core_c,v 1.1 2009/06/10 19:01:09 kur
     if (read_interp_segments(ph) != true)
        return false;
  
-@@ -870,14 +880,14 @@ static bool read_shared_lib_info(struct ps_prochandle*
+@@ -870,26 +880,23 @@ static bool read_shared_lib_info(struct ps_prochandle*
        // address mentioned in shared object and the actual virtual base where runtime
        // linker loaded it. We use "base diff" in read_lib_segments call below.
  
@@ -281,7 +281,21 @@ $OpenBSD: patch-hotspot_agent_src_os_bsd_ps_core_c,v 1.1 2009/06/10 19:01:09 kur
                      &lib_name_addr, sizeof(uintptr_t)) != PS_OK) {
           print_debug("can't read address of shared object name\n");
           return false;
-@@ -921,7 +931,7 @@ static bool read_shared_lib_info(struct ps_prochandle*
+       }
+ 
+       // read name of the shared object
+-      lib_name[0] = '\0';
+-      if (lib_name_addr != 0 &&
+-          read_string(ph, (uintptr_t) lib_name_addr, lib_name, sizeof(lib_name)) != true) {
++      if (read_string(ph, (uintptr_t) lib_name_addr, lib_name, sizeof(lib_name)) != true) {
+          print_debug("can't read shared object name\n");
+-         // don't let failure to read the name stop opening the file.  If something is really wrong
+-         // it will fail later.
++         return false;
+       }
+ 
+       if (lib_name[0] != '\0') {
+@@ -924,7 +931,7 @@ static bool read_shared_lib_info(struct ps_prochandle*
        }
  
        // read next link_map address
@@ -290,7 +304,7 @@ $OpenBSD: patch-hotspot_agent_src_os_bsd_ps_core_c,v 1.1 2009/06/10 19:01:09 kur
                          &link_map_addr, sizeof(uintptr_t)) != PS_OK) {
           print_debug("can't read next link in link_map\n");
           return false;
-@@ -935,7 +945,6 @@ static bool read_shared_lib_info(struct ps_prochandle*
+@@ -938,7 +945,6 @@ static bool read_shared_lib_info(struct ps_prochandle*
  struct ps_prochandle* Pgrab_core(const char* exec_file, const char* core_file) {
     ELF_EHDR core_ehdr;
     ELF_EHDR exec_ehdr;

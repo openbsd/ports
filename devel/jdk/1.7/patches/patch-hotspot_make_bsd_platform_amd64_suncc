@@ -1,0 +1,9 @@
+$OpenBSD: patch-hotspot_make_bsd_platform_amd64_suncc,v 1.1 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/make/bsd/platform_amd64.suncc.orig	Mon Oct 25 18:53:09 2010
++++ hotspot/make/bsd/platform_amd64.suncc	Mon Oct 25 18:53:15 2010
+@@ -14,4 +14,4 @@ compiler = sparcWorks
+ 
+ gnu_dis_arch = amd64
+ 
+-sysdefs = -DLINUX -DSPARC_WORKS -D_GNU_SOURCE -DAMD64
++sysdefs = -D_ALLBSD_SOURCE -DSPARC_WORKS -D_GNU_SOURCE -DAMD64

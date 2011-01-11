@@ -1,0 +1,13 @@
+$OpenBSD: patch-jdk_make_common_Defs-solaris_gmk,v 1.1 2011/01/11 15:47:50 kurt Exp $
+--- jdk/make/common/Defs-solaris.gmk.orig	Tue Oct 26 10:32:20 2010
++++ jdk/make/common/Defs-solaris.gmk	Tue Oct 26 10:32:27 2010
+@@ -648,6 +648,9 @@ LIBSOCKET = -lsocket
+ # Network Services library
+ LIBNSL = -lnsl
+ 
++# Dynamic Loading library
++LIBDL = -ldl
++
+ # GLOBAL_KPIC: If set means all libraries are PIC, position independent code
+ #    EXCEPT for select compiles
+ #    If a .o file is compiled non-PIC then it should be forced

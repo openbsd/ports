@@ -1,0 +1,30 @@
+$OpenBSD: patch-jdk_src_solaris_classes_sun_awt_X11FontManager_java,v 1.1 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/classes/sun/awt/X11FontManager.java.orig	Tue Oct 26 10:57:26 2010
++++ jdk/src/solaris/classes/sun/awt/X11FontManager.java	Tue Oct 26 10:57:32 2010
+@@ -213,7 +213,7 @@ public class X11FontManager extends SunFontManager {
+         if (fontID != null) {
+             fileName = (String)fontNameMap.get(fontID);
+             /* On Linux check for the Lucida Oblique fonts */
+-            if (fileName == null && FontUtilities.isLinux && !isOpenJDK()) {
++            if (fileName == null && (FontUtilities.isLinux || FontUtilities.isBSD) && !isOpenJDK()) {
+                 if (oblmap == null) {
+                     initObliqueLucidaFontMap();
+                 }
+@@ -712,7 +712,7 @@ public class X11FontManager extends SunFontManager {
+         if (fontConfigDirs == null) {
+             return;
+         }
+-        if (FontUtilities.isLinux) {
++        if (FontUtilities.isLinux || FontUtilities.isBSD) {
+             fontConfigDirs.add(jreLibDirName+File.separator+"oblique-fonts");
+         }
+         fontdirs = (String[])fontConfigDirs.toArray(new String[0]);
+@@ -759,7 +759,7 @@ public class X11FontManager extends SunFontManager {
+          */
+         FontConfiguration mFontConfig = new MFontConfiguration(this);
+         if (FontUtilities.isOpenSolaris ||
+-            (FontUtilities.isLinux &&
++            ((FontUtilities.isLinux || FontUtilities.isBSD) &&
+              (!mFontConfig.foundOsSpecificFile() ||
+               !mFontConfig.fontFilesArePresent()) ||
+              (FontUtilities.isSolaris && !mFontConfig.fontFilesArePresent()))) {

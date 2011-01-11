@@ -1,8 +1,11 @@
-$OpenBSD: patch-jdk_make_common_Defs-linux_gmk,v 1.2 2009/10/07 01:53:54 kurt Exp $
---- jdk/make/common/Defs-linux.gmk.orig	Thu Sep 17 03:51:40 2009
-+++ jdk/make/common/Defs-linux.gmk	Sat Sep 26 10:00:47 2009
-@@ -306,7 +306,7 @@ override LIBSOCKET               =
+$OpenBSD: patch-jdk_make_common_Defs-linux_gmk,v 1.3 2011/01/11 15:47:50 kurt Exp $
+--- jdk/make/common/Defs-linux.gmk.orig	Fri Aug 13 03:21:36 2010
++++ jdk/make/common/Defs-linux.gmk	Tue Oct 26 10:31:57 2010
+@@ -322,9 +322,10 @@ override LIBPOSIX4               =
+ override LIBSOCKET               =
+ override LIBNSL                  =
  override LIBTHREAD               =
++override LIBDL                   = -ldl
  override MOOT_PRIORITIES         = true
  override NO_INTERRUPTIBLE_IO     = true
 -override OPENWIN_HOME            = /usr/X11R6

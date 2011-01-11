@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.6 2009/10/07 01:53:54 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.7 2011/01/11 15:47:50 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.7,<1.8
 ${JREHOME}/
@@ -17,6 +17,28 @@ ${JREHOME}/bin/
 @bin ${JREHOME}/bin/tnameserv
 @bin ${JREHOME}/bin/unpack200
 ${JREHOME}/lib/
+${JREHOME}/lib/applet/
+${JREHOME}/lib/calendars.properties
+${JREHOME}/lib/charsets.jar
+${JREHOME}/lib/classlist
+${JREHOME}/lib/cmm/
+${JREHOME}/lib/cmm/CIEXYZ.pf
+${JREHOME}/lib/cmm/GRAY.pf
+${JREHOME}/lib/cmm/LINEAR_RGB.pf
+${JREHOME}/lib/cmm/PYCC.pf
+${JREHOME}/lib/cmm/sRGB.pf
+${JREHOME}/lib/content-types.properties
+${JREHOME}/lib/currency.data
+${JREHOME}/lib/ext/
+${JREHOME}/lib/ext/dnsns.jar
+${JREHOME}/lib/ext/localedata.jar
+${JREHOME}/lib/ext/meta-index
+${JREHOME}/lib/ext/sunec.jar
+${JREHOME}/lib/ext/sunjce_provider.jar
+${JREHOME}/lib/ext/sunpkcs11.jar
+${JREHOME}/lib/flavormap.properties
+${JREHOME}/lib/fontconfig.bfc
+${JREHOME}/lib/fontconfig.properties.src
 ${JREHOME}/lib/${MACHINE_ARCH}/
 ${JREHOME}/lib/${MACHINE_ARCH}/headless/
 ${JREHOME}/lib/${MACHINE_ARCH}/headless/libmawt.so
@@ -49,7 +71,7 @@ ${JREHOME}/lib/${MACHINE_ARCH}/libnio.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libnpt.so
 ${JREHOME}/lib/${MACHINE_ARCH}/librmi.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libsplashscreen.so
-${JREHOME}/lib/${MACHINE_ARCH}/libsunecc.so
+${JREHOME}/lib/${MACHINE_ARCH}/libsunec.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libunpack.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libverify.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libzip.so
@@ -61,31 +83,6 @@ ${JREHOME}/lib/${MACHINE_ARCH}/server/libjsig.so
 ${JREHOME}/lib/${MACHINE_ARCH}/server/libjvm.so
 ${JREHOME}/lib/${MACHINE_ARCH}/xawt/
 ${JREHOME}/lib/${MACHINE_ARCH}/xawt/libmawt.so
-${JREHOME}/lib/applet/
-${JREHOME}/lib/calendars.properties
-${JREHOME}/lib/charsets.jar
-${JREHOME}/lib/classlist
-${JREHOME}/lib/cmm/
-${JREHOME}/lib/cmm/CIEXYZ.pf
-${JREHOME}/lib/cmm/GRAY.pf
-${JREHOME}/lib/cmm/LINEAR_RGB.pf
-${JREHOME}/lib/cmm/PYCC.pf
-${JREHOME}/lib/cmm/sRGB.pf
-${JREHOME}/lib/content-types.properties
-${JREHOME}/lib/currency.data
-${JREHOME}/lib/ext/
-${JREHOME}/lib/ext/dnsns.jar
-${JREHOME}/lib/ext/localedata.jar
-${JREHOME}/lib/ext/meta-index
-${JREHOME}/lib/ext/sunec.jar
-${JREHOME}/lib/ext/sunjce_provider.jar
-${JREHOME}/lib/ext/sunpkcs11.jar
-${JREHOME}/lib/flavormap.properties
-${JREHOME}/lib/fontconfig.bfc
-${JREHOME}/lib/fontconfig.properties.src
-${JREHOME}/lib/im/
-${JREHOME}/lib/im/indicim.jar
-${JREHOME}/lib/im/thaiim.jar
 ${JREHOME}/lib/images/
 ${JREHOME}/lib/images/cursors/
 ${JREHOME}/lib/images/cursors/cursors.properties
@@ -197,6 +194,7 @@ ${JREHOME}/lib/zi/America/Aruba
 ${JREHOME}/lib/zi/America/Asuncion
 ${JREHOME}/lib/zi/America/Atikokan
 ${JREHOME}/lib/zi/America/Bahia
+${JREHOME}/lib/zi/America/Bahia_Banderas
 ${JREHOME}/lib/zi/America/Barbados
 ${JREHOME}/lib/zi/America/Belem
 ${JREHOME}/lib/zi/America/Belize
@@ -260,6 +258,7 @@ ${JREHOME}/lib/zi/America/Maceio
 ${JREHOME}/lib/zi/America/Managua
 ${JREHOME}/lib/zi/America/Manaus
 ${JREHOME}/lib/zi/America/Martinique
+${JREHOME}/lib/zi/America/Matamoros
 ${JREHOME}/lib/zi/America/Mazatlan
 ${JREHOME}/lib/zi/America/Menominee
 ${JREHOME}/lib/zi/America/Merida
@@ -278,6 +277,7 @@ ${JREHOME}/lib/zi/America/Noronha
 ${JREHOME}/lib/zi/America/North_Dakota/
 ${JREHOME}/lib/zi/America/North_Dakota/Center
 ${JREHOME}/lib/zi/America/North_Dakota/New_Salem
+${JREHOME}/lib/zi/America/Ojinaga
 ${JREHOME}/lib/zi/America/Panama
 ${JREHOME}/lib/zi/America/Pangnirtung
 ${JREHOME}/lib/zi/America/Paramaribo
@@ -292,6 +292,7 @@ ${JREHOME}/lib/zi/America/Recife
 ${JREHOME}/lib/zi/America/Regina
 ${JREHOME}/lib/zi/America/Resolute
 ${JREHOME}/lib/zi/America/Rio_Branco
+${JREHOME}/lib/zi/America/Santa_Isabel
 ${JREHOME}/lib/zi/America/Santarem
 ${JREHOME}/lib/zi/America/Santiago
 ${JREHOME}/lib/zi/America/Santo_Domingo
@@ -318,6 +319,7 @@ ${JREHOME}/lib/zi/Antarctica/
 ${JREHOME}/lib/zi/Antarctica/Casey
 ${JREHOME}/lib/zi/Antarctica/Davis
 ${JREHOME}/lib/zi/Antarctica/DumontDUrville
+${JREHOME}/lib/zi/Antarctica/Macquarie
 ${JREHOME}/lib/zi/Antarctica/Mawson
 ${JREHOME}/lib/zi/Antarctica/McMurdo
 ${JREHOME}/lib/zi/Antarctica/Palmer
@@ -372,6 +374,7 @@ ${JREHOME}/lib/zi/Asia/Makassar
 ${JREHOME}/lib/zi/Asia/Manila
 ${JREHOME}/lib/zi/Asia/Muscat
 ${JREHOME}/lib/zi/Asia/Nicosia
+${JREHOME}/lib/zi/Asia/Novokuznetsk
 ${JREHOME}/lib/zi/Asia/Novosibirsk
 ${JREHOME}/lib/zi/Asia/Omsk
 ${JREHOME}/lib/zi/Asia/Oral
@@ -528,6 +531,7 @@ ${JREHOME}/lib/zi/Pacific/
 ${JREHOME}/lib/zi/Pacific/Apia
 ${JREHOME}/lib/zi/Pacific/Auckland
 ${JREHOME}/lib/zi/Pacific/Chatham
+${JREHOME}/lib/zi/Pacific/Chuuk
 ${JREHOME}/lib/zi/Pacific/Easter
 ${JREHOME}/lib/zi/Pacific/Efate
 ${JREHOME}/lib/zi/Pacific/Enderbury
@@ -553,14 +557,13 @@ ${JREHOME}/lib/zi/Pacific/Noumea
 ${JREHOME}/lib/zi/Pacific/Pago_Pago
 ${JREHOME}/lib/zi/Pacific/Palau
 ${JREHOME}/lib/zi/Pacific/Pitcairn
-${JREHOME}/lib/zi/Pacific/Ponape
+${JREHOME}/lib/zi/Pacific/Pohnpei
 ${JREHOME}/lib/zi/Pacific/Port_Moresby
 ${JREHOME}/lib/zi/Pacific/Rarotonga
 ${JREHOME}/lib/zi/Pacific/Saipan
 ${JREHOME}/lib/zi/Pacific/Tahiti
 ${JREHOME}/lib/zi/Pacific/Tarawa
 ${JREHOME}/lib/zi/Pacific/Tongatapu
-${JREHOME}/lib/zi/Pacific/Truk
 ${JREHOME}/lib/zi/Pacific/Wake
 ${JREHOME}/lib/zi/Pacific/Wallis
 ${JREHOME}/lib/zi/SystemV/

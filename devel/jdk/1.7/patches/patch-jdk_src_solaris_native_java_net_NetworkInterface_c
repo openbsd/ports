@@ -1,29 +1,24 @@
-$OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.3 2009/05/23 03:03:25 kurt Exp $
---- jdk/src/solaris/native/java/net/NetworkInterface.c.orig	Fri May  8 03:35:07 2009
-+++ jdk/src/solaris/native/java/net/NetworkInterface.c	Mon May 18 19:36:07 2009
-@@ -23,13 +23,13 @@
-  * have any questions.
-  */
+$OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.4 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/native/java/net/NetworkInterface.c.orig	Fri Aug 13 03:22:13 2010
++++ jdk/src/solaris/native/java/net/NetworkInterface.c	Tue Oct 26 11:04:25 2010
+@@ -26,6 +26,9 @@
  
-+#include <sys/types.h>
-+#include <sys/socket.h>
  #include <errno.h>
  #include <strings.h>
++#if defined(_ALLBSD_SOURCE) && defined(__OpenBSD__)
++#include <sys/types.h>
++#endif
  #include <netinet/in.h>
  #include <stdlib.h>
  #include <string.h>
--#include <sys/types.h>
--#include <sys/socket.h>
- #include <arpa/inet.h>
- #include <net/if.h>
- #include <net/if_arp.h>
-@@ -47,6 +47,21 @@
- #else
- #include <sys/sockio.h>
+@@ -54,6 +57,23 @@
+ #define _PATH_PROCNET_IFINET6           "/proc/net/if_inet6"
  #endif
+ 
 +#if defined(_ALLBSD_SOURCE)
 +#include <sys/param.h>
 +#include <sys/ioctl.h>
++#include <sys/sockio.h>
 +#if defined(__FreeBSD__) || defined(__APPLE__)
 +#include <net/ethernet.h>
 +#include <net/if_var.h>
@@ -36,51 +31,71 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.3 2009/05
 +#include <netinet/in_var.h>
 +#include <ifaddrs.h>
 +#endif
++
+ #include "jvm.h"
+ #include "jni_util.h"
+ #include "net_util.h"
+@@ -821,11 +841,11 @@ netif *addif(JNIEnv *env, int sock, const char * if_na
+     netif *currif = ifs, *parent;
+     netaddr *addrP;
  
- #ifdef __linux__
- #define ifr_index ifr_ifindex
-@@ -583,6 +598,7 @@ static netif *enumInterfaces(JNIEnv *env) {
- }
+-    #ifdef __solaris__
++#ifdef LIFNAMSIZ
+     char name[LIFNAMSIZ],  vname[LIFNAMSIZ];
+-    #else
++#else
+     char name[IFNAMSIZ],  vname[IFNAMSIZ];
+-    #endif
++#endif
+ 
+     char  *name_colonP;
+     int mask;
+@@ -1649,3 +1669,307 @@ static int getFlags(int sock, const char *ifname) {
+ #endif
  
  
-+#if !defined(_ALLBSD_SOURCE)
- /*
-  * Enumerates and returns all IPv4 interfaces
-  */
-@@ -693,7 +709,177 @@ static netif *enumIPv4Interfaces(JNIEnv *env, netif *i
-     return ifs;
- }
- 
-+#else /* _ALLBSD_SOURCE */
-+ 
++/** BSD **/
++#ifdef _ALLBSD_SOURCE
++/* Open socket for further ioct calls, try v4 socket first and
++ * if it falls return v6 socket
++ */
++
++#ifdef AF_INET6
++static int openSocketWithFallback(JNIEnv *env, const char *ifname){
++    int sock;
++    struct ifreq if2;
++
++     if ((sock = JVM_Socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
++         if (errno == EPROTONOSUPPORT){
++              if ( (sock = JVM_Socket(AF_INET6, SOCK_DGRAM, 0)) < 0 ){
++                 NET_ThrowByNameWithLastError(env , JNU_JAVANETPKG "SocketException", "IPV6 Socket creation failed");
++                 return -1;
++              }
++         }
++         else{ // errno is not NOSUPPORT
++             NET_ThrowByNameWithLastError(env , JNU_JAVANETPKG "SocketException", "IPV4 Socket creation failed");
++             return -1;
++         }
++   }
++
++   return sock;
++}
++
++#else
++static int openSocketWithFallback(JNIEnv *env, const char *ifname){
++    return openSocket(env,AF_INET);
++}
++#endif
++
 +/*
 + * Enumerates and returns all IPv4 interfaces
-+ *
-+ * WARNING! Make sure that it's correctly synchronized on future JDK
-+ * versions imports!
 + */
-+static netif *enumIPv4Interfaces(JNIEnv *env, netif *ifs)
-+{
-+    int sock;
++static netif *enumIPv4Interfaces(JNIEnv *env, int sock, netif *ifs) {
 +    struct ifaddrs *ifa, *origifa;
- 
-+    sock = JVM_Socket(AF_INET, SOCK_DGRAM, 0);
-+    if (sock < 0) {
-+	/*
-+	 * If EPROTONOSUPPORT is returned it means we don't have
-+	 * IPv4 support so don't throw an exception.
-+	 */
-+	if (errno != EPROTONOSUPPORT) {
-+	    NET_ThrowByNameWithLastError(env , JNU_JAVANETPKG "SocketException",
-+                             "Socket creation failed");
-+	}
-+	return ifs;
-+    }
 +
 +    if (getifaddrs(&origifa) != 0) {
 +        NET_ThrowByNameWithLastError(env , JNU_JAVANETPKG "SocketException",
 +                         "getifaddrs() function failed");
-+	close(sock);
 +	return ifs;
 +    }
 +
@@ -94,18 +109,13 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.3 2009/05
 +
 +	/*
 +	 * Add to the list.
-+	 *
-+	 * BSDNOTE: in order to optimize code, interface index detection
-+	 * logic was added directly to addif().
 +	 */
-+	ifs = addif(env, ifs, ifa->ifa_name, (-1), AF_INET,
-+		    ifa->ifa_addr, sizeof(struct sockaddr_in), 0);
++	ifs = addif(env, sock, ifa->ifa_name, ifs, ifa->ifa_addr, AF_INET, 0);
 +
 +	/*
 +	 * If an exception occurred then free the list.
 +	 */
 +	if ((*env)->ExceptionOccurred(env)) {
-+	    close(sock);
 +	    freeifaddrs(origifa);
 +	    freeif(ifs);
 +	    return NULL;
@@ -115,12 +125,16 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.3 2009/05
 +    /*
 +     * Free socket and buffer
 +     */
-+    close(sock);
 +    freeifaddrs(origifa);
 +    return ifs;
 +}
 +
-+#if defined(AF_INET6)
++
++/*
++ * Enumerates and returns all IPv6 interfaces on Linux
++ */
++
++#ifdef AF_INET6
 +/*
 + * Determines the prefix on BSD for IPv6 interfaces.
 + */
@@ -148,30 +162,16 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.3 2009/05
 +}
 +
 +/*
-+ * Enumerates and returns all IPv6 interfaces on FreeBSD
-+ *
-+ * BSDNOTE: it's done in same as IPv4 enumeration and should be carefully
-+ *          reviewed with each JDK update (according to Solaris/Linux version)
++ * Enumerates and returns all IPv6 interfaces on BSD
 + */
-+static netif *enumIPv6Interfaces(JNIEnv *env, netif *ifs) {
-+
-+    int sock;
++static netif *enumIPv6Interfaces(JNIEnv *env, int sock, netif *ifs) {
 +    struct ifaddrs *ifa, *origifa;
 +    struct sockaddr_in6 *sin6;
 +    struct in6_ifreq ifr6;
 +
-+    // Open IPv6 UDP socket.
-+    sock = JVM_Socket(AF_INET6, SOCK_DGRAM, 0);
-+    if (sock < 0) {
-+        NET_ThrowByNameWithLastError(env , JNU_JAVANETPKG "SocketException",
-+                     "Failed to create IPv6 socket");
-+        return ifs;
-+    }
-+
 +    if (getifaddrs(&origifa) != 0) {
 +        NET_ThrowByNameWithLastError(env , JNU_JAVANETPKG "SocketException",
 +                         "getifaddrs() function failed");
-+	close(sock);
 +	return ifs;
 +    }
 +
@@ -190,7 +190,6 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.3 2009/05
 +	if (ioctl(sock, SIOCGIFNETMASK_IN6, (caddr_t)&ifr6) < 0) {
 +	    NET_ThrowByNameWithLastError(env , JNU_JAVANETPKG "SocketException",
 +                             "ioctl SIOCGIFNETMASK_IN6 failed");
-+	    close(sock);
 +	    freeifaddrs(origifa);
 +	    freeif(ifs);
 +	    return NULL;
@@ -198,13 +197,11 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.3 2009/05
 +
 +	/* Add to the list.  */
 +	sin6 = (struct sockaddr_in6 *)&ifr6.ifr_addr;
-+	ifs = addif(env, ifs, ifa->ifa_name, (-1), AF_INET6,
-+	            ifa->ifa_addr, sizeof(struct sockaddr_in6),
++	ifs = addif(env, sock, ifa->ifa_name, ifs, ifa->ifa_addr, AF_INET6,
 +		    prefix(&sin6->sin6_addr, sizeof(struct in6_addr)));
 +
 +	/* If an exception occurred then free the list.  */
 +	if ((*env)->ExceptionOccurred(env)) {
-+	    close(sock);
 +	    freeifaddrs(origifa);
 +	    freeif(ifs);
 +	    return NULL;
@@ -214,69 +211,150 @@ $OpenBSD: patch-jdk_src_solaris_native_java_net_NetworkInterface_c,v 1.3 2009/05
 +    /*
 +     * Free socket and ifaddrs buffer
 +     */
-+    close(sock);
 +    freeifaddrs(origifa);
 +    return ifs;
 +}
-+#endif /* AF_INET6 */
-+
-+#endif /* !_ALLBSD_SOURCE */
-+
- #if defined(__solaris__) && defined(AF_INET6)
- /*
-  * Enumerates and returns all IPv6 interfaces on Solaris
-@@ -1036,7 +1222,13 @@ netif *addif(JNIEnv *env, netif *ifs, char *if_name, i
-             JNU_ThrowOutOfMemoryError(env, "heap allocation failed");
-             return ifs;
-         }
-+#if defined(_ALLBSD_SOURCE)
-+	currif->index = if_nametoindex(name);
-+	if (currif->index == 0)
-+	    currif->index = -1;
-+#else
-         currif->index = index;
 +#endif
-         currif->addr = NULL;
-         currif->childs = NULL;
-         currif->virtual = isVirtual;
-@@ -1347,6 +1539,31 @@ int getMacAddress(JNIEnv *env, const struct in_addr* a
-    * All bytes to 0 means no hardware address.
-    */
-   return -1;
-+#elif defined(_ALLBSD_SOURCE)
-+  struct ifaddrs *ifa0, *ifa;
-+  struct sockaddr *saddr;
-+  int i;
 +
-+  /* Grab the interface list */
-+  if (!getifaddrs(&ifa0)) {
-+    /* Cycle through the interfaces */
-+    for (i = 0, ifa = ifa0; ifa != NULL; ifa = ifa->ifa_next, i++) {
-+      saddr = ifa->ifa_addr;
-+      /* Link layer contains the MAC address */
-+      if (saddr->sa_family == AF_LINK && !strcmp(ifname, ifa->ifa_name)) {
-+        struct sockaddr_dl *sadl = (struct sockaddr_dl *) saddr;
-+        /* Check the address is the correct length */
-+        if (sadl->sdl_alen == ETHER_ADDR_LEN) {
-+           memcpy(buf, (sadl->sdl_data + sadl->sdl_nlen), ETHER_ADDR_LEN);
-+           freeifaddrs(ifa0);
-+           return ETHER_ADDR_LEN;
-+        }
-+      }
++static int getIndex(int sock, const char *name){
++#ifdef __FreeBSD__
++     /*
++      * Try to get the interface index
++      * (Not supported on Solaris 2.6 or 7)
++      */
++    struct ifreq if2;
++    strcpy(if2.ifr_name, name);
++
++    if (ioctl(sock, SIOCGIFINDEX, (char *)&if2) < 0) {
++        return -1;
 +    }
-+    freeifaddrs(ifa0);
++
++    return if2.ifr_index;
++#else
++    /*
++     * Try to get the interface index using BSD specific if_nametoindex
++     */
++    int index = if_nametoindex(name);
++    return (index == 0) ? -1 : index;
++#endif
++}
++
++/**
++ * Returns the IPv4 broadcast address of a named interface, if it exists.
++ * Returns 0 if it doesn't have one.
++ */
++static struct sockaddr *getBroadcast(JNIEnv *env, int sock, const char *ifname, struct sockaddr *brdcast_store) {
++  struct sockaddr *ret = NULL;
++  struct ifreq if2;
++
++  memset((char *) &if2, 0, sizeof(if2));
++  strcpy(if2.ifr_name, ifname);
++
++  /* Let's make sure the interface does have a broadcast address */
++  if (ioctl(sock, SIOCGIFFLAGS, (char *)&if2) < 0) {
++      NET_ThrowByNameWithLastError(env, JNU_JAVANETPKG "SocketException", "IOCTL SIOCGIFFLAGS failed");
++      return ret;
 +  }
 +
-+  return -1;
- #else
-   struct arpreq arpreq;
-   struct sockaddr_in* sin;
-@@ -1512,7 +1729,7 @@ JNIEXPORT jint JNICALL Java_java_net_NetworkInterface_
-                                  "Socket creation failed");
-   } else {
- 
--#ifdef __linux__
-+#if defined(__linux__) || defined(_ALLBSD_SOURCE)
-     memset((char *) &if2, 0, sizeof(if2));
-     strcpy(if2.ifr_name, name_utf);
- 
++  if (if2.ifr_flags & IFF_BROADCAST) {
++      /* It does, let's retrieve it*/
++      if (ioctl(sock, SIOCGIFBRDADDR, (char *)&if2) < 0) {
++          NET_ThrowByNameWithLastError(env, JNU_JAVANETPKG "SocketException", "IOCTL SIOCGIFBRDADDR failed");
++	  return ret;
++      }
++
++      ret = brdcast_store;
++      memcpy(ret, &if2.ifr_broadaddr, sizeof(struct sockaddr));
++  }
++
++  return ret;
++}
++
++/**
++ * Returns the IPv4 subnet prefix length (aka subnet mask) for the named
++ * interface, if it has one, otherwise return -1.
++ */
++static short getSubnet(JNIEnv *env, int sock, const char *ifname) {
++    unsigned int mask;
++    short ret;
++    struct ifreq if2;
++
++    memset((char *) &if2, 0, sizeof(if2));
++    strcpy(if2.ifr_name, ifname);
++
++    if (ioctl(sock, SIOCGIFNETMASK, (char *)&if2) < 0) {
++        NET_ThrowByNameWithLastError(env, JNU_JAVANETPKG "SocketException", "IOCTL SIOCGIFNETMASK failed");
++        return -1;
++    }
++
++    mask = ntohl(((struct sockaddr_in*)&(if2.ifr_addr))->sin_addr.s_addr);
++    ret = 0;
++    while (mask) {
++       mask <<= 1;
++       ret++;
++    }
++
++    return ret;
++}
++
++/**
++ * Get the Hardware address (usually MAC address) for the named interface.
++ * return puts the data in buf, and returns the length, in byte, of the
++ * MAC address. Returns -1 if there is no hardware address on that interface.
++ */
++static int getMacAddress(JNIEnv *env, int sock, const char* ifname, const struct in_addr* addr, unsigned char *buf) {
++    struct ifaddrs *ifa0, *ifa;
++    struct sockaddr *saddr;
++    int i;
++
++    /* Grab the interface list */
++    if (!getifaddrs(&ifa0)) {
++        /* Cycle through the interfaces */
++        for (i = 0, ifa = ifa0; ifa != NULL; ifa = ifa->ifa_next, i++) {
++            saddr = ifa->ifa_addr;
++            /* Link layer contains the MAC address */
++            if (saddr->sa_family == AF_LINK && !strcmp(ifname, ifa->ifa_name)) {
++                struct sockaddr_dl *sadl = (struct sockaddr_dl *) saddr;
++                /* Check the address is the correct length */
++                if (sadl->sdl_alen == ETHER_ADDR_LEN) {
++                    memcpy(buf, (sadl->sdl_data + sadl->sdl_nlen), ETHER_ADDR_LEN);
++                    freeifaddrs(ifa0);
++                    return ETHER_ADDR_LEN;
++                }
++            }
++        }
++        freeifaddrs(ifa0);
++    }
++
++    return -1;
++}
++
++static int getMTU(JNIEnv *env, int sock,  const char *ifname) {
++    struct ifreq if2;
++
++    memset((char *) &if2, 0, sizeof(if2));
++    strcpy(if2.ifr_name, ifname);
++
++    if (ioctl(sock, SIOCGIFMTU, (char *)&if2) < 0) {
++        NET_ThrowByNameWithLastError(env, JNU_JAVANETPKG "SocketException", "IOCTL SIOCGIFMTU failed");
++        return -1;
++    }
++
++    return  if2.ifr_mtu;
++}
++
++static int getFlags(int sock, const char *ifname) {
++  struct ifreq if2;
++  int ret = -1;
++
++  memset((char *) &if2, 0, sizeof(if2));
++  strcpy(if2.ifr_name, ifname);
++
++  if (ioctl(sock, SIOCGIFFLAGS, (char *)&if2) < 0){
++      return -1;
++  }
++
++  return if2.ifr_flags;
++}
++
++#endif

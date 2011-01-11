@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_com_sun_management_UnixOperatingSystem_md_c,v 1.1 2008/03/19 18:05:46 kurt Exp $
---- jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c.orig	Tue Oct 30 05:04:03 2007
-+++ jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c	Thu Nov  8 09:34:11 2007
+$OpenBSD: patch-jdk_src_solaris_native_com_sun_management_UnixOperatingSystem_md_c,v 1.2 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c.orig	Thu Dec 16 17:15:15 2010
++++ jdk/src/solaris/native/com/sun/management/UnixOperatingSystem_md.c	Tue Jan  4 19:17:49 2011
 @@ -32,10 +32,16 @@
  
  #include <sys/types.h>
@@ -126,7 +126,7 @@ $OpenBSD: patch-jdk_src_solaris_native_com_sun_management_UnixOperatingSystem_md
 +#ifdef _ALLBSD_SOURCE
 +    jlong result;
 +    int mib[2];
-+    int rlen;
++    size_t rlen;
 +
 +    mib[0] = CTL_HW;
 +    mib[1] = HW_PHYSMEM;

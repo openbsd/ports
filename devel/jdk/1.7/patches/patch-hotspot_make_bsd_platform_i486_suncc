@@ -1,0 +1,9 @@
+$OpenBSD: patch-hotspot_make_bsd_platform_i486_suncc,v 1.1 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/make/bsd/platform_i486.suncc.orig	Mon Oct 25 18:53:32 2010
++++ hotspot/make/bsd/platform_i486.suncc	Mon Oct 25 18:53:39 2010
+@@ -14,4 +14,4 @@ compiler = sparcWorks
+ 
+ gnu_dis_arch = i386
+ 
+-sysdefs = -DLINUX -DSPARC_WORKS -D_GNU_SOURCE -DIA32
++sysdefs = -D_ALLBSD_SOURCE -DSPARC_WORKS -D_GNU_SOURCE -DIA32

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/11/27 11:54:53 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2011/01/11 15:47:49 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -6,14 +6,21 @@ ONLY_FOR_ARCHS=	i386 amd64
 COMMENT-main=	Java2(TM) SE Dev Kit v${V} Early Access ${B}
 COMMENT-jre=	Java2(TM) SE Runtime Environment v${V} Early Access ${B}
 V=		1.7.0.00
-B=		b72
-DISTFILES=	openjdk-7-ea-src-${B}-17_sep_2009.zip \
-		jibx_1_1_5.zip:0
+B=		b122
 PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}${B}
-REVISION-main =	2
 PKGNAME-jre=	jre-${V}${B}
-REVISION-jre =	2
+
+# see openjdk/jaxp/jaxp.properties & openjdk/jaxws/jaxws.properties 
+# in ${WRKDIR} for names and download locations of extra distfiles
+
+JDK_SRC=	openjdk-7-ea-src-${B}-16_dec_2010.zip
+JAXP_SRC=	jaxp-1_4_4.zip
+JAXWS_SRC=	jdk7-jaxws2_2-2010_08_19.zip
+JAF_SRC=	jdk7-jaf-2010_08_19.zip
+
+DISTFILES=	${JDK_SRC} ${JAXP_SRC}:0 ${JAXWS_SRC}:1 ${JAF_SRC}:1
+EXTRACT_ONLY=	${JDK_SRC}
 
 CATEGORIES=	devel/jdk java
 
@@ -27,8 +34,13 @@ HOMEPAGE=	http://openjdk.java.net/
 
 MASTER_SITES=	http://www.java.net/download/openjdk/jdk7/promoted/${B}/ \
 		http://openbsd.dead-parrot.de/distfiles/ \
-		http://www.phil.uu.nl/~lievisse/distfiles/
-MASTER_SITES0=	${MASTER_SITE_SOURCEFORGE:=jibx/} \
+		http://distfiles.nl/
+MASTER_SITES0=  https://jaxp.dev.java.net/files/documents/913/152561/ \
+		http://icedtea.classpath.org/download/drops/ \
+		http://openbsd.dead-parrot.de/distfiles/ \
+		http://distfiles.nl/
+MASTER_SITES1=  http://java.net/downloads/jax-ws/JDK7/ \
+		http://icedtea.classpath.org/download/drops/ \
 		http://openbsd.dead-parrot.de/distfiles/ \
 		http://distfiles.nl/
 
@@ -61,14 +73,14 @@ BUILD_DEPENDS+=	devel/apache-ant \
 		archivers/unzip \
 		print/cups
 MODULES=	converters/libiconv
-WANTLIB=	X11 Xext Xi Xtst c freetype m pthread sndio stdc++ z
+WANTLIB=	X11 Xext Xi Xtst Xrender c freetype m pthread sndio stdc++ z
 
 USE_GMAKE=	Yes
 
 MAKE_ENV=	ALT_BOOTDIR=${ALT_BOOTDIR} \
 		ALT_FREETYPE_HEADERS_PATH=${X11BASE}/include \
 		ALT_FREETYPE_LIB_PATH=${X11BASE}/lib \
-		ALT_JIBX_LIBS_PATH=${WRKDIR}/jibx/lib \
+		ALT_DROPS_DIR=${DISTDIR} \
 		ALT_PACKAGE_PATH=${LOCALBASE} \
 		ALT_X11_PATH=${X11BASE} \
 		ANT_HOME=${LOCALBASE} \
@@ -112,6 +124,7 @@ COPYDIRS=	hotspot/agent/src/os/linux \
 		hotspot/src/os/linux/launcher \
 		hotspot/src/os/linux/vm \
 		hotspot/src/os_cpu/linux_x86/vm \
+		hotspot/src/os_cpu/linux_zero/vm \
 		hotspot/make/linux \
 		hotspot/make/linux/makefiles \
 		jdk/src/linux/doc/man \

@@ -1,0 +1,17 @@
+$OpenBSD: patch-jdk_make_tools_reorder_Makefile,v 1.1 2011/01/11 15:47:50 kurt Exp $
+--- jdk/make/tools/reorder/Makefile.orig	Tue Oct 26 10:43:25 2010
++++ jdk/make/tools/reorder/Makefile	Tue Oct 26 10:43:30 2010
+@@ -187,11 +187,11 @@ $(OBJDIR)/%.o : %.c tools/util-$(ARCH).il
+ 
+ # This library 'libmcount.so' also used by hotspot reordering.
+ $(OBJDIR)/libmcount.so : $(MCOUNT_OBJ)
+-	$(CC) -G -mt -zdefs -o $@ $^ -ldl -lelf $(EXTRA_LIBS)
++	$(CC) -G -mt -zdefs -o $@ $^ $(LIBDL) -lelf $(EXTRA_LIBS)
+ 
+ # This library 'libmcount.so' also used by hotspot reordering.
+ $(OBJDIR)/remove_mcount : remove_mcount.c
+-	$(CC) -g -o $@ $^ -ldl -lelf $(EXTRA_LIBS)
++	$(CC) -g -o $@ $^ $(LIBDL) -lelf $(EXTRA_LIBS)
+ 
+ 
+ # Reorder libraries.

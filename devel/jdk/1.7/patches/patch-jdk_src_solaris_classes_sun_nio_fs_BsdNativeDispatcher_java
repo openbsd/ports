@@ -1,13 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdNativeDispatcher_java,v 1.1 2009/06/10 19:01:09 kurt Exp $
---- jdk/src/solaris/classes/sun/nio/fs/BsdNativeDispatcher.java.orig	Tue Jun  2 13:13:56 2009
-+++ jdk/src/solaris/classes/sun/nio/fs/BsdNativeDispatcher.java	Tue Jun  2 13:14:02 2009
-@@ -1,5 +1,5 @@
- /*
-- * Copyright 2008-2009 Sun Microsystems, Inc.  All Rights Reserved.
-+ * Copyright 2009 Sun Microsystems, Inc.  All Rights Reserved.
-  * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS FILE HEADER.
-  *
-  * This code is free software; you can redistribute it and/or modify it
+$OpenBSD: patch-jdk_src_solaris_classes_sun_nio_fs_BsdNativeDispatcher_java,v 1.2 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/classes/sun/nio/fs/BsdNativeDispatcher.java.orig	Mon Oct 25 18:02:19 2010
++++ jdk/src/solaris/classes/sun/nio/fs/BsdNativeDispatcher.java	Mon Oct 25 18:15:58 2010
 @@ -36,84 +36,23 @@ class BsdNativeDispatcher extends UnixNativeDispatcher
      private BsdNativeDispatcher() { }
  

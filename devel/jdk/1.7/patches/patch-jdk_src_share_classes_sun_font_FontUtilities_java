@@ -1,0 +1,24 @@
+$OpenBSD: patch-jdk_src_share_classes_sun_font_FontUtilities_java,v 1.1 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/share/classes/sun/font/FontUtilities.java.orig	Tue Oct 26 10:44:42 2010
++++ jdk/src/share/classes/sun/font/FontUtilities.java	Tue Oct 26 10:44:49 2010
+@@ -46,6 +46,8 @@ public final class FontUtilities {
+ 
+     public static boolean isLinux;
+ 
++    public static boolean isBSD;
++
+     public static boolean isSolaris8;
+ 
+     public static boolean isSolaris9;
+@@ -73,6 +75,11 @@ public final class FontUtilities {
+                 isSolaris = osName.startsWith("SunOS");
+ 
+                 isLinux = osName.startsWith("Linux");
++
++	        isBSD = (osName.startsWith("FreeBSD") ||
++	                 osName.startsWith("NetBSD") ||
++	                 osName.startsWith("OpenBSD") ||
++	                 osName.startsWith("Darwin"));
+ 
+                 String t2kStr = System.getProperty("sun.java2d.font.scaler");
+                 if (t2kStr != null) {

@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_make_common_shared_Sanity_gmk,v 1.4 2009/10/07 01:53:54 kurt Exp $
---- jdk/make/common/shared/Sanity.gmk.orig	Thu Sep 17 03:51:40 2009
-+++ jdk/make/common/shared/Sanity.gmk	Sat Sep 26 10:00:47 2009
+$OpenBSD: patch-jdk_make_common_shared_Sanity_gmk,v 1.5 2011/01/11 15:47:50 kurt Exp $
+--- jdk/make/common/shared/Sanity.gmk.orig	Fri Aug 13 03:21:36 2010
++++ jdk/make/common/shared/Sanity.gmk	Mon Oct 25 18:15:45 2010
 @@ -142,6 +142,11 @@ ifeq ($(PLATFORM), windows)
      $(EGREP) "\#define" | $(NAWK) '{print $$3}')
  endif
@@ -13,7 +13,7 @@ $OpenBSD: patch-jdk_make_common_shared_Sanity_gmk,v 1.4 2009/10/07 01:53:54 kurt
  # Get the version numbers of what we are using
  _MAKE_VER  :=$(shell $(MAKE) --version 2>&1 | $(HEAD) -n 1)
  _ZIP_VER   :=$(shell $(ZIPEXE) -help 2>&1 | $(HEAD) -n 4 | $(EGREP) '^Zip')
-@@ -862,8 +867,10 @@ endif
+@@ -878,8 +883,10 @@ endif
  
  ######################################################
  # Check for existence of DEVTOOLS_PATH
@@ -24,7 +24,7 @@ $OpenBSD: patch-jdk_make_common_shared_Sanity_gmk,v 1.4 2009/10/07 01:53:54 kurt
  	@if [ "$(DEVTOOLS_PATH)" != "" -a ! -r "$(DEVTOOLS_PATH)" ]; then \
  	  $(ECHO) "ERROR: You do not have a valid DEVTOOLS_PATH setting. \n" \
  	    "      Please check your access to \n" \
-@@ -871,6 +878,7 @@ sane-devtools_path:
+@@ -887,6 +894,7 @@ sane-devtools_path:
  	    "      and/or check your value of ALT_DEVTOOLS_PATH. \n" \
  	    "" >> $(ERROR_FILE) ; \
  	fi

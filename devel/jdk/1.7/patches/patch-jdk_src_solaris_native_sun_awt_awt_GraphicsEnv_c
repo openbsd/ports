@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_GraphicsEnv_c,v 1.4 2009/10/07 01:53:54 kurt Exp $
---- jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c.orig	Thu Sep 17 03:52:32 2009
-+++ jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Fri Oct  2 08:42:10 2009
+$OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_GraphicsEnv_c,v 1.5 2011/01/11 15:47:50 kurt Exp $
+--- jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c.orig	Fri Aug 13 03:22:13 2010
++++ jdk/src/solaris/native/sun/awt/awt_GraphicsEnv.c	Mon Oct 25 18:15:59 2010
 @@ -40,6 +40,7 @@
  #include <jni.h>
  #include <jni_util.h>
@@ -115,7 +115,7 @@ $OpenBSD: patch-jdk_src_solaris_native_sun_awt_awt_GraphicsEnv_c,v 1.4 2009/10/0
  #endif /* HEADLESS */
      return point;
  }
-@@ -1706,7 +1714,11 @@ X11GD_InitXrandrFuncs(JNIEnv *env)
+@@ -1711,7 +1719,11 @@ X11GD_InitXrandrFuncs(JNIEnv *env)
  {
      int rr_maj_ver = 0, rr_min_ver = 0;
  

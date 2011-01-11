@@ -1,0 +1,10 @@
+$OpenBSD: patch-jdk_make_sun_image_vis_Makefile,v 1.1 2011/01/11 15:47:50 kurt Exp $
+--- jdk/make/sun/image/vis/Makefile.orig	Tue Oct 26 10:37:18 2010
++++ jdk/make/sun/image/vis/Makefile	Tue Oct 26 10:37:24 2010
+@@ -69,5 +69,5 @@ INLINE = $(PLATFORM_SRC)/native/sun/awt/medialib/vis_$
+ CFLAGS += $(CFLAGS_$(ARCH)) $(INLINE) -I$(PLATFORM_SRC)/native/sun/awt/medialib -I$(SHARE_SRC)/native/sun/awt/medialib
+ 
+ OTHER_CFLAGS += -D__USE_J2D_NAMES -D__MEDIALIB_OLD_NAMES
+-OTHER_LDLIBS = $(LIBM) -ldl
++OTHER_LDLIBS = $(LIBM) $(LIBDL)
+ 

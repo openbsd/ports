@@ -1,0 +1,12 @@
+$OpenBSD: patch-hotspot_make_bsd_makefiles_cscope_make,v 1.1 2011/01/11 15:47:49 kurt Exp $
+--- hotspot/make/bsd/makefiles/cscope.make.orig	Mon Oct 25 18:45:11 2010
++++ hotspot/make/bsd/makefiles/cscope.make	Mon Oct 25 18:45:18 2010
+@@ -71,7 +71,7 @@ endif
+ # OS-specific files for other systems are excluded by default.  Use CS_OS=yes
+ # to include platform-specific files for other platforms.
+ ifndef	CS_OS
+-CS_OS		= bsd macos solaris win32
++CS_OS		= linux macos solaris win32 bsd
+ CS_PRUNE_OS	= $(patsubst %,-o -name '*%*',$(filter-out ${OS},${CS_OS}))
+ endif
+ 

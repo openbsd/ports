@@ -1,13 +1,10 @@
-$OpenBSD: patch-jdk_make_java_hpi_hpi_common_gmk,v 1.1 2008/03/19 18:05:45 kurt Exp $
---- jdk/make/java/hpi/hpi_common.gmk.orig	Tue Oct 30 05:04:22 2007
-+++ jdk/make/java/hpi/hpi_common.gmk	Wed Nov  7 18:03:20 2007
-@@ -86,5 +86,9 @@ endif
+$OpenBSD: patch-jdk_make_java_hpi_hpi_common_gmk,v 1.2 2011/01/11 15:47:50 kurt Exp $
+--- jdk/make/java/hpi/hpi_common.gmk.orig	Fri Aug 13 03:21:37 2010
++++ jdk/make/java/hpi/hpi_common.gmk	Tue Oct 26 10:32:53 2010
+@@ -86,5 +86,5 @@ endif
  # Things that must be linked in.
  #
  ifneq ($(PLATFORM), windows)
-+ifeq ($(PLATFORM), bsd)
-+OTHER_LDLIBS += $(LIBM)
-+else
- OTHER_LDLIBS += $(LIBSOCKET) -lnsl $(LIBM) -ldl
-+endif
+-OTHER_LDLIBS += $(LIBSOCKET) $(LIBNSL) $(LIBM) -ldl
++OTHER_LDLIBS += $(LIBSOCKET) $(LIBNSL) $(LIBM) $(LIBDL)
  endif
