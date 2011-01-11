@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/10/27 11:14:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/01/11 14:04:30 sthen Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}phpmailer/
@@ -18,3 +18,7 @@ ${DRUPAL_MODS}phpmailer/phpmailer.module
 ${DRUPAL_MODS}phpmailer/phpmailer/class.phpmailer.php
 @comment ${DRUPAL_MODS}phpmailer/phpmailer/class.phpmailer.php.orig
 ${DRUPAL_MODS}phpmailer/phpmailer/class.smtp.php
+${DRUPAL_MODS}phpmailer/tests/
+${DRUPAL_MODS}phpmailer/tests/phpmailer.test
+${DRUPAL_MODS}phpmailer/translations/
+${DRUPAL_MODS}phpmailer/translations/phpmailer.pot
