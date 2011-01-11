@@ -1,0 +1,23 @@
+$OpenBSD: patch-mapobject_c,v 1.1 2011/01/11 09:47:55 landry Exp $
+http://trac.osgeo.org/mapserver/ticket/3525
+--- mapobject.c.orig	Mon Sep 21 08:26:37 2009
++++ mapobject.c	Tue Jan 11 10:01:43 2011
+@@ -774,10 +774,17 @@ int msMapLoadOWSParameters(mapObj *map, cgiRequestObj 
+ {
+ #ifdef USE_WMS_SVR
+     int version;
++    char *wms_exception_format = NULL;
++    int i =0;
+ 
+     version = msOWSParseVersionString(wmtver);
++    for(i=0; i<request->NumParams; i++) 
++    {
++         if (strcasecmp(request->ParamNames[i], "EXCEPTIONS") == 0)
++           wms_exception_format = request->ParamValues[i];
++    }
+     return msWMSLoadGetMapParams(map, version, request->ParamNames,
+-                                 request->ParamValues, request->NumParams);
++                                 request->ParamValues, request->NumParams,  wms_exception_format);
+ #else
+     msSetError(MS_WMSERR, "WMS server support is not available.",
+                "msMapLoadOWSParameters()");

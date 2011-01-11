@@ -1,0 +1,15 @@
+$OpenBSD: patch-mapows_h,v 1.1 2011/01/11 09:47:55 landry Exp $
+http://trac.osgeo.org/mapserver/ticket/3525
+--- mapows.h.orig	Tue Feb 23 20:30:57 2010
++++ mapows.h	Tue Jan 11 10:01:43 2011
+@@ -408,8 +408,8 @@ MS_DLL_EXPORT int msGMLWriteWFSQuery(mapObj *map, FILE
+  *   mapwms.c
+  *====================================================================*/
+ int msWMSDispatch(mapObj *map, cgiRequestObj *req); 
+-MS_DLL_EXPORT int msWMSLoadGetMapParams(mapObj *map, int nVersion,
+-                          char **names, char **values, int numentries);
++MS_DLL_EXPORT int msWMSLoadGetMapParams(mapObj *map, int nVersion, char **names, 
++                                        char **values, int numentries, char *wms_exception_format);
+ 
+ 
+ /*====================================================================
