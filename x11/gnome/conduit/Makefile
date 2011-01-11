@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2011/01/11 12:41:38 ajacoutot Exp $
 
 # XXX the following modules are commented in PLIST
 # N800Module ===> needs HAL which we don't provide
@@ -36,9 +36,7 @@ RUN_DEPENDS=		devel/gettext \
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 
-CONFIGURE_ARGS+= 	--with-gconf-schema-file-dir=${LOCALBASE}/share/schemas/conduit \
-			--disable-schemas-install \
-			--disable-scrollkeeper \
+CONFIGURE_ARGS+=	--disable-scrollkeeper \
 			--enable-totem-plugin \
 			--with-totem-plugin-dir="${LOCALBASE}/lib/totem/plugins/" \
 # This currently doesn't install anything.
