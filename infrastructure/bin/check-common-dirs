@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-common-dirs,v 1.1 2011/01/11 11:24:05 espie Exp $
-# Copyright (c) 2004 Marc Espie <espie@openbsd.org>
+# $OpenBSD: check-common-dirs,v 1.2 2011/01/11 11:25:53 espie Exp $
+# Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -72,14 +72,14 @@ sub analyze
 {
 	my ($plist, $db) = @_;
 	my $pkgname = $plist->pkgname;
-	$db->{$pkgname} = {
+	$db->{$pkgname} //= {
 		pkgname => $pkgname,
 		missing_deps => {},
 		dirs => {}, 
 		need_dirs => {}, 
 		deps => {},
 		problems => {}
-	} unless defined $db->{$pkgname};
+	};
 	my $t = $db->{$pkgname};
 
 	$plist->check_common_dirs($t);
@@ -87,18 +87,19 @@ sub analyze
 
 sub parent_has_dir
 {
-	my ($db, $t, $dir) = @_;
+	my ($state, $db, $t, $dir) = @_;
 
 	for my $dep (keys %{$t->{deps}}) {
 		if (!defined $db->{$dep}) {
 		    if (!defined $t->{missing_deps}->{$dep}) {
-			    print $t->{pkgname}, ": $dep not found\n";
+			    $state->errsay("#1 : #2 not found", $t->{pkgname},
+			    	$dep);
 			    $t->{missing_deps}->{$dep} = 1;
 		    }
 		    next;
 		}
 		if ($db->{$dep}->{dirs}->{$dir} || 
-		    parent_has_dir($db, $db->{$dep}, $dir)) {
+		    parent_has_dir($state, $db, $db->{$dep}, $dir)) {
 			$t->{dirs}->{$dir} = 1;
 			return 1;
 		}
@@ -120,14 +121,14 @@ sub parent_has_problem
 
 sub build_results
 {
-	my ($db, $mtree) = @_;
+	my ($state, $db, $mtree) = @_;
 
 	for my $pkgname (keys %$db) {
 		my $t = $db->{$pkgname};
 		for my $dir (keys(%{$t->{need_dirs}})) {
 			next if $t->{dirs}->{$dir};
 			next if $mtree->{$dir};
-			next if parent_has_dir($db, $t, $dir);
+			next if parent_has_dir($state, $db, $t, $dir);
 			$t->{problems}->{$dir} = 1;
 		}
 	}
@@ -177,5 +178,5 @@ $state->progress->for_list("Scanning packages", \@ARGV,
 	analyze($plist, $db);
     });
 
-build_results($db, $mtree);
+build_results($state, $db, $mtree);
 show_results($state, $db);
