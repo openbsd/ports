@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/15 18:30:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/01/11 12:39:58 ajacoutot Exp $
 %%SHARED%%
 include/goocanvas-1.0/
 include/goocanvas-1.0/goocanvas.h
@@ -35,6 +35,8 @@ share/gtk-doc/html/goocanvas/GooCanvasGroup.html
 share/gtk-doc/html/goocanvas/GooCanvasGroupModel.html
 share/gtk-doc/html/goocanvas/GooCanvasImage.html
 share/gtk-doc/html/goocanvas/GooCanvasImageModel.html
+share/gtk-doc/html/goocanvas/GooCanvasItem.html
+share/gtk-doc/html/goocanvas/GooCanvasItemModel.html
 share/gtk-doc/html/goocanvas/GooCanvasItemModelSimple.html
 share/gtk-doc/html/goocanvas/GooCanvasItemSimple.html
 share/gtk-doc/html/goocanvas/GooCanvasPath.html
@@ -58,8 +60,6 @@ share/gtk-doc/html/goocanvas/goocanvas-GooCanvas-Types.html
 share/gtk-doc/html/goocanvas/goocanvas-architecture.html
 share/gtk-doc/html/goocanvas/goocanvas-coordinates.html
 share/gtk-doc/html/goocanvas/goocanvas-creating-items.html
-share/gtk-doc/html/goocanvas/goocanvas-goocanvasitem.html
-share/gtk-doc/html/goocanvas/goocanvas-goocanvasitemmodel.html
 share/gtk-doc/html/goocanvas/goocanvas-model-view-canvas.html
 share/gtk-doc/html/goocanvas/goocanvas-overview.html
 share/gtk-doc/html/goocanvas/goocanvas-simple-canvas.html
