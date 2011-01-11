@@ -1,52 +1,66 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/01/11 10:29:20 jasper Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY =	Yes
 
-COMMENT=	powerful KDE batch file renamer
+COMMENT =	powerful KDE batch file renamer
 
-DISTNAME=	krename-3.0.14
-REVISION =	4
-CATEGORIES=	sysutils x11 x11/kde
+DISTNAME =	krename-3.0.14
+REVISION =	5
 
-EXTRACT_SUFX=	.tar.bz2
+SRCFILES =	${DISTNAME}.tar.bz2
+DOCFILES =	krename-3.0.12.pdf \
+		krename-3.0.3-de.pdf \
+		krename-3.0.3-fr.pdf \
+		krename-3.0.3-ru.pdf
 
-HOMEPAGE=	http://www.krename.net/
+DISTFILES =	${SRCFILES} ${DOCFILES}
+EXTRACT_ONLY =	${SRCFILES}
 
-MAINTAINER=	Vadim Zhukov <persgray@gmail.com>
+CATEGORIES =	sysutils x11 x11/kde
+HOMEPAGE =	http://www.krename.net/
+
+MAINTAINER =	Vadim Zhukov <persgray@gmail.com>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender c fam jpeg m png
-WANTLIB += pthread pthread-stubs stdc++ util xcb z
-WANTLIB += art_lgpl_2>=5 idn>=16.30 DCOP>=7 kdecore kdefx kdesu
-WANTLIB += kdeui kio kparts kwalletclient
+WANTLIB +=	GL Xcursor Xdamage Xfixes Xft Xi Xinerama Xmu Xrandr Xt Xxf86vm
+WANTLIB +=	drm expat fontconfig freetype lcms mng ICE SM X11 Xau Xdmcp Xext
+WANTLIB +=	Xrender c jpeg m png pthread pthread-stubs stdc++ util xcb z
+WANTLIB +=	art_lgpl_2>=5 idn>=16.30 DCOP>=7 kdecore kdefx kdesu kdeui kio
+WANTLIB +=	kparts kwalletclient
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=krename/}
 
-MODULES=	x11/kde devel/gettext
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=krename/}
 
-RUN_DEPENDS=	devel/desktop-file-utils \
+MODULES =	x11/kde devel/gettext
+
+RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/kde/base3
-LIB_DEPENDS=	graphics/libart \
+LIB_DEPENDS =	graphics/libart \
 		devel/libidn>=1.1 \
 		x11/kde/libs3
 
-USE_GMAKE=	Yes
+USE_GMAKE =		Yes
+USE_LIBTOOL =		Yes
+LIBTOOL_FLAGS =		--tag=disable-static
 
-USE_LIBTOOL=	Yes
-LIBTOOL_FLAGS=	--tag=disable-static
+AUTOCONF_VERSION =	2.60
+CONFIGURE_STYLE =	autoconf
+CONFIGURE_ENV =		${MODKDE_CONFIGURE_ENV}
+CONFIGURE_ARGS =	${MODKDE_CONFIGURE_ARGS} \
+			--enable-libsuffix=""
 
-AUTOCONF_VERSION=2.60
+PORTHOME =		${WRKDIR}
 
-CONFIGURE_STYLE=autoconf
-CONFIGURE_ENV=	${MODKDE_CONFIGURE_ENV}
-CONFIGURE_ARGS=	${MODKDE_CONFIGURE_ARGS} \
-		--enable-libsuffix=""
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/doc/en/HTML/index.html
 
-PORTHOME=	${WRKDIR}
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/krename
+	${INSTALL_DATA} ${DOCFILES:S@^@${DISTDIR}/@} ${PREFIX}/share/doc/krename
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/22 12:51:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/01/11 10:29:20 jasper Exp $
 @bin bin/krename
 share/applications/kde/krename.desktop
 share/apps/konqueror/servicemenus/krename_dir.desktop
@@ -9,6 +9,11 @@ share/apps/krename/krename_system_default_wizard.xml
 share/apps/krename/logo.png
 share/doc/HTML/en/krename/
 share/doc/HTML/en/krename/index.html
+share/doc/krename/
+share/doc/krename/krename-3.0.12.pdf
+share/doc/krename/krename-3.0.3-de.pdf
+share/doc/krename/krename-3.0.3-fr.pdf
+share/doc/krename/krename-3.0.3-ru.pdf
 share/icons/hicolor/32x32/apps/krename.png
 share/icons/hicolor/48x48/apps/krename.png
 share/icons/locolor/
