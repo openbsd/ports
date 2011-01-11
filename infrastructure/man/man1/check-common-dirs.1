@@ -1,0 +1,37 @@
+.\"	$OpenBSD: check-common-dirs.1,v 1.1 2011/01/11 11:30:47 espie Exp $
+.\"
+.\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
+.\"
+.\" Permission to use, copy, modify, and distribute this software for any
+.\" purpose with or without fee is hereby granted, provided that the above
+.\" copyright notice and this permission notice appear in all copies.
+.\"
+.\" THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+.\" WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+.\" MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+.\" ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+.\" WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+.\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+.\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+.\"
+.Dd $Mdocdate: January 11 2011 $
+.Dt CHECK-COMMON-DIRS 1
+.Os
+.Sh NAME
+.Nm check-common-dirs
+.Nd verify that common directories are correctly registered
+.Sh SYNOPSIS
+.Nm check-conflicts
+.Op Ar pkgname ...
+.Sh DESCRIPTION
+.Nm
+is used to check a collection of packages for directory registration.
+Every directory that is not a part of the standard
+.Xr mtree 1
+set should appear in a packing-list somewhere.
+.Pp
+Directories can be shared between several packages.
+.Nm
+knows enough about packages to trace directories back to a dependency.
+.Sh SEE ALSO
+.Xr pkg_create 1
