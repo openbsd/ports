@@ -1,0 +1,22 @@
+$OpenBSD: patch-sql-common_my_time_c,v 1.1 2011/01/11 11:03:03 ajacoutot Exp $
+--- sql-common/my_time.c.orig	Mon Nov 29 05:38:13 2010
++++ sql-common/my_time.c	Fri Jan  7 19:47:56 2011
+@@ -991,8 +991,17 @@ my_system_gmt_sec(const MYSQL_TIME *t_src, long *my_ti
+     So, tmp < TIMESTAMP_MIN_VALUE will be triggered. On platfroms
+     with unsigned time_t tmp+= shift*86400L might result in a number,
+     larger then TIMESTAMP_MAX_VALUE, so another check will work.
++
++    tmp being larger than TIMESTAMP_MAX_VALUE can only happen on
++    platforms where the size of time_t is larger than the size of
++    TIMESTAMP_MAX_VALUE (currently INT32 : 4 bytes).
++    #ifdef to avoid the compilation warnings on these platforms (OpenBSD).
+   */
+-  if ((tmp < TIMESTAMP_MIN_VALUE) || (tmp > TIMESTAMP_MAX_VALUE))
++  if ((tmp < TIMESTAMP_MIN_VALUE) 
++#if SIZEOF_TIME_T > 4
++      || (tmp > TIMESTAMP_MAX_VALUE)
++#endif
++      )
+     tmp= 0;
+ 
+   return (my_time_t) tmp;

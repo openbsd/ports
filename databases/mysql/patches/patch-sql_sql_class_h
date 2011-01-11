@@ -1,15 +1,12 @@
-$OpenBSD: patch-sql_sql_class_h,v 1.1 2010/11/10 21:03:38 sthen Exp $
---- sql/sql_class.h.orig	Thu Oct 28 21:45:58 2010
-+++ sql/sql_class.h	Thu Oct 28 21:46:19 2010
-@@ -2033,11 +2033,6 @@ class THD :public Statement, (public)
-     start_time= user_time= t;
-     start_utime= utime_after_lock= my_micro_time();
-   }
--  /*TODO: this will be obsolete when we have support for 64 bit my_time_t */
--  inline bool	is_valid_time() 
--  { 
+$OpenBSD: patch-sql_sql_class_h,v 1.2 2011/01/11 11:03:03 ajacoutot Exp $
+--- sql/sql_class.h.orig	Mon Nov 29 05:37:59 2010
++++ sql/sql_class.h	Fri Jan  7 19:29:22 2011
+@@ -2036,7 +2036,7 @@ class THD :public Statement, (public)
+   /*TODO: this will be obsolete when we have support for 64 bit my_time_t */
+   inline bool	is_valid_time() 
+   { 
 -    return (start_time < (time_t) MY_TIME_T_MAX); 
--  }
++    return (IS_VALID_TIME_T(start_time)); 
+   }
    void set_time_after_lock()  { utime_after_lock= my_micro_time(); }
    ulonglong current_utime()  { return my_micro_time(); }
-   inline ulonglong found_rows(void)

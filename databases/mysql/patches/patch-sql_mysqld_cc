@@ -1,6 +1,6 @@
-$OpenBSD: patch-sql_mysqld_cc,v 1.23 2010/12/26 08:23:17 ajacoutot Exp $
+$OpenBSD: patch-sql_mysqld_cc,v 1.24 2011/01/11 11:03:03 ajacoutot Exp $
 --- sql/mysqld.cc.orig	Mon Nov 29 05:38:01 2010
-+++ sql/mysqld.cc	Tue Dec 14 20:37:51 2010
++++ sql/mysqld.cc	Fri Jan  7 19:25:15 2011
 @@ -3234,13 +3234,6 @@ static int init_common_variables(const char *conf_file
  
    max_system_variables.pseudo_thread_id= (ulong)~0;
@@ -15,7 +15,21 @@ $OpenBSD: patch-sql_mysqld_cc,v 1.23 2010/12/26 08:23:17 ajacoutot Exp $
    rpl_filter= new Rpl_filter;
    binlog_filter= new Rpl_filter;
    if (!rpl_filter || !binlog_filter)
-@@ -4412,7 +4405,7 @@ int main(int argc, char **argv)
+@@ -3278,6 +3271,13 @@ static int init_common_variables(const char *conf_file
+   */
+   mysql_bin_log.init_pthread_objects();
+ 
++  /* TODO: remove this when my_time_t is 64 bit compatible */
++  if (!IS_VALID_TIME_T(server_start_time))
++  {
++    sql_print_error("This MySQL server doesn't support dates later then 2038");
++    return 1;
++  }
++
+   if (gethostname(glob_hostname,sizeof(glob_hostname)) < 0)
+   {
+     strmake(glob_hostname, STRING_WITH_LEN("localhost"));
+@@ -4412,7 +4412,7 @@ int main(int argc, char **argv)
    select_thread_in_use=1;
  
  #ifdef HAVE_LIBWRAP

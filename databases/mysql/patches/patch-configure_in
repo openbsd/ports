@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.32 2010/12/26 08:23:17 ajacoutot Exp $
+$OpenBSD: patch-configure_in,v 1.33 2011/01/11 11:03:03 ajacoutot Exp $
 --- configure.in.orig	Mon Nov 29 05:38:01 2010
-+++ configure.in	Tue Dec 14 20:38:01 2010
++++ configure.in	Fri Jan  7 19:15:03 2011
 @@ -464,44 +464,7 @@ AC_SUBST(ABI_CHECK)
  AC_PATH_PROG(PS, ps, ps)
  AC_MSG_CHECKING("how to check if pid exists")
@@ -57,3 +57,19 @@ $OpenBSD: patch-configure_in,v 1.32 2010/12/26 08:23:17 ajacoutot Exp $
  int allow_severity = 0;
  int deny_severity  = 0;
  
+@@ -1884,6 +1848,15 @@ dnl
+ 
+ MYSQL_CHECK_TIME_T
+ 
++dnl
++dnl check size of time_t
++dnl
++
++AC_CHECK_SIZEOF(time_t, 8)
++if test "$ac_cv_sizeof_time_t" -eq 0
++then
++  AC_MSG_ERROR("MySQL needs a time_t type.")
++fi
+ 
+ # do we need #pragma interface/#pragma implementation ?
+ # yes if it's gcc 2.x, and not icc pretending to be gcc, and not cygwin

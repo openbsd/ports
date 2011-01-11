@@ -1,0 +1,21 @@
+$OpenBSD: patch-include_my_time_h,v 1.1 2011/01/11 11:03:03 ajacoutot Exp $
+--- include/my_time.h.orig	Fri Jan  7 19:15:25 2011
++++ include/my_time.h	Fri Jan  7 19:16:04 2011
+@@ -43,6 +43,17 @@ typedef long my_time_t;
+ #define MY_TIME_T_MAX LONG_MAX
+ #define MY_TIME_T_MIN LONG_MIN
+ 
++/*
++  check for valid times only if the range of time_t is greater than
++  the range of my_time_t 
++*/
++#if SIZEOF_TIME_T > SIZEOF_LONG
++# define IS_VALID_TIME_T(x) ((x) <= (time_t) MY_TIME_T_MAX && \
++                             (x) >= (time_t) MY_TIME_T_MIN)
++#else
++# define IS_VALID_TIME_T(x) (1 > 0)
++#endif
++
+ /* Time handling defaults */
+ #define TIMESTAMP_MAX_YEAR 2038
+ #define TIMESTAMP_MIN_YEAR (1900 + YY_PART_YEAR - 1)
