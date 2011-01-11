@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2009/11/18 13:07:22 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/01/11 18:32:52 jasper Exp $
 bin/bdf2gdfont.pl
 ${P5ARCH}/
 ${P5ARCH}/GD/
@@ -20,3 +20,17 @@ ${P5ARCH}/qd.pl
 @man man/man3p/GD::Polygon.3p
 @man man/man3p/GD::Polyline.3p
 @man man/man3p/GD::Simple.3p
+share/examples/p5-GD/
+share/examples/p5-GD/brushes.pl
+share/examples/p5-GD/copies.pl
+share/examples/p5-GD/fills.pl
+share/examples/p5-GD/font_list.png
+share/examples/p5-GD/fonttest
+share/examples/p5-GD/gd_example.cgi
+share/examples/p5-GD/polyline.pl
+share/examples/p5-GD/polys.pl
+share/examples/p5-GD/shapes.pl
+share/examples/p5-GD/tile.png
+share/examples/p5-GD/transform.pl
+share/examples/p5-GD/truetype_test
+share/examples/p5-GD/ttf.pl
