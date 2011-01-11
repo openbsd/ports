@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2010/12/03 11:45:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/01/11 18:36:57 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Perl interface to the Imlib2 image library
 
-DISTNAME=	Image-Imlib2-2.02
-REVISION=	2
+DISTNAME=	Image-Imlib2-2.03
 CATEGORIES=	graphics
 
 # Perl
@@ -14,12 +13,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xext freetype m pthread-stubs xcb z Imlib2>=1
+WANTLIB=	X11 Xext freetype m z Imlib2>=1
 
 LIB_DEPENDS=	graphics/imlib2
 
-REGRESS_DEPENDS=devel/p5-Test-Pod \
-		devel/p5-Test-Pod-Coverage
+MAKE_ENV=	TEST_POD=Yes
 
 MODULES=	cpan
 CONFIGURE_STYLE=modbuild
