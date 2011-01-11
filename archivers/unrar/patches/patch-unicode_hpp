@@ -1,12 +1,12 @@
-$OpenBSD: patch-unicode_hpp,v 1.1 2010/12/30 07:51:31 benoit Exp $
---- unicode.hpp.orig	Mon Dec  6 07:56:08 2010
-+++ unicode.hpp	Mon Dec  6 07:56:19 2010
-@@ -29,6 +29,8 @@
+$OpenBSD: patch-unicode_hpp,v 1.2 2011/01/11 18:23:14 miod Exp $
+--- unicode.hpp.orig	Fri Nov 26 07:20:01 2010
++++ unicode.hpp	Sun Jan  9 18:59:44 2011
+@@ -29,6 +29,8 @@ int uni_done();
  // Borland C++ Builder 5 uses the old style swprintf without the buffer size,
  // so we replace it with snwprintf in our custom sprintfw definition.
  #define sprintfw snwprintf
 +#elif defined (__OpenBSD__)
-+#define sprintfw(s,...) *(s)=0
++inline int sprintfw(wchar *s, ...) { *s = '\0'; return 1; }
  #else
  #define sprintfw swprintf
  #endif

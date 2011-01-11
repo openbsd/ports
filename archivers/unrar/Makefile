@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2010/12/30 07:51:27 benoit Exp $
+# $OpenBSD: Makefile,v 1.51 2011/01/11 18:23:12 miod Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
 DISTNAME=	unrarsrc-4.0.2
 PKGNAME=	unrar-4.02
+REVISION=	0
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://www.rarlab.com/
@@ -24,11 +25,6 @@ WRKDIST=	${WRKDIR}/unrar
 
 MAKE_FILE=	makefile.unix
 MAKE_FLAGS=	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
-
-# gcc 3.3.5 internal compiler error
-.if ${MACHINE_ARCH} == "alpha"
-EXTRA_CFLAGS=	-O0
-.endif
 
 MAKE_FLAGS+=	EXTRA_CFLAGS=${EXTRA_CFLAGS}
 
