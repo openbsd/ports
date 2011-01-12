@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2010/12/27 11:00:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/01/12 10:08:13 jasper Exp $
 
 COMMENT =		simple distributed software configuration management 
 
-VERSION =		20101221135605
+VERSION =		20110101030647
 DISTNAME =		fossil-src-${VERSION}
 PKGNAME =		fossil-${VERSION}
 CATEGORIES =		devel www
@@ -33,7 +33,6 @@ WANTLIB =		c crypto ssl z
 MODULES =		lang/tcl
 RUN_DEPENDS =		security/gnupg
 
-NO_REGRESS =		Yes
 REGRESS_DEPENDS =	${MODTCL_RUN_DEPENDS}
 
 MAKE_FLAGS +=		BCC="${CC}"
