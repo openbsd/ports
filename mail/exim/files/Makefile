@@ -1,4 +1,4 @@
-# $Cambridge: exim/exim-src/src/EDITME,v 1.23 2009/11/20 12:18:19 nm4 Exp $
+# $Cambridge: exim/src/src/EDITME,v 1.27 2010/06/12 15:21:25 jetmore Exp $
 
 ##################################################
 #          The Exim mail transport agent         #
@@ -131,8 +131,7 @@
 # group that is used for Exim processes when they no longer need to be root. In
 # particular, this applies when receiving messages and when doing remote
 # deliveries. (Local deliveries run as various non-root users, typically as the
-# owner of a local mailbox.) Specifying these values as root is very strongly
-# discouraged.
+# owner of a local mailbox.) Specifying these values as root is not supported.
 
 EXIM_USER=ref:_exim
 
@@ -352,6 +351,25 @@ WITH_CONTENT_SCAN=yes
 
 WITH_OLD_DEMIME=yes
 
+# If you're using ClamAV and are backporting fixes to an old version, instead
+# of staying current (which is the more usual approach) then you may need to
+# use an older API which uses a STREAM command, now deprecated, instead of
+# zINSTREAM.  If you need to set this, please let the Exim developers know, as
+# if nobody reports a need for it, we'll remove this option and clean up the
+# code.  zINSTREAM was introduced with ClamAV 0.95.
+#
+# WITH_OLD_CLAMAV_STREAM=yes
+
+#------------------------------------------------------------------------------
+# By default Exim includes code to support DKIM (DomainKeys Identified
+# Mail, RFC4871) signing and verification.  Verification of signatures is
+# turned on by default.  See the spec for information on conditionally
+# disabling it.  To disable the inclusion of the entire feature, set
+# DISABLE_DKIM to "yes"
+
+# DISABLE_DKIM=yes
+
+
 #------------------------------------------------------------------------------
 # Compiling Exim with experimental features. These are documented in
 # experimental-spec.txt. "Experimental" means that the way these features are
@@ -412,14 +430,13 @@ FIXED_NEVER_USERS=root
 
 
 #------------------------------------------------------------------------------
-# By default, Exim insists that its configuration file be owned either by root
-# or by the Exim user. You can specify one additional permitted owner here.
+# By default, Exim insists that its configuration file be owned by root. You
+# can specify one additional permitted owner here.
 
 # CONFIGURE_OWNER=
 
 # If the configuration file is group-writeable, Exim insists by default that it
-# is owned by root or the Exim user. You can specify one additional permitted
-# group owner here.
+# is owned by root. You can specify one additional permitted group owner here.
 
 # CONFIGURE_GROUP=
 
@@ -441,32 +458,31 @@ FIXED_NEVER_USERS=root
 
 #------------------------------------------------------------------------------
 # The -C option allows Exim to be run with an alternate runtime configuration
-# file. When this is used by root or the Exim user, root privilege is retained
-# by the binary (for any other caller, it is dropped). You can restrict the
-# location of alternate configurations by defining a prefix below. Any file
-# used with -C must then start with this prefix (except that /dev/null is also
-# permitted if the caller is root, because that is used in the install script).
-# If the prefix specifies a directory that is owned by root, a compromise of
-# the Exim account does not permit arbitrary alternate configurations to be
-# used. The prefix can be more restrictive than just a directory (the second
-# example).
+# file. When this is used by root, root privilege is retained by the binary
+# (for any other caller including the Exim user, it is dropped). You can
+# restrict the location of alternate configurations by defining a prefix below.
+# Any file used with -C must then start with this prefix (except that /dev/null
+# is also permitted if the caller is root, because that is used in the install
+# script). If the prefix specifies a directory that is owned by root, a
+# compromise of the Exim account does not permit arbitrary alternate
+# configurations to be used. The prefix can be more restrictive than just a
+# directory (the second example).
 
 # ALT_CONFIG_PREFIX=/some/directory/
 # ALT_CONFIG_PREFIX=/some/directory/exim.conf-
 
 
 #------------------------------------------------------------------------------
-# If you uncomment the following line, only root may use the -C or -D options
-# without losing root privilege. The -C option specifies an alternate runtime
-# configuration file, and the -D option changes macro values in the runtime
-# configuration. Uncommenting this line restricts what can be done with these
-# options. A call to receive a message (either one-off or via a daemon) cannot
-# successfully continue to deliver it, because the re-exec of Exim to regain
-# root privilege will fail, owing to the use of -C or -D by the Exim user.
-# However, you can still use -C for testing (as root) if you do separate Exim
-# calls for receiving a message and subsequently delivering it.
+# When a user other than root uses the -C option to override the configuration
+# file (including the Exim user when re-executing Exim to regain root
+# privileges for local message delivery), this will normally cause Exim to
+# drop root privileges. The TRUSTED_CONFIG_LIST option, specifies a file which
+# contains a list of trusted configuration filenames, one per line. If the -C
+# option is used by the Exim user or by the user specified in the
+# CONFIGURE_OWNER setting, to specify a configuration file which is listed in
+# the TRUSTED_CONFIG_LIST file, then root privileges are not dropped by Exim.
 
-ALT_CONFIG_ROOT_ONLY=yes
+# TRUSTED_CONFIG_LIST=/usr/exim/trusted_configs
 
 
 #------------------------------------------------------------------------------
@@ -476,6 +492,31 @@ ALT_CONFIG_ROOT_ONLY=yes
 
 # DISABLE_D_OPTION=yes
 
+
+#------------------------------------------------------------------------------
+# By contrast, you might be maintaining a system which relies upon the ability
+# to override values with -D and assumes that these will be passed through to
+# the delivery processes.  As of Exim 4.73, this is no longer the case by
+# default.  Going forward, we strongly recommend that you use a shim Exim
+# configuration file owned by root stored under TRUSTED_CONFIG_LIST.
+# That shim can set macros before .include'ing your main configuration file.
+#
+# As a strictly transient measure to ease migration to 4.73, the
+# WHITELIST_D_MACROS value definies a colon-separated list of macro-names
+# which are permitted to be overriden from the command-line which will be
+# honoured by the Exim user.  So these are macros that can persist to delivery
+# time.
+# Examples might be -DTLS or -DSPOOL=/some/dir.  The values on the
+# command-line are filtered to only permit: [A-Za-z0-9_/.-]*
+#
+# This option is highly likely to be removed in a future release.  It exists
+# only to make 4.73 as easy as possible to migrate to.  If you use it, we
+# encourage you to schedule time to rework your configuration to not depend
+# upon it.  Most people should not need to use this.
+#
+# By default, no macros are whitelisted for -D usage.
+
+# WHITELIST_D_MACROS=TLS:SPOOL
 
 #------------------------------------------------------------------------------
 # Exim has support for the AUTH (authentication) extension of the SMTP
@@ -829,6 +870,13 @@ USE_TCP_WRAPPERS=yes
 #
 # but of course there may need to be other things in CFLAGS and EXTRALIBS_EXIM
 # as well.
+#
+# To use a name other than exim in the tcpwrappers config file,
+# e.g. if you're running multiple daemons with different access lists,
+# or multiple MTAs with the same access list, define
+# TCP_WRAPPERS_DAEMON_NAME accordingly
+#
+# TCP_WRAPPERS_DAEMON_NAME="exim"
 
 
 #------------------------------------------------------------------------------
