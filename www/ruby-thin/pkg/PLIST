@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/08 23:24:45 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/01/12 17:47:38 rpointel Exp $
 ${GEM_BIN}/thin${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -70,7 +70,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/thin/stats.html.erb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thin/stats.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thin/statuses.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/thin/version.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/thin_parser.bundle
 ${GEM_LIB}/gems/${DISTNAME}/lib/thin_parser.so
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/backends/
@@ -174,7 +173,6 @@ ${GEM_LIB}/gems/${DISTNAME}/tasks/
 ${GEM_LIB}/gems/${DISTNAME}/tasks/announce.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/deploy.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/email.erb
-${GEM_LIB}/gems/${DISTNAME}/tasks/ext.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/gem.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/rdoc.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/site.rake
