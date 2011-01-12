@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/01 13:44:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/01/12 14:33:35 jasper Exp $
 
 COMMENT-main=		free UML builder with extensions
 COMMENT-docs=		bouml documentation
@@ -8,6 +8,7 @@ DISTNAME=		bouml_$V
 PKGNAME=		bouml-$V
 PKGNAME-main=		bouml-$V
 PKGNAME-docs=		bouml-docs-$V
+REVISION-docs=		0
 
 CATEGORIES=		devel x11
 
@@ -22,7 +23,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=bouml/}
 
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
-			doc4.9${EXTRACT_SUFX}
+			doc4.23${EXTRACT_SUFX}
 
 MULTI_PACKAGES= 	-main -docs
 

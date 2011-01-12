@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.2 2009/04/26 21:58:24 jasper Exp $
+@comment $OpenBSD: PLIST-docs,v 1.3 2011/01/12 14:33:35 jasper Exp $
 share/doc/bouml/
 share/doc/bouml/activity.html
 share/doc/bouml/activityaction.html
@@ -14,7 +14,6 @@ share/doc/bouml/blurulr6.png
 share/doc/bouml/bouml.html
 share/doc/bouml/bouml_title.html
 share/doc/bouml/browseritems.html
-share/doc/bouml/c.html
 share/doc/bouml/class.html
 share/doc/bouml/classdiagram.html
 share/doc/bouml/classinstance.html
@@ -26,6 +25,7 @@ share/doc/bouml/componentview.html
 share/doc/bouml/content.html
 share/doc/bouml/cppgenerator.html
 share/doc/bouml/cppreverse.html
+share/doc/bouml/cpproundtrip.html
 share/doc/bouml/cpputil.html
 share/doc/bouml/deploy.html
 share/doc/bouml/deploymentdiagram.html
@@ -196,6 +196,20 @@ share/doc/bouml/empty_html/class150016.html
 share/doc/bouml/empty_html/class150144.html
 share/doc/bouml/empty_html/class150272.html
 share/doc/bouml/empty_html/class150403.html
+share/doc/bouml/empty_html/class151552.html
+share/doc/bouml/empty_html/class151683.html
+share/doc/bouml/empty_html/class151808.html
+share/doc/bouml/empty_html/class151939.html
+share/doc/bouml/empty_html/class152064.html
+share/doc/bouml/empty_html/class152195.html
+share/doc/bouml/empty_html/class152320.html
+share/doc/bouml/empty_html/class152451.html
+share/doc/bouml/empty_html/class152576.html
+share/doc/bouml/empty_html/class152707.html
+share/doc/bouml/empty_html/class152832.html
+share/doc/bouml/empty_html/class152963.html
+share/doc/bouml/empty_html/class153088.html
+share/doc/bouml/empty_html/class153219.html
 share/doc/bouml/empty_html/class1536.html
 share/doc/bouml/empty_html/class1664.html
 share/doc/bouml/empty_html/class1792.html
@@ -349,7 +363,21 @@ share/doc/bouml/figs/activityactionedit21.png
 share/doc/bouml/figs/activityactionedit22.png
 share/doc/bouml/figs/activityactionedit23.png
 share/doc/bouml/figs/activityactionedit24.png
+share/doc/bouml/figs/activityactionedit25.png
+share/doc/bouml/figs/activityactionedit26.png
+share/doc/bouml/figs/activityactionedit27.png
+share/doc/bouml/figs/activityactionedit28.png
+share/doc/bouml/figs/activityactionedit29.png
 share/doc/bouml/figs/activityactionedit3.png
+share/doc/bouml/figs/activityactionedit30.png
+share/doc/bouml/figs/activityactionedit31.png
+share/doc/bouml/figs/activityactionedit32.png
+share/doc/bouml/figs/activityactionedit33.png
+share/doc/bouml/figs/activityactionedit34.png
+share/doc/bouml/figs/activityactionedit35.png
+share/doc/bouml/figs/activityactionedit36.png
+share/doc/bouml/figs/activityactionedit37.png
+share/doc/bouml/figs/activityactionedit38.png
 share/doc/bouml/figs/activityactionedit4.png
 share/doc/bouml/figs/activityactionedit5.png
 share/doc/bouml/figs/activityactionedit6.png
@@ -564,6 +592,7 @@ share/doc/bouml/figs/classmenu1.png
 share/doc/bouml/figs/classmenu1a.png
 share/doc/bouml/figs/classmenu2.png
 share/doc/bouml/figs/classpictmenu.png
+share/doc/bouml/figs/classpictmenu2.png
 share/doc/bouml/figs/classsettings.png
 share/doc/bouml/figs/classsettings2.png
 share/doc/bouml/figs/classstereotypes.png
@@ -708,6 +737,8 @@ share/doc/bouml/figs/free_package.png
 share/doc/bouml/figs/globalchange1.png
 share/doc/bouml/figs/gpro.png
 share/doc/bouml/figs/iconbar.png
+share/doc/bouml/figs/imagedialog.png
+share/doc/bouml/figs/imagemenu.png
 share/doc/bouml/figs/interruptibleactivityregion.png
 share/doc/bouml/figs/interruptiblemenu.png
 share/doc/bouml/figs/interruptibleregion1.png
@@ -727,12 +758,15 @@ share/doc/bouml/figs/linegeo3.png
 share/doc/bouml/figs/linegeo4.png
 share/doc/bouml/figs/mark_menu.png
 share/doc/bouml/figs/merge.png
+share/doc/bouml/figs/messagestereotypes.png
 share/doc/bouml/figs/misc_style_menu.png
 share/doc/bouml/figs/misc_style_menu1.png
 share/doc/bouml/figs/misc_style_menu2.png
 share/doc/bouml/figs/multipleselectionmenu.png
 share/doc/bouml/figs/multipleselectionmenu1.png
+share/doc/bouml/figs/multipleselectionmenu1bis.png
 share/doc/bouml/figs/multipleselectionmenu2.png
+share/doc/bouml/figs/multipleselectionmenu3.png
 share/doc/bouml/figs/nodedrawing.png
 share/doc/bouml/figs/nodedrawing_100.png
 share/doc/bouml/figs/nodeedit1.png
@@ -889,6 +923,12 @@ share/doc/bouml/figs/publicattribut.png
 share/doc/bouml/figs/publicoperation.png
 share/doc/bouml/figs/publicrelation.png
 share/doc/bouml/figs/regionstereotypes.png
+share/doc/bouml/figs/relatedelementsdialog.png
+share/doc/bouml/figs/relatedelementsdialog1.png
+share/doc/bouml/figs/relatedelementsdialog2.png
+share/doc/bouml/figs/relatedelementsdialog3.png
+share/doc/bouml/figs/relatedelementsdialog4.png
+share/doc/bouml/figs/relatedelementsdialog5.png
 share/doc/bouml/figs/relationdrawingsettings.png
 share/doc/bouml/figs/relationedit1.png
 share/doc/bouml/figs/relationeditcpp.png
@@ -913,6 +953,7 @@ share/doc/bouml/figs/relationsettings.png
 share/doc/bouml/figs/relationstereotypes.png
 share/doc/bouml/figs/required.bmp
 share/doc/bouml/figs/required_button.xpm
+share/doc/bouml/figs/revroundsettings.png
 share/doc/bouml/figs/ro_free_package.png
 share/doc/bouml/figs/ro_other_package.png
 share/doc/bouml/figs/ro_protected_package.png
@@ -961,6 +1002,7 @@ share/doc/bouml/figs/stateactionmenu.png
 share/doc/bouml/figs/stateactionpictmenu.png
 share/doc/bouml/figs/stateactionstereotypes.png
 share/doc/bouml/figs/stateactivity.png
+share/doc/bouml/figs/statedecompindic.png
 share/doc/bouml/figs/statediagram.png
 share/doc/bouml/figs/statediagramdrawingsettings.png
 share/doc/bouml/figs/statediagramdrawingsettings1.png
@@ -970,6 +1012,7 @@ share/doc/bouml/figs/statediagrammenu2.png
 share/doc/bouml/figs/statedrawingsettings.png
 share/doc/bouml/figs/statedrawingsettings1.png
 share/doc/bouml/figs/stateedit1.png
+share/doc/bouml/figs/stateedit1bis.png
 share/doc/bouml/figs/stateedit2.png
 share/doc/bouml/figs/stateedit3.png
 share/doc/bouml/figs/stateedit4.png
@@ -1001,6 +1044,7 @@ share/doc/bouml/figs/usecasedrawingsettings4.png
 share/doc/bouml/figs/usecasedrawingsettings5.png
 share/doc/bouml/figs/usecasedrawingsettings6.png
 share/doc/bouml/figs/usecasedrawingsettings7.png
+share/doc/bouml/figs/usecasedrawingsettings8.png
 share/doc/bouml/figs/usecaseedit.png
 share/doc/bouml/figs/usecasemenu.png
 share/doc/bouml/figs/usecasepictmenu.png
@@ -1016,6 +1060,7 @@ share/doc/bouml/figs/usecaseviewdrawingsettings4.png
 share/doc/bouml/figs/usecaseviewdrawingsettings5.png
 share/doc/bouml/figs/usecaseviewdrawingsettings6.png
 share/doc/bouml/figs/usecaseviewdrawingsettings7.png
+share/doc/bouml/figs/usecaseviewdrawingsettings8.png
 share/doc/bouml/figs/usecaseviewedit.png
 share/doc/bouml/figs/usecaseviewmenu.png
 share/doc/bouml/figs/usecasewizard.png
@@ -1058,6 +1103,7 @@ share/doc/bouml/index_componentdiagram.html
 share/doc/bouml/index_componentview.html
 share/doc/bouml/index_cppgenerator.html
 share/doc/bouml/index_cppreverse.html
+share/doc/bouml/index_cpproundtrip.html
 share/doc/bouml/index_cpputil.html
 share/doc/bouml/index_deploy.html
 share/doc/bouml/index_deploymentdiagram.html
@@ -1073,6 +1119,7 @@ share/doc/bouml/index_idlgenerator.html
 share/doc/bouml/index_javacat.html
 share/doc/bouml/index_javagenerator.html
 share/doc/bouml/index_javareverse.html
+share/doc/bouml/index_javaroundtrip.html
 share/doc/bouml/index_multiuser.html
 share/doc/bouml/index_node.html
 share/doc/bouml/index_objectdiagram.html
@@ -1111,6 +1158,7 @@ share/doc/bouml/index_xmiimport.html
 share/doc/bouml/javacat.html
 share/doc/bouml/javagenerator.html
 share/doc/bouml/javareverse.html
+share/doc/bouml/javaroundtrip.html
 share/doc/bouml/multiuser.html
 share/doc/bouml/node.html
 share/doc/bouml/objectdiagram.html
