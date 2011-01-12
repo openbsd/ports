@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/01/07 10:33:52 pea Exp $
+# $OpenBSD: Makefile,v 1.48 2011/01/12 08:06:35 pea Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		manage encryption keys
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		2.32.0
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=	cryptui              1.0      # .0.0
 
@@ -28,7 +28,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gnutls gobject-2.0 gpg-error
 WANTLIB += gssapi gthread-2.0 gtk-x11-2.0 krb5 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sasl2 ssl tasn1 xcb xml2 z xcb-render xcb-render-util
-WANTLIB += lber ldap notify soup-2.4 gpgme gnome-keyring>=6 gcr>=1
+WANTLIB += lber-2.4 ldap-2.4 notify soup-2.4 gpgme gnome-keyring>=6 gcr>=1
 WANTLIB += gp11 avahi-client avahi-common avahi-glib
 
 LIB_DEPENDS=		databases/openldap \
