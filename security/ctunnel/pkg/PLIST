@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/01 16:12:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/01/12 15:19:15 pea Exp $
 @bin bin/ctunnel
+@man man/man1/ctunnel.1
 share/doc/ctunnel/
 share/doc/ctunnel/README

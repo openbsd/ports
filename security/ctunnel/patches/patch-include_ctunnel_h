@@ -1,0 +1,13 @@
+$OpenBSD: patch-include_ctunnel_h,v 1.1 2011/01/12 15:19:15 pea Exp $
+--- include/ctunnel.h.orig	Wed Jan 12 09:24:23 2011
++++ include/ctunnel.h	Wed Jan 12 09:24:33 2011
+@@ -10,8 +10,8 @@
+ #include <syslog.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+-#include <netinet/ip.h>
+ #include <netinet/in_systm.h>
++#include <netinet/ip.h>
+ #include <arpa/inet.h>
+ #include <netdb.h>
+ #include <sys/ioctl.h>

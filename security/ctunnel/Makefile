@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/10/01 16:12:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/01/12 15:19:14 pea Exp $
 
 COMMENT=	provide cryptographic tunnel
 
-DISTNAME=	ctunnel-0.2
+DISTNAME=	ctunnel-0.4
 CATEGORIES=	security
 
 HOMEPAGE=	http://nardcore.org/ctunnel/
 
-MAINTAINER=	Pierre-Emmanuel Andre <pea@raveland.org>
+MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,9 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-WANTLIB= 	c crypto
+WANTLIB= 	c crypto pthread z
 
 NO_REGRESS=	Yes
+
+USE_GMAKE=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ctunnel
