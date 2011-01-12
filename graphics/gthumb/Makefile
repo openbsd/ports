@@ -1,11 +1,9 @@
-#$OpenBSD: Makefile,v 1.38 2010/11/17 09:51:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2011/01/12 20:53:32 ajacoutot Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	2.12.1
-
-REVISION=	0
+GNOME_VERSION=	2.12.2
 
 CATEGORIES=	graphics
 
@@ -27,7 +25,7 @@ WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
 WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs sqlite3 tiff xcb xcb-render
+WANTLIB += pthread-stubs tiff xcb xcb-render sqlite3
 WANTLIB += xml2 z unique-1.0 gstinterfaces-0.10 soup-gnome-2.4 soup-2.4
 WANTLIB += json-glib-1.0 gnutls proxy tasn1 stdc++ xcb-shm
 WANTLIB += clutter-glx-1.0 clutter-gtk-0.10 exiv2
@@ -41,7 +39,8 @@ LIB_DEPENDS=	devel/json-glib \
 		devel/libunique \
 		graphics/clutter/clutter-gtk \
 		graphics/exiv2 \
-		multimedia/gstreamer-0.10/plugins-base
+		multimedia/gstreamer-0.10/plugins-base \
+		databases/sqlite3
 RUN_DEPENDS=	misc/shared-mime-info
 
 MODGNOME_HELP_FILES=	Yes
