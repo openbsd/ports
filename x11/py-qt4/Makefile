@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/22 08:37:04 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/01/12 13:49:44 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
 
 # XXX: Upstream doesn't keep old files; if updating please mirror or ask sthen@
-V=		4.8.1
+V=		4.8.2
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
 PKGNAME-main=	py-qt4-${V}
@@ -35,7 +35,7 @@ RUN_DEPENDS-docs=
 PKG_ARCH-docs=	*
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/py-sip>=4.11.2 \
+RUN_DEPENDS=	devel/py-sip>=4.12 \
 		x11/dbus-python
 LIB_DEPENDS=	x11/qt4>=4.7.0 \
 		${MODPY_LIB_DEPENDS}
