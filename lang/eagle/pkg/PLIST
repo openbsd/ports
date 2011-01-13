@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/13 13:30:46 stu Exp $
+bin/eagle
+libdata/Eagle/
+libdata/Eagle/bin/
+libdata/Eagle/bin/Eagle.dll
+libdata/Eagle/bin/Eagle.pdb
+libdata/Eagle/bin/Eagle.tasks
+libdata/Eagle/bin/EagleCmdlets.dll
+libdata/Eagle/bin/EagleCmdlets.pdb
+libdata/Eagle/bin/EagleExtensions.dll
+libdata/Eagle/bin/EagleExtensions.pdb
+libdata/Eagle/bin/EagleShell.exe
+libdata/Eagle/bin/EagleShell.pdb
+libdata/Eagle/bin/EagleTasks.dll
+libdata/Eagle/bin/EagleTasks.pdb
+libdata/Eagle/bin/Hippogriff.exe
+libdata/Eagle/bin/Hippogriff.pdb
+libdata/Eagle/lib/
+libdata/Eagle/lib/Eagle1.0/
+libdata/Eagle/lib/Eagle1.0/embed.eagle
+libdata/Eagle/lib/Eagle1.0/init.eagle
+libdata/Eagle/lib/Eagle1.0/pkgIndex.eagle
+libdata/Eagle/lib/Eagle1.0/pkgIndex.tcl
+libdata/Eagle/lib/Eagle1.0/safe.eagle
+libdata/Eagle/lib/Eagle1.0/shell.eagle
+libdata/Eagle/lib/Eagle1.0/test.eagle
+libdata/Eagle/license.terms

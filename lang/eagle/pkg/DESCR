@@ -1,0 +1,6 @@
+Eagle (Extensible Adaptable Generalized Logic Engine) is an
+implementation of the Tcl language for the Common Language Runtime
+(CLR). Eagle was written from scratch based on the design and
+implementation of Tcl 8.4 and provides most of the functionality of the
+Tcl 8.4 interpreter while borrowing selected features from Tcl 8.5 and
+the upcoming Tcl 8.6, in addition to adding entirely new features.
