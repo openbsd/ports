@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_cp_call_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
---- gcc/cp/call.c.orig	Mon Nov  3 07:33:15 2008
-+++ gcc/cp/call.c	Mon Jun 22 00:53:58 2009
-@@ -5414,7 +5414,7 @@ name_as_c_string (tree name, tree type, bool *free_p)
+$OpenBSD: patch-gcc_cp_call_c,v 1.2 2011/01/13 00:18:18 jeremy Exp $
+--- gcc/cp/call.c.orig	Fri Aug  6 11:31:05 2010
++++ gcc/cp/call.c	Mon Jan 10 12:49:16 2011
+@@ -5418,7 +5418,7 @@ name_as_c_string (tree name, tree type, bool *free_p)
  	  || name == base_dtor_identifier
  	  || name == deleting_dtor_identifier)
  	{
@@ -10,7 +10,7 @@ $OpenBSD: patch-gcc_cp_call_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
  	  /* Remember that we need to free the memory allocated.  */
  	  *free_p = true;
  	}
-@@ -5424,7 +5424,7 @@ name_as_c_string (tree name, tree type, bool *free_p)
+@@ -5428,7 +5428,7 @@ name_as_c_string (tree name, tree type, bool *free_p)
        pretty_name = concat ("operator ",
  			    type_as_string (TREE_TYPE (name),
  					    TFF_PLAIN_IDENTIFIER),

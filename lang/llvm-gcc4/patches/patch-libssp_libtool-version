@@ -1,0 +1,9 @@
+$OpenBSD: patch-libssp_libtool-version,v 1.1 2011/01/13 00:18:18 jeremy Exp $
+--- libssp/libtool-version.orig	Mon Jan 10 13:21:57 2011
++++ libssp/libtool-version	Mon Jan 10 13:22:38 2011
+@@ -3,4 +3,4 @@
+ # a separate file so that version updates don't involve re-running
+ # automake.
+ # CURRENT:REVISION:AGE
+-0:0:0
++${LIBTOOLssp_VERSION}:0

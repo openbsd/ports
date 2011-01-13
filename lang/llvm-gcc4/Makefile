@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/26 17:27:38 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/01/13 00:18:18 jeremy Exp $
 
-# XXX WORK IN PROGRESS.
+# Note: library search order doesn't match base compilers
+# (/usr/local/include before /usr/include).
+
+SHARED_ONLY = Yes
 
 #ONLY_FOR_ARCHS = ${GCC4_ARCHS}
-ONLY_FOR_ARCHS = i386
-# amd64 has an -fPIC problem
+ONLY_FOR_ARCHS = i386 amd64
 # others unknown at this time
 
 COMMENT =	gcc4 front-end for LLVM
 
 GCC_V =		4.2.1
-LLVM_V =	2.7
+LLVM_V =	2.8
 DISTNAME =	llvm-gcc-4.2-${LLVM_V}.source
 PKGNAME =	${DISTNAME:S/.source//:S/gcc-/gcc/}
-REVISION =	2
 EXTRACT_SUFX=	.tgz
 
-SHARED_LIBS =	ssp	0.0 \
-		objc	2.0 \
-		stdc++	6.9	# XXX not controllable yet
+SHARED_LIBS =	ssp	1.0 \
+		objc	3.0 \
+		stdc++	7.0
 
 CATEGORIES =	lang devel
 
@@ -71,8 +72,23 @@ MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/gcc
 
 WRKSRC =		${WRKDIST}/obj
 
+# See bsd.lib.mk:162
+.if ${MACHINE_ARCH:Mi386*}
+PKG_ARGS+=      -Dno_i386=0
+.else
+PKG_ARGS+=      -Dno_i386=1
+.endif
+
+LIBTOOLssp_VERSION =	${LIBssp_VERSION:S/./:/}
+LIBTOOLobjc_VERSION =	${LIBobjc_VERSION:S/./:/}
+LIBTOOLstdc++_VERSION =	${LIBstdc++_VERSION:S/./:/}
+SUBST_VARS +=	LIBTOOLssp_VERSION LIBTOOLobjc_VERSION LIBTOOLstdc++_VERSION
+
 post-extract:
 	@mkdir -p ${WRKSRC}/gcc
+
+pre-configure:
+	${SUBST_CMD} ${WRKDIST}/lib{{stdc++-v3,objc}/configure,ssp/libtool-version}
 
 post-install:
 	@chown -R ${BINOWN}:${BINGRP} ${PREFIX}/lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include

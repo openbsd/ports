@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_dbxout_c,v 1.1.1.1 2009/06/22 22:37:32 sthen Exp $
---- gcc/dbxout.c.orig	Tue Sep  2 23:20:12 2008
-+++ gcc/dbxout.c	Mon Jun 22 00:53:59 2009
-@@ -1136,7 +1136,7 @@ dbxout_init (const char *input_file_name)
+$OpenBSD: patch-gcc_dbxout_c,v 1.2 2011/01/13 00:18:18 jeremy Exp $
+--- gcc/dbxout.c.orig	Thu May 20 22:58:44 2010
++++ gcc/dbxout.c	Mon Jan 10 12:49:16 2011
+@@ -1140,7 +1140,7 @@ dbxout_init (const char *input_file_name)
  	  if (cwd[0] == '\0')
  	    cwd = "/";
  	  else if (!IS_DIR_SEPARATOR (cwd[strlen (cwd) - 1]))

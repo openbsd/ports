@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/06/24 20:10:10 sthen Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.3 2011/01/13 00:18:18 jeremy Exp $
 @bin bin/${CONFIG}-cpp-${GCC_V}
 @bin bin/${CONFIG}-gcc-${GCC_V}
 @bin bin/${CONFIG}-llvm-c++
@@ -681,12 +680,15 @@ lib/llvm-gcc-${LLVM_V}/libesupc++.la
 lib/llvm-gcc-${LLVM_V}/libiberty.a
 lib/llvm-gcc-${LLVM_V}/libobjc.a
 lib/llvm-gcc-${LLVM_V}/libobjc.la
+@lib lib/llvm-gcc-${LLVM_V}/libobjc.so.${LIBobjc_VERSION}
 lib/llvm-gcc-${LLVM_V}/libssp.a
 lib/llvm-gcc-${LLVM_V}/libssp.la
+@lib lib/llvm-gcc-${LLVM_V}/libssp.so.${LIBssp_VERSION}
 lib/llvm-gcc-${LLVM_V}/libssp_nonshared.a
 lib/llvm-gcc-${LLVM_V}/libssp_nonshared.la
 lib/llvm-gcc-${LLVM_V}/libstdc++.a
 lib/llvm-gcc-${LLVM_V}/libstdc++.la
+@lib lib/llvm-gcc-${LLVM_V}/libstdc++.so.${LIBstdc++_VERSION}
 @man man/man1/llvm-cpp.1
 @man man/man1/llvm-g++.1
 @man man/man1/llvm-gcc.1

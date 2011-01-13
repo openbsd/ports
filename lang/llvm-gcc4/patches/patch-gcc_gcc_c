@@ -1,7 +1,7 @@
-$OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
---- gcc/gcc.c.orig	Sat Dec 19 00:12:36 2009
-+++ gcc/gcc.c	Wed Apr 28 23:16:03 2010
-@@ -1408,7 +1408,7 @@ translate_options (int *argcp, const char *const **arg
+$OpenBSD: patch-gcc_gcc_c,v 1.4 2011/01/13 00:18:18 jeremy Exp $
+--- gcc/gcc.c.orig	Mon Aug 30 13:52:59 2010
++++ gcc/gcc.c	Mon Jan 10 12:49:16 2011
+@@ -1409,7 +1409,7 @@ translate_options (int *argcp, const char *const **arg
  		  /* Store the translation as one argv elt or as two.  */
  		  if (arg != 0 && strchr (arginfo, 'j') != 0)
  		    newv[newindex++] = concat (option_map[j].equivalent, arg,
@@ -10,7 +10,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
  		  else if (arg != 0)
  		    {
  		      newv[newindex++] = option_map[j].equivalent;
-@@ -1748,7 +1748,7 @@ init_gcc_specs (struct obstack *obstack, const char *s
+@@ -1749,7 +1749,7 @@ init_gcc_specs (struct obstack *obstack, const char *s
  		"%{shared:", shared_name, "}"
  #endif
  #endif
@@ -19,7 +19,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
  
    obstack_grow (obstack, buf, strlen (buf));
    free (buf);
-@@ -1946,7 +1946,7 @@ set_spec (const char *name, const char *spec)
+@@ -1947,7 +1947,7 @@ set_spec (const char *name, const char *spec)
  
    old_spec = *(sl->ptr_spec);
    *(sl->ptr_spec) = ((spec[0] == '+' && ISSPACE ((unsigned char)spec[1]))
@@ -28,7 +28,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
  		     : xstrdup (spec));
  
  #ifdef DEBUG_SPECS
-@@ -2516,12 +2516,12 @@ for_each_path (const struct path_prefix *paths,
+@@ -2517,12 +2517,12 @@ for_each_path (const struct path_prefix *paths,
    just_multi_suffix = just_machine_suffix;
    if (do_multi && multilib_dir && strcmp (multilib_dir, ".") != 0)
      {
@@ -45,7 +45,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
  
    while (1)
      {
-@@ -2869,8 +2869,8 @@ add_sysrooted_prefix (struct path_prefix *pprefix, con
+@@ -2870,8 +2870,8 @@ add_sysrooted_prefix (struct path_prefix *pprefix, con
    if (target_system_root)
      {
        if (target_sysroot_suffix)
@@ -56,7 +56,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
  
        /* We have to override this because GCC's notion of sysroot
  	 moves along with GCC.  */
-@@ -3517,7 +3517,7 @@ process_command (int argc, const char **argv)
+@@ -3518,7 +3518,7 @@ process_command (int argc, const char **argv)
  	  break;
        new_argv0 = xmemdup (progname, baselen,
  			   baselen + concat_length (new_version, new_machine,
@@ -65,7 +65,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
        strcpy (new_argv0 + baselen, new_machine);
        strcat (new_argv0, "-gcc-");
        strcat (new_argv0, new_version);
-@@ -3571,7 +3571,7 @@ process_command (int argc, const char **argv)
+@@ -3572,7 +3572,7 @@ process_command (int argc, const char **argv)
  					     standard_libexec_prefix);
        /* LLVM LOCAL end no-canonical-prefixes */
        if (gcc_exec_prefix)
@@ -74,7 +74,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
      }
    else
      {
-@@ -3579,7 +3579,7 @@ process_command (int argc, const char **argv)
+@@ -3580,7 +3580,7 @@ process_command (int argc, const char **argv)
  	 GCC_EXEC_PREFIX is typically a directory name with a trailing
  	 / (which is ignored by make_relative_prefix), so append a
  	 program name.  */
@@ -83,7 +83,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
        /* LLVM LOCAL begin no-canonical-prefixes */
        gcc_libexec_prefix = get_relative_prefix (tmp_prefix,
  						standard_exec_prefix,
-@@ -3628,7 +3628,7 @@ process_command (int argc, const char **argv)
+@@ -3629,7 +3629,7 @@ process_command (int argc, const char **argv)
  	    {
  	      strncpy (nstore, startp, endp - startp);
  	      if (endp == startp)
@@ -92,7 +92,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
  	      else if (!IS_DIR_SEPARATOR (endp[-1]))
  		{
  		  nstore[endp - startp] = DIR_SEPARATOR;
-@@ -3662,7 +3662,7 @@ process_command (int argc, const char **argv)
+@@ -3663,7 +3663,7 @@ process_command (int argc, const char **argv)
  	    {
  	      strncpy (nstore, startp, endp - startp);
  	      if (endp == startp)
@@ -101,7 +101,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
  	      else if (!IS_DIR_SEPARATOR (endp[-1]))
  		{
  		  nstore[endp - startp] = DIR_SEPARATOR;
-@@ -3695,7 +3695,7 @@ process_command (int argc, const char **argv)
+@@ -3696,7 +3696,7 @@ process_command (int argc, const char **argv)
  	    {
  	      strncpy (nstore, startp, endp - startp);
  	      if (endp == startp)
@@ -110,7 +110,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
  	      else if (!IS_DIR_SEPARATOR (endp[-1]))
  		{
  		  nstore[endp - startp] = DIR_SEPARATOR;
-@@ -4220,7 +4220,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR 
+@@ -4221,7 +4221,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR 
  	      PREFIX_PRIORITY_LAST, 1, 0);
  
    tooldir_prefix = concat (tooldir_base_prefix, spec_machine,
@@ -119,7 +119,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
  
    /* If tooldir is relative, base it on exec_prefixes.  A relative
       tooldir lets us move the installed tree as a unit.
-@@ -4235,28 +4235,28 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR 
+@@ -4236,28 +4236,28 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR 
  	{
  	  char *gcc_exec_tooldir_prefix
  	    = concat (gcc_exec_prefix, spec_machine, dir_separator_str,
@@ -154,7 +154,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
  	      "BINUTILS", PREFIX_PRIORITY_LAST, 0, 1);
  
  #if defined(TARGET_SYSTEM_ROOT_RELOCATABLE) && !defined(VMS)
-@@ -4386,7 +4386,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR 
+@@ -4387,7 +4387,7 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR 
  	{ /* POSIX allows separation of -l and the lib arg;
  	     canonicalize by concatenating -l with its arg */
  	  infiles[n_infiles].language = "*";
@@ -163,7 +163,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
  	}
        else if (strncmp (argv[i], "-l", 2) == 0)
  	{
-@@ -6666,8 +6666,8 @@ main (int argc, char **argv)
+@@ -6667,8 +6667,8 @@ main (int argc, char **argv)
    /* Read specs from a file if there is one.  */
  
    machine_suffix = concat (spec_machine, dir_separator_str,
@@ -174,7 +174,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
  
    specs_file = find_a_file (&startfile_prefixes, "specs", R_OK, true);
    /* Read the specs file unless it is a default one.  */
-@@ -6791,7 +6791,7 @@ main (int argc, char **argv)
+@@ -6792,7 +6792,7 @@ main (int argc, char **argv)
  	  if (gcc_exec_prefix)
  	    add_prefix (&startfile_prefixes,
  			concat (gcc_exec_prefix, machine_suffix,
@@ -183,7 +183,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
  			NULL, PREFIX_PRIORITY_LAST, 0, 1);
  
  	  /* APPLE LOCAL begin ARM sysroot startfile_prefixes */
-@@ -6801,13 +6801,13 @@ main (int argc, char **argv)
+@@ -6802,13 +6802,13 @@ main (int argc, char **argv)
  	    add_sysrooted_prefix (&startfile_prefixes,
  				  concat (standard_exec_prefix,
  					  machine_suffix,
@@ -199,7 +199,7 @@ $OpenBSD: patch-gcc_gcc_c,v 1.3 2010/04/29 16:45:53 jsg Exp $
  			NULL, PREFIX_PRIORITY_LAST, 0, 1);
  	  /* APPLE LOCAL end ARM sysroot startfile_prefixes */
  	}
-@@ -6836,7 +6836,7 @@ main (int argc, char **argv)
+@@ -6837,7 +6837,7 @@ main (int argc, char **argv)
    /* If we have a GCC_EXEC_PREFIX envvar, modify it for cpp's sake.  */
    if (gcc_exec_prefix)
      gcc_exec_prefix = concat (gcc_exec_prefix, spec_machine, dir_separator_str,

@@ -1,0 +1,12 @@
+$OpenBSD: patch-libstdc++-v3_configure,v 1.1 2011/01/13 00:18:18 jeremy Exp $
+--- libstdc++-v3/configure.orig	Mon Jan 10 13:08:39 2011
++++ libstdc++-v3/configure	Mon Jan 10 13:12:23 2011
+@@ -1378,7 +1378,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ ### am handles this now?  ORIGINAL_LD_FOR_MULTILIBS=$LD
+ 
+ # For libtool versioning info, format is CURRENT:REVISION:AGE
+-libtool_VERSION=6:9:0
++libtool_VERSION=${LIBTOOLstdc++_VERSION}:0
+ 
+ 
+ # Find the rest of the source tree framework.

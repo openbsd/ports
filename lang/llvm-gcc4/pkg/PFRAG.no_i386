@@ -1,0 +1,40 @@
+@comment $OpenBSD: PFRAG.no_i386,v 1.1 2011/01/13 00:18:18 jeremy Exp $
+lib/llvm-gcc-${LLVM_V}/fpic/
+lib/llvm-gcc-${LLVM_V}/fpic/libesupc++.a
+lib/llvm-gcc-${LLVM_V}/fpic/libesupc++.la
+lib/llvm-gcc-${LLVM_V}/fpic/libiberty.a
+lib/llvm-gcc-${LLVM_V}/fpic/libobjc.a
+lib/llvm-gcc-${LLVM_V}/fpic/libobjc.la
+@lib lib/llvm-gcc-${LLVM_V}/fpic/libobjc.so.${LIBobjc_VERSION}
+lib/llvm-gcc-${LLVM_V}/fpic/libssp.a
+lib/llvm-gcc-${LLVM_V}/fpic/libssp.la
+@lib lib/llvm-gcc-${LLVM_V}/fpic/libssp.so.${LIBssp_VERSION}
+lib/llvm-gcc-${LLVM_V}/fpic/libssp_nonshared.a
+lib/llvm-gcc-${LLVM_V}/fpic/libssp_nonshared.la
+lib/llvm-gcc-${LLVM_V}/fpic/libstdc++.a
+lib/llvm-gcc-${LLVM_V}/fpic/libstdc++.la
+@lib lib/llvm-gcc-${LLVM_V}/fpic/libstdc++.so.${LIBstdc++_VERSION}
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/fpic/
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/fpic/libgcc.a
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/fpic/libgcov.a
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/atomic_word.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/basic_file.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/c++allocator.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/c++config.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/c++io.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/c++locale.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/cpu_defines.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/ctype_base.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/ctype_inline.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/ctype_noninline.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/cxxabi_tweaks.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/gthr-default.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/gthr-posix.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/gthr-single.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/gthr-tpf.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/gthr.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/messages_members.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/os_defines.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/fpic/bits/time_members.h
