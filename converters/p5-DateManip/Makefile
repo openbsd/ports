@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/12/03 11:44:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/01/13 09:37:30 jasper Exp $
 
 COMMENT =	manipulate dates in perl
 DISTNAME =	Date-Manip-6.14
@@ -17,6 +17,9 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 CONFIGURE_STYLE =	modbuild
+
+# CPAN has issues and hasn't been hosting the distfile for a while now.
+MASTER_SITES = 		http://distfiles.nl/
 
 MAKE_ENV +=      	TEST_POD=Yes
 
