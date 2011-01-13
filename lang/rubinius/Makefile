@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/07 19:18:43 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2011/01/13 00:21:03 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	Ruby virtual machine and core library
 V=		1.2.0
 DISTNAME =	rubinius-${V}-20101221
 PKGNAME =	rubinius-$V
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	lang lang/ruby
 
@@ -28,7 +28,8 @@ MASTER_SITES =	http://asset.rubini.us/
 
 BUILD_DEPENDS =	devel/bison \
 		devel/ruby-rake \
-		devel/libffi
+		devel/libffi \
+		devel/llvm
 LIB_DEPENDS =	databases/gdbm \
 		databases/db/v4 \
 		${MODRUBY_LIB_DEPENDS}
@@ -53,8 +54,7 @@ MAKE_ENV +=		CC="${CC}"
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/rakelib/vm.rake
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${RUBY} configure \
-		--prefix=${PREFIX}/lib/rubinius --skip-prebuilt --disable-llvm \
-		--rake=${RAKE}
+		--prefix=${PREFIX}/lib/rubinius --skip-prebuilt --rake=${RAKE}
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RAKE} build
