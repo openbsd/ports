@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_rules,v 1.1 2011/01/13 00:15:50 jeremy Exp $
+--- Makefile.rules.orig	Thu Jan  6 15:35:39 2011
++++ Makefile.rules	Thu Jan  6 15:37:39 2011
+@@ -959,9 +959,10 @@ ifeq ($(HAVE_LINK_VERSION_SCRIPT),1)
+ NativeExportsFile := $(ObjDir)/$(notdir $(EXPORTED_SYMBOL_FILE)).map
+ $(NativeExportsFile): $(EXPORTED_SYMBOL_FILE) $(ObjDir)/.dir
+ 	$(Verb) echo "{" > $@
+-	$(Verb) grep -q "\<" $< && echo "  global:" >> $@ || :
++	$(Verb) echo "  global:" >> $@
+ 	$(Verb) sed -e 's/$$/;/' -e 's/^/    /' < $< >> $@
+-	$(Verb) echo "  local: *;" >> $@
++	$(Verb) echo "  local:" >> $@
++	$(Verb) echo "    *;" >> $@
+ 	$(Verb) echo "};" >> $@
+ clean-local::
+ 	-$(Verb) $(RM) -f $(NativeExportsFile)

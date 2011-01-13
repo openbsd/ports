@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_clang_lib_Lex_Lexer_cpp,v 1.5 2010/04/29 16:37:09 jsg Exp $
---- tools/clang/lib/Lex/Lexer.cpp.orig	Wed Feb  3 22:06:21 2010
-+++ tools/clang/lib/Lex/Lexer.cpp	Tue Apr 27 20:57:36 2010
-@@ -1104,6 +1104,7 @@ static bool isEndOfBlockCommentWithEscapedNewLine(cons
+$OpenBSD: patch-tools_clang_lib_Lex_Lexer_cpp,v 1.6 2011/01/13 00:15:50 jeremy Exp $
+--- tools/clang/lib/Lex/Lexer.cpp.orig	Tue Aug 31 09:42:00 2010
++++ tools/clang/lib/Lex/Lexer.cpp	Thu Jan  6 11:26:07 2011
+@@ -1334,6 +1334,7 @@ static bool isEndOfBlockCommentWithEscapedNewLine(cons
    return true;
  }
  

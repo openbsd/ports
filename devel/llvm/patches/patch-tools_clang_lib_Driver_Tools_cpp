@@ -1,24 +1,12 @@
-$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.5 2010/06/12 12:15:08 sthen Exp $
---- tools/clang/lib/Driver/Tools.cpp.orig	Sun Mar  7 04:46:18 2010
-+++ tools/clang/lib/Driver/Tools.cpp	Thu Jun 10 16:12:25 2010
-@@ -576,6 +576,11 @@ void Clang::AddX86TargetArgs(const ArgList &Args,
-         CPUName = "core2";
-       else if (getToolChain().getArchName() == "i386")
-         CPUName = "yonah";
-+    } else if (getToolChain().getOS().startswith("openbsd"))  {
-+      if (getToolChain().getArchName() == "x86_64")
-+        CPUName = "x86-64";
-+      else if (getToolChain().getArchName() == "i386")
-+        CPUName = "i486";
-     } else {
-       if (getToolChain().getArchName() == "x86_64")
-         CPUName = "x86-64";
-@@ -2551,7 +2556,7 @@ void openbsd::Link::ConstructJob(Compilation &C, const
-   if (Triple.substr(0, 6) == "x86_64")
-     Triple.replace(0, 6, "amd64");
-   CmdArgs.push_back(Args.MakeArgString("-L/usr/lib/gcc-lib/" + Triple +
--                                       "/3.3.5"));
-+                                       "/4.2.1"));
+$OpenBSD: patch-tools_clang_lib_Driver_Tools_cpp,v 1.6 2011/01/13 00:15:50 jeremy Exp $
+--- tools/clang/lib/Driver/Tools.cpp.orig	Thu Sep  2 16:59:25 2010
++++ tools/clang/lib/Driver/Tools.cpp	Thu Jan  6 11:29:39 2011
+@@ -2631,7 +2631,7 @@ void auroraux::Link::ConstructJob(Compilation &C, cons
+ 
+   CmdArgs.push_back(Args.MakeArgString("-L/opt/gcc4/lib/gcc/"
+                                        + getToolChain().getTripleString()
+-                                       + "/4.2.4"));
++                                       + "/4.2.1"));
  
    Args.AddAllArgs(CmdArgs, options::OPT_L);
    Args.AddAllArgs(CmdArgs, options::OPT_T_Group);

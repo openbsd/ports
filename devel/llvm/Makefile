@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/01/13 00:15:50 jeremy Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
-LLVM_V =	2.7
+LLVM_V =	2.8
 DISTNAME =	llvm-${LLVM_V}
-REVISION =	4
 
 CATEGORIES =	devel
 
@@ -63,6 +62,9 @@ CONFIGURE_ARGS =	--enable-bindings=no \
 			--enable-optimized
 
 MODGNU_CONFIG_GUESS_DIRS =  ${WRKSRC}/autoconf
+
+CLANG_INCLUDE_PATH =	lib/clang/${LLVM_V}/include
+SUBST_VARS +=	CLANG_INCLUDE_PATH
 
 pre-configure:
 	@perl -pi -e s,-lpthread,-pthread,g ${WRKSRC}/configure

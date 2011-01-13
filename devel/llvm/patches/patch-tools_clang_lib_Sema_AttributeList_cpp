@@ -1,0 +1,10 @@
+$OpenBSD: patch-tools_clang_lib_Sema_AttributeList_cpp,v 1.1 2011/01/13 00:15:50 jeremy Exp $
+--- tools/clang/lib/Sema/AttributeList.cpp.orig	Thu Jan  6 11:31:26 2011
++++ tools/clang/lib/Sema/AttributeList.cpp	Thu Jan  6 11:32:32 2011
+@@ -132,5 +132,6 @@ AttributeList::Kind AttributeList::getKind(const Ident
+     .Case("__fastcall", AT_fastcall)
+     .Case("__thiscall", AT_thiscall)
+     .Case("__pascal", AT_pascal)
++    .Case("bounded", IgnoredAttribute) // XXX
+     .Default(UnknownAttribute);
+ }
