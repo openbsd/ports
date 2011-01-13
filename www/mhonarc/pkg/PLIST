@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/10/31 18:31:56 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/01/13 09:53:50 jasper Exp $
 bin/mha-dbedit
 bin/mha-dbrecover
 bin/mha-decode
@@ -210,6 +210,7 @@ share/doc/mhonarc/rcfileexs/date.mrc.html
 share/doc/mhonarc/rcfileexs/def-mime.mrc.html
 share/doc/mhonarc/rcfileexs/frames.mrc.html
 share/doc/mhonarc/rcfileexs/icons.mrc.html
+share/doc/mhonarc/rcfileexs/secure.mrc.html
 share/doc/mhonarc/rcfileexs/subject.mrc.html
 share/doc/mhonarc/rcfileexs/utf-8-encode.mrc.html
 share/doc/mhonarc/rcfileexs/utf-8.mrc.html
@@ -259,6 +260,7 @@ share/doc/mhonarc/resources/fileperms.html
 share/doc/mhonarc/resources/firstpglink.html
 share/doc/mhonarc/resources/fldbeg.html
 share/doc/mhonarc/resources/fldend.html
+share/doc/mhonarc/resources/followsymlinks.html
 share/doc/mhonarc/resources/folrefs.html
 share/doc/mhonarc/resources/folupbegin.html
 share/doc/mhonarc/resources/folupend.html
@@ -495,6 +497,7 @@ share/examples/mhonarc/mha-mhedit/mha-repl.mrc
 share/examples/mhonarc/mha-preview
 share/examples/mhonarc/mhasiteinit.pl
 share/examples/mhonarc/mhonarc.vim
+share/examples/mhonarc/secure.mrc
 share/examples/mhonarc/subject.mrc
 share/examples/mhonarc/utf-8-encode.mrc
 share/examples/mhonarc/utf-8.mrc

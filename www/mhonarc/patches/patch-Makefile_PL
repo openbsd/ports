@@ -1,26 +1,17 @@
-$OpenBSD: patch-Makefile_PL,v 1.2 2003/02/16 20:21:12 margarida Exp $
---- Makefile.PL.orig	Sat Jan  4 04:44:21 2003
-+++ Makefile.PL	Sun Feb 16 19:40:24 2003
+$OpenBSD: patch-Makefile_PL,v 1.3 2011/01/13 09:53:50 jasper Exp $
+--- Makefile.PL.orig	Sat Jan  1 01:56:12 2011
++++ Makefile.PL	Sun Jan  9 17:25:05 2011
 @@ -21,8 +21,8 @@ foreach (@ARGV) {
  }
  my $opt_prefix  = defined($vars{'PREFIX'}) ?
  			"-prefix $vars{'PREFIX'}" : "";
 -my $opt_binpath = defined($vars{'INSTALLSCRIPT'}) ?
--			"-prefix $vars{'INSTALLSCRIPT'}" : "";
+-			"-binpath $vars{'INSTALLSCRIPT'}" : "";
 +my $opt_binpath = defined($vars{'INSTALLBIN'}) ?
 +			"-binpath $vars{'INSTALLBIN'}" : "";
  my $opt_libpath = defined($vars{'LIB'}) ?
  			"-libpath $vars{'LIB'}" :
  		  defined($vars{'INSTALLSITELIB'}) ?
-@@ -30,7 +30,7 @@ my $opt_libpath = defined($vars{'LIB'}) 
- 		  defined($vars{'INSTALLPRIVLIB'}) ?
- 			"-libpath $vars{'INSTALLPRIVLIB'}" : "";
- my $opt_manpath = defined($vars{'INSTALLMAN1DIR'}) ?
--			"-prefix $vars{'INSTALLMAN1DIR'}" : "";
-+			"-manpath $vars{'INSTALLMAN1DIR'}" : "";
-    $opt_manpath =~ s/man1$//;
- 
- my $instme_args = "$opt_prefix $opt_binpath $opt_libpath $opt_manpath";
 @@ -64,7 +64,7 @@ default: _FORCE
  	\$(CHMOD) -R a+r,a+X .
  
