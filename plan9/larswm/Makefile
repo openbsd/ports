@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/24 21:31:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/01/13 08:47:07 jasper Exp $
 
 COMMENT=	9wm with automatic window tiling and virtual desktops
 
 DISTNAME=	larswm-7.5.3
-REVISION=	2
+REVISION =	3
 CATEGORIES=	plan9
 
-HOMEPAGE=	http://www.lab1702.net/fnurt/larswm/
-MASTER_SITES=	${HOMEPAGE} \
-		http://openbsd.rutgers.edu/
+HOMEPAGE =	http://larswm.sourceforge.net/
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=larswm/} \
+		http://spacehopper.org/mirrors/
 
-MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
+MAINTAINER =	William Yodlowsky <william@openbsd.org>
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+# nonstandard license
+PERMIT_PACKAGE_CDROM =	No
+PERMIT_PACKAGE_FTP =	No
+PERMIT_DISTFILES_CDROM = No
+PERMIT_DISTFILES_FTP =	No
 
 WANTLIB =	ICE SM X11 Xau Xdmcp Xext Xmu Xt c pthread-stubs xcb
 

@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.25 2010/10/24 21:31:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/01/13 08:47:07 jasper Exp $
 
 COMMENT=	simple menu patterned after plan9
 
 DISTNAME=	9menu-1.7
-REVISION=	0
+REVISION =	1
 CATEGORIES=	plan9
 
 MASTER_SITES=	ftp://ftp.freefriends.org/arnold/Source/
 
 EXTRACT_SUFX=	.shar.gz
 
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+# nonstandard license
+PERMIT_PACKAGE_CDROM =	No
+PERMIT_PACKAGE_FTP =	No
+PERMIT_DISTFILES_CDROM = No
+PERMIT_DISTFILES_FTP =	No
 WANTLIB=		X11 c pthread-stubs xcb
 
 MAKE_FLAGS=	CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
