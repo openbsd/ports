@@ -1,0 +1,17 @@
+$OpenBSD: patch-gforthmi_in,v 1.1 2011/01/13 15:35:39 jasper Exp $
+
+Adjust for modified path/binary names.
+
+--- gforthmi.in.orig	Thu Jan 13 16:33:06 2011
++++ gforthmi.in	Thu Jan 13 16:33:41 2011
+@@ -20,8 +20,8 @@
+ 
+ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+-test "x$GFORTHD" != x || GFORTHD=$prefix/lib/gforth/@PACKAGE_VERSION@/gforth-ditc
+-test "x$GFORTH" != x || GFORTH="@bindir@/gforth-@PACKAGE_VERSION@ --die-on-signal"
++test "x$GFORTHD" != x || GFORTHD=$prefix/lib/gforth/gforth-ditc
++test "x$GFORTH" != x || GFORTH="@bindir@/gforth --die-on-signal"
+ if test $# = 0 || test $1 = --help || test $1 = -h; then
+   echo "usage: `basename $0` [--application] target-name [gforth-options]"
+   echo "creates a relocatable image 'target-name'"
