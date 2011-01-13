@@ -1,34 +1,33 @@
-# $OpenBSD: Makefile,v 1.10 2010/08/30 22:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/01/13 08:13:56 jasper Exp $
 
-COMMENT=	Python client library for Google data APIs
+COMMENT =	Python client library for Google data APIs
 
-MODPY_EGG_VERSION=2.0.10
-DISTNAME=	gdata-${MODPY_EGG_VERSION}
-PKGNAME=	py-gdata-${MODPY_EGG_VERSION}
-REVISION =	0
-CATEGORIES=	devel
+MODPY_EGG_VERSION = 2.0.13
+DISTNAME =	gdata-${MODPY_EGG_VERSION}
+PKGNAME =	py-gdata-${MODPY_EGG_VERSION}
+CATEGORIES =	devel
 
-HOMEPAGE=	http://code.google.com/p/gdata-python-client/
-MAINTAINER=	frantisek holop <minusf@obiit.org>
+HOMEPAGE =	http://code.google.com/p/gdata-python-client/
+MAINTAINER =	frantisek holop <minusf@obiit.org>
 
 # Apache License 2.0
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM= Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=	http://gdata-python-client.googlecode.com/files/
+MASTER_SITES =	http://gdata-python-client.googlecode.com/files/
 
-MODULES=	lang/python
+MODULES =	lang/python
 
-REGRESS_IS_INTERACTIVE=	Yes
+REGRESS_IS_INTERACTIVE = Yes
 
 do-regress: fake
 	@cd ${WRKSRC}/tests && ${MAKE_ENV} \
 		PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} ./run_data_tests.py
 
-D=	${PREFIX}/share/doc/py-gdata
-E=	${PREFIX}/share/examples/py-gdata
+D =	${PREFIX}/share/doc/py-gdata
+E =	${PREFIX}/share/examples/py-gdata
 
 post-install:
 	${INSTALL_DATA_DIR} $D

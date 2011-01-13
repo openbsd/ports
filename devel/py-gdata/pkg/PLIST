@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/07/02 00:06:31 djm Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/01/13 08:13:56 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/atom/
 lib/python${MODPY_VERSION}/site-packages/atom/__init__.py
 lib/python${MODPY_VERSION}/site-packages/atom/__init__.pyc
@@ -109,9 +109,18 @@ lib/python${MODPY_VERSION}/site-packages/gdata/apps/adminsettings/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gdata/apps/adminsettings/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gdata/apps/adminsettings/service.py
 lib/python${MODPY_VERSION}/site-packages/gdata/apps/adminsettings/service.pyc
+lib/python${MODPY_VERSION}/site-packages/gdata/apps/audit/
+lib/python${MODPY_VERSION}/site-packages/gdata/apps/audit/__init__.py
+lib/python${MODPY_VERSION}/site-packages/gdata/apps/audit/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gdata/apps/audit/service.py
+lib/python${MODPY_VERSION}/site-packages/gdata/apps/audit/service.pyc
 lib/python${MODPY_VERSION}/site-packages/gdata/apps/emailsettings/
 lib/python${MODPY_VERSION}/site-packages/gdata/apps/emailsettings/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gdata/apps/emailsettings/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gdata/apps/emailsettings/client.py
+lib/python${MODPY_VERSION}/site-packages/gdata/apps/emailsettings/client.pyc
+lib/python${MODPY_VERSION}/site-packages/gdata/apps/emailsettings/data.py
+lib/python${MODPY_VERSION}/site-packages/gdata/apps/emailsettings/data.pyc
 lib/python${MODPY_VERSION}/site-packages/gdata/apps/emailsettings/service.py
 lib/python${MODPY_VERSION}/site-packages/gdata/apps/emailsettings/service.pyc
 lib/python${MODPY_VERSION}/site-packages/gdata/apps/groups/
@@ -124,8 +133,15 @@ lib/python${MODPY_VERSION}/site-packages/gdata/apps/migration/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gdata/apps/migration/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gdata/apps/migration/service.py
 lib/python${MODPY_VERSION}/site-packages/gdata/apps/migration/service.pyc
+lib/python${MODPY_VERSION}/site-packages/gdata/apps/organization/
+lib/python${MODPY_VERSION}/site-packages/gdata/apps/organization/__init__.py
+lib/python${MODPY_VERSION}/site-packages/gdata/apps/organization/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gdata/apps/organization/service.py
+lib/python${MODPY_VERSION}/site-packages/gdata/apps/organization/service.pyc
 lib/python${MODPY_VERSION}/site-packages/gdata/apps/service.py
 lib/python${MODPY_VERSION}/site-packages/gdata/apps/service.pyc
+lib/python${MODPY_VERSION}/site-packages/gdata/apps_property.py
+lib/python${MODPY_VERSION}/site-packages/gdata/apps_property.pyc
 lib/python${MODPY_VERSION}/site-packages/gdata/auth.py
 lib/python${MODPY_VERSION}/site-packages/gdata/auth.pyc
 lib/python${MODPY_VERSION}/site-packages/gdata/base/
@@ -422,6 +438,8 @@ lib/python${MODPY_VERSION}/site-packages/gdata/webmastertools/service.pyc
 lib/python${MODPY_VERSION}/site-packages/gdata/youtube/
 lib/python${MODPY_VERSION}/site-packages/gdata/youtube/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gdata/youtube/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/gdata/youtube/client.py
+lib/python${MODPY_VERSION}/site-packages/gdata/youtube/client.pyc
 lib/python${MODPY_VERSION}/site-packages/gdata/youtube/data.py
 lib/python${MODPY_VERSION}/site-packages/gdata/youtube/data.pyc
 lib/python${MODPY_VERSION}/site-packages/gdata/youtube/service.py
@@ -526,6 +544,7 @@ share/examples/py-gdata/
 share/examples/py-gdata/analytics/
 share/examples/py-gdata/analytics/account_feed_demo.py
 share/examples/py-gdata/analytics/data_feed_demo.py
+share/examples/py-gdata/analytics/mgmt_feed_demo.py
 share/examples/py-gdata/apps/
 share/examples/py-gdata/apps/adminsettings_example.py
 share/examples/py-gdata/authsub/
