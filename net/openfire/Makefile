@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/01/13 22:35:52 kurt Exp $
 
 COMMENT=	XMPP real time collaboration server
 DISTNAME=	openfire_src_3_6_4
 PKGNAME=	openfire-3.6.4
-REVISION=	5
+REVISION=	6
 CATEGORIES=	net
 
 MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/

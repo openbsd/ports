@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/01/11 15:47:49 kurt Exp $
+# $OpenBSD: Makefile,v 1.41 2011/01/13 22:35:52 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -8,8 +8,9 @@ COMMENT-jre=	Java2(TM) SE Runtime Environment v${V} Early Access ${B}
 V=		1.7.0.00
 B=		b122
 PKGNAME=	jdk-${V}
-PKGNAME-main=	jdk-${V}${B}
-PKGNAME-jre=	jre-${V}${B}
+PKGNAME-main=	jdk-${V}${B:S/b/beta/}
+PKGNAME-jre=	jre-${V}${B:S/b/beta/}
+EPOCH=		0
 
 # see openjdk/jaxp/jaxp.properties & openjdk/jaxws/jaxws.properties 
 # in ${WRKDIR} for names and download locations of extra distfiles
@@ -56,11 +57,11 @@ USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .if ${FLAVOR:L:Mnative_bootstrap}
-INSTALLED!= (pkg_info -e "jdk->=1.7,<1.8" -q && echo yes) || echo no
+INSTALLED!= (pkg_info -qe "jdk->=1.7.0.00beta122v0,<1.8v0" && echo yes) || echo no
 .if ${INSTALLED:L} != "yes"
-ERRORS += "Fatal: This flavor requires an installed 1.7 jdk package"
+ERRORS += "Fatal: This flavor requires an installed 1.7.0.00beta122v0 jdk package or greater"
 .endif
-BUILD_DEPENDS+=	jdk->=1.7,<1.8:devel/jdk/1.7
+BUILD_DEPENDS+=	jdk->=1.7.0.00beta122v0,<1.8v0:devel/jdk/1.7
 ALT_BOOTDIR=	${LOCALBASE}/jdk-1.7.0
 .else
 BUILD_DEPENDS+=	jdk->=1.6,<1.7:devel/jdk/1.6

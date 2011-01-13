@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2011/01/11 15:47:50 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2011/01/13 22:35:52 kurt Exp $
 @option no-default-conflict
-@conflict jdk->=1.7,<1.8
+@conflict jdk->=1.7,<1.8|jdk->=1.7v0,<1.8v0
 ${JDKHOME}/
 ${JDKHOME}/ASSEMBLY_EXCEPTION
 ${JDKHOME}/LICENSE

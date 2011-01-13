@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-jre,v 1.7 2011/01/11 15:47:50 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.8 2011/01/13 22:35:52 kurt Exp $
 @option no-default-conflict
-@conflict jre->=1.7,<1.8
+@conflict jre->=1.7,<1.8|jre->=1.7v0,<1.8v0
 ${JREHOME}/
 ${JREHOME}/ASSEMBLY_EXCEPTION
 ${JREHOME}/LICENSE
