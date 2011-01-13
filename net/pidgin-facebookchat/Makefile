@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/19 22:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/01/13 10:29:27 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,6 +7,7 @@ COMMENT =	Facebook plugin for Pidgin
 V =		1.68
 DISTNAME =	pidgin-facebookchat-source-${V}
 PKGNAME =	pidgin-facebookchat-${V}
+REVISION =	0
 CATEGORIES =	net
 
 HOMEPAGE =	http://code.google.com/p/pidgin-facebookchat/
@@ -37,10 +38,5 @@ NO_REGRESS =	Yes
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/purple-2/
 	${INSTALL_DATA} ${WRKBUILD}/libfacebook.so ${PREFIX}/lib/purple-2/
-.for i in 16 22 48
-	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/pidgin/protocols/${i}/
-	${INSTALL_DATA} ${WRKSRC}/facebook${i}.png \
-		${PREFIX}/share/pixmaps/pidgin/protocols/${i}/facebook.png
-.endfor
 
 .include <bsd.port.mk>
