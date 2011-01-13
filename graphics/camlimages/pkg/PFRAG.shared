@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2011/01/13 10:22:54 dcoppa Exp $
+lib/ocaml/stublibs/dllcamlimages.so
+lib/ocaml/stublibs/dllcamlimages_core.so
