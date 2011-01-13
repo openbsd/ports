@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/11/07 08:35:38 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/01/13 08:46:36 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}webform/
@@ -39,6 +39,7 @@ ${DRUPAL_MODS}webform/translations/hu.po
 ${DRUPAL_MODS}webform/translations/it.po
 ${DRUPAL_MODS}webform/translations/ja.po
 ${DRUPAL_MODS}webform/translations/nl.po
+${DRUPAL_MODS}webform/translations/pl.po
 ${DRUPAL_MODS}webform/translations/ru.po
 ${DRUPAL_MODS}webform/translations/sk.po
 ${DRUPAL_MODS}webform/translations/sv.po
