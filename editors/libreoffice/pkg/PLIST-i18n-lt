@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-lt,v 1.5 2010/12/20 09:07:49 robert Exp $
+@comment $OpenBSD: PLIST-i18n-lt,v 1.6 2011/01/14 20:04:56 robert Exp $
 @conflict openoffice-i18n-lt-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/lt/
@@ -133,7 +133,6 @@ lib/libreoffice/basis${BV}/program/resource/svslt.res
 lib/libreoffice/basis${BV}/program/resource/svtlt.res
 lib/libreoffice/basis${BV}/program/resource/svxlt.res
 lib/libreoffice/basis${BV}/program/resource/swlt.res
-lib/libreoffice/basis${BV}/program/resource/t602filteres.res
 lib/libreoffice/basis${BV}/program/resource/t602filterlt.res
 lib/libreoffice/basis${BV}/program/resource/textconversiondlgslt.res
 lib/libreoffice/basis${BV}/program/resource/tklt.res
