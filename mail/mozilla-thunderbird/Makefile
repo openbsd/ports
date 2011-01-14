@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2011/01/05 08:22:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.114 2011/01/14 22:53:42 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -12,13 +12,13 @@ MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-REVISION-main =		0
+REVISION-main =		1
 PKGNAME-lightning =	lightning-1.0beta2
 EPOCH-lightning =	0
 REVISION-lightning =	11
 
 # need to be in synch with SO_VERSION in mail/enigmail/thunderbird
-SO_VERSION =	17.0
+SO_VERSION =	17.1
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
 # bumped and/or SO_VERSION changes, remember to update enigmail's
@@ -32,7 +32,7 @@ MOZILLA_LIBS =	accessibility appcomps auth autoconfig caps chardet chrome comman
 	satchel spellchecker storagecomps system-pref tkautocomplete \
 	toolkitcomps txmgr uconv ucvmath universalchardet unixproxy webbrwsr \
 	widget_gtk2 windowds xpautocomplete xpconnect xpinstall zipwriter \
-	gfxpsshar gkgfx gtkxtbin ldap60 ldif60 mozjs prldap60 sqlite3 ssldap60 \
+	gfxpsshar gkgfx gtkxtbin ldap60 ldif60 mozjs prldap60 ssldap60 \
 	thebes xpcom xpcom_core xul nullplugin unixprintplugin
 
 FLAVOR ?=
@@ -60,10 +60,8 @@ MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/directory/c-sdk/config/autoconf
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 
-#http://groups.google.com/group/mozilla.support.thunderbird/browse_thread/thread/c2b667c871db035a?pli=1
-#system sqlite must be built with FTS3 enabled
-#		--enable-system-sqlite
-
+LIB_DEPENDS-main =	${LIB_DEPENDS}
+WANTLIB-main =		${WANTLIB}
 LIB_DEPENDS-lightning = ${BUILD_PKGPATH},-main
 WANTLIB-lightning =	mozilla-thunderbird/mozjs mozilla-thunderbird/xpcom c m stdc++ nspr4 plc4 plds4
 BUILD_DEPENDS +=	archivers/unzip #to unzip xpi

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2010/11/11 09:30:36 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2011/01/14 22:53:42 landry Exp $
 @conflict mozilla-thunderbird-<=3.0.5
 @pkgpath mail/mozilla-thunderbird
 bin/thunderbird
@@ -335,7 +335,6 @@ ${MOZILLA_PROJECT}/isp/rss.rdf
 @lib ${MOZILLA_PROJECT}/libldif60.so.${LIBldif60_VERSION}
 @lib ${MOZILLA_PROJECT}/libmozjs.so.${LIBmozjs_VERSION}
 @lib ${MOZILLA_PROJECT}/libprldap60.so.${LIBprldap60_VERSION}
-@lib ${MOZILLA_PROJECT}/libsqlite3.so.${LIBsqlite3_VERSION}
 @lib ${MOZILLA_PROJECT}/libssldap60.so.${LIBssldap60_VERSION}
 @lib ${MOZILLA_PROJECT}/libthebes.so.${LIBthebes_VERSION}
 @lib ${MOZILLA_PROJECT}/libxpcom.so.${LIBxpcom_VERSION}
