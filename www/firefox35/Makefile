@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2011/01/05 08:22:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.57 2011/01/14 22:56:11 landry Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -6,6 +6,7 @@ MOZILLA_VERSION =	3.5.16
 MOZILLA_BRANCH =	1.9.1
 MOZILLA_PROJECT =	firefox35
 MOZILLA_CODENAME =	browser
+REVISION =	0
 
 SO_VERSION =	24.0
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -49,9 +50,6 @@ NO_REGRESS =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS +=	--enable-official-branding
-CONFIGURE_ARGS +=	--enable-system-sqlite
-LIB_DEPENDS +=		databases/sqlite3>=3.6.16
-WANTLIB +=		sqlite3>=13.3
 
 MOZILLA_DATADIRS =	chrome components defaults dictionaries extensions \
 			greprefs icons modules plugins res searchplugins

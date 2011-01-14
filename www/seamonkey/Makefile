@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/01/05 08:22:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.70 2011/01/14 22:56:11 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -10,13 +10,13 @@ MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-REVISION-main =		0
+REVISION-main =		1
 PKGNAME-lightning =	lightning-seamonkey-1.0beta1
 REVISION-lightning =	11
 EPOCH-lightning =	0
 
 # must be in sync with SO_VERSION in main/enigmail/seamonkey
-SO_VERSION=	16.0
+SO_VERSION=	16.1
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	accessibility appcomps auth autoconfig caps chardet chrome commandlines \
@@ -27,7 +27,7 @@ MOZILLA_LIBS =	accessibility appcomps auth autoconfig caps chardet chrome comman
 	storagecomps suite system-pref tkautocomplete toolkitcomps txmgr uconv \
 	ucvmath universalchardet unixproxy webbrwsr widget_gtk2 windowds \
 	xpautocomplete xpconnect xpinstall zipwriter gfxpsshar gkgfx gtkxtbin \
-	jsj ldap60 ldif60 mozjs prldap60 sqlite3 ssldap60 thebes xpcom \
+	jsj ldap60 ldif60 mozjs prldap60 ssldap60 thebes xpcom \
 	xpcom_core xul nullplugin unixprintplugin
 
 

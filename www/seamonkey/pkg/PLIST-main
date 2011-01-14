@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2010/11/11 09:55:05 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2011/01/14 22:56:11 landry Exp $
 @conflict seamonkey-<=2.0.6
 @pkgpath www/seamonkey
 bin/${MOZILLA_PROJECT}
@@ -547,7 +547,6 @@ ${MOZILLA_PROJECT}/isp/rss.rdf
 @lib ${MOZILLA_PROJECT}/libldif60.so.${LIBldif60_VERSION}
 @lib ${MOZILLA_PROJECT}/libmozjs.so.${LIBmozjs_VERSION}
 @lib ${MOZILLA_PROJECT}/libprldap60.so.${LIBprldap60_VERSION}
-@lib ${MOZILLA_PROJECT}/libsqlite3.so.${LIBsqlite3_VERSION}
 @lib ${MOZILLA_PROJECT}/libssldap60.so.${LIBssldap60_VERSION}
 @lib ${MOZILLA_PROJECT}/libthebes.so.${LIBthebes_VERSION}
 @lib ${MOZILLA_PROJECT}/libxpcom.so.${LIBxpcom_VERSION}
