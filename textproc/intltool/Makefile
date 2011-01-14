@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/20 19:56:48 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/01/14 08:13:14 ajacoutot Exp $
 
-COMMENT=		internationalization tool
+COMMENT=		internationalization tools
 
-GNOME_PROJECT=		intltool
-GNOME_VERSION=		0.40.6
+V=			0.41.1
+DISTNAME=		intltool-${V}
 CATEGORIES=		textproc
 
-HOMEPAGE=		http://www.gnome.org/
+HOMEPAGE=		https://edge.launchpad.net/intltool
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		x11/gnome
+MASTER_SITES=		${HOMEPAGE}/trunk/${V}/+download/
 
 RUN_DEPENDS=		textproc/p5-XML-Parser \
 			devel/gettext
@@ -22,8 +22,8 @@ BUILD_DEPENDS=		textproc/p5-XML-Parser
 
 CONFIGURE_STYLE= 	gnu
 
-USE_GROFF =		Yes
-NO_BUILD=		Yes # avoid recursive dependency
+USE_GROFF=		Yes
+USE_GMAKE=		Yes
 PKG_ARCH=		*
 
 post-install:
