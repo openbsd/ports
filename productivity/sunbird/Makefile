@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/01/05 08:22:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.20 2011/01/14 22:57:44 landry Exp $
 
 COMMENT =		Mozilla calendar
 
@@ -8,12 +8,12 @@ MOZILLA_BRANCH =	1.9.1
 MOZILLA_CODENAME =	calendar
 
 DISTNAME =		lightning-sunbird-1.0b1.source
-REVISION =		8
+REVISION =		9
 EPOCH =			0
 
 CATEGORIES =	productivity mail
 
-SO_VERSION =	16.0
+SO_VERSION =	16.1
 
 MOZILLA_LIBS = calbasecomps accessibility auth autoconfig caps chardet chrome \
 	commandlines cookie docshell embedcomponents fileview gkgfxthebes \
@@ -22,7 +22,7 @@ MOZILLA_LIBS = calbasecomps accessibility auth autoconfig caps chardet chrome \
 	remoteservice satchel spellchecker storagecomps system-pref \
 	tkautocomplete toolkitcomps txmgr uconv unixproxy webbrwsr widget_gtk2 \
 	windowds xpautocomplete xpconnect xpinstall zipwriter gfxpsshar gkgfx \
-	gtkxtbin mozjs sqlite3 thebes xpcom xpcom_core xul nullplugin unixprintplugin
+	gtkxtbin mozjs thebes xpcom xpcom_core xul nullplugin unixprintplugin
 
 # MPL
 PERMIT_PACKAGE_CDROM=	Yes

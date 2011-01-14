@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/10/27 13:00:55 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/01/14 22:57:44 landry Exp $
 @conflict sunbird-<=1.0b1
 @pkgpath productivity/sunbird,-main
 bin/${MOZILLA_PROJECT}
@@ -341,7 +341,6 @@ ${MOZILLA_PROJECT}/icons/mozicon50.xpm
 @lib ${MOZILLA_PROJECT}/libgkgfx.so.${LIBgkgfx_VERSION}
 @lib ${MOZILLA_PROJECT}/libgtkxtbin.so.${LIBgtkxtbin_VERSION}
 @lib ${MOZILLA_PROJECT}/libmozjs.so.${LIBmozjs_VERSION}
-@lib ${MOZILLA_PROJECT}/libsqlite3.so.${LIBsqlite3_VERSION}
 @lib ${MOZILLA_PROJECT}/libthebes.so.${LIBthebes_VERSION}
 @lib ${MOZILLA_PROJECT}/libxpcom.so.${LIBxpcom_VERSION}
 @lib ${MOZILLA_PROJECT}/libxpcom_core.so.${LIBxpcom_core_VERSION}
