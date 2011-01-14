@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.313 2010/12/23 13:59:48 claudio Exp $
+# $OpenBSD: Makefile,v 1.314 2011/01/14 23:37:37 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -255,6 +255,7 @@
      SUBDIR += py-feedparser
      SUBDIR += py-jaxml
      SUBDIR += py-lxml
+     SUBDIR += py-markdown
      SUBDIR += py-nltk
      SUBDIR += py-pdf
      SUBDIR += py-pygments
