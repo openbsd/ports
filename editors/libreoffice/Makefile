@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/01/09 18:19:42 robert Exp $
+# $OpenBSD: Makefile,v 1.19 2011/01/14 19:55:55 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,8 +7,8 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		3.3
-OV=		${VERSION:C/\.2$/rc2/}
-VERSION=	3.3.0.2
+OV=		${VERSION:C/\.3$/rc3/}
+VERSION=	3.3.0.3
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-build-${VERSION}
 PKGNAME=	libreoffice-${OV}
@@ -18,7 +18,6 @@ PKGNAME-java=	libreoffice-java-${OV}
 CATEGORIES=	editors productivity
 
 EPOCH=		0
-REVISION-main=	2
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -27,6 +26,7 @@ MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/ \
 		http://humppa.hu/libreoffice/ \
 		http://download.go-oo.org/3.3/ \
 		http://download.go-oo.org/src/
+MASTER_SITES0=	http://www.numbertext.org/linux/
 
 EDISTFILES=	libreoffice-build-${VERSION}.tar.gz
 
@@ -35,7 +35,7 @@ COMPONENTS=	artwork base bootstrap calc components extensions extras \
 		libs-extern-sys libs-gui postprocess sdk testing \
 		ure writer
 
-.for _dfile in ${COMPONENTS} 
+.for _dfile in ${COMPONENTS}
 EDISTFILES+=	libreoffice-${_dfile}-${VERSION}.tar.bz2
 .endfor
 EXTRACT_ONLY=	${EDISTFILES:C/:[0-9]$//}
@@ -66,7 +66,7 @@ DISTFILES+=	${EDISTFILES} \
 		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip \
 		ada24d37d8d638b3d8a9985e80bc2978-source-9.0.0.7-bj.zip \
 		af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz \
-		c8fc33ad1efb77155f61e0e4ba8d3e9e-LinLibertineG-20101021.zip \
+		881af2b7dca9b8259abbca00bbbc004d-LinLibertineG-20110101.zip:0 \
 		ca4870d899fd7e943ffc310a5421ad4d-liberation-fonts-ttf-1.06.0.20100721.tar.gz \
 		cf8a6967f7de535ae257fa411c98eb88-mdds_0.3.0.tar.bz2 \
 		d0b5af6e408b8d2958f3d83b5244f5e8-hyphen-2.4.tar.gz \
@@ -153,7 +153,7 @@ WANTLIB-main+=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		png pthread pthread-stubs ssl xcb xml2 z gdk_pixbuf-2.0 \
-		${MODGCONF2_WANTLIB}
+		util ${MODGCONF2_WANTLIB}
 WANTLIB-main+=	GL GLU Xxf86vm drm python2.6 stdc++ xcb-render xcb-shm
 WANTLIB-main+=	${MODPY_WANTLIB}
 
@@ -205,7 +205,8 @@ CONFIGURE_ARGS=	--disable-post-install-scripts \
 		--with-ooo-builddir=${WRKSRC}/build/libreoffice \
 		--with-srcdir=${DISTDIR}/libreoffice \
 		--without-git \
-		--without-system-libwpd
+		--without-system-libwpd \
+		--with-compat-oowrappers
 
 .if !${FLAVOR:L:Mno_java}
 CONFIGURE_ARGS+=--with-java \
@@ -251,7 +252,7 @@ pre-patch:
 
 post-install:
 	cd ${PREFIX}/bin && \
-	ln -sf ${TRUEPREFIX}/bin/ooffice${BV} libreoffice && \
+	ln -sf ${TRUEPREFIX}/bin/libreoffice${BV} libreoffice && \
 	for _a in soffice soffice${BV}; do \
 		ln -sf ${TRUEPREFIX}/lib/libreoffice/program/soffice $$_a; done
 

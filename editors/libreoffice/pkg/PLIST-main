@@ -1,7 +1,16 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2010/12/30 16:49:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2011/01/14 19:55:55 robert Exp $
 @conflict openoffice-*
 %%SHARED%%
 bin/libreoffice
+bin/libreoffice${BV}
+bin/lobase${BV}
+bin/localc${BV}
+bin/lodraw${BV}
+bin/lofromtemplate${BV}
+bin/loimpress${BV}
+bin/lomath${BV}
+bin/loweb${BV}
+bin/lowriter${BV}
 bin/oobase${BV}
 bin/oocalc${BV}
 bin/ooconfig
@@ -1852,7 +1861,6 @@ lib/libreoffice/basis${BV}/share/template/layout/lyt-techpoly.otp
 lib/libreoffice/basis${BV}/share/template/layout/lyt-tunnel.otp
 lib/libreoffice/basis${BV}/share/template/layout/lyt-water.otp
 lib/libreoffice/basis${BV}/share/template/layout/lyt-wine.otp
-lib/libreoffice/basis${BV}/share/template/layout/makefile.mk
 lib/libreoffice/basis${BV}/share/template/wizard/
 lib/libreoffice/basis${BV}/share/template/wizard/bitmap/
 lib/libreoffice/basis${BV}/share/template/wizard/bitmap/Import_1.bmp
@@ -2402,7 +2410,7 @@ lib/libreoffice/ure/share/
 lib/libreoffice/ure/share/misc/
 lib/libreoffice/ure/share/misc/services.rdb
 lib/libreoffice/ure/share/misc/types.rdb
-@man man/man1/openoffice${BV}.1
+@man man/man1/libreoffice${BV}.1
 @man man/man1/unopkg${BV}.1
 share/applications/base${BV}.desktop
 share/applications/calc${BV}.desktop
