@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/19 21:04:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2011/01/14 09:53:24 eric Exp $
 
 COMMENT=	small network calculator
 
 DISTNAME=	ipcalc-1.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 HOMEPAGE=	http://spootnik.org/ipcalc/

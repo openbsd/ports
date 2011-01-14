@@ -1,0 +1,12 @@
+$OpenBSD: patch-ipcalc_c,v 1.1 2011/01/14 09:53:24 eric Exp $
+--- ipcalc.c.orig	Thu Jan 13 15:24:39 2011
++++ ipcalc.c	Thu Jan 13 15:27:10 2011
+@@ -233,7 +233,7 @@ split(in_addr_t add, u_char pfxlen, char *masktab, int
+ 				err(1, "out of memory");
+ 			tab[0] = i;
+ 		} else {
+-			if ((tab = realloc(tab, sz + 1)) == NULL)
++			if ((tab = realloc(tab, (sz + 1) * sizeof(int))) == NULL)
+ 				err(1, "out of memory");
+ 			tab[sz] = i;
+ 		}
