@@ -1,16 +1,16 @@
-$OpenBSD: patch-src_electric-activity_electric_py,v 1.1 2010/06/20 16:44:54 ajacoutot Exp $
---- src/electric-activity/electric.py.orig	Sun Jun 20 18:41:36 2010
-+++ src/electric-activity/electric.py	Sun Jun 20 18:42:03 2010
-@@ -87,7 +87,7 @@ class Gcompris_electric:
-     #
-     for binary in (os.path.join(gcompris.PYTHON_PLUGIN_DIR, 'bin', 'gnucap'),
+$OpenBSD: patch-src_electric-activity_electric_py,v 1.2 2011/01/14 21:29:42 ajacoutot Exp $
+--- src/electric-activity/electric.py.orig	Mon Jul 12 00:31:55 2010
++++ src/electric-activity/electric.py	Fri Jan 14 20:54:41 2011
+@@ -88,7 +88,7 @@ class Gcompris_electric:
+     for binary in (os.environ.get('GNUCAP', ''),
+                    os.path.join(gcompris.PYTHON_PLUGIN_DIR, 'bin', 'gnucap'),
                     "/usr/bin/gnucap",
 -                   "/usr/local/bin/gnucap",
 +                   "${LOCALBASE}/bin/gnucap",
                     "gnucap.exe",
  		   os.path.join(gcompris.DATA_DIR, '..' , '..', '..', 'bin', 'gnucap')):
        if(os.path.exists(binary)):
-@@ -95,7 +95,7 @@ class Gcompris_electric:
+@@ -96,7 +96,7 @@ class Gcompris_electric:
          break
  
      if not self.gnucap_binary:

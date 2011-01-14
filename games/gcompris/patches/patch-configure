@@ -1,19 +1,19 @@
-$OpenBSD: patch-configure,v 1.8 2010/06/20 16:31:02 ajacoutot Exp $
---- configure.orig	Mon Apr 26 22:28:37 2010
-+++ configure	Sat Jun 19 16:51:23 2010
-@@ -15368,9 +15368,9 @@ cat >>confdefs.h <<_ACEOF
+$OpenBSD: patch-configure,v 1.9 2011/01/14 21:29:42 ajacoutot Exp $
+--- configure.orig	Mon Dec  6 21:29:53 2010
++++ configure	Fri Jan 14 20:55:58 2011
+@@ -15407,9 +15407,9 @@ cat >>confdefs.h <<_ACEOF
  #define DEBUG 1
  _ACEOF
  
 -    CFLAGS="$CFLAGS $OSX_CFLAGS -Wall -Werror -g"
 +    CFLAGS="$CFLAGS $OSX_CFLAGS -Wall -g"
  else
--    CFLAGS="$CFLAGS $OSX_CFLAGS -Wall -Werror"
+-    CFLAGS="$CFLAGS $OSX_CFLAGS -Wall -Werror -O2"
 +    CFLAGS="$CFLAGS $OSX_CFLAGS -Wall"
  fi
  
  # Check whether --enable-disable-activation-code was given.
-@@ -16421,7 +16421,7 @@ if test  "x$PYTHON_LIBS" = "x" ; then
+@@ -16466,7 +16466,7 @@ if test  "x$PYTHON_LIBS" = "x" ; then
  
     python_libdir=`$PYTHON -c "import distutils.sysconfig ; print distutils.sysconfig.get_config_var(\"LIBDIR\")"`
  
