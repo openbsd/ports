@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.32 2010/12/10 10:54:24 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2011/01/14 22:50:38 landry Exp $
 
 MOZILLA_VERSION =	1.9.2.13
 FFX_VERSION =		3.6.13
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	xulrunner1.9
 DISTNAME =		firefox-${FFX_VERSION}.source
+REVISION-main =		0
 
 MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FFX_VERSION}/source/
 
-SO_VERSION =		3.1
+SO_VERSION =		3.2
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-MOZILLA_LIBS =	imgicon mozjs xpcom xul sqlite3 nullplugin unixprintplugin
+MOZILLA_LIBS =	imgicon mozjs xpcom xul nullplugin unixprintplugin
 
 .if ${MACHINE_ARCH} == "i386"
 PKG_ARGS+=	-Djit=1 -Damd64=0

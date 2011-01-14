@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.18 2010/11/15 19:46:10 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2011/01/14 22:50:38 landry Exp $
 
 COMMENT-main =		standalone XUL/XPCOM runtime environment
 COMMENT-devel =		devel files for Gecko
@@ -38,5 +38,4 @@ MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/build/autoconf
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS =	--disable-javaxpcom \
-			--disable-system-sqlite \
 			--enable-extensions=default,cookie,permissions
