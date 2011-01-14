@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/01/14 06:01:04 fgsch Exp $
 
 COMMENT =	japanese input engine for ibus
 
-DISTNAME =	ibus-anthy-1.2.4
+DISTNAME =	ibus-anthy-1.2.5
 
 CATEGORIES =	inputmethods japanese
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	anthy anthydic m util
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB =	anthy anthydic m util ${MODPY_WANTLIB}
 
 MASTER_SITES =	http://ibus.googlecode.com/files/
 
@@ -33,7 +32,6 @@ LIBTOOL_FLAGS =	--tag=disable-static
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
 		DATADIRNAME="share"
 
 .include <bsd.port.mk>
