@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/01/14 22:50:56 jasper Exp $
 
 COMMENT=	Classic Gnu Chess
 
 DISTNAME=	gnuchess-5.07
-REVISION =	1
+REVISION =	2
 DISTFILES=	${DISTNAME}.tar.gz book_1.01.pgn.gz
 
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GNU:=chess/}
-
-MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

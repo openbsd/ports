@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2008/01/04 17:48:36 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/01/14 22:50:56 jasper Exp $
 
 COMMENT=		asynchronous dns resolver client library and utilities
 DISTNAME=		adns-1.4
+REVISION=		0
 CATEGORIES=		net devel
 SHARED_LIBS=		adns	1.1
 
 HOMEPAGE=		http://www.chiark.greenend.org.uk/~ian/adns/
-
-MAINTAINER=		Michael Coulter <mjc@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

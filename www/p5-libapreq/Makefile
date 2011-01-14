@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/01/14 22:50:56 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,12 +6,11 @@ COMMENT=	Generic Apache Request Library
 
 MODULES=	cpan
 DISTNAME=	libapreq-1.34
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 USE_GROFF =	Yes
 
 HOMEPAGE=	http://httpd.apache.org/apreq/
-MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 
 # Apache Software License
 PERMIT_PACKAGE_CDROM=	Yes

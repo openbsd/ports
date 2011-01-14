@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/01/14 22:50:56 jasper Exp $
 
 COMMENT=	modular log analyzer
 
 DISTNAME=	modlogan-0.8.13
-REVISION =	4
+REVISION =	5
 CATEGORIES=	sysutils www
 
 HOMEPAGE=	http://jan.kneschke.de/projects/modlogan/
 
 MASTER_SITES=	${HOMEPAGE}/download/
-
-MAINTAINER=	Michael Coulter <mjc@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

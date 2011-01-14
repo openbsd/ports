@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/26 14:56:15 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/01/14 22:50:56 jasper Exp $
 
 COMMENT=		packet generation tool
 DISTNAME=		packit-1.0
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 HOMEPAGE=		http://packit.sf.net/
 EXTRACT_SUFX=		.tgz
 
 MASTER_SITES=		http://packit.sourceforge.net/downloads/
-
-MAINTAINER=		Michael Coulter <mjc@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

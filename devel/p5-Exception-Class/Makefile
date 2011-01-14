@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2010/12/03 11:44:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/01/14 22:50:56 jasper Exp $
 
 COMMENT=	module to declare real exception classes in perl
 
 MODULES=	cpan
 DISTNAME=	Exception-Class-1.32
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
-
-MAINTAINER=	Michael Coulter <mjc@bitz.ca>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes

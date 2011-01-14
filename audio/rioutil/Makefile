@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/01/14 22:50:56 jasper Exp $
 
 COMMENT=		utility for Rio mp3 players
 
 DISTNAME=		rioutil-1.4.4
-REVISION=		0
+REVISION=		1
 SHARED_LIBS +=	rioutil              5.1      # .5.1
 CATEGORIES=		audio
 
 HOMEPAGE=		http://rioutil.sf.net
-
-MAINTAINER=		Michael Coulter <mjc@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
