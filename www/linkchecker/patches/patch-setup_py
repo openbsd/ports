@@ -1,6 +1,6 @@
---- setup.py.orig	Mon Aug  3 17:53:01 2009
-+++ setup.py	Wed Dec  2 01:28:07 2009
-@@ -121,6 +121,7 @@ class MyInstallLib (install_lib, object):
+--- setup.py.orig	Tue Dec 28 17:18:57 2010
++++ setup.py	Tue Jan 11 16:09:20 2011
+@@ -122,6 +122,7 @@ class MyInstallLib (install_lib, object):
              else:
                  val = getattr(cmd_obj, attr)
              if attr == 'install_data':
@@ -8,7 +8,7 @@
                  cdir = os.path.join(val, "share", "linkchecker")
                  data.append('config_dir = %r' % cnormpath(cdir))
              elif attr == 'install_lib':
-@@ -371,10 +372,16 @@ myname = "Bastian Kleineidam"
+@@ -364,10 +365,16 @@ myname = "Bastian Kleineidam"
  myemail = "calvin@users.sourceforge.net"
  
  data_files = [
@@ -27,7 +27,7 @@
          ['cgi-bin/lconline/leer.html.en',
           'cgi-bin/lconline/leer.html.de',
           'cgi-bin/lconline/index.html',
-@@ -388,11 +395,11 @@ data_files = [
+@@ -381,11 +388,11 @@ data_files = [
  ]
  
  if os.name == 'posix':

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2009/12/03 18:57:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.18 2011/01/14 19:56:01 jasper Exp $
 bin/linkchecker
 @comment bin/linkchecker-gui
 lib/python${MODPY_VERSION}/site-packages/LinkChecker-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -15,7 +15,6 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/__init__.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/addrinfo.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/connection.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/cookie.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/geoip.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/robots_txt.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/cache/urlqueue.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/checker/
@@ -53,6 +52,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/__init__.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/dnssec.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/e164.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/edns.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/entropy.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/exception.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/flags.py
@@ -75,17 +75,21 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/AFSDB.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/CERT.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/CNAME.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/DLV.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/DNAME.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/DNSKEY.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/DS.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/GPOS.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/HINFO.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/HIP.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/ISDN.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/KEY.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/LOC.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/MX.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/NS.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/NSEC.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/NSEC3.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/NSEC3PARAM.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/NXT.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/PTR.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/ANY/RP.py
@@ -113,6 +117,7 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/IN/SRV.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/IN/WKS.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/IN/__init__.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/__init__.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/dsbase.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/keybase.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/mxbase.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/rdtypes/nsbase.py
@@ -132,25 +137,37 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/dns/zone.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/dummy.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/fcgi.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/fileutil.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/firefox.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/ftpparse.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/geoip.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/__init__.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/checker.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/contextmenu.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/debug.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/editor.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/help.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/lineedit.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/linkchecker_rc.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/linkchecker_ui_debug.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/linkchecker_ui_editor.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/linkchecker_ui_main.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/linkchecker_ui_options.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/linkchecker_ui_progress.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/logger.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/options.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/progress.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/properties.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/settings.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/statistics.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/updater.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/urlmodel.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/gui/urlsave.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/gzip2.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/__init__.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/linkname.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/linkparse.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/htmlutil/titleparse.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/httplib2.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/httputil.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/i18n.py
@@ -172,7 +189,6 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/sql.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/text.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/logger/xmllog.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/mem.py
-lib/python${MODPY_VERSION}/site-packages/linkcheck/msgfmt.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/network/
 lib/python${MODPY_VERSION}/site-packages/linkcheck/network/__init__.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/network/_network.so
@@ -182,7 +198,9 @@ lib/python${MODPY_VERSION}/site-packages/linkcheck/socketutil.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/strformat.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/threader.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/trace.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/updater.py
 lib/python${MODPY_VERSION}/site-packages/linkcheck/url.py
+lib/python${MODPY_VERSION}/site-packages/linkcheck/winutil.py
 @man man/man1/linkchecker-gui.1
 @man man/man1/linkchecker.1
 @man man/man5/linkcheckerrc.5

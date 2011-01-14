@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/22 08:36:49 espie Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.32 2011/01/14 19:56:01 jasper Exp $
 
 COMMENT=	checks HTML documents for broken links
 
-MODPY_EGG_VERSION=5.1
+MODPY_EGG_VERSION=6.2
 DISTNAME=	LinkChecker-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
-REVISION=	0
 
 CATEGORIES=    	www
 
@@ -20,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=linkchecker/}
+EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
 
