@@ -1,0 +1,12 @@
+$OpenBSD: patch-mono_profiler_Makefile_in,v 1.1 2011/01/14 21:14:12 robert Exp $
+--- mono/profiler/Makefile.in.orig	Fri Jan 14 20:28:48 2011
++++ mono/profiler/Makefile.in	Fri Jan 14 20:29:04 2011
+@@ -321,7 +321,7 @@ libmono_profiler_aot_la_LIBADD = $(top_builddir)/mono/
+ libmono_profiler_logging_la_SOURCES = mono-profiler-logging.c
+ libmono_profiler_logging_la_LIBADD = $(top_builddir)/mono/mini/libmono-$(API_VER).la $(GLIB_LIBS)
+ libmono_profiler_iomap_la_SOURCES = mono-profiler-iomap.c
+-libmono_profiler_iomap_la_LIBADD = $(top_builddir)/mono/mini/libmono-$(API_VER).la $(GLIB_LIBS)
++libmono_profiler_iomap_la_LIBADD = $(top_builddir)/mono/mini/libmono-$(API_VER).la
+ all: all-am
+ 
+ .SUFFIXES:
