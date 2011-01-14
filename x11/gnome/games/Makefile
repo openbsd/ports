@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2011/01/14 22:15:41 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		2.32.1
+
+REVISION=		0
 
 CATEGORIES=		games
 
@@ -48,9 +50,8 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--disable-introspection
 
 # XXX
-# gnome-sudoku needs python-2.6
 # lightsoff and swell-foop needs seed
-CONFIGURE_ARGS+=	--enable-omitgames=gnome-sudoku,lightsoff,swell-foop
+CONFIGURE_ARGS+=	--enable-omitgames=lightsoff,swell-foop
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
