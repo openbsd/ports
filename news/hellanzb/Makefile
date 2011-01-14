@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 09:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/01/14 19:12:12 jasper Exp $
 
 COMMENT=		retrieve and process nzb-files
 
 DISTNAME=		hellanzb-0.13
-REVISION =		4
+REVISION =		5
 CATEGORIES=		news
 
 HOMEPAGE=		http://www.hellanzb.com/trac/
 
+# BSD-3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -23,12 +24,11 @@ RUN_DEPENDS=		archivers/par2cmdline \
 			devel/py-twisted/web \
 			news/py-yenc
 
+MODPY_ADJ_FILES=	hellanzb.py
+
 NO_REGRESS=		Yes
 
 pre-configure:
-	@find ${WRKDIST} -name \*.py | \
-		xargs perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g'
-	@perl -pi -e 's,!!SYSCONFDIR!!,${SYSCONFDIR},' \
-		${WRKSRC}/Hellanzb/Core.py
+	${SUBST_CMD} ${WRKSRC}/Hellanzb/Core.py
 
 .include <bsd.port.mk>

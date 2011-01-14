@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/24 16:57:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/01/14 19:12:13 jasper Exp $
 bin/hellanzb.py
 lib/python${MODPY_VERSION}/site-packages/Hellanzb/
 lib/python${MODPY_VERSION}/site-packages/Hellanzb/Core.py
@@ -65,6 +65,7 @@ lib/python${MODPY_VERSION}/site-packages/Hellanzb/external/elementtree/SimpleXML
 lib/python${MODPY_VERSION}/site-packages/Hellanzb/external/elementtree/SimpleXMLWriter.pyc
 lib/python${MODPY_VERSION}/site-packages/Hellanzb/external/elementtree/__init__.py
 lib/python${MODPY_VERSION}/site-packages/Hellanzb/external/elementtree/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/hellanzb-0.13-py${MODPY_VERSION}.egg-info
 share/doc/hellanzb/
 share/doc/hellanzb/README
 share/examples/hellanzb/
