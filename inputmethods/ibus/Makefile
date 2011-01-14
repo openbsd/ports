@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/01/14 06:00:33 fgsch Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	intelligent input bus framework
 
-DISTNAME =	ibus-1.3.8
+DISTNAME =	ibus-1.3.9
 
 SHARED_LIBS =	ibus	1.0	# 2.0
 
 CATEGORIES =	inputmethods chinese japanese korean
 
-HOMEPAGE =	http://ibus.googlecode.com/
+HOMEPAGE =	http://code.google.com/p/ibus/
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
@@ -26,7 +26,7 @@ WANTLIB =	GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs \
 		xcb xcb-render xcb-shm z
 
-MASTER_SITES =	${HOMEPAGE}/files/
+MASTER_SITES =	http://ibus.googlecode.com/files/
 
 MODULES =	devel/gconf2 \
 		devel/gettext \
@@ -50,8 +50,7 @@ USE_LIBTOOL =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
-	 	 --disable-silent-rules \
+CONFIGURE_ARGS = --disable-silent-rules \
 		 --disable-vala \
 		 --enable-introspection=no \
 		 --enable-gtk-doc-html=no
