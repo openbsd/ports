@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/25 06:34:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/01/14 22:58:49 landry Exp $
 
 COMMENT =	GnuPG extension for Seamonkey
 
 VERSION =	1.0.1
 PKGNAME =	enigmail-seamonkey-${VERSION}
-REVISION =	3
+REVISION =	4
 
 # must be in sync with SO_VERSION in
 # www/seamonkey
-SHARED_LIBS =	enigmime	16.0
+SHARED_LIBS =	enigmime	16.1
 
 MOZAPP_PKGPATH =	www/seamonkey
 MOZAPP_DIR =		seamonkey

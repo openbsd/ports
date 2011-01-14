@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2010/08/25 06:34:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/01/14 22:58:49 landry Exp $
 
 COMMENT =	GnuPG extension for Thunderbird
 
 VERSION =	1.1.2
-REVISION =	1
+REVISION =	2
 
 # must be in sync with SO_VERSION in
 # mail/mozilla-thunderbird
-SHARED_LIBS =	enigmime	17.0 \
-		ipc		17.0
+SHARED_LIBS =	enigmime	17.1 \
+		ipc		17.1
 
 MOZAPP_PKGPATH =	mail/mozilla-thunderbird
 MOZAPP_DIR =		mozilla-thunderbird
