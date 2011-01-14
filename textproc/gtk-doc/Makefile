@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/20 19:56:48 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/01/14 22:10:58 ajacoutot Exp $
 
 COMMENT=	GTK C code documentation system
 
-GNOME_VERSION=	1.15
+GNOME_VERSION=	1.16
 GNOME_PROJECT=	gtk-doc
-REVISION=	0
 
 CATEGORIES=    	textproc devel
 
@@ -26,6 +25,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-xml-catalog=${WRKDIR}/catalog.xml
 
+# only files under tests/ are compiled but not installed
 PKG_ARCH=		*
 
 BUILD_DEPENDS=		${RUN_DEPENDS}

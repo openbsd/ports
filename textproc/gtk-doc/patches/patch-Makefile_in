@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2009/12/18 09:45:42 ajacoutot Exp $
---- Makefile.in.orig	Fri Dec 18 09:47:13 2009
-+++ Makefile.in	Fri Dec 18 10:15:02 2009
-@@ -319,7 +319,7 @@ gtkdocdata_DATA = \
+$OpenBSD: patch-Makefile_in,v 1.5 2011/01/14 22:10:58 ajacoutot Exp $
+--- Makefile.in.orig	Fri Jan 14 22:48:16 2011
++++ Makefile.in	Fri Jan 14 23:03:34 2011
+@@ -322,7 +322,7 @@ gtkdocdata_DATA = \
  	up.png			\
  	style.css
  
