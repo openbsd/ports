@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2010/12/06 17:37:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2011/01/14 18:58:37 ajacoutot Exp $
 
 COMMENT-main=		screen saver and locker for the X Window System
 COMMENT-data=		graphical demos (savers) for screensavers
@@ -9,6 +9,8 @@ DISTNAME=		xscreensaver-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-data=		xscreensaver-data-${V}
 PKGNAME-gle=		xscreensaver-gle-${V}
+
+REVISION-data=		0
 
 CATEGORIES=		x11
 
