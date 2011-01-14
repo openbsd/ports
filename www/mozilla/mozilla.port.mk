@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.17 2010/12/01 15:00:12 dcoppa Exp $
+# $OpenBSD: mozilla.port.mk,v 1.18 2011/01/14 22:46:29 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -35,6 +35,14 @@ MODMOZ_WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		pixman-1 plc4>=21 plds4>=21 png pthread pthread-stubs \
 		smime3>=25 sndio softokn3>=25 ssl3>=25 stdc++ xcb \
 		xcb-render GL Xxf86vm drm xcb-shm z
+
+# for all mozilla ports but ffx4, build against systemwide sqlite3
+.if ${MOZILLA_BRANCH:C/\..*//} != "2"
+MODMOZ_WANTLIB +=	sqlite3
+MODMOZ_LIB_DEPENDS +=	databases/sqlite3
+CONFIGURE_ARGS +=	--enable-system-sqlite
+CONFIGURE_ENV +=	ac_cv_sqlite_secure_delete=yes
+.endif
 
 WANTLIB +=	${MODMOZ_WANTLIB}
 BUILD_DEPENDS +=${MODMOZ_BUILD_DEPENDS}
