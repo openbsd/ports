@@ -1,7 +1,7 @@
-$OpenBSD: patch-program_include_main_inc,v 1.10 2010/09/29 20:55:39 sthen Exp $
---- program/include/main.inc.orig	Sat Sep 25 14:03:53 2010
-+++ program/include/main.inc	Wed Sep 29 14:29:03 2010
-@@ -997,7 +997,8 @@ function format_date($date, $format=NULL)
+$OpenBSD: patch-program_include_main_inc,v 1.11 2011/01/14 09:38:48 sthen Exp $
+--- program/include/main.inc.orig	Fri Dec 10 11:08:22 2010
++++ program/include/main.inc	Thu Jan 13 14:26:48 2011
+@@ -1005,7 +1005,8 @@ function format_date($date, $format=NULL)
      $tz = isset($_SESSION['timezone']) ? $_SESSION['timezone'] : date('Z')/3600;
    else {
      $tz = $CONFIG['timezone'];

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2010/09/29 20:55:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.19 2011/01/14 09:38:48 sthen Exp $
 roundcubemail/
 roundcubemail/.htaccess.dist
 @sample roundcubemail/.htaccess
@@ -61,6 +61,8 @@ roundcubemail/logs/.htaccess
 roundcubemail/plugins/
 roundcubemail/plugins/additional_message_headers/
 roundcubemail/plugins/additional_message_headers/additional_message_headers.php
+roundcubemail/plugins/additional_message_headers/config.inc.php.dist
+@sample roundcubemail/plugins/additional_message_headers/config.inc.php
 roundcubemail/plugins/additional_message_headers/package.xml
 roundcubemail/plugins/archive/
 roundcubemail/plugins/archive/archive.js
@@ -110,6 +112,7 @@ roundcubemail/plugins/help/content/license.html
 roundcubemail/plugins/help/help.php
 roundcubemail/plugins/help/localization/
 roundcubemail/plugins/help/localization/cs_CZ.inc
+roundcubemail/plugins/help/localization/da_DK.inc
 roundcubemail/plugins/help/localization/de_DE.inc
 roundcubemail/plugins/help/localization/en_GB.inc
 roundcubemail/plugins/help/localization/en_US.inc
@@ -178,6 +181,7 @@ roundcubemail/plugins/managesieve/skins/default/templates/setedit.html
 roundcubemail/plugins/markasjunk/
 roundcubemail/plugins/markasjunk/localization/
 roundcubemail/plugins/markasjunk/localization/cs_CZ.inc
+roundcubemail/plugins/markasjunk/localization/da_DK.inc
 roundcubemail/plugins/markasjunk/localization/de_DE.inc
 roundcubemail/plugins/markasjunk/localization/en_US.inc
 roundcubemail/plugins/markasjunk/localization/es_AR.inc
@@ -186,6 +190,7 @@ roundcubemail/plugins/markasjunk/localization/et_EE.inc
 roundcubemail/plugins/markasjunk/localization/ja_JP.inc
 roundcubemail/plugins/markasjunk/localization/pl_PL.inc
 roundcubemail/plugins/markasjunk/localization/ru_RU.inc
+roundcubemail/plugins/markasjunk/localization/sk_SK.inc
 roundcubemail/plugins/markasjunk/localization/sv_SE.inc
 roundcubemail/plugins/markasjunk/localization/zh_TW.inc
 roundcubemail/plugins/markasjunk/markasjunk.js
@@ -203,11 +208,15 @@ roundcubemail/plugins/new_user_dialog/localization/de_DE.inc
 roundcubemail/plugins/new_user_dialog/localization/en_US.inc
 roundcubemail/plugins/new_user_dialog/localization/es_ES.inc
 roundcubemail/plugins/new_user_dialog/localization/et_EE.inc
+roundcubemail/plugins/new_user_dialog/localization/gl_ES.inc
 roundcubemail/plugins/new_user_dialog/localization/it_IT.inc
 roundcubemail/plugins/new_user_dialog/localization/ja_JP.inc
 roundcubemail/plugins/new_user_dialog/localization/nl_NL.inc
 roundcubemail/plugins/new_user_dialog/localization/pl_PL.inc
+roundcubemail/plugins/new_user_dialog/localization/pt_BR.inc
+roundcubemail/plugins/new_user_dialog/localization/pt_PT.inc
 roundcubemail/plugins/new_user_dialog/localization/ru_RU.inc
+roundcubemail/plugins/new_user_dialog/localization/sk_SK.inc
 roundcubemail/plugins/new_user_dialog/localization/sl_SI.inc
 roundcubemail/plugins/new_user_dialog/localization/sv_SE.inc
 roundcubemail/plugins/new_user_dialog/localization/zh_TW.inc
@@ -239,6 +248,7 @@ roundcubemail/plugins/password/drivers/vpopmaild.php
 roundcubemail/plugins/password/drivers/ximss.php
 roundcubemail/plugins/password/drivers/xmail.php
 roundcubemail/plugins/password/localization/
+roundcubemail/plugins/password/localization/az_AZ.inc
 roundcubemail/plugins/password/localization/bg_BG.inc
 roundcubemail/plugins/password/localization/ca_ES.inc
 roundcubemail/plugins/password/localization/cs_CZ.inc
@@ -261,6 +271,7 @@ roundcubemail/plugins/password/localization/pl_PL.inc
 roundcubemail/plugins/password/localization/pt_BR.inc
 roundcubemail/plugins/password/localization/pt_PT.inc
 roundcubemail/plugins/password/localization/ru_RU.inc
+roundcubemail/plugins/password/localization/sk_SK.inc
 roundcubemail/plugins/password/localization/sl_SI.inc
 roundcubemail/plugins/password/localization/sv_SE.inc
 roundcubemail/plugins/password/localization/tr_TR.inc
@@ -291,6 +302,7 @@ roundcubemail/plugins/subscriptions_option/subscriptions_option.php
 roundcubemail/plugins/userinfo/
 roundcubemail/plugins/userinfo/localization/
 roundcubemail/plugins/userinfo/localization/cs_CZ.inc
+roundcubemail/plugins/userinfo/localization/da_DK.inc
 roundcubemail/plugins/userinfo/localization/de_CH.inc
 roundcubemail/plugins/userinfo/localization/en_US.inc
 roundcubemail/plugins/userinfo/localization/es_ES.inc
@@ -311,13 +323,17 @@ roundcubemail/plugins/vcard_attachments/localization/de_DE.inc
 roundcubemail/plugins/vcard_attachments/localization/en_US.inc
 roundcubemail/plugins/vcard_attachments/localization/es_ES.inc
 roundcubemail/plugins/vcard_attachments/localization/et_EE.inc
+roundcubemail/plugins/vcard_attachments/localization/it_IT.inc
 roundcubemail/plugins/vcard_attachments/localization/ja_JP.inc
 roundcubemail/plugins/vcard_attachments/localization/pl_PL.inc
 roundcubemail/plugins/vcard_attachments/localization/ru_RU.inc
 roundcubemail/plugins/vcard_attachments/localization/sv_SE.inc
 roundcubemail/plugins/vcard_attachments/localization/zh_TW.inc
 roundcubemail/plugins/vcard_attachments/package.xml
-roundcubemail/plugins/vcard_attachments/vcard_add_contact.png
+roundcubemail/plugins/vcard_attachments/skins/
+roundcubemail/plugins/vcard_attachments/skins/default/
+roundcubemail/plugins/vcard_attachments/skins/default/vcard.png
+roundcubemail/plugins/vcard_attachments/skins/default/vcard_add_contact.png
 roundcubemail/plugins/vcard_attachments/vcard_attachments.php
 roundcubemail/plugins/vcard_attachments/vcardattach.js
 roundcubemail/plugins/virtuser_file/
@@ -1084,6 +1100,11 @@ roundcubemail/program/lib/Mail/
 roundcubemail/program/lib/Mail/mime.php
 roundcubemail/program/lib/Mail/mimePart.php
 roundcubemail/program/lib/Net/
+roundcubemail/program/lib/Net/IDNA2/
+roundcubemail/program/lib/Net/IDNA2.php
+roundcubemail/program/lib/Net/IDNA2/Exception/
+roundcubemail/program/lib/Net/IDNA2/Exception.php
+roundcubemail/program/lib/Net/IDNA2/Exception/Nameprep.php
 roundcubemail/program/lib/Net/SMTP.php
 roundcubemail/program/lib/Net/Socket.php
 roundcubemail/program/lib/PEAR.php
@@ -1361,6 +1382,7 @@ roundcubemail/program/steps/mail/headers.inc
 roundcubemail/program/steps/mail/list.inc
 roundcubemail/program/steps/mail/mark.inc
 roundcubemail/program/steps/mail/move_del.inc
+roundcubemail/program/steps/mail/pagenav.inc
 roundcubemail/program/steps/mail/search.inc
 roundcubemail/program/steps/mail/sendmail.inc
 roundcubemail/program/steps/mail/sendmdn.inc
@@ -1368,11 +1390,13 @@ roundcubemail/program/steps/mail/show.inc
 roundcubemail/program/steps/mail/viewsource.inc
 roundcubemail/program/steps/settings/
 roundcubemail/program/steps/settings/delete_identity.inc
+roundcubemail/program/steps/settings/edit_folder.inc
 roundcubemail/program/steps/settings/edit_identity.inc
 roundcubemail/program/steps/settings/edit_prefs.inc
+roundcubemail/program/steps/settings/folders.inc
 roundcubemail/program/steps/settings/func.inc
 roundcubemail/program/steps/settings/identities.inc
-roundcubemail/program/steps/settings/manage_folders.inc
+roundcubemail/program/steps/settings/save_folder.inc
 roundcubemail/program/steps/settings/save_identity.inc
 roundcubemail/program/steps/settings/save_prefs.inc
 roundcubemail/program/steps/utils/
@@ -1409,6 +1433,7 @@ roundcubemail/skins/default/images/buttons/add_pas.png
 roundcubemail/skins/default/images/buttons/add_sel.png
 roundcubemail/skins/default/images/buttons/bg.gif
 roundcubemail/skins/default/images/cleardot.png
+roundcubemail/skins/default/images/dbutton.png
 roundcubemail/skins/default/images/dimple.png
 roundcubemail/skins/default/images/display/
 roundcubemail/skins/default/images/display/icons.gif
@@ -1422,7 +1447,6 @@ roundcubemail/skins/default/images/googiespell/indicator.gif
 roundcubemail/skins/default/images/googiespell/ok.gif
 roundcubemail/skins/default/images/googiespell/spellc.gif
 roundcubemail/skins/default/images/icons/
-roundcubemail/skins/default/images/icons/abcard.png
 roundcubemail/skins/default/images/icons/attachment.png
 roundcubemail/skins/default/images/icons/blank.gif
 roundcubemail/skins/default/images/icons/collapsed.png
@@ -1463,11 +1487,14 @@ roundcubemail/skins/default/images/mailbox_list.gif
 roundcubemail/skins/default/images/mailbox_selected.gif
 roundcubemail/skins/default/images/messageactions.gif
 roundcubemail/skins/default/images/messageactions.png
+roundcubemail/skins/default/images/messageicons.gif
+roundcubemail/skins/default/images/messageicons.png
 roundcubemail/skins/default/images/pagenav.gif
 roundcubemail/skins/default/images/quota.gif
 roundcubemail/skins/default/images/roundcube_logo.png
 roundcubemail/skins/default/images/searchfield.gif
-roundcubemail/skins/default/images/tabs.gif
+roundcubemail/skins/default/images/tabs-left.gif
+roundcubemail/skins/default/images/tabs-right.gif
 roundcubemail/skins/default/images/taskbar.gif
 roundcubemail/skins/default/images/taskbar.png
 roundcubemail/skins/default/images/taskicons.gif
@@ -1478,6 +1505,7 @@ roundcubemail/skins/default/includes/
 roundcubemail/skins/default/includes/header.html
 roundcubemail/skins/default/includes/links.html
 roundcubemail/skins/default/includes/messagemenu.html
+roundcubemail/skins/default/includes/replyallmenu.html
 roundcubemail/skins/default/includes/settingstabs.html
 roundcubemail/skins/default/includes/taskbar.html
 roundcubemail/skins/default/mail.css
@@ -1487,26 +1515,27 @@ roundcubemail/skins/default/safari.css
 roundcubemail/skins/default/settings.css
 roundcubemail/skins/default/splitter.js
 roundcubemail/skins/default/templates/
-roundcubemail/skins/default/templates/addcontact.html
 roundcubemail/skins/default/templates/addressbook.html
 roundcubemail/skins/default/templates/compose.html
-roundcubemail/skins/default/templates/editcontact.html
-roundcubemail/skins/default/templates/editidentity.html
+roundcubemail/skins/default/templates/contact.html
+roundcubemail/skins/default/templates/contactadd.html
+roundcubemail/skins/default/templates/contactedit.html
 roundcubemail/skins/default/templates/error.html
+roundcubemail/skins/default/templates/folderedit.html
+roundcubemail/skins/default/templates/folders.html
 roundcubemail/skins/default/templates/identities.html
+roundcubemail/skins/default/templates/identityedit.html
 roundcubemail/skins/default/templates/importcontacts.html
 roundcubemail/skins/default/templates/login.html
 roundcubemail/skins/default/templates/mail.html
-roundcubemail/skins/default/templates/managefolders.html
 roundcubemail/skins/default/templates/message.html
 roundcubemail/skins/default/templates/messageerror.html
 roundcubemail/skins/default/templates/messagepart.html
 roundcubemail/skins/default/templates/messagepreview.html
+roundcubemail/skins/default/templates/messageprint.html
 roundcubemail/skins/default/templates/plugin.html
-roundcubemail/skins/default/templates/printmessage.html
 roundcubemail/skins/default/templates/settings.html
 roundcubemail/skins/default/templates/settingsedit.html
-roundcubemail/skins/default/templates/showcontact.html
 roundcubemail/skins/default/watermark.html
 @mode 770
 @group www
