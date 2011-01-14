@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2011/01/14 12:01:18 dcoppa Exp $
+--- Makefile.am.orig	Thu Jan 13 11:30:25 2011
++++ Makefile.am	Thu Jan 13 11:30:40 2011
+@@ -19,8 +19,6 @@ numptyphysics_SOURCES = \
+ 	Game.cpp \
+ 	Overlay.cpp \
+ 	Config.cpp \
+-	Http.cpp \
+-	happyhttp.cpp \
+ 	zoomer.cpp \
+ 	OsHildon.cpp \
+ 	OsFreeDesktop.cpp \

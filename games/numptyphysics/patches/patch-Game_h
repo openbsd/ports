@@ -1,0 +1,11 @@
+$OpenBSD: patch-Game_h,v 1.1 2011/01/14 12:01:18 dcoppa Exp $
+--- Game.h.orig	Thu Jan 13 10:49:04 2011
++++ Game.h	Thu Jan 13 10:49:15 2011
+@@ -36,7 +36,6 @@ struct GameControl
+   {}
+   virtual ~GameControl() {}
+   virtual bool save( const char *file=NULL ) { return false; }
+-  virtual bool send() { return false; }
+   virtual bool load( const char* file ) { return false; }
+   virtual void gotoLevel( int l, bool replay=false ) {}
+   Levels& levels() { return m_levels; }

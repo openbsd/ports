@@ -1,6 +1,6 @@
-$OpenBSD: patch-Overlay_cpp,v 1.1 2009/10/22 23:07:54 sthen Exp $
+$OpenBSD: patch-Overlay_cpp,v 1.2 2011/01/14 12:01:18 dcoppa Exp $
 --- Overlay.cpp.orig	Thu Nov  6 14:44:45 2008
-+++ Overlay.cpp	Thu Oct 15 14:49:47 2009
++++ Overlay.cpp	Thu Jan 13 10:55:43 2011
 @@ -31,6 +31,10 @@ class OverlayBase : public Overlay (public)
      : m_game(game),
        m_x(x), m_y(y),
@@ -20,3 +20,11 @@ $OpenBSD: patch-Overlay_cpp,v 1.1 2009/10/22 23:07:54 sthen Exp $
        m_levelIcon(-2),
        m_icon(NULL)
    {
+@@ -302,7 +307,6 @@ class EditOverlay : public IconOverlay (public)
+     case 12: m_game.m_strokeFixed = ! m_game.m_strokeFixed; break;
+     case 13: m_game.m_strokeSleep = ! m_game.m_strokeSleep; break;
+     case 14: m_game.m_strokeDecor = ! m_game.m_strokeDecor; break;
+-    case 16: if ( m_game.send() ) m_sending=10; break;
+     case 17: if ( m_game.save() ) m_saving=10; break;
+     default: if (i<NUM_BRUSHES) m_game.m_colour = i; else return false;
+     }

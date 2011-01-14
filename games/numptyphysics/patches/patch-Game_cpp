@@ -1,7 +1,14 @@
-$OpenBSD: patch-Game_cpp,v 1.1 2009/10/22 23:07:54 sthen Exp $
+$OpenBSD: patch-Game_cpp,v 1.2 2011/01/14 12:01:18 dcoppa Exp $
 --- Game.cpp.orig	Tue Nov 11 17:54:38 2008
-+++ Game.cpp	Fri Oct 16 13:39:01 2009
-@@ -29,11 +29,11 @@
++++ Game.cpp	Thu Jan 13 10:48:15 2011
+@@ -22,18 +22,17 @@
+ #include "Path.h"
+ #include "Canvas.h"
+ #include "Levels.h"
+-#include "Http.h"
+ #include "Os.h"
+ 
+ #include <SDL/SDL.h>
  #include <SDL/SDL_image.h>
  
  #include <cstdio>
@@ -14,7 +21,7 @@ $OpenBSD: patch-Game_cpp,v 1.1 2009/10/22 23:07:54 sthen Exp $
  #include <sys/stat.h>
  
  using namespace std;
-@@ -80,7 +80,7 @@ class Transform (public)
+@@ -80,7 +79,7 @@ class Transform (public)
      }
    }
  private:
@@ -23,7 +30,7 @@ $OpenBSD: patch-Game_cpp,v 1.1 2009/10/22 23:07:54 sthen Exp $
    bool m_bypass;
    b2Mat22 m_rot;
    b2Mat22 m_invrot;
-@@ -176,6 +176,7 @@ class Stroke (public)
+@@ -176,6 +175,7 @@ class Stroke (public)
      m_attributes = 0;
      m_origin = m_rawPath.point(0);
      m_rawPath.translate( -m_origin );
@@ -31,7 +38,7 @@ $OpenBSD: patch-Game_cpp,v 1.1 2009/10/22 23:07:54 sthen Exp $
      reset();
    }  
  
-@@ -185,6 +186,7 @@ class Stroke (public)
+@@ -185,6 +185,7 @@ class Stroke (public)
      m_colour = brushColours[DEFAULT_BRUSH];
      m_attributes = 0;
      m_origin = Vec2(400,240);
@@ -39,7 +46,7 @@ $OpenBSD: patch-Game_cpp,v 1.1 2009/10/22 23:07:54 sthen Exp $
      reset();
      const char *s = str.c_str();
      while ( *s && *s!=':' && *s!='\n' ) {
-@@ -866,7 +868,7 @@ class DemoLog : public Array<DemoEntry> (public)
+@@ -866,7 +867,7 @@ class DemoLog : public Array<DemoEntry> (public)
    void appendFromString( const std::string& str ) 
    {
      const char *s = str.c_str();
@@ -48,7 +55,7 @@ $OpenBSD: patch-Game_cpp,v 1.1 2009/10/22 23:07:54 sthen Exp $
      char c;
      SDL_Event ev = {0};
      ev.type = 0xff;
-@@ -944,6 +946,12 @@ class DemoRecorder (private)
+@@ -944,6 +945,12 @@ class DemoRecorder (private)
  class DemoPlayer
  {
  public:
@@ -61,7 +68,34 @@ $OpenBSD: patch-Game_cpp,v 1.1 2009/10/22 23:07:54 sthen Exp $
  
    void start( const DemoLog* log ) 
    {
-@@ -1555,11 +1563,7 @@ int npmain(int argc, char** argv)
+@@ -1076,26 +1083,6 @@ class Game : public GameControl (public)
+     return false;
+   }
+ 
+-  bool send()
+-  {
+-    if ( save( SEND_TEMP_FILE ) ) {
+-      Http h;
+-      if ( h.post( Config::planetRoot().c_str(), "upload", SEND_TEMP_FILE ) ) {
+-	std::string id = h.getHeader("NP-Upload-Id");
+-	if ( id.length() > 0 ) {
+-	  if ( !m_os->openBrowser((Config::planetRoot()+"?level="+id).c_str()) ) {
+-	    showMessage("Unable to launch browser");
+-	  }
+-	} else {
+-	  showMessage("UploadFailed: unknown error");
+-	}
+-      } else {
+-	showMessage(std::string("UploadFailed: ")+h.errorMessage());
+-      }
+-    }
+-    return false;
+-  }
+-
+   void setTool( int t )
+   {
+     m_colour = t;
+@@ -1555,11 +1542,7 @@ int npmain(int argc, char** argv)
  	}
        } else {
  	struct stat st;
