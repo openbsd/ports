@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/11/27 17:42:48 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/01/14 22:17:03 landry Exp $
 @conflict macutil-*
+@conflict archiveopteryx-*
 @comment XXX avenger needs to read aliases.db which might end up mode 640
 @newuser _avenger:554:wheel:daemon:Mail Avenger:/var/avenger:/sbin/nologin
 bin/aliascheck
