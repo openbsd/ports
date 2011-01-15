@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.6 2011/01/15 22:37:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.7 2011/01/15 23:53:35 ajacoutot Exp $
 @conflict php5-mapi-*
 @pkgpath mail/zarafa/webaccess
 @pkgpath mail/zarafa/zarafa,-php
@@ -1051,4 +1051,6 @@ zarafa-webaccess/server/upload_attachment.php
 zarafa-webaccess/server/util.php
 zarafa-webaccess/static.php
 zarafa-webaccess/zarafa-webaccess.conf
+zarafa-webaccess/zarafa.conf.dist
+@sample ${PREFIX-web}/conf/modules.sample/zarafa.conf
 zarafa-webaccess/zarafa.php
