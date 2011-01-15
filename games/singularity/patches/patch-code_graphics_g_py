@@ -1,0 +1,16 @@
+$OpenBSD: patch-code_graphics_g_py,v 1.1 2011/01/15 12:43:26 ajacoutot Exp $
+
+From singularity 0.2X to prevent:
+    "IOError: unable to read font filename"
+
+--- code/graphics/g.py.orig	Sat Jan 15 13:37:41 2011
++++ code/graphics/g.py	Sat Jan 15 13:37:57 2011
+@@ -72,7 +72,7 @@ directory.
+     font1_file = os.path.join(font_dir, font1)
+     font[0][0] = font0
+     font[1][0] = font1
+-    for i in range(100):
++    for i in range(8, 51):
+         font[0][i] = pygame.font.Font(font0_file, i)
+         font[1][i] = pygame.font.Font(font1_file, i)
+ 
