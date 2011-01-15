@@ -1,41 +1,43 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/20 17:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/01/15 16:39:13 fgsch Exp $
 
-COMMENT=	allows deniable private conversations using Pidgin
+COMMENT =	allows deniable private conversations using Pidgin
 
-DISTNAME=	pidgin-otr-3.2.0
-CATEGORIES=	security net
+DISTNAME =	pidgin-otr-3.2.0
+CATEGORIES =	security net
+REVISION =	0
 
-HOMEPAGE=	http://www.cypherpunks.ca/otr/
+HOMEPAGE =	http://www.cypherpunks.ca/otr/
 
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES =	${HOMEPAGE}
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-RUN_DEPENDS=	net/pidgin>=2.0.0
-BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	security/libotr>=3.2.0
+RUN_DEPENDS =	net/pidgin>=2.0.0
+BUILD_DEPENDS =	${RUN_DEPENDS} \
+		devel/libtool
+LIB_DEPENDS =	security/libotr>=3.2.0
 
-MODULES=	devel/gettext \
+MODULES =	devel/gettext \
 		textproc/intltool
-WANTLIB=	gpg-error gcrypt otr>=3.2
+WANTLIB =	gpg-error gcrypt otr>=3.2
 
-USE_LIBTOOL=	Yes
-LIBTOOL_FLAGS+=	--tag=disable-static
+USE_LIBTOOL =	Yes
+LIBTOOL_FLAGS += --tag=disable-static
 
-SHARED_ONLY=	Yes
+SHARED_ONLY =	Yes
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_STYLE = gnu
+CONFIGURE_ENV =	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib "
 
-AUTOCONF_VERSION=2.59
-AUTOMAKE_VERSION=1.9
-BUILD_DEPENDS+=	${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
+AUTOCONF_VERSION = 2.59
+AUTOMAKE_VERSION = 1.9
+BUILD_DEPENDS += ${MODGNU_AUTOCONF_DEPENDS} \
+		 ${MODGNU_AUTOMAKE_DEPENDS}
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
