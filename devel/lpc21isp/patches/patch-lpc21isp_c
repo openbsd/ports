@@ -1,0 +1,39 @@
+$OpenBSD: patch-lpc21isp_c,v 1.1.1.1 2011/01/15 12:40:17 jasper Exp $
+--- lpc21isp.c.orig	Sat Feb 20 11:14:08 2010
++++ lpc21isp.c	Fri Jan 14 22:59:03 2011
+@@ -673,7 +673,7 @@ static void ReceiveComPortBlock(ISP_ENVIRONMENT *IspEn
+ 
+ #endif // defined COMPILE_FOR_LINUX
+ 
+-    sprintf(tmp_string, "Read(Length=%ld): ", (*real_size));
++    snprintf(tmp_string, sizeof(tmp_string), "Read(Length=%ld): ", (*real_size));
+     DumpString(5, answer, (*real_size), tmp_string);
+ 
+     if (*real_size == 0)
+@@ -976,7 +976,7 @@ void DebugPrintf(int level, const char *fmt, ...)
+         char pTemp[2000];
+         va_start(ap, fmt);
+         //vprintf(fmt, ap);
+-        vsprintf(pTemp, fmt, ap);
++        vsnprintf(pTemp, sizeof(pTemp), fmt, ap);
+         TRACE(pTemp);
+         va_end(ap);
+         fflush(stdout);
+@@ -1048,7 +1048,7 @@ void ReceiveComPort(ISP_ENVIRONMENT *IspEnvironment,
+ 
+     Answer[(*RealSize)] = 0;
+ 
+-    sprintf(tmp_string, "Answer(Length=%ld): ", (*RealSize));
++    snprintf(tmp_string, sizeof(tmp_string), "Answer(Length=%ld): ", (*RealSize));
+     DumpString(3, Answer, (*RealSize), tmp_string);
+ }
+ 
+@@ -1083,7 +1083,7 @@ int ReceiveComPortBlockComplete(ISP_ENVIRONMENT *IspEn
+ 
+     } while ((realsize < size) && (SerialTimeoutCheck(IspEnvironment) == 0));
+ 
+-    sprintf(tmp_string, "Answer(Length=%ld): ", realsize);
++    snprintf(tmp_string, sizeof(tmp_string), "Answer(Length=%ld): ", realsize);
+     DumpString(3, result, realsize, tmp_string);
+ 
+     if (realsize != size)

@@ -1,0 +1,226 @@
+$OpenBSD: patch-lpcprog_c,v 1.1.1.1 2011/01/15 12:40:17 jasper Exp $
+--- lpcprog.c.orig	Sat Feb 20 11:14:08 2010
++++ lpcprog.c	Fri Jan 14 22:59:03 2011
+@@ -529,7 +529,7 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+                 strippedsize--;
+             }
+ 
+-            sprintf(tmp_string, "StrippedAnswer(Length=%d): '", strippedsize);
++            snprintf(tmp_string, sizeof(tmp_string), "StrippedAnswer(Length=%d): '", strippedsize);
+             DumpString(3, strippedAnswer, strippedsize, tmp_string);
+ 
+             if (strcmp(strippedAnswer, "Bootloader\r\n") == 0 && IspEnvironment->TerminalOnly == 0)
+@@ -541,7 +541,7 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+                 xtal = atol(IspEnvironment->StringOscillator) * 1000;
+                 ticks = (unsigned long)WatchDogSeconds * ((xtal + 15) / 16);
+                 DebugPrintf(2, "Entering ISP; re-synchronizing (watchdog = %ld seconds)\n", WatchDogSeconds);
+-                sprintf(temp, "T %lu\r\n", ticks);
++                snprintf(temp, sizeof(temp), "T %lu\r\n", ticks);
+                 SendComPort(IspEnvironment, temp);
+                 ReceiveComPort(IspEnvironment, Answer, sizeof(Answer)-1, &realsize, 1,100);
+                 if (strcmp(Answer, "OK\r\n") != 0)
+@@ -601,13 +601,13 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+ 
+     DebugPrintf(3, "Setting oscillator\n");
+ 
+-    sprintf(temp, "%s\n", IspEnvironment->StringOscillator);
++    snprintf(temp, sizeof(temp), "%s\n", IspEnvironment->StringOscillator);
+ 
+     SendComPort(IspEnvironment, temp);
+ 
+     ReceiveComPort(IspEnvironment, Answer, sizeof(Answer)-1, &realsize, 2, 1000);
+ 
+-    sprintf(temp, "%s\nOK\r\n", IspEnvironment->StringOscillator);
++    snprintf(temp, sizeof(temp), "%s\nOK\r\n", IspEnvironment->StringOscillator);
+ 
+     if (strcmp(Answer, temp) != 0)
+     {
+@@ -751,7 +751,7 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+     {
+         DebugPrintf(2, "Wiping Device. ");
+ 
+-        sprintf(tmpString, "P %d %d\n", 0, LPCtypes[IspEnvironment->DetectedDevice].FlashSectors-1);
++        snprintf(tmpString, sizeof(tmpString), "P %d %d\n", 0, LPCtypes[IspEnvironment->DetectedDevice].FlashSectors-1);
+ 
+         if (!SendAndVerify(IspEnvironment, tmpString, Answer, sizeof Answer))
+         {
+@@ -759,7 +759,7 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+             return (WRONG_ANSWER_PREP + GetAndReportErrorNumber(Answer));
+         }
+ 
+-        sprintf(tmpString, "E %d %d\n", 0, LPCtypes[IspEnvironment->DetectedDevice].FlashSectors-1);
++        snprintf(tmpString, sizeof(tmpString), "E %d %d\n", 0, LPCtypes[IspEnvironment->DetectedDevice].FlashSectors-1);
+ 
+         if (!SendAndVerify(IspEnvironment, tmpString, Answer, sizeof Answer))
+         {
+@@ -772,7 +772,7 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+         //no wiping requested: erasing sector 0 first
+         DebugPrintf(2, "Erasing sector 0 first, to invalidate checksum. ");
+ 
+-        sprintf(tmpString, "P %d %d\n", 0, 0);
++        snprintf(tmpString, sizeof(tmpString), "P %d %d\n", 0, 0);
+ 
+         if (!SendAndVerify(IspEnvironment, tmpString, Answer, sizeof Answer))
+         {
+@@ -780,7 +780,7 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+             return (WRONG_ANSWER_PREP + GetAndReportErrorNumber(Answer));
+         }
+ 
+-        sprintf(tmpString, "E %d %d\n", 0, 0);
++        snprintf(tmpString, sizeof(tmpString), "E %d %d\n", 0, 0);
+ 
+         if (!SendAndVerify(IspEnvironment, tmpString, Answer, sizeof Answer))
+         {
+@@ -802,7 +802,7 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+ 
+         if (IspEnvironment->BinaryOffset < ReturnValueLpcRamStart(IspEnvironment)) // Skip Erase when running from RAM
+         {
+-            sprintf(tmpString, "P %ld %ld\n", Sector, Sector);
++            snprintf(tmpString, sizeof(tmpString), "P %ld %ld\n", Sector, Sector);
+ 
+             if (!SendAndVerify(IspEnvironment, tmpString, Answer, sizeof Answer))
+             {
+@@ -814,7 +814,7 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+             fflush(stdout);
+             if (IspEnvironment->WipeDevice == 0 && (Sector!=0)) //Sector 0 already erased
+             {
+-                sprintf(tmpString, "E %ld %ld\n", Sector, Sector);
++                snprintf(tmpString, sizeof(tmpString), "E %ld %ld\n", Sector, Sector);
+ 
+                 if (!SendAndVerify(IspEnvironment, tmpString, Answer, sizeof Answer))
+                 {
+@@ -862,7 +862,7 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+                 CopyLength += ((45 * 4) - (CopyLength % (45 * 4)));
+             }
+ 
+-            sprintf(tmpString, "W %ld %ld\n", ReturnValueLpcRamBase(IspEnvironment), CopyLength);
++            snprintf(tmpString, sizeof(tmpString), "W %ld %ld\n", ReturnValueLpcRamBase(IspEnvironment), CopyLength);
+ 
+             if (!SendAndVerify(IspEnvironment, tmpString, Answer, sizeof Answer))
+             {
+@@ -962,13 +962,13 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+ 
+                             // printf("block_CRC = %ld\n", block_CRC);
+ 
+-                            sprintf(tmpString, "%ld\n", block_CRC);
++                            snprintf(tmpString, sizeof(tmpString), "%ld\n", block_CRC);
+ 
+                             SendComPort(IspEnvironment, tmpString);
+ 
+                             ReceiveComPort(IspEnvironment, Answer, sizeof(Answer)-1, &realsize, 2,5000);
+ 
+-                            sprintf(tmpString, "%ld\nOK\r\n", block_CRC);
++                            snprintf(tmpString, sizeof(tmpString), "%ld\nOK\r\n", block_CRC);
+ 
+                             if (strcmp(Answer, tmpString) != 0)
+                             {
+@@ -989,12 +989,12 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+                         }
+ #else
+                         // printf("block_CRC = %ld\n", block_CRC);
+-                        sprintf(tmpString, "%ld\r\n", block_CRC);
++                        snprintf(tmpString, sizeof(tmpString), "%ld\r\n", block_CRC);
+                         SendComPort(IspEnvironment, tmpString);
+ 
+                         ReceiveComPort(IspEnvironment, Answer, sizeof(Answer)-1, &realsize, 2,5000);
+ 
+-                        sprintf(tmpString, "%ld\r\nOK\r\n", block_CRC);
++                        snprintf(tmpString, sizeof(tmpString), "%ld\r\nOK\r\n", block_CRC);
+                         if (strcmp(Answer, tmpString) != 0)
+                         {
+                             DebugPrintf(1, "Error on writing block_CRC (2)\n");
+@@ -1012,13 +1012,13 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+ #if !defined COMPILE_FOR_LPC21
+                 for (repeat = 0; repeat < 3; repeat++)
+                 {
+-                    sprintf(tmpString, "%ld\n", block_CRC);
++                    snprintf(tmpString, sizeof(tmpString), "%ld\n", block_CRC);
+ 
+                     SendComPort(IspEnvironment, tmpString);
+ 
+                     ReceiveComPort(IspEnvironment, Answer, sizeof(Answer)-1, &realsize, 2,5000);
+ 
+-                    sprintf(tmpString, "%ld\nOK\r\n", block_CRC);
++                    snprintf(tmpString, sizeof(tmpString), "%ld\nOK\r\n", block_CRC);
+ 
+                     if (strcmp(Answer, tmpString) != 0)
+                     {
+@@ -1038,12 +1038,12 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+                     return (ERROR_WRITE_CRC2);
+                 }
+ #else
+-                sprintf(tmpString, "%ld\r\n", block_CRC);
++                snprintf(tmpString, sizeof(tmpString), "%ld\r\n", block_CRC);
+                 SendComPort(IspEnvironment, tmpString);
+ 
+                 ReceiveComPort(IspEnvironment, Answer, sizeof(Answer)-1, &realsize, 2,5000);
+ 
+-                sprintf(tmpString, "%ld\r\nOK\r\n", block_CRC);
++                snprintf(tmpString, sizeof(tmpString), "%ld\r\nOK\r\n", block_CRC);
+                 if (strcmp(Answer, tmpString) != 0)
+                 {
+                     DebugPrintf(1, "Error on writing block_CRC (4)\n");
+@@ -1055,7 +1055,7 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+             if (IspEnvironment->BinaryOffset < ReturnValueLpcRamStart(IspEnvironment))
+             {
+                 // Prepare command must be repeated before every write
+-                sprintf(tmpString, "P %ld %ld\n", Sector, Sector);
++                snprintf(tmpString, sizeof(tmpString), "P %ld %ld\n", Sector, Sector);
+ 
+                 if (!SendAndVerify(IspEnvironment, tmpString, Answer, sizeof Answer))
+                 {
+@@ -1087,7 +1087,7 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+                     CopyLength = LPCtypes[IspEnvironment->DetectedDevice].MaxCopySize;
+                 }
+ 
+-                sprintf(tmpString, "C %ld %ld %ld\n", SectorStart + SectorOffset, ReturnValueLpcRamBase(IspEnvironment), CopyLength);
++                snprintf(tmpString, sizeof(tmpString), "C %ld %ld %ld\n", SectorStart + SectorOffset, ReturnValueLpcRamBase(IspEnvironment), CopyLength);
+ 
+                 if (!SendAndVerify(IspEnvironment, tmpString, Answer, sizeof Answer))
+                 {
+@@ -1103,11 +1103,11 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+                     //and the compare result may not be correct.
+                     if (SectorStart + SectorOffset<64)
+                     {
+-                        sprintf(tmpString, "M %d %ld %ld\n", 64, ReturnValueLpcRamBase(IspEnvironment) + (64 - SectorStart - SectorOffset), CopyLength-(64 - SectorStart - SectorOffset));
++                        snprintf(tmpString, sizeof(tmpString), "M %d %ld %ld\n", 64, ReturnValueLpcRamBase(IspEnvironment) + (64 - SectorStart - SectorOffset), CopyLength-(64 - SectorStart - SectorOffset));
+                     }
+                     else
+                     {
+-                        sprintf(tmpString, "M %ld %ld %ld\n", SectorStart + SectorOffset, ReturnValueLpcRamBase(IspEnvironment), CopyLength);
++                        snprintf(tmpString, sizeof(tmpString), "M %ld %ld %ld\n", SectorStart + SectorOffset, ReturnValueLpcRamBase(IspEnvironment), CopyLength);
+                     }
+ 
+                     if (!SendAndVerify(IspEnvironment, tmpString, Answer, sizeof Answer))
+@@ -1153,13 +1153,13 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+ 
+         if(LPCtypes[IspEnvironment->DetectedDevice].ChipVariant == CHIP_VARIANT_LPC2XXX)
+         {
+-            sprintf(tmpString, "G %ld A\n", IspEnvironment->StartAddress);
++            snprintf(tmpString, sizeof(tmpString), "G %ld A\n", IspEnvironment->StartAddress);
+         }
+         else if(LPCtypes[IspEnvironment->DetectedDevice].ChipVariant == CHIP_VARIANT_LPC17XX ||
+                 LPCtypes[IspEnvironment->DetectedDevice].ChipVariant == CHIP_VARIANT_LPC13XX ||
+                 LPCtypes[IspEnvironment->DetectedDevice].ChipVariant == CHIP_VARIANT_LPC11XX)
+         {
+-            sprintf(tmpString, "G %ld T\n", IspEnvironment->StartAddress & ~1);
++            snprintf(tmpString, sizeof(tmpString), "G %ld T\n", IspEnvironment->StartAddress & ~1);
+         }
+         else
+         {
+@@ -1182,13 +1182,13 @@ int PhilipsDownload(ISP_ENVIRONMENT *IspEnvironment)
+             */
+             if(LPCtypes[IspEnvironment->DetectedDevice].ChipVariant == CHIP_VARIANT_LPC2XXX)
+             {
+-                sprintf(ExpectedAnswer, "G %ld A\n0", IspEnvironment->StartAddress);
++                snprintf(ExpectedAnswer, sizeof(tmpString), "G %ld A\n0", IspEnvironment->StartAddress);
+             }
+             else if(LPCtypes[IspEnvironment->DetectedDevice].ChipVariant == CHIP_VARIANT_LPC17XX ||
+                     LPCtypes[IspEnvironment->DetectedDevice].ChipVariant == CHIP_VARIANT_LPC13XX ||
+                     LPCtypes[IspEnvironment->DetectedDevice].ChipVariant == CHIP_VARIANT_LPC11XX)
+             {
+-                sprintf(ExpectedAnswer, "G %ld T\n0", IspEnvironment->StartAddress & ~1);
++                snprintf(ExpectedAnswer, sizeof(tmpString), "G %ld T\n0", IspEnvironment->StartAddress & ~1);
+             }
+             else
+             {
