@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/15 12:09:32 jasper Exp $
+%%SHARED%%
+${P5ARCH}/
+${P5ARCH}/BSD/
+${P5ARCH}/BSD/arc4random.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/BSD/
+${P5ARCH}/auto/BSD/arc4random/
+${P5ARCH}/auto/BSD/arc4random/arc4random.bs
+@man man/man3p/BSD::arc4random.3p

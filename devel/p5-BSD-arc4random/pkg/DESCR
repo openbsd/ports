@@ -1,0 +1,4 @@
+This set of functions maps the arc4random(3) family of libc functions
+into Perl code. All functions listed below are ithreads-safe. The
+internal XS functions are not, but you are not supposed to call them,
+either.
