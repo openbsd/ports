@@ -1,8 +1,8 @@
-$OpenBSD: patch-doc_libogg_Makefile_in,v 1.4 2010/11/25 16:59:34 naddy Exp $
---- doc/libogg/Makefile.in.orig	Mon Nov  1 21:26:59 2010
-+++ doc/libogg/Makefile.in	Wed Nov 24 23:52:47 2010
-@@ -150,7 +150,7 @@ build_os = @build_os@
- build_vendor = @build_vendor@
+$OpenBSD: patch-doc_libogg_Makefile_in,v 1.5 2011/01/15 20:57:09 naddy Exp $
+--- doc/libogg/Makefile.in.orig	Tue Dec  7 11:32:41 2010
++++ doc/libogg/Makefile.in	Sat Jan 15 21:41:36 2011
+@@ -165,7 +165,7 @@ build_vendor = @build_vendor@
+ builddir = @builddir@
  datadir = @datadir@
  datarootdir = @datarootdir@
 -docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)/ogg
