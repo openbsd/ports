@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/15 08:54:43 sthen Exp $
+@bin bin/dhex
