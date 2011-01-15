@@ -1,6 +1,36 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2010/06/11 17:08:32 landry Exp $
-@pkgpath mail/sylpheed-claws,-main${FLAVOR_STRING}
-@pkgpath mail/sylpheed-claws${FLAVOR_STRING}
+@comment $OpenBSD: PLIST-main,v 1.20 2011/01/15 09:21:31 sthen Exp $
+@pkgpath mail/sylpheed-claws,-main
+@pkgpath mail/sylpheed-claws,-main,compface
+@pkgpath mail/sylpheed-claws,-main,pgpmime
+@pkgpath mail/sylpheed-claws,-main,jpilot
+@pkgpath mail/sylpheed-claws,-main,ldap
+@pkgpath mail/sylpheed-claws,-main,compface,pgpmime
+@pkgpath mail/sylpheed-claws,-main,compface,jpilot
+@pkgpath mail/sylpheed-claws,-main,compface,ldap
+@pkgpath mail/sylpheed-claws,-main,pgpmime,jpilot
+@pkgpath mail/sylpheed-claws,-main,pgpmime,ldap
+@pkgpath mail/sylpheed-claws,-main,jpilot,ldap
+@pkgpath mail/sylpheed-claws,-main,compface,pgpmime,jpilot
+@pkgpath mail/sylpheed-claws,-main,compface,pgpmime,ldap
+@pkgpath mail/sylpheed-claws,-main,compface,jpilot,ldap
+@pkgpath mail/sylpheed-claws,-main,pgpmime,jpilot,ldap
+@pkgpath mail/sylpheed-claws,-main,compface,pgpmime,jpilot,ldap
+@pkgpath mail/sylpheed-claws
+@pkgpath mail/sylpheed-claws,compface
+@pkgpath mail/sylpheed-claws,pgpmime
+@pkgpath mail/sylpheed-claws,jpilot
+@pkgpath mail/sylpheed-claws,ldap
+@pkgpath mail/sylpheed-claws,compface,pgpmime
+@pkgpath mail/sylpheed-claws,compface,jpilot
+@pkgpath mail/sylpheed-claws,compface,ldap
+@pkgpath mail/sylpheed-claws,pgpmime,jpilot
+@pkgpath mail/sylpheed-claws,pgpmime,ldap
+@pkgpath mail/sylpheed-claws,jpilot,ldap
+@pkgpath mail/sylpheed-claws,compface,pgpmime,jpilot
+@pkgpath mail/sylpheed-claws,compface,pgpmime,ldap
+@pkgpath mail/sylpheed-claws,compface,jpilot,ldap
+@pkgpath mail/sylpheed-claws,pgpmime,jpilot,ldap
+@pkgpath mail/sylpheed-claws,compface,pgpmime,jpilot,ldap
 @bin bin/claws-mail
 @comment bin/sylpheed-claws
 include/claws-mail/

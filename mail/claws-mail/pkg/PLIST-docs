@@ -1,5 +1,20 @@
-@comment $OpenBSD: PLIST-docs,v 1.5 2010/06/11 17:08:32 landry Exp $
-@pkgpath mail/sylpheed-claws,-docs${FLAVOR_STRING}
+@comment $OpenBSD: PLIST-docs,v 1.6 2011/01/15 09:21:31 sthen Exp $
+@pkgpath mail/sylpheed-claws,-docs
+@pkgpath mail/sylpheed-claws,-docs,compface
+@pkgpath mail/sylpheed-claws,-docs,pgpmime
+@pkgpath mail/sylpheed-claws,-docs,jpilot
+@pkgpath mail/sylpheed-claws,-docs,ldap
+@pkgpath mail/sylpheed-claws,-docs,compface,pgpmime
+@pkgpath mail/sylpheed-claws,-docs,compface,jpilot
+@pkgpath mail/sylpheed-claws,-docs,compface,ldap
+@pkgpath mail/sylpheed-claws,-docs,pgpmime,jpilot
+@pkgpath mail/sylpheed-claws,-docs,pgpmime,ldap
+@pkgpath mail/sylpheed-claws,-docs,jpilot,ldap
+@pkgpath mail/sylpheed-claws,-docs,compface,pgpmime,jpilot
+@pkgpath mail/sylpheed-claws,-docs,compface,pgpmime,ldap
+@pkgpath mail/sylpheed-claws,-docs,compface,jpilot,ldap
+@pkgpath mail/sylpheed-claws,-docs,pgpmime,jpilot,ldap
+@pkgpath mail/sylpheed-claws,-docs,compface,pgpmime,jpilot,ldap
 @pkgpath mail/claws-mail,-docs,ldap
 share/doc/claws-mail/
 share/doc/claws-mail/COPYING

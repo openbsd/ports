@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/11/19 07:23:05 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2011/01/15 09:21:31 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,13 +11,14 @@ COMMENT-spamassassin=	spamassassin plugin
 V=			3.7.6
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
-REVISION-main =		1
+REVISION-main =		2
 FULLPKGNAME-docs=	claws-mail-docs-${V}
 FULLPKGPATH-docs=	mail/claws-mail,-docs
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
-REVISION-bogofilter =	1
+REVISION-bogofilter =	2
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
-REVISION-spamassassin =	1
+REVISION-spamassassin =	2
+REVISION-docs =		0
 CATEGORIES=		mail news
 
 HOMEPAGE=		http://www.claws-mail.org/
@@ -49,13 +50,14 @@ RUN_DEPENDS-spamassassin=${BUILD_PKGPATH} \
 
 WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			Xi Xinerama Xrandr Xrender atk-1.0 cairo crypto curl \
-			expat fontconfig freetype gio-2.0 glib-2.0 \
+			expat fontconfig freetype gio-2.0 glib-2.0 gthread-2.0 \
 			gmodule-2.0 gobject-2.0 idn m pango-1.0 pangocairo-1.0 \
 			pangoft2-1.0 pcre pixman-1 png pthread-stubs ssl \
 			gcrypt gpg-error xcb z gdk_pixbuf-2.0 \
-			gdk-x11-2.0 gtk-x11-2.0 execinfo etpan>=13 sasl2
+			gdk-x11-2.0 gtk-x11-2.0 execinfo etpan>=13 sasl2 \
+			GL Xxf86vm drm xcb-render xcb-shm
 
-WANTLIB-main=		${WANTLIB} ICE SM c dbus-1 gthread-2.0 \
+WANTLIB-main=		${WANTLIB} ICE SM c dbus-1 \
 			pthread stdc++ tasn1 xcb-atom xcb-aux xcb-event \
 			startup-notification-1 enchant gnutls gpgme dbus-glib-1
 
