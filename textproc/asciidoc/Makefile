@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:47 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/01/15 11:09:17 jasper Exp $
 
 COMMENT=	text document format for writing documents and man pages 
 
-DISTNAME=	asciidoc-8.2.7
-REVISION=	3
+DISTNAME=	asciidoc-8.6.3
 CATEGORIES=	textproc
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -20,22 +19,22 @@ MASTER_SITES=	${HOMEPAGE} \
 		${MASTER_SITE_SOURCEFORGE:=asciidoc/}
 
 MODULES=	lang/python
-RUN_DEPENDS=	misc/gnugetopt \
-		shells/bash \
-		textproc/libxslt
+RUN_DEPENDS=	textproc/libxslt
+
+MODPY_ADJ_FILES=a2x.py \
+		asciidoc.py \
+		filters/{code,graphviz,latex,music}/*.py
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 USE_GROFF =	Yes
 
 post-configure:
-	@perl -pi -e 's,/usr/bin/env python,/usr/bin/env ${MODPY_BIN},g' \
-		${WRKSRC}/asciidoc.py ${WRKSRC}/filters/*.py
 	@perl -pi -e 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/asciidoc.py
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/asciidoc.py ${PREFIX}/bin/asciidoc 
-	${INSTALL_SCRIPT} ${WRKSRC}/a2x ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/a2x.py ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/asciidoc.1 ${WRKSRC}/doc/a2x.1 \
 				${PREFIX}/man/man1
 
@@ -48,12 +47,9 @@ do-install:
 
 	${INSTALL_DATA} ${WRKSRC}/*.conf ${PREFIX}/share/examples/asciidoc
 
-	${INSTALL_SCRIPT} ${WRKSRC}/filters/code-filter.py \
-				${WRKSRC}/filters/music2png.py \
-				${PREFIX}/share/examples/asciidoc/filters
-
-	${INSTALL_DATA} ${WRKSRC}/filters/*.conf \
+	cd ${WRKSRC}/filters/ && umask 022 && pax -rw . \
 		${PREFIX}/share/examples/asciidoc/filters
+
 	${INSTALL_DATA} ${WRKSRC}/docbook-xsl/*.xsl \
 		${PREFIX}/share/examples/asciidoc/docbook-xsl
 	${INSTALL_DATA} ${WRKSRC}/stylesheets/*.css \

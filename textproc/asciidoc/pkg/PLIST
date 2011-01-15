@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/11/10 11:58:34 pea Exp $
-bin/a2x
+@comment $OpenBSD: PLIST,v 1.5 2011/01/15 11:09:17 jasper Exp $
+bin/a2x.py
 bin/asciidoc
 @man man/man1/a2x.1
 @man man/man1/asciidoc.1
@@ -13,28 +13,60 @@ share/examples/asciidoc/docbook-xsl/chunked.xsl
 @sample ${SYSCONFDIR}/asciidoc/docbook-xsl/chunked.xsl
 share/examples/asciidoc/docbook-xsl/common.xsl
 @sample ${SYSCONFDIR}/asciidoc/docbook-xsl/common.xsl
+share/examples/asciidoc/docbook-xsl/epub.xsl
+@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/epub.xsl
 share/examples/asciidoc/docbook-xsl/fo.xsl
 @sample ${SYSCONFDIR}/asciidoc/docbook-xsl/fo.xsl
 share/examples/asciidoc/docbook-xsl/htmlhelp.xsl
 @sample ${SYSCONFDIR}/asciidoc/docbook-xsl/htmlhelp.xsl
 share/examples/asciidoc/docbook-xsl/manpage.xsl
 @sample ${SYSCONFDIR}/asciidoc/docbook-xsl/manpage.xsl
+share/examples/asciidoc/docbook-xsl/text.xsl
+@sample ${SYSCONFDIR}/asciidoc/docbook-xsl/text.xsl
 share/examples/asciidoc/docbook-xsl/xhtml.xsl
 @sample ${SYSCONFDIR}/asciidoc/docbook-xsl/xhtml.xsl
-share/examples/asciidoc/docbook.conf
-@sample ${SYSCONFDIR}/asciidoc/docbook.conf
+share/examples/asciidoc/docbook45.conf
+@sample ${SYSCONFDIR}/asciidoc/docbook45.conf
 share/examples/asciidoc/filters/
 @sample ${SYSCONFDIR}/asciidoc/filters/
-share/examples/asciidoc/filters/code-filter.conf
-@sample ${SYSCONFDIR}/asciidoc/filters/code-filter.conf
-share/examples/asciidoc/filters/code-filter.py
-@sample ${SYSCONFDIR}/asciidoc/filters/code-filter.py
-share/examples/asciidoc/filters/music-filter.conf
-@sample ${SYSCONFDIR}/asciidoc/filters/music-filter.conf
-share/examples/asciidoc/filters/music2png.py
-@sample ${SYSCONFDIR}/asciidoc/filters/music2png.py
-share/examples/asciidoc/filters/source-highlight-filter.conf
-@sample ${SYSCONFDIR}/asciidoc/filters/source-highlight-filter.conf
+share/examples/asciidoc/filters/code/
+@sample ${SYSCONFDIR}/asciidoc/filters/code/
+share/examples/asciidoc/filters/code/code-filter-readme.txt
+@sample ${SYSCONFDIR}/asciidoc/filters/code/code-filter-readme.txt
+share/examples/asciidoc/filters/code/code-filter-test.txt
+@sample ${SYSCONFDIR}/asciidoc/filters/code/code-filter-test.txt
+share/examples/asciidoc/filters/code/code-filter.conf
+@sample ${SYSCONFDIR}/asciidoc/filters/code/code-filter.conf
+share/examples/asciidoc/filters/code/code-filter.py
+@sample ${SYSCONFDIR}/asciidoc/filters/code/code-filter.py
+share/examples/asciidoc/filters/graphviz/
+@sample ${SYSCONFDIR}/asciidoc/filters/graphviz/
+share/examples/asciidoc/filters/graphviz/asciidoc-graphviz-sample.txt
+@sample ${SYSCONFDIR}/asciidoc/filters/graphviz/asciidoc-graphviz-sample.txt
+share/examples/asciidoc/filters/graphviz/graphviz-filter.conf
+@sample ${SYSCONFDIR}/asciidoc/filters/graphviz/graphviz-filter.conf
+share/examples/asciidoc/filters/graphviz/graphviz2png.py
+@sample ${SYSCONFDIR}/asciidoc/filters/graphviz/graphviz2png.py
+share/examples/asciidoc/filters/latex/
+@sample ${SYSCONFDIR}/asciidoc/filters/latex/
+share/examples/asciidoc/filters/latex/latex-filter.conf
+@sample ${SYSCONFDIR}/asciidoc/filters/latex/latex-filter.conf
+share/examples/asciidoc/filters/latex/latex2png.py
+@sample ${SYSCONFDIR}/asciidoc/filters/latex/latex2png.py
+share/examples/asciidoc/filters/music/
+@sample ${SYSCONFDIR}/asciidoc/filters/music/
+share/examples/asciidoc/filters/music/music-filter-test.txt
+@sample ${SYSCONFDIR}/asciidoc/filters/music/music-filter-test.txt
+share/examples/asciidoc/filters/music/music-filter.conf
+@sample ${SYSCONFDIR}/asciidoc/filters/music/music-filter.conf
+share/examples/asciidoc/filters/music/music2png.py
+@sample ${SYSCONFDIR}/asciidoc/filters/music/music2png.py
+share/examples/asciidoc/filters/source/
+@sample ${SYSCONFDIR}/asciidoc/filters/source/
+share/examples/asciidoc/filters/source/source-highlight-filter-test.txt
+@sample ${SYSCONFDIR}/asciidoc/filters/source/source-highlight-filter-test.txt
+share/examples/asciidoc/filters/source/source-highlight-filter.conf
+@sample ${SYSCONFDIR}/asciidoc/filters/source/source-highlight-filter.conf
 share/examples/asciidoc/help.conf
 @sample ${SYSCONFDIR}/asciidoc/help.conf
 share/examples/asciidoc/html4.conf
@@ -101,37 +133,53 @@ share/examples/asciidoc/javascripts/ASCIIMathML.js
 @sample ${SYSCONFDIR}/asciidoc/javascripts/ASCIIMathML.js
 share/examples/asciidoc/javascripts/LaTeXMathML.js
 @sample ${SYSCONFDIR}/asciidoc/javascripts/LaTeXMathML.js
+share/examples/asciidoc/javascripts/asciidoc-xhtml11.js
+share/examples/asciidoc/javascripts/slidy.js
 share/examples/asciidoc/javascripts/toc.js
 @sample ${SYSCONFDIR}/asciidoc/javascripts/toc.js
+share/examples/asciidoc/lang-de.conf
+@sample ${SYSCONFDIR}/asciidoc/lang-de.conf
+share/examples/asciidoc/lang-en.conf
+@sample ${SYSCONFDIR}/asciidoc/lang-en.conf
 share/examples/asciidoc/lang-es.conf
+@sample ${SYSCONFDIR}/asciidoc/lang-es.conf
+share/examples/asciidoc/lang-fr.conf
+@sample ${SYSCONFDIR}/asciidoc/lang-fr.conf
+share/examples/asciidoc/lang-hu.conf
+@sample ${SYSCONFDIR}/asciidoc/lang-hu.conf
+share/examples/asciidoc/lang-it.conf
+@sample ${SYSCONFDIR}/asciidoc/lang-it.conf
+share/examples/asciidoc/lang-pt-BR.conf
+@sample ${SYSCONFDIR}/asciidoc/lang-pt-BR.conf
+share/examples/asciidoc/lang-ru.conf
+@sample ${SYSCONFDIR}/asciidoc/lang-ru.conf
 share/examples/asciidoc/latex.conf
 @sample ${SYSCONFDIR}/asciidoc/latex.conf
-share/examples/asciidoc/linuxdoc.conf
-@sample ${SYSCONFDIR}/asciidoc/linuxdoc.conf
-share/examples/asciidoc/math.conf
-@sample ${SYSCONFDIR}/asciidoc/math.conf
+share/examples/asciidoc/slidy.conf
+@sample ${SYSCONFDIR}/asciidoc/slidy.conf
 share/examples/asciidoc/stylesheets/
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/
 share/examples/asciidoc/stylesheets/docbook-xsl.css
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/docbook-xsl.css
-share/examples/asciidoc/stylesheets/xhtml-deprecated-manpage.css
-@sample ${SYSCONFDIR}/asciidoc/stylesheets/xhtml-deprecated-manpage.css
-share/examples/asciidoc/stylesheets/xhtml-deprecated.css
-@sample ${SYSCONFDIR}/asciidoc/stylesheets/xhtml-deprecated.css
+share/examples/asciidoc/stylesheets/pygments.css
+@sample ${SYSCONFDIR}/asciidoc/stylesheets/pygments.css
+share/examples/asciidoc/stylesheets/slidy.css
+@sample ${SYSCONFDIR}/asciidoc/stylesheets/slidy.css
+share/examples/asciidoc/stylesheets/volnitsky-manpage.css
+@sample ${SYSCONFDIR}/asciidoc/stylesheets/volnitsky-manpage.css
+share/examples/asciidoc/stylesheets/volnitsky-quirks.css
+@sample ${SYSCONFDIR}/asciidoc/stylesheets/volnitsky-quirks.css
+share/examples/asciidoc/stylesheets/volnitsky.css
+@sample ${SYSCONFDIR}/asciidoc/stylesheets/volnitsky.css
 share/examples/asciidoc/stylesheets/xhtml11-manpage.css
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/xhtml11-manpage.css
 share/examples/asciidoc/stylesheets/xhtml11-quirks.css
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/xhtml11-quirks.css
 share/examples/asciidoc/stylesheets/xhtml11.css
 @sample ${SYSCONFDIR}/asciidoc/stylesheets/xhtml11.css
-share/examples/asciidoc/t.conf
-@sample ${SYSCONFDIR}/asciidoc/t.conf
 share/examples/asciidoc/text.conf
 @sample ${SYSCONFDIR}/asciidoc/text.conf
-share/examples/asciidoc/xhtml-deprecated-css.conf
-@sample ${SYSCONFDIR}/asciidoc/xhtml-deprecated-css.conf
-share/examples/asciidoc/xhtml-deprecated.conf
-@sample ${SYSCONFDIR}/asciidoc/xhtml-deprecated.conf
+share/examples/asciidoc/wordpress.conf
 share/examples/asciidoc/xhtml11-quirks.conf
 @sample ${SYSCONFDIR}/asciidoc/xhtml11-quirks.conf
 share/examples/asciidoc/xhtml11.conf
