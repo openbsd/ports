@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/01/15 11:09:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/01/15 22:29:18 jasper Exp $
 
 COMMENT=	text document format for writing documents and man pages 
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE} \
-		${MASTER_SITE_SOURCEFORGE:=asciidoc/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=asciidoc/}
 
 MODULES=	lang/python
 RUN_DEPENDS=	textproc/libxslt
