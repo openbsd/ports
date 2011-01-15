@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.69 2010/11/24 21:35:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.70 2011/01/15 19:09:00 jasper Exp $
 
 COMMENT=		office suite for KDE
 
 VERSION=		1.6.3
-REVISION =		18
+REVISION =		19
 CATEGORIES=		x11 x11/kde productivity
 VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
@@ -98,9 +98,9 @@ LIB_DEPENDS=	x11/kde/libs3 \
 WANTLIB= GL GLU GraphicsMagick>=1 Half ICE Iex IlmImf IlmThread Imath \
 	MagickCore>=1 MagickWand>=1 SM X11 Xau Xcursor Xdamage Xdmcp Xext \
 	Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm art_lgpl_2>=5 \
-	artsflow artsflow_idl audiofile bz2 c crypto drm exif>=12 expat fam \
+	artsflow artsflow_idl audiofile bz2 c crypto drm exif>=12 expat \
 	fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsf-1 \
-	gthread-2.0 idn jasper jbig jpeg kmedia2_idl lcms lib/kde3/DCOP \
+	gthread-2.0 idn jasper jbig jpeg kmedia2_idl lcms ltdl lib/kde3/DCOP \
 	lib/kde3/artskde lib/kde3/kabc lib/kde3/kdecore>=4 lib/kde3/kdefx \
 	lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui lib/kde3/khtml \
 	lib/kde3/kio lib/kde3/kjs lib/kde3/kmdi lib/kde3/knewstuff \
@@ -109,7 +109,7 @@ WANTLIB= GL GLU GraphicsMagick>=1 Half ICE Iex IlmImf IlmThread Imath \
 	lib/kde3/vcard m mad mcop mng mysqlclient ogg openjpeg paper pcre \
 	pcreposix png poppler poppler-qt pq pqxx pthread pthread-stubs \
 	python2.5 qtmcop readline sndio soundserver_idl ssl stdc++ \
-	termcap tiff util vorbis vorbisenc vorbisfile wmflite wpd-0.8 \
+	termcap tiff util vorbis vorbisenc vorbisfile wmflite-0.2 wpd-0.8 \
 	wv2 xcb xml2 xslt z ${MODRUBY_WANTLIB}
 
 
