@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2011/01/15 13:07:50 jasper Exp $
+--- configure.orig	Tue Jan 11 13:44:38 2011
++++ configure	Thu Jan 13 00:29:44 2011
+@@ -3650,7 +3650,7 @@ $as_echo "#define ENABLE_JIT 1" >>confdefs.h
+ ;;
+     esac
+     case $host in
+-        *-*-darwin*|*-*-linux*)
++        *-*-darwin*|*-*-linux*|*-*-openbsd*)
+ 
+ $as_echo "#define USE_MPROTECT 1" >>confdefs.h
+ ;;

@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2011/01/15 13:07:50 jasper Exp $
+--- Makefile.in.orig	Wed Jan  5 13:11:55 2011
++++ Makefile.in	Thu Jan 13 01:08:31 2011
+@@ -94,7 +94,7 @@ else
+ endif
+ 
+ ifdef ENABLE_DEBUGGER
+-  PREDIRS += lablgtk
++#  PREDIRS += lablgtk
+   SUBDIRS += debugger
+   BUILD += obxdeb obdb
+   DEBUILD += obdb0
+@@ -195,7 +195,7 @@ LIB = runtime/obx.a runtime/obx-j.a runtime/obx-p.a li
+ 	$(MODULES:%=lib/%.k) $(CHECKMODS:%=lib/%-b.k)
+ 
+ # Man pages
+-MAN = $(wildcard $(srcdir)/doc/*.1)
++MAN = $(wildcard $(srcdir)/man/*.1)
+ 
+ # Installation directories
+ DIRS = $(bindir) $(libdir)/obc $(mandir)/man1
