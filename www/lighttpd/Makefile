@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2010/11/22 10:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.79 2011/01/15 10:56:51 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -26,7 +26,6 @@ RUN_DEPENDS+=	www/spawn-fcgi
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
-USE_GROFF =	Yes
 CONFIGURE_STYLE= autoconf
 # Should be 2.65
 AUTOCONF_VERSION= 2.64

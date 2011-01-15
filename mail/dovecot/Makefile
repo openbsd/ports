@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2011/01/04 13:59:17 pea Exp $
+# $OpenBSD: Makefile,v 1.159 2011/01/15 10:56:51 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -56,7 +56,6 @@ FLAVOR?=
 CFLAGS+=	-I/usr/include/kerberosV -I${LOCALBASE}/include
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
 # Should be 2.65
 AUTOCONF_VERSION=	2.64
 CONFIGURE_STYLE=	autoconf

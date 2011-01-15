@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/12/03 07:27:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.38 2011/01/15 10:56:51 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -51,7 +51,6 @@ LIB_DEPENDS=	archivers/bzip2 \
 USE_GMAKE=	Yes
 # Gnash requires GNU libtool 2.2 or greater, so use the bundled one
 USE_LIBTOOL=	gnu
-USE_GROFF=	Yes
 LIBTOOL=	${WRKSRC}/libtool
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= gnu

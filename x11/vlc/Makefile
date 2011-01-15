@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2011/01/14 19:46:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.113 2011/01/15 10:56:51 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -75,7 +75,6 @@ WANTLIB-main=	FLAC GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE= autoconf
 # Should be 2.65
 AUTOCONF_VERSION= 2.64

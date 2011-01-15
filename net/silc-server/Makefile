@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/11/19 22:31:38 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2011/01/15 10:56:51 jasper Exp $
 
 COMMENT=	Secure Internet Live Conferencing (SILC) server
 
@@ -39,7 +39,6 @@ CONFDIR=	${SYSCONFDIR}/silcd
 SUBST_VARS=	CONFDIR
 
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.63

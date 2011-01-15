@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2011/01/13 10:29:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.86 2011/01/15 10:56:51 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -80,7 +80,6 @@ SEPARATE_BUILD=	simple
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf
 # Should be 2.67
 AUTOCONF_VERSION= 2.64

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/11/22 10:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2011/01/15 10:56:51 jasper Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
@@ -69,7 +69,6 @@ LIBswscale_EXTRALIBS=-lm
 WRKTMP=		${WRKDIR}/tmp
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--cc=${CC} \
