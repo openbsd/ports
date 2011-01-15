@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.4 2010/10/22 19:14:56 landry Exp $
---- mozilla/security/nss/lib/ckfw/builtins/certdata.c.orig	Fri Aug 27 17:46:44 2010
-+++ mozilla/security/nss/lib/ckfw/builtins/certdata.c	Wed Oct 20 13:12:09 2010
+$OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.5 2011/01/15 16:59:37 landry Exp $
+--- mozilla/security/nss/lib/ckfw/builtins/certdata.c.orig	Fri Dec  3 00:26:35 2010
++++ mozilla/security/nss/lib/ckfw/builtins/certdata.c	Thu Jan 13 14:02:49 2011
 @@ -990,6 +990,18 @@ static const CK_ATTRIBUTE_TYPE nss_builtins_types_310 
  static const CK_ATTRIBUTE_TYPE nss_builtins_types_311 [] = {
   CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERT_SHA1_HASH,  CKA_CERT_MD5_HASH,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
@@ -20,7 +20,7 @@ $OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.4 2010/10/
  #ifdef DEBUG
  static const NSSItem nss_builtins_items_0 [] = {
    { (void *)&cko_data, (PRUint32)sizeof(CK_OBJECT_CLASS) },
-@@ -20864,6 +20876,332 @@ static const NSSItem nss_builtins_items_311 [] = {
+@@ -20992,6 +21004,332 @@ static const NSSItem nss_builtins_items_311 [] = {
    { (void *)&ckt_netscape_trusted_delegator, (PRUint32)sizeof(CK_TRUST) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) }
  };
@@ -353,7 +353,7 @@ $OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.4 2010/10/
  
  builtinsInternalObject
  nss_builtins_data[] = {
-@@ -21180,11 +21518,15 @@ nss_builtins_data[] = {
+@@ -21308,11 +21646,15 @@ nss_builtins_data[] = {
    { 11, nss_builtins_types_308, nss_builtins_items_308, {NULL} },
    { 13, nss_builtins_types_309, nss_builtins_items_309, {NULL} },
    { 11, nss_builtins_types_310, nss_builtins_items_310, {NULL} },
