@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.55 2010/10/01 20:19:54 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.56 2011/01/15 22:37:39 jasper Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
@@ -41,6 +41,7 @@ libexec/postfix/postmulti-script
 @bin libexec/postfix/smtpd
 @bin libexec/postfix/spawn
 @bin libexec/postfix/tlsmgr
+@bin libexec/postfix/tlsproxy
 @bin libexec/postfix/trivial-rewrite
 @bin libexec/postfix/verify
 @bin libexec/postfix/virtual
@@ -106,6 +107,7 @@ libexec/postfix/postmulti-script
 @man man/man8/smtpd.8
 @man man/man8/spawn.8
 @man man/man8/tlsmgr.8
+@man man/man8/tlsproxy.8
 @man man/man8/trace.8
 @man man/man8/trivial-rewrite.8
 @man man/man8/verify.8
@@ -243,6 +245,7 @@ share/doc/postfix/html/smtpd.8.html
 share/doc/postfix/html/spawn.8.html
 share/doc/postfix/html/sqlite_table.5.html
 share/doc/postfix/html/tcp_table.5.html
+share/doc/postfix/html/tlsproxy.8.html
 share/doc/postfix/html/trace.8.html
 share/doc/postfix/html/transport.5.html
 share/doc/postfix/html/trivial-rewrite.8.html

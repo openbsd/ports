@@ -1,6 +1,6 @@
---- conf/master.cf.orig	Sat Jan 16 18:06:02 2010
-+++ conf/master.cf	Sat Mar  6 22:02:47 2010
-@@ -8,48 +8,48 @@
+--- conf/master.cf.orig	Fri Dec 31 09:14:51 2010
++++ conf/master.cf	Fri Jan  7 22:16:50 2011
+@@ -8,49 +8,49 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
@@ -8,11 +8,13 @@
 -#smtp      inet  n       -       n       -       1       postscreen
 -#smtpd     pass  -       -       n       -       -       smtpd
 -#dnsblog   unix  -       -       n       -       0       dnsblog
+-#tlsproxy  unix  -       -       n       -       0       tlsproxy
 -#submission inet n       -       n       -       -       smtpd
 +smtp      inet  n       -       -       -       -       smtpd
 +#smtp      inet  n       -       -       -       1       postscreen
 +#smtpd     pass  -       -       -       -       -       smtpd
 +#dnsblog   unix  -       -       -       -       0       dnsblog
++#tlsproxy  unix  -       -       -       -       0       tlsproxy
 +#submission inet n       -       -       -       -       smtpd
  #  -o smtpd_tls_security_level=encrypt
  #  -o smtpd_sasl_auth_enable=yes
@@ -76,7 +78,7 @@
  #
  # ====================================================================
  # Interfaces to non-Postfix software. Be sure to examine the manual
-@@ -83,14 +83,14 @@ scache    unix  -       -       n       -       1     
+@@ -84,14 +84,14 @@ scache    unix  -       -       n       -       1     
  # Also specify in main.cf: cyrus_destination_recipient_limit=1
  #
  #cyrus     unix  -       n       n       -       -       pipe
