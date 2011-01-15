@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/01/15 21:01:20 jasper Exp $
 
 COMMENT =		ncurses GIT repository browser
-DISTNAME =		tig-0.16
+DISTNAME =		tig-0.16.2
 CATEGORIES =		devel
 HOMEPAGE =		http://jonas.nitro.dk/tig/
 MAINTAINER =		Tobias Ulmer <tobiasu@tmux.org>
@@ -12,14 +12,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c ncurses
+WANTLIB =		c ncursesw
 MODULES =		converters/libiconv
 RUN_DEPENDS =		devel/git
 
 MASTER_SITES =		${HOMEPAGE}/releases/
 
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-libiconv=${LOCALBASE} ASCIIDOC=false \
 			XMLTO=false DOCBOOK2PDF=false
