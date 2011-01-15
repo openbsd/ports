@@ -1,7 +1,19 @@
-$OpenBSD: patch-src_Core_Debug_OODebugTCPConsoleClient_m,v 1.1.1.1 2010/04/19 23:44:55 nicm Exp $
---- src/Core/Debug/OODebugTCPConsoleClient.m.orig	Wed Mar 31 21:55:57 2010
-+++ src/Core/Debug/OODebugTCPConsoleClient.m	Wed Mar 31 21:56:52 2010
-@@ -157,7 +157,7 @@ OOINLINE BOOL StatusIsSendable(OOTCPClientConnectionSt
+$OpenBSD: patch-src_Core_Debug_OODebugTCPConsoleClient_m,v 1.2 2011/01/15 10:13:23 sebastia Exp $
+
+fix: 'struct in_addr' declared inside parameter list
+
+--- src/Core/Debug/OODebugTCPConsoleClient.m.orig	Sun Aug 30 13:40:23 2009
++++ src/Core/Debug/OODebugTCPConsoleClient.m	Fri Jan 14 13:22:16 2011
+@@ -40,6 +40,8 @@ SOFTWARE.
+ #if OOLITE_WINDOWS
+ #import <winsock2.h>
+ #else
++#include <sys/types.h>
++#include <netinet/in.h>
+ #import <arpa/inet.h>	// For htonl
+ #endif
+ 
+@@ -157,7 +159,7 @@ OOINLINE BOOL StatusIsSendable(OOTCPClientConnectionSt
  			// Attempt to connect
  			parameters = [NSDictionary dictionaryWithObjectsAndKeys:
  							[NSNumber numberWithUnsignedInt:kOOTCPProtocolVersion_1_1_0], kOOTCPProtocolVersion,

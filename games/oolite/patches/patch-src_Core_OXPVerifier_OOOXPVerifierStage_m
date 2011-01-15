@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Core_OXPVerifier_OOOXPVerifierStage_m,v 1.1 2011/01/15 10:13:23 sebastia Exp $
+
+missing header
+
+--- src/Core/OXPVerifier/OOOXPVerifierStage.m.orig	Fri Jan 14 12:59:57 2011
++++ src/Core/OXPVerifier/OOOXPVerifierStage.m	Fri Jan 14 13:00:15 2011
+@@ -47,6 +47,9 @@ SOFTWARE.
+ */
+ 
+ #import "OOOXPVerifierStageInternal.h"
++
++#include <assert.h>
++
+ 
+ #if OO_OXP_VERIFIER_ENABLED
+ 

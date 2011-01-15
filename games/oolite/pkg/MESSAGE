@@ -1,5 +1,5 @@
 If you experience poor game performance, you can try adding the
-following lines to ~/GNUstep/Defaults/.GNUstepDefaults:
-    "max-texture-size" = 64;
-    "texture-anisotropy-scale" = 0;
-    "use-texture-lod-bias" = NO;
+following to the configuration using the gnustep defaults tool:
+   $ defaults write oolite max-texture-size 64
+   $ defaults write oolite texture-anisotropy-scale 0
+   $ defaults write oolite use-texture-lod-bias NO

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_SDL_OOSDLSoundMixer_m,v 1.1 2011/01/15 10:13:23 sebastia Exp $
+
+missing header
+
+--- src/SDL/OOSDLSoundMixer.m.orig	Fri Jan 14 13:02:04 2011
++++ src/SDL/OOSDLSoundMixer.m	Fri Jan 14 13:02:16 2011
+@@ -48,6 +48,9 @@ SOFTWARE.
+ 
+ #import "OOCocoa.h"
+ #import "OOSDLSoundInternal.h"
++
++#include <assert.h>
++
+ 
+ 
+ static OOSoundMixer *sSingleton = nil;

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Core_Materials_OOPNGTextureLoader_m,v 1.1 2011/01/15 10:13:23 sebastia Exp $
+
+missing header
+
+--- src/Core/Materials/OOPNGTextureLoader.m.orig	Fri Jan 14 12:58:52 2011
++++ src/Core/Materials/OOPNGTextureLoader.m	Fri Jan 14 12:59:09 2011
+@@ -50,6 +50,9 @@ SOFTWARE.
+ #import "OOFunctionAttributes.h"
+ #import "OOLogging.h"
+ #import "OOCPUInfo.h"
++
++#include <assert.h>
++
+ 
+ 
+ void png_error(png_structp, png_const_charp) NO_RETURN_FUNC;

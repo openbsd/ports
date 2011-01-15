@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_Core_OOMaths_h,v 1.1 2011/01/15 10:13:23 sebastia Exp $
+--- src/Core/OOMaths.h.orig	Fri Jan 14 12:36:10 2011
++++ src/Core/OOMaths.h	Fri Jan 14 12:36:45 2011
+@@ -37,6 +37,7 @@ extern "C" {
+ 
+ #ifdef __OBJC__
+ #import <Foundation/Foundation.h>
++#import <assert.h>
+ #endif
+ 
+ #include "OOFunctionAttributes.h"

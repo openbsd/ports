@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Core_OOPriorityQueue_m,v 1.1 2011/01/15 10:13:23 sebastia Exp $
+
+missing header
+
+--- src/Core/OOPriorityQueue.m.orig	Fri Jan 14 13:03:08 2011
++++ src/Core/OOPriorityQueue.m	Fri Jan 14 13:03:25 2011
+@@ -28,6 +28,9 @@ SOFTWARE.
+ 
+ #import "OOPriorityQueue.h"
+ #import "OOFunctionAttributes.h"
++
++#include <assert.h>
++
+ 
+ 
+ /*	Capacity grows by 50% each time. kMinCapacity must be at least 2 or Bad
