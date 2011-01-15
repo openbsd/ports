@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_d_config_os_headers,v 1.1 2010/10/25 22:59:12 sthen Exp $
+$OpenBSD: patch-configure_d_config_os_headers,v 1.2 2011/01/15 09:38:31 sthen Exp $
 
 On OpenBSD headers must be included in this order:
 
@@ -8,9 +8,9 @@ others
 
 Also in_pcb.h requires ip.h
 
---- configure.d/config_os_headers.orig	Fri Aug 13 16:04:07 2010
-+++ configure.d/config_os_headers	Thu Oct 14 19:38:58 2010
-@@ -392,17 +392,20 @@ AC_CHECK_HEADERS(netinet/in_pcb.h,,,
+--- configure.d/config_os_headers.orig	Fri Nov  5 13:55:44 2010
++++ configure.d/config_os_headers	Wed Jan  5 17:13:57 2011
+@@ -391,17 +391,20 @@ AC_CHECK_HEADERS(netinet/in_pcb.h,,,
  #if HAVE_SYS_SOCKETVAR_H
  #include <sys/socketvar.h>
  #endif
