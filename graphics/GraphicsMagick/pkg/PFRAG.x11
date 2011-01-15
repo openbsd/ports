@@ -1,0 +1,7 @@
+@comment $OpenBSD: PFRAG.x11,v 1.1 2011/01/15 16:17:33 jasper Exp $
+@comment lib/GraphicsMagick/modules-Q16/coders/x.a
+lib/GraphicsMagick/modules-Q16/coders/x.la
+lib/GraphicsMagick/modules-Q16/coders/x.so
+@comment lib/GraphicsMagick/modules-Q16/coders/xwd.a
+lib/GraphicsMagick/modules-Q16/coders/xwd.la
+lib/GraphicsMagick/modules-Q16/coders/xwd.so

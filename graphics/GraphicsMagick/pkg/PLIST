@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/03/28 17:17:15 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.7 2011/01/15 16:17:33 jasper Exp $
 bin/GraphicsMagick++-config
 bin/GraphicsMagick-config
 bin/GraphicsMagickWand-config
@@ -98,14 +97,293 @@ lib/GraphicsMagick/config/type-windows.mgk
 lib/GraphicsMagick/config/type.mgk
 lib/GraphicsMagick/modules-Q16/
 lib/GraphicsMagick/modules-Q16/coders/
+%%x11%%
+@comment lib/GraphicsMagick/modules-Q16/coders/art.a
+lib/GraphicsMagick/modules-Q16/coders/art.la
+lib/GraphicsMagick/modules-Q16/coders/art.so
+@comment lib/GraphicsMagick/modules-Q16/coders/avi.a
+lib/GraphicsMagick/modules-Q16/coders/avi.la
+lib/GraphicsMagick/modules-Q16/coders/avi.so
+@comment lib/GraphicsMagick/modules-Q16/coders/avs.a
+lib/GraphicsMagick/modules-Q16/coders/avs.la
+lib/GraphicsMagick/modules-Q16/coders/avs.so
+@comment lib/GraphicsMagick/modules-Q16/coders/bmp.a
+lib/GraphicsMagick/modules-Q16/coders/bmp.la
+lib/GraphicsMagick/modules-Q16/coders/bmp.so
+@comment lib/GraphicsMagick/modules-Q16/coders/cals.a
+lib/GraphicsMagick/modules-Q16/coders/cals.la
+lib/GraphicsMagick/modules-Q16/coders/cals.so
+@comment lib/GraphicsMagick/modules-Q16/coders/caption.a
+lib/GraphicsMagick/modules-Q16/coders/caption.la
+lib/GraphicsMagick/modules-Q16/coders/caption.so
+@comment lib/GraphicsMagick/modules-Q16/coders/cineon.a
+lib/GraphicsMagick/modules-Q16/coders/cineon.la
+lib/GraphicsMagick/modules-Q16/coders/cineon.so
+@comment lib/GraphicsMagick/modules-Q16/coders/cmyk.a
+lib/GraphicsMagick/modules-Q16/coders/cmyk.la
+lib/GraphicsMagick/modules-Q16/coders/cmyk.so
+@comment lib/GraphicsMagick/modules-Q16/coders/cut.a
+lib/GraphicsMagick/modules-Q16/coders/cut.la
+lib/GraphicsMagick/modules-Q16/coders/cut.so
+@comment lib/GraphicsMagick/modules-Q16/coders/dcm.a
+lib/GraphicsMagick/modules-Q16/coders/dcm.la
+lib/GraphicsMagick/modules-Q16/coders/dcm.so
+@comment lib/GraphicsMagick/modules-Q16/coders/dcraw.a
+lib/GraphicsMagick/modules-Q16/coders/dcraw.la
+lib/GraphicsMagick/modules-Q16/coders/dcraw.so
+@comment lib/GraphicsMagick/modules-Q16/coders/dib.a
+lib/GraphicsMagick/modules-Q16/coders/dib.la
+lib/GraphicsMagick/modules-Q16/coders/dib.so
+@comment lib/GraphicsMagick/modules-Q16/coders/dpx.a
+lib/GraphicsMagick/modules-Q16/coders/dpx.la
+lib/GraphicsMagick/modules-Q16/coders/dpx.so
+@comment lib/GraphicsMagick/modules-Q16/coders/ept.a
+lib/GraphicsMagick/modules-Q16/coders/ept.la
+lib/GraphicsMagick/modules-Q16/coders/ept.so
+@comment lib/GraphicsMagick/modules-Q16/coders/fax.a
+lib/GraphicsMagick/modules-Q16/coders/fax.la
+lib/GraphicsMagick/modules-Q16/coders/fax.so
+@comment lib/GraphicsMagick/modules-Q16/coders/fits.a
+lib/GraphicsMagick/modules-Q16/coders/fits.la
+lib/GraphicsMagick/modules-Q16/coders/fits.so
+@comment lib/GraphicsMagick/modules-Q16/coders/gif.a
+lib/GraphicsMagick/modules-Q16/coders/gif.la
+lib/GraphicsMagick/modules-Q16/coders/gif.so
+@comment lib/GraphicsMagick/modules-Q16/coders/gradient.a
+lib/GraphicsMagick/modules-Q16/coders/gradient.la
+lib/GraphicsMagick/modules-Q16/coders/gradient.so
+@comment lib/GraphicsMagick/modules-Q16/coders/gray.a
+lib/GraphicsMagick/modules-Q16/coders/gray.la
+lib/GraphicsMagick/modules-Q16/coders/gray.so
+@comment lib/GraphicsMagick/modules-Q16/coders/histogram.a
+lib/GraphicsMagick/modules-Q16/coders/histogram.la
+lib/GraphicsMagick/modules-Q16/coders/histogram.so
+@comment lib/GraphicsMagick/modules-Q16/coders/hrz.a
+lib/GraphicsMagick/modules-Q16/coders/hrz.la
+lib/GraphicsMagick/modules-Q16/coders/hrz.so
+@comment lib/GraphicsMagick/modules-Q16/coders/html.a
+lib/GraphicsMagick/modules-Q16/coders/html.la
+lib/GraphicsMagick/modules-Q16/coders/html.so
+@comment lib/GraphicsMagick/modules-Q16/coders/icon.a
+lib/GraphicsMagick/modules-Q16/coders/icon.la
+lib/GraphicsMagick/modules-Q16/coders/icon.so
+@comment lib/GraphicsMagick/modules-Q16/coders/identity.a
+lib/GraphicsMagick/modules-Q16/coders/identity.la
+lib/GraphicsMagick/modules-Q16/coders/identity.so
+@comment lib/GraphicsMagick/modules-Q16/coders/jbig.a
+lib/GraphicsMagick/modules-Q16/coders/jbig.la
+lib/GraphicsMagick/modules-Q16/coders/jbig.so
+@comment lib/GraphicsMagick/modules-Q16/coders/jp2.a
+lib/GraphicsMagick/modules-Q16/coders/jp2.la
+lib/GraphicsMagick/modules-Q16/coders/jp2.so
+@comment lib/GraphicsMagick/modules-Q16/coders/jpeg.a
+lib/GraphicsMagick/modules-Q16/coders/jpeg.la
+lib/GraphicsMagick/modules-Q16/coders/jpeg.so
+@comment lib/GraphicsMagick/modules-Q16/coders/label.a
+lib/GraphicsMagick/modules-Q16/coders/label.la
+lib/GraphicsMagick/modules-Q16/coders/label.so
+@comment lib/GraphicsMagick/modules-Q16/coders/locale.a
+lib/GraphicsMagick/modules-Q16/coders/locale.la
+lib/GraphicsMagick/modules-Q16/coders/locale.so
+@comment lib/GraphicsMagick/modules-Q16/coders/logo.a
+lib/GraphicsMagick/modules-Q16/coders/logo.la
+lib/GraphicsMagick/modules-Q16/coders/logo.so
+@comment lib/GraphicsMagick/modules-Q16/coders/map.a
+lib/GraphicsMagick/modules-Q16/coders/map.la
+lib/GraphicsMagick/modules-Q16/coders/map.so
+@comment lib/GraphicsMagick/modules-Q16/coders/mat.a
+lib/GraphicsMagick/modules-Q16/coders/mat.la
+lib/GraphicsMagick/modules-Q16/coders/mat.so
+@comment lib/GraphicsMagick/modules-Q16/coders/matte.a
+lib/GraphicsMagick/modules-Q16/coders/matte.la
+lib/GraphicsMagick/modules-Q16/coders/matte.so
+@comment lib/GraphicsMagick/modules-Q16/coders/meta.a
+lib/GraphicsMagick/modules-Q16/coders/meta.la
+lib/GraphicsMagick/modules-Q16/coders/meta.so
+@comment lib/GraphicsMagick/modules-Q16/coders/miff.a
+lib/GraphicsMagick/modules-Q16/coders/miff.la
+lib/GraphicsMagick/modules-Q16/coders/miff.so
+@comment lib/GraphicsMagick/modules-Q16/coders/mono.a
+lib/GraphicsMagick/modules-Q16/coders/mono.la
+lib/GraphicsMagick/modules-Q16/coders/mono.so
+@comment lib/GraphicsMagick/modules-Q16/coders/mpc.a
+lib/GraphicsMagick/modules-Q16/coders/mpc.la
+lib/GraphicsMagick/modules-Q16/coders/mpc.so
+@comment lib/GraphicsMagick/modules-Q16/coders/mpeg.a
+lib/GraphicsMagick/modules-Q16/coders/mpeg.la
+lib/GraphicsMagick/modules-Q16/coders/mpeg.so
+@comment lib/GraphicsMagick/modules-Q16/coders/mpr.a
+lib/GraphicsMagick/modules-Q16/coders/mpr.la
+lib/GraphicsMagick/modules-Q16/coders/mpr.so
+@comment lib/GraphicsMagick/modules-Q16/coders/msl.a
+lib/GraphicsMagick/modules-Q16/coders/msl.la
+lib/GraphicsMagick/modules-Q16/coders/msl.so
+@comment lib/GraphicsMagick/modules-Q16/coders/mtv.a
+lib/GraphicsMagick/modules-Q16/coders/mtv.la
+lib/GraphicsMagick/modules-Q16/coders/mtv.so
+@comment lib/GraphicsMagick/modules-Q16/coders/mvg.a
+lib/GraphicsMagick/modules-Q16/coders/mvg.la
+lib/GraphicsMagick/modules-Q16/coders/mvg.so
+@comment lib/GraphicsMagick/modules-Q16/coders/null.a
+lib/GraphicsMagick/modules-Q16/coders/null.la
+lib/GraphicsMagick/modules-Q16/coders/null.so
+@comment lib/GraphicsMagick/modules-Q16/coders/otb.a
+lib/GraphicsMagick/modules-Q16/coders/otb.la
+lib/GraphicsMagick/modules-Q16/coders/otb.so
+@comment lib/GraphicsMagick/modules-Q16/coders/palm.a
+lib/GraphicsMagick/modules-Q16/coders/palm.la
+lib/GraphicsMagick/modules-Q16/coders/palm.so
+@comment lib/GraphicsMagick/modules-Q16/coders/pcd.a
+lib/GraphicsMagick/modules-Q16/coders/pcd.la
+lib/GraphicsMagick/modules-Q16/coders/pcd.so
+@comment lib/GraphicsMagick/modules-Q16/coders/pcl.a
+lib/GraphicsMagick/modules-Q16/coders/pcl.la
+lib/GraphicsMagick/modules-Q16/coders/pcl.so
+@comment lib/GraphicsMagick/modules-Q16/coders/pcx.a
+lib/GraphicsMagick/modules-Q16/coders/pcx.la
+lib/GraphicsMagick/modules-Q16/coders/pcx.so
+@comment lib/GraphicsMagick/modules-Q16/coders/pdb.a
+lib/GraphicsMagick/modules-Q16/coders/pdb.la
+lib/GraphicsMagick/modules-Q16/coders/pdb.so
+@comment lib/GraphicsMagick/modules-Q16/coders/pdf.a
+lib/GraphicsMagick/modules-Q16/coders/pdf.la
+lib/GraphicsMagick/modules-Q16/coders/pdf.so
+@comment lib/GraphicsMagick/modules-Q16/coders/pict.a
+lib/GraphicsMagick/modules-Q16/coders/pict.la
+lib/GraphicsMagick/modules-Q16/coders/pict.so
+@comment lib/GraphicsMagick/modules-Q16/coders/pix.a
+lib/GraphicsMagick/modules-Q16/coders/pix.la
+lib/GraphicsMagick/modules-Q16/coders/pix.so
+@comment lib/GraphicsMagick/modules-Q16/coders/plasma.a
+lib/GraphicsMagick/modules-Q16/coders/plasma.la
+lib/GraphicsMagick/modules-Q16/coders/plasma.so
+@comment lib/GraphicsMagick/modules-Q16/coders/png.a
+lib/GraphicsMagick/modules-Q16/coders/png.la
+lib/GraphicsMagick/modules-Q16/coders/png.so
+@comment lib/GraphicsMagick/modules-Q16/coders/pnm.a
+lib/GraphicsMagick/modules-Q16/coders/pnm.la
+lib/GraphicsMagick/modules-Q16/coders/pnm.so
+@comment lib/GraphicsMagick/modules-Q16/coders/preview.a
+lib/GraphicsMagick/modules-Q16/coders/preview.la
+lib/GraphicsMagick/modules-Q16/coders/preview.so
+@comment lib/GraphicsMagick/modules-Q16/coders/ps.a
+lib/GraphicsMagick/modules-Q16/coders/ps.la
+lib/GraphicsMagick/modules-Q16/coders/ps.so
+@comment lib/GraphicsMagick/modules-Q16/coders/ps2.a
+lib/GraphicsMagick/modules-Q16/coders/ps2.la
+lib/GraphicsMagick/modules-Q16/coders/ps2.so
+@comment lib/GraphicsMagick/modules-Q16/coders/ps3.a
+lib/GraphicsMagick/modules-Q16/coders/ps3.la
+lib/GraphicsMagick/modules-Q16/coders/ps3.so
+@comment lib/GraphicsMagick/modules-Q16/coders/psd.a
+lib/GraphicsMagick/modules-Q16/coders/psd.la
+lib/GraphicsMagick/modules-Q16/coders/psd.so
+@comment lib/GraphicsMagick/modules-Q16/coders/pwp.a
+lib/GraphicsMagick/modules-Q16/coders/pwp.la
+lib/GraphicsMagick/modules-Q16/coders/pwp.so
+@comment lib/GraphicsMagick/modules-Q16/coders/rgb.a
+lib/GraphicsMagick/modules-Q16/coders/rgb.la
+lib/GraphicsMagick/modules-Q16/coders/rgb.so
+@comment lib/GraphicsMagick/modules-Q16/coders/rla.a
+lib/GraphicsMagick/modules-Q16/coders/rla.la
+lib/GraphicsMagick/modules-Q16/coders/rla.so
+@comment lib/GraphicsMagick/modules-Q16/coders/rle.a
+lib/GraphicsMagick/modules-Q16/coders/rle.la
+lib/GraphicsMagick/modules-Q16/coders/rle.so
+@comment lib/GraphicsMagick/modules-Q16/coders/sct.a
+lib/GraphicsMagick/modules-Q16/coders/sct.la
+lib/GraphicsMagick/modules-Q16/coders/sct.so
+@comment lib/GraphicsMagick/modules-Q16/coders/sfw.a
+lib/GraphicsMagick/modules-Q16/coders/sfw.la
+lib/GraphicsMagick/modules-Q16/coders/sfw.so
+@comment lib/GraphicsMagick/modules-Q16/coders/sgi.a
+lib/GraphicsMagick/modules-Q16/coders/sgi.la
+lib/GraphicsMagick/modules-Q16/coders/sgi.so
+@comment lib/GraphicsMagick/modules-Q16/coders/stegano.a
+lib/GraphicsMagick/modules-Q16/coders/stegano.la
+lib/GraphicsMagick/modules-Q16/coders/stegano.so
+@comment lib/GraphicsMagick/modules-Q16/coders/sun.a
+lib/GraphicsMagick/modules-Q16/coders/sun.la
+lib/GraphicsMagick/modules-Q16/coders/sun.so
+@comment lib/GraphicsMagick/modules-Q16/coders/svg.a
+lib/GraphicsMagick/modules-Q16/coders/svg.la
+lib/GraphicsMagick/modules-Q16/coders/svg.so
+@comment lib/GraphicsMagick/modules-Q16/coders/tga.a
+lib/GraphicsMagick/modules-Q16/coders/tga.la
+lib/GraphicsMagick/modules-Q16/coders/tga.so
+@comment lib/GraphicsMagick/modules-Q16/coders/tiff.a
+lib/GraphicsMagick/modules-Q16/coders/tiff.la
+lib/GraphicsMagick/modules-Q16/coders/tiff.so
+@comment lib/GraphicsMagick/modules-Q16/coders/tile.a
+lib/GraphicsMagick/modules-Q16/coders/tile.la
+lib/GraphicsMagick/modules-Q16/coders/tile.so
+@comment lib/GraphicsMagick/modules-Q16/coders/tim.a
+lib/GraphicsMagick/modules-Q16/coders/tim.la
+lib/GraphicsMagick/modules-Q16/coders/tim.so
+@comment lib/GraphicsMagick/modules-Q16/coders/topol.a
+lib/GraphicsMagick/modules-Q16/coders/topol.la
+lib/GraphicsMagick/modules-Q16/coders/topol.so
+@comment lib/GraphicsMagick/modules-Q16/coders/ttf.a
+lib/GraphicsMagick/modules-Q16/coders/ttf.la
+lib/GraphicsMagick/modules-Q16/coders/ttf.so
+@comment lib/GraphicsMagick/modules-Q16/coders/txt.a
+lib/GraphicsMagick/modules-Q16/coders/txt.la
+lib/GraphicsMagick/modules-Q16/coders/txt.so
+@comment lib/GraphicsMagick/modules-Q16/coders/uil.a
+lib/GraphicsMagick/modules-Q16/coders/uil.la
+lib/GraphicsMagick/modules-Q16/coders/uil.so
+@comment lib/GraphicsMagick/modules-Q16/coders/url.a
+lib/GraphicsMagick/modules-Q16/coders/url.la
+lib/GraphicsMagick/modules-Q16/coders/url.so
+@comment lib/GraphicsMagick/modules-Q16/coders/uyvy.a
+lib/GraphicsMagick/modules-Q16/coders/uyvy.la
+lib/GraphicsMagick/modules-Q16/coders/uyvy.so
+@comment lib/GraphicsMagick/modules-Q16/coders/vicar.a
+lib/GraphicsMagick/modules-Q16/coders/vicar.la
+lib/GraphicsMagick/modules-Q16/coders/vicar.so
+@comment lib/GraphicsMagick/modules-Q16/coders/vid.a
+lib/GraphicsMagick/modules-Q16/coders/vid.la
+lib/GraphicsMagick/modules-Q16/coders/vid.so
+@comment lib/GraphicsMagick/modules-Q16/coders/viff.a
+lib/GraphicsMagick/modules-Q16/coders/viff.la
+lib/GraphicsMagick/modules-Q16/coders/viff.so
+@comment lib/GraphicsMagick/modules-Q16/coders/wbmp.a
+lib/GraphicsMagick/modules-Q16/coders/wbmp.la
+lib/GraphicsMagick/modules-Q16/coders/wbmp.so
+@comment lib/GraphicsMagick/modules-Q16/coders/wmf.a
+lib/GraphicsMagick/modules-Q16/coders/wmf.la
+lib/GraphicsMagick/modules-Q16/coders/wmf.so
+@comment lib/GraphicsMagick/modules-Q16/coders/wpg.a
+lib/GraphicsMagick/modules-Q16/coders/wpg.la
+lib/GraphicsMagick/modules-Q16/coders/wpg.so
+@comment lib/GraphicsMagick/modules-Q16/coders/xbm.a
+lib/GraphicsMagick/modules-Q16/coders/xbm.la
+lib/GraphicsMagick/modules-Q16/coders/xbm.so
+@comment lib/GraphicsMagick/modules-Q16/coders/xc.a
+lib/GraphicsMagick/modules-Q16/coders/xc.la
+lib/GraphicsMagick/modules-Q16/coders/xc.so
+@comment lib/GraphicsMagick/modules-Q16/coders/xcf.a
+lib/GraphicsMagick/modules-Q16/coders/xcf.la
+lib/GraphicsMagick/modules-Q16/coders/xcf.so
+@comment lib/GraphicsMagick/modules-Q16/coders/xpm.a
+lib/GraphicsMagick/modules-Q16/coders/xpm.la
+lib/GraphicsMagick/modules-Q16/coders/xpm.so
+@comment lib/GraphicsMagick/modules-Q16/coders/yuv.a
+lib/GraphicsMagick/modules-Q16/coders/yuv.la
+lib/GraphicsMagick/modules-Q16/coders/yuv.so
 lib/GraphicsMagick/modules-Q16/filters/
+@comment lib/GraphicsMagick/modules-Q16/filters/analyze.a
+lib/GraphicsMagick/modules-Q16/filters/analyze.la
+lib/GraphicsMagick/modules-Q16/filters/analyze.so
 lib/libGraphicsMagick++.a
 lib/libGraphicsMagick++.la
+@lib lib/libGraphicsMagick++.so.${LIBGraphicsMagick++_VERSION}
 lib/libGraphicsMagick.a
 lib/libGraphicsMagick.la
+@lib lib/libGraphicsMagick.so.${LIBGraphicsMagick_VERSION}
 lib/libGraphicsMagickWand.a
 lib/libGraphicsMagickWand.la
-lib/pkgconfig/
+@lib lib/libGraphicsMagickWand.so.${LIBGraphicsMagickWand_VERSION}
 lib/pkgconfig/GraphicsMagick++.pc
 lib/pkgconfig/GraphicsMagick.pc
 lib/pkgconfig/GraphicsMagickWand.pc
@@ -116,6 +394,7 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/Magick/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/Magick/Magick.bs
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/Magick/Magick.so
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/Magick/autosplit.ix
 @man man/man1/GraphicsMagick++-config.1
 @man man/man1/GraphicsMagick-config.1
@@ -144,7 +423,6 @@ share/doc/GraphicsMagick/Copyright.txt
 share/doc/GraphicsMagick/NEWS.txt
 share/doc/GraphicsMagick/www/
 share/doc/GraphicsMagick/www/CVS.html
-share/doc/GraphicsMagick/www/CVS.rst
 share/doc/GraphicsMagick/www/ChangeLog-2001.html
 share/doc/GraphicsMagick/www/ChangeLog-2002.html
 share/doc/GraphicsMagick/www/ChangeLog-2003.html
@@ -157,22 +435,17 @@ share/doc/GraphicsMagick/www/ChangeLog-2009.html
 share/doc/GraphicsMagick/www/Changelog.html
 share/doc/GraphicsMagick/www/Copyright.html
 share/doc/GraphicsMagick/www/FAQ.html
-share/doc/GraphicsMagick/www/FAQ.rst
 share/doc/GraphicsMagick/www/GraphicsMagick.html
 share/doc/GraphicsMagick/www/INSTALL-unix.html
 share/doc/GraphicsMagick/www/INSTALL-windows.html
 share/doc/GraphicsMagick/www/ImageMagickObject.html
-share/doc/GraphicsMagick/www/ImageMagickObject.rst
 share/doc/GraphicsMagick/www/Magick++/
 share/doc/GraphicsMagick/www/Magick++/Blob.html
-share/doc/GraphicsMagick/www/Magick++/Cache.fig
 share/doc/GraphicsMagick/www/Magick++/Cache.png
-share/doc/GraphicsMagick/www/Magick++/Cache.svg
 share/doc/GraphicsMagick/www/Magick++/ChangeLog.html
 share/doc/GraphicsMagick/www/Magick++/CoderInfo.html
 share/doc/GraphicsMagick/www/Magick++/Color.html
 share/doc/GraphicsMagick/www/Magick++/Documentation.html
-share/doc/GraphicsMagick/www/Magick++/Documentation.rst
 share/doc/GraphicsMagick/www/Magick++/Drawable.html
 share/doc/GraphicsMagick/www/Magick++/Drawable_example_1.png
 share/doc/GraphicsMagick/www/Magick++/Enumerations.html
@@ -180,45 +453,31 @@ share/doc/GraphicsMagick/www/Magick++/Exception.html
 share/doc/GraphicsMagick/www/Magick++/FormatCharacters.html
 share/doc/GraphicsMagick/www/Magick++/Future.html
 share/doc/GraphicsMagick/www/Magick++/Geometry.html
-share/doc/GraphicsMagick/www/Magick++/Image.fig
 share/doc/GraphicsMagick/www/Magick++/Image.html
 share/doc/GraphicsMagick/www/Magick++/Image.png
-share/doc/GraphicsMagick/www/Magick++/Image.rst
 share/doc/GraphicsMagick/www/Magick++/ImageDesign.html
-share/doc/GraphicsMagick/www/Magick++/ImageMagick.png
 share/doc/GraphicsMagick/www/Magick++/Install.html
-share/doc/GraphicsMagick/www/Magick++/Magick++.png
 share/doc/GraphicsMagick/www/Magick++/Montage.html
-share/doc/GraphicsMagick/www/Magick++/NEWS.html
 share/doc/GraphicsMagick/www/Magick++/PixelPacket.html
 share/doc/GraphicsMagick/www/Magick++/Pixels.html
-share/doc/GraphicsMagick/www/Magick++/README.txt
 share/doc/GraphicsMagick/www/Magick++/STL.html
 share/doc/GraphicsMagick/www/Magick++/TypeMetric.html
 share/doc/GraphicsMagick/www/Magick++/gm-188x120t.png
 share/doc/GraphicsMagick/www/Magick++/index.html
-share/doc/GraphicsMagick/www/Magick++/index.rst
 share/doc/GraphicsMagick/www/Magick++/montage-sample-framed.jpg
 share/doc/GraphicsMagick/www/Magick++/right_triangle.png
-share/doc/GraphicsMagick/www/Magick++/thumbnail-anatomy-framed.fig
 share/doc/GraphicsMagick/www/Magick++/thumbnail-anatomy-framed.jpg
-share/doc/GraphicsMagick/www/Magick++/thumbnail-anatomy-plain.fig
 share/doc/GraphicsMagick/www/Magick++/thumbnail-anatomy-plain.jpg
 share/doc/GraphicsMagick/www/Magick++/thumbnail-sample-framed.jpg
 share/doc/GraphicsMagick/www/Magick++/thumbnail-sample-plain.jpg
-share/doc/GraphicsMagick/www/Makefile.am
 share/doc/GraphicsMagick/www/NEWS.html
 share/doc/GraphicsMagick/www/OpenMP.html
-share/doc/GraphicsMagick/www/OpenMP.rst
 share/doc/GraphicsMagick/www/README.html
 share/doc/GraphicsMagick/www/animate.html
 share/doc/GraphicsMagick/www/api/
-share/doc/GraphicsMagick/www/api/Makefile.am
 share/doc/GraphicsMagick/www/api/animate.html
 share/doc/GraphicsMagick/www/api/annotate.html
 share/doc/GraphicsMagick/www/api/api.html
-share/doc/GraphicsMagick/www/api/api.rst
-share/doc/GraphicsMagick/www/api/api_hyperlinks.rst
 share/doc/GraphicsMagick/www/api/attribute.html
 share/doc/GraphicsMagick/www/api/average.html
 share/doc/GraphicsMagick/www/api/blob.html
@@ -264,29 +523,22 @@ share/doc/GraphicsMagick/www/api/statistics.html
 share/doc/GraphicsMagick/www/api/texture.html
 share/doc/GraphicsMagick/www/api/transform.html
 share/doc/GraphicsMagick/www/api/types.html
-share/doc/GraphicsMagick/www/api/types.rst
 share/doc/GraphicsMagick/www/api/widget.html
 share/doc/GraphicsMagick/www/authors.html
-share/doc/GraphicsMagick/www/authors.rst
 share/doc/GraphicsMagick/www/benchmarks.html
-share/doc/GraphicsMagick/www/benchmarks.rst
 share/doc/GraphicsMagick/www/bugs.html
-share/doc/GraphicsMagick/www/bugs.rst
 share/doc/GraphicsMagick/www/color.html
 share/doc/GraphicsMagick/www/compare.html
 share/doc/GraphicsMagick/www/composite.html
 share/doc/GraphicsMagick/www/conjure.html
 share/doc/GraphicsMagick/www/contribute.html
-share/doc/GraphicsMagick/www/contribute.rst
 share/doc/GraphicsMagick/www/convert.html
 share/doc/GraphicsMagick/www/display.html
 share/doc/GraphicsMagick/www/docutils-api.css
 share/doc/GraphicsMagick/www/docutils-articles.css
 share/doc/GraphicsMagick/www/download.html
-share/doc/GraphicsMagick/www/download.rst
 share/doc/GraphicsMagick/www/favicon.ico
 share/doc/GraphicsMagick/www/formats.html
-share/doc/GraphicsMagick/www/formats.rst
 share/doc/GraphicsMagick/www/gm.html
 share/doc/GraphicsMagick/www/identify.html
 share/doc/GraphicsMagick/www/images/
@@ -299,30 +551,23 @@ share/doc/GraphicsMagick/www/images/right_triangle.png
 share/doc/GraphicsMagick/www/images/right_triangle_option.png
 share/doc/GraphicsMagick/www/import.html
 share/doc/GraphicsMagick/www/index.html
-share/doc/GraphicsMagick/www/index.rst
 share/doc/GraphicsMagick/www/links.html
-share/doc/GraphicsMagick/www/links.rst
 share/doc/GraphicsMagick/www/magick.css
 share/doc/GraphicsMagick/www/miff.html
-share/doc/GraphicsMagick/www/miff.rst
 share/doc/GraphicsMagick/www/mission.html
-share/doc/GraphicsMagick/www/mission.rst
 share/doc/GraphicsMagick/www/mogrify.html
 share/doc/GraphicsMagick/www/montage.html
 share/doc/GraphicsMagick/www/motion-picture.html
-share/doc/GraphicsMagick/www/motion-picture.rst
 share/doc/GraphicsMagick/www/perl.html
-share/doc/GraphicsMagick/www/perl.rst
 share/doc/GraphicsMagick/www/platforms.html
-share/doc/GraphicsMagick/www/platforms.rst
 share/doc/GraphicsMagick/www/process.html
-share/doc/GraphicsMagick/www/process.rst
 share/doc/GraphicsMagick/www/programming.html
-share/doc/GraphicsMagick/www/programming.rst
 share/doc/GraphicsMagick/www/quantize.html
-share/doc/GraphicsMagick/www/quantize.rst
 share/doc/GraphicsMagick/www/smile.c
 share/doc/GraphicsMagick/www/tools.html
-share/doc/GraphicsMagick/www/tools.rst
 share/doc/GraphicsMagick/www/utilities.html
-share/doc/GraphicsMagick/www/utilities.rst
+share/doc/GraphicsMagick/www/wand/
+share/doc/GraphicsMagick/www/wand/drawing_wand.html
+share/doc/GraphicsMagick/www/wand/magick_wand.html
+share/doc/GraphicsMagick/www/wand/pixel_wand.html
+share/doc/GraphicsMagick/www/wand/wand.html

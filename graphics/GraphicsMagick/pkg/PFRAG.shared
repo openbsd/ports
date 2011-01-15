@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2008/12/07 18:13:01 okan Exp $
-@lib lib/libGraphicsMagick++.so.${LIBGraphicsMagick++_VERSION}
-@lib lib/libGraphicsMagick.so.${LIBGraphicsMagick_VERSION}
-@lib lib/libGraphicsMagickWand.so.${LIBGraphicsMagickWand_VERSION}
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Graphics/Magick/Magick.so
