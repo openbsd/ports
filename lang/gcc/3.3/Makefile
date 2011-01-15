@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/11/26 14:17:17 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2011/01/15 01:07:45 naddy Exp $
 
 ONLY_FOR_ARCHS =	alpha amd64 i386 m68k sparc sparc64 powerpc vax
 
@@ -23,13 +23,7 @@ SHARED_LIBS =	estdc++		6.0 \
 		objc		2.0 \
 		objc_gc		2.0
 
-REVISION-main =		17
-REVISION-c++ =		16
-REVISION-estdc =	5
-REVISION-g77 =		15
-REVISION-java =		13
-REVISION-objc =		15
-REVISION-ada =		13
+EPOCH = 	0
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
@@ -176,7 +170,7 @@ PKG_ARGS += -DPPC=1
 PKG_ARGS += -DPPC=0
 .endif
 
-RUN_DEPENDS =	gcc-${FULL_PKGVERSION}:${PKGPATH}
+RUN_DEPENDS =	gcc-${FULL_PKGVERSION}v0:${PKGPATH}
 WANTLIB =	c
 
 RUN_DEPENDS-main =
@@ -187,7 +181,7 @@ WANTLIB-estdc =
 LIB_DEPENDS-java = devel/boehm-gc
 WANTLIB-java =	${WANTLIB} gc
 
-RUN_DEPENDS-c++ = ${RUN_DEPENDS} ${PKGPATH},-estdc
+RUN_DEPENDS-c++ = ${RUN_DEPENDS} libstdc++->=3.3,<3.4|libstdc++->=3.3v0,<3.4v0:${PKGPATH},-estdc
 
 
 .include <bsd.port.mk>

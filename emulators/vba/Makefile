@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2011/01/02 07:46:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2011/01/15 01:07:45 naddy Exp $
 
 COMMENT=		Gameboy Advance emulator
 
 VERSION=		1.7.2
 DISTNAME=		VisualBoyAdvance-src-${VERSION}
 PKGNAME=		vba-${VERSION}
-REVISION=		7
+REVISION=		8
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://vba.ngemu.com/

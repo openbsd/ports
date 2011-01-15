@@ -1,4 +1,4 @@
-# $OpenBSD: gcc3.port.mk,v 1.5 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: gcc3.port.mk,v 1.6 2011/01/15 01:07:45 naddy Exp $
 
 MODGCC3_ARCHES?=
 # Supported languages for now
@@ -19,7 +19,7 @@ MODGCC3_post-patch+= ln -s ${LOCALBASE}/bin/eg${_MODGCC3CC} ${WRKDIR}/bin/${_MOD
 .        endif
 .        if !empty(_MODGCC3CXX:L:M${_j})
 BUILD_DEPENDS+=	lang/gcc/3.3,-c++
-LIB_DEPENDS+=	libstdc++->=3.3,<3.4:lang/gcc/3.3,-estdc
+LIB_DEPENDS+=	libstdc++->=3.3,<3.4|libstdc++->=3.3v0,<3.4v0:lang/gcc/3.3,-estdc
 WANTLIB +=	estdc++=6
 MODGCC3_post-patch+= ln -s ${LOCALBASE}/bin/e${_MODGCC3CXX} ${WRKDIR}/bin/g++;
 MODGCC3_post-patch+= ln -s ${LOCALBASE}/bin/e${_MODGCC3CXX} ${WRKDIR}/bin/${_MODGCC3CXX};
