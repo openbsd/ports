@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/01/15 22:53:30 jasper Exp $
 
 COMMENT=	command line utility to run programs as root
 
@@ -38,7 +38,8 @@ LIB_DEPENDS=	sysutils/polkit \
 BUILD_DEPENDS=	lang/vala
 RUN_DEPENDS=	polkit-gnome-*|polkit-qt4-*:x11/polkit-gnome
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		textproc/intltool
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
