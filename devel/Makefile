@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.889 2011/01/10 20:28:39 eric Exp $
+# $OpenBSD: Makefile,v 1.890 2011/01/15 12:11:03 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -349,6 +349,7 @@
      SUBDIR += p5-B-Utils
      SUBDIR += p5-BFD
      SUBDIR += p5-BSD-Resource
+     SUBDIR += p5-BSD-arc4random
      SUBDIR += p5-BSD-stat
      SUBDIR += p5-Benchmark-Timer
      SUBDIR += p5-Best
