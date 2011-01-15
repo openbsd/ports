@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2010/12/23 10:39:39 stephan Exp $
+# $OpenBSD: Makefile,v 1.38 2011/01/15 01:09:43 naddy Exp $
 
 COMMENT=		Ruby interface to LBL Packet Capture library
 
 DISTNAME=               ruby-${PKGNAME}
 PKGNAME=                pcap-0.6
-REVISION=		16
+REVISION=		17
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.goto.info.waseda.ac.jp/~fukusima/ruby/pcap-e.html

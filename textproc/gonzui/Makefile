@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/26 14:44:27 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/01/15 01:09:43 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ NOT_FOR_ARCHS=		mips64 mips64el
 
 COMMENT=		source code search engine
 DISTNAME=		gonzui-1.2
-REVISION=		13
+REVISION=		14
 CATEGORIES=		textproc www
 
 HOMEPAGE=		http://gonzui.sourceforge.net/

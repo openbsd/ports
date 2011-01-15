@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/15 23:22:07 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/01/15 01:09:43 naddy Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -8,7 +8,7 @@ DISTNAME=		emacs-${VERSION}
 PKGNAME-main=		emacs-${VERSION}
 FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs22,-el
-REVISION-main=		7
+REVISION-main=		8
 REVISION-el=		1
 
 CATEGORIES=		editors
