@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2011/01/14 22:56:11 landry Exp $
+# $OpenBSD: Makefile,v 1.71 2011/01/16 16:56:02 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -12,7 +12,7 @@ MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 REVISION-main =		1
 PKGNAME-lightning =	lightning-seamonkey-1.0beta1
-REVISION-lightning =	11
+REVISION-lightning =	12
 EPOCH-lightning =	0
 
 # must be in sync with SO_VERSION in main/enigmail/seamonkey
