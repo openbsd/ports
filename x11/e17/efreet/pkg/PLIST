@@ -1,21 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/01/11 15:02:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/01/16 00:56:28 laurent Exp $
 %%SHARED%%
 @bin bin/efreet_alloc
 @bin bin/efreet_cache_test
 @bin bin/efreet_menu_alloc
 @bin bin/efreet_spec_test
 @bin bin/efreet_test
-include/efreet/
-include/efreet/Efreet.h
-include/efreet/Efreet_Mime.h
-include/efreet/Efreet_Trash.h
-include/efreet/efreet_base.h
-include/efreet/efreet_desktop.h
-include/efreet/efreet_icon.h
-include/efreet/efreet_ini.h
-include/efreet/efreet_menu.h
-include/efreet/efreet_uri.h
-include/efreet/efreet_utils.h
+include/efreet-1/
+include/efreet-1/Efreet.h
+include/efreet-1/Efreet_Mime.h
+include/efreet-1/Efreet_Trash.h
+include/efreet-1/efreet_base.h
+include/efreet-1/efreet_desktop.h
+include/efreet-1/efreet_icon.h
+include/efreet-1/efreet_ini.h
+include/efreet-1/efreet_menu.h
+include/efreet-1/efreet_uri.h
+include/efreet-1/efreet_utils.h
+lib/efreet/
+@bin lib/efreet/efreet_desktop_cache_create
 lib/libefreet.a
 lib/libefreet.la
 lib/libefreet_mime.a
