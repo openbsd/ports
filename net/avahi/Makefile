@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/12/27 14:50:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2011/01/16 15:39:04 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -17,6 +17,7 @@ PKGNAME-qt3=	avahi-qt3-${V}
 PKGNAME-qt4=	avahi-qt4-${V}
 
 REVISION-main=	1
+REVISION-mono=	0
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -218,8 +219,8 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
 	mv ${WRKINST}${SYSCONFDIR}/dbus-1 ${PREFIX}/share/examples/
 	mv ${WRKINST}${SYSCONFDIR}/avahi ${PREFIX}/share/examples/
-# DLLMAP_FILES won't work here since the files are generated during the build process
+# XXX DLLMAP_FILES won't work here since the files are generated during the build process
 	find ${PREFIX} -name avahi-sharp.dll.config -or -name avahi-ui-sharp.dll.config | \
-		xargs perl -pi -e 's,\.so\.[0-9]+,\.so,g'
+		xargs perl -pi -e 's,\.so\.[0-9].[0-9],\.so,g;' -e 's,\.so\.[0-9],\.so,g'
 
 .include <bsd.port.mk>
