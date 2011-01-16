@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2010/09/12 16:49:10 jasper Exp
+# $OpenBSD: Makefile.inc,v 1.11 2011/01/16 11:44:52 jasper Exp $
 
 CATEGORIES ?=		x11
 

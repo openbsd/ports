@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/22 08:36:56 espie Exp
+# $OpenBSD: Makefile,v 1.26 2011/01/16 11:44:52 jasper Exp $
 
 COMMENT =		the enlightened window manager
 DISTNAME =		enlightenment-0.16.999.54504
