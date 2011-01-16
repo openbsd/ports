@@ -15,6 +15,7 @@ MASTER_SITES ?=		http://download.enlightenment.org/snapshots/LATEST/ \
 DIST_SUBDIR ?=		e17
 
 CONFIGURE_STYLE ?=	gnu
+CONFIGURE_ARGS +=	--disable-silent-rules
 
 MAINTAINER ?=		Laurent FANIS <laurent@openbsd.org>
 
