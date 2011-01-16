@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/19 20:11:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.7 2011/01/16 19:13:40 naddy Exp $
 
 COMMENT=	network distribution package for CVS repositories
 
 DISTNAME=	csup-20101019
+REVISION=	0
 CATEGORIES=	net
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -20,9 +21,11 @@ WANTLIB=	c crypto pthread z
 
 WRKDIST=	${WRKDIR}/csup
 ALL_TARGET=	depend all
-FAKE_FLAGS=	BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/cat
 
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/cpasswd.sh ${PREFIX}/bin/cpasswd
+do-install:
+	${INSTALL_PROGRAM} ${WRKBUILD}/csup ${PREFIX}/bin/csup
+	${INSTALL_MAN} ${WRKSRC}/csup.1 ${PREFIX}/man/man1/csup.1
+	${INSTALL_SCRIPT} ${WRKSRC}/cpasswd.sh ${PREFIX}/bin/csuppasswd
+	${INSTALL_MAN} ${WRKSRC}/cpasswd.1 ${PREFIX}/man/man1/csuppasswd.1
 
 .include <bsd.port.mk>
