@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2010/12/30 12:55:03 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2011/01/16 23:03:10 ajacoutot Exp $
 
 Using CUPS under OpenBSD
 ========================
@@ -16,8 +16,6 @@ package needs to be installed.
 
 This package supports both ulpt(4) and libusb for printing to USB
 devices. ulpt(4) should work out of the box, however:
-* it needs to claim the entire USB port, so it will not be possible to
-access the scanner part of a multi-function device
 * ulpt(4) does not support select() which is used by CUPS to know when
 the device can accept more data (http://www.cups.org/str.php?L3028)
 * it won't be able to automatically detect the corresponding driver/PPD
@@ -25,11 +23,7 @@ the device can accept more data (http://www.cups.org/str.php?L3028)
 
 Required steps for libusb based printing
 ----------------------------------------
-If you choose to make your USB printer use libusb, you'll have to
-disable ulpt(4) in your kernel - see config(8) - which will allow libusb
-to claim your device.
-
-Since USB printing will be handled by libusb, you need to allow the
+If you choose to make your USB printer use libusb, you need to allow the
 _cups user rw access to the corresponding USB endpoint. To do so, find
 where your printer is attached to using dmesg(8) then change the
 ownerships accordingly.

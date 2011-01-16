@@ -1,6 +1,6 @@
 Communication with the printer is done via CUPS over libusb, make sure
-you read the OpenBSD specific documentation that comes with the cups
-package to enable libusb support and disable ulpt(4) before using HPLIP.
+you read the libusb section of the OpenBSD documentation that comes with
+the cups package.
 
 To make the hpaio backend available to SANE, simply add "hpaio" to
 its configuration file.  As root:
