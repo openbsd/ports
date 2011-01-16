@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/01/16 10:31:24 jasper Exp $
 
 COMMENT =		SoundFont2 software synthesizer
 DISTNAME =		fluidsynth-1.0.9
@@ -28,6 +28,8 @@ AUTOMAKE_VERSION =	1.9
 
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
+# autogen.sh needs libtoolize
+BUILD_DEPENDS +=        devel/libtool
 
 USE_LIBTOOL =		Yes
 USE_GROFF =	Yes
