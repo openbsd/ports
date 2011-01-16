@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/01/16 15:39:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2011/01/16 16:44:27 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -221,6 +221,6 @@ post-install:
 	mv ${WRKINST}${SYSCONFDIR}/avahi ${PREFIX}/share/examples/
 # XXX DLLMAP_FILES won't work here since the files are generated during the build process
 	find ${PREFIX} -name avahi-sharp.dll.config -or -name avahi-ui-sharp.dll.config | \
-		xargs perl -pi -e 's,\.so\.[0-9].[0-9],\.so,g;' -e 's,\.so\.[0-9],\.so,g'
+		xargs perl -pi -e 's,\.so(\.[0-9])+,\.so,g'
 
 .include <bsd.port.mk>

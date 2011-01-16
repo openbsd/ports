@@ -1,4 +1,4 @@
-# $OpenBSD: mono.port.mk,v 1.15 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: mono.port.mk,v 1.16 2011/01/16 16:45:10 ajacoutot Exp $
 
 MODMONO_ONLY_FOR_ARCHS=	i386 amd64 # XXX arm powerpc (no support for sigcontext)
 ONLY_FOR_ARCHS?=	${MODMONO_ONLY_FOR_ARCHS}
@@ -42,4 +42,4 @@ do-install:
 
 post-configure:
 	@for i in ${DLLMAP_FILES}; do \
-		perl -pi -e 's,\.so\.[0-9]+,\.so,g' ${WRKSRC}/$$i; done
+		perl -pi -e 's,\.so(\.[0-9])+,\.so,g' ${WRKSRC}/$$i; done
