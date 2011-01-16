@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2011/01/16 11:44:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2011/01/16 12:34:42 jasper Exp $
 
 COMMENT =		the enlightened window manager
 DISTNAME =		enlightenment-0.16.999.54504
 EXTRACT_SUFX=		.tar.bz2
 
+REVISION =		0
 EPOCH =			0
 
 # BSD
@@ -12,16 +13,17 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MODULES +=		devel/gettext
-MODULES +=		lang/lua
+MODULES +=		devel/gettext \
+			lang/lua
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xss Xtst c cares crypto curl dbus-1 ebluez econnman
-WANTLIB += ecore ecore_con ecore_evas ecore_file ecore_imf ecore_imf_evas
-WANTLIB += ecore_input ecore_input_evas ecore_ipc ecore_x edbus edje eet efreet
-WANTLIB += efreet_mime efreet_trash ehal eina embryo enotify eofono evas
-WANTLIB += execinfo expat fontconfig freetype fribidi glib-2.0 iconv idn intl
-WANTLIB += jpeg lua m pcre pthread pthread-stubs ssl xcb z
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xss Xtst c cares crypto
+WANTLIB += curl dbus-1 ebluez econnman ecore ecore_con ecore_evas
+WANTLIB += ecore_file ecore_imf ecore_imf_evas ecore_input ecore_input_evas
+WANTLIB += ecore_ipc ecore_x edbus edje eet efreet efreet_mime
+WANTLIB += efreet_trash ehal eina embryo enotify eofono evas execinfo
+WANTLIB += expat fontconfig freetype glib-2.0 idn jpeg lua m pcre
+WANTLIB += pthread pthread-stubs ssl xcb z
 
 LIB_DEPENDS =		x11/e17/edje>=1.0 \
 			x11/e17/efreet>=1.0 \
@@ -90,7 +92,8 @@ CONFIGURE_ARGS +=	--disable-doc \
 CONFIGURE_ENV +=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-USE_LIBTOOL =		GNU
+# Needed to properly build static archives.
+USE_LIBTOOL =		gnu
 
 # Stupid crap in /src/modules/illume/dicts chokes in regular make.
 # Some issue with the "(US)" bit
