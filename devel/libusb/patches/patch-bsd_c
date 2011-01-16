@@ -1,6 +1,11 @@
-$OpenBSD: patch-bsd_c,v 1.8 2010/11/26 13:30:19 ajacoutot Exp $
---- bsd.c.orig	Sat Mar  4 03:52:46 2006
-+++ bsd.c	Thu Nov 25 18:54:05 2010
+$OpenBSD: patch-bsd_c,v 1.9 2011/01/16 00:44:35 jakemsr Exp $
+
+usb_os_find_busses(): these ioctls only need read access.  do not
+  force read-write access to /dev/usb* to use libusb.
+
+
+--- bsd.c.orig	Fri Mar  3 18:52:46 2006
++++ bsd.c	Mon Jan 10 23:31:57 2011
 @@ -361,7 +361,7 @@ int usb_bulk_read(usb_dev_handle *dev, int ep, char *b
  int usb_interrupt_write(usb_dev_handle *dev, int ep, char *bytes, int size,
                          int timeout)
@@ -76,6 +81,15 @@ $OpenBSD: patch-bsd_c,v 1.8 2010/11/26 13:30:19 ajacoutot Exp $
  }
  
  int usb_os_find_busses(struct usb_bus **busses)
+@@ -491,7 +483,7 @@ int usb_os_find_busses(struct usb_bus **busses)
+     struct usb_bus *bus;
+ 
+     snprintf(buf, sizeof(buf) - 1, "/dev/usb%d", controller);
+-    fd = open(buf, O_RDWR);
++    fd = open(buf, O_RDONLY);
+     if (fd < 0) {
+       if (usb_debug >= 2)
+         if (errno != ENXIO && errno != ENOENT)
 @@ -623,9 +615,21 @@ int usb_resetep(usb_dev_handle *dev, unsigned int ep)
  
  int usb_clear_halt(usb_dev_handle *dev, unsigned int ep)
