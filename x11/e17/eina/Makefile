@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/01/16 00:31:30 laurent Exp $
+# $OpenBSD: Makefile,v 1.5 2011/01/16 10:39:25 jasper Exp $
 
 COMMENT =		EFL API for data types
 DISTNAME =		eina-1.0.0.beta2
-PKGNAME =		eina-1.0.0
+
+EPOCH=			0
 
 SHARED_LIBS =		eina 1.0
 

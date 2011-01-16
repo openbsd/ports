@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/01/16 00:48:45 laurent Exp $
+# $OpenBSD: Makefile,v 1.17 2011/01/16 10:39:25 jasper Exp $
 
 COMMENT =		complex graphical design & layout library
 DISTNAME =		edje-1.0.0.beta2
-PKGNAME =		edje-1.0.0
 
-EPOCH =			0
+EPOCH =			1
 
 SHARED_LIBS +=		edje 1.0
 

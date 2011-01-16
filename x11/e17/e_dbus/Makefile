@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/16 00:45:56 laurent Exp $
+# $OpenBSD: Makefile,v 1.7 2011/01/16 10:39:25 jasper Exp $
 
 COMMENT =		enlightenment DBus component
 DISTNAME =		e_dbus-1.0.0.beta2
-PKGNAME =		e_dbus-1.0.0
+
+EPOCH = 		0
 
 SO_VERSION =		1.0
 .for _lib in edbus enotify econnman ehal eofono ebluez eukit
