@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/01/16 00:48:45 laurent Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/01/16 11:49:39 jasper Exp $
 %%SHARED%%
 @bin bin/edje_cc
 @bin bin/edje_convert
 @bin bin/edje_decc
 @bin bin/edje_player
 bin/edje_recc
-bin/inkscape2edc
 include/edje-1/
 include/edje-1/Edje.h
 include/edje-1/Edje_Edit.h
@@ -15,6 +14,6 @@ lib/pkgconfig/edje.pc
 share/edje/
 share/edje/include/
 share/edje/include/edje.inc
-share/mime/
-share/mime/packages/
 share/mime/packages/edje.xml
+@exec %D/bin/update-mime-database %D/share/mime
+@unexec-delete %D/bin/update-mime-database %D/share/mime
