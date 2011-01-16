@@ -4,11 +4,11 @@ CATEGORIES ?=		x11
 
 HOMEPAGE ?=		http://www.enlightenment.org/
 
-MASTER_SITES ?=		http://download.enlightenment.org/snapshots/LATEST/ \
-			http://download.enlightenment.org/releases/ \
+MASTER_SITES ?=		http://download.enlightenment.org/releases/ \
+			http://download.enlightenment.org/snapshots/LATEST/ \
 			http://download.enlightenment.org/snapshots/2010-11-12/ \
 			http://download.enlightenment.org/snapshots/2009-06-14/ \
-			http://distfiles.nl/
+			http://distfiles.nl/ \
                         ftp://ftp.vantronix.com/pub/mirrors/dlg/ \
                         http://www.itee.uq.edu.au/~dlg/openbsd/ 
 
