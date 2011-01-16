@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/01/10 22:20:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/01/16 19:52:11 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,7 +35,8 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	devel/boost \
 		misc/shared-mime-info \
-		devel/desktop-file-utils
+		devel/desktop-file-utils \
+		devel/libexecinfo
 
 # XXX catppt - catdvi
 LIB_DEPENDS=	x11/gtk2mm \
