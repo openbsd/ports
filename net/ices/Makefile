@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/01/16 19:53:17 naddy Exp $
 
 COMMENT=	icecast source for streaming MP3
 
 DISTNAME=	ices-0.4
-REVISION=	6
+REVISION=	7
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/ices.php
 
-MAINTAINER=	Moritz Grimm <mdgrimm@gmx.net>
-
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

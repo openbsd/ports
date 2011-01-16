@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/01/16 19:53:17 naddy Exp $
 
 COMMENT=	pipe an Ogg stream to an Icecast server
 
 DISTNAME=	oggfwd-0.2
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net multimedia
 
 HOMEPAGE=	http://v2v.cc/~j/ffmpeg2theora/oggfwd/
 
-MAINTAINER=	Moritz Grimm <mdgrimm@gmx.net>
-
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
