@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2010/10/28 14:56:24 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2011/01/16 09:17:17 phessler Exp $
 @bin bin/pylupdate4
 @bin bin/pyrcc4
 bin/pyuic4
@@ -13,6 +13,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt4/QtScript.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtSql.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtSvg.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtTest.so
+lib/python${MODPY_VERSION}/site-packages/PyQt4/QtWebKit.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtXml.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/__init__.py
 lib/python${MODPY_VERSION}/site-packages/PyQt4/__init__.pyc
@@ -486,6 +487,21 @@ share/sip/QtTest/qtestkeyboard.sip
 share/sip/QtTest/qtestmouse.sip
 share/sip/QtTest/qtestsystem.sip
 share/sip/QtTest/qtesttouch.sip
+share/sip/QtWebKit/
+share/sip/QtWebKit/QtWebKitmod.sip
+share/sip/QtWebKit/qgraphicswebview.sip
+share/sip/QtWebKit/qwebdatabase.sip
+share/sip/QtWebKit/qwebelement.sip
+share/sip/QtWebKit/qwebframe.sip
+share/sip/QtWebKit/qwebhistory.sip
+share/sip/QtWebKit/qwebhistoryinterface.sip
+share/sip/QtWebKit/qwebinspector.sip
+share/sip/QtWebKit/qwebkitversion.sip
+share/sip/QtWebKit/qwebpage.sip
+share/sip/QtWebKit/qwebpluginfactory.sip
+share/sip/QtWebKit/qwebsecurityorigin.sip
+share/sip/QtWebKit/qwebsettings.sip
+share/sip/QtWebKit/qwebview.sip
 share/sip/QtXml/
 share/sip/QtXml/QtXmlmod.sip
 share/sip/QtXml/qdom.sip

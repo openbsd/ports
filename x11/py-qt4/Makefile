@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/01/12 13:49:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2011/01/16 09:17:16 phessler Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,6 +11,7 @@ DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
 PKGNAME-main=	py-qt4-${V}
 PKGNAME-docs=	py-qt4-docs-${V}
+REVISION=	1
 
 CATEGORIES=	x11 devel
 
@@ -71,7 +72,7 @@ FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
 PYQTMODS=	QtCore QtGui QtNetwork QtOpenGL QtScript QtSql QtSvg \
-		QtTest QtXml QtAssistant QtDesigner
+		QtTest QtXml QtAssistant QtDesigner QtWebKit
 
 .for i in ${PYQTMODS}
 CONFIGURE_ARGS+=--enable=${i}
