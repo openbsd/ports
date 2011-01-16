@@ -1,0 +1,34 @@
+$OpenBSD: patch-configure,v 1.1 2011/01/16 00:31:30 laurent Exp $
+
+Fix pthread detection.
+
+--- configure.orig	Sat Nov 20 22:50:54 2010
++++ configure	Sat Nov 20 23:39:20 2010
+@@ -11792,12 +11792,12 @@ case "$host_os" in
+    mingw*)
+       ;;
+    solaris*)
+-      _efl_thread_cflags="-mt"
+-      _efl_thread_libs="-mt"
++      _efl_threads_cflags="-mt"
++      _efl_threads_libs="-mt"
+       ;;
+    *)
+-      _efl_thread_cflags="-pthread"
+-      _efl_thread_libs="-pthread"
++      _efl_threads_cflags="-pthread"
++      _efl_threads_libs="-pthread"
+       ;;
+ esac
+ 
+@@ -11849,8 +11849,8 @@ fi
+ EFL_PTHREAD_CFLAGS=""
+ EFL_PTHREAD_LIBS=""
+ if test "x${_efl_have_posix_threads}" = "xyes" ; then
+-   EFL_PTHREAD_CFLAGS=${_efl_thread_cflags}
+-   EFL_PTHREAD_LIBS=${_efl_thread_libs}
++   EFL_PTHREAD_CFLAGS=${_efl_threads_cflags}
++   EFL_PTHREAD_LIBS=${_efl_threads_libs}
+ fi
+ 
+ 

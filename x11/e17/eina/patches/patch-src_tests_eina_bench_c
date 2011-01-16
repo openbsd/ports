@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_tests_eina_bench_c,v 1.1 2011/01/16 00:31:30 laurent Exp $
+
+Enable all benchmark.
+
+--- src/tests/eina_bench.c.orig	Sun Nov 21 15:23:22 2010
++++ src/tests/eina_bench.c	Sun Nov 21 15:23:27 2010
+@@ -35,13 +35,13 @@ struct _Eina_Benchmark_Case
+ };
+ 
+ static const Eina_Benchmark_Case etc[] = {
+-   /* { "Hash", eina_bench_hash }, */
+-   /* { "Array vs List vs Inlist", eina_bench_array }, */
+-   /* { "Stringshare", eina_bench_stringshare }, */
+-   /* { "Convert", eina_bench_convert }, */
+-   /* { "Sort", eina_bench_sort }, */
+-   /* { "Mempool", eina_bench_mempool }, */
+-   /* { "Rectangle_Pool", eina_bench_rectangle_pool }, */
++   { "Hash", eina_bench_hash },
++   { "Array vs List vs Inlist", eina_bench_array },
++   { "Stringshare", eina_bench_stringshare },
++   { "Convert", eina_bench_convert },
++   { "Sort", eina_bench_sort },
++   { "Mempool", eina_bench_mempool },
++   { "Rectangle_Pool", eina_bench_rectangle_pool },
+    { "Render Loop", eina_bench_quadtree },
+    { NULL, NULL }
+ };

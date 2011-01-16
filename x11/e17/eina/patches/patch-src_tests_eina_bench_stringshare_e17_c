@@ -1,0 +1,68 @@
+$OpenBSD: patch-src_tests_eina_bench_stringshare_e17_c,v 1.1 2011/01/16 00:31:30 laurent Exp $
+
+Test if init/shutdown implementation before call.
+See Evas_Data.h, l186:
+EAPI void        evas_stringshare_init           (void); /* not implemented */
+EAPI void        evas_stringshare_shutdown       (void); /* not implemented */
+
+Remove warning.
+
+Remove strlog to build, this disable real bench.
+
+--- src/tests/eina_bench_stringshare_e17.c.orig	Thu Nov 11 14:05:43 2010
++++ src/tests/eina_bench_stringshare_e17.c	Sun Nov 21 14:59:11 2010
+@@ -57,10 +57,10 @@ static Eina_Stringshare_Test eina_str = {
+ 
+ static Eina_Stringshare_Test evas_str = {
+    "evas",
+-/*  evas_stringshare_init, */
++/*  evas_stringshare_init, */NULL,
+    evas_stringshare_add,
+-   evas_stringshare_del
+-/*  evas_stringshare_shutdown */
++   evas_stringshare_del,
++/*  evas_stringshare_shutdown */NULL
+ };
+ 
+ static Eina_Stringshare_Test ecore_str = {
+@@ -68,10 +68,10 @@ static Eina_Stringshare_Test ecore_str = {
+    ecore_string_init,
+    ecore_string_instance,
+    ecore_string_release,
+-   ecore_string_shutdown
++   (int(*)(void))ecore_string_shutdown
+ };
+ 
+-static Eina_Stringshare_Test *str[] = {
++static Eina_Stringshare_Test *_str[] = {
+    &eina_str,
+    &evas_str,
+    &ecore_str,
+@@ -87,11 +87,13 @@ eina_bench_e17_stringshare(Eina_Stringshare_Test *str)
+ 
+    eina_counter_start(cnt);
+ 
+-   str->init();
++   if (str->init)
++      str->init();
+ 
+-#include "strlog"
++/*#include "strlog"*/
+ 
+-   str->shutdown();
++   if (str->shutdown)
++      str->shutdown();
+ 
+    eina_counter_stop(cnt, 1);
+ 
+@@ -110,8 +112,8 @@ eina_bench_e17(void)
+ 
+    eina_init();
+ 
+-   for (i = 0; str[i]; ++i)
+-      eina_bench_e17_stringshare(str[i]);
++   for (i = 0; _str[i]; ++i)
++      eina_bench_e17_stringshare(_str[i]);
+ 
+    eina_shutdown();
+ #endif

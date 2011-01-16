@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2011/01/16 00:31:30 laurent Exp $
+
+make -C is not supported under bsd make, cd then make so
+we can run benchmark.
+
+--- src/Makefile.in.orig	Sun Nov 21 00:11:50 2010
++++ src/Makefile.in	Sun Nov 21 02:55:22 2010
+@@ -609,7 +609,7 @@ uninstall-am:
+ .PHONY: benchmark
+ 
+ @EFL_ENABLE_BENCHMARK_TRUE@benchmark: all
+-@EFL_ENABLE_BENCHMARK_TRUE@	make -C tests eina_bench
++@EFL_ENABLE_BENCHMARK_TRUE@	cd tests && make eina_bench
+ 
+ @EFL_ENABLE_BENCHMARK_FALSE@benchmark:
+ @EFL_ENABLE_BENCHMARK_FALSE@	@echo "reconfigure with --enable-benchmark"

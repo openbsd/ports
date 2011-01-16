@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_tests_eina_bench_quad_c,v 1.1 2011/01/16 00:31:30 laurent Exp $
+--- src/tests/eina_bench_quad.c.orig	Sun Nov 21 14:17:15 2010
++++ src/tests/eina_bench_quad.c	Sun Nov 21 14:17:28 2010
+@@ -173,10 +173,20 @@ eina_bench_quadtree_render_loop(int request)
+    Eina_Mempool *mp;
+    int i;
+    int j;
++   const char *choice, *tmp;
+ 
+    eina_init();
+ 
+-   mp = eina_mempool_add("chained_mempool", "bench-quad", NULL,
++#ifdef EINA_DEFAULT_MEMPOOL
++   choice = "pass_through";
++#else
++   choice = "chained_mempool";
++#endif
++   tmp = getenv("EINA_MEMPOOL");
++   if (tmp && tmp[0])
++      choice = tmp;
++
++   mp = eina_mempool_add(choice, "bench-quad", NULL,
+                          sizeof (Eina_Bench_Quad), 320);
+ 
+    q = eina_quadtree_new(WIDTH, HEIGHT,
