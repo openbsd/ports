@@ -1,11 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/01/09 00:57:21 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/01/16 18:07:39 fgsch Exp $
 bin/pyro-es
 bin/pyro-esd
 bin/pyro-genguid
 bin/pyro-ns
 bin/pyro-nsc
 bin/pyro-nsd
-bin/pyro-rns
 bin/pyro-wxnsc
 bin/pyro-xnsc
 lib/python${MODPY_VERSION}/site-packages/Pyro/
@@ -107,6 +106,7 @@ share/doc/py-pyro/pyromanual_print.css
 share/examples/py-pyro/
 share/examples/py-pyro/AllInOne/
 share/examples/py-pyro/AllInOne/Readme.txt
+share/examples/py-pyro/AllInOne/allinone_ownloop.py
 share/examples/py-pyro/AllInOne/allinone_threads.py
 share/examples/py-pyro/Bank2/
 share/examples/py-pyro/Bank2/BankServer.py
@@ -175,6 +175,7 @@ share/examples/py-pyro/benchmark/
 share/examples/py-pyro/benchmark/Readme.txt
 share/examples/py-pyro/benchmark/bench.py
 share/examples/py-pyro/benchmark/client.py
+share/examples/py-pyro/benchmark/connections.py
 share/examples/py-pyro/benchmark/server.py
 share/examples/py-pyro/callback/
 share/examples/py-pyro/callback/Readme.txt
@@ -247,7 +248,6 @@ share/examples/py-pyro/factory/server.py
 share/examples/py-pyro/filetransfer/
 share/examples/py-pyro/filetransfer/Readme.txt
 share/examples/py-pyro/filetransfer/client.py
-share/examples/py-pyro/filetransfer/db.txt
 share/examples/py-pyro/filetransfer/server.py
 share/examples/py-pyro/hugetransfer/
 share/examples/py-pyro/hugetransfer/Readme.txt
@@ -325,7 +325,6 @@ share/examples/py-pyro/simple/
 share/examples/py-pyro/simple/Readme.txt
 share/examples/py-pyro/simple/client.py
 share/examples/py-pyro/simple/server.py
-share/examples/py-pyro/simple/tst$py.class
 share/examples/py-pyro/simple/tst.py
 share/examples/py-pyro/ssl/
 share/examples/py-pyro/ssl/Readme.txt
@@ -417,6 +416,10 @@ share/examples/py-pyro/timeout/
 share/examples/py-pyro/timeout/Readme.txt
 share/examples/py-pyro/timeout/timeout.py
 share/examples/py-pyro/timeout/timeout2.py
+share/examples/py-pyro/tlstest/
+share/examples/py-pyro/tlstest/Readme.txt
+share/examples/py-pyro/tlstest/client.py
+share/examples/py-pyro/tlstest/server.py
 share/examples/py-pyro/user_passwd_auth/
 share/examples/py-pyro/user_passwd_auth/Readme.txt
 share/examples/py-pyro/user_passwd_auth/client.py
