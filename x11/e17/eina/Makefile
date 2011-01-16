@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2011/01/16 10:39:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/01/16 11:09:37 jasper Exp $
 
 COMMENT =		EFL API for data types
 DISTNAME =		eina-1.0.0.beta2
 
+REVISION =		0
 EPOCH=			0
 
-SHARED_LIBS =		eina 1.0
+SHARED_LIBS +=  eina                 1.0      # 1.0
 
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += 		iconv m
+WANTLIB += 		m
 
 MODULES =		converters/libiconv
 
