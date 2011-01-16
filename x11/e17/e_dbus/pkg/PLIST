@@ -1,22 +1,42 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/11 15:05:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/01/16 00:45:56 laurent Exp $
 %%SHARED%%
 @bin bin/e-notify-send
-@bin bin/e_dbus_hal
+@bin bin/e_dbus_bluez_test
+@bin bin/e_dbus_connman_test
 @bin bin/e_dbus_notification_daemon
 @bin bin/e_dbus_notify
+@bin bin/e_dbus_ofono_test
 @bin bin/e_dbus_test
 @bin bin/e_dbus_test_client
-include/E_DBus.h
-include/E_Hal.h
-include/E_Notification_Daemon.h
-include/E_Notify.h
+@bin bin/e_dbus_ukit_test
+include/e_dbus-1/
+include/e_dbus-1/E_Bluez.h
+include/e_dbus-1/E_Connman.h
+include/e_dbus-1/E_DBus.h
+include/e_dbus-1/E_Hal.h
+include/e_dbus-1/E_Notification_Daemon.h
+include/e_dbus-1/E_Notify.h
+include/e_dbus-1/E_Ofono.h
+include/e_dbus-1/E_Ukit.h
+lib/libebluez.a
+lib/libebluez.la
+lib/libeconnman.a
+lib/libeconnman.la
 lib/libedbus.a
 lib/libedbus.la
 lib/libehal.a
 lib/libehal.la
 lib/libenotify.a
 lib/libenotify.la
+lib/libeofono.a
+lib/libeofono.la
+lib/libeukit.a
+lib/libeukit.la
 lib/pkgconfig/
+lib/pkgconfig/ebluez.pc
+lib/pkgconfig/econnman.pc
 lib/pkgconfig/edbus.pc
 lib/pkgconfig/ehal.pc
 lib/pkgconfig/enotify.pc
+lib/pkgconfig/eofono.pc
+lib/pkgconfig/eukit.pc

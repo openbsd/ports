@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_lib_edje_edit_c,v 1.1 2011/01/16 00:48:45 laurent Exp $
+--- src/lib/edje_edit.c.orig	Thu Nov 11 14:05:25 2010
++++ src/lib/edje_edit.c	Sun Dec  5 19:39:35 2010
+@@ -882,6 +882,7 @@ edje_edit_group_add(Evas_Object *obj, const char *name
+    Edje_Part_Collection *pc;
+    int id;
+    int search;
++   char *choice, *tmp;
+    //Code *cd;
+ 
+    eina_error_set(0);
+@@ -949,7 +950,16 @@ edje_edit_group_add(Evas_Object *obj, const char *name
+    //cd = _alloc(sizeof(Code));
+    //codes = eina_list_append(codes, cd);
+ #define EDIT_EMN(Tp, Sz, Ce)							\
+-   Ce->mp.Tp = eina_mempool_add("chained_mempool", #Tp, NULL, sizeof (Sz), 10);
++   Ce->mp.Tp = eina_mempool_add(choice, #Tp, NULL, sizeof (Sz), 10);
++
++#ifdef EINA_DEFAULT_MEMPOOL
++   choice = "pass_through";
++#else
++   choice = "chained_mempool";
++#endif
++   tmp = getenv("EINA_MEMPOOL");
++   if (tmp && tmp[0])
++      choice = tmp;
+ 
+    EDIT_EMN(RECTANGLE, Edje_Part_Description_Common, de);
+    EDIT_EMN(TEXT, Edje_Part_Description_Text, de);

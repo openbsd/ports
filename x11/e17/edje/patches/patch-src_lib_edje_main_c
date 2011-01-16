@@ -1,0 +1,38 @@
+$OpenBSD: patch-src_lib_edje_main_c,v 1.1 2011/01/16 00:48:45 laurent Exp $
+--- src/lib/edje_main.c.orig	Sun Dec  5 19:34:35 2010
++++ src/lib/edje_main.c	Sun Dec  5 19:37:05 2010
+@@ -44,6 +44,7 @@ Eina_Mempool *_edje_real_part_state_mp = NULL;
+ EAPI int
+ edje_init(void)
+ {
++   char *choice, *tmp;
+    if (++_edje_init_count != 1)
+      return _edje_init_count;
+ 
+@@ -90,7 +91,16 @@ edje_init(void)
+    _edje_module_init();
+    _edje_message_init();
+ 
+-   _edje_real_part_mp = eina_mempool_add("chained_mempool",
++#ifdef EINA_DEFAULT_MEMPOOL
++   choice = "pass_through";
++#else
++   choice = "chained_mempool";
++#endif
++   tmp = getenv("EINA_MEMPOOL");
++   if (tmp && tmp[0])
++      choice = tmp;
++
++   _edje_real_part_mp = eina_mempool_add(choice,
+ 					 "Edje_Real_Part", NULL,
+ 					 sizeof (Edje_Real_Part), 128);
+    if (!_edje_real_part_mp)
+@@ -99,7 +109,7 @@ edje_init(void)
+ 	goto shutdown_eet;
+      }
+ 
+-   _edje_real_part_state_mp = eina_mempool_add("chained_mempool",
++   _edje_real_part_state_mp = eina_mempool_add(choice,
+ 					       "Edje_Real_Part_State", NULL,
+ 					       sizeof (Edje_Real_Part_State), 256);
+    if (!_edje_real_part_state_mp)

@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/01/16 00:45:56 laurent Exp $
 
 COMMENT =		enlightenment DBus component
-DISTNAME =		e_dbus-0.5.0.061
-REVISION=		1
+DISTNAME =		e_dbus-1.0.0.beta2
+PKGNAME =		e_dbus-1.0.0
 
-SO_VERSION =            0.0
-.for _lib in edbus enotify enm ehal
-SHARED_LIBS +=          ${_lib} ${SO_VERSION} \
-			${_lib}-ver-svn-02 ${SO_VERSION}
+SO_VERSION =		1.0
+.for _lib in edbus enotify econnman ehal eofono ebluez eukit
+SHARED_LIBS +=		${_lib} ${SO_VERSION}
 .endfor
 
 # BSD
@@ -16,15 +15,17 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += c crypto eet eina evas expat fontconfig freetype jpeg
-WANTLIB += m pthread ssl z dbus-1 ecore
+WANTLIB += c crypto dbus-1 ecore eet eina evas expat fontconfig freetype
+WANTLIB += fribidi glib-2.0 iconv intl jpeg m pcre pthread ssl z
 
 USE_LIBTOOL =		Yes
 
 LIB_DEPENDS =		x11/dbus \
-			x11/e17/ecore \
+			x11/e17/ecore>=1.0
 
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS =	--disable-doc
+
+CONFIGURE_ENV =		CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
