@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/12/01 21:19:33 mgrimm Exp $
-bin/cfte
+@comment $OpenBSD: PLIST,v 1.2 2011/01/16 19:58:18 naddy Exp $
+@bin bin/cfte
 bin/fte
-bin/xfte
+@bin bin/xfte
 share/doc/fte/
 share/doc/fte/about.html
 share/doc/fte/cfgfiles.html

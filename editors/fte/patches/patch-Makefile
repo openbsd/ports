@@ -1,9 +1,8 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2007/12/01 21:19:33 mgrimm Exp $
---- Makefile.orig	Sat Sep 15 10:11:58 2007
-+++ Makefile	Sat Sep 15 10:25:55 2007
-@@ -1,13 +1,13 @@
--PREFIX=/usr/local
-+PREFIX?=/usr/local
+$OpenBSD: patch-Makefile,v 1.2 2011/01/16 19:58:18 naddy Exp $
+--- Makefile.orig	Sun Jan 18 17:55:27 2009
++++ Makefile	Sun Jan 18 18:26:39 2009
+@@ -1,7 +1,7 @@
+ PREFIX?=/usr/local
  
  BINDIR=$(PREFIX)/bin
 -LIBDIR=$(PREFIX)/lib/fte
@@ -11,10 +10,3 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2007/12/01 21:19:33 mgrimm Exp $
  CONFIGDIR=$(LIBDIR)/config
  
  .PHONY: all install
- 
- all:	fte
--	$(MAKE) -C src unix
-+	(cd src; ${MAKE} unix)
- 
- install: all
- 	sh ./install

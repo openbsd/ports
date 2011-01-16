@@ -1,0 +1,22 @@
+$OpenBSD: patch-config_main_fte,v 1.1 2011/01/16 19:58:18 naddy Exp $
+--- config/main.fte.orig	Sun Jan 18 17:31:40 2009
++++ config/main.fte	Mon Jan 19 08:41:36 2009
+@@ -117,9 +117,15 @@ object GLOBAL {
+ #    WindowFont = "8x13";
+ #    WindowFont = "9x15";
+     WindowFont = "9x15";
+-%if(UI_KB)
+-    WindowFont = "*-fixed-bold-*-15*,*-fixed-bold-*-16*";
+-%endif
++
++# Terminus font example:
++#    WindowFont = "*-terminus-medium-*-14*";
++# JMK font examples:
++#    WindowFont = "*-neep-medium-*-15*";
++#    WindowFont = "*-neep alt-medium-*-15*";
++# Misc bold font example:
++#    WindowFont = "*-fixed-bold-*-15*,*-fixed-bold-*-16*";
++
+ # We need some font, which can be 'LOCALIZED' - and this can't be done
+ # with font names like 9x15 (actually we can, but this would need
+ # highly skilled users :))

@@ -1,0 +1,24 @@
+$OpenBSD: patch-config_uicstyle_fte,v 1.1 2011/01/16 19:58:18 naddy Exp $
+--- config/uicstyle.fte.orig	Sun Jan 18 16:37:13 2009
++++ config/uicstyle.fte	Sat Apr 18 18:17:55 2009
+@@ -6,6 +6,11 @@ menu MChangeCIndentStyle {
+         SetIndentWithTabs 0
+         SetCIndentStyle 4 0 -1 0 4 0 4 -4 0 1 -1 4 4
+     }
++    item "&BSD Kernel" {
++        ChangeTabSize 8;
++        SetIndentWithTabs 1
++        SetCIndentStyle 8 0 4 0 8 0 8 -8 0 1 -1 8 4
++    }
+     item "&Linux kernel" {
+         ChangeTabSize 8;
+         SetIndentWithTabs 1
+@@ -13,7 +18,7 @@ menu MChangeCIndentStyle {
+     }
+     item "&GNU" {
+         ChangeTabSize 8;
+-        SetIndentWithTabs 1
++        SetIndentWithTabs 0
+         SetCIndentStyle 2 2 -1 0 2 0 2 -2 0 1 -1 2 2
+     }
+     # more...

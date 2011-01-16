@@ -1,6 +1,6 @@
-$OpenBSD: patch-install,v 1.1.1.1 2007/12/01 21:19:33 mgrimm Exp $
---- install.orig	Mon Jan  6 18:18:30 2003
-+++ install	Sat Sep 15 12:33:48 2007
+$OpenBSD: patch-install,v 1.2 2011/01/16 19:58:18 naddy Exp $
+--- install.orig	Sun Jan 18 16:37:13 2009
++++ install	Sun Jan 16 17:25:16 2011
 @@ -12,27 +12,11 @@ PREFIX=${PREFIX:-/usr/local}
  # INSTALLATION CODE (do not touch):
  
@@ -43,7 +43,7 @@ $OpenBSD: patch-install,v 1.1.1.1 2007/12/01 21:19:33 mgrimm Exp $
  
  # Set up our binaries.
  for file in fte xfte cfte sfte vfte nfte
-@@ -58,20 +42,7 @@ do
+@@ -58,29 +42,16 @@ do
          # if this is the right directory for this file, use it.
          if [ -f $dir/$file ]
          then
@@ -65,3 +65,14 @@ $OpenBSD: patch-install,v 1.1.1.1 2007/12/01 21:19:33 mgrimm Exp $
          fi
      done
  done
+ 
+ # Copy our configuration.
+ cp -r config $LIBDIR
++rm $CONFIGDIR/*.orig
+ # Somehow things may not all be properly readable by everyone.
+-chmod a+r $CONFIGDIR/*
+-chmod a+r $CONFIGDIR/*/*
++chmod -R a+r $CONFIGDIR
+ 
+ # Any CVS directory that is copied over should be uncopied over.
+ rm -rf `find $CONFIGDIR -type d -name CVS`
