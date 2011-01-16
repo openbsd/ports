@@ -1,7 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2011/01/16 10:39:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/01/16 11:34:43 jasper Exp $
 
 COMMENT =		core event/X abstraction layer
 DISTNAME =		ecore-1.0.0.beta2
+
+REVISION =		0
 
 EPOCH =			1
 
@@ -19,20 +21,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama
-WANTLIB += Xrandr Xrender Xss Xtst cares crypto curl eet eina evas expat
-WANTLIB += fontconfig freetype fribidi glib-2.0 idn jpeg m pcre pthread-stubs
-WANTLIB += ssl xcb z
-
 MODULES =		devel/gettext
 
 USE_LIBTOOL =		Yes
 
-LIB_DEPENDS =		x11/e17/evas>=1.0 \
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xss Xtst cares crypto curl
+WANTLIB += eet eina evas expat fontconfig freetype glib-2.0 idn
+WANTLIB += jpeg m pcre pthread-stubs ssl xcb z
+
+LIB_DEPENDS =		devel/glib2 \
 			net/curl \
 			net/libcares \
-			devel/glib2 \
-			devel/pcre
+			x11/e17/evas>=1.0
 
 CONFIGURE_ARGS +=	--disable-doc \
 			--disable-gnutls \
@@ -41,7 +42,6 @@ CONFIGURE_ARGS +=	--disable-doc \
 #			--with-internal-maximum-log-level=2
 
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			SSL_CFLAGS="-I/usr/include" SSL_LIBS="-lssl"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.mk>

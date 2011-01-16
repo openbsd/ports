@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.3 2011/01/16 00:40:32 laurent Exp $
+$OpenBSD: patch-configure,v 1.4 2011/01/16 11:34:43 jasper Exp $
 
 - Stupid way to remove openssl from the ecore-file and ecore-con pc files.
 - Force disable Cocoa checks, which will later cause the build to fail
@@ -13,13 +13,3 @@ $OpenBSD: patch-configure,v 1.3 2011/01/16 00:40:32 laurent Exp $
 -          rt_libs=-lrt
  
  $as_echo "#define HAVE_CLOCK_GETTIME 1" >>confdefs.h
- 
-@@ -25482,7 +25481,7 @@ fi
-       # depends on ecore_con anyway.
-    else
-       if test "x${have_openssl}" = "xyes" ; then
--         requirements_ecore_con="openssl ${requirements_ecore_con}"
-+         requirements_ecore_con="${requirements_ecore_con}"
-          # no need to add it to req_ecore_ipc, since they
-          # depends on ecore_con anyway.
-       fi
