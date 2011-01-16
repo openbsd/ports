@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/15 09:31:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/01/16 11:16:12 rpointel Exp $
 
 COMMENT=		library for manipulating structured configuration files
 
 DISTNAME=		libconfig-1.4.6
+REVISION =		0
 
 SHARED_LIBS=		config		9.0 \
 			config++	9.0
@@ -22,7 +23,7 @@ MASTER_SITES=		http://www.hyperrealm.com/libconfig/
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 
-WANTLIB += c m stdc++
+WANTLIB += m stdc++
 
 REGRESS_TARGET = test
 
@@ -31,6 +32,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/examples/c/*.c \
 		${PREFIX}/share/examples/libconfig
 	${INSTALL_DATA} ${WRKSRC}/examples/c++/*.cpp \
+		${PREFIX}/share/examples/libconfig
+	${INSTALL_DATA} ${WRKSRC}/examples/c/*.cfg \
 		${PREFIX}/share/examples/libconfig
 
 .include <bsd.port.mk>
