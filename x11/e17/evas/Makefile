@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2011/01/16 10:39:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/01/16 11:28:32 jasper Exp $
 
 COMMENT =		canvas API for X
 DISTNAME =		evas-1.0.0.beta2
 
+REVISION =		0
 EPOCH =			1
 
-SHARED_LIBS +=		evas 1.0
+SHARED_LIBS +=  evas                 1.0      # 1.0
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -15,11 +16,14 @@ PERMIT_DISTFILES_FTP =	Yes
 
 USE_LIBTOOL =		Yes
 
-WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm cairo croco-0.6
-WANTLIB += crypto drm eet eina expat fontconfig freetype fribidi gdk_pixbuf-2.0
-WANTLIB += gif gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl
-WANTLIB += jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
-WANTLIB += pthread-stubs rsvg-2 ssl tiff xcb xcb-render xcb-shm xml2 z
+WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
+WANTLIB += cairo croco-0.6 crypto drm eet eina expat fontconfig
+WANTLIB += freetype gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 jpeg m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs rsvg-2
+WANTLIB += ssl tiff xcb xcb-render xcb-shm xml2 z
+
+MODULES=		devel/gettext
 
 LIB_DEPENDS =		x11/e17/eet>=1.4 \
 			graphics/libungif \
