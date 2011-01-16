@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_modules_conf_intl_e_int_config_intl_c,v 1.1 2010/01/11 14:59:25 jasper Exp $
---- src/modules/conf_intl/e_int_config_intl.c.orig	Mon Jul 27 15:42:30 2009
-+++ src/modules/conf_intl/e_int_config_intl.c	Mon Jul 27 15:52:05 2009
-@@ -604,7 +604,11 @@ _fill_data(E_Config_Dialog_Data *cfdata)
+$OpenBSD: patch-src_modules_conf_intl_e_int_config_intl_c,v 1.2 2011/01/16 01:00:11 laurent Exp $
+--- src/modules/conf_intl/e_int_config_intl.c.orig	Sat Jan  8 15:34:55 2011
++++ src/modules/conf_intl/e_int_config_intl.c	Sat Jan  8 15:35:58 2011
+@@ -600,7 +600,11 @@ _fill_data(E_Config_Dialog_Data *cfdata)
     e_lang_list = e_intl_language_list();
     
     /* Get list of all locales and start making map */

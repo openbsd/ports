@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_modules_wizard_page_200_c,v 1.1 2010/01/11 14:59:25 jasper Exp $
---- src/modules/wizard/page_200.c.orig	Sun Jul 26 00:10:37 2009
-+++ src/modules/wizard/page_200.c	Sun Jul 26 00:11:55 2009
-@@ -46,7 +46,7 @@ wizard_page_apply(E_Wizard_Page *pg)
+$OpenBSD: patch-src_modules_wizard_page_200_c,v 1.2 2011/01/16 01:00:11 laurent Exp $
+--- src/modules/wizard/page_200.c.orig	Sat Jan  8 16:25:59 2011
++++ src/modules/wizard/page_200.c	Sat Jan  8 16:26:40 2011
+@@ -45,7 +45,7 @@ wizard_page_apply(E_Wizard_Page *pg __UNUSED__)
     // setup fileman favorites
     snprintf(buf, sizeof(buf),
  	    "gzip -d -c < %s/data/other/efm_favorites.tar.gz | "

@@ -1,18 +1,10 @@
-$OpenBSD: patch-src_modules_temperature_e_mod_main_h,v 1.2 2010/01/12 08:42:13 ajacoutot Exp $
---- src/modules/temperature/e_mod_main.h.orig	Sun Jul 26 17:04:16 2009
-+++ src/modules/temperature/e_mod_main.h	Sun Jul 26 19:00:37 2009
-@@ -17,6 +17,7 @@ typedef enum _Sensor_Type
- {
-    SENSOR_TYPE_NONE,
-    SENSOR_TYPE_FREEBSD,
-+   SENSOR_TYPE_OPENBSD,
-    SENSOR_TYPE_OMNIBOOK,
-    SENSOR_TYPE_LINUX_MACMINI,
-    SENSOR_TYPE_LINUX_I2C,
-@@ -49,7 +50,7 @@ struct _Config_Face
+$OpenBSD: patch-src_modules_temperature_e_mod_main_h,v 1.3 2011/01/16 01:00:11 laurent Exp $
+--- src/modules/temperature/e_mod_main.h.orig	Sat Jan  8 16:09:20 2011
++++ src/modules/temperature/e_mod_main.h	Sat Jan  8 16:11:33 2011
+@@ -39,7 +39,7 @@ struct _Config_Face
+    Ecore_Event_Handler *tempget_del_handler;
  
- //   Ecore_Poller    *temperature_check_poller;
-    unsigned char have_temp;
+    Eina_Bool have_temp:1;
 -#ifdef __FreeBSD__
 +#if defined (__FreeBSD__) || defined (__OpenBSD__)
     int mib[5];
