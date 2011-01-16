@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_lib_eet_node_c,v 1.1 2011/01/16 00:35:27 laurent Exp $
+--- src/lib/eet_node.c.orig	Sun Nov 21 06:38:29 2010
++++ src/lib/eet_node.c	Sun Nov 21 06:38:42 2010
+@@ -723,7 +723,11 @@ eet_node_init(void)
+    const char *choice;
+    const char *tmp;
+ 
++#ifdef EINA_DEFAULT_MEMPOOL
++   choice = "pass_through";
++#else
+    choice = "chained_mempool";
++#endif
+    tmp = getenv("EET_MEMPOOL");
+    if (tmp && tmp[0])
+       choice = tmp;

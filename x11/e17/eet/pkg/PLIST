@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/01/11 15:02:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/01/16 00:35:27 laurent Exp $
 %%SHARED%%
 @bin bin/eet
-include/Eet.h
+include/eet-1/
+include/eet-1/Eet.h
 lib/libeet.a
 lib/libeet.la
 lib/pkgconfig/

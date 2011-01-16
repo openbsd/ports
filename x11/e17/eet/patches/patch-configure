@@ -1,34 +1,55 @@
-$OpenBSD: patch-configure,v 1.2 2010/01/12 08:41:53 ajacoutot Exp $
-
-Don't check for OpenSSL with pkg-config(1).
-Don't use --as-needed to force registration of -pthread
-
---- configure.orig	Mon Jun 15 07:35:46 2009
-+++ configure	Mon Jan 11 21:51:01 2010
-@@ -13031,7 +13031,7 @@ cat >>confdefs.h <<\_ACEOF
- #define HAVE_OPENSSL 1
- _ACEOF
+$OpenBSD: patch-configure,v 1.3 2011/01/16 00:35:27 laurent Exp $
+--- configure.orig	Fri Nov 12 15:24:02 2010
++++ configure	Sun Nov 21 05:36:21 2010
+@@ -12873,7 +12873,7 @@ $as_echo "yes" >&6; }
+ 
+ $as_echo "#define HAVE_OPENSSL 1" >>confdefs.h
  
 -       requirement_eet="openssl ${requirement_eet}"
 +       requirement_eet="${requirement_eet}"
  
  fi
  fi
-@@ -14486,58 +14486,6 @@ case "$host_os" in
+@@ -13002,12 +13002,12 @@ case "$host_os" in
+    mingw*)
+       ;;
+    solaris*)
+-      _efl_thread_cflags="-mt"
+-      _efl_thread_libs="-mt"
++      _efl_threads_cflags="-mt"
++      _efl_threads_libs="-mt"
+       ;;
+    *)
+-      _efl_thread_cflags="-pthread"
+-      _efl_thread_libs="-pthread"
++      _efl_threads_cflags="-pthread"
++      _efl_threads_libs="-pthread"
        ;;
  esac
  
+@@ -13059,8 +13059,8 @@ fi
+ EFL_PTHREAD_CFLAGS=""
+ EFL_PTHREAD_LIBS=""
+ if test "x${_efl_have_posix_threads}" = "xyes" ; then
+-   EFL_PTHREAD_CFLAGS=${_efl_thread_cflags}
+-   EFL_PTHREAD_LIBS=${_efl_thread_libs}
++   EFL_PTHREAD_CFLAGS=${_efl_threads_cflags}
++   EFL_PTHREAD_LIBS=${_efl_threads_libs}
+ fi
+ 
+ 
+@@ -13863,35 +13863,6 @@ case "$host_os" in
+       lt_enable_auto_import="-Wl,--enable-auto-import"
+       ;;
+ esac
+-
 -
 -# use --as-needed if supported
 -
 -LDFLAGS_SAVE=${LDFLAGS}
 -LDFLAGS="${LDFLAGS} -Wl,--as-needed"
 -
--cat >conftest.$ac_ext <<_ACEOF
--/* confdefs.h.  */
--_ACEOF
--cat confdefs.h >>conftest.$ac_ext
--cat >>conftest.$ac_ext <<_ACEOF
+-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 -/* end confdefs.h.  */
 -
 -int
@@ -39,37 +60,17 @@ Don't use --as-needed to force registration of -pthread
 -  return 0;
 -}
 -_ACEOF
--rm -f conftest.$ac_objext conftest$ac_exeext
--if { (ac_try="$ac_link"
--case "(($ac_try" in
--  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
--  *) ac_try_echo=$ac_try;;
--esac
--eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
--  (eval "$ac_link") 2>conftest.er1
--  ac_status=$?
--  grep -v '^ *+' conftest.er1 >conftest.err
--  rm -f conftest.er1
--  cat conftest.err >&5
--  echo "$as_me:$LINENO: \$? = $ac_status" >&5
--  (exit $ac_status); } && {
--	 test -z "$ac_c_werror_flag" ||
--	 test ! -s conftest.err
--       } && test -s conftest$ac_exeext &&
--       $as_test_x conftest$ac_exeext; then
+-if ac_fn_c_try_link "$LINENO"; then :
 -  ld_as_needed="-Wl,--as-needed"
 -else
--  echo "$as_me: failed program was:" >&5
--sed 's/^/| /' conftest.$ac_ext >&5
--
--	ld_as_needed=""
+-  ld_as_needed=""
 -
 -fi
--
--rm -f core conftest.err conftest.$ac_objext conftest_ipa8_conftest.oo \
--      conftest$ac_exeext conftest.$ac_ext
+-rm -f core conftest.err conftest.$ac_objext \
+-    conftest$ac_exeext conftest.$ac_ext
 -
 -LDFLAGS=${LDFLAGS_SAVE}
+-
  
  
- 
+ ### Checks for library functions
