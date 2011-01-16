@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_lib_ecore_x_xlib_ecore_x_private_h,v 1.1 2011/01/16 00:40:32 laurent Exp $
+--- src/lib/ecore_x/xlib/ecore_x_private.h.orig	Sun Dec  5 17:25:25 2010
++++ src/lib/ecore_x/xlib/ecore_x_private.h	Sun Dec  5 17:27:01 2010
+@@ -6,7 +6,6 @@
+ #define MAXHOSTNAMELEN 256
+ #endif /* ifndef MAXHOSTNAMELEN */
+ 
+-#define XK_MISCELLANY  1
+ #include <X11/Xlib.h>
+ #include <X11/Xproto.h>
+ #include <X11/Xutil.h>

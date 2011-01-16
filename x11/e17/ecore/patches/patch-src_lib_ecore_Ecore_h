@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_lib_ecore_Ecore_h,v 1.1 2010/01/11 15:00:15 jasper Exp $
---- src/lib/ecore/Ecore.h.orig	Tue Jul 21 20:00:53 2009
-+++ src/lib/ecore/Ecore.h	Tue Jul 21 20:01:37 2009
-@@ -55,6 +55,7 @@
- # include <sys/types.h>
+$OpenBSD: patch-src_lib_ecore_Ecore_h,v 1.2 2011/01/16 00:40:32 laurent Exp $
+--- src/lib/ecore/Ecore.h.orig	Fri Nov 12 15:23:02 2010
++++ src/lib/ecore/Ecore.h	Thu Nov 18 00:14:01 2010
+@@ -41,6 +41,7 @@
+ #else
  # include <sys/time.h>
  # include <signal.h>
 +# include <sys/select.h>
  #endif
  
- #ifndef TRUE
+ #include <sys/types.h>
