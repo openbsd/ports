@@ -1,7 +1,7 @@
-$OpenBSD: patch-frontend_gtkmm_src_Makefile_in,v 1.1 2010/05/13 12:29:26 jasper Exp $
---- frontend/gtkmm/src/Makefile.in.orig	Thu May 13 13:55:31 2010
-+++ frontend/gtkmm/src/Makefile.in	Thu May 13 13:55:47 2010
-@@ -2116,7 +2116,7 @@ DBusGnomeApplet.cc:	gnome_applet/gnome-applet.xml \
+$OpenBSD: patch-frontend_gtkmm_src_Makefile_in,v 1.2 2011/01/16 20:34:40 ajacoutot Exp $
+--- frontend/gtkmm/src/Makefile.in.orig	Sat Dec 11 18:05:22 2010
++++ frontend/gtkmm/src/Makefile.in	Sat Jan 15 00:00:35 2011
+@@ -2137,7 +2137,7 @@ DBusGnomeApplet.cc:	gnome_applet/gnome-applet.xml \
  			$(top_srcdir)/common/bin/dbusgen.py \
  		    	$(top_srcdir)/common/bin/DBus-client-template.cc \
  		    	$(top_srcdir)/common/bin/DBus-client-template.hh
@@ -10,7 +10,7 @@ $OpenBSD: patch-frontend_gtkmm_src_Makefile_in,v 1.1 2010/05/13 12:29:26 jasper 
  
  DBusGnomeApplet.hh:	DBusGnomeApplet.cc
  GnomeAppletWindow.cc:   DBusGnomeApplet.hh
-@@ -2133,7 +2133,7 @@ GnomeAppletWindow.cc:   DBusGnomeApplet.hh
+@@ -2160,7 +2160,7 @@ GnomeAppletWindow.cc:   DBusGnomeApplet.hh
  @HAVE_APP_GTKMM_TRUE@@HAVE_DBUS_TRUE@			$(top_srcdir)/common/bin/dbusgen.py \
  @HAVE_APP_GTKMM_TRUE@@HAVE_DBUS_TRUE@			$(top_srcdir)/common/bin/DBus-template.cc \
  @HAVE_APP_GTKMM_TRUE@@HAVE_DBUS_TRUE@			$(top_srcdir)/common/bin/DBus-template.hh

@@ -1,0 +1,15 @@
+$OpenBSD: patch-frontend_common_src_SoundPlayer_cc,v 1.1 2011/01/16 20:34:40 ajacoutot Exp $
+
+Our realpath(3) does not support resolved to be specified as NULL.
+
+--- frontend/common/src/SoundPlayer.cc.orig	Sat Jan 15 10:28:46 2011
++++ frontend/common/src/SoundPlayer.cc	Sat Jan 15 10:29:27 2011
+@@ -522,7 +522,7 @@ SoundPlayer::load_sound_theme(const string &themefilen
+               gchar *pathname = g_build_filename(themedir, filename, NULL);
+               if (pathname != NULL)
+                 {
+-#ifdef HAVE_REALPATH
++#if defined HAVE_REALPATH && !defined __OpenBSD__
+                   sound_pathname = realpath(pathname, NULL);
+                   if (sound_pathname == NULL)
+                     {
