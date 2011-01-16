@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/01/16 09:17:17 phessler Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2011/01/16 15:26:28 jasper Exp $
 @bin bin/pylupdate4
 @bin bin/pyrcc4
 bin/pyuic4
@@ -7,6 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt4/Qt.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtCore.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtDesigner.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtGui.so
+lib/python${MODPY_VERSION}/site-packages/PyQt4/QtHelp.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtNetwork.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtOpenGL.so
 lib/python${MODPY_VERSION}/site-packages/PyQt4/QtScript.so
@@ -406,6 +407,15 @@ share/sip/QtGui/qwizard.sip
 share/sip/QtGui/qworkspace.sip
 share/sip/QtGui/qx11embed_x11.sip
 share/sip/QtGui/qx11info_x11.sip
+share/sip/QtHelp/
+share/sip/QtHelp/QtHelpmod.sip
+share/sip/QtHelp/qhelpcontentwidget.sip
+share/sip/QtHelp/qhelpengine.sip
+share/sip/QtHelp/qhelpenginecore.sip
+share/sip/QtHelp/qhelpindexwidget.sip
+share/sip/QtHelp/qhelpsearchengine.sip
+share/sip/QtHelp/qhelpsearchquerywidget.sip
+share/sip/QtHelp/qhelpsearchresultwidget.sip
 share/sip/QtNetwork/
 share/sip/QtNetwork/QtNetworkmod.sip
 share/sip/QtNetwork/qabstractnetworkcache.sip
