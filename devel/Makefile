@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.891 2011/01/15 12:42:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.892 2011/01/17 06:54:29 stu Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -295,6 +295,7 @@
      SUBDIR += m4
      SUBDIR += maven
      SUBDIR += mcs
+     SUBDIR += mentry
      SUBDIR += mercurial
      SUBDIR += metaauto
      SUBDIR += mico
@@ -1074,6 +1075,7 @@
      SUBDIR += vtcl
      SUBDIR += vte
      SUBDIR += waf
+     SUBDIR += wcb
      SUBDIR += xdg-user-dirs
      SUBDIR += xdg-utils
      SUBDIR += xmake
