@@ -1,11 +1,15 @@
-$OpenBSD: patch-bsd_c,v 1.9 2011/01/16 00:44:35 jakemsr Exp $
+$OpenBSD: patch-bsd_c,v 1.10 2011/01/17 03:55:47 jakemsr Exp $
 
 usb_os_find_busses(): these ioctls only need read access.  do not
   force read-write access to /dev/usb* to use libusb.
 
+usb_os_find_devices(): ugen(4) aren't necessarily the first driver
+  to attach to the device, since ugen can attach to unclaimed
+  interfaces.
 
---- bsd.c.orig	Fri Mar  3 18:52:46 2006
-+++ bsd.c	Mon Jan 10 23:31:57 2011
+
+--- bsd.c.orig	Sat Jan 15 17:21:11 2011
++++ bsd.c	Sat Jan 15 17:19:33 2011
 @@ -361,7 +361,7 @@ int usb_bulk_read(usb_dev_handle *dev, int ep, char *b
  int usb_interrupt_write(usb_dev_handle *dev, int ep, char *bytes, int size,
                          int timeout)
@@ -90,7 +94,51 @@ usb_os_find_busses(): these ioctls only need read access.  do not
      if (fd < 0) {
        if (usb_debug >= 2)
          if (errno != ENXIO && errno != ENOENT)
-@@ -623,9 +615,21 @@ int usb_resetep(usb_dev_handle *dev, unsigned int ep)
+@@ -525,7 +517,8 @@ int usb_os_find_devices(struct usb_bus *bus, struct us
+ {
+   struct usb_device *fdev = NULL;
+   int cfd, dfd;
+-  int device;
++  int device, i;
++  char devname[USB_MAX_DEVNAMELEN];
+ 
+   cfd = open(bus->dirname, O_RDONLY);
+   if (cfd < 0)
+@@ -543,15 +536,20 @@ int usb_os_find_devices(struct usb_bus *bus, struct us
+       continue;
+ 
+     /* There's a device; is it one we should mess with? */
+-
+-    if (strncmp(di.udi_devnames[0], "ugen", 4) != 0)
+-      /* best not to play with things we don't understand */
++    devname[0] = '\0';
++    for (i = 0; i < USB_MAX_DEVNAMES; i++) {
++      if (strncmp(di.udi_devnames[i], "ugen", 4) == 0) {
++	snprintf(devname, sizeof(devname), di.udi_devnames[i]);
++        break;
++      }
++    }
++    if (devname[0] == '\0')
+       continue;
+ 
+ #ifdef __FreeBSD_kernel__
+     snprintf(buf, sizeof(buf) - 1, "/dev/%s", di.udi_devnames[0]);
+ #else
+-    snprintf(buf, sizeof(buf) - 1, "/dev/%s.00", di.udi_devnames[0]);
++    snprintf(buf, sizeof(buf) - 1, "/dev/%s.00", devname);
+ #endif
+ 
+     /* Open its control endpoint */
+@@ -575,7 +573,7 @@ int usb_os_find_devices(struct usb_bus *bus, struct us
+      * This seemed easier than having 2 variables...
+      */
+ #if (__NetBSD__ || __OpenBSD__)
+-    snprintf(buf, sizeof(buf) - 1, "/dev/%s", di.udi_devnames[0]);
++    snprintf(buf, sizeof(buf) - 1, "/dev/%s", devname);
+ #endif
+ 
+     strncpy(dev->filename, buf, sizeof(dev->filename) - 1);
+@@ -623,9 +621,21 @@ int usb_resetep(usb_dev_handle *dev, unsigned int ep)
  
  int usb_clear_halt(usb_dev_handle *dev, unsigned int ep)
  {
