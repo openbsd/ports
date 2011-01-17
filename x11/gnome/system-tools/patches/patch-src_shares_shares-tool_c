@@ -1,32 +1,30 @@
-$OpenBSD: patch-src_shares_shares-tool_c,v 1.1.1.1 2010/09/10 13:51:13 ajacoutot Exp $
---- src/shares/shares-tool.c.orig	Sat Feb 13 23:35:40 2010
-+++ src/shares/shares-tool.c	Thu Sep  9 16:59:21 2010
-@@ -149,6 +149,7 @@ check_servers (GstSharesTool *tool)
- 					 GTK_DIALOG_MODAL,
- 					 GTK_MESSAGE_WARNING,
+$OpenBSD: patch-src_shares_shares-tool_c,v 1.2 2011/01/17 17:51:25 ajacoutot Exp $
+
+XXX We never display NFS even if it's part of OpenBSD base system
+because the system-tools-backends use the Linux|SunOS exports format.
+
+--- src/shares/shares-tool.c.orig	Mon Jan 17 17:30:37 2011
++++ src/shares/shares-tool.c	Mon Jan 17 17:32:58 2011
+@@ -151,7 +151,11 @@ check_servers (GstSharesTool *tool)
  					 GTK_BUTTONS_CLOSE,
-+#ifndef __OpenBSD__
  					 _("Sharing services are not installed"));
  	gtk_message_dialog_format_secondary_markup (GTK_MESSAGE_DIALOG (dialog),
++#ifndef __OpenBSD__
  						    _("You need to install at least either Samba or NFS "
-@@ -157,6 +158,20 @@ check_servers (GstSharesTool *tool)
- 	gtk_widget_destroy (dialog);
- 
- 	return FALSE;
 +#else
-+					 _("Manual handling of service(s) required"));
-+	gtk_message_dialog_format_secondary_markup (GTK_MESSAGE_DIALOG (dialog),
-+						   _("OpenBSD does not support rcNG or rc.d init systems.\nYou can "
-+						     "configure shares but the (re)start of the NFS/SMB service(s) "
-+						     "will need to be done manually (from a priviledged user).\n\n"
-+						     "Make sure you have the samba package installed before "
-+						     "setting up a Windows share."));
-+
-+	gtk_dialog_run (GTK_DIALOG (dialog));
-+	gtk_widget_destroy (dialog);
-+
-+	return TRUE;
++						    _("You need to install Samba "
 +#endif
- }
+ 						      "in order to share your folders."));
+ 	gtk_dialog_run (GTK_DIALOG (dialog));
+ 	gtk_widget_destroy (dialog);
+@@ -221,8 +225,10 @@ gst_shares_tool_update_services_availability (GstShare
  
- static void
+ 		if (role == GST_ROLE_FILE_SERVER_SMB)
+ 			tool->smb_available = TRUE;
++#ifndef __OpenBSD__
+ 		else if (role == GST_ROLE_FILE_SERVER_NFS)
+ 			tool->nfs_available = TRUE;
++#endif
+ 
+ 		g_object_unref (service);
+ 		valid = oobs_list_iter_next (services, &iter);

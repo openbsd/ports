@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/01/17 17:51:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	sytem configuration GUI for desktops
 GNOME_PROJECT=	gnome-system-tools
 GNOME_VERSION=	2.32.0
 
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	sysutils
 
@@ -44,8 +44,7 @@ MODGCONF2_SCHEMAS_DIR= gnome-system-tools
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-silent-rules \
-		--disable-schemas-compile \
-		--disable-services
+		--disable-schemas-compile
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
