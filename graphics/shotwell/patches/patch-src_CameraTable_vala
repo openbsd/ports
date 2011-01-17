@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_CameraTable_vala,v 1.1.1.1 2010/10/28 12:36:10 landry Exp $
+$OpenBSD: patch-src_CameraTable_vala,v 1.2 2011/01/17 13:05:21 landry Exp $
 We don't have gudev.. won't be able to detect cameras
---- src/CameraTable.vala.orig	Wed Jun 30 20:44:30 2010
-+++ src/CameraTable.vala	Thu Jul  1 23:19:30 2010
+--- src/CameraTable.vala.orig	Tue Jan 11 00:13:03 2011
++++ src/CameraTable.vala	Mon Jan 17 00:54:28 2011
 @@ -24,7 +24,6 @@ public class CameraTable {
      
      private static CameraTable instance = null;
@@ -10,17 +10,16 @@ We don't have gudev.. won't be able to detect cameras
      private OneShotScheduler camera_update_scheduler = null;
      private GPhoto.Context null_context = new GPhoto.Context();
      private GPhoto.CameraAbilitiesList abilities_list;
-@@ -40,9 +39,6 @@ public class CameraTable {
+@@ -41,8 +40,6 @@ public class CameraTable {
          camera_update_scheduler = new OneShotScheduler("CameraTable update scheduler",
              on_update_cameras);
          
 -        // listen for interesting events on the specified subsystems
 -        client.uevent.connect(on_udev_event);
--        
-         // because loading the camera abilities list takes a bit of time and slows down app
-         // startup, delay loading it (and notifying any observers) for a small period of time,
-         // after the dust has settled
-@@ -99,31 +95,6 @@ public class CameraTable {
+         volume_monitor = VolumeMonitor.get();
+         volume_monitor.volume_changed.connect(on_volume_changed);
+         volume_monitor.volume_added.connect(on_volume_changed);
+@@ -103,31 +100,6 @@ public class CameraTable {
      private string[] get_all_usb_cameras() {
          string[] cameras = new string[0];
          
@@ -52,7 +51,28 @@ We don't have gudev.. won't be able to detect cameras
          return cameras;
      }
      
-@@ -311,13 +282,6 @@ public class CameraTable {
+@@ -300,20 +272,6 @@ public class CameraTable {
+             }
+             
+             // Get display name for camera.
+-            string path = get_port_path(port);
+-            if (null != path) {
+-                GUdev.Device device = client.query_by_device_file(path);
+-                string serial = device.get_property("ID_SERIAL_SHORT");
+-                if (null != serial) {
+-                    display_name = get_name_for_uuid(serial);
+-                }
+-                if (null == display_name) {
+-                    display_name = device.get_sysfs_attr("product");
+-                } 
+-                if (null == display_name) {
+-                    display_name = device.get_property("ID_MODEL");
+-                }
+-            }
+             if (null == display_name) {
+                 // Default to GPhoto detected name.
+                 display_name = name;
+@@ -351,13 +309,6 @@ public class CameraTable {
          }
      }
      
@@ -64,5 +84,5 @@ We don't have gudev.. won't be able to detect cameras
 -        camera_update_scheduler.after_timeout(UPDATE_DELAY_MSEC, true);
 -    }
      
-     private void on_update_cameras() {
-         try {
+     public void on_volume_changed(Volume volume) {
+         camera_update_scheduler.after_timeout(UPDATE_DELAY_MSEC, true);

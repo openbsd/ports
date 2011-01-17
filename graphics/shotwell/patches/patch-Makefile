@@ -1,105 +1,55 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2010/10/28 12:36:10 landry Exp $
+$OpenBSD: patch-Makefile,v 1.2 2011/01/17 13:05:21 landry Exp $
 remove gudev requirements
 add gmodule to fix http://trac.yorba.org/ticket/2726
---- Makefile.orig	Sat Sep 11 00:55:54 2010
-+++ Makefile	Wed Oct 27 18:49:26 2010
-@@ -124,11 +124,6 @@ SRC_FILES = \
- 	FSpotDatabaseDriver.vala \
- 	FSpotDatabaseTables.vala
- 
--ifndef LINUX
--SRC_FILES += \
--	GConf.vala
--endif
--
- VAPI_FILES = \
- 	libexif.vapi \
- 	libgphoto2.vapi \
-@@ -268,6 +263,7 @@ EXT_PKGS = \
- 	gee-1.0 \
+--- Makefile.orig	Tue Jan 11 00:13:03 2011
++++ Makefile	Mon Jan 17 00:52:50 2011
+@@ -280,7 +280,6 @@ EXT_PKGS = \
+ 	gstreamer-base-0.10 \
  	gtk+-2.0 \
  	glib-2.0 \
-+	gmodule-2.0 \
- 	libexif \
- 	sqlite3 \
- 	gexiv2
-@@ -275,7 +271,6 @@ EXT_PKGS = \
- LIBRAW_PKG = \
- 	libraw
- 
--ifdef LINUX
- EXT_PKGS += \
- 	gconf-2.0 \
- 	libgphoto2 \
-@@ -283,10 +278,8 @@ EXT_PKGS += \
- 	libxml-2.0 \
- 	unique-1.0 \
- 	webkit-1.0 \
 -	gudev-1.0 \
- 	dbus-glib-1 \
- 	gdk-x11-2.0
--endif
- 
- # libraw is handled separately (see note below); when libraw-config is no longer needed, the version
- # should be added to this list
-@@ -301,7 +294,6 @@ EXT_PKG_VERSIONS = \
- LIBRAW_VERSION = \
- 	0.9.0
- 
--ifdef LINUX
- EXT_PKG_VERSIONS += \
- 	gconf-2.0 >= 2.22.0 \
- 	libgphoto2 >= 2.4.2 \
-@@ -309,9 +301,7 @@ EXT_PKG_VERSIONS += \
- 	libxml-2.0 >= 2.6.32 \
- 	unique-1.0 >= 1.0.0 \
- 	webkit-1.0 >= 1.1.5 \
+ 	json-glib-1.0 \
+ 	libexif \
+ 	libgphoto2 \
+@@ -306,7 +305,6 @@ EXT_PKG_VERSIONS = \
+ 	glib-2.0 >= 2.24.0 \
+ 	gstreamer-0.10 >= 0.10.28 \
+ 	gstreamer-base-0.10 >= 0.10.28 \
 -	gudev-1.0 >= 145 \
- 	dbus-glib-1 >= 0.80
--endif
- 
- PKGS = $(EXT_PKGS) $(LOCAL_PKGS) $(LIBRAW_PKG)
- 
-@@ -470,7 +460,6 @@ endif
- ifndef DISABLE_DESKTOP_UPDATE
- 	-update-desktop-database || :
- endif
--ifdef LINUX
- ifndef DISABLE_SCHEMAS_INSTALL
- 	GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source` gconftool-2 --makefile-install-rule misc/shotwell.schemas
- else
-@@ -487,7 +476,6 @@ ifndef DISABLE_HELP_INSTALL
- 	mkdir -p $(DESTDIR)$(PREFIX)/share/gnome/help/shotwell/C/figures
- 	$(INSTALL_DATA) $(EXPANDED_HELP_IMAGES) $(DESTDIR)$(PREFIX)/share/gnome/help/shotwell/C/figures
- endif
--endif
- 	-$(foreach lang,$(SUPPORTED_LANGUAGES),`mkdir -p $(SYSTEM_LANG_DIR)/$(lang)/LC_MESSAGES ; \
-         $(INSTALL_DATA) $(LOCAL_LANG_DIR)/$(lang)/LC_MESSAGES/shotwell.mo \
-             $(SYSTEM_LANG_DIR)/$(lang)/LC_MESSAGES/shotwell.mo`)
-@@ -518,7 +506,6 @@ endif
+ 	json-glib-1.0 >= 0.7.6 \
+ 	libexif >= 0.6.16 \
+ 	libgphoto2 >= 2.4.2 \
+@@ -504,7 +502,6 @@ endif
  
  $(VALA_STAMP): $(EXPANDED_SRC_FILES) $(EXPANDED_VAPI_FILES) $(EXPANDED_SRC_HEADER_FILES) Makefile \
  	$(CONFIG_IN)
--	@ ./minver `valac --version | awk '{print $$2}'` $(MIN_VALAC_VERSION) || ( echo 'Shotwell requires Vala compiler $(MIN_VALAC_VERSION) or greater.  You are running' `valac --version` '\b.'; exit 1 )
+-	@ ./minver `$(VALAC) --version | awk '{print $$2}'` $(MIN_VALAC_VERSION) || ( echo 'Shotwell requires Vala compiler $(MIN_VALAC_VERSION) or greater.  You are running' `$(VALAC) --version` '\b.'; exit 1 )
  ifndef ASSUME_PKGS
  ifdef EXT_PKG_VERSIONS
- 	@pkg-config --print-errors --exists '$(EXT_PKG_VERSIONS)'
-@@ -546,15 +533,15 @@ $(EXPANDED_C_FILES): $(VALA_STAMP)
+ 	@pkg-config --print-errors --exists '$(EXT_PKG_VERSIONS) $(DIRECT_LIBS_VERSIONS)'
+@@ -512,7 +509,7 @@ else ifdef EXT_PKGS
+ 	@pkg-config --print-errors --exists $(EXT_PKGS) $(DIRECT_LIBS_VERSIONS)
+ endif
+ # Check for libraw manually
+-	@$(LIBRAW_CONFIG) --exists=$(LIBRAW_VERSION)
++	@pkg-config --exists raw
+ endif
+ 	@ type msgfmt > /dev/null || ( echo 'msgfmt (usually found in the gettext package) is missing and is required to build Shotwell. ' ; exit 1 )
+ 	mkdir -p $(BUILD_DIR)
+@@ -530,13 +527,13 @@ $(EXPANDED_C_FILES): $(VALA_STAMP)
  	@
  
  $(EXPANDED_OBJ_FILES): %.o: %.c $(CONFIG_IN) Makefile
 -	$(CC) -c $(VALA_CFLAGS) `$(LIBRAW_CONFIG) --cflags` $(CFLAGS) -o $@ $<
-+	$(CC) -c $(VALA_CFLAGS) $(CFLAGS) `pkg-config --cflags raw` -o $@ $<
++	$(CC) -c $(VALA_CFLAGS) `pkg-config --cflags raw` $(CFLAGS) -o $@ $<
  
  $(PROGRAM): $(EXPANDED_OBJ_FILES) $(RESOURCES) $(LANG_STAMP)
 -	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `$(LIBRAW_CONFIG) --libs` $(EXPORT_FLAGS) -o $@
-+	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(RESOURCES) $(VALA_LDFLAGS) $(LDFLAGS) `pkg-config --libs raw` $(EXPORT_FLAGS) -o $@
++	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `pkg-config --libs raw` $(EXPORT_FLAGS) -o $@
  
  glade: lib$(PROGRAM).so
  
  lib$(PROGRAM).so: $(EXPANDED_OBJ_FILES) $(RESOURCES) $(LANG_STAMP)
 -	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `$(LIBRAW_CONFIG) --libs` $(EXPORT_FLAGS) -shared -o $@
-+	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(RESOURCES) $(VALA_LDFLAGS) $(LDFLAGS) `pkg-config --libs raw` $(EXPORT_FLAGS) -shared -o $@
++	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `pkg-config --libs raw` $(EXPORT_FLAGS) -shared -o $@
  
- shotwell-setup-$(VERSION).exe: $(PROGRAM) windows/winstall.iss
- 	iscc windows\winstall.iss
