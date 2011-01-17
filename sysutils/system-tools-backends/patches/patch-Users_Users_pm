@@ -1,6 +1,6 @@
-$OpenBSD: patch-Users_Users_pm,v 1.1.1.1 2010/09/10 13:49:59 ajacoutot Exp $
+$OpenBSD: patch-Users_Users_pm,v 1.2 2011/01/17 18:54:42 ajacoutot Exp $
 --- Users/Users.pm.orig	Sat Aug 21 15:18:12 2010
-+++ Users/Users.pm	Fri Sep 10 15:28:48 2010
++++ Users/Users.pm	Mon Jan 17 19:20:49 2011
 @@ -58,7 +58,7 @@ use Utils::Replace;
  # They are tried in array order. First found = used.
  @passwd_names =     ( "/etc/passwd" );
@@ -16,7 +16,7 @@ $OpenBSD: patch-Users_Users_pm,v 1.1.1.1 2010/09/10 13:49:59 ajacoutot Exp $
  
 +my $openbsd_logindefs_defaults = {
 +  'shell'    => '/bin/ksh',
-+  'group'    => 10,
++  'group'    => -1,
 +  'skel_dir' => '/etc/skel/',
 +};
 +
@@ -95,7 +95,7 @@ $OpenBSD: patch-Users_Users_pm,v 1.1.1.1 2010/09/10 13:49:59 ajacoutot Exp $
      &Utils::File::close_file ($pwdpipe);
    }
 -  else
-+  elsif ($Utils::Backend::tool{"system"} neq "OpenBSD")
++  elsif ($Utils::Backend::tool{"system"} ne "OpenBSD")
    {
      $pwdpipe = &Utils::File::run_pipe_write ($cmd_chpasswd);
      print $pwdpipe "$login:$password";

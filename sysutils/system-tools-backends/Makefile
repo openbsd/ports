@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/01/17 17:49:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/01/17 18:54:42 ajacoutot Exp $
 
 COMMENT=	cross-platform configuration modules
 
 GNOME_VERSION=	2.10.1
 GNOME_PROJECT=	system-tools-backends
 
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	sysutils
 
