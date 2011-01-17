@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/01/17 00:16:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/01/17 17:58:30 jasper Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
@@ -28,10 +28,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gnome-keyring \
 			--enable-mcclient-so6
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_prog_PYTHON="${MODPY_BIN}"
 USE_GROFF =		Yes
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure
 
 .include <bsd.port.mk>

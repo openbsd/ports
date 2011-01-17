@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/19 22:31:38 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/01/17 17:58:30 jasper Exp $
 
 COMMENT=		flexible communications framework, farsight2 component
 
@@ -24,6 +24,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-gtk-doc=no \
 			--disable-silent-rules
+CONFIGURE_ENV+=		ac_cv_prog_PYTHON="${MODPY_BIN}"
 
 pre-configure:
 	@ln -s ${LOCALBASE}/bin/python${MODPY_VERSION}-config \

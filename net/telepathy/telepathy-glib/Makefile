@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/01/17 12:35:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2011/01/17 17:58:30 jasper Exp $
 
 COMMENT=		flexible communications framework, glib bindings
 
@@ -27,11 +27,11 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-vala-bindings
 #CONFIGURE_ARGS+=	--enable-backtrace (add -llibexecinfo)
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_prog_PYTHON="${MODPY_BIN}"
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure \
-		${WRKSRC}/telepathy-glib/Makefile.in \
+	${SUBST_CMD} ${WRKSRC}/telepathy-glib/Makefile.in \
 		${WRKSRC}/tests/all-errors-documented.py
 
 .include <bsd.port.mk>

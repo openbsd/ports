@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/01/17 00:15:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/01/17 17:58:29 jasper Exp $
 
 COMMENT=		flexible communications framework, MSN component
 
@@ -9,6 +9,7 @@ MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-butterfly/}
 MODULES=		lang/python
 
 CONFIGURE_STYLE=	gnu
+CONFIGURE_ENV+=		ac_cv_prog_PYTHON="${MODPY_BIN}"
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		net/papyon>=0.5.1 \
@@ -16,8 +17,5 @@ RUN_DEPENDS=		net/papyon>=0.5.1 \
 
 USE_LIBTOOL=		No
 NO_REGRESS=		Yes
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure
 
 .include <bsd.port.mk>

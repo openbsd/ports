@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/01/17 00:15:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2011/01/17 17:58:30 jasper Exp $
 
 COMMENT=		flexible communications framework, xmpp component
 
@@ -24,11 +24,9 @@ LIB_DEPENDS=		devel/libsoup \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-ca-certificates=/etc/ssl/cert.pem \
 			--disable-gtk-doc
+CONFIGURE_ENV+=		ac_cv_prog_PYTHON="${MODPY_BIN}"
 USE_GROFF=		Yes
 
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/lib/ext/wocky
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure
 
 .include <bsd.port.mk>
