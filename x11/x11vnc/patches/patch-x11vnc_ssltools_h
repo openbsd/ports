@@ -1,0 +1,60 @@
+$OpenBSD: patch-x11vnc_ssltools_h,v 1.1 2011/01/17 10:10:29 sthen Exp $
+
+- OpenBSD's grep(1) doesn't support `\>' as end of the word match, but
+  it does support `[[:>:]]' (patched another way upstream)
+- fix path to su(1)
+
+--- x11vnc/ssltools.h.orig	Fri Sep 10 04:46:47 2010
++++ x11vnc/ssltools.h	Sun Jan 16 17:18:33 2011
+@@ -1003,10 +1003,10 @@ char find_display[] = 
+ "			else\n"
+ "				skip=\":$skip\"\n"
+ "			fi\n"
+-"			if echo \"$skip\" | grep \":$dtry1\\>\" > /dev/null; then\n"
++"			if echo \"$skip\" | grep \":$dtry1[[:>:]]\" > /dev/null; then\n"
+ "				mat=1\n"
+ "				break\n"
+-"			elif echo \"$skip\" | grep \":$dtry2\\>\" > /dev/null; then\n"
++"			elif echo \"$skip\" | grep \":$dtry2[[:>:]]\" > /dev/null; then\n"
+ "				mat=1\n"
+ "				break\n"
+ "			fi\n"
+@@ -1135,7 +1135,7 @@ char find_display[] = 
+ "# who(1) output column 2:\n"
+ "#gone=`last $user | grep 'gone.*no.logout' | awk '{print $2}' | grep '^:' | sed -e 's,/.*,,' | tr '\\n' '|'`\n"
+ "#gone=\"${gone}__quite_impossible__\"\n"
+-"#display=`who 2>/dev/null | grep \"^${user}[ 	][ 	]*:[0-9]\" | egrep -v \" ($gone)\\>\" | head -n 1 \\\n"
++"#display=`who 2>/dev/null | grep \"^${user}[ 	][ 	]*:[0-9]\" | egrep -v \" ($gone)[[:>:]]\" | head -n 1 \\\n"
+ "#    | awk '{print $2}' | sed -e 's,/.*$,,'`\n"
+ "\n"
+ "poss=\"\"\n"
+@@ -1880,7 +1880,7 @@ char create_display[] = 
+ "		rm -f $ctmp1 $ctmp2\n"
+ "		XAUTHORITY=$authfile\n"
+ "		export XAUTHORITY\n"
+-"		sess=\"/bin/su - $USER -c $sess\"\n"
++"		sess=\"/usr/bin/su -l $USER -c $sess\"\n"
+ "	else\n"
+ "		$have_xauth -f $authfile nextract -           :$N | $have_xauth nmerge -\n"
+ "		$have_xauth -f $authfile nextract - `hostname`:$N | $have_xauth nmerge -\n"
+@@ -2371,15 +2371,15 @@ char create_display[] = 
+ "	curr_try=`echo \"$curr_try\" | sed -e  's/[+.-]xdmcp//'`\n"
+ "	curr_try=`echo \"$curr_try\" | sed -e  's/[+.-]redirect//'`\n"
+ "\n"
+-"	if echo \"$curr_try\"   | grep -i '^Xdummy\\>' > /dev/null; then\n"
++"	if echo \"$curr_try\"   | grep -i '^Xdummy[[:>:]]' > /dev/null; then\n"
+ "		try_Xdummy\n"
+-"	elif echo \"$curr_try\" | grep -i '^Xvfb\\>'   > /dev/null; then\n"
++"	elif echo \"$curr_try\" | grep -i '^Xvfb[[:>:]]'   > /dev/null; then\n"
+ "		try_Xvfb\n"
+-"	elif echo \"$curr_try\" | grep -i '^Xvnc\\>'   > /dev/null; then\n"
++"	elif echo \"$curr_try\" | grep -i '^Xvnc[[:>:]]'   > /dev/null; then\n"
+ "		try_Xvnc\n"
+-"	elif echo \"$curr_try\" | grep -i '^Xsrv\\>'   > /dev/null; then\n"
++"	elif echo \"$curr_try\" | grep -i '^Xsrv[[:>:]]'   > /dev/null; then\n"
+ "		try_Xsrv\n"
+-"	elif echo \"$curr_try\" | grep -i '^X\\>'      > /dev/null; then\n"
++"	elif echo \"$curr_try\" | grep -i '^X[[:>:]]'      > /dev/null; then\n"
+ "		try_X\n"
+ "	fi\n"
+ "	if [ \"X$result\" = \"X1\" ]; then\n"
