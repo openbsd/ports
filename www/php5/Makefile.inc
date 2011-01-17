@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.35 2011/01/03 15:03:03 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.36 2011/01/17 11:47:19 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
 NOT_FOR_ARCHS=		${NO_SHARED_ARCHS}
 
-V=			5.2.16
+V=			5.2.17
 SUHOSIN_V=		0.9.32.1
 SUHOSIN_P_V=		0.9.7
 
@@ -76,7 +76,7 @@ SUPDISTFILES=		suhosin-${SUHOSIN_V}.tar.gz:0 \
 			suhosin-patch-${V}-${SUHOSIN_P_V}.patch.gz:0
 .else
 DISTFILES+=		suhosin-${SUHOSIN_V}.tar.gz:0
-PATCHFILES=		suhosin-patch-${V}-${SUHOSIN_P_V}.patch.gz:0
+PATCHFILES=		suhosin-patch-5.2.16-${SUHOSIN_P_V}.patch.gz:0
 PATCH_DIST_STRIP=	-p1
 CONFIGURE_ARGS+=	--enable-suhosin
 
