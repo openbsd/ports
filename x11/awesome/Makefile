@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.28 2011/01/15 22:20:32 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.29 2011/01/17 13:23:06 dcoppa Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
-DISTNAME=		awesome-3.4.8
-REVISION=		5
+DISTNAME=		awesome-3.4.9
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		x11
 
@@ -17,16 +16,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB+=		Imlib2 X11 Xau Xdmcp Xext Xrender c cairo
-WANTLIB+=		dbus-1 ev execinfo expat fontconfig freetype
-WANTLIB+=		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB+=		iconv intl lua m pango-1.0 pangocairo-1.0
-WANTLIB+=		pangoft2-1.0 pixman-1 png pthread pthread-stubs
-WANTLIB+=		startup-notification-1 xcb xcb-atom xcb-aux
-WANTLIB+=		xcb-event xcb-icccm xcb-image xcb-keysyms
-WANTLIB+=		xcb-property xcb-randr xcb-render xcb-render-util
-WANTLIB+=		xcb-shape xcb-shm xcb-xinerama xcb-xtest
-WANTLIB+=		xdg-basedir z
+WANTLIB+=		GL Imlib2 X11 Xau Xdamage Xdmcp Xext Xfixes
+WANTLIB+=		Xrender Xxf86vm c cairo dbus-1 drm ev
+WANTLIB+=		execinfo expat fontconfig freetype glib-2.0
+WANTLIB+=		gmodule-2.0 gobject-2.0 gthread-2.0 iconv
+WANTLIB+=		intl lua m pango-1.0 pangocairo-1.0
+WANTLIB+=		pangoft2-1.0 pixman-1 png pthread
+WANTLIB+=		pthread-stubs startup-notification-1 xcb
+WANTLIB+=		xcb-atom xcb-aux xcb-event xcb-icccm
+WANTLIB+=		xcb-image xcb-keysyms xcb-property
+WANTLIB+=		xcb-randr xcb-render xcb-shape xcb-shm
+WANTLIB+=		xcb-xinerama xcb-xtest xdg-basedir z
 
 MASTER_SITES=		${HOMEPAGE}download/
 

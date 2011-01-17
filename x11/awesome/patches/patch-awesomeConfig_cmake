@@ -1,8 +1,8 @@
-$OpenBSD: patch-awesomeConfig_cmake,v 1.3 2010/09/14 08:51:24 dcoppa Exp $
---- awesomeConfig.cmake.orig	Wed Aug 25 10:50:48 2010
-+++ awesomeConfig.cmake	Fri Sep 10 13:47:47 2010
-@@ -18,11 +18,11 @@ option(GENERATE_LUADOC "generate luadoc" ON)
- link_directories(/usr/local/lib)
+$OpenBSD: patch-awesomeConfig_cmake,v 1.4 2011/01/17 13:23:06 dcoppa Exp $
+--- awesomeConfig.cmake.orig	Mon Jan 17 12:38:13 2011
++++ awesomeConfig.cmake	Mon Jan 17 13:07:59 2011
+@@ -16,11 +16,11 @@ option(COMPRESS_MANPAGES "compress manpages" ON)
+ option(GENERATE_LUADOC "generate luadoc" ON)
  
  # {{{ CFLAGS
 -add_definitions(-std=gnu99 -ggdb3 -fno-strict-aliasing -Wall -Wextra
@@ -10,7 +10,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.3 2010/09/14 08:51:24 dcoppa Exp $
 -    -Wsign-compare -Wunused -Wno-unused-parameter -Wuninitialized -Winit-self
 -    -Wpointer-arith -Wredundant-decls -Wformat-nonliteral
 -    -Wno-format-zero-length -Wmissing-format-attribute -Wmissing-prototypes
-+add_definitions(-std=gnu99 -ggdb3 -fno-strict-aliasing -Wall
++add_definitions(-std=gnu99 -fgnu89-inline -fno-strict-aliasing
 +    -Wchar-subscripts -Wcast-align -Wwrite-strings
 +    -Wsign-compare -Wunused -Wno-unused-parameter -Wuninitialized
 +    -Wpointer-arith -Wformat-nonliteral -Wno-format-zero-length
@@ -18,25 +18,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.3 2010/09/14 08:51:24 dcoppa Exp $
      -Wstrict-prototypes)
  # }}}
  
-@@ -166,6 +166,9 @@ endmacro()
- # Check for libev
- a_find_library(LIB_EV ev)
- 
-+# Check for libexecinfo on non Glibc systems
-+a_find_library(LIB_EXECINFO execinfo)
-+
- # Error check
- if(NOT LUA51_FOUND AND NOT LUA50_FOUND) # This is a workaround to a cmake bug
-     message(FATAL_ERROR "lua library not found")
-@@ -175,6 +178,7 @@ set(AWESOME_REQUIRED_LIBRARIES
-     ${AWESOME_COMMON_REQUIRED_LDFLAGS}
-     ${AWESOME_REQUIRED_LIBRARIES}
-     ${LIB_EV}
-+    ${LIB_EXECINFO}
-     ${LUA_LIBRARIES})
- 
- set(AWESOME_REQUIRED_INCLUDE_DIRS
-@@ -214,7 +218,7 @@ endif()
+@@ -240,7 +240,7 @@ endif()
  if(DEFINED SYSCONFDIR)
      set(SYSCONFDIR ${SYSCONFDIR} CACHE PATH "config directory")
  else()
@@ -45,7 +27,7 @@ $OpenBSD: patch-awesomeConfig_cmake,v 1.3 2010/09/14 08:51:24 dcoppa Exp $
  endif()
  
  #If an XDG Config Dir is specificed, use it instead
-@@ -243,7 +247,7 @@ endif()
+@@ -269,7 +269,7 @@ endif()
  if(DEFINED AWESOME_MAN_PATH)
     set(AWESOME_MAN_PATH ${AWESOME_MAN_PATH} CACHE PATH "awesome manpage directory")
  else()
