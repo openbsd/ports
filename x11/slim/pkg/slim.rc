@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $OpenBSD: slim.rc,v 1.1 2011/01/17 14:57:38 landry Exp $
+
+daemon="${TRUEPREFIX}/bin/slim"
+daemon_flags="-d"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_start() {
+	(sleep 5; ${rcexec} "${daemon} ${daemon_flags}" >/dev/null)&
+}
+
+rc_cmd $1

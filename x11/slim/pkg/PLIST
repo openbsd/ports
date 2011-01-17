@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/11 09:27:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/01/17 14:57:38 landry Exp $
 @pkgpath x11/slim,-main
 @bin bin/slim
 @man man/man1/slim.1
@@ -12,3 +12,4 @@ share/slim/themes/default/
 share/slim/themes/default/background.jpg
 share/slim/themes/default/panel.png
 share/slim/themes/default/slim.theme
+@rcscript ${RCDIR}/slim
