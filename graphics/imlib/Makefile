@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2011/01/17 18:34:02 jasper Exp $
 # $FreeBSD: Makefile,v 1.45 1999/03/09 01:08:57 nectar Exp $
 
 COMMENT=	image manipulation library for X11
@@ -26,8 +26,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-VMEM_WARNING=	Yes
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
