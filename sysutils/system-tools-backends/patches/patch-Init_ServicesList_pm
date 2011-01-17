@@ -1,0 +1,12 @@
+$OpenBSD: patch-Init_ServicesList_pm,v 1.1 2011/01/17 00:36:28 ajacoutot Exp $
+--- Init/ServicesList.pm.orig	Mon Jan 17 01:34:25 2011
++++ Init/ServicesList.pm	Mon Jan 17 01:34:41 2011
+@@ -177,6 +177,8 @@ sub is_forbidden
+      "ureadahead",
+      "wpa-ifupdown",
+      "x11-common",
++     # This was found in OpenBSD
++     "rc.subr",
+     ];
+ 
+   foreach $i (@$service_forbidden_list)

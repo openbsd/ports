@@ -1,6 +1,6 @@
-$OpenBSD: patch-Init_Services_pm,v 1.1 2010/10/29 15:05:28 ajacoutot Exp $
+$OpenBSD: patch-Init_Services_pm,v 1.2 2011/01/17 00:36:28 ajacoutot Exp $
 --- Init/Services.pm.orig	Sat Mar 13 10:37:16 2010
-+++ Init/Services.pm	Fri Oct 29 17:02:47 2010
++++ Init/Services.pm	Mon Jan 17 01:33:21 2011
 @@ -54,6 +54,7 @@ sub get_runlevels
       "gentoo"           => "gentoo",
       "archlinux"        => "freebsd-5",
@@ -17,69 +17,47 @@ $OpenBSD: patch-Init_Services_pm,v 1.1 2010/10/29 15:05:28 ajacoutot Exp $
      );
  
    $distro = $dist_map{$Utils::Backend::tool{"platform"}};
-@@ -1086,6 +1088,10 @@ sub get_rcng_status_by_service
+@@ -1086,6 +1088,14 @@ sub get_rcng_status_by_service
    {
      return &Utils::File::exists ("/var/run/daemons/$service");
    }
-+  elsif ($Utils::Backend::tool{"platform"} eq "openbsd")
++  elsif ($Utils::Backend::tool{"platform"} eq "openbsd-4")
 +  {
-+    return &Utils::File::exists ("/etc/rc.d/$service");
++    if (!&Utils::File::run ("/etc/rc.d/$service", "check"))
++    {
++      $active = 1;
++    }
++    return $active;
 +  }
    else
    {
      $fd = &Utils::File::run_pipe_read ("/etc/rc.d/$service rcvar");
-@@ -1210,6 +1216,39 @@ sub set_rcng_service_status
+@@ -1210,6 +1220,13 @@ sub set_rcng_service_status
    }
  }
  
 +sub set_openbsd_service_status
 +{
 +  my ($script, $active) = @_;
-+  my $rcconf = '/etc/rc.conf.local';
-+  my ($daemons);
 +
-+  $daemons = &Utils::Parse::get_sh ($rcconf, "rc_scripts");
-+  $daemons =~ s/[\(\)]//g;
-+
-+  # escape these chars
-+  $script =~ s/([\\\.\^\$\*\+\?\{\}\[\]\(\)\|])/\\\1/g;
-+  $notscript = "\!" . $script;
-+
-+  if (($daemons =~ m/$notscript/) && $active)
-+  {
-+    # It was disabled, enable it
-+    $daemons =~ s/$notscript/$script/g;
-+  }
-+  elsif (($daemons =~ m/$script/) && !$active)
-+  {
-+    # It was enabled, disable it
-+    $daemons =~ s/$script/$notscript/g;
-+  }
-+  elsif (($daemons !~ m/$script/) && $active)
-+  {
-+    $daemons .= " ".$script;
-+  }
-+
-+  $daemons = "(" . $daemons . ")";
-+  &Utils::Replace::set_sh ($rcconf, "rc_scripts", $daemons, 1);
 +  &run_rcng_script ($service, ($active) ? "start" : "stop");
 +}
 +
  sub set_archlinux_service_status
  {
    my ($script, $active) = @_;
-@@ -1253,6 +1292,10 @@ sub set_rcng_service
+@@ -1253,6 +1270,10 @@ sub set_rcng_service
    {
      $func = \&set_archlinux_service_status;
    }
-+  elsif ($Utils::Backend::tool{"platform"} eq "openbsd")
++  elsif ($Utils::Backend::tool{"platform"} eq "openbsd-4")
 +  {
 +    $func = \&set_openbsd_service_status;
 +  }
    else
    {
      $func = \&set_rcng_service_status;
-@@ -1543,7 +1586,7 @@ sub get_init_type
+@@ -1543,7 +1564,7 @@ sub get_init_type
    {
      return "bsd";
    }
