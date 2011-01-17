@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $OpenBSD: winbindd.rc,v 1.1 2011/01/17 17:58:04 ajacoutot Exp $
+
+daemon="/usr/local/libexec/winbindd"
+daemon_flags="-D"
+
+. /etc/rc.d/rc.subr
+
+smbcontrol="${TRUEPREFIX}/bin/smbcontrol"
+
+rc_check() {
+	${smbcontrol} winbindd ping >/dev/null 2>&1
+}
+
+rc_reload() {
+	${smbcontrol} winbindd reload-config
+}
+
+rc_stop() {
+	${smbcontrol} winbindd shutdown 2>/dev/null
+}
+
+rc_cmd $1

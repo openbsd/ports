@@ -1,0 +1,31 @@
+#!/bin/sh
+#
+# $OpenBSD: samba.rc,v 1.1 2011/01/17 17:58:04 ajacoutot Exp $
+
+daemon="/bin/true"
+
+. /etc/rc.d/rc.subr
+
+_samba_daemons="smbd nmbd"
+
+rc_start() {
+	for i in ${_samba_daemons}; do /etc/rc.d/$i start; done
+}
+
+rc_check() {
+	for i in ${_samba_daemons}; do /etc/rc.d/$i check || return; done
+}
+
+rc_reload() {
+	for i in ${_samba_daemons}; do /etc/rc.d/$i reload; done
+}
+
+rc_stop() {
+	set -A _s -- ${_samba_daemons}
+	_s="${_s[1]} ${_s[0]}"
+	for i in ${_s}; do
+		/etc/rc.d/$i stop
+	done
+}
+
+rc_cmd $1

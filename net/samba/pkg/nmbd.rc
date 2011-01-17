@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $OpenBSD: nmbd.rc,v 1.1 2011/01/17 17:58:04 ajacoutot Exp $
+
+daemon="/usr/local/libexec/nmbd"
+daemon_flags="-D"
+
+. /etc/rc.d/rc.subr
+
+smbcontrol="${TRUEPREFIX}/bin/smbcontrol"
+
+rc_check() {
+	${smbcontrol} nmbd ping >/dev/null 2>&1
+}
+
+rc_reload() {
+	${smbcontrol} nmbd reload-config
+}
+
+rc_stop() {
+	${smbcontrol} nmbd shutdown 2>/dev/null
+}
+
+rc_cmd $1

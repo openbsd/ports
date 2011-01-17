@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2010/10/29 09:40:41 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2011/01/17 17:58:04 ajacoutot Exp $
 @conflict samba-docs-<=3.5.0
 @pkgpath ${BASE_PKGPATH}
 @bin bin/eventlogadm
@@ -206,3 +206,7 @@ share/swat/include/footer.html
 share/swat/include/header.html
 @sample /var/log/samba/
 @sample /var/spool/samba/
+@rcscript ${RCDIR}/nmbd
+@rcscript ${RCDIR}/samba
+@rcscript ${RCDIR}/smbd
+@rcscript ${RCDIR}/winbindd

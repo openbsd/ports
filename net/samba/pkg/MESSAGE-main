@@ -1,4 +1,2 @@
 !!! ATTENTION !!!
 The default passdb backend has been changed to 'tdbsam'!
-See the ${LOCALBASE}/share/doc/pkg-readmes/${FULLPKGNAME} file for
-more information.

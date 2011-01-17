@@ -1,42 +1,22 @@
-$OpenBSD: README-main,v 1.3 2010/11/06 07:56:48 ajacoutot Exp $
+$OpenBSD: README-main,v 1.4 2011/01/17 17:58:04 ajacoutot Exp $
 
 Using samba package in an OpenBSD environment:
 
 1. Edit ${SYSCONFDIR}/samba/smb.conf to suit your needs.
 
-2. Edit /etc/rc.conf.local:
-   ...
-   smbd_flags="-D"         # for normal use: "-D"
-   nmbd_flags="-D"         # for normal use: "-D"
-   ...
-
-3. Edit /etc/rc.local:
-   echo -n 'starting local daemons:'
-   ...
-   if [ -f ${SYSCONFDIR}/samba/smb.conf ]; then
-       if [ X"${smbd_flags}" != X"NO" -a -x ${LOCALBASE}/libexec/smbd ]; then
-           echo -n ' smbd';    ${LOCALBASE}/libexec/smbd ${smbd_flags}
-       fi
-       if [ X"${nmbd_flags}" != X"NO" -a -x ${LOCALBASE}/libexec/nmbd ]; then
-           echo -n ' nmbd';    ${LOCALBASE}/libexec/nmbd ${nmbd_flags}
-       fi
-   fi
-   ...
-   echo '.'
-
-Steps 4 and 5 are only necessary if you want to enable swat (Samba 
+Steps 2 and 3 are only necessary if you want to enable swat (Samba 
 Web Administration Tool). Please note that administering the server
 with swat over a network is inadvisable as passwords are passed in
 the clear. You can avoid this problem by using ssh forwarding to
 port 901.
 
-4. add the following entry to /etc/inetd.conf:
+2. add the following entry to /etc/inetd.conf:
 
    ...
-   swat  stream  tcp  nowait.400  root  ${LOCALBASE}/libexec/swat  swat
+   swat  stream  tcp  nowait.400  root  ${TRUEPREFIX}/libexec/swat  swat
    ...
 
-5. add the following entry to /etc/services:
+3. add the following entry to /etc/services:
 
    ...
    swat            901/tcp                 # samba admin service
@@ -75,12 +55,12 @@ An EXPERIMENTAL implementation of the SMB2 protocol has been added.
 SMB2 can be enabled by setting "max protocol = smb2". SMB2 is a new
 implementation of the SMB protocol used by Windows Vista and higher.
 
-To use Samba as a PDC the values of openfiles-max in ${SYSCONFDIR}/login.conf
+To use Samba as a PDC the values of openfiles-max in /etc/login.conf
 and kern.maxfiles should be increased to 16384.
 
 Rebuild the login.conf.db file if necessary:
 
-        # cap_mkdb ${SYSCONFDIR}/login.conf
+        # cap_mkdb /etc/login.conf
 
-Don't forget to add the entry kern.maxfiles=16384 to the ${SYSCONFDIR}/sysctl.conf
+Don't forget to add the entry kern.maxfiles=16384 to the /etc/sysctl.conf
 file to keep the change across reboots.
