@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/01/17 17:51:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/01/17 22:55:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	sytem configuration GUI for desktops
 GNOME_PROJECT=	gnome-system-tools
 GNOME_VERSION=	2.32.0
 
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	sysutils
 
