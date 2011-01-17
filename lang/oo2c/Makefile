@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/15 13:06:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/01/17 09:25:23 jasper Exp $
+
+ONLY_FOR_ARCHS=	i386
 
 COMMENT =	optimizing Oberon-2 to C compiler
 
