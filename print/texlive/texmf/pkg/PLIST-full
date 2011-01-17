@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-full,v 1.9 2010/08/20 11:06:29 edd Exp $
+@comment $OpenBSD: PLIST-full,v 1.10 2011/01/17 18:20:08 edd Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_texmf-docs-<2009
 @conflict texlive_texmf-minimal-<2009
@@ -22587,9 +22587,9 @@ share/texmf/scripts/tex4ht/htmove.pl
 share/texmf/scripts/texdoc/texdoc.tlu
 share/texmf/scripts/xindy/texindy.pl
 share/texmf/scripts/xindy/xindy.pl
-share/texmf/tex/latex/asymptote/asycolors.sty
-share/texmf/tex/latex/asymptote/asymptote.sty
-share/texmf/tex/latex/asymptote/ocg.sty
+@comment share/texmf/tex/latex/asymptote/asycolors.sty
+@comment share/texmf/tex/latex/asymptote/asymptote.sty
+@comment share/texmf/tex/latex/asymptote/ocg.sty
 share/texmf/texdoc/texdoc.cnf
 share/texmf/texdoctk/texdocrc-win32.defaults
 share/texmf/texdoctk/texdocrc.defaults
