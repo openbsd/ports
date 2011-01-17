@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/17 22:02:02 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2011/01/17 22:03:48 ajacoutot Exp $
 
-COMMENT=	Dummy Pluggable Authentication Modules (PAM)
+COMMENT=	dummy Pluggable Authentication Modules (PAM)
 
 SHARED_LIBS+=	pam	5.0
 
