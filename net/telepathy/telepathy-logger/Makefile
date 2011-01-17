@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/19 22:31:38 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/01/17 00:16:14 jasper Exp $
 
 COMMENT=	flexible communications framework, logger component
 
-DISTNAME=	telepathy-logger-0.1.5
-REVISION=	2
+DISTNAME=	telepathy-logger-0.1.7
 
 SHARED_LIBS +=  telepathy-logger     1.0      # 1.0
 
@@ -14,15 +13,16 @@ MODULES=	devel/gettext \
 		lang/python \
 		textproc/intltool
 
-WANTLIB += c dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 m pcre pthread z telepathy-glib
-WANTLIB += xml2 sqlite3
+WANTLIB += c dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 m pcre pthread sqlite3 telepathy-glib xml2
+WANTLIB += z
 
 BUILD_DEPENDS=	devel/py-twisted/words \
 		x11/gnome/doc-utils
 LIB_DEPENDS=	databases/sqlite3 \
 		net/telepathy/telepathy-glib \
-		textproc/libxml
+		textproc/libxml \
+		x11/dbus-glib
 RUN_DEPENDS=	devel/dconf
 
 MODGNOME_HELP_FILES=	Yes
