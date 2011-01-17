@@ -1,4 +1,4 @@
-$OpenBSD: patch-bsd_c,v 1.10 2011/01/17 03:55:47 jakemsr Exp $
+$OpenBSD: patch-bsd_c,v 1.11 2011/01/17 18:03:49 sebastia Exp $
 
 usb_os_find_busses(): these ioctls only need read access.  do not
   force read-write access to /dev/usb* to use libusb.
@@ -8,8 +8,8 @@ usb_os_find_devices(): ugen(4) aren't necessarily the first driver
   interfaces.
 
 
---- bsd.c.orig	Sat Jan 15 17:21:11 2011
-+++ bsd.c	Sat Jan 15 17:19:33 2011
+--- bsd.c.orig	Sat Mar  4 03:52:46 2006
++++ bsd.c	Mon Jan 17 08:24:49 2011
 @@ -361,7 +361,7 @@ int usb_bulk_read(usb_dev_handle *dev, int ep, char *b
  int usb_interrupt_write(usb_dev_handle *dev, int ep, char *bytes, int size,
                          int timeout)
@@ -29,7 +29,7 @@ usb_os_find_devices(): ugen(4) aren't necessarily the first driver
      if (ret < 0)
  #ifdef __FreeBSD_kernel__
        USB_ERROR_STR(-errno, "error writing to interrupt endpoint %s.%d: %s",
-@@ -394,21 +393,18 @@ int usb_interrupt_write(usb_dev_handle *dev, int ep, c
+@@ -394,16 +393,13 @@ int usb_interrupt_write(usb_dev_handle *dev, int ep, c
                    dev->device->filename, UE_GET_ADDR(ep), strerror(errno));
  #endif
  
@@ -48,12 +48,6 @@ usb_os_find_devices(): ugen(4) aren't necessarily the first driver
  
    /* Ensure the endpoint address is correct */
    ep |= USB_ENDPOINT_IN;
- 
--  fd = ensure_ep_open(dev, ep, O_RDONLY);
-+  fd = ensure_ep_open(dev, ep, O_RDONLY | O_NONBLOCK);
-   if (fd < 0) {
-     if (usb_debug >= 2) {
- #ifdef __FreeBSD_kernel__
 @@ -428,8 +424,7 @@ int usb_interrupt_read(usb_dev_handle *dev, int ep, ch
    if (ret < 0)
      USB_ERROR_STR(-errno, "error setting short xfer: %s", strerror(errno));
