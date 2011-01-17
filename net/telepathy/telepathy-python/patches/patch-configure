@@ -1,27 +1,27 @@
-$OpenBSD: patch-configure,v 1.1 2010/04/23 12:43:18 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2011/01/17 00:16:52 jasper Exp $
 
 checking whether build environment is sane... ./configure[1808]: syntax error: `&' unexpected
 
 and set correct Python version
 
---- configure.orig	Fri Mar 12 23:31:38 2010
-+++ configure	Thu Apr 22 18:11:06 2010
-@@ -1817,14 +1817,6 @@ echo timestamp > conftest.file
+--- configure.orig	Sun Jan 16 23:27:14 2011
++++ configure	Sun Jan 16 23:27:58 2011
+@@ -1825,14 +1825,6 @@ echo timestamp > conftest.file
  # name.  Accept space and tab only in the latter.
  am_lf='
  '
 -case `pwd` in
 -  *[\\\"\#\$\&\'\`$am_lf]*)
--    as_fn_error "unsafe absolute working directory name" "$LINENO" 5;;
+-    as_fn_error $? "unsafe absolute working directory name" "$LINENO" 5 ;;
 -esac
 -case $srcdir in
 -  *[\\\"\#\$\&\'\`$am_lf\ \	]*)
--    as_fn_error "unsafe srcdir value: \`$srcdir'" "$LINENO" 5;;
+-    as_fn_error $? "unsafe srcdir value: \`$srcdir'" "$LINENO" 5 ;;
 -esac
  
  # Do `set' in a subshell so we don't clobber the current shell's
  # arguments.  Must try -L first in case configure is actually a
-@@ -2263,7 +2255,7 @@ if test "${am_cv_pathless_PYTHON+set}" = set; then :
+@@ -2271,7 +2263,7 @@ if test "${am_cv_pathless_PYTHON+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
  

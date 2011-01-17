@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/09/23 13:45:42 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/01/17 00:16:52 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/telepathy/
 lib/python${MODPY_VERSION}/site-packages/telepathy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/__init__.pyc
@@ -16,6 +16,9 @@ lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Account_Interface_
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Account_Manager.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Account_Manager.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Account_Manager.pyo
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Authentication_TLS_Certificate.py
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Authentication_TLS_Certificate.pyc
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Authentication_TLS_Certificate.pyo
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel.pyo
@@ -40,6 +43,9 @@ lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Chat_State.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Chat_State.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Chat_State.pyo
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Conference.py
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Conference.pyc
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Conference.pyo
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_DTMF.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_DTMF.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_DTMF.pyo
@@ -61,6 +67,9 @@ lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Password.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Password.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Password.pyo
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_SMS.py
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_SMS.pyc
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_SMS.pyo
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Service_Point.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Service_Point.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Interface_Service_Point.pyo
@@ -85,6 +94,9 @@ lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_File_
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Room_List.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Room_List.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Room_List.pyo
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Server_TLS_Connection.py
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Server_TLS_Connection.pyc
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Server_TLS_Connection.pyo
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Stream_Tube.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Stream_Tube.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Channel_Type_Stream_Tube.pyo
@@ -133,18 +145,30 @@ lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interfa
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Cellular.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Cellular.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Cellular.pyo
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Client_Types.py
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Client_Types.pyc
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Client_Types.pyo
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contact_Capabilities.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contact_Capabilities.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contact_Capabilities.pyo
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contact_Groups.py
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contact_Groups.pyc
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contact_Groups.pyo
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contact_Info.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contact_Info.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contact_Info.pyo
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contact_List.py
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contact_List.pyc
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contact_List.pyo
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contacts.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contacts.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Contacts.pyo
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Location.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Location.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Location.pyo
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Mail_Notification.py
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Mail_Notification.pyc
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Mail_Notification.pyo
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Presence.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Presence.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Connection_Interface_Presence.pyo
@@ -175,6 +199,9 @@ lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Properties_Interfa
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Protocol.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Protocol.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Protocol.pyo
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Protocol_Interface_Presence.py
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Protocol_Interface_Presence.pyc
+lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/Protocol_Interface_Presence.pyo
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/__init__.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/_generated/__init__.pyo
@@ -255,6 +282,9 @@ lib/python${MODPY_VERSION}/site-packages/telepathy/server/media.pyo
 lib/python${MODPY_VERSION}/site-packages/telepathy/server/properties.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/server/properties.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/server/properties.pyo
+lib/python${MODPY_VERSION}/site-packages/telepathy/server/protocol.py
+lib/python${MODPY_VERSION}/site-packages/telepathy/server/protocol.pyc
+lib/python${MODPY_VERSION}/site-packages/telepathy/server/protocol.pyo
 lib/python${MODPY_VERSION}/site-packages/telepathy/utils.py
 lib/python${MODPY_VERSION}/site-packages/telepathy/utils.pyc
 lib/python${MODPY_VERSION}/site-packages/telepathy/utils.pyo
