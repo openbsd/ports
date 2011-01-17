@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/01/17 15:40:53 pea Exp $
 
 COMMENT = 	X.509 library
 
-DISTNAME = 	libksba-1.0.7
-REVISION =	0
+DISTNAME = 	libksba-1.1.0
 CATEGORIES = 	security
 
-SHARED_LIBS = 	ksba 0.0	#17.6
+SHARED_LIBS = 	ksba 0.1	#18
 
 MASTER_SITES = 	ftp://ftp.gnupg.org/gcrypt/libksba/ 
 
