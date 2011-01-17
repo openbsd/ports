@@ -19,6 +19,7 @@ MAINTAINER=		Robert Nagy <robert@openbsd.org>
 HOMEPAGE=		http://www.php.net/
 
 SUHOSIN_V=		0.9.32.1
+SUHOSIN_PHPV?=		${V}
 
 MASTER_SITES=		http://us2.php.net/distributions/ \
 			http://se.php.net/distributions/ \
@@ -161,7 +162,7 @@ COMMENT-imap=		imap, pop3 and nntp extensions for php5
 CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-kerberos=/usr --with-imap-ssl
 LIB_DEPENDS-imap=	mail/imap-uw,-c-client
-WANTLIB-imap=		crypto gssapi krb5 ssl c-client>=5
+WANTLIB-imap=		crypto gssapi krb5 ssl c-client>=5 z
 
 # ldap
 MULTI_PACKAGES+=	-ldap
@@ -314,10 +315,10 @@ LIB_DEPENDS-fastcgi=	${LIB_DEPENDS-main}
 
 .if ${FLAVOR:L:Mno_suhosin}
 SUPDISTFILES=		suhosin-${SUHOSIN_V}.tar.gz:0 \
-			suhosin-patch-${V}-${SUHOSIN_P_V}.patch.gz:0
+			suhosin-patch-${SUHOSIN_PHPV}-${SUHOSIN_P_V}.patch.gz:0
 .else
 DISTFILES+=		suhosin-${SUHOSIN_V}.tar.gz:0
-PATCHFILES=		suhosin-patch-${V}-${SUHOSIN_P_V}.patch.gz:0
+PATCHFILES=		suhosin-patch-${SUHOSIN_PHPV}-${SUHOSIN_P_V}.patch.gz:0
 PATCH_DIST_STRIP=	-p1
 CONFIGURE_ARGS+=	--enable-suhosin
 

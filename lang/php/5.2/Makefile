@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/01/05 09:31:23 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2011/01/17 19:30:26 sthen Exp $
 
 # doesn't set USE_LIBTOOL but use the bundled one because it needs some
 # specific options we don't have.
 
 PV=		5.2
-V=		5.2.16
+V=		5.2.17
+SUHOSIN_PHPV=	5.2.16
 SUHOSIN_P_V=	0.9.7
 
 INI_TEMPLATES=	dist recommended
