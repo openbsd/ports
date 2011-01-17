@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-common-dirs,v 1.2 2011/01/11 11:25:53 espie Exp $
+# $OpenBSD: check-common-dirs,v 1.3 2011/01/17 20:08:08 espie Exp $
 # Copyright (c) 2004, 2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -178,5 +178,36 @@ $state->progress->for_list("Scanning packages", \@ARGV,
 	analyze($plist, $db);
     });
 
+$state->progress->set_header("Scanning extra dependencies");
+$state->progress->message("");
+my $notfound = {};
+my $todo;
+do {
+	$todo = {};
+	for my $pkg (keys %$db) {
+		for my $dep (keys %{$db->{$pkg}{deps}}) {
+			if (!defined $db->{$dep} && 
+			    !defined $notfound->{$dep}) {
+				$todo->{$dep} = 1;
+			}
+		}
+	}
+	for my $pkgname (keys %$todo) {
+		my $true_package = $state->repo->find($pkgname);
+		if ($true_package) {
+			my $dir = $true_package->info;
+			$true_package->close;
+			my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
+			rmtree($dir);
+			analyze($plist, $db);
+		} else {
+			$notfound->{$pkgname} = 1;
+	    }
+    	}
+} while (keys %$todo > 0);
+$state->progress->next;
+$state->progress->set_header("Building results");
+$state->progress->message("");
 build_results($state, $db, $mtree);
+$state->progress->next;
 show_results($state, $db);
