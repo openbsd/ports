@@ -1,0 +1,28 @@
+$OpenBSD: patch-Test_C02cond_ztst,v 1.1 2011/01/17 16:19:43 pea Exp $
+
+Fix patterns crashes: http://www.zsh.org/mla/workers/2011/msg00027.html
+
+--- Test/C02cond.ztst.orig	Mon Oct 11 10:35:39 2010
++++ Test/C02cond.ztst	Mon Jan 17 16:58:41 2011
+@@ -306,6 +306,21 @@ F:Failures in these cases do not indicate a problem in
+ 2:Error message for unknown infix condition
+ ?(eval):1: unknown condition: -fail
+ 
++  crashme() {
++    if [[ $1 =~ ^http:* ]]
++    then
++      url=${1#*=}
++    fi
++  }
++  which crashme
++0:Regression test for examining code with regular expression match
++>crashme () {
++>	if [[ $1 =~ ^http:* ]]
++>	then
++>		url=${1#*=} 
++>	fi
++>}
++
+ %clean
+   # This works around a bug in rm -f in some versions of Cygwin
+   chmod 644 unmodish

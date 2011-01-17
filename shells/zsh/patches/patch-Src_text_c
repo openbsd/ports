@@ -1,0 +1,16 @@
+$OpenBSD: patch-Src_text_c,v 1.1 2011/01/17 16:19:43 pea Exp $
+
+Fix patterns crashes: http://www.zsh.org/mla/workers/2011/msg00027.html
+
+--- Src/text.c.orig	Tue Sep 14 16:46:26 2010
++++ Src/text.c	Mon Jan 17 16:58:41 2011
+@@ -785,8 +785,7 @@ gettext2(Estate state)
+ 			    taddstr(" ");
+ 			    taddstr(ecgetstr(state, EC_NODUP, NULL));
+ 			    if (ctype == COND_STREQ ||
+-				ctype == COND_STRNEQ ||
+-				ctype == COND_REGEX)
++				ctype == COND_STRNEQ)
+ 				state->pc++;
+ 			} else {
+ 			    /* Unary test: `-f foo' etc. */ 
