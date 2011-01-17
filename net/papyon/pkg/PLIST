@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/09/23 13:33:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/01/17 00:18:09 jasper Exp $
 @pkgpath net/pymsn
 lib/python${MODPY_VERSION}/site-packages/papyon/
 lib/python${MODPY_VERSION}/site-packages/papyon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -8,6 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/papyon/client.py
 lib/python${MODPY_VERSION}/site-packages/papyon/client.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/conversation.py
 lib/python${MODPY_VERSION}/site-packages/papyon/conversation.pyc
+lib/python${MODPY_VERSION}/site-packages/papyon/errors.py
+lib/python${MODPY_VERSION}/site-packages/papyon/errors.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/event/
 lib/python${MODPY_VERSION}/site-packages/papyon/event/__init__.py
 lib/python${MODPY_VERSION}/site-packages/papyon/event/__init__.pyc
@@ -31,6 +33,8 @@ lib/python${MODPY_VERSION}/site-packages/papyon/event/offline_messages.py
 lib/python${MODPY_VERSION}/site-packages/papyon/event/offline_messages.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/event/profile.py
 lib/python${MODPY_VERSION}/site-packages/papyon/event/profile.pyc
+lib/python${MODPY_VERSION}/site-packages/papyon/event/session.py
+lib/python${MODPY_VERSION}/site-packages/papyon/event/session.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/event/webcam.py
 lib/python${MODPY_VERSION}/site-packages/papyon/event/webcam.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/gnet/
@@ -38,6 +42,8 @@ lib/python${MODPY_VERSION}/site-packages/papyon/gnet/__init__.py
 lib/python${MODPY_VERSION}/site-packages/papyon/gnet/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/gnet/constants.py
 lib/python${MODPY_VERSION}/site-packages/papyon/gnet/constants.pyc
+lib/python${MODPY_VERSION}/site-packages/papyon/gnet/errors.py
+lib/python${MODPY_VERSION}/site-packages/papyon/gnet/errors.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/gnet/io/
 lib/python${MODPY_VERSION}/site-packages/papyon/gnet/io/__init__.py
 lib/python${MODPY_VERSION}/site-packages/papyon/gnet/io/__init__.pyc
@@ -137,8 +143,8 @@ lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/__init__.py
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/constants.py
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/constants.pyc
-lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/exceptions.py
-lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/exceptions.pyc
+lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/errors.py
+lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/errors.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/filetransfer.py
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/filetransfer.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/msnobject.py
@@ -160,6 +166,10 @@ lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/__init__.py
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/base.py
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/base.pyc
+lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/default.py
+lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/default.pyc
+lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/nat_traversal.py
+lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/nat_traversal.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/notification.py
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/notification.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/msnp2p/transport/switchboard.py
@@ -291,6 +301,8 @@ lib/python${MODPY_VERSION}/site-packages/papyon/service/SingleSignOn.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/service/Spaces/
 lib/python${MODPY_VERSION}/site-packages/papyon/service/Spaces/__init__.py
 lib/python${MODPY_VERSION}/site-packages/papyon/service/Spaces/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/papyon/service/Spaces/constants.py
+lib/python${MODPY_VERSION}/site-packages/papyon/service/Spaces/constants.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/service/Spaces/contactcardservice.py
 lib/python${MODPY_VERSION}/site-packages/papyon/service/Spaces/contactcardservice.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/service/Spaces/scenario/
@@ -388,6 +400,8 @@ lib/python${MODPY_VERSION}/site-packages/papyon/service/description/Spaces/__ini
 lib/python${MODPY_VERSION}/site-packages/papyon/service/description/Spaces/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/service/description/__init__.py
 lib/python${MODPY_VERSION}/site-packages/papyon/service/description/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/papyon/service/errors.py
+lib/python${MODPY_VERSION}/site-packages/papyon/service/errors.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/sip/
 lib/python${MODPY_VERSION}/site-packages/papyon/sip/__init__.py
 lib/python${MODPY_VERSION}/site-packages/papyon/sip/__init__.pyc
@@ -439,6 +453,8 @@ lib/python${MODPY_VERSION}/site-packages/papyon/transport.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/util/
 lib/python${MODPY_VERSION}/site-packages/papyon/util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/papyon/util/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/papyon/util/async.py
+lib/python${MODPY_VERSION}/site-packages/papyon/util/async.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/util/debug.py
 lib/python${MODPY_VERSION}/site-packages/papyon/util/debug.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/util/decorator.py
@@ -458,6 +474,8 @@ lib/python${MODPY_VERSION}/site-packages/papyon/util/iso8601/test_iso8601.py
 lib/python${MODPY_VERSION}/site-packages/papyon/util/iso8601/test_iso8601.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/util/odict.py
 lib/python${MODPY_VERSION}/site-packages/papyon/util/odict.pyc
+lib/python${MODPY_VERSION}/site-packages/papyon/util/parsing.py
+lib/python${MODPY_VERSION}/site-packages/papyon/util/parsing.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/util/queue.py
 lib/python${MODPY_VERSION}/site-packages/papyon/util/queue.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/util/string_io.py
@@ -468,3 +486,30 @@ lib/python${MODPY_VERSION}/site-packages/papyon/util/tlv.py
 lib/python${MODPY_VERSION}/site-packages/papyon/util/tlv.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/util/weak.py
 lib/python${MODPY_VERSION}/site-packages/papyon/util/weak.pyc
+lib/python${MODPY_VERSION}/site-packages/tests/
+lib/python${MODPY_VERSION}/site-packages/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/tests/base.py
+lib/python${MODPY_VERSION}/site-packages/tests/base.pyc
+lib/python${MODPY_VERSION}/site-packages/tests/test_content_roaming.py
+lib/python${MODPY_VERSION}/site-packages/tests/test_content_roaming.pyc
+lib/python${MODPY_VERSION}/site-packages/tests/test_conversation.py
+lib/python${MODPY_VERSION}/site-packages/tests/test_conversation.pyc
+lib/python${MODPY_VERSION}/site-packages/tests/test_echo_server.py
+lib/python${MODPY_VERSION}/site-packages/tests/test_echo_server.pyc
+lib/python${MODPY_VERSION}/site-packages/tests/test_file_transfer.py
+lib/python${MODPY_VERSION}/site-packages/tests/test_file_transfer.pyc
+lib/python${MODPY_VERSION}/site-packages/tests/test_ice.py
+lib/python${MODPY_VERSION}/site-packages/tests/test_ice.pyc
+lib/python${MODPY_VERSION}/site-packages/tests/test_msn_object.py
+lib/python${MODPY_VERSION}/site-packages/tests/test_msn_object.pyc
+lib/python${MODPY_VERSION}/site-packages/tests/test_offline_message_box.py
+lib/python${MODPY_VERSION}/site-packages/tests/test_offline_message_box.pyc
+lib/python${MODPY_VERSION}/site-packages/tests/test_sdp.py
+lib/python${MODPY_VERSION}/site-packages/tests/test_sdp.pyc
+lib/python${MODPY_VERSION}/site-packages/tests/test_sip.py
+lib/python${MODPY_VERSION}/site-packages/tests/test_sip.pyc
+lib/python${MODPY_VERSION}/site-packages/tests/test_sip_client.py
+lib/python${MODPY_VERSION}/site-packages/tests/test_sip_client.pyc
+lib/python${MODPY_VERSION}/site-packages/tests/test_webcam.py
+lib/python${MODPY_VERSION}/site-packages/tests/test_webcam.pyc
