@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/12 11:58:36 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/01/17 15:42:08 pea Exp $
 @option no-default-conflict
 @bin bin/gpg-agent
 @bin bin/gpg-connect-agent
@@ -8,6 +8,7 @@
 @bin bin/gpgparsemail
 @bin bin/gpgsm
 bin/gpgsm-gencert.sh
+@bin bin/gpgtar
 @bin bin/gpgv2
 @bin bin/kbxutil
 @bin bin/scdaemon
@@ -51,7 +52,6 @@ share/doc/gnupg2/examples/gpgconf.conf
 share/doc/gnupg2/examples/pwpattern.list
 share/doc/gnupg2/examples/scd-event
 share/doc/gnupg2/examples/trustlist.txt
-share/doc/gnupg2/faq.html
 share/gnupg/
 share/gnupg/com-certs.pem
 share/gnupg/gpg-conf.skel
