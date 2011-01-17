@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2010/12/20 11:40:39 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2011/01/17 23:24:40 ajacoutot Exp $
 
 Using sane(7) under OpenBSD
 ===========================
@@ -8,7 +8,7 @@ First read ${TRUEPREFIX}/share/doc/sane-backends/PROBLEMS.
 USB
 ---
 Since USB scanning will be handled by libusb, you need to allow the
-_cups user rw access to the corresponding USB endpoint. To do so, find
+_cups user access to the corresponding USB endpoint. To do so, find
 where your scanner is attached to using dmesg(8) then change the
 ownerships accordingly.
 ugenX = /dev/ugenX
