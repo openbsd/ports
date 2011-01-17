@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:38 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/01/17 16:13:02 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
 GNOME_VERSION=		0.2.1
+
+REVISION=		0
 
 SHARED_LIBS +=  folks-telepathy           0.0 # 15.0
 SHARED_LIBS +=  folks                     0.0 # 15.0
@@ -22,7 +24,7 @@ WANTLIB += xml2 z
 BUILD_DEPENDS=		devel/gobject-introspection>=0.9.12p0 \
 			lang/vala
 LIB_DEPENDS=		devel/libgee \
-			telepathy-glib-0.12.0p0:net/telepathy/telepathy-glib \
+			STEM->=0.12.0p0:net/telepathy/telepathy-glib \
 			textproc/libxml
 REGRESS_DEPENDS=	${PKGNAME}:${BASE_PKGPATH}
 
