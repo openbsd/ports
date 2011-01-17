@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.9 2010/09/24 10:06:19 ajacoutot Exp $
---- configure.orig	Tue Sep 21 20:01:15 2010
-+++ configure	Tue Sep 21 20:02:11 2010
-@@ -2590,14 +2590,6 @@ echo timestamp > conftest.file
+$OpenBSD: patch-configure,v 1.10 2011/01/17 00:15:56 jasper Exp $
+--- configure.orig	Tue Nov  2 13:02:47 2010
++++ configure	Mon Jan 17 00:32:11 2011
+@@ -2586,14 +2586,6 @@ echo timestamp > conftest.file
  # name.  Accept space and tab only in the latter.
  am_lf='
  '
@@ -16,7 +16,7 @@ $OpenBSD: patch-configure,v 1.9 2010/09/24 10:06:19 ajacoutot Exp $
  
  # Do `set' in a subshell so we don't clobber the current shell's
  # arguments.  Must try -L first in case configure is actually a
-@@ -12850,7 +12842,7 @@ $as_echo_n "checking whether $PYTHON version >= 2.5...
+@@ -12855,7 +12847,7 @@ $as_echo_n "checking whether $PYTHON version >= 2.5...
  # split strings by '.' and convert to numeric.  Append some zeros
  # because we need at least 4 digits for the hex conversion.
  # map returns an iterator in Python 3.0 and a list in 2.x
