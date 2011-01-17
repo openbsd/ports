@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/01/17 22:02:02 robert Exp $
+@lib lib/libpam.so.${LIBpam_VERSION}
