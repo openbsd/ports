@@ -1,6 +1,6 @@
-$OpenBSD: patch-Users_Users_pm,v 1.3 2011/01/17 20:49:21 ajacoutot Exp $
+$OpenBSD: patch-Users_Users_pm,v 1.4 2011/01/18 13:07:21 ajacoutot Exp $
 --- Users/Users.pm.orig	Sat Aug 21 15:18:12 2010
-+++ Users/Users.pm	Mon Jan 17 21:48:17 2011
++++ Users/Users.pm	Tue Jan 18 13:48:11 2011
 @@ -58,7 +58,7 @@ use Utils::Replace;
  # They are tried in array order. First found = used.
  @passwd_names =     ( "/etc/passwd" );
@@ -141,3 +141,40 @@ $OpenBSD: patch-Users_Users_pm,v 1.3 2011/01/17 20:49:21 ajacoutot Exp $
      {
        # use adduser if available and valid (slackware one is b0rk)
        # set empty gecos fields and password, they will be filled out later
+@@ -650,7 +685,16 @@ sub add_user
+       push (@command, ("-d", $$user[$HOME])) if ($$user[$HOME]);
+       push (@command, ("-s", $$user[$SHELL])) if ($$user[$SHELL]);
+       push (@command, ("-u", $$user[$UID])) if ($real_uid);
+-      push (@command, ("-g", $$user[$GID])) if ($real_gid);
++
++      if ($Utils::Backend::tool{"platform"} =~ /^openbsd/)
++      {
++        push (@command, "-g", "=uid");
++      }
++      else
++      {
++        push (@command, ("-g", $$user[$GID])) if ($real_gid);
++      }
++
+       push (@command, $$user[$LOGIN]);
+ 
+       &Utils::File::run (@command);
+@@ -691,6 +735,18 @@ sub change_user
+                          "-d", $$new_user[$HOME],
+                          "-g", $$new_user[$GID],
+                          "-s", $$new_user[$SHELL]);
++
++    &Utils::File::run (@command);
++  }
++  elsif ($Utils::Backend::tool{"system"} eq "OpenBSD")
++  {
++    @command = ($cmd_usermod, "-o",
++                              "-d", $$new_user[$HOME],
++                              "-g", $$new_user[$GID],
++                              "-l", $$new_user[$LOGIN],
++                              "-s", $$new_user[$SHELL],
++                              "-u", $$new_user[$UID],
++                                    $$old_user[$LOGIN]);
+ 
+     &Utils::File::run (@command);
+   }
