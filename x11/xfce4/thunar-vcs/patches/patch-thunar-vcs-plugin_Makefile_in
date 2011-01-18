@@ -1,0 +1,12 @@
+$OpenBSD: patch-thunar-vcs-plugin_Makefile_in,v 1.1 2011/01/18 20:56:13 landry Exp $
+--- thunar-vcs-plugin/Makefile.in.orig	Sun Nov  7 16:43:54 2010
++++ thunar-vcs-plugin/Makefile.in	Sun Nov  7 16:44:04 2010
+@@ -306,7 +306,7 @@ AM_CPPFLAGS = \
+ 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
+ 	$(PLATFORM_CPPFLAGS)
+ 
+-extensionsdir = $(libdir)/thunarx-1
++extensionsdir = $(libdir)/thunarx-2
+ extensions_LTLIBRARIES = \
+ 	thunar-vcs-plugin.la
+ 

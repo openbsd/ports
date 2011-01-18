@@ -1,0 +1,121 @@
+$OpenBSD: patch-thunar-vcs-plugin_tvp-provider_c,v 1.1 2011/01/18 20:56:13 landry Exp $
+http://git.xfce.org/thunar-plugins/thunar-vcs-plugin/diff/thunar-vcs-plugin/tvp-provider.c?h=thunarx-2
+--- thunar-vcs-plugin/tvp-provider.c.orig	Sun Nov  8 15:57:31 2009
++++ thunar-vcs-plugin/tvp-provider.c	Mon Jan 17 21:03:02 2011
+@@ -388,7 +388,7 @@ tvp_provider_get_file_actions (ThunarxMenuProvider *me
+ {
+   GList              *actions = NULL;
+   GtkAction          *action;
+-  ThunarVfsPathScheme scheme;
++  gchar              *scheme;
+   ThunarVfsInfo      *info;
+   GList              *lp;
+   gint                n_files = 0;
+@@ -413,13 +413,15 @@ tvp_provider_get_file_actions (ThunarxMenuProvider *me
+   for (lp = files; lp != NULL; lp = lp->next, ++n_files)
+   {
+     /* check if the file is a local file */
+-    info = thunarx_file_info_get_vfs_info (lp->data);
+-    scheme = thunar_vfs_path_get_scheme (info->path);
+-    thunar_vfs_info_unref (info);
++    scheme = thunarx_file_info_get_uri_scheme (lp->data);
+ 
+     /* unable to handle non-local files */
+-    if (G_UNLIKELY (scheme != THUNAR_VFS_PATH_SCHEME_FILE))
++    if (G_UNLIKELY (strcmp (scheme, "file")))
++    {
++      g_free (scheme);
+       return NULL;
++    }
++    g_free (scheme);
+ 
+     /* check if the parent folder is a working copy */
+     if (!parent_wc && tvp_is_parent_working_copy (lp->data))
+@@ -471,13 +473,15 @@ tvp_provider_get_file_actions (ThunarxMenuProvider *me
+   for (lp = files; lp != NULL; lp = lp->next, ++n_files)
+   {
+     /* check if the file is a local file */
+-    info = thunarx_file_info_get_vfs_info (lp->data);
+-    scheme = thunar_vfs_path_get_scheme (info->path);
+-    thunar_vfs_info_unref (info);
++    scheme = thunarx_file_info_get_uri_scheme (lp->data);
+ 
+     /* unable to handle non-local files */
+-    if (G_UNLIKELY (scheme != THUNAR_VFS_PATH_SCHEME_FILE))
++    if (G_UNLIKELY (strcmp (scheme, "file")))
++    {
++      g_free (scheme);
+       return NULL;
++    }
++    g_free (scheme);
+ 
+     if (thunarx_file_info_is_directory (lp->data))
+     {
+@@ -507,18 +511,20 @@ tvp_provider_get_folder_actions (ThunarxMenuProvider *
+ {
+   GtkAction          *action;
+   GList              *actions = NULL;
+-  ThunarVfsPathScheme scheme;
++  gchar              *scheme;
+   ThunarVfsInfo      *info;
+   GList              *files;
+ 
+   /* check if the file is a local file */
+-  info = thunarx_file_info_get_vfs_info (folder);
+-  scheme = thunar_vfs_path_get_scheme (info->path);
+-  thunar_vfs_info_unref (info);
++  scheme = thunarx_file_info_get_uri_scheme (folder);
+ 
+   /* unable to handle non-local files */
+-  if (G_UNLIKELY (scheme != THUNAR_VFS_PATH_SCHEME_FILE))
++  if (G_UNLIKELY (strcmp (scheme, "file")))
++  {
++    g_free (scheme);
+     return NULL;
++  }
++  g_free (scheme);
+ 
+   files = g_list_append (NULL, folder);
+ 
+@@ -552,17 +558,19 @@ tvp_provider_get_pages (ThunarxPropertyPageProvider *p
+   if (g_list_length (files) == 1)
+   {
+     gboolean            is_vc = FALSE;
+-    ThunarVfsPathScheme scheme;
++    gchar              *scheme;
+     ThunarVfsInfo      *info;
+ 
+     /* check if the file is a local file */
+-    info = thunarx_file_info_get_vfs_info (files->data);
+-    scheme = thunar_vfs_path_get_scheme (info->path);
+-    thunar_vfs_info_unref (info);
++    scheme = thunarx_file_info_get_uri_scheme (files->data);
+ 
+     /* unable to handle non-local files */
+-    if (G_UNLIKELY (scheme != THUNAR_VFS_PATH_SCHEME_FILE))
++    if (G_UNLIKELY (strcmp (scheme, "file")))
++    {
++      g_free (scheme);
+       return NULL;
++    }
++    g_free (scheme);
+ 
+     if (thunarx_file_info_is_directory (files->data))
+     {
+@@ -605,6 +613,7 @@ tvp_provider_get_pages (ThunarxPropertyPageProvider *p
+ static void
+ tvp_child_watch (GPid pid, gint status, gpointer data)
+ {
++/*
+   gchar *watch_path = data;
+   ThunarVfsPath *path;
+ 
+@@ -627,7 +636,7 @@ tvp_child_watch (GPid pid, gint status, gpointer data)
+     //this is done by destroy callback
+     //g_free (watch_path);
+   }
+-
++*/
+   g_spawn_close_pid (pid);
+ }
+ 

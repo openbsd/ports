@@ -1,0 +1,40 @@
+$OpenBSD: patch-configure,v 1.1 2011/01/18 20:56:13 landry Exp $
+--- configure.orig	Sun Nov  7 16:04:11 2010
++++ configure	Sun Nov  7 16:04:52 2010
+@@ -705,7 +705,7 @@ PACKAGE_STRING='thunar-vcs-plugin 0.1.2'
+ PACKAGE_BUGREPORT='thunar-dev@xfce.org'
+ PACKAGE_URL=''
+ 
+-ac_default_prefix=$(pkg-config --variable prefix thunarx-1 || echo /usr/local)
++ac_default_prefix=$(pkg-config --variable prefix thunarx-2 || echo /usr/local)
+ # Factoring default headers for most tests.
+ ac_includes_default="\
+ #include <stdio.h>
+@@ -12946,22 +12946,22 @@ $as_echo "$xdt_cv_PKG_CONFIG_VERSION" >&6; }
+   fi
+ 
+ 
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for thunarx-1 >= 0.4.0" >&5
+-$as_echo_n "checking for thunarx-1 >= 0.4.0... " >&6; }
+-  if $PKG_CONFIG "--atleast-version=0.4.0" "thunarx-1" >/dev/null 2>&1; then
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for thunarx-2 >= 0.4.0" >&5
++$as_echo_n "checking for thunarx-2 >= 0.4.0... " >&6; }
++  if $PKG_CONFIG "--atleast-version=0.4.0" "thunarx-2" >/dev/null 2>&1; then
+     THUNARX_VERSION=`$PKG_CONFIG --modversion "thunarx-1"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $THUNARX_VERSION" >&5
+ $as_echo "$THUNARX_VERSION" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking THUNARX_CFLAGS" >&5
+ $as_echo_n "checking THUNARX_CFLAGS... " >&6; }
+-    THUNARX_CFLAGS=`$PKG_CONFIG --cflags "thunarx-1"`
++    THUNARX_CFLAGS=`$PKG_CONFIG --cflags "thunarx-2"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $THUNARX_CFLAGS" >&5
+ $as_echo "$THUNARX_CFLAGS" >&6; }
+ 
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking THUNARX_LIBS" >&5
+ $as_echo_n "checking THUNARX_LIBS... " >&6; }
+-    THUNARX_LIBS=`$PKG_CONFIG --libs "thunarx-1"`
++    THUNARX_LIBS=`$PKG_CONFIG --libs "thunarx-2"`
+     { $as_echo "$as_me:${as_lineno-$LINENO}: result: $THUNARX_LIBS" >&5
+ $as_echo "$THUNARX_LIBS" >&6; }
+ 
