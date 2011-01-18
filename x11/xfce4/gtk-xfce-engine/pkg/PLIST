@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/03/08 17:18:22 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/01/18 20:12:23 landry Exp $
 %%SHARED%%
 lib/gtk-2.0/
 lib/gtk-2.0/2.10.0/
@@ -16,6 +16,9 @@ share/themes/Xfce-4.2/gtk-2.0/gtkrc
 share/themes/Xfce-4.4/
 share/themes/Xfce-4.4/gtk-2.0/
 share/themes/Xfce-4.4/gtk-2.0/gtkrc
+share/themes/Xfce-4.6/
+share/themes/Xfce-4.6/gtk-2.0/
+share/themes/Xfce-4.6/gtk-2.0/gtkrc
 share/themes/Xfce-b5/
 share/themes/Xfce-b5/gtk-2.0/
 share/themes/Xfce-b5/gtk-2.0/gtkrc
