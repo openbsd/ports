@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2010/10/04 17:46:26 landry Exp $
+# $OpenBSD: Makefile,v 1.40 2011/01/18 20:06:24 landry Exp $
 
      SUBDIR =
      SUBDIR += exo
+     SUBDIR += garcon
      SUBDIR += gtk-xfce-engine
-     SUBDIR += libxfce4menu
      SUBDIR += libxfce4util
+     SUBDIR += libxfce4ui
      SUBDIR += libxfcegui4
      SUBDIR += mousepad
      SUBDIR += notification-daemon-xfce
@@ -17,6 +18,8 @@
      SUBDIR += thunar-media-tags
      SUBDIR += thunar-thumbnailers
      SUBDIR += thunar-vcs
+     SUBDIR += thunar-vfs
+     SUBDIR += tumbler
      SUBDIR += xfce-utils
      SUBDIR += xfce4-appfinder
      SUBDIR += xfce4-battery
