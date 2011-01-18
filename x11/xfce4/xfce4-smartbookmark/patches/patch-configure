@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure,v 1.1 2011/01/18 21:10:33 landry Exp $
+actually look for xfcegui4
+--- configure.orig	Sat Aug 12 19:42:40 2006
++++ configure	Sun Jan 16 14:00:29 2011
+@@ -23953,13 +23953,13 @@ echo "${ECHO_T}$LIBXFCEGUI4_VERSION" >&6; }
+ 
+     { echo "$as_me:$LINENO: checking LIBXFCEGUI4_CFLAGS" >&5
+ echo $ECHO_N "checking LIBXFCEGUI4_CFLAGS... $ECHO_C" >&6; }
+-    LIBXFCEGUI4_CFLAGS=`$PKG_CONFIG --cflags "libxfce4panel-1.0"`
++    LIBXFCEGUI4_CFLAGS=`$PKG_CONFIG --cflags "libxfcegui4-1.0"`
+     { echo "$as_me:$LINENO: result: $LIBXFCEGUI4_CFLAGS" >&5
+ echo "${ECHO_T}$LIBXFCEGUI4_CFLAGS" >&6; }
+ 
+     { echo "$as_me:$LINENO: checking LIBXFCEGUI4_LIBS" >&5
+ echo $ECHO_N "checking LIBXFCEGUI4_LIBS... $ECHO_C" >&6; }
+-    LIBXFCEGUI4_LIBS=`$PKG_CONFIG --libs "libxfce4panel-1.0"`
++    LIBXFCEGUI4_LIBS=`$PKG_CONFIG --libs "libxfcegui4-1.0"`
+     { echo "$as_me:$LINENO: result: $LIBXFCEGUI4_LIBS" >&5
+ echo "${ECHO_T}$LIBXFCEGUI4_LIBS" >&6; }
+ 

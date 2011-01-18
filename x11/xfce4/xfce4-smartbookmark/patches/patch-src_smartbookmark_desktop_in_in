@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_smartbookmark_desktop_in_in,v 1.1 2011/01/18 21:10:33 landry Exp $
+fix for newer panel
+--- src/smartbookmark.desktop.in.in.orig	Sun Jan 16 13:38:54 2011
++++ src/smartbookmark.desktop.in.in	Sun Jan 16 13:39:05 2011
+@@ -4,5 +4,5 @@ Encoding=UTF-8
+ _Name=SmartBookmark
+ _Comment=Query websites from the Xfce panel
+ Icon=gtk-preferences
+-X-XFCE-Module=@INTERNAL_PLUGIN_PATH@/libsmartbookmark.so
++X-XFCE-Module=smartbookmark
+ X-XFCE-Unique=false
