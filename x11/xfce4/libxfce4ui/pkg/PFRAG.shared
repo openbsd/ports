@@ -1,0 +1,3 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/01/18 19:59:33 landry Exp $
+@lib lib/libxfce4kbd-private-2.so.${LIBxfce4kbd-private-2_VERSION}
+@lib lib/libxfce4ui-1.so.${LIBxfce4ui-1_VERSION}
