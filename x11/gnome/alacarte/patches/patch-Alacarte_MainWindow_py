@@ -1,0 +1,40 @@
+$OpenBSD: patch-Alacarte_MainWindow_py,v 1.1 2011/01/18 19:11:06 landry Exp $
+try gnome-desktop-item-edit, and if not found fallback to exo-desktop-item-edit
+--- Alacarte/MainWindow.py.orig	Tue Sep  8 16:24:13 2009
++++ Alacarte/MainWindow.py	Tue Jan 18 17:55:29 2011
+@@ -295,7 +294,10 @@ class MainWindow:
+ 		else:
+ 			parent = menus[iter][2]
+ 		file_path = os.path.join(util.getUserDirectoryPath(), util.getUniqueFileId('alacarte-made', '.directory'))
+-		process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
++		try:
++			process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
++		except:
++			process = subprocess.Popen(['exo-desktop-item-edit', file_path], env=os.environ)
+ 		gobject.timeout_add(100, self.waitForNewMenuProcess, process, parent.menu_id, file_path)
+ 
+ 	def on_new_item_button_clicked(self, button):
+@@ -308,7 +310,10 @@ class MainWindow:
+ 		else:
+ 			parent = menus[iter][2]
+ 		file_path = os.path.join(util.getUserItemPath(), util.getUniqueFileId('alacarte-made', '.desktop'))
+-		process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
++		try:
++			process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
++		except:
++			process = subprocess.Popen(['exo-desktop-item-edit', file_path], env=os.environ)
+ 		gobject.timeout_add(100, self.waitForNewItemProcess, process, parent.menu_id, file_path)
+ 
+ 	def on_new_separator_button_clicked(self, button):
+@@ -379,7 +384,10 @@ class MainWindow:
+ 			self.editor._MenuEditor__addUndo([item,])
+ 		if file_path not in self.edit_pool:
+ 			self.edit_pool.append(file_path)
+-			process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
++			try:
++				process = subprocess.Popen(['gnome-desktop-item-edit', file_path], env=os.environ)
++			except:
++				process = subprocess.Popen(['exo-desktop-item-edit', file_path], env=os.environ)
+ 			gobject.timeout_add(100, self.waitForEditProcess, process, file_path)
+ 
+ 	def on_menu_tree_cursor_changed(self, treeview):
