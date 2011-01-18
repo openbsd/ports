@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_xflock4,v 1.1 2008/02/13 13:08:53 landry Exp $
---- scripts/xflock4.orig	Wed Feb 13 13:23:00 2008
-+++ scripts/xflock4	Wed Feb 13 13:23:12 2008
+$OpenBSD: patch-scripts_xflock4,v 1.2 2011/01/18 20:25:56 landry Exp $
+--- scripts/xflock4.orig	Sun Jan 16 17:02:27 2011
++++ scripts/xflock4	Tue Jan 18 16:01:44 2011
 @@ -19,9 +19,9 @@
  #  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
  #
@@ -11,5 +11,5 @@ $OpenBSD: patch-scripts_xflock4,v 1.1 2008/02/13 13:08:53 landry Exp $
 -elif test x"`which gnome-screensaver-command 2>/dev/null`" != x""; then
 +elif test x"`whereis gnome-screensaver-command`" != x""; then
      gnome-screensaver-command --lock
- else
-     xlock $*
+ elif test x"`which slock 2>/dev/null`" != x""; then
+    slock

@@ -1,0 +1,18 @@
+$OpenBSD: patch-scripts_xinitrc_in_in,v 1.1 2011/01/18 20:25:56 landry Exp $
+workaround until http://bugzilla.xfce.org/show_bug.cgi?id=6796 is fixed
+--- scripts/xinitrc.in.in.orig	Tue Jan 18 16:14:35 2011
++++ scripts/xinitrc.in.in	Tue Jan 18 16:23:16 2011
+@@ -30,6 +30,13 @@ if test "x$XDG_CONFIG_HOME" = "x" ; then
+ fi
+ [ -d "$XDG_CONFIG_HOME" ] || mkdir "$XDG_CONFIG_HOME"
+ 
++# copy the sample applications.menu to XDG_CONFIG_HOME/menus
++[ -d "$XDG_CONFIG_HOME/menus" ] || mkdir "$XDG_CONFIG_HOME/menus"
++
++if [ -f "@_sysconfdir_@/xdg/menus/${XDG_MENU_PREFIX}applications.menu" -a ! -f "$XDG_CONFIG_HOME/menus/${XDG_MENU_PREFIX}applications.menu" ]; then
++  cp "@_sysconfdir_@/xdg/menus/${XDG_MENU_PREFIX}applications.menu" "$XDG_CONFIG_HOME/menus/"
++fi
++
+ # $XDG_CACHE_HOME defines the base directory relative to which user specific
+ # non-essential data files should be stored. If $XDG_CACHE_HOME is either not
+ # set or empty, a default equal to $HOME/.cache should be used.

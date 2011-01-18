@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2010/11/22 08:37:06 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2011/01/18 20:25:56 landry Exp $
 
 COMMENT=	Xfce4 essential utilities and scripts
 
 XFCE_PROJECT=	xfce-utils
-REVISION=	1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -12,10 +11,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
+DESKTOP_FILES=	Yes
 
-LIB_DEPENDS=	x11/xfce4/libxfcegui4 \
-		x11/dbus-glib \
-		x11/dbus
+LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.8.0 \
+		x11/dbus-glib
 
 RUN_DEPENDS=	x11/xfce4/xfce4-settings \
 		x11/xfce4/xfce4-session \
@@ -29,9 +28,10 @@ WANTLIB= 	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread \
 		startup-notification-1 xfce4util z pthread-stubs xcb \
 		execinfo xcb-atom xcb-aux xcb-event gthread-2.0 \
-		xcb-render xcb-render-util xfcegui4 dbus-1 dbus-glib-1
+		xcb-render dbus-1 dbus-glib-1 GL Xxf86vm drm xcb-shm xfce4ui-1
 
 CONFIGURE_ARGS+=--with-browser="xterm -e lynx" \
+		--disable-linker-opts \
 		--with-xsession-prefix=${PREFIX}
 
 FAKE_FLAGS=	conffilesdir=${PREFIX}/share/examples/xfce-utils \
