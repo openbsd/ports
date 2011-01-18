@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/12/21 16:07:44 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/01/18 20:45:27 landry Exp $
 @conflict notification-daemon-*
 @conflict xfce4-notifyd-*
 %%SHARED%%
@@ -12,7 +12,13 @@ share/applications/notification-settings.desktop
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.Notifications.service
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/notification-settings.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/notification-settings.png
 share/locale/be/LC_MESSAGES/notification-daemon-xfce.mo
 share/locale/en_GB/
