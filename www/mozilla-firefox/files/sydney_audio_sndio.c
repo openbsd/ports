@@ -1,4 +1,4 @@
-/* $OpenBSD: sydney_audio_sndio.c,v 1.3 2010/09/27 11:47:22 fgsch Exp $ */
+/* $OpenBSD: sydney_audio_sndio.c,v 1.4 2011/01/18 12:33:39 landry Exp $ */
 
 /*
  * Copyright (c) 2009 Martynas Venckus <martynas@openbsd.org>
@@ -327,6 +327,7 @@ UNSUPPORTED(int sa_stream_pwrite_ni(sa_stream_t *s, unsigned int channel,
     const void *data, size_t nbytes, int64_t offset, sa_seek_t whence))
 UNSUPPORTED(int sa_stream_get_read_size(sa_stream_t *s, size_t *size))
 UNSUPPORTED(int sa_stream_drain(sa_stream_t *s))
+UNSUPPORTED(int sa_stream_get_min_write(sa_stream_t *s, size_t *samples))
 
 const char *sa_strerror(int code) { return NULL; }
 
