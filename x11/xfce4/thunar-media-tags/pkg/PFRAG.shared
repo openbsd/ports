@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2007/07/04 19:23:37 jasper Exp $
-lib/thunarx-1/thunar-media-tags-plugin.so
+@comment $OpenBSD: PFRAG.shared,v 1.2 2011/01/18 20:53:58 landry Exp $
+lib/thunarx-2/thunar-media-tags-plugin.so
