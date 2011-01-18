@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/01/18 20:48:34 landry Exp $
 
 COMMENT=	Xfce4 advanced calendar
 
 XFCE_GOODIE=	orage
 XFCE_VERSION=	4.6.1
-REVISION=	6
+REVISION=	7
 
 HOMEPAGE=	http://www.xfce.org/projects/orage
 # GPLv2
@@ -29,6 +29,6 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread \
 		startup-notification-1 xfce4util z pthread-stubs xcb \
 		execinfo xcb-atom xcb-aux xcb-event gthread-2.0 xcb-render \
-		xcb-render-util xfcegui4 xfce4panel notify dbus-1 dbus-glib-1
+		GL Xxf86vm drm xcb-shm xfcegui4 xfce4panel-1.0 notify dbus-1 dbus-glib-1
 
 .include <bsd.port.mk>

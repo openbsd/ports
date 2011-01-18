@@ -1,0 +1,12 @@
+$OpenBSD: patch-panel-plugin_Makefile_in,v 1.1 2011/01/18 20:48:34 landry Exp $
+--- panel-plugin/Makefile.in.orig	Sat Jan 15 15:24:42 2011
++++ panel-plugin/Makefile.in	Sat Jan 15 15:25:05 2011
+@@ -282,7 +282,7 @@ orageclock_CFLAGS = \
+ 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"\
+ 	@LIBXFCE4PANEL_CFLAGS@
+ 
+-orageclock_LDFLAGS = @LIBXFCE4PANEL_LIBS@ $(am__append_1)
++orageclock_LDFLAGS = -lxfcegui4 @LIBXFCE4PANEL_LIBS@ $(am__append_1)
+ orageclock_SOURCES = \
+ 	orageclock.c	\
+ 	oc_config.c	\
