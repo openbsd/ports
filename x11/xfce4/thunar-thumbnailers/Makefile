@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/22 08:37:06 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/01/18 20:57:07 landry Exp $
 
 COMMENT=	Thunar additional thumbnailers plugin
 
 XFCE_VERSION=	0.4.1
 XFCE_GOODIE=	thunar-thumbnailers
-REVISION=	1
+REVISION=	2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,6 +19,7 @@ CONFIGURE_ARGS+=--enable-ffmpeg
 # can also optionally use math/grace, graphics/dcraw and print/texlive
 
 RUN_DEPENDS=	x11/xfce4/thunar \
+		x11/xfce4/thunar-vfs \
 		graphics/ffmpegthumbnailer \
 		graphics/ImageMagick \
 		archivers/unzip \
