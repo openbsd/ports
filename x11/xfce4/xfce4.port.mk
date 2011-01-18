@@ -1,9 +1,9 @@
-# $OpenBSD: xfce4.port.mk,v 1.11 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: xfce4.port.mk,v 1.12 2011/01/18 19:48:30 landry Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
 
-XFCE_DESKTOP_VERSION=	4.6.2
+XFCE_DESKTOP_VERSION=	4.8.0
 CATEGORIES+=	x11/xfce4
 
 USE_GMAKE?=	Yes
@@ -18,6 +18,12 @@ MODULES+=	devel/gettext textproc/intltool
 # if version is not defined, it's the DE version
 .if !defined(XFCE_VERSION)
 XFCE_VERSION=	${XFCE_DESKTOP_VERSION}
+.endif
+
+.if defined(CONFIGURE_STYLE)
+. if ${CONFIGURE_STYLE:L:Mgnu} || ${CONFIGURE_STYLE:L:Mautoconf}
+CONFIGURE_ARGS +=	--disable-silent-rules
+. endif
 .endif
 
 XFCE_BRANCH=	${XFCE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -35,7 +41,7 @@ DISTNAME?=	xfce4-${XFCE_PLUGIN}-plugin-${XFCE_VERSION}
 PKGNAME?=	${DISTNAME:S/-plugin//}
 
 MODXFCE_LIB_DEPENDS=	x11/xfce4/xfce4-panel
-MODXFCE_WANTLIB=	xfce4panel
+MODXFCE_WANTLIB=	xfce4panel-1.0
 .elif defined(XFCE_GOODIE)
 HOMEPAGE?=	http://goodies.xfce.org/projects/applications/${XFCE_GOODIE}
 
