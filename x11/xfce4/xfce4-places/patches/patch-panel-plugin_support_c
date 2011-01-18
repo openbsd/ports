@@ -1,0 +1,32 @@
+$OpenBSD: patch-panel-plugin_support_c,v 1.1 2011/01/18 21:08:48 landry Exp $
+http://svn.debian.org/viewsvn/pkg-xfce/goodies/branches/experimental/xfce4-places-plugin/debian/patches/01_port-to-exo-1.patch?revision=4734&content-type=text/plain
+--- panel-plugin/support.c.orig	Sat Jan 15 22:38:36 2011
++++ panel-plugin/support.c	Sat Jan 15 22:39:48 2011
+@@ -48,14 +48,11 @@
+ void
+ places_load_file_browser(const gchar *path)
+ {
+-    gboolean exo_success;
++    GError *error = NULL;
+ 
+     if(path != NULL && *path != '\0'){
+ 
+-        DBG("exo_url_show(%s)", path);
+-        exo_success = exo_url_show(path, NULL, NULL);
+-
+-        if(!exo_success){
++        if(!gtk_show_uri(NULL, path, 0, &error)){
+             gchar *cmd = g_strconcat("thunar \"", path, "\"", NULL);
+             DBG("exec: %s", cmd);
+             places_gui_exec(cmd);
+@@ -114,8 +111,9 @@ places_load_terminal(const gchar *const_path)
+ void
+ places_load_file(const gchar *path)
+ {
++    GError *error = NULL;
+     if(path != NULL && *path != '\0')
+-        exo_url_show(path, NULL, NULL);
++        gtk_show_uri(NULL , path, 0, &error);
+ }
+ 
+ /**

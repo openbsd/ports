@@ -1,0 +1,63 @@
+$OpenBSD: patch-configure,v 1.1 2011/01/18 21:08:48 landry Exp $
+--- configure.orig	Sat Jan 15 22:27:59 2011
++++ configure	Sat Jan 15 22:28:10 2011
+@@ -21406,22 +21406,22 @@ echo "${ECHO_T}$xdt_cv_PKG_CONFIG_VERSION" >&6; }
+   fi
+ 
+ 
+-  { echo "$as_me:$LINENO: checking for exo-0.3 >= 0.3.1.1" >&5
+-echo $ECHO_N "checking for exo-0.3 >= 0.3.1.1... $ECHO_C" >&6; }
+-  if $PKG_CONFIG "--atleast-version=0.3.1.1" "exo-0.3" >/dev/null 2>&1; then
+-    EXO_VERSION=`$PKG_CONFIG --modversion "exo-0.3"`
++  { echo "$as_me:$LINENO: checking for exo-1 >= 0.3.1.1" >&5
++echo $ECHO_N "checking for exo-1 >= 0.3.1.1... $ECHO_C" >&6; }
++  if $PKG_CONFIG "--atleast-version=0.3.1.1" "exo-1" >/dev/null 2>&1; then
++    EXO_VERSION=`$PKG_CONFIG --modversion "exo-1"`
+     { echo "$as_me:$LINENO: result: $EXO_VERSION" >&5
+ echo "${ECHO_T}$EXO_VERSION" >&6; }
+ 
+     { echo "$as_me:$LINENO: checking EXO_CFLAGS" >&5
+ echo $ECHO_N "checking EXO_CFLAGS... $ECHO_C" >&6; }
+-    EXO_CFLAGS=`$PKG_CONFIG --cflags "exo-0.3"`
++    EXO_CFLAGS=`$PKG_CONFIG --cflags "exo-1"`
+     { echo "$as_me:$LINENO: result: $EXO_CFLAGS" >&5
+ echo "${ECHO_T}$EXO_CFLAGS" >&6; }
+ 
+     { echo "$as_me:$LINENO: checking EXO_LIBS" >&5
+ echo $ECHO_N "checking EXO_LIBS... $ECHO_C" >&6; }
+-    EXO_LIBS=`$PKG_CONFIG --libs "exo-0.3"`
++    EXO_LIBS=`$PKG_CONFIG --libs "exo-1"`
+     { echo "$as_me:$LINENO: result: $EXO_LIBS" >&5
+ echo "${ECHO_T}$EXO_LIBS" >&6; }
+ 
+@@ -21433,15 +21433,15 @@ echo "${ECHO_T}$EXO_LIBS" >&6; }
+ 
+ 
+ 
+-  elif $PKG_CONFIG --exists "exo-0.3" >/dev/null 2>&1; then
+-    xdt_cv_version=`$PKG_CONFIG --modversion "exo-0.3"`
++  elif $PKG_CONFIG --exists "exo-1" >/dev/null 2>&1; then
++    xdt_cv_version=`$PKG_CONFIG --modversion "exo-1"`
+     { echo "$as_me:$LINENO: result: found, but $xdt_cv_version" >&5
+ echo "${ECHO_T}found, but $xdt_cv_version" >&6; }
+ 
+ 
+-      echo "*** The required package exo-0.3 was found on your system,"
++      echo "*** The required package exo-1 was found on your system,"
+       echo "*** but the installed version ($xdt_cv_version) is too old."
+-      echo "*** Please upgrade exo-0.3 to atleast version 0.3.1.1, or adjust"
++      echo "*** Please upgrade exo-1 to atleast version 0.3.1.1, or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you installed"
+       echo "*** the new version of the package in a nonstandard prefix so"
+       echo "*** pkg-config is able to find it."
+@@ -21452,8 +21452,8 @@ echo "${ECHO_T}found, but $xdt_cv_version" >&6; }
+ echo "${ECHO_T}not found" >&6; }
+ 
+ 
+-      echo "*** The required package exo-0.3 was not found on your system."
+-      echo "*** Please install exo-0.3 (atleast version 0.3.1.1) or adjust"
++      echo "*** The required package exo-1 was not found on your system."
++      echo "*** Please install exo-1 (atleast version 0.3.1.1) or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you"
+       echo "*** installed the package in a nonstandard prefix so that"
+       echo "*** pkg-config is able to find it."
