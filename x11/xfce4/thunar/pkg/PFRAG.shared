@@ -1,7 +1,7 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2009/03/08 17:13:31 landry Exp $
-@lib lib/libthunar-vfs-1.so.${LIBthunar-vfs-1_VERSION}
-@lib lib/libthunarx-1.so.${LIBthunarx-1_VERSION}
-lib/thunarx-1/thunar-apr.so
-lib/thunarx-1/thunar-sbr.so
-lib/thunarx-1/thunar-uca.so
-lib/thunarx-1/thunar-wallpaper-plugin.so
+@comment $OpenBSD: PFRAG.shared,v 1.3 2011/01/18 20:21:30 landry Exp $
+@lib lib/libthunarx-2.so.${LIBthunarx-2_VERSION}
+lib/thunarx-2/thunar-apr.so
+lib/thunarx-2/thunar-sbr.so
+lib/thunarx-2/thunar-uca.so
+lib/thunarx-2/thunar-wallpaper-plugin.so
+lib/xfce4/panel/plugins/libthunar-tpa.so
