@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/19 08:58:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/01/18 11:37:40 landry Exp $
 
 COMMENT=	library and toolset to operate arrays of data
 
@@ -23,7 +23,8 @@ WANTLIB=	c m pthread
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.65
+# Should be 2.65
+AUTOCONF_VERSION= 2.64
 
 # Workaround for a known issue with the
 # PowerPC AltiVec backend.

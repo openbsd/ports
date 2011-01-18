@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/19 07:23:13 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/01/18 11:37:40 landry Exp $
 
 COMMENT =		ffmpeg element for GStreamer
 
@@ -13,7 +13,8 @@ LIB_DEPENDS =		$P/core>=0.10 \
 			$P/plugins-base \
 			graphics/ffmpeg>=20080620p10
 
-AUTOCONF_VERSION =	2.65
+# Should be 2.65
+AUTOCONF_VERSION =	2.64
 
 MODULES +=	devel/gettext
 
