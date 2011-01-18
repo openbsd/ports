@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/01/18 20:12:59 landry Exp $
 
 COMMENT=	Xfce4 basic utility library
 
 XFCE_PROJECT=	libxfce4util
-REVISION=	0
+XFCE_VERSION =	4.8.1
 
-SHARED_LIBS +=  xfce4util            1.11     # .4.1
+SHARED_LIBS +=  xfce4util            2.0 #.5.1
 
 HOMEPAGE=	http://www.xfce.org/projects/libraries/
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
 
+CONFIGURE_ARGS=	--disable-linker-opts
 WANTLIB=	c gthread-2.0 glib-2.0 gobject-2.0 pcre pthread
 LIB_DEPENDS=	devel/glib2
 
