@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2011/01/18 20:03:07 ajacoutot Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
 GNOME_VERSION=		0.14.4
-REVISION=		12
+REVISION=		13
 
 CATEGORIES=		x11
 
@@ -63,5 +63,3 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 USE_GROFF =		Yes
 
 .include <bsd.port.mk>
-
-CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"

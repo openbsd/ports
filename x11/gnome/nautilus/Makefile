@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2010/12/28 17:22:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2011/01/18 20:03:07 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -17,6 +17,8 @@ COMMENT=		GNOME shell and file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		2.32.2.1
+
+REVISION=		0
 
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
 
@@ -73,5 +75,3 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 REGRESS_IS_INTERACTIVE=x11
 
 .include <bsd.port.mk>
-
-CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"

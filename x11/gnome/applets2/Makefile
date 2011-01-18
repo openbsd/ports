@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2010/11/22 18:16:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.104 2011/01/18 20:03:07 ajacoutot Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -8,6 +8,9 @@ GNOME_VERSION=		2.32.1.1
 
 PKGNAME-main=		gnome-applets2-${VERSION}
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}
+
+REVISION-main=		0
+REVISION-battstat=	0
 
 CATEGORIES=		x11
 
@@ -92,4 +95,3 @@ ENABLE_BATTSTAT=Yes
 .if !defined(ENABLE_BATTSTAT)
 CONFIGURE_ARGS+=	--disable-battstat
 .endif
-CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"

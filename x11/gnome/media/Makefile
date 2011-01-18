@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.41 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.42 2011/01/18 20:03:07 ajacoutot Exp $
 
 COMMENT=	GNOME media utilities
 
 GNOME_PROJECT=	gnome-media
 GNOME_VERSION=	2.32.0
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	gnome-media-profiles 1.0      # .0.0
 
@@ -46,5 +46,3 @@ CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
-
-CONFIGURE_ARGS+= --sysconfdir="${SYSCONFDIR}/gnome"

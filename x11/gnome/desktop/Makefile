@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2011/01/18 20:03:07 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 GNOME_VERSION=		2.32.1
+
+REVISION=		0
 
 SHARED_LIBS +=  gnome-desktop-2      8.0      # .15.2
 
@@ -51,5 +53,3 @@ pre-configure:
 		-exec perl -pi -e 's,xsltproc,xsltproc --nonet,g' {} \;
 
 .include <bsd.port.mk>
-
-CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"

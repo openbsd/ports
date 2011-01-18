@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2011/01/18 20:03:07 ajacoutot Exp $
 
 COMMENT=	API documentation browser for GNOME
 
 GNOME_PROJECT=	devhelp
 GNOME_VERSION=	2.32.0
 
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=	devhelp-2             0.0        # 1.0
 
@@ -52,5 +52,3 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
-
-CONFIGURE_ARGS+= --sysconfdir="${SYSCONFDIR}/gnome"

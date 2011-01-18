@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/12/05 18:24:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2011/01/18 20:03:07 ajacoutot Exp $
 
 MULTI_PACKAGES=	-main -themes
 
@@ -6,7 +6,7 @@ COMMENT-main=	tetrinet client
 COMMENT-themes=	collection of gtetrinet themes
 DISTNAME=	gtetrinet-0.7.11
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	11
+REVISION-main=	12
 PKGNAME-themes=	gtetrinet-themes-20070623
 REVISION-themes=1
 CATEGORIES=	x11 games
@@ -78,15 +78,12 @@ NO_REGRESS=	Yes
 
 post-install:
 	@${INSTALL_DATA_DIR} ${PREFIX}/share/schemas/gtetrinet
-	@mv ${WRKINST}${SYSCONFDIR}/gnome/gconf/schemas/gtetrinet.schemas \
+	@mv ${WRKINST}${SYSCONFDIR}/gconf/schemas/gtetrinet.schemas \
 	    ${PREFIX}/share/schemas/gtetrinet
-	@rm -rf ${WRKINST}${SYSCONFDIR}/gnome
+	@rm -rf ${WRKINST}${SYSCONFDIR}/gconf
 .for THEME in ${THEMES}
 	@tar xzf ${DISTDIR}/gtet-theme-${THEME}${EXTRACT_SUFX} -C \
 	    ${PREFIX}/share/gtetrinet/themes
 .endfor
 
 .include <bsd.port.mk>
-
-# XXX for the schema to be in the right location
-CONFIGURE_ARGS+=--sysconfdir=${SYSCONFDIR}/gnome

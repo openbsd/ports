@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2011/01/18 20:03:07 ajacoutot Exp $
 
 COMMENT=	GNOME component and compound document system
 
@@ -7,6 +7,8 @@ GNOME_VERSION=	2.32.0
 
 SHARED_LIBS +=	bonobo-activation    6.0      # .4.0
 SHARED_LIBS +=	bonobo-2             2.0      # .0.0
+
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -44,5 +46,3 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/activation-server/bonobo-activation-server.1
 
 .include <bsd.port.mk>
-
-CONFIGURE_ARGS+= --sysconfdir="${SYSCONFDIR}/gnome"

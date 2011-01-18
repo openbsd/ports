@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2010/09/30 07:41:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2011/01/18 20:03:07 ajacoutot Exp $
 %%SHARED%%
 @bin bin/activation-client
 @bin bin/bonobo-activation-run-query
@@ -80,11 +80,10 @@ lib/pkgconfig/libbonobo-2.0.pc
 @man man/man1/bonobo-activation-server.1
 @bin sbin/bonobo-activation-sysconf
 share/examples/libbonobo/
-@sample ${SYSCONFDIR}/gnome/
 share/examples/libbonobo/bonobo-activation/
-@sample ${SYSCONFDIR}/gnome/bonobo-activation/
+@sample ${SYSCONFDIR}/bonobo-activation/
 share/examples/libbonobo/bonobo-activation/bonobo-activation-config.xml
-@sample ${SYSCONFDIR}/gnome/bonobo-activation/bonobo-activation-config.xml
+@sample ${SYSCONFDIR}/bonobo-activation/bonobo-activation-config.xml
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/bonobo-activation/

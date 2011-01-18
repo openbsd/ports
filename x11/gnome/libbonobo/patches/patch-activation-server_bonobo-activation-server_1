@@ -1,4 +1,4 @@
-$OpenBSD: patch-activation-server_bonobo-activation-server_1,v 1.1 2008/12/20 15:24:35 ajacoutot Exp $
+$OpenBSD: patch-activation-server_bonobo-activation-server_1,v 1.2 2011/01/18 20:03:07 ajacoutot Exp $
 --- activation-server/bonobo-activation-server.1.orig	Sat Dec 20 15:16:37 2008
 +++ activation-server/bonobo-activation-server.1	Sat Dec 20 15:17:27 2008
 @@ -7,7 +7,7 @@ bonobo-activation-server \- GNOME component tracker
@@ -15,6 +15,6 @@ $OpenBSD: patch-activation-server_bonobo-activation-server_1,v 1.1 2008/12/20 15
  variables to find .server files.
  
 -In addition it examines an XML configuration file in ${prefix}/etc/bonobo-activation/bonobo-activation-config.xml
-+In addition it examines an XML configuration file in ${SYSCONFDIR}/gnome/bonobo-activation/bonobo-activation-config.xml
++In addition it examines an XML configuration file in ${SYSCONFDIR}/bonobo-activation/bonobo-activation-config.xml
  
  For more information see \fBhttp://www.gnome.org\fR.

@@ -1,17 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/01/16 20:34:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/01/18 20:03:07 ajacoutot Exp $
 @bin bin/workrave
 lib/bonobo/servers/Workrave-Applet.server
 @bin libexec/workrave-applet
 share/applications/workrave.desktop
 share/dbus-1/services/org.workrave.Workrave.service
 share/examples/workrave/
-@sample ${SYSCONFDIR}/gnome/
 share/examples/workrave/sound/
-@sample ${SYSCONFDIR}/gnome/sound/
+@sample ${SYSCONFDIR}/sound/
 share/examples/workrave/sound/events/
-@sample ${SYSCONFDIR}/gnome/sound/events/
+@sample ${SYSCONFDIR}/sound/events/
 share/examples/workrave/sound/events/workrave.soundlist
-@sample ${SYSCONFDIR}/gnome/sound/events/workrave.soundlist
+@sample ${SYSCONFDIR}/sound/events/workrave.soundlist
 share/gnome-2.0/ui/GNOME_WorkraveApplet.xml
 share/locale/bg/LC_MESSAGES/workrave.mo
 share/locale/ca/LC_MESSAGES/workrave.mo

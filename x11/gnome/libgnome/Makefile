@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2011/01/18 20:03:07 ajacoutot Exp $
 
 COMMENT=	libraries for the GNOME project
 
 GNOME_PROJECT=	libgnome
 GNOME_VERSION=	2.32.0
+
+REVISION=	0
 
 SHARED_LIBS +=	gnome-2		2402.0   # .3000.0
 
@@ -39,5 +41,3 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/libgnome/
 
 .include <bsd.port.mk>
-
-CONFIGURE_ARGS+= --sysconfdir="${SYSCONFDIR}/gnome"

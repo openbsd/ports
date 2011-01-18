@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2010/09/30 07:42:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2011/01/18 20:03:07 ajacoutot Exp $
 %%SHARED%%
 @bin bin/gnome-open
 include/libgnome-2.0/
@@ -29,15 +29,14 @@ lib/libgnome-2.la
 lib/pkgconfig/libgnome-2.0.pc
 @man man/man7/gnome-options.7
 share/examples/libgnome/
-@sample ${SYSCONFDIR}/gnome/
 share/examples/libgnome/sound/
-@sample ${SYSCONFDIR}/gnome/sound/
+@sample ${SYSCONFDIR}/sound/
 share/examples/libgnome/sound/events/
-@sample ${SYSCONFDIR}/gnome/sound/events/
+@sample ${SYSCONFDIR}/sound/events/
 share/examples/libgnome/sound/events/gnome-2.soundlist
-@sample ${SYSCONFDIR}/gnome/sound/events/gnome-2.soundlist
+@sample ${SYSCONFDIR}/sound/events/gnome-2.soundlist
 share/examples/libgnome/sound/events/gtk-events-2.soundlist
-@sample ${SYSCONFDIR}/gnome/sound/events/gtk-events-2.soundlist
+@sample ${SYSCONFDIR}/sound/events/gtk-events-2.soundlist
 share/gnome-background-properties/
 share/gnome-background-properties/gnome-default.xml
 share/gtk-doc/html/libgnome/

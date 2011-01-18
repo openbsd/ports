@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2010/09/30 07:40:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/01/18 20:03:07 ajacoutot Exp $
 @pkgpath x11/gnome/vfs2
 @pkgpath x11/gnome/vfs2,-main
 @pkgpath x11/gnome/vfs2,-smb
@@ -113,15 +113,14 @@ lib/pkgconfig/gnome-vfs-module-2.0.pc
 @bin libexec/gnome-vfs-daemon
 share/dbus-1/services/gnome-vfs-daemon.service
 share/examples/gnome-vfs2/
-@sample ${SYSCONFDIR}/gnome/
 share/examples/gnome-vfs2/gnome-vfs-2.0/
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/
+@sample ${SYSCONFDIR}/gnome-vfs-2.0/
 share/examples/gnome-vfs2/gnome-vfs-2.0/modules/
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/
+@sample ${SYSCONFDIR}/gnome-vfs-2.0/modules/
 share/examples/gnome-vfs2/gnome-vfs-2.0/modules/default-modules.conf
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/default-modules.conf
+@sample ${SYSCONFDIR}/gnome-vfs-2.0/modules/default-modules.conf
 share/examples/gnome-vfs2/gnome-vfs-2.0/modules/ssl-modules.conf
-@sample ${SYSCONFDIR}/gnome/gnome-vfs-2.0/modules/ssl-modules.conf
+@sample ${SYSCONFDIR}/gnome-vfs-2.0/modules/ssl-modules.conf
 share/gtk-doc/html/gnome-vfs-2.0/
 share/gtk-doc/html/gnome-vfs-2.0/about.html
 share/gtk-doc/html/gnome-vfs-2.0/data-types.html

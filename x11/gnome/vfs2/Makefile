@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2011/01/18 20:03:07 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,6 +8,8 @@ GNOME_PROJECT=		gnome-vfs
 GNOME_VERSION=		2.24.4
 
 PKGNAME=		gnome-vfs2-${VERSION}
+
+REVISION=		0
 
 SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
 
@@ -52,5 +54,3 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/libgnomevfs/xdgmime.c
 
 .include <bsd.port.mk>
-
-CONFIGURE_ARGS+=	--sysconfdir="${SYSCONFDIR}/gnome"
