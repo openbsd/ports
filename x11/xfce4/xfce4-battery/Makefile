@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/01/03 22:31:48 landry Exp $
+# $OpenBSD: Makefile,v 1.30 2011/01/18 21:00:47 landry Exp $
 
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
@@ -6,6 +6,7 @@ COMMENT=	Xfce4 battery monitor panel plugin
 
 XFCE_VERSION=	1.0.0
 XFCE_PLUGIN=	battery
+REVISION=	0
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes
@@ -14,6 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
+LIB_DEPENDS =	x11/xfce4/libxfcegui4
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \

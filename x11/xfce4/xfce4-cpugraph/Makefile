@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/05 18:13:18 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2011/01/18 21:02:39 landry Exp $
 
 COMMENT=	Xfce4 cpu usage graph panel plugin
 
 XFCE_VERSION=	1.0.1
 XFCE_PLUGIN=	cpugraph
+REVISION =	0
 
 # GPLv2+
 PERMIT_DISTFILES_CDROM=	Yes
@@ -12,6 +13,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
+LIB_DEPENDS =	x11/xfce4/libxfcegui4
 
 WANTLIB=	X11 Xdmcp Xrender Xau Xdamage fontconfig freetype m z c \
 		Xcursor Xext Xfixes Xi Xcomposite Xinerama Xrandr expat \
