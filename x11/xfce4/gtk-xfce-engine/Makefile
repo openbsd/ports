@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2011/01/18 20:12:23 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2011/01/18 21:34:58 ajacoutot Exp $
 
 COMMENT=	Xfce4 theme engine for Gtk+2
 
 XFCE_PROJECT=	gtk-xfce-engine
 XFCE_VERSION=	2.8.0
+
+REVISION=	0
 
 HOMEPAGE=	http://www.xfce.org/projects/
 

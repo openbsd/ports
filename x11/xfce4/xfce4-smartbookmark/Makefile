@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2011/01/18 21:10:33 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2011/01/18 21:34:59 ajacoutot Exp $
 
 COMMENT=	Xfce4 web search panel plugin
 
 XFCE_VERSION=	0.4.2
 XFCE_PLUGIN=	smartbookmark
-REVISION=	5
+REVISION=	6
 EXTRACT_SUFX=	.tar.gz
 
 # GPLv2

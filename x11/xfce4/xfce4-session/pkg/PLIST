@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/01/18 20:36:51 landry Exp $
+@comment $OpenBSD: PLIST,v 1.19 2011/01/18 21:34:59 ajacoutot Exp $
 @conflict xfce4-toys-*
 %%SHARED%%
 @bin bin/xfce4-session
@@ -23,12 +23,12 @@ lib/xfce4/session/
 lib/xfce4/session/balou-export-theme
 lib/xfce4/session/balou-install-theme
 lib/xfce4/session/splash-engines/
-lib/xfce4/session/splash-engines/libbalou.a
-lib/xfce4/session/splash-engines/libbalou.la
-lib/xfce4/session/splash-engines/libmice.a
-lib/xfce4/session/splash-engines/libmice.la
-lib/xfce4/session/splash-engines/libsimple.a
-lib/xfce4/session/splash-engines/libsimple.la
+@comment lib/xfce4/session/splash-engines/libbalou.a
+@comment lib/xfce4/session/splash-engines/libbalou.la
+@comment lib/xfce4/session/splash-engines/libmice.a
+@comment lib/xfce4/session/splash-engines/libmice.la
+@comment lib/xfce4/session/splash-engines/libsimple.a
+@comment lib/xfce4/session/splash-engines/libsimple.la
 @bin lib/xfce4/session/xfsm-shutdown-helper
 @man man/man1/xfce4-session-logout.1
 @man man/man1/xfce4-session.1

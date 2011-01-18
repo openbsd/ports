@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/18 20:05:38 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/01/18 21:34:58 ajacoutot Exp $
 
 COMMENT=	D-Bus thumbnailing service
 
 XFCE_VERSION=	0.1.6
 XFCE_GOODIE=	tumbler
+
+REVISION=	0
 
 SHARED_LIBS+=	tumbler-1 0.0
 

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2011/01/18 20:32:11 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2011/01/18 21:34:58 ajacoutot Exp $
 
 COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel
 SHARED_LIBS=	xfce4panel-1.0	0.0	# 3.0
+
+REVISION=	0
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2011/01/18 20:59:31 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2011/01/18 21:34:58 ajacoutot Exp $
 
 COMMENT=	Xfce4 sticky notes panel plugin
 
 XFCE_VERSION=	1.7.7
 XFCE_PLUGIN=	notes
+
+REVISION=	0
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

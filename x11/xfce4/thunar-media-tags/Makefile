@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2011/01/18 20:53:58 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2011/01/18 21:34:58 ajacoutot Exp $
 
 COMMENT=	Thunar media tags plugin
 
 XFCE_VERSION=	0.1.2
 THUNAR_PLUGIN=	thunar-media-tags-plugin
-REVISION=	11
+REVISION=	12
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

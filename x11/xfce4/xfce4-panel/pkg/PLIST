@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2011/01/18 20:32:11 landry Exp $
+@comment $OpenBSD: PLIST,v 1.18 2011/01/18 21:34:58 ajacoutot Exp $
 @conflict xfce4-datetime-*
 @conflict xfce4-iconbox-*
 @conflict xfce4-showdesktop-*
@@ -33,28 +33,28 @@ lib/xfce4/
 lib/xfce4/panel/
 @bin lib/xfce4/panel/migrate
 lib/xfce4/panel/plugins/
-lib/xfce4/panel/plugins/libactions.a
-lib/xfce4/panel/plugins/libactions.la
-lib/xfce4/panel/plugins/libapplicationsmenu.a
-lib/xfce4/panel/plugins/libapplicationsmenu.la
-lib/xfce4/panel/plugins/libclock.a
-lib/xfce4/panel/plugins/libclock.la
-lib/xfce4/panel/plugins/libdirectorymenu.a
-lib/xfce4/panel/plugins/libdirectorymenu.la
-lib/xfce4/panel/plugins/liblauncher.a
-lib/xfce4/panel/plugins/liblauncher.la
-lib/xfce4/panel/plugins/libpager.a
-lib/xfce4/panel/plugins/libpager.la
-lib/xfce4/panel/plugins/libseparator.a
-lib/xfce4/panel/plugins/libseparator.la
-lib/xfce4/panel/plugins/libshowdesktop.a
-lib/xfce4/panel/plugins/libshowdesktop.la
-lib/xfce4/panel/plugins/libsystray.a
-lib/xfce4/panel/plugins/libsystray.la
-lib/xfce4/panel/plugins/libtasklist.a
-lib/xfce4/panel/plugins/libtasklist.la
-lib/xfce4/panel/plugins/libwindowmenu.a
-lib/xfce4/panel/plugins/libwindowmenu.la
+@comment lib/xfce4/panel/plugins/libactions.a
+@comment lib/xfce4/panel/plugins/libactions.la
+@comment lib/xfce4/panel/plugins/libapplicationsmenu.a
+@comment lib/xfce4/panel/plugins/libapplicationsmenu.la
+@comment lib/xfce4/panel/plugins/libclock.a
+@comment lib/xfce4/panel/plugins/libclock.la
+@comment lib/xfce4/panel/plugins/libdirectorymenu.a
+@comment lib/xfce4/panel/plugins/libdirectorymenu.la
+@comment lib/xfce4/panel/plugins/liblauncher.a
+@comment lib/xfce4/panel/plugins/liblauncher.la
+@comment lib/xfce4/panel/plugins/libpager.a
+@comment lib/xfce4/panel/plugins/libpager.la
+@comment lib/xfce4/panel/plugins/libseparator.a
+@comment lib/xfce4/panel/plugins/libseparator.la
+@comment lib/xfce4/panel/plugins/libshowdesktop.a
+@comment lib/xfce4/panel/plugins/libshowdesktop.la
+@comment lib/xfce4/panel/plugins/libsystray.a
+@comment lib/xfce4/panel/plugins/libsystray.la
+@comment lib/xfce4/panel/plugins/libtasklist.a
+@comment lib/xfce4/panel/plugins/libtasklist.la
+@comment lib/xfce4/panel/plugins/libwindowmenu.a
+@comment lib/xfce4/panel/plugins/libwindowmenu.la
 @bin lib/xfce4/panel/wrapper
 share/applications/panel-desktop-handler.desktop
 share/applications/panel-preferences.desktop

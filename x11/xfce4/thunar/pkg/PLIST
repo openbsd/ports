@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/01/18 20:21:30 landry Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/01/18 21:34:58 ajacoutot Exp $
 @conflict xffm-*
 %%SHARED%%
 @bin bin/Thunar
@@ -25,14 +25,14 @@ lib/libthunarx-2.a
 lib/libthunarx-2.la
 lib/pkgconfig/thunarx-2.pc
 lib/thunarx-2/
-lib/thunarx-2/thunar-apr.a
-lib/thunarx-2/thunar-apr.la
-lib/thunarx-2/thunar-sbr.a
-lib/thunarx-2/thunar-sbr.la
-lib/thunarx-2/thunar-uca.a
-lib/thunarx-2/thunar-uca.la
-lib/thunarx-2/thunar-wallpaper-plugin.a
-lib/thunarx-2/thunar-wallpaper-plugin.la
+@comment lib/thunarx-2/thunar-apr.a
+@comment lib/thunarx-2/thunar-apr.la
+@comment lib/thunarx-2/thunar-sbr.a
+@comment lib/thunarx-2/thunar-sbr.la
+@comment lib/thunarx-2/thunar-uca.a
+@comment lib/thunarx-2/thunar-uca.la
+@comment lib/thunarx-2/thunar-wallpaper-plugin.a
+@comment lib/thunarx-2/thunar-wallpaper-plugin.la
 lib/xfce4/
 lib/xfce4/panel/
 lib/xfce4/panel/plugins/

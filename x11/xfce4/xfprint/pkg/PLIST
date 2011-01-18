@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/12/21 16:07:45 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/01/18 21:34:59 ajacoutot Exp $
 %%SHARED%%
 @bin bin/xfprint-settings
 @bin bin/xfprint4
@@ -18,10 +18,10 @@ lib/pkgconfig/
 lib/pkgconfig/xfprint-1.0.pc
 lib/xfce4/
 lib/xfce4/xfprint-plugins/
-lib/xfce4/xfprint-plugins/bsdlpr_plugin.a
-lib/xfce4/xfprint-plugins/bsdlpr_plugin.la
-lib/xfce4/xfprint-plugins/cups_plugin.a
-lib/xfce4/xfprint-plugins/cups_plugin.la
+@comment lib/xfce4/xfprint-plugins/bsdlpr_plugin.a
+@comment lib/xfce4/xfprint-plugins/bsdlpr_plugin.la
+@comment lib/xfce4/xfprint-plugins/cups_plugin.a
+@comment lib/xfce4/xfprint-plugins/cups_plugin.la
 share/applications/xfprint-manager.desktop
 share/applications/xfprint-settings.desktop
 share/applications/xfprint.desktop

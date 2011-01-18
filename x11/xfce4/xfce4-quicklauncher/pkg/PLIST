@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/17 22:02:31 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/01/18 21:34:59 ajacoutot Exp $
 lib/xfce4/
 lib/xfce4/panel-plugins/
-lib/xfce4/panel-plugins/libquicklauncher.a
-lib/xfce4/panel-plugins/libquicklauncher.la
+@comment lib/xfce4/panel-plugins/libquicklauncher.a
+@comment lib/xfce4/panel-plugins/libquicklauncher.la
 lib/xfce4/panel-plugins/libquicklauncher.so
 share/locale/cs/LC_MESSAGES/xfce4-quicklauncher-plugin.mo
 share/locale/el/LC_MESSAGES/xfce4-quicklauncher-plugin.mo
