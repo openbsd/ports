@@ -1,14 +1,17 @@
-$OpenBSD: patch-src_gui_c,v 1.11 2010/12/31 12:03:55 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.12 2011/01/18 11:03:20 dcoppa Exp $
 
 adapt audio/video device selection gui
 set DVD device to /dev/rcd0c instead of /dev/dvd
 use the right icon for the "Open iPod" menu
 
-fix from upstream: don't hide controls and mouse in fullscreen mode
-when mouse is over controls
+fixes from upstream:
+don't hide controls and mouse in fullscreen mode when mouse is over
+controls
+plug a memory leak
+adjust audio and video cache size minimum and incremental values
 
---- src/gui.c.orig	Mon Nov 15 08:35:34 2010
-+++ src/gui.c	Mon Nov 15 08:35:10 2010
+--- src/gui.c.orig	Fri Nov  5 17:16:22 2010
++++ src/gui.c	Tue Jan 18 10:29:24 2011
 @@ -2716,7 +2716,7 @@ gboolean slide_panel_away(gpointer data)
      }
      // mutex was already locked, this is good since we only want to do the animation if locked
@@ -48,7 +51,30 @@ when mouse is over controls
  void menuitem_open_callback(GtkMenuItem * menuitem, void *data)
  {
  
-@@ -5053,9 +5067,6 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+@@ -3303,9 +3317,11 @@ void parseChannels(FILE * f)
+ 
+ void menuitem_open_dtv_callback(GtkMenuItem * menuitem, void *data)
+ {
+-    gtk_list_store_clear(playliststore);
+     FILE *fi;                   // FILE pointer to use to open the conf file
+     gchar *mpconf;
++
++    gtk_list_store_clear(playliststore);
++	
+     mpconf = g_strdup_printf("%s/.mplayer/channels.conf", g_getenv("HOME"));
+     fi = fopen(mpconf, "r");    // Make sure this is pointing to
+     // the appropriate file
+@@ -3315,7 +3331,8 @@ void menuitem_open_dtv_callback(GtkMenuItem * menuitem
+     } else {
+         printf("Unable to open the config file\n");     //can change this to whatever error message system is used
+     }
+-
++	g_free(mpconf);
++	
+     gtk_tree_model_get_iter_first(GTK_TREE_MODEL(playliststore), &iter);
+     if (gtk_list_store_iter_is_valid(playliststore, &iter)) {
+         play_iter(&iter, 0);
+@@ -5053,9 +5070,6 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
          gtk_combo_box_append_text(GTK_COMBO_BOX(config_vo), "gl2");
          gtk_combo_box_append_text(GTK_COMBO_BOX(config_vo), "x11");
          gtk_combo_box_append_text(GTK_COMBO_BOX(config_vo), "xv");
@@ -58,7 +84,7 @@ when mouse is over controls
  
          if (vo != NULL) {
              if (strcmp(vo, "gl") == 0)
-@@ -5066,16 +5077,10 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+@@ -5066,16 +5080,10 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
                  gtk_combo_box_set_active(GTK_COMBO_BOX(config_vo), 2);
              if (strcmp(vo, "xv") == 0)
                  gtk_combo_box_set_active(GTK_COMBO_BOX(config_vo), 3);
@@ -76,7 +102,7 @@ when mouse is over controls
              }
          }
      }
-@@ -5145,39 +5150,36 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+@@ -5145,39 +5153,36 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
  #ifdef GTK2_12_ENABLED
      gtk_widget_set_tooltip_text(config_ao,
                                  _
@@ -126,7 +152,7 @@ when mouse is over controls
              }
          }
      }
-@@ -5264,8 +5266,8 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+@@ -5264,8 +5269,8 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
      j = -1;
  
      config_mplayer_dvd_device = gtk_combo_box_entry_new_text();
@@ -137,7 +163,18 @@ when mouse is over controls
          j = i;
      }
      i++;
-@@ -6634,9 +6636,9 @@ GtkWidget *create_window(gint windowid)
+@@ -5492,8 +5497,8 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+     gtk_misc_set_padding(GTK_MISC(conf_label), 12, 0);
+     gtk_table_attach(GTK_TABLE(conf_table), conf_label, 0, 1, i, i + 1, GTK_FILL, GTK_SHRINK, 0, 0);
+     gtk_widget_show(conf_label);
+-    config_plugin_audio_cache_size = gtk_spin_button_new_with_range(32, 256 * 1024, 128);
+-    config_plugin_video_cache_size = gtk_spin_button_new_with_range(32, 256 * 1024, 512);
++    config_plugin_audio_cache_size = gtk_spin_button_new_with_range(64, 256 * 1024, 64);
++    config_plugin_video_cache_size = gtk_spin_button_new_with_range(256, 256 * 1024, 256);
+ #ifdef GTK2_12_ENABLED
+     gtk_widget_set_tooltip_text(config_plugin_audio_cache_size,
+                                 _
+@@ -6634,9 +6639,9 @@ GtkWidget *create_window(gint windowid)
      gtk_menu_append(menu_file_tv, GTK_WIDGET(menuitem_file_open_dtv));
  #ifdef HAVE_GPOD
      menuitem_file_open_ipod =
@@ -149,7 +186,7 @@ when mouse is over controls
  
      gtk_menu_append(menu_file, GTK_WIDGET(menuitem_file_open_ipod));
  #endif
-@@ -7658,6 +7660,10 @@ void show_fs_controls()
+@@ -7658,6 +7663,10 @@ void show_fs_controls()
  
      if (fs_controls == NULL && fullscreen) {
          fs_controls = gtk_window_new(GTK_WINDOW_POPUP);
