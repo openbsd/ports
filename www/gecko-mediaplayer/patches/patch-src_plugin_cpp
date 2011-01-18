@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_plugin_cpp,v 1.4 2011/01/18 11:04:23 dcoppa Exp $
+
+fix from upstream: bump QuickTime emulation to 7.6.9 (fix apple.com
+movie trailers)
+
+--- src/plugin.cpp.orig	Tue Jan 18 10:55:14 2011
++++ src/plugin.cpp	Tue Jan 18 10:56:13 2011
+@@ -243,7 +243,7 @@ void clearPreference(CPlugin * instance, const gchar *
+             if (instance->user_agent == NULL || strlen(instance->user_agent) == 0) {
+                 prefBranch->ClearUserPref(name);
+             } else {
+-                if (g_strrstr(instance->user_agent, "QuickTime/7.6.4")) {
++                if (g_strrstr(instance->user_agent, "QuickTime/7.6.9")) {
+                     prefBranch->ClearUserPref(name);
+                 } else {
+                     prefBranch->ClearUserPref(name);

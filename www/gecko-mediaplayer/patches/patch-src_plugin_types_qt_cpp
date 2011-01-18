@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_plugin_types_qt_cpp,v 1.1 2011/01/18 11:04:23 dcoppa Exp $
+
+fix from upstream: bump QuickTime emulation to 7.6.9 (fix apple.com
+movie trailers)
+
+--- src/plugin_types_qt.cpp.orig	Tue Jan 18 10:55:07 2011
++++ src/plugin_types_qt.cpp	Tue Jan 18 10:55:55 2011
+@@ -73,7 +73,7 @@ NPError PluginGetValue(NPPVariable variable, void *val
+     // description matches the features
+ 
+     if (variable == NPPVpluginNameString) {
+-        *((const char **) value) = "QuickTime Plug-in 7.6.4";
++        *((const char **) value) = "QuickTime Plug-in 7.6.9";
+     }
+     if (variable == NPPVpluginDescriptionString) {
+         *((const char **) value) =
+@@ -101,5 +101,5 @@ NPError PluginGetValue(NPPVariable variable, void *val
+ void pluginSpecific(CPlugin * instance)
+ {
+     //printf("calling pluginSpecific for qt plugin\n");
+-    setPreference(instance, "general.useragent.override", "QuickTime/7.6.4");
++    setPreference(instance, "general.useragent.override", "QuickTime/7.6.9");
+ }
