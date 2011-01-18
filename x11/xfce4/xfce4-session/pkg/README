@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2011/01/18 20:36:51 landry Exp $
+$OpenBSD: README,v 1.4 2011/01/18 23:24:12 landry Exp $
 
 Tips and tricks for a pleasant Xfce desktop environment experience
 ==================================================================
@@ -13,8 +13,8 @@ You should also install some basic theme packages:
 $ sudo pkg_add xfwm4-themes gtk-xfce-engine
 
 And some cool xfce-companion apps for a nicer desktop:
-$ sudo pkg_add xfce4-terminal orage notification-daemon-xfce ristretto
-mousepad xfce4-appfinder xfce4-mixer xfprint tumbler
+$ sudo pkg_add xfce4-terminal orage ristretto mousepad
+xfce4-appfinder xfce4-mixer xfce4-notifyd xfprint tumbler
 
 Finally, have a look at available panel plugins here:
 http://goodies.xfce.org/projects/panel-plugins/start
@@ -47,10 +47,17 @@ Thunar file manager tips
 ------------------------
 Thunar can display resizable svg icons if you install the librsvg
 package. A nice svg icon theme is provided by the tango-icon-theme
-package.
+package. If you want to browse samba shares using GVfs, you'll need to
+install gvfs-smb package.
 You can have a look at hotplugd(8) if you want some kind of auto-mount
 feature in thunar, provided natively by gudev on Linux and FreeBSD.
 Also, see http://thunar.xfce.org/pwiki/documentation/faq.
+
+Desktop/Applications menu
+-------------------------
+The desktop menu is compliant to freedesktop.org specifications, and
+can be edited using GNOME's alacarte. The menu will be saved in
+~/.config/menus/xfce-applications.menu
 
 Terminal, special characters and localized applications
 -------------------------------------------------------
