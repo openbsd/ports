@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/01/18 19:55:53 landry Exp $
+@lib lib/libgarcon-1.so.${LIBgarcon-1_VERSION}
