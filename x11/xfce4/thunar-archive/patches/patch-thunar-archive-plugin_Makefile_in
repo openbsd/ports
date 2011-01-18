@@ -1,0 +1,27 @@
+$OpenBSD: patch-thunar-archive-plugin_Makefile_in,v 1.1 2011/01/18 20:52:20 landry Exp $
+--- thunar-archive-plugin/Makefile.in.orig	Sat Jan 20 11:44:58 2007
++++ thunar-archive-plugin/Makefile.in	Sun Jan 16 01:52:19 2011
+@@ -224,7 +224,7 @@ INCLUDES = \
+ 	-DPACKAGE_LOCALE_DIR=\"$(localedir)\"				\
+ 	$(PLATFORM_CPPFLAGS)
+ 
+-extensionsdir = $(libdir)/thunarx-1
++extensionsdir = $(libdir)/thunarx-2
+ extensions_LTLIBRARIES = \
+ 	thunar-archive-plugin.la
+ 
+@@ -238,12 +238,13 @@ thunar_archive_plugin_la_SOURCES = \
+ thunar_archive_plugin_la_CFLAGS = \
+ 	$(PLATFORM_CFLAGS)						\
+ 	$(THUNARX_CFLAGS)						\
+-	$(THUNAR_VFS_CFLAGS)
++	`pkg-config --cflags exo-1`
+ 
+ thunar_archive_plugin_la_LDFLAGS = \
+ 	-avoid-version							\
+ 	-export-dynamic							\
+ 	-module								\
++	`pkg-config --libs exo-1`					\
+ 	$(PLATFORM_LDFLAGS)
+ 
+ all: all-am

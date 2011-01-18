@@ -1,0 +1,342 @@
+$OpenBSD: patch-thunar-archive-plugin_tap-backend_c,v 1.1 2011/01/18 20:52:20 landry Exp $
+http://bugzilla.xfce.org/show_bug.cgi?id=6093
+--- thunar-archive-plugin/tap-backend.c.orig	Sat Jan 20 11:41:50 2007
++++ thunar-archive-plugin/tap-backend.c	Sun Jan 16 01:34:36 2011
+@@ -29,36 +29,36 @@
+ #include <string.h>
+ #endif
+ 
+-#include <thunar-vfs/thunar-vfs.h>
+-
++#include <exo/exo.h>
+ #include <thunar-archive-plugin/tap-backend.h>
+ 
+ 
+ 
+-static ThunarVfsMimeApplication *tap_backend_mime_ask           (GList                    *mime_applications,
+-                                                                 GtkWidget                *parent);
+-static GList                    *tap_backend_mime_applications  (ThunarVfsMimeDatabase    *mime_database,
+-                                                                 GList                    *mime_infos);
+-static ThunarVfsMimeApplication *tap_backend_mime_application   (GList                    *mime_infos,
+-                                                                 GtkWidget                *window,
+-                                                                 GError                  **error);
+-static gchar                    *tap_backend_mime_wrapper       (ThunarVfsMimeApplication *mime_application) G_GNUC_MALLOC;
+-static GPid                      tap_backend_run                (const gchar              *action,
+-                                                                 const gchar              *folder,
+-                                                                 GList                    *files,
+-                                                                 GList                    *mime_infos,
+-                                                                 GtkWidget                *window,
+-                                                                 GError                  **error);
++static GAppInfo *tap_backend_mime_ask                   (GList       *mime_applications,
++                                                         GtkWidget   *parent);
++static gint      tap_backend_mime_application_compare   (GAppInfo    *a,
++                                                         GAppInfo    *b);
++static GList    *tap_backend_mime_applications          (GList       *content_types);
++static GAppInfo *tap_backend_mime_application           (GList       *content_types,
++                                                         GtkWidget   *window,
++                                                         GError     **error);
++static gchar    *tap_backend_mime_wrapper               (GAppInfo    *mime_application) G_GNUC_MALLOC;
++static GPid      tap_backend_run                        (const gchar *action,
++                                                         const gchar *folder,
++                                                         GList       *files,
++                                                         GList       *content_types,
++                                                         GtkWidget   *window,
++                                                         GError     **error);
+ 
+ 
+ 
+-static ThunarVfsMimeApplication*
++static GAppInfo*
+ tap_backend_mime_ask (GList     *mime_applications,
+                       GtkWidget *parent)
+ {
+-  ThunarVfsMimeApplication *mime_application = NULL;
++  GAppInfo                 *mime_application = NULL;
+   GtkIconTheme             *icon_theme;
+-  const gchar              *icon_name;
++  GIcon                    *icon;
+   GtkTooltips              *tooltips;
+   GtkWidget                *button;
+   GtkWidget                *dialog;
+@@ -127,7 +127,7 @@ tap_backend_mime_ask (GList     *mime_applications,
+       gtk_widget_show (button);
+ 
+       /* set the command as tooltip, as some archive manager's names are not very useful */
+-      command = g_strdup (thunar_vfs_mime_handler_get_command (THUNAR_VFS_MIME_HANDLER (mp->data)));
++      command = g_strdup (g_app_info_get_executable (mp->data));
+       space = strchr (command, ' ');
+       if (G_LIKELY (space != NULL))
+         *space = '\0';
+@@ -140,17 +140,17 @@ tap_backend_mime_ask (GList     *mime_applications,
+       gtk_widget_show (hbox);
+ 
+       /* check if we have an icon for the application */
+-      icon_name = thunar_vfs_mime_handler_lookup_icon_name (THUNAR_VFS_MIME_HANDLER (mp->data), icon_theme);
+-      if (G_LIKELY (icon_name != NULL))
++      icon = g_app_info_get_icon (mp->data);
++      if (G_LIKELY (icon != NULL))
+         {
+           /* add an image */
+-          image = gtk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_MENU);
++          image = gtk_image_new_from_gicon (icon, GTK_ICON_SIZE_MENU);
+           gtk_box_pack_start (GTK_BOX (hbox), image, FALSE, FALSE, 0);
+           gtk_widget_show (image);
+         }
+ 
+       /* add the label for the application */
+-      label = gtk_label_new (thunar_vfs_mime_application_get_name (mp->data));
++      label = gtk_label_new (g_app_info_get_name (mp->data));
+       gtk_misc_set_alignment (GTK_MISC (label), 0.0f, 0.5f);
+       gtk_box_pack_start (GTK_BOX (hbox), label, TRUE, TRUE, 0);
+       gtk_widget_show (label);
+@@ -178,9 +178,17 @@ tap_backend_mime_ask (GList     *mime_applications,
+ 
+ 
+ 
++static gint
++tap_backend_mime_application_compare (GAppInfo *a,
++                                      GAppInfo *b)
++{
++  return g_app_info_equal (a, b)?0:1;
++}
++
++
++
+ static GList*
+-tap_backend_mime_applications (ThunarVfsMimeDatabase *mime_database,
+-                               GList                 *mime_infos)
++tap_backend_mime_applications (GList *content_types)
+ {
+   GList *mime_applications = NULL;
+   GList *list;
+@@ -190,14 +198,14 @@ tap_backend_mime_applications (ThunarVfsMimeDatabase *
+   gchar *s;
+ 
+   /* determine the set of applications that can handle all mime types */
+-  for (lp = mime_infos; lp != NULL; lp = lp->next)
++  for (lp = content_types; lp != NULL; lp = lp->next)
+     {
+       /* no need to check anything if this is the same mime type as the previous one */
+       if (lp->prev != NULL && lp->prev->data == lp->data)
+         continue;
+ 
+       /* determine the list of applications that can handle this mime type */
+-      list = thunar_vfs_mime_database_get_applications (mime_database, lp->data);
++      list = g_app_info_get_all_for_type (lp->data);
+       if (G_UNLIKELY (mime_applications == NULL))
+         {
+           /* first file, so just use the applications list */
+@@ -212,7 +220,7 @@ tap_backend_mime_applications (ThunarVfsMimeDatabase *
+               next = ap->next;
+ 
+               /* check if the application is present in list */
+-              if (g_list_find (list, ap->data) == NULL)
++              if (g_list_find_custom (list, ap->data, (GCompareFunc) tap_backend_mime_application_compare) == NULL)
+                 {
+                   /* drop our reference on the application */
+                   g_object_unref (G_OBJECT (ap->data));
+@@ -256,24 +264,19 @@ tap_backend_mime_applications (ThunarVfsMimeDatabase *
+ 
+ 
+ 
+-static ThunarVfsMimeApplication*
+-tap_backend_mime_application (GList     *mime_infos,
++static GAppInfo*
++tap_backend_mime_application (GList     *content_types,
+                               GtkWidget *window,
+                               GError   **error)
+ {
+-  ThunarVfsMimeApplication *mime_application = NULL;
+-  ThunarVfsMimeDatabase    *mime_database;
+-  const gchar * const      *mime_types;
+-  ThunarVfsMimeInfo        *mime_info;
++  GAppInfo                 *mime_application = NULL;
++  GAppInfo                 *app_info;
+   GError                   *err = NULL;
+   GList                    *mime_applications;
+-  guint                     n;
++  GList                    *lp;
+ 
+-  /* grab a reference on the mime database */
+-  mime_database = thunar_vfs_mime_database_get_default ();
+-
+   /* determine the mime applications that can handle the mime types */
+-  mime_applications = tap_backend_mime_applications (mime_database, mime_infos);
++  mime_applications = tap_backend_mime_applications (content_types);
+   if (G_UNLIKELY (mime_applications == NULL))
+     {
+       /* tell the user that we cannot handle the specified mime types */
+@@ -290,28 +293,29 @@ tap_backend_mime_application (GList     *mime_infos,
+       /* more than one supported archive manager, check if the first
+        * available is the default for all its supported mime types.
+        */
+-      mime_types = thunar_vfs_mime_application_get_mime_types (mime_applications->data);
+-      for (n = 0; mime_types[n] != NULL; ++n)
++      for (lp = content_types; lp != NULL; lp = lp->next)
+         {
+           /* determine the default application for this mime type */
+-          mime_info = thunar_vfs_mime_database_get_info (mime_database, mime_types[n]);
+-          mime_application = thunar_vfs_mime_database_get_default_application (mime_database, mime_info);
+-          thunar_vfs_mime_info_unref (mime_info);
++          app_info = g_app_info_get_default_for_type (lp->data, FALSE);
+ 
++          /* no default applications for this mime type */
++          if (app_info == NULL)
++            break;
++
+           /* check if our expected default application is also the default here */
+-          if (mime_applications->data != mime_application)
++          if (!g_app_info_equal (app_info, mime_applications->data))
+             {
+               /* no, have to ask the user */
+-              g_object_unref (G_OBJECT (mime_application));
++              g_object_unref (app_info);
+               break;
+             }
+ 
+           /* yep, next one please... */
+-          g_object_unref (G_OBJECT (mime_application));
++          g_object_unref (app_info);
+         }
+ 
+       /* check if we have found a suitable one */
+-      if (G_LIKELY (mime_types[n] == NULL))
++      if (G_LIKELY (lp == NULL))
+         {
+           /* use the first available archive manager */
+           mime_application = g_object_ref (G_OBJECT (mime_applications->data));
+@@ -325,20 +329,17 @@ tap_backend_mime_application (GList     *mime_infos,
+               /* make the selected application the default for all its
+                * supported mime types, so we don't need to ask once again.
+                */
+-              mime_types = thunar_vfs_mime_application_get_mime_types (mime_application);
+-              for (n = 0; mime_types[n] != NULL; ++n)
++              for (lp = content_types; lp != NULL; lp = lp->next)
+                 {
+                   /* set the default application */
+-                  mime_info = thunar_vfs_mime_database_get_info (mime_database, mime_types[n]);
+-                  if (!thunar_vfs_mime_database_set_default_application (mime_database, mime_info, mime_application, &err))
++                  if (!g_app_info_set_as_default_for_type (mime_application, lp->data, &err))
+                     {
+                       /* not critical, still we should tell the user that we failed */
+                       g_warning ("Failed to make \"%s\" the default application for %s: %s",
+-                                 thunar_vfs_mime_application_get_name (mime_application),
+-                                 thunar_vfs_mime_info_get_name (mime_info), err->message);
++                                 g_app_info_get_name (mime_application),
++                                 (char*) lp->data, err->message);
+                       g_clear_error (&err);
+                     }
+-                  thunar_vfs_mime_info_unref (mime_info);
+                 }
+             }
+         }
+@@ -348,16 +349,13 @@ tap_backend_mime_application (GList     *mime_infos,
+       g_list_free (mime_applications);
+     }
+ 
+-  /* release our reference on the mime database */
+-  g_object_unref (G_OBJECT (mime_database));
+-
+   return mime_application;
+ }
+ 
+ 
+ 
+ static gchar*
+-tap_backend_mime_wrapper (ThunarVfsMimeApplication *mime_application)
++tap_backend_mime_wrapper (GAppInfo *mime_application)
+ {
+   const gchar *desktop_id;
+   gchar       *basename;
+@@ -365,7 +363,7 @@ tap_backend_mime_wrapper (ThunarVfsMimeApplication *mi
+   gchar       *dot;
+ 
+   /* determine the basename of the .desktop file */
+-  desktop_id = thunar_vfs_mime_application_get_desktop_id (mime_application);
++  desktop_id = g_app_info_get_id (mime_application);
+   basename = g_path_get_basename (desktop_id);
+   dot = strrchr (basename, '.');
+   if (G_LIKELY (dot != NULL))
+@@ -394,12 +392,12 @@ static GPid
+ tap_backend_run (const gchar *action,
+                  const gchar *folder,
+                  GList       *files,
+-                 GList       *mime_infos,
++                 GList       *content_types,
+                  GtkWidget   *window,
+                  GError     **error)
+ {
+-  ThunarVfsMimeApplication *mime_application;
+-  ThunarVfsInfo            *info;
++  GAppInfo                 *mime_application;
++  gchar                    *mime_type;
+   GdkScreen                *screen;
+   gchar                    *wrapper;
+   gchar                   **argv;
+@@ -409,19 +407,19 @@ tap_backend_run (const gchar *action,
+   gint                      n;
+ 
+   /* determine the mime infos on-demand */
+-  if (G_LIKELY (mime_infos == NULL))
++  if (G_LIKELY (content_types == NULL))
+     {
+       /* determine the mime infos from the files */
+       for (lp = files; lp != NULL; lp = lp->next)
+         {
+-          info = thunarx_file_info_get_vfs_info (THUNARX_FILE_INFO (lp->data));
+-          mime_infos = g_list_append (mime_infos, thunar_vfs_mime_info_ref (info->mime_info));
+-          thunar_vfs_info_unref (info);
++          mime_type = thunarx_file_info_get_mime_type (THUNARX_FILE_INFO (lp->data));
++          content_types = g_list_append (content_types, g_content_type_from_mime_type (mime_type));
++          g_free (mime_type);
+         }
+     }
+ 
+   /* determine the mime application to use */
+-  mime_application = tap_backend_mime_application (mime_infos, window, error);
++  mime_application = tap_backend_mime_application (content_types, window, error);
+   if (G_LIKELY (mime_application != NULL))
+     {
+       /* determine the wrapper script for the application */
+@@ -463,7 +461,8 @@ tap_backend_run (const gchar *action,
+     }
+ 
+   /* cleanup */
+-  thunar_vfs_mime_info_list_free (mime_infos);
++  g_list_foreach (content_types, (GFunc) g_free, NULL);
++  g_list_free (content_types);
+ 
+   return pid;
+ }
+@@ -493,24 +492,21 @@ tap_backend_create_archive (const gchar *folder,
+                             GtkWidget   *window,
+                             GError     **error)
+ {
+-  ThunarVfsMimeDatabase *mime_database;
+-  GList                 *mime_infos = NULL;
++  GList *content_types = NULL;
+ 
+   g_return_val_if_fail (files != NULL, -1);
+   g_return_val_if_fail (GTK_IS_WINDOW (window), -1);
+   g_return_val_if_fail (g_path_is_absolute (folder), -1);
+   g_return_val_if_fail (error == NULL || *error == NULL, -1);
+ 
+-  /* determine the mime infos for zip and tar files (all supported archives must be able to handle them) */
+-  mime_database = thunar_vfs_mime_database_get_default ();
+-  mime_infos = g_list_append (mime_infos, thunar_vfs_mime_database_get_info (mime_database, "application/x-compressed-tar"));
+-  mime_infos = g_list_append (mime_infos, thunar_vfs_mime_database_get_info (mime_database, "application/x-tar"));
+-  mime_infos = g_list_append (mime_infos, thunar_vfs_mime_database_get_info (mime_database, "application/x-zip"));
+-  mime_infos = g_list_append (mime_infos, thunar_vfs_mime_database_get_info (mime_database, "application/zip"));
+-  g_object_unref (G_OBJECT (mime_database));
++  /* determine the content types for zip and tar files (all supported archives must be able to handle them) */
++  content_types = g_list_append (content_types, g_content_type_from_mime_type ("application/x-compressed-tar"));
++  content_types = g_list_append (content_types, g_content_type_from_mime_type ("application/x-tar"));
++  content_types = g_list_append (content_types, g_content_type_from_mime_type ("application/x-zip"));
++  content_types = g_list_append (content_types, g_content_type_from_mime_type ("application/zip"));
+ 
+   /* run the action, the mime infos will be freed by the _run() method */
+-  return tap_backend_run ("create", folder, files, mime_infos, window, error);
++  return tap_backend_run ("create", folder, files, content_types, window, error);
+ }
+ 
+ 

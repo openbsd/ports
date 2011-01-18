@@ -1,0 +1,131 @@
+$OpenBSD: patch-thunar-archive-plugin_tap-provider_c,v 1.1 2011/01/18 20:52:20 landry Exp $
+http://bugzilla.xfce.org/show_bug.cgi?id=6093
+--- thunar-archive-plugin/tap-provider.c.orig	Sat Jan 20 11:41:50 2007
++++ thunar-archive-plugin/tap-provider.c	Sun Jan 16 01:34:36 2011
+@@ -26,7 +26,7 @@
+ #include <unistd.h>
+ #endif
+ 
+-#include <thunar-vfs/thunar-vfs.h>
++#include <libxfce4util/libxfce4util.h>
+ 
+ #include <thunar-archive-plugin/tap-backend.h>
+ #include <thunar-archive-plugin/tap-provider.h>
+@@ -419,8 +419,7 @@ tap_provider_get_file_actions (ThunarxMenuProvider *me
+                                GtkWidget           *window,
+                                GList               *files)
+ {
+-  ThunarVfsPathScheme scheme;
+-  ThunarVfsInfo      *info;
++  gchar              *scheme;
+   TapProvider        *tap_provider = TAP_PROVIDER (menu_provider);
+   GtkAction          *action;
+   GClosure           *closure;
+@@ -434,13 +433,15 @@ tap_provider_get_file_actions (ThunarxMenuProvider *me
+   for (lp = files; lp != NULL; lp = lp->next, ++n_files)
+     {
+       /* check if the file is a local file */
+-      info = thunarx_file_info_get_vfs_info (lp->data);
+-      scheme = thunar_vfs_path_get_scheme (info->path);
+-      thunar_vfs_info_unref (info);
++      scheme = thunarx_file_info_get_uri_scheme (lp->data);
+ 
+       /* unable to handle non-local files */
+-      if (G_UNLIKELY (scheme != THUNAR_VFS_PATH_SCHEME_FILE))
+-        return NULL;
++      if (G_UNLIKELY (strcmp (scheme, "file")))
++        {
++          g_free (scheme);
++          return NULL;
++        }
++      g_free (scheme);
+ 
+       /* check if this file is a supported archive */
+       if (all_archives && !tap_is_archive (lp->data))
+@@ -547,8 +548,7 @@ tap_provider_get_dnd_actions (ThunarxMenuProvider *men
+                               ThunarxFileInfo     *folder,
+                               GList               *files)
+ {
+-  ThunarVfsPathScheme scheme;
+-  ThunarVfsInfo      *info;
++  gchar              *scheme;
+   TapProvider        *tap_provider = TAP_PROVIDER (menu_provider);
+   GtkAction          *action;
+   GClosure           *closure;
+@@ -556,25 +556,29 @@ tap_provider_get_dnd_actions (ThunarxMenuProvider *men
+   gint                n_files = 0;
+ 
+   /* check if the folder is a local folder */
+-  info = thunarx_file_info_get_vfs_info (folder);
+-  scheme = thunar_vfs_path_get_scheme (info->path);
+-  thunar_vfs_info_unref (info);
++  scheme = thunarx_file_info_get_uri_scheme (folder);
+ 
+   /* unable to extract to non-local folders */
+-  if (G_UNLIKELY (scheme != THUNAR_VFS_PATH_SCHEME_FILE))
+-    return NULL;
++  if (G_UNLIKELY (strcmp (scheme, "file")))
++    {
++      g_free (scheme);
++      return NULL;
++    }
++  g_free (scheme);
+ 
+   /* check all supplied files */
+   for (lp = files; lp != NULL; lp = lp->next, ++n_files)
+     {
+       /* check if the file is a local file */
+-      info = thunarx_file_info_get_vfs_info (lp->data);
+-      scheme = thunar_vfs_path_get_scheme (info->path);
+-      thunar_vfs_info_unref (info);
++      scheme = thunarx_file_info_get_uri_scheme (lp->data);
+ 
+       /* unable to handle non-local files */
+-      if (G_UNLIKELY (scheme != THUNAR_VFS_PATH_SCHEME_FILE))
+-        return NULL;
++      if (G_UNLIKELY (strcmp (scheme, "file")))
++        {
++          g_free (scheme);
++          return NULL;
++        }
++      g_free (scheme);
+ 
+       /* check if this file is a supported archive */
+       if (G_LIKELY (!tap_is_archive (lp->data)))
+@@ -676,26 +680,26 @@ tap_provider_child_watch (GPid     pid,
+                           gint     status,
+                           gpointer user_data)
+ {
+-  ThunarVfsMonitor  *monitor;
+-  ThunarVfsPath     *path;
+-  TapProvider       *tap_provider = TAP_PROVIDER (user_data);
++  //TODO: ThunarVfsMonitor  *monitor;
++  //TODO: ThunarVfsPath     *path;
++  //TODO: TapProvider       *tap_provider = TAP_PROVIDER (user_data);
+ 
+   GDK_THREADS_ENTER ();
+ 
+   /* verify that we still have a valid child_watch_path */
+-  if (G_LIKELY (tap_provider->child_watch_path != NULL))
++  //TODO: if (G_LIKELY (tap_provider->child_watch_path != NULL))
+     {
+       /* determine the corresponding ThunarVfsPath */
+-      path = thunar_vfs_path_new (tap_provider->child_watch_path, NULL);
+-      if (G_LIKELY (path != NULL))
++      //TODO: path = thunar_vfs_path_new (tap_provider->child_watch_path, NULL);
++      //TODO: if (G_LIKELY (path != NULL))
+         {
+           /* schedule a changed notification on the path */
+-          monitor = thunar_vfs_monitor_get_default ();
+-          thunar_vfs_monitor_feed (monitor, THUNAR_VFS_MONITOR_EVENT_CHANGED, path);
+-          g_object_unref (G_OBJECT (monitor));
++          //TODO: monitor = thunar_vfs_monitor_get_default ();
++          //TODO: thunar_vfs_monitor_feed (monitor, THUNAR_VFS_MONITOR_EVENT_CHANGED, path);
++          //TODO: g_object_unref (G_OBJECT (monitor));
+ 
+           /* release the ThunarVfsPath */
+-          thunar_vfs_path_unref (path);
++          //TODO: thunar_vfs_path_unref (path);
+         }
+     }
+ 

@@ -1,0 +1,63 @@
+$OpenBSD: patch-configure,v 1.1 2011/01/18 20:52:20 landry Exp $
+--- configure.orig	Sat Jan 15 23:21:26 2011
++++ configure	Sat Jan 15 23:21:44 2011
+@@ -22113,22 +22113,22 @@ echo "${ECHO_T}$xdt_cv_PKG_CONFIG_VERSION" >&6
+   fi
+ 
+ 
+-  echo "$as_me:$LINENO: checking for thunarx-1 >= 0.4.0" >&5
+-echo $ECHO_N "checking for thunarx-1 >= 0.4.0... $ECHO_C" >&6
+-  if $PKG_CONFIG "--atleast-version=0.4.0" "thunarx-1" >/dev/null 2>&1; then
+-    THUNARX_VERSION=`$PKG_CONFIG --modversion "thunarx-1"`
++  echo "$as_me:$LINENO: checking for thunarx-2 >= 0.4.0" >&5
++echo $ECHO_N "checking for thunarx-2 >= 0.4.0... $ECHO_C" >&6
++  if $PKG_CONFIG "--atleast-version=0.4.0" "thunarx-2" >/dev/null 2>&1; then
++    THUNARX_VERSION=`$PKG_CONFIG --modversion "thunarx-2"`
+     echo "$as_me:$LINENO: result: $THUNARX_VERSION" >&5
+ echo "${ECHO_T}$THUNARX_VERSION" >&6
+ 
+     echo "$as_me:$LINENO: checking THUNARX_CFLAGS" >&5
+ echo $ECHO_N "checking THUNARX_CFLAGS... $ECHO_C" >&6
+-    THUNARX_CFLAGS=`$PKG_CONFIG --cflags "thunarx-1"`
++    THUNARX_CFLAGS=`$PKG_CONFIG --cflags "thunarx-2"`
+     echo "$as_me:$LINENO: result: $THUNARX_CFLAGS" >&5
+ echo "${ECHO_T}$THUNARX_CFLAGS" >&6
+ 
+     echo "$as_me:$LINENO: checking THUNARX_LIBS" >&5
+ echo $ECHO_N "checking THUNARX_LIBS... $ECHO_C" >&6
+-    THUNARX_LIBS=`$PKG_CONFIG --libs "thunarx-1"`
++    THUNARX_LIBS=`$PKG_CONFIG --libs "thunarx-2"`
+     echo "$as_me:$LINENO: result: $THUNARX_LIBS" >&5
+ echo "${ECHO_T}$THUNARX_LIBS" >&6
+ 
+@@ -22140,15 +22140,15 @@ echo "${ECHO_T}$THUNARX_LIBS" >&6
+ 
+ 
+ 
+-  elif $PKG_CONFIG --exists "thunarx-1" >/dev/null 2>&1; then
+-    xdt_cv_version=`$PKG_CONFIG --modversion "thunarx-1"`
++  elif $PKG_CONFIG --exists "thunarx-2" >/dev/null 2>&1; then
++    xdt_cv_version=`$PKG_CONFIG --modversion "thunarx-2"`
+     echo "$as_me:$LINENO: result: found, but $xdt_cv_version" >&5
+ echo "${ECHO_T}found, but $xdt_cv_version" >&6
+ 
+ 
+-      echo "*** The required package thunarx-1 was found on your system,"
++      echo "*** The required package thunarx-2 was found on your system,"
+       echo "*** but the installed version ($xdt_cv_version) is too old."
+-      echo "*** Please upgrade thunarx-1 to atleast version 0.4.0, or adjust"
++      echo "*** Please upgrade thunarx-2 to atleast version 0.4.0, or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you installed"
+       echo "*** the new version of the package in a nonstandard prefix so"
+       echo "*** pkg-config is able to find it."
+@@ -22159,8 +22159,8 @@ echo "${ECHO_T}found, but $xdt_cv_version" >&6
+ echo "${ECHO_T}not found" >&6
+ 
+ 
+-      echo "*** The required package thunarx-1 was not found on your system."
+-      echo "*** Please install thunarx-1 (atleast version 0.4.0) or adjust"
++      echo "*** The required package thunarx-2 was not found on your system."
++      echo "*** Please install thunarx-2 (atleast version 0.4.0) or adjust"
+       echo "*** the PKG_CONFIG_PATH environment variable if you"
+       echo "*** installed the package in a nonstandard prefix so that"
+       echo "*** pkg-config is able to find it."
