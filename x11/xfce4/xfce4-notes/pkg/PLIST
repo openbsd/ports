@@ -1,11 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.13 2009/12/21 16:07:44 landry Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/01/18 20:59:31 landry Exp $
 @bin bin/xfce4-notes
 @bin bin/xfce4-notes-settings
 @bin bin/xfce4-popup-notes
-libexec/xfce4/
-libexec/xfce4/panel-plugins/
-@bin libexec/xfce4/panel-plugins/xfce4-notes-plugin
-share/applications/
+lib/xfce4/
+lib/xfce4/panel-plugins/
+lib/xfce4/panel-plugins/libnotes.a
+lib/xfce4/panel-plugins/libnotes.la
+lib/xfce4/panel-plugins/libnotes.so
 share/applications/xfce4-notes.desktop
 share/examples/xfce4-notes/
 @sample ${SYSCONFDIR}/xdg/
@@ -70,6 +71,9 @@ share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/sv/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-notes-plugin.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
@@ -81,8 +85,30 @@ share/locale/vi/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-notes-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-notes-plugin.mo
 share/xfce4/
+share/xfce4-notes-plugin/
+share/xfce4-notes-plugin/gtk-2.0/
+share/xfce4-notes-plugin/gtk-2.0/gradient.png
+share/xfce4-notes-plugin/gtk-2.0/notes.gtkrc
+share/xfce4-notes-plugin/gtk-2.0/scrollbars/
+share/xfce4-notes-plugin/gtk-2.0/scrollbars/slider-horiz-active.png
+share/xfce4-notes-plugin/gtk-2.0/scrollbars/slider-horiz.png
+share/xfce4-notes-plugin/gtk-2.0/scrollbars/slider-vert-active.png
+share/xfce4-notes-plugin/gtk-2.0/scrollbars/slider-vert.png
+share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-down-active.png
+share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-down.png
+share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-left-active.png
+share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-left.png
+share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-right-active.png
+share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-right.png
+share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-up-active.png
+share/xfce4-notes-plugin/gtk-2.0/scrollbars/stepper-up.png
+share/xfce4-notes-plugin/gtk-2.0/scrollbars/trough-scrollbar-horiz.png
+share/xfce4-notes-plugin/gtk-2.0/scrollbars/trough-scrollbar-vert.png
+share/xfce4-notes-plugin/pixmaps/
+share/xfce4-notes-plugin/pixmaps/notes-menu-active.png
+share/xfce4-notes-plugin/pixmaps/notes-menu.png
 share/xfce4/panel-plugins/
-share/xfce4/panel-plugins/xfce4-notes-plugin.desktop
+share/xfce4/panel-plugins/xfce4-notes-plugin-47.desktop
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
