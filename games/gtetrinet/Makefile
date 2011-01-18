@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/01/18 20:03:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2011/01/18 20:22:55 ajacoutot Exp $
 
 MULTI_PACKAGES=	-main -themes
 
@@ -6,7 +6,7 @@ COMMENT-main=	tetrinet client
 COMMENT-themes=	collection of gtetrinet themes
 DISTNAME=	gtetrinet-0.7.11
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	12
+REVISION-main=	13
 PKGNAME-themes=	gtetrinet-themes-20070623
 REVISION-themes=1
 CATEGORIES=	x11 games
@@ -54,11 +54,12 @@ WANTLIB-main += gnome-2 gnomeui-2 esd ${MODGCONF2_WANTLIB}
 WANTLIB-main += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB-main += Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
 WANTLIB-main += audiofile bonobo-2 bonobo-activation bonoboui-2 c cairo
-WANTLIB-main += dbus-1 expat fontconfig freetype gailutil gdk-x11-2.0
+WANTLIB-main += expat fontconfig freetype gailutil gdk-x11-2.0
 WANTLIB-main += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
 WANTLIB-main += gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB-main += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-main += pixman-1 png popt pthread pthread-stubs sndio xcb xml2 z
+WANTLIB-main += GL Xxf86vm canberra drm xcb-render xcb-shm
 WANTLIB-themes =
 
 MODGCONF2_SCHEMAS_DIR= gtetrinet
@@ -70,17 +71,14 @@ CONFIGURE_ARGS+=--enable-ipv6
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-FAKE_FLAGS=	gamesdir=${PREFIX}/bin
+FAKE_FLAGS=	gamesdir=${PREFIX}/bin \
+		schemadir=${PREFIX}/share/schemas/gtetrinet
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/schemas/gtetrinet
-	@mv ${WRKINST}${SYSCONFDIR}/gconf/schemas/gtetrinet.schemas \
-	    ${PREFIX}/share/schemas/gtetrinet
-	@rm -rf ${WRKINST}${SYSCONFDIR}/gconf
 .for THEME in ${THEMES}
 	@tar xzf ${DISTDIR}/gtet-theme-${THEME}${EXTRACT_SUFX} -C \
 	    ${PREFIX}/share/gtetrinet/themes
