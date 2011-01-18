@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2011/01/03 13:11:49 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2011/01/18 21:00:12 landry Exp $
 
 COMMENT=	Xfce4 printing helper
 
 XFCE_PROJECT=	xfprint
 XFCE_VERSION=	4.6.1
-REVISION=	7
+REVISION=	8
 
 MASTER_SITES=	http://archive.xfce.org/src/archive/${XFCE_PROJECT}/${XFCE_BRANCH}/
 SHARED_LIBS=	xfprint	0.1
@@ -36,6 +36,6 @@ WANTLIB += gmodule-2.0 gobject-2.0 gssapi gtk-x11-2.0 krb5
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs ssl startup-notification-1
 WANTLIB += xcb xcb-atom xcb-aux xcb-event xfce4util z gthread-2.0
-WANTLIB += xcb-render xcb-render-util cups xfconf-0 xfcegui4
+WANTLIB += xcb-render GL Xxf86vm drm xcb-shm cups xfconf-0 xfcegui4
 
 .include <bsd.port.mk>
