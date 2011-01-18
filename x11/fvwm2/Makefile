@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/11/22 08:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2011/01/18 20:00:56 jasper Exp $
 
 COMMENT-main=	multiple virtual desktop window manager, with icons
 COMMENT-fvicons=multiple virtual desktop window manager icons
@@ -10,9 +10,9 @@ PKGNAME-main=	fvwm2+fvicons-${VERSION}
 FULLPKGNAME-fvicons=fvicons-${VERSION}
 PKGNAME-fvwm2=	fvwm2-${VERSION}
 
-REVISION-main=	2
+REVISION-main=	3
 REVISION-fvicons= 1
-REVISION-fvwm2=	1
+REVISION-fvwm2=	2
 
 CATEGORIES=     x11
 
@@ -28,16 +28,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xext Xi Xinerama Xpm c gdk glib gmodule \
-		gtk gdk_imlib jpeg m png readline termcap tiff ungif z
+WANTLIB += ICE SM X11 Xext Xinerama Xpm c m readline termcap
 
 MODULES=	devel/gettext
 
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
 MASTER_SITES0=	http://www.fvwm.org/generated/icon_download/
-
-LIB_DEPENDS=	x11/gtk+ \
-		graphics/imlib
 
 MULTI_PACKAGES=	-main -fvwm2 -fvicons
 
@@ -76,11 +72,12 @@ USE_GROFF =	Yes
 SEPARATE_BUILD= concurrent
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --enable-extras \
-		 --without-gnome
+		--without-gnome \
+		--disable-gtk
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/fvwm
 	${INSTALL_DATA} ${WRKDIR}/fvwm_icons/*.xpm ${PREFIX}/share/pixmaps/fvwm/
 	${INSTALL_DATA} ${WRKSRC}/sample.fvwmrc/system.fvwm2rc ${PREFIX}/share/fvwm
-	
+
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-fvwm2,v 1.8 2008/06/10 05:39:38 pvalchev Exp $
+@comment $OpenBSD: PLIST-fvwm2,v 1.9 2011/01/18 20:00:56 jasper Exp $
 @conflict fvwm2+fvicons-*
 @conflict fvwm95-*
 @bin bin/FvwmCommand
@@ -14,7 +14,7 @@ bin/fvwmbug
 libexec/fvwm/
 libexec/fvwm/${VERSION}/
 @bin libexec/fvwm/${VERSION}/FvwmAnimate
-@bin libexec/fvwm/${VERSION}/FvwmAudio
+libexec/fvwm/${VERSION}/FvwmAudio
 @bin libexec/fvwm/${VERSION}/FvwmAuto
 @bin libexec/fvwm/${VERSION}/FvwmBacker
 @bin libexec/fvwm/${VERSION}/FvwmBanner
@@ -31,7 +31,6 @@ libexec/fvwm/${VERSION}/FvwmConsoleC.pl
 @bin libexec/fvwm/${VERSION}/FvwmDragWell
 @bin libexec/fvwm/${VERSION}/FvwmEvent
 @bin libexec/fvwm/${VERSION}/FvwmForm
-@bin libexec/fvwm/${VERSION}/FvwmGtk
 @bin libexec/fvwm/${VERSION}/FvwmIconBox
 @bin libexec/fvwm/${VERSION}/FvwmIconMan
 @bin libexec/fvwm/${VERSION}/FvwmIdent
@@ -61,7 +60,6 @@ libexec/fvwm/${VERSION}/FvwmTile
 @man man/man1/FvwmDragWell.1
 @man man/man1/FvwmEvent.1
 @man man/man1/FvwmForm.1
-@man man/man1/FvwmGtk.1
 @man man/man1/FvwmIconBox.1
 @man man/man1/FvwmIconMan.1
 @man man/man1/FvwmIdent.1
