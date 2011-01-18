@@ -1,0 +1,9 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/01/18 20:05:38 landry Exp $
+@lib lib/libtumbler-1.so.${LIBtumbler-1_VERSION}
+lib/tumbler-1/plugins/cache/tumbler-cache-plugin.so
+lib/tumbler-1/plugins/cache/tumbler-xdg-cache.so
+lib/tumbler-1/plugins/tumbler-ffmpeg-thumbnailer.so
+lib/tumbler-1/plugins/tumbler-font-thumbnailer.so
+lib/tumbler-1/plugins/tumbler-jpeg-thumbnailer.so
+lib/tumbler-1/plugins/tumbler-pixbuf-thumbnailer.so
+lib/tumbler-1/plugins/tumbler-poppler-thumbnailer.so
