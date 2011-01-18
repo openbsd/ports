@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/01/18 09:59:02 okan Exp $
 
-COMMENT=	convert Markdown / MultiMarkdown syntax to (X)HTML
+COMMENT=	convert Markdown syntax to (X)HTML
 
-DISTNAME=	Text-Markdown-1.0.24
-REVISION=	0
+DISTNAME=	Text-Markdown-1.000031
 CATEGORIES=	textproc www
 MODULES=	cpan
-USE_GROFF =	Yes
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
@@ -19,17 +17,10 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	devel/p5-File-Slurp \
 		devel/p5-List-MoreUtils \
 		devel/p5-Test-Exception
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
-MAKE_ENV=	TEST_POD=Yes \
-		TEST_SPELLING=Yes
-REGRESS_DEPENDS=devel/p5-Test-Spelling \
-		textproc/p5-Text-Diff \
-		www/p5-HTML-Tidy
+MAKE_ENV=	TEST_POD=Yes
 
-post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/script/Markdown.pl ${PREFIX}/bin/Markdown
-	${INSTALL_SCRIPT} ${WRKSRC}/script/MultiMarkdown.pl \
-		${PREFIX}/bin/MultiMarkdown
+REGRESS_DEPENDS=	devel/p5-Test-Differences \
+			www/p5-HTML-Tidy
 
 .include <bsd.port.mk>
