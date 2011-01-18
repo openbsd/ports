@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/01/18 20:11:40 landry Exp $
 
 COMMENT=	Xfce4 extension library
 
-XFCE_VERSION=	0.3.107
+XFCE_VERSION=	0.6.0
 XFCE_PROJECT=	exo
-REVISION=	1
 
-SHARED_LIBS=	exo-0.3		5.0 \
-		exo-hal-0.3	5.0
+SHARED_LIBS=	exo-1		0.0
 
 HOMEPAGE=	http://www.xfce.org/projects
 
@@ -20,23 +18,22 @@ PERMIT_PACKAGE_FTP=	Yes
 MODULES=	x11/xfce4
 DESKTOP_FILES=	Yes
 
-CONFIGURE_ARGS=	--disable-python
+CONFIGURE_ARGS=	--disable-python --disable-linker-opts
 CONFIGURE_ENV=	ac_cv_header_sys_ucred_h=yes \
 		ac_cv_header_sys_mount_h=yes
 
 BUILD_DEPENDS=	www/p5-URI
-LIB_DEPENDS=	devel/libnotify \
-		x11/xfce4/libxfce4util
+LIB_DEPENDS=	x11/gtk+2 \
+		x11/xfce4/libxfce4util>=4.8.0
 
-FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/xfce4
+FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/exo
 
-WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
+WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png pthread z pthread-stubs xcb dbus-1 dbus-glib-1 \
-		xcb-render xcb-render-util notify xfce4util
-
+		png pthread z pthread-stubs xcb \
+		xcb-render xfce4util GL Xxf86vm drm xcb-shm
 
 .include <bsd.port.mk>
