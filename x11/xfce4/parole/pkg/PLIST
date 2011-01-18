@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/09 15:21:25 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/01/18 20:48:51 landry Exp $
 %%SHARED%%
 @bin bin/parole
 include/parole/
@@ -35,8 +35,6 @@ share/icons/hicolor/48x48/apps/parole.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/parole.svg
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/parole.mo
 share/locale/ca/LC_MESSAGES/parole.mo
 share/locale/cs/LC_MESSAGES/parole.mo
