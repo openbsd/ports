@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2010/11/11 10:09:34 landry Exp $
+@comment $OpenBSD: PLIST,v 1.18 2011/01/18 20:36:51 landry Exp $
 @conflict xfce4-toys-*
 %%SHARED%%
 @bin bin/xfce4-session
@@ -15,21 +15,59 @@ lib/libxfsm-4.6.la
 lib/pkgconfig/
 lib/pkgconfig/xfce4-session-2.0.pc
 lib/xfce4/
-lib/xfce4/splash/
-lib/xfce4/splash/engines/
-lib/xfce4/splash/engines/libbalou.a
-lib/xfce4/splash/engines/libbalou.la
-lib/xfce4/splash/engines/libmice.a
-lib/xfce4/splash/engines/libmice.la
-lib/xfce4/splash/engines/libsimple.a
-lib/xfce4/splash/engines/libsimple.la
-libexec/balou-export-theme
-libexec/balou-install-theme
-@bin libexec/xfsm-shutdown-helper
+lib/xfce4/panel/
+lib/xfce4/panel/plugins/
+lib/xfce4/panel/plugins/libxfsm-logout-plugin.a
+lib/xfce4/panel/plugins/libxfsm-logout-plugin.la
+lib/xfce4/session/
+lib/xfce4/session/balou-export-theme
+lib/xfce4/session/balou-install-theme
+lib/xfce4/session/splash-engines/
+lib/xfce4/session/splash-engines/libbalou.a
+lib/xfce4/session/splash-engines/libbalou.la
+lib/xfce4/session/splash-engines/libmice.a
+lib/xfce4/session/splash-engines/libmice.la
+lib/xfce4/session/splash-engines/libsimple.a
+lib/xfce4/session/splash-engines/libsimple.la
+@bin lib/xfce4/session/xfsm-shutdown-helper
 @man man/man1/xfce4-session-logout.1
 @man man/man1/xfce4-session.1
 share/applications/xfce-session-settings.desktop
+share/applications/xfce4-session-logout.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/xfce4-session/
+share/doc/xfce4-session/html/
+share/doc/xfce4-session/html/C/
+share/doc/xfce4-session/html/C/images/
+share/doc/xfce4-session/html/C/images/xfsm-advanced.png
+share/doc/xfce4-session/html/C/images/xfsm-general.png
+share/doc/xfce4-session/html/C/images/xfsm-splash.png
+share/doc/xfce4-session/html/C/index.html
+share/doc/xfce4-session/html/da/
+share/doc/xfce4-session/html/da/images
+share/doc/xfce4-session/html/da/index.html
+share/doc/xfce4-session/html/el/
+share/doc/xfce4-session/html/el/images
+share/doc/xfce4-session/html/el/index.html
+share/doc/xfce4-session/html/gl/
+share/doc/xfce4-session/html/gl/images
+share/doc/xfce4-session/html/gl/index.html
+share/doc/xfce4-session/html/it/
+share/doc/xfce4-session/html/it/images
+share/doc/xfce4-session/html/it/index.html
+share/doc/xfce4-session/html/ja/
+share/doc/xfce4-session/html/ja/images
+share/doc/xfce4-session/html/ja/index.html
+share/doc/xfce4-session/html/ru/
+share/doc/xfce4-session/html/ru/images
+share/doc/xfce4-session/html/ru/index.html
+share/doc/xfce4-session/html/sv/
+share/doc/xfce4-session/html/sv/images
+share/doc/xfce4-session/html/sv/index.html
+share/doc/xfce4-session/html/ug/
+share/doc/xfce4-session/html/ug/images
+share/doc/xfce4-session/html/ug/index.html
+share/doc/xfce4-session/html/xfce4-session.css
 share/examples/xfce4-session/
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/
@@ -78,6 +116,9 @@ share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/xfce4-session.mo
 share/locale/be/LC_MESSAGES/xfce4-session.mo
+share/locale/bn/
+share/locale/bn/LC_MESSAGES/
+share/locale/bn/LC_MESSAGES/xfce4-session.mo
 share/locale/bn_IN/
 share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/xfce4-session.mo
@@ -112,6 +153,7 @@ share/locale/he/LC_MESSAGES/xfce4-session.mo
 share/locale/hi/
 share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/xfce4-session.mo
+share/locale/hr/LC_MESSAGES/xfce4-session.mo
 share/locale/hu/LC_MESSAGES/xfce4-session.mo
 share/locale/id/LC_MESSAGES/xfce4-session.mo
 share/locale/it/LC_MESSAGES/xfce4-session.mo
@@ -177,22 +219,10 @@ share/themes/Default/balou/
 share/themes/Default/balou/logo.png
 share/themes/Default/balou/themerc
 share/xfce4/
-share/xfce4/doc/
-share/xfce4/doc/C/
-share/xfce4/doc/C/images/
-share/xfce4/doc/C/images/xfsm-advanced.png
-share/xfce4/doc/C/images/xfsm-general.png
-share/xfce4/doc/C/images/xfsm-splash.png
-share/xfce4/doc/C/xfce4-session.html
-share/xfce4/doc/fr/
-share/xfce4/doc/fr/images/
-share/xfce4/doc/fr/images/xfsm-advanced.png
-share/xfce4/doc/fr/images/xfsm-general.png
-share/xfce4/doc/fr/images/xfsm-splash.png
-share/xfce4/doc/fr/xfce4-session.html
+share/xfce4/panel-plugins/
+share/xfce4/panel-plugins/xfsm-logout-plugin.desktop
 share/xfce4/tips/
 share/xfce4/tips/tips
-share/xfce4/tips/tips.dat
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database

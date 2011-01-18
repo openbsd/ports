@@ -1,9 +1,9 @@
-$OpenBSD: patch-xfce4-tips_Makefile_in,v 1.2 2010/06/05 15:26:33 landry Exp $
---- xfce4-tips/Makefile.in.orig	Fri May 21 18:58:41 2010
-+++ xfce4-tips/Makefile.in	Wed Jun  2 20:43:04 2010
-@@ -338,7 +338,7 @@ xfce4_tips_CFLAGS = \
- xfce4_tips_LDADD = \
- 	@LIBXFCEGUI4_LIBS@
+$OpenBSD: patch-xfce4-tips_Makefile_in,v 1.3 2011/01/18 20:36:51 landry Exp $
+--- xfce4-tips/Makefile.in.orig	Wed Nov  3 21:11:43 2010
++++ xfce4-tips/Makefile.in	Fri Nov  5 23:49:30 2010
+@@ -366,7 +366,7 @@ xfce4_tips_LDADD = \
+ 	@LIBXFCE4UI_LIBS@                                               \
+ 	@XFCONF_LIBS@
  
 -desktopdir = $(sysconfdir)/xdg/autostart
 +desktopdir = $(prefix)/share/examples/xfce4-session

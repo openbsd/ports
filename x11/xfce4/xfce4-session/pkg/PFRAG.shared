@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.4 2009/03/08 17:16:53 landry Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.5 2011/01/18 20:36:51 landry Exp $
 @lib lib/libxfsm-4.6.so.${LIBxfsm-4.6_VERSION}
-lib/xfce4/splash/engines/libbalou.so
-lib/xfce4/splash/engines/libmice.so
-lib/xfce4/splash/engines/libsimple.so
+lib/xfce4/panel/plugins/libxfsm-logout-plugin.so
+lib/xfce4/session/splash-engines/libbalou.so
+lib/xfce4/session/splash-engines/libmice.so
+lib/xfce4/session/splash-engines/libsimple.so
