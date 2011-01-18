@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.19 2011/01/14 22:52:37 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.20 2011/01/18 12:31:24 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -24,8 +24,8 @@ MODMOZ_BUILD_DEPENDS =	devel/libIDL \
 			archivers/zip>=2.3
 
 MODMOZ_LIB_DEPENDS =	x11/gtk+2 \
-			devel/nspr>=4.8.6 \
-			security/nss>=3.12.8
+			devel/nspr>=4.8.7 \
+			security/nss>=3.12.9
 
 MODMOZ_WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xt atk-1.0 c cairo crypto expat \
@@ -131,9 +131,9 @@ MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/${_MOZDIR}/build/autoconf \
 
 post-extract:
 # XXX nsSound.cpp different between mozilla branch - need to use local one
-	@cp -f ${FILESDIR}/nsSound.cpp ${WRKSRC}/${_MOZDIR}/widget/src/gtk2/
+	cp -f ${FILESDIR}/nsSound.cpp ${WRKSRC}/${_MOZDIR}/widget/src/gtk2/
 # syndeyaudio sndio file comes from ffx FILESDIR
-	@cp -f ${PORTSDIR}/www/mozilla-firefox/files/sydney_audio_sndio.c \
+	cp -f ${PORTSDIR}/www/mozilla-firefox/files/sydney_audio_sndio.c \
 		${WRKSRC}/${_MOZDIR}/media/libsydneyaudio/src/
 
 # files to run SUBST_CMD on
