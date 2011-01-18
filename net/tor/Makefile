@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.48 2010/12/26 11:50:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.49 2011/01/18 19:59:17 jasper Exp $
 
 COMMENT=	anonymity service using onion routing
 
-DISTNAME=	tor-0.2.1.28
+DISTNAME=	tor-0.2.1.29
 CATEGORIES=	net
 HOMEPAGE=	http://www.torproject.org/
 
