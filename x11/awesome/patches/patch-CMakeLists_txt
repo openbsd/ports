@@ -1,0 +1,12 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.6 2011/01/19 12:41:08 dcoppa Exp $
+--- CMakeLists.txt.orig	Wed Jan 19 13:24:14 2011
++++ CMakeLists.txt	Wed Jan 19 13:24:42 2011
+@@ -215,7 +215,7 @@ if(GENERATE_MANPAGES)
+                 DEPENDS ${txtfile}
+                 VERBATIM)
+             add_custom_command(
+-                COMMAND ${XMLTO_EXECUTABLE} man ${xmlfile}
++                COMMAND ${XMLTO_EXECUTABLE} --skip-validation man ${xmlfile}
+                 OUTPUT  ${manfile}
+                 WORKING_DIRECTORY ${BUILD_DIR}/${relpath2}
+                 DEPENDS ${xmlfile})
