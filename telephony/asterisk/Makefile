@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.97 2011/01/04 22:35:46 fgsch Exp $
+# $OpenBSD: Makefile,v 1.98 2011/01/19 11:25:16 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			1.6.2.14
-CORESOUNDS=		1.4.19
-DISTNAME=		asterisk-${VER:S/rc/-rc/}
+VER=			1.8.2.1
+DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
-REVISION-main =		0
+
+SOUNDS=			CORE MOH EXTRA
+SOUNDS_CORE=		asterisk-core-sounds-en-gsm-1.4.20
+SOUNDS_MOH=		asterisk-moh-opsound-wav-2.03
+SOUNDS_EXTRA=		asterisk-extra-sounds-en-gsm-1.4.11
 
 CATEGORIES=		telephony
 
@@ -23,30 +26,44 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES+=	-main
-SUBST_VARS+=		CORESOUNDS
+WANTLIB-main +=	c crypto curl execinfo gsm iconv idn iksemel
+WANTLIB-main += m ogg pthread spandsp sqlite3 ssl stdc++ termcap
+WANTLIB-main += tiff vorbis vorbisenc xml2 z
 
-WANTLIB-main +=	c crypto execinfo gsm iconv m ogg popt pthread
-WANTLIB-main += sqlite3 ssl stdc++ termcap vorbis vorbisenc xml2 z
+MODULES=		devel/gettext
+MULTI_PACKAGES+=	-main
+SUBST_VARS+=		${SOUNDS:S/^/SOUNDS_/}
 
 LIB_DEPENDS-main=	audio/gsm \
 			audio/libogg \
 			audio/libvorbis \
-			textproc/libxml \
 			databases/sqlite3 \
 			devel/libexecinfo \
-			devel/popt
+			graphics/tiff \
+			net/curl \
+			telephony/spandsp \
+			textproc/iksemel \
+			textproc/libxml
 
 MASTER_SITES=	http://downloads.digium.com/pub/telephony/asterisk/releases/ \
 		http://downloads.digium.com/pub/telephony/asterisk/old-releases/
+MASTER_SITES0=	${MASTER_SITES:C/asterisk/sounds/}
+
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+
+.for i in ${SOUNDS}
+SVER_$i = ${SOUNDS_$i:C/^[-a-z]*//}
+SUBST_VARS += SVER_$i
+DISTFILES += ${SOUNDS_$i}${EXTRACT_SUFX}:0 ${SOUNDS_$i}${EXTRACT_SUFX}.sha1:0
+.endfor
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
-AUTOCONF_VERSION=	2.63
-AUTOMAKE_VERSION=	1.9
+AUTOCONF_VERSION=	2.64 # XXX 2.65 adds _'s with our m4
+AUTOMAKE_VERSION=	1.10
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
 
@@ -55,19 +72,18 @@ LDFLAGS+= 		-L${X11BASE}/lib -L${LOCALBASE}/lib
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
 			CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
-MAKE_ENV+=		ASTCFLAGS="${CFLAGS}" \
+MAKE_FLAGS+=		ASTCFLAGS="${CFLAGS}" \
 			ASTLDFLAGS="${LDFLAGS}" \
-			NOISY_BUILD="Yes"
+			NOISY_BUILD="Yes" \
+			OPTIMIZE=
 
 CONFIGURE_ARGS+=	--localstatedir=/var \
-			--sharedstatedir=${PREFIX}/share/asterisk \
-			--with-sounds-cache=no
+			--with-sounds-cache=${DISTDIR}
 
 CONFIGURE_ARGS+=	--with-asound=no \
 			--with-avcodec=no \
 			--with-cap=no \
 			--with-dahdi=no \
-			--with-gtk=no \
 			--with-gtk2=no \
 			--with-gmime=no \
 			--with-isdnnet=no \
@@ -88,7 +104,6 @@ CONFIGURE_ARGS+=	--with-asound=no \
 			--with-vpb=no
 
 CONFIGURE_ARGS+=	--with-jack=no \
-			--with-imap=no \
 			--with-lua=no \
 			--with-portaudio=no \
 			--with-radius=no \
@@ -97,19 +112,70 @@ CONFIGURE_ARGS+=	--with-jack=no \
 
 # Some build options (including a useful malloc debug) are available
 # via menuselect. They may be enabled by running 'make configure', cd
-# to WRKSRC, 'gmake menuselect', then cd back to the port directory
+# to WRKSRC, 'gmake menuselect', then 'cd -' back to the port directory
 # and 'make'.
 
-# XXX h323 is broken; requires older lib
 FLAVOR?=
-#FLAVORS=		h323
+FLAVORS=		imap
+#FLAVORS+=		h323 # XXX requires older h323
 
-# If using IMAP_STORAGE for voicemail, use this to pick up c-client.
-# Needs to be a flavour, {FILE,ODBC,IMAP}_STORAGE are mutually exclusive.
-#CONFIGURE_ARGS+=	--with-imap=system
-#CPPFLAGS+=		-I${LOCALBASE}/include/c-client
-#LIB_DEPENDS-main=	mail/imap-uw,-c-client
-#WANTLIB-main+=		c-client
+## flavours:
+
+.if ${FLAVOR:L:Mh323}
+LIB_DEPENDS-main+=	net/h323plus
+WANTLIB-main+=		SDL avutil expat h323.>=3 lber ldap ldap_r pt.>=3 sasl2
+.else
+CONFIGURE_ARGS+=	--with-pwlib=no \
+			--with-h323=no
+.endif
+
+.if ${FLAVOR:L:Mimap}
+CONFIGURE_ARGS+=	--with-imap=yes
+MAKE_FLAGS+=		MENUSELECT_OPTS_app_voicemail=IMAP_STORAGE
+CPPFLAGS+=		-I${LOCALBASE}/include/c-client
+LIB_DEPENDS-main+=	mail/imap-uw,-c-client
+WANTLIB-main+=		c-client gssapi krb5
+.else
+CONFIGURE_ARGS+=	--with-imap=no
+.endif
+
+## multipackages:
+
+# calendar
+PSEUDO_FLAVORS+=	no_calendar
+.if ${FLAVOR:L:Mno_calendar}
+CONFIGURE_ARGS+=	--with-ical=no
+.else
+MULTI_PACKAGES+=	-calendar
+COMMENT-calendar=	calendar support for Asterisk
+WANTLIB-calendar=	${MODGETTEXT_WANTLIB} asn1 crypto expat gssapi \
+			ical iksemel krb5 m neon ssl xml2 z
+LIB_DEPENDS-calendar=	net/neon \
+			textproc/libical \
+			${MODGETTEXT_LIB_DEPENDS}
+.endif
+
+# ldap
+PSEUDO_FLAVORS+=	no_ldap
+.if ${FLAVOR:L:Mno_ldap}
+CONFIGURE_ARGS+=	--with-ldap=no
+.else
+MULTI_PACKAGES+=	-ldap
+COMMENT-ldap=		LDAP support for Asterisk
+LIB_DEPENDS-ldap=	databases/openldap,-main
+WANTLIB-ldap=		ldap
+.endif
+
+# mysql				need to handle building addons/ first XXX
+#PSEUDO_FLAVORS+=	no_mysql
+#.if ${FLAVOR:L:Mno_mysql}
+#CONFIGURE_ARGS+=	--with-mysqlclient=no
+#.else
+#MULTI_PACKAGES+=	-mysql
+#COMMENT-mysql=		MySQL support for Asterisk
+#WANTLIB-mysql=		mysqlclient
+#LIB_DEPENDS-mysql=	databases/mysql
+#.endif
 
 # odbc
 PSEUDO_FLAVORS+=	no_odbc
@@ -121,6 +187,17 @@ MULTI_PACKAGES+=	-odbc
 COMMENT-odbc=		ODBC support for Asterisk
 LIB_DEPENDS-odbc=	databases/iodbc
 WANTLIB-odbc=		iodbc
+.endif
+
+# postgresql
+PSEUDO_FLAVORS+=	no_pgsql
+.if ${FLAVOR:L:Mno_pgsql}
+CONFIGURE_ARGS+=	--with-postgres=no
+.else
+MULTI_PACKAGES+=	-pgsql
+COMMENT-pgsql=		PostgreSQL support for Asterisk
+WANTLIB-pgsql=		pq z
+LIB_DEPENDS-pgsql=	databases/postgresql
 .endif
 
 # snmp
@@ -145,71 +222,6 @@ WANTLIB-speex=		m speex speexdsp
 LIB_DEPENDS-speex=	audio/speex>=1.2rc1
 .endif
 
-# curl
-PSEUDO_FLAVORS+=	no_curl
-.if ${FLAVOR:L:Mno_curl}
-CONFIGURE_ARGS+=	--with-curl=no
-.else
-MULTI_PACKAGES+=	-curl
-COMMENT-curl=		libCURL support for Asterisk
-WANTLIB-curl=		curl crypto idn ssl z
-LIB_DEPENDS-curl=	net/curl
-.endif
-
-# postgresql
-PSEUDO_FLAVORS+=	no_pgsql
-.if ${FLAVOR:L:Mno_pgsql}
-CONFIGURE_ARGS+=	--with-postgres=no
-.else
-MULTI_PACKAGES+=	-pgsql
-COMMENT-pgsql=		PostgreSQL support for Asterisk
-WANTLIB-pgsql=		pq z
-LIB_DEPENDS-pgsql=	databases/postgresql
-.endif
-
-# jabber
-PSEUDO_FLAVORS+=	no_jabber
-.if ${FLAVOR:L:Mno_jabber}
-CONFIGURE_ARGS+=	--with-iksemel=no
-.else
-MULTI_PACKAGES+=	-jabber
-COMMENT-jabber=		Jabber support for Asterisk
-LIB_DEPENDS-jabber=	textproc/iksemel
-WANTLIB-jabber=		crypto iksemel ssl
-.endif
-
-# h323
-.if ${FLAVOR:L:Mh323}
-LIB_DEPENDS-main+=	::net/h323plus
-WANTLIB-main+=		SDL avutil expat h323.>=3 lber ldap ldap_r pt.>=3 sasl2
-.else
-CONFIGURE_ARGS+=	--with-pwlib=no \
-			--with-h323=no
-.endif
-
-# ldap
-PSEUDO_FLAVORS+=	no_ldap
-.if ${FLAVOR:L:Mno_ldap}
-CONFIGURE_ARGS+=	--with-ldap=no
-.else
-MULTI_PACKAGES+=	-ldap
-COMMENT-ldap=		LDAP support for Asterisk
-LIB_DEPENDS-ldap=	databases/openldap,-main
-WANTLIB-ldap=		ldap
-.endif
-
-# fax
-PSEUDO_FLAVORS+=	no_fax
-.if ${FLAVOR:L:Mno_fax}
-CONFIGURE_ARGS+=	--with-spandsp=no
-.else
-MULTI_PACKAGES+=	-fax
-COMMENT-fax=		FAX support for Asterisk
-LIB_DEPENDS-fax=	telephony/spandsp \
-			graphics/tiff
-WANTLIB-fax=		spandsp tiff
-.endif
-
 NO_REGRESS=		Yes
 INSTALL_TARGET=		install samples
 EXAMPLEDIR=		${PREFIX}/share/examples/asterisk
@@ -223,34 +235,31 @@ FULLPKGPATH$i ?=	${PKGPATH},$i
 RUN_DEPENDS$i +=	asterisk-${VER}:${PKGPATH}
 .endfor
 
-# we don't really want to drag in TeX as a dependency, but at least
-# allow the icons in the HTML docs to work if you already have latex2html
-# installed.
-pre-configure:
-	perl -pi -e 's,/usr/share/latex2html,${LOCALBASE}/share/latex2html,g' \
-	    ${WRKSRC}/doc/tex/asterisk/*
-
 post-patch:
+	@grep _VERSION:= ${WRKSRC}/sounds/Makefile # maintainer aid
+.for i in ${SOUNDS}
+	@echo ${SOUNDS_$i}
+.endfor
 	cd ${WRKSRC}; \
 	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 	    ./bootstrap.sh
-
-post-build:
-	cd ${WRKBUILD}; ${MAKE_PROGRAM} asterisk.txt
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/asterisk
 	${INSTALL_DATA} ${WRKSRC}/{BUGS,CHANGES,COPYING,CREDITS} \
 		${WRKSRC}/{ChangeLog,LICENSE,README*,UPGRADE*.txt} \
 		${PREFIX}/share/doc/asterisk
-	${INSTALL_DATA} `find ${WRKSRC}/doc -type f` \
+	${INSTALL_DATA} ${WRKSRC}/doc/*.{pdf,txt,odt} \
 		${PREFIX}/share/doc/asterisk
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}/openbsd
 .for i in ${EXAMPLEFILES}
 	@${SUBST_CMD} -c ${FILESDIR}/$i.sample \
 	    ${EXAMPLEDIR}/openbsd/$i.sample
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/contrib/scripts/asterisk.ldif \
+		${WRKSRC}/contrib/scripts/asterisk.ldap-schema \
+		${PREFIX}/share/examples/asterisk/
 	@mv ${WRKINST}/${SYSCONFDIR}/asterisk ${EXAMPLEDIR}/default
 	@mv ${WRKINST}/var/spool/asterisk/voicemail ${EXAMPLEDIR}/voicemail
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${EXAMPLEDIR}

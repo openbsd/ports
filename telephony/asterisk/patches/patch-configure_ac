@@ -1,7 +1,16 @@
-$OpenBSD: patch-configure_ac,v 1.13 2010/11/16 21:58:52 sthen Exp $
---- configure.ac.orig	Fri Sep 10 02:16:32 2010
-+++ configure.ac	Thu Nov 11 21:06:10 2010
-@@ -1294,7 +1294,7 @@ if test "${USE_IMAP_TK}" != "no"; then
+$OpenBSD: patch-configure_ac,v 1.14 2011/01/19 11:25:16 sthen Exp $
+--- configure.ac.orig	Wed Jan 12 16:52:31 2011
++++ configure.ac	Fri Jan 14 21:48:05 2011
+@@ -55,7 +55,7 @@ AC_SUBST([astvarrundir],      ['${localstatedir}/run/a
+ 
+ case "${host_os}" in
+      *bsd*)
+-     if test ${prefix} = 'NONE'; then
++     if test ${prefix} != 'NONE'; then
+         astvarlibdir='${prefix}/share/asterisk'
+         astdbdir='${localstatedir}/db/asterisk'
+      fi
+@@ -1492,7 +1492,7 @@ if test "${USE_IMAP_TK}" != "no"; then
  			)
  		else #looking in imap directory didn't work, try c-client
  			imap_ldflags=""
@@ -10,7 +19,7 @@ $OpenBSD: patch-configure_ac,v 1.13 2010/11/16 21:58:52 sthen Exp $
  			imap_include="-DUSE_SYSTEM_CCLIENT"
  			CPPFLAGS="${saved_cppflags}"
  			LIBS="${saved_libs}"
-@@ -1487,7 +1487,7 @@ AST_EXT_TOOL_CHECK([NETSNMP], [net-snmp], , [--agent-l
+@@ -1702,7 +1702,7 @@ AST_EXT_TOOL_CHECK([NETSNMP], [net-snmp-config], , [--
  
  AST_EXT_LIB_CHECK([NEWT], [newt], [newtBell], [newt.h])
  
@@ -19,7 +28,7 @@ $OpenBSD: patch-configure_ac,v 1.13 2010/11/16 21:58:52 sthen Exp $
  
  AST_EXT_LIB_CHECK([OGG], [ogg], [ogg_sync_init], [])
  
-@@ -1612,7 +1612,8 @@ if test "${PBX_PWLIB}" = "1" -a "${USE_OPENH323}" != "
+@@ -1854,7 +1854,8 @@ if test "${PBX_PWLIB}" = "1" -a "${USE_OPENH323}" != "
  	AST_CHECK_OPENH323()
  	AST_CHECK_PWLIB_VERSION([OpenH323], [OPENH323], [openh323buildopts.h], [1], [17], [3], [], [1], [19], [0])
  	AST_CHECK_OPENH323_BUILD()
@@ -29,7 +38,7 @@ $OpenBSD: patch-configure_ac,v 1.13 2010/11/16 21:58:52 sthen Exp $
  	AST_CHECK_PWLIB_BUILD([OpenH323], [OPENH323],
  		[Define if your system has the OpenH323 libraries.],
  		[#include "ptlib.h"
-@@ -1715,7 +1716,8 @@ AST_EXT_LIB_CHECK([USB], [usb], [usb_init], [usb.h], [
+@@ -2009,7 +2010,8 @@ AST_EXT_LIB_CHECK([USB], [usb], [usb_init], [usb.h], [
  
  if test "${OSARCH}" = "OpenBSD";
  then

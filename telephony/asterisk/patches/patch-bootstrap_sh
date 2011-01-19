@@ -1,60 +1,42 @@
-$OpenBSD: patch-bootstrap_sh,v 1.2 2009/12/13 12:11:29 sthen Exp $
---- bootstrap.sh.orig	Sun Oct 11 17:11:30 2009
-+++ bootstrap.sh	Sun Oct 11 17:10:37 2009
-@@ -9,29 +9,34 @@ check_for_app() {
+$OpenBSD: patch-bootstrap_sh,v 1.3 2011/01/19 11:25:16 sthen Exp $
+--- bootstrap.sh.orig	Tue May 11 17:43:07 2010
++++ bootstrap.sh	Tue Aug 24 21:02:59 2010
+@@ -9,25 +9,29 @@ check_for_app() {
  	fi
  }
  
 -# On FreeBSD and OpenBSD, multiple autoconf/automake versions have different names.
--# On linux, envitonment variables tell which one to use.
+-# On Linux, environment variables tell which one to use.
 +MY_AC_VER=
 +MY_AM_VER=
  
--uname -s | grep -q BSD
--if [ $? = 0 ] ; then	# BSD case
--	case `uname -sr` in
--		'FreeBSD 4'*)	# FreeBSD 4.x has a different naming
--			MY_AC_VER=259
--			MY_AM_VER=19
--			;;
--		*)
--			MY_AC_VER=-2.61
--			MY_AM_VER=-1.9
--			;;
--	esac
--else	# linux case
--	MY_AC_VER=
--	MY_AM_VER=
--	AUTOCONF_VERSION=2.60
--	AUTOMAKE_VERSION=1.9
--	export AUTOCONF_VERSION
--	export AUTOMAKE_VERSION
--fi
++
 +# On FreeBSD, multiple autoconf/automake versions have different names.
 +# On Linux and OpenBSD, environment variables tell which one to use.
 +
-+case `uname -sr` in
-+	'FreeBSD 4'*)	# FreeBSD 4.x has a different naming
-+		MY_AC_VER=259
-+		MY_AM_VER=19
-+		;;
+ case `uname -sr` in
+ 	'FreeBSD 4'*)	# FreeBSD 4.x has a different naming
+ 		MY_AC_VER=259
+ 		MY_AM_VER=19
+ 		;;
+-	*'BSD'*)
+-		MY_AC_VER=-2.62
+-		MY_AM_VER=-1.9
 +	OpenBSD*)
 +		[ -z "$AUTOCONF_VERSION" ] && AUTOCONF_VERSION=2.61
 +		[ -z "$AUTOMAKE_VERSION" ] && AUTOMAKE_VERSION=1.9
 +		export AUTOCONF_VERSION
 +		export AUTOMAKE_VERSION
-+		;;
+ 		;;
+-	*'SunOS '*)
+-		MY_AC_VER=
 +	*BSD*)
 +		MY_AC_VER=-2.61
-+		MY_AM_VER=-1.9
-+		;;
-+	*)
-+		AUTOCONF_VERSION=2.60
-+		AUTOMAKE_VERSION=1.9
-+		export AUTOCONF_VERSION
-+		export AUTOMAKE_VERSION
-+		;;
-+esac
- 
- check_for_app autoconf${MY_AC_VER}
- check_for_app autoheader${MY_AC_VER}
+ 		MY_AM_VER=-1.9
+ 		;;
+ 	*)
+-		MY_AC_VER=
+-		MY_AM_VER=
+ 		AUTOCONF_VERSION=2.60
+ 		AUTOMAKE_VERSION=1.9
+ 		export AUTOCONF_VERSION

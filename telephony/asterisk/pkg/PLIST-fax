@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-fax,v 1.2 2010/02/26 12:44:14 sthen Exp $
-@pkgpath telephony/asterisk,-fax,h323
-lib/asterisk/modules/app_fax.so

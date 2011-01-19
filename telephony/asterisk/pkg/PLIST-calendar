@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-calendar,v 1.1 2011/01/19 11:25:16 sthen Exp $
+lib/asterisk/modules/res_calendar.so
+lib/asterisk/modules/res_calendar_caldav.so
+lib/asterisk/modules/res_calendar_exchange.so
+lib/asterisk/modules/res_calendar_icalendar.so

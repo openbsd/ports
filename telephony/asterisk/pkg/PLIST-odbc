@@ -1,13 +1,12 @@
-@comment $OpenBSD: PLIST-odbc,v 1.3 2010/02/26 12:44:14 sthen Exp $
+@comment $OpenBSD: PLIST-odbc,v 1.4 2011/01/19 11:25:16 sthen Exp $
 @pkgpath telephony/asterisk,-odbc,h323
 include/asterisk/res_odbc.h
 lib/asterisk/modules/cdr_adaptive_odbc.so
 lib/asterisk/modules/cdr_odbc.so
+lib/asterisk/modules/cel_odbc.so
 lib/asterisk/modules/func_odbc.so
 lib/asterisk/modules/res_config_odbc.so
 lib/asterisk/modules/res_odbc.so
-share/doc/asterisk/odbcstorage.tex
-share/doc/asterisk/voicemail_odbc_postgresql.txt
 share/examples/asterisk/default/cdr_adaptive_odbc.conf
 @mode 640
 @owner root
@@ -21,6 +20,14 @@ share/examples/asterisk/default/cdr_odbc.conf
 @owner root
 @group _asterisk
 @sample ${SYSCONFDIR}/asterisk/cdr_odbc.conf
+@mode
+@owner
+@group
+share/examples/asterisk/default/cel_odbc.conf
+@mode 640
+@owner root
+@group _asterisk
+@sample ${SYSCONFDIR}/asterisk/cel_odbc.conf
 @mode
 @owner
 @group
