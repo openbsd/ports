@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2011/01/19 17:19:20 landry Exp $
+--- src/Makefile.in.orig	Wed Jan 19 12:24:00 2011
++++ src/Makefile.in	Wed Jan 19 12:24:26 2011
+@@ -48,7 +48,7 @@ bin_PROGRAMS = orage$(EXEEXT)
+ @INCLUDED_LIBICAL_TRUE@	$(top_builddir)/libical/src/libicalss/libicalss.la
+ 
+ @INCLUDED_LIBICAL_FALSE@am__append_3 = \
+-@INCLUDED_LIBICAL_FALSE@	$(LIBICAL_CFLAGS)
++@INCLUDED_LIBICAL_FALSE@	$(LIBICAL_CFLAGS) $(LIBICAL_CFLAGS)/libical/
+ 
+ @INCLUDED_LIBICAL_FALSE@am__append_4 = \
+ @INCLUDED_LIBICAL_FALSE@	$(LIBICAL_LIBS)
