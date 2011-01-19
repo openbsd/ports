@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.256 2011/01/09 09:36:57 landry Exp $
+# $OpenBSD: Makefile,v 1.257 2011/01/19 12:28:24 pea Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -193,6 +193,7 @@
      SUBDIR += ruby-mime
      SUBDIR += ruby-mime-types
      SUBDIR += ruby-rmail
+     SUBDIR += sieve-connect
      SUBDIR += signify
      SUBDIR += sma
      SUBDIR += smsmail
