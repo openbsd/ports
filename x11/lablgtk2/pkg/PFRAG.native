@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.native,v 1.4 2010/06/11 10:20:43 giovanni Exp $
+@comment $OpenBSD: PFRAG.native,v 1.5 2011/01/19 23:36:18 jasper Exp $
 lib/ocaml/lablgtk2/gAction.cmx
 lib/ocaml/lablgtk2/gAssistant.cmx
 lib/ocaml/lablgtk2/gBin.cmx
@@ -17,6 +17,7 @@ lib/ocaml/lablgtk2/gObj.cmx
 lib/ocaml/lablgtk2/gPack.cmx
 lib/ocaml/lablgtk2/gPango.cmx
 lib/ocaml/lablgtk2/gRange.cmx
+lib/ocaml/lablgtk2/gSourceView2.cmx
 lib/ocaml/lablgtk2/gText.cmx
 lib/ocaml/lablgtk2/gToolbox.cmx
 lib/ocaml/lablgtk2/gTree.cmx
@@ -52,6 +53,7 @@ lib/ocaml/lablgtk2/gtkObject.cmx
 lib/ocaml/lablgtk2/gtkPack.cmx
 lib/ocaml/lablgtk2/gtkRange.cmx
 lib/ocaml/lablgtk2/gtkSignal.cmx
+lib/ocaml/lablgtk2/gtkSourceView2.cmx
 lib/ocaml/lablgtk2/gtkStock.cmx
 lib/ocaml/lablgtk2/gtkText.cmx
 lib/ocaml/lablgtk2/gtkThread.cmx
@@ -65,9 +67,13 @@ lib/ocaml/lablgtk2/lablglade.cmxa
 lib/ocaml/lablgtk2/lablgtk.a
 lib/ocaml/lablgtk2/lablgtk.cmxa
 @bin lib/ocaml/lablgtk2/lablgtk.cmxs
+lib/ocaml/lablgtk2/lablgtksourceview2.a
+lib/ocaml/lablgtk2/lablgtksourceview2.cmxa
+@bin lib/ocaml/lablgtk2/lablgtksourceview2.cmxs
 lib/ocaml/lablgtk2/lablrsvg.a
 lib/ocaml/lablgtk2/lablrsvg.cmxa
 @bin lib/ocaml/lablgtk2/lablrsvg.cmxs
 lib/ocaml/lablgtk2/pango.cmx
 lib/ocaml/lablgtk2/pangoEnums.cmx
 lib/ocaml/lablgtk2/rsvg.cmx
+lib/ocaml/lablgtk2/sourceView2Enums.cmx

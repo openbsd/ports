@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/01/14 19:38:33 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/01/19 23:36:18 jasper Exp $
 %%SHARED%%
 bin/gdk_pixbuf_mlsource
 bin/lablgladecc2
@@ -60,7 +60,6 @@ lib/ocaml/lablgtk2/gRange.ml
 lib/ocaml/lablgtk2/gRange.mli
 lib/ocaml/lablgtk2/gSourceView.mli
 lib/ocaml/lablgtk2/gSourceView2.cmi
-lib/ocaml/lablgtk2/gSourceView2.cmx
 lib/ocaml/lablgtk2/gSourceView2.ml
 lib/ocaml/lablgtk2/gSourceView2.mli
 lib/ocaml/lablgtk2/gText.cmi
@@ -153,7 +152,6 @@ lib/ocaml/lablgtk2/gtkSignal.cmi
 lib/ocaml/lablgtk2/gtkSignal.ml
 lib/ocaml/lablgtk2/gtkSignal.mli
 lib/ocaml/lablgtk2/gtkSourceView2.cmi
-lib/ocaml/lablgtk2/gtkSourceView2.cmx
 lib/ocaml/lablgtk2/gtkSourceView2.ml
 lib/ocaml/lablgtk2/gtkSourceView2_types.mli
 lib/ocaml/lablgtk2/gtkSourceView_types.mli
@@ -179,10 +177,7 @@ lib/ocaml/lablgtk2/gutf8.ml
 lib/ocaml/lablgtk2/gutf8.mli
 lib/ocaml/lablgtk2/lablglade.cma
 lib/ocaml/lablgtk2/lablgtk.cma
-lib/ocaml/lablgtk2/lablgtksourceview2.a
 lib/ocaml/lablgtk2/lablgtksourceview2.cma
-lib/ocaml/lablgtk2/lablgtksourceview2.cmxa
-@bin lib/ocaml/lablgtk2/lablgtksourceview2.cmxs
 lib/ocaml/lablgtk2/lablrsvg.cma
 lib/ocaml/lablgtk2/liblablglade2.a
 lib/ocaml/lablgtk2/liblablgtk2.a
@@ -210,7 +205,6 @@ lib/ocaml/lablgtk2/rsvg.cmi
 lib/ocaml/lablgtk2/rsvg.ml
 lib/ocaml/lablgtk2/rsvg.mli
 lib/ocaml/lablgtk2/sourceView2Enums.cmi
-lib/ocaml/lablgtk2/sourceView2Enums.cmx
 lib/ocaml/lablgtk2/sourceView2Enums.ml
 lib/ocaml/lablgtk2/sourceView2_tags.h
 lib/ocaml/lablgtk2/varcc
