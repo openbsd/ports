@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Games_Logic_PuzzleExtraCircle_cs,v 1.1 2011/01/19 10:27:43 kevlo Exp $
+--- src/Games/Logic/PuzzleExtraCircle.cs.orig	Tue Jan 18 18:09:28 2011
++++ src/Games/Logic/PuzzleExtraCircle.cs	Tue Jan 18 18:09:55 2011
+@@ -43,7 +43,7 @@ namespace gbrainy.Games.Logic
+ 		{
+ 			public Color [] Colors {get; set; }
+ 
+-			public CircleParameters (Color [] colors)
++			public CircleParameters (Color [] colors) : this ()
+ 			{
+ 				Colors = colors;
+ 			}

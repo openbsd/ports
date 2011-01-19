@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2011/01/05 10:26:58 kevlo Exp $
+# $OpenBSD: Makefile,v 1.9 2011/01/19 10:27:43 kevlo Exp $
 
 COMMENT=	brain teaser game
 
-DISTNAME=	gbrainy-1.60
+DISTNAME=	gbrainy-1.61
 
 CATEGORIES=	games
 
@@ -30,7 +30,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gnome/yelp
 
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
