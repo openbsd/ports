@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2011/01/16 12:34:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2011/01/19 18:14:59 landry Exp $
 
 COMMENT =		the enlightened window manager
 DISTNAME =		enlightenment-0.16.999.54504
 EXTRACT_SUFX=		.tar.bz2
 
-REVISION =		0
+REVISION =		1
 EPOCH =			0
 
 # BSD
@@ -100,7 +100,7 @@ USE_LIBTOOL =		gnu
 USE_GMAKE =		Yes
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}
-SUBST_VARS +=		FULLARCH
+SUBST_VARS +=		FULLARCH OSREV
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/enlightenment
