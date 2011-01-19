@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/01/11 12:40:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/01/19 23:26:51 landry Exp $
 
 COMMENT =	Openstreetmap editor for handheld devices
 
 VERSION =	0.7.22
 DISTNAME =	osm2go_${VERSION}-maemo1
 PKGNAME =	osm2go-${VERSION}
-REVISION=	1
+REVISION=	2
 
 WRKDIST =	${WRKDIR}/osm2go-${VERSION}
 CATEGORIES =	geo x11
