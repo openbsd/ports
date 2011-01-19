@@ -1,0 +1,15 @@
+$OpenBSD: patch-x11vnc_options_c,v 1.1 2011/01/19 21:37:43 sthen Exp $
+
+don't use xrecord for now; https://bugs.freedesktop.org/show_bug.cgi?id=30032
+
+--- x11vnc/options.c.orig	Wed Jan 19 20:48:40 2011
++++ x11vnc/options.c	Wed Jan 19 20:48:52 2011
+@@ -240,7 +240,7 @@ time_t pad_geometry_time = 0;
+ int use_snapfb = 0;
+ 
+ int use_xrecord = 0;
+-int noxrecord = 0;
++int noxrecord = 1;
+ 
+ char *client_connect = NULL;	/* strings for -connect option */
+ char *client_connect_file = NULL;
