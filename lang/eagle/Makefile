@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/01/19 22:50:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/01/19 23:22:05 stu Exp $
 
 COMMENT =	Tcl implementation for the CLR
 
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	${HOMEPAGE:=releases/${V}.${P}/} \
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=eagle/} \
+		${HOMEPAGE:=releases/${V}.${P}/} \
 		http://distfiles.nl/
 DISTFILES =	EagleBinaryMonoOnUnix${V}.${P}.rar
 EXTRACT_CASES =	*.rar) ${LOCALBASE}/bin/unrar x -idq ${DISTDIR}/$$archive;;
