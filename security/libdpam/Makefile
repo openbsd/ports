@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2011/01/17 22:03:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/01/19 12:09:04 ajacoutot Exp $
 
 COMMENT=	dummy Pluggable Authentication Modules (PAM)
 
 SHARED_LIBS+=	pam	5.0
 
-V=		20110117
-DISTNAME=	libdpam-${V}
+DISTNAME=	libdpam-20110117
 CATEGORIES=	security
+
+REVISION=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
