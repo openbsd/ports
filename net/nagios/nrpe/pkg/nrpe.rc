@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: nrpe.rc,v 1.1 2011/01/20 14:04:42 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/nrpe"
+daemon_flags="-d"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

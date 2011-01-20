@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/11/13 08:33:16 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/01/20 14:04:42 sthen Exp $
 @newgroup _nrpe:556
 @newuser _nrpe:556:_nrpe:daemon:NRPE Account:/nonexistent:/sbin/nologin
 @bin libexec/nagios/check_nrpe
@@ -9,3 +9,4 @@ share/doc/nrpe/SECURITY
 share/examples/nrpe/
 share/examples/nrpe/nrpe.cfg
 @sample ${SYSCONFDIR}/nrpe.cfg
+@rcscript ${RCDIR}/nrpe
