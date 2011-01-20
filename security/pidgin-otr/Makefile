@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2011/01/15 16:39:13 fgsch Exp $
+# $OpenBSD: Makefile,v 1.14 2011/01/20 18:55:44 naddy Exp $
 
 COMMENT =	allows deniable private conversations using Pidgin
 
 DISTNAME =	pidgin-otr-3.2.0
 CATEGORIES =	security net
+EPOCH =		0
 REVISION =	0
 
 HOMEPAGE =	http://www.cypherpunks.ca/otr/
