@@ -1,0 +1,34 @@
+$OpenBSD: patch-setup_py,v 1.1 2011/01/20 18:55:17 jasper Exp $
+
+Don't bother installing regression tests.
+
+--- setup.py.orig	Thu Jan 20 19:54:05 2011
++++ setup.py	Thu Jan 20 19:54:07 2011
+@@ -50,17 +50,16 @@ if pieces[-1] == '':
+ else:
+     len_root_dir = len(pieces)
+ 
+-for directory in ('papyon', 'tests'):
+-    papyon_dir = os.path.join(root_dir, directory)
+-    for dirpath, dirnames, filenames in os.walk(papyon_dir):
+-        # Ignore dirnames that start with '.'
+-        for i, dirname in enumerate(dirnames):
+-            if dirname.startswith('.'):
+-                del dirnames[i]
+-        if '__init__.py' in filenames:
+-            packages.append('.'.join(path_split(dirpath)[len_root_dir:]))
+-        elif filenames:
+-            data_files.append([dirpath, [os.path.join(dirpath, f) for f in filenames]])
++papyon_dir = os.path.join(root_dir, 'papyon')
++for dirpath, dirnames, filenames in os.walk(papyon_dir):
++    # Ignore dirnames that start with '.'
++    for i, dirname in enumerate(dirnames):
++	if dirname.startswith('.'):
++	    del dirnames[i]
++    if '__init__.py' in filenames:
++	packages.append('.'.join(path_split(dirpath)[len_root_dir:]))
++    elif filenames:
++	data_files.append([dirpath, [os.path.join(dirpath, f) for f in filenames]])
+ 
+ # Setup
+ setup(name=NAME,

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/01/17 00:18:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/01/20 18:55:17 jasper Exp $
 @pkgpath net/pymsn
 lib/python${MODPY_VERSION}/site-packages/papyon/
 lib/python${MODPY_VERSION}/site-packages/papyon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -486,30 +486,3 @@ lib/python${MODPY_VERSION}/site-packages/papyon/util/tlv.py
 lib/python${MODPY_VERSION}/site-packages/papyon/util/tlv.pyc
 lib/python${MODPY_VERSION}/site-packages/papyon/util/weak.py
 lib/python${MODPY_VERSION}/site-packages/papyon/util/weak.pyc
-lib/python${MODPY_VERSION}/site-packages/tests/
-lib/python${MODPY_VERSION}/site-packages/tests/__init__.py
-lib/python${MODPY_VERSION}/site-packages/tests/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/tests/base.py
-lib/python${MODPY_VERSION}/site-packages/tests/base.pyc
-lib/python${MODPY_VERSION}/site-packages/tests/test_content_roaming.py
-lib/python${MODPY_VERSION}/site-packages/tests/test_content_roaming.pyc
-lib/python${MODPY_VERSION}/site-packages/tests/test_conversation.py
-lib/python${MODPY_VERSION}/site-packages/tests/test_conversation.pyc
-lib/python${MODPY_VERSION}/site-packages/tests/test_echo_server.py
-lib/python${MODPY_VERSION}/site-packages/tests/test_echo_server.pyc
-lib/python${MODPY_VERSION}/site-packages/tests/test_file_transfer.py
-lib/python${MODPY_VERSION}/site-packages/tests/test_file_transfer.pyc
-lib/python${MODPY_VERSION}/site-packages/tests/test_ice.py
-lib/python${MODPY_VERSION}/site-packages/tests/test_ice.pyc
-lib/python${MODPY_VERSION}/site-packages/tests/test_msn_object.py
-lib/python${MODPY_VERSION}/site-packages/tests/test_msn_object.pyc
-lib/python${MODPY_VERSION}/site-packages/tests/test_offline_message_box.py
-lib/python${MODPY_VERSION}/site-packages/tests/test_offline_message_box.pyc
-lib/python${MODPY_VERSION}/site-packages/tests/test_sdp.py
-lib/python${MODPY_VERSION}/site-packages/tests/test_sdp.pyc
-lib/python${MODPY_VERSION}/site-packages/tests/test_sip.py
-lib/python${MODPY_VERSION}/site-packages/tests/test_sip.pyc
-lib/python${MODPY_VERSION}/site-packages/tests/test_sip_client.py
-lib/python${MODPY_VERSION}/site-packages/tests/test_sip_client.pyc
-lib/python${MODPY_VERSION}/site-packages/tests/test_webcam.py
-lib/python${MODPY_VERSION}/site-packages/tests/test_webcam.pyc
