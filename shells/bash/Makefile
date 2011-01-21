@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.63 2010/11/20 17:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2011/01/21 11:25:03 sebastia Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
+REVISION =	0
 DISTNAME=	bash-4.1
 PKGNAME=	${DISTNAME}.9
 CATEGORIES=	shells
@@ -32,5 +33,9 @@ WANTLIB=	c termcap
 
 CONFIGURE_STYLE=gnu
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/support
+
+.if ${MACHINE_ARCH} == "m88k" || ${MACHINE_ARCH} == "vax"
+CONFIGURE_ARGS +=       --enable-static-link
+.endif
 
 .include <bsd.port.mk>
