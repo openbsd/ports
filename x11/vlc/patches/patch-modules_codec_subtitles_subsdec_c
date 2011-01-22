@@ -1,0 +1,13 @@
+$OpenBSD: patch-modules_codec_subtitles_subsdec_c,v 1.1 2011/01/22 09:10:22 ajacoutot Exp $
+--- modules/codec/subtitles/subsdec.c.orig	Wed Jan 19 20:21:31 2011
++++ modules/codec/subtitles/subsdec.c	Wed Jan 19 20:26:07 2011
+@@ -618,6 +618,9 @@ static char *StripTags( char *psz_subtitle )
+             *psz_text++ = *psz_subtitle;
+         }
+ 
++        /* Security fix: Account for the case where input ends early */
++        if( *psz_subtitle == '\0' ) break;
++
+         psz_subtitle++;
+     }
+     *psz_text = '\0';
