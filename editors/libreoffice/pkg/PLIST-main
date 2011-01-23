@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/01/14 19:55:55 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2011/01/23 13:31:11 espie Exp $
 @conflict openoffice-*
 %%SHARED%%
 bin/libreoffice
@@ -2367,6 +2367,8 @@ lib/libreoffice/share/extensions/presenter-screen/registry/schema/org/openoffice
 lib/libreoffice/share/extensions/presenter-screen/registry/schema/org/openoffice/Office/
 lib/libreoffice/share/extensions/presenter-screen/registry/schema/org/openoffice/Office/extension/
 lib/libreoffice/share/extensions/presenter-screen/registry/schema/org/openoffice/Office/extension/PresenterScreen.xcs
+lib/libreoffice/share/extensions/wiki-publisher/
+lib/libreoffice/share/extensions/wiki-publisher/help/
 lib/libreoffice/share/prereg/
 lib/libreoffice/share/registry/
 lib/libreoffice/share/registry/brand.xcd

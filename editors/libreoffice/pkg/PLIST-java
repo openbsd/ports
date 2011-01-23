@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-java,v 1.3 2010/12/20 09:07:49 robert Exp $
+@comment $OpenBSD: PLIST-java,v 1.4 2011/01/23 13:31:11 espie Exp $
 @conflict openoffice-java-*
 %%SHARED%%
 lib/libreoffice/basis${BV}/help/en/sbasic.idxl/
@@ -145,7 +145,6 @@ lib/libreoffice/share/extensions/report-builder/template/en-US/
 lib/libreoffice/share/extensions/report-builder/template/en-US/wizard/
 lib/libreoffice/share/extensions/report-builder/template/en-US/wizard/report/
 lib/libreoffice/share/extensions/report-builder/template/en-US/wizard/report/default.otr
-lib/libreoffice/share/extensions/wiki-publisher/
 lib/libreoffice/share/extensions/wiki-publisher/Addons.xcu
 lib/libreoffice/share/extensions/wiki-publisher/Filter.xcu
 lib/libreoffice/share/extensions/wiki-publisher/META-INF/
@@ -178,7 +177,6 @@ lib/libreoffice/share/extensions/wiki-publisher/filter/math/scripts.xsl
 lib/libreoffice/share/extensions/wiki-publisher/filter/math/tables.xsl
 lib/libreoffice/share/extensions/wiki-publisher/filter/math/tokens.xsl
 lib/libreoffice/share/extensions/wiki-publisher/filter/odt2mediawiki.xsl
-lib/libreoffice/share/extensions/wiki-publisher/help/
 lib/libreoffice/share/extensions/wiki-publisher/help/component.txt
 lib/libreoffice/share/extensions/wiki-publisher/help/en/
 lib/libreoffice/share/extensions/wiki-publisher/help/en-US/
