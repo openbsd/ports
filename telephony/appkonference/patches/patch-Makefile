@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2009/12/13 12:24:49 sthen Exp $
---- konference/Makefile.orig	Wed Jul 22 16:27:32 2009
-+++ konference/Makefile	Mon Sep 21 22:35:02 2009
-@@ -60,7 +60,7 @@ INSTALL = install
+$OpenBSD: patch-Makefile,v 1.2 2011/01/24 08:23:27 sthen Exp $
+--- konference/Makefile.orig	Wed Aug 18 17:02:38 2010
++++ konference/Makefile	Sat Jan 22 20:19:21 2011
+@@ -66,7 +66,7 @@ INSTALL = install
  INCLUDE = -I$(ASTERISK_INCLUDE_DIR)
  DEBUG := -g
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2009/12/13 12:24:49 sthen Exp $
  CPPFLAGS = $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE -DRELEASE=\"$(RELEASE)\"
  #CFLAGS += -O2
  #CFLAGS += -O3 -march=pentium3 -msse -mfpmath=sse,387 -ffast-math
-@@ -72,7 +72,7 @@ CPPFLAGS = $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE -DREL
+@@ -78,7 +78,7 @@ CPPFLAGS = $(INCLUDE) -D_REENTRANT -D_GNU_SOURCE -DREL
  # adding -msse -mfpmath=sse has little effect.
  #CFLAGS += -O3 -msse -mfpmath=sse
  #CFLAGS += $(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2009/12/13 12:24:49 sthen Exp $
  CFLAGS += -fPIC
  CPPFLAGS += -DCRYPTO
  CPPFLAGS += -DCHANNEL_TABLE_SIZE=$(CHANNEL_TABLE_SIZE)
-@@ -116,7 +116,7 @@ OSARCH=$(shell uname -s)
+@@ -137,7 +137,7 @@ OSARCH=$(shell uname -s)
  ifeq (${OSARCH},Darwin)
  SOLINK=-dynamic -bundle -undefined suppress -force_flat_namespace
  else
@@ -28,7 +28,7 @@ $OpenBSD: patch-Makefile,v 1.1.1.1 2009/12/13 12:24:49 sthen Exp $
  endif
  
  DEPS += $(subst .o,.d,$(OBJS))
-@@ -136,7 +136,7 @@ distclean: clean
+@@ -157,7 +157,7 @@ distclean: clean
  	$(RM) $(TARGET)
  
  $(TARGET): $(OBJS)

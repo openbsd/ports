@@ -1,0 +1,58 @@
+$OpenBSD: patch-konference_conference_c,v 1.1 2011/01/24 08:23:27 sthen Exp $
+
+asterisk 1.8 support; https://gist.github.com/661206
+
+--- konference/conference.c.orig	Wed Aug 18 15:56:23 2010
++++ konference/conference.c	Sat Jan 22 20:19:21 2011
+@@ -1213,7 +1213,7 @@ void remove_member( struct ast_conf_member* member, st
+ #endif
+ 	ast_rwlock_unlock( &conf->lock );
+ 
+-	DEBUG("removed member from conference, name => %s, remaining => %d\n", member->conf_name, membercount) ;
++	DEBUG("removed member from conference, name => %s, remaining => %d\n", conf->name, membercount) ;
+ 
+ 	// remove member from channel table
+ 	if ( member->bucket != NULL )
+@@ -1221,7 +1221,7 @@ void remove_member( struct ast_conf_member* member, st
+ 		AST_LIST_LOCK (member->bucket ) ;
+ 		AST_LIST_REMOVE (member->bucket, member, hash_entry) ;
+ 		AST_LIST_UNLOCK (member->bucket ) ;
+-		DEBUG("Removed %s from the channel table, bucket => %ld\n", member->chan->name, member->bucket - channel_table) ;
++		DEBUG("Removed %s from the channel table, bucket => %d\n", member->chan->name, member->bucket - channel_table) ;
+ 	}
+ 
+ 	// output to manager...
+@@ -1245,8 +1245,8 @@ void remove_member( struct ast_conf_member* member, st
+ 		member->id,
+ 		member->flags,
+ 		member->chan->name,
+-		member->chan->cid.cid_num ? member->chan->cid.cid_num : "unknown",
+-		member->chan->cid.cid_name ? member->chan->cid.cid_name: "unknown",
++		member->chan->caller.id.number.str ? member->chan->caller.id.number.str : "unknown",
++		member->chan->caller.id.name.str ? member->chan->caller.id.name.str: "unknown",
+ 		tt,
+ 		moderators,
+ 		membercount
+@@ -1469,8 +1469,8 @@ int manager_conference_list( struct mansession *s, con
+ 						conf->name,
+ 						member->id,
+ 						member->chan->name,
+-						member->chan->cid.cid_num ? member->chan->cid.cid_num : "unknown",
+-						member->chan->cid.cid_name ? member->chan->cid.cid_name : "unknown",
++						member->chan->caller.id.number.str ? member->chan->caller.id.number.str : "unknown",
++						member->chan->caller.id.name.str ? member->chan->caller.id.name.str : "unknown",
+ 						member->mute_audio ? "YES" : "NO",
+ #ifdef	VIDEO
+ 						member->mute_video ? "YES" : "NO",
+@@ -2081,9 +2081,11 @@ static void do_VAD_switching(struct ast_conference *co
+ 	      member != NULL ;
+ 	      member = member->next )
+ 	{
++#if ( SILDET == 2 )
+ 		// If a member connects via telephone, they don't have video
+ 		if ( member->via_telephone )
+ 			continue;
++#endif
+ 
+ 		// We check for no VAD switching, video-muted or camera disabled
+ 		// If yes, this member will not be considered as a candidate for switching

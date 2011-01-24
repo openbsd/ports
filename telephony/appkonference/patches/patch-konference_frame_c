@@ -1,0 +1,42 @@
+$OpenBSD: patch-konference_frame_c,v 1.1 2011/01/24 08:23:27 sthen Exp $
+
+asterisk 1.8 support; https://gist.github.com/661206
+
+--- konference/frame.c.orig	Tue Aug 17 15:58:07 2010
++++ konference/frame.c	Sat Jan 22 20:19:21 2011
+@@ -398,9 +398,9 @@ struct ast_frame* convert_frame_to_slinear( struct ast
+ 	// the normal translation would free it anyway, so
+ 	// we'll just pretend we free'd and malloc'd a new one.
+ #ifndef	AC_USE_G722
+-	if ( fr->subclass == AST_FORMAT_SLINEAR )
++	if ( fr->subclass.integer == AST_FORMAT_SLINEAR )
+ #else
+-	if ( fr->subclass == AST_FORMAT_SLINEAR16 )
++	if ( fr->subclass.integer == AST_FORMAT_SLINEAR16 )
+ #endif
+ 		return fr ;
+ 
+@@ -433,9 +433,9 @@ struct ast_frame* convert_frame_from_slinear( struct a
+ 
+ 	// if the frame is not slinear, return an error
+ #ifndef	AC_USE_G722
+-	if ( fr->subclass != AST_FORMAT_SLINEAR )
++	if ( fr->subclass.integer != AST_FORMAT_SLINEAR )
+ #else
+-	if ( fr->subclass != AST_FORMAT_SLINEAR16 )
++	if ( fr->subclass.integer != AST_FORMAT_SLINEAR16 )
+ #endif
+ 	{
+ 		ast_log( LOG_ERROR, "unable to translate non-slinear frame\n" ) ;
+@@ -647,9 +647,9 @@ struct ast_frame* create_slinear_frame( char* data )
+ 
+ 	f->frametype = AST_FRAME_VOICE ;
+ #ifndef	AC_USE_G722
+-	f->subclass = AST_FORMAT_SLINEAR ;
++	f->subclass.integer = AST_FORMAT_SLINEAR ;
+ #else
+-	f->subclass = AST_FORMAT_SLINEAR16 ;
++	f->subclass.integer = AST_FORMAT_SLINEAR16 ;
+ #endif
+ 	f->samples = AST_CONF_BLOCK_SAMPLES ;
+ 	f->offset = AST_FRIENDLY_OFFSET ;
