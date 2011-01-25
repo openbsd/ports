@@ -1,15 +1,14 @@
-$OpenBSD: patch-bsd_c,v 1.11 2011/01/17 18:03:49 sebastia Exp $
+$OpenBSD: patch-bsd_c,v 1.12 2011/01/25 21:04:16 jakemsr Exp $
 
-usb_os_find_busses(): these ioctls only need read access.  do not
-  force read-write access to /dev/usb* to use libusb.
+usb_os_find_busses(): don't access to the bus.  just say there
+  is one.
 
-usb_os_find_devices(): ugen(4) aren't necessarily the first driver
-  to attach to the device, since ugen can attach to unclaimed
-  interfaces.
+usb_os_find_devices(): only ugen(4) are supported, so just probe
+  /dev/ugen*.
 
 
---- bsd.c.orig	Sat Mar  4 03:52:46 2006
-+++ bsd.c	Mon Jan 17 08:24:49 2011
+--- bsd.c.orig	Fri Mar  3 18:52:46 2006
++++ bsd.c	Mon Jan 24 23:46:26 2011
 @@ -361,7 +361,7 @@ int usb_bulk_read(usb_dev_handle *dev, int ep, char *b
  int usb_interrupt_write(usb_dev_handle *dev, int ep, char *bytes, int size,
                          int timeout)
@@ -70,7 +69,7 @@ usb_os_find_devices(): ugen(4) aren't necessarily the first driver
  }
  
  int usb_control_msg(usb_dev_handle *dev, int requesttype, int request,
-@@ -477,7 +469,7 @@ int usb_control_msg(usb_dev_handle *dev, int requestty
+@@ -477,45 +469,28 @@ int usb_control_msg(usb_dev_handle *dev, int requestty
      USB_ERROR_STR(-errno, "error sending control message: %s",
                    strerror(errno));
  
@@ -79,60 +78,149 @@ usb_os_find_devices(): ugen(4) aren't necessarily the first driver
  }
  
  int usb_os_find_busses(struct usb_bus **busses)
-@@ -491,7 +483,7 @@ int usb_os_find_busses(struct usb_bus **busses)
-     struct usb_bus *bus;
- 
-     snprintf(buf, sizeof(buf) - 1, "/dev/usb%d", controller);
--    fd = open(buf, O_RDWR);
-+    fd = open(buf, O_RDONLY);
-     if (fd < 0) {
-       if (usb_debug >= 2)
-         if (errno != ENXIO && errno != ENOENT)
-@@ -525,7 +517,8 @@ int usb_os_find_devices(struct usb_bus *bus, struct us
  {
-   struct usb_device *fdev = NULL;
-   int cfd, dfd;
--  int device;
-+  int device, i;
+   struct usb_bus *fbus = NULL;
+-  int controller;
+-  int fd;
+-  char buf[20];
++  struct usb_bus *bus;
+ 
+-  for (controller = 0; controller < MAX_CONTROLLERS; controller++) {
+-    struct usb_bus *bus;
++  /* just one bus that always exists.  this is faked, so we don't have
++   * to give access to the bus.
++   */
+ 
+-    snprintf(buf, sizeof(buf) - 1, "/dev/usb%d", controller);
+-    fd = open(buf, O_RDWR);
+-    if (fd < 0) {
+-      if (usb_debug >= 2)
+-        if (errno != ENXIO && errno != ENOENT)
+-          fprintf(stderr, "usb_os_find_busses: can't open %s: %s\n",
+-                  buf, strerror(errno));
+-      continue;
+-    }
+-    close(fd);
++  bus = malloc(sizeof(*bus));
++  if (!bus)
++    USB_ERROR(-ENOMEM);
+ 
+-    bus = malloc(sizeof(*bus));
+-    if (!bus)
+-      USB_ERROR(-ENOMEM);
++  memset((void *)bus, 0, sizeof(*bus));
+ 
+-    memset((void *)bus, 0, sizeof(*bus));
++  snprintf(bus->dirname, sizeof(bus->dirname), "/dev/usb");
+ 
+-    strncpy(bus->dirname, buf, sizeof(bus->dirname) - 1);
+-    bus->dirname[sizeof(bus->dirname) - 1] = 0;
++  LIST_ADD(fbus, bus);
+ 
+-    LIST_ADD(fbus, bus);
+-
+-    if (usb_debug >= 2)
+-      fprintf(stderr, "usb_os_find_busses: Found %s\n", bus->dirname);
+-  }
+-
+   *busses = fbus;
+ 
+   return 0;
+@@ -523,43 +498,27 @@ int usb_os_find_busses(struct usb_bus **busses)
+ 
+ int usb_os_find_devices(struct usb_bus *bus, struct usb_device **devices)
+ {
++  struct usb_device *dev;
++  unsigned char device_desc[DEVICE_DESC_LENGTH];
++  char devnode[USB_MAX_DEVNAMELEN];
 +  char devname[USB_MAX_DEVNAMELEN];
+   struct usb_device *fdev = NULL;
+-  int cfd, dfd;
+-  int device;
++  int fd, i;
  
-   cfd = open(bus->dirname, O_RDONLY);
-   if (cfd < 0)
-@@ -543,15 +536,20 @@ int usb_os_find_devices(struct usb_bus *bus, struct us
-       continue;
+-  cfd = open(bus->dirname, O_RDONLY);
+-  if (cfd < 0)
+-    USB_ERROR_STR(-errno, "couldn't open(%s): %s", bus->dirname,
+-                  strerror(errno));
++  /* USB_MAX_DEVICES is the max # of all devices per bus.  this is
++   * only for ugen(4) devices, but on all buses.  is 32 enough?
++   */
++  for (i = 0; i < 32 /* USB_MAX_DEVICES */; i++) {
++    snprintf(devname, sizeof(devname), "/dev/ugen%d", i);
  
-     /* There's a device; is it one we should mess with? */
+-  for (device = 1; device < USB_MAX_DEVICES; device++) {
+-    struct usb_device_info di;
+-    struct usb_device *dev;
+-    unsigned char device_desc[DEVICE_DESC_LENGTH];
+-    char buf[20];
++    /* device control node */
++    snprintf(devnode, sizeof(devnode), "%s.00", devname);
+ 
+-    di.udi_addr = device;
+-    if (ioctl(cfd, USB_DEVICEINFO, &di) < 0)
+-      continue;
+-
+-    /* There's a device; is it one we should mess with? */
 -
 -    if (strncmp(di.udi_devnames[0], "ugen", 4) != 0)
 -      /* best not to play with things we don't understand */
-+    devname[0] = '\0';
-+    for (i = 0; i < USB_MAX_DEVNAMES; i++) {
-+      if (strncmp(di.udi_devnames[i], "ugen", 4) == 0) {
-+	snprintf(devname, sizeof(devname), di.udi_devnames[i]);
-+        break;
-+      }
-+    }
-+    if (devname[0] == '\0')
-       continue;
- 
- #ifdef __FreeBSD_kernel__
-     snprintf(buf, sizeof(buf) - 1, "/dev/%s", di.udi_devnames[0]);
- #else
--    snprintf(buf, sizeof(buf) - 1, "/dev/%s.00", di.udi_devnames[0]);
-+    snprintf(buf, sizeof(buf) - 1, "/dev/%s.00", devname);
- #endif
- 
-     /* Open its control endpoint */
-@@ -575,7 +573,7 @@ int usb_os_find_devices(struct usb_bus *bus, struct us
-      * This seemed easier than having 2 variables...
-      */
- #if (__NetBSD__ || __OpenBSD__)
+-      continue;
+-
+-#ifdef __FreeBSD_kernel__
 -    snprintf(buf, sizeof(buf) - 1, "/dev/%s", di.udi_devnames[0]);
-+    snprintf(buf, sizeof(buf) - 1, "/dev/%s", devname);
- #endif
+-#else
+-    snprintf(buf, sizeof(buf) - 1, "/dev/%s.00", di.udi_devnames[0]);
+-#endif
+-
+-    /* Open its control endpoint */
+-    dfd = open(buf, O_RDONLY);
+-    if (dfd < 0) {
++    fd = open(devnode, O_RDONLY);
++    if (fd < 0) {
+       if (usb_debug >= 2)
+         fprintf(stderr, "usb_os_find_devices: couldn't open device %s: %s\n",
+-                buf, strerror(errno));
++                devname, strerror(errno));
+       continue;
+     }
  
-     strncpy(dev->filename, buf, sizeof(dev->filename) - 1);
-@@ -623,9 +621,21 @@ int usb_resetep(usb_dev_handle *dev, unsigned int ep)
+@@ -571,21 +530,13 @@ int usb_os_find_devices(struct usb_bus *bus, struct us
+ 
+     dev->bus = bus;
+ 
+-    /* we need to report the device name as /dev/ugenx NOT /dev/ugenx.00
+-     * This seemed easier than having 2 variables...
+-     */
+-#if (__NetBSD__ || __OpenBSD__)
+-    snprintf(buf, sizeof(buf) - 1, "/dev/%s", di.udi_devnames[0]);
+-#endif
++    strlcpy(dev->filename, devname, sizeof(dev->filename));
+ 
+-    strncpy(dev->filename, buf, sizeof(dev->filename) - 1);
+-    dev->filename[sizeof(dev->filename) - 1] = 0;
+-
+-    if (ioctl(dfd, USB_GET_DEVICE_DESC, device_desc) < 0)
++    if (ioctl(fd, USB_GET_DEVICE_DESC, device_desc) < 0)
+       USB_ERROR_STR(-errno, "couldn't get device descriptor for %s: %s",
+-                    buf, strerror(errno));
++                    devname, strerror(errno));
+ 
+-    close(dfd);
++    close(fd);
+ 
+     usb_parse_descriptor(device_desc, "bbwbbbbwwwbbbb", &dev->descriptor);
+ 
+@@ -596,8 +547,6 @@ int usb_os_find_devices(struct usb_bus *bus, struct us
+               dev->filename, bus->dirname);
+   }
+ 
+-  close(cfd);
+-
+   *devices = fdev;
+ 
+   return 0;
+@@ -623,9 +572,21 @@ int usb_resetep(usb_dev_handle *dev, unsigned int ep)
  
  int usb_clear_halt(usb_dev_handle *dev, unsigned int ep)
  {
