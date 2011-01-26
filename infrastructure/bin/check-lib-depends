@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.7 2010/12/24 10:31:40 espie Exp $
+# $OpenBSD: check-lib-depends,v 1.8 2011/01/26 12:53:46 ajacoutot Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -432,7 +432,8 @@ sub analyze
 		$extra->{$k} = 1;
 	}
 	$self->print_list($state, "Extra: ", $extra);
-	$self->print_list($state, "\tWANTLIB +=", $r->{wantlib});
+	print "\n";
+	$self->print_list($state, "WANTLIB +=", $r->{wantlib});
 	if ($state->{full}) {
 		$needed_libs->dump(\*STDOUT);
 	}
