@@ -1,0 +1,28 @@
+$OpenBSD: patch-gfx_qcms_iccread_c,v 1.1 2011/01/28 21:38:12 landry Exp $
+Fix crash on sparc64
+https://bugzilla.mozilla.org/show_bug.cgi?id=629057
+http://hg.mozilla.org/mozilla-central/rev/e8207773d54d
+--- gfx/qcms/iccread.c.orig	Tue Nov 30 14:49:19 2010
++++ gfx/qcms/iccread.c	Thu Jan 27 23:31:50 2011
+@@ -87,7 +87,9 @@ static uint32_t read_u32(struct mem_source *mem, size_
+ 		invalid_source(mem, "Invalid offset");
+ 		return 0;
+ 	} else {
+-		return be32_to_cpu(*(__be32*)(mem->buf + offset));
++		__be32 k;
++		memcpy(&k, mem->buf + offset, sizeof(__be32));
++		return be32_to_cpu(k);
+ 	}
+ }
+ 
+@@ -97,7 +99,9 @@ static uint16_t read_u16(struct mem_source *mem, size_
+ 		invalid_source(mem, "Invalid offset");
+ 		return 0;
+ 	} else {
+-		return be16_to_cpu(*(__be16*)(mem->buf + offset));
++		__be16 k;
++		memcpy(&k, mem->buf + offset, sizeof(__be16));
++		return be16_to_cpu(k);
+ 	}
+ }
+ 
