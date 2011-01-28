@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2011/01/28 10:29:28 ratchov Exp $
+# $OpenBSD: Makefile,v 1.14 2011/01/28 10:36:09 ratchov Exp $
  
 COMMENT=		command line MIDI sequencer and filter
-DISTNAME=		midish-1.0.6
+DISTNAME=		midish-1.0.4
 CATEGORIES=		audio
 HOMEPAGE=		http://caoua.org/midish/	
 MAINTAINER=		Alexandre Ratchov <alex@caoua.org>
