@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2011/01/30 09:38:41 ajacoutot Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
@@ -34,7 +34,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 # needed for is_ppc_file() in ddd/filetype.C
 .if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
-LIB_DEPENDS+=	elf::devel/libelf
+LIB_DEPENDS+=	devel/libelf
+WANTLIB +=	elf
 .endif
 
 SEPARATE_BUILD=	simple
