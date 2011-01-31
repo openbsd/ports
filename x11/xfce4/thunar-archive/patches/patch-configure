@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1 2011/01/18 20:52:20 landry Exp $
---- configure.orig	Sat Jan 15 23:21:26 2011
-+++ configure	Sat Jan 15 23:21:44 2011
+$OpenBSD: patch-configure,v 1.2 2011/01/31 15:34:23 landry Exp $
+--- configure.orig	Sat Jan 20 11:44:59 2007
++++ configure	Sat Jan 29 08:50:01 2011
 @@ -22113,22 +22113,22 @@ echo "${ECHO_T}$xdt_cv_PKG_CONFIG_VERSION" >&6
    fi
  
@@ -61,3 +61,67 @@ $OpenBSD: patch-configure,v 1.1 2011/01/18 20:52:20 landry Exp $
        echo "*** the PKG_CONFIG_PATH environment variable if you"
        echo "*** installed the package in a nonstandard prefix so that"
        echo "*** pkg-config is able to find it."
+@@ -22248,63 +22248,6 @@ echo "${ECHO_T}$xdt_cv_PKG_CONFIG_VERSION" >&6
+       exit 1
+     fi
+   fi
+-
+-
+-  echo "$as_me:$LINENO: checking for thunar-vfs-1 >= 0.4.0" >&5
+-echo $ECHO_N "checking for thunar-vfs-1 >= 0.4.0... $ECHO_C" >&6
+-  if $PKG_CONFIG "--atleast-version=0.4.0" "thunar-vfs-1" >/dev/null 2>&1; then
+-    THUNAR_VFS_VERSION=`$PKG_CONFIG --modversion "thunar-vfs-1"`
+-    echo "$as_me:$LINENO: result: $THUNAR_VFS_VERSION" >&5
+-echo "${ECHO_T}$THUNAR_VFS_VERSION" >&6
+-
+-    echo "$as_me:$LINENO: checking THUNAR_VFS_CFLAGS" >&5
+-echo $ECHO_N "checking THUNAR_VFS_CFLAGS... $ECHO_C" >&6
+-    THUNAR_VFS_CFLAGS=`$PKG_CONFIG --cflags "thunar-vfs-1"`
+-    echo "$as_me:$LINENO: result: $THUNAR_VFS_CFLAGS" >&5
+-echo "${ECHO_T}$THUNAR_VFS_CFLAGS" >&6
+-
+-    echo "$as_me:$LINENO: checking THUNAR_VFS_LIBS" >&5
+-echo $ECHO_N "checking THUNAR_VFS_LIBS... $ECHO_C" >&6
+-    THUNAR_VFS_LIBS=`$PKG_CONFIG --libs "thunar-vfs-1"`
+-    echo "$as_me:$LINENO: result: $THUNAR_VFS_LIBS" >&5
+-echo "${ECHO_T}$THUNAR_VFS_LIBS" >&6
+-
+-    THUNAR_VFS_REQUIRED_VERSION=0.4.0
+-
+-
+-
+-
+-
+-
+-
+-  elif $PKG_CONFIG --exists "thunar-vfs-1" >/dev/null 2>&1; then
+-    xdt_cv_version=`$PKG_CONFIG --modversion "thunar-vfs-1"`
+-    echo "$as_me:$LINENO: result: found, but $xdt_cv_version" >&5
+-echo "${ECHO_T}found, but $xdt_cv_version" >&6
+-
+-
+-      echo "*** The required package thunar-vfs-1 was found on your system,"
+-      echo "*** but the installed version ($xdt_cv_version) is too old."
+-      echo "*** Please upgrade thunar-vfs-1 to atleast version 0.4.0, or adjust"
+-      echo "*** the PKG_CONFIG_PATH environment variable if you installed"
+-      echo "*** the new version of the package in a nonstandard prefix so"
+-      echo "*** pkg-config is able to find it."
+-      exit 1
+-
+-  else
+-    echo "$as_me:$LINENO: result: not found" >&5
+-echo "${ECHO_T}not found" >&6
+-
+-
+-      echo "*** The required package thunar-vfs-1 was not found on your system."
+-      echo "*** Please install thunar-vfs-1 (atleast version 0.4.0) or adjust"
+-      echo "*** the PKG_CONFIG_PATH environment variable if you"
+-      echo "*** installed the package in a nonstandard prefix so that"
+-      echo "*** pkg-config is able to find it."
+-      exit 1
+-
+-  fi
+-
+ 
+ # Check whether --enable-debug or --disable-debug was given.
+ if test "${enable_debug+set}" = set; then
