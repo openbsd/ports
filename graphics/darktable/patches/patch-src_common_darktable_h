@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_common_darktable_h,v 1.1 2011/01/31 23:20:23 sthen Exp $
+
+XXX wrong on most i386, broken on !i386, hack it away for now.
+
+--- src/common/darktable.h.orig	Mon Jan 31 22:30:10 2011
++++ src/common/darktable.h	Mon Jan 31 22:31:11 2011
+@@ -142,10 +142,14 @@ static inline double dt_get_wtime()
+ #ifdef _OPENMP
+   return omp_get_wtime();
+ #else
++ #if defined(__i386__)
+   // FIXME: this assumes 2.4 GHz
+   uint64_t val;
+   __asm__ __volatile__("rdtsc": "=A"(val));
+   return val/2400000000.0f;
++ #else
++  return 0;
++ #endif
+ #endif
+ }
+ 
