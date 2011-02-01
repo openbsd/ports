@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/11/30 07:17:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2011/02/01 13:47:04 giovanni Exp $
 
 COMMENT-main =		SOAP implementation in C
 COMMENT-gnome =		GNOME specific libsoup parts
@@ -8,6 +8,7 @@ GNOME_VERSION =		2.32.2
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gnome =		${GNOME_PROJECT}-gnome-${GNOME_VERSION}
+REVISION-gnome =	0
 
 SHARED_LIBS +=  soup-2.4             2.2      # .4.0
 SHARED_LIBS +=  soup-gnome-2.4       1.1      # .4.0
@@ -38,7 +39,8 @@ LIB_DEPENDS-gnome =	${LIB_DEPENDS-main} \
 			${BUILD_PKGPATH},-main \
 			x11/gnome/libgnome-keyring \
 			devel/gconf2 \
-			net/libproxy
+			net/libproxy \
+			databases/sqlite3
 
 MODULES =		devel/gettext \
 			x11/gnome
