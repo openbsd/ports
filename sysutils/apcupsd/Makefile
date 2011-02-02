@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:40 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/02/02 21:56:03 jakemsr Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -6,7 +6,7 @@ COMMENT-x11 =		gapcmon - GUI for apcupsd
 
 DISTNAME =		apcupsd-3.14.8
 PKGNAME-main =		${DISTNAME}
-REVISION-main = 	1
+REVISION-main = 	2
 PKGNAME-cgi =		${DISTNAME:S/-/-cgi-/}
 PKGNAME-x11 =		${DISTNAME:S/-/-x11-/}
 REVISION-x11 = 		1

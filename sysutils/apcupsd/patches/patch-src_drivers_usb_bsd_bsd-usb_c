@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_drivers_usb_bsd_bsd-usb_c,v 1.1 2011/02/02 21:56:04 jakemsr Exp $
+
+the USB_DEVICEINFO ioctl only needs read access.  open the bus O_RDONLY
+to not require write permission.
+
+--- src/drivers/usb/bsd/bsd-usb.c.orig	Tue Feb  1 16:26:15 2011
++++ src/drivers/usb/bsd/bsd-usb.c	Tue Feb  1 16:26:15 2011
+@@ -246,7 +246,7 @@ static int open_usb_device(UPSINFO *ups)
+    /* Max of 10 USB busses */
+    for (i = 0; i < 10; i++) {
+       busname[8] = '0' + i;
+-      fd = open(busname, O_RDWR | O_NOCTTY);
++      fd = open(busname, O_RDONLY | O_NOCTTY);
+       if (fd == -1)
+          continue;
+ 
