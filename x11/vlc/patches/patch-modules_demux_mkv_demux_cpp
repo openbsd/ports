@@ -1,0 +1,15 @@
+$OpenBSD: patch-modules_demux_mkv_demux_cpp,v 1.1 2011/02/02 09:34:23 ajacoutot Exp $
+
+Insufficient input validation in MKV demuxer (VideoLAN-SA-1102).
+
+--- modules/demux/mkv/demux.cpp.orig	Tue Feb  1 20:03:12 2011
++++ modules/demux/mkv/demux.cpp	Tue Feb  1 20:03:46 2011
+@@ -94,7 +94,7 @@ matroska_stream_c *demux_sys_t::AnalyseAllSegmentsFoun
+ 
+     while (p_l0 != 0)
+     {
+-        if (EbmlId(*p_l0) == KaxSegment::ClassInfos.GlobalId)
++        if ( MKV_IS_ID( p_l0, KaxSegment) )
+         {
+             EbmlParser  *ep;
+             matroska_segment_c *p_segment1 = new matroska_segment_c( *this, *p_estream );

@@ -1,0 +1,15 @@
+$OpenBSD: patch-modules_demux_mkv_mkv_hpp,v 1.1 2011/02/02 09:34:23 ajacoutot Exp $
+
+Insufficient input validation in MKV demuxer (VideoLAN-SA-1102).
+
+--- modules/demux/mkv/mkv.hpp.orig	Tue Feb  1 20:02:28 2011
++++ modules/demux/mkv/mkv.hpp	Tue Feb  1 20:02:54 2011
+@@ -130,7 +130,7 @@ extern "C" {
+ #endif
+ 
+ 
+-#define MKV_IS_ID( el, C ) ( EbmlId( (*el) ) == C::ClassInfos.GlobalId )
++#define MKV_IS_ID( el, C ) ( el != NULL && typeid( *el ) == typeid( C ) )
+ 
+ 
+ using namespace LIBMATROSKA_NAMESPACE;

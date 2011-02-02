@@ -1,0 +1,15 @@
+$OpenBSD: patch-modules_demux_mkv_matroska_segment_parse_cpp,v 1.1 2011/02/02 09:34:23 ajacoutot Exp $
+
+Insufficient input validation in MKV demuxer (VideoLAN-SA-1102).
+
+--- modules/demux/mkv/matroska_segment_parse.cpp.orig	Tue Feb  1 20:03:56 2011
++++ modules/demux/mkv/matroska_segment_parse.cpp	Tue Feb  1 20:04:53 2011
+@@ -538,7 +538,7 @@ void matroska_segment_c::ParseTrackEntry( KaxTrackEntr
+                     tk->f_fps = float( vfps );
+                     msg_Dbg( &sys.demuxer, "   |   |   |   + fps=%f", float( vfps ) );
+                 }
+-                else if( EbmlId( *l ) == KaxVideoDisplayUnit::ClassInfos.GlobalId )
++                else if( MKV_IS_ID( l, KaxVideoDisplayUnit ) )
+                 {
+                     KaxVideoDisplayUnit &vdmode = *(KaxVideoDisplayUnit*)l;
+ 
