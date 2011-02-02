@@ -1,7 +1,7 @@
-$OpenBSD: patch-thunar-plugin_audio-tags-page_c,v 1.1 2011/01/18 20:53:58 landry Exp $
+$OpenBSD: patch-thunar-plugin_audio-tags-page_c,v 1.2 2011/02/02 08:41:30 landry Exp $
 http://svn.debian.org/viewsvn/pkg-xfce/goodies/branches/experimental/thunar-media-tags-plugin/debian/patches/
---- thunar-plugin/audio-tags-page.c.orig	Sun Jan 16 01:19:49 2011
-+++ thunar-plugin/audio-tags-page.c	Sun Jan 16 01:22:47 2011
+--- thunar-plugin/audio-tags-page.c.orig	Mon Sep 11 11:40:56 2006
++++ thunar-plugin/audio-tags-page.c	Tue Feb  1 20:16:19 2011
 @@ -32,7 +32,6 @@
  #include <taglib/tag_c.h>
  
@@ -10,7 +10,7 @@ http://svn.debian.org/viewsvn/pkg-xfce/goodies/branches/experimental/thunar-medi
  
  #include <audio-tags-page.h>
  
-@@ -90,7 +90,6 @@ struct _AudioTagsPage
+@@ -90,7 +89,6 @@ struct _AudioTagsPage
    ThunarxPropertyPage __parent__;
  
    /* Widgets */
@@ -18,7 +18,7 @@ http://svn.debian.org/viewsvn/pkg-xfce/goodies/branches/experimental/thunar-medi
    GtkWidget       *table;
    GtkWidget       *save_button;
    GtkWidget       *info_button;
-@@ -282,10 +281,6 @@ audio_tags_page_init (AudioTagsPage *page)
+@@ -282,10 +280,6 @@ audio_tags_page_init (AudioTagsPage *page)
  
    gtk_container_set_border_width (GTK_CONTAINER (page), 8);
  
@@ -29,7 +29,7 @@ http://svn.debian.org/viewsvn/pkg-xfce/goodies/branches/experimental/thunar-medi
    /* Main container */
    vbox = gtk_vbox_new (FALSE, 8);
    gtk_container_add (GTK_CONTAINER (page), vbox);
-@@ -317,7 +312,7 @@ audio_tags_page_init (AudioTagsPage *page)
+@@ -317,7 +311,7 @@ audio_tags_page_init (AudioTagsPage *page)
    /* Track spin button */
    spin = gtk_spin_button_new (GTK_ADJUSTMENT (adjustment), 1, 0);
    exo_mutual_binding_new (G_OBJECT (adjustment), "value", G_OBJECT (page), "track");
@@ -38,7 +38,7 @@ http://svn.debian.org/viewsvn/pkg-xfce/goodies/branches/experimental/thunar-medi
    gtk_container_add (GTK_CONTAINER (alignment), spin);
    gtk_label_set_mnemonic_widget (GTK_LABEL (label), spin);
    gtk_widget_show (spin);
-@@ -340,7 +335,7 @@ audio_tags_page_init (AudioTagsPage *page)
+@@ -340,7 +334,7 @@ audio_tags_page_init (AudioTagsPage *page)
    /* Year spin button */
    spin = gtk_spin_button_new (GTK_ADJUSTMENT (adjustment), 1, 0);
    exo_mutual_binding_new (G_OBJECT (adjustment), "value", G_OBJECT (page), "year");
@@ -47,7 +47,7 @@ http://svn.debian.org/viewsvn/pkg-xfce/goodies/branches/experimental/thunar-medi
    gtk_container_add (GTK_CONTAINER (alignment), spin);
    gtk_label_set_mnemonic_widget (GTK_LABEL (label), spin);
    gtk_widget_show (spin);
-@@ -355,7 +350,7 @@ audio_tags_page_init (AudioTagsPage *page)
+@@ -355,7 +349,7 @@ audio_tags_page_init (AudioTagsPage *page)
    /* Artist entry */
    entry = gtk_entry_new ();
    exo_mutual_binding_new (G_OBJECT (entry), "text", G_OBJECT (page), "artist");
@@ -56,7 +56,7 @@ http://svn.debian.org/viewsvn/pkg-xfce/goodies/branches/experimental/thunar-medi
    gtk_table_attach (GTK_TABLE (page->table), entry, 1, 4, 1, 2, GTK_EXPAND | GTK_FILL, 0, 0, 0);
    gtk_label_set_mnemonic_widget (GTK_LABEL (label), entry);
    gtk_widget_show (entry);
-@@ -370,7 +365,7 @@ audio_tags_page_init (AudioTagsPage *page)
+@@ -370,7 +364,7 @@ audio_tags_page_init (AudioTagsPage *page)
    /* Title entry */
    entry = gtk_entry_new ();
    exo_mutual_binding_new (G_OBJECT (entry), "text", G_OBJECT (page), "title");
@@ -65,7 +65,7 @@ http://svn.debian.org/viewsvn/pkg-xfce/goodies/branches/experimental/thunar-medi
    gtk_table_attach (GTK_TABLE (page->table), entry, 1, 4, 2, 3, GTK_EXPAND | GTK_FILL, 0, 0, 0);
    gtk_widget_show (entry);
  
-@@ -384,7 +379,7 @@ audio_tags_page_init (AudioTagsPage *page)
+@@ -384,7 +378,7 @@ audio_tags_page_init (AudioTagsPage *page)
    /* Album entry */
    entry = gtk_entry_new ();
    exo_mutual_binding_new (G_OBJECT (entry), "text", G_OBJECT (page), "album");
@@ -74,7 +74,7 @@ http://svn.debian.org/viewsvn/pkg-xfce/goodies/branches/experimental/thunar-medi
    gtk_table_attach (GTK_TABLE (page->table), entry, 1, 4, 3, 4, GTK_EXPAND | GTK_FILL, 0, 0, 0);
    gtk_widget_show (entry);
    
-@@ -398,7 +393,7 @@ audio_tags_page_init (AudioTagsPage *page)
+@@ -398,7 +392,7 @@ audio_tags_page_init (AudioTagsPage *page)
    /* Comment entry */
    entry = gtk_entry_new ();
    exo_mutual_binding_new (G_OBJECT (entry), "text", G_OBJECT (page), "comment");
@@ -83,7 +83,7 @@ http://svn.debian.org/viewsvn/pkg-xfce/goodies/branches/experimental/thunar-medi
    gtk_table_attach (GTK_TABLE (page->table), entry, 1, 4, 4, 5, GTK_EXPAND | GTK_FILL, 0, 0, 0);
    gtk_widget_show (entry);
  
-@@ -412,7 +407,7 @@ audio_tags_page_init (AudioTagsPage *page)
+@@ -412,7 +406,7 @@ audio_tags_page_init (AudioTagsPage *page)
    /* Genre combo box */
    combo = gtk_combo_box_entry_new_text ();
    exo_mutual_binding_new (G_OBJECT (GTK_BIN (combo)->child), "text", G_OBJECT (page), "genre");
@@ -92,17 +92,17 @@ http://svn.debian.org/viewsvn/pkg-xfce/goodies/branches/experimental/thunar-medi
    gtk_table_attach (GTK_TABLE (page->table), combo, 1, 4, 5, 6, GTK_FILL, 0, 0, 0);
    gtk_widget_show (combo);
  
-@@ -511,9 +506,6 @@ audio_tags_page_finalize (GObject *object)
- 
+@@ -512,9 +506,6 @@ audio_tags_page_finalize (GObject *object)
    if (G_LIKELY (page->genre != NULL))
      g_free (page->genre);
--
+ 
 -  /* Release the tooltips */
 -  g_object_unref (G_OBJECT (page->tooltips));
- 
+-
    (*G_OBJECT_CLASS (audio_tags_page_parent_class)->finalize) (object);
  }
-@@ -969,8 +968,8 @@ audio_tags_page_info_activate (GtkAction *action, 
+ 
+@@ -977,8 +968,8 @@ audio_tags_page_info_activate (GtkAction *action, 
  
    gchar         *mimetype;
  
@@ -113,7 +113,7 @@ http://svn.debian.org/viewsvn/pkg-xfce/goodies/branches/experimental/thunar-medi
    gchar         *filesize;
    
    g_return_val_if_fail (page != NULL || IS_AUDIO_TAGS_PAGE (page), FALSE);
-@@ -999,9 +998,9 @@ audio_tags_page_info_activate (GtkAction *action, 
+@@ -1007,9 +998,9 @@ audio_tags_page_info_activate (GtkAction *action, 
    
    /* Additional information */
    mimetype = thunarx_file_info_get_mime_type (page->file);
@@ -126,7 +126,7 @@ http://svn.debian.org/viewsvn/pkg-xfce/goodies/branches/experimental/thunar-medi
  
    /* Create layout table */
    table = gtk_table_new (7, 2, FALSE);
-@@ -1113,7 +1112,7 @@ audio_tags_page_info_activate (GtkAction *action, 
+@@ -1121,7 +1112,7 @@ audio_tags_page_info_activate (GtkAction *action, 
    g_free (filesize);
    g_free (mimetype);
  
