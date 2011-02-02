@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/19 07:23:07 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/02/02 20:15:48 landry Exp $
 
 COMMENT=	mailing list manager
 
 DISTNAME=	majordomo-1.94.5
-REVISION =	3
+REVISION =	4
 CATEGORIES=     mail
 
 HOMEPAGE=	http://www.greatcircle.com/majordomo/
-
-MAINTAINER=	Daniel Hartmeier <dhartmei@openbsd.org>
 
 # I sent a mail to greatcircle.com asking for these permissions.
 # Until I get an answer, I assume nothing. 
