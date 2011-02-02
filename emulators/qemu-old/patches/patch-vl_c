@@ -1,6 +1,6 @@
-$OpenBSD: patch-vl_c,v 1.1.1.1 2010/05/27 17:33:43 fgsch Exp $
---- vl.c.orig	Sun Jan  6 13:38:42 2008
-+++ vl.c	Tue Jun 17 19:48:00 2008
+$OpenBSD: patch-vl_c,v 1.2 2011/02/02 09:30:11 sthen Exp $
+--- vl.c.orig	Sun Jan  6 14:38:42 2008
++++ vl.c	Thu Jan 27 20:35:07 2011
 @@ -61,7 +61,8 @@
  #include <arpa/inet.h>
  #ifdef _BSD
@@ -123,16 +123,27 @@ $OpenBSD: patch-vl_c,v 1.1.1.1 2010/05/27 17:33:43 fgsch Exp $
  
      if (ifname1 != NULL)
          pstrcpy(ifname, sizeof(ifname), ifname1);
-@@ -4320,7 +4396,7 @@ static int net_socket_mcast_create(struct sockaddr_in 
+@@ -4279,6 +4355,7 @@ static int net_socket_mcast_create(struct sockaddr_in 
+     struct ip_mreq imr;
+     int fd;
+     int val, ret;
++    u_char loop;
+     if (!IN_MULTICAST(ntohl(mcastaddr->sin_addr.s_addr))) {
+ 	fprintf(stderr, "qemu: error: specified mcastaddr \"%s\" (0x%08x) does not contain a multicast address\n",
+ 		inet_ntoa(mcastaddr->sin_addr),
+@@ -4318,9 +4395,9 @@ static int net_socket_mcast_create(struct sockaddr_in 
+     }
+ 
      /* Force mcast msgs to loopback (eg. several QEMUs in same host */
-     val = 1;
+-    val = 1;
++    loop = 1;
      ret=setsockopt(fd, IPPROTO_IP, IP_MULTICAST_LOOP,
 -                   (const char *)&val, sizeof(val));
-+                   (const char *)&val, sizeof(char));
++                   (const char *)&loop, sizeof(loop));
      if (ret < 0) {
  	perror("setsockopt(SOL_IP, IP_MULTICAST_LOOP)");
  	goto fail;
-@@ -4609,7 +4685,8 @@ static const char *get_word(char *buf, int buf_size, c
+@@ -4609,7 +4686,8 @@ static const char *get_word(char *buf, int buf_size, c
      return p;
  }
  
@@ -142,7 +153,7 @@ $OpenBSD: patch-vl_c,v 1.1.1.1 2010/05/27 17:33:43 fgsch Exp $
                             const char *tag, const char *str)
  {
      const char *p;
-@@ -4748,6 +4825,9 @@ static int net_client_init(const char *str)
+@@ -4748,6 +4826,9 @@ static int net_client_init(const char *str)
          char ifname[64];
          char setup_script[1024], down_script[1024];
          int fd;
@@ -152,7 +163,7 @@ $OpenBSD: patch-vl_c,v 1.1.1.1 2010/05/27 17:33:43 fgsch Exp $
          vlan->nb_host_devs++;
          if (get_param_value(buf, sizeof(buf), "fd", p) > 0) {
              fd = strtol(buf, NULL, 0);
-@@ -4755,16 +4835,16 @@ static int net_client_init(const char *str)
+@@ -4755,16 +4836,16 @@ static int net_client_init(const char *str)
              if (net_tap_fd_init(vlan, fd))
                  ret = 0;
          } else {
@@ -173,7 +184,7 @@ $OpenBSD: patch-vl_c,v 1.1.1.1 2010/05/27 17:33:43 fgsch Exp $
          }
      } else
  #endif
-@@ -8130,19 +8210,23 @@ int main(int argc, char **argv)
+@@ -8130,19 +8211,23 @@ int main(int argc, char **argv)
      gdbstub_port = DEFAULT_GDBSTUB_PORT;
  #endif
      snapshot = 0;
