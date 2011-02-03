@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.18 2010/12/13 09:51:45 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/02/03 10:31:12 robert Exp $
 
-ONLY_FOR_ARCHS =	i386 amd64
+ONLY_FOR_ARCHS =	i386
 
 COMMENT =		Chromium browser
 
