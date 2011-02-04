@@ -1,11 +1,10 @@
-$OpenBSD: patch-configure,v 1.4 2011/01/16 11:34:43 jasper Exp $
+$OpenBSD: patch-configure,v 1.5 2011/02/04 17:06:38 jasper Exp $
 
-- Stupid way to remove openssl from the ecore-file and ecore-con pc files.
 - Force disable Cocoa checks, which will later cause the build to fail
   if gnustep-gui has been installed.
 
 --- configure.orig	Fri Nov 12 15:26:43 2010
-+++ configure	Thu Nov 18 00:14:59 2010
++++ configure	Fri Feb  4 17:39:18 2011
 @@ -19459,7 +19459,6 @@ ac_res=$ac_cv_search_clock_gettime
  if test "$ac_res" != no; then :
    test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
@@ -13,3 +12,21 @@ $OpenBSD: patch-configure,v 1.4 2011/01/16 11:34:43 jasper Exp $
 -          rt_libs=-lrt
  
  $as_echo "#define HAVE_CLOCK_GETTIME 1" >>confdefs.h
+ 
+@@ -23182,6 +23181,7 @@ fi
+ cocoa_ldflags="";
+ have_cocoa="no"
+ 
++if false; then # Disable Cocoa checks
+     if test "x${have_gnu_objc}" = "xyes" ; then
+        ac_ext=m
+ ac_cpp='$OBJCPP $CPPFLAGS'
+@@ -23341,7 +23341,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+     fi
+ 
+-
++fi
+ 
+ want_epoll=yes
+ # Check whether --enable-epoll was given.
