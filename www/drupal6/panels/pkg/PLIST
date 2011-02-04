@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/10/24 14:05:45 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/02/04 10:28:01 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}panels/
@@ -17,10 +17,9 @@ ${DRUPAL_MODS}panels/css/panels_page.css
 ${DRUPAL_MODS}panels/help/
 ${DRUPAL_MODS}panels/help/api.html
 ${DRUPAL_MODS}panels/help/display.html
-${DRUPAL_MODS}panels/help/pane.html
 ${DRUPAL_MODS}panels/help/panels.help.ini
-${DRUPAL_MODS}panels/help/plugin-layout.html
-${DRUPAL_MODS}panels/help/plugin-style.html
+${DRUPAL_MODS}panels/help/plugins-layout.html
+${DRUPAL_MODS}panels/help/plugins-style.html
 ${DRUPAL_MODS}panels/images/
 ${DRUPAL_MODS}panels/images/arrow-active.png
 ${DRUPAL_MODS}panels/images/arrow-down-light.png
@@ -60,6 +59,7 @@ ${DRUPAL_MODS}panels/includes/display-edit.inc
 ${DRUPAL_MODS}panels/includes/display-layout.inc
 ${DRUPAL_MODS}panels/includes/display-render.inc
 ${DRUPAL_MODS}panels/includes/legacy.inc
+${DRUPAL_MODS}panels/includes/page-wizard.inc
 ${DRUPAL_MODS}panels/includes/panels.pipelines.inc
 ${DRUPAL_MODS}panels/includes/plugins.inc
 ${DRUPAL_MODS}panels/js/
@@ -111,8 +111,10 @@ ${DRUPAL_MODS}panels/plugins/display_renderers/editor.inc
 ${DRUPAL_MODS}panels/plugins/display_renderers/legacy.inc
 ${DRUPAL_MODS}panels/plugins/display_renderers/panels_renderer_editor.class.php
 ${DRUPAL_MODS}panels/plugins/display_renderers/panels_renderer_legacy.class.php
+${DRUPAL_MODS}panels/plugins/display_renderers/panels_renderer_simple.class.php
 ${DRUPAL_MODS}panels/plugins/display_renderers/panels_renderer_single_pane.class.php
 ${DRUPAL_MODS}panels/plugins/display_renderers/panels_renderer_standard.class.php
+${DRUPAL_MODS}panels/plugins/display_renderers/simple.inc
 ${DRUPAL_MODS}panels/plugins/display_renderers/single_pane.inc
 ${DRUPAL_MODS}panels/plugins/display_renderers/standard.inc
 ${DRUPAL_MODS}panels/plugins/export_ui/
@@ -166,6 +168,9 @@ ${DRUPAL_MODS}panels/plugins/layouts/twocol_stacked/panels-twocol-stacked.tpl.ph
 ${DRUPAL_MODS}panels/plugins/layouts/twocol_stacked/twocol_stacked.css
 ${DRUPAL_MODS}panels/plugins/layouts/twocol_stacked/twocol_stacked.inc
 ${DRUPAL_MODS}panels/plugins/layouts/twocol_stacked/twocol_stacked.png
+${DRUPAL_MODS}panels/plugins/page_wizards/
+${DRUPAL_MODS}panels/plugins/page_wizards/landing_page.inc
+${DRUPAL_MODS}panels/plugins/page_wizards/node_override.inc
 ${DRUPAL_MODS}panels/plugins/style_bases/
 ${DRUPAL_MODS}panels/plugins/style_bases/pane/
 ${DRUPAL_MODS}panels/plugins/style_bases/pane/pane_plain_box/
@@ -209,6 +214,9 @@ ${DRUPAL_MODS}panels/plugins/styles/naked.inc
 ${DRUPAL_MODS}panels/plugins/styles/stylizer.inc
 ${DRUPAL_MODS}panels/plugins/task_handlers/
 ${DRUPAL_MODS}panels/plugins/task_handlers/panel_context.inc
+${DRUPAL_MODS}panels/plugins/views/
+${DRUPAL_MODS}panels/plugins/views/panels.views.inc
+${DRUPAL_MODS}panels/plugins/views/panels_views_plugin_row_fields.inc
 ${DRUPAL_MODS}panels/templates/
 ${DRUPAL_MODS}panels/templates/panels-dashboard-block.tpl.php
 ${DRUPAL_MODS}panels/templates/panels-dashboard-link.tpl.php
