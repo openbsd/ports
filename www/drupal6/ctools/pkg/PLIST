@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/10/24 14:02:43 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/02/04 10:22:16 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}ctools/
@@ -36,6 +36,19 @@ ${DRUPAL_MODS}ctools/ctools_access_ruleset/plugins/access/ruleset.inc
 ${DRUPAL_MODS}ctools/ctools_access_ruleset/plugins/export_ui/
 ${DRUPAL_MODS}ctools/ctools_access_ruleset/plugins/export_ui/ctools_access_ruleset.inc
 ${DRUPAL_MODS}ctools/ctools_access_ruleset/plugins/export_ui/ctools_access_ruleset_ui.class.php
+${DRUPAL_MODS}ctools/ctools_ajax_sample/
+${DRUPAL_MODS}ctools/ctools_ajax_sample/css/
+${DRUPAL_MODS}ctools/ctools_ajax_sample/css/ctools-ajax-sample.css
+${DRUPAL_MODS}ctools/ctools_ajax_sample/ctools_ajax_sample.info
+${DRUPAL_MODS}ctools/ctools_ajax_sample/ctools_ajax_sample.install
+${DRUPAL_MODS}ctools/ctools_ajax_sample/ctools_ajax_sample.module
+${DRUPAL_MODS}ctools/ctools_ajax_sample/images/
+${DRUPAL_MODS}ctools/ctools_ajax_sample/images/ajax-loader.gif
+${DRUPAL_MODS}ctools/ctools_ajax_sample/images/loading-large.gif
+${DRUPAL_MODS}ctools/ctools_ajax_sample/images/loading.gif
+${DRUPAL_MODS}ctools/ctools_ajax_sample/images/popups-border.png
+${DRUPAL_MODS}ctools/ctools_ajax_sample/js/
+${DRUPAL_MODS}ctools/ctools_ajax_sample/js/ctools-ajax-sample.js
 ${DRUPAL_MODS}ctools/ctools_custom_content/
 ${DRUPAL_MODS}ctools/ctools_custom_content/ctools_custom_content.info
 ${DRUPAL_MODS}ctools/ctools_custom_content/ctools_custom_content.install
@@ -87,9 +100,6 @@ ${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/relationships/translations/
 ${DRUPAL_MODS}ctools/ctools_plugin_example/plugins/relationships/translations/ctools_plugin_example-plugins-relationships.hu.po
 ${DRUPAL_MODS}ctools/ctools_plugin_example/translations/
 ${DRUPAL_MODS}ctools/ctools_plugin_example/translations/ctools_plugin_example.hu.po
-${DRUPAL_MODS}ctools/delegator/
-${DRUPAL_MODS}ctools/delegator/delegator.admin.inc
-${DRUPAL_MODS}ctools/delegator/delegator.module
 ${DRUPAL_MODS}ctools/help/
 ${DRUPAL_MODS}ctools/help/about.html
 ${DRUPAL_MODS}ctools/help/ajax.html
@@ -103,6 +113,7 @@ ${DRUPAL_MODS}ctools/help/ctools.help.ini
 ${DRUPAL_MODS}ctools/help/export-ui.html
 ${DRUPAL_MODS}ctools/help/export.html
 ${DRUPAL_MODS}ctools/help/form.html
+${DRUPAL_MODS}ctools/help/modal.html
 ${DRUPAL_MODS}ctools/help/object-cache.html
 ${DRUPAL_MODS}ctools/help/plugins-api.html
 ${DRUPAL_MODS}ctools/help/plugins-creating.html
@@ -142,12 +153,16 @@ ${DRUPAL_MODS}ctools/includes/jump-menu.inc
 ${DRUPAL_MODS}ctools/includes/math-expr.inc
 ${DRUPAL_MODS}ctools/includes/menu.inc
 ${DRUPAL_MODS}ctools/includes/modal.inc
+${DRUPAL_MODS}ctools/includes/object-cache.cron.inc
 ${DRUPAL_MODS}ctools/includes/object-cache.inc
+${DRUPAL_MODS}ctools/includes/page-wizard.inc
+${DRUPAL_MODS}ctools/includes/page-wizard.menu.inc
 ${DRUPAL_MODS}ctools/includes/plugins.inc
 ${DRUPAL_MODS}ctools/includes/stylizer.inc
 ${DRUPAL_MODS}ctools/includes/stylizer.theme.inc
 ${DRUPAL_MODS}ctools/includes/translations/
 ${DRUPAL_MODS}ctools/includes/translations/includes.hu.po
+${DRUPAL_MODS}ctools/includes/utility.inc
 ${DRUPAL_MODS}ctools/includes/wizard.inc
 ${DRUPAL_MODS}ctools/includes/wizard.theme.inc
 ${DRUPAL_MODS}ctools/js/
@@ -155,10 +170,8 @@ ${DRUPAL_MODS}ctools/js/ajax-responder.js
 ${DRUPAL_MODS}ctools/js/auto-submit.js
 ${DRUPAL_MODS}ctools/js/collapsible-div.js
 ${DRUPAL_MODS}ctools/js/dependent.js
-${DRUPAL_MODS}ctools/js/dimensions.js
 ${DRUPAL_MODS}ctools/js/dropdown.js
 ${DRUPAL_MODS}ctools/js/jump-menu.js
-${DRUPAL_MODS}ctools/js/mc.js
 ${DRUPAL_MODS}ctools/js/modal.js
 ${DRUPAL_MODS}ctools/js/stylizer.js
 ${DRUPAL_MODS}ctools/page_manager/
@@ -193,6 +206,8 @@ ${DRUPAL_MODS}ctools/page_manager/page_manager.info
 ${DRUPAL_MODS}ctools/page_manager/page_manager.install
 ${DRUPAL_MODS}ctools/page_manager/page_manager.module
 ${DRUPAL_MODS}ctools/page_manager/plugins/
+${DRUPAL_MODS}ctools/page_manager/plugins/task_handlers/
+${DRUPAL_MODS}ctools/page_manager/plugins/task_handlers/http_response.inc
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/blog.inc
 ${DRUPAL_MODS}ctools/page_manager/plugins/tasks/blog_user.inc
@@ -243,6 +258,7 @@ ${DRUPAL_MODS}ctools/plugins/arguments/
 ${DRUPAL_MODS}ctools/plugins/arguments/nid.inc
 ${DRUPAL_MODS}ctools/plugins/arguments/node_add.inc
 ${DRUPAL_MODS}ctools/plugins/arguments/node_edit.inc
+${DRUPAL_MODS}ctools/plugins/arguments/rid.inc
 ${DRUPAL_MODS}ctools/plugins/arguments/string.inc
 ${DRUPAL_MODS}ctools/plugins/arguments/term.inc
 ${DRUPAL_MODS}ctools/plugins/arguments/terms.inc
@@ -370,6 +386,7 @@ ${DRUPAL_MODS}ctools/plugins/content_types/user_context/translations/
 ${DRUPAL_MODS}ctools/plugins/content_types/user_context/translations/plugins-content_types-user_context.hu.po
 ${DRUPAL_MODS}ctools/plugins/content_types/user_context/user_picture.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/user_context/user_profile.inc
+${DRUPAL_MODS}ctools/plugins/content_types/user_context/user_signature.inc
 ${DRUPAL_MODS}ctools/plugins/content_types/vocabulary_context/
 ${DRUPAL_MODS}ctools/plugins/content_types/vocabulary_context/icon_vocabulary.png
 ${DRUPAL_MODS}ctools/plugins/content_types/vocabulary_context/translations/
