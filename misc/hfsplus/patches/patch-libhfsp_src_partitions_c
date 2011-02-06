@@ -1,0 +1,18 @@
+$OpenBSD: patch-libhfsp_src_partitions_c,v 1.1 2011/02/06 16:03:55 fgsch Exp $
+--- libhfsp/src/partitions.c.orig	Tue Mar 26 18:00:29 2002
++++ libhfsp/src/partitions.c	Sat Jan 29 06:22:23 2011
+@@ -26,12 +26,13 @@
+ #  include "config.h"
+ # endif
+ 
+-#include "swab.h"
+ #include "partitions.h"
+ #include "os.h"
+ #include "libhfsp.h"
++#include "swab.h"
+ 
+ #include <stdlib.h>
++#include <string.h>
+ 
+ /*
+  * Returns the number of partitions in the given partition map.

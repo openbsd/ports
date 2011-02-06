@@ -1,0 +1,38 @@
+$OpenBSD: patch-libhfsp_src_fscheck_c,v 1.1 2011/02/06 16:03:55 fgsch Exp $
+--- libhfsp/src/fscheck.c.orig	Mon Mar 25 15:48:37 2002
++++ libhfsp/src/fscheck.c	Sat Jan 29 06:01:31 2011
+@@ -204,7 +204,8 @@ static int fscheck_volume_header(volume * vol, hfsp_vh
+  */
+ static int fscheck_volume_readbuf(volume * vol, hfsp_vh* vh, void* p)
+ {
+-    if ( (vh->signature	= bswabU16_inc(p)) != HFSP_VOLHEAD_SIG) 
++    vh->signature	= bswabU16_inc(p);
++    if (vh->signature != HFSP_VOLHEAD_SIG) 
+     {
+ 	printf("Unexpected Volume signature '%2s' expected 'H+'\n",
+ 		(char*) &vh->signature);
+@@ -230,7 +231,7 @@ static int fscheck_volume_readbuf(volume * vol, hfsp_v
+     vh->write_count	= bswabU32_inc(p);
+     vh->encodings_bmp	= bswabU64_inc(p);
+     memcpy(vh->finder_info, p, 32); 
+-    ((char*) p) += 32; // So finderinfo must be swapped later, ***
++    p = (((char *) p) + 32); // So finderinfo must be swapped later, ***
+     p = volume_readfork(p, &vh->alloc_file );
+     p = volume_readfork(p, &vh->ext_file   );
+     p = volume_readfork(p, &vh->cat_file   );
+@@ -277,12 +278,12 @@ static int fscheck_read_wrapper(volume * vol, hfsp_vh*
+ 	    printf("Volume is wrapped in HFS volume "
+ 		   " (use hfsck to check this)\n");
+ 
+-	((char*) p) += 0x12;		/* skip unneded HFS vol fields */
++	p = (((char *)p) + 0x12);	/* skip unneded HFS vol fields */
+ 	drAlBlkSiz = bswabU32_inc(p);	/* offset 0x14 */
+-	((char*) p) += 0x4;		/* skip unneded HFS vol fields */
++	p = (((char *)p) + 0x4);	/* skip unneded HFS vol fields */
+ 	drAlBlSt    = bswabU16_inc(p);	/* offset 0x1C */
+ 	
+-	((char*) p) += 0x5E;		/* skip unneded HFS vol fields */
++	p = (((char *)p) + 0x5E);	 /* skip unneded HFS vol fields */
+ 	signature = bswabU16_inc(p);	/* offset 0x7C, drEmbedSigWord */
+ 	if (signature != HFSP_VOLHEAD_SIG)
+ 	    HFSP_ERROR(-1, "This looks like a normal HFS volume");

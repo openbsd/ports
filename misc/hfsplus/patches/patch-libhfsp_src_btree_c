@@ -1,0 +1,12 @@
+$OpenBSD: patch-libhfsp_src_btree_c,v 1.1 2011/02/06 16:03:55 fgsch Exp $
+--- libhfsp/src/btree.c.orig	Tue Mar  5 19:50:28 2002
++++ libhfsp/src/btree.c	Fri Jan 28 07:34:52 2011
+@@ -393,7 +393,7 @@ static int btree_init(btree* bt, volume* vol, hfsp_for
+ 	{
+ 	    p = volume_readfromfork(vol, nodebuf, fork, 0, bt->blkpernode,
+ 		 HFSP_EXTENT_DATA, bt->cnid);
+-	    ((char*) p) += HEADER_RESERVEDOFFSET; // skip header
++	    p = (((char *)p) + HEADER_RESERVEDOFFSET); // skip header
+ 	}
+ 	
+ 	bt->alloc_bits = malloc(alloc_size);

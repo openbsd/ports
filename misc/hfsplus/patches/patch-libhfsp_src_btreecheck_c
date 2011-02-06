@@ -1,0 +1,21 @@
+$OpenBSD: patch-libhfsp_src_btreecheck_c,v 1.1 2011/02/06 16:03:55 fgsch Exp $
+--- libhfsp/src/btreecheck.c.orig	Tue Mar  5 19:50:29 2002
++++ libhfsp/src/btreecheck.c	Fri Jan 28 07:34:59 2011
+@@ -264,7 +264,7 @@ static int fscheck_btree_init(btree* bt, volume* vol, 
+ 	{
+ 	    p = volume_readfromfork(vol, nodebuf, fork, 0, bt->blkpernode,
+ 		 HFSP_EXTENT_DATA, bt->cnid);
+-	    ((char*) p) += HEADER_RESERVEDOFFSET; // skip header
++	    p = (((char *)p) + HEADER_RESERVEDOFFSET); // skip header
+ 	}
+ 	
+ 	bt->alloc_bits = malloc(alloc_size);
+@@ -368,7 +368,7 @@ static void* checkbtree_key_by_index(btree* bt, UInt32
+     }
+     // now we have the offset and can read the key ...
+ #if BYTE_ORDER == LITTLE_ENDIAN
+-    return buf->node + bswap_16(offset);
++    return buf->node + swap16(offset);
+ #else
+     return buf->node + offset;
+ #endif
