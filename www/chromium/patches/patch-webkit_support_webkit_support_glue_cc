@@ -1,0 +1,12 @@
+$OpenBSD: patch-webkit_support_webkit_support_glue_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- webkit/support/webkit_support_glue.cc.orig	Fri Jan 21 10:19:48 2011
++++ webkit/support/webkit_support_glue.cc	Sun Jan 23 23:27:37 2011
+@@ -99,7 +99,7 @@ void EnableSpdy(bool enable) {
+ void UserMetricsRecordAction(const std::string& action) {
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ int MatchFontWithFallback(const std::string& face, bool bold,
+                           bool italic, int charset) {
+   return -1;

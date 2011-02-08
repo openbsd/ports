@@ -1,0 +1,21 @@
+$OpenBSD: patch-app_gfx_gl_gl_context_egl_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- app/gfx/gl/gl_context_egl.cc.orig	Fri Jan 21 10:19:47 2011
++++ app/gfx/gl/gl_context_egl.cc	Sun Jan 23 23:27:31 2011
+@@ -5,7 +5,7 @@
+ #include <EGL/egl.h>
+ 
+ #include "build/build_config.h"
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ #include "app/x11_util.h"
+ #define EGL_HAS_PBUFFERS 1
+ #endif
+@@ -63,7 +63,7 @@ bool BaseEGLContext::InitializeOneOff() {
+   if (initialized)
+     return true;
+ 
+-#ifdef OS_LINUX
++#ifdef OS_LINUX || defined(OS_OPENBSD)
+   EGLNativeDisplayType native_display = x11_util::GetXDisplay();
+ #else
+   EGLNativeDisplayType native_display = EGL_DEFAULT_DISPLAY;

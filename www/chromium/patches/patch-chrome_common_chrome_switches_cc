@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_common_chrome_switches_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/common/chrome_switches.cc.orig	Fri Jan 21 10:20:41 2011
++++ chrome/common/chrome_switches.cc	Sun Jan 23 23:27:33 2011
+@@ -1269,7 +1269,7 @@ const char kEnableMediaPlayer[]             = "enable-
+ const char kEnableAdvancedFileSystem[]      = "enable-advanced-fs";
+ #endif
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ // Specify the amount the trackpad should scroll by.
+ const char kScrollPixels[]                  = "scroll-pixels";
+ #endif

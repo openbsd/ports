@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_test_url_fetch_test_url_fetch_test_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
---- chrome/test/url_fetch_test/url_fetch_test.cc.orig	Tue Mar 30 07:31:10 2010
-+++ chrome/test/url_fetch_test/url_fetch_test.cc	Sun Nov 28 00:11:30 2010
-@@ -33,7 +33,7 @@ class UrlFetchTest : public UITest {
+$OpenBSD: patch-chrome_test_url_fetch_test_url_fetch_test_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/test/url_fetch_test/url_fetch_test.cc.orig	Fri Jan 21 10:20:39 2011
++++ chrome/test/url_fetch_test/url_fetch_test.cc	Sun Jan 23 23:27:34 2011
+@@ -35,7 +35,7 @@ class UrlFetchTest : public UITest {
        dir = dir.AppendASCII("reference_build");
  #if defined(OS_WIN)
        dir = dir.AppendASCII("chrome");
 -#elif defined(OS_LINUX)
-+#elif defined(OS_NIX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
        dir = dir.AppendASCII("chrome_linux");
  #elif defined(OS_MACOSX)
        dir = dir.AppendASCII("chrome_mac");

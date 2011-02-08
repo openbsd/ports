@@ -1,29 +1,12 @@
-$OpenBSD: patch-chrome_browser_renderer_host_browser_render_process_host_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
---- chrome/browser/renderer_host/browser_render_process_host.cc.orig	Tue Mar 30 07:29:15 2010
-+++ chrome/browser/renderer_host/browser_render_process_host.cc	Sun Nov 28 00:11:31 2010
-@@ -310,11 +310,11 @@ bool BrowserRenderProcessHost::Init(bool is_extensions
-     in_process_renderer_.reset(new RendererMainThread(channel_id));
- 
-     base::Thread::Options options;
--#if !defined(OS_LINUX)
-+#if !defined(USE_X11)
-     // In-process plugins require this to be a UI message loop.
-     options.message_loop_type = MessageLoop::TYPE_UI;
- #else
--    // We can't have multiple UI loops on Linux, so we don't support
-+    // We can't have multiple UI loops on X, so we don't support
-     // in-process plugins.
-     options.message_loop_type = MessageLoop::TYPE_DEFAULT;
- #endif
-@@ -693,9 +693,9 @@ TransportDIB* BrowserRenderProcessHost::MapTransportDI
+$OpenBSD: patch-chrome_browser_renderer_host_browser_render_process_host_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/renderer_host/browser_render_process_host.cc.orig	Fri Jan 21 10:20:21 2011
++++ chrome/browser/renderer_host/browser_render_process_host.cc	Sun Jan 23 23:27:31 2011
+@@ -808,7 +808,7 @@ TransportDIB* BrowserRenderProcessHost::MapTransportDI
+   HANDLE section = win_util::GetSectionFromProcess(
+       dib_id.handle, GetHandle(), false /* read write */);
+   return TransportDIB::Map(section);
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_OPENBSD)
    // On OSX, the browser allocates all DIBs and keeps a file descriptor around
    // for each.
    return widget_helper_->MapTransportDIB(dib_id);
--#elif defined(OS_LINUX)
-+#elif defined(OS_NIX)
-   return TransportDIB::Map(dib_id);
--#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_NIX)
- }
- 
- TransportDIB* BrowserRenderProcessHost::GetTransportDIB(

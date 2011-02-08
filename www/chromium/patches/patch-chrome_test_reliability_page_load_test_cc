@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_test_reliability_page_load_test_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
---- chrome/test/reliability/page_load_test.cc.orig	Tue Mar 30 07:31:10 2010
-+++ chrome/test/reliability/page_load_test.cc	Sun Nov 28 00:11:30 2010
-@@ -159,7 +159,7 @@ class PageLoadTest : public UITest {
+$OpenBSD: patch-chrome_test_reliability_page_load_test_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/test/reliability/page_load_test.cc.orig	Fri Jan 21 10:20:39 2011
++++ chrome/test/reliability/page_load_test.cc	Sun Jan 23 23:27:34 2011
+@@ -165,7 +165,7 @@ class PageLoadTest : public UITest {
      scoped_ptr<FileVersionInfo> file_info;
- #if defined(OS_WIN)
      file_info.reset(FileVersionInfo::CreateFileVersionInfo(kChromeDll));
+     last_change = WideToASCII(file_info->last_change());
 -#elif defined(OS_LINUX) || defined(OS_MACOSX)
-+#elif defined(OS_POSIX)
-     // TODO(fmeawad): the version retrieved here belongs to the test module and
-     // not the chrome binary, need to be changed to chrome binary instead.
-     file_info.reset(FileVersionInfo::CreateFileVersionInfoForCurrentModule());
++#elif defined(OS_LINUX) || defined(OS_OPENBSD) || defined(OS_MACOSX)
+     // TODO(fmeawad): On Mac, the version retrieved here belongs to the test
+     // module and not the chrome binary, need to be changed to chrome binary
+     // instead.

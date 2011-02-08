@@ -1,0 +1,30 @@
+$OpenBSD: patch-gpu_demos_demos_gyp,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- gpu/demos/demos.gyp.orig	Fri Jan 21 10:19:48 2011
++++ gpu/demos/demos.gyp	Sun Jan 23 23:27:34 2011
+@@ -11,7 +11,7 @@
+       # also be compiled with -fPIC flag. Setting GYP_DEFINES="linux_fpic=1"
+       # compiles everything with -fPIC. Disable pepper demos on linux/x64
+       # unless linux_fpic is 1.
+-      ['OS=="linux" and (target_arch=="x64" or target_arch=="arm") and linux_fpic!=1', {
++      ['(OS=="linux" or OS=="openbsd") and (target_arch=="x64" or target_arch=="arm") and linux_fpic!=1', {
+         'enable_pepper_demos%': 0,
+       }, {
+         'enable_pepper_demos%': 1,
+@@ -53,7 +53,7 @@
+         'framework/window.h',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="openbsd"', {
+           'dependencies': ['../../build/linux/system.gyp:gtk'],
+         }],
+       ],
+@@ -172,7 +172,7 @@
+           ],
+         },
+         'conditions': [
+-          ['OS=="linux"', {
++          ['OS=="linux" or OS=="openbsd"', {
+             # -gstabs, used in the official builds, causes an ICE. Remove it.
+             'cflags!': ['-gstabs'],
+           }],

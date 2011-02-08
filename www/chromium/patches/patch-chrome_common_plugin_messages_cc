@@ -1,0 +1,39 @@
+$OpenBSD: patch-chrome_common_plugin_messages_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/common/plugin_messages.cc.orig	Fri Jan 21 10:20:41 2011
++++ chrome/common/plugin_messages.cc	Sun Jan 23 23:27:33 2011
+@@ -59,7 +59,7 @@ NPVariant_Param::~NPVariant_Param() {
+ 
+ PluginMsg_UpdateGeometry_Param::PluginMsg_UpdateGeometry_Param()
+     : transparent(false),
+-#if !defined(OS_MACOSX)
++#if !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+       windowless_buffer(NULL),
+       background_buffer(NULL)
+ #else
+@@ -274,7 +274,7 @@ void ParamTraits<PluginMsg_UpdateGeometry_Param>::Writ
+   WriteParam(m, p.windowless_buffer);
+   WriteParam(m, p.background_buffer);
+   WriteParam(m, p.transparent);
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+   WriteParam(m, p.ack_key);
+ #endif
+ }
+@@ -288,7 +288,7 @@ bool ParamTraits<PluginMsg_UpdateGeometry_Param>::Read
+       ReadParam(m, iter, &r->windowless_buffer) &&
+       ReadParam(m, iter, &r->background_buffer) &&
+       ReadParam(m, iter, &r->transparent)
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+       &&
+       ReadParam(m, iter, &r->ack_key)
+ #endif
+@@ -307,7 +307,7 @@ void ParamTraits<PluginMsg_UpdateGeometry_Param>::Log(
+   LogParam(p.background_buffer, l);
+   l->append(", ");
+   LogParam(p.transparent, l);
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+   l->append(", ");
+   LogParam(p.ack_key, l);
+ #endif

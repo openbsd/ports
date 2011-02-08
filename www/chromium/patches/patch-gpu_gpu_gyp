@@ -1,21 +1,12 @@
-$OpenBSD: patch-gpu_gpu_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
---- gpu/gpu.gyp.orig	Tue Mar 30 07:25:37 2010
-+++ gpu/gpu.gyp	Sun Nov 28 00:11:26 2010
-@@ -53,7 +53,7 @@
-         '../third_party/glew/src/glew.c',
+$OpenBSD: patch-gpu_gpu_gyp,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- gpu/gpu.gyp.orig	Fri Jan 21 10:19:48 2011
++++ gpu/gpu.gyp	Sun Jan 23 23:27:34 2011
+@@ -180,7 +180,7 @@
+         'command_buffer/service/texture_manager.cc',
        ],
        'conditions': [
--        [ 'OS=="linux"',
-+        [ 'OS=="linux" or OS=="freebsd" or OS=="openbsd"',
-           {
-             'all_dependent_settings': {
-               'defines': [
-@@ -260,7 +260,7 @@
-         'command_buffer/service/precompile.h',
-       ],
-       'conditions': [
--        ['OS == "linux"',
-+        ['OS == "linux" or OS == "freebsd" or OS == "openbsd"',
-           {
-             'sources': [
-               'command_buffer/service/gpu_processor_linux.cc',
+-        ['OS == "linux"', {
++        ['OS == "linux" or OS=="openbsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
+           ],

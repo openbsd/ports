@@ -1,0 +1,39 @@
+$OpenBSD: patch-webkit_glue_plugins_pepper_private_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- webkit/glue/plugins/pepper_private.cc.orig	Fri Jan 21 10:19:48 2011
++++ webkit/glue/plugins/pepper_private.cc	Sun Jan 23 23:27:37 2011
+@@ -27,7 +27,7 @@
+ 
+ namespace pepper {
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ class PrivateFontFile : public Resource {
+  public:
+   PrivateFontFile(PluginModule* module, int fd)
+@@ -144,7 +144,7 @@ PP_Resource GetFontFileWithFallback(
+     PP_Module module_id,
+     const PP_FontDescription_Dev* description,
+     PP_PrivateFontCharset charset) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   PluginModule* module = ResourceTracker::Get()->GetModule(module_id);
+   if (!module)
+     return 0;
+@@ -175,7 +175,7 @@ bool GetFontTableForPrivateFontFile(PP_Resource font_f
+                                     uint32_t table,
+                                     void* output,
+                                     uint32_t* output_length) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   scoped_refptr<PrivateFontFile> font(
+       Resource::GetAs<PrivateFontFile>(font_file));
+   if (!font.get())
+@@ -287,7 +287,7 @@ const PPB_Private* Private::GetInterface() {
+   return &ppb_private;
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ bool PrivateFontFile::GetFontTable(uint32_t table,
+                                    void* output,
+                                    uint32_t* output_length) {

@@ -1,17 +1,17 @@
-$OpenBSD: patch-base_base_gyp,v 1.1 2010/12/13 09:51:45 espie Exp $
---- base/base.gyp.orig	Tue Mar 30 07:28:44 2010
-+++ base/base.gyp	Sun Nov 28 00:11:29 2010
-@@ -216,6 +216,13 @@
-         'test/test_file_util_posix.cc',
-         'test/test_file_util_win.cc',
+$OpenBSD: patch-base_base_gyp,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- base/base.gyp.orig	Fri Jan 21 10:20:15 2011
++++ base/base.gyp	Sun Jan 23 23:27:31 2011
+@@ -241,6 +241,13 @@
+           ],
+         }],
        ],
 +      'conditions': [
-+        [ 'OS == "freebsd" or OS == "openbsd"', {
-+            # fdatasync is not implemented on BSD
++        [ 'OS == "openbsd"', {
++            # fdatasync is not implemented on OpenBSD
 +            'sources/': [ ['exclude', '^test/test_file_util_linux.cc$'] ],
 +          },
 +        ],
 +      ],
      },
      {
-       'target_name': 'test_support_perf',
+       'target_name': 'test_support_base',

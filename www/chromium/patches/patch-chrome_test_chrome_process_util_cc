@@ -1,21 +1,21 @@
-$OpenBSD: patch-chrome_test_chrome_process_util_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
---- chrome/test/chrome_process_util.cc.orig	Tue Mar 30 07:31:13 2010
-+++ chrome/test/chrome_process_util.cc	Sun Nov 28 00:11:30 2010
-@@ -86,7 +86,7 @@ ChromeProcessList GetRunningChromeProcesses(base::Proc
- #endif
+$OpenBSD: patch-chrome_test_chrome_process_util_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/test/chrome_process_util.cc.orig	Fri Jan 21 10:20:39 2011
++++ chrome/test/chrome_process_util.cc	Sun Jan 23 23:27:34 2011
+@@ -61,7 +61,7 @@ ChromeProcessList GetRunningChromeProcesses(base::Proc
+     result.push_back(process_entry->pid());
    }
  
 -#if defined(OS_LINUX)
-+#if defined(OS_NIX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
    // On Linux we might be running with a zygote process for the renderers.
    // Because of that we sweep the list of processes again and pick those which
    // are children of one of the processes that we've already seen.
-@@ -97,9 +97,9 @@ ChromeProcessList GetRunningChromeProcesses(base::Proc
-     while ((process_entry = it.NextProcessEntry()))
-       result.push_back(process_entry->pid);
+@@ -72,9 +72,9 @@ ChromeProcessList GetRunningChromeProcesses(base::Proc
+     while (const base::ProcessEntry* process_entry = it.NextProcessEntry())
+       result.push_back(process_entry->pid());
    }
 -#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_NIX)
++#endif  // defined(OS_LINUX) || defined(OS_OPENBSD)
  
 -#if defined(OS_LINUX) || defined(OS_MACOSX)
 +#if defined(OS_POSIX)

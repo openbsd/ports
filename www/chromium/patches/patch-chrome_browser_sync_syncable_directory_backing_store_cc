@@ -1,0 +1,19 @@
+$OpenBSD: patch-chrome_browser_sync_syncable_directory_backing_store_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/sync/syncable/directory_backing_store.cc.orig	Fri Jan 21 10:20:19 2011
++++ chrome/browser/sync/syncable/directory_backing_store.cc	Sun Jan 23 23:27:32 2011
+@@ -304,13 +304,13 @@ bool DirectoryBackingStore::BeginLoad() {
+ #else
+   UMA_HISTOGRAM_COUNTS_100("Sync.DirectoryOpenFailedNotWinMac", bucket);
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_OPENBSD)) && !defined(OS_CHROMEOS)
+   UMA_HISTOGRAM_COUNTS_100("Sync.DirectoryOpenFailedLinux", bucket);
+ #elif defined(OS_CHROMEOS)
+   UMA_HISTOGRAM_COUNTS_100("Sync.DirectoryOpenFailedCros", bucket);
+ #else
+   UMA_HISTOGRAM_COUNTS_100("Sync.DirectoryOpenFailedOther", bucket);
+-#endif  // OS_LINUX && !OS_CHROMEOS
++#endif  // (OS_LINUX || OS_OPENBSD) && !OS_CHROMEOS
+ #endif  // OS_WIN
+   return !failed_again;
+ }

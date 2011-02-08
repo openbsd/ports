@@ -1,0 +1,13 @@
+$OpenBSD: patch-base_debug_stack_trace_posix_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- base/debug/stack_trace_posix.cc.orig	Fri Jan 21 10:20:15 2011
++++ base/debug/stack_trace_posix.cc	Mon Jan 24 10:42:46 2011
+@@ -9,6 +9,9 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <sys/stat.h>
++#if defined(__OpenBSD__)
++#include <sys/param.h>
++#endif
+ #include <sys/sysctl.h>
+ #include <sys/types.h>
+ #include <unistd.h>

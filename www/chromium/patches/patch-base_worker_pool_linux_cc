@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_worker_pool_linux_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
---- base/worker_pool_linux.cc.orig	Tue Mar 30 07:28:45 2010
-+++ base/worker_pool_linux.cc	Sun Nov 28 00:11:30 2010
+$OpenBSD: patch-base_worker_pool_linux_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- base/worker_pool_linux.cc.orig	Fri Jan 21 10:20:15 2011
++++ base/worker_pool_linux.cc	Sun Jan 23 23:27:31 2011
 @@ -17,7 +17,7 @@ namespace {
  const int kIdleSecondsBeforeExit = 10 * 60;
  // A stack size of 64 KB is too small for the CERT_PKIXVerifyCert

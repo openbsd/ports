@@ -1,0 +1,21 @@
+$OpenBSD: patch-webkit_glue_webkitclient_impl_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- webkit/glue/webkitclient_impl.h.orig	Tue Feb  1 22:52:03 2011
++++ webkit/glue/webkitclient_impl.h	Tue Feb  1 22:52:18 2011
+@@ -10,7 +10,7 @@
+ #include "third_party/WebKit/WebKit/chromium/public/WebKitClient.h"
+ #if defined(OS_WIN)
+ #include "webkit/glue/webthemeengine_impl_win.h"
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+ #include "webkit/glue/webthemeengine_impl_linux.h"
+ #endif
+ 
+@@ -83,7 +83,7 @@ class WebKitClientImpl : public WebKit::WebKitClient {
+   double shared_timer_fire_time_;
+   int shared_timer_suspended_;  // counter
+ 
+-#if defined(OS_WIN) || defined(OS_LINUX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_OPENBSD)
+   WebThemeEngineImpl theme_engine_;
+ #endif
+ };

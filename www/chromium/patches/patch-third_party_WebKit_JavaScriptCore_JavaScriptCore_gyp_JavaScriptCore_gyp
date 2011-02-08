@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_WebKit_JavaScriptCore_JavaScriptCore_gyp_JavaScriptCore_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
---- third_party/WebKit/JavaScriptCore/JavaScriptCore.gyp/JavaScriptCore.gyp.orig	Tue Mar 30 07:36:22 2010
-+++ third_party/WebKit/JavaScriptCore/JavaScriptCore.gyp/JavaScriptCore.gyp	Sun Nov 28 00:11:32 2010
+$OpenBSD: patch-third_party_WebKit_JavaScriptCore_JavaScriptCore_gyp_JavaScriptCore_gyp,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- third_party/WebKit/JavaScriptCore/JavaScriptCore.gyp/JavaScriptCore.gyp.orig	Fri Jan 21 10:22:58 2011
++++ third_party/WebKit/JavaScriptCore/JavaScriptCore.gyp/JavaScriptCore.gyp	Mon Jan 24 11:45:53 2011
 @@ -83,7 +83,7 @@
                'WTF_USE_NEW_THEME=1',
              ],

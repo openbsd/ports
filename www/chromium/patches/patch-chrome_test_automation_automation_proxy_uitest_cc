@@ -1,21 +1,21 @@
-$OpenBSD: patch-chrome_test_automation_automation_proxy_uitest_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
---- chrome/test/automation/automation_proxy_uitest.cc.orig	Tue Mar 30 07:31:11 2010
-+++ chrome/test/automation/automation_proxy_uitest.cc	Sun Nov 28 00:11:30 2010
-@@ -1351,7 +1351,7 @@ TEST_F(ExternalTabUITestPopupEnabled, UserGestureTarge
+$OpenBSD: patch-chrome_test_automation_automation_proxy_uitest_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/test/automation/automation_proxy_uitest.cc.orig	Fri Jan 21 10:20:39 2011
++++ chrome/test/automation/automation_proxy_uitest.cc	Sun Jan 23 23:27:34 2011
+@@ -1356,7 +1356,7 @@ TEST_F(ExternalTabUITestPopupEnabled, MAYBE_UserGestur
  #endif  // defined(OS_WIN)
  
  // TODO(port): Need to port autocomplete_edit_proxy.* first.
 -#if defined(OS_WIN) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_NIX)
++#if defined(OS_WIN) || defined(OS_LINUX) || defined(OS_OPENBSD)
  TEST_F(AutomationProxyTest, AutocompleteGetSetText) {
    scoped_refptr<BrowserProxy> browser(automation()->GetBrowserWindow(0));
    ASSERT_TRUE(browser.get());
-@@ -1395,7 +1395,7 @@ TEST_F(AutomationProxyTest, AutocompleteParallelProxy)
+@@ -1400,7 +1400,7 @@ TEST_F(AutomationProxyTest, AutocompleteParallelProxy)
    EXPECT_EQ(text_to_set2, actual_text2);
  }
  
 -#endif  // defined(OS_WIN) || defined(OS_LINUX)
-+#endif  // defined(OS_WIN) || defined(OS_NIX)
++#endif  // defined(OS_WIN) || defined(OS_LINUX) || defined(OS_OPENBSD)
  
- // So flaky, http://crbug.com/19876. Consult phajdan.jr before re-enabling.
- TEST_F(AutomationProxyVisibleTest, DISABLED_AutocompleteMatchesTest) {
+ #if defined(OS_MACOSX)
+ // Disabled, http://crbug.com/48601.

@@ -1,0 +1,57 @@
+$OpenBSD: patch-third_party_WebKit_WebCore_platform_graphics_skia_FontCustomPlatformData_cpp,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- third_party/WebKit/WebCore/platform/graphics/skia/FontCustomPlatformData.cpp.orig	Fri Jan 21 10:22:38 2011
++++ third_party/WebKit/WebCore/platform/graphics/skia/FontCustomPlatformData.cpp	Mon Jan 24 11:45:53 2011
+@@ -37,7 +37,7 @@
+ #include "Base64.h"
+ #include "ChromiumBridge.h"
+ #include "OpenTypeUtilities.h"
+-#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP)
++#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP) || OS(OPENBSD)
+ #include "SkStream.h"
+ #endif
+ 
+@@ -48,7 +48,7 @@
+ 
+ #if OS(WINDOWS)
+ #include <objbase.h>
+-#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP)
++#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP) || OS(OPENBSD)
+ #include <cstring>
+ #endif
+ 
+@@ -59,7 +59,7 @@ FontCustomPlatformData::~FontCustomPlatformData()
+ #if OS(WINDOWS)
+     if (m_fontReference)
+         RemoveFontMemResourceEx(m_fontReference);
+-#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP)
++#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP) || OS(OPENBSD)
+     if (m_fontReference)
+         m_fontReference->unref();
+ #endif
+@@ -100,7 +100,7 @@ FontPlatformData FontCustomPlatformData::fontPlatformD
+ 
+     HFONT hfont = CreateFontIndirect(&logFont);
+     return FontPlatformData(hfont, size);
+-#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP)
++#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP) || OS(OPENBSD)
+     ASSERT(m_fontReference);
+     return FontPlatformData(m_fontReference, "", size, bold && !m_fontReference->isBold(), italic && !m_fontReference->isItalic());
+ #else
+@@ -124,7 +124,7 @@ static String createUniqueFontName()
+ }
+ #endif
+ 
+-#if OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP)
++#if OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP) || OS(OPENBSD)
+ class RemoteFontStream : public SkStream {
+ public:
+     explicit RemoteFontStream(PassRefPtr<SharedBuffer> buffer)
+@@ -190,7 +190,7 @@ FontCustomPlatformData* createFontCustomPlatformData(S
+     if (!fontReference)
+         return 0;
+     return new FontCustomPlatformData(fontReference, fontName);
+-#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP)
++#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP) || OS(OPENBSD)
+     RemoteFontStream* stream = new RemoteFontStream(buffer);
+     SkTypeface* typeface = SkTypeface::CreateFromStream(stream);
+     if (!typeface)

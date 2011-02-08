@@ -1,0 +1,39 @@
+$OpenBSD: patch-chrome_browser_ui_views_info_bubble_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/ui/views/info_bubble.h.orig	Fri Jan 21 10:20:24 2011
++++ chrome/browser/ui/views/info_bubble.h	Sun Jan 23 23:27:32 2011
+@@ -14,7 +14,7 @@
+ 
+ #if defined(OS_WIN)
+ #include "views/widget/widget_win.h"
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+ #include "views/widget/widget_gtk.h"
+ #endif
+ 
+@@ -178,7 +178,7 @@ class InfoBubbleDelegate {
+ class InfoBubble
+ #if defined(OS_WIN)
+     : public views::WidgetWin,
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+     : public views::WidgetGtk,
+ #endif
+       public views::AcceleratorTarget,
+@@ -252,7 +252,7 @@ class InfoBubble
+ #if defined(OS_WIN)
+   // Overridden from WidgetWin:
+   virtual void OnActivate(UINT action, BOOL minimized, HWND window);
+-#elif defined(OS_LINUX)
++#elif defined(TOOLKIT_GTK)
+   // Overridden from WidgetGtk:
+   virtual void IsActiveChanged();
+ #endif
+@@ -260,7 +260,7 @@ class InfoBubble
+ #if defined(OS_WIN)
+   // The window used to render the padding, border and arrow.
+   BorderWidget* border_;
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+   // The view displaying the border.
+   BorderContents* border_contents_;
+ #endif

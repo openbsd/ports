@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_test_ui_ui_layout_test_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
---- chrome/test/ui/ui_layout_test.cc.orig	Tue Mar 30 07:31:12 2010
-+++ chrome/test/ui/ui_layout_test.cc	Sun Nov 28 00:11:30 2010
-@@ -17,7 +17,7 @@
+$OpenBSD: patch-chrome_test_ui_ui_layout_test_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/test/ui/ui_layout_test.cc.orig	Fri Jan 21 10:20:39 2011
++++ chrome/test/ui/ui_layout_test.cc	Sun Jan 23 23:27:34 2011
+@@ -19,7 +19,7 @@
  static const char kPlatformName[] = "chromium-win";
  #elif defined(OS_MACOSX)
  static const char kPlatformName[] = "chromium-mac";
 -#elif defined(OS_LINUX)
-+#elif defined(OS_NIX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
  static const char kPlatformName[] = "chromium-linux";
  #else
  #error No known OS defined

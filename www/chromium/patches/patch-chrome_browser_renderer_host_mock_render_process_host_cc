@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_browser_renderer_host_mock_render_process_host_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
---- chrome/browser/renderer_host/mock_render_process_host.cc.orig	Tue Mar 30 07:29:15 2010
-+++ chrome/browser/renderer_host/mock_render_process_host.cc	Sun Nov 28 00:11:31 2010
-@@ -97,7 +97,7 @@ TransportDIB* MockRenderProcessHost::GetTransportDIB(T
+$OpenBSD: patch-chrome_browser_renderer_host_mock_render_process_host_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/renderer_host/mock_render_process_host.cc.orig	Fri Jan 21 10:20:21 2011
++++ chrome/browser/renderer_host/mock_render_process_host.cc	Sun Jan 23 23:27:31 2011
+@@ -106,7 +106,7 @@ TransportDIB* MockRenderProcessHost::GetTransportDIB(T
+   DuplicateHandle(GetCurrentProcess(), dib_id.handle, GetCurrentProcess(),
+                   &duped, 0, TRUE, DUPLICATE_SAME_ACCESS);
+   transport_dib_ = TransportDIB::Map(duped);
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_OPENBSD)
    // On Mac, TransportDIBs are always created in the browser, so we cannot map
    // one from a dib_id.
    transport_dib_ = TransportDIB::Create(100 * 100 * 4, 0);
--#elif defined(OS_LINUX)
-+#elif defined(OS_NIX)
-   transport_dib_ = TransportDIB::Map(dib_id);
- #endif
- 

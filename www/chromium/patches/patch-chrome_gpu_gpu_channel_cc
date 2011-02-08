@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_gpu_gpu_channel_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/gpu/gpu_channel.cc.orig	Tue Feb  1 21:23:45 2011
++++ chrome/gpu/gpu_channel.cc	Tue Feb  1 21:24:04 2011
+@@ -148,7 +148,7 @@ void GpuChannel::OnCreateViewCommandBuffer(
+   // offscreen rendering and the browser provides whichever platform specific
+   // "render target" the GpuCommandBufferStub targets.
+   handle = gfx::NativeViewFromId(view_id);
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+   ChildThread* gpu_thread = ChildThread::current();
+   // Ask the browser for the view's XID.
+   // TODO(piman): This assumes that it doesn't change. It can change however

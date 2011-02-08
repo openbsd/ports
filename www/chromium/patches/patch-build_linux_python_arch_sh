@@ -1,26 +1,9 @@
-$OpenBSD: patch-build_linux_python_arch_sh,v 1.1 2010/12/13 09:51:45 espie Exp $
---- build/linux/python_arch.sh.orig	Tue Mar 30 07:28:30 2010
-+++ build/linux/python_arch.sh	Sun Nov 28 00:11:29 2010
+$OpenBSD: patch-build_linux_python_arch_sh,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- build/linux/python_arch.sh.orig	Sun Jan 23 23:55:36 2011
++++ build/linux/python_arch.sh	Sun Jan 23 23:55:51 2011
 @@ -1,4 +1,4 @@
 -#!/bin/bash
-+#!/usr/local/bin/bash
++#!/usr/bin/env bash
  # Copyright (c) 2010 The Chromium Authors. All rights reserved.
  # Use of this source code is governed by a BSD-style license that can be
  # found in the LICENSE file.
-@@ -10,12 +10,10 @@
- #  python_arch.sh /path/to/sysroot/usr/lib/libpython2.4.so.1.0
- #
- 
--python=$(readlink -f "$1")
--if [ ! -r "$python" ]; then
--  echo unknown
--  exit 0;
--fi
--file_out=$(file "$python")
-+echo ia32
-+exit 0
-+
-+file_out=$(file "$1")
- if [ $? -ne 0 ]; then
-   echo unknown
-   exit 0;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_views_tabs_tab_strip_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/ui/views/tabs/tab_strip.h.orig	Fri Jan 21 10:20:24 2011
++++ chrome/browser/ui/views/tabs/tab_strip.h	Sun Jan 23 23:27:33 2011
+@@ -19,7 +19,7 @@ class Tab;
+ 
+ namespace views {
+ class ImageView;
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_GTK)
+ class WidgetGtk;
+ #elif defined(OS_WIN)
+ class WidgetWin;

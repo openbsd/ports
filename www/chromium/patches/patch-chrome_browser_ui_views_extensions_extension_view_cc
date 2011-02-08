@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_views_extensions_extension_view_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/ui/views/extensions/extension_view.cc.orig	Fri Jan 21 10:20:24 2011
++++ chrome/browser/ui/views/extensions/extension_view.cc	Sun Jan 23 23:27:32 2011
+@@ -14,7 +14,7 @@
+ #include "chrome/browser/renderer_host/render_widget_host_view_win.h"
+ #elif defined(TOUCH_UI)
+ #include "chrome/browser/renderer_host/render_widget_host_view_views.h"
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+ #include "chrome/browser/renderer_host/render_widget_host_view_gtk.h"
+ #endif
+ 

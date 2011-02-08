@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_renderer_render_thread_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
---- chrome/renderer/render_thread.cc.orig	Tue Mar 30 07:31:33 2010
-+++ chrome/renderer/render_thread.cc	Sun Nov 28 00:11:31 2010
-@@ -827,7 +827,7 @@ void RenderThread::EnsureWebKitInitialized() {
+$OpenBSD: patch-chrome_renderer_render_thread_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/renderer/render_thread.cc.orig	Fri Jan 21 10:20:27 2011
++++ chrome/renderer/render_thread.cc	Sun Jan 23 23:27:33 2011
+@@ -964,7 +964,7 @@ void RenderThread::EnsureWebKitInitialized() {
  }
  
  void RenderThread::IdleHandler() {
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_renderer_render_thread_cc,v 1.1 2010/12/13 09:51:45 espie
    MallocExtension::instance()->ReleaseFreeMemory();
  #endif
  
-@@ -901,7 +901,7 @@ void RenderThread::OnPurgeMemory() {
+@@ -1040,7 +1040,7 @@ void RenderThread::OnPurgeMemory() {
    while (!v8::V8::IdleNotification()) {
    }
  

@@ -1,23 +1,25 @@
-# $OpenBSD: Makefile,v 1.19 2011/02/03 10:31:12 robert Exp $
+# $OpenBSD: Makefile,v 1.20 2011/02/08 09:43:02 espie Exp $
 
-ONLY_FOR_ARCHS =	i386
+ONLY_FOR_ARCHS=		i386 amd64
 
-COMMENT =		Chromium browser
+COMMENT=		Chromium browser
 
-DISTNAME=		chromium-5.0.359.1
-REVISION=		3
+V=			9.0.597.84
+DISTNAME=		chromium-${V}
 
-CATEGORIES =		www
+CATEGORIES=		www
 
-HOMEPAGE =		http://sightly.net/peter/openbsd/chromium/
+HOMEPAGE=		http://sightly.net/peter/openbsd/chromium/
 
-MAINTAINER =		Peter Valchev <pvalchev@openbsd.org>
+MAINTAINER=		Robert Nagy <robert@openbsd.org>
+
+EXTRACT_SUFX=		.tar.bz2
 
 # BSD-like
-PERMIT_PACKAGE_CDROM =	Yes
-PERMIT_PACKAGE_FTP =	Yes
-PERMIT_DISTFILES_CDROM =Yes
-PERMIT_DISTFILES_FTP =	Yes
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xss
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 dbus-glib-1
@@ -27,58 +29,69 @@ WANTLIB += gtk-x11-2.0 jpeg m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs xcb xml2
 WANTLIB += z execinfo bz2 nss3 nssutil3 ssl3 smime3 softokn3 gconf-2
 WANTLIB += GL Xxf86vm drm stdc++ xcb-render xcb-shm
+WANTLIB += Xtst event sqlite3 xslt vpx
 
-MASTER_SITES=	${MASTER_SITE_BACKUP} \
-		${HOMEPAGE}
+MASTER_SITES=	http://build.chromium.org/buildbot/official/ \
+		ftp://rene-ladan.nl/pub/distfiles/
 
-MODULES =	devel/gettext \
-		lang/python
+MODULES=	devel/gettext \
+		lang/python \
+		gcc4
 
-MODPY_RUNDEP =	No
+MODGCC4_LANGS = c c++
+MODGCC4_ARCHES = i386 amd64
 
-RUN_DEPENDS =	sysutils/gamin,-server
-BUILD_DEPENDS =	devel/gperf \
+# XXX cheat
+COMPILER_VERSION = gcc3
+
+MODPY_RUNDEP=	No
+MODPY_VERSION=	2.5
+
+RUN_DEPENDS=	sysutils/gamin,-server
+BUILD_DEPENDS=	archivers/bzip2 \
+		devel/gperf \
 		devel/bison \
+		devel/flex \
+		devel/yasm \
 		shells/bash
-LIB_DEPENDS =	devel/libexecinfo \
+LIB_DEPENDS=	devel/libexecinfo \
 		archivers/bzip2 \
 		security/nss \
-		devel/gconf2
+		devel/gconf2 \
+		multimedia/libvpx \
+		x11/gnome/libgnome-keyring \
+		textproc/libxslt
 
 .include <bsd.own.mk>
 
 # Set BUILDTYPE to Debug (or omit it) for a debug build
 BUILDTYPE=	Release
-.if ${COMPILER_VERSION:L:Mgcc4*}
-MAKE_ENV =	BUILDTYPE=${BUILDTYPE} V=1 \
-		CXX=/usr/bin/g++ \
-		CXX.host=/usr/bin/g++ \
-		LINK.host=/usr/bin/g++ \
-		CC=/usr/bin/gcc
-.else
+MAKE_ENV=	BUILDTYPE=${BUILDTYPE} V=1 \
+		LINK=/usr/bin/g++
 
-MODULES +=	gcc4
-MODGCC4_ARCHES = *
-MODGCC4_LANGS =	c c++
+USE_GMAKE=	Yes
 
-MAKE_ENV =	BUILDTYPE=${BUILDTYPE} V=1 \
-		CXX=${LOCALBASE}/bin/eg++ \
-		CXX.host=${LOCALBASE}/bin/eg++ \
-		LINK.host=${LOCALBASE}/bin/eg++ \
-		CC=${LOCALBASE}/bin/egcc
-.endif
+REGRESS_TARGET=	base_unittests
 
-USE_GMAKE =	Yes
-
-NO_REGRESS =	Yes
-
-CONFIGURE_STYLE = none # prevent python MODULE from overriding do-build
-CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_STYLE=none # prevent python MODULE from overriding do-build
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
-ALL_TARGET =	chrome
+ALL_TARGET=	chrome
 
 BUILDDIR=	${WRKSRC}/out/${BUILDTYPE}
+
+GYP_DEFS=	-Duse_system_bzip2=1 \
+		-Duse_system_libevent=1 \
+		-Duse_system_libjpeg=1 \
+		-Duse_system_libpng=1 \
+		-Duse_system_libxml=1 \
+		-Duse_system_sqlite=1 \
+		-Duse_system_vpx=1 \
+		-Duse_system_zlib=0 \
+		-Ddisable_nacl=1 \
+		-Ddisable_sse2=1 \
+		-DOS=openbsd
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
@@ -87,9 +100,8 @@ pre-configure:
 do-configure:
 	@cd ${WRKSRC} && \
 	env -i ${CONFIGURE_ENV} ${MODPY_BIN} build/gyp_chromium -fmake --ignore-environment \
-	-Ibuild/common.gypi -Ibuild/features_override.gypi "--depth=${WRKSRC}" \
-	-DOS=openbsd -Duse_system_libxml=1 -Duse_system_libjpeg=1 \
-	build/all.gyp
+	${GYP_DEFS} \
+	"--depth=${WRKSRC}"
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome
@@ -97,11 +109,15 @@ do-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/chrome ${PREFIX}/bin
 	@perl -pi -e "s,TRUEPREFIX,${TRUEPREFIX},g" ${PREFIX}/bin/chrome
 	${INSTALL_DATA} ${BUILDDIR}/chrome.pak ${PREFIX}/chrome
+	${INSTALL_DATA} ${BUILDDIR}/resources.pak ${PREFIX}/chrome
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/locales
 	${INSTALL_DATA} ${BUILDDIR}/locales/* ${PREFIX}/chrome/locales
 	${INSTALL_DATA} ${BUILDDIR}/*.png ${PREFIX}/chrome
 	${INSTALL_DATA_DIR} ${PREFIX}/chrome/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/chrome/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/chrome/resources
+.for f in ffmpegsumo_nolink libffmpegsumo.so mksnapshot protoc
+	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
+.endfor
 
 .include <bsd.port.mk>

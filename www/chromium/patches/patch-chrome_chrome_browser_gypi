@@ -1,53 +1,62 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.1 2010/12/13 09:51:45 espie Exp $
---- chrome/chrome_browser.gypi.orig	Tue Mar 30 07:31:34 2010
-+++ chrome/chrome_browser.gypi	Sun Nov 28 00:11:31 2010
-@@ -2373,7 +2373,7 @@
-             ['exclude', '^browser/chromeos'],
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/chrome_browser.gypi.orig	Fri Jan 21 10:20:41 2011
++++ chrome/chrome_browser.gypi	Mon Jan 24 14:09:16 2011
+@@ -3496,7 +3496,7 @@
+             ['exclude', '^browser/views/tab_contents/tab_contents_view_gtk.h'],
            ],
          }],
 -        ['OS=="linux"', {
-+        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
++        ['OS=="linux" or OS=="openbsd"', {
            'dependencies': [
              '../build/linux/system.gyp:dbus-glib',
-             # Temporarily disabled while we figure some stuff out.
-@@ -2384,12 +2384,6 @@
-             '../build/linux/system.gyp:nss',
-             '../base/base.gyp:linux_versioninfo',
-           ],
--          'link_settings': {
--            'libraries': [
--              # For dlsym() in 'browser/zygote_main_linux.cc'
+             '../build/linux/system.gyp:gconf',
+@@ -3509,12 +3509,12 @@
+           'link_settings': {
+             'libraries': [
+               # For dlsym() in 'browser/zygote_main_linux.cc'
 -              '-ldl',
--            ],
--          },
+             ],
+           },
            'sources!': [
-              # Exclude extension shelf for toolstrips.
-             'browser/views/extensions/extension_shelf.cc',
-@@ -2436,7 +2430,7 @@
-             'browser/file_watcher_inotify.cc',
+             'browser/ui/views/extensions/extension_view.cc',
+             'browser/ui/views/extensions/extension_view.h',
++            'browser/file_path_watcher_inotify.cc',
+           ],
+           'sources': [
+             'browser/crash_handler_host_linux.h',
+@@ -3569,7 +3569,6 @@
+             'browser/certificate_manager_model.h',
+             'browser/dom_ui/options/certificate_manager_handler.cc',
+             'browser/dom_ui/options/certificate_manager_handler.h',
+-            'browser/file_path_watcher_inotify.cc',
            ],
          }],
--        ['OS=="freebsd" or OS=="openbsd"', {
-+        ['OS=="freebsd" or OS=="freebsd" or OS=="openbsd"', {
-           'dependencies': [
-             '../build/linux/system.gyp:gtk',
-             '../build/linux/system.gyp:gtkprint',
-@@ -2445,6 +2439,9 @@
+         ['OS=="freebsd" or OS=="openbsd"', {
+@@ -3581,7 +3580,18 @@
+           ],
            'sources': [
-             'browser/file_watcher_stub.cc',
+             'browser/file_path_watcher_stub.cc',
++             #'browser/geolocation/gateway_data_provider_bsd.cc',
++             #'browser/geolocation/gateway_data_provider_bsd.h',
            ],
 +          'sources!': [
-+            'browser/file_watcher_inotify.cc',
++            #'browser/geolocation/empty_device_data_provider.cc',
++            #'browser/geolocation/empty_device_data_provider.h',
++             'browser/geolocation/gateway_data_provider_linux.cc',
++             'browser/geolocation/gateway_data_provider_linux.h',
++             'browser/geolocation/wifi_data_provider_linux.h',
++             'browser/geolocation/wifi_data_provider_linux.cc',
++            'browser/file_path_watcher_inotify.cc',
 +          ],
          }],
-         ['OS=="mac"', {
-           'sources!': [
-@@ -2940,7 +2937,7 @@
+         # Use system SSL settings on Mac and Windows.  Use preferences
+         # for SSL settings on other platforms.
+@@ -4161,7 +4171,7 @@
                ],
              }],
              # GTK build only
--            ['OS=="linux" and chromeos==0 and toolkit_views==0', {
-+            ['(OS=="linux" or OS=="freebsd" or OS=="openbsd") and chromeos==0 and toolkit_views==0', {
+-            ['OS=="linux" and toolkit_views==0', {
++            ['(OS=="linux" or OS=="openbsd") and toolkit_views==0', {
                'sources/': [
                  ['include', '^browser/printing/print_dialog_gtk.cc'],
                  ['include', '^browser/printing/print_dialog_gtk.h'],

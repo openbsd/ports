@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_default_plugin_default_plugin_gyp,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/default_plugin/default_plugin.gyp.orig	Fri Jan 21 10:20:41 2011
++++ chrome/default_plugin/default_plugin.gyp	Sun Jan 23 23:27:33 2011
+@@ -53,7 +53,7 @@
+               'plugin_install_job_monitor.h',
+             ],
+          }],
+-         ['OS=="linux"', {
++         ['OS=="linux" or OS=="openbsd"', {
+             'dependencies': [
+               '<(DEPTH)/build/linux/system.gyp:gtk',
+             ],

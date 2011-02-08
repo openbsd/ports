@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_ui_views_download_item_view_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/ui/views/download_item_view.cc.orig	Fri Jan 21 10:20:24 2011
++++ chrome/browser/ui/views/download_item_view.cc	Sun Jan 23 23:27:32 2011
+@@ -259,7 +259,7 @@ DownloadItemView::DownloadItemView(DownloadItem* downl
+ 
+     // Extract the file extension (if any).
+     FilePath filename(download->target_name());
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+     std::wstring extension = base::SysNativeMBToWide(filename.Extension());
+ #else
+     std::wstring extension = filename.Extension();
+@@ -268,7 +268,7 @@ DownloadItemView::DownloadItemView(DownloadItem* downl
+     // Remove leading '.'
+     if (extension.length() > 0)
+       extension = extension.substr(1);
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+     std::wstring rootname =
+         base::SysNativeMBToWide(filename.RemoveExtension().value());
+ #else

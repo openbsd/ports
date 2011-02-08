@@ -1,0 +1,11 @@
+$OpenBSD: patch-base_linux_util_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- base/linux_util.cc.orig	Mon Jan 24 14:24:12 2011
++++ base/linux_util.cc	Mon Jan 24 14:24:19 2011
+@@ -171,6 +171,7 @@ std::string GetLinuxDistro() {
+   }
+ #else
+   NOTIMPLEMENTED();
++  return "Unknown";
+ #endif
+ }
+ 

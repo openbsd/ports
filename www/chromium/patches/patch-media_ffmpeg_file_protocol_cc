@@ -1,16 +1,12 @@
-$OpenBSD: patch-media_ffmpeg_file_protocol_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
---- media/ffmpeg/file_protocol.cc.orig	Tue Mar 30 07:20:42 2010
-+++ media/ffmpeg/file_protocol.cc	Sun Nov 28 00:11:25 2010
-@@ -54,9 +54,11 @@ int WriteContext(URLContext* h, unsigned char* buf, in
-   return write(GetHandle(h), buf, size);
+$OpenBSD: patch-media_ffmpeg_file_protocol_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- media/ffmpeg/file_protocol.cc.orig	Fri Jan 21 10:19:46 2011
++++ media/ffmpeg/file_protocol.cc	Mon Jan 24 11:24:49 2011
+@@ -58,7 +58,7 @@ int WriteContext(URLContext* h, unsigned char* buf, in
+   return HANDLE_EINTR(write(GetHandle(h), buf, size));
  }
  
--offset_t SeekContext(URLContext* h, offset_t offset, int whence) {
+-int64 SeekContext(URLContext* h, int64 offset, int whence) {
 +int64_t SeekContext(URLContext* h, int64_t offset, int whence) {
  #if defined(OS_WIN)
-   return lseek(GetHandle(h), static_cast<long>(offset), whence);
-+#elif defined(OS_OPENBSD)
-+  return lseek(GetHandle(h), static_cast<int64_t>(offset), whence);
+   return _lseeki64(GetHandle(h), static_cast<__int64>(offset), whence);
  #else
-   return lseek(GetHandle(h), offset, whence);
- #endif

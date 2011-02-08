@@ -1,0 +1,11 @@
+$OpenBSD: patch-third_party_libjingle_source_talk_base_socketaddress_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- third_party/libjingle/source/talk/base/socketaddress.cc.orig	Fri Jan 21 10:30:19 2011
++++ third_party/libjingle/source/talk/base/socketaddress.cc	Mon Jan 24 11:28:09 2011
+@@ -29,6 +29,7 @@
+ #include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
++#include <netinet/in_systm.h>
+ #include <netinet/ip.h>
+ #include <arpa/inet.h>
+ #include <netdb.h>

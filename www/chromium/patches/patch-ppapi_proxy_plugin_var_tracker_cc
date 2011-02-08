@@ -1,0 +1,12 @@
+$OpenBSD: patch-ppapi_proxy_plugin_var_tracker_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- ppapi/proxy/plugin_var_tracker.cc.orig	Fri Jan 21 10:19:50 2011
++++ ppapi/proxy/plugin_var_tracker.cc	Mon Jan 24 11:20:02 2011
+@@ -42,7 +42,7 @@ PluginVarTracker::PluginVarTracker(PluginDispatcher* d
+     : dispatcher_(dispatcher) {
+ }
+ 
+-int64 PluginVarTracker::MakeString(const std::string& str) {
++int64_t PluginVarTracker::MakeString(const std::string& str) {
+   RefCountedString* out = new RefCountedString(str);
+   out->AddRef();
+   return static_cast<int64>(reinterpret_cast<intptr_t>(out));

@@ -1,5 +1,35 @@
 #!/bin/sh
-# $OpenBSD: chrome,v 1.1.1.1 2009/12/18 22:25:56 pvalchev Exp $
+# $OpenBSD: chrome,v 1.2 2011/02/08 09:43:02 espie Exp $
 
 PROGDIR=TRUEPREFIX/chrome
+SHMALL=32768
+DATASIZ=71680
+FDS=256
+
+if [ `/usr/sbin/sysctl -n kern.shminfo.shmall` -lt ${SHMALL} ]; then
+	MSG="You should bump the kern.shminfo.shmall sysctl to at least ${SHMALL}."
+	MSG="${MSG}\ne.g.: sysctl kern.shminfo.shmall=${SHMALL}\n"
+fi
+
+if [ `ulimit -Sd` -lt ${DATASIZ} ]; then
+	MSG="${MSG}\nYou should bump your datasize limit to at least ${DATASIZ}."
+	MSG="${MSG}\ne.g.: ulimit -Sd ${DATASIZ}\n"
+fi
+
+if [ `ulimit -Sn` -lt ${FDS} ]; then
+	MSG="${MSG}\nYou should bump your nofiles(descriptors) limit to at least ${FDS}."
+	MSG="${MSG}\ne.g.: ulimit -Sn ${FDS}\n"
+fi
+
+if [ ! -z "${MSG}" ]; then
+	MSG="${MSG}\n\nDo you want to run Chromium anyways?"
+	MSG="${MSG}\n(If you don't bump these limits, Chromium might fail to work properly.)"
+
+	answer=`echo ${MSG} | /usr/X11R6/bin/xmessage -center -buttons yes,no -print -file -`
+
+	if [ X"${answer}" = X"no" ]; then
+		exit 0
+	fi
+fi
+
 exec "${PROGDIR}/chrome" "$@"

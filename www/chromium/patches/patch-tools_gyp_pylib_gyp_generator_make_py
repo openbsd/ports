@@ -1,40 +1,42 @@
-$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.1 2010/12/13 09:51:46 espie Exp $
---- tools/gyp/pylib/gyp/generator/make.py.orig	Tue Mar 30 07:25:49 2010
-+++ tools/gyp/pylib/gyp/generator/make.py	Sun Nov 28 00:11:32 2010
+$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- tools/gyp/pylib/gyp/generator/make.py.orig	Fri Jan 21 10:29:51 2011
++++ tools/gyp/pylib/gyp/generator/make.py	Sun Jan 23 23:27:37 2011
 @@ -34,7 +34,7 @@ import pprint
  generator_default_variables = {
    'EXECUTABLE_PREFIX': '',
    'EXECUTABLE_SUFFIX': '',
 -  'OS': 'linux',
-+# 'OS': 'linux',
++  'OS': 'openbsd',
    'STATIC_LIB_PREFIX': 'lib',
    'SHARED_LIB_PREFIX': 'lib',
    'STATIC_LIB_SUFFIX': '.a',
-@@ -147,7 +147,7 @@ DEPFLAGS = -MMD -MF $(depfile).tmp
- # and dollar signs past make, the shell, and sed at the same time."""
- r"""
- define fixup_dep
--sed -i -e "s|^$(notdir $@)|$@|" $(depfile).tmp
-+sed -e "s|^$(notdir $@)|$@|" $(depfile).tmp > $(depfile).tmp2 && mv $(depfile).tmp2 $(depfile).tmp
- sed -e "s|^[^:]*: *||" -e "s| *\\\\$$||" -e 's|^ *||' \
-     -e "/./s|$$|:|" $(depfile).tmp >> $(depfile).tmp
- cat $(depfile).tmp >> $(depfile)
-@@ -784,12 +784,14 @@ class MakefileWriter:
- # CFLAGS et al overrides must be target-local.
- # See "Target-specific Variable Values" in the GNU Make manual.""")
-       self.WriteLn("$(OBJS): TOOLSET := $(TOOLSET)")
--      self.WriteLn("$(OBJS): GYP_CFLAGS := $(CFLAGS_$(BUILDTYPE)) "
-+      self.WriteLn("$(OBJS): GYP_CFLAGS := $(INCS_$(BUILDTYPE)) "
-+                   "$(CFLAGS_$(BUILDTYPE)) "
-                    "$(CFLAGS_C_$(BUILDTYPE)) "
--                   "$(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))")
--      self.WriteLn("$(OBJS): GYP_CXXFLAGS := $(CFLAGS_$(BUILDTYPE)) "
-+                   "$(DEFS_$(BUILDTYPE))")
-+      self.WriteLn("$(OBJS): GYP_CXXFLAGS := $(INCS_$(BUILDTYPE)) "
-+                   "$(CFLAGS_$(BUILDTYPE)) "
-                    "$(CFLAGS_CC_$(BUILDTYPE)) "
--                   "$(DEFS_$(BUILDTYPE)) $(INCS_$(BUILDTYPE))")
-+                   "$(DEFS_$(BUILDTYPE))")
+@@ -106,7 +106,7 @@ all_deps :=
+ #   export LINK="$(CXX)"
+ #
+ # This will allow make to invoke N linker processes as specified in -jN.
+-LINK ?= flock $(builddir)/linker.lock $(CXX)
++LINK ?= $(CXX)
  
-     self.WriteLn()
+ # We want to use GNU ar's T option if available because it's much faster.
+ # We try to archive and link a file to see ar and ld support this feature.
+@@ -147,13 +147,13 @@ ifeq ($(ARFLAGS.target),)
+   ARFLAGS.target := $(call detect_arflags,target)
+ endif
  
+-CC.host ?= gcc
+-CFLAGS.host ?=
+-CXX.host ?= g++
+-CXXFLAGS.host ?=
+-LINK.host ?= g++
+-LDFLAGS.host ?=
+-AR.host ?= ar
++CC.host ?= $(CC)
++CFLAGS.host ?= $(CFLAGS)
++CXX.host ?= $(CXX)
++CXXFLAGS.host ?= $(CXXFLAGS)
++LINK.host ?= $(LINK)
++LDFLAGS.host ?= $(LDFLAGS)
++AR.host ?= $(AR)
+ # See the description for ARFLAGS.target.
+ -include $(obj).host/arflags/arflags.mk
+ # Temporarily disabled -- see ARFLAGS.target.

@@ -1,21 +1,21 @@
-$OpenBSD: patch-chrome_browser_sync_engine_syncer_thread_h,v 1.1 2010/12/13 09:51:45 espie Exp $
---- chrome/browser/sync/engine/syncer_thread.h.orig	Tue Mar 30 07:29:41 2010
-+++ chrome/browser/sync/engine/syncer_thread.h	Sun Nov 28 00:11:31 2010
+$OpenBSD: patch-chrome_browser_sync_engine_syncer_thread_h,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/sync/engine/syncer_thread.h.orig	Fri Jan 21 10:20:20 2011
++++ chrome/browser/sync/engine/syncer_thread.h	Sun Jan 23 23:27:32 2011
 @@ -21,7 +21,7 @@
+ #include "base/thread.h"
  #include "base/time.h"
  #include "base/waitable_event.h"
- #include "chrome/browser/sync/engine/all_status.h"
 -#if defined(OS_LINUX)
-+#if defined(OS_NIX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
  #include "chrome/browser/sync/engine/idle_query_linux.h"
  #endif
- #include "chrome/browser/sync/sessions/sync_session.h"
-@@ -310,7 +310,7 @@ class SyncerThread : public base::RefCountedThreadSafe
-   scoped_ptr<EventListenerHookup> directory_manager_hookup_;
-   scoped_ptr<EventListenerHookup> syncer_events_;
+ #include "chrome/browser/sync/engine/syncer_types.h"
+@@ -338,7 +338,7 @@ class SyncerThread : public base::RefCountedThreadSafe
+       NudgeSource source,
+       const syncable::ModelTypeBitSet& model_types);
  
 -#if defined(OS_LINUX)
-+#if defined(OS_NIX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
    // On Linux, we need this information in order to query idle time.
    scoped_ptr<IdleQueryLinux> idle_query_;
  #endif

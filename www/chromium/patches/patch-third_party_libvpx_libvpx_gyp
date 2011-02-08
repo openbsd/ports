@@ -1,0 +1,15 @@
+$OpenBSD: patch-third_party_libvpx_libvpx_gyp,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- third_party/libvpx/libvpx.gyp.orig	Fri Jan 21 10:31:24 2011
++++ third_party/libvpx/libvpx.gyp	Sun Jan 23 23:27:36 2011
+@@ -35,6 +35,11 @@
+             'libvpx_path': 'lib/linux/arm',
+           },
+         }],
++        ['OS=="openbsd"', {
++          'variables': {
++            'libvpx_path': '/usr/local/lib',
++         },
++        }],
+         ['OS=="win"', {
+           'variables': {
+             'libvpx_path': 'lib/win/ia32',

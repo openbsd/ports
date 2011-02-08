@@ -1,0 +1,30 @@
+$OpenBSD: patch-chrome_browser_dom_ui_bug_report_ui_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/dom_ui/bug_report_ui.cc.orig	Tue Jan 25 12:41:14 2011
++++ chrome/browser/dom_ui/bug_report_ui.cc	Tue Feb  1 21:23:07 2011
+@@ -147,7 +147,7 @@ void RefreshLastScreenshot(views::Window* parent) {
+   gfx::NativeWindow window = parent->GetNativeWindow();
+   int width = parent->GetBounds().width();
+   int height = parent->GetBounds().height();
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+ // Linux provides its bounds and a native window handle to the screen
+ void RefreshLastScreenshot(gfx::NativeWindow window,
+                            const gfx::Rect& bounds) {
+@@ -181,7 +181,7 @@ void RefreshLastScreenshot(NSWindow* window) {
+ 
+ #if defined(TOOLKIT_VIEWS)
+ void ShowHtmlBugReportView(views::Window* parent, Browser* browser) {
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+ void ShowHtmlBugReportView(gfx::NativeWindow window, const gfx::Rect& bounds,
+                            Browser* browser) {
+ #elif defined(OS_MACOSX)
+@@ -202,7 +202,7 @@ void ShowHtmlBugReportView(NSWindow* window, Browser* 
+   // now for refreshing the last screenshot
+ #if defined(TOOLKIT_VIEWS)
+   RefreshLastScreenshot(parent);
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+   RefreshLastScreenshot(window, bounds);
+ #elif defined(OS_MACOSX)
+   RefreshLastScreenshot(window);

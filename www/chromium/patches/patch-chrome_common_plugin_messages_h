@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_common_plugin_messages_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/common/plugin_messages.h.orig	Fri Jan 21 10:20:41 2011
++++ chrome/common/plugin_messages.h	Sun Jan 23 23:27:33 2011
+@@ -116,7 +116,7 @@ struct PluginMsg_UpdateGeometry_Param {
+   TransportDIB::Handle windowless_buffer;
+   TransportDIB::Handle background_buffer;
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+   // This field contains a key that the plug-in process is expected to return
+   // to the renderer in its ACK message, unless the value is -1, in which case
+   // no ACK message is required.  Other than the special -1 value, the values

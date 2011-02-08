@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_task_manager_task_manager_resource_providers_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/task_manager/task_manager_resource_providers.cc.orig	Fri Jan 21 10:20:20 2011
++++ chrome/browser/task_manager/task_manager_resource_providers.cc	Sun Jan 23 23:27:32 2011
+@@ -1162,7 +1162,7 @@ TaskManagerBrowserProcessResource::TaskManagerBrowserP
+       default_icon_ = IconUtil::CreateSkBitmapFromHICON(icon, icon_size);
+     }
+   }
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+   if (!default_icon_) {
+     ResourceBundle& rb = ResourceBundle::GetSharedInstance();
+     default_icon_ = rb.GetBitmapNamed(IDR_PRODUCT_LOGO_16);

@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_WebCore_platform_Scrollbar_cpp,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- third_party/WebKit/WebCore/platform/Scrollbar.cpp.orig	Fri Jan 21 10:22:41 2011
++++ third_party/WebKit/WebCore/platform/Scrollbar.cpp	Mon Jan 24 11:45:53 2011
+@@ -40,7 +40,7 @@
+ 
+ using namespace std;
+ 
+-#if (PLATFORM(CHROMIUM) && (OS(LINUX) || OS(FREEBSD))) || PLATFORM(GTK)
++#if (PLATFORM(CHROMIUM) && (OS(LINUX) || OS(FREEBSD) || OS(OPENBSD))) || PLATFORM(GTK)
+ // The position of the scrollbar thumb affects the appearance of the steppers, so
+ // when the thumb moves, we have to invalidate them for painting.
+ #define THUMB_POSITION_AFFECTS_BUTTONS

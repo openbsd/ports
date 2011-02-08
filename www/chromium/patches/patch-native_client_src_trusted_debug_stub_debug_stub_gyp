@@ -1,0 +1,21 @@
+$OpenBSD: patch-native_client_src_trusted_debug_stub_debug_stub_gyp,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- native_client/src/trusted/debug_stub/debug_stub.gyp.orig	Fri Jan 21 10:20:44 2011
++++ native_client/src/trusted/debug_stub/debug_stub.gyp	Sun Jan 23 23:27:35 2011
+@@ -16,7 +16,7 @@
+       'transport_common.cc',
+     ],
+     'conditions': [
+-      ['OS=="linux" or OS=="mac"', {
++      ['OS=="linux" or OS=="openbsd" or OS=="mac"', {
+         'platform_sources': [
+           'posix/debug_stub_posix.cc',
+           'posix/mutex_impl.cc',
+@@ -40,7 +40,7 @@
+       'target_base': 'none',
+     },
+     'target_conditions': [
+-      ['OS=="linux" or OS=="mac"', {
++      ['OS=="linux" or OS=="openbsd" or OS=="mac"', {
+         'cflags': [
+           '-Wno-long-long',
+         ],

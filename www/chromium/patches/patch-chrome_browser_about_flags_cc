@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_about_flags_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/about_flags.cc.orig	Fri Jan 21 10:20:26 2011
++++ chrome/browser/about_flags.cc	Sun Jan 23 23:27:31 2011
+@@ -436,7 +436,7 @@ int GetCurrentPlatform() {
+   return kOsWin;
+ #elif defined(OS_CHROMEOS)  // Needs to be before the OS_LINUX check.
+   return kOsCrOS;
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+   return kOsLinux;
+ #else
+ #error Unknown platform

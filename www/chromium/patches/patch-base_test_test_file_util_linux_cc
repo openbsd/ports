@@ -1,0 +1,19 @@
+$OpenBSD: patch-base_test_test_file_util_linux_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- base/test/test_file_util_linux.cc.orig	Wed Feb  2 10:50:04 2011
++++ base/test/test_file_util_linux.cc	Wed Feb  2 10:51:00 2011
+@@ -16,10 +16,15 @@ bool EvictFileFromSystemCache(const FilePath& file) {
+   int fd = open(file.value().c_str(), O_RDONLY);
+   if (fd < 0)
+     return false;
++#if defined(OS_OPENBSD)
++  if (fsync(fd) != 0)
++    return false;
++#else
+   if (fdatasync(fd) != 0)
+     return false;
+   if (posix_fadvise(fd, 0, 0, POSIX_FADV_DONTNEED) != 0)
+     return false;
++#endif
+   close(fd);
+   return true;
+ }

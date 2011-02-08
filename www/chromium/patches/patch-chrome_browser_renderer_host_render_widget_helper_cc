@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_renderer_host_render_widget_helper_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/renderer_host/render_widget_helper.cc.orig	Fri Jan 21 10:20:21 2011
++++ chrome/browser/renderer_host/render_widget_helper.cc	Sun Jan 23 23:27:31 2011
+@@ -58,7 +58,7 @@ RenderWidgetHelper::~RenderWidgetHelper() {
+   // object, so we should not be destroyed unless pending_paints_ is empty!
+   DCHECK(pending_paints_.empty());
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+   ClearAllocatedDIBs();
+ #endif
+ }
+@@ -274,7 +274,7 @@ void RenderWidgetHelper::OnCreateFullscreenWidgetOnUI(
+     host->CreateNewFullscreenWidget(route_id, popup_type);
+ }
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+ TransportDIB* RenderWidgetHelper::MapTransportDIB(TransportDIB::Id dib_id) {
+   AutoLock locked(allocated_dibs_lock_);
+ 

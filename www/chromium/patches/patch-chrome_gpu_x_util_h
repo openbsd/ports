@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_gpu_x_util_h,v 1.1 2010/12/13 09:51:45 espie Exp $
---- chrome/gpu/x_util.h.orig	Tue Mar 30 07:30:03 2010
-+++ chrome/gpu/x_util.h	Sun Nov 28 00:11:31 2010
-@@ -11,7 +11,7 @@
+$OpenBSD: patch-chrome_gpu_x_util_h,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/gpu/x_util.h.orig	Fri Jan 21 10:20:26 2011
++++ chrome/gpu/x_util.h	Sun Jan 23 23:27:33 2011
+@@ -12,7 +12,7 @@
  #include "build/build_config.h"
  #include "chrome/gpu/gpu_config.h"
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_gpu_x_util_h,v 1.1 2010/12/13 09:51:45 espie Exp $
  
  // Forward declares ------------------------------------------------------------
  //
-@@ -41,6 +41,6 @@ class ScopedPtrXFree {
+@@ -42,6 +42,6 @@ class ScopedPtrXFree {
    void operator()(void* x) const;
  };
  

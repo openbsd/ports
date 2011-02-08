@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_common_render_messages_internal_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/common/render_messages_internal.h.orig	Fri Jan 21 10:20:41 2011
++++ chrome/common/render_messages_internal.h	Sun Jan 23 23:27:33 2011
+@@ -1998,7 +1998,7 @@ IPC_BEGIN_MESSAGES(ViewHost)
+                        int /* fd in browser */)
+ #endif
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+   // Asks the browser to create a block of shared memory for the renderer to
+   // pass NativeMetafile data to the browser.
+   IPC_SYNC_MESSAGE_ROUTED1_1(ViewHostMsg_AllocatePDFTransport,
+@@ -2181,7 +2181,7 @@ IPC_BEGIN_MESSAGES(ViewHost)
+                        std::string /* extension_id */,
+                        std::string /* name */)
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+   // On OSX, we cannot allocated shared memory from within the sandbox, so
+   // this call exists for the renderer to ask the browser to allocate memory
+   // on its behalf. We return a file descriptor to the POSIX shared memory.

@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_atomicops_h,v 1.1 2010/12/13 09:51:45 espie Exp $
---- base/atomicops.h.orig	Tue Mar 30 07:28:45 2010
-+++ base/atomicops.h	Sun Nov 28 00:11:30 2010
-@@ -47,7 +47,11 @@ typedef intptr_t Atomic64;
+$OpenBSD: patch-base_atomicops_h,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- base/atomicops.h.orig	Fri Jan 14 11:56:04 2011
++++ base/atomicops.h	Tue Jan 25 14:40:26 2011
+@@ -48,7 +48,11 @@ typedef intptr_t Atomic64;
  
  // Use AtomicWord for a machine-sized pointer.  It will use the Atomic32 or
  // Atomic64 routines below, depending on your architecture.

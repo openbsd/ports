@@ -1,0 +1,12 @@
+$OpenBSD: patch-remoting_base_compound_buffer_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- remoting/base/compound_buffer.h.orig	Fri Jan 21 10:19:47 2011
++++ remoting/base/compound_buffer.h	Mon Jan 24 10:27:00 2011
+@@ -108,7 +108,7 @@ class CompoundBufferInputStream
+   virtual bool Next(const void** data, int* size);
+   virtual void BackUp(int count);
+   virtual bool Skip(int count);
+-  virtual int64 ByteCount() const;
++  virtual int64_t ByteCount() const;
+ 
+  private:
+   const CompoundBuffer* buffer_;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_notifications_balloon_collection_impl_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/notifications/balloon_collection_impl.h.orig	Fri Jan 21 10:20:21 2011
++++ chrome/browser/notifications/balloon_collection_impl.h	Sun Jan 23 23:27:31 2011
+@@ -56,7 +56,7 @@ class BalloonCollectionImpl : public BalloonCollection
+   virtual void WillProcessMessage(const MSG& event) {}
+   virtual void DidProcessMessage(const MSG& event);
+ #endif
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_USES_GTK)
+   virtual void WillProcessEvent(GdkEvent* event) {}
+   virtual void DidProcessEvent(GdkEvent* event);
+ #endif

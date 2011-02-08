@@ -1,80 +1,89 @@
-$OpenBSD: patch-third_party_WebKit_WebKit_chromium_src_WebViewImpl_cpp,v 1.1 2010/12/13 09:51:46 espie Exp $
---- third_party/WebKit/WebKit/chromium/src/WebViewImpl.cpp.orig	Tue Mar 30 07:35:48 2010
-+++ third_party/WebKit/WebKit/chromium/src/WebViewImpl.cpp	Sun Nov 28 00:11:32 2010
-@@ -103,7 +103,7 @@
- #include "KeyboardCodesWin.h"
+$OpenBSD: patch-third_party_WebKit_WebKit_chromium_src_WebViewImpl_cpp,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- third_party/WebKit/WebKit/chromium/src/WebViewImpl.cpp.orig	Fri Jan 14 12:42:28 2011
++++ third_party/WebKit/WebKit/chromium/src/WebViewImpl.cpp	Tue Feb  1 20:53:48 2011
+@@ -128,7 +128,7 @@
+ #if OS(WINDOWS)
  #include "RenderThemeChromiumWin.h"
  #else
--#if OS(LINUX)
-+#if OS(LINUX) || OS(OPENBSD)
+-#if OS(LINUX) || OS(FREEBSD)
++#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
  #include "RenderThemeChromiumLinux.h"
  #endif
- #include "KeyboardCodesPosix.h"
-@@ -371,7 +371,7 @@ void WebViewImpl::mouseDown(const WebMouseEvent& event
+ #include "RenderTheme.h"
+@@ -462,7 +462,7 @@ void WebViewImpl::mouseDown(const WebMouseEvent& event
          || (event.button == WebMouseEvent::ButtonLeft
              && event.modifiers & WebMouseEvent::ControlKey))
          mouseContextMenu(event);
--#elif OS(LINUX)
-+#elif OS(LINUX) || OS(OPENBSD)
+-#elif OS(LINUX) || OS(FREEBSD)
++#elif OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
      if (event.button == WebMouseEvent::ButtonRight)
          mouseContextMenu(event);
  #endif
-@@ -410,7 +410,7 @@ void WebViewImpl::mouseUp(const WebMouseEvent& event)
+@@ -501,7 +501,7 @@ void WebViewImpl::mouseUp(const WebMouseEvent& event)
      if (!mainFrameImpl() || !mainFrameImpl()->frameView())
          return;
  
--#if OS(LINUX)
-+#if OS(LINUX) || OS(OPENBSD)
+-#if OS(LINUX) || OS(FREEBSD)
++#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
      // If the event was a middle click, attempt to copy text into the focused
      // frame. We execute this before we let the page have a go at the event
      // because the page may change what is focused during in its event handler.
-@@ -490,11 +490,11 @@ bool WebViewImpl::keyEvent(const WebKeyboardEvent& eve
+@@ -585,11 +585,11 @@ bool WebViewImpl::keyEvent(const WebKeyboardEvent& eve
      if (!handler)
          return keyEventDefault(event);
  
--#if OS(WINDOWS) || OS(LINUX)
-+#if OS(WINDOWS) || OS(LINUX) || OS(OPENBSD)
+-#if OS(WINDOWS) || OS(LINUX) || OS(FREEBSD)
++#if OS(WINDOWS) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
      const WebInputEvent::Type contextMenuTriggeringEventType =
  #if OS(WINDOWS)
          WebInputEvent::KeyUp;
--#elif OS(LINUX)
-+#elif OS(LINUX) || OS(OPENBSD)
+-#elif OS(LINUX) || OS(FREEBSD)
++#elif OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
          WebInputEvent::RawKeyDown;
  #endif
  
-@@ -636,7 +636,7 @@ bool WebViewImpl::touchEvent(const WebTouchEvent& even
- //
- // This function is an ugly copy/paste and should be cleaned up when the
- // WebKitWin version is cleaned: https://bugs.webkit.org/show_bug.cgi?id=20438
--#if OS(WINDOWS) || OS(LINUX)
-+#if OS(WINDOWS) || OS(LINUX) || OS(OPENBSD)
- // FIXME: implement on Mac
+@@ -599,7 +599,7 @@ bool WebViewImpl::keyEvent(const WebKeyboardEvent& eve
+         sendContextMenuEvent(event);
+         return true;
+     }
+-#endif // OS(WINDOWS) || OS(LINUX) || OS(FREEBSD)
++#endif // OS(WINDOWS) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+ 
+     // It's not clear if we should continue after detecting a capslock keypress.
+     // I'll err on the side of continuing, which is the pre-existing behaviour.
+@@ -733,7 +733,7 @@ bool WebViewImpl::touchEvent(const WebTouchEvent& even
+ }
+ #endif
+ 
+-#if OS(WINDOWS) || OS(LINUX) || OS(FREEBSD)
++#if OS(WINDOWS) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+ // Mac has no way to open a context menu based on a keyboard event.
  bool WebViewImpl::sendContextMenuEvent(const WebKeyboardEvent& event)
  {
-@@ -1833,7 +1833,7 @@ bool WebViewImpl::isActive() const
+@@ -2059,7 +2059,7 @@ void WebViewImpl::setDomainRelaxationForbidden(bool fo
  void WebViewImpl::setScrollbarColors(unsigned inactiveColor,
                                       unsigned activeColor,
                                       unsigned trackColor) {
--#if OS(LINUX)
-+#if OS(LINUX) || OS(OPENBSD)
-     RenderThemeChromiumLinux::setScrollbarColors(inactiveColor,
+-#if OS(LINUX) || OS(FREEBSD)
++#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+     PlatformThemeChromiumGtk::setScrollbarColors(inactiveColor,
                                                   activeColor,
                                                   trackColor);
-@@ -1844,7 +1844,7 @@ void WebViewImpl::setSelectionColors(unsigned activeBa
+@@ -2070,7 +2070,7 @@ void WebViewImpl::setSelectionColors(unsigned activeBa
                                       unsigned activeForegroundColor,
                                       unsigned inactiveBackgroundColor,
                                       unsigned inactiveForegroundColor) {
--#if OS(LINUX)
-+#if OS(LINUX) || OS(OPENBSD)
+-#if OS(LINUX) || OS(FREEBSD)
++#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
      RenderThemeChromiumLinux::setSelectionColors(activeBackgroundColor,
                                                   activeForegroundColor,
                                                   inactiveBackgroundColor,
-@@ -1885,7 +1885,7 @@ bool WebViewImpl::navigationPolicyFromMouseEvent(unsig
+@@ -2146,7 +2146,7 @@ bool WebViewImpl::navigationPolicyFromMouseEvent(unsig
                                                   bool alt, bool meta,
                                                   WebNavigationPolicy* policy)
  {
 -#if OS(WINDOWS) || OS(LINUX) || OS(FREEBSD) || OS(SOLARIS)
-+#if OS(WINDOWS) || OS(LINUX) || OS(OPENBSD) || OS(SOLARIS)
++#if OS(WINDOWS) || OS(LINUX) || OS(FREEBSD) || OS(SOLARIS) || OS(OPENBSD)
      const bool newTabModifier = (button == 1) || ctrl;
  #elif OS(DARWIN)
      const bool newTabModifier = (button == 1) || meta;

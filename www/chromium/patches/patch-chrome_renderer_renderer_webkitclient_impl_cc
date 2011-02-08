@@ -1,30 +1,30 @@
-$OpenBSD: patch-chrome_renderer_renderer_webkitclient_impl_cc,v 1.1 2010/12/13 09:51:46 espie Exp $
---- chrome/renderer/renderer_webkitclient_impl.cc.orig	Tue Mar 30 07:31:33 2010
-+++ chrome/renderer/renderer_webkitclient_impl.cc	Sun Nov 28 00:11:31 2010
-@@ -33,7 +33,7 @@
- #include "webkit/appcache/web_application_cache_host_impl.h"
- #include "webkit/glue/webkit_glue.h"
- 
--#if defined(OS_LINUX)
-+#if defined(OS_NIX)
- #include "chrome/renderer/renderer_sandbox_support_linux.h"
+$OpenBSD: patch-chrome_renderer_renderer_webkitclient_impl_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/renderer/renderer_webkitclient_impl.cc.orig	Fri Jan 21 10:20:27 2011
++++ chrome/renderer/renderer_webkitclient_impl.cc	Sun Jan 23 23:27:34 2011
+@@ -51,7 +51,7 @@
+ #include "third_party/WebKit/WebKit/chromium/public/mac/WebSandboxSupport.h"
  #endif
  
-@@ -63,7 +63,7 @@ WebKit::WebMimeRegistry* RendererWebKitClientImpl::mim
- }
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ #include <string>
+ #include <map>
  
- WebKit::WebSandboxSupport* RendererWebKitClientImpl::sandboxSupport() {
--#if defined(OS_WIN) || defined(OS_LINUX)
-+#if defined(OS_WIN) || defined(OS_NIX)
-   return &sandbox_support_;
- #else
-   return NULL;
-@@ -226,7 +226,7 @@ bool RendererWebKitClientImpl::SandboxSupport::ensureF
-   return RenderThread::current()->Send(new ViewHostMsg_LoadFont(logfont));
+@@ -108,7 +108,7 @@ class RendererWebKitClientImpl::SandboxSupport
+   virtual bool ensureFontLoaded(HFONT);
+ #elif defined(OS_MACOSX)
+   virtual bool loadFont(NSFont* srcFont, ATSFontContainerRef* out);
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+   virtual WebKit::WebString getFontFamilyForCharacters(
+       const WebKit::WebUChar* characters, size_t numCharacters);
+   virtual void getRenderStyleForStrike(
+@@ -413,7 +413,7 @@ bool RendererWebKitClientImpl::SandboxSupport::ensureF
+   return RenderThread::current()->Send(new ViewHostMsg_PreCacheFont(logfont));
  }
  
 -#elif defined(OS_LINUX)
-+#elif defined(OS_NIX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
  
  WebString RendererWebKitClientImpl::SandboxSupport::getFontFamilyForCharacters(
      const WebKit::WebUChar* characters, size_t num_characters) {

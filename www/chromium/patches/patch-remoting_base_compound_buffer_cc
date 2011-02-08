@@ -1,0 +1,12 @@
+$OpenBSD: patch-remoting_base_compound_buffer_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- remoting/base/compound_buffer.cc.orig	Fri Jan 21 10:19:47 2011
++++ remoting/base/compound_buffer.cc	Mon Jan 24 10:27:01 2011
+@@ -268,7 +268,7 @@ bool CompoundBufferInputStream::Skip(int count) {
+   return count == 0;
+ }
+ 
+-int64 CompoundBufferInputStream::ByteCount() const {
++int64_t CompoundBufferInputStream::ByteCount() const {
+   return position_;
+ }
+ 

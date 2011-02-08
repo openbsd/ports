@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_dom_ui_bug_report_ui_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/dom_ui/bug_report_ui.h.orig	Fri Jan 21 10:20:24 2011
++++ chrome/browser/dom_ui/bug_report_ui.h	Sun Jan 23 23:27:31 2011
+@@ -22,7 +22,7 @@ class NSWindow;
+ namespace browser {
+ #if defined(TOOLKIT_VIEWS)
+ void ShowHtmlBugReportView(views::Window* parent, Browser* browser);
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+ void ShowHtmlBugReportView(gfx::NativeWindow window, const gfx::Rect& bounds,
+                            Browser* browser);
+ #elif defined(OS_MACOSX)

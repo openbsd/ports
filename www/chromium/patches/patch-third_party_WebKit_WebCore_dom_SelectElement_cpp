@@ -1,12 +1,12 @@
-$OpenBSD: patch-third_party_WebKit_WebCore_dom_SelectElement_cpp,v 1.1 2010/12/13 09:51:46 espie Exp $
---- third_party/WebKit/WebCore/dom/SelectElement.cpp.orig	Tue Mar 30 07:34:43 2010
-+++ third_party/WebKit/WebCore/dom/SelectElement.cpp	Sun Nov 28 00:11:32 2010
-@@ -53,7 +53,7 @@
+$OpenBSD: patch-third_party_WebKit_WebCore_dom_SelectElement_cpp,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- third_party/WebKit/WebCore/dom/SelectElement.cpp.orig	Fri Jan 21 10:22:34 2011
++++ third_party/WebKit/WebCore/dom/SelectElement.cpp	Mon Jan 24 11:45:53 2011
+@@ -54,7 +54,7 @@
  #if PLATFORM(MAC) || (PLATFORM(CHROMIUM) && OS(DARWIN))
  #define ARROW_KEYS_POP_MENU 1
  #define SPACE_OR_RETURN_POP_MENU 0
--#elif PLATFORM(GTK) || (PLATFORM(CHROMIUM) && OS(LINUX))
-+#elif PLATFORM(GTK) || (PLATFORM(CHROMIUM) && (OS(LINUX) || OS(OPENBSD)))
+-#elif PLATFORM(GTK) || (PLATFORM(CHROMIUM) && (OS(LINUX) || OS(FREEBSD)))
++#elif PLATFORM(GTK) || (PLATFORM(CHROMIUM) && (OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)))
  #define ARROW_KEYS_POP_MENU 0
  #define SPACE_OR_RETURN_POP_MENU 1
  #else

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_renderer_host_render_sandbox_host_linux_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
---- chrome/browser/renderer_host/render_sandbox_host_linux.cc.orig	Tue Mar 30 07:29:15 2010
-+++ chrome/browser/renderer_host/render_sandbox_host_linux.cc	Sun Nov 28 00:11:31 2010
-@@ -309,7 +309,7 @@ class SandboxIPCProcess  {
+$OpenBSD: patch-chrome_browser_renderer_host_render_sandbox_host_linux_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/renderer_host/render_sandbox_host_linux.cc.orig	Fri Jan 21 10:20:21 2011
++++ chrome/browser/renderer_host/render_sandbox_host_linux.cc	Mon Jan 24 09:46:54 2011
+@@ -329,7 +329,7 @@ class SandboxIPCProcess  {
        return;
      }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_renderer_host_render_sandbox_host_linux_cc,v 1.1 
      if (!pickle.ReadUInt64(&iter, &inode))
        return;
  
-@@ -397,7 +397,12 @@ void RenderSandboxHostLinux::Init(const std::string& s
+@@ -654,7 +654,12 @@ void RenderSandboxHostLinux::Init(const std::string& s
    // inherit some sockets. With PF_UNIX+SOCK_DGRAM, it can call sendmsg to send
    // a datagram to any (abstract) socket on the same system. With
    // SOCK_SEQPACKET, this is prevented.

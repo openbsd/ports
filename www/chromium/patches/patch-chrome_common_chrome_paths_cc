@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
---- chrome/common/chrome_paths.cc.orig	Tue Mar 30 07:30:01 2010
-+++ chrome/common/chrome_paths.cc	Sun Nov 28 00:11:31 2010
-@@ -132,7 +132,7 @@ bool PathProvider(int key, FilePath* result) {
+$OpenBSD: patch-chrome_common_chrome_paths_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/common/chrome_paths.cc.orig	Fri Jan 21 10:20:41 2011
++++ chrome/common/chrome_paths.cc	Sun Jan 23 23:27:33 2011
+@@ -164,7 +164,7 @@ bool PathProvider(int key, FilePath* result) {
        cur = cur.Append(FILE_PATH_LITERAL("inspector"));
        break;
      case chrome::DIR_APP_DICTIONARIES:

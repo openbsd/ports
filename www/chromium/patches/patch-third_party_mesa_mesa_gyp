@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_mesa_mesa_gyp,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- third_party/mesa/mesa.gyp.orig	Fri Jan 21 10:20:08 2011
++++ third_party/mesa/mesa.gyp	Sun Jan 23 23:27:36 2011
+@@ -19,7 +19,7 @@
+           'HAVE_STRNLEN',
+         ],
+       }],
+-      ['OS=="linux"', {
++      ['OS=="linux" or OS=="openbsd"', {
+         'cflags': [
+           '-fPIC',
+         ],

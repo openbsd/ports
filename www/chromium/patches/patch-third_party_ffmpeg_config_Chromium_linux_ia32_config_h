@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_ffmpeg_config_Chromium_linux_ia32_config_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- third_party/ffmpeg/config/Chromium/linux/ia32/config.h.orig	Tue Jan 25 16:09:29 2011
++++ third_party/ffmpeg/config/Chromium/linux/ia32/config.h	Tue Jan 25 16:09:38 2011
+@@ -46,7 +46,7 @@
+ #define HAVE_NEON 0
+ #define HAVE_PPC4XX 0
+ #define HAVE_SSE 1
+-#define HAVE_SSSE3 1
++#define HAVE_SSSE3 0
+ #define HAVE_VIS 0
+ #define HAVE_BIGENDIAN 0
+ #define HAVE_FAST_UNALIGNED 1

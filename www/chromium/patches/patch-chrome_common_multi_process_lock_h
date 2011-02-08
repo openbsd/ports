@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_common_multi_process_lock_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/common/multi_process_lock.h.orig	Fri Jan 21 10:20:41 2011
++++ chrome/common/multi_process_lock.h	Sun Jan 23 23:27:33 2011
+@@ -18,7 +18,7 @@ class MultiProcessLock {
+   // The length of a multi-process lock name is limited on Linux, so
+   // it is limited it on all platforms for consistency. This length does
+   // not include a terminator.
+-  static const size_t MULTI_PROCESS_LOCK_NAME_MAX_LEN = 106;
++  static const size_t MULTI_PROCESS_LOCK_NAME_MAX_LEN = 102;
+ 
+   // Factory method for creating a multi-process lock.
+   // |name| is the name of the lock. The name has special meaning on Windows

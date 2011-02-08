@@ -1,24 +1,24 @@
-$OpenBSD: patch-chrome_browser_web_applications_web_app_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
---- chrome/browser/web_applications/web_app.cc.orig	Tue Mar 30 07:29:44 2010
-+++ chrome/browser/web_applications/web_app.cc	Sun Nov 28 00:11:31 2010
-@@ -31,9 +31,9 @@
+$OpenBSD: patch-chrome_browser_web_applications_web_app_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/web_applications/web_app.cc.orig	Fri Jan 21 10:20:20 2011
++++ chrome/browser/web_applications/web_app.cc	Sun Jan 23 23:27:33 2011
+@@ -34,9 +34,9 @@
  #include "chrome/common/url_constants.h"
- #include "webkit/glue/dom_operations.h"
+ #include "chrome/common/web_apps.h"
  
 -#if defined(OS_LINUX)
-+#if defined(OS_NIX)
- #include "base/linux_util.h"
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ #include "base/environment.h"
 -#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_NIX)
++#endif  // defined(OS_LINUX) || defined(OS_OPENBSD)
  
  #if defined(OS_WIN)
  #include "base/win_util.h"
-@@ -259,7 +259,7 @@ void CreateShortcutTask::Run() {
+@@ -261,7 +261,7 @@ void CreateShortcutTask::Run() {
  bool CreateShortcutTask::CreateShortcut() {
-   DCHECK(ChromeThread::CurrentlyOn(ChromeThread::FILE));
+   DCHECK(BrowserThread::CurrentlyOn(BrowserThread::FILE));
  
 -#if defined(OS_LINUX)
-+#if defined(OS_NIX)
-   scoped_ptr<base::EnvironmentVariableGetter> env_getter(
-       base::EnvironmentVariableGetter::Create());
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   scoped_ptr<base::Environment> env(base::Environment::Create());
  
+   std::string shortcut_template;

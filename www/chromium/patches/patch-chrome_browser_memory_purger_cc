@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_browser_memory_purger_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
---- chrome/browser/memory_purger.cc.orig	Tue Mar 30 07:29:49 2010
-+++ chrome/browser/memory_purger.cc	Sun Nov 28 00:11:31 2010
-@@ -137,7 +137,7 @@ void MemoryPurger::PurgeBrowser() {
+$OpenBSD: patch-chrome_browser_memory_purger_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/memory_purger.cc.orig	Fri Jan 21 10:20:26 2011
++++ chrome/browser/memory_purger.cc	Sun Jan 23 23:27:31 2011
+@@ -135,7 +135,7 @@ void MemoryPurger::PurgeBrowser() {
    // * Purge AppCache memory.  Not yet implemented sufficiently.
    // * Browser-side DatabaseTracker.  Not implemented sufficiently.
  
 -#if (defined(OS_WIN) || defined(OS_LINUX)) && defined(USE_TCMALLOC)
-+#if !defined(OS_MACOSX) && defined(USE_TCMALLOC)
++#if (defined(OS_WIN) || defined(OS_LINUX) || defined(OS_OPENBSD)) && defined(USE_TCMALLOC)
    // Tell tcmalloc to release any free pages it's still holding.
    //
    // TODO(pkasting): A lot of the above calls kick off actions on other threads.

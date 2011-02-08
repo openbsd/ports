@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_process_util_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- base/process_util.h.orig	Fri Jan 21 10:20:15 2011
++++ base/process_util.h	Sun Jan 23 23:27:31 2011
+@@ -159,7 +159,7 @@ void CloseProcessHandle(ProcessHandle process);
+ // Win XP SP1 as well.
+ ProcessId GetProcId(ProcessHandle process);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ // Returns the ID for the parent of the given process.
+ ProcessId GetParentProcessId(ProcessHandle process);
+ 

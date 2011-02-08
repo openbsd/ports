@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_test_testing_browser_process_h,v 1.1 2010/12/13 09:51:46 espie Exp $
---- chrome/test/testing_browser_process.h.orig	Tue Mar 30 07:31:13 2010
-+++ chrome/test/testing_browser_process.h	Sun Nov 28 00:11:30 2010
-@@ -47,7 +47,7 @@ class TestingBrowserProcess : public BrowserProcess {
+$OpenBSD: patch-chrome_test_testing_browser_process_h,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/test/testing_browser_process.h.orig	Fri Jan 21 10:20:39 2011
++++ chrome/test/testing_browser_process.h	Sun Jan 23 23:27:34 2011
+@@ -52,7 +52,7 @@ class TestingBrowserProcess : public BrowserProcess {
      return NULL;
    }
  

@@ -1,20 +1,20 @@
-$OpenBSD: patch-chrome_browser_shell_integration_unittest_cc,v 1.1 2010/12/13 09:51:45 espie Exp $
---- chrome/browser/shell_integration_unittest.cc.orig	Tue Mar 30 07:29:49 2010
-+++ chrome/browser/shell_integration_unittest.cc	Sun Nov 28 00:11:30 2010
-@@ -18,13 +18,13 @@
- #include "googleurl/src/gurl.h"
- #include "testing/gtest/include/gtest/gtest.h"
+$OpenBSD: patch-chrome_browser_shell_integration_unittest_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/shell_integration_unittest.cc.orig	Fri Jan 21 10:20:26 2011
++++ chrome/browser/shell_integration_unittest.cc	Sun Jan 23 23:27:31 2011
+@@ -21,13 +21,13 @@
  
--#if defined(OS_LINUX)
-+#if defined(OS_NIX)
- #include "base/linux_util.h"
+ #if defined(OS_WIN)
+ #include "chrome/installer/util/browser_distribution.h"
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+ #include "base/environment.h"
 -#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_NIX)
++#endif  // defined(OS_LINUX) || defined(OS_OPENBSD)
  
  #define FPL FILE_PATH_LITERAL
  
 -#if defined(OS_LINUX)
-+#if defined(OS_NIX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
  namespace {
  
  // Provides mock environment variables values based on a stored map.

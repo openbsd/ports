@@ -1,0 +1,12 @@
+$OpenBSD: patch-gfx_native_widget_types_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- gfx/native_widget_types.h.orig	Fri Jan 21 10:19:47 2011
++++ gfx/native_widget_types.h	Sun Jan 23 23:27:34 2011
+@@ -97,7 +97,7 @@ typedef GdkRegion* NativeRegion;
+ 
+ #if defined(OS_MACOSX)
+ typedef NSImage NativeImageType;
+-#elif defined(OS_LINUX) && !defined(TOOLKIT_VIEWS)
++#elif (defined(OS_LINUX) || defined(OS_OPENBSD)) && !defined(TOOLKIT_VIEWS)
+ typedef GdkPixbuf NativeImageType;
+ #else
+ typedef SkBitmap NativeImageType;

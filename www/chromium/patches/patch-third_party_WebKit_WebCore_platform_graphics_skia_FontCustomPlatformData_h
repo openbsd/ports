@@ -1,0 +1,30 @@
+$OpenBSD: patch-third_party_WebKit_WebCore_platform_graphics_skia_FontCustomPlatformData_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- third_party/WebKit/WebCore/platform/graphics/skia/FontCustomPlatformData.h.orig	Fri Jan 21 10:22:38 2011
++++ third_party/WebKit/WebCore/platform/graphics/skia/FontCustomPlatformData.h	Mon Jan 24 11:45:53 2011
+@@ -40,7 +40,7 @@
+ #if OS(WINDOWS)
+ #include "PlatformString.h"
+ #include <windows.h>
+-#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP)
++#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP) || OS(OPENBSD)
+ #include "SkTypeface.h"
+ #endif
+ 
+@@ -55,7 +55,7 @@ struct FontCustomPlatformData : Noncopyable {
+         : m_fontReference(fontReference)
+         , m_name(name)
+     {}
+-#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP)
++#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP) || OS(OPENBSD)
+     explicit FontCustomPlatformData(SkTypeface* typeface)
+         : m_fontReference(typeface)
+     {}
+@@ -71,7 +71,7 @@ struct FontCustomPlatformData : Noncopyable {
+ #if OS(WINDOWS)
+     HANDLE m_fontReference;
+     String m_name;
+-#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP)
++#elif OS(LINUX) || OS(FREEBSD) || PLATFORM(BREWMP) || OS(OPENBSD)
+     SkTypeface* m_fontReference;
+ #endif
+ };

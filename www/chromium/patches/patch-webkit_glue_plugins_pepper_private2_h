@@ -1,0 +1,12 @@
+$OpenBSD: patch-webkit_glue_plugins_pepper_private2_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- webkit/glue/plugins/pepper_private2.h.orig	Fri Jan 21 10:19:48 2011
++++ webkit/glue/plugins/pepper_private2.h	Sun Jan 23 23:27:37 2011
+@@ -30,7 +30,7 @@ class Private2 {
+                          uint32_t glyph_count,
+                          uint16_t glyph_indices[],
+                          PP_Point glyph_advances[])
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX)  || defined(OS_OPENBSD)
+       ;
+ #else
+       { return false; }

@@ -1,0 +1,12 @@
+$OpenBSD: patch-webkit_glue_webkit_glue_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- webkit/glue/webkit_glue.h.orig	Fri Jan 21 10:19:48 2011
++++ webkit/glue/webkit_glue.h	Sun Jan 23 23:27:37 2011
+@@ -272,7 +272,7 @@ void EnableSpdy(bool enable);
+ // Notifies the browser that the given action has been performed.
+ void UserMetricsRecordAction(const std::string& action);
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ // Return a read-only file descriptor to the font which best matches the given
+ // properties or -1 on failure.
+ //   charset: specifies the language(s) that the font must cover. See

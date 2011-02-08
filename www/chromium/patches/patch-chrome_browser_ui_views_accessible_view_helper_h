@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_ui_views_accessible_view_helper_h,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/ui/views/accessible_view_helper.h.orig	Fri Jan 21 10:20:24 2011
++++ chrome/browser/ui/views/accessible_view_helper.h	Sun Jan 23 23:27:32 2011
+@@ -15,7 +15,7 @@
+ #include "chrome/browser/accessibility_events.h"
+ #include "gfx/native_widget_types.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_USES_GTK)
+ #include "chrome/browser/gtk/accessible_widget_helper_gtk.h"
+ #endif
+ 
+@@ -73,7 +73,7 @@ class AccessibleViewHelper {
+   std::string window_title_;
+   std::vector<views::View*> managed_views_;
+ 
+-#if defined(OS_LINUX)
++#if defined(TOOLKIT_USES_GTK)
+   scoped_ptr<AccessibleWidgetHelper> widget_helper_;
+ #endif
+ 

@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_WebCore_platform_sql_chromium_SQLiteFileSystemChromiumPosix_cpp,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- third_party/WebKit/WebCore/platform/sql/chromium/SQLiteFileSystemChromiumPosix.cpp.orig	Fri Jan 21 10:22:37 2011
++++ third_party/WebKit/WebCore/platform/sql/chromium/SQLiteFileSystemChromiumPosix.cpp	Sun Jan 23 23:27:36 2011
+@@ -755,6 +755,8 @@ static bool syncWrapper(int fd, bool fullSync)
+     if (!success)
+         success = !fsync(fd);
+     return success;
++#elif OS(OPENBSD)
++    return !fsync(fd);
+ #else
+     return !fdatasync(fd);
+ #endif

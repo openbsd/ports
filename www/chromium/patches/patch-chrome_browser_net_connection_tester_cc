@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_net_connection_tester_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/browser/net/connection_tester.cc.orig	Fri Jan 21 10:20:20 2011
++++ chrome/browser/net/connection_tester.cc	Sun Jan 23 23:27:31 2011
+@@ -179,7 +179,7 @@ class ExperimentURLRequestContext : public URLRequestC
+   // Otherwise returns a network error code.
+   int CreateSystemProxyConfigService(
+       scoped_ptr<net::ProxyConfigService>* config_service) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OPENBSD)
+     // TODO(eroman): This is not supported on Linux yet, because of how
+     // construction needs ot happen on the UI thread.
+     return net::ERR_NOT_IMPLEMENTED;

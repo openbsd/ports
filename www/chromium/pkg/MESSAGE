@@ -3,6 +3,13 @@ properly under load:
 
 # sysctl kern.shminfo.shmall=32768
 
+Your default datasize might not be enough for v8 so make sure it
+is more than 512M, so try to set it to 715M by doing:
+
+$ ulimit -d 716800
+
+or modify /etc/login.conf.
+
 And opening lots of tabs may necessitate higher fd limits,
 crank that via ulimit/limits.
 

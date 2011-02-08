@@ -1,0 +1,192 @@
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.1 2011/02/08 09:43:02 espie Exp $
+--- chrome/app/generated_resources.grd.orig	Fri Jan 21 10:20:18 2011
++++ chrome/app/generated_resources.grd	Sun Jan 23 23:31:27 2011
+@@ -983,7 +983,7 @@ each locale. -->
+           Preferences...
+         </message>
+       </if>
+-      <if expr="os == 'linux2'">
++      <if expr="os == 'linux2' or os.find('bsd') != -1">
+         <message name="IDS_PREFERENCES" desc="The text label of the Preferences menu item.">
+           Preferences
+         </message>
+@@ -2352,12 +2352,12 @@ each locale. -->
+       </if>
+ 
+       <!-- "Create application shortcuts" dialog (non-Gears) -->
+-      <if expr="not pp_ifdef('use_titlecase') or os != 'linux2'">
++      <if expr="not pp_ifdef('use_titlecase') or (os != 'linux2' and os.find('bsd') == -1)">
+         <message name="IDS_CREATE_SHORTCUTS_TITLE" desc="Title of the dialog to create application shortcuts for current page.">
+           Create application shortcuts
+         </message>
+       </if>
+-      <if expr="pp_ifdef('use_titlecase') and os == 'linux2'">
++      <if expr="pp_ifdef('use_titlecase') and (os == 'linux2' or os.find('bsd') != -1)">
+         <message name="IDS_CREATE_SHORTCUTS_TITLE" desc="In Title Case: title of the dialog to create application shortcuts for current page.">
+           Create Application Shortcuts
+         </message>
+@@ -5903,7 +5903,7 @@ Keep your key file in a safe place. You will need it t
+           and deselect any proxies that have been selected.
+         </message>
+       </if>
+-      <if expr="os == 'linux2'">
++      <if expr="os == 'linux2' or os.find('bsd') != -1">
+         <message name="IDS_ERRORPAGES_SUGGESTION_PROXY_DISABLE_PLATFORM" desc="Linux instructions for disabling use of a proxy server.">
+           Go to
+           <ph name="BEGIN_BOLD">&lt;strong&gt;</ph>
+@@ -5912,7 +5912,7 @@ Keep your key file in a safe place. You will need it t
+           and make sure your configuration is set to &quot;no proxy&quot; or &quot;direct.&quot;
+         </message>
+       </if>
+-      <if expr="os != 'darwin' and os != 'linux2'">
++      <if expr="os != 'darwin' and os != 'linux2' and os.find('bsd') == -1">
+         <message name="IDS_ERRORPAGES_SUGGESTION_PROXY_DISABLE_PLATFORM" desc="Windows instructions for disabling use of a proxy server.">
+           Go to
+           <ph name="BEGIN_BOLD">&lt;strong&gt;</ph>
+@@ -6009,7 +6009,7 @@ Keep your key file in a safe place. You will need it t
+           to test your connection.
+         </message>
+       </if>
+-      <if expr="os != 'darwin' and os != 'linux2'">
++      <if expr="os != 'darwin' and os != 'linux2' and os.find('bsd') == -1 ">
+         <message name="IDS_ERRORPAGES_SUMMARY_INTERNET_DISCONNECTED_PLATFORM" desc="Summary (platform dependent section) in the error page when the network connection failed.  Describes how to get to the network Diagnostics screen under Windows 7 and later.">
+           Go to
+           <ph name="BEGIN_BOLD">&lt;strong&gt;</ph>
+@@ -6570,7 +6570,7 @@ Keep your key file in a safe place. You will need it t
+       <message name="IDS_OPTIONS_DIALOG_TITLE" desc="The title of the Options dialog box">
+         <ph name="PRODUCT_NAME">$1<ex>Google Chrome</ex></ph> Options
+       </message>
+-      <if expr="os == 'linux2'">
++      <if expr="os == 'linux2' or os.find('bsd') != -1">
+         <message name="IDS_PREFERENCES_DIALOG_TITLE" desc="The title of the Preferences dialog box">
+           <ph name="PRODUCT_NAME">$1<ex>Google Chrome</ex></ph> Preferences
+         </message>
+@@ -6642,12 +6642,12 @@ Keep your key file in a safe place. You will need it t
+       <!-- and includes a colon as a result (Mac needs this too).  GTK -->
+       <!-- uses title case and displays the titles above the contents, -->
+       <!-- so we omit the colon. -->
+-      <if expr="not pp_ifdef('use_titlecase') or os != 'linux2'">
++      <if expr="not pp_ifdef('use_titlecase') or ( os != 'linux2' and os.find('bsd') == -1 )">
+         <message name="IDS_OPTIONS_STARTUP_GROUP_NAME" desc="The title of the startup group">
+           On startup:
+         </message>
+       </if>
+-      <if expr="pp_ifdef('use_titlecase') and os == 'linux2'">
++      <if expr="pp_ifdef('use_titlecase') and (os == 'linux2' or os.find('bsd') != -1 )">
+         <message name="IDS_OPTIONS_STARTUP_GROUP_NAME" desc="In Title Case and without trailing colon: The title of the startup group">
+           On Startup
+         </message>
+@@ -6678,12 +6678,12 @@ Keep your key file in a safe place. You will need it t
+         Toolbar
+       </message>
+ 
+-      <if expr="not pp_ifdef('use_titlecase') or os != 'linux2'">
++      <if expr="not pp_ifdef('use_titlecase') or ( os != 'linux2' and os.find('bsd') == -1 )">
+         <message name="IDS_OPTIONS_HOMEPAGE_GROUP_NAME" desc="The title of the home pages group">
+           Home page:
+         </message>
+       </if>
+-      <if expr="pp_ifdef('use_titlecase') and os == 'linux2'">
++      <if expr="pp_ifdef('use_titlecase') and (os == 'linux2' or os.find('bsd') != -1 )">
+         <message name="IDS_OPTIONS_HOMEPAGE_GROUP_NAME" desc="In Title Case and without trailing colon: The title of the home pages group">
+           Home Page
+         </message>
+@@ -6720,12 +6720,12 @@ Keep your key file in a safe place. You will need it t
+         </message>
+       </if>
+ 
+-      <if expr="not pp_ifdef('use_titlecase') or os != 'linux2'">
++      <if expr="not pp_ifdef('use_titlecase') or ( os != 'linux2' and os.find('bsd') == -1 )">
+         <message name="IDS_OPTIONS_DEFAULTSEARCH_GROUP_NAME" desc="The title of the default search engine group">
+           Search:
+         </message>
+       </if>
+-      <if expr="pp_ifdef('use_titlecase') and os == 'linux2'">
++      <if expr="pp_ifdef('use_titlecase') and (os == 'linux2' or os.find('bsd') != -1 )">
+         <message name="IDS_OPTIONS_DEFAULTSEARCH_GROUP_NAME" desc="In Title Case and without trailing colon: The title of the default search engine group">
+           Search
+         </message>
+@@ -6735,12 +6735,12 @@ Keep your key file in a safe place. You will need it t
+         Manage
+       </message>
+ 
+-      <if expr="not pp_ifdef('use_titlecase') or os != 'linux2'">
++      <if expr="not pp_ifdef('use_titlecase') or ( os != 'linux2' and os.find('bsd') == -1 )">
+         <message name="IDS_OPTIONS_DEFAULTBROWSER_GROUP_NAME" desc="The title of the default browser group">
+           Default browser:
+         </message>
+       </if>
+-      <if expr="pp_ifdef('use_titlecase') and os == 'linux2'">
++      <if expr="pp_ifdef('use_titlecase') and (os == 'linux2' or os.find('bsd') != -1 )">
+         <message name="IDS_OPTIONS_DEFAULTBROWSER_GROUP_NAME" desc="In Title Case and without trailing colon: The title of the default browser group">
+           Default Browser
+         </message>
+@@ -6803,12 +6803,12 @@ Keep your key file in a safe place. You will need it t
+         Manage certificates
+       </message>
+ 
+-      <if expr="not pp_ifdef('use_titlecase') or os != 'linux2'">
++      <if expr="not pp_ifdef('use_titlecase') or ( os != 'linux2' and os.find('bsd') == -1 )">
+         <message name="IDS_OPTIONS_PASSWORDS_GROUP_NAME" desc="The title of the 'Passwords' group">
+           Passwords:
+         </message>
+       </if>
+-      <if expr="pp_ifdef('use_titlecase') and os == 'linux2'">
++      <if expr="pp_ifdef('use_titlecase') and (os == 'linux2' or os.find('bsd') != -1 )">
+         <message name="IDS_OPTIONS_PASSWORDS_GROUP_NAME" desc="In Title Case and without trailing colon: The title of the 'Passwords' group">
+           Passwords
+         </message>
+@@ -6826,12 +6826,12 @@ Keep your key file in a safe place. You will need it t
+         Manage saved passwords
+       </message>
+ 
+-      <if expr="not pp_ifdef('use_titlecase') or os != 'linux2'">
++      <if expr="not pp_ifdef('use_titlecase') or ( os != 'linux2' and os.find('bsd') == -1 )">
+         <message name="IDS_AUTOFILL_SETTING_WINDOWS_GROUP_NAME" desc="The title of the form Autofill group">
+           Form autofill:
+         </message>
+       </if>
+-      <if expr="pp_ifdef('use_titlecase') and os == 'linux2'">
++      <if expr="pp_ifdef('use_titlecase') and (os == 'linux2' or os.find('bsd') != -1 )">
+         <message name="IDS_AUTOFILL_SETTING_WINDOWS_GROUP_NAME" desc="In Title Case and without trailing colon: The title of the form Autofill group">
+           Form Autofill
+         </message>
+@@ -7197,12 +7197,12 @@ Keep your key file in a safe place. You will need it t
+         Use TLS 1.0
+       </message>
+ 
+-      <if expr="not pp_ifdef('use_titlecase') or os != 'linux2'">
++      <if expr="not pp_ifdef('use_titlecase') or ( os != 'linux2' and os.find('bsd') == -1 )">
+         <message name="IDS_OPTIONS_BROWSING_DATA_GROUP_NAME" desc="The title of the 'Browsing data' group.">
+           Browsing data:
+         </message>
+       </if>
+-      <if expr="pp_ifdef('use_titlecase') and os == 'linux2'">
++      <if expr="pp_ifdef('use_titlecase') and (os == 'linux2' or os.find('bsd') != -1 )">
+         <message name="IDS_OPTIONS_BROWSING_DATA_GROUP_NAME" desc="In Title Case and without trailing colon: The title of the 'Browsing data' group.">
+           Browsing Data
+         </message>
+@@ -8159,12 +8159,12 @@ Keep your key file in a safe place. You will need it t
+       <!-- Sync strings -->
+ 
+       <!-- Sync options dialog strings -->
+-      <if expr="not pp_ifdef('use_titlecase') or os != 'linux2'">
++      <if expr="not pp_ifdef('use_titlecase') or ( os != 'linux2' and os.find('bsd') == -1 )">
+         <message name="IDS_SYNC_OPTIONS_GROUP_NAME" desc="The name of the sync group in the options dialog.">
+           Sync:
+         </message>
+       </if>
+-      <if expr="pp_ifdef('use_titlecase') and os == 'linux2'">
++      <if expr="pp_ifdef('use_titlecase') and (os == 'linux2' or os.find('bsd') != -1 )">
+         <message name="IDS_SYNC_OPTIONS_GROUP_NAME" desc="In Title Case and without trailing colon: The name of the sync group in the options dialog.">
+           Sync
+         </message>
+@@ -11174,7 +11174,7 @@ Keep your key file in a safe place. You will need it t
+       Import bookmarks now...
+     </message>
+ 
+-    <if expr="os == 'linux2' or os == 'openbsd4' or os=='freebsd6'">
++    <if expr="os == 'linux2' or os.find('bsd') != 1">
+       <!-- Linux proxy configuration fallback help -->
+       <message name="IDS_ABOUT_LINUX_PROXY_CONFIG_TITLE" desc="Title of HTML page shown on systems where system proxy configuration is unsupported.">
+         Proxy Configuration Help

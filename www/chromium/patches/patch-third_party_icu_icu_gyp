@@ -1,30 +1,21 @@
-$OpenBSD: patch-third_party_icu_icu_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
---- third_party/icu/icu.gyp.orig	Tue Mar 30 07:38:41 2010
-+++ third_party/icu/icu.gyp	Sun Nov 28 00:11:32 2010
-@@ -38,7 +38,7 @@
-         }, {  # else: OS != "win"
-           'sources!': ['icudt42.dll'],
-         }],
--        [ 'OS != "linux"', {
-+        [ 'OS != "linux" and OS!= "openbsd"', {
-           'sources!': ['linux/icudt42l_dat.s'],
-         }],
-         [ 'OS != "mac"', {
-@@ -208,7 +208,7 @@
-         ],
-       },
-       'conditions': [
--        [ 'OS=="linux"', {
-+        [ 'OS=="linux" or OS=="openbsd"', {
-           # Since ICU wants to internally use its own deprecated APIs, don't
-           # complain about it.
-           'cflags': [
-@@ -396,7 +396,7 @@
-             'source/stubdata/stubdata.c',
-           ],
-         }],
--        [ 'OS == "linux"', {
-+        [ 'OS == "linux" or OS=="openbsd"', {
-           'cflags': [
-             # TODO(port): fix ICU to not depend on this flag.
-             '-fno-strict-aliasing',
+$OpenBSD: patch-third_party_icu_icu_gyp,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- third_party/icu/icu.gyp.orig	Fri Jan 21 10:30:34 2011
++++ third_party/icu/icu.gyp	Sun Jan 23 23:27:36 2011
+@@ -54,7 +54,7 @@
+             }, {  # else: OS != "win"
+               'sources!': ['icudt42.dll'],
+             }],
+-            [ 'OS != "linux" or chromeos == 1', {
++            [ '(OS != "linux" and OS != "openbsd") or chromeos == 1', {
+               'sources!': ['linux/icudt42l_dat.s'],
+             }],
+             [ 'OS != "mac"', {
+@@ -227,7 +227,7 @@
+             ],
+           },
+           'conditions': [
+-            [ 'OS=="linux"', {
++            [ 'OS=="linux" or OS=="openbsd"', {
+               # Since ICU wants to internally use its own deprecated APIs, don't
+               # complain about it.
+               'cflags': [

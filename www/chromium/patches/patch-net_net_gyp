@@ -1,49 +1,46 @@
-$OpenBSD: patch-net_net_gyp,v 1.1 2010/12/13 09:51:46 espie Exp $
---- net/net.gyp.orig	Tue Mar 30 07:28:09 2010
-+++ net/net.gyp	Sun Nov 28 00:11:27 2010
-@@ -109,11 +109,9 @@
+$OpenBSD: patch-net_net_gyp,v 1.2 2011/02/08 09:43:02 espie Exp $
+--- net/net.gyp.orig	Fri Jan 21 10:19:57 2011
++++ net/net.gyp	Sun Jan 23 23:27:35 2011
+@@ -130,12 +130,12 @@
          'base/net_util_win.cc',
          'base/network_change_notifier.cc',
          'base/network_change_notifier.h',
 -        'base/network_change_notifier_linux.cc',
-         'base/network_change_notifier_linux.h',
+-        'base/network_change_notifier_linux.h',
++        #'base/network_change_notifier_linux.cc',
++        #'base/network_change_notifier_linux.h',
          'base/network_change_notifier_mac.cc',
          'base/network_change_notifier_mac.h',
 -        'base/network_change_notifier_netlink_linux.cc',
-         'base/network_change_notifier_netlink_linux.h',
+-        'base/network_change_notifier_netlink_linux.h',
++        #'base/network_change_notifier_netlink_linux.cc',
++        #'base/network_change_notifier_netlink_linux.h',
          'base/network_change_notifier_win.cc',
          'base/network_change_notifier_win.h',
-@@ -526,6 +524,7 @@
-             '../build/linux/system.gyp:gdk',
-             '../build/linux/system.gyp:nss',
-           ],
-+          'sources!': [ 'proxy/proxy_config_service_linux.cc', ],
-         }],
-         [ 'OS == "win"', {
-             'sources!': [
-@@ -553,7 +552,7 @@
-         ],
-         [ 'OS == "linux" or OS == "freebsd" or OS == "openbsd"', {
-           },
--          {  # else: OS != "linux"
-+          {  # else: OS != "linux" and OS != "freebsd"
-             'sources!': [
-               'ocsp/nss_ocsp.cc',
-               'ocsp/nss_ocsp.h',
-@@ -668,7 +667,6 @@
-         'proxy/init_proxy_resolver_unittest.cc',
-         'proxy/mock_proxy_resolver.h',
-         'proxy/proxy_bypass_rules_unittest.cc',
--        'proxy/proxy_config_service_linux_unittest.cc',
-         'proxy/proxy_config_service_win_unittest.cc',
-         'proxy/proxy_config_unittest.cc',
-         'proxy/proxy_list_unittest.cc',
-@@ -709,7 +707,7 @@
+         'base/network_config_watcher_mac.cc',
+@@ -232,7 +232,6 @@
+             'dependencies': [
+               '../build/linux/system.gyp:gconf',
+               '../build/linux/system.gyp:gdk',
+-              '../build/linux/system.gyp:libresolv',
              ],
-           },
+             'conditions': [
+               ['use_openssl==1', {
+@@ -1002,7 +1001,7 @@
+             ],
+           }
          ],
+-        [ 'OS == "linux"', {
++        [ 'OS == "linux" or OS=="openbsd"', {
+           'conditions': [
+             ['linux_use_tcmalloc==1', {
+               'dependencies': [
+@@ -1205,7 +1204,7 @@
+             }],
+           ],
+         }],
 -        ['OS == "linux"', {
-+        ['OS == "linux" or OS == "freebsd"', {
++        ['OS == "linux" or OS=="openbsd"', {
            'conditions': [
              ['linux_use_tcmalloc==1', {
                'dependencies': [
