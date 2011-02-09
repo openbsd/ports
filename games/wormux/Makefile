@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/01/06 16:46:42 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2011/02/09 10:20:16 landry Exp $
 
 COMMENT=		free software clone of Worms(R) game concept
 
@@ -15,7 +15,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		SDL X11 c m png pthread stdc++ SDL_gfx SDL_image \
 			SDL_mixer SDL_net SDL_ttf curl>=5 xml2
 
-MASTER_SITES=		http://download.gna.org/warmux/
+MASTER_SITES=		http://download.gna.org/warmux/ \
+			http://download.gna.org/warmux/archive/
 EXTRACT_SUFX=		.tar.bz2
 
 RUN_DEPENDS=		devel/desktop-file-utils
