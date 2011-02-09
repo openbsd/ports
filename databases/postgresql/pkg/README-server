@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.3 2011/01/04 16:03:00 ajacoutot Exp $
+$OpenBSD: README-server,v 1.4 2011/02/09 10:53:12 pea Exp $
 
 Using PostgreSQL in an OpenBSD environment
 ==========================================
@@ -91,7 +91,47 @@ To generate the keytab:
 	# ktutil -k /etc/postgresql/krb5.keytab get postgres/server.domain
 	# chown _postgresql:_postgresql /etc/postgresql/krb5.keytab
 
+
+Upgrade Howto (for a major upgrade)
+===================================
+
+If you didn't install PostgreSQL by following this README, 
+you must adapt these instructions to your setup.
+
+Most commands must be launched as the user _postgresql:
+# su - _postgresql
+
+1) Backup all your data:
+$ pg_dumpall -U postgres > /var/postgresql/full.sqldump
+
+2) Shutdown the server:
+$ pg_ctl -D /var/postgresql/data/ stop -m fast
+
+3) As root, upgrade your PostgreSQL package with pkg_add.
+# pkg_add -u postgresql-server
+
+4) Backup your old data directory:
+$ mv /var/postgresql/data /var/postgresql/data.old
+
+5) Create a new data directory:
+$ mkdir /var/postgresql/data
+$ initdb -D /var/postgresql/data -U postgres -A md5 -W
+
+6) Restore your old pg_hba.conf
+$ cp /var/postgresql/data.old/pg_hba.conf /var/postgresql/data/
+
+Some postgresql.conf settings changed or disappeared in this version.
+Examine your old file for local changes and apply them to the new version.
+
+7) Start PostgreSQL:
+$ pg_ctl -D /var/postgresql/data -l /var/postgresql/logfile start
+
+8) Restore your data:
+$ psql -U postgres < /var/postgresql/full.sqldump
+
+
 Clients/Frontends
+=================
 
 Many applications can use the PostgreSQL database right away.  To facilitate
 administration of a PostgreSQL database, two clients are notable:
