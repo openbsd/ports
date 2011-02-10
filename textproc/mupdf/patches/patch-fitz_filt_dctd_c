@@ -1,0 +1,27 @@
+$OpenBSD: patch-fitz_filt_dctd_c,v 1.1 2011/02/10 13:01:12 jasper Exp $
+
+Security fix for SA43020:
+MuPDF "closedctd()" Memory Corruption Vulnerability.
+
+Patch from git commit 53448d850052082cb815982419a07b52f95c6607.
+
+--- fitz/filt_dctd.c.orig	Wed Aug 25 16:12:11 2010
++++ fitz/filt_dctd.c	Wed Feb  9 21:39:03 2011
+@@ -182,8 +182,17 @@ static void
+ closedctd(fz_stream *stm)
+ {
+ 	fz_dctd *state = stm->state;
++
++	if (setjmp(state->jb))
++	{
++		state->chain->rp = state->chain->wp - state->cinfo.src->bytes_in_buffer;
++		fz_warn("jpeg error: %s", state->msg);
++		goto skip;
++	}
++
+ 	if (state->init)
+ 		jpeg_finish_decompress(&state->cinfo);
++skip:
+ 	state->chain->rp = state->chain->wp - state->cinfo.src->bytes_in_buffer;
+ 	jpeg_destroy_decompress(&state->cinfo);
+ 	fz_free(state->scanline);
