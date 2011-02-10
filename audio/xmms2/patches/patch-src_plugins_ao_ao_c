@@ -1,11 +1,23 @@
-$OpenBSD: patch-src_plugins_ao_ao_c,v 1.1 2010/06/03 16:09:37 pea Exp $
---- src/plugins/ao/ao.c.orig	Mon May 17 16:03:33 2010
-+++ src/plugins/ao/ao.c	Mon May 17 16:07:34 2010
-@@ -162,6 +162,7 @@ xmms_ao_new (xmms_output_t *output)
- 
- 		/* let's just use some common format to check if the device
- 		 * name is valid */
-+		memset(&format, 0, sizeof(format));
- 		format.bits = 16;
+$OpenBSD: patch-src_plugins_ao_ao_c,v 1.2 2011/02/10 03:14:43 jakemsr Exp $
+
+explicitely set the 'char *matrix' member of ao_sample_format to NULL
+instead of letting it be some random junk.
+
+--- src/plugins/ao/ao.c.orig	Fri Feb 19 09:43:54 2010
++++ src/plugins/ao/ao.c	Sun Feb  6 11:13:39 2011
+@@ -166,6 +166,7 @@ xmms_ao_new (xmms_output_t *output)
  		format.rate = 44100;
  		format.channels = 2;
+ 		format.byte_format = AO_FMT_NATIVE;
++		format.matrix = NULL;
+ 
+ 		device = ao_open_live (data->driver_id, &format, data->options);
+ 		if (!device && errno == AO_EOPENDEVICE) {
+@@ -354,6 +355,7 @@ xmms_ao_try_format (gint driver_id, ao_option *options
+ 	fmt->channels = channels;
+ 	fmt->rate = samplerate;
+ 	fmt->byte_format = AO_FMT_NATIVE;
++	fmt->matrix = NULL;
+ 
+ 	return TRUE;
+ }
