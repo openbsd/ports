@@ -1,0 +1,50 @@
+$OpenBSD: patch-lib_active_record_connection_adapters_abstract_database_statements_rb,v 1.1 2011/02/10 01:44:54 jeremy Exp $
+
+Fix for CVE-2011-0448.
+
+--- lib/active_record/connection_adapters/abstract/database_statements.rb.orig	Wed Dec 31 16:00:00 1969
++++ lib/active_record/connection_adapters/abstract/database_statements.rb	Wed Feb  9 08:56:20 2011
+@@ -251,6 +251,21 @@ module ActiveRecord
+         "WHERE #{quoted_primary_key} IN (SELECT #{quoted_primary_key} FROM #{quoted_table_name} #{where_sql})"
+       end
+ 
++      # Sanitizes the given LIMIT parameter in order to prevent SQL injection.
++      #
++      # +limit+ may be anything that can evaluate to a string via #to_s. It
++      # should look like an integer, or a comma-delimited list of integers.
++      #
++      # Returns the sanitized limit parameter, either as an integer, or as a
++      # string which contains a comma-delimited list of integers.
++      def sanitize_limit(limit)
++        if limit.to_s =~ /,/
++          Arel.sql limit.to_s.split(',').map{ |i| Integer(i) }.join(',')
++        else
++          Integer(limit)
++        end
++      end
++
+       protected
+         # Returns an array of record hashes with the column names as keys and
+         # column values as values.
+@@ -272,21 +287,6 @@ module ActiveRecord
+         # Executes the delete statement and returns the number of rows affected.
+         def delete_sql(sql, name = nil)
+           update_sql(sql, name)
+-        end
+-
+-        # Sanitizes the given LIMIT parameter in order to prevent SQL injection.
+-        #
+-        # +limit+ may be anything that can evaluate to a string via #to_s. It
+-        # should look like an integer, or a comma-delimited list of integers.
+-        #
+-        # Returns the sanitized limit parameter, either as an integer, or as a
+-        # string which contains a comma-delimited list of integers.
+-        def sanitize_limit(limit)
+-          if limit.to_s =~ /,/
+-            limit.to_s.split(',').map{ |i| i.to_i }.join(',')
+-          else
+-            limit.to_i
+-          end
+         end
+ 
+         # Send a rollback message to all records after they have been rolled back. If rollback

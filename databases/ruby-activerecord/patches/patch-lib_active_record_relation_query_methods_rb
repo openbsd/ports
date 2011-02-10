@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_active_record_relation_query_methods_rb,v 1.1 2011/02/10 01:44:54 jeremy Exp $
+
+Fix for CVE-2011-0448.
+
+--- lib/active_record/relation/query_methods.rb.orig	Wed Dec 31 16:00:00 1969
++++ lib/active_record/relation/query_methods.rb	Wed Feb  9 08:56:20 2011
+@@ -183,7 +183,7 @@ module ActiveRecord
+ 
+       arel = arel.having(*@having_values.uniq.reject{|h| h.blank?}) unless @having_values.empty?
+ 
+-      arel = arel.take(@limit_value) if @limit_value
++      arel = arel.take(connection.sanitize_limit(@limit_value)) if @limit_value
+       arel = arel.skip(@offset_value) if @offset_value
+ 
+       arel = arel.group(*@group_values.uniq.reject{|g| g.blank?}) unless @group_values.empty?
