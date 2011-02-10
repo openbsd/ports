@@ -1,0 +1,20 @@
+$OpenBSD: patch-lib_mail_network_delivery_methods_sendmail_rb,v 1.1 2011/02/10 01:39:47 jeremy Exp $
+
+Fix for "Vulnerability in Sendmail Delivery Agent code".
+
+--- lib/mail/network/delivery_methods/sendmail.rb.orig	Wed Dec 31 16:00:00 1969
++++ lib/mail/network/delivery_methods/sendmail.rb	Wed Feb  9 09:21:19 2011
+@@ -45,11 +45,11 @@ module Mail
+ 
+     def deliver!(mail)
+       envelope_from = mail.return_path || mail.sender || mail.from_addrs.first
+-      return_path = "-f \"#{envelope_from}\"" if envelope_from
++      return_path = "-f \"#{envelope_from.to_s.shellescape}\"" if envelope_from
+ 
+       arguments = [settings[:arguments], return_path].compact.join(" ")
+       
+-      Sendmail.call(settings[:location], arguments, mail.destinations.join(" "), mail)
++      Sendmail.call(settings[:location], arguments, mail.destinations.collect(&:shellescape).join(" "), mail)
+     end
+     
+     def Sendmail.call(path, arguments, destinations, mail)

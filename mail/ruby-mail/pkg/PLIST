@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/08 21:26:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/02/10 01:39:47 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.rdoc
@@ -14,6 +14,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/mail/body.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/configuration.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/core_extensions/
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/core_extensions/nil.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mail/core_extensions/shellwords.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/core_extensions/string.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/elements/
 ${GEM_LIB}/gems/${DISTNAME}/lib/mail/elements.rb
