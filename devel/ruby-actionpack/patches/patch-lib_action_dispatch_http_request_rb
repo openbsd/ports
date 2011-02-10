@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_action_dispatch_http_request_rb,v 1.1 2011/02/10 01:42:22 jeremy Exp $
+
+Fix for CVE-2011-0447.
+
+--- lib/action_dispatch/http/request.rb.orig	Wed Dec 31 16:00:00 1969
++++ lib/action_dispatch/http/request.rb	Wed Feb  9 08:48:24 2011
+@@ -141,8 +141,9 @@ module ActionDispatch
+     end
+ 
+     def forgery_whitelisted?
+-      get? || xhr? || content_mime_type.nil? || !content_mime_type.verify_request?
++      get?
+     end
++    deprecate :forgery_whitelisted? => "it is just an alias for 'get?' now, update your code"
+ 
+     def media_type
+       content_mime_type.to_s
