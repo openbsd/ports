@@ -1,0 +1,18 @@
+$OpenBSD: patch-django_contrib_admin_widgets_py,v 1.1 2011/02/11 11:45:48 jasper Exp $
+
+Security fix for SA43230.
+http://www.djangoproject.com/weblog/2011/feb/08/security/
+
+Patch from upstream svn -r15471.
+
+--- django/contrib/admin/widgets.py.orig	Thu Sep 30 19:40:25 2010
++++ django/contrib/admin/widgets.py	Thu Feb 10 09:53:29 2011
+@@ -96,7 +96,7 @@ class AdminFileWidget(forms.FileInput):
+         output = []
+         if value and hasattr(value, "url"):
+             output.append('%s <a target="_blank" href="%s">%s</a> <br />%s ' % \
+-                (_('Currently:'), value.url, value, _('Change:')))
++                (_('Currently:'), escape(value.url), escape(value), _('Change:')))
+         output.append(super(AdminFileWidget, self).render(name, value, attrs))
+         return mark_safe(u''.join(output))
+ 
