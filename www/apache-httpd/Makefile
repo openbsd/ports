@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/02/12 21:05:38 pea Exp $
 
 COMMENT=	apache HTTP server
 
 V=		2.2.15
 PKGNAME=	apache-httpd-${V}
 DISTNAME=	httpd-${V}
+REVISION=	0
 
 CATEGORIES=	www net
 
