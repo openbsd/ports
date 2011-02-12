@@ -1,0 +1,135 @@
+$OpenBSD: patch-libavcodec_vorbis_dec_c,v 1.1 2011/02/12 10:48:56 jasper Exp $
+
+Security fixes for CVE-2010-4704, CVE-2010-4705 and CVE-2011-0480.
+From upstream git commits:
+  3dde66752d59dfdd0f3727efd66e7202b3c75078
+  366d919016a679d3955f6fe5278fa7ce4f47b81e
+  13184036a6b1b1d4b61c91118c0896e9ad4634c3
+  925aa96915b8143017cb63418cb709b992c59065
+
+--- libavcodec/vorbis_dec.c.orig	Wed May 12 01:20:53 2010
++++ libavcodec/vorbis_dec.c	Thu Feb 10 15:00:53 2011
+@@ -61,8 +61,8 @@ typedef struct vorbis_floor0_s vorbis_floor0;
+ typedef struct vorbis_floor1_s vorbis_floor1;
+ struct vorbis_context_s;
+ typedef
+-uint_fast8_t (* vorbis_floor_decode_func)
+-             (struct vorbis_context_s *, vorbis_floor_data *, float *);
++int (* vorbis_floor_decode_func)
++    (struct vorbis_context_s *, vorbis_floor_data *, float *);
+ typedef struct {
+     uint_fast8_t floor_type;
+     vorbis_floor_decode_func decode;
+@@ -453,11 +453,11 @@ static int vorbis_parse_setup_hdr_tdtransforms(vorbis_
+ 
+ // Process floors part
+ 
+-static uint_fast8_t vorbis_floor0_decode(vorbis_context *vc,
+-                                         vorbis_floor_data *vfu, float *vec);
++static int vorbis_floor0_decode(vorbis_context *vc,
++                                vorbis_floor_data *vfu, float *vec);
+ static void create_map(vorbis_context *vc, uint_fast8_t floor_number);
+-static uint_fast8_t vorbis_floor1_decode(vorbis_context *vc,
+-                                         vorbis_floor_data *vfu, float *vec);
++static int vorbis_floor1_decode(vorbis_context *vc,
++                                vorbis_floor_data *vfu, float *vec);
+ static int vorbis_parse_setup_hdr_floors(vorbis_context *vc)
+ {
+     GetBitContext *gb = &vc->gb;
+@@ -477,6 +477,7 @@ static int vorbis_parse_setup_hdr_floors(vorbis_contex
+         if (floor_setup->floor_type == 1) {
+             uint_fast8_t  maximum_class = 0;
+             uint_fast8_t  rangebits;
++	    uint_fast32_t rangemax;
+             uint_fast16_t floor1_values = 2;
+ 
+             floor_setup->decode = vorbis_floor1_decode;
+@@ -530,8 +531,15 @@ static int vorbis_parse_setup_hdr_floors(vorbis_contex
+ 
+ 
+             rangebits = get_bits(gb, 4);
++            rangemax = (1 << rangebits);
++            if (rangemax > vc->blocksize[1] / 2) {
++                av_log(vc->avccontext, AV_LOG_ERROR,
++                       "Floor value is too large for blocksize: %d (%d)\n",
++                       rangemax, vc->blocksize[1] / 2);
++                return -1;
++            }
+             floor_setup->data.t1.list[0].x = 0;
+-            floor_setup->data.t1.list[1].x = (1 << rangebits);
++            floor_setup->data.t1.list[1].x = rangemax;
+ 
+             for (j = 0; j < floor_setup->data.t1.partitions; ++j) {
+                 for (k = 0; k < floor_setup->data.t1.class_dimensions[floor_setup->data.t1.partition_class[j]]; ++k, ++floor1_values) {
+@@ -648,7 +656,7 @@ static int vorbis_parse_setup_hdr_residues(vorbis_cont
+         res_setup->partition_size = get_bits(gb, 24) + 1;
+         /* Validations to prevent a buffer overflow later. */
+         if (res_setup->begin>res_setup->end ||
+-            res_setup->end>vc->blocksize[1] / (res_setup->type == 2 ? 1 : 2) ||
++            res_setup->end > vc->avccontext->channels * vc->blocksize[1] / 2 ||
+             (res_setup->end-res_setup->begin) / res_setup->partition_size > V_MAX_PARTITIONS) {
+             av_log(vc->avccontext, AV_LOG_ERROR, "partition out of bounds: type, begin, end, size, blocksize: %"PRIdFAST16", %"PRIdFAST32", %"PRIdFAST32", %"PRIdFAST32", %"PRIdFAST32"\n", res_setup->type, res_setup->begin, res_setup->end, res_setup->partition_size, vc->blocksize[1] / 2);
+             return -1;
+@@ -1002,8 +1010,8 @@ static av_cold int vorbis_decode_init(AVCodecContext *
+ 
+ // Read and decode floor
+ 
+-static uint_fast8_t vorbis_floor0_decode(vorbis_context *vc,
+-                                         vorbis_floor_data *vfu, float *vec)
++static int vorbis_floor0_decode(vorbis_context *vc,
++                                vorbis_floor_data *vfu, float *vec)
+ {
+     vorbis_floor0 *vf = &vfu->t0;
+     float *lsp = vf->lsp;
+@@ -1027,6 +1035,9 @@ static uint_fast8_t vorbis_floor0_decode(vorbis_contex
+         }
+         AV_DEBUG("floor0 dec: booknumber: %u\n", book_idx);
+         codebook = vc->codebooks[vf->book_list[book_idx]];
++        /* Invalid codebook! */
++        if (!codebook.codevectors)
++            return -1;
+ 
+         while (lsp_len<vf->order) {
+             int vec_off;
+@@ -1112,8 +1123,8 @@ static uint_fast8_t vorbis_floor0_decode(vorbis_contex
+     return 0;
+ }
+ 
+-static uint_fast8_t vorbis_floor1_decode(vorbis_context *vc,
+-                                         vorbis_floor_data *vfu, float *vec)
++static int vorbis_floor1_decode(vorbis_context *vc,
++                                vorbis_floor_data *vfu, float *vec)
+ {
+     vorbis_floor1 *vf = &vfu->t1;
+     GetBitContext *gb = &vc->gb;
+@@ -1257,7 +1268,7 @@ static av_always_inline int vorbis_residue_decode_inte
+     uint_fast8_t c_p_c = vc->codebooks[vr->classbook].dimensions;
+     uint_fast16_t n_to_read = vr->end-vr->begin;
+     uint_fast16_t ptns_to_read = n_to_read/vr->partition_size;
+-    uint_fast8_t classifs[ptns_to_read*vc->audio_channels];
++    uint8_t classifs[ptns_to_read*vc->audio_channels];
+     uint_fast8_t pass;
+     uint_fast8_t ch_used;
+     uint_fast8_t i,j,l;
+@@ -1490,13 +1501,20 @@ static int vorbis_parse_audio_packet(vorbis_context *v
+ 
+     for (i = 0; i < vc->audio_channels; ++i) {
+         vorbis_floor *floor;
++        int ret;
+         if (mapping->submaps > 1) {
+             floor = &vc->floors[mapping->submap_floor[mapping->mux[i]]];
+         } else {
+             floor = &vc->floors[mapping->submap_floor[0]];
+         }
+ 
+-        no_residue[i] = floor->decode(vc, &floor->data, ch_floor_ptr);
++        ret = floor->decode(vc, &floor->data, ch_floor_ptr);
++
++        if (ret < 0) {
++            av_log(vc->avccontext, AV_LOG_ERROR, "Invalid codebook in vorbis_floor_decode.\n");
++            return -1;
++        }
++        no_residue[i] = ret;
+         ch_floor_ptr += blocksize / 2;
+     }
+ 
