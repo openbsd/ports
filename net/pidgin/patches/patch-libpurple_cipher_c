@@ -1,0 +1,60 @@
+$OpenBSD: patch-libpurple_cipher_c,v 1.1 2011/02/12 11:00:00 jasper Exp $
+
+Fix a potential information leak in cipher.c (SA43271).
+
+--- libpurple/cipher.c.orig	Thu Feb 10 19:32:03 2011
++++ libpurple/cipher.c	Thu Feb 10 19:34:18 2011
+@@ -249,7 +249,7 @@ md5_uninit(PurpleCipherContext *context) {
+ 	purple_cipher_context_reset(context, NULL);
+ 
+ 	md5_context = purple_cipher_context_get_data(context);
+-	memset(md5_context, 0, sizeof(md5_context));
++	memset(md5_context, 0, sizeof(*md5_context));
+ 
+ 	g_free(md5_context);
+ 	md5_context = NULL;
+@@ -705,7 +705,7 @@ md4_uninit(PurpleCipherContext *context) {
+ 	purple_cipher_context_reset(context, NULL);
+ 
+ 	md4_context = purple_cipher_context_get_data(context);
+-	memset(md4_context, 0, sizeof(md4_context));
++	memset(md4_context, 0, sizeof(*md4_context));
+ 
+ 	g_free(md4_context);
+ 	md4_context = NULL;
+@@ -1356,7 +1356,7 @@ des_uninit(PurpleCipherContext *context) {
+ 	struct _des_ctx *des_context;
+ 
+ 	des_context = purple_cipher_context_get_data(context);
+-	memset(des_context, 0, sizeof(des_context));
++	memset(des_context, 0, sizeof(*des_context));
+ 
+ 	g_free(des_context);
+ 	des_context = NULL;
+@@ -1706,7 +1706,7 @@ des3_uninit(PurpleCipherContext *context)
+ 	struct _des3_ctx *des3_context;
+ 
+ 	des3_context = purple_cipher_context_get_data(context);
+-	memset(des3_context, 0, sizeof(des3_context));
++	memset(des3_context, 0, sizeof(*des3_context));
+ 
+ 	g_free(des3_context);
+ 	des3_context = NULL;
+@@ -2382,7 +2382,7 @@ rc4_uninit(PurpleCipherContext *context) {
+ 	struct RC4Context *rc4_ctx;
+ 
+ 	rc4_ctx = purple_cipher_context_get_data(context);
+-	memset(rc4_ctx, 0, sizeof(rc4_ctx));
++	memset(rc4_ctx, 0, sizeof(*rc4_ctx));
+ 
+ 	g_free(rc4_ctx);
+ 	rc4_ctx = NULL;
+@@ -2828,7 +2828,7 @@ purple_cipher_context_destroy(PurpleCipherContext *con
+ 	if(cipher->ops && cipher->ops->uninit)
+ 		cipher->ops->uninit(context);
+ 
+-	memset(context, 0, sizeof(context));
++	memset(context, 0, sizeof(*context));
+ 	g_free(context);
+ 	context = NULL;
+ }
