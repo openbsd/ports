@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2011/01/15 01:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2011/02/12 11:25:48 ajacoutot Exp $
+
+# XXX on macppc this port requires a kernel with cranked MAXDSIZ to build
 
 COMMENT=		Gameboy Advance emulator
 

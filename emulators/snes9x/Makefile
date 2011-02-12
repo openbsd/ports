@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/15 23:22:08 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/02/12 11:25:48 ajacoutot Exp $
+
+# XXX on macppc this port requires a kernel with cranked MAXDSIZ to build
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 
