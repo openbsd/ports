@@ -1,0 +1,26 @@
+$OpenBSD: patch-buckets_apr_brigade_c,v 1.1 2011/02/12 21:06:57 pea Exp $
+
+Fix CVE-2010-1623
+
+--- buckets/apr_brigade.c.orig	Fri Feb  4 21:45:35 2005
++++ buckets/apr_brigade.c	Tue Feb  8 14:04:05 2011
+@@ -304,7 +304,18 @@ APU_DECLARE(apr_status_t) apr_brigade_split_line(apr_b
+             return APR_SUCCESS;
+         }
+         APR_BUCKET_REMOVE(e);
+-        APR_BRIGADE_INSERT_TAIL(bbOut, e);
++        if (APR_BUCKET_IS_METADATA(e) || len > APR_BUCKET_BUFF_SIZE/4) {
++            APR_BRIGADE_INSERT_TAIL(bbOut, e);
++        }
++        else {
++            if (len > 0) {
++                rv = apr_brigade_write(bbOut, NULL, NULL, str, len);
++                if (rv != APR_SUCCESS) {
++                    return rv;
++                }
++            }
++            apr_bucket_destroy(e);
++        }
+         readbytes += len;
+         /* We didn't find an APR_ASCII_LF within the maximum line length. */
+         if (readbytes >= maxbytes) {
