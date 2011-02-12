@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.180 2010/11/23 10:05:48 edd Exp $
+# $OpenBSD: Makefile,v 1.181 2011/02/12 10:49:36 jasper Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	alpha amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -13,7 +13,7 @@ SUBST_VARS += 		PREFIX CONFDIR
 N =			mplayer
 DISTNAME =		mplayer-export-snapshot-${V}
 PKGNAME =		${N}-${V}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		x11 multimedia
 EXTRACT_SUFX =		.tar.bz2
 
