@@ -1,7 +1,7 @@
-$OpenBSD: patch-server_gam_excludes_c,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Exp $
---- server/gam_excludes.c.orig	Sun Nov 29 17:43:23 2009
-+++ server/gam_excludes.c	Sun Nov 29 17:43:49 2009
-@@ -20,7 +20,7 @@ struct _gam_exclude {
+$OpenBSD: patch-server_gam_excludes_c,v 1.2 2011/03/02 06:47:40 ajacoutot Exp $
+--- server/gam_excludes.c.orig	Wed Jul  4 15:36:49 2007
++++ server/gam_excludes.c	Sun Feb 13 14:39:09 2011
+@@ -20,11 +20,13 @@ struct _gam_exclude {
  static int initialized = 0;
  static GList *excludes = NULL;
  static char *static_excludes[] = {
@@ -10,3 +10,9 @@ $OpenBSD: patch-server_gam_excludes_c,v 1.1.1.1 2009/12/04 08:07:20 ajacoutot Ex
      "/media/*",
      "/mnt/*",
      "/dev/*",
+     "/proc/*",
++    "/usr/obj/*",
++    "/usr/ports/pobj/*",
+ #endif
+     NULL
+ };
