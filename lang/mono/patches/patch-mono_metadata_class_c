@@ -1,7 +1,7 @@
-$OpenBSD: patch-mono_metadata_class_c,v 1.3 2010/08/18 10:51:55 robert Exp $
---- mono/metadata/class.c.orig	Wed Aug 18 10:21:01 2010
-+++ mono/metadata/class.c	Wed Aug 18 10:21:14 2010
-@@ -1722,7 +1722,8 @@ mono_class_layout_fields (MonoClass *class)
+$OpenBSD: patch-mono_metadata_class_c,v 1.4 2011/03/02 08:37:51 robert Exp $
+--- mono/metadata/class.c.orig	Wed Feb 23 20:21:01 2011
++++ mono/metadata/class.c	Sun Feb 27 14:15:30 2011
+@@ -1721,7 +1721,8 @@ mono_class_layout_fields (MonoClass *class)
  					field->offset &= ~(align - 1);
  				}
  				/*TypeBuilders produce all sort of weird things*/

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2011/01/14 21:14:12 robert Exp $
+# $OpenBSD: Makefile,v 1.57 2011/03/02 08:37:51 robert Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
-DISTNAME=	mono-2.8.2
+DISTNAME=	mono-2.10.1
 
 CATEGORIES=	lang devel
 
@@ -10,6 +10,7 @@ SHARED_LIBS +=  mono-2.0		1.0	# .0.0
 SHARED_LIBS +=  mono-profiler-iomap	0.0	# .0.0
 SHARED_LIBS +=  monosgen-2.0		0.0	# .0.0
 SHARED_LIBS +=  mono-profiler-aot	1.0	# .0.0
+SHARED_LIBS +=  mono-profiler-log	0.0	# .0.0
 SHARED_LIBS +=  mono-profiler-cov	1.0	# .0.0
 
 HOMEPAGE=	http://www.mono-project.com/
