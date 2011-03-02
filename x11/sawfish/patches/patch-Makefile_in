@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2011/03/02 06:42:20 jasper Exp $
+
+Don't install the directory if it's not going to be used.
+
+--- Makefile.in.orig	Mon Feb 28 17:09:44 2011
++++ Makefile.in	Mon Feb 28 17:10:01 2011
+@@ -63,8 +63,7 @@ installdirs : mkinstalldirs
+ 	  $(DESTDIR)$(GNOMEDIR)/share/gnome/wm-properties \
+ 	  $(DESTDIR)$(datadir)/applications/ \
+ 	  $(DESTDIR)$(libdir)/pkgconfig/ \
+-	  $(DESTDIR)$(datadir)/xsessions/ \
+-	  $(DESTDIR)$(KDEDIR)/ksmserver/windowmanagers/
++	  $(DESTDIR)$(datadir)/xsessions/
+ 
+ uninstall :
+ 	for dir in $(SUBDIRS); do \

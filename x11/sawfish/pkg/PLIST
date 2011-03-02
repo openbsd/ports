@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/09/29 17:07:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/03/02 06:42:21 jasper Exp $
 @bin bin/sawfish
 bin/sawfish-client
 bin/sawfish-config
@@ -51,13 +51,10 @@ lib/sawfish/${VERSION}/${GNU_ARCH}/x.so
 @man man/man1/sawfish-config.1
 @man man/man1/sawfish.1
 share/applications/sawfish.desktop
-share/apps/
-share/apps/ksmserver/
-share/apps/ksmserver/windowmanagers/
-share/apps/ksmserver/windowmanagers/sawfish.desktop
 share/gnome/
 share/gnome/wm-properties/
 share/gnome/wm-properties/sawfish-wm.desktop
+share/icons/hicolor/32x32/apps/sawfish-config.png
 share/locale/no/LC_MESSAGES/sawfish.mo
 share/sawfish/
 share/sawfish/${VERSION}/
@@ -127,8 +124,6 @@ share/sawfish/${VERSION}/lisp/prompt.jlc
 share/sawfish/${VERSION}/lisp/rects.jl
 share/sawfish/${VERSION}/lisp/rects.jlc
 share/sawfish/${VERSION}/lisp/sawfish/
-share/sawfish/${VERSION}/lisp/sawfish-defaults.jl
-share/sawfish/${VERSION}/lisp/sawfish-defaults.jlc
 share/sawfish/${VERSION}/lisp/sawfish/cfg/
 share/sawfish/${VERSION}/lisp/sawfish/cfg/apply.jl
 share/sawfish/${VERSION}/lisp/sawfish/cfg/apply.jlc
@@ -149,6 +144,8 @@ share/sawfish/${VERSION}/lisp/sawfish/cfg/shell.jl
 share/sawfish/${VERSION}/lisp/sawfish/cfg/shell.jlc
 share/sawfish/${VERSION}/lisp/sawfish/cfg/slot.jl
 share/sawfish/${VERSION}/lisp/sawfish/cfg/slot.jlc
+share/sawfish/${VERSION}/lisp/sawfish/cfg/utils.jl
+share/sawfish/${VERSION}/lisp/sawfish/cfg/utils.jlc
 share/sawfish/${VERSION}/lisp/sawfish/cfg/widgets/
 share/sawfish/${VERSION}/lisp/sawfish/cfg/widgets/command.jl
 share/sawfish/${VERSION}/lisp/sawfish/cfg/widgets/command.jlc
@@ -169,12 +166,6 @@ share/sawfish/${VERSION}/lisp/sawfish/cfg/widgets/workspace-geometry.jlc
 share/sawfish/${VERSION}/lisp/sawfish/cfg/wm.jl
 share/sawfish/${VERSION}/lisp/sawfish/cfg/wm.jlc
 share/sawfish/${VERSION}/lisp/sawfish/gtk/
-share/sawfish/${VERSION}/lisp/sawfish/gtk/stock.jl
-share/sawfish/${VERSION}/lisp/sawfish/gtk/stock.jlc
-share/sawfish/${VERSION}/lisp/sawfish/gtk/widget-dialog.jl
-share/sawfish/${VERSION}/lisp/sawfish/gtk/widget-dialog.jlc
-share/sawfish/${VERSION}/lisp/sawfish/gtk/widget-test.jl
-share/sawfish/${VERSION}/lisp/sawfish/gtk/widget-test.jlc
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widget.jl
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widget.jlc
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/
@@ -194,6 +185,8 @@ share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/program.jl
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/program.jlc
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/scheme-boolean.jl
 share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/scheme-boolean.jlc
+share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/simple-dialog.jl
+share/sawfish/${VERSION}/lisp/sawfish/gtk/widgets/simple-dialog.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/
 share/sawfish/${VERSION}/lisp/sawfish/wm.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm.jlc
@@ -246,11 +239,7 @@ share/sawfish/${VERSION}/lisp/sawfish/wm/custom.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/custom.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/customize.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/customize.jlc
-share/sawfish/${VERSION}/lisp/sawfish/wm/defaults.jl
-share/sawfish/${VERSION}/lisp/sawfish/wm/defaults.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/ext/
-share/sawfish/${VERSION}/lisp/sawfish/wm/ext/3d-hack.jl
-share/sawfish/${VERSION}/lisp/sawfish/wm/ext/3d-hack.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/ext/apps-menu.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/ext/apps-menu.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/ext/audio-events.jl
@@ -290,8 +279,8 @@ share/sawfish/${VERSION}/lisp/sawfish/wm/integration/gnome.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/integration/gnome.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/integration/kde.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/integration/kde.jlc
-share/sawfish/${VERSION}/lisp/sawfish/wm/integration/standalone.jl
-share/sawfish/${VERSION}/lisp/sawfish/wm/integration/standalone.jlc
+share/sawfish/${VERSION}/lisp/sawfish/wm/integration/xfce.jl
+share/sawfish/${VERSION}/lisp/sawfish/wm/integration/xfce.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/keymaps.jl
 share/sawfish/${VERSION}/lisp/sawfish/wm/keymaps.jlc
 share/sawfish/${VERSION}/lisp/sawfish/wm/menus.jl
@@ -416,8 +405,6 @@ share/sawfish/${VERSION}/lisp/shading.jl
 share/sawfish/${VERSION}/lisp/shading.jlc
 share/sawfish/${VERSION}/lisp/shrink-yank.jl
 share/sawfish/${VERSION}/lisp/shrink-yank.jlc
-share/sawfish/${VERSION}/lisp/standalone-int.jl
-share/sawfish/${VERSION}/lisp/standalone-int.jlc
 share/sawfish/${VERSION}/lisp/tab.jl
 share/sawfish/${VERSION}/lisp/tab.jlc
 share/sawfish/${VERSION}/lisp/tabgroup.jl
@@ -436,7 +423,8 @@ share/sawfish/${VERSION}/lisp/with-output.jl
 share/sawfish/${VERSION}/lisp/with-output.jlc
 share/sawfish/${VERSION}/lisp/x-cycle.jl
 share/sawfish/${VERSION}/lisp/x-cycle.jlc
-share/sawfish/${VERSION}/monitor.png
+share/sawfish/${VERSION}/lisp/xfce-int.jl
+share/sawfish/${VERSION}/lisp/xfce-int.jlc
 share/sawfish/${VERSION}/sounds/
 share/sawfish/${VERSION}/sounds/focused.wav
 share/sawfish/${VERSION}/sounds/iconify.wav
@@ -470,3 +458,7 @@ share/sawfish/sounds/
 share/sawfish/themes/
 share/xsessions/
 share/xsessions/sawfish.desktop
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
