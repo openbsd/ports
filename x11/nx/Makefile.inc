@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2009/03/30 17:04:42 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2011/03/02 06:56:08 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,3 +20,8 @@ DIST_SUBDIR=		nx
 USE_GMAKE?=		Yes
 
 NO_REGRESS?=		Yes
+
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+			--bindir=${PREFIX}/NX/bin \
+			--sbindir=${PREFIX}/NX/sbin \
+			--datadir=${PREFIX}/NX/share
