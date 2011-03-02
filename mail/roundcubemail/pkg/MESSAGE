@@ -6,9 +6,10 @@ directory. You can configure this as follows:
 # apachectl stop
 # apachectl start
 
-Create a link into an appropriate part of the web-server's
-document root, e.g.:
+Make the roundcubemail directory available to your web users, either
+by adding a separate virtual host, or an alias in an appropriate part
+of the web-server's configuration, e.g.:
 
-# ln -s ../roundcubemail /var/www/htdocs
+Alias /roundcubemail/ "/var/www/roundcubemail/"
 
 Next, follow ${INSTDIR}/INSTALL or ${INSTDIR}/UPGRADING

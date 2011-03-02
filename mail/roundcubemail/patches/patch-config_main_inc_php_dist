@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_main_inc_php_dist,v 1.11 2011/01/14 09:38:48 sthen Exp $
---- config/main.inc.php.dist.orig	Wed Jan 12 08:13:40 2011
-+++ config/main.inc.php.dist	Thu Jan 13 14:26:48 2011
-@@ -306,7 +306,7 @@ $rcmail_config['dont_override'] = array();
+$OpenBSD: patch-config_main_inc_php_dist,v 1.12 2011/03/02 08:38:01 sthen Exp $
+--- config/main.inc.php.dist.orig	Wed Feb  9 10:51:50 2011
++++ config/main.inc.php.dist	Sat Feb 12 22:46:28 2011
+@@ -309,7 +309,7 @@ $rcmail_config['dont_override'] = array();
  $rcmail_config['identities_level'] = 0;
  
  // mime magic database
@@ -10,3 +10,12 @@ $OpenBSD: patch-config_main_inc_php_dist,v 1.11 2011/01/14 09:38:48 sthen Exp $
  
  // Enable DNS checking for e-mail address validation
  $rcmail_config['email_dns_check'] = false;
+@@ -384,7 +384,7 @@ $rcmail_config['enable_spellcheck'] = true;
+ 
+ // Set the spell checking engine. 'googie' is the default. 'pspell' is also available,
+ // but requires the Pspell extensions. When using Nox Spell Server, also set 'googie' here.
+-$rcmail_config['spellcheck_engine'] = 'googie';
++$rcmail_config['spellcheck_engine'] = 'pspell';
+ 
+ // For a locally installed Nox Spell Server, please specify the URI to call it.
+ // Get Nox Spell Server from http://orangoo.com/labs/?page_id=72
