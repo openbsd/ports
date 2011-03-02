@@ -1,8 +1,8 @@
-$OpenBSD: patch-librep_pc_in,v 1.3 2010/01/09 19:38:18 ajacoutot Exp $
---- librep.pc.in.orig	Fri Jan  8 19:30:43 2010
-+++ librep.pc.in	Sat Jan  9 20:30:24 2010
+$OpenBSD: patch-librep_pc_in,v 1.4 2011/03/02 06:39:44 jasper Exp $
+--- librep.pc.in.orig	Sun Feb 27 10:56:17 2011
++++ librep.pc.in	Mon Feb 28 16:52:42 2011
 @@ -8,7 +8,7 @@ repcommonexecdir=@repcommonexecdir@
- includedir=@includedir@/rep/
+ includedir=@includedir@
  
  Cflags: -I${includedir}/ -I${repcommonexecdir}/
 -Libs: -L@libdir@ -lrep -lcrypt -lgmp -lm

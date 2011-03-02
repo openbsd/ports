@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2011/01/15 01:09:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.51 2011/03/02 06:39:44 jasper Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
 SHARED_ONLY=	Yes
 
-VERSION=	0.91.0
+VERSION=	0.91.1
 DISTNAME=	librep-${VERSION}
-REVISION=	1
 SHARED_LIBS +=  rep                  13.0     # .13.0
 
 CATEGORIES=	lang
@@ -21,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=           http://download.tuxfamily.org/sawfish/librep/
+MASTER_SITES=           http://download.tuxfamily.org/librep/
 EXTRACT_SUFX=           .tar.bz2
 
 WANTLIB=		c gdbm gmp ffi m ncurses readline
