@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_base_paths_linux_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
---- base/base_paths_linux.cc.orig	Tue Jan 25 12:41:05 2011
-+++ base/base_paths_linux.cc	Tue Feb  1 23:03:59 2011
+$OpenBSD: patch-base_base_paths_linux_cc,v 1.2 2011/03/02 08:53:51 robert Exp $
+--- base/base_paths_linux.cc.orig	Mon Feb  7 10:43:32 2011
++++ base/base_paths_linux.cc	Wed Feb 23 23:22:11 2011
 @@ -5,7 +5,7 @@
  #include "base/base_paths.h"
  
@@ -10,15 +10,14 @@ $OpenBSD: patch-base_base_paths_linux_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
  #include <sys/param.h>
  #include <sys/sysctl.h>
  #endif
-@@ -57,6 +57,11 @@ bool PathProviderPosix(int key, FilePath* result) {
+@@ -57,6 +57,10 @@ bool PathProviderPosix(int key, FilePath* result) {
        }
        bin_dir[strlen(bin_dir)] = 0;
        *result = FilePath(bin_dir);
 +      return true;
 +#elif defined(OS_OPENBSD)
 +      *result = FilePath("/usr/local/chrome/chrome");
-+//      *result = FilePath("/home/pobj/chromium-9.0.597.83/chromium-9.0.597.83/out/Release/chrome");
-+//      *result = FilePath("/home/pobj/chromium-9.0.597.77/chromium-9.0.597.77/out/Debug/chrome");
++//      *result = FilePath("/home/pobj/chromium-9.0.597.94/chromium-9.0.597.94/out/Release/chrome");
        return true;
  #endif
      }

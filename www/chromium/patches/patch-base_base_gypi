@@ -1,7 +1,15 @@
-$OpenBSD: patch-base_base_gypi,v 1.2 2011/02/08 09:43:02 espie Exp $
---- base/base.gypi.orig	Fri Jan 21 10:20:15 2011
-+++ base/base.gypi	Mon Jan 24 14:21:18 2011
-@@ -352,12 +352,11 @@
+$OpenBSD: patch-base_base_gypi,v 1.3 2011/03/02 08:53:51 robert Exp $
+--- base/base.gypi.orig	Mon Feb  7 10:43:32 2011
++++ base/base.gypi	Sun Feb 13 10:51:23 2011
+@@ -179,6 +179,7 @@
+           'process_util.cc',
+           'process_util.h',
+           'process_util_linux.cc',
++          'process_util_openbsd.cc',
+           'process_util_mac.mm',
+           'process_util_posix.cc',
+           'process_util_win.cc',
+@@ -352,12 +353,11 @@
                  'message_pump_glib_x.cc',
                ],
            }],
@@ -15,19 +23,20 @@ $OpenBSD: patch-base_base_gypi,v 1.2 2011/02/08 09:43:02 espie Exp $
                  'setproctitle_linux.c',
                  'setproctitle_linux.h',
                ],
-@@ -640,6 +639,11 @@
+@@ -640,6 +640,12 @@
            ],
          },],
          [ 'OS == "freebsd" or OS == "openbsd"', {
 +          'sources!': [
 +            'file_util_linux.cc',
 +            'process_linux.cc',
++            'process_util_linux.cc',
 +          ],
 +          'include_dirs': [ '/usr/local/include' ],
            'link_settings': {
              'libraries': [
                '-L/usr/local/lib -lexecinfo',
-@@ -714,7 +718,7 @@
+@@ -714,7 +720,7 @@
          },
        ],
      }],

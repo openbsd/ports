@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/02/12 10:42:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/03/02 08:53:51 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -6,6 +6,8 @@ COMMENT=		Chromium browser
 
 V=			9.0.597.94
 DISTNAME=		chromium-${V}
+
+REVISION=		0
 
 CATEGORIES=		www
 

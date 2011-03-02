@@ -1,6 +1,5 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.2 2011/02/08 09:43:02 espie Exp $
---- chrome/chrome_browser.gypi.orig	Fri Jan 21 10:20:41 2011
-+++ chrome/chrome_browser.gypi	Mon Jan 24 14:09:16 2011
+--- chrome/chrome_browser.gypi.orig	Mon Feb  7 10:43:57 2011
++++ chrome/chrome_browser.gypi	Wed Feb 23 22:55:38 2011
 @@ -3496,7 +3496,7 @@
              ['exclude', '^browser/views/tab_contents/tab_contents_view_gtk.h'],
            ],
@@ -10,9 +9,11 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.2 2011/02/08 09:43:02 espie Exp $
            'dependencies': [
              '../build/linux/system.gyp:dbus-glib',
              '../build/linux/system.gyp:gconf',
-@@ -3509,12 +3509,12 @@
+@@ -3508,13 +3508,14 @@
+           ],
            'link_settings': {
              'libraries': [
++              '-lkvm',
                # For dlsym() in 'browser/zygote_main_linux.cc'
 -              '-ldl',
              ],
@@ -24,7 +25,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.2 2011/02/08 09:43:02 espie Exp $
            ],
            'sources': [
              'browser/crash_handler_host_linux.h',
-@@ -3569,7 +3569,6 @@
+@@ -3569,7 +3570,6 @@
              'browser/certificate_manager_model.h',
              'browser/dom_ui/options/certificate_manager_handler.cc',
              'browser/dom_ui/options/certificate_manager_handler.h',
@@ -32,7 +33,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.2 2011/02/08 09:43:02 espie Exp $
            ],
          }],
          ['OS=="freebsd" or OS=="openbsd"', {
-@@ -3581,7 +3580,18 @@
+@@ -3581,7 +3581,18 @@
            ],
            'sources': [
              'browser/file_path_watcher_stub.cc',
@@ -51,7 +52,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.2 2011/02/08 09:43:02 espie Exp $
          }],
          # Use system SSL settings on Mac and Windows.  Use preferences
          # for SSL settings on other platforms.
-@@ -4161,7 +4171,7 @@
+@@ -4161,7 +4172,7 @@
                ],
              }],
              # GTK build only

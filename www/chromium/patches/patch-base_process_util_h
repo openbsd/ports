@@ -1,7 +1,17 @@
-$OpenBSD: patch-base_process_util_h,v 1.1 2011/02/08 09:43:02 espie Exp $
---- base/process_util.h.orig	Fri Jan 21 10:20:15 2011
-+++ base/process_util.h	Sun Jan 23 23:27:31 2011
-@@ -159,7 +159,7 @@ void CloseProcessHandle(ProcessHandle process);
+$OpenBSD: patch-base_process_util_h,v 1.2 2011/03/02 08:53:51 robert Exp $
+--- base/process_util.h.orig	Mon Feb  7 10:43:32 2011
++++ base/process_util.h	Sun Feb 13 11:00:04 2011
+@@ -27,6 +27,9 @@ typedef struct _malloc_zone_t malloc_zone_t;
+ #include <limits.h>
+ #include <sys/types.h>
+ #endif
++#if defined(OS_OPENBSD)
++struct kinfo_proc2;
++#endif
+ 
+ #include <list>
+ #include <string>
+@@ -159,7 +162,7 @@ void CloseProcessHandle(ProcessHandle process);
  // Win XP SP1 as well.
  ProcessId GetProcId(ProcessHandle process);
  
@@ -10,3 +20,23 @@ $OpenBSD: patch-base_process_util_h,v 1.1 2011/02/08 09:43:02 espie Exp $
  // Returns the ID for the parent of the given process.
  ProcessId GetParentProcessId(ProcessHandle process);
  
+@@ -170,7 +173,8 @@ FilePath GetProcessExecutablePath(ProcessHandle proces
+ // CPU-related ticks.  Returns -1 on parse error.
+ // Exposed for testing.
+ int ParseProcStatCPU(const std::string& input);
+-
++#endif
++#if defined(OS_LINUX)
+ static const char kAdjustOOMScoreSwitch[] = "--adjust-oom-score";
+ 
+ // This adjusts /proc/process/oom_adj so the Linux OOM killer will prefer
+@@ -435,6 +439,9 @@ class ProcessIterator {
+ #elif defined(OS_MACOSX)
+   std::vector<kinfo_proc> kinfo_procs_;
+   size_t index_of_kinfo_proc_;
++#elif  defined(OS_OPENBSD)
++  std::vector<kinfo_proc2> kinfo_procs_;
++  size_t index_of_kinfo_proc2_;
+ #elif defined(OS_POSIX)
+   DIR *procfs_dir_;
+ #endif

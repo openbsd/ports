@@ -1,32 +1,60 @@
-$OpenBSD: patch-chrome_browser_process_singleton_linux_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
---- chrome/browser/process_singleton_linux.cc.orig	Fri Jan 21 10:20:26 2011
-+++ chrome/browser/process_singleton_linux.cc	Sun Jan 23 23:27:31 2011
-@@ -325,23 +325,24 @@ void DisplayProfileInUseError(const std::string& lock_
+$OpenBSD: patch-chrome_browser_process_singleton_linux_cc,v 1.2 2011/03/02 08:53:51 robert Exp $
+--- chrome/browser/process_singleton_linux.cc.orig	Mon Feb  7 10:43:42 2011
++++ chrome/browser/process_singleton_linux.cc	Wed Feb 23 23:21:37 2011
+@@ -54,6 +54,13 @@
+ #include <set>
+ #include <string>
+ 
++#if defined(OS_OPENBSD)
++#include <sys/param.h>
++#include <sys/sysctl.h>
++#include <kvm.h>
++#include <libgen.h>
++#endif
++
+ #include "app/l10n_util.h"
+ #include "base/base_paths.h"
+ #include "base/basictypes.h"
+@@ -325,10 +332,42 @@ void DisplayProfileInUseError(const std::string& lock_
  }
  
  bool IsChromeProcess(pid_t pid) {
--  FilePath other_chrome_path(base::GetProcessExecutablePath(pid));
-+/*  FilePath other_chrome_path(base::GetProcessExecutablePath(pid));
++#if defined(OS_LINUX)
+   FilePath other_chrome_path(base::GetProcessExecutablePath(pid));
    return (!other_chrome_path.empty() &&
            other_chrome_path.BaseName() ==
--          FilePath::FromWStringHack(chrome::kBrowserProcessExecutableName));
-+          FilePath::FromWStringHack(chrome::kBrowserProcessExecutableName));*/
-+  return true;
+           FilePath::FromWStringHack(chrome::kBrowserProcessExecutableName));
++#elif defined(OS_OPENBSD)
++  int i, nproc;
++  struct kinfo_proc2 *plist, *kp;
++  char buf[_POSIX2_LINE_MAX], **pargv;
++  char *p;
++  kvm_t *kd;
++
++  if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, buf)) == NULL) {
++    LOG(ERROR) << "kvm_openfiles(): failed";
++    return false;
++  }
++
++  plist = kvm_getproc2(kd, KERN_PROC_PID, pid, sizeof(*plist), &nproc);
++  CHECK(plist != NULL);
++
++  for (i = 0, kp = plist; i < nproc; i++, kp++) {
++    if ((kp->p_flag & P_SYSTEM) != 0)
++      continue;
++    if ((pargv = kvm_getargv2(kd, kp, 0)) == NULL)
++      continue;
++    p = basename(pargv[0]);
++    if (!strcmp(p, "chrome")) {
++      LOG(ERROR) << pid << " is chrome";
++      kvm_close(kd);
++      return true;
++    }
++  }
++
++  kvm_close(kd);
++  return false;
++#endif
  }
  
  // Return true if the given pid is one of our child processes.
- // Assumes that the current pid is the root of all pids of the current instance.
- bool IsSameChromeInstance(pid_t pid) {
-   pid_t cur_pid = base::GetCurrentProcId();
--  while (pid != cur_pid) {
-+/*  while (pid != cur_pid) {
-     pid = base::GetParentProcessId(pid);
-     if (pid < 0)
-       return false;
-     if (!IsChromeProcess(pid))
-       return false;
--  }
-+  }*/
-   return true;
- }
- 
