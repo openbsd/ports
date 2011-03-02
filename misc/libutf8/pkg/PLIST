@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 17:54:16 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/03/02 07:14:40 ajacoutot Exp $
 include/libutf8.h
 include/utf8/
 include/utf8/config.h
@@ -89,4 +89,6 @@ lib/libutf8.la
 @man man/man3/wmemmove.3
 @man man/man3/wmemset.3
 @man man/man3/wprintf.3
+share/doc/libutf8/
+share/doc/libutf8/README
 %%SHARED%%
