@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2010/10/18 18:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2011/03/02 23:57:33 sthen Exp $
 
 COMMENT=	Internet Relay Chat client
 
 VERSION=	20081115
 DISTNAME=	ircii-${VERSION}
 PKGNAME=	ircII-${VERSION}
+REVISION=	0
 CATEGORIES=	net
 MASTER_SITES=	ftp://ircii.warped.com/pub/ircII/ \
 		ftp://ircii.warped.com/pub/ircII/old/
@@ -32,7 +33,6 @@ CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--exec-prefix="${PREFIX}"
 CONFIGURE_ENV+=	IRCLIB='$$(DESTDIR)${PREFIX}/share/ircII'
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 post-install:

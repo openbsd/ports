@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_ircII_1,v 1.4 2009/05/07 19:54:57 naddy Exp $
---- doc/ircII.1.orig	Sat Jan  1 12:25:09 2005
-+++ doc/ircII.1	Wed May  6 13:51:59 2009
+$OpenBSD: patch-doc_ircII_1,v 1.5 2011/03/02 23:57:33 sthen Exp $
+--- doc/ircII.1.orig	Sat Jan  1 06:25:09 2005
++++ doc/ircII.1	Sat Jan 22 17:59:31 2011
 @@ -3,7 +3,7 @@
  .SH NAME
  ircII \- interface to the Internet Relay Chat system
@@ -99,6 +99,15 @@ $OpenBSD: patch-doc_ircII_1,v 1.4 2009/05/07 19:54:57 naddy Exp $
  Set the username (if not specified elsewhere) to "Mermaid".
  The user's name (when provided inside parentheses in response to a
  WHOIS command) is set to "The one and only :)".
+@@ -264,7 +264,7 @@ scripts into, that can then be loaded with /load
+ directory containing message-of-the-day, master initialization, help files and 
+ .I ircII
+ scripts
+-.Tp
++.TP
+ .I .../lib/irc/script/global
+ file loaded at the start of every
+ .I ircII
 @@ -340,9 +340,6 @@ The initial list of servers if none are provided on th
  .B ircII.motd
  Message of the day.
