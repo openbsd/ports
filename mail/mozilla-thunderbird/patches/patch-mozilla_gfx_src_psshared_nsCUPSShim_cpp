@@ -1,6 +1,6 @@
-$OpenBSD: patch-mozilla_gfx_src_psshared_nsCUPSShim_cpp,v 1.2 2011/01/05 08:22:30 dcoppa Exp $
---- mozilla/gfx/src/psshared/nsCUPSShim.cpp.orig	Mon Jan  3 14:54:07 2011
-+++ mozilla/gfx/src/psshared/nsCUPSShim.cpp	Mon Jan  3 14:54:15 2011
+$OpenBSD: patch-mozilla_gfx_src_psshared_nsCUPSShim_cpp,v 1.3 2011/03/02 14:44:19 landry Exp $
+--- mozilla/gfx/src/psshared/nsCUPSShim.cpp.orig	Mon Feb 21 12:46:54 2011
++++ mozilla/gfx/src/psshared/nsCUPSShim.cpp	Wed Mar  2 10:28:39 2011
 @@ -59,7 +59,7 @@ static const int gSymNameCt = sizeof(gSymName) / sizeo
  PRBool
  nsCUPSShim::Init()
@@ -10,14 +10,3 @@ $OpenBSD: patch-mozilla_gfx_src_psshared_nsCUPSShim_cpp,v 1.2 2011/01/05 08:22:3
      if (!mCupsLib)
          return PR_FALSE;
  
-@@ -87,10 +87,4 @@ nsCUPSShim::Init()
-         }
-     }
-     return PR_TRUE;
--}
--
--nsCUPSShim::~nsCUPSShim()
--{
--    if (mCupsLib)
--        PR_UnloadLibrary(mCupsLib);
- }

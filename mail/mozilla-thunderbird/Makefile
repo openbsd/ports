@@ -1,21 +1,20 @@
-# $OpenBSD: Makefile,v 1.117 2011/01/28 21:38:12 landry Exp $
+# $OpenBSD: Makefile,v 1.118 2011/03/02 14:44:19 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	3.1.7
+MOZILLA_VERSION =	3.1.8
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	mozilla-thunderbird
 MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-REVISION-main =		3
 PKGNAME-lightning =	lightning-1.0beta2
 EPOCH-lightning =	0
-REVISION-lightning =	13
+REVISION-lightning =	14
 
 # need to be in synch with SO_VERSION in mail/enigmail/thunderbird
 SO_VERSION =	17.1
@@ -56,7 +55,7 @@ MODULES =	www/mozilla devel/gettext lang/python
 # Regression tests are too hard to adapt to run here
 NO_REGRESS =	Yes
 
-MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/directory/c-sdk/config/autoconf
+MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/directory/sdks/c-sdk/config/autoconf
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 
@@ -75,7 +74,7 @@ ALL_TARGET =	default
 MOZILLA_DATADIRS =	chrome components defaults dictionaries extensions \
 			greprefs isp modules plugins res
 
-MOZILLA_AUTOCONF_DIRS =		directory/c-sdk mozilla mozilla/js/src
+MOZILLA_AUTOCONF_DIRS =		directory/sdks/c-sdk mozilla mozilla/js/src
 MOZILLA_SUBST_FILES +=		config/autoconf.mk.in
 
 # guid for gdata-provider comes from em:id in install.rdf
