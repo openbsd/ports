@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/03/02 08:47:07 robert Exp $
 
 COMMENT=	GDI+ comptible API
 
-DISTNAME=	libgdiplus-2.8.1
+DISTNAME=	libgdiplus-2.10
 
 CATEGORIES=	x11 devel
 
