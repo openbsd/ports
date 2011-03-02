@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_config_afs_sysnames_h,v 1.11 2011/03/02 10:40:16 jasper Exp $
 diff -u src/config/afs_sysnames.h.orig src/config/afs_sysnames.h
 --- src/config/afs_sysnames.h.orig	Mon Jan 14 22:14:02 2008
 +++ src/config/afs_sysnames.h	Fri Jan 14 18:12:48 2011

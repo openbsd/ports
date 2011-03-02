@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_kauth_Makefile_in,v 1.2 2011/03/02 10:40:16 jasper Exp $
 diff -u src/kauth/Makefile.in.orig src/kauth/Makefile.in
 --- src/kauth/Makefile.in.orig	Mon Nov 12 12:31:34 2007
 +++ src/kauth/Makefile.in	Wed Jul  2 14:40:16 2008

@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_rx_rx_getaddr_c,v 1.2 2011/03/02 10:40:16 jasper Exp $
 diff -u src/rx/rx_getaddr.c.orig src/rx/rx_getaddr.c
 --- src/rx/rx_getaddr.c.orig	Wed Oct 11 06:29:02 2006
 +++ src/rx/rx_getaddr.c	Tue Apr 22 17:22:55 2008

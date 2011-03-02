@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_afs_OBSD_osi_misc_c,v 1.2 2011/03/02 10:40:16 jasper Exp $
 diff -u src/afs/OBSD/osi_misc.c.orig src/afs/OBSD/osi_misc.c
 --- src/afs/OBSD/osi_misc.c.orig	Thu Oct  9 11:13:16 2003
 +++ src/afs/OBSD/osi_misc.c	Tue Apr 22 17:22:54 2008

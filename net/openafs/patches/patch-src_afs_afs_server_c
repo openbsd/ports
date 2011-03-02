@@ -1,3 +1,4 @@
+$OpenBSD: patch-src_afs_afs_server_c,v 1.2 2011/03/02 10:40:16 jasper Exp $
 diff -u src/afs/afs_server.c.orig src/afs/afs_server.c
 --- src/afs/afs_server.c.orig	Tue Dec 11 15:31:52 2007
 +++ src/afs/afs_server.c	Wed Jul  2 14:40:15 2008
