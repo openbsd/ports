@@ -1,0 +1,23 @@
+$OpenBSD: patch-opennxApp_h,v 1.1 2011/03/02 10:23:36 jasper Exp $
+
+- Added --autoresume switch.
+  From upstream svn -r609.
+
+--- opennxApp.h.orig	Fri Feb 25 14:02:24 2011
++++ opennxApp.h	Fri Feb 25 14:03:24 2011
+@@ -49,6 +49,7 @@ class opennxApp : public wxApp
+          */
+         bool NxSmartCardSupport() { return m_bNxSmartCardSupport; }
+         bool LibUSBAvailable() { return m_bLibUSBAvailable; }
++	bool AutoResume() { return m_bAutoResume; }
+ 
+         void SetRequireWatchReader(bool b) { m_bRequireWatchReader = b; }
+         void SetRequireStartUsbIp(bool b) { m_bRequireStartUsbIp = b; }
+@@ -97,6 +98,7 @@ class opennxApp : public wxApp
+         bool m_bLibUSBAvailable;
+         bool m_bRequireWatchReader;
+         bool m_bRequireStartUsbIp;
++	bool m_bAutoResume;
+ 
+         bool preInit();
+         bool realInit();

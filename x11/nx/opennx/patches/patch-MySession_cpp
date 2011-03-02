@@ -1,0 +1,63 @@
+$OpenBSD: patch-MySession_cpp,v 1.1 2011/03/02 10:23:36 jasper Exp $
+
+- Fix resuming a suspended session.
+  From upstream svn -r610.
+- Added --autoresume switch.
+  From upstream svn -r609.
+
+--- MySession.cpp.orig	Fri Jul 10 11:02:04 2009
++++ MySession.cpp	Fri Feb 25 14:07:09 2011
+@@ -846,7 +846,7 @@ MySession::OnSshEvent(wxCommandEvent &event)
+                     break;
+                 case STATE_RESUME_SESSION:
+                     scmd = wxT("restoresession");
+-                    scmd << m_pCfg->sGetSessionParams(intver(NX_PROTO), false, m_sClearPassword)
++                    scmd << m_pCfg->sGetSessionParams(intver(NX_PROTO), true, m_sClearPassword)
+                         << wxT(" --session=\"") << m_sResumeName
+                         << wxT("\" --type=\"") << m_sResumeType
+                         << wxT("\" --id=\"") << m_sResumeId << wxT("\"");
+@@ -922,9 +922,9 @@ MySession::OnSshEvent(wxCommandEvent &event)
+             m_sSmbPort = msg;
+             break;
+         case MyIPC::ActionExit:
+-            if (m_eConnectState == STATE_ABORT)
++            if (m_eConnectState == STATE_ABORT) {
+                 m_bAbort = true;
+-            else {
++            } else {
+                 if (m_eConnectState == STATE_FINISH) {
+                     m_pDlg->SetStatusText(_("Starting session"));
+                     msg = wxT("NX> 299 Switch connection to: ");
+@@ -1062,7 +1062,13 @@ MySession::parseSessions(bool moreAllowed)
+     }
+     if (bFound) {
+         d.EnableNew(moreAllowed);
+-        if (m_bIsShadow || (iSessionCount > 1) || (!sName.IsSameAs(m_pCfg->sGetName()))) {
++        if ((!m_bIsShadow) && wxGetApp().AutoResume() && (iSessionCount == 1) && (sName.IsSameAs(m_pCfg->sGetName()))) {
++            ::wxLogInfo(wxT("RESUME"));
++            m_sResumeName = sName;
++            m_sResumeType = d.GetSelectedType();
++            m_sResumeId = d.GetSelectedId();
++            m_eConnectState = STATE_RESUME_SESSION;
++        } else {
+             switch (d.ShowModal()) {
+                 case wxID_OK:
+                     switch (d.GetMode()) {
+@@ -1095,16 +1101,9 @@ MySession::parseSessions(bool moreAllowed)
+                     break;
+                 case wxID_CANCEL:
+                     printSsh(wxT("bye"));
+-                    if (m_bIsShadow)
+-                        m_eConnectState = STATE_ABORT;
++		    m_eConnectState = STATE_ABORT;
+                     break;
+             }
+-        } else {
+-            wxLogInfo(wxT("RESUME"));
+-            m_sResumeName = d.GetSelectedName();
+-            m_sResumeType = d.GetSelectedType();
+-            m_sResumeId = d.GetSelectedId();
+-            m_eConnectState = STATE_RESUME_SESSION;
+         }
+     } else {
+         if (m_bIsShadow) {

@@ -1,0 +1,35 @@
+$OpenBSD: patch-opennxApp_cpp,v 1.1 2011/03/02 10:23:36 jasper Exp $
+
+- Added --autoresume switch.
+  From upstream svn -r609.
+
+--- opennxApp.cpp.orig	Wed Jul  8 13:50:50 2009
++++ opennxApp.cpp	Fri Feb 25 14:04:44 2011
+@@ -96,7 +96,8 @@ IMPLEMENT_APP(opennxApp);
+     ,m_bRunproc(false)
+     ,m_bLibUSBAvailable(false)
+     ,m_bRequireWatchReader(false)
+-      ,m_bRequireStartUsbIp(false)
++    ,m_bRequireStartUsbIp(false)
++    ,m_bAutoResume(false)
+ {
+     SetAppName(wxT("OpenNX"));
+ #ifdef __WXMSW__
+@@ -707,6 +708,8 @@ void opennxApp::OnInitCmdLine(wxCmdLineParser& parser)
+     }
+     tags.Prepend(_("\n\nSupported trace tags: "));
+ 
++    parser.AddSwitch(wxEmptyString, wxT("autoresume"),
++            _("Automatically resume/takeover a session with the same name."));
+     parser.AddSwitch(wxEmptyString, wxT("admin"),
+             _("Start the session administration tool."));
+     parser.AddOption(wxEmptyString, wxT("caption"),
+@@ -844,6 +847,8 @@ bool opennxApp::OnCmdLineParsed(wxCmdLineParser& parse
+         m_eMode = MODE_ADMIN;
+     if (parser.Found(wxT("wizard")))
+         m_eMode = MODE_WIZARD;
++    if (parser.Found(wxT("autoresume")))
++        m_bAutoResume = true;
+     (void)parser.Found(wxT("session"), &m_sSessionName);
+     wxString traceTags;
+     if (parser.Found(wxT("trace"), &traceTags)) {
