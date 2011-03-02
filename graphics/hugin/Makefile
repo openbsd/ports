@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/03/02 08:30:27 sthen Exp $
 
 VMEM_WARNING =		Yes
 
 COMMENT =		panorama image stitcher
 
-DISTNAME =		hugin-2010.2.0
+DISTNAME =		hugin-2010.4.0
+EXTRACT_SUFX =		.tar.bz2
 
+# not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =		${DISTNAME:S/_//:L}
-REVISION =		0
 WRKDIST =		${WRKDIR}/${DISTNAME:C/_.*//}
 
 SHARED_LIBS +=  huginbasewx               0.0
@@ -15,6 +16,9 @@ SHARED_LIBS +=  celeste                   0.0
 SHARED_LIBS +=  huginANN                  0.0
 SHARED_LIBS +=  huginbase                 1.0
 SHARED_LIBS +=  huginvigraimpex           0.0
+SHARED_LIBS +=  icpfindlib                0.0
+SHARED_LIBS +=  localfeatures             0.0
+SHARED_LIBS +=  makefilelib               0.0
 
 CATEGORIES =		graphics x11
 
@@ -29,7 +33,9 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += GL GLEW GLU Half Iex Imath IlmImf IlmThread ICE SM X11
-WANTLIB += Xext Xi Xmu boost_date_time-mt boost_thread-mt c
+WANTLIB += Xext Xi Xmu boost_date_time-mt boost_filesystem-mt
+WANTLIB += boost_iostreams-mt boost_regex-mt boost_signals-mt
+WANTLIB += boost_system-mt boost_thread-mt c
 WANTLIB += exiv2 glut>=4.1 jpeg m pano13>=2.0 png pthread
 WANTLIB += stdc++ tiff wx_base wx_base_net wx_base_xml wx_gtk2_adv
 WANTLIB += wx_gtk2_core wx_gtk2_gl wx_gtk2_html wx_gtk2_xrc z
@@ -37,7 +43,6 @@ WANTLIB += wx_gtk2_core wx_gtk2_gl wx_gtk2_html wx_gtk2_xrc z
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			graphics/autopano-sift-c \
 			graphics/enblend-enfuse \
 			graphics/p5-Image-ExifTool \
 			devel/gmake # yes, really a RUN_DEPENDS

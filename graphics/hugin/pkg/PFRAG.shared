@@ -1,6 +1,9 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2010/10/20 15:32:40 sthen Exp $
-@lib lib/libceleste.so.${LIBceleste_VERSION}
-@lib lib/libhuginANN.so.${LIBhuginANN_VERSION}
-@lib lib/libhuginbase.so.${LIBhuginbase_VERSION}
-@lib lib/libhuginbasewx.so.${LIBhuginbasewx_VERSION}
-@lib lib/libhuginvigraimpex.so.${LIBhuginvigraimpex_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.6 2011/03/02 08:30:27 sthen Exp $
+@lib lib/hugin/libceleste.so.${LIBceleste_VERSION}
+@lib lib/hugin/libhuginANN.so.${LIBhuginANN_VERSION}
+@lib lib/hugin/libhuginbase.so.${LIBhuginbase_VERSION}
+@lib lib/hugin/libhuginbasewx.so.${LIBhuginbasewx_VERSION}
+@lib lib/hugin/libhuginvigraimpex.so.${LIBhuginvigraimpex_VERSION}
+@lib lib/hugin/libicpfindlib.so.${LIBicpfindlib_VERSION}
+@lib lib/hugin/liblocalfeatures.so.${LIBlocalfeatures_VERSION}
+@lib lib/hugin/libmakefilelib.so.${LIBmakefilelib_VERSION}

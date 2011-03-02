@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_hugin1_base_wx_RunStitchPanel_cpp,v 1.2 2010/10/20 15:32:40 sthen Exp $
---- src/hugin1/base_wx/RunStitchPanel.cpp.orig	Mon Aug 30 23:32:08 2010
-+++ src/hugin1/base_wx/RunStitchPanel.cpp	Sat Sep  4 21:51:35 2010
-@@ -252,7 +252,7 @@ bool RunStitchPanel::StitchProject(wxString scriptFile
-             cmd = wxT("make");  
-         }
-         cmd += wxT(" ") + args;
+$OpenBSD: patch-src_hugin1_base_wx_RunStitchPanel_cpp,v 1.3 2011/03/02 08:30:27 sthen Exp $
+--- src/hugin1/base_wx/RunStitchPanel.cpp.orig	Tue Dec 28 12:57:50 2010
++++ src/hugin1/base_wx/RunStitchPanel.cpp	Tue Feb  8 11:03:12 2011
+@@ -112,7 +112,7 @@ wxString getGNUMakeCmd(const wxString &args)
+         cmd = wxT("make");  
+     }
+     cmd += wxT(" ") + args;
 -#elif defined __FreeBSD__
 +#elif defined __FreeBSD__ || defined __OpenBSD__
-         wxString cmd = wxT("gmake ") + args;  
+     wxString cmd = wxT("gmake ") + args;  
  #elif defined __WXMSW__
-         wxString cmdExe;
+     wxString cmdExe;
