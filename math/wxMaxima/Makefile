@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/20 18:34:17 shadchin Exp $
+# $OpenBSD: Makefile,v 1.2 2011/03/02 14:03:16 shadchin Exp $
 
 COMMENT =		wxWidgets GUI for the computer algebra system maxima
 
-DISTNAME =		wxMaxima-0.8.6
+DISTNAME =		wxMaxima-0.8.7
 CATEGORIES =		math
 
 HOMEPAGE =		http://wxmaxima.sourceforge.net/
@@ -15,9 +15,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=wxmaxima/}
 
-WANTLIB += c m pthread stdc++ wx_base wx_base_net wx_base_odbc
-WANTLIB += wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_dbgrid
-WANTLIB += wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
+WANTLIB += c m pthread stdc++ wx_base wx_base_net wx_base_xml
+WANTLIB += wx_gtk2_adv wx_gtk2_aui wx_gtk2_core wx_gtk2_html
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			math/gnuplot \

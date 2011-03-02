@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 18:34:17 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/02 14:03:16 shadchin Exp $
 @bin bin/wxmaxima
 share/applications/wxmaxima.desktop
+share/locale/ca/LC_MESSAGES/wxMaxima.mo
 share/locale/cs/LC_MESSAGES/wxMaxima.mo
 share/locale/da/LC_MESSAGES/wxMaxima.mo
 share/locale/de/LC_MESSAGES/wxMaxima.mo
@@ -21,6 +22,9 @@ share/wxMaxima/
 share/wxMaxima/COPYING
 share/wxMaxima/README
 share/wxMaxima/autocomplete.txt
+share/wxMaxima/maxima.png
+share/wxMaxima/options.png
+share/wxMaxima/styles.png
 share/wxMaxima/tips.txt
 share/wxMaxima/wxmathml.lisp
 share/wxMaxima/wxmaxima.png
