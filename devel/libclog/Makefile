@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/03 13:47:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/02 06:27:51 jasper Exp $
 
 COMMENT =		configurable logging library
 DISTNAME =		clog-0.1
@@ -33,8 +33,6 @@ PKG_ARGS+=	-Dno_mips64=0
 .else
 PKG_ARGS+=	-Dno_mips64=1
 .endif
-
-USE_GROFF=	Yes
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/clog.h ${PREFIX}/include
