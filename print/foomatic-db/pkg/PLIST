@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/01/02 07:33:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/03/02 06:48:41 ajacoutot Exp $
 share/foomatic/db/
 share/foomatic/db/oldprinterids
 share/foomatic/db/source/
@@ -2665,7 +2665,6 @@ share/foomatic/db/source/driver/pnm2ppa.xml
 share/foomatic/db/source/driver/ppmtomd.xml
 share/foomatic/db/source/driver/pr150.xml
 share/foomatic/db/source/driver/pr201.xml
-share/foomatic/db/source/driver/ptouch.xml
 share/foomatic/db/source/driver/pxlcolor-Gestetner.xml
 share/foomatic/db/source/driver/pxlcolor-InfoPrint.xml
 share/foomatic/db/source/driver/pxlcolor-Infotec.xml
@@ -3225,28 +3224,6 @@ share/foomatic/db/source/printer/Brother-MFC-P2500.xml
 share/foomatic/db/source/printer/Brother-MFC9840CDW.xml
 share/foomatic/db/source/printer/Brother-MFC_7150C.xml
 share/foomatic/db/source/printer/Brother-MP-21C.xml
-share/foomatic/db/source/printer/Brother-PT-1500PC.xml
-share/foomatic/db/source/printer/Brother-PT-18R.xml
-share/foomatic/db/source/printer/Brother-PT-1950.xml
-share/foomatic/db/source/printer/Brother-PT-1950VP.xml
-share/foomatic/db/source/printer/Brother-PT-1960.xml
-share/foomatic/db/source/printer/Brother-PT-2300.xml
-share/foomatic/db/source/printer/Brother-PT-2420PC.xml
-share/foomatic/db/source/printer/Brother-PT-2450DX.xml
-share/foomatic/db/source/printer/Brother-PT-2500PC.xml
-share/foomatic/db/source/printer/Brother-PT-2600.xml
-share/foomatic/db/source/printer/Brother-PT-2610.xml
-share/foomatic/db/source/printer/Brother-PT-3600.xml
-share/foomatic/db/source/printer/Brother-PT-550A.xml
-share/foomatic/db/source/printer/Brother-PT-9200DX.xml
-share/foomatic/db/source/printer/Brother-PT-9200PC.xml
-share/foomatic/db/source/printer/Brother-PT-9400.xml
-share/foomatic/db/source/printer/Brother-PT-9500PC.xml
-share/foomatic/db/source/printer/Brother-PT-9600.xml
-share/foomatic/db/source/printer/Brother-PT-PC.xml
-share/foomatic/db/source/printer/Brother-QL-500.xml
-share/foomatic/db/source/printer/Brother-QL-550.xml
-share/foomatic/db/source/printer/Brother-QL-650TD.xml
 share/foomatic/db/source/printer/CItoh-M8510.xml
 share/foomatic/db/source/printer/CalComp-Artisan_1023_penplotter.xml
 share/foomatic/db/source/printer/Canon-BJ-100.xml

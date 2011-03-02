@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/01/02 07:33:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/03/02 06:48:41 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -8,6 +8,8 @@ V=			20110101
 DISTNAME=		foomatic-db-4.0-${V}
 PKGNAME=		foomatic-db-4.0.${V}
 CATEGORIES=		print
+
+REVISION=		0
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
 
@@ -48,6 +50,9 @@ pre-configure:
 	mv ${WRKSRC}/db/source/printer/${i}.xml \
 		${WRKSRC}/db/source/printer/${i}-splix.xml
 .endfor
+# files already shipped by the ptouch-driver package
+	rm -f ${WRKSRC}/db/source/printer/Brother-{PT,QL}*.xml
+	rm -f ${WRKSRC}/db/source/driver/ptouch.xml
 # We do not ship gutenprint (cups), but gutenprint-ijs.${MAJOR_V} that
 # is spooler independant, so don't display it as an valid driver --
 # MAJOR_V is set in the gutenprint port.
