@@ -1,7 +1,7 @@
-$OpenBSD: patch-extensions_Makefile_in,v 1.5 2010/04/24 13:07:28 ajacoutot Exp $
---- extensions/Makefile.in.orig	Thu Jan 14 18:55:50 2010
-+++ extensions/Makefile.in	Sat Apr 24 13:18:34 2010
-@@ -184,7 +184,7 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+$OpenBSD: patch-extensions_Makefile_in,v 1.6 2011/03/02 06:42:56 ajacoutot Exp $
+--- extensions/Makefile.in.orig	Thu Jan 20 23:32:31 2011
++++ extensions/Makefile.in	Tue Mar  1 17:33:21 2011
+@@ -195,7 +195,7 @@ INTROSPECTION_TYPELIBDIR = @INTROSPECTION_TYPELIBDIR@
  LD = @LD@
  LDFLAGS = @LDFLAGS@
  LIBOBJS = @LIBOBJS@
