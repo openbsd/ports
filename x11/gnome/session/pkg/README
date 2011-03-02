@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2010/11/17 20:40:31 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2011/03/02 06:38:49 ajacoutot Exp $
 
 The OpenBSD/GNOME desktop
 =========================
@@ -90,9 +90,8 @@ related ports under the x11/gnome category)
    * conduit - all-in-one synchronization application
    * gconf-editor - editor for GConf settings
    * gnome-applets2-battstat - applet for monitoring battery level
-   * gnome-main-menu - alternative menu applet (used by openSUSE Linux)
+   * gnome-main-menu - alternative menu applet
    * gnome-nettool - interface for various networking tools
-   * gnome-system-monitor - sytem monitor program
    * gnome-system-tools - sytem configuration GUI for desktops
    * gnomebaker - CD/DVD burning application
    * nautilus-sendto - integrate applications into Nautilus
