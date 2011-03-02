@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2010/09/26 17:45:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.22 2011/03/02 08:44:08 giovanni Exp $
 
 COMMENT=	Microsoft FrontPage Server extensions for Apache
 
 ONLY_FOR_ARCHS=	i386
 
-REVISION=	5
+REVISION=	6
 VERSION=	1.6.2
 DISTNAME=	mod_frontpage_mirfak-${VERSION}
 PKGNAME=	mod_frontpage-${VERSION}
@@ -22,6 +22,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
+RUN_DEPENDS=	emulators/freebsd_lib
+NO_REGRESS=	Yes
+
 SEPARATE_BUILD=	concurrent
 
 MODAPACHE_NAME=	frontpage
@@ -31,8 +34,8 @@ CC!=		${APXS} -q CC
 CFLAGS!=	${APXS} -q CFLAGS
 INCLUDES!=	${APXS} -q INCLUDEDIR
 
-DEF=	-DFPEXEC_BIN=\\\"/usr/local/sbin/fpexec\\\" \
-	-DFPSTATIC_BIN=\\\"/usr/local/sbin/fpstatic\\\"
+DEF=	-DFPEXEC_BIN=\\\"${TRUEPREFIX}/sbin/fpexec\\\" \
+	-DFPSTATIC_BIN=\\\"${TRUEPREFIX}/sbin/fpstatic\\\"
 
 DEF2=	-DFP_HTTPD_USER=\"www\" -DFP_UID_MIN=1000 -DFP_GID_MIN=1000 \
 	-DFP_LOG_EXEC=\"/var/log/fpexec_log\" \
