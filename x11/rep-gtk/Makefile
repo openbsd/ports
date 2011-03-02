@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2011/01/15 01:09:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.48 2011/03/02 06:40:24 jasper Exp $
 
 COMMENT=	GTK+ binding for librep Lisp environment
 
 SHARED_ONLY=	Yes
 
-VERSION=	0.90.4
+VERSION=	0.90.5
 DISTNAME=	rep-gtk-${VERSION}
-REVISION=	3
 CATEGORIES=     x11
 
 HOMEPAGE=       http://rep-gtk.sourceforge.net/
@@ -24,13 +23,13 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += z pthread-stubs xcb gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
-WANTLIB += gthread-2.0 xcb-render xcb-render-util
+WANTLIB += gthread-2.0 xcb-render GL Xxf86vm drm xcb-shm
 
-MASTER_SITES=		http://download.tuxfamily.org/sawfish/rep-gtk/
+MASTER_SITES=		http://download.tuxfamily.org/librep/rep-gtk/
 EXTRACT_SUFX=		.tar.bz2
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		lang/librep>=0.91.0
+RUN_DEPENDS=		lang/librep>=0.91.1
 LIB_DEPENDS= 		x11/gtk+2
 
 MODULES=		devel/gettext
