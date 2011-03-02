@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/26 07:51:00 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/03/02 16:01:59 jasper Exp $
 
 COMMENT=	emacs interface to PGP and GnuPG
 
@@ -33,10 +33,8 @@ RUN_DEPENDS=	pgp->=2,<3:security/pgp
 RUN_DEPENDS=	pgp->=5,<6:security/pgp5
 .endif
 
-REGRESS_DEPENDS=	python->=2.3,<2.4:lang/python/2.3
-
-pre-regress:
-	@perl -i -pe 's:%%LOCALBASE%%:${LOCALBASE}:' \
-		${WRKSRC}/tests/gpg-keys/*.py
+# broken test infrastructure that is more a test framework for
+# py-gnupg than mailcrypt.
+NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
