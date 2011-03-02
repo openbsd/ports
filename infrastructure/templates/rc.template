@@ -5,12 +5,11 @@ See rc.d(8) for more information.
 ------------------------8<------------------------
 #!/bin/sh
 #
-# $OpenBSD: rc.template,v 1.1 2011/01/15 19:18:48 ajacoutot Exp $
+# $OpenBSD: rc.template,v 1.2 2011/03/02 06:32:53 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/foobar"
 #daemon_flags=""
 #daemon_user="root"
-#daemon_shell="/bin/ksh"
 
 . /etc/rc.d/rc.subr
 
