@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_mk,v 1.3 2010/09/22 14:29:00 jasper Exp $
---- common.mk.orig	Mon Sep 13 10:59:40 2010
-+++ common.mk	Mon Sep 13 10:59:53 2010
+$OpenBSD: patch-common_mk,v 1.4 2011/03/02 07:32:04 jasper Exp $
+--- common.mk.orig	Thu Mar 18 21:02:53 2010
++++ common.mk	Sat Feb 19 09:45:19 2011
 @@ -2,7 +2,6 @@
  ERROR_CFLAGS = \
  	$(LIBNICE_CFLAGS) \

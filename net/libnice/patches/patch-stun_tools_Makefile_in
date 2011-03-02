@@ -1,7 +1,7 @@
-$OpenBSD: patch-stun_tools_Makefile_in,v 1.2 2010/09/22 14:29:00 jasper Exp $
---- stun/tools/Makefile.in.orig	Mon Sep 13 11:02:46 2010
-+++ stun/tools/Makefile.in	Mon Sep 13 11:02:56 2010
-@@ -215,7 +215,6 @@ top_srcdir = @top_srcdir@
+$OpenBSD: patch-stun_tools_Makefile_in,v 1.3 2011/03/02 07:32:04 jasper Exp $
+--- stun/tools/Makefile.in.orig	Fri Jan 21 01:17:05 2011
++++ stun/tools/Makefile.in	Sat Feb 19 09:45:19 2011
+@@ -231,7 +231,6 @@ top_srcdir = @top_srcdir@
  ERROR_CFLAGS = \
  	$(LIBNICE_CFLAGS) \
  	-fno-strict-aliasing \
@@ -9,7 +9,7 @@ $OpenBSD: patch-stun_tools_Makefile_in,v 1.2 2010/09/22 14:29:00 jasper Exp $
  	-Wundef \
  	-Wnested-externs \
  	-Wwrite-strings \
-@@ -225,8 +224,7 @@ ERROR_CFLAGS = \
+@@ -241,8 +240,7 @@ ERROR_CFLAGS = \
  	-Wmissing-prototypes \
  	-Wstrict-prototypes \
  	-Wredundant-decls \

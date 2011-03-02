@@ -1,7 +1,7 @@
-$OpenBSD: patch-agent_Makefile_in,v 1.2 2010/09/22 14:29:00 jasper Exp $
---- agent/Makefile.in.orig	Mon Sep 13 11:01:37 2010
-+++ agent/Makefile.in	Mon Sep 13 11:01:46 2010
-@@ -237,7 +237,6 @@ top_srcdir = @top_srcdir@
+$OpenBSD: patch-agent_Makefile_in,v 1.3 2011/03/02 07:32:04 jasper Exp $
+--- agent/Makefile.in.orig	Fri Jan 21 01:17:04 2011
++++ agent/Makefile.in	Sat Feb 19 09:45:19 2011
+@@ -253,7 +253,6 @@ top_srcdir = @top_srcdir@
  ERROR_CFLAGS = \
  	$(LIBNICE_CFLAGS) \
  	-fno-strict-aliasing \
@@ -9,7 +9,7 @@ $OpenBSD: patch-agent_Makefile_in,v 1.2 2010/09/22 14:29:00 jasper Exp $
  	-Wundef \
  	-Wnested-externs \
  	-Wwrite-strings \
-@@ -247,8 +246,7 @@ ERROR_CFLAGS = \
+@@ -263,8 +262,7 @@ ERROR_CFLAGS = \
  	-Wmissing-prototypes \
  	-Wstrict-prototypes \
  	-Wredundant-decls \
