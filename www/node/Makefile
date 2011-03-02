@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/03 10:22:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/02 06:29:44 jasper Exp $
 
 # XXX:
-# - Build fails on some amd64 machines?
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
 # - Needs bundled libcares as arpa/nameser.h does not include ns_t_a.
 
@@ -25,6 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/dist/
 
 MODULES=	lang/python
+
+VMEM_WARNING=	Yes
 
 WANTLIB +=	c crypto execinfo ev kvm m pthread ssl stdc++ z
 
