@@ -1,4 +1,4 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.3 2010/12/23 14:34:49 jasper Exp $
+$OpenBSD: patch-tests_Makefile_in,v 1.4 2011/03/02 06:35:23 jasper Exp $
 
 Don't enter scanner/, it's causing us to crash on sparc64 with:
 ../../tools/g-ir-generate --includedir=. --includedir=../../gir annotation-1.0.typelib -o annotation-1.0.tgir
@@ -6,9 +6,9 @@ gmake[3]: *** [annotation-1.0.tgir] Segmentation fault (core dumped)
 
 From OpenSolaris' gobject-introspection-02-test-scanner.diff
 
---- tests/Makefile.in.orig	Wed Dec 22 21:20:46 2010
-+++ tests/Makefile.in	Thu Dec 23 15:21:17 2010
-@@ -351,7 +351,7 @@ INTROSPECTION_COMPILER_ARGS = \
+--- tests/Makefile.in.orig	Wed Feb 23 16:27:05 2011
++++ tests/Makefile.in	Wed Feb 23 16:49:46 2011
+@@ -350,7 +350,7 @@ INTROSPECTION_COMPILER_ARGS = \
      --includedir=$(builddir) \
      --includedir=$(top_builddir)
  
