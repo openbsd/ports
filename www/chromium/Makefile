@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/03/02 08:53:51 robert Exp $
+# $OpenBSD: Makefile,v 1.25 2011/03/02 11:11:31 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -7,7 +7,7 @@ COMMENT=		Chromium browser
 V=			9.0.597.94
 DISTNAME=		chromium-${V}
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www
 
@@ -37,14 +37,7 @@ MASTER_SITES=	http://build.chromium.org/buildbot/official/ \
 		ftp://rene-ladan.nl/pub/distfiles/
 
 MODULES=	devel/gettext \
-		lang/python \
-		gcc4
-
-MODGCC4_LANGS = c c++
-MODGCC4_ARCHES = i386 amd64
-
-# XXX cheat
-COMPILER_VERSION = gcc3
+		lang/python
 
 MODPY_RUNDEP=	No
 MODPY_VERSION=	2.5
