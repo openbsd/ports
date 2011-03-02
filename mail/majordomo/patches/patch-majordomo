@@ -1,6 +1,6 @@
---- majordomo.orig	Thu Jan 13 14:29:31 2000
-+++ majordomo	Tue May 23 07:48:42 2000
-@@ -29,7 +29,7 @@
+--- majordomo.orig	Thu Jan 13 18:29:31 2000
++++ majordomo	Wed Feb  2 13:31:41 2011
+@@ -29,7 +29,7 @@ $cf = $ENV{"MAJORDOMO_CF"} || "/etc/majordomo.cf"; 
  
  while ($ARGV[0]) {	# parse for config file or default list
      if ($ARGV[0] =~ /^-C$/i) {	# sendmail v8 clobbers case
@@ -9,7 +9,7 @@
          shift(@ARGV); 
          shift(@ARGV); 
      } elsif ($ARGV[0] eq "-l") {
-@@ -75,7 +75,7 @@
+@@ -75,7 +75,7 @@ die("\$listdir not defined. Is majordomo.cf being incl
  # Define all of the mailer properties:
  # It is possible that one or both of $sendmail_command and $bounce_mailer
  # are not defined, so we provide reasonable defaults.

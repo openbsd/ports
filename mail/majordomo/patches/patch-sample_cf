@@ -1,6 +1,6 @@
---- sample.cf.orig	Thu Feb  6 20:20:08 2003
-+++ sample.cf	Thu Feb  6 20:21:45 2003
-@@ -27,7 +27,7 @@
+--- sample.cf.orig	Wed Aug 27 17:00:31 1997
++++ sample.cf	Wed Feb  2 13:31:41 2011
+@@ -27,7 +27,7 @@ if ( defined $ENV{"HOME"}) {
  
  # $listdir -- Where are the mailing lists?
  #
@@ -9,7 +9,7 @@
  
  # $digest_work_dir -- the parent directory for digest's queue area
  # Each list must have a subdirectory under this directory in order for
-@@ -35,18 +35,18 @@
+@@ -35,18 +35,18 @@ $listdir = "$homedir/lists";
  # 	/usr/local/mail/digest/bblisa
  # as its directory.
  #
@@ -32,7 +32,7 @@
  
  # $mailer -- What program and args do I use to send mail to the list?
  # $bounce_mailer -- What is used to send mail anywhere else?
-@@ -80,15 +80,15 @@
+@@ -80,15 +80,15 @@ $bounce_mailer = "$sendmail_command -oi -oee -f\$sende
  # high by uncommenting the following lines.  THIS ONLY WORKS if your "uptime" 
  # command (usually found in /usr/bin/uptime or /usr/bsd/uptime) 
  # returns a string like:
@@ -52,7 +52,7 @@
  #
  #exit 75 if ($avg_15_minutes >= $max_loadavg);           # E_TEMPFAIL
  #
-@@ -164,13 +164,18 @@
+@@ -164,13 +164,18 @@ $majordomo_request = 0;
  # number of hits that are allowed using which before an error is returned.
  # Arguably this should be a per list settable number.
  #
@@ -74,7 +74,7 @@
  
  # don't change this. It checks to make sure that you have a new enough
  # version of perl to run majordomo. It is in here because this file is
-@@ -188,9 +193,8 @@
+@@ -188,9 +193,8 @@ die "Perl version $] too old\n" if ($] < 4.019);
  # Directory where resend temporarily puts its rewritten output message.
  # For the paranoid, this could be changed to a directory that only
  # majordomo has r/w permission to.

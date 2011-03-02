@@ -1,6 +1,6 @@
 --- config_parse.pl.orig	Fri Jan  7 15:00:26 2000
-+++ config_parse.pl	Thu Feb  6 20:13:40 2003
-@@ -80,8 +80,8 @@
++++ config_parse.pl	Wed Feb  2 13:31:41 2011
+@@ -80,8 +80,8 @@ $installing_defaults = 0; # Set to 1 when installing d
  	'announcements',	'yes', # send sub/unsub audits to list owner
  	'get_access',		"open\001closed\001list\001list", # open, anyone can access
          'index_access',		"open\001closed\001list\001open", # closed, nobody can

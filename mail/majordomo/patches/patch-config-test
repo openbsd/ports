@@ -1,6 +1,6 @@
---- config-test.orig	Wed Aug 27 12:17:13 1997
-+++ config-test	Tue May 23 16:32:22 2000
-@@ -117,6 +117,8 @@
+--- config-test.orig	Wed Aug 27 17:17:13 1997
++++ config-test	Wed Feb  2 13:31:41 2011
+@@ -117,6 +117,8 @@ wellokay
  print "\n\tNon obvious things that cause headaches:\n\n";
  &header('');
  
@@ -9,7 +9,7 @@
  $cf = $ARGV[0] || $ENV{'MAJORDOMO_CF'};
  
  if (eval "require '$cf'") { 
-@@ -125,6 +127,7 @@
+@@ -125,6 +127,7 @@ if (eval "require '$cf'") { 
      &bad("something's wrong with $cf: $@");
  }
  
@@ -17,7 +17,7 @@
  foreach (@requires) {
      if (require $_) {
  	&good("found $_ okay.");
-@@ -237,9 +240,9 @@
+@@ -237,9 +240,9 @@ elsif ($sendmail_command) {
  else {
      print "You have defined neither \$mailer, nor \$sendmail_command.\n";
      print "Majordomo will use\n";
@@ -29,7 +29,7 @@
  }
      
  print "Attempting to verify that this is a valid mailer...";
-@@ -266,9 +269,9 @@
+@@ -266,9 +269,9 @@ elsif ($sendmail_command) {
  else {
      print "You have defined neither \$mailer, nor \$sendmail_command.\n";
      print "Majordomo will use\n";
@@ -41,7 +41,7 @@
  }
      
  print "Attempting to verify that this is a valid mailer...";
-@@ -375,7 +378,7 @@
+@@ -375,7 +378,7 @@ ZOT
  	    print RF $majordomo_version;
  	    close RF;
  

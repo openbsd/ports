@@ -1,6 +1,6 @@
---- digest.orig	Fri Jan  7 08:04:34 2000
-+++ digest	Tue May 23 16:33:13 2000
-@@ -322,8 +322,9 @@
+--- digest.orig	Fri Jan  7 12:04:34 2000
++++ digest	Wed Feb  2 13:31:41 2011
+@@ -322,8 +322,9 @@ sub readconfig {
  		&abort("-C used without -l");
  	    } else {
  		# Read and execute the .cf file
@@ -12,7 +12,7 @@
  		require "$cf";
  
  		chdir($homedir);
-@@ -335,7 +336,7 @@
+@@ -335,7 +336,7 @@ sub readconfig {
  # Define all of the mailer properties:
  # It is possible that one or both of $sendmail_command and $bounce_mailer
  # are not defined, so we provide reasonable defaults.
@@ -21,7 +21,7 @@
    unless defined $sendmail_command;
  $mailer = "$sendmail_command -oi -oee -f\$sender"
    unless defined $mailer;
-@@ -414,7 +415,7 @@
+@@ -414,7 +415,7 @@ $bounce_mailer = "$sendmail_command -f\$sender -t"
  
  # Define all of the mailer properties:
  # The majordomo.cf file isn't used in this option, so fake everything.
