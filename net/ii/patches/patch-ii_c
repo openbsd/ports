@@ -1,7 +1,7 @@
-$OpenBSD: patch-ii_c,v 1.1 2009/03/26 17:38:26 naddy Exp $
---- ii.c.orig	Thu Mar 26 11:22:40 2009
-+++ ii.c	Thu Mar 26 11:23:00 2009
-@@ -394,8 +394,9 @@ static int read_line(int fd, size_t res_len, char *buf
+$OpenBSD: patch-ii_c,v 1.2 2011/03/02 15:06:04 jasper Exp $
+--- ii.c.orig	Mon Jan 31 21:47:08 2011
++++ ii.c	Wed Mar  2 16:04:30 2011
+@@ -395,8 +395,9 @@ static int read_line(int fd, size_t res_len, char *buf
  static void handle_channels_input(Channel *c) {
  	static char buf[PIPE_BUF];
  	if(read_line(c->fd, PIPE_BUF, buf) == -1) {
