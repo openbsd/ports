@@ -1,4 +1,4 @@
-$OpenBSD: patch-share_applnk_network-gnome_opennx-admin-gnome_desktop,v 1.1.1.1 2008/06/13 17:14:42 jasper Exp $
+$OpenBSD: patch-share_applnk_network-gnome_opennx-admin-gnome_desktop,v 1.2 2011/03/02 06:57:08 ajacoutot Exp $
 --- share/applnk/network-gnome/opennx-admin-gnome.desktop.orig	Fri May 23 12:00:07 2008
 +++ share/applnk/network-gnome/opennx-admin-gnome.desktop	Fri May 23 12:00:34 2008
 @@ -1,9 +1,8 @@
@@ -7,8 +7,8 @@ $OpenBSD: patch-share_applnk_network-gnome_opennx-admin-gnome_desktop,v 1.1.1.1 
  Comment=Launch session administrator
 -Exec=/usr/NX/bin/opennx --admin
 -Icon=/usr/NX/share/icons/opennx-admin.png
-+Exec=${PREFIX}/bin/opennx --admin
-+Icon=${PREFIX}/share/icons/opennx-admin.png
++Exec=${PREFIX}/NX/bin/opennx --admin
++Icon=${PREFIX}/NX/share/icons/opennx-admin.png
  Name=OpenNX Session Administrator
  Type=Application
  Categories=Application;Network
