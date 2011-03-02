@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/03/02 10:23:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/03/02 13:57:06 jasper Exp $
 
 COMMENT=		OSS replacement for Nomachine's nxclient
 
 DISTNAME=		opennx-0.16
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		sysutils
 
@@ -42,8 +42,12 @@ DOT_DESKTOP=		opennx-admin-gnome.desktop \
 			opennx-wizard-gnome.desktop \
 			opennx-gnome.desktop
 
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/opennxApp.cpp
+
 post-build:
-	cd ${WRKSRC}/share/applnk/network-gnome && ${SUBST_CMD} ${DOT_DESKTOP}
+	cd ${WRKSRC}/share/applnk/network-gnome && \
+		${SUBST_CMD} ${DOT_DESKTOP}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications

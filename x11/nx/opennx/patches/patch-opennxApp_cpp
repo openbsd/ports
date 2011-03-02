@@ -1,4 +1,4 @@
-$OpenBSD: patch-opennxApp_cpp,v 1.1 2011/03/02 10:23:36 jasper Exp $
+$OpenBSD: patch-opennxApp_cpp,v 1.2 2011/03/02 13:57:06 jasper Exp $
 
 - Added --autoresume switch.
   From upstream svn -r609.
@@ -15,6 +15,17 @@ $OpenBSD: patch-opennxApp_cpp,v 1.1 2011/03/02 10:23:36 jasper Exp $
  {
      SetAppName(wxT("OpenNX"));
  #ifdef __WXMSW__
+@@ -531,8 +532,8 @@ opennxApp::preInit()
+             tmp = wxT("/sbin/cupsd");
+         if ((tmp.IsEmpty()) && wxFileName::IsFileExecutable(wxT("/usr/sbin/cupsd")))
+             tmp = wxT("/usr/sbin/cupsd");
+-        if ((tmp.IsEmpty()) && wxFileName::IsFileExecutable(wxT("usr/local/sbin/cupsd")))
+-            tmp = wxT("/usr/local/sbin/cupsd");
++        if ((tmp.IsEmpty()) && wxFileName::IsFileExecutable(wxT("${LOCALBASE}/sbin/cupsd")))
++            tmp = wxT("${LOCALBASE}/sbin/cupsd");
+ #endif
+         wxConfigBase::Get()->Write(wxT("Config/CupsPath"), tmp);
+         wxConfigBase::Get()->Flush();
 @@ -707,6 +708,8 @@ void opennxApp::OnInitCmdLine(wxCmdLineParser& parser)
      }
      tags.Prepend(_("\n\nSupported trace tags: "));
