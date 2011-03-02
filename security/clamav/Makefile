@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.65 2011/01/05 06:06:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2011/03/02 14:36:49 sthen Exp $
 
 COMMENT=		virus scanner
-DISTNAME=		clamav-0.96.5
-
-REVISION=		3
+DISTNAME=		clamav-0.97
 
 CATEGORIES=		security
-SHARED_LIBS=		clamav 17.0 \
+SHARED_LIBS=		clamav 18.0 \
 			clamunrar 2.0 \
 			clamunrar_iface 2.0
 
