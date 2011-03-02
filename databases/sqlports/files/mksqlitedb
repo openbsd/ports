@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: mksqlitedb,v 1.30 2011/01/04 21:55:19 espie Exp $
+# $OpenBSD: mksqlitedb,v 1.31 2011/03/02 16:19:54 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -31,9 +31,73 @@ use Inserter;
 use DBI;
 
 
-our ($opt_v, $opt_q);
+our ($opt_v, $opt_q, $opt_p);
 
-getopts('vq:');
+sub parse_dump
+{
+	my ($inserter, $vars, $fd, $unknown) = @_;
+	my $lastkey;
+	while (<$fd>) {
+		chomp;
+		# kill noise
+		if (s/^\=\=\=/---/) {
+			print $_, "\n";
+			next;
+		}
+		next unless m/^(.*?)\.([A-Z][A-Z_0-9]*)(?:\-([a-z0-9]+))?\=(.*)$/;
+
+		my ($key, $var, $arch, $value) = ($1, $2, $3, $4);
+		# strip extra quotes
+		if ($value =~ m/^\"(.*)\"$/) {
+			$value = $1;
+		}
+
+		if (!(defined $lastkey) || $key ne $lastkey) {
+			if (defined $lastkey) {
+				$inserter->finish_port;
+			}
+			$inserter->mark_done($key);
+			if ($key =~ m/^(.*)\,\-main((?:\,.*)?)$/) {
+				$inserter->mark_done("$1$2");
+			}
+			$inserter->set_newkey($key);
+			$lastkey = $key;
+		}
+		if (defined $vars->{$var}) {
+			$inserter->add_var($vars->{$var}->new($var, $value, $arch));
+		} else {
+			$unknown->{$var} //= $key;
+		}
+	}
+
+	$inserter->finish_port;
+	$inserter->commit_to_db;
+}
+
+sub dump_dirs
+{
+	my ($inserter, $vars, $unknown, $todo) = @_;
+	my ($pid, $fd);
+	unless (defined($pid = open($fd, "-|"))) {
+		die "can't fork : $!";
+	}
+	if ($pid) {
+		parse_dump($inserter, $vars, $fd, $unknown);
+		close $fd || warn $!;
+	} else {
+		if (defined $todo) {
+			$ENV{'SUBDIR'} = join(' ', keys %$todo);
+		}
+		if ($opt_p) {
+			$ENV{'REPORT_PROBLEM'}= "touch $opt_p; exit 1";
+		}
+		$ENV{'NO_IGNORE'} = 'Yes';
+		exec {'make'} ("make", "dump-vars");
+		die $!;
+	}
+}
+
+getopts('vq:p:');
 my $dbname;
 if (@ARGV > 0) {
 	$dbname = shift;
@@ -46,8 +110,8 @@ my $inserter = InserterList->new;
 my $db = DBI->connect("dbi:SQLite:dbname=$dbname", '', '', {AutoCommit => 0});
 my $db2 = DBI->connect("dbi:SQLite:dbname=$dbname-compact", '', '',
     {AutoCommit => 0});
-$inserter->add(NormalInserter->new($db, 1000, $opt_v),
-    CompactInserter->new($db2, 1000, $opt_v));
+my $normal = NormalInserter->new($db, 1000, $opt_v);
+$inserter->add($normal, CompactInserter->new($db2, 1000, $opt_v));
 
 
 my $vars = {
@@ -117,39 +181,29 @@ my $vars = {
 
 $inserter->create_tables($vars);
 
-my $lastkey;
 my $unknown = {};
-while (<STDIN>) {
-	chomp;
-	# kill noise
-	if (s/^\=\=\=/---/) {
-		print $_, "\n";
-		next;
-	}
-	next unless m/^(.*?)\.([A-Z][A-Z_0-9]*)(?:\-([a-z0-9]+))?\=(.*)$/;
 
-	my ($key, $var, $arch, $value) = ($1, $2, $3, $4);
-	# strip extra quotes
-	if ($value =~ m/^\"(.*)\"$/) {
-		$value = $1;
-	}
+dump_dirs($inserter, $vars, $unknown, undef);
 
-	if (!(defined $lastkey) || $key ne $lastkey) {
-		if (defined $lastkey) {
-			$inserter->finish_port;
+while (1) {
+	my $todo = {};
+	my $stuff = 0;
+	for my $v (keys %{$normal->{todo}}) {
+		next if $normal->{done}{$v};
+		$todo->{$v} = 1;
+		$stuff = 1;
+
+	}
+	last if !$stuff;
+	$normal->{todo} = {};
+	print "Next pass\n";
+	dump_dirs($inserter, $vars, $unknown, $todo);
+	for my $v (keys %$todo) {
+		if (!$normal->{done}{$v}) {
+			$normal->{done}{$v} = 1;
 		}
-		$inserter->set_newkey($key);
-		$lastkey = $key;
 	}
-	if (defined $vars->{$var}) {
-		$inserter->add_var($vars->{$var}->new($var, $value, $arch));
-	} else {
-		$unknown->{$var} //= $key;
-    	}
 }
-
-$inserter->finish_port;
-$inserter->commit_to_db;
 
 while (my ($k, $v) = each %$unknown) {
 	next if $k eq 'CHECKSUM_FILE';

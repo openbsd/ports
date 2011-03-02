@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.9 2010/11/26 20:32:38 espie Exp $
+# $OpenBSD: Var.pm,v 1.10 2011/03/02 16:19:54 espie Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -277,6 +277,7 @@ sub add
 		    $ins->find_pathkey($pkgpath2),
 		    $ins->convert_depends($self->depends_type),
 		    $pkgspec, $rest);
+		    $ins->add_todo($pkgpath2);
 	}
 }
 
