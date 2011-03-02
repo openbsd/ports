@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:46:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/02 12:23:11 okan Exp $
 
 COMMENT=	perl extension for parsing ASCIIMathML text into MathML
 
-DISTNAME=	Text-ASCIIMathML-0.8
-REVISION=	0
+DISTNAME=	Text-ASCIIMathML-0.81
 CATEGORIES=	textproc
 MODULES=	cpan
 USE_GROFF =	Yes
