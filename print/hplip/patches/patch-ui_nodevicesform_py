@@ -1,15 +1,6 @@
-$OpenBSD: patch-ui_nodevicesform_py,v 1.2 2010/11/05 08:21:22 ajacoutot Exp $
---- ui/nodevicesform.py.orig	Sun Sep 26 19:07:46 2010
-+++ ui/nodevicesform.py	Fri Nov  5 09:15:01 2010
-@@ -43,7 +43,7 @@ class NoDevicesForm(NoDevicesForm_base):
- 
-     def CUPSButton_clicked(self):
-         self.close()
--        utils.openURL("http://localhost:631/admin?op=add-printer")
-+        utils.openURL("http://localhost:631/admin/")
- 
- 
-     def ExitButton_clicked(self):
+$OpenBSD: patch-ui_nodevicesform_py,v 1.3 2011/03/02 06:59:03 ajacoutot Exp $
+--- ui/nodevicesform.py.orig	Wed Jan 19 06:18:26 2011
++++ ui/nodevicesform.py	Tue Feb  1 08:42:07 2011
 @@ -56,7 +56,7 @@ class NoDevicesForm(NoDevicesForm_base):
          if utils.which('hp-setup'):
              cmd = 'hp-setup -u'

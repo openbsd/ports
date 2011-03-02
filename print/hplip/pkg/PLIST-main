@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2010/07/07 16:42:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2011/03/02 06:59:03 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.10.2p0
 bin/hp-align
@@ -215,6 +215,10 @@ share/hplip/fax/fax.py
 share/hplip/fax/fax.pyc
 share/hplip/fax/faxdevice.py
 share/hplip/fax/faxdevice.pyc
+share/hplip/fax/ledmfax.py
+share/hplip/fax/ledmfax.pyc
+share/hplip/fax/ledmsoapfax.py
+share/hplip/fax/ledmsoapfax.pyc
 share/hplip/fax/marvellfax.py
 share/hplip/fax/marvellfax.pyc
 share/hplip/fax/pmlfax.py
