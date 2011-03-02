@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: symux.rc,v 1.1 2011/03/02 07:13:13 ajacoutot Exp $
+
+daemon="${PREFIX}/libexec/symux"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

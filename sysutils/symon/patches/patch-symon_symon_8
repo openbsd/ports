@@ -1,0 +1,12 @@
+$OpenBSD: patch-symon_symon_8,v 1.1 2011/03/02 07:13:13 ajacoutot Exp $
+--- symon/symon.8.orig	Thu Feb 24 10:36:31 2011
++++ symon/symon.8	Thu Feb 24 10:36:41 2011
+@@ -59,7 +59,7 @@ instances in a LAN.
+ .Lp
+ By default,
+ .Nm
+-will drop privileges and chroot(2) to home of the symon user.  This behaviour
++will drop privileges and chroot(2) to home of the _symon user.  This behaviour
+ is not strictly needed for the cpu, mem, mbuf, disk debug and interface probes
+ as these will work even when
+ .Nm
