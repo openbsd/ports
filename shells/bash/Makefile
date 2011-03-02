@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2011/01/21 11:25:03 sebastia Exp $
+# $OpenBSD: Makefile,v 1.65 2011/03/02 20:55:23 naddy Exp $
 
 COMMENT=	GNU Bourne Again Shell
 
@@ -32,10 +32,7 @@ WANTLIB=	c termcap
 #YACC=		${LOCALBASE}/bin/bison -y
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	${NO_SHARED_LIBS:S/Yes/--enable-static-link/:S/No//}
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/support
-
-.if ${MACHINE_ARCH} == "m88k" || ${MACHINE_ARCH} == "vax"
-CONFIGURE_ARGS +=       --enable-static-link
-.endif
 
 .include <bsd.port.mk>
