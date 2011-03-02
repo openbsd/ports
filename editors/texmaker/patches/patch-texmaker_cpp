@@ -1,7 +1,7 @@
-$OpenBSD: patch-texmaker_cpp,v 1.1 2010/10/27 08:52:47 sthen Exp $
---- texmaker.cpp.orig	Thu Jul 29 14:19:28 2010
-+++ texmaker.cpp	Fri Jul 30 21:06:38 2010
-@@ -2621,7 +2621,7 @@ makeidx_package=config->value( "Quick/MakeIndex",false
+$OpenBSD: patch-texmaker_cpp,v 1.2 2011/03/02 14:04:21 shadchin Exp $
+--- texmaker.cpp.orig	Mon Feb 14 14:14:00 2011
++++ texmaker.cpp	Tue Feb 15 02:00:44 2011
+@@ -2836,7 +2836,7 @@ makeidx_package=config->value( "Quick/MakeIndex",false
  author=config->value("Quick/Author","").toString();
  
  #if defined( Q_WS_X11 )
@@ -10,7 +10,7 @@ $OpenBSD: patch-texmaker_cpp,v 1.1 2010/10/27 08:52:47 sthen Exp $
  #endif
  #if defined( Q_WS_MACX )
  QString dicDir=QCoreApplication::applicationDirPath() + "/../Resources/";
-@@ -2631,7 +2631,7 @@ QString dicDir=QCoreApplication::applicationDirPath() 
+@@ -2846,7 +2846,7 @@ QString dicDir=QCoreApplication::applicationDirPath() 
  #endif
  QString defaultDic=dicDir+QString(QLocale::system().name())+".dic";
  QFileInfo fi(defaultDic);

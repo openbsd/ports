@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 23:22:07 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/02 14:04:21 shadchin Exp $
 # $FreeBSD: ports/editors/texmaker/Makefile,v 1.2 2004/01/09 09:16:33 krion Exp $
 
 COMMENT=		LaTeX development environment
-DISTNAME=		texmaker-2.0
+DISTNAME=		texmaker-2.2.2
 CATEGORIES=		editors
 
 HOMEPAGE=		http://www.xm1math.net/texmaker/
 
-MAINTAINER=		Alexandr Shadchin <alexandr.shadchin@gmail.com>
+MAINTAINER=		Alexandr Shadchin <shadchin@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,8 +18,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB += QtDBus QtGui QtNetwork QtWebKit QtXml QtXmlPatterns c hunspell-1.2
-WANTLIB += m phonon poppler poppler-qt4 pthread sqlite3 stdc++
+WANTLIB += QtGui QtNetwork QtWebKit QtXml c hunspell-1.2 m poppler
+WANTLIB += poppler-qt4 pthread stdc++ z
 
 MODULES=		x11/qt4
 
