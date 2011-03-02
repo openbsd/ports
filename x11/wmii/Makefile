@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/03/02 06:30:34 jasper Exp $
 
 COMMENT=	dynamic window manager
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://code.suckless.org/dl/wmii/
+MASTER_SITES=	http://dl.suckless.org/wmii/
 
 WANTLIB += X11 Xext c m
 

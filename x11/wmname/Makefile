@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/10/24 21:15:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/02 06:30:34 jasper Exp $
 
 COMMENT =	sets the window manager name property of the root window
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	X11 c
 
-MASTER_SITES =	http://code.suckless.org/dl/tools/
+MASTER_SITES =	http://dl.suckless.org/tools/
 
 
 NO_REGRESS =	Yes
