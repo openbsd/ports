@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/06 12:16:39 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/03/02 12:36:42 landry Exp $
 
 COMMENT =	browse LDAP server with a shell-like CLI
 
-DISTNAME =	shelldap-0.20110106
+DISTNAME =	shelldap-0.4
+EPOCH =	0
 CATEGORIES =	sysutils
 
 HOMEPAGE =	http://projects.martini.nu/shelldap/
@@ -13,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES =	http://distfiles.nl/
+MASTER_SITES =	http://www.martini.nu/misc/
 
 NO_BUILD =	Yes
 RUN_DEPENDS =	databases/p5-ldap \
