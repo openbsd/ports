@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_common_h,v 1.1 2010/05/13 16:37:32 espie Exp $
---- src/common.h.orig	Thu May 13 18:20:55 2010
-+++ src/common.h	Thu May 13 18:21:17 2010
-@@ -716,7 +716,6 @@ void DBTest (void);
+$OpenBSD: patch-src_common_h,v 1.2 2011/03/02 06:39:47 ajacoutot Exp $
+--- src/common.h.orig	Wed Mar  3 01:57:49 2010
++++ src/common.h	Tue Feb  1 09:15:26 2011
+@@ -714,7 +714,6 @@ void DBTest (void);
  
  /* Input thread and thread function */
  #include <pthread.h>
