@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/02/05 09:23:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2011/03/02 06:54:11 jasper Exp $
 
 COMMENT=	simple and performant DNS server
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=	c pthread
 
-MASTER_SITES=	http://www.maradns.org/download/1.3/${VERSION}/
+MASTER_SITES=	http://maradns.org/download/1.3/
 
 MAKE_FLAGS=	CC="${CC}" FLAGS="${CFLAGS} -D_THREAD_SAFE -pthread"
 
