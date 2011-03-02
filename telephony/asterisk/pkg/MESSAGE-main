@@ -1,2 +1,0 @@
-Simplified sample configuration is provided in ${SYSCONFDIR}/asterisk;
-the full set is available in ${PREFIX}/share/examples/asterisk/default.

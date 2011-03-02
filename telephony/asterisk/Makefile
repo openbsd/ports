@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.100 2011/01/20 21:44:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.101 2011/03/02 12:53:11 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			1.8.2.2
+VER=			1.8.2.4
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
 
@@ -225,7 +225,7 @@ LIB_DEPENDS-speex=	audio/speex>=1.2rc1
 NO_REGRESS=		Yes
 INSTALL_TARGET=		install samples
 EXAMPLEDIR=		${PREFIX}/share/examples/asterisk
-EXAMPLEFILES=		extensions.ael extensions.conf logger.conf \
+EXAMPLEFILES=		cdr.conf extensions.ael extensions.conf logger.conf \
 			modules.conf musiconhold.conf sip.conf voicemail.conf
 
 .for i in ${MULTI_PACKAGES:N-main}

@@ -1,0 +1,15 @@
+$OpenBSD: README-main,v 1.1 2011/03/02 12:53:11 sthen Exp $
+
+Running ASTERISK on OpenBSD
+===========================
+
+Configuration
+-------------
+Simplified sample configuration files have been provided
+in ${SYSCONFDIR}/asterisk; the full set from the Asterisk distribution
+is available in ${PREFIX}/share/examples/asterisk/default.
+
+Documentation
+-------------
+${PREFIX}/share/doc/asterisk/AST.pdf is probably the single best
+resource for the current version.

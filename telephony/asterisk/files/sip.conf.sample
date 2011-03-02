@@ -1,4 +1,4 @@
-; $OpenBSD: sip.conf.sample,v 1.4 2009/12/13 12:11:29 sthen Exp $
+; $OpenBSD: sip.conf.sample,v 1.5 2011/03/02 12:53:11 sthen Exp $
 ; Longer example available in ${TRUEPREFIX}/share/examples/asterisk/default
 
 [general]
@@ -11,7 +11,7 @@ type=friend
 secret=100
 nat=yes
 host=dynamic
-canreinvite=no
+directmedia=no
 qualify=yes
 mailbox=100
 context=default
@@ -22,7 +22,7 @@ type=friend
 secret=101
 nat=yes
 host=dynamic
-canreinvite=no
+directmedia=no
 qualify=yes
 mailbox=100
 context=default
