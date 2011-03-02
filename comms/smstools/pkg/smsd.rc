@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: smsd.rc,v 1.1 2011/03/02 08:39:13 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/smsd"
+
+. /etc/rc.d/rc.subr
+
+rc_pre() {
+	install -d -o _smsd /var/run/smsd
+}
+
+rc_cmd $1
