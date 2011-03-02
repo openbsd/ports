@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/03/02 23:30:20 sthen Exp $
 
 COMMENT=		threaded DNS daemon, optimized for caching
 
-DISTNAME=		pdnsd-1.2.7-par
+DISTNAME=		pdnsd-1.2.8-par
 PKGNAME=		${DISTNAME:S/-par//}
-REVISION=		0
 CATEGORIES=     	net
 MASTER_SITES=		${HOMEPAGE}/releases/
 
@@ -22,7 +21,7 @@ WANTLIB=		c pthread
 NO_REGRESS=		Yes
 
 USE_GMAKE=		yes
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-ipv6 \
 			--enable-strict-rfc2181 \
