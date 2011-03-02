@@ -1,13 +1,13 @@
-$OpenBSD: patch-gkrellm_1,v 1.4 2010/01/05 12:40:36 ajacoutot Exp $
---- gkrellm.1.orig	Wed Dec 23 04:14:37 2009
-+++ gkrellm.1	Tue Jan  5 13:27:20 2010
+$OpenBSD: patch-gkrellm_1,v 1.5 2011/03/02 06:59:55 ajacoutot Exp $
+--- gkrellm.1.orig	Tue Oct  5 18:21:55 2010
++++ gkrellm.1	Mon Feb 14 07:46:00 2011
 @@ -1,4 +1,4 @@
--.TH gkrellm 1 "Dec 21, 2009" "GNU/Linux" "User's Manual"
+-.TH gkrellm 1 "Sep 15, 2010" "GNU/Linux" "User's Manual"
 +.TH gkrellm 1 "Oct 24, 2006" "OpenBSD" "User's Manual"
  
  .SH "NAME"
  gkrellm \- The GNU Krell Monitors
-@@ -805,7 +805,7 @@ any correction factors and offsets for each of the sen
+@@ -807,7 +807,7 @@ any correction factors and offsets for each of the sen
  (see below and lm_sensor documentation).  For Linux, default values are
  automatically provided for many sensor chips.
  .PP
@@ -16,7 +16,7 @@ $OpenBSD: patch-gkrellm_1,v 1.4 2010/01/05 12:40:36 ajacoutot Exp $
  offsets on the Sensors config page because libsensors configuration is
  done in the /etc/sensors.conf file.  To get sensor debug output and to find
  out the sensor data source, run:
-@@ -1135,8 +1135,7 @@ several locations:
+@@ -1137,8 +1137,7 @@ several locations:
  .RS
  .nf
  ~/.gkrellm2/themes
@@ -26,7 +26,7 @@ $OpenBSD: patch-gkrellm_1,v 1.4 2010/01/05 12:40:36 ajacoutot Exp $
  .fi
  .RE
  .PP
-@@ -1147,7 +1146,7 @@ theme may also be installed as:
+@@ -1149,7 +1148,7 @@ theme may also be installed as:
  .RS
  .nf
  ~/.themes/THEME_NAME/gkrellm2
@@ -35,7 +35,7 @@ $OpenBSD: patch-gkrellm_1,v 1.4 2010/01/05 12:40:36 ajacoutot Exp $
  .fi
  .RE
  .PP
-@@ -1172,11 +1171,9 @@ and there you will find a Theme making reference.
+@@ -1174,11 +1173,9 @@ and there you will find a Theme making reference.
  tries to load all plugins (shared object files ending in .so)
  it finds in your plugin directory
  .IR ~/.gkrellm2/plugins.
@@ -50,7 +50,7 @@ $OpenBSD: patch-gkrellm_1,v 1.4 2010/01/05 12:40:36 ajacoutot Exp $
  .PP
  Some plugins may be available only as source files and they will
  have to be compiled before installation.  There should be instructions
-@@ -1211,25 +1208,19 @@ and user's themes.
+@@ -1213,25 +1210,19 @@ and user's themes.
  .I ~/.gkrellm2/plugins
  User plugin directory.
  .TP

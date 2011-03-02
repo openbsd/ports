@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.16 2010/04/27 21:53:56 sthen Exp $
---- src/sysdeps/openbsd.c.orig	Sat Oct  4 01:46:45 2008
-+++ src/sysdeps/openbsd.c	Tue Apr 27 22:20:22 2010
+$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.17 2011/03/02 06:59:55 ajacoutot Exp $
+--- src/sysdeps/openbsd.c.orig	Tue Oct  5 18:31:00 2010
++++ src/sysdeps/openbsd.c	Mon Feb 14 07:46:00 2011
 @@ -62,85 +62,96 @@ gkrellm_sys_main_cleanup(void)
  /* ===================================================================== */
  /* CPU monitor interface */
@@ -370,7 +370,7 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.16 2010/04/27 21:53:56 sthen Exp $
  gchar *
  gkrellm_sys_disk_name_from_device(gint device_number, gint unit_number,
  			gint *order)
-@@ -389,68 +459,50 @@ gkrellm_sys_disk_order_from_name(gchar *name)
+@@ -389,68 +459,50 @@ gkrellm_sys_disk_order_from_name(const gchar *name)
  	}
  
  
