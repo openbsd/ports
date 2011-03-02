@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.5 2010/12/27 12:08:21 shadchin Exp $
---- configure.ac.orig	Tue Dec  7 18:14:55 2010
-+++ configure.ac	Sat Dec 25 23:56:42 2010
-@@ -793,13 +793,21 @@ AC_ARG_ENABLE( jack,
+$OpenBSD: patch-configure_ac,v 1.6 2011/03/02 14:07:55 shadchin Exp $
+--- configure.ac.orig	Tue Feb 22 22:29:46 2011
++++ configure.ac	Wed Feb 23 21:59:42 2011
+@@ -809,13 +809,21 @@ AC_ARG_ENABLE( jack,
                  [enable_jack="yes"])
  
  if test "x$enable_jack" = "xyes"; then
@@ -26,7 +26,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2010/12/27 12:08:21 shadchin Exp $
  	OUTPUT_PLUGINS="$OUTPUT_PLUGINS jack"
  fi
  
-@@ -1178,7 +1186,7 @@ have_solaris=no
+@@ -1196,7 +1204,7 @@ have_solaris=no
  have_sun=no
  ARCH_DEFINES=""
  case "$host" in
@@ -35,7 +35,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2010/12/27 12:08:21 shadchin Exp $
          have_sun=yes
          if test "${is_elf}" = "no"
          then
-@@ -1186,6 +1194,12 @@ case "$host" in
+@@ -1204,6 +1212,12 @@ case "$host" in
          fi
          OUTPUT_PLUGINS="$OUTPUT_PLUGINS sun"
      ;;
@@ -48,8 +48,8 @@ $OpenBSD: patch-configure_ac,v 1.5 2010/12/27 12:08:21 shadchin Exp $
      *-*-darwin*)
          AC_DEFINE(SYMBOL_PREFIX, "_", [Define to symbol prefix, if any])
      ;;
-@@ -1524,6 +1538,20 @@ if test "x$enable_resample" = "xyes"; then
- 	EFFECT_PLUGINS="$EFFECT_PLUGINS resample"
+@@ -1557,6 +1571,20 @@ if test "x$enable_lyricwiki" = "xyes"; then
+     GENERAL_PLUGINS="$GENERAL_PLUGINS lyricwiki"
  fi
  
 +dnl *** sndio
@@ -69,7 +69,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2010/12/27 12:08:21 shadchin Exp $
  dnl *** End of all plugin checks ***
  
  AC_SUBST(ARCH_DEFINES)
-@@ -1619,6 +1647,7 @@ echo "    -> FileWriter MP3 output part:        $have_
+@@ -1652,6 +1680,7 @@ echo "    -> FileWriter MP3 output part:        $have_
  echo "    -> FileWriter Vorbis output part:     $have_vorbisenc"
  echo "    -> FileWriter FLAC output part:       $have_writer_flac"
  echo "  Null Audio output (null):               yes"

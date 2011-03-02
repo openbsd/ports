@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_aac_libmp4_c,v 1.6 2010/12/19 18:19:56 shadchin Exp $
---- src/aac/libmp4.c.orig	Wed Dec  8 04:14:55 2010
-+++ src/aac/libmp4.c	Fri Dec 17 23:07:16 2010
-@@ -63,7 +63,7 @@ static guint32 mp4_read_callback(void *data, void *buf
+$OpenBSD: patch-src_aac_libmp4_c,v 1.7 2011/03/02 14:07:55 shadchin Exp $
+--- src/aac/libmp4.c.orig	Tue Feb 22 22:29:46 2011
++++ src/aac/libmp4.c	Wed Feb 23 21:59:39 2011
+@@ -64,7 +64,7 @@ static guint32 mp4_read_callback(void *data, void *buf
      return vfs_fread(buffer, 1, len, (VFSFile *) data);
  }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_aac_libmp4_c,v 1.6 2010/12/19 18:19:56 shadchin Exp $
  {
      g_return_val_if_fail (data != NULL, -1);
      g_return_val_if_fail (pos <= G_MAXINT64, -1);
-@@ -578,7 +578,7 @@ static int my_decode_mp4( InputPlayback *playback, cha
+@@ -583,7 +583,7 @@ static int my_decode_mp4( InputPlayback *playback, cha
      NeAACDecHandle   decoder;
      guchar      *buffer = NULL;
      guint       bufferSize = 0;

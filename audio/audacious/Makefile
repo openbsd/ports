@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.23 2010/12/27 11:50:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/03/02 14:07:09 shadchin Exp $
 
-SHARED_ONLY = 	Yes
+SHARED_ONLY =		Yes
 
-COMMENT = 	gtk+2 media player based on BMP and XMMS
+COMMENT =		gtk+2 media player based on BMP and XMMS
 
-DISTNAME =	audacious-2.4.2
-REVISION =	0
+DISTNAME =		audacious-2.4.4
 
-SHARED_LIBS =	audclient	1.1	# 2.0
+SHARED_LIBS =		audclient	1.1	# 2.0
 
-CATEGORIES = 	audio multimedia
+CATEGORIES =		audio multimedia
 
-HOMEPAGE = 	http://audacious-media-player.org/
+HOMEPAGE =		http://audacious-media-player.org/
 
 # GPLv3
-PERMIT_DISTFILES_CDROM = Yes
-PERMIT_DISTFILES_FTP = 	Yes
-PERMIT_PACKAGE_CDROM = 	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
@@ -28,26 +27,26 @@ WANTLIB += m mcs mowgli pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-shm
 WANTLIB += z
 
-MASTER_SITES = 	http://distfiles.atheme.org/
+MASTER_SITES =		http://distfiles.atheme.org/
 
-EXTRACT_SUFX = 	.tgz
+EXTRACT_SUFX =		.tgz
 
-MODULES = 	devel/gettext
+MODULES =		devel/gettext
 
-BUILD_DEPENDS = textproc/libxml
-RUN_DEPENDS = 	devel/desktop-file-utils
-LIB_DEPENDS =	devel/libexecinfo \
-		devel/libguess \
-		devel/mcs>=0.7.0 \
-		devel/mowgli>=0.4.0 \
-		x11/dbus-glib \
-		x11/dbus \
-		x11/gtk+2
+BUILD_DEPENDS =		textproc/libxml
+RUN_DEPENDS =		devel/desktop-file-utils
+LIB_DEPENDS =		devel/libexecinfo \
+			devel/libguess \
+			devel/mcs>=0.7.0 \
+			devel/mowgli>=0.4.0 \
+			x11/dbus-glib \
+			x11/dbus \
+			x11/gtk+2
 
-MAKE_ENV = 	LIBaudclient_VERSION=${LIBaudclient_VERSION}
+MAKE_ENV =		LIBaudclient_VERSION=${LIBaudclient_VERSION}
 
-USE_GROFF =	Yes
-USE_GMAKE = 	Yes
+USE_GROFF =		Yes
+USE_GMAKE =		Yes
 
 AUTOCONF_VERSION =	2.61
 
