@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/09/29 18:45:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/03/02 11:30:08 jasper Exp $
 @bin bin/gamgi
 share/doc/gamgi/
 share/doc/gamgi/LICENSE
@@ -15,6 +15,7 @@ share/doc/gamgi/changelogs/changelogs11.html
 share/doc/gamgi/changelogs/changelogs12.html
 share/doc/gamgi/changelogs/changelogs13.html
 share/doc/gamgi/changelogs/changelogs14.html
+share/doc/gamgi/changelogs/changelogs15.html
 share/doc/gamgi/code/
 share/doc/gamgi/code/architecture.html
 share/doc/gamgi/code/libraries.html

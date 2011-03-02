@@ -1,7 +1,7 @@
-$OpenBSD: patch-src-make_local,v 1.4 2010/01/11 12:05:39 jasper Exp $
---- src/make_local.orig	Mon Jan 11 11:09:14 2010
-+++ src/make_local	Mon Jan 11 11:10:19 2010
-@@ -68,28 +68,25 @@ PATH_GTKGL_L =-L/usr/lib
+$OpenBSD: patch-src-make_local,v 1.5 2011/03/02 11:30:08 jasper Exp $
+--- src/make_local.orig	Fri Dec 17 18:21:15 2010
++++ src/make_local	Wed Mar  2 11:49:07 2011
+@@ -68,28 +68,25 @@ PATH_GTKGL_L =-L/usr/lib64
  
  #================================= OpenBSD =====================================
  #
