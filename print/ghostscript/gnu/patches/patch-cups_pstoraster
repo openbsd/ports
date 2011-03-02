@@ -1,0 +1,12 @@
+$OpenBSD: patch-cups_pstoraster,v 1.1 2011/03/02 07:10:55 ajacoutot Exp $
+--- cups/pstoraster.orig	Tue Feb 22 13:29:14 2011
++++ cups/pstoraster	Tue Feb 22 13:29:27 2011
+@@ -27,7 +27,7 @@ exec_prefix=${prefix}
+ bindir=${exec_prefix}/bin
+ 
+ # Set the library/font path...
+-GS_LIB="${CUPS_FONTPATH:=/usr/share/cups/fonts}"
++GS_LIB="${CUPS_FONTPATH:=${LOCALBASE}/share/cups/fonts}"
+ export GS_LIB
+ 
+ # Options we use with Ghostscript...

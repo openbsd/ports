@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.17 2009/01/19 12:46:23 kili Exp $
+@comment $OpenBSD: PLIST,v 1.18 2011/03/02 07:10:55 ajacoutot Exp $
 @pkgpath print/ghostscript/afpl${FLAVOR_STRING}
 @pkgpath print/ghostscript/gnu${FLAVOR_STRING},cups
+@newgroup _cups:541
 %%SHARED%%
 bin/bdftops
 bin/dumphint
@@ -425,7 +426,9 @@ share/ghostscript/${VERSION}/doc/Xfonts.htm
 share/ghostscript/${VERSION}/doc/gs.css
 share/ghostscript/${VERSION}/doc/index.html
 share/ghostscript/${VERSION}/examples/
+@group _cups
 @sample ${SYSCONFDIR}/cups/
+@group
 share/ghostscript/${VERSION}/examples/alphabet.ps
 share/ghostscript/${VERSION}/examples/annots.pdf
 share/ghostscript/${VERSION}/examples/chess.ps

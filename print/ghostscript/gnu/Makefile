@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.81 2010/11/22 09:34:10 espie Exp $
+# $OpenBSD: Makefile,v 1.82 2011/03/02 07:10:55 ajacoutot Exp $
 
 COMMENT=	GNU PostScript interpreter
 
 VERSION=	8.63
 DISTNAME=	ghostscript-${VERSION}
-REVISION=	15
+REVISION=	16
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	11.0
 
@@ -149,6 +149,9 @@ post-extract:
 	find ${WRKDIST} -name '*.orig' -type f | xargs -r rm
 	ln -s src/unix-gcc.mak ${WRKDIST}/Makefile
 	cd ${WRKSRC} && rm -rf zlib ijs jpeg libpng
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/cups/pstoraster
 
 pre-build:
 	mkdir -p ${WRKDIST}/obj
