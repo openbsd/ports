@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2011/03/02 06:56:08 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2011/03/02 08:48:16 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ CATEGORIES+=	x11/nx
 
 HOMEPAGE?=	http://www.nomachine.com/
 
-MAJOR_VERSION?=	3.3.0
+MAJOR_VERSION?=	3.4.0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM?=	Yes

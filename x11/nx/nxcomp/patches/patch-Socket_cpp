@@ -1,6 +1,6 @@
-$OpenBSD: patch-Socket_cpp,v 1.1.1.1 2008/06/13 17:12:42 jasper Exp $
---- Socket.cpp.orig	Thu Sep  6 23:53:26 2007
-+++ Socket.cpp	Thu Sep  6 23:53:47 2007
+$OpenBSD: patch-Socket_cpp,v 1.2 2011/03/02 08:48:16 jasper Exp $
+--- Socket.cpp.orig	Tue Jan 12 16:32:41 2010
++++ Socket.cpp	Wed Feb 23 12:36:43 2011
 @@ -18,7 +18,7 @@
  #include <sys/types.h>
  #include <sys/utsname.h>
@@ -19,3 +19,12 @@ $OpenBSD: patch-Socket_cpp,v 1.1.1.1 2008/06/13 17:12:42 jasper Exp $
  #define SOL_IP  IPPROTO_IP
  #endif
  
+@@ -371,7 +371,7 @@ int SetNoDelay(int fd, int value)
+ 
+     #endif
+ 
+-    #if defined(__sun)
++    #if defined(__sun) || defined(__OpenBSD__)
+ 
+     if (EGET() == ENOPROTOOPT)
+     {
