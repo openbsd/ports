@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.35 2011/01/19 11:25:16 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.36 2011/03/02 13:28:24 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -874,6 +874,7 @@ share/doc/asterisk/UPGRADE-1.6.txt
 share/doc/asterisk/UPGRADE.txt
 share/doc/asterisk/api-1.6.0-changes.odt
 share/doc/asterisk/api-1.6.2-changes.txt
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/asterisk/
 @mode 750
 @group _asterisk
@@ -894,7 +895,6 @@ share/examples/asterisk/default/asterisk.conf
 share/examples/asterisk/default/calendar.conf
 share/examples/asterisk/default/ccss.conf
 share/examples/asterisk/default/cdr.conf
-@sample ${SYSCONFDIR}/asterisk/cdr.conf
 share/examples/asterisk/default/cdr_custom.conf
 share/examples/asterisk/default/cdr_manager.conf
 @comment share/examples/asterisk/default/cdr_mysql.conf
@@ -978,6 +978,8 @@ share/examples/asterisk/default/users.conf
 share/examples/asterisk/default/voicemail.conf
 @comment share/examples/asterisk/default/vpb.conf
 share/examples/asterisk/openbsd/
+share/examples/asterisk/openbsd/cdr.conf.sample
+@sample ${SYSCONFDIR}/asterisk/cdr.conf
 share/examples/asterisk/openbsd/extensions.ael.sample
 @mode 640
 @owner root
@@ -987,6 +989,13 @@ share/examples/asterisk/openbsd/extensions.ael.sample
 @owner
 @group
 share/examples/asterisk/openbsd/extensions.conf.sample
+@mode 640
+@owner root
+@group _asterisk
+@sample ${SYSCONFDIR}/asterisk/extensions.conf
+@mode
+@owner
+@group
 share/examples/asterisk/openbsd/logger.conf.sample
 @sample ${SYSCONFDIR}/asterisk/logger.conf
 share/examples/asterisk/openbsd/modules.conf.sample
