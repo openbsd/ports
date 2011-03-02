@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/02 06:56:38 ajacoutot Exp $
 
 COMMENT=	OpenSSH client and daemon for NX
 
@@ -6,7 +6,7 @@ DASH_VER=	1
 DISTNAME=	nxssh-${MAJOR_VERSION}-${DASH_VER}
 PKGNAME=	nxssh-${MAJOR_VERSION}.${DASH_VER}
 
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net
 
@@ -25,8 +25,11 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/nx -I/usr/include/kerberosV/" \
 WRKDIST=	${WRKDIR}/nxssh
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/nxssh ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/nxssh-keygen ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKBUILD}/nxsshd ${PREFIX}/sbin
+	${INSTALL_PROGRAM_DIR} ${PREFIX}/NX/bin
+	${INSTALL_PROGRAM_DIR} ${PREFIX}/NX/sbin
+.for i in nxssh nxssh-keygen
+	${INSTALL_PROGRAM} ${WRKBUILD}/${i} ${PREFIX}/NX/bin
+.endfor
+	${INSTALL_PROGRAM} ${WRKBUILD}/nxsshd ${PREFIX}/NX/sbin
 
 .include <bsd.port.mk>
