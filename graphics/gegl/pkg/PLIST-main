@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2010/04/24 13:07:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2011/03/02 06:43:25 ajacoutot Exp $
 @bin bin/gegl
 include/gegl-0.1/
+include/gegl-0.1/gegl-buffer-backend.h
+include/gegl-0.1/gegl-buffer-iterator.h
 include/gegl-0.1/gegl-buffer.h
 include/gegl-0.1/gegl-chant.h
 include/gegl-0.1/gegl-color.h
@@ -10,7 +12,9 @@ include/gegl-0.1/gegl-matrix.h
 include/gegl-0.1/gegl-paramspecs.h
 include/gegl-0.1/gegl-path.h
 include/gegl-0.1/gegl-plugin.h
-include/gegl-0.1/gegl-simd.h
+include/gegl-0.1/gegl-tile-backend.h
+include/gegl-0.1/gegl-tile-source.h
+include/gegl-0.1/gegl-tile.h
 include/gegl-0.1/gegl-types.h
 include/gegl-0.1/gegl-utils.h
 include/gegl-0.1/gegl-version.h
@@ -30,6 +34,8 @@ include/gegl-0.1/operation/gegl-operation-source.h
 include/gegl-0.1/operation/gegl-operation-temporal.h
 include/gegl-0.1/operation/gegl-operation.h
 lib/gegl-0.1/
+@comment lib/gegl-0.1/add-noise.la
+lib/gegl-0.1/add-noise.so
 @comment lib/gegl-0.1/add.la
 lib/gegl-0.1/add.so
 @comment lib/gegl-0.1/affine.la
@@ -40,9 +46,9 @@ lib/gegl-0.1/bilateral-filter.so
 lib/gegl-0.1/box-blur.so
 @comment lib/gegl-0.1/brightness-contrast.la
 lib/gegl-0.1/brightness-contrast.so
-lib/gegl-0.1/buffer-sink.la
+@comment lib/gegl-0.1/buffer-sink.la
 lib/gegl-0.1/buffer-sink.so
-lib/gegl-0.1/buffer-source.la
+@comment lib/gegl-0.1/buffer-source.la
 lib/gegl-0.1/buffer-source.so
 @comment lib/gegl-0.1/c2g.la
 lib/gegl-0.1/c2g.so
@@ -88,20 +94,32 @@ lib/gegl-0.1/dst-over.so
 lib/gegl-0.1/dst.so
 @comment lib/gegl-0.1/exclusion.la
 lib/gegl-0.1/exclusion.so
+@comment lib/gegl-0.1/exp-combine.la
+lib/gegl-0.1/exp-combine.so
+@comment lib/gegl-0.1/fattal02.la
+lib/gegl-0.1/fattal02.so
 @comment lib/gegl-0.1/fractal-explorer.la
 lib/gegl-0.1/fractal-explorer.so
 @comment lib/gegl-0.1/gamma.la
 lib/gegl-0.1/gamma.so
 @comment lib/gegl-0.1/gaussian-blur.la
 lib/gegl-0.1/gaussian-blur.so
+@comment lib/gegl-0.1/gegl-buffer-load-op.la
+lib/gegl-0.1/gegl-buffer-load-op.so
+@comment lib/gegl-0.1/gegl-buffer-save-op.la
+lib/gegl-0.1/gegl-buffer-save-op.so
 @comment lib/gegl-0.1/grey.la
 lib/gegl-0.1/grey.so
+@comment lib/gegl-0.1/grid.la
+lib/gegl-0.1/grid.so
 @comment lib/gegl-0.1/hard-light.la
 lib/gegl-0.1/hard-light.so
 @comment lib/gegl-0.1/introspect.la
 lib/gegl-0.1/introspect.so
 @comment lib/gegl-0.1/invert.la
 lib/gegl-0.1/invert.so
+@comment lib/gegl-0.1/jp2-load.la
+lib/gegl-0.1/jp2-load.so
 @comment lib/gegl-0.1/jpg-load.la
 lib/gegl-0.1/jpg-load.so
 @comment lib/gegl-0.1/layer.la
@@ -114,10 +132,18 @@ lib/gegl-0.1/lighten.so
 lib/gegl-0.1/load.so
 @comment lib/gegl-0.1/magick-load.la
 lib/gegl-0.1/magick-load.so
+@comment lib/gegl-0.1/mantiuk06.la
+lib/gegl-0.1/mantiuk06.so
+@comment lib/gegl-0.1/map_absolute.la
+lib/gegl-0.1/map_absolute.so
 @comment lib/gegl-0.1/mblur.la
 lib/gegl-0.1/mblur.so
+@comment lib/gegl-0.1/mirrors.la
+lib/gegl-0.1/mirrors.so
 @comment lib/gegl-0.1/mono-mixer.la
 lib/gegl-0.1/mono-mixer.so
+@comment lib/gegl-0.1/motion-blur.la
+lib/gegl-0.1/motion-blur.so
 @comment lib/gegl-0.1/multiply.la
 lib/gegl-0.1/multiply.so
 @comment lib/gegl-0.1/noise.la
@@ -136,24 +162,34 @@ lib/gegl-0.1/overlay.so
 lib/gegl-0.1/path.so
 @comment lib/gegl-0.1/pixbuf.la
 lib/gegl-0.1/pixbuf.so
+@comment lib/gegl-0.1/pixelise.la
+lib/gegl-0.1/pixelise.so
 @comment lib/gegl-0.1/plus.la
 lib/gegl-0.1/plus.so
 @comment lib/gegl-0.1/png-load.la
 lib/gegl-0.1/png-load.so
 @comment lib/gegl-0.1/png-save.la
 lib/gegl-0.1/png-save.so
-lib/gegl-0.1/ppm-load.la
+@comment lib/gegl-0.1/ppm-load.la
 lib/gegl-0.1/ppm-load.so
-lib/gegl-0.1/ppm-save.la
+@comment lib/gegl-0.1/ppm-save.la
 lib/gegl-0.1/ppm-save.so
 @comment lib/gegl-0.1/raw-load.la
 lib/gegl-0.1/raw-load.so
 @comment lib/gegl-0.1/rectangle.la
 lib/gegl-0.1/rectangle.so
+@comment lib/gegl-0.1/reinhard05.la
+lib/gegl-0.1/reinhard05.so
 @comment lib/gegl-0.1/remap.la
 lib/gegl-0.1/remap.so
+@comment lib/gegl-0.1/rgbe-load.la
+lib/gegl-0.1/rgbe-load.so
+@comment lib/gegl-0.1/rgbe-save.la
+lib/gegl-0.1/rgbe-save.so
 @comment lib/gegl-0.1/save-pixbuf.la
 lib/gegl-0.1/save-pixbuf.so
+@comment lib/gegl-0.1/save.la
+lib/gegl-0.1/save.so
 @comment lib/gegl-0.1/screen.la
 lib/gegl-0.1/screen.so
 @comment lib/gegl-0.1/snn-mean.la
@@ -196,6 +232,10 @@ lib/gegl-0.1/threshold.so
 lib/gegl-0.1/unsharp-mask.so
 @comment lib/gegl-0.1/value-invert.la
 lib/gegl-0.1/value-invert.so
+@comment lib/gegl-0.1/vector-fill.la
+lib/gegl-0.1/vector-fill.so
+@comment lib/gegl-0.1/vector-stroke.la
+lib/gegl-0.1/vector-stroke.so
 @comment lib/gegl-0.1/weighted-blend.la
 lib/gegl-0.1/weighted-blend.so
 @comment lib/gegl-0.1/whitebalance.la
