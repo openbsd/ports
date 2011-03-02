@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/03/02 06:41:33 ajacoutot Exp $
 
 COMMENT=	automatic color temperature adjustment
 
 V=		1.6
 DISTNAME=	redshift-${V}
 EXTRACT_SUFX=	.tar.bz2
+
+REVISION=	0
 
 CATEGORIES=	misc
 
@@ -23,6 +25,7 @@ WANTLIB += gconf-2 gio-2.0
 MASTER_SITES=	http://launchpad.net/redshift/trunk/${V:C/^([0-9]+\.[0-9]+).*/\1/}/+download/
 
 RUN_DEPENDS=	devel/desktop-file-utils \
+		x11/py-gtk2 \
 		devel/py-xdg
 LIB_DEPENDS=	devel/gconf2
 
