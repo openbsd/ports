@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/12/11 08:19:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/03/03 13:15:35 ajacoutot Exp $
 
 COMMENT=	modified libvmime library for Zarafa
 
 VMIME=		libvmime-0.7.1
 PKGNAME=	zarafa-${VMIME}
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	mail devel
 
