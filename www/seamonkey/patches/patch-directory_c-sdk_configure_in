@@ -1,7 +1,7 @@
-$OpenBSD: patch-directory_c-sdk_configure_in,v 1.4 2010/04/03 09:30:14 landry Exp $
---- directory/c-sdk/configure.in.orig	Sat Jan 23 12:41:13 2010
-+++ directory/c-sdk/configure.in	Sat Jan 23 12:41:57 2010
-@@ -1798,7 +1798,7 @@ mips-sony-newsos*)
+$OpenBSD: patch-directory_c-sdk_configure_in,v 1.5 2011/03/03 14:07:20 landry Exp $
+--- directory/c-sdk/configure.in.orig	Mon Jan 17 12:23:35 2011
++++ directory/c-sdk/configure.in	Thu Mar  3 10:20:58 2011
+@@ -1820,7 +1820,7 @@ mips-sony-newsos*)
      AC_DEFINE(HAVE_SOCKLEN_T)
      CFLAGS="$CFLAGS -ansi -Wall"
      CXXFLAGS="$CXXFLAGS -ansi -Wall"
