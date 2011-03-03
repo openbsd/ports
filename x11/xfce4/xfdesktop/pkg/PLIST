@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2011/01/18 20:42:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.16 2011/03/03 21:07:56 landry Exp $
 @bin bin/xfdesktop
 @bin bin/xfdesktop-settings
 @man man/man1/xfdesktop.1
@@ -23,9 +23,6 @@ share/doc/xfdesktop/html/ca/index.html
 share/doc/xfdesktop/html/da/
 share/doc/xfdesktop/html/da/images
 share/doc/xfdesktop/html/da/index.html
-share/doc/xfdesktop/html/el/
-share/doc/xfdesktop/html/el/images
-share/doc/xfdesktop/html/el/index.html
 share/doc/xfdesktop/html/fr/
 share/doc/xfdesktop/html/fr/images/
 share/doc/xfdesktop/html/fr/images/root_menu.png
@@ -38,9 +35,6 @@ share/doc/xfdesktop/html/fr/index.html
 share/doc/xfdesktop/html/gl/
 share/doc/xfdesktop/html/gl/images
 share/doc/xfdesktop/html/gl/index.html
-share/doc/xfdesktop/html/id/
-share/doc/xfdesktop/html/id/images
-share/doc/xfdesktop/html/id/index.html
 share/doc/xfdesktop/html/it/
 share/doc/xfdesktop/html/it/images
 share/doc/xfdesktop/html/it/index.html
@@ -56,9 +50,6 @@ share/doc/xfdesktop/html/ja/index.html
 share/doc/xfdesktop/html/ru/
 share/doc/xfdesktop/html/ru/images
 share/doc/xfdesktop/html/ru/index.html
-share/doc/xfdesktop/html/sv/
-share/doc/xfdesktop/html/sv/images
-share/doc/xfdesktop/html/sv/index.html
 share/doc/xfdesktop/html/ug/
 share/doc/xfdesktop/html/ug/images
 share/doc/xfdesktop/html/ug/index.html
