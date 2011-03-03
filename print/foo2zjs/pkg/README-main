@@ -1,15 +1,7 @@
-$OpenBSD: README-main,v 1.1 2010/11/12 07:02:24 ajacoutot Exp $
+$OpenBSD: README-main,v 1.2 2011/03/03 13:42:16 ajacoutot Exp $
 
 Using foo2zjs under OpenBSD
 ===========================
-
-USB printers must attach as a ugen(4) device which means you need to
-disable ulpt(4) in your kernel - see config(8).
-Your device will be available at /dev/ugenN.EE, where N is the device
-number and EE its endoint.
-e.g. lp=/dev/ugen0.02 for lpd(8) and usb:/dev/ugen0.02 for cupsd(8).
-
-When using cupsd(8), the _cups user will need r/w access to the device.
 
 Before using foo2zjs you should get extra files from the web, such as
 .ICM profiles (for color correction) and firmware using the command
