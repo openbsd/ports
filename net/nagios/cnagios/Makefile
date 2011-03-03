@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/03/03 12:33:06 sthen Exp $
 
 COMMENT =		console interface for nagios
 
-DISTNAME =		cnagios-0.25
-REVISION =		1
+DISTNAME =		cnagios-0.27
 CATEGORIES =		net
 
 HOMEPAGE =		http://noc.hep.wisc.edu/cnagios.txt
@@ -20,6 +19,7 @@ MASTER_SITES =		ftp://noc.hep.wisc.edu/src/cnagios/ \
 			ftp://noc.hep.wisc.edu/src/cnagios/old-versions/
 
 NO_REGRESS =		Yes
+USE_GROFF =		Yes
 
 RUN_DEPENDS =		net/nagios/nagios>=3.0
 CONFIGURE_STYLE =	gnu
@@ -42,5 +42,6 @@ do-install:
 	$(INSTALL_DATA_DIR) ${PREFIX}/share/examples/cnagios
 	$(INSTALL_SCRIPT) $(WRKSRC)/cnagios.pl ${PREFIX}/share/examples/cnagios
 	$(INSTALL_SCRIPT) $(WRKSRC)/cnagiosrc ${PREFIX}/share/examples/cnagios
+	$(INSTALL_MAN) $(WRKSRC)/cnagios.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
