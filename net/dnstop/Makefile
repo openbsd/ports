@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/14 08:23:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/03 01:03:37 sthen Exp $
 
 COMMENT =		pcap-based DNS query monitor
 
-DISTNAME =		dnstop-20110113b
-WRKDIST =		${WRKDIR}/${DISTNAME:S/b//}
+DISTNAME =		dnstop-20110127
 CATEGORIES =		net
 
 MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
