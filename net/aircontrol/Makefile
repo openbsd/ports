@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/19 22:31:32 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/03/03 13:20:43 sthen Exp $
 
 COMMENT=	management tool for Ubiquiti wireless devices
 
-DISTNAME=	aircontrol-1.2-beta
+DISTNAME=	aircontrol-1.3.6-beta
 PKGNAME=	${DISTNAME:S/-beta/beta/}
-REVISION=	0
 
 CATEGORIES=	net
 
@@ -18,7 +17,7 @@ PERMIT_DISTFILES_FTP=	proprietary license
 MASTER_SITES=	http://www.ubnt.com/downloads/aircontrol/
 
 MODULES=	java
-MODJAVA_VER=	1.6+
+MODJAVA_VER=	1.7
 MODJAVA_JRERUN=	Yes
 
 RUN_DEPENDS=	java/javaPathHelper

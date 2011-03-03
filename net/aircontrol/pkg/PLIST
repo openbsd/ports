@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/06/25 12:29:03 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/03/03 13:20:43 sthen Exp $
 @newgroup _aircontrol:650
 @newuser _aircontrol:650:_aircontrol:daemon:aircontrol user:/nonexistent:/sbin/nologin
 LICENSE
@@ -28,7 +28,9 @@ conf.dist/Catalina/localhost/
 conf.dist/catalina.policy
 @sample /var/aircontrol/conf/catalina.policy
 conf.dist/catalina.properties
+@mode 600
 @sample /var/aircontrol/conf/catalina.properties
+@mode
 conf.dist/catalina.properties.uptodate
 @sample /var/aircontrol/conf/catalina.properties.uptodate
 conf.dist/context.xml
@@ -51,7 +53,6 @@ data.dist/ConsoleDB.script
 @sample /var/aircontrol/data/ConsoleDB.script
 @owner
 docs/
-docs/index.html
 docs/licenses/
 docs/licenses/license-antlr.txt
 docs/licenses/license-apache-2.0.txt
@@ -91,3 +92,5 @@ webapps/ROOT.war.MD5
 @owner _aircontrol
 work/
 @extraunexec rm -rf ${PREFIX}
+@owner
+@rcscript ${RCDIR}/aircontrol

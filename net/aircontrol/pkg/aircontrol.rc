@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+# $OpenBSD: aircontrol.rc,v 1.1 2011/03/03 13:20:43 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/catalina.sh"
+daemon_flags="-Xmx768M -server"
+daemon_user="_aircontrol"
+
+. /etc/rc.d/rc.subr
+
+pexp="$(javaPathHelper -h aircontrol).*-Dcatalina.base=/var/aircontrol"
+
+rc_reload=NO
+
+rc_start() {
+        ${rcexec} \
+	    "CATALINA_OPTS=\"${daemon_flags}\" \
+	    JAVA_HOME=\"$(javaPathHelper -h aircontrol)\" \
+	    ${daemon} start" >/dev/null
+}
+
+rc_stop() {
+        ${rcexec} \
+	    "CATALINA_OPTS=\"${daemon_flags}\" \
+	    JAVA_HOME=\"$(javaPathHelper -h aircontrol)\" \
+	    ${daemon} stop" >/dev/null 2>&1
+}
+
+rc_cmd $1
