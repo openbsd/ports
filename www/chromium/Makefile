@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/03/03 13:47:47 robert Exp $
+# $OpenBSD: Makefile,v 1.28 2011/03/03 19:39:17 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -86,10 +86,6 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Ddisable_nacl=1 \
 		-Ddisable_sse2=1 \
 		-DOS=openbsd
-
-.if ${MACHINE_ARCH} != "amd64"
-GYP_DEFS+=	-Ddisable_sse2=1
-.endif
 
 pre-configure:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
