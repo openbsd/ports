@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/10/24 19:03:55 landry Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/03/03 21:03:09 landry Exp $
 @conflict terminal-<=0.4.5p1
 @bin bin/xfce4-terminal
 man/ca/
@@ -7,6 +7,9 @@ man/ca/man1/
 man/da/
 man/da/man1/
 @man man/da/man1/xfce4-terminal.1
+man/el/
+man/el/man1/
+@man man/el/man1/xfce4-terminal.1
 man/es/
 man/es/man1/
 @man man/es/man1/xfce4-terminal.1
@@ -16,9 +19,6 @@ man/fr/man1/
 man/gl/
 man/gl/man1/
 @man man/gl/man1/xfce4-terminal.1
-man/hr/
-man/hr/man1/
-@man man/hr/man1/xfce4-terminal.1
 man/id/
 man/id/man1/
 @man man/id/man1/xfce4-terminal.1
@@ -35,6 +35,9 @@ man/pt/man1/
 man/ru/
 man/ru/man1/
 @man man/ru/man1/xfce4-terminal.1
+man/sv/
+man/sv/man1/
+@man man/sv/man1/xfce4-terminal.1
 man/ug/
 man/ug/man1/
 @man man/ug/man1/xfce4-terminal.1
@@ -90,6 +93,17 @@ share/doc/Terminal/da/index.html
 share/doc/Terminal/da/preferences.html
 share/doc/Terminal/da/support.html
 share/doc/Terminal/da/usage.html
+share/doc/Terminal/el/
+share/doc/Terminal/el/advanced.html
+share/doc/Terminal/el/command-line.html
+share/doc/Terminal/el/copyright.html
+share/doc/Terminal/el/faq.html
+share/doc/Terminal/el/getting-started.html
+share/doc/Terminal/el/images
+share/doc/Terminal/el/index.html
+share/doc/Terminal/el/preferences.html
+share/doc/Terminal/el/support.html
+share/doc/Terminal/el/usage.html
 share/doc/Terminal/es/
 share/doc/Terminal/es/advanced.html
 share/doc/Terminal/es/command-line.html
@@ -123,17 +137,6 @@ share/doc/Terminal/gl/index.html
 share/doc/Terminal/gl/preferences.html
 share/doc/Terminal/gl/support.html
 share/doc/Terminal/gl/usage.html
-share/doc/Terminal/hr/
-share/doc/Terminal/hr/advanced.html
-share/doc/Terminal/hr/command-line.html
-share/doc/Terminal/hr/copyright.html
-share/doc/Terminal/hr/faq.html
-share/doc/Terminal/hr/getting-started.html
-share/doc/Terminal/hr/images
-share/doc/Terminal/hr/index.html
-share/doc/Terminal/hr/preferences.html
-share/doc/Terminal/hr/support.html
-share/doc/Terminal/hr/usage.html
 share/doc/Terminal/id/
 share/doc/Terminal/id/advanced.html
 share/doc/Terminal/id/command-line.html
@@ -200,6 +203,17 @@ share/doc/Terminal/ru/index.html
 share/doc/Terminal/ru/preferences.html
 share/doc/Terminal/ru/support.html
 share/doc/Terminal/ru/usage.html
+share/doc/Terminal/sv/
+share/doc/Terminal/sv/advanced.html
+share/doc/Terminal/sv/command-line.html
+share/doc/Terminal/sv/copyright.html
+share/doc/Terminal/sv/faq.html
+share/doc/Terminal/sv/getting-started.html
+share/doc/Terminal/sv/images
+share/doc/Terminal/sv/index.html
+share/doc/Terminal/sv/preferences.html
+share/doc/Terminal/sv/support.html
+share/doc/Terminal/sv/usage.html
 share/doc/Terminal/terminal.css
 share/doc/Terminal/ug/
 share/doc/Terminal/ug/advanced.html
