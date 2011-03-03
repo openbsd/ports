@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/01/18 21:34:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/03/03 21:10:38 landry Exp $
 @conflict xffm-*
 %%SHARED%%
 @bin bin/Thunar
@@ -46,8 +46,6 @@ share/applications/Thunar-bulk-rename.desktop
 share/applications/Thunar-folder-handler.desktop
 share/applications/Thunar.desktop
 share/applications/thunar-settings.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/org.xfce.FileManager.service
 share/dbus-1/services/org.xfce.Thunar.service
 share/doc/Thunar/
@@ -385,26 +383,26 @@ share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/Thunar.png
 share/icons/hicolor/16x16/stock/
 share/icons/hicolor/16x16/stock/navigation/
+share/icons/hicolor/16x16/stock/navigation/stock_folder-copy.png
+share/icons/hicolor/16x16/stock/navigation/stock_folder-move.png
 share/icons/hicolor/16x16/stock/navigation/stock_thunar-shortcuts.png
 share/icons/hicolor/16x16/stock/navigation/stock_thunar-templates.png
 share/icons/hicolor/24x24/
 share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/Thunar.png
+share/icons/hicolor/24x24/stock/
+share/icons/hicolor/24x24/stock/navigation/
+share/icons/hicolor/24x24/stock/navigation/stock_folder-copy.png
+share/icons/hicolor/24x24/stock/navigation/stock_folder-move.png
 share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/Thunar.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/Thunar.svg
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/Thunar.mo
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/Thunar.mo
 share/locale/be/LC_MESSAGES/Thunar.mo
-share/locale/bn/
-share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/Thunar.mo
 share/locale/ca/LC_MESSAGES/Thunar.mo
 share/locale/cs/LC_MESSAGES/Thunar.mo
@@ -414,8 +412,6 @@ share/locale/dz/
 share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/Thunar.mo
 share/locale/el/LC_MESSAGES/Thunar.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/Thunar.mo
 share/locale/eo/LC_MESSAGES/Thunar.mo
 share/locale/es/LC_MESSAGES/Thunar.mo
@@ -433,25 +429,15 @@ share/locale/ja/LC_MESSAGES/Thunar.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/Thunar.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/Thunar.mo
 share/locale/ko/LC_MESSAGES/Thunar.mo
-share/locale/ku/
-share/locale/ku/LC_MESSAGES/
 share/locale/ku/LC_MESSAGES/Thunar.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/Thunar.mo
 share/locale/lv/LC_MESSAGES/Thunar.mo
-share/locale/mk/
-share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/Thunar.mo
 share/locale/nb/LC_MESSAGES/Thunar.mo
 share/locale/nl/LC_MESSAGES/Thunar.mo
 share/locale/nn/LC_MESSAGES/Thunar.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/Thunar.mo
 share/locale/pl/LC_MESSAGES/Thunar.mo
 share/locale/pt/LC_MESSAGES/Thunar.mo
@@ -462,13 +448,9 @@ share/locale/si/
 share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/Thunar.mo
 share/locale/sk/LC_MESSAGES/Thunar.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/Thunar.mo
 share/locale/sv/LC_MESSAGES/Thunar.mo
 share/locale/tr/LC_MESSAGES/Thunar.mo
-share/locale/ug/
-share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/Thunar.mo
 share/locale/uk/LC_MESSAGES/Thunar.mo
 share/locale/ur/
