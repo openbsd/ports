@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/01/18 21:34:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/03/03 21:17:11 landry Exp $
 
 COMMENT =	Thunar archive plugin
 
-XFCE_VERSION =	0.2.4
+XFCE_VERSION =	0.3.0
 THUNAR_PLUGIN =	thunar-archive-plugin
-REVISION =	4
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -19,6 +18,7 @@ RUN_DEPENDS =	x11/xfce4/thunar \
 		xarchiver-*|file-roller-*|kdeutils-*:x11/xarchiver
 
 LIB_DEPENDS +=	x11/xfce4/exo
+CONFIGURE_ARGS +=	--disable-linker-opts
 
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
