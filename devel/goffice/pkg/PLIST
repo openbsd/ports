@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/11/26 09:42:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/03/03 13:19:04 ajacoutot Exp $
 include/libgoffice-0.8/
 include/libgoffice-0.8/goffice/
 include/libgoffice-0.8/goffice/app/
@@ -397,6 +397,7 @@ share/gtk-doc/html/goffice/goffice-0.8-GOReg.html
 share/gtk-doc/html/goffice/goffice-0.8-GORegression.html
 share/gtk-doc/html/goffice/goffice-0.8-GOUndo.html
 share/gtk-doc/html/goffice/goffice-0.8-GOUrl.html
+share/gtk-doc/html/goffice/goffice-0.8-GOffice.html
 share/gtk-doc/html/goffice/goffice-0.8-GogAxisMap.html
 share/gtk-doc/html/goffice/goffice-0.8-GogChartMap.html
 share/gtk-doc/html/goffice/goffice-0.8-GogGuru.html
@@ -412,7 +413,6 @@ share/gtk-doc/html/goffice/goffice-0.8-go-distribution.html
 share/gtk-doc/html/goffice/goffice-0.8-go-image.html
 share/gtk-doc/html/goffice/goffice-0.8-go-plugin.html
 share/gtk-doc/html/goffice/goffice-0.8-go-string.html
-share/gtk-doc/html/goffice/goffice-0.8-goffice.html
 share/gtk-doc/html/goffice/goffice-0.8.devhelp
 share/gtk-doc/html/goffice/goffice-0.8.devhelp2
 share/gtk-doc/html/goffice/home.png
