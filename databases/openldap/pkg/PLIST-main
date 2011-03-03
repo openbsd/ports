@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2011/01/07 10:24:30 pea Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2011/03/03 14:52:04 jasper Exp $
 @pkgpath ${BASE_PKGPATH}
 bin/ldapadd
 @bin bin/ldapcompare
@@ -108,10 +108,12 @@ lib/libldap_r.la
 @man man/man3/ldap_delete_ext.3
 @man man/man3/ldap_delete_ext_s.3
 @man man/man3/ldap_delete_s.3
+@man man/man3/ldap_destroy.3
 @man man/man3/ldap_dn2ad_canonical.3
 @man man/man3/ldap_dn2dcedn.3
 @man man/man3/ldap_dn2str.3
 @man man/man3/ldap_dn2ufn.3
+@man man/man3/ldap_dup.3
 @man man/man3/ldap_err2string.3
 @man man/man3/ldap_errlist.3
 @man man/man3/ldap_error.3
@@ -129,6 +131,7 @@ lib/libldap_r.la
 @man man/man3/ldap_get_values.3
 @man man/man3/ldap_get_values_len.3
 @man man/man3/ldap_init.3
+@man man/man3/ldap_init_fd.3
 @man man/man3/ldap_initialize.3
 @man man/man3/ldap_install_tls.3
 @man man/man3/ldap_is_ldap_url.3
@@ -183,6 +186,7 @@ lib/libldap_r.la
 @man man/man3/ldap_search_st.3
 @man man/man3/ldap_set_option.3
 @man man/man3/ldap_set_rebind_proc.3
+@man man/man3/ldap_set_urllist_proc.3
 @man man/man3/ldap_simple_bind.3
 @man man/man3/ldap_simple_bind_s.3
 @man man/man3/ldap_sort.3

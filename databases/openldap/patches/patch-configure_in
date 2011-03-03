@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.1 2011/01/07 10:24:30 pea Exp $
---- configure.in.orig	Wed Sep 30 02:24:39 2009
-+++ configure.in	Mon May  3 18:32:18 2010
+$OpenBSD: patch-configure_in,v 1.2 2011/03/03 14:52:04 jasper Exp $
+--- configure.in.orig	Mon Jan 31 21:51:37 2011
++++ configure.in	Wed Mar  2 15:44:56 2011
 @@ -582,7 +582,7 @@ SLAPD_SQL_LIBS=
  SLAPD_SQL_INCLUDES=
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.1 2011/01/07 10:24:30 pea Exp $
  SASL_LIBS=
  TLS_LIBS=
  MODULES_LIBS=
-@@ -1901,6 +1901,7 @@ if test $ol_enable_wrappers != no ; then
+@@ -1908,6 +1908,7 @@ if test $ol_enable_wrappers != no ; then
  		save_LIBS="$LIBS"
  		LIBS="$LIBS -lwrap"
  		AC_LINK_IFELSE([AC_LANG_PROGRAM([[
