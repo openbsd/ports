@@ -1,0 +1,26 @@
+$OpenBSD: patch-xpdf_SplashOutputDev_cc,v 1.3 2011/03/03 21:22:13 stsp Exp $
+
+Same as poppler commit 37077aa475d2dee81f87daa05297b201eeb99c87.
+Fixes a heap overflow.
+
+--- xpdf/SplashOutputDev.cc.orig	Tue Feb 27 23:05:52 2007
++++ xpdf/SplashOutputDev.cc	Mon Feb 14 00:37:00 2011
+@@ -2475,14 +2475,14 @@ void SplashOutputDev::beginTransparencyGroup(GfxState 
+   tx = (int)floor(xMin);
+   if (tx < 0) {
+     tx = 0;
+-  } else if (tx > bitmap->getWidth()) {
+-    tx = bitmap->getWidth();
++  } else if (tx >= bitmap->getWidth()) {
++    tx = bitmap->getWidth() - 1;
+   }
+   ty = (int)floor(yMin);
+   if (ty < 0) {
+     ty = 0;
+-  } else if (ty > bitmap->getHeight()) {
+-    ty = bitmap->getHeight();
++  } else if (ty >= bitmap->getHeight()) {
++    ty = bitmap->getHeight() - 1;
+   }
+   w = (int)ceil(xMax) - tx + 1;
+   if (tx + w > bitmap->getWidth()) {
