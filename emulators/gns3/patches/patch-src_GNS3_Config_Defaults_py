@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_GNS3_Config_Defaults_py,v 1.1 2011/03/03 16:29:29 sthen Exp $
+--- src/GNS3/Config/Defaults.py.orig	Sat Jan 29 12:17:20 2011
++++ src/GNS3/Config/Defaults.py	Sat Jan 29 12:17:32 2011
+@@ -19,7 +19,7 @@
+ # code@gns3.net
+ #
+ 
+-SysConfigDir = "/etc/gns3"
++SysConfigDir = "${SYSCONFDIR}/gns3"
+ UsrConfigDir = "~/.gns3"
+ 
+ conf_library_defaults = {

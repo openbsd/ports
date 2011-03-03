@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/17 22:10:29 armani Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/03/03 16:29:29 sthen Exp $
 bin/gns3
 lib/python${MODPY_VERSION}/site-packages/GNS3/
 lib/python${MODPY_VERSION}/site-packages/GNS3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -89,6 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_jp.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_kr.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_pl.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_pt_br.qm
+lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_ro.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_ru.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_sk.qm
 lib/python${MODPY_VERSION}/site-packages/GNS3/Langs/Lang_sr.qm
@@ -183,6 +184,8 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/StartupConfigDialog.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/StartupConfigDialog.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/StyleDialog.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/StyleDialog.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/SymbolDialog.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/SymbolDialog.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/SymbolManager.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/SymbolManager.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Telnet.py
@@ -279,10 +282,14 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_StartupConfig.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_StartupConfig.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_StyleDialog.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_StyleDialog.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_SymbolDialog.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_SymbolDialog.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_SymbolManager.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_SymbolManager.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_Wizard.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Form_Wizard.pyc
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Widget_capturesDock.py
+lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Widget_capturesDock.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Widget_nodesDock.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Widget_nodesDock.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/Ui/Widget_topologySummaryDock.py
@@ -301,3 +308,5 @@ lib/python${MODPY_VERSION}/site-packages/GNS3/Workspace.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/Workspace.pyc
 lib/python${MODPY_VERSION}/site-packages/GNS3/__init__.py
 lib/python${MODPY_VERSION}/site-packages/GNS3/__init__.pyc
+libexec/gns3/
+libexec/gns3/qemuwrapper.py

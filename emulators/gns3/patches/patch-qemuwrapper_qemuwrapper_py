@@ -1,0 +1,40 @@
+$OpenBSD: patch-qemuwrapper_qemuwrapper_py,v 1.1 2011/03/03 16:29:29 sthen Exp $
+--- qemuwrapper/qemuwrapper.py.orig	Tue Dec 14 17:52:57 2010
++++ qemuwrapper/qemuwrapper.py	Sat Jan 29 21:34:13 2011
+@@ -44,7 +44,7 @@ import threading
+ import SocketServer
+ import time
+ import random
+-import pemubin
++#import pemubin
+ 
+ 
+ __author__ = 'Thomas Pani and Jeremy Grossmann'
+@@ -148,7 +148,7 @@ class xEMUInstance(object):
+ 
+         else:
+             print "Renicing to 19"
+-            returncode = subprocess.call(['renice', '+19', str(self.process.pid)])
++            returncode = subprocess.call(['renice', '-n', '19', '-p', str(self.process.pid)])
+             if returncode:
+                 print "    failed."
+                 # ignore if renice didn't worked
+@@ -930,12 +930,12 @@ def main():
+         global WORKDIR
+         WORKDIR = options.wd
+ 
+-    if not os.path.exists(PEMU_DIR):
+-        print "Unpacking pemu binary."
+-        f = cStringIO.StringIO(base64.decodestring(pemubin.ascii))
+-        tar = tarfile.open('dummy', 'r:gz', f)
+-        for member in tar.getmembers():
+-            tar.extract(member)
++#    if not os.path.exists(PEMU_DIR):
++#        print "Unpacking pemu binary."
++#        f = cStringIO.StringIO(base64.decodestring(pemubin.ascii))
++#        tar = tarfile.open('dummy', 'r:gz', f)
++#        for member in tar.getmembers():
++#            tar.extract(member)
+ 
+     server = QemuWrapperServer((host, port), QemuWrapperRequestHandler)
+ 

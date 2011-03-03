@@ -1,12 +1,26 @@
-$OpenBSD: patch-src_GNS3_Application_py,v 1.1 2009/04/05 13:31:38 sthen Exp $
---- src/GNS3/Application.py.orig	Sun Apr  5 11:28:42 2009
-+++ src/GNS3/Application.py	Sun Apr  5 11:28:46 2009
-@@ -259,7 +259,7 @@ class Application(QApplication, Singleton):
+$OpenBSD: patch-src_GNS3_Application_py,v 1.2 2011/03/03 16:29:29 sthen Exp $
+--- src/GNS3/Application.py.orig	Tue Dec 14 17:52:57 2010
++++ src/GNS3/Application.py	Sat Jan 29 11:33:08 2011
+@@ -319,7 +319,7 @@ class Application(QApplication, Singleton):
  
          self.systconf['dynamips'] = systemDynamipsConf()
          confo = self.systconf['dynamips']
 -        confo.path = ConfDB().get('Dynamips/hypervisor_path', unicode(''))
-+        confo.path = ConfDB().get('Dynamips/hypervisor_path', unicode('${PREFIX}/bin/dynamips'))
++        confo.path = ConfDB().get('Dynamips/hypervisor_path', unicode('${LOCALBASE}/bin/dynamips'))
          confo.port = int(ConfDB().get('Dynamips/hypervisor_port', 7200))
          confo.baseUDP = int(ConfDB().get('Dynamips/hypervisor_baseUDP', 10000))
          confo.baseConsole = int(ConfDB().get('Dynamips/hypervisor_baseConsole', 2000))
+@@ -348,10 +348,10 @@ class Application(QApplication, Singleton):
+         # Qemu config
+         self.systconf['qemu'] = systemQemuConf()
+         confo = self.systconf['qemu']
+-        confo.qemuwrapper_path = ConfDB().get('Qemu/qemuwrapper_path', unicode(''))
++        confo.qemuwrapper_path = ConfDB().get('Qemu/qemuwrapper_path', unicode('${PREFIX}/libexec/gns3/qemuwrapper.py'))
+         confo.qemuwrapper_workdir = ConfDB().get('Qemu/qemuwrapper_working_directory', unicode(''))
+-        confo.qemu_path = ConfDB().get('Qemu/qemu_path', unicode('qemu'))
+-        confo.qemu_img_path = ConfDB().get('Qemu/qemu_img_path', unicode('qemu-img'))
++        confo.qemu_path = ConfDB().get('Qemu/qemu_path', unicode('${LOCALBASE}/bin/qemu'))
++        confo.qemu_img_path = ConfDB().get('Qemu/qemu_img_path', unicode('${LOCALBASE}/bin/qemu-img'))
+         confo.external_hosts = ConfDB().get('Qemu/external_hosts', unicode('localhost:10525')).split(',')
+         confo.enable_QemuManager = ConfDB().value("Qemu/enable_QemuManager", QVariant(True)).toBool()
+         confo.import_use_QemuManager = ConfDB().value("Qemu/qemu_manager_import", QVariant(True)).toBool()

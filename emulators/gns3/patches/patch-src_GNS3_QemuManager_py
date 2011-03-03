@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_GNS3_QemuManager_py,v 1.1 2011/03/03 16:29:29 sthen Exp $
+--- src/GNS3/QemuManager.py.orig	Sat Jan 29 12:28:23 2011
++++ src/GNS3/QemuManager.py	Sat Jan 29 12:28:45 2011
+@@ -127,7 +127,7 @@ class QemuManager(object):
+         if sys.platform.startswith('win'):
+             self.proc.start('"' + globals.GApp.systconf['qemu'].qemuwrapper_path + '"', ['--listen', binding, '--port', str(self.port)])
+         else:
+-            self.proc.start('python',  [globals.GApp.systconf['qemu'].qemuwrapper_path, '--listen', binding, '--port', str(self.port)])
++            self.proc.start('${MODPY_BIN}',  [globals.GApp.systconf['qemu'].qemuwrapper_path, '--listen', binding, '--port', str(self.port)])
+ 
+         if self.proc.waitForStarted() == False:
+             QtGui.QMessageBox.critical(globals.GApp.mainWindow, 'Qemu Manager',  unicode(translate("QemuManager", "Can't start Qemu on port %i")) % self.port)
+@@ -173,7 +173,7 @@ class QemuManager(object):
+         if sys.platform.startswith('win'):
+             proc.start('"' + globals.GApp.systconf['qemu'].qemuwrapper_path + '"')
+         else:
+-            proc.start('python',  [globals.GApp.systconf['qemu'].qemuwrapper_path])
++            proc.start('${MODPY_BIN}',  [globals.GApp.systconf['qemu'].qemuwrapper_path])
+ 
+         if proc.waitForStarted() == False:
+             return False
