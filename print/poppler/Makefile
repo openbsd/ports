@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/12/24 14:02:12 kili Exp $
+# $OpenBSD: Makefile,v 1.45 2011/03/03 21:25:38 stsp Exp $
 .include <bsd.own.mk>
 
 COMMENT-main=	PDF rendering library
@@ -9,7 +9,7 @@ V=		0.14.5
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
-REVISION-main=	0
+REVISION-main=	1
 FULLPKGNAME-qt=	poppler-qt-$V
 FULLPKGNAME-qt4=poppler-qt4-$V
 
