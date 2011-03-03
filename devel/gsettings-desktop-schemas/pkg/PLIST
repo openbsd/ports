@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/01/10 21:37:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/03/03 13:45:57 ajacoutot Exp $
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
 lib/pkgconfig/
@@ -10,6 +10,7 @@ share/glib-2.0/
 share/glib-2.0/schemas/
 share/glib-2.0/schemas/org.gnome.desktop.a11y.applications.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.a11y.keyboard.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.a11y.magnifier.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.a11y.mouse.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.background.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.default-applications.gschema.xml
@@ -17,9 +18,14 @@ share/glib-2.0/schemas/org.gnome.desktop.enums.xml
 share/glib-2.0/schemas/org.gnome.desktop.interface.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.lockdown.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.media-handling.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.screensaver.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.session.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.sound.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.thumbnail-cache.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.thumbnailers.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.proxy.gschema.xml
+share/locale/de/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/es/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/sl/LC_MESSAGES/gsettings-desktop-schemas.mo
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas

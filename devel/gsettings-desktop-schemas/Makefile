@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/01/10 21:37:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/03/03 13:45:56 ajacoutot Exp $
 
 COMMENT=	collection of shared GSettings schemas
 
 GNOME_PROJECT=	gsettings-desktop-schemas
-GNOME_VERSION=	0.1.4
+GNOME_VERSION=	0.1.7
 
 CATEGORIES=	devel
 
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	x11/gnome
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		devel/gettext
 RUN_DEPENDS=	devel/dconf
 
 # don't inherit USE_LIBTOOL from the gnome MODULE
@@ -27,6 +28,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-silent-rules \
 		--disable-schemas-compile
 
-FAKE_FLAGS=	pkgconfigdir=${PREFIX}/lib/pkgconfig
+FAKE_FLAGS=	pkgconfigdir=${PREFIX}/lib/pkgconfig \
+		itlocaledir=${PREFIX}/share/locale/
 
 .include <bsd.port.mk>
