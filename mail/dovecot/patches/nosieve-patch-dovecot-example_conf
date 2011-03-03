@@ -1,6 +1,6 @@
-$OpenBSD: nosieve-patch-dovecot-example_conf,v 1.1 2010/03/23 21:32:07 pea Exp $
---- dovecot-example.conf.orig	Thu Jun 18 09:37:43 2009
-+++ dovecot-example.conf	Wed Jul  8 20:57:18 2009
+$OpenBSD: nosieve-patch-dovecot-example_conf,v 1.2 2011/03/03 00:40:05 sthen Exp $
+--- dovecot-example.conf.orig	Mon May 24 16:01:14 2010
++++ dovecot-example.conf	Thu Mar  3 00:22:42 2011
 @@ -12,12 +12,11 @@
  # Default values are shown for each setting, it's not required to uncomment
  # those. These are exceptions to this though: No sections (e.g. namespace {})
@@ -138,7 +138,7 @@ $OpenBSD: nosieve-patch-dovecot-example_conf,v 1.1 2010/03/23 21:32:07 pea Exp $
  
    # Don't try to set mails non-recent or seen with POP3 sessions. This is
    # mostly intended to reduce disk I/O. With maildir it doesn't move files
-@@ -678,7 +678,7 @@ protocol pop3 {
+@@ -682,7 +682,7 @@ protocol pop3 {
    # Support for dynamically loadable plugins. mail_plugins is a space separated
    # list of plugins to load.
    #mail_plugins = 
@@ -147,7 +147,7 @@ $OpenBSD: nosieve-patch-dovecot-example_conf,v 1.1 2010/03/23 21:32:07 pea Exp $
  
    # Workarounds for various client bugs:
    #   outlook-no-nuls:
-@@ -688,7 +688,7 @@ protocol pop3 {
+@@ -692,7 +692,7 @@ protocol pop3 {
    #     Outlook Express and Netscape Mail breaks if end of headers-line is
    #     missing. This option simply sends it if it's missing.
    # The list is space-separated.
@@ -156,7 +156,7 @@ $OpenBSD: nosieve-patch-dovecot-example_conf,v 1.1 2010/03/23 21:32:07 pea Exp $
  }
  
  ##
-@@ -706,7 +706,7 @@ protocol lda {
+@@ -710,7 +710,7 @@ protocol lda {
    # Support for dynamically loadable plugins. mail_plugins is a space separated
    # list of plugins to load.
    #mail_plugins = 
@@ -165,7 +165,7 @@ $OpenBSD: nosieve-patch-dovecot-example_conf,v 1.1 2010/03/23 21:32:07 pea Exp $
  
    # If user is over quota, return with temporary failure instead of
    # bouncing the mail.
-@@ -720,7 +720,7 @@ protocol lda {
+@@ -724,7 +724,7 @@ protocol lda {
    #deliver_log_format = msgid=%m: %$
  
    # Binary to use for sending mails.
@@ -174,7 +174,16 @@ $OpenBSD: nosieve-patch-dovecot-example_conf,v 1.1 2010/03/23 21:32:07 pea Exp $
  
    # Subject: header to use for rejection mails. You can use the same variables
    # as for rejection_reason below.
-@@ -739,7 +739,7 @@ protocol lda {
+@@ -735,7 +735,7 @@ protocol lda {
+   #rejection_reason = Your message to <%t> was automatically rejected:%n%r
+ 
+   # UNIX socket path to master authentication server to find users.
+-  #auth_socket_path = /var/run/dovecot/auth-master
++  #auth_socket_path = /var/dovecot/auth-master
+ }
+ 
+ ##
+@@ -743,7 +743,7 @@ protocol lda {
  ##
  
  # Executable location
@@ -183,7 +192,7 @@ $OpenBSD: nosieve-patch-dovecot-example_conf,v 1.1 2010/03/23 21:32:07 pea Exp $
  
  # Set max. process size in megabytes.
  #auth_process_size = 256
-@@ -868,7 +868,7 @@ auth default {
+@@ -872,7 +872,7 @@ auth default {
    # database (passwd usually), you can use static userdb.
    # REMEMBER: You'll need /etc/pam.d/dovecot file created for PAM
    # authentication to actually work. <doc/wiki/PasswordDatabase.PAM.txt>
@@ -192,7 +201,7 @@ $OpenBSD: nosieve-patch-dovecot-example_conf,v 1.1 2010/03/23 21:32:07 pea Exp $
      # [session=yes] [setcred=yes] [failure_show_msg=yes] [max_requests=<n>]
      # [cache_key=<key>] [<service name>]
      #
-@@ -901,7 +901,7 @@ auth default {
+@@ -905,7 +905,7 @@ auth default {
      #   args = session=yes %Ls
      #   args = cache_key=%u dovecot
      #args = dovecot
@@ -201,7 +210,7 @@ $OpenBSD: nosieve-patch-dovecot-example_conf,v 1.1 2010/03/23 21:32:07 pea Exp $
  
    # System users (NSS, /etc/passwd, or similiar)
    # In many systems nowadays this uses Name Service Switch, which is
-@@ -921,10 +921,10 @@ auth default {
+@@ -925,10 +925,10 @@ auth default {
  
    # PAM-like authentication for OpenBSD.
    # <doc/wiki/PasswordDatabase.BSDAuth.txt>
@@ -214,3 +223,30 @@ $OpenBSD: nosieve-patch-dovecot-example_conf,v 1.1 2010/03/23 21:32:07 pea Exp $
  
    # passwd-like file with specified location
    # <doc/wiki/AuthDatabase.PasswdFile.txt>
+@@ -1070,7 +1070,7 @@ auth default {
+       # Master socket provides access to userdb information. It's typically
+       # used to give Dovecot's local delivery agent access to userdb so it
+       # can find mailbox locations.
+-      #path = /var/run/dovecot/auth-master
++      #path = /var/dovecot/auth-master
+       #mode = 0600
+       # Default user/group is the one who started dovecot-auth (root)
+       #user = 
+@@ -1080,7 +1080,7 @@ auth default {
+       # The client socket is generally safe to export to everyone. Typical use
+       # is to export it to your SMTP server so it can do SMTP AUTH lookups
+       # using it.
+-      #path = /var/run/dovecot/auth-client
++      #path = /var/dovecot/auth-client
+       #mode = 0660
+     #}
+   #}
+@@ -1094,7 +1094,7 @@ auth default {
+ #auth external {
+ #  socket connect {
+ #    master {
+-#      path = /var/run/dovecot/auth-master
++#      path = /var/dovecot/auth-master
+ #    }
+ #  }
+ #}

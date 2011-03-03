@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.15 2010/10/03 23:25:52 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.16 2011/03/03 00:40:05 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 @newgroup _dovecot:518
 @newuser _dovecot:518:_dovecot:daemon:Dovecot Account:/nonexistent:/sbin/nologin
@@ -333,3 +333,4 @@ share/examples/dovecot/dovecot-sql-example.conf
 @extraunexec rm -rf /var/dovecot
 @extra /etc/ssl/dovecotcert.pem
 @extra /etc/ssl/private/dovecot.pem
+@rcscript ${RCDIR}/dovecot

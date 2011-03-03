@@ -1,6 +1,6 @@
-$OpenBSD: managesieve-patch-dovecot-example_conf,v 1.1 2010/03/23 21:32:07 pea Exp $
---- dovecot-example.conf.orig	Wed Nov 18 10:03:59 2009
-+++ dovecot-example.conf	Wed Nov 18 10:04:00 2009
+$OpenBSD: managesieve-patch-dovecot-example_conf,v 1.2 2011/03/03 00:40:05 sthen Exp $
+--- dovecot-example.conf.orig	Thu Mar  3 00:10:38 2011
++++ dovecot-example.conf	Thu Mar  3 00:11:58 2011
 @@ -12,12 +12,11 @@
  # Default values are shown for each setting, it's not required to uncomment
  # those. These are exceptions to this though: No sections (e.g. namespace {})
@@ -188,6 +188,15 @@ $OpenBSD: managesieve-patch-dovecot-example_conf,v 1.1 2010/03/23 21:32:07 pea E
  
    # Subject: header to use for rejection mails. You can use the same variables
    # as for rejection_reason below.
+@@ -775,7 +775,7 @@ protocol lda {
+   #rejection_reason = Your message to <%t> was automatically rejected:%n%r
+ 
+   # UNIX socket path to master authentication server to find users.
+-  #auth_socket_path = /var/run/dovecot/auth-master
++  #auth_socket_path = /var/dovecot/auth-master
+ }
+ 
+ ##
 @@ -783,7 +783,7 @@ protocol lda {
  ##
  
@@ -228,6 +237,33 @@ $OpenBSD: managesieve-patch-dovecot-example_conf,v 1.1 2010/03/23 21:32:07 pea E
  
    # passwd-like file with specified location
    # <doc/wiki/AuthDatabase.PasswdFile.txt>
+@@ -1110,7 +1110,7 @@ auth default {
+       # Master socket provides access to userdb information. It's typically
+       # used to give Dovecot's local delivery agent access to userdb so it
+       # can find mailbox locations.
+-      #path = /var/run/dovecot/auth-master
++      #path = /var/dovecot/auth-master
+       #mode = 0600
+       # Default user/group is the one who started dovecot-auth (root)
+       #user = 
+@@ -1120,7 +1120,7 @@ auth default {
+       # The client socket is generally safe to export to everyone. Typical use
+       # is to export it to your SMTP server so it can do SMTP AUTH lookups
+       # using it.
+-      #path = /var/run/dovecot/auth-client
++      #path = /var/dovecot/auth-client
+       #mode = 0660
+     #}
+   #}
+@@ -1134,7 +1134,7 @@ auth default {
+ #auth external {
+ #  socket connect {
+ #    master {
+-#      path = /var/run/dovecot/auth-master
++#      path = /var/dovecot/auth-master
+ #    }
+ #  }
+ #}
 @@ -1232,7 +1232,7 @@ plugin {
    # a dictionary so it can be quickly determined which mailboxes contain
    # expired mails. The actual expunging is done in a nightly cronjob, which

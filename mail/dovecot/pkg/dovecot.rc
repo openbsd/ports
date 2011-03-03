@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: dovecot.rc,v 1.1 2011/03/03 00:40:05 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/dovecot"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
