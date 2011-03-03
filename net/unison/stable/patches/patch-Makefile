@@ -1,0 +1,11 @@
+--- Makefile.orig	Thu Dec 16 22:52:10 2010
++++ Makefile	Thu Dec 16 22:52:39 2010
+@@ -60,7 +60,7 @@
+ # NAME, VERSION, and MAJORVERSION, automatically generated
+ -include Makefile.ProjectInfo
+ 
+-Makefile.ProjectInfo: mkProjectInfo.ml $(wildcard ../.bzr/branch/last-revision)
++Makefile.ProjectInfo: mkProjectInfo $(wildcard ../.bzr/branch/last-revision)
+ 	./mkProjectInfo > $@
+ 
+ mkProjectInfo: mkProjectInfo.ml

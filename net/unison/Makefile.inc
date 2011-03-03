@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.16 2010/11/19 22:31:39 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2011/03/03 08:47:55 giovanni Exp $
 
 DISTNAME=	unison-$V
 CATEGORIES=	net
@@ -32,6 +32,7 @@ WANTLIB += atk-1.0 iconv intl cairo png xcb z
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 gdk_pixbuf-2.0
 WANTLIB += gdk-x11-2.0 gtk-x11-2.0
+WANTLIB += GL Xxf86vm drm gthread-2.0 pthread xcb-render xcb-shm
 .endif
 
 # CFLAGS _must_ be empty.  This is an OCaml compiler.
@@ -39,11 +40,8 @@ MAKE_FLAGS+=	NATIVE=${MODOCAML_NATIVE:S/Yes/true/:S/No/false/} \
 		OCAMLOPT=ocamlopt.opt \
 		CFLAGS=
 
-# We are still not sure whether ocaml works -with-pthreads on all
-# architectures.  For now keep it at default false.
-# MAKE_FLAGS+=	THREADS=true
-
-NO_REGRESS=	Yes
+REGRESS_TARGET=	selftest
+PORTHOME=	${WRKDIR}
 
 # Avoid multiple all:: entries and use the real target entry.
 ALL_TARGET=	unison
