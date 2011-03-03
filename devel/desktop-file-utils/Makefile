@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/03/03 13:47:44 ajacoutot Exp $
 
-COMMENT=	utilities for 'desktop' entries
+COMMENT=	utilities for dot.desktop entries
 
-DISTNAME=	desktop-file-utils-0.17
+DISTNAME=	desktop-file-utils-0.18
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	devel
@@ -29,7 +29,8 @@ USE_GROFF =	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		ac_cv_prog_EMACS=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-silent-rules
 
