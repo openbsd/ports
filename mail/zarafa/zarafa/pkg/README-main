@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2011/01/15 23:53:35 ajacoutot Exp $
+$OpenBSD: README-main,v 1.3 2011/03/03 13:16:05 ajacoutot Exp $
 
 *** Upgrading users: refer to zarafa documentation on the web to check
 *** if any particular step is required after upgrading to a new version. 
@@ -31,7 +31,8 @@ After zarafa-server was started for the first time
     # ${TRUEPREFIX}/bin/zarafa-admin -s
 
 * Adding an admin user -- see zarafa-admin(1).
-    # ${TRUEPREFIX}/bin/zarafa-admin -c zadmin -p secret -e zarafa.admin@domain.tld -f "John Doe" -a 2
+    # ${TRUEPREFIX}/bin/zarafa-admin -c zadmin -p secret \
+        -e zarafa.admin@domain.tld -f "John Doe" -a 2
 
 
 Mail delivery agent configuration
@@ -95,7 +96,7 @@ ${INSTDIR} for regular web client access.
 With Apache, AllowOverride settings are required on the ${INSTDIR}
 directory. You can configure this as follows:
     # ln -s ${PREFIX-web}/conf/modules.sample/zarafa.conf \
-      ${PREFIX-web}/conf/modules
+        /var/www/conf/modules
 
 If you want to debug the webaccess, copy the following file
    ${INSTDIR}/debug.php.disabled
@@ -109,7 +110,7 @@ link from ${PREFIX-web}/conf/php5.sample/${MODULE_NAME}.ini to
 ${PREFIX-web}/conf/php5/${MODULE_NAME}.ini:
 
     # ln -fs ${PREFIX-web}/conf/php5.sample/${MODULE_NAME}.ini \
-      ${PREFIX-web}/conf/php5/${MODULE_NAME}.ini
+        ${PREFIX-web}/conf/php5/${MODULE_NAME}.ini
 
 
 The PHP mapi module and OpenBSD Apache

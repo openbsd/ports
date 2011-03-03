@@ -1,7 +1,7 @@
-$OpenBSD: patch-common_Makefile_in,v 1.7 2010/08/31 17:57:21 ajacoutot Exp $
---- common/Makefile.in.orig	Mon Aug 30 09:31:50 2010
-+++ common/Makefile.in	Tue Aug 31 15:14:03 2010
-@@ -283,7 +283,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX \
+$OpenBSD: patch-common_Makefile_in,v 1.8 2011/03/03 13:16:05 ajacoutot Exp $
+--- common/Makefile.in.orig	Mon Jan 24 13:06:15 2011
++++ common/Makefile.in	Tue Jan 25 12:56:17 2011
+@@ -290,7 +290,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX \
  	-I${top_srcdir}/mapi4linux/include -I${top_srcdir}/provider/common \
  	-I${top_srcdir}/libfreebusy
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-common_Makefile_in,v 1.7 2010/08/31 17:57:21 ajacoutot Exp $
  libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
  			rtfutil.cpp									\
  			codepage.cpp							\
-@@ -298,7 +298,7 @@ libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
+@@ -305,7 +305,7 @@ libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
  			ZarafaCode.cpp								\
  			ECABEntryID.cpp
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-common_Makefile_in,v 1.7 2010/08/31 17:57:21 ajacoutot Exp $
  libcommon_util_la_SOURCES = platform.cpp			\
  			platform.linux.cpp						\
  			md5.cpp									\
-@@ -318,7 +318,7 @@ libcommon_util_la_SOURCES = platform.cpp			\
+@@ -325,7 +325,7 @@ libcommon_util_la_SOURCES = platform.cpp			\
  			TimeUtil.cpp							\
  			RecurrenceState.cpp
  

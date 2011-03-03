@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.7 2010/08/31 17:57:21 ajacoutot Exp $
---- installer/linux/server.cfg.orig	Mon Aug 30 09:29:30 2010
-+++ installer/linux/server.cfg	Tue Aug 31 15:14:04 2010
+$OpenBSD: patch-installer_linux_server_cfg,v 1.8 2011/03/03 13:16:05 ajacoutot Exp $
+--- installer/linux/server.cfg.orig	Mon Jan 24 12:03:45 2011
++++ installer/linux/server.cfg	Tue Jan 25 12:57:48 2011
 @@ -39,16 +39,16 @@ local_admin_users	= root
  system_email_address	= postmaster@localhost
  
@@ -25,13 +25,13 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.7 2010/08/31 17:57:21 ajacoutot E
 @@ -56,7 +56,7 @@ running_path = /
  session_timeout		= 300
  
- # Socket to connect to for license server
+ # Socket to connect to license server
 -license_socket		= /var/run/zarafa-licensed
 +#license_socket		= /var/run/zarafa-licensed
  
- ##############################################################
- # LOG SETTINGS
-@@ -92,10 +92,10 @@ mysql_password		= 
+ # Time (in seconds) to wait for a connection to the license server before 
+ # terminating the request.
+@@ -96,10 +96,10 @@ mysql_password		= 
  mysql_database		= zarafa
  
  # Where to place attachments. Value can be 'database' or 'files'
@@ -44,7 +44,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.7 2010/08/31 17:57:21 ajacoutot E
  
  # Compression level for attachments when attachment_storage is 'files'.
  # Set compression level for attachments disabled=0, max=9
-@@ -111,19 +111,19 @@ server_ssl_enabled	= no
+@@ -115,19 +115,19 @@ server_ssl_enabled	= no
  server_ssl_port		= 237
  
  # Required Server certificate, contains the certificate and the private key parts
@@ -68,7 +68,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.7 2010/08/31 17:57:21 ajacoutot E
  
  ##############################################################
  # THREAD SETTINGS
-@@ -249,23 +249,24 @@ companyquota_warn      = 0
+@@ -253,23 +253,24 @@ companyquota_warn      = 0
  # Name of the plugin that handles users
  # Required, default = ldap
  # Values: ldap, unix, db
@@ -102,7 +102,7 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.7 2010/08/31 17:57:21 ajacoutot E
  
  # Set this option to 'yes' to skip the creation and deletion of new users
  # The action will be logged, so you can see if your changes to the plugin
-@@ -322,7 +323,7 @@ client_update_enabled = false
+@@ -326,7 +327,7 @@ client_update_enabled = false
  
  # Place the correct Zarafa Outlook Client in this directory for
  # Windows clients to download through the Zarafa server

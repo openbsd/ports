@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.7 2011/01/15 23:53:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.8 2011/03/03 13:16:05 ajacoutot Exp $
 @conflict php5-mapi-*
 @pkgpath mail/zarafa/webaccess
 @pkgpath mail/zarafa/zarafa,-php
@@ -36,6 +36,7 @@ zarafa-webaccess/client/core/contactparsingobject.js
 zarafa-webaccess/client/core/date.js
 zarafa-webaccess/client/core/dhtml.js
 zarafa-webaccess/client/core/dispatcher.js
+zarafa-webaccess/client/core/fixedsettings.js
 zarafa-webaccess/client/core/inputmanager.js
 zarafa-webaccess/client/core/json.js
 zarafa-webaccess/client/core/layoutmanager.js
@@ -50,8 +51,10 @@ zarafa-webaccess/client/core/xmlbuilder.js
 zarafa-webaccess/client/core/xmlrequest.js
 zarafa-webaccess/client/dialog.php
 zarafa-webaccess/client/download_attachment.php
+zarafa-webaccess/client/download_message.php
 zarafa-webaccess/client/layout/
 zarafa-webaccess/client/layout/css/
+zarafa-webaccess/client/layout/css/addressbookitem.css
 zarafa-webaccess/client/layout/css/addtofavorite.css
 zarafa-webaccess/client/layout/css/advancedfind.css
 zarafa-webaccess/client/layout/css/appointment.css
@@ -146,6 +149,8 @@ zarafa-webaccess/client/layout/dialogs/standard/contact.php
 zarafa-webaccess/client/layout/dialogs/standard/createmail.php
 zarafa-webaccess/client/layout/dialogs/standard/distlist.php
 zarafa-webaccess/client/layout/dialogs/standard/freebusy.php
+zarafa-webaccess/client/layout/dialogs/standard/gab_detail_distlist.php
+zarafa-webaccess/client/layout/dialogs/standard/gab_detail_mailuser.php
 zarafa-webaccess/client/layout/dialogs/standard/occurrence.php
 zarafa-webaccess/client/layout/dialogs/standard/properties.php
 zarafa-webaccess/client/layout/dialogs/standard/readmail.php
@@ -513,6 +518,7 @@ zarafa-webaccess/client/layout/themes/white/theme.css
 zarafa-webaccess/client/loader.php
 zarafa-webaccess/client/login.php
 zarafa-webaccess/client/modules/
+zarafa-webaccess/client/modules/addressbookitemmodule.js
 zarafa-webaccess/client/modules/addressbooklistmodule.js
 zarafa-webaccess/client/modules/advancedfindlistmodule.js
 zarafa-webaccess/client/modules/appointmentitemmodule.js
@@ -1002,6 +1008,7 @@ zarafa-webaccess/server/language/sv_SE.UTF-8/LC_MESSAGES/zarafa.mo
 zarafa-webaccess/server/language/sv_SE.UTF-8/language.txt
 zarafa-webaccess/server/mimetypes.dat
 zarafa-webaccess/server/modules/
+zarafa-webaccess/server/modules/class.addressbookitemmodule.php
 zarafa-webaccess/server/modules/class.addressbooklistmodule.php
 zarafa-webaccess/server/modules/class.advancedfindlistmodule.php
 zarafa-webaccess/server/modules/class.appointmentitemmodule.php
@@ -1050,7 +1057,7 @@ zarafa-webaccess/server/modules/class.usergroupmodule.php
 zarafa-webaccess/server/upload_attachment.php
 zarafa-webaccess/server/util.php
 zarafa-webaccess/static.php
-zarafa-webaccess/zarafa-webaccess.conf
+@comment zarafa-webaccess/zarafa-webaccess.conf
 zarafa-webaccess/zarafa.conf.dist
-@sample ${PREFIX-web}/conf/modules.sample/zarafa.conf
+@sample /var/www/conf/modules.sample/zarafa.conf
 zarafa-webaccess/zarafa.php

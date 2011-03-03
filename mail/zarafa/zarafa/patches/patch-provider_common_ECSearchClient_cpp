@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_common_ECSearchClient_cpp,v 1.1 2010/06/30 02:46:48 ajacoutot Exp $
---- provider/common/ECSearchClient.cpp.orig	Tue Jun 29 00:34:25 2010
-+++ provider/common/ECSearchClient.cpp	Tue Jun 29 00:35:13 2010
-@@ -123,7 +123,9 @@ ECRESULT ECSearchClient::Query(std::string &strQuery, 
+$OpenBSD: patch-provider_common_ECSearchClient_cpp,v 1.2 2011/03/03 13:16:05 ajacoutot Exp $
+--- provider/common/ECSearchClient.cpp.orig	Mon Jan 24 16:55:05 2011
++++ provider/common/ECSearchClient.cpp	Tue Jan 25 12:56:18 2011
+@@ -130,7 +130,9 @@ ECRESULT ECSearchClient::Query(std::string &strQuery, 
  	ECRESULT er = erSuccess;
  	ECSearchResultArray *lpResults = NULL;
  	std::vector<std::string> lstResponse;
@@ -11,7 +11,7 @@ $OpenBSD: patch-provider_common_ECSearchClient_cpp,v 1.1 2010/06/30 02:46:48 aja
  
  	if (!lppsResults) {
  		er = ZARAFA_E_INVALID_PARAMETER;
-@@ -171,7 +173,11 @@ ECRESULT ECSearchClient::Query(std::string &strQuery, 
+@@ -178,7 +180,11 @@ ECRESULT ECSearchClient::Query(std::string &strQuery, 
  
  		memcpy(lpResults->__ptr[i].sEntryId.__ptr, strEntryId.c_str(), strEntryId.size());
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-provider_common_ECSearchClient_cpp,v 1.1 2010/06/30 02:46:48 aja
  		lpResults->__size++;
  	}
  
-@@ -182,7 +188,9 @@ exit:
+@@ -189,7 +195,9 @@ exit:
  	if ((er != erSuccess) && lpResults)
  		FreeSearchResults(lpResults);
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_platform_linux_h,v 1.9 2010/12/11 08:20:21 ajacoutot Exp $
---- common/platform.linux.h.orig	Thu Dec  2 14:45:38 2010
-+++ common/platform.linux.h	Fri Dec  3 18:09:32 2010
+$OpenBSD: patch-common_platform_linux_h,v 1.10 2011/03/03 13:16:05 ajacoutot Exp $
+--- common/platform.linux.h.orig	Mon Jan 24 16:55:03 2011
++++ common/platform.linux.h	Tue Jan 25 12:56:17 2011
 @@ -63,8 +63,16 @@
  #include <dlfcn.h>
  #include <stddef.h>
@@ -18,7 +18,7 @@ $OpenBSD: patch-common_platform_linux_h,v 1.9 2010/12/11 08:20:21 ajacoutot Exp 
  #include <errno.h>
  
  #include <string>
-@@ -661,7 +669,11 @@ time_t GetProcessTime();
+@@ -662,7 +670,11 @@ time_t GetProcessTime();
  
  #ifndef ntohll
  	#if __BYTE_ORDER == __LITTLE_ENDIAN
@@ -30,7 +30,7 @@ $OpenBSD: patch-common_platform_linux_h,v 1.9 2010/12/11 08:20:21 ajacoutot Exp 
  	#else
  		#define ntohll(x) (x)
  	#endif
-@@ -669,14 +681,18 @@ time_t GetProcessTime();
+@@ -670,14 +682,18 @@ time_t GetProcessTime();
  
  #ifndef htonll
  	#if __BYTE_ORDER == __LITTLE_ENDIAN

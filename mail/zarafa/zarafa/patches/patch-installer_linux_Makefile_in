@@ -1,7 +1,7 @@
-$OpenBSD: patch-installer_linux_Makefile_in,v 1.12 2010/12/11 08:20:21 ajacoutot Exp $
---- installer/linux/Makefile.in.orig	Thu Dec  2 11:37:21 2010
-+++ installer/linux/Makefile.in	Fri Dec  3 18:47:44 2010
-@@ -54,15 +54,15 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGUR
+$OpenBSD: patch-installer_linux_Makefile_in,v 1.13 2011/03/03 13:16:05 ajacoutot Exp $
+--- installer/linux/Makefile.in.orig	Mon Jan 24 13:06:15 2011
++++ installer/linux/Makefile.in	Tue Jan 25 12:56:17 2011
+@@ -55,15 +55,15 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGUR
  mkinstalldirs = $(install_sh) -d
  CONFIG_HEADER = $(top_builddir)/common/config.h
  CONFIG_CLEAN_FILES =
@@ -20,7 +20,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.12 2010/12/11 08:20:21 ajacoutot
  SOURCES =
  DIST_SOURCES =
  am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
-@@ -72,19 +72,17 @@ am__vpath_adj = case $$p in \
+@@ -73,19 +73,17 @@ am__vpath_adj = case $$p in \
    esac;
  am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
  dist_dataDATA_INSTALL = $(INSTALL_DATA)
@@ -46,7 +46,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.12 2010/12/11 08:20:21 ajacoutot
  dist_sysconf_configDATA_INSTALL = $(INSTALL_DATA)
  am__dist_sysconf_rotate_DATA_DIST = zarafa.logrotate \
  	zarafa-indexer.logrotate zarafa-licensed.logrotate
-@@ -231,6 +229,7 @@ datadir = ${docdir}
+@@ -237,6 +235,7 @@ datadir = ${docdir}
  datarootdir = @datarootdir@
  docdir = @docdir@
  dvidir = @dvidir@
@@ -54,7 +54,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.12 2010/12/11 08:20:21 ajacoutot
  exec_prefix = @exec_prefix@
  host = @host@
  host_alias = @host_alias@
-@@ -259,8 +258,8 @@ sysconfdir = @sysconfdir@
+@@ -266,8 +265,8 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -65,7 +65,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.12 2010/12/11 08:20:21 ajacoutot
  	autorespond $(am__append_2) $(BUILT_SOURCES)
  rhel_initscript_files = zarafa-server.init.rhel \
  	zarafa-spooler.init.rhel zarafa-gateway.init.rhel \
-@@ -455,15 +454,7 @@ uninstall-dist_sysconf_configDATA:
+@@ -462,15 +461,7 @@ uninstall-dist_sysconf_configDATA:
  	  echo " rm -f '$(DESTDIR)$(sysconf_configdir)/$$f'"; \
  	  rm -f "$(DESTDIR)$(sysconf_configdir)/$$f"; \
  	done
@@ -82,7 +82,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.12 2010/12/11 08:20:21 ajacoutot
  
  uninstall-dist_sysconf_rotateDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -527,7 +518,7 @@ check: $(BUILT_SOURCES)
+@@ -534,7 +525,7 @@ check: $(BUILT_SOURCES)
  	$(MAKE) $(AM_MAKEFLAGS) check-am
  all-am: Makefile $(SCRIPTS) $(DATA)
  installdirs:
@@ -91,7 +91,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.12 2010/12/11 08:20:21 ajacoutot
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: $(BUILT_SOURCES)
-@@ -574,9 +565,9 @@ info: info-am
+@@ -581,9 +572,9 @@ info: info-am
  
  info-am:
  
@@ -103,7 +103,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.12 2010/12/11 08:20:21 ajacoutot
  	install-sysconf_sysconfigDATA
  	@$(NORMAL_INSTALL)
  	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
-@@ -656,13 +647,7 @@ ldapms.active-directory.cfg: ldap.m4
+@@ -663,13 +654,7 @@ ldapms.active-directory.cfg: ldap.m4
  	m4 -DTYPE=ADS -DMULTISERVER=1 ${top_srcdir}/installer/linux/ldap.m4 > $@
  
  install-data-hook:
@@ -117,7 +117,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.12 2010/12/11 08:20:21 ajacoutot
  	if test ${DISTRO} = "sles" -o ${DISTRO} = "suse"; then \
  		mv ${DESTDIR}${sysconf_sysconfigdir}/sysconfig.suse ${DESTDIR}${sysconf_sysconfigdir}/sysconfig.zarafa || true; \
  		mv ${DESTDIR}${sysconf_sysconfigdir}/sysconfig-indexer.suse ${DESTDIR}${sysconf_sysconfigdir}/sysconfig.zarafa-indexer || true; \
-@@ -678,16 +663,6 @@ install-data-hook:
+@@ -685,16 +670,6 @@ install-data-hook:
  	else \
  		true; \
  	fi
