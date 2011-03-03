@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/05/28 16:16:55 jcs Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/03 13:39:05 sthen Exp $
 ${P5SITE}/Asterisk/
 ${P5SITE}/Asterisk.pm
 ${P5SITE}/Asterisk/AGI.pm
@@ -10,3 +10,13 @@ ${P5SITE}/Asterisk/Voicemail.pm
 @man man/man3p/Asterisk::Manager.3p
 @man man/man3p/Asterisk::Outgoing.3p
 @man man/man3p/Asterisk::Voicemail.3p
+share/examples/p5-asterisk/
+share/examples/p5-asterisk/agi-enum.agi
+share/examples/p5-asterisk/agi-sayani.agi
+share/examples/p5-asterisk/agi-test.agi
+share/examples/p5-asterisk/calleridnamelookup.agi
+share/examples/p5-asterisk/directory.agi
+share/examples/p5-asterisk/manager-test.pl
+share/examples/p5-asterisk/tts-bofh.agi
+share/examples/p5-asterisk/tts-line.agi
+share/examples/p5-asterisk/tts-ping.agi
