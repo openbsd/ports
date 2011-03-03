@@ -1,12 +1,12 @@
-$OpenBSD: patch-common_backintime_py,v 1.1 2010/11/05 16:39:10 ajacoutot Exp $
---- common/backintime.py.orig	Fri Nov  5 16:22:03 2010
-+++ common/backintime.py	Fri Nov  5 16:22:10 2010
-@@ -32,8 +32,6 @@ _=gettext.gettext
+$OpenBSD: patch-common_backintime_py,v 1.2 2011/03/03 13:49:27 ajacoutot Exp $
+--- common/backintime.py.orig	Sun Jan  2 15:01:38 2011
++++ common/backintime.py	Mon Feb 21 19:15:49 2011
+@@ -36,8 +36,6 @@ def take_snapshot_now_async( cfg ):
+ 		profile = "--profile-id %s" % cfg.get_current_profile()
  
- def take_snapshot_now_async( cfg ):
- 	cmd = "backintime --profile \"%s\" --backup &" % cfg.get_profile_name()
+ 	cmd = "backintime %s --backup &" % profile
 -	if cfg.is_run_ionice_from_user_enabled():
 -		cmd = 'ionice -c2 -n7 ' + cmd
- 	os.system( cmd )
  
+ 	os.system( cmd )
  

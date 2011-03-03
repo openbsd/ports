@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnome_settingsdialog_py,v 1.1 2010/11/05 16:39:11 ajacoutot Exp $
---- gnome/settingsdialog.py.orig	Fri Nov  5 16:20:36 2010
-+++ gnome/settingsdialog.py	Fri Nov  5 16:20:58 2010
-@@ -267,8 +267,6 @@ class SettingsDialog(object):
+$OpenBSD: patch-gnome_settingsdialog_py,v 1.2 2011/03/03 13:49:27 ajacoutot Exp $
+--- gnome/settingsdialog.py.orig	Sun Jan  2 15:01:38 2011
++++ gnome/settingsdialog.py	Mon Feb 21 19:26:32 2011
+@@ -271,8 +271,6 @@ class SettingsDialog(object):
  		
  		#nice & ionice
  		self.cb_run_nice_from_cron = get('cb_run_nice_from_cron')
@@ -10,7 +10,7 @@ $OpenBSD: patch-gnome_settingsdialog_py,v 1.1 2010/11/05 16:39:11 ajacoutot Exp 
  		self.cb_preserve_acl = get('cb_preserve_acl')
  		self.cb_preserve_xattr = get('cb_preserve_xattr')
  		self.cb_copy_unsafe_links = get('cb_copy_unsafe_links')
-@@ -489,12 +487,6 @@ class SettingsDialog(object):
+@@ -499,12 +497,6 @@ class SettingsDialog(object):
  		#run 'nice' from cron
  		self.cb_run_nice_from_cron.set_active(self.config.is_run_nice_from_cron_enabled( self.profile_id ))
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-gnome_settingsdialog_py,v 1.1 2010/11/05 16:39:11 ajacoutot Exp 
  		#don't run when on battery
  		self.cb_no_on_battery.set_active( self.config.is_no_on_battery_enabled( self.profile_id ) )
  	
-@@ -575,8 +567,6 @@ class SettingsDialog(object):
+@@ -591,8 +583,6 @@ class SettingsDialog(object):
  		#expert options
  		#self.config.set_per_directory_schedule( self.cb_per_directory_schedule.get_active() )
  		self.config.set_run_nice_from_cron_enabled( self.cb_run_nice_from_cron.get_active(), self.profile_id )

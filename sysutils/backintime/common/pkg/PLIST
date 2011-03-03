@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/05 16:39:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/03/03 13:49:27 ajacoutot Exp $
 bin/backintime
 @man man/man1/backintime.1
 share/backintime/
@@ -48,6 +48,7 @@ share/locale/fo/LC_MESSAGES/backintime.mo
 share/locale/fr/LC_MESSAGES/backintime.mo
 share/locale/gl/LC_MESSAGES/backintime.mo
 share/locale/he/LC_MESSAGES/backintime.mo
+share/locale/hr/LC_MESSAGES/backintime.mo
 share/locale/hu/LC_MESSAGES/backintime.mo
 share/locale/id/LC_MESSAGES/backintime.mo
 share/locale/it/LC_MESSAGES/backintime.mo

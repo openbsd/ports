@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_config_py,v 1.2 2010/11/05 16:39:10 ajacoutot Exp $
---- common/config.py.orig	Wed Oct 27 21:56:06 2010
-+++ common/config.py	Fri Nov  5 16:21:44 2010
+$OpenBSD: patch-common_config_py,v 1.3 2011/03/03 13:49:27 ajacoutot Exp $
+--- common/config.py.orig	Sun Jan  2 15:03:07 2011
++++ common/config.py	Mon Feb 21 19:14:16 2011
 @@ -29,7 +29,7 @@ import logger
  
  _=gettext.gettext
@@ -24,7 +24,7 @@ $OpenBSD: patch-common_config_py,v 1.2 2010/11/05 16:39:10 ajacoutot Exp $
  
  		HOME_FOLDER = os.path.expanduser( '~' )
  		self._LOCAL_DATA_FOLDER = os.path.join( os.getenv( 'XDG_DATA_HOME', '$HOME/.local/share' ).replace( '$HOME', HOME_FOLDER ), 'backintime' )
-@@ -579,18 +579,6 @@ class Config( configfile.ConfigFileWithProfiles ):
+@@ -587,18 +587,6 @@ class Config( configfile.ConfigFileWithProfiles ):
  	def set_run_nice_from_cron_enabled( self, value, profile_id = None ):
  		self.set_profile_bool_value( 'snapshots.cron.nice', value, profile_id )
  
@@ -43,14 +43,14 @@ $OpenBSD: patch-common_config_py,v 1.2 2010/11/05 16:39:10 ajacoutot Exp $
  	def is_no_on_battery_enabled( self, profile_id = None ):
  		return self.get_profile_bool_value( 'snapshots.no_on_battery', False, profile_id )
  
-@@ -809,9 +797,7 @@ class Config( configfile.ConfigFileWithProfiles ):
- 				cron_line = 'echo "{msg}\n0 ' + str(self.get_automatic_backup_time( profile_id ) / 100) + ' 1 * * {cmd}"'
- 
- 			if len( cron_line ) > 0:
--				cmd = "/usr/bin/backintime --profile \\\"%s\\\" --backup-job >/dev/null 2>&1" % profile_name
+@@ -820,9 +808,7 @@ class Config( configfile.ConfigFileWithProfiles ):
+ 				profile=''
+ 				if '1' != profile_id:
+ 					profile = "--profile-id %s" % profile_id
+-				cmd = "/usr/bin/backintime %s --backup-job >/dev/null 2>&1" % profile
 -				if self.is_run_ionice_from_cron_enabled():
 -					cmd = 'ionice -c2 -n7 ' + cmd
-+				cmd = "${PREFIX}/bin/backintime --profile \\\"%s\\\" --backup-job >/dev/null 2>&1" % profile_name
++				cmd = "${PREFIX}/bin/backintime %s --backup-job >/dev/null 2>&1" % profile
  				if self.is_run_nice_from_cron_enabled( profile_id ):
  					cmd = 'nice -n 19 ' + cmd
  				cron_line = cron_line.replace( '{cmd}', cmd )

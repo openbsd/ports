@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnome_settingsdialog_glade,v 1.1 2010/11/05 16:39:10 ajacoutot Exp $
---- gnome/settingsdialog.glade.orig	Fri Nov  5 16:21:05 2010
-+++ gnome/settingsdialog.glade	Fri Nov  5 16:21:20 2010
-@@ -922,32 +922,6 @@
+$OpenBSD: patch-gnome_settingsdialog_glade,v 1.2 2011/03/03 13:49:27 ajacoutot Exp $
+--- gnome/settingsdialog.glade.orig	Sun Jan  2 15:01:38 2011
++++ gnome/settingsdialog.glade	Mon Feb 21 19:26:32 2011
+@@ -1088,32 +1088,6 @@
                    </packing>
                  </child>
                  <child>
