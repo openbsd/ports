@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2011/01/18 20:25:56 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2011/03/03 21:03:52 landry Exp $
 
 COMMENT=	Xfce4 essential utilities and scripts
 
 XFCE_PROJECT=	xfce-utils
+XFCE_VERSION=	4.8.1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
