@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_thread_c,v 1.8 2011/01/18 11:03:20 dcoppa Exp $
+$OpenBSD: patch-src_thread_c,v 1.9 2011/03/03 15:16:12 dcoppa Exp $
 
 fix an assertion failure
 
@@ -25,7 +25,7 @@ bump QuickTime emulation to 7.6.9 (fix apple.com movie trailers)
 +        argv[arg++] = g_strdup_printf("QuickTime/7.6.9");
 +    } else {
 +        argv[arg++] = g_strdup_printf("-user-agent");
-+        argv[arg++] = g_strdup_printf("Mozilla/5.0");
++        argv[arg++] = g_strdup_printf("GnomeMplayer/" VERSION);
      }
  
      /* disable msg stuff to make sure extra console characters don't mess around */
