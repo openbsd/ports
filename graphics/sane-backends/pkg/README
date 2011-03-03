@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2011/03/03 13:43:50 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2011/03/03 14:05:48 ajacoutot Exp $
 
 Using sane(7) under OpenBSD
 ===========================
@@ -33,8 +33,8 @@ the _saned group.
 SCSI
 ----
 SANE only supports the generic SCSI uk(4) devices.
-Make sure your user account has access to the scanner device or you will
-not be able to scan.
+Make sure your user account has access to the scanner device node or you
+will not be able to scan.
 
 LOCKING
 -------
@@ -45,7 +45,7 @@ add yourself to the _saned group or you will not be able to scan.
 NETWORK
 -------
 By default, the saned(8) daemon runs as _saned, so you need to allow the
-_saned user access to the scanner device.
+_saned user access to the scanner device node.
 If you're planning on using the SANE network daemon (saned) with
 inetd(8) as opposed to starting it standalone from the provided rc.d(8)
 script, add the following line in /etc/services:
