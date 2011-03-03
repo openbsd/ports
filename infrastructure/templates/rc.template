@@ -1,11 +1,11 @@
 Below is an rc.d(8) script template containing all usable variables and
 functions set to their defaults.
-See rc.d(8) for more information.
+See rc.subr(8) for more information.
 
-------------------------8<------------------------
+-----------------------------------8<-----------------------------------
 #!/bin/sh
 #
-# $OpenBSD: rc.template,v 1.2 2011/03/02 06:32:53 ajacoutot Exp $
+# $OpenBSD: rc.template,v 1.3 2011/03/03 15:55:43 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/foobar"
 #daemon_flags=""
@@ -41,4 +41,4 @@ daemon="${TRUEPREFIX}/bin/foobar"
 #}
 
 rc_cmd $1
-------------------------8<------------------------
+-----------------------------------8<-----------------------------------
