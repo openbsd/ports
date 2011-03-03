@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2011/01/18 21:03:55 landry Exp $
+# $OpenBSD: Makefile,v 1.25 2011/03/03 21:04:55 landry Exp $
 
 COMMENT=	Xfce4 disk performance panel plugin
 
-XFCE_VERSION=	2.2.0
+XFCE_VERSION=	2.3.0
 XFCE_PLUGIN=	diskperf
-REVISION=	6
 
 # BSD
 PERMIT_DISTFILES_CDROM=	Yes
@@ -21,6 +20,8 @@ WANTLIB=	X11 Xdmcp Xrender Xau Xdamage fontconfig freetype m z c \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 pango-1.0 \
 		pangoft2-1.0 pangocairo-1.0 cairo png \
 		pixman-1 xfce4util xfcegui4 pthread-stubs xcb \
-		gthread-2.0 pthread xcb-render GL Xxf86vm drm xcb-shm
+		gthread-2.0 pthread xcb-render GL Xxf86vm drm xcb-shm \
+		ICE SM execinfo pcre startup-notification-1 xcb-atom \
+		xcb-aux xcb-event
 
 .include <bsd.port.mk>
