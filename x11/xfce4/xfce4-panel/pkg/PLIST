@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/01/18 21:34:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2011/03/03 21:07:00 landry Exp $
 @conflict xfce4-datetime-*
 @conflict xfce4-iconbox-*
 @conflict xfce4-showdesktop-*
@@ -62,6 +62,11 @@ share/doc/xfce4-panel/
 share/doc/xfce4-panel/README.gtkrc-2.0
 share/doc/xfce4-panel/html/
 share/doc/xfce4-panel/html/C/
+share/doc/xfce4-panel/html/C/actions.html
+share/doc/xfce4-panel/html/C/add-new-items.html
+share/doc/xfce4-panel/html/C/applicationsmenu.html
+share/doc/xfce4-panel/html/C/clock.html
+share/doc/xfce4-panel/html/C/directorymenu.html
 share/doc/xfce4-panel/html/C/figures/
 share/doc/xfce4-panel/html/C/figures/actions.png
 share/doc/xfce4-panel/html/C/figures/add-new-items.png
@@ -75,6 +80,18 @@ share/doc/xfce4-panel/html/C/figures/separator.png
 share/doc/xfce4-panel/html/C/figures/systray.png
 share/doc/xfce4-panel/html/C/figures/tasklist.png
 share/doc/xfce4-panel/html/C/figures/windowmenu.png
+share/doc/xfce4-panel/html/C/getting-started.html
+share/doc/xfce4-panel/html/C/index.html
+share/doc/xfce4-panel/html/C/launcher.html
+share/doc/xfce4-panel/html/C/license.html
+share/doc/xfce4-panel/html/C/pager.html
+share/doc/xfce4-panel/html/C/preferences.html
+share/doc/xfce4-panel/html/C/separator.html
+share/doc/xfce4-panel/html/C/showdesktop.html
+share/doc/xfce4-panel/html/C/systray.html
+share/doc/xfce4-panel/html/C/tasklist.html
+share/doc/xfce4-panel/html/C/theming.html
+share/doc/xfce4-panel/html/C/windowmenu.html
 share/doc/xfce4-panel/html/xfce4-panel.css
 share/examples/xfce4-panel/
 @sample ${SYSCONFDIR}/xdg/
