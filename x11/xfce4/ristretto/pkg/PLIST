@@ -1,6 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/01/18 20:50:16 landry Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/03/03 21:02:34 landry Exp $
 @bin bin/ristretto
 share/applications/ristretto.desktop
+share/doc/ristretto/
+share/doc/ristretto/html/
+share/doc/ristretto/html/C/
+share/doc/ristretto/html/C/images/
+share/doc/ristretto/html/C/index.html
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/16x16/
@@ -25,6 +30,9 @@ share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/ristretto.svg
 share/locale/ar/LC_MESSAGES/ristretto.mo
+share/locale/ast/
+share/locale/ast/LC_MESSAGES/
+share/locale/ast/LC_MESSAGES/ristretto.mo
 share/locale/bg/LC_MESSAGES/ristretto.mo
 share/locale/ca/LC_MESSAGES/ristretto.mo
 share/locale/cs/LC_MESSAGES/ristretto.mo
@@ -37,6 +45,7 @@ share/locale/eu/LC_MESSAGES/ristretto.mo
 share/locale/fi/LC_MESSAGES/ristretto.mo
 share/locale/fr/LC_MESSAGES/ristretto.mo
 share/locale/gl/LC_MESSAGES/ristretto.mo
+share/locale/hr/LC_MESSAGES/ristretto.mo
 share/locale/hu/LC_MESSAGES/ristretto.mo
 share/locale/id/LC_MESSAGES/ristretto.mo
 share/locale/it/LC_MESSAGES/ristretto.mo
@@ -47,14 +56,22 @@ share/locale/nl/LC_MESSAGES/ristretto.mo
 share/locale/pl/LC_MESSAGES/ristretto.mo
 share/locale/pt/LC_MESSAGES/ristretto.mo
 share/locale/pt_BR/LC_MESSAGES/ristretto.mo
+share/locale/ro/LC_MESSAGES/ristretto.mo
 share/locale/ru/LC_MESSAGES/ristretto.mo
 share/locale/sk/LC_MESSAGES/ristretto.mo
 share/locale/sv/LC_MESSAGES/ristretto.mo
 share/locale/tr/LC_MESSAGES/ristretto.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/ristretto.mo
 share/locale/uk/LC_MESSAGES/ristretto.mo
 share/locale/ur/
 share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/ristretto.mo
+share/locale/ur_PK/
+share/locale/ur_PK/LC_MESSAGES/
+share/locale/ur_PK/LC_MESSAGES/ristretto.mo
+share/locale/vi/LC_MESSAGES/ristretto.mo
 share/locale/zh_CN/LC_MESSAGES/ristretto.mo
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
