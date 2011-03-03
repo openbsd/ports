@@ -1,0 +1,15 @@
+$OpenBSD: patch-mac-vendor_txt,v 1.1 2011/03/03 09:47:51 sthen Exp $
+Adapt for a normal OpenBSD environment.
+--- mac-vendor.txt.orig	Sun May  4 19:08:08 2008
++++ mac-vendor.txt	Thu Mar  3 09:03:18 2011
+@@ -42,8 +42,8 @@
+ 525400	QEMU
+ B0C420	Bochs
+ 
+-# From RFC 2338: 00-00-5E-00-01-{VRID}
+-00005E0001	VRRP (last octet is VRID)
++# La Dee Dee, 1, 2, 3. VRRP ain't free.
++00005E0001	CARP (last octet is VHID)
+ 
+ # Microsoft WLBS (Windows NT Load Balancing Service)
+ # http://www.microsoft.com/technet/prodtechnol/acs/reskit/acrkappb.mspx

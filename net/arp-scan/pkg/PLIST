@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/07 10:01:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/03 09:47:51 sthen Exp $
 bin/arp-fingerprint
 @bin bin/arp-scan
 bin/get-iab
@@ -9,6 +9,9 @@ bin/get-oui
 @man man/man1/get-oui.1
 @man man/man5/mac-vendor.5
 share/arp-scan/
+@comment no checksum
 share/arp-scan/ieee-iab.txt
+@comment no checksum
 share/arp-scan/ieee-oui.txt
-share/arp-scan/mac-vendor.txt
+share/arp-scan/mac-vendor.txt.dist
+@sample share/arp-scan/mac-vendor.txt

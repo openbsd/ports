@@ -1,7 +1,7 @@
-$OpenBSD: patch-link-bpf_c,v 1.1 2009/06/26 09:20:41 sthen Exp $
---- link-bpf.c.orig	Thu Jul 17 13:01:14 2008
-+++ link-bpf.c	Fri Jun 26 10:16:27 2009
-@@ -253,6 +253,10 @@ get_hardware_address(link_t *handle, unsigned char hw_
+$OpenBSD: patch-link-bpf_c,v 1.2 2011/03/03 09:47:51 sthen Exp $
+--- link-bpf.c.orig	Sun Jan  9 10:37:09 2011
++++ link-bpf.c	Thu Mar  3 08:58:57 2011
+@@ -254,6 +254,10 @@ get_hardware_address(link_t *handle, unsigned char hw_
   */
     for (p = buf; p < buf + len; p += ifm->ifm_msglen) {
        ifm = (struct if_msghdr *)p;
