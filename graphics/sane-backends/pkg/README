@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2011/01/17 23:24:40 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2011/03/03 13:43:50 ajacoutot Exp $
 
 Using sane(7) under OpenBSD
 ===========================
@@ -8,7 +8,7 @@ First read ${TRUEPREFIX}/share/doc/sane-backends/PROBLEMS.
 USB
 ---
 Since USB scanning will be handled by libusb, you need to allow the
-_cups user access to the corresponding USB endpoint. To do so, find
+_saned user access to the corresponding USB endpoint. To do so, find
 where your scanner is attached to using dmesg(8) then change the
 ownerships accordingly.
 ugenX = /dev/ugenX
@@ -33,8 +33,8 @@ the _saned group.
 SCSI
 ----
 SANE only supports the generic SCSI uk(4) devices.
-Make sure your user has read/write access to the scanner device or you
-will not be able to scan.
+Make sure your user account has access to the scanner device or you will
+not be able to scan.
 
 LOCKING
 -------
@@ -44,9 +44,9 @@ add yourself to the _saned group or you will not be able to scan.
 
 NETWORK
 -------
-The saned(8) daemon needs rw access to your device, make sure the _saned
-group as rw permissions.
+By default, the saned(8) daemon runs as _saned, so you need to allow the
+_saned user access to the scanner device.
 If you're planning on using the SANE network daemon (saned) with
-inetd(8) as opposed to starting it standalone from the provided rc
+inetd(8) as opposed to starting it standalone from the provided rc.d(8)
 script, add the following line in /etc/services:
 sane-port	6566/tcp	saned	# SANE network scanner daemon

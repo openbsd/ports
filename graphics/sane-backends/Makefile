@@ -1,12 +1,8 @@
-# $OpenBSD: Makefile,v 1.38 2011/01/17 23:26:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2011/03/03 13:43:50 ajacoutot Exp $
 
 COMMENT=	API for accessing scanners, backends
 
-DISTNAME=	sane-backends-1.0.21
-REVISION=	12
-
-PATCHFILES=	sane-backends-1.0.21-i18n.patch
-PATCH_DIST_STRIP= -p1
+DISTNAME=	sane-backends-1.0.22
 
 SHARED_LIBS=	sane 2.0 # .1.0
 CATEGORIES=	graphics
@@ -21,18 +17,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c dbus-1 exif jpeg ltdl m pthread usb z tiff
-WANTLIB += gphoto2 gphoto2_port avahi-client avahi-common
+WANTLIB += avahi-client avahi-common c crypto dbus-1 exif gphoto2
+WANTLIB += gphoto2_port jpeg ltdl m netsnmp pthread tiff usb z
 
 MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/${DISTNAME}/ \
-		ftp://ftp.ibiblio.org/pub/Linux/apps/graphics/capture/ \
-		http://gd.tuwien.ac.at/hci/sane/${DISTNAME}/ \
-		ftp://gd.tuwien.ac.at/hci/sane/${DISTNAME}/ \
 		ftp://ftp.sane-project.org/pub/sane/old-versions/${DISTNAME}/
 
 LIB_DEPENDS=	graphics/tiff \
 		graphics/libgphoto2 \
-		net/avahi
+		net/avahi \
+		net/net-snmp
 
 MODULES=	devel/gettext
 

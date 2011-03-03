@@ -1,33 +1,33 @@
-$OpenBSD: patch-configure,v 1.11 2010/11/27 11:36:00 ajacoutot Exp $
---- configure.orig	Mon Apr 26 02:57:49 2010
-+++ configure	Sat Nov 27 11:25:18 2010
-@@ -11687,13 +11687,13 @@ as_val=`eval 'as_val=${'$as_ac_Header'}
- #define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
+$OpenBSD: patch-configure,v 1.12 2011/03/03 13:43:50 ajacoutot Exp $
+--- configure.orig	Mon Feb 14 02:27:52 2011
++++ configure	Mon Feb 14 06:50:54 2011
+@@ -7202,13 +7202,13 @@ if test "x$ac_cv_header_pthread_h" = x""yes; then :
+ #define HAVE_PTHREAD_H 1
  _ACEOF
  
--       { $as_echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
+-       { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthread" >&5
 -$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
-+       { $as_echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
++       { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -pthread" >&5
 +$as_echo_n "checking for pthread_create in -pthread... " >&6; }
- if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -11753,7 +11753,7 @@ fi
- { $as_echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthread_create" >&5
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -7239,7 +7239,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
- if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then
+ if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then :
 -  PTHREAD_LIBS="-lpthread"
 +  PTHREAD_LIBS="-pthread"
  fi
  
         have_pthread=yes
-@@ -11927,18 +11927,6 @@ if test "${with_group+set}" = set; then
+@@ -7319,18 +7319,6 @@ if test "${with_group+set}" = set; then :
  
  fi
  
@@ -37,26 +37,26 @@ $OpenBSD: patch-configure,v 1.11 2010/11/27 11:36:00 ajacoutot Exp $
 -    chgrp $LOCKPATH_GROUP sanetest.file 2>/dev/null || lasterror=$?
 -    rm -f sanetest.file
 -    if test ! -z "$lasterror"; then
--      { $as_echo "$as_me:$LINENO: WARNING: Group $LOCKPATH_GROUP does not exist on this system." >&5
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Group $LOCKPATH_GROUP does not exist on this system." >&5
 -$as_echo "$as_me: WARNING: Group $LOCKPATH_GROUP does not exist on this system." >&2;}
--      { $as_echo "$as_me:$LINENO: WARNING: Locking feature will be disabled." >&5
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Locking feature will be disabled." >&5
 -$as_echo "$as_me: WARNING: Locking feature will be disabled." >&2;}
 -      use_locking=no
 -    fi
    fi
    if test $use_locking = yes ; then
      INSTALL_LOCKPATH=install-lockpath
-@@ -12752,7 +12740,7 @@ fi
+@@ -7971,7 +7959,7 @@ $as_echo "#define STDC_HEADERS 1" >>confdefs.h
  
- 
+ fi
  
 -for ac_header in fcntl.h unistd.h libc.h sys/dsreq.h sys/select.h \
 +for ac_header in fcntl.h unistd.h sys/dsreq.h sys/select.h \
      sys/time.h sys/shm.h sys/ipc.h sys/signal.h sys/scanio.h os2.h \
      sys/socket.h sys/io.h sys/hw.h sys/types.h linux/ppdev.h \
      dev/ppbus/ppi.h machine/cpufunc.h sys/bitypes.h sys/sem.h sys/poll.h \
-@@ -14056,6 +14044,7 @@ cat confdefs.h >>conftest.$ac_ext
- cat >>conftest.$ac_ext <<_ACEOF
+@@ -8216,6 +8204,7 @@ $as_echo_n "checking for socklen_t in <sys/socket.h>..
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
 +#include <sys/types.h>

@@ -1,6 +1,6 @@
-$OpenBSD: patch-backend_dll_conf_in,v 1.5 2010/04/26 10:41:28 ajacoutot Exp $
---- backend/dll.conf.in.orig	Mon Apr  5 15:18:03 2010
-+++ backend/dll.conf.in	Mon Apr 26 08:31:07 2010
+$OpenBSD: patch-backend_dll_conf_in,v 1.6 2011/03/03 13:43:50 ajacoutot Exp $
+--- backend/dll.conf.in.orig	Sun Jan 16 02:01:28 2011
++++ backend/dll.conf.in	Mon Feb 14 06:49:59 2011
 @@ -30,7 +30,7 @@ genesys
  gt68xx
  hp
@@ -10,7 +10,7 @@ $OpenBSD: patch-backend_dll_conf_in,v 1.5 2010/04/26 10:41:28 ajacoutot Exp $
  hp3500
  hp4200
  hp5400
-@@ -59,7 +59,7 @@ pixma
+@@ -61,7 +61,7 @@ pixma
  plustek
  #plustek_pp
  #pnm
@@ -19,7 +19,7 @@ $OpenBSD: patch-backend_dll_conf_in,v 1.5 2010/04/26 10:41:28 ajacoutot Exp $
  ricoh
  rts8891
  s9036
-@@ -80,5 +80,5 @@ u12
+@@ -82,5 +82,5 @@ u12
  umax
  #umax_pp
  umax1220u

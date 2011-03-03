@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/11/25 13:55:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/03/03 13:43:50 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 %%SHARED%%
@@ -90,12 +90,16 @@ lib/sane/
 @comment lib/sane/libsane-kodak.la
 @comment lib/sane/libsane-kvs1025.a
 @comment lib/sane/libsane-kvs1025.la
+@comment lib/sane/libsane-kvs20xx.a
+@comment lib/sane/libsane-kvs20xx.la
 @comment lib/sane/libsane-leo.a
 @comment lib/sane/libsane-leo.la
 @comment lib/sane/libsane-lexmark.a
 @comment lib/sane/libsane-lexmark.la
 @comment lib/sane/libsane-ma1509.a
 @comment lib/sane/libsane-ma1509.la
+@comment lib/sane/libsane-magicolor.a
+@comment lib/sane/libsane-magicolor.la
 @comment lib/sane/libsane-matsushita.a
 @comment lib/sane/libsane-matsushita.la
 @comment lib/sane/libsane-microtek.a
@@ -207,9 +211,11 @@ lib/sane/
 @man man/man5/sane-ibm.5
 @man man/man5/sane-kodak.5
 @man man/man5/sane-kvs1025.5
+@man man/man5/sane-kvs20xx.5
 @man man/man5/sane-leo.5
 @man man/man5/sane-lexmark.5
 @man man/man5/sane-ma1509.5
+@man man/man5/sane-magicolor.5
 @man man/man5/sane-matsushita.5
 @man man/man5/sane-microtek.5
 @man man/man5/sane-mustek.5
@@ -412,6 +418,8 @@ share/examples/sane-backends/sane.d/lexmark.conf
 @sample ${SYSCONFDIR}/sane.d/lexmark.conf
 share/examples/sane-backends/sane.d/ma1509.conf
 @sample ${SYSCONFDIR}/sane.d/ma1509.conf
+share/examples/sane-backends/sane.d/magicolor.conf
+@sample ${SYSCONFDIR}/sane.d/magicolor.conf
 share/examples/sane-backends/sane.d/matsushita.conf
 @sample ${SYSCONFDIR}/sane.d/matsushita.conf
 share/examples/sane-backends/sane.d/microtek.conf
