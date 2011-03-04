@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2010/10/16 12:21:40 landry Exp $
+@comment $OpenBSD: PLIST,v 1.35 2011/03/04 16:35:40 rpointel Exp $
 @pkgpath mail/sylpheed,gpgme
 %%SHARED%%
 @bin bin/sylpheed
@@ -34,6 +34,7 @@ include/sylpheed/sylph/recv.h
 include/sylpheed/sylph/session.h
 include/sylpheed/sylph/smtp.h
 include/sylpheed/sylph/socket.h
+include/sylpheed/sylph/socks.h
 include/sylpheed/sylph/ssl.h
 include/sylpheed/sylph/stringtable.h
 include/sylpheed/sylph/syl-marshal.h
@@ -125,6 +126,8 @@ share/sylpheed/manual/en/sylpheed-18.html
 share/sylpheed/manual/en/sylpheed-19.html
 share/sylpheed/manual/en/sylpheed-2.html
 share/sylpheed/manual/en/sylpheed-20.html
+share/sylpheed/manual/en/sylpheed-21.html
+share/sylpheed/manual/en/sylpheed-22.html
 share/sylpheed/manual/en/sylpheed-3.html
 share/sylpheed/manual/en/sylpheed-4.html
 share/sylpheed/manual/en/sylpheed-5.html
@@ -161,6 +164,5 @@ share/sylpheed/manual/ja/sylpheed-7.html
 share/sylpheed/manual/ja/sylpheed-8.html
 share/sylpheed/manual/ja/sylpheed-9.html
 share/sylpheed/manual/ja/sylpheed.html
-share/sylpheed/manual/ja/sylpheed.sgml
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

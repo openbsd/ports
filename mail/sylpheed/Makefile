@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.91 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile,v 1.92 2011/03/04 16:35:40 rpointel Exp $
 
 COMMENT =		lightweight and user-friendly e-mail client
 
-DISTNAME =		sylpheed-3.0.3
+DISTNAME =		sylpheed-3.1.0
 
-SHARED_LIBS += 	 	sylph-0                   1.0 # 1.3
-SHARED_LIBS += 		sylpheed-plugin-0         1.0 # 1.3
+SHARED_LIBS += 	 	sylph-0                   2.0
+SHARED_LIBS += 		sylpheed-plugin-0         2.0
 
 CATEGORIES=	mail news x11
 HOMEPAGE=	http://sylpheed.sraoss.jp/en
@@ -21,7 +21,7 @@ LIB_DEPENDS +=		x11/gtk+2 \
 			textproc/gtkspell \
 			security/gpgme
 
-WANTLIB += GL X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xxf86vm c crypto atk-1.0 cairo gdk_pixbuf-2.0
 WANTLIB += pango-1.0 pangocairo-1.0 dbus-1 dbus-glib-1 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 drm expat fontconfig freetype m pixman-1
@@ -30,7 +30,7 @@ WANTLIB += png gpgme gpg-error gtkspell ssl stdc++ xcb xcb-render xcb-shm z
 WANTLIB += gtk-x11-2.0 gdk-x11-2.0 gtkspell
 
 RUN_DEPENDS=	devel/desktop-file-utils
-MASTER_SITES =		http://sylpheed.sraoss.jp/sylpheed/v3.0/
+MASTER_SITES =		http://sylpheed.sraoss.jp/sylpheed/v3.1/
 
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
@@ -41,7 +41,8 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-jpilot \
 			--disable-ldap \
 			--disable-oniguruma \
-			--enable-gpgme
+			--enable-gpgme \
+			--disable-updatecheck
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
