@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure,v 1.1 2011/03/04 13:25:41 jasper Exp $
+
+Using -lpthread is verboten!
+
+--- configure.orig	Fri Feb 25 11:38:02 2011
++++ configure	Fri Feb 25 11:38:18 2011
+@@ -4290,13 +4290,13 @@ _ACEOF
+ fi
+ 
+ 
+-echo "$as_me:$LINENO: checking for main in -lpthread" >&5
+-echo $ECHO_N "checking for main in -lpthread... $ECHO_C" >&6
++echo "$as_me:$LINENO: checking for main in -pthread" >&5
++echo $ECHO_N "checking for main in -pthread... $ECHO_C" >&6
+ if test "${ac_cv_lib_pthread_main+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -4353,7 +4353,7 @@ if test $ac_cv_lib_pthread_main = yes; then
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ fi
+ 
