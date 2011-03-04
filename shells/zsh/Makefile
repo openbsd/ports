@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2011/02/03 08:56:14 pea Exp $
+# $OpenBSD: Makefile,v 1.61 2011/03/04 10:08:59 pea Exp $
 
 COMMENT=	Z shell, Bourne shell-compatible
 
@@ -6,7 +6,7 @@ V=		4.3.11
 DISTNAME=	zsh-$V
 CATEGORIES=	shells
 
-REVISION=	1
+REVISION=	2
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 

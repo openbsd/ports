@@ -1,0 +1,27 @@
+$OpenBSD: patch-Src_subst_c,v 1.1 2011/03/04 10:08:59 pea Exp $
+
+Fix for ${foo:0:} crash
+
+--- Src/subst.c.orig	Thu Dec 16 10:26:50 2010
++++ Src/subst.c	Thu Mar  3 15:14:28 2011
+@@ -2814,12 +2814,14 @@ paramsubst(LinkList l, LinkNode n, char **str, int qt,
+ 			zerr("invalid length: %s", check_offset);
+ 			return NULL;
+ 		    }
+-		    length = mathevali(check_offset);
+-		    if (errflag)
+-			return NULL;
+-		    if (length < (zlong)0) {
+-			zerr("invalid length: %s", check_offset);
+-			return NULL;
++                    if (check_offset) {
++			length = mathevali(check_offset);
++			if (errflag)
++			    return NULL;
++			if (length < (zlong)0) {
++			    zerr("invalid length: %s", check_offset);
++			    return NULL;
++			}
+ 		    }
+ 		}
+ 		if (horrible_offset_hack) {
