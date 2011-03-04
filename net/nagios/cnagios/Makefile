@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/03/03 12:33:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2011/03/04 11:21:45 sthen Exp $
 
 COMMENT =		console interface for nagios
 
 DISTNAME =		cnagios-0.27
+REVISION =		0
 CATEGORIES =		net
 
 HOMEPAGE =		http://noc.hep.wisc.edu/cnagios.txt

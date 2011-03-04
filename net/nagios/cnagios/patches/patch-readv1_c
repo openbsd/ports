@@ -1,7 +1,7 @@
-$OpenBSD: patch-readv1_c,v 1.1 2009/10/01 14:09:55 sthen Exp $
---- readv1.c.orig	Sat Apr 12 16:21:29 2008
-+++ readv1.c	Thu Oct  1 14:52:05 2009
-@@ -32,11 +32,13 @@ extern int color;
+$OpenBSD: patch-readv1_c,v 1.2 2011/03/04 11:21:45 sthen Exp $
+--- readv1.c.orig	Sat Oct 16 15:47:56 2010
++++ readv1.c	Fri Mar  4 12:08:21 2011
+@@ -32,10 +32,11 @@ extern int color;
  
  /*------------------------------------------------------------------*/
  
@@ -10,19 +10,25 @@ $OpenBSD: patch-readv1_c,v 1.1 2009/10/01 14:09:55 sthen Exp $
  {
    FILE *fp;
 -  int i, j, k;
--  int line_num, stamp;
 +  int i, k;
-+  int line_num;
-+  long stamp;
+   int line_num, stamp;
    char buffer[MAX_CHARS_PER_LINE];
    char *str_match; 
-   char entry_type[MAX_STATUS_TYPE_LEN];
-@@ -88,7 +90,7 @@ debug("status file is %s",STATUS_FILE);
-       continue;
-     }
- 
--    if ( sscanf(str_match,"[%d] %s",&stamp,entry_type) != 2 ) {
-+    if ( sscanf(str_match,"[%ld] %s",&stamp,entry_type) != 2 ) {
-       endwin();
-       fprintf(stderr,"warning: ignoring %s line %d: could not parse entry\r\n",
-         STATUS_FILE,line_num);
+@@ -124,7 +125,7 @@ debug("status file is %s",STATUS_FILE);
+               strncpy(host_list[host_list_size][LAST_STATE_CHANGE]," not applicable ",strlen(str_match)+1);
+               host_list[host_list_size][DURATION] = (char *)calc_duration(stamp);
+             } else {
+-              sscanf(str_match,"%ld",&stamp);
++              sscanf(str_match,"%d",&stamp);
+               host_list[host_list_size][LAST_STATE_CHANGE_INT] = (char *)stamp;
+               host_list[host_list_size][LAST_STATE_CHANGE] = malloc(17); /* "DOW Mon DD HH:MM\0" */
+               strncpy(host_list[host_list_size][LAST_STATE_CHANGE],ctime((time_t *)&stamp),16);
+@@ -195,7 +196,7 @@ debug("status file is %s",STATUS_FILE);
+               service_list[service_list_size][DURATION] = malloc(1);
+               service_list[service_list_size][DURATION] = (char *)calc_duration(stamp);
+             } else {
+-              sscanf(str_match,"%ld",&stamp);
++              sscanf(str_match,"%d",&stamp);
+               service_list[service_list_size][LAST_STATE_CHANGE_INT] = (char *)stamp;
+               strncpy(service_list[service_list_size][LAST_STATE_CHANGE],ctime((time_t *)&stamp),16);
+               service_list[service_list_size][DURATION] = (char *)calc_duration(stamp);
