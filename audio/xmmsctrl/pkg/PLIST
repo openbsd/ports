@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/26 20:22:42 jasper Exp $
-bin/xmmsctrl
+@comment $OpenBSD: PLIST,v 1.2 2011/03/04 16:12:01 jasper Exp $
+@bin bin/xmmsctrl
 share/examples/xmmsctrl/
 share/examples/xmmsctrl/emacs-transcriber
 share/examples/xmmsctrl/keylaunchrc
