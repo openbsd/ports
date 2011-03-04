@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/22 08:37:04 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/03/04 10:18:13 giovanni Exp $
 
 COMMENT=		drop-down terminal emulator
 
 DISTNAME=		tilda-0.9.6
-REVISION=		4
+REVISION=		5
 CATEGORIES=		x11
 
 HOMEPAGE=		http://tilda.sourceforge.net/
@@ -24,6 +24,7 @@ WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread xml2 z pthread-stubs xcb confuse vte
+WANTLIB += GL Xxf86vm drm xcb-render xcb-shm
 
 RUN_DEPENDS=		devel/desktop-file-utils
 LIB_DEPENDS=		devel/libconfuse \
