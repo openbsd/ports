@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-pl,v 1.5 2010/12/20 09:07:49 robert Exp $
+@comment $OpenBSD: PLIST-i18n-pl,v 1.6 2011/03/04 07:57:37 robert Exp $
 @conflict openoffice-i18n-pl-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/pl/
@@ -262,8 +262,8 @@ lib/libreoffice/basis${BV}/share/template/wizard/letter/pl/pri-mail_l.ott
 lib/libreoffice/basis${BV}/share/template/wizard/letter/pl/pri-marine_l.ott
 lib/libreoffice/basis${BV}/share/template/wizard/letter/pl/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/wordbook/pl/
-lib/libreoffice/basis${BV}/share/wordbook/pl/oracle.dic
 lib/libreoffice/basis${BV}/share/wordbook/pl/soffice.dic
+lib/libreoffice/basis${BV}/share/wordbook/pl/technical.dic
 lib/libreoffice/program/resource/ooopl.res
 lib/libreoffice/readmes/README_pl
 lib/libreoffice/share/extensions/dict-pl/

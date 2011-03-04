@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-fi,v 1.5 2010/12/20 09:07:49 robert Exp $
+@comment $OpenBSD: PLIST-i18n-fi,v 1.6 2011/03/04 07:57:37 robert Exp $
 @conflict openoffice-i18n-fi-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/fi/
@@ -252,8 +252,8 @@ lib/libreoffice/basis${BV}/share/template/fi/wizard/styles/pool.ots
 lib/libreoffice/basis${BV}/share/template/fi/wizard/styles/pumpkin.ots
 lib/libreoffice/basis${BV}/share/template/fi/wizard/styles/xos.ots
 lib/libreoffice/basis${BV}/share/wordbook/fi/
-lib/libreoffice/basis${BV}/share/wordbook/fi/oracle.dic
 lib/libreoffice/basis${BV}/share/wordbook/fi/soffice.dic
+lib/libreoffice/basis${BV}/share/wordbook/fi/technical.dic
 lib/libreoffice/program/resource/ooofi.res
 lib/libreoffice/readmes/README_fi
 @comment lib/libreoffice/share/extensions/presenter-screen/help/fi/caption/

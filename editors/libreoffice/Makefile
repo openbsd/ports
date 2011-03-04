@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/01/26 10:49:02 robert Exp $
+# $OpenBSD: Makefile,v 1.22 2011/03/04 07:57:36 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		3.3
-VERSION=	3.3.0.4
+VERSION=	3.3.1.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-build-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -79,7 +79,7 @@ DISTFILES+=	${EDISTFILES} \
 		f7925ba8491fe570e5164d2c72791358-libfonts.zip \
 		fdb27bfe2dbe2e7b57ae194d9bf36bab-SampleICC-1.3.2.tar.gz \
 		fe5b3e2b7c4577f30dc001054365653e-dejavu-fonts-ttf-2.30.zip \
-		86e390f015e505dd71a66f0123c62f09-libwpd-0.9.0.tar.bz2
+		5ff846847dab351604ad859e2fd4ed3c-libwpd-0.9.1.tar.bz2
 
 DIST_SUBDIR=	libreoffice
 
@@ -226,7 +226,7 @@ CONFIGURE_ARGS+=--enable-symbols \
 		--enable-debug
 .endif
 
-MAKE_ENV+=	TMP=${WRKSRC} PYTHON="${MODPY_BIN}"
+MAKE_ENV+=	TMP=${WRKSRC} PYTHON="${MODPY_BIN}" VERBOSE=true
 
 .if ${MACHINE_ARCH} == "i386"
 OA=		x86
@@ -242,7 +242,7 @@ pre-patch:
 	@ln -fs /usr/local/bin/gcat ${WRKDIR}/bin/cat
 	@mkdir -p ${WRKSRC}/build/libreoffice
 	@mkdir -p ${WRKSRC}/clone
-.for _c in ${COMPONENTS} 
+.for _c in ${COMPONENTS}
 	@mv ${WRKDIR}/libreoffice-${_c}-${VERSION}/* ${WRKSRC}/build/libreoffice/
 	@rmdir ${WRKDIR}/libreoffice-${_c}-${VERSION}
 .endfor

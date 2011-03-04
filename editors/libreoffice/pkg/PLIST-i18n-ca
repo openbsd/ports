@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ca,v 1.5 2010/12/20 09:07:49 robert Exp $
+@comment $OpenBSD: PLIST-i18n-ca,v 1.6 2011/03/04 07:57:36 robert Exp $
 @conflict openoffice-i18n-ca-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/ca/
@@ -252,8 +252,8 @@ lib/libreoffice/basis${BV}/share/template/ca/wizard/styles/pool.ots
 lib/libreoffice/basis${BV}/share/template/ca/wizard/styles/pumpkin.ots
 lib/libreoffice/basis${BV}/share/template/ca/wizard/styles/xos.ots
 lib/libreoffice/basis${BV}/share/wordbook/ca/
-lib/libreoffice/basis${BV}/share/wordbook/ca/oracle.dic
 lib/libreoffice/basis${BV}/share/wordbook/ca/soffice.dic
+lib/libreoffice/basis${BV}/share/wordbook/ca/technical.dic
 lib/libreoffice/program/resource/oooca.res
 lib/libreoffice/readmes/README_ca
 lib/libreoffice/share/extensions/dict-ca/

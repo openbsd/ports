@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-fa,v 1.5 2010/12/20 09:07:49 robert Exp $
+@comment $OpenBSD: PLIST-i18n-fa,v 1.6 2011/03/04 07:57:37 robert Exp $
 @conflict openoffice-i18n-fa-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/fa/
@@ -253,8 +253,8 @@ lib/libreoffice/basis${BV}/share/template/fa/wizard/styles/pool.ots
 lib/libreoffice/basis${BV}/share/template/fa/wizard/styles/pumpkin.ots
 lib/libreoffice/basis${BV}/share/template/fa/wizard/styles/xos.ots
 lib/libreoffice/basis${BV}/share/wordbook/fa/
-lib/libreoffice/basis${BV}/share/wordbook/fa/oracle.dic
 lib/libreoffice/basis${BV}/share/wordbook/fa/soffice.dic
+lib/libreoffice/basis${BV}/share/wordbook/fa/technical.dic
 lib/libreoffice/program/resource/ooofa.res
 lib/libreoffice/readmes/README_fa
 @comment lib/libreoffice/share/extensions/presenter-screen/help/fa/caption/

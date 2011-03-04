@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2011/01/23 13:31:11 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2011/03/04 07:57:37 robert Exp $
 @conflict openoffice-*
 %%SHARED%%
 bin/libreoffice
@@ -2044,8 +2044,8 @@ lib/libreoffice/basis${BV}/share/template/wizard/letter/zh-TW/pri-marine_l.ott
 lib/libreoffice/basis${BV}/share/template/wizard/letter/zh-TW/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/wordbook/
 lib/libreoffice/basis${BV}/share/wordbook/en-US/
-lib/libreoffice/basis${BV}/share/wordbook/en-US/oracle.dic
 lib/libreoffice/basis${BV}/share/wordbook/en-US/soffice.dic
+lib/libreoffice/basis${BV}/share/wordbook/en-US/technical.dic
 lib/libreoffice/basis${BV}/share/xslt/
 lib/libreoffice/basis${BV}/share/xslt/common/
 lib/libreoffice/basis${BV}/share/xslt/common/math.xsl

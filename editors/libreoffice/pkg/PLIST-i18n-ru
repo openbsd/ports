@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ru,v 1.5 2010/12/20 09:07:49 robert Exp $
+@comment $OpenBSD: PLIST-i18n-ru,v 1.6 2011/03/04 07:57:37 robert Exp $
 @conflict openoffice-i18n-ru-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/ru/
@@ -262,17 +262,20 @@ lib/libreoffice/basis${BV}/share/template/wizard/letter/ru/pri-mail_l.ott
 lib/libreoffice/basis${BV}/share/template/wizard/letter/ru/pri-marine_l.ott
 lib/libreoffice/basis${BV}/share/template/wizard/letter/ru/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/wordbook/ru/
-lib/libreoffice/basis${BV}/share/wordbook/ru/oracle.dic
 lib/libreoffice/basis${BV}/share/wordbook/ru/soffice.dic
+lib/libreoffice/basis${BV}/share/wordbook/ru/technical.dic
 lib/libreoffice/program/resource/oooru.res
 lib/libreoffice/readmes/README_ru
 lib/libreoffice/share/extensions/dict-ru/
 lib/libreoffice/share/extensions/dict-ru/META-INF/
 lib/libreoffice/share/extensions/dict-ru/META-INF/manifest.xml
+lib/libreoffice/share/extensions/dict-ru/README_ru_RU.txt
 lib/libreoffice/share/extensions/dict-ru/README_thes_ru_RU.txt
 lib/libreoffice/share/extensions/dict-ru/description.xml
 lib/libreoffice/share/extensions/dict-ru/dictionaries.xcu
 lib/libreoffice/share/extensions/dict-ru/hyph_ru_RU.dic
+lib/libreoffice/share/extensions/dict-ru/ru_RU.aff
+lib/libreoffice/share/extensions/dict-ru/ru_RU.dic
 lib/libreoffice/share/extensions/dict-ru/th_ru_RU_v2.dat
 lib/libreoffice/share/extensions/dict-ru/th_ru_RU_v2.idx
 @comment lib/libreoffice/share/extensions/presenter-screen/help/ru/caption/
