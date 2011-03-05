@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/05 13:43:00 sthen Exp $
 
 COMMENT=		web frontend to symon
-DISTNAME=		syweb-0.60
+DISTNAME=		syweb-0.61
 CATEGORIES=		www sysutils
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>

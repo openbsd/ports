@@ -1,0 +1,17 @@
+$OpenBSD: patch-htdocs_syweb_graph_defaults_inc,v 1.1 2011/03/05 13:43:00 sthen Exp $
+
+On systems where only 1 cpu is graphed, 0xc0 + floor(0x40 / 1) works
+out to be 0x100; this is too long for the 8-bit alpha channel value
+to supply to rrdtool's grapher and breaks cpu graphs.
+
+--- htdocs/syweb/graph_defaults.inc.orig	Sat Mar  5 13:09:58 2011
++++ htdocs/syweb/graph_defaults.inc	Sat Mar  5 13:26:22 2011
+@@ -844,7 +844,7 @@ function get_combined_template($graph_type, $number) {
+     switch ($graph_type) {
+     case 'cpu':
+     case 'cpuiow':
+-        $alpha = sprintf("%02x", 0xc0 + floor(0x40 / $number));
++        $alpha = sprintf("%02x", 0xbf + floor(0x40 / $number));
+         $rrd = array('us' => 'user', 'ni' => 'nice', 'sy' => 'system',
+                      'in' => 'interrupt' , 'id' => 'idle');
+         if ($graph_type == 'cpuiow')
