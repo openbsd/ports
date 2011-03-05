@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/12/03 11:44:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/05 11:33:44 sthen Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	perl interface to libev
@@ -18,5 +18,6 @@ PERMIT_PACKAGE_FTP =	Yes
 WANTLIB =		pthread
 BUILD_DEPENDS =		devel/libev
 RUN_DEPENDS =		${BUILD_DEPENDS}
+REGRESS_DEPENDS =	devel/p5-common-sense
 
 .include <bsd.port.mk>
