@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.25 2010/12/03 00:10:09 ian Exp $
+@comment $OpenBSD: PLIST,v 1.26 2011/03/05 19:41:14 sthen Exp $
 @newgroup _mrtg:578
 @newuser _mrtg:578:578:daemon:MRTG account:/var/empty:/sbin/nologin
 bin/cfgmaker
 bin/indexmaker
 bin/mrtg
+bin/mrtg-traffic-sum
 @bin bin/rateup
 libdata/perl5/site_perl/MRTG_lib.pm
 libdata/perl5/site_perl/Net_SNMP_util.pm
@@ -27,6 +28,7 @@ libdata/perl5/site_perl/locales_mrtg.pm
 @man man/man1/mrtg-reference.1
 @man man/man1/mrtg-rrd.1
 @man man/man1/mrtg-squid.1
+@man man/man1/mrtg-traffic-sum.1
 @man man/man1/mrtg-unix-guide.1
 @man man/man1/mrtg-webserver.1
 @man man/man1/mrtg.1
@@ -44,4 +46,3 @@ share/mrtg/mrtg-r.gif
 share/mrtg/mrtg-r.png
 share/mrtg/mrtg-ti.gif
 share/mrtg/mrtg-ti.png
-@rcscript ${RCDIR}/mrtg

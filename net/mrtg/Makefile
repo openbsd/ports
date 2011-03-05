@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.75 2011/03/02 08:36:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2011/03/05 19:41:14 sthen Exp $
 
 COMMENT=	multi-router traffic grapher
 
 DISTNAME=	mrtg-2.17.1
+REVISION=	0
 CATEGORIES=	net
 
 HOMEPAGE=	http://oss.oetiker.ch/mrtg/
@@ -43,6 +44,9 @@ NO_REGRESS=	Yes
 pre-configure:
 	@perl -pi -e 's,/etc/mrtg,${SYSCONFDIR}/mrtg,g' ${WRKSRC}/bin/mrtg
 
+post-build:
+	cd ${WRKSRC}; ${MAKE_PROGRAM} doc
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mrtg
 	${INSTALL_DATA_DIR} ${PREFIX}/libdata/perl5/site_perl/Pod
@@ -51,7 +55,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${PREFIX}/man/man1
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/rateup ${PREFIX}/bin
 	cd ${WRKSRC}/bin; ${INSTALL_SCRIPT} cfgmaker indexmaker mrtg \
-	    ${PREFIX}/bin
+	    mrtg-traffic-sum ${PREFIX}/bin
 	cd ${WRKSRC}/lib/mrtg2; ${INSTALL_DATA} MRTG_lib.pm Net_SNMP_util.pm \
 	    locales_mrtg.pm ${PREFIX}/libdata/perl5/site_perl/
 	cd ${WRKSRC}/lib/mrtg2/Pod; ${INSTALL_DATA} *.pm \
