@@ -1,41 +1,42 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/30 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/05 22:32:32 fgsch Exp $
 
-COMMENT=		libraries for WSGI development
+COMMENT =		libraries for WSGI development
 
-V=			0.7
-DISTNAME=		WSGIUtils-${V}
-PKGNAME=		py-wsgiutils-${V}
+MODPY_EGG_VERSION =	0.7
+DISTNAME =		WSGIUtils-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME:L}
 REVISION =		2
 
-CATEGORIES=		devel textproc www
+CATEGORIES =		devel textproc www
 
-HOMEPAGE=		http://www.owlfish.com/software/wsgiutils/
+HOMEPAGE =		http://www.owlfish.com/software/wsgiutils/
 
-MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
+MAINTAINER =		Martynas Venckus <martynas@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=		http://www.owlfish.com/software/wsgiutils/downloads/
+MASTER_SITES =		http://www.owlfish.com/software/wsgiutils/downloads/
 
-MODULES=		lang/python
+MODULES =		lang/python
 
-MODPY_SETUPTOOLS=	Yes
+MODPY_SETUPTOOLS =	Yes
 
-# make regress happy after fake
 post-install:
 	rm -fr ${WRKSRC}/lib/WSGIUtils.egg-info
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-wsgiutils
 	cd ${WRKSRC}/documentation && \
-		find . -type d -exec ${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-wsgiutils/{} \; && \
-		find . ! -type d -exec ${INSTALL_DATA} {} ${PREFIX}/share/doc/py-wsgiutils/{} \;
+	    pax -rw * ${PREFIX}/share/doc/py-wsgiutils/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-wsgiutils
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/py-wsgiutils/
+	${INSTALL_DATA} ${WRKSRC}/examples/* \
+	    ${PREFIX}/share/examples/py-wsgiutils/
 
 do-regress:
+	cd ${WRKSRC}/tests && touch __init__.py \
+	    CookieTests/__init__.py RequestObjectTests/__init__.py
 	cd ${WRKSRC} && ${MODPY_BIN} runtests.py
 
 .include <bsd.port.mk>

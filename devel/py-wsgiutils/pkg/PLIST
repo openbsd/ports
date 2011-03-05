@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/06/24 21:54:42 martynas Exp $
-lib/python${MODPY_VERSION}/site-packages/WSGIUtils-0.7-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/WSGIUtils-0.7-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/WSGIUtils-0.7-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/WSGIUtils-0.7-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/WSGIUtils-0.7-py${MODPY_VERSION}.egg-info/top_level.txt
+@comment $OpenBSD: PLIST,v 1.2 2011/03/05 22:32:32 fgsch Exp $
+lib/python${MODPY_VERSION}/site-packages/WSGIUtils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/WSGIUtils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/WSGIUtils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/WSGIUtils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/WSGIUtils-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/wsgiutils/
 lib/python${MODPY_VERSION}/site-packages/wsgiutils/SessionClient.py
 lib/python${MODPY_VERSION}/site-packages/wsgiutils/SessionClient.pyc
