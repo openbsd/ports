@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: unbound.rc,v 1.1 2011/03/06 09:24:41 jakob Exp $
+
+daemon="${TRUEPREFIX}/sbin/unbound"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

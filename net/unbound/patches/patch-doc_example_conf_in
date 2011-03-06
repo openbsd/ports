@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_example_conf_in,v 1.7 2010/08/22 09:03:11 jakob Exp $
---- doc/example.conf.in.orig	Mon Jul 12 09:59:39 2010
-+++ doc/example.conf.in	Thu Jul 15 21:06:20 2010
-@@ -189,7 +189,7 @@ server:
+$OpenBSD: patch-doc_example_conf_in,v 1.8 2011/03/06 09:24:41 jakob Exp $
+--- doc/example.conf.in.orig	Thu Dec  2 12:39:33 2010
++++ doc/example.conf.in	Mon Jan 24 21:17:27 2011
+@@ -193,7 +193,7 @@ server:
  	# chroot: "@UNBOUND_CHROOT_DIR@"
  
  	# if given, user privileges are dropped (after binding port),
