@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:39 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/06 22:37:52 jasper Exp $
 
 COMMENT=	Twitter script for irssi
 
 V=		2.4.1
-DISTNAME= 	twirssi
+DISTNAME= 	twirssi-$V
 DIST_SUBDIR=	${V}
-PKGNAME=	${DISTNAME}-${V}
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.twirssi.com/
@@ -29,10 +28,11 @@ PKG_ARCH=	*
 
 SCRIPT_DATA_DIR=	${PREFIX}/share/twirssi
 
-SUBST_VARS=	SCRIPT_DATA_DIR
+SUBST_VARS=		SCRIPT_DATA_DIR
 
 do-install:
 	${INSTALL_DATA_DIR} ${SCRIPT_DATA_DIR}
-	${INSTALL_SCRIPT} ${FULLDISTDIR}/twirssi.pl ${SCRIPT_DATA_DIR}
+	${INSTALL_SCRIPT} ${FULLDISTDIR}/twirssi-$V.pl \
+		${SCRIPT_DATA_DIR}/twirssi.pl
 
 .include <bsd.port.mk>
