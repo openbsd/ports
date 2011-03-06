@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/08/31 06:03:32 jakob Exp $
+# $OpenBSD: Makefile,v 1.47 2011/03/06 09:36:29 jakob Exp $
 
 SUBDIR =
 SUBDIR += stable
@@ -6,6 +6,7 @@ SUBDIR += stable,ldap
 SUBDIR += stable,mysql
 SUBDIR += stable,pgsql
 SUBDIR += stable,sasl2
+SUBDIR += stable,sqlite
 
 SUBDIR += snapshot
 SUBDIR += snapshot,ldap

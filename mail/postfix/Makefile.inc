@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.76 2011/01/07 19:22:06 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.77 2011/03/06 09:36:29 jakob Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -44,7 +44,7 @@ LIB_DEPENDS +=	devel/pcre
 MAKE_CCARGS +=	-DHAS_PCRE -I${LOCALBASE}/include
 MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lpcre
 
-FLAVORS +=	sasl2 ldap mysql pgsql db4
+FLAVORS +=	sasl2 ldap mysql pgsql db4 sqlite
 FLAVOR ?=
 
 .if ${FLAVOR:L:Msasl2}
