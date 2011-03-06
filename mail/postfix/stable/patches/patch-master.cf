@@ -1,18 +1,29 @@
-$OpenBSD: patch-master.cf,v 1.17 2010/03/27 20:59:58 jakob Exp $
---- conf/master.cf.orig	Wed Feb  3 16:01:27 2010
-+++ conf/master.cf	Sun Feb 14 23:00:29 2010
-@@ -8,8 +8,8 @@
+$OpenBSD: patch-master.cf,v 1.18 2011/03/06 09:35:03 jakob Exp $
+--- conf/master.cf.orig	Fri Dec 31 09:14:51 2010
++++ conf/master.cf	Fri Jan  7 22:16:50 2011
+@@ -8,49 +8,49 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
  # ==========================================================================
 -smtp      inet  n       -       n       -       -       smtpd
+-#smtp      inet  n       -       n       -       1       postscreen
+-#smtpd     pass  -       -       n       -       -       smtpd
+-#dnsblog   unix  -       -       n       -       0       dnsblog
+-#tlsproxy  unix  -       -       n       -       0       tlsproxy
 -#submission inet n       -       n       -       -       smtpd
 +smtp      inet  n       -       -       -       -       smtpd
++#smtp      inet  n       -       -       -       1       postscreen
++#smtpd     pass  -       -       -       -       -       smtpd
++#dnsblog   unix  -       -       -       -       0       dnsblog
++#tlsproxy  unix  -       -       -       -       0       tlsproxy
 +#submission inet n       -       -       -       -       smtpd
  #  -o smtpd_tls_security_level=encrypt
  #  -o smtpd_sasl_auth_enable=yes
  #  -o smtpd_client_restrictions=permit_sasl_authenticated,reject
-@@ -19,34 +19,34 @@ smtp      inet  n       -       n       -       -     
+ #  -o milter_macro_daemon_name=ORIGINATING
+-#smtps     inet  n       -       n       -       -       smtpd
++#smtps     inet  n       -       -       -       -       smtpd
+ #  -o smtpd_tls_wrappermode=yes
  #  -o smtpd_sasl_auth_enable=yes
  #  -o smtpd_client_restrictions=permit_sasl_authenticated,reject
  #  -o milter_macro_daemon_name=ORIGINATING
@@ -68,12 +79,12 @@ $OpenBSD: patch-master.cf,v 1.17 2010/03/27 20:59:58 jakob Exp $
  #
  # ====================================================================
  # Interfaces to non-Postfix software. Be sure to examine the manual
-@@ -80,14 +80,14 @@ scache    unix  -       -       n       -       1     
+@@ -84,14 +84,14 @@ scache    unix  -       -       n       -       1     
  # Also specify in main.cf: cyrus_destination_recipient_limit=1
  #
  #cyrus     unix  -       n       n       -       -       pipe
 -#  user=cyrus argv=/cyrus/bin/deliver -e -r ${sender} -m ${extension} ${user}
-+#  user=_cyrus argv=/usr/local/libexec/cyrus-imapd/deliver -e -r ${sender} -m ${extension} ${user}
++#  user=_cyrus argv=/cyrus/bin/deliver -e -r ${sender} -m ${extension} ${user}
  #
  # ====================================================================
  #
@@ -81,7 +92,7 @@ $OpenBSD: patch-master.cf,v 1.17 2010/03/27 20:59:58 jakob Exp $
  #
  #old-cyrus unix  -       n       n       -       -       pipe
 -#  flags=R user=cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
-+#  flags=R user=_cyrus argv=/usr/local/libexec/cyrus-imapd/deliver -e -m ${extension} ${user}
++#  flags=R user=_cyrus argv=/cyrus/bin/deliver -e -m ${extension} ${user}
  #
  # ====================================================================
  #
