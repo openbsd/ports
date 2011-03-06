@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2011/02/12 10:59:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.88 2011/03/06 14:13:20 steven Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
 
-VERSION=	2.7.9
+VERSION=	2.7.10
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
@@ -15,8 +15,6 @@ PKGNAME-libpurple= libpurple-${VERSION}
 FULLPKGNAME$i= ${PKGNAME$i}${FLAVOR_EXT:S/-gtkspell//}
 FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 .endfor
-REVISION-main=	0
-REVISION-libpurple= 0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 
@@ -141,7 +139,7 @@ post-extract:
 
 post-build:
 	cp ${FILESDIR}/purple.service ${WRKSRC}
-	${SUBST_CMD} ${WRKSRC}/libpurple/purple-remote \
+	@${SUBST_CMD} ${WRKSRC}/libpurple/purple-remote \
 		     ${WRKSRC}/libpurple/purple-url-handler \
 		     ${WRKSRC}/purple.service
 

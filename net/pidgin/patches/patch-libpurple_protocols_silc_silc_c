@@ -1,7 +1,7 @@
-$OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.6 2009/12/07 06:27:59 steven Exp $
---- libpurple/protocols/silc/silc.c.orig	Sun Nov 29 22:13:53 2009
-+++ libpurple/protocols/silc/silc.c	Sun Dec  6 13:05:09 2009
-@@ -672,31 +672,12 @@ silcpurple_close(PurpleConnection *gc)
+$OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.7 2011/03/06 14:13:20 steven Exp $
+--- libpurple/protocols/silc/silc.c.orig	Sat Jan  8 10:19:45 2011
++++ libpurple/protocols/silc/silc.c	Wed Feb 23 20:44:51 2011
+@@ -672,30 +672,12 @@ silcpurple_close(PurpleConnection *gc)
  	SilcPurpleTask task;
  #endif /* __SILC_TOOLKIT_VERSION */
  	GHashTable *ui_info;
@@ -11,12 +11,12 @@ $OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.6 2009/12/07 06:27:59 steven
  	g_return_if_fail(sg != NULL);
  
 -	ui_info = purple_core_get_ui_info();
--	
+-
 -	if(ui_info) {
 -		ui_name = g_hash_table_lookup(ui_info, "name");
 -		ui_website = g_hash_table_lookup(ui_info, "website");
 -	}
--	
+-
 -	if(!ui_name || !ui_website) {
 -		ui_name = "Pidgin";
 -		ui_website = PURPLE_WEBSITE;
@@ -29,32 +29,31 @@ $OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.6 2009/12/07 06:27:59 steven
 -				 "QUIT", quit_msg,
 -				 NULL);
 -	g_free(quit_msg);
--
 +				 "QUIT", NULL);
+ 
  	if (sg->conn)
  		silc_client_close_connection(sg->client, sg->conn);
- 
-@@ -1842,9 +1823,6 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
+@@ -1842,9 +1824,6 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
  {
  	PurpleConnection *gc;
  	SilcPurple sg;
 -	GHashTable *ui_info;
 -	const char *ui_name = NULL, *ui_website = NULL;
 -	char *quit_msg;
- 								   
+ 
  	gc = purple_conversation_get_gc(conv);
  
-@@ -1856,23 +1834,8 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
+@@ -1856,23 +1835,8 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
  	if (sg == NULL)
  		return PURPLE_CMD_RET_FAILED;
  
 -	ui_info = purple_core_get_ui_info();
--	
+-
 -	if(ui_info) {
 -		ui_name = g_hash_table_lookup(ui_info, "name");
 -		ui_website = g_hash_table_lookup(ui_info, "website");
 -	}
--	
+-
 -	if(!ui_name || !ui_website) {
 -		ui_name = "Pidgin";
 -		ui_website = PURPLE_WEBSITE;
