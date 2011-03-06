@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_tftp_c,v 1.8 2011/01/10 22:08:26 ajacoutot Exp $
+$OpenBSD: patch-src_tftp_c,v 1.9 2011/03/06 11:19:53 sthen Exp $
 
 gcc2 fixes to struct errmess, struct oackmess, struct datamess from kili
 
---- src/tftp.c.orig	Sun Jun  6 15:22:30 2010
-+++ src/tftp.c	Tue Dec 28 18:55:44 2010
-@@ -549,7 +549,7 @@ static ssize_t tftp_err(int err, char *packet, char *m
+--- src/tftp.c.orig	Tue Jan 18 17:23:57 2011
++++ src/tftp.c	Tue Feb 15 19:11:50 2011
+@@ -606,7 +606,7 @@ static ssize_t tftp_err(int err, char *packet, char *m
  {
    struct errmess {
      unsigned short op, err;
@@ -13,7 +13,7 @@ gcc2 fixes to struct errmess, struct oackmess, struct datamess from kili
    } *mess = (struct errmess *)packet;
    ssize_t ret = 4;
    char *errstr = strerror(errno);
-@@ -576,7 +576,7 @@ static ssize_t get_block(char *packet, struct tftp_tra
+@@ -633,7 +633,7 @@ static ssize_t get_block(char *packet, struct tftp_tra
        char *p;
        struct oackmess {
  	unsigned short op;
@@ -22,7 +22,7 @@ gcc2 fixes to struct errmess, struct oackmess, struct datamess from kili
        } *mess = (struct oackmess *)packet;
        
        p = mess->data;
-@@ -599,7 +599,7 @@ static ssize_t get_block(char *packet, struct tftp_tra
+@@ -656,7 +656,7 @@ static ssize_t get_block(char *packet, struct tftp_tra
        /* send data packet */
        struct datamess {
  	unsigned short op, block;

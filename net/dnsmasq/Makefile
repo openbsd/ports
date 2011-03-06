@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2011/01/10 22:08:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/03/06 11:19:53 sthen Exp $
 
 COMMENT=	caching DNS forwarder and DHCP server
 
-DISTNAME=	dnsmasq-2.55
+DISTNAME=	dnsmasq-2.57
 CATEGORIES=	net
+MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
 
 MAINTAINER=	Rui Reis <rui@openbsd.org>
 
@@ -16,11 +17,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/
-
 MAKE_ENV=	CC="${CC}"
 
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 NO_REGRESS=	Yes
 
 pre-build:

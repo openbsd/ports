@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_config_h,v 1.7 2009/12/27 19:34:33 sthen Exp $
---- src/config.h.orig	Fri Oct  9 14:13:11 2009
-+++ src/config.h	Thu Dec 24 14:21:01 2009
-@@ -55,13 +55,13 @@
+$OpenBSD: patch-src_config_h,v 1.8 2011/03/06 11:19:53 sthen Exp $
+--- src/config.h.orig	Fri Feb 18 05:18:39 2011
++++ src/config.h	Fri Feb 18 15:00:08 2011
+@@ -57,13 +57,13 @@
  #   if defined(__FreeBSD__)
  #      define CONFFILE "/usr/local/etc/dnsmasq.conf"
  #   else
@@ -15,6 +15,6 @@ $OpenBSD: patch-src_config_h,v 1.7 2009/12/27 19:34:33 sthen Exp $
 -#define CHGRP "dip"
 +#define CHUSER "_dnsmasq"
 +#define CHGRP "_dnsmasq"
+ #define NAMESERVER_PORT 53
  #define DHCP_SERVER_PORT 67
  #define DHCP_CLIENT_PORT 68
- #define DHCP_SERVER_ALTPORT 1067
