@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/09/16 10:18:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/03/06 11:43:38 sthen Exp $
 @pkgpath graphics/ufraw,lensfun
 @comment bin/dcraw
 @bin bin/nikon-curve
@@ -29,5 +29,6 @@ share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/ufraw.mo
 share/locale/sv/LC_MESSAGES/ufraw.mo
 share/locale/zh_CN/LC_MESSAGES/ufraw.mo
+share/locale/zh_TW/LC_MESSAGES/ufraw.mo
 share/pixmaps/
 share/pixmaps/ufraw.png
