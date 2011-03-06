@@ -1,19 +1,16 @@
 #!/bin/sh
 #
-# $OpenBSD: mysqld.rc,v 1.10 2011/01/05 16:05:54 ajacoutot Exp $
+# $OpenBSD: mysqld.rc,v 1.11 2011/03/06 16:54:38 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/mysqld_safe"
 
 . /etc/rc.d/rc.subr
 
+rc_bg=YES
 rc_reload=NO
 
 rc_check() {
 	${TRUEPREFIX}/bin/mysqladmin -s ping >/dev/null
-}
-
-rc_start() {
-	${rcexec} -c "${daemon} ${daemon_flags}" >/dev/null 2>&1 &
 }
 
 rc_stop() {
