@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/15 16:23:49 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/03/06 16:31:57 robert Exp $
 bin/mdtool
 bin/monodevelop
 lib/monodevelop/
@@ -213,6 +213,7 @@ lib/monodevelop/bin/MonoDevelop.Core.dll.mdb
 lib/monodevelop/bin/MonoDevelop.Ide.dll
 lib/monodevelop/bin/MonoDevelop.Ide.dll.mdb
 lib/monodevelop/bin/MonoDevelop.Projects.Formats.MSBuild.exe
+lib/monodevelop/bin/MonoDevelop.Projects.Formats.MSBuild.exe.config
 lib/monodevelop/bin/MonoDevelop.Projects.Formats.MSBuild.exe.mdb
 lib/monodevelop/bin/MonoDevelop.exe
 lib/monodevelop/bin/MonoDevelop.exe.addins
