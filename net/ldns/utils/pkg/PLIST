@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/02/10 19:24:43 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/03/06 09:16:37 jakob Exp $
 @bin bin/ldns-chaos
 @bin bin/ldns-compare-zones
 @bin bin/ldns-dpa
@@ -13,6 +13,7 @@
 @bin bin/ldns-revoke
 @bin bin/ldns-rrsig
 @bin bin/ldns-signzone
+@bin bin/ldns-test-edns
 @bin bin/ldns-testns
 @bin bin/ldns-update
 @bin bin/ldns-verify-zone
@@ -35,6 +36,7 @@
 @man man/man1/ldns-revoke.1
 @man man/man1/ldns-rrsig.1
 @man man/man1/ldns-signzone.1
+@man man/man1/ldns-test-edns.1
 @man man/man1/ldns-testns.1
 @man man/man1/ldns-update.1
 @man man/man1/ldns-verify-zone.1
