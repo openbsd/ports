@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/06 22:57:03 fgsch Exp $
 
 COMMENT =		fast, optionally sandboxed, Python template engine
 
-MODPY_EGG_VERSION =	2.5.2
+MODPY_EGG_VERSION =	2.5.5
 DISTNAME =		Jinja2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 
@@ -25,10 +25,5 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 REGRESS_DEPENDS =	devel/py-nose
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-jinja2
-	cd ${WRKSRC}/docs/_build/html && \
-	    pax -rw * ${PREFIX}/share/doc/py-jinja2
 
 .include <bsd.port.mk>
