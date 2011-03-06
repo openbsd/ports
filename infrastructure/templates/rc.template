@@ -5,7 +5,7 @@ See rc.subr(8) for more information.
 -----------------------------------8<-----------------------------------
 #!/bin/sh
 #
-# $OpenBSD: rc.template,v 1.3 2011/03/03 15:55:43 ajacoutot Exp $
+# $OpenBSD: rc.template,v 1.4 2011/03/06 16:50:11 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/foobar"
 #daemon_flags=""
@@ -14,6 +14,7 @@ daemon="${TRUEPREFIX}/bin/foobar"
 . /etc/rc.d/rc.subr
 
 #pexp="${daemon}${daemon_flags:+ ${daemon_flags}}"
+#rc_bg= # (undefined)
 #rc_reload= # (undefined)
 
 #rc_pre() {
