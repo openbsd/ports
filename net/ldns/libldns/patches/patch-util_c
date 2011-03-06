@@ -1,8 +1,8 @@
-$OpenBSD: patch-util_c,v 1.5 2010/08/22 08:56:51 jakob Exp $
---- util.c.orig	Tue May 18 03:08:09 2010
-+++ util.c	Sun Jul 25 17:26:25 2010
-@@ -272,10 +272,10 @@ ldns_init_random(FILE *fd, unsigned int size)
- 	seed = LDNS_XMALLOC(uint8_t, size);
+$OpenBSD: patch-util_c,v 1.6 2011/03/06 09:11:57 jakob Exp $
+--- util.c.orig	Mon Jan 24 15:24:36 2011
++++ util.c	Sun Mar  6 10:09:43 2011
+@@ -275,10 +275,10 @@ ldns_init_random(FILE *fd, unsigned int size)
+         }
  
  	if (!fd) {
 -		if ((rand_f = fopen("/dev/urandom", "r")) == NULL) {
