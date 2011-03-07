@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2010/09/30 07:44:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2011/03/07 19:32:28 ajacoutot Exp $
 %%SHARED%%
 include/libgnomeui-2.0/
 include/libgnomeui-2.0/gnome.h
@@ -279,6 +279,9 @@ share/locale/ku/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/la/
 share/locale/la/LC_MESSAGES/
 share/locale/la/LC_MESSAGES/libgnomeui-2.0.mo
+share/locale/lg/
+share/locale/lg/LC_MESSAGES/
+share/locale/lg/LC_MESSAGES/libgnomeui-2.0.mo
 share/locale/li/
 share/locale/li/LC_MESSAGES/
 share/locale/li/LC_MESSAGES/libgnomeui-2.0.mo
