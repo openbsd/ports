@@ -1,4 +1,13 @@
 Z-push has been installed into ${INSTDIR}
 
-Proceed to complete the installation by reading:
-${INSTDIR}/INSTALL
+You should point the followings to the DocumentRoot of your web-server:
+    # ln -s ../z-push /var/www/htdocs/z-push
+(make sure you use a relative symlink since Apache is chrooted)
+
+With Apache, some non defaults PHP settings are required on the
+${INSTDIR} directory. You can configure this as follows:
+    # ln -s ${PREFIX}/conf/modules.sample/z-push.conf \
+        /var/www/conf/modules
+
+Proceed to complete the configuration by reading:
+    ${INSTDIR}/INSTALL

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/06/30 17:41:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/03/07 19:50:26 ajacoutot Exp $
 z-push/
 z-push/INSTALL
 z-push/LICENSE
@@ -7,7 +7,13 @@ z-push/backend/backend.php
 z-push/backend/diffbackend.php
 z-push/backend/ics.php
 z-push/backend/imap.php
+z-push/backend/kolab/
+z-push/backend/kolab/kolab.php
 z-push/backend/maildir.php
+z-push/backend/searchbackend.php
+z-push/backend/searchldap/
+z-push/backend/searchldap/config.php
+z-push/backend/searchldap/searchldap.php
 z-push/backend/vcarddir.php
 z-push/backend/zarafa/
 z-push/backend/zarafa/z-push-admin.php
@@ -35,5 +41,7 @@ z-push/streamer.php
 z-push/streamimporter.php
 z-push/version.php
 z-push/wbxml.php
+z-push/z-push.conf.dist
+@sample /var/www/conf/modules.sample/z-push.conf
 z-push/zpushdefs.php
 z-push/zpushdtd.php

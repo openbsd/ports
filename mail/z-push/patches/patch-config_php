@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_php,v 1.3 2010/06/30 17:41:03 ajacoutot Exp $
---- config.php.orig	Fri Nov 13 21:38:35 2009
-+++ config.php	Wed Jun 30 19:38:57 2010
-@@ -12,7 +12,7 @@
+$OpenBSD: patch-config_php,v 1.4 2011/03/07 19:50:26 ajacoutot Exp $
+--- config.php.orig	Fri Nov 19 22:20:24 2010
++++ config.php	Tue Jan 25 09:47:57 2011
+@@ -42,7 +42,7 @@
  ************************************************/
      // Defines the default time zone
      if (function_exists("date_default_timezone_set")){
@@ -10,7 +10,7 @@ $OpenBSD: patch-config_php,v 1.3 2010/06/30 17:41:03 ajacoutot Exp $
      }
  
      // Defines the base path on the server, terminated by a slash
-@@ -23,9 +23,10 @@
+@@ -53,9 +53,10 @@
                          BASE_PATH. "include/" . PATH_SEPARATOR .
                          BASE_PATH. PATH_SEPARATOR .
                          ini_get('include_path') . PATH_SEPARATOR .
@@ -22,9 +22,9 @@ $OpenBSD: patch-config_php,v 1.3 2010/06/30 17:41:03 ajacoutot Exp $
 +                        "/var/www/pear/" . PATH_SEPARATOR .
 +                        "/pear/");
  
-     define('STATE_DIR', 'state');
+     define('STATE_DIR', BASE_PATH.'/state');
  
-@@ -52,7 +53,8 @@
+@@ -89,7 +90,8 @@
      // ************************
  
      // Defines the server to which we want to connect
