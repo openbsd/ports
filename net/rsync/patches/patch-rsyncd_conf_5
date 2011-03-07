@@ -1,0 +1,51 @@
+$OpenBSD: patch-rsyncd_conf_5,v 1.1 2011/03/07 19:48:20 ajacoutot Exp $
+--- rsyncd.conf.5.orig	Thu Dec 31 22:15:51 2009
++++ rsyncd.conf.5	Tue Feb 22 11:22:44 2011
+@@ -67,12 +67,11 @@ When run via inetd you should add a line like this to 
+ and a single line something like this to /etc/inetd.conf:
+ .PP 
+ .nf 
+-  rsync   stream  tcp     nowait  root   /usr/bin/rsync rsyncd \-\-daemon
++  rsync   stream  tcp     nowait  root   ${PREFIX}/bin/rsync rsyncd \-\-daemon
+ .fi 
+ 
+ .PP 
+-Replace \(dq\&/usr/bin/rsync\(dq\& with the path to where you have rsync installed on
+-your system.  You will then need to send inetd a HUP signal to tell it to
++You will then need to send inetd a HUP signal to tell it to
+ reread its config file.
+ .PP 
+ Note that you should \fBnot\fP send the rsync daemon a HUP signal to force
+@@ -460,7 +459,7 @@ limit the length of passwords that can be typed at the
+ you may find that passwords longer than 8 characters don\(cq\&t work.
+ .IP 
+ There is no default for the \(dq\&secrets file\(dq\& parameter, you must choose a name
+-(such as \f(CW/etc/rsyncd.secrets\fP).  The file must normally not be readable
++(such as \f(CW${SYSCONFDIR}/rsyncd.secrets\fP).  The file must normally not be readable
+ by \(dq\&other\(dq\&; see \(dq\&strict modes\(dq\&.
+ .IP 
+ .IP "\fBstrict modes\fP"
+@@ -785,12 +784,12 @@ pid file = /var/run/rsyncd.pid
+         path = /data/cvs
+         comment = CVS repository (requires authentication)
+         auth users = tridge, susan
+-        secrets file = /etc/rsyncd.secrets
++        secrets file = ${SYSCONFDIR}/rsyncd.secrets
+ 
+ .fi 
+ 
+ .PP 
+-The /etc/rsyncd.secrets file would look something like this:
++The ${SYSCONFDIR}/rsyncd.secrets file would look something like this:
+ .PP 
+ .RS 
+ \f(CWtridge:mypass\fP
+@@ -803,7 +802,7 @@ The /etc/rsyncd.secrets file would look something like
+ .SH "FILES"
+ 
+ .PP 
+-/etc/rsyncd.conf or rsyncd.conf
++${SYSCONFDIR}/rsyncd.conf or rsyncd.conf
+ .PP 
+ .SH "SEE ALSO"
+ 

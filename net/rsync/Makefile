@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2010/10/18 18:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2011/03/07 19:48:20 ajacoutot Exp $
 
 COMMENT =	mirroring/synchronization over low bandwidth links
 
 DISTNAME =	rsync-3.0.7
 CATEGORIES =	net
 HOMEPAGE =	http://rsync.samba.org/
+REVISION =	0
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
@@ -28,6 +29,9 @@ CONFIGURE_ARGS =--with-included-popt \
 
 DOCDIR =	${PREFIX}/share/doc/rsync
 USE_GROFF =	Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/rsyncd.conf.5
 
 do-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
