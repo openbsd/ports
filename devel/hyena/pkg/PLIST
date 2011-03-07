@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/07 21:52:11 ajacoutot Exp $
+lib/hyena/
+lib/hyena/Hyena.Data.Sqlite.dll
+lib/hyena/Hyena.Data.Sqlite.dll.mdb
+lib/hyena/Hyena.Gui.dll
+lib/hyena/Hyena.Gui.dll.config
+lib/hyena/Hyena.Gui.dll.mdb
+lib/hyena/Hyena.dll
+lib/hyena/Hyena.dll.config
+lib/hyena/Hyena.dll.mdb
+lib/hyena/Mono.Data.Sqlite.dll
+lib/hyena/Mono.Data.Sqlite.dll.mdb
+lib/pkgconfig/hyena.data.sqlite.pc
+lib/pkgconfig/hyena.gui.pc
+lib/pkgconfig/hyena.pc

@@ -1,0 +1,5 @@
+Hyena is a C# library used to make awesome applications. It contains a
+lot of random things, including useful data structures, a Sqlite-based
+db layer, cool widgets, a JSON library, a smart job/task scheduler, a
+user-query/search parser, and much more. It's particularly useful for
+Gtk# applications, though only the Hyena.Gui assembly requires Gtk#.
