@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/07 23:40:58 sthen Exp $
+${P5SITE}/LWP/
+${P5SITE}/LWP/Protocol/
+${P5SITE}/LWP/Protocol/socks.pm
+${P5SITE}/URI/
+${P5SITE}/URI/socks.pm
+@man man/man3p/LWP::Protocol::socks.3p
