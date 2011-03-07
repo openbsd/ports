@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2010/12/22 22:08:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2011/03/07 19:33:08 ajacoutot Exp $
 include/libgnomecanvas-2.0/
 include/libgnomecanvas-2.0/libgnomecanvas/
 include/libgnomecanvas-2.0/libgnomecanvas/gnome-canvas-bpath.h
@@ -134,6 +134,7 @@ share/locale/te/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/th/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/tr/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/tt/LC_MESSAGES/libgnomecanvas-2.0.mo
+share/locale/ug/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/uk/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/vi/LC_MESSAGES/libgnomecanvas-2.0.mo
 share/locale/wa/LC_MESSAGES/libgnomecanvas-2.0.mo
