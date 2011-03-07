@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2010/11/05 13:00:09 eric Exp $
+# $OpenBSD: Makefile,v 1.48 2011/03/07 23:42:55 sthen Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -38,6 +38,7 @@
      SUBDIR += oggconvert
      SUBDIR += oggz
      SUBDIR += ogmtools
+     SUBDIR += p5-Data-AMF
      SUBDIR += pspvc
      SUBDIR += recordmydesktop
      SUBDIR += regionset

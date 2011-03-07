@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.490 2011/01/11 18:01:09 jeremy Exp $
+# $OpenBSD: Makefile,v 1.491 2011/03/07 23:42:55 sthen Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -261,6 +261,7 @@
      SUBDIR += p5-HTTPD-Log-Filter
      SUBDIR += p5-JavaScript-Minifier
      SUBDIR += p5-LWP-Authen-Wsse
+     SUBDIR += p5-LWP-Protocol-socks
      SUBDIR += p5-LWP-UserAgent-Determined
      SUBDIR += p5-MasonX-Interp-WithCallbacks
      SUBDIR += p5-Maypole
