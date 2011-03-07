@@ -1,0 +1,20 @@
+$OpenBSD: patch-MoinMoin_parser_text_rst_py,v 1.1 2011/03/07 18:38:06 jasper Exp $
+
+Security fix for CVE-2011-1058,
+MoinMoin "refuri" Cross-Site Scripting Vulnerability
+
+Patch from upstream Mercurial:
+http://hg.moinmo.in/moin/1.9/rev/97208f67798f
+
+--- MoinMoin/parser/text_rst.py.orig	Mon Mar  7 19:35:58 2011
++++ MoinMoin/parser/text_rst.py	Mon Mar  7 19:36:02 2011
+@@ -391,6 +391,9 @@ class MoinTranslator(html4css1.HTMLTranslator):
+                 # for images with targets).
+                 if not [i for i in node.children if i.__class__ == docutils.nodes.image]:
+                     node['classes'].append('interwiki')
++            elif prefix == 'javascript':
++                # is someone trying to do XSS with javascript?
++                node['refuri'] = 'javascript:alert("it does not work")'
+             elif prefix != '':
+                 # Some link scheme (http, file, https, mailto, etc.), add class
+                 # information if the reference doesn't have a child image (don't
