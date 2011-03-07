@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.14 2010/12/02 14:04:49 ajacoutot Exp $
---- configure.ac.orig	Wed Dec  1 19:14:30 2010
-+++ configure.ac	Thu Dec  2 12:16:38 2010
+$OpenBSD: patch-configure_ac,v 1.15 2011/03/07 19:44:35 ajacoutot Exp $
+--- configure.ac.orig	Fri Jan 21 11:15:52 2011
++++ configure.ac	Tue Jan 25 18:18:05 2011
 @@ -499,6 +499,8 @@ AG_GST_CHECK_FEATURE(GST_V4L2, [Video 4 Linux 2], v4l2
  #ifdef __sun /* Solaris */
  #include <sys/types.h>
@@ -41,7 +41,7 @@ $OpenBSD: patch-configure_ac,v 1.14 2010/12/02 14:04:49 ajacoutot Exp $
  dnl *** FLAC ***
  translit(dnm, m, l) AM_CONDITIONAL(USE_FLAC, true)
  AG_GST_CHECK_FEATURE(FLAC, [FLAC lossless audio], flac, [
-@@ -1014,6 +1033,7 @@ AM_CONDITIONAL(USE_CAIRO, false)
+@@ -1022,6 +1041,7 @@ AM_CONDITIONAL(USE_CAIRO, false)
  AM_CONDITIONAL(USE_DIRECTSOUND, false)
  AM_CONDITIONAL(USE_DV1394, false)
  AM_CONDITIONAL(USE_ESD, false)
@@ -49,7 +49,7 @@ $OpenBSD: patch-configure_ac,v 1.14 2010/12/02 14:04:49 ajacoutot Exp $
  AM_CONDITIONAL(USE_FLAC, false)
  AM_CONDITIONAL(USE_GCONF, false)
  AM_CONDITIONAL(USE_GCONFTOOL, false)
-@@ -1151,6 +1171,7 @@ ext/annodex/Makefile
+@@ -1159,6 +1179,7 @@ ext/annodex/Makefile
  ext/cairo/Makefile
  ext/dv/Makefile
  ext/esd/Makefile

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2010/12/02 14:04:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2011/03/07 19:44:35 ajacoutot Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
 COMMENT-dv =		dv element for GStreamer (plugins-good)
 COMMENT-caca =		libcaca element for GStreamer (plugins-good)
 
-V =			0.10.26
+V =			0.10.27
 DISTNAME =		gst-plugins-good-$V
 
 PKGNAME-main =		gstreamer-plugins-good-${V}
@@ -43,7 +43,7 @@ WANTLIB-main =		${WANTLIB} ${MODGCONF2_WANTLIB} gdk_pixbuf-2.0 \
 			ICE SM X11 Xdamage Xext Xfixes sndio ossaudio \
 			gstcontroller-0.10 Xau Xdmcp xcb-render \
 			pthread-stubs xcb Xrender cairo expat orc-0.4 \
-			fontconfig freetype ogg pixman-1 png \
+			fontconfig freetype ogg pixman-1 png Xv \
 			stdc++ theora vorbis ORBit-2 dbus-1 GL Xxf86vm \
 			gstaudio-0.10 gstinterfaces-0.10 gstnetbuffer-0.10 \
 			gstriff-0.10 gstrtp-0.10 gsttag-0.10 gstvideo-0.10 \
@@ -94,6 +94,7 @@ CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-sunaudio \
 			--disable-esd \
 			--disable-esdtest \
+			--disable-jack \
 			--disable-oss4 \
 			--enable-gst_v4l2 \
 			--enable-goom \
