@@ -1,7 +1,56 @@
-$OpenBSD: patch-src_rss_c,v 1.7 2010/12/29 19:50:46 ajacoutot Exp $
---- src/rss.c.orig	Wed Dec 29 18:05:09 2010
-+++ src/rss.c	Wed Dec 29 18:06:39 2010
-@@ -1476,6 +1476,7 @@ webkit_click (GtkEntry *entry,
+$OpenBSD: patch-src_rss_c,v 1.8 2011/03/07 19:40:44 ajacoutot Exp $
+
+GtkFunction -> GSourceFunc: fix build with newer glib2/gtk+2
+
+From bff2cf675df01ce4f222bcb6b2c5c9d3d7723031 Mon Sep 17 00:00:00 2001
+From: Lucian Langa <lucilanga@gnome.org>
+Date: Tue, 25 Jan 2011 19:38:22 +0000
+Subject: Bug 639825 - RSS plugin freezes Evolution on some posts if 'Show full text' is enabled
+
+--- src/rss.c.orig	Wed Feb  2 08:21:43 2011
++++ src/rss.c	Wed Feb  2 08:22:02 2011
+@@ -874,7 +874,7 @@ network_timeout(void)
+ 
+ 	nettime_id = g_timeout_add (
+ 				(guint)(timeout)*1000,
+-				(GtkFunction) timeout_soup,
++				(GSourceFunc) timeout_soup,
+ 				0);
+ }
+ 
+@@ -1348,7 +1348,8 @@ webkit_net_status (WebKitWebView *view,
+ 		GtkWidget *data)
+ {
+ 	GtkAllocation alloc;
+-	gint width;
++	GtkRequisition req;
++	gint width, w;
+ 	WebKitLoadStatus status = webkit_web_view_get_load_status (view);
+ 	switch (status) {
+ 		case WEBKIT_LOAD_FINISHED:
+@@ -1356,9 +1357,19 @@ webkit_net_status (WebKitWebView *view,
+ 			if (rf->mozembed) {
+ 				gtk_widget_get_allocation(rf->mozembed, &alloc);
+ 				width = alloc.width;
+-				if (resize_pane_hsize > width && width != 1)
++				if (resize_pane_hsize > width && width != 1) {
+ 					gtk_widget_set_size_request(rf->mozembed,
+-						(int)resize_pane_hsize-14, -1);
++						-1, -1);
++					gtk_widget_size_request(rf->mozembed, &req);
++
++					if (req.width < resize_pane_hsize-14)
++						w = resize_pane_hsize-14;
++					else
++						w = req.width;
++
++					gtk_widget_set_size_request(rf->mozembed,
++						w, req.height);
++				}
+ 			}
+ 		break;
+ 		default:
+@@ -1476,6 +1487,7 @@ webkit_click (GtkEntry *entry,
  	return TRUE;
  }
  
@@ -9,7 +58,7 @@ $OpenBSD: patch-src_rss_c,v 1.7 2010/12/29 19:50:46 ajacoutot Exp $
  void webkit_hook_actions(void);
  
  void
-@@ -1505,6 +1506,7 @@ webkit_hook_actions(void)
+@@ -1505,6 +1517,7 @@ webkit_hook_actions(void)
  		G_CALLBACK (embed_zoom_100_cb), NULL);
  #endif
  }
@@ -17,7 +66,43 @@ $OpenBSD: patch-src_rss_c,v 1.7 2010/12/29 19:50:46 ajacoutot Exp $
  
  #if 0
  #if EVOLUTION_VERSION >= 22900
-@@ -5055,7 +5057,9 @@ e_plugin_ui_init (GtkUIManager *ui_manager,
+@@ -1817,7 +1830,7 @@ org_gnome_rss_browser (EMFormatHTML *efh, void *eb, EM
+ #else
+ 	width = (int)(adj->page_size);
+ #endif
+-	gtk_widget_set_size_request(rf->mozembed, width-32, height);
++	gtk_widget_set_size_request(rf->mozembed, width-14, height);
+ 	po->sh_handler = g_signal_connect(adj,
+ 		"changed",
+ 		G_CALLBACK(rss_browser_set_hsize),
+@@ -4384,7 +4397,7 @@ custom_fetch_feed(gpointer key, gpointer value, gpoint
+ 			}
+ 			time_id = g_timeout_add (
+ 					ttl * 60 * 1000 * ttl_multiply,
+-					(GtkFunction) custom_update_articles,
++					(GSourceFunc) custom_update_articles,
+ 					cdata);
+ 			g_hash_table_replace(custom_timeout,
+ 				g_strdup(lookup_key(key)),
+@@ -4595,7 +4608,7 @@ void org_gnome_cooly_rss_startup(void *ep, ESEventTarg
+ 		//as I don't know how to set this I'll setup a 10 secs timeout
+ 		//and return false for disableation
+ 		g_timeout_add (3 * 1000,
+-			(GtkFunction) update_articles,
++			(GSourceFunc) update_articles,
+ 			0);
+ 	}
+ 	timeout = gconf_client_get_float(
+@@ -4604,7 +4617,7 @@ void org_gnome_cooly_rss_startup(void *ep, ESEventTarg
+ 			NULL);
+ 	if (gconf_client_get_bool (rss_gconf, GCONF_KEY_REP_CHECK, NULL)) {
+ 		rf->rc_id = g_timeout_add (60 * 1000 * timeout,
+-				(GtkFunction) update_articles,
++				(GSourceFunc) update_articles,
+ 				(gpointer)1);
+ 	}
+ 	custom_feed_timeout();
+@@ -5055,7 +5068,9 @@ e_plugin_ui_init (GtkUIManager *ui_manager,
  		rss_shell_view);
  #if EVOLUTION_VERSION >= 22900
  /*	rss_search_bar_hook();*/

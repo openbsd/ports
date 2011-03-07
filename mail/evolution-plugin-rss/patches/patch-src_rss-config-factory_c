@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_rss-config-factory_c,v 1.5 2011/03/07 19:40:44 ajacoutot Exp $
+
+GtkFunction -> GSourceFunc: fix build with newer glib2/gtk+2
+
+--- src/rss-config-factory.c.orig	Wed Feb  2 08:16:25 2011
++++ src/rss-config-factory.c	Wed Feb  2 08:16:32 2011
+@@ -271,7 +271,7 @@ rep_check_cb (GtkWidget *widget, gpointer data)
+ 			g_source_remove(rf->rc_id);
+ 		rf->rc_id = g_timeout_add (
+ 				60 * 1000 * gtk_spin_button_get_value((GtkSpinButton *)data),
+-				(GtkFunction) update_articles,
++				(GSourceFunc) update_articles,
+ 				(gpointer)1);
+ 		}
+ }
+@@ -290,7 +290,7 @@ rep_check_timeout_cb (GtkWidget *widget, gpointer data
+ 			g_source_remove(rf->rc_id);
+ 		rf->rc_id = g_timeout_add (
+ 			60 * 1000 * gtk_spin_button_get_value((GtkSpinButton *)widget),
+-			(GtkFunction) update_articles,
++			(GSourceFunc) update_articles,
+ 			(gpointer)1);
+ 	}
+ }
