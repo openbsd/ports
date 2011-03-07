@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 
-# $OpenBSD: check-lib-depends,v 1.8 2011/01/26 12:53:46 ajacoutot Exp $
+# $OpenBSD: check-lib-depends,v 1.9 2011/03/07 10:06:36 espie Exp $
 # Copyright (c) 2004-2010 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -18,10 +18,11 @@
 use strict;
 use warnings;
 my $ports1;
+use FindBin;
 BEGIN {
 	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
 }
-use lib "$ports1/infrastructure/lib";
+use lib ("$ports1/infrastructure/lib", "$FindBin::Bin/../lib");
 
 use File::Spec;
 use OpenBSD::PackingList;
@@ -103,7 +104,7 @@ sub run_objdump
 		unless (open($cmd, '-|')) {
 			open(STDERR, '>', '/dev/null');
 			exec('objdump', '-p', $n) or 
-			    $state->fatal("exec objdump: #!", $!);
+			    $state->fatal("exec objdump: #1", $!);
 		}
 	}
 	return $cmd;
