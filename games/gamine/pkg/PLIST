@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/07 19:51:50 ajacoutot Exp $
+@bin bin/gamine
+share/applications/gamine.desktop
+share/doc/gamine/
+share/doc/gamine/COPYING
+share/doc/gamine/ChangeLog
+share/doc/gamine/README
+share/doc/gamine/README.pencil
+share/doc/gamine/README.sounds
+share/gamine/
+share/gamine/gamine.png
+share/gamine/pencil.png
+share/gamine/sounds/
+share/gamine/sounds/BachJSBrandenburgConcertNo2inFMajorBWV1047mvmt1.ogg
+share/gamine/sounds/bleep.wav
+share/gamine/sounds/bonus.wav
+share/gamine/sounds/brick.wav
+share/gamine/sounds/bubble.wav
+share/gamine/sounds/crash.wav
+share/gamine/sounds/darken.wav
+share/gamine/sounds/drip.wav
+share/gamine/sounds/eat.wav
+share/gamine/sounds/eraser1.wav
+share/gamine/sounds/eraser2.wav
+share/gamine/sounds/flip.wav
+share/gamine/sounds/gobble.wav
+share/gamine/sounds/grow.wav
+share/gamine/sounds/level.wav
+share/gamine/sounds/line_end.wav
+share/gamine/sounds/paint1.wav
+share/gamine/sounds/plick.ogg
+share/gamine/sounds/prompt.wav
+share/gamine/sounds/receive.wav
+share/gamine/sounds/tri.ogg
+share/gamine/sounds/tuxok.wav
+share/gamine/sounds/youcannot.wav
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/gamine.svg
+share/locale/fr/LC_MESSAGES/gamine.mo
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gamine.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
