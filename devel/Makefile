@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.894 2011/03/07 21:52:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.895 2011/03/07 22:19:18 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -874,6 +874,7 @@
      SUBDIR += py-Checker
      SUBDIR += py-SOAPpy
      SUBDIR += py-addons
+     SUBDIR += py-altgraph
      SUBDIR += py-asn1
      SUBDIR += py-babel
      SUBDIR += py-buildbot
@@ -901,6 +902,7 @@
      SUBDIR += py-logilab-astng
      SUBDIR += py-logilab-common
      SUBDIR += py-minimock
+     SUBDIR += py-modulegraph
      SUBDIR += py-mox
      SUBDIR += py-mxDateTime,python2.4
      SUBDIR += py-mxDateTime,python2.6
