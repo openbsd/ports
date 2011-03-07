@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/01/18 21:34:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/03/07 19:22:02 ajacoutot Exp $
 %%SHARED%%
 @bin bin/exo-csource
 @bin bin/exo-desktop-item-edit
@@ -30,10 +30,6 @@ include/exo-1/exo/exo-utils.h
 include/exo-1/exo/exo-wrap-table.h
 include/exo-1/exo/exo-xsession-client.h
 include/exo-1/exo/exo.h
-lib/gio/
-lib/gio/modules/
-@comment lib/gio/modules/libexo-module-1.a
-@comment lib/gio/modules/libexo-module-1.la
 lib/libexo-1.a
 lib/libexo-1.la
 lib/pkgconfig/
