@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.122 2011/03/07 19:19:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	multi-platform graphical toolkit
 COMMENT-docs=	gtk+2 documentation
 COMMENT-cups=	gtk+2 CUPS print backend
 
-V=		2.22.1
+V=		2.24.1
 DISTNAME=	gtk+-${V}
 
 PKGNAME-main=	gtk+2-${V}
@@ -15,8 +15,8 @@ PKGNAME-cups=	gtk+2-cups-${V}
 
 CATEGORIES=	x11 devel
 
-SHARED_LIBS +=  gdk-x11-2.0          2200.0   # 2200.0
-SHARED_LIBS +=  gtk-x11-2.0          2200.0   # 2200.0
+SHARED_LIBS +=  gdk-x11-2.0          2400.0   # 2400.0
+SHARED_LIBS +=  gtk-x11-2.0          2400.0   # 2400.0
 SHARED_LIBS +=  gailutil             26.0     # 18.1
 
 HOMEPAGE=	http://www.gtk.org/
@@ -42,7 +42,8 @@ MULTI_PACKAGES=	-main -docs -cups
 MODULES=	devel/gettext \
 		lang/python
 
-RUN_DEPENDS=	x11/hicolor-icon-theme \
+RUN_DEPENDS-main= ${RUN_DEPENDS} \
+		x11/hicolor-icon-theme \
 		misc/shared-mime-info
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
@@ -65,7 +66,7 @@ PKG_ARCH-docs=	*
 
 LIB_DEPENDS-cups= ${LIB_DEPENDS} \
 		print/cups \
-		${BASE_PKGPATH},-main
+		STEM->=${V}:${BASE_PKGPATH},-main
 WANTLIB-cups += ${WANTLIB}
 WANTLIB-cups += asn1 atk-1.0 crypto gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-cups += gssapi krb5 pango-1.0 pangocairo-1.0 pangoft2-1.0 png

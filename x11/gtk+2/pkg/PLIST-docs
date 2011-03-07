@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.29 2010/09/30 07:18:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.30 2011/03/07 19:19:27 ajacoutot Exp $
 @conflict gtk+2-<2.4.9
 share/gtk-doc/
 share/gtk-doc/html/
@@ -195,6 +195,7 @@ share/gtk-doc/html/gtk/GtkColorSelectionDialog.html
 share/gtk-doc/html/gtk/GtkCombo.html
 share/gtk-doc/html/gtk/GtkComboBox.html
 share/gtk-doc/html/gtk/GtkComboBoxEntry.html
+share/gtk-doc/html/gtk/GtkComboBoxText.html
 share/gtk-doc/html/gtk/GtkContainer.html
 share/gtk-doc/html/gtk/GtkCurve.html
 share/gtk-doc/html/gtk/GtkDialog.html
@@ -258,6 +259,7 @@ share/gtk-doc/html/gtk/GtkOptionMenu.html
 share/gtk-doc/html/gtk/GtkPageSetup.html
 share/gtk-doc/html/gtk/GtkPageSetupUnixDialog.html
 share/gtk-doc/html/gtk/GtkPaned.html
+share/gtk-doc/html/gtk/GtkPaperSize.html
 share/gtk-doc/html/gtk/GtkPixmap.html
 share/gtk-doc/html/gtk/GtkPlug.html
 share/gtk-doc/html/gtk/GtkPreview.html
@@ -300,6 +302,7 @@ share/gtk-doc/html/gtk/GtkTable.html
 share/gtk-doc/html/gtk/GtkTearoffMenuItem.html
 share/gtk-doc/html/gtk/GtkText.html
 share/gtk-doc/html/gtk/GtkTextBuffer.html
+share/gtk-doc/html/gtk/GtkTextIter.html
 share/gtk-doc/html/gtk/GtkTextMark.html
 share/gtk-doc/html/gtk/GtkTextTag.html
 share/gtk-doc/html/gtk/GtkTextTagTable.html
@@ -366,6 +369,7 @@ share/gtk-doc/html/gtk/api-index-2-18.html
 share/gtk-doc/html/gtk/api-index-2-2.html
 share/gtk-doc/html/gtk/api-index-2-20.html
 share/gtk-doc/html/gtk/api-index-2-22.html
+share/gtk-doc/html/gtk/api-index-2-24.html
 share/gtk-doc/html/gtk/api-index-2-4.html
 share/gtk-doc/html/gtk/api-index-2-6.html
 share/gtk-doc/html/gtk/api-index-2-8.html
@@ -459,8 +463,6 @@ share/gtk-doc/html/gtk/gtk-Feature-Test-Macros.html
 share/gtk-doc/html/gtk/gtk-Filesystem-utilities.html
 share/gtk-doc/html/gtk/gtk-General.html
 share/gtk-doc/html/gtk/gtk-Graphics-Contexts.html
-share/gtk-doc/html/gtk/gtk-GtkPaperSize.html
-share/gtk-doc/html/gtk/gtk-GtkTextIter.html
 share/gtk-doc/html/gtk/gtk-GtkTreeView-drag-and-drop.html
 share/gtk-doc/html/gtk/gtk-High-level-Printing-API.html
 share/gtk-doc/html/gtk/gtk-Keyboard-Accelerators.html
