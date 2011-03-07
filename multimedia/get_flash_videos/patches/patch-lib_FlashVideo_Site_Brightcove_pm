@@ -1,0 +1,261 @@
+$OpenBSD: patch-lib_FlashVideo_Site_Brightcove_pm,v 1.1 2011/03/07 23:50:09 sthen Exp $
+--- lib/FlashVideo/Site/Brightcove.pm.orig	Tue Nov 30 16:41:02 2010
++++ lib/FlashVideo/Site/Brightcove.pm	Thu Mar  3 12:32:12 2011
+@@ -5,56 +5,54 @@ use strict;
+ use FlashVideo::Utils;
+ use MIME::Base64;
+ 
++my $encode_rates = {
++     "low" => 480,
++     "medium" => 800,
++     "medium2" => 1200, 
++     "high" => 1500 };
++
+ sub find_video {
+-  my ($self, $browser, $embed_url) = @_;
++  my ($self, $browser, $embed_url, $prefs) = @_;
+ 
+   my $metadata = { };
+   my ($video_id, $player_id);
+ 
+   # URL params, JSON, etc..
+-  $video_id  = ($browser->content =~ /(?:clip|video)Id["'\] ]*[:=]["' ]*(\d+)/i)[0];
+   $player_id = ($browser->content =~ /playerId["'\] ]*[:=]["' ]*(\d+)/i)[0];
++  $metadata->{videoplayer} = ($browser->content =~ /videoPlayer=ref:(C\d+)/i)[0];
++  $metadata->{publisherId} = ($browser->content =~ /publisherID=(\d+)/i)[0];
+ 
+   # <object> params
+   $player_id ||= ($browser->content =~ /<param name=["']?playerID["']? value=["'](\d+) ?["']/i)[0];
+-  $video_id ||= ($browser->content =~ /<param name=["']?\@?video(?:Player|id)["']? value=["'](\d+)["']/i)[0];
+ 
+   # flashVar params (e.g. <embed>)
+   $player_id ||= ($browser->content =~ /flashVars.*playerID=(\d+)/i)[0];
+-  $video_id ||= ($browser->content =~ /flashVars.*video(?:Player|ID)=(\d+)/i)[0];
+ 
+   # Brightcove JavaScript API
+   if(!$player_id && $browser->content =~ /brightcove.player.create\(['"]?(\d+)['"]?,\s*['"]?(\d+)/) {
+-    $video_id = $1;
+     $player_id = $2;
+   }
+ 
++  $metadata->{sessionId} = ($browser->cookie_jar->as_string =~ /session=([0-9a-f]*);/)[0];
++
+   # Support direct links to videos
+   for my $url($browser->uri->as_string, $embed_url) {
+-    if($url =~ /(?:videoID|bctid)=?(\d+)/i) {
+-      $video_id ||= $1;
+-    }
+ 
+     if($url =~ /(?:playerID|bcpid)=?(\d+)/i) {
+       $player_id ||= $1;
+     }
+-
+-    if($url =~ /(?:lineupID|bclid)=?(\d+)/i) {
+-      $metadata->{lineupId} ||= $1;
+-    }
+   }
+ 
+-  debug "Extracted playerId: $player_id, videoId: $video_id, lineupID: $metadata->{lineupId}"
++  debug "Extracted playerId: $player_id, sessionId: $metadata->{sessionId} videoplayer: $metadata->{videoplayer} publisherId: $metadata->{publisherId} "
+     if $player_id or $video_id;
+ 
+   die "Unable to extract Brightcove IDs from page" unless $player_id;
+ 
+-  $metadata->{videoId} = $video_id;
+-  return $self->amfgateway($browser, $player_id, $metadata);
++  return $self->amfgateway($browser, $player_id, $metadata, $prefs);
+ }
+ 
+ sub amfgateway {
+-  my($self, $browser, $player_id, $metadata) = @_;
++  my($self, $browser, $player_id, $metadata, $prefs) = @_;
+ 
+   my $has_amf_packet = eval { require Data::AMF::Packet };
+   if (!$has_amf_packet) {
+@@ -62,36 +60,69 @@ sub amfgateway {
+   }
+ 
+   my $page_url = $browser->uri;
++  my $base_url = "" . $page_url;
+ 
+-  my $packet = Data::AMF::Packet->deserialize(decode_base64(<<EOF));
+-AAAAAAABAEhjb20uYnJpZ2h0Y292ZS50ZW1wbGF0aW5nLlRlbXBsYXRpbmdGYWNhZGUuZ2V0Q29u
+-dGVudEZvclRlbXBsYXRlSW5zdGFuY2UAAi8yAAACNQoAAAACAEH4tP+1EAAAEAA1Y29tLmJyaWdo
+-dGNvdmUudGVtcGxhdGluZy5Db250ZW50UmVxdWVzdENvbmZpZ3VyYXRpb24ACnZpZGVvUmVmSWQG
+-AAd2aWRlb0lkBgAIbGluZXVwSWQGAAtsaW5ldXBSZWZJZAYAF29wdGltaXplRmVhdHVyZWRDb250
+-ZW50AQEAF2ZlYXR1cmVkTGluZXVwRmV0Y2hJbmZvEAAkY29tLmJyaWdodGNvdmUucGVyc2lzdGVu
+-Y2UuRmV0Y2hJbmZvAApjaGlsZExpbWl0AEBZAAAAAAAAAA5mZXRjaExldmVsRW51bQBAEAAAAAAA
+-AAALY29udGVudFR5cGUCAAtWaWRlb0xpbmV1cAAACQAKZmV0Y2hJbmZvcwoAAAACEAAkY29tLmJy
+-aWdodGNvdmUucGVyc2lzdGVuY2UuRmV0Y2hJbmZvAApjaGlsZExpbWl0AEBZAAAAAAAAAA5mZXRj
+-aExldmVsRW51bQA/8AAAAAAAAAALY29udGVudFR5cGUCAAtWaWRlb0xpbmV1cAAACRAAJGNvbS5i
+-cmlnaHRjb3ZlLnBlcnNpc3RlbmNlLkZldGNoSW5mbwAKY2hpbGRMaW1pdABAWQAAAAAAAAAPZ3Jh
+-bmRjaGlsZExpbWl0AEBZAAAAAAAAAA5mZXRjaExldmVsRW51bQBACAAAAAAAAAALY29udGVudFR5
+-cGUCAA9WaWRlb0xpbmV1cExpc3QAAAkAAAk=
+-EOF
++#  AMF3 incompatable between Data::AMF and Brightcove
++#  results in Brightcove rejecting message 
++#  create message without deserialize/serialize.
+ 
+-  if (defined $player_id) {
+-    $packet->messages->[0]->{value}->[0] = "$player_id";
+-  }
++  my $amf0_formatter = Data::AMF::Formatter->new(version =>0);
++  my $amf3_formatter = Data::AMF::Formatter->new(version =>3);
++  my @amf_pkt;
+ 
+-  if (ref $metadata) {
+-    for(keys %$metadata) {
+-      $packet->messages->[0]->{value}->[1]->{$_} = "$metadata->{$_}";
+-    }
+-  }
+ 
+-  my $data = $packet->serialize;
++  $amf_pkt[0] = decode_base64(<<EOF1);
++AAMAAAABAEZjb20uYnJpZ2h0Y292ZS5leHBlcmllbmNlLkV4cGVyaWVuY2VSdW50aW1lRmFjYWRl
++LmdldERhdGFGb3JFeHBlcmllbmNlAAIvMQAA
++EOF1
+ 
++  $amf_pkt[2] = decode_base64(<<EOF2);
++CgAAAAI=
++EOF2
++
++  $amf_pkt[3] = $amf0_formatter->format($metadata->{sessionId});
++
++  $amf_pkt[4] = decode_base64(<<EOF3);
++EQpjY2NvbS5icmlnaHRjb3ZlLmV4cGVyaWVuY2UuVmlld2VyRXhwZXJpZW5jZVJlcXVlc3QhY29u
++dGVudE92ZXJyaWRlcwdVUkwZZXhwZXJpZW5jZUlkEVRUTFRva2VuE3BsYXllcktleRlkZWxpdmVy
++eVR5cGUJAwEKgQNTY29tLmJyaWdodGNvdmUuZXhwZXJpZW5jZS5Db250ZW50T3ZlcnJpZGUXY29u
++dGVudFR5cGUTY29udGVudElkGWNvbnRlbnRSZWZJZBtmZWF0dXJlZFJlZklkG2NvbnRlbnRSZWZJ
++ZHMVZmVhdHVyZWRJZBVjb250ZW50SWRzDXRhcmdldAQABX/////gAAAA
++EOF3
++
++  $amf_pkt[5] = $amf3_formatter->format($metadata->{videoplayer});
++
++  $amf_pkt[6] = decode_base64(<<EOF4);
++AQEFf////+AAAAABBhd2aWRlb1BsYXllcg==
++EOF4
++
++  $amf_pkt[7] = $amf3_formatter->format($base_url);
++
++  $amf_pkt[8] = decode_base64(<<EOF5);
++BUI4gZvSwQAABgEGAQV/////4AAAAA==
++EOF5
++
++
++  $amf_pkt[1] = pack('n', length(join('',@amf_pkt[2..8])));
++
++  my $data = join('',@amf_pkt[0..8]);
++
++#   my $packet = Data::AMF::Packet->deserialize($data);
++
++#  if (defined $player_id) {
++#    $packet->messages->[0]->{value}->[0] = "$player_id";
++#  }
++
++#  if (ref $metadata) {
++#    for(keys %$metadata) {
++#      $packet->messages->[0]->{value}->[1]->{$_} = "$metadata->{$_}";
++#    }
++#  }
++
++#   my $data = $packet->serialize;
++
+   $browser->post(
+-    "http://c.brightcove.com/services/amfgateway",
++    "http://c.brightcove.com/services/messagebroker/amf?playerid=$player_id",
+     Content_Type => "application/x-amf",
+     Content => $data
+   );
+@@ -99,46 +130,59 @@ EOF
+   die "Failed to post to Brightcove AMF gateway"
+     unless $browser->response->is_success;
+ 
+-  $packet = Data::AMF::Packet->deserialize($browser->content);
++  my $packet = Data::AMF::Packet->deserialize($browser->content);
+ 
+   if($self->debug) {
+     require Data::Dumper;
+     debug Data::Dumper::Dumper($packet);
+   }
+ 
+-  if(ref $packet->messages->[0]->{value} ne 'ARRAY') {
++# renditions Array contains the rtmpe URL.
++  if ( ref  $packet->messages->[0]->{value}->{programmedContent}->{videoPlayer}->{mediaDTO}->{renditions} ne 'ARRAY') {
+     die "Unexpected data from AMF gateway";
+   }
+ 
+   my @found;
+-  for (@{$packet->messages->[0]->{value}}) {
+-    if ($_->{data}->{videoDTO}) {
+-      push @found, $_->{data}->{videoDTO};
++  for (@{$packet->messages->[0]->{value}->{programmedContent}->{videoPlayer}->{mediaDTO}->{renditions}}) {
++    if ($_->{defaultURL}) {
++      push @found, $_;
+     }
+-    if ($_->{data}->{videoDTOs}) {
+-      push @found, @{$_->{data}->{videoDTOs}};
+-    }
+   }
+ 
++# other information returned in message.
++  my $mediaId = $packet->messages->[0]->{value}->{programmedContent}->{videoPlayer}->{mediaId};
++  my $seasonnumber = $packet->messages->[0]->{value}->{programmedContent}->{videoPlayer}->{mediaDTO}->{customFields}->{seasonnumber};
++  my $episodenumber = $packet->messages->[0]->{value}->{programmedContent}->{videoPlayer}->{mediaDTO}->{customFields}->{episodenumber};
++  my $show = ($page_url =~ m!/shows/([^/]+)/!i)[0];
++  my $episode = ($page_url =~ m!/episodes/([^/]+)!i)[0];
++  my $filehead = $show . "_Series" . $seasonnumber;
++  if ( $show ne $episode ) {
++    $filehead = $filehead . "_Episode" . $episodenumber . "_" . $episode;
++  }
++  my $encode_rate = $encode_rates->{$prefs->{quality}};
++  if (! defined $encode_rate ) {
++    $encode_rate = $prefs->{quality};
++  }
++
+   my @rtmpdump_commands;
+ 
+   for my $d (@found) {
+-    next if $metadata->{videoId} && $d->{id} != $metadata->{videoId};
+ 
+-    my $host = ($d->{FLVFullLengthURL} =~ m!rtmp://(.*?)/!)[0];
+-    my $file = ($d->{FLVFullLengthURL} =~ m!&([a-z0-9:]+/.*?)(?:&|$)!)[0];
+-    my $app = ($d->{FLVFullLengthURL} =~ m!//.*?/(.*?)/&!)[0];
+-    my $filename = ($d->{FLVFullLengthURL} =~ m!&.*?/([^/&]+)(?:&|$)!)[0];
++    my $rate = ($d->{defaultURL} =~ /H264-(\d+)-16x9/i)[0];
++    next if $encode_rate != $rate;
++    my $host = ($d->{defaultURL} =~ m!rtmpe://(.*?)/!)[0];
++    my $file = ($d->{defaultURL} =~ /^[^&]+&(.*)$/)[0];
++    my $app = ($d->{defaultURL} =~ m!//.*?/(.*?)/&!)[0];
++    my $filename = $filehead . "_" . $rate;
+ 
+-    $app .= "?videoId=$d->{id}&lineUpId=$d->{lineupId}&pubId=$d->{publisherId}&playerId=$player_id&playerTag=&affiliateId=";
++    $app .= "?videoId=$mediaId&lineUpId=&pubId=$metadata->{publisherId}&playerId=$player_id&affiliateId=";
+ 
+     my $args = {
+       app => $app,
+       pageUrl => $page_url,
+-      swfUrl => "http://admin.brightcove.com/viewer/federated/f_012.swf?bn=590&pubId=$d->{publisherId}",
+-      tcUrl => "rtmp://$host:1935/$app",
+-      auth => ($d->{FLVFullLengthURL} =~ /^[^&]+&(.*)$/)[0],
+-      rtmp => "rtmp://$host/$app",
++      swfVfy => "http://admin.brightcove.com/viewer/us1.24.04.08.2011-01-14072625/connection/ExternalConnection_2.swf",
++      tcUrl => "rtmpe://$host:1935/$app",
++      rtmp => "$d->{defaultURL}",
+       playpath => $file,
+       flv => "$filename.flv",
+     };
+@@ -150,10 +194,10 @@ EOF
+ 
+     # In some cases, Brightcove doesn't use RTMP streaming - the file is
+     # downloaded via HTTP.
+-    if (!$d->{FLVFullLengthStreamed}) {
+-      info "Brightcove HTTP download detected";
+-      return ($d->{FLVFullLengthURL}, $args->{flv});
+-    }
++#    if (!$d->{FLVFullLengthStreamed}) {
++#      info "Brightcove HTTP download detected";
++#      return ($d->{}, $args->{flv});
++#    }
+ 
+     push @rtmpdump_commands, $args;
+   }
