@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/06/22 04:46:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/03/07 19:29:14 ajacoutot Exp $
 lib/eog/plugins/console.py
 lib/eog/plugins/console.pyc
 lib/eog/plugins/console.pyo
@@ -42,6 +42,7 @@ share/locale/be@latin/LC_MESSAGES/eog-plugins.mo
 share/locale/bg/LC_MESSAGES/eog-plugins.mo
 share/locale/bn_IN/LC_MESSAGES/eog-plugins.mo
 share/locale/ca/LC_MESSAGES/eog-plugins.mo
+share/locale/ca@valencia/LC_MESSAGES/eog-plugins.mo
 share/locale/cs/LC_MESSAGES/eog-plugins.mo
 share/locale/da/LC_MESSAGES/eog-plugins.mo
 share/locale/de/LC_MESSAGES/eog-plugins.mo
@@ -53,6 +54,7 @@ share/locale/fi/LC_MESSAGES/eog-plugins.mo
 share/locale/fr/LC_MESSAGES/eog-plugins.mo
 share/locale/gl/LC_MESSAGES/eog-plugins.mo
 share/locale/gu/LC_MESSAGES/eog-plugins.mo
+share/locale/he/LC_MESSAGES/eog-plugins.mo
 share/locale/hu/LC_MESSAGES/eog-plugins.mo
 share/locale/id/LC_MESSAGES/eog-plugins.mo
 share/locale/it/LC_MESSAGES/eog-plugins.mo
@@ -68,6 +70,7 @@ share/locale/pa/LC_MESSAGES/eog-plugins.mo
 share/locale/pl/LC_MESSAGES/eog-plugins.mo
 share/locale/pt/LC_MESSAGES/eog-plugins.mo
 share/locale/pt_BR/LC_MESSAGES/eog-plugins.mo
+share/locale/ro/LC_MESSAGES/eog-plugins.mo
 share/locale/sl/LC_MESSAGES/eog-plugins.mo
 share/locale/sq/LC_MESSAGES/eog-plugins.mo
 share/locale/sv/LC_MESSAGES/eog-plugins.mo
