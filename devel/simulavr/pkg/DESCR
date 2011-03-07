@@ -1,0 +1,5 @@
+The Simulavr program is a simulator for the Atmel AVR family of
+microcontrollers. Simulavr can be used either standalone or as a remote
+target for gdb. When used in gdbserver mode, the simulator is used as a
+backend so that gdb can be used as a source level debugger for AVR
+programs.
