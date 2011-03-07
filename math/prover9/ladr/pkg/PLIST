@@ -1,0 +1,48 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/07 22:26:24 jasper Exp $
+libexec/prover9/
+@bin libexec/prover9/autosketches4
+@bin libexec/prover9/clausefilter
+@bin libexec/prover9/clausetester
+@bin libexec/prover9/dprofiles
+@bin libexec/prover9/fof-prover9
+@bin libexec/prover9/idfilter
+@bin libexec/prover9/interpfilter
+@bin libexec/prover9/interpformat
+@bin libexec/prover9/isofilter
+@bin libexec/prover9/isofilter0
+@bin libexec/prover9/isofilter2
+@bin libexec/prover9/ladr_to_tptp
+@bin libexec/prover9/latfilter
+@bin libexec/prover9/mace4
+@bin libexec/prover9/miniscope
+@bin libexec/prover9/mirror-flip
+@bin libexec/prover9/newauto
+@bin libexec/prover9/newsax
+@bin libexec/prover9/olfilter
+@bin libexec/prover9/perm3
+@bin libexec/prover9/prooftrans
+@bin libexec/prover9/prover9
+@bin libexec/prover9/renamer
+@bin libexec/prover9/rewriter
+@bin libexec/prover9/sigtest
+@bin libexec/prover9/tptp_to_ladr
+@bin libexec/prover9/unfast
+@bin libexec/prover9/upper-covers
+share/examples/prover9/
+share/examples/prover9/attack
+share/examples/prover9/get_givens
+share/examples/prover9/get_interps
+share/examples/prover9/get_kept
+share/examples/prover9/gvizify
+share/examples/prover9/looper
+share/examples/prover9/mace4/
+share/examples/prover9/mace4/README
+share/examples/prover9/mace4/group2.in
+share/examples/prover9/mace4/rw1.in
+share/examples/prover9/proof3fo.xsl
+share/examples/prover9/prover9/
+share/examples/prover9/prover9-mace4
+share/examples/prover9/prover9/README
+share/examples/prover9/prover9/x2.hints
+share/examples/prover9/prover9/x2.in
+share/examples/prover9/prover9/x2.out

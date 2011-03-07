@@ -1,0 +1,11 @@
+$OpenBSD: patch-provers_src_Makefile,v 1.1.1.1 2011/03/07 22:26:24 jasper Exp $
+--- provers.src/Makefile.orig	Mon Jan 17 23:11:16 2011
++++ provers.src/Makefile	Mon Jan 17 23:11:20 2011
+@@ -1,6 +1,6 @@
+ # LADR/prover9.src
+ 
+-CC = gcc
++CC ?= gcc
+ 
+ # XFLAGS can be specified on the command line (see XFLAGS below)
+ 

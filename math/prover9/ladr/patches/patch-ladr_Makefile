@@ -1,0 +1,11 @@
+$OpenBSD: patch-ladr_Makefile,v 1.1.1.1 2011/03/07 22:26:24 jasper Exp $
+--- ladr/Makefile.orig	Mon Jan 17 23:09:11 2011
++++ ladr/Makefile	Mon Jan 17 23:09:17 2011
+@@ -1,6 +1,6 @@
+ # LADR/ladr
+ 
+-CC = gcc
++CC ?= gcc
+ 
+ # XFLAGS can be specified on the command line (see XFLAGS below)
+ 

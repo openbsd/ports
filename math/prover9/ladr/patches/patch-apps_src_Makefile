@@ -1,0 +1,11 @@
+$OpenBSD: patch-apps_src_Makefile,v 1.1.1.1 2011/03/07 22:26:24 jasper Exp $
+--- apps.src/Makefile.orig	Mon Jan 17 23:11:34 2011
++++ apps.src/Makefile	Mon Jan 17 23:11:38 2011
+@@ -1,6 +1,6 @@
+ # LADR/apps.src
+ 
+-CC = gcc
++CC ?= gcc
+ 
+ # XFLAGS can be specified on the command line (see XFLAGS below)
+ 
