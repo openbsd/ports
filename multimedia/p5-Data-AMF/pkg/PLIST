@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/07 23:37:51 sthen Exp $
+${P5SITE}/Data/
+${P5SITE}/Data/AMF/
+${P5SITE}/Data/AMF.pm
+${P5SITE}/Data/AMF/Formatter/
+${P5SITE}/Data/AMF/Formatter.pm
+${P5SITE}/Data/AMF/Formatter/AMF0.pm
+${P5SITE}/Data/AMF/Formatter/AMF3.pm
+${P5SITE}/Data/AMF/Header.pm
+${P5SITE}/Data/AMF/IO.pm
+${P5SITE}/Data/AMF/Message.pm
+${P5SITE}/Data/AMF/Packet.pm
+${P5SITE}/Data/AMF/Parser/
+${P5SITE}/Data/AMF/Parser.pm
+${P5SITE}/Data/AMF/Parser/AMF0.pm
+${P5SITE}/Data/AMF/Parser/AMF3.pm
+${P5SITE}/Data/AMF/Remoting.pm
+${P5SITE}/Data/AMF/Type/
+${P5SITE}/Data/AMF/Type/Boolean.pm
+${P5SITE}/Data/AMF/Type/ByteArray.pm
+${P5SITE}/Data/AMF/Type/Null.pm
+@man man/man3p/Data::AMF.3p
+@man man/man3p/Data::AMF::Formatter.3p
+@man man/man3p/Data::AMF::Formatter::AMF0.3p
+@man man/man3p/Data::AMF::Formatter::AMF3.3p
+@man man/man3p/Data::AMF::Header.3p
+@man man/man3p/Data::AMF::IO.3p
+@man man/man3p/Data::AMF::Message.3p
+@man man/man3p/Data::AMF::Packet.3p
+@man man/man3p/Data::AMF::Parser.3p
+@man man/man3p/Data::AMF::Parser::AMF0.3p
+@man man/man3p/Data::AMF::Parser::AMF3.3p
+@man man/man3p/Data::AMF::Remoting.3p
+@man man/man3p/Data::AMF::Type::Boolean.3p
+@man man/man3p/Data::AMF::Type::ByteArray.3p
+@man man/man3p/Data::AMF::Type::Null.3p

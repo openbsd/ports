@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_Data_AMF_Formatter_AMF0_pm,v 1.1.1.1 2011/03/07 23:37:51 sthen Exp $
+--- lib/Data/AMF/Formatter/AMF0.pm.orig	Tue Aug 31 06:56:05 2010
++++ lib/Data/AMF/Formatter/AMF0.pm	Wed Jan 19 17:39:44 2011
+@@ -14,8 +14,6 @@ has 'io' => (
+     },
+ );
+ 
+-no Any::Moose;
+-
+ sub format {
+     my ($self, @obj) = @_;
+     $self = $self->new unless blessed $self;
+@@ -107,6 +105,8 @@ sub format_typed_object {
+ 
+     $self->format_object($obj);
+ }
++
++no Any::Moose;
+ 
+ __PACKAGE__->meta->make_immutable;
+ 
