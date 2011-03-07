@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/01/11 10:59:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/03/07 19:30:33 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-mysql=		MySQL backend for libgda
 COMMENT-pgsql=		PostreSQL backend for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		4.2.3
+GNOME_VERSION=		4.2.5
 
 # NOTE: when major version changes, increment GDA_MAJOR accordingly and
 # bump "x11/gnome/libgdamm"
@@ -91,7 +91,8 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/libsoup \
 			textproc/libxslt \
 			x11/gnome/libgnome-keyring \
-			graphics/gdk-pixbuf2
+			graphics/gdk-pixbuf2 \
+			x11/dbus
 
 .if ${FLAVOR:L:Mno_ui}
 CONFIGURE_ARGS+=	--without-ui

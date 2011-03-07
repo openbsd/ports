@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.14 2011/01/11 10:59:25 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.15 2011/03/07 19:30:33 ajacoutot Exp $
 
 Stupid configure is stupid, just work around the mess by setting
 the values we know are correct.
 
---- configure.orig	Sun Jan  9 18:51:10 2011
-+++ configure	Tue Jan 11 11:10:26 2011
-@@ -20221,6 +20221,13 @@ $as_echo "$as_me: BDB backend not used" >&6;}
+--- configure.orig	Wed Feb 23 20:26:12 2011
++++ configure	Wed Feb 23 21:30:28 2011
+@@ -20232,6 +20232,13 @@ $as_echo "$as_me: BDB backend not used" >&6;}
  	fi
      fi
  

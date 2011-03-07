@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2011/01/11 10:59:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2011/03/07 19:30:34 ajacoutot Exp $
 @conflict libgda-db4-*
 @pkgpath x11/gnome/libgda,-odbc
 @pkgpath x11/gnome/libgda,-ldap
@@ -335,6 +335,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/i_s_data_types.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-1.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-2.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-3.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-4.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-deprecated.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index.html

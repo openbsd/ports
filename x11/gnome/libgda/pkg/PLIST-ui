@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.3 2011/01/11 10:59:25 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.4 2011/03/07 19:30:34 ajacoutot Exp $
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
 @bin bin/gdaui-demo-${GDA_MAJOR}
@@ -41,22 +41,31 @@ lib/libgda-ui-${GDA_MAJOR}.la
 lib/pkgconfig/libgda-ui-${GDA_MAJOR}.pc
 share/applications/gda-browser-${GDA_MAJOR}.desktop
 share/applications/gda-control-center-${GDA_MAJOR}.desktop
-share/gnome/
-share/gnome/help/
 share/gnome/help/gda-browser/
 share/gnome/help/gda-browser/C/
+share/gnome/help/gda-browser/C/actions.page
 share/gnome/help/gda-browser/C/data-manager-perspective.page
+share/gnome/help/gda-browser/C/data-manager-source-editor.page
 share/gnome/help/gda-browser/C/data-manager-xml-syntax.page
+share/gnome/help/gda-browser/C/declaredfk.page
 share/gnome/help/gda-browser/C/diagram.page
 share/gnome/help/gda-browser/C/features.page
 share/gnome/help/gda-browser/C/figures/
+share/gnome/help/gda-browser/C/figures/action-1.png
+share/gnome/help/gda-browser/C/figures/action-2.png
+share/gnome/help/gda-browser/C/figures/action-3.png
+share/gnome/help/gda-browser/C/figures/action-4.png
 share/gnome/help/gda-browser/C/figures/cnc_open.png
 share/gnome/help/gda-browser/C/figures/data-man-mode.png
 share/gnome/help/gda-browser/C/figures/data-man-persp.png
+share/gnome/help/gda-browser/C/figures/data-man-uicompose.png
 share/gnome/help/gda-browser/C/figures/data-man-xmlcompose.png
+share/gnome/help/gda-browser/C/figures/declaredfk-dialog.png
+share/gnome/help/gda-browser/C/figures/declaredfk.png
 share/gnome/help/gda-browser/C/figures/diagram.png
 share/gnome/help/gda-browser/C/figures/mainwin.png
 share/gnome/help/gda-browser/C/figures/query-exec-persp.png
+share/gnome/help/gda-browser/C/figures/schema-browser-persp.png
 share/gnome/help/gda-browser/C/figures/table-insert-data.png
 share/gnome/help/gda-browser/C/figures/trans-begin.png
 share/gnome/help/gda-browser/C/figures/trans-commit.png
@@ -70,18 +79,29 @@ share/gnome/help/gda-browser/C/table-insert-data.page
 share/gnome/help/gda-browser/C/transactions.page
 share/gnome/help/gda-browser/C/variables.page
 share/gnome/help/gda-browser/de/
+share/gnome/help/gda-browser/de/actions.page
 share/gnome/help/gda-browser/de/data-manager-perspective.page
+share/gnome/help/gda-browser/de/data-manager-source-editor.page
 share/gnome/help/gda-browser/de/data-manager-xml-syntax.page
+share/gnome/help/gda-browser/de/declaredfk.page
 share/gnome/help/gda-browser/de/diagram.page
 share/gnome/help/gda-browser/de/features.page
 share/gnome/help/gda-browser/de/figures/
+share/gnome/help/gda-browser/de/figures/action-1.png
+share/gnome/help/gda-browser/de/figures/action-2.png
+share/gnome/help/gda-browser/de/figures/action-3.png
+share/gnome/help/gda-browser/de/figures/action-4.png
 share/gnome/help/gda-browser/de/figures/cnc_open.png
 share/gnome/help/gda-browser/de/figures/data-man-mode.png
 share/gnome/help/gda-browser/de/figures/data-man-persp.png
+share/gnome/help/gda-browser/de/figures/data-man-uicompose.png
 share/gnome/help/gda-browser/de/figures/data-man-xmlcompose.png
+share/gnome/help/gda-browser/de/figures/declaredfk-dialog.png
+share/gnome/help/gda-browser/de/figures/declaredfk.png
 share/gnome/help/gda-browser/de/figures/diagram.png
 share/gnome/help/gda-browser/de/figures/mainwin.png
 share/gnome/help/gda-browser/de/figures/query-exec-persp.png
+share/gnome/help/gda-browser/de/figures/schema-browser-persp.png
 share/gnome/help/gda-browser/de/figures/table-insert-data.png
 share/gnome/help/gda-browser/de/figures/trans-begin.png
 share/gnome/help/gda-browser/de/figures/trans-commit.png
@@ -95,18 +115,29 @@ share/gnome/help/gda-browser/de/table-insert-data.page
 share/gnome/help/gda-browser/de/transactions.page
 share/gnome/help/gda-browser/de/variables.page
 share/gnome/help/gda-browser/es/
+share/gnome/help/gda-browser/es/actions.page
 share/gnome/help/gda-browser/es/data-manager-perspective.page
+share/gnome/help/gda-browser/es/data-manager-source-editor.page
 share/gnome/help/gda-browser/es/data-manager-xml-syntax.page
+share/gnome/help/gda-browser/es/declaredfk.page
 share/gnome/help/gda-browser/es/diagram.page
 share/gnome/help/gda-browser/es/features.page
 share/gnome/help/gda-browser/es/figures/
+share/gnome/help/gda-browser/es/figures/action-1.png
+share/gnome/help/gda-browser/es/figures/action-2.png
+share/gnome/help/gda-browser/es/figures/action-3.png
+share/gnome/help/gda-browser/es/figures/action-4.png
 share/gnome/help/gda-browser/es/figures/cnc_open.png
 share/gnome/help/gda-browser/es/figures/data-man-mode.png
 share/gnome/help/gda-browser/es/figures/data-man-persp.png
+share/gnome/help/gda-browser/es/figures/data-man-uicompose.png
 share/gnome/help/gda-browser/es/figures/data-man-xmlcompose.png
+share/gnome/help/gda-browser/es/figures/declaredfk-dialog.png
+share/gnome/help/gda-browser/es/figures/declaredfk.png
 share/gnome/help/gda-browser/es/figures/diagram.png
 share/gnome/help/gda-browser/es/figures/mainwin.png
 share/gnome/help/gda-browser/es/figures/query-exec-persp.png
+share/gnome/help/gda-browser/es/figures/schema-browser-persp.png
 share/gnome/help/gda-browser/es/figures/table-insert-data.png
 share/gnome/help/gda-browser/es/figures/trans-begin.png
 share/gnome/help/gda-browser/es/figures/trans-commit.png
@@ -120,18 +151,29 @@ share/gnome/help/gda-browser/es/table-insert-data.page
 share/gnome/help/gda-browser/es/transactions.page
 share/gnome/help/gda-browser/es/variables.page
 share/gnome/help/gda-browser/sl/
+share/gnome/help/gda-browser/sl/actions.page
 share/gnome/help/gda-browser/sl/data-manager-perspective.page
+share/gnome/help/gda-browser/sl/data-manager-source-editor.page
 share/gnome/help/gda-browser/sl/data-manager-xml-syntax.page
+share/gnome/help/gda-browser/sl/declaredfk.page
 share/gnome/help/gda-browser/sl/diagram.page
 share/gnome/help/gda-browser/sl/features.page
 share/gnome/help/gda-browser/sl/figures/
+share/gnome/help/gda-browser/sl/figures/action-1.png
+share/gnome/help/gda-browser/sl/figures/action-2.png
+share/gnome/help/gda-browser/sl/figures/action-3.png
+share/gnome/help/gda-browser/sl/figures/action-4.png
 share/gnome/help/gda-browser/sl/figures/cnc_open.png
 share/gnome/help/gda-browser/sl/figures/data-man-mode.png
 share/gnome/help/gda-browser/sl/figures/data-man-persp.png
+share/gnome/help/gda-browser/sl/figures/data-man-uicompose.png
 share/gnome/help/gda-browser/sl/figures/data-man-xmlcompose.png
+share/gnome/help/gda-browser/sl/figures/declaredfk-dialog.png
+share/gnome/help/gda-browser/sl/figures/declaredfk.png
 share/gnome/help/gda-browser/sl/figures/diagram.png
 share/gnome/help/gda-browser/sl/figures/mainwin.png
 share/gnome/help/gda-browser/sl/figures/query-exec-persp.png
+share/gnome/help/gda-browser/sl/figures/schema-browser-persp.png
 share/gnome/help/gda-browser/sl/figures/table-insert-data.png
 share/gnome/help/gda-browser/sl/figures/trans-begin.png
 share/gnome/help/gda-browser/sl/figures/trans-commit.png
@@ -161,6 +203,7 @@ share/gtk-doc/html/gda-browser/fdl-section8.html
 share/gtk-doc/html/gda-browser/fdl-section9.html
 share/gtk-doc/html/gda-browser/fdl-using.html
 share/gtk-doc/html/gda-browser/fdl.html
+share/gtk-doc/html/gda-browser/gda-browser-Support-functions.html
 share/gtk-doc/html/gda-browser/gda-browser-browser-connection.html
 share/gtk-doc/html/gda-browser/gda-browser-browser-core.html
 share/gtk-doc/html/gda-browser/gda-browser-browser-favorites.html
@@ -169,7 +212,11 @@ share/gtk-doc/html/gda-browser/gda-browser-browser-perspective.html
 share/gtk-doc/html/gda-browser/gda-browser-browser-window.html
 share/gtk-doc/html/gda-browser/gda-browser-cc-gray-bar.html
 share/gtk-doc/html/gda-browser/gda-browser-data-manager-perspective.html
+share/gtk-doc/html/gda-browser/gda-browser-mgr-favorites.html
 share/gtk-doc/html/gda-browser/gda-browser-popup-container.html
+share/gtk-doc/html/gda-browser/gda-browser-query-exec-perspective.html
+share/gtk-doc/html/gda-browser/gda-browser-schema-browser-perspective.html
+share/gtk-doc/html/gda-browser/gda-browser-ui-formgrid.html
 share/gtk-doc/html/gda-browser/gda-browser.devhelp
 share/gtk-doc/html/gda-browser/gda-browser.devhelp2
 share/gtk-doc/html/gda-browser/home.png
@@ -225,6 +272,7 @@ share/libgda-${GDA_MAJOR}/icons/hicolor/scalable/actions/glade.svg
 share/libgda-${GDA_MAJOR}/icons/hicolor/scalable/actions/history-view.svg
 share/libgda-${GDA_MAJOR}/pixmaps/
 share/libgda-${GDA_MAJOR}/pixmaps/bin-attachment-16x16.png
+share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-action.png
 share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-auth-big.png
 share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-auth.png
 share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-bookmark.png
@@ -252,7 +300,6 @@ share/libgda-${GDA_MAJOR}/pixmaps/gdaui-generic.png
 share/libgda-${GDA_MAJOR}/ui/
 share/libgda-${GDA_MAJOR}/ui/gdaui-entry-number.xml
 share/libgda-${GDA_MAJOR}/ui/gdaui-entry-string.xml
-share/pixmaps/
 share/pixmaps/gda-browser-${GDA_MAJOR}.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
