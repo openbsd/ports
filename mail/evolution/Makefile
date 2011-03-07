@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.118 2011/01/12 08:05:11 pea Exp $
+# $OpenBSD: Makefile,v 1.119 2011/03/07 19:36:17 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		2.32.1
-REVISION-main=		1
+GNOME_VERSION=		2.32.2
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -96,7 +95,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/libunique \
 			converters/libpst \
-			databases/evolution-data-server \
+			databases/evolution-data-server>=2.32.2 \
 			databases/openldap \
 			devel/libnotify \
 			devel/libsoup \

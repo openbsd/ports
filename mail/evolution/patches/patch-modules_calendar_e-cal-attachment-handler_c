@@ -1,0 +1,27 @@
+$OpenBSD: patch-modules_calendar_e-cal-attachment-handler_c,v 1.1 2011/03/07 19:36:17 ajacoutot Exp $
+
+Bug 608804 - Some attachments make evolution crash in libical
+
+--- modules/calendar/e-cal-attachment-handler.c.orig	Thu Oct 14 23:18:37 2010
++++ modules/calendar/e-cal-attachment-handler.c	Tue Feb 22 14:09:24 2011
+@@ -83,7 +83,19 @@ attachment_handler_get_component (EAttachment *attachm
+ 	camel_data_wrapper_decode_to_stream (wrapper, stream, NULL);
+ 	g_object_unref (stream);
+ 
+-	component = e_cal_util_parse_ics_string ((gchar *) buffer->data);
++	if (buffer->len > 0) {
++		const gchar *str;
++
++		/* ensure string being null-terminated  */
++		g_byte_array_append (buffer, (const guint8 *) "", 1);
++
++		str = (const gchar *) buffer->data;
++		while (*str && g_ascii_isspace (*str))
++			str++;
++
++		if (g_ascii_strncasecmp (str, "BEGIN:", 6) == 0)
++			component = e_cal_util_parse_ics_string (str);
++	}
+ 
+ 	g_byte_array_free (buffer, TRUE);
+ 
