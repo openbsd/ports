@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/03/07 19:34:43 ajacoutot Exp $
 
 COMMENT =	library for writing single instance application
 
 GNOME_PROJECT =	libunique
-GNOME_VERSION =	1.1.2
+GNOME_VERSION =	1.1.6
 
-REVISION =	1
-
-SHARED_LIBS +=  unique-1.0           1.0      # .100.2
+SHARED_LIBS +=  unique-1.0           2.0      # .100.6
 CATEGORIES =	devel
 
 HOMEPAGE =	http://live.gnome.org/LibUnique
@@ -18,25 +16,26 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo dbus-1
+WANTLIB += dbus-glib-1 drm expat fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xcb-render
+WANTLIB += xcb-shm z
+
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--with-x \
-			--enable-gtk-doc=no \
-			--enable-introspection=no
+			--disable-gtk-doc \
+			--disable-introspection \
+			--with-x
 
 MODULES =	devel/gettext \
 		x11/gnome
 
 LIB_DEPENDS =	x11/gtk+2 \
 		x11/dbus-glib
-
-WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 expat \
-		fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
-		gobject-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre \
-		pixman-1 png pthread-stubs xcb z gdk_pixbuf-2.0 \
-		gdk-x11-2.0 gtk-x11-2.0 dbus-glib-1
 
 .include <bsd.port.mk>

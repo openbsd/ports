@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/10/25 12:47:46 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/07 19:34:43 ajacoutot Exp $
 %%SHARED%%
 include/unique-1.0/
 include/unique-1.0/unique/
 include/unique-1.0/unique/unique.h
 include/unique-1.0/unique/uniqueapp.h
 include/unique-1.0/unique/uniquebackend.h
+include/unique-1.0/unique/uniqueenumtypes.h
 include/unique-1.0/unique/uniquemessage.h
 include/unique-1.0/unique/uniqueversion.h
 lib/libunique-1.0.a

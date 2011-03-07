@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.1 2009/10/12 10:34:50 jasper Exp $
---- configure.orig	Mon Oct 12 12:17:07 2009
-+++ configure	Mon Oct 12 12:17:25 2009
-@@ -13394,7 +13394,7 @@ fi
- if test "x$enable_maintainer_flags" = "xyes" &&  test "x$GCC" = "xyes"; then :
+$OpenBSD: patch-configure,v 1.2 2011/03/07 19:34:43 ajacoutot Exp $
+--- configure.orig	Thu Nov 12 14:57:56 2009
++++ configure	Sat Feb 26 18:13:53 2011
+@@ -15398,7 +15398,7 @@ fi
+ if test "x$enable_maintainer_flags" = "xyes" &&  test "x$GCC" = "xyes"; then
  
  
 -  list="-Werror -Wall -Wshadow -Wcast-align
