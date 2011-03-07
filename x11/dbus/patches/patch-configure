@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.9 2010/12/21 14:59:49 ajacoutot Exp $
---- configure.orig	Mon Dec 20 22:39:51 2010
-+++ configure	Tue Dec 21 15:09:50 2010
-@@ -18015,13 +18015,13 @@ fi
+$OpenBSD: patch-configure,v 1.10 2011/03/07 19:20:28 ajacoutot Exp $
+--- configure.orig	Thu Feb 17 21:06:57 2011
++++ configure	Fri Mar  4 21:59:31 2011
+@@ -17999,13 +17999,13 @@ fi
  # Thread lib detection
  ac_fn_c_check_func "$LINENO" "pthread_cond_timedwait" "ac_cv_func_pthread_cond_timedwait"
  if test "x$ac_cv_func_pthread_cond_timedwait" = x""yes; then :
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.9 2010/12/21 14:59:49 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -18052,7 +18052,7 @@ fi
+@@ -18036,7 +18036,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_cond_timedwait" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_cond_timedwait" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_cond_timedwait" = x""yes; then :
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.9 2010/12/21 14:59:49 ajacoutot Exp $
  fi
  
  fi
-@@ -18267,13 +18267,13 @@ if test x$have_selinux = xyes ; then
+@@ -18251,13 +18251,13 @@ if test x$have_selinux = xyes ; then
  if test "x$ac_cv_func_pthread_create" = x""yes; then :
  
  else
@@ -44,7 +44,7 @@ $OpenBSD: patch-configure,v 1.9 2010/12/21 14:59:49 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -18304,7 +18304,7 @@ fi
+@@ -18288,7 +18288,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then :

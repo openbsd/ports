@@ -1,7 +1,7 @@
-$OpenBSD: patch-bus_Makefile_in,v 1.10 2010/12/21 14:59:49 ajacoutot Exp $
---- bus/Makefile.in.orig	Mon Dec 20 22:39:49 2010
-+++ bus/Makefile.in	Tue Dec 21 15:09:50 2010
-@@ -2534,7 +2534,6 @@ uninstall-hook:
+$OpenBSD: patch-bus_Makefile_in,v 1.11 2011/03/07 19:20:28 ajacoutot Exp $
+--- bus/Makefile.in.orig	Thu Feb 17 21:06:58 2011
++++ bus/Makefile.in	Fri Mar  4 21:59:30 2011
+@@ -2535,7 +2535,6 @@ uninstall-hook:
  	rm -f $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper$(EXEEXT)
  
  install-data-hook:
@@ -9,7 +9,7 @@ $OpenBSD: patch-bus_Makefile_in,v 1.10 2010/12/21 14:59:49 ajacoutot Exp $
  	$(mkinstalldirs) $(DESTDIR)$(configdir)/system.d
  	$(mkinstalldirs) $(DESTDIR)$(configdir)/session.d
  	$(mkinstalldirs) $(DESTDIR)$(datadir)/dbus-1/services
-@@ -2547,13 +2546,6 @@ install-data-hook:
+@@ -2548,13 +2547,6 @@ install-data-hook:
  @DBUS_UNIX_TRUE@	$(mkinstalldirs) $(DESTDIR)$(libexecdir)/dbus-1
  @DBUS_UNIX_TRUE@	if test -f dbus-daemon-launch-helper$(EXEEXT) ; then \
  @DBUS_UNIX_TRUE@	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) dbus-daemon-launch-helper$(EXEEXT) $(DESTDIR)$(libexecdir); \

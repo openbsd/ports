@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.10 2010/12/21 14:59:49 ajacoutot Exp $
---- tools/Makefile.in.orig	Mon Dec 20 22:39:50 2010
-+++ tools/Makefile.in	Tue Dec 21 15:09:50 2010
-@@ -357,7 +357,7 @@ top_build_prefix = @top_build_prefix@
+$OpenBSD: patch-tools_Makefile_in,v 1.11 2011/03/07 19:20:28 ajacoutot Exp $
+--- tools/Makefile.in.orig	Thu Feb 17 21:06:59 2011
++++ tools/Makefile.in	Fri Mar  4 21:59:31 2011
+@@ -358,7 +358,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  configdir = $(sysconfdir)/dbus-1
@@ -10,7 +10,7 @@ $OpenBSD: patch-tools_Makefile_in,v 1.10 2010/12/21 14:59:49 ajacoutot Exp $
  extra_bin_programs = $(am__append_1)
  dbus_send_SOURCES = \
  	dbus-print-message.c			\
-@@ -397,8 +397,8 @@ CLEANFILES = \
+@@ -398,8 +398,8 @@ CLEANFILES = \
  	run-with-tmp-session-bus.conf
  
  
