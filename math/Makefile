@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2010/12/27 21:14:13 benoit Exp $
+# $OpenBSD: Makefile,v 1.103 2011/03/07 22:27:24 jasper Exp $
 #
 
      SUBDIR =
@@ -85,6 +85,7 @@
      SUBDIR += p5-Statistics-Descriptive
      SUBDIR += pari
      SUBDIR += plplot
+     SUBDIR += prover9
      SUBDIR += py-Numeric
      SUBDIR += py-gnuplot
      SUBDIR += py-numpy
