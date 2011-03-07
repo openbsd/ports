@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2010/11/12 16:48:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2011/03/07 19:25:40 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 %%SHARED%%
 @bin bin/gvfs-cat
@@ -24,8 +24,6 @@ include/gvfs-client/gvfs/gvfsurimapper.h
 include/gvfs-client/gvfs/gvfsuriutils.h
 lib/gio/
 lib/gio/modules/
-@comment lib/gio/modules/libgiogconf.a
-@comment lib/gio/modules/libgiogconf.la
 @comment lib/gio/modules/libgioremote-volume-monitor.a
 @comment lib/gio/modules/libgioremote-volume-monitor.la
 @comment lib/gio/modules/libgvfsdbus.a

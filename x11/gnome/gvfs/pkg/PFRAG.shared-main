@@ -1,5 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.5 2010/11/12 16:48:41 ajacoutot Exp $
-lib/gio/modules/libgiogconf.so
+@comment $OpenBSD: PFRAG.shared-main,v 1.6 2011/03/07 19:25:40 ajacoutot Exp $
 lib/gio/modules/libgioremote-volume-monitor.so
 lib/gio/modules/libgvfsdbus.so
 @lib lib/libgvfscommon-dnssd.so.${LIBgvfscommon-dnssd_VERSION}
