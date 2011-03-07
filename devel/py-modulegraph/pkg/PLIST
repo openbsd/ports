@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/07 22:18:43 jasper Exp $
+lib/python${MODPY_VERSION}/site-packages/modulegraph/
+lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/modulegraph/__init__.py
+lib/python${MODPY_VERSION}/site-packages/modulegraph/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/modulegraph/compat.py
+lib/python${MODPY_VERSION}/site-packages/modulegraph/compat.pyc
+lib/python${MODPY_VERSION}/site-packages/modulegraph/find_modules.py
+lib/python${MODPY_VERSION}/site-packages/modulegraph/find_modules.pyc
+lib/python${MODPY_VERSION}/site-packages/modulegraph/modulegraph.py
+lib/python${MODPY_VERSION}/site-packages/modulegraph/modulegraph.pyc
+lib/python${MODPY_VERSION}/site-packages/modulegraph/util.py
+lib/python${MODPY_VERSION}/site-packages/modulegraph/util.pyc
