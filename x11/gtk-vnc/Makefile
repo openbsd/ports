@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/03/07 19:31:10 ajacoutot Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
 
 GNOME_PROJECT=		gtk-vnc
-GNOME_VERSION=		0.4.2
+GNOME_VERSION=		0.4.3
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugin=		gtk-vnc-plugin-${GNOME_VERSION}
@@ -37,7 +37,6 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 MULTI_PACKAGES=		-main -plugin
 
 BUILD_DEPENDS=		${RUN_DEPENDS-main} \
-			textproc/p5-Text-CSV \
 			devel/xulrunner/1.9,-devel>=1.9.1
 
 LIB_DEPENDS=		security/gnutls \
@@ -52,12 +51,13 @@ WANTLIB-plugin += ${WANTLIB} gvnc-1.0 gtk-vnc-1.0 gnutls sasl2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--disable-introspection \
 			--with-examples \
 			--with-python \
 			--with-sasl \
 			--without-libview \
 			--enable-plugin=yes \
-			--disable-introspection
+			--with-gtk=2.0
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			MOZILLA_PLUGIN_CFLAGS="-I${LOCALBASE}/xulrunner1.9/include/ \

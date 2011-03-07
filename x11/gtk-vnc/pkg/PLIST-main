@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2010/11/05 13:52:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2011/03/07 19:31:10 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/gvnccapture
 @bin bin/gvncviewer
@@ -52,6 +52,7 @@ share/locale/ro/LC_MESSAGES/gtk-vnc.mo
 share/locale/ru/LC_MESSAGES/gtk-vnc.mo
 share/locale/sl/LC_MESSAGES/gtk-vnc.mo
 share/locale/sv/LC_MESSAGES/gtk-vnc.mo
+share/locale/th/LC_MESSAGES/gtk-vnc.mo
 share/locale/zh_CN/LC_MESSAGES/gtk-vnc.mo
 share/locale/zh_HK/LC_MESSAGES/gtk-vnc.mo
 share/locale/zh_TW/LC_MESSAGES/gtk-vnc.mo
