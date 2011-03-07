@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/12/09 17:36:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/03/07 19:23:16 ajacoutot Exp $
 @conflict gtk2mm-<2.14
 %%SHARED%%
 include/pangomm-1.4/
@@ -310,6 +310,7 @@ share/doc/pangomm-1.4/reference/html/since_1_6.html
 share/doc/pangomm-1.4/reference/html/since_1_8.html
 share/doc/pangomm-1.4/reference/html/since_2_14.html
 share/doc/pangomm-1.4/reference/html/since_2_16.html
+share/doc/pangomm-1.4/reference/html/since_2_28.html
 share/doc/pangomm-1.4/reference/html/structPango_1_1AttributeTraits-members.html
 share/doc/pangomm-1.4/reference/html/structPango_1_1AttributeTraits.html
 share/doc/pangomm-1.4/reference/html/structPango_1_1ItemTraits-members.html

@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2010/12/09 17:36:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/03/07 19:23:16 ajacoutot Exp $
 
 COMMENT =		C++ interface for pango
 
-V =			2.26.3
+V =			2.27.1
 DISTNAME =		pangomm-${V}
 CATEGORIES =		devel x11
 
-SHARED_LIBS +=		pangomm-1.4	9.0 # .1.30
+SHARED_LIBS +=		pangomm-1.4	10.0 # .1.30
 
 HOMEPAGE =		http://www.gtkmm.org/
 
