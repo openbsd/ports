@@ -1,25 +1,21 @@
-# $OpenBSD: Makefile,v 1.50 2011/01/07 10:12:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.51 2011/03/07 19:43:35 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
 COMMENT-mjpeg =		mplex+mpeg2enc elements for GStreamer (plugins-bad)
 
-V =			0.10.20
+V =			0.10.21
 DISTNAME =		gst-plugins-bad-${V}
 
 PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
 
-REVISION-main =		9
-REVISION-neon =		2
-REVISION-mjpeg =	2
-
 MULTI_PACKAGES =	-main -neon -mjpeg
 
-SHARED_LIBS +=  gstphotography-0.10          0.0 # .0.0
-SHARED_LIBS +=  gstsignalprocessor-0.10      0.0 # .0.0
-SHARED_LIBS +=  gstbasevideo-0.10            0.0 # .0.0
+SHARED_LIBS +=  gstphotography-0.10          1.0 # .0.0
+SHARED_LIBS +=  gstsignalprocessor-0.10      1.0 # .0.0
+SHARED_LIBS +=  gstbasevideo-0.10            1.0 # .0.0
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}
 MODULES =		devel/gettext
@@ -41,9 +37,9 @@ WANTLIB-main =		${WANTLIB} xcb-render \
 			cairo croco-0.6 expat fontconfig freetype stdc++ \
 			gdk_pixbuf-2.0 gio-2.0 gstinterfaces-0.10 \
 			orc-0.4 pango-1.0 pangocairo-1.0 gstaudio-0.10 \
-			pangoft2-1.0 pixman-1 png pthread dvdread gstvideo-0.10 \
+			pangoft2-1.0 pixman-1 png dvdread gstvideo-0.10 \
 			gstriff-0.10 gstpbutils-0.10 gstrtp-0.10 gstsdp-0.10 \
-			gsttag-0.10 sndfile mpcdec faac faad dca exif xvidcore \
+			gsttag-0.10 sndfile mpcdec faac faad dca xvidcore \
 			SDL mms gsm rsvg-2 schroedinger-1.0>=2.0 cdaudio BPM \
 			SoundTouch dvdnav jasper GL Xdamage Xext Xfixes Xxf86vm \
 			drm xcb-shm vpx crypto curl idn lrdf raptor ssl xslt

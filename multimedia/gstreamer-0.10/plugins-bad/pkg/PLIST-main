@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2010/12/06 19:15:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2011/03/07 19:43:35 ajacoutot Exp $
 @conflict gstreamer-plugins-base-<0.10.25
 @conflict gstreamer-bz2-*
 @conflict gstreamer-faac-*
@@ -40,6 +40,8 @@ lib/gstreamer-${VERSION}/libgstadpcmdec.so
 lib/gstreamer-${VERSION}/libgstadpcmenc.so
 @comment lib/gstreamer-${VERSION}/libgstaiff.la
 lib/gstreamer-${VERSION}/libgstaiff.so
+@comment lib/gstreamer-${VERSION}/libgstapexsink.la
+lib/gstreamer-${VERSION}/libgstapexsink.so
 @comment lib/gstreamer-${VERSION}/libgstasfmux.la
 lib/gstreamer-${VERSION}/libgstasfmux.so
 @comment lib/gstreamer-${VERSION}/libgstaudioparsersbad.la
@@ -58,6 +60,8 @@ lib/gstreamer-${VERSION}/libgstcdaudio.so
 lib/gstreamer-${VERSION}/libgstcdxaparse.so
 @comment lib/gstreamer-${VERSION}/libgstcoloreffects.la
 lib/gstreamer-${VERSION}/libgstcoloreffects.so
+@comment lib/gstreamer-${VERSION}/libgstcolorspace.la
+lib/gstreamer-${VERSION}/libgstcolorspace.so
 @comment lib/gstreamer-${VERSION}/libgstdataurisrc.la
 lib/gstreamer-${VERSION}/libgstdataurisrc.so
 @comment lib/gstreamer-${VERSION}/libgstdccp.la
@@ -68,6 +72,8 @@ lib/gstreamer-${VERSION}/libgstdebugutilsbad.so
 lib/gstreamer-${VERSION}/libgstdtmf.so
 @comment lib/gstreamer-${VERSION}/libgstdtsdec.la
 lib/gstreamer-${VERSION}/libgstdtsdec.so
+@comment lib/gstreamer-${VERSION}/libgstdvbsuboverlay.la
+lib/gstreamer-${VERSION}/libgstdvbsuboverlay.so
 @comment lib/gstreamer-${VERSION}/libgstfaac.la
 lib/gstreamer-${VERSION}/libgstfaac.so
 @comment lib/gstreamer-${VERSION}/libgstfaad.la
@@ -92,12 +98,16 @@ lib/gstreamer-${VERSION}/libgsth264parse.so
 lib/gstreamer-${VERSION}/libgsthdvparse.so
 @comment lib/gstreamer-${VERSION}/libgstid3tag.la
 lib/gstreamer-${VERSION}/libgstid3tag.so
+@comment lib/gstreamer-${VERSION}/libgstinterlace.la
+lib/gstreamer-${VERSION}/libgstinterlace.so
 @comment lib/gstreamer-${VERSION}/libgstinvtelecine.la
 lib/gstreamer-${VERSION}/libgstinvtelecine.so
 @comment lib/gstreamer-${VERSION}/libgstivfparse.la
 lib/gstreamer-${VERSION}/libgstivfparse.so
 @comment lib/gstreamer-${VERSION}/libgstjp2k.la
 lib/gstreamer-${VERSION}/libgstjp2k.so
+@comment lib/gstreamer-${VERSION}/libgstjp2kdecimator.la
+lib/gstreamer-${VERSION}/libgstjp2kdecimator.so
 @comment lib/gstreamer-${VERSION}/libgstjpegformat.la
 lib/gstreamer-${VERSION}/libgstjpegformat.so
 @comment lib/gstreamer-${VERSION}/libgstladspa.la
@@ -106,8 +116,6 @@ lib/gstreamer-${VERSION}/libgstladspa.so
 lib/gstreamer-${VERSION}/libgstlegacyresample.so
 @comment lib/gstreamer-${VERSION}/libgstliveadder.la
 lib/gstreamer-${VERSION}/libgstliveadder.so
-@comment lib/gstreamer-${VERSION}/libgstmetadata.la
-lib/gstreamer-${VERSION}/libgstmetadata.so
 @comment lib/gstreamer-${VERSION}/libgstmms.la
 lib/gstreamer-${VERSION}/libgstmms.so
 @comment lib/gstreamer-${VERSION}/libgstmpeg4videoparse.la
@@ -154,8 +162,6 @@ lib/gstreamer-${VERSION}/libgstsdl.so
 lib/gstreamer-${VERSION}/libgstsdpelem.so
 @comment lib/gstreamer-${VERSION}/libgstsegmentclip.la
 lib/gstreamer-${VERSION}/libgstsegmentclip.so
-@comment lib/gstreamer-${VERSION}/libgstselector.la
-lib/gstreamer-${VERSION}/libgstselector.so
 @comment lib/gstreamer-${VERSION}/libgstsiren.la
 lib/gstreamer-${VERSION}/libgstsiren.so
 @comment lib/gstreamer-${VERSION}/libgstsndfile.la
@@ -170,8 +176,6 @@ lib/gstreamer-${VERSION}/libgststereo.so
 lib/gstreamer-${VERSION}/libgstsubenc.so
 @comment lib/gstreamer-${VERSION}/libgsttta.la
 lib/gstreamer-${VERSION}/libgsttta.so
-@comment lib/gstreamer-${VERSION}/libgstvalve.la
-lib/gstreamer-${VERSION}/libgstvalve.so
 @comment lib/gstreamer-${VERSION}/libgstvideomaxrate.la
 lib/gstreamer-${VERSION}/libgstvideomaxrate.so
 @comment lib/gstreamer-${VERSION}/libgstvideomeasure.la
@@ -184,6 +188,8 @@ lib/gstreamer-${VERSION}/libgstvmnc.so
 lib/gstreamer-${VERSION}/libgstvp8.so
 @comment lib/gstreamer-${VERSION}/libgstxvid.la
 lib/gstreamer-${VERSION}/libgstxvid.so
+@comment lib/gstreamer-${VERSION}/libgsty4mdec.la
+lib/gstreamer-${VERSION}/libgsty4mdec.so
 @comment lib/gstreamer-${VERSION}/libresindvd.la
 lib/gstreamer-${VERSION}/libresindvd.so
 lib/libgstbasevideo-${VERSION}.la
