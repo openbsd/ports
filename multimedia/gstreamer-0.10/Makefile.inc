@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.11 2010/11/19 07:23:13 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2011/03/07 19:42:16 ajacoutot Exp $
 
 CATEGORIES ?=	multimedia devel
 
@@ -37,6 +37,7 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-default-visualizer=goom \
 			--disable-silent-rules \
 			--disable-introspection \
+			--disable-gtk-doc \
 			--disable-valgrind \
 			--disable-static
 
