@@ -1,3 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2005/12/26 21:32:05 steven Exp $
-@lib lib/libglitz-glx.so.${LIBglitz-glx_VERSION}
-@lib lib/libglitz.so.${LIBglitz_VERSION}

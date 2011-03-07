@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.276 2010/10/28 12:40:08 landry Exp $
+# $OpenBSD: Makefile,v 1.277 2011/03/07 09:26:05 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -71,7 +71,6 @@
      SUBDIR += gimp
      SUBDIR += gle
      SUBDIR += glew
-     SUBDIR += glitz
      SUBDIR += glpng
      SUBDIR += gmt
      SUBDIR += gocr
