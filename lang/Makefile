@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2011/01/15 13:08:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.108 2011/03/07 19:27:20 jasper Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -48,6 +48,7 @@
      SUBDIR += obc
      SUBDIR += ocaml
      SUBDIR += ocamlduce
+     SUBDIR += onyx
      SUBDIR += oo2c
      SUBDIR += open-cobol
      SUBDIR += otcl
