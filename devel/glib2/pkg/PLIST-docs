@@ -1,9 +1,13 @@
-@comment $OpenBSD: PLIST-docs,v 1.20 2010/09/30 07:17:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.21 2011/03/07 19:17:14 ajacoutot Exp $
 @conflict glib2-<2.4.6
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gio/
+share/gtk-doc/html/gio/GAction.html
+share/gtk-doc/html/gio/GActionGroup.html
 share/gtk-doc/html/gio/GAppInfo.html
+share/gtk-doc/html/gio/GApplication.html
+share/gtk-doc/html/gio/GApplicationCommandLine.html
 share/gtk-doc/html/gio/GAsyncInitable.html
 share/gtk-doc/html/gio/GAsyncResult.html
 share/gtk-doc/html/gio/GBufferedInputStream.html
@@ -14,6 +18,7 @@ share/gtk-doc/html/gio/GConverter.html
 share/gtk-doc/html/gio/GCredentials.html
 share/gtk-doc/html/gio/GDBusAuthObserver.html
 share/gtk-doc/html/gio/GDBusConnection.html
+share/gtk-doc/html/gio/GDBusError.html
 share/gtk-doc/html/gio/GDBusMessage.html
 share/gtk-doc/html/gio/GDBusMethodInvocation.html
 share/gtk-doc/html/gio/GDBusProxy.html
@@ -51,6 +56,8 @@ share/gtk-doc/html/gio/GNetworkAddress.html
 share/gtk-doc/html/gio/GNetworkService.html
 share/gtk-doc/html/gio/GOutputStream.html
 share/gtk-doc/html/gio/GPermission.html
+share/gtk-doc/html/gio/GPollableInputStream.html
+share/gtk-doc/html/gio/GPollableOutputStream.html
 share/gtk-doc/html/gio/GProxy.html
 share/gtk-doc/html/gio/GProxyAddress.html
 share/gtk-doc/html/gio/GProxyResolver.html
@@ -58,6 +65,8 @@ share/gtk-doc/html/gio/GResolver.html
 share/gtk-doc/html/gio/GSeekable.html
 share/gtk-doc/html/gio/GSettings.html
 share/gtk-doc/html/gio/GSettingsBackend.html
+share/gtk-doc/html/gio/GSimpleAction.html
+share/gtk-doc/html/gio/GSimpleActionGroup.html
 share/gtk-doc/html/gio/GSimpleAsyncResult.html
 share/gtk-doc/html/gio/GSimplePermission.html
 share/gtk-doc/html/gio/GSocket.html
@@ -68,9 +77,16 @@ share/gtk-doc/html/gio/GSocketConnection.html
 share/gtk-doc/html/gio/GSocketControlMessage.html
 share/gtk-doc/html/gio/GSocketListener.html
 share/gtk-doc/html/gio/GSocketService.html
+share/gtk-doc/html/gio/GSrvTarget.html
 share/gtk-doc/html/gio/GTcpConnection.html
+share/gtk-doc/html/gio/GTcpWrapperConnection.html
 share/gtk-doc/html/gio/GThemedIcon.html
 share/gtk-doc/html/gio/GThreadedSocketService.html
+share/gtk-doc/html/gio/GTlsBackend.html
+share/gtk-doc/html/gio/GTlsCertificate.html
+share/gtk-doc/html/gio/GTlsClientConnection.html
+share/gtk-doc/html/gio/GTlsConnection.html
+share/gtk-doc/html/gio/GTlsServerConnection.html
 share/gtk-doc/html/gio/GUnixConnection.html
 share/gtk-doc/html/gio/GUnixCredentialsMessage.html
 share/gtk-doc/html/gio/GUnixFDList.html
@@ -89,29 +105,31 @@ share/gtk-doc/html/gio/api-index-2-20.html
 share/gtk-doc/html/gio/api-index-2-22.html
 share/gtk-doc/html/gio/api-index-2-24.html
 share/gtk-doc/html/gio/api-index-2-26.html
+share/gtk-doc/html/gio/api-index-2-28.html
 share/gtk-doc/html/gio/api-index-deprecated.html
 share/gtk-doc/html/gio/api-index-full.html
+share/gtk-doc/html/gio/application.html
 share/gtk-doc/html/gio/async.html
 share/gtk-doc/html/gio/ch01.html
 share/gtk-doc/html/gio/ch02.html
 share/gtk-doc/html/gio/ch03.html
-share/gtk-doc/html/gio/ch24.html
-share/gtk-doc/html/gio/ch25.html
-share/gtk-doc/html/gio/ch25s02.html
-share/gtk-doc/html/gio/ch25s03.html
 share/gtk-doc/html/gio/ch26.html
-share/gtk-doc/html/gio/ch26s02.html
-share/gtk-doc/html/gio/ch26s03.html
-share/gtk-doc/html/gio/ch26s04.html
-share/gtk-doc/html/gio/ch26s05.html
-share/gtk-doc/html/gio/ch26s06.html
-share/gtk-doc/html/gio/ch26s07.html
 share/gtk-doc/html/gio/ch27.html
 share/gtk-doc/html/gio/ch27s02.html
 share/gtk-doc/html/gio/ch27s03.html
-share/gtk-doc/html/gio/ch27s04.html
-share/gtk-doc/html/gio/ch27s05.html
-share/gtk-doc/html/gio/ch27s06.html
+share/gtk-doc/html/gio/ch28.html
+share/gtk-doc/html/gio/ch28s02.html
+share/gtk-doc/html/gio/ch28s03.html
+share/gtk-doc/html/gio/ch28s04.html
+share/gtk-doc/html/gio/ch28s05.html
+share/gtk-doc/html/gio/ch28s06.html
+share/gtk-doc/html/gio/ch28s07.html
+share/gtk-doc/html/gio/ch29.html
+share/gtk-doc/html/gio/ch29s02.html
+share/gtk-doc/html/gio/ch29s03.html
+share/gtk-doc/html/gio/ch29s04.html
+share/gtk-doc/html/gio/ch29s05.html
+share/gtk-doc/html/gio/ch29s06.html
 share/gtk-doc/html/gio/conversion.html
 share/gtk-doc/html/gio/extending-gio.html
 share/gtk-doc/html/gio/extending.html
@@ -129,12 +147,11 @@ share/gtk-doc/html/gio/gio-Extension-Points.html
 share/gtk-doc/html/gio/gio-GContentType.html
 share/gtk-doc/html/gio/gio-GConverterInputstream.html
 share/gtk-doc/html/gio/gio-GConverterOutputstream.html
-share/gtk-doc/html/gio/gio-GDBusError.html
 share/gtk-doc/html/gio/gio-GFileAttribute.html
 share/gtk-doc/html/gio/gio-GIOError.html
 share/gtk-doc/html/gio/gio-GIOScheduler.html
-share/gtk-doc/html/gio/gio-GSrvTarget.html
 share/gtk-doc/html/gio/gio-Owning-Bus-Names.html
+share/gtk-doc/html/gio/gio-TLS-Overview.html
 share/gtk-doc/html/gio/gio-Unix-Mounts.html
 share/gtk-doc/html/gio/gio-Watching-Bus-Names.html
 share/gtk-doc/html/gio/gio-hierarchy.html
@@ -142,7 +159,7 @@ share/gtk-doc/html/gio/gio-querymodules.html
 share/gtk-doc/html/gio/gio.devhelp
 share/gtk-doc/html/gio/gio.devhelp2
 share/gtk-doc/html/gio/glib-compile-schemas.html
-share/gtk-doc/html/gio/gsettings.html
+share/gtk-doc/html/gio/gsettings-tool.html
 share/gtk-doc/html/gio/gvfs-overview.png
 share/gtk-doc/html/gio/highlevel-socket.html
 share/gtk-doc/html/gio/home.png
@@ -160,6 +177,7 @@ share/gtk-doc/html/gio/right.png
 share/gtk-doc/html/gio/settings.html
 share/gtk-doc/html/gio/streaming.html
 share/gtk-doc/html/gio/style.css
+share/gtk-doc/html/gio/tls.html
 share/gtk-doc/html/gio/tools.html
 share/gtk-doc/html/gio/types.html
 share/gtk-doc/html/gio/up.png
@@ -177,6 +195,7 @@ share/gtk-doc/html/glib/api-index-2-20.html
 share/gtk-doc/html/glib/api-index-2-22.html
 share/gtk-doc/html/glib/api-index-2-24.html
 share/gtk-doc/html/glib/api-index-2-26.html
+share/gtk-doc/html/glib/api-index-2-28.html
 share/gtk-doc/html/glib/api-index-2-4.html
 share/gtk-doc/html/glib/api-index-2-6.html
 share/gtk-doc/html/glib/api-index-2-8.html
@@ -271,6 +290,7 @@ share/gtk-doc/html/glib/glib.html
 share/gtk-doc/html/glib/gtester-report.html
 share/gtk-doc/html/glib/gtester.html
 share/gtk-doc/html/glib/gvariant-format-strings.html
+share/gtk-doc/html/glib/gvariant-text.html
 share/gtk-doc/html/glib/home.png
 share/gtk-doc/html/glib/index.html
 share/gtk-doc/html/glib/index.sgml
@@ -293,6 +313,7 @@ share/gtk-doc/html/gobject/api-index-2-2.html
 share/gtk-doc/html/gobject/api-index-2-22.html
 share/gtk-doc/html/gobject/api-index-2-24.html
 share/gtk-doc/html/gobject/api-index-2-26.html
+share/gtk-doc/html/gobject/api-index-2-28.html
 share/gtk-doc/html/gobject/api-index-2-4.html
 share/gtk-doc/html/gobject/api-index-2-6.html
 share/gtk-doc/html/gobject/api-index-2-8.html

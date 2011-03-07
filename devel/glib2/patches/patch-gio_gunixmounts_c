@@ -1,11 +1,11 @@
-$OpenBSD: patch-gio_gunixmounts_c,v 1.2 2010/09/30 07:17:19 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmounts_c,v 1.3 2011/03/07 19:17:14 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=583330
 From FreeBSD: poll the list of mounted filesystems since we can't rely
 on checking for mtab updates like other systems.
 
---- gio/gunixmounts.c.orig	Mon Aug  9 15:34:46 2010
-+++ gio/gunixmounts.c	Mon Sep 27 14:42:36 2010
+--- gio/gunixmounts.c.orig	Fri Jan  7 17:55:29 2011
++++ gio/gunixmounts.c	Mon Jan 31 10:14:44 2011
 @@ -135,6 +135,9 @@ struct _GUnixMountMonitor {
  
    GFileMonitor *fstab_monitor;
@@ -73,7 +73,7 @@ on checking for mtab updates like other systems.
    return 0;
  }
  
-@@ -1196,6 +1214,13 @@ g_unix_mount_monitor_finalize (GObject *object)
+@@ -1198,6 +1216,13 @@ g_unix_mount_monitor_finalize (GObject *object)
        g_object_unref (monitor->mtab_monitor);
      }
  
@@ -87,7 +87,7 @@ on checking for mtab updates like other systems.
    the_mount_monitor = NULL;
  
    G_OBJECT_CLASS (g_unix_mount_monitor_parent_class)->finalize (object);
-@@ -1276,6 +1301,51 @@ mtab_file_changed (GFileMonitor      *monitor,
+@@ -1278,6 +1303,51 @@ mtab_file_changed (GFileMonitor      *monitor,
    g_signal_emit (mount_monitor, signals[MOUNTS_CHANGED], 0);
  }
  
@@ -139,7 +139,7 @@ on checking for mtab updates like other systems.
  static void
  g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
  {
-@@ -1297,6 +1367,12 @@ g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
+@@ -1299,6 +1369,12 @@ g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
        g_object_unref (file);
        
        g_signal_connect (monitor->mtab_monitor, "changed", (GCallback)mtab_file_changed, monitor);

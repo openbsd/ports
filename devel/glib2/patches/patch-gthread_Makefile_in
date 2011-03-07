@@ -1,7 +1,7 @@
-$OpenBSD: patch-gthread_Makefile_in,v 1.9 2010/11/14 15:56:55 ajacoutot Exp $
---- gthread/Makefile.in.orig	Sun Nov 14 07:02:02 2010
-+++ gthread/Makefile.in	Sun Nov 14 16:14:34 2010
-@@ -872,7 +872,7 @@ test: test-nonrecursive
+$OpenBSD: patch-gthread_Makefile_in,v 1.10 2011/03/07 19:17:14 ajacoutot Exp $
+--- gthread/Makefile.in.orig	Sat Jan 29 03:46:13 2011
++++ gthread/Makefile.in	Mon Jan 31 10:14:44 2011
+@@ -875,7 +875,7 @@ test: test-nonrecursive
  
  # test-nonrecursive: run tests only in cwd
  test-nonrecursive: ${TEST_PROGS}

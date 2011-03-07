@@ -1,0 +1,25 @@
+$OpenBSD: patch-glib_gmain_c,v 1.1 2011/03/07 19:17:14 ajacoutot Exp $
+--- glib/gmain.c.orig	Fri Jan 28 18:10:26 2011
++++ glib/gmain.c	Mon Jan 31 10:33:20 2011
+@@ -2044,6 +2044,13 @@ g_get_monotonic_time (void)
+     struct timespec ts;
+ 
+ #ifdef HAVE_MONOTONIC_CLOCK
++# if defined(__OpenBSD__)
++   /*
++      OpenBSD has support for monotonic clock but does not has the
++      sysconf(3) _SC_MONOTONIC_CLOCK define
++   */
++   clockid = CLOCK_MONOTONIC;
++# else
+     /* We have to check if we actually have monotonic clock support.
+      *
+      * There is no thread safety issue here since there is no harm if we
+@@ -2059,6 +2066,7 @@ g_get_monotonic_time (void)
+           checked = TRUE;
+         }
+     }
++# endif // !__OpenBSD__
+ #endif
+ 
+     clock_gettime (clockid, &ts);

@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.103 2010/12/29 09:58:45 sebastia Exp $
+# $OpenBSD: Makefile,v 1.104 2011/03/07 19:17:14 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
 
-VERSION=		2.26.1
-REVISION =		0
+VERSION=		2.28.2
 DISTNAME=		glib-${VERSION}
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
@@ -15,11 +14,11 @@ HOMEPAGE=		http://www.gtk.org/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SHARED_LIBS +=  glib-2.0             2600.0   # 2600.0
-SHARED_LIBS +=  gmodule-2.0          2600.0   # 2600.0
-SHARED_LIBS +=  gthread-2.0          2600.0   # 2600.0
-SHARED_LIBS +=  gobject-2.0          2600.0   # 2600.0
-SHARED_LIBS +=  gio-2.0              2600.0   # 2600.0
+SHARED_LIBS +=  glib-2.0             2800.0   # 2800.2
+SHARED_LIBS +=  gmodule-2.0          2800.0   # 2800.2
+SHARED_LIBS +=  gthread-2.0          2800.0   # 2800.2
+SHARED_LIBS +=  gobject-2.0          2800.0   # 2800.2
+SHARED_LIBS +=  gio-2.0              2800.0   # 2800.2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -36,12 +35,12 @@ MODULES=		devel/gettext \
 			lang/python
 
 MODPY_RUNDEP=		No
-MODPY_BUILDDEP=		Yes	# XXX: glib2 wants python for the regress tests
+MODPY_BUILDDEP=		Yes	# glib2 wants python for the regress tests
 
 WANTLIB-main=		${WANTLIB} c pthread z pcre fam
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			devel/pcre>=7.2 \
+			devel/pcre>=8.12 \
 			sysutils/gamin,no_server,no_python
 
 PKG_ARCH-docs=		*
@@ -50,8 +49,8 @@ LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
 # DBus is only used in the GDBus test cases
+BUILD_DEPENDS +=	x11/dbus
 REGRESS_DEPENDS=	devel/desktop-file-utils \
-			x11/dbus \
 			devel/py-gobject \
 			x11/dbus-python
 

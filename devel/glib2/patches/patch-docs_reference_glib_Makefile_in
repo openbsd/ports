@@ -1,7 +1,7 @@
-$OpenBSD: patch-docs_reference_glib_Makefile_in,v 1.9 2010/11/14 15:56:55 ajacoutot Exp $
---- docs/reference/glib/Makefile.in.orig	Sun Nov 14 07:01:53 2010
-+++ docs/reference/glib/Makefile.in	Sun Nov 14 16:14:34 2010
-@@ -447,8 +447,7 @@ CLEANFILES = $(SCANOBJ_FILES) $(REPORT_FILES) $(DOC_ST
+$OpenBSD: patch-docs_reference_glib_Makefile_in,v 1.10 2011/03/07 19:17:14 ajacoutot Exp $
+--- docs/reference/glib/Makefile.in.orig	Fri Feb 18 16:21:59 2011
++++ docs/reference/glib/Makefile.in	Sat Feb 26 10:30:29 2011
+@@ -455,8 +455,7 @@ CLEANFILES = $(SCANOBJ_FILES) $(REPORT_FILES) $(DOC_ST
  ########################################################################
  man_MANS = \
  	glib-gettextize.1 	\
