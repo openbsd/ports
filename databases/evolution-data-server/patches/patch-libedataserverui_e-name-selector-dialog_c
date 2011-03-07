@@ -1,0 +1,27 @@
+$OpenBSD: patch-libedataserverui_e-name-selector-dialog_c,v 1.1 2011/03/07 19:35:30 ajacoutot Exp $
+
+From 89b384cfe452ce1e38b31066c3d9f9abd1bdd6e5 Mon Sep 17 00:00:00 2001
+From: Matthew Barnes <mbarnes@redhat.com>
+Date: Wed, 20 Oct 2010 14:50:46 +0000
+Subject: Bug 632687 - Doesn't build against gtk+ 2.91.1
+
+--- libedataserverui/e-name-selector-dialog.c.orig	Tue Sep 21 08:21:00 2010
++++ libedataserverui/e-name-selector-dialog.c	Mon Jan 31 17:49:54 2011
+@@ -116,7 +116,7 @@ e_name_selector_dialog_populate_categories (ENameSelec
+ 	/* Categories are already sorted. */
+ 	category_list = e_categories_get_list ();
+ 	for (iter = category_list; iter != NULL; iter = iter->next)
+-		gtk_combo_box_append_text (
++		gtk_combo_box_text_append_text (
+ 			GTK_COMBO_BOX (combo_box), iter->data);
+ 	g_list_free (category_list);
+ 
+@@ -881,7 +881,7 @@ search_changed (ENameSelectorDialog *name_selector_dia
+ 	if (gtk_combo_box_get_active (GTK_COMBO_BOX (combo_box)) == -1)
+ 		gtk_combo_box_set_active (GTK_COMBO_BOX (combo_box), 0);
+ 
+-	category = gtk_combo_box_get_active_text (GTK_COMBO_BOX (combo_box));
++	category = gtk_combo_box_text_get_active_text (GTK_COMBO_BOX (combo_box));
+ 	category_escaped = escape_sexp_string (category);
+ 
+ 	text = gtk_entry_get_text (name_selector_dialog->priv->search_entry);

@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.3 2010/09/30 07:32:09 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.4 2011/03/07 19:35:30 ajacoutot Exp $
 
 Stupid configure is stupid. Using a variable that's set
 hundreds of lines later...
 
---- configure.ac.orig	Mon Sep 27 12:25:46 2010
-+++ configure.ac	Mon Sep 27 19:11:45 2010
+--- configure.ac.orig	Fri Oct 29 12:22:59 2010
++++ configure.ac	Mon Jan 31 17:49:33 2011
 @@ -199,8 +199,6 @@ dnl	-Wstrict-aliasing=2
  AM_CPPFLAGS="$WARNING_FLAGS -fno-strict-aliasing"
  AC_SUBST(AM_CPPFLAGS)
@@ -28,7 +28,7 @@ hundreds of lines later...
  *)
  	os_win32='no'
  	NO_UNDEFINED=''
-@@ -512,6 +517,29 @@ AC_RUN_IFELSE([AC_LANG_SOURCE(
+@@ -518,6 +523,29 @@ AC_RUN_IFELSE([AC_LANG_SOURCE(
  	]]
  	)],[AC_DEFINE(HAVE_LKSTRFTIME, 1, [strftime supports use of l and k]) ac_cv_lkstrftime=yes],[ac_cv_lkstrftime=no],[ac_cv_lkstrftime=no])
  AC_MSG_RESULT([$ac_cv_lkstrftime])
