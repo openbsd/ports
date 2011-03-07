@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/07/08 16:08:33 pea Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/03/07 19:24:43 ajacoutot Exp $
 @bin bin/homebank
 share/application-registry/
 share/application-registry/homebank.applications
@@ -18,6 +18,8 @@ share/homebank/help/
 share/homebank/help/00new4.0.html
 share/homebank/help/00new4.1.html
 share/homebank/help/00new4.2.html
+share/homebank/help/00new4.3.html
+share/homebank/help/00new4.4.html
 share/homebank/help/02balance.html
 share/homebank/help/02concepts.html
 share/homebank/help/02intro.html
@@ -140,11 +142,11 @@ share/homebank/icons/hicolor/16x16/actions/hb-ope-remind.png
 share/homebank/icons/hicolor/16x16/actions/hb-ope-show.png
 share/homebank/icons/hicolor/16x16/actions/hb-ope-valid.png
 share/homebank/icons/hicolor/16x16/actions/hb-payee.png
+share/homebank/icons/hicolor/16x16/actions/hb-rep-balance.png
 share/homebank/icons/hicolor/16x16/actions/hb-rep-budget.png
-share/homebank/icons/hicolor/16x16/actions/hb-rep-car.png
-share/homebank/icons/hicolor/16x16/actions/hb-rep-over.png
 share/homebank/icons/hicolor/16x16/actions/hb-rep-stats.png
 share/homebank/icons/hicolor/16x16/actions/hb-rep-time.png
+share/homebank/icons/hicolor/16x16/actions/hb-rep-vehicle.png
 share/homebank/icons/hicolor/16x16/actions/lpi-help.png
 share/homebank/icons/hicolor/16x16/status/
 share/homebank/icons/hicolor/16x16/status/pm-cash.png
@@ -180,11 +182,11 @@ share/homebank/icons/hicolor/22x22/actions/hb-ope-show.png
 share/homebank/icons/hicolor/22x22/actions/hb-ope-valid.png
 share/homebank/icons/hicolor/22x22/actions/hb-payee.png
 share/homebank/icons/hicolor/22x22/actions/hb-rate.png
+share/homebank/icons/hicolor/22x22/actions/hb-rep-balance.png
 share/homebank/icons/hicolor/22x22/actions/hb-rep-budget.png
-share/homebank/icons/hicolor/22x22/actions/hb-rep-car.png
-share/homebank/icons/hicolor/22x22/actions/hb-rep-over.png
 share/homebank/icons/hicolor/22x22/actions/hb-rep-stats.png
 share/homebank/icons/hicolor/22x22/actions/hb-rep-time.png
+share/homebank/icons/hicolor/22x22/actions/hb-rep-vehicle.png
 share/homebank/icons/hicolor/22x22/actions/hb-view-bar.png
 share/homebank/icons/hicolor/22x22/actions/hb-view-line.png
 share/homebank/icons/hicolor/22x22/actions/hb-view-list.png
@@ -247,8 +249,6 @@ share/icons/hicolor/scalable/apps/homebank.svg
 share/locale/am/
 share/locale/am/LC_MESSAGES/
 share/locale/am/LC_MESSAGES/homebank.mo
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/homebank.mo
 share/locale/ast/
 share/locale/ast/LC_MESSAGES/
@@ -297,8 +297,6 @@ share/locale/ja/LC_MESSAGES/homebank.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/homebank.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/homebank.mo
 share/locale/kn/
 share/locale/kn/LC_MESSAGES/
