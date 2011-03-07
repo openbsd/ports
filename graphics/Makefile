@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.277 2011/03/07 09:26:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.278 2011/03/07 21:55:53 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -170,6 +170,7 @@
      SUBDIR += p5-Imager
      SUBDIR += p5-SVG
      SUBDIR += p5-SVG-Graph
+     SUBDIR += pdfmod
      SUBDIR += pecl-imagick
      SUBDIR += pigment
      SUBDIR += png
