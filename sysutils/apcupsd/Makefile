@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/02/02 21:56:03 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/07 18:54:51 ajacoutot Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -78,7 +78,7 @@ WANTLIB-x11 += GL X11-xcb Xxf86vm drm xcb-shm
 
 .if ${FLAVOR:L:Msnmp}
 CONFIGURE_ARGS +=	--enable-net-snmp
-LIB_DEPENDS-main +=	::net/net-snmp
+LIB_DEPENDS-main +=	net/net-snmp
 WANTLIB-main =		${WANTLIB} crypto netsnmp
 .endif
 

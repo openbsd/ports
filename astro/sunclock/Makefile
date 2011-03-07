@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/03/07 18:54:50 ajacoutot Exp $
 
 COMMENT-main=		display the phase of the Sun on a map of the Earth
 COMMENT-maps=		additional maps of the Earth for sunclock
@@ -34,7 +34,7 @@ MULTI_PACKAGES+= -maps
 
 PERMIT_PACKAGE_CDROM-maps=	no license for additional maps
 PERMIT_PACKAGE_FTP-maps=	no license for additional maps
-RUN_DEPENDS-maps=    ::astro/sunclock
+RUN_DEPENDS-maps=	astro/sunclock
 PKG_ARCH-maps=	*
 
 # GPL
