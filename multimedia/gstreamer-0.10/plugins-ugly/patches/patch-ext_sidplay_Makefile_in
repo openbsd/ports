@@ -1,7 +1,7 @@
-$OpenBSD: patch-ext_sidplay_Makefile_in,v 1.6 2010/09/03 15:49:07 ajacoutot Exp $
---- ext/sidplay/Makefile.in.orig	Thu Sep  2 23:25:25 2010
-+++ ext/sidplay/Makefile.in	Fri Sep  3 12:11:50 2010
-@@ -309,7 +309,7 @@ SED = @SED@
+$OpenBSD: patch-ext_sidplay_Makefile_in,v 1.7 2011/03/07 19:45:00 ajacoutot Exp $
+--- ext/sidplay/Makefile.in.orig	Fri Jan 21 14:10:39 2011
++++ ext/sidplay/Makefile.in	Sat Feb 26 17:43:55 2011
+@@ -311,7 +311,7 @@ SED = @SED@
  SET_MAKE = @SET_MAKE@
  SHELL = @SHELL@
  SIDPLAY_CFLAGS = @SIDPLAY_CFLAGS@

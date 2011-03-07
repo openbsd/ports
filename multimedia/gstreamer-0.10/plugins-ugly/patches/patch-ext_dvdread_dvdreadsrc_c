@@ -1,6 +1,6 @@
-$OpenBSD: patch-ext_dvdread_dvdreadsrc_c,v 1.4 2010/06/02 12:25:59 ajacoutot Exp $
---- ext/dvdread/dvdreadsrc.c.orig	Fri May 14 02:45:43 2010
-+++ ext/dvdread/dvdreadsrc.c	Wed Jun  2 14:07:29 2010
+$OpenBSD: patch-ext_dvdread_dvdreadsrc_c,v 1.5 2011/03/07 19:45:00 ajacoutot Exp $
+--- ext/dvdread/dvdreadsrc.c.orig	Sat Nov 13 13:38:14 2010
++++ ext/dvdread/dvdreadsrc.c	Sat Feb 26 17:43:55 2011
 @@ -124,7 +124,7 @@ gst_dvd_read_src_init (GstDvdReadSrc * src, GstDvdRead
    src->vmg_file = NULL;
    src->dvd_title = NULL;
@@ -10,7 +10,7 @@ $OpenBSD: patch-ext_dvdread_dvdreadsrc_c,v 1.4 2010/06/02 12:25:59 ajacoutot Exp
    src->last_uri = NULL;
    src->new_seek = TRUE;
    src->new_cell = TRUE;
-@@ -966,7 +966,7 @@ gst_dvd_read_src_set_property (GObject * object, guint
+@@ -994,7 +994,7 @@ gst_dvd_read_src_set_property (GObject * object, guint
        g_free (src->location);
        /* clear the filename if we get a NULL (is that possible?) */
        if (g_value_get_string (value) == NULL) {

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/19 07:23:13 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/03/07 19:45:00 ajacoutot Exp $
 
 COMMENT-main =		ugly elements for GStreamer
 COMMENT-sidplay =	sidplay element for GStreamer (plugins-ugly)
 COMMENT-lame =		lame element for GStreamer (plugins-ugly)
 
-V =			0.10.16
+V =			0.10.17
 DISTNAME =		gst-plugins-ugly-${V}
 
 PKGNAME-main =		gstreamer-plugins-ugly-${V}
@@ -30,7 +30,7 @@ REGRESS_DEPENDS +=	${BASE_PKGPATH},${i}
 LIB_DEPENDS =		${P}/core>=0.10
 RUN_DEPENDS =		${BUILD_PKGPATH}
 
-WANTLIB-main +=		${WANTLIB}
+WANTLIB-main +=		${WANTLIB} gstpbutils-0.10
 WANTLIB-main +=		gstriff-0.10 gstaudio-0.10 gstrtsp-0.10 gstsdp-0.10
 WANTLIB-main +=		gsttag-0.10 gstrtp-0.10 gstvideo-0.10 gstinterfaces-0.10
 WANTLIB-main +=		gstbase-0.10 a52 id3tag mad mpeg2 dvdread x264 orc-0.4
