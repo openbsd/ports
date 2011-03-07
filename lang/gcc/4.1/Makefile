@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/28 21:30:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/03/07 18:59:56 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax
 #BROKEN=adjust for types changes
@@ -53,7 +53,7 @@ MAKE_ADA?=No
 
 
 BUILD_DEPENDS+= :autoconf-2.59*:devel/autoconf/2.59
-BUILD_DEPENDS+=	::devel/metaauto
+BUILD_DEPENDS+=	devel/metaauto
 USE_LIBTOOL=	Yes
 
 SUBPACKAGE?=
@@ -64,7 +64,8 @@ WANTLIB+=m
 
 .if ${MAKE_JAVA:L} == "yes"
 .  if !defined(PACKAGING) || ${SUBPACKAGE} == "-java"
-LIB_DEPENDS+=gc::devel/boehm-gc
+LIB_DEPENDS += devel/boehm-gc
+WANTLIB += gc
 .  endif
 .endif
 
@@ -78,7 +79,7 @@ MAKE_GXX=Yes
 
 MULTI_PACKAGES=
 
-REGRESS_DEPENDS=::devel/dejagnu
+REGRESS_DEPENDS=devel/dejagnu
 
 # No way around it, java wants a pure parser
 .if ${MAKE_JAVA:L} == "yes"
@@ -209,7 +210,7 @@ PKG_ARGS+=-DPPC=0
 SUBPACKAGE?=
 .if defined(PACKAGING)
 .  if !empty(SUBPACKAGE) && ${SUBPACKAGE} != "-estdc"
-RUN_DEPENDS+=::${PKGPATH}
+RUN_DEPENDS+=${PKGPATH}
 .  endif
 .  if ${SUBPACKAGE} == "-c++"
 RUN_DEPENDS+=:gcc-${FULL_PKGVERSION}:${PKGPATH},-estdc
@@ -217,7 +218,8 @@ RUN_DEPENDS+=:gcc-${FULL_PKGVERSION}:${PKGPATH},-estdc
 .endif
 .if !defined(PACKAGING) || ${SUBPACKAGE} == "-f95"
 LIB_DEPENDS+=gmp:gmp->=4.2:devel/gmp
-LIB_DEPENDS+=mpfr::devel/mpfr
+LIB_DEPENDS += devel/mpfr
+WANTLIB += mpfr
 .endif
 
 .include <bsd.port.mk>

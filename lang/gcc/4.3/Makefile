@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/28 21:30:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/07 18:59:56 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -54,7 +54,7 @@ DISTFILES=  ${DISTNAME}.tar.bz2
 SUPDISTFILES=	adastrap-i386-3.3.6-4.tgz:0
 
 BUILD_DEPENDS+= :autoconf-2.59*:devel/autoconf/2.59
-BUILD_DEPENDS+=	::devel/metaauto
+BUILD_DEPENDS+=	devel/metaauto
 USE_LIBTOOL=	Yes
 
 BUILD_DEPENDS+= :bison-*:devel/bison
@@ -62,7 +62,7 @@ BUILD_DEPENDS+= :bison-*:devel/bison
 
 MULTI_PACKAGES=	-main
 
-REGRESS_DEPENDS=::devel/dejagnu
+REGRESS_DEPENDS=devel/dejagnu
 
 
 DISTNAME=   	gcc-${FULL_VERSION}
@@ -195,19 +195,21 @@ PKG_ARGS+=-DI386=0
 .endif
 
 RUN_DEPENDS=		:gcc-${FULL_PKGVERSION}:${PKGPATH}
-WANTLIB=		c
+WANTLIB=		c mpfr
 
 RUN_DEPENDS-main=
 
-RUN_DEPENDS-c++ =	${RUN_DEPENDS} ::${PKGPATH},-estdc
+RUN_DEPENDS-c++ =	${RUN_DEPENDS} ${PKGPATH},-estdc
 LIB_DEPENDS-estdc=
 WANTLIB-estdc=		c m
 
 LIB_DEPENDS+=		gmp:gmp->=4.2:devel/gmp \
-			mpfr::devel/mpfr
+			devel/mpfr
 
 LIB_DEPENDS-java=	${LIB_DEPENDS} \
-			gc::devel/boehm-gc
+			devel/boehm-gc
+
+WANTLIB-java = ${WANTLIB} gc
 
 .include <bsd.port.mk>
 
