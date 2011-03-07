@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.893 2011/03/07 19:36:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.894 2011/03/07 21:52:53 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -200,6 +200,7 @@
      SUBDIR += hs-vector-algorithms
      SUBDIR += hscolour
      SUBDIR += hudson
+     SUBDIR += hyena
      SUBDIR += id-utils
      SUBDIR += idoc
      SUBDIR += intellij
