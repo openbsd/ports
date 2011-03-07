@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.77 2011/03/06 09:36:29 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.78 2011/03/07 13:00:53 sthen Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 HOMEPAGE=	http://www.postfix.org/
 
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 PERMIT_PACKAGE_CDROM=	cannot be sold, see section 4 of license
 PERMIT_PACKAGE_FTP=	yes
