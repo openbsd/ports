@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.438 2011/01/15 12:53:10 landry Exp $
+# $OpenBSD: Makefile,v 1.439 2011/03/07 09:22:55 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -263,7 +263,6 @@
      SUBDIR += un-fonts
      SUBDIR += unclutter
      SUBDIR += vdesk
-     SUBDIR += video
      SUBDIR += viewfax
      SUBDIR += vlc
      SUBDIR += waimea
