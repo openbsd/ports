@@ -1,6 +1,7 @@
---- Makefile.orig	Thu Aug 17 23:35:46 2000
-+++ Makefile	Fri Nov 30 13:24:09 2001
-@@ -46,6 +46,9 @@ OPTIONS += -DLOG_TO_FILE_LINEBUFF
+$OpenBSD: patch-Makefile,v 1.3 2011/03/07 07:25:40 ajacoutot Exp $
+--- Makefile.orig	Wed Mar 31 14:19:34 2004
++++ Makefile	Mon Mar  7 07:39:57 2011
+@@ -47,8 +47,11 @@ OPTIONS += -DLOG_TO_FILE_LINEBUFF
  # BSD IPFILTER mechanism for fetching intended destination address.
  #OPTIONS += -DIPFILTER
  
@@ -8,12 +9,15 @@
 +OPTIONS += -DOPENBSD_PF
 +
  # linux-2.4 iptables mechanism for fetching intended destination address.
- #OPTIONS += -DIPTABLES
+-OPTIONS += -DIPTABLES
++#OPTIONS += -DIPTABLES
  
-@@ -53,8 +56,8 @@ OPTIONS += -DLOG_TO_FILE_LINEBUFF
- #OPTIONS += -DDO_DOUBLE_FORK
+ # Double fork to make init(8) handle zombie processes. Some Unix variants
+ # simply don't let you ignore the death of child processes easily.
+@@ -56,15 +59,15 @@ OPTIONS += -DIPTABLES
  
- # Define these to enable tcp_wrappers. You can use the built-in ACLs instead though.
+ # Define these to enable tcp_wrappers. You can use the built-in ACLs
+ # instead though.
 -#OPTIONS += -DTCP_WRAPPERS
 -#LIBS    += -lwrap
 +OPTIONS += -DTCP_WRAPPERS
@@ -21,3 +25,22 @@
  
  # You may need one or both of these to get a clean compile.
  #OPTIONS += -DHAVE_PATHS_H
+ #OPTIONS += -DHAVE_GETOPT_H
+ 
+ # You may need to touch PREFIX, CC and CFLAGS.
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ INSTALL_PROGRAM = install -c -m 555 -o bin -g bin
+ INSTALL_MAN = install -c -m 444 -o bin -g bin
+ 
+@@ -72,8 +75,8 @@ INSTALL_MAN = install -c -m 444 -o bin -g bin
+ RM      = rm -f
+ 
+ # Should be OK for GNU gcc.
+-CC      = gcc
+-CFLAGS  = -O2 -Wall
++CC      ?= gcc
++CFLAGS  ?= -O2 -Wall
+ LDFLAGS = -s
+ 
+ # For using BIND resolver instead of system resolver.

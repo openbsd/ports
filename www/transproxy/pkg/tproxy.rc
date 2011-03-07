@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: tproxy.rc,v 1.1 2011/03/07 07:25:40 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/sbin/tproxy"
+daemon_flags="-p -s 3128 -r _tproxy 127.0.0.1 3128"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

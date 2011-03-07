@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/15 18:49:53 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/03/07 07:25:40 ajacoutot Exp $
+@newgroup _tproxy:663
+@newuser _tproxy:663:_tproxy:daemon:Transproxy User:/var/empty:/sbin/nologin
 @man man/man8/tproxy.8
-sbin/tproxy
-sbin/tproxyrun
-sbin/tproxywatch
+@bin sbin/tproxy
+@comment sbin/tproxyrun
+@comment sbin/tproxywatch
+@rcscript ${RCDIR}/tproxy

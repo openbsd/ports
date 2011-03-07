@@ -8,4 +8,4 @@ It accepts connections on the redirected port, connects to the real proxy
 server and transports data between the two sockets.
 
 Unlike some other transparent proxy solutions, this does not require the
-proxy run on the machine itself.
+proxy to run on the machine itself.
