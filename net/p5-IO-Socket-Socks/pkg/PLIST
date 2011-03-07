@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/07 23:39:31 sthen Exp $
+${P5SITE}/IO/
+${P5SITE}/IO/Socket/
+${P5SITE}/IO/Socket/Socks.pm
+@man man/man3p/IO::Socket::Socks.3p
