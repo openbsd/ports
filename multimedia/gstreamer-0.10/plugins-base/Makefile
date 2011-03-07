@@ -1,31 +1,29 @@
-# $OpenBSD: Makefile,v 1.36 2010/12/08 07:34:00 phessler Exp $
+# $OpenBSD: Makefile,v 1.37 2011/03/07 19:46:49 ajacoutot Exp $
 
 COMMENT-main =		base elements for GStreamer
 COMMENT-cdda =		cd paranoia element for GStreamer (plugins-base)
 
-V =			0.10.31
+V =			0.10.32
 DISTNAME =		gst-plugins-base-${V}
 
 PKGNAME-main =		gstreamer-plugins-base-${V}
 PKGNAME-cdda =		gstreamer-cdda-${V}
 
-REVISION-main =		1
-
 MULTI_PACKAGES =	-main -cdda
 
-SHARED_LIBS +=  gstinterfaces-0.10   2.3      # .21.0
-SHARED_LIBS +=  gsttag-0.10          2.3      # .21.0
-SHARED_LIBS +=  gstfft-0.10          2.3      # .21.0
-SHARED_LIBS +=  gstnetbuffer-0.10    2.3      # .21.0
-SHARED_LIBS +=  gstpbutils-0.10      2.3      # .21.0
-SHARED_LIBS +=  gstrtp-0.10          2.3      # .21.0
-SHARED_LIBS +=  gstsdp-0.10          2.3      # .21.0
-SHARED_LIBS +=  gstvideo-0.10        2.3      # .21.0
-SHARED_LIBS +=  gstapp-0.10          2.3      # .21.0
-SHARED_LIBS +=  gstaudio-0.10        2.3      # .21.0
-SHARED_LIBS +=  gstcdda-0.10         2.3      # .21.0
-SHARED_LIBS +=  gstriff-0.10         2.3      # .21.0
-SHARED_LIBS +=  gstrtsp-0.10         2.3      # .21.0
+SHARED_LIBS +=  gstinterfaces-0.10   2.4      # .23.0
+SHARED_LIBS +=  gsttag-0.10          2.4      # .23.0
+SHARED_LIBS +=  gstfft-0.10          2.4      # .23.0
+SHARED_LIBS +=  gstnetbuffer-0.10    2.4      # .23.0
+SHARED_LIBS +=  gstpbutils-0.10      2.4      # .23.0
+SHARED_LIBS +=  gstrtp-0.10          2.4      # .23.0
+SHARED_LIBS +=  gstsdp-0.10          2.4      # .23.0
+SHARED_LIBS +=  gstvideo-0.10        2.4      # .23.0
+SHARED_LIBS +=  gstapp-0.10          2.4      # .23.0
+SHARED_LIBS +=  gstaudio-0.10        2.4      # .23.0
+SHARED_LIBS +=  gstcdda-0.10         2.4      # .23.0
+SHARED_LIBS +=  gstriff-0.10         2.4      # .23.0
+SHARED_LIBS +=  gstrtsp-0.10         2.4      # .23.0
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-base/}
 MODULES =		devel/gettext
