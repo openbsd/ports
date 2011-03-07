@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.26 2011/01/05 11:17:17 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.27 2011/03/07 11:53:14 giovanni Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -140,6 +140,8 @@ piwik/core/ScheduledTime/Daily.php
 piwik/core/ScheduledTime/Hourly.php
 piwik/core/ScheduledTime/Monthly.php
 piwik/core/ScheduledTime/Weekly.php
+piwik/core/Segment.php
+piwik/core/SegmentExpression.php
 piwik/core/Session/
 piwik/core/Session.php
 piwik/core/Session/Namespace.php
@@ -175,7 +177,6 @@ piwik/core/Tracker/
 piwik/core/Tracker.php
 piwik/core/Tracker/Action.php
 piwik/core/Tracker/Config.php
-piwik/core/Tracker/Cookie.php
 piwik/core/Tracker/Db/
 piwik/core/Tracker/Db.php
 piwik/core/Tracker/Db/Mysqli.php
@@ -183,8 +184,9 @@ piwik/core/Tracker/Db/Pdo/
 piwik/core/Tracker/Db/Pdo/Mysql.php
 piwik/core/Tracker/Db/Pdo/Pgsql.php
 piwik/core/Tracker/GoalManager.php
+piwik/core/Tracker/IgnoreCookie.php
 piwik/core/Tracker/Visit.php
-piwik/core/Tracker/javascriptTag.tpl
+piwik/core/Tracker/javascriptCode.tpl
 piwik/core/Translate.php
 piwik/core/Unzip/
 piwik/core/Unzip.php
@@ -217,6 +219,8 @@ piwik/core/Updates/0.6.3.php
 piwik/core/Updates/0.7.php
 piwik/core/Updates/0.9.1.php
 piwik/core/Updates/1.1.php
+piwik/core/Updates/1.2-rc1.php
+piwik/core/Updates/1.2-rc2.php
 piwik/core/Url.php
 piwik/core/Version.php
 piwik/core/View.php
@@ -275,8 +279,10 @@ piwik/lang/gl.php
 piwik/lang/he.php
 piwik/lang/hu.php
 piwik/lang/id.php
+piwik/lang/is.php
 piwik/lang/it.php
 piwik/lang/ja.php
+piwik/lang/ka.php
 piwik/lang/ko.php
 piwik/lang/lt.php
 piwik/lang/nb.php
@@ -391,6 +397,7 @@ piwik/libs/PclZip/pclzip.lib.php
 piwik/libs/PiwikTracker/
 piwik/libs/PiwikTracker/LICENSE.txt
 piwik/libs/PiwikTracker/PiwikTracker.php
+piwik/libs/README_LIBS
 piwik/libs/Smarty/
 piwik/libs/Smarty/Config_File.class.php
 piwik/libs/Smarty/Smarty.class.php
@@ -505,6 +512,7 @@ piwik/libs/Zend/Cache/Backend/BlackHole.php
 piwik/libs/Zend/Cache/Backend/ExtendedInterface.php
 piwik/libs/Zend/Cache/Backend/File.php
 piwik/libs/Zend/Cache/Backend/Interface.php
+piwik/libs/Zend/Cache/Backend/Libmemcached.php
 piwik/libs/Zend/Cache/Backend/Memcached.php
 piwik/libs/Zend/Cache/Backend/Sqlite.php
 piwik/libs/Zend/Cache/Backend/Static.php
@@ -530,13 +538,17 @@ piwik/libs/Zend/Config/
 piwik/libs/Zend/Config.php
 piwik/libs/Zend/Config/Exception.php
 piwik/libs/Zend/Config/Ini.php
+piwik/libs/Zend/Config/Json.php
 piwik/libs/Zend/Config/Writer/
 piwik/libs/Zend/Config/Writer.php
 piwik/libs/Zend/Config/Writer/Array.php
 piwik/libs/Zend/Config/Writer/FileAbstract.php
 piwik/libs/Zend/Config/Writer/Ini.php
+piwik/libs/Zend/Config/Writer/Json.php
 piwik/libs/Zend/Config/Writer/Xml.php
+piwik/libs/Zend/Config/Writer/Yaml.php
 piwik/libs/Zend/Config/Xml.php
+piwik/libs/Zend/Config/Yaml.php
 piwik/libs/Zend/Db/
 piwik/libs/Zend/Db.php
 piwik/libs/Zend/Db/Adapter/
@@ -761,18 +773,36 @@ piwik/libs/Zend/Http/Exception.php
 piwik/libs/Zend/Http/Response/
 piwik/libs/Zend/Http/Response.php
 piwik/libs/Zend/Http/Response/Stream.php
+piwik/libs/Zend/Http/UserAgent/
+piwik/libs/Zend/Http/UserAgent.php
+piwik/libs/Zend/Http/UserAgent/AbstractDevice.php
+piwik/libs/Zend/Http/UserAgent/Bot.php
+piwik/libs/Zend/Http/UserAgent/Checker.php
+piwik/libs/Zend/Http/UserAgent/Console.php
+piwik/libs/Zend/Http/UserAgent/Desktop.php
+piwik/libs/Zend/Http/UserAgent/Device.php
+piwik/libs/Zend/Http/UserAgent/Email.php
+piwik/libs/Zend/Http/UserAgent/Exception.php
+piwik/libs/Zend/Http/UserAgent/Features/
+piwik/libs/Zend/Http/UserAgent/Features/Adapter/
+piwik/libs/Zend/Http/UserAgent/Features/Adapter.php
+piwik/libs/Zend/Http/UserAgent/Features/Adapter/DeviceAtlas.php
+piwik/libs/Zend/Http/UserAgent/Features/Adapter/TeraWurfl.php
+piwik/libs/Zend/Http/UserAgent/Features/Adapter/WurflApi.php
+piwik/libs/Zend/Http/UserAgent/Features/Exception.php
+piwik/libs/Zend/Http/UserAgent/Feed.php
+piwik/libs/Zend/Http/UserAgent/Mobile.php
+piwik/libs/Zend/Http/UserAgent/Offline.php
+piwik/libs/Zend/Http/UserAgent/Probe.php
+piwik/libs/Zend/Http/UserAgent/Spam.php
+piwik/libs/Zend/Http/UserAgent/Storage/
+piwik/libs/Zend/Http/UserAgent/Storage.php
+piwik/libs/Zend/Http/UserAgent/Storage/Exception.php
+piwik/libs/Zend/Http/UserAgent/Storage/NonPersistent.php
+piwik/libs/Zend/Http/UserAgent/Storage/Session.php
+piwik/libs/Zend/Http/UserAgent/Text.php
+piwik/libs/Zend/Http/UserAgent/Validator.php
 piwik/libs/Zend/LICENSE.txt
-piwik/libs/Zend/Loader/
-piwik/libs/Zend/Loader.php
-piwik/libs/Zend/Loader/Autoloader/
-piwik/libs/Zend/Loader/Autoloader.php
-piwik/libs/Zend/Loader/Autoloader/Interface.php
-piwik/libs/Zend/Loader/Autoloader/Resource.php
-piwik/libs/Zend/Loader/Exception.php
-piwik/libs/Zend/Loader/PluginLoader/
-piwik/libs/Zend/Loader/PluginLoader.php
-piwik/libs/Zend/Loader/PluginLoader/Exception.php
-piwik/libs/Zend/Loader/PluginLoader/Interface.php
 piwik/libs/Zend/Log/
 piwik/libs/Zend/Log.php
 piwik/libs/Zend/Log/Exception.php
@@ -784,6 +814,7 @@ piwik/libs/Zend/Log/Filter/Message.php
 piwik/libs/Zend/Log/Filter/Priority.php
 piwik/libs/Zend/Log/Filter/Suppress.php
 piwik/libs/Zend/Log/Formatter/
+piwik/libs/Zend/Log/Formatter/Abstract.php
 piwik/libs/Zend/Log/Formatter/Firebug.php
 piwik/libs/Zend/Log/Formatter/Interface.php
 piwik/libs/Zend/Log/Formatter/Simple.php
@@ -839,6 +870,7 @@ piwik/libs/Zend/Mail/Storage/Writable/Maildir.php
 piwik/libs/Zend/Mail/Transport/
 piwik/libs/Zend/Mail/Transport/Abstract.php
 piwik/libs/Zend/Mail/Transport/Exception.php
+piwik/libs/Zend/Mail/Transport/File.php
 piwik/libs/Zend/Mail/Transport/Sendmail.php
 piwik/libs/Zend/Mail/Transport/Smtp.php
 piwik/libs/Zend/Mime/
@@ -847,6 +879,25 @@ piwik/libs/Zend/Mime/Decode.php
 piwik/libs/Zend/Mime/Exception.php
 piwik/libs/Zend/Mime/Message.php
 piwik/libs/Zend/Mime/Part.php
+piwik/libs/Zend/OpenId/
+piwik/libs/Zend/OpenId.php
+piwik/libs/Zend/OpenId/Consumer/
+piwik/libs/Zend/OpenId/Consumer.php
+piwik/libs/Zend/OpenId/Consumer/Storage/
+piwik/libs/Zend/OpenId/Consumer/Storage.php
+piwik/libs/Zend/OpenId/Consumer/Storage/File.php
+piwik/libs/Zend/OpenId/Exception.php
+piwik/libs/Zend/OpenId/Extension/
+piwik/libs/Zend/OpenId/Extension.php
+piwik/libs/Zend/OpenId/Extension/Sreg.php
+piwik/libs/Zend/OpenId/Provider/
+piwik/libs/Zend/OpenId/Provider.php
+piwik/libs/Zend/OpenId/Provider/Storage/
+piwik/libs/Zend/OpenId/Provider/Storage.php
+piwik/libs/Zend/OpenId/Provider/Storage/File.php
+piwik/libs/Zend/OpenId/Provider/User/
+piwik/libs/Zend/OpenId/Provider/User.php
+piwik/libs/Zend/OpenId/Provider/User/Session.php
 piwik/libs/Zend/Registry.php
 piwik/libs/Zend/Session/
 piwik/libs/Zend/Session.php
@@ -1234,6 +1285,10 @@ piwik/plugins/CoreUpdater/templates/update_database_done.tpl
 piwik/plugins/CoreUpdater/templates/update_new_version_available.tpl
 piwik/plugins/CoreUpdater/templates/update_one_click_done.tpl
 piwik/plugins/CoreUpdater/templates/update_welcome.tpl
+piwik/plugins/CustomVariables/
+piwik/plugins/CustomVariables/API.php
+piwik/plugins/CustomVariables/Controller.php
+piwik/plugins/CustomVariables/CustomVariables.php
 piwik/plugins/DBStats/
 piwik/plugins/DBStats/API.php
 piwik/plugins/DBStats/Controller.php
@@ -1263,7 +1318,6 @@ piwik/plugins/ExamplePlugin/lang/
 piwik/plugins/ExamplePlugin/lang/en.php
 piwik/plugins/ExamplePlugin/templates/
 piwik/plugins/ExamplePlugin/templates/piwikDownloads.tpl
-piwik/plugins/ExamplePlugin/templates/websitesAndUsers.tpl
 piwik/plugins/ExampleRssWidget/
 piwik/plugins/ExampleRssWidget/ExampleRssWidget.php
 piwik/plugins/ExampleRssWidget/templates/
@@ -1304,10 +1358,10 @@ piwik/plugins/Goals/templates/add_new_goal.tpl
 piwik/plugins/Goals/templates/form_add_goal.tpl
 piwik/plugins/Goals/templates/goals.css
 piwik/plugins/Goals/templates/list_goal_edit.tpl
-piwik/plugins/Goals/templates/list_top_segment.tpl
+piwik/plugins/Goals/templates/list_top_dimension.tpl
 piwik/plugins/Goals/templates/overview.tpl
 piwik/plugins/Goals/templates/single_goal.tpl
-piwik/plugins/Goals/templates/table_by_segment.tpl
+piwik/plugins/Goals/templates/table_by_dimension.tpl
 piwik/plugins/Goals/templates/title_and_evolution_graph.tpl
 piwik/plugins/Installation/
 piwik/plugins/Installation/Controller.php
@@ -1468,7 +1522,7 @@ piwik/plugins/Referers/images/searchEngines/googlesyndicatedsearch.com.png
 piwik/plugins/Referers/images/searchEngines/holmes.ge.png
 piwik/plugins/Referers/images/searchEngines/images.google.com.png
 piwik/plugins/Referers/images/searchEngines/images.search.yahoo.com.png
-piwik/plugins/Referers/images/searchEngines/images.yandex.ru.png
+piwik/plugins/Referers/images/searchEngines/images.yandex.com.png
 piwik/plugins/Referers/images/searchEngines/infospace.com.png
 piwik/plugins/Referers/images/searchEngines/iwon.ask.com.png
 piwik/plugins/Referers/images/searchEngines/ixquick.com.png
@@ -1517,6 +1571,7 @@ piwik/plugins/Referers/images/searchEngines/search.qip.ru.png
 piwik/plugins/Referers/images/searchEngines/search.rr.com.png
 piwik/plugins/Referers/images/searchEngines/search.seznam.cz.png
 piwik/plugins/Referers/images/searchEngines/search.tiscali.it.png
+piwik/plugins/Referers/images/searchEngines/search.winamp.com.png
 piwik/plugins/Referers/images/searchEngines/search.www.ee.png
 piwik/plugins/Referers/images/searchEngines/search.yahoo.com.png
 piwik/plugins/Referers/images/searchEngines/search.yippy.com.png
@@ -1525,6 +1580,7 @@ piwik/plugins/Referers/images/searchEngines/searchatlas.centrum.cz.png
 piwik/plugins/Referers/images/searchEngines/searchservice.myspace.com.png
 piwik/plugins/Referers/images/searchEngines/sm.aport.ru.png
 piwik/plugins/Referers/images/searchEngines/smart.delfi.lv.png
+piwik/plugins/Referers/images/searchEngines/start.iplay.com.png
 piwik/plugins/Referers/images/searchEngines/startgoogle.startpagina.nl.png
 piwik/plugins/Referers/images/searchEngines/suche.freenet.de.png
 piwik/plugins/Referers/images/searchEngines/suche.gmx.net.png
@@ -1575,7 +1631,6 @@ piwik/plugins/Referers/images/searchEngines/www.hooseek.com.png
 piwik/plugins/Referers/images/searchEngines/www.hotbot.com.png
 piwik/plugins/Referers/images/searchEngines/www.icq.com.png
 piwik/plugins/Referers/images/searchEngines/www.ilse.nl.png
-piwik/plugins/Referers/images/searchEngines/www.ireit.com.png
 piwik/plugins/Referers/images/searchEngines/www.jungle-spider.de.png
 piwik/plugins/Referers/images/searchEngines/www.kataweb.it.png
 piwik/plugins/Referers/images/searchEngines/www.kvasir.no.png
@@ -1621,7 +1676,6 @@ piwik/plugins/Referers/images/searchEngines/www.weborama.fr.png
 piwik/plugins/Referers/images/searchEngines/www.websearch.com.png
 piwik/plugins/Referers/images/searchEngines/www.witch.de.png
 piwik/plugins/Referers/images/searchEngines/www.x-recherche.com.png
-piwik/plugins/Referers/images/searchEngines/www.yandex.com.png
 piwik/plugins/Referers/images/searchEngines/www.yasni.de.png
 piwik/plugins/Referers/images/searchEngines/www.yougoo.fr.png
 piwik/plugins/Referers/images/searchEngines/www.zoeken.nl.png
@@ -1631,6 +1685,7 @@ piwik/plugins/Referers/images/searchEngines/www2.austronaut.at.png
 piwik/plugins/Referers/images/searchEngines/www3.zoek.nl.png
 piwik/plugins/Referers/images/searchEngines/xx.gif
 piwik/plugins/Referers/images/searchEngines/xx.png
+piwik/plugins/Referers/images/searchEngines/yandex.com.png
 piwik/plugins/Referers/images/searchEngines/yellowmap.de.png
 piwik/plugins/Referers/images/searchEngines/zoohoo.cz.png
 piwik/plugins/Referers/templates/
@@ -2096,6 +2151,7 @@ piwik/plugins/UserSettings/images/plugins/silverlight.gif
 piwik/plugins/UserSettings/images/plugins/windowsmedia.gif
 piwik/plugins/UserSettings/images/screens/
 piwik/plugins/UserSettings/images/screens/dual.gif
+piwik/plugins/UserSettings/images/screens/mobile.gif
 piwik/plugins/UserSettings/images/screens/normal.gif
 piwik/plugins/UserSettings/images/screens/wide.gif
 piwik/plugins/UserSettings/templates/
@@ -2106,12 +2162,8 @@ piwik/plugins/UsersManager/Controller.php
 piwik/plugins/UsersManager/UsersManager.php
 piwik/plugins/UsersManager/images/
 piwik/plugins/UsersManager/images/add.png
-piwik/plugins/UsersManager/images/edit.png
 piwik/plugins/UsersManager/images/no-access.png
-piwik/plugins/UsersManager/images/no.png
 piwik/plugins/UsersManager/images/ok.png
-piwik/plugins/UsersManager/images/remove.png
-piwik/plugins/UsersManager/images/valid.png
 piwik/plugins/UsersManager/templates/
 piwik/plugins/UsersManager/templates/UsersManager.js
 piwik/plugins/UsersManager/templates/UsersManager.tpl
@@ -2204,6 +2256,7 @@ piwik/themes/default/images/inp_bg.png
 piwik/themes/default/images/li_dbl_gray.gif
 piwik/themes/default/images/link.gif
 piwik/themes/default/images/loading-blue.gif
+piwik/themes/default/images/logo-header.png
 piwik/themes/default/images/logo.png
 piwik/themes/default/images/maximise.png
 piwik/themes/default/images/minus.png
