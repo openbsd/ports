@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.892 2011/01/17 06:54:29 stu Exp $
+# $OpenBSD: Makefile,v 1.893 2011/03/07 19:36:38 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1041,6 +1041,7 @@
      SUBDIR += shapelib
      SUBDIR += shtool
      SUBDIR += silc-toolkit
+     SUBDIR += simulavr
      SUBDIR += slib
      SUBDIR += slib-guile
      SUBDIR += smarty
