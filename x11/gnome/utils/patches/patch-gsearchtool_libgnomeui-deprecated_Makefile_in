@@ -1,0 +1,16 @@
+$OpenBSD: patch-gsearchtool_libgnomeui-deprecated_Makefile_in,v 1.1 2011/03/07 19:28:35 ajacoutot Exp $
+
+XXX remove -DGTK_DISABLE_DEPRECATED to fix build with gtk>=2.24
+
+--- gsearchtool/libgnomeui-deprecated/Makefile.in.orig	Sun Feb 13 11:23:10 2011
++++ gsearchtool/libgnomeui-deprecated/Makefile.in	Sun Feb 13 11:23:26 2011
+@@ -278,8 +278,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-INCLUDES = -DGTK_DISABLE_DEPRECATED \
+-           -DGDK_DISABLE_DEPRECATED \
++INCLUDES = -DGDK_DISABLE_DEPRECATED \
+            -DG_DISABLE_DEPRECATED
+ 
+ noinst_LTLIBRARIES = libgnomeui-deprecated.la
