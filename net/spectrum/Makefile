@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/10 18:34:31 sebastia Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/07 10:14:01 sebastia Exp $
 
 COMMENT=        XMPP transport/gateway
 
 DISTNAME=       spectrum-1.4.6
 CATEGORIES=     net
+
+REVISION=	0
 
 HOMEPAGE=       http://spectrum.im/
 MASTER_SITES=   ${HOMEPAGE}/attachments/download/34/
@@ -35,7 +37,8 @@ SUBST_VARS=    	SPVARDIR
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/spectrumctl/spectrumctl.py \
-		${WRKSRC}/spectrumctl/spectrum/env.py ${WRKSRC}/spectrum.cfg
+		${WRKSRC}/spectrumctl/spectrum/env.py ${WRKSRC}/spectrum.cfg \
+		${WRKSRC}/spectrumctl/spectrum/spectrum.py
 
 post-configure:
 	cd ${WRKSRC} && ${LOCALBASE}/bin/cmake .
@@ -45,6 +48,7 @@ post-install:
 		${PREFIX}/share/examples/spectrum
 	rm -f ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/spectrum/env.py.*
 	rm -f ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/spectrum/spectrum.py.orig
+	rm -f ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/spectrum/spectrum.py.beforesubst
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/spectrum
 
