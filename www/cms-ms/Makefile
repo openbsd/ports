@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/07 19:46:19 jasper Exp $
 
 COMMENT=		easy to use and powerfull CMS
 
-DISTNAME=		cmsmadesimple-1.8.2-full
+DISTNAME=		cmsmadesimple-1.9.4-full
 PKGNAME=		${DISTNAME:S/-full//}
-REVISION=		0
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.cmsmadesimple.org/
@@ -15,7 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=		http://s3.amazonaws.com/cmsms/downloads/5973/
+MASTER_SITES=		http://s3.amazonaws.com/cmsms/downloads/7100/
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
