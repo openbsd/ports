@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/26 15:00:45 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/03/07 19:20:00 ajacoutot Exp $
 
 COMMENT=		C++ interface for cairo
 
-DISTNAME=		cairomm-1.9.2
-REVISION=		1
-SHARED_LIBS=		cairomm-1.0	4.0 # .5.0
+DISTNAME=		cairomm-1.9.8
+SHARED_LIBS=		cairomm-1.0	5.0 # .5.0
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://cairographics.org/cairomm/
@@ -15,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		GL X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes Xrender \
+WANTLIB=		GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender \
 			Xxf86vm drm cairo expat fontconfig freetype glib-2.0 \
 			gobject-2.0 gthread-2.0 m pixman-1 pcre png \
 			pthread-stubs sigc-2.0 stdc++ xcb xcb-render xcb-shm z
