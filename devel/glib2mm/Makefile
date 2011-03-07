@@ -1,20 +1,18 @@
-# $OpenBSD: Makefile,v 1.35 2010/11/26 15:00:45 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2011/03/07 19:18:21 ajacoutot Exp $
 
 COMMENT=	C++ interface for glib2
 
 GNOME_PROJECT=	glibmm
-GNOME_VERSION=	2.24.2
+GNOME_VERSION=	2.27.95
 V=		2.4
 
 SUBST_VARS=	V
 
 PKGNAME=	glib2mm-${GNOME_VERSION}
 
-REVISION=	1
-
-SHARED_LIBS +=	glibmm_generate_extra_defs-2.4 9.0      # .3.0
-SHARED_LIBS +=	glibmm-2.4           9.0      # .3.0
-SHARED_LIBS +=  giomm-2.4            9.0      # .3.0
+SHARED_LIBS +=	glibmm_generate_extra_defs-2.4 10.0      # 4.0
+SHARED_LIBS +=	glibmm-2.4           10.0      # 4.0
+SHARED_LIBS +=  giomm-2.4            10.0      # 4.0
 
 CATEGORIES=	devel
 
