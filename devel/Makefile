@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.895 2011/03/07 22:19:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.896 2011/03/08 07:33:11 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -80,6 +80,7 @@
      SUBDIR += ddd
      SUBDIR += dejagnu
      SUBDIR += desktop-file-utils
+     SUBDIR += dfu-programmer
      SUBDIR += dissy
      SUBDIR += doc++
      SUBDIR += dotconf
