@@ -1,0 +1,14 @@
+$OpenBSD: patch-JavaScriptCore_interpreter_Interpreter_cpp,v 1.1 2011/03/08 18:56:30 landry Exp $
+Fix for mips64el, -1 was wrongly removed in
+http://trac.webkit.org/changeset/60392/trunk/JavaScriptCore/interpreter/Interpreter.cpp
+--- JavaScriptCore/interpreter/Interpreter.cpp.orig	Sun Mar  6 09:34:16 2011
++++ JavaScriptCore/interpreter/Interpreter.cpp	Sun Mar  6 09:35:19 2011
+@@ -3456,7 +3456,7 @@ skip_id_custom_self:
+         JSValue arguments = callFrame->r(argsOffset).jsValue();
+         uint32_t argCount = 0;
+         if (!arguments) {
+-            argCount = (uint32_t)(callFrame->argumentCount());
++            argCount = (uint32_t)(callFrame->argumentCount() - 1);
+             argCount = min<uint32_t>(argCount, Arguments::MaxArguments);
+             int32_t sizeDelta = argsOffset + argCount + RegisterFile::CallFrameHeaderSize;
+             Register* newEnd = callFrame->registers() + sizeDelta;

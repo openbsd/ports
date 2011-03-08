@@ -1,0 +1,15 @@
+$OpenBSD: patch-WebCore_platform_network_soup_DNSSoup_cpp,v 1.1 2011/03/08 18:56:30 landry Exp $
+Don't prefetch dns on an empty string
+http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=578019
+https://bugs.webkit.org/show_bug.cgi?id=38263
+--- WebCore/platform/network/soup/DNSSoup.cpp.orig	Tue Mar  8 15:37:49 2011
++++ WebCore/platform/network/soup/DNSSoup.cpp	Tue Mar  8 15:38:28 2011
+@@ -36,6 +36,8 @@ namespace WebCore {
+ void prefetchDNS(const String& hostname)
+ {
+ #ifdef HAVE_LIBSOUP_2_29_90
++    if (hostname.isEmpty())
++        return;
+     String uri = "http://"+hostname;
+     GOwnPtr<SoupURI> soupURI(soup_uri_new(uri.utf8().data()));
+     // We may get invalid hostnames, so NULL-check here.

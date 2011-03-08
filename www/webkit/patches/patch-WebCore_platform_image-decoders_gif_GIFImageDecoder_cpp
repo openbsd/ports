@@ -1,0 +1,22 @@
+$OpenBSD: patch-WebCore_platform_image-decoders_gif_GIFImageDecoder_cpp,v 1.1 2011/03/08 18:56:30 landry Exp $
+Fix typo, https://bugs.webkit.org/show_bug.cgi?id=55830
+--- WebCore/platform/image-decoders/gif/GIFImageDecoder.cpp.orig	Tue Mar  8 15:25:51 2011
++++ WebCore/platform/image-decoders/gif/GIFImageDecoder.cpp	Tue Mar  8 15:26:10 2011
+@@ -343,7 +343,7 @@ bool GIFImageDecoder::initFrameBuffer(unsigned frameIn
+ 
+         if ((prevMethod == RGBA32Buffer::DisposeNotSpecified) || (prevMethod == RGBA32Buffer::DisposeKeep)) {
+             // Preserve the last frame as the starting state for this frame.
+-            if (!buffer->copyBitmapData(*prevBuffer));
++            if (!buffer->copyBitmapData(*prevBuffer))
+                 return setFailed();
+         } else {
+             // We want to clear the previous frame to transparent, without
+@@ -357,7 +357,7 @@ bool GIFImageDecoder::initFrameBuffer(unsigned frameIn
+                     return setFailed();
+             } else {
+               // Copy the whole previous buffer, then clear just its frame.
+-              if (!buffer->copyBitmapData(*prevBuffer));
++              if (!buffer->copyBitmapData(*prevBuffer))
+                   return setFailed();
+               for (int y = prevRect.y(); y < prevRect.bottom(); ++y) {
+                   for (int x = prevRect.x(); x < prevRect.right(); ++x)
