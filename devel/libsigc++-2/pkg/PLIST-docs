@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.8 2010/06/04 17:14:38 espie Exp $
+@comment $OpenBSD: PLIST-docs,v 1.9 2011/03/08 14:06:39 ajacoutot Exp $
 @option no-default-conflict
 @conflict libsigc++-docs->=2
 share/devhelp/
@@ -13,6 +13,7 @@ share/doc/libsigc++-${V}/index.html
 share/doc/libsigc++-${V}/reference/
 share/doc/libsigc++-${V}/reference/html/
 share/doc/libsigc++-${V}/reference/html/annotated.html
+share/doc/libsigc++-${V}/reference/html/bc_s.png
 share/doc/libsigc++-${V}/reference/html/classes.html
 share/doc/libsigc++-${V}/reference/html/classsigc_1_1bound__argument-members.html
 share/doc/libsigc++-${V}/reference/html/classsigc_1_1bound__argument.html
@@ -293,6 +294,7 @@ share/doc/libsigc++-${V}/reference/html/classsigc_1_1volatile__mem__functor6__in
 share/doc/libsigc++-${V}/reference/html/classsigc_1_1volatile__mem__functor7-members.html
 share/doc/libsigc++-${V}/reference/html/classsigc_1_1volatile__mem__functor7.html
 share/doc/libsigc++-${V}/reference/html/classsigc_1_1volatile__mem__functor7__inherit__graph.png
+share/doc/libsigc++-${V}/reference/html/closed.png
 share/doc/libsigc++-${V}/reference/html/doxygen.css
 share/doc/libsigc++-${V}/reference/html/doxygen.png
 share/doc/libsigc++-${V}/reference/html/functions.html
@@ -398,6 +400,9 @@ share/doc/libsigc++-${V}/reference/html/namespacemembers_func_0x75.html
 share/doc/libsigc++-${V}/reference/html/namespacemembers_func_0x76.html
 share/doc/libsigc++-${V}/reference/html/namespaces.html
 share/doc/libsigc++-${V}/reference/html/namespacesigc.html
+share/doc/libsigc++-${V}/reference/html/nav_f.png
+share/doc/libsigc++-${V}/reference/html/nav_h.png
+share/doc/libsigc++-${V}/reference/html/open.png
 share/doc/libsigc++-${V}/reference/html/structsigc_1_1adaptor__base.html
 share/doc/libsigc++-${V}/reference/html/structsigc_1_1adaptor__base__inherit__graph.png
 share/doc/libsigc++-${V}/reference/html/structsigc_1_1adaptor__functor-members.html
@@ -461,9 +466,10 @@ share/doc/libsigc++-${V}/reference/html/structsigc_1_1trackable.html
 share/doc/libsigc++-${V}/reference/html/structsigc_1_1trackable__inherit__graph.png
 share/doc/libsigc++-${V}/reference/html/structsigc_1_1unwrap__lambda__type-members.html
 share/doc/libsigc++-${V}/reference/html/structsigc_1_1unwrap__lambda__type.html
-share/doc/libsigc++-${V}/reference/html/tab_b.gif
-share/doc/libsigc++-${V}/reference/html/tab_l.gif
-share/doc/libsigc++-${V}/reference/html/tab_r.gif
+share/doc/libsigc++-${V}/reference/html/tab_a.png
+share/doc/libsigc++-${V}/reference/html/tab_b.png
+share/doc/libsigc++-${V}/reference/html/tab_h.png
+share/doc/libsigc++-${V}/reference/html/tab_s.png
 share/doc/libsigc++-${V}/reference/html/tabs.css
 share/doc/libsigc++-${V}/reference/libsigc++-${V}.tag
 share/doc/libsigc++-${V}/tutorial/

@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2011/03/08 14:06:39 ajacoutot Exp $
+
+gmake[2]: *** No rule to make target `MSVC_Net2010/tests/test_disconnect_during_emit/test_disconnect_during_emit.vcxproj.filters', needed by `all-am'.  Stop.
+
+--- Makefile.in.orig	Tue Mar  8 15:02:54 2011
++++ Makefile.in	Tue Mar  8 15:03:04 2011
+@@ -324,8 +324,6 @@ msvc_net2010_data = \
+ 	tests/test_deduce_result_type/test_deduce_result_type.vcxproj.filters		\
+ 	tests/test_disconnect/test_disconnect.vcxproj					\
+ 	tests/test_disconnect/test_disconnect.vcxproj.filters				\
+-	tests/test_disconnect_during_emit/test_disconnect_during_emit.vcxproj		\
+-	tests/test_disconnect_during_emit/test_disconnect_during_emit.vcxproj.filters	\
+ 	tests/test_exception_catch/test_exception_catch.vcxproj				\
+ 	tests/test_exception_catch/test_exception_catch.vcxproj.filters			\
+ 	tests/test_functor_trait/test_functor_trait.vcxproj				\
