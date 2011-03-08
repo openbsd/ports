@@ -1,21 +1,17 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/03/08 20:12:15 landry Exp $
 
-# sparc64 failed to build with 0.9.0.1 and needs testing
-# macppc fails too and is therefore disabled
-# others untested
-ONLY_FOR_ARCHS=	i386 amd64
+BROKEN-sparc64 =	fails a lot of regression tests
 
 COMMENT=	virtual machine designed for interpreted languages
 
-V=		1.2.0
+V=		3.0.0
 DISTNAME=	parrot-$V
-REVISION=	0
 CATEGORIES=	lang perl6
-SHARED_LIBS=	parrot	0.0
+SHARED_LIBS=	parrot	1.0
 
-HOMEPAGE=	http://www.parrotcode.org/
+HOMEPAGE=	http://www.parrot.org/
 
-MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/devel/$V/
+MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/stable/$V/
 
 # Artistic2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c crypto m ncurses pthread readline stdc++ util
+WANTLIB += c m ncurses pthread readline stdc++ util z
 WANTLIB += icudata icuuc icui18n
 
 LIB_DEPENDS=		textproc/icu4c
@@ -35,24 +31,22 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX}
 CONFIGURE_ARGS+=	--parrot_is_shared 
 CONFIGURE_ARGS+=	--icuheaders=${LOCALBASE}/include
 CONFIGURE_ARGS+=	--icushared="`${LOCALBASE}/bin/icu-config --ldflags`"
+# There's a nasty bug in sleep() when compiled with threads, which uses
+# pthread_cond_timedwait(3). Without threads, it maps to an ordinary sleep(3)
+# call. Exposed by rakudo tests.
+CONFIGURE_ARGS +=	--without-threads
+CONFIGURE_ENV =		LIBparrot_VERSION=${LIBparrot_VERSION}
 
-MAKE_FLAGS=		LIBparrot_VERSION=${LIBparrot_VERSION}
+MAKE_ENV=		LIBparrot_VERSION=${LIBparrot_VERSION}
 
-ALL_TARGET=		installable compilers
+ALL_TARGET=		installable docs
+INSTALL_TARGET =	install install-doc
 REGRESS_TARGET=		test
 
-.if ${MACHINE_ARCH} == "powerpc"
-CONFIGURE_ARGS+=	--execcapable=0
-.endif
-
 pre-configure:
-	cd ${WRKSRC} && cp src/jit/ppc/ppc-linux.s src/jit/ppc/ppc-openbsd.s
-	perl -pi -e 's!^(SOVERSION\s*:=\s*).*?$$!$${1}${LIBparrot_VERSION}!' \
-	    ${WRKSRC}/config/gen/makefiles/root.in
-
+	${SUBST_CMD} ${WRKSRC}/config/init/hints/openbsd.pm
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/blib/lib/libparrot.so.0.0 ${PREFIX}/lib
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/parrot
-	cd ${WRKSRC}/examples && pax -rw . ${PREFIX}/share/examples/parrot
+	${INSTALL_DATA} ${WRKSRC}/blib/lib/libparrot.so.${LIBparrot_VERSION} \
+		${PREFIX}/lib
 
 .include <bsd.port.mk>

@@ -1,23 +1,31 @@
-$OpenBSD: patch-config_init_hints_openbsd_pm,v 1.2 2009/06/17 09:34:35 simon Exp $
-
-Prevent linking with -lpthread, ticket filed upstream at
-https://trac.parrot.org/parrot/ticket/265
-
---- config/init/hints/openbsd.pm.orig	Fri Apr 17 17:06:00 2009
-+++ config/init/hints/openbsd.pm	Tue May 26 23:30:16 2009
-@@ -16,9 +16,15 @@ sub runstep {
+$OpenBSD: patch-config_init_hints_openbsd_pm,v 1.3 2011/03/08 20:12:15 landry Exp $
+--- config/init/hints/openbsd.pm.orig	Thu Jan  6 04:44:55 2011
++++ config/init/hints/openbsd.pm	Tue Feb  8 15:17:00 2011
+@@ -17,10 +17,15 @@ sub runstep {
      $conf->data->set( ccflags => $ccflags );
  
      my $libs = $conf->data->get('libs');
 +
 +=for comment
 +
-     if ( $libs !~ /-lpthread/ ) {
+     if ( $libs !~ /-lpthread\b/ ) {
          $libs .= ' -lpthread';
      }
-+
+ 
 +=cut
 +
-     $conf->data->set(
-         libs  => $libs,
-         link  => 'g++',
+     my $ldflags = $conf->data->get('ldflags');
+     if ( $ldflags !~ m|-L/usr/local/lib\b| ) {
+         $ldflags .= ' -L/usr/local/lib';
+@@ -34,9 +39,9 @@ sub runstep {
+ 
+         has_dynamic_linking    => 1,
+         parrot_is_shared       => 1,
+-        libparrot_shared       => "libparrot$share_ext.$version",
++        libparrot_shared       => "libparrot$share_ext.$ENV{LIBparrot_VERSION}",
+         libparrot_shared_alias => "libparrot$share_ext",
+-        libparrot_soname       => "-Wl,-soname=libparrot$share_ext.$version",
++        libparrot_soname       => "",
+     );
+ 
+     if ( ( split( m/-/, $conf->data->get('archname_provisional'), 2 ) )[0] eq 'powerpc' ) {

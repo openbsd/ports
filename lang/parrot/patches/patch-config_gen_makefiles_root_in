@@ -1,28 +1,20 @@
-$OpenBSD: patch-config_gen_makefiles_root_in,v 1.2 2010/10/03 22:13:18 kili Exp $
---- config/gen/makefiles/root.in.orig	Wed May 20 02:29:16 2009
-+++ config/gen/makefiles/root.in	Sun Oct  3 23:51:31 2010
-@@ -18,7 +18,7 @@
+$OpenBSD: patch-config_gen_makefiles_root_in,v 1.3 2011/03/08 20:12:15 landry Exp $
+--- config/gen/makefiles/root.in.orig	Tue Feb  8 14:13:21 2011
++++ config/gen/makefiles/root.in	Tue Feb  8 14:16:08 2011
+@@ -17,7 +17,7 @@
  
- DEVEL           := @DEVEL@
- VERSION         := @VERSION@$(DEVEL)
--SOVERSION       := @VERSION@
-+SOVERSION       := $(LIBparrot_VERSION)
+ DEVEL           = @DEVEL@
+ VERSION         = @VERSION@$(DEVEL)
+-SOVERSION       = @VERSION@
++SOVERSION       = $(LIBparrot_VERSION)
  
- CONFIG_ARGS     := @configure_args@
- 
-@@ -889,7 +889,6 @@ $(LIBPARROT_SHARED) : $(O_FILES)
+ CONFIG_ARGS     = @configure_args@
+ #IF(win32):SHELL           = CMD
+@@ -1032,7 +1032,6 @@ $(LIBPARROT_SHARED) : $(O_FILES)
  #IF(win32 and cc==gcc):		-Wl,--out-implib=libparrot.lib \
  		$(O_FILES) $(C_LIBS) $(ICU_SHARED)
  #IF(win32):	if exist $@.manifest mt.exe -nologo -manifest $@.manifest -outputresource:$@;2
 -#IF(libparrot_shared_alias):	( cd @blib_dir@ ; ln -sf @libparrot_shared@ @libparrot_shared_alias@ )
- 
- 
- $(INSTALLABLECONFIG) : $(SRC_DIR)/install_config$(O) $(PARROT_CONFIG) $(PBC_TO_EXE)
-@@ -1791,7 +1790,6 @@ test-clean :
-     "t/stress/*.pbc" \
-     "t/tools/*.pbc"
- 	$(RM_F) \
--	"t/dynpmc/md2.t" \
- 	"t/dynpmc/md4.t" \
- 	"t/dynpmc/md5.t" \
- 	"t/dynpmc/ripemd160.t" \
+ 	$(CP) tools/dev/gdb-pp-load.py @blib_dir@/@libparrot_shared@-gdb.py
+ 	$(CP) tools/dev/gdb-pp.py @blib_dir@/GDBPrettyPrint.py
+ 	@echo '' > @blib_dir@/__init__.py

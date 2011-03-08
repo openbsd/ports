@@ -1,0 +1,21 @@
+$OpenBSD: patch-config_auto_perldoc_pm,v 1.1 2011/03/08 20:12:15 landry Exp $
+--- config/auto/perldoc.pm.orig	Mon Jan 10 04:13:20 2011
++++ config/auto/perldoc.pm	Sun Mar  6 21:11:19 2011
+@@ -38,7 +38,7 @@ sub runstep {
+     my $slash = $conf->data->get('slash');
+     my $cmd = $conf->data->get('scriptdirexp_provisional') . $slash . q{perldoc};
+     my ( $fh, $filename ) = tempfile( UNLINK => 1 );
+-    my $content = capture_output("$cmd -ud $filename perldoc") || undef;
++    my $content = capture_output("$cmd -u perldoc > $filename") || '';
+ 
+     return 1 unless defined( $self->_initial_content_check($conf, $content) );
+ 
+@@ -67,7 +67,7 @@ E_NOTE
+         if ( $new_perldoc ) {
+             $TEMP_pod_build .= <<"END"
+ ops/$pod: ../src/ops/$ops
+-\t\$(PERLDOC_BIN) -ud ops/$pod ../src/ops/$ops
++\t\$(PERLDOC_BIN) -u ../src/ops/$ops > ops//$pod
+ \t\$(CHMOD) 0644 ops/$pod
+ 
+ END

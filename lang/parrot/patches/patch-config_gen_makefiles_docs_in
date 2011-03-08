@@ -1,0 +1,12 @@
+$OpenBSD: patch-config_gen_makefiles_docs_in,v 1.1 2011/03/08 20:12:15 landry Exp $
+--- config/gen/makefiles/docs.in.orig	Sat Mar  5 01:06:02 2011
++++ config/gen/makefiles/docs.in	Sat Mar  5 01:07:08 2011
+@@ -45,7 +45,7 @@ doc-prep:
+ 	$(TOUCH) doc-prep
+ 
+ packfile-c.pod: ../src/packfile/api.c
+-#IF(new_perldoc):	$(PERLDOC_BIN) -ud packfile-c.pod ../src/packfile/api.c
++#IF(new_perldoc):	$(PERLDOC_BIN) -u ../src/packfile/api.c > packfile-c.pod
+ #ELSE:	$(PERLDOC_BIN) -u ../src/packfile/api.c > packfile-c.pod
+ 
+ clean:
