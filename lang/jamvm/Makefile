@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/03/08 06:44:55 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= arm amd64 i386 powerpc
 
-COMMENT=	free, standards-compilant jvm with a small footprint
+COMMENT=	free, standards-compliant jvm with a small footprint
 
 DISTNAME=	jamvm-1.5.3
 

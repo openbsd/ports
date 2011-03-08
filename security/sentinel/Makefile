@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/26 14:56:15 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/03/08 06:44:55 ajacoutot Exp $
 
-COMMENT=		remote promiscous mode detection tool
+COMMENT=		remote promiscuous mode detection tool
 
 DISTNAME=		sentinel-1.0
-REVISION =		0
+REVISION =		1
 CATEGORIES=    		security net
 
 HOMEPAGE=		http://www.packetfactory.net/projects/sentinel/

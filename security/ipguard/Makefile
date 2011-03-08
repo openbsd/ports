@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/03/08 06:44:55 ajacoutot Exp $
 
-COMMENT =	protect LAN IP adress space by ARP spoofing
+COMMENT =	protect LAN IP address space by ARP spoofing
 
 DISTNAME =	ipguard-1.02
 CATEGORIES =	security
+REVISION =	0
 
 HOMEPAGE =	http://ipguard.deep.perm.ru/
 MASTER_SITES =	${HOMEPAGE}files/
