@@ -1,5 +1,5 @@
 #!${LOCALBASE}/bin/lua
--- $OpenBSD: yt.lua,v 1.29 2010/07/28 22:52:28 jsg Exp $
+-- $OpenBSD: yt.lua,v 1.30 2011/03/08 20:11:43 martynas Exp $
 -- Fetch videos from YouTube.com/Videos.Google.com, and convert to MPEG.
 -- Written by Pedro Martelletto and Martynas Venckus.  Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -123,7 +123,7 @@ for i = 1, table.getn(urls) do
    e_mp4 = string.format("%q", mp4)
 
    -- Look for the video ID.
-   pattern = "VIDEO_ID':%s*'([^\']*)'"
+   pattern = "VIDEO_ID':%s*['\"]([^'\"]*)['\"]"
    video_id = string.match(body, pattern)
 
    -- Check for error such as "This video is not available in your country."
