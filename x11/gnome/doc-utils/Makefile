@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2011/01/10 21:48:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2011/03/08 14:41:15 ajacoutot Exp $
 
 COMMENT=	collection of documentation utilities for the GNOME project
 
 GNOME_PROJECT=	gnome-doc-utils
 GNOME_VERSION=	0.20.4
+
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -21,21 +23,18 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		sysutils/ggrep \
 		textproc/rarian
 RUN_DEPENDS=	devel/gettext \
-		shells/bash \
+		misc/gnugetopt \
 		textproc/libxml,-python \
 		textproc/libxslt,-python \
 		textproc/rarian
 
 USE_LIBTOOL=	No
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 CONFIGURE_ARGS=	--disable-scrollkeeper
 CONFIGURE_ENV=	CPPFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS+=	pkgconfigdir="${PREFIX}/lib/pkgconfig/"
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/tools/gnome-doc-tool.in
 
 post-install:
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
