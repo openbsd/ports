@@ -14,7 +14,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 # 
 # RBlatter
-# $Id: tlpdbindex.rb,v 1.1.1.1 2010/08/20 12:04:30 edd Exp $
+# $Id: tlpdbindex.rb,v 1.2 2011/03/08 00:09:42 edd Exp $
 #
 # Index a tlpdb file for faster lookups
 

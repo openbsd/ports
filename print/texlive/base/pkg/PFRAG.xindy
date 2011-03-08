@@ -1,8 +1,11 @@
-@comment $OpenBSD: PFRAG.xindy,v 1.1 2009/12/12 17:48:34 edd Exp $
+@comment $OpenBSD: PFRAG.xindy,v 1.2 2011/03/08 00:09:42 edd Exp $
 @bin bin/tex2xindy
 bin/texindy
 bin/xindy
 bin/xindy.mem
-@bin bin/xindy.run
-texmf/scripts/xindy/texindy.pl
-texmf/scripts/xindy/xindy.pl
+@man man/man1/tex2xindy.1
+@man man/man1/texindy.1
+@man man/man1/xindy.1
+share/texmf/scripts/xindy/
+share/texmf/scripts/xindy/texindy.pl
+share/texmf/scripts/xindy/xindy.pl

@@ -1,9 +1,9 @@
 #!/bin/sh
-# $Id: mk_openbsd_plists.sh,v 1.1.1.1 2010/08/20 12:04:30 edd Exp $
+# $OpenBSD: mk_openbsd_plists.sh,v 1.2 2011/03/08 00:09:42 edd Exp $
 #
-# This is how the texlive 2009 port packing lists were generated.
+# This is how the texlive port packing lists were generated.
 # Please be aware that a *full* texmf/texmf-dist and tlpdb from the
-# texlive svn is required.
+# texlive svn are required.
 
 if [ "$1" = "" ]; then
 	TMF="/usr/local/share";
@@ -18,14 +18,37 @@ fi
 
 mkdir sets
 
-echo "minimal..."
-./rblatter -v -n -t ${TMF} -p share/ -o sets/tetex +scheme-tetex,run
+echo "\nCalculating PLIST of texlive_texmf-minimal (tetex)..."
+./rblatter -d -v -n -t ${TMF} -p share/ -o sets/tetex +scheme-tetex,run
+cat sets/tetex/PLIST | sed 's/share\/texmf\/doc\/man/share\/man/g' \
+	| sort > sets/tetex/PLIST_final
 
-echo "full..."
-./rblatter -v -n -t ${TMF} -p share/ -o sets/full \
-    +scheme-full,run:-scheme-tetex,doc,src,run
+echo "\nCalculating PLIST of texlive_texmf-full..."
+./rblatter -d -v -n -t ${TMF} -p share/ -o sets/full \
+	+scheme-full,run:-scheme-tetex,doc,src,run
+cat sets/full/PLIST | sed 's/share\/texmf\/doc\/man/share\/man/g' \
+	| sort > sets/full/PLIST_final
 
-echo "docs..."
-./rblatter -v -n -t ${TMF} -p share/ -o sets/docs +scheme-full,doc
+echo "\nCalculating PLIST of texlive_texmf-docs..."
+./rblatter -d -v -n -t ${TMF} -p share/ -o sets/docs +scheme-full,doc
+cat sets/docs/PLIST | sed 's/share\/texmf\/doc\/man/share\/man/g' \
+	| sort > sets/docs/PLIST_final
 
-echo "done"
+# XXX need to figure out how to futher split docs
+#grep -ie '\.1$' -e '\.pdf$' -e '\.html$' -e '\.dvi$' -e '\.ps$' \
+#	sets/docs/PLIST | sed 's/share\/texmf\/doc\/man/share\/man/g' \
+#	| sort > sets/docs/PLIST_final
+#grep -ive '\.1$' -e '\.pdf$' -e '\.html$' -e '\.dvi$' -e '\.ps$' \
+#	sets/docs/PLIST | sed 's/share\/texmf\/doc\/man/share\/man/g' \
+#	| sort > sets/docs/PLIST_final-sources
+
+echo "\ndone - PLISTS in sets/"
+echo "now inspect:"
+echo "  - share/texmf/scripts/texlive/* probably un-needed"
+echo "  - *.exe obviously a waste of space"
+echo "  - search for 'win32' and 'w32' and 'windows'"
+echo "  - comment out manual pages and include in _base"
+echo "  - bibarts is a DOS program"
+echo "  - Not all texworks related stuff is needed"
+echo "  - make sure no tlpkg/ sneaked in"
+echo "  - etc..."

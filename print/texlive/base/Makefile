@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.44 2010/11/22 10:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2011/03/08 00:09:42 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME = 		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
-REVISION =		9
-SHARED_LIBS =		kpathsea	2.0
 
-WANTLIB =		m X11 ICE freetype Xt c Xext fontconfig Xpm SM Xmu gd \
-			ncurses openjpeg Xaw Xau Xdmcp expat iconv jpeg lcms \
-			png>=3	poppler pthread pthread-stubs stdc++ t1>=4 \
-			ttf xcb	xml2 z
+SHARED_LIBS =		kpathsea	3.0
+SHARED_LIBS +=		ptexenc		0.0
+
+WANTLIB +=		ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c expat
+WANTLIB +=		fontconfig freetype gd jpeg lcms m ncurses
+WANTLIB +=		openjpeg png>=3 poppler pthread pthread-stubs stdc++
+WANTLIB +=		t1>=4 ttf xcb xml2 z
 
 RUN_DEPENDS =		print/ghostscript/gnu \
 			print/detex \
@@ -18,7 +19,8 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 			print/ps2eps \
 			print/psutils \
 			print/t1utils \
-			texlive_texmf-minimal-${V}:print/texlive/texmf,-main
+			texlive_texmf-minimal-${V}:print/texlive2010/texmf,-main \
+			print/latex-mk
 			
 LIB_DEPENDS =		devel/t1lib \
 			graphics/png \
@@ -26,12 +28,14 @@ LIB_DEPENDS =		devel/t1lib \
 			print/freetype \
 			print/poppler
 
+MODULES =		textproc/intltool converters/libiconv
+
 # Never set SEPARATE_BUILD
 CONFIGURE_STYLE =	gnu
 
 # Don't put ${PREFIX}/include in CPPFLAGS or system icu .h's are picked up
 CONFIGURE_ENV +=	TL_MAKE=${GMAKE} \
-			CPPFLAGS=-I${LOCALBASE}/include/poppler
+			CPPFLAGS="-I${TRUEPREFIX}/include/poppler -I${X11BASE}/include"
 			
 WRKBUILD =              ${WRKSRC}/Work # Can't build in same dir
 CONFIGURE_SCRIPT =      ../configure
@@ -40,7 +44,7 @@ NO_REGRESS =		Yes # not worth the effort.
 
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 .if ${MACHINE_ARCH} == "sparc64"
 CFLAGS +=	-fPIC
@@ -49,19 +53,17 @@ CFLAGS +=	-fPIC
 # clisp limits which arches we can use xindy on
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS += 	lang/clisp
-LIB_DEPENDS +=		devel/libsigsegv \
-			devel/ffcall
-WANTLIB +=		sigsegv avcall callback
-CONFIGURE_ARGS +=	--enable-xindy
+LIB_DEPENDS +=		devel/ffcall	# XXX still needed? try build on fresh sys
+CONFIGURE_ARGS +=	--enable-xindy \
+			--disable-xindy-rules
 PKG_ARGS +=		-Dxindy=1
-WANTLIB +=		readline
-MODULES +=		devel/gettext
 .else
 PKG_ARGS +=		-Dxindy=0
 .endif
 
 # Do not link with system icu. TeXLive ICU is not vanilla (Yet)!
-CONFIGURE_ARGS +=	--x-includes=${X11BASE}/include \
+CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
+			--x-includes=${X11BASE}/include \
 			--x-libraries=${X11BASE}/lib \
 			--with-system-freetype2 \
 			--with-system-freetype \
@@ -92,29 +94,30 @@ CONFIGURE_ARGS +=	--x-includes=${X11BASE}/include \
 			--enable-t1utils=no \
 			--disable-threads \
 			--with-old-mac-fonts \
-			--with-tex-banner=PuffTeX-2009 \
 			--disable-multiplatform \
 			--disable-native-texlive-build \
-			--with-system-xpdf # link poppler, yay :)
+			--with-banner-add="-OpenBSD_Ports" \
+			--with-system-xpdf # link poppler instead of internal xpdf
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
-
-# clear upstreams .orig files, so update-patches is not confused
-post-extract:
-	find ${WRKDIST} -name '*.orig' | xargs rm
-
-post-patch:
-	${SUBST_CMD} ${WRKSRC}/utils/xindy/rte/ordrules/Makefile.in
 
 # just to silence error - never used
 pre-install:
 	mkdir ${WRKSRC}/inst
 
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/tl-link-config ${PREFIX}/bin
-	${SUBST_CMD} ${PREFIX}/bin/tl-link-config
-	${INSTALL_DATA_DIR} ${PREFIX}/share/texmf/web2c
-	${INSTALL_DATA} -c ${FILESDIR}/fmtutil.cnf-minimal \
-		${PREFIX}/share/texmf/web2c
+	rm -Rf ${WRKSRC}/inst
+
+	# following tradition, texmf is in ${PREFIX}/share
+	mv ${PREFIX}/texmf ${PREFIX}/share/texmf
+	mv ${PREFIX}/texmf-dist ${PREFIX}/share/texmf-dist
+	# translate some sylinks from ../texmf* to ../share/texmf*
+	for link in `find ${PREFIX}/bin -type l`; do \
+		dest=`stat -f %Y $${link}`; \
+		if ! [ -z "`echo $${dest} | grep -e '^\.\.\/texmf'`" ]; then \
+			newdest=`echo $${dest} | sed -e 's/\.\.\/texmf/\.\.\/share\/texmf/g'`; \
+			ln -sf $${newdest} $${link}; \
+		fi \
+	done
 
 .include <bsd.port.mk>

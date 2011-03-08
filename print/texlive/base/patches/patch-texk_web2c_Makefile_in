@@ -1,7 +1,7 @@
-$OpenBSD: patch-texk_web2c_Makefile_in,v 1.3 2009/12/12 17:48:34 edd Exp $
---- texk/web2c/Makefile.in.orig	Sun Jul  5 19:11:04 2009
-+++ texk/web2c/Makefile.in	Sun Jul  5 19:16:53 2009
-@@ -953,7 +953,7 @@ WARNING_CXXFLAGS = @WARNING_CXXFLAGS@
+$OpenBSD: patch-texk_web2c_Makefile_in,v 1.4 2011/03/08 00:09:42 edd Exp $
+--- texk/web2c/Makefile.in.origy	Tue Jul  6 10:17:20 2010
++++ texk/web2c/Makefile.in	Thu Sep 23 16:53:27 2010
+@@ -1080,7 +1080,7 @@ WARNING_OBJCXXFLAGS = @WARNING_OBJCXXFLAGS@
  WEB2CVERSION = @WEB2CVERSION@
  XMKMF = @XMKMF@
  XPDF_DEPEND = @XPDF_DEPEND@
@@ -10,30 +10,3 @@ $OpenBSD: patch-texk_web2c_Makefile_in,v 1.3 2009/12/12 17:48:34 edd Exp $
  XPDF_LIBS = @XPDF_LIBS@
  X_CFLAGS = @X_CFLAGS@
  X_EXTRA_LIBS = @X_EXTRA_LIBS@
-@@ -6850,7 +6850,7 @@ xetex-synctex-xe.obj: synctex-xe.c
- @am__fastdepCXX_FALSE@	$(LTCXXCOMPILE) -c -o $@ $<
- 
- libluatex_a-pdftoepdf.o: luatexdir/image/pdftoepdf.cc
--@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libluatex_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libluatex_a-pdftoepdf.o -MD -MP -MF $(DEPDIR)/libluatex_a-pdftoepdf.Tpo -c -o libluatex_a-pdftoepdf.o `test -f 'luatexdir/image/pdftoepdf.cc' || echo '$(srcdir)/'`luatexdir/image/pdftoepdf.cc
-+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(FONTCONFIG_INCLUDES) $(INCLUDES) $(libluatex_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libluatex_a-pdftoepdf.o -MD -MP -MF $(DEPDIR)/libluatex_a-pdftoepdf.Tpo -c -o libluatex_a-pdftoepdf.o `test -f 'luatexdir/image/pdftoepdf.cc' || echo '$(srcdir)/'`luatexdir/image/pdftoepdf.cc
- @am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/libluatex_a-pdftoepdf.Tpo $(DEPDIR)/libluatex_a-pdftoepdf.Po
- @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='luatexdir/image/pdftoepdf.cc' object='libluatex_a-pdftoepdf.o' libtool=no @AMDEPBACKSLASH@
- @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@@ -6864,7 +6864,7 @@ libluatex_a-pdftoepdf.obj: luatexdir/image/pdftoepdf.c
- @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libluatex_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o libluatex_a-pdftoepdf.obj `if test -f 'luatexdir/image/pdftoepdf.cc'; then $(CYGPATH_W) 'luatexdir/image/pdftoepdf.cc'; else $(CYGPATH_W) '$(srcdir)/luatexdir/image/pdftoepdf.cc'; fi`
- 
- libpdftex_a-pdftoepdf.o: pdftexdir/pdftoepdf.cc
--@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpdftex_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpdftex_a-pdftoepdf.o -MD -MP -MF $(DEPDIR)/libpdftex_a-pdftoepdf.Tpo -c -o libpdftex_a-pdftoepdf.o `test -f 'pdftexdir/pdftoepdf.cc' || echo '$(srcdir)/'`pdftexdir/pdftoepdf.cc
-+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(FONTCONFIG_INCLUDES) $(DEFAULT_INCLUDES) $(INCLUDES) $(libpdftex_a_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT libpdftex_a-pdftoepdf.o -MD -MP -MF $(DEPDIR)/libpdftex_a-pdftoepdf.Tpo -c -o libpdftex_a-pdftoepdf.o `test -f 'pdftexdir/pdftoepdf.cc' || echo '$(srcdir)/'`pdftexdir/pdftoepdf.cc
- @am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/libpdftex_a-pdftoepdf.Tpo $(DEPDIR)/libpdftex_a-pdftoepdf.Po
- @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='pdftexdir/pdftoepdf.cc' object='libpdftex_a-pdftoepdf.o' libtool=no @AMDEPBACKSLASH@
- @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@@ -7088,7 +7088,7 @@ pdftex-dummy.obj: dummy.cxx
- @am__fastdepCXX_FALSE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(pdftex_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -c -o pdftex-dummy.obj `if test -f 'dummy.cxx'; then $(CYGPATH_W) 'dummy.cxx'; else $(CYGPATH_W) '$(srcdir)/dummy.cxx'; fi`
- 
- pdftosrc-pdftosrc.o: pdftexdir/pdftosrc.cc
--@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(pdftosrc_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT pdftosrc-pdftosrc.o -MD -MP -MF $(DEPDIR)/pdftosrc-pdftosrc.Tpo -c -o pdftosrc-pdftosrc.o `test -f 'pdftexdir/pdftosrc.cc' || echo '$(srcdir)/'`pdftexdir/pdftosrc.cc
-+@am__fastdepCXX_TRUE@	$(CXX) $(DEFS) $(FONTCONFIG_INCLUDES) $(DEFAULT_INCLUDES) $(INCLUDES) $(pdftosrc_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS) -MT pdftosrc-pdftosrc.o -MD -MP -MF $(DEPDIR)/pdftosrc-pdftosrc.Tpo -c -o pdftosrc-pdftosrc.o `test -f 'pdftexdir/pdftosrc.cc' || echo '$(srcdir)/'`pdftexdir/pdftosrc.cc
- @am__fastdepCXX_TRUE@	$(am__mv) $(DEPDIR)/pdftosrc-pdftosrc.Tpo $(DEPDIR)/pdftosrc-pdftosrc.Po
- @AMDEP_TRUE@@am__fastdepCXX_FALSE@	source='pdftexdir/pdftosrc.cc' object='pdftosrc-pdftosrc.o' libtool=no @AMDEPBACKSLASH@
- @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@

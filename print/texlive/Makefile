@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/02/01 17:00:14 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/03/08 00:09:42 edd Exp $
 
 SUBDIR =
 SUBDIR += base

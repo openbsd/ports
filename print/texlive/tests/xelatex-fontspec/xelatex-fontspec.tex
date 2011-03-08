@@ -1,0 +1,36 @@
+% $OpenBSD: xelatex-fontspec.tex,v 1.1 2011/03/08 00:09:42 edd Exp $
+%
+% XeLaTeX Unicode Test for OpenBSD
+%
+% To insert unicode in gvim:
+%   Enter insert mode and type `CTRL+v uxxxx`, where xxxx is the unicode base.
+%
+% Build with `xelatex xelatex-fontspec`
+
+\documentclass{article}
+
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+
+\begin{document}
+
+\title{\XeLaTeX\ Unicode Test}
+\author{edd@openbsd.org}
+
+\maketitle
+
+This document tests xelatex/fontspec's native unicode ability.
+
+\newcommand{\testglyph}[1]{%
+	#1 {\large #1} {\Large #1} {\huge #1} {\Huge #1}\newline%
+}
+	
+\noindent\testglyph{€}
+\testglyph{¢}
+\testglyph{©}
+\testglyph{¼}
+\testglyph{ß}
+\testglyph{Ą}
+
+\end{document}

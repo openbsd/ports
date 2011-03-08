@@ -14,7 +14,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 # 
 # RBlatter
-# $Id: subsetshaper.rb,v 1.1.1.1 2010/08/20 12:04:30 edd Exp $
+# $Id: subsetshaper.rb,v 1.2 2011/03/08 00:09:42 edd Exp $
 #
 # Adds and subtracts texmf subset file lists in order to make new subsets.
 
@@ -52,6 +52,7 @@ class SubsetShaper
 		@excludeFormats = Set.new
 		@finalFormats = Set.new
 
+		@dirList = Set.new	# need to add dirs in plist
 		@subsetConfigs = []
 		@again = true # Will need another pass?
 		eqns = EqnParser.new $EQN
@@ -136,7 +137,7 @@ class SubsetShaper
 				@again = false
 
 				if !$QUIET then
-					print "pass #{@pass}: "
+					print "pass #{@pass}: \n"
 				end
 
 				@spinner.rewind
@@ -161,13 +162,12 @@ class SubsetShaper
 				outHandle.close
 
 				if !$QUIET then
-					puts
+					print "\b"
 				end
 
 				PListDeduper.new "#{$TMPOUT}/" + 
 					subset.uniq.to_s +
 					"-" + name + "_#{@pass}"
-
 			end #while
 
 			if !$QUIET then
@@ -218,6 +218,10 @@ class SubsetShaper
 			handle.close
 		end
 
+		if !$QUIET then
+			print "\b"
+		end
+
 		@finalFiles = @includeFiles.subtract @excludeFiles
 		@finalMaps = @includeMaps.subtract @excludeMaps
 		@finalFormats = @includeFormats.subtract @excludeFormats
@@ -238,10 +242,22 @@ class SubsetShaper
 
 	end
 
+	# add directories and their parent directories
+	def addDir(basefile)
+		dir = File.dirname(basefile)
+
+		# recurse - add parent dirs also
+		if (dir != ".") then
+			@dirList << dir
+			addDir(dir)
+		end
+	end
+
 	# Write packing list to the output directory
-	def writePlist()
+	def writePlist
 		File.open("#{$OUTDIR}/PLIST", "w") do |plist|
 			for line in @finalFiles do
+				line = line.chomp
 
 				ok = true
 				if $MISSING_FILES == false then
@@ -253,7 +269,17 @@ class SubsetShaper
 				end
 
 				if ok then
-					plist.write $FILEPREFIX + line
+					plist.write $FILEPREFIX + line + "\n"
+					if $ADD_DIRS then
+						addDir(line)
+					end
+				end
+			end
+
+			# add directory entries to satisfy openbsd pkgtools
+			if $ADD_DIRS then
+				for file in @dirList do
+					plist.write $FILEPREFIX + file + "/\n"
 				end
 			end
 		end

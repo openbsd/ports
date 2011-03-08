@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby18
 # Copyright (c) 2008-2010, Edd Barrett <vext01@gmail.com>
 # 
 # Permission to use, copy, modify, and/or distribute this software for any
@@ -14,7 +14,7 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 # 
 # RBlatter
-# $Id: rblatter,v 1.1.1.1 2010/08/20 12:04:30 edd Exp $
+# $Id: rblatter,v 1.2 2011/03/08 00:09:42 edd Exp $
 #
 # == Synopsis
 # RBlatter is a ruby script which allows you to add and subtract TeXmf
@@ -27,6 +27,10 @@
 # 	specify the architecture to use for platform
 # 	specific files. Should specify always.
 # 	defaults to i386-openbsd
+#
+# -d, --dirs:
+# 	add directories to conatin files to packing list.
+# 	used for openbsd packing lists
 #
 # -h, --help:
 #	show this message
@@ -53,11 +57,12 @@
 #
 #	Available file types are 'run', 'src', 'bin' and 'doc'.
 
-$RBLATTER_V = "$Id: rblatter,v 1.1.1.1 2010/08/20 12:04:30 edd Exp $"
+$RBLATTER_V = "$OpenBSD: rblatter,v 1.2 2011/03/08 00:09:42 edd Exp $"
 $QUIET = true;
 $FILEPREFIX = ""
 $ARCH = "i386-openbsd"
 $MISSING_FILES = true
+$ADD_DIRS = false
 
 path = File.dirname $0
 $: << path + "/lib"
@@ -70,6 +75,7 @@ require "eqnparser"
 # Parse args
 opts = GetoptLong.new(
 	["--arch", "-a", GetoptLong::REQUIRED_ARGUMENT],
+	["--dirs", "-d", GetoptLong::NO_ARGUMENT],
 	["--help", "-h", GetoptLong::NO_ARGUMENT],
 	["--no-missing-files", "-n", GetoptLong::NO_ARGUMENT],
 	["--outdir", "-o", GetoptLong::REQUIRED_ARGUMENT],
@@ -82,10 +88,12 @@ opts.each do | opt, arg |
 	case opt
 	when '--arch'
 		$ARCH = arg
+	when '--dirs'
+		$ADD_DIRS = true
 	when '--help'
 		RDoc::usage
 		exit 1
-	when '--no-missing-files':
+	when '--no-missing-files'
 		$MISSING_FILES = false
 	when '--outdir'
 		$OUTDIR = arg
