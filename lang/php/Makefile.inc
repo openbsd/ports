@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile.inc,v 1.7 2011/03/08 23:45:47 ajacoutot Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.

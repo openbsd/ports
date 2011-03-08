@@ -1,4 +1,4 @@
-$OpenBSD: 
+$OpenBSD: patch-wmpop3_Pop3Client_c,v 1.2 2011/03/08 23:45:47 ajacoutot Exp $
 --- wmpop3/Pop3Client.c.orig	Fri Aug 13 17:56:19 1999
 +++ wmpop3/Pop3Client.c	Mon Feb 12 17:48:41 2001
 @@ -42,8 +42,8 @@ Pop3 pop3Create(void){

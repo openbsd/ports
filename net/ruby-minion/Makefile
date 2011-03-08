@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile,v 1.10 2011/03/08 23:45:47 ajacoutot Exp $
 
 COMMENT =	super simple job queue over AMQP
 

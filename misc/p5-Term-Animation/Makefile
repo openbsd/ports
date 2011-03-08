@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile,v 1.6 2011/03/08 23:45:47 ajacoutot Exp $
 
 COMMENT=		produce sprite animations using ASCII art
 

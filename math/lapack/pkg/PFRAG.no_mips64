@@ -1,2 +1,2 @@
-@comment $OpenBSD
+@comment $OpenBSD: PFRAG.no_mips64,v 1.2 2011/03/08 23:45:47 ajacoutot Exp $
 lib/liblapack_pic.a
