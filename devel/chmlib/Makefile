@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 02:52:58 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2011/03/08 20:15:26 landry Exp $
+
 COMMENT=	handling CHM files
 CATEGORIES=	devel textproc
 
 HOMEPAGE=	http://www.jedrea.com/chmlib/
 MASTER_SITES=	${HOMEPAGE}
 
-DISTNAME=	chmlib-0.39
+DISTNAME=	chmlib-0.40
 SHARED_LIBS +=	chm                  0.2      # .0.0
 
 CONFIGURE_STYLE=gnu
 USE_LIBTOOL=	Yes
-USE_GMAKE=	Yes
 
 # stupid linux shit
 CONFIGURE_ARGS=	--disable-io64
