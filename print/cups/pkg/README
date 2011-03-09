@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.5 2011/01/17 23:24:40 ajacoutot Exp $
+$OpenBSD: README,v 1.6 2011/03/09 13:05:20 ajacoutot Exp $
 
 Using CUPS under OpenBSD
 ========================
@@ -25,15 +25,19 @@ Required steps for libusb based printing
 ----------------------------------------
 If you choose to make your USB printer use libusb, you need to allow the
 _cups user access to the corresponding USB endpoint. To do so, find
-where your printer is attached to using dmesg(8) then change the
-ownerships accordingly.
-ugenX = /dev/ugenX
-uhubX = /dev/usbX
+where your printer is attached to using `sudo usbdevs -vd` then change
+the ownerships accordingly.
 
 e.g.
-$ dmesg | grep ugen
-ugen0 at uhub1 port 1 "EPSON USB MFP" rev 1.10/1.00 addr 2
-$ sudo chown _cups /dev/ugen0.* /dev/usb1
+Controller /dev/usb3:
+addr 1: full speed, self powered, config 1, UHCI root hub(0x0000), Intel(0x8086), rev 1.00
+  uhub3
+ port 1 powered
+ port 2 addr 2: full speed, self powered, config 1, USB MFP(0x082f), EPSON(0x04b8), rev 1.00, iSerialNumber L83010704250947490
+   ulpt0
+   ugen0
+
+$ sudo chown _cups /dev/ugen0.* /dev/usb3
 
 The reason we are changing the user and not the group is that it will
 allow for multi-function devices to work for both printing and scanning

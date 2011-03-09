@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2011/03/02 06:49:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2011/03/09 13:05:20 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
@@ -6,7 +6,7 @@ VERSION=	1.4.6
 DISTNAME=	cups-${VERSION}-source
 PKGNAME=	cups-${VERSION}
 
-REVISION=	2
+REVISION=	3
 
 # Allow both ulpt(4) and libusb based backends to work together.
 # See http://www.cups.org/str.php?L3357
