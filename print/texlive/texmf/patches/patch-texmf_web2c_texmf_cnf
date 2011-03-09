@@ -1,4 +1,4 @@
-$OpenBSD: patch-texmf_web2c_texmf_cnf,v 1.3 2011/03/08 00:09:42 edd Exp $
+$OpenBSD: patch-texmf_web2c_texmf_cnf,v 1.4 2011/03/09 14:43:59 edd Exp $
 --- texmf/web2c/texmf.cnf.origy	Wed Oct 20 22:10:45 2010
 +++ texmf/web2c/texmf.cnf	Wed Oct 20 22:13:34 2010
 @@ -41,7 +41,11 @@
@@ -28,7 +28,7 @@ $OpenBSD: patch-texmf_web2c_texmf_cnf,v 1.3 2011/03/08 00:09:42 edd Exp $
  % This tree is not used for local configuration maintained by
  % texconfig, it uses TEXMFCONFIG below.
 -TEXMFLOCAL = $SELFAUTOPARENT/../texmf-local
-+TEXMFLOCAL = $OBSD_TMF/../texmf-local
++TEXMFLOCAL = $OBSD_TMF/texmf-local
  
  % TEXMFSYSVAR, where texconfig-sys stores variable runtime data.
  % With teTeX-3.0 or later, this must be set.

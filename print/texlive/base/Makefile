@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2011/03/08 00:09:42 edd Exp $
+# $OpenBSD: Makefile,v 1.46 2011/03/09 14:43:59 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME = 		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
+REVISION =		0
 
 SHARED_LIBS =		kpathsea	3.0
 SHARED_LIBS +=		ptexenc		0.0
@@ -19,7 +20,7 @@ RUN_DEPENDS =		print/ghostscript/gnu \
 			print/ps2eps \
 			print/psutils \
 			print/t1utils \
-			texlive_texmf-minimal-${V}:print/texlive2010/texmf,-main \
+			texlive_texmf-minimal-${V}:print/texlive/texmf,-main \
 			print/latex-mk
 			
 LIB_DEPENDS =		devel/t1lib \
