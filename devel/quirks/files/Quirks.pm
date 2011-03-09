@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.40 2010/12/23 23:04:56 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.41 2011/03/09 10:02:36 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -168,6 +168,8 @@ my $stem_extensions = {
 	'gpsd-motif' => 'gpsd-x11',
 	'uuid' => 'ossp-uuid',
 	'p5-UUID' => 'p5-ossp-uuid',
+# 5.0
+	'gqview' => 'geeqie',
 };
 
 # ->is_base_system($handle, $state):
