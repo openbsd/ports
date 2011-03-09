@@ -12,5 +12,6 @@ fi
 The userid running NUT (normally ${NUT_USER}) must have access to the relevant
 device nodes. For a UPS connected by RS232, either add ${NUT_USER} to group
 "dialer" or change group of the relevant /dev/tty* device to ${NUT_USER}.
-For a USB-connected UPS, change the group of /dev/ugen* and /dev/usb*
-to ${NUT_USER}.
+For a USB-connected UPS, change the group of the relevant /dev/ugen* and
+/dev/usb* devices to ${NUT_USER}; to identify the specific controller and
+ugen device names, use "sudo usbdevs -vd".
