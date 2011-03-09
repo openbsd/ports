@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/08/17 20:28:59 robert Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/03/09 09:31:46 robert Exp $
 @bin bin/mc
+bin/mcdiff
 bin/mcedit
-@bin bin/mcmfmt
 bin/mcview
 libexec/mc/
 libexec/mc/extfs.d/
@@ -37,6 +37,22 @@ libexec/mc/extfs.d/ulha
 libexec/mc/extfs.d/urar
 libexec/mc/extfs.d/uzip
 libexec/mc/extfs.d/uzoo
+libexec/mc/fish/
+libexec/mc/fish/README.fish
+libexec/mc/fish/append
+libexec/mc/fish/chmod
+libexec/mc/fish/chown
+libexec/mc/fish/fexists
+libexec/mc/fish/get
+libexec/mc/fish/hardlink
+libexec/mc/fish/info
+libexec/mc/fish/ln
+libexec/mc/fish/ls
+libexec/mc/fish/mkdir
+libexec/mc/fish/mv
+libexec/mc/fish/rmdir
+libexec/mc/fish/send
+libexec/mc/fish/unlink
 libexec/mc/mc-wrapper.csh
 libexec/mc/mc-wrapper.sh
 libexec/mc/mc.csh
@@ -62,11 +78,8 @@ man/ru/man1/
 man/sr/
 man/sr/man1/
 @man man/sr/man1/mc.1
-man/sr/man8/
 share/examples/mc/
 @sample ${SYSCONFDIR}/mc/
-share/examples/mc/Syntax
-@sample ${SYSCONFDIR}/mc/Syntax
 share/examples/mc/cedit.menu
 @sample ${SYSCONFDIR}/mc/cedit.menu
 share/examples/mc/edit.indent.rc
@@ -76,8 +89,6 @@ share/examples/mc/edit.spell.rc
 @sample ${SYSCONFDIR}/mc/extfs/
 share/examples/mc/filehighlight.ini
 @sample ${SYSCONFDIR}/mc/filehighlight.ini
-share/examples/mc/mc.charsets
-@sample ${SYSCONFDIR}/mc/mc.charsets
 share/examples/mc/mc.ext
 @sample ${SYSCONFDIR}/mc/mc.ext
 share/examples/mc/mc.keymap
@@ -86,8 +97,6 @@ share/examples/mc/mc.keymap.default
 @sample ${SYSCONFDIR}/mc/mc.keymap.default
 share/examples/mc/mc.keymap.emacs
 @sample ${SYSCONFDIR}/mc/mc.keymap.emacs
-share/examples/mc/mc.lib
-@sample ${SYSCONFDIR}/mc/mc.lib
 share/examples/mc/mc.menu
 @sample ${SYSCONFDIR}/mc/mc.menu
 share/examples/mc/mc.menu.sr
@@ -98,22 +107,28 @@ share/locale/az/
 share/locale/az/LC_MESSAGES/
 share/locale/az/LC_MESSAGES/mc.mo
 share/locale/be/LC_MESSAGES/mc.mo
-share/locale/be@tarask/
-share/locale/be@tarask/LC_MESSAGES/
-share/locale/be@tarask/LC_MESSAGES/mc.mo
 share/locale/bg/LC_MESSAGES/mc.mo
 share/locale/ca/LC_MESSAGES/mc.mo
 share/locale/cs/LC_MESSAGES/mc.mo
 share/locale/da/LC_MESSAGES/mc.mo
 share/locale/de/LC_MESSAGES/mc.mo
 share/locale/el/LC_MESSAGES/mc.mo
+share/locale/eo/LC_MESSAGES/mc.mo
 share/locale/es/LC_MESSAGES/mc.mo
 share/locale/eu/LC_MESSAGES/mc.mo
 share/locale/fi/LC_MESSAGES/mc.mo
+share/locale/fi_FI/
+share/locale/fi_FI/LC_MESSAGES/
+share/locale/fi_FI/LC_MESSAGES/mc.mo
 share/locale/fr/LC_MESSAGES/mc.mo
+share/locale/gl/LC_MESSAGES/mc.mo
 share/locale/hu/LC_MESSAGES/mc.mo
+share/locale/id/LC_MESSAGES/mc.mo
 share/locale/it/LC_MESSAGES/mc.mo
 share/locale/ja/LC_MESSAGES/mc.mo
+share/locale/ka/
+share/locale/ka/LC_MESSAGES/
+share/locale/ka/LC_MESSAGES/mc.mo
 share/locale/ko/LC_MESSAGES/mc.mo
 share/locale/lt/
 share/locale/lt/LC_MESSAGES/
@@ -145,32 +160,39 @@ share/locale/wa/LC_MESSAGES/mc.mo
 share/locale/zh_CN/LC_MESSAGES/mc.mo
 share/locale/zh_TW/LC_MESSAGES/mc.mo
 share/mc/
-share/mc/mc.hint
-share/mc/mc.hint.cs
-share/mc/mc.hint.es
-share/mc/mc.hint.hu
-share/mc/mc.hint.it
-share/mc/mc.hint.nl
-share/mc/mc.hint.pl
-share/mc/mc.hint.ru
-share/mc/mc.hint.sr
-share/mc/mc.hint.uk
-share/mc/mc.hint.zh
-share/mc/mc.hlp
-share/mc/mc.hlp.es
-share/mc/mc.hlp.hu
-share/mc/mc.hlp.it
-share/mc/mc.hlp.pl
-share/mc/mc.hlp.ru
-share/mc/mc.hlp.sr
+share/mc/help/
+share/mc/help/mc.hlp
+share/mc/help/mc.hlp.es
+share/mc/help/mc.hlp.hu
+share/mc/help/mc.hlp.it
+share/mc/help/mc.hlp.pl
+share/mc/help/mc.hlp.ru
+share/mc/help/mc.hlp.sr
+share/mc/hints/
+share/mc/hints/mc.hint
+share/mc/hints/mc.hint.cs
+share/mc/hints/mc.hint.es
+share/mc/hints/mc.hint.hu
+share/mc/hints/mc.hint.it
+share/mc/hints/mc.hint.nl
+share/mc/hints/mc.hint.pl
+share/mc/hints/mc.hint.ru
+share/mc/hints/mc.hint.sr
+share/mc/hints/mc.hint.uk
+share/mc/hints/mc.hint.zh
+share/mc/mc.charsets
+share/mc/mc.lib
 share/mc/skins/
+share/mc/skins/dark.ini
 share/mc/skins/darkfar.ini
 share/mc/skins/default.ini
 share/mc/skins/double-lines.ini
 share/mc/skins/featured.ini
 share/mc/skins/gotar.ini
+share/mc/skins/nicedark.ini
 share/mc/syntax/
 share/mc/syntax/PKGBUILD.syntax
+share/mc/syntax/Syntax
 share/mc/syntax/ada95.syntax
 share/mc/syntax/aspx.syntax
 share/mc/syntax/assembler.syntax
@@ -181,6 +203,7 @@ share/mc/syntax/changelog.syntax
 share/mc/syntax/cs.syntax
 share/mc/syntax/css.syntax
 share/mc/syntax/cxx.syntax
+share/mc/syntax/cython.syntax
 share/mc/syntax/d.syntax
 share/mc/syntax/debian-changelog.syntax
 share/mc/syntax/debian-control.syntax
