@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_resources_qrc,v 1.1 2011/03/09 17:42:55 sebastia Exp $
+--- src/resources.qrc.orig	Wed Feb 23 19:11:41 2011
++++ src/resources.qrc	Wed Feb 23 19:12:05 2011
+@@ -465,14 +465,14 @@
+         <file>webstuff/frame_top.png</file>
+         <file>webstuff/frame_top_left.png</file>
+         <file>icons/cache/Earthcache.png</file>
+-        <file>icons/cache/Event Cache.png</file>
++        <file>icons/cache/Event-Cache.png</file>
+         <file>icons/cache/Multi-cache.png</file>
+-        <file>icons/cache/Traditional Cache.png</file>
+-        <file>icons/cache/Wherigo Cache.png</file>
+-        <file>icons/cache/Unknown Cache.png</file>
+-        <file>icons/cache/Letterbox Hybrid.png</file>
+-        <file>icons/cache/Virtual Cache.png</file>
+-        <file>icons/cache/Webcam Cache.png</file>
++        <file>icons/cache/Traditional-Cache.png</file>
++        <file>icons/cache/Wherigo-Cache.png</file>
++        <file>icons/cache/Unknown-Cache.png</file>
++        <file>icons/cache/Letterbox-Hybrid.png</file>
++        <file>icons/cache/Virtual-Cache.png</file>
++        <file>icons/cache/Webcam-Cache.png</file>
+         <file>icons/cache/found8x8.png</file>
+         <file>webstuff/scale.png</file>
+     </qresource>

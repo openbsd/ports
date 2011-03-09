@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_WptIcons_cpp,v 1.1 2011/03/09 17:42:55 sebastia Exp $
+--- src/WptIcons.cpp.orig	Wed Feb 23 19:02:42 2011
++++ src/WptIcons.cpp	Wed Feb 23 19:03:34 2011
+@@ -102,15 +102,15 @@ void initWptIcons()
+     setWptIconByName("Custom 23", cfg.value("garmin/icons/custom23", ":/icons/wpt/custom15x15.bmp").toString());
+     setWptIconByName("Custom 24", cfg.value("garmin/icons/custom24", ":/icons/wpt/custom15x15.bmp").toString());
+ 
+-    setWptIconByName("Traditional Cache", ":/icons/cache/Traditional Cache.png");
++    setWptIconByName("Traditional Cache", ":/icons/cache/Traditional-Cache.png");
+     setWptIconByName("Multi-cache", ":/icons/cache/Multi-cache.png");
+-    setWptIconByName("Unknown Cache", ":/icons/cache/Unknown Cache.png");
+-    setWptIconByName("Wherigo Cache", ":/icons/cache/Wherigo Cache.png");
+-    setWptIconByName("Event Cache", ":/icons/cache/Event Cache.png");
++    setWptIconByName("Unknown Cache", ":/icons/cache/Unknown-Cache.png");
++    setWptIconByName("Wherigo Cache", ":/icons/cache/Wherigo-Cache.png");
++    setWptIconByName("Event Cache", ":/icons/cache/Event-Cache.png");
+     setWptIconByName("Earthcache", ":/icons/cache/Earthcache.png");
+-    setWptIconByName("Letterbox Hybrid", ":/icons/cache/Letterbox Hybrid.png");
+-    setWptIconByName("Virtual Cache", ":/icons/cache/Virtual Cache.png");
+-    setWptIconByName("Webcam Cache", ":/icons/cache/Webcam Cache.png");
++    setWptIconByName("Letterbox Hybrid", ":/icons/cache/Letterbox-Hybrid.png");
++    setWptIconByName("Virtual Cache", ":/icons/cache/Virtual-Cache.png");
++    setWptIconByName("Webcam Cache", ":/icons/cache/Webcam-Cache.png");
+ 
+     QDir dirIcon(QDir::home().filePath(CONFIGDIR));
+     dirIcon.mkdir("WaypointIcons");

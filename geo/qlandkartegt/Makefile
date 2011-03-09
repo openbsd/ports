@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/01/08 11:31:11 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/09 17:42:55 sebastia Exp $
 
 VMEM_WARNING =	yes
 COMMENT =	garmin gps map management tool
 
-DISTNAME =	qlandkartegt-1.0.0
+DISTNAME =	qlandkartegt-1.1.0
 CATEGORIES =	geo x11
 
 HOMEPAGE =	http://www.qlandkarte.org/
@@ -27,5 +27,11 @@ LIB_DEPENDS +=	devel/proj \
 		misc/gpsd>=2.95
 RUN_DEPENDS =	devel/desktop-file-utils \
 		geo/garmindev
+
+pre-configure:
+.for f in Event-Cache Letterbox-Hybrid Traditional-Cache Unknown-Cache \
+	Virtual-Cache Webcam-Cache Wherigo-Cache
+	cd ${WRKSRC}/src/icons/cache && mv "${f:S/-/ /g}.png" "$f.png"
+.endfor
 
 .include <bsd.port.mk>
