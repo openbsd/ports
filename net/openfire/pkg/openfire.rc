@@ -1,6 +1,6 @@
 #!/bin/sh
-
-# $OpenBSD: openfire.rc,v 1.1 2011/03/09 16:50:40 ian Exp $
+#
+# $OpenBSD: openfire.rc,v 1.2 2011/03/09 17:08:00 ajacoutot Exp $
 
 OPENFIRE_HOME="${TRUEPREFIX}/openfire"
 OPENFIRE_LIB="${OPENFIRE_HOME}/lib"
