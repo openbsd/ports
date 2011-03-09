@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2010/03/31 22:11:11 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2011/03/09 11:00:55 sthen Exp $
 @conflict upsd-*
 @pkgpath sysutils/nut
 @pkgpath sysutils/nut,no_cgi
@@ -28,10 +28,8 @@
 @bin bin/isbmex
 @bin bin/ivtscd
 @bin bin/liebert
-@bin bin/liebertgxt2
+@bin bin/liebert-esp2
 @bin bin/masterguard
-@bin bin/megatec
-@bin bin/megatec_usb
 @bin bin/metasys
 @bin bin/mge-shut
 @bin bin/mge-utalk
@@ -94,11 +92,9 @@ lib/pkgconfig/
 @man man/man8/genericups.8
 @man man/man8/isbmex.8
 @man man/man8/ivtscd.8
+@man man/man8/liebert-esp2.8
 @man man/man8/liebert.8
-@man man/man8/liebertgxt2.8
 @man man/man8/masterguard.8
-@man man/man8/megatec.8
-@man man/man8/megatec_usb.8
 @man man/man8/metasys.8
 @man man/man8/mge-shut.8
 @man man/man8/mge-utalk.8
@@ -134,13 +130,16 @@ lib/pkgconfig/
 @bin sbin/upsmon
 @bin sbin/upssched
 share/doc/nut/
-share/doc/nut/FAQ
-share/doc/nut/Makefile
-share/doc/nut/Makefile.am
-share/doc/nut/Makefile.in
+share/doc/nut/AUTHORS
+share/doc/nut/COPYING
+share/doc/nut/ChangeLog
+share/doc/nut/FAQ.html
+share/doc/nut/INSTALL
+share/doc/nut/MAINTAINERS
+share/doc/nut/NEWS
 share/doc/nut/README
-share/doc/nut/acpi.txt
-share/doc/nut/big-servers.txt
+share/doc/nut/TODO
+share/doc/nut/UPGRADING
 share/doc/nut/cables/
 share/doc/nut/cables/apc-rs500-serial.txt
 share/doc/nut/cables/apc.txt
@@ -150,51 +149,61 @@ share/doc/nut/cables/mgeups.txt
 share/doc/nut/cables/powerware.txt
 share/doc/nut/cables/repotec.txt
 share/doc/nut/cables/sms.txt
-share/doc/nut/chroot.txt
-share/doc/nut/commands.txt
-share/doc/nut/config-files.txt
-share/doc/nut/configure.txt
-share/doc/nut/contact-closure.txt
-share/doc/nut/data-room.txt
-share/doc/nut/design.txt
-share/doc/nut/developers.txt
-share/doc/nut/hid-subdrivers.txt
-share/doc/nut/ideas.txt
-share/doc/nut/macros.txt
-share/doc/nut/megatec.txt
-share/doc/nut/new-drivers.txt
-share/doc/nut/new-names.txt
-share/doc/nut/nut-hal.txt
-share/doc/nut/osd-notify.txt
-share/doc/nut/pager.txt
-share/doc/nut/powersaving.txt
-share/doc/nut/protocol.txt
-share/doc/nut/shutdown.txt
-share/doc/nut/snmp.txt
-share/doc/nut/sock-protocol.txt
-share/doc/nut/ssl.txt
-share/doc/nut/upssched.txt
+share/doc/nut/developer-guide.html
+share/doc/nut/images/
+share/doc/nut/images/advanced.png
+share/doc/nut/images/asciidoc.png
+share/doc/nut/images/bigbox.png
+share/doc/nut/images/bizarre.png
+share/doc/nut/images/blue-arrow.png
+share/doc/nut/images/cables/
+share/doc/nut/images/cables/73-0724.png
+share/doc/nut/images/cables/940-0024C.jpg
+share/doc/nut/images/cables/Lansafecable.jpg
+share/doc/nut/images/cables/SOLA-330.png
+share/doc/nut/images/cables/belkin-f6cx-rkm-xu-cable.jpg
+share/doc/nut/images/cables/mac-940-0024C.png
+share/doc/nut/images/cables/mge-66049.png
+share/doc/nut/images/cables/mge-db9-rj12.jpg
+share/doc/nut/images/cables/mge-db9-rj45.jpg
+share/doc/nut/images/eaton-logo.png
+share/doc/nut/images/note.png
+share/doc/nut/images/nut_layering.png
+share/doc/nut/images/old-cgi.png
+share/doc/nut/images/simple.png
+share/doc/nut/images/warning.png
+share/doc/nut/packager-guide.html
+share/doc/nut/user-manual.html
 share/examples/nut/
 @sample ${SYSCONFDIR}/nut/
+@comment share/examples/nut/hosts.conf.sample
 @owner ${NUT_USER}
-share/examples/nut/ups.conf
+share/examples/nut/nut.conf.sample
+@sample ${SYSCONFDIR}/nut/nut.conf
+share/examples/nut/ups.conf.sample
+@mode 600
 @sample ${SYSCONFDIR}/nut/ups.conf
-share/examples/nut/upsd.conf
+@mode
+share/examples/nut/upsd.conf.sample
 @mode 600
 @sample ${SYSCONFDIR}/nut/upsd.conf
 @mode
-share/examples/nut/upsd.users
+share/examples/nut/upsd.users.sample
 @mode 600
 @sample ${SYSCONFDIR}/nut/upsd.users
 @mode
-share/examples/nut/upsmon.conf
+share/examples/nut/upsmon.conf.sample
 @mode 600
 @sample ${SYSCONFDIR}/nut/upsmon.conf
 @mode
-share/examples/nut/upssched.conf
+share/examples/nut/upssched.conf.sample
 @sample ${SYSCONFDIR}/nut/upssched.conf
+share/examples/nut/upsset.conf.sample
+@sample ${SYSCONFDIR}/nut/upsset.conf
 @mode 700
 @sample /var/db/nut/
+@comment share/examples/nut/upsstats-single.html.sample
+@comment share/examples/nut/upsstats.html.sample
 @mode
 @owner
 share/ups/

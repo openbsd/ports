@@ -1,7 +1,7 @@
-$OpenBSD: patch-drivers_usbhid-ups_c,v 1.1 2010/03/31 22:11:11 sthen Exp $
---- drivers/usbhid-ups.c.orig	Sat Mar 20 23:29:39 2010
-+++ drivers/usbhid-ups.c	Sat Mar 20 23:29:39 2010
-@@ -1225,7 +1225,9 @@ static bool_t hid_ups_walk(walkmode_t mode)
+$OpenBSD: patch-drivers_usbhid-ups_c,v 1.2 2011/03/09 11:00:55 sthen Exp $
+--- drivers/usbhid-ups.c.orig	Mon Jan 10 10:30:30 2011
++++ drivers/usbhid-ups.c	Sat Feb 26 14:37:36 2011
+@@ -1228,7 +1228,9 @@ static bool_t hid_ups_walk(walkmode_t mode)
  
  		case -ETIMEDOUT:	/* Connection timed out */
  		case -EOVERFLOW:	/* Value too large for defined data type */

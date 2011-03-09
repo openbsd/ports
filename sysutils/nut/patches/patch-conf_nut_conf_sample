@@ -1,0 +1,9 @@
+$OpenBSD: patch-conf_nut_conf_sample,v 1.1 2011/03/09 11:00:55 sthen Exp $
+--- conf/nut.conf.sample.orig	Sun Mar  6 01:33:18 2011
++++ conf/nut.conf.sample	Sun Mar  6 01:33:23 2011
+@@ -25,4 +25,4 @@
+ #   to security concerns.
+ # - netclient: this mode only requires upsmon.
+ 
+-MODE = none
++MODE = standalone

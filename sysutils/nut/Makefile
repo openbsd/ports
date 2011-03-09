@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2011/03/09 11:00:55 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=		driver for monitoring UPSs via SNMP
 
-DISTNAME=		nut-2.4.3
-REVISION-main=		1
-REVISION-cgi=		1
-REVISION-snmp=		1
+DISTNAME=		nut-2.6.0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
@@ -26,13 +23,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c crypto
-WANTLIB-main += ${WANTLIB}
-WANTLIB-main += expat m ssl z asn1 gssapi krb5 neon usb
+WANTLIB-main += ${WANTLIB} c crypto expat m ssl z asn1 gssapi krb5 neon usb
+WANTLIB-cgi +=	${WANTLIB} c crypto X11 Xau Xdmcp c crypto expat fontconfig
+WANTLIB-cgi +=	freetype gd jpeg m png pthread-stubs ssl upsclient xcb z
+WANTLIB-snmp +=	c crypto netsnmp
 
-MASTER_SITES=		${HOMEPAGE}source/2.4/
+MASTER_SITES=		${HOMEPAGE}source/2.6/
 
 MODULES=		devel/gettext
+BUILD_DEPENDS+=		textproc/asciidoc \
+			textproc/docbook \
+			textproc/docbook-xsl
 
 WEB_ROOT=		/var/www
 NUT_USER=		_ups
@@ -41,19 +42,22 @@ SUBST_VARS=		WEB_ROOT NUT_USER NUT_ID
 USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu old
-CONFIGURE_ARGS+=	--sysconfdir=${SYSCONFDIR}/nut \
+CONFIGURE_ARGS+=	A2X=${LOCALBASE}/bin/a2x.py \
+			--sysconfdir=${SYSCONFDIR}/nut \
 			--datadir=${PREFIX}/share/ups \
 			--mandir=${PREFIX}/man \
+			--with-doc=html-single \
+			--with-ssl \
 			--with-statepath=/var/db/nut \
 			--with-user=${NUT_USER} \
-			--with-group=${NUT_USER} \
-			--with-ssl \
-			--enable-strip
+			--with-group=${NUT_USER}
 
-PSEUDO_FLAVORS=		snmp
+PSEUDO_FLAVORS=		no_snmp
 FLAVOR?=
 MULTI_PACKAGES=		-main -cgi
-.if ${FLAVOR:L:Msnmp}
+.if ${FLAVOR:L:Mno_snmp}
+CONFIGURE_ARGS+=	--without-snmp
+.else
 MULTI_PACKAGES+=	-snmp
 .endif
 
@@ -62,13 +66,9 @@ LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 			net/neon
 
 PREFIX-cgi=		${WEB_ROOT}
-WANTLIB-cgi=		${MODGETTEXT_WANTLIB} \
-			X11 Xau Xdmcp c crypto expat fontconfig freetype gd
-WANTLIB-cgi+=		jpeg m png pthread-stubs ssl upsclient xcb z
 
-WANTLIB-snmp=		${WANTLIB} netsnmp
 LIB_DEPENDS-snmp=	net/net-snmp
-RUN_DEPENDS-snmp=	# empty
+RUN_DEPENDS-snmp=	sysutils/nut,-main
 
 LIB_DEPENDS-cgi=	${LIB_DEPENDS} \
 			graphics/jpeg \
@@ -88,6 +88,7 @@ CONFIGURE_ARGS+=	--with-cgi \
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/nut
 
 NO_REGRESS=		Yes
 
@@ -95,19 +96,13 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/conf/upssched.conf.sample.in
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nut/
-	cp -R ${WRKSRC}/docs/* ${PREFIX}/share/doc/nut/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nut/
-.for file in upsmon.conf upsd.conf upsd.users upssched.conf ups.conf
-	${INSTALL_DATA} ${WRKBUILD}/conf/${file}.sample \
-	    ${PREFIX}/share/examples/nut/${file}
-.endfor
-# Yes, we install the CGI config files even if we're not building CGI support,
-# it will get properly handled by packaging.
 	${INSTALL_DATA_DIR} ${WRKINST}${WEB_ROOT}/conf/nut/
 .for file in hosts.conf upsset.conf upsstats.html upsstats-single.html
 	${INSTALL_DATA} ${WRKBUILD}/conf/${file}.sample \
 	    ${WRKINST}${WEB_ROOT}/conf/nut/${file}.sample
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nut/
+	cd ${WRKSRC}/docs; cp -R ../[A-LN-Z]* ../MAINTAINERS \
+	    *html cables images ${PREFIX}/share/doc/nut/
 .endfor
 
 .include <bsd.port.mk>

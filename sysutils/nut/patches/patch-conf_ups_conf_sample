@@ -1,6 +1,6 @@
-$OpenBSD: patch-conf_ups_conf_sample,v 1.1 2010/03/20 17:11:40 ajacoutot Exp $
---- conf/ups.conf.sample.orig	Fri Mar 12 10:19:28 2010
-+++ conf/ups.conf.sample	Fri Mar 12 10:18:48 2010
+$OpenBSD: patch-conf_ups_conf_sample,v 1.2 2011/03/09 11:00:55 sthen Exp $
+--- conf/ups.conf.sample.orig	Fri Dec 24 13:23:32 2010
++++ conf/ups.conf.sample	Mon Mar  7 11:33:52 2011
 @@ -47,7 +47,7 @@
  #          apcsmart, bestups, and sec are some examples.
  #
@@ -13,18 +13,18 @@ $OpenBSD: patch-conf_ups_conf_sample,v 1.1 2010/03/20 17:11:40 ajacoutot Exp $
 @@ -83,11 +83,11 @@
  # --------
  #
- # A simple example for a UPS called "powerpal" that uses the megatec
+ # A simple example for a UPS called "powerpal" that uses the blazer_ser
 -# driver on /dev/ttyS0 is:
 +# driver on /dev/tty00 is:
  #
  # [powerpal]
- #	driver = megatec
+ #	driver = blazer_ser
 -#	port = /dev/ttyS0
 +#	port = /dev/tty00
  #	desc = "Web server"
  #
  # If your UPS driver requires additional settings, you can specify them
-@@ -96,7 +96,7 @@
+@@ -96,9 +96,23 @@
  # 
  # [myups]
  # 	driver = mydriver
@@ -33,3 +33,19 @@ $OpenBSD: patch-conf_ups_conf_sample,v 1.1 2010/03/20 17:11:40 ajacoutot Exp $
  #	cable = 1234
  #	desc = "Something descriptive"
  #
++# [networkups]
++#	driver = snmp-ups
++#	port = 192.168.42.240
++#	community = mekmitasdigoat
++#	desc = "Example APC networked UPS"
++#	notransferoids
++#	mibs = apcc
++#
++# [usb]
++#	driver = usbhid-ups
++#	port = auto
++#	desc = "Example USB UPS"
++#
+ # To find out if your driver supports any extra settings, start it with
+ # the -h option and/or read the driver's documentation.
++

@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.13 2010/03/31 22:11:11 sthen Exp $
---- configure.orig	Tue Feb 23 10:04:39 2010
-+++ configure	Sat Mar 20 23:18:19 2010
-@@ -10709,7 +10709,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+$OpenBSD: patch-configure,v 1.14 2011/03/09 11:00:55 sthen Exp $
+--- configure.orig	Fri Jan 14 20:44:37 2011
++++ configure	Sat Feb 26 14:37:36 2011
+@@ -11540,7 +11540,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  /* end confdefs.h.  */
  
  int
