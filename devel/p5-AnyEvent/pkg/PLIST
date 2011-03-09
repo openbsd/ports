@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/10/09 23:24:21 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/03/09 07:52:27 sthen Exp $
 ${P5SITE}/AE.pm
 ${P5SITE}/AnyEvent/
 ${P5SITE}/AnyEvent.pm
 ${P5SITE}/AnyEvent/DNS.pm
 ${P5SITE}/AnyEvent/Debug.pm
+${P5SITE}/AnyEvent/FAQ.pod
 ${P5SITE}/AnyEvent/Handle.pm
 ${P5SITE}/AnyEvent/Impl/
 ${P5SITE}/AnyEvent/Impl/EV.pm
@@ -20,11 +21,16 @@ ${P5SITE}/AnyEvent/Intro.pod
 ${P5SITE}/AnyEvent/Socket.pm
 ${P5SITE}/AnyEvent/Strict.pm
 ${P5SITE}/AnyEvent/TLS.pm
+${P5SITE}/AnyEvent/Util/
 ${P5SITE}/AnyEvent/Util.pm
+${P5SITE}/AnyEvent/Util/idna.pl
+${P5SITE}/AnyEvent/Util/uts46data.pl
+${P5SITE}/AnyEvent/constants.pl
 @man man/man3p/AE.3p
 @man man/man3p/AnyEvent.3p
 @man man/man3p/AnyEvent::DNS.3p
 @man man/man3p/AnyEvent::Debug.3p
+@man man/man3p/AnyEvent::FAQ.3p
 @man man/man3p/AnyEvent::Handle.3p
 @man man/man3p/AnyEvent::Impl::EV.3p
 @man man/man3p/AnyEvent::Impl::Event.3p

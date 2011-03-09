@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2010/12/03 11:44:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/03/09 07:52:27 sthen Exp $
 
 COMMENT=	provide framework for multiple event loops
 
 MODULES=	cpan
-DISTNAME=	AnyEvent-5.201
-REVISION=	0
+# N.B. updates to 5.29 and up require the 4.x p5-EV API
+DISTNAME=	AnyEvent-5.28
+# pad PKGNAME; previous ver was 5.201
+PKGNAME=	p5-${DISTNAME}0
 CATEGORIES=	devel
 CPAN_AUTHOR=	MLEHMANN
 USE_GROFF =	Yes
