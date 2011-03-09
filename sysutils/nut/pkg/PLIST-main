@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2011/03/09 11:00:55 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2011/03/09 23:32:20 sthen Exp $
 @conflict upsd-*
 @pkgpath sysutils/nut
 @pkgpath sysutils/nut,no_cgi
@@ -34,7 +34,6 @@
 @bin bin/mge-shut
 @bin bin/mge-utalk
 @bin bin/microdowell
-@bin bin/netxml-ups
 @bin bin/newmge-shut
 @bin bin/oneac
 @bin bin/optiups
@@ -99,7 +98,6 @@ lib/pkgconfig/
 @man man/man8/mge-shut.8
 @man man/man8/mge-utalk.8
 @man man/man8/microdowell.8
-@man man/man8/netxml-ups.8
 @man man/man8/nutupsdrv.8
 @man man/man8/oneac.8
 @man man/man8/optiups.8

@@ -1,9 +1,21 @@
-Network UPS Tools is a suite of programs that can be used to monitor
-the status of an Uninterruptible Power Supply.  Nut tries to support
-"every kind of UPS with sufficient interest behind it."  Most decent
-UPSs have a serial port for access to status information.  The primary
-use of Nut is to notify the machine in the event of a power failure so
-that scripts may be run to properly shutdown your machine.  Nut also
-has a network communications layer that allows other machines to
-coordinate shutdowns with the machine that is physically attached to
-the UPS.
+Network UPS Tools is a collection of programs which provide a common
+interface for monitoring and administering Uninterruptible Power
+Supply (UPS), Power Distribution Unit (PDU), and Solar Controller
+Device (SCD) hardware. It uses a layered approach to connect all
+of the parts.
+
+Drivers are provided for a wide assortment of equipment. They
+understand the specific language of each device and map it back to
+a compatibility layer. This means both an expensive high end UPS,
+a simple "power strip" PDU, or any other power device can be handled
+transparently with a uniform management interface.
+
+This information is cached by the network server upsd, which then
+answers queries from the clients. upsd contains a number of access
+control features to limit the abilities of the clients. Only
+authorized hosts may monitor or control your hardware if you wish.
+Since the notion of monitoring over the network is built into the
+software, you can hang many systems off one large UPS, and they
+will all shut down together. You can also use NUT to power on, off
+or cycle your data center nodes, individually or globally through
+PDU outlets.

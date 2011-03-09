@@ -1,0 +1,12 @@
+This NUT driver provides support for recent Eaton / MGE models which use
+a Network Management Card or Proxy (MGE XML/HTTP protocol based), e.g.
+
+o   NMC Minislot (Ref 66102, firmware EA or newer),
+o   SNMP/Web Minislot card (Ref 66244)
+o   NMC Transverse (Ref 66074),
+o   NMC & Modbus/JBus (Ref 66103),
+o   Network Management Proxy,
+o   ePDU Monitored (newer version).
+
+Older models, such as SNMP card (Ref 66062 and Ref 66045), use the SNMP
+protocol and should use snmp-ups(8) from the nut-snmp package.
