@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/11/09 18:45:34 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/03/09 10:31:52 robert Exp $
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 bin/filebucket
@@ -19,6 +19,7 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/cert.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/describe.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/doc.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/filebucket.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/inspect.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/kick.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/master.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/queue.rb
@@ -499,7 +500,6 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/sslcertificates/support.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/status.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/transaction/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/transaction.rb
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/transaction/change.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/transaction/event.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/transaction/event_manager.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/transaction/report.rb
@@ -516,9 +516,11 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/file/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/file.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/file/checksum.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/file/content.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/file/ctime.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/file/ensure.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/file/group.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/file/mode.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/file/mtime.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/file/owner.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/file/selcontext.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/file/source.rb
