@@ -1,0 +1,9 @@
+Geeqie is a lightweight Gtk+2 based image viewer for Unix like operating
+systems.
+Its main features are:
+    * EXIF, IPTC and XMP metadata browsing and editing interoperability,
+      easy integration with other software
+    * geeqie works on files and directories, there is no need to import
+      images
+    * fast preview for many raw image formats
+    * tools for image comparison, sorting and managing photo collection

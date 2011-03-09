@@ -1,0 +1,101 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/09 09:58:49 ajacoutot Exp $
+@conflict gqview-*
+@pkgpath graphics/gqview
+@bin bin/geeqie
+bin/gqview
+lib/geeqie/
+lib/geeqie/geeqie-import
+lib/geeqie/geeqie-rotate
+lib/geeqie/geeqie-symlink
+@comment lib/geeqie/geeqie-ufraw
+@man man/man1/geeqie.1
+share/applications/geeqie.desktop
+share/doc/geeqie/
+share/doc/geeqie/AdvancedFeatures.html
+share/doc/geeqie/Authors.html
+share/doc/geeqie/BasicFeatures.html
+share/doc/geeqie/COPYING
+share/doc/geeqie/Cancelbutton.html
+@comment share/doc/geeqie/ChangeLog
+share/doc/geeqie/Commandline.html
+share/doc/geeqie/Copyright.html
+share/doc/geeqie/GuideCollections.html
+share/doc/geeqie/GuideCredits.html
+share/doc/geeqie/GuideFaq.html
+share/doc/geeqie/GuideGnuFdl.html
+share/doc/geeqie/GuideImageManagement.html
+share/doc/geeqie/GuideImageManagementCopyMove.html
+share/doc/geeqie/GuideImageManagementDelete.html
+share/doc/geeqie/GuideImageManagementExternalEditing.html
+share/doc/geeqie/GuideImageManagementRename.html
+share/doc/geeqie/GuideImagePresentation.html
+share/doc/geeqie/GuideImagePresentationFullscreen.html
+share/doc/geeqie/GuideImagePresentationSlideshow.html
+share/doc/geeqie/GuideImageSearch.html
+share/doc/geeqie/GuideImageSearchFindingDuplicates.html
+share/doc/geeqie/GuideImageSearchSearch.html
+share/doc/geeqie/GuideIndex-info.html
+share/doc/geeqie/GuideIndex.html
+share/doc/geeqie/GuideIntroduction.html
+share/doc/geeqie/GuideMainWindow.html
+share/doc/geeqie/GuideMainWindowFilePane.html
+share/doc/geeqie/GuideMainWindowFolderPane.html
+share/doc/geeqie/GuideMainWindowImagePane.html
+share/doc/geeqie/GuideMainWindowLayout.html
+share/doc/geeqie/GuideMainWindowMenus.html
+share/doc/geeqie/GuideMainWindowNavigation.html
+share/doc/geeqie/GuideMainWindowStatusBar.html
+share/doc/geeqie/GuideOptions.html
+share/doc/geeqie/GuideOptionsBehavior.html
+share/doc/geeqie/GuideOptionsColor.html
+share/doc/geeqie/GuideOptionsFiltering.html
+share/doc/geeqie/GuideOptionsGeneral.html
+share/doc/geeqie/GuideOptionsHidden.html
+share/doc/geeqie/GuideOptionsImage.html
+share/doc/geeqie/GuideOptionsKeyboard.html
+share/doc/geeqie/GuideOptionsLayout.html
+share/doc/geeqie/GuideOptionsMetadata.html
+share/doc/geeqie/GuideOptionsWindow.html
+share/doc/geeqie/GuideOtherWindows.html
+share/doc/geeqie/GuideOtherWindowsImageProperties.html
+share/doc/geeqie/GuideOtherWindowsImageWindow.html
+share/doc/geeqie/GuideOtherWindowsPanView.html
+share/doc/geeqie/GuidePrinting.html
+share/doc/geeqie/GuideReference.html
+share/doc/geeqie/GuideReferenceCommandLine.html
+share/doc/geeqie/GuideReferenceKeyboardShortcuts.html
+share/doc/geeqie/GuideReferenceManagement.html
+share/doc/geeqie/GuideReferenceThumbnails.html
+share/doc/geeqie/GuideSidebars.html
+share/doc/geeqie/GuideSidebarsInfo.html
+share/doc/geeqie/GuideSidebarsSortManager.html
+share/doc/geeqie/Imageviewing.html
+share/doc/geeqie/Layouttab.html
+share/doc/geeqie/LegalNotice.html
+share/doc/geeqie/License.html
+share/doc/geeqie/Miscellaneous.html
+share/doc/geeqie/Papertab.html
+share/doc/geeqie/Preview.html
+share/doc/geeqie/Printbutton.html
+share/doc/geeqie/Printertab.html
+share/doc/geeqie/README
+@comment share/doc/geeqie/README.lirc
+share/doc/geeqie/Rememberprintsettings.html
+@comment share/doc/geeqie/TODO
+share/doc/geeqie/Texttab.html
+share/doc/geeqie/Thecollectionwindow.html
+share/doc/geeqie/index.html
+share/geeqie/
+share/geeqie/applications/
+share/geeqie/applications/geeqie-import-geeqie.desktop
+share/geeqie/applications/geeqie-import-gqview.desktop
+share/geeqie/applications/geeqie-ufraw-id.desktop
+@comment share/geeqie/applications/geeqie-ufraw-recursive.desktop
+@comment share/geeqie/applications/geeqie-ufraw.desktop
+share/geeqie/applications/rotate.desktop
+share/geeqie/applications/symlink.desktop
+share/geeqie/template.desktop
+share/pixmaps/
+share/pixmaps/geeqie.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
