@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.78 2011/03/07 13:00:53 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.79 2011/03/09 10:45:27 sthen Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -25,10 +25,14 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	cannot be sold, see section 4 of license
 PERMIT_DISTFILES_FTP=	yes
 
+LIB_DEPENDS +=	devel/pcre
+
 MAKE_DEBUG ?=
+MAKE_CCARGS +=	-I. -I../../include
 MAKE_CCARGS +=	-DDEF_CONFIG_DIR=\"${SYSCONFDIR}/postfix\"
 MAKE_CCARGS +=	-DDEF_DATA_DIR=\"/var/postfix\"
 MAKE_CCARGS +=	-DUSE_TLS
+MAKE_CCARGS +=	-DUSE_SASL_AUTH
 MAKE_AUXLIBS +=	-lssl -lcrypto
 
 WANTLIB=	c crypto ssl pcre
@@ -37,46 +41,39 @@ ALL_TARGET=	default
 
 NO_REGRESS=	Yes
 
-MAKE_CCARGS +=	-DUSE_SASL_AUTH
-
-# always include pcre
-LIB_DEPENDS +=	devel/pcre
-MAKE_CCARGS +=	-DHAS_PCRE -I${LOCALBASE}/include
-MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lpcre
-
 FLAVORS +=	sasl2 ldap mysql pgsql db4 sqlite
 FLAVOR ?=
 
 .if ${FLAVOR:L:Msasl2}
 LIB_DEPENDS +=	security/cyrus-sasl2
 WANTLIB +=	sasl2
-MAKE_CCARGS +=	-I${LOCALBASE}/include -I${LOCALBASE}/include/sasl -DUSE_CYRUS_SASL
+MAKE_CCARGS +=	-DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
 MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lsasl2
 .endif
 
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS +=	openldap-client->=2,<3:databases/openldap
+LIB_DEPENDS +=	databases/openldap>=2,<3
 WANTLIB +=	ldap>=2 lber
-MAKE_CCARGS +=	-I${LOCALBASE}/include -DHAS_LDAP
+MAKE_CCARGS +=	-DHAS_LDAP -I${LOCALBASE}/include
 MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lldap -llber
 .endif
 
 .if ${FLAVOR:L:Mmysql}
 LIB_DEPENDS +=	databases/mysql
 WANTLIB +=	lib/mysql/mysqlclient>=10
-MAKE_CCARGS +=	-I${LOCALBASE}/include/mysql -DHAS_MYSQL
+MAKE_CCARGS +=	-DHAS_MYSQL -I${LOCALBASE}/include/mysql
 MAKE_AUXLIBS +=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .endif
 
 .if ${FLAVOR:L:Mpgsql}
 LIB_DEPENDS +=	databases/postgresql
 WANTLIB +=	pq>=3
-MAKE_CCARGS +=	-I${LOCALBASE}/include/postgresql -DHAS_PGSQL
+MAKE_CCARGS +=	-DHAS_PGSQL -I${LOCALBASE}/include/postgresql
 MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lpq
 .endif
 
 .if ${FLAVOR:L:Mdb4}
-LIB_DEPENDS +=	db->=4,<5:databases/db/v4
+LIB_DEPENDS +=	databases/db/v4>=4,<5
 WANTLIB +=	lib/db4/db>=4
 MAKE_CCARGS +=	-I${LOCALBASE}/include/db4
 MAKE_AUXLIBS +=	-L${LOCALBASE}/lib/db4 -ldb
@@ -85,7 +82,7 @@ MAKE_AUXLIBS +=	-L${LOCALBASE}/lib/db4 -ldb
 .if ${FLAVOR:L:Msqlite}
 LIB_DEPENDS +=	databases/sqlite3
 WANTLIB +=	pthread sqlite3
-MAKE_CCARGS +=	-I${LOCALBASE}/include -DHAS_SQLITE
+MAKE_CCARGS +=	-DHAS_SQLITE -I${LOCALBASE}/include
 MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lsqlite3 -pthread
 .endif
 
