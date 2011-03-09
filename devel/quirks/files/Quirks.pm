@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.41 2011/03/09 10:02:36 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.42 2011/03/09 10:08:52 robert Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -170,6 +170,28 @@ my $stem_extensions = {
 	'p5-UUID' => 'p5-ossp-uuid',
 # 5.0
 	'gqview' => 'geeqie',
+	'openoffice' => 'libreoffice',
+	'openoffice-kde' => 'libreoffice-kde',
+	'openoffice-java' => 'libreoffice-java',
+	'openoffice-i18n-bg' => 'libreoffice-i18n-bg',
+	'openoffice-i18n-ca' => 'libreoffice-i18n-ca',
+	'openoffice-i18n-de' => 'libreoffice-i18n-de',
+	'openoffice-i18n-es' => 'libreoffice-i18n-es',
+	'openoffice-i18n-fa' => 'libreoffice-i18n-fa',
+	'openoffice-i18n-fi' => 'libreoffice-i18n-fi',
+	'openoffice-i18n-fr' => 'libreoffice-i18n-fr',
+	'openoffice-i18n-hu' => 'libreoffice-i18n-hu',
+	'openoffice-i18n-it' => 'libreoffice-i18n-it',
+	'openoffice-i18n-ja' => 'libreoffice-i18n-ja',
+	'openoffice-i18n-ko' => 'libreoffice-i18n-ko',
+	'openoffice-i18n-lt' => 'libreoffice-i18n-lt',
+	'openoffice-i18n-lv' => 'libreoffice-i18n-lv',
+	'openoffice-i18n-nl' => 'libreoffice-i18n-nl',
+	'openoffice-i18n-pl' => 'libreoffice-i18n-pl',
+	'openoffice-i18n-pt-br' => 'libreoffice-i18n-pt-br',
+	'openoffice-i18n-ru' => 'libreoffice-i18n-ru',
+	'openoffice-i18n-sl' => 'libreoffice-i18n-sl',
+	'openoffice-i18n-sv' => 'libreoffice-i18n-sv',
 };
 
 # ->is_base_system($handle, $state):
