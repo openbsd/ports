@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/01/17 16:13:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/03/09 06:23:35 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS=		devel/gobject-introspection>=0.9.12p0 \
 LIB_DEPENDS=		devel/libgee \
 			STEM->=0.12.0p0:net/telepathy/telepathy-glib \
 			textproc/libxml
-REGRESS_DEPENDS=	${PKGNAME}:${BASE_PKGPATH}
+REGRESS_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH}
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}

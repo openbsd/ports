@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/11/15 19:45:56 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2011/03/09 06:23:35 ajacoutot Exp $
 
 COMMENT=		high-performance CORBA Object Request Broker
 
@@ -26,7 +26,7 @@ MODULES=		devel/gettext \
 LIB_DEPENDS =		devel/libIDL \
 			devel/glib2
 WANTLIB +=		IDL-2 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-REGRESS_DEPENDS =	${PKGNAME}:${BUILD_PKGPATH}
+REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 
 CONFIGURE_STYLE=	autoconf

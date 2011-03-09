@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/03/09 06:23:35 ajacoutot Exp $
 
 COMMENT=	practical and portable Scheme system
 
@@ -35,7 +35,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -pthread" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
 
 REGRESS_TARGET=		bench
-REGRESS_DEPENDS=	${PKGNAME}:lang/chicken
+REGRESS_DEPENDS=	${FULLPKGNAME}:lang/chicken
 
 CFLAGS+=		-I${LOCALBASE}/include
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/01/17 15:42:08 pea Exp $
+# $OpenBSD: Makefile,v 1.11 2011/03/09 06:23:35 ajacoutot Exp $
 
 COMMENT = 	gnu privacy guard - a free PGP replacement
 
@@ -53,7 +53,7 @@ CONFIGURE_ARGS +=	--disable-ldap
 RUN_DEPENDS = 		security/pinentry
 
 # gpg-agent must be installed to run the regress tests
-REGRESS_DEPENDS = 	${PKGNAME}:${BUILD_PKGPATH}
+REGRESS_DEPENDS = 	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 USE_GMAKE = 		Yes
 USE_GROFF =		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/03/09 06:23:35 ajacoutot Exp $
 
 COMMENT=		grep like tool, aimed at programmers
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/p5-File-Next
-REGRESS_DEPENDS=	${PKGNAME}:${BUILD_PKGPATH}
+REGRESS_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 post-build:
 	@cp ${WRKBUILD}/ack-base ${WRKBUILD}/ack

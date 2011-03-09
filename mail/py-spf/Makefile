@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/09 06:23:35 ajacoutot Exp $
 
 COMMENT=	Sender-Policy-Framework queries in Python
 
@@ -24,7 +24,7 @@ MODULES=        lang/python
 
 BUILD_DEPENDS=	net/py-dns
 
-REGRESS_DEPENDS=${PKGNAME}:${BUILD_PKGPATH} \
+REGRESS_DEPENDS=${FULLPKGNAME}:${BUILD_PKGPATH} \
 		textproc/py-yaml
 
 do-regress:
