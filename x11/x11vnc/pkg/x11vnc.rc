@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: x11vnc.rc,v 1.6 2011/01/05 16:05:54 ajacoutot Exp $
+# $OpenBSD: x11vnc.rc,v 1.7 2011/03/09 18:51:49 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/x11vnc"
 daemon_flags="-localhost -logfile /var/log/x11vnc -ncache 0 -display :0 -forever -loop100 -auth /etc/X11/xdm/authdir/authfiles/A:0-*"
@@ -10,7 +10,7 @@ daemon_flags="-localhost -logfile /var/log/x11vnc -ncache 0 -display :0 -forever
 rc_reload=NO
 
 rc_start() {
-	${rcexec} "${daemon} ${daemon_flags}" >/dev/null 2>&1 &
+	${rcexec} "${daemon} ${daemon_flags}" 2>/dev/null &
 }
 
 rc_cmd $1

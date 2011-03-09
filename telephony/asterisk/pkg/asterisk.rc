@@ -1,13 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: asterisk.rc,v 1.1 2011/01/04 22:35:47 fgsch Exp $
+# $OpenBSD: asterisk.rc,v 1.2 2011/03/09 18:51:49 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/asterisk"
 
 . /etc/rc.d/rc.subr
 
 rc_start() {
-	${TRUEPREFIX}/sbin/safe_asterisk > /dev/null
+	${TRUEPREFIX}/sbin/safe_asterisk
 }
 
 rc_stop() {

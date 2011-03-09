@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: postgresql.rc,v 1.6 2011/01/05 16:05:54 ajacoutot Exp $
+# $OpenBSD: postgresql.rc,v 1.7 2011/03/09 18:51:48 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/postgres"
 daemon_user="_postgresql"
@@ -12,13 +12,12 @@ datadir="/var/postgresql/data"
 
 rc_start() {
 	rm -f ${datadir}/postmaster.pid
-	${rcexec} "${bin} -D ${datadir} start -l /var/postgresql/logfile" \
-		>/dev/null
+	${rcexec} "${bin} -D ${datadir} start -l /var/postgresql/logfile"
 }
 
 rc_stop() {
 	${rcexec} "${bin} -D ${datadir} stop -m fast" >/dev/null || \
-		${rcexec} "${bin} -D ${datadir} stop -m immediate" >/dev/null
+		${rcexec} "${bin} -D ${datadir} stop -m immediate"
 }
 
 rc_cmd $1

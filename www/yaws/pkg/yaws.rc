@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: yaws.rc,v 1.3 2011/01/05 16:05:54 ajacoutot Exp $
+# $OpenBSD: yaws.rc,v 1.4 2011/03/09 18:51:49 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/yaws"
 daemon_flags="--daemon --conf ${SYSCONFDIR}/yaws/yaws.conf"
@@ -9,12 +9,12 @@ daemon_flags="--daemon --conf ${SYSCONFDIR}/yaws/yaws.conf"
 
 pexp="${LOCALBASE}/lib/erlang/erts.*${TRUEPREFIX}/lib/yaws/ebin -run yaws"
 
-rc_stop() {
-	${rcexec} "${daemon} --stop" >/dev/null
-}
-
 rc_reload() {
 	${rcexec} "${daemon} --hup" >/dev/null
+}
+
+rc_stop() {
+	${rcexec} "${daemon} --stop"
 }
 
 rc_cmd $1

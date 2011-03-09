@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/01/05 16:05:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/09 18:51:49 ajacoutot Exp $
 
 COMMENT-main=		high performance webserver written in Erlang, libraries
 COMMENT-web=		high performance webserver written in Erlang, docroot
@@ -6,7 +6,7 @@ COMMENT-web=		high performance webserver written in Erlang, docroot
 VERSION=		1.89
 DISTNAME=		yaws-${VERSION}
 PKGNAME-main=		yaws-${VERSION}
-REVISION-main=		4
+REVISION-main=		5
 PKGNAME-web=		yaws-web-${VERSION}
 REVISION-web=		0
 CATEGORIES=		www

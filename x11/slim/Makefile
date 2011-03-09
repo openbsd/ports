@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/01/17 14:57:38 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2011/03/09 18:51:49 ajacoutot Exp $
 
 COMMENT=	simple login manager
 
 DISTNAME=	slim-1.3.2
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11
 HOMEPAGE=	http://slim.berlios.de/
