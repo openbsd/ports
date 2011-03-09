@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:34 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/03/09 12:11:07 jasper Exp $
 
 COMMENT=	implementation of Gadu-Gadu IM protocol
 
-DISTNAME=	libgadu-1.9.0
+DISTNAME=	libgadu-1.10.0
 EPOCH =		0
 CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}files/
 
-SHARED_LIBS=	gadu	5.0
+SHARED_LIBS=	gadu	5.1
 
 HOMEPAGE=	http://toxygen.net/libgadu/
 
@@ -20,7 +20,9 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-silent-rules \
 		--without-bind \
+		--without-gnutls \
 		--without-openssl
 
 NO_REGRESS=	Yes
