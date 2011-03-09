@@ -1,24 +1,20 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/15 19:46:07 espie Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.32 2011/03/09 06:17:08 ajacoutot Exp $
 
 COMMENT=	Python bindings for glib2 gobject
 
 GNOME_PROJECT=	pygobject
-GNOME_VERSION=	2.26.0
+GNOME_VERSION=	2.28.0
 
 PKGNAME=	py-gobject-${GNOME_VERSION}
 EPOCH=		0
-REVISION=	0
 
-SHARED_LIBS +=  pyglib-2.0-python${MODPY_VERSION} 1.0      # .0.0
+CATEGORIES=	devel
 
-PYGLIB_VER=	${LIBpyglib-2.0-python${MODPY_VERSION}_VERSION}
-SUBST_VARS+=	PYGLIB_VER
-
-CATEGORIES=	devel x11
+SHARED_LIBS +=  pyglib-2.0-python${MODPY_VERSION} 2.0      # .0.0
 
 HOMEPAGE=	http://www.pygtk.org/
+
+MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,7 +22,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	pcre z ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += m pcre python${MODPY_VERSION} util z
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -35,12 +32,12 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	devel/glib2 \
 		devel/libffi
 
-
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--disable-introspection
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-introspection \
+		--disable-cairo
 
-REGRESS_DEPENDS=	${PKGNAME}:${BUILD_PKGPATH}
-
+REGRESS_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 REGRESS_IS_INTERACTIVE= x11
 
 post-install:
