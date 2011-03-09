@@ -1,5 +1,6 @@
---- conf/master.cf.orig	Fri Dec 31 09:14:51 2010
-+++ conf/master.cf	Fri Jan  7 22:16:50 2011
+$OpenBSD: patch-conf_master_cf,v 1.1 2011/03/09 10:47:31 sthen Exp $
+--- conf/master.cf.orig	Fri Dec 31 14:14:51 2010
++++ conf/master.cf	Wed Mar  9 10:45:45 2011
 @@ -8,49 +8,49 @@
  # service type  private unpriv  chroot  wakeup  maxproc command + args
  #               (yes)   (yes)   (yes)   (never) (100)
