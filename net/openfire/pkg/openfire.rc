@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# $OpenBSD: openfire.rc,v 1.1 2011/03/09 16:50:40 ian Exp $
+
+OPENFIRE_HOME="${TRUEPREFIX}/openfire"
+OPENFIRE_LIB="${OPENFIRE_HOME}/lib"
+
+JAVACMD="$(javaPathHelper -c openfire)"
+JAVA_HOME="$(javaPathHelper -h openfire)"
+
+daemon="${JAVACMD}"
+daemon_flags="-server -DopenfireHome=${OPENFIRE_HOME} -Dopenfire.lib.dir=${OPENFIRE_LIB} -jar ${OPENFIRE_LIB}/startup.jar"
+daemon_user="_openfire"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

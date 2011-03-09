@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2010/11/13 07:31:59 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2011/03/09 16:50:40 ian Exp $
 
 Using openfire in an OpenBSD environment
 ========================================
@@ -11,12 +11,14 @@ Using openfire in an OpenBSD environment
 
 2) openfire may be started by executing:
 
-   '${TRUEPREFIX}/sbin/openfirectl start'
+   ${SYSCONFDIR}/rc.d/openfire start
 
-   as root.
+   as root. To arrange for this to happen at boot, include 'openfire'
+   in the rc_scripts variable in ${SYSCONFDIR}/rc.d/rc.conf/local
 
 3) After starting openfire, you may access the web interface at
-   http://[hostname]:9090/
+   http://[hostname]:9090/; when you first login there is a configuration
+   dialog. After enabling SSL, you can use https://[hostname]:9091/
 
 4) openfire's automated setup and plugin installation services require
    several directories to be writable by the _openfire user.  When you
@@ -29,8 +31,7 @@ Using openfire in an OpenBSD environment
 
    <sasl><mechs>PLAIN</mechs></sasl>
 
-   to:
-
-   ${TRUEPREFIX}/openfire/conf/openfire.xml
+   as the second-last line of ${TRUEPREFIX}/openfire/conf/openfire.xml
+   (e.g, just inside the closing XML tag).
 
    Then restart openfire for the changes to take effect.

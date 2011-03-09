@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/13 07:31:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/03/09 16:50:40 ian Exp $
 @newgroup _openfire:632
 @newuser _openfire:632:_openfire:daemon:openfire user:/var/empty:/bin/sh
 @mode 775
@@ -17,11 +17,13 @@ openfire/lib/jasper-compiler.jar
 openfire/lib/jasper-runtime.jar
 openfire/lib/jdic.jar
 openfire/lib/jtds.jar
+openfire/lib/log4j.xml
 openfire/lib/mail.jar
 openfire/lib/mysql.jar
 openfire/lib/openfire.jar
 openfire/lib/postgres.jar
 openfire/lib/servlet.jar
+openfire/lib/slf4j-log4j12.jar
 openfire/lib/startup.jar
 openfire/lib/tray.dll
 @mode 770
@@ -314,6 +316,14 @@ openfire/resources/database/upgrade/20/openfire_oracle.sql
 openfire/resources/database/upgrade/20/openfire_postgresql.sql
 openfire/resources/database/upgrade/20/openfire_sqlserver.sql
 openfire/resources/database/upgrade/20/openfire_sybase.sql
+openfire/resources/database/upgrade/21/
+openfire/resources/database/upgrade/21/openfire_db2.sql
+openfire/resources/database/upgrade/21/openfire_hsqldb.sql
+openfire/resources/database/upgrade/21/openfire_mysql.sql
+openfire/resources/database/upgrade/21/openfire_oracle.sql
+openfire/resources/database/upgrade/21/openfire_postgresql.sql
+openfire/resources/database/upgrade/21/openfire_sqlserver.sql
+openfire/resources/database/upgrade/21/openfire_sybase.sql
 openfire/resources/database/upgrade/4/
 openfire/resources/database/upgrade/4/openfire_db2.sql
 openfire/resources/database/upgrade/4/openfire_hsqldb.sql
@@ -366,7 +376,6 @@ openfire/resources/spank/
 openfire/resources/spank/WEB-INF/
 openfire/resources/spank/WEB-INF/web.xml
 openfire/resources/spank/index.html
-sbin/openfirectl
 share/doc/openfire/
 share/doc/openfire/database-guide.html
 share/doc/openfire/database.html
@@ -423,3 +432,7 @@ share/examples/openfire/security/truststore
 @owner root
 @group _openfire
 @sample openfire/resources/security/truststore
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/openfire
