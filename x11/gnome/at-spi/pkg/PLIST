@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/11/29 14:17:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/03/09 17:02:11 ajacoutot Exp $
 include/at-spi-1.0/
 include/at-spi-1.0/cspi/
 include/at-spi-1.0/cspi/spi-impl.h
@@ -348,8 +348,6 @@ share/locale/is/LC_MESSAGES/at-spi.mo
 share/locale/it/LC_MESSAGES/at-spi.mo
 share/locale/ja/LC_MESSAGES/at-spi.mo
 share/locale/ka/LC_MESSAGES/at-spi.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/at-spi.mo
 share/locale/kn/LC_MESSAGES/at-spi.mo
 share/locale/ko/LC_MESSAGES/at-spi.mo
@@ -388,8 +386,6 @@ share/locale/ta/LC_MESSAGES/at-spi.mo
 share/locale/te/LC_MESSAGES/at-spi.mo
 share/locale/th/LC_MESSAGES/at-spi.mo
 share/locale/tr/LC_MESSAGES/at-spi.mo
-share/locale/ug/
-share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/at-spi.mo
 share/locale/uk/LC_MESSAGES/at-spi.mo
 share/locale/vi/LC_MESSAGES/at-spi.mo

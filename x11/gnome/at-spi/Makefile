@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2010/11/29 14:17:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2011/03/09 17:02:11 ajacoutot Exp $
 
 COMMENT=		GNOME accessibility interface
 
 GNOME_PROJECT=		at-spi
 GNOME_VERSION=		1.32.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=	spi                  0.0      # .10.11
 SHARED_LIBS +=	loginhelper          0.0      # .0.0
@@ -24,7 +24,7 @@ WANTLIB += Xrender Xtst atk-1.0 c cairo dbus-1 dbus-glib-1 expat
 WANTLIB += fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += xcb z xcb-render xcb-render-util bonobo-2
+WANTLIB += xcb z xcb-render bonobo-2 GL Xxf86vm drm xcb-shm
 WANTLIB += bonobo-activation gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0
 
 MODULES=	devel/gettext \
