@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/09 18:15:23 jasper Exp $
 
 COMMENT =	python powered git gui
 
-MODPY_EGG_VERSION=	1.3.8
-DISTNAME =	cola-${MODPY_EGG_VERSION}-src
+MODPY_EGG_VERSION=	1.4.3.1
+DISTNAME =	cola-${MODPY_EGG_VERSION}
 PKGNAME =	git-${DISTNAME:S/-src//}
-REVISION =	3
 CATEGORIES = 	devel x11
 
 WRKDIST =	${WRKDIR}/${DISTNAME:S/-src//}
@@ -29,7 +28,9 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		textproc/xxdiff \
 		x11/py-qt4
 
+MODPY_ADJ_FILES=	bin/git-cola
+
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/bin/git-cola
+	${SUBST_CMD} ${WRKSRC}/cola/cmds.py
 
 .include <bsd.port.mk>
