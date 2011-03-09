@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/12/12 18:51:23 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.20 2011/03/09 12:45:23 pirofti Exp $
 
 COMMENT =	command-line program to download videos from YouTube.com
 
-V = 		2010.12.09
-DISTNAME =	rg3-youtube-dl-${V}-0-gf83ae78
-PKGNAME =	youtube-dl-${V}
-WRKDIST = 	${WRKDIR}/rg3-youtube-dl-f83ae78
+V = 		2011.02.25c
+DISTNAME =	youtube-dl-${V}
+WRKDIST = 	${WRKDIR}/youtube-dl
 DIST_SUBDIR =	youtube-dl
 CATEGORIES =	www
 
@@ -22,11 +21,18 @@ PERMIT_DISTFILES_FTP =		Yes
 MASTER_SITES =	http://spacehopper.org/mirrors/
 #MASTER_SITES =	http://bitbucket.org/rg3/youtube-dl/get/
 
+EXTRACT_ONLY =
+EXTRACT_SUFX =
+
 MODULES =	lang/python
 
 NO_REGRESS =	Yes
 
 PKG_ARCH =	*
+
+do-extract:
+	mkdir ${WRKDIST}
+	cp ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKDIST}/youtube-dl
 
 do-build:
 	sed '1s,.*,#!${MODPY_BIN},' ${WRKBUILD}/youtube-dl \
