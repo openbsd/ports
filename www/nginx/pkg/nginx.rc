@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: nginx.rc,v 1.6 2011/03/09 18:51:49 ajacoutot Exp $
+# $OpenBSD: nginx.rc,v 1.7 2011/03/09 19:37:47 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/nginx"
 
@@ -9,7 +9,7 @@ daemon="${TRUEPREFIX}/sbin/nginx"
 pexp="nginx:.*master.*process"
 
 rc_reload() {
-	${daemon} -s reload >/dev/null
+	${daemon} -s reload
 }
 
 rc_stop() {
