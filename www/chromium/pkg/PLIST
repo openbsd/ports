@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/03/03 13:47:47 robert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/03/09 17:24:21 sthen Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -231,3 +231,4 @@ chrome/resources/inspector/Images/warningOrangeDot.png
 chrome/resources/inspector/Images/warningsErrors.png
 chrome/resources/inspector/devTools.css
 chrome/resources/inspector/devtools.html
+@man man/man1/chrome.1
