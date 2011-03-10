@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.253 2011/03/09 10:30:05 robert Exp $
+# $OpenBSD: Makefile,v 1.254 2011/03/10 13:43:01 jasper Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -212,6 +212,7 @@
      SUBDIR += smbsniff
      SUBDIR += smtpscan
      SUBDIR += smurflog
+     SUBDIR += snort2pf
      SUBDIR += ssh-askpass-fullscreen
      SUBDIR += sshguard
      SUBDIR += sshguard,tcpd
