@@ -1,9 +1,9 @@
-$OpenBSD: patch-rakelib_vm_rake,v 1.1 2011/01/06 20:20:01 jeremy Exp $
+$OpenBSD: patch-rakelib_vm_rake,v 1.2 2011/03/10 20:40:33 jeremy Exp $
 
 Use intree versions of libffi, instead of bundled versions.
 
---- rakelib/vm.rake.orig	Tue Dec 21 11:30:57 2010
-+++ rakelib/vm.rake	Thu Jan  6 11:13:10 2011
+--- rakelib/vm.rake.orig	Tue Feb 15 14:46:13 2011
++++ rakelib/vm.rake	Thu Feb 17 10:14:23 2011
 @@ -53,7 +53,7 @@ dep_file    = "vm/.depends.mf"
  vm_objs     = %w[ vm/drivers/cli.o ]
  vm_srcs     = %w[ vm/drivers/cli.cpp ]
@@ -59,4 +59,4 @@ Use intree versions of libffi, instead of bundled versions.
 +      $ex_libs << "-L${LOCALBASE}/lib"
      end
  
-     $ex_libs << "-ldl" unless RUBY_PLATFORM =~ /bsd/
+     $ex_libs << "-ldl" unless RUBY_PLATFORM =~ /bsd|haiku/
