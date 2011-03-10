@@ -1,0 +1,5 @@
+Acme::Damn provides a single routine, damn(), which takes a blessed
+reference (a Perl object), and *unblesses* it, to return the original
+reference. I can't think of any reason why you might want to do this,
+but just because it's of no use doesn't mean that you shouldn't be able
+to do it.
