@@ -1,6 +1,6 @@
-$OpenBSD: patch-makeiso_sh,v 1.3 2010/05/31 07:35:55 form Exp $
---- makeiso.sh.orig	Wed Apr 28 19:13:14 2010
-+++ makeiso.sh	Mon May 31 04:05:02 2010
+$OpenBSD: patch-makeiso_sh,v 1.4 2011/03/10 08:02:36 form Exp $
+--- makeiso.sh.orig	Mon Jan 24 00:11:04 2011
++++ makeiso.sh	Tue Jan 25 21:18:36 2011
 @@ -1,23 +1,19 @@
  #!/bin/sh
  
@@ -56,19 +56,20 @@ $OpenBSD: patch-makeiso_sh,v 1.3 2010/05/31 07:35:55 form Exp $
 -echo -e "Just boot from this CD and Memtest86+ will launch" >> README.TXT
 +echo "There is nothing to do here!" > README.TXT
 +echo >> README.TXT
-+echo "Memtest86+ ${V-4.10} is located on the bootsector of this CD." >> README.TXT
++echo "Memtest86+ ${V-4.20} is located on the bootsector of this CD." >> README.TXT
 +echo "Just boot from this CD and Memtest86+ will launch." >> README.TXT
  
--mkisofs -A "MKISOFS 1.1.2" -p "Memtest86+ 4.10" -publisher "Samuel D. <sdemeule@memtest.org>" -b boot/memtest.img -c boot/boot.catalog -V "MT410" -o memtest.iso .
--mv memtest.iso ../mt410.iso
+-mkisofs -A "MKISOFS 1.1.2" -p "Memtest86+ 4.20" -publisher "Samuel D. <sdemeule@memtest.org>" -b boot/memtest.img -c boot/boot.catalog -V "MT410" -o memtest.iso .
+-mv memtest.iso ../mt420.iso
 -cd ..
 -rm -rf cd
+-
+-echo "Done! Memtest86+ 4.20 ISO is mt420.iso"
 +mv ../memtest.img boot
-+mkhybrid -J -V "Memtest86+ ${V-4.10}" -b boot/memtest.img -c boot/boot.catalog \
++mkhybrid -J -V "Memtest86+ ${V-4.20}" -b boot/memtest.img -c boot/boot.catalog \
 +    -hide boot -hide-joliet boot -o ../memtest.iso .
 +rm -f boot/*
- 
--echo "Done! Memtest86+ 4.10 ISO is mt410.iso"
++ 
 +mv ../memtest_s.img boot
-+mkhybrid -J -V "Memtest86+ ${V-4.10}" -b boot/memtest_s.img -c boot/boot.catalog \
++mkhybrid -J -V "Memtest86+ ${V-4.20}" -b boot/memtest_s.img -c boot/boot.catalog \
 +    -hide boot -hide-joliet boot -o ../memtest_s.iso .
