@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2004/09/14 23:43:59 espie Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/03/10 22:51:29 sthen Exp $
 ${P5SITE}/Parse/
 ${P5SITE}/Parse/RecDescent.pm
-${P5SITE}/Parse/RecDescent.pod
 @man man/man3p/Parse::RecDescent.3p
