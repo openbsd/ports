@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.150 2011/03/07 07:11:52 ajacoutot Exp $
+$OpenBSD: user.list,v 1.151 2011/03/10 10:00:40 fgsch Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -24,7 +24,7 @@ id  user		group		port options
 513 _vsftpd		_vsftpd		net/vsftpd
 514 _scanlogd		_scanlogd	security/scanlogd
 515 _squid		_squid		www/squid
-516 _privoxy		_privoxy	www/privoxyy
+516 _privoxy		_privoxy	www/privoxy
 517 _wnn				japanese/Wnn
 518 _dovecot		_dovecot	mail/dovecot
 519 _news				news/leafnode
@@ -34,7 +34,7 @@ id  user		group		port options
 523 _ffproxy		_ffproxy	www/ffproxy
 524			_mail		mail/openwebmail
 525 _quagga		_quagga		net/quagga
-526 _tomcat		_tomcat		www/jakarta-tomcat
+526 _tomcat		_tomcat		www/tomcat
 527 _milter-regex	_milter-regex	mail/milter-regex
 528 _stunnel		_stunnel	security/stunnel
 529 _ups		_ups		sysutils/nut
@@ -60,7 +60,7 @@ id  user		group		port options
 549 _netplan		_netplan	misc/plan
 550 _nagios		_nagios		net/nagios
 551 _gpsd				misc/gpsd
-552 _xavante		_xavante	www/xavante
+#552 _xavante		_xavante	www/xavante
 553 _saned		_saned		graphics/sane-backends
 554 _avenger				mail/avenger
 555			_akpop3d	mail/akpop3d
@@ -75,7 +75,7 @@ id  user		group		port options
 564 _prelude		_prelude	security/prelude
 565 _pfflowd		_pfflowd	net/pfflowd
 566 _tor		_tor		net/tor
-567 _dk-milter		_dk-milter	mail/dk-milter
+#567 _dk-milter		_dk-milter	mail/dk-milter
 568 _milter-greylist			mail/milter-greylist
 569 _dkim-milter	_dkim-milter	mail/dkim-milter
 570 _mdefang		_mdefang	mail/mimedefang
@@ -129,7 +129,7 @@ id  user		group		port options
 618 _ajaxterm		_ajaxterm	www/ajaxterm
 619 _ircd-ratbox	_ircd-ratbox	net/ircd-ratbox
 620 _adsuck		_adsuck		net/adsuck
-621 _couchdb		_couchdb	databases/couchdb
+621 _couchdb		_couchdb	databases/apache-couchdb
 622 _ngrep		_ngrep		net/ngrep
 623 _zabbix		_zabbix		net/zabbix
 624 _noip		_noip		net/no-ip
@@ -147,7 +147,7 @@ id  user		group		port options
 636 _ettercap		_ettercap	net/ettercap
 637 _memcached		_memcached	misc/memcached
 638 _prosody		_prosody	net/prosody
-639 _polkituser		_polkituser	sysutils/policykit
+#639 _polkituser		_polkituser	sysutils/policykit
 640 _astmanproxy	_astmanproxy	telephony/astmanproxy
 641 _ziproxy		_ziproxy	net/ziproxy
 642 _pure-ftpd		_pure-ftpd	net/pure-ftpd
@@ -155,7 +155,7 @@ id  user		group		port options
 644 _munin		_munin		net/munin
 645 _munin-plugin	_munin-plugin	net/munin
 646 _rabbitmq		_rabbitmq	net/rabbitmq
-647 _sqlgrey		_sqlgrey	net/sqlgrey
+647 _sqlgrey		_sqlgrey	mail/sqlgrey
 648 _sympa		_sympa		mail/sympa
 649 _nfcapd		_nfcapd		net/nfdump
 650 _aircontrol		_aircontrol	net/aircontrol
