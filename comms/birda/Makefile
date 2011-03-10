@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/19 21:04:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2011/03/10 17:28:35 jasper Exp $
 # $RuOBSD: Makefile,v 1.7 2003/08/18 18:40:14 grange Exp $
 
 COMMENT=		Bohlin's IrDA utilities
@@ -6,7 +6,7 @@ COMMENT=		Bohlin's IrDA utilities
 DISTNAME=		birda-1.1
 REVISION=		0
 CATEGORIES=		comms
-MASTER_SITES=		ftp://ftp.augustsson.net/pub/netbsd/
+MASTER_SITES=		http://distfiles.nl/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
