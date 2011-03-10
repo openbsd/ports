@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure,v 1.10 2011/03/07 19:20:28 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.11 2011/03/10 15:18:43 ajacoutot Exp $
+
+Unbreak on gcc3: remove non supported -Wno-address.
+
 --- configure.orig	Thu Feb 17 21:06:57 2011
-+++ configure	Fri Mar  4 21:59:31 2011
++++ configure	Thu Mar 10 07:45:39 2011
 @@ -17999,13 +17999,13 @@ fi
  # Thread lib detection
  ac_fn_c_check_func "$LINENO" "pthread_cond_timedwait" "ac_cv_func_pthread_cond_timedwait"
@@ -53,7 +56,19 @@ $OpenBSD: patch-configure,v 1.10 2011/03/07 19:20:28 ajacoutot Exp $
  fi
  
  fi
-@@ -19608,7 +19608,10 @@ if test "x$GCC" = "xyes"; then
+@@ -19569,11 +19569,6 @@ if test "x$GCC" = "xyes"; then
+   esac
+ 
+   case " $CFLAGS " in
+-  *[\ \	]-Wno-address[\ \	]*) ;;
+-  *) CFLAGS="$CFLAGS -Wno-address" ;;
+-  esac
+-
+-  case " $CFLAGS " in
+   *[\ \	]-Wfloat-equal[\ \	]*) ;;
+   *) if cc_supports_flag -Wfloat-equal; then
+         CFLAGS="$CFLAGS -Wfloat-equal"
+@@ -19608,7 +19603,10 @@ if test "x$GCC" = "xyes"; then
       ;;
    esac
  
@@ -65,7 +80,7 @@ $OpenBSD: patch-configure,v 1.10 2011/03/07 19:20:28 ajacoutot Exp $
    *[\ \	]-fPIE[\ \	]*) ;;
    *) if test x$dbus_win = xno && cc_supports_flag -fPIE; then
          PIE_CFLAGS="-fPIE"
-@@ -19620,6 +19623,7 @@ if test "x$GCC" = "xyes"; then
+@@ -19620,6 +19618,7 @@ if test "x$GCC" = "xyes"; then
       fi
       ;;
    esac
@@ -73,7 +88,7 @@ $OpenBSD: patch-configure,v 1.10 2011/03/07 19:20:28 ajacoutot Exp $
  
    ### Disabled warnings, and compiler flag overrides
  
-@@ -19636,13 +19640,6 @@ if test "x$GCC" = "xyes"; then
+@@ -19636,13 +19635,6 @@ if test "x$GCC" = "xyes"; then
    case " $CFLAGS " in
    *[\ \	]-Wno-sign-compare[\ \	]*) ;;
    *) CFLAGS="$CFLAGS -Wno-sign-compare" ;;
