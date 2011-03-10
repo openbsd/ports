@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/10 13:42:30 jasper Exp $
+@man man/man8/snort2pf.8
+@man man/man8/snort2pfmon.8
+sbin/snort2pf
+sbin/snort2pfmon
+@rcscript ${RCDIR}/snort2pf

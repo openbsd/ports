@@ -1,0 +1,15 @@
+$OpenBSD: README,v 1.1.1.1 2011/03/10 13:42:30 jasper Exp $
+
+Running snort2pf on OpenBSD
+==============================
+
+Adjusting pf.conf(5)
+--------------------
+In order to make use of snort2pf, one must add an anchor for in your pf.conf(5)
+file, like:
+
+  anchor snort2pf
+
+Or you can use a table, which is allows for more flexibility:
+
+  block in quick from <snort2pf>

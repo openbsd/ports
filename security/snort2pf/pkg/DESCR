@@ -1,0 +1,2 @@
+Snort2Pf is a small Perl daemon which greps Snort's alertfile and blocks
+the "naughty" hosts for a given amount of time using pfctl.
