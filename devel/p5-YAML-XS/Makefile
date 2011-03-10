@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/03/10 22:21:24 sthen Exp $
 
 COMMENT =	YAML implementation using XS and libyaml
 SHARED_ONLY =	Yes
 
 MODULES =	cpan
 
-V =		0.27
+V =		0.34
 DISTNAME =	YAML-LibYAML-$V
 PKGNAME =	p5-YAML-XS-$V
-REVISION =	1
 CATEGORIES =	devel
 USE_GROFF =	Yes
 
