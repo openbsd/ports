@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/10 23:15:37 sthen Exp $
 
 COMMENT=	efficient reading/writing of complete files
 
 MODULES=	cpan
-DISTNAME=	File-Slurp-9999.12
-REVISION=	1
+DISTNAME=	File-Slurp-9999.13
 CATEGORIES=	devel
 USE_GROFF =	Yes
 
