@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile.inc,v 1.79 2011/03/09 10:45:27 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.80 2011/03/10 12:07:24 sthen Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
-DISTNAME ?=	postfix-${VERSION}
-PKGNAME ?=	postfix-${VERSION:S/-/./}
+DISTNAME=	postfix-${VERSION}
+PKGNAME=	postfix-${VERSION:S/-/./}
 CATEGORIES=	mail
 
-MASTER_SITE_POSTFIX=\
+MASTER_SITE_POSTFIX= \
+		http://ftp.porcupine.org/mirrors/postfix-release/ \
 		ftp://ftp.porcupine.org/mirrors/postfix-release/ \
 		ftp://ftp.merit.edu/postfix/ \
 		ftp://ftp.sunet.se/pub/unix/mail/postfix/ \
@@ -25,15 +26,15 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	cannot be sold, see section 4 of license
 PERMIT_DISTFILES_FTP=	yes
 
-LIB_DEPENDS +=	devel/pcre
+LIB_DEPENDS+=	devel/pcre
 
-MAKE_DEBUG ?=
-MAKE_CCARGS +=	-I. -I../../include
-MAKE_CCARGS +=	-DDEF_CONFIG_DIR=\"${SYSCONFDIR}/postfix\"
-MAKE_CCARGS +=	-DDEF_DATA_DIR=\"/var/postfix\"
-MAKE_CCARGS +=	-DUSE_TLS
-MAKE_CCARGS +=	-DUSE_SASL_AUTH
-MAKE_AUXLIBS +=	-lssl -lcrypto
+MAKE_DEBUG?=
+MAKE_CCARGS+=	-I. -I../../include
+MAKE_CCARGS+=	-DDEF_CONFIG_DIR=\"${SYSCONFDIR}/postfix\"
+MAKE_CCARGS+=	-DDEF_DATA_DIR=\"/var/postfix\"
+MAKE_CCARGS+=	-DUSE_TLS
+MAKE_CCARGS+=	-DUSE_SASL_AUTH
+MAKE_AUXLIBS+=	-lssl -lcrypto
 
 WANTLIB=	c crypto ssl pcre
 
@@ -41,49 +42,49 @@ ALL_TARGET=	default
 
 NO_REGRESS=	Yes
 
-FLAVORS +=	sasl2 ldap mysql pgsql db4 sqlite
-FLAVOR ?=
+FLAVORS+=	sasl2 ldap mysql pgsql db4 sqlite
+FLAVOR?=
 
 .if ${FLAVOR:L:Msasl2}
-LIB_DEPENDS +=	security/cyrus-sasl2
-WANTLIB +=	sasl2
-MAKE_CCARGS +=	-DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
-MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lsasl2
+LIB_DEPENDS+=	security/cyrus-sasl2
+WANTLIB+=	sasl2
+MAKE_CCARGS+=	-DUSE_CYRUS_SASL -I${LOCALBASE}/include -I${LOCALBASE}/include/sasl
+MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2
 .endif
 
 .if ${FLAVOR:L:Mldap}
-LIB_DEPENDS +=	databases/openldap>=2,<3
-WANTLIB +=	ldap>=2 lber
-MAKE_CCARGS +=	-DHAS_LDAP -I${LOCALBASE}/include
-MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lldap -llber
+LIB_DEPENDS+=	databases/openldap>=2,<3
+WANTLIB+=	ldap>=2 lber
+MAKE_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include
+MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lldap -llber
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-LIB_DEPENDS +=	databases/mysql
-WANTLIB +=	lib/mysql/mysqlclient>=10
-MAKE_CCARGS +=	-DHAS_MYSQL -I${LOCALBASE}/include/mysql
-MAKE_AUXLIBS +=	-L${LOCALBASE}/lib/mysql -lmysqlclient
+LIB_DEPENDS+=	databases/mysql
+WANTLIB+=	lib/mysql/mysqlclient>=10
+MAKE_CCARGS+=	-DHAS_MYSQL -I${LOCALBASE}/include/mysql
+MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient
 .endif
 
 .if ${FLAVOR:L:Mpgsql}
-LIB_DEPENDS +=	databases/postgresql
-WANTLIB +=	pq>=3
-MAKE_CCARGS +=	-DHAS_PGSQL -I${LOCALBASE}/include/postgresql
-MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lpq
+LIB_DEPENDS+=	databases/postgresql
+WANTLIB+=	pq>=3
+MAKE_CCARGS+=	-DHAS_PGSQL -I${LOCALBASE}/include/postgresql
+MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lpq
 .endif
 
 .if ${FLAVOR:L:Mdb4}
-LIB_DEPENDS +=	databases/db/v4>=4,<5
-WANTLIB +=	lib/db4/db>=4
-MAKE_CCARGS +=	-I${LOCALBASE}/include/db4
-MAKE_AUXLIBS +=	-L${LOCALBASE}/lib/db4 -ldb
+LIB_DEPENDS+=	databases/db/v4>=4,<5
+WANTLIB+=	lib/db4/db>=4
+MAKE_CCARGS+=	-I${LOCALBASE}/include/db4
+MAKE_AUXLIBS+=	-L${LOCALBASE}/lib/db4 -ldb
 .endif
 
 .if ${FLAVOR:L:Msqlite}
-LIB_DEPENDS +=	databases/sqlite3
-WANTLIB +=	pthread sqlite3
-MAKE_CCARGS +=	-DHAS_SQLITE -I${LOCALBASE}/include
-MAKE_AUXLIBS +=	-L${LOCALBASE}/lib -lsqlite3 -pthread
+LIB_DEPENDS+=	databases/sqlite3
+WANTLIB+=	pthread sqlite3
+MAKE_CCARGS+=	-DHAS_SQLITE -I${LOCALBASE}/include
+MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsqlite3 -pthread
 .endif
 
 pre-configure:
@@ -96,6 +97,7 @@ do-configure:
 		CCARGS='${MAKE_CCARGS}' AUXLIBS="${MAKE_AUXLIBS}"
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/postfix
 	@(cd ${WRKSRC}; sh postfix-install \
 		-non-interactive \
 		mail_owner=_postfix \
@@ -112,12 +114,11 @@ do-install:
 		readme_directory=${TRUEPREFIX}/share/doc/postfix/readme \
 		html_directory=${TRUEPREFIX}/share/doc/postfix/html \
 		)
-	@${INSTALL_SCRIPT} ${FILESDIR}/postfix-enable ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${FILESDIR}/postfix-disable ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${FILESDIR}/postfix-install ${PREFIX}/sbin
-	@${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${PREFIX}/sbin/qshape
-	@${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${PREFIX}/man/man1
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/postfix
+	${INSTALL_SCRIPT} ${FILESDIR}/postfix-enable ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${FILESDIR}/postfix-disable ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${FILESDIR}/postfix-install ${PREFIX}/sbin
+	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${PREFIX}/sbin/qshape
+	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${PREFIX}/man/man1
 	@mv ${WRKINST}${SYSCONFDIR}/postfix/* ${PREFIX}/share/examples/postfix
 	@rm -fr ${WRKINST}/var/postfix
 	@rm -fr ${WRKINST}/var/spool/postfix
