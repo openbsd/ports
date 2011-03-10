@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/19 22:45:32 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/10 18:12:16 jasper Exp $
 ${P5ARCH}/
 ${P5ARCH}/Text/
 ${P5ARCH}/Text/LineFold/
@@ -7,6 +7,7 @@ ${P5ARCH}/Text/LineFold/JA_JP.pod
 ${P5ARCH}/Unicode/
 ${P5ARCH}/Unicode/GCString/
 ${P5ARCH}/Unicode/GCString.pm
+${P5ARCH}/Unicode/GCString.pod
 ${P5ARCH}/Unicode/GCString/JA_JP.pod
 ${P5ARCH}/Unicode/LineBreak/
 ${P5ARCH}/Unicode/LineBreak.pm

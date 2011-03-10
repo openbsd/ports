@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/01/21 10:23:43 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/10 18:12:16 jasper Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	Unicode line breaking algorithm
 
-DISTNAME =	Unicode-LineBreak-1.008.2
+DISTNAME =	Unicode-LineBreak-2011.03.05
 CATEGORIES =	converters
 MODULES =	cpan
 
@@ -13,6 +13,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+CPAN_AUTHOR =		NEZUMI
+
 AUTOCONF_VERSION =	2.59
 AUTOMAKE_VERSION =	1.9
 
@@ -21,11 +23,14 @@ USE_LIBTOOL =	yes
 
 BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/libtool #needs autotools makros
+		devel/libtool #needs autotools macros
 
 MAKE_ENV +=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
 
-CONFIGURE_ARGS =	--disable-libthai
+RUN_DEPENDS =		mail/p5-MIME-Charset
+
+CONFIGURE_ARGS +=	--with-bundled-sombok \
+			--disable-libthai
 
 .include <bsd.port.mk>
