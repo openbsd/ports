@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.20 2011/01/18 12:31:24 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.21 2011/03/10 14:34:17 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -71,6 +71,11 @@ CONFIGURE_ARGS +=--with-system-jpeg=${LOCALBASE}	\
 		--enable-svg			\
 		--enable-svg-renderer=cairo	\
 		--enable-canvas
+
+# for mozilla branch 1.9.2, build against systemwide cairo
+.if ${MOZILLA_BRANCH} == 1.9.2
+CONFIGURE_ARGS +=--enable-system-cairo
+.endif
 
 # those ones only apply to mozilla branch 1.9.2 but 1.9.1 apps don't complain
 CONFIGURE_ARGS +=--disable-freetypetest		\
