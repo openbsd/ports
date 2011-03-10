@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.14 2010/12/03 11:46:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2011/03/10 13:04:00 dhill Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	comma-separated values manipulation routines
 
-MODULES=	cpan
-DISTNAME=	Text-CSV_XS-0.74
-REVISION=	0
+DISTNAME=	Text-CSV_XS-0.80
 CATEGORIES=	textproc
 EXTRACT_SUFX=	.tgz
 USE_GROFF =	Yes
+
+MODULES=	cpan
+CPAN_AUTHOR=	HMBRAND
 
 MAINTAINER=	David Hill <dhill@openbsd.org>
 
