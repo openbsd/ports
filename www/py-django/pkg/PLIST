@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/01/02 22:04:10 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/03/10 09:29:11 jasper Exp $
 bin/${LNAME}-admin.py
 lib/python${MODPY_VERSION}/site-packages/Django-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/
@@ -2702,6 +2702,7 @@ share/doc/${LNAME}/releases/1.2-alpha-1.txt
 share/doc/${LNAME}/releases/1.2-beta-1.txt
 share/doc/${LNAME}/releases/1.2-rc-1.txt
 share/doc/${LNAME}/releases/1.2.2.txt
+share/doc/${LNAME}/releases/1.2.4.txt
 share/doc/${LNAME}/releases/${MODPY_EGG_VERSION}.txt
 share/doc/${LNAME}/releases/1.2.txt
 share/doc/${LNAME}/releases/index.txt
@@ -2730,6 +2731,7 @@ share/doc/${LNAME}/topics/generic-views.txt
 share/doc/${LNAME}/topics/http/
 share/doc/${LNAME}/topics/http/_images/
 share/doc/${LNAME}/topics/http/_images/middleware.png
+share/doc/${LNAME}/topics/http/decorators.txt
 share/doc/${LNAME}/topics/http/file-uploads.txt
 share/doc/${LNAME}/topics/http/generic-views.txt
 share/doc/${LNAME}/topics/http/index.txt
