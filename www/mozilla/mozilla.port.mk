@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.21 2011/03/10 14:34:17 dcoppa Exp $
+# $OpenBSD: mozilla.port.mk,v 1.22 2011/03/10 16:45:42 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -37,7 +37,7 @@ MODMOZ_WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		xcb-render GL Xxf86vm drm xcb-shm z
 
 # for all mozilla ports but ffx4, build against systemwide sqlite3
-.if ${MOZILLA_BRANCH:C/\..*//} != "2"
+.if ${MOZILLA_BRANCH:C/\..*//} != "2" && ${MOZILLA_BRANCH} != "central"
 MODMOZ_WANTLIB +=	sqlite3
 MODMOZ_LIB_DEPENDS +=	databases/sqlite3>=3.7.4
 CONFIGURE_ARGS +=	--enable-system-sqlite
@@ -78,6 +78,7 @@ CONFIGURE_ARGS +=--enable-system-cairo
 .endif
 
 # those ones only apply to mozilla branch 1.9.2 but 1.9.1 apps don't complain
+# crashreporter uses google breakpad, osx/win/lin/sol only
 CONFIGURE_ARGS +=--disable-freetypetest		\
 		--disable-mochitest		\
 		--disable-libIDLtest		\
@@ -93,6 +94,8 @@ FLAVOR ?=
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS +=	--enable-debug \
+			--enable-profiling \
+			--enable-debug-symbols=yes \
 			--disable-install-strip
 INSTALL_STRIP =
 .endif
@@ -100,11 +103,9 @@ INSTALL_STRIP =
 # from browser/config/mozconfig
 CONFIGURE_ARGS +=--enable-application=${MOZILLA_CODENAME}
 
-.if ${MOZILLA_VERSION:C/\..*//} == "4" || \
-	${MOZILLA_PROJECT} == "xulrunner2.0"
-WRKDIST =	${WRKDIR}/mozilla-central
-.elif ${MOZILLA_PROJECT} == "mozilla-firefox" || \
+.if ${MOZILLA_PROJECT} == "mozilla-firefox" || \
 	${MOZILLA_PROJECT} == "firefox35" || \
+	${MOZILLA_PROJECT} == "xulrunner" || \
 	${MOZILLA_PROJECT} == "xulrunner1.9"
 WRKDIST =	${WRKDIR}/mozilla-${MOZILLA_BRANCH}
 .else
@@ -118,7 +119,7 @@ MOZ =		${PREFIX}/${MOZILLA_PROJECT}
 MOB =		${WRKSRC}/${_MOZDIR}/dist/bin
 
 # needed for PLIST and config/autoconf.mk.in
-SUBST_VARS +=	MOZILLA_PROJECT
+SUBST_VARS +=	MOZILLA_PROJECT MOZILLA_VERSION
 
 MAKE_ENV +=	MOZ_CO_PROJECT=${MOZILLA_CODENAME} \
 		LD_LIBRARY_PATH=${MOB} \
@@ -157,7 +158,7 @@ pre-configure:
 .endfor
 
 # common install target - ports can use post-install for specific stuff
-.if ${MOZILLA_BRANCH:C/\..*//} != "2"
+.if ${MOZILLA_BRANCH:C/\..*//} != "2" && ${MOZILLA_BRANCH} != "central"
 do-install:
 	cd ${MOB} && \
 		find ${MOZILLA_DATADIRS} -type d \
