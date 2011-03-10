@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/12/13 17:22:06 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/03/10 22:52:15 pirofti Exp $
 @bin bin/minitube
 share/applications/minitube.desktop
 share/icons/hicolor/
@@ -11,6 +11,9 @@ share/icons/hicolor/16x16/apps/minitube.png
 share/icons/hicolor/22x22/
 share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/minitube.png
+share/icons/hicolor/256x256/
+share/icons/hicolor/256x256/apps/
+share/icons/hicolor/256x256/apps/minitube.png
 share/icons/hicolor/32x32/
 share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/minitube.png

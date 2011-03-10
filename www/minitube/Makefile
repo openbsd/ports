@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/13 17:22:06 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.9 2011/03/10 22:52:15 pirofti Exp $
 
 COMMENT =	standalone YouTube.com video browser/player
 
-DISTNAME =	minitube-1.3
+DISTNAME =	minitube-1.4
 CATEGORIES =	www multimedia
 
 HOMEPAGE =	http://flavio.tordini.org/minitube
@@ -33,6 +33,8 @@ RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-base \
 WRKDIST =	${WRKDIR}/minitube
 
 FAKE_FLAGS =	INSTALL_ROOT=${WRKINST}
+
+NO_REGRESS =	Yes
 
 do-configure:
 	cd ${WRKDIST} && env -i ${CONFIGURE_ENV} qmake4 PREFIX=${PREFIX}
