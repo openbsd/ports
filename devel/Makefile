@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.897 2011/03/10 21:35:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.898 2011/03/10 23:55:07 jeremy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -985,6 +985,7 @@
      SUBDIR += ruby-facets
      SUBDIR += ruby-fastthread
      SUBDIR += ruby-ffi
+     SUBDIR += ruby-ffi,ruby19
      SUBDIR += ruby-ffi-inliner
      SUBDIR += ruby-flexmock
      SUBDIR += ruby-gem_plugin
