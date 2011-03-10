@@ -1,0 +1,9 @@
+"tidyp is a program that can validate your HTML, as well as modify it to
+be more clean and standard. tidyp does not validate HTML 5.
+
+libtidyp is the library on which the program is based. It can be used by
+any other program that can interface to it. The Perl module HTML::Tidy
+is based on this library, allowing Perl programmers to easily validate
+HTML.
+
+tidyp is a fork of the tidy project."

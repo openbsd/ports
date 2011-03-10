@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/10 19:34:01 jasper Exp $
+%%SHARED%%
+@bin bin/tidyp
+include/tidyp/
+include/tidyp/buffio.h
+include/tidyp/platform.h
+include/tidyp/tidyp.h
+include/tidyp/tidypenum.h
+lib/libtidyp.a
+lib/libtidyp.la
