@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2011/01/15 09:21:31 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2011/03/10 21:37:33 landry Exp $
 @pkgpath mail/sylpheed-claws,-main
 @pkgpath mail/sylpheed-claws,-main,compface
 @pkgpath mail/sylpheed-claws,-main,pgpmime
@@ -275,7 +275,6 @@ lib/claws-mail/plugins/trayicon.la
 lib/claws-mail/plugins/trayicon.so
 lib/pkgconfig/claws-mail.pc
 @man man/man1/claws-mail.1
-share/applications/
 share/applications/claws-mail.desktop
 share/claws-mail/
 share/claws-mail/tools/
@@ -318,17 +317,17 @@ share/claws-mail/tools/thunderbird-filters-convertor.pl
 share/claws-mail/tools/uudec
 share/claws-mail/tools/uuooffice
 share/claws-mail/tools/vcard2xml.py
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
-share/icons/hicolor/128x128/apps/claws-mail.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
-share/icons/hicolor/64x64/apps/claws-mail.png
+share/doc/claws-mail/
+share/doc/claws-mail/RELEASE_NOTES
 share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/claws-mail.png
+share/icons/hicolor/64x64/
+share/icons/hicolor/64x64/apps/
+share/icons/hicolor/64x64/apps/claws-mail.png
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
+share/icons/hicolor/128x128/apps/claws-mail.png
 share/locale/bg/LC_MESSAGES/claws-mail.mo
 share/locale/ca/LC_MESSAGES/claws-mail.mo
 share/locale/cs/LC_MESSAGES/claws-mail.mo
@@ -344,6 +343,8 @@ share/locale/ja/LC_MESSAGES/claws-mail.mo
 share/locale/nl/LC_MESSAGES/claws-mail.mo
 share/locale/pl/LC_MESSAGES/claws-mail.mo
 share/locale/pt_BR/LC_MESSAGES/claws-mail.mo
+share/locale/pt_PT/
+share/locale/pt_PT/LC_MESSAGES/
 share/locale/pt_PT/LC_MESSAGES/claws-mail.mo
 share/locale/ru/LC_MESSAGES/claws-mail.mo
 share/locale/sk/LC_MESSAGES/claws-mail.mo

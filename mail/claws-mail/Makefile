@@ -1,24 +1,17 @@
-# $OpenBSD: Makefile,v 1.41 2011/01/15 09:21:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2011/03/10 21:37:33 landry Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		mail and news client
-COMMENT-docs=		documentation
 COMMENT-bogofilter=	bogofilter plugin
 COMMENT-clamav=		clamav plugin
 COMMENT-spamassassin=	spamassassin plugin
 
-V=			3.7.6
+V=			3.7.8
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
-REVISION-main =		2
-FULLPKGNAME-docs=	claws-mail-docs-${V}
-FULLPKGPATH-docs=	mail/claws-mail,-docs
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
-REVISION-bogofilter =	2
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
-REVISION-spamassassin =	2
-REVISION-docs =		0
 CATEGORIES=		mail news
 
 HOMEPAGE=		http://www.claws-mail.org/
@@ -36,7 +29,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 DIST_SUBDIR=		claws
 
-MULTI_PACKAGES=		-main -docs -bogofilter -spamassassin
+MULTI_PACKAGES=		-main -bogofilter -spamassassin
 FLAVORS=		jpilot compface ldap debug
 FLAVOR?=
 
@@ -81,9 +74,6 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 CONFIGURE_ARGS+=	--disable-gnomeprint \
 			--disable-networkmanager-support \
 			--disable-dillo-viewer-plugin
-
-LIB_DEPENDS-docs=
-PKG_ARCH-docs=	*
 
 MODULES=		devel/gettext
 USE_GMAKE=		Yes
@@ -169,7 +159,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/tools/${i} \
 	${PREFIX}/share/claws-mail/tools/${i}
 .endfor
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/claws-mail
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/claws-mail
 
 .include <bsd.port.mk>
