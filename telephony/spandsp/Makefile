@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/20 19:56:47 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/10 09:36:42 sthen Exp $
 
 COMMENT=	DSP library for telephony
 
-DISTNAME=	spandsp-0.0.6pre12
+DISTNAME=	spandsp-0.0.6pre18
 CATEGORIES=	telephony
 MASTER_SITES=	${HOMEPAGE}downloads/spandsp/
 EXTRACT_SUFX=	.tgz
 
-SHARED_LIBS=	spandsp	5.0
+SHARED_LIBS=	spandsp	6.0
 
 HOMEPAGE=	http://www.soft-switch.org/
 
@@ -30,14 +30,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-.if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ARGS+= --enable-mmx
-.endif
-
-.if ${MACHINE_ARCH} == "amd64"
-CONFIGURE_ARGS+= --enable-sse --enable-sse2
-.endif"
 
 # Test suite included, but requires many build dependencies
 # and proprietary files from standards bodies.
