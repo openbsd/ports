@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:45:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/03/10 20:49:13 sthen Exp $
 
-COMMENT=		translater to LOLCAT
+COMMENT=		translator to LOLCAT
 
 DISTNAME=		Acme-LOLCAT-0.0.5
-REVISION=		0
+REVISION=		1
 CATEGORIES=		misc
 
 MODULES=		cpan
