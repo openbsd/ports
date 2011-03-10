@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/01/02 13:20:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/03/10 23:51:36 jeremy Exp $
 
 COMMENT =	cross-platform dynamic library loading for ruby
 
-DISTNAME =	ffi-0.6.3
-REVISION =	1
+DISTNAME =	ffi-1.0.6
 CATEGORIES =	devel
 
 HOMEPAGE=	http://github.com/ffi/ffi
@@ -32,6 +31,7 @@ post-install:
 
 # Regress currently broken, libtest directory needed and not
 # included in the gem
+NO_REGRESS =	yes
 REGRESS_DEPENDS = devel/ruby-rake-compiler,${MODRUBY_FLAVOR}
 MODRUBY_REGRESS = rake rspec
 RAKE_REGRESS_TARGET = specs

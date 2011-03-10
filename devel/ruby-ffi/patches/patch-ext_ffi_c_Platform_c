@@ -1,16 +1,17 @@
-$OpenBSD: patch-ext_ffi_c_Platform_c,v 1.1 2010/12/27 18:58:40 jasper Exp $
---- ext/ffi_c/Platform.c.orig	Mon Dec 27 17:18:02 2010
-+++ ext/ffi_c/Platform.c	Mon Dec 27 17:20:35 2010
-@@ -24,6 +24,12 @@ static VALUE PlatformModule = Qnil;
- #define CPU "sparc"
- #elif defined(__sparcv9__)
- #define CPU "sparcv9"
-+#elif defined(__arm__)
-+#define CPU "arm"
+$OpenBSD: patch-ext_ffi_c_Platform_c,v 1.2 2011/03/10 23:51:36 jeremy Exp $
+--- ext/ffi_c/Platform.c.orig	Wed Dec 31 16:00:00 1969
++++ ext/ffi_c/Platform.c	Fri Feb 25 12:08:12 2011
+@@ -52,6 +52,13 @@ static VALUE PlatformModule = Qnil;
+ 
+ #elif defined(__arm__)
+ # define CPU "arm"
++
 +#elif defined(__mips__)
-+#define CPU "mips"
++# define CPU "mips"
++
 +#elif defined(__hppa__)
-+#define CPU "hppa"
++# define CPU "hppa"
++
  #else
- #error "Unknown cpu type"
+ # error "Unknown cpu type"
  #endif

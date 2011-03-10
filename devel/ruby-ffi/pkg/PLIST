@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 18:04:16 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/10 23:51:36 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.require_paths
@@ -24,6 +24,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/memorypointer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/pointer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/struct.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/struct_layout_builder.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/tools/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/tools/const_generator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/tools/generator.rb
@@ -37,11 +38,15 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/variadic.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi_c.so
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/
+${GEM_LIB}/gems/${DISTNAME}/spec/ffi/async_callback_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/bool_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/buffer_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/callback_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/ffi/custom_param_type.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/ffi/custom_type_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/enum_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/errno_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/ffi/ffi_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/function_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/library_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/managed_struct_spec.rb
@@ -54,8 +59,10 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/rbx/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/rbx/struct_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/string_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/ffi/strptr_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/struct_callback_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/struct_initialize_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/ffi/struct_packed_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/struct_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/typedef_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/union_spec.rb
