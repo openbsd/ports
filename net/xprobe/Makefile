@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/19 22:31:39 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/03/10 20:28:12 jasper Exp $
 
 COMMENT=		ICMP active OS fingerprint scanner
 
 DISTNAME=		xprobe2-0.3
+REVISION=		0
 CATEGORIES=    		net security
 
-HOMEPAGE=		http://www.sys-security.com/index.php?page=xprobe
+HOMEPAGE=		http://xprobe.sourceforge.net/
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes 
 PERMIT_DISTFILES_CDROM=	Yes
@@ -19,7 +20,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xprobe/}
 CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/cfg-scripts
 
-USE_GROFF =		Yes
+USE_GROFF=		Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>
