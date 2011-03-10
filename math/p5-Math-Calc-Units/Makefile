@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/03 11:45:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/03/10 23:23:17 jasper Exp $
 
 COMMENT=	human-readable unit-aware calculator
 
 MODULES=	cpan
-DISTNAME=	Math-Calc-Units-1.06
-REVISION=	0
+DISTNAME=	Math-Calc-Units-1.07
 CATEGORIES=	math
 USE_GROFF =	Yes
 
