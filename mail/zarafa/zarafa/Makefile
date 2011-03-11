@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/03/11 08:44:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2011/03/11 09:09:01 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -26,7 +26,8 @@ MODULES=	devel/gettext
 
 BUILD_DEPENDS=	www/php5/core \
 		textproc/xmlto \
-		net/curl
+		net/curl \
+		devel/boost
 
 WANTLIB-main =	${MODGETTEXT_WANTLIB}
 WANTLIB-main += asn1 c com_err crypto gssapi krb5 m ncurses pthread ssl
