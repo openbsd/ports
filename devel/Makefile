@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.899 2011/03/11 09:05:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.900 2011/03/11 19:57:43 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -746,6 +746,7 @@
      SUBDIR += p5-Term-Shell
      SUBDIR += p5-Test-Assertions
      SUBDIR += p5-Test-Base
+     SUBDIR += p5-Test-CheckManifest
      SUBDIR += p5-Test-Class
      SUBDIR += p5-Test-ClassAPI
      SUBDIR += p5-Test-Cmd

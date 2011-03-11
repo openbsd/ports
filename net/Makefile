@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.676 2011/03/07 23:42:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.677 2011/03/11 19:57:43 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -265,6 +265,7 @@
      SUBDIR += p5-Net-DAAP-DMAP
      SUBDIR += p5-Net-DAV-Server
      SUBDIR += p5-Net-DBus
+     SUBDIR += p5-Net-DHCP
      SUBDIR += p5-Net-DNS
      SUBDIR += p5-Net-DNS-DynDNS
      SUBDIR += p5-Net-DNS-SEC
