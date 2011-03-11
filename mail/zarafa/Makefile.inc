@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.5 2011/03/03 13:15:23 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2011/03/11 08:43:21 ajacoutot Exp $
 
 # there is no point in building/running this on NO_SHARED_LIBS archs
 SHARED_ONLY=	Yes
 
-V?=		6.40.5
-BUILD?=		24860
-DISTNAME?=	zcp-source-${V}-${BUILD}
-EXTRACT_SUFX?=	.tgz
+V?=		6.40.6
+BUILD?=		25584
+DISTNAME?=	zcp-${V}
 
 DIST_SUBDIR?=	zarafa
 
@@ -24,4 +23,4 @@ PERMIT_PACKAGE_FTP?=	Yes
 PERMIT_DISTFILES_CDROM?=Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
-MASTER_SITES?=	http://download.zarafa.com/community/final/${V:C/^([0-9]+\.[0-9]+).*/\1/}/${V}-${BUILD}/
+MASTER_SITES?=	http://download.zarafa.com/community/final/${V:C/^([0-9]+\.[0-9]+).*/\1/}/${V}-${BUILD}/sourcecode/
