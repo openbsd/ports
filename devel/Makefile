@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.898 2011/03/10 23:55:07 jeremy Exp $
+# $OpenBSD: Makefile,v 1.899 2011/03/11 09:05:02 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -834,6 +834,7 @@
      SUBDIR += p5-Want
      SUBDIR += p5-WeakRef
      SUBDIR += p5-YAML
+     SUBDIR += p5-YAML-Perl
      SUBDIR += p5-YAML-Shell
      SUBDIR += p5-YAML-Syck
      SUBDIR += p5-YAML-Tiny
