@@ -1,0 +1,3 @@
+The shrink library provides a single API into several compression
+algorithms.  It enables developers to easily add compression and
+decompression functionality to an existing code base.
