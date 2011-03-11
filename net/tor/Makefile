@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2011/01/18 19:59:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2011/03/11 06:49:55 ajacoutot Exp $
 
 COMMENT=	anonymity service using onion routing
 
-DISTNAME=	tor-0.2.1.29
+DISTNAME=	tor-0.2.1.30
 CATEGORIES=	net
 HOMEPAGE=	http://www.torproject.org/
 
@@ -22,7 +22,6 @@ CONFIGURE_ARGS=	--with-ssl-dir=/usr
 
 DB_DIR=		/var/tor
 SUBST_VARS=	DB_DIR
-USE_GROFF =	Yes
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
 

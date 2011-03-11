@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/09/19 21:51:00 rui Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/03/11 06:49:55 ajacoutot Exp $
 @newgroup _tor:566
 @newuser _tor:566:566:daemon:tor:/nonexistent:/sbin/nologin
 @bin bin/tor
@@ -24,3 +24,4 @@ share/examples/tor/torrc.sample
 @group
 share/tor/
 share/tor/geoip
+@rcscript ${RCDIR}/tor
