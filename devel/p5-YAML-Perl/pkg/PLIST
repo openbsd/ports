@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/11 09:04:34 jasper Exp $
+${P5SITE}/YAML/
+${P5SITE}/YAML/Perl/
+${P5SITE}/YAML/Perl.pm
+${P5SITE}/YAML/Perl.pod
+${P5SITE}/YAML/Perl/Base.pm
+${P5SITE}/YAML/Perl/Composer.pm
+${P5SITE}/YAML/Perl/Constructor.pm
+${P5SITE}/YAML/Perl/Dumper.pm
+${P5SITE}/YAML/Perl/Emitter.pm
+${P5SITE}/YAML/Perl/Error.pm
+${P5SITE}/YAML/Perl/Events.pm
+${P5SITE}/YAML/Perl/Loader.pm
+${P5SITE}/YAML/Perl/Nodes.pm
+${P5SITE}/YAML/Perl/Parser.pm
+${P5SITE}/YAML/Perl/Processor.pm
+${P5SITE}/YAML/Perl/Reader.pm
+${P5SITE}/YAML/Perl/Representer.pm
+${P5SITE}/YAML/Perl/Resolver.pm
+${P5SITE}/YAML/Perl/Scanner.pm
+${P5SITE}/YAML/Perl/Serializer.pm
+${P5SITE}/YAML/Perl/Stream.pm
+${P5SITE}/YAML/Perl/Tokens.pm
+${P5SITE}/YAML/Perl/Writer.pm
+@man man/man3p/YAML::Perl.3p
+@man man/man3p/YAML::Perl::Base.3p
