@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/03/02 13:56:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/11 09:00:14 jasper Exp $
 
 COMMENT=		minimalist IRC client
 
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
-USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 do-install:

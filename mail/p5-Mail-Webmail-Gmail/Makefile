@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:45:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/11 09:00:14 jasper Exp $
 
 COMMENT=		interface to Google webmail service
 
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 RUN_DEPENDS=            security/p5-Crypt-SSLeay \
                         www/p5-libwww
