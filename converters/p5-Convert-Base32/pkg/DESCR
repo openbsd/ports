@@ -1,0 +1,3 @@
+This module provides functions to convert string from/to RFC4648
+Base32 encoding, designed to encode non-ASCII characters in
+DNS-compatible host name parts (A..Z, 2..7).
