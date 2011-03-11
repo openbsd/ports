@@ -1,0 +1,12 @@
+$OpenBSD: patch-gtk_gtksettings_c,v 1.1.1.1 2011/03/11 09:58:31 ajacoutot Exp $
+--- gtk/gtksettings.c.orig	Wed Mar  9 16:42:17 2011
++++ gtk/gtksettings.c	Wed Mar  9 16:45:56 2011
+@@ -413,7 +413,7 @@ gtk_settings_class_init (GtkSettingsClass *class)
+                                              g_param_spec_string ("gtk-key-theme-name",
+                                                                   P_("Key Theme Name"),
+                                                                   P_("Name of key theme to load"),
+-                                                                  NULL,
++                                                                  "Emacs",
+                                                                   GTK_PARAM_READWRITE),
+                                              NULL);
+   g_assert (result == PROP_KEY_THEME_NAME);

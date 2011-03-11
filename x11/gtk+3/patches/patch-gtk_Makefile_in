@@ -1,0 +1,24 @@
+$OpenBSD: patch-gtk_Makefile_in,v 1.1.1.1 2011/03/11 09:58:31 ajacoutot Exp $
+
+Fix use of grep(1) as we don't support the -o switch.
+
+--- gtk/Makefile.in.orig	Wed Mar  9 16:48:52 2011
++++ gtk/Makefile.in	Wed Mar  9 16:50:27 2011
+@@ -706,7 +706,7 @@ INTROSPECTION_COMPILER_ARGS = \
+ SUBDIRS = . tests
+ @HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_FALSE@GTK_PRINT_BACKENDS = file,lpr
+ @HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_TRUE@GTK_PRINT_BACKENDS = file,papi
+-@HAVE_CUPS_TRUE@@HAVE_PAPI_CUPS_FALSE@GTK_PRINT_BACKENDS = file,cups
++@HAVE_CUPS_TRUE@@HAVE_PAPI_CUPS_FALSE@GTK_PRINT_BACKENDS = file,cups,lpr
+ @HAVE_PAPI_CUPS_TRUE@GTK_PRINT_BACKENDS = file,papi,cups
+ INCLUDES = \
+ 	-DG_LOG_DOMAIN=\"Gtk\"				\
+@@ -2791,7 +2791,7 @@ gtktypebuiltins.c: @REBUILD@ $(gtk_public_h_sources) g
+ gtktypefuncs.c: @REBUILD@ stamp-gtktypebuiltins.h $(top_srcdir)/gtk/*.h $(top_srcdir)/gdk/*.h Makefile
+ 	$(AM_V_GEN) echo '#include <gtk/gtkx.h>' > xgen-gtfsrc.c && \
+ 	  ${CPP} $(DEFS) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) xgen-gtfsrc.c | \
+-	  $(GREP) -o '\bg[td]k_[a-zA-Z0-9_]*_get_type\b' | \
++	  awk '{ print $$2 }' | grep -E "gdk_[a-zA-Z0-9_].*_get_type$$|gtk_[a-zA-Z0-9_].*_get_type$$" | \
+ 	  sort | uniq | \
+ 	  $(SED) '{ s/^/*tp++ = /; s/$$/();/; s/^.*\(gdk_x11\|gtk_plug_\|gtk_socket_\).*$$/#ifdef GDK_WINDOWING_X11\n&\n#endif/; }' > xgen-gtf \
+ 	&& cp xgen-gtf $@ && rm -f xgen-gtf

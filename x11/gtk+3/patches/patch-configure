@@ -1,0 +1,42 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2011/03/11 09:58:31 ajacoutot Exp $
+
+Do not force enable_man to yes.
+
+--- configure.orig	Mon Mar  7 14:25:38 2011
++++ configure	Wed Mar  9 16:51:14 2011
+@@ -18791,7 +18791,7 @@ fi
+ fi
+ 
+ # strip leading space
+-GDK_BACKENDS=${GDK_BACKENDS/# }
++GDK_BACKENDS=${GDK_BACKENDS# }
+ 
+ 
+ 
+@@ -22677,7 +22677,7 @@ fi
+ 
+ 
+   # strip leading space
+-  X_EXTENSIONS=${X_EXTENSIONS/# }
++  X_EXTENSIONS=${X_EXTENSIONS# }
+ 
+ else
+   XPACKAGES=
+@@ -24065,7 +24065,7 @@ fi
+ 
+ # Check whether --enable-man was given.
+ if test "${enable_man+set}" = set; then :
+-  enableval=$enable_man; enable_man=yes
++  enableval=$enable_man;
+ else
+   enable_man=no
+ fi
+@@ -27272,7 +27272,7 @@ fi
+ 
+ 
+ # beautify the immodule list a bit
+-included_immodules=${included_immodules//,/ }
++included_immodules=`printf '%s' "$included_immodules" | sed -e 's/,/ /g'`
+ included_immodules=${included_immodules:-none}
+ 
+ echo ""
