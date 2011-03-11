@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.10 2011/03/03 13:16:05 ajacoutot Exp $
---- configure.orig	Mon Jan 24 13:06:11 2011
-+++ configure	Tue Jan 25 12:56:17 2011
-@@ -21794,12 +21794,7 @@ else
+$OpenBSD: patch-configure,v 1.11 2011/03/11 08:44:44 ajacoutot Exp $
+--- configure.orig	Sun Feb 27 19:34:30 2011
++++ configure	Thu Mar 10 17:22:03 2011
+@@ -21801,12 +21801,7 @@ else
    want_release=no
  fi
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-configure,v 1.10 2011/03/03 13:16:05 ajacoutot Exp $
  
  # Check whether --enable-tcmalloc was given.
  if test "${enable_tcmalloc+set}" = set; then
-@@ -21827,7 +21822,7 @@ else
+@@ -21834,7 +21829,7 @@ else
    with_distro=rhel
  fi
  
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure,v 1.10 2011/03/03 13:16:05 ajacoutot Exp $
     { echo "$as_me:$LINENO: result: invalid distro, using rhel instead" >&5
  echo "${ECHO_T}invalid distro, using rhel instead" >&6; }
  else
-@@ -22167,21 +22162,6 @@ echo "$as_me: error: Cannot execute $PHP_CONFIG" >&2;}
+@@ -22174,21 +22169,6 @@ echo "$as_me: error: Cannot execute $PHP_CONFIG" >&2;}
    PHP_LDFLAGS=`$PHP_CONFIG --ldflags`
    PHP_EXTENSION_DIR=`$PHP_CONFIG --extension-dir`
    PHP_VERSION=`$PHP_CONFIG --version`
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure,v 1.10 2011/03/03 13:16:05 ajacoutot Exp $
  
    if test -z "$PHP_EXTENSION_DIR"; then
      { { echo "$as_me:$LINENO: error: Cannot find php-config. Please use --with-php-config=PATH" >&5
-@@ -22707,7 +22687,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+@@ -22714,7 +22694,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
  _ACEOF
  
  		VMIME_CFLAGS=-I$VMIME_PREFIX
@@ -54,7 +54,7 @@ $OpenBSD: patch-configure,v 1.10 2011/03/03 13:16:05 ajacoutot Exp $
  
  else
  
-@@ -23117,8 +23097,10 @@ fi
+@@ -23124,8 +23104,10 @@ fi
  
  done
  
@@ -66,7 +66,7 @@ $OpenBSD: patch-configure,v 1.10 2011/03/03 13:16:05 ajacoutot Exp $
  CFLAGS=$cflags_keep
  
  # Check for CLucene availability
-@@ -24489,13 +24471,13 @@ LIBS=$libs_keep
+@@ -25116,13 +25098,13 @@ LIBS=$libs_keep
  libs_keep=$LIBS
  # check lib, but do not set in link list
  
@@ -83,7 +83,7 @@ $OpenBSD: patch-configure,v 1.10 2011/03/03 13:16:05 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -24555,7 +24537,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
+@@ -25182,7 +25164,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  

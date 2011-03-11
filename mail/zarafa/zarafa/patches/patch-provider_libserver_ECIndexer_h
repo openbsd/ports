@@ -1,8 +1,0 @@
-$OpenBSD: patch-provider_libserver_ECIndexer_h,v 1.1 2011/03/03 13:16:05 ajacoutot Exp $
---- provider/libserver/ECIndexer.h.orig	Tue Jan 25 13:11:03 2011
-+++ provider/libserver/ECIndexer.h	Tue Jan 25 13:11:12 2011
-@@ -60,3 +60,4 @@ struct ECSearchResultArray;
- 
- ECRESULT GetIndexerResults(ECConfig *lpConfig, ECLogger *lpLogger, ECCacheManager *lpCacheManager, GUID *guidServer, unsigned int ulStoreId, ECListInt &lstFolders, struct restrictTable *lpRestrict, ECSearchResultArray **lppIndexerResults);
- 
-+#endif // ECINDEXER_H

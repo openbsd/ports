@@ -1,20 +1,20 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.9 2011/03/03 13:16:05 ajacoutot Exp $
---- doc/Makefile.in.orig	Mon Jan 24 13:06:15 2011
-+++ doc/Makefile.in	Tue Jan 25 12:56:17 2011
-@@ -235,9 +235,9 @@ dist_data_DATA = 
+$OpenBSD: patch-doc_Makefile_in,v 1.10 2011/03/11 08:44:44 ajacoutot Exp $
+--- doc/Makefile.in.orig	Sun Feb 27 19:34:34 2011
++++ doc/Makefile.in	Thu Mar 10 17:23:32 2011
+@@ -238,9 +238,9 @@ dist_data_DATA = 
  BUILT_SOURCES = zarafa.1
  allpages = \
  	zarafa-dagent.1 zarafa-passwd.1 zarafa-spooler.1 zarafa-admin.1 zarafa-server.1 zarafa-gateway.1 zarafa-monitor.1 zarafa-cfgchecker.1 \
 -	zarafa-backup.1	zarafa-restore.1 zarafa-ical.1 zarafa-licensed.1 zarafa-stats.1 zarafa-fsck.1 zarafa-indexer.1 zarafa-report.1 \
 -	zarafa-ical.cfg.5 zarafa-server.cfg.5 zarafa-ldap.cfg.5 zarafa-ldapms.cfg.5 zarafa-unix.cfg.5 zarafa-spooler.cfg.5 zarafa-gateway.cfg.5 \
--	zarafa-monitor.cfg.5 zarafa-licensed.cfg.5 zarafa-dagent.cfg.5 zarafa-indexer.cfg.5 zarafa-archiver.1 zarafa-archiver.cfg.5
+-	zarafa-monitor.cfg.5 zarafa-licensed.cfg.5 zarafa-dagent.cfg.5 zarafa-indexer.cfg.5 zarafa-archiver.1 zarafa-archiver.cfg.5 \
 +	zarafa-backup.1	zarafa-restore.1 zarafa-ical.1 zarafa-stats.1 zarafa-fsck.1 zarafa-report.1 \
 +	zarafa-ical.cfg.5 zarafa-server.cfg.5 zarafa-ldap.cfg.5 zarafa-spooler.cfg.5 zarafa-gateway.cfg.5 \
-+	zarafa-monitor.cfg.5 zarafa-dagent.cfg.5
++	zarafa-monitor.cfg.5 zarafa-dagent.cfg.5 \
+ 	zarafa-msr.1 zarafa-msr.cfg.5
  
  man_MANS = $(BUILT_SOURCES) $(allpages)
- EXTRA_DIST = $(BUILT_SOURCES) $(allpages) manual.xml
-@@ -380,12 +380,12 @@ uninstall-man5:
+@@ -384,12 +384,12 @@ uninstall-man5:
  	done
  install-dist_dataDATA: $(dist_data_DATA)
  	@$(NORMAL_INSTALL)
@@ -30,7 +30,7 @@ $OpenBSD: patch-doc_Makefile_in,v 1.9 2011/03/03 13:16:05 ajacoutot Exp $
  	done
  
  uninstall-dist_dataDATA:
-@@ -541,7 +541,7 @@ $(BUILT_SOURCES): manual.xml
+@@ -545,7 +545,7 @@ $(BUILT_SOURCES): manual.xml
  	@if [ -z $(PROG_XMLTO) ]; then \
  		echo Please install xmlto to generate manual pages; \
  	else \

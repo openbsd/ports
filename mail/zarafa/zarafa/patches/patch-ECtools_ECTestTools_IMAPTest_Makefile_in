@@ -1,7 +1,7 @@
-$OpenBSD: patch-ECtools_ECTestTools_IMAPTest_Makefile_in,v 1.7 2011/03/03 13:16:05 ajacoutot Exp $
---- ECtools/ECTestTools/IMAPTest/Makefile.in.orig	Mon Jan 24 13:06:12 2011
-+++ ECtools/ECTestTools/IMAPTest/Makefile.in	Tue Jan 25 12:56:17 2011
-@@ -237,7 +237,7 @@ target_alias = @target_alias@
+$OpenBSD: patch-ECtools_ECTestTools_IMAPTest_Makefile_in,v 1.8 2011/03/11 08:44:44 ajacoutot Exp $
+--- ECtools/ECTestTools/IMAPTest/Makefile.in.orig	Sun Feb 27 19:34:31 2011
++++ ECtools/ECTestTools/IMAPTest/Makefile.in	Thu Mar 10 17:22:03 2011
+@@ -240,7 +240,7 @@ target_alias = @target_alias@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX

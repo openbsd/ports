@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.8 2011/03/03 13:16:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.9 2011/03/11 08:44:44 ajacoutot Exp $
 @conflict php5-mapi-*
 @pkgpath mail/zarafa/webaccess
 @pkgpath mail/zarafa/zarafa,-php
@@ -358,7 +358,6 @@ zarafa-webaccess/client/layout/img/icon_view_all_proposals.gif
 zarafa-webaccess/client/layout/img/icon_wastebasket.gif
 zarafa-webaccess/client/layout/img/icon_week.gif
 zarafa-webaccess/client/layout/img/icon_workweek.gif
-zarafa-webaccess/client/layout/img/icon_zarafa.png
 zarafa-webaccess/client/layout/img/importance.gif
 zarafa-webaccess/client/layout/img/importance_high.gif
 zarafa-webaccess/client/layout/img/importance_low.gif
@@ -942,7 +941,6 @@ zarafa-webaccess/server/core/class.state.php
 zarafa-webaccess/server/core/class.tablecolumns.php
 zarafa-webaccess/server/core/class.xmlbuilder.php
 zarafa-webaccess/server/core/class.xmlparser.php
-zarafa-webaccess/server/core/class.zarchiver.php
 zarafa-webaccess/server/core/constants.php
 zarafa-webaccess/server/core/htmlfilter.php
 zarafa-webaccess/server/language/

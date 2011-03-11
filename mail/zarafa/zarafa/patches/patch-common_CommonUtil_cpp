@@ -1,0 +1,11 @@
+$OpenBSD: patch-common_CommonUtil_cpp,v 1.1 2011/03/11 08:44:44 ajacoutot Exp $
+--- common/CommonUtil.cpp.orig	Thu Mar 10 17:31:10 2011
++++ common/CommonUtil.cpp	Thu Mar 10 17:30:52 2011
+@@ -77,6 +77,7 @@
+ 
+ #include <sys/types.h>
+ #include <sys/socket.h>
++#include <netinet/in.h>
+ #include <netdb.h>
+ 
+ using namespace std;

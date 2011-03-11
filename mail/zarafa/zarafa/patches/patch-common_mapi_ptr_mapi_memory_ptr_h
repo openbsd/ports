@@ -1,15 +1,22 @@
-$OpenBSD: patch-common_mapi_ptr_mapi_memory_ptr_h,v 1.1 2010/06/30 02:46:48 ajacoutot Exp $
---- common/mapi_ptr/mapi_memory_ptr.h.orig	Mon Jun 28 23:34:25 2010
-+++ common/mapi_ptr/mapi_memory_ptr.h	Mon Jun 28 23:35:09 2010
-@@ -52,6 +52,11 @@
+$OpenBSD: patch-common_mapi_ptr_mapi_memory_ptr_h,v 1.2 2011/03/11 08:44:44 ajacoutot Exp $
+
+On OpenBSD, _U is defined in ctype.h.
+
+--- common/mapi_ptr/mapi_memory_ptr.h.orig	Thu Mar 10 18:17:04 2011
++++ common/mapi_ptr/mapi_memory_ptr.h	Thu Mar 10 18:17:32 2011
+@@ -160,11 +160,11 @@ class mapi_memory_ptr (public)
+ 		return proxy(&m_lpMemory);
+ 	}
  
- #include <utility>
+-	template <typename _U>
+-	_U as() { return (_U)m_lpMemory; }
++	template <typename _ZCPU>
++	_ZCPU as() { return (_ZCPU)m_lpMemory; }
  
-+// _U is defined in ctype.h
-+#ifdef __OpenBSD__
-+#undef _U
-+#endif
-+
- template<typename _T>
- class mapi_memory_proxy
- {
+-	template <typename _U>
+-	const _U as() const { return (_U)m_lpMemory; }
++	template <typename _ZCPU>
++	const _ZCPU as() const { return (_ZCPU)m_lpMemory; }
+ 
+ 	operator void**() {
+ 		if (m_lpMemory) {

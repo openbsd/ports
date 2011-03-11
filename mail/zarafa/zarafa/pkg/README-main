@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.3 2011/03/03 13:16:05 ajacoutot Exp $
+$OpenBSD: README-main,v 1.4 2011/03/11 08:44:44 ajacoutot Exp $
 
 *** Upgrading users: refer to zarafa documentation on the web to check
 *** if any particular step is required after upgrading to a new version. 
@@ -105,8 +105,8 @@ to
 The debugging output will then be available under:
    ${INSTDIR}/debug.txt
 
-You can enable the PHP mapi module by creating a symbolic
-link from ${PREFIX-web}/conf/php5.sample/${MODULE_NAME}.ini to
+You need to enable the PHP mapi module by creating a symbolic link from
+${PREFIX-web}/conf/php5.sample/${MODULE_NAME}.ini to
 ${PREFIX-web}/conf/php5/${MODULE_NAME}.ini:
 
     # ln -fs ${PREFIX-web}/conf/php5.sample/${MODULE_NAME}.ini \
