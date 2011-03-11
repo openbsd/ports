@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2011/03/06 14:13:20 steven Exp $
+# $OpenBSD: Makefile,v 1.89 2011/03/11 00:13:04 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,6 +15,9 @@ PKGNAME-libpurple= libpurple-${VERSION}
 FULLPKGNAME$i= ${PKGNAME$i}${FLAVOR_EXT:S/-gtkspell//}
 FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 .endfor
+REVISION-main=	0
+REVISION-finch=	0
+REVISION-libpurple= 0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pidgin/}
 
@@ -103,17 +106,15 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_lib_db_dbopen=no
 
-MAKE_FLAGS+=	CFLAGS="${CFLAGS}"
-
 FLAVORS=	audio debug gtkspell
 FLAVOR?=
 
 MULTI_PACKAGES= -main -finch -libpurple
 
 .if ${FLAVOR:L:Maudio}
-LIB_DEPENDS+=	gstreamer->=0.10,<=0.11:multimedia/gstreamer-0.10/core \
-		multimedia/gstreamer-0.10/plugins-base
-WANTLIB +=	gstreamer-0.10 gstinterfaces-0.10
+LIB_DEPENDS+=		multimedia/gstreamer-0.10/core>=0.10,<=0.11 \
+			multimedia/gstreamer-0.10/plugins-base
+WANTLIB+=		gstreamer-0.10 gstinterfaces-0.10
 LIB_DEPENDS-main+=	libpurple-${VERSION}-audio:${BUILD_PKGPATH},-libpurple
 LIB_DEPENDS-finch+=	libpurple-${VERSION}-audio:${BUILD_PKGPATH},-libpurple
 .else
