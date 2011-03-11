@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2010/12/19 22:46:12 landry Exp $
+# $OpenBSD: Makefile,v 1.51 2011/03/11 13:40:40 sthen Exp $
 #
 
     SUBDIR =
@@ -19,6 +19,7 @@
     SUBDIR += p5-Convert-ASCII-Armour
     SUBDIR += p5-Convert-ASN1
     SUBDIR += p5-Convert-BER
+    SUBDIR += p5-Convert-Base32
     SUBDIR += p5-Convert-BinHex
     SUBDIR += p5-Convert-Binary-C
     SUBDIR += p5-Convert-PEM
