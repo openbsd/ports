@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/16 11:23:26 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/03/12 10:19:06 jasper Exp $
 # $NetBSD: Makefile,v 1.2 2000/01/15 18:46:28 jlam Exp $
 # Original from: Stefan Jokisch
 
 COMMENT=	Curses-based interpreter for Infocom-compatible games
 
 DISTNAME=		frotz-2.43
-REVISION =		1
+REVISION =		2
 CATEGORIES=     	games
 
-HOMEPAGE=		http://frotz.sourceforget.net/
+HOMEPAGE=		http://frotz.sourceforge.net/
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -26,7 +26,6 @@ ALL_TARGET=		frotz
 
 CFLAGS+=		-DUSE_UNISTD_H -DCOLOR_SUPPORT -DEMACS_EDITING
 
-USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 do-install:
