@@ -1,48 +1,39 @@
-$OpenBSD: patch-configure,v 1.15 2008/04/01 17:43:04 kurt Exp $
---- configure.orig	Thu May 31 08:17:05 2007
-+++ configure	Fri Feb  8 08:37:16 2008
-@@ -7893,7 +7893,7 @@ if test "${ac_cv_lib_gc_GC_init+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+$OpenBSD: patch-configure,v 1.16 2011/03/12 23:20:17 sthen Exp $
+--- configure.orig	Sat Mar 12 21:00:56 2011
++++ configure	Sat Mar 12 21:08:16 2011
+@@ -8209,7 +8209,7 @@ if test "${ac_cv_lib_gc_GC_init+set}" = set; then :
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lgc  $LIBS"
 +LIBS="-lgc -pthread $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -7949,7 +7949,7 @@ fi
- { echo "$as_me:$LINENO: result: $ac_cv_lib_gc_GC_init" >&5
- echo "${ECHO_T}$ac_cv_lib_gc_GC_init" >&6; }
- if test $ac_cv_lib_gc_GC_init = yes; then
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -8240,7 +8240,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_gc_GC_init" >&5
+ $as_echo "$ac_cv_lib_gc_GC_init" >&6; }
+ if test "x$ac_cv_lib_gc_GC_init" = x""yes; then :
 -  LIBGC="-lgc"
 +  LIBGC="-lgc -pthread"
  fi
  
   if test x"$ac_cv_lib_gc_GC_init" = xno; then
-@@ -7970,7 +7970,7 @@ if test "${ac_cv_lib_gc_GC_init+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -8261,7 +8261,7 @@ if test "${ac_cv_lib_gc_GC_init+set}" = set; then :
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lgc  $LIBS"
 +LIBS="-lgc -pthread $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -8026,7 +8026,7 @@ fi
- { echo "$as_me:$LINENO: result: $ac_cv_lib_gc_GC_init" >&5
- echo "${ECHO_T}$ac_cv_lib_gc_GC_init" >&6; }
- if test $ac_cv_lib_gc_GC_init = yes; then
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -8292,7 +8292,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_gc_GC_init" >&5
+ $as_echo "$ac_cv_lib_gc_GC_init" >&6; }
+ if test "x$ac_cv_lib_gc_GC_init" = x""yes; then :
 -  gclibdir="$dir/lib"; LIBGC="-L$dir/lib -lgc"; break
 +  gclibdir="$dir/lib"; LIBGC="-L$dir/lib -lgc -pthread"; break
  fi
  
        LDFLAGS="$ldflags"
-@@ -11565,7 +11565,7 @@ MSGMERGE!$MSGMERGE$ac_delim
- LIBICONV!$LIBICONV$ac_delim
- LTLIBICONV!$LTLIBICONV$ac_delim
- INTLLIBS!$INTLLIBS$ac_delim
--LIBINTL!$LIBINTL$ac_delim
-+LIBINTL!$LTLIBINTL$ac_delim
- LTLIBINTL!$LTLIBINTL$ac_delim
- POSUB!$POSUB$ac_delim
- INTLTARGET!$INTLTARGET$ac_delim
