@@ -1,0 +1,34 @@
+$OpenBSD: patch-generic_jkAudIO_h,v 1.1.1.1 2011/03/12 08:53:52 sebastia Exp $
+
+sndio bits
+
+--- generic/jkAudIO.h.orig	Wed Dec 14 03:29:38 2005
++++ generic/jkAudIO.h	Fri Dec 24 23:19:22 2010
+@@ -105,6 +105,10 @@ extern "C" {
+ #include <alsa/asoundlib.h>
+ #endif
+ 
++#ifdef SNDIO
++#include <sndio.h>
++#endif
++
+ typedef struct ADesc {
+ 
+ #ifdef HPUX
+@@ -124,6 +128,16 @@ typedef struct ADesc {
+   double time;
+   double timep;
+   int    freq;
++  int    convert;
++  int    warm;
++#endif
++
++#ifdef SNDIO
++  struct sio_hdl *hdl;
++  struct sio_par par;
++  long	softpos;
++  long  hardpos;
++  int    frag_size;
+   int    convert;
+   int    warm;
+ #endif

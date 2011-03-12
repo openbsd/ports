@@ -1,0 +1,58 @@
+$OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2011/03/12 08:53:52 sebastia Exp $
+
+sndio bits
+install to OpenBSD tcl layout
+
+
+--- unix/Makefile.in.orig	Wed Dec 14 12:29:39 2005
++++ unix/Makefile.in	Mon Jan 17 13:55:43 2011
+@@ -29,7 +29,7 @@ TCL_VERSION = @TCLVER@
+ 
+ CC        = @CC@
+ 
+-INCLUDES  = ${XINCLUDES} @TCL_INCLUDE_SPEC@ -I${TCL_INCPATH} -I${TK_INCPATH} @AINC@ @NISTINC@
++INCLUDES  = ${XINCLUDES} @TCL_INCLUDE_SPEC@ @TK_INCLUDE_SPEC@ -I${TCL_INCPATH} -I${TK_INCPATH} @AINC@ @NISTINC@
+ 
+ CFLAGS    = -O @CFLAGS@ @AFLAG@ ${INCLUDES} @TCLAPI@ -I${GENERIC_DIR} @DEFS@
+ 
+@@ -124,6 +124,9 @@ jkAudIO_hp.o: $(UNIX_DIR)/jkAudIO_hp.c
+ jkAudIO_sun.o: $(UNIX_DIR)/jkAudIO_sun.c
+ 	$(CC) -c $(CFLAGS) $(UNIX_DIR)/jkAudIO_sun.c
+ 
++jkAudIO_sndio.o: $(UNIX_DIR)/jkAudIO_sndio.c
++	$(CC) -c $(CFLAGS) $(UNIX_DIR)/jkAudIO_sndio.c
++
+ jkAudIO_sgi.o: $(UNIX_DIR)/jkAudIO_sgi.c
+ 	$(CC) -c $(CFLAGS) $(UNIX_DIR)/jkAudIO_sgi.c
+ 
+@@ -303,19 +306,19 @@ libsnackogg${SHLIB_SUFFIX}: ${OBJOGG}
+ 	${SHLIB_LD} ${OBJOGG} ${LIBOGG} -o libsnackogg${SHLIB_SUFFIX}
+ 
+ install:
+-	@if [ ! -d ${DESTDIR}${SNACK_INSTALL_PATH}/snack${VERSION} ] ; then \
+-	    echo "Making directory ${DESTDIR}${SNACK_INSTALL_PATH}/snack${VERSION}"; \
+-	    mkdir -p ${DESTDIR}${SNACK_INSTALL_PATH}/snack${VERSION}; \
+-	    chmod 755 ${DESTDIR}${SNACK_INSTALL_PATH}/snack${VERSION}; \
++	@if [ ! -d ${DESTDIR}${SNACK_INSTALL_PATH}/snack ] ; then \
++	    echo "Making directory ${DESTDIR}${SNACK_INSTALL_PATH}/snack"; \
++	    mkdir -p ${DESTDIR}${SNACK_INSTALL_PATH}/snack; \
++	    chmod 755 ${DESTDIR}${SNACK_INSTALL_PATH}/snack; \
+         else true; \
+         fi;
+-	cp -f libsound${SHLIB_SUFFIX} ${DESTDIR}${SNACK_INSTALL_PATH}/snack${VERSION}/
+-	cp -f libsnack${SHLIB_SUFFIX} ${DESTDIR}${SNACK_INSTALL_PATH}/snack${VERSION}/
+-	if test -f libsnackstub${VERSION}.a; then cp -f libsnackstub${VERSION}.a ${DESTDIR}${SNACK_INSTALL_PATH}/; fi
+-	if test -f libsnacksphere${SHLIB_SUFFIX}; then cp -f libsnacksphere${SHLIB_SUFFIX} ${DESTDIR}${SNACK_INSTALL_PATH}/snack${VERSION}/; fi
+-	if test -f libsnackogg${SHLIB_SUFFIX}; then cp -f libsnackogg${SHLIB_SUFFIX} ${DESTDIR}${SNACK_INSTALL_PATH}/snack${VERSION}/; fi
+-	cp -f $(UNIX_DIR)/snack.tcl ${DESTDIR}${SNACK_INSTALL_PATH}/snack${VERSION}/
+-	cp -f pkgIndex.tcl ${DESTDIR}${SNACK_INSTALL_PATH}/snack${VERSION}/
++	cp -f libsound${SHLIB_SUFFIX} ${DESTDIR}${SNACK_INSTALL_PATH}/snack/
++	cp -f libsnack${SHLIB_SUFFIX} ${DESTDIR}${SNACK_INSTALL_PATH}/snack/
++	if test -f libsnackstub${VERSION}.a; then cp -f libsnackstub${VERSION}.a ${DESTDIR}${SNACK_INSTALL_PATH}/..; fi
++	if test -f libsnacksphere${SHLIB_SUFFIX}; then cp -f libsnacksphere${SHLIB_SUFFIX} ${DESTDIR}${SNACK_INSTALL_PATH}/snack/; fi
++	if test -f libsnackogg${SHLIB_SUFFIX}; then cp -f libsnackogg${SHLIB_SUFFIX} ${DESTDIR}${SNACK_INSTALL_PATH}/snack/; fi
++	cp -f $(UNIX_DIR)/snack.tcl ${DESTDIR}${SNACK_INSTALL_PATH}/snack/
++	cp -f pkgIndex.tcl ${DESTDIR}${SNACK_INSTALL_PATH}/snack/
+ 
+ clean:
+ 	rm -f *.o libsound${SHLIB_SUFFIX} libsnack${SHLIB_SUFFIX} libsnacksphere${SHLIB_SUFFIX}

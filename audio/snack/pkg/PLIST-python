@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST-python,v 1.1.1.1 2011/03/12 08:53:52 sebastia Exp $
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/tkSnack-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/tkSnack.py
+lib/python${MODPY_VERSION}/site-packages/tkSnack.pyc
+share/doc/snack/python-man.html
+share/examples/snack/python/
+share/examples/snack/python/MinSect.py
+share/examples/snack/python/MinSpeg.py
+share/examples/snack/python/MinWave.py
+share/examples/snack/python/dataCmd.py
+share/examples/snack/python/echo.py
+share/examples/snack/python/ex1.wav
+share/examples/snack/python/generator.py
+share/examples/snack/python/mixplay.py
+share/examples/snack/python/notescale.py
+share/examples/snack/python/oggplay.py
+share/examples/snack/python/playnotes.py
+share/examples/snack/python/polarspec.py
+share/examples/snack/python/python-demos.txt
+share/examples/snack/python/spectrogram.py
+share/examples/snack/python/sphere.py
+share/examples/snack/python/tkSnack.py
+share/examples/snack/python/widget.py

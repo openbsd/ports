@@ -1,0 +1,3 @@
+The Snack Sound Toolkit is designed to be used with a scripting language
+such as Tcl/Tk or Python.  This package contains the python bindings for
+snack.

@@ -1,0 +1,41 @@
+$OpenBSD: patch-unix_configure,v 1.1.1.1 2011/03/12 08:53:52 sebastia Exp $
+
+mostly sndio bits
+
+--- unix/configure.orig	Wed Dec 14 12:29:39 2005
++++ unix/configure	Mon Jan 17 13:55:12 2011
+@@ -308,7 +308,7 @@ ac_includes_default="\
+ # include <unistd.h>
+ #endif"
+ 
+-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT CPP EGREP SHLIB_LD SHLIB_SUFFIX XINCLUDES TCL_INCLUDE_SPEC TCL_LIB_SPEC TK_LIB_SPEC TCL_SRC_DIR TK_SRC_DIR TK_LIBS SNACK_INSTALL_PATH SNACK_HINSTALL_PATH SNACK_LIB_SPEC AINC AFLAG ALIB AOBJ NISTINC NISTLIBS LIBNIST OGGINC OGGLIBS LIBOGG TCLAPI LD_SEARCH_FLAGS TCLVER STUBINITOBJ DOSTUBLIB SNACK_STUB_LIB_FLAG SNACK_VERSION LIBOBJS LTLIBOBJS'
++ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT CPP EGREP SHLIB_LD SHLIB_SUFFIX XINCLUDES TCL_INCLUDE_SPEC TK_INCLUDE_SPEC TCL_LIB_SPEC TK_LIB_SPEC TCL_SRC_DIR TK_SRC_DIR TK_LIBS SNACK_INSTALL_PATH SNACK_HINSTALL_PATH SNACK_LIB_SPEC AINC AFLAG ALIB AOBJ NISTINC NISTLIBS LIBNIST OGGINC OGGLIBS LIBOGG TCLAPI LD_SEARCH_FLAGS TCLVER STUBINITOBJ DOSTUBLIB SNACK_STUB_LIB_FLAG SNACK_VERSION LIBOBJS LTLIBOBJS'
+ ac_subst_files=''
+ 
+ # Initialize some variables set by options.
+@@ -1554,11 +1554,16 @@ case $system in
+ 	AFLAG="-DOSS"
+ 	AOBJ="jkAudIO_oss.o"
+ 	;;
+-    NetBSD*|OpenBSD-*)
++    NetBSD*)
+ 	AFLAG="-DOSS"
+ 	ALIB="-lossaudio"
+ 	AOBJ="jkAudIO_oss.o"
+         ;;
++    OpenBSD-*)
++	AFLAG="-DSNDIO"
++	ALIB="-lsndio -lossaudio"
++	AOBJ="jkAudIO_sndio.o"
++	;;
+     FreeBSD-*)
+ 	AFLAG="-DOSS"
+ 	ALIB=""
+@@ -3729,6 +3734,7 @@ s,@SHLIB_LD@,$SHLIB_LD,;t t
+ s,@SHLIB_SUFFIX@,$SHLIB_SUFFIX,;t t
+ s,@XINCLUDES@,$XINCLUDES,;t t
+ s,@TCL_INCLUDE_SPEC@,$TCL_INCLUDE_SPEC,;t t
++s,@TK_INCLUDE_SPEC@,$TK_INCLUDE_SPEC,;t t
+ s,@TCL_LIB_SPEC@,$TCL_LIB_SPEC,;t t
+ s,@TK_LIB_SPEC@,$TK_LIB_SPEC,;t t
+ s,@TCL_SRC_DIR@,$TCL_SRC_DIR,;t t

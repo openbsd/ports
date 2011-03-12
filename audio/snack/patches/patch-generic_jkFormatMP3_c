@@ -1,0 +1,35 @@
+$OpenBSD: patch-generic_jkFormatMP3_c,v 1.1.1.1 2011/03/12 08:53:52 sebastia Exp $
+
+fix building without the patch, build stops with: 
+/usr//include/math.h:321: error: expected declaration specifiers or '...' before '(' token
+/usr//include/math.h:321: error: conflicting types for 'floor'
+
+--- generic/jkFormatMP3.c.orig	Wed Dec 14 12:29:38 2005
++++ generic/jkFormatMP3.c	Sat Jul 17 14:46:23 2010
+@@ -31,7 +31,7 @@ must retain this copyright notice.
+ #include <string.h>
+ #define FRAS2(is,a) ((is) > 0 ? t_43[(is)]*(a):-t_43[-(is)]*(a))
+ #define MAXFRAMESIZE 2106  /* frame size starting at header */
+-#define roundf(x) (floor((x)+(float )0.5f))
++#define roundF(x) (floor((x)+(float )0.5f))
+ static char *gblOutputbuf;
+ static char *gblReadbuf;
+ static int gblBufind = 0;
+@@ -3304,7 +3304,7 @@ int
+             /* Enough info to compute average VBR bitrate and framesize*/
+             if ( xFrames > 0 && xBytes > 0 && (head_flags & (BYTES_FLAG | FRAMES_FLAG))) {
+                float fAvgFrameSize = (float)xBytes/(float)xFrames;
+-               xAvgFrameSize =  (int)roundf(fAvgFrameSize);
++               xAvgFrameSize =  (int)roundF(fAvgFrameSize);
+                xAvgBitrate =  (int)(fAvgFrameSize * (float)fs/(float)sr_lookup[Si->id]);   /* Layer 1 */
+             }
+          }
+@@ -3432,7 +3432,7 @@ int
+       totalFrames = xFrames;
+       mean_frame_size = xAvgFrameSize;
+    } else {
+-      mean_frame_size = (int)roundf(tailAverage);
++      mean_frame_size = (int)roundF(tailAverage);
+    }
+    Si->bytesPerFrame = mean_frame_size;
+    Si->bitrate = bitrate*1000;
