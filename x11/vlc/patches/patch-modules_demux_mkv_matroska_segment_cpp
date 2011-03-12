@@ -1,0 +1,19 @@
+$OpenBSD: patch-modules_demux_mkv_matroska_segment_cpp,v 1.1 2011/03/12 21:19:13 jakemsr Exp $
+--- modules/demux/mkv/matroska_segment.cpp.orig	Sun Feb 27 01:59:13 2011
++++ modules/demux/mkv/matroska_segment.cpp	Sun Feb 27 02:05:29 2011
+@@ -215,6 +215,7 @@ void matroska_segment_c::LoadTags( KaxTags *tags )
+                     }
+                     ep->Up();
+                 }
++#if 0 // not valid anymore
+                 else if( MKV_IS_ID( el, KaxTagGeneral ) )
+                 {
+                     msg_Dbg( &sys.demuxer, "|   + General" );
+@@ -283,6 +284,7 @@ void matroska_segment_c::LoadTags( KaxTags *tags )
+                 {
+                     msg_Dbg( &sys.demuxer, "|   + Multi Title" );
+                 }
++#endif
+                 else
+                 {
+                     msg_Dbg( &sys.demuxer, "|   + LoadTag Unknown (%s)", typeid( *el ).name() );

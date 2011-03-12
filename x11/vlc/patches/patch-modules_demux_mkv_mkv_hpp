@@ -1,9 +1,18 @@
-$OpenBSD: patch-modules_demux_mkv_mkv_hpp,v 1.1 2011/02/02 09:34:23 ajacoutot Exp $
+$OpenBSD: patch-modules_demux_mkv_mkv_hpp,v 1.2 2011/03/12 21:19:13 jakemsr Exp $
 
 Insufficient input validation in MKV demuxer (VideoLAN-SA-1102).
 
---- modules/demux/mkv/mkv.hpp.orig	Tue Feb  1 20:02:28 2011
-+++ modules/demux/mkv/mkv.hpp	Tue Feb  1 20:02:54 2011
+--- modules/demux/mkv/mkv.hpp.orig	Thu Apr 15 12:52:46 2010
++++ modules/demux/mkv/mkv.hpp	Sun Feb 27 02:00:13 2011
+@@ -93,7 +93,7 @@
+ #include "matroska/KaxSegment.h"
+ #include "matroska/KaxTag.h"
+ #include "matroska/KaxTags.h"
+-#include "matroska/KaxTagMulti.h"
++//#include "matroska/KaxTagMulti.h"
+ #include "matroska/KaxTracks.h"
+ #include "matroska/KaxTrackAudio.h"
+ #include "matroska/KaxTrackVideo.h"
 @@ -130,7 +130,7 @@ extern "C" {
  #endif
  
