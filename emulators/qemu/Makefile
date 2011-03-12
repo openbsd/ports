@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.61 2011/01/26 13:51:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.62 2011/03/12 23:28:39 sthen Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS =	i386 amd64 sparc64
 
 COMMENT =		multi system emulator
 
-DISTNAME =		qemu-0.13.0
-REVISION =		1
+DISTNAME =		qemu-0.14.0
 CATEGORIES =		emulators
 
 HOMEPAGE =		http://www.qemu.org/
@@ -35,6 +34,8 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--sysconfdir=${SYSCONFDIR} \
 			--mandir=${PREFIX}/man \
+			--cc="${CC}" \
+			--host-cc="${CC}" \
 			--extra-cflags="-I${LOCALBASE}/include \
 					-I${LOCALBASE}/include/libpng" \
 			--extra-ldflags=-L${LOCALBASE}/lib \

@@ -1,7 +1,7 @@
-$OpenBSD: patch-qemu-options_hx,v 1.1 2010/05/27 17:55:05 fgsch Exp $
---- qemu-options.hx.orig	Tue Feb 23 20:54:38 2010
-+++ qemu-options.hx	Mon Mar 22 20:26:50 2010
-@@ -942,7 +942,7 @@ or @file{C:\WINNT\SYSTEM32\DRIVERS\ETC\LMHOSTS} (Windo
+$OpenBSD: patch-qemu-options_hx,v 1.2 2011/03/12 23:28:39 sthen Exp $
+--- qemu-options.hx.orig	Mon Feb 14 17:02:07 2011
++++ qemu-options.hx	Tue Feb 15 20:40:23 2011
+@@ -1179,7 +1179,7 @@ or @file{C:\WINNT\SYSTEM32\DRIVERS\ETC\LMHOSTS} (Windo
  Then @file{@var{dir}} can be accessed in @file{\\smbserver\qemu}.
  
  Note that a SAMBA server must be installed on the host OS in

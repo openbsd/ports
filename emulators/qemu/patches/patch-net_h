@@ -1,7 +1,7 @@
-$OpenBSD: patch-net_h,v 1.1 2010/05/27 17:55:05 fgsch Exp $
---- net.h.orig	Tue Feb 23 20:54:38 2010
-+++ net.h	Mon Mar 22 20:26:50 2010
-@@ -172,7 +172,7 @@ void net_host_device_remove(Monitor *mon, const QDict 
+$OpenBSD: patch-net_h,v 1.2 2011/03/12 23:28:39 sthen Exp $
+--- net.h.orig	Mon Feb 14 17:02:07 2011
++++ net.h	Tue Feb 15 20:40:23 2011
+@@ -174,7 +174,7 @@ int do_netdev_del(Monitor *mon, const QDict *qdict, QO
  #ifdef __sun__
  #define SMBD_COMMAND "/usr/sfw/sbin/smbd"
  #else

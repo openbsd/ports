@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/11/22 11:32:01 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.17 2011/03/12 23:28:39 sthen Exp $
 @conflict qemu-*
 @pkgpath emulators/qemu,kqemu
 @bin bin/qemu
@@ -44,7 +44,6 @@ share/qemu/
 share/qemu/bamboo.dtb
 share/qemu/bios.bin
 share/qemu/gpxe-eepro100-80861209.rom
-share/qemu/gpxe-eepro100-80861229.rom
 share/qemu/keymaps/
 share/qemu/keymaps/ar
 share/qemu/keymaps/common
@@ -95,5 +94,7 @@ share/qemu/pxe-rtl8139.bin
 share/qemu/pxe-virtio.bin
 share/qemu/s390-zipl.rom
 share/qemu/vgabios-cirrus.bin
+share/qemu/vgabios-qxl.bin
+share/qemu/vgabios-stdvga.bin
+share/qemu/vgabios-vmware.bin
 share/qemu/vgabios.bin
-share/qemu/video.x

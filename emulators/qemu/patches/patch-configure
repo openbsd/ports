@@ -1,41 +1,30 @@
-$OpenBSD: patch-configure,v 1.15 2010/11/22 11:32:01 fgsch Exp $
---- configure.orig	Fri Oct 15 21:56:09 2010
-+++ configure	Thu Nov 18 21:05:53 2010
-@@ -69,12 +69,12 @@ interp_prefix="/usr/gnemul/qemu-%M"
- static="no"
- sparc_cpu=""
- cross_prefix=""
--cc="gcc"
-+cc="${CC:-cc}"
- audio_drv_list=""
- audio_card_list="ac97 es1370 sb16"
- audio_possible_cards="ac97 es1370 sb16 cs4231a adlib gus"
- block_drv_whitelist=""
--host_cc="gcc"
-+host_cc="${CC:-cc}"
- ar="ar"
- make="make"
- install="install"
-@@ -128,15 +128,15 @@ ld="${cross_prefix}${ld}"
+$OpenBSD: patch-configure,v 1.16 2011/03/12 23:28:39 sthen Exp $
+--- configure.orig	Mon Feb 14 17:02:07 2011
++++ configure	Tue Feb 15 20:46:07 2011
+@@ -223,9 +223,8 @@ sdl_config="${cross_prefix}${SDL_CONFIG-sdl-config}"
  
  # default flags for all hosts
  QEMU_CFLAGS="-fno-strict-aliasing $QEMU_CFLAGS"
 -CFLAGS="-g $CFLAGS"
-+CFLAGS="$CFLAGS"
  QEMU_CFLAGS="-Wall -Wundef -Wendif-labels -Wwrite-strings -Wmissing-prototypes $QEMU_CFLAGS"
 -QEMU_CFLAGS="-Wstrict-prototypes -Wredundant-decls $QEMU_CFLAGS"
 +QEMU_CFLAGS="-Wstrict-prototypes $QEMU_CFLAGS"
  QEMU_CFLAGS="-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE $QEMU_CFLAGS"
  QEMU_CFLAGS="-D_FORTIFY_SOURCE=2 $QEMU_CFLAGS"
- QEMU_CFLAGS="-I. -I\$(SRC_PATH) $QEMU_CFLAGS"
- LDFLAGS="-g $LDFLAGS"
+ QEMU_INCLUDES="-I. -I\$(SRC_PATH)"
+@@ -931,10 +930,9 @@ else
+     exit 1
+ fi
  
--gcc_flags="-Wold-style-declaration -Wold-style-definition -fstack-protector-all"
-+gcc_flags="-Wold-style-definition"
+-gcc_flags="-Wold-style-declaration -Wold-style-definition -Wtype-limits"
++gcc_flags="-Wold-style-definition -Wtype-limits"
+ gcc_flags="-Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers $gcc_flags"
+ gcc_flags="-Wmissing-include-dirs -Wempty-body -Wnested-externs $gcc_flags"
+-gcc_flags="-fstack-protector-all $gcc_flags"
  cat > $TMPC << EOF
  int main(void) { return 0; }
  EOF
-@@ -1300,7 +1300,7 @@ int main(void) {
+@@ -1345,7 +1343,7 @@ int main(void) {
  }
  EOF
      vnc_png_cflags=""
@@ -44,7 +33,7 @@ $OpenBSD: patch-configure,v 1.15 2010/11/22 11:32:01 fgsch Exp $
    if compile_prog "$vnc_png_cflags" "$vnc_png_libs" ; then
      vnc_png=yes
      libs_softmmu="$vnc_png_libs $libs_softmmu"
-@@ -1677,7 +1677,7 @@ fi
+@@ -1760,7 +1758,7 @@ fi
  
  ##########################################
  # pthread probe
@@ -53,18 +42,18 @@ $OpenBSD: patch-configure,v 1.15 2010/11/22 11:32:01 fgsch Exp $
  
  pthread=no
  cat > $TMPC << EOF
-@@ -2061,7 +2061,9 @@ fi
+@@ -2329,8 +2327,8 @@ fi
+ # End of CC checks
  # After here, no more $cc or $ld runs
  
- if test "$debug" = "no" ; then
+-if test "$debug" = "no" ; then
 -  CFLAGS="-O2 $CFLAGS"
-+  CFLAGS="$CFLAGS"
-+else
++if test "$debug" = "yes" ; then
 +  CFLAGS="-O0 -g $CFLAGS"
  fi
  
  # Consult white-list to determine whether to enable werror
-@@ -2452,7 +2454,7 @@ echo "TOOLS=$tools" >> $config_host_mak
+@@ -2788,7 +2786,7 @@ echo "TOOLS=$tools" >> $config_host_mak
  echo "ROMS=$roms" >> $config_host_mak
  echo "MAKE=$make" >> $config_host_mak
  echo "INSTALL=$install" >> $config_host_mak
@@ -73,7 +62,7 @@ $OpenBSD: patch-configure,v 1.15 2010/11/22 11:32:01 fgsch Exp $
  echo "INSTALL_DATA=$install -m0644 -p" >> $config_host_mak
  echo "INSTALL_PROG=$install -m0755 -p" >> $config_host_mak
  echo "CC=$cc" >> $config_host_mak
-@@ -2889,7 +2891,11 @@ if test "$gprof" = "yes" ; then
+@@ -3223,7 +3221,11 @@ if test "$gprof" = "yes" ; then
    fi
  fi
  

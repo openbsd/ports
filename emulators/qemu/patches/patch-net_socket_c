@@ -1,6 +1,6 @@
-$OpenBSD: patch-net_socket_c,v 1.1 2011/01/26 13:51:43 sthen Exp $
---- net/socket.c.orig	Sat Oct 16 05:56:09 2010
-+++ net/socket.c	Tue Jan 25 05:57:04 2011
+$OpenBSD: patch-net_socket_c,v 1.2 2011/03/12 23:28:39 sthen Exp $
+--- net/socket.c.orig	Mon Feb 14 17:02:07 2011
++++ net/socket.c	Tue Feb 15 20:40:23 2011
 @@ -154,6 +154,7 @@ static int net_socket_mcast_create(struct sockaddr_in 
      struct ip_mreq imr;
      int fd;
@@ -9,7 +9,7 @@ $OpenBSD: patch-net_socket_c,v 1.1 2011/01/26 13:51:43 sthen Exp $
      if (!IN_MULTICAST(ntohl(mcastaddr->sin_addr.s_addr))) {
  	fprintf(stderr, "qemu: error: specified mcastaddr \"%s\" (0x%08x) does not contain a multicast address\n",
  		inet_ntoa(mcastaddr->sin_addr),
-@@ -193,9 +194,9 @@ static int net_socket_mcast_create(struct sockaddr_in 
+@@ -197,9 +198,9 @@ static int net_socket_mcast_create(struct sockaddr_in 
      }
  
      /* Force mcast msgs to loopback (eg. several QEMUs in same host */
