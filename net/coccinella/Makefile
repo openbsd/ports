@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:32 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/12 09:41:31 sebastia Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		XMPP client with whiteboard
 
-REVISION =		0
+REVISION =		1
 DISTNAME =		Coccinella-0.96.20Src
 PKGNAME =		${DISTNAME:S/Src$//:L}
 CATEGORIES =		net
@@ -24,7 +24,8 @@ MODULES =		x11/tk
 
 # No dependencies to sound and telephony yet, due to the reason those
 # need to be ported to sndio first
-RUN_DEPENDS =		devel/itcl \
+RUN_DEPENDS =		audio/snack \
+			devel/itcl \
 			graphics/tkpng \
 			graphics/tkimg \
 			misc/memchan \
