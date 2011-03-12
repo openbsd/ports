@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.6 2010/11/06 23:05:48 jakemsr Exp $
---- Makefile.orig	Sun Oct 31 17:45:08 2010
-+++ Makefile	Sun Oct 31 18:53:02 2010
-@@ -78,7 +78,9 @@ ifdef ARCH_X86
+$OpenBSD: patch-Makefile,v 1.7 2011/03/12 21:07:09 jakemsr Exp $
+--- Makefile.orig	Fri Feb 25 16:45:04 2011
++++ Makefile	Fri Feb 25 22:17:05 2011
+@@ -87,7 +87,9 @@ ifdef ARCH_X86
  ASFLAGS += -Icommon/x86/
  SRCS   += common/x86/mc-c.c common/x86/predict-c.c
  OBJASM  = $(ASMSRC:%.asm=%.o)
@@ -11,7 +11,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/11/06 23:05:48 jakemsr Exp $
  checkasm: tools/checkasm-a.o
  endif
  endif
-@@ -120,8 +122,10 @@ endif
+@@ -131,8 +133,10 @@ endif
  endif
  
  OBJS = $(SRCS:%.c=%.o)
@@ -22,7 +22,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/11/06 23:05:48 jakemsr Exp $
  DEP  = depend
  
  .PHONY: all default fprofiled clean distclean install uninstall dox test testclean
-@@ -132,8 +136,8 @@ libx264.a: .depend $(OBJS) $(OBJASM)
+@@ -143,8 +147,8 @@ libx264.a: .depend $(OBJS) $(OBJASM)
  	$(AR) rc libx264.a $(OBJS) $(OBJASM)
  	$(RANLIB) libx264.a
  
@@ -33,7 +33,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/11/06 23:05:48 jakemsr Exp $
  
  x264$(EXE): $(OBJCLI) libx264.a
  	$(CC) -o $@ $+ $(LDFLAGSCLI) $(LDFLAGS)
-@@ -145,10 +149,21 @@ checkasm: tools/checkasm.o libx264.a
+@@ -156,10 +160,21 @@ checkasm: tools/checkasm.o libx264.a
  	$(AS) $(ASFLAGS) -o $@ $<
  	-@ $(STRIP) -x $@ # delete local/anonymous symbols, so they don't show up in oprofile
  
@@ -55,7 +55,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/11/06 23:05:48 jakemsr Exp $
  .depend: config.mak
  	@rm -f .depend
  	@$(foreach SRC, $(SRCS) $(SRCCLI) $(SRCSO), $(CC) $(CFLAGS) $(SRC) -MT $(SRC:%.c=%.o) -MM -g0 1>> .depend;)
-@@ -192,7 +207,7 @@ fprofiled:
+@@ -203,7 +218,7 @@ fprofiled:
  endif
  
  clean:
@@ -64,7 +64,7 @@ $OpenBSD: patch-Makefile,v 1.6 2010/11/06 23:05:48 jakemsr Exp $
  	rm -f checkasm checkasm.exe tools/checkasm.o tools/checkasm-a.o
  	rm -f $(SRC2:%.c=%.gcda) $(SRC2:%.c=%.gcno)
  	- sed -e 's/ *-fprofile-\(generate\|use\)//g' config.mak > config.mak2 && mv config.mak2 config.mak
-@@ -214,7 +229,6 @@ install: x264$(EXE) $(SONAME)
+@@ -226,7 +241,6 @@ install: x264$(EXE) $(SONAME)
  ifeq ($(SYS),MINGW)
  	$(if $(SONAME), install -m 755 $(SONAME) $(DESTDIR)$(bindir))
  else

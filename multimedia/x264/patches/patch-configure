@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.7 2010/11/06 23:05:48 jakemsr Exp $
---- configure.orig	Sun Oct 31 17:45:08 2010
-+++ configure	Sun Oct 31 17:51:47 2010
+$OpenBSD: patch-configure,v 1.8 2011/03/12 21:07:09 jakemsr Exp $
+--- configure.orig	Fri Feb 25 16:45:04 2011
++++ configure	Fri Feb 25 22:17:05 2011
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  
  if test x"$1" = x"-h" -o x"$1" = x"--help" ; then
- 
-@@ -670,26 +670,14 @@ if [ "$avs" = "auto" ] ; then
+ cat <<EOF
+@@ -712,26 +712,14 @@ if [ "$avs" = "auto" ] ; then
      fi
  fi
  
@@ -36,7 +36,7 @@ $OpenBSD: patch-configure,v 1.7 2010/11/06 23:05:48 jakemsr Exp $
  fi
  
  if cc_check '' -fno-tree-vectorize ; then
-@@ -749,7 +737,6 @@ GPL=$gpl
+@@ -803,7 +791,6 @@ DEVNULL=$DEVNULL
  EOF
  
  if [ "$shared" = "yes" ]; then
@@ -44,7 +44,7 @@ $OpenBSD: patch-configure,v 1.7 2010/11/06 23:05:48 jakemsr Exp $
      if [ "$SYS" = "MINGW" ]; then
          echo "SONAME=libx264-$API.dll" >> config.mak
          echo 'IMPLIBNAME=libx264.dll.a' >> config.mak
-@@ -765,14 +752,13 @@ if [ "$shared" = "yes" ]; then
+@@ -819,14 +806,13 @@ if [ "$shared" = "yes" ]; then
      else
          echo "SOSUFFIX=so" >> config.mak
          echo "SONAME=libx264.so.$API" >> config.mak
