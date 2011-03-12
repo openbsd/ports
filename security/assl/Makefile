@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.9 2011/01/22 19:59:14 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/12 22:55:05 dhill Exp $
 
-COMMENT =		hide awful SSL API in a sane interface
-V =			0.9.1
-REVISION =		0
+COMMENT=		hide awful SSL API in a sane interface
+
+DISTNAME=		assl-0.9.4
 EPOCH=			0
-DISTNAME =		assl-${V}
+CATEGORIES=		security devel
+SHARED_LIBS=		assl 1.0
+EXTRACT_SUFX=		.tgz
 
-SHARED_LIBS =		assl 0.9
+HOMEPAGE=		http://opensource.conformal.com/wiki/Assl
+MASTER_SITES=		http://opensource.conformal.com/snapshots/assl/
 
-CATEGORIES =		security devel
-
-HOMEPAGE =		http://opensource.conformal.com/wiki/Assl
-
-MAINTAINER =		Chris Kuethe <ckuethe@openbsd.org>
+MAINTAINER=		David Hill <dhill@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE_CDROM =	Yes
@@ -20,12 +19,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		http://opensource.conformal.com/snapshots/assl/
-EXTRACT_SUFX =		.tgz
-
-NO_REGRESS =		Yes
-EG_DIR =		${PREFIX}/share/examples/assl
-MAKE_FLAGS=		PREFIX=${PREFIX}
+NO_REGRESS=		Yes
+EG_DIR=			${PREFIX}/share/examples/assl
 
 .if ${MACHINE_ARCH:Mmips64*}
 EXTRA_CFLAGS=   -D__BUILTIN_HACK

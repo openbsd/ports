@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/12/30 09:01:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/03/12 22:55:05 dhill Exp $
 include/assl.h
 lib/libassl.a
 %%SHARED%%
@@ -9,6 +9,13 @@ lib/libassl_p.a
 @man man/cat3/assl_alloc_context.0
 @man man/cat3/assl_close.0
 @man man/cat3/assl_connect.0
+@man man/cat3/assl_event_accept.0
+@man man/cat3/assl_event_close.0
+@man man/cat3/assl_event_connect.0
+@man man/cat3/assl_event_disable_write.0
+@man man/cat3/assl_event_enable_write.0
+@man man/cat3/assl_event_serve.0
+@man man/cat3/assl_event_serve_stop.0
 @man man/cat3/assl_fatalx.0
 @man man/cat3/assl_gets.0
 @man man/cat3/assl_initialize.0
@@ -45,6 +52,13 @@ share/examples/assl/client/nonblocking/
 share/examples/assl/client/nonblocking/GNUmakefile
 share/examples/assl/client/nonblocking/Makefile
 share/examples/assl/client/nonblocking/nbclient.c
+share/examples/assl/client/nonblocking_event/
+share/examples/assl/client/nonblocking_event/Makefile
+share/examples/assl/client/nonblocking_event/nbclient.c
+share/examples/assl/client/nullcrypt/
+share/examples/assl/client/nullcrypt/GNUmakefile
+share/examples/assl/client/nullcrypt/Makefile
+share/examples/assl/client/nullcrypt/nullcrypt.c
 share/examples/assl/client/sign_client
 share/examples/assl/create_ca
 share/examples/assl/server/
@@ -56,6 +70,12 @@ share/examples/assl/server/blocking/GNUmakefile
 share/examples/assl/server/blocking/Makefile
 share/examples/assl/server/blocking/bserver.c
 share/examples/assl/server/create_server
+share/examples/assl/server/event/
+share/examples/assl/server/event/Makefile
+share/examples/assl/server/event/evserver.c
+share/examples/assl/server/fork_event/
+share/examples/assl/server/fork_event/Makefile
+share/examples/assl/server/fork_event/evserver.c
 share/examples/assl/server/fork_nonblocking/
 share/examples/assl/server/fork_nonblocking/GNUmakefile
 share/examples/assl/server/fork_nonblocking/Makefile
@@ -64,6 +84,10 @@ share/examples/assl/server/nonblocking/
 share/examples/assl/server/nonblocking/GNUmakefile
 share/examples/assl/server/nonblocking/Makefile
 share/examples/assl/server/nonblocking/nbserver.c
+share/examples/assl/server/nullcrypt/
+share/examples/assl/server/nullcrypt/GNUmakefile
+share/examples/assl/server/nullcrypt/Makefile
+share/examples/assl/server/nullcrypt/nullcrypt.c
 share/examples/assl/server/server/
 share/examples/assl/server/server/private/
 share/examples/assl/server/server/private/server.key
