@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.19 2010/11/02 09:56:19 landry Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/03/12 12:51:25 landry Exp $
 @bin bin/midori
-include/midori-0.2/
-include/midori-0.2/extensions/
-include/midori-0.2/extensions/history-list.h
+include/midori-0.3/
+include/midori-0.3/extensions/
+include/midori-0.3/extensions/history-list.h
 lib/midori/
 lib/midori/libadblock.so
 lib/midori/libaddons.so
@@ -49,6 +49,7 @@ share/icons/hicolor/48x48/status/news-feed.png
 share/icons/hicolor/scalable/apps/midori.svg
 share/icons/hicolor/scalable/categories/extension.svg
 share/icons/hicolor/scalable/status/news-feed.svg
+share/locale/ar/LC_MESSAGES/midori.mo
 share/locale/ast/LC_MESSAGES/midori.mo
 share/locale/ca/LC_MESSAGES/midori.mo
 share/locale/cs/LC_MESSAGES/midori.mo

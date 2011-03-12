@@ -1,13 +1,15 @@
-$OpenBSD: patch-midori_main_c,v 1.4 2010/11/02 09:56:19 landry Exp $
+$OpenBSD: patch-midori_main_c,v 1.5 2011/03/12 12:51:25 landry Exp $
 use path to our root ca list for ssl cert validation
---- midori/main.c.orig	Sun Oct 31 23:20:48 2010
-+++ midori/main.c	Mon Nov  1 08:26:36 2010
-@@ -861,8 +861,7 @@ midori_soup_session_prepare (SoupSession*       sessio
+--- midori/main.c.orig	Sun Feb 20 00:00:26 2011
++++ midori/main.c	Sun Feb 20 20:31:06 2011
+@@ -898,10 +898,7 @@ midori_soup_session_prepare (SoupSession*       sessio
      #if WEBKIT_CHECK_VERSION (1, 1, 14) && defined (HAVE_LIBSOUP_2_29_91)
      const gchar* certificate_files[] =
      {
 -        "/etc/pki/tls/certs/ca-bundle.crt",
 -        "/etc/ssl/certs/ca-certificates.crt",
+-        "/etc/ssl/certs/ca-bundle.crt",
+-        "/usr/local/share/certs/ca-root-nss.crt",
 +        "/etc/ssl/cert.pem",
          NULL
      };
