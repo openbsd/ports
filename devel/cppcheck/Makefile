@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/30 09:12:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/03/12 13:25:30 sthen Exp $
 
 COMMENT =		C/C++ static checker
 
-DISTNAME =		cppcheck-1.46.1
+DISTNAME =		cppcheck-1.47
 
 CATEGORIES =		devel
 
@@ -16,15 +16,18 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m stdc++
+WANTLIB =		c m pcre stdc++ 
 
 BUILD_DEPENDS =		textproc/docbook-xsl \
 			textproc/libxslt
 
+LIB_DEPENDS =		devel/pcre
+
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cppcheck/}
 
 ALL_TARGET =		cppcheck
-MAKE_FLAGS =		BIN=${PREFIX}/bin CXX="${CXX}" CXXFLAGS="${CXXFLAGS}"
+MAKE_FLAGS =		BIN=${PREFIX}/bin CXX="${CXX}" \
+			CXXFLAGS="${CXXFLAGS} -I${PREFIX}/include -L${PREFIX}/lib"
 
 USE_GMAKE =		Yes
 
