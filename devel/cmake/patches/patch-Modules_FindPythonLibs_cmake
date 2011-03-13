@@ -1,25 +1,29 @@
-$OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.2 2010/11/15 11:39:09 dcoppa Exp $
---- Modules/FindPythonLibs.cmake.orig	Tue Apr  6 16:45:31 2010
-+++ Modules/FindPythonLibs.cmake	Tue May 11 14:26:12 2010
-@@ -27,7 +27,16 @@ INCLUDE(CMakeFindFrameworks)
+$OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.3 2011/03/13 18:23:02 dcoppa Exp $
+--- Modules/FindPythonLibs.cmake.orig	Tue Feb 15 18:47:27 2011
++++ Modules/FindPythonLibs.cmake	Mon Mar  7 11:42:19 2011
+@@ -27,11 +27,18 @@ INCLUDE(CMakeFindFrameworks)
  # Search for the python framework on Apple.
  CMAKE_FIND_FRAMEWORKS(Python)
  
--FOREACH(_CURRENT_VERSION 2.7 2.6 2.5 2.4 2.3 2.2 2.1 2.0 1.6 1.5)
 +SET(MODPY_VERSION $ENV{MODPY_VERSION})
 +SET(MODPY_INCDIR $ENV{MODPY_INCDIR})
 +
+ # Set up the versions we know about, in the order we will search. Always add
+ # the user supplied additional versions to the front.
+-set(_Python_VERSIONS
+-  ${Python_ADDITIONAL_VERSIONS}
+-  2.7 2.6 2.5 2.4 2.3 2.2 2.1 2.0 1.6 1.5)
 +IF(MODPY_VERSION)
-+  SET(_VERSIONS ${MODPY_VERSION})
++  set(_Python_VERSIONS ${MODPY_VERSION})
 +ELSE(MODPY_VERSION)
-+  SET(_VERSIONS 2.6 2.5 2.4 2.3 2.2 2.1 2.0 1.6 1.5)
++  set(_Python_VERSIONS
++    ${Python_ADDITIONAL_VERSIONS}
++    2.7 2.6 2.5 2.4 2.3 2.2 2.1 2.0 1.6 1.5)
 +ENDIF(MODPY_VERSION)
-+
-+FOREACH(_CURRENT_VERSION ${_VERSIONS})
+ 
+ FOREACH(_CURRENT_VERSION ${_Python_VERSIONS})
    STRING(REPLACE "." "" _CURRENT_VERSION_NO_DOTS ${_CURRENT_VERSION})
-   IF(WIN32)
-     FIND_LIBRARY(PYTHON_DEBUG_LIBRARY
-@@ -68,14 +77,18 @@ FOREACH(_CURRENT_VERSION 2.7 2.6 2.5 2.4 2.3 2.2 2.1 2
+@@ -74,14 +81,18 @@ FOREACH(_CURRENT_VERSION ${_Python_VERSIONS})
      ENDFOREACH(dir)
    ENDIF(Python_FRAMEWORKS AND NOT PYTHON_INCLUDE_DIR)
  
@@ -45,4 +49,4 @@ $OpenBSD: patch-Modules_FindPythonLibs_cmake,v 1.2 2010/11/15 11:39:09 dcoppa Ex
 +  ENDIF(MODPY_VERSION AND MODPY_INCDIR)
  
    # For backward compatibility, set PYTHON_INCLUDE_PATH, but make it internal.
-   SET(PYTHON_INCLUDE_PATH "${PYTHON_INCLUDE_DIR}" CACHE INTERNAL 
+   SET(PYTHON_INCLUDE_PATH "${PYTHON_INCLUDE_DIR}" CACHE INTERNAL

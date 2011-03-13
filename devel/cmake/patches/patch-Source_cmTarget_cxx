@@ -1,7 +1,7 @@
-$OpenBSD: patch-Source_cmTarget_cxx,v 1.7 2010/11/15 11:39:09 dcoppa Exp $
---- Source/cmTarget.cxx.orig	Wed Nov  3 20:58:29 2010
-+++ Source/cmTarget.cxx	Fri Nov 12 11:50:00 2010
-@@ -3191,6 +3191,36 @@ void cmTarget::GetLibraryNames(std::string& name,
+$OpenBSD: patch-Source_cmTarget_cxx,v 1.8 2011/03/13 18:23:02 dcoppa Exp $
+--- Source/cmTarget.cxx.orig	Tue Feb 15 18:47:31 2011
++++ Source/cmTarget.cxx	Mon Mar  7 10:10:46 2011
+@@ -3237,6 +3237,36 @@ void cmTarget::GetLibraryNames(std::string& name,
    std::string suffix;
    this->GetFullNameInternal(config, false, prefix, base, suffix);
  
@@ -38,7 +38,7 @@ $OpenBSD: patch-Source_cmTarget_cxx,v 1.7 2010/11/15 11:39:09 dcoppa Exp $
    // The library name.
    name = prefix+base+suffix;
  
-@@ -3218,8 +3248,27 @@ void cmTarget::GetLibraryNames(std::string& name,
+@@ -3271,8 +3301,27 @@ void cmTarget::GetLibraryNames(std::string& name,
    if(version)
      {
      realName += ".";

@@ -1,6 +1,6 @@
-$OpenBSD: patch-Modules_FindTCL_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
---- Modules/FindTCL.cmake.orig	Tue Apr  6 16:45:31 2010
-+++ Modules/FindTCL.cmake	Tue May 11 13:54:34 2010
+$OpenBSD: patch-Modules_FindTCL_cmake,v 1.2 2011/03/13 18:23:02 dcoppa Exp $
+--- Modules/FindTCL.cmake.orig	Tue Feb 15 18:47:27 2011
++++ Modules/FindTCL.cmake	Wed Mar  9 14:36:39 2011
 @@ -48,15 +48,32 @@ INCLUDE(CMakeFindFrameworks)
  INCLUDE(FindTclsh)
  INCLUDE(FindWish)
@@ -93,7 +93,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
 -FIND_LIBRARY(TCL_LIBRARY
 -  NAMES 
 -  tcl   
--  tcl${TK_LIBRARY_VERSION} tcl${TCL_TCLSH_VERSION} tcl${TK_WISH_VERSION}
+-  tcl${TCL_LIBRARY_VERSION} tcl${TCL_TCLSH_VERSION} tcl${TK_WISH_VERSION}
 -  tcl86 tcl8.6 
 -  tcl85 tcl8.5 
 -  tcl84 tcl8.4 
@@ -104,7 +104,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
 -  )
 +IF(MODTCL_LIB)
 +  FIND_LIBRARY(TCL_LIBRARY
-+    NAMES
++    NAMES 
 +    ${MODTCL_LIB}
 +    PATHS ${TCLTK_POSSIBLE_LIB_PATHS}
 +    )
@@ -112,7 +112,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
 +  FIND_LIBRARY(TCL_LIBRARY
 +    NAMES 
 +    tcl   
-+    tcl${TK_LIBRARY_VERSION} tcl${TCL_TCLSH_VERSION} tcl${TK_WISH_VERSION}
++    tcl${TCL_LIBRARY_VERSION} tcl${TCL_TCLSH_VERSION} tcl${TK_WISH_VERSION}
 +    tcl86 tcl8.6 
 +    tcl85 tcl8.5 
 +    tcl84 tcl8.4 
@@ -126,7 +126,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
 -FIND_LIBRARY(TK_LIBRARY 
 -  NAMES 
 -  tk
--  tk${TCL_LIBRARY_VERSION} tk${TCL_TCLSH_VERSION} tk${TK_WISH_VERSION}
+-  tk${TK_LIBRARY_VERSION} tk${TCL_TCLSH_VERSION} tk${TK_WISH_VERSION}
 -  tk86 tk8.6
 -  tk85 tk8.5 
 -  tk84 tk8.4 
@@ -136,8 +136,8 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
 -  PATHS ${TCLTK_POSSIBLE_LIB_PATHS}
 -  )
 +IF(MODTK_LIB)
-+  FIND_LIBRARY(TK_LIBRARY
-+    NAMES
++  FIND_LIBRARY(TK_LIBRARY 
++    NAMES 
 +    ${MODTK_LIB}
 +    PATHS ${TCLTK_POSSIBLE_LIB_PATHS}
 +    )
@@ -145,7 +145,7 @@ $OpenBSD: patch-Modules_FindTCL_cmake,v 1.1 2010/05/28 20:21:48 dcoppa Exp $
 +  FIND_LIBRARY(TK_LIBRARY 
 +    NAMES 
 +    tk
-+    tk${TCL_LIBRARY_VERSION} tk${TCL_TCLSH_VERSION} tk${TK_WISH_VERSION}
++    tk${TK_LIBRARY_VERSION} tk${TCL_TCLSH_VERSION} tk${TK_WISH_VERSION}
 +    tk86 tk8.6
 +    tk85 tk8.5 
 +    tk84 tk8.4 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-Modules_FindQt4_cmake,v 1.9 2010/11/15 11:39:09 dcoppa Exp $
---- Modules/FindQt4.cmake.orig	Mon Jun 28 17:15:57 2010
-+++ Modules/FindQt4.cmake	Mon Jul  5 11:23:18 2010
-@@ -461,13 +461,20 @@ GET_FILENAME_COMPONENT(qt_install_version "[HKEY_CURRE
+$OpenBSD: patch-Modules_FindQt4_cmake,v 1.10 2011/03/13 18:23:02 dcoppa Exp $
+--- Modules/FindQt4.cmake.orig	Tue Feb 15 18:47:27 2011
++++ Modules/FindQt4.cmake	Mon Mar  7 10:10:46 2011
+@@ -464,13 +464,20 @@ GET_FILENAME_COMPONENT(qt_install_version "[HKEY_CURRE
  # check for qmake
  # Debian uses qmake-qt4
  # macports' Qt uses qmake-mac
@@ -29,7 +29,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.9 2010/11/15 11:39:09 dcoppa Exp $
  
  IF (QT_QMAKE_EXECUTABLE)
  
-@@ -964,6 +971,12 @@ IF (QT4_QMAKE_FOUND)
+@@ -967,6 +974,12 @@ IF (QT4_QMAKE_FOUND)
      _QT4_ADJUST_LIB_VARS(QAxContainer)
    ENDIF(Q_WS_WIN)
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-Modules_FindQt4_cmake,v 1.9 2010/11/15 11:39:09 dcoppa Exp $
  
    #######################################
    #
-@@ -988,13 +1001,13 @@ IF (QT4_QMAKE_FOUND)
+@@ -991,13 +1004,13 @@ IF (QT4_QMAKE_FOUND)
    ENDIF(QT_QMAKE_CHANGED)
    
    FIND_PROGRAM(QT_MOC_EXECUTABLE

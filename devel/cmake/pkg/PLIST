@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/11/22 16:26:30 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/03/13 18:23:02 dcoppa Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -22,6 +22,7 @@ share/cmake/Modules/CMakeASM-ATTInformation.cmake
 share/cmake/Modules/CMakeASMCompiler.cmake.in
 share/cmake/Modules/CMakeASMInformation.cmake
 share/cmake/Modules/CMakeASM_MASMInformation.cmake
+share/cmake/Modules/CMakeASM_NASMInformation.cmake
 share/cmake/Modules/CMakeAddNewLanguage.txt
 share/cmake/Modules/CMakeBackwardCompatibilityC.cmake
 share/cmake/Modules/CMakeBackwardCompatibilityCXX.cmake
@@ -42,6 +43,7 @@ share/cmake/Modules/CMakeDependentOption.cmake
 share/cmake/Modules/CMakeDetermineASM-ATTCompiler.cmake
 share/cmake/Modules/CMakeDetermineASMCompiler.cmake
 share/cmake/Modules/CMakeDetermineASM_MASMCompiler.cmake
+share/cmake/Modules/CMakeDetermineASM_NASMCompiler.cmake
 share/cmake/Modules/CMakeDetermineCCompiler.cmake
 share/cmake/Modules/CMakeDetermineCXXCompiler.cmake
 share/cmake/Modules/CMakeDetermineCompilerABI.cmake
@@ -83,6 +85,7 @@ share/cmake/Modules/CMakeSystemSpecificInformation.cmake
 share/cmake/Modules/CMakeTestASM-ATTCompiler.cmake
 share/cmake/Modules/CMakeTestASMCompiler.cmake
 share/cmake/Modules/CMakeTestASM_MASMCompiler.cmake
+share/cmake/Modules/CMakeTestASM_NASMCompiler.cmake
 share/cmake/Modules/CMakeTestCCompiler.cmake
 share/cmake/Modules/CMakeTestCXXCompiler.cmake
 share/cmake/Modules/CMakeTestCompilerCommon.cmake
@@ -149,6 +152,9 @@ share/cmake/Modules/CheckVariableExists.cmake
 share/cmake/Modules/Compiler/
 share/cmake/Modules/Compiler/Clang-C.cmake
 share/cmake/Modules/Compiler/Clang-CXX.cmake
+share/cmake/Modules/Compiler/Cray-C.cmake
+share/cmake/Modules/Compiler/Cray-CXX.cmake
+share/cmake/Modules/Compiler/Cray-Fortran.cmake
 share/cmake/Modules/Compiler/G95-Fortran.cmake
 share/cmake/Modules/Compiler/GNU-C.cmake
 share/cmake/Modules/Compiler/GNU-CXX.cmake
@@ -163,6 +169,7 @@ share/cmake/Modules/Compiler/Intel-Fortran.cmake
 share/cmake/Modules/Compiler/MIPSpro-C.cmake
 share/cmake/Modules/Compiler/MIPSpro-CXX.cmake
 share/cmake/Modules/Compiler/MIPSpro-Fortran.cmake
+share/cmake/Modules/Compiler/NAG-Fortran.cmake
 share/cmake/Modules/Compiler/PGI-C.cmake
 share/cmake/Modules/Compiler/PGI-CXX.cmake
 share/cmake/Modules/Compiler/PGI-Fortran.cmake
@@ -171,6 +178,9 @@ share/cmake/Modules/Compiler/PathScale-C.cmake
 share/cmake/Modules/Compiler/PathScale-CXX.cmake
 share/cmake/Modules/Compiler/PathScale-Fortran.cmake
 share/cmake/Modules/Compiler/PathScale.cmake
+share/cmake/Modules/Compiler/SCO-C.cmake
+share/cmake/Modules/Compiler/SCO-CXX.cmake
+share/cmake/Modules/Compiler/SCO.cmake
 share/cmake/Modules/Compiler/SunPro-C.cmake
 share/cmake/Modules/Compiler/SunPro-CXX.cmake
 share/cmake/Modules/Compiler/SunPro-Fortran.cmake
@@ -243,6 +253,7 @@ share/cmake/Modules/FindKDE3.cmake
 share/cmake/Modules/FindKDE4.cmake
 share/cmake/Modules/FindLAPACK.cmake
 share/cmake/Modules/FindLATEX.cmake
+share/cmake/Modules/FindLCMS.cmake
 share/cmake/Modules/FindLibArchive.cmake
 share/cmake/Modules/FindLibXml2.cmake
 share/cmake/Modules/FindLibXslt.cmake
@@ -389,12 +400,14 @@ share/cmake/Modules/Platform/CYGWIN-GNU-C.cmake
 share/cmake/Modules/Platform/CYGWIN-GNU-CXX.cmake
 share/cmake/Modules/Platform/CYGWIN-GNU-Fortran.cmake
 share/cmake/Modules/Platform/CYGWIN-GNU.cmake
+share/cmake/Modules/Platform/CYGWIN-windres.cmake
 share/cmake/Modules/Platform/CYGWIN.cmake
 share/cmake/Modules/Platform/Catamount.cmake
 share/cmake/Modules/Platform/Darwin-GNU-C.cmake
 share/cmake/Modules/Platform/Darwin-GNU-CXX.cmake
 share/cmake/Modules/Platform/Darwin-GNU-Fortran.cmake
 share/cmake/Modules/Platform/Darwin-GNU.cmake
+share/cmake/Modules/Platform/Darwin-NAG-Fortran.cmake
 share/cmake/Modules/Platform/Darwin-VisualAge-C.cmake
 share/cmake/Modules/Platform/Darwin-VisualAge-CXX.cmake
 share/cmake/Modules/Platform/Darwin-XL-C.cmake
@@ -429,6 +442,7 @@ share/cmake/Modules/Platform/Linux-Intel-C.cmake
 share/cmake/Modules/Platform/Linux-Intel-CXX.cmake
 share/cmake/Modules/Platform/Linux-Intel-Fortran.cmake
 share/cmake/Modules/Platform/Linux-Intel.cmake
+share/cmake/Modules/Platform/Linux-NAG-Fortran.cmake
 share/cmake/Modules/Platform/Linux-PGI-C.cmake
 share/cmake/Modules/Platform/Linux-PGI-CXX.cmake
 share/cmake/Modules/Platform/Linux-PGI-Fortran.cmake
@@ -473,15 +487,16 @@ share/cmake/Modules/Platform/Windows-GNU-C.cmake
 share/cmake/Modules/Platform/Windows-GNU-CXX.cmake
 share/cmake/Modules/Platform/Windows-GNU-Fortran.cmake
 share/cmake/Modules/Platform/Windows-GNU.cmake
+share/cmake/Modules/Platform/Windows-Intel-C.cmake
+share/cmake/Modules/Platform/Windows-Intel-CXX.cmake
+share/cmake/Modules/Platform/Windows-Intel-Fortran.cmake
 share/cmake/Modules/Platform/Windows-Intel.cmake
 share/cmake/Modules/Platform/Windows-NMcl.cmake
 share/cmake/Modules/Platform/Windows-cl.cmake
 share/cmake/Modules/Platform/Windows-cl.cmake.in
 share/cmake/Modules/Platform/Windows-df.cmake
-share/cmake/Modules/Platform/Windows-g++.cmake
-share/cmake/Modules/Platform/Windows-icl.cmake
-share/cmake/Modules/Platform/Windows-ifort.cmake
 share/cmake/Modules/Platform/Windows-wcl386.cmake
+share/cmake/Modules/Platform/Windows-windres.cmake
 share/cmake/Modules/Platform/Windows.cmake
 share/cmake/Modules/Platform/WindowsPaths.cmake
 share/cmake/Modules/Platform/Xenix.cmake
