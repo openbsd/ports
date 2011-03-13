@@ -3,7 +3,7 @@ to request additional fine-grained privileges (e.g. adjust the clock,
 change timezone...). Access to these privileges is controlled by policy
 files and user passwords.
 
-If you'd like to completely disable priviledge granting through the
+If you'd like to completely disable privilege granting through the
 PolicyKit framework, create the file:
     ${SYSCONFDIR}/polkit-1/nullbackend.conf.d/99-nullbackend.conf
 containing the following lines:
