@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/22 08:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/03/13 17:39:36 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Alternative PHP Cache
 
-DISTNAME=	APC-3.1.2
+DISTNAME=	APC-3.1.7
 PKGNAME=	pecl-${DISTNAME}
 CATEGORIES=	www
 
@@ -12,7 +12,7 @@ HOMEPAGE=	http://pecl.php.net/package/APC
 
 MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
 
-# PHP License
+# PHP
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
