@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.no_mips64,v 1.1 2011/03/13 20:43:24 jasper Exp $
+lib/libshrink_pic.a
