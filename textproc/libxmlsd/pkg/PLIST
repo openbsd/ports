@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/12 13:54:40 dhill Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/13 17:31:25 jasper Exp $
 %%SHARED%%
 include/xmlsd.h
 lib/libxmlsd.a
 lib/libxmlsd_p.a
-lib/libxmlsd_pic.a
+%%no_mips64%%
