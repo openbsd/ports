@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2011/01/13 09:36:35 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2011/03/13 10:26:26 dcoppa Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	3D realtime strategy on a future earth
 
-DISTNAME=	warzone2100-2.3.6
-REVISION=	1
+DISTNAME=	warzone2100-2.3.7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=warzone2100/}
 
@@ -38,7 +37,8 @@ RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.61
+# Should be 2.65
+AUTOCONF_VERSION= 2.64
 CONFIGURE_ARGS+= --with-distributor="OpenBSD"
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include/libpng \
 		    -I${LOCALBASE}/include" \

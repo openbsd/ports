@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_sequence_sequence_c,v 1.1 2010/12/05 16:14:16 dcoppa Exp $
---- lib/sequence/sequence.c.orig	Mon Nov 22 14:43:44 2010
-+++ lib/sequence/sequence.c	Mon Nov 22 14:44:10 2010
-@@ -758,7 +758,7 @@ bool seq_Update()
+$OpenBSD: patch-lib_sequence_sequence_c,v 1.2 2011/03/13 10:26:26 dcoppa Exp $
+--- lib/sequence/sequence.c.orig	Fri Jan 21 15:52:01 2011
++++ lib/sequence/sequence.c	Sat Jan 29 21:18:37 2011
+@@ -756,7 +756,7 @@ bool seq_Update()
  			{
  				for (j = 0; j < videodata.vi.channels; j++)
  				{
