@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/07 19:35:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/03/13 16:06:34 jasper Exp $
 
 COMMENT=	AVR simulator
 
@@ -23,7 +23,8 @@ CONFIGURE_ARGS+=	--enable-curses=yes \
 
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
+BUILD_DEPENDS=		${RUN_DEPENDS} \
+			print/texlive/base
 RUN_DEPENDS=		devel/avr/binutils \
 			devel/avr/gcc \
 			devel/avr/libc
