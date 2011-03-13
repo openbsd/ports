@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/13 17:31:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/13 17:33:38 jasper Exp $
 
 COMMENT=	XML validation library
 
@@ -26,7 +26,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 # See bsd.lib.mk:162
 .if ${MACHINE_ARCH:Mmips64*}
-EXTRA_CFLAGS=   -D__BUILTIN_HACK
 PKG_ARGS+=	-Dno_mips64=0
 .else
 PKG_ARGS+=	-Dno_mips64=1

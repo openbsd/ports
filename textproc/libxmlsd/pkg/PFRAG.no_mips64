@@ -1,2 +1,2 @@
-$OpenBSD: PFRAG.no_mips64,v 1.1 2011/03/13 17:31:25 jasper Exp $
+@comment $OpenBSD: PFRAG.no_mips64,v 1.2 2011/03/13 17:33:38 jasper Exp $
 lib/libxmlsd_pic.a
