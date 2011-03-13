@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2010/12/08 09:07:48 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2011/03/13 18:19:32 dcoppa Exp $
 
 COMMENT =	desktop geographical information system
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 DISTNAME =	qgis-1.6.0
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
@@ -47,10 +48,11 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		devel/gsl \
 		databases/postgresql
 
-WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat fontconfig \
-		freetype glib-2.0 gthread-2.0 m png pthread gobject-2.0 util \
-		stdc++ z proj QtGui QtNetwork QtXml QtSql QtCore QtSvg QtWebKit\
-		gdal geos_c gsl gslcblas pq qwt fcgi
+WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat \
+		fontconfig freetype glib-2.0 gthread-2.0 lcms m \
+		mng png pthread gobject-2.0 util stdc++ z proj \
+		QtGui QtNetwork QtXml QtSql QtCore QtSvg \
+		QtWebKit gdal geos_c gsl gslcblas pq qwt fcgi
 WANTLIB += ${MODPY_WANTLIB}
 
 CONFIGURE_ENV+=	VERBOSE=1
