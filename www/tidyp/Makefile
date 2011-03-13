@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/10 19:34:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/03/13 19:24:13 jasper Exp $
 
 COMMENT=	validate, correct and pretty-print HTML
 
 V=		1.04
 DISTNAME=	tidyp-$V
+REVISION=	0
 SHARED_LIBS +=  tidyp-$V                  0.0 # 0.0
 SHARED_LIBS +=  tidyp                     0.0 # 0.0
 CATEGORIES=	www
