@@ -1,0 +1,14 @@
+$OpenBSD: patch-lib_awful_client_lua_in,v 1.1 2011/03/13 18:07:23 dcoppa Exp $
+--- lib/awful/client.lua.in.orig	Thu Mar 10 17:14:47 2011
++++ lib/awful/client.lua.in	Thu Mar 10 17:16:29 2011
+@@ -627,8 +627,8 @@ end
+ function floating.toggle(c)
+     local c = c or capi.client.focus
+     -- If it has been set to floating
+-    if property.get(c, "floating") then
+-        floating.set(c, nil)
++    if floating.get(c) then
++        floating.set(c, false)
+     else
+         floating.set(c, true)
+     end

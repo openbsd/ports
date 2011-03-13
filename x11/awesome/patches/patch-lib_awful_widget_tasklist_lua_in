@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_awful_widget_tasklist_lua_in,v 1.1 2011/03/13 18:07:23 dcoppa Exp $
+--- lib/awful/widget/tasklist.lua.in.orig	Mon Jan 17 12:38:13 2011
++++ lib/awful/widget/tasklist.lua.in	Thu Mar 10 20:09:39 2011
+@@ -65,6 +65,7 @@ function new(label, buttons)
+         c:add_signal("property::floating", u)
+         c:add_signal("property::maximized_horizontal", u)
+         c:add_signal("property::maximized_vertical", u)
++        c:add_signal("property::minimized", u)
+         c:add_signal("property::name", u)
+         c:add_signal("property::icon_name", u)
+         c:add_signal("property::icon", u)

@@ -1,6 +1,6 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.6 2011/01/19 12:41:08 dcoppa Exp $
---- CMakeLists.txt.orig	Wed Jan 19 13:24:14 2011
-+++ CMakeLists.txt	Wed Jan 19 13:24:42 2011
+$OpenBSD: patch-CMakeLists_txt,v 1.7 2011/03/13 18:07:23 dcoppa Exp $
+--- CMakeLists.txt.orig	Mon Jan 17 12:38:13 2011
++++ CMakeLists.txt	Wed Mar  9 13:44:50 2011
 @@ -215,7 +215,7 @@ if(GENERATE_MANPAGES)
                  DEPENDS ${txtfile}
                  VERBATIM)
@@ -10,3 +10,20 @@ $OpenBSD: patch-CMakeLists_txt,v 1.6 2011/01/19 12:41:08 dcoppa Exp $
                  OUTPUT  ${manfile}
                  WORKING_DIRECTORY ${BUILD_DIR}/${relpath2}
                  DEPENDS ${xmlfile})
+@@ -274,14 +274,15 @@ endif()
+ 
+ # {{{ Theme icons
+ file(GLOB icon_sources RELATIVE ${SOURCE_DIR} ${SOURCE_DIR}/themes/*/titlebar/*.png)
+-set(ALL_ICONS ${icon_sources})
+ 
+ foreach(icon ${icon_sources})
+     # Copy all icons to the build dir to simplify the following code.
+     # Source paths are interpreted relative to ${SOURCE_DIR}, target paths
+     # relative to ${BUILD_DIR}.
+     get_filename_component(icon_path ${icon} PATH)
++    get_filename_component(icon_name ${icon} NAME)
+     file(COPY ${icon} DESTINATION ${icon_path})
++    set(ALL_ICONS ${ALL_ICONS} "${icon_path}/${icon_name}")
+ endforeach()
+ 
+ macro(a_icon_convert match replacement input)
