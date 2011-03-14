@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/14 20:47:34 landry Exp $
+@newgroup _mdnsd:664
+@newuser _mdnsd:664:_mdnsd:daemon:MDNS Daemon:/var/empty:/sbin/nologin
+@bin bin/mdnsctl
+@bin bin/mdnsd
+@man man/cat8/mdnsctl.0
+@man man/cat8/mdnsd.0
