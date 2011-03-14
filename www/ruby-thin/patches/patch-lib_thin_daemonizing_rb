@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_thin_daemonizing_rb,v 1.1 2011/03/14 17:58:06 jeremy Exp $
+
+Backport commit 0ea95a0ddae14d65bc59 from upstream git to fix
+backtrace on stop command.
+
+--- lib/thin/daemonizing.rb.orig	Wed Feb 23 17:22:10 2011
++++ lib/thin/daemonizing.rb	Wed Feb 23 17:22:43 2011
+@@ -5,6 +5,8 @@ module Process
+   # Returns +true+ the process identied by +pid+ is running.
+   def running?(pid)
+     Process.getpgid(pid) != -1
++  rescue Errno::EPERM
++    true
+   rescue Errno::ESRCH
+     false
+   end
