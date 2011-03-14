@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 17:43:58 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/14 18:31:07 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/API.rdoc
@@ -15,13 +15,13 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/ext/adapter.cc
 ${GEM_LIB}/gems/${DISTNAME}/ext/adapter.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/adapter.o
+${GEM_LIB}/gems/${DISTNAME}/ext/adapter_io.cc
+${GEM_LIB}/gems/${DISTNAME}/ext/adapter_io.h
+${GEM_LIB}/gems/${DISTNAME}/ext/adapter_io.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/attribute.cc
 ${GEM_LIB}/gems/${DISTNAME}/ext/attribute.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/attribute.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/extconf.rb
-${GEM_LIB}/gems/${DISTNAME}/ext/iostream.cc
-${GEM_LIB}/gems/${DISTNAME}/ext/iostream.h
-${GEM_LIB}/gems/${DISTNAME}/ext/iostream.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/ext/pool.cc
 ${GEM_LIB}/gems/${DISTNAME}/ext/pool.h
