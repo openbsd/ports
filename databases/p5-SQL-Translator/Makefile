@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/10 22:52:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/14 22:57:09 jasper Exp $
 
 COMMENT= 	database schema manipulation
 
 DISTNAME=	SQL-Translator-0.11007
+REVISION=	0
 CATEGORIES=	databases devel
 MODULES=	cpan
 USE_GROFF =	Yes
@@ -16,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 RUN_DEPENDS=	databases/p5-DBI \
+		devel/p5-Carp-Clan \
 		devel/p5-Class-Accessor \
 		devel/p5-Class-Base \
 		devel/p5-Class-MakeMethods \
@@ -26,6 +28,7 @@ RUN_DEPENDS=	databases/p5-DBI \
 		devel/p5-Log-Log4perl \
 		devel/p5-Parse-RecDescent>=1.962002 \
 		devel/p5-Test-Differences \
+		devel/p5-Test-Exception \
 		devel/p5-YAML>=0.66 \
 		security/p5-Digest-SHA1>=2 \
 		textproc/p5-Template \
