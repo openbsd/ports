@@ -7,5 +7,4 @@ c3270 is a curses-based 3270 terminal emulator. It features:
   DBCS Chinese and Japanese
 - IND$FILE file transfer
 - NVT mode (emulating a color xterm)
-- Printer session integration
 - Extensive debugging and scripting facilities
