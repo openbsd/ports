@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/09 20:06:47 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/14 20:44:19 jeremy Exp $
 ${GEM_BIN}/unicorn${GEM_BIN_SUFFIX}
 ${GEM_BIN}/unicorn_rails${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -9,6 +9,7 @@ ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.mailmap
 ${GEM_LIB}/gems/${DISTNAME}/.manifest
 ${GEM_LIB}/gems/${DISTNAME}/.require_paths
+${GEM_LIB}/gems/${DISTNAME}/.wrongdoc.yml
 ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTORS
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog
@@ -25,6 +26,7 @@ ${GEM_LIB}/gems/${DISTNAME}/GNUmakefile
 ${GEM_LIB}/gems/${DISTNAME}/HACKING
 ${GEM_LIB}/gems/${DISTNAME}/ISSUES
 ${GEM_LIB}/gems/${DISTNAME}/KNOWN_ISSUES
+${GEM_LIB}/gems/${DISTNAME}/LATEST
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/NEWS
 ${GEM_LIB}/gems/${DISTNAME}/PHILOSOPHY
@@ -55,6 +57,8 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/common_field_optimization.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/ext_help.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/extconf.rb
 ${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/global_variables.h
+${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/httpdate.c
+${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/httpdate.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/unicorn_http.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/unicorn_http/unicorn_http.o
@@ -87,10 +91,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/util.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn/worker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/unicorn_http.so
 ${GEM_LIB}/gems/${DISTNAME}/local.mk.sample
-${GEM_LIB}/gems/${DISTNAME}/man/
-${GEM_LIB}/gems/${DISTNAME}/man/man1/
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man1/unicorn.1
-@man ${GEM_LIB}/gems/${DISTNAME}/man/man1/unicorn_rails.1
 ${GEM_LIB}/gems/${DISTNAME}/script/
 ${GEM_LIB}/gems/${DISTNAME}/script/isolate_for_tests
 ${GEM_LIB}/gems/${DISTNAME}/setup.rb
@@ -107,6 +107,7 @@ ${GEM_LIB}/gems/${DISTNAME}/t/env.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/my-tap-lib.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/pid.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/preread_input.ru
+${GEM_LIB}/gems/${DISTNAME}/t/rack-input-tests.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/rails3-app/
 ${GEM_LIB}/gems/${DISTNAME}/t/rails3-app/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/t/rails3-app/Gemfile
@@ -177,6 +178,13 @@ ${GEM_LIB}/gems/${DISTNAME}/t/t0013-rewindable-input-false.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0013.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/t0014-rewindable-input-true.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0014.ru
+${GEM_LIB}/gems/${DISTNAME}/t/t0015-configurator-internals.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0016-trust-x-forwarded-false.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0017-trust-x-forwarded-true.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0018-write-on-close.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0100-rack-input-tests.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0116-client_body_buffer_size.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0116.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/t0300-rails3-basic.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0301-rails3-missing-config-ru.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0302-rails3-alt-working_directory.sh
@@ -185,6 +193,7 @@ ${GEM_LIB}/gems/${DISTNAME}/t/t0304-rails3-alt-working_directory_no_embed_cli.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t9000-preread-input.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/test-lib.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/test-rails3.sh
+${GEM_LIB}/gems/${DISTNAME}/t/write-on-close.ru
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/aggregate.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/benchmark/
@@ -321,6 +330,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/unit/
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_configurator.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_http_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_http_parser_ng.rb
+${GEM_LIB}/gems/${DISTNAME}/test/unit/test_http_parser_xftrust.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_request.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_response.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_server.rb
@@ -332,3 +342,5 @@ ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_upload.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_util.rb
 ${GEM_LIB}/gems/${DISTNAME}/unicorn.gemspec
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
+@man man/man1/unicorn${GEM_MAN_SUFFIX}.1
+@man man/man1/unicorn_rails${GEM_MAN_SUFFIX}.1
