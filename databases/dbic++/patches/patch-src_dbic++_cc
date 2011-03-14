@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_dbic++_cc,v 1.1 2011/03/14 18:30:33 jeremy Exp $
+--- src/dbic++.cc.orig	Wed Jan 12 18:27:58 2011
++++ src/dbic++.cc	Wed Jan 19 11:06:17 2011
+@@ -106,8 +106,7 @@ namespace dbi {
+ 
+     void initCheck(string driver_name) {
+         if (!drivers.size()) {
+-            dbiInitialize("./lib/dbic++");
+-            dbiInitialize();
++            dbiInitialize("${LOCALBASE}/lib/dbic++");
+         }
+ 
+         if (!drivers[driver_name])

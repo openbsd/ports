@@ -1,0 +1,12 @@
+$OpenBSD: patch-inc_dbic++_h,v 1.1 2011/03/14 18:30:33 jeremy Exp $
+--- inc/dbic++.h.orig	Wed Jan 12 18:27:58 2011
++++ inc/dbic++.h	Wed Jan 19 11:05:22 2011
+@@ -31,7 +31,7 @@ namespace dbi {
+ #include "dbic++/container.h"
+ #include "dbic++/cpool.h"
+ 
+-#define DEFAULT_DRIVER_PATH "/usr/lib/dbic++"
++#define DEFAULT_DRIVER_PATH "${LOCALBASE}/lib/dbic++"
+ 
+ #define DBI_TYPE_UNKNOWN   0
+ #define DBI_TYPE_INT       1

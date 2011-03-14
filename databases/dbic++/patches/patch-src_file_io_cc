@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_file_io_cc,v 1.1 2011/03/14 18:30:33 jeremy Exp $
+--- src/file_io.cc.orig	Wed Jan 12 18:27:58 2011
++++ src/file_io.cc	Tue Jan 18 16:59:51 2011
+@@ -44,10 +44,9 @@ namespace dbi {
+         char *buffer;
+         size_t size;
+ 
+-        size = getline(&buffer, &size, fp);
+-        if (size > 0) {
++        buffer = fgetln(fp, &size);
++        if (buffer != NULL && size > 0) {
+             line = string(buffer, size);
+-            free(buffer);
+             return true;
+         }
+ 

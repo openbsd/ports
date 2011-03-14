@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_sh,v 1.1.1.1 2010/12/20 17:39:55 jeremy Exp $
---- build.sh.orig	Sun Oct 17 08:56:31 2010
-+++ build.sh	Thu Oct 28 16:39:16 2010
+$OpenBSD: patch-build_sh,v 1.2 2011/03/14 18:30:33 jeremy Exp $
+--- build.sh.orig	Wed Jan 12 18:27:58 2011
++++ build.sh	Tue Jan 18 15:46:51 2011
 @@ -88,12 +88,10 @@ _uninstall() {
  }
  
@@ -8,7 +8,7 @@ $OpenBSD: patch-build_sh,v 1.1.1.1 2010/12/20 17:39:55 jeremy Exp $
 -  _uninstall
    cmake -DCMAKE_PG_VERSION=$PG_VERSION \
          -DCMAKE_MYSQL_VERSION=$MYSQL_VERSION \
-         -DCMAKE_DB2_VERSION=$DB2_VERSION \
+         -DCMAKE_SQLITE3_VERSION=$SQLITE3_VERSION \
 -        -DCMAKE_INSTALL_PREFIX:PATH=/usr
 -  make
 +        -DCMAKE_INSTALL_PREFIX:PATH=${LOCALBASE}

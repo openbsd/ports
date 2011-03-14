@@ -1,0 +1,9 @@
+$OpenBSD: patch-pkgconfig_dbic++_pc,v 1.1 2011/03/14 18:30:33 jeremy Exp $
+--- pkgconfig/dbic++.pc.orig	Wed Jan 12 18:27:58 2011
++++ pkgconfig/dbic++.pc	Wed Jan 19 11:05:22 2011
+@@ -1,4 +1,4 @@
+-prefix=/usr
++prefix=${LOCALBASE}
+ exec_prefix=${prefix}
+ libdir=${exec_prefix}/lib
+ includedir=${prefix}/include
