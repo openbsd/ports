@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/14 08:44:38 sthen Exp $
 COMMENT =		library to edit command lines as they are typed in
 
 V =			6.1
 DISTNAME =		readline-${V}
 
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  	ehistory                   0.0 # 6.1
 SHARED_LIBS +=  	ereadline                  0.0 # 6.1
