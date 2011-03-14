@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: arpwatch.rc,v 1.1 2011/03/14 20:42:11 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/arpwatch"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
