@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.677 2011/03/11 19:57:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.678 2011/03/14 20:48:03 landry Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -238,6 +238,7 @@
      SUBDIR += opal
      SUBDIR += openafs
      SUBDIR += openfire
+     SUBDIR += openmdns
      SUBDIR += openvmps
      SUBDIR += openvpn
      SUBDIR += openvpn_bsdauth
