@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/09 20:11:28 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/14 17:52:59 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE.txt
@@ -8,5 +8,5 @@ ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/jdbc/
 ${GEM_LIB}/gems/${DISTNAME}/lib/jdbc/mysql.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/mysql-connector-java-5.0.4-bin.jar
+${GEM_LIB}/gems/${DISTNAME}/lib/mysql-connector-java-${V}.jar
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
