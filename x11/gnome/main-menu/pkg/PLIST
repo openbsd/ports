@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/25 17:43:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/14 19:18:35 ajacoutot Exp $
 %%SHARED%%
 @bin bin/application-browser
 @bin bin/trigger-panel-run-dialog
 lib/bonobo/
 lib/bonobo/servers/
 lib/bonobo/servers/GNOME_MainMenu.server
-lib/nautilus/
-lib/nautilus/extensions-2.0/
 @comment lib/nautilus/extensions-2.0/libnautilus-main-menu.a
 @comment lib/nautilus/extensions-2.0/libnautilus-main-menu.la
 @bin libexec/main-menu
@@ -27,16 +25,12 @@ share/gnome-main-menu/places.xbel
 share/gnome-main-menu/slab-button.ui
 share/gnome-main-menu/slab-window.ui
 share/gnome-main-menu/system-items.xbel
-share/locale/af/
-share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gnome-main-menu.mo
 share/locale/ar/LC_MESSAGES/gnome-main-menu.mo
 share/locale/as/LC_MESSAGES/gnome-main-menu.mo
 share/locale/bg/LC_MESSAGES/gnome-main-menu.mo
 share/locale/bn/LC_MESSAGES/gnome-main-menu.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-main-menu.mo
-share/locale/br/
-share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/gnome-main-menu.mo
 share/locale/bs/LC_MESSAGES/gnome-main-menu.mo
 share/locale/ca/LC_MESSAGES/gnome-main-menu.mo
@@ -75,16 +69,12 @@ share/locale/lv/LC_MESSAGES/gnome-main-menu.mo
 share/locale/ml/LC_MESSAGES/gnome-main-menu.mo
 share/locale/mr/LC_MESSAGES/gnome-main-menu.mo
 share/locale/nb/LC_MESSAGES/gnome-main-menu.mo
-share/locale/nds/
-share/locale/nds/LC_MESSAGES/
 share/locale/nds/LC_MESSAGES/gnome-main-menu.mo
 share/locale/nl/LC_MESSAGES/gnome-main-menu.mo
 share/locale/oc/LC_MESSAGES/gnome-main-menu.mo
 share/locale/or/LC_MESSAGES/gnome-main-menu.mo
 share/locale/pa/LC_MESSAGES/gnome-main-menu.mo
 share/locale/pl/LC_MESSAGES/gnome-main-menu.mo
-share/locale/ps/
-share/locale/ps/LC_MESSAGES/
 share/locale/ps/LC_MESSAGES/gnome-main-menu.mo
 share/locale/pt/LC_MESSAGES/gnome-main-menu.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-main-menu.mo
@@ -100,14 +90,10 @@ share/locale/th/LC_MESSAGES/gnome-main-menu.mo
 share/locale/tr/LC_MESSAGES/gnome-main-menu.mo
 share/locale/uk/LC_MESSAGES/gnome-main-menu.mo
 share/locale/vi/LC_MESSAGES/gnome-main-menu.mo
-share/locale/wa/
-share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/gnome-main-menu.mo
 share/locale/xh/LC_MESSAGES/gnome-main-menu.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-main-menu.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-main-menu.mo
-share/locale/zu/
-share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/gnome-main-menu.mo
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/

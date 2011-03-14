@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/03/14 19:18:35 ajacoutot Exp $
 
 COMMENT=	alternative applications/documents menu for GNOME
 
 GNOME_PROJECT=	gnome-main-menu
-GNOME_VERSION=	0.9.15
-
-REVISION=	1
+GNOME_VERSION=	0.9.16
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
