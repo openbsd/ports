@@ -1,36 +1,29 @@
-$OpenBSD: patch-src_layout_c,v 1.2 2011/01/05 12:45:04 dcoppa Exp $
---- src/layout.c.orig	Wed Jun  9 09:58:15 2010
-+++ src/layout.c	Wed Jan  5 13:08:03 2011
-@@ -454,12 +454,12 @@ void render_container(xcb_connection_t *conn, Containe
-                         /* Raise the stack window, but keep it below the first floating client
-                          * and below the fullscreen client (if any) */
-                         Client *first_floating = TAILQ_FIRST(&(container->workspace->floating_clients));
--                        if (first_floating != TAILQ_END(&(container->workspace->floating_clients))) {
-+                        if (container->workspace->fullscreen_client != NULL) {
-                                 mask |= XCB_CONFIG_WINDOW_SIBLING;
--                                values[4] = first_floating->frame;
--                        } else if (container->workspace->fullscreen_client != NULL) {
--                                mask |= XCB_CONFIG_WINDOW_SIBLING;
-                                 values[4] = container->workspace->fullscreen_client->frame;
-+                        } else if (first_floating != TAILQ_END(&(container->workspace->floating_clients))) {
-+                                mask |= XCB_CONFIG_WINDOW_SIBLING;
-+                                values[4] = first_floating->frame;
-                         }
+$OpenBSD: patch-src_layout_c,v 1.3 2011/03/14 12:55:18 dcoppa Exp $
+--- src/layout.c.orig	Wed Jan 19 21:26:37 2011
++++ src/layout.c	Thu Mar 10 14:42:58 2011
+@@ -713,9 +713,10 @@ void render_workspace(xcb_connection_t *conn, Output *
  
-                         xcb_configure_window(conn, stack_win->window, mask, values);
-@@ -536,10 +536,11 @@ void render_container(xcb_connection_t *conn, Containe
-                                 }
-                                 offset_x = current_client++ * size_each;
-                         }
--                        if (stack_win->pixmap.id == XCB_NONE)
--                                continue;
--                        decorate_window(conn, client, stack_win->pixmap.id,
--                                        stack_win->pixmap.gc, offset_x, offset_y);
-+                        if (stack_win->pixmap.id != XCB_NONE)
-+                                decorate_window(conn, client, stack_win->pixmap.id,
-+                                                stack_win->pixmap.gc, offset_x, offset_y);
-+                        else
-+                                decorate_window(conn, client, client->frame, client->titlegc, 0, 0);
-                 }
+         /* Correct rounding errors */
+         int error = r_ws->rect.width - total_col_width, error_index = r_ws->cols - 1;
++        int signal = error < 0 ? 1 : -1;
+         while (error) {
+-                ++col_width[error_index];
+-                --error;
++                col_width[error_index] -= signal;
++                error += signal;
+                 error_index = error_index == 0 ? r_ws->cols - 1 : error_index - 1;
+         }
  
-                 /* Check if we need to fill one column because of an uneven
+@@ -732,9 +733,10 @@ void render_workspace(xcb_connection_t *conn, Output *
+         /* Correct rounding errors */
+         error = workspace_height(r_ws) - total_row_height;
+         error_index = r_ws->rows - 1;
++        signal = error < 0 ? 1 : -1;
+         while (error) {
+-                ++row_height[error_index];
+-                --error;
++                row_height[error_index] -= signal;
++                error += signal;
+                 error_index = error_index == 0 ? r_ws->rows - 1 : error_index - 1;
+         }
+ 

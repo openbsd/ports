@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_cfgparse_l,v 1.1 2011/03/14 12:55:18 dcoppa Exp $
+--- src/cfgparse.l.orig	Thu Mar 10 14:41:10 2011
++++ src/cfgparse.l	Thu Mar 10 14:41:38 2011
+@@ -10,6 +10,7 @@
+  */
+ #include <stdio.h>
+ #include <string.h>
++#include <stdint.h> /* Defines uint32_t, required by cfgparse.tab.h */
+ #include "cfgparse.tab.h"
+ #include <xcb/xcb.h>
+ 
