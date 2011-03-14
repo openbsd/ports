@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/11/08 23:35:15 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/03/14 17:45:50 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/API_CHANGES.rdoc
@@ -11,6 +11,9 @@ ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/ext/
 ${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/
 ${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/backup.c
+${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/backup.h
+${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/backup.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/database.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/database.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/sqlite3/database.o
@@ -50,8 +53,10 @@ ${GEM_LIB}/gems/${DISTNAME}/tasks/native.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/vendor_sqlite3.rake
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/helper.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_backup.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_collation.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_database.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_database_readonly.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_deprecated.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_encoding.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_integration.rb
