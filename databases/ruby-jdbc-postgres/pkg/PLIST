@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/09 20:12:06 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/14 17:53:38 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
@@ -9,6 +9,6 @@ ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/jdbc/
 ${GEM_LIB}/gems/${DISTNAME}/lib/jdbc/postgres.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/postgresql-8.4-702.jdbc3.jar
-${GEM_LIB}/gems/${DISTNAME}/lib/postgresql-8.4-702.jdbc4.jar
+${GEM_LIB}/gems/${DISTNAME}/lib/postgresql-${V}.jdbc3.jar
+${GEM_LIB}/gems/${DISTNAME}/lib/postgresql-${V}.jdbc4.jar
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
