@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/13 16:06:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/14 22:27:02 jasper Exp $
 
 COMMENT=	AVR simulator
 
 DISTNAME=	simulavr-0.1.2.6
+REVISION=	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.nongnu.org/simulavr/
