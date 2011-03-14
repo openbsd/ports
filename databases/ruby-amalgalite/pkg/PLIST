@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 17:34:10 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/14 17:42:56 jeremy Exp $
 ${GEM_BIN}/amalgalite-pack${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
-${GEM_LIB}/gems/${DISTNAME}/HISTORY
+${GEM_LIB}/gems/${DISTNAME}/HISTORY.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
-${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/bin/
 ${GEM_LIB}/gems/${DISTNAME}/bin/amalgalite-pack
 ${GEM_LIB}/gems/${DISTNAME}/examples/
@@ -13,6 +13,7 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/blob.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/bootstrap.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/define_aggregate.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/define_function.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/filestore.db
 ${GEM_LIB}/gems/${DISTNAME}/examples/gem-db.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/gems.db
 ${GEM_LIB}/gems/${DISTNAME}/examples/require_me.rb
@@ -131,6 +132,5 @@ ${GEM_LIB}/gems/${DISTNAME}/tasks/distribution.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/documentation.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/extension.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/rspec.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/rubyforge.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/utils.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
