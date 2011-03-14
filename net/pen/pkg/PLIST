@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/08/09 18:30:31 aanriot Exp $
-bin/mergelogs
-bin/pen
-bin/penctl
-bin/penlog
-bin/penlogd
+@comment $OpenBSD: PLIST,v 1.5 2011/03/14 19:07:16 jasper Exp $
+@bin bin/mergelogs
+@bin bin/pen
+@bin bin/penctl
+@bin bin/penlog
+@bin bin/penlogd
 @man man/man1/mergelogs.1
 @man man/man1/pen.1
 @man man/man1/penctl.1

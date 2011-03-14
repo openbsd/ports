@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/19 22:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/03/14 19:07:16 jasper Exp $
 
 COMMENT=		load balancer for simple TCP-based protocols
 
-DISTNAME=		pen-0.15.0
-REVISION=		0
+DISTNAME=		pen-0.18.0
 CATEGORIES=		net
 HOMEPAGE=		http://siag.nu/pen/
 
 MASTER_SITES=		http://siag.nu/pub/pen/
 
-MAINTAINER=		Patroklos Argyroudis <argp@ieee.org>
-
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
