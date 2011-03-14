@@ -1,15 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.16 2011/01/09 19:11:34 landry Exp $
---- Makefile.in.orig	Wed Dec  8 18:00:47 2010
-+++ Makefile.in	Wed Dec  8 18:12:47 2010
-@@ -61,7 +61,6 @@ TCC += -DSQLITE_THREADSAFE=@SQLITE_THREADSAFE@
- 
- # Do threads override each others locks by default (1), or do we test (-1)
- #
--TCC += -DSQLITE_THREAD_OVERRIDE_LOCK=@THREADSOVERRIDELOCKS@
- 
- # Any target libraries which libsqlite must be linked against
- # 
-@@ -190,7 +189,7 @@ LIBOBJS1 = sqlite3.lo
+$OpenBSD: patch-Makefile_in,v 1.17 2011/03/14 14:39:51 landry Exp $
+--- Makefile.in.orig	Thu Mar 10 17:55:45 2011
++++ Makefile.in	Thu Mar 10 18:01:04 2011
+@@ -186,7 +186,7 @@ LIBOBJS1 = sqlite3.lo
  
  # Determine the real value of LIBOBJ based on the 'configure' script
  #
@@ -18,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.16 2011/01/09 19:11:34 landry Exp $
  
  
  # All of the source code files.
-@@ -286,6 +285,8 @@ SRC = \
+@@ -282,6 +282,8 @@ SRC = \
    $(TOP)/src/walker.c \
    $(TOP)/src/where.c
  
@@ -27,7 +19,7 @@ $OpenBSD: patch-Makefile_in,v 1.16 2011/01/09 19:11:34 landry Exp $
  # Source code for extensions
  #
  SRC += \
-@@ -761,6 +762,9 @@ tclsqlite3$(TEXE):	tclsqlite-shell.lo libsqlite3.la
+@@ -757,6 +759,9 @@ tclsqlite3$(TEXE):	tclsqlite-shell.lo libsqlite3.la
  	$(LTLINK) -o $@ tclsqlite-shell.lo \
  		 libsqlite3.la $(LIBTCL)
  
@@ -37,7 +29,7 @@ $OpenBSD: patch-Makefile_in,v 1.16 2011/01/09 19:11:34 landry Exp $
  # Rules to build opcodes.c and opcodes.h
  #
  opcodes.c:	opcodes.h $(TOP)/mkopcodec.awk
-@@ -781,7 +785,11 @@ parse.c:	$(TOP)/src/parse.y lemon$(BEXE) $(TOP)/addopc
+@@ -777,7 +782,11 @@ parse.c:	$(TOP)/src/parse.y lemon$(BEXE) $(TOP)/addopc
  	$(NAWK) -f $(TOP)/addopcodes.awk parse.h.temp >parse.h
  
  sqlite3.h:	$(TOP)/src/sqlite.h.in $(TOP)/manifest.uuid $(TOP)/VERSION
@@ -50,7 +42,7 @@ $OpenBSD: patch-Makefile_in,v 1.16 2011/01/09 19:11:34 landry Exp $
  
  keywordhash.h:	$(TOP)/tool/mkkeywordhash.c
  	$(BCC) -o mkkeywordhash$(BEXE) $(OPT_FEATURE_FLAGS) $(OPTS) $(TOP)/tool/mkkeywordhash.c
-@@ -854,7 +862,7 @@ TESTFIXTURE_FLAGS  = -DTCLSH=1 -DSQLITE_TEST=1 -DSQLIT
+@@ -850,7 +859,7 @@ TESTFIXTURE_FLAGS  = -DTCLSH=1 -DSQLITE_TEST=1 -DSQLIT
  TESTFIXTURE_FLAGS += -DSQLITE_SERVER=1 -DSQLITE_PRIVATE="" -DSQLITE_CORE 
  
  TESTFIXTURE_SRC0 = $(TESTSRC2) libsqlite3.la
@@ -59,7 +51,7 @@ $OpenBSD: patch-Makefile_in,v 1.16 2011/01/09 19:11:34 landry Exp $
  TESTFIXTURE_SRC = $(TESTSRC) $(TOP)/src/tclsqlite.c $(TESTFIXTURE_SRC$(USE_AMALGAMATION))
  
  testfixture$(TEXE):	$(TESTFIXTURE_SRC)
-@@ -922,6 +930,8 @@ clean:	
+@@ -918,6 +927,8 @@ clean:	
  
  distclean:	clean
  	rm -f config.log config.status libtool Makefile sqlite3.pc

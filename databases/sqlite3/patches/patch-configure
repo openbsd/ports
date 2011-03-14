@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.10 2011/01/09 19:11:34 landry Exp $
---- configure.orig	Mon Nov 22 07:54:11 2010
-+++ configure	Mon Nov 22 07:55:56 2010
-@@ -12498,8 +12498,8 @@ for ac_lib in '' pthread; do
+$OpenBSD: patch-configure,v 1.11 2011/03/14 14:39:51 landry Exp $
+--- configure.orig	Thu Jan 27 19:40:56 2011
++++ configure	Thu Mar 10 17:55:23 2011
+@@ -12494,8 +12494,8 @@ for ac_lib in '' pthread; do
    if test -z "$ac_lib"; then
      ac_res="none required"
    else
