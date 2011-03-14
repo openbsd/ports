@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.41 2011/01/06 04:15:46 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.42 2011/03/14 20:39:20 jeremy Exp $
 
 # ruby module
 
@@ -31,8 +31,11 @@ FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
 # and gem installs binaries for it, the binaries on ruby 1.9 are installed
 # with a 19 suffix.  GEM_BIN_SUFFIX should be added after such a filename
 # in the PLIST so that the gem will correctly package on all supported
-# versions of ruby.
-SUBST_VARS+=		GEM_BIN_SUFFIX
+# versions of ruby.  Because the rbx, jruby, and default FLAVORs all use
+# same binary names but in different directories, GEM_MAN_SUFFIX is
+# used for the man pages to avoid conflicts since all man files go
+# in the same directory.
+SUBST_VARS+=		GEM_BIN_SUFFIX GEM_MAN_SUFFIX
 
 FLAVOR?=
 # Without a FLAVOR, assume the use of ruby 1.8.
@@ -64,19 +67,32 @@ MODRUBY_REV=		rbx
 # set MODRUBY_REV in their makefile with either 1.9 or jruby to
 # build on ruby 1.9 or jruby respectively.
 MODRUBY_REV?=		1.8
-GEM_BIN_SUFFIX=	
+
+# Have the man pages for the rbx and jruby versions of a gem file
+# use an -rbx or -jruby suffix to avoid conflicts with the
+# default ruby 1.8 man page.
+GEM_MAN_SUFFIX =	-${MODRUBY_FLAVOR}
+
+# Use the FLAVOR as the prefix for the package, to avoid conflicts.
+# Each of the FLAVORs defined in ruby.port.mk should be independent
+# from the others if possible.
+MODRUBY_PKG_PREFIX =	${MODRUBY_FLAVOR}
+
+GEM_BIN_SUFFIX =	
 
 .if ${MODRUBY_REV} == 1.8
 MODRUBY_LIBREV=		1.8
 MODRUBY_BINREV=		18
 MODRUBY_PKG_PREFIX=	ruby
 MODRUBY_FLAVOR =	
+GEM_MAN_SUFFIX =	
 .elif ${MODRUBY_REV} == 1.9
 MODRUBY_LIBREV=		1.9.1
 MODRUBY_BINREV=		19
-MODRUBY_PKG_PREFIX=	ruby19
 MODRUBY_FLAVOR =	ruby19
 GEM_BIN_SUFFIX=		19
+# Have the ruby 1.9 manpage match the binary name.
+GEM_MAN_SUFFIX =	${GEM_BIN_SUFFIX}
 .elif ${MODRUBY_REV} == jruby
 MODRUBY_LIBREV=		1.8
 
@@ -87,13 +103,11 @@ MODRUBY_LIBREV=		1.8
 #.poison MODRUBY_BINREV
 #.poison MODRUBY_WANTLIB
 
-MODRUBY_PKG_PREFIX=	jruby
 MODRUBY_FLAVOR =	jruby
 .elif ${MODRUBY_REV} == rbx
 MODRUBY_LIBREV =	1.8
 #.poison MODRUBY_BINREV
 #.poison MODRUBY_WANTLIB
-MODRUBY_PKG_PREFIX =	rbx
 MODRUBY_FLAVOR =	rbx
 .endif
 
