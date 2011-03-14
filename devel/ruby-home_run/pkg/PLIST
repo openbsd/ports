@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 18:06:38 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/14 17:46:53 jeremy Exp $
 ${GEM_BIN}/home_run${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -44,11 +44,13 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/date/add_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/date/allocate_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/date/boat_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/date/civil_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/date/clone_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/date/commercial_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/date/constants_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/date/conversions_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/date/day_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/date/downto_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/date/dup_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/date/encoding_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/date/eql_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/date/format_spec.rb
@@ -76,10 +78,12 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/datetime/add_month_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/datetime/add_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/datetime/allocate_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/datetime/boat_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/datetime/clone_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/datetime/constructor_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/datetime/conversions_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/datetime/day_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/datetime/downto_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/datetime/dup_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/datetime/encoding_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/datetime/eql_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/datetime/format_spec.rb
