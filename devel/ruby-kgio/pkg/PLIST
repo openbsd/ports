@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/09 20:05:16 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/14 20:43:18 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.document
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.manifest
 ${GEM_LIB}/gems/${DISTNAME}/.require_paths
+${GEM_LIB}/gems/${DISTNAME}/.wrongdoc.yml
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog
 ${GEM_LIB}/gems/${DISTNAME}/GIT-VERSION-FILE
@@ -12,6 +13,7 @@ ${GEM_LIB}/gems/${DISTNAME}/GIT-VERSION-GEN
 ${GEM_LIB}/gems/${DISTNAME}/GNUmakefile
 ${GEM_LIB}/gems/${DISTNAME}/HACKING
 ${GEM_LIB}/gems/${DISTNAME}/ISSUES
+${GEM_LIB}/gems/${DISTNAME}/LATEST
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/NEWS
 ${GEM_LIB}/gems/${DISTNAME}/README
@@ -22,6 +24,9 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/Makefile
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/accept.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/accept.o
+${GEM_LIB}/gems/${DISTNAME}/ext/kgio/ancient_ruby.h
+${GEM_LIB}/gems/${DISTNAME}/ext/kgio/autopush.c
+${GEM_LIB}/gems/${DISTNAME}/ext/kgio/autopush.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/connect.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/connect.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/extconf.rb
@@ -29,12 +34,12 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/kgio.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/kgio_ext.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/kgio_ext.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/kgio_ext.so
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/missing/
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/missing/accept4.h
-${GEM_LIB}/gems/${DISTNAME}/ext/kgio/missing/ancient_ruby.h
+${GEM_LIB}/gems/${DISTNAME}/ext/kgio/missing_accept4.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/my_fileno.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/nonblock.h
+${GEM_LIB}/gems/${DISTNAME}/ext/kgio/poll.c
+${GEM_LIB}/gems/${DISTNAME}/ext/kgio/poll.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/read_write.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/read_write.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/sock_for_fd.h
@@ -44,16 +49,24 @@ ${GEM_LIB}/gems/${DISTNAME}/kgio.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/kgio.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/kgio_ext.so
+${GEM_LIB}/gems/${DISTNAME}/pkg.mk
 ${GEM_LIB}/gems/${DISTNAME}/setup.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/lib_read_write.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/lib_server_accept.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_accept_class.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_autopush.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_connect_fd_leak.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_default_wait.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_kgio_addr.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_no_dns_on_tcp_connect.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_peek.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_pipe_popen.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_pipe_read_write.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_poll.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_singleton_read_write.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_socketpair_read_write.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_tcp6_client_read_server_write.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tcp_client_read_server_write.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tcp_connect.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_tcp_server.rb
