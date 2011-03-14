@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/14 20:49:49 jasper Exp $
 
 COMMENT=		simple SMTP client
 
 DISTNAME=		smtpclient-1.0.0
-REVISION =		1
+REVISION =		2
 CATEGORIES=		mail
-
-MAINTAINER=		Patroklos Argyroudis <argp@ieee.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

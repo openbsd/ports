@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2007/09/15 22:36:59 merdely Exp $
+# $OpenBSD: Makefile,v 1.4 2011/03/14 20:49:49 jasper Exp $
 
 COMMENT=	SSLv3/TLS and SSLv2 sniffer
 
 DISTNAME=	sslsniffer-1.21
+REVISION=	0
 CATEGORIES=	net security
 HOMEPAGE=	http://crypto.stanford.edu/~eujin/sslsniffer/
 MASTER_SITES=	${HOMEPAGE}
-
-MAINTAINER=	Patroklos Argyroudis <argp@ieee.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

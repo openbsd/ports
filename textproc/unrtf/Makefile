@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.9 2010/10/19 07:54:26 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/14 20:49:50 jasper Exp $
 
 COMMENT=	RTF document converter
 
 VERSION=	0.19.3
 DISTNAME=	unrtf-${VERSION}
+REVISION=	0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.gnu.org/software/unrtf/unrtf.html
 
 MASTER_SITES=	${MASTER_SITE_GNU:=unrtf/}
-
-MAINTAINER=	Patroklos Argyroudis <argp@ieee.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

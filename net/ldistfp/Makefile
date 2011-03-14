@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/14 20:49:49 jasper Exp $
 
 COMMENT=	remote identd fingerprinting tool
 
 DISTNAME=	ldistfp-0.1.4
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net security
 
 MASTER_SITES=	${MASTER_SITE_PACKETSTORM:=UNIX/misc/}
-
-MAINTAINER=	Patroklos Argyroudis <argp@ieee.org>
 
 PERMIT_PACKAGE_CDROM=   no license
 PERMIT_PACKAGE_FTP=     no license

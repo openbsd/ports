@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/26 14:56:15 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/03/14 20:49:49 jasper Exp $
 
 COMMENT=		traceroute implementation using TCP packets
 
 DISTNAME=		tcptraceroute-1.5beta7
-REVISION=		1
+REVISION=		2
 CATEGORIES=    		net
 
 HOMEPAGE=		http://michael.toren.net/code/tcptraceroute/
-
-MAINTAINER=		Patroklos Argyroudis <argp@ieee.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 
