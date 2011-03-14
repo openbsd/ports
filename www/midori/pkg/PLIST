@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2011/03/12 12:51:25 landry Exp $
+@comment $OpenBSD: PLIST,v 1.21 2011/03/14 18:57:22 landry Exp $
 @bin bin/midori
 include/midori-0.3/
 include/midori-0.3/extensions/
@@ -23,8 +23,13 @@ lib/midori/libtoolbar-editor.so
 lib/midori/libweb-cache.so
 share/applications/midori.desktop
 share/doc/midori/
-share/doc/midori/user/
-share/doc/midori/user/midori.html
+share/doc/midori/AUTHORS
+share/doc/midori/COPYING
+share/doc/midori/ChangeLog
+share/doc/midori/EXPAT
+share/doc/midori/README
+share/doc/midori/faq.css
+share/doc/midori/faq.html
 share/examples/midori/
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/midori/
