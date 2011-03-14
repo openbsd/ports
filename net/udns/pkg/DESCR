@@ -1,2 +1,2 @@
 UDNS is a stub DNS resolver library with ability to perform both
-syncronous and asyncronous DNS queries.
+synchronous and asynchronous DNS queries.

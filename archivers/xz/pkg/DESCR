@@ -1,4 +1,4 @@
-LZMA is a general purporse compression algorithm designed by Igor
+LZMA is a general-purpose compression algorithm designed by Igor
 Pavlov as part of 7-Zip. It provides high compression ratio while
 keeping the decompression speed fast.
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/03/14 09:17:01 sthen Exp $
 
 COMMENT=	free implementation of Cisco VMPS
 
 V=		1.4.01
 DISTNAME=	vmpsd-${V}
 PKGNAME=	openvmps-${V}
+REVISION=	0
 CATEGORIES=	net
 
 HOMEPAGE=	http://vmps.sourceforge.net/

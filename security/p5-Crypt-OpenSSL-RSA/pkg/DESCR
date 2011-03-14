@@ -7,7 +7,7 @@ in the OpenSSL library.  In particular, it provides the following functions:
        get_private_key_string - save key to a string
        get_public_key_string - save public portion of key to a string
        get_public_key_x509_string - save public portion of key to a string,
-                                    using format compatibe with OpenSSL's
+                                    using format compatible with OpenSSL's
                                     command-line rsa tool
        encrypt, decrypt, private_encrypt, public_decrypt, sign, verify,
        use_pkcs1_oaep_padding, use_pkcs1_padding,

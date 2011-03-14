@@ -10,7 +10,7 @@ Chocolate Doom provides:
   chocolate-setup  - the game setup program 
   chocolate-server - server for up to 4-player net games
 
-Due to the port re-implimenting the original game as closely as
+Due to the port re-implementing the original game as closely as
 possible, all original game PWADs and demos work flawlessly. Other
 original features include a PC-speaker driver written with OpenBSD in
 mind, just like the DOS PC-speaker driver, and a working -left and

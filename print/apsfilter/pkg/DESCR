@@ -1,7 +1,7 @@
 Apsfilter is the number one magic filter for printing in the Unix
 environment. What does apsfilter stand for? Apsfilter Prints So Fine, It
 Leads To Extraordinary Results ;-) It's highly configurable and most
-flexible by global and printer dependend config files and allowing users
+flexible by global and printer dependent config files and allowing users
 to choose between different print options with lpr on the commandline to
 get easy control over layout, speed and quality of the printing process.
 Apsfilter supports PS (Postscript) printer and non-PS capable printer by

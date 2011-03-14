@@ -1,4 +1,4 @@
-The shunt utilites: shunt, exactly, and flyisofs, were originally
+The shunt utilities: shunt, exactly, and flyisofs, were originally
 written for burning multi-set CDROM backups using mkiosfs and cdrecord.
 
 The key utility -- shunt -- manages recursive access to piped I/O, so that 

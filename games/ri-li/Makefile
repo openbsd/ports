@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/14 09:17:00 sthen Exp $
 
 COMMENT=	drive a toy wood engine
 
 DISTNAME=	Ri-li-2.0.0
-REVISION =	0
+REVISION =	1
 CATEGORIES=	games
 
 HOMEPAGE=	http://ri-li.sourceforge.net

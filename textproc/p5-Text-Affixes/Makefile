@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/03/14 09:15:34 sthen Exp $
 
 COMMENT=		prefixes and suffixes analisys of text
 
 DISTNAME=		Text-Affixes-0.07
-REVISION=		0
+REVISION=		1
 CATEGORIES=		textproc
 
 MODULES=		cpan

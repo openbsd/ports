@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/14 09:17:27 sthen Exp $
 
 COMMENT= 	test output of other modules
 
 MODULES=	cpan
 DISTNAME=	Test-Output-0.16
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

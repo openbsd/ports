@@ -6,8 +6,8 @@ it to download songs on these websites.
 
 It must *not* be used to download songs that are copyrighted and
 licensed under a license that does not allow freely copying. Such
-an utilization of that program is illegal. If you intend to use
-that program to do that, you and you only take responsability for
+a utilization of that program is illegal. If you intend to use
+that program to do that, you and you only take responsibility for
 that.
 
 If you wish to test the program, try for example the "tryad" search
@@ -17,5 +17,5 @@ be freely copied and diffused.
 
 Dysnomia 0.3.4 allows you to download using two different modes :
 the "regular" one, wich has exactly the same behaviour as the
-deezer.com flash applet, and the "alternative" one, wich downloads
+deezer.com flash applet, and the "alternative" one, which downloads
 by directly accessing the deezer.com cache.

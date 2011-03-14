@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/03/14 09:17:26 sthen Exp $
 
 COMMENT=	multi-threaded DAAP server
 
 DISTNAME=	mt-daapd-0.2.4.2
-REVISION=	3
+REVISION=	4
 CATEGORIES=	audio net
 
 HOMEPAGE=	http://www.mt-daapd.org/

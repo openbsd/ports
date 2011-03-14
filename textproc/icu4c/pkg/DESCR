@@ -4,6 +4,6 @@ C/C++ version.
 
 ICU services include code page conversion, collation (comparison using
 locale-specific ordering), locale-wise formatting, Unicode regexp and
-bidirectionnal text handling.
+bidirectional text handling.
 
 ICU is available under an open source non-copyleft licence.

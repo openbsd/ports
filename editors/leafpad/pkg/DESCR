@@ -7,7 +7,7 @@ Currently Leafpad has the following features:
 
  * Codeset option (Some OpenI18N registered)
  * Auto codeset detection (UTF-8 and some codesets)
- * Unlimitted Undo/Redo
+ * Unlimited Undo/Redo
  * Auto/Multi-line Indent
  * Display line numbers
  * Drag and Drop

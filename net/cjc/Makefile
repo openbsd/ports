@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/19 22:31:32 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/14 09:17:01 sthen Exp $
 
 COMMENT=		Jabber client for text terminals
 
 MODPY_EGG_VERSION=	1.0.1
 DISTNAME=		cjc-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 
 HOMEPAGE=		http://cjc.jajcus.net/

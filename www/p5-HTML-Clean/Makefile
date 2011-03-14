@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/03/14 09:15:34 sthen Exp $
 
 COMMENT=	cleans up HTML code for web browsers, not humans
 
 MODULES=	cpan
 DISTNAME=	HTML-Clean-0.8
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 USE_GROFF =	Yes
 

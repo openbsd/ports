@@ -5,6 +5,6 @@ as either a pseudo 3D flying landscape, pseudo 3D pointed landscape,
 spectrogram, or a combination of hi-res FFT with a vertical spectrogram.
 
 All modes are fully scalable to nearly any resolution (within your
-CPU/X11 capabilites).  Resolutions up to 1600x1200 at 40 FPS use
+CPU/X11 capabilities).  Resolutions up to 1600x1200 at 40 FPS use
 typically less than 30% CPU, depending on your host CPU/X11
 capabilities.

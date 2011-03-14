@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/03 11:45:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/03/14 09:17:01 sthen Exp $
 
 COMMENT = 	IMAP client interface with lots of features
 
 MODULES =	cpan
 DISTNAME =	Mail-IMAPTalk-1.03
-REVISION =	0
+REVISION =	1
 CATEGORIES =	mail
 USE_GROFF =	Yes
 

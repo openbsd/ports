@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/14 09:17:26 sthen Exp $
 
 SHARED_ONLY=	Yes
  
@@ -7,7 +7,7 @@ COMMENT=	Tcl interface to PostgreSQL
 V=		1.5
 DISTNAME=	pgtcl$V
 PKGNAME=	pgtcl-$V
-REVISION =	1
+REVISION =	2
 SHARED_LIBS= 	pgtcl	0.0
 CATEGORIES=	databases
 

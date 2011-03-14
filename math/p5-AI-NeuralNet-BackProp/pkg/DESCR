@@ -1,4 +1,4 @@
-AI::NeuralNet::BackProp is a simply back-propagation,
-feed-foward neural network designed to learn using
+AI::NeuralNet::BackProp is a simple back-propagation,
+feed-forward neural network designed to learn using
 a generalization of the Delta rule and a bit of Hopefield
 theory.

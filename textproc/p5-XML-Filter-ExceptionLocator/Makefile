@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/03/14 09:15:34 sthen Exp $
 
 COMMENT=	add line information to XML parse errors
 
 MODULES=	cpan
 DISTNAME=	XML-Filter-ExceptionLocator-1.00
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc devel
 USE_GROFF =	Yes
 

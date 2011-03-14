@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/12/03 11:44:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/03/14 09:17:26 sthen Exp $
 
 COMMENT=	stack trace for catalyst
 
 MODULES=	cpan
 DISTNAME=	Catalyst-Plugin-StackTrace-0.09
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 USE_GROFF =	Yes
 

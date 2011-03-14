@@ -7,7 +7,7 @@ over other modules:
 * It parses the more complex IMAP structures like envelopes and body
   structures into nice Perl data structures.
 * It correctly supports atoms, quoted strings and literals at any point.
-  Some parsers in other modules aren't fully IMAP compatiable and may
+  Some parsers in other modules aren't fully IMAP compatible and may
   break at odd times with certain messages on some servers.
 * It allows large return values (eg. attachments on a message) to be
   read directly into a file, rather than into memory.

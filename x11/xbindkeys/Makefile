@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2011/01/05 17:37:33 stu Exp $
+# $OpenBSD: Makefile,v 1.12 2011/03/14 09:15:34 sthen Exp $
 
 COMMENT =	bind keys or mouse buttons to shell commands under X11
 DISTNAME =	xbindkeys-1.8.4
+REVISION =	0
 CATEGORIES =	x11
 
 HOMEPAGE =	http://www.nongnu.org/xbindkeys/xbindkeys.html

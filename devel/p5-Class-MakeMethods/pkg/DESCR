@@ -2,5 +2,5 @@ Class::MakeMethod is a big framework for generating methods on-the-fly,
 using various basic techniques, and basic templates.
 
 This distribution includes the Class::MakeMethods::Template and
-Class::MakeMethods::Emulator modules which were packaged sepearately in
+Class::MakeMethods::Emulator modules which were packaged separately in
 some previous releases.

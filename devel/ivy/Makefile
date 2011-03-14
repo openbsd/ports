@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/03/14 09:17:26 sthen Exp $
 
 COMMENT=		dependency manager for Java
 
 VERSION=		1.4.1
 DISTNAME=		ivy-${VERSION}-bin
 PKGNAME=		ivy-${VERSION}
-REVISION =		5
+REVISION =		6
 CATEGORIES=		devel java
 WRKDIST=		${WRKDIR}/ivy-${VERSION}
 

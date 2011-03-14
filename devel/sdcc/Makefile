@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/03/14 09:17:27 sthen Exp $
 
 COMMENT=	Small Device C Compiler
 
 DISTNAME=	sdcc-src-2.8.0
 PKGNAME=	${DISTNAME:S/-src//}
 EXTRACT_SUFX=	.tar.bz2
-CATEGORIES=    	devel
+CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	http://sdcc.sourceforge.net/
 

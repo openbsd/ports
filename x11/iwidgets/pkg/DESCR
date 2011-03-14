@@ -2,7 +2,7 @@
 Tcl/Tk and is based on [incr Tcl] and [incr Tk]. This set of
 mega-widgets delivers many new, general purpose widgets like option
 menus, comboboxes, selection boxes, and various dialogs whose
-couterparts are found in Motif and Windows.
+counterparts are found in Motif and Windows.
 
 Since [incr Widgets] is based on the [incr Tk] extension, the Tk
 framework of configuration options, widget commands, and default

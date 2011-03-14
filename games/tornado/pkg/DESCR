@@ -1,5 +1,5 @@
 Tornado is a clone of Ouranos (Weather War).  The goal of the game is to
-destroy the opponent's house with certain weather phenomenons: rain,
+destroy the opponent's house with certain weather phenomena: rain,
 snow, hail, lightning, and tornadoes.  The game can be played together
 (two players), against the computer (or two computer players against
 each other) or over a TCP connection.

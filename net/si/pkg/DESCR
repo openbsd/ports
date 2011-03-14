@@ -1,2 +1,3 @@
-silc improved is a SILC client without an user interface. It does output via
-files and input throught FIFOs. Most features of SILC are implemented.
+silc improved is a SILC client without a user interface. It does output
+via files and input through FIFOs. Most features of SILC are
+implemented.

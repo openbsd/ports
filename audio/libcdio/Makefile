@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/03/14 09:17:26 sthen Exp $
 
 COMMENT=		compact disk input and control library
 
 DISTNAME=		libcdio-0.80
-REVISION=		3
+REVISION=		4
 CATEGORIES=		audio devel
 
 HOMEPAGE=		http://www.gnu.org/software/libcdio/

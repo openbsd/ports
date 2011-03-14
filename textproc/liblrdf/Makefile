@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/14 09:15:34 sthen Exp $
 
 COMMENT =		light RDF manipulation with LADSPA plugin support
 DISTNAME =		liblrdf-0.4.0
+REVISION =		0
 
 SHARED_LIBS =		lrdf	0.0	# 0.0
 

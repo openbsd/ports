@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/03/14 09:15:34 sthen Exp $
 
 COMMENT=		file system/VFS layer stress tester
 
 DISTNAME=		fsstress-1.0
-REVISION =		0
+REVISION =		1
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		sysutils
 

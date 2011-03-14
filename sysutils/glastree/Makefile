@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/03/14 09:15:34 sthen Exp $
 
 COMMENT=	poor man's daily snapshot
 
 DISTNAME=	glastree-1.04
+REVISION=	0
 
 HOMEPAGE=	http://www.igmus.org/code/
 

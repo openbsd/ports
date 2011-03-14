@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/03/14 09:17:00 sthen Exp $
 
 COMMENT =		blinkensisters - hunt for the lost pixels
 
 V =			0.5.3
 DISTNAME =		LostPixels-${V}-source-with-addons
 PKGNAME =		lostpixels-${V}
-REVISION =		1
+REVISION =		2
 HOMEPAGE =		http://www.blinkensisters.org
 
 CATEGORIES =		games

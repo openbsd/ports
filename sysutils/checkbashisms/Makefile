@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:40 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/14 09:15:33 sthen Exp $
 
 COMMENT=		check shell scripts for bash-specific constructs
 
 DISTNAME=		checkbashisms-0.2
+REVISION=		0
 DISTFILES=
 CATEGORIES=		sysutils devel
 

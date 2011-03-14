@@ -3,5 +3,5 @@ process, handling connections with select(2). For CGIs and directory
 listing it does fork(2). nhttpd has the minimum of HTTP/1.1 and CGI/1.1
 implemented. Also supported are:
 
-chroot, setuid, basic authentication, SSL, IPv6, custom repsonses,
+chroot, setuid, basic authentication, SSL, IPv6, custom responses,
 aliases, and virtual hosts.

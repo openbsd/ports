@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/14 09:17:00 sthen Exp $
 
 COMMENT=	Ouranos (Weather War) clone; multiplayer
 DISTNAME=	tornado-1.3
 CATEGORIES=	games
 MASTER_SITES=	${HOMEPAGE}download/
+REVISION=	0
 
 HOMEPAGE=	http://home.kcore.de/~kiza/linux/tornado/
 
