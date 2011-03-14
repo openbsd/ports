@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_types_h,v 1.1.1.1 2011/03/14 21:04:51 jeremy Exp $
+--- src/types.h.orig	Fri Mar 11 13:58:51 2011
++++ src/types.h	Fri Mar 11 13:58:56 2011
+@@ -167,12 +167,14 @@ typedef struct
+  #endif
+ #endif
+ 
++#ifndef __OpenBSD__
+ #ifndef htole32
+ #define htole32 le32toh
+ #endif
+ 
+ #ifndef htole16
+ #define htole16 le16toh
++#endif
+ #endif
+ 
+ 

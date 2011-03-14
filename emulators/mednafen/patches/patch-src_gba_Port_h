@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_gba_Port_h,v 1.1.1.1 2011/03/14 21:04:51 jeremy Exp $
+--- src/gba/Port.h.orig	Fri Mar 11 13:59:32 2011
++++ src/gba/Port.h	Fri Mar 11 14:00:04 2011
+@@ -20,6 +20,7 @@
+ #ifndef VBA_PORT_H
+ #define VBA_PORT_H
+ 
++#ifndef __OpenBSD__
+ // swaps a 16-bit value
+ static inline uint16 swap16(uint16 v)
+ {
+@@ -31,6 +32,7 @@ static inline uint32 swap32(uint32 v)
+ {
+   return (v<<24)|((v<<8)&0xff0000)|((v>>8)&0xff00)|(v>>24);
+ }
++#endif
+ 
+ #ifndef LSB_FIRST
+ #if defined(__GNUC__) && defined(__ppc__)

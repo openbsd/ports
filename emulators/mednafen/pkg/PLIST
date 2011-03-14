@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/14 21:04:51 jeremy Exp $
+@bin bin/mednafen
+share/doc/mednafen/
+share/doc/mednafen/README.jpeg4a
+share/doc/mednafen/cheats.txt
+share/doc/mednafen/debugger.html
+share/doc/mednafen/mednafen.html
+share/doc/mednafen/netplay.html
+share/locale/de/LC_MESSAGES/mednafen.mo
+share/locale/es/LC_MESSAGES/mednafen.mo
+share/locale/ru/LC_MESSAGES/mednafen.mo
