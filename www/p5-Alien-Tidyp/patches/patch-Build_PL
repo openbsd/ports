@@ -1,0 +1,12 @@
+$OpenBSD: patch-Build_PL,v 1.1.1.1 2011/03/14 21:48:16 jasper Exp $
+--- Build.PL.orig	Thu Mar 10 07:12:05 2011
++++ Build.PL	Sun Mar 13 22:11:20 2011
+@@ -64,7 +64,7 @@ my $builder = $package->new(
+ $builder->create_build_script();
+ 
+ if ($builder->check_installed_tidyp()) {
+-  my $ans = $builder->prompt("Tidyp detected, wanna use tidyp already installed on your system?", 'y');
++  my $ans = 'y';
+   $builder->notes('installed_tidyp', undef) unless (lc($ans) eq 'y');
+ }
+ 
