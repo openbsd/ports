@@ -1,16 +1,16 @@
-$OpenBSD: patch-Makefile,v 1.4 2011/01/05 14:06:51 dcoppa Exp $
---- Makefile.orig	Sat Nov  6 13:38:14 2010
-+++ Makefile	Wed Jan  5 14:31:51 2011
+$OpenBSD: patch-Makefile,v 1.5 2011/03/14 12:28:57 dcoppa Exp $
+--- Makefile.orig	Mon Jan 24 13:00:25 2011
++++ Makefile	Thu Mar 10 16:09:25 2011
 @@ -4,7 +4,7 @@ PREFIX:=/usr/local
  BINDIR:=${PREFIX}/bin
  LIBDIR:=${PREFIX}/lib
  MANDIR:=${PREFIX}/share/man
--CFLAGS:=-Wall -g -std=c99 -pedantic
+-CFLAGS:=-std=c99 -O2 -DNDEBUG
 +CFLAGS+=-std=c99 -fgnu89-inline
  
  PIANOBAR_DIR=src
  PIANOBAR_SRC=\
-@@ -96,7 +96,7 @@ pianobar: ${PIANOBAR_OBJ} ${PIANOBAR_HDR} ${LIBPIANO_O
+@@ -97,7 +97,7 @@ pianobar: ${PIANOBAR_OBJ} ${PIANOBAR_HDR} ${LIBPIANO_O
  libpiano: ${LIBPIANO_RELOBJ} ${LIBPIANO_HDR} ${LIBWAITRESS_RELOBJ} \
  		${LIBWAITRESS_HDR} ${LIBEZXML_RELOBJ} ${LIBEZXML_HDR}
  	${CC} -shared ${CFLAGS} ${LIBPIANO_RELOBJ} ${LIBWAITRESS_RELOBJ} \
@@ -19,7 +19,7 @@ $OpenBSD: patch-Makefile,v 1.4 2011/01/05 14:06:51 dcoppa Exp $
  
  %.o: %.c
  	${CC} ${CFLAGS} -I ${LIBPIANO_INCLUDE} -I ${LIBWAITRESS_INCLUDE} \
-@@ -112,17 +112,14 @@ libpiano: ${LIBPIANO_RELOBJ} ${LIBPIANO_HDR} ${LIBWAIT
+@@ -112,7 +112,7 @@ libpiano: ${LIBPIANO_RELOBJ} ${LIBPIANO_HDR} ${LIBWAIT
  clean:
  	${RM} ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} ${LIBWAITRESS_OBJ} ${LIBEZXML_OBJ} \
  			${LIBPIANO_RELOBJ} ${LIBWAITRESS_RELOBJ} ${LIBEZXML_RELOBJ} pianobar \
@@ -28,17 +28,19 @@ $OpenBSD: patch-Makefile,v 1.4 2011/01/05 14:06:51 dcoppa Exp $
  
  all: pianobar libpiano
  
+@@ -120,12 +120,9 @@ debug: pianobar
+ debug: CFLAGS=-Wall -pedantic -std=c99 -ggdb
+ 
  install: pianobar
 -	install -d ${DESTDIR}/${BINDIR}/
 -	install -m755 pianobar ${DESTDIR}/${BINDIR}/
 -	install -d ${DESTDIR}/${MANDIR}/man1/
--	install -m644 src/pianobar.1 ${DESTDIR}/${MANDIR}/man1/
+-	install -m644 contrib/pianobar.1 ${DESTDIR}/${MANDIR}/man1/
 +	${INSTALL_PROGRAM} pianobar ${DESTDIR}/${BINDIR}/
-+	${INSTALL_MAN} src/pianobar.1 ${DESTDIR}/${MANDIR}/man1/
++	${INSTALL_MAN} contrib/pianobar.1 ${DESTDIR}/${MANDIR}/man1/
  
--install-libpiano: libpiano
+ install-libpiano: libpiano
 -	install -d ${DESTDIR}/${LIBDIR}/
 -	install -m755 libpiano.so.0.0.0 ${DESTDIR}/${LIBDIR}/
-+install-libpiano:
 +	${INSTALL_DATA} libpiano.so.${LIBpiano_VERSION} ${DESTDIR}/${LIBDIR}/
  

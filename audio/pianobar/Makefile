@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2011/01/05 14:06:51 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.11 2011/03/14 12:28:57 dcoppa Exp $
 
 COMMENT =	console client for pandora
 
-DISTNAME =	pianobar-2010.11.06
-REVISION =	0
+DISTNAME =	pianobar-2011.01.24
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
@@ -29,6 +28,10 @@ LIB_DEPENDS =	audio/libao \
 		audio/libmad
 
 CFLAGS +=	-I${LOCALBASE}/include
+
+.if !defined(DEBUG)
+CFLAGS +=	-DNDEBUG
+.endif
 
 MAKE_FLAGS =	LIBAO_INCLUDE="${LOCALBASE}/include/ao" \
 		LIBAO_LIB="-L${LOCALBASE}/lib -lao" \
