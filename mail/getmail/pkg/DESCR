@@ -1,7 +1,6 @@
-getmail  can  retrieve messages from POP3, IMAP4, and SDPS
-mailboxes.  SSL-wrapped POP3 and IMAP are also  supported.
-Single-user  and  domain  (multi-drop)  mailboxes are sup­
-ported.
+getmail can retrieve messages from POP3, IMAP4, and SDPS mailboxes.
+SSL-wrapped POP3 and IMAP are also supported. Single-user and domain
+(multi-drop) mailboxes are supported.
 
-getmail has built-in support for delivering  to  maildirs,
-mboxrd-format mbox files, and external MDAs.
+getmail has built-in support for delivering to maildirs, mboxrd-format
+mbox files, and external MDAs.

@@ -15,7 +15,7 @@ CLN is a C++ library providing the following features:
        o Automatic, non-interruptive garbage collection.
  * Speed efficiency:
        o Assembly language kernel for some CPUs,
-       o Karatsuba and Schönhage-Strassen multiplication.
+       o Karatsuba and Schoenhage-Strassen multiplication.
  * Interoperability:
        o Garbage collection with no burden on the main application,
        o hooks for memory allocation and exceptions.

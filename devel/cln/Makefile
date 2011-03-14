@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/03/14 08:51:26 sthen Exp $
 
 NOT_FOR_ARCHS =	arm mips64 mips64el sparc64
 
 COMMENT =	library for efficient computations 
 
 DISTNAME =	cln-1.3.1
-REVISION =	0
+REVISION =	1
 SHARED_LIBS +=  cln                  1.0      # .5.2
 CATEGORIES =	devel
 
