@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/24 12:12:01 edd Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/15 11:27:58 alek Exp $
 
 COMMENT =		pdf viewer with vi-like keybindings
 DISTNAME =		zathura-0.0.8.2
@@ -24,7 +24,7 @@ WANTLIB +=	gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m
 WANTLIB +=	pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png poppler
 WANTLIB +=	poppler-glib pthread pthread-stubs xcb xcb-render xcb-shm z
 
-MASTER_SITES =	http://pwmt.org/attachments/download/31/
+MASTER_SITES =	https://pwmt.org/download/
 
 LIB_DEPENDS =	print/poppler
 
