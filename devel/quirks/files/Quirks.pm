@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.43 2011/03/09 13:16:47 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.44 2011/03/15 19:51:18 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -193,6 +193,7 @@ my $stem_extensions = {
 	'openoffice-i18n-sl' => 'libreoffice-i18n-sl',
 	'openoffice-i18n-sv' => 'libreoffice-i18n-sv',
 	'libxfce4menu' => 'garcon',
+	'tidy' => 'tidyp',
 };
 
 # ->is_base_system($handle, $state):
