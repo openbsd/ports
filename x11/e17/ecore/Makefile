@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/01/16 11:34:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/03/15 19:39:43 jasper Exp $
 
 COMMENT =		core event/X abstraction layer
-DISTNAME =		ecore-1.0.0.beta2
+DISTNAME =		ecore-1.0.0
 
-REVISION =		0
-
-EPOCH =			1
+EPOCH =			2
 
 SO_VERSION =		1.0
 # NOTE: Must bump minor version if any shlib's are removed from the
