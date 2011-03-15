@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.493 2011/03/14 21:48:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.494 2011/03/15 19:50:52 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -432,7 +432,6 @@
      SUBDIR += swfdec-plugin
      SUBDIR += syweb
      SUBDIR += thttpd
-     SUBDIR += tidy
      SUBDIR += tidyp
      SUBDIR += tikiwiki
      SUBDIR += timetrex
