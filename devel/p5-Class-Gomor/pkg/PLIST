@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/15 10:41:36 jasper Exp $
+${P5SITE}/Class/
+${P5SITE}/Class/Gomor/
+${P5SITE}/Class/Gomor.pm
+${P5SITE}/Class/Gomor/Array.pm
+${P5SITE}/Class/Gomor/Hash.pm
+@man man/man3p/Class::Gomor.3p
+@man man/man3p/Class::Gomor::Array.3p
+@man man/man3p/Class::Gomor::Hash.3p
+share/examples/p5-Class-Gomor/
+share/examples/p5-Class-Gomor/my-class.pl
