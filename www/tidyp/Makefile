@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/13 19:24:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/15 19:48:40 jasper Exp $
 
 COMMENT=	validate, correct and pretty-print HTML
 
 V=		1.04
 DISTNAME=	tidyp-$V
-REVISION=	0
+REVISION=	1
 SHARED_LIBS +=  tidyp-$V                  0.0 # 0.0
 SHARED_LIBS +=  tidyp                     0.0 # 0.0
 CATEGORIES=	www
@@ -27,5 +27,9 @@ USE_LIBTOOL=	Yes
 
 # Upstream references a non-existing test script...
 NO_REGRESS=	Yes
+
+# Allow transparant usage of tidy to tinyp.
+post-install:
+	ln -s ${PREFIX}/bin/tidyp ${PREFIX}/bin/tidy
 
 .include <bsd.port.mk>

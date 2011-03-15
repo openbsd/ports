@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/10 19:34:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/15 19:48:40 jasper Exp $
+@conflict tidy-*
 %%SHARED%%
+bin/tidy
 @bin bin/tidyp
 include/tidyp/
 include/tidyp/buffio.h
