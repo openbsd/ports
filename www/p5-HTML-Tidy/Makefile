@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/03/15 19:47:10 jasper Exp $
 
 COMMENT=	(X)HTML validation in a Perl object
 SHARED_ONLY=	Yes
 
-DISTNAME=	HTML-Tidy-1.08
-REVISION=	2
+DISTNAME=	HTML-Tidy-1.54
 CATEGORIES=	www
 MODULES=	cpan
 USE_GROFF =	Yes
@@ -17,9 +16,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += tidy
+WANTLIB += tidyp
 
-LIB_DEPENDS=	www/tidy
+BUILD_DEPENDS=	www/p5-Alien-Tidyp
+LIB_DEPENDS=	www/tidyp
 
 CONFIGURE_ENV+=	LOCALBASE=${LOCALBASE}
 
