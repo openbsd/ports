@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.4 2011/01/16 00:37:45 laurent Exp $
---- configure.orig	Fri Nov 12 15:24:50 2010
-+++ configure	Wed Nov 17 22:10:09 2010
-@@ -2990,8 +2990,8 @@ cat <<_ASUNAME
-
+$OpenBSD: patch-configure,v 1.5 2011/03/15 19:41:31 jasper Exp $
+--- configure.orig	Sat Jan 29 14:38:00 2011
++++ configure	Tue Mar  8 16:26:26 2011
+@@ -2988,8 +2988,8 @@ cat <<_ASUNAME
+ 
  hostname = `(hostname || uname -n) 2>/dev/null | sed 1q`
  uname -m = `(uname -m) 2>/dev/null || echo unknown`
 -uname -r = `(uname -r) 2>/dev/null || echo unknown`
@@ -10,9 +10,9 @@ $OpenBSD: patch-configure,v 1.4 2011/01/16 00:37:45 laurent Exp $
 +#uname -r = `(uname -r) 2>/dev/null || echo unknown`
 +#uname -s = `(uname -s) 2>/dev/null || echo unknown`
  uname -v = `(uname -v) 2>/dev/null || echo unknown`
-
+ 
  /usr/bin/uname -p = `(/usr/bin/uname -p) 2>/dev/null || echo unknown`
-@@ -11959,7 +11959,7 @@ case "$host_os" in
+@@ -11856,7 +11856,7 @@ case "$host_os" in
        MODULE_ARCH="$host_os-$host_cpu"
        ;;
     *)
@@ -20,9 +20,9 @@ $OpenBSD: patch-configure,v 1.4 2011/01/16 00:37:45 laurent Exp $
 +      MODULE_ARCH="$host_cpu-1.0.0"
        ;;
  esac
-
-@@ -22042,13 +22042,13 @@ fi
-
+ 
+@@ -22316,13 +22316,13 @@ fi
+ 
  gl_pt_lib="";
  have_gl_pt="no"
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthread" >&5
@@ -37,18 +37,18 @@ $OpenBSD: patch-configure,v 1.4 2011/01/16 00:37:45 laurent Exp $
 +LIBS="-pthread  $LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
-
-@@ -22085,7 +22085,7 @@ else
+ 
+@@ -22359,7 +22359,7 @@ else
  fi
-
+ 
  if test "x$have_gl_pt" = "xyes" ; then
 -   gl_pt_lib=" -lpthread"
 +   gl_pt_lib=" -pthread"
  fi
-
+ 
  if test "x${have_dep}" = "xyes" ; then
-@@ -23849,13 +23849,13 @@ fi
-
+@@ -24123,13 +24123,13 @@ fi
+ 
  gl_pt_lib="";
  have_gl_pt="no"
 -{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthread" >&5
@@ -63,20 +63,20 @@ $OpenBSD: patch-configure,v 1.4 2011/01/16 00:37:45 laurent Exp $
 +LIBS="-pthread  $LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
-
-@@ -23892,7 +23892,7 @@ else
+ 
+@@ -24166,7 +24166,7 @@ else
  fi
-
+ 
  if test "x$have_gl_pt" = "xyes" ; then
 -   gl_pt_lib=" -lpthread"
 +   gl_pt_lib=" -pthread"
  fi
-
+ 
  ac_fn_c_check_header_compile "$LINENO" "GL/gl.h" "ac_cv_header_GL_gl_h" "
-@@ -28136,13 +28136,13 @@ eval as_val=\$$as_ac_Header
+@@ -28413,13 +28413,13 @@ eval as_val=\$$as_ac_Header
  #define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1
  _ACEOF
-
+ 
 -    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_attr_setaffinity_np in -lpthread" >&5
 -$as_echo_n "checking for pthread_attr_setaffinity_np in -lpthread... " >&6; }
 +    { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_attr_setaffinity_np in -pthread" >&5
@@ -89,11 +89,11 @@ $OpenBSD: patch-configure,v 1.4 2011/01/16 00:37:45 laurent Exp $
 +LIBS="-pthread  $LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
-
-@@ -28174,13 +28174,13 @@ fi
+ 
+@@ -28451,13 +28451,13 @@ fi
  $as_echo "$ac_cv_lib_pthread_pthread_attr_setaffinity_np" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_attr_setaffinity_np" = x""yes; then :
-
+ 
 -        { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_barrier_wait in -lpthread" >&5
 -$as_echo_n "checking for pthread_barrier_wait in -lpthread... " >&6; }
 +        { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_barrier_wait in -pthread" >&5
@@ -106,8 +106,8 @@ $OpenBSD: patch-configure,v 1.4 2011/01/16 00:37:45 laurent Exp $
 +LIBS="-pthread  $LIBS"
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
-
-@@ -28489,7 +28489,7 @@ if test "x$need_pthreads" = "xyes"; then
+ 
+@@ -28766,7 +28766,7 @@ if test "x$need_pthreads" = "xyes"; then
    { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
  $as_echo "yes" >&6; }
    pthread_cflags=""
