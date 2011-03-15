@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.53 2011/03/02 06:42:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2011/03/15 13:30:39 jasper Exp $
 
 COMMENT=	extensible window manager
 
 SHARED_ONLY=	Yes
 
-VERSION=	1.7.1
+VERSION=	1.8.0
 DISTNAME=	sawfish-${VERSION}
 CATEGORIES=	x11
 
-MASTER_SITES=	http://download.tuxfamily.org/sawfish/sawfish/
+MASTER_SITES=	http://download.tuxfamily.org/sawfish/
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://sawfish.wikia.com/
@@ -20,7 +20,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-BUILD_DEPENDS=	x11/rep-gtk>=0.90.5
+BUILD_DEPENDS=	archivers/gtar \
+		x11/rep-gtk>=0.90.5
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/rep-gtk>=0.90.5
 
@@ -51,5 +52,12 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I{X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 NO_REGRESS=	Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/themes/Makefile.in
+
+post-install:
+	cd ${PREFIX}/share/sawfish/${VERSION}/themes/ && \
+		chown -R ${SHAREOWN}:${SHAREGRP} StyleTab
 
 .include <bsd.port.mk>

@@ -1,14 +1,15 @@
-For people upgrading from sawfish 1.3.3 or older, you will have to
+For people upgrading from sawfish 1.7.1 or older, you will have to
 manually migrate your existing configuration:
 
-$ mv ~/.sawmillrc ~/.sawfishrc
+Infinite-desktop and edge-flip needs updates.
 
-If you configuration file contains the line:
+Open the configurator -> "Edge Actions". Changes will be
+easy. (Set 4 pull-downs, and you're done mostly.
+"Infinite-desktop" is renamed to "viewport-drag".) For more
+options, see "Edge Actions" below.
 
-(require 'sawmill-defaults)
-
-please change it to:
-
-(require 'sawfish-defaults)
+If your `~/.sawfish/rc' opens related modules, delete those
+references.  These modules are renamed, and you don't have to
+manually load them any more.
 
 And restart sawfish.

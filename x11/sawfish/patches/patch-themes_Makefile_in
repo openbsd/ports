@@ -1,0 +1,19 @@
+$OpenBSD: patch-themes_Makefile_in,v 1.1 2011/03/15 13:30:39 jasper Exp $
+
+BSD tar cannot handle the StyleTar.tar.gz file:
+tar: Cannot identify format. Searching...
+tar: Cpio file name length 20804 is out of range
+tar: Invalid header, starting valid header search.
+tar: Cpio file name length 59038 is out of range
+
+--- themes/Makefile.in.orig	Tue Mar 15 14:19:28 2011
++++ themes/Makefile.in	Tue Mar 15 14:19:58 2011
+@@ -57,7 +57,7 @@ install : all installdirs
+ 	done
+ 	@# Don't use tar for StyleTab. It's not compression, but tar
+ 	@# itself slows in librep.
+-	cd $(DESTDIR)$(themedir) && tar xf StyleTab.tar.gz && rm StyleTab.tar.gz
++	cd $(DESTDIR)$(themedir) && ${LOCALBASE}/bin/gtar xf StyleTab.tar.gz && rm StyleTab.tar.gz
+ 
+ installdirs : mkinstalldirs
+ 	$(SHELL) $< $(DESTDIR)$(themedir) $(DESTDIR)$(sitethemedir)
