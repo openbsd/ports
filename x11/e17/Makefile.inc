@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.11 2011/01/16 11:44:52 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2011/03/15 19:42:04 jasper Exp $
 
 CATEGORIES ?=		x11
 
@@ -24,6 +24,6 @@ NO_REGRESS ?=		Yes
 #FLAVORS = debug
 #FLAVOR ?=
 #.if ${FLAVOR:L:Mdebug}
-CFLAGS +=		-O0 -g
-INSTALL_STRIP =
+#CFLAGS +=		-O0 -g
+#INSTALL_STRIP =
 #.endif
