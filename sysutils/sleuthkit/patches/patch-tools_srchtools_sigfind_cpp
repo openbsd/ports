@@ -1,4 +1,5 @@
-$OpenBSD: patch-tools_srchtools_sigfind_cpp,v 1.1 2011/03/15 20:27:14 landry Exp $
+$OpenBSD: patch-tools_srchtools_sigfind_cpp,v 1.2 2011/03/15 20:51:26 landry Exp $
+XXX needs to be removed once daddr64_t is replaced by daddr_t
 --- tools/srchtools/sigfind.cpp.orig	Tue Mar 15 21:25:40 2011
 +++ tools/srchtools/sigfind.cpp	Tue Mar 15 21:25:46 2011
 @@ -49,7 +49,7 @@ main(int argc, char **argv)
