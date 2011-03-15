@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/22 22:47:09 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/03/15 10:38:57 jasper Exp $
 @mode 2555
 @group games
-bin/tornado
+@bin bin/tornado
 @mode
 @group
 man/de/
