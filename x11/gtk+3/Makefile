@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/14 19:30:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/15 15:43:53 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -88,6 +88,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 # Do not build gtk-update-icon-cache and other shared tools.
 CONFIGURE_ARGS += --enable-gtk2-dependency
+BUILD_DEPENDS = ${RUN_DEPENDS}
 RUN_DEPENDS +=	x11/gtk+2
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+3
