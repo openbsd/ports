@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/03/02 06:26:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/15 20:39:58 jasper Exp $
 
 ONLY_FOR_ARCHS =${GCC4_ARCHS}
 
@@ -7,6 +7,7 @@ COMMENT=	interactive electronics designing software
 V=		0.5.2b
 DISTNAME=	fritzing.2011.02.18.source
 PKGNAME=	fritzing-$V
+REVISION=	0
 CATEGORIES=	cad
 
 HOMEPAGE=	http://fritzing.org/
@@ -29,11 +30,13 @@ WANTLIB +=	c m pthread stdc++ z
 MODULES=        x11/qt4
 NO_REGRESS=	Yes
 
+BUILD_DEPENDS=	devel/boost
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/qt4,-sqlite
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/fapplication.cpp
+	${SUBST_CMD} ${WRKSRC}/phoenix.pro ${WRKSRC}/src/fapplication.cpp
+	cd ${WRKSRC} && rm -fr src/lib/boost_1_43_0
 
 # -DLINUX_32 gets added to CFLAGS, though it's only used to figure out
 # if there is a newer version of the 32-bit Linux binary on the upstream
