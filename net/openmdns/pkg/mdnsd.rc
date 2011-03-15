@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: mdnsd.rc,v 1.1 2011/03/15 06:54:26 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/bin/mdnsd"
+daemon_flags="em0"
+
+. /etc/rc.d/rc.subr
+
+pexp="mdnsd: mdnsd"
+rc_reload=NO
+
+rc_cmd $1
