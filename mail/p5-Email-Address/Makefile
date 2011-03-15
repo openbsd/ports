@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:45:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/15 02:15:06 dhill Exp $
 
 COMMENT=	RFC 2822 Address Parsing and Creation
 
 MODULES=	cpan
-DISTNAME=	Email-Address-1.889
-REVISION=	0
+DISTNAME=	Email-Address-1.892
 CATEGORIES=	mail
 USE_GROFF =	Yes
 
