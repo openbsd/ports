@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_lib_edje_edit_c,v 1.1 2011/01/16 00:48:45 laurent Exp $
---- src/lib/edje_edit.c.orig	Thu Nov 11 14:05:25 2010
-+++ src/lib/edje_edit.c	Sun Dec  5 19:39:35 2010
-@@ -882,6 +882,7 @@ edje_edit_group_add(Evas_Object *obj, const char *name
+$OpenBSD: patch-src_lib_edje_edit_c,v 1.2 2011/03/15 19:40:04 jasper Exp $
+--- src/lib/edje_edit.c.orig	Sat Jan 29 04:12:21 2011
++++ src/lib/edje_edit.c	Tue Mar  8 16:49:37 2011
+@@ -980,6 +980,7 @@ edje_edit_group_add(Evas_Object *obj, const char *name
     Edje_Part_Collection *pc;
     int id;
     int search;
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_lib_edje_edit_c,v 1.1 2011/01/16 00:48:45 laurent Exp $
     //Code *cd;
  
     eina_error_set(0);
-@@ -949,7 +950,16 @@ edje_edit_group_add(Evas_Object *obj, const char *name
+@@ -1047,7 +1048,16 @@ edje_edit_group_add(Evas_Object *obj, const char *name
     //cd = _alloc(sizeof(Code));
     //codes = eina_list_append(codes, cd);
  #define EDIT_EMN(Tp, Sz, Ce)							\

@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/01/16 11:49:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/03/15 19:40:04 jasper Exp $
 %%SHARED%%
 @bin bin/edje_cc
-@bin bin/edje_convert
 @bin bin/edje_decc
+@bin bin/edje_external_inspector
+@bin bin/edje_inspector
 @bin bin/edje_player
 bin/edje_recc
 include/edje-1/
