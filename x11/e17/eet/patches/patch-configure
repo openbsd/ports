@@ -1,67 +1,24 @@
-$OpenBSD: patch-configure,v 1.4 2011/01/16 11:18:00 jasper Exp $
---- configure.orig	Fri Nov 12 15:24:02 2010
-+++ configure	Sun Nov 21 05:36:21 2010
-@@ -13002,12 +13002,12 @@ case "$host_os" in
-    mingw*)
-       ;;
-    solaris*)
--      _efl_thread_cflags="-mt"
--      _efl_thread_libs="-mt"
-+      _efl_threads_cflags="-mt"
-+      _efl_threads_libs="-mt"
-       ;;
-    *)
--      _efl_thread_cflags="-pthread"
--      _efl_thread_libs="-pthread"
-+      _efl_threads_cflags="-pthread"
-+      _efl_threads_libs="-pthread"
-       ;;
- esac
- 
-@@ -13059,8 +13059,8 @@ fi
- EFL_PTHREAD_CFLAGS=""
- EFL_PTHREAD_LIBS=""
- if test "x${_efl_have_posix_threads}" = "xyes" ; then
--   EFL_PTHREAD_CFLAGS=${_efl_thread_cflags}
--   EFL_PTHREAD_LIBS=${_efl_thread_libs}
-+   EFL_PTHREAD_CFLAGS=${_efl_threads_cflags}
-+   EFL_PTHREAD_LIBS=${_efl_threads_libs}
- fi
+$OpenBSD: patch-configure,v 1.5 2011/03/15 19:40:40 jasper Exp $
+
+-Wl,--as-needed fucks with -pthread.
+
+--- configure.orig	Tue Mar  8 18:09:51 2011
++++ configure	Tue Mar  8 18:09:54 2011
+@@ -13996,7 +13996,7 @@ esac
  
  
-@@ -13863,35 +13863,6 @@ case "$host_os" in
-       lt_enable_auto_import="-Wl,--enable-auto-import"
-       ;;
- esac
+ 
 -
++if false; then
+ CFLAGS_save="${CFLAGS}"
+ CFLAGS="${CFLAGS} -Wl,--as-needed"
+ 
+@@ -14038,7 +14038,7 @@ ac_cpp='$CPP $CPPFLAGS'
+ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
 -
--# use --as-needed if supported
--
--LDFLAGS_SAVE=${LDFLAGS}
--LDFLAGS="${LDFLAGS} -Wl,--as-needed"
--
--cat confdefs.h - <<_ACEOF >conftest.$ac_ext
--/* end confdefs.h.  */
--
--int
--main ()
--{
--
--  ;
--  return 0;
--}
--_ACEOF
--if ac_fn_c_try_link "$LINENO"; then :
--  ld_as_needed="-Wl,--as-needed"
--else
--  ld_as_needed=""
--
--fi
--rm -f core conftest.err conftest.$ac_objext \
--    conftest$ac_exeext conftest.$ac_ext
--
--LDFLAGS=${LDFLAGS_SAVE}
--
++fi
  
  
- ### Checks for library functions
+ 
