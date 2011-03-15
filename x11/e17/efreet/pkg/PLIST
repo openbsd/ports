@@ -1,10 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/01/16 00:56:28 laurent Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/03/15 19:41:00 jasper Exp $
 %%SHARED%%
-@bin bin/efreet_alloc
-@bin bin/efreet_cache_test
-@bin bin/efreet_menu_alloc
-@bin bin/efreet_spec_test
-@bin bin/efreet_test
 include/efreet-1/
 include/efreet-1/Efreet.h
 include/efreet-1/Efreet_Mime.h
@@ -28,17 +23,3 @@ lib/pkgconfig/
 lib/pkgconfig/efreet-mime.pc
 lib/pkgconfig/efreet-trash.pc
 lib/pkgconfig/efreet.pc
-share/efreet/
-share/efreet/test/
-share/efreet/test/entry
-share/efreet/test/entry.png
-share/efreet/test/long.ini
-share/efreet/test/preferences.menu
-share/efreet/test/sub/
-share/efreet/test/sub/test.desktop
-share/efreet/test/test.desktop
-share/efreet/test/test.ini
-share/efreet/test/test.menu
-share/efreet/test/test_garbage
-share/efreet/test/test_menu_slash_bad.menu
-share/efreet/test/test_type.desktop

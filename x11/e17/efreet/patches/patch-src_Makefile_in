@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2011/03/15 19:41:00 jasper Exp $
+
+tests/main.c uses clearenv(), which has been rejected twice by POSIX.
+
+--- src/Makefile.in.orig	Tue Mar  8 16:55:47 2011
++++ src/Makefile.in	Tue Mar  8 16:55:58 2011
+@@ -238,7 +238,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ version_info = @version_info@
+-SUBDIRS = lib bin tests
++SUBDIRS = lib bin
+ MAINTAINERCLEANFILES = Makefile.in
+ all: all-recursive
+ 

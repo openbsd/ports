@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_bin_Makefile_in,v 1.1 2011/01/16 00:56:28 laurent Exp $
---- src/bin/Makefile.in.orig	Sat Aug 21 03:53:44 2010
-+++ src/bin/Makefile.in	Wed Sep 22 23:45:00 2010
-@@ -82,7 +82,7 @@ am__v_at_0 = @
+$OpenBSD: patch-src_bin_Makefile_in,v 1.2 2011/03/15 19:41:00 jasper Exp $
+--- src/bin/Makefile.in.orig	Tue Mar  8 16:52:20 2011
++++ src/bin/Makefile.in	Tue Mar  8 16:53:22 2011
+@@ -95,7 +95,7 @@ am__v_at_0 = @
  CCLD = $(CC)
  LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
  	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
@@ -10,12 +10,12 @@ $OpenBSD: patch-src_bin_Makefile_in,v 1.1 2011/01/16 00:56:28 laurent Exp $
  AM_V_CCLD = $(am__v_CCLD_$(V))
  am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
  am__v_CCLD_0 = @echo "  CCLD  " $@;
-@@ -329,7 +329,7 @@ clean-internal_binPROGRAMS:
- 	rm -f $$list
- efreet_desktop_cache_create$(EXEEXT): $(efreet_desktop_cache_create_OBJECTS) $(efreet_desktop_cache_create_DEPENDENCIES) 
- 	@rm -f efreet_desktop_cache_create$(EXEEXT)
--	$(AM_V_CCLD)$(LINK) $(efreet_desktop_cache_create_OBJECTS) $(efreet_desktop_cache_create_LDADD) $(LIBS)
-+	$(AM_V_CCLD)$(LINK) $(efreet_desktop_cache_create_OBJECTS) $(efreet_desktop_cache_create_LDADD) -L$(top_builddir)/src/lib/.libs/ -lefreet $(LIBS)
+@@ -354,7 +354,7 @@ efreet_desktop_cache_create$(EXEEXT): $(efreet_desktop
+ 	$(AM_V_CCLD)$(LINK) $(efreet_desktop_cache_create_OBJECTS) $(efreet_desktop_cache_create_LDADD) $(LIBS)
+ efreet_icon_cache_create$(EXEEXT): $(efreet_icon_cache_create_OBJECTS) $(efreet_icon_cache_create_DEPENDENCIES) 
+ 	@rm -f efreet_icon_cache_create$(EXEEXT)
+-	$(AM_V_CCLD)$(LINK) $(efreet_icon_cache_create_OBJECTS) $(efreet_icon_cache_create_LDADD) $(LIBS)
++	$(AM_V_CCLD)$(LINK) $(efreet_icon_cache_create_OBJECTS) $(efreet_icon_cache_create_LDADD) -L$(top_builddir)/src/lib/.libs/ -lefreet $(LIBS)
  
  mostlyclean-compile:
  	-rm -f *.$(OBJEXT)
