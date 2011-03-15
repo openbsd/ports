@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.678 2011/03/14 20:48:03 landry Exp $
+# $OpenBSD: Makefile,v 1.679 2011/03/15 10:44:32 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -277,6 +277,7 @@
      SUBDIR += p5-Net-FTP-Recursive
      SUBDIR += p5-Net-FTPSSL
      SUBDIR += p5-Net-FTPServer
+     SUBDIR += p5-Net-Frame
      SUBDIR += p5-Net-GPSD
      SUBDIR += p5-Net-Google
      SUBDIR += p5-Net-ICQ2000
