@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/15 10:43:54 jasper Exp $
+${P5SITE}/Net/
+${P5SITE}/Net/Frame/
+${P5SITE}/Net/Frame.pm
+${P5SITE}/Net/Frame/Layer/
+${P5SITE}/Net/Frame/Layer.pm
+${P5SITE}/Net/Frame/Layer/ARP.pm
+${P5SITE}/Net/Frame/Layer/ETH.pm
+${P5SITE}/Net/Frame/Layer/IPv4.pm
+${P5SITE}/Net/Frame/Layer/NULL.pm
+${P5SITE}/Net/Frame/Layer/PPP.pm
+${P5SITE}/Net/Frame/Layer/RAW.pm
+${P5SITE}/Net/Frame/Layer/SLL.pm
+${P5SITE}/Net/Frame/Layer/TCP.pm
+${P5SITE}/Net/Frame/Layer/UDP.pm
+@man man/man3p/Net::Frame.3p
+@man man/man3p/Net::Frame::Layer.3p
+@man man/man3p/Net::Frame::Layer::ARP.3p
+@man man/man3p/Net::Frame::Layer::ETH.3p
+@man man/man3p/Net::Frame::Layer::IPv4.3p
+@man man/man3p/Net::Frame::Layer::NULL.3p
+@man man/man3p/Net::Frame::Layer::PPP.3p
+@man man/man3p/Net::Frame::Layer::RAW.3p
+@man man/man3p/Net::Frame::Layer::SLL.3p
+@man man/man3p/Net::Frame::Layer::TCP.3p
+@man man/man3p/Net::Frame::Layer::UDP.3p
+share/examples/p5-Net-Frame/
+share/examples/p5-Net-Frame/arp-lookup.pl
+share/examples/p5-Net-Frame/build-tcp-syn.pl
+share/examples/p5-Net-Frame/pack-eth-ipv4-tcp-compute.pl
+share/examples/p5-Net-Frame/pack-eth-ipv4-tcp.pl
+share/examples/p5-Net-Frame/send-recv-tcp.pl
+share/examples/p5-Net-Frame/send-recv-udp.pl
+share/examples/p5-Net-Frame/send-tcp-with-padding.pl
+share/examples/p5-Net-Frame/send-tcp-with-payload.pl
+share/examples/p5-Net-Frame/unpack-eth-ipv4-tcp.pl
