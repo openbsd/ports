@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/01/17 11:47:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2011/03/15 19:49:42 jasper Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}
 FULLPKGPATH-main=	www/php5/extensions,-main
@@ -383,9 +383,9 @@ CONFIGURE_ARGS+=	--without-tidy
 .else
 MULTI_PACKAGES+=	-tidy
 COMMENT-tidy=		tidy HTML cleaner bindings
-CONFIGURE_ARGS+=	--with-tidy=shared
-LIB_DEPENDS-tidy =	www/tidy
-WANTLIB-tidy =		tidy
+CONFIGURE_ARGS+=	--with-tidy=shared,${LOCALBASE}
+LIB_DEPENDS-tidy =	www/tidyp
+WANTLIB-tidy =		tidyp
 .endif
 
 # xml-rpc

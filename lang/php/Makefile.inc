@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.7 2011/03/08 23:45:47 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.8 2011/03/15 19:49:42 jasper Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -280,8 +280,8 @@ WANTLIB-mssql=		sybdb>=6
 MULTI_PACKAGES+=	-tidy
 COMMENT-tidy=		tidy HTML cleaner bindings
 CONFIGURE_ARGS+=	--with-tidy=shared,${LOCALBASE}
-LIB_DEPENDS-tidy=	www/tidy
-WANTLIB-tidy=		tidy
+LIB_DEPENDS-tidy=	www/tidyp
+WANTLIB-tidy=		tidyp
 
 # xml-rpc
 MULTI_PACKAGES+=	-xmlrpc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/01/07 18:14:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/03/15 19:49:42 jasper Exp $
 
 VMEM_WARNING =	Yes
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
@@ -33,7 +33,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=enblend/}
 
 BUILD_DEPENDS =	math/gnuplot \
 		print/transfig \
-		www/tidy
+		www/tidyp>=1.04p1
 LIB_DEPENDS =	devel/boost \
 		graphics/glew \
 		graphics/freeglut \

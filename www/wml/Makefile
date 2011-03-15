@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/15 19:49:42 jasper Exp $
 
 COMMENT=		Website META Language
 
 DISTNAME=		wml-2.0.11
-REVISION=		1
+REVISION=		2
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.thewml.org/
@@ -24,7 +24,7 @@ RUN_DEPENDS=		devel/p5-Term-ReadKey \
 			graphics/p5-Image-Size \
 			math/p5-Bit-Vector \
 			www/p5-HTML-Clean \
-			www/tidy
+			www/tidyp>=1.04p1
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 USE_LIBTOOL =	Yes
