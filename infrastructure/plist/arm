@@ -1,4 +1,4 @@
-# $OpenBSD: arm,v 1.29 2010/07/17 08:52:26 sthen Exp $
+# $OpenBSD: arm,v 1.30 2011/03/15 19:50:11 jasper Exp $
 # This is the master list of subdirs used to choose arm packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -345,7 +345,7 @@ www/ntlmaps
 www/surfraw
 www/lighttpd
 www/thttpd
-www/tidy
+www/tidyp
 www/tinyproxy
 www/transproxy
 www/visitors
