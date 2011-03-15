@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/01/05 11:03:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.4 2011/03/15 16:08:20 dcoppa Exp $
 
 COMMENT =		PHP client library for the Redis key-value database
 
-VER =			0.6.3
-DISTNAME =		nrk-predis-v${VER}-PHP5.2-0-g3f058cb
+VER =			0.6.5
+DISTNAME =		nrk-predis-v${VER}-PHP5.2-0-g0546f74
 PKGNAME =		php-predis-${VER}
 CATEGORIES =		www databases
 
@@ -30,7 +30,7 @@ PREFIX =		/var/www
 INSTDIR =		${PREFIX}/pear/lib/
 SUBST_VARS =		INSTDIR
 
-WRKDIST = 		${WRKDIR}/nrk-predis-6925eef
+WRKDIST = 		${WRKDIR}/nrk-predis-80e36a0
 
 PHP_VERSION =		5
 
