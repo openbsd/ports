@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared-glade3,v 1.1 2011/03/15 06:24:47 ajacoutot Exp $
+lib/glade3/modules/libgnome-media-profiles.so

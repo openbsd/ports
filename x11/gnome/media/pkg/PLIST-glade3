@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST-glade3,v 1.1 2011/03/15 06:24:47 ajacoutot Exp $
+@conflict gnome-media-<2.32.0p2
+%%SHARED%%
+lib/glade3/
+lib/glade3/modules/
+@comment lib/glade3/modules/libgnome-media-profiles.a
+@comment lib/glade3/modules/libgnome-media-profiles.la
+share/glade3/
+share/glade3/catalogs/
+share/glade3/catalogs/gnome-media-profiles.xml

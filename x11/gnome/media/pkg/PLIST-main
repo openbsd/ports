@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.14 2010/09/30 07:35:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2011/03/15 06:24:47 ajacoutot Exp $
+@pkgpath x11/gnome/media
 %%SHARED%%
 @bin bin/gnome-audio-profiles-properties
 @bin bin/gnome-sound-recorder
@@ -11,19 +12,12 @@ include/gnome-media/profiles/audio-profile-edit.h
 include/gnome-media/profiles/audio-profile.h
 include/gnome-media/profiles/audio-profiles-edit.h
 include/gnome-media/profiles/gnome-media-profiles.h
-lib/glade3/
-lib/glade3/modules/
-@comment lib/glade3/modules/libgnome-media-profiles.a
-@comment lib/glade3/modules/libgnome-media-profiles.la
 lib/libgnome-media-profiles.a
 lib/libgnome-media-profiles.la
 lib/pkgconfig/gnome-media-profiles.pc
 share/applications/gnome-sound-recorder.desktop
 share/applications/gnome-volume-control.desktop
 share/applications/gstreamer-properties.desktop
-share/glade3/
-share/glade3/catalogs/
-share/glade3/catalogs/gnome-media-profiles.xml
 share/gnome-media/
 share/gnome-media/gnome-audio-profile-edit.ui
 share/gnome-media/gnome-audio-profile-new.ui
