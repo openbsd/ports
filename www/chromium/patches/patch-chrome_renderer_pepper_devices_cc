@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_renderer_pepper_devices_cc,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- chrome/renderer/pepper_devices.cc.orig	Tue Mar 15 10:02:39 2011
++++ chrome/renderer/pepper_devices.cc	Tue Mar 15 10:19:59 2011
+@@ -52,7 +52,7 @@ NPError Graphics2DDeviceContext::Initialize(
+   uint32 buffer_size = width * height * kBytesPerPixel;
+ 
+   // Allocate the transport DIB and the PlatformCanvas pointing to it.
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+   // On the Mac, shared memory has to be created in the browser in order to
+   // work in the sandbox.  Do this by sending a message to the browser
+   // requesting a TransportDIB (see also

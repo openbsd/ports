@@ -1,0 +1,39 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebCore_WebCore_gyp_WebCore_gyp,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- third_party/WebKit/Source/WebCore/WebCore.gyp/WebCore.gyp.orig	Fri Mar 11 10:19:08 2011
++++ third_party/WebKit/Source/WebCore/WebCore.gyp/WebCore.gyp	Mon Mar 14 10:57:25 2011
+@@ -950,7 +950,7 @@
+             '<(chromium_src_dir)/gpu/gpu.gyp:gles2_c_lib',
+           ],
+         }],
+-        ['OS=="linux" or OS=="freebsd"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             '<(chromium_src_dir)/build/linux/system.gyp:fontconfig',
+             '<(chromium_src_dir)/build/linux/system.gyp:gtk',
+@@ -1122,7 +1122,7 @@
+         ['include', 'thirdparty/glu/libtess/'],
+       ],
+       'conditions': [
+-        ['OS=="linux" or OS=="freebsd"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'sources/': [
+             # Cherry-pick files excluded by the broader regular expressions above.
+             ['include', 'platform/chromium/KeyCodeConversionGtk\\.cpp$'],
+@@ -1240,7 +1240,7 @@
+             ['exclude', 'platform/chromium/DragImageChromiumSkia\\.cpp$'],
+           ],
+         }],
+-        ['OS!="linux" and OS!="freebsd"', {
++        ['OS!="linux" and OS!="freebsd" and OS!="openbsd"', {
+           'sources/': [
+             ['exclude', '(Gtk|Linux)\\.cpp$'],
+             ['exclude', 'Harfbuzz[^/]+\\.(cpp|h)$'],
+@@ -1404,7 +1404,7 @@
+           # warnings about uninitialized this.7.
+           'cflags': ['-Wno-uninitialized'],
+         }],
+-        ['OS!="linux" and OS!="freebsd"', {
++        ['OS!="linux" and OS!="freebsd" and OS!="openbsd"', {
+           'sources/': [
+             ['exclude', '(Gtk|Linux)\\.cpp$'],
+           ],

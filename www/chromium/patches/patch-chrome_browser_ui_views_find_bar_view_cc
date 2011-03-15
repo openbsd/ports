@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_ui_views_find_bar_view_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
---- chrome/browser/ui/views/find_bar_view.cc.orig	Fri Jan 21 10:20:24 2011
-+++ chrome/browser/ui/views/find_bar_view.cc	Sun Jan 23 23:27:32 2011
+$OpenBSD: patch-chrome_browser_ui_views_find_bar_view_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
+--- chrome/browser/ui/views/find_bar_view.cc.orig	Fri Mar 11 10:01:42 2011
++++ chrome/browser/ui/views/find_bar_view.cc	Mon Mar 14 10:55:37 2011
 @@ -85,7 +85,7 @@ static const int kDefaultCharWidth = 43;
  
  FindBarView::FindBarView(FindBarHost* host)
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_views_find_bar_view_cc,v 1.1 2011/02/08 09:43:
        ignore_contents_changed_(false),
  #endif
        find_text_(NULL),
-@@ -174,11 +174,11 @@ FindBarView::~FindBarView() {
+@@ -176,11 +176,11 @@ FindBarView::~FindBarView() {
  }
  
  void FindBarView::SetFindText(const string16& find_text) {
@@ -24,7 +24,7 @@ $OpenBSD: patch-chrome_browser_ui_views_find_bar_view_cc,v 1.1 2011/02/08 09:43:
    ignore_contents_changed_ = false;
  #endif
  }
-@@ -450,7 +450,7 @@ void FindBarView::ButtonPressed(
+@@ -467,7 +467,7 @@ void FindBarView::ButtonPressed(
  
  void FindBarView::ContentsChanged(views::Textfield* sender,
                                    const string16& new_contents) {

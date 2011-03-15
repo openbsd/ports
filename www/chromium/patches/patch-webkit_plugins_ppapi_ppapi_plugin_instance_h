@@ -1,0 +1,12 @@
+$OpenBSD: patch-webkit_plugins_ppapi_ppapi_plugin_instance_h,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- webkit/plugins/ppapi/ppapi_plugin_instance.h.orig	Mon Mar 14 11:54:10 2011
++++ webkit/plugins/ppapi/ppapi_plugin_instance.h	Mon Mar 14 11:54:17 2011
+@@ -297,7 +297,7 @@ class PluginInstance : public base::RefCounted<PluginI
+   // to keep the pixels valid until CGContextEndPage is called. We use this
+   // variable to hold on to the pixels.
+   scoped_refptr<PPB_ImageData_Impl> last_printed_page_;
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+   // On Linux, all pages need to be written to a PDF file in one shot. However,
+   // when users print only a subset of all the pages, it is impossible to know
+   // if a call to PrintPage() is the last call. Thus in PrintPage(), just store

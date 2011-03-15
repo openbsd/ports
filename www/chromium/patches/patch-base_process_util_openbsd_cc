@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_process_util_openbsd_cc,v 1.1 2011/03/02 08:53:51 robert Exp $
---- base/process_util_openbsd.cc.orig	Wed Feb 23 23:21:14 2011
-+++ base/process_util_openbsd.cc	Wed Feb 23 23:22:19 2011
-@@ -0,0 +1,351 @@
+$OpenBSD: patch-base_process_util_openbsd_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
+--- base/process_util_openbsd.cc.orig	Mon Mar 14 10:55:37 2011
++++ base/process_util_openbsd.cc	Mon Mar 14 14:17:32 2011
+@@ -0,0 +1,349 @@
 +// Copyright (c) 2009 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -29,7 +29,7 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.1 2011/03/02 08:53:51 robert Ex
 +#include "base/string_tokenizer.h"
 +#include "base/string_util.h"
 +#include "base/sys_info.h"
-+#include "base/thread_restrictions.h"
++#include "base/threading/thread_restrictions.h"
 +
 +namespace base {
 +
@@ -174,10 +174,8 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.1 2011/03/02 08:53:51 robert Ex
 +}
 +
 +bool NamedProcessIterator::IncludeEntry() {
-+	printf("%s\n", __PRETTY_FUNCTION__);
-+
-+  return (WideToASCII(executable_name_) == entry().exe_file() &&
-+          ProcessIterator::IncludeEntry());
++  return (executable_name_ == entry().exe_file() &&
++		            ProcessIterator::IncludeEntry());
 +}
 +
 +

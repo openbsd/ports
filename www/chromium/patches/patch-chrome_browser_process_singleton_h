@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_process_singleton_h,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- chrome/browser/process_singleton.h.orig	Mon Mar 14 17:00:32 2011
++++ chrome/browser/process_singleton.h	Mon Mar 14 17:00:51 2011
+@@ -67,7 +67,7 @@ class ProcessSingleton : public base::NonThreadSafe {
+   // instance.
+   NotifyResult NotifyOtherProcessOrCreate();
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   // Exposed for testing.  We use a timeout on Linux, and in tests we want
+   // this timeout to be short.
+   NotifyResult NotifyOtherProcessWithTimeout(const CommandLine& command_line,

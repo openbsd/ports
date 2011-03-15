@@ -1,10 +1,10 @@
-$OpenBSD: patch-chrome_browser_zygote_host_linux_h,v 1.1 2011/02/08 09:43:02 espie Exp $
---- chrome/browser/zygote_host_linux.h.orig	Fri Jan 21 10:20:26 2011
-+++ chrome/browser/zygote_host_linux.h	Sun Jan 23 23:27:33 2011
-@@ -46,6 +46,9 @@ class ZygoteHost {
-     kCmdReap = 1,             // Reap a renderer child.
-     kCmdDidProcessCrash = 2,  // Check if child process crashed.
-     kCmdGetSandboxStatus = 3, // Read a bitmask of kSandbox*
+$OpenBSD: patch-chrome_browser_zygote_host_linux_h,v 1.2 2011/03/15 11:38:05 robert Exp $
+--- chrome/browser/zygote_host_linux.h.orig	Mon Mar 14 11:41:11 2011
++++ chrome/browser/zygote_host_linux.h	Mon Mar 14 11:41:31 2011
+@@ -51,6 +51,9 @@ class ZygoteHost {
+     kCmdReap = 1,                  // Reap a renderer child.
+     kCmdGetTerminationStatus = 2,  // Check what happend to a child process.
+     kCmdGetSandboxStatus = 3,      // Read a bitmask of kSandbox*
 +#if defined(OS_OPENBSD)
 +    kCmdEnd = 5,              // Kill zygote for SOCK_DGRAM.
 +#endif

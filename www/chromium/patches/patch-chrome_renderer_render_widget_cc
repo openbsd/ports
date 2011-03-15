@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_renderer_render_widget_cc,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- chrome/renderer/render_widget.cc.orig	Tue Mar 15 10:02:13 2011
++++ chrome/renderer/render_widget.cc	Tue Mar 15 10:02:27 2011
+@@ -888,7 +888,7 @@ void RenderWidget::OnMsgPaintAtSize(const TransportDIB
+       // Close our unused handle.
+ #if defined(OS_WIN)
+       ::CloseHandle(dib_handle);
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_OPENBSD)
+       base::SharedMemory::CloseHandle(dib_handle);
+ #endif
+     }

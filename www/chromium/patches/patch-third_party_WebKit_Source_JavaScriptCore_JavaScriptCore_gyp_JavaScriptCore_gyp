@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_JavaScriptCore_JavaScriptCore_gyp_JavaScriptCore_gyp,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- third_party/WebKit/Source/JavaScriptCore/JavaScriptCore.gyp/JavaScriptCore.gyp.orig	Fri Mar 11 10:17:23 2011
++++ third_party/WebKit/Source/JavaScriptCore/JavaScriptCore.gyp/JavaScriptCore.gyp	Mon Mar 14 10:57:25 2011
+@@ -83,7 +83,7 @@
+               'WTF_USE_NEW_THEME=1',
+             ],
+           }],
+-          ['OS=="linux" or OS=="freebsd"', {
++          ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+             'defines': [
+               'WTF_USE_PTHREADS=1',
+             ],

@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_debug_trace_event_cc,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- base/debug/trace_event.cc.orig	Mon Mar 14 14:02:18 2011
++++ base/debug/trace_event.cc	Mon Mar 14 14:03:00 2011
+@@ -74,7 +74,7 @@ void TraceLog::Trace(const std::string& name,
+   TimeTicks tick = TimeTicks::Now();
+ #endif
+   TimeDelta delta = tick - trace_start_time_;
+-  int64 usec = delta.InMicroseconds();
++  int64_t usec = delta.InMicroseconds();
+   std::string msg =
+     StringPrintf("{'pid':'0x%lx', 'tid':'0x%lx', 'type':'%s', "
+                  "'name':'%s', 'id':'%p', 'extra':'%s', 'file':'%s', "

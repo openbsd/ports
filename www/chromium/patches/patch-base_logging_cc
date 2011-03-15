@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_logging_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
---- base/logging.cc.orig	Mon Jan 24 14:44:48 2011
-+++ base/logging.cc	Mon Jan 24 14:44:59 2011
-@@ -130,7 +130,7 @@ int32 CurrentThreadId() {
+$OpenBSD: patch-base_logging_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
+--- base/logging.cc.orig	Fri Mar 11 10:01:33 2011
++++ base/logging.cc	Mon Mar 14 10:55:37 2011
+@@ -133,7 +133,7 @@ int32 CurrentThreadId() {
    return mach_thread_self();
  #elif defined(OS_LINUX)
    return syscall(__NR_gettid);

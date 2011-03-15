@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebCore_bindings_js_JSInspectorFrontendHostCustom_cpp,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- third_party/WebKit/Source/WebCore/bindings/js/JSInspectorFrontendHostCustom.cpp.orig	Fri Mar 11 10:19:17 2011
++++ third_party/WebKit/Source/WebCore/bindings/js/JSInspectorFrontendHostCustom.cpp	Mon Mar 14 10:57:25 2011
+@@ -60,6 +60,8 @@ JSValue JSInspectorFrontendHost::platform(ExecState* e
+     DEFINE_STATIC_LOCAL(const String, platform, ("linux"));
+ #elif OS(FREEBSD)
+     DEFINE_STATIC_LOCAL(const String, platform, ("freebsd"));
++#elif OS(OPENBSD)
++    DEFINE_STATIC_LOCAL(const String, platform, ("openbsd"));
+ #else
+     DEFINE_STATIC_LOCAL(const String, platform, ("unknown"));
+ #endif

@@ -1,0 +1,89 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- third_party/WebKit/Source/WebKit/chromium/src/WebViewImpl.cpp.orig	Fri Mar 11 10:17:35 2011
++++ third_party/WebKit/Source/WebKit/chromium/src/WebViewImpl.cpp	Mon Mar 14 10:57:25 2011
+@@ -130,7 +130,7 @@
+ #if OS(WINDOWS)
+ #include "RenderThemeChromiumWin.h"
+ #else
+-#if OS(LINUX) || OS(FREEBSD)
++#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+ #include "RenderThemeChromiumLinux.h"
+ #endif
+ #include "RenderTheme.h"
+@@ -468,7 +468,7 @@ void WebViewImpl::mouseDown(const WebMouseEvent& event
+         || (event.button == WebMouseEvent::ButtonLeft
+             && event.modifiers & WebMouseEvent::ControlKey))
+         mouseContextMenu(event);
+-#elif OS(LINUX) || OS(FREEBSD)
++#elif OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+     if (event.button == WebMouseEvent::ButtonRight)
+         mouseContextMenu(event);
+ #endif
+@@ -507,7 +507,7 @@ void WebViewImpl::mouseUp(const WebMouseEvent& event)
+     if (!mainFrameImpl() || !mainFrameImpl()->frameView())
+         return;
+ 
+-#if OS(LINUX) || OS(FREEBSD)
++#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+     // If the event was a middle click, attempt to copy text into the focused
+     // frame. We execute this before we let the page have a go at the event
+     // because the page may change what is focused during in its event handler.
+@@ -591,11 +591,11 @@ bool WebViewImpl::keyEvent(const WebKeyboardEvent& eve
+     if (!handler)
+         return keyEventDefault(event);
+ 
+-#if OS(WINDOWS) || OS(LINUX) || OS(FREEBSD)
++#if OS(WINDOWS) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+     const WebInputEvent::Type contextMenuTriggeringEventType =
+ #if OS(WINDOWS)
+         WebInputEvent::KeyUp;
+-#elif OS(LINUX) || OS(FREEBSD)
++#elif OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+         WebInputEvent::RawKeyDown;
+ #endif
+ 
+@@ -605,7 +605,7 @@ bool WebViewImpl::keyEvent(const WebKeyboardEvent& eve
+         sendContextMenuEvent(event);
+         return true;
+     }
+-#endif // OS(WINDOWS) || OS(LINUX) || OS(FREEBSD)
++#endif // OS(WINDOWS) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+ 
+     // It's not clear if we should continue after detecting a capslock keypress.
+     // I'll err on the side of continuing, which is the pre-existing behaviour.
+@@ -739,7 +739,7 @@ bool WebViewImpl::touchEvent(const WebTouchEvent& even
+ }
+ #endif
+ 
+-#if OS(WINDOWS) || OS(LINUX) || OS(FREEBSD)
++#if OS(WINDOWS) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+ // Mac has no way to open a context menu based on a keyboard event.
+ bool WebViewImpl::sendContextMenuEvent(const WebKeyboardEvent& event)
+ {
+@@ -2054,7 +2054,7 @@ void WebViewImpl::setDomainRelaxationForbidden(bool fo
+ void WebViewImpl::setScrollbarColors(unsigned inactiveColor,
+                                      unsigned activeColor,
+                                      unsigned trackColor) {
+-#if OS(LINUX) || OS(FREEBSD)
++#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+     PlatformThemeChromiumGtk::setScrollbarColors(inactiveColor,
+                                                  activeColor,
+                                                  trackColor);
+@@ -2065,7 +2065,7 @@ void WebViewImpl::setSelectionColors(unsigned activeBa
+                                      unsigned activeForegroundColor,
+                                      unsigned inactiveBackgroundColor,
+                                      unsigned inactiveForegroundColor) {
+-#if OS(LINUX) || OS(FREEBSD)
++#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+     RenderThemeChromiumLinux::setSelectionColors(activeBackgroundColor,
+                                                  activeForegroundColor,
+                                                  inactiveBackgroundColor,
+@@ -2141,7 +2141,7 @@ bool WebViewImpl::navigationPolicyFromMouseEvent(unsig
+                                                  bool alt, bool meta,
+                                                  WebNavigationPolicy* policy)
+ {
+-#if OS(WINDOWS) || OS(LINUX) || OS(FREEBSD) || OS(SOLARIS)
++#if OS(WINDOWS) || OS(LINUX) || OS(FREEBSD) || OS(SOLARIS) || OS(OPENBSD)
+     const bool newTabModifier = (button == 1) || ctrl;
+ #elif OS(DARWIN)
+     const bool newTabModifier = (button == 1) || meta;

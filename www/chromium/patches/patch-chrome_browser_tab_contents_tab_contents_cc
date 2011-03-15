@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_tab_contents_tab_contents_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
---- chrome/browser/tab_contents/tab_contents.cc.orig	Fri Jan 21 10:20:24 2011
-+++ chrome/browser/tab_contents/tab_contents.cc	Sun Jan 23 23:27:32 2011
-@@ -414,7 +414,7 @@ TabContents::TabContents(Profile* profile,
+$OpenBSD: patch-chrome_browser_tab_contents_tab_contents_cc,v 1.3 2011/03/15 11:38:05 robert Exp $
+--- chrome/browser/tab_contents/tab_contents.cc.orig	Fri Mar 11 10:01:42 2011
++++ chrome/browser/tab_contents/tab_contents.cc	Mon Mar 14 10:55:37 2011
+@@ -443,7 +443,7 @@ TabContents::TabContents(Profile* profile,
                   NotificationService::AllSources());
    registrar_.Add(this, NotificationType::RENDER_WIDGET_HOST_DESTROYED,
                   NotificationService::AllSources());
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_tab_contents_tab_contents_cc,v 1.2 2011/02/08 09:
    registrar_.Add(this, NotificationType::BROWSER_THEME_CHANGED,
                   NotificationService::AllSources());
  #endif
-@@ -3163,7 +3163,7 @@ void TabContents::Observe(NotificationType type,
+@@ -3264,7 +3264,7 @@ void TabContents::Observe(NotificationType type,
        break;
      }
  

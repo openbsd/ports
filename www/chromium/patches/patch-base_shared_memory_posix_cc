@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_shared_memory_posix_cc,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- base/shared_memory_posix.cc.orig	Mon Mar 14 19:21:35 2011
++++ base/shared_memory_posix.cc	Mon Mar 14 19:21:44 2011
+@@ -149,7 +149,7 @@ bool SharedMemory::CreateNamed(const std::string& name
+     created_size_ = size;
+   }
+   if (fp == NULL) {
+-#if !defined(OS_MACOSX)
++#if !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+     PLOG(ERROR) << "Creating shared memory in " << path.value() << " failed";
+     FilePath dir = path.DirName();
+     if (access(dir.value().c_str(), W_OK | X_OK) < 0) {

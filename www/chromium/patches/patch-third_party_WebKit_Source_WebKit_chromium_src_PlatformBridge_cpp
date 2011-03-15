@@ -1,0 +1,30 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_PlatformBridge_cpp,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- third_party/WebKit/Source/WebKit/chromium/src/PlatformBridge.cpp.orig	Mon Mar 14 11:49:42 2011
++++ third_party/WebKit/Source/WebKit/chromium/src/PlatformBridge.cpp	Mon Mar 14 17:28:21 2011
+@@ -70,7 +70,7 @@
+ #include "win/WebThemeEngine.h"
+ #endif
+ 
+-#if OS(LINUX) || OS(FREEBSD)
++#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+ #include "linux/WebThemeEngine.h"
+ #include "WebFontInfo.h"
+ #include "WebFontRenderStyle.h"
+@@ -436,7 +436,7 @@ bool PlatformBridge::ensureFontLoaded(HFONT font)
+ }
+ #endif
+ 
+-#if OS(LINUX) || OS(FREEBSD)
++#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+ String PlatformBridge::getFontFamilyForCharacters(const UChar* characters, size_t numCharacters)
+ {
+     if (webKitClient()->sandboxSupport())
+@@ -778,7 +778,7 @@ void PlatformBridge::paintProgressBar(
+         gc->platformContext()->canvas(), barRect, valueRect, determinate, animatedSeconds);
+ }
+ 
+-#elif OS(LINUX)
++#elif OS(LINUX) || OS(OPENBSD)
+ 
+ static WebThemeEngine::Part WebThemePart(PlatformBridge::ThemePart part)
+ {

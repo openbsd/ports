@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_geolocation_gateway_data_provider_bsd_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
---- chrome/browser/geolocation/gateway_data_provider_bsd.cc.orig	Sun Jan 23 23:27:31 2011
-+++ chrome/browser/geolocation/gateway_data_provider_bsd.cc	Sun Jan 23 23:27:31 2011
-@@ -0,0 +1,181 @@
+$OpenBSD: patch-chrome_browser_geolocation_gateway_data_provider_bsd_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
+--- chrome/browser/geolocation/gateway_data_provider_bsd.cc.orig	Mon Mar 14 10:55:37 2011
++++ chrome/browser/geolocation/gateway_data_provider_bsd.cc	Mon Mar 14 17:14:37 2011
+@@ -0,0 +1,188 @@
 +// Copyright (c) 2010 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -39,6 +39,13 @@ $OpenBSD: patch-chrome_browser_geolocation_gateway_data_provider_bsd_cc,v 1.1 20
 +#include "chrome/browser/geolocation/empty_device_data_provider.h"
 +#include "chrome/browser/geolocation/gateway_data_provider_common.h"
 +#include "chrome/common/chrome_switches.h"
++
++#ifndef SA_SIZE
++#define SA_SIZE(sa)						\
++	((!(sa) || ((struct sockaddr *)(sa))->sa_len == 0) ?	\
++	 sizeof(long) :						\
++	 1 + ( (((struct sockaddr *)(sa))->sa_len - 1) | (sizeof(long) - 1)))
++#endif
 +
 +namespace {
 +
@@ -144,7 +151,7 @@ $OpenBSD: patch-chrome_browser_geolocation_gateway_data_provider_bsd_cc,v 1.1 20
 +
 +    sdl = (struct sockaddr_dl *)((char *)sin + SA_SIZE(sin));
 +    std::string mac_addr = ether_ntoa((struct ether_addr *)LLADDR(sdl));
-+  
++
 +    std::replace(mac_addr.begin(), mac_addr.end(), ':', '-');
 +    RouterData router;
 +    router.mac_address = UTF8ToUTF16(mac_addr);

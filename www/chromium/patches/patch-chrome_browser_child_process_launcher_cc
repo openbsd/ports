@@ -1,18 +1,16 @@
-$OpenBSD: patch-chrome_browser_child_process_launcher_cc,v 1.2 2011/02/08 09:43:02 espie Exp $
---- chrome/browser/child_process_launcher.cc.orig	Fri Jan 21 10:20:26 2011
-+++ chrome/browser/child_process_launcher.cc	Sun Jan 23 23:27:31 2011
-@@ -20,8 +20,9 @@
+$OpenBSD: patch-chrome_browser_child_process_launcher_cc,v 1.3 2011/03/15 11:38:05 robert Exp $
+--- chrome/browser/child_process_launcher.cc.orig	Mon Mar 14 11:05:10 2011
++++ chrome/browser/child_process_launcher.cc	Mon Mar 14 11:05:49 2011
+@@ -20,7 +20,7 @@
  #if defined(OS_WIN)
  #include "base/file_path.h"
  #include "chrome/common/sandbox_policy.h"
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_OPENBSD)
  #include "base/singleton.h"
-+// XXX rene: use OpenBSD-specific versions for these?
  #include "chrome/browser/crash_handler_host_linux.h"
  #include "chrome/browser/zygote_host_linux.h"
- #include "chrome/browser/renderer_host/render_sandbox_host_linux.h"
-@@ -45,7 +46,7 @@ class ChildProcessLauncher::Context
+@@ -45,7 +45,7 @@ class ChildProcessLauncher::Context
        : client_(NULL),
          client_thread_id_(BrowserThread::UI),
          starting_(true)
@@ -21,7 +19,7 @@ $OpenBSD: patch-chrome_browser_child_process_launcher_cc,v 1.2 2011/02/08 09:43:
          , zygote_(false)
  #endif
          {
-@@ -110,7 +111,7 @@ class ChildProcessLauncher::Context
+@@ -110,7 +110,7 @@ class ChildProcessLauncher::Context
      handle = sandbox::StartProcessWithAccess(cmd_line, exposed_dir);
  #elif defined(OS_POSIX)
  
@@ -30,27 +28,16 @@ $OpenBSD: patch-chrome_browser_child_process_launcher_cc,v 1.2 2011/02/08 09:43:
      if (use_zygote) {
        base::GlobalDescriptors::Mapping mapping;
        mapping.push_back(std::pair<uint32_t, int>(kPrimaryIPCChannel, ipcfd));
-@@ -130,8 +131,8 @@ class ChildProcessLauncher::Context
+@@ -131,7 +131,7 @@ class ChildProcessLauncher::Context
            ipcfd,
            kPrimaryIPCChannel + base::GlobalDescriptors::kBaseDescriptor));
  
 -#if defined(OS_LINUX)
--      // On Linux, we need to add some extra file descriptors for crash handling
 +#if defined(OS_LINUX) || defined(OS_OPENBSD)
-+      // On Linux/OpenBSD, we need to add some extra file descriptors for crash handling
+       // On Linux, we need to add some extra file descriptors for crash handling
        // and the sandbox.
        bool is_renderer =
-           cmd_line->GetSwitchValueASCII(switches::kProcessType) ==
-@@ -162,7 +163,7 @@ class ChildProcessLauncher::Context
-             sandbox_fd,
-             kSandboxIPCChannel + base::GlobalDescriptors::kBaseDescriptor));
-       }
--#endif  // defined(OS_LINUX)
-+#endif  // defined(OS_LINUX) || defined(OS_OPENBSD)
- 
-       bool launched = false;
- #if defined(OS_MACOSX)
-@@ -198,20 +199,20 @@ class ChildProcessLauncher::Context
+@@ -205,20 +205,20 @@ class ChildProcessLauncher::Context
          NewRunnableMethod(
              this,
              &ChildProcessLauncher::Context::Notify,
@@ -74,7 +61,7 @@ $OpenBSD: patch-chrome_browser_child_process_launcher_cc,v 1.2 2011/02/08 09:43:
      zygote_ = zygote;
  #endif
      if (client_) {
-@@ -231,7 +232,7 @@ class ChildProcessLauncher::Context
+@@ -238,7 +238,7 @@ class ChildProcessLauncher::Context
          BrowserThread::PROCESS_LAUNCHER, FROM_HERE,
          NewRunnableFunction(
              &ChildProcessLauncher::Context::TerminateInternal,
@@ -83,7 +70,7 @@ $OpenBSD: patch-chrome_browser_child_process_launcher_cc,v 1.2 2011/02/08 09:43:
              zygote_,
  #endif
              process_.handle()));
-@@ -239,7 +240,7 @@ class ChildProcessLauncher::Context
+@@ -246,7 +246,7 @@ class ChildProcessLauncher::Context
    }
  
    static void TerminateInternal(
@@ -92,7 +79,7 @@ $OpenBSD: patch-chrome_browser_child_process_launcher_cc,v 1.2 2011/02/08 09:43:
        bool zygote,
  #endif
        base::ProcessHandle handle) {
-@@ -249,13 +250,13 @@ class ChildProcessLauncher::Context
+@@ -256,7 +256,7 @@ class ChildProcessLauncher::Context
      process.Terminate(ResultCodes::NORMAL_EXIT);
      // On POSIX, we must additionally reap the child.
  #if defined(OS_POSIX)
@@ -101,14 +88,7 @@ $OpenBSD: patch-chrome_browser_child_process_launcher_cc,v 1.2 2011/02/08 09:43:
      if (zygote) {
        // If the renderer was created via a zygote, we have to proxy the reaping
        // through the zygote process.
-       Singleton<ZygoteHost>()->EnsureProcessTerminated(handle);
-     } else
--#endif  // OS_LINUX
-+#endif  // OS_LINUX || OS_OPENBSD
-     {
-       ProcessWatcher::EnsureProcessTerminated(handle);
-     }
-@@ -268,7 +269,7 @@ class ChildProcessLauncher::Context
+@@ -275,7 +275,7 @@ class ChildProcessLauncher::Context
    base::Process process_;
    bool starting_;
  
@@ -117,12 +97,12 @@ $OpenBSD: patch-chrome_browser_child_process_launcher_cc,v 1.2 2011/02/08 09:43:
    bool zygote_;
  #endif
  };
-@@ -313,7 +314,7 @@ base::ProcessHandle ChildProcessLauncher::GetHandle() 
- bool ChildProcessLauncher::DidProcessCrash() {
-   bool did_crash, child_exited;
+@@ -321,7 +321,7 @@ base::TerminationStatus ChildProcessLauncher::GetChild
+     int* exit_code) {
+   base::TerminationStatus status;
    base::ProcessHandle handle = context_->process_.handle();
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_OPENBSD)
    if (context_->zygote_) {
-     did_crash = Singleton<ZygoteHost>()->DidProcessCrash(handle, &child_exited);
+     status = ZygoteHost::GetInstance()->GetTerminationStatus(handle, exit_code);
    } else

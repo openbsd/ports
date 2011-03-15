@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_common_native_web_keyboard_event_h,v 1.3 2011/03/15 11:38:05 robert Exp $
+--- chrome/common/native_web_keyboard_event.h.orig	Mon Mar 14 14:12:33 2011
++++ chrome/common/native_web_keyboard_event.h	Mon Mar 14 14:12:52 2011
+@@ -60,7 +60,7 @@ struct NativeWebKeyboardEvent : public WebKit::WebKeyb
+   // Currently, it's only used by Linux and Mac ports.
+   bool skip_in_browser;
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   // True if the key event matches an edit command. In order to ensure the edit
+   // command always work in web page, the browser should not pre-handle this key
+   // event as a reserved accelerator. See http://crbug.com/54573

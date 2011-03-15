@@ -1,6 +1,6 @@
-$OpenBSD: patch-net_base_host_resolver_impl_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
---- net/base/host_resolver_impl.cc.orig	Fri Jan 21 10:19:57 2011
-+++ net/base/host_resolver_impl.cc	Sun Jan 23 23:27:35 2011
+$OpenBSD: patch-net_base_host_resolver_impl_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
+--- net/base/host_resolver_impl.cc.orig	Fri Mar 11 10:01:15 2011
++++ net/base/host_resolver_impl.cc	Mon Mar 14 10:55:37 2011
 @@ -199,13 +199,11 @@ class JobCreationParameters : public NetLog::EventPara
  std::vector<int> GetAllGetAddrinfoOSErrors() {
    int os_errors[] = {
@@ -24,7 +24,7 @@ $OpenBSD: patch-net_base_host_resolver_impl_cc,v 1.1 2011/02/08 09:43:02 espie E
    if (HaveOnlyLoopbackAddresses())
      additional_resolver_flags_ |= HOST_RESOLVER_LOOPBACK_ONLY;
  #endif
-@@ -1312,7 +1310,7 @@ void HostResolverImpl::OnIPAddressChanged() {
+@@ -1447,7 +1445,7 @@ void HostResolverImpl::OnIPAddressChanged() {
      ipv6_probe_job_ = new IPv6ProbeJob(this);
      ipv6_probe_job_->Start();
    }

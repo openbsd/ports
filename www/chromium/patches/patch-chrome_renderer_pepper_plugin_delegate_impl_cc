@@ -1,0 +1,30 @@
+$OpenBSD: patch-chrome_renderer_pepper_plugin_delegate_impl_cc,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- chrome/renderer/pepper_plugin_delegate_impl.cc.orig	Mon Mar 14 17:17:52 2011
++++ chrome/renderer/pepper_plugin_delegate_impl.cc	Mon Mar 14 17:18:24 2011
+@@ -48,7 +48,7 @@
+ #include "webkit/plugins/ppapi/ppapi_plugin_instance.h"
+ #include "webkit/plugins/ppapi/ppb_flash_impl.h"
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+ #include "chrome/common/render_messages.h"
+ #include "chrome/renderer/render_thread.h"
+ #endif
+@@ -76,7 +76,7 @@ class PlatformImage2DImpl
+         dib_(dib) {
+   }
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+   // On Mac, we have to tell the browser to free the transport DIB.
+   virtual ~PlatformImage2DImpl() {
+     if (dib_.get()) {
+@@ -94,7 +94,7 @@ class PlatformImage2DImpl
+     *byte_count = dib_->size();
+ #if defined(OS_WIN)
+     return reinterpret_cast<intptr_t>(dib_->handle());
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_OPENBSD)
+     return static_cast<intptr_t>(dib_->handle().fd);
+ #elif defined(OS_LINUX)
+     return static_cast<intptr_t>(dib_->handle());

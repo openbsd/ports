@@ -1,12 +1,21 @@
-$OpenBSD: patch-chrome_browser_ui_views_dropdown_bar_host_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
---- chrome/browser/ui/views/dropdown_bar_host.cc.orig	Fri Jan 21 10:20:24 2011
-+++ chrome/browser/ui/views/dropdown_bar_host.cc	Sun Jan 23 23:27:32 2011
-@@ -20,7 +20,7 @@
- #include "views/focus/view_storage.h"
- #include "views/widget/widget.h"
+$OpenBSD: patch-chrome_browser_ui_views_dropdown_bar_host_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
+--- chrome/browser/ui/views/dropdown_bar_host.cc.orig	Mon Mar 14 11:38:09 2011
++++ chrome/browser/ui/views/dropdown_bar_host.cc	Mon Mar 14 11:38:18 2011
+@@ -19,7 +19,7 @@
  
--#if defined(OS_LINUX)
-+#if defined(TOOLKIT_GTK)
- #include "app/scoped_handle_gtk.h"
+ #if defined(OS_WIN)
+ #include "base/win/scoped_gdi_object.h"
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+ #include "ui/base/gtk/scoped_handle_gtk.h"
+ #endif
+ 
+@@ -27,7 +27,7 @@ namespace {
+ 
+ #if defined(OS_WIN)
+ typedef base::win::ScopedRegion ScopedPlatformRegion;
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+ typedef ui::ScopedRegion ScopedPlatformRegion;
  #endif
  

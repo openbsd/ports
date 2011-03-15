@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_default_plugin_default_plugin_gyp,v 1.1 2011/02/08 09:43:02 espie Exp $
---- chrome/default_plugin/default_plugin.gyp.orig	Fri Jan 21 10:20:41 2011
-+++ chrome/default_plugin/default_plugin.gyp	Sun Jan 23 23:27:33 2011
-@@ -53,7 +53,7 @@
+$OpenBSD: patch-chrome_default_plugin_default_plugin_gyp,v 1.2 2011/03/15 11:38:05 robert Exp $
+--- chrome/default_plugin/default_plugin.gyp.orig	Fri Mar 11 10:01:58 2011
++++ chrome/default_plugin/default_plugin.gyp	Mon Mar 14 10:55:37 2011
+@@ -54,7 +54,7 @@
                'plugin_install_job_monitor.h',
              ],
           }],

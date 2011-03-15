@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_ui_browser_list_cc,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- chrome/browser/ui/browser_list.cc.orig	Tue Mar 15 10:41:36 2011
++++ chrome/browser/ui/browser_list.cc	Tue Mar 15 10:41:58 2011
+@@ -430,7 +430,7 @@ void BrowserList::SessionEnding() {
+   // At this point the message loop is still running yet we've shut everything
+   // down. If any messages are processed we'll likely crash. Exit now.
+   ExitProcess(ResultCodes::NORMAL_EXIT);
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+   _exit(ResultCodes::NORMAL_EXIT);
+ #else
+   NOTIMPLEMENTED();

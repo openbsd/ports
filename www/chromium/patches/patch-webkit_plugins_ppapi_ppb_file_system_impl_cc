@@ -1,0 +1,12 @@
+$OpenBSD: patch-webkit_plugins_ppapi_ppb_file_system_impl_cc,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- webkit/plugins/ppapi/ppb_file_system_impl.cc.orig	Mon Mar 14 11:52:20 2011
++++ webkit/plugins/ppapi/ppb_file_system_impl.cc	Mon Mar 14 11:52:32 2011
+@@ -37,7 +37,7 @@ PP_Resource Create(PP_Instance instance, PP_FileSystem
+ }
+ 
+ int32_t Open(PP_Resource file_system_id,
+-             int64 expected_size,
++             int64_t expected_size,
+              PP_CompletionCallback callback) {
+   scoped_refptr<PPB_FileSystem_Impl> file_system(
+       Resource::GetAs<PPB_FileSystem_Impl>(file_system_id));

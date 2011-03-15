@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebCore_bindings_v8_custom_V8InspectorFrontendHostCustom_cpp,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- third_party/WebKit/Source/WebCore/bindings/v8/custom/V8InspectorFrontendHostCustom.cpp.orig	Fri Mar 11 10:19:22 2011
++++ third_party/WebKit/Source/WebCore/bindings/v8/custom/V8InspectorFrontendHostCustom.cpp	Mon Mar 14 10:57:25 2011
+@@ -51,6 +51,8 @@ v8::Handle<v8::Value> V8InspectorFrontendHost::platfor
+     return v8String("freebsd");
+ #elif defined(OS_WIN)
+     return v8String("windows");
++#elif defined(OS_OPENBSD)
++    return v8String("openbsd");
+ #else
+     return v8String("unknown");
+ #endif

@@ -1,0 +1,12 @@
+$OpenBSD: patch-ppapi_proxy_serialized_structs_h,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- ppapi/proxy/serialized_structs.h.orig	Mon Mar 14 13:19:38 2011
++++ ppapi/proxy/serialized_structs.h	Mon Mar 14 13:19:47 2011
+@@ -102,7 +102,7 @@ struct PPBFlash_DrawGlyphs_Params {
+ 
+ #if defined(OS_WIN)
+ typedef HANDLE ImageHandle;
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_OPENBSD)
+ typedef base::SharedMemoryHandle ImageHandle;
+ #else
+ // On X Windows this is a SysV shared memory key.

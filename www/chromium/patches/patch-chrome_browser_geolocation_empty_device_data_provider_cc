@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_geolocation_empty_device_data_provider_cc,v 1.3 2011/03/15 11:38:05 robert Exp $
+--- chrome/browser/geolocation/empty_device_data_provider.cc.orig	Mon Mar 14 17:38:51 2011
++++ chrome/browser/geolocation/empty_device_data_provider.cc	Mon Mar 14 17:39:02 2011
+@@ -12,7 +12,7 @@ RadioDataProviderImplBase* RadioDataProvider::DefaultF
+ }
+ 
+ // Only define for platforms that lack a real wifi data provider.
+-#if !defined(OS_WIN) && !defined(OS_MACOSX) && !defined(OS_LINUX)
++#if !defined(OS_WIN) && !defined(OS_MACOSX) && !defined(OS_LINUX) && !defined(OS_OPENBSD)
+ // static
+ template<>
+ WifiDataProviderImplBase* WifiDataProvider::DefaultFactoryFunction() {

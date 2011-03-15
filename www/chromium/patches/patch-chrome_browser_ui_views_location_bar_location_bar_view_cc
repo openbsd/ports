@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_browser_ui_views_location_bar_location_bar_view_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
---- chrome/browser/ui/views/location_bar/location_bar_view.cc.orig	Fri Jan 21 10:20:24 2011
-+++ chrome/browser/ui/views/location_bar/location_bar_view.cc	Sun Jan 23 23:27:32 2011
+$OpenBSD: patch-chrome_browser_ui_views_location_bar_location_bar_view_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
+--- chrome/browser/ui/views/location_bar/location_bar_view.cc.orig	Fri Mar 11 10:01:41 2011
++++ chrome/browser/ui/views/location_bar/location_bar_view.cc	Mon Mar 14 10:55:37 2011
 @@ -4,7 +4,7 @@
  
- #include "chrome/browser/views/location_bar/location_bar_view.h"
+ #include "chrome/browser/ui/views/location_bar/location_bar_view.h"
  
 -#if defined(OS_LINUX)
 +#if defined(TOOLKIT_USES_GTK)

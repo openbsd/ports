@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebCore_storage_IDBDatabaseBackendImpl_cpp,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- third_party/WebKit/Source/WebCore/storage/IDBDatabaseBackendImpl.cpp.orig	Fri Mar 11 10:18:11 2011
++++ third_party/WebKit/Source/WebCore/storage/IDBDatabaseBackendImpl.cpp	Mon Mar 14 10:57:25 2011
+@@ -100,7 +100,7 @@ IDBDatabaseBackendImpl::IDBDatabaseBackendImpl(const S
+ 
+     bool success = extractMetaData(m_sqliteDatabase->db(), m_name, m_version, m_id);
+     ASSERT_UNUSED(success, success == (m_id != InvalidId));
+-    if (!setMetaData(m_sqliteDatabase->db(), m_name, m_version, m_id))
++    if (!setMetaData(m_sqliteDatabase->db(), m_name, m_version, (int64_t&)m_id))
+         ASSERT_NOT_REACHED(); // FIXME: Need better error handling.
+     loadObjectStores();
+ }

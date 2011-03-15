@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebCore_loader_cache_CachedFont_cpp,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- third_party/WebKit/Source/WebCore/loader/cache/CachedFont.cpp.orig	Fri Mar 11 10:20:12 2011
++++ third_party/WebKit/Source/WebCore/loader/cache/CachedFont.cpp	Mon Mar 14 10:57:25 2011
+@@ -27,7 +27,7 @@
+ #include "config.h"
+ #include "CachedFont.h"
+ 
+-#if PLATFORM(CG) || PLATFORM(QT) || PLATFORM(GTK) || (PLATFORM(CHROMIUM) && (OS(WINDOWS) || OS(LINUX) || OS(FREEBSD))) || PLATFORM(HAIKU) || OS(WINCE) || PLATFORM(ANDROID) || PLATFORM(BREWMP)
++#if PLATFORM(CG) || PLATFORM(QT) || PLATFORM(GTK) || (PLATFORM(CHROMIUM) && (OS(WINDOWS) || OS(LINUX) || OS(FREEBSD) || OS(OPENBSD))) || PLATFORM(HAIKU) || OS(WINCE) || PLATFORM(ANDROID) || PLATFORM(BREWMP)
+ #define STORE_FONT_CUSTOM_PLATFORM_DATA
+ #endif
+ 

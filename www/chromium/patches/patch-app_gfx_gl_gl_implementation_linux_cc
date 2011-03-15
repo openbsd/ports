@@ -1,12 +1,12 @@
-$OpenBSD: patch-app_gfx_gl_gl_implementation_linux_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
---- app/gfx/gl/gl_implementation_linux.cc.orig	Tue Feb  1 23:30:35 2011
-+++ app/gfx/gl/gl_implementation_linux.cc	Tue Feb  1 23:30:58 2011
-@@ -72,7 +72,7 @@ bool InitializeGLBindings(GLImplementation implementat
+$OpenBSD: patch-app_gfx_gl_gl_implementation_linux_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
+--- app/gfx/gl/gl_implementation_linux.cc.orig	Fri Mar 11 10:01:05 2011
++++ app/gfx/gl/gl_implementation_linux.cc	Mon Mar 14 10:55:37 2011
+@@ -71,7 +71,7 @@ bool InitializeGLBindings(GLImplementation implementat
      }
      case kGLImplementationDesktopGL: {
        base::NativeLibrary library = base::LoadNativeLibrary(
 -          FilePath("libGL.so.1"));
 +          FilePath("libGL.so"));
        if (!library) {
-         LOG(ERROR) << "libGL.so.1 not found.";
+         VLOG(1) << "libGL.so.1 not found.";
          return false;

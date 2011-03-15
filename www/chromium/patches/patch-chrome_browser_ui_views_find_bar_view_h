@@ -1,12 +1,12 @@
-$OpenBSD: patch-chrome_browser_ui_views_find_bar_view_h,v 1.1 2011/02/08 09:43:02 espie Exp $
---- chrome/browser/ui/views/find_bar_view.h.orig	Fri Jan 21 10:20:24 2011
-+++ chrome/browser/ui/views/find_bar_view.h	Sun Jan 23 23:27:32 2011
-@@ -103,7 +103,7 @@ class FindBarView : public DropdownBarView,
+$OpenBSD: patch-chrome_browser_ui_views_find_bar_view_h,v 1.2 2011/03/15 11:38:05 robert Exp $
+--- chrome/browser/ui/views/find_bar_view.h.orig	Mon Mar 14 11:38:22 2011
++++ chrome/browser/ui/views/find_bar_view.h	Mon Mar 14 11:38:31 2011
+@@ -125,7 +125,7 @@ class FindBarView : public DropdownBarView,
    // between us and the TabContentsView.
    FindBarHost* find_bar_host() const;
  
 -#if defined(OS_LINUX)
-+#if defined(TOOLKIT_USES_GTK)
-   // In gtk we get changed signals if we programatically set the text. If we
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   // In GTK we get changed signals if we programmatically set the text. If we
    // don't ignore them we run into problems. For example, switching tabs back
    // to one with the find bar visible will cause a search to the next found

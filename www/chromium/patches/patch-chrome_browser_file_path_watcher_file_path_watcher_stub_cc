@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_browser_file_path_watcher_file_path_watcher_stub_cc,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- chrome/browser/file_path_watcher/file_path_watcher_stub.cc.orig	Mon Mar 14 11:06:24 2011
++++ chrome/browser/file_path_watcher/file_path_watcher_stub.cc	Mon Mar 14 11:06:30 2011
+@@ -9,7 +9,7 @@
+ 
+ class FilePathWatcherImpl : public FilePathWatcher::PlatformDelegate {
+  public:
+-  virtual bool Watch(const FilePath& path, FileWatcher::Delegate* delegate) {
++  virtual bool Watch(const FilePath& path, FilePathWatcher::Delegate* delegate) {
+     return false;
+   }
+ };

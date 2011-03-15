@@ -1,0 +1,21 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebCore_platform_chromium_PlatformBridge_h,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- third_party/WebKit/Source/WebCore/platform/chromium/PlatformBridge.h.orig	Mon Mar 14 14:32:23 2011
++++ third_party/WebKit/Source/WebCore/platform/chromium/PlatformBridge.h	Mon Mar 14 14:32:39 2011
+@@ -148,7 +148,7 @@ class PlatformBridge { (public)
+ #if OS(WINDOWS)
+     static bool ensureFontLoaded(HFONT);
+ #endif
+-#if OS(LINUX) || OS(FREEBSD)
++#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+     static void getRenderStyleForStrike(const char* family, int sizeAndStyle, FontRenderStyle* result);
+     static String getFontFamilyForCharacters(const UChar*, size_t numCharacters);
+ #endif
+@@ -264,7 +264,7 @@ class PlatformBridge { (public)
+         GraphicsContext*, int part, int state, int classicState, const IntRect&);
+     static void paintProgressBar(
+         GraphicsContext*, const IntRect& barRect, const IntRect& valueRect, bool determinate, double animatedSeconds);
+-#elif OS(LINUX)
++#elif OS(LINUX) || OS(OPENBSD)
+     // The UI part which is being accessed.
+     enum ThemePart {
+         // ScrollbarTheme parts

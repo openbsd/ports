@@ -1,0 +1,12 @@
+$OpenBSD: patch-webkit_tools_pepper_test_plugin_event_handler_cc,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- webkit/tools/pepper_test_plugin/event_handler.cc.orig	Mon Mar 14 11:54:52 2011
++++ webkit/tools/pepper_test_plugin/event_handler.cc	Mon Mar 14 11:55:00 2011
+@@ -55,7 +55,7 @@ void EventHandler::addText(const char* cstr) {
+ }
+ 
+ std::string EventHandler::EventName(double timestamp, int32 type) {
+-#if !defined(OS_LINUX)
++#if !defined(OS_LINUX) && !defined(OS_OPENBSD)
+   std::stringstream strstr;
+   strstr.setf(std::ios::fixed, std::ios::floatfield);
+   strstr << timestamp << ": ";

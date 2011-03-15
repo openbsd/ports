@@ -1,6 +1,6 @@
-$OpenBSD: patch-app_surface_transport_dib_openbsd_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
---- app/surface/transport_dib_openbsd.cc.orig	Sun Jan 23 23:27:31 2011
-+++ app/surface/transport_dib_openbsd.cc	Sun Jan 23 23:27:31 2011
+$OpenBSD: patch-app_surface_transport_dib_openbsd_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
+--- app/surface/transport_dib_openbsd.cc.orig	Mon Mar 14 10:55:37 2011
++++ app/surface/transport_dib_openbsd.cc	Mon Mar 14 12:00:24 2011
 @@ -0,0 +1,106 @@
 +// Copyright (c) 2009 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
@@ -102,7 +102,7 @@ $OpenBSD: patch-app_surface_transport_dib_openbsd_cc,v 1.1 2011/02/08 09:43:02 e
 +
 +XID TransportDIB::MapToX(Display* display) {
 +  if (!x_shm_) {
-+    x_shm_ = x11_util::AttachSharedMemory(display, key_);
++    x_shm_ = ui::AttachSharedMemory(display, key_);
 +    display_ = display;
 +  }
 +

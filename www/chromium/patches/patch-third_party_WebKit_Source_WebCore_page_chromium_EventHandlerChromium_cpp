@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebCore_page_chromium_EventHandlerChromium_cpp,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- third_party/WebKit/Source/WebCore/page/chromium/EventHandlerChromium.cpp.orig	Fri Mar 11 10:18:32 2011
++++ third_party/WebKit/Source/WebCore/page/chromium/EventHandlerChromium.cpp	Mon Mar 14 10:57:25 2011
+@@ -154,7 +154,7 @@ unsigned EventHandler::accessKeyModifiers()
+ #endif
+ }
+ 
+-#if OS(LINUX) || OS(FREEBSD)
++#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
+ // GTK+ must scroll horizontally if the mouse pointer is on top of the
+ // horizontal scrollbar while scrolling with the wheel.
+ // This code comes from gtk/EventHandlerGtk.cpp.

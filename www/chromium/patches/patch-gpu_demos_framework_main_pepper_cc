@@ -1,7 +1,7 @@
-$OpenBSD: patch-gpu_demos_framework_main_pepper_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
---- gpu/demos/framework/main_pepper.cc.orig	Fri Jan 21 10:19:48 2011
-+++ gpu/demos/framework/main_pepper.cc	Sun Jan 23 23:27:34 2011
-@@ -106,7 +106,7 @@ NPError NPP_GetValue(NPP instance, NPPVariable variabl
+$OpenBSD: patch-gpu_demos_framework_main_pepper_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
+--- gpu/demos/framework/main_pepper.cc.orig	Mon Mar 14 11:48:35 2011
++++ gpu/demos/framework/main_pepper.cc	Mon Mar 14 11:48:53 2011
+@@ -97,7 +97,7 @@ NPError NPP_GetValue(NPP instance, NPPVariable variabl
    NPError err = NPERR_NO_ERROR;
  
    switch (variable) {
@@ -10,30 +10,25 @@ $OpenBSD: patch-gpu_demos_framework_main_pepper_cc,v 1.1 2011/02/08 09:43:02 esp
      case NPPVpluginNameString:
        *(static_cast<const char**>(value)) = "Pepper GPU Demo";
        break;
-@@ -163,17 +163,17 @@ EXPORT NPError API_CALL NP_GetEntryPoints(NPPluginFunc
+@@ -153,14 +153,14 @@ EXPORT NPError API_CALL NP_GetEntryPoints(NPPluginFunc
  }
  
  EXPORT NPError API_CALL NP_Initialize(NPNetscapeFuncs* browser_funcs
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_OPENBSD)
                                       , NPPluginFuncs* plugin_funcs
--#endif  // OS_LINUX
-+#endif  // OS_LINUX || OS_OPENBSD
+ #endif  // OS_LINUX
                                       ) {
-   g_at_exit_manager = new base::AtExitManager();
    gpu::demos::g_browser = browser_funcs;
    pglInitialize();
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_OPENBSD)
    NP_GetEntryPoints(plugin_funcs);
--#endif  // OS_LINUX
-+#endif  // OS_LINUX || OS_OPENBSD
+ #endif  // OS_LINUX
    return NPERR_NO_ERROR;
- }
- 
-@@ -182,7 +182,7 @@ EXPORT void API_CALL NP_Shutdown() {
-   delete g_at_exit_manager;
+@@ -170,7 +170,7 @@ EXPORT void API_CALL NP_Shutdown() {
+   pglTerminate();
  }
  
 -#if defined(OS_LINUX)
@@ -41,10 +36,3 @@ $OpenBSD: patch-gpu_demos_framework_main_pepper_cc,v 1.1 2011/02/08 09:43:02 esp
  EXPORT NPError API_CALL NP_GetValue(NPP instance, NPPVariable variable,
                                      void* value) {
    return gpu::demos::NPP_GetValue(instance, variable, value);
-@@ -191,5 +191,5 @@ EXPORT NPError API_CALL NP_GetValue(NPP instance, NPPV
- EXPORT const char* API_CALL NP_GetMIMEDescription() {
-   return "pepper-application/x-gpu-demo::Pepper GPU Demo";
- }
--#endif  // OS_LINUX
-+#endif  // OS_LINUX || OS_OPENBSD
- }  // extern "C"

@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_layout_cc,v 1.1 2011/02/08 09:43:02 espie Exp $
---- chrome/browser/ui/views/frame/browser_view_layout.cc.orig	Fri Jan 21 10:20:24 2011
-+++ chrome/browser/ui/views/frame/browser_view_layout.cc	Sun Jan 23 23:27:32 2011
-@@ -19,7 +19,7 @@
- #include "gfx/scrollbar_size.h"
+$OpenBSD: patch-chrome_browser_ui_views_frame_browser_view_layout_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
+--- chrome/browser/ui/views/frame/browser_view_layout.cc.orig	Fri Mar 11 10:01:41 2011
++++ chrome/browser/ui/views/frame/browser_view_layout.cc	Mon Mar 14 10:55:37 2011
+@@ -21,7 +21,7 @@
+ #include "views/controls/single_split_view.h"
  #include "views/window/window.h"
  
 -#if defined(OS_LINUX)

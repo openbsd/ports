@@ -1,0 +1,21 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_WebKit_gyp,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- third_party/WebKit/Source/WebKit/chromium/WebKit.gyp.orig	Fri Mar 11 10:17:39 2011
++++ third_party/WebKit/Source/WebKit/chromium/WebKit.gyp	Mon Mar 14 10:57:25 2011
+@@ -618,7 +618,7 @@
+                 }, {
+                     'type': '<(webkit_target_type)'
+                 }],
+-                ['OS=="linux" or OS=="freebsd"', {
++                ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+                     'dependencies': [
+                         '<(chromium_src_dir)/build/linux/system.gyp:fontconfig',
+                         '<(chromium_src_dir)/build/linux/system.gyp:gtk',
+@@ -824,7 +824,7 @@
+                                 'tests/DragImageTest.cpp',
+                             ],
+                         }],
+-                        ['OS=="linux" or OS=="freebsd"', {
++                        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+                             'sources': [
+                                 'tests/WebInputEventFactoryTestGtk.cpp',
+                             ],

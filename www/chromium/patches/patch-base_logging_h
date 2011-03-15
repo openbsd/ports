@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_logging_h,v 1.1 2011/02/08 09:43:02 espie Exp $
---- base/logging.h.orig	Fri Jan 21 10:20:15 2011
-+++ base/logging.h	Sun Jan 23 23:27:31 2011
+$OpenBSD: patch-base_logging_h,v 1.2 2011/03/15 11:38:05 robert Exp $
+--- base/logging.h.orig	Fri Mar 11 10:01:33 2011
++++ base/logging.h	Mon Mar 14 10:55:37 2011
 @@ -141,6 +141,18 @@
  // There is also the special severity of DFATAL, which logs FATAL in
  // debug mode, ERROR in normal mode.
@@ -20,7 +20,7 @@ $OpenBSD: patch-base_logging_h,v 1.1 2011/02/08 09:43:02 espie Exp $
  namespace logging {
  
  // Where to record logging output? A flat file and/or system debug log via
-@@ -856,17 +868,6 @@ void RawLog(int level, const char* message);
+@@ -865,17 +877,6 @@ void RawLog(int level, const char* message);
    } while (0)
  
  }  // namespace logging

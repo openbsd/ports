@@ -1,0 +1,12 @@
+$OpenBSD: patch-webkit_plugins_ppapi_ppb_flash_impl_h,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- webkit/plugins/ppapi/ppb_flash_impl.h.orig	Mon Mar 14 11:56:11 2011
++++ webkit/plugins/ppapi/ppb_flash_impl.h	Mon Mar 14 11:56:18 2011
+@@ -33,7 +33,7 @@ class PPB_Flash_Impl {
+                             uint32_t glyph_count,
+                             const uint16_t glyph_indices[],
+                             const PP_Point glyph_advances[])
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+       ;
+ #else
+       { return PP_FALSE; }

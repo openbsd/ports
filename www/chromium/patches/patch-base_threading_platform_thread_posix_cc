@@ -1,0 +1,12 @@
+$OpenBSD: patch-base_threading_platform_thread_posix_cc,v 1.1 2011/03/15 11:38:05 robert Exp $
+--- base/threading/platform_thread_posix.cc.orig	Mon Mar 14 11:02:25 2011
++++ base/threading/platform_thread_posix.cc	Mon Mar 14 11:02:33 2011
+@@ -124,7 +124,7 @@ PlatformThreadId PlatformThread::CurrentId() {
+   return mach_thread_self();
+ #elif defined(OS_LINUX)
+   return syscall(__NR_gettid);
+-#elif defined(OS_FREEBSD)
++#elif defined(OS_FREEBSD) || defined(OS_OPENBSD)
+   // TODO(BSD): find a better thread ID
+   return reinterpret_cast<int64>(pthread_self());
+ #elif defined(OS_NACL)
