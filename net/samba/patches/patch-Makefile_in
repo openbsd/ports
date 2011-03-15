@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.15 2010/12/06 19:41:54 ajacoutot Exp $
---- Makefile.in.orig	Mon May 17 13:51:23 2010
-+++ Makefile.in	Tue May 25 20:13:46 2010
+$OpenBSD: patch-Makefile_in,v 1.16 2011/03/15 13:49:44 sthen Exp $
+--- Makefile.in.orig	Sun Mar  6 18:48:05 2011
++++ Makefile.in	Tue Mar  8 16:00:11 2011
 @@ -28,7 +28,7 @@ SHLD=@SHLD@
  LIB_PATH_VAR=@LIB_PATH_VAR@
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-Makefile_in,v 1.15 2010/12/06 19:41:54 ajacoutot Exp $
  DSO_EXPORTS=@DSO_EXPORTS@
  SHLD_DSO = $(SHLD) $(LDSHFLAGS) $(DSO_EXPORTS) -o $@
  
-@@ -1476,11 +1476,7 @@ COMPILE = $(COMPILE_CC)
+@@ -1477,11 +1477,7 @@ COMPILE = $(COMPILE_CC)
  	  echo "Checking  $*.c with '$(CC_CHECKER)'";\
  	  $(CHECK_CC); \
  	 fi
@@ -23,7 +23,7 @@ $OpenBSD: patch-Makefile_in,v 1.15 2010/12/06 19:41:54 ajacoutot Exp $
  @BROKEN_CC@	-mv `echo $@ | sed 's%^.*/%%g'` $@
  
  PRECOMPILED_HEADER = $(builddir)/include/includes.h.gch
-@@ -2540,7 +2536,7 @@ bin/vlp@EXEEXT@: $(BINARY_PREREQS) $(VLP_OBJ) $(LIBTDB
+@@ -2541,7 +2537,7 @@ bin/vlp@EXEEXT@: $(BINARY_PREREQS) $(VLP_OBJ) $(LIBTDB
  	@echo "Linking $@"
  	@$(SHLD) $(LDSHFLAGS) -o $@ $(WINBIND_WINS_NSS_OBJ) \
  		$(LDAP_LIBS) $(KRB5LIBS) $(LIBS) $(LIBTALLOC_LIBS) $(LIBTDB_LIBS) $(ZLIB_LIBS) \
