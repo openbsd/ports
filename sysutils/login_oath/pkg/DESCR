@@ -1,0 +1,4 @@
+The login_oath package contains bsdauth providers to validate OATH one-
+time passwords via oath-toolkit (liboath). Currently only TOTP (time-based)
+passwords are supported. Two separate modules allow for either OTP-only
+or a combination of OTP+password.

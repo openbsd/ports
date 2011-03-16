@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/16 10:11:37 sthen Exp $
+@group auth
+libexec/auth/
+@bin libexec/auth/login_totp
+@mode 4555
+@owner root
+@sample /usr/libexec/auth/login_-totp
+@mode
+@owner
+@bin libexec/auth/login_totp-and-pwd
+@mode 4555
+@owner root
+@sample /usr/libexec/auth/login_-totp-and-pwd
+@mode
+@owner
+@group
+@man man/cat8/login_totp-and-pwd.0
+@man man/cat8/login_totp.0
+share/doc/pkg-readmes/${FULLPKGNAME}
