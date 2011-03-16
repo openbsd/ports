@@ -1,12 +1,12 @@
-$OpenBSD: patch-src_main_mk,v 1.5 2010/11/03 17:30:14 jasper Exp $
---- src/main.mk.orig	Mon Nov  1 13:16:44 2010
-+++ src/main.mk	Mon Nov  1 19:17:26 2010
-@@ -794,7 +794,7 @@ $(OBJDIR)/zip.o:	zip_.c zip.h  $(SRCDIR)/config.h
+$OpenBSD: patch-src_main_mk,v 1.6 2011/03/16 10:19:46 jasper Exp $
+--- src/main.mk.orig	Tue Mar 15 22:01:40 2011
++++ src/main.mk	Tue Mar 15 22:01:55 2011
+@@ -851,7 +851,7 @@ $(OBJDIR)/zip.o:	$(OBJDIR)/zip_.c $(OBJDIR)/zip.h  $(S
  
- zip.h:	headers
+ $(OBJDIR)/zip.h:	$(OBJDIR)/headers
  $(OBJDIR)/sqlite3.o:	$(SRCDIR)/sqlite3.c
--	$(XTCC) -DSQLITE_OMIT_LOAD_EXTENSION=1 -DSQLITE_THREADSAFE=0 -DSQLITE_DEFAULT_FILE_FORMAT=4 -Dlocaltime=fossil_localtime -DSQLITE_ENABLE_LOCKING_STYLE=0 -c $(SRCDIR)/sqlite3.c -o $(OBJDIR)/sqlite3.o
-+	$(XTCC) -DHAVE_STDINT_H=1 -DHAVE_INTTYPES_H=1 -DSQLITE_OMIT_LOAD_EXTENSION=1 -DSQLITE_THREADSAFE=0 -DSQLITE_DEFAULT_FILE_FORMAT=4 -Dlocaltime=fossil_localtime -DSQLITE_ENABLE_LOCKING_STYLE=0 -c $(SRCDIR)/sqlite3.c -o $(OBJDIR)/sqlite3.o
+-	$(XTCC) -DSQLITE_OMIT_LOAD_EXTENSION=1 -DSQLITE_THREADSAFE=0 -DSQLITE_DEFAULT_FILE_FORMAT=4 -DSQLITE_ENABLE_STAT2 -Dlocaltime=fossil_localtime -DSQLITE_ENABLE_LOCKING_STYLE=0 -c $(SRCDIR)/sqlite3.c -o $(OBJDIR)/sqlite3.o
++	$(XTCC) -DHAVE_STDINT_H=1 -DHAVE_INTTYPES_H=1 -DSQLITE_OMIT_LOAD_EXTENSION=1 -DSQLITE_THREADSAFE=0 -DSQLITE_DEFAULT_FILE_FORMAT=4 -DSQLITE_ENABLE_STAT2 -Dlocaltime=fossil_localtime -DSQLITE_ENABLE_LOCKING_STYLE=0 -c $(SRCDIR)/sqlite3.c -o $(OBJDIR)/sqlite3.o
  
  $(OBJDIR)/shell.o:	$(SRCDIR)/shell.c
  	$(XTCC) -Dmain=sqlite3_shell -DSQLITE_OMIT_LOAD_EXTENSION=1 -c $(SRCDIR)/shell.c -o $(OBJDIR)/shell.o
