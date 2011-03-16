@@ -1,0 +1,8 @@
+The OATH Toolkit makes it easy to build one-time password authentication
+systems. This package contains a shared library and a command line tool
+for generating and validating OTPs.
+
+Supported technologies include the event-based HOTP algorithm (RFC 4226)
+and the time-based TOTP algorithm (draft-mraihi-totp-timebased-07).
+OATH stands for Open AuTHentication, which is the organization that
+specify the algorithms.
