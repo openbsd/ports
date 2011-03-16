@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/03/16 14:36:18 jasper Exp $
 
 COMMENT=		simple scripting language for web browsing
 
 DISTNAME=		twill-0.9
-REVISION=		1
+REVISION=		2
 CATEGORIES=		www
 
 HOMEPAGE=		http://twill.idyll.org/
@@ -27,7 +27,7 @@ MODPY_SETUPTOOLS=	Yes
 
 REGRESS_DEPENDS=	www/py-quixote \
     			devel/py-nose \
-			www/tidy
+			www/tidyp
 
 # test-basic test requires user input for getpassword
 REGRESS_IS_INTERACTIVE = Yes
