@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/10 15:50:06 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/16 14:19:38 dcoppa Exp $
 @bin bin/redis-benchmark
 @bin bin/redis-check-aof
 @bin bin/redis-check-dump
@@ -42,7 +42,6 @@ share/doc/redis/HgetCommand.html
 share/doc/redis/HgetallCommand.html
 share/doc/redis/HincrbyCommand.html
 share/doc/redis/HlenCommand.html
-share/doc/redis/HmgetCommand.html
 share/doc/redis/HmsetCommand.html
 share/doc/redis/HsetCommand.html
 share/doc/redis/HsetnxCommand.html
@@ -65,7 +64,6 @@ share/doc/redis/MonitorCommand.html
 share/doc/redis/MoveCommand.html
 share/doc/redis/MsetCommand.html
 share/doc/redis/MultiExecCommand.html
-share/doc/redis/NonexistentCommands.html
 share/doc/redis/ObjectHashMappers.html
 share/doc/redis/Pipelining.html
 share/doc/redis/ProgrammingExamples.html
@@ -78,12 +76,10 @@ share/doc/redis/RandomkeyCommand.html
 share/doc/redis/Redis0100ChangeLog.html
 share/doc/redis/Redis0900ChangeLog.html
 share/doc/redis/RedisBigData.html
-share/doc/redis/RedisCLI.html
 share/doc/redis/RedisEventLibrary.html
 share/doc/redis/RedisGuides.html
 share/doc/redis/RedisInternals.html
 share/doc/redis/Redis_1_2_0_Changelog.html
-share/doc/redis/Redis_2_0_0_Changelog.html
 share/doc/redis/RenameCommand.html
 share/doc/redis/RenamenxCommand.html
 share/doc/redis/ReplicationHowto.html
@@ -129,7 +125,6 @@ share/doc/redis/TemplateCommand.html
 share/doc/redis/TtlCommand.html
 share/doc/redis/TwitterAlikeExample.html
 share/doc/redis/TypeCommand.html
-share/doc/redis/UDP.html
 share/doc/redis/UnstableSource.html
 share/doc/redis/VirtualMemorySpecification.html
 share/doc/redis/VirtualMemoryUserGuide.html
