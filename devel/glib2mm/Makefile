@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2011/03/15 13:44:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/03/16 12:23:20 ajacoutot Exp $
 
 COMMENT=	C++ interface for glib2
 
 GNOME_PROJECT=	glibmm
-GNOME_VERSION=	2.27.96
+GNOME_VERSION=	2.27.97
 V=		2.4
 
 SUBST_VARS=	V
@@ -35,9 +35,8 @@ LIB_DEPENDS=	devel/libsigc++-2 \
 		devel/glib2>=2.24.0
 
 
-# XXX temporary
+# XXX temporary?
 BUILD_DEPENDS += devel/mm-common
-FAKE_FLAGS=	MMDOCTOOLDIR=${LOCALBASE}/share/mm-common/doctool
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	M4='m4 -g' \
