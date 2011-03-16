@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.317 2011/03/12 13:56:09 dhill Exp $
+# $OpenBSD: Makefile,v 1.318 2011/03/16 14:24:24 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -172,6 +172,7 @@
      SUBDIR += p5-Text-Diff-HTML
      SUBDIR += p5-Text-DoubleMetaphone
      SUBDIR += p5-Text-German
+     SUBDIR += p5-Text-Format
      SUBDIR += p5-Text-Glob
      SUBDIR += p5-Text-LevenshteinXS
      SUBDIR += p5-Text-Markdown

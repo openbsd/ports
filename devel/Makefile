@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.902 2011/03/15 13:22:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.903 2011/03/16 14:24:24 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -478,6 +478,7 @@
      SUBDIR += p5-DateTime-Format-Strptime
      SUBDIR += p5-DateTime-Format-W3CDTF
      SUBDIR += p5-DateTime-Locale
+     SUBDIR += p5-DateTime-Precise
      SUBDIR += p5-DateTime-Set
      SUBDIR += p5-DateTime-TimeZone
      SUBDIR += p5-Declare-Constraints-Simple
