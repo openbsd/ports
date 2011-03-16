@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/03/16 10:19:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/03/16 13:32:00 sthen Exp $
 
 COMMENT =		simple distributed software configuration management 
 
@@ -33,7 +33,6 @@ WANTLIB =		c crypto ssl z
 MODULES =		lang/tcl
 RUN_DEPENDS =		security/gnupg
 
-NO_REGRESS =		Yes
 REGRESS_DEPENDS =	${MODTCL_RUN_DEPENDS}
 
 MAKE_FLAGS +=		BCC="${CC}"
