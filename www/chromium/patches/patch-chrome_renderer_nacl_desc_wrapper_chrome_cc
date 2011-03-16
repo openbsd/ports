@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_renderer_nacl_desc_wrapper_chrome_cc,v 1.1 2011/03/16 10:52:46 robert Exp $
+--- chrome/renderer/nacl_desc_wrapper_chrome.cc.orig	Wed Mar 16 10:27:43 2011
++++ chrome/renderer/nacl_desc_wrapper_chrome.cc	Wed Mar 16 10:31:14 2011
+@@ -14,7 +14,7 @@ namespace nacl {
+ DescWrapper* DescWrapperFactory::ImportPepperSharedMemory(intptr_t shm_int,
+                                                           size_t size) {
+   base::SharedMemory* shm = reinterpret_cast<base::SharedMemory*>(shm_int);
+-#if defined(OS_LINUX) || defined(OS_MACOSX)
++#if defined(OS_LINUX) || defined(OS_MACOSX) || defined(OS_OPENBSD)
+   return ImportShmHandle(shm->handle().fd, size);
+ #elif defined(OS_WIN)
+   return ImportShmHandle(shm->handle(), size);
+@@ -28,7 +28,7 @@ DescWrapper* DescWrapperFactory::ImportPepper2DSharedM
+ #if defined(OS_LINUX)
+   // TransportDIBs use SysV (X) shared memory on Linux.
+   return ImportSysvShm(dib->handle(), dib->size());
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_OPENBSD)
+   // TransportDIBs use mmap shared memory on OSX.
+   return ImportShmHandle(dib->handle().fd, dib->size());
+ #elif defined(OS_WIN)

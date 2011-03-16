@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_process_util_openbsd_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
---- base/process_util_openbsd.cc.orig	Mon Mar 14 10:55:37 2011
-+++ base/process_util_openbsd.cc	Mon Mar 14 14:17:32 2011
+$OpenBSD: patch-base_process_util_openbsd_cc,v 1.3 2011/03/16 10:52:46 robert Exp $
+--- base/process_util_openbsd.cc.orig	Wed Mar 16 09:03:13 2011
++++ base/process_util_openbsd.cc	Wed Mar 16 10:21:13 2011
 @@ -0,0 +1,349 @@
 +// Copyright (c) 2009 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
@@ -34,12 +34,12 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.2 2011/03/15 11:38:05 robert Ex
 +namespace base {
 +
 +ProcessId GetParentProcessId(ProcessHandle process) {
-+  struct kinfo_proc2 info;
++  struct kinfo_proc info;
 +  int mib[6];
 +  size_t info_size = sizeof(info);
 +
 +  mib[0] = CTL_KERN;
-+  mib[1] = KERN_PROC2;
++  mib[1] = KERN_PROC;
 +  mib[2] = KERN_PROC_PID;
 +  mib[3] = process;
 +  mib[4] = info_size;
@@ -57,7 +57,7 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.2 2011/03/15 11:38:05 robert Ex
 +}
 +
 +ProcessIterator::ProcessIterator(const ProcessFilter* filter)
-+  : index_of_kinfo_proc2_(),
++  : index_of_kinfo_proc_(),
 +  filter_(filter) {
 +
 +  int mib[6];
@@ -65,10 +65,10 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.2 2011/03/15 11:38:05 robert Ex
 +  printf("%s\n", __PRETTY_FUNCTION__);
 +
 +  mib[0] = CTL_KERN;
-+  mib[1] = KERN_PROC2;
++  mib[1] = KERN_PROC;
 +  mib[2] = KERN_PROC_UID;
 +  mib[3] = getuid();
-+  mib[4] = sizeof(struct kinfo_proc2);
++  mib[4] = sizeof(struct kinfo_proc);
 +  mib[5] = 0;
 +
 +  bool done = false;
@@ -82,12 +82,12 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.2 2011/03/15 11:38:05 robert Ex
 +      kinfo_procs_.resize(0);
 +      done = true;
 +    } else {
-+      size_t num_of_kinfo_proc2 = len / sizeof(struct kinfo_proc2);
++      size_t num_of_kinfo_proc = len / sizeof(struct kinfo_proc);
 +      // Leave some spare room for process table growth (more could show up
 +      // between when we check and now)
-+      num_of_kinfo_proc2 += 16;
-+      kinfo_procs_.resize(num_of_kinfo_proc2);
-+      len = num_of_kinfo_proc2 * sizeof(struct kinfo_proc2);
++      num_of_kinfo_proc += 16;
++      kinfo_procs_.resize(num_of_kinfo_proc);
++      len = num_of_kinfo_proc * sizeof(struct kinfo_proc);
 +      if (sysctl(mib, 6, &kinfo_procs_[0], &len, NULL, 0) <0) {
 +        // If we get a mem error, it just means we need a bigger buffer, so
 +        // loop around again.  Anything else is a real error and give up.
@@ -98,8 +98,8 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.2 2011/03/15 11:38:05 robert Ex
 +        }
 +      } else {
 +        // Got the list, just make sure we're sized exactly right
-+        size_t num_of_kinfo_proc2 = len / sizeof(struct kinfo_proc2);
-+        kinfo_procs_.resize(num_of_kinfo_proc2);
++        size_t num_of_kinfo_proc = len / sizeof(struct kinfo_proc);
++        kinfo_procs_.resize(num_of_kinfo_proc);
 +        done = true;
 +      }
 +    }
@@ -119,10 +119,10 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.2 2011/03/15 11:38:05 robert Ex
 +
 +  printf("%s\n", __PRETTY_FUNCTION__);
 +
-+  for (; index_of_kinfo_proc2_ < kinfo_procs_.size(); ++ index_of_kinfo_proc2_) {
++  for (; index_of_kinfo_proc_ < kinfo_procs_.size(); ++ index_of_kinfo_proc_) {
 +    int mib[3];
 +    size_t len;
-+    struct kinfo_proc2 kinfo = kinfo_procs_[index_of_kinfo_proc2_];
++    struct kinfo_proc kinfo = kinfo_procs_[index_of_kinfo_proc_];
 +
 +    if ((kinfo.p_pid > 0) && (kinfo.p_stat == SZOMB))
 +      continue;
@@ -166,7 +166,7 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.2 2011/03/15 11:38:05 robert Ex
 +                              exec_name_end - last_slash - 1);
 +
 +    // Start w/ the next entry next time through
-+    ++index_of_kinfo_proc2_;
++    ++index_of_kinfo_proc_;
 +
 +    return true;
 +  }
@@ -194,12 +194,12 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.2 2011/03/15 11:38:05 robert Ex
 +}
 +
 +size_t ProcessMetrics::GetPagefileUsage() const {
-+  struct kinfo_proc2 info;
++  struct kinfo_proc info;
 +  int mib[6];
 +  size_t info_size = sizeof(info);
 +
 +  mib[0] = CTL_KERN;
-+  mib[1] = KERN_PROC2;
++  mib[1] = KERN_PROC;
 +  mib[2] = KERN_PROC_PID;
 +  mib[3] = process_;
 +  mib[4] = info_size;
@@ -218,12 +218,12 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.2 2011/03/15 11:38:05 robert Ex
 +}
 +
 +size_t ProcessMetrics::GetWorkingSetSize() const {
-+  struct kinfo_proc2 info;
++  struct kinfo_proc info;
 +  int mib[6];
 +  size_t info_size = sizeof(info);
 +
 +  mib[0] = CTL_KERN;
-+  mib[1] = KERN_PROC2;
++  mib[1] = KERN_PROC;
 +  mib[2] = KERN_PROC_PID;
 +  mib[3] = process_;
 +  mib[4] = info_size;
@@ -274,12 +274,12 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.2 2011/03/15 11:38:05 robert Ex
 +}
 +
 +static int GetProcessCPU(pid_t pid) {
-+  struct kinfo_proc2 info;
++  struct kinfo_proc info;
 +  int mib[6];
 +  size_t info_size = sizeof(info);
 +
 +  mib[0] = CTL_KERN;
-+  mib[1] = KERN_PROC2;
++  mib[1] = KERN_PROC;
 +  mib[2] = KERN_PROC_PID;
 +  mib[3] = pid;
 +  mib[4] = info_size;

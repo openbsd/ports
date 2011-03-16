@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_plugin_webplugin_proxy_cc,v 1.1 2011/03/16 10:52:46 robert Exp $
+--- chrome/plugin/webplugin_proxy.cc.orig	Wed Mar 16 10:27:51 2011
++++ chrome/plugin/webplugin_proxy.cc	Wed Mar 16 10:45:50 2011
+@@ -483,7 +483,7 @@ void WebPluginProxy::UpdateGeometry(
+     const TransportDIB::Handle& windowless_buffer,
+     const TransportDIB::Handle& background_buffer,
+     bool transparent
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+     ,
+     int ack_key
+ #endif
