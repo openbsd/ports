@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/01/15 09:38:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2011/03/16 22:45:20 sthen Exp $
 
 # XXX note there are various "openbsd[234]" ifdefs which will need
 # adjusting when OpenBSD goes to 5.x
@@ -10,6 +10,7 @@ COMMENT-tkmib=	graphical SNMP MIB browser
 V=		5.6.1
 DISTNAME=	net-snmp-$V
 PKGNAME-main=	${DISTNAME}
+REVISION-main=	0
 PKGNAME-perl=	p5-SNMP-$V
 PKGNAME-tkmib=	net-snmp-tkmib-$V
 SHARED_LIBS=	netsnmp		10.0	\
@@ -56,7 +57,6 @@ CONFIGURE_ARGS=   ${CONFIGURE_SHARED} \
 	--enable-ipv6 \
 	--enable-mfd-rewrites \
 	--with-libwrap \
-	--with-perl-modules \
 	--with-copy-persistent-files="no" \
 	--with-mib-modules="${NET_SNMP_MIB_LIST}" \
 	--with-mibs="${DEFAULT_MIBS}:${OPENBSD_MIBS}" \
