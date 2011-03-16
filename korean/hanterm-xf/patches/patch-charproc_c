@@ -1,0 +1,53 @@
+$OpenBSD: patch-charproc_c,v 1.1 2011/03/16 22:53:31 jasper Exp $
+
+Fix crashes on LP64.
+
+--- charproc.c.orig	Wed Mar  2 22:39:44 2011
++++ charproc.c	Wed Mar  2 23:01:35 2011
+@@ -6979,12 +6979,12 @@ g_utf8_validate (const char  *str,
+ }
+ 
+ int
+-from_utf8(char *utf8, int len, char *ksc)
++from_utf8(char *utf8, size_t len, char *ksc)
+ {
+     char * tmp = alloca(len);
+     char *out = tmp;
+-    int out_len = len;
+-    int vlen;
++    size_t out_len = len;
++    size_t vlen;
+     char *vs, *end;
+ 
+     if (!from_utf8_cd) {
+@@ -7004,7 +7004,7 @@ from_utf8(char *utf8, int len, char *ksc)
+ 
+     do {
+ 	ICONV_CONST char *in_p = (ICONV_CONST char *) utf8;
+-	int iconv_len = iconv(from_utf8_cd, &in_p, 
++	size_t iconv_len = iconv(from_utf8_cd, &in_p, 
+ 			      &len, &out, &out_len);
+ 	if (iconv_len < 0) {
+ 	    int utf8_bytes;
+@@ -7037,10 +7037,10 @@ from_utf8(char *utf8, int len, char *ksc)
+ }
+ 
+ int
+-to_utf8(char *ksc, int len, char *utf8)
++to_utf8(char *ksc, size_t len, char *utf8)
+ {
+     char *out = utf8;
+-    int out_len = len * 2;
++    size_t out_len = len * 2;
+     ICONV_CONST char *in_p;
+ 
+     if (!to_utf8_cd) {
+@@ -7049,7 +7049,7 @@ to_utf8(char *ksc, int len, char *utf8)
+ 	to_utf8_cd = iconv_open("UTF-8", "EUC-KR");
+     }
+     if (0) {
+-	int i;
++	size_t i;
+ 	for(i=0;i<len;i++) {
+ 	    if (ksc[i] & 0x80) {
+ 		char c = ksc[i+1];

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/24 21:23:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/03/16 22:53:31 jasper Exp $
 
 COMMENT=	X Hangul Terminal (XFree86 xterm Based)
 
@@ -6,7 +6,7 @@ V=		2.0.6-177
 DISTNAME=	hanterm-xf-$V
 CATEGORIES=	korean
 PKGNAME=	hanterm-xf-${V:S/-/./}
-REVISION=	0
+REVISION=	1
 
 MASTER_SITES=	http://kldp.net/frs/download.php/3281/
 HOMEPAGE=	http://hanterm-xf.kldp.net
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	yes
 
 MAINTAINER=	Jung <moorang@gmail.com>
 
-WANTLIB=	ICE SM X11 Xaw Xext Xmu Xt c pthread-stubs termcap util xcb
+WANTLIB=	ICE SM X11 Xaw Xext Xmu Xt c termcap util
 
 MODULES=	converters/libiconv
 USE_GROFF =	Yes
