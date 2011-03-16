@@ -1,10 +1,10 @@
-$OpenBSD: patch-t_connect_t,v 1.1.1.1 2009/05/13 00:07:51 simon Exp $
+$OpenBSD: patch-t_connect_t,v 1.2 2011/03/16 08:48:31 jasper Exp $
 
 Avoid live test!
 
---- t/connect.t.orig	Tue Feb 10 11:59:16 2009
-+++ t/connect.t	Tue Feb 10 11:59:18 2009
-@@ -5,6 +5,10 @@ use Test::More;
+--- t/connect.t.orig	Mon Nov 15 21:05:12 2010
++++ t/connect.t	Wed Mar 16 09:46:56 2011
+@@ -7,6 +7,10 @@ plan skip_all => 'This test should use POE::Component:
  
  use lib qw(lib t/lib);
  
