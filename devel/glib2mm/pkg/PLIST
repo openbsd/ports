@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/03/15 13:44:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/03/16 17:28:54 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -335,7 +335,6 @@ lib/libglibmm-${V}.a
 lib/libglibmm-${V}.la
 lib/libglibmm_generate_extra_defs-${V}.a
 lib/libglibmm_generate_extra_defs-${V}.la
-lib/pkgconfig/
 lib/pkgconfig/giomm-${V}.pc
 lib/pkgconfig/glibmm-${V}.pc
 share/aclocal/glibmm_check_perl.m4
@@ -1318,3 +1317,5 @@ share/doc/glibmm-${V}/reference/html/tab_s.png
 share/doc/glibmm-${V}/reference/html/tabs.css
 share/doc/glibmm-${V}/reference/html/thread_2dispatcher_8cc-example.html
 share/doc/glibmm-${V}/reference/html/thread_2thread_8cc-example.html
+share/glibmm-${V}/
+share/glibmm-${V}/doctool
