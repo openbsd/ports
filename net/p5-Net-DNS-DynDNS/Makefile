@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:45:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/03/16 23:14:44 jasper Exp $
 
 COMMENT =	update dyndns.org with correct ip address
 
 MODULES =	cpan
-DISTNAME =	Net-DNS-DynDNS-0.95
-REVISION =	0
+DISTNAME =	Net-DNS-DynDNS-0.96
 CATEGORIES =	net
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
@@ -16,5 +14,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 RUN_DEPENDS =	www/p5-libwww
 BUILD_DEPENDS =	${RUN_DEPENDS}
+
+MODCPAN_EXAMPLES =	Yes
 
 .include <bsd.port.mk>

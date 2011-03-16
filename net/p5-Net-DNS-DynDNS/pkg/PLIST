@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/01 11:13:17 steven Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/16 23:14:44 jasper Exp $
 @comment ${P5ARCH}/Net/DNS/FAQ.pod
-${P5SITE}/Net/
 ${P5SITE}/Net/DNS/
 ${P5SITE}/Net/DNS/DynDNS.pm
 ${P5SITE}/Net/DNS/DynDNS.pod
 @man man/man3p/Net::DNS::DynDNS.3p
+share/examples/p5-Net-DNS-DynDNS/
+share/examples/p5-Net-DNS-DynDNS/dyndnsd.cnf
+share/examples/p5-Net-DNS-DynDNS/dyndnsd.pl
