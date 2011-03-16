@@ -1,0 +1,8 @@
+U9fs is a program that serves Unix files to Plan 9 machines using the 9P
+protocol. Its standard input and output are connected to a network
+connection, typically TCP on an Ethernet. It assumes Plan 9 uids match
+Unix login names, and changes to the corresponding Unix effective uid
+when processing requests. Characters in file and directory names
+unacceptable to Plan 9 are translated into a three-character sequence:
+followed by two hexadecimal digits. U9fs serves both 9P1 (the 9P
+protocol as used by the second and third editions of Plan 9) and 9P2000.
