@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/16 14:23:43 jasper Exp $
+${P5SITE}/Net/eBay.pm
+@man man/man3p/Net::eBay.3p
+share/examples/p5-Net-eBay/
+share/examples/p5-Net-eBay/ebay-add-item.pl
+share/examples/p5-Net-eBay/ebay-api-usage.pl
+share/examples/p5-Net-eBay/ebay-end-item-early.pl
+share/examples/p5-Net-eBay/ebay-get-all-bidders.pl
+share/examples/p5-Net-eBay/ebay-get-categories.pl
+share/examples/p5-Net-eBay/ebay-get-high-bidders.pl
+share/examples/p5-Net-eBay/ebay-get-item-transactions.pl
+share/examples/p5-Net-eBay/ebay-get-item.pl
+share/examples/p5-Net-eBay/ebay-get-my-selling.pl
+share/examples/p5-Net-eBay/ebay-get-my-sold.pl
+share/examples/p5-Net-eBay/ebay-get-seller-list.pl
+share/examples/p5-Net-eBay/ebay-get-suggested-categories.pl
+share/examples/p5-Net-eBay/ebay-get-user-contact.pl
+share/examples/p5-Net-eBay/ebay-get-user-feedback.pl
+share/examples/p5-Net-eBay/ebay-leave-feedback.pl
+share/examples/p5-Net-eBay/ebay-official-time.pl
+share/examples/p5-Net-eBay/ebay-revise-item.pl
+share/examples/p5-Net-eBay/ebay-search.pl
+share/examples/p5-Net-eBay/ebay-validate-test-user.pl

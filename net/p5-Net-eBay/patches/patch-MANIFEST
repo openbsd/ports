@@ -1,0 +1,49 @@
+$OpenBSD: patch-MANIFEST,v 1.1.1.1 2011/03/16 14:23:43 jasper Exp $
+
+Don't install these example scripts into bin/ but just treat
+them as examples.
+
+--- MANIFEST.orig	Wed Mar 16 10:32:49 2011
++++ MANIFEST	Wed Mar 16 10:33:16 2011
+@@ -7,22 +7,22 @@ lib/Net/eBay.pm
+ t/00-load.t
+ t/pod-coverage.t
+ t/pod.t
+-ebay-add-item.pl
+-ebay-api-usage.pl
+-ebay-end-item-early.pl
+-ebay-get-all-bidders.pl
+-ebay-get-categories.pl
+-ebay-get-high-bidders.pl
+-ebay-get-item-transactions.pl
+-ebay-get-item.pl
+-ebay-get-my-selling.pl
+-ebay-get-my-sold.pl
+-ebay-get-seller-list.pl
+-ebay-get-suggested-categories.pl
+-ebay-get-user-contact.pl
+-ebay-get-user-feedback.pl
+-ebay-leave-feedback.pl
+-ebay-official-time.pl
+-ebay-revise-item.pl
+-ebay-search.pl
+-ebay-validate-test-user.pl
++examples/ebay-add-item.pl
++examples/ebay-api-usage.pl
++examples/ebay-end-item-early.pl
++examples/ebay-get-all-bidders.pl
++examples/ebay-get-categories.pl
++examples/ebay-get-high-bidders.pl
++examples/ebay-get-item-transactions.pl
++examples/ebay-get-item.pl
++examples/ebay-get-my-selling.pl
++examples/ebay-get-my-sold.pl
++examples/ebay-get-seller-list.pl
++examples/ebay-get-suggested-categories.pl
++examples/ebay-get-user-contact.pl
++examples/ebay-get-user-feedback.pl
++examples/ebay-leave-feedback.pl
++examples/ebay-official-time.pl
++examples/ebay-revise-item.pl
++examples/ebay-search.pl
++examples/ebay-validate-test-user.pl

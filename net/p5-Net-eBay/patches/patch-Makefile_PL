@@ -1,0 +1,18 @@
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2011/03/16 14:23:43 jasper Exp $
+
+Don't install these example scripts into bin/ but just treat
+them as examples.
+
+--- Makefile.PL.orig	Wed Mar 16 10:28:53 2011
++++ Makefile.PL	Wed Mar 16 10:29:08 2011
+@@ -8,10 +8,6 @@ WriteMakefile(
+               VERSION_FROM        => 'lib/Net/eBay.pm',
+               ABSTRACT            => 'XML based communication with eBay API',
+               PL_FILES            => {},
+-              EXE_FILES           => [ 'ebay-official-time.pl', 'ebay-validate-test-user.pl',
+-                                       'ebay-get-categories.pl', 'ebay-add-item.pl', 'ebay-search.pl',
+-                                       'ebay-revise-item.pl', 'ebay-get-item.pl'
+-                                     ],
+               PREREQ_PM => {
+                             'Test::More' => 0,
+                             'Text::Format' => 0,
