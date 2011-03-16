@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.224 2011/01/06 12:17:07 landry Exp $
+# $OpenBSD: Makefile,v 1.225 2011/03/16 10:12:42 sthen Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -75,6 +75,7 @@
      SUBDIR += libstatgrab
      SUBDIR += login_fingerprint
      SUBDIR += login_ldap
+     SUBDIR += login_oath
      SUBDIR += logpp
      SUBDIR += lsof
      SUBDIR += luastatgrab

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.254 2011/03/10 13:43:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.255 2011/03/16 10:12:42 sthen Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -100,6 +100,7 @@
      SUBDIR += nikto
      SUBDIR += nipper
      SUBDIR += nss
+     SUBDIR += oath-toolkit
      SUBDIR += onesixtyone
      SUBDIR += opencdk
      SUBDIR += openct
