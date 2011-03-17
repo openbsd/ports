@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: aircontrol.rc,v 1.2 2011/03/09 18:51:48 ajacoutot Exp $
+# $OpenBSD: aircontrol.rc,v 1.3 2011/03/17 16:49:27 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/catalina.sh"
 daemon_flags="-Xmx768M -server"
@@ -22,7 +22,7 @@ rc_stop() {
         ${rcexec} \
 	    "CATALINA_OPTS=\"${daemon_flags}\" \
 	    JAVA_HOME=\"$(javaPathHelper -h aircontrol)\" \
-	    ${daemon} stop" 2>/dev/null
+	    ${daemon} stop"
 }
 
 rc_cmd $1

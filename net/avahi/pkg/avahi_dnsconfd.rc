@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: avahi_dnsconfd.rc,v 1.5 2010/12/27 14:50:23 ajacoutot Exp $
+# $OpenBSD: avahi_dnsconfd.rc,v 1.6 2011/03/17 16:49:27 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/avahi-dnsconfd"
 daemon_flags="-D"
@@ -12,11 +12,11 @@ rc_check() {
 }
 
 rc_reload() {
-	${daemon} --refresh 2> /dev/null
+	${daemon} --refresh
 }
 
 rc_stop() {
-	${daemon} --kill 2> /dev/null
+	${daemon} --kill
 }
 
 rc_cmd $1

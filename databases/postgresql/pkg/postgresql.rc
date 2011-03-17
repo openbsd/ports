@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: postgresql.rc,v 1.7 2011/03/09 18:51:48 ajacoutot Exp $
+# $OpenBSD: postgresql.rc,v 1.8 2011/03/17 16:49:27 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/postgres"
 daemon_user="_postgresql"
@@ -16,7 +16,7 @@ rc_start() {
 }
 
 rc_stop() {
-	${rcexec} "${bin} -D ${datadir} stop -m fast" >/dev/null || \
+	${rcexec} "${bin} -D ${datadir} stop -m fast" || \
 		${rcexec} "${bin} -D ${datadir} stop -m immediate"
 }
 

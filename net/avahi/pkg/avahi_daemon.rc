@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: avahi_daemon.rc,v 1.5 2010/12/27 14:50:23 ajacoutot Exp $
+# $OpenBSD: avahi_daemon.rc,v 1.6 2011/03/17 16:49:27 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/avahi-daemon"
 daemon_flags="-D"
@@ -12,11 +12,11 @@ rc_check() {
 }
 
 rc_reload() {
-	${daemon} --reload 2> /dev/null
+	${daemon} --reload
 }
 
 rc_stop() {
-	${daemon} --kill 2> /dev/null
+	${daemon} --kill
 }
 
 rc_cmd $1

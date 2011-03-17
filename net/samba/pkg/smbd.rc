@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: smbd.rc,v 1.2 2011/03/09 19:37:47 ajacoutot Exp $
+# $OpenBSD: smbd.rc,v 1.3 2011/03/17 16:49:27 ajacoutot Exp $
 
 daemon="/usr/local/libexec/smbd"
 daemon_flags="-D"
@@ -10,7 +10,7 @@ daemon_flags="-D"
 smbcontrol="${TRUEPREFIX}/bin/smbcontrol"
 
 rc_check() {
-	${smbcontrol} smbd ping 2>/dev/null
+	${smbcontrol} smbd ping
 }
 
 rc_reload() {
@@ -18,7 +18,7 @@ rc_reload() {
 }
 
 rc_stop() {
-	${smbcontrol} smbd shutdown 2>/dev/null
+	${smbcontrol} smbd shutdown
 }
 
 rc_cmd $1

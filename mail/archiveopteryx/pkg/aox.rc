@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: aox.rc,v 1.2 2011/03/09 18:51:48 ajacoutot Exp $
+# $OpenBSD: aox.rc,v 1.3 2011/03/17 16:49:27 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/aox"
 
@@ -10,11 +10,11 @@ pexp="${TRUEPREFIX}/sbin/archiveopteryx -f"
 rc_reload=NO
 
 rc_start() {
-	${daemon} start 2>/dev/null
+	${daemon} start
 }
 
 rc_stop() {
-	${daemon} stop 2>/dev/null
+	${daemon} stop
 }
 
 rc_cmd $1
