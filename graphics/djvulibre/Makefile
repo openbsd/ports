@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.20 2011/01/06 17:56:49 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2011/03/17 14:56:54 shadchin Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
-DISTNAME=	djvulibre-3.5.23
-REVISION=	2
-SHARED_LIBS=	djvulibre 23.0
+DISTNAME=	djvulibre-3.5.24
+SHARED_LIBS=	djvulibre 24.0
 CATEGORIES=	graphics print
 
 HOMEPAGE=	http://djvu.sourceforge.net/
 
-MAINTAINER=	Alexandr Shadchin <alexandr.shadchin@gmail.com>
+MAINTAINER=	Alexandr Shadchin <shadchin@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -44,11 +43,16 @@ CONFIGURE_ARGS=	--with-jpeg=${LOCALBASE} \
 CONFIGURE_ARGS+=--without-x
 .else
 MODULES=	x11/qt3
+
+WANTLIB += GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm drm expat
+WANTLIB += fontconfig freetype lcms mng png pthread-stubs xcb
+
 RUN_DEPENDS+=	devel/desktop-file-utils
-WANTLIB+=	ICE SM X11 Xext Xau Xdmcp pthread-stubs xcb
 CONFIGURE_ARGS+=--enable-djview
 CONFIGURE_ENV+= QT_CFLAGS="-I${MODQT_INCDIR}" \
-		QT_LIBS="-L${MODQT_LIBDIR} -lqt-mt"
+		QT_LIBS="-L${MODQT_LIBDIR} -lqt-mt" \
+		CPPFLAGS="-I${X11BASE}/include"
 .endif
 
 NO_REGRESS=	Yes
