@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/17 14:38:42 edd Exp $
-@newgroup _hgd:664
-@newuser _hgd:664:_hgd:daemon:HGD Server:/var/empty:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.2 2011/03/17 14:46:53 edd Exp $
+@newgroup _hgd:665
+@newuser _hgd:665:_hgd:daemon:HGD Server:/var/empty:/sbin/nologin
 @bin bin/hgdc
 @man man/man1/hgd-admin.1
 @man man/man1/hgd-netd.1
