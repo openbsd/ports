@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:51 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/03/17 12:27:08 jasper Exp $
 
 COMMENT=	parser and generator for XSPF playlists
 
 MODULES=	cpan
-DISTNAME=	XML-XSPF-0.7
+DISTNAME=	XML-XSPF-0.7.1
 CATEGORIES=	textproc
-USE_GROFF =	Yes
 
 HOMEPAGE=	http://www.xspf.org/
 
