@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2011/03/16 10:12:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.226 2011/03/17 16:47:13 pirofti Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -140,7 +140,6 @@
      SUBDIR += ruby-facter
      SUBDIR += ruby-mongrel_cluster
      SUBDIR += ruby-puppet
-     SUBDIR += ruby-rails-app-installer
      SUBDIR += ruby-thor
      SUBDIR += ruby-vlad
      SUBDIR += runit
