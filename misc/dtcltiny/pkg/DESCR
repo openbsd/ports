@@ -1,0 +1,3 @@
+dtcltiny is a small SRCP client to control digital model trains on SRCP
+systems.  It needs a SRCP server (e.g. erddcd or srcpd) as hardware
+link.
