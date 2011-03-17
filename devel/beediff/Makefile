@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/01/03 19:47:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/17 14:02:51 jasper Exp $
 
 COMMENT=	graphical file comparator
 
@@ -32,7 +32,7 @@ MAKE_FLAGS=	CXX=${CXX} \
 		QMAKE_CXXFLAGS="${CXXFLAGS} -g"
 
 do-configure:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/qmake4 -unix beediff.pro
+	cd ${WRKSRC} && ${LOCALBASE}/bin/qmake4 beediff.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/beediff ${PREFIX}/bin

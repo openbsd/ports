@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/22 08:37:04 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/03/17 14:02:51 jasper Exp $
 
 COMMENT=	viewer for IETF RFCs
 
@@ -29,7 +29,7 @@ NO_REGRESS=	Yes
 do-configure:
 	perl -pi -e "s/!!CXXFLAGS!!/${CXXFLAGS}/" ${WRKSRC}/src/src.pro
 	cd ${WRKDIST} && \
-		${LOCALBASE}/bin/qmake4 -unix rfcview.pro
+		${LOCALBASE}/bin/qmake4 rfcview.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/qRFCView ${PREFIX}/bin

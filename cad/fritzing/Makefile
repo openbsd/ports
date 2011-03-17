@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/03/15 20:39:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/17 14:02:51 jasper Exp $
 
 ONLY_FOR_ARCHS =${GCC4_ARCHS}
 
@@ -43,7 +43,7 @@ pre-configure:
 # webpage. So it's safe to set it on all arches (for now).
 do-configure:
 	cd ${WRKSRC} && \
-		${LOCALBASE}/bin/qmake4 -unix -o Makefile phoenix.pro
+		${LOCALBASE}/bin/qmake4 -o Makefile phoenix.pro
 
 do-install:
 	${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c ${FILESDIR}/fritzing.sh \

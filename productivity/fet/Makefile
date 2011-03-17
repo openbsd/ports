@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/20 09:48:40 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/03/17 14:02:51 jasper Exp $
 
 COMMENT=		automatically create timetables
 
@@ -34,7 +34,7 @@ PORTHOME=		${WRKDIR}
 NO_REGRESS=		Yes
 
 do-configure:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/qmake4 -unix fet.pro
+	cd ${WRKSRC} && ${LOCALBASE}/bin/qmake4 fet.pro
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fet ${PREFIX}/bin
