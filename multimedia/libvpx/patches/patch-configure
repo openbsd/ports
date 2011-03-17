@@ -1,13 +1,13 @@
-$OpenBSD: patch-configure,v 1.4 2010/11/06 23:28:23 jakemsr Exp $
---- configure.orig	Thu Oct 28 09:14:14 2010
-+++ configure	Wed Nov  3 20:31:26 2010
+$OpenBSD: patch-configure,v 1.5 2011/03/17 16:54:16 edd Exp $
+--- configure.orig	Fri Mar  4 15:40:37 2011
++++ configure	Tue Mar  8 21:12:29 2011
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!${BASH}
  ##
  ##  configure
  ##
-@@ -101,6 +101,7 @@ all_platforms="${all_platforms} ppc32-linux-gcc"
+@@ -100,6 +100,7 @@ all_platforms="${all_platforms} ppc32-linux-gcc"
  all_platforms="${all_platforms} ppc64-darwin8-gcc"
  all_platforms="${all_platforms} ppc64-darwin9-gcc"
  all_platforms="${all_platforms} ppc64-linux-gcc"
@@ -35,7 +35,7 @@ $OpenBSD: patch-configure,v 1.4 2010/11/06 23:28:23 jakemsr Exp $
  # install everything except the sources, by default. sources will have
  # to be enabled when doing dist builds, since that's no longer a common
  # case.
-@@ -415,12 +403,6 @@ EOF
+@@ -416,12 +404,6 @@ EOF
  }
  
  process_detect() {
