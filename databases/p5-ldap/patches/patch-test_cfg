@@ -1,7 +1,7 @@
-$OpenBSD: patch-test_cfg,v 1.1 2008/07/13 17:52:09 simon Exp $
---- test.cfg.orig	Mon Apr 21 17:11:07 2008
-+++ test.cfg	Sun Jul 13 18:46:11 2008
-@@ -3,19 +3,19 @@
+$OpenBSD: patch-test_cfg,v 1.2 2011/03/17 16:00:28 pea Exp $
+--- test.cfg.orig	Fri Mar 12 04:09:47 2010
++++ test.cfg	Thu Mar 17 15:19:54 2011
+@@ -3,23 +3,23 @@
  # can find the executable and know what type of server it is
  
  # Set this to the path to where you have slapd
@@ -21,6 +21,12 @@ $OpenBSD: patch-test_cfg,v 1.1 2008/07/13 17:52:09 simon Exp $
  # to your installation schema dir (eg /usr/local/etc/openldap/schema)
 -$SCHEMA_DIR = "";
 +$SCHEMA_DIR = "${SYSCONFDIR}/openldap/schema";
+ 
+ # for OpenLDAP 2.4.11
+-# $SLAPD_DB = 'bdb'; # default is ldbm
+-# $SCHEMA_CHECK = 0; # default is to check but 2.4.11 does not like it
++ $SLAPD_DB = 'bdb'; # default is ldbm
++ $SCHEMA_CHECK = 0; # default is to check but 2.4.11 does not like it
  
  $EXTERNAL_TESTS = 0;
  

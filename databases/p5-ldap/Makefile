@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/03/17 12:21:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2011/03/17 16:00:27 pea Exp $
 
 COMMENT=	client interface to LDAP servers
 
@@ -23,9 +23,6 @@ RUN_DEPENDS=	converters/p5-Convert-ASN1 \
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 REGRESS_DEPENDS=databases/openldap,-server
-
-# Requires running ldap server.
-REGRESS_IS_INTERACTIVE= Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
