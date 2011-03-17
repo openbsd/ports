@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:46:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/17 12:12:10 jasper Exp $
 
 COMMENT=	comma-separated values manipulation routines
 
 MODULES=	cpan
-DISTNAME=	Text-CSV-1.20
-REVISION=	0
+DISTNAME=	Text-CSV-1.21
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 
