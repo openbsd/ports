@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/02 14:04:21 shadchin Exp $
+# $OpenBSD: Makefile,v 1.11 2011/03/17 14:55:59 shadchin Exp $
 # $FreeBSD: ports/editors/texmaker/Makefile,v 1.2 2004/01/09 09:16:33 krion Exp $
 
 COMMENT=		LaTeX development environment
-DISTNAME=		texmaker-2.2.2
+DISTNAME=		texmaker-2.3
 CATEGORIES=		editors
 
 HOMEPAGE=		http://www.xm1math.net/texmaker/
@@ -35,8 +35,7 @@ FAKE_FLAGS=		INSTALL_ROOT=${WRKINST}
 
 do-configure:
 	@cd ${WRKSRC} && \
-	qmake4 -unix \
-		-spec ${MODQT_LIBDIR}/mkspecs/openbsd-g++ \
+	qmake4  -spec ${MODQT_LIBDIR}/mkspecs/openbsd-g++ \
 		PREFIX=${LOCALBASE} \
 		DESKTOPDIR=${LOCALBASE}/share/applications \
 		ICONDIR=${LOCALBASE}/share/pixmaps \

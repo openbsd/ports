@@ -1,12 +1,12 @@
-$OpenBSD: patch-latexhighlighter_h,v 1.1 2010/10/27 08:52:47 sthen Exp $
---- latexhighlighter.h.orig	Sat Feb  6 17:20:42 2010
-+++ latexhighlighter.h	Sat Feb  6 17:20:57 2010
-@@ -19,7 +19,7 @@
- #include <QTextCharFormat>
+$OpenBSD: patch-latexhighlighter_h,v 1.2 2011/03/17 14:55:59 shadchin Exp $
+--- latexhighlighter.h.orig	Sat Mar  5 13:19:04 2011
++++ latexhighlighter.h	Wed Mar 16 22:14:39 2011
+@@ -20,7 +20,7 @@
  #include <QColor>
  #include <QTextBlockUserData>
+ //#include "latexeditor.h"
 -#include "hunspell/hunspell.hxx"
 +#include <hunspell.hxx>
  
  class QTextDocument;
- 
+ class LatexEditor;

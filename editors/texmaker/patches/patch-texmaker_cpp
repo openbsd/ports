@@ -1,16 +1,16 @@
-$OpenBSD: patch-texmaker_cpp,v 1.2 2011/03/02 14:04:21 shadchin Exp $
---- texmaker.cpp.orig	Mon Feb 14 14:14:00 2011
-+++ texmaker.cpp	Tue Feb 15 02:00:44 2011
-@@ -2836,7 +2836,7 @@ makeidx_package=config->value( "Quick/MakeIndex",false
- author=config->value("Quick/Author","").toString();
- 
- #if defined( Q_WS_X11 )
+$OpenBSD: patch-texmaker_cpp,v 1.3 2011/03/17 14:55:59 shadchin Exp $
+--- texmaker.cpp.orig	Sun Mar 13 23:35:01 2011
++++ texmaker.cpp	Wed Mar 16 22:14:15 2011
+@@ -3195,7 +3195,7 @@ author=config->value("Quick/Author","").toString();
+ #ifdef USB_VERSION
+ QString dicDir=QCoreApplication::applicationDirPath() + "/";
+ #else
 -QString dicDir=PREFIX"/share/texmaker/";
 +QString dicDir=PREFIX"/share/hunspell/";
  #endif
- #if defined( Q_WS_MACX )
- QString dicDir=QCoreApplication::applicationDirPath() + "/../Resources/";
-@@ -2846,7 +2846,7 @@ QString dicDir=QCoreApplication::applicationDirPath() 
+ 
+ #endif
+@@ -3207,7 +3207,7 @@ QString dicDir=QCoreApplication::applicationDirPath() 
  #endif
  QString defaultDic=dicDir+QString(QLocale::system().name())+".dic";
  QFileInfo fi(defaultDic);
