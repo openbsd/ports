@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.255 2011/03/12 08:58:22 sebastia Exp $
+# $OpenBSD: Makefile,v 1.256 2011/03/17 14:48:57 edd Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -49,6 +49,7 @@
      SUBDIR += gsm
      SUBDIR += gtkpod
      SUBDIR += herrie
+     SUBDIR += hgd
      SUBDIR += hs-libmpd
      SUBDIR += hydrogen
      SUBDIR += id3ed
