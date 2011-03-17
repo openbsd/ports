@@ -1,0 +1,113 @@
+$OpenBSD: patch-src_nhttpd_http_c,v 1.1 2011/03/17 17:43:14 jasper Exp $
+
+Security fix for CVE-2011-0751
+Nostromo Directory Traversal Vulnerability.
+
+Patch from upstream CVS.
+
+--- src/nhttpd/http.c.orig	Fri Jul  3 10:36:52 2009
++++ src/nhttpd/http.c	Thu Mar 17 18:40:37 2011
+@@ -96,7 +96,8 @@ static const char *doc =
+  *	0 = invalid header, 1 = valid header
+  */
+ int
+-http_verify(const char *header, const char *cip, const int sfd, const int hr)
++http_verify(char *header, const int header_size, const char *cip, const int sfd,
++    const int hr)
+ {
+ 	int		r, proto;
+ 	char		*h, *b, line[1024], protocol[16];
+@@ -105,6 +106,21 @@ http_verify(const char *header, const char *cip, const
+ 
+ 	r = proto = 0;
+ 
++	/* check if header URI needs to be decoded */
++	if (http_decode_header_uri(header, header_size) == -1) {
++		h = http_head(http_s_400, "-", cip, 0);
++		b = http_body(http_s_400, "", h, 0);
++		c[sfd].pfdo++;
++		c[sfd].pfdn[hr] = 1;
++		c[sfd].pfdh[hr] = strdup(b);
++		c[sfd].x_ful[hr] = 1;
++		c[sfd].x_chk[hr] = 0;
++		c[sfd].x_sta = 0;
++		free(h);
++		free(b);
++		return (0);
++	}
++
+ 	/* check for valid method */
+ 	if (strcutl(line, header, 1, sizeof(line)) > 0) {
+ 		if (!strncasecmp("GET ", line, 4))
+@@ -192,6 +208,56 @@ http_verify(const char *header, const char *cip, const
+ }
+ 
+ /*
++ * http_decode_header_uri()
++ *	decodes an encoded URI within a complete HTTP header
++ * Return:
++ *	 0 = nothing to do, <bytes of new header> = URI decoded, -1 = error
++ */
++int
++http_decode_header_uri(char *header, const int header_size)
++{
++	int	 uri_len;
++	char	*p, *h, *u;
++	char	 request[1024];
++	struct	 header hd;
++
++	/* any chance for encoded characters? */
++	if (strchr(header, '%') == NULL)
++		return (0);
++
++	/* copy request line */
++        if (strcuts(request, header, '\0', '\n', sizeof(request)) == -1)
++                return (-1);
++        strlcat(request, "\n", sizeof(request));
++        uri_len = strlen(request);
++
++	/* isolate URI */
++	strcutw(hd.rq_method, request, 1, sizeof(hd.rq_method));
++	strcutw(hd.rq_uri, request, 2, sizeof(hd.rq_uri));
++	strcutw(hd.rq_protocol, request, 3, sizeof(hd.rq_protocol));
++
++	/* decode URI */
++	if ((u = http_uridecode(hd.rq_uri)) == NULL)
++		return (0);
++
++	/* build new header with decoded URI */
++	p = header;
++	p = p + uri_len;
++	if ((h = strdup(p)) == NULL) {
++		free(u);
++		return (-1);
++	}
++	snprintf(header, header_size, "%s %s %s%s",
++	    hd.rq_method, u, hd.rq_protocol, h);
++
++	/* cleanup */
++	free(u);
++	free(h);
++
++	return (strlen(header));
++}
++
++/*
+  * http_proc()
+  *	main function to process incoming header
+  * Return:
+@@ -1413,14 +1479,6 @@ http_header(const char *header_data, const char *force
+ 	/* set protocol depended flags */
+ 	if (!strcasecmp(h->rq_protocol, http_fv_pr1))
+ 		h->x_chk = 1;
+-
+-	/* decode uri if encoded */
+-	if (strchr(h->rq_uri, '%') != NULL) {
+-		if ((x = http_uridecode(h->rq_uri)) != NULL) {
+-			strlcpy(h->rq_uri, x, sizeof(h->rq_uri));
+-			free(x);
+-		}
+-	}
+ 
+ 	/* is there a query string */
+ 	if (strcuts(h->rq_query, h->rq_uri, '?', '\0', sizeof(h->rq_query))
