@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_libical_icalparser_c,v 1.1 2011/03/18 12:23:45 ajacoutot Exp $
+
+SVN rev. 1062
+In parser_get_next_char(), make sure we are on at least the second character
+when testing if the current double-quote char is escaped.
+Might fix the crash reported in ID: 2994723
+
+--- src/libical/icalparser.c.orig	Sun Sep 27 04:38:51 2009
++++ src/libical/icalparser.c	Fri Mar 18 08:11:26 2011
+@@ -192,18 +192,18 @@ char* parser_get_next_char(char c, char *str, int qm)
+ 
+     for(p=str; *p!=0; p++){
+ 	    if (qm == 1) {
+-				if ( quote_mode == 0 && *p=='"' && *(p-1) != '\\' ){
++				if ( quote_mode == 0 && *p=='"' && p>str && *(p-1) != '\\' ){
+ 						quote_mode =1;
+ 						continue;
+ 				}
+ 
+-				if ( quote_mode == 1 && *p=='"' && *(p-1) != '\\' ){
++				if ( quote_mode == 1 && *p=='"' && p>str && *(p-1) != '\\' ){
+ 						quote_mode =0;
+ 						continue;
+ 				}
+ 	    }
+ 		
+-		if (quote_mode == 0 &&  *p== c  && *(p-1) != '\\' ){
++		if (quote_mode == 0 &&  *p== c  && p>str && *(p-1) != '\\' ){
+ 				return p;
+ 		} 
+ 
