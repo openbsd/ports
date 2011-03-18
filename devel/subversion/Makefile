@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2011/03/03 20:46:32 stsp Exp $
+# $OpenBSD: Makefile,v 1.89 2011/03/18 16:25:26 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -14,6 +14,7 @@ FULLPKGPATH-perl=	devel/subversion,-perl
 FULLPKGNAME-python=	py-subversion-${VERSION}
 FULLPKGPATH-python=	devel/subversion,-python
 FULLPKGNAME-ruby=	ruby-subversion-${VERSION}
+REVISION-ruby=		0
 FULLPKGPATH-ruby=	devel/subversion,-ruby
 FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 FULLPKGPATH-ap2=	devel/subversion,-ap2
@@ -129,7 +130,7 @@ WANTLIB-python +=	${_lib}>=${SO_VERSION}
 .  endfor
 
 WANTLIB-ruby=		${WANTLIB} apr-1 aprutil-1 asn1 crypto gssapi \
-			krb5 neon sasl2 sqlite3 ssl ${MODRUBY_WANTLIB}
+			krb5 m neon sasl2 sqlite3 ssl ${MODRUBY_WANTLIB}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
 LIB_DEPENDS-ruby=	${MODRUBY_LIB_DEPENDS} \
 			${MODGETTEXT_LIB_DEPENDS} ${MAINSPEC}
