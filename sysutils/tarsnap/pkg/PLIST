@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/18 18:18:40 landry Exp $
+@bin bin/tarsnap
+@bin bin/tarsnap-keygen
+@bin bin/tarsnap-keymgmt
+@bin bin/tarsnap-keyregen
+@bin bin/tarsnap-recrypt
+@man man/man1/tarsnap-keygen.1
+@man man/man1/tarsnap-keymgmt.1
+@man man/man1/tarsnap-keyregen.1
+@man man/man1/tarsnap-recrypt.1
+@man man/man1/tarsnap.1
+@man man/man5/tarsnap.conf.5
+share/examples/tarsnap/
+share/examples/tarsnap/tarsnap.conf
+@sample ${SYSCONFDIR}/tarsnap.conf
