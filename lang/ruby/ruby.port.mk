@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.42 2011/03/14 20:39:20 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.43 2011/03/18 23:04:22 jeremy Exp $
 
 # ruby module
 
@@ -13,10 +13,7 @@ CATEGORIES+=		lang/ruby
 .if !defined(MODRUBY_REV)
 .  if ${CONFIGURE_STYLE:L:Mgem} || ${CONFIGURE_STYLE:L:Mextconf}
 .    if !defined(FLAVORS)
-FLAVORS?=		ruby19 rbx
-.      if !${CONFIGURE_STYLE:L:Mext} && !${CONFIGURE_STYLE:L:Mextconf}
-FLAVORS+=		jruby
-.      endif
+FLAVORS?=		ruby19 rbx jruby
 .    endif
 
 # Instead of adding flavors to the end of the package name, we use
@@ -112,7 +109,7 @@ MODRUBY_FLAVOR =	rbx
 .endif
 
 MODRUBY_RAKE_DEPENDS =	
-MODRUBY_RSPEC_DEPENDS =	
+MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec,${MODRUBY_FLAVOR}
 
 # Set the path for the ruby interpreter and the rake and rspec
 # commands used by MODRUBY_REGRESS and manually in some port
@@ -128,11 +125,9 @@ MAKE_ENV+=		JAVA_MEM='-Xms256m -Xmx256m'
 RUBY=			${LOCALBASE}/bin/rbx
 RAKE=			${RUBY} -S rake
 RSPEC=			${RUBY} -S spec
-MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec,${MODRUBY_FLAVOR}
 .else
 RUBY=			${LOCALBASE}/bin/ruby${MODRUBY_BINREV}
 RAKE=			${LOCALBASE}/bin/rake${MODRUBY_BINREV}
-MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec,${MODRUBY_FLAVOR}
 .  if ${MODRUBY_REV} == 1.8
 MODRUBY_RAKE_DEPENDS =	devel/ruby-rake
 RSPEC=			${LOCALBASE}/bin/spec
@@ -144,7 +139,12 @@ RSPEC=			${LOCALBASE}/bin/spec${MODRUBY_BINREV}
 MODRUBY_REGRESS?=
 
 .if ${MODRUBY_REV} == jruby
+.  if ${CONFIGURE_STYLE:L:Mext} || ${CONFIGURE_STYLE:L:Mextconf}
+# Only jruby 1.6.0+ can build C extensions
+MODRUBY_RUN_DEPENDS=	lang/jruby>=1.6.0
+.  else
 MODRUBY_RUN_DEPENDS=	lang/jruby
+.  endif
 .elif ${MODRUBY_REV} == rbx
 MODRUBY_RUN_DEPENDS=	lang/rubinius
 .else
