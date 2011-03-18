@@ -7,10 +7,10 @@ details:
 - rulers should be the length of the above string.
 
 ------------------------8<------------------------
-$OpenBSD: README.template,v 1.2 2011/01/15 19:15:21 ajacoutot Exp $
+$OpenBSD: README.template,v 1.3 2011/03/18 12:53:21 ajacoutot Exp $
 
-Running PROJECT FOO on OpenBSD
-==============================
+Running FOO on OpenBSD
+======================
 
 Section name 1
 --------------
