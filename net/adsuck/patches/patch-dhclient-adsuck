@@ -1,0 +1,21 @@
+$OpenBSD: patch-dhclient-adsuck,v 1.1 2011/03/18 13:13:59 ajacoutot Exp $
+--- dhclient-adsuck.orig	Mon Mar 14 17:05:17 2011
++++ dhclient-adsuck	Fri Mar 18 13:44:22 2011
+@@ -18,7 +18,7 @@
+ 
+ . /etc/rc.conf
+ 
+-if [ "$adsuck_flags" != "NO" -a -x /usr/local/sbin/adsuck ]; then
++if [ "$adsuck_flags" != "NO" -a -x ${TRUEPREFIX}/sbin/adsuck ]; then
+ 	adsuck_resconf="/var/adsuck/files/resolv.conf"
+ 
+ 	{
+@@ -31,7 +31,7 @@ if [ "$adsuck_flags" != "NO" -a -x /usr/local/sbin/ads
+ 	if pgrep adsuck > /dev/null; then
+ 		pkill -HUP adsuck
+ 	else
+-		/usr/local/sbin/adsuck $adsuck_flags
++		${TRUEPREFIX}/sbin/adsuck $adsuck_flags
+ 	fi
+ 	unset new_domain_name_servers
+ 	unset new_domain_name

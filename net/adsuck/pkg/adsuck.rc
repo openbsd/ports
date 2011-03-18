@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD: adsuck.rc,v 1.1 2011/03/18 13:13:59 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/sbin/adsuck"
+daemon_flags="-c /var/adsuck -f /files/resolv.conf /files/hosts.small"
+
+. /etc/rc.d/rc.subr
+
+rc_reload() {
+	pkill -HUP -f "^${pexp}" && pkill -USR1 -f "^${pexp}"
+}
+
+rc_cmd $1
