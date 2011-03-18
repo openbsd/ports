@@ -1,7 +1,7 @@
-$OpenBSD: patch-makefile_unix,v 1.12 2009/11/08 16:42:21 jasper Exp $
---- makefile.unix.orig	Sat May  2 23:18:45 2009
-+++ makefile.unix	Sun Nov  8 09:39:46 2009
-@@ -107,9 +107,17 @@ OBJECTS=rar.o strlist.o strfn.o pathfn.o savepos.o sma
+$OpenBSD: patch-makefile_unix,v 1.13 2011/03/18 20:14:58 naddy Exp $
+--- makefile.unix.orig	Wed Mar  9 17:40:47 2011
++++ makefile.unix	Wed Mar  9 17:41:01 2011
+@@ -107,6 +107,8 @@ OBJECTS=rar.o strlist.o strfn.o pathfn.o savepos.o sma
  	resource.o match.o timefn.o rdwrfn.o consio.o options.o ulinks.o errhnd.o rarvm.o \
  	rijndael.o getbits.o sha1.o extinfo.o extract.o volume.o list.o find.o unpack.o cmddata.o
  
@@ -10,20 +10,3 @@ $OpenBSD: patch-makefile_unix,v 1.12 2009/11/08 16:42:21 jasper Exp $
  .cpp.o:
  	$(COMPILE) -D$(WHAT) -c $<
  
-+recvol.o: recvol.cpp
-+	$(COMPILE) $(EXTRA_CFLAGS) -D$(WHAT) -c $<
-+
-+extract.o: extract.cpp
-+	$(COMPILE) $(EXTRA_CFLAGS) -D$(WHAT) -c $<
-+
- all:	unrar
- 
- install:	install-unrar
-@@ -122,7 +130,6 @@ clean:
- unrar:	$(OBJECTS) $(UNRAR_OBJ)
- 	@rm -f unrar
- 	$(LINK) -o unrar $(LDFLAGS) $(OBJECTS) $(UNRAR_OBJ) $(LIBS)	
--	$(STRIP) unrar
- 
- sfx:	WHAT=SFX_MODULE
- sfx:	$(OBJECTS)
