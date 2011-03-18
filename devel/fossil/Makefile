@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2011/03/16 13:32:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2011/03/18 12:09:44 jasper Exp $
 
-COMMENT =		simple distributed software configuration management 
+COMMENT =		simple distributed software configuration management
 
-VERSION =		20110301190432
+VERSION =		20110316111914
 DISTNAME =		fossil-src-${VERSION}
 PKGNAME =		fossil-${VERSION}
 CATEGORIES =		devel www
@@ -13,7 +13,7 @@ HOMEPAGE =		http://fossil-scm.org/
 MASTER_SITES =		${HOMEPAGE}download/ \
 			http://bsdgroup.org/fossil/
 
-# BSD 
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
