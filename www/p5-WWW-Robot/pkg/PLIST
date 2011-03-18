@@ -1,3 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/12/17 18:09:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/18 09:27:22 jasper Exp $
 ${P5SITE}/WWW/Robot.pm
 @man man/man3p/WWW::Robot.3p
+share/examples/p5-WWW-Robot/
+share/examples/p5-WWW-Robot/poacher
