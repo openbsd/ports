@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_PdfMod_Gui_DocumentIconView_cs,v 1.1 2011/03/18 07:09:36 ajacoutot Exp $
+
+pdfmod 0.9.1 does not compile with mono 2.10
+https://bugzilla.gnome.org/show_bug.cgi?id=644516
+
+--- src/PdfMod/Gui/DocumentIconView.cs.orig	Thu Mar  3 16:51:49 2011
++++ src/PdfMod/Gui/DocumentIconView.cs	Fri Mar 18 08:03:28 2011
+@@ -319,7 +319,7 @@ namespace PdfMod.Gui
+                 if (to_index < 0)
+                     return;
+ 
+-                var pages = args.SelectionData.Data as Hyena.Gui.DragDropList<Page>;
++                Hyena.Gui.DragDropList<Page> pages = args.SelectionData;
+                 to_index -= pages.Count (p => p.Index < to_index);
+                 var action = new MoveAction (document, pages, to_index);
+                 action.Do ();
