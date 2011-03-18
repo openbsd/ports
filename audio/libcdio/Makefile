@@ -1,60 +1,44 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/14 09:17:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/18 23:58:55 sthen Exp $
 
-COMMENT=		compact disk input and control library
+COMMENT=	compact disk input and control library
 
-DISTNAME=		libcdio-0.80
-REVISION=		4
-CATEGORIES=		audio devel
+DISTNAME=	libcdio-0.80
+REVISION=	5
+CATEGORIES=	audio devel
+MASTER_SITES=	${MASTER_SITE_GNU:=libcdio/}
 
-HOMEPAGE=		http://www.gnu.org/software/libcdio/
+SHARED_LIBS=	cdio		0.1 \
+		cdio++		0.1 \
+		cdio_cdda	0.1 \
+		cdio_paranoia 	0.1 \
+		iso9660		0.1 \
+		iso9660++	0.1 \
+		udf		0.1
 
-SHARED_LIBS +=  cdio		0.1
-SHARED_LIBS +=  cdio++		0.1
-SHARED_LIBS +=  cdio_cdda	0.1
-SHARED_LIBS +=  cdio_paranoia 	0.1
-SHARED_LIBS +=  iso9660		0.1
-SHARED_LIBS +=  iso9660++	0.1
-SHARED_LIBS +=  udf		0.1
+HOMEPAGE=	http://www.gnu.org/software/libcdio/
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-WANTLIB=	c ncurses m stdc++ cddb
-
-MASTER_SITES=	${MASTER_SITE_GNU:=libcdio/}
+WANTLIB=	c cddb m ncurses stdc++
 
 MODULES=	converters/libiconv
-
 LIB_DEPENDS=	audio/libcddb
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
-
-AUTOCONF_VERSION =	2.61
-
-CONFIGURE_STYLE =	autoconf
+USE_GROFF=	Yes
+CONFIGURE_STYLE= autoconf
+AUTOCONF_VERSION= 2.61
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-cxx \
-		--enable-joliet \
-		--enable-rock \
-		--enable-cddb \
-		--disable-vcd-info \
-		--with-libiconv-prefix="${LOCALBASE}" \
-		--with-cd-drive \
-		--with-cd-info \
-		--with-cd-paranoia \
-		--with-cd-read \
-		--with-iso-info \
-		--with-iso-read
+		--disable-vcd-info
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv"
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 post-extract:
-	cp ${FILESDIR}/openbsd.c ${WRKSRC}/lib/driver
+	@cp ${FILESDIR}/openbsd.c ${WRKSRC}/lib/driver
 
 post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} libcdio_cdda.pc libcdio_paranoia.pc \

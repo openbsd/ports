@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.1 2008/05/01 09:05:12 fgsch Exp $
---- configure.ac.orig	Sat Mar 15 17:45:17 2008
-+++ configure.ac	Wed Apr 30 18:53:06 2008
+$OpenBSD: patch-configure_ac,v 1.2 2011/03/18 23:58:55 sthen Exp $
+--- configure.ac.orig	Sat Mar 15 13:45:17 2008
++++ configure.ac	Wed Sep 22 20:29:10 2010
 @@ -460,6 +460,11 @@ int has_timeout=sizeof(test.timeout);],
   	LIBS="$LIBS -lcam"
    	cd_drivers="${cd_drivers}, FreeBSD "
@@ -21,3 +21,12 @@ $OpenBSD: patch-configure_ac,v 1.1 2008/05/01 09:05:12 fgsch Exp $
  AC_SUBST(HAVE_SOLARIS_CDROM)
  AC_SUBST(HAVE_WIN32_CDROM)
  
+@@ -562,6 +568,8 @@ if test "${enable_joliet}" != "no" ; then
+   fi
+ fi
+ AC_SUBST(HAVE_JOLIET)
++
++LIBICONV=$LTLIBICONV
+ 
+ if test x$enable_rock = x; then
+   enable_rock=yes
