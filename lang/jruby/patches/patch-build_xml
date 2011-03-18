@@ -1,0 +1,14 @@
+$OpenBSD: patch-build_xml,v 1.1 2011/03/18 23:01:22 jeremy Exp $
+--- build.xml.orig	Fri Mar 18 12:24:56 2011
++++ build.xml	Fri Mar 18 12:25:15 2011
+@@ -192,8 +192,8 @@
+     <attribute name="tzdata-version" default="${tzdata.distributed.version}"/>
+     <sequential>
+       <echo message="Updating constants with tzdata version @{tzdata-version}"/>
+-        <exec osfamily="unix" executable="git" outputproperty="jruby.revision" failonerror="false" failifexecutionfails="false">
+-          <arg line="log -1 --format=format:%h"/>
++        <exec osfamily="unix" executable="echo" outputproperty="jruby.revision" failonerror="false" failifexecutionfails="false">
++          <arg line="-n"/>
+         </exec>
+         <exec osfamily="windows" executable="cmd" outputproperty="jruby.revision" failonerror="false" failifexecutionfails="false">
+           <arg line="/c git log -1 --format=format:%h"/>

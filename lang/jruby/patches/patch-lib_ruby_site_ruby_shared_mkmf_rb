@@ -1,0 +1,17 @@
+$OpenBSD: patch-lib_ruby_site_ruby_shared_mkmf_rb,v 1.1 2011/03/18 23:01:22 jeremy Exp $
+--- lib/ruby/site_ruby/shared/mkmf.rb.orig	Fri Mar 18 14:26:30 2011
++++ lib/ruby/site_ruby/shared/mkmf.rb	Fri Mar 18 14:29:23 2011
+@@ -1362,11 +1362,11 @@ LIBRUBYARG_STATIC = #$LIBRUBYARG_STATIC
+ 
+ RUBY_EXTCONF_H = #{$extconf_h}
+ CFLAGS   = #{$static ? '' : CONFIG['CCDLFLAGS']} #$CFLAGS #$ARCH_FLAG
+-INCFLAGS = -I. #$INCFLAGS
++INCFLAGS = -I. -I${LOCALBASE}/include #$INCFLAGS
+ DEFS     = #{CONFIG['DEFS']}
+ CPPFLAGS = #{extconf_h}#{$CPPFLAGS}
+ CXXFLAGS = $(CFLAGS) #{CONFIG['CXXFLAGS']}
+-ldflags  = #{$LDFLAGS}
++ldflags  = -L${LOCALBASE}/lib #{$LDFLAGS}
+ dldflags = #{$DLDFLAGS}
+ archflag = #{$ARCH_FLAG}
+ DLDFLAGS = $(ldflags) $(dldflags) $(archflag)

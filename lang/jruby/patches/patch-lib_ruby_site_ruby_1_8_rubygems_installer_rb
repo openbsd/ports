@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_ruby_site_ruby_1_8_rubygems_installer_rb,v 1.1 2011/03/18 23:01:22 jeremy Exp $
+--- lib/ruby/site_ruby/1.8/rubygems/installer.rb.orig	Tue Feb  8 09:30:23 2011
++++ lib/ruby/site_ruby/1.8/rubygems/installer.rb	Tue Feb  8 15:12:26 2011
+@@ -39,7 +39,7 @@ class Gem::Installer
+ 
+   include Gem::UserInteraction
+ 
+-  include Gem::RequirePathsBuilder if Gem::QUICKLOADER_SUCKAGE
++  include Gem::RequirePathsBuilder
+ 
+   ##
+   # The directory a gem's executables will be installed into
+@@ -171,7 +171,7 @@ class Gem::Installer
+     generate_bin
+     write_spec
+ 
+-    write_require_paths_file_if_needed if Gem::QUICKLOADER_SUCKAGE
++    write_require_paths_file_if_needed
+ 
+     # HACK remove?  Isn't this done in multiple places?
+     cached_gem = File.join @gem_home, "cache", @gem.split(/\//).pop

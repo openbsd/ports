@@ -1,6 +1,6 @@
-$OpenBSD: patch-tool_nailgun_Makefile_in,v 1.1 2010/10/28 01:45:44 jeremy Exp $
---- tool/nailgun/Makefile.in.orig	Mon Nov  2 10:15:13 2009
-+++ tool/nailgun/Makefile.in	Tue Nov 24 04:35:40 2009
+$OpenBSD: patch-tool_nailgun_Makefile_in,v 1.2 2011/03/18 23:01:22 jeremy Exp $
+--- tool/nailgun/Makefile.in.orig	Tue Feb  8 09:30:25 2011
++++ tool/nailgun/Makefile.in	Tue Feb  8 11:24:22 2011
 @@ -2,7 +2,7 @@ SRC      = src/c/ng.c
  CC       = @CC@
  WIN32_CC = /usr/local/mingw32/bin/mingw32-gcc
