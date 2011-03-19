@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2011/03/19 16:48:53 schwarze Exp $
+# Do not depend on MAKEOVERRIDES, a GNU make extension that prevents the
+# recursive passing of command line assignments to sub-makes.
+# Specifically, we must not pass overrides like top_srcdir=...
+# to the sub-makes called in src/libs/gnulib where those variables
+# have different values created by the sub-configure there.
+--- Makefile.in.orig	Tue Mar 15 14:42:23 2011
++++ Makefile.in	Tue Mar 15 14:43:16 2011
+@@ -686,7 +686,7 @@ subdir=src/roff/troff
+ 
+ 
+ $(TARGETS):
+-	@$(ENVSETUP); $(MAKE) $(MAKE_K_FLAG) $(MDEFINES) do=$@ $(dodirs)
++	@$(ENVSETUP); $(MAKE) $(MAKE_K_FLAG) do=$@ $(dodirs)
+ 
+ dot: FORCE
+ 	@$(ENVSETUP); \

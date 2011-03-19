@@ -1,0 +1,41 @@
+$OpenBSD: patch-tmac_doc-common,v 1.1 2011/03/19 16:48:53 schwarze Exp $
+# Keep traditional OpenBSD page headers,
+# and do not use an ugly double dash in the NAME line.
+--- tmac/doc-common.orig	Fri Dec 31 00:33:09 2010
++++ tmac/doc-common	Sat Mar 12 13:09:47 2011
+@@ -231,17 +231,17 @@
+ .
+ .\" an alternative, more detailed scheme for naming the manual sections
+ .\"
+-.ds doc-volume-operating-system BSD
++.ds doc-volume-operating-system OpenBSD
+ .nr doc-volume-operating-system-ateol 0
+-.ds doc-volume-ds-1 General Commands Manual
+-.ds doc-volume-ds-2 System Calls Manual
+-.ds doc-volume-ds-3 Library Functions Manual
+-.ds doc-volume-ds-4 Kernel Interfaces Manual
+-.ds doc-volume-ds-5 File Formats Manual
+-.ds doc-volume-ds-6 Games Manual
+-.ds doc-volume-ds-7 Miscellaneous Information Manual
++.ds doc-volume-ds-1 Reference Manual
++.ds doc-volume-ds-2 Programmer's Manual
++.ds doc-volume-ds-3 Programmer's Manual
++.ds doc-volume-ds-4 Programmer's Manual
++.ds doc-volume-ds-5 Programmer's Manual
++.ds doc-volume-ds-6 Reference Manual
++.ds doc-volume-ds-7 Reference Manual
+ .ds doc-volume-ds-8 System Manager's Manual
+-.ds doc-volume-ds-9 Kernel Developer's Manual
++.ds doc-volume-ds-9 Kernel Manual
+ .
+ .ds doc-volume-ds-USD   User's Supplementary Documents
+ .ds doc-volume-ds-PS1   Programmer's Supplementary Documents
+@@ -859,7 +859,7 @@
+ .\" NS width register `Nd' set above
+ .
+ .de Nd
+-.  nop \[em] \$*
++.  nop \[en] \$*
+ ..
+ .
+ .

@@ -1,31 +1,29 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/20 19:56:48 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/19 16:48:53 schwarze Exp $
 
-CATEGORIES =	textproc
-COMMENT =	gnu clone of nroff
+COMMENT =		GNU troff typesetter
+DISTNAME =		groff-1.21
 
-# groff 1.15 as patched for OpenBSD-4.7
-DISTNAME = groff-1.15.4.7
-REVISION = 3
-MASTER_SITES = http://www.bsdfrog.org/OpenBSD/distfiles/
+CATEGORIES =		textproc
+HOMEPAGE =		http://www.gnu.org/software/groff/
+MAINTAINER =		Ingo Schwarze <schwarze@openbsd.org>
 
-# GPLv2
-PERMIT_DISTFILES_FTP = 		Yes
-PERMIT_DISTFILES_CDROM = 	Yes
-PERMIT_PACKAGE_FTP = 		Yes
-PERMIT_PACKAGE_CDROM = 		Yes
+# GPLv3+
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-WRKDIST = ${WRKDIR}/groff
-MAKE_FILE = Makefile.bsd-wrapper
-WANTLIB += c m stdc++
-RUN_DEPENDS += textproc/groff.mdoc
+WANTLIB =		c m stdc++
 
-MAKE_FLAGS = BINDIR=${TRUEPREFIX}/bin MANDIR=${TRUEPREFIX}/man/cat \
-	PREFIX=${TRUEPREFIX} DATASUBDIR=${TRUEPREFIX}/share \
-	FONTDIR=${TRUEPREFIX}/share/groff_font \
-	INDEXDIR=${TRUEPREFIX}/share/dict/papers \
-	COMMON_WORDS=${TRUEPREFIX}/share/dict/eign
+MASTER_SITES =		${MASTER_SITE_GNU:=groff/}
 
-do-configure:
-	cd ${WRKDIST} && ${MAKE} ${MAKE_FLAGS} -f ${MAKE_FILE} config.status
+MAKE_FLAGS +=		docdir=${PREFIX}/share/doc/groff \
+			exampledir=${PREFIX}/share/examples/groff
+
+SEPARATE_BUILD =	simple
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS +=	--without-libiconv-prefix --without-gs --without-x
+
+MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/src/libs/gnulib/build-aux
 
 .include <bsd.port.mk>

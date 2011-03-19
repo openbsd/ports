@@ -1,0 +1,17 @@
+$OpenBSD: patch-tmac_troffrc,v 1.1 2011/03/19 16:48:53 schwarze Exp $
+--- tmac/troffrc.orig	Fri Jan  9 07:25:52 2009
++++ tmac/troffrc	Sun Dec  5 18:16:38 2010
+@@ -37,9 +37,10 @@ troffrc!X100 troffrc!X100-12 troffrc!lj4 troff!lbp tro
+ .\" Set the hyphenation language to `us'.
+ .do hla us
+ .
+-.\" Load hyphenation patterns and exceptions.
+-.do hpf hyphen.us
+-.do hpfa hyphenex.us
++.\" Disable hyphenation:
++.\" Do not load hyphenation patterns and exceptions.
++.\"do hpf hyphen.us
++.\"do hpfa hyphenex.us
+ .
+ .\" Handle paper formats.
+ .do mso papersize.tmac

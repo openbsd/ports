@@ -1,0 +1,13 @@
+$OpenBSD: patch-tmac_doc-syms,v 1.1 2011/03/19 16:48:53 schwarze Exp $
+# One newer POSIX standards required by base manuals.
+--- tmac/doc-syms.orig	Fri Dec 31 00:33:09 2010
++++ tmac/doc-syms	Sat Mar 12 16:02:28 2011
+@@ -617,6 +617,8 @@
+ .\" POSIX Part 1: System API
+ .ds doc-str-St--p1003.1        \*[doc-Tn-font-size]\%IEEE\*[doc-str-St] Std 1003.1
+ .as doc-str-St--p1003.1        " (\*[Lq]\)\*[Px]\*[doc-str-St].1\*[Rq])
++.ds doc-str-St--p1003.1b       \*[doc-Tn-font-size]\%IEEE\*[doc-str-St] Std 1003.1b
++.as doc-str-St--p1003.1b       " (\*[Lq]\)\*[Px]\*[doc-str-St].1\*[Rq])
+ .ds doc-str-St--p1003.1-88     \*[doc-Tn-font-size]\%IEEE\*[doc-str-St] Std 1003.1-1988
+ .as doc-str-St--p1003.1-88     " (\*[Lq]\)\*[Px]\*[doc-str-St].1\*[Rq])
+ .ds doc-str-St--p1003.1-90     \*[doc-Tn-font-size]ISO/IEC\*[doc-str-St] 9945-1:1990

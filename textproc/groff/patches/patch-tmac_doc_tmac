@@ -1,0 +1,13 @@
+$OpenBSD: patch-tmac_doc_tmac,v 1.1 2011/03/19 16:48:53 schwarze Exp $
+# Always format Pa the same way, as requested by jmc@.
+--- tmac/doc.tmac.orig	Fri Dec 31 00:33:09 2010
++++ tmac/doc.tmac	Sat Mar 12 13:09:47 2011
+@@ -3747,8 +3747,6 @@
+ .
+ .        if \n[doc-in-files-section] \{\
+ .          ds doc-saved-Pa-font "\*[doc-Pa-font]
+-.          if n \
+-.            ds doc-Pa-font "\*[doc-No-font]
+ .        \}
+ .
+ .        ie (\n[doc-type1] == 1) \
