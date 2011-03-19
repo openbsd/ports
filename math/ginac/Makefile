@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.13 2011/01/15 01:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2011/03/19 09:18:37 jasper Exp $
 
 COMMENT=	GiNaC is Not a Computer Algebra System (CAS)
 

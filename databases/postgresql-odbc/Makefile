@@ -1,4 +1,4 @@
-# $Id: Makefile,v 1.6 2010/11/26 07:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/19 09:18:37 jasper Exp $
 
 COMMENT=	ODBC driver for PostgreSQL
 VERSION=	08.03.0400

@@ -1,4 +1,4 @@
-# $Id $
+# $OpenBSD: Makefile,v 1.7 2011/03/19 09:18:37 jasper Exp $
 
 COMMENT =	library for verifying and serving OpenID identities
 
