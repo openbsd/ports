@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/03/19 13:37:17 benoit Exp $
 
 COMMENT =	breakout game with many levels, powerups, good graphics
 
-DISTNAME =	lbreakout2-2.6.2
-REVISION =	0
+DISTNAME =	lbreakout2-2.6.3
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://lgames.sourceforge.net/index.php?action=show_project&project=LBreakout2

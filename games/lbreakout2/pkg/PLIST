@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/10/17 09:11:08 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/03/19 13:37:21 benoit Exp $
 @mode g+s
 @group games
 @bin bin/lbreakout2
@@ -276,6 +276,7 @@ share/lbreakout2/levels/Twilight
 share/lbreakout2/levels/Vader
 share/lbreakout2/levels/WTF
 share/lbreakout2/levels/Weirdness
+share/lbreakout2/levels/Wizi
 share/lbreakout2/levels/Wolvie
 share/lbreakout2/levels/WonderWalls
 share/lbreakout2/levels/X
