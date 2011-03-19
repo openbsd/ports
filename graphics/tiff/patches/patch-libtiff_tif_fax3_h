@@ -1,0 +1,19 @@
+$OpenBSD: patch-libtiff_tif_fax3_h,v 1.1 2011/03/19 18:41:05 jasper Exp $
+
+Security fix for CVE-2011-0192: buffer overflow in Fax4Decode.
+
+Patch from Apple via Debian.
+
+--- libtiff/tif_fax3.h.orig	Tue Jun  8 20:50:42 2010
++++ libtiff/tif_fax3.h	Sat Mar 19 19:33:12 2011
+@@ -478,6 +478,10 @@ done1d:									\
+ 	    break;							\
+ 	case S_VL:							\
+ 	    CHECK_b1;							\
++	    if (b1 <= (int) (a0 + TabEnt->Param)) {			\
++		unexpected("VL", a0);					\
++		goto eol2d;						\
++	    }								\
+ 	    SETVALUE(b1 - a0 - TabEnt->Param);				\
+ 	    b1 -= *--pb;						\
+ 	    break;							\
