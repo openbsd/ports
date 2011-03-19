@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/19 18:02:38 jasper Exp $
+${P5SITE}/Net/Frame/Layer/ICMPv6/
+${P5SITE}/Net/Frame/Layer/ICMPv6.pm
+${P5SITE}/Net/Frame/Layer/ICMPv6/Echo.pm
+${P5SITE}/Net/Frame/Layer/ICMPv6/NeighborAdvertisement.pm
+${P5SITE}/Net/Frame/Layer/ICMPv6/NeighborSolicitation.pm
+${P5SITE}/Net/Frame/Layer/ICMPv6/Option.pm
+${P5SITE}/Net/Frame/Layer/ICMPv6/RouterAdvertisement.pm
+${P5SITE}/Net/Frame/Layer/ICMPv6/RouterSolicitation.pm
+@man man/man3p/Net::Frame::Layer::ICMPv6.3p
+@man man/man3p/Net::Frame::Layer::ICMPv6::Echo.3p
+@man man/man3p/Net::Frame::Layer::ICMPv6::NeighborAdvertisement.3p
+@man man/man3p/Net::Frame::Layer::ICMPv6::NeighborSolicitation.3p
+@man man/man3p/Net::Frame::Layer::ICMPv6::Option.3p
+@man man/man3p/Net::Frame::Layer::ICMPv6::RouterAdvertisement.3p
+@man man/man3p/Net::Frame::Layer::ICMPv6::RouterSolicitation.3p
+share/examples/p5-Net-Frame-Layer-ICMPv6/
+share/examples/p5-Net-Frame-Layer-ICMPv6/icmp-echo-send.pl
+share/examples/p5-Net-Frame-Layer-ICMPv6/icmp-echo.pl
+share/examples/p5-Net-Frame-Layer-ICMPv6/lookup-mac.pl

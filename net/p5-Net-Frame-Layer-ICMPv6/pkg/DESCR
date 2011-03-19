@@ -1,0 +1,11 @@
+These modules implement the encoding and decoding of the ICMPv6 layer according
+to the following RFCs:
+	RFC4861
+	RFC4389
+	RFC4191
+	RFC3775
+	RFC2463
+	RFC2461
+	RFC2460
+
+See also Net::Frame::Layer for other attributes and methods.
