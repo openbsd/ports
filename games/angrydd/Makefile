@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/26 07:20:11 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/19 17:38:06 ajacoutot Exp $
 
 COMMENT=	falling blocks puzzle game
 
 DISTNAME=	angrydd-1.0.1
-REVISION =	3
+REVISION =	4
 CATEGORIES=	games
 
 HOMEPAGE=	http://www.sacredchao.net/~piman/angrydd/
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

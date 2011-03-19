@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/19 17:38:07 ajacoutot Exp $
 
 COMMENT =	Komi the Space Frog
 
 DISTNAME =	komi-1.04
-REVISION =	1
+REVISION =	2
 CATEGORIES =	games
 
 HOMEPAGE =	http://komi.sourceforge.net/
-
-MAINTAINER =	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

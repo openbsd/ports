@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2011/03/14 09:17:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/19 17:38:06 ajacoutot Exp $
 
 COMMENT=	drive a toy wood engine
 
 DISTNAME=	Ri-li-2.0.0
-REVISION =	1
+REVISION =	2
 CATEGORIES=	games
 
 HOMEPAGE=	http://ri-li.sourceforge.net
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes

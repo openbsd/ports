@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/16 11:23:26 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/03/19 17:38:06 ajacoutot Exp $
 
 COMMENT=	32-card trick-taking game
 
 DISTNAME=	belooted-0.1.4.1
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	games
 
 HOMEPAGE=	http://gnomefiles.org/content/show.php/Belooted?content=131848
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
