@@ -1,0 +1,5 @@
+This modules implements the encoding and decoding of the IPv6 layer.
+
+RFC: ftp://ftp.rfc-editor.org/in-notes/rfc2460.txt
+
+See also Net::Frame::Layer for other attributes and methods.

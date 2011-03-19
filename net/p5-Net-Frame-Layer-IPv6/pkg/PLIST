@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/19 18:01:41 jasper Exp $
+${P5SITE}/Net/Frame/Layer/IPv6.pm
+@man man/man3p/Net::Frame::Layer::IPv6.3p
+share/examples/p5-Net-Frame-Layer-IPv6/
+share/examples/p5-Net-Frame-Layer-IPv6/build-tcp-syn.pl
