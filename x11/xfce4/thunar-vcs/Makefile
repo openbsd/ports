@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/01/19 19:22:30 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2011/03/20 20:27:00 landry Exp $
 
 COMMENT =	Thunar vcs integration plugin
 
-XFCE_VERSION =	0.1.2
+XFCE_VERSION =	0.1.4
 THUNAR_PLUGIN =	thunar-vcs-plugin
-REVISION =	8
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -23,18 +22,18 @@ RUN_DEPENDS =	x11/xfce4/thunar \
 		devel/git
 BUILD_DEPENDS +=x11/xfce4/thunar
 
-LIB_DEPENDS =	x11/xfce4/thunar-vfs \
+LIB_DEPENDS =	x11/gtk+2 \
 		devel/subversion
 
-WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
+WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender apr-1 aprutil-1 asn1
-WANTLIB += atk-1.0 c cairo crypto db execinfo exo-1 expat
+WANTLIB += atk-1.0 c cairo crypto db expat
 WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gssapi gthread-2.0
-WANTLIB += gtk-x11-2.0 jpeg krb5 m neon pcre pixman-1 png pthread
-WANTLIB += pthread-stubs sasl2 sqlite3 ssl startup-notification-1
-WANTLIB += xcb xcb-atom xcb-aux xcb-event xfce4util z xcb-render
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 gamin-1 thunar-vfs-1
+WANTLIB += gtk-x11-2.0 krb5 m neon pcre pixman-1 png pthread
+WANTLIB += pthread-stubs sasl2 sqlite3 ssl
+WANTLIB += xcb xfce4util z xcb-render
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1
 WANTLIB += svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_local-1 svn_ra_neon-1
 WANTLIB += svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1 GL Xxf86vm drm xcb-shm
