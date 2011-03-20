@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/14 21:48:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/03/20 20:19:57 simon Exp $
 
 COMMENT=	building, finding and using tidyp librar
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 CONFIGURE_STYLE=	modbuild
 CONFIGURE_ENV+= 	TIDYP_DIR=${LOCALBASE}
 
-BUILD_DEPENDS=		devel/p5-File-ShareDir
+BUILD_DEPENDS=		devel/p5-File-ShareDir \
+			www/tidyp
 
 .include <bsd.port.mk>
