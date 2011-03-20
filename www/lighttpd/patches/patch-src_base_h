@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_base_h,v 1.3 2011/03/20 13:42:53 sthen Exp $
+--- src/base.h.orig	Mon Mar 14 21:18:03 2011
++++ src/base.h	Mon Mar 14 21:19:57 2011
+@@ -275,7 +275,10 @@ typedef struct {
+ 	buffer *ssl_pemfile;
+ 	buffer *ssl_ca_file;
+ 	buffer *ssl_cipher_list;
++	buffer *ssl_dh_file;
++	buffer *ssl_ec_curve;
+ 	unsigned short ssl_use_sslv2;
++	unsigned short ssl_use_sslv3;
+ 	unsigned short ssl_verifyclient;
+ 	unsigned short ssl_verifyclient_enforce;
+ 	unsigned short ssl_verifyclient_depth;
+@@ -527,7 +530,10 @@ typedef struct {
+ 	buffer *ssl_pemfile;
+ 	buffer *ssl_ca_file;
+ 	buffer *ssl_cipher_list;
++	buffer *ssl_dh_file;
++	buffer *ssl_ec_curve;
+ 	unsigned short ssl_use_sslv2;
++	unsigned short ssl_use_sslv3;
+ 	unsigned short use_ipv6;
+ 	unsigned short is_ssl;
+ 
