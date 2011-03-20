@@ -1,23 +1,25 @@
-# $OpenBSD: Makefile,v 1.22 2011/01/28 21:38:12 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2011/03/20 20:09:28 landry Exp $
 
 COMMENT =		Mozilla calendar
 
 MOZILLA_PROJECT =	sunbird
-MOZILLA_VERSION =	1.0beta1
-MOZILLA_BRANCH =	1.9.1
+TB_VERSION =		3.1.8
+MOZILLA_VERSION =	1.0beta2
+MOZILLA_BRANCH =	1.9.2
 MOZILLA_CODENAME =	calendar
 
-DISTNAME =		lightning-sunbird-1.0b1.source
-REVISION =		11
+DISTNAME =		thunderbird-${TB_VERSION}.source
 EPOCH =			0
+
+MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${TB_VERSION}/source/
 
 CATEGORIES =	productivity mail
 
-SO_VERSION =	16.1
+SO_VERSION =	17.0
 
 MOZILLA_LIBS = calbasecomps accessibility auth autoconfig caps chardet chrome \
 	commandlines cookie docshell embedcomponents fileview gkgfxthebes \
-	gklayout gkplugin htmlpars i18n imgicon imglib2 intlapp jar50 jsd mork \
+	gklayout gkplugin htmlpars i18n imgicon imglib2 intlapp jar50 jsd jsctypes mork \
 	mozfind necko nsappshell permissions pipboot pipnss pippki pref rdf \
 	remoteservice satchel spellchecker storagecomps system-pref \
 	tkautocomplete toolkitcomps txmgr uconv unixproxy webbrwsr widget_gtk2 \
@@ -30,14 +32,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/calendar/${MOZILLA_PROJECT}/releases/${MOZILLA_VERSION}/source/
-
 MODULES =	www/mozilla devel/gettext lang/python
 
 # Regression tests are too hard to adapt to run here
 NO_REGRESS =	Yes
 
-MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/directory/c-sdk/config/autoconf
+# use files and patches from mail/mozilla-thunderbird
+PATCHDIR =		${PORTSDIR}/mail/mozilla-thunderbird/patches
+FILESDIR =		${PORTSDIR}/mail/mozilla-thunderbird/files
+
+MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/directory/sdks/c-sdk/config/autoconf
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 CONFIGURE_ARGS =	--enable-official-branding
@@ -45,9 +49,9 @@ CONFIGURE_ARGS =	--enable-official-branding
 ALL_TARGET=	default
 
 MOZILLA_DATADIRS =	calendar-js chrome components defaults dictionaries extensions \
-		greprefs icons modules plugins res
+		greprefs modules plugins res
 
-MOZILLA_AUTOCONF_DIRS =		directory/c-sdk mozilla mozilla/js/src
+MOZILLA_AUTOCONF_DIRS =		directory/sdks/c-sdk mozilla mozilla/js/src
 MOZILLA_SUBST_FILES +=		config/autoconf.mk.in
 
 .include <bsd.port.mk>
