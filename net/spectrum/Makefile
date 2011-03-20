@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2011/03/07 10:14:01 sebastia Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/20 11:20:16 ajacoutot Exp $
 
 COMMENT=        XMPP transport/gateway
 
 DISTNAME=       spectrum-1.4.6
 CATEGORIES=     net
 
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=       http://spectrum.im/
 MASTER_SITES=   ${HOMEPAGE}/attachments/download/34/
