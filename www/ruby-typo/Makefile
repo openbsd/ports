@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/24 21:35:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2011/03/20 15:54:05 espie Exp $
 
 BROKEN = Ruby hangs during rdoc generation and it doesn't work with newer rails.
 
@@ -24,7 +24,6 @@ RUN_DEPENDS=	www/ruby-rails,${MODRUBY_FLAVOR}>=2.2 \
 		www/ruby-mongrel,${MODRUBY_FLAVOR}>=1.1.3 \
 		sysutils/ruby-mongrel_cluster,${MODRUBY_FLAVOR} \
 		databases/ruby-sqlite3,${MODRUBY_FLAVOR} \
-		sysutils/ruby-rails-app-installer,${MODRUBY_FLAVOR} \
 		net/ruby-xmpp4r,${MODRUBY_FLAVOR} \
 		devel/ruby-rcov,${MODRUBY_FLAVOR}>=0.8.1 \
 		devel/ruby-flexmock,${MODRUBY_FLAVOR}>=0.8.0 \
@@ -32,6 +31,8 @@ RUN_DEPENDS=	www/ruby-rails,${MODRUBY_FLAVOR}>=2.2 \
 		devel/ruby-debug,${MODRUBY_FLAVOR} \
 		textproc/ruby-htmlentities,${MODRUBY_FLAVOR}>=4.0.0 \
 		converters/ruby-json,${MODRUBY_FLAVOR}>=1.1.3
+
+#		sysutils/ruby-rails-app-installer,${MODRUBY_FLAVOR}
 
 CONFIGURE_STYLE=ruby gem
 
