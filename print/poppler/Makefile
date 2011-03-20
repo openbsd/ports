@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/03/03 21:25:38 stsp Exp $
+# $OpenBSD: Makefile,v 1.46 2011/03/20 20:52:01 kili Exp $
 .include <bsd.own.mk>
 
 COMMENT-main=	PDF rendering library
@@ -9,7 +9,7 @@ V=		0.14.5
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
-REVISION-main=	1
+REVISION-main=	2
 FULLPKGNAME-qt=	poppler-qt-$V
 FULLPKGNAME-qt4=poppler-qt4-$V
 
@@ -40,7 +40,7 @@ cWANTLIB=	expat freetype fontconfig jpeg m z stdc++
 
 .if empty(FLAVOR:L:Mno_qt)
 MULTI_PACKAGES+=-qt
-MODULES+=	x11/qt3 converters/libiconv
+MODULES+=	x11/qt3
 .else
 CONFIGURE_ARGS+=	--disable-poppler-qt
 .endif
@@ -51,14 +51,15 @@ MULTI_PACKAGES+=-qt4
 .endif
 
 .if ${MULTI_PACKAGES:L:M-qt4} && ${MACHINE_ARCH} != "arm"
-MODULES+=	x11/qt4 converters/libiconv
+MODULES+=	x11/qt4
 .else
 CONFIGURE_ARGS+=	--disable-poppler-qt4
 .endif
 
-MODULES+=	devel/gettext
+MODULES+=	devel/gettext converters/libiconv
 
 LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
+		${MODLIBICONV_LIB_DEPENDS} \
 		x11/gtk+2 \
 		graphics/lcms \
 		graphics/openjpeg \
@@ -70,11 +71,11 @@ LIB_DEPENDS-qt4=x11/qt4 \
 		${MODGETTEXT_LIB_DEPENDS} \
 		print/poppler
 
-WANTLIB-main=	${cWANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr gio-2.0 \
+WANTLIB-main=	${cWANTLIB} Xcursor Xext Xfixes Xi Xinerama Xrandr c gio-2.0 \
 		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 xml2 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 gdk_pixbuf-2.0 openjpeg \
 		X11 Xau Xcomposite Xdamage Xdmcp Xrender cairo pcre png \
-		pthread-stubs xcb xcb-render gdk-x11-2.0 lcms GL Xxf86vm \
+		pthread pthread-stubs xcb xcb-render gdk-x11-2.0 lcms GL Xxf86vm \
 		drm xcb-shm ${MODGETTEXT_WANTLIB}
 WANTLIB-qt=	${cWANTLIB} lcms openjpeg xml2 poppler png ${MODQT3_WANTLIB} \
 		${MODLIBICONV_WANTLIB}
@@ -87,7 +88,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --enable-xpdf-headers \
 		--disable-poppler-cpp \
 		--disable-silent-rules \
-		--disable-utils \
+		--enable-utils \
 		--enable-zlib
 
 CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \

@@ -1,7 +1,15 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2010/10/09 08:05:30 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2011/03/20 20:52:01 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 %%SHARED%%
+@comment @bin bin/pdffonts
+@comment @bin bin/pdfimages
+@comment @bin bin/pdfinfo
+@bin bin/pdftoabw
+@bin bin/pdftohtml
+@comment @bin bin/pdftoppm
+@comment @bin bin/pdftops
+@comment @bin bin/pdftotext
 include/poppler/
 include/poppler/Annot.h
 include/poppler/Array.h
@@ -139,6 +147,13 @@ lib/pkgconfig/poppler-cairo.pc
 lib/pkgconfig/poppler-glib.pc
 lib/pkgconfig/poppler-splash.pc
 lib/pkgconfig/poppler.pc
+@comment @man man/man1/pdffonts.1
+@comment @man man/man1/pdfimages.1
+@comment @man man/man1/pdfinfo.1
+@man man/man1/pdftohtml.1
+@comment @man man/man1/pdftoppm.1
+@comment @man man/man1/pdftops.1
+@comment @man man/man1/pdftotext.1
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/poppler/
