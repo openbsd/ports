@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/03/09 10:31:52 robert Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/03/20 15:46:34 ajacoutot Exp $
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 bin/filebucket
@@ -693,3 +693,8 @@ ${MODRUBY_RELEXAMPLEDIR}/puppet/tagmail.conf
 @sample /var/puppet/reports/
 @extraunexec rm -rf ${SYSCONFDIR}/puppet/
 @extraunexec rm -rf /var/puppet/
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/puppetd
+@rcscript ${RCDIR}/puppetmasterd

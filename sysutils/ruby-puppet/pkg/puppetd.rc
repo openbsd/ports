@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: puppetd.rc,v 1.1 2011/03/20 15:46:34 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/sbin/puppetd"
+
+. /etc/rc.d/rc.subr
+
+pexp=".*ruby.* ${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_reload=NO
+
+rc_cmd $1
