@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_global_h,v 1.1 2009/05/10 20:16:10 sthen Exp $
---- src/global.h.orig	Fri Apr 10 19:36:17 2009
-+++ src/global.h	Fri Apr 10 19:36:37 2009
-@@ -255,8 +255,12 @@ get_dc_scaler(uint32_t quant,
+$OpenBSD: patch-src_global_h,v 1.2 2011/03/20 23:49:33 edd Exp $
+--- src/global.h.orig	Sun Nov 28 10:18:21 2010
++++ src/global.h	Sat Mar  5 16:34:26 2011
+@@ -251,8 +251,12 @@ get_dc_scaler(uint32_t quant,
  
  /* useful macros */
  
