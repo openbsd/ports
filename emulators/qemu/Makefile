@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2011/03/12 23:28:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2011/03/20 20:40:52 sthen Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS =	i386 amd64 sparc64
@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS =	i386 amd64 sparc64
 COMMENT =		multi system emulator
 
 DISTNAME =		qemu-0.14.0
+REVISION=		0
 CATEGORIES =		emulators
 
 HOMEPAGE =		http://www.qemu.org/
@@ -28,8 +29,6 @@ MAKE_ENV +=		V=1
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples
 
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
-
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--sysconfdir=${SYSCONFDIR} \
@@ -70,10 +69,10 @@ pre-configure:
 	@perl -pi -e 's|/dev/dsp|/dev/audio|g' ${WRKSRC}/audio/ossaudio.c
 
 post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qemu
-	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup \
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qemu
+	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup \
 	    ${PREFIX}/share/examples/qemu
-	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown \
+	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown \
 	    ${PREFIX}/share/examples/qemu
 
 .include <bsd.port.mk>
