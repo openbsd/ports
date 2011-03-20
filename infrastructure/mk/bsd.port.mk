@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1071 2011/01/16 20:36:49 ajacoutot Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1072 2011/03/20 19:28:07 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1633,7 +1633,7 @@ _grab_libs_from_plist = sed -n -e '/^@lib /{ s///; p; }' \
 
 _parse_spec = \
 	IFS=:; read pkg subdir target; \
-	extra_msg="(DEPENDS was $$pkg $$subdir $$target)"; \
+	extra_msg="(DEPENDS was $$pkg $$subdir $$target) in ${FULLPKGPATH}"; \
 	case "X$$pkg" in \
 	*/*) target="$$subdir"; subdir="$$pkg"; pkg=;; \
 	esac; unset IFS; ${_flavor_fragment}
