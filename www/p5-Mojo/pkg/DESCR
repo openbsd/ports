@@ -1,4 +1,10 @@
-Mojo is a collection of libraries and example web frameworks for web
-framework developers.
-If you are searching for a higher level MVC web framework you should
-take a look at Mojolicious, also coming with this module.
+Mojolicious is a MVC web framework that supports following features:
+
+* Full stack HTTP 1.1 and WebSocket client/server implementation with IPv6,
+  TLS, Bonjour, IDNA, Comet (long polling), chunking and multipart support.
+* Builtin async IO web server supporting epoll, kqueue, UNIX domain sockets
+  and hot deployment, perfect for embedding.
+* Automatic CGI, FastCGI and PSGI detection.
+* JSON and XML/HTML5 parser with CSS3 selector support.
+* Very clean, portable and Object Oriented pure Perl API without any hidden
+  magic and no requirements besides Perl 5.8.7.

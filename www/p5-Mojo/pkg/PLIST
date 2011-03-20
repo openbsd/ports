@@ -1,181 +1,214 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/07/16 16:11:14 pyr Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/03/20 09:10:15 landry Exp $
+@conflict p5-Mojo-*
+bin/hypnotoad
 bin/mojo
-bin/mojolicious
 ${P5SITE}/Mojo/
 ${P5SITE}/Mojo.pm
+${P5SITE}/Mojo/Asset/
+${P5SITE}/Mojo/Asset.pm
+${P5SITE}/Mojo/Asset/File.pm
+${P5SITE}/Mojo/Asset/Memory.pm
 ${P5SITE}/Mojo/Base.pm
-${P5SITE}/Mojo/Buffer.pm
 ${P5SITE}/Mojo/ByteStream.pm
+${P5SITE}/Mojo/Cache.pm
 ${P5SITE}/Mojo/Client.pm
+${P5SITE}/Mojo/Command.pm
 ${P5SITE}/Mojo/Content/
 ${P5SITE}/Mojo/Content.pm
 ${P5SITE}/Mojo/Content/MultiPart.pm
+${P5SITE}/Mojo/Content/Single.pm
 ${P5SITE}/Mojo/Cookie/
 ${P5SITE}/Mojo/Cookie.pm
 ${P5SITE}/Mojo/Cookie/Request.pm
 ${P5SITE}/Mojo/Cookie/Response.pm
+${P5SITE}/Mojo/CookieJar.pm
+${P5SITE}/Mojo/DOM.pm
 ${P5SITE}/Mojo/Date.pm
-${P5SITE}/Mojo/File/
-${P5SITE}/Mojo/File.pm
-${P5SITE}/Mojo/File/Memory.pm
-${P5SITE}/Mojo/Filter/
-${P5SITE}/Mojo/Filter.pm
-${P5SITE}/Mojo/Filter/Chunked.pm
+${P5SITE}/Mojo/Exception.pm
 ${P5SITE}/Mojo/Headers.pm
 ${P5SITE}/Mojo/HelloWorld.pm
 ${P5SITE}/Mojo/Home.pm
-${P5SITE}/Mojo/Loader/
+${P5SITE}/Mojo/IOLoop.pm
+${P5SITE}/Mojo/JSON.pm
 ${P5SITE}/Mojo/Loader.pm
-${P5SITE}/Mojo/Loader/Exception.pm
 ${P5SITE}/Mojo/Log.pm
-${P5SITE}/Mojo/Manual/
-${P5SITE}/Mojo/Manual.pod
-${P5SITE}/Mojo/Manual/CodingGuidelines.pod
-${P5SITE}/Mojo/Manual/Cookbook.pod
-${P5SITE}/Mojo/Manual/Deployment.pod
-${P5SITE}/Mojo/Manual/FAQ.pod
-${P5SITE}/Mojo/Manual/GettingStarted.pod
-${P5SITE}/Mojo/Manual/Mojolicious.pod
-${P5SITE}/Mojo/Manual/MojoliciousExample.pod
-${P5SITE}/Mojo/Manual/Transaction.pod
 ${P5SITE}/Mojo/Message/
 ${P5SITE}/Mojo/Message.pm
 ${P5SITE}/Mojo/Message/Request.pm
 ${P5SITE}/Mojo/Message/Response.pm
 ${P5SITE}/Mojo/Parameters.pm
 ${P5SITE}/Mojo/Path.pm
-${P5SITE}/Mojo/Pipeline.pm
-${P5SITE}/Mojo/Script/
-${P5SITE}/Mojo/Script.pm
-${P5SITE}/Mojo/Script/Cgi.pm
-${P5SITE}/Mojo/Script/Daemon.pm
-${P5SITE}/Mojo/Script/DaemonPrefork.pm
-${P5SITE}/Mojo/Script/Fastcgi.pm
-${P5SITE}/Mojo/Script/Generate/
-${P5SITE}/Mojo/Script/Generate.pm
-${P5SITE}/Mojo/Script/Generate/App.pm
-${P5SITE}/Mojo/Script/Generate/Makefile.pm
-${P5SITE}/Mojo/Script/Test.pm
-${P5SITE}/Mojo/Scripts.pm
 ${P5SITE}/Mojo/Server/
 ${P5SITE}/Mojo/Server.pm
 ${P5SITE}/Mojo/Server/CGI.pm
-${P5SITE}/Mojo/Server/Daemon/
 ${P5SITE}/Mojo/Server/Daemon.pm
-${P5SITE}/Mojo/Server/Daemon/Prefork.pm
 ${P5SITE}/Mojo/Server/FastCGI.pm
-${P5SITE}/Mojo/Stateful.pm
-${P5SITE}/Mojo/Template/
+${P5SITE}/Mojo/Server/Hypnotoad.pm
+${P5SITE}/Mojo/Server/PSGI.pm
 ${P5SITE}/Mojo/Template.pm
-${P5SITE}/Mojo/Template/Exception.pm
+${P5SITE}/Mojo/Transaction/
 ${P5SITE}/Mojo/Transaction.pm
+${P5SITE}/Mojo/Transaction/HTTP.pm
+${P5SITE}/Mojo/Transaction/WebSocket.pm
 ${P5SITE}/Mojo/URL.pm
 ${P5SITE}/Mojo/Upload.pm
-${P5SITE}/MojoX/
-${P5SITE}/MojoX/Context.pm
-${P5SITE}/MojoX/Dispatcher/
-${P5SITE}/MojoX/Dispatcher/Routes/
-${P5SITE}/MojoX/Dispatcher/Routes.pm
-${P5SITE}/MojoX/Dispatcher/Routes/Context.pm
-${P5SITE}/MojoX/Dispatcher/Routes/Controller.pm
-${P5SITE}/MojoX/Dispatcher/Static.pm
-${P5SITE}/MojoX/Renderer.pm
-${P5SITE}/MojoX/Routes/
-${P5SITE}/MojoX/Routes.pm
-${P5SITE}/MojoX/Routes/Match.pm
-${P5SITE}/MojoX/Routes/Pattern.pm
-${P5SITE}/MojoX/Types.pm
+${P5SITE}/Mojo/UserAgent.pm
+${P5SITE}/Mojo/Util.pm
 ${P5SITE}/Mojolicious/
 ${P5SITE}/Mojolicious.pm
-${P5SITE}/Mojolicious/Context.pm
+${P5SITE}/Mojolicious/Command/
+${P5SITE}/Mojolicious/Command/Cgi.pm
+${P5SITE}/Mojolicious/Command/Daemon.pm
+${P5SITE}/Mojolicious/Command/Fastcgi.pm
+${P5SITE}/Mojolicious/Command/Generate/
+${P5SITE}/Mojolicious/Command/Generate.pm
+${P5SITE}/Mojolicious/Command/Generate/App.pm
+${P5SITE}/Mojolicious/Command/Generate/Gitignore.pm
+${P5SITE}/Mojolicious/Command/Generate/Hypnotoad.pm
+${P5SITE}/Mojolicious/Command/Generate/LiteApp.pm
+${P5SITE}/Mojolicious/Command/Generate/Makefile.pm
+${P5SITE}/Mojolicious/Command/Get.pm
+${P5SITE}/Mojolicious/Command/Inflate.pm
+${P5SITE}/Mojolicious/Command/Psgi.pm
+${P5SITE}/Mojolicious/Command/Routes.pm
+${P5SITE}/Mojolicious/Command/Test.pm
+${P5SITE}/Mojolicious/Command/Version.pm
+${P5SITE}/Mojolicious/Commands.pm
 ${P5SITE}/Mojolicious/Controller.pm
+${P5SITE}/Mojolicious/Guides/
+${P5SITE}/Mojolicious/Guides.pod
+${P5SITE}/Mojolicious/Guides/Cheatsheet.pod
+${P5SITE}/Mojolicious/Guides/CodingGuidelines.pod
+${P5SITE}/Mojolicious/Guides/Cookbook.pod
+${P5SITE}/Mojolicious/Guides/FAQ.pod
+${P5SITE}/Mojolicious/Guides/Growing.pod
+${P5SITE}/Mojolicious/Guides/Rendering.pod
+${P5SITE}/Mojolicious/Guides/Routing.pod
+${P5SITE}/Mojolicious/Lite.pm
+${P5SITE}/Mojolicious/Plugin/
+${P5SITE}/Mojolicious/Plugin.pm
+${P5SITE}/Mojolicious/Plugin/AgentCondition.pm
+${P5SITE}/Mojolicious/Plugin/Charset.pm
+${P5SITE}/Mojolicious/Plugin/Config.pm
+${P5SITE}/Mojolicious/Plugin/DefaultHelpers.pm
+${P5SITE}/Mojolicious/Plugin/EpRenderer.pm
+${P5SITE}/Mojolicious/Plugin/EplRenderer.pm
+${P5SITE}/Mojolicious/Plugin/HeaderCondition.pm
+${P5SITE}/Mojolicious/Plugin/I18n.pm
+${P5SITE}/Mojolicious/Plugin/JsonConfig.pm
+${P5SITE}/Mojolicious/Plugin/PodRenderer.pm
+${P5SITE}/Mojolicious/Plugin/PoweredBy.pm
+${P5SITE}/Mojolicious/Plugin/RequestTimer.pm
+${P5SITE}/Mojolicious/Plugin/TagHelpers.pm
+${P5SITE}/Mojolicious/Plugins.pm
 ${P5SITE}/Mojolicious/Renderer.pm
-${P5SITE}/Mojolicious/Script/
-${P5SITE}/Mojolicious/Script/Daemon.pm
-${P5SITE}/Mojolicious/Script/Generate/
-${P5SITE}/Mojolicious/Script/Generate.pm
-${P5SITE}/Mojolicious/Script/Generate/App.pm
-${P5SITE}/Mojolicious/Script/Mojo.pm
-${P5SITE}/Mojolicious/Script/Test.pm
-${P5SITE}/Mojolicious/Scripts.pm
+${P5SITE}/Mojolicious/Routes/
+${P5SITE}/Mojolicious/Routes.pm
+${P5SITE}/Mojolicious/Routes/Match.pm
+${P5SITE}/Mojolicious/Routes/Pattern.pm
+${P5SITE}/Mojolicious/Sessions.pm
+${P5SITE}/Mojolicious/Static.pm
+${P5SITE}/Mojolicious/Types.pm
+@comment ${P5SITE}/README.pod
 ${P5SITE}/Test/
-${P5SITE}/Test/Mojo/
-${P5SITE}/Test/Mojo/Server.pm
+${P5SITE}/Test/Mojo.pm
+${P5SITE}/ojo.pm
+@man man/man1/hypnotoad.1
+@man man/man1/mojo.1
 @man man/man3p/Mojo.3p
+@man man/man3p/Mojo::Asset.3p
+@man man/man3p/Mojo::Asset::File.3p
+@man man/man3p/Mojo::Asset::Memory.3p
 @man man/man3p/Mojo::Base.3p
-@man man/man3p/Mojo::Buffer.3p
 @man man/man3p/Mojo::ByteStream.3p
+@man man/man3p/Mojo::Cache.3p
 @man man/man3p/Mojo::Client.3p
+@man man/man3p/Mojo::Command.3p
 @man man/man3p/Mojo::Content.3p
 @man man/man3p/Mojo::Content::MultiPart.3p
+@man man/man3p/Mojo::Content::Single.3p
 @man man/man3p/Mojo::Cookie.3p
 @man man/man3p/Mojo::Cookie::Request.3p
 @man man/man3p/Mojo::Cookie::Response.3p
+@man man/man3p/Mojo::CookieJar.3p
+@man man/man3p/Mojo::DOM.3p
 @man man/man3p/Mojo::Date.3p
-@man man/man3p/Mojo::File.3p
-@man man/man3p/Mojo::File::Memory.3p
-@man man/man3p/Mojo::Filter.3p
-@man man/man3p/Mojo::Filter::Chunked.3p
+@man man/man3p/Mojo::Exception.3p
 @man man/man3p/Mojo::Headers.3p
 @man man/man3p/Mojo::HelloWorld.3p
 @man man/man3p/Mojo::Home.3p
+@man man/man3p/Mojo::IOLoop.3p
+@man man/man3p/Mojo::JSON.3p
 @man man/man3p/Mojo::Loader.3p
-@man man/man3p/Mojo::Loader::Exception.3p
 @man man/man3p/Mojo::Log.3p
-@man man/man3p/Mojo::Manual.3p
-@man man/man3p/Mojo::Manual::CodingGuidelines.3p
-@man man/man3p/Mojo::Manual::Cookbook.3p
-@man man/man3p/Mojo::Manual::Deployment.3p
-@man man/man3p/Mojo::Manual::FAQ.3p
-@man man/man3p/Mojo::Manual::GettingStarted.3p
-@man man/man3p/Mojo::Manual::Mojolicious.3p
-@man man/man3p/Mojo::Manual::MojoliciousExample.3p
-@man man/man3p/Mojo::Manual::Transaction.3p
 @man man/man3p/Mojo::Message.3p
 @man man/man3p/Mojo::Message::Request.3p
 @man man/man3p/Mojo::Message::Response.3p
 @man man/man3p/Mojo::Parameters.3p
 @man man/man3p/Mojo::Path.3p
-@man man/man3p/Mojo::Pipeline.3p
-@man man/man3p/Mojo::Script.3p
-@man man/man3p/Mojo::Script::Cgi.3p
-@man man/man3p/Mojo::Script::Daemon.3p
-@man man/man3p/Mojo::Script::DaemonPrefork.3p
-@man man/man3p/Mojo::Script::Fastcgi.3p
-@man man/man3p/Mojo::Script::Generate.3p
-@man man/man3p/Mojo::Script::Generate::App.3p
-@man man/man3p/Mojo::Script::Generate::Makefile.3p
-@man man/man3p/Mojo::Script::Test.3p
-@man man/man3p/Mojo::Scripts.3p
 @man man/man3p/Mojo::Server.3p
 @man man/man3p/Mojo::Server::CGI.3p
 @man man/man3p/Mojo::Server::Daemon.3p
-@man man/man3p/Mojo::Server::Daemon::Prefork.3p
 @man man/man3p/Mojo::Server::FastCGI.3p
-@man man/man3p/Mojo::Stateful.3p
+@man man/man3p/Mojo::Server::Hypnotoad.3p
+@man man/man3p/Mojo::Server::PSGI.3p
 @man man/man3p/Mojo::Template.3p
-@man man/man3p/Mojo::Template::Exception.3p
 @man man/man3p/Mojo::Transaction.3p
+@man man/man3p/Mojo::Transaction::HTTP.3p
+@man man/man3p/Mojo::Transaction::WebSocket.3p
 @man man/man3p/Mojo::URL.3p
 @man man/man3p/Mojo::Upload.3p
-@man man/man3p/MojoX::Context.3p
-@man man/man3p/MojoX::Dispatcher::Routes.3p
-@man man/man3p/MojoX::Dispatcher::Routes::Context.3p
-@man man/man3p/MojoX::Dispatcher::Routes::Controller.3p
-@man man/man3p/MojoX::Dispatcher::Static.3p
-@man man/man3p/MojoX::Renderer.3p
-@man man/man3p/MojoX::Routes.3p
-@man man/man3p/MojoX::Routes::Match.3p
-@man man/man3p/MojoX::Routes::Pattern.3p
-@man man/man3p/MojoX::Types.3p
+@man man/man3p/Mojo::UserAgent.3p
+@man man/man3p/Mojo::Util.3p
 @man man/man3p/Mojolicious.3p
-@man man/man3p/Mojolicious::Context.3p
+@man man/man3p/Mojolicious::Command::Cgi.3p
+@man man/man3p/Mojolicious::Command::Daemon.3p
+@man man/man3p/Mojolicious::Command::Fastcgi.3p
+@man man/man3p/Mojolicious::Command::Generate.3p
+@man man/man3p/Mojolicious::Command::Generate::App.3p
+@man man/man3p/Mojolicious::Command::Generate::Gitignore.3p
+@man man/man3p/Mojolicious::Command::Generate::Hypnotoad.3p
+@man man/man3p/Mojolicious::Command::Generate::LiteApp.3p
+@man man/man3p/Mojolicious::Command::Generate::Makefile.3p
+@man man/man3p/Mojolicious::Command::Get.3p
+@man man/man3p/Mojolicious::Command::Inflate.3p
+@man man/man3p/Mojolicious::Command::Psgi.3p
+@man man/man3p/Mojolicious::Command::Routes.3p
+@man man/man3p/Mojolicious::Command::Test.3p
+@man man/man3p/Mojolicious::Command::Version.3p
+@man man/man3p/Mojolicious::Commands.3p
 @man man/man3p/Mojolicious::Controller.3p
+@man man/man3p/Mojolicious::Guides.3p
+@man man/man3p/Mojolicious::Guides::Cheatsheet.3p
+@man man/man3p/Mojolicious::Guides::CodingGuidelines.3p
+@man man/man3p/Mojolicious::Guides::Cookbook.3p
+@man man/man3p/Mojolicious::Guides::FAQ.3p
+@man man/man3p/Mojolicious::Guides::Growing.3p
+@man man/man3p/Mojolicious::Guides::Rendering.3p
+@man man/man3p/Mojolicious::Guides::Routing.3p
+@man man/man3p/Mojolicious::Lite.3p
+@man man/man3p/Mojolicious::Plugin.3p
+@man man/man3p/Mojolicious::Plugin::AgentCondition.3p
+@man man/man3p/Mojolicious::Plugin::Charset.3p
+@man man/man3p/Mojolicious::Plugin::Config.3p
+@man man/man3p/Mojolicious::Plugin::DefaultHelpers.3p
+@man man/man3p/Mojolicious::Plugin::EpRenderer.3p
+@man man/man3p/Mojolicious::Plugin::EplRenderer.3p
+@man man/man3p/Mojolicious::Plugin::HeaderCondition.3p
+@man man/man3p/Mojolicious::Plugin::I18n.3p
+@man man/man3p/Mojolicious::Plugin::JsonConfig.3p
+@man man/man3p/Mojolicious::Plugin::PodRenderer.3p
+@man man/man3p/Mojolicious::Plugin::PoweredBy.3p
+@man man/man3p/Mojolicious::Plugin::RequestTimer.3p
+@man man/man3p/Mojolicious::Plugin::TagHelpers.3p
+@man man/man3p/Mojolicious::Plugins.3p
 @man man/man3p/Mojolicious::Renderer.3p
-@man man/man3p/Mojolicious::Script::Daemon.3p
-@man man/man3p/Mojolicious::Script::Generate.3p
-@man man/man3p/Mojolicious::Script::Generate::App.3p
-@man man/man3p/Mojolicious::Script::Mojo.3p
-@man man/man3p/Mojolicious::Script::Test.3p
-@man man/man3p/Mojolicious::Scripts.3p
-@man man/man3p/Test::Mojo::Server.3p
+@man man/man3p/Mojolicious::Routes.3p
+@man man/man3p/Mojolicious::Routes::Match.3p
+@man man/man3p/Mojolicious::Routes::Pattern.3p
+@man man/man3p/Mojolicious::Sessions.3p
+@man man/man3p/Mojolicious::Static.3p
+@man man/man3p/Mojolicious::Types.3p
+@comment @man man/man3p/README.3p
+@man man/man3p/Test::Mojo.3p
+@man man/man3p/ojo.3p
