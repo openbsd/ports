@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_libpiano_crypt_c,v 1.1 2011/03/20 16:05:38 dcoppa Exp $
+
+Add missing include
+
+--- src/libpiano/crypt.c.orig	Sun Mar 20 16:34:43 2011
++++ src/libpiano/crypt.c	Sun Mar 20 16:34:59 2011
+@@ -25,6 +25,7 @@ THE SOFTWARE.
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <stdint.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
+ #include "crypt_key_output.h"
