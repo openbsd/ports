@@ -1,11 +1,13 @@
 # $OpenBSD
 
-COMMENT =		Rakudo Perl 6 Compiler
+COMMENT =		Rakudo Perl 6 compiler
 
 PORTNAME =		rakudo
 VERSION =		2011.01
 DISTNAME =		${PORTNAME}-star-${VERSION}
 PKGNAME =		${PORTNAME}-${VERSION}
+
+REVISION =		0
 
 CATEGORIES =		lang perl6
 
