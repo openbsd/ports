@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1072 2011/03/20 19:28:07 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1073 2011/03/21 09:38:53 sthen Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -566,7 +566,7 @@ ERRORS += "Fatal: no flavors for this port."
 
 USE_GROFF ?= No
 .if ${USE_GROFF:L} == "yes"
-BUILD_DEPENDS += textproc/groff>=1.15.4.7p2
+BUILD_DEPENDS += textproc/groff>=1.21
 _PKG_ARGS += -DUSE_GROFF=1
 .endif
 
