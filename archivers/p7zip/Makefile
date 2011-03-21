@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/15 00:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/03/21 12:54:17 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT-main=	file archiver with high compression ratio
 COMMENT-rar=	rar modules for p7zip
 
-V=		9.13
+V=		9.20.1
 DISTNAME=	p7zip_${V}_src_all
 PKGNAME=	p7zip-${V}
 PKGNAME-main=	p7zip-${V}
@@ -36,7 +36,7 @@ RUN_DEPENDS-rar= ${BASE_PKGPATH},-main
 WRKDIST=	${WRKDIR}/p7zip_${V}
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 MAKE_FILE=	makefile
 MAKE_FLAGS=	MYCC="${CC}" MYCXX="${CXX}" \
 		MYCFLAGS="${CFLAGS}" MYCXXFLAGS="${CXXFLAGS}"
@@ -46,7 +46,6 @@ REGRESS_TARGET=	all_test
 
 do-configure:
 	cp ${WRKSRC}/makefile.openbsd ${WRKSRC}/makefile.machine
-	cp ${WRKSRC}/makefile.parallel_jobs ${WRKSRC}/makefile
 
 do-install:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} PREFIX=${TRUEPREFIX} \
