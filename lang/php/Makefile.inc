@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.8 2011/03/15 19:49:42 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.9 2011/03/21 18:29:07 ajacoutot Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -311,6 +311,8 @@ WANTLIB-main=		c crypto ssl z pthread gssapi iconv krb5 xml2>=8 \
 			intl m
 WANTLIB-fastcgi=	${WANTLIB-main}
 LIB_DEPENDS-main=	textproc/libxml
+RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
+			mail/femail,-chroot
 LIB_DEPENDS-fastcgi=	${LIB_DEPENDS-main}
 
 .if ${FLAVOR:L:Mno_suhosin}
