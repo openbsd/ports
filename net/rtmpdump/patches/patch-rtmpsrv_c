@@ -1,0 +1,21 @@
+$OpenBSD: patch-rtmpsrv_c,v 1.1 2011/03/21 09:46:31 sthen Exp $
+--- rtmpsrv.c.orig	Wed Jun 30 20:58:35 2010
++++ rtmpsrv.c	Sun Mar 20 19:11:50 2011
+@@ -266,7 +266,7 @@ static int
+ SendPlayStart(RTMP *r)
+ {
+   RTMPPacket packet;
+-  char pbuf[384], *pend = pbuf+sizeof(pbuf);
++  char pbuf[512], *pend = pbuf+sizeof(pbuf);
+ 
+   packet.m_nChannel = 0x03;     // control channel (invoke)
+   packet.m_headerType = 1; /* RTMP_PACKET_SIZE_MEDIUM; */
+@@ -298,7 +298,7 @@ static int
+ SendPlayStop(RTMP *r)
+ {
+   RTMPPacket packet;
+-  char pbuf[384], *pend = pbuf+sizeof(pbuf);
++  char pbuf[512], *pend = pbuf+sizeof(pbuf);
+ 
+   packet.m_nChannel = 0x03;     // control channel (invoke)
+   packet.m_headerType = 1; /* RTMP_PACKET_SIZE_MEDIUM; */

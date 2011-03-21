@@ -1,0 +1,17 @@
+$OpenBSD: patch-librtmp_librtmp_pc_in,v 1.1 2011/03/21 09:46:31 sthen Exp $
+--- librtmp/librtmp.pc.in.orig	Wed Jun 30 20:58:34 2010
++++ librtmp/librtmp.pc.in	Sun Mar 20 19:11:50 2011
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
++libdir=@libdir@
+ incdir=${prefix}/include
+ 
+ Name: librtmp
+@@ -9,4 +9,5 @@ Version: @VERSION@
+ Requires: @CRYPTO_REQ@
+ URL: http://rtmpdump.mplayerhq.hu
+ Libs: -L${libdir} -lrtmp -lz
++Libs.private: @PRIVATE_LIBS@
+ Cflags: -I${incdir}

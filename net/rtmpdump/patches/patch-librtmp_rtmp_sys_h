@@ -1,0 +1,15 @@
+$OpenBSD: patch-librtmp_rtmp_sys_h,v 1.1 2011/03/21 09:46:31 sthen Exp $
+--- librtmp/rtmp_sys.h.orig	Mon Mar 21 09:33:05 2011
++++ librtmp/rtmp_sys.h	Mon Mar 21 09:33:23 2011
+@@ -49,10 +49,10 @@
+ #include <sys/socket.h>
+ #include <sys/times.h>
+ #include <netdb.h>
+-#include <arpa/inet.h>
+ #include <unistd.h>
+ #include <netinet/in.h>
+ #include <netinet/tcp.h>
++#include <arpa/inet.h>
+ #define GetSockError()	errno
+ #define SetSockError(e)	errno = e
+ #undef closesocket

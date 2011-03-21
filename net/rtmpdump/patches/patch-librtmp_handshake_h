@@ -1,0 +1,16 @@
+$OpenBSD: patch-librtmp_handshake_h,v 1.1 2011/03/21 09:46:31 sthen Exp $
+--- librtmp/handshake.h.orig	Wed Jun 30 20:58:35 2010
++++ librtmp/handshake.h	Sun Mar 20 19:11:50 2011
+@@ -400,8 +400,10 @@ HandShake(RTMP * r, int FP9HandShake)
+       /* set version to at least 9.0.115.0 */
+       if (encrypted)
+ 	{
+-	  clientsig[4] = 128;
+-	  clientsig[6] = 3;
++/* 	  clientsig[4] = 128;
++	  clientsig[6] = 3; */
++	  clientsig[4] = 0x7c;
++	  clientsig[6] = 0x2;
+ 	}
+       else
+         {

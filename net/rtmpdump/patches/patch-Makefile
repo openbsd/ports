@@ -1,0 +1,81 @@
+$OpenBSD: patch-Makefile,v 1.8 2011/03/21 09:46:31 sthen Exp $
+--- Makefile.orig	Wed Jun 30 20:58:35 2010
++++ Makefile	Sun Mar 20 19:11:50 2011
+@@ -11,9 +11,10 @@ SYS=posix
+ CRYPTO=OPENSSL
+ #CRYPTO=POLARSSL
+ #CRYPTO=GNUTLS
+-LIB_GNUTLS=-lgnutls -lgcrypt
+-LIB_OPENSSL=-lssl -lcrypto
+-LIB_POLARSSL=-lpolarssl
++LIBZ=-lz
++LIB_GNUTLS=-lgnutls -lgcrypt $(LIBZ)
++LIB_OPENSSL=-lssl -lcrypto $(LIBZ)
++LIB_POLARSSL=-lpolarssl $(LIBZ)
+ CRYPTO_LIB=$(LIB_$(CRYPTO))
+ DEF_=-DNO_CRYPTO
+ CRYPTO_DEF=$(DEF_$(CRYPTO))
+@@ -32,10 +33,12 @@ SBINDIR=$(DESTDIR)$(sbindir)
+ MANDIR=$(DESTDIR)$(mandir)
+ 
+ LIBS_posix=
++LIBS_darwin=
+ LIBS_mingw=-lws2_32 -lwinmm -lgdi32
+-LIBS=$(CRYPTO_LIB) -lz $(LIBS_$(SYS)) $(XLIBS)
++LIBS=-Llibrtmp -lrtmp $(CRYPTO_LIB) $(LIBS_$(SYS)) $(XLIBS)
+ 
+ THREADLIB_posix=-lpthread
++THREADLIB_darwin=-lpthread
+ THREADLIB_mingw=
+ THREADLIB=$(THREADLIB_$(SYS))
+ SLIBS=$(THREADLIB) $(LIBS)
+@@ -44,14 +47,17 @@ LIBRTMP=librtmp/librtmp.a
+ INCRTMP=librtmp/rtmp_sys.h librtmp/rtmp.h librtmp/log.h librtmp/amf.h
+ 
+ EXT_posix=
++EXT_darwin=
+ EXT_mingw=.exe
+ EXT=$(EXT_$(SYS))
+ 
+-all:	$(LIBRTMP) progs
++PROGS=rtmpdump rtmpgw rtmpsrv rtmpsuck
+ 
+-progs:	rtmpdump rtmpgw rtmpsrv rtmpsuck
++all:	$(LIBRTMP) $(PROGS)
+ 
+-install:	progs
++$(PROGS): $(LIBRTMP)
++
++install:	$(PROGS)
+ 	-mkdir -p $(BINDIR) $(SBINDIR) $(MANDIR)/man1 $(MANDIR)/man8
+ 	cp rtmpdump$(EXT) $(BINDIR)
+ 	cp rtmpgw$(EXT) rtmpsrv$(EXT) rtmpsuck$(EXT) $(SBINDIR)
+@@ -68,20 +74,17 @@ FORCE:
+ $(LIBRTMP): FORCE
+ 	@cd librtmp; $(MAKE) all
+ 
+-# note: $^ is GNU Make's equivalent to BSD $>
+-# we use both since either make will ignore the one it doesn't recognize
++rtmpdump: rtmpdump.o
++	$(CC) $(LDFLAGS) -o $@$(EXT) $@.o $(LIBS)
+ 
+-rtmpdump: rtmpdump.o $(LIBRTMP)
+-	$(CC) $(LDFLAGS) $^ $> -o $@$(EXT) $(LIBS)
++rtmpsrv: rtmpsrv.o thread.o
++	$(CC) $(LDFLAGS) -o $@$(EXT) $@.o thread.o $(SLIBS)
+ 
+-rtmpsrv: rtmpsrv.o thread.o $(LIBRTMP)
+-	$(CC) $(LDFLAGS) $^ $> -o $@$(EXT) $(SLIBS)
++rtmpsuck: rtmpsuck.o thread.o
++	$(CC) $(LDFLAGS) -o $@$(EXT) $@.o thread.o $(SLIBS)
+ 
+-rtmpsuck: rtmpsuck.o thread.o $(LIBRTMP)
+-	$(CC) $(LDFLAGS) $^ $> -o $@$(EXT) $(SLIBS)
+-
+-rtmpgw: rtmpgw.o thread.o $(LIBRTMP)
+-	$(CC) $(LDFLAGS) $^ $> -o $@$(EXT) $(SLIBS)
++rtmpgw: rtmpgw.o thread.o
++	$(CC) $(LDFLAGS) -o $@$(EXT) $@.o thread.o $(SLIBS)
+ 
+ rtmpgw.o: rtmpgw.c $(INCRTMP) Makefile
+ rtmpdump.o: rtmpdump.c $(INCRTMP) Makefile

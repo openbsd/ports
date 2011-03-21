@@ -1,0 +1,105 @@
+$OpenBSD: patch-librtmp_rtmp_c,v 1.1 2011/03/21 09:46:31 sthen Exp $
+--- librtmp/rtmp.c.orig	Wed Jun 30 20:58:35 2010
++++ librtmp/rtmp.c	Sun Mar 20 19:11:50 2011
+@@ -877,7 +877,13 @@ RTMP_Connect1(RTMP *r, RTMPPacket *cp)
+       r->m_clientID.av_val = NULL;
+       r->m_clientID.av_len = 0;
+       HTTP_Post(r, RTMPT_OPEN, "", 1);
+-      HTTP_read(r, 1);
++      if (HTTP_read(r, 1) != 0)
++	{
++	  r->m_msgCounter = 0;
++	  RTMP_Log(RTMP_LOGDEBUG, "%s, Could not connect for handshake", __FUNCTION__);
++	  RTMP_Close(r);
++	  return 0;
++	}
+       r->m_msgCounter = 0;
+     }
+   RTMP_Log(RTMP_LOGDEBUG, "%s, ... connected, handshaking", __FUNCTION__);
+@@ -1019,6 +1025,9 @@ RTMP_ToggleStream(RTMP *r)
+ 
+   if (!r->m_pausing)
+     {
++      if (RTMP_IsTimedout(r) && r->m_read.status == RTMP_READ_EOF)
++        r->m_read.status = 0;
++
+       res = RTMP_SendPause(r, TRUE, r->m_pauseStamp);
+       if (!res)
+ 	return res;
+@@ -1281,7 +1290,12 @@ ReadN(RTMP *r, char *buffer, int n)
+ 		      return 0;
+ 		    }
+ 		}
+-	      HTTP_read(r, 0);
++	      if (HTTP_read(r, 0) == -1)
++		{
++		  RTMP_Log(RTMP_LOGDEBUG, "%s, No valid HTTP response found", __FUNCTION__);
++		  RTMP_Close(r);
++		  return 0;
++		}
+ 	    }
+ 	  if (r->m_resplen && !r->m_sb.sb_size)
+ 	    RTMPSockBuf_Fill(&r->m_sb);
+@@ -2789,11 +2803,17 @@ HandleCtrl(RTMP *r, const RTMPPacket *packet)
+   if (nType == 0x1A)
+     {
+       RTMP_Log(RTMP_LOGDEBUG, "%s, SWFVerification ping received: ", __FUNCTION__);
++      if (packet->m_nBodySize > 2 && packet->m_body[2] > 0x01)
++	{
++	  RTMP_Log(RTMP_LOGERROR,
++            "%s: SWFVerification Type %d request not supported! Patches welcome...",
++	    __FUNCTION__, packet->m_body[2]);
++	}
+ #ifdef CRYPTO
+       /*RTMP_LogHex(packet.m_body, packet.m_nBodySize); */
+ 
+       /* respond with HMAC SHA256 of decompressed SWF, key is the 30byte player key, also the last 30 bytes of the server handshake are applied */
+-      if (r->Link.SWFSize)
++      else if (r->Link.SWFSize)
+ 	{
+ 	  RTMP_SendCtrl(r, 0x1B, 0, 0);
+ 	}
+@@ -3386,10 +3406,10 @@ RTMP_Close(RTMP *r)
+     {
+       if (r->m_stream_id > 0)
+         {
+-          if ((r->Link.protocol & RTMP_FEATURE_WRITE))
+-	    SendFCUnpublish(r);
+ 	  i = r->m_stream_id;
+ 	  r->m_stream_id = 0;
++          if ((r->Link.protocol & RTMP_FEATURE_WRITE))
++	    SendFCUnpublish(r);
+ 	  SendDeleteStream(r, i);
+ 	}
+       if (r->m_clientID.av_val)
+@@ -3661,14 +3681,18 @@ HTTP_read(RTMP *r, int fill)
+   if (fill)
+     RTMPSockBuf_Fill(&r->m_sb);
+   if (r->m_sb.sb_size < 144)
+-    return -1;
++    return -2;
+   if (strncmp(r->m_sb.sb_start, "HTTP/1.1 200 ", 13))
+     return -1;
+-  ptr = strstr(r->m_sb.sb_start, "Content-Length:");
++  ptr = r->m_sb.sb_start + sizeof("HTTP/1.1 200");
++  while ((ptr = strstr(ptr, "Content-"))) {
++    if (!strncasecmp(ptr+8, "length:", 7)) break;
++    ptr += 8;
++  }
+   if (!ptr)
+     return -1;
+   hlen = atoi(ptr+16);
+-  ptr = strstr(ptr, "\r\n\r\n");
++  ptr = strstr(ptr+16, "\r\n\r\n");
+   if (!ptr)
+     return -1;
+   ptr += 4;
+@@ -4070,7 +4094,7 @@ Read_1_Packet(RTMP *r, char *buf, unsigned int buflen)
+ 	  /* grab first timestamp and see if it needs fixing */
+ 	  nTimeStamp = AMF_DecodeInt24(packetBody + 4);
+ 	  nTimeStamp |= (packetBody[7] << 24);
+-	  delta = packet.m_nTimeStamp - nTimeStamp;
++	  delta = packet.m_nTimeStamp - nTimeStamp + r->m_read.nResumeTS;
+ 
+ 	  while (pos + 11 < nPacketLen)
+ 	    {

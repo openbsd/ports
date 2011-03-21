@@ -1,0 +1,12 @@
+$OpenBSD: patch-rtmpdump_c,v 1.1 2011/03/21 09:46:31 sthen Exp $
+--- rtmpdump.c.orig	Wed Jun 30 20:58:35 2010
++++ rtmpdump.c	Sun Mar 20 19:11:50 2011
+@@ -583,7 +583,7 @@ Download(RTMP * rtmp,		// connected RTMP object
+ #endif
+ 
+     }
+-  while (!RTMP_ctrlC && nRead > -1 && RTMP_IsConnected(rtmp));
++  while (!RTMP_ctrlC && nRead > -1 && RTMP_IsConnected(rtmp) && !RTMP_IsTimedout(rtmp));
+   free(buffer);
+   if (nRead < 0)
+     nRead = rtmp->m_read.status;
