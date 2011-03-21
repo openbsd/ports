@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/03/15 15:43:53 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2011/03/21 18:41:00 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	multi-platform graphical toolkit
 COMMENT-docs=	gtk+3 documentation
 COMMENT-cups=	gtk+3 CUPS print backend
 
-V=		3.0.3
+V=		3.0.4
 DISTNAME=	gtk+-${V}
 
 PKGNAME-main=	gtk+3-${V}
@@ -15,8 +15,8 @@ PKGNAME-cups=	gtk+3-cups-${V}
 
 CATEGORIES=	x11 devel
 
-SHARED_LIBS +=  gdk-3                0.0      # 0.2
-SHARED_LIBS +=  gtk-3                0.0      # 0.2
+SHARED_LIBS +=  gdk-3                0.0      # 0.4
+SHARED_LIBS +=  gtk-3                0.0      # 0.4
 SHARED_LIBS +=  gailutil-3           0.0      # 0.0
 
 HOMEPAGE=	http://www.gtk.org/
