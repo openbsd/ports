@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# $OpenBSD: kdm.rc,v 1.1 2011/03/21 00:58:19 ian Exp $
+
+daemon="${TRUEPREFIX}/bin/kdm"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_start() {
+	(sleep 5; ${rcexec} "${daemon} ${daemon_flags}")&
+}
+
+rc_cmd $1

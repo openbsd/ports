@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2010/07/08 21:28:49 espie Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2011/03/21 00:58:19 ian Exp $
 @conflict kdeartwork-<=3.4
 @conflict kdeedu-<3.4
 @pkgpath x11/kde/base3
@@ -4816,3 +4816,4 @@ share/wallpapers/triplegears.jpg.desktop
 @extra share/config/kdm/kdmrc
 @extra share/config/kdm/README
 @extra share/config/kdm/
+@rcscript ${RCDIR}/kdm
