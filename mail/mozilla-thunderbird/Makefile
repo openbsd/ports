@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.119 2011/03/10 14:34:17 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.120 2011/03/21 08:45:37 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
+# Don't forget to update productivity/sunbird if patches changes.
 
 MOZILLA_VERSION =	3.1.8
 MOZILLA_BRANCH =	1.9.2
