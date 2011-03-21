@@ -6,4 +6,3 @@ issuing the following command:
 To completely deinstall zarafa-webaccess you need to perform the
 following steps as root:
     # rm -f /var/www/conf/modules/zarafa.conf
-    # rm -f /var/www/htdocs/zarafa
