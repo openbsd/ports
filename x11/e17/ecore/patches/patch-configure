@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.7 2011/03/21 08:04:40 jasper Exp $
+
+ - Force disable Cocoa checks, which will later cause the build to fail
+    if gnustep-gui has been installed.
+
+--- configure.orig	Mon Mar 21 08:41:30 2011
++++ configure	Mon Mar 21 08:42:16 2011
+@@ -23549,7 +23549,7 @@ fi
+ 
+ cocoa_ldflags="";
+ have_cocoa="no"
+-
++if false; then # Disable Cocoa checks
+     if test "x${have_gnu_objc}" = "xyes" ; then
+        ac_ext=m
+ ac_cpp='$OBJCPP $CPPFLAGS'
+@@ -23708,7 +23708,7 @@ ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+     fi
+-
++fi
+ 
+ 
+ want_epoll=yes
