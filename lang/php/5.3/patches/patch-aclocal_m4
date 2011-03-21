@@ -1,5 +1,5 @@
---- aclocal.m4.orig	Wed Dec  8 22:46:54 2010
-+++ aclocal.m4	Wed Jan  5 10:02:09 2011
+--- aclocal.m4.orig	Wed Jan  5 11:41:34 2011
++++ aclocal.m4	Sat Mar 12 13:09:46 2011
 @@ -194,7 +194,7 @@ dnl the path is interpreted relative to the top build-
  dnl
  dnl which array to append to?
@@ -52,6 +52,15 @@
        PHP_ADD_INCLUDE($PHP_KERBEROS_DIR/include)
      fi
    fi
+@@ -2330,7 +2315,7 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
+       AC_MSG_ERROR([OpenSSL version 0.9.6 or greater required.])
+     fi
+ 
+-    if test -n "$OPENSSL_LIBS" && test -n "$OPENSSL_INCS"; then
++    if test -n "$OPENSSL_LIBS"; then
+       PHP_EVAL_LIBLINE($OPENSSL_LIBS, $1)
+       PHP_EVAL_INCLINE($OPENSSL_INCS)
+     fi
 @@ -4324,7 +4309,7 @@ bsdi[[45]]*)
    need_version=no
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}$major $libname${shared_ext}'

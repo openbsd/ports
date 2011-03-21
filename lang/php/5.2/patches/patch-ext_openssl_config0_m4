@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_openssl_config0_m4,v 1.1 2011/03/21 19:50:18 jasper Exp $
+--- ext/openssl/config0.m4.orig	Sat Mar 12 12:58:08 2011
++++ ext/openssl/config0.m4	Sat Mar 12 12:58:50 2011
+@@ -16,7 +16,7 @@ if test "$PHP_OPENSSL" != "no"; then
+     PHP_SETUP_KERBEROS(OPENSSL_SHARED_LIBADD)
+   fi
+ 
+-  AC_CHECK_LIB(ssl, DSA_get_default_method, AC_DEFINE(HAVE_DSA_DEFAULT_METHOD, 1, [OpenSSL 0.9.7 or later]))
++  AC_CHECK_LIB(ssl, DSA_get_default_method, AC_DEFINE(HAVE_DSA_DEFAULT_METHOD, 1, [OpenSSL 0.9.7 or later]),, [-lcrypto])
+ 
+   PHP_SETUP_OPENSSL(OPENSSL_SHARED_LIBADD, 
+   [
