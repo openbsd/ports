@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_redis_c,v 1.1 2011/03/21 19:58:28 simon Exp $
+--- src/redis.c.orig	Thu Mar 10 20:32:37 2011
++++ src/redis.c	Thu Mar 10 20:32:47 2011
+@@ -41,6 +41,7 @@
+ #include <assert.h>
+ #include <ctype.h>
+ #include <stdarg.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>

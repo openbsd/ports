@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_debug_c,v 1.1 2011/03/21 19:58:28 simon Exp $
+--- src/debug.c.orig	Thu Mar 10 20:33:48 2011
++++ src/debug.c	Thu Mar 10 20:34:00 2011
+@@ -1,6 +1,7 @@
+ #include "redis.h"
+ #include "sha1.h"   /* SHA1 is used for DEBUG DIGEST */
+ 
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
+ /* ================================= Debugging ============================== */

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_rdb_c,v 1.1 2011/03/21 19:58:28 simon Exp $
+--- src/rdb.c.orig	Thu Mar 10 20:33:22 2011
++++ src/rdb.c	Thu Mar 10 20:33:31 2011
+@@ -6,6 +6,7 @@
+ #include <sys/time.h>
+ #include <sys/resource.h>
+ #include <sys/wait.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <sys/stat.h>
+ 

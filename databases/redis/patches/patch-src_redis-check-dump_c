@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_redis-check-dump_c,v 1.1 2011/03/21 19:58:28 simon Exp $
+--- src/redis-check-dump.c.orig	Thu Mar 10 20:31:57 2011
++++ src/redis-check-dump.c	Thu Mar 10 20:32:09 2011
+@@ -5,6 +5,7 @@
+ #include <sys/stat.h>
+ #include <sys/mman.h>
+ #include <string.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <stdint.h>
+ #include <limits.h>

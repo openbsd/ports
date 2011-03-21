@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/03/16 14:19:38 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/03/21 19:58:28 simon Exp $
 @bin bin/redis-benchmark
 @bin bin/redis-check-aof
 @bin bin/redis-check-dump
@@ -12,6 +12,7 @@ share/doc/redis/Benchmarks.html
 share/doc/redis/BgrewriteaofCommand.html
 share/doc/redis/BgsaveCommand.html
 share/doc/redis/BlpopCommand.html
+share/doc/redis/BrpoplpushCommand.html
 share/doc/redis/CommandReference.html
 share/doc/redis/Comparisons.html
 share/doc/redis/ConfigCommand.html
@@ -32,6 +33,7 @@ share/doc/redis/FlushdbCommand.html
 share/doc/redis/FromSqlToDataStructures.html
 share/doc/redis/GenericCommandsSidebar.html
 share/doc/redis/GetCommand.html
+share/doc/redis/GetbitCommand.html
 share/doc/redis/GetsetCommand.html
 share/doc/redis/HackingStrings.html
 share/doc/redis/HashCommandsSidebar.html
@@ -42,6 +44,7 @@ share/doc/redis/HgetCommand.html
 share/doc/redis/HgetallCommand.html
 share/doc/redis/HincrbyCommand.html
 share/doc/redis/HlenCommand.html
+share/doc/redis/HmgetCommand.html
 share/doc/redis/HmsetCommand.html
 share/doc/redis/HsetCommand.html
 share/doc/redis/HsetnxCommand.html
@@ -64,6 +67,7 @@ share/doc/redis/MonitorCommand.html
 share/doc/redis/MoveCommand.html
 share/doc/redis/MsetCommand.html
 share/doc/redis/MultiExecCommand.html
+share/doc/redis/NonexistentCommands.html
 share/doc/redis/ObjectHashMappers.html
 share/doc/redis/Pipelining.html
 share/doc/redis/ProgrammingExamples.html
@@ -76,10 +80,15 @@ share/doc/redis/RandomkeyCommand.html
 share/doc/redis/Redis0100ChangeLog.html
 share/doc/redis/Redis0900ChangeLog.html
 share/doc/redis/RedisBigData.html
+share/doc/redis/RedisCLI.html
 share/doc/redis/RedisEventLibrary.html
 share/doc/redis/RedisGuides.html
 share/doc/redis/RedisInternals.html
+share/doc/redis/RedisPipelining.html
+share/doc/redis/RedisStatus.html
 share/doc/redis/Redis_1_2_0_Changelog.html
+share/doc/redis/Redis_2_0_0_Changelog.html
+share/doc/redis/Redis_2_0_Whats_new.html
 share/doc/redis/RenameCommand.html
 share/doc/redis/RenamenxCommand.html
 share/doc/redis/ReplicationHowto.html
@@ -95,8 +104,10 @@ share/doc/redis/SdiffstoreCommand.html
 share/doc/redis/SelectCommand.html
 share/doc/redis/SetCommand.html
 share/doc/redis/SetCommandsSidebar.html
+share/doc/redis/SetbitCommand.html
 share/doc/redis/SetexCommand.html
 share/doc/redis/SetnxCommand.html
+share/doc/redis/SetrangeCommand.html
 share/doc/redis/Sets.html
 share/doc/redis/ShutdownCommand.html
 share/doc/redis/SideBar.html
@@ -116,6 +127,7 @@ share/doc/redis/SrandmemberCommand.html
 share/doc/redis/SremCommand.html
 share/doc/redis/StringCommandsSidebar.html
 share/doc/redis/Strings.html
+share/doc/redis/StrlenCommand.html
 share/doc/redis/SubstrCommand.html
 share/doc/redis/SunionCommand.html
 share/doc/redis/SunionstoreCommand.html
