@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.903 2011/03/16 14:24:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.904 2011/03/21 22:46:16 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -759,6 +759,7 @@
      SUBDIR += p5-Test-Distribution
      SUBDIR += p5-Test-Exception
      SUBDIR += p5-Test-Expect
+     SUBDIR += p5-Test-Fatal
      SUBDIR += p5-Test-File
      SUBDIR += p5-Test-File-Contents
      SUBDIR += p5-Test-Group
