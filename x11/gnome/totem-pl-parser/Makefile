@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2011/03/07 19:34:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2011/03/21 15:02:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GObject-based parsing library
 
 GNOME_PROJECT=	totem-pl-parser
-GNOME_VERSION=	2.32.3
+GNOME_VERSION=	2.32.4
 
 SHARED_LIBS +=	totem-plparser		3.0 # .17.0
 SHARED_LIBS +=	totem-plparser-mini	3.0 # .17.0
@@ -37,7 +37,8 @@ CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--disable-introspection
+		--disable-introspection \
+		--disable-quvi
 
 FAKE_FLAGS=	itlocaledir=${PREFIX}/share/locale/
 
