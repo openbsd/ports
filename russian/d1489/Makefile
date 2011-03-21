@@ -1,13 +1,12 @@
 # $FreeBSD: ports/russian/d1489/Makefile,v 1.12 1999/08/31 06:49:57 mharo Exp $
-# $OpenBSD: Makefile,v 1.12 2010/07/24 17:36:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/03/21 20:02:41 shadchin Exp $
 
 COMMENT=	cp866<>koi8-r & cp1251<>koi8-r decoders and font converter
 
-DISTNAME=	d1489-1.4
-REVISION=	0
+DISTNAME=	d1489-1.5.1
 CATEGORIES=	russian
 
-MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/convert/char/
+MASTER_SITES=	http://koi8.pp.ru/dist/
 EXTRACT_SUFX=	.tgz
 
 # MIT
@@ -16,9 +15,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c 
+WANTLIB=		c
 
 NO_REGRESS=	Yes
+
+MAKE_FLAGS=	LOCAL_CFLAGS=-DHAVE_MKSTEMP LOCAL_LDFLAGS=""
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/todos ${PREFIX}/bin

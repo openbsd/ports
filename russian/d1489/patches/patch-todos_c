@@ -1,6 +1,6 @@
-$OpenBSD: patch-todos_c,v 1.1 2007/10/26 21:41:29 jasper Exp $
---- todos.c.orig	Tue Dec 22 00:50:00 1998
-+++ todos.c	Fri Oct 26 23:40:11 2007
+$OpenBSD: patch-todos_c,v 1.2 2011/03/21 20:02:41 shadchin Exp $
+--- todos.c.orig	Fri Jan  3 01:17:18 2003
++++ todos.c	Sun Mar 20 22:24:09 2011
 @@ -33,6 +33,7 @@
  #include <stdio.h>
  #include <string.h>
@@ -27,7 +27,7 @@ $OpenBSD: patch-todos_c,v 1.1 2007/10/26 21:41:29 jasper Exp $
  char tmp_pat[] = "$1489_XXXXXX";
  char tmp_name[256], out_name[256];
  char **table;
-@@ -251,10 +254,21 @@ usage:
+@@ -258,10 +261,21 @@ usage:
  	}
  
  	sprintf(tmp_name, "%s%s%s", outdir, *outdir ? "/" : "", tmp_pat);
@@ -49,7 +49,7 @@ $OpenBSD: patch-todos_c,v 1.1 2007/10/26 21:41:29 jasper Exp $
  
  	while (ac-- > 1) {
  		srcn = av[1];
-@@ -267,10 +281,12 @@ usage:
+@@ -274,10 +288,12 @@ usage:
  			perror(srcn);
  			goto usage;
  		}
