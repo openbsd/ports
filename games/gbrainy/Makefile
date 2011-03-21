@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2011/01/19 10:27:43 kevlo Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/21 06:24:20 ajacoutot Exp $
 
 COMMENT=	brain teaser game
 
-DISTNAME=	gbrainy-1.61
+DISTNAME=	gbrainy-1.63
 
 CATEGORIES=	games
 
@@ -19,20 +19,23 @@ PERMIT_DISTFILES_CDROM=	Yes
 MASTER_SITES=	http://gent.softcatala.org/jmas/gbrainy/
 
 MODULES=	textproc/intltool \
-		lang/mono
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/mono-addins \
-		shells/bash \
-		x11/gnome/doc-utils \
-		x11/gnome/librsvg \
-		x11/gnome/mono-gnome \
-		x11/gnome/yelp
+		lang/mono \
+		x11/gnome
 
-USE_GMAKE=	Yes
+BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	devel/mono-addins \
+		shells/bash \
+		x11/gnome/librsvg \
+		x11/gnome/mono-gnome
+
+DESKTOP_FILES=	Yes
+MODGNOME_HELP_FILES= Yes
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-tests
 
 DLLMAP_FILES=	src/Clients/Classical/gbrainy.exe.config.in \
 		src/Core/gbrainy.Core.dll.config.in
