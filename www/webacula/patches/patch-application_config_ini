@@ -1,0 +1,38 @@
+$OpenBSD: patch-application_config_ini,v 1.1.1.1 2011/03/21 18:01:09 ajacoutot Exp $
+--- application/config.ini.orig	Mon Mar 21 15:13:26 2011
++++ application/config.ini	Mon Mar 21 15:15:41 2011
+@@ -10,20 +10,20 @@ db.config.host = localhost
+ db.config.username = root
+ db.config.password =
+ db.config.dbname = bacula
+-;; for Sqlite db.config.dbname = "/full patch/bacula.db"
++;; for Sqlite db.config.dbname = "/full_path_to/bacula.db"
+ 
+ ;; see http://www.php.net/timezones
+ ; def.timezone = "UTC"
+-def.timezone = "Europe/Minsk"
++def.timezone = "Europe/London"
+ 
+ ;; if locale undefined, webacula use autodetect
+ ;; avaliable locales : en, de, fr, pt_BR, ru, it, es
+ ; locale = "en"
+ 
+ ;; see INSTALL file for details
+-bacula.sudo = "/usr/bin/sudo"
+-bacula.bconsole = "/sbin/bconsole"
+-bacula.bconsolecmd = "-n -c /etc/bacula/bconsole.conf"
++bacula.sudo = ""
++bacula.bconsole = "${LOCALBASE}/sbin/bconsole"
++bacula.bconsolecmd = "-n -c ${SYSCONFDIR}/bacula/bconsole.conf"
+ 
+ ;; Directory "tmpdir" which will be saved the file, which contains a list of files to restore.
+ ;; This directory and files in it should be available to read the Director service.
+@@ -73,7 +73,7 @@ db.config.host = localhost
+ db.config.username = wbuser
+ db.config.password = "wbpass"
+ db.config.dbname = webacula
+-;; for Sqlite db.config.dbname = "/var/lib/sqlite/webacula.db"
++;; for Sqlite db.config.dbname = "/var/db/sqlite/webacula.db"
+ 
+ email.to_admin = root@localhost
+ email.from = webacula@localhost

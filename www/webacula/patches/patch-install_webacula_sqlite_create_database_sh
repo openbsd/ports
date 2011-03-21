@@ -1,0 +1,19 @@
+$OpenBSD: patch-install_webacula_sqlite_create_database_sh,v 1.1.1.1 2011/03/21 18:01:09 ajacoutot Exp $
+--- install/webacula_sqlite_create_database.sh.orig	Mon Jan 24 11:58:16 2011
++++ install/webacula_sqlite_create_database.sh	Mon Mar 21 16:53:52 2011
+@@ -1,6 +1,6 @@
+ #!/bin/sh
+ 
+-db_name="/var/lib/sqlite/webacula.db"
++db_name="/var/www/var/db/sqlite/webacula.db"
+ 
+ if [ $# -eq 1 ]
+ then
+@@ -64,6 +64,6 @@ CREATE TABLE wbtmptablelist (
+ END-OF-DATA
+ 
+ # access by apache
+-chgrp apache ${db_name}
++chgrp www ${db_name}
+ chmod g+rw ${db_name}
+ exit 0

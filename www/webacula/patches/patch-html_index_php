@@ -1,0 +1,11 @@
+$OpenBSD: patch-html_index_php,v 1.1.1.1 2011/03/21 18:01:09 ajacoutot Exp $
+--- html/index.php.orig	Mon Mar 21 14:34:46 2011
++++ html/index.php	Mon Mar 21 14:35:23 2011
+@@ -34,6 +34,7 @@ if ( APPLICATION_ENV == 'development') {
+ // PATH_SEPARATOR  ":"
+ set_include_path('.' . PATH_SEPARATOR . '../library' . PATH_SEPARATOR . '../application/models/' .
+     PATH_SEPARATOR . '../application/forms/' .
++    PATH_SEPARATOR . '/zendframework/' .
+     PATH_SEPARATOR . get_include_path() );
+ 
+ include "Zend/Loader.php";

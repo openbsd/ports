@@ -1,0 +1,115 @@
+$OpenBSD: README,v 1.1.1.1 2011/03/21 18:01:09 ajacoutot Exp $
+
+Running webacula under OpenBSD
+==============================
+
+Webacula has been installed into ${INSTDIR}
+
+Database creation
+-----------------
+
+Depending on the database you wish to access, you'll need the
+corresponding PHP module.  e.g:
+    for PostreSQL you'll need to install php5-pdo_pgsql
+    for MySQL you'll need to install php5-pdo_mysql
+    for SQLite3 you'll need to install php5-pdo_sqlite
+
+Note that this is needed for both the webacula DB itself and the one
+used by bacula(8) so you may need two different modules if using
+different RDBMS.
+
+To setup the webacula DB, run the following commands according to the
+RDBMS that webacula will use. While it is not advised to modify
+"db_name" you may want to ajust "db_user", "db_password" and "host" in
+these scripts.
+Also note that the scripts can take arguments:
+    e.g. ./webacula_postgresql_create_database.sh -U postgres
+
+* MySQL
+    # cd ${INSTDIR}/install && ./webacula_mysql_create_database.sh
+    # cd ${INSTDIR}/install && ./webacula_mysql_make_tables.sh
+
+* PostgreSQL
+    # cd ${INSTDIR}/install && ./webacula_postgresql_create_database.sh
+    # cd ${INSTDIR}/install && ./webacula_postgresql_make_tables.sh
+
+* SQLite3
+    # mkdir -p /var/www/var/db/sqlite/
+    # cd ${INSTDIR}/install && ./webacula_sqlite_create_database.sh
+    # chown -R www /var/www/var/db/sqlite
+    # chmod 0700 /var/www/var/db/sqlite
+    # chmod 0600 /var/www/var/db/sqlite/webacula.db
+
+Running Webacula under chroot(8)ed Apache
+-----------------------------------------
+
+Under OpenBSD, the default Apache runs chrooted under /var/www.
+Since Webacula needs to access the bconsole(8) binary we will need to
+copy it in the chroot along with the required libs and configuration.
+To do so, run the following command:
+    # ${INSTDIR}/webacula-chroot-bconsole enable
+
+(note that you will have to run this command again when the bacula
+package is updated)
+
+The rewrite module needs to be enabled. As root:
+    # perl -pi -e 's,^# LoadModule rewrite_module,LoadModule rewrite_module,' \
+    	/var/www/conf/httpd.conf 
+
+With Apache, AllowOverride settings are required on the ${INSTDIR}
+directory. You can configure this as follows:
+    # ln -s ${PREFIX}/conf/modules.sample/webacula.conf \
+        /var/www/conf/modules
+
+Webacula setup and configuration
+--------------------------------
+
+While upstream install notes are available with this package in:
+    ${INSTDIR}/docs/INSTALL
+we advise you to follow the following instructions that were written
+specifically for OpenBSD.
+
+Webacula configuration itself is done in
+    ${INSTDIR}/application/config.ini
+
+Under [general] you need to configure the way you will connect to the
+bacula(8) catalog DB. When using SQLite3, make sure the bacula(8) DB
+is available from the chroot(8).
+Then you may want to adapt "def.timezone" according to your current
+location.
+
+Under [webacula] you need to configure the way you will connect to the
+webacula DB.
+Then you may want to adapt "email.to_admin" and "email.from" according
+to your site.
+
+You should add the following cron(8) job to the root's crontab to clean
+old temporary files:
+    0 1 * * *	find /var/www/tmp/ -name "webacula*" -type f -mtime -24 -exec rm -f {} \;
+
+After restarting your webserver, you can access webacula at:
+    http://<hostname>/webacula/
+
+*** WARNING!
+By default *anyone* can access the webacula interface.
+A sample commented configuration for http basic authentication is
+available in /var/www/conf/modules.sample/webacula.conf and you are
+STRONGLY ADVISED to enable and edit it to your needs.
+
+Bacula messages configuration
+-----------------------------
+
+To show messages of the Job output, you must change the "catalog' line
+from the "Messages" block in ${SYSCONFDIR}/bacula/bacula-dir.conf to
+read:
+    catalog = all, !skipped, !saved
+
+i.e.
+Messages {
+  Name = Standard
+  <snip>
+  catalog = all, !skipped, !saved
+}
+
+The reload bacula-dir(8):
+    # /etc/rc.d/bacula_dir reload
