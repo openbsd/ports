@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2011/03/21 09:20:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.138 2011/03/21 09:40:04 sthen Exp $
 
 SHARED_ONLY=		Yes
 
@@ -36,8 +36,7 @@ MASTER_SITES=	http://download.samba.org/samba/ftp/ \
 
 MODULES=	converters/libiconv
 
-BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
-		textproc/groff>=1.21
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS}
 LIB_DEPENDS=	databases/tdb>=1.2 \
 		devel/popt \
 		devel/libexecinfo \
