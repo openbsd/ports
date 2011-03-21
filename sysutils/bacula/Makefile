@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/20 17:22:40 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2011/03/21 17:06:23 ajacoutot Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
@@ -13,8 +13,8 @@ FULLPKGNAME-bat=	bacula-bat-$V
 FULLPKGPATH-bat=	${PKGPATH},-bat
 CATEGORIES=		sysutils
 
-REVISION-main=		1
-REVISION-server=	1
+REVISION-main=		2
+REVISION-server=	2
 REVISION-bat=		0
 
 SHARED_LIBS +=		bac		1.0 # .1.0
@@ -168,30 +168,20 @@ LIB_DEPENDS-bat=	x11/qt4 \
 			sysutils/bacula,-main
 .endif
 
-post-extract:
-	@cp ${FILESDIR}/README-*.OpenBSD ${WRKSRC}/
-
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/manpages/bat.1 \
 		${WRKSRC}/src/qt-console/main.cpp \
-		${WRKSRC}/scripts/bat.desktop.in \
-		${WRKSRC}/README-client.OpenBSD ${WRKSRC}/README-server.OpenBSD
+		${WRKSRC}/scripts/bat.desktop.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bacula
 	${INSTALL_DATA} ${WRKINST}/etc/bacula/bacula-fd.conf \
 		${PREFIX}/share/examples/bacula/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/bacula
-	${INSTALL_DATA} ${WRKSRC}/README-client.OpenBSD \
-			${PREFIX}/share/doc/bacula/
 .if !${FLAVOR:L:Mno_server}
 	${INSTALL_DATA} ${WRKINST}/etc/bacula/bacula-dir.conf \
 		${WRKINST}/etc/bacula/bacula-sd.conf \
 		${WRKINST}/etc/bacula/bconsole.conf \
 		${PREFIX}/share/examples/bacula/
-	${INSTALL_DATA} ${WRKSRC}/README-server.OpenBSD \
-			${PREFIX}/share/doc/bacula/
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/bacula
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/libexec/bacula/updatedb
 	${INSTALL_SCRIPT} ${WRKSRC}/updatedb/* ${PREFIX}/libexec/bacula/updatedb
 .endif

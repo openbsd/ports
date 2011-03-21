@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $OpenBSD: bacula_dir.rc,v 1.1 2011/03/21 17:06:23 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/libexec/bacula/bacula-ctl-dir"
+daemon_flags="start"
+
+. /etc/rc.d/rc.subr
+
+rc_stop() {
+	${daemon} stop
+}
+
+pexp="${TRUEPREFIX}/sbin/bacula-dir"
+
+rc_cmd $1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.7 2010/07/20 14:38:39 merdely Exp $
+@comment $OpenBSD: PLIST-server,v 1.8 2011/03/21 17:06:23 ajacoutot Exp $
 @conflict bacula-<2.2.7
 @newgroup _bacula:591
 @newuser _bacula:591:_bacula:daemon:Bacula Director:/var/bacula:/sbin/nologin
@@ -96,7 +96,6 @@ libexec/bacula/updatedb/update_sqlite_tables_9_to_10
 sbin/btraceback
 @bin sbin/bwild
 @bin sbin/dbcheck
-share/doc/bacula/README-server.OpenBSD
 @mode 750
 @owner _bacula
 @group _bacula
@@ -129,3 +128,8 @@ share/examples/bacula/bconsole.conf
 @owner _bacula
 @group _bacula
 @sample ${BACULACONF}/bconsole.conf
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/bacula_dir
+@rcscript ${RCDIR}/bacula_sd

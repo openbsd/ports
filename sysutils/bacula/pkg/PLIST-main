@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2010/07/20 14:38:39 merdely Exp $
-@comment $OpenBSD: PLIST-main,v 1.7 2010/07/20 14:38:39 merdely Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2011/03/21 17:06:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2011/03/21 17:06:23 ajacoutot Exp $
 @conflict bacula-client-*
 @conflict bacula-server-<3.0.2
 @pkgpath sysutils/bacula,-client
@@ -27,7 +27,6 @@ share/doc/bacula/
 @comment share/doc/bacula/INSTALL
 share/doc/bacula/LICENSE
 @comment share/doc/bacula/README
-share/doc/bacula/README-client.OpenBSD
 share/doc/bacula/ReleaseNotes
 @comment share/doc/bacula/VERIFYING
 share/doc/bacula/technotes
@@ -45,3 +44,7 @@ share/examples/bacula/bacula-fd.conf
 @owner _bacula
 @group _bacula
 @sample ${BACULACONF}/bacula-fd.conf
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/bacula_fd
