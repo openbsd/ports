@@ -1,7 +1,7 @@
-$OpenBSD: patch-app_surface_transport_dib_openbsd_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
---- app/surface/transport_dib_openbsd.cc.orig	Mon Mar 14 10:55:37 2011
-+++ app/surface/transport_dib_openbsd.cc	Mon Mar 14 12:00:24 2011
-@@ -0,0 +1,106 @@
+$OpenBSD: patch-app_surface_transport_dib_openbsd_cc,v 1.3 2011/03/21 11:27:46 robert Exp $
+--- app/surface/transport_dib_openbsd.cc.orig	Fri Mar 18 09:12:57 2011
++++ app/surface/transport_dib_openbsd.cc	Mon Mar 21 09:25:51 2011
+@@ -0,0 +1,96 @@
 +// Copyright (c) 2009 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -13,6 +13,7 @@ $OpenBSD: patch-app_surface_transport_dib_openbsd_cc,v 1.2 2011/03/15 11:38:05 r
 +
 +#include "base/eintr_wrapper.h"
 +#include "base/shared_memory.h"
++#include "base/scoped_ptr.h"
 +#include "skia/ext/platform_canvas.h"
 +
 +TransportDIB::TransportDIB()
@@ -40,31 +41,16 @@ $OpenBSD: patch-app_surface_transport_dib_openbsd_cc,v 1.2 2011/03/15 11:38:05 r
 +}
 +
 +// static
-+TransportDIB* TransportDIB::Map(TransportDIB::Handle handle) {
-+  if (!is_valid(handle))
++TransportDIB* TransportDIB::Map(Handle handle) {
++  scoped_ptr<TransportDIB> dib(CreateWithHandle(handle));
++  if (!dib->Map())
 +    return NULL;
-+
-+  TransportDIB* dib = new TransportDIB(handle);
-+  struct stat st;
-+  if ((fstat(handle.fd, &st) != 0) ||
-+      (!dib->shared_memory_.Map(st.st_size))) {
-+    delete dib;
-+    HANDLE_EINTR(close(handle.fd));
-+    return NULL;
-+  }
-+
-+  dib->size_ = st.st_size;
-+
-+  return dib;
++  return dib.release();
 +}
 +
 +// static
 +TransportDIB* TransportDIB::CreateWithHandle(Handle handle) {
 +  return new TransportDIB(handle);
-+}
-+
-+bool TransportDIB::is_valid(Handle dib) {
-+  return dib.fd >= 0;
 +}
 +
 +bool TransportDIB::Map() {
@@ -81,6 +67,10 @@ $OpenBSD: patch-app_surface_transport_dib_openbsd_cc,v 1.2 2011/03/15 11:38:05 r
 +
 +  size_ = st.st_size;
 +  return true;
++}
++
++bool TransportDIB::is_valid(Handle dib) {
++  return dib.fd >= 0;
 +}
 +
 +skia::PlatformCanvas* TransportDIB::GetPlatformCanvas(int w, int h) {

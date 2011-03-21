@@ -1,0 +1,21 @@
+$OpenBSD: patch-gfx_scoped_image_h,v 1.1 2011/03/21 11:27:46 robert Exp $
+--- gfx/scoped_image.h.orig	Mon Mar 21 12:18:09 2011
++++ gfx/scoped_image.h	Mon Mar 21 12:18:33 2011
+@@ -11,7 +11,7 @@
+ #include "gfx/native_widget_types.h"
+ #include "third_party/skia/include/core/SkBitmap.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ #include <glib-object.h>
+ #elif defined(OS_MACOSX)
+ #include "base/mac/mac_util.h"
+@@ -116,7 +116,7 @@ class ScopedImage<NSImage> : public gfx::internal::Sco
+ #endif  // defined(OS_MACOSX)
+ 
+ // Specialization for the GdkPixbuf type on Linux.
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ template <>
+ class ScopedImage<GdkPixbuf> : public gfx::internal::ScopedImage<GdkPixbuf> {
+  public:
