@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.496 2011/03/21 17:05:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.497 2011/03/21 18:01:58 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -459,6 +459,7 @@
      SUBDIR += w3mir
      SUBDIR += wApua
      SUBDIR += wbox
+     SUBDIR += webacula
      SUBDIR += webalizer
      SUBDIR += webcollab
      SUBDIR += webkit
