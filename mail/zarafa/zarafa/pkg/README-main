@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.4 2011/03/11 08:44:44 ajacoutot Exp $
+$OpenBSD: README-main,v 1.5 2011/03/21 09:27:18 ajacoutot Exp $
 
 *** Upgrading users: refer to zarafa documentation on the web to check
 *** if any particular step is required after upgrading to a new version. 
@@ -85,10 +85,6 @@ Zarafa webaccess
 
 Zarafa webaccess is installed under
     ${INSTDIR}
-
-You should point the followings to the DocumentRoot of your web-server:
-    # ln -s ../zarafa-webaccess ${PREFIX-web}/htdocs/webaccess
-(make sure you use a relative symlink since Apache is chrooted)
 
 You need to edit the config.php file installed under
 ${INSTDIR} for regular web client access.
