@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/09/30 07:31:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/03/21 19:48:59 jasper Exp $
 @pkgpath geo/libchamplain/libchamplain-gtk
 bin/libchamplain-demo
 include/libchamplain-${API_VERSION}/
@@ -69,6 +69,7 @@ share/gtk-doc/html/libchamplain-gtk/right.png
 share/gtk-doc/html/libchamplain-gtk/style.css
 share/gtk-doc/html/libchamplain-gtk/up.png
 share/gtk-doc/html/libchamplain/ChamplainBaseMarker.html
+share/gtk-doc/html/libchamplain/ChamplainBoundingBox.html
 share/gtk-doc/html/libchamplain/ChamplainErrorTileRenderer.html
 share/gtk-doc/html/libchamplain/ChamplainFileCache.html
 share/gtk-doc/html/libchamplain/ChamplainFileTileSource.html
@@ -76,6 +77,7 @@ share/gtk-doc/html/libchamplain/ChamplainImageRenderer.html
 share/gtk-doc/html/libchamplain/ChamplainLayer.html
 share/gtk-doc/html/libchamplain/ChamplainMapSource.html
 share/gtk-doc/html/libchamplain/ChamplainMapSourceChain.html
+share/gtk-doc/html/libchamplain/ChamplainMapSourceDesc.html
 share/gtk-doc/html/libchamplain/ChamplainMapSourceFactory.html
 share/gtk-doc/html/libchamplain/ChamplainMarker.html
 share/gtk-doc/html/libchamplain/ChamplainMemoryCache.html
@@ -83,6 +85,7 @@ share/gtk-doc/html/libchamplain/ChamplainMemphisRenderer.html
 share/gtk-doc/html/libchamplain/ChamplainNetworkBboxTileSource.html
 share/gtk-doc/html/libchamplain/ChamplainNetworkTileSource.html
 share/gtk-doc/html/libchamplain/ChamplainNullTileSource.html
+share/gtk-doc/html/libchamplain/ChamplainPoint.html
 share/gtk-doc/html/libchamplain/ChamplainPolygon.html
 share/gtk-doc/html/libchamplain/ChamplainRenderer.html
 share/gtk-doc/html/libchamplain/ChamplainSelectionLayer.html
@@ -107,9 +110,6 @@ share/gtk-doc/html/libchamplain/ix05.html
 share/gtk-doc/html/libchamplain/ix06.html
 share/gtk-doc/html/libchamplain/ix07.html
 share/gtk-doc/html/libchamplain/left.png
-share/gtk-doc/html/libchamplain/libchamplain-ChamplainBoundingBox.html
-share/gtk-doc/html/libchamplain/libchamplain-ChamplainMapSourceDesc.html
-share/gtk-doc/html/libchamplain/libchamplain-ChamplainPoint.html
 share/gtk-doc/html/libchamplain/libchamplain-ChamplainVersion.html
 share/gtk-doc/html/libchamplain/libchamplain.devhelp
 share/gtk-doc/html/libchamplain/libchamplain.devhelp2
