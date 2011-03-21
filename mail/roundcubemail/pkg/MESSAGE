@@ -6,10 +6,4 @@ directory. You can configure this as follows:
 # apachectl stop
 # apachectl start
 
-Make the roundcubemail directory available to your web users, either
-by adding a separate virtual host, or an alias in an appropriate part
-of the web-server's configuration, e.g.:
-
-Alias /roundcubemail/ "/var/www/roundcubemail/"
-
 Next, follow ${INSTDIR}/INSTALL or ${INSTDIR}/UPGRADING
