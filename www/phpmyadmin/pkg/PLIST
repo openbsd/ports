@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2011/01/05 11:48:02 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.32 2011/03/21 09:21:51 sthen Exp $
 @group daemon
 phpMyAdmin/
 phpMyAdmin/CREDITS
@@ -66,7 +66,6 @@ phpMyAdmin/documentation-gsoc/Synchronization_User_Manual_files/image020.jpg
 phpMyAdmin/documentation-gsoc/Synchronization_User_Manual_files/image021.jpg
 phpMyAdmin/documentation-gsoc/Synchronization_User_Manual_files/image022.jpg
 phpMyAdmin/documentation-gsoc/Synchronization_User_Manual_files/image023.jpg
-phpMyAdmin/error.php
 phpMyAdmin/export.php
 phpMyAdmin/favicon.ico
 phpMyAdmin/import.php
@@ -402,6 +401,7 @@ phpMyAdmin/libraries/engines/mrg_myisam.lib.php
 phpMyAdmin/libraries/engines/myisam.lib.php
 phpMyAdmin/libraries/engines/ndbcluster.lib.php
 phpMyAdmin/libraries/engines/pbxt.lib.php
+phpMyAdmin/libraries/error.inc.php
 phpMyAdmin/libraries/export/
 phpMyAdmin/libraries/export/codegen.php
 phpMyAdmin/libraries/export/csv.php
