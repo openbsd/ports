@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2009/01/31 21:48:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/03/21 19:55:02 shadchin Exp $
 @bin bin/xrus
 @bin bin/xrusmodmap
 @man man/man1/xrus.1
@@ -13,7 +13,6 @@ share/xruskb/DocumentY.xpm
 share/xruskb/Xrus.ad
 @sample /etc/X11/app-defaults/Xrus
 share/xruskb/Xrus.wmaker
-share/xruskb/fr.xmm
 share/xruskb/hebrew-iso8.xmm
 share/xruskb/hebrew.xmm
 share/xruskb/jcuken-cp1251.xmm
@@ -49,3 +48,5 @@ share/xruskb/yawerty-deru-iso5.xmm
 share/xruskb/yawerty-deru-koi8.xmm
 share/xruskb/yawerty-iso5.xmm
 share/xruskb/yawerty-koi8.xmm
+share/xruskb/yawerty-ua-koi8.xmm
+share/xruskb/yawerty-ua.xmm
