@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2011/03/09 06:17:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2011/03/21 17:04:59 ajacoutot Exp $
 
 COMMENT=	Python bindings for glib2 gobject
 
 GNOME_PROJECT=	pygobject
-GNOME_VERSION=	2.28.0
+GNOME_VERSION=	2.28.1
 
 PKGNAME=	py-gobject-${GNOME_VERSION}
 EPOCH=		0
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += m pcre python${MODPY_VERSION} util z
+WANTLIB += pcre z
 
 MODULES=	devel/gettext \
 		lang/python \
