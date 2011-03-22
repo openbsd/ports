@@ -1,4 +1,4 @@
-# $OpenBSD
+# $OpenBSD: Makefile,v 1.4 2011/03/22 08:03:20 jasper Exp $
 
 COMMENT =		Rakudo Perl 6 compiler
 
