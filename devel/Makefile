@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.904 2011/03/21 22:46:16 simon Exp $
+# $OpenBSD: Makefile,v 1.905 2011/03/22 23:18:12 simon Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -502,6 +502,7 @@
      SUBDIR += p5-Devel-ptkdb
      SUBDIR += p5-Device-USB
      SUBDIR += p5-Directory-Scratch
+     SUBDIR += p5-Dist-CheckConflicts
      SUBDIR += p5-EV
      SUBDIR += p5-Env-PS1
      SUBDIR += p5-Error
@@ -666,8 +667,10 @@
      SUBDIR += p5-POE-Loop-Tk
      SUBDIR += p5-POE-Test-Loops
      SUBDIR += p5-POE-XS-Queue-Array
+     SUBDIR += p5-Package-DeprecationManager
      SUBDIR += p5-Package-Generator
      SUBDIR += p5-Package-Stash
+     SUBDIR += p5-Package-Stash-XS
      SUBDIR += p5-PadWalker
      SUBDIR += p5-Pango
      SUBDIR += p5-Parallel-ForkManager
