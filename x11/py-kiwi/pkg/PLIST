@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/09/22 15:09:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/22 10:36:15 jasper Exp $
 bin/kiwi-i18n
 bin/kiwi-ui-test
-lib/python${MODPY_VERSION}/site-packages/gazpacho/
-lib/python${MODPY_VERSION}/site-packages/gazpacho/widgets/
-lib/python${MODPY_VERSION}/site-packages/gazpacho/widgets/kiwiwidgets.py
+lib/python${MODPY_VERSION}/dist-packages/
+lib/python${MODPY_VERSION}/dist-packages/gazpacho/
+lib/python${MODPY_VERSION}/dist-packages/gazpacho/widgets/
+lib/python${MODPY_VERSION}/dist-packages/gazpacho/widgets/kiwiwidgets.py
 lib/python${MODPY_VERSION}/site-packages/kiwi/
 lib/python${MODPY_VERSION}/site-packages/kiwi-1.9.26-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/kiwi-1.9.26-py${MODPY_VERSION}.egg-info/PKG-INFO
