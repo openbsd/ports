@@ -7,7 +7,7 @@ VERSION =		2011.01
 DISTNAME =		${PORTNAME}-star-${VERSION}
 PKGNAME =		${PORTNAME}-${VERSION}
 
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		lang perl6
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB = 		c icudata icui18n icuuc m ncurses parrot=0.1 pthread
+WANTLIB = 		c icudata icui18n icuuc m ncurses parrot=1.0 pthread
 WANTLIB += 		readline stdc++ util
 
 
