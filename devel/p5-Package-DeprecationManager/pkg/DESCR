@@ -1,0 +1,5 @@
+This module allows you to manage a set of deprecations for one or more
+modules.
+When you import Package::DeprecationManager, you must provide a set of
+-deprecations as a hash ref.  The keys are "feature" names, and the
+values are the version when that feature was deprecated.
