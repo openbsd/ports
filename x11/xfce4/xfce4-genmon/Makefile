@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/01/18 21:05:05 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2011/03/22 18:34:47 landry Exp $
 
 COMMENT=	Xfce4 generic scriptable monitor panel plugin
 
-XFCE_VERSION=	3.2
+XFCE_VERSION=	3.3.0
 XFCE_PLUGIN=	genmon
-REVISION=	6
 
 # LGPLv2
 PERMIT_DISTFILES_CDROM=	Yes
