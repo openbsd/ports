@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2011/02/10 13:01:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/03/22 23:40:46 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-DISTNAME =	mupdf-0.7
-REVISION =	0
+V =		0.8.15
+DISTNAME =	mupdf-$V-source
+PKGNAME =	mupdf-$V
+WRKDIST =	${WRKDIR}/mupdf-$V
 
 CATEGORIES =	textproc x11
 
@@ -32,8 +34,8 @@ USE_GROFF =	Yes
 
 NO_REGRESS =	Yes
 
-MAKE_ENV +=     CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CC=${CC} \
-		CXX=${CXX} build= verbose=1
+MAKE_ENV +=     CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CC=${CC} CXX=${CXX} \
+		MANDIR="${WRKINST}${PREFIX}/man/man1" build= verbose=1
 
 CFLAGS +=	-Ifitz -Imupdf -I${LOCALBASE}/include
 LDFLAGS +=	-L${LOCALBASE}/lib
@@ -47,10 +49,6 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/debian/mupdf.pc
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/debian/mupdf.1 ${PREFIX}/man/man1
-.for x in pdfclean pdfdraw pdfshow
-	${INSTALL_MAN} ${WRKSRC}/debian/$x.1 ${PREFIX}/man/man1/$x.1
-.endfor
 	# don't want to conflict with xpdf's pdfinfo
 	mv ${PREFIX}/bin/pdfinfo ${PREFIX}/bin/pdfinfo_mupdf
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ \
