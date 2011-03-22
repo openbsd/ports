@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.11 2010/12/07 10:56:26 espie Exp $
+# $OpenBSD: Vars.pm,v 1.12 2011/03/22 19:48:01 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -102,7 +102,7 @@ sub run_pipe
 	$core->start_pipe(sub {
 		my $shell = shift;
 		close STDERR;
-		open STDERR, '>&STDOUT' or die "bad redirect";
+		open STDERR, '>&', STDOUT or die "bad redirect";
 		$class->run_command($core, $shell, $grabber, $subdirs,
 		    'dump-vars', "DPB=$dpb", "BATCH=Yes", "REPORT_PROBLEM=:");
 	}, "LISTING");
@@ -122,6 +122,10 @@ sub grab_list
 				$v->handle_default($h);
 			}
 			DPB::PkgPath->merge_depends($h);
+			if ($dpb eq 'fetch') {
+				require DPB::Fetch;
+				DPB::Fetch->build_distinfo($h);
+			}
 			&$code($h);
 			$h = {};
 		    };
@@ -166,6 +170,13 @@ sub grab_list
 				print $log $@;
 				$o->{broken} = 1;
 			}
+		} elsif (m/^\>\>\s*Broken dependency:\s*(.*?)\s*non existent/) {
+			my $dir = DPB::PkgPath->new_hidden($1);
+			$dir->{broken} = 1;
+			$h->{$dir} = $dir;
+			print $log $_, "\n";
+		} else {
+			print $log $_, "\n";
 		}
 	}
 	&$reset;

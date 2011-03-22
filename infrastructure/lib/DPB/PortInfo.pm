@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.5 2010/12/07 10:56:26 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.6 2011/03/22 19:48:01 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -73,6 +73,20 @@ sub string
 	return join(', ', keys %$self);
 }
 
+package AddOrderedList;
+our @ISA = qw(AddList);
+sub new
+{
+	my ($class, $value) = @_;
+	bless [$class->make_list($value)], $class;
+}
+
+sub string
+{
+	my $self = shift;
+	return join(' ', @$self);
+}
+
 package AddDepends;
 our @ISA = qw(AddList);
 sub new
@@ -138,6 +152,21 @@ my %adder = (
 	IGNORE => "AddInfo",
 	NEEDED_BY => "AddDepends",
 	BNEEDED_BY => "AddDepends",
+	DISTFILES => 'AddList',
+	PATCHFILES => 'AddList',
+	DIST_SUBDIR => 'AddInfo', 
+	CHECKSUM_FILE => 'AddInfo',
+	MASTER_SITES => 'AddOrderedList',
+	MASTER_SITES0 => 'AddOrderedList',
+	MASTER_SITES1 => 'AddOrderedList',
+	MASTER_SITES2 => 'AddOrderedList',
+	MASTER_SITES3 => 'AddOrderedList',
+	MASTER_SITES4 => 'AddOrderedList',
+	MASTER_SITES5 => 'AddOrderedList',
+	MASTER_SITES6 => 'AddOrderedList',
+	MASTER_SITES7 => 'AddOrderedList',
+	MASTER_SITES8 => 'AddOrderedList',
+	MASTER_SITES9 => 'AddOrderedList',
 );
 
 sub wanted
