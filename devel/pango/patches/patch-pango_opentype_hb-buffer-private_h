@@ -1,0 +1,18 @@
+$OpenBSD: patch-pango_opentype_hb-buffer-private_h,v 1.1 2011/03/22 09:41:15 jasper Exp $
+
+Security fix for CVE-2011-0064
+Pango "hb_buffer_ensure()" Memory Reallocation Vulnerability
+
+Fix backported from harfbuzz git, via redhat bz: #678563
+https://bugzilla.redhat.com/attachment.cgi?id=480386
+
+--- pango/opentype/hb-buffer-private.h.orig	Tue Feb  9 13:06:28 2010
++++ pango/opentype/hb-buffer-private.h	Tue Mar 22 10:31:49 2011
+@@ -72,6 +72,7 @@ struct _hb_buffer_t {
+   unsigned int allocated;
+ 
+   hb_bool_t    have_output; /* weather we have an output buffer going on */
++  hb_bool_t    in_error; /* Allocation failure */
+   unsigned int in_length;
+   unsigned int out_length;
+   unsigned int in_pos;
