@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.5 2010/10/29 11:51:42 espie Exp $
+# $OpenBSD: Core.pm,v 1.6 2011/03/22 19:49:56 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -432,7 +432,7 @@ sub init_cores
 package DPB::Core;
 our @ISA = qw(DPB::Core::WithJobs);
 
-my @available = ();
+my $available = [];
 
 # used to remove cores from the build
 my %stopped = ();
@@ -504,7 +504,7 @@ sub mark_ready
 	if (-e "$logdir/stop-$hostname") {
 		push(@{$stopped{$hostname}}, $self);
 	} else {
-		push(@available, $self);
+		$self->mark_available($self);
 	}
 	return $self;
 }
@@ -514,11 +514,22 @@ sub avail
 	my $self = shift;
 	for my $h (keys %stopped) {
 		if (!-e "$logdir/stop-$h") {
-			push(@available, @{$stopped{$h}});
+			$self->mark_available($self);
 			delete $stopped{$h};
 		}
 	}
-	return scalar(@available);
+	return scalar(@{$self->available});
+}
+
+sub available
+{
+	return $available;
+}
+
+sub mark_available
+{
+	my $self = shift;
+	push(@{$self->available}, @_);
 }
 
 sub running
@@ -528,10 +539,12 @@ sub running
 
 sub get
 {
-	if (@available > 1) {
-		@available = sort {$b->sf <=> $a->sf} @available;
+	my $self = shift;
+	$a = $self->available;
+	if (@$a > 1) {
+		@$a = sort {$b->sf <=> $a->sf} @$a;
 	}
-	return shift @available;
+	return shift @$a;
 }
 
 my @all_cores = ();
@@ -632,6 +645,16 @@ sub hostname
 		chomp($host = `hostname`);
 	}
 	return $host;
+}
+
+package DPB::Core::Fetcher;
+our @ISA = qw(DPB::Core::Local);
+
+my $fetchcores = [];
+
+sub available
+{
+	return $fetchcores;
 }
 
 package DPB::Core::Clock;
