@@ -1,0 +1,7 @@
+Metronome is a very simple metronome program.
+It just provides ticks on the audio output, at a given bpm.
+It can also stress out one tick out of n to count 4 beats and
+similar things.
+
+It was written specifically to avoid installing huge toolchains or using
+X11 just to get simple tick, tick, tick out of the console.
