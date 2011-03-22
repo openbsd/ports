@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/17 14:46:53 edd Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/22 11:21:22 edd Exp $
 
 COMMENT =		music system for hackathons
-DISTNAME =		hgd-0.2.0
-REVISION =		0
+DISTNAME =		hgd-0.2.1
 
 CATEGORIES =		audio net
 HOMEPAGE =		https://github.com/vext01/hgd/
