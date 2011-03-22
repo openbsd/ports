@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/22 08:11:05 jasper Exp $
+@bin bin/echinus
+@man man/man1/echinus.1
+share/doc/echinus/
+share/doc/echinus/README
+share/examples/echinus/
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/echinus/
+share/examples/echinus/close.xbm
+@sample ${SYSCONFDIR}/xdg/echinus/close.xbm
+share/examples/echinus/echinusrc
+@sample ${SYSCONFDIR}/xdg/echinus/echinusrc
+share/examples/echinus/iconify.xbm
+@sample ${SYSCONFDIR}/xdg/echinus/iconify.xbm
+share/examples/echinus/max.xbm
+@sample ${SYSCONFDIR}/xdg/echinus/max.xbm

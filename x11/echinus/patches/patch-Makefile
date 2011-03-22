@@ -1,0 +1,19 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2011/03/22 08:11:05 jasper Exp $
+--- Makefile.orig	Thu Mar 17 17:03:41 2011
++++ Makefile	Thu Mar 17 17:03:52 2011
+@@ -19,13 +19,13 @@ options:
+ 
+ .c.o:
+ 	@echo CC $<
+-	@${CC} -c ${CFLAGS} $<
++	${CC} -c ${CFLAGS} $<
+ 
+ ${OBJ}: config.mk
+ 
+ echinus: ${OBJ} ${FILES}
+ 	@echo CC -o $@
+-	@${CC} -o $@ ${OBJ} ${LDFLAGS}
++	${CC} -o $@ ${OBJ} ${LDFLAGS}
+ 
+ clean:
+ 	@echo cleaning

@@ -1,0 +1,6 @@
+Echinus supports managing window in floating, tiled and maximized
+layouts. All the configuration is made via config file in Xresources
+format. Echinus supports a small subset of EWMH to be compatible with
+external panels and pagers. The goal of development is a small, fast
+window manager without features not strictly related to window
+management.
