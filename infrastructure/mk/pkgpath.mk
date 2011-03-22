@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.33 2011/03/20 19:28:07 espie Exp $
+# $OpenBSD: pkgpath.mk,v 1.34 2011/03/22 19:56:51 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -31,11 +31,11 @@ PKGDEPTH = ${PKGPATH:C|[^./][^/]*|..|g}/
 _flavor_fragment = \
 	unset FLAVOR SUBPACKAGE || true; \
 	multi=''; flavor=''; space=''; sawflavor=false; \
-	empty=false; found_dir=false; \
+	reported=false; found_dir=false; \
 	case "$$subdir" in \
 	"") \
 		echo 1>&2 ">> Broken dependency: empty directory $$extra_msg"; \
-		empty=true;; \
+		reported=true;; \
 	*,*) \
 		esubdir=$$subdir,; IFS=,; first=true; \
 		for i in $$esubdir; do \
@@ -65,12 +65,13 @@ _flavor_fragment = \
 	if $$sawflavor; then \
 		toset="$$toset FLAVOR=\"$$flavor\""; \
 	fi; \
-	if ! $$empty; then \
+	if ! $$reported; then \
 		IFS=:; bases=${PORTSDIR_PATH}; \
 		for base in $$bases; do \
 			cd $$base 2>/dev/null || continue; \
 			if [ -L $$dir ]; then \
 				echo 1>&2 ">> Broken dependency: $$base/$$dir is a symbolic link $$extra_msg"; \
+				reported=true; \
 				break; \
 			fi; \
 			if cd $$dir 2>/dev/null; then \
@@ -79,9 +80,8 @@ _flavor_fragment = \
 			fi; \
 		done; unset IFS; \
 	fi; \
-	if ! $$found_dir; then \
+	$$found_dir || $$reported || \
 	    echo 1>&2 ">> Broken dependency: $$dir non existent $$extra_msg"; \
-	fi; \
 	$$found_dir
 
 _depfile_fragment = \
