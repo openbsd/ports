@@ -1,0 +1,29 @@
+$OpenBSD: patch-kernel_common_hash_rb,v 1.1 2011/03/22 20:23:10 jeremy Exp $
+
+Backport Hash#entries fix from upstream git (8953e3d0a).
+
+--- kernel/common/hash.rb.orig	Tue Mar 15 10:48:59 2011
++++ kernel/common/hash.rb	Mon Mar 21 16:23:02 2011
+@@ -62,7 +62,12 @@ class Hash
+ 
+   attr_reader :size
+ 
+-  attr_reader :entries
++  # #entries is a method provided by Enumerable which calls #to_a,
++  # so we have to not collide with that.
++  def __entries__
++    @entries
++  end
++
+   attr_reader :capacity
+   attr_reader :max_entries
+ 
+@@ -600,7 +605,7 @@ class Hash
+     # Normally this would be a call to __setup__,
+     # but that will create a new unused Tuple
+     # that we would wind up replacing anyways.
+-    @entries = other.entries.dup
++    @entries = other.__entries__.dup
+     @capacity = other.capacity
+     @mask     = @capacity - 1
+     @max_entries = other.max_entries

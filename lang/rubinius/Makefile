@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/10 20:40:33 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/22 20:23:10 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT =	Ruby virtual machine and core library
 
-V=		1.2.2
-DISTNAME =	rubinius-${V}-20110222
+V=		1.2.3
+DISTNAME =	rubinius-${V}-20110315
 PKGNAME =	rubinius-$V
 
 CATEGORIES =	lang lang/ruby
@@ -52,7 +52,7 @@ CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib" \
 MAKE_ENV +=		CC="${CC}"
 
 do-configure:
-	${SUBST_CMD} ${WRKSRC}/rakelib/vm.rake
+	${SUBST_CMD} ${WRKSRC}/rakelib/blueprint.rb
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${RUBY} configure \
 		--prefix=${PREFIX}/lib/rubinius --skip-prebuilt --rake=${RAKE}
 

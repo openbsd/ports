@@ -1,0 +1,25 @@
+$OpenBSD: patch-lib_rubygems_installer_rb,v 1.1 2011/03/22 20:23:10 jeremy Exp $
+
+Create .require_paths file for compatibility with PLISTs for
+ruby 1.8 and ruby 1.9.
+
+--- lib/rubygems/installer.rb.orig	Tue Mar 15 10:48:59 2011
++++ lib/rubygems/installer.rb	Tue Mar 22 13:09:17 2011
+@@ -39,7 +39,7 @@ class Gem::Installer
+ 
+   include Gem::UserInteraction
+ 
+-  include Gem::RequirePathsBuilder if Gem::QUICKLOADER_SUCKAGE
++  include Gem::RequirePathsBuilder
+ 
+   ##
+   # The directory a gem's executables will be installed into
+@@ -171,7 +171,7 @@ class Gem::Installer
+     generate_bin
+     write_spec
+ 
+-    write_require_paths_file_if_needed if Gem::QUICKLOADER_SUCKAGE
++    write_require_paths_file_if_needed
+ 
+     # HACK remove?  Isn't this done in multiple places?
+     cached_gem = File.join @gem_home, "cache", @gem.split(/\//).pop

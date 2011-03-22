@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/03/10 20:40:33 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/03/22 20:23:10 jeremy Exp $
 bin/rbx
 lib/rubinius/
 lib/rubinius/bin/
@@ -1129,6 +1129,19 @@ lib/rubinius/lib/rubinius/documentation/2011/02/
 lib/rubinius/lib/rubinius/documentation/2011/02/17/
 lib/rubinius/lib/rubinius/documentation/2011/02/17/rubinius-what-s-next/
 lib/rubinius/lib/rubinius/documentation/2011/02/17/rubinius-what-s-next/index.html
+lib/rubinius/lib/rubinius/documentation/2011/02/22/
+lib/rubinius/lib/rubinius/documentation/2011/02/22/rubinius-multiple-branches-with-rvm/
+lib/rubinius/lib/rubinius/documentation/2011/02/22/rubinius-multiple-branches-with-rvm/index.html
+lib/rubinius/lib/rubinius/documentation/2011/02/23/
+lib/rubinius/lib/rubinius/documentation/2011/02/23/introduction-to-fancy/
+lib/rubinius/lib/rubinius/documentation/2011/02/23/introduction-to-fancy/index.html
+lib/rubinius/lib/rubinius/documentation/2011/02/25/
+lib/rubinius/lib/rubinius/documentation/2011/02/25/why-use-rubinius/
+lib/rubinius/lib/rubinius/documentation/2011/02/25/why-use-rubinius/index.html
+lib/rubinius/lib/rubinius/documentation/2011/03/
+lib/rubinius/lib/rubinius/documentation/2011/03/11/
+lib/rubinius/lib/rubinius/documentation/2011/03/11/making-rubinius-rbc-files-disappear/
+lib/rubinius/lib/rubinius/documentation/2011/03/11/making-rubinius-rbc-files-disappear/index.html
 lib/rubinius/lib/rubinius/documentation/404.html
 lib/rubinius/lib/rubinius/documentation/422.html
 lib/rubinius/lib/rubinius/documentation/500.html
@@ -1333,6 +1346,8 @@ lib/rubinius/lib/rubinius/documentation/doc/en/how-to/write-a-ruby-spec/
 lib/rubinius/lib/rubinius/documentation/doc/en/how-to/write-a-ruby-spec/index.html
 lib/rubinius/lib/rubinius/documentation/doc/en/how-to/write-a-ticket/
 lib/rubinius/lib/rubinius/documentation/doc/en/how-to/write-a-ticket/index.html
+lib/rubinius/lib/rubinius/documentation/doc/en/how-to/write-benchmarks/
+lib/rubinius/lib/rubinius/documentation/doc/en/how-to/write-benchmarks/index.html
 lib/rubinius/lib/rubinius/documentation/doc/en/how-to/write-documentation/
 lib/rubinius/lib/rubinius/documentation/doc/en/how-to/write-documentation/index.html
 lib/rubinius/lib/rubinius/documentation/doc/en/index-of-terms/
@@ -1905,6 +1920,8 @@ lib/rubinius/lib/rubinius/documentation/releases/1.2.0/
 lib/rubinius/lib/rubinius/documentation/releases/1.2.0/index.html
 lib/rubinius/lib/rubinius/documentation/releases/1.2.1/
 lib/rubinius/lib/rubinius/documentation/releases/1.2.1/index.html
+lib/rubinius/lib/rubinius/documentation/releases/1.2.2/
+lib/rubinius/lib/rubinius/documentation/releases/1.2.2/index.html
 lib/rubinius/lib/rubinius/documentation/releases/${V}/
 lib/rubinius/lib/rubinius/documentation/releases/${V}/index.html
 lib/rubinius/lib/rubinius/documentation/releases/index.html
@@ -2055,8 +2072,12 @@ lib/rubinius/lib/rubygems/install_update_options.rb
 lib/rubinius/lib/rubygems/install_update_options.rbc
 lib/rubinius/lib/rubygems/installer.rb
 lib/rubinius/lib/rubygems/installer.rbc
+lib/rubinius/lib/rubygems/installer_test_case.rb
+lib/rubinius/lib/rubygems/installer_test_case.rbc
 lib/rubinius/lib/rubygems/local_remote_options.rb
 lib/rubinius/lib/rubygems/local_remote_options.rbc
+lib/rubinius/lib/rubygems/mock_gem_ui.rb
+lib/rubinius/lib/rubygems/mock_gem_ui.rbc
 lib/rubinius/lib/rubygems/old_format.rb
 lib/rubinius/lib/rubygems/old_format.rbc
 lib/rubinius/lib/rubygems/package/
@@ -2075,6 +2096,8 @@ lib/rubinius/lib/rubygems/package/tar_reader.rb
 lib/rubinius/lib/rubygems/package/tar_reader.rbc
 lib/rubinius/lib/rubygems/package/tar_reader/entry.rb
 lib/rubinius/lib/rubygems/package/tar_reader/entry.rbc
+lib/rubinius/lib/rubygems/package/tar_test_case.rb
+lib/rubinius/lib/rubygems/package/tar_test_case.rbc
 lib/rubinius/lib/rubygems/package/tar_writer.rb
 lib/rubinius/lib/rubygems/package/tar_writer.rbc
 lib/rubinius/lib/rubygems/package_task.rb
@@ -2106,6 +2129,8 @@ lib/rubinius/lib/rubygems/spec_fetcher.rb
 lib/rubinius/lib/rubygems/spec_fetcher.rbc
 lib/rubinius/lib/rubygems/specification.rb
 lib/rubinius/lib/rubygems/specification.rbc
+lib/rubinius/lib/rubygems/test_case.rb
+lib/rubinius/lib/rubygems/test_case.rbc
 lib/rubinius/lib/rubygems/test_utilities.rb
 lib/rubinius/lib/rubygems/test_utilities.rbc
 lib/rubinius/lib/rubygems/text.rb
@@ -2509,6 +2534,7 @@ lib/rubinius/runtime/common/undefined.rbc
 lib/rubinius/runtime/common/variable_scope.rbc
 lib/rubinius/runtime/common/vm.rbc
 lib/rubinius/runtime/delta/
+lib/rubinius/runtime/delta/agent.rbc
 lib/rubinius/runtime/delta/class.rbc
 lib/rubinius/runtime/delta/codeloader.rbc
 lib/rubinius/runtime/delta/ctype.rbc

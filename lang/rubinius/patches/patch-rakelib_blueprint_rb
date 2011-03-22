@@ -1,0 +1,30 @@
+$OpenBSD: patch-rakelib_blueprint_rb,v 1.1 2011/03/22 20:23:10 jeremy Exp $
+
+Backport OpenBSD build fix I added to upstream git (59e0f1d).
+
+Use in-tree libffi instead of building bundled version.
+
+--- rakelib/blueprint.rb.orig	Tue Mar 15 10:48:59 2011
++++ rakelib/blueprint.rb	Mon Mar 21 13:59:40 2011
+@@ -44,7 +44,8 @@ Daedalus.blueprint do |i|
+   when /linux/i
+     gcc.ldflags << '-Wl,--export-dynamic' << "-lrt" << "-lcrypt"
+   when /openbsd/i
+-    gcc.ldflags << '-lcrypto' << '-pthread' << '-lssl' << "-ldl" << "-rdynamic"
++    gcc.ldflags << '-lcrypto' << '-pthread' << '-lssl' << "-rdynamic" << "-Wl,--export-dynamic"
++    make = "gmake"
+   when /haiku/i
+     gcc.ldflags << "-ldl" << "-lnetwork"
+   when /bsd/i
+@@ -139,10 +140,9 @@ Daedalus.blueprint do |i|
+ 
+   ffi = i.external_lib "vm/external_libs/libffi" do |l|
+     l.cflags = ["-Ivm/external_libs/libffi/include"]
+-    l.objects = [l.file(".libs/libffi.a")]
++    l.objects = ["${LOCALBASE}/lib/libffi.a"]
+     l.to_build do |x|
+       x.command "./configure" unless File.exists?("Makefile")
+-      x.command make
+     end
+   end
+ 
