@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/21 18:01:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/03/22 13:02:35 ajacoutot Exp $
 
 COMMENT=	bacula(8) web interface
 
 DISTNAME=	webacula-5.0.3
+
+REVISION=	0
 
 CATEGORIES=	www sysutils
 
@@ -18,7 +20,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=webacula/}
 
 RUN_DEPENDS=	www/php5/extensions,-gd \
 		php5-pdo_pgsql-*|php5-pdo_mysql-*|php5-pdo_sqlite-*:www/php5/extensions,-pdo_pgsql \
-		www/zendframework
+		www/zendframework \
+		sysutils/bacula,-server
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
