@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/03/22 09:45:51 ajacoutot Exp $
 
 COMMENT-main=	simple SMTP client
 COMMENT-chroot=	simple SMTP client for chrooted apache
@@ -8,7 +8,7 @@ DISTNAME=	femail-${V}
 PKGNAME-main=	femail-${V}
 REVISION-main = 1
 PKGNAME-chroot=	femail-chroot-${V}
-REVISION-chroot = 2
+REVISION-chroot = 3
 CATEGORIES=	mail
 
 HOMEPAGE=	http://bulabula.org/femail/
@@ -38,6 +38,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/femail ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/femail.8 ${PREFIX}/man/man8
 	${INSTALL_PROGRAM_DIR} ${WRKINST}${PREFIX-chroot}/bin
+	${INSTALL_PROGRAM_DIR} ${WRKINST}${PREFIX-chroot}/usr/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/femail-static \
 		${WRKINST}${PREFIX-chroot}/bin/femail
 

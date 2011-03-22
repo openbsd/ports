@@ -1,2 +1,7 @@
-@comment $OpenBSD: PLIST-chroot,v 1.2 2008/07/20 22:26:00 okan Exp $
+@comment $OpenBSD: PLIST-chroot,v 1.3 2011/03/22 09:45:51 ajacoutot Exp $
+usr/
+usr/sbin/
 @bin bin/femail
+@mode 0555
+@sample usr/sbin/sendmail
+@mode
