@@ -1,0 +1,29 @@
+$OpenBSD: patch-wscript,v 1.1.1.1 2011/03/22 08:25:18 landry Exp $
+--- wscript.orig	Mon Mar 21 02:06:07 2011
++++ wscript	Mon Mar 21 11:23:15 2011
+@@ -135,20 +135,20 @@ def configure (conf):
+         '{ char* a;\nvasprintf(&a, "%s", ""); return 0; }', \
+         define_name='HAVE_VASPRINTF', msg='Checking for function vasprintf', \
+         mandatory=True)
+-    check_function ('socket', 'sys/socket.h')
+-    if conf.env['DEST_OS'] == 'freebsd':
++    check_function ('socket', ['sys/types.h', 'sys/socket.h'])
++    if conf.env['DEST_OS'] == 'openbsd':
+         check_function ('inet_ntoa', 'arpa/inet.h')
+         check_function ('dlopen', 'dlfcn.h')
+         conf.check(function_name='db_create', header_name='db.h',
+-                   includes=['/usr/local/include/db42'],
+-                   libpath=['/usr/local/lib/db42'], lib='db', mandatory=True)
++                   includes=['${LOCALBASE}/include/db4'],
++                   libpath=['${LOCALBASE}/lib/db4'], lib='db', mandatory=True)
+     else:
+         check_function ('inet_ntoa', 'arpa/inet.h', 'nsl')
+         check_function ('dlopen', 'dlfcn.h', 'dl')
+         check_function ('db_create', 'db.h', 'db')
+     check_pkg ('openssl')
+     check_function ('CRYPTO_lock', 'openssl/crypto.h', 'crypto')
+-    check_function ('SSL_connect', 'openssl/ssl.h', 'ssl', 'HAVE_LIBSSL')
++    check_function ('SSL_connect', 'openssl/ssl.h', ['ssl', 'crypto'], 'HAVE_LIBSSL')
+     conf.find_program ('msmtp', mandatory=True)
+     if not conf.find_program ('dexter'):
+         Utils.pprint ('YELLOW', 'Dexter is not installed. It is recommended ' \

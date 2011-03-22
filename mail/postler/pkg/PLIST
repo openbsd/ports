@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/22 08:25:18 landry Exp $
+@bin bin/postler
+@bin bin/postler-mbsync
+share/applications/postler.desktop
+share/doc/postler/
+share/doc/postler/COPYING
+share/doc/postler/README
+share/icons/hicolor/scalable/apps/internet-mail.svg
+share/locale/da/LC_MESSAGES/postler.mo
+share/locale/de/LC_MESSAGES/postler.mo
+share/locale/fi/LC_MESSAGES/postler.mo
+share/locale/gl/LC_MESSAGES/postler.mo
+share/locale/he/LC_MESSAGES/postler.mo
+share/locale/it/LC_MESSAGES/postler.mo
+share/locale/ja/LC_MESSAGES/postler.mo
+share/locale/pl/LC_MESSAGES/postler.mo
+share/locale/pt/LC_MESSAGES/postler.mo
+share/locale/ru/LC_MESSAGES/postler.mo
+share/locale/sv/LC_MESSAGES/postler.mo
+share/locale/zh_CN/LC_MESSAGES/postler.mo
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
