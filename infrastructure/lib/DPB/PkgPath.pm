@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.2 2010/10/26 15:45:09 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.3 2011/03/22 19:48:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -202,23 +202,25 @@ sub merge_depends
 	my ($class, $h) = @_;
 	my $global = bless {}, "AddDepends";
 	for my $v (values %$h) {
+		my $info = $v->{info};
 		for my $k (qw(LIB_DEPENDS BUILD_DEPENDS)) {
-			if (defined $v->{info}{$k}) {
-				for my $d (values %{$v->{info}{$k}}) {
+			if (defined $info->{$k}) {
+				for my $d (values %{$info->{$k}}) {
 					$global->{$d} = $d;
 				}
 			}
 		}
-		if (defined $v->{info}{RUN_DEPENDS}) {
-			for my $d (values %{$v->{info}{RUN_DEPENDS}}) {
-				$v->{info}{RDEPENDS}{$d} = $d;
-				bless $v->{info}{RDEPENDS}, "AddDepends";
+		if (defined $info->{RUN_DEPENDS}) {
+			for my $d (values %{$info->{RUN_DEPENDS}}) {
+				$info->{RDEPENDS}{$d} = $d;
+				bless $info->{RDEPENDS}, "AddDepends";
 			}
 		}
 	}
 	if (values %$global > 0) {
 		for my $v (values %$h) {
-			$v->{info}{DEPENDS} = $global;
+			my $info = $v->{info};
+			$info->{DEPENDS} = $global;
 		}
 	}
 }
