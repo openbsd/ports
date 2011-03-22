@@ -1,0 +1,5 @@
+One shortcoming of the CPAN clients that currently exist is that they
+have no way of specifying conflicting downstream dependencies of
+modules.  This module attempts to work around this issue by allowing you
+to specify conflicting versions of modules separately, and deal with
+them after the module is done installing.
