@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2011/03/07 11:53:14 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.28 2011/03/23 11:42:15 giovanni Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -518,6 +518,7 @@ piwik/libs/Zend/Cache/Backend/Sqlite.php
 piwik/libs/Zend/Cache/Backend/Static.php
 piwik/libs/Zend/Cache/Backend/Test.php
 piwik/libs/Zend/Cache/Backend/TwoLevels.php
+piwik/libs/Zend/Cache/Backend/WinCache.php
 piwik/libs/Zend/Cache/Backend/Xcache.php
 piwik/libs/Zend/Cache/Backend/ZendPlatform.php
 piwik/libs/Zend/Cache/Backend/ZendServer/
@@ -1574,6 +1575,7 @@ piwik/plugins/Referers/images/searchEngines/search.tiscali.it.png
 piwik/plugins/Referers/images/searchEngines/search.winamp.com.png
 piwik/plugins/Referers/images/searchEngines/search.www.ee.png
 piwik/plugins/Referers/images/searchEngines/search.yahoo.com.png
+piwik/plugins/Referers/images/searchEngines/search.yam.com.png
 piwik/plugins/Referers/images/searchEngines/search.yippy.com.png
 piwik/plugins/Referers/images/searchEngines/searchalot.com.png
 piwik/plugins/Referers/images/searchEngines/searchatlas.centrum.cz.png
@@ -1588,6 +1590,7 @@ piwik/plugins/Referers/images/searchEngines/suche.info.png
 piwik/plugins/Referers/images/searchEngines/suche.t-online.de.png
 piwik/plugins/Referers/images/searchEngines/suche.web.de.png
 piwik/plugins/Referers/images/searchEngines/szukaj.onet.pl.png
+piwik/plugins/Referers/images/searchEngines/szukaj.wp.pl.png
 piwik/plugins/Referers/images/searchEngines/technorati.com.png
 piwik/plugins/Referers/images/searchEngines/translate.google.com.png
 piwik/plugins/Referers/images/searchEngines/web.canoe.ca.png
@@ -2225,6 +2228,7 @@ piwik/themes/default/
 piwik/themes/default/common.css
 piwik/themes/default/common.js
 piwik/themes/default/genericForm.tpl
+piwik/themes/default/ie6.tpl
 piwik/themes/default/ieonly.css
 piwik/themes/default/images/
 piwik/themes/default/images/arr_r.png
