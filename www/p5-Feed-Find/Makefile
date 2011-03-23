@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/03/23 07:43:33 jasper Exp $
 
 COMMENT=		autodiscover syndication feeds
 
 MODULES=		cpan
 CPAN_AUTHOR=		BTROTT
-DISTNAME=		Feed-Find-0.06
-REVISION=		0
+DISTNAME=		Feed-Find-0.07
 CATEGORIES=		www
-USE_GROFF =		Yes
-
-CONFIGURE_STYLE=	modbuild
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
