@@ -1,9 +1,9 @@
-$OpenBSD: patch-_bochsrc,v 1.5 2010/07/08 15:40:11 giovanni Exp $
---- .bochsrc.orig	Sat Apr 24 05:36:03 2010
-+++ .bochsrc	Fri Jun 18 18:49:22 2010
-@@ -276,13 +276,13 @@ vga: extension=vbe
- # The parameter 'type' can be used to enable the floppy drive without media
- # and status specified. Usually the drive type is set up based on the media type.
+$OpenBSD: patch-_bochsrc,v 1.6 2011/03/23 11:27:39 giovanni Exp $
+--- .bochsrc.orig	Sat Feb 12 09:00:34 2011
++++ .bochsrc	Mon Feb 28 22:11:24 2011
+@@ -295,13 +295,13 @@ vga: extension=vbe
+ # The optional parameter 'write_protected' can be used to control the media
+ # write protect switch. By default it is turned off.
  #=======================================================================
 -floppya: 1_44=/dev/fd0, status=inserted
 +#floppya: 1_44=/dev/fd0, status=inserted
@@ -11,13 +11,13 @@ $OpenBSD: patch-_bochsrc,v 1.5 2010/07/08 15:40:11 giovanni Exp $
  #floppya: 1_44=/dev/fd0H1440, status=inserted
  #floppya: 1_2=../1_2, status=inserted
  #floppya: 1_44=a:, status=inserted
- #floppya: 1_44=a.img, status=inserted
+ #floppya: 1_44=a.img, status=inserted, write_protected=1
 -#floppya: 1_44=/dev/rfd0a, status=inserted
 +floppya: 1_44=/dev/rfd0a, status=inserted
  
  #=======================================================================
  # FLOPPYB:
-@@ -420,7 +420,7 @@ boot: disk
+@@ -440,7 +440,7 @@ boot: disk
  # 
  # Default value are sync=none, time0=local
  #=======================================================================
@@ -26,7 +26,7 @@ $OpenBSD: patch-_bochsrc,v 1.5 2010/07/08 15:40:11 giovanni Exp $
  
  
  #=======================================================================
-@@ -444,8 +444,8 @@ floppy_bootsig_check: disabled=0
+@@ -464,8 +464,8 @@ floppy_bootsig_check: disabled=0
  #   log: ./bochs.out
  #   log: /dev/tty
  #=======================================================================

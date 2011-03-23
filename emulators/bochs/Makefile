@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.49 2010/10/24 21:17:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2011/03/23 11:27:39 giovanni Exp $
 
 COMMENT=	x86 machine simulator
 
-DISTNAME=	bochs-2.4.5
+DISTNAME=	bochs-2.4.6
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bochs/}
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c m stdc++ termlib
 
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --enable-acpi \
 		 --enable-all-optimizations \
@@ -44,7 +43,8 @@ WANTLIB+=	curses readline
 CONFIGURE_ARGS+= --with-nogui
 .else
 CONFIGURE_ARGS+= --with-x11
-WANTLIB+=	ICE SM X11 Xau Xdmcp pthread-stubs xcb
+WANTLIB+=	ICE SM X11 Xau Xdmcp Xext Xpm Xrandr Xrender \
+		pthread-stubs xcb
 .endif
 
 NO_REGRESS=	Yes

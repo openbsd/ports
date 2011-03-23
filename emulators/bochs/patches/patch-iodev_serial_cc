@@ -1,0 +1,11 @@
+$OpenBSD: patch-iodev_serial_cc,v 1.1 2011/03/23 11:27:39 giovanni Exp $
+--- iodev/serial.cc.orig	Mon Feb 28 22:18:50 2011
++++ iodev/serial.cc	Mon Feb 28 22:20:00 2011
+@@ -31,6 +31,7 @@
+ #define BX_PLUGGABLE
+ 
+ #ifndef WIN32
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <netdb.h>
