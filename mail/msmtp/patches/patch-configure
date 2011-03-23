@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.9 2010/10/05 18:34:34 jasper Exp $
---- configure.orig	Sun Oct  3 22:25:55 2010
-+++ configure	Sun Oct  3 22:26:12 2010
-@@ -1323,14 +1323,14 @@ localstatedir='${prefix}/var'
+$OpenBSD: patch-configure,v 1.10 2011/03/23 09:28:53 pirofti Exp $
+--- configure.orig	Mon Jan 17 22:29:00 2011
++++ configure	Tue Mar 22 14:22:08 2011
+@@ -1344,14 +1344,14 @@ localstatedir='${prefix}/var'
  includedir='${prefix}/include'
  oldincludedir='/usr/include'
  docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'

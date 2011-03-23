@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/19 07:23:07 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2011/03/23 09:28:53 pirofti Exp $
 
 COMMENT =		SMTP plugin for MUAs
 
-DISTNAME =		msmtp-1.4.21
+DISTNAME =		msmtp-1.4.23
 CATEGORIES =		mail
 
 HOMEPAGE =		http://msmtp.sourceforge.net/
