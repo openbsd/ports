@@ -1,0 +1,86 @@
+$OpenBSD: patch-install_webacula_conf,v 1.1 2011/03/23 07:41:45 ajacoutot Exp $
+--- install/webacula.conf.orig	Wed Mar 23 08:31:24 2011
++++ install/webacula.conf	Wed Mar 23 08:33:10 2011
+@@ -3,17 +3,22 @@
+ # Allows only localhost by default
+ #
+ 
+-LoadModule rewrite_module modules/mod_rewrite.so
++LoadModule rewrite_module /usr/lib/apache/modules/mod_rewrite.so
+ 
++<IfModule mod_php5.c>
++   php_value max_execution_time 3600
++</IfModule>
++
+ # AccessFileName .htaccess
+-# RewriteLog "/var/log/httpd/rewrite.log"
++# RewriteLog "/var/www/log/rewrite.log"
+ # RewriteLogLevel 3
+ 
+ # SetEnv APPLICATION_ENV development
+ SetEnv APPLICATION_ENV production
+ 
+-Alias /webacula  /usr/share/webacula/html
+-<Directory /usr/share/webacula/html>
++Alias /webacula  ${TINSTDIR}/html
++
++<Directory ${TINSTDIR}/html>
+    RewriteEngine On
+ 
+    RewriteBase   /webacula
+@@ -40,42 +45,42 @@ Alias /webacula  /usr/share/webacula/html
+ 
+ #   AuthType Basic
+ #   AuthName "Webacula"
+-#   AuthUserFile       /etc/httpd/conf/webacula.users
++#   AuthUserFile /var/www/conf/webacula.users
+ #   Require valid-user
+ </Directory>
+ 
+ 
+-<Directory /usr/share/webacula/docs>
++<Directory ${TINSTDIR}/docs>
+    Order deny,allow
+    Deny from all
+ </Directory>
+ 
+-<Directory /usr/share/webacula/application>
++<Directory ${TINSTDIR}/application>
+    Order deny,allow
+    Deny from all
+ </Directory>
+ 
+-<Directory /usr/share/webacula/languages>
++<Directory ${TINSTDIR}/languages>
+    Order deny,allow
+    Deny from all
+ </Directory>
+ 
+-<Directory /usr/share/webacula/library>
++<Directory ${TINSTDIR}/library>
+    Order deny,allow
+    Deny from all
+ </Directory>
+ 
+-<Directory /usr/share/webacula/install>
++<Directory ${TINSTDIR}/install>
+    Order deny,allow
+    Deny from all
+ </Directory>
+ 
+-<Directory /usr/share/webacula/tests>
++<Directory ${TINSTDIR}/tests>
+    Order deny,allow
+    Deny from all
+ </Directory>
+ 
+-<Directory /usr/share/webacula/html/test_mod_rewrite>
++<Directory ${TINSTDIR}/html/test_mod_rewrite>
+    RewriteEngine On
+    # for test mod_rewrite
+    RewriteBase   /webacula/test_mod_rewrite
+@@ -93,4 +98,3 @@ Alias /webacula  /usr/share/webacula/html
+    Allow from localhost
+    Allow from ::1
+ </Directory>
+-

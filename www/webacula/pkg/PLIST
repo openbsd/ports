@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/21 18:01:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/23 07:41:46 ajacoutot Exp $
 webacula/
 webacula/4CONTRIBUTORS
 webacula/4CONTRIBUTORS.ru
@@ -254,6 +254,7 @@ webacula/install/
 webacula/install/.htaccess
 webacula/install/check_system_requirements.php
 webacula/install/webacula.conf
+@sample /var/www/conf/modules.sample/webacula.conf
 webacula/install/webacula_clean_tmp_files.sh
 webacula/install/webacula_mysql_create_database.sh.dist
 @mode 0755
@@ -316,7 +317,5 @@ webacula/update/webacula_sqlite_update_3.x_to_3.4.sh
 @mode 0555
 webacula/webacula-chroot-bconsole
 @mode
-webacula/webacula.conf.dist
-@sample /var/www/conf/modules.sample/webacula.conf
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${FULLPKGNAME}

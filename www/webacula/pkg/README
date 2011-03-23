@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2011/03/21 18:01:09 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2011/03/23 07:41:46 ajacoutot Exp $
 
 Running webacula under OpenBSD
 ==============================
@@ -91,7 +91,7 @@ After restarting your webserver, you can access webacula at:
     http://<hostname>/webacula/
 
 *** WARNING!
-By default *anyone* can access the webacula interface.
+By default *anyone* can access the webacula interface from localhost.
 A sample commented configuration for http basic authentication is
 available in /var/www/conf/modules.sample/webacula.conf and you are
 STRONGLY ADVISED to enable and edit it to your needs.
