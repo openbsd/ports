@@ -1,0 +1,33 @@
+$OpenBSD: patch-configure_ac,v 1.1 2011/03/23 15:25:39 jasper Exp $
+
+Be compatible with libgdata-0.8 as well
+The file upload API changed from libgdata-0.6 to 0.8.
+This checks the used library version on build time and
+switches between APIs accordingly. Fixes bug 639261.
+
+Upstream git: 66b4e5a6696c14f416223a65658a5124b52f996b
+
+--- configure.ac.orig	Wed Mar 23 16:01:33 2011
++++ configure.ac	Wed Mar 23 16:02:20 2011
+@@ -238,7 +238,7 @@ disabled_plugins=
+ # *******************
+ 
+ check_plugin_defined() {
+-	if echo "$2" | egrep "\b($1)\b" > /dev/null;
++	if echo "$2" | egrep "$1" > /dev/null;
+ 	then
+ 		return 1
+ 	else
+@@ -297,7 +297,11 @@ if test "$?" = 1
+ then
+     PKG_CHECK_MODULES(POSTASA,
+         [ libgdata >= 0.6.0 ],
+-        [],[have_postasa=no])
++        PKG_CHECK_EXISTS( libgdata >= 0.8 ,
++	    AC_DEFINE([HAVE_LIBGDATA_80], [1],
++	        [Define to be compatible with the API of libgdata-0.8])
++	),
++	[have_postasa=no])
+     AC_SUBST(POSTASA_LIBS)
+     AC_SUBST(POSTASA_CFLAGS)
+     if test "x$have_postasa" = "xno"

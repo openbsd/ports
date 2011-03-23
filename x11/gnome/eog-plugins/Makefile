@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2011/03/07 19:29:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/03/23 15:25:39 jasper Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
 GNOME_VERSION=		2.30.2
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -38,6 +39,8 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		x11/gnome/eog>=2.30.0
 
 MODGCONF2_SCHEMAS_DIR=	eog-plugins
+AUTOCONF_VERSION=	2.64
+CONFIGURE_STYLE= 	autoconf gnu
 CONFIGURE_ARGS+=	--with-plugins=all
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
