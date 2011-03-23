@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/03/23 07:41:46 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2011/03/23 21:01:33 ajacoutot Exp $
 
 Running webacula under OpenBSD
 ==============================
@@ -51,10 +51,6 @@ To do so, run the following command:
 
 (note that you will have to run this command again when the bacula
 package is updated)
-
-The rewrite module needs to be enabled. As root:
-    # perl -pi -e 's,^# LoadModule rewrite_module,LoadModule rewrite_module,' \
-    	/var/www/conf/httpd.conf 
 
 With Apache, AllowOverride settings are required on the ${INSTDIR}
 directory. You can configure this as follows:
