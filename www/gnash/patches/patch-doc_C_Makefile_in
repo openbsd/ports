@@ -1,12 +1,12 @@
-$OpenBSD: patch-doc_C_Makefile_in,v 1.1 2010/10/12 09:38:16 dcoppa Exp $
---- doc/C/Makefile.in.orig	Sat Aug 21 14:04:38 2010
-+++ doc/C/Makefile.in	Wed Aug 25 20:22:57 2010
-@@ -492,7 +492,7 @@ target_alias = @target_alias@
- top_build_prefix = @top_build_prefix@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
--man1dir = ${prefix}/share/man/man1
-+man1dir = ${mandir}/man1
- docname = gnash
- lang = C
- omffile = gnash-C.omf
+$OpenBSD: patch-doc_C_Makefile_in,v 1.2 2011/03/23 16:20:03 dcoppa Exp $
+--- doc/C/Makefile.in.orig	Fri Mar 18 21:57:44 2011
++++ doc/C/Makefile.in	Fri Mar 18 22:00:17 2011
+@@ -443,7 +443,7 @@ curlconfig = @curlconfig@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+ docbook_styles = @docbook_styles@
+-docdir = $(datadir)/$(PACKAGE)/doc/$(docname)/$(lang)
++docdir = $(datadir)/doc/$(PACKAGE)
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@

@@ -1,23 +1,12 @@
-$OpenBSD: patch-libbase_Makefile_in,v 1.2 2010/10/12 09:38:16 dcoppa Exp $
---- libbase/Makefile.in.orig	Sat Aug 21 14:04:42 2010
-+++ libbase/Makefile.in	Tue Sep 14 02:32:53 2010
-@@ -445,8 +445,8 @@ LIBADD_DLOPEN = @LIBADD_DLOPEN@
- LIBADD_SHL_LOAD = @LIBADD_SHL_LOAD@
- LIBAVCODEC_IDENT = @LIBAVCODEC_IDENT@
- LIBEXT = @LIBEXT@
--LIBICONV = @LIBICONV@
--LIBINTL = @LIBINTL@
-+LIBICONV = @LTLIBICONV@
-+LIBINTL = @LTLIBINTL@
- LIBLTDL = @LIBLTDL@
- LIBOBJS = @LIBOBJS@
- LIBPNG_CFLAGS = @LIBPNG_CFLAGS@
-@@ -1393,7 +1393,7 @@ install-dvi: install-dvi-am
+$OpenBSD: patch-libbase_Makefile_in,v 1.3 2011/03/23 16:20:03 dcoppa Exp $
+--- libbase/Makefile.in.orig	Tue Mar 15 11:21:22 2011
++++ libbase/Makefile.in	Tue Mar 15 19:48:16 2011
+@@ -1387,7 +1387,7 @@ install-dvi: install-dvi-am
  
  install-dvi-am:
  
 -install-exec-am: install-pkglibLTLIBRARIES install-sysconfDATA
 +install-exec-am: install-pkglibLTLIBRARIES
- 
+ 	@$(NORMAL_INSTALL)
+ 	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
  install-html: install-html-am
- 
