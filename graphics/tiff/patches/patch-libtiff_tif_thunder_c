@@ -1,0 +1,56 @@
+$OpenBSD: patch-libtiff_tif_thunder_c,v 1.3 2011/03/23 08:08:50 jasper Exp $
+
+Security fix for CVE-2011-1167, libtiff heap-based buffer overflow
+
+Patch from maptools bugzilla: http://bugzilla.maptools.org/show_bug.cgi?id=2300
+
+--- libtiff/tif_thunder.c.orig	Tue Jun  8 20:50:43 2010
++++ libtiff/tif_thunder.c	Wed Mar 23 08:58:31 2011
+@@ -55,15 +55,34 @@
+ static const int twobitdeltas[4] = { 0, 1, 0, -1 };
+ static const int threebitdeltas[8] = { 0, 1, 2, 3, 0, -3, -2, -1 };
+ 
+-#define	SETPIXEL(op, v) { \
+-	lastpixel = (v) & 0xf; \
+-	if (npixels++ & 1) \
+-	    *op++ |= lastpixel; \
+-	else \
++#define	SETPIXEL(op, v) {                     \
++	lastpixel = (v) & 0xf;                \
++        if ( npixels < maxpixels )         \
++        {                                     \
++	  if (npixels++ & 1)                  \
++	    *op++ |= lastpixel;               \
++	  else                                \
+ 	    op[0] = (tidataval_t) (lastpixel << 4); \
++	} \
+ }
+ 
+ static int
++ThunderSetupDecode(TIFF* tif)
++{
++	static const char module[] = "ThunderSetupDecode";
++
++        if( tif->tif_dir.td_bitspersample != 4 )
++        {
++                TIFFErrorExt(tif->tif_clientdata, module,
++                             "Wrong bitspersample value (%d), Thunder decoder only supports 4bits per sample.",
++                             (int) tif->tif_dir.td_bitspersample );
++                return 0;
++        }
++
++	return (1);
++}
++
++static int
+ ThunderDecode(TIFF* tif, tidata_t op, tsize_t maxpixels)
+ {
+ 	register unsigned char *bp;
+@@ -149,6 +168,7 @@ int
+ TIFFInitThunderScan(TIFF* tif, int scheme)
+ {
+ 	(void) scheme;
++	tif->tif_setupdecode = ThunderSetupDecode;
+ 	tif->tif_decoderow = ThunderDecodeRow;
+ 	tif->tif_decodestrip = ThunderDecodeRow;
+ 	return (1);
