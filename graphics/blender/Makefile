@@ -1,31 +1,29 @@
-# $OpenBSD: Makefile,v 1.33 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2011/03/23 12:10:54 fgsch Exp $
 
-COMMENT=	3D creation software
+COMMENT =	3D creation software
 
-DISTNAME=	blender-2.49b
-REVISION=	1
+DISTNAME =	blender-2.49b
+REVISION =	2
 
-CATEGORIES=	graphics
+CATEGORIES =	graphics
 
-HOMEPAGE=	http://www.blender.org/
+HOMEPAGE =	http://www.blender.org/
 
 # GPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES=	http://download.blender.org/source/ \
+MASTER_SITES =	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
 		http://public.planetmirror.com/pub/blender/source/
 
-MODPY_VERSION=	2.5
+MODULES =	devel/scons lang/python
 
-MODULES=	devel/scons lang/python
-
-RUN_DEPENDS=	graphics/tiff
-BUILD_DEPENDS=	graphics/tiff
-LIB_DEPENDS=	graphics/png \
+RUN_DEPENDS =	graphics/tiff
+BUILD_DEPENDS =	graphics/tiff
+LIB_DEPENDS =	graphics/png \
 		graphics/jpeg \
 		graphics/glew \
 		devel/sdl \
@@ -35,17 +33,17 @@ WANTLIB =	GL GLU X11 Xi c m pthread stdc++ util z
 WANTLIB += 	${MODPY_WANTLIB}
 WANTLIB +=	png jpeg GLEW SDL
 
-SEPARATE_BUILD=	simple
-NO_REGRESS=	Yes
+SEPARATE_BUILD = simple
+NO_REGRESS =	Yes
 
-CFLAGS+=	-fPIC -funsigned-char -fno-strict-aliasing
+CFLAGS +=	-fPIC -funsigned-char -fno-strict-aliasing
 
 post-extract:
 	@cd ${WRKSRC}/config && cp openbsd3-config.py openbsd4-config.py
 
-ALL_TARGET=	blendernogame
+ALL_TARGET =	blendernogame
 
-MODSCONS_ENV=	CC=${CC} CXX=${CXX} C_WARN="-Wall" \
+MODSCONS_ENV =	CC=${CC} CXX=${CXX} C_WARN="-Wall" \
 		CFLAGS="${CFLAGS}" CCFLAGS="${CXXFLAGS}" \
 		REL_CFLAGS= REL_CCFLAGS= \
 		BF_BUILDDIR=${WRKBUILD} \
