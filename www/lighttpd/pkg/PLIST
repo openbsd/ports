@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2009/06/19 23:12:03 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.22 2011/03/23 12:47:24 sthen Exp $
 @newgroup _lighttpd:585
 @newuser _lighttpd:585:_lighttpd:daemon:lighttpd Account:/nonexistent:/sbin/nologin
 lib/lighttpd/
@@ -122,3 +122,4 @@ share/examples/lighttpd/error.log
 share/examples/lighttpd/lighttpd.conf
 @sample ${SYSCONFDIR}/lighttpd.conf
 share/examples/lighttpd/spawn-php.sh
+@rcscript ${RCDIR}/lighttpd

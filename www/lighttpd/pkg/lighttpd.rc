@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: lighttpd.rc,v 1.1 2011/03/23 12:47:24 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/lighttpd"
+daemon_flags="-f ${SYSCONFDIR}/lighttpd.conf"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
