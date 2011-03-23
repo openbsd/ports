@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2010/12/03 11:44:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2011/03/23 19:52:22 sthen Exp $
 
 COMMENT=		Berkeley DB module
 SHARED_ONLY=		Yes
 
-DISTNAME=		BerkeleyDB-0.34
-REVISION=		3
+DISTNAME=		BerkeleyDB-0.43
 CATEGORIES=		databases
 MODULES=		cpan
 
@@ -18,7 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_ENV+=		BERKELEYDB_INCLUDE=${LOCALBASE}/include/db4 \
 			BERKELEYDB_LIB=${LOCALBASE}/lib/db4
-USE_GROFF =		Yes
 
 LIB_DEPENDS =		databases/db/v4
 WANTLIB +=		lib/db4/db>=4
