@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/18 16:47:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/03/23 16:34:51 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -30,7 +30,8 @@ WANTLIB += dbus-1 gcrypt gnome-keyring gpg-error
 
 TAR=			${LOCALBASE}/bin/gtar
 BUILD_DEPENDS=		archivers/gtar \
-			devel/m4
+			devel/m4 \
+			devel/mm-common
 
 LIB_DEPENDS=		devel/glib2mm \
 			x11/gnome/libgda
@@ -41,5 +42,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 SUBST_VARS+=		GDA_MAJOR
+
+# XXX when updating, check that this is still needed
+CONFIGURE_ENV+=	MMDOCTOOLDIR=`pkg-config --variable=doctooldir mm-common-util`
 
 .include <bsd.port.mk>

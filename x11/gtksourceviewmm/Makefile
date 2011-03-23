@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/03/23 16:34:51 ajacoutot Exp $
 
 COMMENT=	C++ wrapper for gtksourceview
 
@@ -30,6 +30,8 @@ WANTLIB += gtksourceview-2.0 gtkmm-2.4 atkmm-1.6 gdkmm-2.4
 MODULES=	devel/gettext \
 		x11/gnome
 
+BUILD_DEPENDS=	devel/mm-common
+
 LIB_DEPENDS=	x11/gtksourceview \
 		x11/gtk2mm
 
@@ -37,5 +39,8 @@ USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
+
+# XXX when updating, check that this is still needed
+CONFIGURE_ENV+=	MMDOCTOOLDIR=`pkg-config --variable=doctooldir mm-common-util`
 
 .include <bsd.port.mk>

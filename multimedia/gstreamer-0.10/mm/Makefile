@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:13 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/03/23 16:34:51 ajacoutot Exp $
 
 COMMENT =	C++ bindings for GStreamer
 
@@ -22,11 +22,15 @@ MODULES =	devel/gettext
 
 MODPY_RUNDEP =	No
 
-BUILD_DEPENDS =	devel/doxygen
+BUILD_DEPENDS =	devel/doxygen \
+		devel/mm-common
 LIB_DEPENDS =	devel/glib2mm \
 		multimedia/gstreamer-0.10/plugins-base,-cdda \
 		textproc/libxml++
 
 CONFIGURE_STYLE =	gnu
+
+# XXX when updating, check that this is still needed
+CONFIGURE_ENV+=	MMDOCTOOLDIR=`pkg-config --variable=doctooldir mm-common-util`
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/26 15:00:45 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/03/23 16:34:51 ajacoutot Exp $
 
 COMMENT=		C++ interface to GConf
 
@@ -23,6 +23,8 @@ WANTLIB=	dbus-1 dbus-glib-1 glib-2.0 gmodule-2.0 gobject-2.0 \
 MODULES=		devel/gettext \
 			x11/gnome
 
+BUILD_DEPENDS=		devel/mm-common
+
 LIB_DEPENDS=		devel/ORBit2 \
 			devel/gconf2 \
 			devel/libsigc++-2 \
@@ -38,5 +40,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			ac_cv_path_DOXYGEN=
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-documentation
+
+# XXX when updating, check that this is still needed
+CONFIGURE_ENV+=		MMDOCTOOLDIR=`pkg-config --variable=doctooldir mm-common-util`
 
 .include <bsd.port.mk>
