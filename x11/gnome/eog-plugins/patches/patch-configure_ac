@@ -1,4 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.1 2011/03/23 15:25:39 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2011/03/23 15:30:54 ajacoutot Exp $
+
+Fix some stupid egrep(1) misusage causing this function to always
+return 1.
 
 Be compatible with libgdata-0.8 as well
 The file upload API changed from libgdata-0.6 to 0.8.
