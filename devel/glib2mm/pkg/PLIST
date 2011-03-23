@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/03/16 17:28:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/03/23 16:36:08 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -24,12 +24,14 @@ include/giomm-${V}/giomm/dbusauthobserver.h
 include/giomm-${V}/giomm/dbusconnection.h
 include/giomm-${V}/giomm/dbuserror.h
 include/giomm-${V}/giomm/dbuserrorutils.h
+include/giomm-${V}/giomm/dbusinterfacevtable.h
 include/giomm-${V}/giomm/dbusintrospection.h
 include/giomm-${V}/giomm/dbusmessage.h
 include/giomm-${V}/giomm/dbusmethodinvocation.h
 include/giomm-${V}/giomm/dbusownname.h
 include/giomm-${V}/giomm/dbusproxy.h
 include/giomm-${V}/giomm/dbusserver.h
+include/giomm-${V}/giomm/dbussubtreevtable.h
 include/giomm-${V}/giomm/dbusutils.h
 include/giomm-${V}/giomm/dbuswatchname.h
 include/giomm-${V}/giomm/desktopappinfo.h
@@ -84,12 +86,14 @@ include/giomm-${V}/giomm/private/dbusauthobserver_p.h
 include/giomm-${V}/giomm/private/dbusconnection_p.h
 include/giomm-${V}/giomm/private/dbuserror_p.h
 include/giomm-${V}/giomm/private/dbuserrorutils_p.h
+include/giomm-${V}/giomm/private/dbusinterfacevtable_p.h
 include/giomm-${V}/giomm/private/dbusintrospection_p.h
 include/giomm-${V}/giomm/private/dbusmessage_p.h
 include/giomm-${V}/giomm/private/dbusmethodinvocation_p.h
 include/giomm-${V}/giomm/private/dbusownname_p.h
 include/giomm-${V}/giomm/private/dbusproxy_p.h
 include/giomm-${V}/giomm/private/dbusserver_p.h
+include/giomm-${V}/giomm/private/dbussubtreevtable_p.h
 include/giomm-${V}/giomm/private/dbusutils_p.h
 include/giomm-${V}/giomm/private/dbuswatchname_p.h
 include/giomm-${V}/giomm/private/desktopappinfo_p.h
@@ -335,6 +339,7 @@ lib/libglibmm-${V}.a
 lib/libglibmm-${V}.la
 lib/libglibmm_generate_extra_defs-${V}.a
 lib/libglibmm_generate_extra_defs-${V}.la
+lib/pkgconfig/
 lib/pkgconfig/giomm-${V}.pc
 lib/pkgconfig/glibmm-${V}.pc
 share/aclocal/glibmm_check_perl.m4
@@ -1317,5 +1322,3 @@ share/doc/glibmm-${V}/reference/html/tab_s.png
 share/doc/glibmm-${V}/reference/html/tabs.css
 share/doc/glibmm-${V}/reference/html/thread_2dispatcher_8cc-example.html
 share/doc/glibmm-${V}/reference/html/thread_2thread_8cc-example.html
-share/glibmm-${V}/
-share/glibmm-${V}/doctool
