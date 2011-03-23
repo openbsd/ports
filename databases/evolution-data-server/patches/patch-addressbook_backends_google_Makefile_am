@@ -1,0 +1,17 @@
+$OpenBSD: patch-addressbook_backends_google_Makefile_am,v 1.1 2011/03/23 15:57:39 jasper Exp $
+
+Sync with git master as of ef4f06cb7480f343008a4402669aa640e148870e,
+which bumps libgdata dependency to 0.7.0 and merges util.c into 
+e-book-backend-google.c
+
+--- addressbook/backends/google/Makefile.am.orig	Wed Mar 23 15:57:42 2011
++++ addressbook/backends/google/Makefile.am	Wed Mar 23 15:57:49 2011
+@@ -12,8 +12,6 @@ libebookbackendgoogle_la_CPPFLAGS = \
+ 	$(GDATA_CFLAGS)
+ 
+ libebookbackendgoogle_la_SOURCES = \
+-	util.h				\
+-	util.c				\
+ 	e-book-backend-google-factory.c	\
+ 	e-book-backend-google.h		\
+ 	e-book-backend-google.c

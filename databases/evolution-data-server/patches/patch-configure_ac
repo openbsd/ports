@@ -1,10 +1,24 @@
-$OpenBSD: patch-configure_ac,v 1.4 2011/03/07 19:35:30 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.5 2011/03/23 15:57:39 jasper Exp $
 
 Stupid configure is stupid. Using a variable that's set
 hundreds of lines later...
 
---- configure.ac.orig	Fri Oct 29 12:22:59 2010
-+++ configure.ac	Mon Jan 31 17:49:33 2011
+Bump libgdata dependency to 0.7.0
+The minimum dependency in GNOME is now 0.8.0, so we can bump the e-d-s
+dependency to 0.7.0 and remove the various #ifdefs. See: bgo#566441
+From upstream git: 69b8607f2dd6d399306905e011a6565319190066
+
+--- configure.ac.orig	Mon Dec 27 14:19:33 2010
++++ configure.ac	Wed Mar 23 14:58:36 2011
+@@ -36,7 +36,7 @@ m4_define([glib_minimum_version], [2.25.12])
+ m4_define([gconf_minimum_version], [2.0.0])		dnl XXX Just a Guess
+ m4_define([libxml_minimum_version], [2.0.0])		dnl XXX Just a Guess
+ m4_define([libsoup_minimum_version], [2.3.0])
+-m4_define([libgdata_minimum_version], [0.6.3])
++m4_define([libgdata_minimum_version], [0.7.0])
+ m4_define([gnome_keyring_minimum_version], [2.20.1])
+ m4_define([sqlite_minimum_version], [3.5])
+ m4_define([libical_minimum_version], [0.43])
 @@ -199,8 +199,6 @@ dnl	-Wstrict-aliasing=2
  AM_CPPFLAGS="$WARNING_FLAGS -fno-strict-aliasing"
  AC_SUBST(AM_CPPFLAGS)
@@ -28,7 +42,20 @@ hundreds of lines later...
  *)
  	os_win32='no'
  	NO_UNDEFINED=''
-@@ -518,6 +523,29 @@ AC_RUN_IFELSE([AC_LANG_SOURCE(
+@@ -325,12 +330,6 @@ PKG_CHECK_MODULES(GNOME_PLATFORM,
+ 	libsoup-2.4 >= libsoup_minimum_version
+ 	libgdata >= libgdata_minimum_version])
+ 
+-dnl libgdata 0.7 will break API.  We're not going to deal with
+-dnl that on a stable branch, so cap the supported version.
+-if $PKG_CONFIG --atleast-version=0.7 libgdata; then
+-	AC_MSG_ERROR([libgdata 0.7 is not supported, use 0.6 instead])
+-fi
+-
+ LIBICAL_REQUIRED=libical_minimum_version
+ AC_SUBST(LIBICAL_REQUIRED)
+ 
+@@ -518,6 +517,29 @@ AC_RUN_IFELSE([AC_LANG_SOURCE(
  	]]
  	)],[AC_DEFINE(HAVE_LKSTRFTIME, 1, [strftime supports use of l and k]) ac_cv_lkstrftime=yes],[ac_cv_lkstrftime=no],[ac_cv_lkstrftime=no])
  AC_MSG_RESULT([$ac_cv_lkstrftime])

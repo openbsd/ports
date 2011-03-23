@@ -1,0 +1,48 @@
+$OpenBSD: patch-addressbook_backends_google_Makefile_in,v 1.1 2011/03/23 15:57:39 jasper Exp $
+
+Sync with git master as of ef4f06cb7480f343008a4402669aa640e148870e,
+which bumps libgdata dependency to 0.7.0 and merges util.c into 
+e-book-backend-google.c
+
+--- addressbook/backends/google/Makefile.in.orig	Wed Mar 23 16:07:07 2011
++++ addressbook/backends/google/Makefile.in	Wed Mar 23 16:07:24 2011
+@@ -84,7 +84,6 @@ libebookbackendgoogle_la_DEPENDENCIES =  \
+ 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+ 	$(am__DEPENDENCIES_1)
+ am_libebookbackendgoogle_la_OBJECTS =  \
+-	libebookbackendgoogle_la-util.lo \
+ 	libebookbackendgoogle_la-e-book-backend-google-factory.lo \
+ 	libebookbackendgoogle_la-e-book-backend-google.lo
+ libebookbackendgoogle_la_OBJECTS =  \
+@@ -404,8 +403,6 @@ libebookbackendgoogle_la_CPPFLAGS = \
+ 	$(GDATA_CFLAGS)
+ 
+ libebookbackendgoogle_la_SOURCES = \
+-	util.h				\
+-	util.c				\
+ 	e-book-backend-google-factory.c	\
+ 	e-book-backend-google.h		\
+ 	e-book-backend-google.c
+@@ -498,7 +495,6 @@ distclean-compile:
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libebookbackendgoogle_la-e-book-backend-google-factory.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libebookbackendgoogle_la-e-book-backend-google.Plo@am__quote@
+-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libebookbackendgoogle_la-util.Plo@am__quote@
+ 
+ .c.o:
+ @am__fastdepCC_TRUE@	$(AM_V_CC)$(COMPILE) -MT $@ -MD -MP -MF $(DEPDIR)/$*.Tpo -c -o $@ $<
+@@ -523,14 +519,6 @@ distclean-compile:
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	source='$<' object='$@' libtool=yes @AMDEPBACKSLASH@
+ @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+ @am__fastdepCC_FALSE@	$(LTCOMPILE) -c -o $@ $<
+-
+-libebookbackendgoogle_la-util.lo: util.c
+-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebookbackendgoogle_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebookbackendgoogle_la-util.lo -MD -MP -MF $(DEPDIR)/libebookbackendgoogle_la-util.Tpo -c -o libebookbackendgoogle_la-util.lo `test -f 'util.c' || echo '$(srcdir)/'`util.c
+-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libebookbackendgoogle_la-util.Tpo $(DEPDIR)/libebookbackendgoogle_la-util.Plo
+-@am__fastdepCC_FALSE@	$(AM_V_CC) @AM_BACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	source='util.c' object='libebookbackendgoogle_la-util.lo' libtool=yes @AMDEPBACKSLASH@
+-@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+-@am__fastdepCC_FALSE@	$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebookbackendgoogle_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o libebookbackendgoogle_la-util.lo `test -f 'util.c' || echo '$(srcdir)/'`util.c
+ 
+ libebookbackendgoogle_la-e-book-backend-google-factory.lo: e-book-backend-google-factory.c
+ @am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libebookbackendgoogle_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT libebookbackendgoogle_la-e-book-backend-google-factory.lo -MD -MP -MF $(DEPDIR)/libebookbackendgoogle_la-e-book-backend-google-factory.Tpo -c -o libebookbackendgoogle_la-e-book-backend-google-factory.lo `test -f 'e-book-backend-google-factory.c' || echo '$(srcdir)/'`e-book-backend-google-factory.c

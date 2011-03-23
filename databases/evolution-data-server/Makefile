@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2011/03/07 19:35:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2011/03/23 15:57:39 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		2.32.2
+REVISION=		0
 
 CATEGORIES=		databases
 
@@ -55,7 +56,7 @@ LIB_DEPENDS= 		databases/db/v4 \
 			security/nss>=3.11.4p1 \
 			textproc/libical \
 			x11/gnome/libgweather \
-			devel/libgdata \
+			devel/libgdata>=0.8.0\
 			devel/eggdbus
 
 YACC=			bison
@@ -83,5 +84,6 @@ SUBST_VARS=		R
 post-extract:
 	@perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},' \
 		${WRKSRC}/addressbook/libebook/gen-western-table.py
+	@rm ${WRKSRC}/addressbook/backends/google/util.{c,h}
 
 .include <bsd.port.mk>
