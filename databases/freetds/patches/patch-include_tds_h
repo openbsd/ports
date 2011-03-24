@@ -1,7 +1,7 @@
-$OpenBSD: patch-include_tds_h,v 1.1 2010/11/04 22:13:33 sthen Exp $
---- include/tds.h.orig	Thu Nov  4 22:07:05 2010
-+++ include/tds.h	Thu Nov  4 22:07:08 2010
-@@ -26,6 +26,9 @@
+$OpenBSD: patch-include_tds_h,v 1.2 2011/03/24 12:51:19 sthen Exp $
+--- include/tds.h.orig	Sat Mar  5 21:58:00 2011
++++ include/tds.h	Sat Mar  5 21:58:01 2011
+@@ -27,6 +27,9 @@
  #include <stdio.h>
  #include <time.h>
  

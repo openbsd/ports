@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2010/11/26 07:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2011/03/24 12:51:19 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 V=		0.82
-PATCHVER=	20100728
+PATCHVER=	20110223
 DISTNAME=	freetds-$V
-REVISION=	3
-PKGNAME=	${DISTNAME}.1pre${PATCHVER}
+PKGNAME=	${DISTNAME}.${PATCHVER}
 PATCHFILES=	freetds-post82-${PATCHVER}.diff.gz:0
 
 SHARED_LIBS += ct                   4.0      # .4.0
@@ -16,8 +15,7 @@ SHARED_LIBS += tdsodbc              0.0      # .0.0
 CATEGORIES=	databases
 
 HOMEPAGE=	http://www.freetds.org/
-# or, if they lunch out the dns registration again:
-# http://freetds.schemamania.org/
+# also http://freetds.schemamania.org/ http://freetds.sourceforge.net/
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -52,15 +50,15 @@ FLAVOR?=
 REGRESS_IS_INTERACTIVE=Yes
 
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-threadsafe \
 		--enable-static \
-		--with-tdsver=8.0 \
 		--with-gnutls \
 		--with-iodbc="${LOCALBASE}" \
-		--with-libiconv-prefix="${LOCALBASE}"
+		--with-libiconv-prefix="${LOCALBASE}" \
+		--with-tdsver=8.0
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib"
 
