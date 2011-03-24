@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/03/23 16:36:08 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/03/24 10:45:42 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -6,10 +6,7 @@
 include/giomm-${V}/
 include/giomm-${V}/giomm/
 include/giomm-${V}/giomm.h
-include/giomm-${V}/giomm/actiongroup.h
 include/giomm-${V}/giomm/appinfo.h
-include/giomm-${V}/giomm/application.h
-include/giomm-${V}/giomm/applicationcommandline.h
 include/giomm-${V}/giomm/asyncinitable.h
 include/giomm-${V}/giomm/asyncresult.h
 include/giomm-${V}/giomm/bufferedinputstream.h
@@ -69,10 +66,7 @@ include/giomm-${V}/giomm/networkaddress.h
 include/giomm-${V}/giomm/networkservice.h
 include/giomm-${V}/giomm/outputstream.h
 include/giomm-${V}/giomm/private/
-include/giomm-${V}/giomm/private/actiongroup_p.h
 include/giomm-${V}/giomm/private/appinfo_p.h
-include/giomm-${V}/giomm/private/application_p.h
-include/giomm-${V}/giomm/private/applicationcommandline_p.h
 include/giomm-${V}/giomm/private/asyncinitable_p.h
 include/giomm-${V}/giomm/private/asyncresult_p.h
 include/giomm-${V}/giomm/private/bufferedinputstream_p.h
@@ -135,7 +129,6 @@ include/giomm-${V}/giomm/private/proxyresolver_p.h
 include/giomm-${V}/giomm/private/resolver_p.h
 include/giomm-${V}/giomm/private/seekable_p.h
 include/giomm-${V}/giomm/private/settings_p.h
-include/giomm-${V}/giomm/private/settingsbackend_p.h
 include/giomm-${V}/giomm/private/socket_p.h
 include/giomm-${V}/giomm/private/socketaddress_p.h
 include/giomm-${V}/giomm/private/socketaddressenumerator_p.h
@@ -164,7 +157,6 @@ include/giomm-${V}/giomm/proxyresolver.h
 include/giomm-${V}/giomm/resolver.h
 include/giomm-${V}/giomm/seekable.h
 include/giomm-${V}/giomm/settings.h
-include/giomm-${V}/giomm/settingsbackend.h
 include/giomm-${V}/giomm/socket.h
 include/giomm-${V}/giomm/socketaddress.h
 include/giomm-${V}/giomm/socketaddressenumerator.h
@@ -357,21 +349,12 @@ share/doc/glibmm-${V}/reference/html/
 share/doc/glibmm-${V}/reference/html/annotated.html
 share/doc/glibmm-${V}/reference/html/bc_s.png
 share/doc/glibmm-${V}/reference/html/classChecksumType.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1ActionGroup-members.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1ActionGroup.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1ActionGroup__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1AppInfo-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1AppInfo.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1AppInfo__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1AppLaunchContext-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1AppLaunchContext.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1AppLaunchContext__inherit__graph.png
-share/doc/glibmm-${V}/reference/html/classGio_1_1Application-members.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1Application.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1ApplicationCommandLine-members.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1ApplicationCommandLine.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1ApplicationCommandLine__inherit__graph.png
-share/doc/glibmm-${V}/reference/html/classGio_1_1Application__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1AsyncInitable-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1AsyncInitable.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1AsyncInitable__inherit__graph.png
@@ -551,9 +534,6 @@ share/doc/glibmm-${V}/reference/html/classGio_1_1Seekable.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Seekable__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1Settings-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Settings.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1SettingsBackend-members.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1SettingsBackend.html
-share/doc/glibmm-${V}/reference/html/classGio_1_1SettingsBackend__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1Settings__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGio_1_1Socket-members.html
 share/doc/glibmm-${V}/reference/html/classGio_1_1Socket.html

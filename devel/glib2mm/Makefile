@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2011/03/23 16:36:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2011/03/24 10:45:42 ajacoutot Exp $
 
 COMMENT=	C++ interface for glib2
 
 GNOME_PROJECT=	glibmm
-GNOME_VERSION=	2.27.98
+GNOME_VERSION=	2.27.99
 V=		2.4
 
 SUBST_VARS=	V
@@ -30,8 +30,6 @@ WANTLIB += gio-2.0 gthread-2.0
 
 MODULES=	devel/gettext \
 		x11/gnome
-
-BUILD_DEPENDS=	devel/mm-common
 
 LIB_DEPENDS=	devel/libsigc++-2 \
 		devel/glib2>=2.24.0
