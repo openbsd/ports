@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/03/24 22:01:08 landry Exp $
 
 COMMENT=	collection of additional GTK widgets
 
 DISTNAME=	libsexy-0.1.11
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS +=  sexy                 0.0      # .2.4
 CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://www.chipx86.com/wiki/Libsexy
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

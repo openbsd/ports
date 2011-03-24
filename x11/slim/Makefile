@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.17 2011/03/09 18:51:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/03/24 22:01:08 landry Exp $
 
 COMMENT=	simple login manager
 
 DISTNAME=	slim-1.3.2
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11
 HOMEPAGE=	http://slim.berlios.de/
 
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=slim/}
 
 # GPL

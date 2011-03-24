@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/24 22:01:08 landry Exp $
 
 COMMENT =	graphical su wrapper
 DISTNAME =	ktsuss-1.4
-REVISION =	3
+REVISION =	4
 CATEGORIES =	sysutils
-MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

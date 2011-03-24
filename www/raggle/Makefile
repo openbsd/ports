@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/24 21:35:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2011/03/24 22:01:08 landry Exp $
 
 COMMENT=	console RSS aggregator
 
 DISTNAME=	raggle-0.4.4
-REVISION =	2
+REVISION =	3
 
 CATEGORIES=	www news
 
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
 HOMEPAGE=	http://raggle.org
 
 # BSD

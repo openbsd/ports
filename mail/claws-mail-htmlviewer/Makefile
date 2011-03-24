@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/03/10 21:39:30 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2011/03/24 22:01:08 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,12 +7,12 @@ COMMENT=	HTML renderer plugin for Claws Mail
 VERSION=	0.29
 DISTNAME=	gtkhtml2_viewer-${VERSION}
 PKGNAME=	claws-mail-htmlviewer-${VERSION}
+REVISION=	0
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES=	mail
 DIST_SUBDIR=	claws
 
 HOMEPAGE=	http://www.claws-mail.org/plugin.php?plugin=gtkhtml2
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

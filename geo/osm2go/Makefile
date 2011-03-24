@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2011/01/19 23:26:51 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/24 22:01:08 landry Exp $
 
 COMMENT =	Openstreetmap editor for handheld devices
 
 VERSION =	0.7.22
 DISTNAME =	osm2go_${VERSION}-maemo1
 PKGNAME =	osm2go-${VERSION}
-REVISION=	2
+REVISION=	3
 
 WRKDIST =	${WRKDIR}/osm2go-${VERSION}
 CATEGORIES =	geo x11
 
 HOMEPAGE =	http://wiki.openstreetmap.org/wiki/Osm2go
-MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/03 11:45:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/24 22:01:08 landry Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,11 +6,9 @@ COMMENT=	communicate with DBus message system
 
 MODULES=	cpan
 DISTNAME=	Net-DBus-0.33.6
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 USE_GROFF =	Yes
-
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
 
 # GPL/Artistic
 PERMIT_PACKAGE_CDROM=	Yes
