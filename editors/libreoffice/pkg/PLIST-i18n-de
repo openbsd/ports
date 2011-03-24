@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-de,v 1.6 2011/03/04 07:57:37 robert Exp $
+@comment $OpenBSD: PLIST-i18n-de,v 1.7 2011/03/24 07:24:04 robert Exp $
 @conflict openoffice-i18n-de-*
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/de/
@@ -270,6 +270,7 @@ lib/libreoffice/program/resource/ooode.res
 lib/libreoffice/readmes/README_de
 lib/libreoffice/share/extensions/dict-de-AT/
 lib/libreoffice/share/extensions/dict-de-AT/COPYING
+lib/libreoffice/share/extensions/dict-de-AT/COPYING_GPLv3
 lib/libreoffice/share/extensions/dict-de-AT/COPYING_OASIS
 lib/libreoffice/share/extensions/dict-de-AT/META-INF/
 lib/libreoffice/share/extensions/dict-de-AT/META-INF/manifest.xml
@@ -286,6 +287,7 @@ lib/libreoffice/share/extensions/dict-de-AT/th_de_AT_v2.dat
 lib/libreoffice/share/extensions/dict-de-AT/th_de_AT_v2.idx
 lib/libreoffice/share/extensions/dict-de-CH/
 lib/libreoffice/share/extensions/dict-de-CH/COPYING
+lib/libreoffice/share/extensions/dict-de-CH/COPYING_GPLv3
 lib/libreoffice/share/extensions/dict-de-CH/COPYING_OASIS
 lib/libreoffice/share/extensions/dict-de-CH/META-INF/
 lib/libreoffice/share/extensions/dict-de-CH/META-INF/manifest.xml
@@ -301,7 +303,8 @@ lib/libreoffice/share/extensions/dict-de-CH/hyph_de_CH.dic
 lib/libreoffice/share/extensions/dict-de-CH/th_de_CH_v2.dat
 lib/libreoffice/share/extensions/dict-de-CH/th_de_CH_v2.idx
 lib/libreoffice/share/extensions/dict-de-DE/
-lib/libreoffice/share/extensions/dict-de-DE/COPYING
+lib/libreoffice/share/extensions/dict-de-DE/COPYING_GPLv2
+lib/libreoffice/share/extensions/dict-de-DE/COPYING_GPLv3
 lib/libreoffice/share/extensions/dict-de-DE/COPYING_OASIS
 lib/libreoffice/share/extensions/dict-de-DE/META-INF/
 lib/libreoffice/share/extensions/dict-de-DE/META-INF/manifest.xml
