@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2011/03/24 22:01:08 landry Exp $
+# $OpenBSD: Makefile,v 1.13 2011/03/24 22:03:34 jasper Exp $
 
 COMMENT=	gtk-based git repository viewer
 CATEGORIES=	devel x11
 GNOME_VERSION=	0.5
 GNOME_PROJECT=	giggle
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS+=	giggle		0.0 \
 		giggle-git	0.0 # .0.0
+
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 HOMEPAGE=	http://live.gnome.org/giggle
 
