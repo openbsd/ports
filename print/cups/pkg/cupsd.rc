@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: cupsd.rc,v 1.7 2011/01/11 12:13:59 ajacoutot Exp $
+# $OpenBSD: cupsd.rc,v 1.8 2011/03/24 15:17:28 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/cupsd"
 
@@ -52,7 +52,7 @@ rc_post() {
 		else
 			for i in ${_lpfiles} /etc/printcap; do
 				if [ -e $i.pre-cups ]; then
-					mv $i.pre-cups $i
+					mv -f $i.pre-cups $i
 				fi
 			done
 		fi
