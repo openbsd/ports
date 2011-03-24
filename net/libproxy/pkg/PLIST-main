@@ -1,13 +1,23 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2009/04/04 10:07:31 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/03/24 06:50:10 ajacoutot Exp $
 @bin bin/proxy
 include/proxy.h
+@lib lib/libmodman.so.${LIBmodman_VERSION}
 lib/libproxy/
-lib/libproxy.la
 @lib lib/libproxy.so.${LIBproxy_VERSION}
-lib/libproxy/0.2.3/
-lib/libproxy/0.2.3/plugins/
-lib/libproxy/0.2.3/plugins/envvar.so
-lib/libproxy/0.2.3/plugins/file.so
-lib/libproxy/0.2.3/plugins/kde.so
+lib/libproxy/0.4.6/
+lib/libproxy/0.4.6/modules/
 lib/pkgconfig/libproxy-1.0.pc
 lib/python${MODPY_VERSION}/site-packages/libproxy.py
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Net/Libproxy.pm
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/Libproxy/
+libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Net/Libproxy/Libproxy.so
+share/cmake/
+share/cmake/Modules/
+share/cmake/Modules/Findlibproxy.cmake
+share/vala/
+share/vala/vapi/
+share/vala/vapi/libproxy-1.0.vapi

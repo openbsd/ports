@@ -1,0 +1,12 @@
+$OpenBSD: patch-libproxy_url_hpp,v 1.1 2011/03/24 06:50:09 ajacoutot Exp $
+--- libproxy/url.hpp.orig	Tue Mar 22 09:25:28 2011
++++ libproxy/url.hpp	Tue Mar 22 09:25:34 2011
+@@ -20,6 +20,8 @@
+ #ifndef URL_HPP_
+ #define URL_HPP_
+ 
++#include <sys/types.h>
++
+ #include <map>
+ #include <stdexcept>
+ #include <string>

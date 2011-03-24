@@ -1,0 +1,15 @@
+$OpenBSD: patch-libproxy_CMakeLists_txt,v 1.1 2011/03/24 06:50:09 ajacoutot Exp $
+
+error: '::wcstof' has not been declared
+
+--- libproxy/CMakeLists.txt.orig	Tue Mar 22 09:13:30 2011
++++ libproxy/CMakeLists.txt	Tue Mar 22 09:13:36 2011
+@@ -6,7 +6,7 @@ set_project_version(0 4 6)
+ if (WIN32)
+   add_definitions(-D_CRT_SECURE_NO_WARNINGS=1)
+ else(WIN32)
+-  add_definitions(-D_POSIX_C_SOURCE=1)
++#  add_definitions(-D_POSIX_C_SOURCE=1)
+   set(CMAKE_CXX_FLAGS "-fvisibility=hidden ${CMAKE_CXX_FLAGS}")
+ endif(WIN32)
+ 

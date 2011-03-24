@@ -1,0 +1,17 @@
+$OpenBSD: patch-libproxy_cmake_modules_cmk,v 1.1 2011/03/24 06:50:09 ajacoutot Exp $
+--- libproxy/cmake/modules.cmk.orig	Tue Mar 22 11:03:08 2011
++++ libproxy/cmake/modules.cmk	Tue Mar 22 11:05:20 2011
+@@ -17,10 +17,10 @@ include(cmake/modules/pacrunner_mozjs.cmk)
+ include(cmake/modules/pacrunner_webkit.cmk)
+ 
+ # Build the pacrunner into libproxy unless we are building for multiple engines
+-set(BIPR 1)
+-if(MOZJS_FOUND AND WEBKIT_FOUND)
++#set(BIPR 1)
++#if(MOZJS_FOUND AND WEBKIT_FOUND)
+   set(BIPR 0)
+-endif()
++#endif()
+ 
+ #
+ ## Module definition

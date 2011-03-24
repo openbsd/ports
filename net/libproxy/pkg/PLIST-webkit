@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-webkit,v 1.1 2011/03/24 06:50:10 ajacoutot Exp $
+lib/libproxy/0.4.6/modules/pacrunner_webkit.so

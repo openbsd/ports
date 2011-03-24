@@ -1,0 +1,12 @@
+$OpenBSD: patch-libproxy_proxy_cpp,v 1.1 2011/03/24 06:50:09 ajacoutot Exp $
+--- libproxy/proxy.cpp.orig	Tue Mar 22 09:24:47 2011
++++ libproxy/proxy.cpp	Tue Mar 22 09:24:55 2011
+@@ -17,6 +17,8 @@
+  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301 USA
+  ******************************************************************************/
+ 
++#include <sys/types.h>
++
+ #include <vector>
+ #include <cstring>   // For strdup()
+ #include <iostream>  // For cerr
