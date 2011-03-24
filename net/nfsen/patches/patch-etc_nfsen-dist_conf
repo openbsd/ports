@@ -1,6 +1,6 @@
-$OpenBSD: patch-etc_nfsen-dist_conf,v 1.1.1.1 2010/05/02 20:52:32 sthen Exp $
---- etc/nfsen-dist.conf.orig	Wed Jun 10 08:54:50 2009
-+++ etc/nfsen-dist.conf	Fri Apr 30 23:10:21 2010
+$OpenBSD: patch-etc_nfsen-dist_conf,v 1.2 2011/03/24 23:04:00 sthen Exp $
+--- etc/nfsen-dist.conf.orig	Thu Sep  9 06:46:23 2010
++++ etc/nfsen-dist.conf	Thu Mar 17 01:56:44 2011
 @@ -8,6 +8,10 @@
  # Set all the values to fit your NfSen setup and run the 'install.pl'
  # script from the nfsen distribution directory.
@@ -50,9 +50,9 @@ $OpenBSD: patch-etc_nfsen-dist_conf,v 1.1.1.1 2010/05/02 20:52:32 sthen Exp $
 -$VARDIR="${BASEDIR}/var";
 +$VARDIR="/var/db/nfsen";
  
- #
  # directory for all pid files
-@@ -53,15 +57,15 @@ $VARDIR="${BASEDIR}/var";
+ # $PIDDIR="$VARDIR/run";
+@@ -60,15 +64,15 @@ $VARDIR="${BASEDIR}/var";
  #
  # The Profiles stat directory, where all profile information
  # RRD DBs and png pictures of the profile are stored
@@ -71,7 +71,7 @@ $OpenBSD: patch-etc_nfsen-dist_conf,v 1.1.1.1 2010/05/02 20:52:32 sthen Exp $
  
  #
  # Where go all the frontend plugins
-@@ -69,7 +73,7 @@ $FRONTEND_PLUGINDIR="${HTMLDIR}/plugins";
+@@ -76,7 +80,7 @@ $FRONTEND_PLUGINDIR="${HTMLDIR}/plugins";
  
  #
  # nfdump tools path
@@ -80,7 +80,7 @@ $OpenBSD: patch-etc_nfsen-dist_conf,v 1.1.1.1 2010/05/02 20:52:32 sthen Exp $
  
  #
  # nfsend communication socket
-@@ -81,7 +85,7 @@ $PREFIX  = '/usr/local/bin';
+@@ -88,7 +92,7 @@ $PREFIX  = '/usr/local/bin';
  # This may be a different or the same uid than your web server.
  # Note: This user must be in group $WWWGROUP, otherwise nfcapd
  #       is not able to write data files!
@@ -89,3 +89,11 @@ $OpenBSD: patch-etc_nfsen-dist_conf,v 1.1.1.1 2010/05/02 20:52:32 sthen Exp $
  
  # user and group of the web server process
  # All netflow processing will be done with this user
+@@ -210,6 +214,7 @@ $syslog_facility = 'local3';
+ @plugins = (
+     # profile    # module
+     # [ '*',     'demoplugin' ],
++    # [ 'live',  'PortTracker' ],   # PortTracker requires additional configuration
+ );
+ 
+ %PluginConf = (

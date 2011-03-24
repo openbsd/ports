@@ -1,0 +1,12 @@
+$OpenBSD: patch-html_nfsen_php,v 1.1 2011/03/24 23:04:00 sthen Exp $
+--- html/nfsen.php.orig	Thu Mar 17 02:12:31 2011
++++ html/nfsen.php	Thu Mar 17 02:12:50 2011
+@@ -696,7 +696,7 @@ switch ($label) {
+ 		}
+ 		if ( count($plugins) > 0 ) {
+ 			$plugin_name = $plugins[ $_SESSION['sub_tab'] ];
+-			$include_file = "$FRONTEND_PLUGINDIR/$plugin_name" . ".php";
++			$include_file = "plugins/$plugin_name" . ".php";
+ 			include($include_file);
+ 			$plugin_parse_input = $plugin_name . "_ParseInput";
+ 			$plugin_run 	    = $plugin_name . "_Run";

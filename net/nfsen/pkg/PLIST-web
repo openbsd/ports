@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.1.1.1 2010/05/02 20:52:32 sthen Exp $
+@comment $OpenBSD: PLIST-web,v 1.2 2011/03/24 23:04:00 sthen Exp $
 htdocs/nfsen/
 htdocs/nfsen/alerting.php
 htdocs/nfsen/colour_palette.html
@@ -19,6 +19,7 @@ htdocs/nfsen/icons/arrow.blue.down.png
 htdocs/nfsen/icons/arrow.blue.right.png
 htdocs/nfsen/icons/arrow.yellow.down.png
 htdocs/nfsen/icons/arrow.yellow.right.png
+htdocs/nfsen/icons/cancel.png
 htdocs/nfsen/icons/close.png
 htdocs/nfsen/icons/cursor-line.png
 htdocs/nfsen/icons/cursor-start.png
@@ -38,6 +39,7 @@ htdocs/nfsen/icons/space.png
 htdocs/nfsen/icons/spyglas.png
 htdocs/nfsen/icons/trash.png
 htdocs/nfsen/icons/trigger.png
+htdocs/nfsen/index.php
 htdocs/nfsen/js/
 htdocs/nfsen/js/ColorPicker2.js
 htdocs/nfsen/js/alerting.js
@@ -52,6 +54,7 @@ htdocs/nfsen/nfsenutil.php
 htdocs/nfsen/overview.php
 htdocs/nfsen/pic.php
 htdocs/nfsen/plugins/
+htdocs/nfsen/plugins/PortTracker.php
 htdocs/nfsen/plugins/demoplugin.php
 htdocs/nfsen/process.php
 htdocs/nfsen/profileadmin.php

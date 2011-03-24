@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/24 23:04:00 sthen Exp $
 
 MULTI_PACKAGES=		-main -web
 COMMENT-main=		web-based front end for the nfdump netflow tools
 COMMENT-web=		html/php parts for nfsen
 
-V=			1.3.2
+V=			1.3.5
 DISTNAME=		nfsen-$V
 PKGNAME-main=		${DISTNAME}
-REVISION-main=		1
 PKGNAME-web=		nfsen-web-$V
 CATEGORIES=		net www
 HOMEPAGE=		http://nfsen.sourceforge.net/
@@ -26,7 +25,7 @@ MODULES=		perl
 COMMON_DEPENDS=		net/rrdtool,-perl \
 			mail/p5-Mail-Tools \
 			net/nfdump,-nfprofile \
-			net/nfdump>=1.5.8p0
+			net/nfdump>=1.6.3
 BUILD_DEPENDS=		${COMMON_DEPENDS}
 RUN_DEPENDS-main=	${COMMON_DEPENDS} \
 			nfsen-web-$V:net/nfsen,-web
@@ -35,19 +34,19 @@ RUN_DEPENDS-web=	www/php5/core
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 PREFIX-web=		/var/www
+WWWDIR=			${WRKINST}${PREFIX-web}/htdocs
 PKG_ARCH=		*
 
-post-extract:
-	rm ${WRKSRC}/html/nfsen.php.orig # in the distfile
-
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/etc/nfsen-dist.conf
+	@${SUBST_CMD} ${WRKSRC}/etc/nfsen-dist.conf
+	@cd ${WRKSRC}/html; [ -r index.php ] || echo \
+	    '<?php header("Location: nfsen.php"); ?>' > index.php
 
 do-install:
-	${INSTALL_DATA_DIR} ${WRKINST}/var/www/htdocs
+	${INSTALL_DATA_DIR} ${WWWDIR}/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nfsen
 	${INSTALL_DATA_DIR} ${PREFIX}/${P5SITE}/NfSen/installer-items
-	cd ${WRKSRC} && INSTDIR=${WRKINST}/ ./install.pl etc/nfsen-dist.conf copy < /dev/null
+	cd ${WRKSRC} && INSTPREFIX=${WRKINST}/ ./install.pl etc/nfsen-dist.conf copy < /dev/null
 	${INSTALL_DATA} ${WRKINST}/etc/nfsen.conf ${PREFIX}/share/examples/nfsen
 	rm ${WRKINST}/etc/nfsen*
 	${INSTALL_SCRIPT} ${WRKSRC}/install.pl ${PREFIX}/bin/install-nfsen.pl
@@ -56,7 +55,10 @@ do-install:
 	    -e 's,use lib "./installer-items";,use lib "${TRUEPREFIX}/${P5SITE}/NfSen/installer-items";,' \
 	    ${PREFIX}/bin/install-nfsen.pl
 	${INSTALL_SCRIPT} ${WRKSRC}/installer-items/* ${PREFIX}/${P5SITE}/NfSen/installer-items
-	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKINST}/var/www/htdocs/nfsen ${PREFIX}/share/doc/nfsen
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/PortTracker/PortTracker.pm ${PREFIX}/lib/nfsen/plugins/
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/PortTracker/PortTracker.php ${WWWDIR}/nfsen/plugins/
+	find ${WRKINST} -name '*.orig' -print0 | xargs -0r rm
+	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKINST}/var/www/htdocs/nfsen
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/bin ${PREFIX}/lib ${PREFIX}/libdata
 
 .include <bsd.port.mk>
