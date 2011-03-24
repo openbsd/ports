@@ -1,8 +1,16 @@
-# $OpenBSD: ruby.port.mk,v 1.43 2011/03/18 23:04:22 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.44 2011/03/24 21:26:59 jeremy Exp $
 
 # ruby module
 
 CATEGORIES+=		lang/ruby
+
+# Whether the ruby module should automatically add FLAVORs.
+# If left blank, does so only for gem and extconf ports.
+.if ${CONFIGURE_STYLE:L:Mgem} || ${CONFIGURE_STYLE:L:Mextconf}
+MODRUBY_HANDLE_FLAVORS ?= Yes
+.else
+MODRUBY_HANDLE_FLAVORS ?= No
+.endif
 
 # This allows you to build ruby 1.8, ruby 1.9, and jruby packages using
 # the same port directory for gem and extconf based ports.  It does this
@@ -11,7 +19,7 @@ CATEGORIES+=		lang/ruby
 # version.  For example, JDBC gem ports want to set MODRUBY_REV=jruby,
 # since they don't work on ruby 1.8 or ruby 1.9.
 .if !defined(MODRUBY_REV)
-.  if ${CONFIGURE_STYLE:L:Mgem} || ${CONFIGURE_STYLE:L:Mextconf}
+.  if ${MODRUBY_HANDLE_FLAVORS:L:Myes}
 .    if !defined(FLAVORS)
 FLAVORS?=		ruby19 rbx jruby
 .    endif
@@ -118,6 +126,7 @@ MODRUBY_RSPEC_DEPENDS =	devel/ruby-rspec,${MODRUBY_FLAVOR}
 RUBY=			${LOCALBASE}/jruby/bin/jruby
 RAKE=			${RUBY} -S rake
 RSPEC=			${RUBY} -S spec
+MODRUBY_BIN_TESTRB =	${RUBY} -S testrb
 
 # Without this, JRuby often fails with a memory error.
 MAKE_ENV+=		JAVA_MEM='-Xms256m -Xmx256m'
@@ -125,9 +134,11 @@ MAKE_ENV+=		JAVA_MEM='-Xms256m -Xmx256m'
 RUBY=			${LOCALBASE}/bin/rbx
 RAKE=			${RUBY} -S rake
 RSPEC=			${RUBY} -S spec
+MODRUBY_BIN_TESTRB =	${RUBY} -S testrb
 .else
 RUBY=			${LOCALBASE}/bin/ruby${MODRUBY_BINREV}
 RAKE=			${LOCALBASE}/bin/rake${MODRUBY_BINREV}
+MODRUBY_BIN_TESTRB =	${LOCALBASE}/bin/testrb${MODRUBY_BINREV}
 .  if ${MODRUBY_REV} == 1.8
 MODRUBY_RAKE_DEPENDS =	devel/ruby-rake
 RSPEC=			${LOCALBASE}/bin/spec
