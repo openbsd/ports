@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/24 21:35:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.20 2011/03/24 21:45:45 jeremy Exp $
 
 COMMENT =	powerful webserver security scanner for network
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-
+MODRUBY_HANDLE_FLAVORS =	No
 CONFIGURE_STYLE =	ruby extconf
 
 MODULES =	lang/ruby
