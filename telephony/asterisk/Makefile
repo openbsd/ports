@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.106 2011/03/20 15:37:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.107 2011/03/24 22:40:51 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -64,7 +64,7 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
 CONFIGURE_STYLE=	gnu
-AUTOCONF_VERSION=	2.64 # XXX 2.65 adds _'s with our m4
+AUTOCONF_VERSION=	2.65
 AUTOMAKE_VERSION=	1.10
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
