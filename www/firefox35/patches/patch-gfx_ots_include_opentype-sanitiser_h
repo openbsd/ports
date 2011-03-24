@@ -1,0 +1,17 @@
+$OpenBSD: patch-gfx_ots_include_opentype-sanitiser_h,v 1.1 2011/03/24 11:41:11 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=643137
+--- gfx/ots/include/opentype-sanitiser.h.orig	Fri Mar 18 00:02:27 2011
++++ gfx/ots/include/opentype-sanitiser.h	Fri Mar 18 00:02:35 2011
+@@ -64,8 +64,10 @@ class OTSStream {
+     }
+ 
+     while (length >= 4) {
+-      chksum_ += ntohl(*reinterpret_cast<const uint32_t*>(
+-          reinterpret_cast<const uint8_t*>(data) + offset));
++      uint32_t tmp;
++      std::memcpy(&tmp, reinterpret_cast<const uint8_t *>(data) + offset,
++        sizeof(uint32_t));
++      chksum_ += ntohl(tmp);
+       length -= 4;
+       offset += 4;
+     }
