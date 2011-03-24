@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.682 2011/03/24 06:50:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.683 2011/03/24 06:53:14 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -100,6 +100,7 @@
      SUBDIR += ftpsesame
      SUBDIR += gajim
      SUBDIR += gftp
+     SUBDIR += glib2-networking
      SUBDIR += gloox
      SUBDIR += gmudix
      SUBDIR += gnaughty
