@@ -1,0 +1,28 @@
+$OpenBSD: patch-plugins_tasklist_tasklist-widget_c,v 1.1 2011/03/24 17:58:30 stsp Exp $
+
+Fixes http://bugzilla.xfce.org/show_bug.cgi?id=7425
+      "Can't focus grouped windows from the panel"
+
+--- plugins/tasklist/tasklist-widget.c.orig	Fri Feb 25 21:58:41 2011
++++ plugins/tasklist/tasklist-widget.c	Thu Mar 24 13:06:11 2011
+@@ -3023,6 +3023,11 @@ xfce_tasklist_group_button_menu_close_all (XfceTasklis
+ }
+ 
+ 
++static void
++xfce_tasklist_group_button_menu_activate(WnckWindow *window)
++{
++  wnck_window_unminimize (window, gtk_get_current_event_time ());
++}
+ 
+ static GtkWidget *
+ xfce_tasklist_group_button_menu (XfceTasklistChild *group_child,
+@@ -3052,6 +3057,8 @@ xfce_tasklist_group_button_menu (XfceTasklistChild *gr
+           if (action_menu_entries)
+             gtk_menu_item_set_submenu (GTK_MENU_ITEM (mi),
+                 wnck_action_menu_new (child->window));
++          else 
++             gtk_signal_connect_object(GTK_OBJECT(mi), "activate", G_CALLBACK (xfce_tasklist_group_button_menu_activate), child->window);
+         }
+     }
+ 
