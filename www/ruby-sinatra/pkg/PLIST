@@ -1,15 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/12/20 17:28:43 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/03/24 03:16:46 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/AUTHORS
 ${GEM_LIB}/gems/${DISTNAME}/CHANGES
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.de.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/README.es.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/README.fr.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/README.hu.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/README.jp.rdoc
+${GEM_LIB}/gems/${DISTNAME}/README.pt-br.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/README.ru.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/README.zh.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/lib/
@@ -57,11 +60,17 @@ ${GEM_LIB}/gems/${DISTNAME}/test/scss_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/server_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/settings_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/sinatra_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/slim_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/static_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/templates_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/textile_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/views/
-${GEM_LIB}/gems/${DISTNAME}/test/views/ascii.haml
+${GEM_LIB}/gems/${DISTNAME}/test/views/a/
+${GEM_LIB}/gems/${DISTNAME}/test/views/a/in_a.str
+${GEM_LIB}/gems/${DISTNAME}/test/views/ascii.erb
+${GEM_LIB}/gems/${DISTNAME}/test/views/b/
+${GEM_LIB}/gems/${DISTNAME}/test/views/b/in_b.str
+${GEM_LIB}/gems/${DISTNAME}/test/views/calc.html.erb
 ${GEM_LIB}/gems/${DISTNAME}/test/views/error.builder
 ${GEM_LIB}/gems/${DISTNAME}/test/views/error.erb
 ${GEM_LIB}/gems/${DISTNAME}/test/views/error.erubis
@@ -84,6 +93,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/views/hello.radius
 ${GEM_LIB}/gems/${DISTNAME}/test/views/hello.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/test/views/hello.sass
 ${GEM_LIB}/gems/${DISTNAME}/test/views/hello.scss
+${GEM_LIB}/gems/${DISTNAME}/test/views/hello.slim
 ${GEM_LIB}/gems/${DISTNAME}/test/views/hello.str
 ${GEM_LIB}/gems/${DISTNAME}/test/views/hello.test
 ${GEM_LIB}/gems/${DISTNAME}/test/views/hello.textile
@@ -95,8 +105,9 @@ ${GEM_LIB}/gems/${DISTNAME}/test/views/layout2.liquid
 ${GEM_LIB}/gems/${DISTNAME}/test/views/layout2.mab
 ${GEM_LIB}/gems/${DISTNAME}/test/views/layout2.nokogiri
 ${GEM_LIB}/gems/${DISTNAME}/test/views/layout2.radius
+${GEM_LIB}/gems/${DISTNAME}/test/views/layout2.slim
 ${GEM_LIB}/gems/${DISTNAME}/test/views/layout2.str
 ${GEM_LIB}/gems/${DISTNAME}/test/views/layout2.test
 ${GEM_LIB}/gems/${DISTNAME}/test/views/nested.str
-${GEM_LIB}/gems/${DISTNAME}/test/views/utf8.haml
+${GEM_LIB}/gems/${DISTNAME}/test/views/utf8.erb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
