@@ -1,11 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/19 08:49:53 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/24 12:34:10 espie Exp $
 
 VERSION =	2.65
-BROKEN =	relies on GNU m4 behaviour that /usr/bin/m4 does not yet handle
-# look for, in particular, extra _ chars. likely to be a problem
-# with translit(). you can add this hack to a port Makefile to use
-# GNU m4 to generate the script so you can compare behaviour:
-# AUTOCONF= M4=${LOCALBASE}/bin/gm4 autoconf
 
 BUILD_DEPENDS =		devel/help2man
 
