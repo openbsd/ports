@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.75 2010/11/19 22:31:32 espie Exp $
+# $OpenBSD: Makefile,v 1.76 2011/03/24 21:09:07 naddy Exp $
 
 COMMENT=	get files from FTP, Gopher, HTTP or HTTPS servers
 
-DISTNAME=	curl-7.21.2
-SHARED_LIBS=	curl                 17.0     # .6.0
+DISTNAME=	curl-7.21.4
+SHARED_LIBS=	curl                 18.0     # .6.0
 CATEGORIES=	net
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/
@@ -23,7 +23,6 @@ LIB_DEPENDS=	devel/libidn
 WANTLIB=	c crypto idn ssl z
 
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-ca-bundle=/etc/ssl/cert.pem \
