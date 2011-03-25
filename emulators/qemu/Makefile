@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2011/03/20 20:40:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.64 2011/03/25 01:05:15 sthen Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS =	i386 amd64 sparc64
@@ -6,10 +6,13 @@ ONLY_FOR_ARCHS =	i386 amd64 sparc64
 COMMENT =		multi system emulator
 
 DISTNAME =		qemu-0.14.0
-REVISION=		0
+REVISION =		1
 CATEGORIES =		emulators
+MASTER_SITES =		${MASTER_SITE_SAVANNAH:=qemu/}
 
 HOMEPAGE =		http://www.qemu.org/
+
+MAINTAINER=		Brad Smith <brad@comstyle.com>
 
 # GPLv2/LGPLv2/BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,8 +21,6 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c jpeg m ossaudio png pthread util z
-
-MASTER_SITES =		${MASTER_SITE_SAVANNAH:=qemu/}
 
 BUILD_DEPENDS =		textproc/texi2html
 LIB_DEPENDS =		graphics/jpeg \
@@ -38,13 +39,13 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--extra-cflags="-I${LOCALBASE}/include \
 					-I${LOCALBASE}/include/libpng" \
 			--extra-ldflags=-L${LOCALBASE}/lib \
-			--disable-vnc-tls \
-			--disable-vnc-sasl \
-			--disable-curses \
-			--disable-curl \
 			--disable-bsd-user \
+			--disable-curl \
+			--disable-curses \
 			--disable-guest-base \
-			--disable-uuid
+			--disable-uuid \
+			--disable-vnc-sasl \
+			--disable-vnc-tls
 
 FLAVORS =		debug no_x11
 FLAVOR ?=
