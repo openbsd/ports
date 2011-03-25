@@ -16,5 +16,5 @@ PDF document.
 Command line utilities are included:  pdfdraw, to render pages and output
 PNM image files.  pdfshow, to print and examine the objects in a PDF file.
 pdfclean, to decompress and pretty print the streams and objects in PDF
-files and also to extract individual pages.  mu_pdfinfo, to display
+files and also to extract individual pages.  pdfinfo_mupdf, to display
 information about objects.  pdfextract, to extract individual objects.
