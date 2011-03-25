@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/03/03 13:19:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2011/03/25 07:24:31 ajacoutot Exp $
 
 # XXX on goffice version change,
 # update API_VERSION in math/gnumeric, bump PKGNAME then change the
@@ -9,7 +9,7 @@ SHARED_ONLY=	Yes
 COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
-GNOME_VERSION=	0.8.13
+GNOME_VERSION=	0.8.14
 
 SHARED_LIBS +=	goffice-0.8          0.0      # .8.0
 
@@ -40,6 +40,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-gtk-doc
+
+# XXX move to gsettings
+CONFIGURE_ARGS +=	--with-config-backend=gconf
 
 SUBST_VARS=		GNOME_VERSION
 
