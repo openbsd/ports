@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/12/19 10:25:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2011/03/25 08:30:56 ajacoutot Exp $
 @conflict vala-<0.10
+@pkgpath devel/dconf
 @bin bin/dconf
-@bin bin/dconf-editor
 include/dconf/
 include/dconf/dconf-client.h
 include/dconf/dconf-engine.h
@@ -18,6 +18,8 @@ share/dbus-1/services/
 share/dbus-1/services/ca.desrt.dconf.service
 share/dbus-1/system-services/
 share/dbus-1/system-services/ca.desrt.dconf.service
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/dconf/
 share/gtk-doc/html/dconf/DConfClient.html
 share/gtk-doc/html/dconf/annotation-glossary.html
