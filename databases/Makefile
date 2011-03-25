@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2011/01/07 12:50:55 pea Exp $
+# $OpenBSD: Makefile,v 1.193 2011/03/25 10:08:11 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -18,6 +18,7 @@
      SUBDIR += hs-HDBC-mysql
      SUBDIR += hs-HDBC-postgresql
      SUBDIR += hs-HDBC-sqlite3
+     SUBDIR += hs-redis
      SUBDIR += iodbc
      SUBDIR += jxplorer
      SUBDIR += keximdb

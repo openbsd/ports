@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.906 2011/03/24 20:12:45 jeremy Exp $
+# $OpenBSD: Makefile,v 1.907 2011/03/25 10:08:10 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -144,6 +144,7 @@
      SUBDIR += hs-ListLike
      SUBDIR += hs-MetaObject
      SUBDIR += hs-MissingH
+     SUBDIR += hs-MonadCatchIO-mtl
      SUBDIR += hs-MonadCatchIO-transformers
      SUBDIR += hs-PSQueue
      SUBDIR += hs-QuickCheck
