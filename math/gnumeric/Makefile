@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.60 2011/03/03 13:19:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2011/03/25 07:25:27 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
-GNOME_VERSION=		1.10.13
+GNOME_VERSION=		1.10.14
 
 CATEGORIES=    		math
 
 HOMEPAGE=		http://www.gnome.org/projects/gnumeric/
 
-API_VERSION=		0.8.13 # from devel/goffice
+API_VERSION=		0.8.14 # from devel/goffice
 
 # GPLv2
 # Some tools: LGPL
@@ -38,7 +38,7 @@ MODULES=		devel/gconf2 \
 LIB_DEPENDS=		graphics/libart \
 			devel/libglade2 \
 			x11/gnome/libgnomeui \
-			goffice->=0.8.13,<0.8.14:devel/goffice \
+			goffice->=0.8.14,<0.8.15:devel/goffice \
 			devel/libgsf,-gnome \
 			textproc/libxml
 
