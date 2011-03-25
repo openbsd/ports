@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.56 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.57 2011/03/25 06:44:01 ajacoutot Exp $
 
 COMMENT-main=		GNOME Structured File library
 COMMENT-gnome=		GNOME specific extensions to libgsf
 
 GNOME_PROJECT=		libgsf
-GNOME_VERSION=		1.14.19
+GNOME_VERSION=		1.14.20
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-gnome=		libgsf-gnome-${VERSION}
-REVISION-gnome=		0
 
 CATEGORIES=		devel
 
@@ -65,7 +64,7 @@ RUN_DEPENDS-gnome=	${RUN_DEPENDS} \
 LIB_DEPENDS-gnome=	${LIB_DEPENDS} \
 			${BUILD_PKGPATH} \
 			x11/gnome/libbonobo
-WANTLIB-gnome += ${WANTLIB} gsf-1 bonobo-2 bonobo-activation
+WANTLIB-gnome += ${WANTLIB} gsf-1 bonobo-2 bonobo-activation png
 WANTLIB-gnome += ORBit-2 ORBitCosNaming-2 gdk_pixbuf-2.0 gthread-2.0
 
 .include <bsd.port.mk>

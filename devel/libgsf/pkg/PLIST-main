@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2010/09/26 05:50:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2011/03/25 06:44:01 ajacoutot Exp $
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
 %%SHARED%%
@@ -108,6 +108,7 @@ share/gtk-doc/html/gsf/right.png
 share/gtk-doc/html/gsf/sources.html
 share/gtk-doc/html/gsf/style.css
 share/gtk-doc/html/gsf/up.png
+share/locale/ca/LC_MESSAGES/libgsf.mo
 share/locale/cs/LC_MESSAGES/libgsf.mo
 share/locale/da/LC_MESSAGES/libgsf.mo
 share/locale/de/LC_MESSAGES/libgsf.mo
