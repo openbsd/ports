@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2011/03/07 07:25:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/03/25 20:23:30 sthen Exp $
 
 COMMENT=	transparent www proxy driver for pf
 
 DISTNAME=	transproxy-1.6
+REVISION=	0
 CATEGORIES=	www net
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=transproxy/}
