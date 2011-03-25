@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2011/01/15 01:09:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2011/03/25 16:41:42 jeremy Exp $
 
 COMMENT=	Ruby interface to some common LDAP libraries
 
-PKGNAME=	ldap-0.9.7
+PKGNAME=	ldap-0.9.8
 DISTNAME=	ruby-${PKGNAME}
-REVISION=	13
 CATEGORIES=	databases
 
 HOMEPAGE=	http://ruby-ldap.sourceforge.net/
@@ -18,6 +17,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ruby-ldap/}
+EXTRACT_SUFX =		.tar.bz2
 
 MODULES=		lang/ruby
 
