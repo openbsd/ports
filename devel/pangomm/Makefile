@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2011/03/23 16:37:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2011/03/25 08:43:48 ajacoutot Exp $
 
 COMMENT =		C++ interface for pango
 
-V =			2.28.0
+V =			2.28.1
 DISTNAME =		pangomm-${V}
 CATEGORIES =		devel x11
 
@@ -20,8 +20,6 @@ MASTER_SITES =		${MASTER_SITE_GNOME:=sources/pangomm/${V:C/^([0-9]+\.[0-9]+).*/\
 EXTRACT_SUFX =		.tar.bz2
 
 MODULES =		devel/gettext
-
-BUILD_DEPENDS=		devel/mm-common
 
 LIB_DEPENDS =		devel/pango \
 			devel/glib2mm \
