@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/08 23:37:17 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/03/25 16:46:53 jeremy Exp $
 ${GEM_BIN}/nokogiri${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -164,6 +164,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/ffi/structs/xml_node_set.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/ffi/structs/xml_notation.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/ffi/structs/xml_ns.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/ffi/structs/xml_parser_context.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/ffi/structs/xml_parser_input.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/ffi/structs/xml_relax_ng.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/ffi/structs/xml_sax_handler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/nokogiri/ffi/structs/xml_sax_push_parser_context.rb
@@ -273,6 +274,8 @@ ${GEM_LIB}/gems/${DISTNAME}/test/css/test_nthiness.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/css/test_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/css/test_tokenizer.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/css/test_xpath_visitor.rb
+${GEM_LIB}/gems/${DISTNAME}/test/decorators/
+${GEM_LIB}/gems/${DISTNAME}/test/decorators/test_slop.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/ffi/
 ${GEM_LIB}/gems/${DISTNAME}/test/ffi/test_document.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/files/
@@ -354,4 +357,6 @@ ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_syntax_error.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_text.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_unparented_node.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/xml/test_xpath.rb
+${GEM_LIB}/gems/${DISTNAME}/test/xslt/
+${GEM_LIB}/gems/${DISTNAME}/test/xslt/test_custom_functions.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
