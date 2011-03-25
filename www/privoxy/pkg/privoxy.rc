@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $OpenBSD: privoxy.rc,v 1.1 2011/03/25 02:57:10 merdely Exp $
+
+daemon="${TRUEPREFIX}/sbin/privoxy"
+daemon_flags="--user _privoxy._privoxy --chroot --pre-chroot-nslookup \
+	www.google.com ${SYSCONFDIR}/privoxy/config"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_pre()
+{
+	case ${daemon_flags} in
+	*--chroot*)	
+			pax -rw -u -p e ${SYSCONFDIR}/privoxy /var/privoxy/
+			pax -rw -u -p e ${SYSCONFDIR}/hosts /var/privoxy/
+			pax -rw -u -p e ${SYSCONFDIR}/resolv.conf /var/privoxy/
+			;;
+	esac
+}
+
+rc_post()
+{
+	# preserve config changes made inside the chroot, for instance via the
+	# web interface
+	case ${daemon_flags} in
+	*--chroot*)
+			cd /var/privoxy${SYSCONFDIR} && pax -rw -u -p e \
+				./privoxy ${SYSCONFDIR}
+			;;
+	esac
+}
+
+rc_cmd $1
