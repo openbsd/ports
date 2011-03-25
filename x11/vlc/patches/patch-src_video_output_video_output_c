@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_video_output_video_output_c,v 1.1 2011/03/25 01:07:00 sthen Exp $
+
+Consider too large width/height as invalid. CVE-2010-3275, CVE-2010-3276
+
+--- src/video_output/video_output.c.orig	Thu Mar 24 19:05:48 2011
++++ src/video_output/video_output.c	Thu Mar 24 19:06:23 2011
+@@ -310,7 +310,7 @@ vout_thread_t * __vout_Create( vlc_object_t *p_parent,
+     char *psz_parser;
+     char *psz_name;
+ 
+-    if( i_width <= 0 || i_height <= 0 || i_aspect <= 0 )
++    if( i_width <= 0 || i_height <= 0 || i_aspect <= 0 || i_width > 8192 || i_height > 8192 )
+         return NULL;
+ 
+     vlc_ureduce( &p_fmt->i_sar_num, &p_fmt->i_sar_den,
