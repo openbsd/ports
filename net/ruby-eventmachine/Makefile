@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/01/06 04:24:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2011/03/25 16:39:24 jeremy Exp $
 
 COMMENT=	event-driven I/O for Ruby using the Reactor pattern
 
@@ -19,5 +19,10 @@ MODULES=	lang/ruby
 WANTLIB=	crypto ssl stdc++
 
 CONFIGURE_STYLE=ruby gem ext
+
+MODRUBY_REGRESS =	rake
+
+do-regress:
+	cd ${WRKSRC} && RUBYOPT=-Ilib:. ${RAKE} default
 
 .include <bsd.port.mk>

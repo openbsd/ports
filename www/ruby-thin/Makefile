@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/14 17:58:06 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2011/03/25 16:39:24 jeremy Exp $
 
 COMMENT =	fast and very simple Ruby web server
 
@@ -21,5 +21,10 @@ BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	www/ruby-rack,${MODRUBY_FLAVOR}>=1.0.0 \
 		devel/ruby-daemons,${MODRUBY_FLAVOR}>=1.0.9 \
 		net/ruby-eventmachine,${MODRUBY_FLAVOR}>=0.12.6
+
+MODRUBY_REGRESS =	rspec
+REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
+do-regress:
+	cd ${WRKSRC} && RUBYOPT=-I. ${RSPEC} spec/*_spec.rb
 
 .include <bsd.port.mk>
