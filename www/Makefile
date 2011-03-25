@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.497 2011/03/21 18:01:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.498 2011/03/25 10:29:57 pirofti Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -412,7 +412,6 @@
      SUBDIR += ruby-sinatra
      SUBDIR += ruby-thin
      SUBDIR += ruby-thin_http
-     SUBDIR += ruby-typo
      SUBDIR += ruby-unicorn
      SUBDIR += ruby-unicorn,ruby19
      SUBDIR += sabredav
