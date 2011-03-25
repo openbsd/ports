@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/01/06 04:24:22 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2011/03/25 16:39:54 jeremy Exp $
 
 COMMENT=		JSON implementation for Ruby
 
@@ -19,5 +19,10 @@ MODULES=		lang/ruby
 CONFIGURE_STYLE=	ruby gem ext
 
 MODRUBY_REGRESS=	rake
+REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
+
+do-regress:
+	cd ${WRKSRC} && /usr/bin/env -i ${MAKE_ENV} RUBYOPT=-rubygems \
+		JSON=ext ${MODRUBY_BIN_TESTRB} tests/*.rb
 
 .include <bsd.port.mk>

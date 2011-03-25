@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/01/06 04:24:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2011/03/25 16:39:54 jeremy Exp $
 
 COMMENT =	module for using Textile in Ruby
 
@@ -20,5 +20,6 @@ MODULES =	lang/ruby
 CONFIGURE_STYLE = ruby gem ext
 
 MODRUBY_REGRESS =	rspec
+REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>

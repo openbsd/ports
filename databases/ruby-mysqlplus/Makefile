@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/01/06 04:24:22 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2011/03/25 16:39:54 jeremy Exp $
 
 COMMENT=	enhanced ruby mysql driver, supporting async and threading
 
@@ -31,6 +31,6 @@ REGRESS_DEPENDS=databases/mysql,-server \
 MODRUBY_REGRESS=rake
 do-regress:
 	cd ${WRKSRC} && \
-		RUBYLIB=test:$(dirname `gem which mysqlplus`) rake test
+		RUBYLIB=test:$(dirname `gem which mysqlplus`) ${RAKE} test
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/20 18:15:48 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2011/03/25 16:39:54 jeremy Exp $
 
 COMMENT=		fast Porter stemmer for ruby
 
@@ -20,6 +20,6 @@ CONFIGURE_STYLE=	ruby gem ext
 MODRUBY_REGRESS=	rake
 REGRESS_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 do-regress:
-	cd ${WRKSRC} && RUBYOPT=-rubygems ${RAKE} test
+	cd ${WRKSRC} && RUBYOPT="-I. -rubygems" ${RAKE} test
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/24 21:35:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2011/03/25 16:39:54 jeremy Exp $
 
 COMMENT=		flexible HTML parser
 
@@ -23,7 +23,7 @@ CONFIGURE_STYLE=	ruby gem ext
 REGRESS_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 do-regress:
-	@cd ${WRKSRC} && /usr/local/bin/ruby -rubygems -Ilib:test:lib \
+	@cd ${WRKSRC} && ${RUBY} -rubygems -Ilib:test \
 		-e "ARGV.each { |f| load f unless f =~ /^-/  }" \
 		"test/test_preserved.rb" "test/test_paths.rb" \
 		"test/test_xml.rb" "test/test_parser.rb" "test/test_alter.rb" \
