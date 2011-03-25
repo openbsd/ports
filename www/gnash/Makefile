@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2011/03/23 16:20:02 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.40 2011/03/25 09:45:17 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ COMMENT=	SWF player with Firefox browser plugin
 
 VER=		0.8.9
 DISTNAME=	gnash-${VER}
+REVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GNU:=gnash/${VER}/}
 
@@ -46,15 +47,14 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+=--disable-cygnal \
+CONFIGURE_ARGS=	--disable-cygnal \
 		--disable-jemalloc \
 		--disable-silent-rules \
 		--enable-renderer=agg \
 		--enable-gui=gtk \
 		--enable-media=ffmpeg \
-		--with-libintl-prefix=${LOCALBASE} \
 		--with-npapi-plugindir=${LOCALBASE}/lib/mozilla/plugins
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 INSTALL_TARGET=	install install-plugins

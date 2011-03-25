@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/03/23 16:20:03 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/03/25 09:45:17 dcoppa Exp $
 bin/gnash
 bin/gnash-gtk-launcher
 @bin bin/gprocessor
@@ -199,10 +199,8 @@ lib/pkgconfig/gnash.pc
 @man man/man1/gnash.1
 @man man/man1/gprocessor.1
 @man man/man1/gtk-gnash.1
-@comment @man man/man1/kde4-gnash.1
 @man man/man1/rtmpget.1
 @comment @man man/man1/soldumper.1
-share/applications/
 share/applications/gnash.desktop
 share/doc/gnash/
 share/doc/gnash/gnashref.html
