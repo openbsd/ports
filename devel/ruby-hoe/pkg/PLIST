@@ -1,8 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/11/08 23:24:40 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/03/25 16:44:06 jeremy Exp $
 ${GEM_BIN}/sow${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/.autotest
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
+${GEM_LIB}/gems/${DISTNAME}/Hoe.pdf
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.txt
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
@@ -12,15 +14,21 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/clean.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hoe/compiler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/debug.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/deps.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/flay.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/flog.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hoe/gem_prelude_sucks.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hoe/gemcutter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/inline.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hoe/newb.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/publish.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hoe/racc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/rake.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/rcov.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/hoe/rubyforge.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/signing.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/hoe/test.rb
 ${GEM_LIB}/gems/${DISTNAME}/template/
@@ -37,4 +45,5 @@ ${GEM_LIB}/gems/${DISTNAME}/template/test/
 ${GEM_LIB}/gems/${DISTNAME}/template/test/test_file_name.rb.erb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/test_hoe.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_hoe_gemcutter.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
