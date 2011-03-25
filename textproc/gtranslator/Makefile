@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/20 19:56:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/25 09:13:43 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,8 @@ COMMENT=	gettext(1) files editor for GNOME
 
 GNOME_PROJECT=	gtranslator
 GNOME_VERSION=	1.9.13
+
+REVISION=	0
 
 CATEGORIES=	textproc devel
 
@@ -29,10 +31,10 @@ WANTLIB += gucharmap xcb-render gda-4.0 unique-1.0
 WANTLIB += GL Xxf86vm drm gconf-2 gnome-keyring xcb-shm
 
 MODULES=	devel/gettext \
-		x11/gnome
-
-RUN_DEPENDS=	devel/gsettings-desktop-schemas \
+		x11/gnome \
 		devel/dconf
+
+RUN_DEPENDS=	devel/gsettings-desktop-schemas
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 LIB_DEPENDS=	x11/gnome/gdl \
@@ -50,7 +52,6 @@ MODGNOME_HELP_FILES= Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--disable-schemas-compile \
 		--with-gtkspell \
 		--with-dictionary
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \

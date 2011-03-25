@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.61 2011/01/16 17:09:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2011/03/25 09:13:43 ajacoutot Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.32.1
 
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net
 
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext \
 			lang/python \
-			x11/gnome
+			x11/gnome \
+			devel/dconf
 
 WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm asn1
@@ -61,8 +62,7 @@ RUN_DEPENDS=		devel/iso-codes \
 			net/telepathy/telepathy-gabble \
 			net/telepathy/telepathy-idle \
 			net/telepathy/telepathy-salut \
-			x11/gnome/icon-theme>=2.30.3 \
-			devel/dconf
+			x11/gnome/icon-theme>=2.30.3
 
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
@@ -77,8 +77,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-nautilus-sendto \
 			--enable-control-center-embedding=no \
 			--with-connectivity=no \
-			--with-eds \
-			--disable-schemas-compile
+			--with-eds
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =		Yes

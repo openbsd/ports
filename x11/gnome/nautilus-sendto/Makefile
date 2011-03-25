@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/12/14 10:10:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2011/03/25 09:13:44 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	applications integration into Nautilus
 GNOME_PROJECT=	nautilus-sendto
 GNOME_VERSION=	2.32.0
 
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	misc net
 
@@ -31,19 +31,18 @@ WANTLIB += camel-1.2 ebook-1.2 edataserver-1.2
 WANTLIB += gconf-2 nssutil3 GL Xxf86vm drm xcb-shm
 
 MODULES=	devel/gettext \
-		x11/gnome
+		x11/gnome \
+		devel/dconf
 
 BUILD_DEPENDS=	net/gajim
 
 RUN_DEPENDS=	archivers/zip \
-		archivers/bzip2 \
-		devel/dconf
+		archivers/bzip2
 LIB_DEPENDS=	x11/gnome/nautilus \
 		databases/evolution-data-server
 
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--disable-schemas-compile \
 		--with-gajim=${LOCALBASE}
 
 # --with-plugins=all ; empathy comes with its own nautilus-sendto plugin

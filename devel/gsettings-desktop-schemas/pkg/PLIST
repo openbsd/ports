@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/03/03 13:45:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/03/25 09:13:43 ajacoutot Exp $
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
 lib/pkgconfig/
@@ -24,8 +24,15 @@ share/glib-2.0/schemas/org.gnome.desktop.sound.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.thumbnail-cache.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.thumbnailers.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.proxy.gschema.xml
+share/locale/
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/sl/
+share/locale/sl/LC_MESSAGES/
 share/locale/sl/LC_MESSAGES/gsettings-desktop-schemas.mo
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas

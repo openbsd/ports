@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/01/17 00:16:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/03/25 09:13:43 ajacoutot Exp $
 
 COMMENT=	flexible communications framework, logger component
 
 DISTNAME=	telepathy-logger-0.1.7
+
+REVISION=	0
 
 SHARED_LIBS +=  telepathy-logger     1.0      # 1.0
 
@@ -11,7 +13,8 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	devel/gettext \
 		lang/python \
-		textproc/intltool
+		textproc/intltool \
+		devel/dconf
 
 WANTLIB += c dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pcre pthread sqlite3 telepathy-glib xml2
@@ -23,7 +26,6 @@ LIB_DEPENDS=	databases/sqlite3 \
 		net/telepathy/telepathy-glib \
 		textproc/libxml \
 		x11/dbus-glib
-RUN_DEPENDS=	devel/dconf
 
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	telepathy-logger
@@ -33,7 +35,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-silent-rules \
 			--disable-gtk-doc \
-			--disable-schemas-compile \
 			--enable-shave
 
 REGRESS_IS_INTERACTIVE=x11

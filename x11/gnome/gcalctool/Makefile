@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2010/11/23 05:58:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2011/03/25 09:13:43 ajacoutot Exp $
 
 COMMENT=		GTK2 desktop calculator
 
 GNOME_PROJECT=		gcalctool
 GNOME_VERSION=		5.32.2
+
+REVISION=		0
 
 CATEGORIES=		math
 
@@ -22,19 +24,18 @@ WANTLIB += pixman-1 png pthread pthread-stubs xcb z xcb-render
 WANTLIB += xml2 GL Xxf86vm drm xcb-shm
 
 MODULES=		devel/gettext \
-			x11/gnome
+			x11/gnome \
+			devel/dconf
 
 LIB_DEPENDS=		x11/gtk+2
 
 BUILD_DEPENDS=		devel/bison
-RUN_DEPENDS=		devel/dconf
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		--disable-schemas-compile
 
 USE_GROFF=		Yes
 

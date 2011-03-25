@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/01/17 22:55:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/03/25 09:13:44 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	sytem configuration GUI for desktops
 GNOME_PROJECT=	gnome-system-tools
 GNOME_VERSION=	2.32.0
 
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	sysutils
 
@@ -29,13 +29,12 @@ WANTLIB += xcb xcb-render z eggdbus-1 nautilus-extension
 WANTLIB += polkit-gobject-1 polkit-gtk-1 GL Xxf86vm drm xcb-shm
 
 MODULES=	devel/gettext \
-		x11/gnome
+		x11/gnome \
+		devel/dconf
 
 LIB_DEPENDS=	devel/liboobs \
 		x11/polkit-gnome \
 		x11/gnome/nautilus
-
-RUN_DEPENDS=	devel/dconf
 
 DESKTOP_FILES=	Yes
 
@@ -43,8 +42,7 @@ MODGNOME_HELP_FILES= Yes
 MODGCONF2_SCHEMAS_DIR= gnome-system-tools
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-silent-rules \
-		--disable-schemas-compile
+		--disable-silent-rules
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
