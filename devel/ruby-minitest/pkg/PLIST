@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/11/08 23:24:40 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/03/25 16:45:20 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.autotest
@@ -10,11 +10,14 @@ ${GEM_LIB}/gems/${DISTNAME}/design_rationale.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/minitest/
 ${GEM_LIB}/gems/${DISTNAME}/lib/minitest/autorun.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/minitest/benchmark.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/minitest/mock.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/minitest/pride.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/minitest/spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/minitest/unit.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
-${GEM_LIB}/gems/${DISTNAME}/test/test_mini_mock.rb
-${GEM_LIB}/gems/${DISTNAME}/test/test_mini_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/test/test_mini_test.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_minitest_benchmark.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_minitest_mock.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_minitest_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_minitest_unit.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
