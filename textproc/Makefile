@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.319 2011/03/19 17:00:02 schwarze Exp $
+# $OpenBSD: Makefile,v 1.320 2011/03/25 17:02:36 jeremy Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -277,8 +277,10 @@
      SUBDIR += ruby-fastercsv
      SUBDIR += ruby-fastri
      SUBDIR += ruby-fast-stemmer
+     SUBDIR += ruby-fast-stemmer,ruby19
      SUBDIR += ruby-haml
      SUBDIR += ruby-hpricot
+     SUBDIR += ruby-hpricot,ruby19
      SUBDIR += ruby-htmlentities
      SUBDIR += ruby-hyperestraier
      SUBDIR += ruby-icalendar
@@ -286,12 +288,15 @@
      SUBDIR += ruby-markaby
      SUBDIR += ruby-maruku
      SUBDIR += ruby-nokogiri
+     SUBDIR += ruby-nokogiri,ruby19
      SUBDIR += ruby-pdf-reader
      SUBDIR += ruby-pdf-writer
      SUBDIR += ruby-prawn
      SUBDIR += ruby-randexp
      SUBDIR += ruby-rdiscount
+     SUBDIR += ruby-rdiscount,ruby19
      SUBDIR += ruby-redcloth
+     SUBDIR += ruby-redcloth,ruby19
      SUBDIR += ruby-rss
      SUBDIR += ruby-rtex
      SUBDIR += ruby-rubigen

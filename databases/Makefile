@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2011/03/25 10:08:11 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.194 2011/03/25 17:02:35 jeremy Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -178,12 +178,14 @@
      SUBDIR += ruby-jdbc-sqlite3
      SUBDIR += ruby-kirbybase
      SUBDIR += ruby-ldap
+     SUBDIR += ruby-ldap,ruby19
      SUBDIR += ruby-mysql
      SUBDIR += ruby-mysql,ruby19
      SUBDIR += ruby-mysql,rbx
      SUBDIR += ruby-mysql2
      SUBDIR += ruby-mysql2,ruby19
      SUBDIR += ruby-mysqlplus
+     SUBDIR += ruby-mysqlplus,ruby19
      SUBDIR += ruby-pg
      SUBDIR += ruby-pg,ruby19
      SUBDIR += ruby-pg,rbx

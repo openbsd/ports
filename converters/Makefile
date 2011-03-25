@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/03/11 13:40:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2011/03/25 17:02:35 jeremy Exp $
 #
 
     SUBDIR =
@@ -54,6 +54,7 @@
     SUBDIR += recode
     SUBDIR += rpm2cpio
     SUBDIR += ruby-json
+    SUBDIR += ruby-json,ruby19
     SUBDIR += trans
     SUBDIR += wv
     SUBDIR += wv2

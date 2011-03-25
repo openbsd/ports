@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.683 2011/03/24 06:53:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.684 2011/03/25 17:02:35 jeremy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -453,6 +453,7 @@
      SUBDIR += ruby-bunny
      SUBDIR += ruby-errand
      SUBDIR += ruby-eventmachine
+     SUBDIR += ruby-eventmachine,ruby19
      SUBDIR += ruby-minion
      SUBDIR += ruby-net-dns
      SUBDIR += ruby-net-scp

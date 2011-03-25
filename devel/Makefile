@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.907 2011/03/25 10:08:10 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.908 2011/03/25 17:02:35 jeremy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1007,6 +1007,7 @@
      SUBDIR += ruby-i18n
      SUBDIR += ruby-isolate
      SUBDIR += ruby-kgio
+     SUBDIR += ruby-kgio,ruby19
      SUBDIR += ruby-linecache
      SUBDIR += ruby-locale
      SUBDIR += ruby-minitest
@@ -1020,6 +1021,7 @@
      SUBDIR += ruby-parsetree
      SUBDIR += ruby-polyglot
      SUBDIR += ruby-prof
+     SUBDIR += ruby-prof,ruby19
      SUBDIR += ruby-rack-test
      SUBDIR += ruby-rake
      SUBDIR += ruby-rake-compiler
@@ -1035,6 +1037,7 @@
      SUBDIR += ruby-sexp_processor
      SUBDIR += ruby-stringex
      SUBDIR += ruby-subset_sum
+     SUBDIR += ruby-subset_sum,ruby19
      SUBDIR += ruby-systemtimer
      SUBDIR += ruby-term-ansicolor
      SUBDIR += ruby-tilt
