@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/03/24 06:41:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/03/25 18:50:40 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	multi-platform graphical toolkit
 COMMENT-docs=	gtk+3 documentation
 COMMENT-cups=	gtk+3 CUPS print backend
 
-V=		3.0.5
+V=		3.0.6
 DISTNAME=	gtk+-${V}
 
 PKGNAME-main=	gtk+3-${V}
@@ -41,7 +41,8 @@ EXTRACT_SUFX=	.tar.bz2
 
 MULTI_PACKAGES=	-main -docs -cups
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		devel/dconf
 
 RUN_DEPENDS-main= ${RUN_DEPENDS} \
 		x11/hicolor-icon-theme \
@@ -56,11 +57,12 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += c pthread
 
-LIB_DEPENDS-docs=
-RUN_DEPENDS-docs=
-WANTLIB-docs +=
+LIB_DEPENDS-docs= # empty
+RUN_DEPENDS-docs= # empty
+WANTLIB-docs +=	# empty
 PKG_ARCH-docs=	*
 
+RUN_DEPENDS-cups= # empty
 LIB_DEPENDS-cups= ${LIB_DEPENDS} \
 		print/cups \
 		STEM->=${V}:${BASE_PKGPATH},-main
