@@ -1,0 +1,22 @@
+$OpenBSD: README,v 1.1.1.1 2011/03/25 19:40:39 ian Exp $
+
+Running Jenkins on OpenBSD.
+
+To arrange for the standalone Jenkins server to run automatically
+on reboot, add "jenkins" to "rc_scripts" in /etc/rc.conf.local, e.g.:
+
+rc_scripts="${rc_scripts} jenkins"
+
+NOTE: This script runs Jenkins on port 8000, not 8080, since most
+Java application servers run on port 8080.
+
+To run Jenkins in another Java web/application server, copy the war
+file from ${TRUEPREFIX}/share/jenkins to your server's deploy
+directory, or read more at ${HOMEPAGE}. 
+
+To use the email notifications, you will have to configure a valid
+sending address (and SMTP server, if not localhost) under
+Manage Jenkins -> Email Configuration.
+
+The Jenkins data files are in the home directory (/var/jenkins),
+under the "hidden" directory ".jenkins".
