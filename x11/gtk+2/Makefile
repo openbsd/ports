@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.124 2011/03/14 19:04:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.125 2011/03/25 09:21:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,6 +12,8 @@ DISTNAME=	gtk+-${V}
 PKGNAME-main=	gtk+2-${V}
 PKGNAME-docs=	gtk+2-docs-${V}
 PKGNAME-cups=	gtk+2-cups-${V}
+
+REVISION-cups=	0
 
 CATEGORIES=	x11 devel
 
@@ -59,11 +61,12 @@ WANTLIB-main += png
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 
-LIB_DEPENDS-docs=
-RUN_DEPENDS-docs=
-WANTLIB-docs +=
+LIB_DEPENDS-docs= # empty
+RUN_DEPENDS-docs= # empty
+WANTLIB-docs +=	# empty
 PKG_ARCH-docs=	*
 
+RUN_DEPENDS-cups= # empty
 LIB_DEPENDS-cups= ${LIB_DEPENDS} \
 		print/cups \
 		STEM->=${V}:${BASE_PKGPATH},-main
