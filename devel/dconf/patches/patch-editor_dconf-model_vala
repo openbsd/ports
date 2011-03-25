@@ -1,0 +1,12 @@
+$OpenBSD: patch-editor_dconf-model_vala,v 1.1 2011/03/25 07:37:15 ajacoutot Exp $
+--- editor/dconf-model.vala.orig	Fri Mar 25 08:28:57 2011
++++ editor/dconf-model.vala	Fri Mar 25 08:29:09 2011
+@@ -469,7 +469,7 @@ public class SettingsModel: GLib.Object, Gtk.TreeModel
+         schemas = new SchemaList();
+         try
+         {
+-            schemas.load_directory("/usr/share/glib-2.0/schemas");
++            schemas.load_directory("${LOCALBASE}/share/glib-2.0/schemas");
+         } catch (Error e) {
+             warning("Failed to parse schemas: %s", e.message);
+         }

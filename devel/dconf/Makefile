@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/19 10:25:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/25 07:37:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	configuration backend system
 GNOME_PROJECT=	dconf
 GNOME_VERSION=	0.5.1
 
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS+=	dconf 0.0 # 0.0.0
 
@@ -44,6 +44,7 @@ CONFIGURE_ARGS=	--disable-gtk-doc \
 		--disable-introspection
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/{bin,client,editor}/Makefile.in
+	${SUBST_CMD} ${WRKSRC}/{bin,client,editor}/Makefile.in \
+		${WRKSRC}/editor/dconf-model.{c,vala}
 
 .include <bsd.port.mk>
