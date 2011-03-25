@@ -1,9 +1,6 @@
-You will need to edit /etc/rc.local as appropriate and add a
-section similar to the following so that privoxy is started
-automatically:
-
-    if [ -x ${PREFIX}/sbin/privoxy ]; then
-            echo -n ' privoxy';
-            ${PREFIX}/sbin/privoxy --user _privoxy._privoxy \
-                    ${SYSCONFDIR}/privoxy/config
-    fi
+Note for people upgrading from 3.0.16 and before: There is now an rc
+script that will start privoxy chrooted to /var/privoxy. Any
+configuration files will be copied over automatically, but you need to
+make sure that any other directories which are needed by privoxy (e.g.
+the log directories) exist relative to the chroot and have proper
+privileges for the _privoxy user.

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/22 08:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/03/25 02:56:13 merdely Exp $
 
 COMMENT=	web proxy with advanced filtering capabilities
 
-V=		3.0.16
+V=		3.0.17
 DISTNAME=	privoxy-${V}-stable
 PKGNAME=	privoxy-${V}
 CATEGORIES=	www
@@ -25,7 +25,6 @@ EXTRACT_SUFX=	-src.tar.gz
 NO_REGRESS=	Yes
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
 MAKE_FILE=	GNUmakefile
 
 LIB_DEPENDS=	devel/pcre
@@ -41,9 +40,12 @@ pre-configure:
 do-install:
 	@${SUBST_CMD} ${WRKSRC}/config
 	${INSTALL_PROGRAM} ${WRKSRC}/privoxy ${PREFIX}/sbin
+	cd ${WRKSRC}/tools && ${INSTALL_SCRIPT} * ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/privoxy.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/privoxy
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/privoxy
+.for _f in AUTHORS ChangeLog README LICENSE
+	${INSTALL_DATA} ${WRKSRC}/${_f} ${PREFIX}/share/doc/privoxy
+.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/privoxy
 	${INSTALL_DATA} ${WRKSRC}/config ${PREFIX}/share/examples/privoxy
 	${INSTALL_DATA} ${WRKSRC}/default.filter ${PREFIX}/share/examples/privoxy

@@ -1,9 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/06/25 13:50:47 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/03/25 02:56:13 merdely Exp $
 @newgroup _privoxy:516
-@newuser _privoxy:516:_privoxy:daemon:Privoxy Account:/nonexistent:/sbin/nologin
+@newuser _privoxy:516:_privoxy:daemon:Privoxy Account:/var/privoxy:/sbin/nologin
+bin/privoxy-log-parser.pl
+bin/privoxy-regression-test.pl
+bin/uagen.pl
+bin/url-pattern-translator.pl
 @man man/man1/privoxy.1
 @bin sbin/privoxy
 share/doc/privoxy/
+share/doc/privoxy/AUTHORS
+share/doc/privoxy/ChangeLog
+share/doc/privoxy/LICENSE
 share/doc/privoxy/README
 share/examples/privoxy/
 @sample ${SYSCONFDIR}/privoxy/
@@ -254,7 +261,11 @@ share/examples/privoxy/user.action
 @owner _privoxy
 @group _privoxy
 @sample ${SYSCONFDIR}/privoxy/user.action
+@sample /var/privoxy/
 @mode 775
 @owner
-@sample /var/log/privoxy/
-@extraunexec rm -rf /var/log/privoxy/*
+@sample /var/privoxy/log/
+@extraunexec rm -rf /var/privoxy/log/*
+@group
+@mode
+@rcscript ${RCDIR}/privoxy

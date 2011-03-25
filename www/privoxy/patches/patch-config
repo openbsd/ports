@@ -1,6 +1,7 @@
---- config~	Sat Mar 21 12:51:51 2009
-+++ config	Sat Oct  3 16:12:45 2009
-@@ -267,7 +267,7 @@
+$OpenBSD: patch-config,v 1.7 2011/03/25 02:56:13 merdely Exp $
+--- config.orig	Sat Nov 13 13:48:18 2010
++++ config	Fri Mar 18 17:15:32 2011
+@@ -265,7 +265,7 @@
  #
  #      No trailing "/", please.
  #
@@ -9,12 +10,12 @@
  #
  #
  #  2.2. templdir
-@@ -324,7 +324,7 @@
+@@ -322,7 +322,7 @@ confdir .
  #
  #      No trailing "/", please.
  #
 -logdir .
-+logdir /var/log/privoxy
++logdir /log
  #
  #
  #  2.4. actionsfile
