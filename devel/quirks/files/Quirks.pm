@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.46 2011/03/20 17:30:24 schwarze Exp $
+# $OpenBSD: Quirks.pm,v 1.47 2011/03/25 19:44:27 ian Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -196,6 +196,7 @@ my $stem_extensions = {
 	'tidy' => 'tidyp',
 	'p5-Mojo' => 'p5-Mojolicious',
 	'groff-mdoc' => 'groff',
+	'hudson' => 'jenkins',
 };
 
 # ->is_base_system($handle, $state):
