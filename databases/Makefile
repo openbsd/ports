@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.194 2011/03/25 17:02:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.195 2011/03/26 08:25:48 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -190,6 +190,8 @@
      SUBDIR += ruby-pg,ruby19
      SUBDIR += ruby-pg,rbx
      SUBDIR += ruby-postgres
+     SUBDIR += ruby-redis
+     SUBDIR += ruby-redis,ruby19
      SUBDIR += ruby-sequel
      SUBDIR += ruby-sequel,ruby19
      SUBDIR += ruby-sequel,rbx
