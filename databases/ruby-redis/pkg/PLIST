@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/26 08:23:25 dcoppa Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README.markdown
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/redis/
+${GEM_LIB}/gems/${DISTNAME}/lib/redis.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/redis/client.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/redis/compat.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/redis/connection.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/redis/distributed.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/redis/hash_ring.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/redis/pipeline.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/redis/subscribe.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
