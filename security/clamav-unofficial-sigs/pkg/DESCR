@@ -1,0 +1,4 @@
+The clamav-unofficial-sigs script provides a simple way to
+download, test, and update third-party signature databases
+for ClamAV provided by Sanesecurity, SecuriteInfo, INetMsg,
+OITC, MalwarePatrol, and ScamNailer.

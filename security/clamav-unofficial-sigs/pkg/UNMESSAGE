@@ -1,0 +1,2 @@
+You may also want to remove downloaded signature files from /var/db/clamav
+and remove the cron(8) job.

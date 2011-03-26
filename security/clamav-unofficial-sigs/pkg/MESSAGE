@@ -1,0 +1,4 @@
+After configuring ${SYSCONFDIR}/clamav-unofficial-sigs.conf you can add the following
+to root's crontab to update the signatures regularly:
+
+35 * * * * /usr/local/bin/clamav-unofficial-sigs.sh 2>&1 > /dev/null

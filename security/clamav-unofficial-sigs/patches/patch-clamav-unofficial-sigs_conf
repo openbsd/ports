@@ -1,0 +1,35 @@
+$OpenBSD: patch-clamav-unofficial-sigs_conf,v 1.1.1.1 2011/03/26 12:26:44 sthen Exp $
+--- clamav-unofficial-sigs.conf.orig	Sun Mar 20 22:43:40 2011
++++ clamav-unofficial-sigs.conf	Sun Mar 20 22:48:26 2011
+@@ -31,18 +31,18 @@
+ # and optionally socat.  It's been reported that on Sun systems, the GNU utilities
+ # should be used rather than the default Sun OS versions of these utilities.
+ 
+-PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
++PATH="/bin:/sbin:/usr/bin:/usr/sbin:${LOCALBASE}/bin:${LOCALBASE}/sbin"
+ export PATH
+ 
+ # Set the appropriate ClamD user and group accounts for your system.
+ # If you do not want the script to set user and group permissions on
+ # files and directories, comment the next two variables.
+-clam_user="clamav"
+-clam_group="clamav"
++clam_user="_clamav"
++clam_group="_clamav"
+ 
+ # Set path to ClamAV database files location.  If unsure, check
+ # your clamd.conf file for the "DatabaseDirectory" path setting.
+-clam_dbs="/var/lib/clamav"
++clam_dbs="/var/db/clamav"
+ 
+ # Set path to clamd.pid file (see clamd.conf for path location).
+ clamd_pid="/var/run/clamd.pid"
+@@ -219,7 +219,7 @@ mbl_update_hours="6"   # Default is 6 hours (4 downloa
+ # Set working directory paths (edit to meet your own needs). If these
+ # directories do not exist, the script will attempt to create them.
+ # Top level working directory path:
+-work_dir="/usr/unofficial-dbs"   #Top level working directory
++work_dir="/var/db/clamav-unofficial-sigs"   #Top level working directory
+ # Sub-directory names:
+ ss_dir="$work_dir/ss-dbs"        # Sanesecurity sub-directory
+ si_dir="$work_dir/si-dbs"        # SecuriteInfo sub-directory
