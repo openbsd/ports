@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.57 2011/03/25 09:13:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2011/03/26 15:05:31 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT-main=	document viewer for multiple document formats
+COMMENT-main=	viewer for multiple document formats
 COMMENT-djvu=	evince document viewer backend for djvu documents
 COMMENT-dvi=	evince document viewer backend for dvi documents
 COMMENT-nautilus= evince plugin for nautilus
@@ -20,7 +20,7 @@ PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-nautilus= 0
 REVISION-dvi=	0
 
