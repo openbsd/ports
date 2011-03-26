@@ -1,4 +1,4 @@
-# $OpenBSD: gcc4.port.mk,v 1.11 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: gcc4.port.mk,v 1.12 2011/03/26 19:13:28 naddy Exp $
 
 MODGCC4_ARCHES?=
 MODGCC4_LANGS?=
@@ -33,7 +33,7 @@ _MODGCC4_LINKS =
 .if ${_MODGCC4_ARCH_USES:L} == "yes"
 
 .  if ${MODGCC4_LANGS:L:Mc} && ${COMPILER_VERSION:L:Ngcc4*}
-BUILD_DEPENDS += lang/gcc/4.2
+BUILD_DEPENDS += gcc->=4.2,<4.3|gcc->=4.2v0,<4.3v0:lang/gcc/4.2
 _MODGCC4_LINKS += egcc gcc egcc cc
 .  endif
 
@@ -42,7 +42,7 @@ _MODGCC4_LINKS += egcc gcc egcc cc
 MODGCC4STDCPP = stdc++
 WANTLIB += stdc++>=50.0
 .    else
-BUILD_DEPENDS += lang/gcc/4.2,-c++
+BUILD_DEPENDS += g++->=4.2,<4.3|g++->=4.2v0,<4.3v0:lang/gcc/4.2,-c++
 MODGCC4STDCPP = estdc++
 LIB_DEPENDS += libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:lang/gcc/4.2,-estdc
 WANTLIB += estdc++>=7
@@ -51,14 +51,14 @@ _MODGCC4_LINKS += eg++ g++ eg++ c++
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mfortran}
-BUILD_DEPENDS += lang/gcc/4.2,-f95
+BUILD_DEPENDS += g95->=4.2,<4.3|g95->=4.2v0,<4.3v0:lang/gcc/4.2,-f95
 WANTLIB += gfortran>=2
 LIB_DEPENDS += g95->=4.2,<4.3|g95->=4.2v0,<4.3v0:lang/gcc/4.2,-f95
 _MODGCC4_LINKS += egfortran gfortran
 .  endif
 
 .  if ${MODGCC4_LANGS:L:Mjava}
-BUILD_DEPENDS += lang/gcc/4.2,-java,java
+BUILD_DEPENDS += gcj->=4.2,<4.3|gcj->=4.2v0,<4.3v0:lang/gcc/4.2,-java,java
 _MODGCC4_LINKS += egcj gcj egcjh gcjh ejar gjar egij gij
 .  endif
 
