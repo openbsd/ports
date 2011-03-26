@@ -1,0 +1,19 @@
+$OpenBSD: patch-modules_libpr0n_src_imgFrame_h,v 1.1 2011/03/26 10:58:36 landry Exp $
+
+Fix animated gif flickering bug with cairo 1.10.x
+Patch backported from FF4 branch by Rafal Muzylo <galtgendo@o2.pl>
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=597174
+
+http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/net-libs/xulrunner/files/fix-animated-gifs.patch
+
+--- modules/libpr0n/src/imgFrame.h.orig	Thu Mar  3 11:43:21 2011
++++ modules/libpr0n/src/imgFrame.h	Tue Mar  8 12:43:28 2011
+@@ -172,6 +172,7 @@ class imgFrame (private)
+   PRPackedBool mNeverUseDeviceSurface;
+   PRPackedBool mFormatChanged;
+   PRPackedBool mCompositingFailed;
++  PRPackedBool mLocked;
+ 
+ #ifdef XP_WIN
+   PRPackedBool mIsDDBSurface;

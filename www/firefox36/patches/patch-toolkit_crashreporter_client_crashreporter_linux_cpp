@@ -1,0 +1,17 @@
+$OpenBSD: patch-toolkit_crashreporter_client_crashreporter_linux_cpp,v 1.3 2011/03/26 10:58:36 landry Exp $
+--- toolkit/crashreporter/client/crashreporter_linux.cpp.orig	Tue Jul 13 21:10:35 2010
++++ toolkit/crashreporter/client/crashreporter_linux.cpp	Wed Jul 21 09:54:47 2010
+@@ -362,11 +362,11 @@ typedef const GnomeModuleInfo * (*_libgnomeui_module_i
+ 
+ void TryInitGnome()
+ {
+-  gnomeLib = dlopen("libgnome-2.so.0", RTLD_LAZY);
++  gnomeLib = dlopen("libgnome-2.so", RTLD_LAZY);
+   if (!gnomeLib)
+     return;
+ 
+-  gnomeuiLib = dlopen("libgnomeui-2.so.0", RTLD_LAZY);
++  gnomeuiLib = dlopen("libgnomeui-2.so", RTLD_LAZY);
+   if (!gnomeuiLib)
+     return;
+ 

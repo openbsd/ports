@@ -1,0 +1,42 @@
+$OpenBSD: patch-js_src_nanojit_NativeX64_cpp,v 1.1 2011/03/26 10:58:36 landry Exp $
+allow to build the debug FLAVOR
+--- js/src/nanojit/NativeX64.cpp.orig	Tue Oct 26 23:24:13 2010
++++ js/src/nanojit/NativeX64.cpp	Tue Oct 26 23:28:39 2010
+@@ -1388,9 +1388,9 @@ namespace nanojit
+                 // really do need a page break
+                 verbose_only(if (_logc->lcbits & LC_Assembly) outputf("newpage %p:", pc);)
+                 if (_inExit)
+-                    codeAlloc(exitStart, exitEnd, _nIns);
++                    codeAlloc(exitStart, exitEnd, _nIns verbose_only(, exitBytes));
+                 else
+-                    codeAlloc(codeStart, codeEnd, _nIns);
++                    codeAlloc(codeStart, codeEnd, _nIns verbose_only(, codeBytes));
+             }
+             // now emit the jump, but make sure we won't need another page break.
+             // we're pedantic, but not *that* pedantic.
+@@ -1402,9 +1402,9 @@ namespace nanojit
+         if (pc - bytes < top) {
+             verbose_only(if (_logc->lcbits & LC_Assembly) outputf("newpage %p:", pc);)
+             if (_inExit)
+-                codeAlloc(exitStart, exitEnd, _nIns);
++                codeAlloc(exitStart, exitEnd, _nIns verbose_only(, exitBytes));
+             else
+-                codeAlloc(codeStart, codeEnd, _nIns);
++                codeAlloc(codeStart, codeEnd, _nIns verbose_only(, codeBytes));
+             // this jump will call underrunProtect again, but since we're on a new
+             // page, nothing will happen.
+             JMP(pc);
+@@ -1418,11 +1418,11 @@ namespace nanojit
+ 
+     void Assembler::nativePageSetup() {
+         if (!_nIns) {
+-            codeAlloc(codeStart, codeEnd, _nIns);
++            codeAlloc(codeStart, codeEnd, _nIns verbose_only(, codeBytes));
+             IF_PEDANTIC( pedanticTop = _nIns; )
+         }
+         if (!_nExitIns) {
+-            codeAlloc(exitStart, exitEnd, _nExitIns);
++            codeAlloc(exitStart, exitEnd, _nExitIns verbose_only(, exitBytes));
+         }
+     }
+ 

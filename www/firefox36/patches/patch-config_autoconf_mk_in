@@ -1,0 +1,22 @@
+$OpenBSD: patch-config_autoconf_mk_in,v 1.3 2011/03/26 10:58:36 landry Exp $
+--- config/autoconf.mk.in.orig	Wed Jan  6 05:35:11 2010
++++ config/autoconf.mk.in	Sun Jan 10 17:47:23 2010
+@@ -58,14 +58,14 @@ MOZ_PKG_SPECIAL = @MOZ_PKG_SPECIAL@
+ prefix		= @prefix@
+ exec_prefix	= @exec_prefix@
+ bindir		= @bindir@
+-includedir	= @includedir@/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
++includedir	= $(prefix)/${MOZILLA_PROJECT}/include
+ libdir		= @libdir@
+ datadir		= @datadir@
+ mandir		= @mandir@
+-idldir		= $(datadir)/idl/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
++idldir		= $(prefix)/${MOZILLA_PROJECT}/idl
+ 
+-installdir	= $(libdir)/$(MOZ_APP_NAME)-$(MOZ_APP_VERSION)
+-sdkdir		= $(libdir)/$(MOZ_APP_NAME)-devel-$(MOZ_APP_VERSION)
++installdir	= $(prefix)/${MOZILLA_PROJECT}
++sdkdir		= $(prefix)/${MOZILLA_PROJECT}
+ 
+ DIST		= $(DEPTH)/dist
+ LIBXUL_SDK      = @LIBXUL_SDK@

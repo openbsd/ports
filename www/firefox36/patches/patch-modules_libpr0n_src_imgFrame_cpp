@@ -1,0 +1,91 @@
+$OpenBSD: patch-modules_libpr0n_src_imgFrame_cpp,v 1.1 2011/03/26 10:58:36 landry Exp $
+
+Fix animated gif flickering bug with cairo 1.10.x
+Patch backported from FF4 branch by Rafal Muzylo <galtgendo@o2.pl>
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=597174
+
+http://sources.gentoo.org/cgi-bin/viewvc.cgi/gentoo-x86/net-libs/xulrunner/files/fix-animated-gifs.patch
+
+--- modules/libpr0n/src/imgFrame.cpp.orig	Thu Mar  3 11:43:21 2011
++++ modules/libpr0n/src/imgFrame.cpp	Tue Mar  8 12:43:28 2011
+@@ -157,6 +157,7 @@ imgFrame::imgFrame() :
+ #ifdef USE_WIN_SURFACE
+   , mIsDDBSurface(PR_FALSE)
+ #endif
++  , mLocked(PR_FALSE)
+ {
+   static PRBool hasCheckedOptimize = PR_FALSE;
+   if (!hasCheckedOptimize) {
+@@ -418,8 +419,7 @@ void imgFrame::Draw(gfxContext *aContext, gfxPattern::
+ 
+   PRBool doTile = !imageRect.Contains(sourceRect);
+   if (doPadding || doPartialDecode) {
+-    gfxRect available = gfxRect(mDecoded.x, mDecoded.y, mDecoded.width, mDecoded.height) +
+-      gfxPoint(aPadding.left, aPadding.top);
++    gfxRect available = gfxRect(mDecoded.x, mDecoded.y, mDecoded.width, mDecoded.height);
+ 
+     if (!doTile && !mSinglePixel) {
+       // Not tiling, and we have a surface, so we can account for
+@@ -713,7 +713,7 @@ nsresult imgFrame::ImageUpdated(const nsIntRect &aUpda
+ 
+   // clamp to bounds, in case someone sends a bogus updateRect (I'm looking at
+   // you, gif decoder)
+-  nsIntRect boundsRect(0, 0, mSize.width, mSize.height);
++  nsIntRect boundsRect(mOffset, mSize);
+   mDecoded.IntersectRect(mDecoded, boundsRect);
+ 
+ #ifdef XP_MACOSX
+@@ -811,8 +811,14 @@ void imgFrame::GetPaletteData(PRUint32 **aPalette, PRU
+ nsresult imgFrame::LockImageData()
+ {
+   if (mPalettedImageData)
+-    return NS_OK;
++    return NS_ERROR_NOT_AVAILABLE;
+ 
++  NS_ABORT_IF_FALSE(!mLocked, "Trying to lock already locked image data.");
++  if (mLocked) {
++    return NS_ERROR_FAILURE;
++  }
++  mLocked = PR_TRUE;
++
+   if ((mOptSurface || mSinglePixel) && !mImageSurface) {
+     // Recover the pixels
+     mImageSurface = new gfxImageSurface(gfxIntSize(mSize.width, mSize.height),
+@@ -837,14 +843,26 @@ nsresult imgFrame::LockImageData()
+ #endif
+   }
+ 
++  if (mImageSurface)
++    mImageSurface->Flush();
++
+   return NS_OK;
+ }
+ 
+ nsresult imgFrame::UnlockImageData()
+ {
+   if (mPalettedImageData)
+-    return NS_OK;
++    return NS_ERROR_NOT_AVAILABLE;
+ 
++  NS_ABORT_IF_FALSE(mLocked, "Unlocking an unlocked image!");
++  if (!mLocked) {
++    return NS_ERROR_FAILURE;
++  }
++  mLocked = PR_FALSE;
++
++  if (mImageSurface)
++    mImageSurface->MarkDirty();
++
+ #ifdef XP_MACOSX
+   if (mQuartzSurface)
+     mQuartzSurface->Flush();
+@@ -900,7 +918,7 @@ void imgFrame::SetBlendMethod(PRInt32 aBlendMethod)
+ 
+ PRBool imgFrame::ImageComplete() const
+ {
+-  return mDecoded == nsIntRect(0, 0, mSize.width, mSize.height);
++  return mDecoded == nsIntRect(mOffset, mSize);
+ }
+ 
+ // A hint from the image decoders that this image has no alpha, even

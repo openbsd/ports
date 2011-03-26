@@ -1,0 +1,14 @@
+$OpenBSD: patch-js_src_nanojit_Assembler_h,v 1.1 2011/03/26 10:58:36 landry Exp $
+allow to build a debug FLAVOR on !i386
+--- js/src/nanojit/Assembler.h.orig	Tue Oct 26 23:33:05 2010
++++ js/src/nanojit/Assembler.h	Tue Oct 26 23:33:50 2010
+@@ -259,7 +259,9 @@ namespace nanojit
+ 
+             bool        _inExit, vpad2[3];
+ 
++#ifdef NANOJIT_IA32
+             verbose_only( void asm_inc_m32(uint32_t*); )
++#endif
+             void        asm_setcc(Register res, LIns *cond);
+             NIns *      asm_jmpcc(bool brOnFalse, LIns *cond, NIns *target);
+             void        asm_mmq(Register rd, int dd, Register rs, int ds);
