@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.117 2011/03/25 01:07:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.118 2011/03/26 10:05:24 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -76,8 +76,7 @@ WANTLIB-main=	FLAC GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
-# Should be 2.65
-AUTOCONF_VERSION= 2.64
+AUTOCONF_VERSION= 2.65
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/autotools
 CONFIGURE_ARGS+=--disable-alsa \
 		--disable-altivec \

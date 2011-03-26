@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2011/03/13 17:27:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.91 2011/03/26 10:05:24 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -81,7 +81,7 @@ LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
 # Should be 2.67
-AUTOCONF_VERSION= 2.64
+AUTOCONF_VERSION= 2.65
 CONFIGURE_ARGS+= --disable-avahi \
 		 --disable-cap \
 		 --disable-doxygen \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/03/13 10:26:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2011/03/26 10:05:24 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386
 
@@ -37,8 +37,7 @@ RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
-# Should be 2.65
-AUTOCONF_VERSION= 2.64
+AUTOCONF_VERSION= 2.65
 CONFIGURE_ARGS+= --with-distributor="OpenBSD"
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include/libpng \
 		    -I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/19 07:23:15 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/03/26 10:05:24 sthen Exp $
 
 COMMENT=	multimedia player
 
@@ -28,8 +28,7 @@ LIB_DEPENDS=	multimedia/xine-lib \
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 CONFIGURE_STYLE= autoconf
-# Should be 2.65
-AUTOCONF_VERSION= 2.64
+AUTOCONF_VERSION= 2.65
 CONFIGURE_ARGS+=--disable-lirc \
 		--disable-mbs \
 		--disable-vdr-keys \

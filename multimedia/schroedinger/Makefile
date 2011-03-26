@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/01/18 11:37:40 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/26 10:05:24 sthen Exp $
 
 COMMENT=	high-speed Dirac codec
 
@@ -23,7 +23,6 @@ LIB_DEPENDS=	orc->=0.4.11:devel/orc
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
-# Should be 2.65
-AUTOCONF_VERSION= 2.64
+AUTOCONF_VERSION= 2.65
 
 .include <bsd.port.mk>

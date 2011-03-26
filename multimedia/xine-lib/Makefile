@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2010/11/22 11:15:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2011/03/26 10:05:24 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -63,8 +63,7 @@ USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= autoconf
-# Should be 2.65
-AUTOCONF_VERSION= 2.64
+AUTOCONF_VERSION= 2.65
 CONFIGURE_ARGS+=--disable-aalib \
 		--disable-dxr3 \
 		--disable-fb \

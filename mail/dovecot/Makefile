@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.161 2011/03/05 20:41:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.162 2011/03/26 10:05:24 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -56,8 +56,7 @@ FLAVOR?=
 CFLAGS+=	-I/usr/include/kerberosV -I${LOCALBASE}/include
 
 USE_LIBTOOL=		Yes
-# Should be 2.65
-AUTOCONF_VERSION=	2.64
+AUTOCONF_VERSION=	2.65
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--localstatedir=/var \
 			--with-gssapi \
