@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.256 2011/03/25 17:02:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.257 2011/03/26 12:27:22 sthen Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -23,6 +23,7 @@
      SUBDIR += chntpw
      SUBDIR += chrootuid
      SUBDIR += clamav
+     SUBDIR += clamav-unofficial-sigs
      SUBDIR += clusterssh
      SUBDIR += cops
      SUBDIR += corkscrew
