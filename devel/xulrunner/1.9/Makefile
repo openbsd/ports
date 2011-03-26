@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/03/24 07:04:17 landry Exp $
+# $OpenBSD: Makefile,v 1.43 2011/03/26 13:25:50 landry Exp $
 
 MOZILLA_VERSION =	1.9.2.16
 FFX_VERSION =		3.6.16
@@ -6,6 +6,8 @@ MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	xulrunner1.9
 DISTNAME =		firefox-${FFX_VERSION}.source
 MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FFX_VERSION}/source/
+REVISION-main =	0
+REVISION-devel =	0
 
 SO_VERSION =		3.2
 # NOTE: Must bump minor version if any shlib's are removed from the
@@ -20,9 +22,9 @@ PKG_ARGS+=	-Djit=1 -Damd64=1
 PKG_ARGS+=	-Djit=0 -Damd64=0
 .endif
 
-# use files and patches from www/mozilla-firefox
-PATCHDIR =		${PORTSDIR}/www/mozilla-firefox/patches
-FILESDIR =		${PORTSDIR}/www/mozilla-firefox/files
+# use files and patches from www/firefox36
+PATCHDIR =		${PORTSDIR}/www/firefox36/patches
+FILESDIR =		${PORTSDIR}/www/firefox36/files
 
 MOZILLA_DATADIRS =	chrome components defaults dictionaries greprefs \
 			icons modules plugins res

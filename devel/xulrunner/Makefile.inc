@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.19 2011/01/14 22:50:38 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.20 2011/03/26 13:25:50 landry Exp $
 
 COMMENT-main =		standalone XUL/XPCOM runtime environment
 COMMENT-devel =		devel files for Gecko
@@ -25,7 +25,8 @@ MODULES =		www/mozilla devel/gettext lang/python
 LIB_DEPENDS-main =	${LIB_DEPENDS}
 WANTLIB-main =		${WANTLIB}
 
-LIB_DEPENDS-devel +=	${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-devel +=	${LIB_DEPENDS} \
+			${MODGETTEXT_LIB_DEPENDS} \
 			devel/libIDL \
 			${PKGNAME-main}:devel/xulrunner/${MOZILLA_VERSION:R:R},-main
 WANTLIB-devel +=	${MODGETTEXT_WANTLIB} \
