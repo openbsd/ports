@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/03/26 10:01:08 sthen Exp $
 
 COMMENT=	transparent IRC proxy
 
 DISTNAME=	tircproxy-0.4.5
+REVISION=	0
 CATEGORIES=     net
 
 HOMEPAGE=	http://bre.klaki.net/programs/tircproxy/

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/18 18:36:51 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/03/26 10:01:08 sthen Exp $
 
 COMMENT=	ident daemon with custom responses and NAT support
 DISTNAME=	oidentd-2.0.7
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ojnk/}
 
