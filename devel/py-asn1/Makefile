@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2010/12/18 10:31:59 benoit Exp $
+# $OpenBSD: Makefile,v 1.12 2011/03/26 13:02:11 benoit Exp $
 
 COMMENT =	ASN.1 library for Python
 
-MODPY_EGG_VERSION =	0.0.12a
+MODPY_EGG_VERSION =	0.0.13b
 DISTNAME =		pyasn1-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
@@ -25,13 +25,10 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 
 DOCSDIR =	${PREFIX}/share/doc/py-asn1
-EXAMPLESDIR =	${PREFIX}/share/examples/py-asn1
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
 
 do-regress: fake
 	@cd ${WRKSRC}/test && ${MAKE_ENV} \

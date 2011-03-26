@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/12/18 10:32:01 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/03/26 13:02:13 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/pyasn1/
 lib/python${MODPY_VERSION}/site-packages/pyasn1-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pyasn1-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -53,16 +53,11 @@ lib/python${MODPY_VERSION}/site-packages/pyasn1/type/namedval.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/namedval.pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/tag.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/tag.pyc
+lib/python${MODPY_VERSION}/site-packages/pyasn1/type/tagmap.py
+lib/python${MODPY_VERSION}/site-packages/pyasn1/type/tagmap.pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/univ.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/univ.pyc
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/useful.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1/type/useful.pyc
 share/doc/py-asn1/
-share/doc/py-asn1/notes.html
-share/examples/py-asn1/
-share/examples/py-asn1/ldap.py
-share/examples/py-asn1/ocsp.py
-share/examples/py-asn1/pkcs7.py
-share/examples/py-asn1/snmp.py
-share/examples/py-asn1/sshkey.py
-share/examples/py-asn1/x509.py
+share/doc/py-asn1/pyasn1-tutorial.html
