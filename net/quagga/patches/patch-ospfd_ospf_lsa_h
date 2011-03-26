@@ -1,0 +1,17 @@
+$OpenBSD: patch-ospfd_ospf_lsa_h,v 1.1 2011/03/26 12:00:53 sthen Exp $
+
+ospfd: Compile fix for opaque support
+http://code.quagga.net/cgi-bin/gitweb.cgi?p=quagga.git;a=commitdiff;h=d71ea65270408a45e4bec036671ec73b24b994b4
+
+--- ospfd/ospf_lsa.h.orig	Mon Mar 21 11:09:13 2011
++++ ospfd/ospf_lsa.h	Sat Mar 26 11:18:46 2011
+@@ -114,6 +114,9 @@ struct ospf_lsa
+ 
+   /* Refreshement List or Queue */
+   int refresh_list;
++  
++  /* For Type-9 Opaque-LSAs */
++  struct ospf_interface *oi;
+ };
+ 
+ /* OSPF LSA Link Type. */

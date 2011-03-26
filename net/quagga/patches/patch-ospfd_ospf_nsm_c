@@ -1,0 +1,16 @@
+$OpenBSD: patch-ospfd_ospf_nsm_c,v 1.1 2011/03/26 12:00:53 sthen Exp $
+
+ospfd: Compile fix for opaque support
+http://code.quagga.net/cgi-bin/gitweb.cgi?p=quagga.git;a=commitdiff;h=d71ea65270408a45e4bec036671ec73b24b994b4
+
+--- ospfd/ospf_nsm.c.orig	Mon Mar 21 09:43:52 2011
++++ ospfd/ospf_nsm.c	Sat Mar 26 11:18:46 2011
+@@ -216,7 +216,7 @@ ospf_db_summary_add (struct ospf_neighbor *nbr, struct
+     {
+     case OSPF_OPAQUE_LINK_LSA:
+       /* Exclude type-9 LSAs that does not have the same "oi" with "nbr". */
+-      if (lsa->oi != nbr->oi)
++      if (nbr->oi && ospf_if_exists (lsa->oi) != nbr->oi)
+           return 0;
+       break;
+     case OSPF_OPAQUE_AREA_LSA:

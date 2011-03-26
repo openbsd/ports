@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/19 22:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/03/26 12:00:53 sthen Exp $
 
 COMMENT=	multi-threaded routing daemon
 
-DISTNAME=	quagga-0.99.17
+DISTNAME=	quagga-0.99.18
 SHARED_LIBS=    ospf	0.0     \
                 zebra	0.0
 CATEGORIES=	net
@@ -32,8 +32,8 @@ CONFIGURE_ARGS+=--includedir=${LOCALBASE}/include/quagga \
 		--localstatedir=${STATEDIR} \
 		--enable-user=_quagga \
 		--enable-group=_quagga \
+		--enable-vty-group=_quagga \
 		--enable-vtysh \
-		--enable-vtysh-group=_quagga \
 		--mandir=${LOCALBASE}/man \
 		--infodir=${LOCALBASE}/info
 CONFIGURE_ENV=	LIBS=-lcurses
@@ -57,5 +57,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/quagga
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/quagga
 	${INSTALL_DATA} ${WRKSRC}/SERVICES ${PREFIX}/share/doc/quagga
+	${INSTALL_DATA} ${WRKSRC}/doc/quagga.info* ${PREFIX}/info
 
 .include <bsd.port.mk>
