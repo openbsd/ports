@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2011/03/21 18:29:07 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2011/03/26 10:23:13 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -60,7 +60,7 @@ CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.13
 CONFIGURE_ENV=          CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
                         LDFLAGS="-L${LOCALBASE}/lib ${PHP_LDFLAGS} -pthread" \
-			EXTENSION_DIR=${MODULES_DIR}
+			EXTENSION_DIR=${MODULES_DIR} lt_cv_path_SED=/usr/bin/sed
 MAKE_ENV=               ${CONFIGURE_ENV}
 
 CONFIGURE_ARGS+=	--enable-shared \

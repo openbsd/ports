@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2011/03/21 19:50:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2011/03/26 10:23:13 sthen Exp $
 
 # doesn't set USE_LIBTOOL but use the bundled one because it needs some
 # specific options we don't have.
@@ -10,7 +10,7 @@ PKGNAME=	php5-core-${V}
 PKGNAME-main=	php5-core-${V}
 PKGNAME-fastcgi=php5-fastcgi-${V}
 
-REVISION-main=		1
+REVISION-main=		2
 REVISION-fastcgi=	0
 
 DISTFILES=	php-${V}.tar.gz
