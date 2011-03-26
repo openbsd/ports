@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.33 2010/11/15 23:22:07 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2011/03/26 18:42:12 naddy Exp $
 
 COMMENT=		lightweight Emacs clone
-DISTNAME=		zile-2.3.18
+DISTNAME=		zile-2.3.23
 CATEGORIES=		editors
 HOMEPAGE=		http://www.gnu.org/software/zile/
 
@@ -13,9 +13,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${MASTER_SITE_GNU:=zile/}
 
-WANTLIB=		c ncurses
+WANTLIB=		c ncursesw
 
 CONFIGURE_STYLE=	gnu
-USE_GROFF =		Yes
+CONFIGURE_ARGS=		--disable-silent-rules
 
 .include <bsd.port.mk>
