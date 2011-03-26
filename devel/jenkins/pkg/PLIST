@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/25 19:40:39 ian Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/26 00:44:53 ian Exp $
 @conflict hudson-*
-@newgroup _jenkins:666
-@newuser _jenkins:666:_jenkins:daemon:Jenkins Account:${HOMEDIR}:/sbin/nologin
+@newgroup _jenkins:668
+@newuser _jenkins:668:_jenkins:daemon:Jenkins Account:${HOMEDIR}:/sbin/nologin
 @extraunexec rm -rf ${HOMEDIR}
 @owner _jenkins
 @group _jenkins
