@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/19 09:21:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2011/03/26 15:07:59 benoit Exp $
 
 COMMENT =	generates ASCII banner art
 
-PKGNAME =	figlet-2.2.2
-DISTNAME =	figlet222
+DISTNAME =	figlet-2.2.4
 CATEGORIES =	misc graphics
 
 HOMEPAGE =	http://www.figlet.org/
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
-# Artistic
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
@@ -19,13 +18,12 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		c
 
 MASTER_SITES =	ftp://ftp.figlet.org/pub/figlet/program/unix/
-MASTER_SITES0 =	http://www.arcane-labs.net/download/
+MASTER_SITES0 =	http://www.arcane-labs.net/download/OpenBSD/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		figlet-contributed-06092002${EXTRACT_SUFX}:0
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}" \
 		DEFAULTFONTDIR=${PREFIX}/share/figlet
-USE_GROFF =	Yes
 
 NO_REGRESS =	Yes
 
