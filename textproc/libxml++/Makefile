@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/03/26 16:02:30 ajacoutot Exp $
 
 COMMENT=	C++ wrapper for the libxml XML parser library
 
@@ -24,6 +24,8 @@ WANTLIB += glibmm-2.4 xml2 stdc++
 
 MODULES=	devel/gettext
 
+BUILD_DEPENDS=	devel/mm-common
+
 LIB_DEPENDS=	devel/glib2mm \
 		textproc/libxml
 
@@ -34,5 +36,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 FAKE_FLAGS=	docdir="${PREFIX}/share/doc/libxml++-2.6"
+
+# XXX when updating, check that this is still needed
+CONFIGURE_ENV+= MMDOCTOOLDIR=`pkg-config --variable=doctooldir mm-common-util`
 
 .include <bsd.port.mk>
