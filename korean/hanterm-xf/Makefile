@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/03/16 22:53:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/03/27 16:38:13 jasper Exp $
 
 COMMENT=	X Hangul Terminal (XFree86 xterm Based)
 
@@ -7,6 +7,7 @@ DISTNAME=	hanterm-xf-$V
 CATEGORIES=	korean
 PKGNAME=	hanterm-xf-${V:S/-/./}
 REVISION=	1
+EPOCH=		0
 
 MASTER_SITES=	http://kldp.net/frs/download.php/3281/
 HOMEPAGE=	http://hanterm-xf.kldp.net
