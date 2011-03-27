@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2011/03/08 06:56:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2011/03/27 18:25:15 ajacoutot Exp $
 
 COMMENT-main=	MIME messages creation and parsing library
 COMMENT-mono=	mono bindings for gmime
 
-V=		2.4.23
+V=		2.4.24
 DISTNAME=	gmime-${V}
 
 PKGNAME-main=	${DISTNAME}
