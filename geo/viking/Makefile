@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2011/03/27 20:32:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/03/27 20:37:59 jasper Exp $
 
 COMMENT =	GPS track manager
 
-DISTNAME =	viking-1.0
-REVISION =	0
+DISTNAME =	viking-1.0.2
 
 CATEGORIES =	geo x11
 
