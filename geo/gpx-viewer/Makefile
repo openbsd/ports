@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/01/17 12:49:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/03/27 19:48:09 jasper Exp $
 
 COMMENT =	gpx file viewer
 
@@ -19,8 +19,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://edge.launchpad.net/gpx-viewer/trunk/${VERSION}/+download/
 
-CONFIGURE_STYLE =       autoconf
-AUTOCONF_VERSION =      2.62
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.65
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_path_VALAC=""
@@ -44,9 +44,5 @@ WANTLIB += soup-2.4 sqlite3 tasn1 xcb xml2 z Xxf86vm drm
 WANTLIB += ORBit-2 dbus-1 dbus-glib-1 gconf-2 gnome-keyring proxy
 WANTLIB += soup-gnome-2.4 champlain-0.8 champlain-gtk-0.8
 WANTLIB += gdl-1 xcb-render xcb-render-util unique-1.0
-
-# Upstream doesn't build their own releases.
-post-configure:
-	echo "#define PACKAGE_URL \"${HOMEPAGE}\"" >> ${WRKSRC}/config.h
 
 .include <bsd.port.mk>
