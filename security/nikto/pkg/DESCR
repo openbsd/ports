@@ -1,6 +1,6 @@
 Nikto is an Open Source (GPL) web server scanner which performs
-comprehensive tests against web servers for multiple items,
-including over 2600 potentially dangerous files/CGIs,
-versions on over 625 servers, and version specific problems on
-over 230 servers. Scan items and plugins are frequently updated
-and can be automatically updated (if desired).
+comprehensive tests against web servers for multiple items, including
+over 6400 potentially dangerous files/CGIs, checks for outdated versions
+on over 1000 servers, and version specific problems on over 270 servers.
+Scan items and plugins are frequently updated and can be automatically
+updated (if desired).
