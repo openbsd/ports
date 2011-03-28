@@ -1,0 +1,78 @@
+$OpenBSD: README-main,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
+
+Running ICINGA on OpenBSD
+=========================
+
+Getting Started
+---------------
+
+The main documentation for Icinga is provided in HTML format as part of
+the icinga-cgi package, see /var/www/icinga-cgi/docs/en/index.html
+
+The included sample configuration carries out some simple checks
+on the local machine; these should work as-is.
+
+You may check your configuration file format before starting Icinga:
+
+	/usr/local/bin/icinga -v ${SYSCONFDIR}/icinga/icinga.cfg
+
+This will parse all configuration files and warn about any problems
+which have been identified.
+
+Chroot Considerations
+---------------------
+
+If using OpenBSD's default chroot environment for httpd, some files
+will need to be moved inside the jail and symbolic links created:
+
+	mkdir -p /var/www/etc /var/www/var/log
+	mv ${SYSCONFDIR}/icinga /var/www/etc/
+	ln -s /var/www/etc/icinga ${SYSCONFDIR}
+	mv /var/icinga /var/www/var/
+	ln -s /var/www/var/icinga /var
+	mv /var/log/icinga /var/www/var/log/
+	ln -s /var/www/var/log/icinga /var/log
+
+Web User-Interfaces
+-------------------
+
+Two web-based user interfaces are available for Icinga:
+
+- icinga-cga: the classic (but improved) Nagios-style interface
+- icinga-web: new API-based interface
+
+At the time of writing, porting and packaging of icinga-web is
+a work-in-progress.  To enable icinga-cgi, link the provided httpd.conf
+snippet:
+
+	ln -s ../modules.sample/icinga-cgi.conf /var/www/conf/modules
+
+You may wish to modify this file.  By default it uses HTTP basic
+authentication; you can create the password file as follows:
+
+	touch ${SYSCONFDIR}/icinga/htpasswd.users
+	htpasswd ${SYSCONFDIR}/icinga/htpasswd.users <username>
+
+When done, restart the web server:
+
+	apachectl stop
+	apachectl start
+
+You should then be able to access the web interface at
+http://localhost/icinga/
+
+Moving from Nagios
+------------------
+
+The configuration format is compatible with Nagios.  If you'd like
+to move across with minimal changes, you can point Icinga at your
+existing configuration files:
+
+	echo 'icinga_flags="-d ${SYSCONFDIR}/nagios/nagios.cfg"' >> /etc/rc.conf.local
+	echo 'rc_scripts="${rc_scripts} icinga' >> /etc/rc.conf.local
+
+You will need to merge the settings between Nagios' and Icinga's
+cgi.cfg files.  sdiff(1), as used by sysmerge(8), can help with this.
+main_config_file and some other settings (admin usernames etc) should
+be taken from the Nagios file, whereas the various web-related settings
+(url_html_path, physical_html_path, etc) need to point to the Icinga files.

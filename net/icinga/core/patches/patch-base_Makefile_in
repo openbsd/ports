@@ -1,0 +1,14 @@
+$OpenBSD: patch-base_Makefile_in,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
+--- base/Makefile.in.orig	Tue Feb 15 13:28:41 2011
++++ base/Makefile.in	Thu Mar 24 11:22:48 2011
+@@ -206,8 +206,8 @@ install-unstripped:
+ 
+ install-basic:
+ 	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 774 $(INSTALL_OPTS) @icinga_name@ $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 774 $(INSTALL_OPTS) @icingastats_name@ $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_PROGRAM) @icinga_name@ $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_PROGRAM) @icingastats_name@ $(DESTDIR)$(BINDIR)
+ 
+ strip-post-install:
+ 	$(STRIP) $(DESTDIR)$(BINDIR)/@icinga_name@

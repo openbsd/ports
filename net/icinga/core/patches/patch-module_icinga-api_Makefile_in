@@ -1,0 +1,16 @@
+$OpenBSD: patch-module_icinga-api_Makefile_in,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
+
+Otherwise it tries to install the API owned by _icinga:_icinga,
+possibly before the user was created by pkg_add.
+
+--- module/icinga-api/Makefile.in.orig	Thu Mar 24 12:59:25 2011
++++ module/icinga-api/Makefile.in	Thu Mar 24 13:00:46 2011
+@@ -10,7 +10,7 @@ BINDIR=@bindir@
+ CGIDIR=@sbindir@
+ HTMLDIR=@datarootdir@
+ INSTALL=@INSTALL@
+-INSTALL_OPTS=@INSTALL_OPTS@
++#INSTALL_OPTS=@INSTALL_OPTS@
+ COMMAND_OPTS=@COMMAND_OPTS@
+ INSTALL_OPTS_WEB=@INSTALL_OPTS_WEB@
+ WEB_USER=@web_user@

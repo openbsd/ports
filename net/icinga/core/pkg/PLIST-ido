@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-ido,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
+@bin bin/ido2db
+@bin bin/idomod.o
+@bin bin/log2ido
+share/examples/icinga/ido2db.cfg-sample
+@sample ${SYSCONFDIR}/icinga/ido2db.cfg
+share/examples/icinga/idomod.cfg-sample

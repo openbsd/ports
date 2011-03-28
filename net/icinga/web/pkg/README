@@ -1,0 +1,18 @@
+$OpenBSD: README,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
+
+SQL> GRANT USAGE ON *.* TO 'icinga_web'@'localhost' IDENTIFIED BY 'icinga_web';
+SQL> GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, INDEX ON icinga_web.* TO 'icinga_web'@'localhost';
+SQL> FLUSH PRIVILEGES;
+
+app/config/databases.xml
+        Change the credentials for your database connection
+
+app/modules/Web/config/module.xml
+        Go to the appkit.factories section and change the path and the
+        credentials for the icinga-api
+
+default
+                User: root
+                Pass: password
+
+

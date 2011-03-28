@@ -1,0 +1,74 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
+--- configure.orig	Tue Feb 15 13:28:41 2011
++++ configure	Fri Mar 25 08:32:55 2011
+@@ -4774,13 +4774,13 @@ if test $ac_cv_lib_cma_pthread_create = yes; then
+ 	have_pthreads="yes"
+ fi
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthread" >&5
+-$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -pthread" >&5
++$as_echo_n "checking for pthread_create in -pthread... " >&6; }
+ if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -4811,7 +4811,7 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
+ $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
+ if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then :
+-  THREADLIBS="$THREADLIBS -lpthread"
++  THREADLIBS="$THREADLIBS -pthread"
+ fi
+ 
+ if test $ac_cv_lib_pthread_pthread_create = yes; then
+@@ -5102,7 +5102,7 @@ cat >>confdefs.h <<_ACEOF
+ #define DEFAULT_NAGIOS_GROUP "$icinga_grp"
+ _ACEOF
+ 
+-INSTALL_OPTS="-o $icinga_user -g $icinga_grp"
++INSTALL_OPTS=""
+ 
+ 
+ 
+@@ -5123,7 +5123,7 @@ fi
+ 
+ 
+ 
+-COMMAND_OPTS="-o $command_user -g $command_grp"
++COMMAND_OPTS=""
+ 
+ 
+ MAIL_PROG=no
+@@ -5456,7 +5456,7 @@ $as_echo_n "checking for gdImagePng in -lgd (order 1).
+   $as_echo_n "(cached) " >&6
+ else
+   ac_save_LIBS="$LIBS"
+-	LIBS="-lgd -lttf -lpng -ljpeg -lz -lm $LIBS"
++	LIBS="-lgd -lpng -ljpeg -lz -lm $LIBS"
+ 	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 	/* Override any gcc2 internal prototype to avoid an error.  */
+@@ -5487,7 +5487,7 @@ fi
+ $as_echo "yes" >&6; }
+ 
+ 			GDLIBFOUND=yep
+-			GDLIBS="-lgd -lttf -lpng -ljpeg -lz -lm"
++			GDLIBS="-lgd -lpng -ljpeg -lz -lm"
+ 
+ 	else
+ 	  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+@@ -6725,7 +6725,7 @@ $as_echo_n "checking for SSL libraries... " >&6; }
+ 		found_ssl=no
+ 		for dir in $ssl_lib_dir $ssl_dir /usr/lib64 /usr/lib /usr/local/lib /usr/lib/ssl /usr/ssl/lib /usr/openssl/lib /usr/pkg/lib  /usr/freeware/lib/openssl; do
+ 			ssllibdir="$dir"
+-			if test -f "$dir/libssl.so"; then
++			if test -f "$dir/libssl.a"; then
+ 				found_ssl=yes
+ 			        break
+ 			fi

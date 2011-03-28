@@ -1,0 +1,2 @@
+This package contains Icinga's modern API-based web frontend.
+The legacy frontend is also available in the icinga-cgi package.

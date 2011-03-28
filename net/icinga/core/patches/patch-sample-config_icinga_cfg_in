@@ -1,0 +1,23 @@
+$OpenBSD: patch-sample-config_icinga_cfg_in,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
+--- sample-config/icinga.cfg.in.orig	Tue Feb 15 13:28:41 2011
++++ sample-config/icinga.cfg.in	Sun Mar 20 21:22:10 2011
+@@ -14,7 +14,7 @@
+ # for historical purposes.  This should be the first option specified
+ # in the config file!!!
+ 
+-log_file=@localstatedir@/icinga.log
++log_file=/var/log/icinga/icinga.log
+ 
+ 
+ 
+@@ -1292,8 +1292,8 @@ use_true_regexp_matching=0
+ # using the $ADMINEMAIL$ and $ADMINPAGER$ macros in your notification
+ # commands.
+ 
+-admin_email=@icinga_user@@localhost
+-admin_pager=page@icinga_user@@localhost
++admin_email=root@localhost
++admin_pager=root@localhost
+ 
+ 
+ 

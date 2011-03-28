@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_Makefile_in,v 1.1.1.1 2011/03/28 14:06:06 sthen Exp $
+--- lib/Makefile.in.orig	Sun Mar 20 21:41:34 2011
++++ lib/Makefile.in	Sun Mar 20 21:41:57 2011
+@@ -10,9 +10,9 @@ INSTALL=@INSTALL@
+ INSTALL_OPTS=@INSTALL_OPTS@
+ 
+ install: installdirs
+-	find . -mindepth 1 -type f -not -name "*.in" -and -not -name "Makefile" -exec $(INSTALL) -m 644 $(INSTALL_OPTS) {} $(DESTDIR)$(prefix)/lib/{} \;
++	find . -mindepth 1 -type f \! -name "*.in" -and \! -name "Makefile" -exec $(INSTALL) -m 644 $(INSTALL_OPTS) {} $(DESTDIR)$(prefix)/lib/{} \;
+ 
+ installdirs:
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(prefix)/lib
+ 	find . -mindepth 1 -type d -exec $(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(prefix)/lib/{} \;
+-	
+\ No newline at end of file
++	

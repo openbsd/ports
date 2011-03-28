@@ -1,0 +1,33 @@
+$OpenBSD: patch-app_Makefile_in,v 1.1.1.1 2011/03/28 14:06:06 sthen Exp $
+--- app/Makefile.in.orig	Sun Mar 20 21:41:34 2011
++++ app/Makefile.in	Sun Mar 20 21:41:45 2011
+@@ -13,21 +13,21 @@ INSTALL_OPTS_CACHE=@INSTALL_OPTS_CACHE@
+ 
+ install: installdirs
+ 	find . -mindepth 1 -type f \
+-	-not -name "*.in" \
+-	-and -not -name "Makefile" \
+-	-and -not -path "./cache/*" \
+-	-and -not -path "*/data/log*" \
++	\! -name "*.in" \
++	-and \! -name "Makefile" \
++	-and \! -path "./cache/*" \
++	-and \! -path "*/data/log*" \
+ 	-exec $(INSTALL) -m 644 $(INSTALL_OPTS) {} $(DESTDIR)$(prefix)/app/{} \;
+ 
+ installdirs:
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(prefix)/app
+ 	
+ 	find . -mindepth 1 -type d \
+-	-not -path "./cache/*" \
+-	-and -not -path "*/data/log*" \
++	\! -path "./cache/*" \
++	-and \! -path "*/data/log*" \
+ 	-exec $(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(prefix)/app/{} \;
+ 	
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS_CACHE) -d $(DESTDIR)$(prefix)/app/cache
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS_CACHE) -d $(DESTDIR)$(prefix)/app/cache/config
+ 	
+-	$(INSTALL) -m 755 $(INSTALL_OPTS_WEB) -d $(DESTDIR)$(prefix)/app/data/log
+\ No newline at end of file
++	$(INSTALL) -m 755 $(INSTALL_OPTS_WEB) -d $(DESTDIR)$(prefix)/app/data/log

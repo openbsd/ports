@@ -1,0 +1,15 @@
+$OpenBSD: patch-cgi_Makefile_in,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
+
+Allows for simpler use in a chroot jail
+
+--- cgi/Makefile.in.orig	Sat Mar 19 11:50:20 2011
++++ cgi/Makefile.in	Sat Mar 19 11:50:29 2011
+@@ -34,7 +34,7 @@ CFLAGS=@CFLAGS@ @DEFS@ -DNSCGI
+ #CFLAGS_DEBUG=-ggdb3 -g3
+ #CFLAGS+=$(CFLAGS_WARN) $(CFLAGS_DEBUG)
+ 
+-LDFLAGS=@LDFLAGS@
++LDFLAGS=-static @LDFLAGS@
+ LIBS=@LIBS@
+ 
+ CGIS=avail.cgi cmd.cgi config.cgi extinfo.cgi history.cgi notifications.cgi outages.cgi showlog.cgi status.cgi statuswml.cgi summary.cgi tac.cgi $(CGIEXTRAS)

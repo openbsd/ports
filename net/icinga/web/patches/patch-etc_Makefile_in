@@ -1,0 +1,23 @@
+$OpenBSD: patch-etc_Makefile_in,v 1.1.1.1 2011/03/28 14:06:06 sthen Exp $
+--- etc/Makefile.in.orig	Sun Mar 20 21:41:34 2011
++++ etc/Makefile.in	Sun Mar 20 21:41:55 2011
+@@ -10,9 +10,9 @@ INSTALL=@INSTALL@
+ INSTALL_OPTS=@INSTALL_OPTS@
+ 
+ install: installdirs
+-	find . -mindepth 1 -maxdepth 1 -type f -not -name "*.in" -and -not -name "Makefile" -exec $(INSTALL) -m 644 $(INSTALL_OPTS) {} $(DESTDIR)$(prefix)/etc/{} \;
+-	find lib/ -mindepth 1 -type f -not -name "*.in" -and -not -name "Makefile" -exec $(INSTALL) -m 644 $(INSTALL_OPTS) {} $(DESTDIR)$(prefix)/etc/{} \;
+-	find tests/ -mindepth 1 -type f -not -name "*.in" -and -not -name "Makefile" -exec $(INSTALL) -m 644 $(INSTALL_OPTS) {} $(DESTDIR)$(prefix)/etc/{} \;
++	find . -mindepth 1 -maxdepth 1 -type f \! -name "*.in" -and \! -name "Makefile" -exec $(INSTALL) -m 644 $(INSTALL_OPTS) {} $(DESTDIR)$(prefix)/etc/{} \;
++	find lib/ -mindepth 1 -type f \! -name "*.in" -and \! -name "Makefile" -exec $(INSTALL) -m 644 $(INSTALL_OPTS) {} $(DESTDIR)$(prefix)/etc/{} \;
++	find tests/ -mindepth 1 -type f \! -name "*.in" -and \! -name "Makefile" -exec $(INSTALL) -m 644 $(INSTALL_OPTS) {} $(DESTDIR)$(prefix)/etc/{} \;
+ 
+ installdirs:
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(prefix)/etc
+@@ -20,4 +20,4 @@ installdirs:
+ 	$(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(prefix)/etc/tests
+ 	find lib/ -mindepth 1 -type d -exec $(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(prefix)/etc/{} \;
+ 	find tests/ -mindepth 1 -type d -exec $(INSTALL) -m 755 $(INSTALL_OPTS) -d $(DESTDIR)$(prefix)/etc/{} \;
+-	
+\ No newline at end of file
++	
