@@ -1,0 +1,27 @@
+$OpenBSD: patch-libnetutil_netutil_cc,v 1.1 2011/03/28 09:01:24 giovanni Exp $
+--- libnetutil/netutil.cc.orig	Wed Feb  2 16:14:26 2011
++++ libnetutil/netutil.cc	Wed Feb  2 16:15:38 2011
+@@ -3424,10 +3424,6 @@ void set_pcap_filter(const char *device, pcap_t *pd, c
+ static bool frame_is_arp(const u8 *frame, int datalink) {
+   if (datalink == DLT_EN10MB) {
+     return ntohs(*((u16 *) (frame + 12))) == ETH_TYPE_ARP;
+-  } else if (datalink == DLT_LINUX_SLL) {
+-    return ntohs(*((u16 *) (frame + 2))) == ARPHRD_ETHER && /* sll_hatype */
+-      ntohs(*((u16 *) (frame + 4))) == 6 && /* sll_halen */
+-      ntohs(*((u16 *) (frame + 14))) == ETH_TYPE_ARP; /* sll_protocol */
+   } else {
+     return false;
+   }
+@@ -3472,11 +3468,8 @@ int read_arp_reply_pcap(pcap_t *pd, u8 *sendermac,
+ 
+   if (datalink == DLT_EN10MB) {
+     offset = ETH_HDR_LEN;
+-  } else if (datalink == DLT_LINUX_SLL) {
+-    /* The datalink type is Linux "cooked" sockets. See pcap-linktype(7). */
+-    offset = 16;
+   } else {
+-    netutil_fatal("%s called on interface that is datatype %d rather than DLT_EN10MB (%d) or DLT_LINUX_SLL (%d)", __func__, datalink, DLT_EN10MB, DLT_LINUX_SLL);
++    netutil_fatal("%s called on interface that is datatype %d rather than DLT_EN10MB (%d)", __func__, datalink, DLT_EN10MB);
+   }
+ 
+   if (to_usec > 0) {

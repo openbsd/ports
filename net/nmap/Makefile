@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.95 2010/12/16 17:40:20 giovanni Exp $
+# $OpenBSD: Makefile,v 1.96 2011/03/28 09:01:24 giovanni Exp $
 
 COMMENT-main=	scan ports and fingerprint stack of network hosts
 COMMENT-zenmap=	graphical frontend for nmap
 
-MODPY_EGG_VERSION=	5.21
+MODPY_EGG_VERSION=	5.51
 DISTNAME=		nmap-${MODPY_EGG_VERSION}
-REVISION-main=		3
-REVISION-zenmap=	1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-zenmap=		nmap-zenmap-${MODPY_EGG_VERSION}
 
@@ -42,7 +40,7 @@ CONFIGURE_ARGS=	--with-libpcap=/usr \
 		--with-mandir=${LOCALBASE}/man \
 		--disable-nls
 
-WANTLIB-main=		c crypto m pcap ssl stdc++ pcre dnet lua>=5
+WANTLIB-main=		c crypto m pcap ssl stdc++ pcre pthread dnet lua>=5
 LIB_DEPENDS-main=	devel/pcre \
 			net/libdnet \
 			lang/lua

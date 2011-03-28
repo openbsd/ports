@@ -1,0 +1,14 @@
+$OpenBSD: patch-nping_ProbeMode_cc,v 1.1 2011/03/28 09:01:24 giovanni Exp $
+--- nping/ProbeMode.cc.orig	Wed Feb  2 17:12:11 2011
++++ nping/ProbeMode.cc	Wed Feb  2 17:12:51 2011
+@@ -1506,8 +1506,8 @@ void ProbeMode::probe_nping_event_handler(nsock_pool n
+  u16 *ethtype=NULL;
+  u8 buffer[512+1];
+  size_t link_offset=0;
+- static struct timeval pcaptime;
+- static struct timeval prevtime;
++ static struct bpf_timeval pcaptime;
++ static struct bpf_timeval prevtime;
+  NpingTarget *trg=NULL;
+  u16 *prt=NULL;
+  u8 proto=0;

@@ -1,0 +1,12 @@
+$OpenBSD: patch-nping_EchoServer_cc,v 1.1 2011/03/28 09:01:24 giovanni Exp $
+--- nping/EchoServer.cc.orig	Wed Feb  2 16:32:30 2011
++++ nping/EchoServer.cc	Wed Feb  2 16:33:20 2011
+@@ -836,7 +836,7 @@ int EchoServer::nep_capture_handler(nsock_pool nsp, ns
+   const unsigned char *packet=NULL;
+   const unsigned char *link=NULL;
+   nsock_iod nsi = nse_iod(nse);
+-  struct timeval pcaptime;
++  struct bpf_timeval pcaptime;
+   nsock_iod clnt_iod=NULL;
+   NEPContext *ctx=NULL;
+   EchoHeader pkt_out;

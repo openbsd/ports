@@ -1,5 +1,5 @@
---- scan_engine.cc.orig	Fri Jan 15 04:55:23 2010
-+++ scan_engine.cc	Wed Jan 20 19:54:57 2010
+--- scan_engine.cc.orig	Fri Jan 21 01:04:16 2011
++++ scan_engine.cc	Wed Feb  2 13:12:14 2011
 @@ -108,6 +108,7 @@
  #include <math.h>
  #include <list>
@@ -8,7 +8,7 @@
  
  using namespace std;
  extern NmapOps o;
-@@ -4915,13 +4916,13 @@ static void begin_sniffer(UltraScanInfo *USI, vector<T
+@@ -4936,13 +4937,13 @@ static void begin_sniffer(UltraScanInfo *USI, vector<T
      if (doIndividual){
        pcap_filter="dst host ";
        pcap_filter+=inet_ntoa(Targets[0]->v4source());
@@ -23,4 +23,4 @@
 +      pcap_filter+=" and (icmp or tcp or udp)";
      }
    }else assert(0);
-   if (o.debugging > 2) log_write(LOG_PLAIN, "Pcap filter: %s\n", pcap_filter.c_str());
+   if (o.debugging) log_write(LOG_PLAIN, "Packet capture filter (device %s): %s\n", Targets[0]->deviceFullName(), pcap_filter.c_str());

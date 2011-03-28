@@ -1,0 +1,12 @@
+$OpenBSD: patch-nse_nsock_cc,v 1.1 2011/03/28 09:01:24 giovanni Exp $
+--- nse_nsock.cc.orig	Wed Feb  2 16:30:50 2011
++++ nse_nsock.cc	Wed Feb  2 16:31:11 2011
+@@ -1010,7 +1010,7 @@ static void pcap_receive_handler (nsock_pool nsp, nsoc
+   {
+     const unsigned char *l2_data, *l3_data;
+     size_t l2_len, l3_len, packet_len;
+-    struct timeval tv;
++    struct bpf_timeval tv;
+ 
+     nse_readpcap(nse, &l2_data, &l2_len, &l3_data, &l3_len, &packet_len, &tv);
+ 

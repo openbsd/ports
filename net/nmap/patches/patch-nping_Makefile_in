@@ -1,0 +1,12 @@
+$OpenBSD: patch-nping_Makefile_in,v 1.1 2011/03/28 09:01:24 giovanni Exp $
+--- nping/Makefile.in.orig	Tue Jan 11 20:53:42 2011
++++ nping/Makefile.in	Wed Feb  2 17:23:46 2011
+@@ -48,7 +48,7 @@ export CFLAGS = $(CXXFLAGS)
+ STATIC =
+ LDFLAGS = @LDFLAGS@ $(DBGFLAGS) $(STATIC)
+ OPENSSL_LIBS = @OPENSSL_LIBS@
+-LIBS =  $(NBASEDIR)/libnbase.a $(NSOCKDIR)/src/libnsock.a ../libnetutil/libnetutil.a $(OPENSSL_LIBS) @LIBPCAP_LIBS@ @LIBDNET_LIBS@ @LIBS@ -lpthread
++LIBS =  $(NBASEDIR)/libnbase.a $(NSOCKDIR)/src/libnsock.a ../libnetutil/libnetutil.a $(OPENSSL_LIBS) @LIBDNET_LIBS@ @LIBS@ -lpthread -lpcap
+ # LIBS =  -lefence @LIBS@
+ # LIBS =  -lrmalloc @LIBS@
+ INSTALL = @INSTALL@

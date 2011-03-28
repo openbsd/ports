@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST-zenmap,v 1.10 2010/04/21 07:08:23 giovanni Exp $
+@comment $OpenBSD: PLIST-zenmap,v 1.11 2011/03/28 09:01:24 giovanni Exp $
 bin/nmapfe
 bin/xnmap
 bin/zenmap
-@comment lib/python${MODPY_VERSION}/
-@comment lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/radialnet/
 lib/python${MODPY_VERSION}/site-packages/radialnet/__init__.py
 lib/python${MODPY_VERSION}/site-packages/radialnet/__init__.pyc
@@ -85,6 +83,8 @@ lib/python${MODPY_VERSION}/site-packages/zenmapCore/Diff.py
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/Diff.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/I18N.py
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/I18N.pyc
+lib/python${MODPY_VERSION}/site-packages/zenmapCore/NSEDocParser.py
+lib/python${MODPY_VERSION}/site-packages/zenmapCore/NSEDocParser.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/Name.py
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/Name.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/NetworkInventory.py
@@ -99,8 +99,14 @@ lib/python${MODPY_VERSION}/site-packages/zenmapCore/Paths.py
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/Paths.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/RecentScans.py
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/RecentScans.pyc
+lib/python${MODPY_VERSION}/site-packages/zenmapCore/ScriptArgsParser.py
+lib/python${MODPY_VERSION}/site-packages/zenmapCore/ScriptArgsParser.pyc
+lib/python${MODPY_VERSION}/site-packages/zenmapCore/ScriptMetadata.py
+lib/python${MODPY_VERSION}/site-packages/zenmapCore/ScriptMetadata.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/SearchResult.py
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/SearchResult.pyc
+lib/python${MODPY_VERSION}/site-packages/zenmapCore/StringPool.py
+lib/python${MODPY_VERSION}/site-packages/zenmapCore/StringPool.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/TargetList.py
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/TargetList.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapCore/UmitConf.py
@@ -142,6 +148,8 @@ lib/python${MODPY_VERSION}/site-packages/zenmapGUI/NmapOutputViewer.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/NmapOutputViewer.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/OptionBuilder.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/OptionBuilder.pyc
+lib/python${MODPY_VERSION}/site-packages/zenmapGUI/Print.py
+lib/python${MODPY_VERSION}/site-packages/zenmapGUI/Print.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ProfileCombo.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ProfileCombo.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ProfileEditor.py
@@ -166,12 +174,12 @@ lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScanToolbar.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScanToolbar.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScansListStore.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScansListStore.pyc
+lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScriptInterface.py
+lib/python${MODPY_VERSION}/site-packages/zenmapGUI/ScriptInterface.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/SearchGUI.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/SearchGUI.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/SearchWindow.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/SearchWindow.pyc
-lib/python${MODPY_VERSION}/site-packages/zenmapGUI/Splash.py
-lib/python${MODPY_VERSION}/site-packages/zenmapGUI/Splash.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/TargetCombo.py
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/TargetCombo.pyc
 lib/python${MODPY_VERSION}/site-packages/zenmapGUI/TopologyPage.py
@@ -268,7 +276,6 @@ share/zenmap/pixmaps/redhat_32.png
 share/zenmap/pixmaps/redhat_75.png
 share/zenmap/pixmaps/solaris_32.png
 share/zenmap/pixmaps/solaris_75.png
-share/zenmap/pixmaps/splash.png
 share/zenmap/pixmaps/throbber.gif
 share/zenmap/pixmaps/throbber.png
 share/zenmap/pixmaps/ubuntu_32.png

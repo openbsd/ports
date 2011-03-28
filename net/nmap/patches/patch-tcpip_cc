@@ -1,6 +1,6 @@
---- tcpip.cc.orig	Fri Jan 15 04:55:23 2010
-+++ tcpip.cc	Wed Jan 20 19:56:46 2010
-@@ -127,6 +127,8 @@
+--- tcpip.cc.orig	Fri Jan 21 01:04:16 2011
++++ tcpip.cc	Wed Feb  2 13:12:14 2011
+@@ -120,6 +120,8 @@
  #endif /* NETINET_IF_ETHER_H */
  #endif /* HAVE_NETINET_IF_ETHER_H */
  
@@ -9,12 +9,3 @@
  extern NmapOps o;
  
  #ifdef WIN32
-@@ -2432,7 +2434,7 @@ bool pcap_selectable_fd_valid() {
-    results.  If you just want to test whether the function is supported,
-    use pcap_selectable_fd_valid() instead. */
- int my_pcap_get_selectable_fd(pcap_t *p) {
--#if defined(WIN32) || defined(MACOSX) || (defined(FREEBSD) && (__FreeBSD_version < 500000))
-+#if defined(WIN32) || defined(MACOSX) || (defined(FREEBSD) && (__FreeBSD_version < 500000)) || defined(__OpenBSD__)
-   return -1;
- #else
-   assert(pcap_selectable_fd_valid());
