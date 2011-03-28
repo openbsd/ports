@@ -1,0 +1,2 @@
+You may want to remove the zendframework entries from your include_path
+in php.ini.

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/22 16:04:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/03/28 13:24:32 ajacoutot Exp $
 
 COMMENT=		framework for developing PHP web applications
 
@@ -6,7 +6,7 @@ V=			1.10.8
 DISTNAME=		zendframework-${V}
 DISTFILES=		ZendFramework-${V}.tar.gz
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		www devel
 
