@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.35 2011/01/10 21:46:11 rpointel Exp $
+# $OpenBSD: Makefile,v 1.36 2011/03/28 00:11:34 fgsch Exp $
 
 COMMENT =		fast, lightweight source control management
 
-MODPY_EGG_VERSION =	1.7.3
+MODPY_EGG_VERSION =	1.8.1
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =     	devel
 
@@ -35,14 +35,6 @@ CONTRIBDIRS =		hgsh vim
 SCRIPTS =		convert-repo hg-ssh hgk \
 			tcsh_completion_build.sh dumprevlog \
 			undumprevlog simplemerge
-
-# Zap rst2man gunk that confuses nroff/mandoc.
-post-build:
-.	for file in hg.1 hgignore.5 hgrc.5
-	@cd ${WRKSRC}/doc && \
-		mv ${file} ${file}.orig && \
-		sed -e '/rst2man-indent-level/,/^\.SH/d' < ${file}.orig > ${file}
-.	endfor
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/hg.1 ${PREFIX}/man/man1

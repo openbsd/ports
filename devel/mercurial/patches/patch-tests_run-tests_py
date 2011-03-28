@@ -1,9 +1,9 @@
-$OpenBSD: patch-tests_run-tests_py,v 1.2 2009/08/01 03:21:46 fgsch Exp $
---- tests/run-tests.py.orig	Thu Jul 23 18:58:07 2009
-+++ tests/run-tests.py	Mon Jul 27 02:01:17 2009
-@@ -67,7 +67,8 @@ SKIPPED_PREFIX = 'skipped: '
- FAILED_PREFIX  = 'hghave check failed: '
- PYTHON = sys.executable
+$OpenBSD: patch-tests_run-tests_py,v 1.3 2011/03/28 00:11:34 fgsch Exp $
+--- tests/run-tests.py.orig	Thu Mar 10 17:30:31 2011
++++ tests/run-tests.py	Sat Mar 26 04:42:04 2011
+@@ -74,7 +74,8 @@ IMPL_PATH = 'PYTHONPATH'
+ if 'java' in sys.platform:
+     IMPL_PATH = 'JYTHONPATH'
  
 -requiredtools = ["python", "diff", "grep", "unzip", "gunzip", "bunzip2", "sed"]
 +requiredtools = ["diff", "grep", "unzip", "gunzip", "bunzip2", "sed"]
