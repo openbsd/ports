@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/11/19 07:23:07 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2011/03/28 16:19:45 sthen Exp $
 
 COMMENT=	tty-based e-mail client, development version
 
@@ -11,7 +11,7 @@ WANTLIB=	qdbm>=14 z
 FLAVORS=	idn sasl sidebar
 FLAVOR?=
 
-AUTOCONF_VERSION= 2.64
+AUTOCONF_VERSION= 2.65
 CONFIGURE_ARGS= --enable-hcache \
 		--enable-smtp \
 		--without-gdbm
