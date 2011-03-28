@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<todo version="0.1.20">
-    <note priority="medium" time="1300668945">
-        modules.sample
-    </note>
-    <note priority="medium" time="1300713689">
-        cronjob: * * * * * %%USER%% php %%PATH%%/lib/icingaScheduler/icingaCron.php --useAgavi --exec &gt;&gt; /var/log/icingaCron/error.log
-    </note>
-</todo>
