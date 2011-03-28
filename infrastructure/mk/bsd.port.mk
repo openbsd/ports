@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1073 2011/03/21 09:38:53 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1074 2011/03/28 00:16:13 fgsch Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -3439,7 +3439,7 @@ _all_phony = ${_recursive_depends_targets} \
 	post-patch post-regress pre-build pre-configure pre-extract pre-fake \
 	pre-fetch pre-install pre-package pre-patch pre-regress prepare \
 	print-build-depends print-run-depends readme readmes rebuild \
-	regress-depends repackage run-depends run-depends-list show-required-by \
+	regress-depends run-depends run-depends-list show-required-by \
 	subpackage uninstall mirror-maker-fetch _print-pkgspec \
 	lock unlock _print-plist-with-extra-depends
 
