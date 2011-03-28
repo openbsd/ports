@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2011/03/28 14:06:06 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2011/03/28 14:10:28 sthen Exp $
 
 V = 1.3.0
 
@@ -8,7 +8,7 @@ HOMEPAGE?=	http://www.icinga.org/
 
 MAINTAINER?=	Stuart Henderson <sthen@openbsd.org>
 
-# GPLv2
+# GPLv2 only
 PERMIT_PACKAGE_CDROM?=	Yes
 PERMIT_PACKAGE_FTP?=	Yes
 PERMIT_DISTFILES_CDROM?=Yes
