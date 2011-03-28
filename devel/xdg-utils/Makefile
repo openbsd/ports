@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/06 08:03:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/03/28 07:12:05 ajacoutot Exp $
 
 # XXX Are we affected by CVE-2008-0386? Our sed(1) does not behave as
 # the GNU version.
@@ -8,7 +8,7 @@ COMMENT=	utilities to assist desktop integration tasks
 DISTNAME=	xdg-utils-1.0.2
 CATEGORIES=	devel
 
-REVISION=	9
+REVISION=	10
 
 HOMEPAGE=	http://portland.freedesktop.org/wiki/
 

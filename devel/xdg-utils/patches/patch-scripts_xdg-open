@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_xdg-open,v 1.4 2010/05/28 12:41:26 ajacoutot Exp $
+$OpenBSD: patch-scripts_xdg-open,v 1.5 2011/03/28 07:12:05 ajacoutot Exp $
 --- scripts/xdg-open.orig	Sun Jun 24 21:58:01 2007
-+++ scripts/xdg-open	Sun Aug 16 01:11:30 2009
++++ scripts/xdg-open	Mon Mar 28 08:58:36 2011
 @@ -364,7 +364,9 @@ open_generic()
      for browser in $BROWSER; do
          if [ x"$browser" != x"" ]; then
@@ -31,7 +31,7 @@ $OpenBSD: patch-scripts_xdg-open,v 1.4 2010/05/28 12:41:26 ajacoutot Exp $
      # if BROWSER variable is not set, check some well known browsers instead
      if [ x"$BROWSER" = x"" ]; then
 -        BROWSER=firefox:mozilla:netscape
-+        BROWSER=firefox:seamonkey:epiphany:opera:mozilla:netscape
++        BROWSER=firefox:chrome:midori:xxxterm:seamonkey:epiphany:opera:dillo:conkeror:kazehakase:konqueror:firefox36:firefox35
      fi
      DE=generic
  fi
