@@ -1,6 +1,24 @@
-$OpenBSD: patch-perl_FCGI_PL,v 1.1 2008/06/01 20:39:26 simon Exp $
---- perl/FCGI.PL.orig	Fri May 23 07:12:42 2008
-+++ perl/FCGI.PL	Fri May 23 07:13:06 2008
+$OpenBSD: patch-perl_FCGI_PL,v 1.2 2011/03/28 23:04:42 simon Exp $
+--- perl/FCGI.PL.orig	Sun Dec 15 21:02:48 2002
++++ perl/FCGI.PL	Wed Mar  9 13:41:41 2011
+@@ -291,7 +291,7 @@ sub Request(;***$*$) {
+ 
+ sub accept() {
+     warn "accept called as a method; you probably wanted to call Accept" if @_;
+-    if (defined %FCGI::ENV) {
++    if (%FCGI::ENV) {
+ 	%ENV = %FCGI::ENV;
+     } else {
+ 	%FCGI::ENV = %ENV;
+@@ -310,7 +310,7 @@ sub accept() {
+ 
+ sub finish() {
+     warn "finish called as a method; you probably wanted to call Finish" if @_;
+-    %ENV = %FCGI::ENV if (defined %FCGI::ENV);
++    %ENV = %FCGI::ENV if (%FCGI::ENV);
+ 
+     # not SFIO
+     if (tied (*STDIN)) {
 @@ -393,7 +393,7 @@ sub OPEN {
  # Apparently some use fileno to determine if a filehandle is open,
  # so we might want to return a defined, but meaningless value.

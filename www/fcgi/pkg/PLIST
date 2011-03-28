@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2006/11/06 10:44:35 espie Exp $
-bin/cgi-fcgi
+@comment $OpenBSD: PLIST,v 1.5 2011/03/28 23:04:42 simon Exp $
+@bin bin/cgi-fcgi
 include/fastcgi.h
 include/fcgi_config.h
 include/fcgi_stdio.h
