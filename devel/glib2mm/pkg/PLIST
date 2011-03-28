@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/03/24 10:45:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/03/28 06:20:26 ajacoutot Exp $
 @conflict glib2mm-docs-*
 @pkgpath devel/glib2mm,-main
 @pkgpath devel/glib2mm,-docs
@@ -935,7 +935,6 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1VariantType-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1VariantType.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant_3_01Glib_1_1ustring_01_4-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant_3_01Glib_1_1ustring_01_4.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant_3_01Glib_1_1ustring_01_4__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant_3_01VariantBase_01_4-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant_3_01VariantBase_01_4.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant_3_01VariantBase_01_4__inherit__graph.png
@@ -970,7 +969,6 @@ share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant_3_01std_1_1string_01_4
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant_3_01std_1_1vector_3_01T_01_4_01_4.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant_3_01unsigned_01char_01_4-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant_3_01unsigned_01char_01_4.html
-share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant_3_01unsigned_01char_01_4__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1Variant__inherit__graph.png
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ustring-members.html
 share/doc/glibmm-${V}/reference/html/classGlib_1_1ustring.html
