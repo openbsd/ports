@@ -1,7 +1,68 @@
-@comment $OpenBSD: PLIST-ido,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
+@comment $OpenBSD: PLIST-ido,v 1.2 2011/03/28 19:51:59 sthen Exp $
 @bin bin/ido2db
 @bin bin/idomod.o
 @bin bin/log2ido
+share/examples/icinga/db/
+share/examples/icinga/db/README
+share/examples/icinga/db/mysql/
+share/examples/icinga/db/mysql/mysql-upgrade-0.8.3.sql
+share/examples/icinga/db/mysql/mysql-upgrade-1.0.1.sql
+share/examples/icinga/db/mysql/mysql-upgrade-1.0.2-fix-object-relations.sql
+share/examples/icinga/db/mysql/mysql-upgrade-1.0.2.sql
+share/examples/icinga/db/mysql/mysql-upgrade-1.0.3.sql
+share/examples/icinga/db/mysql/mysql-upgrade-1.0.sql
+share/examples/icinga/db/mysql/mysql-upgrade-1.0rc.sql
+share/examples/icinga/db/mysql/mysql-upgrade-1.3.0.sql
+share/examples/icinga/db/mysql/mysql.sql
+share/examples/icinga/db/pgsql/
+share/examples/icinga/db/pgsql/pgsql-fix-0.8.3.sql
+share/examples/icinga/db/pgsql/pgsql-upgrade-1.0.1.sql
+share/examples/icinga/db/pgsql/pgsql-upgrade-1.0.3.sql
+share/examples/icinga/db/pgsql/pgsql-upgrade-1.3.0.sql
+share/examples/icinga/db/pgsql/pgsql.sql
+share/examples/icinga/db/queries/
+share/examples/icinga/db/queries/comment_history.sql
+share/examples/icinga/db/queries/comments.sql
+share/examples/icinga/db/queries/contact_notification_methods.sql
+share/examples/icinga/db/queries/contact_notifications.sql
+share/examples/icinga/db/queries/contact_status.sql
+share/examples/icinga/db/queries/contactgroup_membership.sql
+share/examples/icinga/db/queries/contacts.sql
+share/examples/icinga/db/queries/downtime_history.sql
+share/examples/icinga/db/queries/event_handlers.sql
+share/examples/icinga/db/queries/flapping_history.sql
+share/examples/icinga/db/queries/host_comments.sql
+share/examples/icinga/db/queries/host_downtime_history.sql
+share/examples/icinga/db/queries/host_event_handlers.sql
+share/examples/icinga/db/queries/host_flapping_history.sql
+share/examples/icinga/db/queries/host_notifications.sql
+share/examples/icinga/db/queries/host_state_history.sql
+share/examples/icinga/db/queries/host_status.sql
+share/examples/icinga/db/queries/hostgroup_membership.sql
+share/examples/icinga/db/queries/hosts.sql
+share/examples/icinga/db/queries/notifications.sql
+share/examples/icinga/db/queries/scheduled_downtime.sql
+share/examples/icinga/db/queries/service_comments.sql
+share/examples/icinga/db/queries/service_downtime_history.sql
+share/examples/icinga/db/queries/service_event_handlers.sql
+share/examples/icinga/db/queries/service_flapping_history.sql
+share/examples/icinga/db/queries/service_notifications.sql
+share/examples/icinga/db/queries/service_state_history.sql
+share/examples/icinga/db/queries/service_status.sql
+share/examples/icinga/db/queries/servicegroup_membership.sql
+share/examples/icinga/db/queries/services.sql
+share/examples/icinga/db/queries/state_history.sql
+share/examples/icinga/db/queries/timed_event_queue.sql
+share/examples/icinga/db/queries/timed_events.sql
+share/examples/icinga/db/scripts/
+share/examples/icinga/db/scripts/installdb
+@comment share/examples/icinga/db/scripts/installdb.in
+share/examples/icinga/db/scripts/prepsql
+@comment share/examples/icinga/db/scripts/prepsql.in
+share/examples/icinga/db/scripts/upgradedb
+@comment share/examples/icinga/db/scripts/upgradedb.in
 share/examples/icinga/ido2db.cfg-sample
 @sample ${SYSCONFDIR}/icinga/ido2db.cfg
 share/examples/icinga/idomod.cfg-sample
+@sample ${SYSCONFDIR}/icinga/idomod.cfg
+@rcscript ${RCDIR}/ido2db
