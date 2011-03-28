@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2011/01/20 14:04:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2011/03/28 14:10:58 sthen Exp $
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
 V=		3.2.3
-REVISION-main=	0
+REVISION-main=	1
+REVISION-web=	0
 DISTNAME=	nagios-${V}
 PKGNAME-main=	nagios-${V}
 PKGNAME-web=	nagios-web-${V}
@@ -12,9 +13,7 @@ CATEGORIES=	net
 
 HOMEPAGE=	http://www.nagios.org/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
-
-# GPL
+# GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
