@@ -1,10 +1,7 @@
 #!/bin/sh
 
-JENKINS_HOME=/var/jenkins
-PORT=8000
-
-daemon=$(${TRUEPREFIX}/bin/javaPathHelper -c jenkins)
-daemon_flags="-jar ${TRUEPREFIX}/share/jenkins/jenkins.war --httpPort=${PORT}"
+daemon=$(${LOCALBASE}/bin/javaPathHelper -c jenkins)
+daemon_flags="-jar ${TRUEPREFIX}/share/jenkins/jenkins.war --httpPort=8000 --httpsPort=-1 --ajp13Port=-1"
 daemon_user="_jenkins"
 
 . /etc/rc.d/rc.subr

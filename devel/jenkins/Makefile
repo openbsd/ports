@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/26 00:44:53 ian Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/28 22:03:43 ian Exp $
 
 COMMENT =		continuous integration server
 
 VERSION =		1.401
-REVISION =		0
+REVISION =		1
 DISTNAME =		jenkins
 PKGNAME =		jenkins-${VERSION}
 DIST_SUBDIR =		jenkins-${VERSION}

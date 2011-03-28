@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2011/03/25 19:40:39 ian Exp $
+$OpenBSD: README,v 1.2 2011/03/28 22:03:44 ian Exp $
 
 Running Jenkins on OpenBSD.
 
@@ -8,7 +8,14 @@ on reboot, add "jenkins" to "rc_scripts" in /etc/rc.conf.local, e.g.:
 rc_scripts="${rc_scripts} jenkins"
 
 NOTE: This script runs Jenkins on port 8000, not 8080, since most
-Java application servers run on port 8080.
+Java application servers run on port 8080. By default we disable
+HTTPS and AJP, since the former is extra overhead on localhost and
+the latter conflicts with most Java application servers' AJP port.
+
+To change any of these options, carefully copy the line
+starting daemon_flags= from /etc/rc.d/jenkins into /etc/rc.conf.local
+and change the daemon_flags to jenkins_flags in addition to any
+changes to the ports and other options.
 
 To run Jenkins in another Java web/application server, copy the war
 file from ${TRUEPREFIX}/share/jenkins to your server's deploy
@@ -20,3 +27,8 @@ Manage Jenkins -> Email Configuration.
 
 The Jenkins data files are in the home directory (/var/jenkins),
 under the "hidden" directory ".jenkins".
+
+If you are upgrading from Hudson to Jenkins, you can copy the old
+content of /var/hudson/.hudson into /var/jenkins/.jenkins, e.g.,
+	# cp -r /var/hudson/.hudson/* /var/jenkins/.jenkins
+	# chown -R _jenkins:_jenkins /var/jenkins/.jenkins
