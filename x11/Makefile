@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.441 2011/03/22 08:12:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.442 2011/03/28 07:40:10 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -93,6 +93,7 @@
      SUBDIR += gromit
      SUBDIR += gtk+
      SUBDIR += gtk+2
+     SUBDIR += gtk+3
      SUBDIR += gtk-chtheme
      SUBDIR += gtk-engines2
      SUBDIR += gtk-vnc
