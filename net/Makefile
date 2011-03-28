@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.684 2011/03/25 17:02:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.685 2011/03/28 14:08:32 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -124,6 +124,7 @@
      SUBDIR += icecast
      SUBDIR += ices
      SUBDIR += ices2
+     SUBDIR += icinga
      SUBDIR += icmpinfo
      SUBDIR += ifmcstat
      SUBDIR += ifstat
