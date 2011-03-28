@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/10/13 17:11:10 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/03/28 07:26:16 giovanni Exp $
 bin/exaile
 lib/python${MODPY_VERSION}/site-packages/exaile/
 lib/python${MODPY_VERSION}/site-packages/exaile/exaile.py
@@ -840,11 +840,6 @@ share/exaile/data/plugins/screensaverpause/PLUGININFO
 share/exaile/data/plugins/screensaverpause/__init__.py
 share/exaile/data/plugins/screensaverpause/__init__.pyc
 share/exaile/data/plugins/screensaverpause/__init__.pyo
-share/exaile/data/plugins/shoutcast/
-share/exaile/data/plugins/shoutcast/PLUGININFO
-share/exaile/data/plugins/shoutcast/__init__.py
-share/exaile/data/plugins/shoutcast/__init__.pyc
-share/exaile/data/plugins/shoutcast/__init__.pyo
 share/exaile/data/plugins/shutdown/
 share/exaile/data/plugins/shutdown/PLUGININFO
 share/exaile/data/plugins/shutdown/__init__.py

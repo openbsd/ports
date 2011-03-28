@@ -1,6 +1,6 @@
-$OpenBSD: patch-data_exaile_desktop,v 1.5 2010/10/13 17:11:10 giovanni Exp $
---- data/exaile.desktop.orig	Sat Jun 26 01:21:23 2010
-+++ data/exaile.desktop	Tue Oct 12 12:53:45 2010
+$OpenBSD: patch-data_exaile_desktop,v 1.6 2011/03/28 07:26:16 giovanni Exp $
+--- data/exaile.desktop.orig	Sun Feb 13 16:17:38 2011
++++ data/exaile.desktop	Thu Mar 24 18:48:50 2011
 @@ -33,7 +33,7 @@ Comment[pl]=Słuchanie, przeglądanie i modyfikowanie 
  Comment[sv]=Spela, utforska och hantera din musiksamling
  Comment[pt_BR]=Escute, gerencie ou edite sua coleção de músicas
