@@ -1,34 +1,13 @@
-$OpenBSD: patch-readv1_c,v 1.2 2011/03/04 11:21:45 sthen Exp $
---- readv1.c.orig	Sat Oct 16 15:47:56 2010
-+++ readv1.c	Fri Mar  4 12:08:21 2011
-@@ -32,10 +32,11 @@ extern int color;
- 
- /*------------------------------------------------------------------*/
- 
-+void
- read_v1_status()
+$OpenBSD: patch-readv1_c,v 1.3 2011/03/28 08:37:45 sthen Exp $
+--- readv1.c.orig	Mon Mar 28 10:09:47 2011
++++ readv1.c	Mon Mar 28 10:09:55 2011
+@@ -37,8 +37,7 @@ read_v1_status()
  {
    FILE *fp;
--  int i, j, k;
-+  int i, k;
-   int line_num, stamp;
+   int i, k;
+-  int line_num;
+-  long stamp;
++  int line_num, stamp;
    char buffer[MAX_CHARS_PER_LINE];
    char *str_match; 
-@@ -124,7 +125,7 @@ debug("status file is %s",STATUS_FILE);
-               strncpy(host_list[host_list_size][LAST_STATE_CHANGE]," not applicable ",strlen(str_match)+1);
-               host_list[host_list_size][DURATION] = (char *)calc_duration(stamp);
-             } else {
--              sscanf(str_match,"%ld",&stamp);
-+              sscanf(str_match,"%d",&stamp);
-               host_list[host_list_size][LAST_STATE_CHANGE_INT] = (char *)stamp;
-               host_list[host_list_size][LAST_STATE_CHANGE] = malloc(17); /* "DOW Mon DD HH:MM\0" */
-               strncpy(host_list[host_list_size][LAST_STATE_CHANGE],ctime((time_t *)&stamp),16);
-@@ -195,7 +196,7 @@ debug("status file is %s",STATUS_FILE);
-               service_list[service_list_size][DURATION] = malloc(1);
-               service_list[service_list_size][DURATION] = (char *)calc_duration(stamp);
-             } else {
--              sscanf(str_match,"%ld",&stamp);
-+              sscanf(str_match,"%d",&stamp);
-               service_list[service_list_size][LAST_STATE_CHANGE_INT] = (char *)stamp;
-               strncpy(service_list[service_list_size][LAST_STATE_CHANGE],ctime((time_t *)&stamp),16);
-               service_list[service_list_size][DURATION] = (char *)calc_duration(stamp);
+   char entry_type[MAX_STATUS_TYPE_LEN];
