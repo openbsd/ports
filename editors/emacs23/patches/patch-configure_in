@@ -1,0 +1,11 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2011/03/28 15:18:56 jasper Exp $
+--- configure.in.orig	Thu Mar 24 09:45:46 2011
++++ configure.in	Thu Mar 24 09:46:13 2011
+@@ -445,6 +445,7 @@ dnl see the `changequote' comment above.
+       vax-*-openbsd*)          machine=vax ;;
+       x86_64-*-openbsd*)       machine=amdx86-64 ;;
+       hppa-*-openbsd*)         machine=hp800 ;;
++      mips64el-*-openbsd*)     machine=mips64el ;;
+     esac
+   ;;
+ 
