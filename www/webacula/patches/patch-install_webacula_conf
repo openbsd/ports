@@ -1,12 +1,14 @@
-$OpenBSD: patch-install_webacula_conf,v 1.1 2011/03/23 07:41:45 ajacoutot Exp $
---- install/webacula.conf.orig	Wed Mar 23 08:31:24 2011
-+++ install/webacula.conf	Wed Mar 23 08:33:10 2011
-@@ -3,17 +3,22 @@
+$OpenBSD: patch-install_webacula_conf,v 1.2 2011/03/28 13:38:38 ajacoutot Exp $
+--- install/webacula.conf.orig	Mon Jan 24 11:58:16 2011
++++ install/webacula.conf	Mon Mar 28 15:35:25 2011
+@@ -3,17 +3,24 @@
  # Allows only localhost by default
  #
  
 -LoadModule rewrite_module modules/mod_rewrite.so
-+LoadModule rewrite_module /usr/lib/apache/modules/mod_rewrite.so
++<IfModule !mod_rewrite.c>
++   LoadModule rewrite_module /usr/lib/apache/modules/mod_rewrite.so
++</IfModule>
  
 +<IfModule mod_php5.c>
 +   php_value max_execution_time 3600
@@ -28,7 +30,7 @@ $OpenBSD: patch-install_webacula_conf,v 1.1 2011/03/23 07:41:45 ajacoutot Exp $
     RewriteEngine On
  
     RewriteBase   /webacula
-@@ -40,42 +45,42 @@ Alias /webacula  /usr/share/webacula/html
+@@ -40,42 +47,42 @@ Alias /webacula  /usr/share/webacula/html
  
  #   AuthType Basic
  #   AuthName "Webacula"
@@ -79,7 +81,7 @@ $OpenBSD: patch-install_webacula_conf,v 1.1 2011/03/23 07:41:45 ajacoutot Exp $
     RewriteEngine On
     # for test mod_rewrite
     RewriteBase   /webacula/test_mod_rewrite
-@@ -93,4 +98,3 @@ Alias /webacula  /usr/share/webacula/html
+@@ -93,4 +100,3 @@ Alias /webacula  /usr/share/webacula/html
     Allow from localhost
     Allow from ::1
  </Directory>
