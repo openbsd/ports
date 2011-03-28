@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.499 2011/03/25 17:02:37 jeremy Exp $
+# $OpenBSD: Makefile,v 1.500 2011/03/28 00:21:19 fgsch Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -354,6 +354,7 @@
      SUBDIR += py-cherrypy2
      SUBDIR += py-clientform
      SUBDIR += py-django
+     SUBDIR += py-flask
      SUBDIR += py-flup
      SUBDIR += py-formencode
      SUBDIR += py-genshi
