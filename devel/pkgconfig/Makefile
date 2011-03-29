@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/03/29 10:09:11 sthen Exp $
 
 COMMENT=		tool for managing library compile/link flags
 
@@ -9,8 +9,7 @@ PKGNAME=		pkgconfig-${VERSION}
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.freedesktop.org/software/pkgconfig/
-MASTER_SITES=		${HOMEPAGE}/releases/ \
-			${MASTER_SITE_GNOME:=sources/pkg-config/${VERSION}/}
+MASTER_SITES=		http://pkgconfig.freedesktop.org/releases/
 
 CONFIGURE_ARGS+=	--with-pc_path=${LOCALBASE}/lib/pkgconfig:${X11BASE}/lib/pkgconfig
 
