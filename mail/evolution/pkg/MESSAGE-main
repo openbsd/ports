@@ -1,0 +1,3 @@
+Note that for evolution to check incoming messages for junk, the
+bogofilter or p5-Mail-SpamAssassin package needs to be installed.
+It's configured under "Preferences - Mail Preferences - Junk".
