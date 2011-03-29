@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2011/02/10 03:14:43 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.18 2011/03/29 23:22:17 jakemsr Exp $
 
 COMMENT =		audio player daemon with library management
 
 V =			0.7
 DISTNAME =		xmms2-${V}DrNo
 PKGNAME =		xmms2-${V}
-REVISION =		5
+REVISION =		6
 
 SHARED_LIBS +=		xmmsclient++		1.0 # 4.0.0
 SHARED_LIBS +=		xmmsclient++-glib	0.0 # 1.0.0
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += c gsm faac faad m mp3lame ncurses ogg orc-0.4 pthread readline
+WANTLIB += c gsm faac m mp3lame ncurses ogg orc-0.4 pthread readline
 WANTLIB += schroedinger-1.0 speex stdc++ theora util vorbis vorbisenc
 WANTLIB += vorbisfile x264 z gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 avcodec avutil ao jack sqlite3 xml2 FLAC curl

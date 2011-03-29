@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/01/18 21:34:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/29 23:22:17 jakemsr Exp $
 
 COMMENT=	D-Bus thumbnailing service
 
 XFCE_VERSION=	0.1.6
 XFCE_GOODIE=	tumbler
 
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS+=	tumbler-1 0.0
 
@@ -36,7 +36,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm cairo drm expat
 WANTLIB += fontconfig gdk-x11-2.0 lcms openjpeg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 poppler poppler-glib pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm xml2
-WANTLIB += avcodec avformat avutil bz2 faac faad ffmpegthumbnailer
+WANTLIB += avcodec avformat avutil bz2 faac ffmpegthumbnailer
 WANTLIB += gsm mp3lame ogg orc-0.4 schroedinger-1.0 speex swscale
 WANTLIB += theora vorbis vorbisenc x264
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/01/05 18:00:10 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2011/03/29 23:22:17 jakemsr Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -6,11 +6,11 @@ COMMENT-iaxcomm=IAX softphone
 
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	2
+REVISION-main=	3
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION-tcl=	3
+REVISION-tcl=	4
 PKGNAME-iaxcomm= iaxcomm-1.1.0
-REVISION-iaxcomm= 3
+REVISION-iaxcomm= 4
 
 CATEGORIES=	telephony
 USE_LIBTOOL=	Yes
@@ -32,13 +32,13 @@ MODULES=	devel/gettext x11/tk
 
 cWANTLIB =	gsm>=1 portaudio speex>=8 speexdsp>=1 avcodec>=13 \
 		avutil>=6 vidcap
-WANTLIB-main 	+= c faac faad m mp3lame ogg orc-0.4 ossaudio pthread
+WANTLIB-main 	+= c faac m mp3lame ogg orc-0.4 ossaudio pthread
 WANTLIB-main 	+= schroedinger-1.0 sndio theora vorbis vorbisenc x264
 WANTLIB-main 	+= z $(cWANTLIB)
 
 WANTLIB-tcl 	+= X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB-tcl 	+= Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat faac
-WANTLIB-tcl 	+= faad fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB-tcl 	+= fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB-tcl 	+= gobject-2.0 gthread-2.0 m mp3lame ogg orc-0.4 ossaudio
 WANTLIB-tcl 	+= pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB-tcl 	+= png pthread pthread-stubs schroedinger-1.0 sndio theora
@@ -48,7 +48,7 @@ WANTLIB-tcl	+= gtk-x11-2.0
 
 WANTLIB-iaxcomm += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB-iaxcomm += Xi Xinerama Xrandr Xrender atk-1.0 avcodec avutil c
-WANTLIB-iaxcomm += cairo expat faac faad fontconfig freetype gdk-x11-2.0
+WANTLIB-iaxcomm += cairo expat faac fontconfig freetype gdk-x11-2.0
 WANTLIB-iaxcomm += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-iaxcomm += gsm gthread-2.0 gtk-x11-2.0 m mp3lame ogg orc-0.4 ossaudio
 WANTLIB-iaxcomm += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
