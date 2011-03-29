@@ -1,6 +1,6 @@
-$OpenBSD: patch-provider_server_ECServer_cpp,v 1.9 2011/03/03 13:16:05 ajacoutot Exp $
---- provider/server/ECServer.cpp.orig	Mon Jan 24 16:55:05 2011
-+++ provider/server/ECServer.cpp	Tue Jan 25 12:56:18 2011
+$OpenBSD: patch-provider_server_ECServer_cpp,v 1.10 2011/03/29 18:00:03 ajacoutot Exp $
+--- provider/server/ECServer.cpp.orig	Tue Mar 29 00:04:09 2011
++++ provider/server/ECServer.cpp	Tue Mar 29 17:48:35 2011
 @@ -82,6 +82,10 @@
  #include <libintl.h>
  #include <map>
@@ -12,7 +12,7 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.9 2011/03/03 13:16:05 ajacoutot
  #ifdef _DEBUG
  #define new DEBUG_NEW
  #undef THIS_FILE
-@@ -727,7 +731,7 @@ int running_server(char *szName, char *szConfig)
+@@ -747,7 +751,7 @@ int running_server(char *szName, char *szConfig)
  		{ "mysql_config_file",			"/etc/zarafa/my.cnf" },
  #endif
  		{ "attachment_storage",			"database" },

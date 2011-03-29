@@ -1,6 +1,6 @@
-$OpenBSD: patch-provider_client_WSTransport_cpp,v 1.5 2010/06/30 02:46:48 ajacoutot Exp $
---- provider/client/WSTransport.cpp.orig	Mon May 31 19:28:58 2010
-+++ provider/client/WSTransport.cpp	Mon Jun 14 09:16:44 2010
+$OpenBSD: patch-provider_client_WSTransport_cpp,v 1.6 2011/03/29 18:00:03 ajacoutot Exp $
+--- provider/client/WSTransport.cpp.orig	Tue Mar 29 00:04:09 2011
++++ provider/client/WSTransport.cpp	Tue Mar 29 17:48:35 2011
 @@ -56,6 +56,10 @@
  
  #include <fstream>
@@ -20,7 +20,7 @@ $OpenBSD: patch-provider_client_WSTransport_cpp,v 1.5 2010/06/30 02:46:48 ajacou
  // The header files we use for communication with the server
  #include "ZarafaCode.h"
  #include "soapZarafaCmdProxy.h"
-@@ -90,6 +93,10 @@ static char THIS_FILE[] = __FILE__;
+@@ -92,6 +95,10 @@ static char THIS_FILE[] = __FILE__;
  #endif
  
  #define	pbMUIDECSABGuid	"\xac\x21\xa9\x50\x40\xd3\xee\x48\xb3\x19\xfb\xa7\x53\x30\x44\x25"
