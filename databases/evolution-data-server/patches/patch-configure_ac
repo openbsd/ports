@@ -1,7 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.5 2011/03/23 15:57:39 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.6 2011/03/29 11:20:02 ajacoutot Exp $
 
 Stupid configure is stupid. Using a variable that's set
 hundreds of lines later...
+
+XXX remove -DGTK_DISABLE_DEPRECATED to fix build with gtk>=2.24
 
 Bump libgdata dependency to 0.7.0
 The minimum dependency in GNOME is now 0.8.0, so we can bump the e-d-s
@@ -9,7 +11,7 @@ dependency to 0.7.0 and remove the various #ifdefs. See: bgo#566441
 From upstream git: 69b8607f2dd6d399306905e011a6565319190066
 
 --- configure.ac.orig	Mon Dec 27 14:19:33 2010
-+++ configure.ac	Wed Mar 23 14:58:36 2011
++++ configure.ac	Tue Mar 29 12:01:28 2011
 @@ -36,7 +36,7 @@ m4_define([glib_minimum_version], [2.25.12])
  m4_define([gconf_minimum_version], [2.0.0])		dnl XXX Just a Guess
  m4_define([libxml_minimum_version], [2.0.0])		dnl XXX Just a Guess
@@ -19,7 +21,15 @@ From upstream git: 69b8607f2dd6d399306905e011a6565319190066
  m4_define([gnome_keyring_minimum_version], [2.20.1])
  m4_define([sqlite_minimum_version], [3.5])
  m4_define([libical_minimum_version], [0.43])
-@@ -199,8 +199,6 @@ dnl	-Wstrict-aliasing=2
+@@ -167,7 +167,6 @@ AS_COMPILER_FLAGS(WARNING_FLAGS,
+ 	"-DG_DISABLE_DEPRECATED
+ 	-DPANGO_DISABLE_DEPRECATED
+ 	-DGDK_PIXBUF_DISABLE_DEPRECATED
+-	-DGTK_DISABLE_DEPRECATED
+ 	-DG_DISABLE_SINGLE_INCLUDES
+ 	-DGTK_DISABLE_SINGLE_INCLUDES
+ 	-DGSEAL_ENABLE
+@@ -199,8 +198,6 @@ dnl	-Wstrict-aliasing=2
  AM_CPPFLAGS="$WARNING_FLAGS -fno-strict-aliasing"
  AC_SUBST(AM_CPPFLAGS)
  
@@ -28,7 +38,7 @@ From upstream git: 69b8607f2dd6d399306905e011a6565319190066
  dnl ******************************
  dnl Initialize maintainer mode
  dnl ******************************
-@@ -285,6 +283,13 @@ case "$host" in
+@@ -285,6 +282,13 @@ case "$host" in
  	AC_CACHE_VAL(ac_cv_have_addrinfo, [ac_cv_have_addrinfo=yes])
  	AC_DEFINE(_WIN32_WINNT, 0x501, [To get getaddrinfo etc declarations])
  	;;
@@ -42,7 +52,7 @@ From upstream git: 69b8607f2dd6d399306905e011a6565319190066
  *)
  	os_win32='no'
  	NO_UNDEFINED=''
-@@ -325,12 +330,6 @@ PKG_CHECK_MODULES(GNOME_PLATFORM,
+@@ -325,12 +329,6 @@ PKG_CHECK_MODULES(GNOME_PLATFORM,
  	libsoup-2.4 >= libsoup_minimum_version
  	libgdata >= libgdata_minimum_version])
  
@@ -55,7 +65,7 @@ From upstream git: 69b8607f2dd6d399306905e011a6565319190066
  LIBICAL_REQUIRED=libical_minimum_version
  AC_SUBST(LIBICAL_REQUIRED)
  
-@@ -518,6 +517,29 @@ AC_RUN_IFELSE([AC_LANG_SOURCE(
+@@ -518,6 +516,29 @@ AC_RUN_IFELSE([AC_LANG_SOURCE(
  	]]
  	)],[AC_DEFINE(HAVE_LKSTRFTIME, 1, [strftime supports use of l and k]) ac_cv_lkstrftime=yes],[ac_cv_lkstrftime=no],[ac_cv_lkstrftime=no])
  AC_MSG_RESULT([$ac_cv_lkstrftime])

@@ -1,12 +1,12 @@
-$OpenBSD: patch-camel_camel-search-sql-sexp_c,v 1.1 2010/09/30 07:32:09 ajacoutot Exp $
---- camel/camel-search-sql-sexp.c.orig	Tue Sep 28 07:45:42 2010
-+++ camel/camel-search-sql-sexp.c	Tue Sep 28 07:46:29 2010
+$OpenBSD: patch-camel_camel-search-sql-sexp_c,v 1.2 2011/03/29 11:20:02 ajacoutot Exp $
+--- camel/camel-search-sql-sexp.c.orig	Mon Sep 13 14:16:52 2010
++++ camel/camel-search-sql-sexp.c	Tue Mar 29 12:29:11 2011
 @@ -176,7 +176,7 @@ eval_eq(struct _ESExp *f, gint argc, struct _ESExpTerm
  		if (r1->type == ESEXP_RES_INT)
  			g_string_append_printf(str, "%d", r1->value.number);
  		else if (r1->type == ESEXP_RES_TIME)
 -			g_string_append_printf(str, "%ld", r1->value.time);
-+			g_string_append_printf(str, "%d", r1->value.time);
++			g_string_append_printf(str, "%lld", (long long)r1->value.time);
  		else if (r1->type == ESEXP_RES_STRING)
  			g_string_append_printf(str, "%s", r1->value.string);
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-camel_camel-search-sql-sexp_c,v 1.1 2010/09/30 07:32:09 ajacouto
  				g_string_append_printf(str, "%d", r2->value.boolean);
  			else if (r2->type == ESEXP_RES_TIME)
 -				g_string_append_printf(str, "%ld", r2->value.time);
-+				g_string_append_printf(str, "%d", r2->value.time);
++				g_string_append_printf(str, "%lld", (long long)r2->value.time);
  			else if (r2->type == ESEXP_RES_STRING) {
  				gchar *tmp = g_strdup_printf("%c%s%c", ut ? '%':' ', r2->value.string, ut?'%':' ');
  				gchar *safe = get_db_safe_string(tmp);
@@ -24,7 +24,7 @@ $OpenBSD: patch-camel_camel-search-sql-sexp_c,v 1.1 2010/09/30 07:32:09 ajacouto
  			g_string_append_printf(str, "%d", r1->value.number);
  		else if (r1->type == ESEXP_RES_TIME)
 -			g_string_append_printf(str, "%ld", r1->value.time);
-+			g_string_append_printf(str, "%d", r1->value.time);
++			g_string_append_printf(str, "%lld", (long long)r1->value.time);
  		else if (r1->type == ESEXP_RES_STRING)
  			g_string_append_printf(str, "%s", r1->value.string);
  
@@ -33,7 +33,7 @@ $OpenBSD: patch-camel_camel-search-sql-sexp_c,v 1.1 2010/09/30 07:32:09 ajacouto
  			g_string_append_printf(str, "%d", r2->value.boolean);
  		else if (r2->type == ESEXP_RES_TIME)
 -			g_string_append_printf(str, "%ld", r2->value.time);
-+			g_string_append_printf(str, "%d", r2->value.time);
++			g_string_append_printf(str, "%lld", (long long)r2->value.time);
  		else if (r2->type == ESEXP_RES_STRING)
  			g_string_append_printf(str, "%s", r2->value.string);
  		e_sexp_result_free(f, r1);
@@ -42,7 +42,7 @@ $OpenBSD: patch-camel_camel-search-sql-sexp_c,v 1.1 2010/09/30 07:32:09 ajacouto
  			g_string_append_printf(str, "%d", r1->value.number);
  		else if (r1->type == ESEXP_RES_TIME)
 -			g_string_append_printf(str, "%ld", r1->value.time);
-+			g_string_append_printf(str, "%d", r1->value.time);
++			g_string_append_printf(str, "%lld", (long long)r1->value.time);
  		else if (r1->type == ESEXP_RES_STRING)
  			g_string_append_printf(str, "%s", r1->value.string);
  
@@ -51,7 +51,7 @@ $OpenBSD: patch-camel_camel-search-sql-sexp_c,v 1.1 2010/09/30 07:32:09 ajacouto
  			g_string_append_printf(str, "%d", r2->value.boolean);
  		else if (r2->type == ESEXP_RES_TIME)
 -			g_string_append_printf(str, "%ld", r2->value.time);
-+			g_string_append_printf(str, "%d", r2->value.time);
++			g_string_append_printf(str, "%lld", (long long)r2->value.time);
  		else if (r2->type == ESEXP_RES_STRING)
  			g_string_append_printf(str, "%s", r2->value.string);
  		e_sexp_result_free(f, r1);
