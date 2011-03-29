@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_m_mips64_h,v 1.1.1.1 2011/03/28 15:18:56 jasper Exp $
---- src/m/mips64.h.orig	Mon Mar 22 21:49:58 2010
-+++ src/m/mips64.h	Mon Mar 22 21:54:14 2010
-@@ -0,0 +1,109 @@
+$OpenBSD: patch-src_m_mips64_h,v 1.2 2011/03/29 20:56:42 jasper Exp $
+--- src/m/mips64.h.orig	Tue Mar 29 21:55:24 2011
++++ src/m/mips64.h	Tue Mar 29 21:59:00 2011
+@@ -0,0 +1,104 @@
 +/* machine description file template.
 +   Copyright (C) 1985, 1986 Free Software Foundation, Inc.
 +
@@ -78,14 +78,9 @@ $OpenBSD: patch-src_m_mips64_h,v 1.1.1.1 2011/03/28 15:18:56 jasper Exp $
 +#define VIRT_ADDR_VARIES
 +
 +/* Define C_ALLOCA if this machine does not support a true alloca
-+   and the one written in C should be used instead.
-+   Define HAVE_ALLOCA to say that the system provides a properly
-+   working alloca function and it should be used.
-+   Define neither one if an assembler-language alloca
-+   in the file alloca.s should be used.  */
++   and the one written in C should be used instead. */
 +
 +#define C_ALLOCA
-+#define HAVE_ALLOCA
 +
 +/* Define NO_REMAP if memory segmentation makes it not work well
 +   to change the boundary between the text section and data section
