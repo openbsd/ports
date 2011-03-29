@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2011/03/24 21:48:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.22 2011/03/29 18:18:12 rpointel Exp $
 
 COMMENT =	powerful webserver security scanner for network
 
-DISTNAME =	arirang-2.00
+DISTNAME =	arirang-2.01
 PKGNAME =	ruby-${DISTNAME}
-REVISION =	0
 CATEGORIES = 	security
 
 MASTER_SITES =	http://monkey.org/~pilot/arirang/ \
