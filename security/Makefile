@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.257 2011/03/26 12:27:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.258 2011/03/29 12:16:04 pea Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -85,6 +85,7 @@
      SUBDIR += libmcrypt
      SUBDIR += libnipper
      SUBDIR += libotr
+     SUBDIR += libperseus
      SUBDIR += libssh2
      SUBDIR += libtasn1
      SUBDIR += logsentry
