@@ -1,7 +1,7 @@
-$OpenBSD: patch-command_c,v 1.3 2010/11/08 21:25:44 edd Exp $
---- command.c.orig	Sun Oct 24 11:11:25 2010
-+++ command.c	Sun Oct 24 11:11:43 2010
-@@ -3379,7 +3379,7 @@ int run_command(MPContext *mpctx, mp_cmd_t *cmd)
+$OpenBSD: patch-command_c,v 1.4 2011/03/29 20:04:41 edd Exp $
+--- command.c.orig	Thu Jan 27 20:51:11 2011
++++ command.c	Mon Jan 31 14:18:31 2011
+@@ -3375,7 +3375,7 @@ int run_command(MPContext *mpctx, mp_cmd_t *cmd)
          case MP_CMD_RUN:
  #ifndef __MINGW32__
              if (!fork()) {

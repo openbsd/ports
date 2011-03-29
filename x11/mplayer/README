@@ -1,0 +1,65 @@
+$OpenBSD: README,v 1.1 2011/03/29 20:04:41 edd Exp $
+
+Porting notes for MPlayer
+=========================
+
+In addition to the comments in Makefile, porters should also read these
+notes:
+
+FFMPEG Linkage
+--------------
+
+We link the shared libraries from the graphics/ffmpeg port. This is what
+--disable-ffmpeg_a does, however we still need the ffmpeg sources in the
+build dir for this to work, hence we depend upon ffmpeg as a build dependency.
+
+Ensure that ffmpeg was dynamically linked by using ldd on the mplayer
+binary and searching for one of the ffmpeg libs in the listing (eg.
+libavcodec).
+
+Selecting Codec Implementations
+-------------------------------
+
+As a general rule, we prefer to use FFMPEG implementations, but only if
+they are good quality. If this is the case, try not to pull in external
+codec libraries for the same codec.
+
+There is an exception to this rule, which is where an external library
+provides an encoder and decoder, and there is a decoder for the given
+codec in FFMPEG, but no encoder; in such a case, go ahead and link the
+external library so that users can encode with mencoder.
+
+Be aware that some hardware lacks a floating point unit (ARM for
+example).  On these architectures, you should select integer decoders
+where possible. Eg. Tremor instead of Vorbis.
+
+FFMPEG OGG Demuxer Bug
+----------------------
+
+The pkg/README details a bug in the FFMPEG Ogg demuxer; You can test the
+existence of this bug with this URL:
+http://icecast.version6.net:8888/okul.ogg
+
+When a song ends, mplayer will stall saying it cannot fill the cache.
+
+Bug reported upstream here (it's an ffmpeg bug):
+https://roundup.ffmpeg.org/issue2337
+
+Rolling a Distfile
+------------------
+
+svn checkout svn://svn.mplayerhq.hu/mplayer/trunk mplayer-YYYYMMDD
+cd mplayer-YYYYMMDD
+./version.sh (this should create a version.h)
+find . -name '.svn' | xargs rm -Rf
+cd ..
+tar zcvf mplayer-YYYYMMDD.tar.gz mplayer-YYYYMMDD
+
+Testing Mencoder
+----------------
+
+See here to know what you can contain it what:
+http://en.wikipedia.org/wiki/Comparison_of_container_formats
+
+Make a h264/mp4 (although lavc containers are somewhat broken in mencoder):
+mencoder -ovc x264 -of lavf -lavfopts format=mp4 -nosound -o out.mp4 <infile>

@@ -1,23 +1,20 @@
-# $OpenBSD: Makefile,v 1.181 2011/02/12 10:49:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.182 2011/03/29 20:04:41 edd Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	alpha amd64 arm i386 mips64 mips64el powerpc sparc64
 
 COMMENT =		movie player supporting many formats
 
-V =			20101024
-V_DASHED =		2010-10-24
+V =			20110309
+FFMPEG_V =              20110306
 
 SUBST_VARS += 		PREFIX CONFDIR
 
+# Distfiles must be hand-rolled, see README
 N =			mplayer
-DISTNAME =		mplayer-export-snapshot-${V}
-PKGNAME =		${N}-${V}
-REVISION =		2
-CATEGORIES =		x11 multimedia
-EXTRACT_SUFX =		.tar.bz2
+DISTNAME =		mplayer-${V}
 
-WRKDIST = 		${WRKDIR}/mplayer-export-${V_DASHED}
+CATEGORIES =		x11 multimedia
 
 HOMEPAGE =		http://www.mplayerhq.hu/
 
@@ -27,11 +24,12 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-WANTLIB =	bz2 c cdda_interface cdda_paranoia crypto \
-		dv dvdnavmini dvdread faac faad fribidi jpeg lcms \
-		m mng mp3lame mpcdec ncurses ogg>=5 orc-0.4 png \
-		pthread schroedinger-1.0>=2.0 sndio speex stdc++ \
-		theora ungif util vpx x264>=5 xvidcore z
+WANTLIB =	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm avcodec avformat \
+		avutil bz2 c cdda_interface cdda_paranoia \
+		crypto dv faac fontconfig freetype fribidi gsm jpeg lcms \
+		m mng mp3lame ncurses ogg>=5 orc-0.4 png postproc \
+		pthread SDL schroedinger-1.0>=2.0 sndio speex stdc++ \
+		swscale theora ungif util x264>=5 xvidcore z
 
 # we use a snapshot
 MASTER_SITES =	http://theunixzoo.co.uk/distfiles/
@@ -43,6 +41,7 @@ MODULES +=	converters/libiconv
 LIB_DEPENDS =	graphics/png \
 		graphics/jpeg \
 		graphics/libungif \
+		graphics/ffmpeg>=20110306 \
 		audio/cdparanoia>=3.a9.8 \
 		multimedia/libtheora \
 		audio/speex \
@@ -58,10 +57,9 @@ LIB_DEPENDS =	graphics/png \
 		graphics/libmng \
 		archivers/bzip2 \
 		multimedia/schroedinger>=1.0.10 \
-		audio/faad \
 		audio/faac \
 		multimedia/x264>=20101023 \
-		multimedia/libvpx
+		devel/sdl>=1.2.5
 
 BUILD_DEPENDS =	net/livemedia \
 		audio/rtunes>=0.8 \
@@ -70,6 +68,9 @@ BUILD_DEPENDS =	net/livemedia \
 		textproc/docbook \
 		textproc/docbook-xsl \
 		audio/ladspa
+# mplayer uses non-public interfaces to ffmepg, so we still need
+# the ffmpeg source in the mplayer tree at build time.
+BUILD_DEPENDS +=graphics/ffmpeg:patch
 
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
 BUILD_DEPENDS += devel/yasm
@@ -98,14 +99,20 @@ CONFIGURE_ARGS += --disable-alsa \
 		--disable-vidix \
 		--disable-select \
 		--disable-libcdio \
-		--disable-dvdread-internal \
-		--disable-libdvdcss-internal \
-		--disable-faad-internal
+# seems stable dvdnav does not work with a new mplayer.
+# if they make a release in the future, maybe we can pull that in,
+# but for now we have to use the internal one.
+#		--disable-dvdread-internal \
+#		--disable-libdvdcss-internal \
 # gui is not supported anymore and we have better ones in ports
-CONFIGURE_ARGS += --disable-gui
+CONFIGURE_ARGS += --disable-gui \
+		--disable-ffmpeg_a	# link ffmpeg .so (graphics/ffmpeg)
 
 # CONFIGURE_ARGS that enable internal stuff
 CONFIGURE_ARGS += --enable-menu
+
+# CONFIGURE_ARGS that enable external stuff
+CONFIGURE_ARGS += --with-sdl-config=${LOCALBASE}/bin/sdl-config
 
 # CONFIGURE_ARGS that disable external stuff
 CONFIGURE_ARGS += --disable-smb \
@@ -122,7 +129,8 @@ CONFIGURE_ARGS += --disable-smb \
 		--disable-ggi \
 		--disable-libopenjpeg \
 		--disable-mpg123 \
-		--disable-librtmp
+		--disable-librtmp \
+		--disable-faad
 
 # internal tremor, external tremor, external libvorbis all conflict
 # we choose libvorbis to enable encoding to vorbis
@@ -162,28 +170,8 @@ CONFIGURE_ARGS += --disable-mp3lib \
 CONFIGURE_ARGS += --target=generic-openbsd
 .endif
 
-FLAVORS =	sdl debug no_x11 aa jack
+FLAVORS =	debug aa jack
 FLAVOR ?=
-
-.if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS += --disable-gl \
-		--disable-xv \
-		--disable-x11 \
-		--disable-fontconfig \
-		--disable-freetype
-.else
-WANTLIB +=	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm fontconfig \
-		freetype 
-RUN_DEPENDS +=	devel/desktop-file-utils
-.endif
-
-.if ${FLAVOR:L:Msdl}
-CONFIGURE_ARGS += --with-sdl-config=${LOCALBASE}/bin/sdl-config
-LIB_DEPENDS +=	devel/sdl>=1.2.5
-WANTLIB +=	SDL
-.else
-CONFIGURE_ARGS += --disable-sdl
-.endif
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS += --enable-debug=3 \
@@ -191,13 +179,8 @@ CONFIGURE_ARGS += --enable-debug=3 \
 .endif
 
 .if ${FLAVOR:L:Maa}
-.if ${FLAVOR:L:Mno_x11}
-LIB_DEPENDS +=	aalib-*-no_x11:graphics/aalib,no_x11
-WANTLIB +=	aa>=1.3
-.else
 LIB_DEPENDS +=	graphics/aalib
 WANTLIB +=	aa>=1.3
-.endif
 .else
 CONFIGURE_ARGS += --disable-aa
 .endif
@@ -220,17 +203,15 @@ post-extract:
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/DOCS/xml/configure
 
-
-# Put a version.h in place so svn is not a BUILD_DEPEND
-# (see version.sh for how this was supposed to work).
-post-configure:
-	cp ${FILESDIR}/version.h ${WRKDIST}/version.h
-
 post-build:
 	@cd ${WRKSRC}/DOCS/xml && ${MAKE_PROGRAM}
 
 DOCDIR =	${PREFIX}/share/doc/mplayer
 EXAMPLEDIR = 	${PREFIX}/share/examples/mplayer
+
+# link ffmpeg sources to where build expects
+pre-patch:
+	ln -s ${WRKDIR}/graphics/ffmpeg/ffmpeg-git-${FFMPEG_V} ${WRKSRC}/ffmpeg
 
 # install docs
 post-install:

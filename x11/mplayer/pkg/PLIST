@@ -1,7 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.27 2010/11/08 21:25:44 edd Exp $
+@comment $OpenBSD: PLIST,v 1.28 2011/03/29 20:04:41 edd Exp $
 @pkgpath x11/mplayer,mad
 @pkgpath x11/mplayer,mad,no_x11
 @pkgpath x11/mplayer,sdl,mad
+@pkgpath x11/mplayer,sdl
+@pkgpath x11/mplayer,aa,no_x11
+@pkgpath x11/mplayer,aa,no_x11,sdl
+@pkgpath x11/mplayer,aa,sdl
+@pkgpath x11/mplayer,no_x11,sdl
+@pkgpath x11/mplayer,debug,sdl
+@pkgpath x11/mplayer,aa,debug,no_x11
+@pkgpath x11/mplayer,aa,debug,sdl
+@pkgpath x11/mplayer,debug,no_x11,sdl
+@pkgpath x11/mplayer,jack,sdl
+@pkgpath x11/mplayer,jack,no_x11,sdl
+@pkgpath x11/mplayer,jack,no_x11
+@pkgpath x11/mplayer,aa,no_x11
+@pkgpath x11/mplayer,aa,jack,no_x11,sdl
+@pkgpath x11/mplayer,aa,jack,sdl
+@pkgpath x11/mplayer,debug,jack,sdl
+@pkgpath x11/mplayer,debug,jack,no_x11,sdl
+@pkgpath x11/mplayer,debug,jack,no_x11
+@pkgpath x11/mplayer,aa,debug,no_x11
+@pkgpath x11/mplayer,aa,debug,jack,no_x11,sdl
+@pkgpath x11/mplayer,aa,debug,jack,sdl
 @bin bin/mencoder
 @bin bin/mplayer
 @man man/man1/mencoder.1

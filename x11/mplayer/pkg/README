@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2010/11/08 21:25:44 edd Exp $
+$OpenBSD: README,v 1.2 2011/03/29 20:04:41 edd Exp $
 
 Possible issues with using MPlayer on OpenBSD:
 
@@ -8,6 +8,11 @@ all arches:
 
   Mencoder is not expected to do a good job of multiplexing into container
   formats other than AVI or MPEG.
+
+  ffmpeg's ogg demuxer is broken for ogg streams. If mplayer says "cache
+  not filling" when a song changes, you have been bitten by this bug.
+  You can try '-demuxer ogg' as a workaround (or try using ogg123 from
+  the vorbis-tools package).
 
 i386:
   win32 codecs were disabled in OpenBSD's build, as the open-source codecs

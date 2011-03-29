@@ -1,7 +1,7 @@
-$OpenBSD: patch-mplayer_c,v 1.10 2010/11/08 21:25:44 edd Exp $
---- mplayer.c.orig	Sun Oct 24 11:13:11 2010
-+++ mplayer.c	Sun Oct 24 11:13:29 2010
-@@ -852,7 +852,7 @@ static void exit_sighandler(int x){
+$OpenBSD: patch-mplayer_c,v 1.11 2011/03/29 20:04:41 edd Exp $
+--- mplayer.c.orig	Thu Mar  3 12:35:16 2011
++++ mplayer.c	Thu Mar  3 13:23:39 2011
+@@ -815,7 +815,7 @@ static void exit_sighandler(int x){
            char spid[20];
            snprintf(spid, sizeof(spid), "%i", getppid());
            getch2_disable(); // allow terminal to work properly with gdb
