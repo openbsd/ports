@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/03/29 16:59:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/03/29 17:05:54 jasper Exp $
 
 COMMENT=		front-end to ssh-agent
 
@@ -23,6 +23,6 @@ USE_GROFF =		Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKDIST}/keychain ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKDIST}/keychain.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKDIST}/keychain.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
