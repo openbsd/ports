@@ -1,0 +1,11 @@
+$OpenBSD: patch-libavutil_ppc_cpu_c,v 1.1 2011/03/29 20:01:43 edd Exp $
+--- libavutil/ppc/cpu.c.orig	Tue Mar 29 19:11:32 2011
++++ libavutil/ppc/cpu.c	Tue Mar 29 19:11:55 2011
+@@ -20,6 +20,7 @@
+ #undef _POSIX_C_SOURCE
+ #include <sys/sysctl.h>
+ #elif defined(__OpenBSD__)
++#define _BSD_SOURCE
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
+ #include <machine/cpu.h>

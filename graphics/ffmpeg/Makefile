@@ -1,22 +1,22 @@
-# $OpenBSD: Makefile,v 1.68 2011/02/12 10:48:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2011/03/29 20:01:43 edd Exp $
 
 COMMENT=	audio/video converter and streamer with bktr(4) support
 
-V=		20100512
-DISTNAME=	ffmpeg-svn-${V}
+V=		20110306
+DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	6
 CATEGORIES=	graphics multimedia
-MASTER_SITES=	http://comstyle.com/source/ \
-		http://gormsby.com/downloads/
+#MASTER_SITES=	http://comstyle.com/source/ \
+#		http://gormsby.com/downloads/
+MASTER_SITES=	http://theunixzoo.co.uk/distfiles/
 
-SHARED_LIBS=	avcodec		14.0 \
-		avdevice	3.0 \
-		avfilter	1.0 \
-		avformat	13.0 \
-		avutil		7.0 \
-		postproc	13.0 \
-		swscale		2.0
+SHARED_LIBS=	avcodec		15.0 \
+		avdevice	4.0 \
+		avfilter	2.0 \
+		avformat	14.0 \
+		avutil		8.0 \
+		postproc	14.0 \
+		swscale		3.0
 
 HOMEPAGE=	http://ffmpeg.mplayerhq.hu/
 
@@ -31,7 +31,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	gcc3
 MODGCC3_ARCHES=	sparc
 
-WANTLIB=	SDL X11 Xext Xfixes bz2 c faac faad gsm m mp3lame ogg \
+WANTLIB=	SDL X11 Xext Xfixes bz2 c faac gsm m mp3lame ogg \
 		orc-0.4 pthread schroedinger-1.0>=2 sndio speex theora \
 		theoradec theoraenc vorbis vorbisenc x264 z
 
@@ -41,7 +41,6 @@ BUILD_DEPENDS+=	devel/yasm
 .endif
 LIB_DEPENDS=	archivers/bzip2 \
 		audio/faac \
-		audio/faad \
 		audio/lame \
 		audio/libvorbis \
 		audio/speex \
@@ -51,13 +50,18 @@ LIB_DEPENDS=	archivers/bzip2 \
 		multimedia/schroedinger>=1.0.10 \
 		multimedia/x264
 
+# does not compile with asm, we suspect binutils
+.if ${MACHINE_ARCH:Mpowerpc}
+CONFIGURE_ARGS +=	--disable-asm
+.endif
+
 .if ${MACHINE_ARCH:Marm}
 # uses ARM EABI
-CONFIGURE_ARGS+= --arch=generic
+CONFIGURE_ARGS+=	--arch=generic
 .endif
 
 # inter-library dependencies for the current configuration
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lfaac -lfaad -lgsm -lm -lmp3lame -logg -lorc-0.4 -lschroedinger-1.0 -lspeex -ltheora -lvorbis -lvorbisenc -lx264 -lz -pthread -Wl,-rpath,${LOCALBASE}/lib 
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lfaac -lgsm -lm -lmp3lame -logg -lorc-0.4 -lschroedinger-1.0 -lspeex -ltheora -lvorbis -lvorbisenc -lx264 -lz -pthread -Wl,-rpath,${LOCALBASE}/lib
 LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lXfixes -lm -lsndio -Wl,-rpath,${LOCALBASE}/lib -Wl,-rpath,${X11BASE}/lib
 LIBavfilter_EXTRALIBS=-lm
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lm -Wl,-rpath,${LOCALBASE}/lib
@@ -72,7 +76,6 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--cc=${CC} \
-		--disable-altivec \
 		--disable-armv5te \
 		--disable-armv6 \
 		--disable-armv6t2 \
@@ -86,7 +89,6 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-outdev=oss \
 		--enable-gpl \
 		--enable-libfaac \
-		--enable-libfaad \
 		--enable-libgsm \
 		--enable-libmp3lame \
 		--enable-libschroedinger \
@@ -144,8 +146,12 @@ ALL_TARGET=	all tools/qt-faststart
 #REGRESS_TARGET=	codectest
 NO_REGRESS=	Yes
 
-HTML_DOCS=	developer faq ffmpeg-doc ffplay-doc ffprobe-doc ffserver-doc \
+HTML_DOCS=	developer faq ffmpeg ffplay ffprobe ffserver \
 		general libavfilter
+
+# When you are rolling your distfile, you need to get the version string
+# from 'git describe --always' *before* you remove the .git directory.
+MAKE_ENV +=	OBSD_VSTR=git-f4f4e12
 
 post-extract:
 	@cp -f ${FILESDIR}/sndio_* ${WRKSRC}/libavdevice

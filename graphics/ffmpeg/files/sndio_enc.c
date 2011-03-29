@@ -75,7 +75,7 @@ static int audio_write_trailer(AVFormatContext *s1)
     return 0;
 }
 
-AVOutputFormat sndio_muxer = {
+AVOutputFormat ff_sndio_muxer = {
     .name           = "sndio",
     .long_name      = NULL_IF_CONFIG_SMALL("sndio audio playback"),
     .priv_data_size = sizeof(AudioData),

@@ -94,7 +94,7 @@ static av_cold int audio_read_close(AVFormatContext *s1)
     return 0;
 }
 
-AVInputFormat sndio_demuxer = {
+AVInputFormat ff_sndio_demuxer = {
     .name           = "sndio",
     .long_name      = NULL_IF_CONFIG_SMALL("sndio audio capture"),
     .priv_data_size = sizeof(AudioData),

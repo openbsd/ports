@@ -1,0 +1,14 @@
+$OpenBSD: patch-libavfilter_Makefile,v 1.1 2011/03/29 20:01:43 edd Exp $
+--- libavfilter/Makefile.orig	Mon Mar  7 00:18:12 2011
++++ libavfilter/Makefile	Mon Mar  7 00:18:28 2011
+@@ -62,3 +62,10 @@ OBJS-$(CONFIG_NULLSINK_FILTER)               += vsink_
+ DIRS = x86
+ 
+ include $(SUBDIR)../subdir.mak
++
++ifdef ARCH_X86_32
++ifeq (,$(findstring -O,$(CFLAGS)))
++libavfilter/x86/gradfun.o: CFLAGS += -O
++endif
++libavfilter/x86/gradfun.o: CFLAGS += -fomit-frame-pointer
++endif

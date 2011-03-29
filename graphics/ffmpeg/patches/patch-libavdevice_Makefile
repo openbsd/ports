@@ -1,6 +1,6 @@
-$OpenBSD: patch-libavdevice_Makefile,v 1.4 2010/09/03 16:39:13 sthen Exp $
---- libavdevice/Makefile.orig	Tue May 11 19:20:57 2010
-+++ libavdevice/Makefile	Wed Aug 18 18:30:32 2010
+$OpenBSD: patch-libavdevice_Makefile,v 1.5 2011/03/29 20:01:43 edd Exp $
+--- libavdevice/Makefile.orig	Sun Mar  6 23:03:49 2011
++++ libavdevice/Makefile	Sun Mar  6 23:42:07 2011
 @@ -17,6 +17,8 @@ OBJS-$(CONFIG_DV1394_INDEV)              += dv1394.o
  OBJS-$(CONFIG_JACK_INDEV)                += jack_audio.o
  OBJS-$(CONFIG_OSS_INDEV)                 += oss_audio.o
@@ -10,8 +10,8 @@ $OpenBSD: patch-libavdevice_Makefile,v 1.4 2010/09/03 16:39:13 sthen Exp $
  OBJS-$(CONFIG_V4L2_INDEV)                += v4l2.o
  OBJS-$(CONFIG_V4L_INDEV)                 += v4l.o
  OBJS-$(CONFIG_VFWCAP_INDEV)              += vfwcap.o
-@@ -29,5 +31,6 @@ OBJS-$(CONFIG_AUDIO_BEOS_INDEV)          += beosaudio.
- OBJS-$(CONFIG_AUDIO_BEOS_OUTDEV)         += beosaudio.o
+@@ -26,5 +28,6 @@ OBJS-$(CONFIG_X11_GRAB_DEVICE_INDEV)     += x11grab.o
+ OBJS-$(CONFIG_LIBDC1394_INDEV)           += libdc1394.o
  
  SKIPHEADERS-$(HAVE_ALSA_ASOUNDLIB_H)     += alsa-audio.h
 +SKIPHEADERS-$(HAVE_SNDIO_H)              += sndio_common.h

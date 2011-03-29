@@ -1,7 +1,7 @@
-$OpenBSD: patch-libavdevice_alldevices_c,v 1.1 2010/05/26 21:38:52 jakemsr Exp $
---- libavdevice/alldevices.c.orig	Sun May 16 10:50:32 2010
-+++ libavdevice/alldevices.c	Sun May 16 10:51:04 2010
-@@ -45,6 +45,7 @@ void avdevice_register_all(void)
+$OpenBSD: patch-libavdevice_alldevices_c,v 1.2 2011/03/29 20:01:43 edd Exp $
+--- libavdevice/alldevices.c.orig	Sun Mar  6 23:03:49 2011
++++ libavdevice/alldevices.c	Sun Mar  6 23:42:07 2011
+@@ -44,6 +44,7 @@ void avdevice_register_all(void)
      REGISTER_INDEV    (DV1394, dv1394);
      REGISTER_INDEV    (JACK, jack);
      REGISTER_INOUTDEV (OSS, oss);
