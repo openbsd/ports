@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/29 12:14:21 pea Exp $
+%%SHARED%%
+@bin bin/perseus_test
+include/perseus.h

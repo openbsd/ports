@@ -1,0 +1,28 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2011/03/29 12:14:21 pea Exp $
+--- Makefile.orig	Mon Jan 31 09:36:58 2011
++++ Makefile	Thu Mar 17 17:32:21 2011
+@@ -1,18 +1,18 @@
+-CC=gcc
++CC?=gcc
+ JAVAC=javac
+ 
+-CFLAGS= -O3 -ansi -Wall -g -fPIC
++CFLAGS?= -O3 -ansi -Wall -fPIC
++LDFLAGS= -lm
+ SRC = perseus.c perseus_test.c perseus_test2.c
+ 
+ OBJ     = $(SRC:.c=.o)
+-LIBNAME = "libperseus-1.0.1"
++LIBNAME = "libperseus-1.0.2"
+ 
+-.SILENT:
+ 
+ all: $(OBJ)
+ 	$(CC) $(CFLAGS) -o $(LIBNAME).so perseus.o -shared
+-	$(CC) $(CFLAGS) perseus.o perseus_test.o -o perseus_test 
+-	$(CC) $(CFLAGS) perseus.o perseus_test2.o -o perseus_test2
++	$(CC) $(CFLAGS) $(LDFLAGS) perseus.o perseus_test.o -o perseus_test 
++	$(CC) $(CFLAGS) $(LDFLAGS) perseus.o perseus_test2.o -o perseus_test2
+ 
+ java: $(OBJ)
+ 	cd java && make
