@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/26 07:07:56 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/03/29 20:04:55 jakemsr Exp $
 
 COMMENT=	decoding library for KDE Multimedia
 
 DISTNAME=	akode-2.0.2
-REVISION=	14
+REVISION=	15
 
 SHARED_LIBS +=	akode                2.1      # .2.0
 
@@ -21,7 +21,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB=	bz2 c faac faad gsm m mp3lame ogg pthread orc-0.4 \
+WANTLIB=	bz2 c faac gsm m mp3lame ogg pthread orc-0.4 \
 		samplerate schroedinger-1.0 sndio stdc++ theora x264 z \
 		FLAC>=8 mad speex ltdl vorbis vorbisfile vorbisenc \
 		jack avcodec>=14 avformat>=13 avutil>=7
