@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.282 2011/03/29 07:08:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.283 2011/03/30 09:28:25 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
      SUBDIR =
+     SUBDIR += DevIL
      SUBDIR += GraphicsMagick
      SUBDIR += GraphicsMagick,no_x11
      SUBDIR += ImageMagick
