@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/21 12:36:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/30 07:56:50 ajacoutot Exp $
 
 COMMENT=	common build utilities for GNOME C++ binding libraries
 
 GNOME_PROJECT=	mm-common
-GNOME_VERSION=	0.9.4
+GNOME_VERSION=	0.9.5
 
 CATEGORIES=	devel
 
