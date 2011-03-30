@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/30 09:49:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/30 09:50:53 jasper Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
 DISTNAME=		DevIL-1.7.8
-REVISION=		0
+REVISION=		1
 SHARED_LIBS+=		IL	0.0 # 2.0
 
 CATEGORIES=		graphics devel
@@ -52,6 +52,6 @@ post-configure:
 
 post-install:
 	@cd ${WRKSRC}; tar cf - examples | tar xf - -C \
-		${PREFIX}/share/devil/examples/
+		${PREFIX}/share/devil/
 
 .include <bsd.port.mk>
