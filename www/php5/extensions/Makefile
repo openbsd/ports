@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/03/16 15:21:38 landry Exp $
+# $OpenBSD: Makefile,v 1.70 2011/03/30 08:23:37 jasper Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}
 FULLPKGPATH-main=	www/php5/extensions,-main
@@ -312,8 +312,9 @@ CONFIGURE_ARGS+=	--disable-soap
 MULTI_PACKAGES+=	-soap
 COMMENT-soap=		SOAP functions for php5
 CONFIGURE_ARGS+=	--enable-soap=shared
-LIB_DEPENDS-soap =
+LIB_DEPENDS-soap =	textproc/libxml
 WANTLIB-soap =		m xml2 z iconv
+REVISION-soap = 	0
 .endif
 
 # snmp
@@ -397,8 +398,9 @@ CONFIGURE_ARGS+=	--without-xmlrpc
 MULTI_PACKAGES+=	-xmlrpc
 COMMENT-xmlrpc=		XML RPC functions for php5
 CONFIGURE_ARGS+=	--with-xmlrpc=shared
-LIB_DEPENDS-xmlrpc =
+LIB_DEPENDS-xmlrpc =	textproc/libxml
 WANTLIB-xmlrpc =	iconv m xml2 z
+REVISION-xmlrpc =	0
 .endif
 
 # xsl
