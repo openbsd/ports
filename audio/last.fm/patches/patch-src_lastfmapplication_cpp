@@ -1,6 +1,15 @@
-$OpenBSD: patch-src_lastfmapplication_cpp,v 1.2 2011/03/30 14:00:48 dcoppa Exp $
---- src/lastfmapplication.cpp.orig	Mon Mar 28 18:01:15 2011
-+++ src/lastfmapplication.cpp	Mon Mar 28 18:04:34 2011
+$OpenBSD: patch-src_lastfmapplication_cpp,v 1.3 2011/03/30 20:51:13 dcoppa Exp $
+--- src/lastfmapplication.cpp.orig	Wed Mar 30 20:25:01 2011
++++ src/lastfmapplication.cpp	Wed Mar 30 20:26:15 2011
+@@ -128,7 +128,7 @@ LastFmApplication::LastFmApplication( int& argc, char*
+ 
+     setQuitOnLastWindowClosed( false );
+   #ifdef Q_WS_X11
+-    setWindowIcon( QIcon( MooseUtils::dataPath( "icons/as.ico" ) ) );
++    setWindowIcon( QIcon( MooseUtils::dataPath( "icons/as.png" ) ) );
+   #endif
+ 
+   #ifdef WIN32
 @@ -234,7 +234,8 @@ LastFmApplication::init()
          }
  

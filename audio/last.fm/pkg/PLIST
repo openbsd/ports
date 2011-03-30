@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/03/30 14:00:48 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/03/30 20:51:13 dcoppa Exp $
 @bin bin/last.fm
 lib/last.fm/
 lib/last.fm/services/
@@ -28,8 +28,31 @@ share/last.fm/buttons/action_upload_hover.png
 share/last.fm/buttons/closebutton.png
 share/last.fm/buttons/myprofile.png
 share/last.fm/buttons/scrobble.png
+share/last.fm/i18n/
+share/last.fm/i18n/lastfm_cn.qm
+share/last.fm/i18n/lastfm_de.qm
+share/last.fm/i18n/lastfm_en.qm
+share/last.fm/i18n/lastfm_es.qm
+share/last.fm/i18n/lastfm_fr.qm
+share/last.fm/i18n/lastfm_it.qm
+share/last.fm/i18n/lastfm_jp.qm
+share/last.fm/i18n/lastfm_pl.qm
+share/last.fm/i18n/lastfm_pt.qm
+share/last.fm/i18n/lastfm_ru.qm
+share/last.fm/i18n/lastfm_sv.qm
+share/last.fm/i18n/lastfm_tr.qm
+share/last.fm/i18n/qt_cn.qm
+share/last.fm/i18n/qt_de.qm
+share/last.fm/i18n/qt_es.qm
+share/last.fm/i18n/qt_fr.qm
+share/last.fm/i18n/qt_it.qm
+share/last.fm/i18n/qt_jp.qm
+share/last.fm/i18n/qt_pl.qm
+share/last.fm/i18n/qt_pt.qm
+share/last.fm/i18n/qt_ru.qm
+share/last.fm/i18n/qt_sv.qm
+share/last.fm/i18n/qt_tr.qm
 share/last.fm/icons/
-share/last.fm/icons/as.ico
 share/last.fm/icons/as.png
 share/last.fm/icons/blackprofile24.png
 share/last.fm/icons/blueprofile24.png
