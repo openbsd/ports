@@ -1,0 +1,18 @@
+Previously known as OpenIL, Developer's Image Library is a programmer's
+library to develop applications with very powerful image loading
+capabilities, yet is easy for a developer to learn and use.
+
+DevIL can load, save, convert, manipulate, filter and display a wide
+variety of image formats.
+
+Currently, DevIL can load .bmp, .cut, .dds, .doom, .exr, .hdr, .gif,
+.ico, .jp2, .jpg,.lbm, .mdl, .mng, .pal, .pbm, .pcd, .pcx, .pgm, .pic,
+.png, .ppm, .psd, .psp, .raw, .sgi, .tga and .tif files.
+
+Formats supported for saving include .bmp, .dds, .h, .jpg, .pal, .pbm,
+.pcx, .pgm, .png, .ppm, .raw, .sgi, .tga and .tif.
+
+DevIL currently supports the following APIs for display: OpenGL, Windows
+GDI, SDL, DirectX and Allegro. Compilers that can compile DevIL or use
+it include Djgpp, MSVC++, Linux gcc, Delphi, Visual Basic, Power Basic
+and Dev-C++.

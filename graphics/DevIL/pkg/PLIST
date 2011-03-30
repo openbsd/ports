@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/30 09:27:58 jasper Exp $
+%%SHARED%%
+include/IL/
+include/IL/devil_cpp_wrapper.hpp
+include/IL/il.h
+@info info/DevIL_manual.info
+lib/libIL.a
+lib/libIL.la
+lib/pkgconfig/
+lib/pkgconfig/IL.pc
+share/devil/
+share/devil/examples/

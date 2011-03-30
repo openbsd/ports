@@ -1,0 +1,19 @@
+$OpenBSD: patch-src-IL_src_il_dicom_c,v 1.1.1.1 2011/03/30 09:27:58 jasper Exp $
+
+Security fix for CVE-2009-3994: buffer overflow in DICOM reader
+
+--- src-IL/src/il_dicom.c.orig	Tue Mar 29 19:39:24 2011
++++ src-IL/src/il_dicom.c	Tue Mar 29 19:40:05 2011
+@@ -427,9 +427,11 @@ ILboolean GetUID(ILubyte *UID)
+ 		return IL_FALSE;
+ 
+ 	ValLen = GetLittleUShort();
++	if (ValLen > 64)
++		return IL_FALSE;
+ 	if (iread(UID, ValLen, 1) != 1)
+ 		return IL_FALSE;
+-	UID[64] = 0;  // Just to make sure that our string is terminated.
++	UID[ValLen] = 0;  // Just to make sure that our string is terminated.
+ 
+ 	return IL_TRUE;
+ }
