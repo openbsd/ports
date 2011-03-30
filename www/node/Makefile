@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/30 19:54:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/03/30 20:54:13 jasper Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -40,7 +40,8 @@ MODPY_ADJ_FILES=wscript \
 		tools/node-waf \
 		tools/waf-light
 
-NO_REGRESS=	Yes
+# These don't require complete rebuilds of the tree
+REGRESS_TARGET= test-message test-simple test-pummel test-internet
 
 SUBST_VARS+=	CFLAGS
 
@@ -48,6 +49,7 @@ MAKE_ENV+=	CXX=c++ CCFLAGS+="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/wscript \
+			${WRKSRC}/Makefile \
 			${WRKSRC}/tools/wafadmin/Tools/python.py
 	# Bad practice, but prevents a whole stack of patches.
 	ln -sf ${LOCALBASE}/bin/python${MODPY_VERSION} ${WRKDIR}/bin/python
