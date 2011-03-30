@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_container_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
---- src/container.cpp.orig	Fri May 28 12:41:13 2010
-+++ src/container.cpp	Fri May 28 12:42:05 2010
-@@ -103,7 +103,6 @@ Container::setupUi()
+$OpenBSD: patch-src_container_cpp,v 1.2 2011/03/30 14:00:48 dcoppa Exp $
+--- src/container.cpp.orig	Wed Mar 30 13:26:00 2011
++++ src/container.cpp	Wed Mar 30 13:28:01 2011
+@@ -79,6 +79,7 @@ Container* Container::s_instance = 0;
+ Container::Container()
+         : QMainWindow(),
+           m_userCheck( false ),
++          m_soundcardError( false ),
+           m_sidebarEnabled( false ),
+           m_sidebarWidth( 190 )
+ #ifndef Q_WS_MAC
+@@ -106,7 +107,6 @@ Container::setupUi()
  {
      ui.setupUi( this );
  
@@ -9,47 +17,42 @@ $OpenBSD: patch-src_container_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
      ui.actionAboutLastfm->setMenuRole( QAction::AboutRole );
      ui.actionSettings->setMenuRole( QAction::PreferencesRole );
      ui.actionStop->setVisible( false );
-@@ -294,7 +293,6 @@ void
+@@ -318,7 +318,6 @@ void
  Container::applyPlatformSpecificTweaks()
  {
  #ifdef Q_WS_X11
 -    ui.actionCheckForUpdates->setVisible( false );
      ui.actionQuit->setShortcut( tr( "CTRL+Q" ) );
-     ui.actionQuit->setText( tr("&Quit") );
+     ui.actionQuit->setText( tr( "&Quit" ) );
  
-@@ -390,7 +388,6 @@ Container::setupConnections()
-     connect( ui.actionDashboard, SIGNAL(triggered()), SLOT(gotoProfile()) );
-     connect( ui.actionSettings, SIGNAL(triggered()), SLOT(showSettingsDialog()) );
-     connect( ui.actionGetPlugin, SIGNAL(triggered()), SLOT(getPlugin()) );
--    connect( ui.actionCheckForUpdates, SIGNAL(triggered()), SLOT(checkForUpdates()) );
-     connect( ui.actionAddUser, SIGNAL(triggered()), SLOT(addUser()) );
-     connect( ui.actionDeleteUser, SIGNAL(triggered()), SLOT(deleteUser()) );
-     connect( ui.actionToggleScrobbling, SIGNAL(triggered()), SLOT(toggleScrobbling()) );
-@@ -416,7 +413,6 @@ Container::setupConnections()
-     connect( The::webService(), SIGNAL(failure( Request* )), SLOT(webServiceFailure( Request* )), Qt::QueuedConnection );
+@@ -411,7 +410,6 @@ Container::setupConnections()
+     connect( ui.actionDashboard, SIGNAL( triggered() ), SLOT( gotoProfile() ) );
+     connect( ui.actionSettings, SIGNAL( triggered() ), SLOT( showSettingsDialog() ) );
+     connect( ui.actionGetPlugin, SIGNAL( triggered() ), SLOT( getPlugin() ) );
+-    connect( ui.actionCheckForUpdates, SIGNAL( triggered() ), SLOT( checkForUpdates() ) );
+     connect( ui.actionAddUser, SIGNAL( triggered() ), SLOT( addUser() ) );
+     connect( ui.actionDeleteUser, SIGNAL( triggered() ), SLOT( deleteUser() ) );
+     connect( ui.actionToggleScrobbling, SIGNAL( triggered() ), SLOT( toggleScrobbling() ) );
+@@ -437,7 +435,6 @@ Container::setupConnections()
+     connect( The::webService(), SIGNAL( failure( Request* ) ), SLOT( webServiceFailure( Request* ) ), Qt::QueuedConnection );
      connect( &The::settings(), SIGNAL( userSettingsChanged( LastFmUserSettings& ) ), SLOT( updateUserStuff( LastFmUserSettings& ) ) );
      connect( &The::settings(), SIGNAL( appearanceSettingsChanged() ), SLOT( updateAppearance() ) );
 -    connect( m_updater, SIGNAL( updateCheckDone( bool, bool, QString ) ), SLOT( updateCheckDone( bool, bool, QString ) ) );
-     connect( ui.stack, SIGNAL(currentChanged( int )), SIGNAL(stackIndexChanged( int )) );
-     connect( ui.actionMyProfile, SIGNAL(triggered()), SLOT(toggleSidebar()) );
-     connect( ui.actionPlaylist, SIGNAL(triggered()), SLOT(addToMyPlaylist()) );
-@@ -519,7 +515,7 @@ Container::loadExtensions()
-     // Hack to get it working with VS2005
-     QString path = qApp->applicationDirPath();
-   #else
--    QString path = qApp->applicationDirPath() + "/extensions";
-+    QString path = "${PREFIX}/lib/last.fm/extensions";
-   #endif
+     connect( ui.stack, SIGNAL( currentChanged( int ) ), SIGNAL( stackIndexChanged( int ) ) );
+     connect( ui.actionMyProfile, SIGNAL( triggered() ), SLOT( toggleSidebar() ) );
+     connect( ui.actionPlaylist, SIGNAL( triggered() ), SLOT( addToMyPlaylist() ) );
+@@ -798,6 +795,7 @@ Container::onRadioError( RadioError error, const QStri
+         case Handshake_SessionFailed:
+         case Radio_PluginLoadFailed:
+         case Radio_NoSoundcard:
++            m_soundcardError = true;
+         case Radio_PlaybackError:
+         case Radio_UnknownError:
+         {
+@@ -902,70 +900,6 @@ Container::getPlugin()
  
-   #ifndef QT_NO_DEBUG
-@@ -890,56 +886,6 @@ Container::getPlugin()
- {
-     ConfigWizard( this, ConfigWizard::Plugin ).exec();
-     ui.restStateWidget->updatePlayerNames();
--}
--
--
--void
+ 
+ void
 -Container::checkForUpdates( bool invokedByUser )
 -{
 -    m_userCheck = invokedByUser;
@@ -95,7 +98,39 @@ $OpenBSD: patch-src_container_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
 -    // Go ahead and launch update wizard
 -    LOG( 3, "New updates available. Launching update wizard.\n" );
 -
--    UpdateWizard( *m_updater, this ).exec();
- }
+-    UpdateWizard* wizard = new UpdateWizard( *m_updater, this );
+-    if( wizard->shouldShow()) {
+-        wizard->exec();
+-        wizard->deleteLater();
+-    }
+-
+-#ifdef WIN32
+-    // this is really only for beta testers,
+-    // ie. User installs 1.5 via installer, not upgrade path, but they had the
+-    // itunes plugin version 2 installed already, so upgrade wizard wasn't run
+-    // in previous instantiation. So we run configwizard to bootstrap twiddly
+-    //NOTE some of this code is duplicated in LastFmApplication::init()
+-    if (The::settings().weWereJustUpgraded())
+-        ConfigWizard( NULL, ConfigWizard::MediaDevice ).exec();
+-#endif
+-}
+-
+-
+-void
+ Container::showFAQ()
+ {
+     QDesktopServices::openUrl( "http://" + UnicornUtils::localizedHostName( The::settings().appLanguage() ) + "/help/faq/" );
+@@ -1987,8 +1921,11 @@ Container::onRadioStateChanged( RadioState newState )
  
- 
+         default:
+         {
+-            ui.actionPlay->setEnabled( true );
+-            ui.actionStop->setEnabled( true );
++            if ( !m_soundcardError )
++            {
++                ui.actionPlay->setEnabled( true );
++                ui.actionStop->setEnabled( true );
++            }
+         }
+         break;
+     }

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/30 14:00:48 dcoppa Exp $
 @bin bin/last.fm
 lib/last.fm/
 lib/last.fm/services/
@@ -9,7 +9,6 @@ lib/last.fm/services/libsrv_output_portaudio.so
 @lib lib/libLastFmFingerprint.so.${LIBLastFmFingerprint_VERSION}
 @lib lib/libLastFmTools.so.${LIBLastFmTools_VERSION}
 @lib lib/libMoose.so.${LIBMoose_VERSION}
-share/applications/
 share/applications/lastfm.desktop
 share/last.fm/
 share/last.fm/about.png
@@ -48,6 +47,7 @@ share/last.fm/icons/my_bookmarks.png
 share/last.fm/icons/my_friends.png
 share/last.fm/icons/my_neighbours.png
 share/last.fm/icons/my_tags.png
+share/last.fm/icons/mymix_radio.png
 share/last.fm/icons/neighbour_radio.png
 share/last.fm/icons/options_account.png
 share/last.fm/icons/options_connection.png

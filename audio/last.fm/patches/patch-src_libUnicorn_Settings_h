@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_libUnicorn_Settings_h,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
---- src/libUnicorn/Settings.h.orig	Thu May 20 20:32:32 2010
-+++ src/libUnicorn/Settings.h	Thu May 20 20:33:19 2010
+$OpenBSD: patch-src_libUnicorn_Settings_h,v 1.2 2011/03/30 14:00:48 dcoppa Exp $
+--- src/libUnicorn/Settings.h.orig	Mon Mar 28 15:20:34 2011
++++ src/libUnicorn/Settings.h	Mon Mar 28 15:20:36 2011
 @@ -128,19 +128,19 @@ class UNICORN_DLLEXPORT SharedSettings : public QObjec
      SharedSettings( QObject* parent ) : QObject( parent ) { }
  

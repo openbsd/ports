@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_src_pro,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
---- src/src.pro.orig	Tue Dec 18 15:18:19 2007
-+++ src/src.pro	Tue May 25 12:41:36 2010
+$OpenBSD: patch-src_src_pro,v 1.2 2011/03/30 14:00:48 dcoppa Exp $
+--- src/src.pro.orig	Tue Nov  2 19:13:07 2010
++++ src/src.pro	Tue Mar 29 12:32:05 2011
 @@ -7,10 +7,6 @@ INCLUDEPATH += lib libFingerprint/recommendation-commo
  PRECOMPILED_HEADER = precompiled.h
  CONFIG += precompile_header
@@ -11,8 +11,8 @@ $OpenBSD: patch-src_src_pro,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
 -}
  
  #universal binaries cannot be built from precompiled headers
- mac*:release:CONFIG -= precompile_header
-@@ -27,9 +23,8 @@ unix:!mac*{
+ mac:release:CONFIG -= precompile_header
+@@ -27,9 +23,8 @@ unix:!mac{
  
  include( ../definitions.pro.inc )
  
@@ -24,12 +24,12 @@ $OpenBSD: patch-src_src_pro,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
  
  breakpad {
      LIBS += -lbreakpad$$EXT
-@@ -206,6 +201,8 @@ unix:!mac* {
+@@ -210,6 +205,8 @@ unix:!mac {
  
      SOURCES += simplewizard_mac.cpp \
                 winstyleoverrides.cpp
 +
-+    LIBPATH += ${LOCALBASE}/lib
++    QMAKE_LIBDIR += ${LOCALBASE}/lib
  
      LIBS += -lmad -lfftw3f
- }
+ 

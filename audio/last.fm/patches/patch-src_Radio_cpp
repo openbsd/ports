@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Radio_cpp,v 1.1 2011/03/30 14:00:48 dcoppa Exp $
+--- src/Radio.cpp.orig	Wed Mar 30 13:25:59 2011
++++ src/Radio.cpp	Wed Mar 30 13:28:01 2011
+@@ -652,7 +652,7 @@ Radio::onAudioControllerError( RadioError err,
+     }
+     else
+     {
+-        if ( err == Radio_PluginLoadFailed )
++        if ( err == Radio_PluginLoadFailed || err == Radio_NoSoundcard )
+         {
+             m_broken = true;
+         }

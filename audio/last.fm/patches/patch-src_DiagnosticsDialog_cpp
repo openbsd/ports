@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_DiagnosticsDialog_cpp,v 1.1 2011/03/30 14:00:48 dcoppa Exp $
+--- src/DiagnosticsDialog.cpp.orig	Mon Mar 28 18:07:18 2011
++++ src/DiagnosticsDialog.cpp	Mon Mar 28 18:09:05 2011
+@@ -44,7 +44,7 @@ static void smallFontise( QWidget* w )
+     #endif
+ 
+     QFont f = w->font();
+-    #if defined LINUX
++    #if defined Q_WS_X11
+         f.setPointSize( f.pointSize() - 2 );
+     #else
+         f.setPointSize( 10 );
+@@ -71,7 +71,7 @@ DiagnosticsDialog::DiagnosticsDialog( QWidget *parent 
+     smallFontise( ui.cachedTracksTitle );
+     smallFontise( ui.fingerprintedTracksTitle );
+ 
+-    #ifndef LINUX
++    #ifndef Q_WS_X11
+     // Qt 4.3.1 b0rked? as this is specified in Designer, but only works on Linux :(
+     foreach ( QGroupBox* b, findChildren<QGroupBox*>() )
+     {

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_playerlistener_h,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
---- src/playerlistener.h.orig	Fri May 21 13:34:20 2010
-+++ src/playerlistener.h	Fri May 21 13:34:56 2010
+$OpenBSD: patch-src_playerlistener_h,v 1.2 2011/03/30 14:00:48 dcoppa Exp $
+--- src/playerlistener.h.orig	Mon Mar 28 15:20:33 2011
++++ src/playerlistener.h	Mon Mar 28 15:20:36 2011
 @@ -22,6 +22,8 @@
  #ifndef PLAYERLISTENER_H
  #define PLAYERLISTENER_H

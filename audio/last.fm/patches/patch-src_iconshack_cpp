@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_iconshack_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
---- src/iconshack.cpp.orig	Thu May 27 11:50:48 2010
-+++ src/iconshack.cpp	Thu May 27 16:48:05 2010
-@@ -73,6 +73,33 @@ IconShack::GetDisabledUserIcon( MooseEnums::UserIconCo
- }    
+$OpenBSD: patch-src_iconshack_cpp,v 1.2 2011/03/30 14:00:48 dcoppa Exp $
+--- src/iconshack.cpp.orig	Mon Mar 28 15:20:33 2011
++++ src/iconshack.cpp	Mon Mar 28 15:20:35 2011
+@@ -108,6 +108,33 @@ IconShack::GenerateIpodScrobblingIcons( MooseEnums::Us
+ }
  
  
 +#ifdef Q_WS_X11
@@ -35,7 +35,7 @@ $OpenBSD: patch-src_iconshack_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
  void
  IconShack::LoadIcons()
  {
-@@ -105,6 +132,20 @@ IconShack::LoadIcons()
+@@ -140,6 +167,20 @@ IconShack::LoadIcons()
      maDisabledIcons[MooseEnums::eGreen].load( MooseUtils::dataPath( "icons/user_disabled.png" ) );
      maDisabledIcons[MooseEnums::eOrange].load( MooseUtils::dataPath( "icons/user_disabled.png" ) );
      maDisabledIcons[MooseEnums::eBlack].load( MooseUtils::dataPath( "icons/user_disabled.png" ) );

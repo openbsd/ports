@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libMoose_MooseCommon_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
---- src/libMoose/MooseCommon.cpp.orig	Fri May 21 17:11:55 2010
-+++ src/libMoose/MooseCommon.cpp	Fri May 21 17:14:19 2010
-@@ -43,7 +43,7 @@ namespace MooseUtils
+$OpenBSD: patch-src_libMoose_MooseCommon_cpp,v 1.2 2011/03/30 14:00:48 dcoppa Exp $
+--- src/libMoose/MooseCommon.cpp.orig	Mon Mar 28 17:17:53 2011
++++ src/libMoose/MooseCommon.cpp	Mon Mar 28 17:20:44 2011
+@@ -47,7 +47,7 @@ namespace MooseUtils
  QString
  dataPath( QString file )
  {
@@ -10,7 +10,7 @@ $OpenBSD: patch-src_libMoose_MooseCommon_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcopp
  }
  
  
-@@ -108,7 +108,7 @@ servicePath( QString name )
+@@ -112,7 +112,7 @@ servicePath( QString name )
          // Hack to get it working with VS2005
          dirPath = qApp->applicationDirPath();
      #else
@@ -19,3 +19,12 @@ $OpenBSD: patch-src_libMoose_MooseCommon_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcopp
      #endif
  
      #ifndef QT_NO_DEBUG
+@@ -358,7 +358,7 @@ extensionPaths()
+     // Hack to get it working with VS2005
+     QString path = qApp->applicationDirPath();
+   #else
+-    QString path = qApp->applicationDirPath() + "/extensions";
++    QString path = "${PREFIX}/lib/last.fm/extensions";
+   #endif
+ 
+   #ifndef QT_NO_DEBUG

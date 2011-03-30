@@ -1,12 +1,6 @@
-$OpenBSD: patch-src_playerlistener_cpp,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
-
-XXX THIS IS A HACK
-Our libpthread has bitten me again...
-As a workaround, disable the player listener: luckily, it's 
-kinda useless at the moment.
-
---- src/playerlistener.cpp.orig	Tue May 25 13:22:53 2010
-+++ src/playerlistener.cpp	Tue May 25 13:24:14 2010
+$OpenBSD: patch-src_playerlistener_cpp,v 1.2 2011/03/30 14:00:48 dcoppa Exp $
+--- src/playerlistener.cpp.orig	Mon Mar 28 15:20:33 2011
++++ src/playerlistener.cpp	Mon Mar 28 15:20:36 2011
 @@ -119,6 +119,7 @@ CPlayerListener::run()
  void
  CPlayerListener::RunListener()

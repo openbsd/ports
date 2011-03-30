@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_lastfmapplication_h,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
---- src/lastfmapplication.h.orig	Fri May 21 10:53:52 2010
-+++ src/lastfmapplication.h	Fri May 21 10:54:14 2010
+$OpenBSD: patch-src_lastfmapplication_h,v 1.2 2011/03/30 14:00:48 dcoppa Exp $
+--- src/lastfmapplication.h.orig	Mon Mar 28 15:20:33 2011
++++ src/lastfmapplication.h	Mon Mar 28 15:20:35 2011
 @@ -24,6 +24,8 @@
  #ifndef LAST_FM_APPLICATION_H
  #define LAST_FM_APPLICATION_H

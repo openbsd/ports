@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 13:08:37 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/03/30 14:00:48 dcoppa Exp $
 
 COMMENT =		official Last.fm client
 
-DISTNAME =		last.fm-1.4.2.58240.src
-EXTRACT_SUFX =		.tar.bz2
-PKGNAME =		${DISTNAME:S/.src//}
-REVISION =		0
+VER =			1.5.4.27091
+DISTNAME =		lastfm-${VER}+dfsg
+PKGNAME =		last.fm-${VER}
 
 SHARED_ONLY =		Yes
 
@@ -19,7 +18,7 @@ MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE =		http://www.last.fm/
 
-MASTER_SITES =		${HOMEPAGE:S/www./cdn./}client/src/
+MASTER_SITES =		http://dev.gentoo.org/~hwoarang/distfiles/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -38,14 +37,10 @@ LIB_DEPENDS =		math/fftw3,float \
 			audio/libmad \
 			audio/libsamplerate \
 			audio/portaudio-svn
-RUN_DEPENDS =		devel/desktop-file-utils
-
+RUN_DEPENDS =		devel/desktop-file-utils \
+			devel/xdg-utils
 
 NO_REGRESS =		Yes
-
-CONFIGURE_STYLE =	simple
-
-WRKDIST =		${WRKDIR}/${DISTNAME:S/.src//}
 
 LASTFM_LIBDIR = ${PREFIX}/lib/last.fm
 LASTFM_DATADIR = ${PREFIX}/share/last.fm
@@ -55,12 +50,11 @@ FPLIB = \
 ${WRKBUILD}/bin/libLastFmFingerprint.so.${LIBLastFmFingerprint_VERSION}
 
 pre-patch:
-	cd ${WRKSRC}; perl -i -pe 's/\r$$//' \
-		`find . -type f -name *.h -or -name *.cpp`
+	cd ${WRKSRC}; perl -pi -e "s/\r$$//"\
+	 `find . -type f -name *.h -or -name *.cpp -or -name '*.pro*'`
 
 pre-configure:
 	${SUBST_CMD} \
-	${WRKSRC}/src/container.cpp \
 	${WRKSRC}/src/libFingerprint/fplib/pro_qmake/fplib.pro \
 	${WRKSRC}/src/libFingerprint/libFingerprint.pro \
 	${WRKSRC}/src/libMoose/libMoose.pro \
@@ -70,9 +64,11 @@ pre-configure:
 	${WRKSRC}/src/output/portAudio/portAudio.pro \
 	${WRKSRC}/src/src.pro \
 	${WRKSRC}/src/transcode/mad/mad.pro
-# Use system portaudio.h
-	@rm -f \
-	${WRKSRC}/src/output/portAudio/PortAudio/include/portaudio.h
+
+do-configure:
+	perl -pi -e "s/!!CXXFLAGS!!/${CXXFLAGS}/" \
+		${WRKSRC}/src/libUnicorn/unicorn.pro.inc
+	cd ${WRKDIST} && ${LOCALBASE}/bin/qmake4 -config release
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/last.fm ${PREFIX}/bin/last.fm
@@ -93,12 +89,8 @@ do-install:
 		${LASTFM_DATADIR}/icons/
 	${INSTALL_DATA} ${FILESDIR}/*.png ${LASTFM_DATADIR}/icons/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${FILESDIR}/lastfm.desktop \
-		${PREFIX}/share/applications/
-
-post-install:
-	${SUBST_CMD} ${PREFIX}/share/applications/lastfm.desktop
-	@rm -f \
-	${PREFIX}/share/applications/lastfm.desktop.beforesubst
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
+		-c ${FILESDIR}/lastfm.desktop \
+		${PREFIX}/share/applications/lastfm.desktop
 
 .include <bsd.port.mk>

@@ -1,16 +1,11 @@
-$OpenBSD: patch-LastFM_pro,v 1.1.1.1 2010/05/31 19:37:36 dcoppa Exp $
---- LastFM.pro.orig	Thu May 20 12:20:44 2010
-+++ LastFM.pro	Fri May 21 12:20:16 2010
-@@ -12,11 +12,9 @@ SUBDIRS = src/libUnicorn \
-           src/libFingerprint/ \
-           src \
+$OpenBSD: patch-LastFM_pro,v 1.2 2011/03/30 14:00:48 dcoppa Exp $
+--- LastFM.pro.orig	Wed Mar 30 09:35:04 2011
++++ LastFM.pro	Wed Mar 30 09:36:19 2011
+@@ -14,7 +14,7 @@ SUBDIRS = src/libUnicorn \
            src/httpinput \
--          src/mediadevices/itunes \
            src/mediadevices/ipod \
--          src/Helper \
--          src/transcode/mad 
--          #src/transcode/mpglib
-+          src/transcode/mad \
+           src/transcode/mad \
+-          src/Twiddly
 +          src/output/portAudio
  
  win32 {
