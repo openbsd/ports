@@ -1,6 +1,13 @@
-@comment $OpenBSD: PLIST-af,v 1.3 2008/11/21 00:00:28 martynas Exp $
-mozilla-firefox/extensions/langpack-af@firefox.mozilla.org/
-mozilla-firefox/extensions/langpack-af@firefox.mozilla.org/chrome/
-mozilla-firefox/extensions/langpack-af@firefox.mozilla.org/chrome.manifest
-mozilla-firefox/extensions/langpack-af@firefox.mozilla.org/chrome/af.jar
-mozilla-firefox/extensions/langpack-af@firefox.mozilla.org/install.rdf
+@comment $OpenBSD: PLIST-af,v 1.4 2011/03/30 21:42:39 landry Exp $
+lib/firefox-${V}/
+lib/firefox-${V}/extensions/
+lib/firefox-${V}/extensions/langpack-af@firefox.mozilla.org.xpi
+lib/firefox-${V}/extensions/langpack-en-US@firefox.mozilla.org.xpi
+lib/firefox-${V}/extensions/langpack-en-ZA@firefox.mozilla.org.xpi
+lib/firefox-${V}/extensions/langpack-gd@firefox.mozilla.org.xpi
+lib/firefox-${V}/extensions/langpack-hy-AM@firefox.mozilla.org.xpi
+lib/firefox-${V}/extensions/langpack-lg@firefox.mozilla.org.xpi
+lib/firefox-${V}/extensions/langpack-mai@firefox.mozilla.org.xpi
+lib/firefox-${V}/extensions/langpack-son@firefox.mozilla.org.xpi
+lib/firefox-${V}/extensions/langpack-ta-LK@firefox.mozilla.org.xpi
+lib/firefox-${V}/extensions/langpack-zu@firefox.mozilla.org.xpi

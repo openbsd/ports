@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.61 2011/03/25 14:25:48 landry Exp $
+# $OpenBSD: Makefile,v 1.62 2011/03/30 21:42:38 landry Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
 
 PKG_ARCH=	*
 
-V=		3.6.16
+V=		4.0
 NAME=		firefox-i18n
 PKGNAME=	${NAME}-${V}
 
@@ -23,13 +23,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${V}/linux-i686/xpi/
 
-LANGUAGES=	af ar as be bg bn-BD bn-IN ca cs cy da de el en-GB eo es-AR \
-		es-CL es-ES es-MX et eu fa fi fr fy-NL ga-IE gl gu-IN he \
-		hi-IN hr hu id \
-		is it ja ka kk kn ko ku lt lv mk ml mr nb-NO nl nn-NO \
-		oc or pa-IN pl pt-BR pt-PT rm ro ru si sk sl sq sr sv-SE \
-		ta te th tr uk vi zh-CN zh-TW
-#broken install.rdf: ta-LK
+LANGUAGES=	af ar ast be bg bn-BD bn-IN br ca cs cy da de el en-GB en-US en-ZA eo es-AR \
+		es-CL es-ES es-MX et eu fa fi fr fy-NL ga-IE gd gl gu-IN he \
+		hi-IN hr hu hy-AM id \
+		is it ja kk kn ko ku lg lt lv mai mk ml mr nb-NO nl nn-NO \
+		or pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq sr sv-SE \
+		ta-LK ta te th tr uk vi zh-CN zh-TW zu
 
 BUILD_DEPENDS=	archivers/unzip
 RUN_DEPENDS=	mozilla-firefox-${V}:www/mozilla-firefox
@@ -37,6 +36,7 @@ RUN_DEPENDS=	mozilla-firefox-${V}:www/mozilla-firefox
 DIST_SUBDIR=	${NAME}-${V}
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+EXTRACT_ONLY=
 
 # define one language for the main package
 SUBPACKAGE?=	-en-GB
@@ -46,25 +46,18 @@ MULTI_PACKAGES+=-$i
 DISTFILES+=	$i.xpi
 PKGNAME-$i=	${NAME}-$i-${V}
 COMMENT-$i=	$i language pack for Firefox
-LPACKDIR-$i=	${PREFIX}/mozilla-firefox/extensions/langpack-$i@firefox.mozilla.org
+LPACKDIR-$i=	${PREFIX}/lib/firefox-$V/extensions/langpack-$i@firefox.mozilla.org
 .endfor
 PKGNAME-en-GB=	${NAME}-en-GB-${V}
 
 # use the same for all subpackages
 MESSAGE=	${PKGDIR}/MESSAGE
-
-do-extract:
-.for i in ${LANGUAGES}
-	@mkdir -p ${WRKDIR}/$i
-	@${UNZIP} -oq ${FULLDISTDIR}/$i.xpi -d ${WRKDIR}/$i
-.endfor
+SUBST_VARS=	V
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/firefox-$V/extensions
 .for i in ${LANGUAGES}
-	${INSTALL_DATA_DIR} ${LPACKDIR-$i}/chrome
-	${INSTALL_DATA} ${WRKSRC}/$i/chrome.manifest ${LPACKDIR-$i}
-	${INSTALL_DATA} ${WRKSRC}/$i/install.rdf ${LPACKDIR-$i}
-	${INSTALL_DATA} ${WRKSRC}/$i/chrome/$i.jar ${LPACKDIR-$i}/chrome
+	${INSTALL_DATA} ${FULLDISTDIR}/$i.xpi ${PREFIX}/lib/firefox-$V/extensions/langpack-$i@firefox.mozilla.org.xpi
 .endfor
 
 .include <bsd.port.mk>
