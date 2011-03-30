@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/30 09:27:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/03/30 09:49:04 jasper Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
 DISTNAME=		DevIL-1.7.8
+REVISION=		0
 SHARED_LIBS+=		IL	0.0 # 2.0
 
 CATEGORIES=		graphics devel
@@ -31,8 +32,9 @@ USE_LIBTOOL=		Yes
 AUTOCONF_VERSION=	2.61
 CONFIGURE_STYLE=	autoconf gnu
 CONFIGURE_ARGS+=	--with-squish=no \
-			--with-examples=no \
 			--with-zlib=yes
+# This would only install three binary examples, we'll install it manually.
+CONFIGURE_ARGS+=	--with-examples=no
 CONFIGURE_ENV=  	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng/ -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lm -lz"
 
@@ -47,5 +49,9 @@ post-extract:
 
 post-configure:
 	chmod +x ${WRKDIST}/build-aux/install-sh
+
+post-install:
+	@cd ${WRKSRC}; tar cf - examples | tar xf - -C \
+		${PREFIX}/share/devil/examples/
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/30 09:27:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/30 09:49:04 jasper Exp $
 %%SHARED%%
 include/IL/
 include/IL/devil_cpp_wrapper.hpp
@@ -10,3 +10,37 @@ lib/pkgconfig/
 lib/pkgconfig/IL.pc
 share/devil/
 share/devil/examples/
+share/devil/examples/examples/
+share/devil/examples/examples/allegro_example/
+share/devil/examples/examples/allegro_example/allegtest.c
+share/devil/examples/examples/animation_example/
+share/devil/examples/examples/animation_example/AnimTest.cpp
+share/devil/examples/examples/animation_example/AnimTest.rc
+share/devil/examples/examples/animation_example/OpenIL.ico
+share/devil/examples/examples/animation_example/resource.h
+share/devil/examples/examples/cpp_wrapper_example/
+share/devil/examples/examples/cpp_wrapper_example/il_wrap.cpp
+share/devil/examples/examples/direct3d_example/
+share/devil/examples/examples/direct3d_example/d3dtest.cpp
+share/devil/examples/examples/opengl_example/
+share/devil/examples/examples/opengl_example/gltest.c
+share/devil/examples/examples/opengl_example/gltest.h
+share/devil/examples/examples/override_example/
+share/devil/examples/examples/override_example/iotest.c
+share/devil/examples/examples/register_read_example/
+share/devil/examples/examples/register_read_example/readtest.c
+share/devil/examples/examples/sdl_example/
+share/devil/examples/examples/sdl_example/sdl_test.c
+share/devil/examples/examples/simple_example/
+share/devil/examples/examples/simple_example/simple.c
+share/devil/examples/examples/volume_example/
+share/devil/examples/examples/volume_example/3dtest.c
+share/devil/examples/examples/volume_example/3dtest.h
+share/devil/examples/examples/windows_example/
+share/devil/examples/examples/windows_example/BatchConv.cpp
+share/devil/examples/examples/windows_example/WindowsTest.cpp
+share/devil/examples/examples/windows_example/WindowsTest.h
+share/devil/examples/examples/windows_example/WindowsTest.rc
+share/devil/examples/examples/windows_example/resource.h
+share/devil/examples/examples/windows_example/resources/
+share/devil/examples/examples/windows_example/resources/OpenIL.ico
