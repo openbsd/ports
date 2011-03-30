@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/09 12:11:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/03/30 09:33:56 jasper Exp $
 
 COMMENT=	implementation of Gadu-Gadu IM protocol
 
-DISTNAME=	libgadu-1.10.0
+DISTNAME=	libgadu-1.10.1
 EPOCH =		0
 CATEGORIES=	net
-MASTER_SITES=	${HOMEPAGE}files/
+MASTER_SITES=	${HOMEPAGE}/files/
 
 SHARED_LIBS=	gadu	5.1
 
