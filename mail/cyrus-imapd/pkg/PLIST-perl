@@ -1,10 +1,7 @@
-@comment $OpenBSD: PLIST-perl,v 1.5 2010/10/29 09:26:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST-perl,v 1.6 2011/03/30 16:10:28 ajacoutot Exp $
 bin/cyradm
 bin/installsieve
 bin/sieveshell
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/
-@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/perllocal.pod
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/Cyrus/IMAP/
@@ -23,6 +20,9 @@ libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/managesieve.bs
 libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/Cyrus/SIEVE/managesieve/managesieve.so
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/
+@comment libdata/perl5/${MACHINE_ARCH}-openbsd/5.12.2/perllocal.pod
 @man man/man1/cyradm.1
 @man man/man1/installsieve.1
 @man man/man1/sieveshell.1

@@ -1,5 +1,5 @@
---- configure.orig	Mon Dec 20 14:20:42 2010
-+++ configure	Mon Dec 20 14:55:45 2010
+--- configure.orig	Wed Mar 30 15:53:09 2011
++++ configure	Wed Mar 30 17:05:07 2011
 @@ -5051,9 +5051,7 @@ CFLAGS=$save_CFLAGS
  fi
  
@@ -11,7 +11,7 @@
  fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_fpic" >&5
  $as_echo "$ac_cv_fpic" >&6; }
-@@ -6420,7 +6418,7 @@ fi
+@@ -6444,7 +6442,7 @@ fi
  
  
  
@@ -20,7 +20,7 @@
    CPPFLAGS="${BDB_INCADD} ${CPPFLAGS}"
  
    CYRUSDB_OBJS="$CYRUSDB_OBJS cyrusdb_berkeley.o"
-@@ -9574,7 +9572,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+set}" = set; th
+@@ -9598,7 +9596,7 @@ if test "${ac_cv_lib_gssapi_gss_unwrap+set}" = set; th
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -29,7 +29,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -9876,8 +9874,8 @@ fi
+@@ -9900,8 +9898,8 @@ fi
      GSSAPIBASE_STATIC_LIBS="$GSSAPIBASE_LIBS $gssapi_dir/libgssapi_krb5.a $gssapi_dir/libkrb5.a $gssapi_dir/libk5crypto.a $gssapi_dir/libcom_err.a ${K5SUPSTATIC}"
    elif test "$gss_impl" = "heimdal"; then
      CPPFLAGS="$CPPFLAGS -DKRB5_HEIMDAL"
@@ -40,7 +40,7 @@
    elif test "$gss_impl" = "cybersafe03"; then
  # Version of CyberSafe with two libraries
      CPPFLAGS="$CPPFLAGS -D$platform -I${gssapi}/appsec-sdk/include"
-@@ -10445,7 +10443,7 @@ elif test "${with_perl}" != "no"; then
+@@ -10469,7 +10467,7 @@ elif test "${with_perl}" != "no"; then
      PERL_SUBDIRS="imap"
      PERL="${with_perl}"
      case "${target_os}" in
@@ -49,7 +49,7 @@
              { $as_echo "$as_me:${as_lineno-$LINENO}: checking for perl cccdlflags needed on \"${target_os}\"" >&5
  $as_echo_n "checking for perl cccdlflags needed on \"${target_os}\"... " >&6; }
              eval `${PERL} -V:cccdlflags`
-@@ -10508,6 +10506,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -10532,6 +10530,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  extern "C"
  #endif
  char request_init ();
