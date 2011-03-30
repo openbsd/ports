@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/20 15:35:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/03/30 07:59:59 ajacoutot Exp $
 @conflict gtk2mm-<2.22
 %%SHARED%%
 include/atkmm-1.6/
@@ -48,6 +48,10 @@ include/atkmm-1.6/atkmm/wrap_init.h
 lib/atkmm-1.6/
 lib/atkmm-1.6/include/
 lib/atkmm-1.6/include/atkmmconfig.h
+lib/atkmm-1.6/proc/
+lib/atkmm-1.6/proc/m4/
+lib/atkmm-1.6/proc/m4/convert.m4
+lib/atkmm-1.6/proc/m4/convert_atk.m4
 lib/libatkmm-1.6.a
 lib/libatkmm-1.6.la
 lib/pkgconfig/
