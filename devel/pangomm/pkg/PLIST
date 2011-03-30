@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/03/07 19:23:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/03/30 08:05:05 ajacoutot Exp $
 @conflict gtk2mm-<2.14
 %%SHARED%%
 include/pangomm-1.4/
@@ -63,6 +63,10 @@ lib/libpangomm-1.4.la
 lib/pangomm-1.4/
 lib/pangomm-1.4/include/
 lib/pangomm-1.4/include/pangommconfig.h
+lib/pangomm-1.4/proc/
+lib/pangomm-1.4/proc/m4/
+lib/pangomm-1.4/proc/m4/convert.m4
+lib/pangomm-1.4/proc/m4/convert_pango.m4
 lib/pkgconfig/
 lib/pkgconfig/pangomm-1.4.pc
 share/devhelp/
