@@ -1,7 +1,7 @@
-$OpenBSD: patch-xpcom_io_nsAppFileLocationProvider_cpp,v 1.1 2010/04/28 06:56:38 landry Exp $
---- xpcom/io/nsAppFileLocationProvider.cpp.orig	Tue Apr 27 23:13:32 2010
-+++ xpcom/io/nsAppFileLocationProvider.cpp	Tue Apr 27 23:13:56 2010
-@@ -231,12 +231,7 @@ nsAppFileLocationProvider::GetFile(const char *prop, P
+$OpenBSD: patch-xpcom_io_nsAppFileLocationProvider_cpp,v 1.2 2011/03/30 21:39:14 landry Exp $
+--- xpcom/io/nsAppFileLocationProvider.cpp.orig	Wed Jul 21 02:53:09 2010
++++ xpcom/io/nsAppFileLocationProvider.cpp	Sun Aug  1 12:58:35 2010
+@@ -238,12 +238,7 @@ nsAppFileLocationProvider::GetFile(const char *prop, P
      }
  #ifdef XP_UNIX
      else if (nsCRT::strcmp(prop, NS_SYSTEM_PLUGINS_DIR) == 0) {

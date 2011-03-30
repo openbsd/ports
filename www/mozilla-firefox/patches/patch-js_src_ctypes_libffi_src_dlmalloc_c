@@ -1,7 +1,7 @@
-$OpenBSD: patch-js_ctypes_libffi_src_dlmalloc_c,v 1.1 2010/04/26 19:55:58 landry Exp $
---- js/ctypes/libffi/src/dlmalloc.c.orig	Thu Jan 21 05:30:17 2010
-+++ js/ctypes/libffi/src/dlmalloc.c	Sun Jan 24 00:27:31 2010
-@@ -2463,17 +2463,15 @@ static int init_mparams(void) {
+$OpenBSD: patch-js_src_ctypes_libffi_src_dlmalloc_c,v 1.1 2011/03/30 21:39:14 landry Exp $
+--- js/src/ctypes/libffi/src/dlmalloc.c.orig	Sun Aug  1 13:16:05 2010
++++ js/src/ctypes/libffi/src/dlmalloc.c	Sun Aug  1 13:16:17 2010
+@@ -2517,17 +2517,15 @@ static int init_mparams(void) {
  
  #if (FOOTERS && !INSECURE)
      {

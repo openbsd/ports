@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_media_nsAudioStream_cpp,v 1.1 2010/04/26 19:55:58 landry Exp $
---- content/media/nsAudioStream.cpp.orig	Thu Jan 21 05:29:59 2010
-+++ content/media/nsAudioStream.cpp	Thu Jan 21 13:49:36 2010
-@@ -246,7 +246,7 @@ float nsAudioStream::GetPosition()
+$OpenBSD: patch-content_media_nsAudioStream_cpp,v 1.2 2011/03/30 21:39:14 landry Exp $
+--- content/media/nsAudioStream.cpp.orig	Wed Feb 23 06:53:27 2011
++++ content/media/nsAudioStream.cpp	Sat Feb 26 09:25:34 2011
+@@ -570,7 +570,7 @@ PRInt64 nsAudioStreamLocal::GetSampleOffset()
  #if defined(XP_WIN)
    positionType = SA_POSITION_WRITE_HARDWARE;
  #endif
@@ -9,4 +9,4 @@ $OpenBSD: patch-content_media_nsAudioStream_cpp,v 1.1 2010/04/26 19:55:58 landry
 +  int64_t position = 0;
    if (sa_stream_get_position(static_cast<sa_stream_t*>(mAudioHandle),
                               positionType, &position) == SA_SUCCESS) {
-     return (position / float(mRate) / mChannels / sizeof(short));
+     return position / sizeof(short);

@@ -1,0 +1,14 @@
+$OpenBSD: patch-gfx_thebes_GLContext_h,v 1.1 2011/03/30 21:39:14 landry Exp $
+Allow to build with --enable-debug
+--- gfx/thebes/GLContext.h.orig	Thu Feb  3 21:11:48 2011
++++ gfx/thebes/GLContext.h	Mon Feb 14 20:41:03 2011
+@@ -42,6 +42,9 @@
+ #define GLCONTEXT_H_
+ 
+ #include <stdio.h>
++#if defined(XP_UNIX)
++#include <stdint.h>
++#endif
+ #include <string.h>
+ #include <ctype.h>
+ 

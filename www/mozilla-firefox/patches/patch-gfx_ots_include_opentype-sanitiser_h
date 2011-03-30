@@ -1,8 +1,8 @@
-$OpenBSD: patch-gfx_ots_include_opentype-sanitiser_h,v 1.1 2011/03/24 11:41:11 landry Exp $
+$OpenBSD: patch-gfx_ots_include_opentype-sanitiser_h,v 1.2 2011/03/30 21:39:14 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=643137
---- gfx/ots/include/opentype-sanitiser.h.orig	Fri Mar 18 00:02:27 2011
-+++ gfx/ots/include/opentype-sanitiser.h	Fri Mar 18 00:02:35 2011
-@@ -64,8 +64,10 @@ class OTSStream {
+--- gfx/ots/include/opentype-sanitiser.h.orig	Thu Mar 24 11:31:50 2011
++++ gfx/ots/include/opentype-sanitiser.h	Thu Mar 24 11:32:45 2011
+@@ -68,8 +68,10 @@ class OTSStream {
      }
  
      while (length >= 4) {

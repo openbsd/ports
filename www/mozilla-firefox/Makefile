@@ -1,21 +1,22 @@
-# $OpenBSD: Makefile,v 1.172 2011/03/24 11:41:11 landry Exp $
+# $OpenBSD: Makefile,v 1.173 2011/03/30 21:39:14 landry Exp $
 
 COMMENT =	Mozilla web browser
+BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
 # Don't forget to bump www/firefox-i18n after updates.
-# Don't forget to update devel/xulrunner/1.9 if patches changes.
+# Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	3.6.16
-MOZILLA_BRANCH =	1.9.2
+MOZILLA_VERSION =	4.0
+MOZILLA_BRANCH =	2.0
 MOZILLA_PROJECT =	mozilla-firefox
 MOZILLA_CODENAME =	browser
-REVISION =	0
 
-SO_VERSION =	22.2
+SO_VERSION =	23.0
+NSS_SO_VERSION =	27.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
-MOZILLA_LIBS =	browsercomps browserdirprovider imgicon mozjs \
-		xpcom xul nullplugin unixprintplugin
+MOZILLA_LIBS =	browsercomps mozalloc \
+		xpcom xul
 
 CATEGORIES =	www
 
@@ -24,9 +25,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-# needed for convert xpm icon to png
-BUILD_DEPENDS +=	graphics/netpbm
 
 # lots of logic in mozilla.port.mk
 MODULES =	www/mozilla devel/gettext lang/python
@@ -38,29 +36,27 @@ USE_GROFF =	Yes
 NO_REGRESS =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
-CONFIGURE_ARGS +=	--enable-official-branding
+CONFIGURE_ARGS +=	--enable-official-branding --disable-install-strip
+CONFIGURE_ARGS +=	--with-system-libevent=/usr/
+CONFIGURE_ARGS +=	--with-system-zlib=/usr/ --with-system-bz2=${LOCALBASE}
+WANTLIB +=	event
+
 # --with-system-png=${LOCALBASE}
 # no system png : apng support not bundled in
 
-MOZILLA_DATADIRS =	chrome components defaults dictionaries extensions \
-			greprefs icons modules plugins res searchplugins
-
 MOZILLA_AUTOCONF_DIRS +=	js/src
-MOZILLA_SUBST_FILES +=		config/autoconf.mk.in
+MOZILLA_SUBST_FILES +=		config/autoconf.mk.in services/crypto/modules/WeaveCrypto.js
+
+SUBST_VARS +=	MOZILLA_VERSION NSS_SO_VERSION
 
 post-install:
-	${INSTALL_DATA} ${FILESDIR}/browserconfig.properties ${MOB}/LICENSE ${MOB}/blocklist.xml ${MOZ}
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/mozilla-firefox.1 \
 		${PREFIX}/man/man1/mozilla-firefox.1
-	ln -f ${PREFIX}/man/man1/mozilla-firefox.1 ${PREFIX}/man/man1/firefox.1
-	ln -f ${PREFIX}/bin/firefox ${PREFIX}/bin/mozilla-firefox
-	ln -f ${MOZ}/firefox-bin ${MOZ}/mozilla-firefox-bin
-	# create an xpm icon from the png one as nsWindow::SetWindowIconList
-	# fails to load png icons : confuses the png pixbuf loader from gtk, which
-	# differs from the libpng bundled in firefox
-	cd ${MOZ}/chrome/icons/default/ && \
-		${LOCALBASE}/bin/pngtopnm -alpha default48.png > ${WRKSRC}/alpha.pgm && \
-		${LOCALBASE}/bin/pngtopnm default48.png | \
-		${LOCALBASE}/bin/ppmtoxpm -alphamask=${WRKSRC}/alpha.pgm > default.xpm
+	cd ${PREFIX}/man/man1/ && ln -sf mozilla-firefox.1 firefox.1
+	cd ${PREFIX}/bin/ && ln -sf firefox mozilla-firefox
+	# install desktop file
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${_MOZ_PROJECT_SHORT}.desktop \
+		${PREFIX}/share/applications/${_MOZ_PROJECT_SHORT}.desktop ; \
 
 .include <bsd.port.mk>

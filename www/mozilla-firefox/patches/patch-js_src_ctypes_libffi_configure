@@ -1,8 +1,7 @@
-$OpenBSD: patch-js_ctypes_libffi_configure,v 1.1 2010/04/26 19:55:58 landry Exp $
-backported from devel/libffi/patches/patch-configure
---- js/ctypes/libffi/configure.orig	Tue Mar 30 09:45:39 2010
-+++ js/ctypes/libffi/configure	Tue Mar 30 09:54:29 2010
-@@ -20976,7 +20976,7 @@ case "$host" in
+$OpenBSD: patch-js_src_ctypes_libffi_configure,v 1.1 2011/03/30 21:39:14 landry Exp $
+--- js/src/ctypes/libffi/configure.orig	Wed Aug 18 21:20:57 2010
++++ js/src/ctypes/libffi/configure	Sat Sep  4 11:20:37 2010
+@@ -11212,7 +11212,7 @@ case "$host" in
  	TARGET=FRV; TARGETDIR=frv
  	;;
  
@@ -11,16 +10,16 @@ backported from devel/libffi/patches/patch-configure
  	TARGET=PA_LINUX; TARGETDIR=pa
  	;;
    hppa*64-*-hpux*)
-@@ -21017,7 +21017,7 @@ case "$host" in
+@@ -11255,7 +11255,7 @@ case "$host" in
    mips-sgi-irix5.* | mips-sgi-irix6.*)
  	TARGET=MIPS; TARGETDIR=mips
  	;;
 -  mips*-*-linux*)
 +  mips*-*-linux* | mips*-*-openbsd* )
+ 	# Support 128-bit long double for NewABI.
+ 	HAVE_LONG_DOUBLE='defined(__mips64)'
  	TARGET=MIPS; TARGETDIR=mips
- 	;;
- 
-@@ -21033,7 +21033,7 @@ case "$host" in
+@@ -11277,7 +11277,7 @@ case "$host" in
    powerpc-*-aix* | rs6000-*-aix*)
  	TARGET=POWERPC_AIX; TARGETDIR=powerpc
  	;;

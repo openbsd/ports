@@ -1,0 +1,13 @@
+$OpenBSD: patch-content_media_webm_nsWebMReader_cpp,v 1.1 2011/03/30 21:39:14 landry Exp $
+nsWebMReader.cpp:704: error: invalid conversion from 'PRUint64*' to 'uint64_t*'
+--- content/media/webm/nsWebMReader.cpp.orig	Thu Feb  3 21:11:41 2011
++++ content/media/webm/nsWebMReader.cpp	Tue Feb  8 22:37:33 2011
+@@ -774,7 +774,7 @@ nsresult nsWebMReader::GetBuffered(nsTimeRanges* aBuff
+   NS_ASSERTION(NS_IsMainThread(), "Should be on main thread.");
+   nsMediaStream* stream = mDecoder->GetCurrentStream();
+ 
+-  PRUint64 timecodeScale;
++  uint64_t timecodeScale;
+   if (!mContext || nestegg_tstamp_scale(mContext, &timecodeScale) == -1) {
+     return NS_OK;
+   }

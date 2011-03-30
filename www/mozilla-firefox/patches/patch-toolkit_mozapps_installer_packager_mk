@@ -1,0 +1,13 @@
+$OpenBSD: patch-toolkit_mozapps_installer_packager_mk,v 1.1 2011/03/30 21:39:14 landry Exp $
+install headers/idl/sdk libs only if xulrunner
+--- toolkit/mozapps/installer/packager.mk.orig	Wed Feb 23 06:53:52 2011
++++ toolkit/mozapps/installer/packager.mk	Sat Feb 26 09:25:37 2011
+@@ -625,7 +625,7 @@ endif
+ 	$(NSINSTALL) -D $(DESTDIR)$(bindir)
+ 	$(RM) -f $(DESTDIR)$(bindir)/$(MOZ_APP_NAME)
+ 	ln -s $(installdir)/$(MOZ_APP_NAME) $(DESTDIR)$(bindir)
+-ifdef INSTALL_SDK # Here comes the hard part
++ifeq ($(MOZ_APP_NAME),xulrunner)
+ 	$(NSINSTALL) -D $(DESTDIR)$(includedir)
+ 	(cd $(DIST)/include && tar $(TAR_CREATE_FLAGS) - .) | \
+ 	  (cd $(DESTDIR)$(includedir) && tar -xf -)

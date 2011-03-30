@@ -1,7 +1,7 @@
-$OpenBSD: patch-js_src_nanojit_NativeSparc_cpp,v 1.1 2010/04/26 19:55:58 landry Exp $
---- js/src/nanojit/NativeSparc.cpp.orig	Wed Jan  6 05:35:17 2010
-+++ js/src/nanojit/NativeSparc.cpp	Sun Jan 10 17:47:27 2010
-@@ -38,6 +38,7 @@
+$OpenBSD: patch-js_src_nanojit_NativeSparc_cpp,v 1.2 2011/03/30 21:39:14 landry Exp $
+--- js/src/nanojit/NativeSparc.cpp.orig	Thu Nov  4 21:05:50 2010
++++ js/src/nanojit/NativeSparc.cpp	Sat Nov 13 11:56:34 2010
+@@ -39,6 +39,7 @@
   *
   * ***** END LICENSE BLOCK ***** */
  

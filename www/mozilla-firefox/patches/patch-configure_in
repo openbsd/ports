@@ -1,16 +1,16 @@
-$OpenBSD: patch-configure_in,v 1.18 2010/06/28 21:24:22 landry Exp $
---- configure.in.orig	Fri Jun 11 22:41:30 2010
-+++ configure.in	Thu Jun 24 10:08:43 2010
-@@ -1059,7 +1059,7 @@ MOZ_PNG_LIBS='$(call EXPAND_LIBNAME_PATH,mozpng,$(DEPT
- 
- MOZ_JS_LIBS='-L$(LIBXUL_DIST)/bin -lmozjs'
- DYNAMIC_XPCOM_LIBS='-L$(LIBXUL_DIST)/bin -lxpcom -lxpcom_core'
+$OpenBSD: patch-configure_in,v 1.19 2011/03/30 21:39:14 landry Exp $
+--- configure.in.orig	Thu Mar  3 23:11:21 2011
++++ configure.in	Thu Mar 10 15:39:57 2011
+@@ -1229,7 +1229,7 @@ MOZ_PNG_LIBS='$(call EXPAND_LIBNAME_PATH,mozpng,$(DEPT
+ MOZ_JS_STATIC_LIBS='-L$(LIBXUL_DIST)/bin -ljs_static'
+ MOZ_JS_SHARED_LIBS='-L$(LIBXUL_DIST)/bin -lmozjs'
+ DYNAMIC_XPCOM_LIBS='-L$(LIBXUL_DIST)/bin -lxpcom -lxpcom_core -lmozalloc'
 -MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(prefix)/lib'
 +MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(prefix)/lib -L$(LIBXUL_DIST)/bin'
- XPCOM_FROZEN_LDOPTS='-L$(LIBXUL_DIST)/bin -lxpcom'
+ XPCOM_FROZEN_LDOPTS='-L$(LIBXUL_DIST)/bin -lxpcom -lmozalloc'
  LIBXUL_LIBS='$(XPCOM_FROZEN_LDOPTS) -lxul'
  XPCOM_GLUE_LDOPTS='$(LIBXUL_DIST)/lib/$(LIB_PREFIX)xpcomglue_s.$(LIB_SUFFIX) $(XPCOM_FROZEN_LDOPTS)'
-@@ -2403,7 +2403,7 @@ case "$target" in
+@@ -2676,7 +2676,7 @@ ia64*-hpux*)
  	;;
  
  *-openbsd*)
@@ -19,16 +19,28 @@ $OpenBSD: patch-configure_in,v 1.18 2010/06/28 21:24:22 landry Exp $
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -4132,9 +4132,9 @@ AC_CACHE_CHECK(for __thread keyword for TLS variables,
-                             ac_cv_thread_keyword=yes,
-                             ac_cv_thread_keyword=no)])
- LDFLAGS=$_SAVE_LDFLAGS
--if test "$ac_cv_thread_keyword" = yes; then
--  AC_DEFINE(HAVE_THREAD_TLS_KEYWORD)
--fi
-+dnl if test "$ac_cv_thread_keyword" = yes; then
-+dnl   AC_DEFINE(HAVE_THREAD_TLS_KEYWORD)
-+dnl fi
+@@ -4524,7 +4524,7 @@ if test "$ac_cv_thread_keyword" = yes; then
+       :
+       ;;
+     *)
+-      AC_DEFINE(HAVE_THREAD_TLS_KEYWORD)
++dnl      AC_DEFINE(HAVE_THREAD_TLS_KEYWORD)
+       ;;
+   esac
+ fi
+@@ -5791,14 +5791,7 @@ dnl ==================================================
  
- dnl End of C++ language/feature checks
- AC_LANG_C
+ # The GNOME component is built if one of 
+ # gnome-vfs, gio, gconf or libnotify is available.
+-if test "$MOZ_ENABLE_GCONF" -o \
+-   "$MOZ_ENABLE_GNOMEVFS" -o \
+-   "$MOZ_ENABLE_GIO" -o \
+-   "$MOZ_ENABLE_LIBNOTIFY"; then
+-    MOZ_ENABLE_GNOME_COMPONENT=1
+-else
+-    MOZ_ENABLE_GNOME_COMPONENT=
+-fi
++MOZ_ENABLE_GNOME_COMPONENT=
+ AC_SUBST(MOZ_ENABLE_GNOME_COMPONENT)
+ 
+ dnl ========================================================

@@ -1,8 +1,8 @@
-$OpenBSD: patch-browser_app_profile_firefox_js,v 1.4 2010/04/26 19:55:58 landry Exp $
---- browser/app/profile/firefox.js.orig	Tue Mar 16 10:53:45 2010
-+++ browser/app/profile/firefox.js	Tue Mar 30 23:51:47 2010
-@@ -100,7 +100,7 @@ pref("app.update.timer", 600000);
- // firefox-branding.js
+$OpenBSD: patch-browser_app_profile_firefox_js,v 1.5 2011/03/30 21:39:14 landry Exp $
+--- browser/app/profile/firefox.js.orig	Wed Feb 23 06:53:25 2011
++++ browser/app/profile/firefox.js	Sat Feb 26 09:25:33 2011
+@@ -137,7 +137,7 @@ pref("app.update.certs.2.issuerName", "CN=Thawte SSL C
+ pref("app.update.certs.2.commonName", "aus3.mozilla.org");
  
  // Whether or not app updates are enabled
 -pref("app.update.enabled", true);
@@ -10,7 +10,7 @@ $OpenBSD: patch-browser_app_profile_firefox_js,v 1.4 2010/04/26 19:55:58 landry 
  
  // This preference turns on app.update.mode and allows automatic download and
  // install to take place. We use a separate boolean toggle for this to make
-@@ -573,7 +573,7 @@ pref("plugin.default_plugin_disabled", true);
+@@ -589,7 +589,7 @@ pref("accessibility.typeaheadfind.flashBar", 1);
  pref("pfs.datasource.url", "https://pfs.mozilla.org/plugins/PluginFinderService.php?mimetype=%PLUGIN_MIMETYPE%&appID=%APP_ID%&appVersion=%APP_VERSION%&clientOS=%CLIENT_OS%&chromeLocale=%CHROME_LOCALE%&appRelease=%APP_RELEASE%");
  
  // by default we show an infobar message when pages require plugins the user has not installed, or are outdated
@@ -18,8 +18,8 @@ $OpenBSD: patch-browser_app_profile_firefox_js,v 1.4 2010/04/26 19:55:58 landry 
 +pref("plugins.hide_infobar_for_missing_plugin", true);
  pref("plugins.hide_infobar_for_outdated_plugin", false);
  
- pref("plugins.update.url", "https://www.mozilla.com/%LOCALE%/plugincheck/");
-@@ -692,10 +692,10 @@ pref("gecko.handlerService.allowRegisterFromDifferentH
+ #ifdef XP_MACOSX
+@@ -712,10 +712,10 @@ pref("gecko.handlerService.allowRegisterFromDifferentH
  
  #ifdef MOZ_SAFE_BROWSING
  // Safe browsing does nothing unless this pref is set
@@ -32,7 +32,7 @@ $OpenBSD: patch-browser_app_profile_firefox_js,v 1.4 2010/04/26 19:55:58 landry 
  
  // Non-enhanced mode (local url lists) URL list to check for updates
  pref("browser.safebrowsing.provider.0.updateURL", "http://safebrowsing.clients.google.com/safebrowsing/downloads?client={moz:client}&appver={moz:version}&pver=2.2");
-@@ -758,10 +758,8 @@ pref("browser.EULA.version", 3);
+@@ -777,10 +777,8 @@ pref("browser.EULA.version", 3);
  pref("browser.rights.version", 3);
  pref("browser.rights.3.shown", false);
  

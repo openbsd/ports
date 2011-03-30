@@ -1,12 +1,12 @@
-$OpenBSD: patch-build_unix_run-mozilla_sh,v 1.1 2010/10/27 12:56:28 landry Exp $
+$OpenBSD: patch-build_unix_run-mozilla_sh,v 1.2 2011/03/30 21:39:14 landry Exp $
 find our gdb by default
---- build/unix/run-mozilla.sh.orig	Wed Oct 27 12:58:19 2010
-+++ build/unix/run-mozilla.sh	Wed Oct 27 12:58:41 2010
-@@ -105,25 +105,7 @@ moz_test_binary()
+--- build/unix/run-mozilla.sh.orig	Thu Nov  4 21:05:18 2010
++++ build/unix/run-mozilla.sh	Sat Nov 13 12:00:19 2010
+@@ -103,25 +103,7 @@ moz_test_binary()
  ##########################################################################
  moz_get_debugger()
  {
--	debuggers="ddd gdb dbx bdb"
+-	debuggers="ddd gdb dbx bdb native-gdb"
 -	debugger="notfound"
 -	done="no"
 -	for d in $debuggers
