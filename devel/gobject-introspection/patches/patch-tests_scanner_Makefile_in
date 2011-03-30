@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_scanner_Makefile_in,v 1.7 2011/03/02 06:35:23 jasper Exp $
---- tests/scanner/Makefile.in.orig	Wed Feb 23 16:27:05 2011
-+++ tests/scanner/Makefile.in	Wed Feb 23 16:49:46 2011
-@@ -396,7 +396,7 @@ _gir_includes = $(foreach include,$($(_gir_name)_INCLU
+$OpenBSD: patch-tests_scanner_Makefile_in,v 1.8 2011/03/30 17:53:30 jasper Exp $
+--- tests/scanner/Makefile.in.orig	Sat Mar 26 00:00:22 2011
++++ tests/scanner/Makefile.in	Wed Mar 30 19:29:09 2011
+@@ -401,7 +401,7 @@ _gir_includes = $(foreach include,$($(_gir_name)_INCLU
  _gir_export_packages = $(foreach pkg,$($(_gir_name)_EXPORT_PACKAGES),--pkg-export=$(pkg))
  
  # Reuse the LIBTOOL variable from by automake if it's set

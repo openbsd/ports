@@ -1,11 +1,11 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2011/03/02 06:35:23 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.5 2011/03/30 17:53:29 jasper Exp $
 
 Too much libtool abuse going on in tests/ needs to be sorted out
 first before entering again.
 
---- Makefile.in.orig	Wed Feb 23 16:27:06 2011
-+++ Makefile.in	Wed Feb 23 16:49:46 2011
-@@ -539,7 +539,7 @@ oldincludedir = @oldincludedir@
+--- Makefile.in.orig	Sat Mar 26 01:39:21 2011
++++ Makefile.in	Wed Mar 30 19:29:09 2011
+@@ -542,7 +542,7 @@ oldincludedir = @oldincludedir@
  pdfdir = @pdfdir@
  
  # Python module
@@ -14,7 +14,7 @@ first before entering again.
  pkgpythondir = @pkgpythondir@
  prefix = @prefix@
  program_transform_name = @program_transform_name@
-@@ -613,7 +613,7 @@ _gir_includes = $(foreach include,$($(_gir_name)_INCLU
+@@ -617,7 +617,7 @@ _gir_includes = $(foreach include,$($(_gir_name)_INCLU
  _gir_export_packages = $(foreach pkg,$($(_gir_name)_EXPORT_PACKAGES),--pkg-export=$(pkg))
  
  # Reuse the LIBTOOL variable from by automake if it's set
@@ -23,7 +23,7 @@ first before entering again.
  
  # Macros for AM_SILENT_RULES prettiness
  _gir_verbosity = $(if $(AM_DEFAULT_VERBOSITY),$(AM_DEFAULT_VERBOSITY),1)
-@@ -1004,7 +1004,7 @@ GCOVSOURCES = \
+@@ -1008,7 +1008,7 @@ GCOVSOURCES = \
  	$(g_ir_generate_SOURCES)
  
  ACLOCAL_AMFLAGS = -I m4
@@ -32,7 +32,7 @@ first before entering again.
  DIST_SUBDIRS = m4 $(SUBDIRS)
  DISTCHECK_CONFIGURE_FLAGS = --enable-gtk-doc
  pkgconfigdir = $(libdir)/pkgconfig
-@@ -2703,6 +2703,7 @@ $(1): $$($(_gir_name)_FILES)
+@@ -2705,6 +2705,7 @@ $(1): $$($(_gir_name)_FILES)
  	  $(_gir_libtool) \
  	  $(_gir_packages) \
  	  $(_gir_includes) \
