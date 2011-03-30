@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/28 18:19:28 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/30 19:54:29 jasper Exp $
 @bin bin/node
-bin/node-repl
 bin/node-waf
 include/node/
 include/node/config.h
@@ -12,9 +11,13 @@ include/node/node_events.h
 include/node/node_object_wrap.h
 include/node/node_version.h
 include/node/v8-debug.h
+include/node/v8-preparser.h
 include/node/v8-profiler.h
+include/node/v8-testing.h
 include/node/v8.h
+include/node/v8stdint.h
 lib/node/
 lib/node/wafadmin/
 lib/node/wafadmin/Node.py
+lib/pkgconfig/nodejs.pc
 @man man/man1/node.1

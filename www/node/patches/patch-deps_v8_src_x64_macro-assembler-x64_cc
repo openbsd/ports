@@ -1,0 +1,124 @@
+$OpenBSD: patch-deps_v8_src_x64_macro-assembler-x64_cc,v 1.1 2011/03/30 19:54:29 jasper Exp $
+--- deps/v8/src/x64/macro-assembler-x64.cc.orig	Sat Mar 26 09:48:02 2011
++++ deps/v8/src/x64/macro-assembler-x64.cc	Wed Mar 30 21:22:01 2011
+@@ -111,7 +111,7 @@ void MacroAssembler::RecordWrite(Register object,
+   ASSERT(!object.is(rsi) && !value.is(rsi) && !index.is(rsi));
+ 
+   // First, check if a write barrier is even needed. The tests below
+-  // catch stores of Smis and stores into young gen.
++  // catch stores of smis and stores into young gen.
+   Label done;
+   JumpIfSmi(value, &done);
+ 
+@@ -140,7 +140,7 @@ void MacroAssembler::RecordWrite(Register object,
+   ASSERT(!object.is(rsi) && !value.is(rsi) && !address.is(rsi));
+ 
+   // First, check if a write barrier is even needed. The tests below
+-  // catch stores of Smis and stores into young gen.
++  // catch stores of smis and stores into young gen.
+   Label done;
+   JumpIfSmi(value, &done);
+ 
+@@ -824,12 +824,26 @@ void MacroAssembler::SmiTest(Register src) {
+ }
+ 
+ 
+-void MacroAssembler::SmiCompare(Register dst, Register src) {
+-  cmpq(dst, src);
++void MacroAssembler::SmiCompare(Register smi1, Register smi2) {
++  if (FLAG_debug_code) {
++    AbortIfNotSmi(smi1);
++    AbortIfNotSmi(smi2);
++  }
++  cmpq(smi1, smi2);
+ }
+ 
+ 
+ void MacroAssembler::SmiCompare(Register dst, Smi* src) {
++  if (FLAG_debug_code) {
++    AbortIfNotSmi(dst);
++  }
++  // Actually, knowing the register is a smi doesn't enable any optimizations
++  // with the current tagging scheme.
++  Cmp(dst, src);
++}
++
++
++void MacroAssembler::Cmp(Register dst, Smi* src) {
+   ASSERT(!dst.is(kScratchRegister));
+   if (src->value() == 0) {
+     testq(dst, dst);
+@@ -841,20 +855,41 @@ void MacroAssembler::SmiCompare(Register dst, Smi* src
+ 
+ 
+ void MacroAssembler::SmiCompare(Register dst, const Operand& src) {
++  if (FLAG_debug_code) {
++    AbortIfNotSmi(dst);
++    AbortIfNotSmi(src);
++  }
+   cmpq(dst, src);
+ }
+ 
+ 
+ void MacroAssembler::SmiCompare(const Operand& dst, Register src) {
++  if (FLAG_debug_code) {
++    AbortIfNotSmi(dst);
++    AbortIfNotSmi(src);
++  }
+   cmpq(dst, src);
+ }
+ 
+ 
+ void MacroAssembler::SmiCompare(const Operand& dst, Smi* src) {
++  if (FLAG_debug_code) {
++    AbortIfNotSmi(dst);
++  }
+   cmpl(Operand(dst, kSmiShift / kBitsPerByte), Immediate(src->value()));
+ }
+ 
+ 
++void MacroAssembler::Cmp(const Operand& dst, Smi* src) {
++  // The Operand cannot use the smi register, since we may use the scratch
++  // register to get around the lack of 64 bit immediates in the instruction
++  // set.
++  Register smi_reg = GetSmiConstant(src);
++  ASSERT(!dst.AddressUsesRegister(smi_reg));
++  cmpq(dst, smi_reg);
++}
++
++
+ void MacroAssembler::SmiCompareInteger32(const Operand& dst, Register src) {
+   cmpl(Operand(dst, kSmiShift / kBitsPerByte), src);
+ }
+@@ -1339,7 +1374,7 @@ void MacroAssembler::Move(const Operand& dst, Handle<O
+ 
+ void MacroAssembler::Cmp(Register dst, Handle<Object> source) {
+   if (source->IsSmi()) {
+-    SmiCompare(dst, Smi::cast(*source));
++    Cmp(dst, Smi::cast(*source));
+   } else {
+     Move(kScratchRegister, source);
+     cmpq(dst, kScratchRegister);
+@@ -1349,7 +1384,7 @@ void MacroAssembler::Cmp(Register dst, Handle<Object> 
+ 
+ void MacroAssembler::Cmp(const Operand& dst, Handle<Object> source) {
+   if (source->IsSmi()) {
+-    SmiCompare(dst, Smi::cast(*source));
++    Cmp(dst, Smi::cast(*source));
+   } else {
+     ASSERT(source->IsHeapObject());
+     movq(kScratchRegister, source, RelocInfo::EMBEDDED_OBJECT);
+@@ -1719,7 +1754,12 @@ void MacroAssembler::AbortIfSmi(Register object) {
+ 
+ 
+ void MacroAssembler::AbortIfNotSmi(Register object) {
+-  NearLabel ok;
++  Condition is_smi = CheckSmi(object);
++  Assert(is_smi, "Operand is not a smi");
++}
++
++
++void MacroAssembler::AbortIfNotSmi(const Operand& object) {
+   Condition is_smi = CheckSmi(object);
+   Assert(is_smi, "Operand is not a smi");
+ }

@@ -1,0 +1,12 @@
+$OpenBSD: patch-deps_v8_src_x64_lithium-codegen-x64_cc,v 1.1 2011/03/30 19:54:29 jasper Exp $
+--- deps/v8/src/x64/lithium-codegen-x64.cc.orig	Sat Mar 26 09:48:02 2011
++++ deps/v8/src/x64/lithium-codegen-x64.cc	Wed Mar 30 21:21:52 2011
+@@ -1210,7 +1210,7 @@ void LCodeGen::DoBranch(LBranch* instr) {
+       __ j(equal, true_label);
+       __ CompareRoot(reg, Heap::kFalseValueRootIndex);
+       __ j(equal, false_label);
+-      __ SmiCompare(reg, Smi::FromInt(0));
++      __ Cmp(reg, Smi::FromInt(0));
+       __ j(equal, false_label);
+       __ JumpIfSmi(reg, true_label);
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/03/02 06:29:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/03/30 19:54:29 jasper Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	V8 JavaScript for clients and servers
 
-DISTNAME=	node-v0.2.6
+DISTNAME=	node-v0.4.4
 PKGNAME=	${DISTNAME:S/v//g}
 
 CATEGORIES=	www devel
@@ -27,7 +27,7 @@ MODULES=	lang/python
 
 VMEM_WARNING=	Yes
 
-WANTLIB +=	c crypto execinfo ev kvm m pthread ssl stdc++ z
+WANTLIB +=	c crypto execinfo ev kvm m pthread ssl stdc++ util
 
 LIB_DEPENDS=	devel/libev \
 		devel/libexecinfo
@@ -37,7 +37,7 @@ CONFIGURE_ARGS+=	--shared-libev-libpath="${LOCALBASE}/lib" \
 			--shared-libev-include="${LOCALBASE}/include"
 
 MODPY_ADJ_FILES=wscript \
-		bin/node-waf \
+		tools/node-waf \
 		tools/waf-light
 
 NO_REGRESS=	Yes
@@ -45,10 +45,6 @@ NO_REGRESS=	Yes
 SUBST_VARS+=	CFLAGS
 
 MAKE_ENV+=	CXX=c++ CCFLAGS+="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
-
-post-extract:
-	rm -f ${WRKSRC}/deps/v8/src/SConscript.orig \
-		${WRKSRC}/deps/v8/src/platform.h.orig
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/wscript \
