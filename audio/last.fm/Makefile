@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/30 20:51:12 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2011/03/31 07:47:09 dcoppa Exp $
 
 COMMENT =		official Last.fm client
 
@@ -19,7 +19,8 @@ MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
 HOMEPAGE =		http://www.last.fm/
 
-MASTER_SITES =		http://dev.gentoo.org/~hwoarang/distfiles/
+MASTER_SITES =		http://dev.gentoo.org/~hwoarang/distfiles/ \
+			http://ftp.pardus.org.tr/pub/source/corporate2/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
