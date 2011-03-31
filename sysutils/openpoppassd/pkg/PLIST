@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/21 05:53:39 bernd Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/31 12:21:39 ajacoutot Exp $
 @newgroup _poppassd:595
-@newuser _poppassd:595:595:daemon:Password change daemon:/var/empty:/sbin/nologin
-libexec/openpoppassd
+@newuser _poppassd:595:595:daemon:Password change Daemon:/var/empty:/sbin/nologin
+@bin libexec/openpoppassd
 @man man/cat8/openpoppassd.0
+@rcscript ${RCDIR}/openpoppassd

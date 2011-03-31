@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: openpoppassd.rc,v 1.1 2011/03/31 12:21:39 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/libexec/openpoppassd"
+
+. /etc/rc.d/rc.subr
+
+pexp="openpoppassd: \[master\]"
+rc_reload=NO
+
+rc_cmd $1

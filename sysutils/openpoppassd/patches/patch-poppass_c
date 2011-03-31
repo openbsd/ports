@@ -1,0 +1,12 @@
+$OpenBSD: patch-poppass_c,v 1.1 2011/03/31 12:21:39 ajacoutot Exp $
+--- poppass.c.orig	Thu Mar 31 13:40:06 2011
++++ poppass.c	Thu Mar 31 13:40:25 2011
+@@ -91,7 +91,7 @@ fork_slave(int pipe_prnt[2])
+ 	/* Open TCP-socket */
+ 	server_socket = setup_listeners(se);
+ 
+-	/* Set group access list and (effective) group/user id to "_poppass" */
++	/* Set group access list and (effective) group/user id to "_poppassd" */
+ 	if (setgroups(1, &pw->pw_gid) ||
+ 	    setegid(pw->pw_gid) || setgid(pw->pw_gid) ||
+ 	    seteuid(pw->pw_uid) || setuid(pw->pw_uid))

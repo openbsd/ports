@@ -1,0 +1,12 @@
+$OpenBSD: patch-poppassd_h,v 1.1 2011/03/31 12:21:39 ajacoutot Exp $
+--- poppassd.h.orig	Thu Mar 31 13:40:41 2011
++++ poppassd.h	Thu Mar 31 13:40:56 2011
+@@ -27,7 +27,7 @@
+ #include <netdb.h>
+ #include <stdarg.h>
+ 
+-#define	POPPASSD_USER "_poppass"
++#define	POPPASSD_USER "_poppassd"
+ #define BUFSIZE       1000
+ #define VERSION       "1.1"
+ #define LISTEN_IP     "127.0.0.1"
