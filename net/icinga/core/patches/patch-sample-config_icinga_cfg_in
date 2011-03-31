@@ -1,12 +1,30 @@
-$OpenBSD: patch-sample-config_icinga_cfg_in,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
---- sample-config/icinga.cfg.in.orig	Tue Feb 15 13:28:41 2011
-+++ sample-config/icinga.cfg.in	Sun Mar 20 21:22:10 2011
+$OpenBSD: patch-sample-config_icinga_cfg_in,v 1.2 2011/03/31 10:25:25 sthen Exp $
+--- sample-config/icinga.cfg.in.orig	Thu Mar 31 08:05:43 2011
++++ sample-config/icinga.cfg.in	Thu Mar 31 11:22:14 2011
 @@ -14,7 +14,7 @@
  # for historical purposes.  This should be the first option specified
  # in the config file!!!
  
 -log_file=@localstatedir@/icinga.log
 +log_file=/var/log/icinga/icinga.log
+ 
+ 
+ 
+@@ -265,7 +265,7 @@ log_rotation_method=d
+ # This is the directory where archived (rotated) log files should be 
+ # placed (assuming you've chosen to do log rotation).
+ 
+-log_archive_path=@localstatedir@/archives
++log_archive_path=/var/log/icinga/archives
+ 
+ 
+ 
+@@ -1219,7 +1219,7 @@ enable_embedded_perl=1
+ # the HTML documentation on the embedded Perl interpreter for more 
+ # information on how this option works.
+ 
+-use_embedded_perl_implicitly=1
++use_embedded_perl_implicitly=0
  
  
  

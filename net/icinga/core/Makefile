@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/28 19:51:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2011/03/31 10:25:25 sthen Exp $
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)
@@ -10,7 +10,6 @@ PKGNAME-main =		icinga-$V
 PKGNAME-cgi =		icinga-cgi-$V
 PKGNAME-ido =		icinga-idoutils-$V
 PKGNAME-api =		icinga-api-$V
-REVISION-ido =		0
 
 MULTI_PACKAGES =	-main -cgi -api -ido
 PREFIX-cgi =		/var/www
@@ -29,8 +28,7 @@ RUN_DEPENDS-ido =	${RUN_DEPENDS} \
 			libdbi-drivers-mysql-*|libdbi-drivers-pgsql-*:databases/libdbi-drivers,-pgsql
 
 WANTLIB-api =		# empty
-RUN_DEPENDS-api =	${RUN_DEPENDS} \
-			${BASE_PKGPATH},-ido
+RUN_DEPENDS-api =	www/php5/core
 
 # the cgi binaries are linked -static to simplify use in chroot,
 # but listed as dependency anyway to help pkg_add -u find updates.

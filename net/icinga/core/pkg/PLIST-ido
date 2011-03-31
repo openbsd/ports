@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ido,v 1.2 2011/03/28 19:51:59 sthen Exp $
+@comment $OpenBSD: PLIST-ido,v 1.3 2011/03/31 10:25:25 sthen Exp $
 @bin bin/ido2db
 @bin bin/idomod.o
 @bin bin/log2ido
@@ -13,12 +13,14 @@ share/examples/icinga/db/mysql/mysql-upgrade-1.0.3.sql
 share/examples/icinga/db/mysql/mysql-upgrade-1.0.sql
 share/examples/icinga/db/mysql/mysql-upgrade-1.0rc.sql
 share/examples/icinga/db/mysql/mysql-upgrade-1.3.0.sql
+share/examples/icinga/db/mysql/mysql-upgrade-1.3.1.sql
 share/examples/icinga/db/mysql/mysql.sql
 share/examples/icinga/db/pgsql/
 share/examples/icinga/db/pgsql/pgsql-fix-0.8.3.sql
 share/examples/icinga/db/pgsql/pgsql-upgrade-1.0.1.sql
 share/examples/icinga/db/pgsql/pgsql-upgrade-1.0.3.sql
 share/examples/icinga/db/pgsql/pgsql-upgrade-1.3.0.sql
+share/examples/icinga/db/pgsql/pgsql-upgrade-1.3.1.sql
 share/examples/icinga/db/pgsql/pgsql.sql
 share/examples/icinga/db/queries/
 share/examples/icinga/db/queries/comment_history.sql
