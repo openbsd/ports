@@ -1,7 +1,16 @@
-$OpenBSD: patch-extra_cups-pdf_conf,v 1.2 2009/09/08 14:02:46 ajacoutot Exp $
---- extra/cups-pdf.conf.orig	Mon Jan 26 12:55:09 2009
-+++ extra/cups-pdf.conf	Fri Sep  4 22:58:56 2009
-@@ -251,7 +251,7 @@
+$OpenBSD: patch-extra_cups-pdf_conf,v 1.3 2011/03/31 08:25:58 jasper Exp $
+--- extra/cups-pdf.conf.orig	Wed Mar 30 21:38:53 2011
++++ extra/cups-pdf.conf	Wed Mar 30 21:41:22 2011
+@@ -222,7 +222,7 @@
+ ##          or its proper location on your system
+ ### Default: /usr/bin/gs
+ 
+-#GhostScript /usr/bin/gs
++#GhostScript ${LOCALBASE}/bin/gs
+ 
+ ### Key: GSTmp
+ ##  location of temporary files during GhostScript operation 
+@@ -253,7 +253,7 @@
  ##  set this to an empty value to use no postprocessing
  ### Default: <empty>
  

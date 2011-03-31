@@ -1,27 +1,12 @@
-$OpenBSD: patch-src_cups-pdf_c,v 1.3 2009/09/08 14:02:46 ajacoutot Exp $
---- src/cups-pdf.c.orig	Fri Sep  4 22:57:29 2009
-+++ src/cups-pdf.c	Fri Sep  4 22:58:42 2009
-@@ -71,11 +71,11 @@ static void log_event(short type, char message[], char
-     timestring[strlen(timestring)-1]='\0';
- 
-     if (type == CPERROR) 
--      sprintf(ctype, "ERROR");
-+      snprintf(ctype, sizeof(ctype), "ERROR");
-     else if (type == CPSTATUS)
--      sprintf(ctype, "STATUS");
-+      snprintf(ctype, sizeof(ctype), "STATUS");
-     else
--      sprintf(ctype, "DEBUG");
-+      snprintf(ctype, sizeof(ctype), "DEBUG");
-     if (detail != NULL)  {
-       while (detail[strlen(detail)-1] == '\n') 
-         detail[strlen(detail)-1]='\0';
-@@ -507,7 +507,7 @@ static int preparespoolfile(FILE *fpsrc, char *spoolfi
+$OpenBSD: patch-src_cups-pdf_c,v 1.4 2011/03/31 08:25:58 jasper Exp $
+--- src/cups-pdf.c.orig	Wed Mar 30 10:06:50 2011
++++ src/cups-pdf.c	Wed Mar 30 10:11:01 2011
+@@ -518,7 +518,7 @@ static int preparespoolfile(FILE *fpsrc, char *spoolfi
    }
    else {
      if (conf.label) {
 -      strcpy(buffer, title);
 +      strlcpy(buffer, title, sizeof(buffer));
-       snprintf(title, BUFSIZE, "job_%i-%s", job, buffer);
-     }
-     log_event(CPDEBUG, "title successfully retrieved", title);
+       if (conf.label == 2)
+         snprintf(title, BUFSIZE, "%s-job_%i", buffer, job);
+       else
