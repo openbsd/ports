@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/03/31 08:25:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/03/31 08:32:26 jasper Exp $
 
 COMMENT=		PDF backend for CUPS
 
@@ -25,7 +25,8 @@ RUN_DEPENDS=		print/cups \
 NO_REGRESS=		Yes
 
 do-build:
-	${CC} ${CFLAGS} -o ${WRKDIR}/bin/cups-pdf ${WRKDIR}/${DISTNAME}/src/cups-pdf.c
+	cd ${WRKDIR} && \
+	${CC} ${CFLAGS} -o bin/cups-pdf ${WRKDIR}/${DISTNAME}/src/cups-pdf.c
 
 pre-install:
 	${SUBST_CMD} ${WRKBUILD}/extra/cups-pdf.conf
