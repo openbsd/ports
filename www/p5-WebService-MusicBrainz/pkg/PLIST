@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/02/04 20:02:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/03/31 13:57:54 jasper Exp $
 ${P5SITE}/WebService/
 ${P5SITE}/WebService/MusicBrainz/
 ${P5SITE}/WebService/MusicBrainz.pm
@@ -6,6 +6,7 @@ ${P5SITE}/WebService/MusicBrainz/Artist.pm
 ${P5SITE}/WebService/MusicBrainz/Label.pm
 ${P5SITE}/WebService/MusicBrainz/Query.pm
 ${P5SITE}/WebService/MusicBrainz/Release.pm
+${P5SITE}/WebService/MusicBrainz/ReleaseGroup.pm
 ${P5SITE}/WebService/MusicBrainz/Response/
 ${P5SITE}/WebService/MusicBrainz/Response.pm
 ${P5SITE}/WebService/MusicBrainz/Response/Alias.pm
@@ -14,27 +15,36 @@ ${P5SITE}/WebService/MusicBrainz/Response/Artist.pm
 ${P5SITE}/WebService/MusicBrainz/Response/ArtistList.pm
 ${P5SITE}/WebService/MusicBrainz/Response/Disc.pm
 ${P5SITE}/WebService/MusicBrainz/Response/DiscList.pm
+${P5SITE}/WebService/MusicBrainz/Response/ISRC.pm
+${P5SITE}/WebService/MusicBrainz/Response/ISRCList.pm
 ${P5SITE}/WebService/MusicBrainz/Response/Label.pm
 ${P5SITE}/WebService/MusicBrainz/Response/LabelList.pm
 ${P5SITE}/WebService/MusicBrainz/Response/Metadata.pm
 ${P5SITE}/WebService/MusicBrainz/Response/Puid.pm
 ${P5SITE}/WebService/MusicBrainz/Response/PuidList.pm
+${P5SITE}/WebService/MusicBrainz/Response/Rating.pm
 ${P5SITE}/WebService/MusicBrainz/Response/Relation.pm
 ${P5SITE}/WebService/MusicBrainz/Response/RelationList.pm
 ${P5SITE}/WebService/MusicBrainz/Response/Release.pm
 ${P5SITE}/WebService/MusicBrainz/Response/ReleaseEvent.pm
 ${P5SITE}/WebService/MusicBrainz/Response/ReleaseEventList.pm
+${P5SITE}/WebService/MusicBrainz/Response/ReleaseGroup.pm
+${P5SITE}/WebService/MusicBrainz/Response/ReleaseGroupList.pm
 ${P5SITE}/WebService/MusicBrainz/Response/ReleaseList.pm
 ${P5SITE}/WebService/MusicBrainz/Response/Tag.pm
 ${P5SITE}/WebService/MusicBrainz/Response/TagList.pm
 ${P5SITE}/WebService/MusicBrainz/Response/Track.pm
 ${P5SITE}/WebService/MusicBrainz/Response/TrackList.pm
+${P5SITE}/WebService/MusicBrainz/Response/UserRating.pm
+${P5SITE}/WebService/MusicBrainz/Response/UserTag.pm
+${P5SITE}/WebService/MusicBrainz/Response/UserTagList.pm
 ${P5SITE}/WebService/MusicBrainz/Track.pm
 @man man/man3p/WebService::MusicBrainz.3p
 @man man/man3p/WebService::MusicBrainz::Artist.3p
 @man man/man3p/WebService::MusicBrainz::Label.3p
 @man man/man3p/WebService::MusicBrainz::Query.3p
 @man man/man3p/WebService::MusicBrainz::Release.3p
+@man man/man3p/WebService::MusicBrainz::ReleaseGroup.3p
 @man man/man3p/WebService::MusicBrainz::Response.3p
 @man man/man3p/WebService::MusicBrainz::Response::Alias.3p
 @man man/man3p/WebService::MusicBrainz::Response::AliasList.3p
@@ -42,19 +52,27 @@ ${P5SITE}/WebService/MusicBrainz/Track.pm
 @man man/man3p/WebService::MusicBrainz::Response::ArtistList.3p
 @man man/man3p/WebService::MusicBrainz::Response::Disc.3p
 @man man/man3p/WebService::MusicBrainz::Response::DiscList.3p
+@man man/man3p/WebService::MusicBrainz::Response::ISRC.3p
+@man man/man3p/WebService::MusicBrainz::Response::ISRCList.3p
 @man man/man3p/WebService::MusicBrainz::Response::Label.3p
 @man man/man3p/WebService::MusicBrainz::Response::LabelList.3p
 @man man/man3p/WebService::MusicBrainz::Response::Metadata.3p
 @man man/man3p/WebService::MusicBrainz::Response::Puid.3p
 @man man/man3p/WebService::MusicBrainz::Response::PuidList.3p
+@man man/man3p/WebService::MusicBrainz::Response::Rating.3p
 @man man/man3p/WebService::MusicBrainz::Response::Relation.3p
 @man man/man3p/WebService::MusicBrainz::Response::RelationList.3p
 @man man/man3p/WebService::MusicBrainz::Response::Release.3p
 @man man/man3p/WebService::MusicBrainz::Response::ReleaseEvent.3p
 @man man/man3p/WebService::MusicBrainz::Response::ReleaseEventList.3p
+@man man/man3p/WebService::MusicBrainz::Response::ReleaseGroup.3p
+@man man/man3p/WebService::MusicBrainz::Response::ReleaseGroupList.3p
 @man man/man3p/WebService::MusicBrainz::Response::ReleaseList.3p
 @man man/man3p/WebService::MusicBrainz::Response::Tag.3p
 @man man/man3p/WebService::MusicBrainz::Response::TagList.3p
 @man man/man3p/WebService::MusicBrainz::Response::Track.3p
 @man man/man3p/WebService::MusicBrainz::Response::TrackList.3p
+@man man/man3p/WebService::MusicBrainz::Response::UserRating.3p
+@man man/man3p/WebService::MusicBrainz::Response::UserTag.3p
+@man man/man3p/WebService::MusicBrainz::Response::UserTagList.3p
 @man man/man3p/WebService::MusicBrainz::Track.3p
