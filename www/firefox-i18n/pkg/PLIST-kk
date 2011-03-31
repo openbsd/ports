@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-kk,v 1.3 2011/03/31 07:54:05 landry Exp $
+lib/firefox-4.0/extensions/langpack-kk@firefox.mozilla.org.xpi
