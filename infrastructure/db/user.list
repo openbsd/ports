@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.158 2011/03/29 08:59:40 ajacoutot Exp $
+$OpenBSD: user.list,v 1.159 2011/03/31 22:57:36 fgsch Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -178,3 +178,4 @@ id  user		group		port options
 667 _icinga		_icinga		net/icinga/core
 668 _jenkins		_jenkins	devel/jenkins
 669 _rsync		_rsync		net/rsync
+670 _mongodb		_mongodb	databases/mongodb
