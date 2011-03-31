@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.219 2011/03/07 19:52:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.220 2011/03/31 16:26:05 kili Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -20,6 +20,7 @@
      SUBDIR += bass
      SUBDIR += batrachians
      SUBDIR += belooted
+     SUBDIR += blobwars
      SUBDIR += bomberclone
      SUBDIR += boswars
      SUBDIR += burgerspace
