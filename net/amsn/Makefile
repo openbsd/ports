@@ -1,11 +1,11 @@
-#$OpenBSD: Makefile,v 1.15 2010/11/19 22:31:32 espie Exp $
+#$OpenBSD: Makefile,v 1.16 2011/03/31 16:41:30 ajacoutot Exp $
 
 COMMENT=	open source MSN Messenger clone
 
 V=		0.98.3
 DISTNAME=	amsn-$V-src
 PKGNAME=	${DISTNAME:S/-src//}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.amsn-project.net/

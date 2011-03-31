@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/09/30 07:38:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/03/31 16:41:30 ajacoutot Exp $
 @bin bin/gnome-system-monitor
 share/applications/gnome-system-monitor.desktop
 share/gnome/help/gnome-system-monitor/
@@ -337,4 +337,4 @@ ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/gnome-system-monitor.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
-@unexec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
