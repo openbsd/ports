@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.24 2011/03/27 20:23:25 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.25 2011/04/01 08:32:32 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -105,6 +105,7 @@ CONFIGURE_ARGS +=--enable-application=${MOZILLA_CODENAME}
 	${MOZILLA_PROJECT} == "firefox35" || \
 	${MOZILLA_PROJECT} == "firefox36" || \
 	${MOZILLA_PROJECT} == "xulrunner" || \
+	${MOZILLA_PROJECT} == "fennec" || \
 	${MOZILLA_PROJECT} == "xulrunner1.9"
 WRKDIST ?=	${WRKDIR}/mozilla-${MOZILLA_BRANCH}
 .else
