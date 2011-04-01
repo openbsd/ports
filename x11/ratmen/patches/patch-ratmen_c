@@ -1,7 +1,7 @@
-$OpenBSD: patch-ratmen_c,v 1.1.1.1 2004/06/28 06:38:35 jcs Exp $
---- ratmen.c.orig	Sat Feb 21 14:22:02 2004
-+++ ratmen.c	Sat Feb 21 14:22:03 2004
-@@ -128,7 +128,6 @@
+$OpenBSD: patch-ratmen_c,v 1.2 2011/04/01 16:46:33 jasper Exp $
+--- ratmen.c.orig	Thu Oct 25 14:13:39 2007
++++ ratmen.c	Fri Apr  1 18:45:59 2011
+@@ -128,7 +128,6 @@ int   unfocus_exit = Undef;                    /* -u, 
  
  
  /* function prototypes */
