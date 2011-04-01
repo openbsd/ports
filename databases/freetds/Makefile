@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/03/24 12:51:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2011/04/01 23:03:12 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -17,7 +17,7 @@ CATEGORIES=	databases
 HOMEPAGE=	http://www.freetds.org/
 # also http://freetds.schemamania.org/ http://freetds.sourceforge.net/
 
-# GPLv2+
+# LGPLv2+ (most things) GPLv2+ (fisql, tdspool) FDL (docs)
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
