@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_Makefile_in,v 1.14 2010/12/15 15:40:21 dcoppa Exp $
---- config/Makefile.in.orig	Sat Nov 13 18:31:02 2010
-+++ config/Makefile.in	Wed Dec 15 15:00:19 2010
+$OpenBSD: patch-config_Makefile_in,v 1.15 2011/04/01 08:38:37 dcoppa Exp $
+--- config/Makefile.in.orig	Sun Dec 19 11:31:21 2010
++++ config/Makefile.in	Fri Apr  1 10:13:28 2011
 @@ -626,6 +626,8 @@ uninstall::
  	rm -f $(BINDIR)/mlnet
  	rm -f $(BINDIR)/mlgui
@@ -22,7 +22,7 @@ $OpenBSD: patch-config_Makefile_in,v 1.14 2010/12/15 15:40:21 dcoppa Exp $
 +	  ln -s mlnet $(DESTDIR)$(prefix)/bin/$$link; \
 +	done
 +	cp -f mlgui.byte $(DESTDIR)$(prefix)/bin/mlgui
-+	cp -f mlgui.byte $(DESTDIR)$(prefix)/bin/mldonkey_gui
++	ln -s $(DESTDIR)$(prefix)/bin/mlgui $(DESTDIR)$(prefix)/bin/mldonkey_gui
 +	cp -f mlnet.byte $(DESTDIR)$(prefix)/bin/mlnet+gui
 +	for link in mlslsk+gui mldonkey+gui mlgnut+gui mldc+gui mlbt+gui; do \
 +	  ln -s mlnet+gui $(DESTDIR)$(prefix)/bin/$$link; \

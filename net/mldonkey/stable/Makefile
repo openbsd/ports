@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.38 2010/12/15 15:40:21 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.39 2011/04/01 08:38:37 dcoppa Exp $
 
 COMMENT =	e-donkey client
-DISTNAME =	mldonkey-3.0.6
+DISTNAME =	mldonkey-3.0.7
 CATEGORIES =	net
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
@@ -29,7 +29,8 @@ WANTLIB +=		stdc++ xcb xcb-render xcb-shm z
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 AUTOCONF_DIR =		${WRKSRC}/config
-AUTOCONF_VERSION =	2.61
+# Should be 2.67
+AUTOCONF_VERSION =	2.65
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 CONFIGURE_ARGS +=	--enable-gui=newgui2
