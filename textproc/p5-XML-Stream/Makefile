@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/01 07:08:04 jasper Exp $
 
 COMMENT=		creates and XML Stream connection and parses return data
 
-DISTNAME=		XML-Stream-1.22
-REVISION=		0
+DISTNAME=		XML-Stream-1.23
 CATEGORIES=		textproc
 
 MODULES=		cpan
 USE_GROFF =		Yes
 
-# perl
+# LGPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

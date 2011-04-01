@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/05 14:16:57 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/01 07:08:05 jasper Exp $
 ${P5SITE}/XML/
 ${P5SITE}/XML/Stream/
 ${P5SITE}/XML/Stream.pm
+${P5SITE}/XML/Stream/IO/
+${P5SITE}/XML/Stream/IO/Select/
+${P5SITE}/XML/Stream/IO/Select/Win32.pm
 ${P5SITE}/XML/Stream/Namespace.pm
 ${P5SITE}/XML/Stream/Node.pm
 ${P5SITE}/XML/Stream/Parser/
@@ -14,6 +17,7 @@ ${P5SITE}/XML/Stream/XPath/Op.pm
 ${P5SITE}/XML/Stream/XPath/Query.pm
 ${P5SITE}/XML/Stream/XPath/Value.pm
 @man man/man3p/XML::Stream.3p
+@man man/man3p/XML::Stream::IO::Select::Win32.3p
 @man man/man3p/XML::Stream::Namespace.3p
 @man man/man3p/XML::Stream::Node.3p
 @man man/man3p/XML::Stream::Parser.3p
