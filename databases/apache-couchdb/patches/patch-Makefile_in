@@ -1,9 +1,9 @@
-$OpenBSD: patch-Makefile_in,v 1.6 2010/09/13 17:31:02 sebastia Exp $
---- Makefile.in.orig	Tue Jun  8 13:28:29 2010
-+++ Makefile.in	Tue Jun  8 13:30:25 2010
-@@ -288,18 +288,18 @@ version_revision = @version_revision@
- version_stage = @version_stage@
+$OpenBSD: patch-Makefile_in,v 1.7 2011/04/01 07:38:16 jasper Exp $
+--- Makefile.in.orig	Wed Aug 11 20:18:54 2010
++++ Makefile.in	Fri Apr  1 09:37:58 2011
+@@ -291,18 +291,18 @@ version_stage = @version_stage@
  SUBDIRS = bin etc src share test var utils
+ ACLOCAL_AMFLAGS = -I m4
  localdoc_DATA = \
 -    AUTHORS.gz \
 -    BUGS.gz \

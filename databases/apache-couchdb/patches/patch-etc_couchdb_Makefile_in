@@ -1,7 +1,7 @@
-$OpenBSD: patch-etc_couchdb_Makefile_in,v 1.5 2010/01/06 18:45:46 jasper Exp $
---- etc/couchdb/Makefile.in.orig	Wed Jan  6 10:12:40 2010
-+++ etc/couchdb/Makefile.in	Wed Jan  6 10:12:56 2010
-@@ -385,7 +385,7 @@ info-am:
+$OpenBSD: patch-etc_couchdb_Makefile_in,v 1.6 2011/04/01 07:38:16 jasper Exp $
+--- etc/couchdb/Makefile.in.orig	Wed Aug 11 20:18:52 2010
++++ etc/couchdb/Makefile.in	Fri Apr  1 09:37:58 2011
+@@ -394,7 +394,7 @@ info-am:
  
  install-data-am: install-localconfDATA
  	@$(NORMAL_INSTALL)
