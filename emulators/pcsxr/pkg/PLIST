@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/01 17:18:55 jeremy Exp $
+@bin bin/pcsx
+lib/games/
+lib/games/psemu/
+@bin lib/games/psemu/cfgDFCdrom
+@bin lib/games/psemu/cfgDFInput
+@bin lib/games/psemu/cfgDFNet
+@bin lib/games/psemu/cfgDFSound
+@bin lib/games/psemu/cfgDFXVideo
+@bin lib/games/psemu/cfgpeopsxgl
+@comment lib/games/psemu/libDFCdrom.la
+lib/games/psemu/libDFCdrom.so
+@comment lib/games/psemu/libDFInput.la
+lib/games/psemu/libDFInput.so
+@comment lib/games/psemu/libDFNet.la
+lib/games/psemu/libDFNet.so
+@comment lib/games/psemu/libDFSound.la
+lib/games/psemu/libDFSound.so
+@comment lib/games/psemu/libDFXVideo.la
+lib/games/psemu/libDFXVideo.so
+lib/games/psemu/libpeopsxgl.la
+lib/games/psemu/libpeopsxgl.so
+@man man/man1/pcsx.1
+share/applications/pcsx.desktop
+share/locale/it/LC_MESSAGES/pcsx.mo
+share/locale/pt_BR/LC_MESSAGES/pcsx.mo
+share/locale/ru_RU/
+share/locale/ru_RU/LC_MESSAGES/
+share/locale/ru_RU/LC_MESSAGES/pcsx.mo
+share/locale/zh_CN/LC_MESSAGES/pcsx.mo
+share/locale/zh_TW/LC_MESSAGES/pcsx.mo
+share/pcsx/
+share/pcsx/pcsx.glade2
+share/pcsx/pcsx.jpg
+share/pixmaps/
+share/pixmaps/pcsx-icon.png
+share/psemu/
+share/psemu/dfcdrom.glade2
+share/psemu/dfinput.glade2
+share/psemu/dfnet.glade2
+share/psemu/dfsound.glade2
+share/psemu/dfxvideo.glade2
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
