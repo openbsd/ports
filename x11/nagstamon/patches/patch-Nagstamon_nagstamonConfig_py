@@ -1,0 +1,16 @@
+$OpenBSD: patch-Nagstamon_nagstamonConfig_py,v 1.1.1.1 2011/04/01 11:29:26 ajacoutot Exp $
+--- Nagstamon/nagstamonConfig.py.orig	Fri Apr  1 10:42:49 2011
++++ Nagstamon/nagstamonConfig.py	Fri Apr  1 10:44:24 2011
+@@ -76,9 +76,9 @@ class Config(object):
+             self.icon_in_systray = False
+         else:
+             # the Linux settings
+-            self.app_ssh_bin = "/usr/bin/gnome-terminal -x ssh"
+-            self.app_rdp_bin = "/usr/bin/rdesktop"
+-            self.app_vnc_bin = "/usr/bin/vncviewer"
++            self.app_ssh_bin = "${X11BASE}/bin/xterm -e ssh"
++            self.app_rdp_bin = "${LOCALBASE}/bin/rdesktop"
++            self.app_vnc_bin = "${LOCALBASE}/bin/vncviewer"
+             self.app_ssh_options = "-l root"
+             self.app_rdp_options = "-g 1024x768"
+             self.app_vnc_options = ""
