@@ -1,0 +1,44 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/01 22:26:54 jeremy Exp $
+%%SHARED%%
+@bin bin/zmq_forwarder
+@bin bin/zmq_queue
+@bin bin/zmq_streamer
+include/zmq.h
+include/zmq.hpp
+include/zmq_utils.h
+lib/libzmq.a
+lib/libzmq.la
+lib/pkgconfig/
+lib/pkgconfig/libzmq.pc
+@man man/man1/zmq_forwarder.1
+@man man/man1/zmq_queue.1
+@man man/man1/zmq_streamer.1
+@man man/man3/zmq_bind.3
+@man man/man3/zmq_close.3
+@man man/man3/zmq_connect.3
+@man man/man3/zmq_errno.3
+@man man/man3/zmq_getsockopt.3
+@man man/man3/zmq_init.3
+@man man/man3/zmq_msg_close.3
+@man man/man3/zmq_msg_copy.3
+@man man/man3/zmq_msg_data.3
+@man man/man3/zmq_msg_init.3
+@man man/man3/zmq_msg_init_data.3
+@man man/man3/zmq_msg_init_size.3
+@man man/man3/zmq_msg_move.3
+@man man/man3/zmq_msg_size.3
+@man man/man3/zmq_poll.3
+@man man/man3/zmq_recv.3
+@man man/man3/zmq_send.3
+@man man/man3/zmq_setsockopt.3
+@man man/man3/zmq_socket.3
+@man man/man3/zmq_strerror.3
+@man man/man3/zmq_term.3
+@man man/man3/zmq_version.3
+@man man/man7/zmq.7
+@man man/man7/zmq_cpp.7
+@man man/man7/zmq_epgm.7
+@man man/man7/zmq_inproc.7
+@man man/man7/zmq_ipc.7
+@man man/man7/zmq_pgm.7
+@man man/man7/zmq_tcp.7

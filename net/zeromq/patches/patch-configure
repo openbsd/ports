@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2011/04/01 22:26:54 jeremy Exp $
+--- configure.orig	Mon Mar 21 10:24:35 2011
++++ configure	Mon Mar 21 10:24:54 2011
+@@ -15207,13 +15207,13 @@ fi
+ LIBZMQ_EXTRA_CXXFLAGS=""
+ 
+ # Extra LDFLAGS are appended at the end of LDFLAGS for libzmq.
+-LIBZMQ_EXTRA_LDFLAGS=""
++LIBZMQ_EXTRA_LDFLAGS="-lstdc++ -lm -lssl -lcrypto"
+ 
+ # By default compiling with -pedantic except QNX and OSX.
+ pedantic="yes"
+ 
+ #By default compiling with -Werror except OSX.
+-werror="yes"
++werror="no"
+ 
+ #Whether we are on mingw or not.
+ on_mingw32="no"
