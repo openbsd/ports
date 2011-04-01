@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/03/25 12:39:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/04/01 15:20:08 jasper Exp $
 
 COMMENT=	generate and manipulate maps of your thoughts
 
 DISTNAME=	vym-1.12.7
-REVISION=	0
+REVISION=	1
 CATEGORIES=	productivity x11
 
 HOMEPAGE=	http://www.insilmaril.de/vym/
@@ -25,7 +25,8 @@ MODULES=	devel/gettext \
 		x11/qt4
 
 RUN_DEPENDS=	archivers/zip \
-		archivers/unzip
+		archivers/unzip \
+		textproc/libxslt
 
 PORTHOME=	${WRKDIR}
 NO_REGRESS=	Yes
