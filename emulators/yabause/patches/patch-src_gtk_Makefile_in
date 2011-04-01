@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_gtk_Makefile_in,v 1.1.1.1 2011/04/01 17:17:45 jeremy Exp $
+
+Remove unnecessary code that breaks fake.
+
+--- src/gtk/Makefile.in.orig	Thu Mar 31 12:48:13 2011
++++ src/gtk/Makefile.in	Thu Mar 31 12:49:12 2011
+@@ -900,7 +900,6 @@ info-am:
+ 
+ install-data-am: install-ApplicationsDATA install-pixmapDATA
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ 
+ install-dvi: install-dvi-recursive
+ 

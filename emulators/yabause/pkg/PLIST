@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/01 17:17:45 jeremy Exp $
+@bin bin/yabause
+@man man/man1/yabause.1
+share/applications/yabause.desktop
+share/pixmaps/
+share/pixmaps/yabause.png
+share/yabause/
+share/yabause/yts/
+share/yabause/yts/de.yts
+share/yabause/yts/es.yts
+share/yabause/yts/fr.yts
+share/yabause/yts/it.yts
+share/yabause/yts/lt.yts
+share/yabause/yts/pt.yts
+share/yabause/yts/pt_BR.yts
+share/yabause/yts/sv.yts
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
