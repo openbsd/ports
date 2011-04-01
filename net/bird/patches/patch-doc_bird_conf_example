@@ -1,0 +1,15 @@
+$OpenBSD: patch-doc_bird_conf_example,v 1.1 2011/04/01 12:00:49 sthen Exp $
+
+syntax changed.
+
+--- doc/bird.conf.example.orig	Thu Mar 31 22:58:56 2011
++++ doc/bird.conf.example	Thu Mar 31 22:59:01 2011
+@@ -167,7 +167,7 @@ protocol static {
+ #	description "My BGP uplink";
+ #	local as 65000;
+ #	neighbor 62.168.0.130 as 5588;
+-#	multihop 20 via 62.168.0.13;
++#	multihop 20;
+ #	hold time 240;
+ #	startup hold time 240;
+ #	connect retry time 120;
