@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_xitk_mediamark_c,v 1.1 2011/04/01 12:32:34 sthen Exp $
+
+Avoid a possible overflow when handling media marks. 
+
+--- src/xitk/mediamark.c.orig	Fri Dec 18 19:34:22 2009
++++ src/xitk/mediamark.c	Thu Mar 31 19:24:33 2011
+@@ -796,7 +796,7 @@ static mediamark_t **guess_toxine_playlist(playlist_t 
+ 	playlist->data = tox_content;
+ 	
+ 	if(playlist_split_data(playlist)) {
+-	  char    buffer[23768], path[_PATH_MAX + _NAME_MAX + 2];
++	  char    buffer[32768], path[_PATH_MAX + _NAME_MAX + 2];
+ 	  char   *p, *pp, *origin;
+ 	  int     start = 0;
+ 	  int     linen = 0;
+@@ -976,8 +976,9 @@ static mediamark_t **guess_toxine_playlist(playlist_t 
+ 		  }
+ 		  
+ 		  if(*pp != '\0') {
+-		    *p = *pp;
+-		    p++;
++		    /* buffer full? don't copy */
++		    if (p - buffer < sizeof (buffer) - 1)
++		      *p++ = *pp;
+ 		    pp++;
+ 		  }
+ 		}

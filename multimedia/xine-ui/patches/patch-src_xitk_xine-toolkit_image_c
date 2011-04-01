@@ -1,0 +1,22 @@
+$OpenBSD: patch-src_xitk_xine-toolkit_image_c,v 1.1 2011/04/01 12:32:34 sthen Exp $
+
+Avoid a possible overflow when handling M3U files.
+
+--- src/xitk/xine-toolkit/image.c.orig	Fri Dec 18 19:34:22 2009
++++ src/xitk/xine-toolkit/image.c	Thu Mar 31 19:24:12 2011
+@@ -497,6 +497,7 @@ xitk_image_t *xitk_image_create_image_with_colors_from
+         lines[numlines++] = bp;
+         bp                += linel;
+         linel             = 1;
++        bp[linel]         = 0;
+       }
+       else {
+         char *nextword = (bp + lastws);
+@@ -514,6 +515,7 @@ xitk_image_t *xitk_image_create_image_with_colors_from
+           memmove(bp, nextword, wordlen + 1);
+ 	
+         linel = wordlen;
++        lastws = 0;
+       }
+       
+       if(wlinew > maxw)

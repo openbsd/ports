@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2011/03/26 10:05:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2011/04/01 12:32:34 sthen Exp $
 
 COMMENT=	multimedia player
 
 DISTNAME=	xine-ui-0.99.6
-REVISION=	0
+REVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
@@ -26,7 +26,7 @@ LIB_DEPENDS=	multimedia/xine-lib \
 		graphics/png
 
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.65
 CONFIGURE_ARGS+=--disable-lirc \
