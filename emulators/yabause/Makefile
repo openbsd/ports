@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/01 17:17:45 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/01 21:57:26 jeremy Exp $
 
 COMMENT =	Sega Saturn emulator
 
 DISTNAME =	yabause-0.9.10
+REVISION =	0
 
 CATEGORIES =	emulators games
 HOMEPAGE =	http://yabause.org/
@@ -33,7 +34,6 @@ WANTLIB += xcb-shm z
 CONFIGURE_STYLE =	gnu
 
 LIB_DEPENDS =	devel/sdl \
-		x11/gtk+2 \
 		x11/gtkglext
 RUN_DEPENDS =	devel/desktop-file-utils
 
