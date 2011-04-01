@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/01 17:18:55 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/01 21:56:21 jeremy Exp $
 @bin bin/pcsx
 lib/games/
 lib/games/psemu/
@@ -18,7 +18,7 @@ lib/games/psemu/libDFNet.so
 lib/games/psemu/libDFSound.so
 @comment lib/games/psemu/libDFXVideo.la
 lib/games/psemu/libDFXVideo.so
-lib/games/psemu/libpeopsxgl.la
+@comment lib/games/psemu/libpeopsxgl.la
 lib/games/psemu/libpeopsxgl.so
 @man man/man1/pcsx.1
 share/applications/pcsx.desktop

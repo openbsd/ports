@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/01 17:18:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/01 21:56:21 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Playstation 1 emulator
 
 DISTNAME =	pcsxr-1.9.92
+REVISION =	0
 
 CATEGORIES =	emulators games
 HOMEPAGE =	http://pcsxr.codeplex.com/
@@ -39,9 +40,7 @@ CONFIGURE_ARGS =	--enable-libcdio --enable-opengl
 
 LIB_DEPENDS =	audio/libcdio \
 		devel/libglade2 \
-		devel/sdl \
-		devel/sdl-net \
-		x11/gtk+2
+		devel/sdl
 RUN_DEPENDS =	devel/desktop-file-utils
 
 .include <bsd.port.mk>
