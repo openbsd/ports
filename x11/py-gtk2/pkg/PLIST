@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/09/30 07:29:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/04/01 11:26:08 ajacoutot Exp $
 bin/pygtk-codegen-2.0
 bin/pygtk-demo
 include/pygtk-2.0/pygtk/
@@ -217,6 +217,7 @@ share/gtk-doc/html/pygtk/class-gtkcellrenderercombo.html
 share/gtk-doc/html/pygtk/class-gtkcellrendererpixbuf.html
 share/gtk-doc/html/pygtk/class-gtkcellrendererprogress.html
 share/gtk-doc/html/pygtk/class-gtkcellrendererspin.html
+share/gtk-doc/html/pygtk/class-gtkcellrendererspinner.html
 share/gtk-doc/html/pygtk/class-gtkcellrenderertext.html
 share/gtk-doc/html/pygtk/class-gtkcellrenderertoggle.html
 share/gtk-doc/html/pygtk/class-gtkcellview.html
@@ -229,12 +230,14 @@ share/gtk-doc/html/pygtk/class-gtkcolorselectiondialog.html
 share/gtk-doc/html/pygtk/class-gtkcombo.html
 share/gtk-doc/html/pygtk/class-gtkcombobox.html
 share/gtk-doc/html/pygtk/class-gtkcomboboxentry.html
+share/gtk-doc/html/pygtk/class-gtkcomboboxtext.html
 share/gtk-doc/html/pygtk/class-gtkcontainer.html
 share/gtk-doc/html/pygtk/class-gtkcurve.html
 share/gtk-doc/html/pygtk/class-gtkdialog.html
 share/gtk-doc/html/pygtk/class-gtkdrawingarea.html
 share/gtk-doc/html/pygtk/class-gtkeditable.html
 share/gtk-doc/html/pygtk/class-gtkentry.html
+share/gtk-doc/html/pygtk/class-gtkentrybuffer.html
 share/gtk-doc/html/pygtk/class-gtkentrycompletion.html
 share/gtk-doc/html/pygtk/class-gtkeventbox.html
 share/gtk-doc/html/pygtk/class-gtkexpander.html
@@ -269,6 +272,7 @@ share/gtk-doc/html/pygtk/class-gtkimagemenuitem.html
 share/gtk-doc/html/pygtk/class-gtkimcontext.html
 share/gtk-doc/html/pygtk/class-gtkimcontextsimple.html
 share/gtk-doc/html/pygtk/class-gtkimmulticontext.html
+share/gtk-doc/html/pygtk/class-gtkinfobar.html
 share/gtk-doc/html/pygtk/class-gtkinputdialog.html
 share/gtk-doc/html/pygtk/class-gtkinvisible.html
 share/gtk-doc/html/pygtk/class-gtkitem.html
@@ -287,6 +291,7 @@ share/gtk-doc/html/pygtk/class-gtkmisc.html
 share/gtk-doc/html/pygtk/class-gtkmountoperation.html
 share/gtk-doc/html/pygtk/class-gtknotebook.html
 share/gtk-doc/html/pygtk/class-gtkobject.html
+share/gtk-doc/html/pygtk/class-gtkoffscreenwindow.html
 share/gtk-doc/html/pygtk/class-gtkoptionmenu.html
 share/gtk-doc/html/pygtk/class-gtkpagesetup.html
 share/gtk-doc/html/pygtk/class-gtkpagesetupunixdialog.html
@@ -329,6 +334,7 @@ share/gtk-doc/html/pygtk/class-gtksettings.html
 share/gtk-doc/html/pygtk/class-gtksizegroup.html
 share/gtk-doc/html/pygtk/class-gtksocket.html
 share/gtk-doc/html/pygtk/class-gtkspinbutton.html
+share/gtk-doc/html/pygtk/class-gtkspinner.html
 share/gtk-doc/html/pygtk/class-gtkstatusbar.html
 share/gtk-doc/html/pygtk/class-gtkstatusicon.html
 share/gtk-doc/html/pygtk/class-gtkstyle.html
@@ -348,6 +354,8 @@ share/gtk-doc/html/pygtk/class-gtktoggletoolbutton.html
 share/gtk-doc/html/pygtk/class-gtktoolbar.html
 share/gtk-doc/html/pygtk/class-gtktoolbutton.html
 share/gtk-doc/html/pygtk/class-gtktoolitem.html
+share/gtk-doc/html/pygtk/class-gtktoolitemgroup.html
+share/gtk-doc/html/pygtk/class-gtktoolpalette.html
 share/gtk-doc/html/pygtk/class-gtktoolshell.html
 share/gtk-doc/html/pygtk/class-gtktooltip.html
 share/gtk-doc/html/pygtk/class-gtktooltips.html
@@ -612,7 +620,6 @@ share/gtk-doc/html/pygtk/pangocairo-class-reference.html
 share/gtk-doc/html/pygtk/pangocairo-constants.html
 share/gtk-doc/html/pygtk/pangocairo-functions.html
 share/gtk-doc/html/pygtk/pygtk-introduction.html
-share/gtk-doc/html/pygtk/pygtk-reference-format.html
 share/gtk-doc/html/pygtk/pygtk.devhelp
 share/gtk-doc/html/pygtk/unixprint-class-reference.html
 share/gtk-doc/html/pygtk/unixprint-constants.html
@@ -629,6 +636,7 @@ share/pygtk/2.0/defs/gdk-2.16.defs
 share/pygtk/2.0/defs/gdk-2.18.defs
 share/pygtk/2.0/defs/gdk-2.20.defs
 share/pygtk/2.0/defs/gdk-2.22.defs
+share/pygtk/2.0/defs/gdk-2.24.defs
 share/pygtk/2.0/defs/gdk-base-types.defs
 share/pygtk/2.0/defs/gdk-base.defs
 share/pygtk/2.0/defs/gdk-types.defs
@@ -647,6 +655,8 @@ share/pygtk/2.0/defs/gtk-2.20-types.defs
 share/pygtk/2.0/defs/gtk-2.20.defs
 share/pygtk/2.0/defs/gtk-2.22-types.defs
 share/pygtk/2.0/defs/gtk-2.22.defs
+share/pygtk/2.0/defs/gtk-2.24-types.defs
+share/pygtk/2.0/defs/gtk-2.24.defs
 share/pygtk/2.0/defs/gtk-base-types.defs
 share/pygtk/2.0/defs/gtk-base.defs
 share/pygtk/2.0/defs/gtk-extrafuncs.defs
