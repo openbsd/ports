@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/03/27 10:30:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/04/01 06:52:47 jakemsr Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	Open Phone Abstraction Library
 V=		3.6.8
 DISTNAME=	opal-${V}
 
-REVISION=	1
+REVISION=	2
 
 SUBST_VARS+=	V
 
@@ -39,7 +39,7 @@ LIB_DEPENDS=	audio/speex \
 		multimedia/x264
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	graphics/ffmpeg>=20100512 # dlopen(3) libavcodec.so
+RUN_DEPENDS=	graphics/ffmpeg>=20110306 # dlopen(3) libavcodec.so
 
 ALL_TARGET=	opt
 OPAL_FILE=	libopal.so

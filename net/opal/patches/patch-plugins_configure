@@ -1,6 +1,6 @@
-$OpenBSD: patch-plugins_configure,v 1.3 2010/05/31 06:31:39 ajacoutot Exp $
---- plugins/configure.orig	Thu May 27 08:52:49 2010
-+++ plugins/configure	Mon May 31 07:28:46 2010
+$OpenBSD: patch-plugins_configure,v 1.4 2011/04/01 06:52:47 jakemsr Exp $
+--- plugins/configure.orig	Wed May 26 23:52:49 2010
++++ plugins/configure	Thu Mar 31 19:18:03 2011
 @@ -2830,6 +2830,10 @@ fi
                   opal_release_flags="-O3 -DSOLARIS"
                   opal_debug_flags="-g -D_DEBUG -DSOLARIS"
@@ -21,3 +21,143 @@ $OpenBSD: patch-plugins_configure,v 1.3 2010/05/31 06:31:39 ajacoutot Exp $
            PLUGINEXT=so
            for ac_header in sys/time.h sys/file.h netinet/in.h
  do :
+@@ -6521,9 +6525,9 @@ $as_echo "$as_me: libavcodec stack align hack disabled
+                                          HAVE_H264_DECODER=yes
+                                          ;;
+                                      * )
+-                                         { $as_echo "$as_me:${as_lineno-$LINENO}: checking for h263p_encoder in -lavcodec" >&5
+-$as_echo_n "checking for h263p_encoder in -lavcodec... " >&6; }
+-if test "${ac_cv_lib_avcodec_h263p_encoder+set}" = set; then :
++                                         { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ff_h263p_encoder in -lavcodec" >&5
++$as_echo_n "checking for ff_h263p_encoder in -lavcodec... " >&6; }
++if test "${ac_cv_lib_avcodec_ff_h263p_encoder+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+@@ -6537,35 +6541,35 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char h263p_encoder ();
++char ff_h263p_encoder ();
+ int
+ main ()
+ {
+-return h263p_encoder ();
++return ff_h263p_encoder ();
+   ;
+   return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_avcodec_h263p_encoder=yes
++  ac_cv_lib_avcodec_ff_h263p_encoder=yes
+ else
+-  ac_cv_lib_avcodec_h263p_encoder=no
++  ac_cv_lib_avcodec_ff_h263p_encoder=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_avcodec_h263p_encoder" >&5
+-$as_echo "$ac_cv_lib_avcodec_h263p_encoder" >&6; }
+-if test "x$ac_cv_lib_avcodec_h263p_encoder" = x""yes; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_avcodec_ff_h263p_encoder" >&5
++$as_echo "$ac_cv_lib_avcodec_ff_h263p_encoder" >&6; }
++if test "x$ac_cv_lib_avcodec_ff_h263p_encoder" = x""yes; then :
+   HAVE_H263P=yes
+ else
+   HAVE_H263P=no
+ fi
+ 
+-                                         { $as_echo "$as_me:${as_lineno-$LINENO}: checking for mpeg4_encoder in -lavcodec" >&5
+-$as_echo_n "checking for mpeg4_encoder in -lavcodec... " >&6; }
+-if test "${ac_cv_lib_avcodec_mpeg4_encoder+set}" = set; then :
++                                         { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ff_mpeg4_encoder in -lavcodec" >&5
++$as_echo_n "checking for ff_mpeg4_encoder in -lavcodec... " >&6; }
++if test "${ac_cv_lib_avcodec_ff_mpeg4_encoder+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+@@ -6579,35 +6583,35 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char mpeg4_encoder ();
++char ff_mpeg4_encoder ();
+ int
+ main ()
+ {
+-return mpeg4_encoder ();
++return ff_mpeg4_encoder ();
+   ;
+   return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_avcodec_mpeg4_encoder=yes
++  ac_cv_lib_avcodec_ff_mpeg4_encoder=yes
+ else
+-  ac_cv_lib_avcodec_mpeg4_encoder=no
++  ac_cv_lib_avcodec_ff_mpeg4_encoder=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_avcodec_mpeg4_encoder" >&5
+-$as_echo "$ac_cv_lib_avcodec_mpeg4_encoder" >&6; }
+-if test "x$ac_cv_lib_avcodec_mpeg4_encoder" = x""yes; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_avcodec_ff_mpeg4_encoder" >&5
++$as_echo "$ac_cv_lib_avcodec_ff_mpeg4_encoder" >&6; }
++if test "x$ac_cv_lib_avcodec_ff_mpeg4_encoder" = x""yes; then :
+   HAVE_MPEG4=yes
+ else
+   HAVE_MPEG4=no
+ fi
+ 
+-                                         { $as_echo "$as_me:${as_lineno-$LINENO}: checking for h264_decoder in -lavcodec" >&5
+-$as_echo_n "checking for h264_decoder in -lavcodec... " >&6; }
+-if test "${ac_cv_lib_avcodec_h264_decoder+set}" = set; then :
++                                         { $as_echo "$as_me:${as_lineno-$LINENO}: checking for ff_h264_decoder in -lavcodec" >&5
++$as_echo_n "checking for ff_h264_decoder in -lavcodec... " >&6; }
++if test "${ac_cv_lib_avcodec_ff_h264_decoder+set}" = set; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+@@ -6621,27 +6625,27 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char h264_decoder ();
++char ff_h264_decoder ();
+ int
+ main ()
+ {
+-return h264_decoder ();
++return ff_h264_decoder ();
+   ;
+   return 0;
+ }
+ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+-  ac_cv_lib_avcodec_h264_decoder=yes
++  ac_cv_lib_avcodec_ff_h264_decoder=yes
+ else
+-  ac_cv_lib_avcodec_h264_decoder=no
++  ac_cv_lib_avcodec_ff_h264_decoder=no
+ fi
+ rm -f core conftest.err conftest.$ac_objext \
+     conftest$ac_exeext conftest.$ac_ext
+ LIBS=$ac_check_lib_save_LIBS
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_avcodec_h264_decoder" >&5
+-$as_echo "$ac_cv_lib_avcodec_h264_decoder" >&6; }
+-if test "x$ac_cv_lib_avcodec_h264_decoder" = x""yes; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_avcodec_ff_h264_decoder" >&5
++$as_echo "$ac_cv_lib_avcodec_ff_h264_decoder" >&6; }
++if test "x$ac_cv_lib_avcodec_ff_h264_decoder" = x""yes; then :
+   HAVE_H264_DECODER=yes
+ else
+   HAVE_H264_DECODER=no
