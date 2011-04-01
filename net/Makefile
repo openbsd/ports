@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.685 2011/03/28 14:08:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.686 2011/04/01 22:30:11 jeremy Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -577,6 +577,7 @@
      SUBDIR += zabbix,pgsql
      SUBDIR += zabbix,sqlite3
      SUBDIR += zenirc
+     SUBDIR += zeromq
      SUBDIR += ziproxy
      SUBDIR += znc
      SUBDIR += zsync
