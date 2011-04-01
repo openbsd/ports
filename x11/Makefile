@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.443 2011/03/29 20:15:34 edd Exp $
+# $OpenBSD: Makefile,v 1.444 2011/04/01 11:30:17 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -158,6 +158,7 @@
      SUBDIR += msttcorefonts
      SUBDIR += mterm
      SUBDIR += mxconns
+     SUBDIR += nagstamon
      SUBDIR += neXtaw
      SUBDIR += netwmpager
      SUBDIR += nitrogen
