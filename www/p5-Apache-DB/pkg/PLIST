@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/04/22 10:17:22 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/01 07:11:31 jasper Exp $
 ${P5ARCH}/Apache/DB.pm
 ${P5ARCH}/Apache/DProf.pm
 ${P5ARCH}/Apache/SmallProf.pm
@@ -12,4 +12,5 @@ ${P5ARCH}/auto/Apache/DB/DB.so
 @man man/man3p/Apache::perl5db.3p
 share/Apache/
 share/Apache/DB/
-share/Apache/DB/perldb.conf
+share/Apache/DB/perldb.conf.dist
+@sample share/Apache/DB/perldb.conf
