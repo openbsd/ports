@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_io_h,v 1.1.1.1 2011/04/01 22:28:02 jeremy Exp $
+--- src/io.h.orig	Thu Feb 24 11:30:31 2011
++++ src/io.h	Thu Feb 24 11:31:51 2011
+@@ -86,7 +86,7 @@ int IOBuf_stream_file(IOBuf *buf, int fd, int len);
+ 
+ #define IOBuf_fd(I) ((I)->fd)
+ 
+-#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__NetBSD__)
++#if defined(__APPLE__) || defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #define Dir_send bsd_sendfile
+ #else
+ #define Dir_send sendfile

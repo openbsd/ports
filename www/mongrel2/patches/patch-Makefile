@@ -1,0 +1,41 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2011/04/01 22:28:02 jeremy Exp $
+--- Makefile.orig	Sun Jan  9 15:18:13 2011
++++ Makefile	Fri Feb 25 08:40:22 2011
+@@ -11,7 +11,7 @@ LIB_OBJ=$(filter-out src/mongrel2.o,${OBJECTS})
+ TEST_SRC=$(wildcard tests/*.c)
+ TESTS=$(patsubst %.c,%,${TEST_SRC})
+ 
+-all: bin/mongrel2 tests m2sh
++all: bin/mongrel2 m2sh
+ 
+ dev: CFLAGS=-g -Wall -Isrc -Wall -Wextra $(OPTFLAGS)
+ dev: all
+@@ -43,6 +43,8 @@ pristine: clean
+ 	${MAKE} -C tools/m2sh pristine
+ 
+ .PHONY: tests
++tests: OPTFLAGS=-I${LOCALBASE}/include
++tests: OPTLIBS=-L${LOCALBASE}/lib -pthread
+ tests: build/libm2.a tests/config.sqlite ${TESTS}
+ 	sh ./tests/runtests.sh
+ 
+@@ -66,7 +68,7 @@ check:
+ m2sh: 
+ 	${MAKE} OPTFLAGS="${OPTFLAGS}" OPTLIBS="${OPTLIBS}" -C tools/m2sh all
+ 
+-install: all install-bin install-m2sh
++install: install-bin install-m2sh
+ 
+ install-bin:
+ 	install -d $(PREFIX)/bin/
+@@ -113,8 +115,8 @@ freebsd: OPTFLAGS=-I/usr/local/include
+ freebsd: OPTLIBS=-L/usr/local/lib -pthread
+ freebsd: all
+ 
+-openbsd: OPTFLAGS=-l/usr/local/include
+-openbsd: OPTLIBS=-L/usr/local/lib -pthread
++openbsd: OPTFLAGS=-I${LOCALBASE}/include
++openbsd: OPTLIBS=-L${LOCALBASE}/lib -pthread
+ openbsd: all
+ 
+ solaris: OPTFLAGS=-I/usr/local/include

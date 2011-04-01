@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_task_asm_S,v 1.1.1.1 2011/04/01 22:28:02 jeremy Exp $
+--- src/task/asm.S.orig	Thu Feb 24 13:03:43 2011
++++ src/task/asm.S	Thu Feb 24 13:05:01 2011
+@@ -6,10 +6,16 @@
+ #define GET getmcontext
+ #endif
+ 
+-#if defined(__OpenBSD__) && defined(__i386__)
++#if defined(__OpenBSD__)
++#if defined(__i386__)
+ #define NEEDX86CONTEXT 1
+ #define SET setmcontext
+ #define GET getmcontext
++#elif defined(__x86_64__)
++#define NEEDAMD64CONTEXT 1
++#define SET setmcontext
++#define GET getmcontext
++#endif
+ #endif
+ 
+ #if defined(__APPLE__)
