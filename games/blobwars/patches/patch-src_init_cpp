@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_init_cpp,v 1.1 2011/04/02 17:39:33 kili Exp $
+--- src/init.cpp.orig	Fri Apr  1 03:03:11 2011
++++ src/init.cpp	Fri Apr  1 03:29:23 2011
+@@ -461,9 +461,11 @@ void cleanup()
+ 	if (SDL_NumJoysticks() > 0)
+ 	{
+ 		SDL_JoystickEventState(SDL_DISABLE);
+-		for (int i = 0 ; i < SDL_NumJoysticks() ; i++)
++		// Blobwars tries to open only the first joystick,
++		// so test only the first here as well.
++		if (SDL_JoystickOpened(0))
+ 		{
+-			debug(("Closing Joystick #%d - %s...\n", i, SDL_JoystickName(i)));
++			debug(("Closing Joystick #%d - %s...\n", 0, SDL_JoystickName(0)));
+ 			SDL_JoystickClose(config.sdlJoystick);
+ 		}
+ 	}

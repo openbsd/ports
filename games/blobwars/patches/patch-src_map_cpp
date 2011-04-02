@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_map_cpp,v 1.1 2011/04/02 17:39:33 kili Exp $
+--- src/map.cpp.orig	Sun Feb 13 18:22:21 2011
++++ src/map.cpp	Sat Apr  2 16:41:32 2011
+@@ -400,7 +400,7 @@ void showMap(int centerX, int centerY)
+ 	engine.flushInput();
+ 	engine.clearInput();
+ 
+-	doMusicInfo(-1);
++	doMusicInfo((unsigned int) -1);
+ 
+ 	while (true)
+ 	{
