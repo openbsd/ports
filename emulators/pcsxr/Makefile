@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/01 21:56:21 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/02 16:22:05 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -18,8 +18,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	http://download.codeplex.com/Project/Download/FileDownload.aspx?ProjectName=pcsxr&DownloadId=140521&FileTime=129254829621800000&Build=17672&
-FETCH_CMD =	/usr/bin/ftp -o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} -V ${_PROGRESS} -k ${FTP_KEEPALIVE}
+MASTER_SITES =	http://www.bsdfrog.org/OpenBSD/distfiles/
 EXTRACT_SUFX =	.tar.bz2
 
 USE_GMAKE =	Yes
