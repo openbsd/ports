@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/07 19:50:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/04/02 15:42:18 robert Exp $
 
 COMMENT=	ActiveSync protocol implementation	
 
 DISTNAME=	z-push-1.5
 CATEGORIES=	mail www
+
+REVISION=	0
 
 HOMEPAGE=	http://z-push.sourceforge.net/
 
