@@ -1,10 +1,9 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.1 2011/03/29 18:00:54 ajacoutot Exp $
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.2 2011/04/02 16:36:45 robert Exp $
 
 XXX to be revisited
-See also patch-installer_linux_spooler_cfg
 
 --- spooler/Spooler.cpp.orig	Tue Mar 29 00:04:09 2011
-+++ spooler/Spooler.cpp	Tue Mar 29 19:07:28 2011
++++ spooler/Spooler.cpp	Sat Apr  2 18:19:42 2011
 @@ -1070,6 +1070,7 @@ int main(int argc, char *argv[]) {
  	if (g_lpConfig->HasWarnings())
  		LogConfigErrors(g_lpConfig, g_lpLogger);
@@ -21,7 +20,7 @@ See also patch-installer_linux_spooler_cfg
 +
 +// let's be safe because our userland pthreads(3) sucks
 +#ifdef __OpenBSD__
-+	g_lpConfig->AddSetting("max_threads","1");
++	bNPTL = false;
 +#endif
 +
  
