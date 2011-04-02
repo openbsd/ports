@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/01/18 23:40:43 fgsch Exp $
-@comment bin/testall.sh
-@comment bin/to3.sh
+@comment $OpenBSD: PLIST,v 1.5 2011/04/02 01:20:28 fgsch Exp $
+@conflict py-BeautifulSoup-*
 lib/python${MODPY_VERSION}/site-packages/BeautifulSoup-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/BeautifulSoup.py
 lib/python${MODPY_VERSION}/site-packages/BeautifulSoup.pyc
