@@ -1,6 +1,6 @@
-$OpenBSD: patch-oobs_oobs-user_c,v 1.2 2010/09/30 07:45:17 ajacoutot Exp $
---- oobs/oobs-user.c.orig	Sun Aug 22 15:08:11 2010
-+++ oobs/oobs-user.c	Mon Sep 27 18:27:00 2010
+$OpenBSD: patch-oobs_oobs-user_c,v 1.3 2011/04/02 13:40:04 ajacoutot Exp $
+--- oobs/oobs-user.c.orig	Fri Dec 17 19:47:50 2010
++++ oobs/oobs-user.c	Sat Apr  2 15:24:34 2011
 @@ -24,8 +24,10 @@
  #include <unistd.h>
  #include <stdlib.h>
@@ -12,7 +12,7 @@ $OpenBSD: patch-oobs_oobs-user_c,v 1.2 2010/09/30 07:45:17 ajacoutot Exp $
  
  #include "oobs-object-private.h"
  #include "oobs-usersconfig.h"
-@@ -1287,6 +1289,7 @@ oobs_user_set_locale (OobsUser *user, const gchar *loc
+@@ -1280,6 +1282,7 @@ oobs_user_set_locale (OobsUser *user, const gchar *loc
  gboolean
  oobs_user_get_active (OobsUser *user)
  {
@@ -20,7 +20,7 @@ $OpenBSD: patch-oobs_oobs-user_c,v 1.2 2010/09/30 07:45:17 ajacoutot Exp $
    struct utmpx *entry;
    const gchar *login;
    gboolean match = FALSE;
-@@ -1307,6 +1310,9 @@ oobs_user_get_active (OobsUser *user)
+@@ -1300,6 +1303,9 @@ oobs_user_get_active (OobsUser *user)
    endutxent ();
  
    return match;

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/04/02 13:40:04 ajacoutot Exp $
 
 COMMENT=	wrapping library to the System Tools Backends
 
-GNOME_VERSION=	2.32.0
+GNOME_VERSION=	3.0.0
 GNOME_PROJECT=	liboobs
 
 SHARED_LIBS +=  oobs-1                    0.0 # 4.0
