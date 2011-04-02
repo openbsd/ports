@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/30 16:20:57 benoit Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/02 08:05:19 benoit Exp $
 
 COMMENT =	perl implementation of RIPE whois
 
-DISTNAME =	Net-Whois-RIPE-2.00002
+DISTNAME =	Net-Whois-RIPE-2.00003
 CATEGORIES =	net
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
@@ -15,11 +15,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
 
-USE_GROFF =		Yes
-
-RUN_DEPENDS =		devel/p5-Test-Exception \
-			devel/p5-Module-Install \
-			devel/p5-Iterator-Util
-REGRESS_DEPENDS =       ${RUN_DEPENDS}
+RUN_DEPENDS =		devel/p5-Iterator-Util
+REGRESS_DEPENDS =	devel/p5-Test-Exception
                          
 .include <bsd.port.mk>

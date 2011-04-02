@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/12/30 16:21:00 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/04/02 08:05:22 benoit Exp $
+${P5SITE}/Net/
 ${P5SITE}/Net/Whois/
 ${P5SITE}/Net/Whois/RIPE.pm
 @man man/man3p/Net::Whois::RIPE.3p
