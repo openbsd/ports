@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_fileio_cpp,v 1.1 2010/09/19 18:52:08 jasper Exp $
---- src/fileio.cpp.orig	Mon Mar 15 18:52:39 2010
-+++ src/fileio.cpp	Tue Apr  6 06:00:41 2010
-@@ -29,6 +29,7 @@
+$OpenBSD: patch-src_fileio_cpp,v 1.2 2011/04/02 15:39:36 rpointel Exp $
+--- src/fileio.cpp.orig	Thu Nov 18 17:26:29 2010
++++ src/fileio.cpp	Mon Feb 28 21:50:53 2011
+@@ -28,6 +28,7 @@
  #endif
  #include <sys/stat.h>
  #include <algorithm>

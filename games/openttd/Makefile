@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/22 13:04:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/04/02 15:39:36 rpointel Exp $
 
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
-V=		1.0.5
+V=		1.1.0
 DISTNAME=	openttd-${V}
-EXTRACT_SUFX=	-source.tar.bz2
-GFX_V=		0.3.1
+EXTRACT_SUFX=	-source.tar.gz
+GFX_V=		0.3.2
 SFX_V=		0.2.3
 MSX_V=		0.3.1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -24,9 +24,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += SDL c expat fontconfig freetype icudata icui18n icuuc
-WANTLIB += lzo2 m png pthread stdc++ z
+WANTLIB += lzma lzo2 m png pthread stdc++ z
 
-MASTER_SITES=		http://cz.binaries.openttd.org/openttd/binaries/releases/${V}/
+MASTER_SITES=		http://binaries.openttd.org/releases/${V}/
 MASTER_SITES0=		http://bundles.openttdcoop.org/opengfx/releases/${GFX_V}/
 MASTER_SITES1=		http://bundles.openttdcoop.org/opensfx/releases/${SFX_V}/
 MASTER_SITES2=		http://bundles.openttdcoop.org/openmsx/releases/${MSX_V}/
@@ -34,7 +34,8 @@ MASTER_SITES2=		http://bundles.openttdcoop.org/openmsx/releases/${MSX_V}/
 LIB_DEPENDS=		archivers/lzo2 \
 			devel/sdl \
 			graphics/png \
-			textproc/icu4c
+			textproc/icu4c \
+			archivers/xz
 
 RUN_DEPENDS=            devel/desktop-file-utils
 

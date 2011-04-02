@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/11/22 13:04:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/04/02 15:39:36 rpointel Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -8,6 +8,7 @@ share/doc/openttd/COPYING
 share/doc/openttd/HOWTO_compile_lang_files.txt
 share/doc/openttd/Readme_OS2.txt
 share/doc/openttd/Readme_Windows_MSVC.txt
+share/doc/openttd/admin_network.txt
 share/doc/openttd/changelog.txt
 share/doc/openttd/elrail.svg
 share/doc/openttd/elrail_tile.png
@@ -21,7 +22,6 @@ share/doc/openttd/obg_format.txt
 share/doc/openttd/obm_format.txt
 share/doc/openttd/obs_format.txt
 share/doc/openttd/openttd.6
-share/doc/openttd/ottd-colour-palette.gif
 share/doc/openttd/ottd-colourtext-palette.png
 share/doc/openttd/palettes/
 share/doc/openttd/palettes/openttd.gpl
@@ -63,6 +63,7 @@ share/openttd/
 share/openttd/ai/
 share/openttd/ai/compat_0.7.nut
 share/openttd/ai/compat_1.0.nut
+share/openttd/ai/compat_1.1.nut
 share/openttd/data/
 share/openttd/data/no_sound.obs
 share/openttd/data/ogfx1_base.grf
@@ -74,8 +75,7 @@ share/openttd/data/ogfxt_toyland.grf
 share/openttd/data/opengfx.obg
 share/openttd/data/opensfx.cat
 share/openttd/data/opensfx.obs
-share/openttd/data/openttdd.grf
-share/openttd/data/openttdw.grf
+share/openttd/data/openttd.grf
 share/openttd/data/opntitle.dat
 share/openttd/data/orig_dos.obg
 share/openttd/data/orig_dos.obs
@@ -168,42 +168,43 @@ share/openttd/lang/vietnamese.lng
 share/openttd/lang/welsh.lng
 share/openttd/media/
 share/openttd/media/extra_grf/
-share/openttd/media/extra_grf/2ccmapd.nfo
-share/openttd/media/extra_grf/2ccmapw.nfo
+share/openttd/media/extra_grf/2ccmap.nfo
+share/openttd/media/extra_grf/airport_preview.nfo
+share/openttd/media/extra_grf/airport_preview.png
 share/openttd/media/extra_grf/airports.nfo
-share/openttd/media/extra_grf/airports.pcx
+share/openttd/media/extra_grf/airports.png
 share/openttd/media/extra_grf/aqueduct.nfo
-share/openttd/media/extra_grf/aqueduct.pcx
+share/openttd/media/extra_grf/aqueduct.png
 share/openttd/media/extra_grf/autorail.nfo
-share/openttd/media/extra_grf/autorail.pcx
+share/openttd/media/extra_grf/autorail.png
 share/openttd/media/extra_grf/canals.nfo
-share/openttd/media/extra_grf/canals.pcx
+share/openttd/media/extra_grf/canals.png
 share/openttd/media/extra_grf/chars.nfo
-share/openttd/media/extra_grf/chars.pcx
+share/openttd/media/extra_grf/chars.png
 share/openttd/media/extra_grf/elrails.nfo
-share/openttd/media/extra_grf/elrails.pcx
+share/openttd/media/extra_grf/elrails.png
 share/openttd/media/extra_grf/fix_graphics.nfo
-share/openttd/media/extra_grf/fix_graphics.pcx
+share/openttd/media/extra_grf/fix_graphics.png
 share/openttd/media/extra_grf/flags.nfo
-share/openttd/media/extra_grf/flags.pcx
+share/openttd/media/extra_grf/flags.png
 share/openttd/media/extra_grf/foundations.nfo
-share/openttd/media/extra_grf/foundations.pcx
+share/openttd/media/extra_grf/foundations.png
 share/openttd/media/extra_grf/oneway.nfo
-share/openttd/media/extra_grf/oneway.pcx
+share/openttd/media/extra_grf/oneway.png
 share/openttd/media/extra_grf/openttd.nfo
 share/openttd/media/extra_grf/openttdgui.nfo
-share/openttd/media/extra_grf/openttdgui.pcx
+share/openttd/media/extra_grf/openttdgui.png
 share/openttd/media/extra_grf/overrides.nfo
 share/openttd/media/extra_grf/roadstops.nfo
-share/openttd/media/extra_grf/roadstops.pcx
+share/openttd/media/extra_grf/roadstops.png
 share/openttd/media/extra_grf/shore.nfo
-share/openttd/media/extra_grf/shore.pcx
+share/openttd/media/extra_grf/shore.png
 share/openttd/media/extra_grf/signals.nfo
-share/openttd/media/extra_grf/signals.pcx
+share/openttd/media/extra_grf/signals.png
 share/openttd/media/extra_grf/sloped_tracks.nfo
-share/openttd/media/extra_grf/sloped_tracks.pcx
+share/openttd/media/extra_grf/sloped_tracks.png
 share/openttd/media/extra_grf/tramtracks.nfo
-share/openttd/media/extra_grf/tramtracks.pcx
+share/openttd/media/extra_grf/tramtracks.png
 share/openttd/media/openttd.128.png
 share/openttd/media/openttd.16.png
 share/openttd/media/openttd.256.png
