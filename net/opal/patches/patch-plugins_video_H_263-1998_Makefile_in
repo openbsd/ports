@@ -1,0 +1,16 @@
+$OpenBSD: patch-plugins_video_H_263-1998_Makefile_in,v 1.1 2011/04/02 06:15:11 ajacoutot Exp $
+
+C++ code needs to define __STDC_CONSTANT_MACROS to pull in parts of
+stdint.h (needed by graphics/ffmpeg).
+
+--- plugins/video/H.263-1998/Makefile.in.orig	Thu Mar 31 23:45:08 2011
++++ plugins/video/H.263-1998/Makefile.in	Thu Mar 31 23:45:30 2011
+@@ -56,7 +56,7 @@ ifdef TRACE_FILE
+ CFLAGS         += -DTRACE_FILE=1
+ endif
+ 
+-EXTRACCFLAGS    += $(LIBAVCODEC_CFLAGS) -I$(COMMONDIR) -I$(PLUGINDIR)
++EXTRACCFLAGS    += $(LIBAVCODEC_CFLAGS) -I$(COMMONDIR) -I$(PLUGINDIR) -D__STDC_CONSTANT_MACROS
+ 
+ vpath   %.cxx $(COMMONDIR)
+ vpath   %.o   $(OBJDIR)

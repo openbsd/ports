@@ -1,0 +1,16 @@
+$OpenBSD: patch-plugins_video_MPEG4-ffmpeg_Makefile_in,v 1.1 2011/04/02 06:15:11 ajacoutot Exp $
+
+C++ code needs to define __STDC_CONSTANT_MACROS to pull in parts of
+stdint.h (needed by graphics/ffmpeg).
+
+--- plugins/video/MPEG4-ffmpeg/Makefile.in.orig	Thu Mar 31 23:49:44 2011
++++ plugins/video/MPEG4-ffmpeg/Makefile.in	Thu Mar 31 23:50:23 2011
+@@ -76,7 +76,7 @@ LIBAVCODEC_SOURCE_DIR = @LIBAVCODEC_SOURCE_DIR@
+ 
+ # Add LIBAVCODEC_SOURCE_DIR to the include path so we can #include <libavcodec/...h>
+ # Also add libavutil, so ffmpeg headers can #include "log.h".
+-EXTRACCFLAGS    += $(LIBAVCODEC_CFLAGS) -I$(COMMONDIR) -I$(PLUGINDIR)
++EXTRACCFLAGS    += $(LIBAVCODEC_CFLAGS) -I$(COMMONDIR) -I$(PLUGINDIR) -D__STDC_CONSTANT_MACROS
+ 
+ ifneq (,$(LIBAVCODEC_SOURCE_DIR))
+ EXTRACCFLAGS    += -I$(LIBAVCODEC_SOURCE_DIR) -I$(LIBAVCODEC_SOURCE_DIR)/libavutil

@@ -1,0 +1,16 @@
+$OpenBSD: patch-plugins_video_H_264_Makefile_in,v 1.1 2011/04/02 06:15:11 ajacoutot Exp $
+
+C++ code needs to define __STDC_CONSTANT_MACROS to pull in parts of
+stdint.h (needed by graphics/ffmpeg).
+
+--- plugins/video/H.264/Makefile.in.orig	Thu Mar 31 23:43:27 2011
++++ plugins/video/H.264/Makefile.in	Thu Mar 31 23:43:56 2011
+@@ -94,7 +94,7 @@ STDCCFLAGS	=@STDCCFLAGS@
+ LDFLAGS		=@LDFLAGS@
+ LIBAVCODEC_CFLAGS=@LIBAVCODEC_CFLAGS@
+ 
+-EXTRACCFLAGS    +=  $(LIBAVCODEC_CFLAGS) -I$(COMMONDIR) -I$(PLUGINDIR) -DLIB_DIR='"$(libdir)"' -DVC_PLUGIN_DIR='"$(VC_PLUGIN_DIR)"' -DLICENCE_MPL
++EXTRACCFLAGS    +=  $(LIBAVCODEC_CFLAGS) -I$(COMMONDIR) -I$(PLUGINDIR) -DLIB_DIR='"$(libdir)"' -DVC_PLUGIN_DIR='"$(VC_PLUGIN_DIR)"' -DLICENCE_MPL -D__STDC_CONSTANT_MACROS
+ 
+ vpath	%.cxx $(SHAREDDIR)
+ vpath	%.cxx $(COMMONDIR)
