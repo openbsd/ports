@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2011/03/27 17:16:47 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2011/04/02 15:13:25 ajacoutot Exp $
 
 COMMENT =	mirroring/synchronization over low bandwidth links
 
@@ -6,13 +6,16 @@ DISTNAME =	rsync-3.0.8
 CATEGORIES =	net
 HOMEPAGE =	http://rsync.samba.org/
 
+REVISION =	0
+
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
-# GPL
+# GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
+
 WANTLIB =		c
 
 MASTER_SITES =	ftp://ftp.samba.org/pub/rsync/ \
@@ -24,7 +27,8 @@ MASTER_SITES =	ftp://ftp.samba.org/pub/rsync/ \
 CONFIGURE_STYLE =gnu
 CONFIGURE_ARGS =--with-included-popt \
 		--with-rsyncd-conf="${SYSCONFDIR}/rsyncd.conf" \
-		--with-rsh="ssh -T"
+		--with-rsh="ssh -T" \
+		--with-nobody-group=_rsync
 
 DOCDIR =	${PREFIX}/share/doc/rsync
 USE_GROFF =	Yes

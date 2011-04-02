@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_sh,v 1.1 2011/04/02 15:13:25 ajacoutot Exp $
+--- configure.sh.orig	Mon Mar 28 13:58:00 2011
++++ configure.sh	Mon Mar 28 13:59:13 2011
+@@ -4210,7 +4210,7 @@ fi
+ 
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define NOBODY_USER "nobody"
++#define NOBODY_USER "_rsync"
+ _ACEOF
+ 
+ 

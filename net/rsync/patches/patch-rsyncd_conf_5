@@ -1,6 +1,6 @@
-$OpenBSD: patch-rsyncd_conf_5,v 1.1 2011/03/07 19:48:20 ajacoutot Exp $
---- rsyncd.conf.5.orig	Thu Dec 31 22:15:51 2009
-+++ rsyncd.conf.5	Tue Feb 22 11:22:44 2011
+$OpenBSD: patch-rsyncd_conf_5,v 1.2 2011/04/02 15:13:25 ajacoutot Exp $
+--- rsyncd.conf.5.orig	Sat Mar 26 22:37:52 2011
++++ rsyncd.conf.5	Wed Mar 30 14:12:53 2011
 @@ -67,12 +67,11 @@ When run via inetd you should add a line like this to 
  and a single line something like this to /etc/inetd.conf:
  .PP 
@@ -16,7 +16,25 @@ $OpenBSD: patch-rsyncd_conf_5,v 1.1 2011/03/07 19:48:20 ajacoutot Exp $
  reread its config file.
  .PP 
  Note that you should \fBnot\fP send the rsync daemon a HUP signal to force
-@@ -460,7 +459,7 @@ limit the length of passwords that can be typed at the
+@@ -341,14 +340,13 @@ for modules to be listable.
+ This parameter specifies the user name or user ID that
+ file transfers to and from that module should take place as when the daemon
+ was run as root. In combination with the \(dq\&gid\(dq\& parameter this determines what
+-file permissions are available. The default is uid \-2, which is normally
+-the user \(dq\&nobody\(dq\&.
++file permissions are available. The default is \(dq\&_rsync\(dq\&.
+ .IP 
+ .IP "\fBgid\fP"
+ This parameter specifies the group name or group ID that
+ file transfers to and from that module should take place as when the daemon
+-was run as root. This complements the \(dq\&uid\(dq\& parameter. The default is gid \-2,
+-which is normally the group \(dq\&nobody\(dq\&.
++was run as root. This complements the \(dq\&uid\(dq\& parameter. The default is
++\(dq\&_rsync\(dq\&.
+ .IP 
+ .IP "\fBfake super\fP"
+ Setting \(dq\&fake super = yes\(dq\& for a module causes the
+@@ -460,7 +458,7 @@ limit the length of passwords that can be typed at the
  you may find that passwords longer than 8 characters don\(cq\&t work.
  .IP 
  There is no default for the \(dq\&secrets file\(dq\& parameter, you must choose a name
@@ -25,7 +43,18 @@ $OpenBSD: patch-rsyncd_conf_5,v 1.1 2011/03/07 19:48:20 ajacoutot Exp $
  by \(dq\&other\(dq\&; see \(dq\&strict modes\(dq\&.
  .IP 
  .IP "\fBstrict modes\fP"
-@@ -785,12 +784,12 @@ pid file = /var/run/rsyncd.pid
+@@ -758,8 +756,8 @@ A more sophisticated example would be:
+ .PP 
+ .nf 
+ 
+-uid = nobody
+-gid = nobody
++uid = _rsync
++gid = _rsync
+ use chroot = yes
+ max connections = 4
+ syslog facility = local5
+@@ -785,12 +783,12 @@ pid file = /var/run/rsyncd.pid
          path = /data/cvs
          comment = CVS repository (requires authentication)
          auth users = tridge, susan
@@ -40,7 +69,7 @@ $OpenBSD: patch-rsyncd_conf_5,v 1.1 2011/03/07 19:48:20 ajacoutot Exp $
  .PP 
  .RS 
  \f(CWtridge:mypass\fP
-@@ -803,7 +802,7 @@ The /etc/rsyncd.secrets file would look something like
+@@ -803,7 +801,7 @@ The /etc/rsyncd.secrets file would look something like
  .SH "FILES"
  
  .PP 

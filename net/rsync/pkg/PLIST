@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.11 2009/01/06 16:34:34 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/04/02 15:13:25 ajacoutot Exp $
+@newgroup _rsync:669
+@newuser _rsync:669:_rsync:daemon:rsync Daemon:/var/empty:/sbin/nologin
 @bin bin/rsync
 @man man/man1/rsync.1
 @man man/man5/rsyncd.conf.5
 share/doc/rsync/
 share/doc/rsync/tech_report.tex
-@cwd ${SYSCONFDIR}
-@extra rsyncd.conf
+@extra ${SYSCONFDIR}/rsyncd.conf

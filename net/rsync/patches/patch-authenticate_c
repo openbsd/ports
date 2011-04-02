@@ -1,0 +1,12 @@
+$OpenBSD: patch-authenticate_c,v 1.1 2011/04/02 15:13:25 ajacoutot Exp $
+--- authenticate.c.orig	Mon Mar 28 13:59:40 2011
++++ authenticate.c	Mon Mar 28 13:59:55 2011
+@@ -291,7 +291,7 @@ void auth_client(int fd, const char *user, const char 
+ 	char pass2[MAX_DIGEST_LEN*2];
+ 
+ 	if (!user || !*user)
+-		user = "nobody";
++		user = "_rsync";
+ 
+ 	if (!(pass = getpassf(password_file))
+ 	 && !(pass = getenv("RSYNC_PASSWORD"))) {
