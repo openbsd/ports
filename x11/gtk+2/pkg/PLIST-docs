@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.30 2011/03/07 19:19:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.31 2011/04/02 06:33:34 ajacoutot Exp $
 @conflict gtk+2-<2.4.9
 share/gtk-doc/
 share/gtk-doc/html/
@@ -404,7 +404,6 @@ share/gtk-doc/html/gtk/document-revert-ltr.png
 share/gtk-doc/html/gtk/document-revert-rtl.png
 share/gtk-doc/html/gtk/document-save-as.png
 share/gtk-doc/html/gtk/document-save.png
-share/gtk-doc/html/gtk/document-x-generic.png
 share/gtk-doc/html/gtk/drive-harddisk.png
 share/gtk-doc/html/gtk/edit-clear.png
 share/gtk-doc/html/gtk/edit-copy.png

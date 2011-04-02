@@ -1,4 +1,4 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.28 2011/03/14 16:44:42 ajacoutot Exp $
+$OpenBSD: patch-gtk_Makefile_in,v 1.29 2011/04/02 06:33:34 ajacoutot Exp $
 
 Fix use of grep(1) as we don't support the -o switch.
 
@@ -7,8 +7,8 @@ because some applications are broken. Use this until
 they get fixed. This is temporary.
 https://bugzilla.gnome.org/show_bug.cgi?id=629878
  
---- gtk/Makefile.in.orig	Mon Mar 14 15:36:31 2011
-+++ gtk/Makefile.in	Mon Mar 14 17:19:44 2011
+--- gtk/Makefile.in.orig	Fri Apr  1 23:41:08 2011
++++ gtk/Makefile.in	Sat Apr  2 07:56:11 2011
 @@ -950,7 +950,7 @@ SUBDIRS = theme-bits . tests
  DIST_SUBDIRS = theme-bits tests
  @HAVE_CUPS_FALSE@@HAVE_PAPI_CUPS_FALSE@@HAVE_PAPI_FALSE@GTK_PRINT_BACKENDS = file,lpr
@@ -18,7 +18,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=629878
  @HAVE_PAPI_CUPS_TRUE@GTK_PRINT_BACKENDS = file,papi,cups
  INCLUDES = \
  	-DG_LOG_DOMAIN=\"Gtk\"				\
-@@ -1601,7 +1601,171 @@ GENERATED_ICONS = \
+@@ -1614,7 +1614,171 @@ GENERATED_ICONS = \
  	stock-icons/24/folder-remote.png 		\
  	stock-icons/24/user-home.png 			\
  	stock-icons/24/user-desktop.png 		\
@@ -191,7 +191,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=629878
  
  @CROSS_COMPILING_FALSE@gtk_update_icon_cache_program = \
  @CROSS_COMPILING_FALSE@	   ./gtk-update-icon-cache
-@@ -2756,7 +2920,7 @@ gtktypefuncs.c: @REBUILD@ $(top_srcdir)/gtk/*.h $(top_
+@@ -2769,7 +2933,7 @@ gtktypefuncs.c: @REBUILD@ $(top_srcdir)/gtk/*.h $(top_
  	echo '#include <gtk/gtk.h>' > xgen-gtfsrc.c && \
  	  ${CPP} $(DEFS) $(INCLUDES) -DGTK_ENABLE_BROKEN $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) xgen-gtfsrc.c | \
  	  grep '^GType\s*g[td]k_[a-zA-Z0-9_]*_get_type\s*(void)' | \
@@ -200,10 +200,10 @@ https://bugzilla.gnome.org/show_bug.cgi?id=629878
  	  sed '{ s/^/*tp++ = /; s/$$/();/; }' | \
  	  sort > xgen-gtf \
  	&& cp xgen-gtf $@ && rm -f xgen-gtf
-@@ -2874,6 +3038,88 @@ stamp-icons: $(STOCK_ICONS)
+@@ -2885,6 +3049,88 @@ stamp-icons: $(STOCK_ICONS)
  	   && $(LN_S) folder.png user-desktop.png 			\
- 	   && $(RM) text-x-generic.png 					\
- 	   && $(LN_S) document-x-generic.png text-x-generic.png 	\
+ 	   && $(RM) user-home.png 					\
+ 	   && $(LN_S) folder.png user-home.png 				\
 +	   && $(LN_S) application-exit.png gtk-quit.png			\
 +	   && $(LN_S) dialog-info.png gtk-info.png			\
 +	   && $(LN_S) document-new.png gtk-file.png			\
