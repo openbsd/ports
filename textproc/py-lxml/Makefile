@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/01/16 09:27:28 phessler Exp $
+# $OpenBSD: Makefile,v 1.9 2011/04/02 01:18:35 fgsch Exp $
 
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
 MODPY_EGG_VERSION=	2.2.8
 DISTNAME=	lxml-${MODPY_EGG_VERSION}
 PKGNAME=	py-lxml-${MODPY_EGG_VERSION}
+REVISION =	0
 CATEGORIES=	textproc devel
 
 EXTRACT_SUFX=	.tgz
@@ -23,12 +24,15 @@ WANTLIB=	m xml2 z exslt xslt
 MODULES=	lang/python
 
 LIB_DEPENDS=	textproc/libxslt
-RUN_DEPENDS=	www/py-beautifulsoup
 
 MODPY_SETUPTOOLS=Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-lxml
 	@cp -r ${WRKSRC}/doc/* ${PREFIX}/share/doc/py-lxml/
+
+do-regress:
+	cd ${WRKSRC} && cp lib.openbsd-*/lxml/*.so src/lxml; \
+	    ${MODPY_BIN} test.py
 
 .include <bsd.port.mk>
