@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/02 16:56:42 ajacoutot Exp $
 
 COMMENT=	web-based conference management software
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/
+MASTER_SITES=	http://distfiles.bsdfrog.org/
 MASTER_SITES0=	http://www.lri.fr/~rigaux/
 
 EXTRACT_ONLY=

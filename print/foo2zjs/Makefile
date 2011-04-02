@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/03/03 13:42:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2011/04/02 16:56:42 ajacoutot Exp $
 
 COMMENT-main=	driver for ZjStream wire protocol compatible printers
 COMMENT-cups=	Konica-Minolta foo2zjs command filter for CUPS
@@ -25,7 +25,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c
 
-MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/
+MASTER_SITES=	http://distfiles.bsdfrog.org/
 
 MULTI_PACKAGES=	-main -cups
 

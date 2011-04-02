@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/04/02 16:22:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/02 16:56:42 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	http://www.bsdfrog.org/OpenBSD/distfiles/
+MASTER_SITES =	http://distfiles.bsdfrog.org/
 EXTRACT_SUFX =	.tar.bz2
 
 USE_GMAKE =	Yes

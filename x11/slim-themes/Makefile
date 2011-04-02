@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/03/24 22:01:08 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/02 16:56:42 ajacoutot Exp $
 
 COMMENT=	slim themes bundle
 
@@ -16,7 +16,7 @@ PKG_ARCH=	*
 CATEGORIES=	x11
 HOMEPAGE=	http://slim.berlios.de/
 
-MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/slim/
+MASTER_SITES=	http://distfiles.bsdfrog.org/slim/
 
 # Freely available themes
 PERMIT_PACKAGE_CDROM=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/03/07 19:40:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/04/02 16:56:42 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,7 +11,7 @@ PKGNAME=		evolution-plugin-rss-0.2.2
 REVISION=		0
 
 # from upstream git
-MASTER_SITES0=		http://www.bsdfrog.org/OpenBSD/distfiles/
+MASTER_SITES0=		http://distfiles.bsdfrog.org/
 PATCHFILES=		ep-rss-EVOLUTION_RSS_0_2_2_CORRECTED.diff:0
 PATCH_DIST_STRIP=	-p1
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/03/18 23:01:22 jeremy Exp $
+# $OpenBSD: Makefile,v 1.19 2011/04/02 16:56:42 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://jruby.org.s3.amazonaws.com/downloads/${V}/
-MASTER_SITES0 =	http://www.bsdfrog.org/OpenBSD/distfiles/
+MASTER_SITES0 =	http://distfiles.bsdfrog.org/
 
 MODULES =	java
 MODJAVA_VER =	1.7+

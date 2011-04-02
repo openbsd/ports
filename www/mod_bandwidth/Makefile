@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/09/26 17:45:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.10 2011/04/02 16:56:42 ajacoutot Exp $
 
 COMMENT=	bandwidth limiter for Apache
 
@@ -8,9 +8,9 @@ DISTFILES=	mod_bandwidth.c cleanlink.pl:0
 DISTNAME=	mod_bandwidth-${V}
 CATEGORIES=     www
 MASTER_SITES=	ftp://ftp.cohprog.com/pub/apache/module/1.3.0/ \
-		http://www.bsdfrog.org/OpenBSD/distfiles/mod_bandwidth/1.3.0/
+		http://distfiles.bsdfrog.org/mod_bandwidth/1.3.0/
 MASTER_SITES0=	ftp://ftp.cohprog.com/pub/apache/module/ \
-		http://www.bsdfrog.org/OpenBSD/distfiles/mod_bandwidth/
+		http://distfiles.bsdfrog.org/mod_bandwidth/
 
 HOMEPAGE=	http://www.cohprog.com/mod_bandwidth.html
 

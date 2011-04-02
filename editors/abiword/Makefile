@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2010/11/15 23:22:07 espie Exp $
+# $OpenBSD: Makefile,v 1.82 2011/04/02 16:56:42 ajacoutot Exp $
 
 COMMENT=	free cross-platform WYSIWYG word processor
 
@@ -12,7 +12,7 @@ REVISION=	1
 # DejaVu Serif.: fixes font corruption issue on machines where
 # msttcorefonts are not installed.
 PATCHFILES=	abiword-dejavu.patch:0
-MASTER_SITES0=	http://www.bsdfrog.org/OpenBSD/distfiles/
+MASTER_SITES0=	http://distfiles.bsdfrog.org/
 
 SHARED_LIBS +=	abiword-2.8 0.0 # .0.0
 

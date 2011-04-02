@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/14 18:30:33 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/02 16:56:42 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -24,7 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 # .so shared library equivalent.
 WANTLIB =		e2fs-uuid m mysqlclient pcrecpp pq stdc++ sqlite3
 
-MASTER_SITES=		http://www.bsdfrog.org/OpenBSD/distfiles/
+MASTER_SITES=		http://distfiles.bsdfrog.org/
 
 BUILD_DEPENDS=		devel/cmake \
 			shells/bash

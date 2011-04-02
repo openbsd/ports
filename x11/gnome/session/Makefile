@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.137 2011/03/26 15:04:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.138 2011/04/02 16:56:42 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
@@ -12,7 +12,7 @@ CATEGORIES=		x11
 # XXX when bug-buddy is installed, all debug messages are print in
 # .xsession, we do not want that
 # https://bugzilla.gnome.org/show_bug.cgi?id=622068
-MASTER_SITES0=	http://www.bsdfrog.org/OpenBSD/distfiles/
+MASTER_SITES0=	http://distfiles.bsdfrog.org/
 PATCHFILES=	gs-bug-buddy-debug.2.diff:0
 
 # GPLv2/LGPLv2/GFDLv1.1

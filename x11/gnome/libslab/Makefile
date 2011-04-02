@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/02 16:56:42 ajacoutot Exp $
 
 COMMENT=	interface components library
 
@@ -8,7 +8,7 @@ GNOME_VERSION=	2.30.0
 SHARED_LIBS +=  slab                 0.0      # 2.0
 
 # bring in some fixes from upstream GIT
-MASTER_SITES0=	http://www.bsdfrog.org/OpenBSD/distfiles/
+MASTER_SITES0=	http://distfiles.bsdfrog.org/
 PATCHFILES=	libslab-git-20101025.diff:0
 PATCH_DIST_STRIP= -p1
 

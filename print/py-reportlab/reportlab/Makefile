@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/20 09:48:40 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/04/02 16:56:42 ajacoutot Exp $
 
 COMMENT=	PDF-generating toolkit for Python
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.reportlab.org/ftp/
-MASTER_SITES0=	http://www.bsdfrog.org/OpenBSD/distfiles/
+MASTER_SITES0=	http://distfiles.bsdfrog.org/
 EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python

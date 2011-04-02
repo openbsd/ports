@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/03/13 18:56:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2011/04/02 16:56:42 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
@@ -25,7 +25,7 @@ WANTLIB += c dbus-1 dbus-glib-1 expat gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 pcre pthread z eggdbus-1
 
 #MASTER_SITES=	http://hal.freedesktop.org/releases/
-MASTER_SITES=	http://www.bsdfrog.org/OpenBSD/distfiles/
+MASTER_SITES=	http://distfiles.bsdfrog.org/
 
 MODULES=	textproc/intltool \
 		devel/gettext
