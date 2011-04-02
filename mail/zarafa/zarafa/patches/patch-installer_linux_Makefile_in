@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_Makefile_in,v 1.15 2011/03/29 18:00:03 ajacoutot Exp $
+$OpenBSD: patch-installer_linux_Makefile_in,v 1.16 2011/04/02 15:09:52 ajacoutot Exp $
 --- installer/linux/Makefile.in.orig	Mon Mar 28 20:32:51 2011
-+++ installer/linux/Makefile.in	Tue Mar 29 17:48:35 2011
++++ installer/linux/Makefile.in	Sat Apr  2 15:50:20 2011
 @@ -55,15 +55,15 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGUR
  mkinstalldirs = $(install_sh) -d
  CONFIG_HEADER = $(top_builddir)/common/config.h
@@ -65,6 +65,15 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.15 2011/03/29 18:00:03 ajacoutot
  	autorespond $(am__append_2) $(BUILT_SOURCES)
  rhel_initscript_files = zarafa-server.init.rhel \
  	zarafa-spooler.init.rhel zarafa-gateway.init.rhel \
+@@ -306,7 +305,7 @@ sysconf_sysconfigdir = ${@DISTRO@_sysconfig_path}
+ sysconf_sysconfig_DATA = ${@DISTRO@_sysconfig_files}
+ dist_data_DATA = \
+ 	db-convert-4.1-to-4.2 db-convert-4.20-to-4.21 db-convert-4.20-to-innodb.sql db-calc-storesize db-convert-attachments-to-files \
+-	createuser.dotforward db-convert-4.2x-to-5.00 ssl-certificates.sh db-upgrade-objectsid-to-objectguid.pl ldap-switch-sendas.pl \
++	createuser.dotforward db-convert-4.2x-to-5.00 db-upgrade-objectsid-to-objectguid.pl ldap-switch-sendas.pl \
+ 	audit-parse.pl
+ 
+ BUILT_SOURCES = ldap.openldap.cfg ldap.active-directory.cfg \
 @@ -466,15 +465,7 @@ uninstall-dist_sysconf_configDATA:
  	  echo " rm -f '$(DESTDIR)$(sysconf_configdir)/$$f'"; \
  	  rm -f "$(DESTDIR)$(sysconf_configdir)/$$f"; \

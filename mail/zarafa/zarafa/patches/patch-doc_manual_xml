@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_manual_xml,v 1.17 2011/03/29 18:00:03 ajacoutot Exp $
+$OpenBSD: patch-doc_manual_xml,v 1.18 2011/04/02 15:09:52 ajacoutot Exp $
 --- doc/manual.xml.orig	Mon Mar 28 20:32:05 2011
-+++ doc/manual.xml	Tue Mar 29 17:48:35 2011
++++ doc/manual.xml	Sat Apr  2 17:08:22 2011
 @@ -837,9 +837,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
@@ -24,7 +24,19 @@ $OpenBSD: patch-doc_manual_xml,v 1.17 2011/03/29 18:00:03 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -2861,9 +2854,7 @@
+@@ -1261,7 +1254,10 @@
+ 		</para>
+ 		<para>Then, you must setup a signed SSL certificate. First,
+ 		we'll create a Certificate Authority to be able to sign
+-		certificate requests. We provide a script which makes it easy
++		certificate requests.
++		!!! THE OpenBSD PACKAGE DOES NOT PROVIDE THIS SCRIPT,
++		PLEASE REFER TO openssl(1) FOR MANUALLY CREATING CA/CERTS !!!
++		We provide a script which makes it easy
+ 		to create certificates on any distribution. This script is
+ 		located in /usr/share/zarafa, called ssl-certificate.sh. Enter
+ 		the following commands to create a certificate for the Zarafa
+@@ -2861,9 +2857,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -35,7 +47,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.17 2011/03/29 18:00:03 ajacoutot Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-server.pid</replaceable>
-@@ -5750,13 +5741,8 @@
+@@ -5750,13 +5744,8 @@
  		</para>
  
  		<para>The spooler process will keep running and watching the
@@ -51,7 +63,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.17 2011/03/29 18:00:03 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -5928,9 +5914,7 @@
+@@ -5928,9 +5917,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -62,7 +74,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.17 2011/03/29 18:00:03 ajacoutot Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-spooler.pid</replaceable>
-@@ -6316,13 +6300,8 @@
+@@ -6316,13 +6303,8 @@
  
  		<para><command>zarafa-gateway</command></para>
  
@@ -78,7 +90,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.17 2011/03/29 18:00:03 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -6561,9 +6540,7 @@
+@@ -6561,9 +6543,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -89,7 +101,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.17 2011/03/29 18:00:03 ajacoutot Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-gateway.pid</replaceable>
-@@ -6944,14 +6921,8 @@
+@@ -6944,14 +6924,8 @@
  
  		<para>The monitor checks user mailbox sizes. The monitor sends
  		a quota email when the warning quota limit is reached. When
@@ -105,7 +117,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.17 2011/03/29 18:00:03 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -7103,9 +7074,7 @@
+@@ -7103,9 +7077,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -116,7 +128,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.17 2011/03/29 18:00:03 ajacoutot Exp $
  			  </para>
  			  <para>Default value: /var/run/zarafa-monitor.pid
  			  </para>
-@@ -8358,13 +8327,8 @@
+@@ -8358,13 +8330,8 @@
  
  		<para><command>zarafa-ical</command></para>
  
@@ -132,7 +144,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.17 2011/03/29 18:00:03 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -8547,9 +8511,7 @@
+@@ -8547,9 +8514,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -143,7 +155,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.17 2011/03/29 18:00:03 ajacoutot Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-ical.pid</replaceable>
-@@ -8863,13 +8825,8 @@
+@@ -8863,13 +8828,8 @@
  
  		<para><command>zarafa-licensed</command></para>
  
@@ -159,7 +171,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.17 2011/03/29 18:00:03 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -9013,9 +8970,7 @@
+@@ -9013,9 +8973,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
