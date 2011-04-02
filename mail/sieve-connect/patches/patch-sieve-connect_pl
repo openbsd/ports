@@ -1,0 +1,12 @@
+$OpenBSD: patch-sieve-connect_pl,v 1.1 2011/04/02 14:31:42 sthen Exp $
+--- sieve-connect.pl.orig	Sat Apr  2 07:13:57 2011
++++ sieve-connect.pl	Sat Apr  2 08:57:18 2011
+@@ -44,7 +44,7 @@
+ 	SSL_version	=> 'TLSv1',
+ 	SSL_cipher_list	=> 'ALL:!aNULL:!NULL:!LOW:!EXP:!ADH:@STRENGTH',
+ 	SSL_verify_mode	=> 0x01,
+-	SSL_ca_path	=> '/etc/ssl/certs',
++	SSL_ca_file	=> '/etc/ssl/cert.pem',
+ );
+ # These defaults can be overriden on the cmdline:
+ my ($forbid_clearauth, $forbid_clearchan) = (0, 0);
