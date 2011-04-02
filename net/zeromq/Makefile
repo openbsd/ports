@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/01 22:26:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/02 21:33:55 jeremy Exp $
 
 COMMENT =		open source message queue optimised for performance
 
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB=		c pthread stdc++ ssl crypto m
 
-MASTER_SITES =		http://download.zeromq.org/
+MASTER_SITES =		http://download.zeromq.org/ \
+			http://download.zeromq.org/historic/
 
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
