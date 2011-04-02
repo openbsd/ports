@@ -1,42 +1,7 @@
-$OpenBSD: patch-uif_c,v 1.2 2010/12/02 18:41:46 jasper Exp $
---- uif.c.orig	Mon Nov  8 22:40:57 2010
-+++ uif.c	Thu Dec  2 13:05:36 2010
-@@ -25,7 +25,9 @@
- #include <unistd.h>
- #include <termios.h>
- 
-+#if defined(__linux__)
- #include <linux/serial.h>
-+#endif
- #include <sys/ioctl.h>
- #include <fcntl.h>
- 
-@@ -33,7 +35,7 @@
- #include "util.h"
- #include "output.h"
- 
--#ifdef __APPLE__
-+#if defined(__APPLE__) || defined(__OpenBSD__)
- #define B460800 460800
- #define B500000 500000
- #endif
-@@ -85,6 +87,7 @@ static void serial_destroy(transport_t tr_base)
- 	free(tr);
- }
- 
-+#if defined(__linux__)
- static int open_olimex_iso(const char *device)
- {
-         int fd = open(device, O_RDWR | O_NOCTTY);
-@@ -112,6 +115,7 @@ static int open_olimex_iso(const char *device)
- 
-         return fd;
- }
-+#endif
- 
- transport_t uif_open(const char *device, uif_type_t type)
- {
-@@ -138,8 +142,12 @@ transport_t uif_open(const char *device, uif_type_t ty
+$OpenBSD: patch-uif_c,v 1.3 2011/04/02 08:22:28 jasper Exp $
+--- uif.c.orig	Sun Feb  6 23:55:37 2011
++++ uif.c	Sat Apr  2 10:06:33 2011
+@@ -150,8 +150,12 @@ transport_t uif_open(const char *device, uif_type_t ty
  		break;
  
  	case UIF_TYPE_OLIMEX_ISO:

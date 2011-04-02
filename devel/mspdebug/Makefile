@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2010/12/02 18:41:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/02 08:22:28 jasper Exp $
 
 COMMENT=		debugger for use with MSP 430 MCUs
 
-DISTNAME=		mspdebug-0.13
+DISTNAME=		mspdebug-0.14
 CATEGORIES=		devel
 
 HOMEPAGE=		http://mspdebug.sourceforge.net/

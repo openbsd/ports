@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile,v 1.2 2010/12/02 18:41:46 jasper Exp $
+$OpenBSD: patch-Makefile,v 1.3 2011/04/02 08:22:28 jasper Exp $
 
-- Add missing libraries and cflags.
+- Add missing libraries.
 
---- Makefile.orig	Mon Nov  8 22:40:57 2010
-+++ Makefile	Thu Dec  2 13:06:08 2010
-@@ -26,17 +26,21 @@ ifdef WITHOUT_READLINE
+--- Makefile.orig	Sat Apr  2 09:59:32 2011
++++ Makefile	Sat Apr  2 10:00:10 2011
+@@ -26,7 +26,7 @@ ifdef WITHOUT_READLINE
  	READLINE_LIBS =
  else
  	READLINE_CFLAGS = -DUSE_READLINE
@@ -12,34 +12,4 @@ $OpenBSD: patch-Makefile,v 1.2 2010/12/02 18:41:46 jasper Exp $
 +	READLINE_LIBS = -lreadline -ltermcap
  endif
  
--# Mac OS X/MacPorts stuff
  UNAME := $(shell sh -c 'uname -s')
--ifeq ($(UNAME),Darwin)
--	MACPORTS_CFLAGS = -I/opt/local/include
--	MACPORTS_LDFLAGS = -L/opt/local/lib
-+ifeq ($(UNAME),Darwin) # Mac OS X/MacPorts stuff
-+	PORTS_CFLAGS = -I/opt/local/include
-+	PORTS_LDFLAGS = -L/opt/local/lib
- else
--	MACPORTS_CFLAGS =
--	MACPORTS_LDFLAGS =
-+  ifeq ($(UNAME),OpenBSD) # OpenBSD Ports stuff
-+	PORTS_CFLAGS = `pkg-config --cflags libelf libusb`
-+	PORTS_LDFLAGS = `pkg-config --libs libelf libusb`
-+  else
-+	PORTS_CFLAGS =
-+	PORTS_LDFLAGS =
-+  endif
- endif
- 
- MSPDEBUG_CFLAGS = -O1 -Wall -Wno-char-subscripts -ggdb
-@@ -60,7 +64,7 @@ mspdebug: main.o fet.o rf2500.o dis.o uif.o olimex.o i
- 	  reader.o vector.o output_util.o expr.o fet_error.o binfile.o \
- 	  fet_db.o usbutil.o titext.o srec.o device.o coff.o opdb.o output.o \
- 	  cmddb.o stdcmd.o prog.o flash_bsl.o
--	$(CC) $(LDFLAGS) $(MACPORTS_LDFLAGS) -o $@ $^ -lusb $(READLINE_LIBS)
-+	$(CC) $(LDFLAGS) $(PORTS_LDFLAGS) -o $@ $^ -lusb $(READLINE_LIBS)
- 
- .c.o:
--	$(CC) $(CFLAGS) $(MACPORTS_CFLAGS) $(READLINE_CFLAGS) $(MSPDEBUG_CFLAGS) -o $@ -c $*.c
-+	$(CC) $(CFLAGS) $(PORTS_CFLAGS) $(READLINE_CFLAGS) $(MSPDEBUG_CFLAGS) -o $@ -c $*.c
