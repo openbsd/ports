@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/02 14:55:13 simon Exp $
 
 COMMENT =		minimal try/catch with proper localization of $\@
 
 MODULES =		cpan
-DISTNAME =		Try-Tiny-0.06
-REVISION =		0
+DISTNAME =		Try-Tiny-0.09
 CATEGORIES =		devel
 USE_GROFF =		Yes
 
@@ -16,6 +15,6 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-CPAN_AUTHOR =		NUFFIN
+CPAN_AUTHOR =		DOY
 
 .include <bsd.port.mk>
