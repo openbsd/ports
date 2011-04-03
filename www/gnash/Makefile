@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/03/27 10:42:24 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.42 2011/04/03 15:02:11 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT=	SWF player with Firefox browser plugin
 
 VER=		0.8.9
 DISTNAME=	gnash-${VER}
-REVISION=	0
+REVISION=	1
 EPOCH=		0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GNU:=gnash/${VER}/}
@@ -31,8 +31,7 @@ WANTLIB=	SDL X11 agg avcodec avformat avutil boost_program_options-mt \
 MODULES=	devel/gettext
 BUILD_DEPENDS=	devel/xulrunner/1.9,-devel
 RUN_DEPENDS=	devel/desktop-file-utils
-LIB_DEPENDS=	archivers/bzip2 \
-		audio/speex \
+LIB_DEPENDS=	audio/speex \
 		devel/boost \
 		devel/libtool,-ltdl \
 		devel/sdl \
@@ -47,7 +46,9 @@ LIB_DEPENDS=	archivers/bzip2 \
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
-CONFIGURE_STYLE= gnu
+CONFIGURE_STYLE= autoconf
+# Should be 2.67
+AUTOCONF_VERSION= 2.65
 CONFIGURE_ARGS=	--disable-cygnal \
 		--disable-jemalloc \
 		--disable-silent-rules \

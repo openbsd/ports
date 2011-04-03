@@ -1,0 +1,143 @@
+$OpenBSD: patch-macros_ffmpeg_m4,v 1.1 2011/04/03 15:02:12 dcoppa Exp $
+--- macros/ffmpeg.m4.orig	Sat Feb 26 13:11:08 2011
++++ macros/ffmpeg.m4	Fri Apr  1 23:43:14 2011
+@@ -22,6 +22,7 @@ AC_DEFUN([GNASH_PATH_FFMPEG],
+   backupLIBS="$LIBS"
+   backupCFLAGS="$CFLAGS"
+   avcodec_h=""
++  avcodec_version_h=""
+   ffmpeg_top_incl=""
+ 
+   dnl If the user specify an path to include headers from, we assume it's the full
+@@ -46,6 +47,9 @@ AC_DEFUN([GNASH_PATH_FFMPEG],
+       else
+         AC_MSG_ERROR([${with_ffmpeg_incl} directory does not contain the avcodec.h header])
+       fi
++      if test -f ${with_ffmpeg_incl}/version.h; then
++        avcodec_version_h=${with_ffmpeg_incl}/version.h
++      fi
+     fi
+   ])
+ 
+@@ -66,6 +70,9 @@ AC_DEFUN([GNASH_PATH_FFMPEG],
+           if test -f ${ffmpeg_top_incl}/${i}/avcodec.h; then
+             ac_cv_path_ffmpeg_incl="-I`(cd ${ffmpeg_top_incl}; pwd)`"
+             avcodec_h="${ffmpeg_top_incl}/${i}/avcodec.h"
++            if test -f ${ffmpeg_top_incl}/${i}/version.h; then
++              avcodec_version_h=${ffmpeg_top_incl}/${i}/version.h
++            fi
+             break
+           fi
+         done
+@@ -182,14 +189,24 @@ AC_DEFUN([GNASH_PATH_FFMPEG],
+   dnl a modified form of grepping may be better, making sure all old kinds of
+   dnl version numbering fail gracefully.
+ 
++  versionfile=""
++
+   dnl Check avcodec version number, if it was found
+-  if test x"${avcodec_h}" != x; then
++  if test x"${avcodec_version_h}" != x; then
++    versionfile=${avcodec_version_h}
++  else
++    if test x"${avcodec_h}" != x; then
++      versionfile=${avcodec_h}
++    fi
++  fi
+ 
++  if test x"${versionfile}" != x; then
++
+     AC_MSG_CHECKING([ffmpeg version])
+ 
+-    ffmpeg_major_version=`$EGREP "define LIBAVCODEC_VERSION_MAJOR " ${avcodec_h} | sed -e "s%[[^0-9]]%%g"`
+-    ffmpeg_minor_version=`$EGREP "define LIBAVCODEC_VERSION_MINOR " ${avcodec_h} | sed -e "s%[[^0-9]]%%g"`
+-    ffmpeg_micro_version=`$EGREP "define LIBAVCODEC_VERSION_MICRO " ${avcodec_h} | sed -e "s%[[^0-9]]%%g"`
++    ffmpeg_major_version=`$EGREP "define LIBAVCODEC_VERSION_MAJOR " ${versionfile} | sed -e "s%[[^0-9]]%%g"`
++    ffmpeg_minor_version=`$EGREP "define LIBAVCODEC_VERSION_MINOR " ${versionfile} | sed -e "s%[[^0-9]]%%g"`
++    ffmpeg_micro_version=`$EGREP "define LIBAVCODEC_VERSION_MICRO " ${versionfile} | sed -e "s%[[^0-9]]%%g"`
+ 
+     if test x"${ffmpeg_major_version}" != x ; then
+ 
+@@ -198,15 +215,15 @@ AC_DEFUN([GNASH_PATH_FFMPEG],
+     else
+ 
+       dnl #define LIBAVCODEC_VERSION_TRIPLET 51,50,1
+-      ffmpeg_version=`$EGREP "define LIBAVCODEC_VERSION_TRIPLET " ${avcodec_h} | awk '{print $'3'}' | sed -e "s%,%.%g"`
++      ffmpeg_version=`$EGREP "define LIBAVCODEC_VERSION_TRIPLET " ${versionfile} | awk '{print $'3'}' | sed -e "s%,%.%g"`
+ 
+       if test x"${ffmpeg_version}" = x ; then
+ 
+         dnl NOTE: the [0-9]*d. pattern discards deb-heads rubbish prefix
+-        ffmpeg_version=`$EGREP "define LIBAVCODEC_VERSION " ${avcodec_h} | awk '{print $'3'}' | sed -e "s%^[[0-9]]d\.%%"` 
++        ffmpeg_version=`$EGREP "define LIBAVCODEC_VERSION " ${versionfile} | awk '{print $'3'}' | sed -e "s%^[[0-9]]d\.%%"` 
+ 
+         if test x"${ffmpeg_version}" = x ; then
+-          ffmpeg_version=`$EGREP "define LIBAVCODEC_BUILD " ${avcodec_h} | awk '{print $'3'}'`
++          ffmpeg_version=`$EGREP "define LIBAVCODEC_BUILD " ${versionfile} | awk '{print $'3'}'`
+         fi
+       fi
+ 
+@@ -384,32 +401,6 @@ dnl   AC_EGREP_HEADER(avcodec_decode_audio2, ${avcodec
+   dnl
+   if test x"${ac_cv_path_ffmpeg_lib}" != x; then
+ 
+-    dnl Look for the DTS library, which is required on some systems. {
+-    dnl
+-    dnl TODO: skip this if -ldts is already in due to pkg-config 
+-    dnl
+-    AC_MSG_CHECKING([for libdts library])
+-    if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+-      $PKG_CONFIG --exists libdts && libdts=`$PKG_CONFIG --libs-only-l libdts`
+-    else
+-      libdts=""
+-    fi
+-    if test x"${libdts}" = x; then
+-      if test -f ${top_lib_dir}/libdts.a -o -f ${top_lib_dir}/libdts.${shlibext}; then
+-        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ldts"
+-        AC_MSG_RESULT(${top_lib_dir}/libdts)
+-      else
+-        AC_MSG_RESULT(no)
+-        if test x${cross_compiling} = xno; then
+-          AC_CHECK_LIB(dts, dts_init, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -ldts"])
+-        fi
+-      fi
+-    else
+-      AC_MSG_RESULT(${libdts})
+-      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libdts}"      
+-    fi
+-    dnl End of DTS library looking }
+-	
+     dnl Look for the VORBISENC library, which is required on some systems. {
+     AC_MSG_CHECKING([for libvorbisenc library])
+     if test x"$PKG_CONFIG" != x -a x${cross_compiling} = xno; then
+@@ -525,22 +516,16 @@ dnl   AC_EGREP_HEADER(avcodec_decode_audio2, ${avcodec
+       libgsm=""
+     fi
+ 
+-    dnl OpenBSD seems to have a problem with libgsm.
+-    if test x$openbsd_os != xopenbsd; then
+-      if test x"${libgsm}" = x; then
+-        if test -f ${top_lib_dir}/libgsm.a -o -f ${top_lib_dir}/libgsm.${shlibext}; then
+-          ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lgsm"
+-          AC_MSG_RESULT(${top_lib_dir}/libgsm)
+-        else
+-          AC_MSG_RESULT(no)
+-          if test x${cross_compiling} = xno; then
+-            AC_CHECK_LIB(gsm, gsm_destroy, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lgsm"])
+-          fi
++    if test x"${libgsm}" = x; then
++      if test -f ${top_lib_dir}/libgsm.a -o -f ${top_lib_dir}/libgsm.${shlibext}; then
++        ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lgsm"
++        AC_MSG_RESULT(${top_lib_dir}/libgsm)
++      else
++        AC_MSG_RESULT(no)
++        if test x${cross_compiling} = xno; then
++          AC_CHECK_LIB(gsm, gsm_destroy, [ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} -lgsm"])
+         fi
+       fi
+-    else
+-      AC_MSG_RESULT(${libgsm})
+-      ac_cv_path_ffmpeg_lib="${ac_cv_path_ffmpeg_lib} ${libgsm}"      
+     fi
+     dnl End of GSM library looking }
+     

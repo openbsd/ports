@@ -1,0 +1,18 @@
+$OpenBSD: patch-macros_curl_m4,v 1.1 2011/04/03 15:02:12 dcoppa Exp $
+--- macros/curl.m4.orig	Fri Apr  1 20:04:45 2011
++++ macros/curl.m4	Fri Apr  1 20:05:19 2011
+@@ -118,6 +118,14 @@ AC_DEFUN([GNASH_PATH_CURL],
+ 
+   if test x"${ac_cv_path_curl_lib}" != x ; then
+     CURL_LIBS="${ac_cv_path_curl_lib}"
++    dnl libcurl3-dev on Ubuntu has a dependency on lber, and Gnash won't link
++    dnl on most machines without it. (Ubuntu packaging bug.)
++    save_LIBS="$LIBS"
++    LIBS="$LIBS $CURL_LIBS"
++    AC_TRY_LINK_FUNC(curl_easy_init, [echo "ok!"], 
++      [AC_CHECK_LIB(lber, ber_free, [CURL_LIBS="$CURL_LIBS -llber"])])
++    dnl FIXME: complain if that didn't do the trick?
++    LIBS="$save_LIBS"
+   else
+     CURL_LIBS=""
+   fi
