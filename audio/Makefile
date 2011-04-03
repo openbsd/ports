@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.258 2011/03/25 17:02:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.259 2011/04/03 12:31:17 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -199,6 +199,7 @@
      SUBDIR += tracker
      SUBDIR += tremor
      SUBDIR += tremor-tools
+     SUBDIR += umurmur
      SUBDIR += vagalume
      SUBDIR += vamp-plugin-sdk
      SUBDIR += vlorb
