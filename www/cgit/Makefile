@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/03 10:27:24 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/03 21:32:49 jasper Exp $
 
 COMMENT =	web frontend for git repositories
 
 DISTNAME =	cgit-0.8.3.5
 CATEGORIES =	www devel
 
-MASTER_SITES =	http://hjemli.net/git/cgit/snapshot/
+MASTER_SITES =	http://distfiles.nl/
 HOMEPAGE =	http://hjemli.net/git/cgit/about/
 
 # GPLv2
