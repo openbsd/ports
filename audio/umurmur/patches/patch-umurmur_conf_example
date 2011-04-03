@@ -1,0 +1,23 @@
+$OpenBSD: patch-umurmur_conf_example,v 1.1.1.1 2011/04/03 12:04:47 dcoppa Exp $
+--- umurmur.conf.example.orig	Tue Feb  8 23:06:05 2011
++++ umurmur.conf.example	Thu Mar 31 15:25:23 2011
+@@ -1,15 +1,15 @@
+ max_bandwidth = 48000;
+ welcometext = "Welcome to uMurmur!";
+-certificate = "/etc/umurmur/cert.crt";
+-private_key = "/etc/umurmur/key.key";
++certificate = "${SYSCONFDIR}/umurmur/certificate.crt";
++private_key = "${SYSCONFDIR}/umurmur/private_key.key";
+ password = "";
+ max_users = 10;
+ 
+ # username and groupname for privilege dropping.
+ # Will attempt to switch user if set. 
+-# username = "";
++username = "_umurmur";
+ # If groupname not set the user's default login group will be used
+-# groupname = "";
++groupname = "_umurmur";
+ 
+ # bindport = 64738;
+ # bindaddr = "192.168.1.1";

@@ -1,0 +1,3 @@
+uMurmur is a minimalistic Mumble server primarily targeted to run on
+routers with an open OS like OpenWRT. The server part of Mumble is
+called Murmur, hence the name uMurmur.

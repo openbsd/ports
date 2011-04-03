@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_messagehandler_c,v 1.1.1.1 2011/04/03 12:04:47 dcoppa Exp $
+--- src/messagehandler.c.orig	Wed Mar 30 09:17:41 2011
++++ src/messagehandler.c	Wed Mar 30 09:20:51 2011
+@@ -396,9 +396,9 @@ void Mh_handle_message(client_t *client, message_t *ms
+ 			sendmsg->payload.textMessage->n_tree_id = 1;
+ 			sendmsg->payload.textMessage->tree_id = tree_id;
+ 			if (client->recording)
+-				sprintf(message, "User %s started recording", client->username);
++				snprintf(message, strlen(client->username) + 32, "User %s started recording", client->username);
+ 			else
+-				sprintf(message, "User %s stopped recording", client->username);
++				snprintf(message, strlen(client->username) + 32, "User %s stopped recording", client->username);
+ 			Client_send_message_except_ver(NULL, sendmsg, ~0x010203);
+ 			sendmsg = NULL;
+ 		}

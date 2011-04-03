@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_client_c,v 1.1.1.1 2011/04/03 12:04:47 dcoppa Exp $
+--- src/client.c.orig	Sat Dec 18 15:31:01 2010
++++ src/client.c	Wed Mar 30 09:44:03 2011
+@@ -28,6 +28,7 @@
+    NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
++#include <sys/types.h>
+ #include <sys/poll.h>
+ #include <sys/socket.h>
+ #include <fcntl.h>
+@@ -149,7 +150,7 @@ codec_t *Client_codec_iterate(client_t *client, codec_
+ void recheckCodecVersions()
+ {
+ 	client_t *client_itr = NULL;
+-	int max = 0, version, current_version;
++	int max = 0, version = 0, current_version = 0;
+ 	message_t *sendmsg;
+ 	struct dlist codec_list, *itr, *save;
+ 	codec_t *codec_itr, *cd;
+@@ -512,6 +513,7 @@ int Client_send_message_ver(client_t *client, message_
+ 		return Client_send_message(client, msg);
+ 	else
+ 		Msg_free(msg);
++	return 0;
+ }
+ 
+ int Client_send_message(client_t *client, message_t *msg)

@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: umurmurd.rc,v 1.1.1.1 2011/04/03 12:04:47 dcoppa Exp $
+
+daemon="${TRUEPREFIX}/sbin/umurmurd"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

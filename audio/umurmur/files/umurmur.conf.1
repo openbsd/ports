@@ -1,0 +1,80 @@
+'\" t
+.\"     Title: umurmur.conf
+.\"    Author: [see the "Author" section]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 03/29/2011
+.\"    Manual: umurmur.conf Reference Guide
+.\"    Source: umurmur.conf
+.\"  Language: English
+.\"
+.TH "UMURMUR.CONF" "1" "Mar 29, 2011" "umurmur.conf" "umurmur.conf Reference Guide"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+\fBumurmur.conf\fR - umurmurd configuration file
+.SH "DESCRIPTION"
+.\" umurmur.conf: description of
+.PP
+uMurmur is a minimalistic Mumble server primarily targeted to run on routers with an open OS like OpenWRT.  It is configured with umurmur.conf.
+.SH "OPTIONS"
+.PP
+.\" summary of options
+.\" config file options: of umurmurd
+General Options (listed with defaults)
+
+ \- max_bandwidth = 48000
+       bits/second per user
+
+ \- welcometext = "Welcome to uMurmur!"
+       welcome banner users see upon login
+ 
+ \- certificate = "${SYSCONFDIR}/umurmur/certificate.crt"
+       certificate for SSL communication
+ 
+ \- private_key = "${SYSCONFDIR}/umurmur/private_key.key"
+       private key for the above certificate
+ 
+ \- password = ""
+       server password for user authentication
+ 
+ \- max_users = 10
+       maximum concurrent users allowed on the server
+ 
+ \- default_channel = "Lobby"
+       channel user is placed in upon login
+ 
+ \- bindaddr = "192.168.1.1"
+       address to listen on
+ 
+ \- bindport = 64738
+       port to listen on
+ 
+ \- username = "_umurmur"
+       user to switch to if running as root
+ 
+ \- groupname (defaults to user's login group)
+       group to switch to if running as root
+.PP
+Channel Configuration
+.PP
+In the channel configuration, name and parent are required. The noenter and description parameters are optional, where noenter defaults to false and description to "". The noenter parameter controls whether a channel can be entered or not. This can be useful when grouping channels together in a 'folder', e.g. a game name.
+.PP
+Channel Links Configuration
+.PP
+Channel links is a one-way duplication of speech from one channel to another when whispering to the channel. It is not necessary to configure this unless you need it. An example usage, as demonstrated in the default configuration file (${TRUEPREFIX}/share/examples/umurmur/umurmur.conf), is to make all speech whispered to the lobby also be directed to the team channels. The speech in the team channels is not directed to the lobby.
+.PP
+In channel_links, both source and destination parameters are required.
+.SH "AUTHOR"
+.PP
+Martin Johansson (martin@fatbob.nu)
+.SH "SEE ALSO"
+.PP
+umurmurd(1)

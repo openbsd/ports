@@ -1,0 +1,40 @@
+$OpenBSD: patch-src_conf_c,v 1.1.1.1 2011/04/03 12:04:47 dcoppa Exp $
+--- src/conf.c.orig	Thu Mar 31 11:09:52 2011
++++ src/conf.c	Thu Mar 31 11:12:41 2011
+@@ -40,7 +40,7 @@
+ 
+ static config_t configuration;
+ 
+-#define DEFAULT_CONFIG "/etc/umurmur.conf"
++#define DEFAULT_CONFIG "${SYSCONFDIR}/umurmur/umurmur.conf"
+ #define DEFAULT_WELCOME "Welcome to uMurmur!"
+ #define DEFAULT_MAX_CLIENTS 10
+ #define DEFAULT_MAX_BANDWIDTH 48000
+@@ -73,23 +73,23 @@ const char *getStrConf(param_t param)
+ 	case CERTIFICATE:
+ 		setting = config_lookup(&configuration, "certificate");
+ 		if (!setting)
+-			return "/etc/umurmur/certificate.crt";
++			return "${SYSCONFDIR}/umurmur/certificate.crt";
+ 		else {
+ 			if ((strsetting = config_setting_get_string(setting)) != NULL)
+ 				return strsetting;
+ 			else
+-				return "/etc/umurmur/certificate.crt";
++				return "${SYSCONFDIR}/umurmur/certificate.crt";
+ 		}
+ 		break;
+ 	case KEY:
+ 		setting = config_lookup(&configuration, "private_key");
+ 		if (!setting)
+-			return "/etc/umurmur/private_key.key";
++			return "${SYSCONFDIR}/umurmur/private_key.key";
+ 		else {
+ 			if ((strsetting = config_setting_get_string(setting)) != NULL)
+ 				return strsetting;
+ 			else
+-				return "/etc/umurmur/private_key.key";
++				return "${SYSCONFDIR}/umurmur/private_key.key";
+ 		}
+ 		break;
+ 	case PASSPHRASE:

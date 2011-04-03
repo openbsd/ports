@@ -1,0 +1,57 @@
+'\" t
+.\"     Title: umurmurd
+.\"    Author: [see the "Author" section]
+.\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
+.\"      Date: 03/29/2011
+.\"    Manual: umurmurd Reference Guide
+.\"    Source: umurmurd
+.\"  Language: English
+.\"
+.TH "UMURMURD" "1" "Mar 29, 2011" "umurmurd" "umurmurd Reference Guide"
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+umurmurd - minimalistic Mumble server
+.SH "SYNOPSIS"
+.HP \w'\fBumurmurd\fR\ 'u
+\fBumurmurd\fR [\fI-dh\fR] [\fI-p <pidfile>\fR] [\fI-c <conf file>\fR]
+[\fI-a <address>\fR] [\fI-b <port>\fR]
+.SH "DESCRIPTION"
+.\" umurmurd: description of
+.PP
+uMurmur is a minimalistic Mumble server primarily targeted to run on routers with an open OS like OpenWRT.  The server part of Mumble is called Murmur, hence the name uMurmur.
+.PP
+uMurmur supports version 1.2.x Mumble clients.  It is not compatible with version 1.1.x of Mumble.
+.PP
+Highlights:
+  \- Whisper target to channels, channel trees, and linked channels.
+  \- Temporary channels can be created by users.
+  \- Channel links can be configured in the configuration file.
+  \- Channels can be configured non-enterable in the configuration
+    file.
+  \- Positional audio is stripped if users are not in the same plugin
+    context (playing the same game).
+.SH "OPTIONS"
+.PP
+.\" summary of options
+.\" command-line options: of umurmurd
+ \-d             \- Do not daemonize
+ \-p <pidfile>   \- Write PID to this file
+ \-c <conf file> \- Specify configuration file
+ \-a <address>   \- Bind to IP address
+ \-b <port>      \- Bind to port
+ \-h             \- Print help summary
+.SH "AUTHOR"
+.PP
+Martin Johansson (martin@fatbob.nu)
+.SH "SEE ALSO"
+.PP
+umurmur.conf(1)

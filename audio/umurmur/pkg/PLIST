@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/03 12:04:47 dcoppa Exp $
+@newgroup _umurmur:671
+@newuser _umurmur:671:_umurmur:daemon:uMurmur Account:/nonexistent:/sbin/nologin
+@man man/man1/umurmurd.1
+@man man/man1/umurmur.conf.1
+@bin sbin/umurmurd
+share/examples/umurmur/
+share/examples/umurmur/umurmur.conf
+@owner _umurmur
+@group _umurmur
+@mode 770
+@sample ${SYSCONFDIR}/umurmur/
+@mode 660
+@sample ${SYSCONFDIR}/umurmur/umurmur.conf
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/umurmurd
