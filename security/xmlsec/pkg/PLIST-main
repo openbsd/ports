@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2008/09/15 19:10:02 naddy Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2011/04/03 10:59:50 jasper Exp $
 @pkgpath security/xmlsec
 @bin bin/xmlsec1
 bin/xmlsec1-config
@@ -12,10 +12,15 @@ include/xmlsec1/xmlsec/crypto.h
 include/xmlsec1/xmlsec/dl.h
 include/xmlsec1/xmlsec/errors.h
 include/xmlsec1/xmlsec/exports.h
+include/xmlsec1/xmlsec/gcrypt/
+include/xmlsec1/xmlsec/gcrypt/app.h
+include/xmlsec1/xmlsec/gcrypt/crypto.h
+include/xmlsec1/xmlsec/gcrypt/symbols.h
 include/xmlsec1/xmlsec/gnutls/
 include/xmlsec1/xmlsec/gnutls/app.h
 include/xmlsec1/xmlsec/gnutls/crypto.h
 include/xmlsec1/xmlsec/gnutls/symbols.h
+include/xmlsec1/xmlsec/gnutls/x509.h
 include/xmlsec1/xmlsec/io.h
 include/xmlsec1/xmlsec/keyinfo.h
 include/xmlsec1/xmlsec/keys.h
@@ -35,6 +40,7 @@ include/xmlsec1/xmlsec/parser.h
 include/xmlsec1/xmlsec/private/
 include/xmlsec1/xmlsec/private.h
 include/xmlsec1/xmlsec/private/xkms.h
+include/xmlsec1/xmlsec/private/xslt.h
 include/xmlsec1/xmlsec/soap.h
 include/xmlsec1/xmlsec/strings.h
 include/xmlsec1/xmlsec/templates.h
@@ -46,6 +52,8 @@ include/xmlsec1/xmlsec/xmldsig.h
 include/xmlsec1/xmlsec/xmlenc.h
 include/xmlsec1/xmlsec/xmlsec.h
 include/xmlsec1/xmlsec/xmltree.h
+lib/libxmlsec1-gcrypt.a
+lib/libxmlsec1-gcrypt.la
 lib/libxmlsec1-gnutls.a
 lib/libxmlsec1-gnutls.la
 lib/libxmlsec1-openssl.a
@@ -53,6 +61,7 @@ lib/libxmlsec1-openssl.la
 lib/libxmlsec1.a
 lib/libxmlsec1.la
 lib/pkgconfig/
+lib/pkgconfig/xmlsec1-gcrypt.pc
 lib/pkgconfig/xmlsec1-gnutls.pc
 lib/pkgconfig/xmlsec1-openssl.pc
 lib/pkgconfig/xmlsec1.pc

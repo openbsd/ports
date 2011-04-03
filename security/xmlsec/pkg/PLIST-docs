@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.4 2004/09/15 18:36:03 espie Exp $
+@comment $OpenBSD: PLIST-docs,v 1.5 2011/04/03 10:59:50 jasper Exp $
 share/doc/xmlsec1/
 share/doc/xmlsec1/api/
 share/doc/xmlsec1/api/home.png
@@ -34,6 +34,10 @@ share/doc/xmlsec1/api/xmlsec-examples-sign-dynamimc-template.html
 share/doc/xmlsec1/api/xmlsec-examples-sign-template-file.html
 share/doc/xmlsec1/api/xmlsec-examples-sign-x509.html
 share/doc/xmlsec1/api/xmlsec-examples.html
+share/doc/xmlsec1/api/xmlsec-gcrypt-app.html
+share/doc/xmlsec1/api/xmlsec-gcrypt-crypto.html
+share/doc/xmlsec1/api/xmlsec-gcrypt-ref.html
+share/doc/xmlsec1/api/xmlsec-gcrypt.sgml
 share/doc/xmlsec1/api/xmlsec-gnutls-app.html
 share/doc/xmlsec1/api/xmlsec-gnutls-crypto.html
 share/doc/xmlsec1/api/xmlsec-gnutls-ref.html
