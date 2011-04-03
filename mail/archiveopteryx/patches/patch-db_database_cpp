@@ -1,0 +1,14 @@
+$OpenBSD: patch-db_database_cpp,v 1.1 2011/04/03 09:04:54 landry Exp $
+Backport c3d5d52ad084a98cc161
+Fix crash when connection to postgres fails.
+--- db/database.cpp.orig
++++ db/database.cpp
+@@ -339,6 +339,8 @@ void Database::removeHandle( Database * d )
+         return;
+
+     handles->remove( d );
++    if ( !totalDbConnections )
++        totalDbConnections = new GraphableNumber( "total-db-connections" );
+     totalDbConnections->setValue( handles->count() );
+     if ( !handles->isEmpty() )
+         return;
