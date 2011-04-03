@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_dbus_qdbusintegrator_cpp,v 1.1 2011/04/03 13:35:31 dcoppa Exp $
+
+Fixes an invalid conversion error on sparc64.
+http://bugreports.qt.nokia.com/browse/QTBUG-17962
+
+--- src/dbus/qdbusintegrator.cpp.orig	Wed Mar 30 11:48:06 2011
++++ src/dbus/qdbusintegrator.cpp	Wed Mar 30 11:48:42 2011
+@@ -71,7 +71,7 @@ QT_BEGIN_NAMESPACE
+ static bool isDebugging;
+ #define qDBusDebug              if (!::isDebugging); else qDebug
+ 
+-Q_GLOBAL_STATIC_WITH_ARGS(const QString, orgFreedesktopDBusString, (QLatin1String(DBUS_SERVICE_DBUS)))
++Q_GLOBAL_STATIC_WITH_ARGS(QString, orgFreedesktopDBusString, (QLatin1String(DBUS_SERVICE_DBUS)))
+ 
+ static inline QString dbusServiceString()
+ { return *orgFreedesktopDBusString(); }

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.8 2010/10/28 14:55:47 espie Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.9 2011/04/03 13:35:31 dcoppa Exp $
 %%GCC4%%
 @lib lib/libQt3Support.so.${LIBQt3Support_VERSION}
 @lib lib/libQtCLucene.so.${LIBQtCLucene_VERSION}
@@ -47,7 +47,6 @@ lib/qt4/imports/QtWebKit/libqmlwebkitplugin.so
 lib/qt4/plugins/accessible/libqtaccessiblecompatwidgets.so
 lib/qt4/plugins/accessible/libqtaccessiblewidgets.so
 lib/qt4/plugins/bearer/libqgenericbearer.so
-lib/qt4/plugins/bearer/libqnmbearer.so
 lib/qt4/plugins/designer/libphononwidgets.so
 lib/qt4/plugins/designer/libqdeclarativeview.so
 lib/qt4/plugins/designer/libqt3supportwidgets.so
@@ -62,4 +61,5 @@ lib/qt4/plugins/imageformats/libqsvg.so
 lib/qt4/plugins/imageformats/libqtiff.so
 lib/qt4/plugins/inputmethods/libqimsw-multi.so
 lib/qt4/plugins/phonon_backend/libphonon_gstreamer.so
+lib/qt4/plugins/qmltooling/libtcpserver.so
 lib/qt4/plugins/script/libqtscriptdbus.so

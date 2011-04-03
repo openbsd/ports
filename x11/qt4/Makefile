@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2010/11/22 08:37:04 espie Exp $
+# $OpenBSD: Makefile,v 1.83 2011/04/03 13:35:30 dcoppa Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -41,13 +41,13 @@ SHARED_LIBS =	Qt3Support 8.0 \
 		QtHelp 1.0 \
 		QtXmlPatterns 0.0 \
 		QtScriptTools 0.0 \
-		QtWebKit 1.0 \
+		QtWebKit 2.0 \
 		phonon 4.1 \
 		QtDeclarative 0.0 
 
 
-VERSION =	4.7.0
-PKGVERSION =	4.7.0
+VERSION =	4.7.2
+PKGVERSION =	4.7.2
 DISTNAME =	qt-everywhere-opensource-src-${VERSION}
 
 CATEGORIES =	x11

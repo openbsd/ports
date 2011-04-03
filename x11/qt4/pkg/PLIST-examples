@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.25 2010/10/28 14:55:47 espie Exp $
+@comment $OpenBSD: PLIST-examples,v 1.26 2011/04/03 13:35:31 dcoppa Exp $
 @conflict qt4-<=4.2.2
 %%SHARED%%
 %%GCC4%%
@@ -163,8 +163,8 @@ lib/qt4/demos/declarative/minehunt/MinehuntCore/
 lib/qt4/demos/declarative/minehunt/MinehuntCore/Explosion.qml
 lib/qt4/demos/declarative/minehunt/MinehuntCore/Tile.qml
 lib/qt4/demos/declarative/minehunt/MinehuntCore/pics/
-lib/qt4/demos/declarative/minehunt/MinehuntCore/pics/No-Ones-Laughing-3.jpg
 lib/qt4/demos/declarative/minehunt/MinehuntCore/pics/back.png
+lib/qt4/demos/declarative/minehunt/MinehuntCore/pics/background.png
 lib/qt4/demos/declarative/minehunt/MinehuntCore/pics/bomb-color.png
 lib/qt4/demos/declarative/minehunt/MinehuntCore/pics/bomb.png
 lib/qt4/demos/declarative/minehunt/MinehuntCore/pics/face-sad.png
@@ -254,6 +254,7 @@ lib/qt4/demos/declarative/snake/content/pics/cookie.png
 lib/qt4/demos/declarative/snake/content/pics/eyes.svg
 lib/qt4/demos/declarative/snake/content/pics/head.png
 lib/qt4/demos/declarative/snake/content/pics/head.svg
+lib/qt4/demos/declarative/snake/content/pics/pause.png
 lib/qt4/demos/declarative/snake/content/pics/redStar.png
 lib/qt4/demos/declarative/snake/content/pics/redStone.png
 lib/qt4/demos/declarative/snake/content/pics/skull.png
@@ -873,14 +874,18 @@ lib/qt4/examples/declarative/animation/behaviors/
 lib/qt4/examples/declarative/animation/behaviors/SideRect.qml
 lib/qt4/examples/declarative/animation/behaviors/behavior-example.qml
 lib/qt4/examples/declarative/animation/behaviors/behaviors.qmlproject
+lib/qt4/examples/declarative/animation/behaviors/wigglytext.qml
 lib/qt4/examples/declarative/animation/easing/
+lib/qt4/examples/declarative/animation/easing/content/
+lib/qt4/examples/declarative/animation/easing/content/QuitButton.qml
+lib/qt4/examples/declarative/animation/easing/content/quit.png
 lib/qt4/examples/declarative/animation/easing/easing.qml
 lib/qt4/examples/declarative/animation/easing/easing.qmlproject
 lib/qt4/examples/declarative/animation/states/
+lib/qt4/examples/declarative/animation/states/qt-logo.png
 lib/qt4/examples/declarative/animation/states/states.qml
 lib/qt4/examples/declarative/animation/states/states.qmlproject
 lib/qt4/examples/declarative/animation/states/transitions.qml
-lib/qt4/examples/declarative/animation/states/user.png
 lib/qt4/examples/declarative/cppextensions/
 lib/qt4/examples/declarative/cppextensions/cppextensions.pro
 lib/qt4/examples/declarative/cppextensions/cppextensions.qmlproject
@@ -1005,6 +1010,15 @@ lib/qt4/examples/declarative/cppextensions/referenceexamples/grouped/grouped.qrc
 lib/qt4/examples/declarative/cppextensions/referenceexamples/grouped/main.cpp
 lib/qt4/examples/declarative/cppextensions/referenceexamples/grouped/person.cpp
 lib/qt4/examples/declarative/cppextensions/referenceexamples/grouped/person.h
+lib/qt4/examples/declarative/cppextensions/referenceexamples/methods/
+lib/qt4/examples/declarative/cppextensions/referenceexamples/methods/birthdayparty.cpp
+lib/qt4/examples/declarative/cppextensions/referenceexamples/methods/birthdayparty.h
+lib/qt4/examples/declarative/cppextensions/referenceexamples/methods/example.qml
+lib/qt4/examples/declarative/cppextensions/referenceexamples/methods/main.cpp
+lib/qt4/examples/declarative/cppextensions/referenceexamples/methods/methods.pro
+lib/qt4/examples/declarative/cppextensions/referenceexamples/methods/methods.qrc
+lib/qt4/examples/declarative/cppextensions/referenceexamples/methods/person.cpp
+lib/qt4/examples/declarative/cppextensions/referenceexamples/methods/person.h
 lib/qt4/examples/declarative/cppextensions/referenceexamples/properties/
 lib/qt4/examples/declarative/cppextensions/referenceexamples/properties/birthdayparty.cpp
 lib/qt4/examples/declarative/cppextensions/referenceexamples/properties/birthdayparty.h
@@ -1098,6 +1112,15 @@ lib/qt4/examples/declarative/extending/grouped/grouped.qrc
 lib/qt4/examples/declarative/extending/grouped/main.cpp
 lib/qt4/examples/declarative/extending/grouped/person.cpp
 lib/qt4/examples/declarative/extending/grouped/person.h
+lib/qt4/examples/declarative/extending/methods/
+lib/qt4/examples/declarative/extending/methods/birthdayparty.cpp
+lib/qt4/examples/declarative/extending/methods/birthdayparty.h
+lib/qt4/examples/declarative/extending/methods/main.cpp
+@bin lib/qt4/examples/declarative/extending/methods/methods
+lib/qt4/examples/declarative/extending/methods/methods.pro
+lib/qt4/examples/declarative/extending/methods/methods.qrc
+lib/qt4/examples/declarative/extending/methods/person.cpp
+lib/qt4/examples/declarative/extending/methods/person.h
 lib/qt4/examples/declarative/extending/properties/
 lib/qt4/examples/declarative/extending/properties/birthdayparty.cpp
 lib/qt4/examples/declarative/extending/properties/birthdayparty.h
@@ -1151,9 +1174,9 @@ lib/qt4/examples/declarative/imageelements/borderimage/content/shadow.png
 lib/qt4/examples/declarative/imageelements/borderimage/shadows.qml
 lib/qt4/examples/declarative/imageelements/image/
 lib/qt4/examples/declarative/imageelements/image/ImageCell.qml
-lib/qt4/examples/declarative/imageelements/image/face-smile.png
 lib/qt4/examples/declarative/imageelements/image/image.qml
 lib/qt4/examples/declarative/imageelements/image/image.qmlproject
+lib/qt4/examples/declarative/imageelements/image/qt-logo.png
 lib/qt4/examples/declarative/imageelements/imageelements.qmlproject
 lib/qt4/examples/declarative/imageprovider/
 lib/qt4/examples/declarative/imageprovider/ImageProviderCore/
@@ -1204,7 +1227,6 @@ lib/qt4/examples/declarative/positioners/add.png
 lib/qt4/examples/declarative/positioners/del.png
 lib/qt4/examples/declarative/positioners/positioners.qml
 lib/qt4/examples/declarative/positioners/positioners.qmlproject
-lib/qt4/examples/declarative/positioners/positioners.qmlproject.user
 lib/qt4/examples/declarative/sqllocalstorage/
 lib/qt4/examples/declarative/sqllocalstorage/hello.qml
 lib/qt4/examples/declarative/sqllocalstorage/sqllocalstorage.qmlproject
@@ -1251,12 +1273,14 @@ lib/qt4/examples/declarative/toys/clocks/clocks.qml
 lib/qt4/examples/declarative/toys/clocks/clocks.qmlproject
 lib/qt4/examples/declarative/toys/clocks/content/
 lib/qt4/examples/declarative/toys/clocks/content/Clock.qml
+lib/qt4/examples/declarative/toys/clocks/content/QuitButton.qml
 lib/qt4/examples/declarative/toys/clocks/content/background.png
 lib/qt4/examples/declarative/toys/clocks/content/center.png
 lib/qt4/examples/declarative/toys/clocks/content/clock-night.png
 lib/qt4/examples/declarative/toys/clocks/content/clock.png
 lib/qt4/examples/declarative/toys/clocks/content/hour.png
 lib/qt4/examples/declarative/toys/clocks/content/minute.png
+lib/qt4/examples/declarative/toys/clocks/content/quit.png
 lib/qt4/examples/declarative/toys/clocks/content/second.png
 lib/qt4/examples/declarative/toys/corkboards/
 lib/qt4/examples/declarative/toys/corkboards/Day.qml
@@ -1304,10 +1328,12 @@ lib/qt4/examples/declarative/ui-components/README
 lib/qt4/examples/declarative/ui-components/dialcontrol/
 lib/qt4/examples/declarative/ui-components/dialcontrol/content/
 lib/qt4/examples/declarative/ui-components/dialcontrol/content/Dial.qml
+lib/qt4/examples/declarative/ui-components/dialcontrol/content/QuitButton.qml
 lib/qt4/examples/declarative/ui-components/dialcontrol/content/background.png
 lib/qt4/examples/declarative/ui-components/dialcontrol/content/needle.png
 lib/qt4/examples/declarative/ui-components/dialcontrol/content/needle_shadow.png
 lib/qt4/examples/declarative/ui-components/dialcontrol/content/overlay.png
+lib/qt4/examples/declarative/ui-components/dialcontrol/content/quit.png
 lib/qt4/examples/declarative/ui-components/dialcontrol/dialcontrol.qml
 lib/qt4/examples/declarative/ui-components/dialcontrol/dialcontrol.qmlproject
 lib/qt4/examples/declarative/ui-components/flipable/
@@ -2697,31 +2723,6 @@ lib/qt4/examples/phonon/qmusicplayer/mainwindow.cpp
 lib/qt4/examples/phonon/qmusicplayer/mainwindow.h
 @bin lib/qt4/examples/phonon/qmusicplayer/qmusicplayer
 lib/qt4/examples/phonon/qmusicplayer/qmusicplayer.pro
-lib/qt4/examples/qtconcurrent/
-lib/qt4/examples/qtconcurrent/README
-lib/qt4/examples/qtconcurrent/imagescaling/
-@bin lib/qt4/examples/qtconcurrent/imagescaling/imagescaling
-lib/qt4/examples/qtconcurrent/imagescaling/imagescaling.cpp
-lib/qt4/examples/qtconcurrent/imagescaling/imagescaling.h
-lib/qt4/examples/qtconcurrent/imagescaling/imagescaling.pro
-lib/qt4/examples/qtconcurrent/imagescaling/main.cpp
-lib/qt4/examples/qtconcurrent/map/
-lib/qt4/examples/qtconcurrent/map/main.cpp
-lib/qt4/examples/qtconcurrent/map/map.pro
-@bin lib/qt4/examples/qtconcurrent/map/mapdemo
-lib/qt4/examples/qtconcurrent/progressdialog/
-lib/qt4/examples/qtconcurrent/progressdialog/main.cpp
-@bin lib/qt4/examples/qtconcurrent/progressdialog/progressdialog
-lib/qt4/examples/qtconcurrent/progressdialog/progressdialog.pro
-lib/qt4/examples/qtconcurrent/qtconcurrent.pro
-lib/qt4/examples/qtconcurrent/runfunction/
-lib/qt4/examples/qtconcurrent/runfunction/main.cpp
-@bin lib/qt4/examples/qtconcurrent/runfunction/runfunction
-lib/qt4/examples/qtconcurrent/runfunction/runfunction.pro
-lib/qt4/examples/qtconcurrent/wordcount/
-lib/qt4/examples/qtconcurrent/wordcount/main.cpp
-@bin lib/qt4/examples/qtconcurrent/wordcount/wordcount
-lib/qt4/examples/qtconcurrent/wordcount/wordcount.pro
 lib/qt4/examples/qtestlib/
 lib/qt4/examples/qtestlib/README
 lib/qt4/examples/qtestlib/qtestlib.pro
@@ -3254,6 +3255,52 @@ lib/qt4/examples/tutorials/addressbook/part7/finddialog.h
 lib/qt4/examples/tutorials/addressbook/part7/main.cpp
 @bin lib/qt4/examples/tutorials/addressbook/part7/part7
 lib/qt4/examples/tutorials/addressbook/part7/part7.pro
+lib/qt4/examples/tutorials/modelview/
+lib/qt4/examples/tutorials/modelview/1_readonly/
+lib/qt4/examples/tutorials/modelview/1_readonly/1_readonly.pro
+lib/qt4/examples/tutorials/modelview/1_readonly/main.cpp
+@bin lib/qt4/examples/tutorials/modelview/1_readonly/mv_readonly
+lib/qt4/examples/tutorials/modelview/1_readonly/mymodel.cpp
+lib/qt4/examples/tutorials/modelview/1_readonly/mymodel.h
+lib/qt4/examples/tutorials/modelview/2_formatting/
+lib/qt4/examples/tutorials/modelview/2_formatting/2_formatting.pro
+lib/qt4/examples/tutorials/modelview/2_formatting/main.cpp
+@bin lib/qt4/examples/tutorials/modelview/2_formatting/mv_formatting
+lib/qt4/examples/tutorials/modelview/2_formatting/mymodel.cpp
+lib/qt4/examples/tutorials/modelview/2_formatting/mymodel.h
+lib/qt4/examples/tutorials/modelview/3_changingmodel/
+lib/qt4/examples/tutorials/modelview/3_changingmodel/3_changingmodel.pro
+lib/qt4/examples/tutorials/modelview/3_changingmodel/main.cpp
+@bin lib/qt4/examples/tutorials/modelview/3_changingmodel/mv_changingmodel
+lib/qt4/examples/tutorials/modelview/3_changingmodel/mymodel.cpp
+lib/qt4/examples/tutorials/modelview/3_changingmodel/mymodel.h
+lib/qt4/examples/tutorials/modelview/4_headers/
+lib/qt4/examples/tutorials/modelview/4_headers/4_headers.pro
+lib/qt4/examples/tutorials/modelview/4_headers/main.cpp
+@bin lib/qt4/examples/tutorials/modelview/4_headers/mv_headers
+lib/qt4/examples/tutorials/modelview/4_headers/mymodel.cpp
+lib/qt4/examples/tutorials/modelview/4_headers/mymodel.h
+lib/qt4/examples/tutorials/modelview/5_edit/
+lib/qt4/examples/tutorials/modelview/5_edit/5_edit.pro
+lib/qt4/examples/tutorials/modelview/5_edit/main.cpp
+lib/qt4/examples/tutorials/modelview/5_edit/mainwindow.cpp
+lib/qt4/examples/tutorials/modelview/5_edit/mainwindow.h
+@bin lib/qt4/examples/tutorials/modelview/5_edit/mv_edit
+lib/qt4/examples/tutorials/modelview/5_edit/mymodel.cpp
+lib/qt4/examples/tutorials/modelview/5_edit/mymodel.h
+lib/qt4/examples/tutorials/modelview/6_treeview/
+lib/qt4/examples/tutorials/modelview/6_treeview/6_treeview.pro
+lib/qt4/examples/tutorials/modelview/6_treeview/main.cpp
+lib/qt4/examples/tutorials/modelview/6_treeview/mainwindow.cpp
+lib/qt4/examples/tutorials/modelview/6_treeview/mainwindow.h
+@bin lib/qt4/examples/tutorials/modelview/6_treeview/mv_tree
+lib/qt4/examples/tutorials/modelview/7_selections/
+lib/qt4/examples/tutorials/modelview/7_selections/7_selections.pro
+lib/qt4/examples/tutorials/modelview/7_selections/main.cpp
+lib/qt4/examples/tutorials/modelview/7_selections/mainwindow.cpp
+lib/qt4/examples/tutorials/modelview/7_selections/mainwindow.h
+@bin lib/qt4/examples/tutorials/modelview/7_selections/mv_selections
+lib/qt4/examples/tutorials/modelview/modelview.pro
 lib/qt4/examples/tutorials/tutorials.pro
 lib/qt4/examples/uitools/
 lib/qt4/examples/uitools/multipleinheritance/
