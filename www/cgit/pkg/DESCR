@@ -1,0 +1,2 @@
+This is an attempt to create a fast web interface for the git scm,
+using a builtin cache to decrease server io-pressure.

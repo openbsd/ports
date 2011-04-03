@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2011/04/03 10:27:24 landry Exp $
+--- Makefile.orig	Mon Sep 27 08:00:47 2010
++++ Makefile	Fri Feb 25 23:25:12 2011
+@@ -1,9 +1,9 @@
+ CGIT_VERSION = v0.8.3.4
+ CGIT_SCRIPT_NAME = cgit.cgi
+-CGIT_SCRIPT_PATH = /var/www/htdocs/cgit
+-CGIT_DATA_PATH = $(CGIT_SCRIPT_PATH)
+-CGIT_CONFIG = /etc/cgitrc
+-CACHE_ROOT = /var/cache/cgit
++CGIT_SCRIPT_PATH = /var/www/cgi-bin
++CGIT_DATA_PATH = /var/www/htdocs
++CGIT_CONFIG = /conf/cgitrc
++CACHE_ROOT = /tmp/cgit
+ SHA1_HEADER = <openssl/sha.h>
+ GIT_VER = 1.7.3
+ GIT_URL = http://www.kernel.org/pub/software/scm/git/git-$(GIT_VER).tar.bz2
+@@ -111,6 +111,7 @@ VERSION: force-version
+ 
+ 
+ CFLAGS += -g -Wall -Igit
++CFLAGS += -I${LOCALBASE}/include
+ CFLAGS += -DSHA1_HEADER='$(SHA1_HEADER)'
+ CFLAGS += -DCGIT_VERSION='"$(CGIT_VERSION)"'
+ CFLAGS += -DCGIT_CONFIG='"$(CGIT_CONFIG)"'
