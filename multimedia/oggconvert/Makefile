@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:15 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/04/03 08:51:27 benoit Exp $
 
 COMMENT=	convert media files to Vorbis, Theora and Dirac
 
-MODPY_EGG_VERSION=0.3.2
+MODPY_EGG_VERSION=0.3.3
 DISTNAME=	oggconvert-${MODPY_EGG_VERSION}
-REVISION =	3
 
 CATEGORIES=	multimedia sysutils
 
