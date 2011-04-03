@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/22 08:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/04/03 12:04:24 jasper Exp $
 
 COMMENT=		full-featured text WWW browser
 DISTNAME=		elinks-0.11.7
@@ -40,7 +40,7 @@ WANTLIB=		bz2 crypto c idn ssl z
 MODULES=		converters/libiconv
 
 FLAVORS=		lua no_x11 js
-FLAVOR?=		
+FLAVOR?=
 
 .if ${FLAVOR:L:Mlua}
 BROKEN=			has this ever worked?
