@@ -1,0 +1,5 @@
+Object::eBay provides an object-oriented interface to the eBay API.
+Objects are created to represent entities dealing with eBay such as
+items, users, etc. You won't want to create objects of the class
+Object::eBay but rather of its subclasses such as: Object::eBay::Item or
+Object::eBay::User.

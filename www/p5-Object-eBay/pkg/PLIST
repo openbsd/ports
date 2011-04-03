@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/03 17:16:13 jasper Exp $
+${P5SITE}/Object/
+${P5SITE}/Object/eBay/
+${P5SITE}/Object/eBay.pm
+${P5SITE}/Object/eBay/Attribute.pm
+${P5SITE}/Object/eBay/Attributes.pm
+${P5SITE}/Object/eBay/Boolean.pm
+${P5SITE}/Object/eBay/Condition.pm
+${P5SITE}/Object/eBay/Currency.pm
+${P5SITE}/Object/eBay/Item.pm
+${P5SITE}/Object/eBay/ListingDetails.pm
+${P5SITE}/Object/eBay/SellingStatus.pm
+${P5SITE}/Object/eBay/User.pm
+@man man/man3p/Object::eBay.3p
+@man man/man3p/Object::eBay::Attribute.3p
+@man man/man3p/Object::eBay::Attributes.3p
+@man man/man3p/Object::eBay::Boolean.3p
+@man man/man3p/Object::eBay::Condition.3p
+@man man/man3p/Object::eBay::Currency.3p
+@man man/man3p/Object::eBay::Item.3p
+@man man/man3p/Object::eBay::ListingDetails.3p
+@man man/man3p/Object::eBay::SellingStatus.3p
+@man man/man3p/Object::eBay::User.3p
