@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_makefile,v 1.5 2010/07/25 15:06:53 benoit Exp $
---- src/makefile.orig	Mon Dec 28 21:09:43 2009
-+++ src/makefile	Wed Jan 20 11:32:34 2010
-@@ -15,11 +15,11 @@
+$OpenBSD: patch-src_makefile,v 1.6 2011/04/03 07:45:26 benoit Exp $
+--- src/makefile.orig	Wed Nov 10 22:48:12 2010
++++ src/makefile	Sun Nov 21 16:21:16 2010
+@@ -12,11 +12,11 @@
  
  # See src/gui-qt/highlight.pro for the Qt GUI compilation options
  
@@ -10,8 +10,17 @@ $OpenBSD: patch-src_makefile,v 1.5 2010/07/25 15:06:53 benoit Exp $
  
  QMAKE=qmake
  
--CFLAGS:=-O2 ${CFLAGS}
-+#CFLAGS:=-O2 ${CFLAGS}
- #CFLAGS:=-ggdb ${CFLAGS}
+-CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG
++#CFLAGS:=-Wall -O2 ${CFLAGS} -DNDEBUG
+ #CFLAGS:=-ggdb ${CFLAGS} -DNDEBUG
+ CFLAGS_DILU=-fno-strict-aliasing
  
- SO_VERSION=2.13
+@@ -32,7 +32,7 @@
+ INCLUDE_DIR=./include/
+ 
+ # Ubuntu path:
+-LUA_INCLUDE_DIR=/usr/include/lua5.1
++LUA_INCLUDE_DIR=${LOCALBASE}/include
+ LUA_LIB_NAME=lua
+ #LUA_LIB_NAME=lua5.1
+ 

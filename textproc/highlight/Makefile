@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/20 19:56:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/04/03 07:45:23 benoit Exp $
 
 COMMENT =		convert source code to markup formats
 
-DISTNAME =		highlight-2.16
+DISTNAME =		highlight-3.2
 CATEGORIES =		textproc converters
 
 HOMEPAGE =		http://www.andre-simon.de/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m stdc++
+WANTLIB =		c m stdc++ lua
 
 MASTER_SITES =		${HOMEPAGE}/zip/
 EXTRACT_SUFX =		.tar.bz2
@@ -23,8 +23,12 @@ EXTRACT_SUFX =		.tar.bz2
 USE_GMAKE =		Yes
 USE_GROFF =		Yes
 
+BUILD_DEPENDS =		devel/boost
+LIB_DEPENDS =		lang/lua
+
 MAKE_FILE =		makefile
-MAKE_FLAGS =		CXX=${CXX}
+MAKE_FLAGS =		CXX=${CXX} \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 NO_REGRESS =		Yes
 
@@ -34,7 +38,8 @@ post-extract:
 	gunzip ${WRKSRC}/man/highlight.1.gz
 
 do-configure:
-	${SUBST_CMD} ${WRKSRC}/makefile ${WRKSRC}/man/highlight.1
+	${SUBST_CMD} ${WRKSRC}/makefile ${WRKSRC}/man/highlight.1 \
+		${WRKSRC}/src/makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/highlight ${PREFIX}/bin
