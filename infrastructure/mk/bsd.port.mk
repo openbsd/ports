@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1074 2011/03/28 00:16:13 fgsch Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1075 2011/04/03 07:19:05 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -92,11 +92,11 @@ _SHSCRIPT = sh ${PORTSDIR}/infrastructure/bin
 _PERLSCRIPT = perl ${PORTSDIR}/infrastructure/bin
 
 # All variables relevant to the port's description
-_ALL_VARIABLES = BUILD_DEPENDS IGNORE IS_INTERACTIVE \
+_ALL_VARIABLES = BUILD_DEPENDS IS_INTERACTIVE \
 	SUBPACKAGE MULTI_PACKAGES
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED = FULLPKGNAME RUN_DEPENDS LIB_DEPENDS \
-	PKG_ARCH
+	PKG_ARCH IGNORE 
 _ALL_VARIABLES_PER_ARCH =
 
 .if ${DPB:L:Mfetch}
@@ -1320,7 +1320,6 @@ IS_INTERACTIVE = Yes
 #
 # Don't build a port if it comes with the base system.
 ################################################################
-IGNORE ?=
 TRY_BROKEN ?= No
 _IGNORE_REGRESS ?=
 .if defined(REGRESS_IS_INTERACTIVE) && defined(BATCH)
@@ -1328,44 +1327,49 @@ _IGNORE_REGRESS += "has interactive tests"
 .elif !defined(REGRESS_IS_INTERACTIVE) && defined(INTERACTIVE)
 _IGNORE_REGRESS += "does not have interactive tests"
 .endif
-.if defined(IS_INTERACTIVE) && defined(BATCH)
-IGNORE += "is an interactive port"
-.elif !defined(IS_INTERACTIVE) && defined(INTERACTIVE)
-IGNORE += "is not an interactive port"
-.endif
-.if !exists(${X11BASE})
-IGNORE += "building ports requires X11 but ${X11BASE} not found"
-.endif
-.if !defined(_ARCH_OK${SUBPACKAGE}) || ${_ARCH_OK${SUBPACKAGE}} == 0
-.  if defined(ONLY_FOR_ARCHS${SUBPACKAGE})
-.    if ${MACHINE_ARCH} == "${ARCH}"
-IGNORE += "is only for ${ONLY_FOR_ARCHS${SUBPACKAGE}}, not ${MACHINE_ARCH}"
+
+.for _s in ${MULTI_PACKAGES}
+IGNORE${_s} ?=
+.  if defined(IS_INTERACTIVE) && defined(BATCH)
+IGNORE${_s} += "is an interactive port"
+.  elif !defined(IS_INTERACTIVE) && defined(INTERACTIVE)
+IGNORE${_s} += "is not an interactive port"
+.  endif
+.  if !exists(${X11BASE})
+IGNORE${_s} += "building ports requires X11 but ${X11BASE} not found"
+.  endif
+.  if !defined(_ARCH_OK${_s}) || ${_ARCH_OK${_s}} == 0
+.    if defined(ONLY_FOR_ARCHS${_s})
+.      if ${MACHINE_ARCH} == "${ARCH}"
+IGNORE${_s} += "is only for ${ONLY_FOR_ARCHS${_s}}, not ${MACHINE_ARCH}"
+.      else
+IGNORE${_s} += "is only for ${ONLY_FOR_ARCHS${_s}}, not ${MACHINE_ARCH} \(${ARCH}\)"
+.      endif
 .    else
-IGNORE += "is only for ${ONLY_FOR_ARCHS${SUBPACKAGE}}, not ${MACHINE_ARCH} \(${ARCH}\)"
+IGNORE${_s} += "is not for ${NOT_FOR_ARCHS}"
 .    endif
-.  else
-IGNORE += "is not for ${NOT_FOR_ARCHS}"
 .  endif
-.endif
-.if ${SHARED_ONLY:L} == "yes" && ${NO_SHARED_LIBS:L} == "yes"
-IGNORE += "requires shared libraries"
-.endif
+.  if ${SHARED_ONLY:L} == "yes" && ${NO_SHARED_LIBS:L} == "yes"
+IGNORE${_s} += "requires shared libraries"
+.  endif
 
-.if ${TRY_BROKEN:L} != "yes"
-.  if defined(BROKEN-${ARCH})
-IGNORE += "is marked as broken for ${ARCH}: ${BROKEN-${ARCH}:Q}"
+.  if ${TRY_BROKEN:L} != "yes"
+.    if defined(BROKEN-${ARCH})
+IGNORE${_s} += "is marked as broken for ${ARCH}: ${BROKEN-${ARCH}:Q}"
+.    endif
+.    if ${MACHINE_ARCH} != ${ARCH} && defined(BROKEN-${MACHINE_ARCH})
+IGNORE${_s} += "is marked as broken for ${MACHINE_ARCH}: ${BROKEN-${MACHINE_ARCH}:Q}"
+.    endif
+.    if defined(BROKEN) 
+IGNORE${_s} += "is marked as broken: ${BROKEN:Q}"
+.    endif
 .  endif
-.  if ${MACHINE_ARCH} != ${ARCH} && defined(BROKEN-${MACHINE_ARCH})
-IGNORE += "is marked as broken for ${MACHINE_ARCH}: ${BROKEN-${MACHINE_ARCH}:Q}"
+.  if defined(COMES_WITH)
+IGNORE${_s} += "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with OpenBSD as of release ${COMES_WITH}"
 .  endif
-.  if defined(BROKEN) 
-IGNORE += "is marked as broken: ${BROKEN:Q}"
-.  endif
-.endif
-.if defined(COMES_WITH)
-IGNORE += "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with OpenBSD as of release ${COMES_WITH}"
-.endif
+.endfor
 
+IGNORE = ${IGNORE${SUBPACKAGE}}
 IGNORE_IS_FATAL ?= "No"
 .if !empty(IGNORE) && ${IGNORE_IS_FATAL:L} == "yes"
 ERRORS += "Fatal: can't build"
