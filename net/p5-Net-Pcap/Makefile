@@ -1,4 +1,4 @@
-#   $OpenBSD: Makefile,v 1.20 2010/12/03 11:45:42 ajacoutot Exp $
+#   $OpenBSD: Makefile,v 1.21 2011/04/03 19:41:25 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	module for pcap access
 
 MODULES=	cpan
 DISTNAME=	Net-Pcap-0.16
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 USE_GROFF =	Yes
 
@@ -17,5 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		pcap 
 RUN_DEPENDS=		net/p5-IO-Interface
+
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	eg
+
+# must be run as root
+REGRESS_IS_INTERACTIVE=	Yes
 
 .include <bsd.port.mk>
