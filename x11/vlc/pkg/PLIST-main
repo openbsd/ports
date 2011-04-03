@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2010/09/17 12:15:20 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2011/04/03 21:41:38 sthen Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -149,9 +149,6 @@ lib/vlc/access_output/libaccess_output_http_plugin.so
 lib/vlc/access_output/libaccess_output_udp_plugin.la
 lib/vlc/access_output/libaccess_output_udp_plugin.so
 lib/vlc/audio_filter/
-@comment lib/vlc/audio_filter/liba52tofloat32_plugin.a
-lib/vlc/audio_filter/liba52tofloat32_plugin.la
-lib/vlc/audio_filter/liba52tofloat32_plugin.so
 @comment lib/vlc/audio_filter/liba52tospdif_plugin.a
 lib/vlc/audio_filter/liba52tospdif_plugin.la
 lib/vlc/audio_filter/liba52tospdif_plugin.so
@@ -170,9 +167,6 @@ lib/vlc/audio_filter/libconverter_float_plugin.so
 @comment lib/vlc/audio_filter/libdolby_surround_decoder_plugin.a
 lib/vlc/audio_filter/libdolby_surround_decoder_plugin.la
 lib/vlc/audio_filter/libdolby_surround_decoder_plugin.so
-@comment lib/vlc/audio_filter/libdtstofloat32_plugin.a
-lib/vlc/audio_filter/libdtstofloat32_plugin.la
-lib/vlc/audio_filter/libdtstofloat32_plugin.so
 @comment lib/vlc/audio_filter/libdtstospdif_plugin.a
 lib/vlc/audio_filter/libdtstospdif_plugin.la
 lib/vlc/audio_filter/libdtstospdif_plugin.so
@@ -188,9 +182,6 @@ lib/vlc/audio_filter/liblinear_resampler_plugin.so
 @comment lib/vlc/audio_filter/libmono_plugin.a
 lib/vlc/audio_filter/libmono_plugin.la
 lib/vlc/audio_filter/libmono_plugin.so
-@comment lib/vlc/audio_filter/libmpgatofixed32_plugin.a
-lib/vlc/audio_filter/libmpgatofixed32_plugin.la
-lib/vlc/audio_filter/libmpgatofixed32_plugin.so
 @comment lib/vlc/audio_filter/libnormvol_plugin.a
 lib/vlc/audio_filter/libnormvol_plugin.la
 lib/vlc/audio_filter/libnormvol_plugin.so
@@ -263,9 +254,6 @@ lib/vlc/codec/libdts_plugin.so
 @comment lib/vlc/codec/libdvbsub_plugin.a
 lib/vlc/codec/libdvbsub_plugin.la
 lib/vlc/codec/libdvbsub_plugin.so
-@comment lib/vlc/codec/libfaad_plugin.a
-lib/vlc/codec/libfaad_plugin.la
-lib/vlc/codec/libfaad_plugin.so
 @comment lib/vlc/codec/libfake_plugin.a
 lib/vlc/codec/libfake_plugin.la
 lib/vlc/codec/libfake_plugin.so
@@ -275,9 +263,6 @@ lib/vlc/codec/libflac_plugin.so
 @comment lib/vlc/codec/libinvmem_plugin.a
 lib/vlc/codec/libinvmem_plugin.la
 lib/vlc/codec/libinvmem_plugin.so
-@comment lib/vlc/codec/liblibmpeg2_plugin.a
-lib/vlc/codec/liblibmpeg2_plugin.la
-lib/vlc/codec/liblibmpeg2_plugin.so
 @comment lib/vlc/codec/liblpcm_plugin.a
 lib/vlc/codec/liblpcm_plugin.la
 lib/vlc/codec/liblpcm_plugin.so
