@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_man1_c2hs_1,v 1.1 2011/04/03 12:57:29 kili Exp $
+--- doc/man1/c2hs.1.orig	Thu Mar 24 14:04:59 2011
++++ doc/man1/c2hs.1	Sun Apr  3 13:57:13 2011
+@@ -106,7 +106,7 @@ files and will run
+ automatically, passing the appropriate flags.
+ 
+ When used directly, 
+-.Bc2hs
++.B c2hs
+ is usually called as:
+ 
+ .B c2hs
