@@ -1,25 +1,26 @@
-$OpenBSD: patch-Init_ServicesList_pm,v 1.2 2011/01/17 17:49:19 ajacoutot Exp $
---- Init/ServicesList.pm.orig	Sat Mar 13 10:37:16 2010
-+++ Init/ServicesList.pm	Mon Jan 17 18:48:10 2011
-@@ -177,6 +177,17 @@ sub is_forbidden
+$OpenBSD: patch-Init_ServicesList_pm,v 1.3 2011/04/03 17:25:33 ajacoutot Exp $
+--- Init/ServicesList.pm.orig	Mon Dec  6 13:27:38 2010
++++ Init/ServicesList.pm	Sun Apr  3 19:23:22 2011
+@@ -177,6 +177,18 @@ sub is_forbidden
       "ureadahead",
       "wpa-ifupdown",
       "x11-common",
 +     # This was found in OpenBSD. Some scripts are blacklisted because
 +     # they're supposed to be started by a master script,
 +     # e.g. samba -> smbd+nmbd.
-+     "nmbd",
 +     "rc.subr",
++     "nmbd",
 +     "smbd",
 +     "zarafa_gateway",
 +     "zarafa_ical",
++     "zarafa_indexer",
 +     "zarafa_monitor",
 +     "zarafa_server",
 +     "zarafa_spooler",
      ];
  
    foreach $i (@$service_forbidden_list)
-@@ -225,6 +236,7 @@ sub get_role
+@@ -225,6 +237,7 @@ sub get_role
      "am-utils" => "AUTOMOUNTER",
      "amavis" => "ANTIVIRUS",
      "amavis-ng" => "ANTIVIRUS",
@@ -27,7 +28,7 @@ $OpenBSD: patch-Init_ServicesList_pm,v 1.2 2011/01/17 17:49:19 ajacoutot Exp $
      "apache" => "WEB_SERVER",
      "apache-perl" => "WEB_SERVER",
      "apache-ssl" => "WEB_SERVER",
-@@ -242,6 +254,7 @@ sub get_role
+@@ -242,6 +255,7 @@ sub get_role
      "chargen-udp" => "NETWORK",
      "cherokee" => "WEB_SERVER",
      "clamav-daemon" => "ANTIVIRUS",
@@ -35,7 +36,7 @@ $OpenBSD: patch-Init_ServicesList_pm,v 1.2 2011/01/17 17:49:19 ajacoutot Exp $
      "courier" => "MTA",
      "courier-mta" => "MTA",
      "cpufreqd" => "SYSTEM",
-@@ -252,6 +265,7 @@ sub get_role
+@@ -252,6 +266,7 @@ sub get_role
      "daytime" => "NETWORK",
      "daytime-udp" => "NETWORK",
      "dbus-1" => "SYSTEM",
@@ -43,7 +44,7 @@ $OpenBSD: patch-Init_ServicesList_pm,v 1.2 2011/01/17 17:49:19 ajacoutot Exp $
      "ddclient" => "DYNAMIC_DNS",
      "dhis-client" => "DYNAMIC_DNS",
      "dictd" => "DICT",
-@@ -293,6 +307,7 @@ sub get_role
+@@ -293,6 +308,7 @@ sub get_role
      "modules" => "SYSTEM",
      "module-init-tools" => "SYSTEM",
      "mysql" => "DATABASE_SERVER",
@@ -51,7 +52,7 @@ $OpenBSD: patch-Init_ServicesList_pm,v 1.2 2011/01/17 17:49:19 ajacoutot Exp $
      "muddleftpd" => "FTP_SERVER",
      "named" => "NETWORK",
      "netfs" => "SYSTEM",
-@@ -335,6 +350,7 @@ sub get_role
+@@ -335,6 +351,7 @@ sub get_role
      "services" => "NETWORK",
      "setserial" => "SYSTEM",
      "sgi_fam" => "SYSTEM",
@@ -59,7 +60,7 @@ $OpenBSD: patch-Init_ServicesList_pm,v 1.2 2011/01/17 17:49:19 ajacoutot Exp $
      "smartmontools" => "SYSTEM",
      "spamassassin" => "SYSTEM",
      "snmpd"	=> "NETWORK",
-@@ -352,6 +368,7 @@ sub get_role
+@@ -352,6 +369,7 @@ sub get_role
      "wdm"	=> "DISPLAY_MANAGER",
      "webmin" => "SYSTEM",	 # FIXME as well
      "winbind" => "NETWORK",
