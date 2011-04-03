@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.503 2011/04/03 10:28:13 landry Exp $
+# $OpenBSD: Makefile,v 1.504 2011/04/03 17:17:19 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -273,6 +273,7 @@
      SUBDIR += p5-Maypole-Authentication-UserSessionCookie
      SUBDIR += p5-Mojo
      SUBDIR += p5-MojoX-Session
+     SUBDIR += p5-Object-eBay
      SUBDIR += p5-PHP-Serialization
      SUBDIR += p5-PHP-Session
      SUBDIR += p5-PSGI
