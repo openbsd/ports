@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:45:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/03 17:29:30 jasper Exp $
 
 COMMENT=		Base32 encoder/decoder
 
-DISTNAME=		MIME-Base32-1.01
-REVISION=		0
+DISTNAME=		MIME-Base32-1.02a
+PKGNAME=		p5-${DISTNAME:S/a$//}
 CATEGORIES=		mail
 
 # Perl
@@ -13,6 +13,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		cpan
-USE_GROFF =		Yes
+
+WRKDIST=		${WRKDIR}/${DISTNAME:S/a$//}
 
 .include <bsd.port.mk>
