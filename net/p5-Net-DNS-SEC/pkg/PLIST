@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/02/04 10:41:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/04/03 17:27:06 jasper Exp $
 ${P5SITE}/Net/DNS/
 ${P5SITE}/Net/DNS/Keyset.pm
 ${P5SITE}/Net/DNS/RR/
@@ -28,3 +28,7 @@ ${P5SITE}/Net/DNS/SEC/Private.pm
 @man man/man3p/Net::DNS::RR::SIG.3p
 @man man/man3p/Net::DNS::SEC.3p
 @man man/man3p/Net::DNS::SEC::Private.3p
+share/examples/p5-Net-DNS-SEC/
+share/examples/p5-Net-DNS-SEC/getkeyset.pl
+share/examples/p5-Net-DNS-SEC/key2ds
+share/examples/p5-Net-DNS-SEC/make-signed-keyset
