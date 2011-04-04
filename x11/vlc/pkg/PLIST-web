@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-web,v 1.4 2010/06/19 09:46:42 sthen Exp $
+@comment $OpenBSD: PLIST-web,v 1.5 2011/04/04 07:43:22 dcoppa Exp $
 lib/mozilla/
 lib/mozilla/plugins/
-@comment lib/mozilla/plugins/libvlcplugin.a
 lib/mozilla/plugins/libvlcplugin.la
 lib/mozilla/plugins/libvlcplugin.so
 share/vlc/mozilla/

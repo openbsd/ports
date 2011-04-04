@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST-jack,v 1.3 2010/05/05 08:43:35 edd Exp $
+@comment $OpenBSD: PLIST-jack,v 1.4 2011/04/04 07:43:22 dcoppa Exp $
 @pkgpath x11/vlc,-jack,altivec
-@comment lib/vlc/access/libaccess_jack_plugin.a
 lib/vlc/access/libaccess_jack_plugin.la
 lib/vlc/access/libaccess_jack_plugin.so
-@comment lib/vlc/audio_output/libjack_plugin.a
 lib/vlc/audio_output/libjack_plugin.la
 lib/vlc/audio_output/libjack_plugin.so

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2011/04/03 21:41:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.120 2011/04/04 07:43:22 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,9 +7,9 @@ COMMENT-main=	VideoLAN client; multimedia player
 V=		1.0.6
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	19
-REVISION-jack=	3
-REVISION-web=	5
+REVISION-main=	20
+REVISION-jack=	4
+REVISION-web=	6
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.bz2
@@ -70,6 +70,7 @@ WANTLIB-main=	FLAC GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
+LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.65
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/autotools

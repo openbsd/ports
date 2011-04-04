@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2011/04/03 21:41:38 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2011/04/04 07:43:22 dcoppa Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -71,747 +71,507 @@ include/vlc/plugins/vlc_vout.h
 include/vlc/plugins/vlc_window.h
 include/vlc/plugins/vlc_xml.h
 include/vlc/vlc.h
-lib/libvlc.a
 lib/libvlc.la
 @lib lib/libvlc.so.${LIBvlc_VERSION}
-lib/libvlccore.a
 lib/libvlccore.la
 @lib lib/libvlccore.so.${LIBvlccore_VERSION}
 lib/pkgconfig/libvlc.pc
 lib/pkgconfig/vlc-plugin.pc
 lib/vlc/
 lib/vlc/access/
-@comment lib/vlc/access/libaccess_bd_plugin.a
 lib/vlc/access/libaccess_bd_plugin.la
 lib/vlc/access/libaccess_bd_plugin.so
-@comment lib/vlc/access/libaccess_directory_plugin.a
 lib/vlc/access/libaccess_directory_plugin.la
 lib/vlc/access/libaccess_directory_plugin.so
-@comment lib/vlc/access/libaccess_fake_plugin.a
 lib/vlc/access/libaccess_fake_plugin.la
 lib/vlc/access/libaccess_fake_plugin.so
-@comment lib/vlc/access/libaccess_file_plugin.a
 lib/vlc/access/libaccess_file_plugin.la
 lib/vlc/access/libaccess_file_plugin.so
-@comment lib/vlc/access/libaccess_ftp_plugin.a
 lib/vlc/access/libaccess_ftp_plugin.la
 lib/vlc/access/libaccess_ftp_plugin.so
-@comment lib/vlc/access/libaccess_http_plugin.a
 lib/vlc/access/libaccess_http_plugin.la
 lib/vlc/access/libaccess_http_plugin.so
-@comment lib/vlc/access/libaccess_mmap_plugin.a
 lib/vlc/access/libaccess_mmap_plugin.la
 lib/vlc/access/libaccess_mmap_plugin.so
-@comment lib/vlc/access/libaccess_mms_plugin.a
 lib/vlc/access/libaccess_mms_plugin.la
 lib/vlc/access/libaccess_mms_plugin.so
-@comment lib/vlc/access/libaccess_realrtsp_plugin.a
 lib/vlc/access/libaccess_realrtsp_plugin.la
 lib/vlc/access/libaccess_realrtsp_plugin.so
-@comment lib/vlc/access/libaccess_tcp_plugin.a
 lib/vlc/access/libaccess_tcp_plugin.la
 lib/vlc/access/libaccess_tcp_plugin.so
-@comment lib/vlc/access/libaccess_udp_plugin.a
 lib/vlc/access/libaccess_udp_plugin.la
 lib/vlc/access/libaccess_udp_plugin.so
-@comment lib/vlc/access/libcdda_plugin.a
 lib/vlc/access/libcdda_plugin.la
 lib/vlc/access/libcdda_plugin.so
-@comment lib/vlc/access/libdvdnav_plugin.a
 lib/vlc/access/libdvdnav_plugin.la
 lib/vlc/access/libdvdnav_plugin.so
-@comment lib/vlc/access/libdvdread_plugin.a
 lib/vlc/access/libdvdread_plugin.la
 lib/vlc/access/libdvdread_plugin.so
-@comment lib/vlc/access/libv4l2_plugin.a
 lib/vlc/access/libv4l2_plugin.la
 lib/vlc/access/libv4l2_plugin.so
-@comment lib/vlc/access/libvcd_plugin.a
 lib/vlc/access/libvcd_plugin.la
 lib/vlc/access/libvcd_plugin.so
-@comment lib/vlc/access/libx11_screen_plugin.a
 @comment lib/vlc/access/libx11_screen_plugin.la
 @comment lib/vlc/access/libx11_screen_plugin.so
-@comment lib/vlc/access/libzip_plugin.a
 lib/vlc/access/libzip_plugin.la
 lib/vlc/access/libzip_plugin.so
 lib/vlc/access_output/
-@comment lib/vlc/access_output/libaccess_output_dummy_plugin.a
 lib/vlc/access_output/libaccess_output_dummy_plugin.la
 lib/vlc/access_output/libaccess_output_dummy_plugin.so
-@comment lib/vlc/access_output/libaccess_output_file_plugin.a
 lib/vlc/access_output/libaccess_output_file_plugin.la
 lib/vlc/access_output/libaccess_output_file_plugin.so
-@comment lib/vlc/access_output/libaccess_output_http_plugin.a
 lib/vlc/access_output/libaccess_output_http_plugin.la
 lib/vlc/access_output/libaccess_output_http_plugin.so
-@comment lib/vlc/access_output/libaccess_output_udp_plugin.a
 lib/vlc/access_output/libaccess_output_udp_plugin.la
 lib/vlc/access_output/libaccess_output_udp_plugin.so
 lib/vlc/audio_filter/
-@comment lib/vlc/audio_filter/liba52tospdif_plugin.a
 lib/vlc/audio_filter/liba52tospdif_plugin.la
 lib/vlc/audio_filter/liba52tospdif_plugin.so
-@comment lib/vlc/audio_filter/libaudio_format_plugin.a
 lib/vlc/audio_filter/libaudio_format_plugin.la
 lib/vlc/audio_filter/libaudio_format_plugin.so
-@comment lib/vlc/audio_filter/libbandlimited_resampler_plugin.a
 lib/vlc/audio_filter/libbandlimited_resampler_plugin.la
 lib/vlc/audio_filter/libbandlimited_resampler_plugin.so
-@comment lib/vlc/audio_filter/libconverter_fixed_plugin.a
 lib/vlc/audio_filter/libconverter_fixed_plugin.la
 lib/vlc/audio_filter/libconverter_fixed_plugin.so
-@comment lib/vlc/audio_filter/libconverter_float_plugin.a
 lib/vlc/audio_filter/libconverter_float_plugin.la
 lib/vlc/audio_filter/libconverter_float_plugin.so
-@comment lib/vlc/audio_filter/libdolby_surround_decoder_plugin.a
 lib/vlc/audio_filter/libdolby_surround_decoder_plugin.la
 lib/vlc/audio_filter/libdolby_surround_decoder_plugin.so
-@comment lib/vlc/audio_filter/libdtstospdif_plugin.a
 lib/vlc/audio_filter/libdtstospdif_plugin.la
 lib/vlc/audio_filter/libdtstospdif_plugin.so
-@comment lib/vlc/audio_filter/libequalizer_plugin.a
 lib/vlc/audio_filter/libequalizer_plugin.la
 lib/vlc/audio_filter/libequalizer_plugin.so
-@comment lib/vlc/audio_filter/libheadphone_channel_mixer_plugin.a
 lib/vlc/audio_filter/libheadphone_channel_mixer_plugin.la
 lib/vlc/audio_filter/libheadphone_channel_mixer_plugin.so
-@comment lib/vlc/audio_filter/liblinear_resampler_plugin.a
 lib/vlc/audio_filter/liblinear_resampler_plugin.la
 lib/vlc/audio_filter/liblinear_resampler_plugin.so
-@comment lib/vlc/audio_filter/libmono_plugin.a
 lib/vlc/audio_filter/libmono_plugin.la
 lib/vlc/audio_filter/libmono_plugin.so
-@comment lib/vlc/audio_filter/libnormvol_plugin.a
 lib/vlc/audio_filter/libnormvol_plugin.la
 lib/vlc/audio_filter/libnormvol_plugin.so
-@comment lib/vlc/audio_filter/libparam_eq_plugin.a
 lib/vlc/audio_filter/libparam_eq_plugin.la
 lib/vlc/audio_filter/libparam_eq_plugin.so
-@comment lib/vlc/audio_filter/libscaletempo_plugin.a
 lib/vlc/audio_filter/libscaletempo_plugin.la
 lib/vlc/audio_filter/libscaletempo_plugin.so
-@comment lib/vlc/audio_filter/libsimple_channel_mixer_plugin.a
 lib/vlc/audio_filter/libsimple_channel_mixer_plugin.la
 lib/vlc/audio_filter/libsimple_channel_mixer_plugin.so
-@comment lib/vlc/audio_filter/libspatializer_plugin.a
 lib/vlc/audio_filter/libspatializer_plugin.la
 lib/vlc/audio_filter/libspatializer_plugin.so
-@comment lib/vlc/audio_filter/libtrivial_channel_mixer_plugin.a
 lib/vlc/audio_filter/libtrivial_channel_mixer_plugin.la
 lib/vlc/audio_filter/libtrivial_channel_mixer_plugin.so
-@comment lib/vlc/audio_filter/libtrivial_resampler_plugin.a
 lib/vlc/audio_filter/libtrivial_resampler_plugin.la
 lib/vlc/audio_filter/libtrivial_resampler_plugin.so
-@comment lib/vlc/audio_filter/libugly_resampler_plugin.a
 lib/vlc/audio_filter/libugly_resampler_plugin.la
 lib/vlc/audio_filter/libugly_resampler_plugin.so
 lib/vlc/audio_mixer/
-@comment lib/vlc/audio_mixer/libfloat32_mixer_plugin.a
 lib/vlc/audio_mixer/libfloat32_mixer_plugin.la
 lib/vlc/audio_mixer/libfloat32_mixer_plugin.so
-@comment lib/vlc/audio_mixer/libspdif_mixer_plugin.a
 lib/vlc/audio_mixer/libspdif_mixer_plugin.la
 lib/vlc/audio_mixer/libspdif_mixer_plugin.so
-@comment lib/vlc/audio_mixer/libtrivial_mixer_plugin.a
 lib/vlc/audio_mixer/libtrivial_mixer_plugin.la
 lib/vlc/audio_mixer/libtrivial_mixer_plugin.so
 lib/vlc/audio_output/
-@comment lib/vlc/audio_output/libaout_file_plugin.a
 lib/vlc/audio_output/libaout_file_plugin.la
 lib/vlc/audio_output/libaout_file_plugin.so
-@comment lib/vlc/audio_output/libaout_sdl_plugin.a
 lib/vlc/audio_output/libaout_sdl_plugin.la
 lib/vlc/audio_output/libaout_sdl_plugin.so
 lib/vlc/codec/
-@comment lib/vlc/codec/liba52_plugin.a
 lib/vlc/codec/liba52_plugin.la
 lib/vlc/codec/liba52_plugin.so
-@comment lib/vlc/codec/libadpcm_plugin.a
 lib/vlc/codec/libadpcm_plugin.la
 lib/vlc/codec/libadpcm_plugin.so
-@comment lib/vlc/codec/libaes3_plugin.a
 lib/vlc/codec/libaes3_plugin.la
 lib/vlc/codec/libaes3_plugin.so
-@comment lib/vlc/codec/libaraw_plugin.a
 lib/vlc/codec/libaraw_plugin.la
 lib/vlc/codec/libaraw_plugin.so
-@comment lib/vlc/codec/libavcodec_plugin.a
 lib/vlc/codec/libavcodec_plugin.la
 lib/vlc/codec/libavcodec_plugin.so
-@comment lib/vlc/codec/libcc_plugin.a
 lib/vlc/codec/libcc_plugin.la
 lib/vlc/codec/libcc_plugin.so
-@comment lib/vlc/codec/libcdg_plugin.a
 lib/vlc/codec/libcdg_plugin.la
 lib/vlc/codec/libcdg_plugin.so
-@comment lib/vlc/codec/libcvdsub_plugin.a
 lib/vlc/codec/libcvdsub_plugin.la
 lib/vlc/codec/libcvdsub_plugin.so
-@comment lib/vlc/codec/libdts_plugin.a
 lib/vlc/codec/libdts_plugin.la
 lib/vlc/codec/libdts_plugin.so
-@comment lib/vlc/codec/libdvbsub_plugin.a
 lib/vlc/codec/libdvbsub_plugin.la
 lib/vlc/codec/libdvbsub_plugin.so
-@comment lib/vlc/codec/libfake_plugin.a
 lib/vlc/codec/libfake_plugin.la
 lib/vlc/codec/libfake_plugin.so
-@comment lib/vlc/codec/libflac_plugin.a
 lib/vlc/codec/libflac_plugin.la
 lib/vlc/codec/libflac_plugin.so
-@comment lib/vlc/codec/libinvmem_plugin.a
 lib/vlc/codec/libinvmem_plugin.la
 lib/vlc/codec/libinvmem_plugin.so
-@comment lib/vlc/codec/liblpcm_plugin.a
 lib/vlc/codec/liblpcm_plugin.la
 lib/vlc/codec/liblpcm_plugin.so
-@comment lib/vlc/codec/libmpeg_audio_plugin.a
 lib/vlc/codec/libmpeg_audio_plugin.la
 lib/vlc/codec/libmpeg_audio_plugin.so
-@comment lib/vlc/codec/libpng_plugin.a
 lib/vlc/codec/libpng_plugin.la
 lib/vlc/codec/libpng_plugin.so
-@comment lib/vlc/codec/librawvideo_plugin.a
 lib/vlc/codec/librawvideo_plugin.la
 lib/vlc/codec/librawvideo_plugin.so
-@comment lib/vlc/codec/librealaudio_plugin.a
 lib/vlc/codec/librealaudio_plugin.la
 lib/vlc/codec/librealaudio_plugin.so
-@comment lib/vlc/codec/librealvideo_plugin.a
 lib/vlc/codec/librealvideo_plugin.la
 lib/vlc/codec/librealvideo_plugin.so
-@comment lib/vlc/codec/libschroedinger_plugin.a
 lib/vlc/codec/libschroedinger_plugin.la
 lib/vlc/codec/libschroedinger_plugin.so
-@comment lib/vlc/codec/libsdl_image_plugin.a
 lib/vlc/codec/libsdl_image_plugin.la
 lib/vlc/codec/libsdl_image_plugin.so
-@comment lib/vlc/codec/libspeex_plugin.a
 lib/vlc/codec/libspeex_plugin.la
 lib/vlc/codec/libspeex_plugin.so
-@comment lib/vlc/codec/libspudec_plugin.a
 lib/vlc/codec/libspudec_plugin.la
 lib/vlc/codec/libspudec_plugin.so
-@comment lib/vlc/codec/libsubsdec_plugin.a
 lib/vlc/codec/libsubsdec_plugin.la
 lib/vlc/codec/libsubsdec_plugin.so
-@comment lib/vlc/codec/libsubsusf_plugin.a
 lib/vlc/codec/libsubsusf_plugin.la
 lib/vlc/codec/libsubsusf_plugin.so
-@comment lib/vlc/codec/libsvcdsub_plugin.a
 lib/vlc/codec/libsvcdsub_plugin.la
 lib/vlc/codec/libsvcdsub_plugin.so
-@comment lib/vlc/codec/libt140_plugin.a
 lib/vlc/codec/libt140_plugin.la
 lib/vlc/codec/libt140_plugin.so
-@comment lib/vlc/codec/libtelx_plugin.a
 lib/vlc/codec/libtelx_plugin.la
 lib/vlc/codec/libtelx_plugin.so
-@comment lib/vlc/codec/libtheora_plugin.a
 lib/vlc/codec/libtheora_plugin.la
 lib/vlc/codec/libtheora_plugin.so
-@comment lib/vlc/codec/libvorbis_plugin.a
 lib/vlc/codec/libvorbis_plugin.la
 lib/vlc/codec/libvorbis_plugin.so
-@comment lib/vlc/codec/libx264_plugin.a
 lib/vlc/codec/libx264_plugin.la
 lib/vlc/codec/libx264_plugin.so
 lib/vlc/control/
-@comment lib/vlc/control/libdbus_plugin.a
 lib/vlc/control/libdbus_plugin.la
 lib/vlc/control/libdbus_plugin.so
-@comment lib/vlc/control/libgestures_plugin.a
 lib/vlc/control/libgestures_plugin.la
 lib/vlc/control/libgestures_plugin.so
-@comment lib/vlc/control/libglobalhotkeys_plugin.a
 lib/vlc/control/libglobalhotkeys_plugin.la
 lib/vlc/control/libglobalhotkeys_plugin.so
-@comment lib/vlc/control/libhotkeys_plugin.a
 lib/vlc/control/libhotkeys_plugin.la
 lib/vlc/control/libhotkeys_plugin.so
-@comment lib/vlc/control/libhttp_plugin.a
 lib/vlc/control/libhttp_plugin.la
 lib/vlc/control/libhttp_plugin.so
-@comment lib/vlc/control/libmotion_plugin.a
 lib/vlc/control/libmotion_plugin.la
 lib/vlc/control/libmotion_plugin.so
-@comment lib/vlc/control/librc_plugin.a
 lib/vlc/control/librc_plugin.la
 lib/vlc/control/librc_plugin.so
-@comment lib/vlc/control/libshowintf_plugin.a
 lib/vlc/control/libshowintf_plugin.la
 lib/vlc/control/libshowintf_plugin.so
-@comment lib/vlc/control/libsignals_plugin.a
 lib/vlc/control/libsignals_plugin.la
 lib/vlc/control/libsignals_plugin.so
-@comment lib/vlc/control/libtelnet_plugin.a
 lib/vlc/control/libtelnet_plugin.la
 lib/vlc/control/libtelnet_plugin.so
 lib/vlc/demux/
-@comment lib/vlc/demux/libaiff_plugin.a
 lib/vlc/demux/libaiff_plugin.la
 lib/vlc/demux/libaiff_plugin.so
-@comment lib/vlc/demux/libasf_plugin.a
 lib/vlc/demux/libasf_plugin.la
 lib/vlc/demux/libasf_plugin.so
-@comment lib/vlc/demux/libau_plugin.a
 lib/vlc/demux/libau_plugin.la
 lib/vlc/demux/libau_plugin.so
-@comment lib/vlc/demux/libavformat_plugin.a
 lib/vlc/demux/libavformat_plugin.la
 lib/vlc/demux/libavformat_plugin.so
-@comment lib/vlc/demux/libavi_plugin.a
 lib/vlc/demux/libavi_plugin.la
 lib/vlc/demux/libavi_plugin.so
-@comment lib/vlc/demux/libdemux_cdg_plugin.a
 lib/vlc/demux/libdemux_cdg_plugin.la
 lib/vlc/demux/libdemux_cdg_plugin.so
-@comment lib/vlc/demux/libdemuxdump_plugin.a
 lib/vlc/demux/libdemuxdump_plugin.la
 lib/vlc/demux/libdemuxdump_plugin.so
-@comment lib/vlc/demux/libdirac_plugin.a
 lib/vlc/demux/libdirac_plugin.la
 lib/vlc/demux/libdirac_plugin.so
-@comment lib/vlc/demux/libes_plugin.a
 lib/vlc/demux/libes_plugin.la
 lib/vlc/demux/libes_plugin.so
-@comment lib/vlc/demux/libflacsys_plugin.a
 lib/vlc/demux/libflacsys_plugin.la
 lib/vlc/demux/libflacsys_plugin.so
-@comment lib/vlc/demux/libh264_plugin.a
 lib/vlc/demux/libh264_plugin.la
 lib/vlc/demux/libh264_plugin.so
-@comment lib/vlc/demux/libm4v_plugin.a
 lib/vlc/demux/libm4v_plugin.la
 lib/vlc/demux/libm4v_plugin.so
-@comment lib/vlc/demux/libmjpeg_plugin.a
 lib/vlc/demux/libmjpeg_plugin.la
 lib/vlc/demux/libmjpeg_plugin.so
-@comment lib/vlc/demux/libmkv_plugin.a
 lib/vlc/demux/libmkv_plugin.la
 lib/vlc/demux/libmkv_plugin.so
-@comment lib/vlc/demux/libmp4_plugin.a
 lib/vlc/demux/libmp4_plugin.la
 lib/vlc/demux/libmp4_plugin.so
-@comment lib/vlc/demux/libmpc_plugin.a
 lib/vlc/demux/libmpc_plugin.la
 lib/vlc/demux/libmpc_plugin.so
-@comment lib/vlc/demux/libmpgv_plugin.a
 lib/vlc/demux/libmpgv_plugin.la
 lib/vlc/demux/libmpgv_plugin.so
-@comment lib/vlc/demux/libnsc_plugin.a
 lib/vlc/demux/libnsc_plugin.la
 lib/vlc/demux/libnsc_plugin.so
-@comment lib/vlc/demux/libnsv_plugin.a
 lib/vlc/demux/libnsv_plugin.la
 lib/vlc/demux/libnsv_plugin.so
-@comment lib/vlc/demux/libnuv_plugin.a
 lib/vlc/demux/libnuv_plugin.la
 lib/vlc/demux/libnuv_plugin.so
-@comment lib/vlc/demux/libogg_plugin.a
 lib/vlc/demux/libogg_plugin.la
 lib/vlc/demux/libogg_plugin.so
-@comment lib/vlc/demux/libplaylist_plugin.a
 lib/vlc/demux/libplaylist_plugin.la
 lib/vlc/demux/libplaylist_plugin.so
-@comment lib/vlc/demux/libps_plugin.a
 lib/vlc/demux/libps_plugin.la
 lib/vlc/demux/libps_plugin.so
-@comment lib/vlc/demux/libpva_plugin.a
 lib/vlc/demux/libpva_plugin.la
 lib/vlc/demux/libpva_plugin.so
-@comment lib/vlc/demux/librawaud_plugin.a
 lib/vlc/demux/librawaud_plugin.la
 lib/vlc/demux/librawaud_plugin.so
-@comment lib/vlc/demux/librawdv_plugin.a
 lib/vlc/demux/librawdv_plugin.la
 lib/vlc/demux/librawdv_plugin.so
-@comment lib/vlc/demux/librawvid_plugin.a
 lib/vlc/demux/librawvid_plugin.la
 lib/vlc/demux/librawvid_plugin.so
-@comment lib/vlc/demux/libreal_plugin.a
 lib/vlc/demux/libreal_plugin.la
 lib/vlc/demux/libreal_plugin.so
-@comment lib/vlc/demux/libsmf_plugin.a
 lib/vlc/demux/libsmf_plugin.la
 lib/vlc/demux/libsmf_plugin.so
-@comment lib/vlc/demux/libsubtitle_plugin.a
 lib/vlc/demux/libsubtitle_plugin.la
 lib/vlc/demux/libsubtitle_plugin.so
-@comment lib/vlc/demux/libts_plugin.a
 lib/vlc/demux/libts_plugin.la
 lib/vlc/demux/libts_plugin.so
-@comment lib/vlc/demux/libtta_plugin.a
 lib/vlc/demux/libtta_plugin.la
 lib/vlc/demux/libtta_plugin.so
-@comment lib/vlc/demux/libty_plugin.a
 lib/vlc/demux/libty_plugin.la
 lib/vlc/demux/libty_plugin.so
-@comment lib/vlc/demux/libvc1_plugin.a
 lib/vlc/demux/libvc1_plugin.la
 lib/vlc/demux/libvc1_plugin.so
-@comment lib/vlc/demux/libvobsub_plugin.a
 lib/vlc/demux/libvobsub_plugin.la
 lib/vlc/demux/libvobsub_plugin.so
-@comment lib/vlc/demux/libvoc_plugin.a
 lib/vlc/demux/libvoc_plugin.la
 lib/vlc/demux/libvoc_plugin.so
-@comment lib/vlc/demux/libwav_plugin.a
 lib/vlc/demux/libwav_plugin.la
 lib/vlc/demux/libwav_plugin.so
-@comment lib/vlc/demux/libxa_plugin.a
 lib/vlc/demux/libxa_plugin.la
 lib/vlc/demux/libxa_plugin.so
 lib/vlc/gui/
-@comment lib/vlc/gui/libqt4_plugin.a
 lib/vlc/gui/libqt4_plugin.la
 lib/vlc/gui/libqt4_plugin.so
 lib/vlc/meta_engine/
-@comment lib/vlc/meta_engine/libfolder_plugin.a
 lib/vlc/meta_engine/libfolder_plugin.la
 lib/vlc/meta_engine/libfolder_plugin.so
-@comment lib/vlc/meta_engine/libtaglib_plugin.a
 lib/vlc/meta_engine/libtaglib_plugin.la
 lib/vlc/meta_engine/libtaglib_plugin.so
 lib/vlc/misc/
-@comment lib/vlc/misc/libaudioscrobbler_plugin.a
 lib/vlc/misc/libaudioscrobbler_plugin.la
 lib/vlc/misc/libaudioscrobbler_plugin.so
-@comment lib/vlc/misc/libdummy_plugin.a
 lib/vlc/misc/libdummy_plugin.la
 lib/vlc/misc/libdummy_plugin.so
-@comment lib/vlc/misc/libexport_plugin.a
 lib/vlc/misc/libexport_plugin.la
 lib/vlc/misc/libexport_plugin.so
-@comment lib/vlc/misc/libfreetype_plugin.a
 lib/vlc/misc/libfreetype_plugin.la
 lib/vlc/misc/libfreetype_plugin.so
-@comment lib/vlc/misc/libinhibit_plugin.a
 lib/vlc/misc/libinhibit_plugin.la
 lib/vlc/misc/libinhibit_plugin.so
-@comment lib/vlc/misc/liblogger_plugin.a
 lib/vlc/misc/liblogger_plugin.la
 lib/vlc/misc/liblogger_plugin.so
-@comment lib/vlc/misc/libmemcpy_plugin.a
 lib/vlc/misc/libmemcpy_plugin.la
 lib/vlc/misc/libmemcpy_plugin.so
-@comment lib/vlc/misc/libnotify_plugin.a
 lib/vlc/misc/libnotify_plugin.la
 lib/vlc/misc/libnotify_plugin.so
-@comment lib/vlc/misc/libosd_parser_plugin.a
 lib/vlc/misc/libosd_parser_plugin.la
 lib/vlc/misc/libosd_parser_plugin.so
-@comment lib/vlc/misc/libscreensaver_plugin.a
 lib/vlc/misc/libscreensaver_plugin.la
 lib/vlc/misc/libscreensaver_plugin.so
-@comment lib/vlc/misc/libstats_plugin.a
 lib/vlc/misc/libstats_plugin.la
 lib/vlc/misc/libstats_plugin.so
-@comment lib/vlc/misc/libtelepathy_plugin.a
 lib/vlc/misc/libtelepathy_plugin.la
 lib/vlc/misc/libtelepathy_plugin.so
-@comment lib/vlc/misc/libvod_rtsp_plugin.a
 lib/vlc/misc/libvod_rtsp_plugin.la
 lib/vlc/misc/libvod_rtsp_plugin.so
-@comment lib/vlc/misc/libxml_plugin.a
 lib/vlc/misc/libxml_plugin.la
 lib/vlc/misc/libxml_plugin.so
-@comment lib/vlc/misc/libxtag_plugin.a
 lib/vlc/misc/libxtag_plugin.la
 lib/vlc/misc/libxtag_plugin.so
 lib/vlc/mux/
-@comment lib/vlc/mux/libmux_asf_plugin.a
 lib/vlc/mux/libmux_asf_plugin.la
 lib/vlc/mux/libmux_asf_plugin.so
-@comment lib/vlc/mux/libmux_avi_plugin.a
 lib/vlc/mux/libmux_avi_plugin.la
 lib/vlc/mux/libmux_avi_plugin.so
-@comment lib/vlc/mux/libmux_dummy_plugin.a
 lib/vlc/mux/libmux_dummy_plugin.la
 lib/vlc/mux/libmux_dummy_plugin.so
-@comment lib/vlc/mux/libmux_mp4_plugin.a
 lib/vlc/mux/libmux_mp4_plugin.la
 lib/vlc/mux/libmux_mp4_plugin.so
-@comment lib/vlc/mux/libmux_mpjpeg_plugin.a
 lib/vlc/mux/libmux_mpjpeg_plugin.la
 lib/vlc/mux/libmux_mpjpeg_plugin.so
-@comment lib/vlc/mux/libmux_ogg_plugin.a
 lib/vlc/mux/libmux_ogg_plugin.la
 lib/vlc/mux/libmux_ogg_plugin.so
-@comment lib/vlc/mux/libmux_ps_plugin.a
 lib/vlc/mux/libmux_ps_plugin.la
 lib/vlc/mux/libmux_ps_plugin.so
-@comment lib/vlc/mux/libmux_ts_plugin.a
 lib/vlc/mux/libmux_ts_plugin.la
 lib/vlc/mux/libmux_ts_plugin.so
-@comment lib/vlc/mux/libmux_wav_plugin.a
 lib/vlc/mux/libmux_wav_plugin.la
 lib/vlc/mux/libmux_wav_plugin.so
 lib/vlc/packetizer/
-@comment lib/vlc/packetizer/libpacketizer_copy_plugin.a
 lib/vlc/packetizer/libpacketizer_copy_plugin.la
 lib/vlc/packetizer/libpacketizer_copy_plugin.so
-@comment lib/vlc/packetizer/libpacketizer_dirac_plugin.a
 lib/vlc/packetizer/libpacketizer_dirac_plugin.la
 lib/vlc/packetizer/libpacketizer_dirac_plugin.so
-@comment lib/vlc/packetizer/libpacketizer_h264_plugin.a
 lib/vlc/packetizer/libpacketizer_h264_plugin.la
 lib/vlc/packetizer/libpacketizer_h264_plugin.so
-@comment lib/vlc/packetizer/libpacketizer_mlp_plugin.a
 lib/vlc/packetizer/libpacketizer_mlp_plugin.la
 lib/vlc/packetizer/libpacketizer_mlp_plugin.so
-@comment lib/vlc/packetizer/libpacketizer_mpeg4audio_plugin.a
 lib/vlc/packetizer/libpacketizer_mpeg4audio_plugin.la
 lib/vlc/packetizer/libpacketizer_mpeg4audio_plugin.so
-@comment lib/vlc/packetizer/libpacketizer_mpeg4video_plugin.a
 lib/vlc/packetizer/libpacketizer_mpeg4video_plugin.la
 lib/vlc/packetizer/libpacketizer_mpeg4video_plugin.so
-@comment lib/vlc/packetizer/libpacketizer_mpegvideo_plugin.a
 lib/vlc/packetizer/libpacketizer_mpegvideo_plugin.la
 lib/vlc/packetizer/libpacketizer_mpegvideo_plugin.so
-@comment lib/vlc/packetizer/libpacketizer_vc1_plugin.a
 lib/vlc/packetizer/libpacketizer_vc1_plugin.la
 lib/vlc/packetizer/libpacketizer_vc1_plugin.so
 lib/vlc/services_discovery/
-@comment lib/vlc/services_discovery/libpodcast_plugin.a
 lib/vlc/services_discovery/libpodcast_plugin.la
 lib/vlc/services_discovery/libpodcast_plugin.so
-@comment lib/vlc/services_discovery/libsap_plugin.a
 lib/vlc/services_discovery/libsap_plugin.la
 lib/vlc/services_discovery/libsap_plugin.so
-@comment lib/vlc/services_discovery/libshout_plugin.a
 lib/vlc/services_discovery/libshout_plugin.la
 lib/vlc/services_discovery/libshout_plugin.so
 lib/vlc/stream_filter/
-@comment lib/vlc/stream_filter/libdecomp_plugin.a
 lib/vlc/stream_filter/libdecomp_plugin.la
 lib/vlc/stream_filter/libdecomp_plugin.so
-@comment lib/vlc/stream_filter/libstream_filter_rar_plugin.a
 lib/vlc/stream_filter/libstream_filter_rar_plugin.la
 lib/vlc/stream_filter/libstream_filter_rar_plugin.so
-@comment lib/vlc/stream_filter/libstream_filter_record_plugin.a
 lib/vlc/stream_filter/libstream_filter_record_plugin.la
 lib/vlc/stream_filter/libstream_filter_record_plugin.so
 lib/vlc/stream_out/
-@comment lib/vlc/stream_out/libstream_out_autodel_plugin.a
 lib/vlc/stream_out/libstream_out_autodel_plugin.la
 lib/vlc/stream_out/libstream_out_autodel_plugin.so
-@comment lib/vlc/stream_out/libstream_out_bridge_plugin.a
 lib/vlc/stream_out/libstream_out_bridge_plugin.la
 lib/vlc/stream_out/libstream_out_bridge_plugin.so
-@comment lib/vlc/stream_out/libstream_out_description_plugin.a
 lib/vlc/stream_out/libstream_out_description_plugin.la
 lib/vlc/stream_out/libstream_out_description_plugin.so
-@comment lib/vlc/stream_out/libstream_out_display_plugin.a
 lib/vlc/stream_out/libstream_out_display_plugin.la
 lib/vlc/stream_out/libstream_out_display_plugin.so
-@comment lib/vlc/stream_out/libstream_out_dummy_plugin.a
 lib/vlc/stream_out/libstream_out_dummy_plugin.la
 lib/vlc/stream_out/libstream_out_dummy_plugin.so
-@comment lib/vlc/stream_out/libstream_out_duplicate_plugin.a
 lib/vlc/stream_out/libstream_out_duplicate_plugin.la
 lib/vlc/stream_out/libstream_out_duplicate_plugin.so
-@comment lib/vlc/stream_out/libstream_out_es_plugin.a
 lib/vlc/stream_out/libstream_out_es_plugin.la
 lib/vlc/stream_out/libstream_out_es_plugin.so
-@comment lib/vlc/stream_out/libstream_out_gather_plugin.a
 lib/vlc/stream_out/libstream_out_gather_plugin.la
 lib/vlc/stream_out/libstream_out_gather_plugin.so
-@comment lib/vlc/stream_out/libstream_out_mosaic_bridge_plugin.a
 lib/vlc/stream_out/libstream_out_mosaic_bridge_plugin.la
 lib/vlc/stream_out/libstream_out_mosaic_bridge_plugin.so
-@comment lib/vlc/stream_out/libstream_out_record_plugin.a
 lib/vlc/stream_out/libstream_out_record_plugin.la
 lib/vlc/stream_out/libstream_out_record_plugin.so
-@comment lib/vlc/stream_out/libstream_out_standard_plugin.a
 lib/vlc/stream_out/libstream_out_standard_plugin.la
 lib/vlc/stream_out/libstream_out_standard_plugin.so
-@comment lib/vlc/stream_out/libstream_out_transcode_plugin.a
 lib/vlc/stream_out/libstream_out_transcode_plugin.la
 lib/vlc/stream_out/libstream_out_transcode_plugin.so
 lib/vlc/video_chroma/
-@comment lib/vlc/video_chroma/libgrey_yuv_plugin.a
 lib/vlc/video_chroma/libgrey_yuv_plugin.la
 lib/vlc/video_chroma/libgrey_yuv_plugin.so
-@comment lib/vlc/video_chroma/libi420_rgb_plugin.a
 lib/vlc/video_chroma/libi420_rgb_plugin.la
 lib/vlc/video_chroma/libi420_rgb_plugin.so
-@comment lib/vlc/video_chroma/libi420_ymga_plugin.a
 lib/vlc/video_chroma/libi420_ymga_plugin.la
 lib/vlc/video_chroma/libi420_ymga_plugin.so
-@comment lib/vlc/video_chroma/libi420_yuy2_plugin.a
 lib/vlc/video_chroma/libi420_yuy2_plugin.la
 lib/vlc/video_chroma/libi420_yuy2_plugin.so
-@comment lib/vlc/video_chroma/libi422_i420_plugin.a
 lib/vlc/video_chroma/libi422_i420_plugin.la
 lib/vlc/video_chroma/libi422_i420_plugin.so
-@comment lib/vlc/video_chroma/libi422_yuy2_plugin.a
 lib/vlc/video_chroma/libi422_yuy2_plugin.la
 lib/vlc/video_chroma/libi422_yuy2_plugin.so
-@comment lib/vlc/video_chroma/libyuy2_i420_plugin.a
 lib/vlc/video_chroma/libyuy2_i420_plugin.la
 lib/vlc/video_chroma/libyuy2_i420_plugin.so
-@comment lib/vlc/video_chroma/libyuy2_i422_plugin.a
 lib/vlc/video_chroma/libyuy2_i422_plugin.la
 lib/vlc/video_chroma/libyuy2_i422_plugin.so
 lib/vlc/video_filter/
-@comment lib/vlc/video_filter/libadjust_plugin.a
 lib/vlc/video_filter/libadjust_plugin.la
 lib/vlc/video_filter/libadjust_plugin.so
-@comment lib/vlc/video_filter/libalphamask_plugin.a
 lib/vlc/video_filter/libalphamask_plugin.la
 lib/vlc/video_filter/libalphamask_plugin.so
-@comment lib/vlc/video_filter/libblend_plugin.a
 lib/vlc/video_filter/libblend_plugin.la
 lib/vlc/video_filter/libblend_plugin.so
-@comment lib/vlc/video_filter/libblendbench_plugin.a
 lib/vlc/video_filter/libblendbench_plugin.la
 lib/vlc/video_filter/libblendbench_plugin.so
-@comment lib/vlc/video_filter/libbluescreen_plugin.a
 lib/vlc/video_filter/libbluescreen_plugin.la
 lib/vlc/video_filter/libbluescreen_plugin.so
-@comment lib/vlc/video_filter/libcanvas_plugin.a
 lib/vlc/video_filter/libcanvas_plugin.la
 lib/vlc/video_filter/libcanvas_plugin.so
-@comment lib/vlc/video_filter/libchain_plugin.a
 lib/vlc/video_filter/libchain_plugin.la
 lib/vlc/video_filter/libchain_plugin.so
-@comment lib/vlc/video_filter/libclone_plugin.a
 lib/vlc/video_filter/libclone_plugin.la
 lib/vlc/video_filter/libclone_plugin.so
-@comment lib/vlc/video_filter/libcolorthres_plugin.a
 lib/vlc/video_filter/libcolorthres_plugin.la
 lib/vlc/video_filter/libcolorthres_plugin.so
-@comment lib/vlc/video_filter/libcrop_plugin.a
 lib/vlc/video_filter/libcrop_plugin.la
 lib/vlc/video_filter/libcrop_plugin.so
-@comment lib/vlc/video_filter/libcroppadd_plugin.a
 lib/vlc/video_filter/libcroppadd_plugin.la
 lib/vlc/video_filter/libcroppadd_plugin.so
-@comment lib/vlc/video_filter/libdeinterlace_plugin.a
 lib/vlc/video_filter/libdeinterlace_plugin.la
 lib/vlc/video_filter/libdeinterlace_plugin.so
-@comment lib/vlc/video_filter/libdynamicoverlay_plugin.a
 lib/vlc/video_filter/libdynamicoverlay_plugin.la
 lib/vlc/video_filter/libdynamicoverlay_plugin.so
-@comment lib/vlc/video_filter/liberase_plugin.a
 lib/vlc/video_filter/liberase_plugin.la
 lib/vlc/video_filter/liberase_plugin.so
-@comment lib/vlc/video_filter/libextract_plugin.a
 lib/vlc/video_filter/libextract_plugin.la
 lib/vlc/video_filter/libextract_plugin.so
-@comment lib/vlc/video_filter/libgaussianblur_plugin.a
 lib/vlc/video_filter/libgaussianblur_plugin.la
 lib/vlc/video_filter/libgaussianblur_plugin.so
-@comment lib/vlc/video_filter/libgradient_plugin.a
 lib/vlc/video_filter/libgradient_plugin.la
 lib/vlc/video_filter/libgradient_plugin.so
-@comment lib/vlc/video_filter/libgrain_plugin.a
 lib/vlc/video_filter/libgrain_plugin.la
 lib/vlc/video_filter/libgrain_plugin.so
-@comment lib/vlc/video_filter/libinvert_plugin.a
 lib/vlc/video_filter/libinvert_plugin.la
 lib/vlc/video_filter/libinvert_plugin.so
-@comment lib/vlc/video_filter/liblogo_plugin.a
 lib/vlc/video_filter/liblogo_plugin.la
 lib/vlc/video_filter/liblogo_plugin.so
-@comment lib/vlc/video_filter/libmagnify_plugin.a
 lib/vlc/video_filter/libmagnify_plugin.la
 lib/vlc/video_filter/libmagnify_plugin.so
-@comment lib/vlc/video_filter/libmarq_plugin.a
 lib/vlc/video_filter/libmarq_plugin.la
 lib/vlc/video_filter/libmarq_plugin.so
-@comment lib/vlc/video_filter/libmosaic_plugin.a
 lib/vlc/video_filter/libmosaic_plugin.la
 lib/vlc/video_filter/libmosaic_plugin.so
-@comment lib/vlc/video_filter/libmotionblur_plugin.a
 lib/vlc/video_filter/libmotionblur_plugin.la
 lib/vlc/video_filter/libmotionblur_plugin.so
-@comment lib/vlc/video_filter/libmotiondetect_plugin.a
 lib/vlc/video_filter/libmotiondetect_plugin.la
 lib/vlc/video_filter/libmotiondetect_plugin.so
-@comment lib/vlc/video_filter/libnoise_plugin.a
 lib/vlc/video_filter/libnoise_plugin.la
 lib/vlc/video_filter/libnoise_plugin.so
-@comment lib/vlc/video_filter/libosdmenu_plugin.a
 lib/vlc/video_filter/libosdmenu_plugin.la
 lib/vlc/video_filter/libosdmenu_plugin.so
-@comment lib/vlc/video_filter/libpanoramix_plugin.a
 lib/vlc/video_filter/libpanoramix_plugin.la
 lib/vlc/video_filter/libpanoramix_plugin.so
-@comment lib/vlc/video_filter/libpostproc_plugin.a
 lib/vlc/video_filter/libpostproc_plugin.la
 lib/vlc/video_filter/libpostproc_plugin.so
-@comment lib/vlc/video_filter/libpsychedelic_plugin.a
 lib/vlc/video_filter/libpsychedelic_plugin.la
 lib/vlc/video_filter/libpsychedelic_plugin.so
-@comment lib/vlc/video_filter/libpuzzle_plugin.a
 lib/vlc/video_filter/libpuzzle_plugin.la
 lib/vlc/video_filter/libpuzzle_plugin.so
-@comment lib/vlc/video_filter/libripple_plugin.a
 lib/vlc/video_filter/libripple_plugin.la
 lib/vlc/video_filter/libripple_plugin.so
-@comment lib/vlc/video_filter/librotate_plugin.a
 lib/vlc/video_filter/librotate_plugin.la
 lib/vlc/video_filter/librotate_plugin.so
-@comment lib/vlc/video_filter/librss_plugin.a
 lib/vlc/video_filter/librss_plugin.la
 lib/vlc/video_filter/librss_plugin.so
-@comment lib/vlc/video_filter/librv32_plugin.a
 lib/vlc/video_filter/librv32_plugin.la
 lib/vlc/video_filter/librv32_plugin.so
-@comment lib/vlc/video_filter/libscale_plugin.a
 lib/vlc/video_filter/libscale_plugin.la
 lib/vlc/video_filter/libscale_plugin.so
-@comment lib/vlc/video_filter/libscene_plugin.a
 lib/vlc/video_filter/libscene_plugin.la
 lib/vlc/video_filter/libscene_plugin.so
-@comment lib/vlc/video_filter/libsharpen_plugin.a
 lib/vlc/video_filter/libsharpen_plugin.la
 lib/vlc/video_filter/libsharpen_plugin.so
-@comment lib/vlc/video_filter/libswscale_plugin.a
 lib/vlc/video_filter/libswscale_plugin.la
 lib/vlc/video_filter/libswscale_plugin.so
-@comment lib/vlc/video_filter/libtransform_plugin.a
 lib/vlc/video_filter/libtransform_plugin.la
 lib/vlc/video_filter/libtransform_plugin.so
-@comment lib/vlc/video_filter/libwall_plugin.a
 lib/vlc/video_filter/libwall_plugin.la
 lib/vlc/video_filter/libwall_plugin.so
-@comment lib/vlc/video_filter/libwave_plugin.a
 lib/vlc/video_filter/libwave_plugin.la
 lib/vlc/video_filter/libwave_plugin.so
-@comment lib/vlc/video_filter/libyuvp_plugin.a
 lib/vlc/video_filter/libyuvp_plugin.la
 lib/vlc/video_filter/libyuvp_plugin.so
 lib/vlc/video_output/
-@comment lib/vlc/video_output/libdrawable_plugin.a
 lib/vlc/video_output/libdrawable_plugin.la
 lib/vlc/video_output/libdrawable_plugin.so
-@comment lib/vlc/video_output/libglx_plugin.a
 lib/vlc/video_output/libglx_plugin.la
 lib/vlc/video_output/libglx_plugin.so
-@comment lib/vlc/video_output/libopengl_plugin.a
 lib/vlc/video_output/libopengl_plugin.la
 lib/vlc/video_output/libopengl_plugin.so
-@comment lib/vlc/video_output/libvmem_plugin.a
 lib/vlc/video_output/libvmem_plugin.la
 lib/vlc/video_output/libvmem_plugin.so
-@comment lib/vlc/video_output/libvout_sdl_plugin.a
 lib/vlc/video_output/libvout_sdl_plugin.la
 lib/vlc/video_output/libvout_sdl_plugin.so
-@comment lib/vlc/video_output/libx11_plugin.a
 @comment lib/vlc/video_output/libx11_plugin.la
 @comment lib/vlc/video_output/libx11_plugin.so
-@comment lib/vlc/video_output/libxvideo_plugin.a
 lib/vlc/video_output/libxvideo_plugin.la
 lib/vlc/video_output/libxvideo_plugin.so
-@comment lib/vlc/video_output/libyuv_plugin.a
 lib/vlc/video_output/libyuv_plugin.la
 lib/vlc/video_output/libyuv_plugin.so
 lib/vlc/visualization/
-@comment lib/vlc/visualization/libvisual_plugin.a
 lib/vlc/visualization/libvisual_plugin.la
 lib/vlc/visualization/libvisual_plugin.so
 @man man/man1/vlc-config.1
