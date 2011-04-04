@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2010/12/04 11:53:57 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2011/04/04 22:40:55 kili Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
 
-DISTNAME =		xmonad-0.9.1
+DISTNAME =		xmonad-0.9.2
 PKGNAME-main =		${DISTNAME}
 PKGNAME-lib =		${DISTNAME:S,-,-lib-,}
-REVISION-main =		4
-REVISION-lib =		7
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 
@@ -23,7 +21,9 @@ WANTLIB-main =		${WANTLIB} X11 Xext Xinerama c gmp m pthread util
 WANTLIB-lib =
 
 MODULES =		lang/ghc converters/libiconv
-MODGHC_BUILD =		cabal hackage haddock register
+# No documentation for now (haddock thinks that module `xmonad-0.9.2:Main'
+# is defined in multiple files).
+MODGHC_BUILD =		cabal hackage register
 
 .if defined (SUBPACKAGE) && ${SUBPACKAGE:M-main}
 MODGHC_BUILD +=		nort
