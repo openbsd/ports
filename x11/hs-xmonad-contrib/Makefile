@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/04/04 22:41:30 kili Exp $
 
 COMMENT =		third party xmonad extensions
 
-DISTNAME =		xmonad-contrib-0.9.1
-REVISION =		8
+DISTNAME =		xmonad-contrib-0.9.2
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 
@@ -23,5 +22,7 @@ RUN_DEPENDS =		${LIB_DEPENDS} \
 			shells/bash
 
 NO_REGRESS =		Yes
+
+VMEM_WARNING =		Yes
 
 .include <bsd.port.mk>
