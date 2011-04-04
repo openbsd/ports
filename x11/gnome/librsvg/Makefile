@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2011/04/04 06:26:03 ajacoutot Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
 GNOME_PROJECT=	librsvg
-GNOME_VERSION=	2.32.1
+GNOME_VERSION=	2.34.0
 
 SHARED_LIBS +=	rsvg-2         28.0           # .34.0
 
@@ -31,13 +31,15 @@ LIB_DEPENDS=	x11/gtk+2 \
 		www/libcroco
 RUN_DEPENDS=	x11/gtk-engines2
 
-CONFIGURE_ARGS+=	--with-svgz \
-			--with-croco \
-			--enable-gtk-theme \
-			--disable-gtk-doc
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =		Yes
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-gtk-doc \
+		--enable-gtk-theme \
+		--with-svgz \
+		--with-croco
+
+USE_GROFF=	Yes
 
 MODPY_ADJ_FILES=	rsvg.in
 
