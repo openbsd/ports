@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2010/12/30 13:36:09 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/04 08:38:35 dcoppa Exp $
 
 COMMENT =	ultra-low delay audio codec
 
-DISTNAME =	celt-0.10.0
+DISTNAME =	celt-0.11.1
 
 CATEGORIES =   	audio
 
 HOMEPAGE =	http://www.celt-codec.org/
 
-SHARED_LIBS +=	celt0	0.0	# 1.0
+SHARED_LIBS +=	celt0	1.0	# 2.0
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

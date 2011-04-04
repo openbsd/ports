@@ -1,10 +1,10 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.1.1.1 2010/12/02 22:16:02 dcoppa Exp $
+$OpenBSD: patch-tools_Makefile_in,v 1.2 2011/04/04 08:38:35 dcoppa Exp $
 
 Use sndio for audio
 
---- tools/Makefile.in.orig	Thu Dec  2 08:12:27 2010
-+++ tools/Makefile.in	Thu Dec  2 08:13:31 2010
-@@ -237,7 +237,8 @@ noinst_HEADERS = wav_io.h
+--- tools/Makefile.in.orig	Tue Feb 15 06:15:57 2011
++++ tools/Makefile.in	Mon Apr  4 10:13:59 2011
+@@ -236,7 +236,8 @@ noinst_HEADERS = wav_io.h
  celtenc_SOURCES = celtenc.c wav_io.c skeleton.c
  celtenc_LDADD = $(top_builddir)/libcelt/libcelt@LIBCELT_SUFFIX@.la $(OGG_LIBS)
  celtdec_SOURCES = celtdec.c wav_io.c
