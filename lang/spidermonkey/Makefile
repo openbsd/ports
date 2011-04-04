@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/17 10:56:52 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2011/04/04 22:36:27 fgsch Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,9 +7,9 @@ COMMENT=	Mozilla's C implementation of JavaScript
 V=		1.7.0
 DISTNAME=	js-${V}
 PKGNAME=	spidermonkey-${V}
-REVISION =	0
+REVISION =	1
 EPOCH =		0
-SHARED_LIBS=	js 2.0
+SHARED_LIBS=	js 3.0
 CATEGORIES=     lang
 
 HOMEPAGE=	http://www.mozilla.org/js/spidermonkey/
@@ -36,7 +36,7 @@ MAKE_FLAGS=	SO_SUFFIX=so.${LIBjs_VERSION} \
 		JS_THREADSAFE=YES \
 		JS_NO_THIN_LOCKS=YES \
 		XLDFLAGS="-L${LOCALBASE}/lib -pthread" \
-		XCFLAGS="-I${LOCALBASE}/include/nspr" \
+		XCFLAGS="-I${LOCALBASE}/include/nspr -DJS_C_STRINGS_ARE_UTF8" \
 		CC=${CC} \
 		CCC=${CXX}
 
