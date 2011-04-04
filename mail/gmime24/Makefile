@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/03/27 18:25:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2011/04/04 13:36:51 ajacoutot Exp $
 
 COMMENT-main=	MIME messages creation and parsing library
 COMMENT-mono=	mono bindings for gmime
@@ -8,6 +8,8 @@ DISTNAME=	gmime-${V}
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-mono=	gmime-sharp-${V}
+
+REVISION-mono=	0
 
 EXTRACT_SUFX=	.tar.bz2
 
@@ -48,6 +50,7 @@ PSEUDO_FLAVORS=	no_mono
 FLAVOR ?=
 
 MODMONO_DEPS=   No
+DLLMAP_FILES=	mono/gmime-sharp.dll.config
 
 # keep in sync with lang/mono/mono.port.mk
 ONLY_FOR_ARCHS-mono= i386 amd64
