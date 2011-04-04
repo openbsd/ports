@@ -1,4 +1,4 @@
-$OpenBSD: patch-common_ECLogger_cpp,v 1.8 2011/03/29 18:00:03 ajacoutot Exp $
+$OpenBSD: patch-common_ECLogger_cpp,v 1.9 2011/04/04 08:01:04 ajacoutot Exp $
 --- common/ECLogger.cpp.orig	Tue Mar 29 00:04:07 2011
 +++ common/ECLogger.cpp	Tue Mar 29 17:48:35 2011
 @@ -55,6 +55,10 @@
@@ -57,14 +57,3 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.8 2011/03/29 18:00:03 ajacoutot Exp $
  	else if (prefix == LP_PID)
  		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[%5d] ", getpid());
  	off += len;
-@@ -607,8 +611,8 @@ ECLogger* CreateLogger(ECConfig *lpConfig, char *argv0
- 										 lpConfig->GetSetting((prepend+"log_file").c_str()), false);
- 			// chown file
- 			if (pw || gr) {
--				uid_t uid = -1;
--				gid_t gid = -1;
-+				uid_t uid;
-+				gid_t gid;
- 				if (pw)
- 					uid = pw->pw_uid;
- 				if (gr)

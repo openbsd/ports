@@ -1,4 +1,4 @@
-$OpenBSD: patch-mapi4linux_src_Makefile_in,v 1.9 2011/03/11 08:44:44 ajacoutot Exp $
+$OpenBSD: patch-mapi4linux_src_Makefile_in,v 1.10 2011/04/04 08:01:04 ajacoutot Exp $
 --- mapi4linux/src/Makefile.in.orig	Sun Feb 27 19:34:35 2011
 +++ mapi4linux/src/Makefile.in	Thu Mar 10 17:22:03 2011
 @@ -271,7 +271,7 @@ libmapi_la_LIBADD = \
@@ -6,7 +6,7 @@ $OpenBSD: patch-mapi4linux_src_Makefile_in,v 1.9 2011/03/11 08:44:44 ajacoutot E
  
  # required because we're exporting extern "C" functions and want to filter with 'export-symbols'
 -CXXLD = --tag=none gcc
-+CXXLD = $(CC)
++CXXLD = --tag=none $(CXX)
  libmapi_la_SOURCES = common.cpp mapidefs.cpp mapispi.cpp mapiutil.cpp mapix.cpp rtf.cpp imessage.cpp \
  	m4l.common.h m4l.mapidefs.h m4l.mapispi.h m4l.mapiutil.h m4l.mapix.h mapi4linux.h m4l.debug.h rtf.h mapi-exports.sym
  

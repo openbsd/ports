@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: zarafa_indexer.rc,v 1.1 2011/04/04 08:01:04 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/bin/zarafa-indexer"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

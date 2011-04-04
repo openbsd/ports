@@ -1,4 +1,4 @@
-$OpenBSD: patch-provider_client_Makefile_in,v 1.10 2011/03/11 08:44:44 ajacoutot Exp $
+$OpenBSD: patch-provider_client_Makefile_in,v 1.11 2011/04/04 08:01:04 ajacoutot Exp $
 --- provider/client/Makefile.in.orig	Sun Feb 27 19:34:35 2011
 +++ provider/client/Makefile.in	Thu Mar 10 17:22:03 2011
 @@ -298,7 +298,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX				\
@@ -15,7 +15,7 @@ $OpenBSD: patch-provider_client_Makefile_in,v 1.10 2011/03/11 08:44:44 ajacoutot
  	-lstdc++ $(UUID_LIBS)
  
 -CXXLD = --tag=none gcc
-+CXXLD = $(CXX)
++CXXLD = --tag=none $(CXX)
  libzarafaclient_la_SOURCES = ECABLogon.cpp ECABProvider.cpp											\
  	ECAttach.cpp ECMAPIContainer.cpp ECMAPIFolder.cpp ECMAPIProp.cpp								\
  	ECMAPITable.cpp ECMessage.cpp ECMsgStore.cpp													\

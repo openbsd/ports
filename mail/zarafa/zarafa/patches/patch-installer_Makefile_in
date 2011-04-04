@@ -1,15 +1,6 @@
-$OpenBSD: patch-installer_Makefile_in,v 1.8 2011/03/11 08:44:44 ajacoutot Exp $
+$OpenBSD: patch-installer_Makefile_in,v 1.9 2011/04/04 08:01:04 ajacoutot Exp $
 --- installer/Makefile.in.orig	Sun Feb 27 19:34:34 2011
 +++ installer/Makefile.in	Thu Mar 10 17:22:03 2011
-@@ -241,7 +241,7 @@ sysconfdir = @sysconfdir@
- target_alias = @target_alias@
- top_builddir = @top_builddir@
- top_srcdir = @top_srcdir@
--SUBDIRS = linux userscripts quotamail indexerscripts
-+SUBDIRS = linux userscripts quotamail
- dist_data_DATA = ldap/zarafa.schema licenseagreement/eula.txt licenseagreement/AGPL-3
- all: all-recursive
- 
 @@ -283,12 +283,12 @@ clean-libtool:
  	-rm -rf .libs _libs
  install-dist_dataDATA: $(dist_data_DATA)

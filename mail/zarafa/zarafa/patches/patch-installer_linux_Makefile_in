@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_Makefile_in,v 1.16 2011/04/02 15:09:52 ajacoutot Exp $
+$OpenBSD: patch-installer_linux_Makefile_in,v 1.17 2011/04/04 08:01:04 ajacoutot Exp $
 --- installer/linux/Makefile.in.orig	Mon Mar 28 20:32:51 2011
-+++ installer/linux/Makefile.in	Sat Apr  2 15:50:20 2011
++++ installer/linux/Makefile.in	Sun Apr  3 10:03:34 2011
 @@ -55,15 +55,15 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGUR
  mkinstalldirs = $(install_sh) -d
  CONFIG_HEADER = $(top_builddir)/common/config.h
@@ -30,7 +30,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.16 2011/04/02 15:09:52 ajacoutot
 -	indexer.cfg autorespond licensed.cfg archiver.cfg \
 -	ldap.openldap.cfg ldap.active-directory.cfg \
 -	ldapms.openldap.cfg ldapms.active-directory.cfg
-+	autorespond \
++	indexer.cfg autorespond \
 +	ldap.openldap.cfg ldap.active-directory.cfg
  dist_data_configDATA_INSTALL = $(INSTALL_DATA)
  am__dist_sysconf_cert_DATA_DIST = addtrust.crt
@@ -41,7 +41,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.16 2011/04/02 15:09:52 ajacoutot
 -	dagent.cfg ical.cfg indexer.cfg autorespond licensed.cfg \
 -	archiver.cfg ldap.openldap.cfg ldap.active-directory.cfg \
 -	ldapms.openldap.cfg ldapms.active-directory.cfg
-+	dagent.cfg ical.cfg autorespond \
++	dagent.cfg ical.cfg indexer.cfg autorespond \
 +	ldap.openldap.cfg ldap.active-directory.cfg
  dist_sysconf_configDATA_INSTALL = $(INSTALL_DATA)
  am__dist_sysconf_rotate_DATA_DIST = zarafa.logrotate \
@@ -54,17 +54,15 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.16 2011/04/02 15:09:52 ajacoutot
  exec_prefix = @exec_prefix@
  host = @host@
  host_alias = @host_alias@
-@@ -269,8 +268,8 @@ sysconfdir = @sysconfdir@
+@@ -269,7 +268,7 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
 -config_files = server.cfg unix.cfg ldap.propmap.cfg spooler.cfg \
--	gateway.cfg monitor.cfg dagent.cfg ical.cfg indexer.cfg \
 +config_files = server.cfg ldap.propmap.cfg spooler.cfg \
-+	gateway.cfg monitor.cfg dagent.cfg ical.cfg \
+ 	gateway.cfg monitor.cfg dagent.cfg ical.cfg indexer.cfg \
  	autorespond $(am__append_2) $(BUILT_SOURCES)
  rhel_initscript_files = zarafa-server.init.rhel \
- 	zarafa-spooler.init.rhel zarafa-gateway.init.rhel \
 @@ -306,7 +305,7 @@ sysconf_sysconfigdir = ${@DISTRO@_sysconfig_path}
  sysconf_sysconfig_DATA = ${@DISTRO@_sysconfig_files}
  dist_data_DATA = \

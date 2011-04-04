@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_manual_xml,v 1.18 2011/04/02 15:09:52 ajacoutot Exp $
+$OpenBSD: patch-doc_manual_xml,v 1.19 2011/04/04 08:01:04 ajacoutot Exp $
 --- doc/manual.xml.orig	Mon Mar 28 20:32:05 2011
-+++ doc/manual.xml	Sat Apr  2 17:08:22 2011
++++ doc/manual.xml	Mon Apr  4 09:05:53 2011
 @@ -837,9 +837,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
@@ -24,19 +24,24 @@ $OpenBSD: patch-doc_manual_xml,v 1.18 2011/04/02 15:09:52 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -1261,7 +1254,10 @@
+@@ -1261,11 +1254,15 @@
  		</para>
  		<para>Then, you must setup a signed SSL certificate. First,
  		we'll create a Certificate Authority to be able to sign
 -		certificate requests. We provide a script which makes it easy
 +		certificate requests.
-+		!!! THE OpenBSD PACKAGE DOES NOT PROVIDE THIS SCRIPT,
-+		PLEASE REFER TO openssl(1) FOR MANUALLY CREATING CA/CERTS !!!
 +		We provide a script which makes it easy
  		to create certificates on any distribution. This script is
  		located in /usr/share/zarafa, called ssl-certificate.sh. Enter
  		the following commands to create a certificate for the Zarafa
-@@ -2861,9 +2857,7 @@
+ 		server.
++
++		!!! WARNING: THE OpenBSD PACKAGE DOES NOT PROVIDE THIS SCRIPT,
++		PLEASE REFER TO openssl(1) FOR MANUALLY CREATING CA/CERTS !!!
+ 		</para>
+ 		<para>
+ 		  <command>
+@@ -2861,9 +2858,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -47,7 +52,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.18 2011/04/02 15:09:52 ajacoutot Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-server.pid</replaceable>
-@@ -5750,13 +5744,8 @@
+@@ -5750,13 +5745,8 @@
  		</para>
  
  		<para>The spooler process will keep running and watching the
@@ -63,7 +68,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.18 2011/04/02 15:09:52 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -5928,9 +5917,7 @@
+@@ -5928,9 +5918,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -74,7 +79,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.18 2011/04/02 15:09:52 ajacoutot Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-spooler.pid</replaceable>
-@@ -6316,13 +6303,8 @@
+@@ -6316,13 +6304,8 @@
  
  		<para><command>zarafa-gateway</command></para>
  
@@ -90,7 +95,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.18 2011/04/02 15:09:52 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -6561,9 +6543,7 @@
+@@ -6561,9 +6544,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -101,7 +106,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.18 2011/04/02 15:09:52 ajacoutot Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-gateway.pid</replaceable>
-@@ -6944,14 +6924,8 @@
+@@ -6944,14 +6925,8 @@
  
  		<para>The monitor checks user mailbox sizes. The monitor sends
  		a quota email when the warning quota limit is reached. When
@@ -117,7 +122,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.18 2011/04/02 15:09:52 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -7103,9 +7077,7 @@
+@@ -7103,9 +7078,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -128,7 +133,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.18 2011/04/02 15:09:52 ajacoutot Exp $
  			  </para>
  			  <para>Default value: /var/run/zarafa-monitor.pid
  			  </para>
-@@ -8358,13 +8330,8 @@
+@@ -8358,13 +8331,8 @@
  
  		<para><command>zarafa-ical</command></para>
  
@@ -144,7 +149,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.18 2011/04/02 15:09:52 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -8547,9 +8514,7 @@
+@@ -8547,9 +8515,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -155,7 +160,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.18 2011/04/02 15:09:52 ajacoutot Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-ical.pid</replaceable>
-@@ -8863,13 +8828,8 @@
+@@ -8863,13 +8829,8 @@
  
  		<para><command>zarafa-licensed</command></para>
  
@@ -171,7 +176,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.18 2011/04/02 15:09:52 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -9013,9 +8973,7 @@
+@@ -9013,9 +8974,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -182,3 +187,17 @@ $OpenBSD: patch-doc_manual_xml,v 1.18 2011/04/02 15:09:52 ajacoutot Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-licensed.pid</replaceable>
+@@ -9634,13 +9593,6 @@
+ 		  <option>-c</option>
+ 		  <replaceable>/path/to/indexer.cfg</replaceable>
+ 		</para>
+-
+-		<para>You may also use the init.d scripts:</para>
+-		<para><command>/etc/init.d/zarafa-indexer</command>
+-		[<replaceable>start</replaceable>|
+-		<replaceable>stop</replaceable>|
+-		<replaceable>restart</replaceable>|
+-		<replaceable>reload</replaceable>]</para>
+ 	  </refsection>
+ 
+ 	  <refsection>

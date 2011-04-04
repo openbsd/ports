@@ -1,6 +1,6 @@
-$OpenBSD: patch-provider_server_ECServer_cpp,v 1.10 2011/03/29 18:00:03 ajacoutot Exp $
+$OpenBSD: patch-provider_server_ECServer_cpp,v 1.11 2011/04/04 08:01:04 ajacoutot Exp $
 --- provider/server/ECServer.cpp.orig	Tue Mar 29 00:04:09 2011
-+++ provider/server/ECServer.cpp	Tue Mar 29 17:48:35 2011
++++ provider/server/ECServer.cpp	Sun Apr  3 19:35:40 2011
 @@ -82,6 +82,10 @@
  #include <libintl.h>
  #include <map>
@@ -21,3 +21,12 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.10 2011/03/29 18:00:03 ajacouto
  		{ "attachment_compression",		"6" },
  
  		// Log options
+@@ -818,7 +822,7 @@ int running_server(char *szName, char *szConfig)
+ 		{ "cache_sortkey_size",		"0", CONFIGSETTING_UNUSED }, // Option not support, only for backward compatibility of all configurations under the 6.20
+ 
+ 		{ "client_update_enabled",	"no" },
+-		{ "client_update_path",		"/var/lib/zarafa/client", CONFIGSETTING_RELOADABLE },
++		{ "client_update_path",		"/var/db/zarafa/client", CONFIGSETTING_RELOADABLE },
+         { "index_services_enabled", "no", CONFIGSETTING_RELOADABLE }, 
+         { "index_services_path",    "file:///var/run/zarafa-indexer", CONFIGSETTING_RELOADABLE },        
+ 		{ "index_services_search_timeout", "10", CONFIGSETTING_RELOADABLE },

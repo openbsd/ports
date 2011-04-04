@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.11 2011/03/11 08:44:44 ajacoutot Exp $
---- configure.orig	Sun Feb 27 19:34:30 2011
-+++ configure	Thu Mar 10 17:22:03 2011
+$OpenBSD: patch-configure,v 1.12 2011/04/04 08:01:04 ajacoutot Exp $
+--- configure.orig	Mon Mar 28 20:32:47 2011
++++ configure	Sun Apr  3 09:11:19 2011
 @@ -21801,12 +21801,7 @@ else
    want_release=no
  fi
@@ -54,19 +54,7 @@ $OpenBSD: patch-configure,v 1.11 2011/03/11 08:44:44 ajacoutot Exp $
  
  else
  
-@@ -23124,8 +23104,10 @@ fi
- 
- done
- 
-+# XXX force removing clucene support
-+WITH_CLUCENE_TRUE='#'
-+WITH_CLUCENE_FALSE=
- 
--
- CFLAGS=$cflags_keep
- 
- # Check for CLucene availability
-@@ -25116,13 +25098,13 @@ LIBS=$libs_keep
+@@ -25116,13 +25096,13 @@ LIBS=$libs_keep
  libs_keep=$LIBS
  # check lib, but do not set in link list
  
@@ -83,7 +71,7 @@ $OpenBSD: patch-configure,v 1.11 2011/03/11 08:44:44 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -25182,7 +25164,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
+@@ -25182,7 +25162,7 @@ if test $ac_cv_lib_pthread_pthread_create = yes; then
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  

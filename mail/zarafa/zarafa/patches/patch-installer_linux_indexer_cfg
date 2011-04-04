@@ -1,0 +1,51 @@
+$OpenBSD: patch-installer_linux_indexer_cfg,v 1.1 2011/04/04 08:01:04 ajacoutot Exp $
+--- installer/linux/indexer.cfg.orig	Sun Apr  3 09:12:52 2011
++++ installer/linux/indexer.cfg	Sun Apr  3 09:15:54 2011
+@@ -2,13 +2,13 @@
+ # INDEXER SERVICE SETTINGS
+ 
+ # Location of the index files
+-index_path          =   /var/lib/zarafa/index/
++index_path          =   /var/db/zarafa/index/
+ 
+ # run as specific user
+-run_as_user         =
++run_as_user         = _zarafa
+ 
+ # run as specific group
+-run_as_group        =
++run_as_group        = _zarafa
+ 
+ # control pid file
+ pid_file            =   /var/run/zarafa-indexer.pid
+@@ -29,7 +29,7 @@ cleanup_lockfiles	=	no
+ server_socket   =   file:///var/run/zarafa
+ 
+ # Login to the Zarafa server using this SSL Key
+-sslkey_file         = /etc/zarafa/ssl/indexer.pem
++sslkey_file         = ${SYSCONFDIR}/zarafa/ssl/indexer.pem
+ 
+ # The password of the SSL Key
+ sslkey_pass         = replace-with-server-cert-password
+@@ -43,10 +43,10 @@ sslkey_pass         = replace-with-server-cert-passwor
+ server_bind_name   =   file:///var/run/zarafa-indexer
+ 
+ # File with RSA key for SSL, used then server_bind_name uses https
+-ssl_private_key_file= /etc/zarafa/indexer/privkey.pem
++ssl_private_key_file= ${SYSCONFDIR}/zarafa/indexer/privkey.pem
+ 
+ # File with certificate for SSL, used then server_bind_name uses https
+-ssl_certificate_file= /etc/zarafa/indexer/cert.pem
++ssl_certificate_file= ${SYSCONFDIR}/zarafa/indexer/cert.pem
+ 
+ ##############################################################
+ # LOG SETTINGS
+@@ -107,7 +107,7 @@ index_attachments	= yes
+ index_attachment_max_size = 5120
+ 
+ # Scripts to attachment to text parser
+-index_attachment_parser = /etc/zarafa/indexerscripts/attachments_parser
++index_attachment_parser = ${SYSCONFDIR}/zarafa/indexerscripts/attachments_parser
+ 
+ # Maximum amount of memory which a parser may use in bytes (set to 0 for unlimited)
+ # If this maximum is exceeded the parser will be killed

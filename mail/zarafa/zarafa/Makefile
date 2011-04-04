@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2011/04/02 21:10:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2011/04/04 08:01:04 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -7,7 +7,7 @@ PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-web=	1
 
 CATEGORIES=	mail www productivity
@@ -30,7 +30,8 @@ MODULES=	devel/gettext
 BUILD_DEPENDS=	www/php5/core \
 		textproc/xmlto \
 		net/curl \
-		devel/boost
+		devel/boost \
+		textproc/clucene
 
 WANTLIB-main =	${MODGETTEXT_WANTLIB}
 WANTLIB-main += asn1 c com_err crypto gssapi krb5 m ncurses pthread ssl
@@ -85,14 +86,17 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-oss \
 		--with-distro=openbsd \
 		--with-vmime-prefix=${LOCALBASE}/include/zarafa \
-		--with-ical-prefix=${LOCALBASE}/include/
+		--with-ical-prefix=${LOCALBASE}/include \
+		--with-clucene-lib-prefix=${LOCALBASE}/lib \
+		--with-clucene-include-prefix=${LOCALBASE}/include
 
 # XXX in-tree heimdal does not provide krb5_free_unparsed_name()
 CONFIGURE_ARGS+= --with-krb5-config=/usr/bin/true
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples \
 		USERSCRIPTDIR=${PREFIX}/share/examples/zarafa/userscripts \
-		QUOTATEMPLATEDIR=${PREFIX}/share/examples/zarafa/quotamail
+		QUOTATEMPLATEDIR=${PREFIX}/share/examples/zarafa/quotamail \
+		INDEXERSCRIPTSDIR=${PREFIX}/share/examples/zarafa/indexerscripts
 
 SUB_SCRIPTS=	createcompany.d/00createpublic groups_common.sh \
 		createuser.d/00createstore companies_common.sh \
@@ -119,6 +123,8 @@ pre-configure:
 		-e 's,/var/lib/zarafa,/var/db/zarafa,g;' \
 		-e 's,ssl-certificate.sh,ssl-certificates.sh,g' \
 		${WRKSRC}/doc/manual.xml
+	perl -pi -e 's,/bin/bash,/bin/sh,g' \
+		${WRKSRC}/installer/indexerscripts/{attachments_parser,zmktemp}
 
 post-install:
 	${SUBST_CMD} ${WRKSRC}/php-webclient-ajax/config.php.dist
