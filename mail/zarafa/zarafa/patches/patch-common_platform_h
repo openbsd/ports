@@ -1,20 +1,16 @@
-$OpenBSD: patch-common_platform_h,v 1.5 2010/11/17 08:34:06 ajacoutot Exp $
---- common/platform.h.orig	Wed Oct 20 16:16:23 2010
-+++ common/platform.h	Tue Nov 16 19:13:30 2010
-@@ -53,9 +53,16 @@
+$OpenBSD: patch-common_platform_h,v 1.6 2011/04/04 14:42:51 ajacoutot Exp $
+--- common/platform.h.orig	Tue Mar 29 00:04:07 2011
++++ common/platform.h	Mon Apr  4 12:29:02 2011
+@@ -53,7 +53,12 @@
  
    // We have to include this now in case select.h is included too soon.
    // Increase our maximum amount of file descriptors to 8192
 +#if OPENBSD
 +  #include <sys/types.h>
 +  #include <sys/select.h>
-+  #undef __FD_SETSIZE
-+  #define __FD_SETSIZE FD_SETSIZE
 +#else
    #include <bits/types.h>
++#endif
    #undef __FD_SETSIZE
    #define __FD_SETSIZE 8192
-+#endif
  
-   // Log the pthreads locks
-   #define DEBUG_PTHREADS 0

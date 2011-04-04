@@ -1,11 +1,14 @@
-$OpenBSD: patch-provider_soap_stdsoap2_h,v 1.2 2010/06/30 02:46:48 ajacoutot Exp $
---- provider/soap/stdsoap2.h.orig	Mon May 31 19:28:55 2010
-+++ provider/soap/stdsoap2.h	Mon Jun 14 09:30:11 2010
-@@ -426,6 +426,21 @@ A commercial use license is available from Genivia, In
+$OpenBSD: patch-provider_soap_stdsoap2_h,v 1.3 2011/04/04 14:42:51 ajacoutot Exp $
+--- provider/soap/stdsoap2.h.orig	Tue Mar 29 00:04:06 2011
++++ provider/soap/stdsoap2.h	Mon Apr  4 12:23:33 2011
+@@ -426,6 +426,24 @@ A commercial use license is available from Genivia, In
  #  define ULONG64 unsigned LONG64
  #  define SOAP_LONG_FORMAT "%ld"
  #  define SOAP_ULONG_FORMAT "%lu"
 +#elif defined(OPENBSD) || defined(__OpenBSD__)
++// for FD_SETSIZE
++#include <sys/types.h>
++#include <sys/select.h>
 +#  define HAVE_STRRCHR
 +#  define HAVE_STRTOD  
 +#  define HAVE_SSCANF 
@@ -23,7 +26,7 @@ $OpenBSD: patch-provider_soap_stdsoap2_h,v 1.2 2010/06/30 02:46:48 ajacoutot Exp
  # else
  /* Default asumptions on supported functions */
  #  define HAVE_STRRCHR
-@@ -628,7 +643,7 @@ extern "C" {
+@@ -628,7 +646,7 @@ extern "C" {
  # endif
  #elif defined(SOCKLEN_T)
  # define SOAP_SOCKLEN_T SOCKLEN_T
@@ -32,16 +35,3 @@ $OpenBSD: patch-provider_soap_stdsoap2_h,v 1.2 2010/06/30 02:46:48 ajacoutot Exp
  # define SOAP_SOCKLEN_T socklen_t
  #elif defined(IRIX) || defined(WIN32) || defined(__APPLE__) || defined(HP_UX) || defined(SUN_OS) || defined(OPENSERVER) || defined(TRU64) || defined(VXWORKS)
  # define SOAP_SOCKLEN_T int
-@@ -646,6 +661,12 @@ extern "C" {
- 
- #ifndef SOAP_GAI_STRERROR
- # define SOAP_GAI_STRERROR gai_strerror
-+#endif
-+
-+#if OPENBSD
-+#undef FD_SETSIZE
-+#include <sys/types.h>
-+#include <sys/select.h>
- #endif
- 
- #ifndef FD_SETSIZE
