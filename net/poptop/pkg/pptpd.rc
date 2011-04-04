@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: pptpd.rc,v 1.1 2011/04/04 16:44:54 giovanni Exp $
+
+daemon="${TRUEPREFIX}/sbin/pptpd"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
