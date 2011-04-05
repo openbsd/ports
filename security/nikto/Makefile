@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2011/03/27 16:41:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/04/05 20:28:17 jasper Exp $
 
 COMMENT =	web and CGI vulnerability scanner with SSL support
 
 DISTNAME =	nikto-2.1.4
+EPOCH = 	0
 CATEGORIES =	security www
 
 HOMEPAGE =	http://www.cirt.net/nikto2
