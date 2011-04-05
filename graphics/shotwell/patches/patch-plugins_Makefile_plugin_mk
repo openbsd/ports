@@ -1,0 +1,21 @@
+$OpenBSD: patch-plugins_Makefile_plugin_mk,v 1.1 2011/04/05 18:43:43 ajacoutot Exp $
+--- plugins/Makefile.plugin.mk.orig	Mon Apr  4 19:54:27 2011
++++ plugins/Makefile.plugin.mk	Tue Apr  5 11:13:32 2011
+@@ -32,7 +32,7 @@ SRC_FILES := ../common/Resources.vala $(SRC_FILES)
+ CFILES := $(notdir $(SRC_FILES:.vala=.c))
+ OFILES := $(notdir $(SRC_FILES:.vala=.o))
+ 
+-CFLAGS := `pkg-config --print-errors --cflags $(EXT_PKGS)` -nostdlib -export-dynamic $(PLUGIN_CFLAGS)
++CFLAGS := `pkg-config --print-errors --cflags $(EXT_PKGS)` -I${LOCALBASE}/include -nostdlib -export-dynamic $(PLUGIN_CFLAGS)
+ LDFLAGS := `pkg-config --print-errors --libs $(EXT_PKGS)` $(LDFLAGS)
+ DEFINES := -D_VERSION='"$(PLUGINS_VERSION)"' -DGETTEXT_PACKAGE='"shotwell"'
+ 
+@@ -41,7 +41,7 @@ all: $(PLUGIN).so
+ .stamp: $(SRC_FILES) $(MAKE_FILES) $(HEADER_FILES)
+ 	$(VALAC) -g --enable-checking --fatal-warnings --save-temps --compile \
+ 		--vapidir=../ $(foreach pkg,$(PKGS),--pkg=$(pkg)) \
+-		-X -I../.. -X -fPIC \
++		-X -I${LOCALBASE}/include -X -I../.. -X -fPIC \
+ 		$(foreach dfn,$(DEFINES),-X $(dfn)) \
+ 		$(USER_VALAFLAGS) \
+ 		$(SRC_FILES)

@@ -1,5 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/01/17 13:05:21 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/04/05 18:43:43 ajacoutot Exp $
+%%SHARED%%
 @bin bin/shotwell
+lib/shotwell/
+lib/shotwell/plugins/
+lib/shotwell/plugins/builtin/
+lib/shotwell/plugins/builtin/facebook.png
+lib/shotwell/plugins/builtin/flickr.png
+lib/shotwell/plugins/builtin/picasa.png
+lib/shotwell/plugins/builtin/slideshow-plugin.png
+lib/shotwell/plugins/builtin/yandex_publish_model.glade
+lib/shotwell/plugins/builtin/youtube.png
 share/applications/shotwell-viewer.desktop
 share/applications/shotwell.desktop
 share/gnome/help/shotwell/
@@ -29,6 +39,7 @@ share/gnome/help/shotwell/C/organize-event.page
 share/gnome/help/shotwell/C/organize-flag.page
 share/gnome/help/shotwell/C/organize-rating.page
 share/gnome/help/shotwell/C/organize-remove.page
+share/gnome/help/shotwell/C/organize-search.page
 share/gnome/help/shotwell/C/organize-tag.page
 share/gnome/help/shotwell/C/organize-title.page
 share/gnome/help/shotwell/C/other-files.page
@@ -44,8 +55,14 @@ share/gnome/help/shotwell/C/share-upload.page
 share/gnome/help/shotwell/C/view-displaying.page
 share/gnome/help/shotwell/C/view-information.page
 share/gnome/help/shotwell/C/view-sidebar.page
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/shotwell.svg
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/shotwell.svg
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/shotwell.svg
 share/locale/ar/LC_MESSAGES/shotwell.mo
 share/locale/ast/LC_MESSAGES/shotwell.mo
@@ -86,6 +103,8 @@ share/locale/sk/LC_MESSAGES/shotwell.mo
 share/locale/sl/LC_MESSAGES/shotwell.mo
 share/locale/sr/LC_MESSAGES/shotwell.mo
 share/locale/sv/LC_MESSAGES/shotwell.mo
+share/locale/ta/LC_MESSAGES/shotwell.mo
+share/locale/te/LC_MESSAGES/shotwell.mo
 share/locale/th/LC_MESSAGES/shotwell.mo
 share/locale/tr/LC_MESSAGES/shotwell.mo
 share/locale/uk/LC_MESSAGES/shotwell.mo
@@ -102,12 +121,17 @@ share/shotwell/icons/crop-pivot-reticle.png
 share/shotwell/icons/crop.svg
 share/shotwell/icons/drag_nub.png
 share/shotwell/icons/enhance.png
+share/shotwell/icons/filter-flagged.png
+share/shotwell/icons/filter-photos.png
+share/shotwell/icons/filter-raw.png
+share/shotwell/icons/filter-videos.png
 share/shotwell/icons/five-star-filter.svg
 share/shotwell/icons/five-stars.svg
 share/shotwell/icons/flag-page.png
 share/shotwell/icons/flag-trinket.png
 share/shotwell/icons/four-star-filter-plus.svg
 share/shotwell/icons/four-stars.svg
+share/shotwell/icons/generic-plugin.png
 share/shotwell/icons/image-adjust.svg
 share/shotwell/icons/import-all.png
 share/shotwell/icons/import.svg
@@ -124,11 +148,14 @@ share/shotwell/icons/pin-toolbar.svg
 share/shotwell/icons/publish.png
 share/shotwell/icons/redeye.png
 share/shotwell/icons/rejected.svg
+share/shotwell/icons/searchbox-clear.svg
+share/shotwell/icons/searchbox-find.svg
 share/shotwell/icons/shotwell-16.svg
 share/shotwell/icons/shotwell-24.svg
 share/shotwell/icons/shotwell-street.jpg
 share/shotwell/icons/shotwell.ico
 share/shotwell/icons/shotwell.svg
+share/shotwell/icons/slideshow-extension-point.png
 share/shotwell/icons/sprocket.png
 share/shotwell/icons/three-star-filter-plus.svg
 share/shotwell/icons/three-stars.svg
@@ -148,12 +175,11 @@ share/shotwell/ui/import_queue.ui
 share/shotwell/ui/media.ui
 share/shotwell/ui/offline.ui
 share/shotwell/ui/photo.ui
+share/shotwell/ui/search_bar.ui
 share/shotwell/ui/set_background_dialog.glade
 share/shotwell/ui/shotwell.glade
 share/shotwell/ui/tags.ui
 share/shotwell/ui/trash.ui
-share/shotwell/ui/video.ui
-share/shotwell/ui/yandex_publish_model.glade
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database

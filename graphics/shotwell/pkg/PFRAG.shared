@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1 2011/04/05 18:43:43 ajacoutot Exp $
+lib/shotwell/plugins/builtin/shotwell-publishing-extras.so
+lib/shotwell/plugins/builtin/shotwell-publishing.so
+lib/shotwell/plugins/builtin/shotwell-transitions.so

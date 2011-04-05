@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_CameraTable_vala,v 1.2 2011/01/17 13:05:21 landry Exp $
+$OpenBSD: patch-src_CameraTable_vala,v 1.3 2011/04/05 18:43:43 ajacoutot Exp $
 We don't have gudev.. won't be able to detect cameras
---- src/CameraTable.vala.orig	Tue Jan 11 00:13:03 2011
-+++ src/CameraTable.vala	Mon Jan 17 00:54:28 2011
-@@ -24,7 +24,6 @@ public class CameraTable {
+--- src/CameraTable.vala.orig	Mon Apr  4 19:54:29 2011
++++ src/CameraTable.vala	Tue Apr  5 11:47:42 2011
+@@ -26,7 +26,6 @@ public class CameraTable {
      
      private static CameraTable instance = null;
      
@@ -10,7 +10,7 @@ We don't have gudev.. won't be able to detect cameras
      private OneShotScheduler camera_update_scheduler = null;
      private GPhoto.Context null_context = new GPhoto.Context();
      private GPhoto.CameraAbilitiesList abilities_list;
-@@ -41,8 +40,6 @@ public class CameraTable {
+@@ -43,8 +42,6 @@ public class CameraTable {
          camera_update_scheduler = new OneShotScheduler("CameraTable update scheduler",
              on_update_cameras);
          
@@ -19,7 +19,7 @@ We don't have gudev.. won't be able to detect cameras
          volume_monitor = VolumeMonitor.get();
          volume_monitor.volume_changed.connect(on_volume_changed);
          volume_monitor.volume_added.connect(on_volume_changed);
-@@ -103,31 +100,6 @@ public class CameraTable {
+@@ -105,31 +102,6 @@ public class CameraTable {
      private string[] get_all_usb_cameras() {
          string[] cameras = new string[0];
          
@@ -51,16 +51,44 @@ We don't have gudev.. won't be able to detect cameras
          return cameras;
      }
      
-@@ -300,20 +272,6 @@ public class CameraTable {
+@@ -204,24 +176,6 @@ public class CameraTable {
+             "/dev/bus/usb/%s".printf(port.substring(4).replace(",", "/")) : null;
+     }
+     
+-    private string? get_name_for_uuid(string uuid) {
+-        foreach (Volume volume in volume_monitor.get_volumes()) {
+-            if (volume.get_identifier(VOLUME_IDENTIFIER_KIND_UUID) == uuid) {
+-                return volume.get_name();
+-            }
+-        }
+-        return null;
+-    }
+-    
+-    private GLib.Icon? get_icon_for_uuid(string uuid) {
+-        foreach (Volume volume in volume_monitor.get_volumes()) {
+-            if (volume.get_identifier(VOLUME_IDENTIFIER_KIND_UUID) == uuid) {
+-                return volume.get_icon();
+-            }
+-        }
+-        return null;
+-    }
+-
+     private void update_camera_table() throws GPhotoError {
+         // need to do this because virtual ports come and go in the USB world (and probably others)
+         GPhoto.PortInfoList port_info_list;
+@@ -311,23 +265,6 @@ public class CameraTable {
+                 continue;
              }
              
-             // Get display name for camera.
+-            // Get display name for camera.
 -            string path = get_port_path(port);
 -            if (null != path) {
 -                GUdev.Device device = client.query_by_device_file(path);
 -                string serial = device.get_property("ID_SERIAL_SHORT");
 -                if (null != serial) {
+-                    // Try to get the name and icon.
 -                    display_name = get_name_for_uuid(serial);
+-                    icon = get_icon_for_uuid(serial);
 -                }
 -                if (null == display_name) {
 -                    display_name = device.get_sysfs_attr("product");
@@ -72,7 +100,7 @@ We don't have gudev.. won't be able to detect cameras
              if (null == display_name) {
                  // Default to GPhoto detected name.
                  display_name = name;
-@@ -351,13 +309,6 @@ public class CameraTable {
+@@ -365,13 +302,6 @@ public class CameraTable {
          }
      }
      
