@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/12/13 19:50:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/05 11:40:07 kili Exp $
 
 COMMENT=		implementation of Oleg Kiselyov's left-fold enumerators
 
 DISTNAME=		enumerator-0.4.4
+REVISION=		0
 CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -18,6 +19,7 @@ MODULES=		lang/ghc
 MODGHC_BUILD =          cabal hackage haddock register
 
 # Set text-names-broken if hs-text goes >= 0.11
+MODGHC_SETUP_CONF_ARGS =	-f text-names-broken
 
 RUN_DEPENDS =		devel/hs-text \
 			devel/hs-transformers
