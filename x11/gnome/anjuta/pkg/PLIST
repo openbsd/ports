@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/11/12 15:05:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/04/05 18:41:51 ajacoutot Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -134,7 +134,6 @@ lib/anjuta/anjuta-starter.plugin
 lib/anjuta/anjuta-subversion.plugin
 lib/anjuta/anjuta-terminal.plugin
 lib/anjuta/anjuta-tools.plugin
-lib/anjuta/anjuta-vala.plugin
 lib/anjuta/dir-project.plugin
 lib/anjuta/file-manager.plugin
 lib/anjuta/gbf-am.plugin
@@ -169,8 +168,6 @@ lib/anjuta/libanjuta-glade.so
 lib/anjuta/libanjuta-gtodo.so
 @comment lib/anjuta/libanjuta-language-cpp-java.la
 lib/anjuta/libanjuta-language-cpp-java.so
-lib/anjuta/libanjuta-language-vala.la
-lib/anjuta/libanjuta-language-vala.so
 @comment lib/anjuta/libanjuta-loader.la
 lib/anjuta/libanjuta-loader.so
 @comment lib/anjuta/libanjuta-message-view.la

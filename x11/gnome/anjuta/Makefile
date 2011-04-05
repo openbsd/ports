@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/12/29 19:48:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2011/04/05 18:41:51 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		versatile IDE for C and C++
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		2.32.1.1
+
+REVISION=		0
 
 SHARED_LIBS +=  anjuta-foocanvas     0.0      # 0.0
 SHARED_LIBS +=  anjuta               0.0      # 0.0
@@ -43,7 +45,7 @@ WANTLIB += gstapp-0.10 gladeui-1 gtksourceview-2.0
 WANTLIB += svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1
 WANTLIB += svn_fs_fs-1 svn_ra-1 svn_ra_local-1 svn_ra_svn-1 svn_repos-1
 WANTLIB += svn_subr-1 svn_wc-1 svn_fs_util-1 svn_ra_neon-1 cdt
-WANTLIB += vala-0.10 gda-4.0 ltdl gnome-keyring gvc graph pathplan
+WANTLIB += gda-4.0 ltdl gnome-keyring gvc graph pathplan
 WANTLIB += ${MODPY_WANTLIB} GL Xxf86vm drm icudata icuuc xcb-shm
 
 BUILD_DEPENDS=		devel/autogen>=5.6.5 \
@@ -55,7 +57,6 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/glade3 \
 			devel/subversion \
 			devel/vte \
-			lang/vala \
 			math/graphviz \
 			x11/gnome/gdl \
 			x11/gnome/libgda \
@@ -71,6 +72,9 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-gtk-doc=no \
 			--enable-debug \
 			--enable-introspection=no
+
+# XXX re-enable when it supports vala>=0.12.0
+CONFIGURE_ARGS+=	--disable-vala
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
