@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/05 18:59:01 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/05 20:09:32 landry Exp $
 %%SHARED%%
 include/mpd/
 include/mpd/async.h
@@ -26,6 +26,7 @@ include/mpd/recv.h
 include/mpd/response.h
 include/mpd/search.h
 include/mpd/send.h
+include/mpd/settings.h
 include/mpd/song.h
 include/mpd/stats.h
 include/mpd/status.h
