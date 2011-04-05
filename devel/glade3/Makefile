@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/04/05 15:46:28 ajacoutot Exp $
 
 COMMENT=		user interface builder for the GTK2+ toolkit
 
-GNOME_VERSION =		3.6.7
+GNOME_VERSION =		3.8.0
 GNOME_PROJECT = 	glade3
-
-REVISION =		4
 
 CATEGORIES =		devel
 SHARED_LIBS +=  gladeui-1            1.0      # 10.0
@@ -31,8 +29,8 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-2 gnome-keyring
 WANTLIB += gnomecanvas-2 gnomevfs-2 gobject-2.0 gpg-error gthread-2.0
 WANTLIB += gtk-x11-2.0 ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png popt pthread pthread-stubs ssl util
-WANTLIB += vorbis vorbisfile xcb xcb-render xcb-render-util xml2
-WANTLIB += z dbus-glib-1 gnomeui-2
+WANTLIB += vorbis vorbisfile xcb xcb-render xml2
+WANTLIB += z dbus-glib-1 gnomeui-2 GL Xxf86vm drm xcb-shm
 
 MODULES=		devel/gettext \
 			x11/gnome
