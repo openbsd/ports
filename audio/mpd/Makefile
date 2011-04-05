@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.37 2011/03/14 09:17:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2011/04/05 19:55:38 landry Exp $
 
 COMMENT =		Music Player Daemon
-DISTNAME =		mpd-0.15.12
-REVISION =		6
+DISTNAME =		mpd-0.16.2
 CATEGORIES =		audio
 HOMEPAGE =		http://www.musicpd.org/
 MAINTAINER =		Tobias Ulmer <tobiasu@tmux.org>
@@ -13,8 +12,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m pthread ogg z stdc++ sndio curl glib-2.0 gthread-2.0
-WANTLIB +=		audiofile ao samplerate FLAC id3tag mad mikmod
+WANTLIB +=		c m pthread ogg z stdc++ sndio curl glib-2.0 gthread-2.0
+WANTLIB +=		audiofile ao samplerate sndfile FLAC id3tag mad mikmod
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=musicpd/}
 
@@ -51,11 +50,19 @@ CONFIGURE_ARGS +=	--enable-ao \
 			--disable-modplug \
 			--disable-sidplay \
 			--disable-ffmpeg \
-			--enable-mpc
+			--enable-mpc \
+			--disable-libwrap \
+			--enable-lsr \
+			--enable-audiofile \
+			--disable-gme \
+			--enable-mad \
+			--disable-mpg123 \
+			--enable-sndfile \
+			--disable-twolame-encoder
+
 # OggFLAC and tremor tests, initgroups(3)
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include -D_BSD_SOURCE"
-USE_GROFF =		Yes
 
 .if ${FLAVOR:L:Mtremor}
 CONFIGURE_ARGS +=	--with-tremor \
@@ -76,7 +83,9 @@ LIB_DEPENDS +=		audio/libvorbis \
 			net/libshout \
 			audio/faad>=2.6.1p0 \
 			audio/libmpcdec
-CONFIGURE_ARGS +=	--enable-aac
+CONFIGURE_ARGS +=	--enable-aac \
+			--enable-shout \
+			--enable-vorbis-encoder
 .endif
 
 USE_LIBTOOL =		Yes

@@ -1,12 +1,12 @@
-$OpenBSD: patch-Makefile_in,v 1.2 2010/08/23 14:46:55 jasper Exp $
---- Makefile.in.orig	Wed Jul 21 02:42:27 2010
-+++ Makefile.in	Sun Aug 22 18:45:03 2010
-@@ -1447,7 +1447,7 @@ SPARSE_CPPFLAGS = $(DEFAULT_INCLUDES) -I$(shell $(CC) 
+$OpenBSD: patch-Makefile_in,v 1.3 2011/04/05 19:55:38 landry Exp $
+--- Makefile.in	Mon Apr  4 22:31:44 2011
++++ Makefile.in	Mon Apr  4 22:31:30 2011
+@@ -2254,7 +2254,7 @@
  # Documentation
  #
  man_MANS = doc/mpd.1 doc/mpd.conf.5
 -doc_DATA = AUTHORS COPYING NEWS README UPGRADING doc/mpdconf.example
 +doc_DATA = AUTHORS COPYING NEWS README UPGRADING
- DOCBOOK_FILES = doc/protocol.xml doc/user.xml doc/developer.xml doc/sticker.xml
+ DOCBOOK_FILES = doc/protocol.xml doc/user.xml doc/developer.xml
  @ENABLE_DOCUMENTATION_TRUE@protocoldir = $(docdir)/protocol
  @ENABLE_DOCUMENTATION_TRUE@protocol_DATA = $(wildcard doc/protocol/*.html)

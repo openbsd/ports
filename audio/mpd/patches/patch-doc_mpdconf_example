@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_mpdconf_example,v 1.6 2010/01/12 18:58:26 wcmaier Exp $
---- doc/mpdconf.example.orig	Wed Nov 18 20:47:54 2009
-+++ doc/mpdconf.example	Thu Dec 17 16:13:38 2009
+$OpenBSD: patch-doc_mpdconf_example,v 1.7 2011/04/05 19:55:38 landry Exp $
+--- doc/mpdconf.example.orig	Sat Mar 19 06:11:52 2011
++++ doc/mpdconf.example	Mon Apr  4 22:43:42 2011
 @@ -10,14 +10,14 @@
  # be disabled and audio files will only be accepted over ipc socket (using
  # file:// protocol) or streaming files over an accepted protocol.
@@ -49,18 +49,18 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.6 2010/01/12 18:58:26 wcmaier Exp $
 -#state_file			"~/.mpd/state"
 +state_file                      "/var/spool/mpd/mpdstate"
  #
- ###############################################################################
- 
-@@ -59,7 +59,7 @@
+ # The location of the sticker database.  This is a database which
+ # manages dynamic information attached to songs.
+@@ -64,7 +64,7 @@
  # initialization. This setting is disabled by default and MPD is run as the
  # current user.
  #
 -#user				"nobody"
 +user                            "_mpd"
  #
- # This setting sets the address for the daemon to listen on. Careful attention
- # should be paid if this is assigned to anything other then the default, any.
-@@ -71,6 +71,8 @@
+ # This setting specifies the group that MPD will run as. If not specified
+ # primary group of user specified with "user" setting will be used (if set).
+@@ -83,6 +83,8 @@
  # And for Unix Socket
  #bind_to_address		"~/.mpd/socket"
  #
@@ -69,26 +69,18 @@ $OpenBSD: patch-doc_mpdconf_example,v 1.6 2010/01/12 18:58:26 wcmaier Exp $
  # This setting is the TCP port that is desired for the daemon to get assigned
  # to.
  #
-@@ -257,6 +259,13 @@ input {
+@@ -296,6 +298,14 @@
  #	name		"My Null Output"
+ #	mixer_type      "none"			# optional
  #}
- #
++#
 +## Default libao output:
 +#
 +audio_output {
 +	type			"ao"
 +	name			"Libao Audio Device"
++	mixer_type      	"software"
 +}
-+#
+ #
  # This setting will change all decoded audio to be converted to the specified
  # format before being passed to the audio outputs. By default, this setting is
- # disabled.
-@@ -290,7 +299,7 @@ input {
- # all controls, even if the mixer is not supported by the device and will not
- # affect any other sound producing applications.
- #
--#mixer_type			"software"
-+mixer_type			"software"
- #
- # This example will not allow MPD to touch the mixer at all and will disable
- # all volume controls.

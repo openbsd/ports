@@ -1,19 +1,10 @@
-$OpenBSD: patch-configure,v 1.12 2010/08/23 14:46:55 jasper Exp $
+$OpenBSD: patch-configure,v 1.13 2011/04/05 19:55:38 landry Exp $
 
 Don't reset CPPFLAGS...stupid configure.
 
---- configure.orig	Wed Jul 21 02:42:27 2010
-+++ configure	Sun Aug 22 18:45:03 2010
-@@ -8990,7 +8990,7 @@ if test x$enable_mpc = xyes; then
- 	oldcppflags=$CPPFLAGS
- 	CFLAGS="$CFLAGS $MPD_CFLAGS $MPCDEC_CFLAGS -I."
- 	LIBS="$LIBS $MPD_LIBS $MPCDEC_LIBS"
--	CPPFLAGS=$CFLAGS
-+	CPPFLAGS="$CPPFLAGS $CFLAGS"
- 	ac_fn_c_check_header_mongrel "$LINENO" "mpc/mpcdec.h" "ac_cv_header_mpc_mpcdec_h" "$ac_includes_default"
- if test "x$ac_cv_header_mpc_mpcdec_h" = x""yes; then :
-   old_mpcdec=no
-@@ -9214,7 +9214,7 @@ if test x$enable_aac = xyes; then
+--- configure	Mon Apr  4 22:34:06 2011
++++ configure	Mon Apr  4 22:35:15 2011
+@@ -8759,7 +8759,7 @@
  	oldcppflags=$CPPFLAGS
  	CFLAGS="$CFLAGS $MPD_CFLAGS $FAAD_CFLAGS -I."
  	LIBS="$LIBS $MPD_LIBS $FAAD_LIBS"
@@ -22,7 +13,7 @@ Don't reset CPPFLAGS...stupid configure.
  	ac_fn_c_check_header_mongrel "$LINENO" "faad.h" "ac_cv_header_faad_h" "$ac_includes_default"
  if test "x$ac_cv_header_faad_h" = x""yes; then :
  
-@@ -9468,7 +9468,7 @@ if test x$enable_aac = xyes; then
+@@ -9013,7 +9013,7 @@
  	oldcppflags=$CPPFLAGS
  	CFLAGS="$CFLAGS $MPD_CFLAGS $FAAD_CFLAGS -Werror"
  	LIBS="$LIBS $MPD_LIBS $FAAD_LIBS"
@@ -31,7 +22,7 @@ Don't reset CPPFLAGS...stupid configure.
  
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for broken libfaad headers" >&5
  $as_echo_n "checking for broken libfaad headers... " >&6; }
-@@ -9514,7 +9514,7 @@ if test x$enable_aac = xyes; then
+@@ -9059,7 +9059,7 @@
  	oldcppflags=$CPPFLAGS
  	CFLAGS="$CFLAGS $FAAD_CFLAGS"
  	LIBS="$LIBS $FAAD_LIBS $MP4FF_LIBS"
@@ -40,3 +31,12 @@ Don't reset CPPFLAGS...stupid configure.
  
  	ac_fn_c_check_header_mongrel "$LINENO" "mp4ff.h" "ac_cv_header_mp4ff_h" "$ac_includes_default"
  if test "x$ac_cv_header_mp4ff_h" = x""yes; then :
+@@ -10370,7 +10370,7 @@
+ 	oldcppflags=$CPPFLAGS
+ 	CFLAGS="$CFLAGS $MPD_CFLAGS $MPCDEC_CFLAGS -I."
+ 	LIBS="$LIBS $MPD_LIBS $MPCDEC_LIBS"
+-	CPPFLAGS=$CFLAGS
++	CPPFLAGS="$CPPFLAGS $CFLAGS"
+ 	ac_fn_c_check_header_mongrel "$LINENO" "mpc/mpcdec.h" "ac_cv_header_mpc_mpcdec_h" "$ac_includes_default"
+ if test "x$ac_cv_header_mpc_mpcdec_h" = x""yes; then :
+   old_mpcdec=no
