@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/12/12 16:24:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/04/05 11:38:33 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Text/
@@ -50,13 +50,16 @@ lib/ghc/${DISTNAME}/unregister.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/Data-Text-Array.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Encoding-Error.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Encoding.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Foreign.html
 share/doc/hs-${DISTNAME}/html/Data-Text-IO.html
+share/doc/hs-${DISTNAME}/html/Data-Text-Internal.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Lazy-Builder.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Lazy-Encoding.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Lazy-IO.html
+share/doc/hs-${DISTNAME}/html/Data-Text-Lazy-Internal.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Lazy-Read.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Lazy.html
 share/doc/hs-${DISTNAME}/html/Data-Text-Read.html
@@ -89,13 +92,16 @@ share/doc/hs-${DISTNAME}/html/haddock.css
 share/doc/hs-${DISTNAME}/html/haskell_icon.gif
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Text-Array.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Encoding-Error.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Encoding.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Foreign.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-IO.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Text-Internal.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Lazy-Builder.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Lazy-Encoding.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Lazy-IO.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Text-Lazy-Internal.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Lazy-Read.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Lazy.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Text-Read.html
