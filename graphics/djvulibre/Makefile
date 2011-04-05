@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2011/03/17 14:56:54 shadchin Exp $
+# $OpenBSD: Makefile,v 1.22 2011/04/05 14:12:35 shadchin Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.24
+REVISION=	0
 SHARED_LIBS=	djvulibre 24.0
 CATEGORIES=	graphics print
 
@@ -26,10 +27,6 @@ WANTLIB=	c m jpeg pthread stdc++ tiff z
 LIB_DEPENDS=	graphics/jpeg \
 		graphics/tiff
 
-BUILD_DEPENDS=	x11/gnome/librsvg
-RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/hicolor-icon-theme
-
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
@@ -48,7 +45,9 @@ WANTLIB += GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xft Xi Xinerama Xmu Xrandr Xrender Xt Xxf86vm drm expat
 WANTLIB += fontconfig freetype lcms mng png pthread-stubs xcb
 
-RUN_DEPENDS+=	devel/desktop-file-utils
+RUN_DEPENDS+=	devel/desktop-file-utils \
+		x11/hicolor-icon-theme
+
 CONFIGURE_ARGS+=--enable-djview
 CONFIGURE_ENV+= QT_CFLAGS="-I${MODQT_INCDIR}" \
 		QT_LIBS="-L${MODQT_LIBDIR} -lqt-mt" \
