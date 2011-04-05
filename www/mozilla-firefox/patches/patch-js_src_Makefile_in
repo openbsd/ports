@@ -1,0 +1,16 @@
+$OpenBSD: patch-js_src_Makefile_in,v 1.1 2011/04/05 09:00:42 landry Exp $
+Fix build error on sparc64, we dont want to force-enable assembler/jit
+--- js/src/Makefile.in.orig	Thu Mar  3 23:11:32 2011
++++ js/src/Makefile.in	Sun Mar 13 11:34:19 2011
+@@ -914,7 +914,11 @@ endif
+ # Needed to "configure" it correctly.  Unfortunately these
+ # flags wind up being applied to all code in js/src, not just
+ # the code in js/src/assembler.
++ifneq (,$(filter-out sparc64,$(TARGET_CPU)))
+ CXXFLAGS += -DUSE_SYSTEM_MALLOC=1 -DENABLE_ASSEMBLER=1 -DENABLE_JIT=1
++else
++CXXFLAGS += -DUSE_SYSTEM_MALLOC=1
++endif
+ 
+ INCLUDES +=	-I$(srcdir)/assembler -I$(srcdir)/yarr
+ 

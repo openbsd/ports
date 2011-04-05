@@ -1,8 +1,17 @@
-$OpenBSD: patch-js_src_jsval_h,v 1.1 2011/03/30 21:39:14 landry Exp $
+$OpenBSD: patch-js_src_jsval_h,v 1.2 2011/04/05 09:00:42 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=599764
---- js/src/jsval.h.orig	Tue Jan 11 04:26:08 2011
-+++ js/src/jsval.h	Sat Jan 15 01:03:03 2011
-@@ -815,7 +815,7 @@ extern "C++"
+https://bugzilla.mozilla.org/show_bug.cgi?id=618485
+--- js/src/jsval.h.orig	Thu Feb  3 21:11:50 2011
++++ js/src/jsval.h	Thu Feb 17 20:36:07 2011
+@@ -347,6 +347,7 @@ typedef union jsval_layout
+             int32          i32;
+             uint32         u32;
+             JSWhyMagic     why;
++            jsuword        word;
+         } payload;
+     } s;
+     double asDouble;
+@@ -815,7 +816,7 @@ extern "C++"
  #else /* defined(JS_USE_JSVAL_JSID_STRUCT_TYPES) */
  
  /* Use different primitive types so overloading works. */

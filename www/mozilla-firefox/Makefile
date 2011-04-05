@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2011/03/30 21:39:14 landry Exp $
+# $OpenBSD: Makefile,v 1.174 2011/04/05 09:00:42 landry Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -40,6 +40,10 @@ CONFIGURE_ARGS +=	--enable-official-branding --disable-install-strip
 CONFIGURE_ARGS +=	--with-system-libevent=/usr/
 CONFIGURE_ARGS +=	--with-system-zlib=/usr/ --with-system-bz2=${LOCALBASE}
 WANTLIB +=	event
+
+.if ${MACHINE_ARCH:Msparc64}
+CONFIGURE_ARGS +=	--disable-tracejit --disable-methodjit
+.endif
 
 # --with-system-png=${LOCALBASE}
 # no system png : apng support not bundled in
