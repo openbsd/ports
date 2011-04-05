@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/28 18:08:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.33 2011/04/05 08:07:15 sthen Exp $
 
-SHARED_ONLY=		Yes
+SHARED_ONLY=	Yes
 
-COMMENT=		library for reading and writing QuickTime files
+COMMENT=	library for reading and writing QuickTime files
 
-DISTNAME=		libquicktime-1.1.5
-REVISION=		4
-CATEGORIES=		multimedia
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libquicktime/}
+DISTNAME=	libquicktime-1.1.5
+REVISION=	4
+CATEGORIES=	multimedia
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 
-SHARED_LIBS=		quicktime	4.0
+SHARED_LIBS=	quicktime	4.0
 
-HOMEPAGE=		http://libquicktime.sourceforge.net/
+HOMEPAGE=	http://libquicktime.sourceforge.net/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,40 +29,39 @@ WANTLIB += xcb-render xcb-shm z gdk_pixbuf-2.0 avcodec avutil swscale
 WANTLIB += dv gtk-x11-2.0 gdk-x11-2.0 jpeg mp3lame png vorbis vorbisfile
 WANTLIB += vorbisenc x264
 
-MODULES=		devel/gettext
-BUILD_DEPENDS=		devel/doxygen>=1.7.2
-LIB_DEPENDS=		audio/faac \
-			audio/faad \
-			audio/lame \
-			audio/libvorbis \
-			graphics/ffmpeg>=20100512 \
-			graphics/jpeg \
-			graphics/png \
-			multimedia/libdv \
-			multimedia/schroedinger \
-			multimedia/x264 \
-			x11/gtk+2
+MODULES=	devel/gettext
+BUILD_DEPENDS=	devel/doxygen>=1.7.2
+LIB_DEPENDS=	audio/faac \
+		audio/faad \
+		audio/lame \
+		audio/libvorbis \
+		graphics/ffmpeg>=20100512 \
+		graphics/jpeg \
+		graphics/png \
+		multimedia/libdv \
+		multimedia/schroedinger \
+		multimedia/x264 \
+		x11/gtk+2
 
-VMEM_WARNING=		Yes
-USE_LIBTOOL=		Yes
-USE_GROFF =		Yes
-LIBTOOL_FLAGS+=		--tag=disable-static
+VMEM_WARNING=	Yes
 
-MAKE_ENV=		DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}
+MAKE_ENV=	DOXYGEN_ENCODE_PATH_STRIP=${WRKSRC}
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			ac_cv_search_pthread_create=-pthread \
-			ac_cv_lib_ossaudio__oss_ioctl=no \
-			ac_cv_header_soundcard_h=no
-
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-gpl \
-			--with-libdv \
-			--without-alsa
+USE_LIBTOOL=	Yes
+USE_GROFF=	Yes
+LIBTOOL_FLAGS=	--tag=disable-static
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-gpl \
+		--with-libdv \
+		--without-alsa
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		ac_cv_search_pthread_create=-pthread \
+		ac_cv_lib_ossaudio__oss_ioctl=no \
+		ac_cv_header_soundcard_h=no
 
 post-install:
-	rm -f ${PREFIX}/share/doc/libquicktime/apiref/dir_*.html
+	@rm -f ${PREFIX}/share/doc/libquicktime/apiref/dir_*.html
 
 .include <bsd.port.mk>
