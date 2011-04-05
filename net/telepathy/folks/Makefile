@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/04/05 18:54:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/05 19:46:27 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,10 +10,10 @@ GNOME_VERSION=		0.4.2
 SHARED_LIBS +=  folks-telepathy           1.0 # 22.0
 SHARED_LIBS +=  folks                     1.0 # 22.0
 
-HOMEPAGE=	http://telepathy.freedesktop.org/wiki/Folks
+HOMEPAGE=		${HOMEPAGE_TP:=Folks}
 
-MODULES=	devel/gettext \
-		x11/gnome
+MODULES=		devel/gettext \
+			x11/gnome
 
 WANTLIB += c dbus-1 dbus-glib-1 gee gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m ncurses pcre pthread readline

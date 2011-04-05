@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.18 2011/04/05 18:53:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/04/05 19:46:27 jasper Exp $
 
 COMMENT=	flexible communications framework, logger component
 
 DISTNAME=	telepathy-logger-0.2.8
+REVISION=	0
 
 SHARED_LIBS +=  telepathy-logger     2.0      # 3.0
+
+HOMEPAGE=	${HOMEPAGE_TP:=Logger}
 
 MASTER_SITES=	${MASTER_SITES_TELEPATHY:=telepathy-logger/}
 EXTRACT_SUFX=	.tar.bz2
