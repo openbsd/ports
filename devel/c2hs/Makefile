@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/04/03 12:57:28 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2011/04/05 14:34:45 kili Exp $
 # $FreeBSD: ports/devel/hs-c2hs/Makefile,v 1.20 2004/03/25 08:29:28 obraun Exp $
 
 COMMENT=		interface generator for Haskell to C bindings
@@ -26,6 +26,7 @@ LIB_DEPENDS=		devel/gmp
 
 BUILD_DEPENDS=		devel/alex \
 			devel/happy \
+			devel/hs-language-c \
 			textproc/libxml \
 			textproc/libxslt \
 			textproc/sgmlformat
