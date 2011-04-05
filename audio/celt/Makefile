@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/04/05 14:17:55 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/05 14:33:23 dcoppa Exp $
 
 COMMENT =	ultra-low delay audio codec
 
 DISTNAME =	celt-0.10.0
+
+EPOCH =		0
 
 CATEGORIES =   	audio
 
