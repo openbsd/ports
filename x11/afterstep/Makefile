@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2011/04/05 14:42:39 ajacoutot Exp $
 
 COMMENT=	window manager, continuation of the Bowman NeXTSTEP clone
 
 DISTNAME=	AfterStep-2.2.9
 PKGNAME=	${DISTNAME:L}
-REVISION=	0
+REVISION=	1
 CATEGORIES=     x11
 MASTER_SITES=   http://distfiles.nl/ \
 		ftp://ftp.afterstep.org/stable/
@@ -23,6 +23,7 @@ WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB += png pthread pthread-stubs tiff xcb z dbus-1 rsvg-2
+WANTLIB += GL Xxf86vm drm gthread-2.0 xcb-render xcb-shm
 
 MODULES=	devel/gettext
 
@@ -31,7 +32,8 @@ RUN_DEPENDS=	shells/bash \
 		x11/asclock,classic,english \
 		x11/aterm
 LIB_DEPENDS=	x11/dbus \
-		x11/gnome/librsvg
+		x11/gnome/librsvg \
+		x11/gtk+2
 
 FAKE=		lib
 USE_GROFF =	Yes

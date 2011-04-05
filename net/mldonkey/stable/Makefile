@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2011/04/01 08:38:37 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.40 2011/04/05 14:42:39 ajacoutot Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.0.7
 CATEGORIES =	net
+
+REVISION =	0
 
 HOMEPAGE =	http://mldonkey.sourceforge.net/Main_Page
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mldonkey/}
@@ -44,7 +46,8 @@ BUILD_DEPENDS =	x11/lablgtk2
 LIB_DEPENDS =	x11/gnome/librsvg \
 		archivers/bzip2 \
 		graphics/gd \
-		devel/libmagic
+		devel/libmagic \
+		x11/gtk+2
 
 FAKE_FLAGS =	MODOCAML_NATIVE=${MODOCAML_NATIVE}
 NO_REGRESS =	Yes
