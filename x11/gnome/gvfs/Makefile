@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2011/03/21 16:32:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2011/04/05 14:43:25 ajacoutot Exp $
 
 COMMENT-main=	GNOME virtual file system
 COMMENT-smb=	samba module for GVFS
 
 GNOME_PROJECT=	gvfs
-GNOME_VERSION=	1.6.7
+GNOME_VERSION=	1.8.0
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
@@ -19,17 +19,18 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext \
-		x11/gnome
+		x11/gnome \
+		devel/dconf
 
-WANTLIB += ORBit-2 c dbus-1 gconf-2 gio-2.0 glib-2.0>=2800
+WANTLIB += c dbus-1 gio-2.0 glib-2.0>=2800
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 pcre pthread util
 WANTLIB += expat gpg-error z gcrypt gnome-keyring>=6
 
 LIB_DEPENDS=	x11/gnome/libgnome-keyring
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += bz2 gnutls lzma m proxy soup-2.4 sqlite3
-WANTLIB-main += tasn1 xml2 archive soup-gnome-2.4>=1
+WANTLIB-main += bz2 lzma m soup-2.4 sqlite3
+WANTLIB-main += xml2 archive soup-gnome-2.4>=1
 WANTLIB-main += avahi-client avahi-common avahi-glib
 
 DESKTOP_FILES=	Yes
@@ -60,7 +61,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-udev \
 		--enable-archive \
 		--enable-avahi \
-		--enable-gconf \
 		--enable-http \
 		--enable-keyring \
 		--with-bash-completion-dir="${PREFIX}/share/gvfs"

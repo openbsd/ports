@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2011/03/07 19:25:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2011/04/05 14:43:25 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 %%SHARED%%
 @bin bin/gvfs-cat
@@ -22,8 +22,6 @@ include/gvfs-client/
 include/gvfs-client/gvfs/
 include/gvfs-client/gvfs/gvfsurimapper.h
 include/gvfs-client/gvfs/gvfsuriutils.h
-lib/gio/
-lib/gio/modules/
 @comment lib/gio/modules/libgioremote-volume-monitor.a
 @comment lib/gio/modules/libgioremote-volume-monitor.la
 @comment lib/gio/modules/libgvfsdbus.a
@@ -45,11 +43,16 @@ lib/libgvfscommon.la
 @bin libexec/gvfsd-network
 @bin libexec/gvfsd-sftp
 @bin libexec/gvfsd-trash
+share/GConf/
+share/GConf/gsettings/
+share/GConf/gsettings/gvfs-dns-sd.convert
+share/GConf/gsettings/gvfs-smb.convert
 share/applications/mount-archive.desktop
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/gvfs-daemon.service
 share/dbus-1/services/gvfs-metadata.service
+share/glib-2.0/schemas/org.gnome.system.dns_sd.gschema.xml
+share/glib-2.0/schemas/org.gnome.system.gvfs.enums.xml
+share/glib-2.0/schemas/org.gnome.system.smb.gschema.xml
 share/gvfs/
 @sample ${SYSCONFDIR}/bash_completion.d/
 share/gvfs/gvfs-bash-completion.sh
@@ -68,41 +71,21 @@ share/gvfs/mounts/network.mount
 share/gvfs/mounts/sftp.mount
 share/gvfs/mounts/trash.mount
 share/gvfs/remote-volume-monitors/
-share/locale/af/
-share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/gvfs.mo
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gvfs.mo
-share/locale/as/
-share/locale/as/LC_MESSAGES/
 share/locale/as/LC_MESSAGES/gvfs.mo
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/gvfs.mo
-share/locale/be@latin/
-share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/gvfs.mo
 share/locale/bg/LC_MESSAGES/gvfs.mo
-share/locale/bn/
-share/locale/bn/LC_MESSAGES/
 share/locale/bn/LC_MESSAGES/gvfs.mo
-share/locale/bn_IN/
-share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/gvfs.mo
 share/locale/ca/LC_MESSAGES/gvfs.mo
-share/locale/ca@valencia/
-share/locale/ca@valencia/LC_MESSAGES/
 share/locale/ca@valencia/LC_MESSAGES/gvfs.mo
 share/locale/cs/LC_MESSAGES/gvfs.mo
 share/locale/da/LC_MESSAGES/gvfs.mo
 share/locale/de/LC_MESSAGES/gvfs.mo
 share/locale/el/LC_MESSAGES/gvfs.mo
-share/locale/en@shaw/
-share/locale/en@shaw/LC_MESSAGES/
 share/locale/en@shaw/LC_MESSAGES/gvfs.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gvfs.mo
 share/locale/es/LC_MESSAGES/gvfs.mo
 share/locale/et/LC_MESSAGES/gvfs.mo
@@ -111,54 +94,28 @@ share/locale/fi/LC_MESSAGES/gvfs.mo
 share/locale/fr/LC_MESSAGES/gvfs.mo
 share/locale/ga/LC_MESSAGES/gvfs.mo
 share/locale/gl/LC_MESSAGES/gvfs.mo
-share/locale/gu/
-share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/gvfs.mo
 share/locale/he/LC_MESSAGES/gvfs.mo
-share/locale/hi/
-share/locale/hi/LC_MESSAGES/
 share/locale/hi/LC_MESSAGES/gvfs.mo
 share/locale/hu/LC_MESSAGES/gvfs.mo
 share/locale/id/LC_MESSAGES/gvfs.mo
 share/locale/it/LC_MESSAGES/gvfs.mo
 share/locale/ja/LC_MESSAGES/gvfs.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/gvfs.mo
-share/locale/kn/
-share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/gvfs.mo
 share/locale/ko/LC_MESSAGES/gvfs.mo
-share/locale/ku/
-share/locale/ku/LC_MESSAGES/
 share/locale/ku/LC_MESSAGES/gvfs.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gvfs.mo
 share/locale/lv/LC_MESSAGES/gvfs.mo
-share/locale/mai/
-share/locale/mai/LC_MESSAGES/
 share/locale/mai/LC_MESSAGES/gvfs.mo
-share/locale/mk/
-share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/gvfs.mo
-share/locale/ml/
-share/locale/ml/LC_MESSAGES/
 share/locale/ml/LC_MESSAGES/gvfs.mo
-share/locale/mr/
-share/locale/mr/LC_MESSAGES/
 share/locale/mr/LC_MESSAGES/gvfs.mo
 share/locale/nb/LC_MESSAGES/gvfs.mo
-share/locale/nds/
-share/locale/nds/LC_MESSAGES/
 share/locale/nds/LC_MESSAGES/gvfs.mo
 share/locale/nl/LC_MESSAGES/gvfs.mo
 share/locale/nn/LC_MESSAGES/gvfs.mo
-share/locale/or/
-share/locale/or/LC_MESSAGES/
 share/locale/or/LC_MESSAGES/gvfs.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/gvfs.mo
 share/locale/pl/LC_MESSAGES/gvfs.mo
 share/locale/pt/LC_MESSAGES/gvfs.mo
@@ -167,31 +124,21 @@ share/locale/ro/LC_MESSAGES/gvfs.mo
 share/locale/ru/LC_MESSAGES/gvfs.mo
 share/locale/sk/LC_MESSAGES/gvfs.mo
 share/locale/sl/LC_MESSAGES/gvfs.mo
-share/locale/sq/
-share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/gvfs.mo
 share/locale/sr/LC_MESSAGES/gvfs.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/gvfs.mo
 share/locale/sv/LC_MESSAGES/gvfs.mo
-share/locale/ta/
-share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/gvfs.mo
-share/locale/te/
-share/locale/te/LC_MESSAGES/
 share/locale/te/LC_MESSAGES/gvfs.mo
-share/locale/th/
-share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/gvfs.mo
 share/locale/tr/LC_MESSAGES/gvfs.mo
-share/locale/ug/
-share/locale/ug/LC_MESSAGES/
 share/locale/ug/LC_MESSAGES/gvfs.mo
 share/locale/uk/LC_MESSAGES/gvfs.mo
 share/locale/vi/LC_MESSAGES/gvfs.mo
 share/locale/zh_CN/LC_MESSAGES/gvfs.mo
 share/locale/zh_HK/LC_MESSAGES/gvfs.mo
 share/locale/zh_TW/LC_MESSAGES/gvfs.mo
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
