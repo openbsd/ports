@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/04/05 15:46:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2011/04/05 15:56:52 ajacoutot Exp $
 
 COMMENT=		user interface builder for the GTK2+ toolkit
 
@@ -44,7 +44,7 @@ MODGNOME_HELP_FILES =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-scrollkeeper \
+			--disable-gtk-doc \
 			--disable-python
 CONFIGURE_ENV=          CPPFLAGS="-pthread -I${LOCALBASE}/include"      \
                         LDFLAGS="-pthread -L${LOCALBASE}/lib"
