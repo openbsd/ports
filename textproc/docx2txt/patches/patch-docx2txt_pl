@@ -1,0 +1,12 @@
+$OpenBSD: patch-docx2txt_pl,v 1.1.1.1 2011/04/05 15:09:50 schwarze Exp $
+--- docx2txt.pl.orig	Sun Oct  4 17:31:04 2009
++++ docx2txt.pl	Tue Apr  5 16:07:08 2011
+@@ -72,7 +72,7 @@
+ # first in current directory and then in the same location as this script.
+ #
+ 
+-our $unzip = '/usr/bin/unzip';	# Windows path like 'C:/path/to/unzip.exe'
++our $unzip = 'unzip';		# rely on the PATH
+ our $newLine = "\n";		# Alternative is "\r\n".
+ our $listIndent = "  ";		# Indent nested lists by "\t", " " etc.
+ our $lineWidth = 80;		# Line width, used for short line justification.

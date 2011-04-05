@@ -1,0 +1,5 @@
+Docx2txt is a Perl based command-line tool to convert Microsoft docx
+documents to (ASCII) text files, preserving some formatting and document
+information (which MS text conversion drops) along with appropriate
+character conversions.  It can also recover text from damaged docx
+documents in many cases.
