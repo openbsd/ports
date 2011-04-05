@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/25 08:30:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/04/05 18:45:05 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,14 +6,13 @@ COMMENT-main=	configuration backend system
 COMMENT-editor=	editor for the dconf configuration storage system
 
 GNOME_PROJECT=	dconf
-GNOME_VERSION=	0.5.1
+GNOME_VERSION=	0.7.3
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-editor=	dconf-editor-${GNOME_VERSION}
 
-REVISION-main=	5
-
-SHARED_LIBS+=	dconf 0.0 # 0.0.0
+SHARED_LIBS+=	dconf        0.0 # 0.0.0
+SHARED_LIBS+=	dconf-dbus-1 0.0 # 0.0.0
 
 CATEGORIES=	devel
 
@@ -31,13 +30,14 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += pthread
 
+WANTLIB-main += ${WANTLIB} dbus-1
+
 WANTLIB-editor += ${WANTLIB} ${MODGETTEXT_WANTLIB}
 WANTLIB-editor += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB-editor += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm
-WANTLIB-editor += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB-editor += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB-editor += pixman-1 png pthread-stubs xcb xcb-render xcb-shm xml2
-WANTLIB-editor += z
+WANTLIB-editor += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject
+WANTLIB-editor += drm expat fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB-editor += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
+WANTLIB-editor += png pthread-stubs xcb xcb-render xcb-shm xml2 z
 
 MULTI_PACKAGES=	-main
 
@@ -47,20 +47,21 @@ FLAVOR?=
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	lang/vala
+BUILD_DEPENDS=	lang/vala>=0.12.0
 
 RUN_DEPENDS-main=	# empty
-LIB_DEPENDS-main=	devel/glib2
+LIB_DEPENDS-main=	devel/glib2 \
+			x11/dbus
 
 RUN_DEPENDS-editor=	${MODGETTEXT_RUN_DEPENDS} \
-			${BASE_PKGPATH},-main
-LIB_DEPENDS-editor=	x11/gtk+2
+			${BASE_PKGPATH},-main \
+			devel/desktop-file-utils
+LIB_DEPENDS-editor=	x11/gtk+3
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-gtk-doc \
-		--disable-introspection
+		LDFLAGS="-L${LOCALBASE}/lib -pthread"
+CONFIGURE_ARGS=	--disable-gtk-doc
 
 .if ${FLAVOR:L:Mno_editor}
 CONFIGURE_ARGS +=	--disable-editor
@@ -71,6 +72,7 @@ CONFIGURE_ARGS +=	--enable-editor
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/{bin,client,editor}/Makefile.in \
-		${WRKSRC}/editor/dconf-model.{c,vala}
+		${WRKSRC}/editor/dconf-model.{c,vala} \
+		${WRKSRC}/dbus-1/Makefile.in
 
 .include <bsd.port.mk>

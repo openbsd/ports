@@ -1,7 +1,7 @@
-$OpenBSD: patch-editor_dconf-model_vala,v 1.1 2011/03/25 07:37:15 ajacoutot Exp $
---- editor/dconf-model.vala.orig	Fri Mar 25 08:28:57 2011
-+++ editor/dconf-model.vala	Fri Mar 25 08:29:09 2011
-@@ -469,7 +469,7 @@ public class SettingsModel: GLib.Object, Gtk.TreeModel
+$OpenBSD: patch-editor_dconf-model_vala,v 1.2 2011/04/05 18:45:05 ajacoutot Exp $
+--- editor/dconf-model.vala.orig	Tue Mar 22 16:35:32 2011
++++ editor/dconf-model.vala	Tue Apr  5 14:38:47 2011
+@@ -564,7 +564,7 @@ public class SettingsModel: GLib.Object, Gtk.TreeModel
          schemas = new SchemaList();
          try
          {

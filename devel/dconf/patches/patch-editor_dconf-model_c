@@ -1,12 +1,12 @@
-$OpenBSD: patch-editor_dconf-model_c,v 1.1 2011/03/25 07:37:15 ajacoutot Exp $
---- editor/dconf-model.c.orig	Fri Mar 25 08:22:26 2011
-+++ editor/dconf-model.c	Fri Mar 25 08:23:01 2011
-@@ -1664,7 +1664,7 @@ SettingsModel* settings_model_construct (GType object_
- 	self->priv->root = (_tmp1_ = directory_new (self, NULL, 0, "/", "/"), _g_object_unref0 (self->priv->root), _tmp1_);
- 	self->schemas = (_tmp2_ = schema_list_new (), _schema_list_unref0 (self->schemas), _tmp2_);
- 	{
--		schema_list_load_directory (self->schemas, "/usr/share/glib-2.0/schemas", &_inner_error_);
-+		schema_list_load_directory (self->schemas, "${LOCALBASE}/share/glib-2.0/schemas", &_inner_error_);
- 		if (_inner_error_ != NULL) {
- 			goto __catch1_g_error;
- 		}
+$OpenBSD: patch-editor_dconf-model_c,v 1.2 2011/04/05 18:45:05 ajacoutot Exp $
+--- editor/dconf-model.c.orig	Tue Mar 22 16:59:25 2011
++++ editor/dconf-model.c	Tue Apr  5 14:41:15 2011
+@@ -2303,7 +2303,7 @@ SettingsModel* settings_model_construct (GType object_
+ 	_tmp2_ = schema_list_new ();
+ 	_schema_list_unref0 (self->schemas);
+ 	self->schemas = _tmp2_;
+-	schema_list_load_directory (self->schemas, "/usr/share/glib-2.0/schemas", &_inner_error_);
++	schema_list_load_directory (self->schemas, "${LOCALBASE}/share/glib-2.0/schemas", &_inner_error_);
+ 	if (_inner_error_ != NULL) {
+ 		goto __catch3_g_error;
+ 	}
