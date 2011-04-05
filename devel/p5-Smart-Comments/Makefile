@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/04/05 20:38:43 jasper Exp $
 
 COMMENT=		debugging aid based on comments
 
 MODULES=		cpan
-DISTNAME=		Smart-Comments-v1.0.2
-PKGNAME=		p5-Smart-Comments-1.0.2
-REVISION=		2
+DISTNAME=		Smart-Comments-1.0.4
 CATEGORIES=		devel
-USE_GROFF =		Yes
 
-CPAN_AUTHOR=	DCONWAY
+CPAN_AUTHOR=		CHORNY
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
