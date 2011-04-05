@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.504 2011/04/03 17:17:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.505 2011/04/05 15:28:24 naddy Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -103,7 +103,6 @@
      SUBDIR += mod_dav
      SUBDIR += mod_encoding
      SUBDIR += mod_fastcgi
-     SUBDIR += mod_frontpage
      SUBDIR += mod_geoip
      SUBDIR += mod_gzip
      SUBDIR += mod_jk

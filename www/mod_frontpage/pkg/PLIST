@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/03/02 08:44:08 giovanni Exp $
-lib/${MODAPACHE_MODULE}
-@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
-@mode 4555
-@bin sbin/fpexec
-@mode
-@bin sbin/fpstatic
-sbin/${MODAPACHE_ENABLE}
-@unexec-delete rm -f ${MODAPACHE_FINAL}

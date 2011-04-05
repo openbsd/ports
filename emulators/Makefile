@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2011/04/01 21:58:41 jeremy Exp $
+# $OpenBSD: Makefile,v 1.57 2011/04/05 15:28:24 naddy Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -9,7 +9,6 @@
     SUBDIR += dynagen
     SUBDIR += dynamips
     SUBDIR += fedora
-    SUBDIR += freebsd_lib
     SUBDIR += frodo
     SUBDIR += fuse
     SUBDIR += fuse-utils

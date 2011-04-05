@@ -1,7 +1,0 @@
-Mirfak is an open-source mod_frontpage reimplementation that is more
-secure, and can be used with a binary installation of Apache (possibly
-including mod_ssl, php, etc).
-
-This module replaces the Apache-FP patches and module supplied with the
-Microsoft FrontPage Server Extensions available from Microsoft and
-Ready-to-Run Software.
