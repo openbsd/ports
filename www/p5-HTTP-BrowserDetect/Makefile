@@ -1,17 +1,20 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:46:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/04/05 14:30:31 jasper Exp $
 
 COMMENT=	determine web browser from an HTTP user agent string
 
 MODULES=	cpan
-DISTNAME=	HTTP-BrowserDetect-0.98
-REVISION=	1
+DISTNAME=	HTTP-BrowserDetect-1.22
 CATEGORIES=	www
 USE_GROFF =	Yes
 
-# GPL/Artistic
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+RUN_DEPENDS=	devel/p5-Data-Dump \
+		devel/p5-YAML
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
