@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/19 17:43:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/05 11:43:17 kili Exp $
 
 COMMENT=		efficient construction of bytestrings
 
 DISTNAME=		blaze-builder-0.2.1.3
+REVISION=		0
 CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
