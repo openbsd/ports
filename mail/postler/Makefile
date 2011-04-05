@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/22 08:25:18 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/05 18:42:08 ajacoutot Exp $
 
 COMMENT =	lightweight mail user agent
 
@@ -29,7 +29,7 @@ LIB_DEPENDS =	www/webkit \
 CONFIGURE_ARGS+=	--disable-libindicate
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
-		lang/vala
+		lang/vala>=0.12.0
 
 RUN_DEPENDS =	mail/msmtp
 
