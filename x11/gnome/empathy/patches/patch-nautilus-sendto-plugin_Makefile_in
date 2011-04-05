@@ -1,0 +1,17 @@
+$OpenBSD: patch-nautilus-sendto-plugin_Makefile_in,v 1.1 2011/04/05 18:58:09 jasper Exp $
+
+Add ugly hack to allow multiple definitions of various functions.
+This is needed because telepathy-yell is built out of the same tarball
+as empathy for now.
+
+--- nautilus-sendto-plugin/Makefile.in.orig	Tue Apr  5 19:40:05 2011
++++ nautilus-sendto-plugin/Makefile.in	Tue Apr  5 19:41:02 2011
+@@ -134,7 +134,7 @@ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+-CFLAGS = @CFLAGS@
++CFLAGS = @CFLAGS@ -Xlinker -zmuldefs
+ CONNMAN_CFLAGS = @CONNMAN_CFLAGS@
+ CONNMAN_LIBS = @CONNMAN_LIBS@
+ CONTROL_CENTER_EMBEDDING_CFLAGS = @CONTROL_CENTER_EMBEDDING_CFLAGS@

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_empathy-status-icon_c,v 1.1 2011/04/05 18:58:09 jasper Exp $
+
+Revert depencency on libnotify >= 0.6.0 which requires gtk+3.
+
+--- src/empathy-status-icon.c.orig	Tue Apr  5 19:15:24 2011
++++ src/empathy-status-icon.c	Tue Apr  5 19:15:58 2011
+@@ -241,7 +241,7 @@ status_icon_update_notification (EmpathyStatusIcon *ic
+ 			   In this way the previous message will not be lost: the new
+ 			   message will appear below it, in the same notification */
+ 			notification = notify_notification_new
+-				(priv->event->header, message_esc, NULL);
++				(priv->event->header, message_esc, NULL, priv->icon);
+ 
+ 			if (priv->notification == NULL) {
+ 				priv->notification = notification;

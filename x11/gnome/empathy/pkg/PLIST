@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2010/11/10 19:02:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2011/04/05 18:58:09 jasper Exp $
 @bin bin/empathy
 @bin bin/empathy-accounts
 @bin bin/empathy-debugger
@@ -16,6 +16,7 @@ share/applications/empathy-accounts.desktop
 share/applications/empathy.desktop
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Empathy.AudioVideo.service
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Empathy.Auth.service
+share/dbus-1/services/org.freedesktop.Telepathy.Client.Empathy.Call.service
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Empathy.service
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/empathy/
@@ -39,6 +40,7 @@ share/empathy/empathy-chat-window.ui
 share/empathy/empathy-chat.ui
 share/empathy/empathy-chatroom-manager.dtd
 share/empathy/empathy-chatrooms-window.ui
+share/empathy/empathy-contact-blocking-dialog.ui
 share/empathy/empathy-contact-dialogs.ui
 share/empathy/empathy-contact-groups.dtd
 share/empathy/empathy-contact-selector-dialog.ui
@@ -1018,6 +1020,7 @@ share/icons/hicolor/24x24/status/user-away.png
 share/icons/hicolor/24x24/status/user-busy.png
 share/icons/hicolor/24x24/status/user-idle.png
 share/icons/hicolor/24x24/status/user-offline.png
+share/icons/hicolor/256x256/apps/empathy.png
 share/icons/hicolor/32x32/apps/empathy.png
 share/icons/hicolor/32x32/apps/im-aim.png
 share/icons/hicolor/32x32/apps/im-ekiga.png
@@ -1182,6 +1185,7 @@ share/locale/zh_HK/LC_MESSAGES/empathy.mo
 share/locale/zh_TW/LC_MESSAGES/empathy.mo
 share/telepathy/clients/Empathy.AudioVideo.client
 share/telepathy/clients/Empathy.Auth.client
+share/telepathy/clients/Empathy.Call.client
 share/telepathy/clients/Empathy.client
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

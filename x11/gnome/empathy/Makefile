@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2011/04/05 16:37:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2011/04/05 18:58:09 jasper Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
-GNOME_VERSION=		2.32.1
-
-REVISION=		2
+GNOME_VERSION=		2.34.0
 
 CATEGORIES=		net
 
@@ -52,9 +50,9 @@ LIB_DEPENDS=		audio/libcanberra \
 			geo/libchamplain/core \
 			graphics/clutter/clutter-gtk \
 			net/telepathy/telepathy-farsight \
-			net/telepathy/telepathy-logger \
+			net/telepathy/telepathy-logger>=0.2.8 \
 			textproc/enchant \
-			net/telepathy/folks \
+			net/telepathy/folks>=0.4.0 \
 			x11/gnome/keyring
 RUN_DEPENDS=		devel/iso-codes \
 			net/telepathy/telepathy-mission-control \
@@ -68,6 +66,8 @@ DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	empathy
 
+AUTOCONF_VERSION=	2.65
+CONFIGURE_STYLE=	autoconf gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-spell=Yes \
 			--enable-location=Yes \
@@ -76,7 +76,10 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-nautilus-sendto \
 			--enable-control-center-embedding=no \
 			--with-connectivity=no \
-			--with-eds
+			--with-eds \
+			--with-ca-file=/etc/ssl/cert.pem \
+			--disable-Werror \
+			--enable-call=no
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =		Yes
