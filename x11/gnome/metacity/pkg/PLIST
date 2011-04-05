@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2010/09/29 20:25:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2011/04/05 06:24:55 ajacoutot Exp $
 @bin bin/metacity
 @bin bin/metacity-message
 @bin bin/metacity-theme-viewer
@@ -27,11 +27,16 @@ share/doc/metacity/metacity-theme.dtd
 share/doc/metacity/theme-format.txt
 share/gnome-control-center/
 share/gnome-control-center/keybindings/
-share/gnome-control-center/keybindings/50-metacity-desktop-key.xml
-share/gnome-control-center/keybindings/50-metacity-key.xml
+share/gnome-control-center/keybindings/50-metacity-launchers.xml
+share/gnome-control-center/keybindings/50-metacity-navigation.xml
+share/gnome-control-center/keybindings/50-metacity-screenshot.xml
+share/gnome-control-center/keybindings/50-metacity-system.xml
+share/gnome-control-center/keybindings/50-metacity-windows.xml
 share/gnome/help/creating-metacity-themes/
 share/gnome/help/creating-metacity-themes/C/
 share/gnome/help/creating-metacity-themes/C/creating-metacity-themes.xml
+share/gnome/help/creating-metacity-themes/de/
+share/gnome/help/creating-metacity-themes/de/creating-metacity-themes.xml
 share/gnome/wm-properties/
 share/gnome/wm-properties/metacity-wm.desktop
 share/locale/am/LC_MESSAGES/metacity.mo
@@ -123,6 +128,7 @@ share/locale/te/LC_MESSAGES/metacity.mo
 share/locale/th/LC_MESSAGES/metacity.mo
 share/locale/tk/LC_MESSAGES/metacity.mo
 share/locale/tr/LC_MESSAGES/metacity.mo
+share/locale/ug/LC_MESSAGES/metacity.mo
 share/locale/uk/LC_MESSAGES/metacity.mo
 share/locale/vi/LC_MESSAGES/metacity.mo
 share/locale/wa/LC_MESSAGES/metacity.mo
