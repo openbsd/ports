@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.909 2011/04/05 08:44:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.910 2011/04/05 17:37:10 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -868,6 +868,7 @@
      SUBDIR += pear-Config
      SUBDIR += pear-Console-Table
      SUBDIR += pear-Date
+     SUBDIR += pear-Date-Holidays
      SUBDIR += pear-Log
      SUBDIR += pear-PHPUnit2
      SUBDIR += pear-System-Command
