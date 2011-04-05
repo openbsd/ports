@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.29 2010/12/03 11:46:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2011/04/05 14:27:46 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	library to provide LWP https support via OpenSSL
 
 MODULES=	cpan
-DISTNAME=	Crypt-SSLeay-0.57
-REVISION=	2
+DISTNAME=	Crypt-SSLeay-0.58
 CATEGORIES=	security
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,5 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		crypto ssl
 
 CONFIGURE_ARGS+=--default --lib=/usr
+
+MODCPAN_EXAMPLES=	Yes
+MODCPAN_EXAMPLES_DIST=	eg
 
 .include <bsd.port.mk>
