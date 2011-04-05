@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/12/21 18:50:07 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/05 15:33:16 naddy Exp $
 %%SHARED%%
 @bin bin/french-conjugator
 @bin bin/french-deconjugator
@@ -37,7 +37,9 @@ share/texmf/tex/latex/verbiste/verbiste.cfg
 share/texmf/tex/latex/verbiste/verbiste.cls
 share/verbiste-0.1/
 @comment share/verbiste-0.1/COPYING
+share/verbiste-0.1/conjugation-el.xml
 share/verbiste-0.1/conjugation-fr.xml
 share/verbiste-0.1/conjugation-it.xml
+share/verbiste-0.1/verbs-el.xml
 share/verbiste-0.1/verbs-fr.xml
 share/verbiste-0.1/verbs-it.xml
