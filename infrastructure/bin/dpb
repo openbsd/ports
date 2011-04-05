@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.11 2010/12/29 12:28:23 espie Exp $
+# $OpenBSD: dpb,v 1.12 2011/04/05 08:23:00 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -73,7 +73,14 @@ sub parse_build_line
 
 sub parse_build_file
 {
-	my ($fname, @consumers) = @_;
+	my ($fname, $arch, @consumers) = @_;
+	if (!-f $fname) {
+		if (-f "$fname/$arch/build.log") {
+			$fname = "$fname/$arch/build.log";
+		} elsif (-f "$fname/build.log") {
+			$fname = "$fname/build.log";
+		}
+	}
 	open my $fh, '<', $fname or die "Couldn't open build file $fname\n";
 	my $_;
 	while (<$fh>) {
@@ -108,7 +115,7 @@ $ui->{opt} = {
 	    parse_size_file(shift, $heuristics);
 	}
     };
-$ui->handle_options('aceqrRsuUh:xA:f:j:m:P:b:d:L:S:t:T:', 
+$ui->handle_options('aceqrRsuUh:xA:f:j:m:P:b:d:L:S:t:T:',
     "[-acerRsuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir]",
     "[-b log] [-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
 
@@ -172,7 +179,7 @@ if ($opt_j || !$opt_h) {
 
 if (@build_files > 0) {
 	for my $file (@build_files) {
-	    parse_build_file($file, $heuristics, "DPB::Job::Port");
+	    parse_build_file($file, $arch, $heuristics, "DPB::Job::Port");
 	}
 	$heuristics->finished_parsing;
 }
@@ -266,7 +273,7 @@ DPB::Core->start_clock($opt_T);
 while (1) {
 	while (1) {
 		handle_non_waiting_jobs(0);
-		if (!DPB::Core->running && 
+		if (!DPB::Core->running &&
 		    (!$keep_going || !$engine->can_build)) {
 			$engine->check_buildable;
 			if (!$engine->can_build) {
