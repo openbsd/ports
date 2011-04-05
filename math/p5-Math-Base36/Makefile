@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:45:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/05 21:17:55 jasper Exp $
 
 COMMENT =		encoding and decoding of base36 strings
 
 MODULES =		cpan
-DISTNAME =		Math-Base36-0.07
-REVISION =		0
+DISTNAME =		Math-Base36-0.09
 CATEGORIES =		math
-USE_GROFF =		Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
