@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/04/05 08:13:37 espie Exp $
 
-V = 0.7.5
+V = 0.8.1
 COMMENT-client = race for the galaxy card game
 COMMENT-server = race for the galaxy card game, game server
 PKGNAME-client = rftg-$V
@@ -12,8 +12,6 @@ EXTRACT_SUFX = .tar.bz2
 MASTER_SITES = http://warpcore.org/rftg/
 MULTI_PACKAGES = -client #-server
 SUBPACKAGE ?= -client
-
-REVISION-client=0
 
 # Licence: GPL
 # official authorization from the game publisher (Rio Grande)
