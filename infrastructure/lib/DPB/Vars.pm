@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.12 2011/03/22 19:48:01 espie Exp $
+# $OpenBSD: Vars.pm,v 1.13 2011/04/05 08:24:34 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -142,6 +142,8 @@ sub grab_list
 			open my $quicklog,  '>>', 
 			    $grabber->logger->log_pkgpath($dir);
 			print $quicklog @current;
+			&$reset;
+			next;
 		}
 		if (m/^\=\=\=\>\s*(.*)/) {
 			@current = ("$_\n");
@@ -175,6 +177,8 @@ sub grab_list
 			$dir->{broken} = 1;
 			$h->{$dir} = $dir;
 			print $log $_, "\n";
+			print $log "Broken ", $dir->fullpkgpath, "\n";
+			&$reset;
 		} else {
 			print $log $_, "\n";
 		}
