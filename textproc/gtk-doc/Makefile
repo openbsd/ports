@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/03/07 19:24:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2011/04/05 17:22:28 ajacoutot Exp $
 
 COMMENT=	GTK C code documentation system
 
@@ -43,8 +43,6 @@ post-extract:
 	xmlcatalog --add nextCatalog \
 		--id ${LOCALBASE}/share/xsl/docbook/catalog.xml \
 		--noout ${WRKDIR}/catalog.xml ${WRKDIR}/catalog.xml
-	ln -s ${LOCALBASE}/bin/scrollkeeper-config \
-		${WRKDIR}/bin/scrollkeeper-config.sk
 
 pre-configure:
 	perl -pi -e "s,/bin/bash,${LOCALBASE}/bin/bash," \
