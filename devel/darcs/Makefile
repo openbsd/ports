@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2011/04/05 11:45:14 kili Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
-DISTNAME =		darcs-2.5
+DISTNAME =		darcs-2.5.2
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.darcs.net/
@@ -26,11 +26,13 @@ BUILD_DEPENDS =		hs-tar->=0.3,<0.4:devel/hs-tar \
 			${RUN_DEPENDS} \
 			textproc/latex2html
 
-REGRESS_DEPENDS =	shells/bash
+REGRESS_DEPENDS =	devel/hs-hlint \
+			shells/bash
 
 # For the documentation
 USE_GMAKE =		Yes
 USE_GROFF =		Yes
+PORTHOME =		${WRKDIR}
 
 post-build:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
