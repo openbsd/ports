@@ -1,17 +1,21 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/01/17 00:17:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/05 18:51:31 jasper Exp $
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/telepathy-spec/
 share/gtk-doc/html/telepathy-spec/Account.html
 share/gtk-doc/html/telepathy-spec/Account_Interface_Addressing.html
 share/gtk-doc/html/telepathy-spec/Account_Interface_Avatar.html
+share/gtk-doc/html/telepathy-spec/Account_Interface_External_Password_Storage.html
+share/gtk-doc/html/telepathy-spec/Account_Interface_Hidden.html
 share/gtk-doc/html/telepathy-spec/Account_Interface_Storage.html
 share/gtk-doc/html/telepathy-spec/Account_Manager.html
+share/gtk-doc/html/telepathy-spec/Account_Manager_Interface_Hidden.html
 share/gtk-doc/html/telepathy-spec/Authentication_TLS_Certificate.html
 share/gtk-doc/html/telepathy-spec/Call_Content.html
 share/gtk-doc/html/telepathy-spec/Call_Content_Codec_Offer.html
 share/gtk-doc/html/telepathy-spec/Call_Content_Interface_Media.html
 share/gtk-doc/html/telepathy-spec/Call_Content_Interface_Mute.html
+share/gtk-doc/html/telepathy-spec/Call_Content_Interface_Video_Control.html
 share/gtk-doc/html/telepathy-spec/Call_Stream.html
 share/gtk-doc/html/telepathy-spec/Call_Stream_Endpoint.html
 share/gtk-doc/html/telepathy-spec/Call_Stream_Interface_Media.html
@@ -27,6 +31,7 @@ share/gtk-doc/html/telepathy-spec/Channel_Interface_Anonymity.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Call_State.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Chat_State.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Conference.html
+share/gtk-doc/html/telepathy-spec/Channel_Interface_Credentials_Storage.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_DTMF.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Destroyable.html
 share/gtk-doc/html/telepathy-spec/Channel_Interface_Group.html
@@ -73,6 +78,7 @@ share/gtk-doc/html/telepathy-spec/Connection_Interface_Capabilities.html
 share/gtk-doc/html/telepathy-spec/Connection_Interface_Cellular.html
 share/gtk-doc/html/telepathy-spec/Connection_Interface_Client_Types.html
 share/gtk-doc/html/telepathy-spec/Connection_Interface_Communication_Policy.html
+share/gtk-doc/html/telepathy-spec/Connection_Interface_Contact_Blocking.html
 share/gtk-doc/html/telepathy-spec/Connection_Interface_Contact_Capabilities.html
 share/gtk-doc/html/telepathy-spec/Connection_Interface_Contact_Groups.html
 share/gtk-doc/html/telepathy-spec/Connection_Interface_Contact_Info.html
@@ -90,6 +96,7 @@ share/gtk-doc/html/telepathy-spec/Connection_Interface_Resources.html
 share/gtk-doc/html/telepathy-spec/Connection_Interface_Service_Point.html
 share/gtk-doc/html/telepathy-spec/Connection_Interface_Simple_Presence.html
 share/gtk-doc/html/telepathy-spec/Connection_Manager.html
+share/gtk-doc/html/telepathy-spec/Connection_Manager_Interface_Account_Storage.html
 share/gtk-doc/html/telepathy-spec/Debug.html
 share/gtk-doc/html/telepathy-spec/Media_Session_Handler.html
 share/gtk-doc/html/telepathy-spec/Media_Stream_Handler.html
