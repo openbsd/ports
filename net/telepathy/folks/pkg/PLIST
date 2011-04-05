@@ -1,19 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/10/26 08:42:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/04/05 18:54:06 jasper Exp $
 @bin bin/folks-import
+@bin bin/folks-inspect
 include/folks/
 include/folks/folks-telepathy.h
 include/folks/folks.h
 lib/folks/
-lib/folks/16/
-lib/folks/16/backends/
-lib/folks/16/backends/key-file/
-lib/folks/16/backends/key-file/libfolks-backend-key-file.a
-lib/folks/16/backends/key-file/libfolks-backend-key-file.la
-lib/folks/16/backends/key-file/libfolks-backend-key-file.so
-lib/folks/16/backends/telepathy/
-lib/folks/16/backends/telepathy/libfolks-backend-telepathy.a
-lib/folks/16/backends/telepathy/libfolks-backend-telepathy.la
-lib/folks/16/backends/telepathy/libfolks-backend-telepathy.so
+lib/folks/22/
+lib/folks/22/backends/
+lib/folks/22/backends/key-file/
+lib/folks/22/backends/key-file/libfolks-backend-key-file.a
+lib/folks/22/backends/key-file/libfolks-backend-key-file.la
+lib/folks/22/backends/key-file/libfolks-backend-key-file.so
+lib/folks/22/backends/telepathy/
+lib/folks/22/backends/telepathy/libfolks-backend-telepathy.a
+lib/folks/22/backends/telepathy/libfolks-backend-telepathy.la
+lib/folks/22/backends/telepathy/libfolks-backend-telepathy.so
 lib/libfolks-telepathy.a
 lib/libfolks-telepathy.la
 @lib lib/libfolks-telepathy.so.${LIBfolks-telepathy_VERSION}
@@ -22,6 +23,7 @@ lib/libfolks.la
 @lib lib/libfolks.so.${LIBfolks_VERSION}
 lib/pkgconfig/folks-telepathy.pc
 lib/pkgconfig/folks.pc
+share/locale/de/LC_MESSAGES/folks.mo
 share/vala/vapi/folks-telepathy.deps
 share/vala/vapi/folks-telepathy.vapi
 share/vala/vapi/folks.deps

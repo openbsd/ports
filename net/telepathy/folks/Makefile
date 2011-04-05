@@ -1,34 +1,39 @@
-# $OpenBSD: Makefile,v 1.5 2011/03/09 06:23:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/04/05 18:54:06 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.2.1
+GNOME_VERSION=		0.4.2
 
-REVISION=		0
-
-SHARED_LIBS +=  folks-telepathy           0.0 # 15.0
-SHARED_LIBS +=  folks                     0.0 # 15.0
+SHARED_LIBS +=  folks-telepathy           1.0 # 22.0
+SHARED_LIBS +=  folks                     1.0 # 22.0
 
 HOMEPAGE=	http://telepathy.freedesktop.org/wiki/Folks
 
 MODULES=	devel/gettext \
 		x11/gnome
 
-WANTLIB += c m pthread dbus-1 dbus-glib-1 gee gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gthread-2.0 gobject-2.0 pcre telepathy-glib
-WANTLIB += xml2 z
+WANTLIB += c dbus-1 dbus-glib-1 gee gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 m ncurses pcre pthread readline
+WANTLIB += telepathy-glib xml2 z
 
 BUILD_DEPENDS=		devel/gobject-introspection>=0.9.12p0 \
-			lang/vala
+			lang/vala>=0.12.0
 LIB_DEPENDS=		devel/libgee \
-			STEM->=0.12.0p0:net/telepathy/telepathy-glib \
+			STEM->=0.14.3:net/telepathy/telepathy-glib \
 			textproc/libxml
 REGRESS_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH}
 
+FAKE_FLAGS+=		itlocaledir=${PREFIX}/share/locale/
+
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--enable-import-tool \
+			--enable-inspect-tool \
+			--enable-vala
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
