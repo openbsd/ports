@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.60 2011/04/04 06:26:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2011/04/05 14:42:04 ajacoutot Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
 GNOME_PROJECT=	librsvg
 GNOME_VERSION=	2.34.0
+
+REVISION=	0
 
 SHARED_LIBS +=	rsvg-2         28.0           # .34.0
 
@@ -15,27 +17,26 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 croco-0.6
-WANTLIB += pcre pixman-1 png pthread pthread-stubs xcb xml2 z
-WANTLIB += xcb-render gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gtk-x11-2.0 GL Xxf86vm drm xcb-shm
+WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
+WANTLIB += c cairo croco-0.6 drm expat fontconfig freetype gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm xml2
+WANTLIB += z
 
 MODULES=	devel/gettext \
 		x11/gnome \
 		lang/python
 
-LIB_DEPENDS=	x11/gtk+2 \
+LIB_DEPENDS=	graphics/gdk-pixbuf2 \
+		devel/pango \
 		www/libcroco
-RUN_DEPENDS=	x11/gtk-engines2
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--enable-gtk-theme \
+		--disable-gtk-theme \
 		--with-svgz \
 		--with-croco
 

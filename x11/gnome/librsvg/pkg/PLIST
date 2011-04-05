@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.22 2010/09/30 07:23:47 ajacoutot Exp $
-bin/rsvg
+@comment $OpenBSD: PLIST,v 1.23 2011/04/05 14:42:04 ajacoutot Exp $
 @bin bin/rsvg-convert
-@bin bin/rsvg-view
 include/librsvg-2.0/
 include/librsvg-2.0/librsvg/
 include/librsvg-2.0/librsvg/librsvg-enum-types.h
@@ -11,16 +9,10 @@ include/librsvg-2.0/librsvg/rsvg.h
 @comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.a
 @comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.la
 lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.so
-@comment lib/gtk-2.0/2.10.0/engines/libsvg.a
-@comment lib/gtk-2.0/2.10.0/engines/libsvg.la
-lib/gtk-2.0/2.10.0/engines/libsvg.so
-@comment lib/gtk-3.0/
-@comment lib/gtk-3.0/engines/
 lib/librsvg-2.a
 lib/librsvg-2.la
 @lib lib/librsvg-2.so.${LIBrsvg-2_VERSION}
 lib/pkgconfig/librsvg-2.0.pc
-@man man/man1/rsvg.1
 share/gtk-doc/html/rsvg-2.0/
 share/gtk-doc/html/rsvg-2.0/RsvgHandle.html
 share/gtk-doc/html/rsvg-2.0/annotation-glossary.html
@@ -50,14 +42,5 @@ share/gtk-doc/html/rsvg-2.0/style.css
 share/gtk-doc/html/rsvg-2.0/up.png
 share/pixmaps/
 share/pixmaps/svg-viewer.svg
-share/themes/bubble/
-share/themes/bubble/gtk-2.0/
-share/themes/bubble/gtk-2.0/blue.svg
-share/themes/bubble/gtk-2.0/green.svg
-share/themes/bubble/gtk-2.0/gtkrc
-share/themes/bubble/gtk-2.0/orange.svg
-share/themes/bubble/gtk-2.0/purple.svg
-share/themes/bubble/gtk-2.0/red.svg
-@comment share/themes/bubble/gtk-3.0/
 @exec %D/bin/gdk-pixbuf-query-loaders --update-cache
 @unexec-delete %D/bin/gdk-pixbuf-query-loaders --update-cache
