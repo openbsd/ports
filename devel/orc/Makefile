@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/26 10:05:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2011/04/05 08:09:00 sthen Exp $
 
 COMMENT=	library and toolset to operate arrays of data
 
 DISTNAME=	orc-0.4.11
+REVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://code.entropywave.com/download/orc/
 
@@ -24,11 +25,5 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.65
-
-# Workaround for a known issue with the
-# PowerPC AltiVec backend.
-.if ${MACHINE_ARCH} == "powerpc"
-CFLAGS+=	-O0
-.endif
 
 .include <bsd.port.mk>

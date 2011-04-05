@@ -1,0 +1,53 @@
+$OpenBSD: patch-orc_orcrules-altivec_c,v 1.1 2011/04/05 08:09:00 sthen Exp $
+
+- fix mullw rule
+- fix div255w rule
+
+--- orc/orcrules-altivec.c.orig	Fri Mar 25 16:53:32 2011
++++ orc/orcrules-altivec.c	Fri Mar 25 16:55:06 2011
+@@ -388,17 +388,6 @@ powerpc_rule_mulhub (OrcCompiler *p, void *user, OrcIn
+ }
+ 
+ static void
+-powerpc_rule_mullw (OrcCompiler *p, void *user, OrcInstruction *insn)
+-{
+-  int src1 = ORC_SRC_ARG (p, insn, 0);
+-  int src2 = ORC_SRC_ARG (p, insn, 1);
+-  int dest = ORC_DEST_ARG (p, insn, 0);
+-
+-  powerpc_emit_vmulesh (p, dest, src1, src2);
+-  powerpc_emit_vsldoi (p, dest, dest, dest, 2);
+-}
+-
+-static void
+ powerpc_rule_mulhsw (OrcCompiler *p, void *user, OrcInstruction *insn)
+ {
+   int src1 = ORC_SRC_ARG (p, insn, 0);
+@@ -418,7 +407,6 @@ powerpc_rule_mulhuw (OrcCompiler *p, void *user, OrcIn
+   powerpc_emit_vmuleuh (p, dest, src1, src2);
+ }
+ 
+-#ifdef alternate
+ static void
+ powerpc_rule_mullw (OrcCompiler *p, void *user, OrcInstruction *insn)
+ {
+@@ -430,7 +418,6 @@ powerpc_rule_mullw (OrcCompiler *p, void *user, OrcIns
+   powerpc_emit_vxor (p, tmp, tmp, tmp);
+   powerpc_emit_vmladduhm (p, dest, src1, src2, POWERPC_V0);
+ }
+-#endif
+ 
+ static void
+ powerpc_rule_convsbw (OrcCompiler *p, void *user, OrcInstruction *insn)
+@@ -1028,9 +1015,9 @@ powerpc_rule_div255w (OrcCompiler *p, void *user, OrcI
+   ORC_ASM_CODE(p,"  vspltish %s, 8\n", powerpc_get_regname(tmp2));
+   powerpc_emit_VX(p, 0x1000034c, powerpc_regnum(tmp2), 8, 0);
+ 
+-  powerpc_emit_VX_2 (p, "vsrw", 0x10000284, tmp, dest, tmp2);
++  powerpc_emit_VX_2 (p, "vsrh", 0x10000244, tmp, dest, tmp2);
+   powerpc_emit_VX_2 (p, "vadduhm", 0x10000040, dest, dest, tmp);
+-  powerpc_emit_VX_2 (p, "vsrw", 0x10000284, dest, dest, tmp2);
++  powerpc_emit_VX_2 (p, "vsrh", 0x10000244, dest, dest, tmp2);
+ }
+ 
+ void

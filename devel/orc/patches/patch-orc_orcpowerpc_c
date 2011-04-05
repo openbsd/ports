@@ -1,0 +1,31 @@
+$OpenBSD: patch-orc_orcpowerpc_c,v 1.1 2011/04/05 08:09:00 sthen Exp $
+
+don't clobber register r31
+
+--- orc/orcpowerpc.c.orig	Fri Mar 25 16:51:31 2011
++++ orc/orcpowerpc.c	Fri Mar 25 16:53:03 2011
+@@ -382,13 +382,13 @@ orc_powerpc_flush_cache (OrcCode *code)
+ 
+   ptr = code->code;
+   for (i=0;i<size;i+=cache_line_size) {
+-    __asm__ __volatile__ ("dcbst %0,%1" :: "r" (ptr), "r" (i));
++    __asm__ __volatile__ ("dcbst %0,%1" :: "b" (ptr), "r" (i));
+   }
+   __asm__ __volatile ("sync");
+ 
+   ptr = (void *)code->exec;
+   for (i=0;i<size;i+=cache_line_size) {
+-    __asm__ __volatile__ ("icbi %0,%1" :: "r" (ptr), "r" (i));
++    __asm__ __volatile__ ("icbi %0,%1" :: "b" (ptr), "r" (i));
+   }
+   __asm__ __volatile ("isync");
+ #endif
+@@ -399,7 +399,7 @@ powerpc_load_constant (OrcCompiler *p, int i, int reg)
+ {
+   int j;
+   int value = p->constants[i].value;
+-  int greg = POWERPC_R31;
++  int greg = p->gp_tmpreg;
+   int label_skip, label_data;
+ 
+   switch (p->constants[i].type) {
