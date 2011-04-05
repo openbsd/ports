@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.320 2011/03/25 17:02:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.321 2011/04/05 15:35:39 schwarze Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -22,6 +22,7 @@
      SUBDIR += docbook-dsssl
      SUBDIR += docbook-to-man
      SUBDIR += docbook-xsl
+     SUBDIR += docx2txt
      SUBDIR += enchant
      SUBDIR += eruby
      SUBDIR += exempi
