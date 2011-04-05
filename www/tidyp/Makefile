@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/03/18 15:53:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/05 15:33:14 sthen Exp $
 
 COMMENT=	validate, correct and pretty-print HTML
 
 V=		1.04
 DISTNAME=	tidyp-$V
-REVISION=	2
+EPOCH=		0
 SHARED_LIBS +=  tidyp-$V                  0.0 # 0.0
 SHARED_LIBS +=  tidyp                     0.0 # 0.0
 CATEGORIES=	www
