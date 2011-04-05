@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/03/28 10:55:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2011/04/05 16:37:59 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,7 +42,6 @@ MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	file-roller
 
-CONFIGURE_ARGS=		--disable-scrollkeeper
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

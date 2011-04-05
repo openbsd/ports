@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/01/07 11:01:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2011/04/05 16:37:58 ajacoutot Exp $
 
 # coherence plugin is installed but not activated by default so we don't
 # enforce dependency on multimedia/coherence to lower requirements
@@ -76,7 +76,6 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-x \
 			--enable-python \
 			--enable-daap \
-			--disable-scrollkeeper \
 			--without-hal \
 			--without-libbrasero-media \
 			--without-libnautilus-burn \

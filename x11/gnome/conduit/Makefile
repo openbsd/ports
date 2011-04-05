@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/01/11 12:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/04/05 16:37:59 ajacoutot Exp $
 
 # XXX the following modules are commented in PLIST
 # N800Module ===> needs HAL which we don't provide
@@ -36,8 +36,7 @@ RUN_DEPENDS=		devel/gettext \
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 
-CONFIGURE_ARGS+=	--disable-scrollkeeper \
-			--enable-totem-plugin \
+CONFIGURE_ARGS+=	--enable-totem-plugin \
 			--with-totem-plugin-dir="${LOCALBASE}/lib/totem/plugins/" \
 # This currently doesn't install anything.
 CONFIGURE_ARGS+=	--disable-nautilus-extension \

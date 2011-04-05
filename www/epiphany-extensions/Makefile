@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/12/11 06:33:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2011/04/05 16:37:59 ajacoutot Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
@@ -54,7 +54,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
 		--disable-schemas-install \
-		--disable-scrollkeeper \
 		--enable-opensp=no
 
 FAKE_FLAGS=	itlocaledir=${PREFIX}/share/locale/

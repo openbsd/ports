@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/11/13 13:09:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2011/04/05 16:37:59 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -34,7 +34,6 @@ DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gucharmap
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-scrollkeeper \
 			--disable-python-bindings \
 			--disable-introspection
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \

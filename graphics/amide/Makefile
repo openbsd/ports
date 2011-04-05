@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/03/29 23:22:17 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.14 2011/04/05 16:37:58 ajacoutot Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
@@ -55,7 +55,6 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			XMEDCON_CONFIG="${LOCALBASE}/bin/xmedcon-config"
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-scrollkeeper \
 			--disable-xmedcontest \
 			--disable-libfame \
 			--disable-libdcmdata \

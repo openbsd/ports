@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2011/04/05 16:37:59 ajacoutot Exp $
 
 COMMENT=	GNOME terminal
 
@@ -28,8 +28,7 @@ LIB_DEPENDS=	devel/vte
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-terminal
-CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
-			--disable-scrollkeeper
+CONFIGURE_ARGS= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

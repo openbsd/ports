@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2011/04/05 16:37:59 ajacoutot Exp $
 
 COMMENT=		graphical predictive text input system
 
@@ -38,8 +38,7 @@ LIB_DEPENDS=		x11/gnome/libgnomeui \
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	dasher
-CONFIGURE_ARGS+=	--disable-scrollkeeper \
-			--with-cairo \
+CONFIGURE_ARGS+=	--with-cairo \
 			--with-gnome \
 			--enable-a11y \
 			--disable-speech \

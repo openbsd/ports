@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2011/03/25 09:13:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2011/04/05 16:37:59 ajacoutot Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
@@ -69,7 +69,6 @@ MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	empathy
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-scrollkeeper \
 			--enable-spell=Yes \
 			--enable-location=Yes \
 			--enable-map=Yes\

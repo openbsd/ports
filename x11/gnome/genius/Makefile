@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/23 06:00:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2011/04/05 16:37:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -44,7 +44,6 @@ DESKTOP_FILES=	Yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgmp"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-scrollkeeper \
 		--disable-update-mimedb \
 		--disable-extra-gcc-optimization
 

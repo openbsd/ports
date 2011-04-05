@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/11/26 15:00:45 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2011/04/05 16:37:59 ajacoutot Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
@@ -52,7 +52,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-avahi \
 		--disable-gnome \
-		--disable-scrollkeeper \
 		--with-ldap-dir=${LOCALBASE} \
 		--with-libsasl2-dir=${LOCALBASE}
 

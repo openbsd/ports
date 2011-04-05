@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2011/01/18 20:03:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2011/04/05 16:37:59 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -41,7 +41,6 @@ MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-gnome-distributor="OpenBSD Ports" \
-			--disable-scrollkeeper \
 			--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

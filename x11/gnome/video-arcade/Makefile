@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/04/05 16:37:59 ajacoutot Exp $
 
 COMMENT=	MAME front-end for GNOME
 
@@ -43,7 +43,6 @@ MODGCONF2_SCHEMAS_DIR=  gnome-video-arcade
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-scrollkeeper \
 		--disable-gtk-doc \
 		--with-gnome \
 		--with-wnck \

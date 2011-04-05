@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2011/01/12 20:53:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2011/04/05 16:37:59 ajacoutot Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
@@ -51,7 +51,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-scrollkeeper \
 		--disable-libopenraw \
 		--disable-libbrasero \
 		--enable-libsoup \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/05 16:37:59 ajacoutot Exp $
 
 # This port does not run_depends on yelp on purpose, as it would
 # create a cyclic dependency.
@@ -22,6 +22,5 @@ BUILD_DEPENDS=		x11/gnome/doc-utils \
 			textproc/rarian
 
 USE_LIBTOOL=		No
-CONFIGURE_ARGS= 	--disable-scrollkeeper
 
 .include <bsd.port.mk>

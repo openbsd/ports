@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/19 15:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/04/05 16:37:59 ajacoutot Exp $
 
 COMMENT=		developer documentation for GNOME
 
@@ -17,6 +17,5 @@ MODGNOME_HELP_FILES=	Yes
 
 PKG_ARCH=		*
 USE_LIBTOOL=		No
-CONFIGURE_ARGS= 	--disable-scrollkeeper
 
 .include <bsd.port.mk>

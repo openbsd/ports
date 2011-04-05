@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2011/03/26 15:05:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2011/04/05 16:37:58 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -110,7 +110,6 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-comics \
 		--disable-impress \
 		--enable-nautilus \
-		--disable-scrollkeeper \
 		--enable-djvu \
 		--enable-dvi \
 		--enable-pixbuf

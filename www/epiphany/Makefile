@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2010/12/11 06:33:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2011/04/05 16:37:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -68,7 +68,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-introspection=no \
 		--disable-static \
-		--disable-scrollkeeper \
 		--disable-gtk-doc \
 		--disable-zeroconf \
 		--with-distributor-name="OpenBSD ports" \
