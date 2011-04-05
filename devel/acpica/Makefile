@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:45:56 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/04/05 08:02:25 sthen Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =		reference implementation of ACPI tools
-V =			20080701
+V =			20110316
 DISTNAME =		acpica-unix-${V}
 PKGNAME =		acpica-${V}
-REVISION =		0
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.acpica.org
 MASTER_SITES =		${HOMEPAGE}/download/
-MAINTAINER =		Peter Hessler <phessler@openbsd.org>
 
-WANTLIB =		c
+WANTLIB =		c pthread
 
 # Intel License
 # http://www.acpica.org/downloads/unix_source_code.php
@@ -24,21 +22,22 @@ PERMIT_DISTFILES_FTP =	Yes
 
 USE_GMAKE =		Yes
 NO_REGRESS = 		Yes
-
-pre-configure:
-	@perl -pi -e 's#-O2##g' ${WRKSRC}/compiler/Makefile \
-	    ${WRKSRC}/tools/acpisrc/Makefile \
-	    ${WRKSRC}/tools/acpiexec/Makefile
+BUILD_DEPENDS =		devel/flex devel/bison
 
 do-build:
 	cd ${WRKSRC}/compiler && env CFLAGS="${CFLAGS}" ${MAKE_PROGRAM}
 	cd ${WRKSRC}/tools/acpisrc && env CFLAGS="${CFLAGS}" ${MAKE_PROGRAM}
+	cd ${WRKSRC}/tools/acpinames && env CFLAGS="${CFLAGS}" ${MAKE_PROGRAM}
+	cd ${WRKSRC}/tools/acpixtract && env CFLAGS="${CFLAGS}" ${MAKE_PROGRAM}
 	cd ${WRKSRC}/tools/acpiexec && \
 	    env CFLAGS="${CFLAGS}" ${MAKE_PROGRAM} clean acpiexec
+
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/compiler/iasl ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/acpisrc/acpisrc ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/acpinames/acpinames ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/tools/acpixtract/acpixtract ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/acpiexec/acpiexec ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/acpica/
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/acpica/

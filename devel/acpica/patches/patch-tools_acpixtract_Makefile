@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_acpixtract_Makefile,v 1.1 2011/04/05 08:02:25 sthen Exp $
+--- tools/acpixtract/Makefile.orig	Mon Apr  4 23:33:59 2011
++++ tools/acpixtract/Makefile	Mon Apr  4 23:34:23 2011
+@@ -3,7 +3,7 @@
+ PROG=	acpixtract
+ SRCS=	acpixtract.c
+ 
+-CFLAGS+= -Wall -O2 -D_LINUX -DACPI_APPLICATION -Wstrict-prototypes -I../../include 
++CFLAGS+= -Wall -D_LINUX -DACPI_APPLICATION -Wstrict-prototypes -I../../include 
+ 
+ 
+ acpixtract : $(patsubst %.c,%.o, $(SRCS))

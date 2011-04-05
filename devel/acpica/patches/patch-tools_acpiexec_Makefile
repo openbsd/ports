@@ -1,0 +1,24 @@
+$OpenBSD: patch-tools_acpiexec_Makefile,v 1.1 2011/04/05 08:02:25 sthen Exp $
+
+quality workmanship!
+
+--- tools/acpiexec/Makefile.orig	Wed Mar 16 16:28:24 2011
++++ tools/acpiexec/Makefile	Mon Apr  4 23:48:53 2011
+@@ -14,7 +14,7 @@ NOMAN=	YES
+ CFLAGS+= -Wall -g -D_LINUX -DNDEBUG -D_CONSOLE -DACPI_EXEC_APP -Wstrict-prototypes -I$(ACPICA_SRC)/include 
+ 
+ COMPILE = $(CC) -c $(CFLAGS) -o$@ $?
+-LDFLAGS += -lpthread -lrt
++LDFLAGS += -pthread
+ 
+ OBJS = \
+ 	aeexec.o \
+@@ -588,7 +588,7 @@ utcopy.o :          $(ACPICA_CORE)/utilities/utcopy.c
+ utdebug.o :         $(ACPICA_CORE)/utilities/utdebug.c
+ 	$(COMPILE)
+ 
+-utdebug.o :         $(ACPICA_CORE)/utilities/utdebug.c
++utdecode.o :         $(ACPICA_CORE)/utilities/utdecode.c
+ 	$(COMPILE)
+ 
+ utdelete.o :        $(ACPICA_CORE)/utilities/utdelete.c

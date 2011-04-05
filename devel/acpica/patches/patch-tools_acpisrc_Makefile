@@ -1,0 +1,12 @@
+$OpenBSD: patch-tools_acpisrc_Makefile,v 1.1 2011/04/05 08:02:25 sthen Exp $
+--- tools/acpisrc/Makefile.orig	Wed Mar 16 16:28:25 2011
++++ tools/acpisrc/Makefile	Mon Apr  4 23:34:55 2011
+@@ -4,7 +4,7 @@ PROG=	acpisrc
+ SRCS=	ascase.c asconvrt.c asfile.c asmain.c asremove.c astable.c \
+         asutils.c osunixdir.c ../../common/getopt.c
+ 
+-CFLAGS+= -Wall -O2 -D_LINUX -DACPI_APPLICATION -Wstrict-prototypes -I../../include 
++CFLAGS+= -Wall -D_LINUX -DACPI_APPLICATION -Wstrict-prototypes -I../../include 
+ 
+ 
+ aslmain : $(patsubst %.c,%.o, $(SRCS))
