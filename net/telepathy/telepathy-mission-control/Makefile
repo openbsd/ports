@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/01/17 17:58:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/04/05 19:53:03 jasper Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
@@ -8,7 +8,7 @@ SHARED_LIBS +=  mission-control-plugins 0.0      # 3.0
 
 HOMEPAGE=		http://mission-control.sourceforge.net/
 
-MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-mission-control/}
+MASTER_SITES=		${MASTER_SITES_TP:=telepathy-mission-control/}
 
 WANTLIB += c dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 pcre pthread z telepathy-glib

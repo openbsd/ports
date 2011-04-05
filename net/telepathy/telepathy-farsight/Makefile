@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/04/05 19:46:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/04/05 19:53:03 jasper Exp $
 
 COMMENT=		flexible communications framework, farsight2 component
 
@@ -10,7 +10,7 @@ HOMEPAGE=		${HOMEPAGE_TP:=Telepathy-Farsight}
 
 SHARED_LIBS +=  telepathy-farsight   0.0      # .0.4
 
-MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-farsight/}
+MASTER_SITES=		${MASTER_SITES_TP:=telepathy-farsight/}
 
 WANTLIB += dbus-1 dbus-glib-1 ffi gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gstbase-0.10 gstreamer-0.10 gthread-2.0

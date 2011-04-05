@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2011/03/02 06:33:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2011/04/05 19:53:03 jasper Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
 DISTNAME=		telepathy-salut-0.4.0
 
-MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-salut/}
+MASTER_SITES=		${MASTER_SITES_TP:=telepathy-salut/}
 
 WANTLIB += c dbus-1 dbus-glib-1 gcrypt gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnutls gobject-2.0 gpg-error gthread-2.0

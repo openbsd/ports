@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/04/05 19:46:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2011/04/05 19:53:03 jasper Exp $
 
 COMMENT=		flexible communications framework, glib bindings
 
@@ -9,7 +9,7 @@ SHARED_LIBS +=	telepathy-glib       8.0      # .54.0
 
 HOMEPAGE=		${HOMEPAGE_TP:=Telepathy GLib}
 
-MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-glib/}
+MASTER_SITES=		${MASTER_SITES_TP:=telepathy-glib/}
 
 WANTLIB += dbus-1 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += dbus-glib-1 pcre z

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.9 2011/04/05 19:46:27 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.10 2011/04/05 19:53:03 jasper Exp $
 
 SHARED_ONLY?=	Yes
 
@@ -12,7 +12,7 @@ HOMEPAGE_TP=	http://telepathy.freedesktop.org/wiki/
 HOMEPAGE=	${HOMEPAGE_TP}
 .endif
 
-MASTER_SITES_TELEPATHY=	http://telepathy.freedesktop.org/releases/
+MASTER_SITES_TP=	http://telepathy.freedesktop.org/releases/
 DIST_SUBDIR=		telepathy
 
 # BSD/GPL/LGPL

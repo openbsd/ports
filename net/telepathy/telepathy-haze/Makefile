@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/19 22:31:38 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/04/05 19:53:03 jasper Exp $
 
 COMMENT=		flexible communications framework, libpurple component
 
 DISTNAME=		telepathy-haze-0.4.0
 
-MASTER_SITES=		${MASTER_SITES_TELEPATHY:=telepathy-haze/}
+MASTER_SITES=		${MASTER_SITES_TP:=telepathy-haze/}
 
 MODULES=		devel/gettext \
 			lang/python
