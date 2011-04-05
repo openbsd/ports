@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/17 14:57:38 shadchin Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/05 14:10:45 shadchin Exp $
 
 COMMENT=	portable DjVu viewer and browser plugin
 
@@ -24,7 +24,6 @@ MODULES=	x11/qt4
 
 LIB_DEPENDS=	graphics/djvulibre
 
-BUILD_DEPENDS=	x11/gnome/librsvg
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/hicolor-icon-theme
 
