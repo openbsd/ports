@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/04/05 17:17:55 ajacoutot Exp $
 
 COMMENT=		GNOME speech module
 
@@ -24,7 +24,6 @@ LIB_DEPENDS=		audio/espeak \
 
 DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-scrollkeeper \
 			--with-festival \
 			--with-espeak-dir="${LOCALBASE}" \
 			--without-speech-dispatcher
