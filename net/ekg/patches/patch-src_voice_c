@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_voice_c,v 1.1 2011/04/06 09:35:03 jasper Exp $
+
+- external libgadu support, from cvs.pld-linux.org
+
+--- src/voice.c.orig	Sun Mar 11 12:27:24 2007
++++ src/voice.c	Tue Mar 29 22:40:31 2011
+@@ -29,7 +29,7 @@
+ #include <stdlib.h>
+ #include <unistd.h>
+ 
+-#include "libgadu.h"
++#include <libgadu.h>
+ #include "voice.h"
+ #include "stuff.h"
+ #include "xmalloc.h"

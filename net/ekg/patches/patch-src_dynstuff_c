@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_dynstuff_c,v 1.1 2011/04/06 09:35:03 jasper Exp $
+
+- external libgadu support, from cvs.pld-linux.org
+
+--- src/dynstuff.c.orig	Sun Mar 11 12:27:18 2007
++++ src/dynstuff.c	Tue Mar 29 22:40:31 2011
+@@ -24,7 +24,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ 
+-#include "libgadu.h"
++#include <libgadu.h>
+ #include "dynstuff.h"
+ #include "stuff.h"
+ #include "xmalloc.h"

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_events_h,v 1.1 2011/04/06 09:35:03 jasper Exp $
+
+- external libgadu support, from cvs.pld-linux.org
+
+--- src/events.h.orig	Fri Feb 18 14:06:17 2005
++++ src/events.h	Tue Mar 29 22:40:31 2011
+@@ -21,7 +21,7 @@
+ #ifndef __EVENTS_H
+ #define __EVENTS_H
+ 
+-#include "libgadu.h"
++#include <libgadu.h>
+ #include "userlist.h"
+ 
+ struct handler {

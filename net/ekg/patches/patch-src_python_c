@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_python_c,v 1.1 2011/04/06 09:35:03 jasper Exp $
+
+- external libgadu support, from cvs.pld-linux.org
+
+--- src/python.c.orig	Thu Aug 24 19:57:56 2006
++++ src/python.c	Tue Mar 29 22:40:31 2011
+@@ -27,7 +27,7 @@
+ #include <string.h>
+ 
+ #include "commands.h"
+-#include "libgadu.h"
++#include <libgadu.h>
+ #include "stuff.h"
+ #include "themes.h"
+ #include "ui.h"

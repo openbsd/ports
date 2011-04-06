@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_log_h,v 1.1 2011/04/06 09:35:03 jasper Exp $
+
+- external libgadu support, from cvs.pld-linux.org
+
+--- src/log.h.orig	Mon Dec  5 20:20:08 2005
++++ src/log.h	Tue Mar 29 22:40:31 2011
+@@ -28,7 +28,7 @@
+ #include <time.h>
+ 
+ #include "dynstuff.h"
+-#include "libgadu.h"
++#include <libgadu.h>
+ 
+ struct last {
+ 	int type;		/* 0 - przychodz?ca, 1 - wychodz?ca */

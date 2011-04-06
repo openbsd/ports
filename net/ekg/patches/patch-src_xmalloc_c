@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_xmalloc_c,v 1.1 2011/04/06 09:35:03 jasper Exp $
+
+- external libgadu support, from cvs.pld-linux.org
+
+--- src/xmalloc.c.orig	Thu Apr  3 14:39:07 2003
++++ src/xmalloc.c	Tue Mar 29 22:40:31 2011
+@@ -28,7 +28,7 @@
+ #include "configfile.h"
+ #include "stuff.h"
+ #include "userlist.h"
+-#include "libgadu.h"
++#include <libgadu.h>
+ 
+ void ekg_oom_handler()
+ {

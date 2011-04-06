@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_stuff_h,v 1.1 2011/04/06 09:35:03 jasper Exp $
+
+- external libgadu support, from cvs.pld-linux.org
+
+--- src/stuff.h.orig	Sat Apr 28 21:02:25 2007
++++ src/stuff.h	Tue Mar 29 22:40:31 2011
+@@ -35,7 +35,7 @@
+ #include <time.h>
+ 
+ #include "dynstuff.h"
+-#include "libgadu.h"
++#include <libgadu.h>
+ #include "ioctld.h"
+ 
+ #define DEBUG_MAX_LINES	50	/* ile linii z debug zrzuca? do pliku */

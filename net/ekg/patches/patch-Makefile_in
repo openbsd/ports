@@ -1,0 +1,72 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2011/04/06 09:35:03 jasper Exp $
+
+- external libgadu support, from cvs.pld-linux.org
+
+--- Makefile.in.orig	Sat Aug  5 16:46:21 2006
++++ Makefile.in	Tue Mar 29 22:40:31 2011
+@@ -15,11 +15,8 @@ INSTALL = @INSTALL@
+ 
+ #
+ 
+-all:	configure libgadu @ekg@ @make_ekgwap@
++all:	configure @ekg@ @make_ekgwap@
+ 
+-libgadu:
+-	cd lib && $(MAKE) all
+-
+ ekg:	
+ 	cd src && $(MAKE) all
+ 
+@@ -31,11 +28,8 @@ examples:
+ 
+ #
+ 
+-dep:	dep-libgadu @dep_ekg@
++dep:	@dep_ekg@
+ 
+-dep-libgadu:
+-	cd lib && $(MAKE) dep
+-
+ dep-ekg:
+ 	cd src && $(MAKE) dep
+ 
+@@ -46,11 +40,8 @@ configure:	configure.in m4/*
+ 
+ #
+ 
+-install:	all install-libgadu @install_ekg@ @install_ekgwap@
++install:	all @install_ekg@ @install_ekgwap@
+ 
+-install-libgadu:
+-	cd lib && $(MAKE) install
+-
+ install-ekg:	install-ekg-data install-ekg-man
+ 	cd src && $(MAKE) install
+ 
+@@ -93,11 +84,8 @@ uninstall-ekg:
+ 
+ #
+ 
+-clean:	clean-libgadu @clean_ekg@ clean-examples clean-compat
++clean:	@clean_ekg@ clean-examples clean-compat
+ 
+-clean-libgadu:
+-	cd lib && $(MAKE) clean
+-
+ clean-ekg:
+ 	cd src && $(MAKE) clean
+ 
+@@ -109,12 +97,9 @@ clean-compat:
+ 
+ #
+ 
+-distclean:	distclean-libgadu @distclean_ekg@ distclean-examples distclean-compat
++distclean:	@distclean_ekg@ distclean-examples distclean-compat
+ 	rm -f *~ config.log config.cache config.status config.h Makefile
+ 	rm -f config.h.in configure aclocal.m4
+-
+-distclean-libgadu:
+-	cd lib && $(MAKE) distclean
+ 
+ distclean-ekg:
+ 	cd src && $(MAKE) distclean

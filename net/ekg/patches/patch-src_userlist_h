@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_userlist_h,v 1.1 2011/04/06 09:35:03 jasper Exp $
+
+- external libgadu support, from cvs.pld-linux.org
+
+--- src/userlist.h.orig	Sat Apr 28 21:02:26 2007
++++ src/userlist.h	Tue Mar 29 22:40:31 2011
+@@ -30,7 +30,7 @@
+ #include <stdio.h>
+ #include <time.h>
+ 
+-#include "libgadu.h"
++#include <libgadu.h>
+ #include "dynstuff.h"
+ #include "stuff.h"
+ 

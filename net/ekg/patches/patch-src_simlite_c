@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_simlite_c,v 1.1 2011/04/06 09:35:03 jasper Exp $
+
+- external libgadu support, from cvs.pld-linux.org
+
+--- src/simlite.c.orig	Sat Aug  5 17:02:52 2006
++++ src/simlite.c	Tue Mar 29 22:40:31 2011
+@@ -35,7 +35,7 @@
+ #include <string.h>
+ #include <time.h>
+ 
+-#include "libgadu.h"
++#include <libgadu.h>
+ #include "simlite.h"
+ 
+ #ifndef PATH_MAX

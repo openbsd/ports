@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ekg_c,v 1.1 2011/04/06 09:35:03 jasper Exp $
+
+- external libgadu support, from cvs.pld-linux.org
+
+--- src/ekg.c.orig	Sat Apr 28 21:02:23 2007
++++ src/ekg.c	Tue Mar 29 22:40:31 2011
+@@ -60,7 +60,7 @@
+ #include "configfile.h"
+ #include "emoticons.h"
+ #include "events.h"
+-#include "libgadu.h"
++#include <libgadu.h>
+ #include "log.h"
+ #include "mail.h"
+ #include "msgqueue.h"

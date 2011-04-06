@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_msgqueue_h,v 1.1 2011/04/06 09:35:03 jasper Exp $
+
+- external libgadu support, from cvs.pld-linux.org
+
+--- src/msgqueue.h.orig	Mon Dec  5 20:20:08 2005
++++ src/msgqueue.h	Tue Mar 29 22:40:31 2011
+@@ -25,7 +25,7 @@
+ #include <time.h>
+ 
+ #include "dynstuff.h"
+-#include "libgadu.h"
++#include <libgadu.h>
+ 
+ struct msg_queue {
+ 	int msg_class;

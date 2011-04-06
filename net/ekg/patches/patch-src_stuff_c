@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_stuff_c,v 1.1 2011/04/06 09:35:03 jasper Exp $
+
+- external libgadu support, from cvs.pld-linux.org
+
+--- src/stuff.c.orig	Sat Apr 28 21:02:24 2007
++++ src/stuff.c	Wed Mar 30 00:32:56 2011
+@@ -53,9 +53,8 @@
+ #include <unistd.h>
+ 
+ #include "commands.h"
+-#include "compat.h"
+ #include "dynstuff.h"
+-#include "libgadu.h"
++#include <libgadu.h>
+ #ifdef HAVE_OPENSSL
+ #  include "simlite.h"
+ #endif

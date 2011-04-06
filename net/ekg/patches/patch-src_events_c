@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_events_c,v 1.1 2011/04/06 09:35:03 jasper Exp $
+
+- external libgadu support, from cvs.pld-linux.org
+
+--- src/events.c.orig	Sat Apr 28 21:02:24 2007
++++ src/events.c	Tue Mar 29 22:40:31 2011
+@@ -40,7 +40,7 @@
+ #include "commands.h"
+ #include "emoticons.h"
+ #include "events.h"
+-#include "libgadu.h"
++#include <libgadu.h>
+ #include "log.h"
+ #include "msgqueue.h"
+ #ifdef HAVE_OPENSSL
