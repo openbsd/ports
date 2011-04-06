@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2011/01/07 10:22:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2011/04/06 18:26:42 ajacoutot Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
 GNOME_PROJECT=		gnome-python-desktop
 GNOME_VERSION=		2.32.0
 PKGNAME=		py-gnome-desktop-${VERSION}
-REVISION=		2
+REVISION=		3
 
 HOMEPAGE=		http://www.pygtk.org/
 
@@ -40,8 +40,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		x11/gnome/py-gnome>=2.28.0 \
-			x11/gnome/bug-buddy
+RUN_DEPENDS=		x11/gnome/py-gnome>=2.28.0
 LIB_DEPENDS=		devel/libgsf \
 			devel/libgtop2 \
 			x11/gnome/libgnomeprintui \
@@ -50,13 +49,15 @@ LIB_DEPENDS=		devel/libgsf \
 			x11/gnome/metacity \
 			x11/gnome/panel \
 			x11/gnome/totem-pl-parser>=2.28.1 \
-			graphics/evince,-main>=2.32.0
+			graphics/evince,-main>=2.32.0 \
+			devel/libgdata
 
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-metacity
+			--enable-metacity \
+			--disable-bugbuddy
 
 pre-configure:
 	@find ${WRKDIST} -name \*.py | \

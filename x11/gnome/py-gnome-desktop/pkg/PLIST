@@ -1,8 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/10/14 14:31:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/04/06 18:26:42 ajacoutot Exp $
 lib/pkgconfig/gnome-python-desktop-2.0.pc
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.py
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.pyc
-lib/python${MODPY_VERSION}/site-packages/gtk-2.0/bugbuddy.pyo
 @comment lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evince.la
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evince.so
 lib/python${MODPY_VERSION}/site-packages/gtk-2.0/evolution/
