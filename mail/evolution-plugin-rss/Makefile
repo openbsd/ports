@@ -1,19 +1,12 @@
-# $OpenBSD: Makefile,v 1.26 2011/04/02 16:56:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2011/04/06 21:03:33 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		RSS-reader plugin for GNOME
 
 GNOME_PROJECT=		evolution-rss
-GNOME_VERSION=		0.2.0
-PKGNAME=		evolution-plugin-rss-0.2.2
-
-REVISION=		0
-
-# from upstream git
-MASTER_SITES0=		http://distfiles.bsdfrog.org/
-PATCHFILES=		ep-rss-EVOLUTION_RSS_0_2_2_CORRECTED.diff:0
-PATCH_DIST_STRIP=	-p1
+GNOME_VERSION=		0.2.3
+PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}
 
 CATEGORIES=		mail
 
@@ -32,9 +25,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ORBit-2 c dbus-1 dbus-glib-1 gcrypt gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gnome-keyring gnutls gobject-2.0 gpg-error
-WANTLIB += gthread-2.0 m pcre proxy pthread soup-2.4 soup-gnome-2.4
-WANTLIB += sqlite3 stdc++ tasn1 xml2 z
+WANTLIB += gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
+WANTLIB += gthread-2.0 m pcre pthread soup-2.4 soup-gnome-2.4
+WANTLIB += sqlite3 stdc++ xml2 z
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm
 WANTLIB += enchant expat fontconfig freetype gailutil gdk-x11-2.0
