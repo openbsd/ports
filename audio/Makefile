@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.259 2011/04/03 12:31:17 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.260 2011/04/06 07:23:32 landry Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -182,6 +182,7 @@
      SUBDIR += snack
      SUBDIR += sonata
      SUBDIR += sound-theme-freedesktop
+     SUBDIR += soundconverter
      SUBDIR += soundtouch
      SUBDIR += soundtracker
      SUBDIR += sox
