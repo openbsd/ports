@@ -1,9 +1,15 @@
-# $OpenBSD: Makefile,v 1.35 2011/04/05 18:40:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2011/04/06 12:05:07 ajacoutot Exp $
 
 COMMENT=		compiler for the GObject type system
 
 GNOME_PROJECT=		vala
 GNOME_VERSION=		0.12.0
+
+# XXX regened .c from patched .vala
+DISTFILES=		_${DISTNAME}.tar.gz
+MASTER_SITES=		http://distfiles.bsdfrog.org/
+
+REVISION=		0
 
 SHARED_LIBS +=  vala-0.12                 0.0 # 0.0
 
