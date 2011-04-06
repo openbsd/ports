@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/03/11 09:58:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/04/06 07:49:31 ajacoutot Exp $
 @bin bin/gtk-query-immodules-3.0
 @bin bin/gtk3-demo
 include/gail-3.0/
@@ -633,5 +633,5 @@ share/themes/Raleigh/gtk-3.0/gtk.css
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
 @exec %D/bin/gtk-query-immodules-3.0 > ${SYSCONFDIR}/gtk-3.0/gtk.immodules
-@unexec-delete rm -r ${SYSCONFDIR}/gtk-3.0/gtk.immodules
+@unexec-delete rm -f ${SYSCONFDIR}/gtk-3.0/gtk.immodules
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

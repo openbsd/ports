@@ -1,10 +1,10 @@
-$OpenBSD: patch-gtk_gtkprintunixdialog_c,v 1.1.1.1 2011/03/11 09:58:31 ajacoutot Exp $
+$OpenBSD: patch-gtk_gtkprintunixdialog_c,v 1.2 2011/04/06 07:49:31 ajacoutot Exp $
 
 Fix build with gcc2.
 
---- gtk/gtkprintunixdialog.c.orig	Wed Mar  9 16:47:57 2011
-+++ gtk/gtkprintunixdialog.c	Wed Mar  9 16:47:33 2011
-@@ -2609,6 +2609,7 @@ draw_page_cb (GtkWidget          *widget,
+--- gtk/gtkprintunixdialog.c.orig	Sat Apr  2 20:10:38 2011
++++ gtk/gtkprintunixdialog.c	Mon Apr  4 08:45:40 2011
+@@ -2607,6 +2607,7 @@ draw_page_cb (GtkWidget          *widget,
    GtkNumberUpLayout number_up_layout;
    gint start_x, end_x, start_y, end_y;
    gint dx, dy;
@@ -12,7 +12,7 @@ Fix build with gcc2.
    gint width, height;
    gboolean horizontal;
    GtkPageSetup *page_setup;
-@@ -2616,6 +2617,8 @@ draw_page_cb (GtkWidget          *widget,
+@@ -2614,6 +2615,8 @@ draw_page_cb (GtkWidget          *widget,
    gdouble pos_x, pos_y;
    gint pages_per_sheet;
    gboolean ltr = TRUE;
@@ -21,7 +21,7 @@ Fix build with gcc2.
  
    orientation = gtk_page_setup_get_orientation (priv->page_setup);
    landscape =
-@@ -2892,9 +2895,7 @@ draw_page_cb (GtkWidget          *widget,
+@@ -2890,9 +2893,7 @@ draw_page_cb (GtkWidget          *widget,
        font = pango_font_description_new ();
        pango_font_description_set_family (font, "sans");
  
