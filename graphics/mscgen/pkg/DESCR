@@ -1,0 +1,9 @@
+Mscgen is a small program that parses Message Sequence Chart
+descriptions and produces PNG, SVG, EPS or server side image maps
+(ismaps) as the output. Message Sequence Charts (MSCs) are a way of
+representing entities and interactions over some time period and are
+often used in combination with SDL. MSCs are popular in Telecoms to
+specify how protocols operate although MSCs need not be complicated to
+create or use. Mscgen aims to provide a simple text language that is
+clear to create, edit and understand, which can also be transformed into
+common image formats for display or printing.
