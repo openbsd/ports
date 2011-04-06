@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2011/03/23 16:34:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2011/04/06 16:37:03 ajacoutot Exp $
 
 COMMENT=	C++ interface for gtk2+
 
 GNOME_PROJECT=	gtkmm
 GNOME_VERSION=	2.24.0
+
+REVISION=	0
 
 PKGNAME=	gtk2mm-${GNOME_VERSION}
 
@@ -35,10 +37,8 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	devel/mm-common
 
 LIB_DEPENDS=	devel/atk2mm \
-		devel/glib2mm \
 		devel/pangomm>=2.27 \
-		x11/gtk+2 \
-		graphics/cairomm
+		x11/gtk+2
 
 SEPARATE_BUILD=	concurrent
 
