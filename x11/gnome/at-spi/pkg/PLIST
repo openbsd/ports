@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/03/09 17:02:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/04/06 19:46:17 ajacoutot Exp $
 include/at-spi-1.0/
 include/at-spi-1.0/cspi/
 include/at-spi-1.0/cspi/spi-impl.h
@@ -50,11 +50,11 @@ lib/libloginhelper.la
 lib/libspi.a
 lib/libspi.la
 @lib lib/libspi.so.${LIBspi_VERSION}
-lib/orbit-2.0/Accessibility_LoginHelper_module.a
-lib/orbit-2.0/Accessibility_LoginHelper_module.la
+@comment lib/orbit-2.0/Accessibility_LoginHelper_module.a
+@comment lib/orbit-2.0/Accessibility_LoginHelper_module.la
 lib/orbit-2.0/Accessibility_LoginHelper_module.so
-lib/orbit-2.0/Accessibility_module.a
-lib/orbit-2.0/Accessibility_module.la
+@comment lib/orbit-2.0/Accessibility_module.a
+@comment lib/orbit-2.0/Accessibility_module.la
 lib/orbit-2.0/Accessibility_module.so
 lib/pkgconfig/cspi-1.0.pc
 lib/pkgconfig/libloginhelper-1.0.pc

@@ -1,0 +1,15 @@
+$OpenBSD: patch-registryd_registry-main_c,v 1.3 2011/04/06 19:46:17 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=633883
+(committed upstream in at-spi2-core)
+
+--- registryd/registry-main.c.orig	Thu Sep  9 04:51:14 2010
++++ registryd/registry-main.c	Wed Apr  6 21:19:51 2011
+@@ -198,6 +198,7 @@ main (int argc, char **argv)
+    * has been set.  If we have not been relocated, we will exit if the
+    * at-spi-dbus key has been set.
+    */
++  g_type_init ();
+   gconf_client = gconf_client_get_default ();
+ #ifdef RELOCATE
+   need_to_quit = !gconf_client_get_bool (gconf_client, CORBA_GCONF_KEY, NULL);
