@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.283 2011/03/30 09:28:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.284 2011/04/06 12:46:19 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -143,6 +143,7 @@
      SUBDIR += mpeg_encode
      SUBDIR += mpeg_play
      SUBDIR += mplex
+     SUBDIR += mscgen
      SUBDIR += netpbm
      SUBDIR += ocrad
      SUBDIR += openexr
