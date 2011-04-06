@@ -1,9 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:43 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/04/06 18:52:21 pvalchev Exp $
 ${P5ARCH}/
 ${P5ARCH}/Net/
 ${P5ARCH}/Net/RawIP/
 ${P5ARCH}/Net/RawIP.pm
+${P5ARCH}/Net/RawIP/ethhdr.pm
+${P5ARCH}/Net/RawIP/generichdr.pm
+${P5ARCH}/Net/RawIP/icmphdr.pm
+${P5ARCH}/Net/RawIP/iphdr.pm
 ${P5ARCH}/Net/RawIP/libpcap.pod
+${P5ARCH}/Net/RawIP/opt.pm
+${P5ARCH}/Net/RawIP/tcphdr.pm
+${P5ARCH}/Net/RawIP/udphdr.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/RawIP/
@@ -12,3 +19,15 @@ ${P5ARCH}/auto/Net/RawIP/RawIP.so
 ${P5ARCH}/auto/Net/RawIP/autosplit.ix
 @man man/man3p/Net::RawIP.3p
 @man man/man3p/Net::RawIP::libpcap.3p
+share/examples/p5-Net-RawIP/
+share/examples/p5-Net-RawIP/DoS_linux.2.2.7-9
+share/examples/p5-Net-RawIP/iflist
+share/examples/p5-Net-RawIP/ip_rt_dev
+share/examples/p5-Net-RawIP/ipopt_traceroute
+share/examples/p5-Net-RawIP/land
+share/examples/p5-Net-RawIP/macof
+share/examples/p5-Net-RawIP/oshare
+share/examples/p5-Net-RawIP/ping
+share/examples/p5-Net-RawIP/sniff.pl
+share/examples/p5-Net-RawIP/traceroute
+share/examples/p5-Net-RawIP/watch
