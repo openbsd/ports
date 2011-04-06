@@ -1,0 +1,9 @@
+Glade is a RAD tool to enable quick & easy development of user
+interfaces for the GTK+ toolkit and the GNOME desktop environment.
+The user interfaces designed in Glade are stored in XML format, enabling
+easy integration with external tools.
+In particular libglade can load the XML files and create the interfaces
+at runtime. The DTD for the XML files is included with libglade, and is
+also at http://glade.gnome.org/glade-2.0.dtd.
+Other tools are available which can turn the XML files into source code
+in languages such as C++, Perl and Python.
