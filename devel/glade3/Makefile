@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/04/05 15:56:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/04/06 06:03:07 ajacoutot Exp $
 
 COMMENT=		user interface builder for the GTK2+ toolkit
 
@@ -35,7 +35,7 @@ WANTLIB += z dbus-glib-1 gnomeui-2 GL Xxf86vm drm xcb-shm
 MODULES=		devel/gettext \
 			x11/gnome
     
-LIB_DEPENDS=            x11/dbus-glib \
+LIB_DEPENDS=		x11/dbus-glib \
 			x11/gnome/libgnomeui
 RUN_DEPENDS=		x11/gnome/devhelp
 
@@ -46,7 +46,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
 			--disable-python
-CONFIGURE_ENV=          CPPFLAGS="-pthread -I${LOCALBASE}/include"      \
-                        LDFLAGS="-pthread -L${LOCALBASE}/lib"
+CONFIGURE_ENV=		CPPFLAGS="-pthread -I${LOCALBASE}/include"      \
+			LDFLAGS="-pthread -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
