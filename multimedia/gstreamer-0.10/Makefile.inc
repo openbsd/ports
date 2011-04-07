@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2011/03/07 19:42:16 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2011/04/07 12:46:05 ajacoutot Exp $
 
 CATEGORIES ?=	multimedia devel
 
@@ -23,7 +23,8 @@ USE_LIBTOOL ?=		Yes
 # avoid compiling plugins as static libraries
 LIBTOOL_FLAGS ?=	--tag=disable-static
 
-BUILD_DEPENDS +=	devel/bison
+BUILD_DEPENDS +=	devel/bison \
+			devel/gobject-introspection
 
 AUTOCONF_VERSION ?=	2.62
 CONFIGURE_STYLE ?=	autoconf
@@ -35,8 +36,8 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-default-videosink=xvimagesink \
 			--with-default-videosrc=v4l2src \
 			--with-default-visualizer=goom \
+			--enable-introspection \
 			--disable-silent-rules \
-			--disable-introspection \
 			--disable-gtk-doc \
 			--disable-valgrind \
 			--disable-static
