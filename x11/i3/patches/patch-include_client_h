@@ -1,0 +1,16 @@
+$OpenBSD: patch-include_client_h,v 1.1 2011/04/07 08:58:10 dcoppa Exp $
+--- include/client.h.orig	Wed Jan 19 21:26:37 2011
++++ include/client.h	Wed Apr  6 12:53:48 2011
+@@ -32,6 +32,12 @@ void client_remove_from_container(xcb_connection_t *co
+ void client_warp_pointer_into(xcb_connection_t *conn, Client *client);
+ 
+ /**
++ * Returns true if the client supports the given protocol atom (like WM_DELETE_WINDOW)
++ *
++ */
++bool client_supports_protocol(xcb_connection_t *conn, Client *client, xcb_atom_t atom);
++
++/**
+  * Kills the given window using WM_DELETE_WINDOW or xcb_kill_window
+  *
+  */

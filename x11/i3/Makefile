@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2011/03/14 12:55:18 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2011/04/07 08:58:10 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-3.e-bf2
 PKGNAME =	i3-3.5.2
+REVISION =	0
 
 CATEGORIES =	x11
 

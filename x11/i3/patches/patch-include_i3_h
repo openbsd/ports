@@ -1,0 +1,12 @@
+$OpenBSD: patch-include_i3_h,v 1.1 2011/04/07 08:58:10 dcoppa Exp $
+--- include/i3.h.orig	Wed Jan 19 21:26:37 2011
++++ include/i3.h	Wed Apr  6 12:48:34 2011
+@@ -21,7 +21,7 @@
+ #ifndef _I3_H
+ #define _I3_H
+ 
+-#define NUM_ATOMS 21
++#define NUM_ATOMS 22
+ 
+ extern xcb_connection_t *global_conn;
+ extern xcb_key_symbols_t *keysyms;

@@ -1,0 +1,16 @@
+$OpenBSD: patch-include_util_h,v 1.3 2011/04/07 08:58:10 dcoppa Exp $
+--- include/util.h.orig	Wed Jan 19 21:26:37 2011
++++ include/util.h	Wed Apr  6 12:48:34 2011
+@@ -127,6 +127,12 @@ Client *get_last_focused_client(xcb_connection_t *conn
+                                 Client *exclude);
+ 
+ /**
++ * Sends WM_TAKE_FOCUS to the client
++ *
++ */
++void take_focus(xcb_connection_t *conn, Client *client);
++
++/**
+  * Sets the given client as focused by updating the data structures correctly,
+  * updating the X input focus and finally re-decorating both windows (to
+  * signalize the user the new focus situation)
