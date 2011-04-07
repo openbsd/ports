@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/04/04 13:14:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2011/04/07 07:51:54 ajacoutot Exp $
 
 COMMENT-main=	configuration database system for GNOME
 COMMENT-polkit=	PolicyKit integration for GConf2
@@ -8,6 +8,8 @@ GNOME_VERSION=	2.32.2
 
 PKGNAME-main=	gconf2-${GNOME_VERSION}
 PKGNAME-polkit=	gconf2-polkit-${GNOME_VERSION}
+
+REVISION-main=	0
 
 SHARED_LIBS +=	gconf-2              6.2      # 5.5
 
@@ -45,6 +47,8 @@ MODULES=	devel/gettext \
 
 MULTI_PACKAGES=	-main -polkit
 
+BUILD_DEPENDS=	devel/gobject-introspection
+
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		x11/gtk+2 \
 		devel/ORBit2 \
@@ -60,9 +64,9 @@ CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--disable-introspection \
 		--with-gtk=2.0 \
 		--without-openldap \
+		--enable-introspection \
 		--enable-defaults-service
 USE_GROFF =	Yes
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2011/04/04 13:14:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2011/04/07 07:51:54 ajacoutot Exp $
 @pkgpath devel/gconf2
 %%SHARED%%
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.defaults/*
@@ -30,6 +30,8 @@ lib/gio/
 lib/gio/modules/
 @comment lib/gio/modules/libgsettingsgconfbackend.a
 @comment lib/gio/modules/libgsettingsgconfbackend.la
+lib/girepository-1.0/
+lib/girepository-1.0/GConf-2.0.typelib
 lib/libgconf-2.a
 lib/libgconf-2.la
 lib/pkgconfig/
@@ -61,6 +63,8 @@ share/examples/gconf2/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/gconf2/xdg/autostart/gsettings-data-convert.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gsettings-data-convert.desktop
+share/gir-1.0/
+share/gir-1.0/GConf-2.0.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gconf/

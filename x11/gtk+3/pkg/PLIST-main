@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2011/04/06 07:49:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2011/04/07 07:45:02 ajacoutot Exp $
 @bin bin/gtk-query-immodules-3.0
 @bin bin/gtk3-demo
 include/gail-3.0/
@@ -276,6 +276,9 @@ include/gtk-3.0/unix-print/gtk/gtkprinter.h
 include/gtk-3.0/unix-print/gtk/gtkprintjob.h
 include/gtk-3.0/unix-print/gtk/gtkprintunixdialog.h
 include/gtk-3.0/unix-print/gtk/gtkunixprint.h
+lib/girepository-1.0/Gdk-3.0.typelib
+lib/girepository-1.0/GdkX11-3.0.typelib
+lib/girepository-1.0/Gtk-3.0.typelib
 lib/gtk-3.0/
 lib/gtk-3.0/3.0.0/
 lib/gtk-3.0/3.0.0/immodules/
@@ -347,6 +350,9 @@ share/aclocal/gtk-3.0.m4
 share/examples/gtk+3/
 share/examples/gtk+3/gtk-3.0/
 share/examples/gtk+3/gtk-3.0/im-multipress.conf
+share/gir-1.0/Gdk-3.0.gir
+share/gir-1.0/GdkX11-3.0.gir
+share/gir-1.0/Gtk-3.0.gir
 share/glib-2.0/schemas/org.gtk.Settings.FileChooser.gschema.xml
 share/gtk-3.0/
 share/gtk-3.0/demo/

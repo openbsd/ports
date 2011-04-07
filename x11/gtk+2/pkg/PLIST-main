@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2011/04/06 07:47:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2011/04/07 07:45:32 ajacoutot Exp $
 @conflict gail-*
 @pkgpath x11/gtk+2
 bin/gtk-builder-convert
@@ -271,6 +271,9 @@ include/gtk-unix-print-2.0/gtk/gtkprinter.h
 include/gtk-unix-print-2.0/gtk/gtkprintjob.h
 include/gtk-unix-print-2.0/gtk/gtkprintunixdialog.h
 include/gtk-unix-print-2.0/gtk/gtkunixprint.h
+lib/girepository-1.0/Gdk-2.0.typelib
+lib/girepository-1.0/GdkX11-2.0.typelib
+lib/girepository-1.0/Gtk-2.0.typelib
 lib/gtk-2.0/
 lib/gtk-2.0/2.10.0/
 lib/gtk-2.0/2.10.0/engines/
@@ -346,6 +349,9 @@ share/aclocal/gtk-2.0.m4
 share/examples/gtk+2/
 share/examples/gtk+2/gtk-2.0/
 share/examples/gtk+2/gtk-2.0/im-multipress.conf
+share/gir-1.0/Gdk-2.0.gir
+share/gir-1.0/GdkX11-2.0.gir
+share/gir-1.0/Gtk-2.0.gir
 share/gtk-2.0/
 share/gtk-2.0/demo/
 share/gtk-2.0/demo/alphatest.png

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/10/18 16:42:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/04/07 07:56:25 ajacoutot Exp $
 include/totem-pl-parser/
 include/totem-pl-parser/1/
 include/totem-pl-parser/1/plparser/
@@ -8,6 +8,7 @@ include/totem-pl-parser/1/plparser/totem-pl-parser-features.h
 include/totem-pl-parser/1/plparser/totem-pl-parser-mini.h
 include/totem-pl-parser/1/plparser/totem-pl-parser.h
 include/totem-pl-parser/1/plparser/totem-pl-playlist.h
+lib/girepository-1.0/TotemPlParser-1.0.typelib
 lib/libtotem-plparser-mini.a
 lib/libtotem-plparser-mini.la
 @lib lib/libtotem-plparser-mini.so.${LIBtotem-plparser-mini_VERSION}
@@ -16,6 +17,7 @@ lib/libtotem-plparser.la
 @lib lib/libtotem-plparser.so.${LIBtotem-plparser_VERSION}
 lib/pkgconfig/totem-plparser-mini.pc
 lib/pkgconfig/totem-plparser.pc
+share/gir-1.0/TotemPlParser-1.0.gir
 share/gtk-doc/html/totem-pl-parser/
 share/gtk-doc/html/totem-pl-parser/TotemPlParser.html
 share/gtk-doc/html/totem-pl-parser/TotemPlPlaylist.html

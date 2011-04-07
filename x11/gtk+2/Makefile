@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2011/04/06 07:47:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2011/04/07 07:45:32 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +13,7 @@ PKGNAME-main=	gtk+2-${V}
 PKGNAME-docs=	gtk+2-docs-${V}
 PKGNAME-cups=	gtk+2-cups-${V}
 
-REVISION-main=	0
+REVISION-main=	1
 
 CATEGORIES=	x11 devel
 
@@ -50,9 +50,9 @@ RUN_DEPENDS-main= ${RUN_DEPENDS} \
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		devel/glib2>=2.26.0 \
-		devel/pango \
-		devel/atk \
-		graphics/gdk-pixbuf2
+		devel/pango>=1.28.4p0 \
+		devel/atk>=2.0.0p0 \
+		graphics/gdk-pixbuf2>=2.22.1p0
 
 WANTLIB-main += ${WANTLIB} c pthread glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB-main += gio-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0 atk-1.0
@@ -60,6 +60,8 @@ WANTLIB-main += png
 
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
+
+BUILD_DEPENDS=	devel/gobject-introspection
 
 LIB_DEPENDS-docs= # empty
 RUN_DEPENDS-docs= # empty
@@ -86,7 +88,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2/ \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--disable-introspection \
+		--enable-introspection \
 		--enable-man=no \
 		--with-xinput=yes \
 		--disable-papi \

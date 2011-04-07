@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/11/15 19:46:10 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2011/04/07 07:50:02 ajacoutot Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
@@ -7,6 +7,8 @@ GNOME_PROJECT=		vte
 GNOME_VERSION=		0.26.2
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python= 	py-${DISTNAME}
+
+REVISION-main=		0
 
 CATEGORIES=		devel
 
@@ -43,7 +45,8 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 
 WANTLIB-python= 	${WANTLIB} ffi vte>=14 gtk-x11-2.0
 
-BUILD_DEPENDS=		${RUN_DEPENDS-python}
+BUILD_DEPENDS=		devel/gobject-introspection
+
 LIB_DEPENDS-python=	${LIB_DEPENDS-main} \
 			${BASE_PKGPATH} \
 			devel/libffi
@@ -53,8 +56,8 @@ RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS} \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-python \
-			--disable-Bsymbolic \
-			--enable-introspection=no
+			--enable-introspection \
+			--disable-Bsymbolic
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
