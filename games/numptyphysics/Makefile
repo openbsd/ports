@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2011/01/17 11:39:20 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2011/04/07 10:09:30 dcoppa Exp $
 
 COMMENT-main =		physics-based drawing puzzle game
 COMMENT-npcomplete =	extra levels for physics-based drawing puzzle game
 
 DISTNAME =		numptyphysics-0.3.r20090104
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		8
+REVISION-main =		9
 PKGNAME-npcomplete =	npcomplete-0.0.r20090116
 REVISION-npcomplete =	3
 
@@ -22,8 +22,6 @@ MASTER_SITES =	http://mirror.amdmi3.ru/distfiles/
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		npcomplete-0.0.r20090116.tar.bz2
-
-BROKEN-sparc64 =SIGBUS on sparc64 when starting
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM =	Yes

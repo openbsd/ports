@@ -1,0 +1,42 @@
+$OpenBSD: patch-Box2D_Source_Common_b2Settings_cpp,v 1.1 2011/04/07 10:09:30 dcoppa Exp $
+
+Fix LP64 architectures (i.e. sparc64)
+
+--- Box2D/Source/Common/b2Settings.cpp.orig	Thu Apr  7 08:59:55 2011
++++ Box2D/Source/Common/b2Settings.cpp	Thu Apr  7 09:06:07 2011
+@@ -19,6 +19,12 @@
+ #include "b2Settings.h"
+ #include <cstdlib>
+ 
++#if defined(_LP64)
++#define PADDING 8
++#else
++#define PADDING 4
++#endif
++
+ b2Version b2_version = {2, 0, 1};
+ 
+ int32 b2_byteCount = 0;
+@@ -28,11 +34,11 @@ int32 b2_byteCount = 0;
+ // Memory allocators. Modify these to use your own allocator.
+ void* b2Alloc(int32 size)
+ {
+-	size += 4;
++	size += PADDING;
+ 	b2_byteCount += size;
+ 	char* bytes = (char*)malloc(size);
+ 	*(int32*)bytes = size;
+-	return bytes + 4;
++	return bytes + PADDING;
+ }
+ 
+ void b2Free(void* mem)
+@@ -43,7 +49,7 @@ void b2Free(void* mem)
+ 	}
+ 
+ 	char* bytes = (char*)mem;
+-	bytes -= 4;
++	bytes -= PADDING;
+ 	int32 size = *(int32*)bytes;
+ 	b2Assert(b2_byteCount >= size);
+ 	b2_byteCount -= size;
