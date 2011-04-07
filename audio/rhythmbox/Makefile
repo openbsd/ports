@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2011/04/05 16:37:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2011/04/07 19:07:24 ajacoutot Exp $
 
 # coherence plugin is installed but not activated by default so we don't
 # enforce dependency on multimedia/coherence to lower requirements
@@ -79,9 +79,12 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--without-hal \
 			--without-libbrasero-media \
 			--without-libnautilus-burn \
-			--disable-vala \
 			--disable-fm-radio \
 			--disable-lirc
+
+# XXX needs vala<=0.10, ours is too new
+CONFIGURE_ARGS +=	--disable-vala
+
 USE_GROFF =	Yes
 
 # requires libmtp >= 0.3
