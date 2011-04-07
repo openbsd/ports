@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2011/04/05 06:06:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2011/04/07 06:51:04 ajacoutot Exp $
 
 COMMENT=		library for layout and rendering of text
 
 V=			1.28.4
 DISTNAME=		pango-${V}
+
+REVISION=		0
 
 SHARED_LIBS +=  pango-1.0            1802.0   # .2800.0
 SHARED_LIBS +=  pangox-1.0           1802.0   # .2800.0
@@ -32,6 +34,8 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext
 
+BUILD_DEPENDS=		devel/gobject-introspection
+
 LIB_DEPENDS=		devel/glib2 \
 			graphics/cairo
 
@@ -43,7 +47,7 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
 			--disable-silent-rules \
-			--disable-introspection
+			--enable-introspection
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
 
 FAKE_FLAGS=		aliasdir=${PREFIX}/share/examples/pango \

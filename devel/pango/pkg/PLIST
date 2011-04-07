@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2010/09/30 07:46:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2011/04/07 06:51:04 ajacoutot Exp $
 %%SHARED%%
 @bin bin/pango-querymodules
 @bin bin/pango-view
@@ -38,6 +38,11 @@ include/pango-1.0/pango/pangoft2.h
 include/pango-1.0/pango/pangox.h
 include/pango-1.0/pango/pangoxft-render.h
 include/pango-1.0/pango/pangoxft.h
+lib/girepository-1.0/
+lib/girepository-1.0/Pango-1.0.typelib
+lib/girepository-1.0/PangoCairo-1.0.typelib
+lib/girepository-1.0/PangoFT2-1.0.typelib
+lib/girepository-1.0/PangoXft-1.0.typelib
 lib/libpango-1.0.a
 lib/libpango-1.0.la
 lib/libpangocairo-1.0.a
@@ -89,6 +94,11 @@ share/examples/pango/pango.modules
 @sample ${SYSCONFDIR}/pango/pango.modules
 share/examples/pango/pangox.aliases
 @sample ${SYSCONFDIR}/pango/pangox.aliases
+share/gir-1.0/
+share/gir-1.0/Pango-1.0.gir
+share/gir-1.0/PangoCairo-1.0.gir
+share/gir-1.0/PangoFT2-1.0.gir
+share/gir-1.0/PangoXft-1.0.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/pango/
