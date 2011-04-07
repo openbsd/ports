@@ -1,0 +1,16 @@
+$OpenBSD: patch-clutter_clutter-json_h_in,v 1.1 2011/04/07 07:44:46 jasper Exp $
+
+Only include one top header, instead of all three.
+
+--- clutter/clutter-json.h.in.orig	Thu Apr  7 09:36:58 2011
++++ clutter/clutter-json.h.in	Thu Apr  7 09:37:10 2011
+@@ -6,8 +6,6 @@
+  * without changing the other headers.
+  */
+ 
+-#include "@JSON_PREFIX@/json-types.h"
+-#include "@JSON_PREFIX@/json-parser.h"
+-#include "@JSON_PREFIX@/json-generator.h"
++#include "@JSON_PREFIX@/json-glib.h"
+ 
+ #endif /* __CLUTTER_JSON_H__ */

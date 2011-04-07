@@ -1,0 +1,34 @@
+$OpenBSD: patch-clutter_clutter-animation_c,v 1.1 2011/04/07 07:44:46 jasper Exp $
+
+Fix spello, gobject-introspection would choke as it wouldn't be able to
+find the n_properies symbol.
+
+--- clutter/clutter-animation.c.orig	Thu Apr  7 09:39:06 2011
++++ clutter/clutter-animation.c	Thu Apr  7 09:39:26 2011
+@@ -1982,7 +1982,7 @@ clutter_actor_animate (ClutterActor *actor,
+  * @n_properties: number of property names and values
+  * @properties: (array length=n_properties) (element-type utf8): a vector
+  *    containing the property names to set
+- * @values: (array length=n_properies): a vector containing the
++ * @values: (array length=n_properties): a vector containing the
+  *    property values to set
+  *
+  * Animates the given list of properties of @actor between the current
+@@ -2034,7 +2034,7 @@ clutter_actor_animatev (ClutterActor        *actor,
+  * @n_properties: number of property names and values
+  * @properties: (array length=n_properties) (element-type utf8): a vector
+  *    containing the property names to set
+- * @values: (array length=n_properies): a vector containing the
++ * @values: (array length=n_properties): a vector containing the
+  *    property values to set
+  *
+  * Animates the given list of properties of @actor between the current
+@@ -2089,7 +2089,7 @@ clutter_actor_animate_with_timelinev (ClutterActor    
+  * @n_properties: number of property names and values
+  * @properties: (array length=n_properties) (element-type utf8): a vector
+  *    containing the property names to set
+- * @values: (array length=n_properies): a vector containing the
++ * @values: (array length=n_properties): a vector containing the
+  *    property values to set
+  *
+  * Animates the given list of properties of @actor between the current

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/09/27 15:11:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/04/07 07:44:46 jasper Exp $
 include/clutter-${MAJOR}/
 include/clutter-${MAJOR}/clutter/
 include/clutter-${MAJOR}/clutter/clutter-actor.h
@@ -76,6 +76,8 @@ include/clutter-${MAJOR}/cogl/cogl-texture.h
 include/clutter-${MAJOR}/cogl/cogl-types.h
 include/clutter-${MAJOR}/cogl/cogl-vertex-buffer.h
 include/clutter-${MAJOR}/cogl/cogl.h
+lib/girepository-${MAJOR}/Clutter-${MAJOR}.typelib
+lib/girepository-${MAJOR}/Cogl-${MAJOR}.typelib
 lib/libclutter-glx-${MAJOR}.la
 @lib lib/libclutter-glx-${MAJOR}.so.${LIBclutter-glx-1.0_VERSION}
 lib/pkgconfig/clutter-${MAJOR}.pc
@@ -83,6 +85,8 @@ lib/pkgconfig/clutter-glx-${MAJOR}.pc
 lib/pkgconfig/clutter-x11-${MAJOR}.pc
 lib/pkgconfig/cogl-${MAJOR}.pc
 lib/pkgconfig/cogl-gl-${MAJOR}.pc
+share/gir-${MAJOR}/Clutter-${MAJOR}.gir
+share/gir-${MAJOR}/Cogl-${MAJOR}.gir
 share/gtk-doc/html/clutter/
 share/gtk-doc/html/clutter/ClutterActor.html
 share/gtk-doc/html/clutter/ClutterAlpha.html
