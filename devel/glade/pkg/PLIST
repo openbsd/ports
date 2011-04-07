@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/04/06 12:15:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/04/07 08:35:07 ajacoutot Exp $
 @conflict glade3-*
 @bin bin/glade
 @bin bin/glade-previewer
@@ -36,6 +36,7 @@ include/libgladeui-2.0/gladeui/glade-widget-adaptor.h
 include/libgladeui-2.0/gladeui/glade-widget.h
 include/libgladeui-2.0/gladeui/glade-xml-utils.h
 include/libgladeui-2.0/gladeui/glade.h
+lib/girepository-1.0/Gladeui-2.0.typelib
 lib/glade/
 lib/glade/modules/
 @comment lib/glade/modules/libgladegtk.a
@@ -49,6 +50,7 @@ lib/libgladeui-2.la
 @lib lib/libgladeui-2.so.${LIBgladeui-2_VERSION}
 lib/pkgconfig/gladeui-2.0.pc
 share/applications/glade.desktop
+share/gir-1.0/Gladeui-2.0.gir
 share/glade/
 share/glade/catalogs/
 share/glade/catalogs/glade-catalog.dtd
