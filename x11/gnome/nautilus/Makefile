@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2011/01/18 20:03:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2011/04/07 09:21:02 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -18,7 +18,7 @@ COMMENT=		GNOME shell and file manager
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		2.32.2.1
 
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
 
@@ -46,7 +46,9 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-BUILD_DEPENDS=		misc/shared-mime-info>=0.21
+BUILD_DEPENDS=		misc/shared-mime-info>=0.21 \
+			devel/gobject-introspection
+
 RUN_DEPENDS=		misc/shared-mime-info>=0.21 \
 			x11/gnome/icon-theme \
 			x11/gnome/gvfs>=1.0.3
@@ -63,9 +65,9 @@ USE_GROFF =	Yes
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
-			--disable-introspection \
 			--disable-update-mimedb \
-			--disable-packagekit
+			--disable-packagekit \
+			--enable-introspection
 # XXX build error when textproc/exempi is installed
 CONFIGURE_ARGS+=	--enable-xmp=no
 
@@ -73,5 +75,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 REGRESS_IS_INTERACTIVE=x11
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/libnautilus-extension/Makefile.in
 
 .include <bsd.port.mk>

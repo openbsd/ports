@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2010/09/30 07:46:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2011/04/07 09:21:02 ajacoutot Exp $
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
 @bin bin/nautilus-connect-server
@@ -16,6 +16,7 @@ include/nautilus/libnautilus-extension/nautilus-menu-provider.h
 include/nautilus/libnautilus-extension/nautilus-menu.h
 include/nautilus/libnautilus-extension/nautilus-property-page-provider.h
 include/nautilus/libnautilus-extension/nautilus-property-page.h
+lib/girepository-1.0/Nautilus-2.0.typelib
 lib/libnautilus-extension.a
 lib/libnautilus-extension.la
 lib/pkgconfig/libnautilus-extension.pc
@@ -31,6 +32,7 @@ share/applications/nautilus-folder-handler.desktop
 share/applications/nautilus-home.desktop
 share/applications/nautilus.desktop
 share/applications/network-scheme.desktop
+share/gir-1.0/Nautilus-2.0.gir
 share/gtk-doc/html/libnautilus-extension/
 share/gtk-doc/html/libnautilus-extension/ch01.html
 share/gtk-doc/html/libnautilus-extension/home.png
@@ -171,8 +173,6 @@ share/locale/oc/LC_MESSAGES/nautilus.mo
 share/locale/or/LC_MESSAGES/nautilus.mo
 share/locale/pa/LC_MESSAGES/nautilus.mo
 share/locale/pl/LC_MESSAGES/nautilus.mo
-share/locale/ps/
-share/locale/ps/LC_MESSAGES/
 share/locale/ps/LC_MESSAGES/nautilus.mo
 share/locale/pt/LC_MESSAGES/nautilus.mo
 share/locale/pt_BR/LC_MESSAGES/nautilus.mo
@@ -184,8 +184,6 @@ share/locale/sk/LC_MESSAGES/nautilus.mo
 share/locale/sl/LC_MESSAGES/nautilus.mo
 share/locale/sq/LC_MESSAGES/nautilus.mo
 share/locale/sr/LC_MESSAGES/nautilus.mo
-share/locale/sr@ije/
-share/locale/sr@ije/LC_MESSAGES/
 share/locale/sr@ije/LC_MESSAGES/nautilus.mo
 share/locale/sr@latin/LC_MESSAGES/nautilus.mo
 share/locale/sv/LC_MESSAGES/nautilus.mo
@@ -205,8 +203,6 @@ share/locale/uz@cyrillic/
 share/locale/uz@cyrillic/LC_MESSAGES/
 share/locale/uz@cyrillic/LC_MESSAGES/nautilus.mo
 share/locale/vi/LC_MESSAGES/nautilus.mo
-share/locale/wa/
-share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/nautilus.mo
 share/locale/xh/LC_MESSAGES/nautilus.mo
 share/locale/yi/LC_MESSAGES/nautilus.mo
