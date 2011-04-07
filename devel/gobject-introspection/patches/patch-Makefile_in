@@ -1,4 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.9 2011/04/07 15:19:34 jasper Exp $
+$OpenBSD: patch-Makefile_in,v 1.10 2011/04/07 16:16:21 ajacoutot Exp $
 --- Makefile.in.orig	Wed Mar 30 22:37:04 2011
 +++ Makefile.in	Thu Apr  7 11:02:53 2011
 @@ -539,7 +539,7 @@ oldincludedir = @oldincludedir@
@@ -10,12 +10,3 @@ $OpenBSD: patch-Makefile_in,v 1.9 2011/04/07 15:19:34 jasper Exp $
  pkgpythondir = @pkgpythondir@
  prefix = @prefix@
  program_transform_name = @program_transform_name@
-@@ -614,7 +614,7 @@ _gir_includes = $(foreach include,$($(_gir_name)_INCLU
- _gir_export_packages = $(foreach pkg,$($(_gir_name)_EXPORT_PACKAGES),--pkg-export=$(pkg))
- 
- # Reuse the LIBTOOL variable from by automake if it's set
--_gir_libtool = $(if $(LIBTOOL),--libtool="$(LIBTOOL)")
-+_gir_libtool = $(if $(LIBTOOL),--libtool="${LIBTOOL}")
- 
- # Macros for AM_SILENT_RULES prettiness
- _gir_verbosity = $(if $(AM_DEFAULT_VERBOSITY),$(AM_DEFAULT_VERBOSITY),1)

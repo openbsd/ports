@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/04/07 15:09:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2011/04/07 16:16:21 ajacoutot Exp $
 
 COMMENT=		GObject Introspection
 
@@ -50,12 +50,8 @@ CFLAGS+=		-pthread
 SUBST_VARS+=		MODPY_SITEPKG LIBTOOL CC
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Makefile.in \
-		${WRKSRC}/Makefile.introspection \
-		${WRKSRC}/giscanner/dumper.py \
+	${SUBST_CMD} ${WRKSRC}/giscanner/dumper.py \
 		${WRKSRC}/giscanner/scannermain.py \
-		${WRKSRC}/tests/scanner/Makefile.in \
-		${WRKSRC}/tests/offsets/Makefile.in \
 		${WRKSRC}/tools/g-ir-scanner.in
 	perl -pi -e "s,'cc','${CC}'," ${WRKSRC}/giscanner/sourcescanner.py
 
