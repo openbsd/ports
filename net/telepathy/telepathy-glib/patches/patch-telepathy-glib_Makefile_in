@@ -1,9 +1,7 @@
-$OpenBSD: patch-telepathy-glib_Makefile_in,v 1.5 2011/04/05 18:52:26 jasper Exp $
+$OpenBSD: patch-telepathy-glib_Makefile_in,v 1.6 2011/04/07 15:24:50 jasper Exp $
 
 - For some reason on mips64(el), nm doesn't create the _gen/abi.nm file,
 but returns 1. This patch lets the build continue.
-
-- Be sure to use the correct libtool.
 
 --- telepathy-glib/Makefile.in.orig	Thu Mar 31 15:14:10 2011
 +++ telepathy-glib/Makefile.in	Tue Apr  5 17:05:47 2011
@@ -16,21 +14,3 @@ but returns 1. This patch lets the build continue.
  @HAVE_LD_VERSION_SCRIPT_TRUE@	grep " [DT] " < _gen/abi.nm > _gen/abi.funcs
  @HAVE_LD_VERSION_SCRIPT_TRUE@	cut -d" " -f3 < _gen/abi.funcs > _gen/abi.funcnames
  @HAVE_LD_VERSION_SCRIPT_TRUE@	grep "^tp" < _gen/abi.funcnames > _gen/abi.tpfuncnames
-@@ -1753,7 +1753,7 @@ _gen/tp-cli-%-body.h _gen/tp-cli-%.h: _gen/tp-spec-%.x
- @HAVE_INTROSPECTION_TRUE@		-I$(top_srcdir) \
- @HAVE_INTROSPECTION_TRUE@		--include=GLib-2.0 \
- @HAVE_INTROSPECTION_TRUE@		--include=Gio-2.0 \
--@HAVE_INTROSPECTION_TRUE@		--libtool="$(top_builddir)/libtool" \
-+@HAVE_INTROSPECTION_TRUE@		--libtool="${LIBTOOL}" \
- @HAVE_INTROSPECTION_TRUE@		--library=libtelepathy-glib.la \
- @HAVE_INTROSPECTION_TRUE@		--pkg gio-2.0 \
- @HAVE_INTROSPECTION_TRUE@		--pkg dbus-glib-1 \
-@@ -1766,7 +1766,7 @@ _gen/tp-cli-%-body.h _gen/tp-cli-%.h: _gen/tp-spec-%.x
- @HAVE_INTROSPECTION_TRUE@	@rm -f _gen/$@.tmp
- 
- @HAVE_INTROSPECTION_TRUE@%.typelib: %.gir $(INTROSPECTION_COMPILER)
--@HAVE_INTROSPECTION_TRUE@	$(AM_V_GEN)$(top_builddir)/libtool --mode=execute \
-+@HAVE_INTROSPECTION_TRUE@	${LIBTOOL} --mode=execute \
- @HAVE_INTROSPECTION_TRUE@	    $(INTROSPECTION_COMPILER) \
- @HAVE_INTROSPECTION_TRUE@	        --includedir=$(srcdir) \
- @HAVE_INTROSPECTION_TRUE@	        --includedir=. \
