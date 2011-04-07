@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2010/11/17 12:24:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.86 2011/04/07 09:29:51 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,8 @@ COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	2.32.1
+
+REVISION=	0
 
 SHARED_LIBS=	panel-applet-2            4.0 # .2.67
 SHARED_LIBS +=  panel-applet-3            0.0 # 0.5
@@ -41,6 +43,8 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
+BUILD_DEPENDS=	devel/gobject-introspection
+
 LIB_DEPENDS= 	databases/evolution-data-server \
 		audio/libcanberra \
 		devel/libtool,-ltdl \
@@ -60,8 +64,8 @@ FAKE_FLAGS=	dbus_confdir=${PREFIX}/share/examples/gnome-panel/dbus-1/system.d
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--disable-introspection \
-		--disable-network-manager
+		--disable-network-manager \
+		--enable-introspection
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

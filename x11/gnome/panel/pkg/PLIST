@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2010/09/30 17:04:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.43 2011/04/07 09:29:51 ajacoutot Exp $
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
 @bin bin/panel-test-applets
@@ -13,6 +13,7 @@ include/panel-2.0/GNOME_Panel.h
 include/panel-2.0/panel-applet-enums.h
 include/panel-2.0/panel-applet-gconf.h
 include/panel-2.0/panel-applet.h
+lib/girepository-1.0/PanelApplet-3.0.typelib
 lib/gnome-panel/
 lib/gnome-panel/modules/
 lib/gnome-panel/modules/libpanel-applets-bonobo.a
@@ -37,6 +38,7 @@ share/dbus-1/services/org.gnome.panel.applet.ClockAppletFactory.service
 share/dbus-1/services/org.gnome.panel.applet.FishAppletFactory.service
 share/dbus-1/services/org.gnome.panel.applet.NotificationAreaAppletFactory.service
 share/dbus-1/services/org.gnome.panel.applet.WnckletFactory.service
+share/gir-1.0/PanelApplet-3.0.gir
 share/gnome-2.0/ui/GNOME_Panel_Popup.xml
 share/gnome-panel/
 share/gnome-panel/applets/
@@ -186,6 +188,11 @@ share/gnome/help/clock/ru/clock.xml
 share/gnome/help/clock/ru/figures/
 share/gnome/help/clock/ru/figures/clock_applet.png
 share/gnome/help/clock/ru/legal.xml
+share/gnome/help/clock/sl/
+share/gnome/help/clock/sl/clock.xml
+share/gnome/help/clock/sl/figures/
+share/gnome/help/clock/sl/figures/clock_applet.png
+share/gnome/help/clock/sl/legal.xml
 share/gnome/help/clock/sr/
 share/gnome/help/clock/sr/clock.xml
 share/gnome/help/clock/sr/figures/
@@ -297,6 +304,11 @@ share/gnome/help/fish/ru/figures/
 share/gnome/help/fish/ru/figures/fish_applet.png
 share/gnome/help/fish/ru/fish.xml
 share/gnome/help/fish/ru/legal.xml
+share/gnome/help/fish/sl/
+share/gnome/help/fish/sl/figures/
+share/gnome/help/fish/sl/figures/fish_applet.png
+share/gnome/help/fish/sl/fish.xml
+share/gnome/help/fish/sl/legal.xml
 share/gnome/help/fish/sv/
 share/gnome/help/fish/sv/figures/
 share/gnome/help/fish/sv/figures/fish_applet.png
@@ -525,6 +537,7 @@ share/omf/clock/clock-pa.omf
 share/omf/clock/clock-pt.omf
 share/omf/clock/clock-pt_BR.omf
 share/omf/clock/clock-ru.omf
+share/omf/clock/clock-sl.omf
 share/omf/clock/clock-sr.omf
 share/omf/clock/clock-sv.omf
 share/omf/clock/clock-th.omf
@@ -548,6 +561,7 @@ share/omf/fish/fish-ja.omf
 share/omf/fish/fish-ko.omf
 share/omf/fish/fish-oc.omf
 share/omf/fish/fish-ru.omf
+share/omf/fish/fish-sl.omf
 share/omf/fish/fish-sv.omf
 share/omf/fish/fish-th.omf
 share/omf/fish/fish-uk.omf
