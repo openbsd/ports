@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/04/07 06:42:30 ajacoutot Exp $
 
 COMMENT=	graphic library for GTK+2
 
 V=		2.22.1
 DISTNAME=	gdk-pixbuf-${V}
+
+REVISION=	0
 
 CATEGORIES=	graphics
 
@@ -26,6 +28,8 @@ WANTLIB += png tiff
 
 MASTER_SITES=	${MASTER_SITE_GNOME:=sources/gdk-pixbuf/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 
+BUILD_DEPENDS=	devel/gobject-introspection
+
 LIB_DEPENDS=	devel/glib2>=2.26.0 \
 		graphics/jasper \
 		graphics/png \
@@ -42,8 +46,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--disable-introspection \
 		--disable-Bsymbolic \
+		--enable-introspection \
 		--with-libjasper
 
 .include <bsd.port.mk>
