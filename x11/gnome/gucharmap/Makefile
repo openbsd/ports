@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/04/05 16:37:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2011/04/07 11:23:29 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
 GNOME_VERSION=		2.32.1
+REVISION=		0
 
 SHARED_LIBS +=	gucharmap            2.0      # .7.0
 
@@ -29,13 +30,19 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
+BUILD_DEPENDS=		devel/gobject-introspection
+
+# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
+# instead of the actual library
+USE_LIBTOOL=		gnu
+
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gucharmap
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-python-bindings \
-			--disable-introspection
+			--enable-introspection
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

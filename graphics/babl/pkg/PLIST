@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/04/24 13:07:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/07 11:17:08 jasper Exp $
 include/babl-0.1/
 include/babl-0.1/babl/
 include/babl-0.1/babl/babl-macros.h
@@ -20,7 +20,11 @@ lib/babl-0.1/gimp-8bit.so
 lib/babl-0.1/naive-CMYK.so
 @comment lib/babl-0.1/sse-fixups.la
 lib/babl-0.1/sse-fixups.so
+lib/girepository-1.0/
+lib/girepository-1.0/Babl-0.1.typelib
 lib/libbabl-0.1.la
 @lib lib/libbabl-0.1.so.${LIBbabl-0.1_VERSION}
 lib/pkgconfig/
 lib/pkgconfig/babl.pc
+share/gir-1.0/
+share/gir-1.0/Babl-0.1.gir

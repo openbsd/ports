@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/12/02 13:52:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/04/07 11:21:01 jasper Exp $
 
 COMMENT =	plugin framework library
 
 VERSION =	0.2.2
 DISTNAME =	ethos-${VERSION}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS=	ethos-1.0 1.0 \
 		ethos-ui-1.0 0.0
@@ -23,19 +23,22 @@ PERMIT_DISTFILES_FTP =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-shave \
 			--disable-glibtest \
-			--enable-introspection=no
+			--enable-introspection
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-USE_LIBTOOL =	Yes
+# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
+# instead of the actual library
+USE_LIBTOOL=	gnu
 USE_GMAKE =	Yes
 
 MODULES =	lang/python \
 		devel/gettext \
 		textproc/intltool
 
-BUILD_DEPENDS +=	${RUN_DEPENDS}
+BUILD_DEPENDS +=devel/gobject-introspection \
+		${RUN_DEPENDS}
 
 RUN_DEPENDS +=	x11/py-gtk2
 

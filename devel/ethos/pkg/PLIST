@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/11/30 22:28:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/04/07 11:21:01 jasper Exp $
 %%SHARED%%
 include/ethos-1.0/
 include/ethos-1.0/ethos/
@@ -20,6 +20,7 @@ lib/ethos/plugin-loaders/libcloader.so
 lib/ethos/plugin-loaders/libpythonloader.a
 lib/ethos/plugin-loaders/libpythonloader.la
 lib/ethos/plugin-loaders/libpythonloader.so
+lib/girepository-1.0/Ethos-1.0.typelib
 lib/libethos-1.0.a
 lib/libethos-1.0.la
 lib/libethos-ui-1.0.a
@@ -40,6 +41,7 @@ lib/python${MODPY_VERSION}/site-packages/gtk-2.0/ethos/ui.pyo
 share/ethos/
 share/ethos/icons/
 share/ethos/icons/ethos-plugin.png
+share/gir-1.0/Ethos-1.0.gir
 share/gtk-doc/html/ethos/
 share/gtk-doc/html/ethos/EthosManager.html
 share/gtk-doc/html/ethos/EthosPlugin.html

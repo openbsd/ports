@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/04/07 11:22:04 jasper Exp $
 
 COMMENT=		GTK+2 widget for clutter
 
 DISTNAME=		clutter-gtk-${API_VERSION}.2
-REVISION=		3
+REVISION=		4
 SHARED_LIBS +=  clutter-gtk-0.10      0.0      # .0.0
 
 MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter-gtk/${MAJOR}/}
@@ -18,10 +18,15 @@ WANTLIB += json-glib-1.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb z xcb-render xcb-render-util
 WANTLIB += clutter-glx-1.0
 
-LIB_DEPENDS=		graphics/clutter/core>=1.0.6 \
+# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
+# instead of the actual library
+USE_LIBTOOL=	gnu
+
+BUILD_DEPENDS=		devel/gobject-introspection
+LIB_DEPENDS=		graphics/clutter/core>=1.0.6p3 \
 			x11/gtk+2
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-introspection=no
+			--enable-introspection
 
 .include <bsd.port.mk>

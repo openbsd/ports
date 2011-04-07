@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/09/27 15:11:08 jasper Exp $
-include/clutter-${MAJOR}/
+@comment $OpenBSD: PLIST,v 1.4 2011/04/07 11:22:04 jasper Exp $
 include/clutter-${MAJOR}/clutter-gtk/
 include/clutter-${MAJOR}/clutter-gtk/clutter-gtk.h
 include/clutter-${MAJOR}/clutter-gtk/gtk-clutter-embed.h
@@ -7,9 +6,11 @@ include/clutter-${MAJOR}/clutter-gtk/gtk-clutter-scrollable.h
 include/clutter-${MAJOR}/clutter-gtk/gtk-clutter-util.h
 include/clutter-${MAJOR}/clutter-gtk/gtk-clutter-viewport.h
 include/clutter-${MAJOR}/clutter-gtk/gtk-clutter-zoomable.h
+lib/girepository-${MAJOR}/GtkClutter-${API_VERSION}.typelib
 lib/libclutter-gtk-${API_VERSION}.la
 @lib lib/libclutter-gtk-${API_VERSION}.so.${LIBclutter-gtk-0.10_VERSION}
 lib/pkgconfig/clutter-gtk-${API_VERSION}.pc
+share/gir-${MAJOR}/GtkClutter-${API_VERSION}.gir
 share/gtk-doc/html/clutter-gtk/
 share/gtk-doc/html/clutter-gtk/GtkClutterEmbed.html
 share/gtk-doc/html/clutter-gtk/GtkClutterScrollable.html

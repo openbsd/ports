@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/09/27 05:28:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2011/04/07 11:23:29 jasper Exp $
 bin/charmap
 bin/gnome-character-map
 @bin bin/gucharmap
@@ -16,11 +16,13 @@ include/gucharmap-2.0/gucharmap/gucharmap-script-codepoint-list.h
 include/gucharmap-2.0/gucharmap/gucharmap-type-builtins.h
 include/gucharmap-2.0/gucharmap/gucharmap-unicode-info.h
 include/gucharmap-2.0/gucharmap/gucharmap.h
+lib/girepository-1.0/Gucharmap-2.0.typelib
 lib/libgucharmap.a
 lib/libgucharmap.la
 @lib lib/libgucharmap.so.${LIBgucharmap_VERSION}
 lib/pkgconfig/gucharmap-2.pc
 share/applications/gucharmap.desktop
+share/gir-1.0/Gucharmap-2.0.gir
 share/gnome/help/gucharmap/
 share/gnome/help/gucharmap/C/
 share/gnome/help/gucharmap/C/figures/
