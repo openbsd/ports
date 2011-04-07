@@ -1,0 +1,20 @@
+$OpenBSD: patch-clutter_cogl_cogl_pc_in,v 1.1 2011/04/07 11:38:42 jasper Exp $
+
+pkg-config can't deal with a list of requirements as a variable
+
+--- clutter/cogl/cogl.pc.in.orig	Thu Apr  7 13:34:45 2011
++++ clutter/cogl/cogl.pc.in	Thu Apr  7 13:34:56 2011
+@@ -3,7 +3,6 @@ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+ includedir=@includedir@
+ apiversion=@CLUTTER_API_VERSION@
+-requires=@CLUTTER_REQUIRES@
+ backend=@clutterbackend@
+ cogl=@CLUTTER_COGL@
+ 
+@@ -12,4 +11,4 @@ Description: Clutter GL abstraction library (${cogl} b
+ Version: @VERSION@
+ Libs: -L${libdir} -lclutter-${backend}-${apiversion}
+ Cflags: -I${includedir}/clutter-${apiversion}
+-Requires: ${requires}
++Requires: @CLUTTER_REQUIRES@
