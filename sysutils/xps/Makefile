@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/26 16:36:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2011/04/07 17:41:33 jasper Exp $
 
 DISTNAME=       xps-4.2
-REVISION=	2
+REVISION=	3
 CATEGORIES=     sysutils x11
 
-MASTER_SITES=	http://internap.dl.sourceforge.net/sourceforge/motif-pstree/
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=motif-pstree/}
 
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
@@ -12,9 +12,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 WANTLIB=		ICE SM X11 Xext Xmu Xt c kvm m
 
-COMMENT=	graphically display and update dynamically the process tree
-
-HOMEPAGE=       http://www.netwinder.org/~rocky/xps-home/
+COMMENT=	graphically display and dynamically update the process tree
 
 USE_GMAKE=		Yes
 
