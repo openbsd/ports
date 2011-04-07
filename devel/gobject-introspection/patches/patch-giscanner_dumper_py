@@ -1,0 +1,12 @@
+$OpenBSD: patch-giscanner_dumper_py,v 1.3 2011/04/07 09:57:18 jasper Exp $
+--- giscanner/dumper.py.orig	Thu Apr  7 11:48:35 2011
++++ giscanner/dumper.py	Thu Apr  7 11:51:54 2011
+@@ -80,7 +80,7 @@ class DumpCompiler(object):
+         self._options = options
+         self._get_type_functions = get_type_functions
+ 
+-        self._compiler_cmd = os.environ.get('CC', 'gcc')
++        self._compiler_cmd = os.environ.get('CC', '${CC}')
+         self._linker_cmd = os.environ.get('CC', self._compiler_cmd)
+         self._pkgconfig_cmd = os.environ.get('PKG_CONFIG', 'pkg-config')
+ 
