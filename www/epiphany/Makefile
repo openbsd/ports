@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2011/04/05 16:37:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2011/04/07 19:41:32 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	2.30.6
-REVISION=	1
+REVISION=	2
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 API_V=		2.29
@@ -44,7 +44,8 @@ WANTLIB += stdc++ tasn1 xcb xcb-atom xcb-aux xcb-event  xcb-render
 WANTLIB += xml2 z GL Xxf86vm drm nssutil3 util xcb-shm
 WANTLIB += xslt>=1 execinfo notify>=2 webkit-1.0>=2.1 soup-gnome-2.4>=1.1
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	devel/gobject-introspection \
+		${RUN_DEPENDS}
 RUN_DEPENDS=	x11/gnome/icon-theme \
 		x11/gnome/themes \
 		devel/iso-codes \
@@ -66,7 +67,7 @@ MODGCONF2_SCHEMAS_DIR=  epiphany
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-introspection=no \
+		--enable-introspection \
 		--disable-static \
 		--disable-gtk-doc \
 		--disable-zeroconf \

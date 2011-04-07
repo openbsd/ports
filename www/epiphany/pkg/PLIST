@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2010/09/15 19:16:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/04/07 19:41:32 jasper Exp $
 @bin bin/epiphany
 include/epiphany/
 include/epiphany/${M}/
@@ -36,6 +36,7 @@ include/epiphany/${M}/epiphany/ephy-type-builtins.h
 include/epiphany/${M}/epiphany/ephy-web-view.h
 include/epiphany/${M}/epiphany/ephy-window.h
 include/epiphany/${M}/epiphany/epiphany.h
+lib/girepository-1.0/Epiphany-${API_V}.typelib
 lib/pkgconfig/epiphany-${API_V}.pc
 @man man/man1/epiphany.1
 share/aclocal/epiphany.m4
@@ -119,6 +120,7 @@ share/epiphany/icons/hicolor/scalable/actions/location-entry.svg
 share/epiphany/icons/hicolor/scalable/status/
 share/epiphany/icons/hicolor/scalable/status/popup-hidden.svg
 share/epiphany/mime-types-permissions.xml
+share/gir-1.0/Epiphany-${API_V}.gir
 share/gnome/help/epiphany/
 share/gnome/help/epiphany/C/
 share/gnome/help/epiphany/C/epiphany.xml
