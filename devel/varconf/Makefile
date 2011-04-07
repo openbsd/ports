@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/01/04 08:36:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/04/07 17:41:15 jasper Exp $
 
 COMMENT=	configuration system for the STAGE server
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-MASTER_SITES=		http://downloads.sourceforge.net/worldforge/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=worldforge/}
 
 USE_LIBTOOL= 		Yes
 CONFIGURE_STYLE= 	gnu
