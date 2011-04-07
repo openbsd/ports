@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.43 2011/01/14 22:15:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2011/04/07 12:00:13 jasper Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		2.32.1
 
-REVISION=		0
+REVISION=		1
+
+SHARED_LIBS +=  games-support-gi          0.0 # 0.0
 
 CATEGORIES=		games
 
@@ -32,13 +34,18 @@ MODULES=		devel/gconf2 \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		x11/gnome/py-gnome-desktop
+BUILD_DEPENDS=		devel/gobject-introspection \
+			x11/gnome/py-gnome-desktop
 LIB_DEPENDS=		graphics/clutter/clutter-gtk \
 			lang/guile \
 			x11/gnome/librsvg
 RUN_DEPENDS=		x11/gnome/py-gnome-desktop \
 			multimedia/gstreamer-0.10/plugins-good
 REGRESS_DEPENDS=	devel/check
+
+# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
+# instead of the actual library
+USE_LIBTOOL=    	gnu
 
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
@@ -47,10 +54,10 @@ MODGCONF2_SCHEMAS_DIR=	gnome-games
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--localstatedir="/var" \
 			--with-scores-group="games" \
-			--disable-introspection
+			--enable-introspection
 
 # XXX
-# lightsoff and swell-foop needs seed
+# lightsoff and swell-foop need seed
 CONFIGURE_ARGS+=	--enable-omitgames=lightsoff,swell-foop
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2011/01/14 22:15:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2011/04/07 12:00:13 jasper Exp $
 bin/glchess
 @mode g+s
 @group games
@@ -30,8 +30,12 @@ bin/gnome-sudoku
 @mode
 @group
 @bin bin/sol
+lib/girepository-1.0/GnomeGamesSupport-1.0.typelib
 lib/gnome-games/
 @bin lib/gnome-games/ar-cards-renderer
+lib/gnome-games/libgames-support-gi.a
+lib/gnome-games/libgames-support-gi.la
+@lib lib/gnome-games/libgames-support-gi.so.${LIBgames-support-gi_VERSION}
 lib/python${MODPY_VERSION}/site-packages/glchess/
 lib/python${MODPY_VERSION}/site-packages/glchess/__init__.py
 lib/python${MODPY_VERSION}/site-packages/glchess/__init__.pyc
@@ -273,6 +277,7 @@ share/applications/iagno.desktop
 share/applications/mahjongg.desktop
 share/applications/quadrapassel.desktop
 share/applications/sol.desktop
+share/gir-1.0/GnomeGamesSupport-1.0.gir
 share/glchess/
 share/glchess/ai.xml
 share/glchess/glchess.ui
