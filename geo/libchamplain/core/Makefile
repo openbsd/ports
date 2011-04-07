@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/03/02 15:01:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/04/07 08:05:10 jasper Exp $
 
 COMMENT=		library to provide a Gtk+ widget to display maps
 
 DISTNAME=		libchamplain-${VERSION}
+REVISION=		0
 
 SHARED_LIBS +=  champlain-0.8       0.0          # 1.2
 SHARED_LIBS +=  champlain-gtk-0.8   0.0          # 1.2
@@ -20,11 +21,12 @@ WANTLIB += xcb-render xcb-shm
 
 MODULES=		devel/gettext
 
+BUILD_DEPENDS=          devel/gobject-introspection
 LIB_DEPENDS=		databases/sqlite3 \
 			devel/libsoup,-gnome \
 			graphics/clutter/clutter-gtk>=0.10
 
-CONFIGURE_ARGS= 	--enable-introspection=no \
+CONFIGURE_ARGS= 	--enable-introspection \
 			--disable-silent-rules
 
 post-install:

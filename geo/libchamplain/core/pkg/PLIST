@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/03/21 19:48:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/04/07 08:05:10 jasper Exp $
 @pkgpath geo/libchamplain/libchamplain-gtk
 bin/libchamplain-demo
 include/libchamplain-${API_VERSION}/
@@ -39,6 +39,8 @@ include/libchamplain-gtk-${API_VERSION}/champlain-gtk/champlain-gtk-enum-types.h
 include/libchamplain-gtk-${API_VERSION}/champlain-gtk/champlain-gtk-marshal.h
 include/libchamplain-gtk-${API_VERSION}/champlain-gtk/champlain-gtk.h
 include/libchamplain-gtk-${API_VERSION}/champlain-gtk/gtk-champlain-embed.h
+lib/girepository-1.0/Champlain-${API_VERSION}.typelib
+lib/girepository-1.0/GtkChamplain-${API_VERSION}.typelib
 lib/libchamplain-${API_VERSION}.la
 @lib lib/libchamplain-${API_VERSION}.so.${LIBchamplain-0.8_VERSION}
 lib/libchamplain-gtk-${API_VERSION}.la
@@ -55,6 +57,8 @@ share/examples/libchamplain/minimal-gtk.c
 share/examples/libchamplain/minimal.c
 share/examples/libchamplain/polygons.c
 share/examples/libchamplain/url-marker.c
+share/gir-1.0/Champlain-${API_VERSION}.gir
+share/gir-1.0/GtkChamplain-${API_VERSION}.gir
 share/gtk-doc/html/libchamplain/
 share/gtk-doc/html/libchamplain-gtk/
 share/gtk-doc/html/libchamplain-gtk/GtkChamplainEmbed.html
@@ -121,8 +125,6 @@ share/gtk-doc/html/libchamplain/pt05.html
 share/gtk-doc/html/libchamplain/right.png
 share/gtk-doc/html/libchamplain/style.css
 share/gtk-doc/html/libchamplain/up.png
-share/vala/
-share/vala/vapi/
 share/vala/vapi/champlain-${API_VERSION}.deps
 share/vala/vapi/champlain-${API_VERSION}.vapi
 share/vala/vapi/champlain-gtk-${API_VERSION}.deps
