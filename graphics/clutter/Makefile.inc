@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2010/10/24 21:21:00 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2011/04/07 12:03:30 jasper Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -21,6 +21,7 @@ USE_LIBTOOL?=		Yes
 LIBTOOL_FLAGS?=		--tag=disable-static
 
 CONFIGURE_STYLE?=	gnu
+CONFIGURE_ARGS+=	--disable-shave
 
 API_VERSION?=		0.10
 MAJOR?=			1.0
