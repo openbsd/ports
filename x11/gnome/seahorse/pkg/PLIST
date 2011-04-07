@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2010/10/26 14:53:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2011/04/07 08:23:07 ajacoutot Exp $
 @bin bin/seahorse
 @bin bin/seahorse-daemon
 include/libcryptui/
@@ -8,6 +8,7 @@ include/libcryptui/cryptui-key-list.h
 include/libcryptui/cryptui-key-store.h
 include/libcryptui/cryptui-keyset.h
 include/libcryptui/cryptui.h
+lib/girepository-1.0/CryptUI-0.0.typelib
 @comment lib/libcryptui.a
 @comment lib/libcryptui.la
 @lib lib/libcryptui.so.${LIBcryptui_VERSION}
@@ -19,6 +20,7 @@ lib/seahorse/
 @man man/man1/seahorse.1
 share/applications/seahorse.desktop
 share/dbus-1/services/org.gnome.seahorse.service
+share/gir-1.0/CryptUI-0.0.gir
 share/gnome/help/seahorse/
 share/gnome/help/seahorse/C/
 share/gnome/help/seahorse/C/figures/

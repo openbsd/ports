@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/01/12 08:06:35 pea Exp $
+# $OpenBSD: Makefile,v 1.49 2011/04/07 08:23:07 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		manage encryption keys
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		2.32.0
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=	cryptui              1.0      # .0.0
 
@@ -31,6 +31,8 @@ WANTLIB += sasl2 ssl tasn1 xcb xml2 z xcb-render xcb-render-util
 WANTLIB += lber-2.4 ldap-2.4 notify soup-2.4 gpgme gnome-keyring>=6 gcr>=1
 WANTLIB += gp11 avahi-client avahi-common avahi-glib
 
+BUILD_DEPENDS=		devel/gobject-introspection
+
 LIB_DEPENDS=		databases/openldap \
 			devel/libnotify \
 			devel/libsoup \
@@ -49,7 +51,7 @@ MODGCONF2_SCHEMAS_DIR=	seahorse
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
-			--disable-introspection \
+			--enable-introspection \
 			--enable-hkp \
 			--enable-ldap \
 			--enable-pgp \

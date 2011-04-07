@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/03/17 16:49:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2011/04/07 08:25:35 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -52,7 +52,8 @@ MODULES=	devel/gettext \
 
 USE_GROFF =	Yes
 
-BUILD_DEPENDS=	converters/xmltoman
+BUILD_DEPENDS=	converters/xmltoman \
+		devel/gobject-introspection
 
 WANTLIB-main=	c expat glib-2.0 gobject-2.0 pcre pthread \
 		gthread-2.0 gdbm daemon dbus-1 \
@@ -174,12 +175,12 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-compat-libdns_sd \
 		--enable-core-docs \
 		--enable-tests \
+		--enable-introspection \
 		--disable-silent-rules \
 		--disable-doxygen-doc \
 		--disable-doxygen-dot \
 		--disable-doxygen-xml \
 		--disable-doxygen-html \
-		--disable-introspection \
 		--disable-gtk3
 
 # don't link with libssp from the gcc4 port
