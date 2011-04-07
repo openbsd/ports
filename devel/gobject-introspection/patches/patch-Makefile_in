@@ -1,8 +1,4 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2011/04/07 14:50:22 ajacoutot Exp $
-
-Too much libtool abuse going on in tests/ needs to be sorted out
-first before entering again.
-
+$OpenBSD: patch-Makefile_in,v 1.8 2011/04/07 14:53:52 jasper Exp $
 --- Makefile.in.orig	Wed Mar 30 22:37:04 2011
 +++ Makefile.in	Thu Apr  7 11:02:53 2011
 @@ -539,7 +539,7 @@ oldincludedir = @oldincludedir@
