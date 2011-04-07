@@ -1,10 +1,15 @@
-$OpenBSD: patch-src_decode_proto_c,v 1.1 2010/09/24 10:04:00 jasper Exp $
-
-OpenBSD lacks DLT_PPI.
-
---- src/decode_proto.c.orig	Thu Sep 23 22:59:42 2010
-+++ src/decode_proto.c	Thu Sep 23 23:01:05 2010
-@@ -165,7 +165,9 @@ static linktype_data_t linktypes[] = {
+$OpenBSD: patch-src_decode_proto_c,v 1.2 2011/04/07 20:09:45 benoit Exp $
+--- src/decode_proto.c.orig	Sun Feb  6 11:10:46 2011
++++ src/decode_proto.c	Sat Apr  2 17:13:26 2011
+@@ -26,6 +26,7 @@
+ #ifdef HAVE_ARPA_INET_H
+ #include <arpa/inet.h>
+ #endif
++#include <sys/socket.h>
+ #include "prot_types.h"
+ #include "util.h"
+ #include "decode_proto.h"
+@@ -165,7 +166,9 @@
   {"WLAN",   DLT_IEEE802_11,    LINK6,   get_wlan }, 
   /* Wireless with radiotap header */
   {"WLAN+RTAP",  DLT_IEEE802_11_RADIO, LINK6, get_radiotap }, 

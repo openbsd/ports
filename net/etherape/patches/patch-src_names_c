@@ -1,10 +1,13 @@
---- src/names.c.orig	Mon Jan  4 13:12:51 2010
-+++ src/names.c	Thu Sep 23 22:58:51 2010
-@@ -17,6 +17,7 @@
+$OpenBSD: patch-src_names_c,v 1.3 2011/04/07 20:09:45 benoit Exp $
+--- src/names.c.orig	Sat Feb  5 17:26:52 2011
++++ src/names.c	Sat Apr  2 17:12:46 2011
+@@ -17,7 +17,9 @@
   * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
   */
  
 +#include <unistd.h>
  #include <netinet/in.h>
++#include <sys/socket.h>
  #ifdef HAVE_UNISTD_H
  #include <unistd.h>
+ #endif
