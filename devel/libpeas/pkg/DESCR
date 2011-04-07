@@ -1,0 +1,7 @@
+libpeas is a gobject-based plugins engine, and is targetted at giving
+every application the chance to assume its own extensibility. It is
+currently used by several GNOME applications like gedit and Totem.
+
+It takes its roots in the old gedit plugins engine, and provides an
+extensive set of features mirroring the desiderata of most of the
+applications providing an extension framework.
