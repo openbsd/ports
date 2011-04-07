@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.911 2011/04/06 12:17:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.912 2011/04/07 18:54:05 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -263,6 +263,7 @@
      SUBDIR += liboop
      SUBDIR += libopensync
      SUBDIR += lpc21isp
+     SUBDIR += libpeas
      SUBDIR += libproplist
      SUBDIR += libregexp9
      SUBDIR += libsigc++-2
