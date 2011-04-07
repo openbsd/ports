@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/07/03 07:53:04 landry Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/04/07 19:40:10 jasper Exp $
 %%SHARED%%
 @bin bin/GtkLauncher
 @bin bin/jsc
@@ -39,9 +39,13 @@ include/webkit-1.0/webkit/webkitwebresource.h
 include/webkit-1.0/webkit/webkitwebsettings.h
 include/webkit-1.0/webkit/webkitwebview.h
 include/webkit-1.0/webkit/webkitwebwindowfeatures.h
+lib/girepository-1.0/JSCore-1.0.typelib
+lib/girepository-1.0/WebKit-1.0.typelib
 lib/libwebkit-1.0.a
 lib/libwebkit-1.0.la
 lib/pkgconfig/webkit-1.0.pc
+share/gir-1.0/JSCore-1.0.gir
+share/gir-1.0/WebKit-1.0.gir
 share/locale/cs/LC_MESSAGES/webkit.mo
 share/locale/de/LC_MESSAGES/webkit.mo
 share/locale/en_GB/LC_MESSAGES/webkit.mo

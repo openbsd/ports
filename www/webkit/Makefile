@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.43 2011/03/08 18:56:30 landry Exp $
+# $OpenBSD: Makefile,v 1.44 2011/04/07 19:40:10 jasper Exp $
 
 COMMENT =	open source web browser engine
 
 DISTNAME =	webkit-1.2.7
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/
@@ -23,7 +23,9 @@ PERMIT_DISTFILES_FTP =	Yes
 VMEM_WARNING =	Yes
 
 USE_GMAKE =	Yes
-USE_LIBTOOL =	Yes
+# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
+# instead of the actual library
+USE_LIBTOOL =	gnu
 
 MODULES =	devel/gettext \
 		textproc/intltool
@@ -43,7 +45,7 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lX11" \
 		ac_cv_path_FLEX=${LOCALBASE}/bin/gflex
-CONFIGURE_ARGS+=--enable-introspection=no
+CONFIGURE_ARGS+=--enable-introspection
 
 MAKE_FILE =	GNUmakefile
 MAKE_FLAGS =	STDCPPLIB=${STDCPPLIB}
@@ -73,7 +75,8 @@ LIB_DEPENDS =	x11/gtk+2,-main \
 
 BUILD_DEPENDS =	devel/bison \
 		devel/flex \
-		devel/gperf
+		devel/gperf \
+		devel/gobject-introspection
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/WebCore/plugins/PluginDatabase.cpp
