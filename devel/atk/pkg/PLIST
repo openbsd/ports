@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/04/05 07:10:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/04/07 07:15:02 ajacoutot Exp $
 %%SHARED%%
 include/atk-1.0/
 include/atk-1.0/atk/
@@ -32,10 +32,14 @@ include/atk-1.0/atk/atktable.h
 include/atk-1.0/atk/atktext.h
 include/atk-1.0/atk/atkutil.h
 include/atk-1.0/atk/atkvalue.h
+lib/girepository-1.0/
+lib/girepository-1.0/Atk-1.0.typelib
 lib/libatk-1.0.a
 lib/libatk-1.0.la
 lib/pkgconfig/
 lib/pkgconfig/atk.pc
+share/gir-1.0/
+share/gir-1.0/Atk-1.0.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/atk/
