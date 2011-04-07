@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2010/11/17 11:47:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2011/04/07 08:17:31 jasper Exp $
 @bin bin/wnck-urgency-monitor
 @bin bin/wnckprop
 include/libwnck-1.0/
@@ -15,10 +15,14 @@ include/libwnck-1.0/libwnck/window-action-menu.h
 include/libwnck-1.0/libwnck/window.h
 include/libwnck-1.0/libwnck/wnck-enum-types.h
 include/libwnck-1.0/libwnck/workspace.h
+lib/girepository-1.0/
+lib/girepository-1.0/Wnck-1.0.typelib
 lib/libwnck-1.a
 lib/libwnck-1.la
 lib/pkgconfig/
 lib/pkgconfig/libwnck-1.0.pc
+share/gir-1.0/
+share/gir-1.0/Wnck-1.0.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/libwnck/

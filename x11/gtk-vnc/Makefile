@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/03/07 19:31:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2011/04/07 08:11:06 jasper Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
@@ -8,6 +8,8 @@ GNOME_VERSION=		0.4.3
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugin=		gtk-vnc-plugin-${GNOME_VERSION}
+
+REVISION-main=		0
 
 SHARED_LIBS +=	gtk-vnc-1.0          2.0 # .0.1
 SHARED_LIBS +=  gvnc-1.0             0.0 # 0.1
@@ -37,6 +39,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 MULTI_PACKAGES=		-main -plugin
 
 BUILD_DEPENDS=		${RUN_DEPENDS-main} \
+			devel/gobject-introspection \
 			devel/xulrunner/1.9,-devel>=1.9.1
 
 LIB_DEPENDS=		security/gnutls \
@@ -51,7 +54,7 @@ WANTLIB-plugin += ${WANTLIB} gvnc-1.0 gtk-vnc-1.0 gnutls sasl2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-introspection \
+			--enable-introspection \
 			--with-examples \
 			--with-python \
 			--with-sasl \

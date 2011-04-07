@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/03/22 09:55:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/04/07 08:13:45 jasper Exp $
 include/libgdata/
 include/libgdata/gdata/
 include/libgdata/gdata/app/
@@ -88,9 +88,11 @@ include/libgdata/gdata/services/youtube/gdata-youtube-query.h
 include/libgdata/gdata/services/youtube/gdata-youtube-service.h
 include/libgdata/gdata/services/youtube/gdata-youtube-state.h
 include/libgdata/gdata/services/youtube/gdata-youtube-video.h
+lib/girepository-1.0/GData-0.0.typelib
 lib/libgdata.la
 @lib lib/libgdata.so.${LIBgdata_VERSION}
 lib/pkgconfig/libgdata.pc
+share/gir-1.0/GData-0.0.gir
 share/gtk-doc/html/gdata/
 share/gtk-doc/html/gdata/GDataAPPCategories.html
 share/gtk-doc/html/gdata/GDataAccessHandler.html

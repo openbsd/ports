@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2011/03/07 19:34:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/04/07 08:17:29 jasper Exp $
 
 COMMENT =	library for writing single instance application
 
 GNOME_PROJECT =	libunique
 GNOME_VERSION =	1.1.6
+REVISION=	0
 
 SHARED_LIBS +=  unique-1.0           2.0      # .100.6
 CATEGORIES =	devel
@@ -24,12 +25,14 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xcb-render
 WANTLIB += xcb-shm z
 
+BUILD_DEPENDS=		devel/gobject-introspection
+
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
-			--disable-introspection \
+			--enable-introspection \
 			--with-x
 
 MODULES =	devel/gettext \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2011/03/07 19:31:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2011/04/07 08:11:06 jasper Exp $
 @pkgpath ${BASE_PKGPATH}
 @bin bin/gvnccapture
 @bin bin/gvncviewer
@@ -16,6 +16,8 @@ include/gvnc-1.0/vnccursor.h
 include/gvnc-1.0/vncframebuffer.h
 include/gvnc-1.0/vncpixelformat.h
 include/gvnc-1.0/vncutil.h
+lib/girepository-1.0/GVnc-1.0.typelib
+lib/girepository-1.0/GtkVnc-1.0.typelib
 lib/libgtk-vnc-1.0.a
 lib/libgtk-vnc-1.0.la
 @lib lib/libgtk-vnc-1.0.so.${LIBgtk-vnc-1.0_VERSION}
@@ -28,6 +30,8 @@ lib/python${MODPY_VERSION}/site-packages/gtkvnc.a
 lib/python${MODPY_VERSION}/site-packages/gtkvnc.la
 lib/python${MODPY_VERSION}/site-packages/gtkvnc.so
 @man man/man1/gvnccapture.1
+share/gir-1.0/GVnc-1.0.gir
+share/gir-1.0/GtkVnc-1.0.gir
 share/locale/ca/LC_MESSAGES/gtk-vnc.mo
 share/locale/ca@valencia/LC_MESSAGES/gtk-vnc.mo
 share/locale/cs/LC_MESSAGES/gtk-vnc.mo

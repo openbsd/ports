@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/03/22 09:55:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/04/07 08:13:45 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		Google Data API based Glib client library
 
 GNOME_PROJECT=		libgdata
 GNOME_VERSION=		0.8.0
+REVISION=		0
 
 SHARED_LIBS +=  gdata                3.0      # .9.0
 
@@ -30,6 +31,7 @@ WANTLIB += soup-gnome-2.4>=1
 MODULES=		devel/gettext \
 			x11/gnome
 
+BUILD_DEPENDS=		devel/gobject-introspection
 LIB_DEPENDS=		devel/libsoup,-gnome \
 			devel/eggdbus
 
@@ -39,7 +41,7 @@ LIBTOOL_FLAGS+= 	--tag=disable-static
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
-			--disable-introspection \
+			--enable-introspection \
 			--enable-gnome
 
 .include <bsd.port.mk>
