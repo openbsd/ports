@@ -1,11 +1,11 @@
-$OpenBSD: patch-giscanner_utils_py,v 1.1 2010/10/24 15:33:14 jasper Exp $
+$OpenBSD: patch-giscanner_utils_py,v 1.2 2011/04/07 11:09:06 ajacoutot Exp $
 
 Make sure try to compile/link with the right libtool,
 this overrides the --libtool option to girscanner.
 
---- giscanner/utils.py.orig	Fri Sep 10 15:20:57 2010
-+++ giscanner/utils.py	Sun Oct 24 17:30:13 2010
-@@ -107,22 +107,7 @@ def get_libtool_command(options):
+--- giscanner/utils.py.orig	Tue Sep  7 16:25:05 2010
++++ giscanner/utils.py	Thu Apr  7 12:52:18 2011
+@@ -107,22 +107,8 @@ def get_libtool_command(options):
      if not libtool_infection:
          return None
  
@@ -25,7 +25,8 @@ this overrides the --libtool option to girscanner.
 -        return None
 -
 -    return ['libtool']
-+    return ['${LIBTOOL}']
++    libtool_cmd = os.environ.get('LIBTOOL', '/usr/ports/infrastructure/bin/libtool')
++    return libtool_cmd.split()
  
  
  def files_are_identical(path1, path2):

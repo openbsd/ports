@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/04/07 09:57:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2011/04/07 11:09:06 ajacoutot Exp $
 
 # Look at cairo-related regression failure.
 # and cairo/cairo.h: No such file or directory during build.
@@ -9,7 +9,7 @@ COMMENT=		GObject Introspection
 
 GNOME_VERSION=		0.10.7
 GNOME_PROJECT=		gobject-introspection
-REVISION=		1
+REVISION=		2
 CATEGORIES=		devel
 
 SHARED_LIBS +=  girepository-1.0     1.0      # 1.0
@@ -60,7 +60,6 @@ pre-configure:
 		${WRKSRC}/Makefile.introspection \
 		${WRKSRC}/giscanner/dumper.py \
 		${WRKSRC}/giscanner/scannermain.py \
-		${WRKSRC}/giscanner/utils.py \
 		${WRKSRC}/tests/scanner/Makefile.in \
 		${WRKSRC}/tests/offsets/Makefile.in \
 		${WRKSRC}/tools/g-ir-scanner.in
