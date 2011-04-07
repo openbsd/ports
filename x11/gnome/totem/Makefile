@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.57 2010/12/03 15:18:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2011/04/07 19:12:29 ajacoutot Exp $
 
 COMMENT=	official media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.32.0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	multimedia
 
@@ -21,10 +21,10 @@ WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
 WANTLIB += atk-1.0 c cairo dbus-1 dbus-glib-1 expat ffi fontconfig
 WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmime-2.4 gmodule-2.0 gnome-keyring
-WANTLIB += gnutls gobject-2.0 gpg-error gstbase-0.10 gstreamer-0.10
+WANTLIB += gobject-2.0 gpg-error gstbase-0.10 gstreamer-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png proxy pthread pthread-stubs
-WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 tasn1 unique-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 unique-1.0
 WANTLIB += util xcb xml2 z xcb-render GL drm xcb-shm
 WANTLIB += gstaudio-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstvideo-0.10
 WANTLIB += gsttag-0.10 totem-plparser nautilus-extension gdata
@@ -45,7 +45,8 @@ BUILD_DEPENDS+=	graphics/ffmpeg \
 BUILD_DEPENDS+=	x11/py-gtk2 \
 		devel/py-gdata \
 		devel/iso-codes \
-		multimedia/gstreamer-0.10/plugins-good>=0.10.24p2
+		multimedia/gstreamer-0.10/plugins-good>=0.10.24p2 \
+		lang/vala
 RUN_DEPENDS+=	x11/gnome/settings-daemon \
 		x11/py-gtk2 \
 		devel/iso-codes \
@@ -71,7 +72,7 @@ MODGNOME_HELP_FILES=Yes
 MODGCONF2_SCHEMAS_DIR= totem
 USE_GROFF =	Yes
 
-# Browser bemused lirc mythtv sample-python sample-val sidebar-test
+# Browser bemused lirc mythtv sample-python sample-vala sidebar-test
 # publish iplayer pythonconsole coherence_upnp tracker galago
 TOTEM_PLUGINS=	"gromit media-player-keys ontop properties \
 		screensaver skipto thumbnail youtube \
@@ -87,17 +88,22 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-dbus \
 		--enable-nautilus \
 		--enable-python \
+		--enable-vala \
 		--disable-easy-codec-installation \
 		--disable-browser-plugins \
 		--disable-gmp-plugin \
 		--disable-narrowspace-plugin \
 		--disable-mully-plugin \
-		--disable-cone-plugin \
-		--disable-vala
+		--disable-cone-plugin
 
 # stop systrace spam by avoiding xsltproc to access net
 pre-configure:
 	perl -pi -e 's,xsltproc,xsltproc --nonet,g' \
 		${WRKSRC}/help/Makefile.in
+
+post-install:
+	${INSTALL_DATA_DIR}  ${PREFIX}/share/vala/vapi
+	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.vapi ${PREFIX}/share/vala/vapi
+	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.deps ${PREFIX}/share/vala/vapi
 
 .include <bsd.port.mk>
