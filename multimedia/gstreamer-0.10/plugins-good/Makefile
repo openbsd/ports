@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2011/03/08 17:21:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2011/04/07 12:37:28 ajacoutot Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
@@ -14,6 +14,8 @@ PKGNAME-dv =		gstreamer-dv-${V}
 PKGNAME-caca =		gstreamer-libcaca-${V}
 
 EPOCH-main =		0
+
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -aalib \
 			-dv -caca
@@ -49,8 +51,8 @@ WANTLIB-main =		${WANTLIB} ${MODGCONF2_WANTLIB} gdk_pixbuf-2.0 \
 			gstriff-0.10 gstrtp-0.10 gsttag-0.10 gstvideo-0.10 \
 			gstfft-0.10 gstrtsp-0.10 gstsdp-0.10 gstpbutils-0.10 \
 			FLAC jpeg tag wavpack speex gsttag-0.10 shout bz2 \
-			gcrypt gio-2.0 gnome-keyring gnutls drm xcb-shm \
-			gpg-error proxy soup-2.4 soup-gnome-2.4 sqlite3 tasn1
+			gcrypt gio-2.0 gnome-keyring drm xcb-shm \
+			gpg-error soup-2.4 soup-gnome-2.4 sqlite3
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			${MODGCONF2_LIB_DEPENDS} \
 			devel/orc>=0.4.6 \
