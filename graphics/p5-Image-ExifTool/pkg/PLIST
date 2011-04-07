@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2010/12/28 11:03:13 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.15 2011/04/07 16:59:43 giovanni Exp $
 bin/exiftool
 ${P5SITE}/File/
 ${P5SITE}/File/RandomAccess.pm
@@ -57,6 +57,7 @@ ${P5SITE}/Image/ExifTool/Charset/Turkish.pm
 ${P5SITE}/Image/ExifTool/Charset/Vietnam.pm
 ${P5SITE}/Image/ExifTool/DICOM.pm
 ${P5SITE}/Image/ExifTool/DNG.pm
+${P5SITE}/Image/ExifTool/DV.pm
 ${P5SITE}/Image/ExifTool/DjVu.pm
 ${P5SITE}/Image/ExifTool/EXE.pm
 ${P5SITE}/Image/ExifTool/Exif.pm
@@ -67,6 +68,7 @@ ${P5SITE}/Image/ExifTool/FlashPix.pm
 ${P5SITE}/Image/ExifTool/Font.pm
 ${P5SITE}/Image/ExifTool/FotoStation.pm
 ${P5SITE}/Image/ExifTool/FujiFilm.pm
+${P5SITE}/Image/ExifTool/GE.pm
 ${P5SITE}/Image/ExifTool/GIF.pm
 ${P5SITE}/Image/ExifTool/GIMP.pm
 ${P5SITE}/Image/ExifTool/GPS.pm
@@ -115,6 +117,7 @@ ${P5SITE}/Image/ExifTool/MPC.pm
 ${P5SITE}/Image/ExifTool/MPEG.pm
 ${P5SITE}/Image/ExifTool/MPF.pm
 ${P5SITE}/Image/ExifTool/MWG.pm
+${P5SITE}/Image/ExifTool/MXF.pm
 ${P5SITE}/Image/ExifTool/MakerNotes.pm
 ${P5SITE}/Image/ExifTool/Matroska.pm
 ${P5SITE}/Image/ExifTool/Microsoft.pm
@@ -126,6 +129,7 @@ ${P5SITE}/Image/ExifTool/NikonCustom.pm
 ${P5SITE}/Image/ExifTool/OOXML.pm
 ${P5SITE}/Image/ExifTool/Olympus.pm
 ${P5SITE}/Image/ExifTool/PDF.pm
+${P5SITE}/Image/ExifTool/PGF.pm
 ${P5SITE}/Image/ExifTool/PICT.pm
 ${P5SITE}/Image/ExifTool/PNG.pm
 ${P5SITE}/Image/ExifTool/PPM.pm
@@ -144,6 +148,7 @@ ${P5SITE}/Image/ExifTool/RSRC.pm
 ${P5SITE}/Image/ExifTool/RTF.pm
 ${P5SITE}/Image/ExifTool/Rawzor.pm
 ${P5SITE}/Image/ExifTool/Real.pm
+${P5SITE}/Image/ExifTool/Reconyx.pm
 ${P5SITE}/Image/ExifTool/Ricoh.pm
 ${P5SITE}/Image/ExifTool/Samsung.pm
 ${P5SITE}/Image/ExifTool/Sanyo.pm
@@ -169,7 +174,8 @@ ${P5SITE}/Image/ExifTool/WritePostScript.pl
 ${P5SITE}/Image/ExifTool/WriteXMP.pl
 ${P5SITE}/Image/ExifTool/Writer.pl
 ${P5SITE}/Image/ExifTool/XMP.pm
-${P5SITE}/Image/ExifTool/XMP2.pm
+${P5SITE}/Image/ExifTool/XMP2.pl
+${P5SITE}/Image/ExifTool/XMPStruct.pl
 ${P5SITE}/Image/ExifTool/ZIP.pm
 ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man1/exiftool.1
@@ -194,6 +200,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Charset.3p
 @man man/man3p/Image::ExifTool::DICOM.3p
 @man man/man3p/Image::ExifTool::DNG.3p
+@man man/man3p/Image::ExifTool::DV.3p
 @man man/man3p/Image::ExifTool::DjVu.3p
 @man man/man3p/Image::ExifTool::EXE.3p
 @man man/man3p/Image::ExifTool::Exif.3p
@@ -204,6 +211,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Font.3p
 @man man/man3p/Image::ExifTool::FotoStation.3p
 @man man/man3p/Image::ExifTool::FujiFilm.3p
+@man man/man3p/Image::ExifTool::GE.3p
 @man man/man3p/Image::ExifTool::GIF.3p
 @man man/man3p/Image::ExifTool::GIMP.3p
 @man man/man3p/Image::ExifTool::GPS.3p
@@ -251,6 +259,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::MPEG.3p
 @man man/man3p/Image::ExifTool::MPF.3p
 @man man/man3p/Image::ExifTool::MWG.3p
+@man man/man3p/Image::ExifTool::MXF.3p
 @man man/man3p/Image::ExifTool::MakerNotes.3p
 @man man/man3p/Image::ExifTool::Matroska.3p
 @man man/man3p/Image::ExifTool::Microsoft.3p
@@ -262,6 +271,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::OOXML.3p
 @man man/man3p/Image::ExifTool::Olympus.3p
 @man man/man3p/Image::ExifTool::PDF.3p
+@man man/man3p/Image::ExifTool::PGF.3p
 @man man/man3p/Image::ExifTool::PICT.3p
 @man man/man3p/Image::ExifTool::PNG.3p
 @man man/man3p/Image::ExifTool::PPM.3p
@@ -279,6 +289,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::RTF.3p
 @man man/man3p/Image::ExifTool::Rawzor.3p
 @man man/man3p/Image::ExifTool::Real.3p
+@man man/man3p/Image::ExifTool::Reconyx.3p
 @man man/man3p/Image::ExifTool::Ricoh.3p
 @man man/man3p/Image::ExifTool::Samsung.3p
 @man man/man3p/Image::ExifTool::Sanyo.3p
@@ -305,5 +316,6 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Writer.3p
 @man man/man3p/Image::ExifTool::XMP.3p
 @man man/man3p/Image::ExifTool::XMP2.3p
+@man man/man3p/Image::ExifTool::XMPStruct.3p
 @man man/man3p/Image::ExifTool::ZIP.3p
 @man man/man3p/Image::ExifTool::iWork.3p
