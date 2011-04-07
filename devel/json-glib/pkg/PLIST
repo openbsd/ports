@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/09/26 07:11:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/07 07:16:26 jasper Exp $
 %%SHARED%%
 include/json-glib-1.0/
 include/json-glib-1.0/json-glib/
@@ -11,10 +11,14 @@ include/json-glib-1.0/json-glib/json-parser.h
 include/json-glib-1.0/json-glib/json-reader.h
 include/json-glib-1.0/json-glib/json-types.h
 include/json-glib-1.0/json-glib/json-version.h
+lib/girepository-1.0/
+lib/girepository-1.0/Json-1.0.typelib
 lib/libjson-glib-1.0.a
 lib/libjson-glib-1.0.la
 lib/pkgconfig/
 lib/pkgconfig/json-glib-1.0.pc
+share/gir-1.0/
+share/gir-1.0/Json-1.0.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/json-glib/

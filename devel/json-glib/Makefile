@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/04/07 07:16:26 jasper Exp $
 
 COMMENT=		JSON parser for GLib-based libraries and applications
 
 GNOME_PROJECT=		json-glib
 GNOME_VERSION=		0.12.0
+REVISION=		0
 
 SHARED_LIBS +=  json-glib-1.0        3.0      # .1200.0
 CATEGORIES=		devel
@@ -20,6 +21,7 @@ WANTLIB += pcre z glib-2.0 gobject-2.0 gthread-2.0 gio-2.0 gmodule-2.0
 
 MODULES=		devel/gettext x11/gnome
 
+BUILD_DEPENDS=          devel/gobject-introspection
 LIB_DEPENDS=		devel/glib2
 
 USE_GMAKE=		Yes
@@ -28,6 +30,6 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
-			--disable-introspection
+			--enable-introspection
 
 .include <bsd.port.mk>

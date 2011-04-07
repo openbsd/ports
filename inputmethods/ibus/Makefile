@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2011/01/14 06:00:33 fgsch Exp $
+# $OpenBSD: Makefile,v 1.13 2011/04/07 07:19:56 jasper Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	intelligent input bus framework
 
 DISTNAME =	ibus-1.3.9
+REVISION =	0
 
 SHARED_LIBS =	ibus	1.0	# 2.0
 
@@ -33,7 +34,8 @@ MODULES =	devel/gconf2 \
 		lang/python \
 		textproc/intltool
 
-BUILD_DEPENDS =	devel/iso-codes \
+BUILD_DEPENDS =	devel/gobject-introspection \
+		devel/iso-codes \
 		x11/dbus-python
 RUN_DEPENDS =	devel/iso-codes \
 		devel/desktop-file-utils \
@@ -52,7 +54,7 @@ LIBTOOL_FLAGS =	--tag=disable-static
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS = --disable-silent-rules \
 		 --disable-vala \
-		 --enable-introspection=no \
+		 --enable-introspection \
 		 --enable-gtk-doc-html=no
 CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
