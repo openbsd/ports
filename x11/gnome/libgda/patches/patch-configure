@@ -1,21 +1,35 @@
-$OpenBSD: patch-configure,v 1.15 2011/03/07 19:30:33 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.16 2011/04/07 08:55:25 jasper Exp $
 
-Stupid configure is stupid, just work around the mess by setting
-the values we know are correct.
+- Don't do bash pattern substitutions.
+
+- Stupid configure is stupid, just work around the mess by setting
+  the values we know are correct.
 
 --- configure.orig	Wed Feb 23 20:26:12 2011
-+++ configure	Wed Feb 23 21:30:28 2011
-@@ -20232,6 +20232,13 @@ $as_echo "$as_me: BDB backend not used" >&6;}
++++ configure	Thu Apr  7 10:46:29 2011
+@@ -19605,9 +19605,9 @@ $as_echo_n "checking if gobject-introspection is corre
+             INTROSPECTION_COMPILER=`$PKG_CONFIG --variable=g_ir_compiler gobject-introspection-1.0`
+             INTROSPECTION_GENERATE=`$PKG_CONFIG --variable=g_ir_generate gobject-introspection-1.0`
+             INTROSPECTION_GIRDIR=`$PKG_CONFIG --variable=girdir gobject-introspection-1.0`
+-            INTROSPECTION_GIRDIR=${INTROSPECTION_GIRDIR/$datadir/\$(datadir)}
++            INTROSPECTION_GIRDIR=`echo ${INTROSPECTION_GIRDIR} | sed -e 's,$datadir,\$\(datadir\),g'`
+             INTROSPECTION_TYPELIBDIR="$($PKG_CONFIG --variable=typelibdir gobject-introspection-1.0)"
+-            INTROSPECTION_TYPELIBDIR=${INTROSPECTION_TYPELIBDIR/$libdir/\$(libdir)}
++            INTROSPECTION_TYPELIBDIR=`echo ${INTROSPECTION_GIRDIR} | sed -e 's,$libdir,\$\($libdir\),g'`
+             INTROSPECTION_CFLAGS=`$PKG_CONFIG --cflags gobject-introspection-1.0`
+             INTROSPECTION_LIBS=`$PKG_CONFIG --libs gobject-introspection-1.0`
+             INTROSPECTION_MAKEFILE=$introspection_makefile
+@@ -20231,6 +20231,13 @@ $as_echo "$as_me: BDB backend not used" >&6;}
+     	    bdb_found=yes
  	fi
      fi
- 
++
 +# XXX
 +bdb_found=yes
 +BDB_CFLAGS=-I${bdbdir}/include/db4
 +BDB_LIBS="-L${bdbdir}/lib -ldb"
 +BDB_LIB="-ldb"
 +BDB_DIR="$bdbdir"
-+
+ 
       if test "$bdb_found" = "yes"; then
    BDB_TRUE=
-   BDB_FALSE='#'
