@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/05 10:51:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/07 13:40:04 ajacoutot Exp $
 %%SHARED%%
 include/polkit-gtk-1/
 include/polkit-gtk-1/polkitgtk/
 include/polkit-gtk-1/polkitgtk/polkitgtk.h
 include/polkit-gtk-1/polkitgtk/polkitgtktypes.h
 include/polkit-gtk-1/polkitgtk/polkitlockbutton.h
+lib/girepository-1.0/
+lib/girepository-1.0/PolkitGtk-1.0.typelib
 lib/libpolkit-gtk-1.a
 lib/libpolkit-gtk-1.la
 lib/pkgconfig/
@@ -17,6 +19,8 @@ share/examples/polkit-gnome/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/polkit-gnome/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
+share/gir-1.0/
+share/gir-1.0/PolkitGtk-1.0.gir
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/polkit-gnome-1.mo
