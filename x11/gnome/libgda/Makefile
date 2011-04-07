@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/04/07 08:55:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2011/04/07 09:28:54 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -24,6 +24,9 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 EPOCH-mysql=		0
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 EPOCH-pgsql=		0
+
+REVISION-main=		0
+REVISION-ui=		0
 
 CATEGORIES=		databases
 

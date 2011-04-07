@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.4 2011/03/07 19:30:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.5 2011/04/07 09:28:54 ajacoutot Exp $
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
 @bin bin/gdaui-demo-${GDA_MAJOR}
@@ -28,6 +28,7 @@ include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-rt-editor.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-server-operation.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-tree-store.h
 include/libgda-${GDA_MAJOR}/libgda-ui/libgda-ui.h
+lib/girepository-1.0/Gdaui-${GDA_MAJOR}.typelib
 lib/libgda-${GDA_MAJOR}/plugins/
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-filesel-spec.xml
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-password.xml
@@ -41,6 +42,7 @@ lib/libgda-ui-${GDA_MAJOR}.la
 lib/pkgconfig/libgda-ui-${GDA_MAJOR}.pc
 share/applications/gda-browser-${GDA_MAJOR}.desktop
 share/applications/gda-control-center-${GDA_MAJOR}.desktop
+share/gir-1.0/Gdaui-${GDA_MAJOR}.gir
 share/gnome/help/gda-browser/
 share/gnome/help/gda-browser/C/
 share/gnome/help/gda-browser/C/actions.page
