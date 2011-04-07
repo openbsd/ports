@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.20 2010/11/17 11:29:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.21 2011/04/07 08:32:01 jasper Exp $
 bin/gmenu-simple-editor
 include/gnome-menus/
 include/gnome-menus/gmenu-tree.h
+lib/girepository-1.0/GMenu-2.0.typelib
 lib/libgnome-menu.a
 lib/libgnome-menu.la
 @lib lib/libgnome-menu.so.${LIBgnome-menu_VERSION}
@@ -59,6 +60,7 @@ share/examples/gnome-menus/xdg/menus/applications.menu
 @sample ${SYSCONFDIR}/xdg/menus/gnome-applications.menu
 share/examples/gnome-menus/xdg/menus/settings.menu
 @sample ${SYSCONFDIR}/xdg/menus/settings.menu
+share/gir-1.0/GMenu-2.0.gir
 share/gnome-menus/
 share/gnome-menus/examples/
 share/gnome-menus/examples/gnome-menus-ls.py
@@ -131,6 +133,8 @@ share/locale/is/LC_MESSAGES/gnome-menus.mo
 share/locale/it/LC_MESSAGES/gnome-menus.mo
 share/locale/ja/LC_MESSAGES/gnome-menus.mo
 share/locale/ka/LC_MESSAGES/gnome-menus.mo
+share/locale/kg/
+share/locale/kg/LC_MESSAGES/
 share/locale/kg/LC_MESSAGES/gnome-menus.mo
 share/locale/kk/LC_MESSAGES/gnome-menus.mo
 share/locale/kn/LC_MESSAGES/gnome-menus.mo
