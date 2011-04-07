@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.56 2011/03/25 16:16:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2011/04/07 08:09:35 ajacoutot Exp $
 
 COMMENT=		portable library for obtaining system information
 
 GNOME_VERSION=		2.28.3
 GNOME_PROJECT=		libgtop
 PKGNAME=		libgtop2-${VERSION}
+
+REVISION=		0
 
 SHARED_LIBS=		gtop-2.0	9.0	# .9.0
 
@@ -21,13 +23,15 @@ WANTLIB += Xau c kvm pcre pthread glib-2.0
 MODULES=		devel/gettext \
 			x11/gnome
 
+BUILD_DEPENDS=		devel/gobject-introspection
+
 LIB_DEPENDS=		devel/glib2
 RUN_DEPENDS=		sysutils/lsof
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
-			--disable-introspection \
+			--enable-introspection \
 			--without-libgtop-smp
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \

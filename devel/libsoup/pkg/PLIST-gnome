@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST-gnome,v 1.1 2009/04/04 10:25:48 landry Exp $
+@comment $OpenBSD: PLIST-gnome,v 1.2 2011/04/07 08:09:45 ajacoutot Exp $
 %%SHARED%%
 include/libsoup-gnome-${API_VERSION}/
 include/libsoup-gnome-${API_VERSION}/libsoup/
 include/libsoup-gnome-${API_VERSION}/libsoup/soup-cookie-jar-sqlite.h
 include/libsoup-gnome-${API_VERSION}/libsoup/soup-gnome-features.h
 include/libsoup-gnome-${API_VERSION}/libsoup/soup-gnome.h
+lib/girepository-1.0/SoupGNOME-${API_VERSION}.typelib
 lib/libsoup-gnome-${API_VERSION}.a
 lib/libsoup-gnome-${API_VERSION}.la
 lib/pkgconfig/libsoup-gnome-${API_VERSION}.pc
+share/gir-1.0/SoupGNOME-${API_VERSION}.gir
