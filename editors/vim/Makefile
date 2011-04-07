@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.118 2010/11/15 23:22:07 espie Exp $
+# $OpenBSD: Makefile,v 1.119 2011/04/07 20:50:55 ckuethe Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
 DISTNAME=	vim-7.3
-REV=		3
+REV=		154
 VERSION=	7.3.${REV}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
 PKGNAME-main=	vim-${VERSION}
-REVISION-main=	1
 PKGNAME-lang=	vim-lang-${VERSION}
-REVISION-lang=	1
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.vim.org/pub/vim/unix/ \
@@ -25,9 +23,9 @@ HOMEPAGE=	http://www.vim.org/
 MAINTAINER=	Chris Kuethe <ckuethe@openbsd.org>
 
 PATCHFILES=	# 
-_patches!=	jot -w%03d - 1 ${REV} 1
-#_patches!=	jot -w%03d - 1 ${REV} 1 | \
-#	egrep -v 'xxx|yyy|xxx|...'
+#_patches!=	jot -w%03d - 1 ${REV} 1
+_patches!=	jot -w%03d - 1 ${REV} 1 | \
+	egrep -v '009|010|021|027|035|036|037|051|063|064|079|085|087|095|108|113|119|125|131|136|146'
 .for p in ${_patches}
 PATCHFILES+=	7.3.${p}:0
 .endfor
@@ -92,11 +90,11 @@ WANTLIB+=	m
 CONFIGURE_ARGS+=--enable-gui="motif" --with-x --enable-fontset --enable-xim
 CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
 USE_MOTIF=	any
-WANTLIB+=	ICE SM X11 Xext Xmu Xpm Xt pthread-stubs xcb
+WANTLIB+=	m ICE SM X11 Xmu Xpm Xt
 .elif ${FLAVOR:L:Mathena} && \
 	!${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--enable-gui="athena" --with-x --enable-fontset --enable-xim
-WANTLIB+=	ICE SM X11 Xaw Xext Xmu Xpm Xt pthread-stubs xcb
+WANTLIB+=	m ICE SM X11 Xaw Xmu Xpm Xt
 .elif ${FLAVOR:L:Mgtk2} && \
 		!${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena}
 MAKE_FLAGS+=	'LDFLAGS=-pthread'
@@ -108,8 +106,8 @@ WANTLIB+=	ICE SM X11 Xext Xrender Xt fontconfig freetype m z\
 		pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo pthread\
 		Xau Xcomposite Xcursor Xdamage Xfixes Xi Xinerama \
 		Xrandr pixman-1 pthread-stubs xcb gthread-2.0 xcb-render \
-		xcb-render-util gdk_pixbuf-2.0 gdk-x11-2.0>=0.11 \
-		gtk-x11-2.0>=0.11
+		gdk_pixbuf-2.0 gdk-x11-2.0>=0.11 gtk-x11-2.0>=0.11 GL \
+		Xdmcp Xpm Xxf86vm drm xcb-shm
 .else
 ERRORS=		"Fatal: You must select one GUI interface: no_x11, gtk2, athena or motif"
 .endif
