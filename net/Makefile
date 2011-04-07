@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.687 2011/04/06 11:54:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.688 2011/04/07 10:01:13 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -28,7 +28,6 @@
      SUBDIR += avahi,
      SUBDIR += avahi,no_mono
      SUBDIR += axel
-     SUBDIR += axyftp
      SUBDIR += balance
      SUBDIR += bindgraph
      SUBDIR += bing
