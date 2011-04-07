@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.29 2011/04/07 11:09:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2011/04/07 14:50:22 ajacoutot Exp $
 
-# Look at cairo-related regression failure.
+# XXX Look at cairo-related regression failure
 # and cairo/cairo.h: No such file or directory during build.
-#
-# Look at re-entering tests/.
 
 COMMENT=		GObject Introspection
 
 GNOME_VERSION=		0.10.7
 GNOME_PROJECT=		gobject-introspection
-REVISION=		2
+REVISION=		3
 CATEGORIES=		devel
 
 SHARED_LIBS +=  girepository-1.0     1.0      # 1.0

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/10/24 13:40:27 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/04/07 14:50:22 ajacoutot Exp $
 bin/g-ir-annotation-tool
 @bin bin/g-ir-compiler
 @bin bin/g-ir-generate
@@ -145,6 +145,13 @@ share/gir-1.0/xrandr-1.3.gir
 share/gobject-introspection-1.0/
 share/gobject-introspection-1.0/Makefile.introspection
 share/gobject-introspection-1.0/gdump.c
+share/gobject-introspection-1.0/tests/
+share/gobject-introspection-1.0/tests/everything.c
+share/gobject-introspection-1.0/tests/everything.h
+share/gobject-introspection-1.0/tests/gimarshallingtests.c
+share/gobject-introspection-1.0/tests/gimarshallingtests.h
+share/gobject-introspection-1.0/tests/regress.c
+share/gobject-introspection-1.0/tests/regress.h
 share/gtk-doc/html/gi/
 share/gtk-doc/html/gi/annotation-glossary.html
 share/gtk-doc/html/gi/gi-GIArgInfo.html
