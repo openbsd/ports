@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2011/04/07 09:21:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2011/04/07 09:45:46 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -75,8 +75,5 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 REGRESS_IS_INTERACTIVE=x11
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/libnautilus-extension/Makefile.in
 
 .include <bsd.port.mk>
