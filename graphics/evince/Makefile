@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2011/04/05 16:37:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2011/04/07 11:30:22 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
-REVISION-main=	2
+REVISION-main=	3
 REVISION-nautilus= 0
 REVISION-dvi=	0
 
@@ -45,7 +45,8 @@ MODULES=	devel/gettext \
 
 USE_GROFF =	Yes
 
-BUILD_DEPENDS=	x11/gnome/icon-theme
+BUILD_DEPENDS=	x11/gnome/icon-theme \
+		devel/gobject-introspection
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
@@ -102,13 +103,17 @@ MODGCONF2_LIBDEP= 	No
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
+# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
+# instead of the actual library
+USE_LIBTOOL=	gnu
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--disable-introspection \
 		--disable-static \
 		--disable-comics \
 		--disable-impress \
+		--enable-introspection \
 		--enable-nautilus \
 		--enable-djvu \
 		--enable-dvi \

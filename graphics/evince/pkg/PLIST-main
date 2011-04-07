@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2010/10/15 06:38:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2011/04/07 11:30:22 ajacoutot Exp $
 @pkgpath graphics/evince
 @bin bin/evince
 @bin bin/evince-previewer
@@ -69,6 +69,8 @@ lib/evince/3/backends/pdfdocument.evince-backend
 lib/evince/3/backends/pixbufdocument.evince-backend
 lib/evince/3/backends/psdocument.evince-backend
 lib/evince/3/backends/tiffdocument.evince-backend
+lib/girepository-1.0/EvinceDocument-${MAJ_V}.typelib
+lib/girepository-1.0/EvinceView-${MAJ_V}.typelib
 lib/libevdocument.la
 @lib lib/libevdocument.so.${LIBevdocument_VERSION}
 lib/libevview.la
@@ -146,6 +148,8 @@ share/evince/icons/hicolor/scalable/actions/object-rotate-left.svg
 share/evince/icons/hicolor/scalable/actions/object-rotate-right.svg
 share/evince/icons/hicolor/scalable/mimetypes/
 share/evince/icons/hicolor/scalable/mimetypes/x-office-presentation.svg
+share/gir-1.0/EvinceDocument-${MAJ_V}.gir
+share/gir-1.0/EvinceView-${MAJ_V}.gir
 share/glib-2.0/schemas/org.gnome.Evince.gschema.xml
 share/gnome/help/evince/
 share/gnome/help/evince/C/
