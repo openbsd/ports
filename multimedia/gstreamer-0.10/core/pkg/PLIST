@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/03/07 19:42:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/04/07 12:46:15 ajacoutot Exp $
 @conflict gstreamer-frontend-*
 @conflict gstreamer->=0.8,<0.10
 @pkgpath multimedia/gstreamer-0.10/core,-main
@@ -103,6 +103,12 @@ include/gstreamer-${VERSION}/gst/net/gstnet.h
 include/gstreamer-${VERSION}/gst/net/gstnetclientclock.h
 include/gstreamer-${VERSION}/gst/net/gstnettimepacket.h
 include/gstreamer-${VERSION}/gst/net/gstnettimeprovider.h
+lib/girepository-1.0/
+lib/girepository-1.0/Gst-${VERSION}.typelib
+lib/girepository-1.0/GstBase-${VERSION}.typelib
+lib/girepository-1.0/GstCheck-${VERSION}.typelib
+lib/girepository-1.0/GstController-${VERSION}.typelib
+lib/girepository-1.0/GstNet-${VERSION}.typelib
 lib/gstreamer-${VERSION}/
 @comment lib/gstreamer-${VERSION}/libgstcoreelements.la
 lib/gstreamer-${VERSION}/libgstcoreelements.so
@@ -135,6 +141,12 @@ libexec/gstreamer-${VERSION}/
 @man man/man1/gst-xmlinspect-${VERSION}.1
 @man man/man1/gst-xmllaunch-${VERSION}.1
 share/aclocal/gst-element-check-${VERSION}.m4
+share/gir-1.0/
+share/gir-1.0/Gst-${VERSION}.gir
+share/gir-1.0/GstBase-${VERSION}.gir
+share/gir-1.0/GstCheck-${VERSION}.gir
+share/gir-1.0/GstController-${VERSION}.gir
+share/gir-1.0/GstNet-${VERSION}.gir
 share/locale/af/LC_MESSAGES/gstreamer-${VERSION}.mo
 share/locale/az/LC_MESSAGES/gstreamer-${VERSION}.mo
 share/locale/be/LC_MESSAGES/gstreamer-${VERSION}.mo

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/03/07 19:46:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/04/07 12:46:47 ajacoutot Exp $
 
 COMMENT-main =		base elements for GStreamer
 COMMENT-cdda =		cd paranoia element for GStreamer (plugins-base)
@@ -8,6 +8,8 @@ DISTNAME =		gst-plugins-base-${V}
 
 PKGNAME-main =		gstreamer-plugins-base-${V}
 PKGNAME-cdda =		gstreamer-cdda-${V}
+
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -cdda
 
@@ -27,6 +29,10 @@ SHARED_LIBS +=  gstrtsp-0.10         2.4      # .23.0
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-base/}
 MODULES =		devel/gettext
+
+# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
+# instead of the actual library
+USE_LIBTOOL=	gnu
 
 .for i in ${MULTI_PACKAGES}
 REGRESS_DEPENDS +=	${BASE_PKGPATH},${i}

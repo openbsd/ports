@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/04/05 18:41:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2011/04/07 12:45:07 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		versatile IDE for C and C++
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		2.32.1.1
 
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  anjuta-foocanvas     0.0      # 0.0
 SHARED_LIBS +=  anjuta               0.0      # 0.0
@@ -49,7 +49,8 @@ WANTLIB += gda-4.0 ltdl gnome-keyring gvc graph pathplan
 WANTLIB += ${MODPY_WANTLIB} GL Xxf86vm drm icudata icuuc xcb-shm
 
 BUILD_DEPENDS=		devel/autogen>=5.6.5 \
-			devel/p5-Locale-gettext
+			devel/p5-Locale-gettext \
+			devel/gobject-introspection
 RUN_DEPENDS=		misc/shared-mime-info \
 			devel/p5-Locale-gettext
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
@@ -62,6 +63,10 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			x11/gnome/libgda \
 			x11/gtksourceview
 
+# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
+# instead of the actual library
+USE_LIBTOOL=	gnu
+
 LIBTOOL_FLAGS=		--tag=disable-static
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
@@ -71,7 +76,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-plugin-subversion \
 			--enable-gtk-doc=no \
 			--enable-debug \
-			--enable-introspection=no
+			--enable-introspection
 
 # XXX re-enable when it supports vala>=0.12.0
 CONFIGURE_ARGS+=	--disable-vala

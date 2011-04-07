@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/04/05 18:41:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/04/07 12:45:07 ajacoutot Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -216,6 +216,8 @@ lib/anjuta/libpython_plugin.la
 @lib lib/anjuta/libpython_plugin.so.${LIBpython_plugin_VERSION}
 lib/anjuta/python-plugin.plugin
 lib/anjuta/sourceview.plugin
+lib/girepository-1.0/Anjuta-1.0.typelib
+lib/girepository-1.0/IAnjuta-1.0.typelib
 @comment lib/glade3/modules/libgladeanjuta.la
 lib/glade3/modules/libgladeanjuta.so
 lib/libanjuta-foocanvas.la
@@ -517,6 +519,8 @@ share/doc/anjuta/ROADMAP
 share/doc/anjuta/ScintillaDoc.html
 share/doc/anjuta/THANKS
 share/doc/anjuta/TODO
+share/gir-1.0/Anjuta-1.0.gir
+share/gir-1.0/IAnjuta-1.0.gir
 share/glade3/catalogs/anjuta-glade.xml
 share/gnome/help/anjuta-build-tutorial/
 share/gnome/help/anjuta-build-tutorial/C/

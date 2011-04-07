@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2011/03/07 19:46:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.15 2011/04/07 12:46:48 ajacoutot Exp $
 @conflict gstreamer-plugins-bad-<0.10.17
 @conflict gstreamer-gnome-*
 @conflict gstreamer-ogg-*
@@ -96,6 +96,18 @@ include/gstreamer-${VERSION}/gst/video/gstvideofilter.h
 include/gstreamer-${VERSION}/gst/video/gstvideosink.h
 include/gstreamer-${VERSION}/gst/video/video-enumtypes.h
 include/gstreamer-${VERSION}/gst/video/video.h
+lib/girepository-1.0/GstApp-${VERSION}.typelib
+lib/girepository-1.0/GstAudio-${VERSION}.typelib
+lib/girepository-1.0/GstFft-${VERSION}.typelib
+lib/girepository-1.0/GstInterfaces-${VERSION}.typelib
+lib/girepository-1.0/GstNetbuffer-${VERSION}.typelib
+lib/girepository-1.0/GstPbutils-${VERSION}.typelib
+lib/girepository-1.0/GstRiff-${VERSION}.typelib
+lib/girepository-1.0/GstRtp-${VERSION}.typelib
+lib/girepository-1.0/GstRtsp-${VERSION}.typelib
+lib/girepository-1.0/GstSdp-${VERSION}.typelib
+lib/girepository-1.0/GstTag-${VERSION}.typelib
+lib/girepository-1.0/GstVideo-${VERSION}.typelib
 @comment lib/gstreamer-${VERSION}/libgstadder.la
 lib/gstreamer-${VERSION}/libgstadder.so
 @comment lib/gstreamer-${VERSION}/libgstapp.la
@@ -190,6 +202,18 @@ lib/pkgconfig/gstreamer-sdp-${VERSION}.pc
 lib/pkgconfig/gstreamer-tag-${VERSION}.pc
 lib/pkgconfig/gstreamer-video-${VERSION}.pc
 @man man/man1/gst-visualise-${VERSION}.1
+share/gir-1.0/GstApp-${VERSION}.gir
+share/gir-1.0/GstAudio-${VERSION}.gir
+share/gir-1.0/GstFft-${VERSION}.gir
+share/gir-1.0/GstInterfaces-${VERSION}.gir
+share/gir-1.0/GstNetbuffer-${VERSION}.gir
+share/gir-1.0/GstPbutils-${VERSION}.gir
+share/gir-1.0/GstRiff-${VERSION}.gir
+share/gir-1.0/GstRtp-${VERSION}.gir
+share/gir-1.0/GstRtsp-${VERSION}.gir
+share/gir-1.0/GstSdp-${VERSION}.gir
+share/gir-1.0/GstTag-${VERSION}.gir
+share/gir-1.0/GstVideo-${VERSION}.gir
 share/locale/af/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/az/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
 share/locale/bg/LC_MESSAGES/gst-plugins-base-${VERSION}.mo
