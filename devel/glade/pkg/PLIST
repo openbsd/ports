@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/04/07 08:35:07 ajacoutot Exp $
-@conflict glade3-*
+@comment $OpenBSD: PLIST,v 1.13 2011/04/07 17:48:22 ajacoutot Exp $
+@conflict glade3-<3.8.0p1
 @bin bin/glade
 @bin bin/glade-previewer
 include/libgladeui-2.0/
