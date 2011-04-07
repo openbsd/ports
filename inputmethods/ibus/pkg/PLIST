@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/04/07 07:19:56 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/04/07 19:23:05 jasper Exp $
 @bin bin/ibus-daemon
 bin/ibus-setup
 include/ibus-1.0/
@@ -159,6 +159,13 @@ libexec/ibus-ui-gtk
 share/applications/ibus-setup.desktop
 share/applications/ibus.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/ibus/
+share/examples/ibus/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/ibus/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/ibus/xdg/autostart/ibus.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/ibus.desktop
 share/gir-1.0/IBus-1.0.gir
 share/gtk-doc/html/ibus/
 share/gtk-doc/html/ibus/IBusAttrList.html

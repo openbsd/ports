@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2011/04/07 07:19:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/04/07 19:23:05 jasper Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	intelligent input bus framework
 
 DISTNAME =	ibus-1.3.9
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	ibus	1.0	# 2.0
 
@@ -58,5 +58,7 @@ CONFIGURE_ARGS = --disable-silent-rules \
 		 --enable-gtk-doc-html=no
 CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+
+FAKE_FLAGS=	xdgautostartdir=${PREFIX}/share/examples/ibus/xdg/autostart
 
 .include <bsd.port.mk>
