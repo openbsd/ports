@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.4 2011/02/09 10:53:12 pea Exp $
+$OpenBSD: README-server,v 1.5 2011/04/07 14:45:26 pea Exp $
 
 Using PostgreSQL in an OpenBSD environment
 ==========================================
@@ -19,6 +19,12 @@ We will be prompted for a password to protect the dba account:
        # su - _postgresql
        $ mkdir /var/postgresql/data
        $ initdb -D /var/postgresql/data -U postgres -A md5 -W
+
+Please note that by default the cluster's encoding will be SQL_ASCII. If 
+you want to have an another default encoding, use the option -E with initdb.
+If your cluster is already created, you can specify an another encoding when 
+you create a new database with this command:
+	CREATE DATABASE xxx TEMPLATE template0 ENCODING 'xxx' ;
 
 It is strongly advised that you do not work with the postgres dba account
 other than creating more users and/or databases or for administrative task.
