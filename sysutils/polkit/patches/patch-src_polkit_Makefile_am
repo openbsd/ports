@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_polkit_Makefile_am,v 1.1 2011/04/07 11:12:12 ajacoutot Exp $
+--- src/polkit/Makefile.am.orig	Thu Apr  7 11:42:24 2011
++++ src/polkit/Makefile.am	Thu Apr  7 11:42:52 2011
+@@ -154,7 +154,7 @@ Polkit-1.0.gir: libpolkit-gobject-1.la $(G_IR_SCANNER)
+ 		$(srcdir)/polkitauthorizationresult.h 		\
+ 		$(srcdir)/polkitcheckauthorizationflags.h 	\
+ 		$(srcdir)/polkitdetails.h 			\
+-		$(builddir)/polkitenumtypes.h 			\
++		$(srcdir)/polkitenumtypes.h 			\
+ 		$(srcdir)/polkiterror.h 			\
+ 		$(srcdir)/polkitidentity.h 			\
+ 		$(srcdir)/polkitimplicitauthorization.h 	\

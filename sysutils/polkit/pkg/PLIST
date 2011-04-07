@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/23 17:04:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/07 11:12:12 ajacoutot Exp $
 %%SHARED%%
 @bin bin/pk-example-frobnicate
 @bin bin/pkaction
@@ -46,6 +46,8 @@ include/polkit-1/polkitbackend/polkitbackendlocalauthority.h
 include/polkit-1/polkitbackend/polkitbackendlocalauthorizationstore.h
 include/polkit-1/polkitbackend/polkitbackendsessionmonitor.h
 include/polkit-1/polkitbackend/polkitbackendtypes.h
+lib/girepository-1.0/
+lib/girepository-1.0/Polkit-1.0.typelib
 lib/libpolkit-agent-1.a
 lib/libpolkit-agent-1.la
 lib/libpolkit-backend-1.a
@@ -104,6 +106,8 @@ share/examples/polkit/var/db/polkit-1/
 share/examples/polkit/var/db/polkit-1/localauthority/
 share/examples/polkit/var/db/polkit-1/localauthority/10-vendor.d/
 share/examples/polkit/var/db/polkit-1/localauthority/10-vendor.d/10-desktop-policy.pkla
+share/gir-1.0/
+share/gir-1.0/Polkit-1.0.gir
 share/locale/da/LC_MESSAGES/polkit-1.mo
 share/polkit-1/
 share/polkit-1/actions/

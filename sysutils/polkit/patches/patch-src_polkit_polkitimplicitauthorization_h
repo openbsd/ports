@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_polkit_polkitimplicitauthorization_h,v 1.1 2011/04/07 11:12:12 ajacoutot Exp $
+
+From 920c40ef079fd2907f6c08d965d6d87eaf58f52a Mon Sep 17 00:00:00 2001
+From: Colin Walters <walters@verbum.org>
+Date: Fri, 10 Sep 2010 18:42:51 +0000
+Subject: Remove duplicate definitions of enumeration types
+
+--- src/polkit/polkitimplicitauthorization.h.orig	Wed Mar 10 18:46:19 2010
++++ src/polkit/polkitimplicitauthorization.h	Thu Apr  7 12:21:48 2011
+@@ -30,10 +30,6 @@
+ 
+ G_BEGIN_DECLS
+ 
+-GType polkit_implicit_authorization_get_type (void) G_GNUC_CONST;
+-
+-#define POLKIT_TYPE_IMPLICIT_AUTHORIZATION (polkit_implicit_authorization_get_type ())
+-
+ /**
+  * PolkitImplicitAuthorization:
+  * @POLKIT_IMPLICIT_AUTHORIZATION_UNKNOWN: Unknown whether the subject is authorized, never returned in any public API.

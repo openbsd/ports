@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2011/04/02 16:56:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/04/07 11:12:12 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
 DISTNAME=	polkit-0.97
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS +=  polkit-gobject-1	0.0 # .0.0
 SHARED_LIBS +=  polkit-backend-1	0.0 # .0.0
@@ -31,7 +31,9 @@ MODULES=	textproc/intltool \
 		devel/gettext
 
 BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
-		${MODGNU_AUTOCONF_DEPENDS}
+		${MODGNU_AUTOCONF_DEPENDS} \
+		devel/gobject-introspection
+
 # needs libtoolize
 BUILD_DEPENDS+=	devel/libtool
 
@@ -56,13 +58,16 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-verbose-mode \
 		--enable-examples \
 		--disable-gtk-doc \
-		--disable-introspection \
+		--enable-introspection \
 		--with-os-type=openbsd \
 		--with-authfw=bsdauth
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
+
+# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
+# instead of the actual library
+USE_LIBTOOL=	gnu
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/polkit
 
