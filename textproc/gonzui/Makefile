@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/01/15 01:09:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.20 2011/04/08 06:22:51 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ NOT_FOR_ARCHS=		mips64 mips64el
 
 COMMENT=		source code search engine
 DISTNAME=		gonzui-1.2
-REVISION=		14
+REVISION=		15
 CATEGORIES=		textproc www
 
 HOMEPAGE=		http://gonzui.sourceforge.net/
@@ -30,7 +30,17 @@ BUILD_DEPENDS=		databases/db/v4 \
 			${MODRUBY_ICONV_DEPENDS}
 RUN_DEPENDS=		archivers/bzip2 \
 			archivers/unzip \
+			databases/db/v4 \
+			databases/ruby-bdb \
+			${MODRUBY_ICONV_DEPENDS} \
 			textproc/p5-PPI
+
+MODRUBY_ADJ_FILES=	gonzui-db \
+			gonzui-import \
+			gonzui-remove \
+			gonzui-search \
+			gonzui-server \
+			gonzui-update
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-user="_gonzui" \
@@ -41,6 +51,11 @@ CONFIGURE_ARGS=		--with-user="_gonzui" \
 
 # Tests want to do cvs checkouts, apt-get, etc.
 NO_REGRESS=		Yes
+
+# XXX: Bad, but saves a metric buttload of patches.
+pre-configure:
+	ln -sf ${RUBY} ${WRKDIR}/bin/ruby
+	${MODRUBY_ADJ_REPLACE}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gonzui/
