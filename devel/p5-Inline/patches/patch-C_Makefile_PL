@@ -1,16 +1,16 @@
---- C/Makefile.PL.orig	Mon Dec  4 17:14:45 2006
-+++ C/Makefile.PL	Mon Dec  4 17:15:46 2006
-@@ -55,12 +55,7 @@
+--- C/Makefile.PL.orig	Wed Apr  6 17:34:13 2011
++++ C/Makefile.PL	Wed Apr  6 17:34:33 2011
+@@ -68,12 +68,7 @@ END
  # '
  }
  
 -my $answer = '';
 -my $default = $found ? "y" : "n";
 -while (1) {
--    $answer = prompt ('Do you want to install Inline::C?', $default); 
+-    $answer = prompt ('Do you want to install Inline::C?', $default);
 -    last if $answer =~ /^(y|yes|n|no)$/i;
 -}
 +my $answer = 'y';
  
  if ($answer =~ /^(y|yes)$/i) {
-     WriteMakefile(
+     my %h = (NAME => 'Inline::C', clean => {FILES => '_Inline_test'});
