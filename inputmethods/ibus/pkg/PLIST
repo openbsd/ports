@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/04/07 19:23:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/04/08 07:37:24 ajacoutot Exp $
 @bin bin/ibus-daemon
 bin/ibus-setup
 include/ibus-1.0/
@@ -323,6 +323,9 @@ share/locale/vi/LC_MESSAGES/ibus.mo
 share/locale/zh_CN/LC_MESSAGES/ibus.mo
 share/locale/zh_HK/LC_MESSAGES/ibus.mo
 share/locale/zh_TW/LC_MESSAGES/ibus.mo
+share/vala/
+share/vala/vapi/
+share/vala/vapi/ibus-1.0.vapi
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/ibus.schemas
