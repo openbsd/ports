@@ -1,4 +1,4 @@
-$OpenBSD: patch-Box2D_Source_Common_b2Settings_cpp,v 1.1 2011/04/07 10:09:30 dcoppa Exp $
+$OpenBSD: patch-Box2D_Source_Common_b2Settings_cpp,v 1.2 2011/04/08 21:13:59 dcoppa Exp $
 
 Fix LP64 architectures (i.e. sparc64)
 
@@ -8,7 +8,7 @@ Fix LP64 architectures (i.e. sparc64)
  #include "b2Settings.h"
  #include <cstdlib>
  
-+#if defined(_LP64)
++#if defined(__LP64__)
 +#define PADDING 8
 +#else
 +#define PADDING 4
