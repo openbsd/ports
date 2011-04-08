@@ -1,0 +1,16 @@
+$OpenBSD: patch-source_regularExp_c,v 1.1 2011/04/08 06:21:46 jasper Exp $
+
+Fix an off-by-one error, which could lead to a crash.
+From upstream CVS: https://sourceforge.net/tracker/index.php?func=detail&aid=2858723&group_id=11005&atid=111005
+
+--- source/regularExp.c.orig	Thu Apr  7 22:28:54 2011
++++ source/regularExp.c	Thu Apr  7 22:29:14 2011
+@@ -2645,7 +2645,7 @@ static struct brace_counts *Brace;
+ 
+ /* Default table for determining whether a character is a word delimiter. */
+ 
+-static unsigned char  Default_Delimiters [UCHAR_MAX] = {0};
++static unsigned char  Default_Delimiters [UCHAR_MAX+1] = {0};
+ 
+ static unsigned char *Current_Delimiters;  /* Current delimiter table */
+ 
