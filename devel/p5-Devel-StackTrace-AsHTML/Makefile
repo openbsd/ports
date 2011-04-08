@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/01/06 20:46:51 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/08 13:59:15 jasper Exp $
 
 COMMENT =		displays stack trace in HTML
 
 MODULES =		cpan
-DISTNAME =		Devel-StackTrace-AsHTML-0.09
-REVISION =		0
+DISTNAME =		Devel-StackTrace-AsHTML-0.11
 CATEGORIES =		devel
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
 
