@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2011/01/15 01:09:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2011/04/08 07:55:16 jasper Exp $
 
 COMMENT =		Prolog for the real world
 
-V =			5.10.2
+V =			5.10.4
 XV =			6.6.66
 DISTNAME =		pl-$V
 PKGNAME =		swi-prolog-$V
-REVISION =		0
 CATEGORIES =		lang
 
 SHARED_LIBS =		pl	3.0
@@ -23,7 +22,7 @@ MASTER_SITES =		${HOMEPAGE}/download/stable/src/ \
 			http://distfiles.nl/
 
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.61 # 2.64
+AUTOCONF_VERSION =	2.65 # 2.67
 AUTOCONF_DIR =		${WRKSRC}/src ${WRKSRC}/packages/semweb
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/src \
 				${WRKSRC}/packages/jpl \
@@ -31,7 +30,6 @@ MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/src \
 CONFIGURE_ARGS =	--enable-mt \
 			--disable-custom-flags \
 			--with-world \
-			--with-jpeg=${LOCALBASE} \
 			${CONFIGURE_SHARED}
 
 USE_GMAKE =		Yes
@@ -40,20 +38,16 @@ USE_GROFF =		Yes
 MAKE_FLAGS =		SONAMEOPT= \
 			SHAREDV=libpl.so.${LIBpl_VERSION}
 
-WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xinerama Xpm Xrender
-WANTLIB += Xt c expat fontconfig freetype m ncursesw pthread pthread-stubs
-WANTLIB += readline xcb z jpeg
-
-LIB_DEPENDS =		graphics/jpeg
+WANTLIB +=  c m ncursesw pthread pthread-stubs readline z
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS =		V XV FULLARCH BOOT
 
+# Don't build sgml (and dependant RDF), as it requires having swprintf()
+# and the like.
 post-extract:
 	@rm -fr ${WRKSRC}/packages/{sgml,RDF}
 
-# Don't build sgml (and dependant RDF), as it requires having swprintf()
-# and the like.
 post-install:
 	cd ${PREFIX}/lib && ln -s swipl-$V/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
 
