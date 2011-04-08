@@ -1,7 +1,7 @@
-$OpenBSD: patch-Nagstamon_nagstamonConfig_py,v 1.1.1.1 2011/04/01 11:29:26 ajacoutot Exp $
---- Nagstamon/nagstamonConfig.py.orig	Fri Apr  1 10:42:49 2011
-+++ Nagstamon/nagstamonConfig.py	Fri Apr  1 10:44:24 2011
-@@ -76,9 +76,9 @@ class Config(object):
+$OpenBSD: patch-Nagstamon_Config_py,v 1.1 2011/04/08 14:39:37 ajacoutot Exp $
+--- Nagstamon/Config.py.orig	Fri Apr  8 16:31:25 2011
++++ Nagstamon/Config.py	Fri Apr  8 16:32:23 2011
+@@ -93,9 +93,9 @@ class Config(object):
              self.icon_in_systray = False
          else:
              # the Linux settings

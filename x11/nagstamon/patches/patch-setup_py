@@ -1,10 +1,10 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2011/04/01 11:29:26 ajacoutot Exp $
---- setup.py.orig	Fri Apr  1 10:32:35 2011
-+++ setup.py	Fri Apr  1 10:32:44 2011
-@@ -50,6 +50,6 @@ setup(name = 'nagstamon',
-     scripts = ['Nagstamon/nagstamon'],
-     packages = ['Nagstamon'],
-     package_data = {'': ['resources/*']},
+$OpenBSD: patch-setup_py,v 1.2 2011/04/08 14:39:37 ajacoutot Exp $
+--- setup.py.orig	Tue Apr  5 13:20:36 2011
++++ setup.py	Fri Apr  8 16:31:01 2011
+@@ -51,6 +51,6 @@ setup(name = 'nagstamon',
+     packages = ['Nagstamon', 'Nagstamon.Server'],
+     package_dir = {'Nagstamon':'Nagstamon'},
+     package_data = {'Nagstamon':['resources/*']},
 -    data_files = [('%s/share/man/man1' % sys.prefix, ['Nagstamon/resources/nagstamon.1'])]
 +    data_files = [('%s/man/man1' % sys.prefix, ['Nagstamon/resources/nagstamon.1'])]
  )
