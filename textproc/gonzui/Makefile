@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/04/08 06:22:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2011/04/08 08:14:16 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ NOT_FOR_ARCHS=		mips64 mips64el
 
 COMMENT=		source code search engine
 DISTNAME=		gonzui-1.2
-REVISION=		15
+REVISION=		16
 CATEGORIES=		textproc www
 
 HOMEPAGE=		http://gonzui.sourceforge.net/
@@ -30,6 +30,7 @@ BUILD_DEPENDS=		databases/db/v4 \
 			${MODRUBY_ICONV_DEPENDS}
 RUN_DEPENDS=		archivers/bzip2 \
 			archivers/unzip \
+			archivers/xz \
 			databases/db/v4 \
 			databases/ruby-bdb \
 			${MODRUBY_ICONV_DEPENDS} \
