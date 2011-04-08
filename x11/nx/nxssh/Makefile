@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/02 08:48:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/04/08 18:20:55 jasper Exp $
 
 COMMENT=	OpenSSH client and daemon for NX
 
 DASH_VER=	2
 DISTNAME=	nxssh-${MAJOR_VERSION}-${DASH_VER}
 PKGNAME=	nxssh-${MAJOR_VERSION}.${DASH_VER}
+REVISION=	0
 
 CATEGORIES=	net
 
