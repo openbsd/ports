@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/04/03 07:45:28 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/04/09 08:02:39 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -10,15 +10,18 @@ share/examples/highlight/filetypes.conf
 share/highlight/
 share/highlight/langDefs/
 share/highlight/langDefs/abap4.lang
+share/highlight/langDefs/abc.lang
 share/highlight/langDefs/abnf.lang
 share/highlight/langDefs/actionscript.lang
 share/highlight/langDefs/ada.lang
 share/highlight/langDefs/agda.lang
+share/highlight/langDefs/algol.lang
 share/highlight/langDefs/ampl.lang
 share/highlight/langDefs/amtrix.lang
 share/highlight/langDefs/applescript.lang
 share/highlight/langDefs/arc.lang
 share/highlight/langDefs/arm.lang
+share/highlight/langDefs/as400cl.lang
 share/highlight/langDefs/ascend.lang
 share/highlight/langDefs/asp.lang
 share/highlight/langDefs/aspect.lang
@@ -30,6 +33,7 @@ share/highlight/langDefs/avenue.lang
 share/highlight/langDefs/awk.lang
 share/highlight/langDefs/bat.lang
 share/highlight/langDefs/bbcode.lang
+share/highlight/langDefs/bcpl.lang
 share/highlight/langDefs/bibtex.lang
 share/highlight/langDefs/bison.lang
 share/highlight/langDefs/blitzbasic.lang
@@ -37,6 +41,7 @@ share/highlight/langDefs/bms.lang
 share/highlight/langDefs/bnf.lang
 share/highlight/langDefs/boo.lang
 share/highlight/langDefs/c.lang
+share/highlight/langDefs/charmm.lang
 share/highlight/langDefs/chill.lang
 share/highlight/langDefs/clean.lang
 share/highlight/langDefs/clearbasic.lang
@@ -61,6 +66,8 @@ share/highlight/langDefs/fortran77.lang
 share/highlight/langDefs/fortran90.lang
 share/highlight/langDefs/frink.lang
 share/highlight/langDefs/fsharp.lang
+share/highlight/langDefs/fx.lang
+share/highlight/langDefs/gambas.lang
 share/highlight/langDefs/go.lang
 share/highlight/langDefs/graphviz.lang
 share/highlight/langDefs/haskell.lang
@@ -84,6 +91,7 @@ share/highlight/langDefs/jsp.lang
 share/highlight/langDefs/ldif.lang
 share/highlight/langDefs/lhs.lang
 share/highlight/langDefs/lilypond.lang
+share/highlight/langDefs/limbo.lang
 share/highlight/langDefs/lindenscript.lang
 share/highlight/langDefs/lisp.lang
 share/highlight/langDefs/logtalk.lang
@@ -123,6 +131,9 @@ share/highlight/langDefs/perl.lang
 share/highlight/langDefs/php.lang
 share/highlight/langDefs/pike.lang
 share/highlight/langDefs/pl1.lang
+share/highlight/langDefs/plperl.lang
+share/highlight/langDefs/plpython.lang
+share/highlight/langDefs/pltcl.lang
 share/highlight/langDefs/pov.lang
 share/highlight/langDefs/pro.lang
 share/highlight/langDefs/progress.lang
@@ -139,6 +150,7 @@ share/highlight/langDefs/r.lang
 share/highlight/langDefs/rebol.lang
 share/highlight/langDefs/rexx.lang
 share/highlight/langDefs/rnc.lang
+share/highlight/langDefs/rpg.lang
 share/highlight/langDefs/ruby.lang
 share/highlight/langDefs/s.lang
 share/highlight/langDefs/sas.lang
@@ -159,6 +171,7 @@ share/highlight/langDefs/tcl.lang
 share/highlight/langDefs/tcsh.lang
 share/highlight/langDefs/test_re.lang
 share/highlight/langDefs/tex.lang
+share/highlight/langDefs/tsql.lang
 share/highlight/langDefs/ttcn3.lang
 share/highlight/langDefs/txt.lang
 share/highlight/langDefs/vala.lang
@@ -172,6 +185,7 @@ share/highlight/langDefs/znn.lang
 share/highlight/themes/
 share/highlight/themes/acid.theme
 share/highlight/themes/aiseered.theme
+share/highlight/themes/andes.theme
 share/highlight/themes/anotherdark.theme
 share/highlight/themes/autumn.theme
 share/highlight/themes/baycomb.theme
@@ -230,7 +244,6 @@ share/highlight/themes/neon.theme
 share/highlight/themes/night.theme
 share/highlight/themes/nightshimmer.theme
 share/highlight/themes/nuvola.theme
-share/highlight/themes/oceandeep.theme
 share/highlight/themes/olive.theme
 share/highlight/themes/orion.theme
 share/highlight/themes/pablo.theme

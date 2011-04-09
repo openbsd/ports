@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_makefile,v 1.6 2011/04/03 07:45:26 benoit Exp $
---- src/makefile.orig	Wed Nov 10 22:48:12 2010
-+++ src/makefile	Sun Nov 21 16:21:16 2010
+$OpenBSD: patch-src_makefile,v 1.7 2011/04/09 08:02:37 benoit Exp $
+--- src/makefile.orig	Wed Feb  9 22:56:23 2011
++++ src/makefile	Sun Apr  3 11:14:04 2011
 @@ -12,11 +12,11 @@
  
  # See src/gui-qt/highlight.pro for the Qt GUI compilation options
@@ -18,9 +18,9 @@ $OpenBSD: patch-src_makefile,v 1.6 2011/04/03 07:45:26 benoit Exp $
 @@ -32,7 +32,7 @@
  INCLUDE_DIR=./include/
  
- # Ubuntu path:
--LUA_INCLUDE_DIR=/usr/include/lua5.1
-+LUA_INCLUDE_DIR=${LOCALBASE}/include
- LUA_LIB_NAME=lua
- #LUA_LIB_NAME=lua5.1
- 
+ # Lua paths
+-LUA_CFLAGS=-I/usr/include/lua5.1
++LUA_CFLAGS=-I${LOCALBASE}/include
+ LUA_LIBS=-llua
+ #LUA_CFLAGS=$(shell pkg-config --cflags lua5.1)
+ #LUA_LIBS=$(shell pkg-config --libs lua5.1)
