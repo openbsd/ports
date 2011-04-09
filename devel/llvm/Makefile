@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.29 2011/01/13 00:15:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.30 2011/04/09 21:43:39 jsg Exp $
 
 COMMENT =	Low Level Virtual Machine (LLVM) compiler infrastructure
 
-LLVM_V =	2.8
+LLVM_V =	2.9
 DISTNAME =	llvm-${LLVM_V}
 
 CATEGORIES =	devel
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =	c elf m pthread stdc++
+WANTLIB =	c m pthread stdc++
 
 MASTER_SITES =	http://llvm.org/releases/${LLVM_V}/
 
@@ -30,8 +30,6 @@ post-extract:
 	@mv ${WRKDIR}/clang-${LLVM_V} ${WRKDIST}/tools/clang
 
 MODULES =	lang/python
-
-LIB_DEPENDS =	devel/libelf
 
 # graphviz can be optionally used to draw graphs, but adds heavy build and
 # run dependencies, and this feature is often not needed. lie to autoconf
