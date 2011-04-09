@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/04/09 14:30:13 simon Exp $
 
 COMMENT =	Reload changed modules for mod_perl
 
-DISTNAME =	Apache-Reload-0.10
-REVISION =	0
+DISTNAME =	Apache-Reload-0.11
 CATEGORIES =	www perl5
 
 MODULES =	cpan
-USE_GROFF =	Yes
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 RUN_DEPENDS =	www/mod_perl
@@ -18,8 +16,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-# Tests are patched out to avoid network access in "make configure",
-# and need manual configuration anyway.
+# regress tests require to run as non-root user,
+# needs p5-Apache-Test chroot fix to work as root
 NO_REGRESS =		Yes
 
 .include <bsd.port.mk>
