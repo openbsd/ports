@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: nginx.rc,v 1.7 2011/03/09 19:37:47 ajacoutot Exp $
+# $OpenBSD: nginx.rc,v 1.8 2011/04/09 01:21:55 william Exp $
 
 daemon="${TRUEPREFIX}/sbin/nginx"
 
@@ -13,8 +13,7 @@ rc_reload() {
 }
 
 rc_stop() {
-	${daemon} -s stop
-	[ $? -gt 0 ] && pkill -f "^${pexp}"
+	${daemon} -s stop || pkill -f "^${pexp}"
 }
 
 rc_cmd $1

@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.39 2011/03/09 19:37:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2011/04/09 01:21:55 william Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
-DISTNAME=	nginx-0.8.53
+DISTNAME=	nginx-0.8.54
 CATEGORIES=	www
-
-REVISION=	7
 
 HOMEPAGE=	http://nginx.net/
 
-MAINTAINER=	William Yodlowsky <bsd@openbsd.rutgers.edu>
+MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
 # BSD-like
 PERMIT_PACKAGE_CDROM=	Yes
