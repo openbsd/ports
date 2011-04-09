@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/09 07:39:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/09 07:43:53 jasper Exp $
 
 COMMENT =		library for decoding mod-like music formats
 
-DISTNAME =		libmodplug-0.8.8.1
+DISTNAME =		libmodplug-0.8.8.2
 CATEGORIES =		audio
 
 HOMEPAGE =		http://modplug-xmms.sourceforge.net/
@@ -24,6 +24,7 @@ USE_LIBTOOL =		Yes
 NO_REGRESS =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
+			--disable-silent-rules
 
 .include <bsd.port.mk>
