@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/05 22:05:05 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/09 19:25:33 simon Exp $
 ${P5SITE}/HTML/
 ${P5SITE}/HTML/Tiny.pm
 @man man/man3p/HTML::Tiny.3p
+share/examples/p5-HTML-Tiny/
+share/examples/p5-HTML-Tiny/js.pl
+share/examples/p5-HTML-Tiny/simple.pl
+share/examples/p5-HTML-Tiny/table.pl
