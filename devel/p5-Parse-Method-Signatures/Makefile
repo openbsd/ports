@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/09 08:11:43 jasper Exp $
 
 COMMENT=		perl6 like method signature parser
 
 DISTNAME=		Parse-Method-Signatures-1.003013
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 
@@ -19,10 +19,12 @@ USE_GROFF =		Yes
 RUN_DEPENDS=		devel/p5-List-MoreUtils \
 			devel/p5-MooseX-Traits \
 			devel/p5-MooseX-Types-Structured \
-			devel/p5-Test-Differences \
-			devel/p5-aliased \
 			devel/p5-namespace-clean \
 			textproc/p5-PPI
 BUILD_DEPENDS=		${RUN_DEPENDS}
+
+REGRESS_DEPENDS=	devel/p5-aliased \
+			devel/p5-Test-Differences \
+			devel/p5-Test-Exception
 
 .include <bsd.port.mk>
