@@ -1,11 +1,17 @@
-$OpenBSD: patch-xulrunner_app_Makefile_in,v 1.3 2011/03/30 21:39:14 landry Exp $
---- xulrunner/app/Makefile.in.orig	Wed Dec 15 02:03:42 2010
-+++ xulrunner/app/Makefile.in	Wed Dec 22 22:33:06 2010
-@@ -108,6 +108,7 @@ endif
+$OpenBSD: patch-xulrunner_app_Makefile_in,v 1.4 2011/04/09 11:05:06 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=648726
+--- xulrunner/app/Makefile.in.orig	Sat Mar 19 00:34:14 2011
++++ xulrunner/app/Makefile.in	Sat Apr  9 10:50:43 2011
+@@ -105,6 +105,12 @@ EXTRA_DSO_LIBS += xul
+ endif
+ endif
+ 
++ifeq ($(OS_ARCH),OpenBSD)
++ifdef MOZ_SYDNEYAUDIO
++LIBS += -lsndio
++endif
++endif
++
  LIBS += \
  	$(EXTRA_DSO_LIBS) \
  	$(MOZ_JS_LIBS) \
-+        -lsndio \
- 	$(DIST)/lib/$(LIB_PREFIX)xpcomglue_s.$(LIB_SUFFIX) \
- 	$(XPCOM_LIBS) \
- 	$(NSPR_LIBS) \

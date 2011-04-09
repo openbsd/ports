@@ -1,4 +1,5 @@
-$OpenBSD: patch-media_libsydneyaudio_src_Makefile_in,v 1.3 2011/03/30 21:39:14 landry Exp $
+$OpenBSD: patch-media_libsydneyaudio_src_Makefile_in,v 1.4 2011/04/09 11:05:06 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=648726
 --- media/libsydneyaudio/src/Makefile.in.orig	Wed Jul 21 02:52:30 2010
 +++ media/libsydneyaudio/src/Makefile.in	Sun Aug  1 12:58:33 2010
 @@ -93,6 +93,12 @@ CSRCS		= \
