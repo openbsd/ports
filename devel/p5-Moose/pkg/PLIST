@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/07/02 04:10:24 jim Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/04/09 19:12:07 simon Exp $
 %%SHARED%%
 ${P5ARCH}/Moose/
 ${P5ARCH}/Moose.pm
@@ -37,6 +37,7 @@ ${P5ARCH}/Moose/Cookbook/Snack/
 ${P5ARCH}/Moose/Cookbook/Snack/Keywords.pod
 ${P5ARCH}/Moose/Cookbook/Snack/Types.pod
 ${P5ARCH}/Moose/Cookbook/Style.pod
+${P5ARCH}/Moose/Deprecated.pm
 ${P5ARCH}/Moose/Error/
 ${P5ARCH}/Moose/Error/Confess.pm
 ${P5ARCH}/Moose/Error/Croak.pm
@@ -66,13 +67,6 @@ ${P5ARCH}/Moose/Meta/Attribute/
 ${P5ARCH}/Moose/Meta/Attribute.pm
 ${P5ARCH}/Moose/Meta/Attribute/Native/
 ${P5ARCH}/Moose/Meta/Attribute/Native.pm
-${P5ARCH}/Moose/Meta/Attribute/Native/MethodProvider/
-${P5ARCH}/Moose/Meta/Attribute/Native/MethodProvider/Array.pm
-${P5ARCH}/Moose/Meta/Attribute/Native/MethodProvider/Bool.pm
-${P5ARCH}/Moose/Meta/Attribute/Native/MethodProvider/Code.pm
-${P5ARCH}/Moose/Meta/Attribute/Native/MethodProvider/Counter.pm
-${P5ARCH}/Moose/Meta/Attribute/Native/MethodProvider/Hash.pm
-${P5ARCH}/Moose/Meta/Attribute/Native/MethodProvider/String.pm
 ${P5ARCH}/Moose/Meta/Attribute/Native/Trait/
 ${P5ARCH}/Moose/Meta/Attribute/Native/Trait.pm
 ${P5ARCH}/Moose/Meta/Attribute/Native/Trait/Array.pm
@@ -89,14 +83,99 @@ ${P5ARCH}/Moose/Meta/Class/Immutable/Trait.pm
 ${P5ARCH}/Moose/Meta/Instance.pm
 ${P5ARCH}/Moose/Meta/Method/
 ${P5ARCH}/Moose/Meta/Method.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/
 ${P5ARCH}/Moose/Meta/Method/Accessor.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/
+${P5ARCH}/Moose/Meta/Method/Accessor/Native.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/Writer.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/accessor.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/clear.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/count.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/delete.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/elements.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/first.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/get.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/grep.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/insert.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/is_empty.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/join.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/map.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/natatime.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/pop.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/push.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/reduce.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/set.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/shift.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/shuffle.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/sort.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/sort_in_place.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/splice.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/uniq.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Array/unshift.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Bool/
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Bool/not.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Bool/set.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Bool/toggle.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Bool/unset.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Code/
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Code/execute.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Code/execute_method.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Collection.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Counter/
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Counter/Writer.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Counter/dec.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Counter/inc.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Counter/reset.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Counter/set.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash/
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash/Writer.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash/accessor.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash/clear.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash/count.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash/defined.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash/delete.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash/elements.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash/exists.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash/get.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash/is_empty.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash/keys.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash/kv.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash/set.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Hash/values.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Number/
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Number/abs.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Number/add.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Number/div.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Number/mod.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Number/mul.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Number/set.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Number/sub.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Reader.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/String/
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/String/append.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/String/chomp.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/String/chop.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/String/clear.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/String/inc.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/String/length.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/String/match.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/String/prepend.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/String/replace.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/String/substr.pm
+${P5ARCH}/Moose/Meta/Method/Accessor/Native/Writer.pm
 ${P5ARCH}/Moose/Meta/Method/Augmented.pm
 ${P5ARCH}/Moose/Meta/Method/Constructor.pm
 ${P5ARCH}/Moose/Meta/Method/Delegation.pm
 ${P5ARCH}/Moose/Meta/Method/Destructor.pm
+${P5ARCH}/Moose/Meta/Method/Meta.pm
 ${P5ARCH}/Moose/Meta/Method/Overridden.pm
 ${P5ARCH}/Moose/Meta/Mixin/
 ${P5ARCH}/Moose/Meta/Mixin/AttributeCore.pm
+${P5ARCH}/Moose/Meta/Object/
+${P5ARCH}/Moose/Meta/Object/Trait.pm
 ${P5ARCH}/Moose/Meta/Role/
 ${P5ARCH}/Moose/Meta/Role.pm
 ${P5ARCH}/Moose/Meta/Role/Application/
@@ -170,6 +249,7 @@ ${P5ARCH}/oose.pm
 @man man/man3p/Moose::Cookbook::Snack::Keywords.3p
 @man man/man3p/Moose::Cookbook::Snack::Types.3p
 @man man/man3p/Moose::Cookbook::Style.3p
+@man man/man3p/Moose::Deprecated.3p
 @man man/man3p/Moose::Error::Confess.3p
 @man man/man3p/Moose::Error::Croak.3p
 @man man/man3p/Moose::Error::Default.3p
@@ -194,12 +274,6 @@ ${P5ARCH}/oose.pm
 @man man/man3p/Moose::Manual::Unsweetened.3p
 @man man/man3p/Moose::Meta::Attribute.3p
 @man man/man3p/Moose::Meta::Attribute::Native.3p
-@man man/man3p/Moose::Meta::Attribute::Native::MethodProvider::Array.3p
-@man man/man3p/Moose::Meta::Attribute::Native::MethodProvider::Bool.3p
-@man man/man3p/Moose::Meta::Attribute::Native::MethodProvider::Code.3p
-@man man/man3p/Moose::Meta::Attribute::Native::MethodProvider::Counter.3p
-@man man/man3p/Moose::Meta::Attribute::Native::MethodProvider::Hash.3p
-@man man/man3p/Moose::Meta::Attribute::Native::MethodProvider::String.3p
 @man man/man3p/Moose::Meta::Attribute::Native::Trait.3p
 @man man/man3p/Moose::Meta::Attribute::Native::Trait::Array.3p
 @man man/man3p/Moose::Meta::Attribute::Native::Trait::Bool.3p
@@ -217,8 +291,10 @@ ${P5ARCH}/oose.pm
 @man man/man3p/Moose::Meta::Method::Constructor.3p
 @man man/man3p/Moose::Meta::Method::Delegation.3p
 @man man/man3p/Moose::Meta::Method::Destructor.3p
+@man man/man3p/Moose::Meta::Method::Meta.3p
 @man man/man3p/Moose::Meta::Method::Overridden.3p
 @man man/man3p/Moose::Meta::Mixin::AttributeCore.3p
+@man man/man3p/Moose::Meta::Object::Trait.3p
 @man man/man3p/Moose::Meta::Role.3p
 @man man/man3p/Moose::Meta::Role::Application.3p
 @man man/man3p/Moose::Meta::Role::Application::RoleSummation.3p

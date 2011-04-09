@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2010/12/03 11:44:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/04/09 19:12:07 simon Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	complete modern object system for perl 5
 
 MODULES=	cpan
-DISTNAME=	Moose-1.08
-REVISION=	1
+DISTNAME=	Moose-1.24
 CATEGORIES=	devel
 USE_GROFF =	Yes
 
@@ -16,10 +15,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-CPAN_AUTHOR=	DOY
+CPAN_AUTHOR=	DROLSKY
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/p5-Class-MOP>=0.94 \
+RUN_DEPENDS=	devel/p5-Class-MOP>=1.11 \
 		devel/p5-Data-OptList \
 		devel/p5-List-MoreUtils \
 		devel/p5-Sub-Exporter \
@@ -39,6 +38,7 @@ REGRESS_DEPENDS=databases/p5-DBM-Deep \
 		devel/p5-Test-Exception \
 		devel/p5-Test-LongString \
 		devel/p5-Test-Output \
+		devel/p5-Test-Requires \
 		devel/p5-Test-Warn>=0.10 \
 		textproc/p5-Regexp-Common \
 		www/p5-libwww \
