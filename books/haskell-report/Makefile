@@ -1,34 +1,32 @@
-# $OpenBSD: Makefile,v 1.2 2007/09/15 21:34:36 simon Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/09 17:42:53 kili Exp $
 
-COMMENT=		language and library specification for Haskell
+COMMENT =		language and library specification for Haskell
 
-# Strictly speaking, there's no version at all, just the report of the
-# programming language "Haskell 98". I don't care for now that there may
-# be future errata, since the next major language specification is on
-# the way (hopefully with a more conservative naming scheme, i.e.
-# something like Haskell 2.0) and will be released very soon now[tm].
-DISTNAME=		haskell98-report-html
-PKGNAME=		haskell-report-98
+V =			2010
+DISTNAME =		haskell$V-html
+PKGNAME =		haskell-report-$V
 
-CATEGORIES=		books lang
+CATEGORIES =		books lang
 
-HOMEPAGE=		http://haskell.org/definition/
+HOMEPAGE =		http://haskell.org/haskellwiki/Language_and_library_specification
 
-MAINTAINER=		Matthias Kilian <kili@openbsd.org>
+MAINTAINER =		Matthias Kilian <kili@openbsd.org>
 
 # Copy and distribute for any purpose, but only completely.
 # When modified, mark as such and don't call the thing Haskell.
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =		Yes
 
-MASTER_SITES=		${HOMEPAGE}
+MASTER_SITES =		http://haskell.org/definition/haskell$V-html
 
-PKG_ARCH=		*
+PKG_ARCH =		*
 
-NO_BUILD=		Yes
-NO_REGRESS=		Yes
+NO_BUILD =		Yes
+NO_REGRESS =		Yes
+
+WRKSRC =		${WRKDIR}/haskell$V
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/haskell-report
