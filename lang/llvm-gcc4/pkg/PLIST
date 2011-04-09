@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/01/13 00:18:18 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/04/09 21:53:41 jsg Exp $
 @bin bin/${CONFIG}-cpp-${GCC_V}
 @bin bin/${CONFIG}-gcc-${GCC_V}
 @bin bin/${CONFIG}-llvm-c++
@@ -30,6 +30,7 @@ lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/ammintrin.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/com_err.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/emmintrin.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/limits.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/locale.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/mm3dnow.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/mm_malloc.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/mmintrin.h
@@ -60,10 +61,14 @@ lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/ssp/unistd.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/stddef.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/stdio.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/stdlib.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/string.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/sys/
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/sys/param.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/sys/types.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/syslimits.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/time.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/tmmintrin.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/unistd.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/unwind.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/xmmintrin.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/
@@ -92,6 +97,27 @@ lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/libgcov.a
 lib/llvm-gcc-${LLVM_V}/include/
 lib/llvm-gcc-${LLVM_V}/include/c++/
 lib/llvm-gcc-${LLVM_V}/include/c++/algorithm
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/atomic_word.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/basic_file.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/c++allocator.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/c++config.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/c++io.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/c++locale.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/cpu_defines.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/ctype_base.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/ctype_inline.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/ctype_noninline.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/cxxabi_tweaks.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/gthr-default.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/gthr-posix.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/gthr-single.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/gthr-tpf.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/gthr.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/messages_members.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/os_defines.h
+lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/time_members.h
 lib/llvm-gcc-${LLVM_V}/include/c++/backward/
 lib/llvm-gcc-${LLVM_V}/include/c++/backward/algo.h
 lib/llvm-gcc-${LLVM_V}/include/c++/backward/algobase.h
@@ -573,27 +599,6 @@ lib/llvm-gcc-${LLVM_V}/include/c++/ext/vstring_fwd.h
 lib/llvm-gcc-${LLVM_V}/include/c++/ext/vstring_util.h
 lib/llvm-gcc-${LLVM_V}/include/c++/fstream
 lib/llvm-gcc-${LLVM_V}/include/c++/functional
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/atomic_word.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/basic_file.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/c++allocator.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/c++config.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/c++io.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/c++locale.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/cpu_defines.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/ctype_base.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/ctype_inline.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/ctype_noninline.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/cxxabi_tweaks.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/gthr-default.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/gthr-posix.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/gthr-single.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/gthr-tpf.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/gthr.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/messages_members.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/os_defines.h
-lib/llvm-gcc-${LLVM_V}/include/c++/${CONFIG}/bits/time_members.h
 lib/llvm-gcc-${LLVM_V}/include/c++/iomanip
 lib/llvm-gcc-${LLVM_V}/include/c++/ios
 lib/llvm-gcc-${LLVM_V}/include/c++/iosfwd
