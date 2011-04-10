@@ -1,0 +1,12 @@
+$OpenBSD: patch-gsettings_gsettings-data-convert_1,v 1.1 2011/04/10 08:33:13 ajacoutot Exp $
+--- gsettings/gsettings-data-convert.1.orig	Sun Apr 10 10:22:19 2011
++++ gsettings/gsettings-data-convert.1	Sun Apr 10 10:22:31 2011
+@@ -30,7 +30,7 @@ gsettings-data-convert \- GConf to GSettings data migr
+ reads values out of the users GConf database and stores them in GSettings\&.
+ .PP
+ The information about the mapping from GConf keys to GSettings keys is taken from files in
+-/usr/share/GConf/gsettings\&. Each file in that directory is read as a key file, with sections for each GSettings schema that is being converted\&. The entries in each section map GSettings keys to paths in the GConf database\&. Currently,
++${PREFIX}/share/GConf/gsettings\&. Each file in that directory is read as a key file, with sections for each GSettings schema that is being converted\&. The entries in each section map GSettings keys to paths in the GConf database\&. Currently,
+ \fBgsettings\-data\-convert\fR
+ supports all basic GConf types as well as lists of strings and lists of integers\&.
+ .PP
