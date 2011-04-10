@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1075 2011/04/03 07:19:05 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1076 2011/04/10 17:55:41 jasper Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -113,7 +113,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 	REGRESS_IS_INTERACTIVE \
 	PERMIT_DISTFILES_CDROM PERMIT_DISTFILES_FTP \
 	CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD \
-	SHARED_LIBS USE_MOTIF TARGETS \
+	SHARED_LIBS TARGETS \
 	MAINTAINER AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
@@ -476,33 +476,6 @@ FLAVORS += ${PSEUDO_FLAVORS}
 NO_REGRESS = Yes
 .endif
 
-USE_MOTIF ?= No
-
-.if ${USE_MOTIF:L} != "no"
-.  if ${USE_MOTIF:L} == "lesstif"
-LIB_DEPENDS += x11/lesstif
-WANTLIB +=	Xm>=1
-.  elif ${USE_MOTIF:L} == "openmotif"
-LIB_DEPENDS += x11/openmotif
-WANTLIB += Xm>=2
-.  elif ${USE_MOTIF:L} == "any" || ${USE_MOTIF:L} == "yes"
-FLAVORS += lesstif
-.    if ${FLAVOR:L:Mlesstif} && ${FLAVOR:L:Mmotif}
-ERRORS += "Fatal: choose motif or lesstif, not both."
-.    endif
-.    if ${FLAVOR:L:Mlesstif}
-LIB_DEPENDS += x11/lesstif
-WANTLIB +=	Xm>=1
-.    else
-LIB_DEPENDS += x11/openmotif
-WANTLIB += Xm>=2
-.    endif
-.  else
-ERRORS += "Fatal: Unknown USE_MOTIF=${USE_MOTIF} settings."
-.  endif
-MOTIFLIB = -L${DEPBASE}/lib -lXm
-.endif
-
 .if empty(SUBPACKAGE)
 ERRORS += "Fatal: empty SUBPACKAGE is invalid."
 .else
@@ -717,7 +690,7 @@ PORTHOME ?= /${PKGNAME}_writes_to_HOME
 
 MAKE_ENV += PATH='${PORTPATH}' PREFIX='${PREFIX}' \
 	LOCALBASE='${LOCALBASE}' DEPBASE='${DEPBASE}' X11BASE='${X11BASE}' \
-	MOTIFLIB='${MOTIFLIB}' CFLAGS='${CFLAGS:C/ *$//}' \
+	CFLAGS='${CFLAGS:C/ *$//}' \
 	TRUEPREFIX='${PREFIX}' ${DESTDIRNAME}='' \
 	HOME='${PORTHOME}'
 
