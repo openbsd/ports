@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.505 2011/04/05 15:28:24 naddy Exp $
+# $OpenBSD: Makefile,v 1.506 2011/04/10 17:38:11 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -38,7 +38,7 @@
      SUBDIR += drupal6
      SUBDIR += drush
      SUBDIR += elinks
-     SUBDIR += elinks,js
+#     SUBDIR += elinks,js
      SUBDIR += epiphany
      SUBDIR += epiphany-extensions
      SUBDIR += ezpublish
