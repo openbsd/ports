@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2004/08/03 11:32:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/04/10 18:00:23 jasper Exp $
+@pkgpath astro/xephem,lesstif
 bin/xephem
 lib/X11/app-defaults/XEphem
 lib/X11/xephem/

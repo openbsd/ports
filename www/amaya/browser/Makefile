@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/04/10 18:02:55 jasper Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -26,10 +26,10 @@ WANTLIB += Xi gdk gif glib gmodule gtk iconv intl jpeg png tiff gdk_imlib.>=19
 
 .elif ${FLAVOR:L} == "motif"
 
-USE_MOTIF=		any
-WANTLIB += jpeg png
+WANTLIB += jpeg png Xm
 LIB_DEPENDS+=		graphics/jpeg \
-			graphics/png 
+			graphics/png  \
+			x11/openmotif
 CONFIGURE_ARGS+=	--without-gtk \
 			--with-motif-includes=${LOCALBASE}/include \
 			--with-motif-libraries=${LOCALBASE}/lib
@@ -52,6 +52,7 @@ CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
 			LIBS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--without-graphic-libs
+MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 # We need to regenerate configure in two places, Amaya/ and libwww/
 AUTOCONF_DIR=		${WRKSRC}

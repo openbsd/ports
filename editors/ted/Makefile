@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/15 23:22:07 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/04/10 18:01:13 jasper Exp $
 
 
 COMMENT =	X11 based RTF editor
 V =		2.17
 DISTNAME =	ted-$V
-REVISION =	1
+REVISION =	2
 CATEGORIES =	editors textproc print
 HOMEPAGE =	http://www.nllgg.nl/Ted/
 MASTER_SITES =	ftp://ftp.nluug.nl/pub/editors/ted/
@@ -17,16 +17,17 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 
 WANTLIB += ICE SM X11 Xext Xmu Xpm Xt c m pthread-stubs xcb z
-WANTLIB += png jpeg tiff
+WANTLIB += png jpeg tiff Xm
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 WRKDIST =	${WRKDIR}/Ted-$V
 LIB_DEPENDS =	graphics/png \
 		graphics/jpeg \
-		graphics/tiff
+		graphics/tiff \
+		x11/openmotif
+MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
-USE_MOTIF =	openmotif
 ALL_TARGET =	compile.shared
 SHARED_ONLY =	Yes
 NO_REGRESS =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2011/02/05 23:11:17 ian Exp $
+# $OpenBSD: Makefile,v 1.67 2011/04/10 18:01:13 jasper Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS= 	amd64 i386
@@ -8,9 +8,9 @@ COMMENT-jre=		Java2(TM) Standard Edition Runtime Environment v${V}
 V=			1.5.0.16
 PKGNAME=		jdk-${V}
 PKGNAME-main=		jdk-${V}
-REVISION-main =		4
+REVISION-main =		5
 PKGNAME-jre=		jre-${V}
-REVISION-jre =		4
+REVISION-jre =		5
 
 CATEGORIES=		devel devel/jdk java
 
@@ -44,12 +44,11 @@ BUILD_DEPENDS=		archivers/gtar \
 			archivers/zip \
 			archivers/unzip \
 			archivers/bzip2
-USE_MOTIF=		openmotif
 USE_GROFF =		Yes
 MODULES=		converters/libiconv
 WANTLIB=		X11 Xext Xi Xt Xtst c m ossaudio pthread \
-			pthread-stubs xcb stdc++ z
-
+			pthread-stubs xcb stdc++ z Xm
+LIB_DEPENDS+=		x11/openmotif
 WANTLIB-main=		${WANTLIB} Xmu
 
 USE_GMAKE=		Yes
@@ -67,7 +66,8 @@ MAKE_ENV=		ALT_MOTIF_DIR="${LOCALBASE}" \
 			CXX="${CXX}" \
 			DEFAULT_LD_LIBRARY_PATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
 			USER="${USER}" \
-			HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}
+			HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS} \
+			MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 # Error message for distfile.
 FETCH_MANUALLY=		"You must manually fetch the distribution files, place"

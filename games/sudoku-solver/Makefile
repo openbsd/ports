@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/04/06 21:05:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/04/10 18:01:13 jasper Exp $
 
 COMMENT=	sudoku puzzle solver with cli, gui, and web ui
 
@@ -14,19 +14,19 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		Xt c crypto m pthread z fcgi
+WANTLIB=		Xt c crypto m pthread z fcgi Xm
 
 MASTER_SITES=  	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
 
-USE_MOTIF=	OpenMotif
-
 MODULES=	devel/gettext
 
 BUILD_DEPENDS=	www/clearsilver
-LIB_DEPENDS=	www/fcgi
+LIB_DEPENDS=	www/fcgi \
+		x11/openmotif
 
 MAKE_ENV=	LDADD=-lm
+MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 NO_REGRESS=	Yes
 

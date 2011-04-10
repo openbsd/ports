@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2010/11/19 07:23:10 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2011/04/10 18:02:18 jasper Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
 DISTNAME=	grace-5.1.15
-REVISION=	3
+REVISION=	4
 CATEGORIES=	math
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/
@@ -47,8 +47,9 @@ ERRORS+=	"Fatal: Flavors 'no_x11' and 'xmhtml' are mutually exclusive."
 .  endif
 .else
 REGRESS_IS_INTERACTIVE=	x11
-USE_MOTIF=		openmotif
-WANTLIB+=		ICE SM X11 Xext Xmu Xpm Xt
+LIB_DEPENDS+=		x11/openmotif
+WANTLIB+=		ICE SM X11 Xext Xmu Xpm Xt Xm
+MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 .  if ${FLAVOR:L:Mxmhtml}
 LIB_DEPENDS +=		www/xmhtml
 WANTLIB +=		XmHTML>=1

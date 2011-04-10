@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/18 11:16:07 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/10 18:02:18 jasper Exp $
 
 CATEGORIES=	lang
 ONLY_FOR_ARCHS=	i386
@@ -12,6 +12,7 @@ PERMIT_DISTFILES_CDROM=Yes
 
 V=1.1.15
 DISTNAME=	pm3-$V
+REVISION=	0
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 DISTFILES=	pm3-$V-src.tgz pm3-${V}a-OpenBSD_386-boot.tgz:1
@@ -27,7 +28,10 @@ ALL_TARGET=exportall
 
 HOMEPAGE=	http://m3.polymtl.ca/m3/
 USE_GMAKE=	Yes
-USE_MOTIF=	any
+
+WANTLIB+=		Xm
+LIB_DEPENDS+=		x11/openmotif
+MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 post-extract:
 	@cd ${WRKDIST} && \

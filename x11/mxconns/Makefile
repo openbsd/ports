@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 21:15:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/04/10 18:02:55 jasper Exp $
 
 COMMENT=	interactive X11 proxy with selective X request replacement
 
 DISTNAME=	mxconns-3.1.8
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11 security
 
 HOMEPAGE=	http://cern.ch/mxconns/
@@ -15,13 +15,13 @@ PERMIT_PACKAGE_CDROM=	No
 PERMIT_PACKAGE_FTP=	No
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	No
-WANTLIB=		X11 Xau Xext Xpm Xt c m
+WANTLIB=		X11 Xau Xext Xpm Xt c m Xm
 
-USE_MOTIF=	any
+LIB_DEPENDS+=		x11/openmotif
 USE_GROFF =	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS=	-optim "${CFLAGS}" -debug
-MAKE_FLAGS =	MOTIF_LIB="${MOTIFLIB} -lm"
+MAKE_FLAGS =	MOTIF_LIB="${MOTIFLIB} -lm -lXm"
 
 NO_REGRESS=	Yes
 

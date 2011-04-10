@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2008/10/28 12:09:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/04/10 18:00:23 jasper Exp $
+@pkgpath audio/xmcd,lesstif
 bin/cda
 bin/cddbcmd
 bin/dp2xmcd

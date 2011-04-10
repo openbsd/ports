@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/10/24 20:58:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2011/04/10 18:00:23 jasper Exp $
 
 COMMENT=	interactive astronomical ephemeris
 DISTNAME=	xephem-3.2.3
@@ -12,10 +12,12 @@ PERMIT_PACKAGE_FTP=     no modifications
 PERMIT_DISTFILES_CDROM= no fee
 PERMIT_DISTFILES_FTP=   Yes
 
-REVISION =	3
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m
+REVISION =	4
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m Xm
 
-USE_MOTIF=	any
+LIB_DEPENDS += x11/openmotif
+MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
+
 USE_GROFF =	Yes
 CONFIGURE_STYLE= imake
 

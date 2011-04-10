@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/03/14 08:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2011/04/10 18:02:55 jasper Exp $
 
 COMMENT=	Motif-based table widget
 
 DISTNAME=	xbae-4.60.4
-REVISION=	7
+REVISION=	8
 
 SHARED_LIBS=	Xbae 4.60
 
@@ -20,16 +20,17 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xrender Xt jpeg m png
-WANTLIB += expat fontconfig freetype z iconv pthread-stubs xcb
+WANTLIB += expat fontconfig freetype z iconv pthread-stubs xcb Xm
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xbae/}
 
 USE_LIBTOOL=	 Yes
-USE_MOTIF=	 Yes
+LIB_DEPENDS+=	x11/openmotif
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	 --datadir=${PREFIX}/share/doc \
 		 --enable-production
 CONFIGURE_ENV=	LDFLAGS=-lm
+MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 .include <bsd.port.mk>

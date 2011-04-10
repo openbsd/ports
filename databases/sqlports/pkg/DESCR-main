@@ -49,9 +49,6 @@ with 1/0. Variables not present in a given port are left undefined.
 
 Note that USE_LIBTOOL is 3-valued: 2 is gnu, 1 is yes, undef is no.
 
-Note that USE_MOTIF is 4-valued: 1 is openmotif, 2 is lestif, 3 is any/yes,
-undef is no.
-
 The FULLPKGPATH is complete, including flavors markers. For each port with
 MULTI_PACKAGES setting, another entry is written with the correct SUBPACKAGE.  
 

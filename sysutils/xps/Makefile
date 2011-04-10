@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/04/07 17:41:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/04/10 18:02:55 jasper Exp $
 
 DISTNAME=       xps-4.2
 REVISION=	3
@@ -10,7 +10,7 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=		ICE SM X11 Xext Xmu Xt c kvm m
+WANTLIB=		ICE SM X11 Xext Xmu Xt c kvm m Xm
 
 COMMENT=	graphically display and dynamically update the process tree
 
@@ -20,8 +20,9 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--x-includes=${LOCALBASE}/include \
 			--with-motif-libs=${LOCALBASE}/lib
 CONFIGURE_ENV=		LDFLAGS=-lm
+MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
-USE_MOTIF=		any
+LIB_DEPENDS+=		x11/openmotif
 USE_GROFF=		Yes
 
 NO_REGRESS=		Yes

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/20 09:48:40 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/04/10 18:02:19 jasper Exp $
 
 COMMENT= 		WWW quote retrieval tool
 
 DISTNAME=		xquote-2.6.10
-REVISION=		4
+REVISION=		5
 CATEGORIES=		productivity x11
 
 MAINTAINER=		Martynas Venckus <martynas@openbsd.org>
@@ -14,15 +14,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m pthread-stubs xcb Xbae
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xpm Xt c m pthread-stubs xcb \
+		Xbae Xm
 
 MASTER_SITES=	http://distfiles.nl/
 
-LIB_DEPENDS=	x11/xbae
+LIB_DEPENDS=	x11/xbae \
+		x11/openmotif
 
-USE_MOTIF=	Yes
 CONFIGURE_STYLE= imake
 INSTALL_MAN=	No	# no manual page
+MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 NO_REGRESS=	Yes
 

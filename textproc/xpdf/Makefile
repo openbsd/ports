@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2011/03/03 21:22:13 stsp Exp $
+# $OpenBSD: Makefile,v 1.79 2011/04/10 18:02:55 jasper Exp $
 
 COMMENT-main=	PDF viewer for X11
 COMMENT-utils=	PDF conversion tools
 
 DISTNAME=	xpdf-3.02
 PKGNAME-main=	xpdf-3.02.5
-REVISION-main=	1
+REVISION-main=	2
 PKGNAME-utils=	xpdf-utils-3.02.5
 CATEGORIES=	textproc x11
 
@@ -27,7 +27,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-USE_MOTIF=	openmotif
+LIB_DEPENDS+=	x11/openmotif
 USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --enable-multithreaded \
@@ -36,6 +36,7 @@ CONFIGURE_ARGS+= --enable-multithreaded \
 
 CONFIGURE_ENV=  CPPFLAGS='-I${X11BASE}/include/freetype2 -I${X11BASE}/include -I${LOCALBASE}/include -DLOCALBASE="\"${LOCALBASE}\""' \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm -lz"
+MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 LIB_DEPENDS-utils=
 LIB_DEPENDS-main=	devel/t1lib ${LIB_DEPENDS}
@@ -45,7 +46,7 @@ RUN_DEPENDS-main=	${RUN_DEPENDS-utils} \
 
 WANTLIB-utils=		c m pthread stdc++ z
 WANTLIB-main=		${WANTLIB} ${WANTLIB-utils} ICE SM X11 Xext Xpm Xt \
-			freetype t1>=3
+			freetype t1>=3 Xm
 
 NO_REGRESS=	Yes
 

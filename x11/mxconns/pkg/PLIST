@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/06/28 08:23:19 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/10 18:02:55 jasper Exp $
+@pkgpath x11/mxconns,lesstif
 @bin bin/mxconns
 @man man/man1/mxconns.1

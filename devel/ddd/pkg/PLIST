@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2009/11/30 23:45:35 edd Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/04/10 18:01:13 jasper Exp $
+@pkgpath devel/ddd,lesstif
 @bin bin/ddd
 @info info/ddd-themes.info
 @info info/ddd.info

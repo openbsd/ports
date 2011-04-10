@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/24 21:38:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2011/04/10 18:02:55 jasper Exp $
 
 COMMENT=	graphical front end to Unix diff
 
 DISTNAME=	mgdiff
 PKGNAME=	${DISTNAME}-1.0
-REVISION=	3
+REVISION=	4
 CATEGORIES=	textproc
 
 MASTER_SITES=	${MASTER_SITE_XCONTRIB:=applications/}
@@ -15,11 +15,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt c m
+WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xmu Xt c m Xm
 
-USE_MOTIF=	any
+LIB_DEPENDS+=		x11/openmotif
 USE_GROFF =	Yes
 CONFIGURE_STYLE=imake
+MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 
 NO_REGRESS=	Yes
 

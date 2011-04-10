@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.119 2011/04/07 20:50:55 ckuethe Exp $
+# $OpenBSD: Makefile,v 1.120 2011/04/10 18:01:13 jasper Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
@@ -9,6 +9,7 @@ VERSION=	7.3.${REV}
 # keep PKGNAME for full version number
 PKGNAME=	vim-${VERSION}
 PKGNAME-main=	vim-${VERSION}
+REVISION-main=	0
 PKGNAME-lang=	vim-lang-${VERSION}
 P=		${DISTNAME:C/[-\.]//g}
 CATEGORIES=	editors
@@ -89,8 +90,9 @@ WANTLIB+=	m
 	!${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mathena} && !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--enable-gui="motif" --with-x --enable-fontset --enable-xim
 CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
-USE_MOTIF=	any
-WANTLIB+=	m ICE SM X11 Xmu Xpm Xt
+LIB_DEPENDS+=	x11/openmotif
+WANTLIB+=	m ICE SM X11 Xmu Xpm Xt Xm
+MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 .elif ${FLAVOR:L:Mathena} && \
 	!${FLAVOR:L:Mno_x11} && !${FLAVOR:L:Mmotif} && !${FLAVOR:L:Mgtk2}
 CONFIGURE_ARGS+=--enable-gui="athena" --with-x --enable-fontset --enable-xim

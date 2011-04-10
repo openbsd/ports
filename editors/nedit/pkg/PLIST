@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/12/08 12:47:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/04/10 18:01:13 jasper Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},wrapmark
+@pkgpath ${BASE_PKGPATH},lesstif,wrapmark
+@pkgpath ${BASE_PKGPATH},lesstif
 @bin bin/ncl
 @bin bin/nedit
 lib/X11/app-defaults/NEdit

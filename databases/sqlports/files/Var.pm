@@ -1,4 +1,4 @@
-# $OpenBSD: Var.pm,v 1.10 2011/03/02 16:19:54 espie Exp $
+# $OpenBSD: Var.pm,v 1.11 2011/04/10 18:01:13 jasper Exp $
 #
 # Copyright (c) 2006-2010 Marc Espie <espie@openbsd.org>
 #
@@ -212,19 +212,6 @@ sub values
 	return { 
 	    	yes => 1,
 		no => undef 
-	};
-}
-
-package MotifVar;
-our @ISA =qw(ValuedVar);
-sub values
-{
-	return {
-		lesstif => 2,
-		openmotif => 1,
-		yes => 3,
-		any => 3,
-		no => undef
 	};
 }
 
