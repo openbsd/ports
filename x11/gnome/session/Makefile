@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.140 2011/04/06 18:33:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.141 2011/04/10 10:26:55 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.32.1
 
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		x11
 
@@ -32,7 +32,8 @@ BUILD_DEPENDS=	textproc/rarian \
 		x11/gnome/settings-daemon
 LIB_DEPENDS=	devel/libexecinfo
 RUN_DEPENDS=	x11/gnome/settings-daemon \
-		sysutils/consolekit
+		sysutils/consolekit \
+		x11/xdg-user-dirs-gtk>=0.8p6
 
 # polkit-gnome isn't really *required* but then we will loose the polkit
 # auth. dialog ; same for gconf2-polkit, gconf2 and polkit are already
