@@ -1,0 +1,12 @@
+@comment $OpenBSD: PFRAG.jit,v 1.1 2011/04/10 17:24:38 landry Exp $
+include/js/Allocator.h
+include/js/Assembler.h
+include/js/CodeAlloc.h
+include/js/Containers.h
+include/js/Fragmento.h
+include/js/LIR.h
+include/js/Native.h
+include/js/RegAlloc.h
+include/js/avmplus.h
+include/js/jsbuiltins.h
+include/js/nanojit.h
