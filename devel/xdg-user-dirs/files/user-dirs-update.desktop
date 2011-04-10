@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Exec=xdg-user-dirs-update
+Name=User folders creation
+Comment=Create and configure default desktop user directories
+Terminal=false
+Type=Application
+StartupNotify=false
