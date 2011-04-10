@@ -1,7 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.5 2005/12/26 18:45:10 naddy Exp $
-@lib LessTif/Motif1.2/lib/libMrm.so.${LIBMrm_VERSION}
-@lib LessTif/Motif1.2/lib/libUil.so.${LIBUil_VERSION}
-@lib LessTif/Motif1.2/lib/libXm.so.${LIBXm_VERSION}
-@lib lib/libMrm.so.${LIBMrm_VERSION}
-@lib lib/libUil.so.${LIBUil_VERSION}
-@lib lib/libXm.so.${LIBXm_VERSION}
