@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/04/09 17:42:53 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/10 06:52:41 kili Exp $
 
 COMMENT =		language and library specification for Haskell
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-MASTER_SITES =		http://haskell.org/definition/haskell$V-html
+MASTER_SITES =		http://haskell.org/definition/
 
 PKG_ARCH =		*
 
