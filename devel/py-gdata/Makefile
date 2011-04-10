@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2011/01/13 08:13:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/04/10 21:09:45 jasper Exp $
 
 COMMENT =	Python client library for Google data APIs
 
-MODPY_EGG_VERSION = 2.0.13
+MODPY_EGG_VERSION = 2.0.14
 DISTNAME =	gdata-${MODPY_EGG_VERSION}
 PKGNAME =	py-gdata-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
