@@ -1,5 +1,36 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/04/02 13:27:44 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/10 20:33:22 jasper Exp $
 ${P5SITE}/Text/
 ${P5SITE}/Text/vFile/
 ${P5SITE}/Text/vFile/asData.pm
 @man man/man3p/Text::vFile::asData.3p
+share/examples/p5-Text-vFile-asData/
+share/examples/p5-Text-vFile-asData/Text-vCard/
+share/examples/p5-Text-vFile-asData/Text-vCard/README
+share/examples/p5-Text-vFile-asData/Text-vCard/evolution.vcf
+share/examples/p5-Text-vFile-asData/Text-vCard/full_card_v2_1.vcf
+share/examples/p5-Text-vFile-asData/Text-vCard/full_card_v3.vcf
+share/examples/p5-Text-vFile-asData/Text-vCard/phone_v1.vcf
+share/examples/p5-Text-vFile-asData/Text-vCard/simple.vcf
+share/examples/p5-Text-vFile-asData/Text-vFile/
+share/examples/p5-Text-vFile-asData/Text-vFile/02_simple.dat
+share/examples/p5-Text-vFile-asData/Text-vFile/03_multi.dat
+share/examples/p5-Text-vFile-asData/Text-vFile/README
+share/examples/p5-Text-vFile-asData/rfc2445-objects/
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.4-calendar-1.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.1-event-1.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.1-event-2.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.1-event-3.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.2-todo-1.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.3-journal-1.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.4-freebusy-1.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.4-freebusy-2.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.4-freebusy-3.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.5-timezone-1.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.5-timezone-2.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.5-timezone-3.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.5-timezone-4.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.6-alarm-1.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.6-alarm-2.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.6-alarm-3.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/4.6.6-alarm-4.ics
+share/examples/p5-Text-vFile-asData/rfc2445-objects/README
