@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:13 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/10 17:26:18 jasper Exp $
 
 COMMENT =	UPnP media server
 
 VER =		0.12.1
 DISTNAME =	mediatomb-${VER}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	multimedia
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	avformat avutil c crypto curl exif expat ffmpegthumbnailer idn
-WANTLIB +=	js m magic mp4v2 pthread sqlite3 ssl stdc++ tag z
+WANTLIB +=	m magic mp4v2 pthread sqlite3 ssl stdc++ tag z
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=mediatomb/}
 
@@ -28,13 +28,13 @@ LIB_DEPENDS =	audio/taglib \
 		devel/libmagic \
 		graphics/ffmpegthumbnailer \
 		graphics/libexif \
-		lang/spidermonkey \
 		net/curl
 
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS +=	--disable-inotify \
 			--disable-lastfmlib \
 			--disable-mysql \
+			--enable-libjs=no \
 			PTHREAD_LIBS="-pthread"
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
