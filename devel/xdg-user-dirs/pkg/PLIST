@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/10/09 23:25:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/10 08:21:43 ajacoutot Exp $
 bin/xdg-user-dir
 @bin bin/xdg-user-dirs-update
 share/examples/xdg-user-dirs/
@@ -11,9 +11,15 @@ share/examples/xdg-user-dirs/xdg/user-dirs.defaults
 share/locale/af/
 share/locale/af/LC_MESSAGES/
 share/locale/af/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/an/
+share/locale/an/LC_MESSAGES/
+share/locale/an/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/as/
+share/locale/as/LC_MESSAGES/
+share/locale/as/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ast/
 share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/xdg-user-dirs.mo
@@ -22,6 +28,12 @@ share/locale/be@latin/
 share/locale/be@latin/LC_MESSAGES/
 share/locale/be@latin/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/bg/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/bn_IN/
+share/locale/bn_IN/LC_MESSAGES/
+share/locale/bn_IN/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/br/
+share/locale/br/LC_MESSAGES/
+share/locale/br/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ca/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/crh/
 share/locale/crh/LC_MESSAGES/
@@ -34,11 +46,20 @@ share/locale/eo/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/es/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/et/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/eu/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/fa/
+share/locale/fa/LC_MESSAGES/
+share/locale/fa/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/fi/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/fr/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ga/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/gl/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/gu/
+share/locale/gu/LC_MESSAGES/
+share/locale/gu/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/he/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
+share/locale/hi/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/hu/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/id/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/is/
@@ -46,6 +67,9 @@ share/locale/is/LC_MESSAGES/
 share/locale/is/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/it/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ja/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/kk/
+share/locale/kk/LC_MESSAGES/
+share/locale/kk/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/kn/
 share/locale/kn/LC_MESSAGES/
 share/locale/kn/LC_MESSAGES/xdg-user-dirs.mo
@@ -60,9 +84,18 @@ share/locale/lv/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/mk/
 share/locale/mk/LC_MESSAGES/
 share/locale/mk/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/mr/
+share/locale/mr/LC_MESSAGES/
+share/locale/mr/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/nb/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/nds/
+share/locale/nds/LC_MESSAGES/
+share/locale/nds/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/nl/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/nn/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/or/
+share/locale/or/LC_MESSAGES/
+share/locale/or/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/pa/
 share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/xdg-user-dirs.mo
@@ -72,6 +105,7 @@ share/locale/ps/LC_MESSAGES/
 share/locale/ps/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/pt/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/pt_BR/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/ro/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/ru/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/sk/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/sl/LC_MESSAGES/xdg-user-dirs.mo
@@ -83,6 +117,12 @@ share/locale/sr@Latn/
 share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/sv/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
+share/locale/ta/LC_MESSAGES/xdg-user-dirs.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/xdg-user-dirs.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/xdg-user-dirs.mo
