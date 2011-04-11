@@ -1,6 +1,6 @@
-$OpenBSD: patch-pftop_c,v 1.13 2009/12/02 22:59:29 sthen Exp $
---- pftop.c.orig	Wed Nov  7 07:36:46 2007
-+++ pftop.c	Thu Dec  3 00:12:22 2009
+$OpenBSD: patch-pftop_c,v 1.14 2011/04/11 08:20:41 sthen Exp $
+--- pftop.c.orig	Wed Nov  7 06:36:46 2007
++++ pftop.c	Mon Apr 11 09:02:34 2011
 @@ -127,6 +127,13 @@
  #define PT_NOROUTE(x) (0)
  #endif
@@ -370,7 +370,17 @@ $OpenBSD: patch-pftop_c,v 1.13 2009/12/02 22:59:29 sthen Exp $
  	if (pr->quick)
  		print_fld_str(FLD_QUICK, "Quick");
  
-@@ -1729,12 +1913,19 @@ pfctl_insert_altq_node(struct pf_altq_node **root,
+@@ -1555,7 +1739,9 @@ print_rule(struct pf_rule *pr)
+ #ifdef HAVE_PF_ROUTE
+ 	if (pr->rt > 0 && pr->rt < numroute) {
+ 		tbprintf("%s ", routetypes[pr->rt]);
++#ifdef PF_FASTROUTE
+ 		if (pr->rt != PF_FASTROUTE)
++#endif
+ 			tbprintf("... ");
+ 	}
+ #endif
+@@ -1729,12 +1915,19 @@ pfctl_insert_altq_node(struct pf_altq_node **root,
  			prev->next = node;
  		}
  	}
@@ -396,7 +406,7 @@ $OpenBSD: patch-pftop_c,v 1.13 2009/12/02 22:59:29 sthen Exp $
  	}
  }
  
-@@ -1747,6 +1938,7 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1747,6 +1940,7 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  	u_int32_t		 nr;
  	struct queue_stats	 qstats;
  	u_int32_t		 nr_queues;
@@ -404,7 +414,7 @@ $OpenBSD: patch-pftop_c,v 1.13 2009/12/02 22:59:29 sthen Exp $
  
  	*inserts = 0;
  	memset(&pa, 0, sizeof(pa));
-@@ -1757,13 +1949,15 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1757,13 +1951,15 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  			  strerror(errno));
  		return (-1);
  	}
@@ -421,7 +431,7 @@ $OpenBSD: patch-pftop_c,v 1.13 2009/12/02 22:59:29 sthen Exp $
  		}
  		if (pa.altq.qid > 0) {
  			pq.nr = nr;
-@@ -1773,7 +1967,8 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1773,7 +1969,8 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  			if (ioctl(pf_dev, DIOCGETQSTATS, &pq)) {
  				msgprintf("Error Reading Queue (DIOCGETQSTATS): %s",
  					  strerror(errno));
@@ -431,7 +441,7 @@ $OpenBSD: patch-pftop_c,v 1.13 2009/12/02 22:59:29 sthen Exp $
  			}
  			qstats.valid = 1;
  			gettimeofday(&qstats.timestamp, NULL);
-@@ -1794,7 +1989,10 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
+@@ -1794,7 +1991,10 @@ pfctl_update_qstats(struct pf_altq_node **root, int *i
  		else
  			--num_queues;
  	}
