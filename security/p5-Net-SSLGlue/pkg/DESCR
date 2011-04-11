@@ -1,0 +1,2 @@
+This Module helps LWP, Net::SMTP and Net::LDAP to be either SSL
+aware at all or to offer way for proper certificate checking.
