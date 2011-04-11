@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/26 07:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/04/11 14:34:17 kili Exp $
 
 COMMENT =		abstraction layer for SQL relational databases
 
 DISTNAME =		HDBC-2.2.6.1
+REVISION =		0
 CATEGORIES =		databases
 HOMEPAGE =		http://software.complete.org/hdbc
 
