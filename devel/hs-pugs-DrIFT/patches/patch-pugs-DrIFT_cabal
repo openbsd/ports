@@ -1,0 +1,12 @@
+$OpenBSD: patch-pugs-DrIFT_cabal,v 1.1 2011/04/11 14:46:29 kili Exp $
+--- pugs-DrIFT.cabal.orig	Mon Jul 20 01:06:45 2009
++++ pugs-DrIFT.cabal	Sun Apr 10 12:59:06 2011
+@@ -23,7 +23,7 @@ exposed-modules:     DrIFT.JSON
+                      DrIFT.Perl6Class
+                      DrIFT.YAML
+ hs-source-dirs:      src
+-build-depends:       base < 4, haskell98, bytestring, utf8-string, pretty, containers, mtl, stm, HsSyck
++build-depends:       base < 5, haskell98, bytestring, utf8-string, pretty, containers, mtl, stm, HsSyck
+ build-type:          Simple
+ data-files:          AUTHORS, ChangeLog, README, README.old
+ extensions:          ParallelListComp, ScopedTypeVariables,

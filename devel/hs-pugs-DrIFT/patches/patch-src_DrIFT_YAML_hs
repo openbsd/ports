@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_DrIFT_YAML_hs,v 1.1 2011/04/11 14:46:29 kili Exp $
+
+From upstream git repo.
+
+--- src/DrIFT/YAML.hs.orig	Mon Jul 20 01:06:45 2009
++++ src/DrIFT/YAML.hs	Sun Apr 10 16:00:24 2011
+@@ -59,7 +59,7 @@ type EmitAs = ReaderT SeenCache IO
+ class Typeable a => YAML a where
+     asYAML :: a -> EmitAs YamlNode
+     asYAML x = lift $ do
+-        ty <- Control.Exception.handle (const $ return "()") $
++        ty <- Control.Exception.handle (\(e :: SomeException) -> return "()") $
+             evaluate (show (typeOf x))
+         case ty of
+             "()" -> return nilNode

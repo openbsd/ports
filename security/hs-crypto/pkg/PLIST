@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/10/28 13:53:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/04/11 14:52:45 kili Exp $
 @comment bin/HMACTest
 @comment bin/QuickTest
 @comment bin/RSATest
@@ -74,8 +74,7 @@ share/doc/hs-${DISTNAME}/html/Data-LargeWord.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
-share/doc/hs-${DISTNAME}/html/haddock.css
-share/doc/hs-${DISTNAME}/html/haskell_icon.gif
+share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Codec-Binary-BubbleBabble.html
@@ -101,6 +100,8 @@ share/doc/hs-${DISTNAME}/html/mini_Data-Digest-SHA512.html
 share/doc/hs-${DISTNAME}/html/mini_Data-HMAC.html
 share/doc/hs-${DISTNAME}/html/mini_Data-LargeWord.html
 share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/synopsis.png
 share/hs-${DISTNAME}/
 share/hs-${DISTNAME}/CryptoHomePage.html

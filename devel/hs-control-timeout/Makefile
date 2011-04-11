@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/04/11 14:46:29 kili Exp $
 
 COMMENT =		timeout handling
 
 DISTNAME =		control-timeout-0.1.2
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 # BSD3
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
-LIB_DEPENDS =		devel/hs-stm
-RUN_DEPENDS =		${LIB_DEPENDS}
+BUILD_DEPENDS =		${RUN_DEPENDS}
+RUN_DEPENDS =		devel/hs-stm
 
 .include <bsd.port.mk>

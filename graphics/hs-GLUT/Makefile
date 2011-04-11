@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/11 14:49:08 kili Exp $
 
 COMMENT =		Haskell binding for the OpenGL Utility Toolkit
 
 DISTNAME =		GLUT-2.1.2.1
-REVISION =		6
+REVISION =		7
 CATEGORIES =		graphics devel
 HOMEPAGE =		http://www.haskell.org/HOpenGL/
 
@@ -19,12 +19,10 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-LIB_DEPENDS =		graphics/hs-OpenGL>=2.2
-
 # Should be changed to LIB_DEPENDS as soon as we have a GHC with
 # shared libs.
-RUN_DEPENDS =		${LIB_DEPENDS} \
-			graphics/freeglut
+RUN_DEPENDS =		graphics/freeglut \
+			graphics/hs-OpenGL>=2.2
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
 

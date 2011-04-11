@@ -1,0 +1,33 @@
+$OpenBSD: patch-QuickTest_hs,v 1.1 2011/04/11 14:52:45 kili Exp $
+
+Remove instance declarations that already come with the QuickCheck
+package.
+
+--- QuickTest.hs.orig	Thu Jan 28 02:19:33 2010
++++ QuickTest.hs	Sun Dec 26 16:23:59 2010
+@@ -14,18 +14,6 @@ import Numeric
+ import Data.Char
+ import Test.QuickCheck
+ 
+-instance Arbitrary Word8 where
+-   arbitrary = 
+-      do n <- choose ((fromIntegral (minBound::Word8))::Int, 
+-                      (fromIntegral (maxBound::Word8))::Int)
+-         return (fromIntegral n)
+-
+-instance Arbitrary Word64 where
+-   arbitrary = 
+-      do n <- choose ((fromIntegral (minBound::Word64))::Integer, 
+-                      (fromIntegral (maxBound::Word64))::Integer)
+-         return (fromIntegral n)
+-
+ instance Arbitrary Word128 where
+    arbitrary = 
+       do n <- choose ((fromIntegral (minBound::Word128))::Integer, 
+@@ -71,4 +59,4 @@ main = do quickCheck prop_decryptEncrypt
+           quickCheck prop_unPkcs5Pkcs5
+           quickCheck prop_unNullsNulls
+           quickCheck prop_fromOctetsToOctets
+-          quickCheck prop_unTwosCompTwosComp
+\ No newline at end of file
++          quickCheck prop_unTwosCompTwosComp

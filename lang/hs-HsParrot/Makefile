@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/04/11 14:49:55 kili Exp $
 
 COMMENT =		Haskell integration with Parrot virtual machine
 
 DISTNAME =		HsParrot-0.0.2
-REVISION =		2
+REVISION =		3
 CATEGORIES =		lang devel
 
 # MIT (see comment in HsParrot.cabal)
@@ -15,8 +15,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 
-LIB_DEPENDS =		devel/hs-HsSyck \
+BUILD_DEPENDS =		${RUN_DEPENDS}
+RUN_DEPENDS =		devel/hs-HsSyck \
 			devel/hs-pugs-DrIFT
-RUN_DEPENDS =		${LIB_DEPENDS}
 
 .include <bsd.port.mk>

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/04/05 11:38:33 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2011/04/11 14:46:29 kili Exp $
 
 COMMENT =		efficient packed Unicode text type
 
 DISTNAME =		text-0.11.0.6
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -17,7 +18,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-LIB_DEPENDS =		devel/hs-deepseq>=1.1.0.0
-RUN_DEPENDS =		${LIB_DEPENDS}
+BUILD_DEPENDS =		${RUN_DEPENDS}
+RUN_DEPENDS =		devel/hs-deepseq>=1.1.0.0
 
 .include <bsd.port.mk>
