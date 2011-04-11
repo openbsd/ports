@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/03 22:12:01 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2011/04/11 14:32:52 kili Exp $
 
 COMMENT =		zlib bindings for Haskell
 
-DISTNAME =		zlib-0.5.2.0
+DISTNAME =		zlib-0.5.3.1
 CATEGORIES =		archivers devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -13,7 +13,6 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-REVISION =		5
 MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
