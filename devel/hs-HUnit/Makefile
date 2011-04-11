@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/03 22:13:38 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2011/04/11 14:35:15 kili Exp $
 
 COMMENT =		unit testing framework for Haskell
 
-DISTNAME =		HUnit-1.2.2.1
-REVISION =		5
+DISTNAME =		HUnit-1.2.2.3
 CATEGORIES =		devel
 HOMEPAGE =		http://hunit.sourceforge.net/
 
