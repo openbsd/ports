@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/10/28 13:51:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/04/11 14:47:17 kili Exp $
 @bin bin/hlint
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Apply.hi
@@ -51,14 +51,15 @@ share/doc/hs-${DISTNAME}/html/Language-Haskell-HLint.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
-share/doc/hs-${DISTNAME}/html/haddock.css
-share/doc/hs-${DISTNAME}/html/haskell_icon.gif
 share/doc/hs-${DISTNAME}/html/hlint.haddock
+share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Haskell-HLint.html
 share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/synopsis.png
 share/hs-${DISTNAME}/
 share/hs-${DISTNAME}/Default.hs
 share/hs-${DISTNAME}/Dollar.hs
