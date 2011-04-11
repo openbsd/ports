@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/21 18:03:17 kili Exp $
+# $OpenBSD: Makefile,v 1.25 2011/04/11 14:47:55 kili Exp $
 
 COMMENT-main =	liberalised reimplementation of cpp in Haskell
 COMMENT-lib =	cpphs library
@@ -8,12 +8,10 @@ ONLY_FOR_ARCHS-lib =	i386 amd64
 DISTNAME =	cpphs-1.11
 PKGNAME-main =	${DISTNAME}
 PKGNAME-lib =	hs-${DISTNAME}
-REVISION-main =	4
-REVISION-lib =	2
+REVISION-main =	5
+REVISION-lib =	3
 CATEGORIES =	devel
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>
-HOMEPAGE =	http://haskell.org/cpphs/
-MASTER_SITES =	http://www.cs.york.ac.uk/fp/cpphs/
 
 # LGPL2.1
 PERMIT_PACKAGE_CDROM =	Yes
@@ -31,12 +29,13 @@ SUBST_VARS +=		DISTNAME
 WANTLIB-main +=		gmp util
 MODULES =		lang/ghc converters/libiconv
 USE_GROFF =		Yes
-MODGHC_BUILD =		cabal haddock register
+MODGHC_BUILD =		hackage cabal haddock register
 LIB_DEPENDS-main =	${LIB_DEPENDS} devel/gmp
 RUN_DEPENDS-main =
 LIB_DEPENDS-lib =
 WANTLIB-lib =
 .else
+MASTER_SITES = http://hackage.haskell.org/packages/archive/cpphs/${DISTNAME:S/cpphs-//}/
 # NHC: use the good old makefile for now (though it *should* be possible
 # to build with cabal, too).
 BUILD_DEPENDS +=	devel/hmake \
