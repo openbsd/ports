@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/24 15:27:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/11 16:54:30 jasper Exp $
 
-COMMENT=	Reusable tests for POE::Loop authors 
+COMMENT=	reusable tests for POE::Loop authors 
 
 MODULES=	cpan
-DISTNAME=	POE-Test-Loops-1.036
+DISTNAME=	POE-Test-Loops-1.040
 CATEGORIES=	devel
-USE_GROFF =	Yes
 
 HOMEPAGE=	http://poe.perl.org/
 
