@@ -1,0 +1,17 @@
+$OpenBSD: patch-pugs-compat_cabal,v 1.1 2011/04/11 14:46:52 kili Exp $
+
+From upstream git repo.
+
+--- pugs-compat.cabal.orig	Wed Dec 16 14:47:04 2009
++++ pugs-compat.cabal	Sun Dec 26 15:37:56 2010
+@@ -16,8 +16,8 @@ Library
+                     TypeSynonymInstances, FlexibleInstances, PatternGuards,
+                     UndecidableInstances, FlexibleContexts, OverlappingInstances, TypeOperators
+ 
+-  Build-depends   : base >=3 && < 4, haskell98, time, directory, process, regex-pcre-builtin, regex-base,
+-                    random, network, containers, bytestring, array, mtl, stm, utf8-string,
++  Build-depends   : base >=3 && < 5, haskell98, time, directory, process, regex-pcre-builtin, regex-base,
++                    random, network, containers, bytestring, array, mtl, stm, syb, utf8-string,
+                     stringtable-atom >= 0.0.6.1
+   Exposed-modules : Pugs.Compat
+   Other-modules   : Pugs.Compat.Cast Pugs.Compat.Global Pugs.Compat.ID

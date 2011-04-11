@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Pugs_Compat_hs,v 1.1 2011/04/11 14:46:52 kili Exp $
+--- src/Pugs/Compat.hs.orig	Wed Dec 16 14:47:04 2009
++++ src/Pugs/Compat.hs	Sun Apr 10 20:32:34 2011
+@@ -25,7 +25,7 @@ import Pugs.Compat.Regex      as X 
+ 
+ import Control.Concurrent     as X 
+ import Control.Concurrent.STM as X 
+-import Control.Exception      as X (catchJust, errorCalls, Exception(..))
++import Control.Exception      as X (catchJust, Exception(..))
+ import Control.Monad          as X (replicateM, forM, forM_, MonadPlus(..), msum, liftM2, liftM3, guard, foldM, unless, liftM, filterM, join, when)
+ import Control.Monad.Error    as X (MonadError(..), ErrorT(..), Error(..))
+ import Control.Monad.Fix      as X (fix)

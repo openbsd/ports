@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Pugs_Compat_Monads_hs,v 1.1 2011/04/11 14:46:52 kili Exp $
+
+From upstream git repo.
+
+--- src/Pugs/Compat/Monads.hs.orig	Wed Dec 16 14:47:04 2009
++++ src/Pugs/Compat/Monads.hs	Sun Apr 10 16:52:39 2011
+@@ -87,7 +87,7 @@ maybeM :: (Traversable f, Monad m) 
+        -> m (f b)    -- ^ Monad containing (@Just@ /result/) or @Nothing@
+ maybeM f m = mapM m =<< f
+ 
+-catchIO :: IO a -> (Control.Exception.Exception -> IO a) -> IO a
++catchIO :: Exception e => forall a. IO a -> (e -> IO a) -> IO a
+ catchIO = Control.Exception.catch
+ 
+ evaluateIO :: a -> IO a
