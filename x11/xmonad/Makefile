@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.25 2011/04/04 22:40:55 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2011/04/11 14:58:20 kili Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
 
 DISTNAME =		xmonad-0.9.2
 PKGNAME-main =		${DISTNAME}
+REVISION-main =		0
 PKGNAME-lib =		${DISTNAME:S,-,-lib-,}
+REVISION-lib =		0
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 
@@ -30,7 +32,8 @@ MODGHC_BUILD +=		nort
 .endif
 
 BUILD_DEPENDS =		${RUN_DEPENDS-lib}
-RUN_DEPENDS-lib =	x11/hs-X11>=1.5.0.0
+RUN_DEPENDS-lib =	devel/hs-syb \
+			x11/hs-X11>=1.5.0.0
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/gmp
 

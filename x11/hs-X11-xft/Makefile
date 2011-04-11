@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/11 14:58:20 kili Exp $
 
 COMMENT=		bindings for GHC to Xft, Freetype and Xrender
 
 DISTNAME=		X11-xft-0.3
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11 devel
 
 HOMEPAGE=		http://hackage.haskell.org/package/X11-xft
@@ -17,7 +17,8 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES=	lang/ghc
 MODGHC_BUILD=	cabal hackage haddock register
 
-RUN_DEPENDS=	x11/hs-X11
+RUN_DEPENDS=	devel/hs-syb \
+		x11/hs-X11
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
