@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/28 13:54:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/11 14:55:41 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Text/
@@ -19,6 +19,7 @@ share/doc/hs-${DISTNAME}/html/doc-index-33.html
 share/doc/hs-${DISTNAME}/html/doc-index-43.html
 share/doc/hs-${DISTNAME}/html/doc-index-60.html
 share/doc/hs-${DISTNAME}/html/doc-index-A.html
+share/doc/hs-${DISTNAME}/html/doc-index-All.html
 share/doc/hs-${DISTNAME}/html/doc-index-B.html
 share/doc/hs-${DISTNAME}/html/doc-index-C.html
 share/doc/hs-${DISTNAME}/html/doc-index-D.html
@@ -43,12 +44,13 @@ share/doc/hs-${DISTNAME}/html/doc-index-Y.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
-share/doc/hs-${DISTNAME}/html/haddock.css
-share/doc/hs-${DISTNAME}/html/haskell_icon.gif
+share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/html.haddock
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Text-Html-BlockTable.html
 share/doc/hs-${DISTNAME}/html/mini_Text-Html.html
 share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/synopsis.png

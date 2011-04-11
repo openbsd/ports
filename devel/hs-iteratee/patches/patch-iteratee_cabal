@@ -1,0 +1,12 @@
+$OpenBSD: patch-iteratee_cabal,v 1.1 2011/04/11 14:45:15 kili Exp $
+--- iteratee.cabal.orig	Mon Apr 19 05:58:27 2010
++++ iteratee.cabal	Sat Apr  9 17:00:11 2011
+@@ -60,7 +60,7 @@ library
+   build-depends:
+     ListLike              >= 1.0   && < 2,
+     bytestring            >= 0.9   && < 0.10,
+-    containers            >= 0.2   && < 0.4,
++    containers            >= 0.2   && < 0.5,
+     extensible-exceptions >= 0.1   && < 0.2,
+     haskell98             >= 1     && < 2,
+     transformers          >= 0.2.0.0 && < 0.3

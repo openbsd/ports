@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/08 23:23:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/11 14:45:15 kili Exp $
 
 COMMENT=		class for types with a default value
 
 DISTNAME=		data-default-0.2
+REVISION=		0
 CATEGORIES=		devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

@@ -1,0 +1,31 @@
+$OpenBSD: patch-Data_Vector_Algorithms_Combinators_hs,v 1.1 2011/04/11 14:45:15 kili Exp $
+
+Doesn't compile with ghc-7, but vector-algorithm-0.4 (which also
+deletes this function) breaks snap-server, which I can't (yet)
+update because it needs mtl-2.0, which conflicts with mtl-1 bundled
+with ghc. And I really want to avoid different versions of a Haskell
+library.
+
+--- Data/Vector/Algorithms/Combinators.hs.orig	Sun Sep 26 21:23:23 2010
++++ Data/Vector/Algorithms/Combinators.hs	Sat Apr  9 17:21:14 2011
+@@ -15,7 +15,7 @@
+ -- applying the algorithms on mutable arrays to immutable arrays.
+ 
+ module Data.Vector.Algorithms.Combinators
+-       ( apply
++       (
+ --       , usingKeys
+ --       , usingIxKeys
+        ) where
+@@ -30,11 +30,6 @@ import Data.Vector.Generic
+ 
+ import qualified Data.Vector.Generic.Mutable as M
+ import qualified Data.Vector.Generic.New     as N
+-
+--- | Safely applies a mutable array algorithm to an immutable array.
+-apply :: (Vector v e) => (forall s mv. M.MVector mv e => mv s e -> ST s ()) -> v e -> v e
+-apply algo v = (new . N.New)
+-                 (M.unstream (stream v) >>= \arr -> algo arr >> return arr)
+ 
+ {-
+ -- | Uses a function to compute a key for each element which the

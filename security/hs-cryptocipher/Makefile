@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/09 13:57:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/11 14:52:30 kili Exp $
 
 COMMENT=		symmetrical block and stream ciphers
 
 DISTNAME=		cryptocipher-0.2
+REVISION=		0
 CATEGORIES=		security
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

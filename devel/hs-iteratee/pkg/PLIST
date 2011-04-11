@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/10/28 13:51:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/04/11 14:45:15 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Iteratee/
@@ -39,8 +39,7 @@ share/doc/hs-${DISTNAME}/html/Data-Iteratee.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
-share/doc/hs-${DISTNAME}/html/haddock.css
-share/doc/hs-${DISTNAME}/html/haskell_icon.gif
+share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/iteratee.haddock
@@ -56,4 +55,6 @@ share/doc/hs-${DISTNAME}/html/mini_Data-Iteratee-IO.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Iteratee-WrappedByteString.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Iteratee.html
 share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/synopsis.png

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/04/05 11:43:17 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2011/04/11 14:54:34 kili Exp $
 
 COMMENT =		xhtml templating system
 
 DISTNAME =		heist-0.2.4
-REVISION =		0
+REVISION =		1
 CATEGORIES =		textproc
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>

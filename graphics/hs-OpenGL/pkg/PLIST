@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/28 13:53:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/11 14:48:58 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Graphics/
 lib/ghc/${DISTNAME}/Graphics/Rendering/
@@ -163,6 +163,7 @@ share/doc/hs-${DISTNAME}/html/Graphics-Rendering-OpenGL.html
 share/doc/hs-${DISTNAME}/html/OpenGL.haddock
 share/doc/hs-${DISTNAME}/html/doc-index-36.html
 share/doc/hs-${DISTNAME}/html/doc-index-A.html
+share/doc/hs-${DISTNAME}/html/doc-index-All.html
 share/doc/hs-${DISTNAME}/html/doc-index-B.html
 share/doc/hs-${DISTNAME}/html/doc-index-C.html
 share/doc/hs-${DISTNAME}/html/doc-index-D.html
@@ -190,8 +191,7 @@ share/doc/hs-${DISTNAME}/html/doc-index-Z.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
-share/doc/hs-${DISTNAME}/html/haddock.css
-share/doc/hs-${DISTNAME}/html/haskell_icon.gif
+share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GL-Antialiasing.html
@@ -251,4 +251,6 @@ share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GLU-Tessellation.ht
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL-GLU.html
 share/doc/hs-${DISTNAME}/html/mini_Graphics-Rendering-OpenGL.html
 share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/synopsis.png

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/28 13:54:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/11 14:54:34 kili Exp $
 @bin bin/Canonicalise
 @bin bin/DtdToHaskell
 @bin bin/MkOneOf
@@ -76,6 +76,7 @@ share/doc/hs-${DISTNAME}/html/doc-index-58.html
 share/doc/hs-${DISTNAME}/html/doc-index-60.html
 share/doc/hs-${DISTNAME}/html/doc-index-63.html
 share/doc/hs-${DISTNAME}/html/doc-index-A.html
+share/doc/hs-${DISTNAME}/html/doc-index-All.html
 share/doc/hs-${DISTNAME}/html/doc-index-B.html
 share/doc/hs-${DISTNAME}/html/doc-index-C.html
 share/doc/hs-${DISTNAME}/html/doc-index-D.html
@@ -101,8 +102,7 @@ share/doc/hs-${DISTNAME}/html/doc-index-X.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
-share/doc/hs-${DISTNAME}/html/haddock.css
-share/doc/hs-${DISTNAME}/html/haskell_icon.gif
+share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Text-ParserCombinators-HuttonMeijerWallace.html
@@ -129,4 +129,6 @@ share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Xtract-Lex.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml-Xtract-Parse.html
 share/doc/hs-${DISTNAME}/html/mini_Text-XML-HaXml.html
 share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/synopsis.png

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2011/04/05 14:34:45 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2011/04/11 14:45:16 kili Exp $
 # $FreeBSD: ports/devel/hs-c2hs/Makefile,v 1.20 2004/03/25 08:29:28 obraun Exp $
 
 COMMENT=		interface generator for Haskell to C bindings
 
 V=			0.16.3
 DISTNAME=		c2hs-${V}
+REVISION=		0
 CATEGORIES=		devel
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 HOMEPAGE=		http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
@@ -44,6 +45,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/users_guide/*.html ${PREFIX}/share/doc/c2hs
 
 # Note: tests are still broken (not maintained by upstream?)
+# Note 2: and (at least) the tests don't work with ghc-7 (because ghc
+# now defaults to Haskell-1010).
 do-regress:
 	@cd ${WRKDIST}/tests/system && ${MAKE_PROGRAM}
 

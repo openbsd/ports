@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/08 23:28:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/11 14:52:30 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Crypto/
 lib/ghc/${DISTNAME}/Crypto/Classes.hi
@@ -33,8 +33,7 @@ share/doc/hs-${DISTNAME}/html/crypto-api.haddock
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
-share/doc/hs-${DISTNAME}/html/haddock.css
-share/doc/hs-${DISTNAME}/html/haskell_icon.gif
+share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Crypto-Classes.html
@@ -46,7 +45,9 @@ share/doc/hs-${DISTNAME}/html/mini_Crypto-Types.html
 share/doc/hs-${DISTNAME}/html/mini_Data-LargeWord.html
 share/doc/hs-${DISTNAME}/html/mini_System-Crypto-Random.html
 share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/synopsis.png
 share/hs-${DISTNAME}/
 share/hs-${DISTNAME}/Test/
 share/hs-${DISTNAME}/Test/KAT_AES/

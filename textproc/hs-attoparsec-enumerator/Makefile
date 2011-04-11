@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/05 11:43:17 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/11 14:54:34 kili Exp $
 
 COMMENT=		convert an Attoparsec parser into an iteratee
 
 DISTNAME=		attoparsec-enumerator-0.2.0.3
-REVISION=		0
+REVISION=		1
 CATEGORIES=		textproc
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/11 14:51:40 kili Exp $
 
 COMMENT=	pastebin command line application
 
 DISTNAME=	pb-0.1.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net sysutils
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
