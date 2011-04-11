@@ -1,0 +1,26 @@
+$OpenBSD: patch-snap-server_cabal,v 1.1 2011/04/11 14:55:58 kili Exp $
+
+Build with newer network package; network-bytestring has been
+integrated into network.
+
+--- snap-server.cabal.orig	Wed Nov 10 22:09:47 2010
++++ snap-server.cabal	Sat Apr  9 17:31:06 2011
+@@ -121,7 +121,7 @@ Library
+     iteratee >= 0.3.1 && <0.4,
+     monads-fd < 0.1.0.3,
+     murmur-hash >= 0.1 && < 0.2,
+-    network == 2.2.1.*,
++    network >= 2.2.1 && < 2.4,
+     old-locale,
+     snap-core == 0.2.16.*,
+     template-haskell,
+@@ -142,8 +142,7 @@ Library
+     cpp-options: -DLIBEV
+   else
+     other-modules: Snap.Internal.Http.Server.TimeoutTable
+-    build-depends: network-bytestring >= 0.1.2 && < 0.2,
+-                   PSQueue >= 1.1 && <1.2
++    build-depends: PSQueue >= 1.1 && <1.2
+ 
+     other-modules: Snap.Internal.Http.Server.SimpleBackend
+ 
