@@ -1,0 +1,15 @@
+$OpenBSD: patch-compiler_main_DynFlags_hs,v 1.1 2011/04/11 14:30:33 kili Exp $
+
+No need to mention the LLVM codegen in compilerInfo, because it's
+always enabled.
+
+--- compiler/main/DynFlags.hs.orig	Sat Mar 26 19:10:03 2011
++++ compiler/main/DynFlags.hs	Tue Mar 29 19:26:21 2011
+@@ -2271,7 +2271,6 @@ compilerInfo = [("Project name",                String
+                 ("Have interpreter",            String cGhcWithInterpreter),
+                 ("Object splitting",            String cSplitObjs),
+                 ("Have native code generator",  String cGhcWithNativeCodeGen),
+-                ("Have llvm code generator",    String cGhcWithLlvmCodeGen),
+                 ("Support SMP",                 String cGhcWithSMP),
+                 ("Unregisterised",              String cGhcUnregisterised),
+                 ("Tables next to code",         String cGhcEnableTablesNextToCode),

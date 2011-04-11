@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/11/27 22:34:47 kili Exp $
+# $OpenBSD: Makefile,v 1.52 2011/04/11 14:30:32 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -28,7 +28,7 @@ PERMIT_DISTFILES_FTP =		Yes
 
 PKG_ARCH-doc =		*
 BUILD_DEPENDS =		textproc/dblatex \
-			textproc/docbook \
+			textproc/docbook>=4.5 \
 			textproc/docbook-xsl \
 			textproc/libxslt
 LIB_DEPENDS-doc =
@@ -36,14 +36,11 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} devel/gmp
 RUN_DEPENDS-doc =
 RUN_DEPENDS-main =
 
-REVISION-main =		8
 WANTLIB-main =		${WANTLIB} c gmp m ncursesw pthread util
 
-REVISION-doc =		2
 WANTLIB-doc =
 
-MASTER_SITES =		http://darcs.haskell.org/download/dist/${MODGHC_VER}/ \
-			${HOMEPAGE}dist/${MODGHC_VER}/ \
+MASTER_SITES =		${HOMEPAGE}dist/${MODGHC_VER}/ \
 			${HOMEPAGE}dist/stable/dist/
 MASTER_SITES0 =		http://openbsd.dead-parrot.de/distfiles/
 
@@ -65,8 +62,7 @@ SUPDISTFILES +=		${BINDISTFILE-$m}
 USE_GMAKE =		Yes
 USE_GROFF =		Yes
 
-CONFIGURE_STYLE =	gnu autoconf
-AUTOCONF_VERSION =	2.61
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-gmp-includes=${LOCALBASE}/include \
 			--with-gmp-libraries=${LOCALBASE}/lib \
 			--with-iconv-includes=${LOCALBASE}/include \
@@ -76,15 +72,18 @@ MAKE_FLAGS +=		StripLibraries=YES \
 			INSTALL_BIN_OPTS=-s \
 			HSCOLOUR_SRCS=NO
 
+# Thank god that they're only building compilers and no nuclear
+# power plants.
 FAKE_FLAGS +=		CREATE_DATA="${INSTALL_DATA} /dev/null " \
 			CREATE_SCRIPT="${INSTALL_SCRIPT} /dev/null " \
-			INSTALL_DATA="${INSTALL_DATA}" \
-			INSTALL_DIR="${INSTALL_DATA_DIR}" \
-			INSTALL_DOC="${INSTALL_DATA}" \
-			INSTALL_HEAD="${INSTALL_DATA}" \
-			INSTALL_MAN="${INSTALL_MAN}" \
-			INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-			INSTALL_SCRIPT="${INSTALL_SCRIPT}"
+			INSTALL_DATA="${INSTALL_DATA} \$$1 \$$2 \$$3" \
+			INSTALL_DIR="${INSTALL_DATA_DIR} \$$1" \
+			INSTALL_DOC="${INSTALL_DATA} \$$1 \$$2 \$$3" \
+			INSTALL_HEADER="${INSTALL_DATA} \$$1 \$$2 \$$3" \
+			INSTALL_MAN="${INSTALL_MAN} \$$1 \$$2 \$$3" \
+			INSTALL_PROGRAM="${INSTALL_PROGRAM} \$$1 \$$2 \$$3" \
+			INSTALL_SCRIPT="${INSTALL_SCRIPT} \$$1 \$$2 \$$3" \
+			INSTALL_SHLIB="${INSTALL} ${INSTALL_COPY} -S -o ${LIBOWN} -g ${LIBGRP} -m ${LIBMODE} \$$1 \$$2 \$$3"
 
 # For mktexpk (via dvips when building the PostScript documentation):
 PORTHOME =		${WRKDIR}
@@ -95,13 +94,13 @@ REGRESS_DEPENDS =	print/ghostscript/gnu
 
 post-extract:
 # - Install a precompiled binary.
-# - Replace utils/haddock by the version from the ports tree, move
-#   the alex- and happy-generated files into the src dir and rename the
-#   corresponding sources so cabal won't try to re-run alex or happy.
 	cd ${WRKDIR}/ghc-${BIN_VER} && \
 	./configure --prefix=${WRKDIR} && \
 	${MAKE_PROGRAM} install
 	rm -rf ${WRKDIR}/ghc-${BIN_VER}
+# - Replace utils/haddock by the version from the ports tree, move
+#   the alex- and happy-generated files into the src dir and rename the
+#   corresponding sources so cabal won't try to re-run alex or happy.
 	mv ${WRKSRC}/utils/haddock{,-ghcdist}
 	mv ${WRKDIR}/devel/haddock/haddock-* ${WRKSRC}/utils/haddock
 . for f in ghc.mk doc/ghc.mk haddock.wrapper

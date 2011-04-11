@@ -1,7 +1,7 @@
-$OpenBSD: patch-libraries_Cabal_Distribution_Simple_Register_hs,v 1.5 2010/11/05 21:23:46 kili Exp $
---- libraries/Cabal/Distribution/Simple/Register.hs.orig	Wed Jun  9 20:10:19 2010
-+++ libraries/Cabal/Distribution/Simple/Register.hs	Fri Nov  5 19:25:46 2010
-@@ -130,13 +130,14 @@ register pkg@PackageDescription { library       = Just
+$OpenBSD: patch-libraries_Cabal_Distribution_Simple_Register_hs,v 1.6 2011/04/11 14:30:33 kili Exp $
+--- libraries/Cabal/Distribution/Simple/Register.hs.orig	Wed Dec 15 19:10:13 2010
++++ libraries/Cabal/Distribution/Simple/Register.hs	Sun Dec 19 13:07:14 2010
+@@ -128,13 +128,14 @@ register pkg@PackageDescription { library       = Just
  
      installedPkgInfo <- generateRegistrationInfo
                             verbosity pkg lib lbi clbi inplace distPref
@@ -13,13 +13,13 @@ $OpenBSD: patch-libraries_Cabal_Distribution_Simple_Register_hs,v 1.5 2010/11/05
 -       | modeGenerateRegScript -> writeRegisterScript   installedPkgInfo
 +     _ | modeGenerateRegFile   -> writeRegistrationFile installedPkgInfo'
 +       | modeGenerateRegScript -> writeRegisterScript   installedPkgInfo'
-        | otherwise             -> registerPackage' verbosity
+        | otherwise             -> registerPackage verbosity
 -                                    installedPkgInfo pkg lbi inplace packageDbs
 +                                    installedPkgInfo' pkg lbi inplace packageDbs
  
    where
      modeGenerateRegFile = isJust (flagToMaybe (regGenPkgConf regFlags))
-@@ -152,6 +153,7 @@ register pkg@PackageDescription { library       = Just
+@@ -150,6 +151,7 @@ register pkg@PackageDescription { library       = Just
      packageDbs = nub $ withPackageDB lbi
                      ++ maybeToList (flagToMaybe  (regPackageDB regFlags))
      distPref  = fromFlag (regDistPref regFlags)
@@ -27,7 +27,7 @@ $OpenBSD: patch-libraries_Cabal_Distribution_Simple_Register_hs,v 1.5 2010/11/05
      verbosity = fromFlag (regVerbosity regFlags)
  
      writeRegistrationFile installedPkgInfo = do
-@@ -311,6 +313,7 @@ generalInstalledPackageInfo adjustRelIncDirs pkg lib c
+@@ -272,6 +274,7 @@ generalInstalledPackageInfo adjustRelIncDirs pkg lib c
      IPI.pkgUrl             = pkgUrl      pkg,
      IPI.description        = description pkg,
      IPI.category           = category    pkg,

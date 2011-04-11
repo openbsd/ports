@@ -1,10 +1,10 @@
-$OpenBSD: patch-libraries_base_GHC_IO_Encoding_Iconv_hs,v 1.1 2010/04/22 21:49:37 kili Exp $
+$OpenBSD: patch-libraries_base_GHC_IO_Encoding_Iconv_hs,v 1.2 2011/04/11 14:30:33 kili Exp $
 
 This is needed for our version of GNU libiconv-1.13.
 
---- libraries/base/GHC/IO/Encoding/Iconv.hs.orig	Tue Apr 13 20:10:08 2010
-+++ libraries/base/GHC/IO/Encoding/Iconv.hs	Mon Apr 19 13:26:59 2010
-@@ -71,31 +71,31 @@ latin1 = unsafePerformIO (mkTextEncoding "Latin1")
+--- libraries/base/GHC/IO/Encoding/Iconv.hs.orig	Wed Dec 15 19:10:12 2010
++++ libraries/base/GHC/IO/Encoding/Iconv.hs	Sun Dec 19 13:04:38 2010
+@@ -64,31 +64,31 @@ latin1 = unsafePerformIO (mkTextEncoding "Latin1")
  
  {-# NOINLINE utf8 #-}
  utf8 :: TextEncoding

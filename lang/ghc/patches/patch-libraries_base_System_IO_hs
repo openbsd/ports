@@ -1,7 +1,7 @@
-$OpenBSD: patch-libraries_base_System_IO_hs,v 1.1 2010/04/22 21:49:37 kili Exp $
---- libraries/base/System/IO.hs.orig	Tue Apr 20 20:10:11 2010
-+++ libraries/base/System/IO.hs	Thu Apr 22 19:08:46 2010
-@@ -173,7 +173,9 @@ module System.IO (
+$OpenBSD: patch-libraries_base_System_IO_hs,v 1.2 2011/04/11 14:30:33 kili Exp $
+--- libraries/base/System/IO.hs.orig	Wed Dec 15 19:10:12 2010
++++ libraries/base/System/IO.hs	Sun Dec 19 12:46:34 2010
+@@ -183,7 +183,9 @@ module System.IO (
      -- on your system, which is also available as 'localeEncoding'.
      -- (GHC note: on Windows, we currently do not support double-byte
      -- encodings; if the console\'s code page is unsupported, then

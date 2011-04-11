@@ -1,0 +1,19 @@
+$OpenBSD: patch-libraries_gen_contents_index,v 1.1 2011/04/11 14:30:33 kili Exp $
+
+People who
+1. use GNUisms in BREs,
+2. pipe the output of grep(1) into sed(1),
+3. still use backticks in the 21th century,
+shall be punished by awk(1) one liners.
+
+--- libraries/gen_contents_index.orig	Sat Mar 26 19:10:06 2011
++++ libraries/gen_contents_index	Fri Apr  8 12:46:00 2011
+@@ -7,7 +7,7 @@ HADDOCK_ARGS=
+ case $* in
+ --inplace)
+     HADDOCK=../inplace/bin/haddock
+-    for LIB in `grep '^libraries/[^ ]\+ \+- \+[^ ]\+ \+[^ ]\+ \+[^ ]\+' ../packages | sed -e 's#libraries/##' -e 's/ .*//'`
++    for LIB in $(awk '$1 ~ /^libraries\/./ && $2 == "-" && NF >= 5 && $0 = substr($1, 11)' ../packages)
+     do
+         HADDOCK_FILE="$LIB/dist-install/doc/html/$LIB/$LIB.haddock"
+         if [ -f "$HADDOCK_FILE" ]

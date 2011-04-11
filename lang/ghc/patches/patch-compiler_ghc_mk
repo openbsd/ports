@@ -1,0 +1,16 @@
+$OpenBSD: patch-compiler_ghc_mk,v 1.1 2011/04/11 14:30:33 kili Exp $
+
+No need to mention the LLVM codegen in compilerInfo, because it's
+always enabled.
+
+--- compiler/ghc.mk.orig	Sat Mar 26 19:10:03 2011
++++ compiler/ghc.mk	Tue Mar 29 19:26:21 2011
+@@ -84,8 +84,6 @@ compiler/stage%/build/Config.hs : mk/config.mk mk/proj
+ 	@echo 'cGhcWithInterpreter   = "$(GhcWithInterpreter)"'             >> $@
+ 	@echo 'cGhcWithNativeCodeGen :: String'                             >> $@
+ 	@echo 'cGhcWithNativeCodeGen = "$(GhcWithNativeCodeGen)"'           >> $@
+-	@echo 'cGhcWithLlvmCodeGen   :: String'                             >> $@
+-	@echo 'cGhcWithLlvmCodeGen   = "YES"'                               >> $@
+ 	@echo 'cGhcWithSMP           :: String'                             >> $@
+ 	@echo 'cGhcWithSMP           = "$(GhcWithSMP)"'                     >> $@
+ 	@echo 'cGhcRTSWays           :: String'                             >> $@

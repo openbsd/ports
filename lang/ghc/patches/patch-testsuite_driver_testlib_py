@@ -1,7 +1,7 @@
-$OpenBSD: patch-testsuite_driver_testlib_py,v 1.2 2010/06/15 15:34:03 kili Exp $
---- testsuite/driver/testlib.py.orig	Wed May 26 19:53:30 2010
-+++ testsuite/driver/testlib.py	Thu May 27 18:40:14 2010
-@@ -1224,6 +1224,13 @@ def compare_outputs( kind, normaliser, extra_normalise
+$OpenBSD: patch-testsuite_driver_testlib_py,v 1.3 2011/04/11 14:30:33 kili Exp $
+--- testsuite/driver/testlib.py.orig	Sun Dec 19 12:03:03 2010
++++ testsuite/driver/testlib.py	Sun Dec 19 12:46:34 2010
+@@ -1285,6 +1285,13 @@ def compare_outputs( kind, normaliser, extra_normalise
      actual_raw = read_no_crs(actual_file)
      actual_str = normaliser(actual_raw)
  
@@ -15,7 +15,7 @@ $OpenBSD: patch-testsuite_driver_testlib_py,v 1.2 2010/06/15 15:34:03 kili Exp $
      if extra_normaliser(expected_str) != extra_normaliser(actual_str):
          print 'Actual ' + kind + ' output differs from expected:'
  
-@@ -1238,13 +1245,13 @@ def compare_outputs( kind, normaliser, extra_normalise
+@@ -1299,13 +1306,13 @@ def compare_outputs( kind, normaliser, extra_normalise
  
          # Ignore whitespace when diffing. We should only get to this
          # point if there are non-whitespace differences
