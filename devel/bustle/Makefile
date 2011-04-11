@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/16 19:12:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/11 14:48:07 kili Exp $
 
 COMMENT=	D-Bus profiler
 
 DISTNAME=	bustle-0.2.3
+REVISION=	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://willthompson.co.uk/bustle/
@@ -34,6 +35,8 @@ BUILD_DEPENDS=	devel/hs-glade \
 LIB_DEPENDS=	devel/libglade2 \
 		x11/dbus \
 		devel/gmp
+
+SUBST_VARS =	DISTNAME
 
 # no need to install LICENSE in both share{,doc}/${FULLPKGNAME}/
 pre-configure:

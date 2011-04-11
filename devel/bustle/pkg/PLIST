@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/16 19:12:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/11 14:48:07 kili Exp $
 @bin bin/bustle
 @bin bin/bustle-count
 @bin bin/bustle-dbus-monitor
 @bin bin/bustle-dot
 @bin bin/bustle-time
-share/${FULLPKGNAME}/
-share/${FULLPKGNAME}/LICENSE
-share/${FULLPKGNAME}/bustle.glade
-share/${FULLPKGNAME}/bustle.png
+share/${DISTNAME}/
+share/${DISTNAME}/LICENSE
+share/${DISTNAME}/bustle.glade
+share/${DISTNAME}/bustle.png
