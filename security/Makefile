@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.258 2011/03/29 12:16:04 pea Exp $
+# $OpenBSD: Makefile,v 1.259 2011/04/11 21:31:40 bluhm Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -162,6 +162,7 @@
      SUBDIR += p5-IO-Socket-SSL
      SUBDIR += p5-MD5
      SUBDIR += p5-Module-Signature
+     SUBDIR += p5-Net-SSLGlue
      SUBDIR += p5-Net_SSLeay
      SUBDIR += p5-PGP-Sign
      SUBDIR += p5-PGP-Sign,pgp
