@@ -1,0 +1,4 @@
+The File::LibMagic is a simple perl interface to libmagic from the
+file-4.x or file-5.x package from Christos Zoulas.  You can use the
+simple Interface like MagicBuffer() or MagicFile(), use the functions
+of libmagic(3) or use the OO-Interface.
