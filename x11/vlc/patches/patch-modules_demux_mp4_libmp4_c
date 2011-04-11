@@ -1,0 +1,15 @@
+$OpenBSD: patch-modules_demux_mp4_libmp4_c,v 1.1 2011/04/11 15:11:28 sthen Exp $
+
+Fix heap-based buffer overflow.
+
+--- modules/demux/mp4/libmp4.c.orig	Sat Apr  9 21:52:45 2011
++++ modules/demux/mp4/libmp4.c	Sat Apr  9 21:54:23 2011
+@@ -2167,7 +2167,7 @@ static int MP4_ReadBox_frma( stream_t *p_stream, MP4_B
+ 
+ static int MP4_ReadBox_skcr( stream_t *p_stream, MP4_Box_t *p_box )
+ {
+-    MP4_READBOX_ENTER( MP4_Box_data_frma_t );
++    MP4_READBOX_ENTER( MP4_Box_data_skcr_t );
+ 
+     MP4_GET4BYTES( p_box->data.p_skcr->i_init );
+     MP4_GET4BYTES( p_box->data.p_skcr->i_encr );
