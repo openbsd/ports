@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/04/04 22:41:30 kili Exp $
+# $OpenBSD: Makefile,v 1.13 2011/04/11 14:58:57 kili Exp $
 
 COMMENT =		third party xmonad extensions
 
 DISTNAME =		xmonad-contrib-0.9.2
+REVISION =		0
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 
@@ -17,9 +18,9 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage register haddock
 
-LIB_DEPENDS =		x11/xmonad,-lib
-RUN_DEPENDS =		${LIB_DEPENDS} \
-			shells/bash
+BUILD_DEPEND =		${RUN_DPENDS}
+RUN_DEPENDS =		shells/bash \
+			x11/xmonad,-lib
 
 NO_REGRESS =		Yes
 
