@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.284 2011/04/06 12:46:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.285 2011/04/11 07:44:35 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -63,6 +63,7 @@
      SUBDIR += gdk-pixbuf2
      SUBDIR += geeqie
      SUBDIR += gegl
+     SUBDIR += geomview
      SUBDIR += gfract
      SUBDIR += ggi
      SUBDIR += gif2png
