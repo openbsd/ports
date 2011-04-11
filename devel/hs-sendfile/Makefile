@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:59 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/11 14:39:12 kili Exp $
 
 COMMENT =		portable sendfile functionality
 
-DISTNAME =		sendfile-0.6.2
-REVISION =		1
+DISTNAME =		sendfile-0.7.2
 CATEGORIES =		devel
 
 MAINTAINER =		Jim Razmus II <jim@openbsd.org>
@@ -18,7 +17,7 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		net/hs-network-bytestring
+RUN_DEPENDS +=		devel/hs-network
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

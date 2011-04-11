@@ -1,0 +1,16 @@
+$OpenBSD: patch-sendfile_cabal,v 1.1 2011/04/11 14:39:12 kili Exp $
+
+network-bytestring has been merged into hs-network.
+
+--- sendfile.cabal.orig	Mon Jun  7 01:31:00 2010
++++ sendfile.cabal	Sun Dec 26 20:54:37 2010
+@@ -50,8 +50,7 @@ library
+             other-modules: Network.Socket.SendFile.Darwin
+           else
+             cpp-options: -DPORTABLE_SENDFILE
+-            build-depends: bytestring >= 0.9.1.4 && < 0.10,
+-                           network-bytestring >= 0.1.1.3 && < 0.2
++            build-depends: bytestring >= 0.9.1.4 && < 0.10
+ 
+ source-repository head
+     type:     darcs
