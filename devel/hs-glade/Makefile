@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/04/11 14:38:19 kili Exp $
 
 COMMENT =		Haskell bindings to libglade2
 
-DISTNAME =		glade-0.11.0
-REVISION =		2
+DISTNAME =		glade-0.12.0
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
@@ -20,13 +19,16 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-BUILD_DEPENDS =		devel/gtk2hs-buildtools
+BUILD_DEPENDS =		devel/gtk2hs-buildtools \
+			${RUN_DEPENDS}
+LIB_DEPENDS =           devel/libglade2
+RUN_DEPENDS =		hs-cairo->=0.12,<0.13:graphics/hs-cairo \
+			hs-glib->=0.12,<0.13:devel/hs-glib \
+			hs-gtk->=0.12,<0.13:x11/hs-gtk \
+			hs-pango->=0.12,<0.13:devel/hs-pango \
 
-LIB_DEPENDS =           hs-cairo->=0.11,<0.12:graphics/hs-cairo \
-			hs-glib->=0.11,<0.12:devel/hs-glib \
-			hs-gtk->=0.11,<0.12:x11/hs-gtk \
-			hs-pango->=0.11,<0.12:devel/hs-pango \
-			devel/libglade2
-RUN_DEPENDS =		${LIB_DEPENDS}
+# This is much simpler than fiddling with MODGHC_SETUP_CONF_ARGS:
+post-install:
+	mv ${PREFIX}/share/${PKGNAME} ${PREFIX}/share/examples
 
 .include <bsd.port.mk>
