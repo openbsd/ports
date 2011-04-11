@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/11 14:48:48 kili Exp $
 
 COMMENT =		Haskell bindings to cairo
 
-DISTNAME =		cairo-0.11.1
-REVISION =		1
+DISTNAME =		cairo-0.12.0
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
@@ -21,7 +20,8 @@ MODULES =		lang/ghc
 MODGHC_BUILD =		cabal hackage haddock register
 MODGHC_SETUP_CONF_ARGS =-f 'cairo_pdf cairo_ps cairo_svg'
 
-BUILD_DEPENDS =		devel/gtk2hs-buildtools
+BUILD_DEPENDS =		${RUN_DEPENDS} \
+			devel/gtk2hs-buildtools
 
 LIB_DEPENDS =		graphics/cairo
 RUN_DEPENDS =		${LIB_DEPENDS}
