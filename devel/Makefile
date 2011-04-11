@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.914 2011/04/11 13:05:01 kili Exp $
+# $OpenBSD: Makefile,v 1.915 2011/04/11 14:32:30 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -192,6 +192,7 @@
      SUBDIR += hs-sendfile
      SUBDIR += hs-stm
      SUBDIR += hs-stringtable-atom
+     SUBDIR += hs-syb
      SUBDIR += hs-tagged
      SUBDIR += hs-tar
      SUBDIR += hs-text
