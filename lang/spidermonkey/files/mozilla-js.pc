@@ -1,0 +1,10 @@
+# $OpenBSD: mozilla-js.pc,v 1.1 2011/04/11 20:02:19 jasper Exp $
+prefix=${TRUEPREFIX}
+includedir=${prefix}/include/js/
+
+Name: JavaScript
+Description: The Mozilla JavaScript Library
+Version: ${MOZILLA_VERSION}
+Requires: nspr
+Libs: -L${prefix}/lib -lmozjs -lncurses -lm
+Cflags: -I${includedir} -DXP_UNIX -DJS_THREADSAFE

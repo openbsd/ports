@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/04/10 17:24:38 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2011/04/11 20:02:19 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,6 +11,7 @@ MOZILLA_PROJECT =	spidermonkey
 DISTNAME =		firefox-${FFX_VERSION}.source
 PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION}
 EPOCH =		0
+REVISION =	0
 
 SO_VERSION =	0.0
 SHARED_LIBS =	mozjs ${SO_VERSION}
@@ -62,7 +63,14 @@ CONFIGURE_ENV +=	SO_VERSION="${SO_VERSION}" \
 			CPPFLAGS=-DJS_C_STRINGS_ARE_UTF8
 
 
+SUBST_VARS +=	MOZILLA_VERSION
+
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/js ${PREFIX}/bin/
+	# There is a mozilla-js.pc in the tarball, but it's not initialized
+	# as part of the build. This file is based on that.
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/pkgconfig/
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/mozilla-js.pc \
+		${PREFIX}/lib/pkgconfig/mozilla-js.pc
 
 .include <bsd.port.mk>
