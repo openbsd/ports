@@ -1,5 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/11 13:06:14 kili Exp $
 
+BROKEN =		overlapping instances with hs-parsec >= 3.0
 COMMENT =		Perl 6 Implementation
 
 DISTNAME =		Pugs-6.2.13.15
