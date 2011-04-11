@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/21 17:52:55 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2011/04/11 14:31:01 kili Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
 
-DISTNAME =	haddock-2.7.2
+DISTNAME =	haddock-2.9.2
 PKGNAME-main =	${DISTNAME}
-REVISION-main =	4
 PKGNAME-lib =	hs-${DISTNAME}
-REVISION-lib =	3
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/haddock/
@@ -47,7 +45,6 @@ BUILD_DEPENDS +=	devel/alex \
 			textproc/libxslt \
 			${RUN_DEPENDS}
 
-# Required for building the documentation:
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	autoconf no-autoheader
 AUTOCONF_VERSION =	2.61
