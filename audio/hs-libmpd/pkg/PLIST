@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/03 07:40:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/11 14:59:16 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Network/
@@ -31,6 +31,7 @@ share/doc/hs-${DISTNAME}/html/Network-MPD.html
 share/doc/hs-${DISTNAME}/html/doc-index-60.html
 share/doc/hs-${DISTNAME}/html/doc-index-61.html
 share/doc/hs-${DISTNAME}/html/doc-index-A.html
+share/doc/hs-${DISTNAME}/html/doc-index-All.html
 share/doc/hs-${DISTNAME}/html/doc-index-B.html
 share/doc/hs-${DISTNAME}/html/doc-index-C.html
 share/doc/hs-${DISTNAME}/html/doc-index-D.html
@@ -55,8 +56,7 @@ share/doc/hs-${DISTNAME}/html/doc-index-W.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
-share/doc/hs-${DISTNAME}/html/haddock.css
-share/doc/hs-${DISTNAME}/html/haskell_icon.gif
+share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/libmpd.haddock
@@ -64,4 +64,6 @@ share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Commands-Extensions.html
 share/doc/hs-${DISTNAME}/html/mini_Network-MPD-Core.html
 share/doc/hs-${DISTNAME}/html/mini_Network-MPD.html
 share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/synopsis.png
