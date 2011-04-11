@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_fmacros_h,v 1.1 2011/04/11 07:54:49 dcoppa Exp $
+--- src/fmacros.h.orig	Fri Apr  8 12:37:59 2011
++++ src/fmacros.h	Fri Apr  8 12:38:11 2011
+@@ -3,7 +3,7 @@
+ 
+ #define _BSD_SOURCE
+ 
+-#ifdef __linux__
++#if defined(__linux__) || defined(__OpenBSD__)
+ #define _XOPEN_SOURCE 700
+ #else
+ #define _XOPEN_SOURCE

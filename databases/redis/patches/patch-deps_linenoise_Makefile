@@ -1,0 +1,16 @@
+$OpenBSD: patch-deps_linenoise_Makefile,v 1.1 2011/04/11 07:54:49 dcoppa Exp $
+--- deps/linenoise/Makefile.orig	Fri Apr  8 13:47:34 2011
++++ deps/linenoise/Makefile	Fri Apr  8 13:48:59 2011
+@@ -1,10 +1,10 @@
+ linenoise_example: linenoise.h linenoise.c
+ 
+ linenoise_example: linenoise.o example.o
+-	$(CC) $(ARCH) -Wall -W -Os -g -o linenoise_example linenoise.o example.o
++	$(CC) $(CFLAGS) $(ARCH) -g -o linenoise_example linenoise.o example.o
+ 
+ .c.o:
+-	$(CC) $(ARCH) -c -Wall -W -Os -g $<
++	$(CC) $(CFLAGS) $(ARCH) -c -g $<
+ 
+ clean:
+ 	rm -f linenoise_example *.o
