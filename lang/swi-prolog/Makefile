@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/04/08 07:55:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2011/04/11 06:43:39 jasper Exp $
 
 COMMENT =		Prolog for the real world
 
@@ -6,6 +6,7 @@ V =			5.10.4
 XV =			6.6.66
 DISTNAME =		pl-$V
 PKGNAME =		swi-prolog-$V
+REVISION =		0
 CATEGORIES =		lang
 
 SHARED_LIBS =		pl	3.0
@@ -30,6 +31,7 @@ MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/src \
 CONFIGURE_ARGS =	--enable-mt \
 			--disable-custom-flags \
 			--with-world \
+			--with-jpeg=${LOCALBASE} \
 			${CONFIGURE_SHARED}
 
 USE_GMAKE =		Yes
@@ -38,6 +40,8 @@ USE_GROFF =		Yes
 MAKE_FLAGS =		SONAMEOPT= \
 			SHAREDV=libpl.so.${LIBpl_VERSION}
 
+BUILD_DEPENDS =		${RUN_DEPENDS}
+RUN_DEPENDS =		graphics/jpeg
 WANTLIB +=  c m ncursesw pthread pthread-stubs readline z
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
