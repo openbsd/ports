@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/04/11 14:51:22 kili Exp $
 
 COMMENT =		library for client-side HTTP
 
-DISTNAME =		HTTP-4000.0.9
-REVISION =		8
+DISTNAME =		HTTP-4000.1.1
 CATEGORIES =		net devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>
@@ -18,8 +17,8 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-LIB_DEPENDS =		devel/hs-network \
+RUN_DEPENDS =		devel/hs-network \
 			devel/hs-parsec
-RUN_DEPENDS =		${LIB_DEPENDS}
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>
