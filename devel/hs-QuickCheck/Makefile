@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/03 22:13:38 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/11 14:35:55 kili Exp $
 
 COMMENT =		automatic testing of Haskell programs
 
-DISTNAME =		QuickCheck-2.1.1.1
-REVISION =		1
+DISTNAME =		QuickCheck-2.4.0.1
 CATEGORIES =		devel
 HOMEPAGE =		http://www.cse.chalmers.se/~koen
 
@@ -18,5 +17,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
+
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
 .include <bsd.port.mk>
