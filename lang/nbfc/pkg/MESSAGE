@@ -1,0 +1,2 @@
+If you want to use the Brainfuck-to-Java compiler please create a
+symlink from ${LOCALBASE}/bin/nbfc-javac to the binary you wish to use.
