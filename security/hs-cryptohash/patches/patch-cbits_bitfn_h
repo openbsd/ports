@@ -1,15 +1,15 @@
-$OpenBSD: patch-cbits_bitfn_h,v 1.2 2010/12/12 20:43:41 jasper Exp $
+$OpenBSD: patch-cbits_bitfn_h,v 1.3 2011/04/12 10:43:04 jasper Exp $
 
 - Don't redefine swap32/swap64.
 
---- cbits/bitfn.h.orig	Mon Nov  1 23:27:34 2010
-+++ cbits/bitfn.h	Sun Dec 12 21:40:45 2010
+--- cbits/bitfn.h.orig	Tue Apr 12 12:34:26 2011
++++ cbits/bitfn.h	Tue Apr 12 12:36:53 2011
 @@ -30,14 +30,17 @@
  /**********************************************************/
  # if (defined(__i386__))
  #  define ARCH_HAS_SWAP32
 +#  ifndef swap32
- static inline uint32_t swap32(uint32_t a)
+ static inline uint32_t bitfn_swap32(uint32_t a)
  {
  	asm ("bswap %0" : "=r" (a) : "0" (a));
  	return a;
@@ -19,10 +19,10 @@ $OpenBSD: patch-cbits_bitfn_h,v 1.2 2010/12/12 20:43:41 jasper Exp $
  # elif (defined(__arm__))
  #  define ARCH_HAS_SWAP32
 +#  ifndef swap32
- static inline uint32_t swap32(uint32_t a)
+ static inline uint32_t bitfn_swap32(uint32_t a)
  {
  	uint32_t tmp = a;
-@@ -48,22 +51,25 @@ static inline uint32_t swap32(uint32_t a)
+@@ -48,22 +51,28 @@ static inline uint32_t bitfn_swap32(uint32_t a)
  	             : "=r" (a), "=r" (tmp) : "0" (a), "1" (tmp));
  	return a;
  }
@@ -32,47 +32,37 @@ $OpenBSD: patch-cbits_bitfn_h,v 1.2 2010/12/12 20:43:41 jasper Exp $
  #  define ARCH_HAS_SWAP32
  #  define ARCH_HAS_SWAP64
 +#  ifndef swap32
- static inline uint32_t swap32(uint32_t a)
+ static inline uint32_t bitfn_swap32(uint32_t a)
  {
  	asm ("bswap %0" : "=r" (a) : "0" (a));
  	return a;
  }
--
+ 
 +#  endif
 +#  ifndef swap64
- static inline uint64_t swap64(uint64_t a)
++
+ static inline uint64_t bitfn_swap64(uint64_t a)
  {
  	asm ("bswap %0" : "=r" (a) : "0" (a));
  	return a;
  }
--
+ 
 +#  endif
  # endif
  #endif /* NO_INLINE_ASM */
  /**********************************************************/
-@@ -111,6 +117,7 @@ static inline void array_swap32(uint32_t *d, uint32_t 
+@@ -111,12 +120,14 @@ static inline void array_swap32(uint32_t *d, uint32_t 
  }
  #endif
  
 +#ifndef swap64
  #ifndef ARCH_HAS_SWAP64
- static inline uint64_t swap64(uint64_t a)
+ static inline uint64_t bitfn_swap64(uint64_t a)
  {
-@@ -118,6 +125,7 @@ static inline uint64_t swap64(uint64_t a)
- 	       (((uint64_t) swap32((uint32_t) a)) << 32);
+ 	return ((uint64_t) bitfn_swap32((uint32_t) (a >> 32))) |
+ 	       (((uint64_t) bitfn_swap32((uint32_t) a)) << 32);
  }
- #endif
 +#endif
+ #endif
  
  #ifndef ARCH_HAS_ARRAY_SWAP64
- static inline void array_swap64(uint64_t *d, uint64_t *s, uint32_t nb)
-@@ -161,7 +169,8 @@ static inline void array_copy64(uint64_t *d, uint64_t 
- #ifdef __MINGW32__
-   # define LITTLE_ENDIAN 1234
-   # define BYTE_ORDER    LITTLE_ENDIAN
--#elif defined(__FreeBSD__)
-+#elif defined(__FreeBSD__) || defined(__OpenBSD__)
-+  # include <sys/types.h>
-   # include <sys/endian.h>
- #elif defined(__APPLE__)
-   # include <machine/endian.h>
