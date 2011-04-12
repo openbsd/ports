@@ -1,0 +1,2 @@
+Don't forget to remove ${PREFIX}/bin/pip if it was symlinks to
+${PREFIX}/bin/pip-${MODPY_VERSION}.
