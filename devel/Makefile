@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.917 2011/04/12 10:41:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.918 2011/04/12 11:19:41 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -648,6 +648,7 @@
      SUBDIR += p5-MooseX-Traits
      SUBDIR += p5-MooseX-Types
      SUBDIR += p5-MooseX-Types-Common
+     SUBDIR += p5-MooseX-Types-DateTime
      SUBDIR += p5-MooseX-Types-Path-Class
      SUBDIR += p5-MooseX-Types-Structured
      SUBDIR += p5-Mouse
