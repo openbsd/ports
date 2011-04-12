@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/04/12 11:31:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/04/12 14:33:54 jasper Exp $
 
 COMMENT=		structured Type Constraints for Moose
 
@@ -21,7 +21,6 @@ RUN_DEPENDS=		devel/p5-Devel-PartialDump \
 			devel/p5-Sub-Exporter
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-REGRESS_DEPENDS=	devel/p5-Test-Exception \
-			devel/p5-Test-Fatal
+REGRESS_DEPENDS=	devel/p5-Test-Fatal
 
 .include <bsd.port.mk>
