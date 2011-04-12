@@ -22,7 +22,7 @@ MASTER_SITES =		${HOMEPAGE}
 
 USE_GROFF =		Yes
 
-NO_REGRESS=		Yes
+NO_REGRESS =		Yes
 
 post-patch:
 	@perl -pi -e 's,bison -y,yacc -,g;' \
