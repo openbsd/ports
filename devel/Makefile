@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.919 2011/04/12 11:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.920 2011/04/12 18:33:35 rpointel Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -933,6 +933,7 @@
      SUBDIR += py-parsing
      SUBDIR += py-peak-rules
      SUBDIR += py-pexpect
+     SUBDIR += py-pip
      SUBDIR += py-prioritized_methods
      SUBDIR += py-progressbar
      SUBDIR += py-protocols
