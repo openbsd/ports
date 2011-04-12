@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.916 2011/04/12 06:43:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.917 2011/04/12 10:41:44 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -172,6 +172,7 @@
      SUBDIR += hs-hood
      SUBDIR += hs-hslogger
      SUBDIR += hs-iteratee
+     SUBDIR += hs-largeword
      SUBDIR += hs-language-c
      SUBDIR += hs-mmap
      SUBDIR += hs-monads-fd
