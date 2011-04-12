@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.73 2010/11/26 14:50:10 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.74 2011/04/12 19:28:13 kili Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -122,6 +122,11 @@ post-extract:
 
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} Makefile
+
+post-build:
+	perl -pi -e \
+		's@#! */usr/bin/env +python@#!${PREFIX}/bin/python${VERSION}@' \
+		${WRKSRC}/Tools/scripts/pydoc
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/pydoc \

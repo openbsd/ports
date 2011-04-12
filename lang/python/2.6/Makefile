@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/15 20:55:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2011/04/12 19:28:13 kili Exp $
 
 VERSION =		2.6
 PATCHLEVEL =		.6
-REVISION =		0
+REVISION =		1
 SHARED_LIBS =		python2.6 1.0
 
 CONFIGURE_ARGS +=	--with-cxx_main

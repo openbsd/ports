@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2010/11/15 20:55:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2011/04/12 19:28:13 kili Exp $
 
 VERSION=		2.4
 PATCHLEVEL=		.6
-REVISION=		5
+REVISION=		6
 SHARED_LIBS=		python2.4 1.0
 
 ALL_TARGET?=	all ${WRKSRC}/Lib/plat-openbsd4
