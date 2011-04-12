@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/04/12 11:32:50 sthen Exp $
 
 COMMENT=	IP accounting software
 
-DISTNAME=	pmacct-0.12.3
+DISTNAME=	pmacct-0.12.5
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.pmacct.net/
@@ -19,6 +19,7 @@ MASTER_SITES=	${HOMEPAGE}
 
 LIB_DEPENDS+=	databases/sqlite3
 
+NO_REGRESS=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --enable-64bit \
 		--enable-ipv6 \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/08/17 19:51:18 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/12 11:32:50 sthen Exp $
 @bin bin/pmacct
 @bin sbin/nfacctd
 @bin sbin/pmacctd
@@ -22,7 +22,7 @@ share/doc/pmacct/README.sqlite3
 share/doc/pmacct/SIGNALS
 share/doc/pmacct/TRIGGER_VARS
 share/examples/pmacct/
-share/examples/pmacct/agent_to_peer.map
+share/examples/pmacct/agent_to_peer.map.example
 share/examples/pmacct/allow-list.example
 share/examples/pmacct/bgp_md5.lst.example
 share/examples/pmacct/gnuplot-example.sh
@@ -48,6 +48,7 @@ share/examples/pmacct/probe_netflow.conf.example
 share/examples/pmacct/probe_sflow.conf.example
 share/examples/pmacct/rrdtool-example.sh
 share/examples/pmacct/sql/
+share/examples/pmacct/sql/pmacct-create-db_v8.mysql
 share/examples/pmacct/sql/pmacct-create-table_bgp_v1.sqlite3
 share/examples/pmacct/sql/pmacct-create-table_v1.sqlite3
 share/examples/pmacct/sql/pmacct-create-table_v2.sqlite3
@@ -56,3 +57,4 @@ share/examples/pmacct/sql/pmacct-create-table_v4.sqlite3
 share/examples/pmacct/sql/pmacct-create-table_v5.sqlite3
 share/examples/pmacct/sql/pmacct-create-table_v6.sqlite3
 share/examples/pmacct/sql/pmacct-create-table_v7.sqlite3
+share/examples/pmacct/sql/pmacct-create-table_v8.sqlite3
