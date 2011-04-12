@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/04/12 12:38:08 sthen Exp $
 
 COMMENT=	libraries for fwbuilder
-DISTNAME=	libfwbuilder-4.1.2
+DISTNAME=	libfwbuilder-4.1.3
 CATEGORIES=	net security
-SHARED_LIBS=	fwbuilder	15.0 \
-		fwcompiler	15.0
+SHARED_LIBS=	fwbuilder	16.0 \
+		fwcompiler	16.0
 
 HOMEPAGE=	http://www.fwbuilder.org/
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-WANTLIB=	m netsnmp stdc++ xml2 xslt z
+WANTLIB=	crypto m netsnmp stdc++ xml2 xslt z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fwbuilder/}
 

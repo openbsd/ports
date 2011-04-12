@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/10/11 20:19:11 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/04/12 12:38:08 sthen Exp $
 @bin bin/fwb_iosacl
 @bin bin/fwb_ipf
 @bin bin/fwb_ipfw
@@ -48,14 +48,15 @@ share/fwbuilder/configlets/bsd/update_addresses
 share/fwbuilder/configlets/bsd/update_carp
 share/fwbuilder/configlets/bsd/update_pfsync
 share/fwbuilder/configlets/bsd/update_vlans
-share/fwbuilder/configlets/cisco/
 share/fwbuilder/configlets/dd-wrt-jffs/
+share/fwbuilder/configlets/dd-wrt-jffs/check_utilities
 share/fwbuilder/configlets/dd-wrt-jffs/installer_commands_reg_user
 share/fwbuilder/configlets/dd-wrt-jffs/installer_commands_root
 share/fwbuilder/configlets/dd-wrt-jffs/routing_functions
 share/fwbuilder/configlets/dd-wrt-jffs/script_skeleton
 share/fwbuilder/configlets/dd-wrt-jffs/top_comment
 share/fwbuilder/configlets/dd-wrt-nvram/
+share/fwbuilder/configlets/dd-wrt-nvram/check_utilities
 share/fwbuilder/configlets/dd-wrt-nvram/installer_commands_reg_user
 share/fwbuilder/configlets/dd-wrt-nvram/installer_commands_root
 share/fwbuilder/configlets/dd-wrt-nvram/routing_functions
@@ -213,8 +214,8 @@ share/fwbuilder/help/en_US/release_notes_4.0.1.html
 share/fwbuilder/help/en_US/release_notes_4.1.0.html
 share/fwbuilder/help/en_US/release_notes_4.1.1.html
 share/fwbuilder/help/en_US/release_notes_4.1.2.html
+share/fwbuilder/help/en_US/release_notes_4.1.3.html
 share/fwbuilder/help/en_US/state_sync_configuration.png
-share/fwbuilder/help/en_US/summary.html
 share/fwbuilder/help/en_US/tip01.html
 share/fwbuilder/help/en_US/tip02.html
 share/fwbuilder/help/en_US/tip03.html
@@ -263,11 +264,29 @@ share/fwbuilder/resources.xml
 share/fwbuilder/templates.xml
 share/icons/
 share/icons/hicolor/
+share/icons/hicolor/128x128/
+share/icons/hicolor/128x128/apps/
+share/icons/hicolor/128x128/apps/fwbuilder.png
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/fwbuilder.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
-share/icons/hicolor/64x64/apps/fwbuilder.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
+share/icons/hicolor/24x24/apps/fwbuilder.png
+share/icons/hicolor/256x256/
+share/icons/hicolor/256x256/apps/
+share/icons/hicolor/256x256/apps/fwbuilder.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/fwbuilder.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/fwbuilder.png
+share/icons/hicolor/512x512/
+share/icons/hicolor/512x512/apps/
+share/icons/hicolor/512x512/apps/fwbuilder.png
+share/icons/hicolor/72x72/
+share/icons/hicolor/72x72/apps/
+share/icons/hicolor/72x72/apps/fwbuilder.png
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/04/12 12:38:08 sthen Exp $
 
 # Consumes more than 512MB on at least i386 when building qrc_MainRes.o
 VMEM_WARNING =	Yes
 
-V =		4.1.2
+V =		4.1.3
 COMMENT =	firewall GUI
 DISTNAME =	fwbuilder-$V
 CATEGORIES =	net security
@@ -46,9 +46,9 @@ LIB_DEPENDS =	libfwbuilder-$V:security/libfwbuilder \
 REGRESS_TARGET =tests
 USE_GROFF =	Yes
 
-WANTLIB += c m netsnmp
+WANTLIB += c crypto m netsnmp
 WANTLIB += pthread stdc++ util xml2 xslt z
-WANTLIB += QtGui QtNetwork
+WANTLIB += QtDBus QtGui QtNetwork QtXml
 WANTLIB += fwcompiler>=14 fwbuilder>=14
 
 FAKE_FLAGS =	INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
@@ -61,11 +61,16 @@ post-patch:
 	    sh autogen.sh
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/64x64/apps
-	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/16x16/apps
-	${INSTALL_DATA} ${WRKSRC}/src/gui/Icons/firewall_64.png \
-		${PREFIX}/share/icons/hicolor/64x64/apps/fwbuilder.png
-	${INSTALL_DATA} ${WRKSRC}/src/gui/Icons/firewall_16.png \
-		${PREFIX}/share/icons/hicolor/16x16/apps/fwbuilder.png
+	cd ${WRKSRC}/src/res/Icons && find . -type d -mindepth 1 -maxdepth 1 | \
+		while read D; do \
+			${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/$$D; \
+			${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/$$D/apps; \
+		done
+
+	cd ${WRKSRC}/src/res/Icons && find . -name '*.png' | \
+		while read F; do \
+			${INSTALL_DATA} $$F \
+				${PREFIX}/share/icons/hicolor/`dirname $$F`/apps/`basename $$F`; \
+		done
 
 .include <bsd.port.mk>
