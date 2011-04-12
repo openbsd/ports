@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.918 2011/04/12 11:19:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.919 2011/04/12 11:27:59 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -565,6 +565,7 @@
      SUBDIR += p5-Guard
      SUBDIR += p5-Hash-AutoHash
      SUBDIR += p5-Hash-AutoHash-Args
+     SUBDIR += p5-Hash-Flatten
      SUBDIR += p5-Hash-Merge
      SUBDIR += p5-Hash-MultiValue
      SUBDIR += p5-Hash-NoRef
