@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2011/04/07 07:50:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2011/04/12 16:35:21 jasper Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
@@ -45,7 +45,8 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 
 WANTLIB-python= 	${WANTLIB} ffi vte>=14 gtk-x11-2.0
 
-BUILD_DEPENDS=		devel/gobject-introspection
+BUILD_DEPENDS=		devel/gobject-introspection \
+			x11/py-gtk2
 
 LIB_DEPENDS-python=	${LIB_DEPENDS-main} \
 			${BASE_PKGPATH} \
