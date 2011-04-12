@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/12 11:16:35 sthen Exp $
 
 V =			0.8.3-1
 COMMENT-main =		mysql driver for libdbi
@@ -9,9 +9,11 @@ COMMENT-freetds =	freetds driver for libdbi
 DISTNAME =		libdbi-drivers-$V
 PKGNAME-main =		libdbi-drivers-mysql-${V:S/-/./}
 PKGNAME-pgsql =		libdbi-drivers-pgsql-${V:S/-/./}
+REVISION-pgsql =	0
 PKGNAME-sqlite =	libdbi-drivers-sqlite-${V:S/-/./}
 PKGNAME-sqlite3 =	libdbi-drivers-sqlite3-${V:S/-/./}
 PKGNAME-freetds =	libdbi-drivers-freetds-${V:S/-/./}
+REVISION-freetds =	0
 CATEGORIES =		databases
 
 HOMEPAGE =		http://libdbi-drivers.sourceforge.net/
@@ -47,7 +49,7 @@ WANTLIB-main =		crypto m ssl z mysqlclient dbi
 LIB_DEPENDS-main =	databases/mysql \
 			databases/libdbi
 
-WANTLIB-pgsql =		m pq dbi
+WANTLIB-pgsql =		m pq dbi com_err crypto ssl
 LIB_DEPENDS-pgsql =	databases/postgresql \
 			databases/libdbi
 
@@ -59,7 +61,7 @@ WANTLIB-sqlite3 =	m sqlite3 dbi
 LIB_DEPENDS-sqlite3 =	databases/sqlite3 \
 			databases/libdbi
 
-WANTLIB-freetds =	iconv m ct dbi
+WANTLIB-freetds =	iconv m ct dbi gcrypt gnutls gpg-error intl tasn1 z
 LIB_DEPENDS-freetds =	databases/freetds \
 			databases/libdbi
 
