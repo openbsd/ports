@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/12 19:33:56 landry Exp $
+@bin bin/entomologist
+share/applications/entomologist.desktop
+share/entomologist/
+share/entomologist/entomologist_en.qm
+share/icons/hicolor/128x128/apps/entomologist.png
+share/icons/hicolor/32x32/apps/entomologist.png
+share/icons/hicolor/64x64/apps/entomologist.png
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

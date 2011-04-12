@@ -1,0 +1,4 @@
+The goal of Entomologist is to provide a cross-platform, open source
+bug tracker client that works with multiple bug trackers (Bugzilla,
+Launchpad, Mantis, Trac, etc) and provides an easier way to work with
+bugs on the desktop.
