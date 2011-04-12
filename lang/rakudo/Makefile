@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/03/22 08:03:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/12 13:48:57 jasper Exp $
 
 COMMENT =		Rakudo Perl 6 compiler
 
@@ -24,6 +24,7 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB = 		c icudata icui18n icuuc m ncurses parrot=1.0 pthread
 WANTLIB += 		readline stdc++ util
 
+VMEM_WARNING =		Yes
 
 MASTER_SITES =		http://cloud.github.com/downloads/rakudo/star/
 
