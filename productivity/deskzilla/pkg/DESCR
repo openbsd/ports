@@ -1,0 +1,11 @@
+Deskzilla is a desktop client for Bugzilla bug tracking system. Its
+unique features and interactive interface save your time and facilitate
+issue tracking process.
+This is the Lite editition which is a fully-functional Deskzilla that
+requires no license key, and it has a couple of limitations:
+* Only a single connection to Bugzilla server is supported.
+* works only if you have 1,000 or less bugs in Bugzilla for those
+products you work with.
+
+Additionally, Deskzilla Lite allows unlimited connections to well-known
+Bugzilla servers that host open-source projects.

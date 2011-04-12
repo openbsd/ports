@@ -1,0 +1,38 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2011/04/12 19:31:19 landry Exp $
+
+COMMENT =	desktop bugzilla browser
+
+DISTNAME =	deskzilla-lite-2_1
+PKGNAME =	${DISTNAME:S/_/./}
+EXTRACT_SUFX=	.zip
+
+PKG_ARCH =	*
+
+CATEGORIES =	productivity
+
+HOMEPAGE =	http://almworks.com/deskzilla/
+MASTER_SITES =	http://d1.almworks.com/.files
+
+# http://almworks.com/eula.html
+PERMIT_PACKAGE_CDROM=	Free Version of commercial product
+PERMIT_PACKAGE_FTP=	Free Version of commercial product
+PERMIT_DISTFILES_CDROM=	Free Version of commercial product
+PERMIT_DISTFILES_FTP=	Free Version of commercial product
+
+MODULES =	java
+MODJAVA_VER =	1.7+
+
+RUN_DEPENDS =	java/javaPathHelper
+NO_REGRESS =	Yes
+NO_BUILD =	Yes
+
+do-install:
+	rm -Rf ${WRKSRC}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/deskzilla/
+	cd ${WRKSRC} && pax -rw * ${PREFIX}/share/deskzilla/
+	echo '#!/bin/sh\n$$(javaPathHelper -c deskzilla) -jar' \
+		'${TRUEPREFIX}/share/deskzilla/deskzilla.jar "$$@"' \
+		 > ${PREFIX}/bin/deskzilla
+	chmod +x ${PREFIX}/bin/deskzilla
+
+.include <bsd.port.mk>
