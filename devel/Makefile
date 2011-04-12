@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.915 2011/04/11 14:32:30 kili Exp $
+# $OpenBSD: Makefile,v 1.916 2011/04/12 06:43:50 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -835,6 +835,7 @@
      SUBDIR += p5-Tree-Simple-View
      SUBDIR += p5-Tree-Simple-VisitorFactory
      SUBDIR += p5-Try-Tiny
+     SUBDIR += p5-UUID-Tiny
      SUBDIR += p5-Universal-can
      SUBDIR += p5-Universal-exports
      SUBDIR += p5-Universal-isa
