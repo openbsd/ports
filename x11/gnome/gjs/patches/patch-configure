@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2011/04/12 06:30:06 jasper Exp $
+
+We know what the Mozilla JavaScript package is called, so just set it and
+prevent configure from not recognizing it.
+
+--- configure.orig	Mon Apr 11 20:32:48 2011
++++ configure	Mon Apr 11 20:32:54 2011
+@@ -15786,7 +15786,7 @@ if test -n "$JS_CONFIG"; then
+     JS_CFLAGS="$($JS_CONFIG --cflags)"
+     JS_LIBS="$($JS_CONFIG --libs)"
+     FIREFOX_JS_LIBDIR="$($JS_CONFIG --libdir)"
+-    JS_PACKAGE=
++    JS_PACKAGE=mozilla-js
+ 
+     # js-config gives almost usable CFLAGS, we must define one of XP_BEOS,
+     # XP_OS2, XP_WIN or XP_UNIX
