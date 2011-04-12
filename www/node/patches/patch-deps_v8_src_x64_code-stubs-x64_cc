@@ -1,7 +1,7 @@
-$OpenBSD: patch-deps_v8_src_x64_code-stubs-x64_cc,v 1.1 2011/03/30 19:54:29 jasper Exp $
---- deps/v8/src/x64/code-stubs-x64.cc.orig	Sat Mar 26 09:48:02 2011
-+++ deps/v8/src/x64/code-stubs-x64.cc	Wed Mar 30 21:21:20 2011
-@@ -2244,11 +2244,14 @@ void ArgumentsAccessStub::GenerateReadElement(MacroAss
+$OpenBSD: patch-deps_v8_src_x64_code-stubs-x64_cc,v 1.2 2011/04/12 10:32:49 jasper Exp $
+--- deps/v8/src/x64/code-stubs-x64.cc.orig	Sat Apr  2 03:00:43 2011
++++ deps/v8/src/x64/code-stubs-x64.cc	Tue Apr 12 10:07:08 2011
+@@ -2280,11 +2280,14 @@ void ArgumentsAccessStub::GenerateReadElement(MacroAss
    Label slow;
    __ JumpIfNotSmi(rdx, &slow);
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-deps_v8_src_x64_code-stubs-x64_cc,v 1.1 2011/03/30 19:54:29 jasp
    __ j(equal, &adaptor);
  
    // Check index against formal parameters count limit passed in
-@@ -2303,8 +2306,8 @@ void ArgumentsAccessStub::GenerateNewObject(MacroAssem
+@@ -2339,8 +2342,8 @@ void ArgumentsAccessStub::GenerateNewObject(MacroAssem
    // Check if the calling frame is an arguments adaptor frame.
    Label adaptor_frame, try_allocate, runtime;
    __ movq(rdx, Operand(rbp, StandardFrameConstants::kCallerFPOffset));
@@ -30,7 +30,7 @@ $OpenBSD: patch-deps_v8_src_x64_code-stubs-x64_cc,v 1.1 2011/03/30 19:54:29 jasp
    __ j(equal, &adaptor_frame);
  
    // Get the length from the frame.
-@@ -4082,8 +4085,8 @@ void StringAddStub::Generate(MacroAssembler* masm) {
+@@ -4118,8 +4121,8 @@ void StringAddStub::Generate(MacroAssembler* masm) {
    // Look at the length of the result of adding the two strings.
    STATIC_ASSERT(String::kMaxLength <= Smi::kMaxValue / 2);
    __ SmiAdd(rbx, rbx, rcx);
@@ -41,7 +41,7 @@ $OpenBSD: patch-deps_v8_src_x64_code-stubs-x64_cc,v 1.1 2011/03/30 19:54:29 jasp
    __ SmiCompare(rbx, Smi::FromInt(2));
    __ j(not_equal, &longer_than_two);
  
-@@ -4435,15 +4438,14 @@ void StringHelper::GenerateTwoCharacterSymbolTableProb
+@@ -4471,15 +4474,14 @@ void StringHelper::GenerateTwoCharacterSymbolTableProb
                      FieldOperand(symbol_table, SymbolTable::kCapacityOffset));
    __ decl(mask);
  
@@ -59,7 +59,7 @@ $OpenBSD: patch-deps_v8_src_x64_code-stubs-x64_cc,v 1.1 2011/03/30 19:54:29 jasp
    // scratch:      -
  
    // Perform a number of probes in the symbol table.
-@@ -4458,7 +4460,7 @@ void StringHelper::GenerateTwoCharacterSymbolTableProb
+@@ -4494,7 +4496,7 @@ void StringHelper::GenerateTwoCharacterSymbolTableProb
      }
      __ andl(scratch, mask);
  
@@ -68,7 +68,7 @@ $OpenBSD: patch-deps_v8_src_x64_code-stubs-x64_cc,v 1.1 2011/03/30 19:54:29 jasp
      Register candidate = scratch;  // Scratch register contains candidate.
      STATIC_ASSERT(SymbolTable::kEntrySize == 1);
      __ movq(candidate,
-@@ -4468,9 +4470,17 @@ void StringHelper::GenerateTwoCharacterSymbolTableProb
+@@ -4504,9 +4506,17 @@ void StringHelper::GenerateTwoCharacterSymbolTableProb
                           SymbolTable::kElementsStartOffset));
  
      // If entry is undefined no string with this hash can be found.
@@ -87,7 +87,7 @@ $OpenBSD: patch-deps_v8_src_x64_code-stubs-x64_cc,v 1.1 2011/03/30 19:54:29 jasp
      // If length is not 2 the string is not a candidate.
      __ SmiCompare(FieldOperand(candidate, String::kLengthOffset),
                    Smi::FromInt(2));
-@@ -4481,8 +4491,7 @@ void StringHelper::GenerateTwoCharacterSymbolTableProb
+@@ -4517,8 +4527,7 @@ void StringHelper::GenerateTwoCharacterSymbolTableProb
      Register temp = kScratchRegister;
  
      // Check that the candidate is a non-external ascii string.
