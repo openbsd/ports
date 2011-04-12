@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/12 19:30:55 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/12 20:11:17 ajacoutot Exp $
 
 COMMENT =		Python easy_install replacement
 
 MODPY_EGG_VERSION =	1.0
 DISTNAME =		pip-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 MAINTAINER =		wenheping@gmail.com
