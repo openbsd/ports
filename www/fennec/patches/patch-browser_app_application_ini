@@ -1,0 +1,11 @@
+$OpenBSD: patch-browser_app_application_ini,v 1.1.1.1 2011/04/12 19:48:57 landry Exp $
+--- browser/app/application.ini.orig	Wed Jul 21 02:52:01 2010
++++ browser/app/application.ini	Sun Aug  1 12:14:02 2010
+@@ -58,7 +58,4 @@ EnableProfileMigrator=1
+ EnableExtensionManager=1
+ 
+ [Crash Reporter]
+-#if MOZILLA_OFFICIAL
+-Enabled=1
+-#endif
+ ServerURL=https://crash-reports.mozilla.com/submit?id=ec8030f7-c20a-464f-9b0e-13a3a9e97384&version=@APP_VERSION@&buildid=@GRE_BUILDID@

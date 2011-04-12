@@ -1,0 +1,11 @@
+$OpenBSD: patch-security_manager_pki_resources_content_exceptionDialog_js,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+--- security/manager/pki/resources/content/exceptionDialog.js.orig	Wed Jul 21 02:52:39 2010
++++ security/manager/pki/resources/content/exceptionDialog.js	Sun Aug  1 12:58:33 2010
+@@ -283,6 +283,7 @@ function updateCertStatus() {
+       
+       // In these cases, we do want to enable the "Add Exception" button
+       gDialog.getButton("extra1").disabled = false;
++      gDialog.getButton("extra1").focus();
+ 
+       // If the Private Browsing service is available and the mode is active,
+       // don't store permanent exceptions, since they would persist after

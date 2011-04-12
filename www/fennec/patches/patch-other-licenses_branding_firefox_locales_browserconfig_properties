@@ -1,0 +1,8 @@
+$OpenBSD: patch-other-licenses_branding_firefox_locales_browserconfig_properties,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+--- other-licenses/branding/firefox/locales/browserconfig.properties.orig	Sat Jan 15 01:07:21 2011
++++ other-licenses/branding/firefox/locales/browserconfig.properties	Sat Jan 15 01:07:44 2011
+@@ -1,2 +1,3 @@
+ # Do NOT localize or otherwise change these values
+-browser.startup.homepage=about:home
++browser.startup.homepage=about:blank
++browser.startup.homepage_reset=about:blank

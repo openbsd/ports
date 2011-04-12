@@ -1,0 +1,46 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2011/04/12 19:48:57 landry Exp $
+--- configure.in.orig	Fri Mar 18 20:07:07 2011
++++ configure.in	Thu Mar 31 23:04:29 2011
+@@ -1229,7 +1229,7 @@ MOZ_PNG_LIBS='$(call EXPAND_LIBNAME_PATH,mozpng,$(DEPT
+ MOZ_JS_STATIC_LIBS='-L$(LIBXUL_DIST)/bin -ljs_static'
+ MOZ_JS_SHARED_LIBS='-L$(LIBXUL_DIST)/bin -lmozjs'
+ DYNAMIC_XPCOM_LIBS='-L$(LIBXUL_DIST)/bin -lxpcom -lxpcom_core -lmozalloc'
+-MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(prefix)/lib'
++MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(prefix)/lib -L$(LIBXUL_DIST)/bin'
+ XPCOM_FROZEN_LDOPTS='-L$(LIBXUL_DIST)/bin -lxpcom -lmozalloc'
+ LIBXUL_LIBS='$(XPCOM_FROZEN_LDOPTS) -lxul'
+ XPCOM_GLUE_LDOPTS='$(LIBXUL_DIST)/lib/$(LIB_PREFIX)xpcomglue_s.$(LIB_SUFFIX) $(XPCOM_FROZEN_LDOPTS)'
+@@ -2676,7 +2676,7 @@ ia64*-hpux*)
+ 	;;
+ 
+ *-openbsd*)
+-    DLL_SUFFIX=".so.1.0"
++    DLL_SUFFIX=".so.${SO_VERSION}"
+     DSO_CFLAGS=''
+     DSO_PIC_CFLAGS='-fPIC'
+     DSO_LDOPTS='-shared -fPIC'
+@@ -4524,7 +4524,7 @@ if test "$ac_cv_thread_keyword" = yes; then
+       :
+       ;;
+     *)
+-      AC_DEFINE(HAVE_THREAD_TLS_KEYWORD)
++dnl      AC_DEFINE(HAVE_THREAD_TLS_KEYWORD)
+       ;;
+   esac
+ fi
+@@ -5812,14 +5812,7 @@ dnl ==================================================
+ 
+ # The GNOME component is built if one of 
+ # gnome-vfs, gio, gconf or libnotify is available.
+-if test "$MOZ_ENABLE_GCONF" -o \
+-   "$MOZ_ENABLE_GNOMEVFS" -o \
+-   "$MOZ_ENABLE_GIO" -o \
+-   "$MOZ_ENABLE_LIBNOTIFY"; then
+-    MOZ_ENABLE_GNOME_COMPONENT=1
+-else
+-    MOZ_ENABLE_GNOME_COMPONENT=
+-fi
++MOZ_ENABLE_GNOME_COMPONENT=
+ AC_SUBST(MOZ_ENABLE_GNOME_COMPONENT)
+ 
+ dnl ========================================================

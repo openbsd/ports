@@ -1,0 +1,12 @@
+$OpenBSD: patch-widget_src_qt_nsIdleServiceQt_cpp,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+--- widget/src/qt/nsIdleServiceQt.cpp.orig	Thu Nov  4 21:06:58 2010
++++ widget/src/qt/nsIdleServiceQt.cpp	Sat Nov 13 11:56:38 2010
+@@ -77,7 +77,7 @@ static void Initialize()
+ 
+ #ifndef MOZ_PLATFORM_MAEMO
+     // This will leak - See comments in ~nsIdleServiceQt().
+-    PRLibrary* xsslib = PR_LoadLibrary("libXss.so.1");
++    PRLibrary* xsslib = PR_LoadLibrary("libXss.so");
+     if (!xsslib) {
+         return;
+     }

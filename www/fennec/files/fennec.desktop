@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Firefox Mobile Web Browser
+GenericName=Mobile Web Browser
+Comment=Browse the web
+Exec=fennec %u
+Icon=${TRUEPREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/fennec_icon.png
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=Application;Network;
+MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;

@@ -1,0 +1,20 @@
+$OpenBSD: patch-config_rules_mk,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+Add -rpath $(installdir) to be sure libxul/libxpcom can open their
+depending libs when being dlopen()'ed themselves
+--- config/rules.mk.orig	Thu Feb  3 21:11:40 2011
++++ config/rules.mk	Tue Feb  8 22:37:33 2011
+@@ -624,6 +624,14 @@ EXTRA_DSO_LDOPTS += -Wl,-Bsymbolic
+ endif
+ endif
+ 
++ifeq ($(OS_ARCH),OpenBSD)
++ifdef IS_COMPONENT
++EXTRA_DSO_LDOPTS += -Wl,-Bsymbolic
++endif
++DSO_LDOPTS += -Wl,-rpath,'$(installdir)'
++OS_LDFLAGS += -Wl,-rpath,'$(installdir)'
++endif
++
+ ifeq ($(OS_ARCH),NetBSD)
+ ifneq (,$(filter arc cobalt hpcmips mipsco newsmips pmax sgimips,$(OS_TEST)))
+ ifeq ($(MODULE),layout)

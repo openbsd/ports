@@ -1,0 +1,14 @@
+$OpenBSD: patch-content_events_src_nsContentEventHandler_cpp,v 1.1.1.1 2011/04/12 19:48:57 landry Exp $
+fix for gcc3 archs ?
+--- content/events/src/nsContentEventHandler.cpp.orig	Thu Mar  3 23:11:22 2011
++++ content/events/src/nsContentEventHandler.cpp	Thu Mar 10 15:39:40 2011
+@@ -1029,7 +1029,8 @@ nsContentEventHandler::OnSelectionEvent(nsSelectionEve
+   selPrivate->EndBatchChanges();
+   NS_ENSURE_SUCCESS(rv, rv);
+ 
+-  nsCOMPtr<nsISelection2>(do_QueryInterface(mSelection))->ScrollIntoView(
++  nsCOMPtr<nsISelection2> sel2 = do_QueryInterface(mSelection);
++  sel2->ScrollIntoView(
+       nsISelectionController::SELECTION_FOCUS_REGION, PR_FALSE, -1, -1);
+   aEvent->mSucceeded = PR_TRUE;
+   return NS_OK;

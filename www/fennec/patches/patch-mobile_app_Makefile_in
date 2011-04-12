@@ -1,0 +1,11 @@
+$OpenBSD: patch-mobile_app_Makefile_in,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+--- mobile/app/Makefile.in.orig	Fri Mar 18 20:21:36 2011
++++ mobile/app/Makefile.in	Thu Mar 31 23:04:30 2011
+@@ -70,6 +70,7 @@ APP_XPCOM_LIBS = $(XPCOM_LIBS)
+ endif
+ 
+ LIBS += $(APP_XPCOM_LIBS) \
++	-L${X11BASE}/lib \
+ 	$(NSPR_LIBS) \
+ 	$(NULL)
+ 

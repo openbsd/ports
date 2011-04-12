@@ -1,0 +1,44 @@
+$OpenBSD: patch-js_src_jsnativestack_cpp,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=634609
+--- js/src/jsnativestack.cpp.orig	Thu Nov  4 21:05:49 2010
++++ js/src/jsnativestack.cpp	Sat Nov 13 11:56:34 2010
+@@ -50,7 +50,7 @@
+ #elif defined(XP_MACOSX) || defined(DARWIN) || defined(XP_UNIX)
+ # include <pthread.h>
+ 
+-# if defined(__FreeBSD__)
++# if defined(__FreeBSD__) || defined (__OpenBSD__)
+ #  include <pthread_np.h>
+ # endif
+ 
+@@ -198,24 +198,21 @@ GetNativeStackBaseImpl()
+     pthread_attr_init(&sattr);
+ #  if defined(PTHREAD_NP_H) || defined(_PTHREAD_NP_H_) || defined(NETBSD)
+     /* e.g. on FreeBSD 4.8 or newer, neundorf@kde.org */
+-    pthread_attr_get_np(thread, &sattr);
+ #  else
+     /*
+      * FIXME: this function is non-portable;
+      * other POSIX systems may have different np alternatives
+      */
+-    pthread_getattr_np(thread, &sattr);
+ #  endif
+ 
+     void *stackBase = 0;
+     size_t stackSize = 0;
+-#  ifdef DEBUG
+-    int rc = 
+-#  endif
+-        pthread_attr_getstack(&sattr, &stackBase, &stackSize);
+-    JS_ASSERT(!rc);
+-    JS_ASSERT(stackBase);
+-    pthread_attr_destroy(&sattr);
++	stack_t ss;
++	int rslt;
++
++	rslt = pthread_stackseg_np(pthread_self(), &ss);
++	stackBase = (void*)((size_t)ss.ss_sp - ss.ss_size);
++	stackSize = ss.ss_size;
+ 
+ #  if JS_STACK_GROWTH_DIRECTION > 0
+     return stackBase;

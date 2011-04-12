@@ -1,0 +1,12 @@
+$OpenBSD: patch-widget_src_gtk2_Makefile_in,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+--- widget/src/gtk2/Makefile.in.orig	Wed Jul 21 02:53:08 2010
++++ widget/src/gtk2/Makefile.in	Sun Aug  1 12:58:34 2010
+@@ -53,6 +53,8 @@ LIBXUL_LIBRARY = 1
+ NATIVE_THEME_SUPPORT = 1
+ 
+ 
++# GTK2 widget sndio backend.
++EXTRA_DSO_LDOPTS += -lsndio
+ 
+ CSRCS		= \
+ 		mozcontainer.c \

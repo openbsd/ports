@@ -1,0 +1,14 @@
+$OpenBSD: patch-gfx_thebes_gfxTextRunWordCache_cpp,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+--- gfx/thebes/gfxTextRunWordCache.cpp.orig	Thu Feb  3 21:11:48 2011
++++ gfx/thebes/gfxTextRunWordCache.cpp	Mon Feb 14 20:41:37 2011
+@@ -49,6 +49,10 @@
+ 
+ #include "nsBidiUtils.h"
+ 
++#if defined(XP_UNIX)
++#include <stdint.h>
++#endif
++
+ #ifdef DEBUG
+ #include <stdio.h>
+ #endif

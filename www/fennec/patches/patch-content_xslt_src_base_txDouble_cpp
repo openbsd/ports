@@ -1,0 +1,23 @@
+$OpenBSD: patch-content_xslt_src_base_txDouble_cpp,v 1.1.1.1 2011/04/12 19:48:57 landry Exp $
+alignment issue on some arch ? been there since ffx3
+--- content/xslt/src/base/txDouble.cpp.orig	Wed Dec 15 02:02:41 2010
++++ content/xslt/src/base/txDouble.cpp	Wed Dec 22 22:50:20 2010
+@@ -50,13 +50,13 @@
+  */
+ 
+ //-- Initialize Double related constants
+-const txdpun Double::NaN = TX_DOUBLE_NaN;
++const txdpun Double::NaN __attribute__ ((aligned (8))) = TX_DOUBLE_NaN;
+ #ifdef IS_BIG_ENDIAN
+-const txdpun Double::POSITIVE_INFINITY = {{TX_DOUBLE_HI32_EXPMASK, 0}};
+-const txdpun Double::NEGATIVE_INFINITY = {{TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT, 0}};
++const txdpun Double::POSITIVE_INFINITY __attribute__ ((aligned (8))) = {{TX_DOUBLE_HI32_EXPMASK, 0}};
++const txdpun Double::NEGATIVE_INFINITY __attribute__ ((aligned (8))) = {{TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT, 0}};
+ #else
+-const txdpun Double::POSITIVE_INFINITY = {{0, TX_DOUBLE_HI32_EXPMASK}};
+-const txdpun Double::NEGATIVE_INFINITY = {{0, TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT}};
++const txdpun Double::POSITIVE_INFINITY __attribute__ ((aligned (8))) = {{0, TX_DOUBLE_HI32_EXPMASK}};
++const txdpun Double::NEGATIVE_INFINITY __attribute__ ((aligned (8))) = {{0, TX_DOUBLE_HI32_EXPMASK | TX_DOUBLE_HI32_SIGNBIT}};
+ #endif
+ 
+ /*

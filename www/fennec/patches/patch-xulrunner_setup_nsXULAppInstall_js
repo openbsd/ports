@@ -1,0 +1,11 @@
+--- xulrunner/setup/nsXULAppInstall.js.orig	Wed Jul 21 02:53:09 2010
++++ xulrunner/setup/nsXULAppInstall.js	Sun Aug  1 13:01:43 2010
+@@ -243,7 +243,7 @@ AppInstall.prototype = {
+ #else
+       aDirectory = Components.classes["@mozilla.org/file/local;1"].
+         createInstance(nsILocalFile);
+-      aDirectory.initWithPath("/usr/local/lib");
++      aDirectory.initWithPath("${LOCALBASE}/lib/xulrunner-2.0");
+       if (vendor)
+         aDirectory.append(vendor.toLowerCase());
+ #endif
