@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/12 11:31:07 jasper Exp $
 
 COMMENT=		structured Type Constraints for Moose
 
-DISTNAME=		MooseX-Types-Structured-0.19
-REVISION=		1
+DISTNAME=		MooseX-Types-Structured-0.26
 
 CATEGORIES=		devel
 
@@ -17,9 +16,12 @@ MODULES=		cpan
 USE_GROFF =		Yes
 
 RUN_DEPENDS=		devel/p5-Devel-PartialDump \
-			devel/p5-MooseX-Types \
+			devel/p5-MooseX-Types>=0.22 \
+			devel/p5-MooseX-Types-DateTime \
 			devel/p5-Sub-Exporter
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
-REGRESS_DEPENDS=	devel/p5-Test-Exception
+REGRESS_DEPENDS=	devel/p5-Test-Exception \
+			devel/p5-Test-Fatal
+
 .include <bsd.port.mk>
