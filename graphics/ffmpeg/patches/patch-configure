@@ -1,35 +1,15 @@
-$OpenBSD: patch-configure,v 1.25 2011/03/29 20:01:43 edd Exp $
---- configure.orig	Sun Mar  6 15:03:48 2011
-+++ configure	Mon Mar  7 00:29:31 2011
-@@ -1066,6 +1066,7 @@ HAVE_LIST="
-     setmode
-     socklen_t
-     soundcard_h
-+    sndio_h
-     poll_h
-     setrlimit
-     strerror_r
-@@ -1405,6 +1406,8 @@ jack_indev_deps="jack_jack_h"
- libdc1394_indev_deps="libdc1394"
- oss_indev_deps_any="soundcard_h sys_soundcard_h"
- oss_outdev_deps_any="soundcard_h sys_soundcard_h"
-+sndio_indev_deps="sndio_h"
-+sndio_outdev_deps="sndio_h"
- v4l_indev_deps="linux_videodev_h"
- v4l2_indev_deps_any="linux_videodev2_h sys_videoio_h"
- vfwcap_indev_deps="capCreateCaptureWindow vfwcap_defines"
-@@ -1589,6 +1592,10 @@ cpu="generic"
- target_os_default=$(tolower $(uname -s))
- host_os=$target_os_default
- 
-+if test "$target_os_default" = "openbsd"; then
-+  arch_default=$(arch -s)
-+fi
-+
- # configurable options
- enable avcodec
- enable avdevice
-@@ -2335,6 +2342,7 @@ case $target_os in
+$OpenBSD: patch-configure,v 1.26 2011/04/12 22:59:07 sthen Exp $
+--- configure.orig	Wed Apr  6 17:29:22 2011
++++ configure	Fri Apr  8 16:46:29 2011
+@@ -1087,7 +1087,6 @@ HAVE_LIST="
+     lzo1x_999_compress
+     machine_ioctl_bt848_h
+     machine_ioctl_meteor_h
+-    malloc_h
+     MapViewOfFile
+     memalign
+     mkstemp
+@@ -2389,6 +2388,7 @@ case $target_os in
          enable pic
          disable symver
          SHFLAGS='-shared'
@@ -37,41 +17,52 @@ $OpenBSD: patch-configure,v 1.25 2011/03/29 20:01:43 edd Exp $
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
          ;;
-@@ -2822,7 +2830,7 @@ enabled libdirac   && add_cflags $(pkg-config --cflags
-                       require  libdirac libdirac_decoder/dirac_parser.h dirac_decoder_init $(pkg-config --libs dirac) &&
-                       require  libdirac libdirac_encoder/dirac_encoder.h dirac_encoder_init $(pkg-config --libs dirac)
+@@ -2556,7 +2556,7 @@ die_license_disabled version3 libopencore_amrwb
+ 
+ enabled version3 && { enabled gpl && enable gplv3 || enable lgplv3; }
+ 
+-disabled optimizations || check_cflags -fomit-frame-pointer
++enabled x86_32 && check_cflags -fomit-frame-pointer
+ 
+ enable_pic() {
+     enable pic
+@@ -2751,8 +2751,6 @@ if enabled asm; then
+         $nogas "GNU assembler not found, install gas-preprocessor"
+ fi
+ 
+-check_ldflags -Wl,--as-needed
+-
+ if check_func dlopen; then
+     ldl=
+ elif check_func dlopen -ldl; then
+@@ -2885,7 +2883,7 @@ enabled libdirac   && require_pkg_config dirac        
+     "dirac_decoder_init dirac_encoder_init"
  enabled libfaac    && require2 libfaac "stdint.h faac.h" faacEncGetVersion -lfaac
+ enabled libfreetype && add_cflags $(pkg-config --cflags freetype2) && require libfreetype ft2build.h FT_Init_FreeType -lfreetype
 -enabled libgsm     && require  libgsm gsm/gsm.h gsm_create -lgsm
 +enabled libgsm     && require  libgsm gsm.h gsm_create -lgsm
  enabled libmp3lame && require  "libmp3lame >= 3.98.3" lame/lame.h lame_set_VBR_quality -lmp3lame
  enabled libnut     && require  libnut libnut.h nut_demuxer_init -lnut
  enabled libopencore_amrnb  && require libopencore_amrnb opencore-amrnb/interf_dec.h Decoder_Interface_init -lopencore-amrnb
-@@ -2890,11 +2898,14 @@ check_header dev/ic/bt8xx.h
- 
- check_header sys/soundcard.h
- check_header soundcard.h
-+check_header sndio.h
- 
- enabled_any alsa_indev alsa_outdev && check_lib2 alsa/asoundlib.h snd_pcm_htimestamp -lasound
- 
- enabled jack_indev && check_lib2 jack/jack.h jack_client_open -ljack
- 
-+enabled_any sndio_indev sndio_outdev && check_lib2 sndio.h sio_open -lsndio
-+
- enabled x11grab                         &&
- check_header X11/Xlib.h                 &&
- check_header X11/extensions/XShm.h      &&
-@@ -2930,9 +2941,6 @@ enabled extra_warnings && check_cflags -Winline
+@@ -2997,8 +2995,6 @@ enabled extra_warnings && check_cflags -Winline
  
  # add some linker flags
  check_ldflags -Wl,--warn-common
--check_ldflags -Wl,--as-needed
 -check_ldflags '-Wl,-rpath-link,\$(BUILD_ROOT)/libpostproc -Wl,-rpath-link,\$(BUILD_ROOT)/libswscale -Wl,-rpath-link,\$(BUILD_ROOT)/libavfilter -Wl,-rpath-link,\$(BUILD_ROOT)/libavdevice -Wl,-rpath-link,\$(BUILD_ROOT)/libavformat -Wl,-rpath-link,\$(BUILD_ROOT)/libavcodec -Wl,-rpath-link,\$(BUILD_ROOT)/libavutil'
 -test_ldflags -Wl,-Bsymbolic && append SHFLAGS -Wl,-Bsymbolic
  
  echo "X{};" > $TMPV
  if test_ldflags -Wl,--version-script,$TMPV; then
-@@ -3368,8 +3376,7 @@ Version: $version
+@@ -3355,7 +3351,7 @@ EOF
+ test -n "$malloc_prefix" &&
+     echo "#define MALLOC_PREFIX $malloc_prefix" >>$TMPH
+ 
+-if enabled small || disabled optimizations; then
++if enabled small; then
+     echo "#undef  av_always_inline"  >> $TMPH
+     if enabled small; then
+         echo "#define av_always_inline inline"  >> $TMPH
+@@ -3438,8 +3434,7 @@ Version: $version
  Requires: $(enabled shared || echo $requires)
  Requires.private: $(enabled shared && echo $requires)
  Conflicts:
@@ -81,7 +72,7 @@ $OpenBSD: patch-configure,v 1.25 2011/03/29 20:01:43 edd Exp $
  Cflags: -I\${includedir}
  EOF
  cat <<EOF > $name/$name-uninstalled.pc
-@@ -3388,10 +3395,10 @@ Cflags: -I\${includedir}
+@@ -3458,10 +3453,10 @@ Cflags: -I\${includedir}
  EOF
  }
  
@@ -93,9 +84,9 @@ $OpenBSD: patch-configure,v 1.25 2011/03/29 20:01:43 edd Exp $
 -pkgconfig_generate libpostproc "FFmpeg post processing library" "$LIBPOSTPROC_VERSION"
 -pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "" "libavutil = $LIBAVUTIL_VERSION"
 +pkgconfig_generate libavutil "FFmpeg utility library" "$LIBAVUTIL_VERSION" "$LIBavutil_EXTRALIBS"
-+pkgconfig_generate libavcodec "FFmpeg codec library" "$LIBAVCODEC_VERSION" "$LIBavcodec_EXTRALIBS"
-+pkgconfig_generate libavformat "FFmpeg container format library" "$LIBAVFORMAT_VERSION" "$LIBavformat_EXTRALIBS" "libavcodec = $LIBAVCODEC_VERSION"
-+pkgconfig_generate libavdevice "FFmpeg device handling library" "$LIBAVDEVICE_VERSION" "$LIBavdevice_EXTRALIBS" "libavformat = $LIBAVFORMAT_VERSION"
-+pkgconfig_generate libavfilter "FFmpeg video filtering library" "$LIBAVFILTER_VERSION" "$LIBavfilter_EXTRALIBS"
-+pkgconfig_generate libpostproc "FFmpeg post processing library" "$LIBPOSTPROC_VERSION" "$LIBpostproc_EXTRALIBS"
-+pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "$LIBswscale_EXTRALIBS" "libavutil = $LIBAVUTIL_VERSION"
++pkgconfig_generate libavcodec "FFmpeg codec library" "$LIBAVCODEC_VERSION" "$LIBavcodec_EXTRALIBS" "libavutil"
++pkgconfig_generate libavformat "FFmpeg container format library" "$LIBAVFORMAT_VERSION" "$LIBavformat_EXTRALIBS" "libavcodec libavutil"
++pkgconfig_generate libavdevice "FFmpeg device handling library" "$LIBAVDEVICE_VERSION" "$LIBavdevice_EXTRALIBS" "libavformat libavcodec libavutil"
++pkgconfig_generate libavfilter "FFmpeg video filtering library" "$LIBAVFILTER_VERSION" "$LIBavfilter_EXTRALIBS" "libavformat libavcodec libavutil libswscale"
++pkgconfig_generate libpostproc "FFmpeg post processing library" "$LIBPOSTPROC_VERSION" "$LIBpostproc_EXTRALIBS" "libavutil"
++pkgconfig_generate libswscale "FFmpeg image rescaling library" "$LIBSWSCALE_VERSION" "$LIBswscale_EXTRALIBS" "libavutil"

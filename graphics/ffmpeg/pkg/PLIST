@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/03/29 20:01:43 edd Exp $
+@comment $OpenBSD: PLIST,v 1.19 2011/04/12 22:59:07 sthen Exp $
 %%SHARED%%
 @bin bin/ffmpeg
 @bin bin/ffplay
@@ -12,6 +12,7 @@ include/libavcodec/dxva2.h
 include/libavcodec/opt.h
 include/libavcodec/vaapi.h
 include/libavcodec/vdpau.h
+include/libavcodec/version.h
 include/libavcodec/xvmc.h
 include/libavdevice/
 include/libavdevice/avdevice.h
@@ -24,6 +25,7 @@ include/libavformat/avio.h
 include/libavformat/version.h
 include/libavutil/
 include/libavutil/adler32.h
+include/libavutil/aes.h
 include/libavutil/attributes.h
 include/libavutil/audioconvert.h
 include/libavutil/avassert.h
@@ -55,6 +57,7 @@ include/libavutil/pixfmt.h
 include/libavutil/random_seed.h
 include/libavutil/rational.h
 include/libavutil/samplefmt.h
+include/libavutil/sha.h
 include/libavutil/sha1.h
 include/libpostproc/
 include/libpostproc/postprocess.h

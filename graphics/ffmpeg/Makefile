@@ -1,24 +1,22 @@
-# $OpenBSD: Makefile,v 1.69 2011/03/29 20:01:43 edd Exp $
+# $OpenBSD: Makefile,v 1.70 2011/04/12 22:59:07 sthen Exp $
 
-COMMENT=	audio/video converter and streamer with bktr(4) support
+COMMENT=	audio/video converter and streamer
 
-V=		20110306
+V=		20110408
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
 CATEGORIES=	graphics multimedia
-#MASTER_SITES=	http://comstyle.com/source/ \
-#		http://gormsby.com/downloads/
-MASTER_SITES=	http://theunixzoo.co.uk/distfiles/
+MASTER_SITES=	http://comstyle.com/source/
 
-SHARED_LIBS=	avcodec		15.0 \
+SHARED_LIBS=	avcodec		15.1 \
 		avdevice	4.0 \
-		avfilter	2.0 \
-		avformat	14.0 \
-		avutil		8.0 \
+		avfilter	2.1 \
+		avformat	14.1 \
+		avutil		8.1 \
 		postproc	14.0 \
-		swscale		3.0
+		swscale		3.1
 
-HOMEPAGE=	http://ffmpeg.mplayerhq.hu/
+HOMEPAGE=	http://ffmpeg.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
@@ -32,8 +30,8 @@ MODULES=	gcc3
 MODGCC3_ARCHES=	sparc
 
 WANTLIB=	SDL X11 Xext Xfixes bz2 c faac gsm m mp3lame ogg \
-		orc-0.4 pthread schroedinger-1.0>=2 sndio speex theora \
-		theoradec theoraenc vorbis vorbisenc x264 z
+		orc-0.4 pthread schroedinger-1.0>=2 sndio speex \
+		theoradec theoraenc vorbis vorbisenc vpx x264 z
 
 BUILD_DEPENDS=	textproc/texi2html
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
@@ -47,21 +45,12 @@ LIB_DEPENDS=	archivers/bzip2 \
 		audio/gsm \
 		devel/sdl \
 		multimedia/libtheora \
+		multimedia/libvpx \
 		multimedia/schroedinger>=1.0.10 \
 		multimedia/x264
 
-# does not compile with asm, we suspect binutils
-.if ${MACHINE_ARCH:Mpowerpc}
-CONFIGURE_ARGS +=	--disable-asm
-.endif
-
-.if ${MACHINE_ARCH:Marm}
-# uses ARM EABI
-CONFIGURE_ARGS+=	--arch=generic
-.endif
-
 # inter-library dependencies for the current configuration
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lfaac -lgsm -lm -lmp3lame -logg -lorc-0.4 -lschroedinger-1.0 -lspeex -ltheora -lvorbis -lvorbisenc -lx264 -lz -pthread -Wl,-rpath,${LOCALBASE}/lib
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lfaac -lgsm -lm -lmp3lame -logg -lorc-0.4 -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lz -pthread -Wl,-rpath,${LOCALBASE}/lib 
 LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lXfixes -lm -lsndio -Wl,-rpath,${LOCALBASE}/lib -Wl,-rpath,${X11BASE}/lib
 LIBavfilter_EXTRALIBS=-lm
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lm -Wl,-rpath,${LOCALBASE}/lib
@@ -72,10 +61,19 @@ LIBswscale_EXTRALIBS=-lm
 # configure wants a directory it can execute files in 
 WRKTMP=		${WRKDIR}/tmp
 
+.if ${MACHINE_ARCH:Marm}
+# uses ARM EABI
+FFMPEG_ARCH=	generic
+.else
+FFMPEG_ARCH=	${MACHINE_ARCH}
+.endif
+
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
+		--arch=${FFMPEG_ARCH} \
 		--cc=${CC} \
+		--disable-altivec \
 		--disable-armv5te \
 		--disable-armv6 \
 		--disable-armv6t2 \
@@ -95,10 +93,10 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-libspeex \
 		--enable-libtheora \
 		--enable-libvorbis \
+		--enable-libvpx \
 		--enable-libx264 \
 		--enable-nonfree \
 		--enable-postproc \
-		--enable-pthreads \
 		--enable-runtime-cpudetect \
 		--enable-x11grab \
 		--extra-cflags="-I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -127,13 +125,12 @@ MAKE_ENV=	V=1
 
 MAKE_FLAGS=	${VERSION_FLAGS} \
 		LIBavcodec_EXTRALIBS="-lavutil ${LIBavcodec_EXTRALIBS}" \
-		LIBavdevice_EXTRALIBS="-lavcodec -lavformat -lavutil ${LIBavdevice_EXTRALIBS}" \
-		LIBavfilter_EXTRALIBS="-lavcodec -lavutil -lswscale ${LIBavfilter_EXTRALIBS}" \
+		LIBavdevice_EXTRALIBS="-lavformat -lavcodec -lavutil ${LIBavdevice_EXTRALIBS}" \
+		LIBavfilter_EXTRALIBS="-lavformat -lavcodec -lavutil -lswscale ${LIBavfilter_EXTRALIBS}" \
 		LIBavformat_EXTRALIBS="-lavcodec -lavutil ${LIBavformat_EXTRALIBS}" \
 		LIBavutil_EXTRALIBS="${LIBavutil_EXTRALIBS}" \
 		LIBpostproc_EXTRALIBS="-lavutil ${LIBpostproc_EXTRALIBS}" \
 		LIBswscale_EXTRALIBS="-lavutil ${LIBswscale_EXTRALIBS}"
-
 FAKE_FLAGS=	${VERSION_FLAGS} \
 		LDCONFIG=true
 
@@ -146,15 +143,7 @@ ALL_TARGET=	all tools/qt-faststart
 #REGRESS_TARGET=	codectest
 NO_REGRESS=	Yes
 
-HTML_DOCS=	developer faq ffmpeg ffplay ffprobe ffserver \
-		general libavfilter
-
-# When you are rolling your distfile, you need to get the version string
-# from 'git describe --always' *before* you remove the .git directory.
-MAKE_ENV +=	OBSD_VSTR=git-f4f4e12
-
-post-extract:
-	@cp -f ${FILESDIR}/sndio_* ${WRKSRC}/libavdevice
+HTML_DOCS=	developer faq ffmpeg ffplay ffprobe ffserver general libavfilter
 
 pre-configure:
 	@mkdir -p ${WRKTMP}
