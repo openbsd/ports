@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.689 2011/04/11 14:51:05 kili Exp $
+# $OpenBSD: Makefile,v 1.690 2011/04/12 12:41:20 bluhm Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -244,6 +244,7 @@
      SUBDIR += openvpn
      SUBDIR += openvpn_bsdauth
      SUBDIR += osrtspproxy
+     SUBDIR += p5-BSD-Socket-Splice
      SUBDIR += p5-Bot-BasicBot
      SUBDIR += p5-Business-PayPal
      SUBDIR += p5-Business-PayPal-API
