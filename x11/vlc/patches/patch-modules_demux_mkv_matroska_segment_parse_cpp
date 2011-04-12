@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_demux_mkv_matroska_segment_parse_cpp,v 1.1 2011/02/02 09:34:23 ajacoutot Exp $
+$OpenBSD: patch-modules_demux_mkv_matroska_segment_parse_cpp,v 1.2 2011/04/12 22:40:20 sthen Exp $
 
-Insufficient input validation in MKV demuxer (VideoLAN-SA-1102).
+Insufficient input validation in MKV demuxer. CVE-2011-0531
 
 --- modules/demux/mkv/matroska_segment_parse.cpp.orig	Tue Feb  1 20:03:56 2011
 +++ modules/demux/mkv/matroska_segment_parse.cpp	Tue Feb  1 20:04:53 2011

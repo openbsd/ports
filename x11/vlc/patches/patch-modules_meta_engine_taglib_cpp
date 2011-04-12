@@ -1,5 +1,7 @@
-$OpenBSD: patch-modules_meta_engine_taglib_cpp,v 1.1 2010/09/29 11:30:03 landry Exp $
-Fix for http://www.videolan.org/security/sa1004.html
+$OpenBSD: patch-modules_meta_engine_taglib_cpp,v 1.2 2011/04/12 22:40:20 sthen Exp $
+
+Fix insufficient input validation. CVE-2010-2937
+
 --- modules/meta_engine/taglib.cpp.orig	Tue Sep 28 19:24:18 2010
 +++ modules/meta_engine/taglib.cpp	Tue Sep 28 19:25:44 2010
 @@ -120,6 +120,8 @@ static void ReadMetaFromId3v2( ID3v2::Tag* tag, demux_

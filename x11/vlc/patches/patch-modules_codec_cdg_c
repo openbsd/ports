@@ -1,8 +1,6 @@
-$OpenBSD: patch-modules_codec_cdg_c,v 1.1 2011/01/14 19:46:46 jasper Exp $
+$OpenBSD: patch-modules_codec_cdg_c,v 1.2 2011/04/12 22:40:20 sthen Exp $
 
-Fix heap overflows
-
-From upstream git commit: d11fca8bf9dc058bcdf67d81c04f84f8905ad8b4
+Fix multiple heap-based buffer overflows. CVE-2011-0021
 
 --- modules/codec/cdg.c.orig	Wed Jan 12 22:04:27 2011
 +++ modules/codec/cdg.c	Wed Jan 12 22:06:35 2011

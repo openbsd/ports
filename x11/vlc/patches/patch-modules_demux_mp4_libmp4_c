@@ -1,6 +1,6 @@
-$OpenBSD: patch-modules_demux_mp4_libmp4_c,v 1.1 2011/04/11 15:11:28 sthen Exp $
+$OpenBSD: patch-modules_demux_mp4_libmp4_c,v 1.2 2011/04/12 22:40:20 sthen Exp $
 
-Fix heap-based buffer overflow.
+Fix heap-based buffer overflow. VideoLAN-SA-1103
 
 --- modules/demux/mp4/libmp4.c.orig	Sat Apr  9 21:52:45 2011
 +++ modules/demux/mp4/libmp4.c	Sat Apr  9 21:54:23 2011
