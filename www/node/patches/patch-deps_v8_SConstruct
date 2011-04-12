@@ -1,10 +1,19 @@
-$OpenBSD: patch-deps_v8_SConstruct,v 1.2 2011/03/30 19:54:29 jasper Exp $
+$OpenBSD: patch-deps_v8_SConstruct,v 1.3 2011/04/12 08:05:05 jasper Exp $
 
-Don't link with -lpthread but use -pthread instead.
+- Don't force -Werror, breaks build on i386.
+- Don't link with -lpthread but use -pthread instead.
 
 --- deps/v8/SConstruct.orig	Sat Mar 26 09:48:02 2011
-+++ deps/v8/SConstruct	Sat Mar 26 14:32:08 2011
-@@ -369,7 +369,8 @@ MKSNAPSHOT_EXTRA_FLAGS = {
++++ deps/v8/SConstruct	Tue Apr 12 09:50:13 2011
+@@ -306,7 +306,6 @@ V8_EXTRA_FLAGS = {
+   'gcc': {
+     'all': {
+       'WARNINGFLAGS': ['-Wall',
+-                       '-Werror',
+                        '-W',
+                        '-Wno-unused-parameter',
+                        '-Wnon-virtual-dtor']
+@@ -369,7 +368,8 @@ MKSNAPSHOT_EXTRA_FLAGS = {
        'LINKFLAGS': ['-mt']
      },
      'os:openbsd': {
