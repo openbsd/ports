@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.109 2011/03/20 12:12:39 landry Exp $
+# $OpenBSD: Makefile,v 1.110 2011/04/12 11:49:27 jasper Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -43,6 +43,7 @@
      SUBDIR += mawk
      SUBDIR += mono
      SUBDIR += mono-basic
+     SUBDIR += nbfc
      SUBDIR += newlisp
      SUBDIR += nhc98
      SUBDIR += obc
