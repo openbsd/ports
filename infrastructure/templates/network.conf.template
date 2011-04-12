@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.158 2011/04/12 08:19:09 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.159 2011/04/12 08:20:49 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -18,10 +18,12 @@ _MASTER_SITE_OPENBSD ?=	${MASTER_SITE_OPENBSD:=${DIST_SUBDIR}/}
 
 # Default FreeBSD backup site
 _MASTER_SITE_FREEBSD?=	\
+	http://ftp.freebsd.org/pub/FreeBSD/distfiles/${DIST_SUBDIR}/ \
 	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/${DIST_SUBDIR}/
 
 # Default NetBSD backup site
 _MASTER_SITE_NETBSD?=	\
+	http://ftp.netbsd.org/pub/NetBSD/packages/distfiles/${DIST_SUBDIR}/ \
 	ftp://ftp.netbsd.org/pub/NetBSD/packages/distfiles/${DIST_SUBDIR}/
 
 # Uncomment to retrieve from the OpenBSD sites only
@@ -52,27 +54,28 @@ MASTER_SITE_BACKUP?=	\
 
 # Popular master sites, most useful sites come first.
 MASTER_SITE_GNU+=	\
+	http://ftp.gnu.org/gnu/ \
+	http://ftp.funet.fi/pub/gnu/prep/ \
+	http://mirrors.usc.edu/pub/gnu/ \
 	ftp://ftp.gnu.org/gnu/ \
-	ftp://ftp.funet.fi/pub/gnu/prep/ \
-	ftp://mirrors.usc.edu/pub/gnu/ \
 	ftp://ftp.cs.tu-berlin.de/pub/gnu/ \
 	ftp://aeneas.mit.edu/pub/gnu/ \
-	ftp://mirrors.dotsrc.org/gnu/ \
-	ftp://ftp.ibiblio.org/pub/mirrors/gnu/ftp/gnu/ \
-	ftp://ftp.kddilabs.jp/GNU/ \
+	http://mirrors.dotsrc.org/gnu/ \
+	http://ftp.ibiblio.org/pub/mirrors/gnu/ftp/gnu/ \
+	http://ftp.kddilabs.jp/GNU/ \
 	ftp://ftp.informatik.hu-berlin.de/pub/gnu/ \
 	ftp://ftp.cs.univ-paris8.fr/mirrors/ftp.gnu.org/gnu/ \
-	ftp://ftp.ist.utl.pt/pub/GNU/gnu/gnu/ \
+	http://ftp.ist.utl.pt/pub/GNU/gnu/gnu/ \
 	ftp://ftp.digitaltrust.it/pub/gnu/ \
 	ftp://mirror.cict.fr/gnu/ \
 	ftp://ftp.wayne.edu/pub/gnu/ \
-	ftp://ftp.chg.ru/pub/gnu/ \
+	http://ftp.chg.ru/pub/gnu/ \
 	ftp://ftp.sunet.se/pub/gnu/
 
 MASTER_SITE_GCC+=	\
-	ftp://ftp.nluug.nl/mirror/languages/gcc/ \
+	http://ftp.nluug.nl/languages/gcc/ \
 	ftp://gcc.gnu.org/pub/gcc/ \
-	ftp://gd.tuwien.ac.at/gnu/gcc/ \
+	http://gd.tuwien.ac.at/gnu/gcc/ \
 	http://gcc.igor.onlinedirect.bg/ \
 	http://gcc.parentinginformed.com/ \
 	http://gcc.skazkaforyou.com/ \
@@ -86,45 +89,38 @@ MASTER_SITE_GCC+=	\
 	ftp://ftp.dti.ad.jp/pub/lang/gcc/ \
 	ftp://ftp.nluug.nl/mirror/languages/gcc \
 	http://gcc.fyxm.net/ \
-	ftp://ftp.mirrorservice.org/sites/sourceware.org/pub/gcc/ \
+	http://www.mirrorservice.org/sites/sourceware.org/pub/gcc/ \
 	http://gcc-uk.internet.bs/ \
 	http://mirrorpool.in/Gcc/ \
 	http://mirror-fpt-telecom.fpt.net/gcc/
 
 MASTER_SITE_XCONTRIB+=	\
-	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/ \
+	http://ftp.gwdg.de/pub/x11/x.org/contrib/ \
 	ftp://ftp.x.org/contrib/ \
-	ftp://ftp.sunet.se/pub/X11/ftp.x.org/contrib/ \
-	ftp://ftp.kddilabs.jp/X11/ftp.x.org/contrib/ \
+	http://ftp.sunet.se/pub/X11/ftp.x.org/contrib/ \
+	http://ftp.kddilabs.jp/X11/ftp.x.org/contrib/ \
 	ftp://ftp.uvsq.fr/pub/X11/x.org/contrib/ \
-	ftp://ftp.chg.ru/pub/X11/x.org/contrib/ \
+	http://ftp.chg.ru/pub/X11/x.org/contrib/ \
 	ftp://sunsite.sut.ac.jp/pub/archives/X11/contrib/
 
 MASTER_SITE_R5CONTRIB+=	\
 	${MASTER_SITE_XCONTRIB:=../R5contrib/}
 
 MASTER_SITE_SUNSITE+=	\
-	ftp://metalab.unc.edu/pub/Linux/ \
 	http://www.ibiblio.org/pub/Linux/ \
-	ftp://ftp.tuwien.ac.at/pub/linux/ibiblio/ \
-	ftp://sunsite.cnlab-switch.ch/mirror/linux/sunsite/ \
+	http://ftp.tuwien.ac.at/pub/linux/ibiblio/ \
+	http://ftp.uniovi.es/pub/linux/ \
+	http://ftp.lip6.fr/pub/linux/sunsite/ \
+	http://ftp.man.poznan.pl/pub/linux/sunsite/ \
+	http://ftp.kddilabs.jp/Linux/metalab.unc.edu/ \
+	ftp://metalab.unc.edu/pub/Linux/ \
 	ftp://ftp.cs.tu-berlin.de/pub/linux/Mirrors/sunsite.unc.edu/ \
-	ftp://ftp.fu-berlin.de/unix/linux/mirrors/sunsite.unc.edu/ \
-	ftp://ftp.uni-bremen.de/pub/mirrors/sunsite/ \
-	ftp://ftp.rz.uni-karlsruhe.de/pub/sunsite/ \
-	ftp://ftp.uni-stuttgart.de/pub/mirror/sunsite.unc.edu/pub/Linux/ \
-	ftp://ftp.uniovi.es/pub/linux/ \
-	ftp://ftp.lip6.fr/pub/linux/sunsite/ \
 	ftp://ftp.uvsq.fr/pub/linux/sunsite/ \
 	ftp://ftp.nvg.ntnu.no/pub/mirrors/metalab.unc.edu/ \
 	ftp://ftp.icm.edu.pl/vol/rzm1/linux-sunsite/ \
-	ftp://ftp.man.poznan.pl/pub/linux/sunsite/ \
 	ftp://ftp.cse.cuhk.edu.hk/pub/Linux/ \
-	ftp://ftp.kobe-u.ac.jp/pub/Linux/metalab.unc.edu/ \
-	ftp://ftp.kddilabs.jp/Linux/metalab.unc.edu/ \
-	ftp://ftp.funet.fi/pub/Linux/mirrors/metalab/ \
-	ftp://ftp.nluug.nl/vol/4/metalab/ \
-	ftp://ftp.chg.ru/pub/Linux/sunsite/
+	http://ftp.nluug.nl/metalab/ \
+	http://ftp.chg.ru/pub/Linux/sunsite/
 
 MASTER_SITE_SOURCEFORGE+=	\
 	http://downloads.sourceforge.net/sourceforge/ \
@@ -172,28 +168,31 @@ MASTER_SITE_PERL_CPAN+=	\
 	http://www.dnsbalance.ring.gr.jp/archives/lang/perl/CPAN/modules/by-module/
 
 MASTER_SITE_TEX_CTAN+=	\
-	ftp://ftp.funet.fi/pub/TeX/CTAN/ \
+	http://ftp.funet.fi/pub/TeX/CTAN/ \
 	ftp://ctan.unsw.edu.au/tex-archive/ \
 	ftp://ftp.cise.ufl.edu/pub/mirrors/tex-archive/ \
 	ftp://ftp.tex.ac.uk/tex-archive/ \
-	ftp://ftp.kddilabs.jp/CTAN/ \
-	ftp://mirrors.dotsrc.org/ctan/ \
-	ftp://ctan.tug.org/tex-archive/ \
-	ftp://ftp.chg.ru/pub/TeX/CTAN/ \
-	ftp://ftp.dante.de/tex-archive/ \
+	http://ftp.kddilabs.jp/CTAN/ \
+	http://mirrors.dotsrc.org/ctan/ \
+	http://ctan.tug.org/tex-archive/ \
+	http://ftp.chg.ru/pub/TeX/CTAN/ \
+	http://ftp.dante.de/tex-archive/ \
 	ftp://ftp.uvsq.fr/pub/TeX/CTAN/ \
- 	ftp://ftp.sunet.se/pub/text-processing/TeX/ \
+ 	http://ftp.sunet.se/pub/text-processing/TeX/ \
 	http://www.ctan.org/pub/tex-archive/
 
 MASTER_SITE_KDE+=	\
+	http://kde.mirror.anlx.net/ \
+	http://mirrors.dotsrc.org/kde/ \
+	http://ftp.SURFnet.nl/windowing/kde/ \
+	http://ftp.tuniv.szczecin.pl/pub/kde/ \
+	http://ftp.kddilabs.jp/X11/kde/ \
+	http://ftp.uvsq.fr/pub/X11/kde/ \
+ 	http://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/ \
+ 	http://ftp.sunet.se/pub/X11/kde/ \
+	http://ftp.chg.ru/pub/X11/kde/ \
 	ftp://ftp.kde.org/pub/kde/ \
-	ftp://ftp.tuniv.szczecin.pl/pub/kde/ \
-	ftp://ftp.kddilabs.jp/X11/kde/ \
-	ftp://ftp.uvsq.fr/pub/X11/kde/ \
- 	ftp://ftp.funet.fi/pub/mirrors/ftp.kde.org/pub/kde/ \
- 	ftp://ftp.sunet.se/pub/X11/kde/ \
- 	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/ \
-	ftp://ftp.chg.ru/pub/X11/kde/
+ 	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/
 
 MASTER_SITE_SAVANNAH+=	\
 	http://download.savannah.nongnu.org/releases/ \
@@ -210,19 +209,19 @@ MASTER_SITE_SAVANNAH+=	\
 
 MASTER_SITE_AFTERSTEP+=	\
 	ftp://ftp.afterstep.org/ \
-	ftp://ftp.kddilabs.jp/X11/AfterStep/ \
-	ftp://ftp.chg.ru/pub/X11/windowmanagers/afterstep/ \
+	http://ftp.kddilabs.jp/X11/AfterStep/ \
 	ftp://ftp.dti.ad.jp/pub/X/AfterStep/
 
 MASTER_SITE_WINDOWMAKER+=	\
 	http://www.windowmaker.info/pub/
 
 MASTER_SITE_FREEBSD_LOCAL+=	\
+	http://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
 	ftp://ftp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
 	ftp://ftp.se.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
 	ftp://ftp.jp.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
 	ftp://ftp.uk.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/ \
-	ftp://ftp.ru.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/
+	http://ftp.ru.FreeBSD.org/pub/FreeBSD/ports/local-distfiles/
 
 MASTER_SITE_PACKETSTORM+=	\
 	http://packetstorm.linuxsecurity.com/ \
