@@ -1,0 +1,2 @@
+This module packages several Moose::Util::TypeConstraints with
+coercions, designed to work with the DateTime suite of objects.
