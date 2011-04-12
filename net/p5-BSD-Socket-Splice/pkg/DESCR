@@ -1,0 +1,4 @@
+The BSD::Socket::Splice module implements a Perl interface to OpenBSD
+socket splicing.  Compared to the manual aproach with pack() and
+setsockopt(), it provides a convenient way to access the necessary
+system-calls.
