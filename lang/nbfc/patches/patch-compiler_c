@@ -1,0 +1,44 @@
+$OpenBSD: patch-compiler_c,v 1.1.1.1 2011/04/12 11:48:58 jasper Exp $
+--- compiler.c.orig	Mon Dec 13 23:56:38 1999
++++ compiler.c	Mon Feb  7 19:08:28 2011
+@@ -1,4 +1,5 @@
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <unistd.h>
+ #include <string.h>
+ #include "bf.h"
+@@ -184,8 +185,8 @@ main (int argc, char **argv)
+     outfile = "bf.out";
+   if (java)
+     {
+-      strcat(javaoutfile, outfile);
+-		strcat(javaoutfile, ".java");
++      strlcat(javaoutfile, outfile, 256);
++		strlcat(javaoutfile, ".java", 256);
+       coutfile = javaoutfile;      
+     }
+   yyout = fopen (coutfile, "w");
+@@ -206,16 +207,16 @@ main (int argc, char **argv)
+   /* get compiler invocation */
+   if (!java)
+     {
+-      strcat (compile, CC);
+-      strcat (compile, " -o ");
+-      strcat (compile, outfile);
+-      strcat (compile, " bf.out.c");
++      strlcat (compile, CC, 256);
++      strlcat (compile, " -o ", 256);
++      strlcat (compile, outfile, 256);
++      strlcat (compile, " bf.out.c", 256);
+     }
+   else
+     {
+-      strcat (compile, JAVAC);
+-      strcat (compile, " ");
+-      strcat (compile, coutfile);
++      strlcat (compile, JAVAC, 256);
++      strlcat (compile, " ", 256);
++      strlcat (compile, coutfile, 256);
+     }
+   /* compile and remove intermediate file unless we want to keep it */
+   if (!no_compile) {
