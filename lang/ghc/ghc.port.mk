@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.19 2011/04/11 14:30:32 kili Exp $
+# $OpenBSD: ghc.port.mk,v 1.20 2011/04/13 15:20:15 kili Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -76,7 +76,7 @@ MODCABAL_configure = \
 	done && \
 	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MODGHC_SETUP_CONF_ENV} \
 		${MODGHC_SETUP_PROG} \
-			configure -g -O --prefix=${PREFIX} \
+			configure -v -g -O --prefix=${PREFIX} \
 			${MODGHC_SETUP_CONF_ARGS}
 
 CONFIGURE_STYLE +=		CABAL
@@ -84,7 +84,7 @@ CONFIGURE_STYLE +=		CABAL
 .  if !target(do-build)
 do-build:
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-		${MODGHC_SETUP_PROG} build
+		${MODGHC_SETUP_PROG} build -v
 .   if ${MODGHC_BUILD:L:Mhaddock}
 	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 		${MODGHC_SETUP_PROG} haddock
