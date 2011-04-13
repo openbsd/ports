@@ -1,6 +1,6 @@
-$OpenBSD: patch-man_imapd_conf_5,v 1.2 2011/03/30 16:10:28 ajacoutot Exp $
---- man/imapd.conf.5.orig	Wed Mar 30 15:53:09 2011
-+++ man/imapd.conf.5	Wed Mar 30 17:05:07 2011
+$OpenBSD: patch-man_imapd_conf_5,v 1.3 2011/04/13 15:18:24 ajacoutot Exp $
+--- man/imapd.conf.5.orig	Wed Apr 13 16:53:15 2011
++++ man/imapd.conf.5	Wed Apr 13 17:07:59 2011
 @@ -231,7 +231,7 @@ required. 
  Debug command to be used by processes started with -D option.  The string
  is a C format string that gets 3 options: the first is the name of the
@@ -10,7 +10,7 @@ $OpenBSD: patch-man_imapd_conf_5,v 1.2 2011/03/30 16:10:28 ajacoutot Exp $
  .IP "\fBdefaultacl:\fR anyone lrs" 5
  The Access Control List (ACL) placed on a newly-created (non-user)
  mailbox that does not have a parent mailbox. 
-@@ -861,7 +861,7 @@ Possible values include "auxprop", "saslauthd", and "p
+@@ -865,7 +865,7 @@ Possible values include "auxprop", "saslauthd", and "p
  The cyrusdb backend to use for the seen state. 
  
  Allowed values: \fIflat\fR, \fIberkeley\fR, \fIberkeley-hash\fR, \fIskiplist\fR
