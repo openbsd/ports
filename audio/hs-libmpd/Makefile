@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/04/11 14:59:16 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/13 06:45:50 jasper Exp $
 
 COMMENT=		Haskell interface to MPD
 
-DISTNAME=		libmpd-0.5.0
-REVISION=		1
+DISTNAME=		libmpd-0.6.0
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -21,6 +20,7 @@ MODULES=		lang/ghc
 MODGHC_BUILD=		cabal hackage haddock register
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		devel/hs-network>=2.1,<2.4
+RUN_DEPENDS=		devel/hs-network>=2.1,<2.4 \
+			devel/hs-mtl>=0.2
 
 .include <bsd.port.mk>
