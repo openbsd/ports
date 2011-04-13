@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/04/13 07:26:03 jasper Exp $
+@lib lib/libgtksourceview-${MAJOR_VERSION}.so.${LIBgtksourceview-3.0_VERSION}
