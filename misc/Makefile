@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.138 2011/04/11 10:02:16 bluhm Exp $
+# $OpenBSD: Makefile,v 1.139 2011/04/13 07:44:25 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -37,6 +37,7 @@
      SUBDIR += gone
      SUBDIR += gpsd
      SUBDIR += gramps
+     SUBDIR += gtk3mm-documentation
      SUBDIR += gutenpy
      SUBDIR += hfsplus
      SUBDIR += impress
