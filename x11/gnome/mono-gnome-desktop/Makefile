@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/13 17:49:40 jasper Exp $
 
 COMMENT=	.NET language bindings for the GNOME desktop
 
 GNOME_PROJECT=	gnome-desktop-sharp
-GNOME_VERSION=	2.24.0
+GNOME_VERSION=	2.26.0
 PKGNAME=	mono-gnome-desktop-${VERSION}
-REVISION=	6
 
 CATEGORIES=	x11
 
@@ -17,19 +16,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite
+WANTLIB += GL ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common
-WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 cairo
-WANTLIB += crypto dbus-1 dbus-glib-1 execinfo expat fontconfig
-WANTLIB += freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-2 gtkhtml-3.14
-WANTLIB += gnomecanvas-2 gnomevfs-2 gobject-2.0 panel-applet-2
-WANTLIB += gthread-2.0 gtk-x11-2.0 m ncurses pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread-stubs ssl
-WANTLIB += startup-notification-1 stdc++ util wnck-1 xcb xcb-atom
-WANTLIB += xcb-aux xcb-event xml2 z enchant xcb-render xcb-render-util
-WANTLIB += gtksourceview-2.0 vte
+WANTLIB += Xrender Xxf86vm art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation
+WANTLIB += bonoboui-2 cairo canberra crypto dbus-1 dbus-glib-1
+WANTLIB += drm enchant execinfo expat fontconfig freetype gailutil
+WANTLIB += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gnome-2 gnomecanvas-2 gnomevfs-2 gobject-2.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 gtkhtml-3.14 gtksourceview-2.0
+WANTLIB += ltdl m ncurses ogg panel-applet-2 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread pthread-stubs
+WANTLIB += ssl startup-notification-1 stdc++ util vorbis vorbisfile
+WANTLIB += vte wnck-1 xcb xcb-atom xcb-aux xcb-event xcb-render
+WANTLIB += xcb-shm xml2 z
 
 MODULES=	devel/gettext \
 		lang/mono \
