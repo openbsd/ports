@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/06/05 14:37:42 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/04/13 06:23:38 landry Exp $
 @bin bin/grisbi
 lib/grisbi/
 @comment lib/grisbi/gnucash.a
@@ -68,21 +68,18 @@ share/grisbi/categories/fr_FR/plan-comptable.cgsb
 share/grisbi/categories/ru/
 share/grisbi/categories/ru/00_general.cgsb
 share/grisbi/categories/ru/empty.cgsb
-share/grisbi/tips.txt
 share/icons/hicolor/48x48/apps/grisbi.png
 share/locale/cs/LC_MESSAGES/grisbi.mo
 share/locale/da/LC_MESSAGES/grisbi.mo
-share/locale/de/LC_MESSAGES/grisbi-tips.mo
 share/locale/de/LC_MESSAGES/grisbi.mo
 share/locale/el/LC_MESSAGES/grisbi.mo
 share/locale/eo/LC_MESSAGES/grisbi.mo
-share/locale/es/LC_MESSAGES/grisbi-tips.mo
 share/locale/es/LC_MESSAGES/grisbi.mo
 share/locale/fa/LC_MESSAGES/grisbi.mo
-share/locale/fr/LC_MESSAGES/grisbi-tips.mo
 share/locale/fr/LC_MESSAGES/grisbi.mo
 share/locale/he/LC_MESSAGES/grisbi.mo
 share/locale/it/LC_MESSAGES/grisbi.mo
+share/locale/lv/LC_MESSAGES/grisbi.mo
 share/locale/nl/LC_MESSAGES/grisbi.mo
 share/locale/pl/LC_MESSAGES/grisbi.mo
 share/locale/pt_BR/LC_MESSAGES/grisbi.mo
@@ -96,9 +93,11 @@ share/pixmaps/
 share/pixmaps/grisbi/
 share/pixmaps/grisbi/ac_asset.png
 share/pixmaps/grisbi/ac_bank.png
+share/pixmaps/grisbi/ac_bank_16.png
 share/pixmaps/grisbi/ac_cash.png
 share/pixmaps/grisbi/ac_home.png
 share/pixmaps/grisbi/ac_liability.png
+share/pixmaps/grisbi/ac_liability_16.png
 share/pixmaps/grisbi/addresses.png
 share/pixmaps/grisbi/amount.png
 share/pixmaps/grisbi/archive.png
@@ -314,6 +313,7 @@ share/pixmaps/grisbi/hide_r.png
 share/pixmaps/grisbi/impexp.png
 share/pixmaps/grisbi/import.png
 share/pixmaps/grisbi/importlg.png
+share/pixmaps/grisbi/locale.png
 share/pixmaps/grisbi/new-categ.png
 share/pixmaps/grisbi/new-ib.png
 share/pixmaps/grisbi/new-payee.png
