@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/04/13 17:51:44 jasper Exp $
 
 COMMENT=	M4P/MP4/M4a audio/video tools
 
@@ -17,6 +17,9 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=		security/p5-Crypt-Rijndael \
 			devel/p5-Tree-Simple \
 			devel/p5-Tree-Simple-View
+BUILD_DEPENDS=		${RUN_DEPENDS}
+REGRESS_DEPENDS=	devel/p5-Test-Memory-Cycle
 
-USE_GROFF =	Yes
+MAKE_ENV+=		TEST_POD=1
+
 .include <bsd.port.mk>
