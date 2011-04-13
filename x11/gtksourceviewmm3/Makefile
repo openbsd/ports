@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/13 08:28:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/13 08:30:16 jasper Exp $
 
 COMMENT=	C++ wrapper for gtksourceview3
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=	gtksourceviewmm
 GNOME_VERSION=	3.0.0
 PKGNAME=	${GNOME_PROJECT}3-${GNOME_VERSION}
 
-MAJOR_VERSION=	${GNOME_VERSION:R}
+MAJOR_VERSION=	3.0
 SUBST_VARS+=	MAJOR_VERSION
 
 SHARED_LIBS +=	gtksourceviewmm-3.0    0.0      # .0.0
