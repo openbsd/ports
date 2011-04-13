@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/04/13 17:44:37 jasper Exp $
 
 COMMENT=	mro::* interface compatibility for Perl < 5.9.5
 
@@ -19,6 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 RUN_DEPENDS=	devel/p5-Class-C3>=0.20
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-CONFIGURE_ARGS=	--skipdeps
+CONFIGURE_STYLE=	modinst
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/12/03 11:44:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/04/13 17:44:37 jasper Exp $
 
 COMMENT=		pragma to use the C3 method resolution order algorithm
 
@@ -22,6 +22,6 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 REGRESS_DEPENDS=	devel/p5-MRO-Compat \
 			devel/p5-Sub-Name
 
-CONFIGURE_ARGS=		--skipdeps
+CONFIGURE_STYLE=	modinst
 
 .include <bsd.port.mk>
