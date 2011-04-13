@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2011/03/25 17:02:35 jeremy Exp $
+# $OpenBSD: Makefile,v 1.53 2011/04/13 13:27:22 jasper Exp $
 #
 
     SUBDIR =
     SUBDIR += base64
     SUBDIR += btoa
+    SUBDIR += enca
     SUBDIR += html2text
     SUBDIR += html2wml
     SUBDIR += ish
