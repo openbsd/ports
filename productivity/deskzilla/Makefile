@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/12 19:31:19 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/13 11:31:33 landry Exp $
 
 COMMENT =	desktop bugzilla browser
 
@@ -14,10 +14,11 @@ HOMEPAGE =	http://almworks.com/deskzilla/
 MASTER_SITES =	http://d1.almworks.com/.files
 
 # http://almworks.com/eula.html
-PERMIT_PACKAGE_CDROM=	Free Version of commercial product
-PERMIT_PACKAGE_FTP=	Free Version of commercial product
-PERMIT_DISTFILES_CDROM=	Free Version of commercial product
-PERMIT_DISTFILES_FTP=	Free Version of commercial product
+# permission to distribute granted by ALM Works in private mail
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	java
 MODJAVA_VER =	1.7+
