@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2011/04/07 09:29:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2011/04/13 06:47:42 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	GNOME panel
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	2.32.1
 
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	panel-applet-2            4.0 # .2.67
 SHARED_LIBS +=  panel-applet-3            0.0 # 0.5
@@ -46,7 +46,7 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	devel/gobject-introspection
 
 LIB_DEPENDS= 	databases/evolution-data-server \
-		audio/libcanberra \
+		audio/libcanberra,-gtk \
 		devel/libtool,-ltdl \
 		devel/libwnck \
 		x11/gnome/desktop \

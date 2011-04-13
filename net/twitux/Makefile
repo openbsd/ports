@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/19 22:31:39 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/04/13 06:47:42 ajacoutot Exp $
 
 COMMENT=		Gtk-based GUI client for Twitter
 
 GNOME_PROJECT=		twitux
 GNOME_VERSION=		0.69
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=     	net
 
@@ -36,7 +36,7 @@ LIB_DEPENDS=	devel/libsoup \
 		x11/libsexy \
 		x11/gnome/libgnome-keyring \
 		devel/libnotify \
-		audio/libcanberra \
+		audio/libcanberra,-gtk \
 		textproc/enchant
 
 MODULES=	devel/gconf2 \

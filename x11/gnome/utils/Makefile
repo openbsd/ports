@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2011/03/07 19:28:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2011/04/13 06:47:42 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		2.32.0
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  gdict-1.0      6.1      # .6.7
 
@@ -29,7 +29,7 @@ WANTLIB += ssl util vorbis vorbisfile xcb  xcb-render
 WANTLIB += xml2 z canberra canberra-gtk gnome-2 gnomecanvas-2 gtop-2.0
 WANTLIB += panel-applet-2
 
-LIB_DEPENDS=		audio/libcanberra \
+LIB_DEPENDS=		audio/libcanberra,-gtk \
 			x11/gnome/libgnome \
 			x11/gnome/libgnomecanvas \
 			devel/libgtop2 \

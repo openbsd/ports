@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/03/15 06:24:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2011/04/13 06:47:42 ajacoutot Exp $
 
 COMMENT-main=	GNOME media utilities
 COMMENT-glade3=	GNOME media profiles catalog for Glade3
@@ -9,7 +9,7 @@ GNOME_VERSION=	2.32.0
 PKGNAME-main=	${DISTNAME}
 PKGNAME-glade3=	glade3-${DISTNAME}
 
-REVISION-main=	2
+REVISION-main=	3
 
 SHARED_LIBS +=	gnome-media-profiles 1.0      # .0.0
 
@@ -43,7 +43,7 @@ WANTLIB-main += c canberra canberra-gtk gstaudio-0.10 gstbase-0.10
 WANTLIB-main += gstinterfaces-0.10 ltdl ogg pthread vorbis vorbisfile
 
 LIB_DEPENDS-main= multimedia/gstreamer-0.10/plugins-base>=0.10.25 \
-		audio/libcanberra
+		audio/libcanberra,-gtk
 
 WANTLIB-glade3 += ${WANTLIB}
 WANTLIB-glade3 += gladeui-1 gnome-media-profiles

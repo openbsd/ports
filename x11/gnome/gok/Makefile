@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2011/04/13 06:47:42 ajacoutot Exp $
 
 COMMENT=		GNOME on-screen keyboard
 
 GNOME_PROJECT=		gok
 GNOME_VERSION=		2.30.1
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://live.gnome.org/Gok
 
@@ -30,7 +30,7 @@ MODULES=	devel/gconf2 \
 		devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=		audio/libcanberra \
+LIB_DEPENDS=		audio/libcanberra,-gtk \
 			devel/libwnck \
 			x11/gnome/at-spi \
 			x11/gnome/speech

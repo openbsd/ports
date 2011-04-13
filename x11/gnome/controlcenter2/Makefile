@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2010/12/07 21:53:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2011/04/13 06:47:42 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		GNOME control center
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.32.1
 
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	gnome-window-settings 3.0      # .1.0
 
@@ -39,7 +39,7 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-LIB_DEPENDS=		audio/libcanberra>=0.10p0 \
+LIB_DEPENDS=		audio/libcanberra,-gtk \
 			databases/evolution-data-server \
 			www/libcroco \
 			x11/gnome/libgnomekbd \

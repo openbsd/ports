@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2011/03/29 11:49:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.121 2011/04/13 06:47:42 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -6,7 +6,7 @@ COMMENT-plugins=	additionnal plugins for evolution
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.32.2
 
-REVISION-main=		0
+REVISION-main=		1
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -69,7 +69,7 @@ WANTLIB-main += ${WANTLIB} vorbisfile canberra-gtk
 WANTLIB-main += gweather icalss icalvcal ogg db gtkimageview
 WANTLIB-main += icalss icalvcal ldap-2.4 ltdl ogg pst softokn3
 WANTLIB-main += ebackend-1.2 egroupwise-1.2 vorbis
-WANTLIB-main += canberra-gtk ltdl ogg vorbis vorbisfile
+WANTLIB-main += ltdl ogg vorbis vorbisfile
 
 WANTLIB-plugins += ${WANTLIB} gstreamer-0.10
 WANTLIB-plugins += lib/evolution/${R}/composer lib/evolution/${R}/emformat
@@ -105,7 +105,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			security/nss \
 			x11/gnome/desktop \
 			www/gtkhtml3 \
-			audio/libcanberra
+			audio/libcanberra,-gtk
 
 LIB_DEPENDS-plugins=	${LIB_DEPENDS} \
 			multimedia/gstreamer-0.10/core \
