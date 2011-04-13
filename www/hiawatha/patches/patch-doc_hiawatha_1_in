@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_hiawatha_1_in,v 1.8 2010/09/22 15:03:45 ajacoutot Exp $
---- doc/hiawatha.1.in.orig	Tue Jun  1 10:02:50 2010
-+++ doc/hiawatha.1.in	Wed Sep 22 16:44:08 2010
+$OpenBSD: patch-doc_hiawatha_1_in,v 1.9 2011/04/13 17:44:59 rpointel Exp $
+--- doc/hiawatha.1.in.orig	Mon Oct 18 14:54:29 2010
++++ doc/hiawatha.1.in	Wed Apr 13 16:47:17 2011
 @@ -150,12 +150,12 @@ Example: CGIextension = cgi
  .B CGIhandler = <CGI handler>:<extension>[, <extension>, ...]
  Specify the handler for a CGI extension. A handler is an executable which will 'run' the CGI script.
@@ -11,8 +11,8 @@ $OpenBSD: patch-doc_hiawatha_1_in,v 1.8 2010/09/22 15:03:45 ajacoutot Exp $
  .B CGIwrapper = <CGI wrapper>
  Specify the wrapper for CGI processes. A secure CGI wrapper is included in the Hiawatha package (see cgi-wrapper(1) for more information).
  .br
--Example: CGIwrapper = /usr/sbin/cgi-wrapper
-+Example: CGIwrapper = ${PREFIX}/sbin/cgi-wrapper
+-Default = @sbindir@/cgi-wrapper, example: CGIwrapper = /bin/cgi-wrapper
++Default = ${PREFIX}/sbin/cgi-wrapper, example: CGIwrapper = ${PREFIX}/sbin/cgi-wrapper
  .TP
  .B CommandChannel = <portnumber>, <MD5 hash of password>
  The port and the password for the CommandChannel. You can use telnet to connect to the CommandChannel (localhost:<portnumber>). Type 'help' in the CommandChannel for more information.
@@ -25,7 +25,7 @@ $OpenBSD: patch-doc_hiawatha_1_in,v 1.8 2010/09/22 15:03:45 ajacoutot Exp $
  .TP
  .B KickOnBan = yes|no
  Close all other connections that originate from the same IP in case of a ban.
-@@ -270,7 +270,7 @@ Example: RequestLimitMask = deny 192.168.0.1
+@@ -265,7 +265,7 @@ Example: RequestLimitMask = deny 192.168.0.1
  .B ServerId = <userid>|<userid>:<groupid>[,<groupid>, ...]
  The userid and groupid(s) the server will change to. If only a userid is specified, the groupid(s) will be looked up in /etc/passwd and /etc/group. The userid en groupid of user root are not allowed here.
  .br

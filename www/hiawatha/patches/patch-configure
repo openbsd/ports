@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2011/04/13 17:44:59 rpointel Exp $
+--- configure.orig	Wed Apr 13 16:48:30 2011
++++ configure	Wed Apr 13 16:48:38 2011
+@@ -6806,7 +6806,7 @@ eval logdir="${localstatedir}/log/hiawatha"
+ 
+ eval pidfiledir="${localstatedir}/run"
+ 
+-eval workdir="${localstatedir}/lib/hiawatha"
++eval workdir="${localstatedir}/db/hiawatha"
+ 
+ 
+ 

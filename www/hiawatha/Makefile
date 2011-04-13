@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/22 08:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/04/13 17:44:59 rpointel Exp $
 
 COMMENT=	secure webserver
 
-DISTNAME=	hiawatha-7.3
+DISTNAME=	hiawatha-7.4.1
 CATEGORIES=	www net
 
 HOMEPAGE=	http://www.hiawatha-webserver.org/
@@ -28,6 +28,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		webrootdir=${WEBROOTDIR}
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--enable-xslt
+
 USE_GROFF =	Yes
 
 pre-configure:

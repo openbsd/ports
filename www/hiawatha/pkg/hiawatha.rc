@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: hiawatha.rc,v 1.1 2011/04/13 17:44:59 rpointel Exp $
+
+daemon="${TRUEPREFIX}/sbin/hiawatha"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
