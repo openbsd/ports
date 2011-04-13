@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/04/09 08:11:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/04/13 17:46:41 jasper Exp $
 
-COMMENT=		perl6 like method signature parser
+COMMENT=		perl6-like method signature parser
 
 DISTNAME=		Parse-Method-Signatures-1.003013
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		devel
 
@@ -26,5 +26,7 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 REGRESS_DEPENDS=	devel/p5-aliased \
 			devel/p5-Test-Differences \
 			devel/p5-Test-Exception
+
+CONFIGURE_STYLE=	modinst
 
 .include <bsd.port.mk>
