@@ -1,0 +1,3 @@
+hasktags is a tool to generate tag files for vi(m) and emacs from
+Haskell sources (similar to what the good old ctags(1) does for C,
+Pascal, Fortran, YACC, lex and Lisp).
