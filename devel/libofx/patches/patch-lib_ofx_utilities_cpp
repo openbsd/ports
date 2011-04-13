@@ -1,0 +1,19 @@
+$OpenBSD: patch-lib_ofx_utilities_cpp,v 1.1 2011/04/13 06:22:29 landry Exp $
+We don't support extern daylight
+--- lib/ofx_utilities.cpp.orig	Sat Feb 12 17:51:02 2011
++++ lib/ofx_utilities.cpp	Sat Apr  9 15:00:55 2011
+@@ -115,8 +115,13 @@ time_t ofxdate_to_time_t(const string ofxdate)
+ 
+   time_t temptime;
+ 
+-  time.tm_isdst = daylight; // iniitialize dst setting
++  int daylight; 
++  const struct tm* t;
+   std::time(&temptime);
++  t = localtime(&temptime);
++  daylight = t->tm_isdst;
++
++  time.tm_isdst = daylight; // iniitialize dst setting
+   local_offset = difftime(mktime(localtime(&temptime)), mktime(gmtime(&temptime))) + (3600*daylight);
+   
+   if(ofxdate.size()!=0){

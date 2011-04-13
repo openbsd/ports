@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/04/13 06:22:29 landry Exp $
 
 COMMENT=	opensource implementation of the OFX specification
 
-DISTNAME=	libofx-0.9.1
+DISTNAME=	libofx-0.9.2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://libofx.sourceforge.net/
 
-MAINTAINER=	Landry Breuil <gaston@gcu.info>
+MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
-SHARED_LIBS=	ofx 4.0	# .4.0
+SHARED_LIBS=	ofx 5.0	# .4.2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,7 +27,7 @@ LIB_DEPENDS=	textproc/opensp
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lm" \
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lm -pthread" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
