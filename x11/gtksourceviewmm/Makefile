@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/23 16:34:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/04/13 07:30:15 jasper Exp $
 
 COMMENT=	C++ wrapper for gtksourceview
 
@@ -34,8 +34,6 @@ BUILD_DEPENDS=	devel/mm-common
 
 LIB_DEPENDS=	x11/gtksourceview \
 		x11/gtk2mm
-
-USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

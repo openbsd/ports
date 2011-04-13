@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/04/07 08:28:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2011/04/13 07:30:15 jasper Exp $
 
 COMMENT=		text widget that extends GTK2's GtkTextView widget
 
@@ -37,7 +37,6 @@ LIB_DEPENDS=		textproc/libxml \
 			x11/gtk+2
 
 USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-gtk-doc
