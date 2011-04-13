@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: dolock,v 1.1 2010/08/20 14:40:31 espie Exp $
+# $OpenBSD: dolock,v 1.2 2011/04/13 08:37:16 espie Exp $
 # Copyright (c) 2004 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -32,6 +32,10 @@ unless (-e $dname) {
 }
 if (!-d $dname) {
 	print STDERR "lock directory location $dname is not a directory\n";
+	exit(1);
+}
+if (!-w _) {
+	print STDERR "you don't have permission to write into $dname\n";
 	exit(1);
 }
 
