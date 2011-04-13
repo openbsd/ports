@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.3 2011/04/08 14:39:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/13 20:39:33 jasper Exp $
 
 COMMENT=	nagios status monitor for the Desktop
 
 MODPY_EGG_VERSION= 0.9.5
 DISTNAME=	nagstamon_${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/_/-/}
+REVISION=	0
 
 CATEGORIES=	x11 net/nagios
 
-HOMEPAGE=	http://nagstamon.sourceforge.net/
+HOMEPAGE=	http://nagstamon.ifw-dresden.de/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
