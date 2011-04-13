@@ -1,4 +1,4 @@
-$OpenBSD: patch-client_Makefile_in,v 1.2 2011/04/05 18:45:05 ajacoutot Exp $
+$OpenBSD: patch-client_Makefile_in,v 1.3 2011/04/13 17:05:11 ajacoutot Exp $
 --- client/Makefile.in.orig	Tue Mar 22 17:09:56 2011
 +++ client/Makefile.in	Tue Apr  5 14:39:49 2011
 @@ -34,7 +34,7 @@ POST_INSTALL = :
@@ -22,7 +22,7 @@ $OpenBSD: patch-client_Makefile_in,v 1.2 2011/04/05 18:45:05 ajacoutot Exp $
  
  libdconf_so_0_0_0_LDADD = $(gio_LIBS)
 -libdconf_so_0_0_0_LDFLAGS = -shared -Wl,-soname=libdconf.so.0
-+libdconf_so_0_0_0_LDFLAGS = -shared -Wl,-soname=libdconf.so
++libdconf_so_0_0_0_LDFLAGS = -shared -Wl,-soname=libdconf.so.${LIBdconf_VERSION}
  libdconf_so_0_0_0_SOURCES = \
  	../common/dconf-shmdir.c	\
  	../common/dconf-paths.c		\

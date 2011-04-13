@@ -1,4 +1,4 @@
-$OpenBSD: patch-dbus-1_Makefile_in,v 1.1 2011/04/05 18:45:05 ajacoutot Exp $
+$OpenBSD: patch-dbus-1_Makefile_in,v 1.2 2011/04/13 17:05:11 ajacoutot Exp $
 --- dbus-1/Makefile.in.orig	Tue Mar 22 17:09:56 2011
 +++ dbus-1/Makefile.in	Tue Apr  5 15:02:28 2011
 @@ -34,7 +34,7 @@ POST_INSTALL = :
@@ -15,7 +15,7 @@ $OpenBSD: patch-dbus-1_Makefile_in,v 1.1 2011/04/05 18:45:05 ajacoutot Exp $
  shlibdir = $(libdir)
  libdconf_dbus_1_so_0_0_0_LDADD = $(glib_LIBS) $(dbus_LIBS)
 -libdconf_dbus_1_so_0_0_0_LDFLAGS = -shared -Wl,-soname=libdconf-dbus-1.so.0
-+libdconf_dbus_1_so_0_0_0_LDFLAGS = -shared -Wl,-soname=libdconf-dbus-1.so
++libdconf_dbus_1_so_0_0_0_LDFLAGS = -shared -Wl,-soname=libdconf-dbus-1.so.${LIBdconf-dbus-1_VERSION}
  libdconf_dbus_1_so_0_0_0_SOURCES = \
  	../engine/dconf-engine.c	\
  	../common/dconf-shmdir.c	\
