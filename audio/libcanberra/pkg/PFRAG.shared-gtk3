@@ -1,0 +1,4 @@
+@comment $OpenBSD: PFRAG.shared-gtk3,v 1.1 2011/04/13 06:47:22 ajacoutot Exp $
+lib/gtk-3.0/modules/libcanberra-gtk-module.so
+lib/gtk-3.0/modules/libcanberra-gtk3-module.so
+@lib lib/libcanberra-gtk3.so.${LIBcanberra-gtk3_VERSION}

@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST-main,v 1.1 2011/04/13 06:47:22 ajacoutot Exp $
+@pkgpath audio/libcanberra
+%%SHARED%%
+include/canberra.h
+lib/libcanberra-${V}/
+@comment lib/libcanberra-${V}/libcanberra-gstreamer.a
+@comment lib/libcanberra-${V}/libcanberra-gstreamer.la
+@comment lib/libcanberra-${V}/libcanberra-multi.a
+@comment lib/libcanberra-${V}/libcanberra-multi.la
+@comment lib/libcanberra-${V}/libcanberra-null.a
+@comment lib/libcanberra-${V}/libcanberra-null.la
+@comment lib/libcanberra-${V}/libcanberra-sndio.a
+@comment lib/libcanberra-${V}/libcanberra-sndio.la
+lib/libcanberra.a
+lib/libcanberra.la
+lib/pkgconfig/libcanberra.pc
+share/doc/libcanberra/
+share/doc/libcanberra/README
+@comment share/gtk-doc/html/libcanberra/
+share/vala/
+share/vala/vapi/
+share/vala/vapi/libcanberra.vapi

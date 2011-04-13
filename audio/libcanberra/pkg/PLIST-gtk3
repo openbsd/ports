@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST-gtk3,v 1.1 2011/04/13 06:47:22 ajacoutot Exp $
+@conflict libcanberra-<=0.24p1
+%%SHARED%%
+@bin bin/canberra-gtk-play
+lib/gnome-settings-daemon-3.0/
+lib/gnome-settings-daemon-3.0/gtk-modules/
+lib/gnome-settings-daemon-3.0/gtk-modules/canberra-gtk-module.desktop
+lib/gtk-3.0/
+lib/gtk-3.0/modules/
+@comment lib/gtk-3.0/modules/libcanberra-gtk3-module.a
+@comment lib/gtk-3.0/modules/libcanberra-gtk3-module.la
+lib/libcanberra-gtk3.a
+lib/libcanberra-gtk3.la
+lib/pkgconfig/libcanberra-gtk3.pc
+share/gdm/
+share/gdm/autostart/
+share/gdm/autostart/LoginWindow/
+share/gdm/autostart/LoginWindow/libcanberra-ready-sound.desktop
+share/gnome/
+share/gnome/autostart/
+share/gnome/autostart/libcanberra-login-sound.desktop
+share/gnome/shutdown/
+share/gnome/shutdown/libcanberra-logout-sound.sh

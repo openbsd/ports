@@ -1,0 +1,23 @@
+$OpenBSD: patch-acinclude_m4,v 1.1 2011/04/13 06:47:22 ajacoutot Exp $
+--- acinclude.m4.orig	Tue Apr 12 16:41:01 2011
++++ acinclude.m4	Tue Apr 12 16:41:20 2011
+@@ -282,8 +282,8 @@ if test "x$acx_pthread_ok" = xyes; then
+       # about -lpthread
+       #
+       if test x"$ok" = xno; then
+-         AC_MSG_CHECKING([whether -lpthread fixes that])
+-         LIBS="-lpthread $PTHREAD_LIBS $save_LIBS"
++         AC_MSG_CHECKING([whether -pthread fixes that])
++         LIBS="-pthread $PTHREAD_LIBS $save_LIBS"
+          AC_TRY_LINK([#include <pthread.h>],
+             [pthread_t th; pthread_join(th, 0);
+             pthread_attr_init(0); pthread_cleanup_push(0, 0);
+@@ -292,7 +292,7 @@ if test "x$acx_pthread_ok" = xyes; then
+    
+          if test "x$ok" = xyes; then
+             AC_MSG_RESULT([yes])
+-            PTHREAD_LIBS="-lpthread $PTHREAD_LIBS"
++            PTHREAD_LIBS="-pthread $PTHREAD_LIBS"
+          else
+             AC_MSG_RESULT([no])
+          fi

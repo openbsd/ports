@@ -1,6 +1,6 @@
-$OpenBSD: patch-gtkdoc_gtk-doc_make,v 1.2 2010/04/22 16:29:49 ajacoutot Exp $
---- gtkdoc/gtk-doc.make.orig	Mon Apr 19 17:10:13 2010
-+++ gtkdoc/gtk-doc.make	Thu Apr 22 18:20:50 2010
+$OpenBSD: patch-gtkdoc_gtk-doc_make,v 1.3 2011/04/13 06:47:22 ajacoutot Exp $
+--- gtkdoc/gtk-doc.make.orig	Thu Feb 24 23:06:45 2011
++++ gtkdoc/gtk-doc.make	Tue Apr 12 15:02:53 2011
 @@ -4,15 +4,15 @@
  # Everything below here is generic #
  ####################################
@@ -47,7 +47,7 @@ $OpenBSD: patch-gtkdoc_gtk-doc_make,v 1.2 2010/04/22 16:29:49 ajacoutot Exp $
  
  docs: $(HTML_BUILD_STAMP) $(PDF_BUILD_STAMP)
  
-@@ -187,13 +172,13 @@ uninstall-local:
+@@ -209,13 +194,13 @@ uninstall-local:
  #
  # Require gtk-doc when making dist
  #

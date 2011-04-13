@@ -1,0 +1,3 @@
+This package contains a "glue" library that makes it easier to use
+libcanberra from gtk+2 applications and provides a gtk+2 module that
+uses libcanberra-gtk to trigger input feedback event sounds.
