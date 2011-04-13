@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/22 22:27:03 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/13 16:20:34 kili Exp $
 
 COMMENT =		GNU troff typesetter
 DISTNAME =		groff-1.21
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 HOMEPAGE =		http://www.gnu.org/software/groff/
@@ -25,5 +25,9 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--without-libiconv-prefix --without-gs --without-x
 
 MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC} ${WRKSRC}/src/libs/gnulib/build-aux
+
+pre-configure:
+	find ${WRKBUILD} -name \*.pl -type f | \
+		xargs perl -pi -e 's@^#![[:space:]]*/usr/bin/env[[:space:]]+perl@#!/usr/bin/perl@'
 
 .include <bsd.port.mk>
