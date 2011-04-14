@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/18 16:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/04/14 07:27:00 dcoppa Exp $
 
 COMMENT=	library to handle various audio file formats
 
-DISTNAME=	libsndfile-1.0.21
+DISTNAME=	libsndfile-1.0.24
 CATEGORIES=	audio
 HOMEPAGE=	http://www.mega-nerd.com/libsndfile/
-SHARED_LIBS +=	sndfile              3.2      # .1.21
+SHARED_LIBS +=	sndfile              3.3      # .1.24
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,9 +23,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-alsa \
 		--disable-external-libs \
 		--disable-octave \
-		--disable-sqlite \
-		--disable-shave
-CONFIGURE_ENV=	CPPFLAGS="-DUSE_SNDIO"
+		--disable-silent-rules \
+		--disable-sqlite
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/Cfg
 USE_GROFF =	Yes
 
