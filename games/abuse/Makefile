@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/04/14 10:56:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2011/04/14 11:08:43 jasper Exp $
 
 COMMENT =	SDL port of the legendary 2D platform shooter
 
@@ -28,7 +28,7 @@ LIB_DEPENDS =	devel/sdl
 DISTFILES = 	${DISTNAME}.tar.gz ${ABUSE_FRABS}.tar.gz
 EXTRACT_ONLY =	${DISTNAME}.tar.gz
 
-USE_LIBTOOL =	gnu
+USE_LIBTOOL =	Yes
 
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.10
