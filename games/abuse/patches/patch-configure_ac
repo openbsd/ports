@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure_ac,v 1.1 2011/04/14 10:56:25 jasper Exp $
+--- configure.ac.orig	Mon Apr  4 22:17:59 2011
++++ configure.ac	Mon Apr  4 22:18:25 2011
+@@ -18,7 +18,7 @@ AC_PATH_X
+ X_LIBS=-L$x_libraries
+ 
+ dnl Figure out where the datafiles will be
+-EXPDATADIR="-DEXPDATADIR=\\\"$datadir/games/abuse\\\""
++EXPDATADIR="-DEXPDATADIR=\\\"${DATADIR}\\\""
+ AC_SUBST(EXPDATADIR)
+ 
+ dnl Checks for libraries

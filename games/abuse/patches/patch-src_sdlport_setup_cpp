@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sdlport_setup_cpp,v 1.1 2011/04/14 10:56:25 jasper Exp $
+--- src/sdlport/setup.cpp.orig	Sun Mar  2 21:42:24 2008
++++ src/sdlport/setup.cpp	Mon Apr  4 22:10:11 2011
+@@ -89,7 +89,7 @@ void createRCFile( char *rcfile )
+     if( (fd = fopen( rcfile, "w" )) != NULL )
+     {
+         fputs( "; Abuse-SDL Configuration file\n\n", fd );
+-        fputs( "; Location of the datafiles\ndatadir=/var/games/abuse\n\n", fd );
++        fputs( "; Location of the datafiles\ndatadir=${DATADIR}\n\n", fd );
+         fputs( "; Startup fullscreen\nfullscreen=0\n\n", fd );
+         fputs( "; Use DoubleBuffering\ndoublebuf=0\n\n", fd );
+         fputs( "; Use mono audio only\nmono=0\n\n", fd );
