@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/04/14 07:10:44 jasper Exp $
 
 COMMENT=		web-based double opt-in newsletter manager
 
-DISTNAME=		phplist-2.10.5
-REVISION=		0
+DISTNAME=		phplist-2.10.13
 
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.phplist.com/
 
-# GPL v2
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

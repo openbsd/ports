@@ -1,11 +1,11 @@
-$OpenBSD: patch-public_html_lists_admin_connect_php,v 1.1.1.1 2006/10/03 13:42:11 mbalmer Exp $
---- public_html/lists/admin/connect.php.orig	Sun Mar 26 10:21:33 2006
-+++ public_html/lists/admin/connect.php	Sun Mar 26 10:23:03 2006
-@@ -158,6 +158,7 @@ if (!TEST && REGISTER) {
-     $PoweredBy = $PoweredByText;
-   }
+$OpenBSD: patch-public_html_lists_admin_connect_php,v 1.2 2011/04/14 07:10:44 jasper Exp $
+--- public_html/lists/admin/connect.php.orig	Wed Feb  2 18:49:00 2011
++++ public_html/lists/admin/connect.php	Thu Apr 14 09:06:22 2011
+@@ -169,6 +169,7 @@ if (!TEST && REGISTER) {
+ 		$PoweredBy = $PoweredByText;
+ 	}
  }
 +$PoweredBy = '';
  # some other configuration variables, which need less tweaking
  # number of users to show per page if there are more
- define ("MAX_USER_PP",50);
+ define("MAX_USER_PP", 50);
