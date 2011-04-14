@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.285 2011/04/11 07:44:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.286 2011/04/14 07:02:57 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -231,6 +231,7 @@
      SUBDIR += wmicons
      SUBDIR += wmphoto
      SUBDIR += xanim
+     SUBDIR += xaos
      SUBDIR += xbmbrowser
      SUBDIR += xfig
      SUBDIR += xmedcon
