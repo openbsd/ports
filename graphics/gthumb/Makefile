@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2011/04/05 16:37:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2011/04/14 05:32:08 ajacoutot Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
 GNOME_PROJECT=	gthumb
-GNOME_VERSION=	2.12.2
+GNOME_VERSION=	2.12.3
 
 CATEGORIES=	graphics
 
@@ -27,7 +27,7 @@ WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 jpeg m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs tiff xcb xcb-render sqlite3
 WANTLIB += xml2 z unique-1.0 gstinterfaces-0.10 soup-gnome-2.4 soup-2.4
-WANTLIB += json-glib-1.0 gnutls proxy tasn1 stdc++ xcb-shm
+WANTLIB += json-glib-1.0 stdc++ xcb-shm
 WANTLIB += clutter-glx-1.0 clutter-gtk-0.10 exiv2
 
 MODULES=	x11/gnome \
