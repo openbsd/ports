@@ -1,14 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 18:00:52 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/14 17:23:32 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.require_paths
 ${GEM_LIB}/gems/${DISTNAME}/.rspec
+${GEM_LIB}/gems/${DISTNAME}/.rvmrc
 ${GEM_LIB}/gems/${DISTNAME}/CHANGELOG.md
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/MIT-LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/VERSION
 ${GEM_LIB}/gems/${DISTNAME}/benchmark/
 ${GEM_LIB}/gems/${DISTNAME}/benchmark/active_record.rb
 ${GEM_LIB}/gems/${DISTNAME}/benchmark/allocations.rb
@@ -50,12 +51,15 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/client.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/em.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/em_fiber.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/mysql2.so
 ${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/result.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/mysql2/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/mysql2.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/spec/
 ${GEM_LIB}/gems/${DISTNAME}/spec/em/
+${GEM_LIB}/gems/${DISTNAME}/spec/em/em_fiber_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/em/em_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/mysql2/
 ${GEM_LIB}/gems/${DISTNAME}/spec/mysql2/client_spec.rb
@@ -66,7 +70,6 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/tasks/
 ${GEM_LIB}/gems/${DISTNAME}/tasks/benchmarks.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/compile.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/jeweler.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/rspec.rake
 ${GEM_LIB}/gems/${DISTNAME}/tasks/vendor_mysql.rake
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
