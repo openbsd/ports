@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-i18n-fa,v 1.6 2011/03/04 07:57:37 robert Exp $
+@comment $OpenBSD: PLIST-i18n-fa,v 1.7 2011/04/14 19:45:22 ajacoutot Exp $
 @conflict openoffice-i18n-fa-*
+@pkgpath editors/openoffice3,-i18n-fa
 !%%no_java%%
 lib/libreoffice/basis${BV}/help/fa/
 lib/libreoffice/basis${BV}/help/fa/default.css

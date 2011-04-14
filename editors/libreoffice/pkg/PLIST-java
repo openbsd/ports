@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-java,v 1.4 2011/01/23 13:31:11 espie Exp $
+@comment $OpenBSD: PLIST-java,v 1.5 2011/04/14 19:45:22 ajacoutot Exp $
 @conflict openoffice-java-*
+@pkgpath editors/openoffice3,-java
 %%SHARED%%
 lib/libreoffice/basis${BV}/help/en/sbasic.idxl/
 lib/libreoffice/basis${BV}/help/en/sbasic.idxl/_0.cfs
