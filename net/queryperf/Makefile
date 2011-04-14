@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/12 22:07:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/14 12:46:24 sthen Exp $
 
 COMMENT =	DNS query performance tester from BIND 9
 
-VERSION =	9.4.2
+VERSION =	9.7.3
 DISTNAME =	bind-${VERSION}
 PKGNAME =	queryperf-${VERSION}
-REVISION =	0
 CATEGORIES =	net benchmarks
 
 MASTER_SITES +=	ftp://ftp.isc.org/isc/bind9/${VERSION}/ \
