@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/12/03 11:44:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/04/14 21:21:56 naddy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -11,6 +11,7 @@ DISTNAME =	JSON-XS-2.29
 # pad to that length for seamless updates
 PKGNAME =	p5-${DISTNAME}0
 REVISION =	1
+EPOCH =		0
 CATEGORIES =	converters
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
