@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2011/04/04 14:42:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2011/04/14 15:55:19 jasper Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -129,7 +129,7 @@ pre-configure:
 post-install:
 	${SUBST_CMD} ${WRKSRC}/php-webclient-ajax/config.php.dist
 	find ${WRKSRC}/php-webclient-ajax -name \*.orig -or -name \*.bak \
-		-or -name \*.beforesubst | xargs rm -f
+		-or -name \*.beforesubst | xargs rm
 	${INSTALL_DATA_DIR} ${WRKINST}${INSTDIR}
 	cd ${WRKSRC}/php-webclient-ajax && tar cf - ./ | \
 		tar -xf - -C ${WRKINST}${INSTDIR}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/12/30 08:19:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/04/14 15:55:19 jasper Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
@@ -74,7 +74,7 @@ post-extract:
 pre-configure:
 	cd ${WRKSRC}/node/sbin; \
 	${SUBST_CMD} munin-node munin-node-configure munin-run; \
-	rm -f munin-{node,node-configure,run}.{beforesubst,orig}; \
+	rm munin-{node,node-configure,run}.{beforesubst,orig}; \
 	perl -pi -e 's,/etc/munin/plugins,${SYSCONFDIR}/munin/plugins,g;' \
 	    -e 's,/etc/munin/node.d,${SYSCONFDIR}/munin/plugins,g;' \
 	    -e 's,/usr/local/libexec/munin,${TRUEPREFIX}/libexec/munin,g;' \

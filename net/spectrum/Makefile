@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/20 11:20:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/04/14 15:55:19 jasper Exp $
 
 COMMENT=        XMPP transport/gateway
 
@@ -46,9 +46,9 @@ post-configure:
 post-install:
 	${INSTALL_DATA} ${WRKDIST}/schemas/mysql_schema.sql \
 		${PREFIX}/share/examples/spectrum
-	rm -f ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/spectrum/env.py.*
-	rm -f ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/spectrum/spectrum.py.orig
-	rm -f ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/spectrum/spectrum.py.beforesubst
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/spectrum/env.py.*
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/spectrum/spectrum.py.orig
+	rm ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/spectrum/spectrum.py.beforesubst
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/spectrum
 
