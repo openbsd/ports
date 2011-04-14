@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/04/13 11:40:01 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/14 05:21:43 landry Exp $
 
 COMMENT =	desktop bugzilla browser
 
@@ -12,7 +12,7 @@ PKG_ARCH =	*
 CATEGORIES =	productivity
 
 HOMEPAGE =	http://almworks.com/deskzilla/
-MASTER_SITES =	http://d1.almworks.com/.files
+MASTER_SITES =	http://d1.almworks.com/.files/
 
 # http://almworks.com/eula.html
 # permission to distribute granted by ALM Works in private mail
