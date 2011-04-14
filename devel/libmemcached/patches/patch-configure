@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2010/10/01 09:32:36 sebastia Exp $
+$OpenBSD: patch-configure,v 1.2 2011/04/14 11:17:49 sebastia Exp $
 
 get rid of a truckload of warnings when compiling
 
---- configure.orig	Sun Aug 22 13:48:08 2010
-+++ configure	Sun Aug 22 13:49:34 2010
-@@ -17763,7 +17763,7 @@ else
-   BASE_WARNINGS="${BASE_WARNINGS} -W"
+--- configure.orig	Wed Mar 16 03:40:33 2011
++++ configure	Fri Apr  1 01:47:32 2011
+@@ -17719,7 +17719,7 @@ fi
+ 
  fi
  
 -      CC_WARNINGS="${BASE_WARNINGS} -Wstrict-prototypes -Wmissing-prototypes -Wredundant-decls -Wmissing-declarations -Wcast-align ${CC_WARNINGS_FULL}"
@@ -13,7 +13,7 @@ get rid of a truckload of warnings when compiling
        CXX_WARNINGS="${BASE_WARNINGS} -Woverloaded-virtual -Wnon-virtual-dtor -Wctor-dtor-privacy -Wno-long-long ${CXX_WARNINGS_FULL}"
  
        { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether it is safe to use -Wmissing-declarations from C++" >&5
-@@ -17863,7 +17863,7 @@ ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAG
+@@ -17868,7 +17868,7 @@ ac_link='$CXX -o conftest$ac_exeext $CXXFLAGS $CPPFLAG
  ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
  
           save_CXXFLAGS="${CXXFLAGS}"
@@ -22,7 +22,7 @@ get rid of a truckload of warnings when compiling
           cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -17896,9 +17896,9 @@ fi
+@@ -17901,9 +17901,9 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_safe_to_use_Wredundant_decls_" >&5
  $as_echo "$ac_cv_safe_to_use_Wredundant_decls_" >&6; }
        if test "$ac_cv_safe_to_use_Wredundant_decls_" = "yes"; then :
@@ -34,7 +34,7 @@ get rid of a truckload of warnings when compiling
  fi
  
        { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether it is safe to use -Wattributes from C++" >&5
-@@ -18008,7 +18008,7 @@ fi
+@@ -18013,7 +18013,7 @@ fi
  fi
  
  
@@ -42,4 +42,4 @@ get rid of a truckload of warnings when compiling
 +      NO_REDUNDANT_DECLS=""
              PROTOSKIP_WARNINGS="-Wno-effc++ -Wno-shadow -Wno-missing-braces ${NO_ATTRIBUTES}"
        NO_WERROR="-Wno-error"
-       INNOBASE_SKIP_WARNINGS="-Wno-shadow -Wno-cast-align"
+       PERMISSIVE_WARNINGS="-Wno-error -Wno-unused-function -fpermissive"
