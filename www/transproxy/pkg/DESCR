@@ -9,3 +9,8 @@ server and transports data between the two sockets.
 
 Unlike some other transparent proxy solutions, this does not require the
 proxy to run on the machine itself.
+
+In most cases, it is preferable to use PF "route-to" rules rather than
+transproxy; relayd(8) can health-check the proxy and add these rules
+dynamically if required. The transproxy package is kept for special
+cases and to simplify upgrades.
