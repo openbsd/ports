@@ -1,0 +1,13 @@
+Hmake is an intelligent compilation management tool for Haskell
+programs. It automatically extracts dependencies between source
+modules, and issues the appropriate compiler commands to rebuild
+only those that have changed, given just the name of the program
+or module that you want to build.
+
+Hmake interactive, or hi for short, is an interpreter-like
+environment that you can wrap over any common Haskell compiler to
+achieve an interactive development style. It deliberately looks
+and feels a lot like the Hugs interpreter. The difference is that
+you get real compiled code, compiled by your favorite compiler -
+you can even change compiler on the fly, to check your code's
+portability!
