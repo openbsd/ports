@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.921 2011/04/13 13:31:36 kili Exp $
+# $OpenBSD: Makefile,v 1.922 2011/04/14 12:16:16 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -137,6 +137,7 @@
      SUBDIR += happy
      SUBDIR += hasktags
      SUBDIR += help2man
+     SUBDIR += hmake
      SUBDIR += hs-ConfigFile
      SUBDIR += hs-FindBin
      SUBDIR += hs-HUnit
