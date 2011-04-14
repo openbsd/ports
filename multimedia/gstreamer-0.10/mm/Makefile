@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2011/03/23 16:34:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/14 12:14:12 ajacoutot Exp $
 
 COMMENT =	C++ bindings for GStreamer
 
-V =		0.10.8
+V =		0.10.9
 NAME =		gstreamermm
 DISTNAME =	${NAME}-${V}
 
@@ -22,8 +22,7 @@ MODULES =	devel/gettext
 
 MODPY_RUNDEP =	No
 
-BUILD_DEPENDS =	devel/doxygen \
-		devel/mm-common
+BUILD_DEPENDS =	devel/doxygen
 LIB_DEPENDS =	devel/glib2mm \
 		multimedia/gstreamer-0.10/plugins-base,-cdda \
 		textproc/libxml++
