@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/03/20 06:36:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/04/14 12:55:38 pea Exp $
 
 COMMENT =	service monitoring daemon
 
 DISTNAME = 	mon-${V}
-REVISION =	6
+REVISION =	7
 
 WANTLIB = 	c
 

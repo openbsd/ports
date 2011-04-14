@@ -1,0 +1,29 @@
+$OpenBSD: patch-mon_d_dns_monitor,v 1.1 2011/04/14 12:55:38 pea Exp $
+
+defined(@array) is deprecated. Avoid mon to display
+annoying warnings.
+
+--- mon.d/dns.monitor.orig	Thu Apr 14 14:24:18 2011
++++ mon.d/dns.monitor	Thu Apr 14 14:24:43 2011
+@@ -168,18 +168,18 @@ if ( $#ARGV < 0 ) {
+     exit -1;
+ }
+ if (!$CachingServer) {
+-    if (!defined(@Master)) {
++    if (!@Master) {
+         print STDERR "$Program: The zone master server must be specified\n";
+ 	usage();
+         exit -1;
+     }
+-    if ( !defined(@Zones) ) {
++    if ( !@Zones ) {
+         print STDERR "$Program: At least one zone must be specified\n";
+ 	usage();
+         exit -1;
+     }
+ } else {
+-    if ( !defined(@Queries) ) {
++    if ( !@Queries ) {
+         print STDERR "$Program: At least one query must be specified\n";
+ 	usage();
+         exit -1;
