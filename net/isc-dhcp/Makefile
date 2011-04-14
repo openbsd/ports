@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/19 22:31:34 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/04/14 13:47:59 sthen Exp $
 
 COMMENT-main=	ISC DHCP Server
 COMMENT-client=	ISC DHCP Client
@@ -16,8 +16,8 @@ PKGNAME-main=	isc-dhcp-server-${VERSION}
 PKGNAME-client=	isc-dhcp-client-${VERSION}
 PKGNAME-omapi=	isc-dhcp-omapi-${VERSION}
 
-MASTER_SITES=	ftp://ftp.isc.org/isc/dhcp/ \
-		ftp://ftp.isc.org/isc/dhcp/dhcp-3.0-history/
+MASTER_SITES=	${MASTER_SITE_ISC:=dhcp/} \
+		${MASTER_SITE_ISC:=dhcp/dhcp-3.0-history/}
 
 HOMEPAGE=	http://www.isc.org/products/DHCP/
 

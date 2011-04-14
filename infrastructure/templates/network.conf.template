@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.159 2011/04/12 08:20:49 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.160 2011/04/14 13:47:59 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -276,3 +276,14 @@ MASTER_SITE_PYPI +=	\
 
 MASTER_SITE_RUBYGEMS+= \
 	http://rubygems.org/downloads/
+
+MASTER_SITE_ISC +=	\
+	http://ftp.isc.org/isc/ \
+	http://www.mirrorservice.org/sites/ftp.isc.org/isc/ \
+	http://ftp.arcane-networks.net/pub/mirrors/ftp.isc.org/isc/ \
+	http://ftp.sunet.se/pub/network/isc/ \
+	http://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/ \
+	http://ftp.iij.ad.jp/pub/network/isc/ \
+	ftp://ftp.isc.org/isc/ \
+	ftp://ftp.epix.net/pub/isc/ \
+	ftp://ftp.nominum.com/pub/isc/

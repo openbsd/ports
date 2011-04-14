@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2008/04/28 19:15:43 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/14 13:47:59 sthen Exp $
 
 COMMENT=	BIND 8 compatible stub resolver library
 
@@ -8,12 +8,7 @@ PKGNAME=	libbind-${VERSION}
 SHARED_LIBS=	bind	2.0
 CATEGORIES=	net
 
-MASTER_SITES+=	ftp://ftp.isc.org/isc/bind9/${VERSION}/ \
-		ftp://ftp.epix.net/pub/isc/bind9/${VERSION}/ \
-		ftp://ftp.nominum.com/pub/isc/bind9/${VERSION}/ \
-		ftp://ftp.sunet.se/pub/network/isc/bind9/${VERSION}/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/bind9/${VERSION}/ \
-		ftp://ftp.iij.ad.jp/pub/network/isc/bind9/${VERSION}/ \
+MASTER_SITES+=	${MASTER_SITE_ISC:=bind9/${VERSION}/}
 
 HOMEPAGE=	http://www.isc.org/products/BIND/
 

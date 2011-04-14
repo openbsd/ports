@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/04/14 12:46:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/14 13:47:59 sthen Exp $
 
 COMMENT =	DNS query performance tester from BIND 9
 
@@ -7,12 +7,7 @@ DISTNAME =	bind-${VERSION}
 PKGNAME =	queryperf-${VERSION}
 CATEGORIES =	net benchmarks
 
-MASTER_SITES +=	ftp://ftp.isc.org/isc/bind9/${VERSION}/ \
-		ftp://ftp.epix.net/pub/isc/bind9/${VERSION}/ \
-		ftp://ftp.nominum.com/pub/isc/bind9/${VERSION}/ \
-		ftp://ftp.sunet.se/pub/network/isc/bind9/${VERSION}/ \
-		ftp://ftp.funet.fi/pub/mirrors/ftp.isc.org/isc/bind9/${VERSION}/ \
-		ftp://ftp.iij.ad.jp/pub/network/isc/bind9/${VERSION}/ \
+MASTER_SITES +=	${MASTER_SITE_ISC:=bind9/${VERSION}/}
 
 HOMEPAGE =	http://www.isc.org/products/BIND/
 
