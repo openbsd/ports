@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.116 2011/03/27 19:38:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.117 2011/04/14 08:11:50 sthen Exp $
 
 COMMENT=	WWW and FTP proxy cache and accelerator
 
 DISTNAME=	squid-2.7.STABLE9
-REVISION=	7
+REVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	${HOMEPAGE}/Versions/v2/2.7/
 DIST_SUBDIR=	squid
@@ -51,7 +51,6 @@ CONFIGURE_ARGS+=--datadir="${PREFIX}/share/squid" \
 		--enable-external-acl-helpers="${EXTERNAL_ACL}" \
 		--enable-forw-via-db \
 		--enable-negotiate-auth-helpers="squid_kerb_auth" \
-		--enable-pf-transparent \
 		--enable-removal-policies="lru heap" \
 		--enable-ssl \
 		--enable-storeio="${STOREIO}" \

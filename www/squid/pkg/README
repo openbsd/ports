@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2010/12/12 18:58:32 jasper Exp $
+$OpenBSD: README,v 1.3 2011/04/14 08:11:50 sthen Exp $
 
 Running Squid on OpenBSD
 ========================
@@ -8,11 +8,33 @@ The local (OpenBSD) differences are:
 - sample configuration files are in	${TRUEPREFIX}/share/examples/squid
 - error message files are in		${TRUEPREFIX}/share/squid/errors
 - sample error message files are in	${TRUEPREFIX}/share/examples/squid/errors
-- icons are in 				${TRUEPREFIX}/share/squid/icons
+- icons are in				${TRUEPREFIX}/share/squid/icons
 - sample icons are in			${TRUEPREFIX}/share/examples/squid/icons
-- the cache is in 			${SQUIDDIR}/cache
-- logs are stored in 			${SQUIDDIR}/logs
+- the cache is in			${SQUIDDIR}/cache
+- logs are stored in			${SQUIDDIR}/logs
 - the ugid squid runs as is		_squid:_squid
 
 Please remember to initialize the cache by running "squid -z" before
 trying to run Squid for the first time.
+
+Transparent Proxying with PF
+----------------------------
+
+To configure a transparent proxy, bind to a specific address in
+${SYSCONFDIR}/squid/squid.conf, for example:
+
+http_port 127.0.0.1:3127 transparent
+
+On the machine running Squid, add a firewall rule similar to this:
+
+pass in quick log inet proto tcp to port 80 divert-to 127.0.0.1 port 3127
+
+If Squid is running on a machine which doesn't normally handle the
+traffic (e.g. if you have a firewall and would like to divert packets
+to Squid on another machine) you will also need a rule like this:
+
+pass in quick from 10.77.3.5
+pass in quick inet proto tcp to port 80 route-to (vr2 10.77.3.5)
+
+(this example assumes Squid is running on 10.77.3.5 reachable over
+the vr2 interface).
