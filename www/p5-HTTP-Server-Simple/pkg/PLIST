@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/18 18:56:15 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/14 07:21:27 jasper Exp $
 ${P5SITE}/HTTP/
 ${P5SITE}/HTTP/Server/
 ${P5SITE}/HTTP/Server/Simple/
@@ -9,3 +9,5 @@ ${P5SITE}/HTTP/Server/Simple/CGI/Environment.pm
 @man man/man3p/HTTP::Server::Simple.3p
 @man man/man3p/HTTP::Server::Simple::CGI.3p
 @man man/man3p/HTTP::Server::Simple::CGI::Environment.3p
+share/examples/p5-HTTP-Server-Simple/
+share/examples/p5-HTTP-Server-Simple/sample_server
