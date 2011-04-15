@@ -1,16 +1,13 @@
-$OpenBSD: patch-js_src_Makefile_in,v 1.1 2011/04/05 09:00:42 landry Exp $
-Fix build error on sparc64, we dont want to force-enable assembler/jit
---- js/src/Makefile.in.orig	Thu Mar  3 23:11:32 2011
-+++ js/src/Makefile.in	Sun Mar 13 11:34:19 2011
-@@ -914,7 +914,11 @@ endif
- # Needed to "configure" it correctly.  Unfortunately these
- # flags wind up being applied to all code in js/src, not just
- # the code in js/src/assembler.
-+ifneq (,$(filter-out sparc64,$(TARGET_CPU)))
- CXXFLAGS += -DUSE_SYSTEM_MALLOC=1 -DENABLE_ASSEMBLER=1 -DENABLE_JIT=1
-+else
-+CXXFLAGS += -DUSE_SYSTEM_MALLOC=1
-+endif
+$OpenBSD: patch-js_src_Makefile_in,v 1.2 2011/04/15 11:43:46 landry Exp $
+https://bug638056.bugzilla.mozilla.org/attachment.cgi?id=520157
+--- js/src/Makefile.in.orig	Sat Mar 19 00:33:47 2011
++++ js/src/Makefile.in	Fri Apr 15 11:18:48 2011
+@@ -375,7 +375,7 @@ CPPSRCS += 	checks.cc \
+ # END enclude sources for V8 dtoa
+ #############################################
  
- INCLUDES +=	-I$(srcdir)/assembler -I$(srcdir)/yarr
+-ifeq (,$(filter-out powerpc sparc,$(TARGET_CPU)))
++ifeq (,$(filter arm %86 x86_64,$(TARGET_CPU)))
  
+ VPATH +=	$(srcdir)/assembler \
+ 		$(srcdir)/assembler/wtf \

@@ -1,25 +1,18 @@
-$OpenBSD: patch-configure_in,v 1.19 2011/03/30 21:39:14 landry Exp $
---- configure.in.orig	Thu Mar  3 23:11:21 2011
-+++ configure.in	Thu Mar 10 15:39:57 2011
-@@ -1229,7 +1229,7 @@ MOZ_PNG_LIBS='$(call EXPAND_LIBNAME_PATH,mozpng,$(DEPT
- MOZ_JS_STATIC_LIBS='-L$(LIBXUL_DIST)/bin -ljs_static'
- MOZ_JS_SHARED_LIBS='-L$(LIBXUL_DIST)/bin -lmozjs'
- DYNAMIC_XPCOM_LIBS='-L$(LIBXUL_DIST)/bin -lxpcom -lxpcom_core -lmozalloc'
--MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(prefix)/lib'
-+MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(prefix)/lib -L$(LIBXUL_DIST)/bin'
- XPCOM_FROZEN_LDOPTS='-L$(LIBXUL_DIST)/bin -lxpcom -lmozalloc'
- LIBXUL_LIBS='$(XPCOM_FROZEN_LDOPTS) -lxul'
- XPCOM_GLUE_LDOPTS='$(LIBXUL_DIST)/lib/$(LIB_PREFIX)xpcomglue_s.$(LIB_SUFFIX) $(XPCOM_FROZEN_LDOPTS)'
-@@ -2676,7 +2676,7 @@ ia64*-hpux*)
+$OpenBSD: patch-configure_in,v 1.20 2011/04/15 11:43:46 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=648721
+--- configure.in.orig	Sat Mar 19 00:33:33 2011
++++ configure.in	Mon Apr 11 10:48:46 2011
+@@ -2676,7 +2676,8 @@ ia64*-hpux*)
  	;;
  
  *-openbsd*)
 -    DLL_SUFFIX=".so.1.0"
-+    DLL_SUFFIX=".so.${SO_VERSION}"
++    DLL_SUFFIX='.so.$(if $(SO_VERSION),$(SO_VERSION),1.0)'
++    MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(prefix)/lib -Wl,-rpath-link,$(if $(X11BASE),$(X11BASE),/usr/X11R6)/lib'
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -4524,7 +4524,7 @@ if test "$ac_cv_thread_keyword" = yes; then
+@@ -4524,7 +4525,7 @@ if test "$ac_cv_thread_keyword" = yes; then
        :
        ;;
      *)
@@ -28,7 +21,7 @@ $OpenBSD: patch-configure_in,v 1.19 2011/03/30 21:39:14 landry Exp $
        ;;
    esac
  fi
-@@ -5791,14 +5791,7 @@ dnl ==================================================
+@@ -5791,14 +5792,7 @@ dnl ==================================================
  
  # The GNOME component is built if one of 
  # gnome-vfs, gio, gconf or libnotify is available.
