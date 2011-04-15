@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/04/15 06:07:01 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ V=		10.05
 P=		1
 DISTNAME=	codeblocks-${V}-${P}debian-src
 PKGNAME=	codeblocks-${V}
-REVISION=	0
+REVISION=	1
 
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/codeblocks-${V}
@@ -31,13 +31,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += gthread-2.0 xcb-render xcb-render-util pthread-stubs
-WANTLIB += stdc++ xcb z
+WANTLIB += GL ICE SDL SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
+WANTLIB += c cairo drm expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gtk-x11-2.0 iodbc jpeg m mspack pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += sndio stdc++ tiff usbhid xcb xcb-render xcb-shm z
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=codeblocks/}
 
@@ -75,7 +75,7 @@ pre-configure:
 	ln -s /usr/bin/true ${WRKDIR}/bin/svn
 	${SUBST_CMD} ${WRKSRC}/src/sdk/resources/lexers/lexer_bash.sample \
 		${WRKSRC}/src/plugins/compilergcc/compilergcc.cpp
-	rm -f ${WRKSRC}/src/sdk/resources/lexers/lexer_bash.{bak,orig}
+	rm ${WRKSRC}/src/sdk/resources/lexers/lexer_bash.sample.{beforesubst,orig}
 
 # template files are copied to HOME with their original mode which makes
 # it impossible to edit them by default
