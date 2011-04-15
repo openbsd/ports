@@ -1,0 +1,11 @@
+# $OpenBSD: radiusd.rc,v 1.1 2011/04/15 09:44:06 pea Exp $
+
+daemon="${TRUEPREFIX}/sbin/radiusd"
+
+. /etc/rc.d/rc.subr
+
+rc_pre() {
+	/usr/bin/install -d -o _freeradius /var/run/radiusd
+}
+
+rc_cmd $1

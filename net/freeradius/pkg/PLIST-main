@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2010/10/25 13:22:20 pea Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2011/04/15 09:44:06 pea Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -304,7 +304,9 @@ share/examples/freeradius/hints
 share/examples/freeradius/huntgroups
 @sample ${SYSCONFDIR}/raddb/huntgroups
 share/examples/freeradius/modules/
+@mode 750
 @sample ${SYSCONFDIR}/raddb/modules/
+@mode 640
 share/examples/freeradius/modules/acct_unique
 @sample ${SYSCONFDIR}/raddb/modules/acct_unique
 share/examples/freeradius/modules/always
@@ -403,7 +405,9 @@ share/examples/freeradius/proxy.conf
 share/examples/freeradius/radiusd.conf
 @sample ${SYSCONFDIR}/raddb/radiusd.conf
 share/examples/freeradius/sites-available/
+@mode 750
 @sample ${SYSCONFDIR}/raddb/sites-available/
+@mode 640
 share/examples/freeradius/sites-available/README
 @sample ${SYSCONFDIR}/raddb/sites-available/README
 share/examples/freeradius/sites-available/buffered-sql
@@ -439,12 +443,16 @@ share/examples/freeradius/sites-available/virtual.example.com
 share/examples/freeradius/sites-available/vmps
 @sample ${SYSCONFDIR}/raddb/sites-available/vmps
 share/examples/freeradius/sites-enabled/
+@mode 750
 @sample ${SYSCONFDIR}/raddb/sites-enabled/
+@mode 640
 share/examples/freeradius/sites-enabled/control-socket
 share/examples/freeradius/sites-enabled/default
 share/examples/freeradius/sites-enabled/inner-tunnel
 share/examples/freeradius/sql/
+@mode 750
 @sample ${SYSCONFDIR}/raddb/sql/
+@mode 640
 share/examples/freeradius/sql.conf
 @sample ${SYSCONFDIR}/raddb/sql.conf
 @comment share/examples/freeradius/sql/oracle/
@@ -610,3 +618,4 @@ share/freeradius/dictionary.zyxel
 @extraunexec rm -rf ${SYSCONFDIR}/raddb
 @extraunexec rm -rf /var/log/radius
 @extra /var/log/radius/radwtmp
+@rcscript ${RCDIR}/radiusd
