@@ -1,0 +1,12 @@
+$OpenBSD: patch-build_build_rules_mk,v 1.1 2011/04/15 19:28:05 naddy Exp $
+--- build/build.rules.mk.orig	Fri Apr 15 16:53:43 2011
++++ build/build.rules.mk	Fri Apr 15 16:54:07 2011
+@@ -2,7 +2,7 @@ UNIQUE_FILTER_PIPE = tr [:space:] \\n | sort | uniq
+ BUILD_DATA_DIR = $(top_builddir)/bin/share/$(PACKAGE)
+ 
+ SOURCES_BUILD = $(addprefix $(srcdir)/, $(SOURCES))
+-dnl SOURCES_BUILD += $(top_srcdir)/src/AssemblyInfo.cs
++# SOURCES_BUILD += $(top_srcdir)/src/AssemblyInfo.cs
+ 
+ RESOURCES_EXPANDED = $(addprefix $(srcdir)/, $(RESOURCES))
+ RESOURCES_BUILD = $(foreach resource, $(RESOURCES_EXPANDED), \

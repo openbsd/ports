@@ -1,0 +1,12 @@
+$OpenBSD: patch-Mono_Data_Sqlite_Makefile_in,v 1.1 2011/04/15 19:28:05 naddy Exp $
+--- Mono.Data.Sqlite/Makefile.in.orig	Wed Oct  6 21:46:07 2010
++++ Mono.Data.Sqlite/Makefile.in	Fri Apr 15 17:26:28 2011
+@@ -394,7 +394,7 @@ uninstall-am: uninstall-local uninstall-moduleSCRIPTS
+ 	pdf-am ps ps-am uninstall uninstall-am uninstall-local \
+ 	uninstall-moduleSCRIPTS
+ 
+-dnl SOURCES_BUILD += $(top_srcdir)/src/AssemblyInfo.cs
++# SOURCES_BUILD += $(top_srcdir)/src/AssemblyInfo.cs
+ 
+ all: $(ASSEMBLY_FILE) theme-icons
+ 
