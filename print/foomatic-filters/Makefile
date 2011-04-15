@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2011/01/02 07:31:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/04/15 18:45:11 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD print filters
 
-DISTNAME=		foomatic-filters-4.0.6
+DISTNAME=		foomatic-filters-4.0.7
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.linuxfoundation.org/en/OpenPrinting/Database/Foomatic
