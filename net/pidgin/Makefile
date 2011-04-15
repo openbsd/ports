@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2011/03/26 10:05:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.92 2011/04/15 21:43:13 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -80,8 +80,7 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
-# Should be 2.67
-AUTOCONF_VERSION= 2.65
+AUTOCONF_VERSION= 2.67
 CONFIGURE_ARGS+= --disable-avahi \
 		 --disable-cap \
 		 --disable-doxygen \
