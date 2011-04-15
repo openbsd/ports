@@ -1,0 +1,35 @@
+$OpenBSD: patch-radicale_config_py,v 1.1.1.1 2011/04/15 15:47:17 sthen Exp $
+--- radicale/config.py.orig	Fri Apr  1 22:44:18 2011
++++ radicale/config.py	Fri Apr  1 22:45:40 2011
+@@ -45,18 +45,18 @@ INITIAL_CONFIG = {
+         "port": "5232",
+         "daemon": "False",
+         "ssl": "False",
+-        "certificate": "/etc/apache2/ssl/server.crt",
+-        "key": "/etc/apache2/ssl/server.key"},
++        "certificate": "/etc/ssl/server.crt",
++        "key": "/etc/ssl/private/server.key"},
+     "encoding": {
+         "request": "utf-8",
+         "stock": "utf-8"},
+     "acl": {
+         "type": "fake",
+         "personal": "False",
+-        "filename": "/etc/radicale/users",
++        "filename": "${SYSCONFDIR}/radicale/users",
+         "encryption": "crypt"},
+     "storage": {
+-        "folder": os.path.expanduser("~/.config/radicale/calendars")}}
++        "folder": "/var/db/radicale/calendars"}}
+ 
+ # Create a ConfigParser and configure it
+ _CONFIG_PARSER = ConfigParser()
+@@ -66,7 +66,7 @@ for section, values in INITIAL_CONFIG.items():
+     for key, value in values.items():
+         _CONFIG_PARSER.set(section, key, value)
+ 
+-_CONFIG_PARSER.read("/etc/radicale/config")
++_CONFIG_PARSER.read("${SYSCONFDIR}/radicale/config")
+ _CONFIG_PARSER.read(os.path.expanduser("~/.config/radicale/config"))
+ 
+ # Wrap config module into ConfigParser instance

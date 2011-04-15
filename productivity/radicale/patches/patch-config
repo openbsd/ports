@@ -1,0 +1,32 @@
+$OpenBSD: patch-config,v 1.1.1.1 2011/04/15 15:47:17 sthen Exp $
+--- config.orig	Sat Aug  7 13:22:58 2010
++++ config	Fri Apr  1 22:30:40 2011
+@@ -15,9 +15,9 @@ daemon = False
+ # SSL flag, enable HTTPS protocol
+ ssl = False
+ # SSL certificate path (if needed)
+-certificate = /etc/apache2/ssl/server.crt
++certificate = /etc/ssl/server.crt
+ # SSL private key (if needed)
+-key = /etc/apache2/ssl/server.key
++key = /etc/ssl/private/server.key
+ 
+ [encoding]
+ # Encoding for responding requests
+@@ -32,7 +32,7 @@ type = fake
+ # Personal calendars only available for logged in users (if needed)
+ personal = False
+ # Htpasswd filename (if needed)
+-filename = /etc/radicale/users
++filename = ${SYSCONFDIR}/radicale/users
+ # Htpasswd encryption method (if needed)
+ # Value: plain | sha1 | crypt
+ encryption = crypt
+@@ -40,6 +40,6 @@ encryption = crypt
+ [storage]
+ # Folder for storing local calendars,
+ # created if not present
+-folder = ~/.config/radicale/calendars
++folder = /var/db/radicale/calendars
+ 
+ # vim:ft=cfg

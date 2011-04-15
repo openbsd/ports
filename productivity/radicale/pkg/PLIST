@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/15 15:47:17 sthen Exp $
+@newgroup _radicale:672
+@newuser _radicale:672:_radicale:daemon:radicale user:/nonexistent:/sbin/nologin
+bin/radicale
+lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/radicale/
+lib/python${MODPY_VERSION}/site-packages/radicale/__init__.py
+lib/python${MODPY_VERSION}/site-packages/radicale/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/acl/
+lib/python${MODPY_VERSION}/site-packages/radicale/acl/__init__.py
+lib/python${MODPY_VERSION}/site-packages/radicale/acl/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/acl/fake.py
+lib/python${MODPY_VERSION}/site-packages/radicale/acl/fake.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/acl/htpasswd.py
+lib/python${MODPY_VERSION}/site-packages/radicale/acl/htpasswd.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/config.py
+lib/python${MODPY_VERSION}/site-packages/radicale/config.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/ical.py
+lib/python${MODPY_VERSION}/site-packages/radicale/ical.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/xmlutils.py
+lib/python${MODPY_VERSION}/site-packages/radicale/xmlutils.pyc
+share/doc/radicale/
+share/doc/radicale/COPYING
+share/doc/radicale/NEWS
+share/doc/radicale/README
+share/examples/radicale/
+share/examples/radicale/config
+@sample ${SYSCONFDIR}/radicale/
+@sample ${SYSCONFDIR}/radicale/config
+@rcscript ${RCDIR}/radicale
+@mode 700
+@owner _radicale
+@group _radicale
+@sample /var/db/radicale/
