@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.9 2010/12/01 08:40:16 jasper Exp $
---- Makefile.orig	Wed Dec  1 09:39:15 2010
-+++ Makefile	Wed Dec  1 09:39:44 2010
+$OpenBSD: patch-Makefile,v 1.10 2011/04/15 21:10:27 jasper Exp $
+--- Makefile.orig	Fri Apr 15 15:18:03 2011
++++ Makefile	Fri Apr 15 15:19:40 2011
 @@ -1,9 +1,9 @@
  NUTDIR := \".nutdb\"
 -FOODDIR := \"/usr/local/lib/nut\"
@@ -8,7 +8,7 @@ $OpenBSD: patch-Makefile,v 1.9 2010/12/01 08:40:16 jasper Exp $
  EXECUTABLE := nut
  LIBS := -lm
  
--CFLAGS := -Wall -O2 -s -fno-inline -DNUTDIR=$(NUTDIR) -DFOODDIR=$(FOODDIR) -ansi -pedantic 
+-CFLAGS := -Wall -O3 -fno-inline -DNUTDIR=$(NUTDIR) -DFOODDIR=$(FOODDIR) -ansi -pedantic 
 +CFLAGS := -Wall -fno-inline -DNUTDIR=$(NUTDIR) -DFOODDIR=$(FOODDIR)
  
  CXXFLAGS := $(CFLAGS)
