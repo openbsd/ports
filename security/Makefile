@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.260 2011/04/12 11:16:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.261 2011/04/15 16:08:36 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -82,6 +82,7 @@
      SUBDIR += libident
      SUBDIR += libksba
      SUBDIR += libmcrypt
+     SUBDIR += libnettle
      SUBDIR += libnipper
      SUBDIR += libotr
      SUBDIR += libperseus
