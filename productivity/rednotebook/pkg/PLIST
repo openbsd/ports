@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/09/30 11:06:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/04/15 06:32:42 jasper Exp $
 bin/rednotebook
 lib/python${MODPY_VERSION}/site-packages/rednotebook/
 lib/python${MODPY_VERSION}/site-packages/rednotebook-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
@@ -140,6 +140,9 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ca/LC_MESSAGES/rednote
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/cs/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/cs/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/cs/LC_MESSAGES/rednotebook.mo
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/cy/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/cy/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/cy/LC_MESSAGES/rednotebook.mo
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/da/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/da/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/da/LC_MESSAGES/rednotebook.mo
@@ -152,6 +155,9 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/el/LC_MESSAGES/rednote
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/en_GB/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/en_GB/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/en_GB/LC_MESSAGES/rednotebook.mo
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/eo/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/eo/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/eo/LC_MESSAGES/rednotebook.mo
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/es/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/es/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/es/LC_MESSAGES/rednotebook.mo
@@ -167,6 +173,9 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/fo/LC_MESSAGES/rednote
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/fr/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/fr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/fr/LC_MESSAGES/rednotebook.mo
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/gl/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/gl/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/gl/LC_MESSAGES/rednotebook.mo
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/he/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/he/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/he/LC_MESSAGES/rednotebook.mo
@@ -182,12 +191,21 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/id/LC_MESSAGES/rednote
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/it/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/it/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/it/LC_MESSAGES/rednotebook.mo
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ja/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ja/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ja/LC_MESSAGES/rednotebook.mo
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/kk/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/kk/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/kk/LC_MESSAGES/rednotebook.mo
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ko/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ko/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ko/LC_MESSAGES/rednotebook.mo
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/lt/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/lt/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/lt/LC_MESSAGES/rednotebook.mo
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/mn/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/mn/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/mn/LC_MESSAGES/rednotebook.mo
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ms/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ms/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ms/LC_MESSAGES/rednotebook.mo
@@ -200,6 +218,9 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/nds/LC_MESSAGES/rednot
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/nl/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/nl/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/nl/LC_MESSAGES/rednotebook.mo
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/nn/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/nn/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/nn/LC_MESSAGES/rednotebook.mo
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/pl/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/pl/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/pl/LC_MESSAGES/rednotebook.mo
@@ -230,15 +251,24 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/sv/LC_MESSAGES/rednote
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ta/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ta/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ta/LC_MESSAGES/rednotebook.mo
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/te/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/te/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/te/LC_MESSAGES/rednotebook.mo
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/tl/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/tl/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/tl/LC_MESSAGES/rednotebook.mo
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/tr/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/tr/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/tr/LC_MESSAGES/rednotebook.mo
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ug/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ug/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/ug/LC_MESSAGES/rednotebook.mo
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/uk/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/uk/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/uk/LC_MESSAGES/rednotebook.mo
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/vi/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/vi/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/vi/LC_MESSAGES/rednotebook.mo
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/wae/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/wae/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/rednotebook/i18n/wae/LC_MESSAGES/rednotebook.mo
@@ -294,7 +324,6 @@ lib/python${MODPY_VERSION}/site-packages/rednotebook/util/utils.py
 lib/python${MODPY_VERSION}/site-packages/rednotebook/util/utils.pyc
 share/applications/rednotebook.desktop
 share/icons/hicolor/48x48/apps/rednotebook.png
-share/pixmaps/
 share/pixmaps/rednotebook.png
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
