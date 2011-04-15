@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2011/04/07 17:48:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2011/04/15 05:49:55 ajacoutot Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
 GNOME_VERSION=	3.10.0
 GNOME_PROJECT= 	glade
 
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 
@@ -34,12 +34,14 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		lang/python
 
-BUILD_DEPENDS=	devel/gobject-introspection
+BUILD_DEPENDS=	devel/gobject-introspection \
+		devel/py-gobject
 
 LIB_DEPENDS=	x11/gtk+3 \
 		devel/libffi
 
-RUN_DEPENDS=	x11/gnome/devhelp
+RUN_DEPENDS=	x11/gnome/devhelp \
+		devel/py-gobject
 
 DESKTOP_FILES= 	Yes
 MODGNOME_HELP_FILES=	Yes
