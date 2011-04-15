@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_pakchois_pakchois_c,v 1.1 2011/04/15 16:09:39 ajacoutot Exp $
+--- lib/pakchois/pakchois.c.orig	Wed Apr 13 11:54:37 2011
++++ lib/pakchois/pakchois.c	Wed Apr 13 11:54:57 2011
+@@ -174,7 +174,7 @@ static const char *suffix_prefixes[][2] = {
+ #define CALLS7(n, a, b, c, d, e, f, g) CALLS(n, (sess->id, a, b, c, d, e, f, g))
+ 
+ #ifndef PAKCHOIS_MODPATH
+-#define PAKCHOIS_MODPATH "/lib:/usr/lib"
++#define PAKCHOIS_MODPATH "/lib:/usr/lib:${LOCALBASE}/lib"
+ #endif
+ 
+ /* Returns an allocated name of the real module as well

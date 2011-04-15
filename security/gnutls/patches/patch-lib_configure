@@ -1,21 +1,61 @@
-$OpenBSD: patch-lib_configure,v 1.1 2011/03/10 15:38:58 ajacoutot Exp $
-
-libz is in base and we don't provide a pkg-config file for it.
-
---- lib/configure.orig	Thu Mar 10 16:27:32 2011
-+++ lib/configure	Thu Mar 10 16:28:18 2011
-@@ -16642,14 +16642,6 @@ else
+$OpenBSD: patch-lib_configure,v 1.2 2011/04/15 16:09:39 ajacoutot Exp $
+--- lib/configure.orig	Fri Apr  8 18:17:13 2011
++++ lib/configure	Wed Apr 13 12:43:14 2011
+@@ -17863,19 +17863,11 @@ else
  $as_echo "no" >&6; }
  fi
  
 -if test x$ac_zlib != xno; then
--  if test "$GNUTLS_REQUIRES_PRIVATE" = ""; then
+-  if test x$GNUTLS_REQUIRES_PRIVATE = x; then
 -    GNUTLS_REQUIRES_PRIVATE="Requires.private: zlib"
 -  else
 -    GNUTLS_REQUIRES_PRIVATE="$GNUTLS_REQUIRES_PRIVATE , zlib"
 -  fi
 -fi
+ 
+ 
+ 
+ 
+ 
 -
+           LIBC_FATAL_STDERR_=1
+   export LIBC_FATAL_STDERR_
  
- 
- 
+@@ -25189,7 +25181,7 @@ fi
+             done
+           fi
+           if test "X$found_dir" != "X"; then
+-                        LTLIBPTHREAD="${LTLIBPTHREAD}${LTLIBPTHREAD:+ }-L$found_dir -l$name"
++                        LTLIBPTHREAD="${LTLIBPTHREAD}${LTLIBPTHREAD:+ }-L$found_dir -$name"
+             if test "X$found_so" != "X"; then
+                                                         if test "$enable_rpath" = no || test "X$found_dir" = "X/usr/$acl_libdirstem"; then
+                                 LIBPTHREAD="${LIBPTHREAD}${LIBPTHREAD:+ }$found_so"
+@@ -25242,7 +25234,7 @@ fi
+                     if test "$acl_hardcode_minus_L" != no; then
+                                                                                         LIBPTHREAD="${LIBPTHREAD}${LIBPTHREAD:+ }$found_so"
+                     else
+-                                                                                                                                                                                LIBPTHREAD="${LIBPTHREAD}${LIBPTHREAD:+ }-l$name"
++                                                                                                                                                                                LIBPTHREAD="${LIBPTHREAD}${LIBPTHREAD:+ }-$name"
+                     fi
+                   fi
+                 fi
+@@ -25251,7 +25243,7 @@ fi
+               if test "X$found_a" != "X"; then
+                                 LIBPTHREAD="${LIBPTHREAD}${LIBPTHREAD:+ }$found_a"
+               else
+-                                                LIBPTHREAD="${LIBPTHREAD}${LIBPTHREAD:+ }-L$found_dir -l$name"
++                                                LIBPTHREAD="${LIBPTHREAD}${LIBPTHREAD:+ }-L$found_dir -$name"
+               fi
+             fi
+                         additional_includedir=
+@@ -25401,8 +25393,8 @@ fi
+               done
+             fi
+           else
+-                                                            LIBPTHREAD="${LIBPTHREAD}${LIBPTHREAD:+ }-l$name"
+-            LTLIBPTHREAD="${LTLIBPTHREAD}${LTLIBPTHREAD:+ }-l$name"
++                                                            LIBPTHREAD="${LIBPTHREAD}${LIBPTHREAD:+ }-$name"
++            LTLIBPTHREAD="${LTLIBPTHREAD}${LTLIBPTHREAD:+ }-$name"
+           fi
+         fi
+       fi
