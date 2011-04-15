@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2011/04/01 23:03:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.50 2011/04/15 16:10:38 ajacoutot Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -7,6 +7,8 @@ PATCHVER=	20110223
 DISTNAME=	freetds-$V
 PKGNAME=	${DISTNAME}.${PATCHVER}
 PATCHFILES=	freetds-post82-${PATCHVER}.diff.gz:0
+
+REVISION=	0
 
 SHARED_LIBS += ct                   4.0      # .4.0
 SHARED_LIBS += sybdb                6.0      # .5.0
@@ -23,7 +25,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c iodbc iodbcinst gcrypt gnutls gpg-error ncurses
+WANTLIB += c gmp gnutls hogweed iodbc iodbcinst ncurses nettle
 WANTLIB += pthread readline tasn1 z
 
 MASTER_SITES=	ftp://ftp.ibiblio.org/pub/Linux/ALPHA/freetds/stable/
@@ -38,10 +40,7 @@ BUILD_DEPENDS=	devel/doxygen>=1.7.2 \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=	databases/iodbc,-main \
-		security/libgcrypt \
-		security/gnutls \
-		security/libgpg-error \
-		security/libtasn1
+		security/gnutls
 
 FLAVORS=	msdblib
 FLAVOR?=

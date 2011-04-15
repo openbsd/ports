@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/03/10 21:37:33 landry Exp $
+# $OpenBSD: Makefile,v 1.43 2011/04/15 16:10:38 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -13,6 +13,10 @@ PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 CATEGORIES=		mail news
+
+REVISION-main=		0
+REVISION-bogofilter=	0
+REVISION-spamassassin=	0
 
 HOMEPAGE=		http://www.claws-mail.org/
 
@@ -50,7 +54,7 @@ WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			gdk-x11-2.0 gtk-x11-2.0 execinfo etpan>=13 sasl2 \
 			GL Xxf86vm drm xcb-render xcb-shm
 
-WANTLIB-main=		${WANTLIB} ICE SM c dbus-1 \
+WANTLIB-main=		${WANTLIB} ICE SM c dbus-1 gmp hogweed nettle \
 			pthread stdc++ tasn1 xcb-atom xcb-aux xcb-event \
 			startup-notification-1 enchant gnutls gpgme dbus-glib-1
 
@@ -59,7 +63,8 @@ WANTLIB-docs=
 LIB_DEPENDS=		x11/gtk+2 \
 			devel/libexecinfo \
 			mail/libetpan \
-			security/cyrus-sasl2
+			security/cyrus-sasl2 \
+			security/libgcrypt
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			devel/desktop-file-utils

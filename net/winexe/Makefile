@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 22:31:39 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/15 16:10:37 ajacoutot Exp $
 
 COMMENT =	remotely execute programs on a Windows host
 
 DISTNAME =	winexe-source-081123
 PKGNAME =	winexe-0.90
+
+REVISION =	0
 
 CATEGORIES =	net
 
@@ -21,7 +23,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${HOMEPAGE}
 EXTRACT_SUFX =		.tar.bz2
 
-WANTLIB =		c gnutls
+WANTLIB =		c gnutls pthread tasn1
 BUILD_DEPENDS = 	${MODGNU_AUTOCONF_DEPENDS}
 LIB_DEPENDS =		security/gnutls
 MODULES =		converters/libiconv

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/12/28 15:08:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/04/15 16:10:38 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,11 +10,11 @@ DISTNAME=	obs-2.1.2-15
 VERSION=	2.1.2.15
 PKGNAME=	heartbeat-${VERSION}
 PKGNAME-main=	heartbeat-${VERSION}
-REVISION-main =	5
+REVISION-main =	6
 PKGNAME-gui=	heartbeat-gui-${VERSION}
-REVISION-gui =	4
+REVISION-gui =	5
 PKGNAME-snmp=	heartbeat-snmp-${VERSION}
-REVISION-snmp =	4
+REVISION-snmp =	5
 
 EXTRACT_SUFX=   .tar.bz2
 CATEGORIES=     sysutils
@@ -50,9 +50,10 @@ BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 
 LIB_DEPENDS+=	textproc/libxml
 
-WANTLIB-main=	${WANTLIB} crypto gcrypt gpg-error idn ncurses ssl tasn1 \
+WANTLIB-main=	${WANTLIB} crypto idn ncurses ssl tasn1 \
 		e2fs-uuid gnutls>=12 lib/libnet-1.0/net=0 bz2>=10 \
-		xml2>=9 ltdl>=4 glib-2.0>=1400 curl>=7
+		xml2>=9 ltdl>=4 glib-2.0>=1400 curl>=7 \
+		gmp hogweed nettle
 LIB_DEPENDS-main=${LIB_DEPENDS} \
 		sysutils/e2fsprogs \
 		security/gnutls \
@@ -64,8 +65,9 @@ LIB_DEPENDS-main=${LIB_DEPENDS} \
 RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 		devel/p5-Time-TimeDate
 
-WANTLIB-gui=	${MODGETTEXT_WANTLIB} gcrypt gpg-error m tasn1 util xml2 z \
-		bz2>=10 gnutls>=12 ltdl>=4 e2fs-uuid
+WANTLIB-gui=	${MODGETTEXT_WANTLIB} m tasn1 util xml2 z \
+		bz2>=10 gnutls>=12 ltdl>=4 e2fs-uuid \
+		gmp hogweed nettle
 LIB_DEPENDS-gui=${LIB_DEPENDS} \
 		archivers/bzip2 \
 		security/gnutls \
@@ -74,8 +76,8 @@ LIB_DEPENDS-gui=${LIB_DEPENDS} \
 RUN_DEPENDS-gui=${MODPY_RUN_DEPENDS} \
 		x11/py-gtk2
 
-WANTLIB-snmp=	${WANTLIB} bz2 crypto e2fs-uuid gcrypt glib-2.0 gnutls \
-		gpg-error kvm ltdl perl tasn1 wrap xml2 ccmclient \
+WANTLIB-snmp=	${WANTLIB} bz2 crypto e2fs-uuid glib-2.0 \
+		kvm ltdl perl wrap xml2 ccmclient \
 		clm hbclient pils plumb netsnmp>=7 netsnmpagent \
 		netsnmpmibs
 LIB_DEPENDS-snmp=${LIB_DEPENDS} \

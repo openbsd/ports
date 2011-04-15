@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2011/04/07 12:07:02 pea Exp $
+# $OpenBSD: Makefile,v 1.40 2011/04/15 16:10:38 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		simple GTK desktop news aggregator
 
 DISTNAME=		liferea-1.6.5
 CATEGORIES=		www x11
+
+REVISION=		0
 
 HOMEPAGE=		http://liferea.sourceforge.net/
 
@@ -28,7 +30,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs sqlite3 stdc++ tasn1 xcb xml2 z
 WANTLIB += gnutls>=12 lua>=5 notify>=2 xslt>=3.3 glade-2.0
 WANTLIB += soup-2.4 enchant>=6 webkit-1.0 GL Xxf86vm drm 
-WANTLIB += gstapp-0.10 xcb-render xcb-shm
+WANTLIB += gstapp-0.10 xcb-render xcb-shm gmp hogweed nettle
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=liferea/}
 

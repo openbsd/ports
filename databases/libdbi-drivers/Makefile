@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/04/12 11:16:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2011/04/15 16:10:38 ajacoutot Exp $
 
 V =			0.8.3-1
 COMMENT-main =		mysql driver for libdbi
@@ -13,7 +13,7 @@ REVISION-pgsql =	0
 PKGNAME-sqlite =	libdbi-drivers-sqlite-${V:S/-/./}
 PKGNAME-sqlite3 =	libdbi-drivers-sqlite3-${V:S/-/./}
 PKGNAME-freetds =	libdbi-drivers-freetds-${V:S/-/./}
-REVISION-freetds =	0
+REVISION-freetds =	1
 CATEGORIES =		databases
 
 HOMEPAGE =		http://libdbi-drivers.sourceforge.net/
@@ -61,9 +61,11 @@ WANTLIB-sqlite3 =	m sqlite3 dbi
 LIB_DEPENDS-sqlite3 =	databases/sqlite3 \
 			databases/libdbi
 
-WANTLIB-freetds =	iconv m ct dbi gcrypt gnutls gpg-error intl tasn1 z
+WANTLIB-freetds =	iconv m ct dbi gcrypt gmp gnutls gpg-error hogweed \
+			intl nettle tasn1 z
 LIB_DEPENDS-freetds =	databases/freetds \
-			databases/libdbi
+			databases/libdbi \
+			security/libgcrypt
 
 REGRESS_IS_INTERACTIVE =Yes
 REGRESS_DEPENDS =	databases/libdbi-drivers,-main \

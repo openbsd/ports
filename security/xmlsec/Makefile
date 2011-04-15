@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/04/03 10:59:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2011/04/15 16:10:38 ajacoutot Exp $
 
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
@@ -13,6 +13,8 @@ SHARED_LIBS=	xmlsec1-gnutls	5.0 \
 		xmlsec1-gcrypt	0.0 \
 		xmlsec1		5.0
 
+REVISION=	0
+
 HOMEPAGE=	http://www.aleksey.com/xmlsec/
 
 # MIT Licence
@@ -21,7 +23,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c crypto gcrypt gpg-error m tasn1 xml2 z ltdl xslt>=3 gnutls>=13 ssl
+WANTLIB += c crypto gcrypt gmp gnutls gpg-error hogweed ltdl m
+WANTLIB += nettle ssl tasn1 xml2 xslt z
 
 MASTER_SITES=	${HOMEPAGE}/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \

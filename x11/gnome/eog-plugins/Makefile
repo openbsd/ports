@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2011/03/23 15:25:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/04/15 16:10:38 ajacoutot Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
 GNOME_VERSION=		2.30.2
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -25,7 +25,7 @@ WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 json-glib-1.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += soup-2.4 sqlite3 tasn1 xcb xml2 z gnome-keyring proxy
 WANTLIB += soup-gnome-2.4 xcb-render xcb-shm
-WANTLIB += champlain-0.8 champlain-gtk-0.8
+WANTLIB += champlain-0.8 champlain-gtk-0.8 gmp hogweed nettle
 
 MODULES=		devel/gettext \
 			lang/python \

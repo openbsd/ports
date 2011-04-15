@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/04 17:04:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/15 16:10:38 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,8 @@ COMMENT=	network-related gio modules for glib2
 
 GNOME_VERSION=	2.28.5
 GNOME_PROJECT=	glib-networking
+
+REVISION=	0
 
 PKGNAME=	glib2-networking-${GNOME_VERSION}
 
@@ -21,9 +23,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c gcrypt gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0
-WANTLIB += gpg-error gthread-2.0 m modman pcre proxy pthread stdc++
-WANTLIB += tasn1 z
+WANTLIB += c gcrypt gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0
+WANTLIB += gpg-error gthread-2.0 hogweed m modman nettle pcre
+WANTLIB += proxy pthread stdc++ tasn1 z
 
 MODULES=	devel/gettext \
 		x11/gnome
@@ -33,7 +35,8 @@ RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=	net/libproxy>=0.4.6 \
 		security/gnutls \
-		devel/glib2
+		devel/glib2 \
+		security/libgcrypt
 
 LIBTOOL_FLAGS=	--tag=disable-static
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/15 16:10:38 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -15,6 +15,8 @@ PKGNAME-mysql =		rsyslog-mysql-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 CATEGORIES =		sysutils
 
+REVISION-main =		0
+
 HOMEPAGE =		http://www.rsyslog.com/
 
 # GPLv3+
@@ -23,7 +25,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB-main +=		c gcrypt gpg-error gnutls iconv intl pthread
+WANTLIB-main +=		c gmp hogweed nettle gnutls iconv intl pthread
 WANTLIB-main +=		relp tasn1 z
 WANTLIB-mysql +=	crypto m mysqlclient ssl z
 WANTLIB-pgsql +=	crypto com_err pq ssl

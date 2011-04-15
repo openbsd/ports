@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/04/07 08:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2011/04/15 16:10:38 ajacoutot Exp $
 
 COMMENT-main=		VNC viewer widget for GTK
 COMMENT-plugin=		gtk-vnc browser plugin
@@ -9,7 +9,8 @@ GNOME_VERSION=		0.4.3
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugin=		gtk-vnc-plugin-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-plugin=	0
 
 SHARED_LIBS +=	gtk-vnc-1.0          2.0 # .0.1
 SHARED_LIBS +=  gvnc-1.0             0.0 # 0.1
@@ -34,7 +35,7 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		glib-2.0 gmodule-2.0 gobject-2.0 gpg-error gthread-2.0 \
 		gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png tasn1 z pthread-stubs xcb xcb-render \
-		GL Xxf86vm drm xcb-shm
+		GL Xxf86vm drm xcb-shm gmp hogweed nettle
 
 MULTI_PACKAGES=		-main -plugin
 
@@ -43,7 +44,8 @@ BUILD_DEPENDS=		${RUN_DEPENDS-main} \
 			devel/xulrunner/1.9,-devel>=1.9.1
 
 LIB_DEPENDS=		security/gnutls \
-			security/cyrus-sasl2
+			security/cyrus-sasl2 \
+			security/libgcrypt
 
 RUN_DEPENDS-main=	x11/py-gtk2
 WANTLIB-main += ${WANTLIB} c ffi pthread gnutls>=13 sasl2>=2
