@@ -1,0 +1,41 @@
+$OpenBSD: patch-WebKit_gtk_webkit_webkitwebview_cpp,v 1.1 2011/04/15 23:03:03 dhill Exp $
+Provide a knob to enable/disable DNS prefetching.
+DNS prefetching is enabled by default.
+http://trac.webkit.org/changeset/80856
+--- WebKit/gtk/webkit/webkitwebview.cpp.orig	Fri Sep 10 08:20:33 2010
++++ WebKit/gtk/webkit/webkitwebview.cpp	Wed Mar 16 09:38:45 2011
+@@ -2662,7 +2662,8 @@ static void webkit_web_view_update_settings(WebKitWebV
+         javaScriptCanAccessClipboard, enableOfflineWebAppCache,
+         enableUniversalAccessFromFileURI, enableFileAccessFromFileURI,
+         enableDOMPaste, tabKeyCyclesThroughElements,
+-        enableSiteSpecificQuirks, usePageCache, enableJavaApplet;
++        enableSiteSpecificQuirks, usePageCache, enableJavaApplet,
++	enableDNSPrefetching;
+ 
+     WebKitEditingBehavior editingBehavior;
+ 
+@@ -2699,6 +2700,7 @@ static void webkit_web_view_update_settings(WebKitWebV
+                  "enable-site-specific-quirks", &enableSiteSpecificQuirks,
+                  "enable-page-cache", &usePageCache,
+                  "enable-java-applet", &enableJavaApplet,
++		 "enable-dns-prefetching", &enableDNSPrefetching,
+                  NULL);
+ 
+     settings->setDefaultTextEncodingName(defaultEncoding);
+@@ -2734,6 +2736,7 @@ static void webkit_web_view_update_settings(WebKitWebV
+     settings->setNeedsSiteSpecificQuirks(enableSiteSpecificQuirks);
+     settings->setUsesPageCache(usePageCache);
+     settings->setJavaEnabled(enableJavaApplet);
++    settings->setDNSPrefetchingEnabled(enableDNSPrefetching);
+ 
+     Page* page = core(webView);
+     if (page)
+@@ -2845,6 +2848,8 @@ static void webkit_web_view_settings_notify(WebKitWebS
+         settings->setUsesPageCache(g_value_get_boolean(&value));
+     else if (name == g_intern_string("enable-java-applet"))
+         settings->setJavaEnabled(g_value_get_boolean(&value));
++    else if (name == g_intern_string("enable-dns-prefetching"))
++	settings->setDNSPrefetchingEnabled(g_value_get_boolean(&value));
+     else if (!g_object_class_find_property(G_OBJECT_GET_CLASS(webSettings), name))
+         g_warning("Unexpected setting '%s'", name);
+     g_value_unset(&value);

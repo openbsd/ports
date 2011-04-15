@@ -1,0 +1,14 @@
+$OpenBSD: patch-WebCore_platform_graphics_cairo_GraphicsContextCairo_cpp,v 1.1 2011/04/15 23:03:03 dhill Exp $
+Fix crash with too big box shadow areas
+http://gitorious.org/webkitgtk/stable/commit/04cd0279330ac8913b1166902d255a12a2f33481
+--- WebCore/platform/graphics/cairo/GraphicsContextCairo.cpp.orig	Fri Sep 10 08:20:33 2010
++++ WebCore/platform/graphics/cairo/GraphicsContextCairo.cpp	Wed Mar 16 15:35:14 2011
+@@ -184,6 +184,8 @@ static inline void drawPathShadow(GraphicsContext* con
+ 
+     // Create suitably-sized ImageBuffer to hold the shadow.
+     OwnPtr<ImageBuffer> shadowBuffer = ImageBuffer::create(shadowBufferSize);
++    if (!shadowBuffer)
++	return;
+ 
+     // Draw shadow into a new ImageBuffer.
+     cairo_t* shadowContext = shadowBuffer->context()->platformContext();

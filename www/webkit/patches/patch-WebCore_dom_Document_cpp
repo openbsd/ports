@@ -1,0 +1,19 @@
+$OpenBSD: patch-WebCore_dom_Document_cpp,v 1.1 2011/04/15 23:03:03 dhill Exp $
+Provide a knob to enable/disable DNS prefetching.
+DNS prefetching is enabled by default.
+http://trac.webkit.org/changeset/80856
+--- WebCore/dom/Document.cpp.orig	Fri Sep 10 08:20:33 2010
++++ WebCore/dom/Document.cpp	Wed Mar 16 09:48:51 2011
+@@ -4639,8 +4639,11 @@ HTMLCanvasElement* Document::getCSSCanvasElement(const
+ 
+ void Document::initDNSPrefetch()
+ {
++    Settings* settings = this->settings();
++
+     m_haveExplicitlyDisabledDNSPrefetch = false;
+-    m_isDNSPrefetchEnabled = securityOrigin()->protocol() == "http";
++    m_isDNSPrefetchEnabled = settings && settings->dnsPrefetchingEnabled() &&
++			     securityOrigin()->protocol() == "http";
+ 
+     // Inherit DNS prefetch opt-out from parent frame    
+     if (Document* parent = parentDocument()) {

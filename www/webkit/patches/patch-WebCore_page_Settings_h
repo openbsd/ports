@@ -1,0 +1,24 @@
+$OpenBSD: patch-WebCore_page_Settings_h,v 1.1 2011/04/15 23:03:03 dhill Exp $
+Provide a knob to enable/disable DNS prefetching.
+DNS prefetching is enabled by default.
+http://trac.webkit.org/changeset/80856
+--- WebCore/page/Settings.h.orig	Fri Sep 10 08:20:33 2010
++++ WebCore/page/Settings.h	Wed Mar 16 09:50:44 2011
+@@ -299,6 +299,9 @@ namespace WebCore {
+         
+         void setTiledBackingStoreEnabled(bool);
+         bool tiledBackingStoreEnabled() const { return m_tiledBackingStoreEnabled; }
++	
++	void setDNSPrefetchingEnabled(bool);
++	bool dnsPrefetchingEnabled() const { return m_dnsPrefetchingEnabled; }
+ 
+     private:
+         Page* m_page;
+@@ -376,6 +379,7 @@ namespace WebCore {
+         bool m_webGLEnabled : 1;
+         bool m_loadDeferringEnabled : 1;
+         bool m_tiledBackingStoreEnabled : 1;
++	bool m_dnsPrefetchingEnabled : 1;
+ 
+ #if USE(SAFARI_THEME)
+         static bool gShouldPaintNativeControls;
