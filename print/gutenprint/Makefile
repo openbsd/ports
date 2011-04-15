@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/20 09:48:39 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2011/04/15 18:40:47 ajacoutot Exp $
 
 COMMENT-main=		high quality print drivers
 COMMENT-foomatic=	Foomatic data for gutenprint drivers
@@ -9,6 +9,8 @@ V=			5.2.6
 DISTNAME=		gutenprint-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-foomatic=	foomatic-db-${DISTNAME}
+
+REVISION-foomatic=	0
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		MAJOR_V
@@ -44,7 +46,8 @@ LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 
 WANTLIB-foomatic += # empty
 LIB_DEPENDS-foomatic=	# empty
-RUN_DEPENDS-foomatic=	print/foomatic-db \
+RUN_DEPENDS-foomatic=	print/foomatic-db-engine \
+			print/foomatic-filters \
 			${BUILD_PKGPATH},-main
 PKG_ARCH-foomatic=	*
 

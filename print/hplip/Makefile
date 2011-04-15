@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/03/02 06:59:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2011/04/15 18:40:47 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,6 +16,8 @@ PKGNAME-hpijs=	hpijs-${V}
 PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
+
+REVISION-hpijs=	0
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
 SHARED_LIBS +=  hpip		2.0 # .0.1
@@ -63,6 +65,7 @@ WANTLIB-hpijs += c jpeg netsnmp stdc++ usb dbus-1 hpmud
 LIB_DEPENDS-hpijs= print/hplip,-libs \
 		graphics/jpeg \
 		x11/dbus
+RUN_DEPENDS-hpijs= print/foomatic-filters
 
 WANTLIB-hpcups += ${cWANTLIB} png tiff z asn1 gssapi krb5 ssl
 WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/04/02 16:56:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/04/15 18:40:47 ajacoutot Exp $
 
 COMMENT-main=	driver for ZjStream wire protocol compatible printers
 COMMENT-cups=	Konica-Minolta foo2zjs command filter for CUPS
@@ -9,7 +9,7 @@ DISTNAME=	foo2zjs-${VERSION}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-cups=	foo2zjs-cup-${VERSION}
 
-REVISION-main=	0
+REVISION-main=	1
 
 CATEGORIES=	print
 
@@ -35,7 +35,8 @@ WRKDIST=	${WRKDIR}/foo2zjs
 BUILD_DEPENDS=	print/ghostscript/gnu # ps2pdf
 
 WANTLIB-main += ${WANTLIB} m
-RUN_DEPENDS-main=print/foomatic-filters
+RUN_DEPENDS-main=print/foomatic-filters \
+		print/foomatic-db-engine
 
 WANTLIB-cups += ${WANTLIB} cups pthread
 RUN_DEPENDS-cups=${BASE_PKGPATH},-main
