@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/15 21:07:33 jasper Exp $
+${P5SITE}/PDF/API2/Simple.pm
+@man man/man3p/PDF::API2::Simple.3p
+share/examples/p5-PDF-API2-Simple/
+share/examples/p5-PDF-API2-Simple/01_barebones.pl
+share/examples/p5-PDF-API2-Simple/02_links.pl
+share/examples/p5-PDF-API2-Simple/03_autoflow.pl
+share/examples/p5-PDF-API2-Simple/04_headers.pl
+share/examples/p5-PDF-API2-Simple/05_a4.pl
+share/examples/p5-PDF-API2-Simple/06_alignment.pl
+share/examples/p5-PDF-API2-Simple/07_as_string.pl
