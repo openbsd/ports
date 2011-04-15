@@ -1,0 +1,22 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2011/04/15 16:08:01 ajacoutot Exp $
+--- Makefile.in.orig	Sun Jul 25 21:30:13 2010
++++ Makefile.in	Wed Apr 13 10:41:47 2011
+@@ -272,18 +272,10 @@ install-static: $(LIBTARGETS)
+ install-shared-nettle: $(LIBNETTLE_FORLINK)
+ 	$(MKDIR_P) $(DESTDIR)$(libdir)
+ 	$(INSTALL_PROGRAM) $(LIBNETTLE_FORLINK) $(DESTDIR)$(libdir)/$(LIBNETTLE_FILE)
+-	[ -z "$(LIBNETTLE_SONAME)" ] \
+-                || (cd $(DESTDIR)$(libdir) \
+-		&& ln -sf $(LIBNETTLE_FILE) $(LIBNETTLE_SONAME) \
+-		&& ln -sf $(LIBNETTLE_FILE) $(LIBNETTLE_FORLINK))
+ 
+ install-shared-hogweed: $(LIBHOGWEED_FORLINK)
+ 	$(MKDIR_P) $(DESTDIR)$(libdir)
+ 	$(INSTALL_PROGRAM) $(LIBHOGWEED_FORLINK) $(DESTDIR)$(libdir)/$(LIBHOGWEED_FILE)
+-	[ -z "$(LIBHOGWEED_SONAME)" ] \
+-                || (cd $(DESTDIR)$(libdir) \
+-		&& ln -sf $(LIBHOGWEED_FILE) $(LIBHOGWEED_SONAME) \
+-		&& ln -sf $(LIBHOGWEED_FILE) $(LIBHOGWEED_FORLINK))
+ 
+ # I'd like to use makes VPATH search to locate the files to be
+ # installed. But it seems most make programs don't set $<, $^, $? and
