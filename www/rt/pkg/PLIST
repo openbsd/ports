@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/05/29 13:25:06 robert Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/04/15 11:54:05 robert Exp $
 bin/fastcgi_server
 bin/rt
 bin/rt-crontool
@@ -106,8 +106,11 @@ libdata/perl5/site_perl/RT/I18N/cs.pm
 libdata/perl5/site_perl/RT/I18N/cs.po
 libdata/perl5/site_perl/RT/I18N/da.po
 libdata/perl5/site_perl/RT/I18N/de.po
+libdata/perl5/site_perl/RT/I18N/el.po
 libdata/perl5/site_perl/RT/I18N/en.po
+libdata/perl5/site_perl/RT/I18N/en_GB.po
 libdata/perl5/site_perl/RT/I18N/es.po
+libdata/perl5/site_perl/RT/I18N/et.po
 libdata/perl5/site_perl/RT/I18N/fi.po
 libdata/perl5/site_perl/RT/I18N/fr.po
 libdata/perl5/site_perl/RT/I18N/he.po
@@ -115,8 +118,12 @@ libdata/perl5/site_perl/RT/I18N/hr.po
 libdata/perl5/site_perl/RT/I18N/hu.po
 libdata/perl5/site_perl/RT/I18N/i_default.pm
 libdata/perl5/site_perl/RT/I18N/id.po
+libdata/perl5/site_perl/RT/I18N/is.po
 libdata/perl5/site_perl/RT/I18N/it.po
 libdata/perl5/site_perl/RT/I18N/ja.po
+libdata/perl5/site_perl/RT/I18N/lt.po
+libdata/perl5/site_perl/RT/I18N/lv.po
+libdata/perl5/site_perl/RT/I18N/mk.po
 libdata/perl5/site_perl/RT/I18N/nb.po
 libdata/perl5/site_perl/RT/I18N/nl.po
 libdata/perl5/site_perl/RT/I18N/nn.po
@@ -127,6 +134,7 @@ libdata/perl5/site_perl/RT/I18N/pt_PT.po
 libdata/perl5/site_perl/RT/I18N/rt.pot
 libdata/perl5/site_perl/RT/I18N/ru.pm
 libdata/perl5/site_perl/RT/I18N/ru.po
+libdata/perl5/site_perl/RT/I18N/sl.po
 libdata/perl5/site_perl/RT/I18N/sv.po
 libdata/perl5/site_perl/RT/I18N/tr.po
 libdata/perl5/site_perl/RT/I18N/zh_CN.po
@@ -275,6 +283,7 @@ libdata/perl5/site_perl/RT/User_Overlay.pm
 libdata/perl5/site_perl/RT/Users.pm
 libdata/perl5/site_perl/RT/Users_Overlay.pm
 libdata/perl5/site_perl/RT/Util.pm
+sbin/rt-attributes-viewer
 sbin/rt-clean-sessions
 sbin/rt-dump-database
 sbin/rt-email-dashboards
@@ -443,10 +452,17 @@ share/examples/rt3/upgrade/3.8.6/
 share/examples/rt3/upgrade/3.8.6/content
 share/examples/rt3/upgrade/3.8.8/
 share/examples/rt3/upgrade/3.8.8/content
+share/examples/rt3/upgrade/3.8.9/
+share/examples/rt3/upgrade/3.8.9/content
+share/examples/rt3/upgrade/generate-rtaddressregexp
+share/examples/rt3/upgrade/generate-rtaddressregexp.in
 share/examples/rt3/upgrade/shrink_cgm_table.pl
+share/examples/rt3/upgrade/shrink_transactions_table.pl
 share/examples/rt3/upgrade/split-out-cf-categories
 share/examples/rt3/upgrade/split-out-cf-categories.in
 share/examples/rt3/upgrade/upgrade-mysql-schema.pl
+share/examples/rt3/upgrade/vulnerable-passwords
+share/examples/rt3/upgrade/vulnerable-passwords.in
 share/rt3/
 share/rt3/html/
 share/rt3/html/Admin/
@@ -750,6 +766,7 @@ share/rt3/html/Install/Sendmail.html
 share/rt3/html/Install/autohandler
 share/rt3/html/Install/index.html
 share/rt3/html/NoAuth/
+share/rt3/html/NoAuth/Login.html
 share/rt3/html/NoAuth/Logout.html
 share/rt3/html/NoAuth/Reminder.html
 share/rt3/html/NoAuth/RichText/
@@ -1141,6 +1158,7 @@ share/rt3/html/NoAuth/RichText/FCKeditor/fckpackager.xml
 share/rt3/html/NoAuth/RichText/FCKeditor/fckstyles.xml
 share/rt3/html/NoAuth/RichText/FCKeditor/fcktemplates.xml
 share/rt3/html/NoAuth/RichText/FCKeditor/license.txt
+share/rt3/html/NoAuth/RichText/autohandler
 share/rt3/html/NoAuth/RichText/dhandler
 share/rt3/html/NoAuth/css/
 share/rt3/html/NoAuth/css/3.4-compat/
