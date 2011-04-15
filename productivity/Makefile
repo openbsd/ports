@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/04/12 19:34:47 landry Exp $
+# $OpenBSD: Makefile,v 1.39 2011/04/15 15:47:47 sthen Exp $
 
      SUBDIR =
      SUBDIR += bruce
@@ -17,6 +17,7 @@
      SUBDIR += ledger
      SUBDIR += osmo
      SUBDIR += qhacc
+     SUBDIR += radicale
      SUBDIR += rednotebook
      SUBDIR += rubrica2
      SUBDIR += siag
