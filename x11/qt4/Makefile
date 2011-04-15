@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2011/04/03 13:35:30 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.84 2011/04/15 16:13:23 ajacoutot Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -22,6 +22,8 @@ PKGNAME-main =		qt4-${VERSION}
 PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
+
+REVISION-tds =		0
 
 SHARED_LIBS =	Qt3Support 8.0 \
 		QtCore 9.0 \

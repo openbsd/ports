@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/01/04 17:12:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2011/04/15 16:13:23 ajacoutot Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -12,6 +12,9 @@ PKGNAME-server =	zabbix-server-${VERSION}
 FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
+
+REVISION-main =		0
+REVISION-server =	0
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -36,7 +39,7 @@ FLAVORS =		mysql pgsql sqlite3
 
 SUBST_VARS +=		PREFIX-web ZABBIX_WEB MAJV
 
-WANTLIB =		c kvm m execinfo lber ldap
+WANTLIB =		c kvm m execinfo lber ldap pthread
 LIB_DEPENDS =		databases/openldap \
 			devel/libexecinfo
 

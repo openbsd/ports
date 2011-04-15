@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2009/04/22 15:03:52 jasper Exp $
---- configure.orig	Wed Apr 22 15:48:20 2009
-+++ configure	Wed Apr 22 15:48:52 2009
+$OpenBSD: patch-configure,v 1.2 2011/04/15 16:13:23 ajacoutot Exp $
+--- configure.orig	Tue Jan  4 14:58:12 2011
++++ configure	Thu Apr 14 18:44:55 2011
 @@ -580,6 +580,9 @@ ac_unique_file="src/zabbix_server/server.c"
  # Factoring default headers for most tests.
  ac_includes_default="\
@@ -11,3 +11,56 @@ $OpenBSD: patch-configure,v 1.1.1.1 2009/04/22 15:03:52 jasper Exp $
  #ifdef HAVE_SYS_TYPES_H
  # include <sys/types.h>
  #endif
+@@ -11034,7 +11037,7 @@ echo "${ECHO_T}yes" >&6; }
+ 
+ 			 JABBER_INCDIR=$IKSEMEL_CPPFLAGS
+ 			 JABBER_LIBDIR=$IKSEMEL_LIBS
+-			 JABBER_LIBS="-liksemel"
++			 JABBER_LIBS="-liksemel -pthread"
+ 
+ fi
+        else
+@@ -11044,7 +11047,7 @@ echo $ECHO_N "checking for iksemel support... $ECHO_C"
+                if test -f $_libiksemel_with/include/iksemel.h; then
+                        JABBER_INCDIR=-I$_libiksemel_with/include
+                        JABBER_LIBDIR=-L$_libiksemel_with/lib
+-                       JABBER_LIBS="-liksemel"
++                       JABBER_LIBS="-liksemel -pthread"
+ 		       { echo "$as_me:$LINENO: result: yes" >&5
+ echo "${ECHO_T}yes" >&6; }
+                else
+@@ -13440,7 +13443,7 @@ echo "${ECHO_T}no" >&6; }
+        if test "x$found_ldap" != "xno" ; then
+ 
+                if test "x$enable_static" = "xyes"; then
+-                       LDAP_LIBS=" -lgnutls -lpthread -lsasl2 $LDAP_LIBS"
++                       LDAP_LIBS=" -lgnutls -pthread -lsasl2 $LDAP_LIBS"
+                fi
+ 
+                LDAP_CPPFLAGS=-I$LDAP_INCDIR
+@@ -13533,13 +13536,13 @@ echo "$as_me: error: Not found GnuTLS library" >&2;}
+ fi
+ 
+ 
+-{ echo "$as_me:$LINENO: checking for main in -lpthread" >&5
+-echo $ECHO_N "checking for main in -lpthread... $ECHO_C" >&6; }
++{ echo "$as_me:$LINENO: checking for main in -pthread" >&5
++echo $ECHO_N "checking for main in -pthread... $ECHO_C" >&6; }
+ if test "${ac_cv_lib_pthread_main+set}" = set; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lpthread  $LIBS"
++LIBS="-pthread  $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF
+@@ -13593,7 +13596,7 @@ if test $ac_cv_lib_pthread_main = yes; then
+ #define HAVE_LIBPTHREAD 1
+ _ACEOF
+ 
+-  LIBS="-lpthread $LIBS"
++  LIBS="-pthread $LIBS"
+ 
+ else
+   { { echo "$as_me:$LINENO: error: Not found Pthread library" >&5

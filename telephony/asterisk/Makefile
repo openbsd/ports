@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.108 2011/04/09 19:16:51 ian Exp $
+# $OpenBSD: Makefile,v 1.109 2011/04/15 16:13:24 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -7,7 +7,7 @@ VER=			1.8.3.2
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
 
-REVISION-main=		1
+REVISION-main=		2
 
 SOUNDS=			CORE MOH EXTRA
 SOUNDS_CORE=		asterisk-core-sounds-en-gsm-1.4.20
@@ -73,7 +73,8 @@ CPPFLAGS+=		-I${X11BASE}/include -I${LOCALBASE}/include
 LDFLAGS+= 		-L${X11BASE}/lib -L${LOCALBASE}/lib
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
 			CFLAGS="${CFLAGS}" \
-			LDFLAGS="${LDFLAGS}"
+			LDFLAGS="${LDFLAGS}" \
+			LIBS="-pthread"
 MAKE_FLAGS+=		ASTCFLAGS="${CFLAGS}" \
 			ASTLDFLAGS="${LDFLAGS}" \
 			NOISY_BUILD="Yes" \

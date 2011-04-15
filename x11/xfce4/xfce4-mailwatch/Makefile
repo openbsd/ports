@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/01/18 21:05:51 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2011/04/15 16:13:23 ajacoutot Exp $
 
 COMMENT=	Xfce4 mailboxes monitor panel plugin
 
 XFCE_VERSION=	1.1.0
 XFCE_PLUGIN=	mailwatch
-REVISION=	6
+REVISION=	7
 
 HOMEPAGE=	http://spuriousinterrupt.org/projects/mailwatch
 
@@ -18,7 +18,8 @@ MODULES=	x11/xfce4
 MASTER_SITES=	http://spuriousinterrupt.org/files/mailwatch/
 
 LIB_DEPENDS+=	security/gnutls
-LIB_DEPENDS+=	x11/xfce4/libxfcegui4
+LIB_DEPENDS+=	x11/xfce4/libxfcegui4 \
+		security/libgcrypt
 
 WANTLIB=	ICE SM X11 Xdmcp Xrender Xau Xdamage fontconfig freetype \
 		Xcursor Xext Xfixes Xi Xcomposite Xinerama Xrandr expat \
@@ -28,6 +29,6 @@ WANTLIB=	ICE SM X11 Xdmcp Xrender Xau Xdamage fontconfig freetype \
 		gthread-2.0 startup-notification-1 xfce4util xfcegui4 \
 		gcrypt gpg-error gio-2.0 tasn1 pthread-stubs xcb \
 		execinfo xcb-atom xcb-aux xcb-event gnutls xcb-render \
-		GL Xxf86vm drm xcb-shm
+		GL Xxf86vm drm xcb-shm gmp hogweed nettle
 
 .include <bsd.port.mk>

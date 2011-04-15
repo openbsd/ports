@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/15 16:13:24 ajacoutot Exp $
 
 COMMENT=	X.509 Certification Authority management tool
 
 DISTNAME=	gnomint-1.2.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	security x11
 
@@ -17,13 +17,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext tasn1
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
-WANTLIB += dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 sqlite3
-WANTLIB += pcre pixman-1 png pthread pthread-stubs readline termcap
-WANTLIB += xcb xcb-render xcb-render-util z gcrypt gnutls gpg-error
+WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
+WANTLIB += c cairo drm expat fontconfig freetype gcrypt gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gmp gnutls
+WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0 hogweed
+WANTLIB += m nettle pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png pthread pthread-stubs readline sqlite3
+WANTLIB += tasn1 termcap xcb xcb-render xcb-shm z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gnomint/}
 
@@ -37,7 +38,8 @@ RUN_DEPENDS=	misc/shared-mime-info \
 		devel/desktop-file-utils
 
 LIB_DEPENDS=	security/gnutls \
-		databases/sqlite3
+		databases/sqlite3 \
+		security/libgcrypt
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2011/04/15 16:13:24 ajacoutot Exp $
+--- src/Makefile.in.orig	Wed Apr 13 13:56:56 2011
++++ src/Makefile.in	Wed Apr 13 13:57:27 2011
+@@ -98,7 +98,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=compile $(CC) $
+ 	$(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(AM_LDFLAGS) $(LDFLAGS) $(LIBGCRYPT_LIBS) -o $@
+ SOURCES = $(gnomint_SOURCES) $(gnomint_cli_SOURCES)
+ DIST_SOURCES = $(gnomint_SOURCES) $(gnomint_cli_SOURCES)
+ ETAGS = etags

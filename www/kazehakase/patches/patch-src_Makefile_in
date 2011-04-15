@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2011/04/15 16:13:23 ajacoutot Exp $
+--- src/Makefile.in.orig	Wed Apr 13 15:54:37 2011
++++ src/Makefile.in	Wed Apr 13 15:55:01 2011
+@@ -568,7 +568,7 @@ libkazehakase_la_LIBADD = \
+ 	$(GTK_LIBS) \
+ 	$(SM_LIBS) \
+ 	$(LIBGNUTLS_LIBS) \
+-	-lz		\
++	-lgcrypt -lz		\
+ 	$(libraries)
+ 
+ libkazehakase_la_LDFLAGS = \

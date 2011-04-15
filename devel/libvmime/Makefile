@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/04/15 16:13:23 ajacoutot Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
 DISTNAME=	libvmime-0.9.0
-REVISION =	1
+REVISION =	2
 CATEGORIES=	devel mail
 
 SHARED_LIBS+=	vmime	1.0	# .0.0
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vmime/}
 
-WANTLIB=	gcrypt gpg-error tasn1 z gnutls>=14
+WANTLIB += gmp gnutls hogweed m nettle stdc++ tasn1 z
 
 MODULES=	devel/gettext
 
@@ -46,9 +46,5 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 # SASL support needs GNU SASL
 CONFIGURE_ARGS+= --disable-sasl
-
-# XXX check on update whether this is still necessary
-post-extract:
-	${INSTALL} -m 555 ${FILESDIR}/libgnutls-config ${WRKDIR}/bin
 
 .include <bsd.port.mk>
