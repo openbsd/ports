@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.4 2010/08/22 06:57:00 ajacoutot Exp $
---- configure.orig	Mon Aug  9 12:07:57 2010
-+++ configure	Sun Aug 22 07:33:40 2010
-@@ -4024,15 +4024,15 @@ CFLAGS="$save_CFLAGS"
- LIBS="$save_LIBS"
+$OpenBSD: patch-configure,v 1.5 2011/04/15 18:50:06 ajacoutot Exp $
+--- configure.orig	Fri Feb 18 13:30:24 2011
++++ configure	Fri Apr 15 20:46:47 2011
+@@ -4038,15 +4038,15 @@ LIBS="$save_LIBS"
  
+ # Checks for programs/directories which are used by Foomtic
  
 -SPOOLSEARCHPATH=/var/spool:/usr/spool/:/usr/local/spool:/usr/local/var/spool:/var/local/spool:/var/local
 -LOGSEARCHPATH=/var/log:/usr/log:/usr/local/log:/usr/local/var/log:/var/local/log:/var/local
@@ -26,7 +26,7 @@ $OpenBSD: patch-configure,v 1.4 2010/08/22 06:57:00 ajacoutot Exp $
  
  # There is a bug in some versions of autoconf that causes
  # bad expansion of paths in the AC_PATH_* macros.  This is very annoying
-@@ -4497,8 +4497,7 @@ else
+@@ -4516,8 +4516,7 @@ else
    PREFIX=$prefix
  fi
  echo -n Checking where Perl will find its libraries...
@@ -36,36 +36,38 @@ $OpenBSD: patch-configure,v 1.4 2010/08/22 06:57:00 ajacoutot Exp $
  if test -n "$PERLPREFIX"; then
    echo " $PERLPREFIX"
  else
-@@ -4512,7 +4511,7 @@ fi
- PERL_INSTALLDIRS=site
+@@ -4535,7 +4534,7 @@ fi
  
  
+ # Check for bourne shell
 -for ac_prog in bash sh
 +for ac_prog in sh
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -5968,7 +5967,7 @@ fi
+@@ -5993,8 +5992,8 @@ fi
  done
  test -n "$CUPS_LPINFO" || CUPS_LPINFO="/usr/sbin/lpinfo"
  
 -
+ # Paths for PDQ
 +if [ x"$with_pdq" = x"yes" ]; then
  for ac_dir in pdq
  do
  # Extract the first word of "$ac_dir", so it can be a program name with args.
-@@ -6103,8 +6102,9 @@ fi
+@@ -6129,9 +6128,11 @@ fi
    test -n "$PDQ_PRINT" && break
  done
  test -n "$PDQ_PRINT" || PDQ_PRINT="/usr/bin/pdq"
 +fi  # with_pdq = yes
  
--
+ 
+ # Paths for PPR
 +if [ x"$with_ppr" = x"yes" ]; then
  for ac_prog in ppr/bin/pprd
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
-@@ -6417,7 +6417,7 @@ fi
+@@ -6444,7 +6445,7 @@ fi
    test -n "$PPR_PPOP" && break
  done
  test -n "$PPR_PPOP" || PPR_PPOP="/usr/bin/ppop"
@@ -73,4 +75,4 @@ $OpenBSD: patch-configure,v 1.4 2010/08/22 06:57:00 ajacoutot Exp $
 +fi  # with_ppr = yes
  
  
- for ac_prog in nc netcat
+ # Other paths
