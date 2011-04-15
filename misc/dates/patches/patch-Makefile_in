@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2011/04/15 19:29:54 naddy Exp $
+--- Makefile.in.orig	Fri Apr 15 01:28:40 2011
++++ Makefile.in	Fri Apr 15 01:28:48 2011
+@@ -650,7 +650,7 @@ uninstall-am:
+ 
+ 
+ snapshot:
+-        $(MAKE) dist distdir=$(PACKAGE)-snap`date +"%Y%m%d"`
++	$(MAKE) dist distdir=$(PACKAGE)-snap`date +"%Y%m%d"`
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

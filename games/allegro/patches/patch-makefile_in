@@ -1,7 +1,45 @@
-$OpenBSD: patch-makefile_in,v 1.2 2010/04/26 02:56:30 jakemsr Exp $
---- makefile.in.orig	Wed Sep 19 06:19:25 2007
-+++ makefile.in	Tue Jan 12 02:03:00 2010
-@@ -472,9 +472,9 @@ install-lib: lib modules
+$OpenBSD: patch-makefile_in,v 1.3 2011/04/15 19:29:54 naddy Exp $
+--- makefile.in.orig	Wed Sep 19 15:19:25 2007
++++ makefile.in	Fri Apr 15 01:18:25 2011
+@@ -406,8 +406,6 @@ examples: $(EXAMPLE_FILES)
+ 
+ # -------- rules for deleting the generated files --------
+ 
+-clean:
+-
+    define RM_OBJ_CLEAN_FILES
+       $(foreach file, $(OBJ_CLEAN_FILES), rm -f $(file)
+       )
+@@ -418,25 +416,24 @@ clean:
+       )
+    endef
+ 
++clean:
+ 	$(RM_OBJ_CLEAN_FILES)
+ 	$(RM_OTHER_CLEAN_FILES)
+ 
+-distclean: clean
+-
+    define RM_DISTCLEAN_FILES
+       $(foreach file, $(DISTCLEAN_FILES) $(ALLEGRO_LIB_X_EXES), rm -f $(file)
+       )
+    endef
+ 
++distclean: clean
+ 	$(RM_DISTCLEAN_FILES)
+ 
+-veryclean: distclean
+-
+    define RM_VERYCLEAN_FILES
+       $(foreach file, $(VERYCLEAN_FILES), rm -f $(file)
+       )
+    endef
+ 
++veryclean: distclean
+ 	$(RM_VERYCLEAN_FILES)
+ 	rm -f makefile
+ 
+@@ -472,9 +469,9 @@ install-lib: lib modules
  	  fi; \
  	done
  	@for l in alleg alld allp; do \
@@ -14,7 +52,7 @@ $OpenBSD: patch-makefile_in,v 1.2 2010/04/26 02:56:30 jakemsr Exp $
  	    $(INSTALL_DATA) $(LIBDIR)/lib$${l}_unsharable.a $(DESTDIR)$(libdir)/; \
  	  fi; \
  	done
-@@ -489,21 +489,6 @@ install-lib: lib modules
+@@ -489,21 +486,6 @@ install-lib: lib modules
  	$(mkinstalldirs) $(DESTDIR)$(bindir)
  	@echo Installing allegro-config to $(DESTDIR)$(bindir)
  	@$(INSTALL_PROGRAM) allegro-config $(DESTDIR)$(bindir)
@@ -36,7 +74,7 @@ $OpenBSD: patch-makefile_in,v 1.2 2010/04/26 02:56:30 jakemsr Exp $
  	$(mkinstalldirs) $(DESTDIR)$(prefix)/share/aclocal
  	@echo Installing allegro.m4 to $(DESTDIR)$(prefix)/share/aclocal
  	@$(INSTALL_DATA) misc/allegro.m4 $(DESTDIR)$(prefix)/share/aclocal
-@@ -687,6 +672,7 @@ depend:
+@@ -687,6 +669,7 @@ depend:
  	$(SHELL) -c 'cd $(srcdir) && misc/depmod.sh esddigi "\`esd-config --libs\`" $(ALLEGRO_MODULE_ESD_FILES)' >>makefile.dep
  	$(SHELL) -c 'cd $(srcdir) && misc/depmod.sh artsdigi "\`artsc-config --libs\`" $(ALLEGRO_MODULE_ARTS_FILES)' >>makefile.dep
  	$(SHELL) -c 'cd $(srcdir) && misc/depmod.sh sgialdigi -laudio $(ALLEGRO_MODULE_SGIAL_FILES)' >>makefile.dep
