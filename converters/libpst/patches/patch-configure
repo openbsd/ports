@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2011/04/15 09:56:22 ajacoutot Exp $
+--- configure.orig	Fri Apr 15 11:23:12 2011
++++ configure	Fri Apr 15 11:23:38 2011
+@@ -27789,7 +27789,7 @@ if eval "test \"\${$as_ac_Lib+set}\" = set"; then
+   echo $ECHO_N "(cached) $ECHO_C" >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-l$ax_lib  $LIBS"
++LIBS="-l$ax_lib -L!!LOCALBASE!!/lib -lpython!!MODPY_VERSION!! -lm -lutil $LIBS"
+ cat >conftest.$ac_ext <<_ACEOF
+ /* confdefs.h.  */
+ _ACEOF

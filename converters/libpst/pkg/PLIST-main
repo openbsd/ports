@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2009/09/16 18:05:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/04/15 09:56:22 ajacoutot Exp $
 @pkgpath converters/libpst
 @bin bin/lspst
 @bin bin/pst2dii
@@ -22,6 +22,11 @@ lib/pkgconfig/libpst.pc
 @man man/man1/readpst.1
 @man man/man5/outlook.pst.5
 share/doc/libpst/
+share/doc/libpst/AUTHORS
+share/doc/libpst/COPYING
+share/doc/libpst/ChangeLog
+share/doc/libpst/NEWS
+share/doc/libpst/README
 share/doc/libpst/devel/
 share/doc/libpst/devel/annotated.html
 share/doc/libpst/devel/classes.html
