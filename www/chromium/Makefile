@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2011/03/27 15:13:01 robert Exp $
+# $OpenBSD: Makefile,v 1.38 2011/04/15 10:10:27 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			10.0.648.204
+V=			10.0.648.205
 DISTNAME=		chromium-${V}
 
 CATEGORIES=		www
@@ -38,7 +38,6 @@ MODULES=	devel/gettext \
 		lang/python
 
 MODPY_RUNDEP=	No
-MODPY_VERSION=	2.5
 
 RUN_DEPENDS=	sysutils/gamin,-server
 BUILD_DEPENDS=	archivers/bzip2 \
