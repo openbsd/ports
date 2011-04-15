@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2009/12/10 10:58:25 ajacoutot Exp $
---- configure.orig	Mon Dec  7 09:22:31 2009
-+++ configure	Tue Dec  8 11:51:40 2009
-@@ -1791,9 +1791,9 @@ echo "${ECHO_T}no" >&6; }
+$OpenBSD: patch-configure,v 1.2 2011/04/15 19:16:23 ajacoutot Exp $
+--- configure.orig	Fri Apr 15 09:41:03 2011
++++ configure	Fri Apr 15 20:57:11 2011
+@@ -1794,9 +1794,9 @@ echo "${ECHO_T}no" >&6; }
  fi
  
  
@@ -14,7 +14,7 @@ $OpenBSD: patch-configure,v 1.1 2009/12/10 10:58:25 ajacoutot Exp $
  BSB=$BINSEARCHPATH:$SBINSEARCHPATH
  for ac_dir in cups/model
  do
-@@ -1962,7 +1962,7 @@ DRIVERXMLS="";
+@@ -1971,7 +1971,7 @@ DRIVERXMLS="";
  while test -n "$drivers"; do
  	if echo $drivers |grep "," >/dev/null; then
  		THIS="`echo $drivers |sed -e 's/,.*//'`"
@@ -23,7 +23,7 @@ $OpenBSD: patch-configure,v 1.1 2009/12/10 10:58:25 ajacoutot Exp $
  	else
  		THIS=$drivers
  		drivers=""
-@@ -1970,14 +1970,14 @@ while test -n "$drivers"; do
+@@ -1979,14 +1979,14 @@ while test -n "$drivers"; do
  	case "$THIS" in
  	ALL)
  		# ALL = PRINTERS + FILES...
