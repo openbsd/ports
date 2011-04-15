@@ -1,15 +1,6 @@
-$OpenBSD: patch-src_demuxers_demux_qt_c,v 1.11 2010/10/15 14:13:03 dcoppa Exp $
---- src/demuxers/demux_qt.c.orig	Sun Jul 25 00:21:31 2010
-+++ src/demuxers/demux_qt.c	Fri Oct 15 15:50:29 2010
-@@ -3184,7 +3184,7 @@ static demux_plugin_t *open_plugin (demux_class_t *cla
-       /* special consideration for DRM-protected files */
-       if (this->qt->last_error == QT_DRM_NOT_SUPPORTED)
-         _x_message (this->stream, XINE_MSG_ENCRYPTED_SOURCE,
--          "DRM-protected Quicktime file", NULL);
-+          "DRM-protected Quicktime file", (char *)NULL);
- 
-     } else if (last_error != QT_OK) {
- 
+$OpenBSD: patch-src_demuxers_demux_qt_c,v 1.12 2011/04/15 23:22:31 sthen Exp $
+--- src/demuxers/demux_qt.c.orig	Sat Jul 24 18:21:31 2010
++++ src/demuxers/demux_qt.c	Fri Apr 15 17:46:25 2011
 @@ -3255,7 +3255,7 @@ static const char *get_identifier (demux_class_t *this
  }
  
