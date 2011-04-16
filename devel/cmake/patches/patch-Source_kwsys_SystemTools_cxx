@@ -1,0 +1,21 @@
+$OpenBSD: patch-Source_kwsys_SystemTools_cxx,v 1.9 2011/04/16 15:18:13 sthen Exp $
+
+Don't spam systrace by attempting to create dirs which already exist.
+
+--- Source/kwsys/SystemTools.cxx.orig	Sat Apr 16 12:20:19 2011
++++ Source/kwsys/SystemTools.cxx	Sat Apr 16 12:31:43 2011
+@@ -226,11 +226,13 @@ inline void Realpath(const char *path, kwsys_stl::stri
+ }
+ #else
+ #include <sys/types.h>
++#include <sys/stat.h>
+ #include <fcntl.h>
+ #include <unistd.h>
+ inline int Mkdir(const char* dir)
+ {
+-  return mkdir(dir, 00777);
++  struct stat sb;
++  return stat(dir, &sb) && mkdir(dir, 00777);
+ }
+ inline int Rmdir(const char* dir)
+ {
