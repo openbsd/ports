@@ -1,19 +1,20 @@
-# $OpenBSD: Makefile,v 1.11 2010/04/08 05:46:53 jolan Exp $
+# $OpenBSD: Makefile,v 1.12 2011/04/16 23:04:11 jolan Exp $
 
 COMMENT=	HDHomeRun Config CLI utility & firmware
-FW=		hdhomerun_atsc_firmware_20100213.bin \
-		hdhomerun_dvbt_firmware_20100213.bin \
-		hdhomerun_tech_atsc_firmware_20100213.bin
-SRC=		libhdhomerun_20100213.tgz
+FW=		hdhomerun_atsc_firmware_20110323.bin \
+		hdhomerun_dvbt_firmware_20110323.bin \
+		hdhomerun_tech_atsc_firmware_20110323.bin \
+		hdhomerun3_atsc_firmware_20110323.bin \
+		hdhomerun3_dvbt_firmware_20110323.bin \
+		hdhomerun3_dvbtc_firmware_20110323.bin
+SRC=		libhdhomerun_20110323.tgz
 DISTFILES=	${FW} ${SRC}
 EXTRACT_ONLY=	${SRC}
-PKGNAME=	hdhomerun-20100213
+PKGNAME=	hdhomerun-20110323
 CATEGORIES=	multimedia
 MASTER_SITES=	http://download.silicondust.com/hdhomerun/
 
 HOMEPAGE=	http://www.silicondust.com/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # LGPLv3+
 PERMIT_DISTFILES_CDROM=	Yes
