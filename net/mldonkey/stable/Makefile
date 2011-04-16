@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/04/05 14:42:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2011/04/16 12:10:07 sthen Exp $
 
 COMMENT =	e-donkey client
 DISTNAME =	mldonkey-3.0.7
@@ -31,8 +31,7 @@ WANTLIB +=		stdc++ xcb xcb-render xcb-shm z
 
 CONFIGURE_STYLE =	autoconf no-autoheader
 AUTOCONF_DIR =		${WRKSRC}/config
-# Should be 2.67
-AUTOCONF_VERSION =	2.65
+AUTOCONF_VERSION =	2.67
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 
 CONFIGURE_ARGS +=	--enable-gui=newgui2
