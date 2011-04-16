@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: rabbitmq.rc,v 1.1 2011/04/16 09:11:07 landry Exp $
+# $OpenBSD: rabbitmq.rc,v 1.2 2011/04/16 13:54:51 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/rabbitmq-server"
 daemon_flags="-detached"
@@ -11,11 +11,11 @@ daemon_user="_rabbitmq"
 rc_reload=NO
 
 rc_pre() {
-        install -d -o ${daemon_user} /var/run/rabbitmq
+	install -d -o ${daemon_user} /var/run/rabbitmq
 }
 
 rc_check() {
-	${TRUEPREFIX}/sbin/rabbitmqctl status
+	${TRUEPREFIX}/sbin/rabbitmqctl status || return 1
 }
 
 rc_stop() {
