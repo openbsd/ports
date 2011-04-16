@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:44 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/04/16 11:52:45 jasper Exp $
 
 COMMENT=	Diffie-Hellman key exchange system
 
@@ -20,8 +20,6 @@ RUN_DEPENDS=	security/p5-Crypt-Random
 
 CONFIGURE_STYLE=perl
 USE_GROFF =	Yes
-
-PKG_ARCH=	*
 
 # use a fast computer, tests will finish eventually
 #NO_REGRESS=	tests take ages to complete

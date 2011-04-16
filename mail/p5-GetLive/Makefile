@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 07:23:08 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/04/16 11:52:45 jasper Exp $
 
 COMMENT=	automatically fetch hotmail.com email
 
@@ -20,8 +20,6 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=getlive/}
 RUN_DEPENDS=	net/curl>=7.15.5 \
 		mail/procmail \
 		www/p5-URI
-
-PKG_ARCH=	*
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes

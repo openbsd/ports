@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/03/14 09:17:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/16 11:52:45 jasper Exp $
 
 COMMENT=                create accessor methods in caller's package
 
@@ -17,7 +17,5 @@ CONFIGURE_STYLE=        modbuild
 MODULES=                cpan
 USE_GROFF =		Yes
 CPAN_AUTHOR=            SPURKIS
-
-PKG_ARCH=		*
 
 .include <bsd.port.mk>

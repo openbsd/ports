@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:08 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/16 11:52:45 jasper Exp $
 
 COMMENT=		detect image spam with SpamAssassin
 
@@ -37,7 +37,6 @@ MODULES=		perl
 WRKDIST=		${WRKDIR}/FuzzyOcr-$V
 CONFDIR=		${SYSCONFDIR}/mail/spamassassin
 SUBST_VARS=		CONFDIR
-PKG_ARCH=		*
 
 CONF=			FuzzyOcr.cf FuzzyOcr.mysql FuzzyOcr.preps \
 			FuzzyOcr.scansets FuzzyOcr.words
