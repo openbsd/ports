@@ -1,6 +1,7 @@
---- usb.c.orig	Tue Mar 13 15:46:18 2001
-+++ usb.c	Sun Sep 19 23:03:00 2004
-@@ -84,11 +84,29 @@
+$OpenBSD: patch-usb_c,v 1.5 2011/04/16 21:31:06 jasper Exp $
+--- usb.c.orig	Tue Mar 13 14:46:18 2001
++++ usb.c	Sat Apr 16 23:30:49 2011
+@@ -84,11 +84,29 @@ int USB_camera_init(struct usb_device **camera_dev)
  						printf("Canon S20 found\n");
  					return USB_INIT_S20;
  					break;
