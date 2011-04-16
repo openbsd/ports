@@ -1,7 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.6 2011/03/29 11:20:02 ajacoutot Exp $
-
-Stupid configure is stupid. Using a variable that's set
-hundreds of lines later...
+$OpenBSD: patch-configure_ac,v 1.7 2011/04/16 05:51:52 ajacoutot Exp $
 
 XXX remove -DGTK_DISABLE_DEPRECATED to fix build with gtk>=2.24
 
@@ -11,7 +8,7 @@ dependency to 0.7.0 and remove the various #ifdefs. See: bgo#566441
 From upstream git: 69b8607f2dd6d399306905e011a6565319190066
 
 --- configure.ac.orig	Mon Dec 27 14:19:33 2010
-+++ configure.ac	Tue Mar 29 12:01:28 2011
++++ configure.ac	Fri Apr 15 16:06:57 2011
 @@ -36,7 +36,7 @@ m4_define([glib_minimum_version], [2.25.12])
  m4_define([gconf_minimum_version], [2.0.0])		dnl XXX Just a Guess
  m4_define([libxml_minimum_version], [2.0.0])		dnl XXX Just a Guess
@@ -52,46 +49,16 @@ From upstream git: 69b8607f2dd6d399306905e011a6565319190066
  *)
  	os_win32='no'
  	NO_UNDEFINED=''
-@@ -325,12 +329,6 @@ PKG_CHECK_MODULES(GNOME_PLATFORM,
+@@ -324,12 +328,6 @@ PKG_CHECK_MODULES(GNOME_PLATFORM,
+ 	libxml-2.0 >= libxml_minimum_version
  	libsoup-2.4 >= libsoup_minimum_version
  	libgdata >= libgdata_minimum_version])
- 
+-
 -dnl libgdata 0.7 will break API.  We're not going to deal with
 -dnl that on a stable branch, so cap the supported version.
 -if $PKG_CONFIG --atleast-version=0.7 libgdata; then
 -	AC_MSG_ERROR([libgdata 0.7 is not supported, use 0.6 instead])
 -fi
--
+ 
  LIBICAL_REQUIRED=libical_minimum_version
  AC_SUBST(LIBICAL_REQUIRED)
- 
-@@ -518,6 +516,29 @@ AC_RUN_IFELSE([AC_LANG_SOURCE(
- 	]]
- 	)],[AC_DEFINE(HAVE_LKSTRFTIME, 1, [strftime supports use of l and k]) ac_cv_lkstrftime=yes],[ac_cv_lkstrftime=no],[ac_cv_lkstrftime=no])
- AC_MSG_RESULT([$ac_cv_lkstrftime])
-+
-+dnl ******************************
-+dnl Posix thread support
-+dnl ******************************
-+
-+dnl GLIB_CONFIG=${GLIB_CONFIG-glib-config}
-+dnl GNOME_PTHREAD_CHECK
-+
-+dnl if test "x$PTHREAD_LIB" = "x" ; then
-+dnl 	AC_MSG_ERROR([POSIX threads are currently required for Evolution])
-+dnl fi
-+
-+dnl Notice that this is a hack, and we wont be able to use this forever, but
-+dnl at least for some time
-+
-+EVO_PTHREAD_CHECK
-+
-+THREADS_LIBS="$PTHREAD_LIB"
-+THREADS_CFLAGS="$PTHREAD_CFLAGS"
-+
-+AC_SUBST(THREADS_LIBS)
-+AC_SUBST(THREADS_CFLAGS)
-+AC_DEFINE(ENABLE_THREADS,1,[Required])
- 
- dnl ********************************************************************************
- dnl security extension support (SSL and S/MIME)

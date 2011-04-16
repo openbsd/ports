@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2011/03/29 11:20:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2011/04/16 05:51:52 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		2.32.2
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		databases
 
@@ -43,7 +43,7 @@ WANTLIB += pthread-stubs sasl2 soup-2.4 soup-gnome-2.4 sqlite3
 WANTLIB += ssl tasn1 xcb xcb-render xml2 z nssutil3
 WANTLIB += db ldap-2.4 lber-2.4 gpg-error gnutls nss3>=19 smime3 ssl3 ical
 WANTLIB += icalss icalvcal gnome-keyring>=6 gweather gdata
-WANTLIB += GL Xxf86vm drm xcb-shm
+WANTLIB += GL Xxf86vm drm xcb-shm gmp hogweed nettle
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -63,8 +63,9 @@ YACC=			bison
 AUTOCONF_VERSION=	2.64
 CONFIGURE_STYLE= 	autoconf gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-gnome-keyring=yes \
-			--enable-smime=yes \
+			--enable-gnome-keyring \
+			--enable-smime \
+			--enable-ipv6 \
 			--with-nss-libs="${LOCALBASE}/lib" \
 			--with-nss-includes="${LOCALBASE}/include/nss" \
 			--with-nspr-libs=${LOCALBASE}/lib \
