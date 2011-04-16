@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/04/11 06:43:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2011/04/16 11:49:01 jasper Exp $
 
 COMMENT =		Prolog for the real world
 
@@ -23,7 +23,7 @@ MASTER_SITES =		${HOMEPAGE}/download/stable/src/ \
 			http://distfiles.nl/
 
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.65 # 2.67
+AUTOCONF_VERSION =	2.67
 AUTOCONF_DIR =		${WRKSRC}/src ${WRKSRC}/packages/semweb
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/src \
 				${WRKSRC}/packages/jpl \
