@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/16 15:40:26 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		libstatgrab bindings for Lua
 
-DISTNAME=		lua-statgrab-0.2.2
+DISTNAME=		lua-statgrab-0.3.0
 PKGNAME=		${DISTNAME:S/-//}
 CATEGORIES=		sysutils devel
 
@@ -24,7 +24,10 @@ WANTLIB =	statgrab
 LIB_DEPENDS=	sysutils/libstatgrab
 REGRESS_DEPENDS=${BUILD_PKGPATH}
 
+WRKDIST=	${WRKDIR}/${DISTNAME:S/3.0/2.2/}
+
 do-build:
+	cd ${WRKDIR} && \
 	${CC} ${CFLAGS} -fPIC -I${LOCALBASE}/include -shared\
 		`pkg-config --cflags libstatgrab` \
 		`pkg-config --libs libstatgrab` \
