@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/21 21:50:24 simon Exp $
+# $OpenBSD: Makefile,v 1.9 2011/04/16 09:57:35 simon Exp $
 
 COMMENT =	next generation web framework
 
 MODULES =	cpan
-DISTNAME =	Mojolicious-1.15
+DISTNAME =	Mojolicious-1.16
 CATEGORIES =	www
 USE_GROFF =	Yes
 
