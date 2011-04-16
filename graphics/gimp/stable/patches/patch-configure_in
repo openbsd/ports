@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.9 2010/07/08 16:16:51 giovanni Exp $
---- configure.in.orig	Mon Jun 21 21:20:20 2010
-+++ configure.in	Fri Jun 25 18:47:26 2010
+$OpenBSD: patch-configure_in,v 1.10 2011/04/16 07:47:04 dcoppa Exp $
+--- configure.in.orig	Sun Oct  3 14:04:42 2010
++++ configure.in	Fri Apr 15 20:17:58 2011
 @@ -421,14 +421,7 @@ AM_GLIB_GNU_GETTEXT
  ###########
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure_in,v 1.9 2010/07/08 16:16:51 giovanni Exp $
      AC_MSG_RESULT(yes)], [
      AC_MSG_RESULT(no)
      AC_MSG_CHECKING(for isfinite in <math.h>)
-@@ -1143,10 +1137,10 @@ if test "x$with_libmng" != xno && test -z "$MNG_LIBS" 
+@@ -1146,10 +1140,10 @@ if test "x$with_libmng" != xno && test -z "$MNG_LIBS" 
     test -n "$PNG_LIBS" && test -n "$JPEG_LIBS" && test -n "$Z_LIBS"; then
    AC_CHECK_LIB(mng, mng_create,
      [AC_CHECK_HEADER(libmng.h, mng_ok=yes)],
@@ -40,7 +40,7 @@ $OpenBSD: patch-configure_in,v 1.9 2010/07/08 16:16:51 giovanni Exp $
    else
      have_libmng="no (MNG header file not found)"
    fi
-@@ -1325,19 +1319,9 @@ if test "x$with_gnomevfs" != xno; then
+@@ -1328,19 +1322,9 @@ if test "x$with_gnomevfs" != xno; then
  
  gnome_vfs_modules="gnome-vfs-2.0 >= gnome_vfs_required_version"
  
