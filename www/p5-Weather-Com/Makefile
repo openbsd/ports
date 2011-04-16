@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:46:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/16 11:57:01 simon Exp $
 
 COMMENT=	module to get weather information from weather.com
 
 MODULES=	cpan
-DISTNAME=	Weather-Com-0.5.3
-REVISION=	0
+DISTNAME=	Weather-Com-0.5.5
 CATEGORIES=	www
-USE_GROFF =	Yes
+
+CPAN_AUTHOR=	SCHNUECK
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
@@ -20,5 +20,9 @@ RUN_DEPENDS=	devel/p5-Time-Format \
 		textproc/p5-XML-Simple \
 		www/p5-URI \
 		www/p5-libwww
+REGRESS_DEPENDS=	devel/p5-Test-MockObject
+
+pre-configure:
+	@rm ${WRKSRC}/lib/Weather/Com/Base.pm.orig
 
 .include <bsd.port.mk>

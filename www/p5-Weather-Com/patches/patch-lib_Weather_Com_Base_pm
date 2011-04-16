@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_Weather_Com_Base_pm,v 1.1 2011/04/16 11:57:01 simon Exp $
+
+Bug #67228 for Weather-Com: test suite under perl 5.12 outputs warnings
+https://rt.cpan.org/Public/Bug/Display.html?id=67228
+
+--- lib/Weather/Com/Base.pm.orig	Tue Feb 24 14:01:12 2009
++++ lib/Weather/Com/Base.pm	Sat Apr 16 12:42:46 2011
+@@ -308,7 +308,7 @@ sub _getWebPage {
+ 	my $request = HTTP::Request->new( "GET" => $path );
+ 
+ 	$ua->proxy( 'http', $self->{PROXY} )
+-	  if ( lc( $self->{PROXY} ) ne "none" );
++	  if ( lc( $self->{PROXY} || '' ) ne "none" );
+ 	$request->proxy_authorization_basic( $self->{PROXY_USER},
+ 										 $self->{PROXY_PASS} )
+ 	  if ( lc( $self->{PROXY_USER} ) ne "none" );
