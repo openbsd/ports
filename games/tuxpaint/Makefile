@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/26 07:20:12 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/04/16 17:53:54 sthen Exp $
 
 COMMENT=	drawing program for children
 
 DISTNAME=	tuxpaint-0.9.21
-REVISION=	3
+REVISION=	4
 CATEGORIES=	games graphics
 
 HOMEPAGE=	http://www.tuxpaint.org/
@@ -21,9 +21,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tuxpaint/}
 WANTLIB += SDL X11 Xau Xdmcp Xrender c cairo expat fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 m pixman-1 png pthread pthread-stubs xcb
-WANTLIB += z gio-2.0 gthread-2.0 xcb-render xcb-render-util
-WANTLIB += SDL_image>=2 SDL_mixer>=3 SDL_ttf>=7 rsvg-2>=18
-WANTLIB += paper utf8>=1 SDL_Pango fribidi
+WANTLIB += z gio-2.0 gthread-2.0 xcb-render SDL_image>=2
+WANTLIB += SDL_mixer>=3 SDL_ttf>=7 rsvg-2>=18 paper SDL_Pango
+WANTLIB += fribidi GL Xdamage Xext Xfixes Xxf86vm drm xcb-shm
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	devel/sdl-image \
@@ -31,14 +31,13 @@ LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-ttf>=2.0.8 \
 		x11/gnome/librsvg \
 		print/libpaper \
-		misc/libutf8 \
 		devel/sdl-pango \
 		devel/fribidi
 RUN_DEPENDS=	graphics/netpbm \
 		devel/desktop-file-utils
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 MAKE_ENV+=	SYSCONFDIR=${SYSCONFDIR} OPTFLAGS="${CFLAGS}"
 CFLAGS+=	-DHAVE_STRCASESTR
@@ -48,5 +47,8 @@ NO_REGRESS=	Yes
 pre-configure:
 	@perl -pi -e 's,@\$$\(CC\),\$$\(CC\),g' ${WRKSRC}/Makefile
 	${SUBST_CMD} ${WRKSRC}/src/manpage/tuxpaint.1
+
+post-install:
+	chmod -R og+rX ${PREFIX}/share/doc/tuxpaint/tuxpaint-dev
 
 .include <bsd.port.mk>
