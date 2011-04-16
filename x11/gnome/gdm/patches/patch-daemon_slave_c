@@ -1,15 +1,6 @@
-$OpenBSD: patch-daemon_slave_c,v 1.12 2009/03/19 08:26:42 ajacoutot Exp $
+$OpenBSD: patch-daemon_slave_c,v 1.13 2011/04/16 21:28:35 jasper Exp $
 --- daemon/slave.c.orig	Thu Mar 19 05:59:27 2009
 +++ daemon/slave.c	Thu Mar 19 09:01:37 2009
-@@ -2857,7 +2857,7 @@ gdm_slave_greeter (void)
- 
- 		exec_command (LIBEXECDIR "/gdmlogin", NULL);
- 
--		VE_IGNORE_EINTR (execl (LIBEXECDIR "/gdmlogin", LIBEXECDIR "/gdmlogin", NULL));
-+		VE_IGNORE_EINTR (execl (LIBEXECDIR "/gdmlogin", LIBEXECDIR "/gdmlogin", (void *)NULL));
- 
- 		gdm_errorgui_error_box (d,
- 			       GTK_MESSAGE_ERROR,
 @@ -3594,6 +3594,7 @@ session_child_run (struct passwd *pwent,
  	GString *fullexec = NULL;
  	const char *shell = NULL;
