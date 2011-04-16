@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/01/31 23:20:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2011/04/16 00:15:37 sthen Exp $
 
 COMMENT=	virtual lighttable and darkroom for photographers
 DISTNAME=	darktable-0.6
 
-REVISION=	2
+REVISION=	3
 
 SHARED_ONLY=	Yes
 
@@ -27,8 +27,8 @@ WANTLIB += gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnome-keyring gobject-2.0 gpg-error gphoto2 gphoto2_port
 WANTLIB += gthread-2.0 gtk-x11-2.0 idn jpeg lcms ltdl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
-WANTLIB += pthread sqlite3 ssl stdc++ tiff usb xcb-render-util xcb-render
-WANTLIB += xcb xml2 z
+WANTLIB += pthread sqlite3 ssl stdc++ tiff usb xcb-render
+WANTLIB += xcb xml2 z GL Xxf86vm drm xcb-shm
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=darktable/}
 
