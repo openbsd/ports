@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 21:25:08 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/04/16 21:13:43 sthen Exp $
 
 COMMENT=	shell (clone of plan9 shell)
 
 DISTNAME=	rc-1.6
+REVISION=	0
 CATEGORIES=	plan9 shells
 MASTER_SITES=	http://www.star.le.ac.uk/~tjg/rc/release/ \
 		ftp://ftp.sys.toronto.edu/pub/rc/
@@ -15,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c
 
 SEPARATE_BUILD=	concurrent

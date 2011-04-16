@@ -1,4 +1,4 @@
-$OpenBSD: patch-crawl_c,v 1.5 2010/05/23 16:25:21 espie Exp $
+$OpenBSD: patch-crawl_c,v 1.6 2011/04/16 21:13:44 sthen Exp $
 --- crawl.c.orig	Sun May 18 03:26:41 2003
 +++ crawl.c	Sat May 22 16:42:06 2010
 @@ -167,8 +167,8 @@ image_saver(struct uri *uri)
@@ -12,12 +12,3 @@ $OpenBSD: patch-crawl_c,v 1.5 2010/05/23 16:25:21 espie Exp $
  		p = tmp;
  	}
  	fprintf(stdout, "%s %s%s\n",
-@@ -384,7 +384,7 @@ external_filter(char *program)
- 		dup2(fromext[1], fileno(stdout));
- 		close(fromext[0]);
- 
--		if (execlp(program, program, NULL) == -1)
-+		if (execlp(program, program, (void *)NULL) == -1)
- 			err(1, "execlp");
- 		exit(0);
- 	}
