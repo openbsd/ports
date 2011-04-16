@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/16 11:10:03 simon Exp $
 
 COMMENT =	fallbackable module loader
 
 MODULES =	cpan
-DISTNAME =	Best-0.11
-REVISION =	0
+DISTNAME =	Best-0.12
 CATEGORIES =	devel
-USE_GROFF =	Yes
 
 MAINTAINER =	Simon Bertrang <simon@openbsd.org>
 
