@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/31 19:26:03 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/16 11:52:08 sthen Exp $
 
 COMMENT-main =		GNU editor: extensible, customizable, self-documenting
 COMMENT-el =		elisp sources for those who want to read/modify them
@@ -32,8 +32,7 @@ FLAVOR ?=
 
 GCCARCH =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
 
-# Should be 2.67
-AUTOCONF_VERSION =	2.65
+AUTOCONF_VERSION =	2.67
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS =	${GCCARCH} --localstatedir=/var
 
