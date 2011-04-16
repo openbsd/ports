@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2010/11/13 09:36:22 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2011/04/16 14:53:50 ajacoutot Exp $
 
 Using foomatic-filters in OpenBSD
 =================================
@@ -11,7 +11,8 @@ C64|Epson Stylus C64:\
 	:af=${SYSCONFDIR}/foomatic/C64.ppd:\
 	:if=${PREFIX}/bin/foomatic-rip:\
 	:sd=/var/spool/output:\
-	:lf=/var/log/lpd-errs:
+	:lf=/var/log/lpd-errs:\
+	:sh:
 
 There are PPD files in the foomatic-db package.  foomatic-ppdfile(1)
 from the foomatic-db-engine package can be used to generate PPD files.
