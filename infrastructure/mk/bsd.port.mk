@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1076 2011/04/10 17:55:41 jasper Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1077 2011/04/16 10:31:20 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -441,28 +441,36 @@ ONLY_FOR_ARCHS${_s} ?= ${ONLY_FOR_ARCHS}
 NOT_FOR_ARCHS${_s} ?= ${NOT_FOR_ARCHS}
 .  endif
 
+IGNORE${_s} ?=
+IGNORE${_s} += ${IGNORE}
+
 # compute _ARCH_OK for ignore
 .  if defined(ONLY_FOR_ARCHS${_s})
-_ARCH_OK${_s} = 0
+_ARCH_OK = 0
 .    for __ARCH in ${MACHINE_ARCH} ${ARCH}
 .      if !empty(ONLY_FOR_ARCHS${_s}:M${__ARCH})
-_ARCH_OK${_s} = 1
+_ARCH_OK = 1
 .      endif
 .    endfor
-.  else
-_ARCH_OK${_s} = 1
+.    if ${_ARCH_OK} == 0
+.      if ${MACHINE_ARCH} == "${ARCH}"
+IGNORE${_s} += "is only for ${ONLY_FOR_ARCHS${_s}}, not ${MACHINE_ARCH}"
+.      else
+IGNORE${_s} += "is only for ${ONLY_FOR_ARCHS${_s}}, not ${MACHINE_ARCH} \(${ARCH}\)"
+.      endif
+.    endif
 .  endif
 .  if defined(NOT_FOR_ARCHS${_s})
 .    for __ARCH in ${MACHINE_ARCH} ${ARCH}
 .      if !empty(NOT_FOR_ARCHS${_s}:M${__ARCH})
-_ARCH_OK${_s} = 0
+IGNORE${_s} += "is not for ${NOT_FOR_ARCHS${_s}}"
 .      endif
 .    endfor
 .  endif
 
 # allow subpackages to vanish on architectures that don't
 # support them
-.  if ${_ARCH_OK${_s}} == 1
+.  if empty(IGNORE${_s})
 _MULTI_PACKAGES += ${_s}
 .  endif
 .endfor
@@ -1301,52 +1309,38 @@ _IGNORE_REGRESS += "has interactive tests"
 _IGNORE_REGRESS += "does not have interactive tests"
 .endif
 
-.for _s in ${MULTI_PACKAGES}
-IGNORE${_s} ?=
-.  if defined(IS_INTERACTIVE) && defined(BATCH)
-IGNORE${_s} += "is an interactive port"
-.  elif !defined(IS_INTERACTIVE) && defined(INTERACTIVE)
-IGNORE${_s} += "is not an interactive port"
-.  endif
-.  if !exists(${X11BASE})
-IGNORE${_s} += "building ports requires X11 but ${X11BASE} not found"
-.  endif
-.  if !defined(_ARCH_OK${_s}) || ${_ARCH_OK${_s}} == 0
-.    if defined(ONLY_FOR_ARCHS${_s})
-.      if ${MACHINE_ARCH} == "${ARCH}"
-IGNORE${_s} += "is only for ${ONLY_FOR_ARCHS${_s}}, not ${MACHINE_ARCH}"
-.      else
-IGNORE${_s} += "is only for ${ONLY_FOR_ARCHS${_s}}, not ${MACHINE_ARCH} \(${ARCH}\)"
-.      endif
-.    else
-IGNORE${_s} += "is not for ${NOT_FOR_ARCHS}"
-.    endif
-.  endif
-.  if ${SHARED_ONLY:L} == "yes" && ${NO_SHARED_LIBS:L} == "yes"
-IGNORE${_s} += "requires shared libraries"
-.  endif
+.if defined(IS_INTERACTIVE) && defined(BATCH)
+IGNORE += "is an interactive port"
+.elif !defined(IS_INTERACTIVE) && defined(INTERACTIVE)
+IGNORE += "is not an interactive port"
+.endif
+.if !exists(${X11BASE})
+IGNORE += "building ports requires X11 but ${X11BASE} not found"
+.endif
 
-.  if ${TRY_BROKEN:L} != "yes"
-.    if defined(BROKEN-${ARCH})
-IGNORE${_s} += "is marked as broken for ${ARCH}: ${BROKEN-${ARCH}:Q}"
-.    endif
-.    if ${MACHINE_ARCH} != ${ARCH} && defined(BROKEN-${MACHINE_ARCH})
-IGNORE${_s} += "is marked as broken for ${MACHINE_ARCH}: ${BROKEN-${MACHINE_ARCH}:Q}"
-.    endif
-.    if defined(BROKEN) 
-IGNORE${_s} += "is marked as broken: ${BROKEN:Q}"
-.    endif
-.  endif
-.  if defined(COMES_WITH)
-IGNORE${_s} += "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with OpenBSD as of release ${COMES_WITH}"
-.  endif
-.endfor
+.if ${SHARED_ONLY:L} == "yes" && ${NO_SHARED_LIBS:L} == "yes"
+IGNORE += "requires shared libraries"
+.endif
 
-IGNORE = ${IGNORE${SUBPACKAGE}}
+.if ${TRY_BROKEN:L} != "yes"
+.  if defined(BROKEN-${ARCH})
+IGNORE += "is marked as broken for ${ARCH}: ${BROKEN-${ARCH}:Q}"
+.  endif
+.  if ${MACHINE_ARCH} != ${ARCH} && defined(BROKEN-${MACHINE_ARCH})
+IGNORE += "is marked as broken for ${MACHINE_ARCH}: ${BROKEN-${MACHINE_ARCH}:Q}"
+.  endif
+.  if defined(BROKEN) 
+IGNORE += "is marked as broken: ${BROKEN:Q}"
+.  endif
+.endif
+.if defined(COMES_WITH)
+IGNORE += "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with OpenBSD as of release ${COMES_WITH}"
+.endif
+
 IGNORE_IS_FATAL ?= "No"
-.if !empty(IGNORE) && ${IGNORE_IS_FATAL:L} == "yes"
+.if !empty(IGNORE${SUBPACKAGE}) && ${IGNORE_IS_FATAL:L} == "yes"
 ERRORS += "Fatal: can't build"
-ERRORS += ${IGNORE}
+ERRORS += ${IGNORE${SUBPACKAGE}}
 .endif
 
 .if !defined(DEPENDS_TARGET)
@@ -2001,7 +1995,7 @@ _internal-fetch-all:
 	@${_MAKE} post-fetch __FETCH_ALL=Yes
 .endif
 
-.if !empty(IGNORE) && !defined(NO_IGNORE)
+.if !empty(IGNORE${SUBPACKAGE}) && !defined(NO_IGNORE)
 _internal-all _internal-build _internal-checksum _internal-configure \
 	_internal-deinstall _internal-extract _internal-fake _internal-fetch \
 	_internal-install _internal-install-all _internal-manpages-check \
@@ -2011,10 +2005,10 @@ _internal-all _internal-build _internal-checksum _internal-configure \
 	_internal-update-or-install-all _internal-update-plist \
 	port-lib-depends-check update-patches:
 .  if !defined(IGNORE_SILENT)
-	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE}."
+	@${ECHO_MSG} "===>  ${FULLPKGNAME${SUBPACKAGE}}${_MASTER} ${IGNORE${SUBPACKAGE}}."
 .  endif
 .  if defined(_IGNORE_COOKIE)
-	@echo "${IGNORE}" >${_IGNORE_COOKIE}
+	@echo "${IGNORE${SUBPACKAGE}}" >${_IGNORE_COOKIE}
 .  endif
 .else
 
@@ -2885,14 +2879,13 @@ describe:
 	@echo -n '${_${_d}_DEP3${_S}:C/ +/ /g}'| tr '\040' '\012'|sort -u|tr '\012' '\040' | sed -e 's, $$,,'
 	@echo -n '|'
 .  endfor
-	@case "${ONLY_FOR_ARCHS}" in \
-	 "") case "${NOT_FOR_ARCHS}" in \
-		 "") echo -n "any|";; \
-		 *) echo -n "!${NOT_FOR_ARCHS}|";; \
-		 esac;; \
-	 *) echo -n "${ONLY_FOR_ARCHS}|";; \
-	 esac
-
+.  if defined(ONLY_FOR_ARCHS${_S})
+	@echo -n "${ONLY_FOR_ARCHS${_S}}|"
+.  elif defined(NOT_FOR_ARCHS${_S})
+	@echo -n "!${NOT_FOR_ARCHS${_S}}|"
+.  else
+	@echo -n "any|"
+.  endif
 .  if defined(_BAD_LICENSING)
 	@echo "?|?|?|?"
 .  else
