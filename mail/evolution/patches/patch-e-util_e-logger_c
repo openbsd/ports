@@ -1,0 +1,18 @@
+$OpenBSD: patch-e-util_e-logger_c,v 1.1 2011/04/16 05:50:25 ajacoutot Exp $
+
+e-logger.c:220: warning: format '%ld' expects type 'long int', but argument 4 has type 'time_t'
+e-logger.c:221: warning: format '%ld' expects type 'long int', but argument 4 has type 'time_t'
+
+--- e-util/e-logger.c.orig	Fri Apr 15 22:30:17 2011
++++ e-util/e-logger.c	Fri Apr 15 22:30:33 2011
+@@ -217,8 +217,8 @@ e_logger_log (ELogger *logger,
+ 	if (!logger->priv->fp)
+ 		return;
+ 
+-	fprintf (logger->priv->fp, "%d:%ld:%s\n", level, t, primary);
+-	fprintf (logger->priv->fp, "%d:%ld:%s\n", level, t, secondary);
++	fprintf (logger->priv->fp, "%d:%ld:%s\n", level, (long)t, primary);
++	fprintf (logger->priv->fp, "%d:%ld:%s\n", level, (long)t, secondary);
+ 	logger_set_dirty (logger);
+ }
+ 
