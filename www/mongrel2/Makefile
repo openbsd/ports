@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/01 22:28:02 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/16 10:45:09 jasper Exp $
 
 # Some assembly required
-ONLY_FOR_ARCH =	i386 amd64
+ONLY_FOR_ARCHS =i386 amd64
 
 COMMENT =	language agnostic asynchronous web server
 
