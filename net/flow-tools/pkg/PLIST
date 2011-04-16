@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/05/06 21:40:31 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/04/16 10:35:58 sthen Exp $
 @newgroup _netflow:575
 @newuser _netflow:575:575:daemon:flow-tools user:/var/empty:/sbin/nologin
 @bin bin/flow-capture
@@ -57,16 +57,31 @@ lib/libft.la
 @man man/man1/flow-tools.1
 @man man/man1/flow-xlate.1
 share/examples/flow-tools/
+@sample ${SYSCONFDIR}/flow-tools/
 share/examples/flow-tools/cfg/
+@sample ${SYSCONFDIR}/flow-tools/cfg/
 share/examples/flow-tools/cfg/filter.cfg
+@sample ${SYSCONFDIR}/flow-tools/cfg/filter.cfg
 share/examples/flow-tools/cfg/map.cfg
+@sample ${SYSCONFDIR}/flow-tools/cfg/map.cfg
 share/examples/flow-tools/cfg/mask.cfg
+@sample ${SYSCONFDIR}/flow-tools/cfg/mask.cfg
 share/examples/flow-tools/cfg/stat.cfg
+@sample ${SYSCONFDIR}/flow-tools/cfg/stat.cfg
 share/examples/flow-tools/cfg/tag.cfg
+@sample ${SYSCONFDIR}/flow-tools/cfg/tag.cfg
 share/examples/flow-tools/cfg/xlate.cfg
+@sample ${SYSCONFDIR}/flow-tools/cfg/xlate.cfg
 share/examples/flow-tools/sym/
+@sample ${SYSCONFDIR}/flow-tools/sym/
 share/examples/flow-tools/sym/asn.sym
+@sample ${SYSCONFDIR}/flow-tools/sym/asn.sym
 share/examples/flow-tools/sym/ip-prot.sym
+@sample ${SYSCONFDIR}/flow-tools/sym/ip-prot.sym
 share/examples/flow-tools/sym/ip-type.sym
+@sample ${SYSCONFDIR}/flow-tools/sym/ip-type.sym
 share/examples/flow-tools/sym/tag.sym
+@sample ${SYSCONFDIR}/flow-tools/sym/tag.sym
 share/examples/flow-tools/sym/tcp-port.sym
+@sample ${SYSCONFDIR}/flow-tools/sym/tcp-port.sym
+@extraunexec rm -rf /var/flow-tools

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/04/16 10:35:58 sthen Exp $
 
 SHARED_LIBS +=  ft                   0.0      # .0.0
 
 COMMENT=	cisco NetFlow utilities
 
-DISTNAME=	flow-tools-0.68.5
-REVISION=	1
+DISTNAME=	flow-tools-0.68.5.1
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	net
 
@@ -28,9 +27,11 @@ WANTLIB=		c z
 
 MODULES=		lang/python
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	gnu old # XXX allow sysconfdir to be overridden
 SEPARATE_BUILD=		simple
-CONFIGURE_ARGS+=	--localstatedir=/var/flow-tools
+CONFIGURE_ARGS+=	--localstatedir=/var/flow-tools \
+			--mandir="${LOCALBASE}/man" \
+			--sysconfdir="${SYSCONFDIR}/flow-tools"
 
 .if !${FLAVOR:L:Mpgsql}
 CONFIGURE_ARGS+=	--without-postgresql
@@ -39,22 +40,19 @@ WANTLIB +=		pq
 LIB_DEPENDS+=		databases/postgresql,-main
 .endif
 
-MAKE_FLAGS+=		"SUBDIRS=lib src bin configs docs"
+MAKE_FLAGS+=		SUBDIRS="lib src bin configs docs"
 FAKE_FLAGS+=		sysconfdir=${PREFIX}/share/examples/flow-tools
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF =		Yes
+USE_GROFF=		Yes
 
-PYTHON_SCRIPTS=		bin/flow-log2rrd \
-			bin/flow-rpt2rrd \
-			bin/flow-rptfmt
-
-post-patch:
-.for file in ${PYTHON_SCRIPTS}
-	mv ${WRKSRC}/${file} ${WRKSRC}/${file}.dist
-	sed "s!/bin/env python!${MODPY_BIN}!" \
-		< ${WRKSRC}/${file}.dist > ${WRKSRC}/${file}
-.endfor
+# let configure generate a new ftconfig.h, the supplied one has
+# problems with libwrap
+pre-configure:
+	rm -f ${WRKSRC}/lib/ftconfig.h
+	cd ${WRKSRC}/bin; perl -pi -e 's,/bin/env python,${MODPY_BIN},;' \
+	    -e 's,/usr/local/netflow/var/sym/,${SYSCONFDIR}/flow-tools/sym/,;' \
+	    flow-log2rrd flow-rpt2rrd flow-rptfmt
 
 .include <bsd.port.mk>
