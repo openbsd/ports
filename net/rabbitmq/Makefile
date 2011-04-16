@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 22:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/16 09:11:07 landry Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
-V =		1.6.0
+V =		2.4.1
 DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
-REVISION =	0
 CATEGORIES =	net
 
 HOMEPAGE =	http://www.rabbitmq.com/
 
-MAINTAINER =	Mathieu Sauve-Frankel <msf@openbsd.org>
+MAINTAINER =	Piotr Sikora <piotr.sikora@frickle.com>
 
 # MPL
 PERMIT_PACKAGE_CDROM = Yes
@@ -29,15 +28,22 @@ USE_GROFF =	Yes
 CONFIGURE_STYLE = none
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
-		devel/py-simplejson
+		${MODPY_JSON} \
+		textproc/libxslt \
+		textproc/xmlto
+
 RUN_DEPENDS =	lang/erlang
 
 MAKE_ENV =	PYTHON=${MODPY_BIN} 
 
+RABBITUSER =	_rabbitmq
+
+SUBST_VARS +=	RABBITUSER MODPY_VERSION
+
 pre-build:
-	@${SUBST_CMD} ${WRKSRC}/scripts/rabbitmqctl \
-		${WRKSRC}/scripts/rabbitmq-multi \
-		${WRKSRC}/scripts/rabbitmq-server
+	${SUBST_CMD} ${WRKSRC}/scripts/rabbitmqctl \
+		${WRKSRC}/scripts/rabbitmq-env \
+		${WRKSRC}/Makefile
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rabbitmq
@@ -47,6 +53,6 @@ post-install:
 	done
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rabbitmq
 	${INSTALL_DATA} ${FILESDIR}/rabbitmq.conf \
-		${PREFIX}/share/examples/rabbitmq/
+		${PREFIX}/share/examples/rabbitmq/rabbitmq-env.conf
 
 .include <bsd.port.mk>

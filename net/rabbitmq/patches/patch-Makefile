@@ -1,47 +1,97 @@
-$OpenBSD: patch-Makefile,v 1.1.1.1 2009/11/12 13:10:33 msf Exp $
-
-- OpenBSD has Erlang > R12B-3. So we can just set USE_SPECS=true instead
-  of dealing with this shell stuff which is causing problems.
-
-- Don't install .gz manpages.
-
---- Makefile.orig	Wed Jun 17 02:09:00 2009
-+++ Makefile	Mon Sep 21 22:33:36 2009
-@@ -11,15 +11,18 @@ BEAM_TARGETS=$(EBIN_DIR)/rabbit_framing.beam $(patsubs
- TARGETS=$(EBIN_DIR)/rabbit.app $(BEAM_TARGETS)
- WEB_URL=http://stage.rabbitmq.com/
- MANPAGES=$(patsubst %.pod, %.gz, $(wildcard docs/*.[0-9].pod))
+--- Makefile.orig	Thu Apr  7 15:55:08 2011
++++ Makefile	Sun Apr 10 19:24:41 2011
+@@ -20,21 +20,11 @@ MANPAGES=$(patsubst %.xml, %.gz, $(wildcard $(DOCS_DIR
+ WEB_MANPAGES=$(patsubst %.xml, %.man.xml, $(wildcard $(DOCS_DIR)/*.[0-9].xml) $(DOCS_DIR)/rabbitmq-service.xml)
+ USAGES_XML=$(DOCS_DIR)/rabbitmqctl.1.xml
+ USAGES_ERL=$(foreach XML, $(USAGES_XML), $(call usage_xml_to_erl, $(XML)))
 +TARGET_DIR=$(PREFIX)/lib/rabbitmq
 +SBIN_DIR=$(PREFIX)/sbin
 +MAN_DIR=$(PREFIX)/man
  
+-ifeq ($(shell python -c 'import simplejson' 2>/dev/null && echo yes),yes)
 -PYTHON=python
-+PYTHON?=python
+-else
+-ifeq ($(shell python2.6 -c 'import simplejson' 2>/dev/null && echo yes),yes)
+-PYTHON=python2.6
+-else
+-ifeq ($(shell python2.5 -c 'import simplejson' 2>/dev/null && echo yes),yes)
+-PYTHON=python2.5
+-else
+-# Hmm. Missing simplejson?
+-PYTHON=python
+-endif
+-endif
+-endif
++PYTHON?=python${MODPY_VERSION}
  
- ifndef USE_SPECS
- # our type specs rely on features / bug fixes in dialyzer that are
- # only available in R12B-3 upwards
- #
- # NB: the test assumes that version number will only contain single digits
--USE_SPECS=$(shell if [ $$(erl -noshell -eval 'io:format(erlang:system_info(version)), halt().') \> "5.6.2" ]; then echo "true"; else echo "false"; fi)
-+USE_SPECS=true
+ BASIC_PLT=basic.plt
+ RABBIT_PLT=rabbit.plt
+@@ -61,6 +51,9 @@ ERL_CALL=erl_call -sname $(RABBITMQ_NODENAME) -e
+ 
+ ERL_EBIN=erl -noinput -pa $(EBIN_DIR)
+ 
++REGRESS_DIR=/tmp/rabbitmq-regress
++REGRESS_EXEC=$(shell [ `id -u` = "0" ] && echo "HOME=$(REGRESS_DIR) su -m `id -u -n 1000` -c" || echo "HOME=$(REGRESS_DIR) sh -c")
++
+ define usage_xml_to_erl
+   $(subst __,_,$(patsubst $(DOCS_DIR)/rabbitmq%.1.xml, $(SOURCE_DIR)/rabbit_%_usage.erl, $(subst -,_,$(1))))
+ endef
+@@ -71,7 +64,7 @@ endef
+ 
+ ifneq "$(SBIN_DIR)" ""
+ ifneq "$(TARGET_DIR)" ""
+-SCRIPTS_REL_PATH=$(shell ./calculate-relative $(TARGET_DIR)/sbin $(SBIN_DIR))
++SCRIPTS_REL_PATH="../lib/rabbitmq/sbin"
+ endif
  endif
  
- #other args: +native +"{hipe,[o3,verbose]}" -Ddebug=true +debug_info +no_strict_record_tests
-@@ -154,7 +157,7 @@ distclean: clean
- 		-c "RabbitMQ AMQP Server" \
- 		-d "" \
- 		-r "" \
--		$< | gzip --best > $@
-+		$< > `dirname $@`/`basename $@ .gz`
+@@ -132,7 +125,7 @@ clean:
+ 	rm -f $(EBIN_DIR)/*.beam
+ 	rm -f $(EBIN_DIR)/rabbit.app $(EBIN_DIR)/rabbit.boot $(EBIN_DIR)/rabbit.script $(EBIN_DIR)/rabbit.rel
+ 	rm -f $(INCLUDE_DIR)/rabbit_framing.hrl $(SOURCE_DIR)/rabbit_framing_amqp_*.erl codegen.pyc
+-	rm -f $(DOCS_DIR)/*.[0-9].gz $(DOCS_DIR)/*.man.xml $(DOCS_DIR)/*.erl $(USAGES_ERL)
++	rm -f $(DOCS_DIR)/*.[0-9] $(DOCS_DIR)/*.man.xml $(DOCS_DIR)/*.erl $(USAGES_ERL)
+ 	rm -f $(RABBIT_PLT)
+ 	rm -f $(DEPS_FILE)
  
- docs_all: $(MANPAGES)
+@@ -164,6 +157,21 @@ run-node: all
+ run-tests: all
+ 	echo "rabbit_tests:all_tests()." | $(ERL_CALL)
  
-@@ -174,6 +177,6 @@ install: all docs_all
++regress:
++	rm -rf $(REGRESS_DIR)
++	mkdir -m 777 -p $(REGRESS_DIR)
++	RABBITMQ_NODENAME="rabbitmq-regress" \
++		RABBITMQ_NODE_PORT="55672" \
++		RABBITMQ_LOG_BASE="$(REGRESS_DIR)/logs" \
++		RABBITMQ_MNESIA_BASE="$(REGRESS_DIR)/mnesia" \
++		RABBITMQ_SERVER_START_ARGS="$(RABBITMQ_SERVER_START_ARGS) -detached" \
++		$(REGRESS_EXEC) ./scripts/rabbitmq-server
++	@sleep 5
++	echo "rabbit_tests:all_tests()." | $(REGRESS_EXEC) "erl_call -sname rabbitmq-regress -e" | tee $(REGRESS_DIR)/result
++	[ "`cat $(REGRESS_DIR)/result | cut -b2-3`" = "ok" ] || \
++		($(REGRESS_EXEC) "erl_call -sname rabbitmq-regress -e -q" && rm -rf $(REGRESS_DIR) && false)
++	$(REGRESS_EXEC) "erl_call -sname rabbitmq-regress -e -q" && rm -rf $(REGRESS_DIR) && echo "Passed."
++
+ start-background-node:
+ 	$(BASIC_SCRIPT_ENVIRONMENT_SETTINGS) \
+ 		RABBITMQ_NODE_ONLY=true \
+@@ -234,8 +242,7 @@ distclean: clean
+ %.gz: %.xml $(DOCS_DIR)/examples-to-end.xsl
+ 	xmlto --version | grep -E '^xmlto version 0\.0\.([0-9]|1[1-8])$$' >/dev/null || opt='--stringparam man.indent.verbatims=0' ; \
+ 	    xsltproc $(DOCS_DIR)/examples-to-end.xsl $< > $<.tmp && \
+-	    xmlto -o $(DOCS_DIR) $$opt man $<.tmp && \
+-	    gzip -f $(DOCS_DIR)/`basename $< .xml`
++	    xmlto -o $(DOCS_DIR) $$opt man $<.tmp
+ 	rm -f $<.tmp
+ 
+ # Use tmp files rather than a pipeline so that we get meaningful errors
+@@ -278,7 +285,7 @@ install_bin: all install_dirs
+ install_docs: docs_all install_dirs
  	for section in 1 5; do \
  		mkdir -p $(MAN_DIR)/man$$section; \
- 		for manpage in docs/*.$$section.pod; do \
--			cp docs/`basename $$manpage .pod`.gz $(MAN_DIR)/man$$section; \
-+			cp docs/`basename $$manpage .pod` $(MAN_DIR)/man$$section; \
+-		for manpage in $(DOCS_DIR)/*.$$section.gz; do \
++		for manpage in $(DOCS_DIR)/*.$$section; do \
+ 			cp $$manpage $(MAN_DIR)/man$$section; \
  		done; \
  	done

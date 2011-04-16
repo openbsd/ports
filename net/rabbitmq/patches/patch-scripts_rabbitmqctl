@@ -1,36 +1,37 @@
-$OpenBSD: patch-scripts_rabbitmqctl,v 1.1.1.1 2009/11/12 13:10:33 msf Exp $
---- scripts/rabbitmqctl.orig	Wed Jun 17 02:09:00 2009
-+++ scripts/rabbitmqctl	Wed Nov 11 16:03:48 2009
-@@ -30,15 +30,21 @@
- ##   Contributor(s): ______________________________________.
- ##
+--- scripts/rabbitmqctl.orig	Thu Apr  7 15:55:08 2011
++++ scripts/rabbitmqctl	Sun Apr 10 19:07:59 2011
+@@ -20,12 +20,31 @@
+ [ "x" = "x$RABBITMQ_NODENAME" ] && RABBITMQ_NODENAME=${NODENAME}
+ [ "x" = "x$RABBITMQ_CTL_ERL_ARGS" ] && RABBITMQ_CTL_ERL_ARGS=${CTL_ERL_ARGS}
  
--[ -f /etc/rabbitmq/rabbitmq.conf ] && . /etc/rabbitmq/rabbitmq.conf
- 
--[ "x" = "x$RABBITMQ_CTL_ERL_ARGS" ] && RABBITMQ_CTL_ERL_ARGS=${CTL_ERL_ARGS}
--
 -exec erl \
--    -pa "`dirname $0`/../ebin" \
--    -noinput \
--    -hidden \
--    ${RABBITMQ_CTL_ERL_ARGS} \
--    -sname rabbitmqctl$$ \
--    -s rabbit_control \
--    -extra "$@"
-+if [ `id -u` = 0 ]; then
-+  [ -f /etc/rabbitmq/rabbitmq.conf ] && . /etc/rabbitmq/rabbitmq.conf
-+  
-+  [ "x" = "x$RABBITMQ_CTL_ERL_ARGS" ] && RABBITMQ_CTL_ERL_ARGS=${CTL_ERL_ARGS}
-+  
-+  su _rabbitmq -c "erl \\
-+      -pa ${LOCALBASE}/lib/rabbitmq/ebin \\
-+      -noinput \\
-+      -hidden \\
-+      ${RABBITMQ_CTL_ERL_ARGS} \\
-+      -sname rabbitmqctl$$ \\
-+      -s rabbit_control \\
-+      -extra $@"
-+else
-+      echo -e "\nOnly root should run `basename $0`\n"
-+      exit 1
+-    -pa "${RABBITMQ_HOME}/ebin" \
++ID=`id -g`
++GIDS=`id -G`
++RID=`id -g ${RABBITUSER}`
++
++EXEC_CMD="false"
++
++for GID in $GIDS; do
++    if [ $GID -eq 0 ] ; then
++        EXEC_CMD="su ${RABBITUSER} -c"
++    fi
++done
++if [ "$ID" -eq "$RID" ] ; then
++        EXEC_CMD="sh -c"
 +fi
++if [ "$EXEC_CMD" = "false" ] ; then
++        echo "This command can only be run by root or the user $RABBITUSER" >&2
++        exit 4
++fi
++
++$EXEC_CMD "erl \
++    -pa \"${RABBITMQ_HOME}/ebin\" \
+     -noinput \
+     -hidden \
+     ${RABBITMQ_CTL_ERL_ARGS} \
+     -sname rabbitmqctl$$ \
+     -s rabbit_control \
+     -nodename $RABBITMQ_NODENAME \
+-    -extra "$@"
++    -extra $*"
