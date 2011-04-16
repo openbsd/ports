@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/17 08:54:39 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/16 14:57:34 dcoppa Exp $
 
 COMMENT=		console based player for last.fm radio streams
 
 DISTNAME=		shell-fm-0.7
-REVISION=		2
+REVISION=		3
 CATEGORIES=		audio
 
 HOMEPAGE=		http://nex.scrapping.cc/shell-fm/
