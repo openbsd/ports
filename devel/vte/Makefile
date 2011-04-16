@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/04/12 16:35:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2011/04/16 12:17:40 jasper Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
@@ -31,6 +31,8 @@ MODULES=		devel/gettext \
 
 MODPY_RUNDEP=		No
 MULTI_PACKAGES= 	-main -python
+# Don't pull in x11/py-gtk2 on these archs; build fails with binutils 2.15
+NOT_FOR_ARCHS-python=	mips64 mips64el
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
@@ -45,8 +47,10 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 
 WANTLIB-python= 	${WANTLIB} ffi vte>=14 gtk-x11-2.0
 
-BUILD_DEPENDS=		devel/gobject-introspection \
-			x11/py-gtk2
+BUILD_DEPENDS=		devel/gobject-introspection
+.if ! ${MACHINE_ARCH:Mmips64*}
+BUILD_DEPENDS+=		x11/py-gtk2
+.endif
 
 LIB_DEPENDS-python=	${LIB_DEPENDS-main} \
 			${BASE_PKGPATH} \
@@ -56,9 +60,11 @@ RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS} \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-python \
 			--enable-introspection \
 			--disable-Bsymbolic
+.if ! ${MACHINE_ARCH:Mmips64*}
+CONFIGURE_ARGS+=	--enable-python
+.endif
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
