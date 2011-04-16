@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/18 17:47:52 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/04/16 10:51:39 sthen Exp $
 # $FreeBSD: ports/devel/ffcall/Makefile,v 1.2 2001/08/31 14:20:18 sobomax Exp $
 # Original From:                jagapen@home.com
 
 # m68k: mmap configure test causes system hang
 # arm: doesn't build super-old and broken assember files
-ONLY_FOR_ARCH=	alpha amd64 hppa i386 mips64 mips64el powerpc sparc sparc64
+ONLY_FOR_ARCHS=	alpha amd64 hppa i386 mips64 mips64el powerpc sparc sparc64
 
 COMMENT=	foreign function call libraries
 
