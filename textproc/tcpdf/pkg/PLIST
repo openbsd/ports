@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/01/04 05:46:53 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/04/16 23:10:13 jolan Exp $
 tcpdf/
 tcpdf/2dbarcodes.php
 tcpdf/CHANGELOG.TXT
@@ -25,6 +25,7 @@ tcpdf/config/lang/dan.php
 tcpdf/config/lang/eng.php
 tcpdf/config/lang/est.php
 tcpdf/config/lang/eus.php
+tcpdf/config/lang/far.php
 tcpdf/config/lang/fra.php
 tcpdf/config/lang/ger.php
 tcpdf/config/lang/gle.php
