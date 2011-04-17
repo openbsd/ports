@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2011/03/26 16:02:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/04/17 07:15:12 ajacoutot Exp $
 
 COMMENT=	C++ wrapper for the libxml XML parser library
 
-V=		2.32.0
+V=		2.34.0
 DISTNAME=	libxml++-$V
 SHARED_LIBS+=	xml++-2.6	1.0 # .2.7
 CATEGORIES=	textproc
