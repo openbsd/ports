@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/01/18 19:55:53 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/17 10:34:06 landry Exp $
 @conflict xfdesktop-<=4.7.0
 %%SHARED%%
 include/garcon-1/
@@ -44,17 +44,17 @@ share/examples/garcon/xfce-applications.menu
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/garcon/
-share/gtk-doc/html/garcon/GarconMenu.html
-share/gtk-doc/html/garcon/GarconMenuDirectory.html
-share/gtk-doc/html/garcon/GarconMenuElement.html
-share/gtk-doc/html/garcon/GarconMenuItem.html
-share/gtk-doc/html/garcon/GarconMenuItemCache.html
-share/gtk-doc/html/garcon/GarconMenuMerger.html
-share/gtk-doc/html/garcon/GarconMenuParser.html
-share/gtk-doc/html/garcon/GarconMenuSeparator.html
-share/gtk-doc/html/garcon/GarconMenuTreeProvider.html
 share/gtk-doc/html/garcon/api-index-full.html
 share/gtk-doc/html/garcon/garcon-Desktop-Environment-Configuration.html
+share/gtk-doc/html/garcon/garcon-GarconMenu.html
+share/gtk-doc/html/garcon/garcon-GarconMenuDirectory.html
+share/gtk-doc/html/garcon/garcon-GarconMenuElement.html
+share/gtk-doc/html/garcon/garcon-GarconMenuItem.html
+share/gtk-doc/html/garcon/garcon-GarconMenuItemCache.html
+share/gtk-doc/html/garcon/garcon-GarconMenuMerger.html
+share/gtk-doc/html/garcon/garcon-GarconMenuParser.html
+share/gtk-doc/html/garcon/garcon-GarconMenuSeparator.html
+share/gtk-doc/html/garcon/garcon-GarconMenuTreeProvider.html
 share/gtk-doc/html/garcon/garcon-Version-Information.html
 share/gtk-doc/html/garcon/garcon-garcon-menu-item-pool.html
 share/gtk-doc/html/garcon/garcon-garcon-menu-node.html
