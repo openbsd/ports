@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_build_environment_py,v 1.1.1.1 2011/04/17 18:39:21 phessler Exp $
+--- setup/build_environment.py.orig	Fri Jan 21 23:22:10 2011
++++ setup/build_environment.py	Thu Jan 27 09:46:09 2011
+@@ -170,7 +170,7 @@ else:
+ 
+ fc_inc = os.environ.get('FC_INC_DIR', fc_inc)
+ fc_lib = os.environ.get('FC_LIB_DIR', fc_lib)
+-fc_error = None if os.path.exists(os.path.join(fc_inc, 'fontconfig.h')) else \
++fc_error = None if os.path.exists(os.path.join(fc_inc, 'fontconfig/fontconfig.h')) else \
+     ('fontconfig header files not found on your system. '
+             'Try setting the FC_INC_DIR and FC_LIB_DIR environment '
+             'variables.')

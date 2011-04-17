@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_calibre_devices_scanner_py,v 1.1.1.1 2011/04/17 18:39:21 phessler Exp $
+--- src/calibre/devices/scanner.py.orig	Fri Jan 21 23:22:10 2011
++++ src/calibre/devices/scanner.py	Thu Jan 27 10:50:42 2011
+@@ -10,6 +10,8 @@ from threading import RLock
+ 
+ from calibre import iswindows, isosx, plugins, islinux
+ 
++isopenbsd = 'openbsd' in sys.platform.lower()
++
+ osx_scanner = win_scanner = linux_scanner = None
+ 
+ if iswindows:
+@@ -157,12 +159,18 @@ linux_scanner = None
+ if islinux:
+     linux_scanner = LinuxScanner()
+ 
++openbsd_scanner = None
++
++''' OpenBSD support currently not written yet '''
++if isopenbsd:
++    openbsd_scanner = None
++
+ class DeviceScanner(object):
+ 
+     def __init__(self, *args):
+         if isosx and osx_scanner is None:
+             raise RuntimeError('The Python extension usbobserver must be available on OS X.')
+-        self.scanner = win_scanner if iswindows else osx_scanner if isosx else linux_scanner
++        self.scanner = win_scanner if iswindows else osx_scanner if isosx else openbsd_scanner if isopenbsd else linux_scanner
+         self.devices = []
+ 
+     def scan(self):

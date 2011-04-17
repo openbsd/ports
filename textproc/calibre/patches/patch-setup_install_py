@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_install_py,v 1.1.1.1 2011/04/17 18:39:21 phessler Exp $
+--- setup/install.py.orig	Thu Jan 27 09:50:17 2011
++++ setup/install.py	Thu Jan 27 09:50:20 2011
+@@ -269,7 +269,7 @@ class Install(Develop):
+             reldir = os.path.relpath(x[0], self.SRC)
+             destdir = os.path.join(dest, reldir)
+             for f in x[-1]:
+-                if os.path.splitext(f)[1] in ('.py', '.so'):
++                if os.path.splitext(f)[1] in ('.py', '.pyc', '.so'):
+                     if not os.path.exists(destdir):
+                         os.makedirs(destdir)
+                     shutil.copy2(self.j(x[0], f), destdir)

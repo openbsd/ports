@@ -1,0 +1,23 @@
+$OpenBSD: patch-setup_extensions_py,v 1.1.1.1 2011/04/17 18:39:21 phessler Exp $
+--- setup/extensions.py.orig	Fri Jan 21 23:22:10 2011
++++ setup/extensions.py	Thu Jan 27 09:46:09 2011
+@@ -107,8 +107,8 @@ extensions = [
+                 reflow_sources,
+                 headers=reflow_headers,
+                 libraries=poppler_libs+magick_libs+png_libs+ft_libs+jpg_libs+pdfreflow_libs,
+-                lib_dirs=poppler_lib_dirs+magick_lib_dirs+png_lib_dirs+ft_lib_dirs+jpg_lib_dirs,
+-                inc_dirs=poppler_inc_dirs+magick_inc_dirs+png_inc_dirs,
++                lib_dirs=poppler_lib_dirs+magick_lib_dirs+png_lib_dirs+ft_lib_dirs+jpg_lib_dirs+[fc_lib],
++                inc_dirs=poppler_inc_dirs+magick_inc_dirs+png_inc_dirs+[fc_inc],
+                 error=reflow_error,
+                 cflags=['-DPNG_SKIP_SETJMP_CHECK'] if islinux else []
+                 ),
+@@ -187,7 +187,7 @@ if isunix:
+     cc = os.environ.get('CC', 'gcc')
+     cxx = os.environ.get('CXX', 'g++')
+     cflags = os.environ.get('OVERRIDE_CFLAGS',
+-        '-O3 -Wall -DNDEBUG -fno-strict-aliasing -pipe')
++        '-Wall -DNDEBUG -fno-strict-aliasing -pipe')
+     cflags = shlex.split(cflags) + ['-fPIC']
+     ldflags = os.environ.get('OVERRIDE_LDFLAGS', '-Wall')
+     ldflags = shlex.split(ldflags)

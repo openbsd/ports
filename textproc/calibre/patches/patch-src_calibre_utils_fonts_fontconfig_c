@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_calibre_utils_fonts_fontconfig_c,v 1.1.1.1 2011/04/17 18:39:21 phessler Exp $
+--- src/calibre/utils/fonts/fontconfig.c.orig	Sat Jan 15 21:10:37 2011
++++ src/calibre/utils/fonts/fontconfig.c	Sat Jan 15 21:10:47 2011
+@@ -14,7 +14,7 @@
+ #include <Python.h>
+ #include <stdio.h>
+ #include <string.h>
+-#include <fontconfig.h>
++#include <fontconfig/fontconfig.h>
+ 
+ static PyObject *
+ fontconfig_initialize(PyObject *self, PyObject *args) {

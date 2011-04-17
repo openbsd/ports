@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_calibre_gui2_pictureflow_pictureflow_h,v 1.1.1.1 2011/04/17 18:39:21 phessler Exp $
+--- src/calibre/gui2/pictureflow/pictureflow.h.orig	Sat Jan 15 21:15:22 2011
++++ src/calibre/gui2/pictureflow/pictureflow.h	Sat Jan 15 21:16:11 2011
+@@ -57,7 +57,7 @@
+ 
+ #pragma once
+ 
+-#include <QWidget>
++#include <QtGui/QWidget>
+ 
+ class FlowImages : public QObject
+ {
