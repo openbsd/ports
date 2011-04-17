@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.36 2010/11/15 17:41:03 ajacoutot Exp $
-@conflict gtk2-clearlooks-engine-<0.6.2p7
+@comment $OpenBSD: PLIST,v 1.37 2011/04/17 15:11:57 ajacoutot Exp $
+@conflict gtk2-clearlooks-engine-*
 share/icons/Crux/
 share/icons/Crux/16x16/
 share/icons/Crux/16x16/actions/
@@ -2747,6 +2747,7 @@ share/locale/zh_CN/LC_MESSAGES/gnome-themes.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-themes.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-themes.mo
 share/themes/
+share/themes/Clearlooks/index.theme
 share/themes/Clearlooks/metacity-1/
 share/themes/Clearlooks/metacity-1/metacity-theme-1.xml
 share/themes/ClearlooksClassic/

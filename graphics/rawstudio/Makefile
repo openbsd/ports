@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/04/17 15:11:57 ajacoutot Exp $
 
 COMMENT =	tool for working with RAW images
 
 DISTNAME =	rawstudio-1.2
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	graphics
 
@@ -43,7 +43,7 @@ LIB_DEPENDS +=	x11/dbus \
 		textproc/libxml
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		x11/gtk2-clearlooks-engine
+		x11/gtk-engines2
 
 NO_REGRESS =	Yes
 
