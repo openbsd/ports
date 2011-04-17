@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/17 14:36:07 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Equinox GTK+2 engine
 
-V=		1.20
+V=		1.40
 DISTNAME=	121881-equinox-${V}
 PKGNAME=	gtk2-equinox-engine-${V}
-REVISION=	0
 
-EXTRACT_SUFX=	.tar.bz2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		140449-equinox-themes-${V}${EXTRACT_SUFX}
 
 CATEGORIES=	x11
 
@@ -21,12 +21,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
-WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread-stubs xcb xcb-render xcb-render-util
-WANTLIB += z gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm
+WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread-stubs xcb xcb-render xcb-shm
+WANTLIB += z
 
 MASTER_SITES=	http://gnome-look.org/CONTENT/content-files/
 
@@ -48,25 +49,17 @@ WRKDIST=	${WRKDIR}/${_DNAME:S/-gtk-engine//}
 
 post-extract:
 	cd ${WRKDIR} && \
-		tar xzf equinox-gtk-engine.tar.gz && \
-		tar xzf equinox-themes.tar.gz -C ${WRKSRC}
-	mv ${WRKSRC}/"Equinox Glass" ${WRKSRC}/EquinoxGlass
-	mv ${WRKSRC}/"Equinox Wide" ${WRKSRC}/EquinoxWide
-	mv ${WRKSRC}/"Equinox Classic" ${WRKSRC}/EquinoxClassic
-	mv ${WRKSRC}/"Equinox Light" ${WRKSRC}/EquinoxLight
-	chmod +x ${WRKSRC}/install-sh
+		for i in Equinox*; do mv "$$i" $$(echo "$$i" | sed -e 's, ,_,g'); done
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/themes/Equinox/gtk-2.0/
-	cp -R ${WRKSRC}/Equinox{,Glass,Wide,Classic,Light} \
-		${PREFIX}/share/themes/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/themes/
+	cp -R ${WRKDIR}/Equinox_Evolution* ${PREFIX}/share/themes/
 	chown -R ${SHAREOWN}:${SHAREGRP} \
-		${PREFIX}/share/themes/Equinox{,Glass,Wide}
-	find ${PREFIX}/share/themes/ -type f | \
-		xargs perl -pi -e 's,Equinox Glass,EquinoxGlass,g;' \
-			-e 's,Equinox Wide,EquinoxWide,g;' \
-			-e 's,Equinox Classic,EquinoxClassic,g;' \
-			-e 's,Equinox Light,EquinoxLight,g'
-	find ${PREFIX} -name \*.orig | xargs rm
+		${PREFIX}/share/themes/Equinox_Evolution*
+	find ${PREFIX}/share/themes/ -type f -name index.theme | \
+		xargs perl -pi -e 's,Equinox Evolution,Equinox_Evolution,g;' \
+			 -e 's,Evolution ,Evolution_,g'
+	find ${PREFIX}/share/themes/ -type f -name \*.crx \
+		-or -name README -or -name ChangeLog | xargs rm
 
 .include <bsd.port.mk>
