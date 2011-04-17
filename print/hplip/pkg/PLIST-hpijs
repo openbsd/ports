@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-hpijs,v 1.11 2011/03/02 06:59:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpijs,v 1.12 2011/04/17 07:19:44 ajacoutot Exp $
 @conflict hplip-libs-<=3.9.8
 @pkgpath print/hpijs
 @bin bin/hpijs
@@ -164,6 +164,7 @@ share/foomatic/db/source/PPD/HP/hp-color_laserjet_cp5520_series-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-color_laserjet_cp6015-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-color_laserjet_cp6015-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-cp1160-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_4000ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_4020ps-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_4500mfp.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_4500ps.ppd.gz
@@ -174,8 +175,15 @@ share/foomatic/db/source/PPD/HP/hp-designjet_t1100ps_44in-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t1120ps_24in-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t1120ps_44in-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t1200_postscript-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_t2300_postscript-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_t7100ps-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_t7100ps_monochrome-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t770_postscript-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-designjet_t770ps_24in-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_z6100ps_42in_photo-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_z6100ps_60in_photo-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_z6200_42in_photo-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-designjet_z6200_60in_photo-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1000_j110_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1050_j410_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-deskjet_1100-hpijs.ppd.gz
@@ -510,12 +518,12 @@ share/foomatic/db/source/PPD/HP/hp-laserjet_9055mfp-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_9055mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_9065mfp-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_9065mfp-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserjet_cm1410_series-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_cm1411fn-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_cm1412fn-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_cm1413fn-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_cm1415fn-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_cm1415fnw-hpijs-pcl3.ppd.gz
-share/foomatic/db/source/PPD/HP/hp-laserjet_cm1415fnw-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_cm1416fnw-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_cm1417fnw-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_cm1418fnw-hpijs-pcl3.ppd.gz
@@ -527,6 +535,7 @@ share/foomatic/db/source/PPD/HP/hp-laserjet_cp1025nw-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_cp1026nw-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_cp1027nw-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_cp1028nw-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserjet_cp1520_series-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_m1005-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_m1120_mfp-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_m1120n_mfp-hpijs.ppd.gz
@@ -535,8 +544,8 @@ share/foomatic/db/source/PPD/HP/hp-laserjet_m1522_mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_m1522n_mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_m1522nf_mfp-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_m1522nf_mfp-ps.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-laserjet_m1530_mfp_series-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_m1536dnf_mfp-hpijs-pcl3.ppd.gz
-share/foomatic/db/source/PPD/HP/hp-laserjet_m1536dnf_mfp-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_m1537dnf_mfp-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_m1538dnf_mfp-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-laserjet_m1539dnf_mfp-hpijs-pcl3.ppd.gz
@@ -642,6 +651,7 @@ share/foomatic/db/source/PPD/HP/hp-mopier_240-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-mopier_320-hpijs-pcl3.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-mopier_320-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-officejet_100_mobile_l411-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_150_mobile_l511-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4000_k210-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_4100_series-hpijs.ppd.gz
@@ -703,6 +713,7 @@ share/foomatic/db/source/PPD/HP/hp-officejet_lx-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_1150c-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_1170c_series-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_8000_a809-hpijs.ppd.gz
+share/foomatic/db/source/PPD/HP/hp-officejet_pro_8000_enterprise_a811a-ps.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_8500_a909a-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_8500_a909g-hpijs.ppd.gz
 share/foomatic/db/source/PPD/HP/hp-officejet_pro_8500_a909n-hpijs.ppd.gz

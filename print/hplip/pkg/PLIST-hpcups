@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-hpcups,v 1.2 2009/08/20 08:07:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-hpcups,v 1.3 2011/04/17 07:19:44 ajacoutot Exp $
 @bin libexec/cups/filter/hpcups
 @bin libexec/cups/filter/hpcupsfax
+@bin libexec/cups/filter/hpps
 share/cups/drv/hp/hpcups.drv
 share/foomatic/
 share/foomatic/db/
