@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/04/17 20:20:32 jasper Exp $
 
 COMMENT=	alternative xdm-invoked chooser
 
 DISTNAME=	xdmchoose-1.2.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11
 HOMEPAGE=	http://frmb.org/xdmchoose.html
 
@@ -19,12 +19,11 @@ WANTLIB=	X11 Xau Xdmcp Xpm c
 
 MASTER_SITES=	http://frmb.org/download/
 
-USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include"
 
 post-install:
-	@perl -i -pe 's!%%PREFIX%%!${TRUEPREFIX}!g' ${WRKSRC}/xdmchoose.conf
+	${SUBST_CMD} ${WRKSRC}/xdmchoose.conf
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xdmchoose
 	${INSTALL_DATA} ${WRKSRC}/xdmchoose.conf \
 		${PREFIX}/share/examples/xdmchoose/
