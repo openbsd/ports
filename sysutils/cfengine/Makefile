@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2010/11/26 14:50:10 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2011/04/17 18:19:37 jasper Exp $
 
 COMMENT=	GNU system administration tool for networks
 
 DISTNAME=      	cfengine-2.2.10
+REVISION=	0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.cfengine.org/
@@ -17,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c crypto m pthread lib/db4/db>=4
 
-MASTER_SITES=		${HOMEPAGE}tarballs/
+MASTER_SITES=		${HOMEPAGE}/tarballs/
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-docs

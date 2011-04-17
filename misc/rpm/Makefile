@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/04/17 18:23:19 jasper Exp $
 
 COMMENT =	redhat package manager
 
 DISTNAME =	rpm-3.0.6
-REVISION =	4
+REVISION =	5
 SHARED_LIBS =	rpm		0.1 \
 		rpmbuild	0.0
 CATEGORIES =	misc archivers emulators

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/19 22:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2011/04/17 18:23:19 jasper Exp $
 
 COMMENT=	Cistron RADIUS server
 
 VERSION=	1.6.7
 DISTNAME=	radiusd-cistron-${VERSION}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.radius.cistron.nl/pub/radius/ \
 		ftp://ftp.freeradius.org/pub/radius/ \
@@ -15,10 +15,12 @@ HOMEPAGE=	http://www.radius.cistron.nl/
 RUN_DEPENDS=	net/p5-Net-Telnet \
 		net/p5-SNMP_Session
 
-PERMIT_PACKAGE_CDROM=	Yes 
-PERMIT_PACKAGE_FTP=	Yes 
-PERMIT_DISTFILES_CDROM=	Yes 
-PERMIT_DISTFILES_FTP=	Yes 
+# GPL
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c
 
 WRKSRC=		${WRKDIST}/src
