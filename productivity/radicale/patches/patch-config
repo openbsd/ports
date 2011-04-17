@@ -1,4 +1,4 @@
-$OpenBSD: patch-config,v 1.2 2011/04/15 16:44:27 sthen Exp $
+$OpenBSD: patch-config,v 1.3 2011/04/17 14:54:47 sthen Exp $
 --- config.orig	Sat Aug  7 13:22:58 2010
 +++ config	Fri Apr 15 17:42:39 2011
 @@ -15,9 +15,9 @@ daemon = False
@@ -6,10 +6,10 @@ $OpenBSD: patch-config,v 1.2 2011/04/15 16:44:27 sthen Exp $
  ssl = False
  # SSL certificate path (if needed)
 -certificate = /etc/apache2/ssl/server.crt
-+certificate = /etc/ssl/server.crt
++certificate = ${SYSCONFDIR}/radicale/server.crt
  # SSL private key (if needed)
 -key = /etc/apache2/ssl/server.key
-+key = /etc/ssl/private/server.key
++key = ${SYSCONFDIR}/radicale/private/server.key
  
  [encoding]
  # Encoding for responding requests

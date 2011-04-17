@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/15 15:47:17 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/17 14:54:47 sthen Exp $
 @newgroup _radicale:672
 @newuser _radicale:672:_radicale:daemon:radicale user:/nonexistent:/sbin/nologin
 bin/radicale
@@ -19,6 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/radicale/ical.py
 lib/python${MODPY_VERSION}/site-packages/radicale/ical.pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/xmlutils.py
 lib/python${MODPY_VERSION}/site-packages/radicale/xmlutils.pyc
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/radicale/
 share/doc/radicale/COPYING
 share/doc/radicale/NEWS
@@ -32,3 +33,4 @@ share/examples/radicale/config
 @owner _radicale
 @group _radicale
 @sample /var/db/radicale/
+@sample ${SYSCONFDIR}/radicale/private/
