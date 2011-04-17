@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2011/04/17 14:05:56 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ GNOME_VERSION=		2.20.2
 
 # warning: PKGNAME does not default to ${DISTNAME}
 PKGNAME=		gtk-engines2-${GNOME_VERSION}
-REVISION=	0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -34,8 +34,11 @@ RUN_DEPENDS=	x11/hicolor-icon-theme
 MODULES=		devel/gettext \
 			x11/gnome
 
+LIBTOOL_FLAGS=		--tag=disable-static
+
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
+			--disable-static \
 			--disable-lua \
 			--enable-animation
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

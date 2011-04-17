@@ -1,31 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.28 2010/10/01 19:39:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.29 2011/04/17 14:05:56 ajacoutot Exp $
 @conflict gtk-thinice-engine-*
 @conflict gtk2-clearlooks-engine-<0.6.2p8
 @conflict gnome-themes-<2.10
 @pkgpath x11/gtk-thinice-engine
-lib/gtk-2.0/2.10.0/engines/libclearlooks.a
-lib/gtk-2.0/2.10.0/engines/libclearlooks.la
+@comment lib/gtk-2.0/2.10.0/engines/libclearlooks.la
 lib/gtk-2.0/2.10.0/engines/libclearlooks.so
-lib/gtk-2.0/2.10.0/engines/libcrux-engine.a
-lib/gtk-2.0/2.10.0/engines/libcrux-engine.la
+@comment lib/gtk-2.0/2.10.0/engines/libcrux-engine.la
 lib/gtk-2.0/2.10.0/engines/libcrux-engine.so
-lib/gtk-2.0/2.10.0/engines/libglide.a
-lib/gtk-2.0/2.10.0/engines/libglide.la
+@comment lib/gtk-2.0/2.10.0/engines/libglide.la
 lib/gtk-2.0/2.10.0/engines/libglide.so
-lib/gtk-2.0/2.10.0/engines/libhcengine.a
-lib/gtk-2.0/2.10.0/engines/libhcengine.la
+@comment lib/gtk-2.0/2.10.0/engines/libhcengine.la
 lib/gtk-2.0/2.10.0/engines/libhcengine.so
-lib/gtk-2.0/2.10.0/engines/libindustrial.a
-lib/gtk-2.0/2.10.0/engines/libindustrial.la
+@comment lib/gtk-2.0/2.10.0/engines/libindustrial.la
 lib/gtk-2.0/2.10.0/engines/libindustrial.so
-lib/gtk-2.0/2.10.0/engines/libmist.a
-lib/gtk-2.0/2.10.0/engines/libmist.la
+@comment lib/gtk-2.0/2.10.0/engines/libmist.la
 lib/gtk-2.0/2.10.0/engines/libmist.so
-lib/gtk-2.0/2.10.0/engines/libredmond95.a
-lib/gtk-2.0/2.10.0/engines/libredmond95.la
+@comment lib/gtk-2.0/2.10.0/engines/libredmond95.la
 lib/gtk-2.0/2.10.0/engines/libredmond95.so
-lib/gtk-2.0/2.10.0/engines/libthinice.a
-lib/gtk-2.0/2.10.0/engines/libthinice.la
+@comment lib/gtk-2.0/2.10.0/engines/libthinice.la
 lib/gtk-2.0/2.10.0/engines/libthinice.so
 lib/pkgconfig/gtk-engines-2.pc
 share/gtk-engines/
