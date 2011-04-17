@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.139 2011/04/03 18:07:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.140 2011/04/17 08:33:14 sthen Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		SMB and CIFS client and server for UNIX
 COMMENT-docs=		additional documentation and examples for Samba
 
-REVISION-main=		2
+REVISION-main=		3
 
 DISTNAME=		samba-3.5.8
 PKGNAME-main=		${DISTNAME}
@@ -105,7 +105,6 @@ ERRORS+= "Fatal: ldap and ads flavors conflict"
 .if ${FLAVOR:L:Mldap} || ${FLAVOR:L:Mads}
 LIB_DEPENDS+=	databases/openldap
 WANTLIB +=	ldap lber
-BUILD_DEPENDS+=	misc/libutf8
 .else
 CONFIGURE_ARGS+= 	--without-ldap
 .endif
