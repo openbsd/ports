@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2011/04/17 17:54:49 jasper Exp $
 
 # we use "macppc" and not "powerpc" on purpose here ; i.e. bktr(4) needed
 ONLY_FOR_ARCHS=	i386 macppc amd64 alpha
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	i386 macppc amd64 alpha
 COMMENT=	TV viewing application for bktr(4) cards
 
 DISTNAME=	xawtv-3.94
-REVISION=	4
+REVISION=	5
 CATEGORIES=	x11
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -21,9 +21,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	ICE SM X11 Xaw Xau Xdmcp Xext Xft Xinerama Xmu Xpm Xrandr \
-		Xrender Xt Xv Xxf86dga Xxf86vm c fontconfig freetype m z \
-		ncurses ossaudio pthread expat pthread-stubs xcb jpeg
+WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xft Xinerama Xmu Xpm
+WANTLIB += Xrandr Xrender Xt Xv Xxf86dga Xxf86vm c expat fontconfig
+WANTLIB += freetype jpeg m ncurses ossaudio pthread pthread-stubs
+WANTLIB += xcb z
 
 LIB_DEPENDS=	graphics/jpeg
 
