@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/20 19:56:52 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/17 10:07:56 sthen Exp $
 
 COMMENT=	lightweight regexp matching library with additional features
 
 DISTNAME=		tre-0.7.6
-REVISION=		0
+REVISION=		1
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		textproc
 
@@ -21,15 +21,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SHARED_LIBS+=		tre		6.4	# .6.4
 
-WANTLIB=		c utf8>=1
+WANTLIB=		c
 
 MODULES=		devel/gettext converters/libiconv
-
-LIB_DEPENDS=		misc/libutf8
 
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--enable-static --with-libutf8=${LOCALBASE}
+CONFIGURE_ARGS+=	--enable-static
 
 .include <bsd.port.mk>
