@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2011/03/24 17:58:30 stsp Exp $
+# $OpenBSD: Makefile,v 1.39 2011/04/17 10:35:47 landry Exp $
 
 COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel
-XFCE_VERSION=	4.8.2
-REVISION=	0
+XFCE_VERSION=	4.8.3
 SHARED_LIBS=	xfce4panel-1.0	0.0	# 3.0
 
 # GPLv2
