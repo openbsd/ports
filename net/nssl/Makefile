@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/17 17:56:02 jasper Exp $
 
 COMMENT=		netcat-like program with transparent SSL support
 
 DISTNAME=		nssl.005
 PKGNAME=		nssl-005
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 
 HOMEPAGE=		http://nssl.sourceforge.net/
@@ -27,7 +27,7 @@ NO_REGRESS=		Yes
 WRKDIST=		${WRKDIR}/nssl
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/nssl ${PREFIX}/bin/nssl
+	${INSTALL_PROGRAM} ${WRKBUILD}/nssl ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nssl/
 	${INSTALL_DATA} ${WRKSRC}/readme.txt ${PREFIX}/share/doc/nssl/
 
