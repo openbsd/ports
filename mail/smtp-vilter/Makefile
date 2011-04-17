@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2010/12/27 14:50:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2011/04/17 09:10:46 sthen Exp $
 
 COMMENT=	sendmail milter to scan messages for viruses and spam
 
 DISTNAME=	smtp-vilter-1.3.6
-REVISION=	10
+REVISION=	11
 
 CATEGORIES=    	mail
 
@@ -30,7 +30,6 @@ FLAVOR?=
 .if ${FLAVOR:L:Mldap}
 MAKE_FLAGS+=	-DENABLE_LDAP
 LIB_DEPENDS+=	databases/openldap
-BUILD_DEPENDS+=	misc/libutf8
 WANTLIB += ldap_r lber
 .endif
 
