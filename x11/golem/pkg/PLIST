@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/09/15 19:26:29 espie Exp $
-bin/golem
+@comment $OpenBSD: PLIST,v 1.5 2011/04/17 18:08:55 jasper Exp $
+@bin bin/golem
 bin/golem.install
 @man man/man1/golem.1
 share/doc/golem/
