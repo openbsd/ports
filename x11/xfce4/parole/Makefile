@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/18 21:34:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/17 10:36:50 landry Exp $
 
 COMMENT =	Xfce4 media player
 
-XFCE_VERSION =	0.2.0
+XFCE_VERSION =	0.2.0.5
 XFCE_GOODIE =	parole
-REVISION =	3
 CATEGORIES +=	audio
 
 # GPLv2
@@ -17,16 +16,7 @@ MODULES =	x11/xfce4
 DESKTOP_FILES =	Yes
 
 CONFIGURE_ARGS =	--disable-silent-rules \
-			--disable-power-manager-plugin \
-			--disable-browser-plugin
-
-#for the day i manage to build and run the browser plugin..
-#CONFIGURE_ENV =	BROWSER_PLUGIN_DIR=${PREFIX}/lib/mozilla-plugins
-#BUILD_DEPENDS+=	devel/xulrunner/1.9,-devel>=1.9
-#LIB_DEPENDS =	xulrunner1.9/xul,xulrunner1.9/xpcom::devel/xulrunner/1.9,-main
-#remove a file shipped by xulrunner-devel
-#post-extract:
-#	rm ${WRKSRC}/browser-plugin/npupp.h
+			--disable-power-manager-plugin
 
 LIB_DEPENDS =	multimedia/gstreamer-0.10/core \
 		multimedia/gstreamer-0.10/plugins-base \
