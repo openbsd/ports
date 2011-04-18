@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/16 11:23:25 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/18 11:53:18 landry Exp $
+
+BROKEN-hppa =	./src/x/xdga2s.s:25: Error: symbol .text is already defined
 
 COMMENT =	game programming library for C/C++ developers
 
