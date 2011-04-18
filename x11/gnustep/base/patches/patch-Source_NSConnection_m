@@ -1,0 +1,12 @@
+$OpenBSD: patch-Source_NSConnection_m,v 1.1 2011/04/18 11:54:49 sebastia Exp $
+--- Source/NSConnection.m.orig	Mon Apr  4 17:02:57 2011
++++ Source/NSConnection.m	Mon Apr  4 17:07:24 2011
+@@ -2487,7 +2487,7 @@ static NSLock	*cached_proxies_gate = nil;
+   NSPortCoder	*decoder = nil;
+   NSPortCoder	*encoder = nil;
+   NSInvocation	*inv = nil;
+-  unsigned	seq;
++  unsigned	seq = 0;
+ 
+   /*
+    * Make sure don't let exceptions caused by servicing the client's

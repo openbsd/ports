@@ -1,0 +1,12 @@
+$OpenBSD: patch-Source_Additions_GSMime_m,v 1.1 2011/04/18 11:54:49 sebastia Exp $
+--- Source/Additions/GSMime.m.orig	Mon Apr  4 16:58:32 2011
++++ Source/Additions/GSMime.m	Mon Apr  4 16:59:13 2011
+@@ -3578,7 +3578,7 @@ appendString(NSMutableData *m, NSUInteger offset, NSUI
+     }
+   if (offset > fold)
+     {
+-      NSLog(@"Name '%@' too long for folding at %u in header", n, fold);
++      NSLog(@"Name '%@' too long for folding at %lu in header", n, fold);
+     }
+ 
+   offset = appendBytes(md, offset, fold, ":", 1);

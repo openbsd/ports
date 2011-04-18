@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/01/10 18:23:33 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/04/18 11:54:49 sebastia Exp $
 @conflict swi-prolog-<=5.6.27p5
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
@@ -32,6 +32,7 @@ include/Foundation/NSAutoreleasePool.h
 include/Foundation/NSBundle.h
 include/Foundation/NSByteOrder.h
 include/Foundation/NSCache.h
+include/Foundation/NSCalendar.h
 include/Foundation/NSCalendarDate.h
 include/Foundation/NSCharacterSet.h
 include/Foundation/NSClassDescription.h
@@ -69,6 +70,7 @@ include/Foundation/NSInvocation.h
 include/Foundation/NSKeyValueCoding.h
 include/Foundation/NSKeyValueObserving.h
 include/Foundation/NSKeyedArchiver.h
+include/Foundation/NSLocale.h
 include/Foundation/NSLock.h
 include/Foundation/NSMapTable.h
 include/Foundation/NSMethodSignature.h
@@ -93,6 +95,7 @@ include/Foundation/NSPropertyList.h
 include/Foundation/NSProtocolChecker.h
 include/Foundation/NSProxy.h
 include/Foundation/NSRange.h
+include/Foundation/NSRegularExpression.h
 include/Foundation/NSRunLoop.h
 include/Foundation/NSScanner.h
 include/Foundation/NSSerialization.h
@@ -102,6 +105,7 @@ include/Foundation/NSSpellServer.h
 include/Foundation/NSStream.h
 include/Foundation/NSString.h
 include/Foundation/NSTask.h
+include/Foundation/NSTextCheckingResult.h
 include/Foundation/NSThread.h
 include/Foundation/NSTimeZone.h
 include/Foundation/NSTimer.h
@@ -172,45 +176,10 @@ include/GNUstepBase/unicode/
 include/ObjectiveC2/
 include/ObjectiveC2/Availability.h
 include/ObjectiveC2/blocks_runtime.h
+include/ObjectiveC2/capabilities.h
 include/ObjectiveC2/runtime.h
 include/gnustep/
 include/gnustep/base/
-include/gnustep/base/Additions.h
-include/gnustep/base/GCObject.h
-include/gnustep/base/GNUstep.h
-include/gnustep/base/GSBlocks.h
-include/gnustep/base/GSFileHandle.h
-include/gnustep/base/GSFunctions.h
-include/gnustep/base/GSIArray.h
-include/gnustep/base/GSIMap.h
-include/gnustep/base/GSLocale.h
-include/gnustep/base/GSLock.h
-include/gnustep/base/GSMime.h
-include/gnustep/base/GSObjCRuntime.h
-include/gnustep/base/GSUnion.h
-include/gnustep/base/GSVersionMacros.h
-include/gnustep/base/GSXML.h
-include/gnustep/base/NSArray+GNUstepBase.h
-include/gnustep/base/NSAttributedString+GNUstepBase.h
-include/gnustep/base/NSBundle+GNUstepBase.h
-include/gnustep/base/NSCalendarDate+GNUstepBase.h
-include/gnustep/base/NSData+GNUstepBase.h
-include/gnustep/base/NSDebug+GNUstepBase.h
-include/gnustep/base/NSFileHandle+GNUstepBase.h
-include/gnustep/base/NSLock+GNUstepBase.h
-include/gnustep/base/NSMutableString+GNUstepBase.h
-include/gnustep/base/NSNetServices+GNUstepBase.h
-include/gnustep/base/NSNumber+GNUstepBase.h
-include/gnustep/base/NSObject+GNUstepBase.h
-include/gnustep/base/NSProcessInfo+GNUstepBase.h
-include/gnustep/base/NSStream+GNUstepBase.h
-include/gnustep/base/NSString+GNUstepBase.h
-include/gnustep/base/NSTask+GNUstepBase.h
-include/gnustep/base/NSThread+GNUstepBase.h
-include/gnustep/base/NSURL+GNUstepBase.h
-include/gnustep/base/Unicode.h
-include/gnustep/base/behavior.h
-include/gnustep/base/preface.h
 include/gnustep/unicode/
 include/gnustep/unicode/caseconv.h
 include/gnustep/unicode/cop.h
@@ -257,6 +226,7 @@ ${LIBDIR}/Resources/Languages/Hungarian
 ${LIBDIR}/Resources/Languages/Italian
 ${LIBDIR}/Resources/Languages/Korean
 ${LIBDIR}/Resources/Languages/Locale.aliases
+${LIBDIR}/Resources/Languages/Locale.canonical
 ${LIBDIR}/Resources/Languages/Locale.encodings
 ${LIBDIR}/Resources/Languages/Russian
 ${LIBDIR}/Resources/Languages/Slovak
@@ -433,6 +403,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/America/Mazatlan
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Mendoza
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Menominee
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Merida
+${LIBDIR}/Resources/NSTimeZones/zones/America/Metlakatla
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Mexico_City
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Miquelon
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Moncton
@@ -446,6 +417,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/America/Nipigon
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Nome
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Noronha
 ${LIBDIR}/Resources/NSTimeZones/zones/America/North_Dakota/
+${LIBDIR}/Resources/NSTimeZones/zones/America/North_Dakota/Beulah
 ${LIBDIR}/Resources/NSTimeZones/zones/America/North_Dakota/Center
 ${LIBDIR}/Resources/NSTimeZones/zones/America/North_Dakota/New_Salem
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Ojinaga
@@ -472,6 +444,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/America/Santo_Domingo
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Sao_Paulo
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Scoresbysund
 ${LIBDIR}/Resources/NSTimeZones/zones/America/Shiprock
+${LIBDIR}/Resources/NSTimeZones/zones/America/Sitka
 ${LIBDIR}/Resources/NSTimeZones/zones/America/St_Barthelemy
 ${LIBDIR}/Resources/NSTimeZones/zones/America/St_Johns
 ${LIBDIR}/Resources/NSTimeZones/zones/America/St_Kitts
@@ -831,6 +804,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Apia
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Auckland
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Chatham
+${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Chuuk
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Easter
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Efate
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Enderbury
@@ -856,6 +830,7 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Noumea
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Pago_Pago
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Palau
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Pitcairn
+${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Pohnpei
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Ponape
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Port_Moresby
 ${LIBDIR}/Resources/NSTimeZones/zones/Pacific/Rarotonga

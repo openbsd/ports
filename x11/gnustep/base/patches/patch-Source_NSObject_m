@@ -1,39 +1,15 @@
-$OpenBSD: patch-Source_NSObject_m,v 1.8 2011/01/10 18:23:33 sebastia Exp $
+$OpenBSD: patch-Source_NSObject_m,v 1.9 2011/04/18 11:54:49 sebastia Exp $
 
-fix building on mips64
+fix building with clang, not needed yet, but to not forget about it
 
---- Source/NSObject.m.orig	Thu Jun 10 12:13:51 2010
-+++ Source/NSObject.m	Thu Dec 30 15:06:13 2010
-@@ -57,9 +57,11 @@
- #ifdef	HAVE_SYS_SIGNAL_H
- #include	<sys/signal.h>
+--- Source/NSObject.m.orig	Sun Apr  3 10:53:10 2011
++++ Source/NSObject.m	Mon Apr  4 17:16:24 2011
+@@ -945,7 +947,7 @@ objc_create_block_classes_as_subclasses_of(Class super
+       finalize_imp = class_getMethodImplementation(self, finalize_sel);
  #endif
--#ifdef __FreeBSD__
-+#if __GNUC__ >= 4
-+#if defined(__FreeBSD__)
- #include <fenv.h>
- #endif
-+#endif // __GNUC__
  
- #import "GSPrivate.h"
- 
-@@ -318,7 +320,9 @@ GSAtomicIncrement(gsatomic_t X)
-   int tmp;
- 
-   __asm__ __volatile__ (
-+#if !defined(__mips64__)
-     "   .set  mips2  \n"
-+#endif
-     "0: ll    %0, %1 \n"
-     "   addiu %0, 1  \n"
-     "   sc    %0, %1 \n"
-@@ -333,7 +337,9 @@ GSAtomicDecrement(gsatomic_t X)
-   int tmp;
- 
-   __asm__ __volatile__ (
-+#if !defined(__mips64__)
-     "   .set  mips2  \n"
-+#endif
-     "0: ll    %0, %1 \n"
-     "   addiu %0, -1 \n"
-     "   sc    %0, %1 \n"
+-#if (defined(__FreeBSD__) || defined(__OpenBSD__)) && defined(__i386__)
++#if defined(__FreeBSD__) && defined(__i386__)
+       // Manipulate the FPU to add the exception mask. (Fixes SIGFPE
+       // problems on *BSD)
+       // Note this only works on x86

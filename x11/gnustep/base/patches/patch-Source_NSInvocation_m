@@ -1,0 +1,12 @@
+$OpenBSD: patch-Source_NSInvocation_m,v 1.1 2011/04/18 11:54:49 sebastia Exp $
+--- Source/NSInvocation.m.orig	Mon Apr  4 17:09:54 2011
++++ Source/NSInvocation.m	Mon Apr  4 17:10:25 2011
+@@ -118,7 +118,7 @@
+ 
+   if (buffer == (void*)0)
+     {
+-      NSLog(@"Failed to map %u bytes for execute: %@", _size, [NSError _last]);
++      NSLog(@"Failed to map %lu bytes for execute: %@", _size, [NSError _last]);
+       buffer = 0;
+       [self dealloc];
+       self = nil;

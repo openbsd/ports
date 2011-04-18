@@ -1,0 +1,21 @@
+$OpenBSD: patch-Source_unix_NSStream_m,v 1.1 2011/04/18 11:54:49 sebastia Exp $
+--- Source/unix/NSStream.m.orig	Mon Apr  4 16:59:43 2011
++++ Source/unix/NSStream.m	Mon Apr  4 17:00:37 2011
+@@ -195,7 +195,7 @@
+     }
+   else
+     {
+-      NSLog(@"_dispatch with unexpected status %d", [self streamStatus]);
++      NSLog(@"_dispatch with unexpected status %lu", [self streamStatus]);
+     }
+ }
+ @end
+@@ -324,7 +324,7 @@
+     }
+   else
+     {
+-      NSLog(@"_dispatch with unexpected status %d", [self streamStatus]);
++      NSLog(@"_dispatch with unexpected status %lu", [self streamStatus]);
+     }
+ }
+ @end
