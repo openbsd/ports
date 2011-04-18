@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/12/22 09:23:01 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/18 12:48:29 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -59,6 +59,7 @@ lib/GNUstep/Frameworks/
 lib/GNUstep/Frameworks/SOGo.framework/
 lib/GNUstep/Frameworks/SOGo.framework/Headers
 lib/GNUstep/Frameworks/SOGo.framework/Resources
+lib/GNUstep/Frameworks/SOGo.framework/SOGo
 lib/GNUstep/Frameworks/SOGo.framework/Versions/
 lib/GNUstep/Frameworks/SOGo.framework/Versions/0.0/
 lib/GNUstep/Frameworks/SOGo.framework/Versions/0.0/Headers/
@@ -110,7 +111,10 @@ lib/GNUstep/Frameworks/SOGo.framework/Versions/0.0/Resources/
 lib/GNUstep/Frameworks/SOGo.framework/Versions/0.0/Resources/DAVReportMap.plist
 lib/GNUstep/Frameworks/SOGo.framework/Versions/0.0/Resources/Info-gnustep.plist
 lib/GNUstep/Frameworks/SOGo.framework/Versions/0.0/Resources/SOGoDefaults.plist
+lib/GNUstep/Frameworks/SOGo.framework/Versions/0.0/SOGo
+@lib lib/GNUstep/Frameworks/SOGo.framework/Versions/0.0/libSOGo.so.${LIBSOGo_VERSION}
 lib/GNUstep/Frameworks/SOGo.framework/Versions/Current
+@lib lib/GNUstep/Frameworks/SOGo.framework/libSOGo.so.${LIBSOGo_VERSION}
 lib/GNUstep/Libraries/Resources/
 lib/GNUstep/Libraries/Resources/NGCards/
 lib/GNUstep/Libraries/Resources/NGCards/TimeZones/
