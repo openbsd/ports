@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.13 2011/04/05 08:24:34 espie Exp $
+# $OpenBSD: Vars.pm,v 1.14 2011/04/18 11:40:23 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -156,7 +156,7 @@ sub grab_list
 			$category = $subdir;
 			&$reset;
 		} elsif (my ($pkgpath, $var, $value) =
-		    m/^(.*?)\.([A-Z][A-Z_0-9]*)\=(.*)$/) {
+		    m/^(.*?)\.([A-Z][A-Z_0-9]*)\=\s*(.*)\s*$/) {
 			undef $category;
 			next unless DPB::PortInfo->wanted($var);
 
