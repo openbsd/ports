@@ -1,0 +1,15 @@
+$OpenBSD: patch-PRCustTraceEdges_h,v 1.1 2011/04/18 12:39:03 sebastia Exp $
+
+include missing header file, fixes build with llvm/clang
+
+--- PRCustTraceEdges.h.orig	Wed Apr  6 13:34:09 2011
++++ PRCustTraceEdges.h	Wed Apr  6 13:34:23 2011
+@@ -11,7 +11,7 @@
+ #import <AppKit/AppKit.h>
+ #import "PRProgressAction.h"
+ #import "PRImage.h"
+-
++#import "PRMedian.h"
+ 
+ @interface PRCustTraceEdges : PRProgressAction {
+ 

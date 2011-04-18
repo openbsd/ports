@@ -1,0 +1,15 @@
+$OpenBSD: patch-TerminalView_m,v 1.1 2011/04/18 12:39:36 sebastia Exp $
+
+fix implicit declaration warnings of forkpty and ioctl
+
+--- TerminalView.m.orig	Fri Apr 15 13:05:54 2011
++++ TerminalView.m	Fri Apr 15 13:06:12 2011
+@@ -41,6 +41,8 @@ activated */
+ #  include <pcap.h>
+ #elif defined(__OpenBSD__)
+ #  include <termios.h>
++#  include <util.h>
++#  include <sys/ioctl.h>
+ #else
+ #  include <termio.h>
+ #endif
