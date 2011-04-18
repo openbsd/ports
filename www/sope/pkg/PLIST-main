@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/12/22 09:21:44 sebastia Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2011/04/18 12:47:37 sebastia Exp $
 @bin bin/connect-EOAdaptor
 @bin bin/load-EOAdaptor
 @bin bin/wod
@@ -463,7 +463,6 @@ include/XmlRpc/XmlRpcMethodResponse.h
 @lib lib/libWOExtensions.so.${LIBWOExtensions_VERSION}
 @lib lib/libWOXML.so.${LIBWOXML_VERSION}
 @lib lib/libXmlRpc.so.${LIBXmlRpc_VERSION}
-lib/${MODAPACHE_MODULE}
 lib/sope-4.9/
 lib/sope-4.9/dbadaptors/
 lib/sope-4.9/products/
@@ -516,7 +515,6 @@ lib/sope-4.9/wox-builders/WOExtensions.wox/Resources/Info-gnustep.plist
 @bin lib/sope-4.9/wox-builders/WOExtensions.wox/WOExtensions
 lib/sope-4.9/wox-builders/WOExtensions.wox/bundle-info.plist
 lib/sope-4.9/wox-builders/WOExtensions.wox/stamp.make
-sbin/${MODAPACHE_ENABLE}
 @bin sbin/sope-4.9
 share/GNUstep/Makefiles/Additional/ngobjweb.make
 share/GNUstep/Makefiles/woapp.make

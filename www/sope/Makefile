@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/22 09:21:44 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/18 12:47:37 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
 VERSION=		1.3.4
-REVISION =		2
+REVISION =		3
 DISTNAME=		SOPE-${VERSION}
 PKGNAME-main=		sope-${VERSION}
 PKGNAME-mysql=		sope-mysql-${VERSION}
@@ -32,7 +32,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MULTI_PACKAGES=	-main -mysql -postgres
 
-MODULES=	converters/libiconv x11/gnustep apache-module
+MODULES=	converters/libiconv x11/gnustep
 MODGNUSTEP_NEEDS_GUI=	No
 
 WANTLIB-main = 		gnustep-base m objc c pthread crypto ssl z lber ldap xml2 \
@@ -50,9 +50,6 @@ LIB_DEPENDS-mysql=	${BASE_PKGPATH}=${VERSION} \
 LIB_DEPENDS-postgres=	${BASE_PKGPATH}=${VERSION} \
 			databases/postgresql
 
-MODAPACHE_NAME= ngobjweb
-MODAPACHE_FILE= ${MODAPACHE_LOCATION}/sope-appserver/mod_ngobjweb/${MODAPACHE_MODULE}
-
 WRKDIST=	${WRKDIR}/${DISTNAME}
 CONFIGURE_STYLE=simple dest
 CONFIGURE_ARGS+=--prefix=${PREFIX} \
@@ -68,11 +65,5 @@ NO_REGRESS=	Yes
 post-extract:
 	# those fhs.make files are not needed and may cause harm if they exist
 	@find ${WRKSRC} -name fhs.make -exec rm {} \;
-
-post-build:
-	@${MODAPACHE_CREATE_ENABLE_SCRIPT}
-
-post-install:
-	${MODAPACHE_INSTALL}
 
 .include <bsd.port.mk>
