@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2010/12/22 09:20:00 sebastia Exp $
+# $OpenBSD: Makefile,v 1.25 2011/04/18 11:56:41 sebastia Exp $
 
 COMMENT=	GNUstep gui backend
 
-V=		0.18.0
+V =		0.20.0
 DISTNAME=	gnustep-back-${V}
-REVISION=	4
 
 CATEGORIES=	devel
 
