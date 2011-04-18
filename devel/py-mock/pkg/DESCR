@@ -1,0 +1,8 @@
+mock is a Python module that provides a core Mock class. It removes
+the need to create a host of stubs throughout your test suite. After
+performing an action, you can make assertions about which methods /
+attributes were used and arguments they were called with. You can also
+specify return values and set needed attributes in the normal way. 
+
+The mock module also provides utility functions / objects to assist
+with testing, particularly monkey patching. 
