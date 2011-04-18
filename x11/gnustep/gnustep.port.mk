@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.13 2010/12/22 09:20:00 sebastia Exp $
+# $OpenBSD: gnustep.port.mk,v 1.14 2011/04/18 11:57:51 sebastia Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS =	i386 amd64
@@ -10,8 +10,8 @@ CATEGORIES +=	x11/gnustep
 USE_GMAKE ?=	Yes
 MAKE_FILE ?=	GNUmakefile
 
-BUILD_DEPENDS +=		x11/gnustep/make>=2.4.0p5
-MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/make
+BUILD_DEPENDS +=		x11/gnustep/make>=2.6.0
+MODGNUSTEP_RUN_DEPENDS +=	x11/gnustep/make>=2.6.0
 
 MAKE_FLAGS +=	CC="${CC}" CPP="${CC} -E" OPTFLAG="${CFLAGS}"
 
