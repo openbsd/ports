@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_gData_ml,v 1.1 2011/04/18 05:30:12 dcoppa Exp $
+
+Fix for "adjustment with non-zero page size" warning messages with
+newer gtk+2
+
+--- src/gData.ml.orig	Sat Apr 16 20:42:22 2011
++++ src/gData.ml	Sat Apr 16 20:44:36 2011
+@@ -51,7 +51,7 @@ class adjustment obj = object
+ end
+ 
+ let adjustment ?(value=0.) ?(lower=0.) ?(upper=100.)
+-    ?(step_incr=1.) ?(page_incr=10.) ?(page_size=10.) () =
++    ?(step_incr=1.) ?(page_incr=10.) ?(page_size=0.) () =
+   let w =
+     Adjustment.create ~value ~lower ~upper ~step_incr ~page_incr ~page_size in
+   new adjustment w
