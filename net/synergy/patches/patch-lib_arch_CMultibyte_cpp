@@ -1,12 +1,12 @@
-$OpenBSD: patch-lib_arch_CMultibyte_cpp,v 1.2 2009/09/03 18:05:36 pvalchev Exp $
---- lib/arch/CMultibyte.cpp.orig	Tue Nov 29 20:33:24 2005
-+++ lib/arch/CMultibyte.cpp	Wed Sep  2 14:18:01 2009
-@@ -24,7 +24,7 @@
+$OpenBSD: patch-lib_arch_CMultibyte_cpp,v 1.3 2011/04/18 18:37:48 jasper Exp $
+--- lib/arch/CMultibyte.cpp.orig	Sun Jan 23 06:53:37 2011
++++ lib/arch/CMultibyte.cpp	Sun Apr 17 21:01:57 2011
+@@ -28,7 +28,7 @@
  #endif
  #if HAVE_WCHAR_H || defined(_MSC_VER)
  #	include <wchar.h>
 -#elif __APPLE__
 +#elif __APPLE__ || __OpenBSD__
  	// wtf?  Darwin puts mbtowc() et al. in stdlib
- #	include <stdlib.h>
+ #	include <cstdlib>
  #else

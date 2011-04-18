@@ -1,0 +1,21 @@
+$OpenBSD: patch-build_toolchain_py,v 1.1 2011/04/18 18:37:48 jasper Exp $
+--- build/toolchain.py.orig	Mon Apr 18 15:02:33 2011
++++ build/toolchain.py	Mon Apr 18 15:03:21 2011
+@@ -352,7 +352,7 @@ class InternalCommands:
+ 	def make_gui(self, targets):
+ 		if sys.platform == 'win32':
+ 			gui_make_cmd = self.w32_make_cmd
+-		elif sys.platform in ['linux2', 'sunos5', 'freebsd7']:
++		elif sys.platform in ['linux2', 'sunos5', 'freebsd7', 'openbsd4']:
+ 			gui_make_cmd = self.make_cmd
+ 		elif sys.platform == 'darwin':
+ 			gui_make_cmd = self.xcodebuild_cmd
+@@ -794,7 +794,7 @@ class InternalCommands:
+ 	def get_generators(self):
+ 		if sys.platform == 'win32':
+ 			return self.win32_generators
+-		elif sys.platform in ['linux2', 'sunos5', 'freebsd7']:
++		elif sys.platform in ['linux2', 'sunos5', 'freebsd7', 'openbsd4']:
+ 			return self.unix_generators
+ 		elif sys.platform == 'darwin':
+ 			return self.darwin_generators

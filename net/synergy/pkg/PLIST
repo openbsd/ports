@@ -1,31 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2007/09/21 05:46:26 bernd Exp $
-bin/synergyc
-bin/synergys
-share/doc/synergy/
-share/doc/synergy/about.html
-share/doc/synergy/authors.html
-share/doc/synergy/autostart.html
-share/doc/synergy/banner.html
-share/doc/synergy/border.html
-share/doc/synergy/compiling.html
-share/doc/synergy/configuration.html
-share/doc/synergy/contact.html
-share/doc/synergy/developer.html
-share/doc/synergy/faq.html
-share/doc/synergy/history.html
-share/doc/synergy/home.html
-share/doc/synergy/images/
-share/doc/synergy/images/logo.gif
-share/doc/synergy/images/warp.gif
-share/doc/synergy/index.html
-share/doc/synergy/license.html
-share/doc/synergy/news.html
-share/doc/synergy/roadmap.html
-share/doc/synergy/running.html
-share/doc/synergy/security.html
-share/doc/synergy/synergy.css
-share/doc/synergy/tips.html
-share/doc/synergy/toc.html
-share/doc/synergy/trouble.html
+@comment $OpenBSD: PLIST,v 1.4 2011/04/18 18:37:48 jasper Exp $
+@bin bin/synergyc
+@bin bin/synergys
+@man man/man1/synergyc.1
+@man man/man1/synergys.1
 share/examples/synergy/
-share/examples/synergy/synergy.conf
+share/examples/synergy/synergy.conf.example
+@sample ${SYSCONFDIR}/synergy.conf
+share/examples/synergy/synergy.conf.example-advanced
+share/examples/synergy/synergy.conf.example-basic
