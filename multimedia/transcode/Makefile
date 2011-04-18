@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2011/03/29 20:04:55 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.41 2011/04/18 23:37:07 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.5
-REVISION=	6
+REVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=tcforge/}
 EXTRACT_SUFX=	.tar.bz2
@@ -18,12 +18,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE SDL SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt
-WANTLIB += Xv bz2 a52 avcodec avformat avutil c dv dvdread faac
-WANTLIB += freetype gsm jpeg m mp3lame mpeg2 mpeg2convert ogg orc-0.4
-WANTLIB += postproc pthread-stubs pthread schroedinger-1.0 sndio
-WANTLIB += speex theora usbhid vorbis vorbisenc vorbisfile x264
-WANTLIB += xcb xml2 xvidcore z
+WANTLIB += ICE SDL SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt Xv a52
+WANTLIB += avcodec avformat avutil bz2 c dv dvdread faac freetype
+WANTLIB += gsm jpeg m mp3lame mpeg2 mpeg2convert ogg orc-0.4 postproc
+WANTLIB += pthread pthread-stubs schroedinger-1.0 sndio speex
+WANTLIB += theora theoradec theoraenc usbhid vorbis vorbisenc
+WANTLIB += vorbisfile vpx x264 xcb xml2 z
 
 FLAVORS=	lzo mjpegtools quicktime altivec
 FLAVOR?=

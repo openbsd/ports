@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2011/04/05 08:07:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2011/04/18 23:39:20 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	library for reading and writing QuickTime files
 
 DISTNAME=	libquicktime-1.1.5
-REVISION=	4
+REVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libquicktime/}
 
@@ -20,14 +20,15 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL ICE SM X11 Xau Xaw Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt Xv Xxf86vm
-WANTLIB += atk-1.0 c cairo drm expat faac faad fontconfig freetype gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gsm gthread-2.0 m ogg orc-0.4
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 pthread
-WANTLIB += pthread-stubs schroedinger-1.0 sndio speex theora xcb
-WANTLIB += xcb-render xcb-shm z gdk_pixbuf-2.0 avcodec avutil swscale
-WANTLIB += dv gtk-x11-2.0 gdk-x11-2.0 jpeg mp3lame png vorbis vorbisfile
-WANTLIB += vorbisenc x264
+WANTLIB += Xext Xfixes Xi Xinerama Xmu Xpm Xrandr Xrender Xt Xv
+WANTLIB += Xxf86vm atk-1.0 avcodec avutil c cairo drm dv expat
+WANTLIB += faac faad fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsm gthread-2.0
+WANTLIB += gtk-x11-2.0 jpeg m mp3lame ogg orc-0.4 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += schroedinger-1.0 sndio speex swscale theoradec theoraenc
+WANTLIB += vorbis vorbisenc vorbisfile vpx x264 xcb xcb-render
+WANTLIB += xcb-shm z
 
 MODULES=	devel/gettext
 BUILD_DEPENDS=	devel/doxygen>=1.7.2

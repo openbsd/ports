@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2011/03/29 23:22:17 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/18 23:37:07 sthen Exp $
 
 COMMENT=	D-Bus thumbnailing service
 
 XFCE_VERSION=	0.1.6
 XFCE_GOODIE=	tumbler
 
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS+=	tumbler-1 0.0
 
@@ -29,15 +29,15 @@ LIB_DEPENDS +=	x11/dbus-glib \
 		graphics/gdk-pixbuf2 \
 		x11/gtk+2
 
-WANTLIB += c dbus-1 dbus-glib-1 freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 jpeg m pcre z png pthread gdk_pixbuf-2.0
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm cairo drm expat
-WANTLIB += fontconfig gdk-x11-2.0 lcms openjpeg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 poppler poppler-glib pthread-stubs
-WANTLIB += xcb xcb-render xcb-shm xml2
-WANTLIB += avcodec avformat avutil bz2 faac ffmpegthumbnailer
-WANTLIB += gsm mp3lame ogg orc-0.4 schroedinger-1.0 speex swscale
-WANTLIB += theora vorbis vorbisenc x264
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm avcodec avformat
+WANTLIB += avutil bz2 c cairo dbus-1 dbus-glib-1 drm expat faac
+WANTLIB += ffmpegthumbnailer fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gsm gthread-2.0
+WANTLIB += jpeg lcms m mp3lame ogg openjpeg orc-0.4 pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png poppler
+WANTLIB += poppler-glib pthread pthread-stubs schroedinger-1.0
+WANTLIB += speex swscale theoradec theoraenc vorbis vorbisenc
+WANTLIB += vpx x264 xcb xcb-render xcb-shm xml2 z
 
 .include <bsd.port.mk>
