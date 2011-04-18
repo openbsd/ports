@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/10/26 17:41:55 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/18 12:40:08 sebastia Exp $
 
 COMMENT=	CPU load monitor
 
 DISTNAME=	TimeMon-4.1
+REVISION =	0
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	sysutils
 
