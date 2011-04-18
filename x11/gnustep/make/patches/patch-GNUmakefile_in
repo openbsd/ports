@@ -1,7 +1,7 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.5 2010/06/07 06:28:13 ajacoutot Exp $
---- GNUmakefile.in.orig	Fri Feb 12 23:00:05 2010
-+++ GNUmakefile.in	Mon Jun  7 08:15:35 2010
-@@ -98,7 +98,7 @@ export GNUSTEP_TARGET_LDIR
+$OpenBSD: patch-GNUmakefile_in,v 1.6 2011/04/18 11:30:47 sebastia Exp $
+--- GNUmakefile.in.orig	Sun Apr  3 18:10:31 2011
++++ GNUmakefile.in	Sun Apr  3 18:13:14 2011
+@@ -99,7 +99,7 @@ export GNUSTEP_TARGET_LDIR
  export MAYBE_LIBRARY_COMBO
  
  INSTALL		= @INSTALL@
@@ -10,7 +10,7 @@ $OpenBSD: patch-GNUmakefile_in,v 1.5 2010/06/07 06:28:13 ajacoutot Exp $
  INSTALL_DATA	= @INSTALL_DATA@
  
  VERTAG = $(subst .,_,$(GNUSTEP_MAKE_VERSION))
-@@ -164,7 +164,6 @@ install: generated-files
+@@ -170,7 +170,6 @@ install: generated-files
  	 echo "Creating makefile directories in: $(makedir)"; \
  	 "$(srcdir)/mkinstalldirs" \
  		"$(makedir)" \
@@ -18,17 +18,17 @@ $OpenBSD: patch-GNUmakefile_in,v 1.5 2010/06/07 06:28:13 ajacoutot Exp $
  		"$(makedir)/$(GNUSTEP_TARGET_DIR)" \
  		"$(makedir)/$(GNUSTEP_TARGET_LDIR)" \
  		"$(makedir)/Additional" \
-@@ -173,9 +172,6 @@ install: generated-files
- 		"$(makedir)/Instance" \
+@@ -180,9 +179,6 @@ install: generated-files
  		"$(makedir)/Instance/Shared" \
- 		"$(makedir)/Instance/Documentation")
+ 		"$(makedir)/Instance/Documentation" \
+ 		"$(testdir)")
 -	$(EC)(echo "Installing GNUstep configuration file in $(GNUSTEP_CONFIG_FILE)"; \
 -	 "$(srcdir)/mkinstalldirs" "$(GNUSTEP_CONFIG_FILE_DIR)"; \
 -	 $(INSTALL_DATA) $(GNUSTEP_DOT_CONF_FILE) "$(GNUSTEP_CONFIG_FILE)")
  	 $(EC)(echo "Installing gnustep-make support software")
  	 $(EC)(for f in config.guess config.sub install-sh mkinstalldirs \
  		clean_cpu.sh clean_os.sh \
-@@ -223,17 +219,11 @@ install: generated-files
+@@ -237,17 +233,11 @@ install: generated-files
  	  "$(srcdir)/mkinstalldirs" "$(mandir)/man1" \
  	                          "$(mandir)/man7"; \
  	  $(INSTALL_DATA) "$(srcdir)/Documentation/debugapp.1" "$(mandir)/man1"; \

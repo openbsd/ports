@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/12/22 09:20:00 sebastia Exp $
+# $OpenBSD: Makefile,v 1.27 2011/04/18 11:30:47 sebastia Exp $
 
 # WARNING: this port does NOT use the x11/gnustep MODULE
 
@@ -6,8 +6,7 @@ PKG_ARCH=	*
 
 COMMENT=	GNUstep makefile package
 
-DISTNAME=	gnustep-make-2.4.0
-REVISION=	5
+DISTNAME =	gnustep-make-2.6.0
 CATEGORIES=	devel x11/gnustep
 
 HOMEPAGE=	http://www.gnustep.org/
@@ -31,7 +30,9 @@ CONFIGURE_ARGS=	--with-layout=openbsd \
 		--with-tar=${LOCALBASE}/bin/gtar \
 		--enable-multi-platform \
 		--with-library-combo="gnu-gnu-gnu" \
-		--with-thread-lib="-pthread"
+		--with-thread-lib="-pthread" \
+		--disable-native-objc-exceptions \
+		--enable-strict-v2-mode
 
 pre-configure:
 	${SUBST_CMD} -c ${FILESDIR}/openbsd \

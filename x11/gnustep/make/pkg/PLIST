@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/11/09 08:58:06 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/04/18 11:30:47 sebastia Exp $
 bin/debugapp
 bin/gnustep-config
+bin/gnustep-tests
 bin/openapp
 bin/opentool
 @man man/man1/debugapp.1
@@ -80,6 +81,21 @@ share/GNUstep/Makefiles/Master/test-application.make
 share/GNUstep/Makefiles/Master/test-library.make
 share/GNUstep/Makefiles/Master/test-tool.make
 share/GNUstep/Makefiles/Master/tool.make
+share/GNUstep/Makefiles/TestFramework/
+share/GNUstep/Makefiles/TestFramework/GNUmakefile.in
+share/GNUstep/Makefiles/TestFramework/ObjectTesting.h
+share/GNUstep/Makefiles/TestFramework/README
+share/GNUstep/Makefiles/TestFramework/Summary.sh
+share/GNUstep/Makefiles/TestFramework/Testing.h
+share/GNUstep/Makefiles/TestFramework/example1.m
+share/GNUstep/Makefiles/TestFramework/example2.m
+share/GNUstep/Makefiles/TestFramework/example3.m
+share/GNUstep/Makefiles/TestFramework/example4.m
+share/GNUstep/Makefiles/TestFramework/example5.m
+share/GNUstep/Makefiles/TestFramework/example6.m
+share/GNUstep/Makefiles/TestFramework/example7.m
+share/GNUstep/Makefiles/TestFramework/example8.m
+share/GNUstep/Makefiles/TestFramework/example9.m
 share/GNUstep/Makefiles/aggregate.make
 share/GNUstep/Makefiles/app-wrapper.template
 share/GNUstep/Makefiles/application.make
