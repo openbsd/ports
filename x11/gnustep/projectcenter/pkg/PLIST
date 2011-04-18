@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/12/22 09:20:00 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/04/18 12:41:18 sebastia Exp $
 bin/ProjectCenter
 include/ProjectCenter
 lib/GNUstep/Frameworks/
 lib/GNUstep/Frameworks/ProjectCenter.framework/
 lib/GNUstep/Frameworks/ProjectCenter.framework/Headers
+lib/GNUstep/Frameworks/ProjectCenter.framework/ProjectCenter
 lib/GNUstep/Frameworks/ProjectCenter.framework/Resources
 lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/
 lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${VERSION}/
@@ -40,6 +41,7 @@ lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${VERSION}/Headers/Proto
 lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${VERSION}/Headers/Protocols/CodeParser.h
 lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${VERSION}/Headers/Protocols/Preferences.h
 lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${VERSION}/Headers/Protocols/ProjectType.h
+lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${VERSION}/ProjectCenter
 lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${VERSION}/Resources/
 lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${VERSION}/Resources/English.lproj/
 lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${VERSION}/Resources/English.lproj/BuildAttributes.gorm/
@@ -107,7 +109,9 @@ lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${VERSION}/Resources/gsm
 lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${VERSION}/Resources/header.template
 lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${VERSION}/Resources/postamble.template
 lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${VERSION}/Resources/protocol.template
+@lib lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/${VERSION}/libProjectCenter.so.${LIBProjectCenter_VERSION}
 lib/GNUstep/Frameworks/ProjectCenter.framework/Versions/Current
+@lib lib/GNUstep/Frameworks/ProjectCenter.framework/libProjectCenter.so.${LIBProjectCenter_VERSION}
 @lib lib/libProjectCenter.so.${LIBProjectCenter_VERSION}
 libexec/GNUstep/
 libexec/GNUstep/ProjectCenter.app/

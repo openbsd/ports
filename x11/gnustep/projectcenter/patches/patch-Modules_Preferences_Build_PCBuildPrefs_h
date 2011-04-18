@@ -1,9 +1,9 @@
-$OpenBSD: patch-Modules_Preferences_Build_PCBuildPrefs_h,v 1.1 2010/12/17 15:04:58 sebastia Exp $
+$OpenBSD: patch-Modules_Preferences_Build_PCBuildPrefs_h,v 1.2 2011/04/18 12:41:18 sebastia Exp $
 
 GNUstep requires gmake, so let it point to gmake by default.
 
---- Modules/Preferences/Build/PCBuildPrefs.h.orig	Mon Dec 13 19:12:14 2010
-+++ Modules/Preferences/Build/PCBuildPrefs.h	Mon Dec 13 19:12:28 2010
+--- Modules/Preferences/Build/PCBuildPrefs.h.orig	Tue Apr  5 11:42:51 2011
++++ Modules/Preferences/Build/PCBuildPrefs.h	Wed Apr  6 14:47:47 2011
 @@ -27,7 +27,7 @@
  #import <Protocols/Preferences.h>
  
