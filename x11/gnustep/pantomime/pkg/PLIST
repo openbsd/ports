@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/07/29 14:15:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/18 12:37:17 sebastia Exp $
 include/Pantomime
 lib/GNUstep/
 lib/GNUstep/Frameworks/
 lib/GNUstep/Frameworks/Pantomime.framework/
 lib/GNUstep/Frameworks/Pantomime.framework/Headers
+lib/GNUstep/Frameworks/Pantomime.framework/Pantomime
 lib/GNUstep/Frameworks/Pantomime.framework/Resources
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/1.2/
@@ -76,6 +77,7 @@ lib/GNUstep/Frameworks/Pantomime.framework/Versions/1.2/Headers/NSScanner+Extens
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/1.2/Headers/NSString+Extensions.h
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/1.2/Headers/Pantomime.h
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/1.2/Headers/io.h
+lib/GNUstep/Frameworks/Pantomime.framework/Versions/1.2/Pantomime
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/1.2/Resources/
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/1.2/Resources/English.lproj/
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/1.2/Resources/English.lproj/InfoPlist.strings
@@ -84,10 +86,12 @@ lib/GNUstep/Frameworks/Pantomime.framework/Versions/1.2/Resources/German.lproj/
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/1.2/Resources/German.lproj/InfoPlist.strings
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/1.2/Resources/German.lproj/Localizable.strings
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/1.2/Resources/Info-gnustep.plist
+@lib lib/GNUstep/Frameworks/Pantomime.framework/Versions/1.2/libPantomime.so.${LIBPantomime_VERSION}
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/Current
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/Resources/
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/Resources/English.lproj/
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/Resources/English.lproj/Localizable.strings
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/Resources/German.lproj/
 lib/GNUstep/Frameworks/Pantomime.framework/Versions/Resources/German.lproj/Localizable.strings
+@lib lib/GNUstep/Frameworks/Pantomime.framework/libPantomime.so.${LIBPantomime_VERSION}
 @lib lib/libPantomime.so.${LIBPantomime_VERSION}
