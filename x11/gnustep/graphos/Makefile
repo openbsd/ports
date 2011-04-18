@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/27 12:04:35 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/18 12:00:09 sebastia Exp $
 
 COMMENT =	vector drawing application
 
 DISTNAME =	Graphos-0.2
+REVISION =	0
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	graphics
 

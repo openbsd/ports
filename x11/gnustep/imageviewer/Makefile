@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/10/26 12:39:10 sebastia Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/18 12:01:07 sebastia Exp $
 
 COMMENT=	GNUstep image viewer
 
 DISTNAME=	ImageViewer-0.6.3
-REVISION=	0
+REVISION =	1
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	graphics
 
