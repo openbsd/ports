@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/12/22 09:20:00 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/04/18 12:21:25 sebastia Exp $
 bin/GNUMail
 include/GNUMail
 lib/GNUstep/ApplicationSupport/
@@ -111,14 +111,18 @@ lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/Resources/viewing.tiff
 @bin lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/Viewing
 lib/GNUstep/ApplicationSupport/GNUMail/Viewing.prefs/stamp.make
 lib/GNUstep/Frameworks/GNUMail.framework/
+lib/GNUstep/Frameworks/GNUMail.framework/GNUMail
 lib/GNUstep/Frameworks/GNUMail.framework/Headers
 lib/GNUstep/Frameworks/GNUMail.framework/Resources
 lib/GNUstep/Frameworks/GNUMail.framework/Versions/
 lib/GNUstep/Frameworks/GNUMail.framework/Versions/2.0/
+lib/GNUstep/Frameworks/GNUMail.framework/Versions/2.0/GNUMail
 lib/GNUstep/Frameworks/GNUMail.framework/Versions/2.0/Headers/
 lib/GNUstep/Frameworks/GNUMail.framework/Versions/2.0/Resources/
 lib/GNUstep/Frameworks/GNUMail.framework/Versions/2.0/Resources/Info-gnustep.plist
+@lib lib/GNUstep/Frameworks/GNUMail.framework/Versions/2.0/libGNUMail.so.${LIBGNUMail_VERSION}
 lib/GNUstep/Frameworks/GNUMail.framework/Versions/Current
+@lib lib/GNUstep/Frameworks/GNUMail.framework/libGNUMail.so.${LIBGNUMail_VERSION}
 @lib lib/libGNUMail.so.${LIBGNUMail_VERSION}
 libexec/GNUstep/GNUMail.app/
 @bin libexec/GNUstep/GNUMail.app/GNUMail

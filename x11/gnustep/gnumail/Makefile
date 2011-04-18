@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/12/22 09:20:00 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2011/04/18 12:21:25 sebastia Exp $
 
 COMMENT=	GNUstep mail application
 
 DISTNAME=	GNUMail-1.2.0pre3
 PKGNAME=	${DISTNAME:L}
-REVISION=	7
+REVISION =	8
 SHARED_LIBS=	GNUMail 2.0	# .1.2
 CATEGORIES=	mail
 
@@ -29,9 +29,6 @@ post-extract:
 	@rm ${WRKSRC}/Framework/GNUMail/MailWindowController.m.orig
 
 pre-configure:
-	@perl -pi -e 's,^GNUMAIL_MAJOR_VERSION=.*,GNUMAIL_MAJOR_VERSION=${LIBGNUMail_VERSION:R},g;' \
-		-e 's,^GNUMAIL_MINOR_VERSION=.*,GNUMAIL_MINOR_VERSION=${LIBGNUMail_VERSION:E},g' \
-		${WRKSRC}/Framework/GNUMail/GNUmakefile
 .for i in ${BUNDLES}
 	@perl -pi -e 's,^BUNDLE_INSTALL_DIR.*,BUNDLE_INSTALL_DIR=\$$(GNUSTEP_APPLICATION_SUPPORT)/GNUMail,g' \
 		${WRKSRC}/Bundles/${i}/GNUmakefile
