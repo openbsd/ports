@@ -1,13 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/16 11:58:43 jasper Exp $
-lib/lua/5.1/crypto/
-lib/lua/5.1/crypto/core.so
-lib/lua/5.1/crypto/evp/
-lib/lua/5.1/crypto/evp/core.so
-lib/lua/5.1/crypto/hmac/
-lib/lua/5.1/crypto/hmac/core.so
+@comment $OpenBSD: PLIST,v 1.4 2011/04/18 18:12:47 jasper Exp $
+lib/lua/5.1/crypto.so
 share/doc/luacrypto/
-share/doc/luacrypto/luacrypto.html
-share/lua/5.1/crypto/
-share/lua/5.1/crypto.lua
-share/lua/5.1/crypto/evp.lua
-share/lua/5.1/crypto/hmac.lua
+share/doc/luacrypto/examples.html
+share/doc/luacrypto/index.html
+share/doc/luacrypto/license.html
+share/doc/luacrypto/luacrypto-128.png
+share/doc/luacrypto/manual.html
