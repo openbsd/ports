@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/22 12:21:23 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/18 12:44:14 sebastia Exp $
 bin/SystemPreferences
 include/PreferencePanes
 lib/GNUstep/Bundles/Defaults.prefPane/
@@ -87,15 +87,19 @@ lib/GNUstep/Bundles/Volumes.prefPane/stamp.make
 lib/GNUstep/Frameworks/
 lib/GNUstep/Frameworks/PreferencePanes.framework/
 lib/GNUstep/Frameworks/PreferencePanes.framework/Headers
+lib/GNUstep/Frameworks/PreferencePanes.framework/PreferencePanes
 lib/GNUstep/Frameworks/PreferencePanes.framework/Resources
 lib/GNUstep/Frameworks/PreferencePanes.framework/Versions/
 lib/GNUstep/Frameworks/PreferencePanes.framework/Versions/0.0/
 lib/GNUstep/Frameworks/PreferencePanes.framework/Versions/0.0/Headers/
 lib/GNUstep/Frameworks/PreferencePanes.framework/Versions/0.0/Headers/NSPreferencePane.h
 lib/GNUstep/Frameworks/PreferencePanes.framework/Versions/0.0/Headers/PreferencePanes.h
+lib/GNUstep/Frameworks/PreferencePanes.framework/Versions/0.0/PreferencePanes
 lib/GNUstep/Frameworks/PreferencePanes.framework/Versions/0.0/Resources/
 lib/GNUstep/Frameworks/PreferencePanes.framework/Versions/0.0/Resources/Info-gnustep.plist
+@lib lib/GNUstep/Frameworks/PreferencePanes.framework/Versions/0.0/libPreferencePanes.so.${LIBPreferencePanes_VERSION}
 lib/GNUstep/Frameworks/PreferencePanes.framework/Versions/Current
+@lib lib/GNUstep/Frameworks/PreferencePanes.framework/libPreferencePanes.so.${LIBPreferencePanes_VERSION}
 @lib lib/libPreferencePanes.so.${LIBPreferencePanes_VERSION}
 libexec/GNUstep/
 libexec/GNUstep/SystemPreferences.app/
