@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/06/22 18:59:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/04/18 18:14:12 jasper Exp $
 
 COMMENT =	multiple states library for the lua language
 SHARED_ONLY =	Yes
 
-DISTNAME =	rings-1.2.2
+DISTNAME =	rings-1.2.3
 PKGNAME =	lua${DISTNAME}
 CATEGORIES =	devel
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	http://luaforge.net/frs/download.php/3511/
+MASTER_SITES =	http://github.com/downloads/keplerproject/rings/
 
 MODULES =	lang/lua
 
