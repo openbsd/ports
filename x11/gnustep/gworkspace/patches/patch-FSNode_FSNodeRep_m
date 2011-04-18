@@ -1,13 +1,15 @@
-$OpenBSD: patch-FSNode_FSNodeRep_m,v 1.1 2011/01/14 13:07:13 sebastia Exp $
+$OpenBSD: patch-FSNode_FSNodeRep_m,v 1.2 2011/04/18 12:33:04 sebastia Exp $
 
 OpenBSD and NetBSD don't have the -p mount option
 
---- FSNode/FSNodeRep.m.orig	Wed Jan 12 08:16:20 2011
-+++ FSNode/FSNodeRep.m	Wed Jan 12 08:20:08 2011
-@@ -757,7 +757,9 @@ static FSNodeRep *shared = nil;
+--- FSNode/FSNodeRep.m.orig	Sat Jun 19 01:21:36 2010
++++ FSNode/FSNodeRep.m	Tue Apr  5 19:00:32 2011
+@@ -756,8 +756,10 @@ static FSNodeRep *shared = nil;
+       NSPipe *pipe = [NSPipe pipe];
        NSFileHandle *handle = [pipe fileHandleForReading];
  
-       [task setLaunchPath: @"mount"];
+-      [task setLaunchPath: @"mount"];
++      [task setLaunchPath: @"/sbin/mount"];
 +#if !defined(__OpenBSD__) && !defined(__NetBSD__)
        [task setArguments: [NSArray arrayWithObject: @"-p"]];
 +#endif

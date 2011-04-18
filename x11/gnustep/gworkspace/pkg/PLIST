@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/01/10 18:28:01 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/04/18 12:33:04 sebastia Exp $
 bin/GWorkspace
 bin/MDFinder
 bin/Recycler
@@ -292,10 +292,12 @@ lib/GNUstep/Bundles/XmlExtractor.extr/Resources/Info-gnustep.plist
 @bin lib/GNUstep/Bundles/XmlExtractor.extr/XmlExtractor
 lib/GNUstep/Bundles/XmlExtractor.extr/stamp.make
 lib/GNUstep/Frameworks/FSNode.framework/
+lib/GNUstep/Frameworks/FSNode.framework/FSNode
 lib/GNUstep/Frameworks/FSNode.framework/Headers
 lib/GNUstep/Frameworks/FSNode.framework/Resources
 lib/GNUstep/Frameworks/FSNode.framework/Versions/
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/
+lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/FSNode
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Headers/
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Headers/FSNBrowser.h
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Headers/FSNBrowserCell.h
@@ -322,15 +324,18 @@ lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/MultipleSelection
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/Recycler.tiff
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/RecyclerFull.tiff
 lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/Resources/Workspace.tiff
+@lib lib/GNUstep/Frameworks/FSNode.framework/Versions/0.0/libFSNode.so.${LIBFSNode_VERSION}
 lib/GNUstep/Frameworks/FSNode.framework/Versions/Current
 lib/GNUstep/Frameworks/Inspector.framework/
 lib/GNUstep/Frameworks/Inspector.framework/Headers
+lib/GNUstep/Frameworks/Inspector.framework/Inspector
 lib/GNUstep/Frameworks/Inspector.framework/Resources
 lib/GNUstep/Frameworks/Inspector.framework/Versions/
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Headers/
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Headers/ContentViewersProtocol.h
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Headers/Inspector.h
+lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Inspector
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/Date-0.tiff
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/Date-1.tiff
@@ -427,9 +432,11 @@ lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/switchMultiple
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/switchOff.tiff
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/switchOn.tiff
 lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/Resources/tiffPboard.tiff
+@lib lib/GNUstep/Frameworks/Inspector.framework/Versions/0.0/libInspector.so.${LIBInspector_VERSION}
 lib/GNUstep/Frameworks/Inspector.framework/Versions/Current
 lib/GNUstep/Frameworks/MDKit.framework/
 lib/GNUstep/Frameworks/MDKit.framework/Headers
+lib/GNUstep/Frameworks/MDKit.framework/MDKit
 lib/GNUstep/Frameworks/MDKit.framework/Resources
 lib/GNUstep/Frameworks/MDKit.framework/Versions/
 lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/
@@ -443,6 +450,7 @@ lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Headers/MDKQueryManager.h
 lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Headers/MDKWindow.h
 lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Headers/MDKit.h
 lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Headers/SQLite.h
+lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/MDKit
 lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/
 lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/
 lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/English.lproj/Help.rtfd/
@@ -498,14 +506,17 @@ lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/switchOff.tiff
 lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/switchOn.tiff
 lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/whiteArrowDown.tiff
 lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/Resources/whiteArrowRight.tiff
+@lib lib/GNUstep/Frameworks/MDKit.framework/Versions/0.0/libMDKit.so.${LIBMDKit_VERSION}
 lib/GNUstep/Frameworks/MDKit.framework/Versions/Current
 lib/GNUstep/Frameworks/Operation.framework/
 lib/GNUstep/Frameworks/Operation.framework/Headers
+lib/GNUstep/Frameworks/Operation.framework/Operation
 lib/GNUstep/Frameworks/Operation.framework/Resources
 lib/GNUstep/Frameworks/Operation.framework/Versions/
 lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/
 lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Headers/
 lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Headers/Operation.h
+lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Operation
 lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Resources/
 lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Resources/English.lproj/
 lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Resources/English.lproj/FileOperationWin.gorm/
@@ -515,6 +526,7 @@ lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Resources/English.lproj/
 lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Resources/English.lproj/Localizable.strings
 lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Resources/Info-gnustep.plist
 lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/Resources/Operation.tiff
+@lib lib/GNUstep/Frameworks/Operation.framework/Versions/0.0/libOperation.so.${LIBOperation_VERSION}
 lib/GNUstep/Frameworks/Operation.framework/Versions/Current
 lib/GNUstep/Services/thumbnailer.service/
 lib/GNUstep/Services/thumbnailer.service/Resources/
@@ -525,7 +537,6 @@ lib/GNUstep/Services/thumbnailer.service/Resources/Info-gnustep.plist
 @lib lib/libInspector.so.${LIBInspector_VERSION}
 @lib lib/libMDKit.so.${LIBMDKit_VERSION}
 @lib lib/libOperation.so.${LIBOperation_VERSION}
-libexec/GNUstep/
 libexec/GNUstep/GWorkspace.app/
 @bin libexec/GNUstep/GWorkspace.app/GWorkspace
 libexec/GNUstep/GWorkspace.app/Resources/
