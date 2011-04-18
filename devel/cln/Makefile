@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2011/03/14 08:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2011/04/18 11:48:44 landry Exp $
 
-NOT_FOR_ARCHS =	arm mips64 mips64el sparc64
+NOT_FOR_ARCHS =	arm mips64 mips64el sparc64 hppa
 
 COMMENT =	library for efficient computations 
 
