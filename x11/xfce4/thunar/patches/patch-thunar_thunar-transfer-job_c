@@ -1,0 +1,19 @@
+$OpenBSD: patch-thunar_thunar-transfer-job_c,v 1.1 2011/04/19 08:09:01 jasper Exp $
+
+Security fix for SA44104
+Thunar "thunar_transfer_job_copy_node()" Format String Vulnerability 
+
+Patch from upstream git:
+http://git.xfce.org/xfce/thunar/diff/?id=03dd312e157d4fa8a11d5fa402706ae5b05806fa
+
+--- thunar/thunar-transfer-job.c.orig	Tue Apr 19 09:44:55 2011
++++ thunar/thunar-transfer-job.c	Tue Apr 19 09:45:34 2011
+@@ -525,7 +525,7 @@ thunar_transfer_job_copy_node (ThunarTransferJob  *job
+         }
+ 
+       /* update progress information */
+-      exo_job_info_message (EXO_JOB (job), g_file_info_get_display_name (info));
++      exo_job_info_message (EXO_JOB (job), "%s", g_file_info_get_display_name (info));
+ 
+ retry_copy:
+       /* copy the item specified by this node (not recursively) */
