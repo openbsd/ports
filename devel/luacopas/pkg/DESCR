@@ -7,6 +7,6 @@ use Copas socket functions to send the response. Copas loops through
 requests and invokes the corresponding handlers.
 
 Since Copas is coroutine based, using it within a pcall or xpcall context
-does not work with Lua 5.0 yielding. If you need to use those functions
+does not work with Lua 5.1 yielding. If you need to use those functions
 we strongly suggest using Xavante's coxpcall, a coroutine safe version
-of the Lua 5.0 protected calls.
+of the Lua 5.1 protected calls.
