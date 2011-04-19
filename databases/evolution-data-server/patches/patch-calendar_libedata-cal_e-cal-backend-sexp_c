@@ -1,4 +1,4 @@
-$OpenBSD: patch-calendar_libedata-cal_e-cal-backend-sexp_c,v 1.1 2010/09/30 07:32:09 ajacoutot Exp $
+$OpenBSD: patch-calendar_libedata-cal_e-cal-backend-sexp_c,v 1.2 2011/04/19 17:01:54 ajacoutot Exp $
 --- calendar/libedata-cal/e-cal-backend-sexp.c.orig	Tue Sep 28 07:53:05 2010
 +++ calendar/libedata-cal/e-cal-backend-sexp.c	Tue Sep 28 07:53:16 2010
 @@ -1476,7 +1476,7 @@ test_query (const gchar * query)
@@ -6,7 +6,7 @@ $OpenBSD: patch-calendar_libedata-cal_e-cal-backend-sexp_c,v 1.1 2010/09/30 07:3
  
  	if (generator) {
 -		printf ("%s: %ld - %ld\n", query, start, end);
-+		printf ("%s: %d - %d\n", query, start, end);
++		printf ("%s: %ld - %ld\n", query, (long)start, (long)end);
  	} else {
  		printf ("%s: no time prunning possible\n", query);
  	}

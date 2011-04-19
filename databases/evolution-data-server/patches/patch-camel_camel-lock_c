@@ -1,4 +1,4 @@
-$OpenBSD: patch-camel_camel-lock_c,v 1.1 2010/09/30 07:32:09 ajacoutot Exp $
+$OpenBSD: patch-camel_camel-lock_c,v 1.2 2011/04/19 17:01:54 ajacoutot Exp $
 --- camel/camel-lock.c.orig	Tue Sep 28 07:46:38 2010
 +++ camel/camel-lock.c	Tue Sep 28 07:46:50 2010
 @@ -128,7 +128,7 @@ camel_lock_dot (const gchar *path,
@@ -6,7 +6,7 @@ $OpenBSD: patch-camel_camel-lock_c,v 1.1 2010/09/30 07:32:09 ajacoutot Exp $
  		if (g_stat(lock, &st) == 0) {
  			time_t now = time (NULL);
 -			(printf("There is an existing lock %ld seconds old\n", now-st.st_ctime));
-+			(printf("There is an existing lock %d seconds old\n", now-st.st_ctime));
++			(printf("There is an existing lock %ld seconds old\n", (long)now-st.st_ctime));
  			if (st.st_ctime < now - CAMEL_LOCK_DOT_STALE) {
  				d(printf("Removing it now\n"));
  				unlink(lock);

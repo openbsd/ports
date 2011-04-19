@@ -1,12 +1,14 @@
-$OpenBSD: patch-calendar_libedata-cal_e-cal-backend-intervaltree_c,v 1.2 2011/03/07 19:35:30 ajacoutot Exp $
+$OpenBSD: patch-calendar_libedata-cal_e-cal-backend-intervaltree_c,v 1.3 2011/04/19 17:01:54 ajacoutot Exp $
 --- calendar/libedata-cal/e-cal-backend-intervaltree.c.orig	Tue Nov 23 04:26:37 2010
-+++ calendar/libedata-cal/e-cal-backend-intervaltree.c	Sat Feb 26 16:46:04 2011
-@@ -593,7 +593,7 @@ e_intervaltree_node_dump (EIntervalTree *tree, EInterv
++++ calendar/libedata-cal/e-cal-backend-intervaltree.c	Tue Apr 19 18:17:04 2011
+@@ -593,8 +593,8 @@ e_intervaltree_node_dump (EIntervalTree *tree, EInterv
  	*/
  	EIntervalTreePrivate *priv = tree->priv;
  	if (node != priv->nil)
 -		g_print ("%*s[%ld - %ld] [%ld - %ld] red %d\n", indent, "", node->start,
-+		g_print ("%*s[%d - %d] [%d - %d] red %d\n", indent, "", node->start,
- 				node->end, node->min, node->max, node->red);
+-				node->end, node->min, node->max, node->red);
++		g_print ("%*s[%ld - %ld] [%ld - %ld] red %d\n", indent, "", (long)node->start,
++				(long)node->end, (long)node->min, (long)node->max, node->red);
  	else
  	{
+ 		g_print ("%*s[ - ]\n", indent, ""); 
