@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2010/12/03 11:45:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/04/19 15:20:06 jasper Exp $
+
+# Lacks p5-Term-Gnuplot regress dependency!
 
 SHARED_ONLY=	Yes
 
