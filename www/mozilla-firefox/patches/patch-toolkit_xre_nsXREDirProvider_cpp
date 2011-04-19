@@ -1,6 +1,7 @@
-$OpenBSD: patch-toolkit_xre_nsXREDirProvider_cpp,v 1.4 2011/03/30 21:39:14 landry Exp $
---- toolkit/xre/nsXREDirProvider.cpp.orig	Wed Feb 23 06:53:53 2011
-+++ toolkit/xre/nsXREDirProvider.cpp	Sat Feb 26 09:25:37 2011
+$OpenBSD: patch-toolkit_xre_nsXREDirProvider_cpp,v 1.5 2011/04/19 09:16:33 landry Exp $
+Look for extensions in LOCALBASE
+--- toolkit/xre/nsXREDirProvider.cpp.orig	Sat Mar 19 00:34:12 2011
++++ toolkit/xre/nsXREDirProvider.cpp	Sun Apr 17 23:36:19 2011
 @@ -1169,11 +1169,7 @@ nsXREDirProvider::GetSystemExtensionsDirectory(nsILoca
    NS_ENSURE_SUCCESS(rv, rv);
  #elif defined(XP_UNIX)
