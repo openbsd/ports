@@ -1,6 +1,6 @@
-$OpenBSD: patch-thunar_thunar-transfer-job_c,v 1.1 2011/04/19 08:09:01 jasper Exp $
+$OpenBSD: patch-thunar_thunar-transfer-job_c,v 1.2 2011/04/19 08:12:24 jasper Exp $
 
-Security fix for SA44104
+Security fix for SA44104 / CVE-2011-1588
 Thunar "thunar_transfer_job_copy_node()" Format String Vulnerability 
 
 Patch from upstream git:
