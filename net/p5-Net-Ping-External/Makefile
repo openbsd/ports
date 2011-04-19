@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2010/12/03 11:45:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/04/19 20:35:00 jasper Exp $
 
 COMMENT=		alternative Perl interface to ping(1)
 
 MODULES=		cpan
-DISTNAME=		Net-Ping-External-0.12
-REVISION=		0
+DISTNAME=		Net-Ping-External-0.13
 CATEGORIES=		net
-USE_GROFF =		Yes
+EXTRACT_SUFX=		.zip
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER=		Gleydson Soares <gsoares@trusted.com.br>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes 
