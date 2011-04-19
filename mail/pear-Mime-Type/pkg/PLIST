@@ -1,16 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/18 19:07:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/19 15:46:56 giovanni Exp $
 @group daemon
-lib/
-lib/php/
+pear/doc/MIME_Type/
+pear/doc/MIME_Type/docs/
+pear/doc/MIME_Type/docs/examples/
+pear/doc/MIME_Type/docs/examples/example.php
 pear/lib/.registry/mime_type.reg
 pear/lib/MIME/
 pear/lib/MIME/Type/
 pear/lib/MIME/Type.php
 pear/lib/MIME/Type/Extension.php
 pear/lib/MIME/Type/Parameter.php
-pear/lib/docs/
-pear/lib/docs/examples/
-pear/lib/docs/examples/example.php
 pear/tests/MIME_Type/
 pear/tests/MIME_Type/tests/
 pear/tests/MIME_Type/tests/AllTests.php
