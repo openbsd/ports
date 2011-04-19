@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.923 2011/04/18 15:12:05 eric Exp $
+# $OpenBSD: Makefile,v 1.924 2011/04/19 19:31:31 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -177,6 +177,7 @@
      SUBDIR += hs-largeword
      SUBDIR += hs-language-c
      SUBDIR += hs-mmap
+     SUBDIR += hs-mtl
      SUBDIR += hs-monads-fd
      SUBDIR += hs-monads-tf
      SUBDIR += hs-murmur-hash
