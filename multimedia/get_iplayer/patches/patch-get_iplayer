@@ -1,6 +1,6 @@
-$OpenBSD: patch-get_iplayer,v 1.42 2011/01/09 17:31:58 sthen Exp $
+$OpenBSD: patch-get_iplayer,v 1.43 2011/04/19 16:39:47 sthen Exp $
 --- get_iplayer.orig	Sun Jan  9 16:13:43 2011
-+++ get_iplayer	Sun Jan  9 17:29:21 2011
++++ get_iplayer	Tue Apr 19 17:33:53 2011
 @@ -295,6 +295,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
  $opt->{quiet} = 1 if $opt_pre->{quiet};
  $opt->{pvr} = 1 if $opt_pre->{pvr};
@@ -45,3 +45,12 @@ $OpenBSD: patch-get_iplayer,v 1.42 2011/01/09 17:31:58 sthen Exp $
  			main::logger "INFO: id3 tagging $prog->{ext} file\n";
  			my @cmd = (
  				$bin->{id3v2}, 
+@@ -5823,7 +5824,7 @@ sub get_stream_data_cdn {
+ 		# Common attributes
+ 		# swfurl = Default iPlayer swf version
+ 		my $conn = {
+-			swfurl		=> "http://www.bbc.co.uk/emp/10player.swf?revision=18269_21576",
++			swfurl		=> "http://www.bbc.co.uk/emp/revisions/18269_21576_10player.swf?revision=18269_21576",
+ 			ext		=> $ext,
+ 			streamer	=> $streamer,
+ 			bitrate		=> $mattribs->{bitrate},
