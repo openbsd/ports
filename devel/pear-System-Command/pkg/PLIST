@@ -1,7 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/18 19:00:08 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/19 15:27:04 giovanni Exp $
 @group daemon
 lib/
 lib/php/
+pear/doc/
+pear/doc/System_Command/
+pear/doc/System_Command/docs/
+pear/doc/System_Command/docs/test.php
 pear/lib/.registry/system_command.reg
 pear/lib/System/
 pear/lib/System/Command.php
