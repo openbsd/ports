@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/04/11 14:45:14 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2011/04/19 19:01:21 kili Exp $
 
 COMMENT =		large library of utility functions
 
 DISTNAME =		MissingH-1.1.0.3
-REVISION =		8
+REVISION =		9
 CATEGORIES =		devel
 HOMEPAGE =		http://software.complete.org/missingh
 
@@ -21,6 +21,7 @@ MODGHC_BUILD =		cabal hackage haddock register
 
 RUN_DEPENDS +=		devel/hs-hslogger \
 			devel/hs-HUnit \
+			devel/hs-mtl \
 			devel/hs-regex-compat
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
