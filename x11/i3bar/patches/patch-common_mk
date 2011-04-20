@@ -1,0 +1,36 @@
+$OpenBSD: patch-common_mk,v 1.1.1.1 2011/04/20 08:57:54 dcoppa Exp $
+--- common.mk.orig	Tue Apr 12 09:47:54 2011
++++ common.mk	Tue Apr 12 09:50:02 2011
+@@ -1,25 +1,17 @@
+ INSTALL=install
+-DEBUG=1
+-PREFIX=/usr
+ 
+-CFLAGS += -Wall
+-CFLAGS += -pipe
+-CFLAGS += -Iinclude
+-CFLAGS += -g
++ifndef PREFIX
++  PREFIX=/usr
++endif
++
++CFLAGS += -Iinclude -I${X11BASE}/include -I${LOCALBASE}/include
+ CFLAGS += -DI3BAR_VERSION=\"0.6.21\"
+ 
+ LDFLAGS += -lev
+ LDFLAGS += -lyajl
+ LDFLAGS += -lxcb
+ LDFLAGS += -lX11
+-LDFLAGS += -L/usr/local/lib
+-
+-ifeq ($(DEBUG),1)
+-CFLAGS += -g3
+-else
+-CFLAGS += -O2
+-endif
+-
+-.SILENT:
++LDFLAGS += -liconv
++LDFLAGS += -L${X11BASE}/lib -L${LOCALBASE}/lib
+ 
+ .PHONY: install clean

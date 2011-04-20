@@ -1,0 +1,36 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2011/04/20 08:57:54 dcoppa Exp $
+--- Makefile.orig	Tue Apr 12 09:32:22 2011
++++ Makefile	Tue Apr 12 09:36:06 2011
+@@ -9,29 +9,23 @@ HEADERS:=$(wildcard include/*.h)
+ all: i3bar doc
+ 
+ i3bar: ${FILES}
+-	echo "LINK"
+ 	$(CC) -o i3bar ${FILES} ${LDFLAGS}
+ 
+ doc:
+-	echo ""
+-	echo "SUBDIR doc"
+ 	$(MAKE) -C doc
+ 
+ src/%.o: src/%.c ${HEADERS}
+-	echo "CC $<"
+ 	$(CC) $(CFLAGS) -c -o $@ $<
+ 
+ install: all
+-	echo "INSTALL"
+-	$(INSTALL) -d -m 0755 $(DESTDIR)$(PREFIX)/bin
+-	$(INSTALL) -m 0755 i3bar $(DESTDIR)$(PREFIX)/bin
++	${INSTALL_PROGRAM} i3bar $(DESTDIR)$(PREFIX)/bin/
+ 
+ clean:
+ 	rm -f src/*.o
+-	make -C doc clean
++	$(MAKE) -C doc clean
+ 
+ distclean: clean
+ 	rm -f i3bar
+-	make -C doc distclean
++	$(MAKE) -C doc distclean
+ 
+ .PHONY: install clean distclean doc

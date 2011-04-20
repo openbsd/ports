@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_ipc_c,v 1.1.1.1 2011/04/20 08:57:54 dcoppa Exp $
+--- src/ipc.c.orig	Mon Apr 11 16:26:03 2011
++++ src/ipc.c	Tue Apr 12 10:53:45 2011
+@@ -12,6 +12,7 @@
+ #include <stdio.h>
+ #include <unistd.h>
+ #include <stdint.h>
++#include <string.h>
+ #include <sys/socket.h>
+ #include <sys/un.h>
+ #include <i3/ipc.h>

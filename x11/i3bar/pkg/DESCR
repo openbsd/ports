@@ -1,0 +1,7 @@
+i3bar is a xcb and libev based status and workspace bar for the
+i3 window manager. It is best thought of as a replacement for the
+i3-wsbar + dzen2 combination. It creates a workspace bar for every
+active screen and displays a piped-in statusline rightaligned on
+every bar.
+It does not sample any status information itself, so you still need
+a program like conky for that.
