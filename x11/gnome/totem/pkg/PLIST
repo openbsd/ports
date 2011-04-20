@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/04/07 19:12:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/04/20 20:02:06 jasper Exp $
 @pkgpath x11/gnome/totem,xine
 @bin bin/totem
 @bin bin/totem-audio-preview
@@ -78,12 +78,6 @@ lib/totem/plugins/totem/
 lib/totem/plugins/totem/__init__.py
 lib/totem/plugins/totem/__init__.pyc
 lib/totem/plugins/totem/__init__.pyo
-lib/totem/plugins/youtube/
-@comment lib/totem/plugins/youtube/libyoutube.a
-@comment lib/totem/plugins/youtube/libyoutube.la
-lib/totem/plugins/youtube/libyoutube.so
-lib/totem/plugins/youtube/youtube.totem-plugin
-lib/totem/plugins/youtube/youtube.ui
 libexec/totem/
 libexec/totem/totem-bugreport.py
 @man man/man1/totem-video-thumbnailer.1

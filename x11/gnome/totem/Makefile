@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.58 2011/04/07 19:12:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2011/04/20 20:02:06 jasper Exp $
 
 COMMENT=	official media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.32.0
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	multimedia
 
@@ -27,8 +27,8 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 unique-1.0
 WANTLIB += util xcb xml2 z xcb-render GL drm xcb-shm
 WANTLIB += gstaudio-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstvideo-0.10
-WANTLIB += gsttag-0.10 totem-plparser nautilus-extension gdata
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += gsttag-0.10 totem-plparser nautilus-extension
+WANTLIB += gmp gnutls hogweed nettle proxy tasn1 ${MODPY_WANTLIB}
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -56,8 +56,7 @@ RUN_DEPENDS+=	x11/gnome/settings-daemon \
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS} \
 		multimedia/gstreamer-0.10/plugins-base>=0.10.29 \
 		x11/gnome/totem-pl-parser>=2.28.1 \
-		x11/gnome/nautilus \
-		devel/libgdata
+		x11/gnome/nautilus
 
 # while the following are not "required" for totem to run, there's no
 # point in using a media player that can't play most modern media files
@@ -73,9 +72,9 @@ MODGCONF2_SCHEMAS_DIR= totem
 USE_GROFF =	Yes
 
 # Browser bemused lirc mythtv sample-python sample-vala sidebar-test
-# publish iplayer pythonconsole coherence_upnp tracker galago
+# publish iplayer pythonconsole coherence_upnp tracker galago youtube
 TOTEM_PLUGINS=	"gromit media-player-keys ontop properties \
-		screensaver skipto thumbnail youtube \
+		screensaver skipto thumbnail \
 		opensubtitles jamendo screenshot dbus-service"
 
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -103,7 +102,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR}  ${PREFIX}/share/vala/vapi
-	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.vapi ${PREFIX}/share/vala/vapi
-	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.deps ${PREFIX}/share/vala/vapi
+	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.{deps,vapi} \
+		${PREFIX}/share/vala/vapi
 
 .include <bsd.port.mk>
