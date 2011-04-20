@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.21 2010/12/19 10:53:18 landry Exp $
+# $OpenBSD: Makefile,v 1.22 2011/04/20 11:48:48 jasper Exp $
 
 COMMENT=		module for communicating with MPD servers
-DISTNAME=		Audio-MPD-1.102260 
-REVISION=		1
+DISTNAME=		Audio-MPD-1.110560 
 CATEGORIES=		audio
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -18,9 +17,9 @@ CPAN_AUTHOR=		JQUELIN
 MODCPAN_EXAMPLES=	Yes
 
 CONFIGURE_STYLE=	modbuild
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
-RUN_DEPENDS=		audio/p5-Audio-MPD-Common \
+RUN_DEPENDS=		audio/p5-Audio-MPD-Common>=1.110550 \
 			devel/p5-MooseX-Has-Sugar \
 			devel/p5-MooseX-SemiAffordanceAccessor \
 			devel/p5-Class-Accessor \
