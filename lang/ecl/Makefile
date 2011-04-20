@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/04 14:36:19 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/20 15:45:16 shadchin Exp $
 
 COMMENT = 	embeddable common-lisp
 CATEGORIES = 	lang
 
-BROKEN-hppa =	infinite loop during build
-
-V =		10.4.1
+V =		11.1.1
 DISTNAME = 	ecl-$V
-SHARED_LIBS +=	ecl	1.0
+SHARED_LIBS +=	ecl	2.0
 
 HOMEPAGE = 	http://ecls.sourceforge.net/
 SUBST_VARS =	V
@@ -25,9 +23,7 @@ USE_GMAKE = 		Yes
 USE_LIBTOOL = 		Yes
 USE_GROFF =		Yes
 NO_REGRESS = 		Yes
-CONFIGURE_ENV +=	LDFLAGS='-pthread -L${LOCALBASE}/lib' \
-			CPPFLAGS=-I${LOCALBASE}/include \
-			CFLAGS='${CFLAGS} -pthread' \
+CONFIGURE_ENV +=	CPPFLAGS=-I${LOCALBASE}/include \
 			ECLLIB_VERSION=${LIBecl_VERSION}
 FLAVORS =		debug
 FLAVOR ?=
@@ -46,8 +42,9 @@ MODGNU_CONFIG_GUESS_DIRS = 	${WRKDIST} \
 				${WRKDIST}/src/gmp
 
 LIB_DEPENDS +=	devel/gmp \
-		devel/boehm-gc
-		
-WANTLIB +=	c gc gmp m pthread
+		devel/boehm-gc \
+		devel/libffi
+
+WANTLIB +=	c ffi gc gmp m pthread
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/12/04 14:36:19 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/20 15:45:16 shadchin Exp $
 %%SHARED%%
 @bin bin/ecl
 bin/ecl-config
@@ -12,26 +12,33 @@ include/ecl/ecl-inl.h
 include/ecl/ecl.h
 include/ecl/eval.h
 include/ecl/external.h
+include/ecl/gc/
+include/ecl/gc/private/
+include/ecl/impl/
+include/ecl/impl/math_dispatch.h
+include/ecl/impl/math_dispatch2.h
+include/ecl/impl/math_fenv.h
+include/ecl/impl/math_fenv_msvc.h
 include/ecl/internal.h
 include/ecl/number.h
 include/ecl/object.h
 include/ecl/page.h
 include/ecl/stacks.h
 include/ecl/unify.h
-lib/Copyright
-lib/LGPL
 lib/ecl-${V}/
-lib/ecl-${V}/BUILD-STAMP
+lib/ecl-${V}/Copyright
+lib/ecl-${V}/LGPL
 lib/ecl-${V}/TAGS
 @bin lib/ecl-${V}/asdf.fas
+lib/ecl-${V}/build-stamp
 lib/ecl-${V}/bytecmp.asd
 @bin lib/ecl-${V}/bytecmp.fas
 lib/ecl-${V}/cmp.asd
 @bin lib/ecl-${V}/cmp.fas
 lib/ecl-${V}/defsystem.asd
 @bin lib/ecl-${V}/defsystem.fas
-lib/ecl-${V}/dpp
-lib/ecl-${V}/ecl_min
+@bin lib/ecl-${V}/dpp
+@bin lib/ecl-${V}/ecl_min
 lib/ecl-${V}/help.doc
 lib/ecl-${V}/libasdf.a
 lib/ecl-${V}/libbytecmp.a
@@ -42,6 +49,7 @@ lib/ecl-${V}/librt.a
 lib/ecl-${V}/libsb-bsd-sockets.a
 lib/ecl-${V}/libserve-event.a
 lib/ecl-${V}/libsockets.a
+lib/ecl-${V}/prebuilt-asdf.asd
 lib/ecl-${V}/profile.asd
 @bin lib/ecl-${V}/profile.fas
 lib/ecl-${V}/rt.asd
@@ -52,6 +60,6 @@ lib/ecl-${V}/serve-event.asd
 @bin lib/ecl-${V}/serve-event.fas
 lib/ecl-${V}/sockets.asd
 @bin lib/ecl-${V}/sockets.fas
-lib/ecl-${V}/sysfun.lsp
 lib/ecl-${V}/ucd.dat
+@man man/man1/ecl-config.1
 @man man/man1/ecl.1
