@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/31 07:47:09 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.10 2011/04/20 05:12:01 dcoppa Exp $
 
 COMMENT =		official Last.fm client
 
 VER =			1.5.4.27091
 DISTNAME =		lastfm-${VER}+dfsg
 PKGNAME =		last.fm-${VER}
-REVISION =		0
+REVISION =		1
 
 SHARED_ONLY =		Yes
 
@@ -34,11 +34,13 @@ WANTLIB += fftw3f>=4 gpod>=600 mad samplerate>=1 portaudio
 
 MODULES =		x11/qt4
 
-LIB_DEPENDS =		math/fftw3,float \
-			audio/libgpod \
+LIB_DEPENDS =		audio/libgpod \
 			audio/libmad \
 			audio/libsamplerate \
-			audio/portaudio-svn
+			audio/portaudio-svn \
+			math/fftw3,float \
+			${MODQT4_LIB_DEPENDS}>=4.7.2
+
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/xdg-utils
 
