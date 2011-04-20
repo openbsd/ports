@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.14 2008/06/12 21:04:16 brad Exp $
+@comment $OpenBSD: PLIST,v 1.15 2011/04/20 20:51:41 naddy Exp $
 @bin bin/gmake
-@endfake
 @info info/make.info
 @man man/man1/gmake.1
 share/locale/be/LC_MESSAGES/make.mo
@@ -14,15 +13,16 @@ share/locale/gl/LC_MESSAGES/make.mo
 share/locale/he/LC_MESSAGES/make.mo
 share/locale/hr/LC_MESSAGES/make.mo
 share/locale/id/LC_MESSAGES/make.mo
+share/locale/it/LC_MESSAGES/make.mo
 share/locale/ja/LC_MESSAGES/make.mo
 share/locale/ko/LC_MESSAGES/make.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/make.mo
 share/locale/nl/LC_MESSAGES/make.mo
 share/locale/pl/LC_MESSAGES/make.mo
 share/locale/pt_BR/LC_MESSAGES/make.mo
 share/locale/ru/LC_MESSAGES/make.mo
-share/locale/rw/
-share/locale/rw/LC_MESSAGES/
-share/locale/rw/LC_MESSAGES/make.mo
 share/locale/sv/LC_MESSAGES/make.mo
 share/locale/tr/LC_MESSAGES/make.mo
 share/locale/uk/LC_MESSAGES/make.mo
