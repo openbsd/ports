@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.227 2011/03/18 18:19:16 landry Exp $
+# $OpenBSD: Makefile,v 1.228 2011/04/20 20:04:16 landry Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -30,6 +30,7 @@
      SUBDIR += conky,no_x11
      SUBDIR += consolekit
      SUBDIR += contool
+     SUBDIR += crashme
      SUBDIR += d-feet
      SUBDIR += dcfldd
      SUBDIR += dcled
