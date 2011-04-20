@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/14 09:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/20 14:38:26 naddy Exp $
 
 COMMENT=	tools to extend pipe capabilities
 
-DISTNAME=	shunt-1.7.2
-REVISION=	0
+DISTNAME=	shunt-1.7.3
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.serice.net/shunt/
