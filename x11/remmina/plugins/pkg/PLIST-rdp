@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-rdp,v 1.1.1.1 2011/04/20 15:07:36 jasper Exp $
+@comment lib/remmina/plugins/remmina-plugin-rdp.la
+lib/remmina/plugins/remmina-plugin-rdp.so
+share/remmina/icons/hicolor/16x16/emblems/remmina-rdp-ssh.png
+share/remmina/icons/hicolor/16x16/emblems/remmina-rdp.png
+share/remmina/icons/hicolor/22x22/emblems/remmina-rdp-ssh.png
+share/remmina/icons/hicolor/22x22/emblems/remmina-rdp.png
