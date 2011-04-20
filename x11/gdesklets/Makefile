@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/22 08:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/04/20 15:25:47 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		mini programs for your desktop
 
-V=			0.36.1
+V=			0.36.3
 DISTNAME=		gdesklets-${V}
-REVISION=		9
+
+EXTRACT_SUFX=		.tar.bz2
 
 CATEGORIES=		x11
 
-HOMEPAGE=		http://www.gdesklets.de/
+HOMEPAGE=		http://gdesklets.de/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,8 +20,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}files/
-
-WRKDIST=		${WRKDIR}/gDesklets-${V}
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -38,7 +37,9 @@ LIB_DEPENDS=		devel/libgtop2 \
 			x11/gnome/librsvg
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
-			textproc/rarian
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
+
 RUN_DEPENDS=		devel/desktop-file-utils \
 			misc/shared-mime-info \
 			x11/gnome/py-gnome
@@ -46,7 +47,9 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
-USE_GROFF =		Yes
+
+AUTOCONF_VERSION=	2.62
+AUTOMAKE_VERSION=	1.9
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -54,10 +57,21 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-static
 
-post-extract:
-.for _prog in ctrlinfo gdesklets gdesklets-daemon gdesklets-logview \
-	      gdesklets-migration-tool gdesklets-shell test-control.py
-	@perl -pi -e "s|/usr/bin/env python|${MODPY_BIN}|g" ${WRKSRC}/${_prog}
-.endfor
+MODPY_ADJ_FILES=contrib/gdesklets-migration-tool \
+		ctrlinfo \
+		gdesklets \
+		gdesklets-daemon \
+		gdesklets-logview \
+		gdesklets-shell \
+		test-control.py
+
+FAKE_FLAGS=	autostartdir=${PREFIX}/share/examples/gdesklets/xdg/autostart/
+
+pre-configure:
+	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf -s -i
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${PREFIX}/lib/gdesklets
 
 .include <bsd.port.mk>
