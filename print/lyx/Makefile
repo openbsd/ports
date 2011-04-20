@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2010/11/20 09:48:39 espie Exp $
+# $OpenBSD: Makefile,v 1.60 2011/04/20 05:19:06 dcoppa Exp $
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
@@ -22,7 +22,7 @@ MODULES=	devel/gettext lang/python x11/qt4
 RUN_DEPENDS=	print/texlive/base \
 		graphics/ImageMagick
 
-LIB_DEPENDS=	x11/qt4>=4.5.3 \
+LIB_DEPENDS=	${MODQT4_LIB_DEPENDS}>=4.5.3 \
 		devel/boost \
 		textproc/aspell/core
 
