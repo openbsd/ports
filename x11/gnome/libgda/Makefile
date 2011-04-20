@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/04/07 09:28:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2011/04/20 16:43:34 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-mysql=		MySQL backend for libgda
 COMMENT-pgsql=		PostreSQL backend for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		4.2.5
+GNOME_VERSION=		4.2.6
 
 # NOTE: when major version changes, increment GDA_MAJOR accordingly and
 # bump "x11/gnome/libgdamm"
@@ -24,9 +24,6 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 EPOCH-mysql=		0
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 EPOCH-pgsql=		0
-
-REVISION-main=		0
-REVISION-ui=		0
 
 CATEGORIES=		databases
 
@@ -78,7 +75,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-introspection \
 			--with-bdb="${LOCALBASE}" \
 			--without-firebird \
-			--without-oracle
+			--without-oracle \
+			--with-java=no
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4/" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm" \
 			LIBCRYPTO_CFLAGS="-I/usr/include/ssl" \
@@ -88,7 +86,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4/" \
 FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
 
 WANTLIB-main += ${WANTLIB} c gcrypt gpg-error ncurses pthread png
-WANTLIB-main += readline tasn1 soup-2.4 gnutls xslt crypto gdk_pixbuf-2.0
+WANTLIB-main += readline soup-2.4 xslt crypto gdk_pixbuf-2.0
 
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-main=	${LIB_DEPENDS} \

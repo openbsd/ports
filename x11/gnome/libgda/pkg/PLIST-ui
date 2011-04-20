@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.5 2011/04/07 09:28:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.6 2011/04/20 16:43:34 ajacoutot Exp $
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
 @bin bin/gdaui-demo-${GDA_MAJOR}
@@ -72,6 +72,11 @@ share/gnome/help/gda-browser/C/figures/table-insert-data.png
 share/gnome/help/gda-browser/C/figures/trans-begin.png
 share/gnome/help/gda-browser/C/figures/trans-commit.png
 share/gnome/help/gda-browser/C/figures/trans-rollback.png
+share/gnome/help/gda-browser/C/figures/virtual-cnc-2.png
+share/gnome/help/gda-browser/C/figures/virtual-cnc-3.png
+share/gnome/help/gda-browser/C/figures/virtual-cnc-4.png
+share/gnome/help/gda-browser/C/figures/virtual-cnc-5.png
+share/gnome/help/gda-browser/C/figures/virtual-cnc.png
 share/gnome/help/gda-browser/C/general-ui.page
 share/gnome/help/gda-browser/C/index.page
 share/gnome/help/gda-browser/C/legal.xml
@@ -80,6 +85,7 @@ share/gnome/help/gda-browser/C/schema-browser-perspective.page
 share/gnome/help/gda-browser/C/table-insert-data.page
 share/gnome/help/gda-browser/C/transactions.page
 share/gnome/help/gda-browser/C/variables.page
+share/gnome/help/gda-browser/C/virtual-connections.page
 share/gnome/help/gda-browser/de/
 share/gnome/help/gda-browser/de/actions.page
 share/gnome/help/gda-browser/de/data-manager-perspective.page
@@ -108,6 +114,11 @@ share/gnome/help/gda-browser/de/figures/table-insert-data.png
 share/gnome/help/gda-browser/de/figures/trans-begin.png
 share/gnome/help/gda-browser/de/figures/trans-commit.png
 share/gnome/help/gda-browser/de/figures/trans-rollback.png
+share/gnome/help/gda-browser/de/figures/virtual-cnc-2.png
+share/gnome/help/gda-browser/de/figures/virtual-cnc-3.png
+share/gnome/help/gda-browser/de/figures/virtual-cnc-4.png
+share/gnome/help/gda-browser/de/figures/virtual-cnc-5.png
+share/gnome/help/gda-browser/de/figures/virtual-cnc.png
 share/gnome/help/gda-browser/de/general-ui.page
 share/gnome/help/gda-browser/de/index.page
 share/gnome/help/gda-browser/de/legal.xml
@@ -116,6 +127,7 @@ share/gnome/help/gda-browser/de/schema-browser-perspective.page
 share/gnome/help/gda-browser/de/table-insert-data.page
 share/gnome/help/gda-browser/de/transactions.page
 share/gnome/help/gda-browser/de/variables.page
+share/gnome/help/gda-browser/de/virtual-connections.page
 share/gnome/help/gda-browser/es/
 share/gnome/help/gda-browser/es/actions.page
 share/gnome/help/gda-browser/es/data-manager-perspective.page
@@ -144,6 +156,11 @@ share/gnome/help/gda-browser/es/figures/table-insert-data.png
 share/gnome/help/gda-browser/es/figures/trans-begin.png
 share/gnome/help/gda-browser/es/figures/trans-commit.png
 share/gnome/help/gda-browser/es/figures/trans-rollback.png
+share/gnome/help/gda-browser/es/figures/virtual-cnc-2.png
+share/gnome/help/gda-browser/es/figures/virtual-cnc-3.png
+share/gnome/help/gda-browser/es/figures/virtual-cnc-4.png
+share/gnome/help/gda-browser/es/figures/virtual-cnc-5.png
+share/gnome/help/gda-browser/es/figures/virtual-cnc.png
 share/gnome/help/gda-browser/es/general-ui.page
 share/gnome/help/gda-browser/es/index.page
 share/gnome/help/gda-browser/es/legal.xml
@@ -152,6 +169,7 @@ share/gnome/help/gda-browser/es/schema-browser-perspective.page
 share/gnome/help/gda-browser/es/table-insert-data.page
 share/gnome/help/gda-browser/es/transactions.page
 share/gnome/help/gda-browser/es/variables.page
+share/gnome/help/gda-browser/es/virtual-connections.page
 share/gnome/help/gda-browser/sl/
 share/gnome/help/gda-browser/sl/actions.page
 share/gnome/help/gda-browser/sl/data-manager-perspective.page
@@ -180,6 +198,11 @@ share/gnome/help/gda-browser/sl/figures/table-insert-data.png
 share/gnome/help/gda-browser/sl/figures/trans-begin.png
 share/gnome/help/gda-browser/sl/figures/trans-commit.png
 share/gnome/help/gda-browser/sl/figures/trans-rollback.png
+share/gnome/help/gda-browser/sl/figures/virtual-cnc-2.png
+share/gnome/help/gda-browser/sl/figures/virtual-cnc-3.png
+share/gnome/help/gda-browser/sl/figures/virtual-cnc-4.png
+share/gnome/help/gda-browser/sl/figures/virtual-cnc-5.png
+share/gnome/help/gda-browser/sl/figures/virtual-cnc.png
 share/gnome/help/gda-browser/sl/general-ui.page
 share/gnome/help/gda-browser/sl/index.page
 share/gnome/help/gda-browser/sl/legal.xml
@@ -188,6 +211,7 @@ share/gnome/help/gda-browser/sl/schema-browser-perspective.page
 share/gnome/help/gda-browser/sl/table-insert-data.page
 share/gnome/help/gda-browser/sl/transactions.page
 share/gnome/help/gda-browser/sl/variables.page
+share/gnome/help/gda-browser/sl/virtual-connections.page
 share/gtk-doc/html/gda-browser/
 share/gtk-doc/html/gda-browser/UILayout.png
 share/gtk-doc/html/gda-browser/code_orga.html
