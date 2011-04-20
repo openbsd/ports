@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/03 09:21:00 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/04/20 11:42:17 jasper Exp $
 ${P5SITE}/Audio/
 ${P5SITE}/Audio/MPD/
 ${P5SITE}/Audio/MPD/Common/
@@ -8,6 +8,7 @@ ${P5SITE}/Audio/MPD/Common/Item.pm
 ${P5SITE}/Audio/MPD/Common/Item/Directory.pm
 ${P5SITE}/Audio/MPD/Common/Item/Playlist.pm
 ${P5SITE}/Audio/MPD/Common/Item/Song.pm
+${P5SITE}/Audio/MPD/Common/Output.pm
 ${P5SITE}/Audio/MPD/Common/Stats.pm
 ${P5SITE}/Audio/MPD/Common/Status.pm
 ${P5SITE}/Audio/MPD/Common/Time.pm
@@ -17,6 +18,7 @@ ${P5SITE}/Audio/MPD/Common/Types.pm
 @man man/man3p/Audio::MPD::Common::Item::Directory.3p
 @man man/man3p/Audio::MPD::Common::Item::Playlist.3p
 @man man/man3p/Audio::MPD::Common::Item::Song.3p
+@man man/man3p/Audio::MPD::Common::Output.3p
 @man man/man3p/Audio::MPD::Common::Stats.3p
 @man man/man3p/Audio::MPD::Common::Status.3p
 @man man/man3p/Audio::MPD::Common::Time.3p
