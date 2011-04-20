@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/04/20 17:50:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2011/04/20 17:53:44 jasper Exp $
 
 COMMENT=		flexible communications framework, glib bindings
 
@@ -17,6 +17,7 @@ MODULES=		devel/gettext \
 			lang/python
 
 MODPY_RUNDEP=           No
+MODPY_ADJ_FILES=	tests/all-errors-documented.py
 
 BUILD_DEPENDS=		devel/gobject-introspection>=0.10.7p4 \
 			lang/vala \

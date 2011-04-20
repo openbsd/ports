@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/04/20 17:35:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2011/04/20 17:53:44 jasper Exp $
 
 PKG_ARCH=		*
 
@@ -21,9 +21,7 @@ NO_REGRESS=		Yes
 
 USE_LIBTOOL=		No
 CONFIGURE_STYLE=	none
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Makefile
+MAKE_FLAGS+=		PYTHON=${MODPY_BIN}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/gtk-doc/html/telepathy-spec/
