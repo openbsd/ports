@@ -1,0 +1,12 @@
+$OpenBSD: patch-PDP11_pdp11_hk_c,v 1.1 2011/04/20 05:16:33 form Exp $
+--- PDP11/pdp11_hk.c.orig	Sat Nov 22 18:40:26 2008
++++ PDP11/pdp11_hk.c	Wed Apr 20 11:37:12 2011
+@@ -904,7 +904,7 @@ switch (fnc) {                                        
+             for (i = wc; i < awc; i++)                  /* fill buf */
+                 hkxb[i] = 0;
+             if (wc && !err) {                           /* write buf */
+-                fxwrite (hkxb, sizeof (uint16), wc, uptr->fileref);
++                fxwrite (hkxb, sizeof (uint16), awc, uptr->fileref);
+                 err = ferror (uptr->fileref);
+                 }
+             }                                           /* end if wr */
