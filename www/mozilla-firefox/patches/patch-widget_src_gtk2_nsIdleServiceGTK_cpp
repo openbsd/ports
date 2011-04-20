@@ -1,5 +1,6 @@
-$OpenBSD: patch-widget_src_gtk2_nsIdleServiceGTK_cpp,v 1.4 2011/04/19 09:16:33 landry Exp $
+$OpenBSD: patch-widget_src_gtk2_nsIdleServiceGTK_cpp,v 1.5 2011/04/20 11:49:02 landry Exp $
 OBSD specific patch
+https://bugzilla.mozilla.org/show_bug.cgi?id=650772
 --- widget/src/gtk2/nsIdleServiceGTK.cpp.orig	Wed Jul 21 02:53:08 2010
 +++ widget/src/gtk2/nsIdleServiceGTK.cpp	Sun Aug  1 12:58:34 2010
 @@ -67,7 +67,7 @@ NS_IMPL_ISUPPORTS2(nsIdleServiceGTK, nsIdleService, ns

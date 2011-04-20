@@ -1,5 +1,6 @@
-$OpenBSD: patch-widget_src_gtk2_nsScreenManagerGtk_cpp,v 1.3 2011/04/19 09:16:33 landry Exp $
+$OpenBSD: patch-widget_src_gtk2_nsScreenManagerGtk_cpp,v 1.4 2011/04/20 11:49:02 landry Exp $
 OBSD specific patch
+https://bugzilla.mozilla.org/show_bug.cgi?id=650772
 --- widget/src/gtk2/nsScreenManagerGtk.cpp.orig	Wed Jun 17 07:22:21 2009
 +++ widget/src/gtk2/nsScreenManagerGtk.cpp	Sat Jun 20 22:09:11 2009
 @@ -174,7 +174,7 @@ nsScreenManagerGtk :: Init()

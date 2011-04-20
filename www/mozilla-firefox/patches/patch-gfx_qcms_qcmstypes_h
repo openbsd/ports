@@ -1,4 +1,5 @@
-$OpenBSD: patch-gfx_qcms_qcmstypes_h,v 1.2 2011/03/30 21:39:14 landry Exp $
+$OpenBSD: patch-gfx_qcms_qcmstypes_h,v 1.3 2011/04/20 11:49:02 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=651444
 --- gfx/qcms/qcmstypes.h.orig	Wed Jul 21 02:52:13 2010
 +++ gfx/qcms/qcmstypes.h	Sun Aug  1 12:35:46 2010
 @@ -13,14 +13,6 @@
