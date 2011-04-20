@@ -1,0 +1,17 @@
+$OpenBSD: patch-plugins-src_TWPythonPlugin_TWPythonPlugin_pro,v 1.1 2011/04/20 22:16:25 edd Exp $
+--- plugins-src/TWPythonPlugin/TWPythonPlugin.pro.orig	Wed Mar  2 19:25:55 2011
++++ plugins-src/TWPythonPlugin/TWPythonPlugin.pro	Sat Apr 16 19:42:37 2011
+@@ -55,8 +55,12 @@ unix:!macx { # on Unix-ish platforms we should rely on
+ 
+ 	QMAKE_CXXFLAGS	+= -fno-strict-aliasing
+ 
+-	target.path	= /usr/local/lib/texworks
++	target.path	= ${WRKINST}/${PREFIX}/lib/texworks
+ 	INSTALLS	+= target
++}
++
++openbsd-g++* {
++	INCLUDEPATH	+= ${LOCALBASE}/include/python${MODPY_VERSION}/
+ }
+ 
+ win32 { # paths here are specific to my setup

@@ -1,0 +1,21 @@
+$OpenBSD: patch-plugins-src_TWLuaPlugin_TWLuaPlugin_pro,v 1.1 2011/04/20 22:16:25 edd Exp $
+--- plugins-src/TWLuaPlugin/TWLuaPlugin.pro.orig	Wed Mar  2 19:25:55 2011
++++ plugins-src/TWLuaPlugin/TWLuaPlugin.pro	Sat Apr 16 19:42:23 2011
+@@ -44,11 +44,16 @@ macx {
+ 	INCLUDEPATH += /usr/local/include
+ }
+ 
++openbsd-g++* {
++	LIBS	+= -L${LOCALBASE}/lib -llua
++}
++
++
+ unix:!macx { # on Unix-ish platforms we rely on pkgconfig
+ 	CONFIG		+= link_pkgconfig
+ 	PKGCONFIG	+= lua5.1
+ 
+-	target.path	= /usr/local/lib/texworks
++	target.path	= ${WRKINST}/${PREFIX}/lib/texworks
+ 	INSTALLS	+= target
+ }
+ 

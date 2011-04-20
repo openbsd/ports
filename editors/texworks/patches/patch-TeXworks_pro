@@ -1,0 +1,46 @@
+$OpenBSD: patch-TeXworks_pro,v 1.1 2011/04/20 22:16:25 edd Exp $
+--- TeXworks.pro.orig	Sat Mar 19 16:12:51 2011
++++ TeXworks.pro	Thu Apr 14 18:20:45 2011
+@@ -96,6 +96,10 @@ unix:!macx { # on Unix-ish platforms we rely on pkgcon
+ 	# gets expanded to " in the c++ code)
+ 	QMAKE_CXXFLAGS += -DTW_HELPPATH=\\\"/usr/local/share/texworks-help\\\"
+ 	QMAKE_CXXFLAGS += -DTW_PLUGINPATH=\\\"/usr/local/lib/texworks\\\"
++}
++
++# openbsd uses the mozilla dicts
++unix:!openbsd-g++* {
+ 	QMAKE_CXXFLAGS += -DTW_DICPATH=\\\"/usr/share/myspell/dicts\\\"
+ }
+ 
+@@ -107,10 +111,11 @@ linux-g++ {
+ 	LIBS		+= -lz
+ }
+ 
+-openbsd-g++ {
++openbsd-g++* {
+ 	# Same bug exists in OpenBSD/qt4
+ 	LIBS		+= -lQtDBus
+ 	INCLUDEPATH	+= /usr/local/include/X11/qt4/QtDBus
++	QMAKE_CXXFLAGS += -DTW_DICPATH=\\\"${LOCALBASE}/share/mozilla-dicts\\\"
+ }
+ 
+ win32 { # paths here are specific to my setup
+@@ -224,13 +229,17 @@ TRANSLATIONS	+=	trans/TeXworks_af.ts \
+ 					trans/TeXworks_tr.ts \
+ 					trans/TeXworks_zh_CN.ts
+ 
++# OpenBSD ports specific
++INSTALL_PREFIX = ${WRKINST}/${PREFIX}
++
+ unix:!macx { # installation on Unix-ish platforms
+ 	isEmpty(INSTALL_PREFIX):INSTALL_PREFIX = /usr/local
+ 	isEmpty(BIN_DIR):BIN_DIR = $$INSTALL_PREFIX/bin
+ 	isEmpty(DATA_DIR):DATA_DIR = $$INSTALL_PREFIX/share
+ 	isEmpty(DOCS_DIR):DOCS_DIR = $$DATA_DIR/doc/texworks
+ 	isEmpty(ICON_DIR):ICON_DIR = $$DATA_DIR/pixmaps
+-	isEmpty(MAN_DIR):MAN_DIR = $$DATA_DIR/man/man1
++	#isEmpty(MAN_DIR):MAN_DIR = $$DATA_DIR/man/man1
++	isEmpty(MAN_DIR):MAN_DIR = $$INSTALL_PREFIX/man/man1
+ 	isEmpty(DESKTOP_DIR):DESKTOP_DIR = $$DATA_DIR/applications
+ 
+ 	target.path = $$BIN_DIR
