@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.450 2011/04/20 09:00:51 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.451 2011/04/20 15:09:04 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -223,6 +223,7 @@
      SUBDIR += ratmen
      SUBDIR += ratpoison
      SUBDIR += rdesktop
+     SUBDIR += remmina
      SUBDIR += rendercheck
      SUBDIR += rep-gtk
      SUBDIR += root-tail
