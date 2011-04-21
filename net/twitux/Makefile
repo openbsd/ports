@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2011/04/13 06:47:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/04/21 07:05:51 ajacoutot Exp $
 
 COMMENT=		Gtk-based GUI client for Twitter
 
 GNOME_PROJECT=		twitux
 GNOME_VERSION=		0.69
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=     	net
 
@@ -19,23 +19,23 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=twitux/}
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
-WANTLIB += dbus-glib-1 expat fontconfig freetype gcrypt gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnutls
+WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
+WANTLIB += c cairo canberra canberra-gtk dbus-1 dbus-glib-1 drm
+WANTLIB += enchant expat fontconfig freetype gcrypt gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
 WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0 ltdl
-WANTLIB += m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs stdc++ tasn1 vorbis vorbisfile
-WANTLIB += xcb xml2 z xcb-render xcb-render-util
-WANTLIB += soup-2.4 sexy gnome-keyring>=6 notify canberra canberra-gtk
-WANTLIB += enchant
+WANTLIB += m notify ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs sexy soup-2.4
+WANTLIB += stdc++ vorbis vorbisfile xcb xcb-render xcb-shm xml2
+WANTLIB += z
 
 BUILD_DEPENDS=	devel/iso-codes
 
 LIB_DEPENDS=	devel/libsoup \
 		x11/libsexy \
 		x11/gnome/libgnome-keyring \
-		devel/libnotify \
+		devel/libnotify>=0.7.2 \
 		audio/libcanberra,-gtk \
 		textproc/enchant
 

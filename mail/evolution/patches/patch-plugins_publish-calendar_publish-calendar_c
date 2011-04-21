@@ -1,0 +1,20 @@
+$OpenBSD: patch-plugins_publish-calendar_publish-calendar_c,v 1.1 2011/04/21 07:05:36 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+(notify_notification_attach_to_status_icon is gone)
+
+
+--- plugins/publish-calendar/publish-calendar.c.orig	Mon Sep 13 14:18:11 2010
++++ plugins/publish-calendar/publish-calendar.c	Tue Apr 19 11:54:29 2011
+@@ -150,8 +150,8 @@ update_publish_notification (GtkMessageType msg_type, 
+ 				return;
+ 			}
+ 
+-			notify  = notify_notification_new (_("Calendar Publishing"), actual_msg->str, stock_name, NULL);
+-			notify_notification_attach_to_status_icon (notify, status_icon);
++			notify  = notify_notification_new (_("Calendar Publishing"), actual_msg->str, stock_name);
++//			notify_notification_attach_to_status_icon (notify, status_icon);
+ 			notify_notification_set_urgency (notify, NOTIFY_URGENCY_NORMAL);
+ 			notify_notification_set_timeout (notify, NOTIFY_EXPIRES_DEFAULT);
+ 			g_timeout_add (500, show_notify_cb, NULL);

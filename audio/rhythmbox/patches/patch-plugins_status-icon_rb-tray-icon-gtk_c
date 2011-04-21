@@ -1,0 +1,16 @@
+$OpenBSD: patch-plugins_status-icon_rb-tray-icon-gtk_c,v 1.1 2011/04/21 07:04:56 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_attach_to_widget is gone)
+
+--- plugins/status-icon/rb-tray-icon-gtk.c.orig	Tue Apr 19 11:25:10 2011
++++ plugins/status-icon/rb-tray-icon-gtk.c	Tue Apr 19 11:25:56 2011
+@@ -343,7 +343,7 @@ rb_tray_icon_is_embedded (RBTrayIcon *tray)
+ void
+ rb_tray_icon_attach_notification (RBTrayIcon *tray, NotifyNotification *notification)
+ {
+-	notify_notification_attach_to_status_icon (notification, tray->priv->icon);
++//	notify_notification_attach_to_status_icon (notification, tray->priv->icon);
+ }
+ #endif
+ 

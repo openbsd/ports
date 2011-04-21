@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_engine_components_libnotify_libnotify-main_cpp,v 1.3 2011/04/21 07:07:52 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+
+--- lib/engine/components/libnotify/libnotify-main.cpp.orig	Tue Apr 19 15:28:21 2011
++++ lib/engine/components/libnotify/libnotify-main.cpp	Tue Apr 19 15:28:30 2011
+@@ -158,7 +158,7 @@ LibNotify::on_notification_added (gmref_ptr<Ekiga::Not
+ 
+   notif = notify_notification_new (notification->get_title ().c_str (),
+ 				   notification->get_body ().c_str (),
+-				   urgency, NULL);
++				   urgency);
+ 
+   g_signal_connect (notif, "closed",
+ 		    G_CALLBACK (on_notif_closed), notification.get ());

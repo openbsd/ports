@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/04/15 16:10:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2011/04/21 07:06:43 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		simple GTK desktop news aggregator
 DISTNAME=		liferea-1.6.5
 CATEGORIES=		www x11
 
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://liferea.sourceforge.net/
 
@@ -19,27 +19,25 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c
-WANTLIB += cairo dbus-1 dbus-glib-1 expat fontconfig freetype
-WANTLIB += gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error gstbase-0.10
-WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
-WANTLIB += gtk-x11-2.0 icudata icui18n icuuc jpeg m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs sqlite3 stdc++ tasn1 xcb xml2 z
-WANTLIB += gnutls>=12 lua>=5 notify>=2 xslt>=3.3 glade-2.0
-WANTLIB += soup-2.4 enchant>=6 webkit-1.0 GL Xxf86vm drm 
-WANTLIB += gstapp-0.10 xcb-render xcb-shm gmp hogweed nettle
+WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm
+WANTLIB += atk-1.0 c cairo dbus-1 dbus-glib-1 drm enchant expat
+WANTLIB += fontconfig freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gstapp-0.10 gstbase-0.10 gstpbutils-0.10 gstreamer-0.10
+WANTLIB += gstvideo-0.10 gthread-2.0 gtk-x11-2.0 icudata icui18n
+WANTLIB += icuuc jpeg lua m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
+WANTLIB += stdc++ webkit-1.0 xcb xcb-render xcb-shm xml2 xslt
+WANTLIB += z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=liferea/}
 
 MODULES=		devel/gettext \
 			textproc/intltool \
 			devel/gconf2
-LIB_DEPENDS=		security/gnutls \
-			lang/lua \
-			devel/libnotify \
+LIB_DEPENDS=		lang/lua \
+			devel/libnotify>=0.7.2 \
 			textproc/libxslt \
 			devel/libglade2 \
 			devel/libsoup,-main \

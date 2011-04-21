@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_gs-lock-plug_c,v 1.1 2011/04/21 07:07:53 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+
+--- src/gs-lock-plug.c.orig	Tue Apr 19 16:36:42 2011
++++ src/gs-lock-plug.c	Tue Apr 19 16:36:49 2011
+@@ -1090,7 +1090,7 @@ submit_note (GtkButton  *button,
+         strftime (summary, 128, "%X", tmp);
+ 
+         notify_init ("gnome-screensaver-dialog");
+-        note = notify_notification_new (summary, escaped_text, NULL, NULL);
++        note = notify_notification_new (summary, escaped_text, NULL);
+         notify_notification_set_timeout (note, NOTIFY_EXPIRES_NEVER);
+         notify_notification_show (note, NULL);
+         g_object_unref (note);

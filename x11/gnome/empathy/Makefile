@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.65 2011/04/13 06:47:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2011/04/21 07:07:52 ajacoutot Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.34.0
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -45,7 +45,7 @@ BUILD_DEPENDS=		devel/iso-codes \
 LIB_DEPENDS=		audio/libcanberra,-gtk \
 			databases/evolution-data-server \
 			devel/json-glib \
-			devel/libnotify \
+			devel/libnotify>=0.7.2 \
 			devel/libtool,-ltdl \
 			devel/libunique \
 			geo/geoclue \

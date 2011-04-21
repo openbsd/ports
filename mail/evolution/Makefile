@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2011/04/16 05:50:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.123 2011/04/21 07:05:36 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -6,7 +6,11 @@ COMMENT-plugins=	additionnal plugins for evolution
 GNOME_PROJECT=		evolution
 GNOME_VERSION=		2.32.2
 
-REVISION-main=		2
+PKGNAME-main=		${DISTNAME}
+PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
+
+REVISION-main=		3
+REVISION-plugins=	0
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -16,12 +20,6 @@ REVISION-main=		2
 # x11/gnome/tracker
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		R
-
-# -plugins depends on the exact version of -main, so whenever -main is
-# bumped, -plugins needs a bump too
-#PATCH_NUMBER=		p0
-PKGNAME-main=		${DISTNAME}${PATCH_NUMBER}
-PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}${PATCH_NUMBER}
 
 CATEGORIES=		mail
 
@@ -53,13 +51,13 @@ WANTLIB += atk-1.0 c cairo com_err crypto dbus-1 dbus-glib-1
 WANTLIB += enchant execinfo expat fontconfig freetype
 WANTLIB += gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring canberra
-WANTLIB += gnutls gobject-2.0 gpg-error gssapi gthread-2.0 gtk-x11-2.0
+WANTLIB += gobject-2.0 gpg-error gssapi gthread-2.0 gtk-x11-2.0
 WANTLIB += ical krb5 m nspr4 pango-1.0 camel-1.2 camel-provider-1.2
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
 WANTLIB += png pthread pthread-stubs sqlite3 startup-notification-1
-WANTLIB += stdc++ tasn1 xcb xcb-atom xcb-aux xcb-event xcb-render
+WANTLIB += stdc++ xcb xcb-atom xcb-aux xcb-event xcb-render
 WANTLIB += xml2 z gtkhtml-3.14 gtkhtml-editor-3.14
-WANTLIB += gdata proxy soup-gnome-2.4 gdata ebook-1.2
+WANTLIB += gdata soup-gnome-2.4 gdata ebook-1.2
 WANTLIB += ecal-1.2 edataserver-1.2 edataserverui-1.2 unique-1.0
 WANTLIB += gnome-desktop-2 nss3 smime3 ssl3 notify soup-2.4
 WANTLIB += GL Xxf86vm db drm ebackend-1.2 egroupwise-1.2
@@ -99,7 +97,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			converters/libpst \
 			databases/evolution-data-server>=2.32.2 \
 			databases/openldap \
-			devel/libnotify \
+			devel/libnotify>=0.7.2 \
 			devel/libsoup \
 			graphics/gtkimageview \
 			security/nss \
@@ -109,7 +107,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 
 LIB_DEPENDS-plugins=	${LIB_DEPENDS} \
 			multimedia/gstreamer-0.10/core \
-			${PKGNAME-main}:mail/evolution,-main
+			mail/evolution,-main>=${GNOME_VERSION}
 # needed for the audio-inline plugin
 RUN_DEPENDS-plugins=	multimedia/gstreamer-0.10/plugins-good
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/03/24 22:01:08 landry Exp $
+# $OpenBSD: Makefile,v 1.23 2011/04/21 07:05:36 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	notification plugin for Claws-mail
 VERSION=	0.26
 DISTNAME=	notification_plugin-${VERSION}
 PKGNAME=	claws-mail-notification-${VERSION}
-REVISION=	0
+REVISION=	1
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES=	mail
 DIST_SUBDIR=	claws
@@ -20,24 +20,26 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm
+WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread-stubs xcb xcb-render xcb-shm
+WANTLIB += z
+
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	devel/libnotify
+LIB_DEPENDS=	devel/libnotify>=0.7.2 \
+		x11/gtk+2
 
 RUN_DEPENDS=	mail/claws-mail \
 		notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 dbus-glib-1 \
-		expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
-		gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
-		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
-		png pthread-stubs xcb z gthread-2.0 xcb-render \
-		xcb-render-util notify>=2
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

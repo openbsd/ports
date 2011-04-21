@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/04/06 19:04:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2011/04/21 07:07:53 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	GNOME settings daemon
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	2.32.1
 
-REVISION=	0
+REVISION=	1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -32,7 +32,7 @@ MODULES=	devel/gettext \
 		devel/gconf2
 
 BUILD_DEPENDS=	textproc/rarian
-LIB_DEPENDS=	devel/libnotify \
+LIB_DEPENDS=	devel/libnotify>=0.7.2 \
 		x11/gnome/desktop \
 		x11/gnome/libgnomekbd \
 		sysutils/polkit

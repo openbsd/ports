@@ -1,0 +1,16 @@
+$OpenBSD: patch-modules_misc_notify_notify_c,v 1.1 2011/04/21 07:07:26 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+
+--- modules/misc/notify/notify.c.orig	Tue Apr 19 15:29:17 2011
++++ modules/misc/notify/notify.c	Tue Apr 19 15:29:31 2011
+@@ -309,7 +309,7 @@ static int Notify( vlc_object_t *p_this, const char *p
+     }
+ 
+     notification = notify_notification_new( _("Now Playing"),
+-                                            psz_temp, NULL, NULL );
++                                            psz_temp, NULL );
+     notify_notification_set_timeout( notification,
+                                      config_GetInt(p_this, "notify-timeout") );
+     notify_notification_set_urgency( notification, NOTIFY_URGENCY_LOW );

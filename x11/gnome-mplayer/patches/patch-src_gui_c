@@ -1,4 +1,8 @@
-$OpenBSD: patch-src_gui_c,v 1.12 2011/01/18 11:03:20 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.13 2011/04/21 07:07:26 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+(notify_notification_attach_to_status_icon is gone)
 
 adapt audio/video device selection gui
 set DVD device to /dev/rcd0c instead of /dev/dvd
@@ -11,7 +15,21 @@ plug a memory leak
 adjust audio and video cache size minimum and incremental values
 
 --- src/gui.c.orig	Fri Nov  5 17:16:22 2010
-+++ src/gui.c	Tue Jan 18 10:29:24 2011
++++ src/gui.c	Tue Apr 19 16:58:55 2011
+@@ -472,10 +472,10 @@ gboolean set_media_label(void *data)
+             notify_init("gnome-mplayer");
+             notification =
+                 notify_notification_new(idle->display_name, idle->media_notification,
+-                                        "gnome-mplayer", NULL);
++                                        "gnome-mplayer");
+ #ifdef GTK2_12_ENABLED
+-            if (show_status_icon)
+-                notify_notification_attach_to_status_icon(notification, status_icon);
++//            if (show_status_icon)
++//                notify_notification_attach_to_status_icon(notification, status_icon);
+ #endif
+             notify_notification_show(notification, NULL);
+             notify_uninit();
 @@ -2716,7 +2716,7 @@ gboolean slide_panel_away(gpointer data)
      }
      // mutex was already locked, this is good since we only want to do the animation if locked

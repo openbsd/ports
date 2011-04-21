@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_pynotify_defs,v 1.1 2011/04/21 07:05:12 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_attach_to_status_icon is gone)
+(notify_notification_attach_to_widget is gone)
+
+--- src/pynotify.defs.orig	Tue Sep  5 09:00:20 2006
++++ src/pynotify.defs	Tue Apr 19 10:43:43 2011
+@@ -38,7 +38,6 @@
+     '("const-gchar*" "summary")
+     '("const-gchar*" "message" (null-ok) (default "NULL"))
+     '("const-gchar*" "icon" (null-ok) (default "NULL"))
+-    '("GtkWidget*" "attach" (null-ok) (default "NULL"))
+   )
+ )
+ 
+@@ -50,24 +49,6 @@
+     '("const-gchar*" "summary")
+     '("const-gchar*" "message" (null-ok) (default "NULL"))
+     '("const-gchar*" "icon" (null-ok) (default "NULL"))
+-  )
+-)
+-
+-(define-method attach_to_widget
+-  (of-object "NotifyNotification")
+-  (c-name "notify_notification_attach_to_widget")
+-  (return-type "none")
+-  (parameters
+-    '("GtkWidget*" "attach")
+-  )
+-)
+-
+-(define-method attach_to_status_icon
+-  (of-object "NotifyNotification")
+-  (c-name "notify_notification_attach_to_status_icon")
+-  (return-type "none")
+-  (parameters
+-    '("GtkStatusIcon*" "attach")
+   )
+ )
+ 

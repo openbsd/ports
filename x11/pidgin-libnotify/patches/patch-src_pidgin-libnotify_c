@@ -1,6 +1,10 @@
-$OpenBSD: patch-src_pidgin-libnotify_c,v 1.2 2010/10/27 09:37:09 jasper Exp $
+$OpenBSD: patch-src_pidgin-libnotify_c,v 1.3 2011/04/21 07:07:26 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+
 --- src/pidgin-libnotify.c.orig	Sun Dec 14 18:45:51 2008
-+++ src/pidgin-libnotify.c	Wed Oct 27 11:09:10 2010
++++ src/pidgin-libnotify.c	Tue Apr 19 15:02:48 2011
 @@ -268,7 +268,7 @@ notify (const gchar *title,
  	contact = purple_buddy_get_contact (buddy);
  
@@ -10,3 +14,12 @@ $OpenBSD: patch-src_pidgin-libnotify_c,v 1.2 2010/10/27 09:37:09 jasper Exp $
  	else
  		tr_body = NULL;
  
+@@ -286,7 +286,7 @@ notify (const gchar *title,
+ 		g_free (tr_body);
+ 		return;
+ 	}
+-	notification = notify_notification_new (title, tr_body, NULL, NULL);
++	notification = notify_notification_new (title, tr_body, NULL);
+ 	purple_debug_info (PLUGIN_ID, "notify(), new: "
+ 					 "title: '%s', body: '%s', buddy: '%s'\n",
+ 					 title, tr_body, best_name (buddy));

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/14 09:17:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/21 07:06:07 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	addressbook manager
 
 DISTNAME=	rubrica2-2.0.7
-REVISION=	1
+REVISION=	2
 EPOCH=		0
 
 CATEGORIES=	productivity x11
@@ -24,13 +24,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=rubrica/}
 
-WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
-WANTLIB += dbus-glib-1 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread xml2 z pthread-stubs xcb
-WANTLIB += notify glade-2.0
+WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
+WANTLIB += c cairo drm expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 MODULES=	devel/gettext \
 		textproc/intltool \
@@ -51,7 +51,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gnome/icon-theme
 
-LIB_DEPENDS=	devel/libnotify \
+LIB_DEPENDS=	devel/libnotify>=0.7.2 \
 		devel/libglade2
 
 pre-configure:

@@ -1,0 +1,16 @@
+$OpenBSD: patch-battstat_battstat_applet_c,v 1.4 2011/04/21 07:07:52 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+
+--- battstat/battstat_applet.c.orig	Tue Apr 19 15:11:50 2011
++++ battstat/battstat_applet.c	Tue Apr 19 15:12:17 2011
+@@ -435,7 +435,7 @@ battery_full_notify (GtkWidget *applet)
+ 			GTK_ICON_LOOKUP_USE_BUILTIN,
+ 			NULL);
+ 	
+-	NotifyNotification *n = notify_notification_new (_("Your battery is now fully recharged"), "", /* "battery" */ NULL, applet);
++	NotifyNotification *n = notify_notification_new (_("Your battery is now fully recharged"), "", /* "battery" */ NULL);
+ 
+ 	/* XXX: it would be nice to pass this as a named icon */
+ 	notify_notification_set_icon_from_pixbuf (n, icon);

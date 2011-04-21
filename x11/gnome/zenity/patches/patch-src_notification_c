@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_notification_c,v 1.1 2011/04/21 07:07:53 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new_with_status_icon is gone)
+
+--- src/notification.c.orig	Tue Apr 19 16:52:51 2011
++++ src/notification.c	Tue Apr 19 16:53:07 2011
+@@ -184,10 +184,10 @@ zenity_notification_handle_stdin (GIOChannel *channel,
+             icon = freeme = g_filename_to_uri (icon_file, NULL, NULL);
+           }
+ 
+-          notif = notify_notification_new_with_status_icon (
++          notif = notify_notification_new (
+                               message[0] /* title */,
+                               message[1] /* summary */,
+-                              icon, status_icon);
++                              icon);
+ 
+           g_strfreev (message);
+           g_free (freeme);

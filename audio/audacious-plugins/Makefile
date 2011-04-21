@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/04/18 22:41:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2011/04/21 07:04:56 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -8,7 +8,8 @@ COMMENT-jack =		jack plugin for audacious
 V =			2.4.4
 DISTNAME =		audacious-plugins-$V
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		1
+REVISION-main =		2
+REVISION-jack=		0
 PKGNAME-jack =		audacious-jack-$V
 
 CATEGORIES =		audio multimedia
@@ -25,9 +26,9 @@ WANTLIB =	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo dbus-1 \
 		dbus-glib-1 drm expat fontconfig freetype gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-		gthread-2.0 gtk-x11-2.0 iconv intl m mcs mowgli pango-1.0 \
+		gthread-2.0 gtk-x11-2.0 m mcs mowgli pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread-stubs \
-		samplerate xcb xcb-render xcb-shm z
+		samplerate xcb xcb-render xcb-shm z ${MODGETTEXT_WANTLIB}
 WANTLIB-main =	${WANTLIB} FLAC SDL avcodec avformat avutil bz2 cddb \
 		cdio cdio_cdda cue curl faac faad gsm mp3lame neon \
 		notify ogg orc-0.4 schroedinger-1.0 sndfile sndio speex \
@@ -40,6 +41,8 @@ MASTER_SITES =		http://distfiles.atheme.org/
 EXTRACT_SUFX =		.tgz
 
 MULTI_PACKAGES =	-main
+
+MODULES =		devel/gettext
 
 BUILD_DEPENDS =		${RUN_DEPENDS-main}
 
@@ -57,13 +60,19 @@ LIB_DEPENDS-main =	audio/faad \
 			audio/libvorbis \
 			audio/taglib>=1.4 \
 			audio/wavpack \
-			devel/libnotify \
+			devel/libnotify>=0.7.2 \
 			devel/sdl \
 			graphics/ffmpeg \
 			net/curl \
 			net/neon \
-			textproc/libxml
-LIB_DEPENDS-jack =	audio/jack
+			textproc/libxml \
+			x11/gtk+2 \
+			x11/dbus-glib \
+			devel/mcs
+LIB_DEPENDS-jack =	audio/jack \
+			x11/gtk+2 \
+			x11/dbus-glib \
+			devel/mcs
 
 PSEUDO_FLAVORS =	no_jack
 FLAVOR ?=

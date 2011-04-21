@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_ka-applet_c,v 1.1 2011/04/21 07:07:52 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new_with_status_icon is gone)
+
+--- src/ka-applet.c.orig	Tue Apr 19 16:35:05 2011
++++ src/ka-applet.c	Tue Apr 19 16:35:39 2011
+@@ -489,10 +489,9 @@ ka_send_event_notification (KaApplet *applet,
+ 	notify_icon = icon ? icon : "krb-valid-ticket";
+ 
+ 	applet->priv->notification = \
+-		notify_notification_new_with_status_icon(summary,
+-							 message,
+-							 notify_icon,
+-							 applet->priv->tray_icon);
++		notify_notification_new(summary,
++						 message,
++						 notify_icon);
+ 
+ 	notify_notification_set_urgency (applet->priv->notification, NOTIFY_URGENCY_NORMAL);
+ 	notify_notification_add_action (applet->priv->notification,

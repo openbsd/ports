@@ -1,0 +1,31 @@
+$OpenBSD: patch-plugins_a11y-keyboard_gsd-a11y-keyboard-manager_c,v 1.1 2011/04/21 07:07:53 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_attach_to_status_icon is gone)
+
+--- plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c.orig	Tue Apr 19 16:42:31 2011
++++ plugins/a11y-keyboard/gsd-a11y-keyboard-manager.c	Tue Apr 19 16:43:38 2011
+@@ -608,9 +608,8 @@ ax_slowkeys_warning_post_bubble (GsdA11yKeyboardManage
+         gsd_a11y_keyboard_manager_ensure_status_icon (manager);
+         manager->priv->notification = notify_notification_new (title,
+                                                                message,
+-                                                               "preferences-desktop-accessibility",
+-                                                               NULL);
+-        notify_notification_attach_to_status_icon (manager->priv->notification, manager->priv->status_icon);
++                                                               "preferences-desktop-accessibility");
++//        notify_notification_attach_to_status_icon (manager->priv->notification, manager->priv->status_icon);
+         notify_notification_set_timeout (manager->priv->notification, NOTIFICATION_TIMEOUT * 1000);
+ 
+         notify_notification_add_action (manager->priv->notification,
+@@ -747,9 +746,8 @@ ax_stickykeys_warning_post_bubble (GsdA11yKeyboardMana
+         gsd_a11y_keyboard_manager_ensure_status_icon (manager);
+         manager->priv->notification = notify_notification_new (title,
+                                                                message,
+-                                                               "preferences-desktop-accessibility",
+-                                                               NULL);
+-        notify_notification_attach_to_status_icon (manager->priv->notification, manager->priv->status_icon);
++                                                               "preferences-desktop-accessibility");
++//        notify_notification_attach_to_status_icon (manager->priv->notification, manager->priv->status_icon);
+         notify_notification_set_timeout (manager->priv->notification, NOTIFICATION_TIMEOUT * 1000);
+ 
+         notify_notification_add_action (manager->priv->notification,

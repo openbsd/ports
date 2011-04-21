@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.123 2011/04/19 08:25:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.124 2011/04/21 07:07:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 V=		1.0.6
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	23
+REVISION-main=	24
 REVISION-jack=	4
 REVISION-web=	6
 CATEGORIES=	x11
@@ -39,7 +39,7 @@ LIB_DEPENDS-main=${LIB_DEPENDS} \
 		audio/taglib \
 		devel/fribidi \
 		devel/libdvdread \
-		devel/libnotify \
+		devel/libnotify>=0.7.2 \
 		devel/sdl-image \
 		graphics/ffmpeg>=20080620p10 \
 		graphics/libdvbpsi \

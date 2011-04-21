@@ -1,0 +1,17 @@
+$OpenBSD: patch-gweather_gweather-applet_c,v 1.1 2011/04/21 07:07:52 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+
+--- gweather/gweather-applet.c.orig	Tue Apr 19 15:12:23 2011
++++ gweather/gweather-applet.c	Tue Apr 19 15:12:36 2011
+@@ -471,8 +471,7 @@ update_finish (WeatherInfo *info, gpointer data)
+ 			 if (icon == NULL)
+ 				 icon = "stock-unknown";
+ 	           	 
+-			 n = notify_notification_new (message, detail, icon,
+-					 gw_applet->container);
++			 n = notify_notification_new (message, detail, icon);
+ 	
+ 		   	 notify_notification_show (n, &error);
+ 			 if (error)

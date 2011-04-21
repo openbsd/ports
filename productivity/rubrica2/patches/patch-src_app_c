@@ -1,6 +1,10 @@
-$OpenBSD: patch-src_app_c,v 1.1.1.1 2009/10/08 16:39:37 ajacoutot Exp $
---- src/app.c.orig	Wed Oct  7 12:07:40 2009
-+++ src/app.c	Wed Oct  7 12:07:54 2009
+$OpenBSD: patch-src_app_c,v 1.2 2011/04/21 07:06:07 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+
+--- src/app.c.orig	Sun Dec  6 09:53:23 2009
++++ src/app.c	Tue Apr 19 14:45:07 2011
 @@ -69,7 +69,7 @@ static RubricaDefaultCategories defcats[] = {
    {"applications-multimedia",  "hobbies",       N_("hobbies")      },
    {"sport",                    "sport",         N_("sport")        },
@@ -10,3 +14,13 @@ $OpenBSD: patch-src_app_c,v 1.1.1.1 2009/10/08 16:39:37 ajacoutot Exp $
    {"system-file-manager",      "company",       N_("company")      },
    {"application-certificate",  "legal",         N_("legal")        },
    {"applications-office",      "office",        N_("office")       },
+@@ -1269,8 +1269,7 @@ rubrica_app_init(RubricaApp* self)
+   self->priv->cutted      = NULL;
+   self->priv->notify      = notify_notification_new("Rubrica Addressbook",
+ 						    NULL, 
+-						    "info",
+-						    NULL);
++						    "info");
+   self->priv->show_card   = TRUE;
+ 
+   g_object_set(self->priv->notebook, "homogeneous", FALSE, NULL);

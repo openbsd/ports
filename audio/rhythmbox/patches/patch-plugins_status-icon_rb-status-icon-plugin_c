@@ -1,0 +1,16 @@
+$OpenBSD: patch-plugins_status-icon_rb-status-icon-plugin_c,v 1.1 2011/04/21 07:04:56 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+
+--- plugins/status-icon/rb-status-icon-plugin.c.orig	Tue Apr 19 11:04:06 2011
++++ plugins/status-icon/rb-status-icon-plugin.c	Tue Apr 19 11:04:16 2011
+@@ -394,7 +394,7 @@ do_notify (RBStatusIconPlugin *plugin,
+ 		icon_name = NULL;
+ 
+ 	if (plugin->priv->notification == NULL) {
+-		plugin->priv->notification = notify_notification_new (primary, secondary, icon_name, NULL);
++		plugin->priv->notification = notify_notification_new (primary, secondary, icon_name);
+ 
+ 		g_signal_connect_object (plugin->priv->notification,
+ 					 "closed",

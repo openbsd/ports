@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_notification_trayicon_c,v 1.1 2011/04/21 07:05:36 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+(notify_notification_attach_to_status_icon is gone)
+
+--- src/notification_trayicon.c.orig	Tue Apr 19 14:19:52 2011
++++ src/notification_trayicon.c	Tue Apr 19 14:20:07 2011
+@@ -601,8 +601,8 @@ static gboolean notification_trayicon_popup_create(Msg
+   summary  = notification_trayicon_popup_assemble_summary();
+   utf8_str = notification_trayicon_popup_assemble_body(msginfo);
+ 
+-  popup.notification = notify_notification_new(summary, utf8_str, NULL, NULL);
+-  notify_notification_attach_to_status_icon(popup.notification, trayicon);
++  popup.notification = notify_notification_new(summary, utf8_str, NULL);
++//  notify_notification_attach_to_status_icon(popup.notification, trayicon);
+ 
+   g_free(summary);
+   g_free(utf8_str);

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2011/01/18 21:34:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2011/04/21 07:07:26 ajacoutot Exp $
 
 COMMENT=	Xfce4 notification daemon
 
 XFCE_VERSION=	0.3.7
 XFCE_GOODIE=	notification-daemon-xfce
-REVISION=	13
+REVISION=	14
 
 MASTER_SITES=	http://archive.xfce.org/src/archive/${XFCE_GOODIE}/${XFCE_BRANCH}/
 # GPLv2
@@ -18,7 +18,8 @@ DESKTOP_FILES=	Yes
 
 LIB_DEPENDS=	x11/xfce4/libxfcegui4 \
 		x11/libsexy \
-		devel/libnotify
+		devel/libnotify>=0.7.2 \
+		x11/dbus-glib
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \

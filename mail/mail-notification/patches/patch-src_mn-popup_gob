@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_mn-popup_gob,v 1.1 2011/04/21 07:05:36 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_attach_to_widget is gone)
+
+--- src/mn-popup.gob.orig	Tue Apr 19 12:24:44 2011
++++ src/mn-popup.gob	Tue Apr 19 12:24:53 2011
+@@ -51,8 +51,8 @@ class MN:Popup from Notify:Notification
+ 		 "icon-name", "stock_mail",
+ 		 NULL);
+ 
+-    if (mn_conf_get_enum_value(MN_TYPE_POPUP_POSITION, MN_CONF_POPUPS_POSITION) == MN_POPUP_POSITION_ATTACHED)
+-      g_object_set(self, "attach-widget", mn_shell->icon, NULL);
++//    if (mn_conf_get_enum_value(MN_TYPE_POPUP_POSITION, MN_CONF_POPUPS_POSITION) == MN_POPUP_POSITION_ATTACHED)
++//      g_object_set(self, "attach-widget", mn_shell->icon, NULL);
+ 
+     g_string_free(body, TRUE);
+ 

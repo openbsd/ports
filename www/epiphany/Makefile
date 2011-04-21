@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2011/04/07 19:41:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2011/04/21 07:06:43 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	2.30.6
-REVISION=	2
+REVISION=	3
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 API_V=		2.29
@@ -52,7 +52,7 @@ RUN_DEPENDS=	x11/gnome/icon-theme \
 		x11/gnome/py-gnome
 LIB_DEPENDS=	textproc/libxslt \
 		devel/libexecinfo \
-		devel/libnotify \
+		devel/libnotify>=0.7.2 \
 		www/webkit \
 		devel/libsoup,-gnome
 

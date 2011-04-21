@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_vgl-tray-icon_c,v 1.1 2011/04/21 07:04:56 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new_with_status_icon is gone)
+
+--- src/vgl-tray-icon.c.orig	Tue Apr 19 11:58:55 2011
++++ src/vgl-tray-icon.c	Tue Apr 19 12:04:35 2011
+@@ -518,11 +518,10 @@ show_notification                       (VglTrayIcon *
+         /* Create the notification if not already created */
+         if (priv->notification == NULL) {
+                 priv->notification =
+-                        notify_notification_new_with_status_icon (
++                        notify_notification_new (
+                                 notification_summary,
+                                 notification_body,
+-                                NULL,
+-                                priv->tray_icon);
++                                NULL);
+         } else {
+                 notify_notification_update (priv->notification,
+                                             notification_summary,

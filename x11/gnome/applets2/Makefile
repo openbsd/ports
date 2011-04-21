@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2011/01/18 20:03:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2011/04/21 07:07:52 ajacoutot Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -9,8 +9,8 @@ GNOME_VERSION=		2.32.1.1
 PKGNAME-main=		gnome-applets2-${VERSION}
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}
 
-REVISION-main=		0
-REVISION-battstat=	0
+REVISION-main=		1
+REVISION-battstat=	1
 
 CATEGORIES=		x11
 
@@ -39,7 +39,7 @@ BUILD_DEPENDS= 		${RUN_DEPENDS}
 RUN_DEPENDS=		x11/gnome/icon-theme>=2.15.91 \
 			x11/gnome/py-gnome-desktop>=2.32.0
 MODPY_RUNDEP=		No
-LIB_DEPENDS=		devel/libnotify \
+LIB_DEPENDS=		devel/libnotify>=0.7.2 \
 			x11/gnome/panel>=2.32.0.2
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			multimedia/gstreamer-0.10/core \

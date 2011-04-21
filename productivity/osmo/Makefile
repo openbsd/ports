@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/20 09:48:40 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/04/21 07:06:07 ajacoutot Exp $
 
 COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.2.8
-REVISION=	2
+REVISION=	3
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://clayo.org/osmo/
@@ -30,7 +30,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=osmo-pim/}
 MODULES=	devel/gettext
 
 LIB_DEPENDS=	security/libgringotts \
-		devel/libnotify \
+		devel/libnotify>=0.7.2 \
 		textproc/libxml \
 		textproc/libical \
 		textproc/gtkspell \

@@ -1,0 +1,16 @@
+$OpenBSD: patch-libseahorse_seahorse-notification_c,v 1.1 2011/04/21 07:07:53 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+
+--- libseahorse/seahorse-notification.c.orig	Tue Apr 19 16:40:03 2011
++++ libseahorse/seahorse-notification.c	Tue Apr 19 16:40:14 2011
+@@ -231,7 +231,7 @@ setup_libnotify_notification (SeahorseNotification *sn
+     heading = format_key_text (snotif->heading);
+     message = format_key_text (snotif->message);
+     
+-    notif = notify_notification_new (heading, message, snotif->icon, attachto);
++    notif = notify_notification_new (heading, message, snotif->icon);
+     
+     g_free (heading);
+     g_free (message);

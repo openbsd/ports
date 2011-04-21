@@ -1,0 +1,21 @@
+$OpenBSD: patch-plugins_mail-notification_mail-notification_c,v 1.1 2011/04/21 07:05:36 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+(notify_notification_attach_to_status_icon is gone)
+
+--- plugins/mail-notification/mail-notification.c.orig	Thu Oct 14 23:18:38 2010
++++ plugins/mail-notification/mail-notification.c	Tue Apr 19 11:53:23 2011
+@@ -564,9 +564,9 @@ new_notify_status (EMEventTargetFolder *t)
+ 
+ 			notify  = notify_notification_new (
+ 				_("New email"), safetext,
+-				"mail-unread", NULL);
+-			notify_notification_attach_to_status_icon (
+-				notify, status_icon);
++				"mail-unread");
++//			notify_notification_attach_to_status_icon (
++//				notify, status_icon);
+ 
+ 			/* Check if actions are supported */
+ 			if (can_support_actions ()) {

@@ -1,0 +1,26 @@
+$OpenBSD: patch-embed_downloader-view_c,v 1.1 2011/04/21 07:06:43 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+(notify_notification_attach_to_status_icon is gone)
+
+--- embed/downloader-view.c.orig	Tue Apr 19 13:06:22 2011
++++ embed/downloader-view.c	Tue Apr 19 13:06:40 2011
+@@ -337,7 +337,7 @@ show_notification (DownloaderView *dv, const char *tit
+ 	g_object_ref (dv);
+ 
+ 	notification = notify_notification_new (title, msg,
+-						GTK_STOCK_INFO, NULL);
++						GTK_STOCK_INFO);
+ 
+ 	g_signal_connect_after (notification, "closed",
+ 				G_CALLBACK (notification_closed_cb), dv);
+@@ -346,7 +346,7 @@ show_notification (DownloaderView *dv, const char *tit
+ 	notify_notification_set_timeout (notification, NOTIFY_EXPIRES_DEFAULT);
+ 	notify_notification_set_urgency (notification, NOTIFY_URGENCY_LOW);
+ 
+-	notify_notification_attach_to_status_icon (notification, status_icon);
++//	notify_notification_attach_to_status_icon (notification, status_icon);
+ 
+ 	/* There are some visual glitches when the notification is shown and
+ 	 * the GtkStatusIcon is still not visible. To avoid that, we delay the

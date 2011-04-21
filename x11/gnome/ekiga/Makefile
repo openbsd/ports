@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2011/04/05 16:37:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/04/21 07:07:52 ajacoutot Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	3.2.7
 
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	net multimedia
 
@@ -39,7 +39,7 @@ LIB_DEPENDS=	net/avahi,no_gtk,no_mono,no_qt3,no_qt4 \
 		devel/sdl \
 		databases/evolution-data-server \
 		devel/libsigc++-2 \
-		devel/libnotify
+		devel/libnotify>=0.7.2
 
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=Yes

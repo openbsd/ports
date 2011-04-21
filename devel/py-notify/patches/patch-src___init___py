@@ -1,0 +1,29 @@
+$OpenBSD: patch-src___init___py,v 1.1 2011/04/21 07:05:12 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(Patch from Fedora)
+
+--- src/__init__.py.orig	Tue Apr 25 07:53:58 2006
++++ src/__init__.py	Tue Apr 19 10:45:21 2011
+@@ -1 +1,21 @@
++"""
++libnotify.so is not linked against GTK2 or GTK3. The idea
++was to support being linked against different parallel-installable
++GTK stacks.
++
++Unfortunately, python needs to jump through some special hoops in order
++to share symbols with extension modules, specifically, pygtk, which does
++link against GTK2.
++
++Without using sys.setdlopenflags(sys.getdlopenflags() | ctypes.RTLD_GLOBAL),
++the result is:
++libnotify-WARNING **: Missing symbol 'gdk_screen_make_display_name'
++
++Thanks to David Malcolm for figuring out the workaround.
++"""
++import ctypes
++import sys
++sys.setdlopenflags(sys.getdlopenflags() | ctypes.RTLD_GLOBAL)
++import gtk
++
+ from _pynotify import *

@@ -1,0 +1,16 @@
+$OpenBSD: patch-calendar_gui_alarm-notify_alarm-queue_c,v 1.1 2011/04/21 07:05:36 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+
+--- calendar/gui/alarm-notify/alarm-queue.c.orig	Tue Apr 19 11:03:11 2011
++++ calendar/gui/alarm-notify/alarm-queue.c	Tue Apr 19 11:03:19 2011
+@@ -1606,7 +1606,7 @@ popup_notification (time_t trigger, CompQueuedAlarms *
+ 			body = g_strdup_printf ("%s %s", start_str, time_str);
+ 	}
+ 
+-	n = notify_notification_new (summary, body, "stock_appointment-reminder", NULL);
++	n = notify_notification_new (summary, body, "stock_appointment-reminder");
+ 	if (!notify_notification_show(n, NULL))
+ 	    g_warning ("Could not send notification to daemon\n");
+ 

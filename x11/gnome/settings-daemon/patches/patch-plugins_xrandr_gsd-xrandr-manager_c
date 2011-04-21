@@ -1,0 +1,27 @@
+$OpenBSD: patch-plugins_xrandr_gsd-xrandr-manager_c,v 1.1 2011/04/21 07:07:53 ajacoutot Exp $
+
+Fix with libnotify>=0.7
+(notify_notification_new has lost its widget argument)
+(notify_notification_new_with_status_icon is gone)
+
+--- plugins/xrandr/gsd-xrandr-manager.c.orig	Tue Apr 19 16:43:44 2011
++++ plugins/xrandr/gsd-xrandr-manager.c	Tue Apr 19 16:44:40 2011
+@@ -1087,15 +1087,13 @@ error_message (GsdXrandrManager *mgr, const char *prim
+         g_assert (error_to_display == NULL || secondary_text == NULL);
+ 
+         if (priv->status_icon)
+-                notification = notify_notification_new_with_status_icon (primary_text,
++                notification = notify_notification_new (primary_text,
+                                                                          error_to_display ? error_to_display->message : secondary_text,
+-                                                                         GSD_XRANDR_ICON_NAME,
+-                                                                         priv->status_icon);
++                                                                         GSD_XRANDR_ICON_NAME);
+         else
+                 notification = notify_notification_new (primary_text,
+                                                         error_to_display ? error_to_display->message : secondary_text,
+-                                                        GSD_XRANDR_ICON_NAME,
+-                                                        NULL);
++                                                        GSD_XRANDR_ICON_NAME);
+ 
+         notify_notification_show (notification, NULL); /* NULL-GError */
+ #else

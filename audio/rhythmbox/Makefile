@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/04/07 19:07:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2011/04/21 07:04:56 ajacoutot Exp $
 
 # coherence plugin is installed but not activated by default so we don't
 # enforce dependency on multimedia/coherence to lower requirements
@@ -8,7 +8,7 @@ COMMENT=		music management application for GNOME
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.12.8
 
-REVISION =		10
+REVISION =		11
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -31,11 +31,11 @@ WANTLIB += atk-1.0 avahi-client avahi-common avahi-glib c cairo
 WANTLIB += dbus-1 dbus-glib-1 drm expat ffi fontconfig freetype
 WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmime-2.4 gmodule-2.0 gnome-keyring gnome-media-profiles
-WANTLIB += gnutls gobject-2.0 gpg-error gpod gstbase-0.10 gstcontroller-0.10
+WANTLIB += gobject-2.0 gpg-error gpod gstbase-0.10 gstcontroller-0.10
 WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png proxy pthread pthread-stubs
-WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 tasn1 totem-plparser
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 totem-plparser
 WANTLIB += util xcb xcb-render xcb-shm xml2 z
 WANTLIB += ${MODPY_WANTLIB}
 
@@ -46,7 +46,7 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		multimedia/gstreamer-0.10/py-gstreamer
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
-			devel/libnotify \
+			devel/libnotify>=0.7.2 \
 			x11/gnome/media \
 			x11/gnome/totem-pl-parser \
 			multimedia/gstreamer-0.10/plugins-base \
