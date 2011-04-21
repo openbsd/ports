@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $OpenBSD: buildslave.rc,v 1.1 2011/04/21 10:22:38 eric Exp $
+
+daemon="${TRUEPREFIX}/bin/buildslave"
+daemon_flags="${HOMEDIR}"
+daemon_user="_buildslave"
+
+. /etc/rc.d/rc.subr
+
+pexp="${MODPY_BIN} ${daemon} start ${daemon_flags}"
+
+rc_reload=NO
+
+rc_start() {
+	${rcexec} "${daemon} start ${daemon_flags}"
+}
+
+rc_stop() {
+	${daemon} stop ${daemon_flags}
+}
+
+rc_cmd $1

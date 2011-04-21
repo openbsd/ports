@@ -1,6 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/30 10:59:01 eric Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/21 10:22:38 eric Exp $
+@newgroup _buildslave:674
+@newuser _buildslave:674:_buildslave:daemon:BuildBot slave daemon:${HOMEDIR}:/sbin/nologin
 bin/buildslave
-lib/python${MODPY_VERSION}/site-packages/buildbot_slave-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/buildbot_slave-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/buildbot_slave-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/buildbot_slave-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot_slave-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot_slave-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot_slave-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/buildslave/
 lib/python${MODPY_VERSION}/site-packages/buildslave/VERSION
 lib/python${MODPY_VERSION}/site-packages/buildslave/__init__.py
@@ -20,6 +27,8 @@ lib/python${MODPY_VERSION}/site-packages/buildslave/commands/cvs.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/cvs.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/darcs.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/darcs.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/commands/fs.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/commands/fs.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/git.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/git.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/hg.py
@@ -28,6 +37,8 @@ lib/python${MODPY_VERSION}/site-packages/buildslave/commands/p4.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/p4.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/registry.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/registry.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/commands/repo.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/commands/repo.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/shell.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/shell.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/commands/svn.py
@@ -82,6 +93,8 @@ lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_cvs.
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_cvs.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_darcs.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_darcs.pyc
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_fs.py
+lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_fs.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_git.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_git.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/unit/test_commands_hg.py
@@ -113,5 +126,11 @@ lib/python${MODPY_VERSION}/site-packages/buildslave/test/util/sourcecommand.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/test/util/sourcecommand.pyc
 lib/python${MODPY_VERSION}/site-packages/buildslave/util.py
 lib/python${MODPY_VERSION}/site-packages/buildslave/util.pyc
+share/doc/pkg-readmes/py-buildslave-${MODPY_EGG_VERSION}
 share/doc/py-buildslave/
 share/doc/py-buildslave/README
+@rcscript ${RCDIR}/buildslave
+@mode 700
+@owner _buildslave
+@group _buildslave
+@sample ${HOMEDIR}/

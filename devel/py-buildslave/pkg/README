@@ -1,0 +1,12 @@
+$OpenBSD: README,v 1.1 2011/04/21 10:22:38 eric Exp $
+
+Using BuildBot slave in an OpenBSD environment
+==============================================
+
+On OpenBSD, the BuildBot package has an associated _buildslave user
+for running the slave.  The default slave directory is expected to be
+found in ${HOMEDIR}.  Before being run for the first time, the
+slave directory must be initialized.  This is done as follows:
+
+    $ sudo -u _buildslave buildslave \
+        create-slave ${HOMEDIR} <master> <name> <passwd>

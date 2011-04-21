@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/11/30 10:59:01 eric Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/21 10:22:38 eric Exp $
 
 COMMENT=	buildslave implementation for the buildot system
 
-MODPY_EGG_VERSION=	0.8.2
+MODPY_EGG_VERSION=	0.8.3
 DISTNAME=	buildbot-slave-${MODPY_EGG_VERSION}
 PKGNAME=	py-buildslave-${MODPY_EGG_VERSION}
 
-CATEGORIES=   	devel
+CATEGORIES=	devel
 
 HOMEPAGE=	http://buildbot.net/
 
-MAINTAINER=	Eric Faurot <eric@openbsd.org>
+MAINTAINER=	Piotr Sikora <piotr.sikora@frickle.com>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,17 +18,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=buildbot/}
+MASTER_SITES =	http://buildbot.googlecode.com/files/
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	devel/py-twisted/core \
-		devel/py-twisted/conch \
-		devel/py-twisted/mail \
-		devel/py-twisted/web \
-		devel/py-twisted/words
+MODPY_SETUPTOOLS=	Yes
 
-REGRESS_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	devel/py-twisted/core
+
+REGRESS_DEPENDS=	${RUN_DEPENDS} \
+			devel/py-mock
+
+HOMEDIR =	/var/buildslave
+
+SUBST_VARS +=	HOMEDIR
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-buildslave
