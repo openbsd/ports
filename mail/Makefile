@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.259 2011/03/22 08:26:07 landry Exp $
+# $OpenBSD: Makefile,v 1.260 2011/04/21 12:08:26 landry Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -24,7 +24,6 @@
      SUBDIR += claws-mail
      SUBDIR += claws-mail,ldap
      SUBDIR += claws-mail-attremover
-     SUBDIR += claws-mail-cachesaver
      SUBDIR += claws-mail-htmlviewer
      SUBDIR += claws-mail-notification
      SUBDIR += claws-mail-rssyl
