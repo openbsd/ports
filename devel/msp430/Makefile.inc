@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2010/12/01 09:06:52 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2011/04/21 16:29:35 jasper Exp $
 
 TARGET=			msp430
 
@@ -8,14 +8,14 @@ MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 HOMEPAGE?=		http://mspgcc4.sourceforge.net/
 
-# The patches on http://distfiles.nl/mspgcc/ are taken from
-# git://mspgcc4.git.sourceforge.net/gitroot/mspgcc4/mspgcc4
-
 # GPLv3
 PERMIT_PACKAGE_CDROM?=   Yes
 PERMIT_PACKAGE_FTP?=     Yes
 PERMIT_DISTFILES_CDROM?= Yes
 PERMIT_DISTFILES_FTP?=   Yes
+
+# The patches on http://distfiles.nl/mspgcc/ are taken from
+# git://mspgcc4.git.sourceforge.net/gitroot/mspgcc4/mspgcc4
 
 MASTER_SITES0=		http://distfiles.nl/mspgcc/
 PATCH_DIST_STRIP?=	-p1
