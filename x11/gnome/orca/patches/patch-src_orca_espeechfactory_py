@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_orca_espeechfactory_py,v 1.1 2011/04/21 09:44:29 ajacoutot Exp $
+--- src/orca/espeechfactory.py.orig	Thu Apr 21 11:37:09 2011
++++ src/orca/espeechfactory.py	Thu Apr 21 11:36:55 2011
+@@ -74,7 +74,7 @@ class SpeechServer(speechserver.SpeechServer):
+ 
+     """
+ 
+-    location = "/usr/share/emacs/site-lisp/emacspeak/servers"
++    location = "${LOCALBASE}/share/emacs/site-lisp/emacspeak/servers"
+ 
+     config = {'splitcaps' : 1,
+               'rate' : 70,

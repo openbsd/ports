@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2011/04/21 09:44:29 ajacoutot Exp $
 
 COMMENT=		assistive technology for people with visual impairments
 
 GNOME_PROJECT=		orca
 GNOME_VERSION=		2.32.1
+
+REVISION=		0
 
 HOMEPAGE=		http://live.gnome.org/Orca
 
@@ -29,5 +31,8 @@ DESKTOP_FILES=		Yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =		Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/orca/espeechfactory.py
 
 .include <bsd.port.mk>
