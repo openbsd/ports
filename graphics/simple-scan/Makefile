@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/04/21 06:50:30 ajacoutot Exp $
 
 COMMENT=	simple scanning utility
 
 GNOME_PROJECT=	simple-scan
-GNOME_VERSION=	2.32.0.1
+GNOME_VERSION=	2.32.0.2
 
 EXTRACT_SUFX=	.tar.gz
 
