@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Clients_MainApp_FSpot_ColorManagement_cs,v 1.1 2011/04/21 09:10:23 ajacoutot Exp $
+--- src/Clients/MainApp/FSpot/ColorManagement.cs.orig	Thu Apr 21 11:05:07 2011
++++ src/Clients/MainApp/FSpot/ColorManagement.cs	Thu Apr 21 11:05:23 2011
+@@ -18,7 +18,7 @@ using FSpot.Core;
+ 
+ namespace FSpot {
+ 	public static class ColorManagement {
+-		static string [] search_dir = { "/usr/share/color/icc", Path.Combine (Global.HomeDirectory, ".color/icc"), "/usr/local/share/color/icc " };
++		static string [] search_dir = { "/usr/share/color/icc", Path.Combine (Global.HomeDirectory, ".color/icc"), "${LOCALBASE}/share/color/icc " };
+ 
+ 		static Dictionary<string, Cms.Profile> profiles;
+ 		public static IDictionary<string, Cms.Profile> Profiles {

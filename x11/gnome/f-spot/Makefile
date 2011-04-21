@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/12/19 18:13:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2011/04/21 09:10:23 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		personal photo management application for GNOME
 
 GNOME_VERSION=		0.8.2
 GNOME_PROJECT=		f-spot
+
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -75,6 +77,8 @@ FAKE_FLAGS=		schemadir=${PREFIX}/${SCHEMAS_INSTDIR}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/icon-theme-installer \
-		${WRKSRC}/src/Clients/MainApp/f-spot.in
+		${WRKSRC}/src/Clients/MainApp/f-spot.in \
+		${WRKSRC}/src/Clients/MainApp/FSpot/ColorManagement.cs \
+		${WRKSRC}/src/Clients/MainApp/FSpot.UI.Dialog/PreferenceDialog.cs
 
 .include <bsd.port.mk>

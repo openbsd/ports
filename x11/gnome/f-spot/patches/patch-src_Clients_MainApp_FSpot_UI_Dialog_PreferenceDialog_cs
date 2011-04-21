@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Clients_MainApp_FSpot_UI_Dialog_PreferenceDialog_cs,v 1.1 2011/04/21 09:10:23 ajacoutot Exp $
+--- src/Clients/MainApp/FSpot.UI.Dialog/PreferenceDialog.cs.orig	Thu Apr 21 11:04:27 2011
++++ src/Clients/MainApp/FSpot.UI.Dialog/PreferenceDialog.cs	Thu Apr 21 11:06:14 2011
+@@ -99,7 +99,7 @@ namespace FSpot.UI.Dialog {
+ 			themes.AppendValues (Catalog.GetString ("Standard theme"), null);
+ 			themes.AppendValues (null, null); //Separator
+ 			string gtkrc = System.IO.Path.Combine ("gtk-2.0", "gtkrc");
+-			string [] search = {System.IO.Path.Combine (FSpot.Core.Global.HomeDirectory, ".themes"), "/usr/share/themes"};
++			string [] search = {System.IO.Path.Combine (FSpot.Core.Global.HomeDirectory, ".themes"), "/usr/share/themes", "${LOCALBASE}/share/themes"};
+ 			foreach (string path in search)
+ 				if (System.IO.Directory.Exists (path))
+ 					foreach (string dir in System.IO.Directory.GetDirectories (path))
