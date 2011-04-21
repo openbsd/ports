@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.16 2011/03/16 20:43:07 jakob Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2011/04/21 21:13:57 landry Exp $
 
 VERSION=	1.6.9
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 SEPARATE_BUILD=		concurrent
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		ac_cv_prog_doxygen= \
+CONFIGURE_ENV+=		ac_cv_prog_doxygen= \
 			cv_prog_cc_flag_O2=
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
