@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2010/11/13 09:24:52 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2011/04/21 11:28:22 landry Exp $
 
 # Author: Jolan Luff <jolan@openbsd.org>
 
@@ -16,7 +16,7 @@ $ cd /var/www/usr
 # mkdir -p {bin,lib,libdata/perl5,libexec}
 
 $ cd /var/www/usr/libdata/perl5
-# mkdir -p {File,IPC,Time,warnings,`machine`-openbsd/5.10.1}
+# mkdir -p {File,IPC,Time,warnings,`machine`-openbsd/5.12.2}
 
 The "annotate" function requires this empty file:
 
@@ -38,7 +38,7 @@ NOTE: Wildcards will, of course, copy any old, unused libraries that are
 lurking around (for example, from an upgrade):
 
 $ cd /var/www/usr/lib
-# cp -p /usr/lib/lib{c,crypto,des,gssapi,krb5,m,perl,util,z}.so* .
+# cp -p /usr/lib/lib{c,crypto,gssapi,krb5,m,perl,util,z}.so* .
 
 Now, the run-time link-editor:
 
@@ -55,9 +55,9 @@ $ cd /var/www/usr/libdata/perl5
 # cp -p /usr/libdata/perl5/Time/Local.pm ./Time/
 # cp -p /usr/libdata/perl5/warnings/register.pm ./warnings/
 
-$ cd /var/www/usr/libdata/perl5/`machine`-openbsd/5.10.1
-# cp -p /usr/libdata/perl5/`machine`-openbsd/5.10.1/{Config,Cwd}.pm .
-# cp -p /usr/libdata/perl5/`machine`-openbsd/5.10.1/Config_{git,heavy}.pl .
+$ cd /var/www/usr/libdata/perl5/`machine`-openbsd/5.12.2
+# cp -p /usr/libdata/perl5/`machine`-openbsd/5.12.2/{Config,Cwd}.pm .
+# cp -p /usr/libdata/perl5/`machine`-openbsd/5.12.2/Config_{git,heavy}.pl .
 
 Editing cvsweb and cvsweb.conf
 ------------------------------
