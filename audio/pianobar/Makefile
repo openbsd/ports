@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2011/03/20 16:05:38 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2011/04/21 10:02:09 dcoppa Exp $
 
 COMMENT =	console client for pandora
 
-DISTNAME =	pianobar-2011.01.24
-REVISION =	0
+DISTNAME =	pianobar-2011.04.10
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
@@ -45,7 +44,6 @@ FAKE_FLAGS =	PREFIX="${PREFIX}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 USE_GMAKE =	Yes
-USE_GROFF =	Yes
 NO_REGRESS =	Yes
 
 ALL_TARGET =	pianobar libpiano

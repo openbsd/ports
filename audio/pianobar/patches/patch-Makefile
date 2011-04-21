@@ -1,25 +1,26 @@
-$OpenBSD: patch-Makefile,v 1.5 2011/03/14 12:28:57 dcoppa Exp $
---- Makefile.orig	Mon Jan 24 13:00:25 2011
-+++ Makefile	Thu Mar 10 16:09:25 2011
-@@ -4,7 +4,7 @@ PREFIX:=/usr/local
+$OpenBSD: patch-Makefile,v 1.6 2011/04/21 10:02:09 dcoppa Exp $
+--- Makefile.orig	Thu Apr 21 11:00:24 2011
++++ Makefile	Thu Apr 21 11:05:07 2011
+@@ -4,8 +4,7 @@ PREFIX:=/usr/local
  BINDIR:=${PREFIX}/bin
  LIBDIR:=${PREFIX}/lib
  MANDIR:=${PREFIX}/share/man
--CFLAGS:=-std=c99 -O2 -DNDEBUG
+-CFLAGS:=-O2 -DNDEBUG
+-CC:=c99
 +CFLAGS+=-std=c99 -fgnu89-inline
  
  PIANOBAR_DIR=src
  PIANOBAR_SRC=\
-@@ -97,7 +97,7 @@ pianobar: ${PIANOBAR_OBJ} ${PIANOBAR_HDR} ${LIBPIANO_O
+@@ -98,7 +97,7 @@ pianobar: ${PIANOBAR_OBJ} ${PIANOBAR_HDR} ${LIBPIANO_O
+ # build shared libpiano
  libpiano: ${LIBPIANO_RELOBJ} ${LIBPIANO_HDR} ${LIBWAITRESS_RELOBJ} \
  		${LIBWAITRESS_HDR} ${LIBEZXML_RELOBJ} ${LIBEZXML_HDR}
- 	${CC} -shared ${CFLAGS} ${LIBPIANO_RELOBJ} ${LIBWAITRESS_RELOBJ} \
--			${LIBEZXML_RELOBJ} -o $@.so.0.0.0
-+			${LIBEZXML_RELOBJ} -o $@.so.${LIBpiano_VERSION}
+-	${CC} -shared ${CFLAGS} -o $@.so.0.0.0 ${LIBPIANO_RELOBJ} \
++	${CC} -shared ${CFLAGS} -o $@.so.${LIBpiano_VERSION} ${LIBPIANO_RELOBJ} \
+ 			${LIBWAITRESS_RELOBJ} ${LIBEZXML_RELOBJ}
  
  %.o: %.c
- 	${CC} ${CFLAGS} -I ${LIBPIANO_INCLUDE} -I ${LIBWAITRESS_INCLUDE} \
-@@ -112,7 +112,7 @@ libpiano: ${LIBPIANO_RELOBJ} ${LIBPIANO_HDR} ${LIBWAIT
+@@ -114,7 +113,7 @@ libpiano: ${LIBPIANO_RELOBJ} ${LIBPIANO_HDR} ${LIBWAIT
  clean:
  	${RM} ${PIANOBAR_OBJ} ${LIBPIANO_OBJ} ${LIBWAITRESS_OBJ} ${LIBEZXML_OBJ} \
  			${LIBPIANO_RELOBJ} ${LIBWAITRESS_RELOBJ} ${LIBEZXML_RELOBJ} pianobar \
@@ -28,8 +29,8 @@ $OpenBSD: patch-Makefile,v 1.5 2011/03/14 12:28:57 dcoppa Exp $
  
  all: pianobar libpiano
  
-@@ -120,12 +120,9 @@ debug: pianobar
- debug: CFLAGS=-Wall -pedantic -std=c99 -ggdb
+@@ -122,12 +121,9 @@ debug: pianobar
+ debug: CFLAGS=-Wall -pedantic -ggdb
  
  install: pianobar
 -	install -d ${DESTDIR}/${BINDIR}/

@@ -1,0 +1,18 @@
+$OpenBSD: patch-contrib_pianobar_1,v 1.1 2011/04/21 10:02:09 dcoppa Exp $
+--- contrib/pianobar.1.orig	Thu Apr 21 11:15:29 2011
++++ contrib/pianobar.1	Thu Apr 21 11:20:22 2011
+@@ -1,4 +1,4 @@
+-.TH pianobar 1
++.TH PIANOBAR 1 "April 10, 2011"
+ 
+ .SH NAME
+ pianobar \- console pandora.com music player
+@@ -34,7 +34,7 @@ The configuration file consists of simple
+ lines. Each terminated with a newline (\\n) character. Keys and values are both
+ case sensitive.
+ 
+-act_* keys control 
++act_* keys control
+ .B pianobar's
+ key-bindings. Every one-byte character except for \\x00 and the
+ special value
