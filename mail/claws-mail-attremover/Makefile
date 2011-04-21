@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/10 21:38:58 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2011/04/21 13:13:59 landry Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	remove attachments from emails
 VERSION =	1.0.12
 DISTNAME =	att_remover-${VERSION}
 PKGNAME =	claws-mail-attremover-${VERSION}
-REVISION =	2
+REVISION =	3
 MASTER_SITES =	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES =	mail
 DIST_SUBDIR =	claws
@@ -36,8 +36,9 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png pthread-stubs xcb xcb-render \
-	 	xcb-render-util z gdk_pixbuf-2.0 gdk-x11-2.0>=1403 \
-		gtk-x11-2.0
+	 	z gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0 \
+		GL Xxf86vm drm xcb-shm
+
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
