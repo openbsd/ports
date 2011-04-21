@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/11/04 09:49:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/04/21 07:03:21 ajacoutot Exp $
 %%SHARED%%
 @bin bin/notify-send
 include/libnotify/
@@ -6,19 +6,23 @@ include/libnotify/notification.h
 include/libnotify/notify-enum-types.h
 include/libnotify/notify-features.h
 include/libnotify/notify.h
+lib/girepository-1.0/
+lib/girepository-1.0/Notify-0.7.typelib
 lib/libnotify.a
 lib/libnotify.la
 lib/pkgconfig/
 lib/pkgconfig/libnotify.pc
+share/gir-1.0/
+share/gir-1.0/Notify-0.7.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/libnotify/
+share/gtk-doc/html/libnotify/NotifyNotification.html
 share/gtk-doc/html/libnotify/ch01.html
 share/gtk-doc/html/libnotify/home.png
 share/gtk-doc/html/libnotify/index.html
 share/gtk-doc/html/libnotify/index.sgml
 share/gtk-doc/html/libnotify/left.png
-share/gtk-doc/html/libnotify/libnotify-notification.html
 share/gtk-doc/html/libnotify/libnotify-notify.html
 share/gtk-doc/html/libnotify/libnotify.devhelp
 share/gtk-doc/html/libnotify/libnotify.devhelp2
