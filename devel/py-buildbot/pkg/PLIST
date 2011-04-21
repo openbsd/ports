@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/11/08 01:20:06 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/04/21 10:20:43 eric Exp $
+@newgroup _buildbot:673
+@newuser _buildbot:673:_buildbot:daemon:BuildBot master daemon:${HOMEDIR}:/sbin/nologin
 bin/buildbot
 lib/python${MODPY_VERSION}/site-packages/buildbot/
 lib/python${MODPY_VERSION}/site-packages/buildbot-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -24,8 +26,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/changes/bonsaipoller.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/changes/bonsaipoller.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/changes/changes.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/changes/changes.pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/changes/freshcvs.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/changes/freshcvs.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/changes/gerritchangesource.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/changes/gerritchangesource.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/changes/gitpoller.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/changes/gitpoller.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/changes/hgbuildbot.py
@@ -101,6 +103,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/manhole.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/manhole.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/master.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/master.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/pbmanager.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/pbmanager.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/pbutil.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/pbutil.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/process/
@@ -174,6 +178,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/status/persistent_queue.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/persistent_queue.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/progress.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/progress.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/status/status_gerrit.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/status/status_gerrit.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/status_push.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/status_push.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/status/tinderbox.py
@@ -300,6 +306,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/steps/python_twisted.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/python_twisted.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/shell.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/shell.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/steps/slave.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/steps/slave.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/source.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/source.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/subunit.py
@@ -320,6 +328,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/fake/fakedb.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/fake/fakedb.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/fake/state.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/fake/state.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/fake/web.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/fake/web.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/regressions/
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/regressions/__init__.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/regressions/__init__.pyc
@@ -338,8 +348,18 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/regressions/test_steps_sh
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/__init__.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_changes_base.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_changes_base.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_changes_bonsaipoller.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_changes_bonsaipoller.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_changes_gerritchangesource.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_changes_gerritchangesource.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_changes_gitpoller.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_changes_gitpoller.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_changes_mail_CVSMaildirSource.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_changes_mail_CVSMaildirSource.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_changes_pb.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_changes_pb.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_contrib_buildbot_cvs_mail.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_contrib_buildbot_cvs_mail.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_db_connector.py
@@ -350,12 +370,12 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_db_schema_maste
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_db_schema_master.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_db_util.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_db_util.pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_gitpoller.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_gitpoller.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_master_cleanshutdown.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_master_cleanshutdown.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_oldpaths.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_oldpaths.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_pbmanager.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_pbmanager.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_persistent_queue.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_persistent_queue.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_process_base.py
@@ -364,6 +384,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_process_buildst
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_process_buildstep.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_process_properties.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_process_properties.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_repo_parse_download.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_repo_parse_download.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_schedulers_basic_Scheduler.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_schedulers_basic_Scheduler.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_schedulers_filter.py
@@ -374,6 +396,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_source_repourl.
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_source_repourl.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_status_builder.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_status_builder.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_status_builder_LogFileProducer.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_status_builder_LogFileProducer.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_status_mail_MailNotifier.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_status_mail_MailNotifier.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_status_web_authz_Authz.py
@@ -384,6 +408,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_status_web_chan
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_status_web_change_hooks_github.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_status_web_links.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_status_web_links.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_steps_slave.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_steps_slave.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_steps_transfer.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_steps_transfer.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_util.py
@@ -399,10 +425,12 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/unit/test_util_loop.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/changesource.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/changesource.pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/pbmanager.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/pbmanager.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/threads.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/threads.pyc
-lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/web.py
-lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/web.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/__init__.pyc
@@ -414,6 +442,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/util/loop.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/loop.pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/monkeypatches.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/monkeypatches.pyc
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/py-buildbot/
 share/doc/py-buildbot/README
 share/doc/py-buildbot/buildbot.html
@@ -435,7 +464,6 @@ share/doc/py-buildbot/contrib/generate_changelog.py
 share/doc/py-buildbot/contrib/git_buildbot.py
 share/doc/py-buildbot/contrib/github_buildbot.py
 share/doc/py-buildbot/contrib/googlecode_atom.py
-share/doc/py-buildbot/contrib/hg_buildbot.py
 share/doc/py-buildbot/contrib/init-scripts/
 share/doc/py-buildbot/contrib/init-scripts/buildmaster.default
 share/doc/py-buildbot/contrib/init-scripts/buildmaster.init.sh
@@ -475,4 +503,10 @@ share/doc/py-buildbot/images/slaves.png
 share/doc/py-buildbot/images/status.png
 share/examples/py-buildbot/
 share/examples/py-buildbot/hello.cfg
+share/examples/py-buildbot/repo_gerrit.cfg
 share/examples/py-buildbot/twisted_master.cfg
+@rcscript ${RCDIR}/buildbot
+@mode 700
+@owner _buildbot
+@group _buildbot
+@sample ${HOMEDIR}/

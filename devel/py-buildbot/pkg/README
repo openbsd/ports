@@ -1,0 +1,15 @@
+$OpenBSD: README,v 1.1 2011/04/21 10:20:43 eric Exp $
+
+Using BuildBot master in an OpenBSD environment
+===============================================
+
+On OpenBSD, the BuildBot package has an associated _buildbot user for
+running the master.  The default master directory is expected to be
+found in ${HOMEDIR}.  Before being run for the first time, the
+master directory must be initialized.  This is done as follows:
+
+    $ sudo -u _buildbot buildbot create-master ${HOMEDIR}
+
+The next step is to create a ${HOMEDIR}/master.cfg configuration
+file that fits your needs.  Please refer to the BuildBot documentation
+on how to do so. 

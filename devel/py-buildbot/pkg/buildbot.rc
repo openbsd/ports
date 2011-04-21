@@ -1,0 +1,25 @@
+#!/bin/sh
+#
+# $OpenBSD: buildbot.rc,v 1.1 2011/04/21 10:20:43 eric Exp $
+
+daemon="${TRUEPREFIX}/bin/buildbot"
+daemon_flags="${HOMEDIR}"
+daemon_user="_buildbot"
+
+. /etc/rc.d/rc.subr
+
+pexp="${MODPY_BIN} ${daemon} start ${daemon_flags}"
+
+rc_start() {
+	${rcexec} "${daemon} start ${daemon_flags}"
+}
+
+rc_reload() {
+	${daemon} reconfig ${daemon_flags}
+}
+
+rc_stop() {
+	${daemon} stop ${daemon_flags}
+}
+
+rc_cmd $1
