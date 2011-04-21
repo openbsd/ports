@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2011/01/20 14:04:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2011/04/21 11:23:38 sthen Exp $
 
 COMMENT=	Nagios Remote Plugin Executor
 
-DISTNAME=	nrpe-2.12
-REVISION=	2
+# packaged from Icinga git repo.
+DISTNAME=	icinga-nrpe-2.12.20100914
+PKGNAME=	${DISTNAME:S/icinga-//}
+WRKDIST=	${WRKDIR}/icinga-nrpe
 CATEGORIES=	net
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
@@ -14,18 +16,20 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c crypto ssl wrap
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
+MASTER_SITES=	http://spacehopper.org/mirrors/
 
 RUN_DEPENDS=	net/nagios/plugins
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+=--enable-command-args
-CONFIGURE_ARGS+=--libexecdir=${LOCALBASE}/libexec/nagios
-CONFIGURE_ARGS+=--with-nrpe-user=_nrpe
-CONFIGURE_ARGS+=--with-nrpe-group=_nrpe
-CONFIGURE_ARGS+=--with-kerberos-inc=/usr/include/kerberosV/
+CONFIGURE_ARGS+=--enable-command-args \
+		--libexecdir=${LOCALBASE}/libexec/nagios \
+		--with-nrpe-user=_nrpe \
+		--with-nrpe-group=_nrpe \
+		--with-kerberos-inc=/usr/include/kerberosV/ \
+		ac_cv_lib_wrap_main=yes
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/src/nrpe.c
