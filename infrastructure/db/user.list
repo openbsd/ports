@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.161 2011/04/15 15:45:43 sthen Exp $
+$OpenBSD: user.list,v 1.162 2011/04/21 10:26:15 eric Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -181,3 +181,5 @@ id  user		group		port options
 670 _mongodb		_mongodb	databases/mongodb
 671 _umurmur		_umurmur	audio/umurmur
 672 _radicale		_radicale	productivity/radicale
+673 _buildbot		_buildbot	devel/py-buildbot
+674 _buildslave		_buildslave	devel/py-buildslave
