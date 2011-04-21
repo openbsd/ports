@@ -1,12 +1,25 @@
-$OpenBSD: patch-configure_ac,v 1.1 2011/04/14 10:56:25 jasper Exp $
---- configure.ac.orig	Mon Apr  4 22:17:59 2011
-+++ configure.ac	Mon Apr  4 22:18:25 2011
+$OpenBSD: patch-configure_ac,v 1.2 2011/04/21 15:25:08 jasper Exp $
+--- configure.ac.orig	Sun Mar  2 20:42:24 2008
++++ configure.ac	Thu Apr 21 17:20:55 2011
 @@ -18,7 +18,7 @@ AC_PATH_X
  X_LIBS=-L$x_libraries
  
  dnl Figure out where the datafiles will be
 -EXPDATADIR="-DEXPDATADIR=\\\"$datadir/games/abuse\\\""
-+EXPDATADIR="-DEXPDATADIR=\\\"${DATADIR}\\\""
++EXPDATADIR="-DEXPDATADIR=\\\"$datadir/abuse/frabs\\\""
  AC_SUBST(EXPDATADIR)
  
  dnl Checks for libraries
+@@ -37,10 +37,10 @@ SDL_VERSION=1.1.6
+ AM_PATH_SDL($SDL_VERSION, :,
+     AC_MSG_ERROR([*** SDL version $SDL_VERSION or above not found!]))
+ CFLAGS="$CFLAGS $SDL_CFLAGS"
+-LIBS="$LIBS $SDL_LIBS $X_LIBS -L/usr/lib"
++LIBS="$LIBS $SDL_LIBS $X_LIBS"
+ 
+ # Optimizations
+-CPPFLAGS="${CPPFLAGS} -g -O2 -fno-strength-reduce -fomit-frame-pointer"
++CPPFLAGS="${CPPFLAGS} -O2 -fno-strength-reduce -fomit-frame-pointer"
+ # Code qui fait des warnings == code de porc == deux baffes dans ta gueule
+ CPPFLAGS="${CPPFLAGS} -Wall -Wpointer-arith -Wcast-align -Wcast-qual -Waggregate-return -Wsign-compare"
+ 
