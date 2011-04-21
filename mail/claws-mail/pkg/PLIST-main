@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2011/03/10 21:37:33 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2011/04/21 13:10:42 landry Exp $
 @pkgpath mail/sylpheed-claws,-main
 @pkgpath mail/sylpheed-claws,-main,compface
 @pkgpath mail/sylpheed-claws,-main,pgpmime
@@ -83,7 +83,6 @@ include/claws-mail/common/template.h
 include/claws-mail/common/timing.h
 include/claws-mail/common/utils.h
 include/claws-mail/common/uuencode.h
-include/claws-mail/common/valgrind.h
 include/claws-mail/common/version.h
 include/claws-mail/common/xml.h
 include/claws-mail/common/xmlprops.h
@@ -319,15 +318,9 @@ share/claws-mail/tools/uuooffice
 share/claws-mail/tools/vcard2xml.py
 share/doc/claws-mail/
 share/doc/claws-mail/RELEASE_NOTES
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
-share/icons/hicolor/48x48/apps/claws-mail.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
-share/icons/hicolor/64x64/apps/claws-mail.png
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/claws-mail.png
+share/icons/hicolor/48x48/apps/claws-mail.png
+share/icons/hicolor/64x64/apps/claws-mail.png
 share/locale/bg/LC_MESSAGES/claws-mail.mo
 share/locale/ca/LC_MESSAGES/claws-mail.mo
 share/locale/cs/LC_MESSAGES/claws-mail.mo
@@ -340,6 +333,7 @@ share/locale/hu/LC_MESSAGES/claws-mail.mo
 share/locale/id/LC_MESSAGES/claws-mail.mo
 share/locale/it/LC_MESSAGES/claws-mail.mo
 share/locale/ja/LC_MESSAGES/claws-mail.mo
+share/locale/lt/LC_MESSAGES/claws-mail.mo
 share/locale/nl/LC_MESSAGES/claws-mail.mo
 share/locale/pl/LC_MESSAGES/claws-mail.mo
 share/locale/pt_BR/LC_MESSAGES/claws-mail.mo

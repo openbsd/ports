@@ -1,0 +1,13 @@
+# $OpenBSD: patch-src_mainwindow_c,v 1.1 2011/04/21 13:10:42 landry Exp $
+# from upstream cvs, 3.7.9cvs2 - to be removed next update
+# fixes bug 2396 - starts minimized under gnome shell
+--- src/mainwindow.c.orig	Fri Apr 15 00:54:38 2011
++++ src/mainwindow.c	Fri Apr 15 00:58:38 2011
+@@ -3573,6 +3573,7 @@ void main_window_popup(MainWindow *mainwin)
+ 	if (first_start) {
+ #ifdef G_OS_UNIX
+ 		gtk_window_deiconify(GTK_WINDOW(mainwin->window));
++		gtkut_window_popup(mainwin->window);
+ #endif
+ 		first_start = FALSE;
+ 	} else {

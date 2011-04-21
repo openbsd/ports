@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/04/15 16:10:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2011/04/21 13:10:42 landry Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,16 +7,12 @@ COMMENT-bogofilter=	bogofilter plugin
 COMMENT-clamav=		clamav plugin
 COMMENT-spamassassin=	spamassassin plugin
 
-V=			3.7.8
+V=			3.7.9
 DISTNAME=		claws-mail-${V}
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
 CATEGORIES=		mail news
-
-REVISION-main=		0
-REVISION-bogofilter=	0
-REVISION-spamassassin=	0
 
 HOMEPAGE=		http://www.claws-mail.org/
 
@@ -86,8 +82,8 @@ USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf
-# autoconf 2.65 still has some issues with it
-AUTOCONF_VERSION=	2.62
+
+AUTOCONF_VERSION=	2.67
 CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib"
 
