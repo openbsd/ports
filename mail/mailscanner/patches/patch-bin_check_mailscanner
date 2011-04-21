@@ -1,6 +1,6 @@
-$OpenBSD: patch-bin_check_mailscanner,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
---- bin/check_mailscanner.orig	Sat Mar 11 11:25:43 2006
-+++ bin/check_mailscanner	Wed Mar 22 20:44:27 2006
+$OpenBSD: patch-bin_check_mailscanner,v 1.2 2011/04/21 20:25:35 sthen Exp $
+--- bin/check_mailscanner.orig	Wed Mar 16 19:41:34 2011
++++ bin/check_mailscanner	Thu Apr 21 18:41:07 2011
 @@ -42,8 +42,8 @@
  # unless MailScanner actually had to be started.
  
@@ -12,3 +12,14 @@ $OpenBSD: patch-bin_check_mailscanner,v 1.1.1.1 2008/02/20 03:47:18 todd Exp $
  
  # These seem to get put all over the shop...
  PATH=/usr/bin:/bin
+@@ -121,7 +121,9 @@ if [ "x$pid" = "x" ]; then
+   PATH=${msbindir}:$PATH
+   echo -n 'Starting MailScanner...'
+   cd $msbindir
+-  $process $config 2>/dev/null || RETVALUE=" Failed."
++  username=$(awk '/^Run As User/ {print $5;}' /etc/MailScanner/MailScanner.conf)
++  [ -n "$username" -a "$(whoami)" != "$username" ] && preamble="su -l -s /bin/sh $username -c "
++  $preamble $process $config 2>/dev/null || RETVALUE=" Failed."
+   echo "$RETVALUE"
+ else
+   if [ "x$1" != "x-q" ]; then
