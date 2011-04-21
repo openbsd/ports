@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2011/04/07 12:00:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2011/04/21 09:32:21 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		2.32.1
 
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  games-support-gi          0.0 # 0.0
 
@@ -70,6 +70,7 @@ FAKE_FLAGS=		scoredir=${PREFIX}/share/gnome-games/scores/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/glchess/src/glchess.in.in \
-		${WRKSRC}/gnome-sudoku/src/gnome-sudoku.in.in
+		${WRKSRC}/gnome-sudoku/src/gnome-sudoku.in.in \
+		${WRKSRC}/glchess/gnuchess/book.h
 
 .include <bsd.port.mk>
