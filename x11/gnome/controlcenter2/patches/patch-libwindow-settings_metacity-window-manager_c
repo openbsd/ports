@@ -1,0 +1,12 @@
+$OpenBSD: patch-libwindow-settings_metacity-window-manager_c,v 1.1 2011/04/21 10:20:27 ajacoutot Exp $
+--- libwindow-settings/metacity-window-manager.c.orig	Thu Apr 21 11:50:48 2011
++++ libwindow-settings/metacity-window-manager.c	Thu Apr 21 11:50:32 2011
+@@ -141,7 +141,7 @@ metacity_get_theme_list (GnomeWindowManager *wm)
+         home_dir_themes = g_build_filename (g_get_home_dir (), ".themes", NULL);
+ 
+         themes = add_themes_from_dir (themes, METACITY_THEME_DIR);
+-        themes = add_themes_from_dir (themes, "/usr/share/themes");
++        themes = add_themes_from_dir (themes, "${LOCALBASE}/share/themes");
+         themes = add_themes_from_dir (themes, home_dir_themes);
+ 
+         g_free (home_dir_themes);
