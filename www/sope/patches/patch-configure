@@ -1,27 +1,19 @@
-$OpenBSD: patch-configure,v 1.2 2010/10/25 09:59:02 sebastia Exp $
+$OpenBSD: patch-configure,v 1.3 2011/04/22 05:34:13 sebastia Exp $
 
 do not link against gnustep-gui in case its installed
 decouple version of sope from the shared library interface versions
 remove unused ssl check that generates a make variable with whitespace in
 its name
 
---- configure.orig	Thu Aug 19 17:13:13 2010
-+++ configure	Sun Oct 24 19:22:44 2010
+--- configure.orig	Wed Apr  6 23:45:23 2011
++++ configure	Wed Apr  6 23:50:53 2011
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/sh
  
  #
  # Note: When adding make options to this script, ensure that the source still
-@@ -318,6 +318,7 @@ genConfigMake() {
-   cfgwrite "# Note: you can override any option as a 'make' parameter, eg:"
-   cfgwrite "#         make debug=yes"
-   cfgwrite ""
-+  cfgwrite "NEEDS_GUI=no"
-   
-   #cfgwrite "# print on the cmdline that this file is being used"
-   #cfgwrite "all :: "
-@@ -357,9 +358,9 @@ genConfigMake() {
+@@ -358,9 +358,9 @@ genConfigMake() {
      cfgwrite "FHS_INSTALL_ROOT:=$ARG_PREFIX"
      cfgwrite ""
      cfgwrite "SOPE_SYSLIBDIR=\${DESTDIR}\${FHS_INSTALL_ROOT}/\$(CGS_LIBDIR_NAME)"
@@ -33,16 +25,11 @@ its name
      cfgwrite "SOPE_DBADAPTORS=\${SOPE_LIBDIR}/dbadaptors"
      cfgwrite "SOPE_PRODUCTS=\${SOPE_LIBDIR}/products"
      cfgwrite "SOPE_SAXDRIVERS=\${SOPE_LIBDIR}/saxdrivers"
-@@ -469,11 +470,7 @@ checkDependencies() {
-   cfgwrite "# library dependencies"
-   checkLinking "xml2"        optional;
-   checkLinking "ldap"        optional;
--  if [ `uname` = "OpenBSD" ];then
--    checkLinking "ssl crypto"  required; # TODO: make optional
--  else
--    checkLinking "ssl"         required; # TODO: make optional
--  fi
-+  checkLinking "ssl"         required; # TODO: make optional
-   checkLinking "pq"          optional;
- #  checkLinking "sqlite3"     optional;
-   cfgwrite "HAS_LIBRARY_sqlite3=no"
+@@ -394,6 +394,7 @@ genConfigMake() {
+     cfgwrite "debug:=no"
+   fi
+   cfgwrite ""
++  cfgwrite "NEEDS_GUI=no"
+   
+   if test $ARG_WITH_STRIP = 1; then
+     cfgwrite "# configured to produce stripped code";

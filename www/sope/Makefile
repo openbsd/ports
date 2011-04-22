@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.11 2011/04/18 12:47:37 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2011/04/22 05:34:13 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION=		1.3.4
-REVISION =		3
+VERSION=		1.3.6
 DISTNAME=		SOPE-${VERSION}
 PKGNAME-main=		sope-${VERSION}
 PKGNAME-mysql=		sope-mysql-${VERSION}
 PKGNAME-postgres=	sope-postgres-${VERSION}
 
 SO_MAJOR=	0
-SO_MINOR=	0
+SO_MINOR=	1
 .for _lib in DOM EOControl GDLAccess NGExtensions NGLdap NGMime \
 		NGObjWeb NGStreams NGXmlRpc SaxObjC SoOFS WEExtensions \
 		WEPrototype WOExtensions WOXML XmlRpc SBJson
