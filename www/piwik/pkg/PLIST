@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2011/03/23 11:42:15 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.29 2011/04/22 12:54:32 giovanni Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -26,11 +26,6 @@ piwik/core/ArchiveProcessing/
 piwik/core/ArchiveProcessing.php
 piwik/core/ArchiveProcessing/Day.php
 piwik/core/ArchiveProcessing/Period.php
-piwik/core/ArchiveProcessing/Record/
-piwik/core/ArchiveProcessing/Record.php
-piwik/core/ArchiveProcessing/Record/Blob.php
-piwik/core/ArchiveProcessing/Record/Numeric.php
-piwik/core/ArchiveProcessing/RecordArray.php
 piwik/core/AssetManager.php
 piwik/core/Auth.php
 piwik/core/CacheFile.php
@@ -188,8 +183,10 @@ piwik/core/Tracker/IgnoreCookie.php
 piwik/core/Tracker/Visit.php
 piwik/core/Tracker/javascriptCode.tpl
 piwik/core/Translate.php
+piwik/core/TranslationWriter.php
 piwik/core/Unzip/
 piwik/core/Unzip.php
+piwik/core/Unzip/Interface.php
 piwik/core/Unzip/PclZip.php
 piwik/core/Unzip/ZipArchive.php
 piwik/core/UpdateCheck.php
@@ -221,6 +218,9 @@ piwik/core/Updates/0.9.1.php
 piwik/core/Updates/1.1.php
 piwik/core/Updates/1.2-rc1.php
 piwik/core/Updates/1.2-rc2.php
+piwik/core/Updates/1.2.3.php
+piwik/core/Updates/1.2.5-rc1.php
+piwik/core/Updates/1.2.5-rc7.php
 piwik/core/Url.php
 piwik/core/Version.php
 piwik/core/View.php
@@ -250,7 +250,6 @@ piwik/core/Visualization/Chart/Pie.php
 piwik/core/Visualization/Chart/VerticalBar.php
 piwik/core/Visualization/Cloud.php
 piwik/core/Visualization/Sparkline.php
-piwik/core/iUnzip.php
 piwik/core/iView.php
 piwik/core/testMinimumPhpVersion.php
 piwik/index.php
@@ -294,6 +293,7 @@ piwik/lang/pt.php
 piwik/lang/ro.php
 piwik/lang/ru.php
 piwik/lang/sk.php
+piwik/lang/sl.php
 piwik/lang/sq.php
 piwik/lang/sr.php
 piwik/lang/sv.php
@@ -1397,7 +1397,6 @@ piwik/plugins/Live/Live.php
 piwik/plugins/Live/Visitor.php
 piwik/plugins/Live/templates/
 piwik/plugins/Live/templates/images/
-piwik/plugins/Live/templates/images/download.png
 piwik/plugins/Live/templates/images/file0.png
 piwik/plugins/Live/templates/images/file1.png
 piwik/plugins/Live/templates/images/file2.png
@@ -1408,8 +1407,6 @@ piwik/plugins/Live/templates/images/file6.png
 piwik/plugins/Live/templates/images/file7.png
 piwik/plugins/Live/templates/images/file8.png
 piwik/plugins/Live/templates/images/file9.png
-piwik/plugins/Live/templates/images/goal.png
-piwik/plugins/Live/templates/images/outboundlink.png
 piwik/plugins/Live/templates/images/pause.gif
 piwik/plugins/Live/templates/images/pause_disabled.gif
 piwik/plugins/Live/templates/images/play.gif
@@ -1461,6 +1458,8 @@ piwik/plugins/PDFReports/API.php
 piwik/plugins/PDFReports/Controller.php
 piwik/plugins/PDFReports/PDFRenderer.php
 piwik/plugins/PDFReports/PDFReports.php
+piwik/plugins/PDFReports/config/
+piwik/plugins/PDFReports/config/tcpdf_config.php
 piwik/plugins/PDFReports/templates/
 piwik/plugins/PDFReports/templates/add.tpl
 piwik/plugins/PDFReports/templates/index.tpl
@@ -1499,10 +1498,8 @@ piwik/plugins/Referers/images/searchEngines/blogs.icerocket.com.png
 piwik/plugins/Referers/images/searchEngines/blogsearch.google.com.png
 piwik/plugins/Referers/images/searchEngines/busca.orange.es.png
 piwik/plugins/Referers/images/searchEngines/buscador.terra.es.png
-piwik/plugins/Referers/images/searchEngines/cf.dir.yahoo.com.png
 piwik/plugins/Referers/images/searchEngines/cgi.search.biglobe.ne.jp.png
 piwik/plugins/Referers/images/searchEngines/daemon-search.com.png
-piwik/plugins/Referers/images/searchEngines/de.dir.yahoo.com.png
 piwik/plugins/Referers/images/searchEngines/digg.com.png
 piwik/plugins/Referers/images/searchEngines/dir.gigablast.com.png
 piwik/plugins/Referers/images/searchEngines/dmoz.org.png
@@ -1549,7 +1546,6 @@ piwik/plugins/Referers/images/searchEngines/ricerca.virgilio.it.png
 piwik/plugins/Referers/images/searchEngines/rpmfind.net.png
 piwik/plugins/Referers/images/searchEngines/s1.metacrawler.de.png
 piwik/plugins/Referers/images/searchEngines/search.1und1.de.png
-piwik/plugins/Referers/images/searchEngines/search.about.com.png
 piwik/plugins/Referers/images/searchEngines/search.aol.com.png
 piwik/plugins/Referers/images/searchEngines/search.babylon.com.png
 piwik/plugins/Referers/images/searchEngines/search.bluewin.ch.png
@@ -1612,7 +1608,6 @@ piwik/plugins/Referers/images/searchEngines/www.charter.net.png
 piwik/plugins/Referers/images/searchEngines/www.cuil.com.png
 piwik/plugins/Referers/images/searchEngines/www.dasoertliche.de.png
 piwik/plugins/Referers/images/searchEngines/www.eniro.se.png
-piwik/plugins/Referers/images/searchEngines/www.eudip.com.png
 piwik/plugins/Referers/images/searchEngines/www.eurip.com.png
 piwik/plugins/Referers/images/searchEngines/www.euroseek.com.png
 piwik/plugins/Referers/images/searchEngines/www.everyclick.com.png
@@ -1652,12 +1647,10 @@ piwik/plugins/Referers/images/searchEngines/www.paperball.de.png
 piwik/plugins/Referers/images/searchEngines/www.picsearch.com.png
 piwik/plugins/Referers/images/searchEngines/www.plazoo.com.png
 piwik/plugins/Referers/images/searchEngines/www.qualigo.at.png
-piwik/plugins/Referers/images/searchEngines/www.scroogle.org.png
 piwik/plugins/Referers/images/searchEngines/www.search.ch.png
 piwik/plugins/Referers/images/searchEngines/www.search.com.png
 piwik/plugins/Referers/images/searchEngines/www.searchcanvas.com.png
 piwik/plugins/Referers/images/searchEngines/www.searchy.co.uk.png
-piwik/plugins/Referers/images/searchEngines/www.seek.fr.png
 piwik/plugins/Referers/images/searchEngines/www.sharelook.fr.png
 piwik/plugins/Referers/images/searchEngines/www.skynet.be.png
 piwik/plugins/Referers/images/searchEngines/www.sogou.com.png
@@ -2062,6 +2055,7 @@ piwik/plugins/UserSettings/images/browsers/CA.gif
 piwik/plugins/UserSettings/images/browsers/CH.gif
 piwik/plugins/UserSettings/images/browsers/CO.gif
 piwik/plugins/UserSettings/images/browsers/CS.gif
+piwik/plugins/UserSettings/images/browsers/DF.gif
 piwik/plugins/UserSettings/images/browsers/DI.gif
 piwik/plugins/UserSettings/images/browsers/EL.gif
 piwik/plugins/UserSettings/images/browsers/EP.gif
@@ -2120,6 +2114,7 @@ piwik/plugins/UserSettings/images/os/OS2.gif
 piwik/plugins/UserSettings/images/os/POS.gif
 piwik/plugins/UserSettings/images/os/PS3.gif
 piwik/plugins/UserSettings/images/os/PSP.gif
+piwik/plugins/UserSettings/images/os/SBA.gif
 piwik/plugins/UserSettings/images/os/SOS.gif
 piwik/plugins/UserSettings/images/os/SYL.gif
 piwik/plugins/UserSettings/images/os/SYM.gif
@@ -2243,6 +2238,7 @@ piwik/themes/default/images/data_table_footer_active_item.png
 piwik/themes/default/images/datepicker_arr_l.png
 piwik/themes/default/images/datepicker_arr_r.png
 piwik/themes/default/images/delete.png
+piwik/themes/default/images/download.png
 piwik/themes/default/images/email.png
 piwik/themes/default/images/error.png
 piwik/themes/default/images/error_medium.png
@@ -2281,6 +2277,7 @@ piwik/themes/default/images/tagcloud.png
 piwik/themes/default/images/warning.png
 piwik/themes/default/images/warning_medium.png
 piwik/themes/default/images/warning_small.png
+piwik/themes/default/rtl.css
 piwik/themes/default/simple_structure.css
 piwik/themes/default/simple_structure_footer.tpl
 piwik/themes/default/simple_structure_header.tpl
