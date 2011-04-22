@@ -1,0 +1,142 @@
+$OpenBSD: patch-src_rss_c,v 1.11 2011/04/22 15:57:19 ajacoutot Exp $
+
+Revert:
+From 7d264518c2c6741e81842e7c4e6ba62f9f9a240b Mon Sep 17 00:00:00 2001
+From: Lucian Langa <lucilanga@gnome.org>
+Date: Fri, 28 Jan 2011 16:57:36 +0000
+Subject: allow to select feed location from properties menu
+
+--- src/rss.c.orig	Fri Apr 22 17:06:20 2011
++++ src/rss.c	Fri Apr 22 17:33:35 2011
+@@ -411,6 +411,7 @@ update_progress_text(gchar *title)
+ 	}
+ }
+ 
++#ifdef HAVE_WEBKIT
+ void
+ rss_webkit_load_string(gchar *str, gchar *base, gchar *encoding)
+ {
+@@ -423,6 +424,7 @@ rss_webkit_load_string(gchar *str, gchar *base, gchar 
+ 	if (strncmp(base, "file:///fake", 12))
+ 		webkit_set_history(base);
+ }
++#endif
+ 
+ void
+ update_progress_bar(guint current);
+@@ -943,6 +945,8 @@ rss_select_folder(gchar *folder_name)
+ 	const
+ #endif
+ 	gchar *uri;
++	CamelStore *store;
++	CamelFolder *fold = NULL;
+ 	EShellSidebar *shell_sidebar;
+ 
+ 	d("rss_select_folder() %s:%d\n", __FILE__, __LINE__);
+@@ -951,12 +955,23 @@ rss_select_folder(gchar *folder_name)
+ 
+ 	shell_sidebar  = e_shell_view_get_shell_sidebar(rss_shell_view);
+ 	g_object_get (shell_sidebar, "folder-tree", &folder_tree, NULL);
++	store = rss_component_peek_local_store();
++#if (DATASERVER_VERSION >= 2033001)
++	fold = camel_store_get_folder_sync (store, folder_name, 0, NULL, NULL);
++#else
++	fold = camel_store_get_folder (store, folder_name, 0, NULL);
++#endif
++	if (!fold) return;
++#if EVOLUTION_VERSION >= 29101
++	uri = camel_folder_get_uri (fold);
++#else
++	uri = mail_tools_folder_to_url (fold);
++#endif
+ 
+-	uri = lookup_uri_by_folder_name(folder_name);
+ 	em_folder_tree_set_selected(folder_tree, uri, 0);
+ #endif
+ #if EVOLUTION_VERSION < 29101
+-	if (uri) g_free(uri);
++	g_free(uri);
+ #endif
+ }
+ 
+@@ -3762,7 +3777,6 @@ print_comments(gchar *url, gchar *stream, EMFormatHTML
+ 
+ 			return display_comments (r, format);
+ 	}
+-	g_free(r);
+ 	return NULL;
+ }
+ 
+@@ -3942,30 +3956,6 @@ lookup_chn_name_by_url(gchar *url)
+ 	return chn_name;
+ }
+ 
+-gchar *
+-lookup_uri_by_folder_name(gchar *name)
+-{
+-	CamelFolder *folder;
+-	gchar *uri;
+-	CamelStore *store = rss_component_peek_local_store();
+-
+-	if (!name)
+-		return NULL;
+-
+-#if (DATASERVER_VERSION >= 2033001)
+-	folder = camel_store_get_folder_sync (store, name, 0, NULL, NULL);
+-#else
+-	folder = camel_store_get_folder (store, name, 0, NULL);
+-#endif
+-	if (!folder) return NULL;
+-#if EVOLUTION_VERSION >= 29101
+-	uri = (gchar *)camel_folder_get_uri (folder);
+-#else
+-	uri = mail_tools_folder_to_url (folder);
+-#endif
+-	return uri;
+-}
+-
+ void
+ update_main_folder(gchar *new_name)
+ {
+@@ -4029,7 +4019,6 @@ search_rebase(gpointer key, gpointer value, gchar *ona
+ 	if (!strncmp(key, tmp, strlen(tmp))) {
+ 		rebase_keys = g_list_append(rebase_keys, key);
+ 	}
+-	g_free(tmp);
+ }
+ 
+ void
+@@ -4066,7 +4055,7 @@ sync_folders(void)
+ 	g_free(feed_dir);
+ 	f = fopen(feed_file, "wb");
+ 	if (!f)
+-		goto out;
++		return;
+ 
+ 	if (!g_hash_table_size(rf->feed_folders))
+ 		goto exit;
+@@ -4074,6 +4063,7 @@ sync_folders(void)
+ 	g_hash_table_foreach(rf->feed_folders,
+ 		(GHFunc)write_feeds_folder_line,
+ 		(gpointer *)f);
++	g_free(feed_file);
+ 	g_hash_table_destroy(rf->reversed_feed_folders);
+ 	rf->reversed_feed_folders = g_hash_table_new_full(g_str_hash,
+ 			g_str_equal,
+@@ -4083,7 +4073,6 @@ sync_folders(void)
+ 			(GHFunc)populate_reversed,
+ 			rf->reversed_feed_folders);
+ exit:	fclose(f);
+-out:	g_free(feed_file);
+ 	return;
+ }
+ 
+@@ -4862,7 +4851,7 @@ e_plugin_ui_init (GtkUIManager *ui_manager,
+ 
+ 	rss_shell_view = shell_view;
+ 	shell_window = e_shell_view_get_shell_window (rss_shell_view);
+-	evo_window = (GtkWidget *)shell_window;
++	evo_window = shell_window;
+ 	g_signal_connect (
+ 		e_shell_window_get_action (
+ 			E_SHELL_WINDOW (shell_window),

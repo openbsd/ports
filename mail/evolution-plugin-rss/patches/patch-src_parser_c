@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_parser_c,v 1.1 2011/04/22 15:57:19 ajacoutot Exp $
+
+Revert:
+From 7d264518c2c6741e81842e7c4e6ba62f9f9a240b Mon Sep 17 00:00:00 2001
+From: Lucian Langa <lucilanga@gnome.org>
+Date: Fri, 28 Jan 2011 16:57:36 +0000
+Subject: allow to select feed location from properties menu
+
+--- src/parser.c.orig	Fri Apr 22 17:18:39 2011
++++ src/parser.c	Fri Apr 22 17:18:50 2011
+@@ -83,7 +83,6 @@ rss_html_url_decode(const char *html, int len)
+ 				(xmlNodePtr)doc,
+ 				(xmlChar *)"src",
+ 				(xmlChar *)duri);
+-			xmlFree(url);
+ 		}
+ 	}
+ 	return src;

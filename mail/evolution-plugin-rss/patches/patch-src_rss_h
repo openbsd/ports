@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_rss_h,v 1.1 2011/04/22 15:57:20 ajacoutot Exp $
+
+Revert:
+From 7d264518c2c6741e81842e7c4e6ba62f9f9a240b Mon Sep 17 00:00:00 2001
+From: Lucian Langa <lucilanga@gnome.org>
+Date: Fri, 28 Jan 2011 16:57:36 +0000
+Subject: allow to select feed location from properties menu
+
+--- src/rss.h.orig	Fri Apr 22 17:28:35 2011
++++ src/rss.h	Fri Apr 22 17:29:11 2011
+@@ -404,17 +404,14 @@ void rss_error(
+ 	gchar *emsg);
+ void rss_hooks_init(void);
+ void rss_select_folder(gchar *folder_name);
+-gboolean update_articles(gboolean disabler);
+-
+ gchar *lookup_chn_name_by_url(gchar *url);
++gboolean update_articles(gboolean disabler);
+ gchar *lookup_main_folder(void);
+ gchar *lookup_feed_folder(gchar *folder);
+ gchar *lookup_feed_folder_raw(gchar *folder);
+ gchar *lookup_original_folder(
+ 	gchar *folder,
+ 	gboolean *found);
+-gchar *lookup_uri_by_folder_name(gchar *name);
+-
+ gchar *decode_utf8_entities(gchar *str);
+ gchar *decode_html_entities(gchar *str);
+ gchar *get_real_channel_name(gchar *uri, gchar *failed);

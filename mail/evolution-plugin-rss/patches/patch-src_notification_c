@@ -1,0 +1,162 @@
+$OpenBSD: patch-src_notification_c,v 1.1 2011/04/22 15:57:19 ajacoutot Exp $
+
+Revert:
+From a5746a4876c30f7395eb21503e75ada094526183 Mon Sep 17 00:00:00 2001
+From: Lucian Langa <lucilanga@gnome.org>
+Date: Sat, 23 Oct 2010 06:46:00 +0000
+Subject: adapt to latest EActivity changes
+
+Revert:
+From 8043acb7ff37009d9166a61f15ee0f4134b7f480 Mon Sep 17 00:00:00 2001
+From: Lucian Langa <lucilanga@gnome.org>
+Date: Wed, 19 Jan 2011 10:36:43 +0000
+Subject: Make fetch feed operation cancelable again
+
+--- src/notification.c.orig	Fri Apr 22 16:16:03 2011
++++ src/notification.c	Fri Apr 22 17:05:29 2011
+@@ -23,6 +23,7 @@
+ #include <mail/em-utils.h>
+ #if (EVOLUTION_VERSION >= 22900) //kb//
+ #include <e-util/e-alert-dialog.h>
++#include <mail/e-mail-backend.h>
+ #include <shell/e-shell-taskbar.h>
+ #include <shell/e-shell-view.h>
+ #else
+@@ -202,11 +203,7 @@ taskbar_pop_message(void)
+ }
+ 
+ void
+-#if EVOLUTION_VERSION > 29102
+-taskbar_op_abort(CamelOperation *cancellable, gpointer key)
+-#else
+ taskbar_op_abort(gpointer key)
+-#endif
+ {
+ #if EVOLUTION_VERSION < 22900 //kb//
+ 	EActivityHandler *activity_handler =
+@@ -217,13 +214,9 @@ taskbar_op_abort(gpointer key)
+ 		e_activity_handler_operation_finished(
+ 				activity_handler,
+ 				activity_key);
+-#else
+-	EActivity *activity = g_hash_table_lookup(rf->activity, key);
+-	e_activity_set_state (activity, E_ACTIVITY_CANCELLED);
++#endif
+ 	g_hash_table_remove(rf->activity, key);
+-	g_object_unref(activity);
+ 	abort_all_soup();
+-#endif
+ }
+ 
+ #if EVOLUTION_VERSION >= 22900 //kb//
+@@ -244,7 +237,6 @@ taskbar_op_new(gchar *message, gpointer key)
+ 	EShell *shell;
+ 	EShellBackend *shell_backend;
+ 	EActivity *activity;
+-	GCancellable *cancellable;
+ #else
+ 	EActivityHandler *activity_handler;
+ 	char *mcp;
+@@ -258,13 +250,9 @@ taskbar_op_new(gchar *message, gpointer key)
+ 
+ #if EVOLUTION_VERSION >= 23300
+ 	activity = e_activity_new ();
+-#if (EVOLUTION_VERSION >= 29102)
+-	e_activity_set_text (activity, message);
+-#else
+ 	e_activity_set_primary_text (activity, message);
+-#endif
+-	cancellable = camel_operation_new ();
+-	e_activity_set_cancellable (activity, cancellable);
++	/* does this even makes sense */
++	e_activity_set_cancellable (activity, NULL);
+ #else
+ 	activity = e_activity_new (message);
+ 	e_activity_set_allow_cancel (activity, TRUE);
+@@ -273,10 +261,9 @@ taskbar_op_new(gchar *message, gpointer key)
+ 	e_shell_backend_add_activity (shell_backend, activity);
+ 
+ 	g_signal_connect (
+-		cancellable, "cancelled",
++		activity, "cancelled",
+ 		G_CALLBACK (taskbar_op_abort),
+ 		key);
+-	g_object_unref (cancellable);
+ 	return activity;
+ #else
+ 	activity_handler =
+@@ -357,12 +344,7 @@ taskbar_op_finish(gchar *key)
+ 		if (activity_key) {
+ 			d("activity_key:%p\n", (gpointer)activity_key);
+ #if (EVOLUTION_VERSION >= 22900) //kb//
+-#if (EVOLUTION_VERSION >= 29102)
+-			e_activity_set_state (activity_key, E_ACTIVITY_COMPLETED);
+-			g_object_unref(activity_key);
+-#else
+ 			e_activity_complete (activity_key);
+-#endif
+ #else
+ 			e_activity_handler_operation_finished(activity_handler, activity_key);
+ #endif
+@@ -370,12 +352,7 @@ taskbar_op_finish(gchar *key)
+ 		}
+ 	} else {
+ #if (EVOLUTION_VERSION >= 22900) //kb//
+-#if (EVOLUTION_VERSION >= 29102)
+-		e_activity_set_state (aid, E_ACTIVITY_COMPLETED);
+-		g_object_unref(aid);
+-#else
+ 		e_activity_complete (aid);
+-#endif
+ #else
+ 		e_activity_handler_operation_finished(activity_handler, aid);
+ #endif
+@@ -395,12 +372,11 @@ taskbar_op_message(gchar *msg, gchar *unikey)
+ 		EActivity *activity_id;
+ #else
+ #endif
+-		if (!msg) {
++		if (!msg)
+ 			tmsg = g_strdup_printf(
+ 				_("Fetching Feeds (%d enabled)"),
+ 				g_hash_table_size(rf->hrname));
+-			unikey = (gchar *)"main";
+-		} else
++		else
+ 			tmsg = g_strdup(msg);
+ 
+ #if (EVOLUTION_VERSION >= 22900) //kb//
+@@ -408,20 +384,27 @@ taskbar_op_message(gchar *msg, gchar *unikey)
+ 			activity_id =
+ 				(EActivity *)taskbar_op_new(
+ 					tmsg,
+-					unikey);
++					(gchar *)"main");
+ 		else
+ 			activity_id =
+ 				(EActivity *)taskbar_op_new(tmsg, msg);
+ #else
+ 		if (!msg)
+-			activity_id = taskbar_op_new(tmsg, unikey);
++			activity_id = taskbar_op_new(tmsg, (gchar *)"main");
+ 		else
+ 			activity_id = taskbar_op_new(tmsg, msg);
+ #endif
+-		g_hash_table_insert(
+-			rf->activity,
+-			GUINT_TO_POINTER(unikey),
+-			GUINT_TO_POINTER(activity_id));
++		if (!msg)
++			g_hash_table_insert(
++				rf->activity,
++				(gchar *)"main",
++				GUINT_TO_POINTER(activity_id));
++		else
++			if (unikey)
++				g_hash_table_insert(
++					rf->activity,
++					GUINT_TO_POINTER(unikey),
++					GUINT_TO_POINTER(activity_id));
+ 		g_free(tmsg);
+ 		return activity_id;
+ }

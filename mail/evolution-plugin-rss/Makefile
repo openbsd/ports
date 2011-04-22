@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2011/04/22 14:13:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2011/04/22 15:57:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		RSS-reader plugin for GNOME
 
 GNOME_PROJECT=		evolution-rss
-GNOME_VERSION=		0.2.90
+GNOME_VERSION=		0.2.90.20110422
 PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}
 
 CATEGORIES=		mail
@@ -67,7 +67,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 FAKE_FLAGS+=		itlocaledir="${PREFIX}/share/locale/"
 
 # XXX remove this chunk when updating to a 'real' release
-# (using a homemade tarball with patches from upstream git and local changes)
+# (current tarball created from git)
 MASTER_SITES=		http://distfiles.bsdfrog.org/
 BUILD_DEPENDS +=	x11/gnome/common \
 			${MODGNU_AUTOMAKE_DEPENDS} \
@@ -76,7 +76,7 @@ USE_LIBTOOL=		gnu
 CONFIGURE_STYLE=	# empty
 do-configure:
 	perl -pi -e 's,sed -i -e,perl -pi -e,g' ${WRKSRC}/src/Makefile.am
-	echo AC_PROG_LIBTOOL >> ${WRKSRC}/configure.ac
+	echo "\nAC_PROG_LIBTOOL" >> ${WRKSRC}/configure.ac
 	@cd ${WRKSRC} && \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \

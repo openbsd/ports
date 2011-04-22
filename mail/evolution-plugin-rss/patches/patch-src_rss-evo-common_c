@@ -1,0 +1,103 @@
+$OpenBSD: patch-src_rss-evo-common_c,v 1.1 2011/04/22 15:57:19 ajacoutot Exp $
+
+Revert:
+From 7d264518c2c6741e81842e7c4e6ba62f9f9a240b Mon Sep 17 00:00:00 2001
+From: Lucian Langa <lucilanga@gnome.org>
+Date: Fri, 28 Jan 2011 16:57:36 +0000
+Subject: allow to select feed location from properties menu
+
+--- src/rss-evo-common.c.orig	Fri Apr 22 17:20:49 2011
++++ src/rss-evo-common.c	Fri Apr 22 17:21:45 2011
+@@ -64,92 +64,6 @@ struct _EProxyPrivate {
+ 	enum ProxyType type;
+ };
+ 
+-gboolean
+-rss_emfu_is_special_local_folder (const gchar *name)
+-{
+-	return (!strcmp (name, "Drafts") || !strcmp (name, "Inbox") || !strcmp (name, "Outbox") || !strcmp (name, "Sent") || !strcmp (name, "Templates"));
+-}
+-
+-void
+-rss_emfu_copy_folder_selected (EMailBackend *backend,
+-			const gchar *uri,
+-			gpointer data)
+-{
+-	EMailSession *session;
+-	struct _copy_folder_data *cfd = data;
+-	CamelStore *fromstore = NULL, *tostore = NULL;
+-	CamelStore *local_store;
+-	CamelService *service;
+-	CamelProvider *provider;
+-	const gchar *tobase = NULL;
+-	CamelURL *url;
+-	GError *local_error = NULL;
+-
+-	if (uri == NULL) {
+-		g_free (cfd);
+-		return;
+-	}
+-
+-	local_store = e_mail_local_get_store ();
+-	session = e_mail_backend_get_session (backend);
+-
+-	fromstore = camel_session_get_store (
+-		CAMEL_SESSION (session), cfd->fi->uri, &local_error);
+-	if (fromstore == NULL) {
+-		e_mail_backend_submit_alert (
+-			backend, cfd->delete ?
+-				"mail:no-move-folder-notexist" :
+-				"mail:no-copy-folder-notexist",
+-			cfd->fi->full_name, uri,
+-			local_error->message, NULL);
+-		goto fail;
+-	}
+-
+-	if (cfd->delete && fromstore == local_store && rss_emfu_is_special_local_folder (cfd->fi->full_name)) {
+-		e_mail_backend_submit_alert (
+-			backend, "mail:no-rename-special-folder",
+-			cfd->fi->full_name, NULL);
+-		goto fail;
+-	}
+-
+-	tostore = camel_session_get_store (
+-		CAMEL_SESSION (session), uri, &local_error);
+-	if (tostore == NULL) {
+-		e_mail_backend_submit_alert (
+-			backend, cfd->delete ?
+-				"mail:no-move-folder-to-notexist" :
+-				"mail:no-copy-folder-to-notexist",
+-			cfd->fi->full_name, uri,
+-			local_error->message, NULL);
+-		goto fail;
+-	}
+-
+-	service = CAMEL_SERVICE (tostore);
+-	provider = camel_service_get_provider (service);
+-
+-	url = camel_url_new (uri, NULL);
+-	if (provider->url_flags & CAMEL_URL_FRAGMENT_IS_PATH)
+-		tobase = url->fragment;
+-	else if (url->path && url->path[0])
+-		tobase = url->path+1;
+-	if (tobase == NULL)
+-		tobase = "";
+-
+-	em_folder_utils_copy_folders (
+-		fromstore, cfd->fi->full_name, tostore, tobase, cfd->delete);
+-
+-	camel_url_free (url);
+-fail:
+-	if (fromstore)
+-		g_object_unref (fromstore);
+-	if (tostore)
+-		g_object_unref (tostore);
+-
+-	g_clear_error (&local_error);
+-
+-	g_free (cfd);
+-}
+-
+ void
+ rss_ipv6_network_addr (const struct in6_addr *addr, const struct in6_addr *mask,
+ 			struct in6_addr *res)

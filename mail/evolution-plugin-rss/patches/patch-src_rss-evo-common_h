@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_rss-evo-common_h,v 1.1 2011/04/22 15:57:19 ajacoutot Exp $
+
+Revert:
+From 7d264518c2c6741e81842e7c4e6ba62f9f9a240b Mon Sep 17 00:00:00 2001
+From: Lucian Langa <lucilanga@gnome.org>
+Date: Fri, 28 Jan 2011 16:57:36 +0000
+Subject: allow to select feed location from properties menu
+
+--- src/rss-evo-common.h.orig	Fri Apr 22 17:22:14 2011
++++ src/rss-evo-common.h	Fri Apr 22 17:22:41 2011
+@@ -23,23 +23,10 @@
+ #include <camel/camel.h>
+ #include <libedataserver/e-proxy.h>
+ 
+-struct _copy_folder_data {
+-	CamelFolderInfo *fi;
+-	gboolean delete;
+-};
+-
+ void
+ rss_ipv6_network_addr (const struct in6_addr *addr,
+ 		const struct in6_addr *mask,
+ 		struct in6_addr *res);
+-
+-gboolean
+-rss_emfu_is_special_local_folder (const gchar *name);
+-
+-void
+-rss_emfu_copy_folder_selected (EMailBackend *backend,
+-		const gchar *uri,
+-		gpointer data);
+ 
+ gboolean
+ rss_e_proxy_require_proxy_for_uri (EProxy* proxy, const gchar * uri);

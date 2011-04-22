@@ -1,0 +1,35 @@
+$OpenBSD: patch-src_network-soup_c,v 1.1 2011/04/22 15:57:19 ajacoutot Exp $
+
+Revert:
+From 7d264518c2c6741e81842e7c4e6ba62f9f9a240b Mon Sep 17 00:00:00 2001
+From: Lucian Langa <lucilanga@gnome.org>
+Date: Fri, 28 Jan 2011 16:57:36 +0000
+Subject: allow to select feed location from properties menu
+
+--- src/network-soup.c.orig	Fri Apr 22 17:16:21 2011
++++ src/network-soup.c	Fri Apr 22 17:17:52 2011
+@@ -800,7 +800,6 @@ net_get_unblocking(gchar *url,
+ 	/* Queue an async HTTP request */
+ 	msg = soup_message_new ("GET", url);
+ 	if (!msg) {
+-		if (info) g_free(info);
+ 		g_set_error(err, NET_ERROR, NET_ERROR_GENERIC, "%s",
+ 				soup_status_get_phrase(2));			//invalid url
+ 		return FALSE;
+@@ -848,8 +847,6 @@ net_get_unblocking(gchar *url,
+ ////	g_object_add_weak_pointer (G_OBJECT(msg), (gpointer)info);
+ 	g_object_weak_ref (G_OBJECT(msg), unblock_free, soup_sess);
+ //	g_object_weak_ref (G_OBJECT(soup_sess), unblock_free, soup_sess);
+-	if (mainurl)
+-		g_free(mainurl);
+ 	return TRUE;
+ }
+ 
+@@ -911,7 +908,6 @@ download_unblocking(
+ 	/* Queue an async HTTP request */
+ 	msg = soup_message_new ("GET", url);
+ 	if (!msg) {
+-		g_free(info);
+ 		g_set_error(err, NET_ERROR, NET_ERROR_GENERIC, "%s",
+ 				soup_status_get_phrase(2));			//invalid url
+ 		return FALSE;
