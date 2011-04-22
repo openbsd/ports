@@ -1,18 +1,15 @@
-$OpenBSD: patch-SoObjects_SOGo_GNUmakefile,v 1.1.1.1 2010/11/24 18:16:03 sebastia Exp $
+$OpenBSD: patch-SoObjects_SOGo_GNUmakefile,v 1.2 2011/04/22 05:36:12 sebastia Exp $
 
 Separate SOGo Version from library interface version.
 
---- SoObjects/SOGo/GNUmakefile.orig	Tue Oct 19 18:35:30 2010
-+++ SoObjects/SOGo/GNUmakefile	Mon Nov  8 09:54:31 2010
-@@ -7,9 +7,10 @@ include $(GNUSTEP_MAKEFILES)/common.make
+--- SoObjects/SOGo/GNUmakefile.orig	Fri Apr  8 19:44:28 2011
++++ SoObjects/SOGo/GNUmakefile	Tue Apr 19 11:24:03 2011
+@@ -6,7 +6,7 @@ include ../../Version
  
  FRAMEWORK_NAME = SOGo
  
 -SOGo_INSTALL_DIR = $(SOGO_LIBDIR)
 +SOGo_INSTALL_DIR = $(SOGO_FRAMEWORKDIR)
  
- SOGo_VERSION=$(MAJOR_VERSION).$(MINOR_VERSION)
-+SOGo_INTERFACE_VERSION=$(MAJOR_VERSION).$(MINOR_VERSION)
+ SOGo_VERSION=$(MAJOR_VERSION).$(MINOR_VERSION).$(SUBMINOR_VERSION)
  
- SOGo_HEADER_FILES = \
- 	SOGoBuild.h \

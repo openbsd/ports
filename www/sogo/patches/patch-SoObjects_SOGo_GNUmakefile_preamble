@@ -1,16 +1,16 @@
-$OpenBSD: patch-SoObjects_SOGo_GNUmakefile_preamble,v 1.2 2010/12/11 14:21:08 sebastia Exp $
---- SoObjects/SOGo/GNUmakefile.preamble.orig	Wed Nov 17 17:30:03 2010
-+++ SoObjects/SOGo/GNUmakefile.preamble	Fri Dec  3 09:42:53 2010
-@@ -2,7 +2,7 @@
- 
- SOGo_INCLUDE_DIRS += -I.. -I../../UI -DSOGO_MAJOR_VERSION="\"$(MAJOR_VERSION)\"" -DSOGO_MINOR_VERSION="\"$(MINOR_VERSION)\""
+$OpenBSD: patch-SoObjects_SOGo_GNUmakefile_preamble,v 1.3 2011/04/22 05:36:12 sebastia Exp $
+--- SoObjects/SOGo/GNUmakefile.preamble.orig	Fri Apr  8 19:44:28 2011
++++ SoObjects/SOGo/GNUmakefile.preamble	Tue Apr 19 11:22:59 2011
+@@ -5,7 +5,7 @@ SOGo_INCLUDE_DIRS += -I.. -I../../UI \
+ 	-DSOGO_MINOR_VERSION="@\"$(MINOR_VERSION)\"" \
+ 	-DSOGO_SUBMINOR_VERSION="@\"$(SUBMINOR_VERSION)\""
  
 -HOSTNAME = $(shell hostname -f)
 +HOSTNAME ?= $(shell hostname -f)
  BUILD_DATE = $(shell echo $$USER@$(HOSTNAME); date +"%Y%m%d%H%M")
  
  ADDITIONAL_CPPFLAGS += \
-@@ -18,9 +18,15 @@ SOGo_LIBRARIES_DEPEND_UPON += \
+@@ -21,9 +21,15 @@ SOGo_LIBRARIES_DEPEND_UPON += \
  	-lNGCards		\
  	-lNGMime		\
  	-lNGStreams -lNGExtensions -lEOControl \
