@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2011/04/06 21:03:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2011/04/22 14:13:56 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		RSS-reader plugin for GNOME
 
 GNOME_PROJECT=		evolution-rss
-GNOME_VERSION=		0.2.3
+GNOME_VERSION=		0.2.90
 PKGNAME=		evolution-plugin-rss-${GNOME_VERSION}
 
 CATEGORIES=		mail
@@ -24,16 +24,21 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ORBit-2 c dbus-1 dbus-glib-1 gcrypt gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
-WANTLIB += gthread-2.0 m pcre pthread soup-2.4 soup-gnome-2.4
-WANTLIB += sqlite3 stdc++ xml2 z
-WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm
-WANTLIB += enchant expat fontconfig freetype gailutil gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gtk-x11-2.0 gtkhtml-3.14 gtkhtml-editor-3.14
-WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm
+WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += asn1 atk-1.0 c cairo camel-1.2 camel-provider-1.2 com_err
+WANTLIB += crypto dbus-1 dbus-glib-1 drm ebook-1.2 edataserver-1.2
+WANTLIB += edataserverui-1.2 enchant execinfo expat fontconfig
+WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-2 gnome-keyring
+WANTLIB += gobject-2.0 gpg-error gssapi gthread-2.0 gtk-x11-2.0
+WANTLIB += gtkhtml-3.14 gtkhtml-editor-3.14 krb5 m nspr4 nss3
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
+WANTLIB += plc4 plds4 png pthread pthread-stubs smime3 soup-2.4
+WANTLIB += soup-gnome-2.4 sqlite3 ssl3 startup-notification-1
+WANTLIB += stdc++ unique-1.0 xcb xcb-atom xcb-aux xcb-event xcb-render
+WANTLIB += xcb-shm xml2 z lib/evolution/${EVO_VERSION}/eshell
+WANTLIB += lib/evolution/${EVO_VERSION}/eutil
 
 MASTER_SITES=		http://gnome.eu.org/
 EXTRACT_SUFX=		.tar.gz
@@ -42,9 +47,8 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		mail/evolution>=2.32.0
-LIB_DEPENDS=		devel/libsoup,-gnome
+LIB_DEPENDS=		devel/libsoup,-gnome \
+			mail/evolution
 
 MODGCONF2_LIBDEP=	Yes
 MODGCONF2_SCHEMAS_DIR=	evolution-rss
@@ -59,6 +63,26 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-primary-render=gtkhtml
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+FAKE_FLAGS+=		itlocaledir="${PREFIX}/share/locale/"
+
+# XXX remove this chunk when updating to a 'real' release
+# (using a homemade tarball with patches from upstream git and local changes)
+MASTER_SITES=		http://distfiles.bsdfrog.org/
+BUILD_DEPENDS +=	x11/gnome/common \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			${MODGNU_AUTOCONF_DEPENDS}
+USE_LIBTOOL=		gnu
+CONFIGURE_STYLE=	# empty
+do-configure:
+	perl -pi -e 's,sed -i -e,perl -pi -e,g' ${WRKSRC}/src/Makefile.am
+	echo AC_PROG_LIBTOOL >> ${WRKSRC}/configure.ac
+	@cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		CONFIGURE_ENV=${CONFIGURE_ENV} \
+		./autogen.sh ${CONFIGURE_ARGS} --disable-maintainer-mode
+# end XXX
 
 pre-configure:
 	perl -pi -e 's,sed -i -e,perl -pi -e,g' ${WRKSRC}/src/Makefile.in

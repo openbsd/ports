@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/09/30 16:13:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/04/22 14:13:56 ajacoutot Exp $
 @bin bin/evolution-import-rss
 @comment lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.a
 @comment lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-evolution-rss.la
@@ -19,7 +19,10 @@ share/evolution/${EVO_VERSION}/ui/rss-html-rendering.ui
 share/evolution/${EVO_VERSION}/ui/rss-main.ui
 share/locale/as/LC_MESSAGES/evolution-rss.mo
 share/locale/bn_IN/LC_MESSAGES/evolution-rss.mo
+share/locale/ca/LC_MESSAGES/evolution-rss.mo
+share/locale/ca@valencia/LC_MESSAGES/evolution-rss.mo
 share/locale/cs/LC_MESSAGES/evolution-rss.mo
+share/locale/da/LC_MESSAGES/evolution-rss.mo
 share/locale/de/LC_MESSAGES/evolution-rss.mo
 share/locale/el/LC_MESSAGES/evolution-rss.mo
 share/locale/en_AU/LC_MESSAGES/evolution-rss.mo
