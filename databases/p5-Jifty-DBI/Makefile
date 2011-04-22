@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/20 08:12:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/22 05:55:52 landry Exp $
 
 COMMENT= 	database OO schema for Jifty
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+BUILD_DEPENDS=	devel/p5-Test-Warn
 RUN_DEPENDS=	databases/p5-DBI \
 		databases/p5-DBIx-DBSchema \
 		databases/p5-Data-Page \
