@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.5 2011/03/21 09:27:18 ajacoutot Exp $
+$OpenBSD: README-main,v 1.6 2011/04/22 07:29:44 ajacoutot Exp $
 
 *** Upgrading users: refer to zarafa documentation on the web to check
 *** if any particular step is required after upgrading to a new version. 
@@ -121,7 +121,7 @@ To do so, we need to start httpd with LD_PRELOAD set in /etc/rc.local
 e.g:
 
 rm -f /var/www/logs/{ssl_mutex,httpd.lock,accept.lock}.*
-echo -n ' httpd'
+echo 'starting httpd'
 LD_PRELOAD=/usr/lib/libpthread.so /usr/sbin/httpd -DSSL
 
 
