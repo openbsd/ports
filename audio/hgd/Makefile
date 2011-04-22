@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.3 2011/03/22 11:21:22 edd Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/22 08:21:28 edd Exp $
 
 COMMENT =		music system for hackathons
-DISTNAME =		hgd-0.2.1
+DISTNAME =		hgd-0.3.0
 
 CATEGORIES =		audio net
 HOMEPAGE =		https://github.com/vext01/hgd/
@@ -14,13 +14,14 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c crypto ssl sqlite3
+WANTLIB =		c config crypto ssl sqlite3
 
 MAKE_FILE =		BSDmakefile
 MASTER_SITES =		https://github.com/downloads/vext01/hgd/
 
 RUN_DEPENDS =		x11/mplayer
-LIB_DEPENDS =		databases/sqlite3
+LIB_DEPENDS =		databases/sqlite3 \
+			devel/libconfig
 
 NO_REGRESS =		Yes
 
