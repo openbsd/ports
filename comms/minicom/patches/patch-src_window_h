@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_window_h,v 1.1 2011/04/22 11:21:46 stsp Exp $
+--- src/window.h.orig	Thu Apr 21 23:37:49 2011
++++ src/window.h	Thu Apr 21 23:37:58 2011
+@@ -151,7 +151,7 @@ void wlocate(WIN *win, int x, int y);
+ void wputc(WIN *win, wchar_t c);
+ void wdrawelm(WIN *win, int y, ELM *e);
+ void wputs(WIN *win, const char *s);
+-int wprintf(WIN *, const char *, ...)
++int mc_wprintf(WIN *, const char *, ...)
+         __attribute__((format(printf, 2, 3)));
+ void wbell(void);
+ void wcursor(WIN *win, int type);

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_updown_c,v 1.2 2007/05/23 16:40:56 ckuethe Exp $
---- src/updown.c.orig	Sun Aug 14 14:39:30 2005
-+++ src/updown.c	Thu May 17 12:58:26 2007
+$OpenBSD: patch-src_updown_c,v 1.3 2011/04/22 11:21:46 stsp Exp $
+--- src/updown.c.orig	Sun Aug 14 22:39:30 2005
++++ src/updown.c	Thu Apr 21 23:48:31 2011
 @@ -40,7 +40,7 @@ static int mcd(char *dir)
  {
    char buf[256];
@@ -19,3 +19,34 @@ $OpenBSD: patch-src_updown_c,v 1.2 2007/05/23 16:40:56 ckuethe Exp $
      snprintf(title, sizeof(title), _("%.30s %s - Press CTRL-C to quit"), P_PNAME(g),
               what == 'U' ? _("upload") : _("download"));
      wtitle(win, TMID, title);
+@@ -355,7 +355,7 @@ void updown(int what, int nr)
+   if (win && (status & 0xFF00) == 0) {
+ #if VC_MUSIC
+     if (P_SOUND[0] == 'Y') {
+-      wprintf(win, _("\n READY: press any key to continue..."));
++      mc_wprintf(win, _("\n READY: press any key to continue..."));
+       music();
+     } else
+       sleep(1);
+@@ -363,7 +363,7 @@ void updown(int what, int nr)
+     /* MARK updated 02/17/94 - If there was no VC_MUSIC capability, */
+     /* then at least make some beeps! */
+     if (P_SOUND[0] == 'Y')
+-      wprintf(win, "\007\007\007");
++      mc_wprintf(win, "\007\007\007");
+     sleep(1);
+ #endif
+   }
+@@ -526,9 +526,9 @@ void runscript(int ask, const char *s, const char *l, 
+     w = wopen(10, 5, 70, 10, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
+     wtitle(w, TMID, _("Run a script"));
+     wputs(w, "\n");
+-    wprintf(w, "%s %s\n", username, scr_user[0] ? msg : "");
+-    wprintf(w, "%s %s\n", password, scr_passwd[0] ? msg : "");
+-    wprintf(w, "%s %s\n", name_of_script, scr_name);
++    mc_wprintf(w, "%s %s\n", username, scr_user[0] ? msg : "");
++    mc_wprintf(w, "%s %s\n", password, scr_passwd[0] ? msg : "");
++    mc_wprintf(w, "%s %s\n", name_of_script, scr_name);
+     wlocate(w, 4, 5);
+     wputs(w, question);
+     wredraw(w, 1);

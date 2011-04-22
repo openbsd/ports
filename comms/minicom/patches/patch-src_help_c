@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_help_c,v 1.1 2011/04/22 11:21:46 stsp Exp $
+--- src/help.c.orig	Thu Apr 21 23:45:22 2011
++++ src/help.c	Thu Apr 21 23:45:27 2011
+@@ -38,7 +38,7 @@ int help(void)
+   wputs(w, _("Minicom Command Summary"));
+   wlocate(w, 10, 2);
+ 
+-  wprintf(w, _("Commands can be called by %s<key>"), esc_key());
++  mc_wprintf(w, _("Commands can be called by %s<key>"), esc_key());
+ 
+   wlocate(w, 15, 4);
+   wputs(w, _("Main Functions"));

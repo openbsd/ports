@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_main_c,v 1.1 2007/05/23 16:40:56 ckuethe Exp $
---- src/main.c.orig	Mon Oct 31 05:13:51 2005
-+++ src/main.c	Thu May 17 12:55:59 2007
+$OpenBSD: patch-src_main_c,v 1.2 2011/04/22 11:21:46 stsp Exp $
+--- src/main.c.orig	Mon Oct 31 13:13:51 2005
++++ src/main.c	Thu Apr 21 23:47:45 2011
 @@ -22,6 +22,9 @@
  #include "rcsid.h"
- RCSID("$Id: patch-src_main_c,v 1.1 2007/05/23 16:40:56 ckuethe Exp $")
+ RCSID("$Id: patch-src_main_c,v 1.2 2011/04/22 11:21:46 stsp Exp $")
  
 +#include <sys/types.h>
 +#include <sys/ioctl.h>
@@ -37,12 +37,61 @@ $OpenBSD: patch-src_main_c,v 1.1 2007/05/23 16:40:56 ckuethe Exp $
  }
  
  
-@@ -476,7 +489,7 @@ void time_status(void)
+@@ -452,12 +465,12 @@ void mode_status(void)
+   if (st) { /* if swich off status line - NOT print !!! (vlk@st.simbirsk.su) */
+     wlocate(st, 20, 0);
+     if (portfd_is_socket) {
+-      wprintf(st, "unix-socket");
++      mc_wprintf(st, "unix-socket");
+     } else {
+       if (P_SHOWSPD[0] == 'l')
+-        wprintf(st, "%6ld %s%s%s", linespd, P_BITS, P_PARITY, P_STOPB);
++        mc_wprintf(st, "%6ld %s%s%s", linespd, P_BITS, P_PARITY, P_STOPB);
+       else
+-        wprintf(st, "%6.6s %s%s%s", P_BAUDRATE, P_BITS, P_PARITY, P_STOPB);
++        mc_wprintf(st, "%6.6s %s%s%s", P_BAUDRATE, P_BITS, P_PARITY, P_STOPB);
+     }
+     ret_csr();
+   }
+@@ -474,9 +487,9 @@ void time_status(void)
+     return;
+   wlocate(st, 63, 0);
    if (online < 0)
-     wprintf(st, " %12.12s ", P_HASDCD[0] == 'Y' ? _("Offline") : _("OFFLINE"));
+-    wprintf(st, " %12.12s ", P_HASDCD[0] == 'Y' ? _("Offline") : _("OFFLINE"));
++    mc_wprintf(st, " %12.12s ", P_HASDCD[0] == 'Y' ? _("Offline") : _("OFFLINE"));
    else
 -    wprintf(st, " %s %02ld:%02ld", P_HASDCD[0] == 'Y' ? _("Online") : _("ONLINE"),
-+    wprintf(st, " %s %02d:%02d", P_HASDCD[0] == 'Y' ? _("Online") : _("ONLINE"),
++    mc_wprintf(st, " %s %02d:%02d", P_HASDCD[0] == 'Y' ? _("Online") : _("ONLINE"),
              online / 3600, (online / 60) % 60);
  
    ret_csr();
+@@ -488,7 +501,7 @@ void time_status(void)
+ void curs_status(void)
+ {
+   wlocate(st, 33, 0);
+-  wprintf(st, cursormode == NORMAL ? "NOR" : "APP");
++  mc_wprintf(st, cursormode == NORMAL ? "NOR" : "APP");
+   ret_csr();
+ }
+ 
+@@ -570,7 +583,7 @@ void show_status(void)
+ {
+   st->direct = 0;
+   wlocate(st, 0, 0);
+-  wprintf(st,
++  mc_wprintf(st,
+           _(" %7.7sZ for help |           |     | Minicom %-6.6s |       | "),
+           esc_key(), VERSION);
+   mode_status();
+@@ -598,9 +611,9 @@ void scriptname(const char *s)
+     return;
+   wlocate(st, 39, 0);
+   if (*s == 0)
+-    wprintf(st, "Minicom %-6.6s", VERSION);
++    mc_wprintf(st, "Minicom %-6.6s", VERSION);
+   else
+-    wprintf(st, "script %-7.7s", s);
++    mc_wprintf(st, "script %-7.7s", s);
+   ret_csr();
+ }
+ 

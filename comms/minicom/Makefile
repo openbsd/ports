@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.51 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2011/04/22 11:21:46 stsp Exp $
 
 COMMENT=		MS-DOS Telix-like serial communication program
 
 DISTNAME=		minicom-2.2
+REVISION=		0
 CATEGORIES=		comms
 MASTER_SITES=		http://alioth.debian.org/frs/download.php/1806/
 

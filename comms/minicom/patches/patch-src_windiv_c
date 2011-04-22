@@ -1,11 +1,29 @@
-$OpenBSD: patch-src_windiv_c,v 1.2 2007/05/23 16:40:56 ckuethe Exp $
---- src/windiv.c.orig	Thu May 17 12:50:11 2007
-+++ src/windiv.c	Thu May 17 12:50:13 2007
+$OpenBSD: patch-src_windiv_c,v 1.3 2011/04/22 11:21:46 stsp Exp $
+--- src/windiv.c.orig	Wed Oct 11 22:46:21 2006
++++ src/windiv.c	Thu Apr 21 23:48:44 2011
 @@ -19,6 +19,7 @@
  #include "rcsid.h"
- RCSID("$Id: patch-src_windiv_c,v 1.2 2007/05/23 16:40:56 ckuethe Exp $")
+ RCSID("$Id: patch-src_windiv_c,v 1.3 2011/04/22 11:21:46 stsp Exp $")
  
 +#include <sys/types.h>
  #include <dirent.h>
  #include <sys/stat.h>
  #include "port.h"
+@@ -120,7 +121,7 @@ int ask(const char *what, const char **s)
+   while (1) {
+     wlocate(w, 2 + offs + 10 * cur, 1);
+     if (!useattr)
+-      wprintf(w, ">%s", _(s[cur]) + 1);
++      mc_wprintf(w, ">%s", _(s[cur]) + 1);
+     else {
+       wsetattr(w, XA_REVERSE | stdattr);
+       wputs(w, _(s[cur]));
+@@ -169,7 +170,7 @@ char *input(char *s, char *buf)
+              BDOUBLE, stdattr, mfcolor, mbcolor, 1, 0, 1);
+   wputs(w, s);
+   wlocate(w, 0, 1);
+-  wprintf(w, "> %-38.38s", buf);
++  mc_wprintf(w, "> %-38.38s", buf);
+   wlocate(w, 2, 1);
+   if (wgets(w, buf, 38, 128) < 0)
+     buf = NULL;

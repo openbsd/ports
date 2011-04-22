@@ -1,0 +1,642 @@
+$OpenBSD: patch-src_config_c,v 1.1 2011/04/22 11:21:46 stsp Exp $
+--- src/config.c.orig	Thu Apr 21 23:37:21 2011
++++ src/config.c	Thu Apr 21 23:38:54 2011
+@@ -253,9 +253,9 @@ static void dologopt(void)
+   w = wopen(5, 4, 75, 8, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
+ 
+   wtitle(w, TMID, _("Logging options"));
+-  wprintf(w, "%s %s\n", logfnstr, P_LOGFNAME);
+-  wprintf(w, "%s %s\n", logconn, _(P_LOGCONN));
+-  wprintf(w, "%s %s\n", logxfer, _(P_LOGXFER));
++  mc_wprintf(w, "%s %s\n", logfnstr, P_LOGFNAME);
++  mc_wprintf(w, "%s %s\n", logconn, _(P_LOGCONN));
++  mc_wprintf(w, "%s %s\n", logxfer, _(P_LOGXFER));
+   wlocate(w, 4, 4);
+   wputs(w, question);
+   wredraw(w, 1);
+@@ -274,13 +274,13 @@ static void dologopt(void)
+       case 'B':
+         strcpy(P_LOGCONN, yesno(P_LOGCONN[0] == 'N'));
+         wlocate(w, mbslen(logconn) + 1, 1);
+-        wprintf(w, "%s  ", _(P_LOGCONN));
++        mc_wprintf(w, "%s  ", _(P_LOGCONN));
+         markch(P_LOGCONN);
+         break;
+       case 'C':
+         strcpy(P_LOGXFER, yesno(P_LOGXFER[0] == 'N'));
+         wlocate(w, mbslen(logxfer) + 1, 2);
+-        wprintf(w, "%s  ", _(P_LOGXFER));
++        mc_wprintf(w, "%s  ", _(P_LOGXFER));
+         markch(P_LOGXFER);
+         break;
+       default:
+@@ -305,13 +305,13 @@ static void dopath(void)
+   char *question           = _("Change which setting?");
+ 
+   w = wopen(5, 5, 75, 12, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
+-  wprintf(w, "%s %.44s\n", download_directory, P_DOWNDIR);
+-  wprintf(w, "%s %.44s\n", upload_directory, P_UPDIR);
+-  wprintf(w, "%s %.44s\n", script_directory, P_SCRIPTDIR);
+-  wprintf(w, "%s %.44s\n", script_program, P_SCRIPTPROG);
+-  wprintf(w, "%s %.44s\n", kermit_program, P_KERMIT);
++  mc_wprintf(w, "%s %.44s\n", download_directory, P_DOWNDIR);
++  mc_wprintf(w, "%s %.44s\n", upload_directory, P_UPDIR);
++  mc_wprintf(w, "%s %.44s\n", script_directory, P_SCRIPTDIR);
++  mc_wprintf(w, "%s %.44s\n", script_program, P_SCRIPTPROG);
++  mc_wprintf(w, "%s %.44s\n", kermit_program, P_KERMIT);
+ #ifdef LOGFILE
+-  wprintf(w, "%s\n", log_settings);
++  mc_wprintf(w, "%s\n", log_settings);
+ #endif
+   wlocate(w, 4, 8);
+   wputs(w, question);
+@@ -381,7 +381,7 @@ static void inputproto(WIN *w, int n)
+   pgets(w, 15, n+1, P_PPROG(n), 31, 64);
+   do {
+     wlocate(w, 47, n + 1);
+-    wprintf(w, "%c", P_PNN(n));
++    mc_wprintf(w, "%c", P_PNN(n));
+     c = rwxgetch();
+     if (c == 'Y')
+       P_PNN(n) = 'Y';
+@@ -390,7 +390,7 @@ static void inputproto(WIN *w, int n)
+   } while (c != '\r' && c != '\n');
+   do {
+     wlocate(w, 52, n + 1);
+-    wprintf(w, "%c", P_PUD(n));
++    mc_wprintf(w, "%c", P_PUD(n));
+     c = rwxgetch();
+     if (c == 'U')
+       P_PUD(n) = 'U';
+@@ -399,7 +399,7 @@ static void inputproto(WIN *w, int n)
+   } while (c != '\r' && c != '\n');
+   do {
+     wlocate(w, 57, n + 1);
+-    wprintf(w, "%c", P_PFULL(n));
++    mc_wprintf(w, "%c", P_PFULL(n));
+     c = rwxgetch();
+     if (c == 'Y')
+       P_PFULL(n) = 'Y';
+@@ -408,7 +408,7 @@ static void inputproto(WIN *w, int n)
+   } while (c != '\r' && c != '\n');
+   do {
+     wlocate(w, 65, n + 1);
+-    wprintf(w, "%c", P_PIORED(n));
++    mc_wprintf(w, "%c", P_PIORED(n));
+     c = rwxgetch();
+     if (c == 'Y')
+       P_PIORED(n) = 'Y';
+@@ -417,7 +417,7 @@ static void inputproto(WIN *w, int n)
+   } while (c != '\r' && c != '\n');
+   do {
+     wlocate(w, 73, n + 1);
+-    wprintf(w, "%c", P_MUL(n));
++    mc_wprintf(w, "%c", P_MUL(n));
+     c = rwxgetch();
+     if (c == 'Y')
+       P_MUL(n) = 'Y';
+@@ -449,21 +449,21 @@ static void doproto(void)
+   for (f = 0; f < 12; f++) {
+     wlocate(w, 1, f + 1);
+     if (P_PNAME(f)[0])
+-      wprintf(w, "%c  %-10.10s %-31.31s %c    %c    %c       %c       %c",
++      mc_wprintf(w, "%c  %-10.10s %-31.31s %c    %c    %c       %c       %c",
+               'A' + f,
+               P_PNAME(f), P_PPROG(f),
+               P_PNN(f), P_PUD(f),
+               P_PFULL(f), P_PIORED(f),
+               P_MUL(f));
+     else
+-      wprintf(w, "%c    -", 'A' + f);
++      mc_wprintf(w, "%c    -", 'A' + f);
+   }
+   wlocate(w, 1, 13);
+-  wprintf(w, "%s %c", zmodem_download, P_PAUTO[0]);
++  mc_wprintf(w, "%s %c", zmodem_download, P_PAUTO[0]);
+   wlocate(w, 1, 14);
+-  wprintf(w, "%s %s", use_filename_selection, _(P_FSELW));
++  mc_wprintf(w, "%s %s", use_filename_selection, _(P_FSELW));
+   wlocate(w, 1, 15);
+-  wprintf(w, "%s %s", prompt_downdir, _(P_ASKDNDIR));
++  mc_wprintf(w, "%s %s", prompt_downdir, _(P_ASKDNDIR));
+ 
+   wlocate(w, 3, 17);
+   wputs(w, question);
+@@ -492,17 +492,17 @@ static void doproto(void)
+     }
+     else if (c == 'M') {
+       wlocate(w, mbslen (zmodem_download) + 2, 13);
+-      wprintf(w, " \b");
++      mc_wprintf(w, " \b");
+       c = rwxgetch();
+       if (c >= 'A' && c <= 'L') {
+         P_PAUTO[0] = c;
+         markch(P_PAUTO);
+-        wprintf(w, "%c", c);
++        mc_wprintf(w, "%c", c);
+       } else if (c == '\n' || c == ' ') {
+         P_PAUTO[0] = ' ';
+         markch(P_PAUTO);
+       } else {
+-        wprintf(w, "%c", P_PAUTO[0]);
++        mc_wprintf(w, "%c", P_PAUTO[0]);
+       }
+       c = 0;
+     }
+@@ -511,11 +511,11 @@ static void doproto(void)
+       if (P_FSELW[0] == 'N') {
+         strcpy(P_ASKDNDIR, "No ");
+         wlocate(w, mbslen (prompt_downdir) + 2, 15);
+-        wprintf(w, "%s ", _(P_ASKDNDIR));
++        mc_wprintf(w, "%s ", _(P_ASKDNDIR));
+         markch(P_ASKDNDIR);
+       }
+       wlocate(w, mbslen (use_filename_selection) + 2, 14);
+-      wprintf(w, "%s ", _(P_FSELW));
++      mc_wprintf(w, "%s ", _(P_FSELW));
+       markch(P_FSELW);
+     }
+     else if (c == 'O') {
+@@ -523,11 +523,11 @@ static void doproto(void)
+       if (P_ASKDNDIR[0] == 'Y') {
+         strcpy(P_FSELW, "Yes");
+         wlocate(w, mbslen (use_filename_selection) + 2, 14);
+-        wprintf(w, "%s ", _(P_FSELW));
++        mc_wprintf(w, "%s ", _(P_FSELW));
+         markch(P_FSELW);
+       }
+       wlocate(w, mbslen (prompt_downdir) + 2, 15);
+-      wprintf(w, "%s ", _(P_ASKDNDIR));
++      mc_wprintf(w, "%s ", _(P_ASKDNDIR));
+       markch(P_ASKDNDIR);
+     }
+   } while (c != '\n');
+@@ -547,14 +547,14 @@ static void doserial(void)
+   char *question              = _("Change which setting?");
+ 
+   w = wopen(5, 4, 75, 12, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
+-  wprintf(w, "%s %.41s\n", serial_device, P_PORT);
+-  wprintf(w, "%s %.41s\n", lockfile_location, P_LOCK);
+-  wprintf(w, "%s %.41s\n", callin_program, P_CALLIN);
+-  wprintf(w, "%s %.41s\n", callout_program, P_CALLOUT);
+-  wprintf(w, "%s %s %s%s%s\n",
++  mc_wprintf(w, "%s %.41s\n", serial_device, P_PORT);
++  mc_wprintf(w, "%s %.41s\n", lockfile_location, P_LOCK);
++  mc_wprintf(w, "%s %.41s\n", callin_program, P_CALLIN);
++  mc_wprintf(w, "%s %.41s\n", callout_program, P_CALLOUT);
++  mc_wprintf(w, "%s %s %s%s%s\n",
+           bps_par_bits, P_BAUDRATE, P_BITS, P_PARITY, P_STOPB);
+-  wprintf(w, "%s %s\n", hardware_flow_control, _(P_HASRTS));
+-  wprintf(w, "%s %s\n", software_flow_control, _(P_HASXON));
++  mc_wprintf(w, "%s %s\n", hardware_flow_control, _(P_HASRTS));
++  mc_wprintf(w, "%s %s\n", software_flow_control, _(P_HASXON));
+   wlocate(w, 4, 8);
+   wputs(w, question);
+   wredraw(w, 1);
+@@ -582,7 +582,7 @@ static void doserial(void)
+         if (portfd >= 0)
+           port_init();
+         wlocate(w, mbslen (bps_par_bits) + 1, 4);
+-        wprintf(w, "%s %s%s%s  \n",
++        mc_wprintf(w, "%s %s%s%s  \n",
+                 P_BAUDRATE, P_BITS, P_PARITY, P_STOPB);
+         if (st)
+           mode_status();
+@@ -594,7 +594,7 @@ static void doserial(void)
+       case 'F':
+         strcpy(P_HASRTS, yesno(P_HASRTS[0] == 'N'));
+         wlocate(w, mbslen (hardware_flow_control) + 1, 5);
+-        wprintf(w, "%s ", _(P_HASRTS));
++        mc_wprintf(w, "%s ", _(P_HASRTS));
+         if (portfd >= 0)
+           port_init();
+         markch(P_HASRTS);
+@@ -602,7 +602,7 @@ static void doserial(void)
+       case 'G':
+         strcpy(P_HASXON, yesno(P_HASXON[0] == 'N'));
+         wlocate(w, mbslen (software_flow_control) + 1, 6);
+-        wprintf(w, "%s ", _(P_HASXON));
++        mc_wprintf(w, "%s ", _(P_HASXON));
+         if (portfd >= 0)
+           port_init();
+         markch(P_HASXON);
+@@ -652,39 +652,39 @@ static void domodem(void)
+ 
+   dirflush = 0;
+   wtitle(w, TMID, _("Modem and dialing parameter setup"));
+-  wprintf(w, "\n");
+-  wprintf(w, "%s %.48s\n", init_string, P_MINIT);
+-  wprintf(w, "%s %.48s\n", reset_string, P_MRESET);
+-  wprintf(w, "%s %.48s\n", dialing_prefix_1, P_MDIALPRE);
+-  wprintf(w, "%s %.48s\n", dialing_suffix_1, P_MDIALSUF);
+-  wprintf(w, "%s %.48s\n", dialing_prefix_2, P_MDIALPRE2);
+-  wprintf(w, "%s %.48s\n", dialing_suffix_2, P_MDIALSUF2);
+-  wprintf(w, "%s %.48s\n", dialing_prefix_3, P_MDIALPRE3);
+-  wprintf(w, "%s %.48s\n", dialing_suffix_3, P_MDIALSUF3);
+-  wprintf(w, "%s %.48s\n", connect_string, P_MCONNECT);
+-  wprintf(w, "%s %-20.20s  %.20s\n", no_connect_strings, P_MNOCON1, P_MNOCON2);
++  mc_wprintf(w, "\n");
++  mc_wprintf(w, "%s %.48s\n", init_string, P_MINIT);
++  mc_wprintf(w, "%s %.48s\n", reset_string, P_MRESET);
++  mc_wprintf(w, "%s %.48s\n", dialing_prefix_1, P_MDIALPRE);
++  mc_wprintf(w, "%s %.48s\n", dialing_suffix_1, P_MDIALSUF);
++  mc_wprintf(w, "%s %.48s\n", dialing_prefix_2, P_MDIALPRE2);
++  mc_wprintf(w, "%s %.48s\n", dialing_suffix_2, P_MDIALSUF2);
++  mc_wprintf(w, "%s %.48s\n", dialing_prefix_3, P_MDIALPRE3);
++  mc_wprintf(w, "%s %.48s\n", dialing_suffix_3, P_MDIALSUF3);
++  mc_wprintf(w, "%s %.48s\n", connect_string, P_MCONNECT);
++  mc_wprintf(w, "%s %-20.20s  %.20s\n", no_connect_strings, P_MNOCON1, P_MNOCON2);
+   wlocate(w, mbslen (no_connect_strings) + 1, 11);
+-  wprintf(w, "%-20.20s  %.20s\n", P_MNOCON3, P_MNOCON4);
+-  wprintf(w, "%s %.48s\n", hangup_string, P_MHANGUP);
+-  wprintf(w, "%s %.48s\n", dial_cancel_string, P_MDIALCAN);
+-  wprintf(w, "\n");
+-  wprintf(w, "%s %.3s\n", dial_time, P_MDIALTIME);
+-  wprintf(w, "%s %.3s\n", delay_before_redial, P_MRDELAY);
+-  wprintf(w, "%s %.3s\n", number_of_tries, P_MRETRIES);
+-  wprintf(w, "%s %.3s\n", dtr_drop_time, P_MDROPDTR);
++  mc_wprintf(w, "%-20.20s  %.20s\n", P_MNOCON3, P_MNOCON4);
++  mc_wprintf(w, "%s %.48s\n", hangup_string, P_MHANGUP);
++  mc_wprintf(w, "%s %.48s\n", dial_cancel_string, P_MDIALCAN);
++  mc_wprintf(w, "\n");
++  mc_wprintf(w, "%s %.3s\n", dial_time, P_MDIALTIME);
++  mc_wprintf(w, "%s %.3s\n", delay_before_redial, P_MRDELAY);
++  mc_wprintf(w, "%s %.3s\n", number_of_tries, P_MRETRIES);
++  mc_wprintf(w, "%s %.3s\n", dtr_drop_time, P_MDROPDTR);
+   wlocate(w, 34, 15);
+-  wprintf(w, "%s %s\n", auto_bps_detect, _(P_MAUTOBAUD));
++  mc_wprintf(w, "%s %s\n", auto_bps_detect, _(P_MAUTOBAUD));
+   wlocate(w, 34, 16);
+-  wprintf(w, "%s %s\n", modem_has_dcd_line, _(P_HASDCD));
++  mc_wprintf(w, "%s %s\n", modem_has_dcd_line, _(P_HASDCD));
+   wlocate(w, 34, 17);
+-  wprintf(w, "%s %s\n", shown_speed, sspd(P_SHOWSPD));
++  mc_wprintf(w, "%s %s\n", shown_speed, sspd(P_SHOWSPD));
+   wlocate(w, 34, 18); /* Option for multi-node untag */
+-  wprintf(w, "%s %s\n", multi_node, _(P_MULTILINE));	/* er 18-Apr-99 */
++  mc_wprintf(w, "%s %s\n", multi_node, _(P_MULTILINE));	/* er 18-Apr-99 */
+ 
+   wlocate(w, 1, 20);
+-  wprintf(w, "%s ", question);
++  mc_wprintf(w, "%s ", question);
+   x = w->curx; y = w->cury;
+-  wprintf(w, _("      (Return or Esc to exit)"));
++  mc_wprintf(w, _("      (Return or Esc to exit)"));
+   wredraw(w, 1);
+ 
+   while (1) {
+@@ -826,36 +826,36 @@ static void doscrkeyb(void)
+ 
+   wtitle(w, TMID, _("Screen and keyboard"));
+ 
+-  wprintf(w, "\n%s %s\n", command_key, P_ESCAPE);
+-  wprintf(w, "%s %s\n", backspace_key, P_BACKSPACE);
+-  wprintf(w, "%s %s\n", status_line, _(P_STATLINE));
+-  wprintf(w, "%s %s\n", alarm_sound, _(P_SOUND));
++  mc_wprintf(w, "\n%s %s\n", command_key, P_ESCAPE);
++  mc_wprintf(w, "%s %s\n", backspace_key, P_BACKSPACE);
++  mc_wprintf(w, "%s %s\n", status_line, _(P_STATLINE));
++  mc_wprintf(w, "%s %s\n", alarm_sound, _(P_SOUND));
+   /* fmg - colors support */
+-  wprintf(w, "%s %s\n", foreground_color_menu, _(J_col[mfcolor]));
+-  wprintf(w, "%s %s\n", background_color_menu, _(J_col[mbcolor]));
+-  wprintf(w, "%s %s\n", foreground_color_term, _(J_col[tfcolor]));
+-  wprintf(w, "%s %s\n", background_color_term, _(J_col[tbcolor]));
+-  wprintf(w, "%s %s\n", foreground_color_stat, _(J_col[sfcolor]));
+-  wprintf(w, "%s %s\n", background_color_stat, _(J_col[sbcolor]));
++  mc_wprintf(w, "%s %s\n", foreground_color_menu, _(J_col[mfcolor]));
++  mc_wprintf(w, "%s %s\n", background_color_menu, _(J_col[mbcolor]));
++  mc_wprintf(w, "%s %s\n", foreground_color_term, _(J_col[tfcolor]));
++  mc_wprintf(w, "%s %s\n", background_color_term, _(J_col[tbcolor]));
++  mc_wprintf(w, "%s %s\n", foreground_color_stat, _(J_col[sfcolor]));
++  mc_wprintf(w, "%s %s\n", background_color_stat, _(J_col[sbcolor]));
+ 
+   /* MARK updated 02/17/95 - Configurable history buffer size */
+-  wprintf(w, "%s %s\n", history_buffer_size, P_HISTSIZE);
++  mc_wprintf(w, "%s %s\n", history_buffer_size, P_HISTSIZE);
+ 
+   /* fmg - macros support */
+-  wprintf(w, "%s %s\n", macros_file, P_MACROS);
+-  wprintf(w, _(" M - Edit Macros\n"));
+-  wprintf(w, "%s %s\n", macros_enabled, _(P_MACENAB));
+-  wprintf(w, "%s %s\n", character_conversion, P_CONVF);
++  mc_wprintf(w, "%s %s\n", macros_file, P_MACROS);
++  mc_wprintf(w, _(" M - Edit Macros\n"));
++  mc_wprintf(w, "%s %s\n", macros_enabled, _(P_MACENAB));
++  mc_wprintf(w, "%s %s\n", character_conversion, P_CONVF);
+ 
+-  wprintf(w, "%s %s\n", add_linefeed, P_ADDLINEFEED);
+-  wprintf(w, "%s %s\n", local_echo, P_LOCALECHO);
++  mc_wprintf(w, "%s %s\n", add_linefeed, P_ADDLINEFEED);
++  mc_wprintf(w, "%s %s\n", local_echo, P_LOCALECHO);
+ 
+   wredraw(w, 1);
+ 
+   while (1) {
+     if (clr) {
+       wlocate(w, 2, maxy - miny);
+-      wprintf(w, "%s ", question);
++      mc_wprintf(w, "%s ", question);
+       wclreol(w);
+       clr = 0;
+     } else
+@@ -961,7 +961,7 @@ static void doscrkeyb(void)
+         else
+           psets(P_BACKSPACE, "DEL");
+         wlocate(w, mbslen (backspace_key) + 1, 2);
+-        wprintf(w, "%s ", P_BACKSPACE);
++        mc_wprintf(w, "%s ", P_BACKSPACE);
+         keyboard(KSETBS, P_BACKSPACE[0] == 'B' ? 8 : 127);
+         break;
+       case 'C':
+@@ -975,12 +975,12 @@ static void doscrkeyb(void)
+             tempst = 0;
+         }
+         wlocate(w, mbslen (status_line) + 1, 3);
+-        wprintf(w, "%s ", _(P_STATLINE));
++        mc_wprintf(w, "%s ", _(P_STATLINE));
+         break;
+       case 'D':
+         psets(P_SOUND, yesno(P_SOUND[0] == 'N'));
+         wlocate(w, mbslen (alarm_sound) + 1, 4);
+-        wprintf(w, "%s", _(P_SOUND));
++        mc_wprintf(w, "%s", _(P_SOUND));
+         break;
+       case 'E': /* fmg - letters cycle colors */
+         if (mfcolor == WHITE)
+@@ -989,7 +989,7 @@ static void doscrkeyb(void)
+           mfcolor++;
+         psets(P_MFG, J_col[mfcolor]);
+         wlocate(w, mbslen (foreground_color_menu) + 1, 5);
+-        wprintf(w, "%s   ", _(J_col[mfcolor]));
++        mc_wprintf(w, "%s   ", _(J_col[mfcolor]));
+         break;
+       case 'F': /* fmg - letters cycle colors */
+         if (mbcolor == WHITE)
+@@ -998,7 +998,7 @@ static void doscrkeyb(void)
+           mbcolor++;
+         psets(P_MBG, J_col[mbcolor]);
+         wlocate(w, mbslen (background_color_menu) + 1, 6);
+-        wprintf(w, "%s   ", _(J_col[mbcolor]));
++        mc_wprintf(w, "%s   ", _(J_col[mbcolor]));
+         break;
+       case 'G': /* fmg - letters cycle colors */
+         if (tfcolor == WHITE)
+@@ -1007,7 +1007,7 @@ static void doscrkeyb(void)
+           tfcolor++;
+         psets(P_TFG, J_col[tfcolor]);
+         wlocate(w, mbslen (foreground_color_term) + 1, 7);
+-        wprintf(w, "%s   ", _(J_col[tfcolor]));
++        mc_wprintf(w, "%s   ", _(J_col[tfcolor]));
+         if (us)
+           vt_pinit(us, tfcolor, tbcolor);
+         break;
+@@ -1018,7 +1018,7 @@ static void doscrkeyb(void)
+           tbcolor++;
+         psets(P_TBG, J_col[tbcolor]);
+         wlocate(w, mbslen (background_color_term) + 1, 8);
+-        wprintf(w, "%s   ", _(J_col[tbcolor]));
++        mc_wprintf(w, "%s   ", _(J_col[tbcolor]));
+         if (us)
+           vt_pinit(us, tfcolor, tbcolor);
+         break;
+@@ -1039,7 +1039,7 @@ static void doscrkeyb(void)
+         }
+         psets(P_SFG, J_col[sfcolor]);
+         wlocate(w, mbslen (foreground_color_stat) + 1, 9);
+-        wprintf(w, "%s   ", _(J_col[sfcolor]));
++        mc_wprintf(w, "%s   ", _(J_col[sfcolor]));
+         break;
+       case 'J': /* fmg - letters cycle colors & redraw stat line */
+         if (sbcolor == WHITE)
+@@ -1058,7 +1058,7 @@ static void doscrkeyb(void)
+         }
+         psets(P_SBG, J_col[sbcolor]);
+         wlocate(w, mbslen (background_color_stat) + 1, 10);
+-        wprintf(w, "%s   ", _(J_col[sbcolor]));
++        mc_wprintf(w, "%s   ", _(J_col[sbcolor]));
+         break;
+       case 'K': /* MARK updated 02/17/95 - Config history size */
+         pgets(w, mbslen (history_buffer_size) + 1, 11,
+@@ -1074,7 +1074,7 @@ static void doscrkeyb(void)
+           strcpy(P_HISTSIZE,"5000");
+ 
+         wlocate(w, mbslen (history_buffer_size) + 1, 11);
+-        wprintf(w, "%s     ", P_HISTSIZE);
++        mc_wprintf(w, "%s     ", P_HISTSIZE);
+         break;
+       case 'L': /* fmg - get local macros storage file */
+         pgets(w, mbslen (macros_file) + 1, 12, P_MACROS, 64, 64);
+@@ -1106,22 +1106,22 @@ static void doscrkeyb(void)
+       case 'N':
+         psets(P_MACENAB, yesno(P_MACENAB[0] == 'N'));
+         wlocate(w, mbslen (macros_enabled) + 1, 14);
+-        wprintf(w, "%s", _(P_MACENAB));
++        mc_wprintf(w, "%s", _(P_MACENAB));
+         break;
+       case 'O': /* Character conversions - jl / 04.09.97 */
+         doconv();
+         wlocate(w, mbslen (character_conversion) + 1, 15);
+-        wprintf(w, "%-16.16s", _(P_CONVF));
++        mc_wprintf(w, "%-16.16s", _(P_CONVF));
+         break;
+       case 'P':
+         psets(P_ADDLINEFEED, yesno(P_ADDLINEFEED[0] == 'N'));
+         wlocate(w, strlen (add_linefeed) + 1, 15);
+-        wprintf(w, "%s", _(P_ADDLINEFEED));
++        mc_wprintf(w, "%s", _(P_ADDLINEFEED));
+         break;
+       case 'Q':
+         psets(P_LOCALECHO, yesno(P_LOCALECHO[0] == 'N'));
+         wlocate(w, strlen (local_echo) + 1, 16);
+-        wprintf(w, "%s", _(P_LOCALECHO));
++        mc_wprintf(w, "%s", _(P_LOCALECHO));
+         break;
+      }
+   }
+@@ -1148,12 +1148,12 @@ int dotermmenu(void)
+ 
+   w = wopen(15, 7, 64, 15, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
+   wtitle(w, TMID, _("Terminal settings"));
+-  wprintf(w, "\n");
+-  wprintf(w, "%s %s\n", terminal_emulation, terminal == VT100 ? "VT102" : "ANSI");
+-  wprintf(w, "%s %s\n", backspace_key_sends, P_BACKSPACE);
+-  wprintf(w, "%s %s\n", status_line, _(P_STATLINE));
+-  wprintf(w, "%s %d\n", msg_nl_delay, vt_nl_delay);
+-  wprintf(w, "%s %s\n", msg_answerback, P_ANSWERBACK);
++  mc_wprintf(w, "\n");
++  mc_wprintf(w, "%s %s\n", terminal_emulation, terminal == VT100 ? "VT102" : "ANSI");
++  mc_wprintf(w, "%s %s\n", backspace_key_sends, P_BACKSPACE);
++  mc_wprintf(w, "%s %s\n", status_line, _(P_STATLINE));
++  mc_wprintf(w, "%s %d\n", msg_nl_delay, vt_nl_delay);
++  mc_wprintf(w, "%s %s\n", msg_answerback, P_ANSWERBACK);
+   wlocate(w, 4, 7);
+   wputs(w, question);
+ 
+@@ -1180,9 +1180,9 @@ int dotermmenu(void)
+           psets(P_BACKSPACE, "DEL");
+         }
+         wlocate(w, mbslen (terminal_emulation) + 1, 1);
+-        wprintf(w, "%s ", new_term == VT100 ? "VT102" : "ANSI");
++        mc_wprintf(w, "%s ", new_term == VT100 ? "VT102" : "ANSI");
+         wlocate(w, mbslen (backspace_key_sends) + 1, 2);
+-        wprintf(w, "%s ", P_BACKSPACE);
++        mc_wprintf(w, "%s ", P_BACKSPACE);
+         keyboard(KSETBS, P_BACKSPACE[0] == 'B' ? 8 : 127);
+         break;
+       case 'B':
+@@ -1191,7 +1191,7 @@ int dotermmenu(void)
+         else
+           psets(P_BACKSPACE, "DEL");
+         wlocate(w, mbslen (backspace_key_sends) + 1, 2);
+-        wprintf(w, "%s ", P_BACKSPACE);
++        mc_wprintf(w, "%s ", P_BACKSPACE);
+         keyboard(KSETBS, P_BACKSPACE[0] == 'B' ? 8 : 127);
+         break;
+       case 'C':
+@@ -1205,7 +1205,7 @@ int dotermmenu(void)
+             tempst = 0;
+         }
+         wlocate(w, mbslen (status_line) + 1, 3);
+-        wprintf(w, "%s ", _(P_STATLINE));
++        mc_wprintf(w, "%s ", _(P_STATLINE));
+         break;
+       case 'D':
+         sprintf(buf, "%d", vt_nl_delay);
+@@ -1213,7 +1213,7 @@ int dotermmenu(void)
+         wgets(w, buf, 4, 4);
+         vt_nl_delay = atoi(buf);
+         wlocate(w, mbslen(msg_nl_delay) +1, 4);
+-        wprintf(w, "%-3d", vt_nl_delay);
++        mc_wprintf(w, "%-3d", vt_nl_delay);
+         break;
+       case 'E':
+         pgets(w, strlen(msg_answerback) + 1, 5, P_ANSWERBACK, 50, 50);
+@@ -1423,7 +1423,7 @@ void get_bbp(char *ba, char *bi, char *pa, char *stopb
+ 
+   while (1) {
+     wlocate(w, 1, 1);
+-    wprintf(w, _("Current: %5s %s%s%s  "), ba, bi, pa, stopb);
++    mc_wprintf(w, _("Current: %5s %s%s%s  "), ba, bi, pa, stopb);
+     wlocate(w, x, y);
+     wflush();
+     c = wxgetch();
+@@ -1537,7 +1537,7 @@ int update_bbp_from_char(char c, char *ba, char *bi, c
+  */
+ static void out_mac(WIN *w, char *s, char n)
+ {
+-  wprintf(w, " %c : %.67s\n", n, s ? s : "[none]");
++  mc_wprintf(w, " %c : %.67s\n", n, s ? s : "[none]");
+ }
+ 
+ /*
+@@ -1553,7 +1553,7 @@ void domacros(void)
+   w = wopen(3, 6, 75, 24, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
+   wtitle(w, TMID, _("F1 to F10 Macros"));
+ 
+-  wprintf(w, "\n");
++  mc_wprintf(w, "\n");
+   out_mac(w,mmacs[Jm++].value, Jch++);
+   out_mac(w,mmacs[Jm++].value, Jch++);
+   out_mac(w,mmacs[Jm++].value, Jch++);
+@@ -1579,7 +1579,7 @@ void domacros(void)
+     wputs(w, _("  = 19200 8N1. (See the \"Comm Parameters\" menu for valid values of X.))"));
+     if (clr) {
+       wlocate(w, 1, 12);
+-      wprintf(w, "%s ", question);
++      mc_wprintf(w, "%s ", question);
+       wclreol(w);
+       clr = 0;
+     } else
+@@ -1682,34 +1682,34 @@ void doconv(void)
+   while (1) {
+     if (redraw) {
+       winclr(w);
+-      wprintf(w,
++      mc_wprintf(w,
+               _(" char    in out    char    in out    char    in out    char    in out\n"));
+       for (i = offs, j = i+h, k = j+h, l = k+h;
+            i < offs+h && i < 256;
+            i++, j++, k++, l++) {
+-        wprintf(w, "%3d (%c) %3d %3d   ",
++        mc_wprintf(w, "%3d (%c) %3d %3d   ",
+                 i, prch(i), (int) vt_inmap[i], (int) vt_outmap[i]);
+         if (j < 256)
+-          wprintf(w, "%3d (%c) %3d %3d   ",
++          mc_wprintf(w, "%3d (%c) %3d %3d   ",
+                   j, prch(j), (int) vt_inmap[j], (int) vt_outmap[j]);
+         else
+-          wprintf(w, "                  ");
++          mc_wprintf(w, "                  ");
+         if (k < 256)
+-          wprintf(w, "%3d (%c) %3d %3d   ",
++          mc_wprintf(w, "%3d (%c) %3d %3d   ",
+                   k, prch(k), (int) vt_inmap[k], (int) vt_outmap[k]);
+         else
+-          wprintf(w, "                  ");
++          mc_wprintf(w, "                  ");
+         if (l < 256)
+-          wprintf(w, "%3d (%c) %3d %3d\n",
++          mc_wprintf(w, "%3d (%c) %3d %3d\n",
+                   l, prch(l), (int) vt_inmap[l], (int) vt_outmap[l]);
+         else
+-          wprintf(w, "               \n");
++          mc_wprintf(w, "               \n");
+       }
+-      wprintf(w, _("\n A - load table\tB - save table"));
++      mc_wprintf(w, _("\n A - load table\tB - save table"));
+       if (P_CONVF[0])
+-        wprintf(w, _("\tfile:%s"),P_CONVF);
+-      wprintf(w, _("\n C - edit char\tD - next screen\tE - prev screen\n"));
+-      wprintf(w, _(" F - convert capture: %s\n"), _(P_CONVCAP));
++        mc_wprintf(w, _("\tfile:%s"),P_CONVF);
++      mc_wprintf(w, _("\n C - edit char\tD - next screen\tE - prev screen\n"));
++      mc_wprintf(w, _(" F - convert capture: %s\n"), _(P_CONVCAP));
+ 
+       wredraw(w, 1);
+       redraw = 0;
+@@ -1725,7 +1725,7 @@ void doconv(void)
+       case 'A':
+         strcpy(buf,P_CONVF);
+         prompt=_("Load file: %s");
+-        wprintf(w, prompt, buf);
++        mc_wprintf(w, prompt, buf);
+         pgets(w, mbslen(prompt) - 1, ymax - 1, P_CONVF, 64, 64);
+         if (loadconv(P_CONVF) == 0) {
+           if (strcmp(P_CONVF,buf))
+@@ -1737,7 +1737,7 @@ void doconv(void)
+       case 'B':
+         strcpy(buf,P_CONVF);
+         prompt=_("Save as file: %s");
+-        wprintf(w, prompt, buf);
++        mc_wprintf(w, prompt, buf);
+         pgets(w, mbslen(prompt) - 1, ymax - 1, P_CONVF, 64, 64);
+         if (saveconv(P_CONVF) == 0) {
+           if (strcmp(P_CONVF,buf))
+@@ -1748,7 +1748,7 @@ void doconv(void)
+         break;
+       case 'C':
+         prompt = _("Character to be edited: ");
+-        wprintf(w, prompt);
++        mc_wprintf(w, prompt);
+         buf[0] = 0;
+         i = -1;
+         wlocate(w, mbslen(prompt), ymax - 1);
+@@ -1762,7 +1762,7 @@ void doconv(void)
+         sprintf(buf, "%u",(unsigned int) vt_inmap[i]);
+         wlocate(w, 30, ymax - 1);
+         prompt=_("Change input to: %s");
+-        wprintf(w, prompt,buf);
++        mc_wprintf(w, prompt,buf);
+         wlocate(w, mbslen(prompt) + 28, ymax - 1);
+         wgets(w, buf, 4, 4);
+         sscanf(buf, "%d", &j);
+@@ -1774,7 +1774,7 @@ void doconv(void)
+         sprintf(buf, "%u",(unsigned int) vt_outmap[i]);
+         wlocate(w, 54, ymax - 1);
+         prompt = _("Change output to: %s");
+-        wprintf(w, prompt, buf);
++        mc_wprintf(w, prompt, buf);
+         wlocate(w, mbslen(prompt) + 52, ymax - 1);
+         wgets(w, buf, 4, 4);
+         sscanf(buf, "%d", &j);

@@ -1,0 +1,76 @@
+$OpenBSD: patch-src_minicom_c,v 1.1 2011/04/22 11:21:46 stsp Exp $
+--- src/minicom.c.orig	Thu Apr 21 23:47:54 2011
++++ src/minicom.c	Thu Apr 21 23:47:59 2011
+@@ -261,7 +261,7 @@ void searchhist(WIN *w_hist, wchar_t *str)
+   w_new->wrap = 0;
+ 
+   hline = _("SEARCH FOR (ESC=Exit)");
+-  wprintf(w_new, "%s(%d):",hline,MAX_SEARCH);
++  mc_wprintf(w_new, "%s(%d):",hline,MAX_SEARCH);
+   wredraw(w_new, 1);
+   wflush();
+ 
+@@ -461,7 +461,7 @@ static void scrollback(void)
+   if (b_st->xs < 127)
+     hline0[b_st->xs] = 0;
+   hline = hline0;
+-  wprintf(b_st, hline);
++  mc_wprintf(b_st, hline);
+   wredraw(b_st, 1);
+   wflush();
+ 
+@@ -514,7 +514,7 @@ static void scrollback(void)
+         searchhist(b_us, look_for);
+         /* must redraw status line... */
+         wlocate(b_st, 0, 0); /* move back to column 0! */
+-        wprintf(b_st, hline); /* and show the above-defined hline */
++        mc_wprintf(b_st, hline); /* and show the above-defined hline */
+         wredraw(b_st, 1); /* again... */
+         /* highlight any matches */
+         if (wcslen(look_for) > 1) {
+@@ -723,7 +723,7 @@ static void scrollback(void)
+           hline = hline0;
+         }
+         wlocate(b_st, 0, 0);
+-        wprintf(b_st, hline);
++        mc_wprintf(b_st, hline);
+         wredraw(b_st, 1);
+         if (citemode)
+           wlocate(b_us, 0, cite_y);
+@@ -743,7 +743,7 @@ static void scrollback(void)
+           break;
+         }
+         wlocate(b_st, 0, 0);
+-        wprintf(b_st, hline);
++        mc_wprintf(b_st, hline);
+         wredraw(b_st, 1);
+         wdrawelm_inverse(b_us, cite_y, getline(b_us, cite_ystart));
+         wlocate(b_us, 0, cite_y);
+@@ -762,7 +762,7 @@ static void scrollback(void)
+         }
+         drawcite_whole(b_us, y, cite_ystart, cite_yend);
+         wlocate(b_st, 0, 0);
+-        wprintf(b_st, hline);
++        mc_wprintf(b_st, hline);
+         wredraw(b_st, 1);
+         if (citemode)
+           wlocate(b_us, 0, cite_y);
+@@ -1338,13 +1338,13 @@ int main(int argc, char **argv)
+   if (doinit)
+     modeminit();
+ 
+-  wprintf(us, "\n%s %s\r\n", _("Welcome to minicom"), VERSION);
+-  wprintf(us, "\n%s: %s\r\n", _("OPTIONS"), option_string);
++  mc_wprintf(us, "\n%s %s\r\n", _("Welcome to minicom"), VERSION);
++  mc_wprintf(us, "\n%s: %s\r\n", _("OPTIONS"), option_string);
+ #if defined (__DATE__) && defined (__TIME__)
+-  wprintf(us, "%s %s, %s.\r\n",_("Compiled on"), __DATE__,__TIME__);
++  mc_wprintf(us, "%s %s, %s.\r\n",_("Compiled on"), __DATE__,__TIME__);
+ #endif
+-  wprintf(us, "Port %s\n", P_PORT);
+-  wprintf(us, _("\nPress %sZ for help on special keys%c\n\n"),esc_key(),'\r');
++  mc_wprintf(us, "Port %s\n", P_PORT);
++  mc_wprintf(us, _("\nPress %sZ for help on special keys%c\n\n"),esc_key(),'\r');
+ 
+   /* Now that all initialization is done, drop our priviliges. */
+   drop_privs();

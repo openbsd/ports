@@ -1,0 +1,237 @@
+$OpenBSD: patch-src_dial_c,v 1.1 2011/04/22 11:21:46 stsp Exp $
+--- src/dial.c.orig	Thu Apr 21 23:44:42 2011
++++ src/dial.c	Thu Apr 21 23:44:50 2011
+@@ -353,14 +353,14 @@ static int dialfailed(char *s, int rtime)
+   int ret = 0;
+ 
+   wlocate(dialwin, 1, 5);
+-  wprintf(dialwin, _("    No connection: %s.      \n"), s);
++  mc_wprintf(dialwin, _("    No connection: %s.      \n"), s);
+   if (rtime < 0) {
+-    wprintf(dialwin, _("   Press any key to continue..    "));
++    mc_wprintf(dialwin, _("   Press any key to continue..    "));
+     if (check_io(-1, 0, 10000, NULL, NULL) & 2) 
+       keyboard(KGETKEY, 0);
+     return 0;
+   }
+-  wprintf(dialwin, _("     Retry in %2d seconds             "), rtime);
++  mc_wprintf(dialwin, _("     Retry in %2d seconds             "), rtime);
+   
+   for (f = rtime - 1; f >= 0; f--) {
+     x = check_io(-1, 0, 1000, NULL, NULL);
+@@ -372,7 +372,7 @@ static int dialfailed(char *s, int rtime)
+       break;
+     }
+     wlocate(dialwin, 0, 6);
+-    wprintf(dialwin, _("     Retry in %2d seconds             "), f);
++    mc_wprintf(dialwin, _("     Retry in %2d seconds             "), f);
+   }
+ #ifdef HAVE_USLEEP
+   /* MARK updated 02/17/94 - Min dial delay set to 0.35 sec instead of 1 sec */
+@@ -383,8 +383,8 @@ static int dialfailed(char *s, int rtime)
+     sleep(1);
+ #endif
+   wlocate(dialwin, 1, 5);
+-  wprintf(dialwin, "                                       \n");
+-  wprintf(dialwin, "                                             ");
++  mc_wprintf(dialwin, "                                       \n");
++  mc_wprintf(dialwin, "                                             ");
+   return ret;
+ }
+ 
+@@ -417,12 +417,12 @@ long dial(struct dialent *d, struct dialent **d2)
+   wcursor(dialwin, CNONE);
+ 
+   wputs(dialwin, "\n");
+-  wprintf(dialwin, " %s : %s\n", _("Dialing"), d->name);
+-  wprintf(dialwin, _("      At : %s"), d->number);
+-  wprintf(dialwin, "\n"); /* help translators */
++  mc_wprintf(dialwin, " %s : %s\n", _("Dialing"), d->name);
++  mc_wprintf(dialwin, _("      At : %s"), d->number);
++  mc_wprintf(dialwin, "\n"); /* help translators */
+   if (d->lastdate[0] && d->lasttime[0])		/* jl 26.01.98 */
+-    wprintf(dialwin, _(" Last on : %s at %s"), d->lastdate, d->lasttime);
+-  wprintf(dialwin, "\n");
++    mc_wprintf(dialwin, _(" Last on : %s at %s"), d->lastdate, d->lasttime);
++  mc_wprintf(dialwin, "\n");
+   wredraw(dialwin, 1);
+ 
+   /* Tell keyboard routines we need them. */
+@@ -447,14 +447,14 @@ MainLoop:
+           d = dialents;
+       } while (!(d->flags & FL_TAG));
+       wlocate(dialwin, 0, 1);
+-      wprintf(dialwin, " %s : %s", _("Dialing"), d->name);
++      mc_wprintf(dialwin, " %s : %s", _("Dialing"), d->name);
+       wclreol(dialwin);
+-      wprintf(dialwin, "\n"); /* helps translators */
+-      wprintf(dialwin, _("      At : %s"), d->number);
++      mc_wprintf(dialwin, "\n"); /* helps translators */
++      mc_wprintf(dialwin, _("      At : %s"), d->number);
+       wclreol(dialwin);
+       if (d->lastdate[0] && d->lasttime[0]) {
+-	wprintf(dialwin, "\n"); /* don't merge with next printf, helps translators */
+-        wprintf(dialwin, _(" Last on : %s at %s"),
++	mc_wprintf(dialwin, "\n"); /* don't merge with next printf, helps translators */
++        mc_wprintf(dialwin, _(" Last on : %s at %s"),
+                 d->lastdate, d->lasttime);
+         wclreol(dialwin);
+       }
+@@ -469,9 +469,9 @@ MainLoop:
+ 
+     /* Show used time */
+     wlocate(dialwin, 0, 4);
+-    wprintf(dialwin, _("    Time : %-3d"), dialtime);
++    mc_wprintf(dialwin, _("    Time : %-3d"), dialtime);
+     if (maxretries > 1)
+-      wprintf(dialwin, _("     Attempt #%d"), retries);
++      mc_wprintf(dialwin, _("     Attempt #%d"), retries);
+     wputs(dialwin, _("\n\n\n Escape to cancel, space to retry."));
+ 
+     /* Start the dial */
+@@ -591,7 +591,7 @@ MainLoop:
+           keyboard(KSTOP, 0);
+           wclose(dialwin, 1);
+           /* Print out the connect strings. */
+-          wprintf(us, "\r\n%s\r\n", modbuf);
++          mc_wprintf(us, "\r\n%s\r\n", modbuf);
+           dialwin = NULL;
+ 
+           /* Un-tag this entry. */
+@@ -646,7 +646,7 @@ MainLoop:
+         if (dialtime < 0)
+           dialtime = 0;
+         wlocate(dialwin, 11, 4);
+-        wprintf(dialwin, "%-3d  ", dialtime);
++        mc_wprintf(dialwin, "%-3d  ", dialtime);
+         if (dialtime <= 0) {
+           mputs(P_MDIALCAN, 0);
+           reason = _("Timeout");
+@@ -1073,23 +1073,23 @@ static void dedit(struct dialent *d)
+        *question            = _("Change which setting?");
+   
+   w = wopen(5, 4, 75, 19, BDOUBLE, stdattr, mfcolor, mbcolor, 0, 0, 1);
+-  wprintf(w, "%s %s\n", name, d->name);
+-  wprintf(w, "%s %s\n", number, d->number);
+-  wprintf(w, "%s %d\n", dial_string, d->dialtype + 1);
+-  wprintf(w, "%s %s\n", local_echo, _(yesno(d->flags & FL_ECHO)));
+-  wprintf(w, "%s %s\n", script, d->script);
+-  wprintf(w, "%s %s\n", username, d->username);
+-  wprintf(w, "%s %s\n", password, d->password);
+-  wprintf(w, "%s %s\n", terminal_emulation, te[d->term - 1]);
+-  wprintf(w, "%s %s\n", backspace_key_sends,
++  mc_wprintf(w, "%s %s\n", name, d->name);
++  mc_wprintf(w, "%s %s\n", number, d->number);
++  mc_wprintf(w, "%s %d\n", dial_string, d->dialtype + 1);
++  mc_wprintf(w, "%s %s\n", local_echo, _(yesno(d->flags & FL_ECHO)));
++  mc_wprintf(w, "%s %s\n", script, d->script);
++  mc_wprintf(w, "%s %s\n", username, d->username);
++  mc_wprintf(w, "%s %s\n", password, d->password);
++  mc_wprintf(w, "%s %s\n", terminal_emulation, te[d->term - 1]);
++  mc_wprintf(w, "%s %s\n", backspace_key_sends,
+           d->flags & FL_DEL ? _("Delete") : _("Backspace"));
+-  wprintf(w, "%s %s\n", linewrap,
++  mc_wprintf(w, "%s %s\n", linewrap,
+           d->flags & FL_WRAP ? _("On") : _("Off"));
+-  wprintf(w, "%s %s %s%s%s\n", line_settings,
++  mc_wprintf(w, "%s %s %s%s%s\n", line_settings,
+           d->baud, d->bits, d->parity, d->stopb);
+-  wprintf(w, "%s %s\n", conversion_table, d->convfile);
+-  wprintf(w, _("      Last dialed         : %s %s\n"),d->lastdate,d->lasttime);
+-  wprintf(w, _("      Times on            : %d"),d->count);
++  mc_wprintf(w, "%s %s\n", conversion_table, d->convfile);
++  mc_wprintf(w, _("      Last dialed         : %s %s\n"),d->lastdate,d->lasttime);
++  mc_wprintf(w, _("      Times on            : %d"),d->count);
+   wlocate(w, 4, 15);
+   wputs(w, question);
+   wredraw(w, 1);
+@@ -1116,13 +1116,13 @@ static void dedit(struct dialent *d)
+       case 'C':
+         d->dialtype = (d->dialtype + 1) % 3;
+         wlocate(w, mbslen (dial_string) + 1, 2);
+-        wprintf(w, "%d", d->dialtype + 1);
++        mc_wprintf(w, "%d", d->dialtype + 1);
+         wflush();
+         break;
+       case 'D':
+         d->flags ^= FL_ECHO;
+         wlocate(w, mbslen (local_echo) + 1, 3);
+-        wprintf(w, "%s", _(yesno(d->flags & FL_ECHO)));
++        mc_wprintf(w, "%s", _(yesno(d->flags & FL_ECHO)));
+         wflush();
+         break;
+       case 'E':
+@@ -1171,7 +1171,7 @@ static void dedit(struct dialent *d)
+       case 'K':
+         get_bbp(d->baud, d->bits, d->parity, d->stopb, 1);
+         wlocate(w, mbslen (line_settings) + 1, 10);
+-        wprintf(w, "%s %s%s%s  ",
++        mc_wprintf(w, "%s %s%s%s  ",
+                 d->baud, d->bits, d->parity, d->stopb);
+         break;
+       case 'L':	/* jl 21.09.97 */
+@@ -1207,9 +1207,9 @@ static void horiz_draw(size_t k)
+ {
+   static const char spaces[] = "        ";
+ 
+-  wprintf(dsub, "%.*s", what_padding[k][0], spaces);
+-  wprintf(dsub, "%.*s", what_lens[k], _(what[k]));
+-  wprintf(dsub, "%.*s", what_padding[k][1], spaces);
++  mc_wprintf(dsub, "%.*s", what_padding[k][0], spaces);
++  mc_wprintf(dsub, "%.*s", what_lens[k], _(what[k]));
++  mc_wprintf(dsub, "%.*s", what_padding[k][1], spaces);
+ }
+ 
+ /*
+@@ -1256,7 +1256,7 @@ static void prdir(WIN *dialw, int top, int cur)
+     d = getno(f + top);
+     if (d == (struct dialent *)0)
+       break;
+-    wprintf(dialw, fmt, f+1+top, (d->flags & FL_TAG) ? '>' : ' ',
++    mc_wprintf(dialw, fmt, f+1+top, (d->flags & FL_TAG) ? '>' : ' ',
+             d->name, d->number, d->lastdate, d->lasttime, 
+             d->count, d->script);
+   }
+@@ -1508,7 +1508,7 @@ void dialdir(void)
+ 
+   prdir(w, top, top);
+   wlocate(w, position_dialing_directory, w->ys - 1);
+-  wprintf(w, "%*.*s", tagmvlen,tagmvlen, tag_exit);
++  mc_wprintf(w, "%*.*s", tagmvlen,tagmvlen, tag_exit);
+   dhili(position_dialing_directory, subm);
+   dirflush = 1;
+   wredraw(dsub, 1);
+@@ -1554,7 +1554,7 @@ again:
+         wlocate(w, 4, cur + 1 - top);
+         d->flags ^= FL_TAG;
+         wsetattr(w, XA_REVERSE | stdattr);
+-        wprintf(w, "%c", d->flags & FL_TAG ? '>' : ' ');
++        mc_wprintf(w, "%c", d->flags & FL_TAG ? '>' : ' ');
+         wsetattr(w, XA_NORMAL | stdattr);
+         cur += (cur < nrents - 1);
+         break;
+@@ -1713,7 +1713,7 @@ again:
+     dedit(d);
+     changed++;
+     wlocate(w, 0, cur + 1 - top);
+-    wprintf(w, fmt, cur+1, (d->flags & FL_TAG) ? 16 : ' ', d->name,
++    mc_wprintf(w, fmt, cur+1, (d->flags & FL_TAG) ? 16 : ' ', d->name,
+             d->number, d->lastdate, d->lasttime, d->count, d->script);
+   }
+ 
+@@ -1751,13 +1751,13 @@ again:
+   /* Move the entry up/down in directory. */
+   if (subm == 5) {
+     wlocate(w, position_dialing_directory, w->ys - 1);
+-    wprintf(w, "%*.*s", tagmvlen,tagmvlen, move_exit);
++    mc_wprintf(w, "%*.*s", tagmvlen,tagmvlen, move_exit);
+     cur = move_entry (w, d, cur, &top);
+     if (cur != ocur)
+       changed++;
+     ocur = cur;
+     wlocate(w, position_dialing_directory, w->ys - 1);
+-    wprintf(w, "%*.*s", tagmvlen,tagmvlen, tag_exit);
++    mc_wprintf(w, "%*.*s", tagmvlen,tagmvlen, tag_exit);
+   }
+ 
+   /* Dial a number manually. */

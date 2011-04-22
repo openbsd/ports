@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_file_c,v 1.1 2011/04/22 11:21:46 stsp Exp $
+--- src/file.c.orig	Thu Apr 21 23:45:04 2011
++++ src/file.c	Thu Apr 21 23:45:09 2011
+@@ -89,11 +89,11 @@ static void horiz_draw(size_t k, char start_attr, char
+ {
+   static const char spaces[] = "        ";
+ 
+-  wprintf(dsub, "%.*s", what_padding[k][0], spaces);
++  mc_wprintf(dsub, "%.*s", what_padding[k][0], spaces);
+   wsetattr(dsub, start_attr);
+-  wprintf(dsub, "%.*s", what_lens[k], _(what[k]));
++  mc_wprintf(dsub, "%.*s", what_lens[k], _(what[k]));
+   wsetattr(dsub, end_attr);
+-  wprintf(dsub, "%.*s", what_padding[k][1], spaces);
++  mc_wprintf(dsub, "%.*s", what_padding[k][1], spaces);
+ }
+ 
+ /*
+@@ -163,9 +163,9 @@ static void prdir(WIN *dirw, int top, int cur,
+       wsetattr(dirw, XA_REVERSE | stdattr);
+     if (S_ISDIR(d->mode)) {
+       snprintf(t_str, sizeof(t_str), "[%s]", d->fname);
+-      wprintf(dirw, f_str, t_str);
++      mc_wprintf(dirw, f_str, t_str);
+     } else
+-      wprintf(dirw, f_str, d->fname);
++      mc_wprintf(dirw, f_str, d->fname);
+     wsetattr(dirw, XA_NORMAL | stdattr);
+     wputc(dirw, '\n');
+   }
+@@ -191,9 +191,9 @@ static void prone(WIN *dirw, GETSDIR_ENTRY *dirdat, in
+     wsetattr(dirw, XA_REVERSE | stdattr);
+   if (S_ISDIR(dirdat->mode)) {
+     snprintf(t_str, sizeof(t_str),  "[%s]", dirdat->fname);
+-    wprintf(dirw, f_str, t_str);
++    mc_wprintf(dirw, f_str, t_str);
+   } else
+-    wprintf(dirw, f_str, dirdat->fname);
++    mc_wprintf(dirw, f_str, dirdat->fname);
+   wsetattr(dirw, XA_NORMAL | stdattr);
+   dirflush = 1;
+   wflush();
