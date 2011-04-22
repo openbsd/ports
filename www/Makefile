@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.508 2011/04/12 19:49:59 landry Exp $
+# $OpenBSD: Makefile,v 1.509 2011/04/22 07:24:46 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -132,7 +132,6 @@
      SUBDIR += nostromo
      SUBDIR += ntlmaps
      SUBDIR += opera
-     SUBDIR += opera-flashplugin
      SUBDIR += p5-Alien-Tidyp
      SUBDIR += p5-Apache-ASP
      SUBDIR += p5-Apache-DB
