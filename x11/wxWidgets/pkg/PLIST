@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/11/02 13:10:52 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/04/22 12:47:41 stsp Exp $
 @conflict wxWidgets-headers-*
 @conflict wxWidgets-gtkheaders-*
 @conflict wxWidgets-x11univ-*
@@ -643,11 +643,11 @@ include/wx/zstream.h
 @lib lib/libwx_gtk2_xrc.so.${LIBwx_gtk2_xrc_VERSION}
 lib/wx/
 lib/wx/config/
-lib/wx/config/gtk2-unicode-release-2.8
+@comment lib/wx/config/gtk2-unicode-release-2.8
 lib/wx/include/
-lib/wx/include/gtk2-unicode-release-2.8/
-lib/wx/include/gtk2-unicode-release-2.8/wx/
-lib/wx/include/gtk2-unicode-release-2.8/wx/setup.h
+@comment lib/wx/include/gtk2-unicode-release-2.8/
+@comment lib/wx/include/gtk2-unicode-release-2.8/wx/
+@comment lib/wx/include/gtk2-unicode-release-2.8/wx/setup.h
 share/aclocal/wxwin.m4
 share/bakefile/
 share/bakefile/presets/
