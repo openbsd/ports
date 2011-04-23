@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/26 07:07:56 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2011/04/23 09:08:27 kili Exp $
 
 COMMENT=	free audio editor
 
 V=		1.3.9
 DISTNAME=	audacity-minsrc-${V}
 PKGNAME=	audacity-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	audio
 
 EXTRACT_SUFX=	.tar.bz2
@@ -62,7 +62,7 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} \
 			${WRKSRC}/lib-src/libnyquist
 
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-unicode \
+			--disable-unicode \
 			--enable-ladspa \
 			--enable-nyquist \
 			--with-lib-preferences=system \
