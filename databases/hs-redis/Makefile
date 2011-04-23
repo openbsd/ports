@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/04/23 14:32:50 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/23 20:17:33 kili Exp $
 
 COMMENT =		Haskell driver for Redis
 
@@ -22,8 +22,5 @@ RUN_DEPENDS +=		devel/hs-MonadCatchIO-mtl \
 			devel/hs-mtl \
 			devel/hs-network
 BUILD_DEPENDS +=	${RUN_DEPENDS}
-
-# avoid possible conflict with the databases/redis distfile
-DIST_SUBDIR =		hs-redis
 
 .include <bsd.port.mk>
