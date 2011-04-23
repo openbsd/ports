@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/04/11 14:31:01 kili Exp $
+# $OpenBSD: Makefile,v 1.29 2011/04/23 12:25:51 kili Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
@@ -36,9 +36,7 @@ WANTLIB-lib =
 WANTLIB-main =		${WANTLIB} \
 			c gmp m pthread util
 
-BUILD_DEPENDS +=	devel/alex \
-			devel/happy \
-			devel/hs-ghc-paths \
+BUILD_DEPENDS +=	devel/hs-ghc-paths \
 			lang/ghc,-doc \
 			textproc/docbook \
 			textproc/docbook-xsl \
@@ -58,6 +56,12 @@ do-build:
 	@echo "*** only used by lang/ghc to get a copy of the haddock sources."
 	@false
 .endif
+
+post-extract:
+	cd ${WRKSRC}/src && \
+	find . -name \*.[xy] -print | \
+	sed 's@\(.*\)\.[xy]@mv & &.source \&\& mv ../dist/build/haddock/haddock-tmp/\1.hs \1.hs@' | \
+	sh
 
 post-build:
 	@cd ${WRKBUILD}/doc && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} html
