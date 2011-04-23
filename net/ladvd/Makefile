@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/19 22:31:34 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/23 17:40:34 weerd Exp $
 
 COMMENT =		link advertisement (LLDP/CDP etc) daemon
 
 DISTNAME =		ladvd-0.9.2
+REVISION =		0
 CATEGORIES =		net
 
 HOMEPAGE =		http://blinkenlights.nl/software/ladvd/

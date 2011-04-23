@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/09/27 19:26:06 weerd Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/23 17:40:34 weerd Exp $
 @newgroup _ladvd:606
 @newuser _ladvd:606:606:daemon:Link Advertisement Daemon:/var/empty:/sbin/nologin
 @man man/man8/ladvd.8
@@ -11,3 +11,4 @@ share/doc/ladvd/HACKING
 share/doc/ladvd/LICENSE
 share/doc/ladvd/README
 share/doc/ladvd/TODO
+@rcscript ${RCDIR}/ladvd

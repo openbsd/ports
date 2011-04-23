@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: ladvd.rc,v 1.1 2011/04/23 17:40:34 weerd Exp $
+
+daemon="${TRUEPREFIX}/sbin/ladvd"
+daemon_flags="-a -z"
+
+. /etc/rc.d/rc.subr
+
+pexp="ladvd: master"
+rc_reload=NO
+
+rc_cmd $1
