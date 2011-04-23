@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1078 2011/04/16 12:21:44 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1079 2011/04/23 08:25:50 kili Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1913,7 +1913,7 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 			fi; \
 			if $$early_exit; then \
 				list=`eval $$toset exec ${MAKE} show=PKGNAMES`; \
-				if ${PKG_INFO} ${PKGDB_LOCK} -q -r $$pkg $$list; \
+				if ${PKG_INFO} ${PKGDB_LOCK} -q -r "$$pkg" $$list; \
 				then \
 						break; \
 				else \
