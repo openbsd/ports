@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/04/23 12:25:51 kili Exp $
+# $OpenBSD: Makefile,v 1.30 2011/04/23 13:00:43 kili Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
@@ -57,6 +57,9 @@ do-build:
 	@false
 .endif
 
+# Move the alex- and happy-generated files into the src dir and
+# rename the corresponding sources so cabal won't try to re-run
+# alex or happy.
 post-extract:
 	cd ${WRKSRC}/src && \
 	find . -name \*.[xy] -print | \
