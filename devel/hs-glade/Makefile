@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/04/11 14:38:19 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/23 14:32:51 kili Exp $
 
 COMMENT =		Haskell bindings to libglade2
 
 DISTNAME =		glade-0.12.0
+REVISION =		0
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
@@ -25,6 +26,7 @@ LIB_DEPENDS =           devel/libglade2
 RUN_DEPENDS =		hs-cairo->=0.12,<0.13:graphics/hs-cairo \
 			hs-glib->=0.12,<0.13:devel/hs-glib \
 			hs-gtk->=0.12,<0.13:x11/hs-gtk \
+			devel/hs-mtl \
 			hs-pango->=0.12,<0.13:devel/hs-pango \
 
 # This is much simpler than fiddling with MODGHC_SETUP_CONF_ARGS:

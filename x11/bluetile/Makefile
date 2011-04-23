@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/11 14:58:40 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/23 14:32:51 kili Exp $
 
 COMMENT =		modern tiling window manager
 
 DISTNAME =		bluetile-0.5.3
-REVISION =		2
+REVISION =		3
 CATEGORIES =		x11
 HOMEPAGE =		http://www.bluetile.org/
 
@@ -28,6 +28,7 @@ MODGHC_BUILD =		cabal hackage nort
 
 BUILD_DEPENDS =		devel/hs-ConfigFile \
 			devel/hs-glade \
+			devel/hs-mtl \
 			devel/hs-regex-compat \
 			x11/hs-X11>=1.4 \
 			x11/hs-X11-xft \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/11 14:55:41 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/23 14:32:51 kili Exp $
 
 COMMENT =		Snap Haskell Web Framework
 
 DISTNAME =		snap-core-0.2.16
-REVISION =		3
+REVISION =		4
 CATEGORIES =		www
 HOMEPAGE =		http://snapframework.com/
 
@@ -29,6 +29,7 @@ RUN_DEPENDS +=		archivers/hs-zlib \
 			devel/hs-iteratee \
 			devel/hs-MonadCatchIO-transformers \
 			devel/hs-monads-fd \
+			devel/hs-mtl \
 			devel/hs-transformers \
 			devel/hs-text \
 			devel/hs-unix-compat \

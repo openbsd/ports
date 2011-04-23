@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/04/11 14:46:29 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2011/04/23 14:32:51 kili Exp $
 
 COMMENT =		DrIFT with pugs-specific rules
 
 DISTNAME =		pugs-DrIFT-2.2.3.1
-REVISION =		4
+REVISION =		5
 CATEGORIES =		devel
 HOMEPAGE =		http://pugscode.org/
 
@@ -20,6 +20,7 @@ MODGHC_BUILD =		cabal hackage haddock register
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/hs-HsSyck \
+			devel/hs-mtl \
 			devel/hs-stm
 
 .include <bsd.port.mk>

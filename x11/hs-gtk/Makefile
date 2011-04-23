@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/04/11 14:57:52 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/23 14:32:51 kili Exp $
 
 COMMENT =		Haskell bindings to gtk+2
 
 DISTNAME =		gtk-0.12.0
+REVISION =		0
 CATEGORIES =		devel x11
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/
@@ -24,6 +25,7 @@ BUILD_DEPENDS =		devel/gtk2hs-buildtools \
 LIB_DEPENDS =		x11/gtk+2
 RUN_DEPENDS =		hs-glib->=0.12,<0.13:devel/hs-glib \
 			hs-gio->=0.12,<0.13:devel/hs-gio \
+			devel/hs-mtl \
 			hs-pango->=0.12,<0.13:devel/hs-pango \
 			hs-cairo->=0.12,<0.13:graphics/hs-cairo \
 
