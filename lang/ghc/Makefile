@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/04/23 12:52:36 kili Exp $
+# $OpenBSD: Makefile,v 1.54 2011/04/23 20:16:38 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -44,7 +44,7 @@ MASTER_SITES =		${HOMEPAGE}dist/${MODGHC_VER}/ \
 			${HOMEPAGE}dist/stable/dist/
 MASTER_SITES0 =		http://openbsd.dead-parrot.de/distfiles/
 
-DIST_SUBDIR =		ghc-${MODGHC_VER}
+DIST_SUBDIR =		ghc
 
 VMEM_WARNING =		Yes
 

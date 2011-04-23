@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.21 2011/04/20 18:17:27 jeremy Exp $
+# $OpenBSD: ghc.port.mk,v 1.22 2011/04/23 20:16:38 kili Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -42,6 +42,7 @@ MODGHC_HACKAGE_VERSION =	${DISTNAME:C,.*-([0-9.]*)$,\1,}
 HOMEPAGE ?=			http://hackage.haskell.org/package/${MODGHC_HACKAGE_NAME}
 MASTER_SITES =			http://hackage.haskell.org/packages/archive/${MODGHC_HACKAGE_NAME}/${MODGHC_HACKAGE_VERSION}/
 SUBST_VARS +=			DISTNAME MODGHC_HACKAGE_VERSION
+DIST_SUBDIR ?=			ghc
 . endif
 
 . if ${MODGHC_BUILD:L:Mcabal}
