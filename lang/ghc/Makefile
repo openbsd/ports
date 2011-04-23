@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/04/11 14:30:32 kili Exp $
+# $OpenBSD: Makefile,v 1.53 2011/04/23 12:52:36 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -98,18 +98,12 @@ post-extract:
 	./configure --prefix=${WRKDIR} && \
 	${MAKE_PROGRAM} install
 	rm -rf ${WRKDIR}/ghc-${BIN_VER}
-# - Replace utils/haddock by the version from the ports tree, move
-#   the alex- and happy-generated files into the src dir and rename the
-#   corresponding sources so cabal won't try to re-run alex or happy.
+# - Replace utils/haddock by the version from the ports tree.
 	mv ${WRKSRC}/utils/haddock{,-ghcdist}
 	mv ${WRKDIR}/devel/haddock/haddock-* ${WRKSRC}/utils/haddock
 . for f in ghc.mk doc/ghc.mk haddock.wrapper
 	cp -p ${WRKSRC}/utils/haddock{-ghcdist,}/$f
 . endfor
-	cd ${WRKSRC}/utils/haddock/src && \
-		find . -name \*.[xy] -print | \
-		sed 's@\(.*\)\.[xy]@mv & &.source \&\& mv ../dist/build/haddock/haddock-tmp/\1.hs \1.hs@' | \
-		sh
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/docs/index.html
