@@ -1,34 +1,30 @@
---- makefile.orig	Wed Oct 27 10:59:37 2004
-+++ makefile	Fri Jun 10 09:56:15 2005
-@@ -251,18 +251,18 @@ OSMAC   = 0
+--- makefile.orig	Thu Apr 22 00:52:47 2010
++++ makefile	Sun Jan  2 11:10:34 2011
+@@ -261,7 +261,7 @@ OSMAC   = 0
  DBFIX   = 0
  
  USESTAT = 1
 -SAFEDFT = 0
 +SAFEDFT = 1
  
--# DEBUGGING = 0
--# TRACING =
-+DEBUGGING = 0
-+TRACING =
+ DEBUGGING = 0
+ TRACING =
+@@ -269,11 +269,10 @@ TRACING =
+ # DEBUGGING = 1
+ # TRACING = -g
  
--DEBUGGING = 1
--TRACING = -g
-+#DEBUGGING = 1
-+#TRACING = -g
- 
--BINDIR	= /home/jeff/bin
--LIBDIR	= /home/jeff/lout.lib
--DOCDIR	= /home/jeff/lout.doc
--MANDIR	= /home/jeff/lout.man
-+BINDIR	= ${PREFIX}/bin
-+LIBDIR	= ${PREFIX}/lib/lout
-+DOCDIR	= ${PREFIX}/share/doc/lout
-+MANDIR	= ${PREFIX}/man/man1
+-PREFIX	= /home/jeff
+ BINDIR	= $(PREFIX)/bin
+-LOUTLIBDIR	= $(PREFIX)/lout.lib
+-LOUTDOCDIR	= $(PREFIX)/lout.doc
+-MANDIR	= $(PREFIX)/lout.man
++LOUTLIBDIR	= $(PREFIX)/lib/lout
++LOUTDOCDIR	= $(PREFIX)/share/doc/lout
++MANDIR	= $(PREFIX)/man/man1
  
  LIBFONT = font
  LIBMAPS = maps
-@@ -274,23 +274,23 @@ LIBLOCA = locale
+@@ -285,23 +284,23 @@ LIBLOCA = locale
  CHARIN	= 1
  CHAROUT	= 0
  
@@ -58,7 +54,7 @@
  	  -DOS_DOS=$(OSDOS)					\
  	  -DOS_MAC=$(OSMAC)					\
  	  -DDB_FIX=$(DBFIX)					\
-@@ -322,7 +322,7 @@ OBJS	= z01.o z02.o z03.o z04.o z05.o z06
+@@ -333,7 +332,7 @@ OBJS	= z01.o z02.o z03.o z04.o z05.o z06.o z07.o z08.o
  	  z49.o z50.o z51.o z52.o
  
  lout:	$(OBJS)
@@ -67,7 +63,7 @@
  	chmod a+x lout
  
  $(OBJS): externs.h
-@@ -330,16 +330,14 @@ $(OBJS): externs.h
+@@ -341,7 +340,7 @@ $(OBJS): externs.h
  externs.h:
  
  prg2lout:	prg2lout.c
@@ -75,6 +71,8 @@
 +	$(CC) $(CFLAGS) $(COPTS) -o prg2lout prg2lout.c
  	chmod a+x prg2lout
  
+ all:	lout prg2lout
+@@ -349,67 +348,48 @@ all:	lout prg2lout
  install: lout prg2lout
  	@echo ""
  	@echo "(a) Installing lout and prg2lout binaries into BINDIR $(BINDIR)"
@@ -85,36 +83,83 @@
 +	$(BSD_INSTALL_PROGRAM) lout $(BINDIR)/lout
 +	$(BSD_INSTALL_PROGRAM) prg2lout $(BINDIR)/prg2lout
  	@echo ""
- 	@echo "(b) Installing library files into LIBDIR $(LIBDIR)"
- 	mkdir $(LIBDIR)
-@@ -372,13 +370,6 @@ install: lout prg2lout
+ 	@echo "(b) Installing library files into LOUTLIBDIR $(LOUTLIBDIR)"
+-	mkdir $(LOUTLIBDIR)
+-	chmod 755 $(LOUTLIBDIR)
++	${BSD_INSTALL_DATA_DIR} $(LOUTLIBDIR)
  	@echo ""
- 	mkdir $(LIBDIR)/$(LIBLOCA)
- 	chmod 755 $(LIBDIR)/$(LIBLOCA)
--	@echo ""
+-	mkdir $(LOUTLIBDIR)/$(LIBINCL)
+-	chmod 755 $(LOUTLIBDIR)/$(LIBINCL)
+-	cp include/* $(LOUTLIBDIR)/$(LIBINCL)
+-	chmod 644 $(LOUTLIBDIR)/$(LIBINCL)/*
++	${BSD_INSTALL_DATA_DIR} $(LOUTLIBDIR)/$(LIBINCL)
++	${BSD_INSTALL_DATA} include/* $(LOUTLIBDIR)/$(LIBINCL)
+ 	@echo ""
+-	mkdir $(LOUTLIBDIR)/$(LIBDATA)
+-	chmod 755 $(LOUTLIBDIR)/$(LIBDATA)
+-	cp data/* $(LOUTLIBDIR)/$(LIBDATA)
+-	chmod 644 $(LOUTLIBDIR)/$(LIBDATA)/*
++	${BSD_INSTALL_DATA_DIR} $(LOUTLIBDIR)/$(LIBDATA)
++	${BSD_INSTALL_DATA} data/* $(LOUTLIBDIR)/$(LIBDATA)
+ 	@echo ""
+-	mkdir $(LOUTLIBDIR)/$(LIBHYPH)
+-	chmod 755 $(LOUTLIBDIR)/$(LIBHYPH)
+-	cp hyph/* $(LOUTLIBDIR)/$(LIBHYPH)
+-	chmod 644 $(LOUTLIBDIR)/$(LIBHYPH)/*
++	${BSD_INSTALL_DATA_DIR} $(LOUTLIBDIR)/$(LIBHYPH)
++	${BSD_INSTALL_DATA} hyph/* $(LOUTLIBDIR)/$(LIBHYPH)
+ 	@echo ""
+-	mkdir $(LOUTLIBDIR)/$(LIBFONT)
+-	chmod 755 $(LOUTLIBDIR)/$(LIBFONT)
+-	cp font/* $(LOUTLIBDIR)/$(LIBFONT)
+-	chmod 644 $(LOUTLIBDIR)/$(LIBFONT)/*
++	${BSD_INSTALL_DATA_DIR} $(LOUTLIBDIR)/$(LIBFONT)
++	${BSD_INSTALL_DATA} font/* $(LOUTLIBDIR)/$(LIBFONT)
+ 	@echo ""
+-	mkdir $(LOUTLIBDIR)/$(LIBMAPS)
+-	chmod 755 $(LOUTLIBDIR)/$(LIBMAPS)
+-	cp maps/* $(LOUTLIBDIR)/$(LIBMAPS)
+-	chmod 644 $(LOUTLIBDIR)/$(LIBMAPS)/*
++	${BSD_INSTALL_DATA_DIR} $(LOUTLIBDIR)/$(LIBMAPS)
++	${BSD_INSTALL_DATA} maps/* $(LOUTLIBDIR)/$(LIBMAPS)
+ 	@echo ""
+-	mkdir $(LOUTLIBDIR)/$(LIBLOCA)
+-	chmod 755 $(LOUTLIBDIR)/$(LIBLOCA)
++	${BSD_INSTALL_DATA_DIR} $(LOUTLIBDIR)/$(LIBLOCA)
+ 	@echo ""
 -	@echo "(c) Initializing run (should be silent, no errors expected)"
--	$(BINDIR)/lout -x -s $(LIBDIR)/$(LIBINCL)/init
+-	$(BINDIR)/lout -x -s $(LOUTLIBDIR)/$(LIBINCL)/init
 -	@echo ""
 -	@echo "(d) Changing mode of files just created by initializing run"
--	chmod 644 $(LIBDIR)/$(LIBDATA)/*
--	chmod 644 $(LIBDIR)/$(LIBHYPH)/*
+-	chmod 644 $(LOUTLIBDIR)/$(LIBDATA)/*
+-	chmod 644 $(LOUTLIBDIR)/$(LIBHYPH)/*
  
  installman:
  	@echo ""
-@@ -393,7 +384,8 @@ installman:
+ 	@echo "Installing manual entries into MANDIR $(MANDIR)"
+ 	sed -e "s@<BINDIR>@$(BINDIR)@" -e "s@<LIBDIR>@$(LOUTLIBDIR)@"	\
+ 	    -e "s@<LOUTDOCDIR>@$(LOUTDOCDIR)@" -e "s@<MANDIR>@$(MANDIR)@"	\
+-	man/lout.1 > $(MANDIR)/lout.1
+-	chmod 644 $(MANDIR)/lout.1
+-	cp man/prg2lout.1 $(MANDIR)/prg2lout.1
+-	chmod 644 $(MANDIR)/prg2lout.1
++	    man/lout.1 > man/lout.1.new
++	${BSD_INSTALL_MAN} man/lout.1.new $(MANDIR)/lout.1
++	${BSD_INSTALL_MAN} man/prg2lout.1 $(MANDIR)/prg2lout.1
+ 
  installdoc:
  	@echo ""
- 	@echo "Creating DOCDIR $(DOCDIR) and copying documentation into it"
--	$(RCOPY) doc $(DOCDIR)
-+	mkdir -p $(DOCDIR)
-+	$(RCOPY) doc/* $(DOCDIR)
- 	chmod 755 $(DOCDIR)
- 	chmod 755 $(DOCDIR)/*
- 	chmod 644 $(DOCDIR)/*/*
-@@ -432,3 +424,6 @@ clean:	
- 	-rm -f lout prg2lout *.o
+ 	@echo "Creating LOUTDOCDIR $(LOUTDOCDIR) and copying documentation into it"
+-	$(RCOPY) doc/* $(LOUTDOCDIR)
+-	chmod 755 $(LOUTDOCDIR)
+-	chmod 755 $(LOUTDOCDIR)/*
+-	chmod 644 $(LOUTDOCDIR)/*/*
++	${BSD_INSTALL_DATA_DIR} $(LOUTDOCDIR)
++	$(BSD_INSTALL_DATA) doc/README $(LOUTDOCDIR)
++.for d in design expert slides user
++	${BSD_INSTALL_DATA_DIR} ${LOUTDOCDIR}/$d
++	${BSD_INSTALL_DATA} doc/$d/* ${LOUTDOCDIR}/$d
++.endfor
  
- restart:	clean uninstall
-+
-+all:	prg2lout lout
-+allinstall: install installman installdoc
+ allinstall:	install installman installdoc
+ 

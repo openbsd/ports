@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-doc,v 1.2 2006/04/03 16:27:57 bernd Exp $
+@comment $OpenBSD: PLIST-doc,v 1.3 2011/04/23 21:49:27 kili Exp $
 share/doc/lout/
 share/doc/lout/README
 share/doc/lout/design/
@@ -64,6 +64,7 @@ share/doc/lout/expert/pre_brea
 share/doc/lout/expert/pre_case
 share/doc/lout/expert/pre_colo
 share/doc/lout/expert/pre_conc
+share/doc/lout/expert/pre_cont
 share/doc/lout/expert/pre_cove
 share/doc/lout/expert/pre_cros
 share/doc/lout/expert/pre_data
@@ -103,6 +104,7 @@ share/doc/lout/expert/pre_spac
 share/doc/lout/expert/pre_span
 share/doc/lout/expert/pre_tagg
 share/doc/lout/expert/pre_text
+share/doc/lout/expert/pre_ucol
 share/doc/lout/expert/pre_unde
 share/doc/lout/expert/pre_verb
 share/doc/lout/expert/pre_wide
@@ -137,6 +139,7 @@ share/doc/lout/user/bas_head
 share/doc/lout/user/bas_hyph
 share/doc/lout/user/bas_lang
 share/doc/lout/user/bas_line
+share/doc/lout/user/bas_marg
 share/doc/lout/user/bas_objs
 share/doc/lout/user/bas_par1
 share/doc/lout/user/bas_par2
@@ -147,10 +150,12 @@ share/doc/lout/user/bas_unde
 share/doc/lout/user/bas_verb
 share/doc/lout/user/bgr
 share/doc/lout/user/bgr_boxs
+share/doc/lout/user/bgr_clip
 share/doc/lout/user/bgr_colo
 share/doc/lout/user/bgr_incl
 share/doc/lout/user/bgr_mirr
 share/doc/lout/user/bgr_outl
+share/doc/lout/user/bgr_prec
 share/doc/lout/user/bgr_rota
 share/doc/lout/user/bgr_scal
 share/doc/lout/user/bgr_text
@@ -173,12 +178,15 @@ share/doc/lout/user/equ
 share/doc/lout/user/equ_defs
 share/doc/lout/user/equ_disp
 share/doc/lout/user/equ_intr
+share/doc/lout/user/equ_math
 share/doc/lout/user/equ_spac
 share/doc/lout/user/equ_summ
 share/doc/lout/user/equ_symb
 share/doc/lout/user/equ_tequ
 share/doc/lout/user/equ_vert
 share/doc/lout/user/fmt
+share/doc/lout/user/fmt1.awk
+share/doc/lout/user/fmt2.awk
 share/doc/lout/user/fmt_head
 share/doc/lout/user/fmt_marg
 share/doc/lout/user/fmt_setu
@@ -197,6 +205,14 @@ share/doc/lout/user/gra_tick
 share/doc/lout/user/johnson
 share/doc/lout/user/johnson.out
 share/doc/lout/user/letterbook
+share/doc/lout/user/mat
+share/doc/lout/user/mat_comm
+share/doc/lout/user/mat_defs
+share/doc/lout/user/mat_disp
+share/doc/lout/user/mat_intr
+share/doc/lout/user/mat_matr
+share/doc/lout/user/mat_summ
+share/doc/lout/user/mybook
 share/doc/lout/user/mydefs
 share/doc/lout/user/pascal
 share/doc/lout/user/pie
@@ -272,6 +288,7 @@ share/doc/lout/user/vdia
 share/doc/lout/user/vequ
 share/doc/lout/user/vfmt
 share/doc/lout/user/vgra
+share/doc/lout/user/vmat
 share/doc/lout/user/vpie
 share/doc/lout/user/vprg
 share/doc/lout/user/vref

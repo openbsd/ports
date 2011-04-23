@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2006/11/24 22:20:29 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/04/23 21:49:27 kili Exp $
 @pkgpath print/lout
-bin/lout
-bin/prg2lout
+@bin bin/lout
+@bin bin/prg2lout
 lib/lout/
 lib/lout/data/
 lib/lout/data/README
@@ -183,6 +183,7 @@ lib/lout/hyph/danish.lh
 lib/lout/hyph/dutch.lh
 lib/lout/hyph/english.lh
 lib/lout/hyph/engluk.lh
+lib/lout/hyph/esperanto.lh
 lib/lout/hyph/finnish.lh
 lib/lout/hyph/french.lh
 lib/lout/hyph/german.lh
@@ -191,6 +192,7 @@ lib/lout/hyph/magyar.lh
 lib/lout/hyph/norweg.lh
 lib/lout/hyph/polish.lh
 lib/lout/hyph/portugal.lh
+lib/lout/hyph/programming.lh
 lib/lout/hyph/russian.lh
 lib/lout/hyph/slovak.lh
 lib/lout/hyph/slovenia.lh
@@ -234,6 +236,8 @@ lib/lout/include/javaf
 lib/lout/include/langdefs
 lib/lout/include/latin2
 lib/lout/include/lengths
+lib/lout/include/math
+lib/lout/include/mathf
 lib/lout/include/modula
 lib/lout/include/modulaf
 lib/lout/include/mydefs
@@ -260,8 +264,6 @@ lib/lout/include/ruby
 lib/lout/include/rubyf
 lib/lout/include/russian
 lib/lout/include/russian.fd
-lib/lout/include/save_graphf
-lib/lout/include/save_graphf.lpg
 lib/lout/include/slides
 lib/lout/include/slidesf
 lib/lout/include/tab
@@ -270,9 +272,6 @@ lib/lout/include/tabf.lpg
 lib/lout/include/tbl
 lib/lout/include/tblf
 lib/lout/include/ts
-lib/lout/include/xind
-lib/lout/include/xinda
-lib/lout/include/xindb
 lib/lout/include/xrgb
 lib/lout/locale/
 lib/lout/maps/
@@ -283,6 +282,7 @@ lib/lout/maps/Latin1.LCM
 lib/lout/maps/LtKOI8.LCM
 lib/lout/maps/LtLatin1.LCM
 lib/lout/maps/LtLatin2.LCM
+lib/lout/maps/LtLatin3.LCM
 lib/lout/maps/Std.LCM
 lib/lout/maps/Symb.LCM
 lib/lout/maps/koi8r.LCM
