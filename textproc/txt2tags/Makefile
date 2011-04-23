@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/20 19:56:52 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/04/23 09:03:20 kili Exp $
 
 COMMENT=	utility to turn simply formatted text into markup 
 
-DISTNAME=	txt2tags-2.5
-REVISION=	0
-CATEGORIES=	textproc	
+DISTNAME=	txt2tags-2.6
+CATEGORIES=	textproc
 
-HOMEPAGE=	http://txt2tags.sourceforge.net/
+HOMEPAGE=	http://txt2tags.org/
 
 MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=txt2tags/}
+MASTER_SITES=	http://txt2tags.googlecode.com/files/
 EXTRACT_SUFX=	.tgz
 
 MODULES=	lang/python
@@ -28,7 +27,6 @@ PKG_ARCH=	*
 DOCDIR=		${PREFIX}/share/doc/txt2tags
 EXAMPLESDIR=	${PREFIX}/share/examples/txt2tags
 LOCALEDIR=	${PREFIX}/share/locale
-USE_GROFF =	Yes
 
 pre-configure:
 	@perl -pi -e "s,^#!/usr/bin/env python,#!${MODPY_BIN}," \
@@ -46,7 +44,8 @@ do-install:
 	${INSTALL_DATA_DIR} ${DOCDIR} ${EXAMPLESDIR}{,/img,/css,/module}
 	${INSTALL_SCRIPT} ${WRKSRC}/txt2tags ${PREFIX}/bin 
 	${INSTALL_SCRIPT} ${WRKSRC}/extras/gensite ${PREFIX}/bin 
-	${INSTALL_DATA} ${WRKSRC}/extras/txt2tagsrc ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/extras/txt2tagsrc \
+		${EXAMPLESDIR}/txt2tagsrc.dist
 	${INSTALL_DATA} ${WRKSRC}/doc/* ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/samples/*.* ${EXAMPLESDIR}
@@ -61,6 +60,7 @@ do-install:
 	done
 
 do-regress:
+	@perl -pi -e 's,abspath,basename,' ${WRKSRC}/test/lib.py
 	PATH=${WRKSRC}:$$PATH ${WRKSRC}/test/run.py
 
 .include <bsd.port.mk>

@@ -1,11 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/10/10 14:30:24 kili Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/23 09:03:20 kili Exp $
 bin/gensite
 bin/txt2tags
 @man man/man1/txt2tags.1
 share/doc/txt2tags/
 share/doc/txt2tags/README
 @comment share/doc/txt2tags/manpage-ca.man
+@comment share/doc/txt2tags/manpage-de.man
 @comment share/doc/txt2tags/manpage-es.man
+@comment share/doc/txt2tags/manpage-eu.man
 @comment share/doc/txt2tags/manpage-fr.man
 @comment share/doc/txt2tags/manpage-it.man
 @comment share/doc/txt2tags/manpage-pt.man
@@ -38,6 +40,11 @@ share/examples/txt2tags/module/
 share/examples/txt2tags/module/README
 share/examples/txt2tags/module/module-body.py
 share/examples/txt2tags/module/module-full.py
+share/examples/txt2tags/sample-slides-80x25.art
+share/examples/txt2tags/sample.adoc
+share/examples/txt2tags/sample.art
+share/examples/txt2tags/sample.creole
+share/examples/txt2tags/sample.dbk
 share/examples/txt2tags/sample.doku
 share/examples/txt2tags/sample.gwiki
 share/examples/txt2tags/sample.html
@@ -46,18 +53,43 @@ share/examples/txt2tags/sample.man
 share/examples/txt2tags/sample.mgp
 share/examples/txt2tags/sample.moin
 share/examples/txt2tags/sample.pm6
+share/examples/txt2tags/sample.pmw
 share/examples/txt2tags/sample.sgml
 share/examples/txt2tags/sample.t2t
 share/examples/txt2tags/sample.tex
 share/examples/txt2tags/sample.txt
 share/examples/txt2tags/sample.wiki
 share/examples/txt2tags/sample.xhtml
-share/examples/txt2tags/txt2tagsrc
+@sample share/examples/txt2tags/txt2tagsrc
+share/examples/txt2tags/txt2tagsrc.dist
+share/locale/
+share/locale/de/
+share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/txt2tags.mo
+share/locale/es/
+share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/txt2tags.mo
+share/locale/eu/
+share/locale/eu/LC_MESSAGES/
+share/locale/eu/LC_MESSAGES/txt2tags.mo
+share/locale/fi/
+share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/txt2tags.mo
+share/locale/fr/
+share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/txt2tags.mo
+share/locale/hu/
+share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/txt2tags.mo
+share/locale/it/
+share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/txt2tags.mo
+share/locale/pt_BR/
+share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/txt2tags.mo
+share/locale/uk/
+share/locale/uk/LC_MESSAGES/
+share/locale/uk/LC_MESSAGES/txt2tags.mo
+share/locale/zh_CN/
+share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/txt2tags.mo
