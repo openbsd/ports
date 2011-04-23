@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/04/23 13:00:43 kili Exp $
+# $OpenBSD: Makefile,v 1.31 2011/04/23 21:05:14 kili Exp $
 
 COMMENT-main =	documentation-generation tool for Haskell libraries
 COMMENT-lib =	haddock library
@@ -50,6 +50,8 @@ AUTOCONF_DIR =		${WRKSRC}/doc
 WRKCONF =		${AUTOCONF_DIR}
 .else
 MASTER_SITES =		http://hackage.haskell.org/packages/archive/${DISTNAME:S,-,/,}/
+
+DIST_SUBDIR =		ghc
 
 do-build:
 	@echo "*** The no_deps FLAVOR is not meant to be built at all, it is"
