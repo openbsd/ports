@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.924 2011/04/19 19:31:31 kili Exp $
+# $OpenBSD: Makefile,v 1.925 2011/04/23 01:31:42 jeremy Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1034,7 +1034,6 @@
      SUBDIR += ruby-polyglot
      SUBDIR += ruby-prof
      SUBDIR += ruby-prof,ruby19
-     SUBDIR += ruby-rack-test
      SUBDIR += ruby-rake
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rcov
