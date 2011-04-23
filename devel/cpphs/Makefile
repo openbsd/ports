@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/04/11 14:47:55 kili Exp $
+# $OpenBSD: Makefile,v 1.26 2011/04/23 20:07:47 kili Exp $
 
 COMMENT-main =	liberalised reimplementation of cpp in Haskell
 COMMENT-lib =	cpphs library
@@ -34,6 +34,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} devel/gmp
 RUN_DEPENDS-main =
 LIB_DEPENDS-lib =
 WANTLIB-lib =
+DIST_SUBDIR =
 .else
 MASTER_SITES = http://hackage.haskell.org/packages/archive/cpphs/${DISTNAME:S/cpphs-//}/
 # NHC: use the good old makefile for now (though it *should* be possible
