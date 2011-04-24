@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.40 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: python.port.mk,v 1.41 2011/04/24 09:19:01 rpointel Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -14,6 +14,8 @@ MODPY_VSPEC = >=${MODPY_VERSION},<2.5
 MODPY_VSPEC = >=${MODPY_VERSION},<2.6
 .elif ${MODPY_VERSION} == 2.6
 MODPY_VSPEC = >=${MODPY_VERSION},<2.7
+.elif ${MODPY_VERSION} == 2.7
+MODPY_VSPEC = >=${MODPY_VERSION},<2.8
 .endif
 MODPYSPEC = python-${MODPY_VSPEC}
 
