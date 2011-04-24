@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_command_cc,v 1.1.1.1 2011/04/24 20:14:06 stsp Exp $
+--- source/command.cc.orig	Sun Apr  3 21:44:58 2011
++++ source/command.cc	Sun Apr  3 21:45:10 2011
+@@ -854,7 +854,7 @@ struct help_file
+ 
+ help_file help_files[] = {
+     { "crawl_manual.txt",  '*', true },
+-    { "../README.txt",     '!', false },
++    { "README.txt",        '!', false },
+     { "aptitudes.txt",     '%', false },
+     { "quickstart.txt",    '^', false },
+     { "macros_guide.txt",  '~', false },

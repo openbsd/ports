@@ -1,0 +1,11 @@
+$OpenBSD: patch-source_util_gen_ver_pl,v 1.1.1.1 2011/04/24 20:14:06 stsp Exp $
+--- source/util/gen_ver.pl.orig	Sat Apr  2 15:34:45 2011
++++ source/util/gen_ver.pl	Sat Apr  2 15:36:29 2011
+@@ -116,6 +116,7 @@ my $OS        = `uname -s`;
+ my $OS_ver    = `uname -r`;
+ my $machine   = `uname -m`;
+ my $processor = `uname -p`;
++$processor =~ s/"/\\"/g;
+ 
+ chomp($OS);
+ chomp($OS_ver);
