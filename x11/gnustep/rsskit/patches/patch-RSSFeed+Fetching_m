@@ -1,0 +1,21 @@
+$OpenBSD: patch-RSSFeed+Fetching_m,v 1.1.1.1 2011/04/24 14:04:54 sebastia Exp $
+
+fix detection of RSS 0.92 (which makes RSS feeds on undeadly.org work)
+
+--- RSSFeed+Fetching.m.orig	Tue Jul 14 21:12:04 2009
++++ RSSFeed+Fetching.m	Thu Feb 17 19:29:36 2011
+@@ -233,6 +233,14 @@ NSString *const RSSFeedFetchFailedNotification = @"RSS
+       NSLog(@"WARNING: RSS 0.91 support is a *hack* at the moment");
+       [self parseRSS20WithRootNode: root];
+     }
++  else if ([[root name] isEqualToString: @"rss"] &&
++	   [[[root attributes] objectForKey: @"version"]
++	     isEqualToString: @"0.92"]) // RSS 0.92 detected
++    {
++      rssVersion = @"RSS 0.92";
++      NSLog(@"WARNING: RSS 0.92 support is a *hack* at the moment");
++      [self parseRSS20WithRootNode: root];
++    }
+   else if ([[root name] isEqualToString: @"feed"] &&
+ 	   [[root namespace] isEqualToString: URI_ATOM10]) // ATOM 1.0
+     {

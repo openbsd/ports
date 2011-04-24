@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/24 14:04:54 sebastia Exp $
+include/RSSKit
+lib/GNUstep/Frameworks/
+lib/GNUstep/Frameworks/RSSKit.framework/
+lib/GNUstep/Frameworks/RSSKit.framework/Headers
+lib/GNUstep/Frameworks/RSSKit.framework/RSSKit
+lib/GNUstep/Frameworks/RSSKit.framework/Resources
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/Atom03Parser.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/Atom10Parser.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/AtomParser.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/DOMParser.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/DublinCore.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/FeedParser.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/NewRSSArticleListener.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/RSS10Parser.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/RSS20Parser.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/RSSArticle+Storage.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/RSSArticle.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/RSSArticleCreationListener.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/RSSArticleProtocol.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/RSSFactory.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/RSSFeed+Fetching.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/RSSFeed+Storage.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/RSSFeed.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/RSSFeedProtocol.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/RSSKit.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Headers/RSSLinks.h
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/RSSKit
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Resources/
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/Resources/Info-gnustep.plist
+@lib lib/GNUstep/Frameworks/RSSKit.framework/Versions/0.0/libRSSKit.so.${LIBRSSKit_VERSION}
+lib/GNUstep/Frameworks/RSSKit.framework/Versions/Current
+@lib lib/GNUstep/Frameworks/RSSKit.framework/libRSSKit.so.${LIBRSSKit_VERSION}
+@lib lib/libRSSKit.so.${LIBRSSKit_VERSION}
