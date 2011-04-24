@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.15 2011/04/24 08:07:02 espie Exp $
+# $OpenBSD: dpb,v 1.16 2011/04/24 08:34:05 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -31,12 +31,15 @@ package DPB::State;
 our @ISA = qw(OpenBSD::State);
 
 use OpenBSD::State;
+use DPB::Heuristics;
 
 sub init
 {
 	my $self = shift;
 	$self->SUPER::init;
 	$self->{export_level}++;
+	$self->{heuristics} = DPB::Heuristics->new;
+
 	return $self;
 }
 
@@ -48,6 +51,10 @@ sub handle_options
     "[-b log] [-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
 }
 
+sub heuristics
+{
+	return shift->{heuristics};
+}
 package main;
 
 use DPB::PkgPath;
@@ -58,7 +65,6 @@ use DPB::Engine;
 use DPB::PortBuilder;
 use DPB::Reporter;
 use OpenBSD::Error;
-use DPB::Heuristics;
 use DPB::Locks;
 use DPB::Logger;
 use DPB::Job;
@@ -119,7 +125,6 @@ sub parse_build_file
 }
 
 my @build_files = ();
-my $heuristics = DPB::Heuristics->new;
 my $state = DPB::State->new('dpb');
 $state->{opt} = {
 	P => sub {
@@ -136,16 +141,16 @@ $state->{opt} = {
 	    push(@build_files, shift);
 	},
 	S => sub {
-	    parse_size_file(shift, $heuristics);
+	    parse_size_file(shift, $state->heuristics);
 	}
     };
 $state->handle_options;
 
 if ($opt_r) {
-	$heuristics->random;
+	$state->heuristics->random;
 }
 if ($opt_m) {
-	$heuristics->set_threshold($opt_m);
+	$state->heuristics->set_threshold($opt_m);
 }
 
 my $dpb = $opt_f ? "fetch" : "normal";
@@ -163,7 +168,7 @@ for my $arg (@ARGV) {
 		$state->usage("Invalid pkgpath: #1",  $arg);
 	}
 	my $pkgpath = DPB::PkgPath->new($path);
-	$heuristics->set_weight($pkgpath, $weight);
+	$state->heuristics->set_weight($pkgpath, $weight);
 	$pkgpath->add_to_subdirlist(\@subdirlist);
 }
 
@@ -175,7 +180,7 @@ my $logdir = $opt_L // $ENV{LOGDIR} // "$ports/logs/$arch";
 my $lockdir = "$logdir/locks";
 
 my $logger = DPB::Logger->new($logdir, $opt_c);
-$heuristics->set_logger($logger);
+$state->heuristics->set_logger($logger);
 
 if (defined $opt_j && $localarch ne $arch) {
 	$state->usage("Can't use -j if -A arch is not local architecture");
@@ -187,7 +192,7 @@ if (defined $opt_j && $opt_j !~ m/^\d+$/) {
 
 my $fullrepo = "$repo/$arch/all";
 if ($opt_h) {
-	DPB::Core->parse_hosts_file($opt_h, $arch, $opt_t, $logger, $heuristics);
+	DPB::Core->parse_hosts_file($opt_h, $arch, $opt_t, $logger, $state->heuristics);
 }
 
 my $prop = {};
@@ -201,20 +206,20 @@ if ($opt_j || !$opt_h) {
 
 if (@build_files > 0) {
 	for my $file (@build_files) {
-	    parse_build_file($file, $arch, $heuristics, "DPB::Job::Port");
+	    parse_build_file($file, $arch, $state->heuristics, "DPB::Job::Port");
 	}
-	$heuristics->finished_parsing;
+	$state->heuristics->finished_parsing;
 }
 
 DPB::Core::Factory->init_cores($logger);
 
 my $builder = DPB::PortBuilder->new(
     $opt_c, $opt_s, $opt_u, $opt_U, $opt_R, $fullrepo, $logger, $ports, $make,
-    $heuristics);
+    $state->heuristics);
 
 my $locker = DPB::Locks->new($lockdir);
-my $engine = DPB::Engine->new($builder, $heuristics, $logger, $locker);
-my $reporter = DPB::Reporter->new($opt_x, $heuristics, "DPB::Core", $engine);
+my $engine = DPB::Engine->new($builder, $state->heuristics, $logger, $locker);
+my $reporter = DPB::Reporter->new($opt_x, $state->heuristics, "DPB::Core", $engine);
 while (!DPB::Core->avail) {
 	DPB::Core->reap;
 	sleep 1;
