@@ -1,0 +1,73 @@
+$OpenBSD: patch-Makefile_pre_in,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp $
+--- Makefile.pre.in.orig	Thu Oct 14 13:37:30 2010
++++ Makefile.pre.in	Mon Apr 11 22:39:56 2011
+@@ -360,6 +360,8 @@
+ #########################################################################
+ # Rules
+ 
++everything: all $(srcdir)/Lib/$(PLATDIR)
++
+ # Default target
+ all:		build_all
+ build_all:	$(BUILDPYTHON) oldsharedmods sharedmods gdbhooks
+@@ -395,7 +397,7 @@
+ $(BUILDPYTHON):	Modules/python.o $(LIBRARY) $(LDLIBRARY)
+ 		$(LINKCC) $(LDFLAGS) $(LINKFORSHARED) -o $@ \
+ 			Modules/python.o \
+-			$(BLDLIBRARY) $(LIBS) $(MODLIBS) $(SYSLIBS) $(LDLAST)
++			-lpython$(VERSION) $(LIBS) $(MODLIBS) $(SYSLIBS) $(LDLAST)
+ 
+ platform: $(BUILDPYTHON)
+ 	$(RUNSHARED) ./$(BUILDPYTHON) -E -c 'import sys ; from sysconfig import get_platform ; print get_platform()+"-"+sys.version[0:3]' >platform
+@@ -444,8 +446,12 @@
+ 
+ SRC_GDB_HOOKS=$(srcdir)/Tools/gdb/libpython.py
+ $(BUILDPYTHON)-gdb.py: $(SRC_GDB_HOOKS)
+-	$(INSTALL_DATA) $(SRC_GDB_HOOKS) $(BUILDPYTHON)-gdb.py
++	cp $(SRC_GDB_HOOKS) $(BUILDPYTHON)-gdb.py
+ 
++# This rule for OpenBSD...
++$(LDLIBRARY):      $(LIBRARY)
++	$(LDSHARED) -o $@ $(LIBRARY_OBJS)
++
+ # This rule is here for OPENSTEP/Rhapsody/MacOSX. It builds a temporary
+ # minimal framework (not including the Lib directory and such) in the current
+ # directory.
+@@ -787,7 +793,6 @@
+ 	then rm -f $(DESTDIR)$(BINDIR)/$(PYTHON); \
+ 	else true; \
+ 	fi
+-	(cd $(DESTDIR)$(BINDIR); $(LN) python$(VERSION)$(EXE) $(PYTHON))
+ 	-rm -f $(DESTDIR)$(BINDIR)/python-config
+ 	(cd $(DESTDIR)$(BINDIR); $(LN) -s python$(VERSION)-config python-config)
+ 	-test -d $(DESTDIR)$(LIBPC) || $(INSTALL) -d -m $(DIRMODE) $(DESTDIR)$(LIBPC)
+@@ -797,7 +802,7 @@
+ # Install the interpreter with $(VERSION) affixed
+ # This goes into $(exec_prefix)
+ altbininstall:	$(BUILDPYTHON)
+-	@for i in $(BINDIR) $(LIBDIR); \
++	@for i in $(BINDIR) $(LIBDIR) $(LIBPL); \
+ 	do \
+ 		if test ! -d $(DESTDIR)$$i; then \
+ 			echo "Creating directory $$i"; \
+@@ -813,7 +818,8 @@
+ 			$(INSTALL_SHARED) $(LDLIBRARY) $(DESTDIR)$(LIBDIR)/$(INSTSONAME); \
+ 			if test $(LDLIBRARY) != $(INSTSONAME); then \
+ 				(cd $(DESTDIR)$(LIBDIR); $(LN) -sf $(INSTSONAME) $(LDLIBRARY)) \
+-			fi \
++			fi ; \
++			(cd $(DESTDIR)$(LIBPL); $(LN) -sf $(LIBDIR)/$(LDLIBRARY)) \
+ 		fi; \
+ 	else	true; \
+ 	fi
+@@ -942,8 +948,8 @@
+ 		./$(BUILDPYTHON) -Wi -t -c "import lib2to3.pygram, lib2to3.patcomp;lib2to3.patcomp.PatternCompiler()"
+ 
+ # Create the PLATDIR source directory, if one wasn't distributed..
+-$(srcdir)/Lib/$(PLATDIR):
+-	mkdir $(srcdir)/Lib/$(PLATDIR)
++$(srcdir)/Lib/$(PLATDIR): $(BUILDPYTHON)
++	mkdir -p $(srcdir)/Lib/$(PLATDIR)
+ 	cp $(srcdir)/Lib/plat-generic/regen $(srcdir)/Lib/$(PLATDIR)/regen
+ 	export PATH; PATH="`pwd`:$$PATH"; \
+ 	export PYTHONPATH; PYTHONPATH="`pwd`/Lib"; \

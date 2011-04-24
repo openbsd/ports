@@ -1,0 +1,30 @@
+$OpenBSD: patch-Lib_test_test_signal_py,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp $
+
+workarounds for breakage caused by libpthread
+
+--- Lib/test/test_signal.py.orig	Sun Nov 21 14:34:58 2010
++++ Lib/test/test_signal.py	Sun Mar 27 20:21:27 2011
+@@ -367,6 +367,12 @@
+         a false value for the second argument, when that signal arrives, it
+         does not interrupt a syscall that's in progress.
+         """
++        if sys.platform.startswith('openbsd'):
++            if test_support.verbose:
++                sys.stderr.write('skipping -- siginterrupt not reliable (does '
++                                 'not mix well with threading) on %s\n' %
++                                 sys.platform)
++            return
+         signal.siginterrupt(self.signum, 0)
+         i = self.readpipe_interrupted()
+         self.assertFalse(i)
+@@ -461,8 +467,8 @@
+         self.assertEqual(self.hndl_called, True)
+ 
+     # Issue 3864. Unknown if this affects earlier versions of freebsd also.
+-    @unittest.skipIf(sys.platform=='freebsd6',
+-        'itimer not reliable (does not mix well with threading) on freebsd6')
++    @unittest.skipIf(sys.platform=='freebsd6' or sys.platform.startswith('openbsd'),
++        'itimer not reliable (does not mix well with threading) on %s\n' % sys.platform)
+     def test_itimer_prof(self):
+         self.itimer = signal.ITIMER_PROF
+         signal.signal(signal.SIGPROF, self.sig_prof)

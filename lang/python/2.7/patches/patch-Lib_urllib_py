@@ -1,0 +1,23 @@
+$OpenBSD: patch-Lib_urllib_py,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp $
+# fix for CVE-2011-1521: http://hg.python.org/cpython/rev/a778b963eae3
+--- Lib/urllib.py.orig	Sat Apr 23 15:02:11 2011
++++ Lib/urllib.py	Sat Apr 23 15:09:17 2011
+@@ -644,6 +644,18 @@ class FancyURLopener(URLopener):
+         fp.close()
+         # In case the server sent a relative URL, join with original:
+         newurl = basejoin(self.type + ":" + url, newurl)
++
++        # For security reasons we do not allow redirects to protocols
++        # other than HTTP, HTTPS or FTP.
++        newurl_lower = newurl.lower()
++        if not (newurl_lower.startswith('http://') or
++                newurl_lower.startswith('https://') or
++                newurl_lower.startswith('ftp://')):
++            raise IOError('redirect error', errcode,
++                          errmsg + " - Redirection to url '%s' is not allowed" %
++                          newurl,
++                          headers)
++
+         return self.open(newurl)
+ 
+     def http_error_301(self, url, fp, errcode, errmsg, headers, data=None):

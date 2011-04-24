@@ -1,0 +1,22 @@
+$OpenBSD: patch-Lib_urllib2_py,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp $
+# fix for CVE-2011-1521: http://hg.python.org/cpython/rev/a778b963eae3
+--- Lib/urllib2.py.orig	Sat Apr 23 15:02:11 2011
++++ Lib/urllib2.py	Sat Apr 23 15:09:17 2011
+@@ -578,6 +578,17 @@ class HTTPRedirectHandler(BaseHandler):
+ 
+         newurl = urlparse.urljoin(req.get_full_url(), newurl)
+ 
++        # For security reasons we do not allow redirects to protocols
++        # other than HTTP, HTTPS or FTP.
++        newurl_lower = newurl.lower()
++        if not (newurl_lower.startswith('http://') or
++                newurl_lower.startswith('https://') or
++                newurl_lower.startswith('ftp://')):
++            raise HTTPError(newurl, code,
++                            msg + " - Redirection to url '%s' is not allowed" %
++                            newurl,
++                            headers, fp)
++
+         # XXX Probably want to forget about the state of the current
+         # request, although that might interact poorly with other
+         # handlers that also use handler-specific request attributes

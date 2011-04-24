@@ -1,0 +1,12 @@
+$OpenBSD: patch-Lib_test_regrtest_py,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp $
+--- Lib/test/regrtest.py.orig	Sun Oct 31 14:17:46 2010
++++ Lib/test/regrtest.py	Sun Mar 27 18:05:35 2011
+@@ -1433,6 +1433,8 @@
+ _expectations['freebsd7'] = _expectations['freebsd4']
+ _expectations['freebsd8'] = _expectations['freebsd4']
+ 
++_expectations['openbsd4'] = _expectations['openbsd3']
++
+ class _ExpectedSkips:
+     def __init__(self):
+         import os.path
