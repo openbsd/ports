@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.16 2011/04/24 08:34:05 espie Exp $
+# $OpenBSD: dpb,v 1.17 2011/04/24 09:14:45 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -32,6 +32,8 @@ our @ISA = qw(OpenBSD::State);
 
 use OpenBSD::State;
 use DPB::Heuristics;
+use OpenBSD::Paths;
+
 
 sub init
 {
@@ -39,6 +41,11 @@ sub init
 	$self->SUPER::init;
 	$self->{export_level}++;
 	$self->{heuristics} = DPB::Heuristics->new;
+	$self->{make} = $ENV{MAKE} || OpenBSD::Paths->make;
+	($self->{ports}, $self->{repo}, $self->{localarch}, $self->{distdir}) =
+	    DPB::Vars->get($self->make, 
+	    "PORTSDIR", "PACKAGE_REPOSITORY", "MACHINE_ARCH", "DISTDIR");
+	$self->{arch} = $self->{localarch};
 
 	return $self;
 }
@@ -46,16 +53,70 @@ sub init
 sub handle_options
 {
 	my $state = shift;
+	$state->{opt}{A} = sub {
+		$state->{arch} = shift;
+	};
+	$state->{opt}{L} = sub {
+		$state->{logdir} = shift;
+	};
+	$state->{opt}{r} = sub {
+		$state->heuristics->random;
+	};
+	$state->{opt}{m} = sub {
+		$state->heuristics->set_threshold(shift);
+	};
+
 	$state->SUPER::handle_options('aceqrRsuUh:xA:f:j:m:P:b:d:L:S:t:T:',
     "[-acerRsuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir]",
     "[-b log] [-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
+    	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
+	$state->{logdir} //= $ENV{LOGDIR} // 
+	    join("/", $state->ports, "logs", $state->arch);
+
 }
 
 sub heuristics
 {
 	return shift->{heuristics};
 }
+
+sub make
+{
+	return shift->{make};
+}
+
+sub ports
+{
+	return shift->{ports};
+}
+
+sub fullrepo
+{
+	return shift->{fullrepo};
+}
+
+sub distdir
+{
+	return shift->{distdir};
+}
+
+sub localarch
+{
+	return shift->{localarch};
+}
+
+sub arch
+{
+	return shift->{arch};
+}
+
+sub logdir
+{
+	return shift->{logdir};
+}
+
 package main;
+
 
 use DPB::PkgPath;
 use DPB::Core;
@@ -70,12 +131,9 @@ use DPB::Logger;
 use DPB::Job;
 use DPB::Grabber;
 
-use OpenBSD::Paths;
-my $make = $ENV{MAKE} || OpenBSD::Paths->make;
-
-our ($opt_t, $opt_d, $opt_e, $opt_T, $opt_c, $opt_h, $opt_A, $opt_j, $opt_a,
-    $opt_q, $opt_r, $opt_R, $opt_s, $opt_u, $opt_U,
-    $opt_L, $opt_m, $opt_f, $opt_x);
+our ($opt_t, $opt_d, $opt_e, $opt_T, $opt_c, $opt_h, $opt_j, $opt_a,
+    $opt_q, $opt_R, $opt_s, $opt_u, $opt_U,
+    $opt_f, $opt_x);
 my @subdirlist;
 
 sub parse_size_file
@@ -146,13 +204,6 @@ $state->{opt} = {
     };
 $state->handle_options;
 
-if ($opt_r) {
-	$state->heuristics->random;
-}
-if ($opt_m) {
-	$state->heuristics->set_threshold($opt_m);
-}
-
 my $dpb = $opt_f ? "fetch" : "normal";
 
 if (@ARGV == 0) {
@@ -172,17 +223,10 @@ for my $arg (@ARGV) {
 	$pkgpath->add_to_subdirlist(\@subdirlist);
 }
 
-my ($ports, $repo, $localarch, $distdir) = DPB::Vars->get($make,
-    "PORTSDIR", "PACKAGE_REPOSITORY", "MACHINE_ARCH", "DISTDIR");
-
-my $arch = $opt_A // $localarch;
-my $logdir = $opt_L // $ENV{LOGDIR} // "$ports/logs/$arch";
-my $lockdir = "$logdir/locks";
-
-my $logger = DPB::Logger->new($logdir, $opt_c);
+my $logger = DPB::Logger->new($state->logdir, $opt_c);
 $state->heuristics->set_logger($logger);
 
-if (defined $opt_j && $localarch ne $arch) {
+if (defined $opt_j && $state->localarch ne $state->arch) {
 	$state->usage("Can't use -j if -A arch is not local architecture");
 }
 
@@ -190,9 +234,8 @@ if (defined $opt_j && $opt_j !~ m/^\d+$/) {
 	$state->usage("-j takes a numerical argument");
 }
 
-my $fullrepo = "$repo/$arch/all";
 if ($opt_h) {
-	DPB::Core->parse_hosts_file($opt_h, $arch, $opt_t, $logger, $state->heuristics);
+	DPB::Core->parse_hosts_file($opt_h, $state->arch, $opt_t, $logger, $state->heuristics);
 }
 
 my $prop = {};
@@ -206,7 +249,7 @@ if ($opt_j || !$opt_h) {
 
 if (@build_files > 0) {
 	for my $file (@build_files) {
-	    parse_build_file($file, $arch, $state->heuristics, "DPB::Job::Port");
+	    parse_build_file($file, $state->arch, $state->heuristics, "DPB::Job::Port");
 	}
 	$state->heuristics->finished_parsing;
 }
@@ -214,10 +257,10 @@ if (@build_files > 0) {
 DPB::Core::Factory->init_cores($logger);
 
 my $builder = DPB::PortBuilder->new(
-    $opt_c, $opt_s, $opt_u, $opt_U, $opt_R, $fullrepo, $logger, $ports, $make,
-    $state->heuristics);
+    $opt_c, $opt_s, $opt_u, $opt_U, $opt_R, $state->fullrepo, $logger, 
+    $state->ports, $state->make, $state->heuristics);
 
-my $locker = DPB::Locks->new($lockdir);
+my $locker = DPB::Locks->new(join("/", $state->logdir, "locks"));
 my $engine = DPB::Engine->new($builder, $state->heuristics, $logger, $locker);
 my $reporter = DPB::Reporter->new($opt_x, $state->heuristics, "DPB::Core", $engine);
 while (!DPB::Core->avail) {
@@ -235,7 +278,7 @@ sub handle_non_waiting_jobs
 {
 	my $need_clock = shift;
 	my $reaped = DPB::Core->reap;
-	$keep_going = !-e "$logdir/stop";
+	$keep_going = !-e $state->logdir."/stop";
 	if (DPB::Core->avail > 1) {
 		$engine->recheck_errors;
 	}
@@ -257,8 +300,8 @@ sub handle_non_waiting_jobs
 	return $keep_going;
 }
 
-my $grabber = DPB::Grabber->new($ports, $make, $logger, $engine, $dpb,
-	sub { handle_non_waiting_jobs(1) });
+my $grabber = DPB::Grabber->new($state->ports, $state->make, $logger, $engine, 
+	$dpb, sub { handle_non_waiting_jobs(1) });
 
 if ($opt_a) {
 	# when restarting interrupted dpb,
