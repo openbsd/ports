@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.14 2011/04/24 08:02:07 espie Exp $
+# $OpenBSD: dpb,v 1.15 2011/04/24 08:07:02 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -26,6 +26,7 @@ BEGIN {
 }
 use lib ("$ports1/infrastructure/lib", "$FindBin::Bin/../lib");
 
+
 package DPB::State;
 our @ISA = qw(OpenBSD::State);
 
@@ -34,6 +35,7 @@ use OpenBSD::State;
 sub init
 {
 	my $self = shift;
+	$self->SUPER::init;
 	$self->{export_level}++;
 	return $self;
 }
