@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.220 2011/03/31 16:26:05 kili Exp $
+# $OpenBSD: Makefile,v 1.221 2011/04/24 20:16:14 stsp Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -154,6 +154,8 @@
      SUBDIR += speyes
      SUBDIR += spider
      SUBDIR += starlanes
+     SUBDIR += stone-soup
+     SUBDIR += stone-soup,no_x11
      SUBDIR += sudognu
      SUBDIR += sudoku
      SUBDIR += sudoku-solver
