@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_in,v 1.5 2011/04/24 17:32:24 dcoppa Exp $
+
+Fix for our (older) fribidi port
+
+--- configure.in.orig	Sun Feb 27 18:40:00 2011
++++ configure.in	Tue Apr 19 14:08:07 2011
+@@ -613,7 +613,7 @@ if test "x$enableval" = "xyes"; then
+ 		AC_MSG_CHECKING([for fribidi/fribidi.h])
+ 		AC_TRY_COMPILE(
+ #include <fribidi/fribidi.h>
+-      , fribidi_version_info,
++      , FRIBIDI_VERSION,
+ 			AC_MSG_RESULT([yes])
+ 			AC_DEFINE(HAVE_FRIBIDI, [1], [Define to 1 if you have FRIBIDI])
+ 			LIBS="$LIBS -lfribidi",

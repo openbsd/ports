@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_IconbarTool_cc,v 1.1 2011/04/24 17:32:24 dcoppa Exp $
+
+Fix icon width with vertical toolbar
+(commit b1d70e2c92c15d79ff0128d932b4e245c706a634)
+
+--- src/IconbarTool.cc.orig	Tue Apr 19 11:36:37 2011
++++ src/IconbarTool.cc	Tue Apr 19 11:38:04 2011
+@@ -307,7 +307,7 @@ void IconbarTool::move(int x, int y) {
+ 
+ void IconbarTool::resize(unsigned int width, unsigned int height) {
+     m_icon_container.resize(width, height);
+-    m_icon_container.setMaxTotalSize(m_icon_container.orientation() == FbTk::ROT0 || m_icon_container.orientation() ? width : height);
++    m_icon_container.setMaxTotalSize(m_icon_container.orientation() == FbTk::ROT0 || m_icon_container.orientation() == FbTk::ROT180 ? width : height);
+     renderTheme();
+ }
+ 
+@@ -315,7 +315,7 @@ void IconbarTool::moveResize(int x, int y,
+                              unsigned int width, unsigned int height) {
+ 
+     m_icon_container.moveResize(x, y, width, height);
+-    m_icon_container.setMaxTotalSize(m_icon_container.orientation() == FbTk::ROT0 || m_icon_container.orientation() ? width : height);
++    m_icon_container.setMaxTotalSize(m_icon_container.orientation() == FbTk::ROT0 || m_icon_container.orientation() == FbTk::ROT180 ? width : height);
+     renderTheme();
+ }
+ 

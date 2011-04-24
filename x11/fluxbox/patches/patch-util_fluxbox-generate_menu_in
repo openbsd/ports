@@ -1,7 +1,10 @@
-$OpenBSD: patch-util_fluxbox-generate_menu_in,v 1.6 2006/01/25 03:57:44 david Exp $
---- util/fluxbox-generate_menu.in.orig	Thu Aug 25 11:52:50 2005
-+++ util/fluxbox-generate_menu.in	Mon Jan 23 03:36:56 2006
-@@ -343,7 +343,7 @@ searchForIcon(){
+$OpenBSD: patch-util_fluxbox-generate_menu_in,v 1.7 2011/04/24 17:32:24 dcoppa Exp $
+
+Adapt to our non-GNU grep
+
+--- util/fluxbox-generate_menu.in.orig	Thu Sep  9 14:39:18 2010
++++ util/fluxbox-generate_menu.in	Tue Apr 19 14:19:02 2011
+@@ -308,7 +308,7 @@ searchForIcon(){
      # echo "^.${entry_exec}.[[:space:]]*<.*/${icon_base}\....>" 
      if [ -f "$entry_icon" ]; then
      # if icon exists and entry does not already exists, add it

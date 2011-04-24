@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_ClientMenu_cc,v 1.1 2011/04/24 17:32:24 dcoppa Exp $
+
+Fix a crash when deiconifying apps
+(commit a53017cc3bad26906b99ac473513a10847c40bc0)
+
+--- src/ClientMenu.cc.orig	Tue Apr 19 11:28:50 2011
++++ src/ClientMenu.cc	Tue Apr 19 11:30:51 2011
+@@ -52,15 +52,17 @@ class ClientMenuItem: public FbTk::MenuItem { (public)
+             return;
+ 
+         // this MenuItem object can get destroyed as a result of focus(), so we
+-        // must get a local copy of the parent menu
++        // must get a local copy of anything we want to use here
++        // AFTER ~ClientMenuItem() is called.
+         FbTk::Menu *parent = menu();
++        FocusControl& focus_control = m_client.screen().focusControl();
+ 
+         m_client.focus();
+         fbwin->raise();
+         if ((mods & ControlMask) == 0) {
+             // Ignore any focus changes due to this menu closing
+             // (even in StrictMouseFocus mode)
+-            m_client.screen().focusControl().ignoreAtPointer(true);
++            focus_control.ignoreAtPointer(true);
+             parent->hide();
+         }
+     }

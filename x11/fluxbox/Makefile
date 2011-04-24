@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.50 2010/11/22 08:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2011/04/24 17:32:23 dcoppa Exp $
 
 COMMENT=		window manager based on the original Blackbox code
 
-VERSION=		0.9.15.1
-DISTNAME=		fluxbox-${VERSION}
-REVISION=		3
+DISTNAME=		fluxbox-1.3.1
 
 CATEGORIES=		x11
 
@@ -20,21 +18,26 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		ICE SM X11 Xext Xft Xinerama Xpm Xrandr Xrender \
-			Xau Xdmcp expat fontconfig freetype stdc++ m c z \
-			pthread-stubs xcb Imlib2
+MODULES=		converters/libiconv
+
+WANTLIB=		ICE Imlib2 SM X11 Xau Xdmcp Xext Xft Xinerama \
+			Xpm Xrandr Xrender c expat fontconfig freetype \
+			fribidi m pthread-stubs stdc++ xcb z
 
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.59
-CONFIGURE_ARGS=		--enable-xinerama --enable-imlib2
+AUTOCONF_VERSION=	2.67
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_LIBTOOL=		Yes
+USE_GMAKE=		Yes
 USE_GROFF =		Yes
 
 NO_REGRESS=		Yes
 
 SEPARATE_BUILD=		simple
 
-LIB_DEPENDS=		graphics/imlib2
+LIB_DEPENDS=		devel/fribidi \
+			graphics/imlib2
 
 .include <bsd.port.mk>

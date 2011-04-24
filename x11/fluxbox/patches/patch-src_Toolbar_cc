@@ -1,0 +1,26 @@
+$OpenBSD: patch-src_Toolbar_cc,v 1.1 2011/04/24 17:32:24 dcoppa Exp $
+
+Fix: toolbar placement from menu not saved correctly into configfile
+(commit bb2ce5df8a814f9b858b6919356f7d37f10e6b9f)
+
+--- src/Toolbar.cc.orig	Tue Apr 19 11:26:52 2011
++++ src/Toolbar.cc	Tue Apr 19 11:28:26 2011
+@@ -101,8 +101,8 @@ const ToolbarPlacementString placement_strings[] = {
+     { Toolbar::LEFTBOTTOM, "LeftBottom" },
+     { Toolbar::LEFTCENTER, "LeftCenter" },
+     { Toolbar::LEFTTOP, "LeftTop" },
+-    { Toolbar::RIGHTCENTER, "RightCenter" },
+     { Toolbar::RIGHTBOTTOM, "RightBottom" },
++    { Toolbar::RIGHTCENTER, "RightCenter" },
+     { Toolbar::RIGHTTOP, "RightTop" }
+ };
+ 
+@@ -116,7 +116,7 @@ getString() const {
+ 
+     size_t i = (m_value == FbTk::Util::clamp(m_value, Toolbar::TOPLEFT, Toolbar::RIGHTTOP)
+                 ? m_value 
+-                : Toolbar::DEFAULT) - 1;
++                : Toolbar::DEFAULT) - Toolbar::TOPLEFT;
+     return placement_strings[i].str;
+ }
+ 

@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_FbTk_FbString_cc,v 1.1 2011/04/24 17:32:24 dcoppa Exp $
+
+Fixes for our (older) fribidi port
+
+--- src/FbTk/FbString.cc.orig	Wed Apr 13 12:12:03 2011
++++ src/FbTk/FbString.cc	Wed Apr 13 12:12:45 2011
+@@ -85,7 +85,7 @@ FbTk::FbString makeVisualFromLogical(const FbTk::FbStr
+         result.reserve(S4);
+ 
+     us.resize(S);
+-    FriBidiStrIndex len = fribidi_charset_to_unicode(FRIBIDI_CHAR_SET_UTF8,
++    FriBidiStrIndex len = fribidi_charset_to_unicode(FRIBIDI_CHARSET_UTF8,
+             const_cast<char*>(src.c_str()), S - 1,
+             &us[0]);
+ 
+@@ -93,7 +93,7 @@ FbTk::FbString makeVisualFromLogical(const FbTk::FbStr
+     fribidi_log2vis(&us[0], len, &base, &out_us[0], NULL, NULL, NULL);
+ 
+     result.resize(S4);
+-    len = fribidi_unicode_to_charset(FRIBIDI_CHAR_SET_UTF8, &out_us[0], len, &result[0]);
++    len = fribidi_unicode_to_charset(FRIBIDI_CHARSET_UTF8, &out_us[0], len, &result[0]);
+     result.resize(len); // trim to currently used chars
+ 
+     return result;

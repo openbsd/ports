@@ -1,0 +1,58 @@
+$OpenBSD: patch-src_Screen_cc,v 1.5 2011/04/24 17:32:24 dcoppa Exp $
+
+Use 'unsigned long' to feed XChangeProperty: fix crash at startup
+on sparc64 (commit 870d4d02ee9085f1d0910db3f6e6838749d6a1ce)
+
+Fix a use-after-free crash on restart/exit
+(commit 0b6c860fa0067c73216209878ed1ae46f541f571)
+
+--- src/Screen.cc.orig	Tue Apr 19 11:33:07 2011
++++ src/Screen.cc	Tue Apr 19 11:33:51 2011
+@@ -361,7 +361,7 @@ BScreen::BScreen(FbTk::ResourceManager &rm,
+ 
+     // we're going to manage the screen, so now add our pid
+ #ifdef HAVE_GETPID
+-    pid_t bpid = getpid();
++    unsigned long bpid = static_cast<unsigned long>(getpid());
+ 
+     rootWindow().changeProperty(fluxbox->getFluxboxPidAtom(), XA_CARDINAL,
+                                 sizeof(pid_t) * 8, PropModeReplace,
+@@ -504,6 +504,8 @@ BScreen::~BScreen() {
+     if (! managed)
+         return;
+ 
++    m_configmenu.reset(0);
++
+     m_toolbar.reset(0);
+ 
+     FbTk::EventManager *evm = FbTk::EventManager::instance();
+@@ -573,6 +575,10 @@ BScreen::~BScreen() {
+     // slit must be destroyed before headAreas (Struts)
+     m_slit.reset(0);
+ 
++    delete m_rootmenu.release();
++    delete m_workspacemenu.release();
++    delete m_windowmenu.release();
++
+     // TODO fluxgen: check if this is the right place
+     for (size_t i = 0; i < m_head_areas.size(); i++)
+         delete m_head_areas[i];
+@@ -1468,7 +1474,8 @@ void BScreen::rereadWindowMenu() {
+ 
+ void BScreen::addConfigMenu(const FbTk::FbString &label, FbTk::Menu &menu) {
+     m_configmenu_list.push_back(make_pair(label, &menu));
+-    setupConfigmenu(*m_configmenu.get());
++    if (m_configmenu.get())
++	setupConfigmenu(*m_configmenu.get());
+ }
+ 
+ void BScreen::removeConfigMenu(FbTk::Menu &menu) {
+@@ -1479,7 +1486,7 @@ void BScreen::removeConfigMenu(FbTk::Menu &menu) {
+     if (erase_it != m_configmenu_list.end())
+         m_configmenu_list.erase(erase_it);
+ 
+-    if (!isShuttingdown())
++    if (!isShuttingdown() && m_configmenu.get())
+         setupConfigmenu(*m_configmenu.get());
+ 
+ }

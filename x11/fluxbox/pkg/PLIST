@@ -1,20 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.15 2006/01/25 03:57:44 david Exp $
-bin/fbrun
+@comment $OpenBSD: PLIST,v 1.16 2011/04/24 17:32:24 dcoppa Exp $
+@bin bin/fbrun
 bin/fbsetbg
-bin/fbsetroot
-bin/fluxbox
+@bin bin/fbsetroot
+@bin bin/fluxbox
 bin/fluxbox-generate_menu
+@bin bin/fluxbox-remote
+@bin bin/fluxbox-update_configs
 bin/startfluxbox
 @man man/man1/fbrun.1
 @man man/man1/fbsetbg.1
 @man man/man1/fbsetroot.1
+@man man/man1/fluxbox-remote.1
 @man man/man1/fluxbox.1
-@man man/man1/fluxstyle.1
 @man man/man1/startfluxbox.1
+@man man/man5/fluxbox-apps.5
+@man man/man5/fluxbox-keys.5
+@man man/man5/fluxbox-menu.5
+@man man/man5/fluxbox-style.5
 share/fluxbox/
+share/fluxbox/apps
 share/fluxbox/init
 share/fluxbox/keys
 share/fluxbox/menu
+share/fluxbox/overlay
 share/fluxbox/styles/
 share/fluxbox/styles/Artwiz
 share/fluxbox/styles/BlueFlux/
@@ -42,9 +50,6 @@ share/fluxbox/styles/BlueFlux/pixmaps/toolbar.xpm
 share/fluxbox/styles/BlueFlux/pixmaps/toolbar_label.xpm
 share/fluxbox/styles/BlueFlux/theme.cfg
 share/fluxbox/styles/BlueNight
-share/fluxbox/styles/Carbondioxide
-share/fluxbox/styles/Clean
-share/fluxbox/styles/Cthulhain
 share/fluxbox/styles/Emerge/
 share/fluxbox/styles/Emerge/pixmaps/
 share/fluxbox/styles/Emerge/pixmaps/bullet.xpm
@@ -71,13 +76,96 @@ share/fluxbox/styles/LemonSpace
 share/fluxbox/styles/Makro
 share/fluxbox/styles/MerleyKay
 share/fluxbox/styles/Meta
-share/fluxbox/styles/Minimal
 share/fluxbox/styles/Nyz
 share/fluxbox/styles/Operation
 share/fluxbox/styles/Outcomes
-share/fluxbox/styles/Rampage
 share/fluxbox/styles/Results
 share/fluxbox/styles/Shade
-share/fluxbox/styles/Spiff
 share/fluxbox/styles/Twice
+share/fluxbox/styles/arch/
+share/fluxbox/styles/arch/pixmaps/
+share/fluxbox/styles/arch/pixmaps/bullet.xpm
+share/fluxbox/styles/arch/pixmaps/closefcs.xpm
+share/fluxbox/styles/arch/pixmaps/closepr.xpm
+share/fluxbox/styles/arch/pixmaps/closeufcs.xpm
+share/fluxbox/styles/arch/pixmaps/frame.xpm
+share/fluxbox/styles/arch/pixmaps/gripfcs.xpm
+share/fluxbox/styles/arch/pixmaps/maxfcs.xpm
+share/fluxbox/styles/arch/pixmaps/maxpr.xpm
+share/fluxbox/styles/arch/pixmaps/maxufcs.xpm
+share/fluxbox/styles/arch/pixmaps/menuiconfcs.xpm
+share/fluxbox/styles/arch/pixmaps/menuiconpr.xpm
+share/fluxbox/styles/arch/pixmaps/menuiconufcs.xpm
+share/fluxbox/styles/arch/pixmaps/minfcs.xpm
+share/fluxbox/styles/arch/pixmaps/minpr.xpm
+share/fluxbox/styles/arch/pixmaps/minufcs.xpm
+share/fluxbox/styles/arch/pixmaps/selected.xpm
+share/fluxbox/styles/arch/pixmaps/shadefcs.xpm
+share/fluxbox/styles/arch/pixmaps/shadepr.xpm
+share/fluxbox/styles/arch/pixmaps/shadeufcs.xpm
+share/fluxbox/styles/arch/pixmaps/stickfcs.xpm
+share/fluxbox/styles/arch/pixmaps/stickpr.xpm
+share/fluxbox/styles/arch/pixmaps/stickufcs.xpm
+share/fluxbox/styles/arch/pixmaps/stuckfcs.xpm
+share/fluxbox/styles/arch/pixmaps/stuckufcs.xpm
+share/fluxbox/styles/arch/pixmaps/tbarfcs.xpm
+share/fluxbox/styles/arch/pixmaps/tbarufcs.xpm
+share/fluxbox/styles/arch/pixmaps/unselected.xpm
+share/fluxbox/styles/arch/pixmaps/unshadefcs.xpm
+share/fluxbox/styles/arch/pixmaps/unshadepr.xpm
+share/fluxbox/styles/arch/pixmaps/unshadeufcs.xpm
+share/fluxbox/styles/arch/theme.cfg
+share/fluxbox/styles/bloe/
+share/fluxbox/styles/bloe/pixmaps/
+share/fluxbox/styles/bloe/pixmaps/bullet.xpm
+share/fluxbox/styles/bloe/pixmaps/closefcs.xpm
+share/fluxbox/styles/bloe/pixmaps/closepr.xpm
+share/fluxbox/styles/bloe/pixmaps/closeufcs.xpm
+share/fluxbox/styles/bloe/pixmaps/frame.xpm
+share/fluxbox/styles/bloe/pixmaps/maxfcs.xpm
+share/fluxbox/styles/bloe/pixmaps/maxpr.xpm
+share/fluxbox/styles/bloe/pixmaps/maxufcs.xpm
+share/fluxbox/styles/bloe/pixmaps/menuiconfcs.xpm
+share/fluxbox/styles/bloe/pixmaps/menuiconpr.xpm
+share/fluxbox/styles/bloe/pixmaps/menuiconufcs.xpm
+share/fluxbox/styles/bloe/pixmaps/minfcs.xpm
+share/fluxbox/styles/bloe/pixmaps/minpr.xpm
+share/fluxbox/styles/bloe/pixmaps/minufcs.xpm
+share/fluxbox/styles/bloe/pixmaps/selected.xpm
+share/fluxbox/styles/bloe/pixmaps/shadefcs.xpm
+share/fluxbox/styles/bloe/pixmaps/shadepr.xpm
+share/fluxbox/styles/bloe/pixmaps/shadeufcs.xpm
+share/fluxbox/styles/bloe/pixmaps/stickfcs.xpm
+share/fluxbox/styles/bloe/pixmaps/stickpr.xpm
+share/fluxbox/styles/bloe/pixmaps/stickufcs.xpm
+share/fluxbox/styles/bloe/pixmaps/stuckfcs.xpm
+share/fluxbox/styles/bloe/pixmaps/stuckufcs.xpm
+share/fluxbox/styles/bloe/pixmaps/tbarfcs.xpm
+share/fluxbox/styles/bloe/pixmaps/tbarufcs.xpm
+share/fluxbox/styles/bloe/pixmaps/unselected.xpm
+share/fluxbox/styles/bloe/pixmaps/unshadefcs.xpm
+share/fluxbox/styles/bloe/pixmaps/unshadepr.xpm
+share/fluxbox/styles/bloe/pixmaps/unshadeufcs.xpm
+share/fluxbox/styles/bloe/pixmaps/windowlabelfcs.xpm
+share/fluxbox/styles/bloe/pixmaps/windowlabelufcs.xpm
+share/fluxbox/styles/bloe/theme.cfg
+share/fluxbox/styles/bora_black/
+share/fluxbox/styles/bora_black/theme.cfg
+share/fluxbox/styles/bora_blue/
+share/fluxbox/styles/bora_blue/theme.cfg
+share/fluxbox/styles/bora_green/
+share/fluxbox/styles/bora_green/theme.cfg
+share/fluxbox/styles/carp/
+share/fluxbox/styles/carp/theme.cfg
+share/fluxbox/styles/green_tea/
+share/fluxbox/styles/green_tea/theme.cfg
+share/fluxbox/styles/ostrich/
+share/fluxbox/styles/ostrich/theme.cfg
 share/fluxbox/styles/qnx-photon
+share/fluxbox/styles/zimek_bisque/
+share/fluxbox/styles/zimek_bisque/theme.cfg
+share/fluxbox/styles/zimek_darkblue/
+share/fluxbox/styles/zimek_darkblue/theme.cfg
+share/fluxbox/styles/zimek_green/
+share/fluxbox/styles/zimek_green/theme.cfg
+share/fluxbox/windowmenu

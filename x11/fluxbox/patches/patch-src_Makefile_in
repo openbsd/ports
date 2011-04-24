@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2011/04/24 17:32:24 dcoppa Exp $
+
+Don't check for git revision, this is a stable release
+
+--- src/Makefile.in.orig	Sun Feb 27 18:40:24 2011
++++ src/Makefile.in	Mon Apr 18 20:04:45 2011
+@@ -905,10 +905,8 @@ defaults.cc: force
+ 		echo '}'; \
+ 		echo ''; \
+ 		echo 'const char* gitrevision() {'; \
+-		echo '  return "'`cat ../.git/$$(cat ../.git/HEAD | cut -f 2 -d ' ')`'";';\
+-		echo '}' ) > defaults_tmp.cc
+-	@if ! cmp defaults_tmp.cc defaults.cc ; then cp defaults_tmp.cc defaults.cc; fi
+-	@rm defaults_tmp.cc
++		echo '  return "";';\
++		echo '}' ) > defaults.cc
+ 
+ force: ;
+ 

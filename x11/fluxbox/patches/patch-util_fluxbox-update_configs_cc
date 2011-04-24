@@ -1,0 +1,15 @@
+$OpenBSD: patch-util_fluxbox-update_configs_cc,v 1.1 2011/04/24 17:32:24 dcoppa Exp $
+
+Fix building with SEPARATE_BUILD
+
+--- util/fluxbox-update_configs.cc.orig	Sat Sep 18 17:51:51 2010
++++ util/fluxbox-update_configs.cc	Mon Apr 18 17:28:19 2011
+@@ -24,7 +24,7 @@
+ #include "../src/FbTk/StringUtil.hh"
+ #include "../src/FbTk/FileUtil.hh"
+ 
+-#include "defaults.hh"
++#include "../src/defaults.hh"
+ 
+ #ifdef HAVE_CONFIG_H
+ #include "config.h"
