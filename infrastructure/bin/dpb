@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.13 2011/04/18 14:00:57 espie Exp $
+# $OpenBSD: dpb,v 1.14 2011/04/24 08:02:07 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -25,6 +25,29 @@ BEGIN {
 	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
 }
 use lib ("$ports1/infrastructure/lib", "$FindBin::Bin/../lib");
+
+package DPB::State;
+our @ISA = qw(OpenBSD::State);
+
+use OpenBSD::State;
+
+sub init
+{
+	my $self = shift;
+	$self->{export_level}++;
+	return $self;
+}
+
+sub handle_options
+{
+	my $state = shift;
+	$state->SUPER::handle_options('aceqrRsuUh:xA:f:j:m:P:b:d:L:S:t:T:',
+    "[-acerRsuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir]",
+    "[-b log] [-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
+}
+
+package main;
+
 use DPB::PkgPath;
 use DPB::Core;
 use DPB::Vars;
@@ -33,7 +56,6 @@ use DPB::Engine;
 use DPB::PortBuilder;
 use DPB::Reporter;
 use OpenBSD::Error;
-use OpenBSD::State;
 use DPB::Heuristics;
 use DPB::Locks;
 use DPB::Logger;
@@ -96,8 +118,8 @@ sub parse_build_file
 
 my @build_files = ();
 my $heuristics = DPB::Heuristics->new;
-my $ui = OpenBSD::State->new('dpb');
-$ui->{opt} = {
+my $state = DPB::State->new('dpb');
+$state->{opt} = {
 	P => sub {
 	    my $file = shift;
 	    open my $fh, '<', $file or die "Can't open $file\n";
@@ -115,9 +137,7 @@ $ui->{opt} = {
 	    parse_size_file(shift, $heuristics);
 	}
     };
-$ui->handle_options('aceqrRsuUh:xA:f:j:m:P:b:d:L:S:t:T:',
-    "[-acerRsuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir]",
-    "[-b log] [-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
+$state->handle_options;
 
 if ($opt_r) {
 	$heuristics->random;
@@ -138,7 +158,7 @@ for my $arg (@ARGV) {
 		($path, $weight) = ($1, $2);
 	}
 	if ($arg =~ m/^\./) {
-		$ui->usage("Invalid pkgpath: #1",  $arg);
+		$state->usage("Invalid pkgpath: #1",  $arg);
 	}
 	my $pkgpath = DPB::PkgPath->new($path);
 	$heuristics->set_weight($pkgpath, $weight);
@@ -156,11 +176,11 @@ my $logger = DPB::Logger->new($logdir, $opt_c);
 $heuristics->set_logger($logger);
 
 if (defined $opt_j && $localarch ne $arch) {
-	$ui->usage("Can't use -j if -A arch is not local architecture");
+	$state->usage("Can't use -j if -A arch is not local architecture");
 }
 
 if (defined $opt_j && $opt_j !~ m/^\d+$/) {
-	$ui->usage("-j takes a numerical argument");
+	$state->usage("-j takes a numerical argument");
 }
 
 my $fullrepo = "$repo/$arch/all";
@@ -293,3 +313,4 @@ $reporter->reset;
 DPB::Core->cleanup;
 print $engine->report;
 $engine->dump_category('tobuild', $logger->open('dump'));
+
