@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/01/07 07:36:19 sebastia Exp $
+# $OpenBSD: Makefile,v 1.20 2011/04/24 14:06:51 sebastia Exp $
 
      SUBDIR =
      SUBDIR += addresses
@@ -11,6 +11,7 @@
      SUBDIR += gnumail
      SUBDIR += gorm
      SUBDIR += graphos
+     SUBDIR += grr
      SUBDIR += gshisen
      SUBDIR += gspdf
      SUBDIR += gui
@@ -19,11 +20,13 @@
      SUBDIR += imageviewer
      SUBDIR += laternamagica
      SUBDIR += make
+     SUBDIR += mpdcon
      SUBDIR += pantomime
      SUBDIR += pdfkit
      SUBDIR += price
      SUBDIR += projectcenter
      SUBDIR += remotedesk
+     SUBDIR += rsskit
      SUBDIR += simpleagenda
      SUBDIR += systempreferences
      SUBDIR += terminal
