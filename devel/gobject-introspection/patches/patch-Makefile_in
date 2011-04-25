@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile_in,v 1.10 2011/04/07 16:16:21 ajacoutot Exp $
---- Makefile.in.orig	Wed Mar 30 22:37:04 2011
-+++ Makefile.in	Thu Apr  7 11:02:53 2011
-@@ -539,7 +539,7 @@ oldincludedir = @oldincludedir@
+$OpenBSD: patch-Makefile_in,v 1.11 2011/04/25 11:43:17 jasper Exp $
+--- Makefile.in.orig	Thu Apr 21 15:37:01 2011
++++ Makefile.in	Thu Apr 21 16:01:49 2011
+@@ -537,7 +537,7 @@ oldincludedir = @oldincludedir@
  pdfdir = @pdfdir@
  
  # Python module
