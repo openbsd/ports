@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/05/26 08:57:49 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/04/25 13:46:16 jasper Exp $
 bin/poe-gen-tests
 ${P5SITE}/POE/
 ${P5SITE}/POE/Test/
@@ -26,6 +26,7 @@ ${P5SITE}/POE/Test/Loops/wheel_curses.pm
 ${P5SITE}/POE/Test/Loops/wheel_readline.pm
 ${P5SITE}/POE/Test/Loops/wheel_readwrite.pm
 ${P5SITE}/POE/Test/Loops/wheel_run.pm
+${P5SITE}/POE/Test/Loops/wheel_run_size.pm
 ${P5SITE}/POE/Test/Loops/wheel_sf_ipv6.pm
 ${P5SITE}/POE/Test/Loops/wheel_sf_tcp.pm
 ${P5SITE}/POE/Test/Loops/wheel_sf_udp.pm
