@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.12 2010/12/27 17:19:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.13 2011/04/25 07:42:37 ajacoutot Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 conf/modules.sample/zabbix.conf
@@ -35,6 +35,7 @@ zabbix/api/classes/class.cscreen.php
 zabbix/api/classes/class.cscript.php
 zabbix/api/classes/class.ctemplate.php
 zabbix/api/classes/class.ctrigger.php
+zabbix/api/classes/class.ctriggerexpression.php
 zabbix/api/classes/class.cuser.php
 zabbix/api/classes/class.cusergroup.php
 zabbix/api/classes/class.cusermacro.php
@@ -275,7 +276,6 @@ zabbix/include/classes/class.cicon.php
 zabbix/include/classes/class.ciframe.php
 zabbix/include/classes/class.cimagetexttable.php
 zabbix/include/classes/class.cimg.php
-zabbix/include/classes/class.cipbox.php
 zabbix/include/classes/class.cjson.php
 zabbix/include/classes/class.cjsscript.php
 zabbix/include/classes/class.clabel.php
@@ -342,6 +342,7 @@ zabbix/include/locales/nl_nl.inc.php
 zabbix/include/locales/pl_pl.inc.php
 zabbix/include/locales/pt_br.inc.php
 zabbix/include/locales/ru_ru.inc.php
+zabbix/include/locales/sk_sk.inc.php
 zabbix/include/locales/sp_sp.inc.php
 zabbix/include/locales/sv_se.inc.php
 zabbix/include/locales/ua_ua.inc.php
