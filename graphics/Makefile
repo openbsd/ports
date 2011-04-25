@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.286 2011/04/14 07:02:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.287 2011/04/25 09:35:49 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -208,6 +208,7 @@
      SUBDIR += ruby-rmagick,ruby19
      SUBDIR += s10sh
      SUBDIR += sane-backends
+     SUBDIR += sane-backends,snmp
      SUBDIR += sane-frontends
      SUBDIR += scratch
      SUBDIR += scrot
