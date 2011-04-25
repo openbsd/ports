@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.75 2011/03/14 08:51:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2011/04/25 14:00:29 jasper Exp $
 
 COMMENT=	IMAP/POP3/SDPS mail retriever
 
-MODPY_EGG_VERSION=	4.20.0
-REVISION=	0
+MODPY_EGG_VERSION=	4.20.2
 DISTNAME=	getmail-${MODPY_EGG_VERSION}
 CATEGORIES=	mail
 
@@ -21,7 +20,6 @@ MASTER_SITES=	${HOMEPAGE}/old-versions/
 
 MODULES=	lang/python
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 EXDIR=		${PREFIX}/share/examples/getmail
