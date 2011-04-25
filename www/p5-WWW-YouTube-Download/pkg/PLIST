@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/25 13:04:17 todd Exp $
+${P5SITE}/WWW/YouTube/
+${P5SITE}/WWW/YouTube/Download.pm
+@man man/man3p/WWW::YouTube::Download.3p
+share/examples/p5-WWW-YouTube-Download/
+share/examples/p5-WWW-YouTube-Download/cb.pl
+share/examples/p5-WWW-YouTube-Download/parallel.pl

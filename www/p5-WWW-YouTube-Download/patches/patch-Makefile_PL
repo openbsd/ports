@@ -1,0 +1,15 @@
+
+Module::Install::AuthorTests is missing in ports tree,
+but not really essential.
+
+$OpenBSD: patch-Makefile_PL,v 1.1.1.1 2011/04/25 13:04:17 todd Exp $
+--- Makefile.PL.orig	Tue Jan  4 15:17:14 2011
++++ Makefile.PL	Mon Jan 10 22:22:02 2011
+@@ -8,7 +8,6 @@ requires 'JSON';
+ requires 'HTML::Entities';
+ 
+ tests 't/*.t t/*/*.t';
+-author_tests 'xt';
+ 
+ test_requires 'Test::More', '0.96';
+ auto_include;
