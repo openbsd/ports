@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.6 2010/11/01 10:55:26 espie Exp $
+# $OpenBSD: Port.pm,v 1.7 2011/04/25 11:58:46 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -388,6 +388,10 @@ sub finished_task
 sub finalize
 {
 	my $self = shift;
+	if ($self->{stuck}) {
+		open my $fh, ">>", $self->{log};
+		print $fh $self->{stuck}, "\n";
+	}
 	$self->SUPER::finalize(@_);
 }
 
@@ -443,7 +447,7 @@ sub watch
 
 sub watched
 {
-	my ($self, $current) = @_;
+	my ($self, $current, $core) = @_;
 	return "" unless defined $self->{watched};
 	$self->watch;
 	my $progress = '';
@@ -458,15 +462,26 @@ sub watched
 	}
 
 	my $diff = $current - $self->{time};
+	my $unchanged = " unchanged for ";
 	if ($diff > 7200) {
-		return "$progress unchanged for ".int($diff/3600)." hours";
+		$unchanged .= int($diff/3600)." hours";
 	} elsif ($diff > 300) {
-		return "$progress unchanged for ".int($diff/60)." minutes";
+		$unchanged .= int($diff/60)." minutes";
 	} elsif ($diff > 10) {
-		return "$progress unchanged for ".int($diff)." seconds";
+		$unchanged .= int($diff)." seconds";
 	} else {
-		return $progress;
+		$unchanged = "";
 	}
+	my $stuck = $core->stuck_timeout;
+	if (defined $stuck) {
+		if ($diff / $core->sf > $stuck) {
+			$self->{stuck} = 
+			    "KILLED: $self->{current} stuck at $progress,$unchanged";
+			kill 9, $core->{pid};
+			return $self->{stuck};
+		}
+	}
+	return $progress.$unchanged;
 }
 
 sub really_watch

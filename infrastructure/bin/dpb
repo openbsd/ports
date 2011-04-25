@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.17 2011/04/24 09:14:45 espie Exp $
+# $OpenBSD: dpb,v 1.18 2011/04/25 11:58:46 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -31,15 +31,17 @@ package DPB::State;
 our @ISA = qw(OpenBSD::State);
 
 use OpenBSD::State;
-use DPB::Heuristics;
 use OpenBSD::Paths;
+use DPB::Heuristics;
+use DPB::PkgPath;
+use DPB::Logger;
 
 
 sub init
 {
 	my $self = shift;
 	$self->SUPER::init;
-	$self->{export_level}++;
+	$self->{no_exports} = 1;
 	$self->{heuristics} = DPB::Heuristics->new;
 	$self->{make} = $ENV{MAKE} || OpenBSD::Paths->make;
 	($self->{ports}, $self->{repo}, $self->{localarch}, $self->{distdir}) =
@@ -53,26 +55,89 @@ sub init
 sub handle_options
 {
 	my $state = shift;
-	$state->{opt}{A} = sub {
-		$state->{arch} = shift;
-	};
-	$state->{opt}{L} = sub {
-		$state->{logdir} = shift;
-	};
-	$state->{opt}{r} = sub {
-		$state->heuristics->random;
-	};
-	$state->{opt}{m} = sub {
-		$state->heuristics->set_threshold(shift);
+	$state->{opt} = {
+		a => sub {
+			$state->{all} = 1;
+		},
+		A => sub {
+			$state->{arch} = shift;
+		},
+		L => sub {
+			$state->{logdir} = shift;
+		},
+		r => sub {
+			$state->heuristics->random;
+		},
+		m => sub {
+			$state->heuristics->set_threshold(shift)
+		},
+		P => sub {
+			my $file = shift;
+			open my $fh, '<', $file or die "Can't open $file\n";
+			my $_;
+			while (<$fh>) {
+				chomp;
+				next if m/^\#/;
+				unshift @main::ARGV, $_;
+			}
+		},
+		b => sub {
+			push(@{$state->{build_files}}, shift);
+		},
+		S => sub {
+			$state->parse_size_file(shift, $state->heuristics);
+		},
 	};
 
-	$state->SUPER::handle_options('aceqrRsuUh:xA:f:j:m:P:b:d:L:S:t:T:',
+	$state->SUPER::handle_options('aceqrRsuUh:xA:f:j:m:P:b:L:S:t:T:',
     "[-acerRsuUx] [-A arch] [-j N] [-P plist] [-h hosts] [-L logdir]",
-    "[-b log] [-t ctimeout] [-T dtimeout] [-m threshold] [path ...]");
+    "[-b log] [-t ctimeout] [-m threshold] [path ...]");
     	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
 	$state->{logdir} //= $ENV{LOGDIR} // 
 	    join("/", $state->ports, "logs", $state->arch);
+	if (defined $state->opt('j')) {
+		if ($state->localarch ne $state->arch) {
+			$state->usage(
+		    "Can't use -j if -A arch is not local architecture");
+		}
+		if ($state->opt('j') !~ m/^\d+$/) {
+			$state->usage("-j takes a numerical argument");
+		}
+	}
+	$state->{logger} = DPB::Logger->new($state->logdir, $state->opt('c'));
+	$state->heuristics->set_logger($state->logger);
+	$state->{display_timeout} = 
+	    $state->{subst}->value('DISPLAY_TIMEOUT') // $state->opt('T') // 10;
+    	$state->{connection_timeout} =
+	    $state->{subst}->value('CONNECTION_TIMEOUT') // $state->opt('t');
+	$state->{stuck_timeout} = $state->{subst}->value('STUCK_TIMEOUT');
+}
 
+sub start_cores
+{
+	my $state = shift;
+
+	if ($state->opt('h')) {
+		DPB::Core->parse_hosts_file($state->opt('h'), $state);
+	}
+
+	my $prop = {};
+	if ($state->opt('j')) {
+		$prop->{jobs} = $state->opt('j');
+	}
+	if ($state->{stuck_timeout}) {
+		$prop->{stuck} = $state->{stuck_timeout};
+	}
+
+	if ($state->opt('j') || !$state->opt('h')) {
+		DPB::Core::Factory->new('localhost', $prop);
+	}
+	DPB::Core::Factory->init_cores($state);
+}
+
+sub logger
+{
+	return shift->{logger};
 }
 
 sub heuristics
@@ -115,31 +180,52 @@ sub logdir
 	return shift->{logdir};
 }
 
-package main;
+sub parse_build_line
+{
+	return split(/\s+/, shift);
+}
 
+sub parse_build_file
+{
+	my ($state, $fname, @consumers) = @_;
+	if (!-f $fname) {
+		my $arch = $state->arch;
+		if (-f "$fname/$arch/build.log") {
+			$fname = "$fname/$arch/build.log";
+		} elsif (-f "$fname/build.log") {
+			$fname = "$fname/build.log";
+		}
+	}
+	open my $fh, '<', $fname or 
+	    $state->fatal("Couldn't open build file #1: #2", $fname, $!);
+	my $_;
+	while (<$fh>) {
+		chomp;
+		my ($pkgpath, $host, $time, $sz, @rest) = parse_build_line($_);
+		next if (!defined $sz) || $sz =~ m/!$/;
+		my $o = DPB::PkgPath->new_hidden($pkgpath);
+		for my $c (@consumers) {
+			$c->add_build_info($o, $host, $time, $sz);
+		}
+	}
+}
 
-use DPB::PkgPath;
-use DPB::Core;
-use DPB::Vars;
-use DPB::PortInfo;
-use DPB::Engine;
-use DPB::PortBuilder;
-use DPB::Reporter;
-use OpenBSD::Error;
-use DPB::Locks;
-use DPB::Logger;
-use DPB::Job;
-use DPB::Grabber;
-
-our ($opt_t, $opt_d, $opt_e, $opt_T, $opt_c, $opt_h, $opt_j, $opt_a,
-    $opt_q, $opt_R, $opt_s, $opt_u, $opt_U,
-    $opt_f, $opt_x);
-my @subdirlist;
+sub handle_build_files
+{
+	my $state = shift;
+	return unless defined $state->{build_files};
+	for my $file (@{$state->{build_files}}) {
+		$state->parse_build_file($file, $state->heuristics, 
+		    "DPB::Job::Port");
+	}
+	$state->heuristics->finished_parsing;
+}
 
 sub parse_size_file
 {
-	my ($fname, @consumers) = @_;
-	open my $fh, '<', $fname or die "Couldn't open build file $fname\n";
+	my ($state, $fname, @consumers) = @_;
+	open my $fh, '<', $fname or 
+	    $state->fatal("Couldn't open build file #1: #2", $fname, $!);
 	my $_;
 	while (<$fh>) {
 		chomp;
@@ -154,60 +240,31 @@ sub parse_size_file
 	}
 }
 
-sub parse_build_line
-{
-	return split(/\s+/, shift);
-}
+package main;
 
-sub parse_build_file
-{
-	my ($fname, $arch, @consumers) = @_;
-	if (!-f $fname) {
-		if (-f "$fname/$arch/build.log") {
-			$fname = "$fname/$arch/build.log";
-		} elsif (-f "$fname/build.log") {
-			$fname = "$fname/build.log";
-		}
-	}
-	open my $fh, '<', $fname or die "Couldn't open build file $fname\n";
-	my $_;
-	while (<$fh>) {
-		chomp;
-		my ($pkgpath, $host, $time, $sz, @rest) = parse_build_line($_);
-		next if (!defined $sz) || $sz =~ m/!$/;
-		my $o = DPB::PkgPath->new_hidden($pkgpath);
-		for my $c (@consumers) {
-			$c->add_build_info($o, $host, $time, $sz);
-		}
-	}
-}
 
-my @build_files = ();
+use DPB::PkgPath;
+use DPB::Core;
+use DPB::Vars;
+use DPB::PortInfo;
+use DPB::Engine;
+use DPB::PortBuilder;
+use DPB::Reporter;
+use OpenBSD::Error;
+use DPB::Locks;
+use DPB::Job;
+use DPB::Grabber;
+
+my @subdirlist;
+
 my $state = DPB::State->new('dpb');
-$state->{opt} = {
-	P => sub {
-	    my $file = shift;
-	    open my $fh, '<', $file or die "Can't open $file\n";
-	    my $_;
-	    while (<$fh>) {
-		    chomp;
-		    next if m/^\#/;
-		    unshift @ARGV, $_;
-	    }
-	},
-	b => sub {
-	    push(@build_files, shift);
-	},
-	S => sub {
-	    parse_size_file(shift, $state->heuristics);
-	}
-    };
 $state->handle_options;
+$state->start_cores;
 
-my $dpb = $opt_f ? "fetch" : "normal";
+$state->handle_build_files;
 
 if (@ARGV == 0) {
-	$opt_a = 1;
+	$state->{all} = 1;
 }
 for my $arg (@ARGV) {
 	$arg =~ s/\/+$//;
@@ -223,56 +280,22 @@ for my $arg (@ARGV) {
 	$pkgpath->add_to_subdirlist(\@subdirlist);
 }
 
-my $logger = DPB::Logger->new($state->logdir, $opt_c);
-$state->heuristics->set_logger($logger);
-
-if (defined $opt_j && $state->localarch ne $state->arch) {
-	$state->usage("Can't use -j if -A arch is not local architecture");
-}
-
-if (defined $opt_j && $opt_j !~ m/^\d+$/) {
-	$state->usage("-j takes a numerical argument");
-}
-
-if ($opt_h) {
-	DPB::Core->parse_hosts_file($opt_h, $state->arch, $opt_t, $logger, $state->heuristics);
-}
-
-my $prop = {};
-if ($opt_j) {
-	$prop->{jobs} = $opt_j;
-}
-
-if ($opt_j || !$opt_h) {
-	DPB::Core::Factory->new('localhost', $prop);
-}
-
-if (@build_files > 0) {
-	for my $file (@build_files) {
-	    parse_build_file($file, $state->arch, $state->heuristics, "DPB::Job::Port");
-	}
-	$state->heuristics->finished_parsing;
-}
-
-DPB::Core::Factory->init_cores($logger);
-
-my $builder = DPB::PortBuilder->new(
-    $opt_c, $opt_s, $opt_u, $opt_U, $opt_R, $state->fullrepo, $logger, 
-    $state->ports, $state->make, $state->heuristics);
+my $builder = DPB::PortBuilder->new($state);
 
 my $locker = DPB::Locks->new(join("/", $state->logdir, "locks"));
-my $engine = DPB::Engine->new($builder, $state->heuristics, $logger, $locker);
-my $reporter = DPB::Reporter->new($opt_x, $state->heuristics, "DPB::Core", $engine);
+my $engine = DPB::Engine->new($builder, $state->heuristics, $state->logger, 
+    $locker);
+my $reporter = DPB::Reporter->new($state->opt('x'),
+    $state->heuristics, "DPB::Core", $engine);
 while (!DPB::Core->avail) {
 	DPB::Core->reap;
 	sleep 1;
 }
 my $core = DPB::Core->get;
-#my $dump = DPB::Util->make_hot($logger->open('dump'));
+#my $dump = DPB::Util->make_hot($state->logger->open('dump'));
 
 my $keep_going = 1;
-$opt_T //= 10;
-my $last_time = time() - $opt_T;
+my $last_time = time() - $state->{display_timeout};
 
 sub handle_non_waiting_jobs
 {
@@ -290,7 +313,8 @@ sub handle_non_waiting_jobs
 	}
 	if ($need_clock) {
 		my $current = time();
-		if ($current >= $last_time + $opt_T || $reaped) {
+		if ($current >= $last_time + $state->{display_timeout} ||
+		    $reaped) {
 			$reporter->report;
 			$last_time = $current;
 		}
@@ -300,13 +324,13 @@ sub handle_non_waiting_jobs
 	return $keep_going;
 }
 
-my $grabber = DPB::Grabber->new($state->ports, $state->make, $logger, $engine, 
-	$dpb, sub { handle_non_waiting_jobs(1) });
+my $grabber = DPB::Grabber->new($state, $engine, 
+    sub { handle_non_waiting_jobs(1) });
 
-if ($opt_a) {
+if ($state->{all}) {
 	# when restarting interrupted dpb,
 	# find the most important paths first
-	my $list = $engine->find_best($logger->logfile("dependencies"), 10);
+	my $list = $engine->find_best($state->logger->logfile("dependencies"), 10);
 	# if we have them, list them before the full ports tree walk.
 	if (@$list > 0) {
 		$grabber->grab_subdirs($core, $list);
@@ -319,7 +343,7 @@ if (@subdirlist > 0) {
 
 $grabber->complete_subdirs($core);
 
-if ($opt_a) {
+if ($state->{all}) {
 	$grabber->grab_subdirs($core);
 }
 
@@ -327,19 +351,19 @@ if ($opt_a) {
 $grabber->complete_subdirs($core);
 # give back "our" core to the pool.
 
-if (!$opt_e) {
+if (!$state->opt('e')) {
 	$core->mark_ready;
 }
 # and let's wait for all jobs now.
 
-if ($opt_a) {
+if ($state->{all}) {
 	$engine->dump_dependencies;
 }
 #$engine->dump($dump);
 $engine->check_buildable;
 #$engine->dump($dump);
 
-DPB::Core->start_clock($opt_T);
+DPB::Core->start_clock($state->{display_timeout});
 while (1) {
 	while (1) {
 		handle_non_waiting_jobs(0);
@@ -354,7 +378,7 @@ while (1) {
 			DPB::Core->reap_wait;
 		}
 	}
-	if (!$opt_q || !$engine->recheck_errors) {
+	if (!$state->opt('q') || !$engine->recheck_errors) {
 		last;
 	}
 }
@@ -362,5 +386,5 @@ while (1) {
 $reporter->reset;
 DPB::Core->cleanup;
 print $engine->report;
-$engine->dump_category('tobuild', $logger->open('dump'));
+$engine->dump_category('tobuild', $state->logger->open('dump'));
 

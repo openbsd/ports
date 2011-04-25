@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.6 2010/11/02 20:32:59 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.7 2011/04/25 11:58:46 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -27,18 +27,20 @@ use DPB::Job::Port;
 
 sub new
 {
-	my $class = shift;
-	my ($opt_c, $opt_s, $opt_u, $opt_U, $opt_R, $fullrepo, $logger, $ports, $make,
-	    $h) = @_;
-	my $self = bless {clean => $opt_c,  size => $opt_s,
-	    rebuild => $opt_R,
-	    fullrepo => $fullrepo,
-	    logger => $logger, ports => $ports, make => $make,
-	    heuristics => $h}, $class;
-	if ($opt_u || $opt_U) {
+	my ($class, $state) = @_;
+	my $self = bless {
+	    clean => $state->opt('c'),  
+	    size => $state->opt('s'),
+	    rebuild => $state->opt('R'),
+	    fullrepo => $state->fullrepo,
+	    logger => $state->logger, 
+	    ports => $state->ports, 
+	    make => $state->make,
+	    heuristics => $state->heuristics}, $class;
+	if ($state->opt('u') || $state->opt('U')) {
 		$self->{update} = 1;
 	}
-	if ($opt_U) {
+	if ($state->opt('U')) {
 		$self->{forceupdate} = 1;
 	}
 	$self->init;

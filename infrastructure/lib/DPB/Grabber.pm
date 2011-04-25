@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.10 2010/12/05 10:06:12 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.11 2011/04/25 11:58:46 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -24,12 +24,13 @@ use DPB::Util;
 package DPB::Grabber;
 sub new
 {
-	my ($class, $ports, $make, $logger, $engine, $dpb, $endcode) = @_;
-	my $o = bless { ports => $ports, make => $make,
-		loglist => DPB::Util->make_hot($logger->open("vars")),
-		logger => $logger,
+	my ($class, $state, $engine, $endcode) = @_;
+
+	my $o = bless { ports => $state->ports, make => $state->make,
+		loglist => DPB::Util->make_hot($state->logger->open("vars")),
+		logger => $state->logger,
 		engine => $engine,
-		dpb => $dpb,
+		dpb => $state->opt('f') ? "fetch" : "normal",
 		keep_going => 1,
 		endcode => $endcode
 	    }, $class;

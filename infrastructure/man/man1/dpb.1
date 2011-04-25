@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.10 2010/11/02 11:34:29 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.11 2011/04/25 11:58:46 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: November 2 2010 $
+.Dd $Mdocdate: April 25 2011 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -26,14 +26,13 @@
 .Op Fl aceqrRsuUx
 .Op Fl A Ar arch
 .Op Fl b Ar logfile
+.Op Fl D Ar PARAM Ns = Ns Ar value
 .Op Fl h Ar hosts
 .Op Fl j Ar n
 .Op Fl L Ar logdir
 .Op Fl m Ar threshold
 .Op Fl P Ar subdirlist
 .Op Fl S Ar sizefile
-.Op Fl t Ar ctimeout
-.Op Fl T Ar dtimeout
 .Op Ar pkgpath ...
 .Ek
 .Sh DESCRIPTION
@@ -60,6 +59,25 @@ Prime the heuristics module with a previous build log, so that packages that
 take a long time to build will happen earlier.
 .It Fl c
 Clean port working directory and log before each build.
+.It Fl D Ar PARAM Ns = Ns Ar value
+Set defined parameter to value.
+Known parameters are as follows:
+.Bl -tag -width DISPLAY
+.It Ar CONNECTION_TIMEOUT
+Connection timeout for ssh.
+Defaults to 60 seconds.
+.It Ar DISPLAY_TIMEOUT
+Display timeout (in seconds) while waiting for jobs to finish, so that the
+display is updated even if jobs didn't finish.
+Defaults to 10 seconds.
+.It Ar STUCK_TIMEOUT
+Timeout (in seconds * speed factor) after which tasks that don't show
+any progress will be killed.
+This can be set on a per-core basis as the 
+.Sq stuck
+property.
+Note that this will always be divided by the core's speed factor.
+.El
 .It Fl e
 The listing job is extra and won't be given back to the pool when it's
 finished.
@@ -93,6 +111,9 @@ The machine (or machines) with the highest speed factor will
 get access to all jobs, whereas other machines will be clamped
 to stuff which does not take too long.
 Requires previous build information to be effective.
+.It stuck=s
+Stuck timeout (in seconds * sf) after which tasks which show no progress
+will get killed.
 .It timeout=s
 Defines a specific connection timeout for ssh to that host.
 .El
@@ -135,13 +156,6 @@ Compute workdir sizes before cleaning up, and stash them in log file
 .Pa ${LOGDIR}/size.log .
 .It Fl S Ar sizefile
 Read a size log file and use it for choosing to put WRKDIR in memory.
-.It Fl t Ar ctimeout
-Connection timeout for ssh.
-Defaults to 60 seconds.
-.It Fl T Ar dtimeout
-Display timeout (in seconds) while waiting for jobs to finish, so that the
-display is updated even if jobs didn't finish.
-Defaults to 10 seconds.
 .It Fl u
 Update existing packages during dependency solving.
 Can be used to run a bulk-build on a machine with installed packages,

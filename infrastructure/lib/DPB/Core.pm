@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.6 2011/03/22 19:49:56 espie Exp $
+# $OpenBSD: Core.pm,v 1.7 2011/04/25 11:58:46 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -125,6 +125,12 @@ sub sf
 {
 	my $self = shift;
 	return $self->prop->{sf};
+}
+
+sub stuck_timeout
+{
+	my $self = shift;
+	return $self->prop->{stuck};
 }
 
 sub memory
@@ -397,13 +403,13 @@ sub new
 	}
 }
 
-my $inited = 0;
 
 sub init_cores
 {
-	my ($self, $logger, $startup) = @_;
-	return if $inited;
+	my ($self, $state) = @_;
 
+	my $logger = $state->logger;
+	my $startup = $state->{startup_script};
 	DPB::Core->set_logdir($logger->{logdir});
 	for my $core (values %$init) {
 		my $job = DPB::Job::Init->new($logger);
@@ -426,7 +432,6 @@ sub init_cores
 		}
 		$core->start_job($job);
 	}
-	$inited = 1;
 }
 
 package DPB::Core;
@@ -466,7 +471,7 @@ sub one_core
 	my $hostname = $core->hostname;
 	return $core->job->name." [$core->{pid}]".
 	    (DPB::Host->name_is_localhost($hostname) ? "" : " on ".$hostname).
-	    $core->job->watched($time);
+	    $core->job->watched($time, $core);
 }
 
 sub report
@@ -583,18 +588,18 @@ sub has_sf
 
 sub parse_hosts_file
 {
-	my ($class, $filename, $arch, $timeout, $logger, $heuristics) = @_;
-	open my $fh, '<', $filename or die "Can't read host files $filename\n";
+	my ($class, $filename, $state) = @_;
+	open my $fh, '<', $filename or 
+		$state->fatal("Can't read host files #1: #2", $filename, $!);
 	my $_;
 	my $sf;
 	my $cores = {};
-	my $startup_script;
 	while (<$fh>) {
 		chomp;
 		s/\s*\#.*$//;
 		next if m/^$/;
 		if (m/^STARTUP=\s*(.*)\s*$/) {
-			$startup_script = $1;
+			$state->{startup_script} = $1;
 			next;
 		}
 		my $prop = {};
@@ -604,7 +609,7 @@ sub parse_hosts_file
 				$prop->{$1} = $2;
 			}
 		}
-		if (defined $prop->{arch} && $prop->{arch} ne $arch) {
+		if (defined $prop->{arch} && $prop->{arch} ne $state->arch) {
 			next;
 		}
 		if (defined $prop->{mem}) {
@@ -614,12 +619,15 @@ sub parse_hosts_file
 		if (defined $prop->{sf} && $prop->{sf} != $sf) {
 			$has_sf = 1;
 		}
-		if (defined $timeout) {
-			$prop->{timeout} //= $timeout;
+		if (defined $state->{connection_timeout}) {
+			$prop->{timeout} //= $state->{connection_timeout};
 		}
-		$heuristics->calibrate(DPB::Core::Factory->new($host, $prop));
+		if (defined $state->{stuck_timeout}) {
+			$prop->{stuck} //= $state->{stuck_timeout};
+		}
+		$state->heuristics->calibrate(DPB::Core::Factory->new($host, 
+		    $prop));
 	}
-	DPB::Core::Factory->init_cores($logger, $startup_script);
 }
 
 sub start_pipe
