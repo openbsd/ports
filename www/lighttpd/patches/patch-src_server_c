@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_server_c,v 1.8 2010/08/18 11:16:55 sthen Exp $
---- src/server.c.orig	Sat Aug  7 07:00:16 2010
-+++ src/server.c	Sun Aug  8 22:18:55 2010
+$OpenBSD: patch-src_server_c,v 1.9 2011/04/25 09:39:36 sthen Exp $
+--- src/server.c.orig	Tue Aug 17 05:04:38 2010
++++ src/server.c	Sun Apr 24 22:28:50 2011
 @@ -211,7 +211,7 @@ static server *server_init(void) {
  		srv->mtime_cache[i].str = buffer_init();
  	}
@@ -10,3 +10,12 @@ $OpenBSD: patch-src_server_c,v 1.8 2010/08/18 11:16:55 sthen Exp $
  	            && 1 == fread(srv->entropy, sizeof(srv->entropy), 1, frandom)) {
  		unsigned int e;
  		memcpy(&e, srv->entropy, sizeof(e) < sizeof(srv->entropy) ? sizeof(e) : sizeof(srv->entropy));
+@@ -306,6 +306,8 @@ static void server_free(server *srv) {
+ 			buffer_free(s->ssl_pemfile);
+ 			buffer_free(s->ssl_ca_file);
+ 			buffer_free(s->ssl_cipher_list);
++			buffer_free(s->ssl_dh_file);
++			buffer_free(s->ssl_ec_curve);
+ 			buffer_free(s->error_handler);
+ 			buffer_free(s->errorfile_prefix);
+ 			array_free(s->mimetypes);

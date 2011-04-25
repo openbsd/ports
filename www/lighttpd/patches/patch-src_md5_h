@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_md5_h,v 1.1 2011/04/25 09:39:36 sthen Exp $
+
+http://redmine.lighttpd.net/issues/2269
+
+--- src/md5.h.orig	Sun Apr 24 22:03:58 2011
++++ src/md5.h	Sun Apr 24 22:05:09 2011
+@@ -39,9 +39,8 @@ typedef struct {
+   UINT4 state[4];                                   /* state (ABCD) */
+   UINT4 count[2];        /* number of bits, modulo 2^64 (lsb first) */
+   unsigned char buffer[64];                         /* input buffer */
+-} MD5_CTX;
++} li_MD5_CTX;
+ 
+-void MD5_Init (MD5_CTX *);
+-void MD5_Update (MD5_CTX *, const void *, unsigned int);
+-void MD5_Final (unsigned char [16], MD5_CTX *);
+-
++void li_MD5_Init (li_MD5_CTX *);
++void li_MD5_Update (li_MD5_CTX *, const void *, unsigned int);
++void li_MD5_Final (unsigned char [16], li_MD5_CTX *);
