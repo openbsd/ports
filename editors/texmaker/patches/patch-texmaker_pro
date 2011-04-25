@@ -1,6 +1,6 @@
-$OpenBSD: patch-texmaker_pro,v 1.3 2011/03/17 14:55:59 shadchin Exp $
---- texmaker.pro.orig	Sun Mar 13 13:30:30 2011
-+++ texmaker.pro	Wed Mar 16 22:13:09 2011
+$OpenBSD: patch-texmaker_pro,v 1.4 2011/04/25 13:19:23 shadchin Exp $
+--- texmaker.pro.orig	Sun Apr  3 16:16:58 2011
++++ texmaker.pro	Tue Apr  5 21:45:23 2011
 @@ -4,7 +4,8 @@ TARGET	 = texmaker
  QT += network \
        xml \
@@ -8,11 +8,11 @@ $OpenBSD: patch-texmaker_pro,v 1.3 2011/03/17 14:55:59 shadchin Exp $
 -CONFIG	+= qt warn_off release
 +CONFIG	+= qt warn_off release link_pkgconfig
 +PKGCONFIG = hunspell poppler-qt4
- TEXMAKERVERSION=2.3
+ TEXMAKERVERSION=3.0.1
  DEFINES += TEXMAKERVERSION=\\\"$${TEXMAKERVERSION}\\\"
  DEFINES += HAVE_SPLASH
-@@ -53,25 +54,6 @@ HEADERS	+= texmaker.h \
- 	encodingdialog.h \
+@@ -56,25 +57,6 @@ HEADERS	+= texmaker.h \
+ 	usercompletiondialog.h \
  	synctex_parser.h \
  	synctex_parser_utils.h \
 -	hunspell/affentry.hxx \
@@ -37,8 +37,8 @@ $OpenBSD: patch-texmaker_pro,v 1.3 2011/03/17 14:55:59 shadchin Exp $
  	singleapp/qtlocalpeer.h \
  	singleapp/qtlockedfile.h \
  	singleapp/qtsingleapplication.h \
-@@ -144,18 +126,6 @@ SOURCES	+= main.cpp \
- 	encodingdialog.cpp \
+@@ -150,18 +132,6 @@ SOURCES	+= main.cpp \
+ 	usercompletiondialog.cpp \
  	synctex_parser.c \
  	synctex_parser_utils.c \
 -	hunspell/affentry.cxx \
@@ -56,7 +56,7 @@ $OpenBSD: patch-texmaker_pro,v 1.3 2011/03/17 14:55:59 shadchin Exp $
  	singleapp/qtlocalpeer.cpp \
  	singleapp/qtlockedfile.cpp \
  	singleapp/qtsingleapplication.cpp \
-@@ -320,23 +290,7 @@ utilities.files = doc/doc1.png \
+@@ -319,23 +289,7 @@ utilities.files = doc/doc1.png \
  	locale/texmaker_zh_CN.qm \
  	locale/texmaker_zh_TW.qm \
  	locale/texmaker_cs.qm \

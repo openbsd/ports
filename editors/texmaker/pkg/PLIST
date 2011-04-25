@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/03/02 14:04:21 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/04/25 13:19:23 shadchin Exp $
 @bin bin/texmaker
 share/applications/texmaker.desktop
 share/pixmaps/
@@ -7,7 +7,6 @@ share/texmaker/
 share/texmaker/AUTHORS
 share/texmaker/CHANGELOG.txt
 share/texmaker/COPYING
-share/texmaker/blank.png
 share/texmaker/doc1.png
 share/texmaker/doc10.png
 share/texmaker/doc11.png
@@ -32,11 +31,6 @@ share/texmaker/doc7.png
 share/texmaker/doc8.png
 share/texmaker/doc9.png
 share/texmaker/latexhelp.html
-share/texmaker/next.gif
-share/texmaker/next_d.gif
-share/texmaker/prev.gif
-share/texmaker/prev_d.gif
-share/texmaker/psheader.txt
 share/texmaker/qt_cs.qm
 share/texmaker/qt_de.qm
 share/texmaker/qt_es.qm
@@ -45,7 +39,6 @@ share/texmaker/qt_pt.qm
 share/texmaker/qt_ru.qm
 share/texmaker/qt_zh_CN.qm
 share/texmaker/qt_zh_TW.qm
-share/texmaker/style.css
 share/texmaker/texmaker.svg
 share/texmaker/texmaker128x128.png
 share/texmaker/texmaker16x16.png
@@ -66,8 +59,6 @@ share/texmaker/texmaker_pt_BR.qm
 share/texmaker/texmaker_ru.qm
 share/texmaker/texmaker_zh_CN.qm
 share/texmaker/texmaker_zh_TW.qm
-share/texmaker/up.gif
-share/texmaker/up_d.gif
 share/texmaker/usermanual_en.html
 share/texmaker/usermanual_fr.html
 @exec %D/bin/update-desktop-database
