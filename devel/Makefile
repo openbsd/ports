@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.925 2011/04/23 01:31:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.926 2011/04/25 15:08:23 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -152,6 +152,7 @@
      SUBDIR += hs-QuickCheck
      SUBDIR += hs-atom
      SUBDIR += hs-base64-bytestring
+     SUBDIR += hs-bimap
      SUBDIR += hs-binary
      SUBDIR += hs-blaze-builder
      SUBDIR += hs-cereal
