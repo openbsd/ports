@@ -1,7 +1,7 @@
-$OpenBSD: patch-avahi-core_server_c,v 1.3 2010/07/17 14:12:38 ajacoutot Exp $
---- avahi-core/server.c.orig	Tue Jun 29 02:12:38 2010
-+++ avahi-core/server.c	Mon Jul  5 12:02:37 2010
-@@ -903,6 +903,11 @@ static void dispatch_packet(AvahiServer *s, AvahiDnsPa
+$OpenBSD: patch-avahi-core_server_c,v 1.4 2011/04/25 10:02:43 ajacoutot Exp $
+--- avahi-core/server.c.orig	Tue Mar  8 22:54:10 2011
++++ avahi-core/server.c	Mon Apr 25 11:42:00 2011
+@@ -911,6 +911,11 @@ static void dispatch_packet(AvahiServer *s, AvahiDnsPa
          return;
      }
  

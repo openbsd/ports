@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2011/04/07 08:25:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2011/04/25 10:02:43 ajacoutot Exp $
 @conflict howl-*
 @newgroup _avahi:629
 @newgroup _avahi-autoipd:630
@@ -153,11 +153,7 @@ share/locale/el/LC_MESSAGES/avahi.mo
 share/locale/en_AU/
 share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/avahi.mo
-share/locale/en_CA/
-share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/avahi.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/avahi.mo
 share/locale/en_NZ/
 share/locale/en_NZ/LC_MESSAGES/
@@ -174,8 +170,6 @@ share/locale/hu/LC_MESSAGES/avahi.mo
 share/locale/id/LC_MESSAGES/avahi.mo
 share/locale/it/LC_MESSAGES/avahi.mo
 share/locale/ja/LC_MESSAGES/avahi.mo
-share/locale/ms/
-share/locale/ms/LC_MESSAGES/
 share/locale/ms/LC_MESSAGES/avahi.mo
 share/locale/nl/LC_MESSAGES/avahi.mo
 share/locale/pl/LC_MESSAGES/avahi.mo
@@ -184,8 +178,6 @@ share/locale/ro/LC_MESSAGES/avahi.mo
 share/locale/ru/LC_MESSAGES/avahi.mo
 share/locale/sl/LC_MESSAGES/avahi.mo
 share/locale/sr/LC_MESSAGES/avahi.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/avahi.mo
 share/locale/sv/LC_MESSAGES/avahi.mo
 share/locale/uk/LC_MESSAGES/avahi.mo
