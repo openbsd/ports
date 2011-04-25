@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.509 2011/04/22 07:24:46 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.510 2011/04/25 13:11:56 todd Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -301,6 +301,7 @@
      SUBDIR += p5-WWW-Search
      SUBDIR += p5-WWW-Search-Ebay
      SUBDIR += p5-WWW-Tumblr
+     SUBDIR += p5-WWW-YouTube-Download
      SUBDIR += p5-WWW-Wikipedia
      SUBDIR += p5-Weather-Com
      SUBDIR += p5-WebService-Audioscrobbler
