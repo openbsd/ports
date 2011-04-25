@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.4 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2011/04/25 15:01:28 jolan Exp $
 
-MASTER_SITES?=	http://openbsddistfiles.com/jolan/
+MASTER_SITES?=	${MASTER_SITE_BACKUP}	
 DIST_SUBDIR?=	festival
 CATEGORIES?=	audio
 

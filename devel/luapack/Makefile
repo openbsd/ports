@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/04/25 15:01:28 jolan Exp $
 
 COMMENT=	library for packing and unpacking binary data
 DISTNAME=	luapack-20061124
 REVISION =	0
 CATEGORIES=	devel
-MASTER_SITES=	http://openbsddistfiles.com/jolan/
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 HOMEPAGE=	http://www.tecgraf.puc-rio.br/~lhf/ftp/lua/
 

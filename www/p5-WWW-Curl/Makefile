@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/22 08:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/04/25 15:01:28 jolan Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ DISTNAME=	p5-WWW-Curl-20040519
 PKGNAME=	${DISTNAME}
 REVISION=	3
 CATEGORIES=	www net
-MASTER_SITES=	http://openbsddistfiles.com/jolan/
+MASTER_SITES=	${MASTER_SITE_BACKUP}	
 USE_GROFF =	Yes
 
 HOMEPAGE=	http://curl.haxx.se/libcurl/perl/

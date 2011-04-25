@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/04/25 15:01:28 jolan Exp $
 
 COMMENT=	sdl shoot 'em up; stop evil army from getting your oil
 DISTNAME=	OilWar-1.2.1
 PKGNAME=	${DISTNAME:L}
-REVISION =	3
+REVISION =	4
 CATEGORIES=	games x11
-MASTER_SITES=	http://openbsddistfiles.com/jolan/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
+MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
