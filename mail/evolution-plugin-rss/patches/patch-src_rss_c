@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_rss_c,v 1.11 2011/04/22 15:57:19 ajacoutot Exp $
+$OpenBSD: patch-src_rss_c,v 1.12 2011/04/25 06:16:49 ajacoutot Exp $
 
 Revert:
 From 7d264518c2c6741e81842e7c4e6ba62f9f9a240b Mon Sep 17 00:00:00 2001
@@ -6,8 +6,13 @@ From: Lucian Langa <lucilanga@gnome.org>
 Date: Fri, 28 Jan 2011 16:57:36 +0000
 Subject: allow to select feed location from properties menu
 
---- src/rss.c.orig	Fri Apr 22 17:06:20 2011
-+++ src/rss.c	Fri Apr 22 17:33:35 2011
+From 47391941bbfe48229a707fdd27c541ae10995cd1 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Fri, 22 Apr 2011 21:31:53 +0000
+Subject: Bug 648475 - missing webkit ifdef breaks compilation
+
+--- src/rss.c.orig	Fri Apr 22 17:44:56 2011
++++ src/rss.c	Mon Apr 25 08:09:34 2011
 @@ -411,6 +411,7 @@ update_progress_text(gchar *title)
  	}
  }
@@ -24,7 +29,51 @@ Subject: allow to select feed location from properties menu
  
  void
  update_progress_bar(guint current);
-@@ -943,6 +945,8 @@ rss_select_folder(gchar *folder_name)
+@@ -456,11 +458,15 @@ update_progress_bar(guint current)
+ void
+ browser_write(gchar *string, gint length, gchar *base)
+ {
+-	WEBKITNET *wknet;
+-	gchar *str = string;
+ 	guint engine = fallback_engine();
++#if defined(HAVE_GECKO) || defined (HAVE_WEBKIT)
+ 	xmlDoc *src = (xmlDoc *)parse_html(base, string, length);
+ 	gchar *encoding =  (gchar *)htmlGetMetaEncoding(src);
++	gchar *str = string;
++#endif
++#ifdef HAVE_WEBKIT
++	WEBKITNET *wknet;
++#endif
+ 	switch (engine) {
+ 	case 2:
+ #ifdef HAVE_GECKO
+@@ -504,8 +510,11 @@ void
+ browser_stream_write(CamelStream *stream, gchar *base)
+ {
+ 	GString *str = g_string_new(NULL);
+-	gchar *line, *encoding;
++	gchar *line;
++#ifdef HAVE_WEBKIT
++	gchar *encoding;
+ 	xmlDoc *src;
++#endif
+ 
+ 	CamelStream *in = camel_stream_buffer_new(stream, CAMEL_STREAM_BUFFER_READ);
+ #if (DATASERVER_VERSION >= 2033001)
+@@ -518,10 +527,10 @@ browser_stream_write(CamelStream *stream, gchar *base)
+ 		g_free(tmp);
+ 		line = NULL;
+ 	}
+-	src = (xmlDoc *)parse_html(base, str->str, str->len);
+-	encoding =  (gchar *)htmlGetMetaEncoding(src);
+ #ifdef HAVE_WEBKIT
+ #if (WEBKIT_VERSION >= 1001001)
++	src = (xmlDoc *)parse_html(base, str->str, str->len);
++	encoding =  (gchar *)htmlGetMetaEncoding(src);
+ 	webkit_web_view_load_string(
+ 		WEBKIT_WEB_VIEW(rf->mozembed),
+ 		str->str,
+@@ -943,6 +952,8 @@ rss_select_folder(gchar *folder_name)
  	const
  #endif
  	gchar *uri;
@@ -33,7 +82,7 @@ Subject: allow to select feed location from properties menu
  	EShellSidebar *shell_sidebar;
  
  	d("rss_select_folder() %s:%d\n", __FILE__, __LINE__);
-@@ -951,12 +955,23 @@ rss_select_folder(gchar *folder_name)
+@@ -951,12 +962,23 @@ rss_select_folder(gchar *folder_name)
  
  	shell_sidebar  = e_shell_view_get_shell_sidebar(rss_shell_view);
  	g_object_get (shell_sidebar, "folder-tree", &folder_tree, NULL);
@@ -59,7 +108,75 @@ Subject: allow to select feed location from properties menu
  #endif
  }
  
-@@ -3762,7 +3777,6 @@ print_comments(gchar *url, gchar *stream, EMFormatHTML
+@@ -976,9 +998,10 @@ summary_cb (GtkWidget *button, EMFormatHTMLPObject *po
+ static void
+ back_cb (GtkWidget *button, EMFormatHTMLPObject *pobject)
+ {
+-	guint engine;
+-	engine = fallback_engine();
+-#ifdef	HAVE_GECKO
++#if defined(HAVE_GECKO) || defined(HAVE_WEBKIT)
++	guint engine = fallback_engine();
++#endif
++#ifdef  HAVE_GECKO
+ 	if (engine == 2)
+ 		gtk_moz_embed_go_back((GtkMozEmbed *)rf->mozembed);
+ #endif
+@@ -992,8 +1015,9 @@ back_cb (GtkWidget *button, EMFormatHTMLPObject *pobje
+ static void
+ forward_cb (GtkWidget *button, EMFormatHTMLPObject *pobject)
+ {
+-	guint engine;
+-	engine = fallback_engine();
++#if defined(HAVE_GECKO) || defined(HAVE_WEBKIT)
++	guint engine = fallback_engine();
++#endif
+ #ifdef	HAVE_GECKO
+ 	if (engine == 2)
+ 		gtk_moz_embed_go_forward((GtkMozEmbed *)rf->mozembed);
+@@ -1009,8 +1033,9 @@ void stop_cb (GtkWidget *button, EMFormatHTMLPObject *
+ void
+ stop_cb (GtkWidget *button, EMFormatHTMLPObject *pobject)
+ {
+-	guint engine;
+-	engine = fallback_engine();
++#if defined(HAVE_GECKO) || defined(HAVE_WEBKIT)
++	guint engine = fallback_engine();
++#endif
+ #ifdef	HAVE_GECKO
+ 	if (engine == 2)
+ 		gtk_moz_embed_stop_load((GtkMozEmbed *)rf->mozembed);
+@@ -2124,7 +2149,6 @@ void org_gnome_cooly_format_rss(void *ep, EMFormatHook
+ 	gchar *comments = NULL;
+ 	gchar *category = NULL;
+ 	GdkPixbuf *pixbuf = NULL;
+-	guint engine = 0;
+ 	int size;
+ 	CamelDataWrapper *dw = camel_data_wrapper_new();
+ 	CamelMimePart *part = camel_mime_part_new();
+@@ -2247,8 +2271,8 @@ void org_gnome_cooly_format_rss(void *ep, EMFormatHook
+ 
+ 
+ 	if (rf->cur_format || (feedid && is_html && rf->cur_format)) {
+-		engine = fallback_engine();
+ #ifdef HAVE_RENDERKIT
++		guint engine = fallback_engine();
+ 		if (engine && engine != 10) {
+ 			char *classid = g_strdup_printf(
+ 					"org-gnome-rss-controls-%d",
+@@ -2269,11 +2293,6 @@ void org_gnome_cooly_format_rss(void *ep, EMFormatHook
+ 			pobj->stopbut =  button2;
+ 			pobj->backbut = button3;
+ 			pobj->forwbut = button4;
+-//			camel_stream_printf (t->stream,
+-//				"<div style=\"border: solid #%06x 1px; background-color: #%06x; color: #%06x;\">\n",
+-//				frame_colour & 0xffffff,
+-//				content_colour & 0xffffff,
+-//				text_colour & 0xffffff);
+ 			camel_stream_printf(t->stream,
+ 				"<table style=\"border: solid #%06x 1px; background-color: #%06x; color: #%06x;\" cellpadding=1 cellspacing=0><tr><td align=center>",
+ 				frame_colour & 0xffffff,
+@@ -3762,7 +3781,6 @@ print_comments(gchar *url, gchar *stream, EMFormatHTML
  
  			return display_comments (r, format);
  	}
@@ -67,7 +184,7 @@ Subject: allow to select feed location from properties menu
  	return NULL;
  }
  
-@@ -3942,30 +3956,6 @@ lookup_chn_name_by_url(gchar *url)
+@@ -3942,30 +3960,6 @@ lookup_chn_name_by_url(gchar *url)
  	return chn_name;
  }
  
@@ -98,7 +215,7 @@ Subject: allow to select feed location from properties menu
  void
  update_main_folder(gchar *new_name)
  {
-@@ -4029,7 +4019,6 @@ search_rebase(gpointer key, gpointer value, gchar *ona
+@@ -4029,7 +4023,6 @@ search_rebase(gpointer key, gpointer value, gchar *ona
  	if (!strncmp(key, tmp, strlen(tmp))) {
  		rebase_keys = g_list_append(rebase_keys, key);
  	}
@@ -106,7 +223,7 @@ Subject: allow to select feed location from properties menu
  }
  
  void
-@@ -4066,7 +4055,7 @@ sync_folders(void)
+@@ -4066,7 +4059,7 @@ sync_folders(void)
  	g_free(feed_dir);
  	f = fopen(feed_file, "wb");
  	if (!f)
@@ -115,7 +232,7 @@ Subject: allow to select feed location from properties menu
  
  	if (!g_hash_table_size(rf->feed_folders))
  		goto exit;
-@@ -4074,6 +4063,7 @@ sync_folders(void)
+@@ -4074,6 +4067,7 @@ sync_folders(void)
  	g_hash_table_foreach(rf->feed_folders,
  		(GHFunc)write_feeds_folder_line,
  		(gpointer *)f);
@@ -123,7 +240,7 @@ Subject: allow to select feed location from properties menu
  	g_hash_table_destroy(rf->reversed_feed_folders);
  	rf->reversed_feed_folders = g_hash_table_new_full(g_str_hash,
  			g_str_equal,
-@@ -4083,7 +4073,6 @@ sync_folders(void)
+@@ -4083,7 +4077,6 @@ sync_folders(void)
  			(GHFunc)populate_reversed,
  			rf->reversed_feed_folders);
  exit:	fclose(f);
@@ -131,7 +248,7 @@ Subject: allow to select feed location from properties menu
  	return;
  }
  
-@@ -4862,7 +4851,7 @@ e_plugin_ui_init (GtkUIManager *ui_manager,
+@@ -4862,7 +4855,7 @@ e_plugin_ui_init (GtkUIManager *ui_manager,
  
  	rss_shell_view = shell_view;
  	shell_window = e_shell_view_get_shell_window (rss_shell_view);
