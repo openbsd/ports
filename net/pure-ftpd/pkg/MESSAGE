@@ -1,7 +1,0 @@
-In order to start Pure-FTPd at boot-time, add something like this to
-/etc/rc.local:
-
-if [ -x ${PREFIX}/sbin/pure-ftpd ]; then
-  echo Starting Pure-FTPd
-  ${PREFIX}/sbin/pure-ftpd -A -B -H -u1000
-fi
