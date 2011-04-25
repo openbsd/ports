@@ -1,20 +1,19 @@
-$OpenBSD: patch-ghc_mk,v 1.4 2011/04/23 08:40:41 kili Exp $
+$OpenBSD: patch-ghc_mk,v 1.5 2011/04/25 22:06:43 kili Exp $
 
-I don't see the point in not installing libraries that are required
-by the build (and by several external haskell libraries we have or
-will have in the ports tree). Note that the mtl package is outdated;
-we keep it only because devel/hs-atom doesn't (yet) t work with the
-(new) mtl-2 in devel/hs-mtl. mtl-1 will be disabled after devel/hs-atom
-has been updated (which I leave to jasper@).
+Include utf8-string and xhtml for now, because of dependencies.
+Including *any* of those INTREE_ONLY_PACKAGES in the ghc packages
+wasn't the brightest idea I had (see mtl library hell). The two
+libraries left can and will be replaced by separate ports when
+needed.
 
---- ghc.mk.orig	Wed Dec 15 19:10:07 2010
-+++ ghc.mk	Sun Dec 26 17:18:11 2010
+--- ghc.mk.orig	Sat Mar 26 19:10:06 2011
++++ ghc.mk	Mon Apr 25 17:21:44 2011
 @@ -290,7 +290,7 @@ include rules/bindist.mk
  # They do not say "this package will be built"; see $(PACKAGES_xx) for that
  
  # Packages that are built but not installed
 -INTREE_ONLY_PACKAGES := haskeline mtl terminfo utf8-string xhtml
-+INTREE_ONLY_PACKAGES :=
++INTREE_ONLY_PACKAGES := haskeline mtl terminfo
  
  # Packages that, if present, must be built by the stage2 compiler,
  # because they use TH and/or annotations, or depend on other stage2
