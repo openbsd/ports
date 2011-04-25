@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/11 14:39:29 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/25 15:09:15 kili Exp $
 
 COMMENT=		DSL for embedded hard realtime applications
 
-DISTNAME=		atom-1.0.8
+DISTNAME=		atom-1.0.9
 CATEGORIES=		devel lang
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -18,7 +18,8 @@ MODULES=		lang/ghc
 MODGHC_BUILD=		cabal hackage haddock register
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		devel/hs-syb \
-			devel/hs-uniplate
+RUN_DEPENDS=		devel/hs-bimap \
+			devel/hs-mtl \
+			devel/hs-syb
 
 .include <bsd.port.mk>

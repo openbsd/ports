@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/04/11 14:39:29 kili Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/04/25 15:09:15 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Language/
@@ -13,6 +13,7 @@ lib/ghc/${DISTNAME}/Language/Atom/Example.hi
 lib/ghc/${DISTNAME}/Language/Atom/Expressions.hi
 lib/ghc/${DISTNAME}/Language/Atom/Language.hi
 lib/ghc/${DISTNAME}/Language/Atom/Scheduling.hi
+lib/ghc/${DISTNAME}/Language/Atom/UeMap.hi
 lib/ghc/${DISTNAME}/Language/Atom/Unit.hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/register.sh
@@ -31,6 +32,7 @@ share/doc/hs-${DISTNAME}/html/Language-Atom-Example.html
 share/doc/hs-${DISTNAME}/html/Language-Atom-Expressions.html
 share/doc/hs-${DISTNAME}/html/Language-Atom-Language.html
 share/doc/hs-${DISTNAME}/html/Language-Atom-Scheduling.html
+share/doc/hs-${DISTNAME}/html/Language-Atom-UeMap.html
 share/doc/hs-${DISTNAME}/html/Language-Atom-Unit.html
 share/doc/hs-${DISTNAME}/html/Language-Atom.html
 share/doc/hs-${DISTNAME}/html/atom.haddock
@@ -77,6 +79,7 @@ share/doc/hs-${DISTNAME}/html/mini_Language-Atom-Example.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Atom-Expressions.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Atom-Language.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Atom-Scheduling.html
+share/doc/hs-${DISTNAME}/html/mini_Language-Atom-UeMap.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Atom-Unit.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Atom.html
 share/doc/hs-${DISTNAME}/html/minus.gif
