@@ -1,0 +1,3 @@
+A data structure representing a bidirectional mapping between two
+key types. Each value in the bimap is associated with exactly one
+value of the opposite type.
