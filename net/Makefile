@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.690 2011/04/12 12:41:20 bluhm Exp $
+# $OpenBSD: Makefile,v 1.691 2011/04/25 12:33:12 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -70,7 +70,6 @@
      SUBDIR += dnstracer
      SUBDIR += doc
      SUBDIR += dsocks
-     SUBDIR += dss
      SUBDIR += dxpc
      SUBDIR += dysnomia
      SUBDIR += echoping

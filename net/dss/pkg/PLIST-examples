@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST-examples,v 1.2 2003/12/18 01:19:57 naddy Exp $
-share/examples/dss/movies/sample.mp3
-share/examples/dss/movies/sample_100kbit.mov
-share/examples/dss/movies/sample_100kbit.mp4
-share/examples/dss/movies/sample_300kbit.mov
-share/examples/dss/movies/sample_300kbit.mp4
-@dirrm share/examples/dss/movies
-@dirrm share/examples/dss

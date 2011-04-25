@@ -1,5 +1,0 @@
-The Darwin Streaming Proxy is an application-specific proxy which would
-normally be run in a border zone or perimeter network. It is used to give
-client machines within a protected network access to streaming servers
-outside that network, in the case when the firewall blocks RTSP
-connections or RTP/UDP data flow.
