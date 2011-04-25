@@ -1,0 +1,12 @@
+$OpenBSD: patch-backend_magicolor_c,v 1.1 2011/04/25 09:34:39 ajacoutot Exp $
+--- backend/magicolor.c.orig	Mon Apr 25 11:07:51 2011
++++ backend/magicolor.c	Mon Apr 25 11:08:15 2011
+@@ -53,6 +53,8 @@
+ #include <math.h>
+ #include <poll.h>
+ 
++#include <sys/socket.h>
++
+ 
+ #if HAVE_LIBSNMP
+ #include <net-snmp/net-snmp-config.h>
