@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/03/24 03:16:46 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2011/04/25 16:11:03 kili Exp $
 
 COMMENT =	DSL for quickly creating web-applications in Ruby
 
@@ -25,6 +25,6 @@ MODRUBY_REGRESS =	rake
 
 REGRESS_DEPENDS =	textproc/ruby-haml,${MODRUBY_FLAVOR} \
 			textproc/ruby-builder,${MODRUBY_FLAVOR} \
-			devel/ruby-rack-test,${MODRUBY_FLAVOR}
+			www/ruby-rack-test,${MODRUBY_FLAVOR}
 
 .include <bsd.port.mk>
