@@ -1,6 +1,6 @@
---- autoconf/Makefile.common.in.orig	Thu Apr 13 05:55:58 2000
-+++ autoconf/Makefile.common.in	Mon Jun 26 17:48:09 2000
-@@ -8,14 +8,14 @@
+--- autoconf/Makefile.common.in.orig	Thu Apr 13 06:55:58 2000
++++ autoconf/Makefile.common.in	Sun Apr 24 22:44:14 2011
+@@ -8,14 +8,14 @@ all:            $(PROG)
  
  install:	$(PROG)
  		$(STRIP) $(PROG)
@@ -19,7 +19,7 @@
  
  clean:
  		$(RMF) $(PROG) *.o *~ *% *.bak \#* core
-@@ -32,10 +32,10 @@
+@@ -32,10 +32,10 @@ indent:
  		done
  
  $(PROG):        $(OBJS)

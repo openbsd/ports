@@ -1,5 +1,5 @@
---- pop.c.orig
-+++ pop.c
+--- pop.c.orig	Thu Apr 13 07:08:02 2000
++++ pop.c	Sun Apr 24 22:44:14 2011
 @@ -38,7 +38,7 @@
          case 0:		/* Timeout */			\
             return -1;					\
@@ -9,7 +9,7 @@
      if (strcmp(strg, ACK_MSG) != 0)			\
         return -1;					\
  }
-@@ -170,7 +170,7 @@
+@@ -170,7 +170,7 @@ int pop3(int sd, int *nm, int *om, char *user, char *p
          case 0:		/* Timeout */
              return -1;
      }
@@ -18,7 +18,7 @@
      if (strcmp(strg, ACK_MSG) == 0) {
      /* LIST works */
          pnt = input + strlen(strg) + 1;
-@@ -210,21 +210,21 @@
+@@ -210,21 +210,21 @@ int pop(char *string, int *nmail, int *oldmail)
      /* Parse the string */
      /* Servername */
      pnt = string + 2;
@@ -43,7 +43,7 @@
          InDuty = 0;
          return -1;
      }
-@@ -239,7 +239,7 @@
+@@ -239,7 +239,7 @@ int pop(char *string, int *nmail, int *oldmail)
  
      /* optional mailboxname for IMAP */
      if (type == TYPE_IMAP)

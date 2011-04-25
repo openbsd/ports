@@ -1,6 +1,6 @@
---- sample.asmailrc.orig	Mon Jun 26 16:24:30 2000
-+++ sample.asmailrc	Mon Jun 26 16:26:56 2000
-@@ -70,7 +70,7 @@
+--- sample.asmailrc.orig	Thu Apr 13 06:55:58 2000
++++ sample.asmailrc	Sun Apr 24 23:00:50 2011
+@@ -70,7 +70,7 @@ AnimationSpeed  0 0 60
  #########################################################
  # Turns off shaped window				#
  #########################################################
@@ -9,25 +9,25 @@
  
  
  #########################################################
-@@ -116,7 +116,7 @@
+@@ -116,25 +116,25 @@ NumOfMsgColor white
  #########################################################
  # Assign frame if not shaped				#
  #########################################################
 -#Frame ~/GNUstep/Library/AfterStep/desktop/icons/8bpp/frame.xpm
-+#Frame !!PREFIX!!/include/X11/pixmaps/frame.xpm
++#Frame ${PREFIX}/include/X11/pixmaps/frame.xpm
  
  
  #########################################################
-@@ -124,17 +124,18 @@
+ # Assign icons/animations				#
  #########################################################
  NoMail  
- #        /usr/local/share/afterstep/desktop/icons/common/Mail1.xpm
-+        !!PREFIX!!/include/X11/pixmaps/nomail_s.xpm
+-#        /usr/local/share/afterstep/desktop/icons/common/Mail1.xpm
++         ${PREFIX}/include/X11/pixmaps/nomail_s.xpm
  End
  
  OldMail  	
 -#        /usr/local/share/afterstep/desktop/icons/common/Mail2.xpm
-+        !!PREFIX!!/include/X11/pixmaps/oldmail_s.xpm
++         ${PREFIX}/include/X11/pixmaps/oldmail_s.xpm
  End
  
  NewMail  
@@ -35,10 +35,10 @@
 -#        /usr/local/share/afterstep/desktop/icons/common/Mail2.xpm
 -#        /usr/local/share/afterstep/desktop/icons/common/Mail3.xpm
 -#        /usr/local/share/afterstep/desktop/icons/common/Mail2.xpm
-+        !!PREFIX!!/include/X11/pixmaps/oldmail_s.xpm
-+        !!PREFIX!!/include/X11/pixmaps/newmail_s.xpm
-+        !!PREFIX!!/include/X11/pixmaps/oldmail_s.xpm
-+        !!PREFIX!!/include/X11/pixmaps/newmail_s.xpm
++         ${PREFIX}/include/X11/pixmaps/oldmail_s.xpm
++         ${PREFIX}/include/X11/pixmaps/newmail_s.xpm
++         ${PREFIX}/include/X11/pixmaps/oldmail_s.xpm
++         ${PREFIX}/include/X11/pixmaps/newmail_s.xpm
  End
  
  #########################################################

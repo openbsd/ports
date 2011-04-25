@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2004/12/30 01:07:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/04/25 12:39:31 jasper Exp $
 @conflict xfaces-*
-bin/asmail
+@bin bin/asmail
 include/X11/pixmaps/
 include/X11/pixmaps/cloud-e/
 include/X11/pixmaps/cloud-e/e0.xpm
