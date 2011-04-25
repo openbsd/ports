@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/04/25 14:03:31 jasper Exp $
 
 COMMENT=	Qt4 poker game with online capabilities
 
 V=		0.8.1
 DISTNAME=	PokerTH-${V}-src
 PKGNAME=	pokerth-${V}
+REVISION=	0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.pokerth.net/
-
-MAINTAINER=	Mikko Tolmunen <oskari@sefirosu.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
