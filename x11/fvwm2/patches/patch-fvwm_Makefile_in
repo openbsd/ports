@@ -1,15 +1,30 @@
-$OpenBSD: patch-fvwm_Makefile_in,v 1.5 2008/06/10 05:39:38 pvalchev Exp $
---- fvwm/Makefile.in.orig	Sat Dec  9 05:11:00 2006
-+++ fvwm/Makefile.in	Mon Jun  9 23:00:18 2008
-@@ -565,9 +565,9 @@ info: info-am
+$OpenBSD: patch-fvwm_Makefile_in,v 1.6 2011/04/26 18:50:46 shadchin Exp $
+--- fvwm/Makefile.in.orig	Mon Aug  9 18:28:55 2010
++++ fvwm/Makefile.in	Fri Mar  4 08:25:05 2011
+@@ -35,7 +35,7 @@ PRE_UNINSTALL = :
+ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+-bin_PROGRAMS = fvwm$(EXEEXT)
++bin_PROGRAMS = fvwm2$(EXEEXT)
+ subdir = fvwm
+ DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+@@ -449,7 +449,7 @@ uninstall-binPROGRAMS:
  
- info-am:
+ clean-binPROGRAMS:
+ 	-test -z "$(bin_PROGRAMS)" || rm -f $(bin_PROGRAMS)
+-fvwm$(EXEEXT): $(fvwm_OBJECTS) $(fvwm_DEPENDENCIES) 
++fvwm2$(EXEEXT): $(fvwm_OBJECTS) $(fvwm_DEPENDENCIES) 
+ 	@rm -f fvwm$(EXEEXT)
+ 	$(LINK) $(fvwm_OBJECTS) $(fvwm_LDADD) $(LIBS)
  
--install-data-am: install-configDATA install-data-local install-man
-+install-data-am: install-configDATA install-man
+@@ -687,7 +687,7 @@ install-dvi: install-dvi-am
+ 
+ install-dvi-am:
  
 -install-exec-am: install-binPROGRAMS install-exec-local
 +install-exec-am: install-binPROGRAMS
  
- install-info: install-info-am
+ install-html: install-html-am
  

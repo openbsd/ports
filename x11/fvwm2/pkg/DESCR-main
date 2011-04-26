@@ -12,5 +12,3 @@ Packages can be built with additional FLAVORs:
 	This FLAVOR requires the rplay package.
 
  debug:	turn on debugging messages
-
- i18n:	enable experimental multibyte character support

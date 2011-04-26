@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.1 2011/04/26 18:50:46 shadchin Exp $
+--- configure.orig	Sun Apr 17 02:35:43 2011
++++ configure	Wed Apr 20 15:50:16 2011
+@@ -11025,7 +11025,7 @@ if test "${with_intl_library+set}" = set; then :
+ else
+ 
+     with_intl=maybe
+-    intl_LIBS="-l${smr_lib}"
++    intl_LIBS="-l${smr_lib} -liconv"
+ 
+ fi
+ 
