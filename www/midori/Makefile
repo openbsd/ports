@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2011/04/21 07:06:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2011/04/26 15:01:17 dcoppa Exp $
 
 COMMENT =	lightweight web browser
 
 XFCE_VERSION =	0.3.3
 XFCE_GOODIE =	midori
 
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	www
@@ -26,6 +26,8 @@ LIB_DEPENDS =	www/webkit>=1.1.15v0 \
 		databases/sqlite3 \
 		devel/libunique \
 		devel/libsoup>=2.28.0
+
+RUN_DEPENDS =	xfce4-icon-theme-*|tango-icon-theme-*|gnome-icon-theme-*:x11/tango-icon-theme
 
 # pick sqlite
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"
