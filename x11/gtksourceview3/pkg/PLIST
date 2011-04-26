@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/13 07:26:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/26 18:18:37 jasper Exp $
 %%SHARED%%
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
@@ -135,14 +135,17 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/lua.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/m4.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/makefile.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/mallard.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/matlab.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/nemerle.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/nsis.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/objc.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/objj.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/ocaml.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/ocl.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/octave.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/ooc.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/opal.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/opencl.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/pascal.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/perl.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/php.lang
@@ -222,6 +225,7 @@ share/locale/en_CA/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
+share/locale/eo/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/es/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/et/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
 share/locale/eu/LC_MESSAGES/gtksourceview-${MAJOR_VERSION}.mo
