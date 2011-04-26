@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/03/07 23:42:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2011/04/26 08:51:45 eric Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -33,6 +33,7 @@
      SUBDIR += mjpegtools
      SUBDIR += mjpegtools,quicktime
      SUBDIR += mkvtoolnix
+     SUBDIR += mkvtoolnix,no_x11
      SUBDIR += moovida
      SUBDIR += mpgtx
      SUBDIR += oggconvert
