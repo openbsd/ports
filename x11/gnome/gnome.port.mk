@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.34 2010/11/22 08:36:56 espie Exp $
+# $OpenBSD: gnome.port.mk,v 1.35 2011/04/26 12:50:54 ajacoutot Exp $
 #
 # Module for GNOME related ports
 #
@@ -37,6 +37,8 @@ RUN_DEPENDS+=		${MODGNOME_RUN_DEPENDS}
 .endif
 
 USE_GMAKE?=		Yes
+
+FAKE_FLAGS +=	itlocaledir="${PREFIX}/share/locale/"
 
 # Disable "silent rules" aka clean build output (CC $FILE)
 .if defined(CONFIGURE_STYLE)
