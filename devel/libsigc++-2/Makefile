@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/03/08 14:06:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2011/04/26 09:01:43 ajacoutot Exp $
 
 COMMENT-main=		callback framework for C++
 COMMENT-docs=		callback framework for C++ documentation
@@ -12,6 +12,9 @@ V=			2.0
 SUBST_VARS=		V
 SHARED_LIBS=		sigc-2.0 2.0
 CATEGORIES=		devel
+
+REVISION-main=		0
+REVISION-docs=		0
 
 WANTLIB-main=		m stdc++
 
@@ -35,5 +38,11 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		M4='m4 -g'
+
+# XXX check on update if this is still needed
+# PaxHeader extension is needed
+# https://bugzilla.gnome.org/show_bug.cgi?id=644202
+TAR=			gtar
+BUILD_DEPENDS=		archivers/gtar
 
 .include <bsd.port.mk>
