@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/24 06:50:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/04/26 08:06:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -14,6 +14,11 @@ PKGNAME-main=		libproxy-${VERSION}
 PKGNAME-gnome=		libproxy-gnome-${VERSION}
 PKGNAME-mozilla=	libproxy-mozilla-${VERSION}
 PKGNAME-webkit=		libproxy-webkit-${VERSION}
+
+REVISION-main=		0
+REVISION-gnome=		0
+REVISION-mozilla=	0
+REVISION-webkit=	0
 
 CATEGORIES=		net
 
@@ -32,7 +37,8 @@ MASTER_SITES=		${HOMEPAGE}/files/
 
 # order matters: cmake must come before python
 MODULES=		devel/cmake \
-			lang/python
+			lang/python \
+			devel/gettext
 
 # do not enable webkit support by default because of cyclic dependency:
 # libproxy,-webkit -> webkit -> libsoup -> libproxy
@@ -59,24 +65,25 @@ RUN_DEPENDS-webkit=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-webkit=	STEM->=${VERSION}:${BUILD_PKGPATH}, \
 			www/webkit
 
-cWANTLIB += m pthread stdc++
+cWANTLIB += m stdc++
 
-WANTLIB-main += ${cWANTLIB} c perl
+WANTLIB-main += ${cWANTLIB} c perl pthread
 
 WANTLIB-gnome += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 WANTLIB-gnome += ORBit-2 c gconf-2 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB-gnome += gobject-2.0 gthread-2.0 modman proxy
+WANTLIB-gnome += gobject-2.0 gthread-2.0 modman proxy pthread
 
 WANTLIB-mozilla += ${cWANTLIB} c modman nspr4 plc4 plds4 proxy
+WANTLIB-mozilla += xulrunner1.9/mozjs
 
 WANTLIB-webkit += ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 WANTLIB-webkit += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB-webkit += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm
 WANTLIB-webkit += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB-webkit += gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0 gthread-2.0
+WANTLIB-webkit += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-webkit += gtk-x11-2.0 modman pango-1.0 pangocairo-1.0
 WANTLIB-webkit += pangoft2-1.0 pixman-1 png proxy pthread-stubs soup-2.4
-WANTLIB-webkit += tasn1 webkit-1.0 xcb xcb-render xcb-shm xml2 z
+WANTLIB-webkit += webkit-1.0 xcb xcb-render xcb-shm xml2 z
 
 CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS} -pthread" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread" \

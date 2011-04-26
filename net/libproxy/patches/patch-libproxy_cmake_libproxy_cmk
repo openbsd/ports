@@ -1,4 +1,7 @@
-$OpenBSD: patch-libproxy_cmake_libproxy_cmk,v 1.1 2011/03/24 06:50:09 ajacoutot Exp $
+$OpenBSD: patch-libproxy_cmake_libproxy_cmk,v 1.2 2011/04/26 08:06:41 ajacoutot Exp $
+
+Do not link with -lpthread (we use -pthread in CMAKE_C*_FLAGS)
+
 --- libproxy/cmake/libproxy.cmk.orig	Wed Sep  1 22:23:34 2010
 +++ libproxy/cmake/libproxy.cmk	Tue Mar 22 09:35:32 2011
 @@ -2,7 +2,7 @@ add_library(libproxy SHARED extension_config.cpp exten
@@ -6,7 +9,7 @@ $OpenBSD: patch-libproxy_cmake_libproxy_cmk,v 1.1 2011/03/24 06:50:09 ajacoutot 
    target_link_libraries(libproxy modman;ws2_32;${LIBPROXY_LIBRARIES})
  else()
 -  target_link_libraries(libproxy modman;m;pthread;dl;${LIBPROXY_LIBRARIES})
-+  target_link_libraries(libproxy modman;m;pthread;${LIBPROXY_LIBRARIES})
++  target_link_libraries(libproxy modman;m;${LIBPROXY_LIBRARIES})
  endif()
  file(TO_NATIVE_PATH ${MODULE_INSTALL_DIR} MODULE_INSTALL_DIR)
  if(WIN32)
