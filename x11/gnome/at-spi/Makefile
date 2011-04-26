@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2011/04/06 19:46:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/04/26 18:39:11 ajacoutot Exp $
 
 COMMENT=		GNOME accessibility interface
 
 GNOME_PROJECT=		at-spi
 GNOME_VERSION=		1.32.0
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=	spi                  0.0      # .10.11
 SHARED_LIBS +=	loginhelper          0.0      # .0.0
@@ -39,7 +39,8 @@ MODGCONF2_SCHEMAS_DIR=	at-spi
 DESKTOP_FILES=		Yes
 
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		--enable-gtk-doc=no
+		--disable-gtk-doc \
+		--enable-relocate
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"

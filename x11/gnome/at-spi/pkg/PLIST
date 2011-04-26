@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/04/06 19:46:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/04/26 18:39:11 ajacoutot Exp $
 include/at-spi-1.0/
 include/at-spi-1.0/cspi/
 include/at-spi-1.0/cspi/spi-impl.h
@@ -38,9 +38,11 @@ include/at-spi-1.0/login-helper/
 include/at-spi-1.0/login-helper/Accessibility_LoginHelper.h
 include/at-spi-1.0/login-helper/login-helper.h
 lib/bonobo/servers/Accessibility_Registry.server
-@comment lib/gtk-2.0/modules/libatk-bridge.a
-@comment lib/gtk-2.0/modules/libatk-bridge.la
-lib/gtk-2.0/modules/libatk-bridge.so
+lib/gtk-2.0/modules/at-spi-corba/
+lib/gtk-2.0/modules/at-spi-corba/modules/
+@comment lib/gtk-2.0/modules/at-spi-corba/modules/libatk-bridge.a
+@comment lib/gtk-2.0/modules/at-spi-corba/modules/libatk-bridge.la
+lib/gtk-2.0/modules/at-spi-corba/modules/libatk-bridge.so
 lib/libcspi.a
 lib/libcspi.la
 @lib lib/libcspi.so.${LIBcspi_VERSION}
@@ -59,25 +61,25 @@ lib/orbit-2.0/Accessibility_module.so
 lib/pkgconfig/cspi-1.0.pc
 lib/pkgconfig/libloginhelper-1.0.pc
 lib/pkgconfig/libspi-1.0.pc
-lib/python${MODPY_VERSION}/site-packages/pyatspi/
-lib/python${MODPY_VERSION}/site-packages/pyatspi/__init__.py
-lib/python${MODPY_VERSION}/site-packages/pyatspi/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/pyatspi/__init__.pyo
-lib/python${MODPY_VERSION}/site-packages/pyatspi/accessible.py
-lib/python${MODPY_VERSION}/site-packages/pyatspi/accessible.pyc
-lib/python${MODPY_VERSION}/site-packages/pyatspi/accessible.pyo
-lib/python${MODPY_VERSION}/site-packages/pyatspi/constants.py
-lib/python${MODPY_VERSION}/site-packages/pyatspi/constants.pyc
-lib/python${MODPY_VERSION}/site-packages/pyatspi/constants.pyo
-lib/python${MODPY_VERSION}/site-packages/pyatspi/event.py
-lib/python${MODPY_VERSION}/site-packages/pyatspi/event.pyc
-lib/python${MODPY_VERSION}/site-packages/pyatspi/event.pyo
-lib/python${MODPY_VERSION}/site-packages/pyatspi/registry.py
-lib/python${MODPY_VERSION}/site-packages/pyatspi/registry.pyc
-lib/python${MODPY_VERSION}/site-packages/pyatspi/registry.pyo
-lib/python${MODPY_VERSION}/site-packages/pyatspi/utils.py
-lib/python${MODPY_VERSION}/site-packages/pyatspi/utils.pyc
-lib/python${MODPY_VERSION}/site-packages/pyatspi/utils.pyo
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/__init__.py
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/accessible.py
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/accessible.pyc
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/accessible.pyo
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/constants.py
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/constants.pyc
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/constants.pyo
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/event.py
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/event.pyc
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/event.pyo
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/registry.py
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/registry.pyc
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/registry.pyo
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/utils.py
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/pyatspi_corba/utils.pyo
 @bin libexec/at-spi-registryd
 share/doc/at-spi/
 share/doc/at-spi/reference/
