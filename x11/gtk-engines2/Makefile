@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/04/17 14:05:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2011/04/26 17:59:57 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -44,11 +44,7 @@ CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-post-install:
-	cd ${WRKBUILD}/po && \
-		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} \
-			-f ${MAKE_FILE} ${FAKE_TARGET}
-
+# nm: unknown option -- D
 NO_REGRESS=	       Yes
 
 .include <bsd.port.mk>
