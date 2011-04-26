@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2011/04/18 15:37:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2011/04/26 15:56:07 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		archive manager for GNOME
 
 GNOME_PROJECT=		file-roller
-GNOME_VERSION=		2.32.1
-
-REVISION=		2
+GNOME_VERSION=		2.32.2
 
 CATEGORIES=		archivers
 
@@ -43,6 +41,8 @@ MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	file-roller
 
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--disable-packagekit
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
