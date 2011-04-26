@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.452 2011/04/26 18:23:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.453 2011/04/26 18:56:43 shadchin Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -73,7 +73,6 @@
      SUBDIR += freerdp
      SUBDIR += fsv
      SUBDIR += fvwm2
-     SUBDIR += fvwm2,i18n
      SUBDIR += fvwm95
      SUBDIR += gaia
      SUBDIR += gammapage
