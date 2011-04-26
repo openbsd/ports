@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.926 2011/04/25 15:08:23 kili Exp $
+# $OpenBSD: Makefile,v 1.927 2011/04/26 19:25:06 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -171,6 +171,7 @@
      SUBDIR += hs-glade
      SUBDIR += hs-glib
      SUBDIR += hs-hashed-storage
+     SUBDIR += hs-haskeline
      SUBDIR += hs-hlint
      SUBDIR += hs-hood
      SUBDIR += hs-hslogger
@@ -200,6 +201,7 @@
      SUBDIR += hs-syb
      SUBDIR += hs-tagged
      SUBDIR += hs-tar
+     SUBDIR += hs-terminfo
      SUBDIR += hs-text
      SUBDIR += hs-transformers
      SUBDIR += hs-uniplate
