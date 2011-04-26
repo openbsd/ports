@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/04/07 07:56:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2011/04/26 12:51:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,7 +42,5 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
 		--disable-quvi \
 		--enable-introspection
-
-FAKE_FLAGS=	itlocaledir=${PREFIX}/share/locale/
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/03/25 09:13:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2011/04/26 12:51:25 ajacoutot Exp $
 
 COMMENT=		GTK2 desktop calculator
 
@@ -38,7 +38,5 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GROFF=		Yes
-
-FAKE_FLAGS+=		itlocaledir="${PREFIX}/share/locale/"
 
 .include <bsd.port.mk>

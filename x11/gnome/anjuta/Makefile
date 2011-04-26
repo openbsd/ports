@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/04/07 12:45:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/04/26 12:51:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -84,8 +84,6 @@ CONFIGURE_ARGS+=	--disable-vala
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =		Yes
-
-FAKE_FLAGS=		itlocaledir=${PREFIX}/share/locale/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure
