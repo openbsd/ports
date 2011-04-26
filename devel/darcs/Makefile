@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2011/04/23 14:32:50 kili Exp $
+# $OpenBSD: Makefile,v 1.40 2011/04/26 19:29:16 kili Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
 DISTNAME =		darcs-2.5.2
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.darcs.net/
@@ -20,7 +20,8 @@ LIB_DEPENDS =		devel/gmp \
 BUILD_DEPENDS =		hs-tar->=0.3,<0.4:devel/hs-tar \
 			hs-zlib->=0.5.0,<0.6.0:archivers/hs-zlib \
 			hs-hashed-storage->=0.5.2,<0.6:devel/hs-hashed-storage \
-			devel/hs-mtl \
+			hs-haskeline->=0.6.2.2,<0.7:devel/hs-haskeline \
+			hs-mtl->=1.0,<2.1:devel/hs-mtl \
 			hs-parsec->=2.0,<3.2:devel/hs-parsec \
 			hs-regex-compat->=0.71,<0.94:devel/hs-regex-compat \
 			hs-text->=0.3:devel/hs-text \
