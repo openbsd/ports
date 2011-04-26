@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2011/04/17 18:06:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2011/04/26 18:32:59 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -6,6 +6,8 @@
      SUBDIR += anjuta-extras
      SUBDIR += applets2
      SUBDIR += at-spi
+     SUBDIR += at-spi2-atk
+     SUBDIR += at-spi2-core
      SUBDIR += audio
      SUBDIR += backgrounds
      SUBDIR += baker
@@ -83,6 +85,7 @@
      SUBDIR += panel
      SUBDIR += pessulus
      SUBDIR += planner
+     SUBDIR += py-atspi
      SUBDIR += py-gnome
      SUBDIR += py-gnome-desktop
      SUBDIR += py-gnome-extras
