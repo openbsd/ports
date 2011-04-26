@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.141 2011/04/10 10:26:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.142 2011/04/26 18:40:24 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.32.1
 
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		x11
 
@@ -34,6 +34,11 @@ LIB_DEPENDS=	devel/libexecinfo
 RUN_DEPENDS=	x11/gnome/settings-daemon \
 		sysutils/consolekit \
 		x11/xdg-user-dirs-gtk>=0.8p6
+
+# Install accessibility components -- daemons will start only if
+# accessibility is enabled by the user.
+# This should really be a dep. of a "gnome-accessibility" metapackage.
+RUN_DEPENDS+=	x11/gnome/at-spi2-atk
 
 # polkit-gnome isn't really *required* but then we will loose the polkit
 # auth. dialog ; same for gconf2-polkit, gconf2 and polkit are already

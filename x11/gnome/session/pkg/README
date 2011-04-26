@@ -1,10 +1,10 @@
-$OpenBSD: README,v 1.6 2011/04/10 10:26:55 ajacoutot Exp $
+$OpenBSD: README,v 1.7 2011/04/26 18:40:24 ajacoutot Exp $
 
-The OpenBSD/GNOME desktop
-=========================
+Running GNOME on OpenBSD
+========================
 
-* Introduction
-  ------------
+Introduction
+------------
 The gnome-session package only takes care of installing minimal GNOME
 libraries.  For a satisfying GNOME user experience, it is advised to
 install at least the following packages:
@@ -26,14 +26,34 @@ install at least the following packages:
 
 (xscreensaver can be used instead of gnome-screensaver)
 
-* A note about accessibility
-  --------------------------
+Login into GNOME
+----------------
+Login can be made using the GNOME Login Manager: GDM. Or you can add the
+following line corresponding to your login preference:
+    exec ${TRUEPREFIX}/bin/gnome-session
+in ~/.xinitrc when using startx(1)
+in ~/.xsession when using xdm(1)
+
+If you want to use the ConsoleKit and Polkit frameworks and that you do
+not login using GDM, you will have to prepend the following line to your
+session startup command: ${LOCALBASE}/bin/ck-launch-session.
+    e.g. exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
+
+A note about accessibility
+--------------------------
 If you want to make the GNOME applications "accessible" (e.g. nautilus),
 you'll need to install the libgail-gnome package which adds ATK
-interfaces for libbonoboui and libgnomeui widgets.
+interfaces for libbonoboui and libgnomeui widgets (see below).
 
-* Installing more packages
-  ------------------------
+Note that the at-spi accessibility provider is being deprecated in favor
+of at-spi2. However the following applications are only able to work
+with the deprecated CORBA-based implementation: dasher, gok,
+libgail-gnome and gnome-mag.
+To enable it, run the following command:
+    gconftool-2 --set --type bool /desktop/gnome/interface/at-spi-corba true
+
+Installing more packages
+------------------------
 If your needs aren't satisfied yet, there are many other packages
 you can install. The most important ones will be mentioned by category:
 
@@ -110,16 +130,3 @@ related ports under the x11/gnome category)
    * gtk2-murrine-engine - Murrine GTK+2 theme engine
    * gtk2-nodoka-engine - Nodoka GTK+2 theme engine
    * tango-icon-theme (+tango-icon-theme-extras) - Tango icon theme
-
-* Login into GNOME
-  ----------------
-Login can be made using the GNOME Login Manager: GDM. Or you can add the
-following line corresponding to your login preference:
-    exec ${TRUEPREFIX}/bin/gnome-session
-in ~/.xinitrc when using startx(1)
-in ~/.xsession when using xdm(1)
-
-If you want to use the ConsoleKit and Polkit frameworks and that you do
-not login using GDM, you will have to prepend the following line to your
-session startup command: ${LOCALBASE}/bin/ck-launch-session.
-    e.g. exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
