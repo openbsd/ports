@@ -1,0 +1,11 @@
+$OpenBSD: patch-Lib_test_test_socket_py,v 1.1 2011/04/26 19:42:31 rpointel Exp $
+--- Lib/test/test_socket.py.orig	Fri Nov 26 09:28:05 2010
++++ Lib/test/test_socket.py	Tue Apr 26 13:06:02 2011
+@@ -655,6 +655,7 @@
+             c.close()
+             s.close()
+ 
++    @unittest.skip("Skipped on OpenBSD because triggers an infinite loop")
+     def test_sendall_interrupted(self):
+         self.check_sendall_interrupted(False)
+ 

@@ -1,0 +1,19 @@
+$OpenBSD: patch-Lib_test_test_io_py,v 1.1 2011/04/26 19:42:31 rpointel Exp $
+--- Lib/test/test_io.py.orig	Sun Nov 21 14:34:58 2010
++++ Lib/test/test_io.py	Tue Apr 26 13:00:56 2011
+@@ -2552,12 +2552,15 @@
+                 if e.errno != errno.EBADF:
+                     raise
+ 
++    @unittest.skip("Skipped on OpenBSD because triggers an infinite loop")
+     def test_interrupted_write_unbuffered(self):
+         self.check_interrupted_write(b"xy", b"xy", mode="wb", buffering=0)
+ 
++    @unittest.skip("Skipped on OpenBSD because triggers an infinite loop")
+     def test_interrupted_write_buffered(self):
+         self.check_interrupted_write(b"xy", b"xy", mode="wb")
+ 
++    @unittest.skip("Skipped on OpenBSD because triggers an infinite loop")
+     def test_interrupted_write_text(self):
+         self.check_interrupted_write("xy", b"xy", mode="w", encoding="ascii")
+ 

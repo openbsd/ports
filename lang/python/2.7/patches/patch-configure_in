@@ -1,7 +1,8 @@
-$OpenBSD: patch-configure_in,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp $
+$OpenBSD: patch-configure_in,v 1.2 2011/04/26 19:42:31 rpointel Exp $
+wrong value of LDSHARED in sysconfig, cf http://bugs.python.org/issue10547
 --- configure.in.orig	Mon Nov  1 02:47:19 2010
-+++ configure.in	Mon Mar 28 11:53:19 2011
-@@ -1850,7 +1850,7 @@
++++ configure.in	Tue Apr 26 20:24:50 2011
+@@ -1850,30 +1850,14 @@
  	BSD/OS*/4*)
  		LDSHARED="gcc -shared"
  		LDCXXSHARED="g++ -shared";;
@@ -9,10 +10,13 @@ $OpenBSD: patch-configure_in,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp $
 +	FreeBSD*|OpenBSD*)
  		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
  		then
- 			LDSHARED='$(CC) -shared ${LDFLAGS}'
-@@ -1858,22 +1858,6 @@
+-			LDSHARED='$(CC) -shared ${LDFLAGS}'
+-			LDCXXSHARED='$(CXX) -shared ${LDFLAGS}'
++			LDSHARED='$(CC) -shared'
++			LDCXXSHARED='$(CXX) -shared'
  		else
- 			LDSHARED="ld -Bshareable ${LDFLAGS}"
+-			LDSHARED="ld -Bshareable ${LDFLAGS}"
++			LDSHARED="ld -Bshareable"
  		fi;;
 -	OpenBSD*)
 -		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
