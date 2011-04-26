@@ -1,0 +1,8 @@
+AT-SPI is the primary service interface by which assistive technologies
+query and receive notifications from running applications.
+This version of at-spi is a major break from previous versions.
+It has been completely rewritten to use D-Bus rather than ORBIT / CORBA
+for its transport protocol.
+
+This package includes a gtk-module that bridges ATK to the new D-Bus
+based AT-SPI.
