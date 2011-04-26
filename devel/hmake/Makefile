@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2011/04/14 12:15:53 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2011/04/26 14:51:32 jasper Exp $
 
 COMMENT =	compilation manager for Haskell programs
  
 DISTNAME =	hmake-3.14
-REVISION =	2
+REVISION =	3
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.haskell.org/hmake/
