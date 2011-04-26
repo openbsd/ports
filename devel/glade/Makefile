@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/04/15 05:49:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2011/04/26 13:09:07 ajacoutot Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
@@ -52,7 +52,5 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-introspection
 CONFIGURE_ENV=	CPPFLAGS="-pthread -I${LOCALBASE}/include"      \
 		LDFLAGS="-pthread -lutil -L${LOCALBASE}/lib"
-
-FAKE_FLAGS=	itlocaledir=${PREFIX}/share/locale
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/04/25 06:16:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/04/26 13:09:07 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -65,8 +65,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-primary-render=gtkhtml
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-FAKE_FLAGS+=		itlocaledir="${PREFIX}/share/locale/"
 
 # XXX remove this chunk when updating to a 'real' release
 # (current tarball created from git)

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/04/10 08:52:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2011/04/26 13:09:07 ajacoutot Exp $
 
 COMMENT=	collection of shared GSettings schemas
 
@@ -25,7 +25,6 @@ USE_LIBTOOL=	No
 
 CONFIGURE_STYLE=gnu
 
-FAKE_FLAGS=	pkgconfigdir=${PREFIX}/lib/pkgconfig \
-		itlocaledir=${PREFIX}/share/locale/
+FAKE_FLAGS=	pkgconfigdir=${PREFIX}/lib/pkgconfig
 
 .include <bsd.port.mk>

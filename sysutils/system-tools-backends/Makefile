@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/04/03 17:25:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2011/04/26 13:09:07 ajacoutot Exp $
 
 COMMENT=	cross-platform configuration modules
 
@@ -34,8 +34,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--localstatedir=/var \
 		--with-stb-group=wheel
 
-FAKE_FLAGS=	systemddir=${PREFIX}/share/examples/system-tools-backends/dbus-1/system.d \
-		itlocaledir=${PREFIX}/share/locale
+FAKE_FLAGS=	systemddir=${PREFIX}/share/examples/system-tools-backends/dbus-1/system.d
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Shares/SMB.pm

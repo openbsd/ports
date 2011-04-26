@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/04/21 06:50:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/04/26 13:09:07 ajacoutot Exp $
 
 COMMENT=	simple scanning utility
 
@@ -47,7 +47,5 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURED_SHARED}
-
-FAKE_FLAGS=	itlocaledir=${PREFIX}/share/locale/
 
 .include <bsd.port.mk>
