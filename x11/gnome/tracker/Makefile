@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.57 2011/01/15 21:01:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2011/04/27 11:09:50 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.8.17
+GNOME_VERSION=	0.8.18
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
 PKGNAME=	meta-tracker-${VERSION}
-REVISION=	7
 
 EVO_VERSION=	2.32
 SUBST_VARS=	EVO_VERSION
@@ -29,14 +28,14 @@ WANTLIB += enchant execinfo exif expat fontconfig freetype
 WANTLIB += gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmime-2.4 gmodule-2.0 gnome-2
 WANTLIB += gnome-desktop-2 gnome-keyring gnomecanvas-2 gnomevfs-2
-WANTLIB += gnutls gobject-2.0 gpg-error gsf-1 gssapi gstbase-0.10
+WANTLIB += gobject-2.0 gpg-error gsf-1 gssapi gstbase-0.10
 WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 gtkhtml-3.14
 WANTLIB += jpeg krb5 lcms m nspr4 nss3 ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
 WANTLIB += png popt pthread pthread-stubs smime3 soup-2.4 sqlite3
-WANTLIB += ssl ssl3 startup-notification-1 stdc++ tasn1 tiff unique-1.0
+WANTLIB += ssl ssl3 startup-notification-1 stdc++ tiff unique-1.0
 WANTLIB += util xcb xcb-atom xcb-aux xcb-event xcb-render
-WANTLIB += xml2 z openjpeg proxy soup-gnome-2.4 kvm
+WANTLIB += xml2 z openjpeg soup-gnome-2.4 kvm
 WANTLIB += vorbis vorbisfile lib/evolution/${EVO_VERSION}/eutil exempi
 WANTLIB += gsttag-0.10 poppler-glib poppler panel-applet-2
 WANTLIB += nautilus-extension totem-plparser e2fs-uuid gee
