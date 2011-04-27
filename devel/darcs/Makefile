@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/04/26 19:29:16 kili Exp $
+# $OpenBSD: Makefile,v 1.41 2011/04/27 11:19:13 kili Exp $
 
 COMMENT =		advanced revision control system written in Haskell
 
@@ -11,7 +11,7 @@ HOMEPAGE =		http://www.darcs.net/
 WANTLIB =		c curl>=2 gmp m ncursesw pthread util z
 MODULES =		lang/ghc converters/libiconv
 MODGHC_BUILD =		cabal hackage nort
-MODGHC_SETUP_CONF_ARGS =-f '-threaded'
+MODGHC_SETUP_CONF_ARGS =-f '-library -threaded'
 LIB_DEPENDS =		devel/gmp \
 			net/curl
 
@@ -47,7 +47,6 @@ post-install:
 	rm -rf ${PREFIX}/share/man
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKBUILD}/dist/build/darcs/darcs.1 ${PREFIX}/man/man1
-	rm -rf ${PREFIX}/lib/${DISTNAME}
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
