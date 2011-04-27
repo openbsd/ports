@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/04/27 16:29:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/27 17:30:18 jasper Exp $
 
 COMMENT=		GNU Compiler Collection for msp430
 
@@ -12,7 +12,7 @@ PATCHFILES=		gcc-${VERSION}.patch:0
 
 DISTFILES=		gcc-core-${VERSION}${EXTRACT_SUFX} \
 			gcc-g++-${VERSION}${EXTRACT_SUFX} \
-			${TARGET}-gcc.tar.gz:0
+			gcc-${VERSION}-config.tar.gz:0
 
 WANTLIB +=		c gmp mpfr
 
@@ -37,7 +37,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 # Move the mspgcc4 config files into place.
 post-extract:
-	cp -r ${WRKDIR}/gcc/ ${WRKSRC}
+	cp -r ${WRKDIR}/gcc-${VERSION}-config/gcc/ ${WRKSRC}
 
 post-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} \
