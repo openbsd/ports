@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/03/02 08:37:51 robert Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/04/27 08:50:16 robert Exp $
 %%SHARED%%
 bin/al
 bin/al2
@@ -46,6 +46,7 @@ bin/mono-heapviz
 bin/mono-service
 bin/mono-service2
 @bin bin/mono-sgen
+bin/mono-sgen-gdb.py
 bin/mono-shlib-cop
 bin/mono-test-install
 bin/mono-xmltool
@@ -784,9 +785,12 @@ lib/mono/gac/Mono.Web/4.0.0.0__0738eb9f132ed756/
 lib/mono/gac/Mono.Web/4.0.0.0__0738eb9f132ed756/Mono.Web.dll
 lib/mono/gac/Mono.Web/4.0.0.0__0738eb9f132ed756/Mono.Web.dll.mdb
 lib/mono/gac/Mono.WebBrowser/
-lib/mono/gac/Mono.WebBrowser/0.5.0.0__0738eb9f132ed756/
-lib/mono/gac/Mono.WebBrowser/0.5.0.0__0738eb9f132ed756/Mono.WebBrowser.dll
-lib/mono/gac/Mono.WebBrowser/0.5.0.0__0738eb9f132ed756/Mono.WebBrowser.dll.mdb
+lib/mono/gac/Mono.WebBrowser/2.0.0.0__0738eb9f132ed756/
+lib/mono/gac/Mono.WebBrowser/2.0.0.0__0738eb9f132ed756/Mono.WebBrowser.dll
+lib/mono/gac/Mono.WebBrowser/2.0.0.0__0738eb9f132ed756/Mono.WebBrowser.dll.mdb
+lib/mono/gac/Mono.WebBrowser/4.0.0.0__0738eb9f132ed756/
+lib/mono/gac/Mono.WebBrowser/4.0.0.0__0738eb9f132ed756/Mono.WebBrowser.dll
+lib/mono/gac/Mono.WebBrowser/4.0.0.0__0738eb9f132ed756/Mono.WebBrowser.dll.mdb
 lib/mono/gac/Novell.Directory.Ldap/
 lib/mono/gac/Novell.Directory.Ldap/2.0.0.0__0738eb9f132ed756/
 lib/mono/gac/Novell.Directory.Ldap/2.0.0.0__0738eb9f132ed756/Novell.Directory.Ldap.dll
@@ -1219,6 +1223,20 @@ lib/mono/mono-configuration-crypto/4.0/mono-configuration-crypto.exe.mdb
 lib/mono/monodoc/
 lib/mono/monodoc/monodoc.dll
 lib/mono/xbuild/
+lib/mono/xbuild-frameworks/
+lib/mono/xbuild-frameworks/.NETFramework/
+lib/mono/xbuild-frameworks/.NETFramework/v2.0/
+lib/mono/xbuild-frameworks/.NETFramework/v2.0/RedistList/
+lib/mono/xbuild-frameworks/.NETFramework/v2.0/RedistList/FrameworkList.xml
+lib/mono/xbuild-frameworks/.NETFramework/v3.0/
+lib/mono/xbuild-frameworks/.NETFramework/v3.0/RedistList/
+lib/mono/xbuild-frameworks/.NETFramework/v3.0/RedistList/FrameworkList.xml
+lib/mono/xbuild-frameworks/.NETFramework/v3.5/
+lib/mono/xbuild-frameworks/.NETFramework/v3.5/RedistList/
+lib/mono/xbuild-frameworks/.NETFramework/v3.5/RedistList/FrameworkList.xml
+lib/mono/xbuild-frameworks/.NETFramework/v4.0/
+lib/mono/xbuild-frameworks/.NETFramework/v4.0/RedistList/
+lib/mono/xbuild-frameworks/.NETFramework/v4.0/RedistList/FrameworkList.xml
 lib/mono/xbuild/Microsoft/
 lib/mono/xbuild/Microsoft/Silverlight/
 lib/mono/xbuild/Microsoft/Silverlight/v2.0/
