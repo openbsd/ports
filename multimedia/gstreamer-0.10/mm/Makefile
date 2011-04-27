@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2011/04/14 12:14:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/04/27 18:36:04 ajacoutot Exp $
 
 COMMENT =	C++ bindings for GStreamer
 
-V =		0.10.9
+V =		0.10.9.1
 NAME =		gstreamermm
 DISTNAME =	${NAME}-${V}
 
@@ -28,8 +28,5 @@ LIB_DEPENDS =	devel/glib2mm \
 		textproc/libxml++
 
 CONFIGURE_STYLE =	gnu
-
-# XXX when updating, check that this is still needed
-CONFIGURE_ENV+=	MMDOCTOOLDIR=`pkg-config --variable=doctooldir mm-common-util`
 
 .include <bsd.port.mk>
