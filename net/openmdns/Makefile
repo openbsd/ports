@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/03/15 06:54:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/27 14:01:46 landry Exp $
 
 COMMENT =		MDNS/DNS-SD daemon
 
-DISTNAME =		openmdns-0.4
+DISTNAME =		openmdns-0.5
 CATEGORIES =		net
-
-REVISION =		1
 
 MAINTAINER =		Gonzalo L. R. <gonzalo@x61.com.ar>
 
@@ -17,7 +15,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		http://www.haesbaert.org/openmdns/releases/
+MASTER_SITES =		http://www.haesbaert.org/openmdns/releases/ \
+			http://x61.com.ar/openmdns/
 
 WANTLIB += 		c event util
 
