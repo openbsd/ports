@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.2 2010/04/27 20:56:11 sthen Exp $
+$OpenBSD: patch-configure,v 1.3 2011/04/27 12:55:10 dcoppa Exp $
 --- configure.orig	Tue Aug 25 00:01:58 2009
 +++ configure	Tue Apr 27 19:50:09 2010
-@@ -19845,7 +19845,7 @@ $as_echo "$ac_cv_search_clock_gettime" >&6; }
- ac_res=$ac_cv_search_clock_gettime
- if test "$ac_res" != no; then
-   test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
--  conky_LIBS="$conky_LIBS -lrt"
-+  conky_LIBS="$conky_LIBS "
+@@ -11657,7 +11657,7 @@ $as_echo "#define APCUPSD 1" >>confdefs.h
  
- cat >>confdefs.h <<\_ACEOF
- #define HAVE_CLOCK_GETTIME 1
+   fi
+ fi
+- if test x$want_apcupsd = xyes; then
++ if test x"$want_apcupsd" = xyes; then
+   BUILD_APCUPSD_TRUE=
+   BUILD_APCUPSD_FALSE='#'
+ else

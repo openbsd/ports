@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_xmms2_c,v 1.1 2011/04/27 12:55:11 dcoppa Exp $
+--- src/xmms2.c.orig	Tue Apr 19 20:22:11 2011
++++ src/xmms2.c	Tue Apr 19 20:22:30 2011
+@@ -223,7 +223,7 @@ int handle_playback_state_change(xmmsv_t *value, void 
+ 				break;
+ 			case XMMS_PLAYBACK_STATUS_STOP:
+ 				strncpy(ptr->xmms2.status, "Stopped", text_buffer_size - 1);
+-				ptr->xmms2.elapsed = ptr->xmms2.progress = ptr->xmms2.percent = 0;
++				ptr->xmms2.elapsed = ptr->xmms2.progress = 0;
+ 				break;
+ 			default:
+ 				strncpy(ptr->xmms2.status, "Unknown", text_buffer_size - 1);

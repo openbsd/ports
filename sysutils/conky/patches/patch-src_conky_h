@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_conky_h,v 1.1 2011/04/27 12:55:10 dcoppa Exp $
+--- src/conky.h.orig	Tue Apr 19 19:05:01 2011
++++ src/conky.h	Tue Apr 19 19:05:27 2011
+@@ -34,6 +34,7 @@
+ #include "config.h"	/* defines */
+ #include "common.h"	/* at least for struct dns_data */
+ #include <sys/utsname.h> /* struct uname_s */
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ 
+ #if defined(HAS_MCHECK_H)

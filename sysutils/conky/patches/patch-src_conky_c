@@ -1,0 +1,47 @@
+$OpenBSD: patch-src_conky_c,v 1.4 2011/04/27 12:55:10 dcoppa Exp $
+--- src/conky.c.orig	Tue Oct  5 23:29:36 2010
++++ src/conky.c	Tue Apr 19 19:44:03 2011
+@@ -125,7 +125,7 @@
+ 
+ /* FIXME: apm_getinfo is unused here. maybe it's meant for common.c */
+ #if (defined(__FreeBSD__) || defined(__FreeBSD_kernel__) \
+-		|| defined(__OpenBSD__)) && (defined(i386) || defined(__i386__))
++		|| defined(__OpenBSD__))
+ int apm_getinfo(int fd, apm_info_t aip);
+ char *get_apm_adapter(void);
+ char *get_apm_battery_life(void);
+@@ -401,10 +401,6 @@ static int maximum_width;
+ 
+ #endif /* X11 */
+ 
+-#ifdef __OpenBSD__
+-static int sensor_device;
+-#endif
+-
+ long color0, color1, color2, color3, color4, color5, color6, color7, color8,
+ 	 color9;
+ 
+@@ -1914,7 +1910,7 @@ void generate_text_internal(char *p, int p_max_size,
+ 			}
+ #endif /* __linux__ */
+ #if (defined(__FreeBSD__) || defined(__FreeBSD_kernel__) \
+-		|| defined(__OpenBSD__)) && (defined(i386) || defined(__i386__))
++		|| defined(__OpenBSD__))
+ 			OBJ(apm_adapter) {
+ 				char *msg;
+ 
+@@ -3534,12 +3530,14 @@ static void main_loop(void)
+ 		if(update_interval_bat != NOBATTERY && update_interval_bat != update_interval_old) {
+ 			char buf[max_user_text];
+ 
++#ifndef __OpenBSD__
+ 			get_battery_short_status(buf, max_user_text, "BAT0");
+ 			if(buf[0] == 'D') {
+ 				update_interval = update_interval_bat;
+ 			} else {
+ 				update_interval = update_interval_old;
+ 			}
++#endif
+ 		}
+ 		info.looped++;
+ 

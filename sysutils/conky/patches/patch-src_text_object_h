@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_text_object_h,v 1.1 2011/04/27 12:55:11 dcoppa Exp $
+--- src/text_object.h.orig	Tue Apr 19 19:42:09 2011
++++ src/text_object.h	Tue Apr 19 19:42:32 2011
+@@ -311,7 +311,7 @@ enum text_object_type {
+ 	OBJ_pop3_unseen,
+ 	OBJ_pop3_used,
+ #if (defined(__FreeBSD__) || defined(__FreeBSD_kernel__) \
+-		|| defined(__OpenBSD__)) && (defined(i386) || defined(__i386__))
++		|| defined(__OpenBSD__))
+ 	OBJ_apm_adapter,
+ 	OBJ_apm_battery_time,
+ 	OBJ_apm_battery_life,

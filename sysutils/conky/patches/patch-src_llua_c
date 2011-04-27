@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_llua_c,v 1.1 2011/04/27 12:55:10 dcoppa Exp $
+--- src/llua.c.orig	Wed Apr 27 14:37:28 2011
++++ src/llua.c	Wed Apr 27 14:39:18 2011
+@@ -28,6 +28,8 @@
+ 
+ #include <ctype.h>
+ 
++#include <sys/param.h>
++
+ #ifdef LUA_EXTRAS
+ #include <tolua++.h>
+ #endif /* LUA_EXTRAS */
+@@ -39,8 +41,6 @@ void llua_append_notify(const char *name);
+ void llua_rm_notifies(void);
+ static int llua_block_notify = 0;
+ #endif /* HAVE_SYS_INOTIFY_H */
+-
+-#define MIN(a, b) ( (a) < (b) ? (a) : (b) )
+ 
+ static char *draw_pre_hook = 0;
+ static char *draw_post_hook = 0;

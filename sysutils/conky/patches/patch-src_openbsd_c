@@ -1,42 +1,178 @@
-$OpenBSD: patch-src_openbsd_c,v 1.9 2010/10/25 18:11:26 sthen Exp $
---- src/openbsd.c.orig	Sat Aug  8 22:05:55 2009
-+++ src/openbsd.c	Mon Oct 25 20:05:06 2010
-@@ -271,7 +271,7 @@ void update_total_processes()
+$OpenBSD: patch-src_openbsd_c,v 1.10 2011/04/27 12:55:10 dcoppa Exp $
+
+declarations in common.h got changed, but upstream forgot to do the
+corresponding changes into openbsd.c
+
+--- src/openbsd.c.orig	Tue Oct  5 23:29:36 2010
++++ src/openbsd.c	Tue Apr 19 19:40:39 2011
+@@ -140,7 +140,7 @@ int check_mount(char *s)
+ 	return 0;
+ }
+ 
+-void update_uptime()
++int update_uptime()
+ {
+ 	int mib[2] = { CTL_KERN, KERN_BOOTTIME };
+ 	struct timeval boottime;
+@@ -155,9 +155,10 @@ void update_uptime()
+ 		NORM_ERR("Could not get uptime");
+ 		info.uptime = 0;
+ 	}
++	return 0;
+ }
+ 
+-void update_meminfo()
++int update_meminfo()
+ {
+ 	static int mib[2] = { CTL_VM, VM_METER };
+ 	struct vmtotal vmtotal;
+@@ -194,9 +195,10 @@ void update_meminfo()
+ 		info.swap = 0;
+ 		info.swapfree = 0;
+ 	}
++	return 0;
+ }
+ 
+-void update_net_stats()
++int update_net_stats()
+ {
+ 	struct net_stat *ns;
+ 	double delta;
+@@ -207,11 +209,11 @@ void update_net_stats()
+ 	/* get delta */
+ 	delta = current_update_time - last_update_time;
+ 	if (delta <= 0.0001) {
+-		return;
++		return 0;
+ 	}
+ 
+ 	if (getifaddrs(&ifap) < 0) {
+-		return;
++		return 0;
+ 	}
+ 
+ 	for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
+@@ -266,19 +268,23 @@ void update_net_stats()
+ 	}
+ 
+ 	freeifaddrs(ifap);
++	return 0;
+ }
+ 
+-void update_total_processes()
++int update_total_processes()
+ {
  	int n_processes;
  
++	int max_size = sizeof(struct kinfo_proc);
++
  	kvm_init();
 -	kvm_getprocs(kd, KERN_PROC_ALL, 0, &n_processes);
-+	kvm_getproc2(kd, KERN_PROC_ALL, 0, sizeof(n_processes), &n_processes);
++	kvm_getprocs(kd, KERN_PROC_ALL, 0, max_size, &n_processes);
  
  	info.procs = n_processes;
++	return 0;
  }
-@@ -454,14 +454,13 @@ void update_obsd_sensors()
  
- 	dev = obsd_sensors.device;	// FIXME: read more than one device
+-void update_running_processes()
++int update_running_processes()
+ {
+ 	struct kinfo_proc2 *p;
+ 	int n_processes;
+@@ -295,6 +301,7 @@ void update_running_processes()
+ 	}
  
--	/* for (dev = 0; dev < MAXSENSORDEVICES; dev++) { */
-+	for (dev = 0; dev < MAXSENSORDEVICES; dev++) {
- 		mib[2] = dev;
- 		if (sysctl(mib, 3, &sensordev, &sdlen, NULL, 0) == -1) {
--			if (errno != ENOENT) {
--				warn("sysctl");
--			}
--			return;
--			// continue;
-+			if (errno == ENOENT) /* end of sensors */
-+				return;
-+			if (errno == ENXIO) /* missing e.g. usb sensor that was unplugged */
-+				continue;
- 		}
- 		for (type = 0; type < SENSOR_MAX_TYPES; type++) {
- 			mib[3] = type;
-@@ -496,7 +495,8 @@ void update_obsd_sensors()
- 				sensor_cnt++;
- 			}
- 		}
--	/* } */
-+		break; // FIXME: read more than one device
-+	}
+ 	info.run_procs = cnt;
++	return 0;
+ }
  
- 	init_sensors = 1;
+ /* new SMP code can be enabled by commenting the following line */
+@@ -343,7 +350,7 @@ void get_cpu_count()
+ #endif
+ }
+ 
+-void update_cpu_usage()
++int update_cpu_usage()
+ {
+ #ifdef OLDCPU
+ 	int mib[2] = { CTL_KERN, KERN_CPTIME };
+@@ -427,9 +434,10 @@ void update_cpu_usage()
+ 		oldtotal[i] = total;
+ 	}
+ #endif
++	return 0;
+ }
+ 
+-void update_load_average()
++int update_load_average()
+ {
+ 	double v[3];
+ 
+@@ -438,6 +446,7 @@ void update_load_average()
+ 	info.loadavg[0] = (float) v[0];
+ 	info.loadavg[1] = (float) v[1];
+ 	info.loadavg[2] = (float) v[2];
++	return 0;
+ }
+ 
+ #define OBSD_MAX_SENSORS 256
+@@ -606,10 +615,11 @@ char get_freq(char *p_client_buffer, size_t client_buf
+ 	return 1;
+ }
+ 
+-void update_top()
++int update_top()
+ {
+ 	kvm_init();
+ 	proc_find_top(info.cpu, info.memu);
++	return 0;
+ }
+ 
+ #if 0
+@@ -665,19 +675,11 @@ cleanup:
+ }
+ #endif
+ 
+-void clear_diskio_stats()
++int update_diskio()
+ {
++	return 0;	/* XXX: implement? hifi: not sure how */
+ }
+ 
+-struct diskio_stat *prepare_diskio_stat(const char *s)
+-{
+-}
+-
+-void update_diskio()
+-{
+-	return;	/* XXX: implement? hifi: not sure how */
+-}
+-
+ /* While topless is obviously better, top is also not bad. */
+ 
+ int comparecpu(const void *a, const void *b)
+@@ -784,7 +786,6 @@ inline void proc_find_top(struct process **cpu, struct
+ 	free(processes);
+ }
+ 
+-#if	defined(i386) || defined(__i386__)
+ #define	APMDEV		"/dev/apm"
+ #define	APM_UNKNOWN	255
+ 
+@@ -908,7 +909,6 @@ char *get_apm_battery_time()
+ 	return out;
+ }
+ 
+-#endif
+ 
+ /* empty stubs so conky links */
+ void prepare_update()
+@@ -923,8 +923,4 @@ int get_entropy_avail(unsigned int *val)
+ int get_entropy_poolsize(unsigned int *val)
+ {
+ 	return 1;
+-}
+-
+-void free_all_processes(void)
+-{
  }
