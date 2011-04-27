@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/05 08:44:22 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/27 15:15:22 jasper Exp $
 @bin bin/naken430asm
 @bin bin/naken430util
 share/naken430asm/
@@ -7,7 +7,7 @@ share/naken430asm/examples/defines.asm
 share/naken430asm/examples/guitar_proc.asm
 share/naken430asm/examples/ifdef.asm
 share/naken430asm/examples/launchpad_blink.asm
-share/naken430asm/examples/launchpad_blink_g${CC}.asm
+share/naken430asm/examples/launchpad_blink_gcc.asm
 share/naken430asm/examples/olimex.asm
 share/naken430asm/examples/simulator.asm
 share/naken430asm/examples/test.asm
