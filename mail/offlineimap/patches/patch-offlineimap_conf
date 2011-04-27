@@ -1,0 +1,12 @@
+$OpenBSD: patch-offlineimap_conf,v 1.1 2011/04/27 12:59:27 pea Exp $
+--- offlineimap.conf.orig	Wed Mar  2 22:16:23 2011
++++ offlineimap.conf	Wed Mar  2 22:16:37 2011
+@@ -283,7 +283,7 @@ ssl = yes
+ # specified, the CA Cert(s) need to verify the Server cert AND
+ # match the hostname (* wildcard allowed on the left hand side)
+ # The certificate should be in PEM format.
+-# sslcacertfile = /path/to/cacertfile.crt
++sslcacertfile = /etc/ssl/cert.pem
+ 
+ # Specify the port.  If not specified, use a default port.
+ # remoteport = 993

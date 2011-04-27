@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/19 07:23:07 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/04/27 12:59:27 pea Exp $
 
 COMMENT=	powerful IMAP/Maildir synchronization and reader support
 
-MODPY_EGG_VERSION= 6.2.0.2
+MODPY_EGG_VERSION= 6.3.2
 DISTNAME=	offlineimap_${MODPY_EGG_VERSION}.orig
 CATEGORIES=	mail
 PKGNAME=	offlineimap-${MODPY_EGG_VERSION}
-REVISION=	0
 
-HOMEPAGE=	http://software.complete.org/offlineimap/
+HOMEPAGE=	http://offlineimap.org/
 
 MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
@@ -18,23 +17,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.debian.org/debian/pool/main/o/offlineimap/ \
-		ftp://ftp.de.debian.org/debian/pool/main/o/offlineimap/
+MASTER_SITES=	http://github.com/nicolas33/offlineimap/tarball/v${MODPY_EGG_VERSION}/
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 MODULES=	lang/python
 
-BUILD_DEPENDS=	textproc/docbook-to-man
+BUILD_DEPENDS=	textproc/py-docutils
 
-WRKDIST=	${WRKDIR}/offlineimap-${MODPY_EGG_VERSION}
+WRKDIST=	${WRKDIR}/nicolas33-offlineimap-b49802f
 
 EXAMPLESDIR=	${PREFIX}/share/examples/offlineimap
 
 post-build:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/docbook-to-man offlineimap.sgml \
-		> ${WRKBUILD}/offlineimap.1
+	@cd ${WRKSRC}/docs && ${LOCALBASE}/bin/rst2man MANUAL.rst ${WRKBUILD}/offlineimap.1
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}

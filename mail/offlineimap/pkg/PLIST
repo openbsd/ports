@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/09/16 11:04:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/04/27 12:59:27 pea Exp $
 bin/offlineimap
 lib/python${MODPY_VERSION}/site-packages/offlineimap/
-lib/python${MODPY_VERSION}/site-packages/offlineimap-6.2.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/offlineimap-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/offlineimap/CustomConfig.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/CustomConfig.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/__init__.py
@@ -69,10 +69,6 @@ lib/python${MODPY_VERSION}/site-packages/offlineimap/ui/__init__.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/ui/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/offlineimap/ui/debuglock.py
 lib/python${MODPY_VERSION}/site-packages/offlineimap/ui/debuglock.pyc
-lib/python${MODPY_VERSION}/site-packages/offlineimap/ui/detector.py
-lib/python${MODPY_VERSION}/site-packages/offlineimap/ui/detector.pyc
-lib/python${MODPY_VERSION}/site-packages/offlineimap/version.py
-lib/python${MODPY_VERSION}/site-packages/offlineimap/version.pyc
 @man man/man1/offlineimap.1
 share/examples/offlineimap/
 share/examples/offlineimap/offlineimap.conf
