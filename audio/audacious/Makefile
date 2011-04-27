@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/03/02 14:07:09 shadchin Exp $
+# $OpenBSD: Makefile,v 1.25 2011/04/27 11:44:12 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,7 +6,12 @@ COMMENT =		gtk+2 media player based on BMP and XMMS
 
 DISTNAME =		audacious-2.4.4
 
-SHARED_LIBS =		audclient	1.1	# 2.0
+REVISION =		0
+
+SHARED_LIBS =		audclient	1.1 	# 2.0
+SHARED_LIBS +=		audcore		0.0 	# 1.0
+SHARED_LIBS +=		audgui		0.0	# 1.0
+SHARED_LIBS +=		audtag		0.0	# 1.0
 
 CATEGORIES =		audio multimedia
 
@@ -43,12 +48,15 @@ LIB_DEPENDS =		devel/libexecinfo \
 			x11/dbus \
 			x11/gtk+2
 
-MAKE_ENV =		LIBaudclient_VERSION=${LIBaudclient_VERSION}
+MAKE_ENV =		LIBaudclient_VERSION=${LIBaudclient_VERSION} \
+			LIBaudcore_VERSION=${LIBaudcore_VERSION} \
+			LIBaudgui_VERSION=${LIBaudgui_VERSION} \
+			LIBaudtag_VERSION=${LIBaudtag_VERSION}
 
-USE_GROFF =		Yes
 USE_GMAKE =		Yes
 
-AUTOCONF_VERSION =	2.61
+# Should be 2.68
+AUTOCONF_VERSION =	2.67
 
 CONFIGURE_STYLE =	autoconf
 

@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_libaudgui_Makefile,v 1.1 2011/04/27 11:44:12 dcoppa Exp $
+--- src/libaudgui/Makefile.orig	Wed Apr 20 13:38:32 2011
++++ src/libaudgui/Makefile	Wed Apr 20 13:39:06 2011
+@@ -1,4 +1,4 @@
+-LIB = ${LIB_PREFIX}audgui${LIB_SUFFIX}
++LIB = ${LIB_PREFIX}audgui${LIB_SUFFIX}.${LIBaudgui_VERSION}
+ LIB_MAJOR = 1
+ LIB_MINOR = 0
+ 

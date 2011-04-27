@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/12/19 18:17:55 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/04/27 11:44:12 dcoppa Exp $
 @bin bin/audacious2
 @bin bin/audtool2
 include/audacious/
@@ -48,9 +48,9 @@ include/libaudgui/
 include/libaudgui/libaudgui-gtk.h
 include/libaudgui/libaudgui.h
 @lib lib/libaudclient.so.${LIBaudclient_VERSION}
-lib/libaudcore.so
-lib/libaudgui.so
-lib/libaudtag.so
+@lib lib/libaudcore.so.${LIBaudcore_VERSION}
+@lib lib/libaudgui.so.${LIBaudgui_VERSION}
+@lib lib/libaudtag.so.${LIBaudtag_VERSION}
 lib/pkgconfig/audacious.pc
 lib/pkgconfig/audclient.pc
 @man man/man1/audacious2.1

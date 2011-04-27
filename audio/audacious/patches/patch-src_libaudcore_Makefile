@@ -1,6 +1,12 @@
-$OpenBSD: patch-src_libaudcore_Makefile,v 1.1 2010/12/19 18:17:55 shadchin Exp $
---- src/libaudcore/Makefile.orig	Sat Dec  4 15:54:33 2010
-+++ src/libaudcore/Makefile	Sat Dec  4 15:54:46 2010
+$OpenBSD: patch-src_libaudcore_Makefile,v 1.2 2011/04/27 11:44:12 dcoppa Exp $
+--- src/libaudcore/Makefile.orig	Tue Feb 22 18:29:02 2011
++++ src/libaudcore/Makefile	Wed Apr 20 13:38:18 2011
+@@ -1,4 +1,4 @@
+-LIB = ${LIB_PREFIX}audcore${LIB_SUFFIX}
++LIB = ${LIB_PREFIX}audcore${LIB_SUFFIX}.${LIBaudcore_VERSION}
+ LIB_MAJOR = 1
+ LIB_MINOR = 0
+ 
 @@ -43,4 +43,4 @@ includesubdir = libaudcore
  CPPFLAGS += -DHAVE_CONFIG_H ${LIB_CPPFLAGS} ${CFLAGS} -I.. -I../..
  CFLAGS += ${LIB_CFLAGS} ${GLIB_CFLAGS} ${MOWGLI_CFLAGS}

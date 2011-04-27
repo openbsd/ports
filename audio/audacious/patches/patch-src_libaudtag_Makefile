@@ -1,0 +1,9 @@
+$OpenBSD: patch-src_libaudtag_Makefile,v 1.1 2011/04/27 11:44:12 dcoppa Exp $
+--- src/libaudtag/Makefile.orig	Wed Apr 20 15:44:10 2011
++++ src/libaudtag/Makefile	Wed Apr 20 15:45:26 2011
+@@ -1,4 +1,4 @@
+-LIB = ${LIB_PREFIX}audtag${LIB_SUFFIX}
++LIB = ${LIB_PREFIX}audtag${LIB_SUFFIX}.${LIBaudtag_VERSION}
+ LIB_MAJOR = 1
+ LIB_MINOR = 0
+ 
