@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.927 2011/04/26 19:25:06 kili Exp $
+# $OpenBSD: Makefile,v 1.928 2011/04/27 11:22:24 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -282,6 +282,7 @@
      SUBDIR += libtool
      SUBDIR += libunicode
      SUBDIR += libunique
+     SUBDIR += libunique3
      SUBDIR += libusb
      SUBDIR += libutf
      SUBDIR += libvmime
