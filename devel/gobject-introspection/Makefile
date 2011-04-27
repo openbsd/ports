@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.33 2011/04/25 11:43:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2011/04/27 12:53:01 ajacoutot Exp $
 
 COMMENT=		GObject Introspection
 
 GNOME_VERSION=		0.10.8
 GNOME_PROJECT=		gobject-introspection
 CATEGORIES=		devel
+
+REVISION=		0
 
 SHARED_LIBS +=  girepository-1.0     1.0      # 1.0
 
@@ -47,6 +49,11 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 CFLAGS+=		-pthread
 
 SUBST_VARS+=		MODPY_SITEPKG LIBTOOL CC
+
+MODPY_ADJ_FILES=	giscanner/scannermain.py \
+			giscanner/shlibs.py \
+			giscanner/message.py \
+			tests/offsets/gen-gitestoffsets
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/giscanner/dumper.py \
