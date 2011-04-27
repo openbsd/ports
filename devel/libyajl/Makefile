@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/01/15 12:08:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/27 21:02:06 dcoppa Exp $
 
 COMMENT =	small JSON library written in ANSI C
 
-V =		1.0.11
+V =		1.0.12
 PKGNAME =	libyajl-${V}
 
 DISTNAME =	lloyd-yajl-${V}
@@ -30,7 +30,7 @@ MODULES =	devel/cmake
 
 SEPARATE_BUILD =simple
 
-WRKDIST =	${WRKDIR}/lloyd-yajl-f4baae0
+WRKDIST =	${WRKDIR}/lloyd-yajl-17b1790
 
 pre-regress:
 	ln -s ${WRKBUILD} ${WRKSRC}/build
