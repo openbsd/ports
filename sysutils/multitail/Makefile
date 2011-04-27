@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2010/10/19 07:43:01 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/04/27 11:40:24 gsoares Exp $
 
 COMMENT=	multi-window tail(1) utility
 
-DISTNAME=	multitail-5.2.6
+DISTNAME=	multitail-5.2.8
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://www.vanheusden.com/multitail/	
@@ -18,7 +18,6 @@ EXTRACT_SUFX=	.tgz
 
 WANTLIB=	c m ncurses util panel
 
-USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 MAKE_FLAGS=	CC='${CC}' \
