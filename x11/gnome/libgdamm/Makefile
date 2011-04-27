@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2011/03/23 16:34:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/04/27 08:41:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		C++ interface to libgda
 
 GNOME_PROJECT=		libgdamm
-GNOME_VERSION=		4.1.1
+GNOME_VERSION=		4.1.2
 
 SHARED_LIBS +=  gdamm-4.0            1.1      # 12.0
 

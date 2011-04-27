@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/11/18 16:47:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/04/27 08:41:05 ajacoutot Exp $
 include/libgdamm-${GDA_MAJOR}/
 include/libgdamm-${GDA_MAJOR}/libgdamm/
 include/libgdamm-${GDA_MAJOR}/libgdamm.h
@@ -382,7 +382,6 @@ share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespacemembers_func.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespacemembers_type.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespacemembers_vars.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespaces.html
-share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespacesigc.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/nav_f.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/nav_h.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/open.png
