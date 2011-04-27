@@ -1,70 +1,70 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/01 09:06:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/04/27 16:29:33 jasper Exp $
 @bin bin/msp430-c++
 @bin bin/msp430-cpp
 @bin bin/msp430-g++
 @bin bin/msp430-gcc
-@bin bin/${FULLPKGNAME}
+@bin bin/msp430-gcc-${VERSION}
 bin/msp430-gccbug
 @bin bin/msp430-gcov
 lib/gcc/
 lib/gcc/msp430/
-lib/gcc/msp430/4.4.4/
-lib/gcc/msp430/4.4.4/include/
-lib/gcc/msp430/4.4.4/include-fixed/
-lib/gcc/msp430/4.4.4/include-fixed/README
-lib/gcc/msp430/4.4.4/include-fixed/fixed
-lib/gcc/msp430/4.4.4/include-fixed/limits.h
-lib/gcc/msp430/4.4.4/include-fixed/syslimits.h
-lib/gcc/msp430/4.4.4/include/float.h
-lib/gcc/msp430/4.4.4/include/iso646.h
-lib/gcc/msp430/4.4.4/include/stdarg.h
-lib/gcc/msp430/4.4.4/include/stdbool.h
-lib/gcc/msp430/4.4.4/include/stddef.h
-lib/gcc/msp430/4.4.4/include/stdfix.h
-lib/gcc/msp430/4.4.4/include/tgmath.h
-lib/gcc/msp430/4.4.4/include/unwind.h
-lib/gcc/msp430/4.4.4/include/varargs.h
-lib/gcc/msp430/4.4.4/install-tools/
-lib/gcc/msp430/4.4.4/install-tools/fixinc_list
-lib/gcc/msp430/4.4.4/install-tools/gsyslimits.h
-lib/gcc/msp430/4.4.4/install-tools/include/
-lib/gcc/msp430/4.4.4/install-tools/include/README
-lib/gcc/msp430/4.4.4/install-tools/include/limits.h
-lib/gcc/msp430/4.4.4/install-tools/macro_list
-lib/gcc/msp430/4.4.4/install-tools/mkheaders.conf
-lib/gcc/msp430/4.4.4/libgcc.a
-lib/gcc/msp430/4.4.4/libgcov.a
-lib/gcc/msp430/4.4.4/msp1/
-lib/gcc/msp430/4.4.4/msp1/libgcc.a
-lib/gcc/msp430/4.4.4/msp1/libgcov.a
-lib/gcc/msp430/4.4.4/msp2/
-lib/gcc/msp430/4.4.4/msp2/libgcc.a
-lib/gcc/msp430/4.4.4/msp2/libgcov.a
-lib/gcc/msp430/4.4.4/msp3/
-lib/gcc/msp430/4.4.4/msp3/libgcc.a
-lib/gcc/msp430/4.4.4/msp3/libgcov.a
-lib/gcc/msp430/4.4.4/msp4/
-lib/gcc/msp430/4.4.4/msp4/libgcc.a
-lib/gcc/msp430/4.4.4/msp4/libgcov.a
-lib/gcc/msp430/4.4.4/msp5/
-lib/gcc/msp430/4.4.4/msp5/libgcc.a
-lib/gcc/msp430/4.4.4/msp5/libgcov.a
-lib/gcc/msp430/4.4.4/msp6/
-lib/gcc/msp430/4.4.4/msp6/libgcc.a
-lib/gcc/msp430/4.4.4/msp6/libgcov.a
+lib/gcc/msp430/${VERSION}/
+lib/gcc/msp430/${VERSION}/include/
+lib/gcc/msp430/${VERSION}/include-fixed/
+lib/gcc/msp430/${VERSION}/include-fixed/README
+lib/gcc/msp430/${VERSION}/include-fixed/fixed
+lib/gcc/msp430/${VERSION}/include-fixed/limits.h
+lib/gcc/msp430/${VERSION}/include-fixed/syslimits.h
+lib/gcc/msp430/${VERSION}/include/float.h
+lib/gcc/msp430/${VERSION}/include/iso646.h
+lib/gcc/msp430/${VERSION}/include/stdarg.h
+lib/gcc/msp430/${VERSION}/include/stdbool.h
+lib/gcc/msp430/${VERSION}/include/stddef.h
+lib/gcc/msp430/${VERSION}/include/stdfix.h
+lib/gcc/msp430/${VERSION}/include/tgmath.h
+lib/gcc/msp430/${VERSION}/include/unwind.h
+lib/gcc/msp430/${VERSION}/include/varargs.h
+lib/gcc/msp430/${VERSION}/install-tools/
+lib/gcc/msp430/${VERSION}/install-tools/fixinc_list
+lib/gcc/msp430/${VERSION}/install-tools/gsyslimits.h
+lib/gcc/msp430/${VERSION}/install-tools/include/
+lib/gcc/msp430/${VERSION}/install-tools/include/README
+lib/gcc/msp430/${VERSION}/install-tools/include/limits.h
+lib/gcc/msp430/${VERSION}/install-tools/macro_list
+lib/gcc/msp430/${VERSION}/install-tools/mkheaders.conf
+lib/gcc/msp430/${VERSION}/libgcc.a
+lib/gcc/msp430/${VERSION}/libgcov.a
+lib/gcc/msp430/${VERSION}/msp1/
+lib/gcc/msp430/${VERSION}/msp1/libgcc.a
+lib/gcc/msp430/${VERSION}/msp1/libgcov.a
+lib/gcc/msp430/${VERSION}/msp2/
+lib/gcc/msp430/${VERSION}/msp2/libgcc.a
+lib/gcc/msp430/${VERSION}/msp2/libgcov.a
+lib/gcc/msp430/${VERSION}/msp3/
+lib/gcc/msp430/${VERSION}/msp3/libgcc.a
+lib/gcc/msp430/${VERSION}/msp3/libgcov.a
+lib/gcc/msp430/${VERSION}/msp4/
+lib/gcc/msp430/${VERSION}/msp4/libgcc.a
+lib/gcc/msp430/${VERSION}/msp4/libgcov.a
+lib/gcc/msp430/${VERSION}/msp5/
+lib/gcc/msp430/${VERSION}/msp5/libgcc.a
+lib/gcc/msp430/${VERSION}/msp5/libgcov.a
+lib/gcc/msp430/${VERSION}/msp6/
+lib/gcc/msp430/${VERSION}/msp6/libgcc.a
+lib/gcc/msp430/${VERSION}/msp6/libgcov.a
 libexec/gcc/
 libexec/gcc/msp430/
-libexec/gcc/msp430/4.4.4/
-@bin libexec/gcc/msp430/4.4.4/cc1
-@bin libexec/gcc/msp430/4.4.4/cc1plus
-@bin libexec/gcc/msp430/4.4.4/collect2
-libexec/gcc/msp430/4.4.4/install-tools/
-@bin libexec/gcc/msp430/4.4.4/install-tools/fix-header
-libexec/gcc/msp430/4.4.4/install-tools/fixinc.sh
-@bin libexec/gcc/msp430/4.4.4/install-tools/fixincl
-libexec/gcc/msp430/4.4.4/install-tools/fixproto
-libexec/gcc/msp430/4.4.4/install-tools/mkheaders
-libexec/gcc/msp430/4.4.4/install-tools/mkinstalldirs
+libexec/gcc/msp430/${VERSION}/
+@bin libexec/gcc/msp430/${VERSION}/cc1
+@bin libexec/gcc/msp430/${VERSION}/cc1plus
+@bin libexec/gcc/msp430/${VERSION}/collect2
+libexec/gcc/msp430/${VERSION}/install-tools/
+@bin libexec/gcc/msp430/${VERSION}/install-tools/fix-header
+libexec/gcc/msp430/${VERSION}/install-tools/fixinc.sh
+@bin libexec/gcc/msp430/${VERSION}/install-tools/fixincl
+libexec/gcc/msp430/${VERSION}/install-tools/fixproto
+libexec/gcc/msp430/${VERSION}/install-tools/mkheaders
+libexec/gcc/msp430/${VERSION}/install-tools/mkinstalldirs
 @man man/man1/msp430-cpp.1
 @man man/man1/msp430-g++.1
 @man man/man1/msp430-gcc.1

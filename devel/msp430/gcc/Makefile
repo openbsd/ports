@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.2 2010/12/13 22:22:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/04/27 16:29:33 jasper Exp $
 
 COMMENT=		GNU Compiler Collection for msp430
 
-V=			4.4.4
-DISTNAME=		gcc-$V
+VERSION=		4.4.4
+DISTNAME=		gcc-${VERSION}
 PKGNAME=		${TARGET}-${DISTNAME}
+REVISION=		0
 
-MASTER_SITES= 		${MASTER_SITE_GCC:=releases/gcc-$(V)/}
-PATCHFILES=		gcc-${V}.patch:0
+MASTER_SITES= 		${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
+PATCHFILES=		gcc-${VERSION}.patch:0
 
-DISTFILES=		gcc-core-${V}${EXTRACT_SUFX} \
-			gcc-g++-${V}${EXTRACT_SUFX} \
+DISTFILES=		gcc-core-${VERSION}${EXTRACT_SUFX} \
+			gcc-g++-${VERSION}${EXTRACT_SUFX} \
 			${TARGET}-gcc.tar.gz:0
 
 WANTLIB +=		c gmp mpfr
@@ -24,6 +25,8 @@ NO_REGRESS=		Yes
 LANGS=			c,c++
 
 SEPARATE_BUILD= 	concurrent
+
+SUBST_VARS+=		VERSION
 
 CONFIGURE_ARGS+= 	--enable-languages=${LANGS} 	\
 			--enable-cpp			\
