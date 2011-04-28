@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.928 2011/04/27 11:22:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.929 2011/04/28 13:12:03 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -88,7 +88,6 @@
      SUBDIR += dtc
      SUBDIR += eclipse
      SUBDIR += ectags
-     SUBDIR += eggdbus
      SUBDIR += ethos
      SUBDIR += fasm
      SUBDIR += ffcall
