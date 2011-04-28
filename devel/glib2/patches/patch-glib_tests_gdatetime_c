@@ -1,0 +1,15 @@
+$OpenBSD: patch-glib_tests_gdatetime_c,v 1.1 2011/04/28 13:07:53 ajacoutot Exp $
+
+gdatetime.c:774: warning: format '%ld' expects type 'long int', but argument 3 has type 'time_t'
+
+--- glib/tests/gdatetime.c.orig	Wed Apr 27 19:00:05 2011
++++ glib/tests/gdatetime.c	Wed Apr 27 19:00:13 2011
+@@ -771,7 +771,7 @@ GDateTime *__dt = g_date_time_new_local (2009, 10, 24,
+   tt.tm_min = 0;
+   tt.tm_hour = 0;
+   t = mktime (&tt);
+-  g_sprintf (t_str, "%ld", t);
++  g_sprintf (t_str, "%ld", (long)t);
+ 
+   TEST_PRINTF ("%a", "Sat");
+   TEST_PRINTF ("%A", "Saturday");

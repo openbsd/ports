@@ -1,0 +1,11 @@
+$OpenBSD: patch-gio_gioenumtypes_c,v 1.1 2011/04/28 13:07:53 ajacoutot Exp $
+--- gio/gioenumtypes.c.orig	Thu Apr 14 00:59:31 2011
++++ gio/gioenumtypes.c	Wed Apr 27 13:31:03 2011
+@@ -1161,6 +1161,7 @@ g_credentials_type_get_type (void)
+         { G_CREDENTIALS_TYPE_INVALID, "G_CREDENTIALS_TYPE_INVALID", "invalid" },
+         { G_CREDENTIALS_TYPE_LINUX_UCRED, "G_CREDENTIALS_TYPE_LINUX_UCRED", "linux-ucred" },
+         { G_CREDENTIALS_TYPE_FREEBSD_CMSGCRED, "G_CREDENTIALS_TYPE_FREEBSD_CMSGCRED", "freebsd-cmsgcred" },
++        { G_CREDENTIALS_TYPE_OPENBSD_SOCKPEERCRED, "G_CREDENTIALS_TYPE_OPENBSD_SOCKPEERCRED", "openbsd-sockpeercred" },
+         { 0, NULL, NULL }
+       };
+       GType g_define_type_id =

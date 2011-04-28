@@ -1,0 +1,17 @@
+$OpenBSD: patch-glib_gslice_c,v 1.1 2011/04/28 13:07:53 ajacoutot Exp $
+
+Redefinition of ALIGN in /usr/include/machine/param.h.
+
+--- glib/gslice.c.orig	Wed Apr 27 18:55:44 2011
++++ glib/gslice.c	Wed Apr 27 18:58:27 2011
+@@ -53,6 +53,10 @@
+ #include "gthreadprivate.h"
+ #include "glib_trace.h"
+ 
++#ifdef ALIGN
++#undef ALIGN
++#endif
++
+ /* the GSlice allocator is split up into 4 layers, roughly modelled after the slab
+  * allocator and magazine extensions as outlined in:
+  * + [Bonwick94] Jeff Bonwick, The slab allocator: An object-caching kernel

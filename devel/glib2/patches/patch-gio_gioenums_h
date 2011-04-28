@@ -1,0 +1,21 @@
+$OpenBSD: patch-gio_gioenums_h,v 1.1 2011/04/28 13:07:53 ajacoutot Exp $
+--- gio/gioenums.h.orig	Thu Apr 14 00:55:29 2011
++++ gio/gioenums.h	Wed Apr 27 13:31:03 2011
+@@ -1214,6 +1214,7 @@ typedef enum
+  * @G_CREDENTIALS_TYPE_INVALID: Indicates an invalid native credential type.
+  * @G_CREDENTIALS_TYPE_LINUX_UCRED: The native credentials type is a <type>struct ucred</type>.
+  * @G_CREDENTIALS_TYPE_FREEBSD_CMSGCRED: The native credentials type is a <type>struct cmsgcred</type>.
++ * @G_CREDENTIALS_TYPE_OPENBSD_SOCKPEERCRED: The native credentials type is a <type>struct sockpeercred</type>.
+  *
+  * Enumeration describing different kinds of native credential types.
+  *
+@@ -1223,7 +1224,8 @@ typedef enum
+ {
+   G_CREDENTIALS_TYPE_INVALID,
+   G_CREDENTIALS_TYPE_LINUX_UCRED,
+-  G_CREDENTIALS_TYPE_FREEBSD_CMSGCRED
++  G_CREDENTIALS_TYPE_FREEBSD_CMSGCRED,
++  G_CREDENTIALS_TYPE_OPENBSD_SOCKPEERCRED
+ } GCredentialsType;
+ 
+ /**
