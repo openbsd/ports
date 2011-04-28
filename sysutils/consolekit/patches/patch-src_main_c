@@ -1,13 +1,13 @@
-$OpenBSD: patch-src_main_c,v 1.2 2010/06/28 15:55:21 ajacoutot Exp $
+$OpenBSD: patch-src_main_c,v 1.3 2011/04/28 13:08:33 ajacoutot Exp $
 
 From Debian:
 Cleanup console tag files on application startup and shutdown.
 
 https://bugs.freedesktop.org/show_bug.cgi?id=25744
 
---- src/main.c.orig	Wed Apr 29 21:07:29 2009
-+++ src/main.c	Sun Jun 27 23:14:52 2010
-@@ -149,6 +149,43 @@ delete_pid (void)
+--- src/main.c.orig	Tue Oct 26 16:34:03 2010
++++ src/main.c	Sun Dec  5 09:01:12 2010
+@@ -148,6 +148,43 @@ delete_pid (void)
          unlink (CONSOLE_KIT_PID_FILE);
  }
  
@@ -51,7 +51,7 @@ https://bugs.freedesktop.org/show_bug.cgi?id=25744
  /* copied from nautilus */
  static int debug_log_pipes[2];
  
-@@ -229,7 +266,7 @@ create_pid_file (void)
+@@ -228,7 +265,7 @@ create_pid_file (void)
                  snprintf (pid, sizeof (pid), "%lu\n", (long unsigned) getpid ());
                  written = write (pf, pid, strlen (pid));
                  close (pf);
@@ -60,40 +60,12 @@ https://bugs.freedesktop.org/show_bug.cgi?id=25744
          } else {
                  g_warning ("Unable to write pid file %s: %s",
                             CONSOLE_KIT_PID_FILE,
-@@ -294,11 +331,19 @@ main (int    argc,
- 
-         setup_debug_log (debug);
- 
-+        g_debug ("initializing console-kit-daemon %s", VERSION);
-+
-         connection = get_system_bus ();
-         if (connection == NULL) {
+@@ -316,6 +353,8 @@ main (int    argc,
+                 g_warning ("Could not acquire name; bailing out");
                  goto out;
          }
- 
-+        manager = ck_manager_new ();
 +
-+        if (manager == NULL) {
-+                goto out;
-+        }
-+
-         bus_proxy = get_bus_proxy (connection);
-         if (bus_proxy == NULL) {
-                 g_warning ("Could not construct bus_proxy object; bailing out");
-@@ -310,15 +355,9 @@ main (int    argc,
-                 goto out;
-         }
- 
--        g_debug ("initializing console-kit-daemon %s", VERSION);
-+        delete_console_tags ();
++	delete_console_tags ();
  
          create_pid_file ();
--
--        manager = ck_manager_new ();
--
--        if (manager == NULL) {
--                goto out;
--        }
- 
-         loop = g_main_loop_new (NULL, FALSE);
  

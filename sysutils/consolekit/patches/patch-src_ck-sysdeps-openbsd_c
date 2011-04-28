@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.7 2010/09/17 13:37:57 ajacoutot Exp $
+$OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.8 2011/04/28 13:08:33 ajacoutot Exp $
 --- src/ck-sysdeps-openbsd.c.orig	Fri Sep 17 15:18:27 2010
 +++ src/ck-sysdeps-openbsd.c	Fri Sep 17 15:20:56 2010
 @@ -0,0 +1,430 @@
@@ -128,7 +128,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.7 2010/09/17 13:37:57 ajacoutot Exp
 +
 +static gboolean
 +get_kinfo_proc (pid_t pid,
-+                struct kinfo_proc2 *p)
++                struct kinfo_proc *p)
 +{
 +	int name[6];
 +	u_int namelen;
@@ -137,14 +137,14 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.7 2010/09/17 13:37:57 ajacoutot Exp
 +	sz = sizeof(*p);
 +	namelen = 0;
 +	name[namelen++] = CTL_KERN;
-+	name[namelen++] = KERN_PROC2;
++	name[namelen++] = KERN_PROC;
 +	name[namelen++] = KERN_PROC_PID;
 +	name[namelen++] = pid;
 +	name[namelen++] = sz;
 +	name[namelen++] = 1;
 +
 +        if (sysctl (name, namelen, p, &sz, NULL, 0) == -1) {
-+		perror("sysctl kern.proc2.pid");
++		perror("sysctl kern.proc.pid");
 +                return FALSE;
 +        }
 +
@@ -156,7 +156,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.7 2010/09/17 13:37:57 ajacoutot Exp
 +stat2proc (pid_t        pid,
 +           CkProcessStat *P)
 +{
-+        struct kinfo_proc2 p;
++        struct kinfo_proc p;
 +        char              *ttname;
 +        int               num;
 +        int               tty_maj;
@@ -253,7 +253,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.7 2010/09/17 13:37:57 ajacoutot Exp
 +        GHashTable       *hash;
 +        char            **penv;
 +        kvm_t            *kd;
-+        struct kinfo_proc2 p;
++        struct kinfo_proc p;
 +        int               i;
 +
 +        kd = kvm_openfiles (NULL, NULL, NULL, O_RDONLY, NULL);
@@ -316,7 +316,7 @@ $OpenBSD: patch-src_ck-sysdeps-openbsd_c,v 1.7 2010/09/17 13:37:57 ajacoutot Exp
 +{
 +        uid_t             uid;
 +        gboolean          res;
-+        struct kinfo_proc2 p;
++        struct kinfo_proc p;
 +
 +        g_return_val_if_fail (pid > 1, 0);
 +

@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2011/03/02 06:50:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/04/28 13:08:33 ajacoutot Exp $
 
 COMMENT=	framework for defining and tracking users
 
-DISTNAME=	ConsoleKit-0.4.1
+DISTNAME=	ConsoleKit-0.4.4
 PKGNAME=	${DISTNAME:L}
-
-REVISION=	3
 
 CATEGORIES=	sysutils	
 
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS+=	ck-connector	0.0
+SHARED_LIBS+=	ck-connector	1.0
 
 HOMEPAGE=	http://www.freedesktop.org/wiki/Software/ConsoleKit
 
@@ -23,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += X11 Xau Xdmcp c dbus-1 dbus-glib-1 eggdbus-1 gio-2.0
+WANTLIB += X11 Xau Xdmcp c dbus-1 dbus-glib-1 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 kvm pcre
 WANTLIB += pthread pthread-stubs xcb z polkit-gobject-1
 
@@ -31,13 +29,16 @@ MASTER_SITES=	http://www.freedesktop.org/software/ConsoleKit/dist/
 
 MODULES=	devel/gettext
 
-LIB_DEPENDS=	sysutils/polkit
+LIB_DEPENDS=	sysutils/polkit>=0.101 \
+		x11/dbus-glib
 
-AUTOCONF_VERSION= 2.63
+AUTOCONF_VERSION= 2.64
 CONFIGURE_STYLE= autoconf
-CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--localstatedir=/var \
+		--disable-silent-rules \
 		--with-pid-file=/var/run/ConsoleKit/pid \
 		--enable-pam-module=no
 
@@ -52,12 +53,8 @@ pre-patch:
 		cp -R freebsd openbsd && \
 		perl -pi -e "s,freebsd,openbsd,g" openbsd/Makefile.in
 
-# from FreeBSD ports and Slackware Linux
+# from Slackware Linux
 post-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/ck-get-x11-display-device \
-		${PREFIX}/libexec/ck-get-x11-display-device
-	${INSTALL_SCRIPT} ${FILESDIR}/ck-get-x11-server-pid \
-		${PREFIX}/libexec/ck-get-x11-server-pid
 	${INSTALL_SCRIPT} ${FILESDIR}/pam-foreground-compat.ck \
 		${PREFIX}/lib/ConsoleKit/run-session.d/pam-foreground-compat.ck
 

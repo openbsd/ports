@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/06/27 22:15:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/04/28 13:08:33 ajacoutot Exp $
 %%SHARED%%
 @bin bin/ck-history
 @bin bin/ck-launch-session
@@ -18,8 +18,8 @@ lib/libck-connector.la
 lib/pkgconfig/
 lib/pkgconfig/ck-connector.pc
 @bin libexec/ck-collect-session-info
-libexec/ck-get-x11-display-device
-libexec/ck-get-x11-server-pid
+@bin libexec/ck-get-x11-display-device
+@bin libexec/ck-get-x11-server-pid
 @bin sbin/ck-log-system-restart
 @bin sbin/ck-log-system-start
 @bin sbin/ck-log-system-stop

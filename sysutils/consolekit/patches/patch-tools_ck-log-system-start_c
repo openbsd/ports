@@ -1,0 +1,31 @@
+$OpenBSD: patch-tools_ck-log-system-start_c,v 1.1 2011/04/28 13:08:33 ajacoutot Exp $
+--- tools/ck-log-system-start.c.orig	Fri Sep  3 15:54:31 2010
++++ tools/ck-log-system-start.c	Wed Apr 27 20:01:29 2011
+@@ -41,7 +41,9 @@
+ 
+ #define DEFAULT_LOG_FILENAME LOCALSTATEDIR "/log/ConsoleKit/history"
+ 
++#ifdef __linux__
+ #define LINUX_KERNEL_CMDLINE "/proc/cmdline"
++#endif
+ 
+ /* Adapted from auditd auditd-event.c */
+ static gboolean
+@@ -163,6 +165,7 @@ static char *
+ get_boot_arguments (void)
+ {
+         char *contents;
++#ifdef __linux__
+         gboolean res;
+ 
+         contents = NULL;
+@@ -176,6 +179,9 @@ get_boot_arguments (void)
+         } else {
+                 g_strchomp (contents);
+         }
++#else
++        contents = NULL;
++#endif
+ 
+         return contents;
+ }

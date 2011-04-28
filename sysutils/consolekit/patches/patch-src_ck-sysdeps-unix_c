@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.7 2010/07/03 04:02:53 ajacoutot Exp $
+$OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.8 2011/04/28 13:08:33 ajacoutot Exp $
 --- src/ck-sysdeps-unix.c.orig	Wed Apr 29 21:07:29 2009
 +++ src/ck-sysdeps-unix.c	Sat Jul  3 05:57:40 2010
 @@ -35,6 +35,10 @@
@@ -20,7 +20,7 @@ $OpenBSD: patch-src_ck-sysdeps-unix_c,v 1.7 2010/07/03 04:02:53 ajacoutot Exp $
 +#ifndef __OpenBSD__
 +        struct uncred cr;
 +#else
-+	struct sockpeercred cr;
++        struct sockpeercred cr;
 +#endif
          socklen_t    cr_len;
  
