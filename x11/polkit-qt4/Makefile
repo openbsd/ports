@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/22 08:37:04 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/28 13:10:24 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PolicyKit integration for Qt4
 
-V=		0.96.1
+V=		0.99.0
 DISTNAME=	polkit-qt-1-${V}
 PKGNAME=	polkit-qt4-${V}
 
-SHARED_LIBS +=  polkit-qt-agent-1         0.0 # 0.95
-SHARED_LIBS +=  polkit-qt-core-1          0.0 # 0.95
-SHARED_LIBS +=  polkit-qt-gui-1           0.0 # 0.95
+SHARED_LIBS +=  polkit-qt-agent-1         1.0 # 0.99
+SHARED_LIBS +=  polkit-qt-core-1          1.0 # 0.99
+SHARED_LIBS +=  polkit-qt-gui-1           1.0 # 0.99
 
 CATEGORIES=	x11 sysutils
 
