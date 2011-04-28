@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/04/16 09:11:07 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/04/28 11:28:43 landry Exp $
 @newgroup _rabbitmq:646
-@newuser _rabbitmq:646:_rabbitmq:daemon:RabbitMQ account:/var/rabbitmq:/bin/sh
+@newuser _rabbitmq:646:_rabbitmq:daemon:RabbitMQ account:/var/rabbitmq:/sbin/nologin
 lib/rabbitmq/
 lib/rabbitmq/ebin/
 lib/rabbitmq/ebin/bpqueue.beam

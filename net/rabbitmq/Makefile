@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/04/16 13:54:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/28 11:28:43 landry Exp $
 
 COMMENT =	highly reliable Enterprise Messaging System
 
@@ -7,7 +7,7 @@ DISTNAME =	rabbitmq-server-$V
 PKGNAME =	rabbitmq-$V
 CATEGORIES =	net
 
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://www.rabbitmq.com/
 
@@ -36,16 +36,14 @@ BUILD_DEPENDS =	${RUN_DEPENDS} \
 
 RUN_DEPENDS =	lang/erlang
 
-MAKE_ENV =	PYTHON=${MODPY_BIN} 
+MAKE_ENV =	PYTHON=${MODPY_BIN}
 
 RABBITUSER =	_rabbitmq
 
-SUBST_VARS +=	RABBITUSER MODPY_VERSION
+SUBST_VARS +=	RABBITUSER
 
 pre-build:
-	${SUBST_CMD} ${WRKSRC}/scripts/rabbitmqctl \
-		${WRKSRC}/scripts/rabbitmq-env \
-		${WRKSRC}/Makefile
+	${SUBST_CMD} ${WRKSRC}/scripts/rabbitmqctl
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rabbitmq

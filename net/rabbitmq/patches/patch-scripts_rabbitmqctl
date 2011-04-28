@@ -1,35 +1,15 @@
---- scripts/rabbitmqctl.orig	Thu Apr  7 15:55:08 2011
-+++ scripts/rabbitmqctl	Sun Apr 10 19:07:59 2011
-@@ -20,12 +20,31 @@
+--- scripts/rabbitmqctl.orig	Thu Apr  7 17:55:08 2011
++++ scripts/rabbitmqctl	Thu Apr 28 03:59:37 2011
+@@ -20,7 +20,7 @@
  [ "x" = "x$RABBITMQ_NODENAME" ] && RABBITMQ_NODENAME=${NODENAME}
  [ "x" = "x$RABBITMQ_CTL_ERL_ARGS" ] && RABBITMQ_CTL_ERL_ARGS=${CTL_ERL_ARGS}
  
 -exec erl \
--    -pa "${RABBITMQ_HOME}/ebin" \
-+ID=`id -g`
-+GIDS=`id -G`
-+RID=`id -g ${RABBITUSER}`
-+
-+EXEC_CMD="false"
-+
-+for GID in $GIDS; do
-+    if [ $GID -eq 0 ] ; then
-+        EXEC_CMD="su ${RABBITUSER} -c"
-+    fi
-+done
-+if [ "$ID" -eq "$RID" ] ; then
-+        EXEC_CMD="sh -c"
-+fi
-+if [ "$EXEC_CMD" = "false" ] ; then
-+        echo "This command can only be run by root or the user $RABBITUSER" >&2
-+        exit 4
-+fi
-+
-+$EXEC_CMD "erl \
-+    -pa \"${RABBITMQ_HOME}/ebin\" \
++su -s /bin/sh -l ${RABBITUSER} -c "erl \
+     -pa "${RABBITMQ_HOME}/ebin" \
      -noinput \
      -hidden \
-     ${RABBITMQ_CTL_ERL_ARGS} \
+@@ -28,4 +28,4 @@
      -sname rabbitmqctl$$ \
      -s rabbit_control \
      -nodename $RABBITMQ_NODENAME \
