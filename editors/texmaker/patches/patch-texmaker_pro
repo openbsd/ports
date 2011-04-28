@@ -1,4 +1,4 @@
-$OpenBSD: patch-texmaker_pro,v 1.4 2011/04/25 13:19:23 shadchin Exp $
+$OpenBSD: patch-texmaker_pro,v 1.5 2011/04/28 17:06:11 shadchin Exp $
 --- texmaker.pro.orig	Sun Apr  3 16:16:58 2011
 +++ texmaker.pro	Tue Apr  5 21:45:23 2011
 @@ -4,7 +4,8 @@ TARGET	 = texmaker
@@ -8,7 +8,7 @@ $OpenBSD: patch-texmaker_pro,v 1.4 2011/04/25 13:19:23 shadchin Exp $
 -CONFIG	+= qt warn_off release
 +CONFIG	+= qt warn_off release link_pkgconfig
 +PKGCONFIG = hunspell poppler-qt4
- TEXMAKERVERSION=3.0.1
+ TEXMAKERVERSION=3.0.2
  DEFINES += TEXMAKERVERSION=\\\"$${TEXMAKERVERSION}\\\"
  DEFINES += HAVE_SPLASH
 @@ -56,25 +57,6 @@ HEADERS	+= texmaker.h \

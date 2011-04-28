@@ -1,7 +1,7 @@
-$OpenBSD: patch-texmaker_cpp,v 1.4 2011/04/25 13:19:23 shadchin Exp $
---- texmaker.cpp.orig	Sat Apr 16 18:09:18 2011
-+++ texmaker.cpp	Sun Apr 17 22:42:12 2011
-@@ -3473,7 +3473,7 @@ author=config->value("Quick/Author","").toString();
+$OpenBSD: patch-texmaker_cpp,v 1.5 2011/04/28 17:06:11 shadchin Exp $
+--- texmaker.cpp.orig	Mon Apr 25 19:12:44 2011
++++ texmaker.cpp	Thu Apr 28 22:00:03 2011
+@@ -3474,7 +3474,7 @@ author=config->value("Quick/Author","").toString();
  #ifdef USB_VERSION
  QString dicDir=QCoreApplication::applicationDirPath() + "/";
  #else
@@ -10,7 +10,7 @@ $OpenBSD: patch-texmaker_cpp,v 1.4 2011/04/25 13:19:23 shadchin Exp $
  #endif
  
  #endif
-@@ -3485,7 +3485,7 @@ QString dicDir=QCoreApplication::applicationDirPath() 
+@@ -3486,7 +3486,7 @@ QString dicDir=QCoreApplication::applicationDirPath() 
  #endif
  QString defaultDic=dicDir+QString(QLocale::system().name())+".dic";
  QFileInfo fi(defaultDic);
