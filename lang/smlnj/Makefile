@@ -1,17 +1,22 @@
-# $OpenBSD: Makefile,v 1.6 2007/09/16 00:27:06 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/28 19:28:15 sthen Exp $
 
 ONLY_FOR_ARCHS=	i386
 
 COMMENT=	New Jersey Standard ML
 PKGNAME=	smlnj-110.0.7
+REVISION=	0
 CATEGORIES=	lang
+
+HOMEPAGE=	http://www.smlnj.org/
 
 MAINTAINER=	Jens Gerlach Christensen <vepjan@worldonline.dk>
 
-PERMIT_PACKAGE_CDROM=	Yes 
+# http://www.smlnj.org/license.html
+PERMIT_PACKAGE_CDROM=	without fee
 PERMIT_PACKAGE_FTP=	Yes 
-PERMIT_DISTFILES_CDROM=	Yes 
+PERMIT_DISTFILES_CDROM=	without fee
 PERMIT_DISTFILES_FTP=	Yes 
+
 WANTLIB=		c m
 
 MASTER_SITES=	ftp://ftp.research.bell-labs.com/dist/smlnj/release/110.0.7/
