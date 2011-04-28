@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/12/21 18:17:27 kili Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/04/28 13:36:41 rpointel Exp $
 @conflict trac-adminplugin-*
 @conflict trac-ldapplugin-<0.6.0
 @pkgpath www/trac-adminplugin
@@ -67,6 +67,8 @@ lib/python${MODPY_VERSION}/site-packages/trac/db/util.py
 lib/python${MODPY_VERSION}/site-packages/trac/db/util.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/db_default.py
 lib/python${MODPY_VERSION}/site-packages/trac/db_default.pyc
+lib/python${MODPY_VERSION}/site-packages/trac/dist.py
+lib/python${MODPY_VERSION}/site-packages/trac/dist.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/env.py
 lib/python${MODPY_VERSION}/site-packages/trac/env.pyc
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/
@@ -134,6 +136,7 @@ lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/en_US.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/eo.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/es.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/es_AR.js
+lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/fi.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/fr.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/he.js
 lib/python${MODPY_VERSION}/site-packages/trac/htdocs/js/messages/hu.js
