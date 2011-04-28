@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/01/15 22:29:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/04/28 11:12:37 dcoppa Exp $
 
 COMMENT=	text document format for writing documents and man pages 
 
 DISTNAME=	asciidoc-8.6.3
+REVISION=	0
 CATEGORIES=	textproc
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -18,7 +19,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=asciidoc/}
 
 MODULES=	lang/python
-RUN_DEPENDS=	textproc/libxslt
+RUN_DEPENDS=	textproc/libxslt \
+		textproc/docbook \
+		textproc/docbook-xsl
 
 MODPY_ADJ_FILES=a2x.py \
 		asciidoc.py \
