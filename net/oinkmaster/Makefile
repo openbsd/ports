@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/04/28 09:45:14 dcoppa Exp $
 
 COMMENT=	update your Snort rules
 
 DISTNAME=	oinkmaster-2.0
+REVISION=	0
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=oinkmaster/}
 
-MAINTAINER=	David Krause <david@openbsd.org>
 HOMEPAGE=       http://oinkmaster.sourceforge.net/
 
 # License: BSD
