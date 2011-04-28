@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.929 2011/04/28 13:12:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.930 2011/04/28 17:35:13 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -149,6 +149,7 @@
      SUBDIR += hs-MonadCatchIO-transformers
      SUBDIR += hs-PSQueue
      SUBDIR += hs-QuickCheck
+     SUBDIR += hs-ansi-terminal
      SUBDIR += hs-atom
      SUBDIR += hs-base64-bytestring
      SUBDIR += hs-bimap
