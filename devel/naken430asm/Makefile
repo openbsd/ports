@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/04/28 21:18:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/28 21:27:31 jasper Exp $
 
 COMMENT=		assembler/disassembler/simulator for MSP430 MCUs
 
@@ -23,13 +23,14 @@ WANTLIB +=		c
 
 ALL_TARGET=		# This space intentionally left blank.
 
-SUBST_VARS+=		CC CFLAGS LDFLAGS DESTDIR
+MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}" \
+			LDFLAGS="${LDFLAGS}"
 
 NO_REGRESS=		Yes
 
-# configure script is broken piece of bash, use our own config.mk instead.
+# prefer our own config.mak over the configure generated one.
 do-configure:
-	${SUBST_CMD} -c ${FILESDIR}/config.mak ${WRKSRC}/config.mak
+	cp ${FILESDIR}/config.mak ${WRKSRC}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/naken430asm/examples/
