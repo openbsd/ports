@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: igmpproxy.rc,v 1.1 2011/04/28 09:45:39 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/igmpproxy"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
