@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/21 09:33:27 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2011/04/28 18:39:20 jasper Exp $
 
 COMMENT=	garmin gps map management tool
 
 DISTNAME=	QLandkarte_final
 PKGNAME=	qlandkarte-0.7.4
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	geo x11
 
