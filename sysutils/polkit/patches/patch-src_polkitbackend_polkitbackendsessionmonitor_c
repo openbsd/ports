@@ -1,0 +1,30 @@
+$OpenBSD: patch-src_polkitbackend_polkitbackendsessionmonitor_c,v 1.1 2011/04/28 13:09:07 ajacoutot Exp $
+
+From c23d74447c7615dc74dae259f0fc3688ec988867 Mon Sep 17 00:00:00 2001
+From: David Zeuthen <davidz@redhat.com>
+Date: Fri, 01 Apr 2011 16:12:27 +0000
+Subject: Use polkit_unix_process_get_uid() to get the owner of a process
+
+--- src/polkitbackend/polkitbackendsessionmonitor.c.orig	Sat Feb 26 23:23:53 2011
++++ src/polkitbackend/polkitbackendsessionmonitor.c	Wed Apr 27 19:07:36 2011
+@@ -293,14 +293,15 @@ polkit_backend_session_monitor_get_user_for_subject (P
+ 
+   if (POLKIT_IS_UNIX_PROCESS (subject))
+     {
+-      local_error = NULL;
+-      uid = polkit_unix_process_get_owner (POLKIT_UNIX_PROCESS (subject), &local_error);
+-      if (local_error != NULL)
++      uid = polkit_unix_process_get_uid (POLKIT_UNIX_PROCESS (subject));
++      if ((gint) uid == -1)
+         {
+-          g_propagate_prefixed_error (error, local_error, "Error getting user for process: ");
++          g_set_error (error,
++                       POLKIT_ERROR,
++                       POLKIT_ERROR_FAILED,
++                       "Unix process subject does not have uid set");
+           goto out;
+         }
+-
+       ret = polkit_unix_user_new (uid);
+     }
+   else if (POLKIT_IS_SYSTEM_BUS_NAME (subject))

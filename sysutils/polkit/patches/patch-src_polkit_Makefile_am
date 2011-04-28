@@ -1,12 +1,21 @@
-$OpenBSD: patch-src_polkit_Makefile_am,v 1.1 2011/04/07 11:12:12 ajacoutot Exp $
---- src/polkit/Makefile.am.orig	Thu Apr  7 11:42:24 2011
-+++ src/polkit/Makefile.am	Thu Apr  7 11:42:52 2011
-@@ -154,7 +154,7 @@ Polkit-1.0.gir: libpolkit-gobject-1.la $(G_IR_SCANNER)
- 		$(srcdir)/polkitauthorizationresult.h 		\
- 		$(srcdir)/polkitcheckauthorizationflags.h 	\
- 		$(srcdir)/polkitdetails.h 			\
--		$(builddir)/polkitenumtypes.h 			\
-+		$(srcdir)/polkitenumtypes.h 			\
- 		$(srcdir)/polkiterror.h 			\
- 		$(srcdir)/polkitidentity.h 			\
- 		$(srcdir)/polkitimplicitauthorization.h 	\
+$OpenBSD: patch-src_polkit_Makefile_am,v 1.2 2011/04/28 13:09:07 ajacoutot Exp $
+
+src/polkit/tmp-introspect6TgxO1/.libs/Polkit-1.0: can't load library 'libpolkit-gobject-1.so.X.X'
+
+From c29a6fd701df08e10e384cce65356af9a5a559f3 Mon Sep 17 00:00:00 2001
+From: Benjamin Otte <otte@redhat.com>
+Date: Fri, 11 Mar 2011 13:01:27 +0000
+Subject: introspection: Add --c-include to the gir files
+
+--- src/polkit/Makefile.am.orig	Sat Feb 26 23:23:53 2011
++++ src/polkit/Makefile.am	Wed Apr 27 20:29:34 2011
+@@ -110,7 +110,9 @@ Polkit-1.0.gir: libpolkit-gobject-1.la $(INTROSPECTION
+ 		--pkg=gobject-2.0 				\
+ 		--pkg=gio-2.0 					\
+ 		--libtool=$(top_builddir)/libtool		\
++		--c-include='polkit/polkit.h'			\
+                 -I$(top_srcdir)/src	 			\
++		-L$(top_srcdir)/src/polkit/.libs		\
+ 	        -D_POLKIT_COMPILATION                   	\
+ 		$(libpolkit_gobject_1_la_SOURCES)		\
+ 		$(NULL)

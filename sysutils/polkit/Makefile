@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.16 2011/04/07 11:12:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/04/28 13:09:07 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
-DISTNAME=	polkit-0.97
-REVISION=	6
+DISTNAME=	polkit-0.101
 
-SHARED_LIBS +=  polkit-gobject-1	0.0 # .0.0
-SHARED_LIBS +=  polkit-backend-1	0.0 # .0.0
-SHARED_LIBS +=  polkit-agent-1		0.0 # .0.0
+SHARED_LIBS +=  polkit-gobject-1	1.0 # .0.0
+SHARED_LIBS +=  polkit-backend-1	1.0 # .0.0
+SHARED_LIBS +=  polkit-agent-1		1.0 # .0.0
 
 CATEGORIES=	sysutils
 
@@ -21,11 +20,10 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += c dbus-1 dbus-glib-1 expat gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 pcre pthread z eggdbus-1
+WANTLIB += c expat gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += pcre pthread z
 
-#MASTER_SITES=	http://hal.freedesktop.org/releases/
-MASTER_SITES=	http://distfiles.bsdfrog.org/
+MASTER_SITES=	http://hal.freedesktop.org/releases/
 
 MODULES=	textproc/intltool \
 		devel/gettext
@@ -34,7 +32,7 @@ BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		devel/gobject-introspection
 
-# needs libtoolize
+# needs AM_PROG_LIBTOOL
 BUILD_DEPENDS+=	devel/libtool
 
 # We do no want to depends on gtk-doc as it creates a dependency loop:
@@ -42,23 +40,22 @@ BUILD_DEPENDS+=	devel/libtool
 BUILD_DEPENDS+=	textproc/libxslt \
 		textproc/docbook-xsl
 
-LIB_DEPENDS=	devel/eggdbus
+LIB_DEPENDS=	devel/glib2
 
-AUTOCONF_VERSION= 2.62
-AUTOMAKE_VERSION=1.9
+AUTOCONF_VERSION= 2.64
+AUTOMAKE_VERSION=1.10
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		CC=${CC} CFLAGS="${CFLAGS}"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-gtk-doc \
 		--localstatedir=/var \
 		--mandir=${PREFIX}/man \
+		--enable-introspection \
 		--enable-man-pages \
 		--enable-verbose-mode \
 		--enable-examples \
-		--disable-gtk-doc \
-		--enable-introspection \
 		--with-os-type=openbsd \
 		--with-authfw=bsdauth
 
@@ -75,11 +72,10 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/docs/man/pkexec.xml \
 		${WRKSRC}/actions/org.freedesktop.policykit.policy.in \
 		${WRKSRC}/src/examples/org.freedesktop.policykit.examples.pkexec.policy.in
-
-do-configure:
-	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+	cd ${WRKSRC} && \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		${CONFIGURE_ENV} ./autogen.sh ${CONFIGURE_ARGS}
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		${LOCALBASE}/bin/autoreconf
 
 post-install:
 	${INSTALL_DATA_DIR} \

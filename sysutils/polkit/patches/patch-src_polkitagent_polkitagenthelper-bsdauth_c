@@ -1,10 +1,11 @@
-$OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.3 2010/07/16 10:04:10 ajacoutot Exp $
---- src/polkitagent/polkitagenthelper-bsdauth.c.orig	Fri Jul 16 11:22:22 2010
-+++ src/polkitagent/polkitagenthelper-bsdauth.c	Fri Jul 16 11:22:10 2010
-@@ -0,0 +1,204 @@
+$OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.4 2011/04/28 13:09:07 ajacoutot Exp $
+--- src/polkitagent/polkitagenthelper-bsdauth.c.orig	Sat Dec  4 09:39:18 2010
++++ src/polkitagent/polkitagenthelper-bsdauth.c	Sat Dec  4 09:40:52 2010
+@@ -0,0 +1,190 @@
 +/*
 + * Copyright (C) 2008 Red Hat, Inc.
 + * Copyright (C) 2009-2010 Andrew Psaltis <ampsaltis@gmail.com>
++ * Copyright (C) 2010 Antoine Jacoutot <ajacoutot@openbsd.org>
 + *
 + * This library is free software; you can redistribute it and/or
 + * modify it under the terms of the GNU Lesser General Public
@@ -27,6 +28,8 @@ $OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.3 2010/07/16 10:
 + */
 +
 +#include "config.h"
++#include "polkitagenthelperprivate.h"
++
 +#include <stdio.h>
 +#include <stdlib.h>
 +#include <string.h>
@@ -40,34 +43,20 @@ $OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.3 2010/07/16 10:
 +#include <bsd_auth.h>
 +
 +#include <polkit/polkit.h>
-+#include "polkitagenthelperprivate.h"
 +
-+
-+static int bsdauth_authenticate(const char *user_to_auth);
-+
-+#ifndef HAVE_CLEARENV
-+extern char **environ;
-+
-+static int
-+clearenv (void)
-+{
-+	if (environ != NULL)
-+		environ[0] = NULL;
-+	return 0;
-+}
-+#endif
++static gboolean bsdauth_authenticate (const char *user_to_auth);
 +
 +int
 +main (int argc, char *argv[])
 +{
-+  struct passwd *shadow;
++  struct passwd *pw;
 +  const char *user_to_auth;
 +  const char *cookie;
 +//  time_t tm;
 +
 +  /* clear the entire environment to avoid attacks with
 +     libraries honoring environment variables */
-+  if (clearenv () != 0)
++  if (_polkit_clearenv () != 0)
 +    goto error;
 +
 +  /* set a minimal environment */
@@ -108,54 +97,50 @@ $OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.3 2010/07/16 10:
 +  fprintf (stderr, "polkit-agent-helper-1: user to auth is '%s'.\n", user_to_auth);
 +#endif /* PAH_DEBUG */
 +
-+  /* Ask shadow about the user requesting authentication */
-+  if ((shadow = getpwnam (user_to_auth)) == NULL)
++  /* Search the password database for the user requesting authentication */
++  if ((pw = getpwnam (user_to_auth)) == NULL)
 +    {
 +      syslog (LOG_NOTICE, "password database information request for user %s [uid=%d] failed", user_to_auth, getuid());
-+      fprintf(stderr, "polkit-agent-helper-1: could not get shadow information for%.100s", user_to_auth);
++      fprintf(stderr, "polkit-agent-helper-1: could not get user information for '%s'", user_to_auth);
 +      goto error;
 +    }
-+  
++
 +  /* Check the user's identity */
-+  if(!bsdauth_authenticate (user_to_auth))
++  if (!bsdauth_authenticate (user_to_auth))
 +    {
 +      syslog (LOG_NOTICE, "authentication failure [uid=%d] trying to authenticate '%s'", getuid (), user_to_auth);
 +      fprintf (stderr, "polkit-agent-helper-1: authentication failure. This incident has been logged.\n");
 +      goto error;
 +    }
 +
++#if 0
 +  /* Check whether the user's password has expired */
-+/*
-+  time(&tm);
-+  if( shadow->sp_max >= 0 && (shadow->sp_lstchg + shadow->sp_max) * 60 * 60 * 24 <= tm)
++  now = time (NULL);
++  if (shadow->sp_max >= 0 && (shadow->sp_lstchg + shadow->sp_max) * 60 * 60 * 24 <= now)
 +    {
-+      syslog (LOG_NOTICE, "password expired for user '%s' [uid=%d] trying to authenticate", user_to_auth, getuid () );
++      syslog (LOG_NOTICE, "password expired for user '%s' [uid=%d] trying to authenticate", user_to_auth, getuid ());
 +      fprintf (stderr, "polkit-agent-helper-1: authorization failure. This incident has been logged.\n");
 +      goto error;
 +    }
-+*/
 +
 +  /* Check whether the user's password has aged (and account expired along
 +   * with it)
 +   */
-+/*
-+  if( shadow->sp_inact >= 0 && (shadow->sp_lstchg + shadow->sp_max + shadow->sp_inact) * 60 * 60 * 24           <= tm) 
++  if (shadow->sp_inact >= 0 && (shadow->sp_lstchg + shadow->sp_max + shadow->sp_inact) * 60 * 60 * 24 <= now)
 +    {
-+      syslog (LOG_NOTICE, "password aged for user '%s' [uid=%d] trying to authenticate", user_to_auth, getuid () );
++      syslog (LOG_NOTICE, "password aged for user '%s' [uid=%d] trying to authenticate", user_to_auth, getuid ());
 +      fprintf (stderr, "polkit-agent-helper-1: authorization failure. This incident has been logged.\n");
 +      goto error;
 +    }
-+*/
 +
 +  /* Check whether the user's account has expired */
-+/*
-+  if(shadow->sp_expire >= 0 && shadow->sp_expire * 60 * 60 * 24 <= tm) 
++  if (shadow->sp_expire >= 0 && shadow->sp_expire * 60 * 60 * 24 <= now)
 +    {
-+      syslog (LOG_NOTICE, "account expired for user '%s' [uid=%d] trying to authenticate", user_to_auth, getuid () );
++      syslog (LOG_NOTICE, "account expired for user '%s' [uid=%d] trying to authenticate", user_to_auth, getuid ());
 +      fprintf (stderr, "polkit-agent-helper-1: authorization failure. This incident has been logged.\n");
 +      goto error;
 +    }
-+*/
++#endif
 +
 +#ifdef PAH_DEBUG
 +  fprintf (stderr, "polkit-agent-helper-1: sending D-Bus message to PolicyKit daemon\n");
@@ -177,29 +162,30 @@ $OpenBSD: patch-src_polkitagent_polkitagenthelper-bsdauth_c,v 1.3 2010/07/16 10:
 +#endif /* PAH_DEBUG */
 +
 +  fprintf (stdout, "SUCCESS\n");
-+  flush_and_wait();
++  flush_and_wait ();
 +  return 0;
 +
 +error:
 +  fprintf (stdout, "FAILURE\n");
-+  flush_and_wait();
++  flush_and_wait ();
 +  return 1;
 +}
 +
-+static int
-+bsdauth_authenticate(const char *user_to_auth)
++static gboolean
++bsdauth_authenticate (const char *user_to_auth)
 +{
-+  /* Speak PAM to the daemon, thanks to David Zeuthen for the idea. */
 +  char passwd[512];
-+  fprintf(stdout, "PAM_PROMPT_ECHO_OFF password:\n");
-+  flush_and_wait();
++
++  fprintf (stdout, "PAM_PROMPT_ECHO_OFF password:\n");
++  fflush (stdout);
++  usleep (10 * 1000); /* since fflush(3) seems buggy */
 +
 +  if (fgets (passwd, sizeof (passwd), stdin) == NULL)
 +    goto error;
 +
 +  if (strlen (passwd) > 0 && passwd[strlen (passwd) - 1] == '\n')
 +    passwd[strlen (passwd) - 1] = '\0';
-+  
++
 +  if (auth_userokay((char *)user_to_auth, NULL, "auth-polkit", passwd) == 0)
 +    goto error;
 +  return 1;

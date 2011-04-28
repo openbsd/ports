@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/07 11:12:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/04/28 13:09:07 ajacoutot Exp $
 %%SHARED%%
 @bin bin/pk-example-frobnicate
 @bin bin/pkaction
@@ -21,6 +21,7 @@ include/polkit-1/polkit/polkitenumtypes.h
 include/polkit-1/polkit/polkiterror.h
 include/polkit-1/polkit/polkitidentity.h
 include/polkit-1/polkit/polkitimplicitauthorization.h
+include/polkit-1/polkit/polkitpermission.h
 include/polkit-1/polkit/polkitprivate.h
 include/polkit-1/polkit/polkitsubject.h
 include/polkit-1/polkit/polkitsystembusname.h
@@ -32,22 +33,21 @@ include/polkit-1/polkit/polkitunixsession.h
 include/polkit-1/polkit/polkitunixuser.h
 include/polkit-1/polkitagent/
 include/polkit-1/polkitagent/polkitagent.h
+include/polkit-1/polkitagent/polkitagentenumtypes.h
 include/polkit-1/polkitagent/polkitagentlistener.h
 include/polkit-1/polkitagent/polkitagentsession.h
+include/polkit-1/polkitagent/polkitagenttextlistener.h
 include/polkit-1/polkitagent/polkitagenttypes.h
 include/polkit-1/polkitbackend/
 include/polkit-1/polkitbackend/polkitbackend.h
 include/polkit-1/polkitbackend/polkitbackendactionlookup.h
-include/polkit-1/polkitbackend/polkitbackendactionpool.h
 include/polkit-1/polkitbackend/polkitbackendauthority.h
-include/polkit-1/polkitbackend/polkitbackendconfigsource.h
 include/polkit-1/polkitbackend/polkitbackendinteractiveauthority.h
 include/polkit-1/polkitbackend/polkitbackendlocalauthority.h
-include/polkit-1/polkitbackend/polkitbackendlocalauthorizationstore.h
-include/polkit-1/polkitbackend/polkitbackendsessionmonitor.h
 include/polkit-1/polkitbackend/polkitbackendtypes.h
 lib/girepository-1.0/
 lib/girepository-1.0/Polkit-1.0.typelib
+lib/girepository-1.0/PolkitAgent-1.0.typelib
 lib/libpolkit-agent-1.a
 lib/libpolkit-agent-1.la
 lib/libpolkit-backend-1.a
@@ -62,8 +62,6 @@ lib/polkit-1/
 lib/polkit-1/extensions/
 @comment lib/polkit-1/extensions/libnullbackend.a
 @comment lib/polkit-1/extensions/libnullbackend.la
-@comment lib/polkit-1/extensions/libpkexec-action-lookup.a
-@comment lib/polkit-1/extensions/libpkexec-action-lookup.la
 @mode 4755
 @owner root
 @bin libexec/polkit-agent-helper-1
@@ -88,8 +86,8 @@ share/examples/polkit/polkit-1/
 @mode 0700
 @sample ${SYSCONFDIR}/polkit-1/
 @sample /var/db/polkit-1/
-@mode
 @sample ${SYSCONFDIR}/polkit-1/localauthority/
+@mode
 share/examples/polkit/polkit-1/localauthority.conf.d/
 @sample ${SYSCONFDIR}/polkit-1/localauthority.conf.d/
 share/examples/polkit/polkit-1/localauthority.conf.d/50-localauthority.conf
@@ -108,6 +106,7 @@ share/examples/polkit/var/db/polkit-1/localauthority/10-vendor.d/
 share/examples/polkit/var/db/polkit-1/localauthority/10-vendor.d/10-desktop-policy.pkla
 share/gir-1.0/
 share/gir-1.0/Polkit-1.0.gir
+share/gir-1.0/PolkitAgent-1.0.gir
 share/locale/da/LC_MESSAGES/polkit-1.mo
 share/polkit-1/
 share/polkit-1/actions/

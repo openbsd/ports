@@ -1,0 +1,41 @@
+$OpenBSD: patch-src_polkitd_gposixsignal_c,v 1.1 2011/04/28 13:09:07 ajacoutot Exp $
+--- src/polkitd/gposixsignal.c.orig	Sat Feb 26 23:23:53 2011
++++ src/polkitd/gposixsignal.c	Wed Apr 27 16:07:00 2011
+@@ -26,7 +26,13 @@
+ 
+ #if defined(__linux__)
+ #include <unistd.h>
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++#include <sys/types.h>
++#include <sys/event.h>
++#include <sys/time.h>
++#else
+ #include <sys/signalfd.h>
++#endif
+ #include <signal.h>
+ 
+ typedef struct
+@@ -84,6 +90,9 @@ _g_posix_signal_source_new (gint signum)
+   gint fd;
+   GSource *_source;
+   _GPosixSignalSource *source;
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++  struct kevent ev;
++#endif
+ 
+   _source = NULL;
+ 
+@@ -93,7 +102,13 @@ _g_posix_signal_source_new (gint signum)
+   if (sigprocmask (SIG_BLOCK, &sigset, NULL) == -1)
+     g_assert_not_reached ();
+ 
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++  fd = kqueue ();
++  EV_SET (&ev, signum, EVFILT_SIGNAL, EV_ADD, 0, 0, NULL);
++  kevent (fd, &ev, 1, NULL, 0, NULL);
++#else
+   fd = signalfd (-1, &sigset, SFD_NONBLOCK | SFD_CLOEXEC);
++#endif
+ 
+   _source = g_source_new (&_g_posix_signal_source_funcs, sizeof (_GPosixSignalSource));
+   source = (_GPosixSignalSource *) _source;

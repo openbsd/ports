@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_polkitbackend_Makefile_am,v 1.1.1.1 2010/07/01 07:46:21 ajacoutot Exp $
---- src/polkitbackend/Makefile.am.orig	Sun Jun 27 18:26:49 2010
-+++ src/polkitbackend/Makefile.am	Sun Jun 27 18:27:49 2010
-@@ -100,10 +100,4 @@ clean-local :
- 	rm -f *~ $(ck_built_sources) $(BUILT_SOURCES)
+$OpenBSD: patch-src_polkitbackend_Makefile_am,v 1.2 2011/04/28 13:09:07 ajacoutot Exp $
+--- src/polkitbackend/Makefile.am.orig	Mon Aug  9 20:49:57 2010
++++ src/polkitbackend/Makefile.am	Tue Nov 30 12:31:18 2010
+@@ -74,10 +74,4 @@ clean-local :
+ 	rm -f *~ $(BUILT_SOURCES)
  
  install-exec-hook:
 -	mkdir -p $(DESTDIR)$(localstatedir)/lib/polkit-1

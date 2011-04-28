@@ -1,73 +1,405 @@
-$OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.1.1.1 2010/07/01 07:46:21 ajacoutot Exp $
---- src/polkit/polkitunixprocess.c.orig	Wed Mar 10 18:46:19 2010
-+++ src/polkit/polkitunixprocess.c	Thu Jul  1 09:19:56 2010
-@@ -24,8 +24,13 @@
+$OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.2 2011/04/28 13:09:07 ajacoutot Exp $
+
+From 129b6223a19e7fb2753f8cad7957ac5402394076 Mon Sep 17 00:00:00 2001
+From: David Zeuthen <davidz@redhat.com>
+Date: Fri, 01 Apr 2011 16:09:45 +0000
+Subject: Make PolkitUnixProcess also record the uid of the process
+
+From dd848a42a64a3b22a0cc60f6657b56ce9b6010ae Mon Sep 17 00:00:00 2001
+From: David Zeuthen <davidz@redhat.com>
+Date: Thu, 31 Mar 2011 16:59:09 +0000
+Subject: PolkitUnixProcess: Clarify that the real uid is returned, not the effective one
+
+--- src/polkit/polkitunixprocess.c.orig	Sat Feb 26 23:23:53 2011
++++ src/polkit/polkitunixprocess.c	Wed Apr 27 19:37:21 2011
+@@ -24,16 +24,21 @@
  #endif
  
  #include <sys/types.h>
 -#ifndef HAVE_FREEBSD
-+#if !defined(HAVE_FREEBSD) && !defined(__OpenBSD__)
- #include <sys/stat.h>
-+#elif defined(__OpenBSD__)
+-#include <sys/stat.h>
+-#else
++#ifdef HAVE_FREEBSD
+ #include <sys/param.h>
+ #include <sys/sysctl.h>
+ #include <sys/user.h>
+ #endif
++#ifdef __OpenBSD__
 +#include <kvm.h>
 +#include <stdio.h>
 +#include <sys/param.h>
 +#include <sys/sysctl.h>
- #else
- #include <sys/param.h>
- #include <sys/sysctl.h>
-@@ -86,6 +91,10 @@ static guint64 get_start_time_for_pid (gint    pid,
++#endif
+ #include <stdlib.h>
+ #include <string.h>
+ #include <errno.h>
++#include <stdio.h>
+ 
+ #include "polkitunixprocess.h"
+ #include "polkitsubject.h"
+@@ -63,6 +68,7 @@ struct _PolkitUnixProcess
+ 
+   gint pid;
+   guint64 start_time;
++  gint uid;
+ };
+ 
+ struct _PolkitUnixProcessClass
+@@ -75,6 +81,7 @@ enum
+   PROP_0,
+   PROP_PID,
+   PROP_START_TIME,
++  PROP_UID
+ };
+ 
+ static void subject_iface_init (PolkitSubjectIface *subject_iface);
+@@ -82,7 +89,10 @@ static void subject_iface_init (PolkitSubjectIface *su
+ static guint64 get_start_time_for_pid (gint    pid,
+                                        GError **error);
+ 
+-#ifdef HAVE_FREEBSD
++static gint _polkit_unix_process_get_owner (PolkitUnixProcess  *process,
++                                            GError            **error);
++
++#if defined(HAVE_FREEBSD) || defined(__OpenBSD__)
  static gboolean get_kinfo_proc (gint pid, struct kinfo_proc *p);
  #endif
  
-+#ifdef __OpenBSD__
-+static gboolean get_kinfo_proc (pid_t pid, struct kinfo_proc2 *p);
-+#endif
-+
- G_DEFINE_TYPE_WITH_CODE (PolkitUnixProcess, polkit_unix_process, G_TYPE_OBJECT,
-                          G_IMPLEMENT_INTERFACE (POLKIT_TYPE_SUBJECT, subject_iface_init)
-                          );
-@@ -214,8 +223,10 @@ polkit_unix_process_get_owner (PolkitUnixProcess  *pro
-                                GError            **error)
+@@ -93,6 +103,7 @@ G_DEFINE_TYPE_WITH_CODE (PolkitUnixProcess, polkit_uni
+ static void
+ polkit_unix_process_init (PolkitUnixProcess *unix_process)
  {
-   gint result;
++  unix_process->uid = -1;
+ }
+ 
+ static void
+@@ -109,6 +120,10 @@ polkit_unix_process_get_property (GObject    *object,
+       g_value_set_int (value, unix_process->pid);
+       break;
+ 
++    case PROP_UID:
++      g_value_set_int (value, unix_process->uid);
++      break;
++
+     case PROP_START_TIME:
+       g_value_set_uint64 (value, unix_process->start_time);
+       break;
+@@ -133,6 +148,14 @@ polkit_unix_process_set_property (GObject      *object
+       polkit_unix_process_set_pid (unix_process, g_value_get_int (value));
+       break;
+ 
++    case PROP_UID:
++      polkit_unix_process_set_uid (unix_process, g_value_get_int (value));
++      break;
++
++    case PROP_START_TIME:
++      polkit_unix_process_set_start_time (unix_process, g_value_get_uint64 (value));
++      break;
++
+     default:
+       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+       break;
+@@ -140,12 +163,39 @@ polkit_unix_process_set_property (GObject      *object
+ }
+ 
+ static void
++polkit_unix_process_constructed (GObject *object)
++{
++  PolkitUnixProcess *process = POLKIT_UNIX_PROCESS (object);
++
++  /* sets start_time and uid in case they are unset */
++
++  if (process->start_time == 0)
++    process->start_time = get_start_time_for_pid (process->pid, NULL);
++
++  if (process->uid == -1)
++    {
++      GError *error;
++      error = NULL;
++      process->uid = _polkit_unix_process_get_owner (process, &error);
++      if (error != NULL)
++        {
++          process->uid = -1;
++          g_error_free (error);
++        }
++    }
++
++  if (G_OBJECT_CLASS (polkit_unix_process_parent_class)->constructed != NULL)
++    G_OBJECT_CLASS (polkit_unix_process_parent_class)->constructed (object);
++}
++
++static void
+ polkit_unix_process_class_init (PolkitUnixProcessClass *klass)
+ {
+   GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
+ 
+   gobject_class->get_property = polkit_unix_process_get_property;
+   gobject_class->set_property = polkit_unix_process_set_property;
++  gobject_class->constructed =  polkit_unix_process_constructed;
+ 
+   /**
+    * PolkitUnixProcess:pid:
+@@ -157,7 +207,7 @@ polkit_unix_process_class_init (PolkitUnixProcessClass
+                                    g_param_spec_int ("pid",
+                                                      "Process ID",
+                                                      "The UNIX process ID",
+-                                                     -1,
++                                                     0,
+                                                      G_MAXINT,
+                                                      0,
+                                                      G_PARAM_CONSTRUCT |
+@@ -167,6 +217,27 @@ polkit_unix_process_class_init (PolkitUnixProcessClass
+                                                      G_PARAM_STATIC_NICK));
+ 
+   /**
++   * PolkitUnixProcess:uid:
++   *
++   * The UNIX user id of the process or -1 if unknown.
++   *
++   * Note that this is the real user-id, not the effective user-id.
++   */
++  g_object_class_install_property (gobject_class,
++                                   PROP_UID,
++                                   g_param_spec_int ("uid",
++                                                     "User ID",
++                                                     "The UNIX user ID",
++                                                     -1,
++                                                     G_MAXINT,
++                                                     -1,
++                                                     G_PARAM_CONSTRUCT |
++                                                     G_PARAM_READWRITE |
++                                                     G_PARAM_STATIC_NAME |
++                                                     G_PARAM_STATIC_BLURB |
++                                                     G_PARAM_STATIC_NICK));
++
++  /**
+    * PolkitUnixProcess:start-time:
+    *
+    * The start time of the process.
+@@ -179,7 +250,8 @@ polkit_unix_process_class_init (PolkitUnixProcessClass
+                                                         0,
+                                                         G_MAXUINT64,
+                                                         0,
+-                                                        G_PARAM_READABLE |
++                                                        G_PARAM_CONSTRUCT |
++                                                        G_PARAM_READWRITE |
+                                                         G_PARAM_STATIC_NAME |
+                                                         G_PARAM_STATIC_BLURB |
+                                                         G_PARAM_STATIC_NICK));
+@@ -187,78 +259,50 @@ polkit_unix_process_class_init (PolkitUnixProcessClass
+ }
+ 
+ /**
+- * polkit_unix_process_get_pid:
++ * polkit_unix_process_get_uid:
+  * @process: A #PolkitUnixProcess.
+  *
+- * Gets the process id for @process.
++ * Gets the user id for @process. Note that this is the real user-id,
++ * not the effective user-id.
+  *
+- * Returns: The process id for @process.
++ * Returns: The user id for @process or -1 if unknown.
+  */
+ gint
+-polkit_unix_process_get_pid (PolkitUnixProcess *process)
++polkit_unix_process_get_uid (PolkitUnixProcess *process)
+ {
+-  g_return_val_if_fail (POLKIT_IS_UNIX_PROCESS (process), 0);
+-  return process->pid;
++  g_return_val_if_fail (POLKIT_IS_UNIX_PROCESS (process), -1);
++  return process->uid;
+ }
+ 
+ /**
+- * polkit_unix_process_get_owner:
++ * polkit_unix_process_set_uid:
+  * @process: A #PolkitUnixProcess.
+- * @error: (allow-none): Return location for error or %NULL.
++ * @uid: The user id to set for @process or -1 to unset it.
+  *
+- * Gets the uid of the owner of @process.
++ * Sets the (real, not effective) user id for @process.
++ */
++void
++polkit_unix_process_set_uid (PolkitUnixProcess *process,
++                             gint               uid)
++{
++  g_return_if_fail (POLKIT_IS_UNIX_PROCESS (process));
++  g_return_if_fail (uid >= -1);
++  process->uid = uid;
++}
++
++/**
++ * polkit_unix_process_get_pid:
++ * @process: A #PolkitUnixProcess.
+  *
+- * Returns: The UNIX user id of the owner for @process or 0 if @error is set.
+- **/
++ * Gets the process id for @process.
++ *
++ * Returns: The process id for @process.
++ */
+ gint
+-polkit_unix_process_get_owner (PolkitUnixProcess  *process,
+-                               GError            **error)
++polkit_unix_process_get_pid (PolkitUnixProcess *process)
+ {
+-  gint result;
 -#ifdef HAVE_FREEBSD
-+#if defined(HAVE_FREEBSD)
-   struct kinfo_proc p;
-+#elif defined(__OpenBSD__)
-+  struct kinfo_proc2 p;
- #else
-   struct stat statbuf;
-   char procbuf[32];
-@@ -223,7 +234,7 @@ polkit_unix_process_get_owner (PolkitUnixProcess  *pro
- 
-   result = 0;
- 
+-  struct kinfo_proc p;
+-#else
+-  struct stat statbuf;
+-  char procbuf[32];
+-#endif
+-
+   g_return_val_if_fail (POLKIT_IS_UNIX_PROCESS (process), 0);
+-  g_return_val_if_fail (error == NULL || *error == NULL, 0);
+-
+-  result = 0;
+-
 -#ifdef HAVE_FREEBSD
-+#if defined(HAVE_FREEBSD) || defined(__OpenBSD__)
-   if (get_kinfo_proc (process->pid, &p) == 0)
-     {
-       g_set_error (error,
-@@ -235,8 +246,12 @@ polkit_unix_process_get_owner (PolkitUnixProcess  *pro
-       goto out;
-     }
+-  if (get_kinfo_proc (process->pid, &p) == 0)
+-    {
+-      g_set_error (error,
+-                   POLKIT_ERROR,
+-                   POLKIT_ERROR_FAILED,
+-                   "get_kinfo_proc() failed for pid %d: %s",
+-                   process->pid,
+-                   g_strerror (errno));
+-      goto out;
+-    }
+-
+-  result = p.ki_uid;
+-#else
+-  g_snprintf (procbuf, sizeof procbuf, "/proc/%d", process->pid);
+-  if (stat (procbuf, &statbuf) != 0)
+-    {
+-      g_set_error (error,
+-                   POLKIT_ERROR,
+-                   POLKIT_ERROR_FAILED,
+-                   "stat() failed for /proc/%d: %s",
+-                   process->pid,
+-                   g_strerror (errno));
+-      goto out;
+-    }
+-
+-  result = statbuf.st_uid;
+-#endif
+-
+- out:
+-
+-  return result;
++  return process->pid;
+ }
  
-+#if defined(HAVE_FREEBSD)
-   result = p.ki_uid;
- #else
-+  result = p.p_uid;
-+#endif
-+#else
-   g_snprintf (procbuf, sizeof procbuf, "/proc/%d", process->pid);
-   if (stat (procbuf, &statbuf) != 0)
-     {
-@@ -476,12 +491,38 @@ get_kinfo_proc (pid_t pid, struct kinfo_proc *p)
+ /**
+@@ -277,6 +321,21 @@ polkit_unix_process_get_start_time (PolkitUnixProcess 
+ }
+ 
+ /**
++ * polkit_unix_process_set_start_time:
++ * @process: A #PolkitUnixProcess.
++ * @start_time: The start time for @pid.
++ *
++ * Set the start time of @process.
++ */
++void
++polkit_unix_process_set_start_time (PolkitUnixProcess *process,
++                                    guint64            start_time)
++{
++  g_return_if_fail (POLKIT_IS_UNIX_PROCESS (process));
++  process->start_time = start_time;
++}
++
++/**
+  * polkit_unix_process_set_pid:
+  * @process: A #PolkitUnixProcess.
+  * @pid: A process id.
+@@ -289,19 +348,18 @@ polkit_unix_process_set_pid (PolkitUnixProcess *proces
+ {
+   g_return_if_fail (POLKIT_IS_UNIX_PROCESS (process));
+   process->pid = pid;
+-  if (pid != (gint) -1)
+-    process->start_time = get_start_time_for_pid (pid, NULL);
+ }
+ 
+ /**
+  * polkit_unix_process_new:
+  * @pid: The process id.
+  *
+- * Creates a new #PolkitUnixProcess for @pid. The start time of the
+- * process will be looked up in using e.g. the
+- * <filename>/proc</filename> filesystem depending on the platform in
+- * use.
++ * Creates a new #PolkitUnixProcess for @pid.
+  *
++ * The uid and start time of the process will be looked up in using
++ * e.g. the <filename>/proc</filename> filesystem depending on the
++ * platform in use.
++ *
+  * Returns: (transfer full): A #PolkitSubject. Free with g_object_unref().
+  */
+ PolkitSubject *
+@@ -319,22 +377,42 @@ polkit_unix_process_new (gint pid)
+  *
+  * Creates a new #PolkitUnixProcess object for @pid and @start_time.
+  *
++ * The uid of the process will be looked up in using e.g. the
++ * <filename>/proc</filename> filesystem depending on the platform in
++ * use.
++ *
+  * Returns: (transfer full): A #PolkitSubject. Free with g_object_unref().
+  */
+ PolkitSubject *
+ polkit_unix_process_new_full (gint pid,
+                               guint64 start_time)
+ {
+-  PolkitUnixProcess *process;
++  return POLKIT_SUBJECT (g_object_new (POLKIT_TYPE_UNIX_PROCESS,
++                                       "pid", pid,
++                                       "start_time", start_time,
++                                       NULL));
++}
+ 
+-  process = POLKIT_UNIX_PROCESS (polkit_unix_process_new ((gint) -1));
+-  process->pid = pid;
+-  if (start_time != 0)
+-    process->start_time = start_time;
+-  else
+-    process->start_time = get_start_time_for_pid (pid, NULL);
+-
+-  return POLKIT_SUBJECT (process);
++/**
++ * polkit_unix_process_new_for_owner:
++ * @pid: The process id.
++ * @start_time: The start time for @pid or 0 to look it up in e.g. <filename>/proc</filename>.
++ * @uid: The (real, not effective) uid of the owner of @pid or -1 to look it up in e.g. <filename>/proc</filename>.
++ *
++ * Creates a new #PolkitUnixProcess object for @pid, @start_time and @uid.
++ *
++ * Returns: (transfer full): A #PolkitSubject. Free with g_object_unref().
++ */
++PolkitSubject *
++polkit_unix_process_new_for_owner (gint    pid,
++                                   guint64 start_time,
++                                   gint    uid)
++{
++  return POLKIT_SUBJECT (g_object_new (POLKIT_TYPE_UNIX_PROCESS,
++                                       "pid", pid,
++                                       "start_time", start_time,
++                                       "uid", uid,
++                                       NULL));
+ }
+ 
+ static guint
+@@ -482,12 +560,38 @@ get_kinfo_proc (pid_t pid, struct kinfo_proc *p)
  }
  #endif
  
 +#ifdef __OpenBSD__
 +get_kinfo_proc (pid_t pid,
-+		struct kinfo_proc2 *p)
++		struct kinfo_proc *p)
 +{
 +	int name[6];
 +	u_int namelen;
@@ -76,14 +408,14 @@ $OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.1.1.1 2010/07/01 07:46:21 aja
 +	sz = sizeof(*p);
 +	namelen = 0;
 +	name[namelen++] = CTL_KERN;
-+	name[namelen++] = KERN_PROC2;
++	name[namelen++] = KERN_PROC;
 +	name[namelen++] = KERN_PROC_PID;
 +	name[namelen++] = pid;
 +	name[namelen++] = sz;
 +	name[namelen++] = 1;
 +
 +	if (sysctl (name, namelen, p, &sz, NULL, 0) == -1) {
-+		perror("sysctl kern.proc2.pid");
++		perror("sysctl kern.proc.pid");
 +		return FALSE;
 +	}
 +
@@ -101,19 +433,7 @@ $OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.1.1.1 2010/07/01 07:46:21 aja
    gchar *filename;
    gchar *contents;
    size_t length;
-@@ -554,7 +595,11 @@ get_start_time_for_pid (pid_t    pid,
-   g_free (filename);
-   g_free (contents);
- #else
-+#if defined(HAVE_FREEBSD)
-   struct kinfo_proc p;
-+#else
-+  struct kinfo_proc2 p;
-+#endif
- 
-   start_time = 0;
- 
-@@ -569,7 +614,11 @@ get_start_time_for_pid (pid_t    pid,
+@@ -575,10 +679,110 @@ get_start_time_for_pid (pid_t    pid,
        goto out;
      }
  
@@ -125,3 +445,102 @@ $OpenBSD: patch-src_polkit_polkitunixprocess_c,v 1.1.1.1 2010/07/01 07:46:21 aja
  
  out:
  #endif
+ 
+   return start_time;
++}
++
++static gint
++_polkit_unix_process_get_owner (PolkitUnixProcess  *process,
++                                GError            **error)
++{
++  gint result;
++  gchar *contents;
++  gchar **lines;
++#if defined(HAVE_FREEBSD) || defined(__OpenBSD__)
++  struct kinfo_proc p;
++#else
++  gchar filename[64];
++  guint n;
++#endif
++
++  g_return_val_if_fail (POLKIT_IS_UNIX_PROCESS (process), 0);
++  g_return_val_if_fail (error == NULL || *error == NULL, 0);
++
++  result = 0;
++  lines = NULL;
++  contents = NULL;
++
++#if defined(HAVE_FREEBSD) || defined(__OpenBSD__)
++  if (get_kinfo_proc (process->pid, &p) == 0)
++    {
++      g_set_error (error,
++                   POLKIT_ERROR,
++                   POLKIT_ERROR_FAILED,
++                   "get_kinfo_proc() failed for pid %d: %s",
++                   process->pid,
++                   g_strerror (errno));
++      goto out;
++    }
++
++#if defined(HAVE_FREEBSD)
++  result = p.ki_uid;
++#else
++  result = p.p_uid;
++#endif
++#else
++
++  /* see 'man proc' for layout of the status file
++   *
++   * Uid, Gid: Real, effective, saved set,  and  file  system  UIDs (GIDs).
++   */
++  g_snprintf (filename, sizeof filename, "/proc/%d/status", process->pid);
++  if (!g_file_get_contents (filename,
++                            &contents,
++                            NULL,
++                            error))
++    {
++      goto out;
++    }
++  lines = g_strsplit (contents, "\n", -1);
++  for (n = 0; lines != NULL && lines[n] != NULL; n++)
++    {
++      gint real_uid, effective_uid;
++      if (!g_str_has_prefix (lines[n], "Uid:"))
++        continue;
++      if (sscanf (lines[n] + 4, "%d %d", &real_uid, &effective_uid) != 2)
++        {
++          g_set_error (error,
++                       POLKIT_ERROR,
++                       POLKIT_ERROR_FAILED,
++                       "Unexpected line `%s' in file %s",
++                       lines[n],
++                       filename);
++          goto out;
++        }
++      else
++        {
++          result = real_uid;
++          goto out;
++        }
++    }
++
++  g_set_error (error,
++               POLKIT_ERROR,
++               POLKIT_ERROR_FAILED,
++               "Didn't find any line starting with `Uid:' in file %s",
++               filename);
++#endif
++
++out:
++  g_strfreev (lines);
++  g_free (contents);
++  return result;
++}
++
++/* deprecated public method */
++gint
++polkit_unix_process_get_owner (PolkitUnixProcess  *process,
++                               GError            **error)
++{
++  return _polkit_unix_process_get_owner (process, error);
+ }

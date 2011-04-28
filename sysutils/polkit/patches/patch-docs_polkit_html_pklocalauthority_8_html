@@ -1,0 +1,48 @@
+$OpenBSD: patch-docs_polkit_html_pklocalauthority_8_html,v 1.1 2011/04/28 13:09:07 ajacoutot Exp $
+--- docs/polkit/html/pklocalauthority.8.html.orig	Tue Nov 30 13:30:28 2010
++++ docs/polkit/html/pklocalauthority.8.html	Tue Nov 30 13:30:53 2010
+@@ -98,7 +98,7 @@
+       The Local Authority reads files with <code class="filename">.pkla</code>
+       extension from all directories located inside the
+       <code class="filename">/etc/polkit-1/localauthority</code>
+-      and <code class="filename">/var/lib/polkit-1/localauthority</code>
++      and <code class="filename">/var/db/polkit-1/localauthority</code>
+       directories. By default, the following sub-directories are installed.
+     </p>
+ <pre class="programlisting">
+@@ -114,7 +114,7 @@
+       and
+     </p>
+ <pre class="programlisting">
+-/var/lib/polkit-1/
++/var/db/polkit-1/
+ `-- localauthority
+     |-- 10-vendor.d
+     |-- 20-org.d
+@@ -125,7 +125,7 @@
+ <p>
+       The <code class="filename">/etc/polkit-1/localauthority</code> hierarchy
+       is inteded for local configuration and
+-      the <code class="filename">/var/lib/polkit-1/localauthority</code> is
++      the <code class="filename">/var/db/polkit-1/localauthority</code> is
+       intended for 3rd party packages.
+     </p>
+ <p>
+@@ -277,7 +277,7 @@
+       the following rules. First all the basename of all
+       sub-directories (e.g. <span class="emphasis"><em>30-site.d</em></span>) from both
+       the <code class="filename">/etc/polkit-1/localauthority</code>
+-      and <code class="filename">/var/lib/polkit-1/localauthority</code>
++      and <code class="filename">/var/db/polkit-1/localauthority</code>
+       directories are enumerated and sorted (using the C locale). If a
+       name exists in both <code class="filename">/etc</code>
+       and <code class="filename">/var</code>, the one
+@@ -291,7 +291,7 @@
+       For example, given the following files
+     </p>
+ <pre class="programlisting">
+-/var/lib/polkit-1
++/var/db/polkit-1
+ └── localauthority
+     ├── 10-vendor.d
+     │   └── 10-desktop-policy.pkla

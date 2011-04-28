@@ -1,0 +1,25 @@
+$OpenBSD: patch-docs_polkit_polkit-1-sections_txt,v 1.1 2011/04/28 13:09:07 ajacoutot Exp $
+
+From 129b6223a19e7fb2753f8cad7957ac5402394076 Mon Sep 17 00:00:00 2001
+From: David Zeuthen <davidz@redhat.com>
+Date: Fri, 01 Apr 2011 16:09:45 +0000
+Subject: Make PolkitUnixProcess also record the uid of the process
+
+--- docs/polkit/polkit-1-sections.txt.orig	Thu Mar  3 19:47:45 2011
++++ docs/polkit/polkit-1-sections.txt	Wed Apr 27 19:19:15 2011
+@@ -145,10 +145,13 @@ POLKIT_UNIX_SESSION_GET_CLASS
+ PolkitUnixProcess
+ polkit_unix_process_new
+ polkit_unix_process_new_full
++polkit_unix_process_new_for_owner
++polkit_unix_process_set_pid
+ polkit_unix_process_get_pid
++polkit_unix_process_set_start_time
+ polkit_unix_process_get_start_time
+-polkit_unix_process_set_pid
+-polkit_unix_process_get_owner
++polkit_unix_process_set_uid
++polkit_unix_process_get_uid
+ <SUBSECTION Standard>
+ PolkitUnixProcessClass
+ POLKIT_UNIX_PROCESS
