@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Screen_hh,v 1.1 2011/04/28 09:52:48 dcoppa Exp $
+
+Do not warp workspaces with only one workspace
+(commit be90145227ca5cb9b54547ccb3905419f4d4f9d9)
+
+--- src/Screen.hh.orig	Thu Apr 28 11:17:30 2011
++++ src/Screen.hh	Thu Apr 28 11:18:47 2011
+@@ -101,7 +101,7 @@ class BScreen: public FbTk::EventHandler, public FbTk:
+ 
+     bool isRootColormapInstalled() const { return root_colormap_installed; }
+     bool isScreenManaged() const { return managed; }
+-    bool isWorkspaceWarping() const { return *resource.workspace_warping; }
++    bool isWorkspaceWarping() const { return (m_workspaces_list.size() > 1) && *resource.workspace_warping; }
+     bool doAutoRaise() const { return *resource.auto_raise; }
+     bool clickRaises() const { return *resource.click_raises; }
+     bool doOpaqueMove() const { return *resource.opaque_move; }

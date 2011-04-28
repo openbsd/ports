@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2011/04/24 17:32:23 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.52 2011/04/28 09:52:48 dcoppa Exp $
 
 COMMENT=		window manager based on the original Blackbox code
 
 DISTNAME=		fluxbox-1.3.1
+
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -10,7 +12,7 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=fluxbox/}
 
 HOMEPAGE=		http://fluxbox.org/
 
-MAINTAINER=		David Krause <david@openbsd.org>
+MAINTAINER=		David Coppa <dcoppa@openbsd.org>
 
 # X11
 PERMIT_PACKAGE_CDROM=	Yes
