@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/04/23 09:07:50 kili Exp $
+# $OpenBSD: Makefile,v 1.34 2011/04/28 17:50:43 kili Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	c++ cross-platform GUI toolkit
 V =		2.8.11
 DISTNAME =	wxWidgets-${V}
 PKGNAME =	wxWidgets-gtk2-${V}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	wx_base			2.0	\
 		wx_base_net		2.0	\
@@ -65,7 +65,10 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 AUTOCONF_VERSION = 2.59
 CONFIGURE_ENV =	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng -I${X11BASE}/include" \
-		ac_cv_lib_esd_esd_close=no
+		ac_cv_lib_esd_esd_close=no \
+		ac_cv_func_swprintf=no \
+		wx_cv_func_wprintf=no \
+		wx_cv_func_vswprintf=no
 CONFIGURE_STYLE =autoconf no-autoheader
 CONFIGURE_ARGS =--with-expat=sys \
 		--with-odbc=sys \
@@ -85,8 +88,7 @@ CONFIGURE_ARGS =--with-expat=sys \
 		--enable-sound \
 		--enable-unicode \
 		--disable-backtrace \
-		--disable-stl \
-		--disable-unicode
+		--disable-stl
 
 .ifdef DEBUG
 CONFIGURE_ARGS += --enable-debug
