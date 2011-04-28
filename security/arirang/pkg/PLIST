@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/03/29 18:18:12 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/04/28 16:17:21 sthen Exp $
 @bin bin/arirang
 share/arirang/
 share/arirang/account.uxe
@@ -8,6 +8,7 @@ share/arirang/allow.rb
 share/arirang/allow_relay.rb
 share/arirang/apache.uxe
 share/arirang/arirang.rb
+share/arirang/auth.rb
 share/arirang/bof_dos.uxe
 share/arirang/caching.rb
 share/arirang/cfusion.uxe
@@ -25,6 +26,7 @@ share/arirang/iisver.rb
 share/arirang/inject.uxe
 share/arirang/link.rb
 share/arirang/multi.rb
+share/arirang/multiport.rb
 share/arirang/ncbook.uxe
 share/arirang/nes.uxe
 share/arirang/network.uxe
