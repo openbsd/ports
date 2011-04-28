@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: postfix-install,v 1.4 2009/03/15 19:38:05 jakob Exp $
+# $OpenBSD: postfix-install,v 1.5 2011/04/28 00:22:23 sthen Exp $
 #
 # Post-installation setup of postfix
 
@@ -17,7 +17,7 @@ do_spooldir()
     [ -d $SPOOL_DIR ] || install -d -o root -g wheel -m 755 $SPOOL_DIR
     [ -d $SPOOL_DIR/etc ] || install -d -o root -g wheel -m 755 $SPOOL_DIR/etc
     [ -d $SPOOL_DIR/dev ] || install -d -o root -g wheel -m 755 $SPOOL_DIR/dev
-    for file in localtime services resolv.conf ; do
+    for file in hosts localtime resolv.conf services ; do
 	install -o root -g wheel -m 644 /etc/$file $SPOOL_DIR/etc
     done
 
