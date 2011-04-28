@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.691 2011/04/25 12:33:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.692 2011/04/28 10:51:26 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -175,6 +175,7 @@
      SUBDIR += librest
      SUBDIR += librsync
      SUBDIR += libshout
+     SUBDIR += libsocialweb
      SUBDIR += libst
      SUBDIR += libtorrent
      SUBDIR += libupnp
