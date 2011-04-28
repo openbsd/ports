@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/03/15 19:49:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/04/28 19:11:51 sthen Exp $
 
 VMEM_WARNING =	Yes
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
@@ -12,7 +12,7 @@ COMMENT =	blend seams in panoramic image mosaics
 DISTNAME =	enblend-enfuse-4.0
 PKGNAME =	${DISTNAME:L}
 WRKDIST =	${WRKDIR}/enblend-enfuse-4.0-753b534c819d
-REVISION =	0
+REVISION =	1
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://enblend.sourceforge.net/
