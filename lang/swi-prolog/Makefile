@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/04/16 11:49:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2011/04/28 18:59:18 jasper Exp $
 
 COMMENT =		Prolog for the real world
 
@@ -6,7 +6,7 @@ V =			5.10.4
 XV =			6.6.66
 DISTNAME =		pl-$V
 PKGNAME =		swi-prolog-$V
-REVISION =		0
+REVISION =		1
 CATEGORIES =		lang
 
 SHARED_LIBS =		pl	3.0
@@ -46,11 +46,6 @@ WANTLIB +=  c m ncursesw pthread pthread-stubs readline z
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS =		V XV FULLARCH BOOT
-
-# Don't build sgml (and dependant RDF), as it requires having swprintf()
-# and the like.
-post-extract:
-	@rm -fr ${WRKSRC}/packages/{sgml,RDF}
 
 post-install:
 	cd ${PREFIX}/lib && ln -s swipl-$V/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}

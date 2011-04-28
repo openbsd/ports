@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/04/08 07:55:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/04/28 18:59:18 jasper Exp $
 %%SHARED%%
 bin/swipl
 bin/swipl-ld
@@ -333,7 +333,9 @@ lib/swipl-${V}/doc/packages/pl2cpp.html
 lib/swipl-${V}/doc/packages/pldoc.html
 lib/swipl-${V}/doc/packages/plunit.html
 lib/swipl-${V}/doc/packages/protobufs.html
+lib/swipl-${V}/doc/packages/rdf2pl.html
 lib/swipl-${V}/doc/packages/semweb.html
+lib/swipl-${V}/doc/packages/sgml.html
 lib/swipl-${V}/doc/packages/ssl.html
 lib/swipl-${V}/doc/packages/table.html
 lib/swipl-${V}/doc/packages/zlib.html
@@ -353,6 +355,13 @@ lib/swipl-${V}/lib/
 lib/swipl-${V}/lib/${FULLARCH}/
 lib/swipl-${V}/lib/${FULLARCH}/libswipl.a
 lib/swipl-${V}/library/
+lib/swipl-${V}/library/DTD/
+lib/swipl-${V}/library/DTD/HTML4.dcl
+lib/swipl-${V}/library/DTD/HTML4.dtd
+lib/swipl-${V}/library/DTD/HTML4.soc
+lib/swipl-${V}/library/DTD/HTMLlat1.ent
+lib/swipl-${V}/library/DTD/HTMLspec.ent
+lib/swipl-${V}/library/DTD/HTMLsym.ent
 lib/swipl-${V}/library/INDEX.pl
 lib/swipl-${V}/library/MANUAL
 lib/swipl-${V}/library/R.pl
@@ -536,6 +545,7 @@ lib/swipl-${V}/library/http/web/icons/layout.png
 lib/swipl-${V}/library/http/web/icons/openid-logo-square.png
 lib/swipl-${V}/library/http/web/icons/openid-logo-tiny.png
 lib/swipl-${V}/library/http/xpce_httpd.pl
+lib/swipl-${V}/library/iso_639.pl
 lib/swipl-${V}/library/isub.pl
 lib/swipl-${V}/library/listing.pl
 lib/swipl-${V}/library/lists.pl
@@ -597,14 +607,21 @@ lib/swipl-${V}/library/prolog_stack.pl
 lib/swipl-${V}/library/prolog_xref.pl
 lib/swipl-${V}/library/protobufs.pl
 lib/swipl-${V}/library/pure_input.pl
+lib/swipl-${V}/library/pwp.pl
 lib/swipl-${V}/library/qpforeign.pl
 lib/swipl-${V}/library/qsave.pl
 lib/swipl-${V}/library/quintus.pl
 lib/swipl-${V}/library/random.pl
 lib/swipl-${V}/library/rbtrees.pl
+lib/swipl-${V}/library/rdf.pl
+lib/swipl-${V}/library/rdf_ntriples.pl
+lib/swipl-${V}/library/rdf_parser.pl
+lib/swipl-${V}/library/rdf_triple.pl
+lib/swipl-${V}/library/rdf_write.pl
 lib/swipl-${V}/library/readln.pl
 lib/swipl-${V}/library/readutil.pl
 lib/swipl-${V}/library/record.pl
+lib/swipl-${V}/library/rewrite.pl
 lib/swipl-${V}/library/rlimit.pl
 lib/swipl-${V}/library/semweb/
 lib/swipl-${V}/library/semweb/README
@@ -629,6 +646,8 @@ lib/swipl-${V}/library/semweb/rdfs.rdfs
 lib/swipl-${V}/library/semweb/sparql_client.pl
 lib/swipl-${V}/library/semweb/turtle_base.pl
 lib/swipl-${V}/library/settings.pl
+lib/swipl-${V}/library/sgml.pl
+lib/swipl-${V}/library/sgml_write.pl
 lib/swipl-${V}/library/sha.pl
 lib/swipl-${V}/library/shell.pl
 lib/swipl-${V}/library/shlib.pl
@@ -661,6 +680,8 @@ lib/swipl-${V}/library/utf8.pl
 lib/swipl-${V}/library/vm.pl
 lib/swipl-${V}/library/when.pl
 lib/swipl-${V}/library/www_browser.pl
+lib/swipl-${V}/library/xpath.pl
+lib/swipl-${V}/library/xsdp_types.pl
 lib/swipl-${V}/library/zlib.pl
 lib/swipl-${V}/man/
 lib/swipl-${V}/swipl.home
@@ -1565,6 +1586,7 @@ lib/swipl-${V}/xpce-${XV}/prolog/lib/print_text.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/prolog_predicate.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/prolog_predicate_item.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/qrecompile.pl
+lib/swipl-${V}/xpce-${XV}/prolog/lib/rdf_diagram.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/scaledbitmap.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/scan_arguments.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/sp_fcompile.pl
