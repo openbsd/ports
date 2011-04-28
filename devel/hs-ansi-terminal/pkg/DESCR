@@ -1,0 +1,11 @@
+ANSI terminal support for Haskell, which allows: 
+
+* Cursor movement
+* Screen and line clearing
+* Color output
+* Showing or hiding the cursor
+* Changing the console title (though this is not strictly part of
+  ANSI, it is widely supported in Unix)
+
+It is compatible with Windows (via an emulation layer) and those
+Unixes with ANSI terminals.
