@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.101 2011/04/16 14:59:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2011/04/28 05:47:49 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
@@ -76,7 +76,7 @@ FAKE_FLAGS=	BINMODE=${BINMODE} \
 		MENUDIR=${DESTDIR}${PREFIX}/share/applications \
 		SERVERROOT=${DESTDIR}${PREFIX}/share/examples/cups
 
-AUTOCONF_VERSION= 2.62
+AUTOCONF_VERSION= 2.61
 AUTOMAKE_VERSION= 1.9
 
 USE_GMAKE=	Yes
