@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/04/27 12:55:11 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/04/28 10:31:16 dcoppa Exp $
 @bin bin/conky
 lib/conky/
 @man man/man1/conky.1
@@ -13,4 +13,3 @@ share/examples/conky/
 share/examples/conky/conky.conf
 @sample ${SYSCONFDIR}/conky/conky.conf
 share/examples/conky/conky_no_x11.conf
-@sample ${SYSCONFDIR}/conky/conky_no_x11.conf

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2011/04/27 12:55:10 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2011/04/28 10:31:16 dcoppa Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	light-weight system monitor
 
 DISTNAME=	conky-1.8.1
-
+REVISION=	0
 CATEGORIES=	sysutils
 HOMEPAGE=	http://conky.sourceforge.net/
 
@@ -13,7 +13,7 @@ MAINTAINER=	Benoit Lecocq <benoit@openbsd.org>
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=conky/}
 
-# BSD / GPLv3
+# mostly GPLv3; see COPYING
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
