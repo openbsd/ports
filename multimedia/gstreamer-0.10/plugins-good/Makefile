@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2011/04/07 12:37:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.74 2011/04/28 13:10:57 ajacoutot Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
@@ -15,7 +15,7 @@ PKGNAME-caca =		gstreamer-libcaca-${V}
 
 EPOCH-main =		0
 
-REVISION-main =		0
+REVISION-main =		1
 
 MULTI_PACKAGES =	-main -aalib \
 			-dv -caca
@@ -66,8 +66,7 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			net/libshout \
 			archivers/bzip2 \
 			devel/libsoup,-gnome \
-			graphics/gdk-pixbuf2 \
-			devel/eggdbus
+			graphics/gdk-pixbuf2
 RUN_DEPENDS-main =	${MODGCONF2_RUN_DEPENDS} \
 			${MODGETTEXT_RUN_DEPENDS}
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2011/04/22 05:55:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.86 2011/04/28 13:10:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		data backends for the Evolution mail/PIM suite
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		2.32.3
+
+REVISION=		0
 
 CATEGORIES=		databases
 
@@ -55,8 +57,7 @@ LIB_DEPENDS= 		databases/db/v4 \
 			security/nss>=3.11.4p1 \
 			textproc/libical \
 			x11/gnome/libgweather \
-			devel/libgdata>=0.8.0\
-			devel/eggdbus
+			devel/libgdata>=0.8.0
 
 YACC=			bison
 AUTOCONF_VERSION=	2.64
