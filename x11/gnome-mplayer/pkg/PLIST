@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/11/08 15:04:15 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/04/28 11:47:48 dcoppa Exp $
 @bin bin/gnome-mplayer
 @man man/man1/gnome-mplayer.1
 share/applications/gnome-mplayer.desktop
@@ -12,10 +12,12 @@ share/doc/gnome-mplayer/README
 share/doc/gnome-mplayer/dbus.txt
 share/doc/gnome-mplayer/keyboard_shortcuts.txt
 share/doc/gnome-mplayer/plugin-interaction.txt
+share/glib-2.0/schemas/apps.gecko-mediaplayer.preferences.gschema.xml
+share/glib-2.0/schemas/apps.gnome-mplayer.preferences.enums.xml
+share/glib-2.0/schemas/apps.gnome-mplayer.preferences.gschema.xml
 share/gnome-control-center/
 share/gnome-control-center/default-apps/
 share/gnome-control-center/default-apps/gnome-mplayer.xml
-share/icons/
 share/icons/hicolor/
 share/icons/hicolor/16x16/
 share/icons/hicolor/16x16/apps/
@@ -35,8 +37,6 @@ share/icons/hicolor/48x48/apps/gnome-mplayer.png
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gnome-mplayer.svg
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/gnome-mplayer.mo
 share/locale/bg/LC_MESSAGES/gnome-mplayer.mo
 share/locale/ca/LC_MESSAGES/gnome-mplayer.mo
@@ -44,9 +44,6 @@ share/locale/cs/LC_MESSAGES/gnome-mplayer.mo
 share/locale/da/LC_MESSAGES/gnome-mplayer.mo
 share/locale/de/LC_MESSAGES/gnome-mplayer.mo
 share/locale/el/LC_MESSAGES/gnome-mplayer.mo
-share/locale/en/LC_MESSAGES/gnome-mplayer.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/gnome-mplayer.mo
 share/locale/es/LC_MESSAGES/gnome-mplayer.mo
 share/locale/et/LC_MESSAGES/gnome-mplayer.mo
@@ -56,14 +53,17 @@ share/locale/fo/
 share/locale/fo/LC_MESSAGES/
 share/locale/fo/LC_MESSAGES/gnome-mplayer.mo
 share/locale/fr/LC_MESSAGES/gnome-mplayer.mo
+share/locale/fy/
+share/locale/fy/LC_MESSAGES/
+share/locale/fy/LC_MESSAGES/gnome-mplayer.mo
 share/locale/gl/LC_MESSAGES/gnome-mplayer.mo
 share/locale/he/LC_MESSAGES/gnome-mplayer.mo
+share/locale/hr/LC_MESSAGES/gnome-mplayer.mo
 share/locale/hu/LC_MESSAGES/gnome-mplayer.mo
+share/locale/id/LC_MESSAGES/gnome-mplayer.mo
 share/locale/it/LC_MESSAGES/gnome-mplayer.mo
 share/locale/ja/LC_MESSAGES/gnome-mplayer.mo
 share/locale/ko/LC_MESSAGES/gnome-mplayer.mo
-share/locale/lt/
-share/locale/lt/LC_MESSAGES/
 share/locale/lt/LC_MESSAGES/gnome-mplayer.mo
 share/locale/nl/LC_MESSAGES/gnome-mplayer.mo
 share/locale/pl/LC_MESSAGES/gnome-mplayer.mo
@@ -71,15 +71,19 @@ share/locale/pt/LC_MESSAGES/gnome-mplayer.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-mplayer.mo
 share/locale/ro/LC_MESSAGES/gnome-mplayer.mo
 share/locale/ru/LC_MESSAGES/gnome-mplayer.mo
+share/locale/si/LC_MESSAGES/gnome-mplayer.mo
 share/locale/sr/LC_MESSAGES/gnome-mplayer.mo
-share/locale/sr@latin/
-share/locale/sr@latin/LC_MESSAGES/
 share/locale/sr@latin/LC_MESSAGES/gnome-mplayer.mo
 share/locale/sv/LC_MESSAGES/gnome-mplayer.mo
+share/locale/th/LC_MESSAGES/gnome-mplayer.mo
 share/locale/tr/LC_MESSAGES/gnome-mplayer.mo
+share/locale/ug/LC_MESSAGES/gnome-mplayer.mo
+share/locale/uk/LC_MESSAGES/gnome-mplayer.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-mplayer.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-mplayer.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-mplayer.mo
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

@@ -1,39 +1,39 @@
-$OpenBSD: patch-configure,v 1.4 2010/11/08 15:04:15 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.5 2011/04/28 11:47:48 dcoppa Exp $
 
 don't check for libgpod 0.6.x: it's not in our ports tree
 disable gnome-power-manager support
 
---- configure.orig	Fri Nov  5 17:16:53 2010
-+++ configure	Mon Nov  8 11:10:05 2010
-@@ -609,8 +609,6 @@ GPOD_CFLAGS
+--- configure.orig	Tue Apr 26 15:08:48 2011
++++ configure	Tue Apr 26 15:10:54 2011
+@@ -620,8 +620,6 @@ GPOD_CFLAGS
  GPOD07_LIBS
  GPOD07_CFLAGS
  GPOD_DEFINES
 -GPOD06_LIBS
 -GPOD06_CFLAGS
  NOTIFY_DEFINES
+ LIBNOTIFY_07_LIBS
+ LIBNOTIFY_07_CFLAGS
+@@ -866,8 +864,6 @@ NOTIFY_CFLAGS
  NOTIFY_LIBS
- NOTIFY_CFLAGS
-@@ -818,8 +816,6 @@ ALSA_CFLAGS
- ALSA_LIBS
- NOTIFY_CFLAGS
- NOTIFY_LIBS
+ LIBNOTIFY_07_CFLAGS
+ LIBNOTIFY_07_LIBS
 -GPOD06_CFLAGS
 -GPOD06_LIBS
  GPOD07_CFLAGS
  GPOD07_LIBS
  MUSICBRAINZ_CFLAGS
-@@ -1519,9 +1515,6 @@ Some influential environment variables:
-   NOTIFY_CFLAGS
-               C compiler flags for NOTIFY, overriding pkg-config
-   NOTIFY_LIBS linker flags for NOTIFY, overriding pkg-config
+@@ -1597,9 +1593,6 @@ Some influential environment variables:
+               C compiler flags for LIBNOTIFY_07, overriding pkg-config
+   LIBNOTIFY_07_LIBS
+               linker flags for LIBNOTIFY_07, overriding pkg-config
 -  GPOD06_CFLAGS
 -              C compiler flags for GPOD06, overriding pkg-config
 -  GPOD06_LIBS linker flags for GPOD06, overriding pkg-config
    GPOD07_CFLAGS
                C compiler flags for GPOD07, overriding pkg-config
    GPOD07_LIBS linker flags for GPOD07, overriding pkg-config
-@@ -8338,84 +8331,6 @@ fi
+@@ -8926,86 +8919,6 @@ fi
  if test "x$with_libgpod" != xno; then :
  
  pkg_failed=no
@@ -76,6 +76,8 @@ disable gnome-power-manager support
 -
 -
 -if test $pkg_failed = yes; then
+-   	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
 -
 -if $PKG_CONFIG --atleast-pkgconfig-version 0.20; then
 -        _pkg_short_errors_supported=yes
@@ -90,13 +92,13 @@ disable gnome-power-manager support
 -	# Put the nasty error message in config.log where it belongs
 -	echo "$GPOD06_PKG_ERRORS" >&5
 -
--	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
--$as_echo "no" >&6; }
--                { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Compiling without libgpod 0.6.0 support" >&5
--$as_echo "$as_me: WARNING: Compiling without libgpod 0.6.0 support" >&2;}
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: Compiling without libgpod 0.6.0 support" >&5
+-$as_echo "$as_me: Compiling without libgpod 0.6.0 support" >&6;}
 -elif test $pkg_failed = untried; then
--	{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Compiling without libgpod 0.6.0 support" >&5
--$as_echo "$as_me: WARNING: Compiling without libgpod 0.6.0 support" >&2;}
+-     	{ $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-$as_echo "no" >&6; }
+-	{ $as_echo "$as_me:${as_lineno-$LINENO}: Compiling without libgpod 0.6.0 support" >&5
+-$as_echo "$as_me: Compiling without libgpod 0.6.0 support" >&6;}
 -else
 -	GPOD06_CFLAGS=$pkg_cv_GPOD06_CFLAGS
 -	GPOD06_LIBS=$pkg_cv_GPOD06_LIBS
@@ -118,7 +120,7 @@ disable gnome-power-manager support
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for GPOD07" >&5
  $as_echo_n "checking for GPOD07... " >&6; }
  
-@@ -8491,8 +8406,8 @@ fi
+@@ -9083,8 +8996,8 @@ fi
  
  fi
  
@@ -129,10 +131,11 @@ disable gnome-power-manager support
  
  
  
-@@ -8749,40 +8664,6 @@ $as_echo "#define SS_INHIBIT 0" >>confdefs.h
+@@ -9318,47 +9231,6 @@ $as_echo "#define SM_INHIBIT 0" >>confdefs.h
+ $as_echo "#define SS_INHIBIT 0" >>confdefs.h
  
  
- 
+-
 -# Check whether --with-gpm-new-method was given.
 -if test "${with_gpm_new_method+set}" = set; then :
 -  withval=$with_gpm_new_method; CHECK_GPM=no
@@ -150,23 +153,29 @@ disable gnome-power-manager support
 -
 -
 -if test x$CHECK_GPM = "xyes"; then
--    if test -x `which gnome-power-manager`; then
+-	GPM=`which gnome-power-manager`
+-    if test "$GPM" != ""; then
 -            { $as_echo "$as_me:${as_lineno-$LINENO}: Checking for gnome-power-manager support" >&5
 -$as_echo "$as_me: Checking for gnome-power-manager support" >&6;}
--            GPMVER=`gnome-power-manager --version | sed -e 's/.* 2.//' | cut -b1-2`
--            if test $GPMVER -ge 26; then
+-            GPMVER=`$GPM --version | sed -e 's/.* 2.//' | cut -b1-2`
+-            if test -n $GPMVER; then
 -
 -$as_echo "#define SM_INHIBIT 1" >>confdefs.h
 -
--            fi
--            if test $GPMVER -lt 26; then
+-            else
+-                if test $GPMVER -ge 26; then
+-
+-$as_echo "#define SM_INHIBIT 1" >>confdefs.h
+-
+-                fi
+-                if test $GPMVER -lt 26; then
 -
 -$as_echo "#define SS_INHIBIT 1" >>confdefs.h
 -
+-                fi
 -            fi
--
 -    fi
 -fi
  
- for ac_header in mntent.h
- do :
+ if test x$with_gsettings = "xyes"; then
+ 

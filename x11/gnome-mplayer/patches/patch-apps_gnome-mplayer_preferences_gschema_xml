@@ -1,0 +1,52 @@
+$OpenBSD: patch-apps_gnome-mplayer_preferences_gschema_xml,v 1.1 2011/04/28 11:47:48 dcoppa Exp $
+
+set some sane defaults:
+use mplayer's software volume control
+disable bar animation in full screen
+use xscrnsaver controls over gnome-power-manager
+start with softvol at 100 by default
+
+--- apps.gnome-mplayer.preferences.gschema.xml.orig	Mon Mar  7 22:44:54 2011
++++ apps.gnome-mplayer.preferences.gschema.xml	Tue Apr 26 16:06:53 2011
+@@ -101,7 +101,7 @@
+       <description>When set to TRUE the ability to pause on mouse click is disabled</description>
+     </key>
+     <key name="disable-animation" type="b">
+-      <default>false</default>
++      <default>true</default>
+       <summary>Disable Animation</summary>
+       <description>Disable animation of fullscreen control bar sliding away</description>
+     </key>
+@@ -121,7 +121,7 @@
+       <description>When set to TRUE the cache value is always used, even for streaming media</description>
+     </key>
+     <key name="softvol" type="b">
+-      <default>false</default>
++      <default>true</default>
+       <summary>Have mplayer use the softvol option</summary>
+       <description>When set to TRUE the softvol option is passed to mplayer, useful for machines without pulseaudio</description>
+     </key>
+@@ -246,7 +246,7 @@
+       <description>Will load and save the playlist when the program runs</description>
+     </key>
+     <key name="use-xscrnsaver" type="b">
+-      <default>false</default>
++      <default>true</default>
+       <summary>Set to TRUE if you want to use xscrnsaver controls over gnome-power-manager</summary>
+       <description>When enabled directly tells the xscreensaver to inhibit itself, otherwise uses gnome-power-manager</description>
+     </key>
+@@ -261,12 +261,12 @@
+       <description>Configuration value for mplayer to control the number of audio channels</description>
+     </key>
+     <key name="remember-softvol" type="b">
+-      <default>false</default>
++      <default>true</default>
+       <summary>Remember the software volume</summary>
+       <description>Remember the software volume value</description>
+     </key>
+     <key name="volume-softvol" type="d">
+-      <default>1.0</default>
++      <default>100.0</default>
+       <summary>Remembered software volume</summary>
+       <description>Remembered software volume</description>
+     </key>

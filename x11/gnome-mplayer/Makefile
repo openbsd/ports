@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.34 2011/04/21 07:07:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2011/04/28 11:47:48 dcoppa Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
-DISTNAME =		gnome-mplayer-1.0.0
-REVISION =		6
+DISTNAME =		gnome-mplayer-1.0.3
 CATEGORIES =		x11 multimedia
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -25,7 +24,8 @@ WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 	pangoft2-1.0 pixman-1 png pthread pthread-stubs musicbrainz3 \
 	xcb xcb-render xcb-shm z notify gpod curl
 
-MODULES =		devel/gettext
+MODULES =		devel/gettext \
+			devel/dconf
 
 LIB_DEPENDS =		devel/libnotify>=0.7.2 \
 			audio/libgpod \
@@ -53,8 +53,9 @@ CONFIGURE_ARGS =	--with-gio \
 			--with-libmusicbrainz3 \
 			--enable-panscan \
 			--without-alsa \
-			--without-flat-volume \
 			--without-gconf \
-			--disable-nautilus
+			--without-pulseaudio \
+			--disable-nautilus \
+			--disable-silent-rules
 
 .include <bsd.port.mk>
