@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/28 10:50:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/28 13:49:48 jasper Exp $
+
+SHARED_ONLY=		Yes
 
 COMMENT=		social web services integration framework
 
 GNOME_PROJECT=		libsocialweb
-GNOME_VERSION=		0.25.15
+GNOME_VERSION=		0.25.16
 
 SHARED_LIBS +=  socialweb-client     2.0      # 2.0
 SHARED_LIBS +=  socialweb-keyfob          0.0 # 0.0
@@ -31,10 +33,13 @@ WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 xml2 z
 
 BUILD_DEPENDS=		devel/gobject-introspection
 LIB_DEPENDS=		devel/json-glib \
-			net/librest
+			net/librest>=0.7.10
+
+LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--disable-static \
 			--enable-introspection \
 			--enable-all-services \
 			--with-online=always # Other choices are ConnMan and NM

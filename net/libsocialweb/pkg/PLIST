@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/28 10:50:46 jasper Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.2 2011/04/28 13:49:48 jasper Exp $
 include/libsocialweb/
 include/libsocialweb/interfaces/
 include/libsocialweb/interfaces/sw-avatar-ginterface.h
@@ -41,51 +40,46 @@ include/libsocialweb/libsocialweb/sw-set.h
 include/libsocialweb/libsocialweb/sw-types.h
 include/libsocialweb/libsocialweb/sw-utils.h
 include/libsocialweb/libsocialweb/sw-web.h
-lib/girepository-1.0/
 lib/girepository-1.0/SocialWebClient-0.25.typelib
 lib/libsocialweb/
-lib/libsocialweb-client.a
 lib/libsocialweb-client.la
-lib/libsocialweb-keyfob.a
+@lib lib/libsocialweb-client.so.${LIBsocialweb-client_VERSION}
 lib/libsocialweb-keyfob.la
-lib/libsocialweb-keystore.a
+@lib lib/libsocialweb-keyfob.so.${LIBsocialweb-keyfob_VERSION}
 lib/libsocialweb-keystore.la
-lib/libsocialweb.a
+@lib lib/libsocialweb-keystore.so.${LIBsocialweb-keystore_VERSION}
 lib/libsocialweb.la
+@lib lib/libsocialweb.so.${LIBsocialweb_VERSION}
 lib/libsocialweb/services/
-@comment lib/libsocialweb/services/libfacebook.a
 @comment lib/libsocialweb/services/libfacebook.la
-@comment lib/libsocialweb/services/libflickr.a
+lib/libsocialweb/services/libfacebook.so
 @comment lib/libsocialweb/services/libflickr.la
-@comment lib/libsocialweb/services/liblastfm.a
+lib/libsocialweb/services/libflickr.so
 @comment lib/libsocialweb/services/liblastfm.la
-@comment lib/libsocialweb/services/libphotobucket.a
+lib/libsocialweb/services/liblastfm.so
+@comment lib/libsocialweb/services/libmyspace.la
+lib/libsocialweb/services/libmyspace.so
 @comment lib/libsocialweb/services/libphotobucket.la
-@comment lib/libsocialweb/services/libplurk.a
+lib/libsocialweb/services/libphotobucket.so
 @comment lib/libsocialweb/services/libplurk.la
-@comment lib/libsocialweb/services/libsina.a
+lib/libsocialweb/services/libplurk.so
 @comment lib/libsocialweb/services/libsina.la
-@comment lib/libsocialweb/services/libsmugmug.a
+lib/libsocialweb/services/libsina.so
 @comment lib/libsocialweb/services/libsmugmug.la
-@comment lib/libsocialweb/services/libtwitter.a
+lib/libsocialweb/services/libsmugmug.so
 @comment lib/libsocialweb/services/libtwitter.la
-@comment lib/libsocialweb/services/libvimeo.a
+lib/libsocialweb/services/libtwitter.so
 @comment lib/libsocialweb/services/libvimeo.la
-@comment lib/libsocialweb/services/libyoutube.a
+lib/libsocialweb/services/libvimeo.so
 @comment lib/libsocialweb/services/libyoutube.la
-lib/pkgconfig/
+lib/libsocialweb/services/libyoutube.so
 lib/pkgconfig/libsocialweb-client.pc
 lib/pkgconfig/libsocialweb-keyfob.pc
 lib/pkgconfig/libsocialweb-keystore.pc
 lib/pkgconfig/libsocialweb-module.pc
 @bin libexec/libsocialweb-core
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/libsocialweb.service
-share/gir-1.0/
 share/gir-1.0/SocialWebClient-0.25.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/libsocialweb/
 share/gtk-doc/html/libsocialweb-client/
 share/gtk-doc/html/libsocialweb-client/SwClient.html
@@ -167,6 +161,8 @@ share/libsocialweb/services/facebook.keys
 share/libsocialweb/services/flickr.keys
 share/libsocialweb/services/lastfm.keys
 share/libsocialweb/services/lastfm.png
+share/libsocialweb/services/myspace.keys
+share/libsocialweb/services/myspace.png
 share/libsocialweb/services/photobucket.keys
 share/libsocialweb/services/plurk.keys
 share/libsocialweb/services/plurk.png
@@ -179,109 +175,38 @@ share/libsocialweb/services/vimeo.keys
 share/libsocialweb/services/vimeo.png
 share/libsocialweb/services/youtube.keys
 share/libsocialweb/services/youtube.png
-share/locale/
-share/locale/ar/
-share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/libsocialweb.mo
-share/locale/ast/
-share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/libsocialweb.mo
-share/locale/bn_IN/
-share/locale/bn_IN/LC_MESSAGES/
 share/locale/bn_IN/LC_MESSAGES/libsocialweb.mo
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
 share/locale/ca/LC_MESSAGES/libsocialweb.mo
-share/locale/ca@valencia/
-share/locale/ca@valencia/LC_MESSAGES/
 share/locale/ca@valencia/LC_MESSAGES/libsocialweb.mo
-share/locale/cs/
-share/locale/cs/LC_MESSAGES/
 share/locale/cs/LC_MESSAGES/libsocialweb.mo
-share/locale/da/
-share/locale/da/LC_MESSAGES/
 share/locale/da/LC_MESSAGES/libsocialweb.mo
-share/locale/de/
-share/locale/de/LC_MESSAGES/
 share/locale/de/LC_MESSAGES/libsocialweb.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/libsocialweb.mo
-share/locale/es/
-share/locale/es/LC_MESSAGES/
 share/locale/es/LC_MESSAGES/libsocialweb.mo
-share/locale/eu/
-share/locale/eu/LC_MESSAGES/
 share/locale/eu/LC_MESSAGES/libsocialweb.mo
-share/locale/fa/
-share/locale/fa/LC_MESSAGES/
 share/locale/fa/LC_MESSAGES/libsocialweb.mo
-share/locale/fi/
-share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/libsocialweb.mo
-share/locale/fr/
-share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/libsocialweb.mo
-share/locale/gl/
-share/locale/gl/LC_MESSAGES/
 share/locale/gl/LC_MESSAGES/libsocialweb.mo
-share/locale/hu/
-share/locale/hu/LC_MESSAGES/
 share/locale/hu/LC_MESSAGES/libsocialweb.mo
-share/locale/id/
-share/locale/id/LC_MESSAGES/
 share/locale/id/LC_MESSAGES/libsocialweb.mo
-share/locale/it/
-share/locale/it/LC_MESSAGES/
 share/locale/it/LC_MESSAGES/libsocialweb.mo
-share/locale/ja/
-share/locale/ja/LC_MESSAGES/
 share/locale/ja/LC_MESSAGES/libsocialweb.mo
-share/locale/ko/
-share/locale/ko/LC_MESSAGES/
 share/locale/ko/LC_MESSAGES/libsocialweb.mo
-share/locale/nl/
-share/locale/nl/LC_MESSAGES/
 share/locale/nl/LC_MESSAGES/libsocialweb.mo
-share/locale/pa/
-share/locale/pa/LC_MESSAGES/
 share/locale/pa/LC_MESSAGES/libsocialweb.mo
-share/locale/pl/
-share/locale/pl/LC_MESSAGES/
 share/locale/pl/LC_MESSAGES/libsocialweb.mo
-share/locale/pt_BR/
-share/locale/pt_BR/LC_MESSAGES/
 share/locale/pt_BR/LC_MESSAGES/libsocialweb.mo
-share/locale/ro/
-share/locale/ro/LC_MESSAGES/
 share/locale/ro/LC_MESSAGES/libsocialweb.mo
-share/locale/ru/
-share/locale/ru/LC_MESSAGES/
 share/locale/ru/LC_MESSAGES/libsocialweb.mo
-share/locale/sk/
-share/locale/sk/LC_MESSAGES/
 share/locale/sk/LC_MESSAGES/libsocialweb.mo
-share/locale/sl/
-share/locale/sl/LC_MESSAGES/
 share/locale/sl/LC_MESSAGES/libsocialweb.mo
-share/locale/sv/
-share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/libsocialweb.mo
-share/locale/th/
-share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/libsocialweb.mo
-share/locale/tr/
-share/locale/tr/LC_MESSAGES/
 share/locale/tr/LC_MESSAGES/libsocialweb.mo
-share/locale/uk/
-share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/libsocialweb.mo
-share/locale/wa/
-share/locale/wa/LC_MESSAGES/
 share/locale/wa/LC_MESSAGES/libsocialweb.mo
-share/locale/zh_CN/
-share/locale/zh_CN/LC_MESSAGES/
 share/locale/zh_CN/LC_MESSAGES/libsocialweb.mo
-share/locale/zh_TW/
-share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/libsocialweb.mo
