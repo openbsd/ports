@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/04/28 09:51:33 landry Exp $
 
 COMMENT =	map viewer using Openstreetmap data
 
@@ -24,7 +24,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-AUTOCONF_VERSION=	2.63
+AUTOCONF_VERSION=	2.65
 CONFIGURE_STYLE=	autoconf
 MODGCONF2_SCHEMAS_DIR=	emerillon
 MODGNOME_HELP_FILES=	Yes
