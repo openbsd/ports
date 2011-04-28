@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure_ac,v 1.1 2010/09/30 07:33:38 jasper Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2011/04/28 10:49:15 jasper Exp $
 
 Adjust for champlain 0.8 and rest.
 
@@ -31,7 +31,7 @@ Adjust for champlain 0.8 and rest.
    PKG_CHECK_MODULES(SEARCH_DEPS,
      [
 -      rest-0.6 >= 0.6
-+      rest >= 0.6
++      rest-0.7 >= 0.6
      ]
    )
  

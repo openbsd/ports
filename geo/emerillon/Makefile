@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2011/04/28 09:51:33 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2011/04/28 10:49:15 jasper Exp $
 
 COMMENT =	map viewer using Openstreetmap data
 
 GNOME_VERSION =	0.1.2
 GNOME_PROJECT =	emerillon
-REVISION=	1
+REVISION=	2
 
 CATEGORIES =	geo x11
 
@@ -34,10 +34,9 @@ CONFIGURE_ARGS+=--enable-introspection=no
 BUILD_DEPENDS = ${RUN_DEPENDS}
 RUN_DEPENDS =	lang/vala
 LIB_DEPENDS =	geo/libchamplain/core>=0.8.0 \
-		devel/libsoup,-gnome \
 		devel/ethos \
 		geo/geoclue \
-		net/librest
+		net/librest>=0.7.9
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo
@@ -49,6 +48,6 @@ WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 sqlite3 tasn1 xcb xml2 z ethos-1.0 ethos-ui-1.0
 WANTLIB += proxy ORBit-2 Xxf86vm dbus-1 dbus-glib-1 drm gnome-keyring
 WANTLIB += champlain-0.8 champlain-gtk-0.8 soup-gnome-2.4
-WANTLIB += geoclue rest xcb-render xcb-shm
+WANTLIB += geoclue rest-0.7 xcb-render xcb-shm
 
 .include <bsd.port.mk>
