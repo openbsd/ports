@@ -1,16 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.2 2011/03/13 10:26:26 dcoppa Exp $
+$OpenBSD: patch-configure_ac,v 1.3 2011/04/28 18:38:04 jasper Exp $
 --- configure.ac.orig	Fri Jan 21 15:52:00 2011
 +++ configure.ac	Sat Jan 29 21:18:41 2011
-@@ -372,9 +372,6 @@ fi
- 
- # Checks for libraries:
- 
--# check for nearbyint()
--AC_CHECK_LIB(m, nearbyint, [MATH_LIB=""], AC_MSG_ERROR([nearbyint not found.]))
--
- # When (cross-)compiling for Windows (MinGW) we need to link in iberty for Popt
- # and the Dr. MinGW derived exception handler.
- if test "x$host_os_mingw32" = "xyes" ; then
 @@ -414,7 +411,7 @@ AC_CHECK_LIB(popt, poptGetContext, AC_SUBST([POPT_LIBS
  
  # Look for PhysicsFS
