@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.25 2011/04/01 08:32:32 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.26 2011/04/28 20:44:47 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -18,6 +18,7 @@ HOMEPAGE ?=	http://www.mozilla.org/projects/${_MOZ_PROJECT_SHORT}
 MASTER_SITES ?=	http://releases.mozilla.org/pub/mozilla.org/${_MOZ_PROJECT_SHORT}/releases/${MOZILLA_VERSION}/source/
 DISTNAME ?=	${_MOZ_PROJECT_SHORT}-${MOZILLA_VERSION}.source
 EXTRACT_SUFX ?=	.tar.bz2
+DIST_SUBDIR ?=	mozilla
 
 MODMOZ_RUN_DEPENDS =	devel/desktop-file-utils
 MODMOZ_BUILD_DEPENDS =	devel/libIDL \

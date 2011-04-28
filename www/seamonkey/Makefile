@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2011/03/24 11:41:11 landry Exp $
+# $OpenBSD: Makefile,v 1.78 2011/04/28 20:44:47 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -76,8 +76,6 @@ DISTFILES+=	${EXTRACT_ONLY}
 .for language in ${LANGUAGES}
 DISTFILES+=	seamonkey-${MOZILLA_VERSION}.${language}.langpack.xpi:0
 .endfor
-
-DIST_SUBDIR=	seamonkey-${MOZILLA_VERSION}
 
 MODULES=	www/mozilla devel/gettext lang/python
 BUILD_DEPENDS+=	archivers/unzip
