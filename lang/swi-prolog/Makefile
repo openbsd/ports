@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/04/28 18:59:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2011/04/28 19:18:22 jasper Exp $
 
 COMMENT =		Prolog for the real world
 
@@ -46,6 +46,14 @@ WANTLIB +=  c m ncursesw pthread pthread-stubs readline z
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS =		V XV FULLARCH BOOT
+
+# warning: #warning "<malloc.h> is obsolete, use <stdlib.h>"
+pre-patch:
+	find ${WRKSRC}/packages/{clib,sgml,xpce} -name '*.[ch]' | \
+	  xargs fgrep -l malloc.h | \
+	while read i; do \
+		sed -e 's/malloc.h/stdlib.h/' $$i >$$i.bak && mv $$i.bak $$i; \
+	done
 
 post-install:
 	cd ${PREFIX}/lib && ln -s swipl-$V/lib/${FULLARCH}/libpl.so.${LIBpl_VERSION}
