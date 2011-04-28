@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/02 14:06:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/04/28 09:57:01 ajacoutot Exp $
 
 COMMENT =		OpenGL elements for GStreamer
 
@@ -24,6 +24,8 @@ LIB_DEPENDS =		${P}/plugins-base \
 			graphics/glew
 
 LDFLAGS +=		-lm -lGL
+
+AUTOCONF_VERSION =	2.65
 
 CONFIGURE_ENV +=	ac_cv_path_PYTHON=""
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/02 14:05:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/04/28 09:57:01 ajacoutot Exp $
 
 COMMENT =		farsight element for GStreamer
 
@@ -23,7 +23,7 @@ LIB_DEPENDS =		audio/gsm \
 			$P/plugins-base \
 			textproc/libxml
 
-AUTOCONF_VERSION =	2.62
+AUTOCONF_VERSION =	2.63
 
 MODULES +=		devel/gettext
 

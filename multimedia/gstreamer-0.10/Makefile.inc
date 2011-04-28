@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2011/04/07 12:46:05 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2011/04/28 09:57:01 ajacoutot Exp $
 
 CATEGORIES ?=	multimedia devel
 
@@ -26,7 +26,7 @@ LIBTOOL_FLAGS ?=	--tag=disable-static
 BUILD_DEPENDS +=	devel/bison \
 			devel/gobject-introspection
 
-AUTOCONF_VERSION ?=	2.62
+AUTOCONF_VERSION ?=	2.67
 CONFIGURE_STYLE ?=	autoconf
 
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
