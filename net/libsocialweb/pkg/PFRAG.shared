@@ -1,0 +1,15 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/04/28 10:50:46 jasper Exp $
+@lib lib/libsocialweb-client.so.${LIBsocialweb-client_VERSION}
+@lib lib/libsocialweb-keyfob.so.${LIBsocialweb-keyfob_VERSION}
+@lib lib/libsocialweb-keystore.so.${LIBsocialweb-keystore_VERSION}
+@lib lib/libsocialweb.so.${LIBsocialweb_VERSION}
+lib/libsocialweb/services/libfacebook.so
+lib/libsocialweb/services/libflickr.so
+lib/libsocialweb/services/liblastfm.so
+lib/libsocialweb/services/libphotobucket.so
+lib/libsocialweb/services/libplurk.so
+lib/libsocialweb/services/libsina.so
+lib/libsocialweb/services/libsmugmug.so
+lib/libsocialweb/services/libtwitter.so
+lib/libsocialweb/services/libvimeo.so
+lib/libsocialweb/services/libyoutube.so
