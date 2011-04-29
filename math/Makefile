@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2011/03/07 22:27:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.104 2011/04/29 17:55:50 matthew Exp $
 #
 
      SUBDIR =
@@ -14,6 +14,7 @@
      SUBDIR += cblas
      SUBDIR += ccolamd
      SUBDIR += cfitsio
+     SUBDIR += cgal
      SUBDIR += colamd
      SUBDIR += coq
      SUBDIR += ecm
