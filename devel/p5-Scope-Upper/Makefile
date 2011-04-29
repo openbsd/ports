@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/04/29 14:09:52 gsoares Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	act on upper scopes
 
 MODULES =	cpan
-DISTNAME =	Scope-Upper-0.12
-REVISION =	1
+DISTNAME =	Scope-Upper-0.14
 CATEGORIES =	devel
-USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
@@ -17,6 +15,8 @@ PERMIT_DISTFILES_FTP =		Yes
 
 CPAN_AUTHOR =	VPIT
 
+MODCPAN_EXAMPLES =	Yes
+MODCPAN_EXAMPLES_DIST =	samples
 MAKE_ENV +=	TEST_POD=1
 
 .include <bsd.port.mk>
