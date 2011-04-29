@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/18 12:03:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/29 06:38:34 jasper Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		CALF LADSPA plugins
 DISTNAME =		calf-0.0.18.5
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		audio
 
