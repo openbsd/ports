@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/07/12 04:51:36 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/29 11:47:12 sthen Exp $
 
 PKG_ARCH =	*
 COMMENT =	lightweight C++ template library for linear algebra
@@ -9,7 +9,7 @@ DIST_SUBDIR =	eigen
 VERSION =	2.0.14
 DISTNAME =	${VERSION}
 PKGNAME =	eigen2-${VERSION}
-WRKDIST =	${WRKDIR}/eigen
+WRKDIST =	${WRKDIR}/eigen-eigen-f30db88dec8b
 
 # relaxed GPL (LGPL for template libs)
 
