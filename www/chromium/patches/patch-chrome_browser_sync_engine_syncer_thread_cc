@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_sync_engine_syncer_thread_cc,v 1.3 2011/03/15 11:38:05 robert Exp $
---- chrome/browser/sync/engine/syncer_thread.cc.orig	Fri Mar 11 10:01:38 2011
-+++ chrome/browser/sync/engine/syncer_thread.cc	Mon Mar 14 10:55:37 2011
-@@ -263,7 +263,7 @@ void SyncerThread::ThreadMainLoop() {
+$OpenBSD: patch-chrome_browser_sync_engine_syncer_thread_cc,v 1.4 2011/04/29 13:18:01 robert Exp $
+--- chrome/browser/sync/engine/syncer_thread.cc.orig	Tue Apr 26 10:01:40 2011
++++ chrome/browser/sync/engine/syncer_thread.cc	Thu Apr 28 11:17:49 2011
+@@ -293,7 +293,7 @@ void SyncerThread::ThreadMainLoop() {
    bool initial_sync_for_thread = true;
    bool continue_sync_cycle = false;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_sync_engine_syncer_thread_cc,v 1.3 2011/03/15 11:
    idle_query_.reset(new IdleQueryLinux());
  #endif
  
-@@ -358,7 +358,7 @@ void SyncerThread::ThreadMainLoop() {
+@@ -389,7 +389,7 @@ void SyncerThread::ThreadMainLoop() {
          static_cast<int>(vault_.current_wait_interval_.poll_delta.InSeconds()),
          &user_idle_milliseconds, &continue_sync_cycle, nudged);
    }
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_sync_engine_syncer_thread_cc,v 1.3 2011/03/15 11:
    idle_query_.reset();
  #endif
  }
-@@ -832,7 +832,7 @@ int SyncerThread::UserIdleTime() {
+@@ -877,7 +877,7 @@ int SyncerThread::UserIdleTime() {
      return 0;
    }
    return idle_time / 1000000;  // nano to milli

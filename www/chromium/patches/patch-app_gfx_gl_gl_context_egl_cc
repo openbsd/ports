@@ -1,9 +1,9 @@
-$OpenBSD: patch-app_gfx_gl_gl_context_egl_cc,v 1.3 2011/03/15 11:38:05 robert Exp $
---- app/gfx/gl/gl_context_egl.cc.orig	Mon Mar 14 10:58:37 2011
-+++ app/gfx/gl/gl_context_egl.cc	Mon Mar 14 10:59:00 2011
-@@ -4,7 +4,7 @@
- 
- #include <EGL/egl.h>
+$OpenBSD: patch-app_gfx_gl_gl_context_egl_cc,v 1.4 2011/04/29 13:18:01 robert Exp $
+--- app/gfx/gl/gl_context_egl.cc.orig	Tue Apr 26 10:01:05 2011
++++ app/gfx/gl/gl_context_egl.cc	Thu Apr 28 11:17:48 2011
+@@ -13,7 +13,7 @@
+ // it brings in #defines that cause conflicts.
+ #include "app/gfx/gl/gl_bindings.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_OPENBSD)

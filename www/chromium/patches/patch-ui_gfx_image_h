@@ -1,0 +1,21 @@
+$OpenBSD: patch-ui_gfx_image_h,v 1.1 2011/04/29 13:18:02 robert Exp $
+--- ui/gfx/image.h.orig	Thu Apr 28 12:10:49 2011
++++ ui/gfx/image.h	Thu Apr 28 12:10:58 2011
+@@ -43,7 +43,7 @@ class Image {
+   // Creates a new image with the default representation. The object will take
+   // ownership of the image.
+   explicit Image(const SkBitmap* bitmap);
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   // Does not increase |pixbuf|'s reference count; expects to take ownership.
+   explicit Image(GdkPixbuf* pixbuf);
+ #elif defined(OS_MACOSX)
+@@ -57,7 +57,7 @@ class Image {
+   // Conversion handlers.
+   operator const SkBitmap*();
+   operator const SkBitmap&();
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   operator GdkPixbuf*();
+ #elif defined(OS_MACOSX)
+   operator NSImage*();

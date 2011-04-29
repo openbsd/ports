@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_renderer_webplugin_delegate_proxy_cc,v 1.1 2011/03/15 11:38:05 robert Exp $
---- chrome/renderer/webplugin_delegate_proxy.cc.orig	Mon Mar 14 19:30:50 2011
-+++ chrome/renderer/webplugin_delegate_proxy.cc	Mon Mar 14 19:39:56 2011
-@@ -158,7 +158,7 @@ class ResourceClientProxy : public webkit::npapi::WebP
+$OpenBSD: patch-chrome_renderer_webplugin_delegate_proxy_cc,v 1.2 2011/04/29 13:18:01 robert Exp $
+--- chrome/renderer/webplugin_delegate_proxy.cc.orig	Tue Apr 26 10:01:45 2011
++++ chrome/renderer/webplugin_delegate_proxy.cc	Thu Apr 28 11:17:49 2011
+@@ -163,7 +163,7 @@ class ResourceClientProxy : public webkit::npapi::WebP
    bool multibyte_response_expected_;
  };
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_renderer_webplugin_delegate_proxy_cc,v 1.1 2011/03/15 11:
  static void ReleaseTransportDIB(TransportDIB* dib) {
    if (dib) {
      IPC::Message* message = new ViewHostMsg_FreeTransportDIB(dib->id());
-@@ -184,7 +184,7 @@ WebPluginDelegateProxy::WebPluginDelegateProxy(
+@@ -189,7 +189,7 @@ WebPluginDelegateProxy::WebPluginDelegateProxy(
  }
  
  WebPluginDelegateProxy::~WebPluginDelegateProxy() {
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_renderer_webplugin_delegate_proxy_cc,v 1.1 2011/03/15 11:
    // Ask the browser to release old TransportDIB objects for which no
    // PluginHostMsg_UpdateGeometry_ACK was ever received from the plugin
    // process.
-@@ -530,7 +530,7 @@ void WebPluginDelegateProxy::UpdateGeometry(const gfx:
+@@ -535,7 +535,7 @@ void WebPluginDelegateProxy::UpdateGeometry(const gfx:
    bool bitmaps_changed = false;
  
    PluginMsg_UpdateGeometry_Param param;
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_renderer_webplugin_delegate_proxy_cc,v 1.1 2011/03/15 11:
    param.ack_key = -1;
  #endif
  
-@@ -542,7 +542,7 @@ void WebPluginDelegateProxy::UpdateGeometry(const gfx:
+@@ -547,7 +547,7 @@ void WebPluginDelegateProxy::UpdateGeometry(const gfx:
        bitmaps_changed = true;
  
        bool needs_background_store = transparent_;
@@ -37,7 +37,7 @@ $OpenBSD: patch-chrome_renderer_webplugin_delegate_proxy_cc,v 1.1 2011/03/15 11:
        // We don't support transparency under QuickDraw, and CoreGraphics
        // preserves transparency information (and does the compositing itself)
        // so plugins don't need access to the page background.
-@@ -614,7 +614,7 @@ void WebPluginDelegateProxy::UpdateGeometry(const gfx:
+@@ -619,7 +619,7 @@ void WebPluginDelegateProxy::UpdateGeometry(const gfx:
  }
  
  void WebPluginDelegateProxy::ResetWindowlessBitmaps() {
@@ -46,7 +46,7 @@ $OpenBSD: patch-chrome_renderer_webplugin_delegate_proxy_cc,v 1.1 2011/03/15 11:
    DCHECK(!background_store_.get());
    // The Mac TransportDIB implementation uses base::SharedMemory, which
    // cannot be disposed of if an in-flight UpdateGeometry message refers to
-@@ -675,12 +675,12 @@ bool WebPluginDelegateProxy::CreateSharedBitmap(
+@@ -680,12 +680,12 @@ bool WebPluginDelegateProxy::CreateSharedBitmap(
      scoped_ptr<TransportDIB>* memory,
      scoped_ptr<skia::PlatformCanvas>* canvas) {
    const size_t size = BitmapSizeForPluginRect(plugin_rect_);

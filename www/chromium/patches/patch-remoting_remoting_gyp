@@ -1,46 +1,35 @@
-$OpenBSD: patch-remoting_remoting_gyp,v 1.2 2011/03/15 11:38:05 robert Exp $
---- remoting/remoting.gyp.orig	Fri Mar 11 10:01:06 2011
-+++ remoting/remoting.gyp	Mon Mar 14 10:55:37 2011
-@@ -16,7 +16,7 @@
-   },
- 
-   'conditions': [
--    ['OS=="linux" or OS=="mac"', {
-+    ['OS=="linux" or OS=="openbsd" or OS=="mac"', {
-       'targets': [
-         # Simple webserver for testing chromoting client plugin.
-         {
-@@ -40,6 +40,8 @@
-             'chromoting_base',
-             'chromoting_client',
-             'chromoting_jingle_glue',
-+	    '../build/linux/system.gyp:x11',
-+	    '../build/linux/system.gyp:xext',
-           ],
-           'link_settings': {
-             'libraries': [
-@@ -221,7 +223,11 @@
-             'host/event_executor_win.h',
+$OpenBSD: patch-remoting_remoting_gyp,v 1.3 2011/04/29 13:18:01 robert Exp $
+--- remoting/remoting.gyp.orig	Tue Apr 26 10:01:06 2011
++++ remoting/remoting.gyp	Fri Apr 29 09:52:53 2011
+@@ -237,22 +237,22 @@
+             'host/user_authenticator_win.cc',
            ],
          }],
 -        ['OS=="linux"', {
 +        ['OS=="linux" or OS=="openbsd"', {
-+          'dependencies': [
-+	    '../build/linux/system.gyp:x11',
-+	    '../build/linux/system.gyp:xext',
-+          ],
            'sources': [
              'host/capturer_linux.cc',
              'host/capturer_linux.h',
-@@ -233,6 +239,7 @@
+             'host/event_executor_linux.cc',
+             'host/event_executor_linux.h',
+-            'host/user_authenticator_pam.cc',
+-            'host/user_authenticator_pam.h',
+-            'host/user_authenticator_linux.cc'
++            'host/user_authenticator_fake.cc',
++            'host/user_authenticator_fake.h',
++            'host/user_authenticator_bsd.cc',
+           ],
++          'include_dirs': [ '/usr/X11R6/include' ],
+           'link_settings': {
+             'libraries': [
                '-lX11',
                '-lXdamage',
                '-lXtst',
-+              '-lvpx',
+-              '-lpam',
              ],
            },
          }],
-@@ -500,7 +507,7 @@
+@@ -573,7 +573,7 @@
              'host/capturer_gdi_unittest.cc',
            ],
          }],

@@ -1,7 +1,7 @@
-$OpenBSD: patch-v8_src_x64_macro-assembler-x64_h,v 1.1 2011/03/23 12:33:26 robert Exp $
---- v8/src/x64/macro-assembler-x64.h.orig	Thu Mar 17 09:44:50 2011
-+++ v8/src/x64/macro-assembler-x64.h	Wed Mar 23 08:28:07 2011
-@@ -256,8 +256,9 @@ class MacroAssembler: public Assembler {
+$OpenBSD: patch-v8_src_x64_macro-assembler-x64_h,v 1.2 2011/04/29 13:18:02 robert Exp $
+--- v8/src/x64/macro-assembler-x64.h.orig	Tue Apr 26 10:22:52 2011
++++ v8/src/x64/macro-assembler-x64.h	Thu Apr 28 11:17:49 2011
+@@ -263,8 +263,9 @@ class MacroAssembler: public Assembler {
                                             int power);
  
  
@@ -13,7 +13,7 @@ $OpenBSD: patch-v8_src_x64_macro-assembler-x64_h,v 1.1 2011/03/23 12:33:26 rober
    void SmiCompare(Register dst, Smi* src);
    void SmiCompare(Register dst, const Operand& src);
    void SmiCompare(const Operand& dst, Register src);
-@@ -579,6 +580,8 @@ class MacroAssembler: public Assembler {
+@@ -594,6 +595,8 @@ class MacroAssembler: public Assembler {
    void Move(const Operand& dst, Handle<Object> source);
    void Cmp(Register dst, Handle<Object> source);
    void Cmp(const Operand& dst, Handle<Object> source);
@@ -22,7 +22,7 @@ $OpenBSD: patch-v8_src_x64_macro-assembler-x64_h,v 1.1 2011/03/23 12:33:26 rober
    void Push(Handle<Object> source);
  
    // Emit code to discard a non-negative number of pointer-sized elements
-@@ -646,6 +649,7 @@ class MacroAssembler: public Assembler {
+@@ -667,6 +670,7 @@ class MacroAssembler: public Assembler {
  
    // Abort execution if argument is not a smi. Used in debug code.
    void AbortIfNotSmi(Register object);

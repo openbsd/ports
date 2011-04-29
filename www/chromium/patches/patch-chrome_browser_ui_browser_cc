@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_browser_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
---- chrome/browser/ui/browser.cc.orig	Fri Mar 11 10:01:42 2011
-+++ chrome/browser/ui/browser.cc	Mon Mar 14 10:55:37 2011
-@@ -263,7 +263,7 @@ Browser::~Browser() {
+$OpenBSD: patch-chrome_browser_ui_browser_cc,v 1.3 2011/04/29 13:18:01 robert Exp $
+--- chrome/browser/ui/browser.cc.orig	Tue Apr 26 10:01:43 2011
++++ chrome/browser/ui/browser.cc	Thu Apr 28 11:17:49 2011
+@@ -277,7 +277,7 @@ Browser::~Browser() {
  
    BrowserList::RemoveBrowser(this);
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_browser_cc,v 1.2 2011/03/15 11:38:05 robert Ex
    if (!BrowserList::HasBrowserWithProfile(profile_)) {
      // We're the last browser window with this profile. We need to nuke the
      // TabRestoreService, which will start the shutdown of the
-@@ -810,7 +810,7 @@ string16 Browser::GetWindowTitleForCurrentTab() const 
+@@ -817,7 +817,7 @@ string16 Browser::GetWindowTitleForCurrentTab() const 
    // On Mac or ChromeOS, we don't want to suffix the page title with
    // the application name.
    return title;
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_ui_browser_cc,v 1.2 2011/03/15 11:38:05 robert Ex
    int string_id = IDS_BROWSER_WINDOW_TITLE_FORMAT;
    // Don't append the app name to window titles on app frames and app popups
    if (type_ & TYPE_APP)
-@@ -1459,7 +1459,7 @@ void Browser::ToggleFullscreenMode() {
+@@ -1499,7 +1499,7 @@ void Browser::ToggleFullscreenMode() {
    window_->SetFullscreen(!window_->IsFullscreen());
    // On Linux, setting fullscreen mode is an async call to the X server, which
    // may or may not support fullscreen mode.
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_ui_browser_cc,v 1.2 2011/03/15 11:38:05 robert Ex
    UpdateCommandsForFullscreenMode(window_->IsFullscreen());
  #endif
  }
-@@ -1706,7 +1706,7 @@ void Browser::OpenFile() {
+@@ -1758,7 +1758,7 @@ void Browser::OpenFile() {
  
  void Browser::OpenCreateShortcutsDialog() {
    UserMetrics::RecordAction(UserMetricsAction("CreateShortcut"), profile_);
@@ -37,7 +37,7 @@ $OpenBSD: patch-chrome_browser_ui_browser_cc,v 1.2 2011/03/15 11:38:05 robert Ex
    TabContentsWrapper* current_tab = GetSelectedTabContentsWrapper();
    DCHECK(current_tab &&
        web_app::IsValidUrl(current_tab->tab_contents()->GetURL())) <<
-@@ -2516,7 +2516,7 @@ void Browser::DuplicateContentsAt(int index) {
+@@ -2595,7 +2595,7 @@ void Browser::DuplicateContentsAt(int index) {
  }
  
  void Browser::CloseFrameAfterDragSession() {

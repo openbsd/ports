@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_icu_public_common_unicode_ptypes_h,v 1.1 2011/04/29 13:18:02 robert Exp $
+--- third_party/icu/public/common/unicode/ptypes.h.orig	Thu Apr 28 12:25:51 2011
++++ third_party/icu/public/common/unicode/ptypes.h	Thu Apr 28 12:26:04 2011
+@@ -26,6 +26,8 @@
+ #   include "unicode/pmac.h"
+ #elif defined(__linux__)
+ #   include "unicode/plinux.h"
++#elif defined(__OpenBSD__)
++#   include "unicode/popenbsd.h"
+ #else
+ #   include "unicode/platform.h"
+ #endif

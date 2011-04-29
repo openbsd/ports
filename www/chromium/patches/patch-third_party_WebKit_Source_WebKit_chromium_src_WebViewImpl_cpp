@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 1.1 2011/03/15 11:38:05 robert Exp $
---- third_party/WebKit/Source/WebKit/chromium/src/WebViewImpl.cpp.orig	Fri Mar 11 10:17:35 2011
-+++ third_party/WebKit/Source/WebKit/chromium/src/WebViewImpl.cpp	Mon Mar 14 10:57:25 2011
-@@ -130,7 +130,7 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 1.2 2011/04/29 13:18:02 robert Exp $
+--- third_party/WebKit/Source/WebKit/chromium/src/WebViewImpl.cpp.orig	Tue Apr 26 10:03:27 2011
++++ third_party/WebKit/Source/WebKit/chromium/src/WebViewImpl.cpp	Thu Apr 28 11:17:49 2011
+@@ -132,7 +132,7 @@
  #if OS(WINDOWS)
  #include "RenderThemeChromiumWin.h"
  #else
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 
  #include "RenderThemeChromiumLinux.h"
  #endif
  #include "RenderTheme.h"
-@@ -468,7 +468,7 @@ void WebViewImpl::mouseDown(const WebMouseEvent& event
+@@ -466,7 +466,7 @@ void WebViewImpl::mouseDown(const WebMouseEvent& event
          || (event.button == WebMouseEvent::ButtonLeft
              && event.modifiers & WebMouseEvent::ControlKey))
          mouseContextMenu(event);
@@ -19,7 +19,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 
      if (event.button == WebMouseEvent::ButtonRight)
          mouseContextMenu(event);
  #endif
-@@ -507,7 +507,7 @@ void WebViewImpl::mouseUp(const WebMouseEvent& event)
+@@ -505,7 +505,7 @@ void WebViewImpl::mouseUp(const WebMouseEvent& event)
      if (!mainFrameImpl() || !mainFrameImpl()->frameView())
          return;
  
@@ -28,7 +28,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 
      // If the event was a middle click, attempt to copy text into the focused
      // frame. We execute this before we let the page have a go at the event
      // because the page may change what is focused during in its event handler.
-@@ -591,11 +591,11 @@ bool WebViewImpl::keyEvent(const WebKeyboardEvent& eve
+@@ -589,11 +589,11 @@ bool WebViewImpl::keyEvent(const WebKeyboardEvent& eve
      if (!handler)
          return keyEventDefault(event);
  
@@ -42,7 +42,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 
          WebInputEvent::RawKeyDown;
  #endif
  
-@@ -605,7 +605,7 @@ bool WebViewImpl::keyEvent(const WebKeyboardEvent& eve
+@@ -603,7 +603,7 @@ bool WebViewImpl::keyEvent(const WebKeyboardEvent& eve
          sendContextMenuEvent(event);
          return true;
      }
@@ -51,7 +51,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 
  
      // It's not clear if we should continue after detecting a capslock keypress.
      // I'll err on the side of continuing, which is the pre-existing behaviour.
-@@ -739,7 +739,7 @@ bool WebViewImpl::touchEvent(const WebTouchEvent& even
+@@ -737,7 +737,7 @@ bool WebViewImpl::touchEvent(const WebTouchEvent& even
  }
  #endif
  
@@ -60,7 +60,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 
  // Mac has no way to open a context menu based on a keyboard event.
  bool WebViewImpl::sendContextMenuEvent(const WebKeyboardEvent& event)
  {
-@@ -2054,7 +2054,7 @@ void WebViewImpl::setDomainRelaxationForbidden(bool fo
+@@ -2062,7 +2062,7 @@ void WebViewImpl::setDomainRelaxationForbidden(bool fo
  void WebViewImpl::setScrollbarColors(unsigned inactiveColor,
                                       unsigned activeColor,
                                       unsigned trackColor) {
@@ -69,7 +69,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 
      PlatformThemeChromiumGtk::setScrollbarColors(inactiveColor,
                                                   activeColor,
                                                   trackColor);
-@@ -2065,7 +2065,7 @@ void WebViewImpl::setSelectionColors(unsigned activeBa
+@@ -2073,7 +2073,7 @@ void WebViewImpl::setSelectionColors(unsigned activeBa
                                       unsigned activeForegroundColor,
                                       unsigned inactiveBackgroundColor,
                                       unsigned inactiveForegroundColor) {
@@ -78,7 +78,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 
      RenderThemeChromiumLinux::setSelectionColors(activeBackgroundColor,
                                                   activeForegroundColor,
                                                   inactiveBackgroundColor,
-@@ -2141,7 +2141,7 @@ bool WebViewImpl::navigationPolicyFromMouseEvent(unsig
+@@ -2149,7 +2149,7 @@ bool WebViewImpl::navigationPolicyFromMouseEvent(unsig
                                                   bool alt, bool meta,
                                                   WebNavigationPolicy* policy)
  {

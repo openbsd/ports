@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_renderer_webplugin_delegate_pepper_h,v 1.2 2011/03/15 11:38:05 robert Exp $
---- chrome/renderer/webplugin_delegate_pepper.h.orig	Fri Mar 11 10:01:45 2011
-+++ chrome/renderer/webplugin_delegate_pepper.h	Mon Mar 14 10:55:37 2011
-@@ -310,7 +310,7 @@ class WebPluginDelegatePepper : public webkit::npapi::
+$OpenBSD: patch-chrome_renderer_webplugin_delegate_pepper_h,v 1.3 2011/04/29 13:18:01 robert Exp $
+--- chrome/renderer/webplugin_delegate_pepper.h.orig	Tue Apr 26 10:01:45 2011
++++ chrome/renderer/webplugin_delegate_pepper.h	Thu Apr 28 11:17:49 2011
+@@ -281,7 +281,7 @@ class WebPluginDelegatePepper : public webkit::npapi::
    // variable to hold on to the pixels.
    SkBitmap last_printed_page_;
  #endif   // defined(OS_MACOSX)
@@ -10,12 +10,12 @@ $OpenBSD: patch-chrome_renderer_webplugin_delegate_pepper_h,v 1.2 2011/03/15 11:
    // On Linux, we always send all pages from the renderer to the browser.
    // So, if the plugin supports printPagesAsPDF we print the entire output
    // in one shot in the first call to PrintPage.
-@@ -321,7 +321,7 @@ class WebPluginDelegatePepper : public webkit::npapi::
+@@ -292,7 +292,7 @@ class WebPluginDelegatePepper : public webkit::npapi::
    // Specifies whether we have already output all pages. This is used to ignore
    // subsequent PrintPage requests.
    bool pdf_output_done_;
 -#endif   // defined(OS_LINUX)
 +#endif   // defined(OS_LINUX) || defined(OS_OPENBSD)
  
- #if defined(ENABLE_GPU)
-   // The command buffer used to issue commands to the nested GPU plugin.
+   // The id of the current find operation, or -1 if none is in process.
+   int find_identifier_;

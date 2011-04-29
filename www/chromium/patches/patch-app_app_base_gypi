@@ -1,7 +1,7 @@
-$OpenBSD: patch-app_app_base_gypi,v 1.2 2011/03/15 11:38:05 robert Exp $
---- app/app_base.gypi.orig	Fri Mar 11 10:01:06 2011
-+++ app/app_base.gypi	Mon Mar 14 10:55:37 2011
-@@ -232,7 +232,7 @@
+$OpenBSD: patch-app_app_base_gypi,v 1.3 2011/04/29 13:18:01 robert Exp $
+--- app/app_base.gypi.orig	Tue Apr 26 10:01:06 2011
++++ app/app_base.gypi	Thu Apr 28 11:17:48 2011
+@@ -233,7 +233,7 @@
          'surface/io_surface_support_mac.cc',
          'surface/io_surface_support_mac.h',
          'surface/transport_dib.h',
@@ -10,7 +10,7 @@ $OpenBSD: patch-app_app_base_gypi,v 1.2 2011/03/15 11:38:05 robert Exp $
          'surface/transport_dib_mac.cc',
          'surface/transport_dib_win.cc',
          'win/iat_patch_function.cc',
-@@ -335,7 +335,7 @@
+@@ -334,7 +334,7 @@
              ['exclude', '^win/*'],
            ],
          }],
@@ -19,7 +19,7 @@ $OpenBSD: patch-app_app_base_gypi,v 1.2 2011/03/15 11:38:05 robert Exp $
            'sources': [
              'gfx/gl/gl_context_egl.cc',
              'gfx/gl/gl_context_egl.h',
-@@ -363,7 +363,6 @@
+@@ -362,7 +362,6 @@
              'link_settings': {
                'libraries': [
                  '-lX11',

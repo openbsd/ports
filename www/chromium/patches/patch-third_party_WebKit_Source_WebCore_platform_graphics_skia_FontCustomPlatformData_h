@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_WebCore_platform_graphics_skia_FontCustomPlatformData_h,v 1.1 2011/03/15 11:38:05 robert Exp $
---- third_party/WebKit/Source/WebCore/platform/graphics/skia/FontCustomPlatformData.h.orig	Fri Mar 11 10:18:47 2011
-+++ third_party/WebKit/Source/WebCore/platform/graphics/skia/FontCustomPlatformData.h	Mon Mar 14 10:57:25 2011
-@@ -40,7 +40,7 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebCore_platform_graphics_skia_FontCustomPlatformData_h,v 1.2 2011/04/29 13:18:01 robert Exp $
+--- third_party/WebKit/Source/WebCore/platform/graphics/skia/FontCustomPlatformData.h.orig	Tue Apr 26 10:04:06 2011
++++ third_party/WebKit/Source/WebCore/platform/graphics/skia/FontCustomPlatformData.h	Thu Apr 28 11:17:49 2011
+@@ -41,7 +41,7 @@
  #if OS(WINDOWS)
  #include "PlatformString.h"
  #include <windows.h>
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebCore_platform_graphics_skia_FontCus
  #include "SkTypeface.h"
  #endif
  
-@@ -57,7 +57,7 @@ struct FontCustomPlatformData { (public)
+@@ -58,7 +58,7 @@ struct FontCustomPlatformData { (public)
          : m_fontReference(fontReference)
          , m_name(name)
      {}
@@ -19,7 +19,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebCore_platform_graphics_skia_FontCus
      explicit FontCustomPlatformData(SkTypeface* typeface)
          : m_fontReference(typeface)
      {}
-@@ -73,7 +73,7 @@ struct FontCustomPlatformData { (public)
+@@ -74,7 +74,7 @@ struct FontCustomPlatformData { (public)
  #if OS(WINDOWS)
      HANDLE m_fontReference;
      String m_name;

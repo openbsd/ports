@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.1 2011/04/29 13:18:02 robert Exp $
+--- ui/base/resource/resource_bundle.cc.orig	Fri Apr 29 08:21:35 2011
++++ ui/base/resource/resource_bundle.cc	Fri Apr 29 08:21:42 2011
+@@ -129,7 +129,7 @@ gfx::Image& ResourceBundle::GetImageNamed(int resource
+   return *GetEmptyImage();
+ }
+ 
+-#if !defined(OS_MACOSX) && !defined(OS_LINUX)
++#if !defined(OS_MACOSX) && !defined(OS_LINUX) && !defined(OS_OPENBSD)
+ // Only Mac and Linux have non-Skia native image types. All other platforms use
+ // Skia natively, so just use GetImageNamed().
+ gfx::Image& ResourceBundle::GetNativeImageNamed(int resource_id) {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_common_gypi,v 1.4 2011/04/15 10:10:27 robert Exp $
---- build/common.gypi.orig	Wed Apr 13 10:01:33 2011
-+++ build/common.gypi	Fri Apr 15 12:08:33 2011
-@@ -92,7 +92,7 @@
+$OpenBSD: patch-build_common_gypi,v 1.5 2011/04/29 13:18:01 robert Exp $
+--- build/common.gypi.orig	Tue Apr 26 10:01:32 2011
++++ build/common.gypi	Thu Apr 28 11:17:49 2011
+@@ -97,7 +97,7 @@
        'fastbuild%': 0,
  
        # Python version.
@@ -10,7 +10,7 @@ $OpenBSD: patch-build_common_gypi,v 1.4 2011/04/15 10:10:27 robert Exp $
  
        # Set ARM-v7 compilation flags
        'armv7%': 0,
-@@ -280,7 +280,7 @@
+@@ -311,7 +311,7 @@
      'linux_strip_reliability_tests%': 0,
  
      # Enable TCMalloc.
@@ -19,7 +19,7 @@ $OpenBSD: patch-build_common_gypi,v 1.4 2011/04/15 10:10:27 robert Exp $
  
      # Disable TCMalloc's debugallocation.
      'linux_use_debugallocation%': 0,
-@@ -301,7 +301,7 @@
+@@ -332,7 +332,7 @@
  
      # Used to disable Native Client at compile time, for platforms where it
      # isn't supported
@@ -28,7 +28,7 @@ $OpenBSD: patch-build_common_gypi,v 1.4 2011/04/15 10:10:27 robert Exp $
  
      # Set Thumb compilation flags.
      'arm_thumb%': 0,
-@@ -360,7 +360,7 @@
+@@ -394,7 +394,7 @@
          # This is used to tweak build flags for gcc 4.4.
          'gcc_version%': '<!(python <(DEPTH)/build/compiler_version.py)',
          # Figure out the python architecture to decide if we build pyauto.
@@ -37,7 +37,7 @@ $OpenBSD: patch-build_common_gypi,v 1.4 2011/04/15 10:10:27 robert Exp $
          'conditions': [
            ['branding=="Chrome"', {
              'linux_breakpad%': 1,
-@@ -691,7 +691,7 @@
+@@ -752,7 +752,7 @@
                ['exclude', '(^|/)(gtk|x11)_[^/]*\\.(h|cc)$'],
              ],
            }],

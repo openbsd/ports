@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_views_focus_focus_manager_cc,v 1.1 2011/04/29 13:18:02 robert Exp $
+--- ui/views/focus/focus_manager.cc.orig	Fri Apr 29 10:49:52 2011
++++ ui/views/focus/focus_manager.cc	Fri Apr 29 10:49:59 2011
+@@ -8,7 +8,7 @@
+ 
+ #include "build/build_config.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ #include <gtk/gtk.h>
+ #endif
+ 

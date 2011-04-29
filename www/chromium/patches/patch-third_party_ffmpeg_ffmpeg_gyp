@@ -1,16 +1,52 @@
-$OpenBSD: patch-third_party_ffmpeg_ffmpeg_gyp,v 1.2 2011/02/08 09:43:02 espie Exp $
---- third_party/ffmpeg/ffmpeg.gyp.orig	Fri Jan 21 10:22:21 2011
-+++ third_party/ffmpeg/ffmpeg.gyp	Mon Jan 24 10:13:53 2011
-@@ -82,7 +82,7 @@
-     'ffmpeg_variant%': '<(target_arch)',
- 
-     'use_system_ffmpeg%': 0,
--    'use_system_yasm%': 0,
-+    'use_system_yasm%': 1,
-     'build_ffmpegsumo%': 1,
-     'use_system_vpx%': 0,
- 
-@@ -433,7 +433,7 @@
+$OpenBSD: patch-third_party_ffmpeg_ffmpeg_gyp,v 1.3 2011/04/29 13:18:02 robert Exp $
+--- third_party/ffmpeg/ffmpeg.gyp.orig	Tue Apr 26 10:02:53 2011
++++ third_party/ffmpeg/ffmpeg.gyp	Thu Apr 28 17:32:14 2011
+@@ -204,10 +204,12 @@
+                 'patched-ffmpeg-mt/libavformat/mp3.c',
+               ],
+             }],  # ffmpeg_branding
+-            ['target_arch=="ia32" or target_arch=="x64"', {
++            ['use_system_yasm==0', {
+               'dependencies': [
+                 '../yasm/yasm.gyp:yasm#host',
+               ],
++            }],
++            ['target_arch=="ia32" or target_arch=="x64"', {
+               'sources': [
+                 'patched-ffmpeg-mt/libavcodec/libvpxdec.c',
+                 'patched-ffmpeg-mt/libavcodec/libvpxenc.c',  # sep 09
+@@ -365,9 +367,13 @@
+                 ],
+               },
+               'variables': {
+-                'yasm_path': '<(PRODUCT_DIR)/yasm',
+                 'obj_format': 'elf',
+                 'conditions': [
++                  [ 'use_system_yasm==1', {
++                    'yasm_path': '<!(which yasm)',
++                  }, {
++                    'yasm_path': '<(PRODUCT_DIR)/yasm',
++                  }],
+                   [ 'target_arch=="ia32"', {
+                     'yasm_flags': [
+                       '-DARCH_X86_32',
+@@ -429,10 +435,14 @@
+                 ],
+               },
+               'variables': {
+-                'yasm_path': '<(PRODUCT_DIR)/yasm',
+                 'obj_format': 'macho',
+                 'yasm_flags': [ '-DPREFIX' ],
+                 'conditions': [
++                  [ 'use_system_yasm==1', {
++                    'yasm_path': '<!(which yasm)',
++                  }, {
++                    'yasm_path': '<(PRODUCT_DIR)/yasm',
++                  }],
+                   [ 'target_arch=="ia32"', {
+                     'yasm_flags': [
+                       '-DARCH_X86_32',
+@@ -458,7 +468,7 @@
                }, {
                  # Using libvpx provided by the system.
                  'include_dirs': [
@@ -19,3 +55,13 @@ $OpenBSD: patch-third_party_ffmpeg_ffmpeg_gyp,v 1.2 2011/02/08 09:43:02 espie Ex
                  ],
                }
              ],
+@@ -738,6 +748,9 @@
+                   ],
+                 },
+               },
++              'include_dirs': [
++                '/usr/local/include',
++              ],
+             }],
+ 
+             # Add pkg-config result to include path when use_system_ffmpeg!=0

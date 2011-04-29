@@ -1,0 +1,21 @@
+$OpenBSD: patch-content_browser_renderer_host_render_message_filter_cc,v 1.1 2011/04/29 13:18:01 robert Exp $
+--- content/browser/renderer_host/render_message_filter.cc.orig	Thu Apr 28 11:27:55 2011
++++ content/browser/renderer_host/render_message_filter.cc	Thu Apr 28 11:28:23 2011
+@@ -416,7 +416,7 @@ bool RenderMessageFilter::OnMessageReceived(const IPC:
+     IPC_MESSAGE_HANDLER(ViewHostMsg_V8HeapStats, OnV8HeapStats)
+     IPC_MESSAGE_HANDLER(ViewHostMsg_DidZoomURL, OnDidZoomURL)
+     IPC_MESSAGE_HANDLER_DELAY_REPLY(ViewHostMsg_ResolveProxy, OnResolveProxy)
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+     IPC_MESSAGE_HANDLER(ViewHostMsg_AllocTransportDIB, OnAllocTransportDIB)
+     IPC_MESSAGE_HANDLER(ViewHostMsg_FreeTransportDIB, OnFreeTransportDIB)
+ #endif
+@@ -1111,7 +1111,7 @@ void RenderMessageFilter::OnRendererHistograms(
+   HistogramSynchronizer::DeserializeHistogramList(sequence_number, histograms);
+ }
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+ void RenderMessageFilter::OnAllocTransportDIB(
+     size_t size, bool cache_in_browser, TransportDIB::Handle* handle) {
+   render_widget_helper_->AllocTransportDIB(size, cache_in_browser, handle);

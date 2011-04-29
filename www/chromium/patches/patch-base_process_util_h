@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_process_util_h,v 1.4 2011/03/16 10:52:46 robert Exp $
---- base/process_util.h.orig	Fri Mar 11 10:01:33 2011
-+++ base/process_util.h	Wed Mar 16 09:41:54 2011
+$OpenBSD: patch-base_process_util_h,v 1.5 2011/04/29 13:18:01 robert Exp $
+--- base/process_util.h.orig	Thu Apr 28 11:18:26 2011
++++ base/process_util.h	Thu Apr 28 11:19:26 2011
 @@ -14,14 +14,16 @@
  #if defined(OS_WIN)
  #include <windows.h>
@@ -19,26 +19,7 @@ $OpenBSD: patch-base_process_util_h,v 1.4 2011/03/16 10:52:46 robert Exp $
  #elif defined(OS_POSIX)
  #include <dirent.h>
  #include <limits.h>
-@@ -161,7 +163,7 @@ void CloseProcessHandle(ProcessHandle process);
- // Win XP SP1 as well.
- ProcessId GetProcId(ProcessHandle process);
- 
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_OPENBSD)
- // Returns the ID for the parent of the given process.
- ProcessId GetParentProcessId(ProcessHandle process);
- 
-@@ -172,7 +174,8 @@ FilePath GetProcessExecutablePath(ProcessHandle proces
- // CPU-related ticks.  Returns -1 on parse error.
- // Exposed for testing.
- int ParseProcStatCPU(const std::string& input);
--
-+#endif
-+#if defined(OS_LINUX)
- static const char kAdjustOOMScoreSwitch[] = "--adjust-oom-score";
- 
- // This adjusts /proc/process/oom_adj so the Linux OOM killer will prefer
-@@ -439,7 +442,7 @@ class ProcessIterator {
+@@ -439,7 +441,7 @@ class ProcessIterator {
  #if defined(OS_WIN)
    HANDLE snapshot_;
    bool started_iteration_;

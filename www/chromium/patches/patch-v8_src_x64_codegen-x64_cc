@@ -1,6 +1,6 @@
-$OpenBSD: patch-v8_src_x64_codegen-x64_cc,v 1.1 2011/03/23 12:33:26 robert Exp $
---- v8/src/x64/codegen-x64.cc.orig	Thu Mar 17 09:44:50 2011
-+++ v8/src/x64/codegen-x64.cc	Wed Mar 23 08:28:07 2011
+$OpenBSD: patch-v8_src_x64_codegen-x64_cc,v 1.2 2011/04/29 13:18:02 robert Exp $
+--- v8/src/x64/codegen-x64.cc.orig	Tue Apr 26 10:22:52 2011
++++ v8/src/x64/codegen-x64.cc	Thu Apr 28 11:17:49 2011
 @@ -760,7 +760,7 @@ void CodeGenerator::ToBoolean(ControlDestination* dest
        __ AbortIfNotNumber(value.reg());
      }
@@ -74,7 +74,7 @@ $OpenBSD: patch-v8_src_x64_codegen-x64_cc,v 1.1 2011/03/23 12:33:26 robert Exp $
        __ j(equal, &adapted);
  
        // No arguments adaptor frame. Copy fixed number of arguments.
-@@ -3850,7 +3849,7 @@ void CodeGenerator::VisitForInStatement(ForInStatement
+@@ -3851,7 +3850,7 @@ void CodeGenerator::VisitForInStatement(ForInStatement
    __ movq(rbx, rax);
  
    // If the property has been removed while iterating, we just skip it.
@@ -83,7 +83,7 @@ $OpenBSD: patch-v8_src_x64_codegen-x64_cc,v 1.1 2011/03/23 12:33:26 robert Exp $
    node->continue_target()->Branch(equal);
  
    end_del_check.Bind();
-@@ -6182,15 +6181,15 @@ void CodeGenerator::GenerateIsConstructCall(ZoneList<E
+@@ -6192,15 +6191,15 @@ void CodeGenerator::GenerateIsConstructCall(ZoneList<E
  
    // Skip the arguments adaptor frame if it exists.
    Label check_frame_marker;
@@ -103,7 +103,7 @@ $OpenBSD: patch-v8_src_x64_codegen-x64_cc,v 1.1 2011/03/23 12:33:26 robert Exp $
    fp.Unuse();
    destination()->Split(equal);
  }
-@@ -6210,8 +6209,8 @@ void CodeGenerator::GenerateArgumentsLength(ZoneList<E
+@@ -6220,8 +6219,8 @@ void CodeGenerator::GenerateArgumentsLength(ZoneList<E
  
    // Check if the calling frame is an arguments adaptor frame.
    __ movq(fp.reg(), Operand(rbp, StandardFrameConstants::kCallerFPOffset));
@@ -114,7 +114,7 @@ $OpenBSD: patch-v8_src_x64_codegen-x64_cc,v 1.1 2011/03/23 12:33:26 robert Exp $
    __ j(not_equal, &exit);
  
    // Arguments adaptor case: Read the arguments length from the
-@@ -6767,8 +6766,8 @@ void CodeGenerator::GenerateSwapElements(ZoneList<Expr
+@@ -6777,8 +6776,8 @@ void CodeGenerator::GenerateSwapElements(ZoneList<Expr
    // Fetch the map and check if array is in fast case.
    // Check that object doesn't require security checks and
    // has no indexed interceptor.
@@ -125,7 +125,7 @@ $OpenBSD: patch-v8_src_x64_codegen-x64_cc,v 1.1 2011/03/23 12:33:26 robert Exp $
    __ testb(FieldOperand(tmp1.reg(), Map::kBitFieldOffset),
             Immediate(KeyedLoadIC::kSlowCaseBitFieldMask));
    deferred->Branch(not_zero);
-@@ -6810,7 +6809,7 @@ void CodeGenerator::GenerateSwapElements(ZoneList<Expr
+@@ -6820,7 +6819,7 @@ void CodeGenerator::GenerateSwapElements(ZoneList<Expr
  
    Label done;
    __ InNewSpace(tmp1.reg(), tmp2.reg(), equal, &done);
@@ -134,7 +134,7 @@ $OpenBSD: patch-v8_src_x64_codegen-x64_cc,v 1.1 2011/03/23 12:33:26 robert Exp $
    // (or them and test against Smi mask.)
  
    __ movq(tmp2.reg(), tmp1.reg());
-@@ -8485,12 +8484,6 @@ Result CodeGenerator::EmitKeyedStore(StaticType* key_t
+@@ -8508,12 +8507,6 @@ Result CodeGenerator::EmitKeyedStore(StaticType* key_t
      __ CmpObjectType(receiver.reg(), JS_ARRAY_TYPE, kScratchRegister);
      deferred->Branch(not_equal);
  
@@ -147,7 +147,7 @@ $OpenBSD: patch-v8_src_x64_codegen-x64_cc,v 1.1 2011/03/23 12:33:26 robert Exp $
      // Get the elements array from the receiver and check that it is not a
      // dictionary.
      __ movq(tmp.reg(),
-@@ -8518,6 +8511,14 @@ Result CodeGenerator::EmitKeyedStore(StaticType* key_t
+@@ -8541,6 +8534,14 @@ Result CodeGenerator::EmitKeyedStore(StaticType* key_t
      __ cmpq(FieldOperand(tmp.reg(), HeapObject::kMapOffset),
              kScratchRegister);
      deferred->Branch(not_equal);

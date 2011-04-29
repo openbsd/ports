@@ -1,0 +1,30 @@
+$OpenBSD: patch-content_browser_renderer_host_render_widget_helper_h,v 1.1 2011/04/29 13:18:01 robert Exp $
+--- content/browser/renderer_host/render_widget_helper.h.orig	Thu Apr 28 11:30:04 2011
++++ content/browser/renderer_host/render_widget_helper.h	Thu Apr 28 11:30:17 2011
+@@ -112,7 +112,7 @@ class RenderWidgetHelper
+                         const base::TimeDelta& max_delay,
+                         IPC::Message* msg);
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+   // Given the id of a transport DIB, return a mapping to it or NULL on error.
+   TransportDIB* MapTransportDIB(TransportDIB::Id dib_id);
+ #endif
+@@ -131,7 +131,7 @@ class RenderWidgetHelper
+                        int* route_id);
+   void CreateNewFullscreenWidget(int opener_id, int* route_id);
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+   // Called on the IO thread to handle the allocation of a TransportDIB.  If
+   // |cache_in_browser| is |true|, then a copy of the shmem is kept by the
+   // browser, and it is the caller's repsonsibility to call
+@@ -184,7 +184,7 @@ class RenderWidgetHelper
+   // Called on the IO thread to resume a cross-site response.
+   void OnCrossSiteClosePageACK(const ViewMsg_ClosePage_Params& params);
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+   // Called on destruction to release all allocated transport DIBs
+   void ClearAllocatedDIBs();
+ 

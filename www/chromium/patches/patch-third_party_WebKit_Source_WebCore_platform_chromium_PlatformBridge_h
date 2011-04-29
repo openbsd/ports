@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_WebKit_Source_WebCore_platform_chromium_PlatformBridge_h,v 1.1 2011/03/15 11:38:05 robert Exp $
---- third_party/WebKit/Source/WebCore/platform/chromium/PlatformBridge.h.orig	Mon Mar 14 14:32:23 2011
-+++ third_party/WebKit/Source/WebCore/platform/chromium/PlatformBridge.h	Mon Mar 14 14:32:39 2011
+$OpenBSD: patch-third_party_WebKit_Source_WebCore_platform_chromium_PlatformBridge_h,v 1.2 2011/04/29 13:18:01 robert Exp $
+--- third_party/WebKit/Source/WebCore/platform/chromium/PlatformBridge.h.orig	Tue Apr 26 10:04:09 2011
++++ third_party/WebKit/Source/WebCore/platform/chromium/PlatformBridge.h	Thu Apr 28 11:17:49 2011
 @@ -148,7 +148,7 @@ class PlatformBridge { (public)
  #if OS(WINDOWS)
      static bool ensureFontLoaded(HFONT);
@@ -8,9 +8,9 @@ $OpenBSD: patch-third_party_WebKit_Source_WebCore_platform_chromium_PlatformBrid
 -#if OS(LINUX) || OS(FREEBSD)
 +#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
      static void getRenderStyleForStrike(const char* family, int sizeAndStyle, FontRenderStyle* result);
-     static String getFontFamilyForCharacters(const UChar*, size_t numCharacters);
+     static String getFontFamilyForCharacters(const UChar*, size_t numCharacters, const char* preferredLocale);
  #endif
-@@ -264,7 +264,7 @@ class PlatformBridge { (public)
+@@ -265,7 +265,7 @@ class PlatformBridge { (public)
          GraphicsContext*, int part, int state, int classicState, const IntRect&);
      static void paintProgressBar(
          GraphicsContext*, const IntRect& barRect, const IntRect& valueRect, bool determinate, double animatedSeconds);

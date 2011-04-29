@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_test_automation_automation_proxy_uitest_cc,v 1.3 2011/03/15 11:38:05 robert Exp $
---- chrome/test/automation/automation_proxy_uitest.cc.orig	Fri Mar 11 10:01:55 2011
-+++ chrome/test/automation/automation_proxy_uitest.cc	Mon Mar 14 10:55:37 2011
-@@ -1376,7 +1376,7 @@ TEST_F(ExternalTabUITestPopupEnabled, MAYBE_UserGestur
+$OpenBSD: patch-chrome_test_automation_automation_proxy_uitest_cc,v 1.4 2011/04/29 13:18:01 robert Exp $
+--- chrome/test/automation/automation_proxy_uitest.cc.orig	Tue Apr 26 10:01:56 2011
++++ chrome/test/automation/automation_proxy_uitest.cc	Thu Apr 28 11:17:49 2011
+@@ -1378,7 +1378,7 @@ TEST_F(ExternalTabUITestPopupEnabled, MAYBE_UserGestur
  #endif  // defined(OS_WIN)
  
  // TODO(port): Need to port autocomplete_edit_proxy.* first.
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_test_automation_automation_proxy_uitest_cc,v 1.3 2011/03/
  TEST_F(AutomationProxyTest, AutocompleteGetSetText) {
    scoped_refptr<BrowserProxy> browser(automation()->GetBrowserWindow(0));
    ASSERT_TRUE(browser.get());
-@@ -1420,7 +1420,7 @@ TEST_F(AutomationProxyTest, AutocompleteParallelProxy)
+@@ -1422,7 +1422,7 @@ TEST_F(AutomationProxyTest, AutocompleteParallelProxy)
    EXPECT_EQ(text_to_set2, actual_text2);
  }
  

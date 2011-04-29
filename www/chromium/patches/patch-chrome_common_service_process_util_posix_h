@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_common_service_process_util_posix_h,v 1.1 2011/04/29 13:18:01 robert Exp $
+--- chrome/common/service_process_util_posix.h.orig	Thu Apr 28 12:32:15 2011
++++ chrome/common/service_process_util_posix.h	Thu Apr 28 12:32:31 2011
+@@ -14,7 +14,7 @@
+ #include "base/message_pump_libevent.h"
+ #include "base/scoped_ptr.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ #include "chrome/common/multi_process_lock.h"
+ MultiProcessLock* TakeServiceRunningLock(bool waiting);
+ #endif  // OS_LINUX
+@@ -65,7 +65,7 @@ struct ServiceProcessState::StateData
+   FilePathWatcher executable_watcher_;
+   ServiceProcessState* state_;
+ #endif  // OS_MACOSX
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   scoped_ptr<MultiProcessLock> initializing_lock_;
+   scoped_ptr<MultiProcessLock> running_lock_;
+ #endif  // OS_LINUX

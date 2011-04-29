@@ -1,7 +1,7 @@
-$OpenBSD: patch-v8_src_x64_lithium-codegen-x64_cc,v 1.1 2011/03/23 12:33:26 robert Exp $
---- v8/src/x64/lithium-codegen-x64.cc.orig	Thu Mar 17 09:44:50 2011
-+++ v8/src/x64/lithium-codegen-x64.cc	Wed Mar 23 08:28:07 2011
-@@ -786,7 +786,7 @@ void LCodeGen::DoBranch(LBranch* instr) {
+$OpenBSD: patch-v8_src_x64_lithium-codegen-x64_cc,v 1.2 2011/04/29 13:18:02 robert Exp $
+--- v8/src/x64/lithium-codegen-x64.cc.orig	Tue Apr 26 10:22:52 2011
++++ v8/src/x64/lithium-codegen-x64.cc	Thu Apr 28 11:17:49 2011
+@@ -1242,7 +1242,7 @@ void LCodeGen::DoBranch(LBranch* instr) {
        __ j(equal, true_label);
        __ CompareRoot(reg, Heap::kFalseValueRootIndex);
        __ j(equal, false_label);

@@ -1,9 +1,9 @@
-$OpenBSD: patch-chrome_common_render_messages_internal_h,v 1.2 2011/03/15 11:38:05 robert Exp $
---- chrome/common/render_messages_internal.h.orig	Mon Mar 14 11:47:46 2011
-+++ chrome/common/render_messages_internal.h	Mon Mar 14 11:48:10 2011
-@@ -2139,7 +2139,7 @@ IPC_MESSAGE_CONTROL2(ViewHostMsg_ExtensionRemoveListen
-                      std::string /* extension_id */,
-                      std::string /* name */)
+$OpenBSD: patch-chrome_common_render_messages_internal_h,v 1.3 2011/04/29 13:18:01 robert Exp $
+--- chrome/common/render_messages_internal.h.orig	Tue Apr 26 10:01:59 2011
++++ chrome/common/render_messages_internal.h	Thu Apr 28 11:17:49 2011
+@@ -1931,7 +1931,7 @@ IPC_MESSAGE_ROUTED3(ViewHostMsg_CommandStateChanged,
+                     bool /* is_enabled */,
+                     int /* checked_state */)
  
 -#if defined(OS_MACOSX)
 +#if defined(OS_MACOSX) || defined(OS_OPENBSD)

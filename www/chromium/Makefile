@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2011/04/15 10:10:27 robert Exp $
+# $OpenBSD: Makefile,v 1.39 2011/04/29 13:18:01 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			10.0.648.205
+V=			11.0.696.60
 DISTNAME=		chromium-${V}
 
 CATEGORIES=		www
@@ -29,9 +29,10 @@ WANTLIB += gtk-x11-2.0 jpeg m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs xcb xml2
 WANTLIB += z execinfo bz2 nss3 nssutil3 ssl3 smime3 softokn3 gconf-2
 WANTLIB += GL Xxf86vm drm stdc++ xcb-render xcb-shm
-WANTLIB += Xtst event sqlite3 xslt vpx kvm>=10.0
+WANTLIB += Xtst event xslt vpx kvm>=10.0
 
 MASTER_SITES=	http://build.chromium.org/buildbot/official/ \
+		http://blade2k.humppa.hu/distfiles/ \
 		ftp://rene-ladan.nl/pub/distfiles/
 
 MODULES=	devel/gettext \
@@ -77,8 +78,9 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_libjpeg=1 \
 		-Duse_system_libpng=1 \
 		-Duse_system_libxml=1 \
-		-Duse_system_sqlite=1 \
+		-Duse_system_sqlite=0 \
 		-Duse_system_vpx=1 \
+		-Duse_system_yasm=1 \
 		-Duse_system_zlib=0 \
 		-Ddisable_nacl=1 \
 		-Ddisable_sse2=1 \

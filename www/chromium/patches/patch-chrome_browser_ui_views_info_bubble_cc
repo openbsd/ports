@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_views_info_bubble_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
---- chrome/browser/ui/views/info_bubble.cc.orig	Fri Mar 11 10:01:42 2011
-+++ chrome/browser/ui/views/info_bubble.cc	Mon Mar 14 10:55:37 2011
-@@ -314,7 +314,7 @@ void InfoBubble::AnimationProgressed(const ui::Animati
+$OpenBSD: patch-chrome_browser_ui_views_info_bubble_cc,v 1.3 2011/04/29 13:18:01 robert Exp $
+--- chrome/browser/ui/views/info_bubble.cc.orig	Tue Apr 26 10:01:43 2011
++++ chrome/browser/ui/views/info_bubble.cc	Thu Apr 28 11:17:49 2011
+@@ -320,7 +320,7 @@ void InfoBubble::AnimationProgressed(const ui::Animati
  
  InfoBubble::InfoBubble()
      :
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_views_info_bubble_cc,v 1.2 2011/03/15 11:38:05
        WidgetGtk(TYPE_WINDOW),
        border_contents_(NULL),
  #elif defined(OS_WIN)
-@@ -386,7 +386,7 @@ void InfoBubble::Init(views::Widget* parent,
+@@ -392,7 +392,7 @@ void InfoBubble::InitBubble(views::Widget* parent,
    WidgetWin::Init(border_->GetNativeView(), gfx::Rect());
  
    SetWindowText(GetNativeView(), delegate_->accessible_name().c_str());
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_ui_views_info_bubble_cc,v 1.2 2011/03/15 11:38:05
    MakeTransparent();
    make_transient_to_parent();
    WidgetGtk::InitWithWidget(parent, gfx::Rect());
-@@ -462,7 +462,7 @@ void InfoBubble::Init(views::Widget* parent,
+@@ -469,7 +469,7 @@ void InfoBubble::InitBubble(views::Widget* parent,
    ShowWindow(SW_SHOW);
    if (fade_in)
      FadeIn();
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_ui_views_info_bubble_cc,v 1.2 2011/03/15 11:38:05
    views::WidgetGtk::Show();
  #endif
  }
-@@ -502,7 +502,7 @@ void InfoBubble::OnActivate(UINT action, BOOL minimize
+@@ -510,7 +510,7 @@ void InfoBubble::OnActivate(UINT action, BOOL minimize
      GetRootView()->GetChildViewAt(0)->RequestFocus();
    }
  }
@@ -37,7 +37,7 @@ $OpenBSD: patch-chrome_browser_ui_views_info_bubble_cc,v 1.2 2011/03/15 11:38:05
  void InfoBubble::IsActiveChanged() {
    if (!IsActive())
      Close();
-@@ -521,7 +521,7 @@ void InfoBubble::DoClose(bool closed_by_escape) {
+@@ -529,7 +529,7 @@ void InfoBubble::DoClose(bool closed_by_escape) {
  #if defined(OS_WIN)
    border_->Close();
    WidgetWin::Close();

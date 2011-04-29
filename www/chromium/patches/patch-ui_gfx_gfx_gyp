@@ -1,0 +1,11 @@
+$OpenBSD: patch-ui_gfx_gfx_gyp,v 1.1 2011/04/29 13:18:02 robert Exp $
+--- ui/gfx/gfx.gyp.orig	Thu Apr 28 11:46:54 2011
++++ ui/gfx/gfx.gyp	Thu Apr 28 11:47:12 2011
+@@ -187,6 +187,7 @@
+             'native_widget_types_gtk.cc',
+           ],
+         }],
++        ['OS=="openbsd"', { 'include_dirs': [ '/usr/local/include ' ] } ],
+       ],
+     },
+     {

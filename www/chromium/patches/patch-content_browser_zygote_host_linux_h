@@ -1,0 +1,13 @@
+$OpenBSD: patch-content_browser_zygote_host_linux_h,v 1.1 2011/04/29 13:18:01 robert Exp $
+--- content/browser/zygote_host_linux.h.orig	Thu Apr 28 11:38:22 2011
++++ content/browser/zygote_host_linux.h	Thu Apr 28 11:39:07 2011
+@@ -51,6 +51,9 @@ class ZygoteHost {
+     kCmdReap = 1,                  // Reap a renderer child.
+     kCmdGetTerminationStatus = 2,  // Check what happend to a child process.
+     kCmdGetSandboxStatus = 3,      // Read a bitmask of kSandbox*
++#if defined(OS_OPENBSD)
++    kCmdEnd = 4,		   // Kill zygote for SOCK_DGRAM.
++#endif
+   };
+ 
+   // These form a bitmask which describes the conditions of the sandbox that

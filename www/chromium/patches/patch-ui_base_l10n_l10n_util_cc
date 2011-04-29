@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_base_l10n_l10n_util_cc,v 1.1 2011/04/29 13:18:02 robert Exp $
+--- ui/base/l10n/l10n_util.cc.orig	Fri Apr 29 10:49:13 2011
++++ ui/base/l10n/l10n_util.cc	Fri Apr 29 10:49:22 2011
+@@ -320,7 +320,7 @@ bool CheckAndResolveLocale(const std::string& locale,
+ // if "foo bar" is RTL. So this function prepends the necessary RLM in such
+ // cases.
+ void AdjustParagraphDirectionality(string16* paragraph) {
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   if (base::i18n::IsRTL() &&
+       base::i18n::StringContainsStrongRTLChars(*paragraph)) {
+     paragraph->insert(0, 1, static_cast<char16>(base::i18n::kRightToLeftMark));

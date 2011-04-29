@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_task_manager_task_manager_resource_providers_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
---- chrome/browser/task_manager/task_manager_resource_providers.cc.orig	Fri Mar 11 10:01:39 2011
-+++ chrome/browser/task_manager/task_manager_resource_providers.cc	Mon Mar 14 10:55:37 2011
-@@ -1240,7 +1240,7 @@ TaskManagerBrowserProcessResource::TaskManagerBrowserP
+$OpenBSD: patch-chrome_browser_task_manager_task_manager_resource_providers_cc,v 1.3 2011/04/29 13:18:01 robert Exp $
+--- chrome/browser/task_manager/task_manager_resource_providers.cc.orig	Tue Apr 26 10:01:40 2011
++++ chrome/browser/task_manager/task_manager_resource_providers.cc	Thu Apr 28 11:17:49 2011
+@@ -1223,7 +1223,7 @@ TaskManagerBrowserProcessResource::TaskManagerBrowserP
        default_icon_ = IconUtil::CreateSkBitmapFromHICON(icon, icon_size);
      }
    }

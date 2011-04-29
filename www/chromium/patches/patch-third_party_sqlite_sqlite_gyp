@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_sqlite_sqlite_gyp,v 1.3 2011/04/29 13:18:02 robert Exp $
+--- third_party/sqlite/sqlite.gyp.orig	Fri Apr 29 08:24:50 2011
++++ third_party/sqlite/sqlite.gyp	Fri Apr 29 08:25:01 2011
+@@ -233,7 +233,7 @@
+             }, {  # else: OS!="win"
+               'sources/': [['exclude', '_(w32|win)\\.cc?$']],
+             }],
+-            ['OS=="linux"', {
++            ['OS=="linux" or OS=="openbsd"', {
+               'cflags': [
+                 # SQLite doesn't believe in compiler warnings,
+                 # preferring testing.

@@ -1,7 +1,7 @@
-$OpenBSD: patch-webkit_plugins_ppapi_ppb_file_system_impl_cc,v 1.1 2011/03/15 11:38:05 robert Exp $
---- webkit/plugins/ppapi/ppb_file_system_impl.cc.orig	Mon Mar 14 11:52:20 2011
-+++ webkit/plugins/ppapi/ppb_file_system_impl.cc	Mon Mar 14 11:52:32 2011
-@@ -37,7 +37,7 @@ PP_Resource Create(PP_Instance instance, PP_FileSystem
+$OpenBSD: patch-webkit_plugins_ppapi_ppb_file_system_impl_cc,v 1.2 2011/04/29 13:18:02 robert Exp $
+--- webkit/plugins/ppapi/ppb_file_system_impl.cc.orig	Tue Apr 26 10:01:06 2011
++++ webkit/plugins/ppapi/ppb_file_system_impl.cc	Thu Apr 28 11:17:49 2011
+@@ -49,7 +49,7 @@ PP_Bool IsFileSystem(PP_Resource resource) {
  }
  
  int32_t Open(PP_Resource file_system_id,

@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_WebKit_gyp,v 1.1 2011/03/15 11:38:05 robert Exp $
---- third_party/WebKit/Source/WebKit/chromium/WebKit.gyp.orig	Fri Mar 11 10:17:39 2011
-+++ third_party/WebKit/Source/WebKit/chromium/WebKit.gyp	Mon Mar 14 10:57:25 2011
-@@ -618,7 +618,7 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_WebKit_gyp,v 1.2 2011/04/29 13:18:01 robert Exp $
+--- third_party/WebKit/Source/WebKit/chromium/WebKit.gyp.orig	Tue Apr 26 10:03:29 2011
++++ third_party/WebKit/Source/WebKit/chromium/WebKit.gyp	Thu Apr 28 11:17:49 2011
+@@ -634,7 +634,7 @@
                  }, {
                      'type': '<(webkit_target_type)'
                  }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_WebKit_gyp,v 1.1 2011/
                      'dependencies': [
                          '<(chromium_src_dir)/build/linux/system.gyp:fontconfig',
                          '<(chromium_src_dir)/build/linux/system.gyp:gtk',
-@@ -824,7 +824,7 @@
+@@ -840,7 +840,7 @@
                                  'tests/DragImageTest.cpp',
                              ],
                          }],

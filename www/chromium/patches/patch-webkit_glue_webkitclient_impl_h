@@ -1,6 +1,6 @@
-$OpenBSD: patch-webkit_glue_webkitclient_impl_h,v 1.2 2011/03/15 11:38:05 robert Exp $
---- webkit/glue/webkitclient_impl.h.orig	Mon Mar 14 11:55:38 2011
-+++ webkit/glue/webkitclient_impl.h	Mon Mar 14 11:55:49 2011
+$OpenBSD: patch-webkit_glue_webkitclient_impl_h,v 1.3 2011/04/29 13:18:02 robert Exp $
+--- webkit/glue/webkitclient_impl.h.orig	Tue Apr 26 10:01:07 2011
++++ webkit/glue/webkitclient_impl.h	Thu Apr 28 11:17:49 2011
 @@ -10,7 +10,7 @@
  #include "third_party/WebKit/Source/WebKit/chromium/public/WebKitClient.h"
  #if defined(OS_WIN)
@@ -10,7 +10,7 @@ $OpenBSD: patch-webkit_glue_webkitclient_impl_h,v 1.2 2011/03/15 11:38:05 robert
  #include "webkit/glue/webthemeengine_impl_linux.h"
  #elif defined(OS_MACOSX)
  #include "webkit/glue/webthemeengine_impl_mac.h"
-@@ -91,7 +91,7 @@ class WebKitClientImpl : public WebKit::WebKitClient {
+@@ -93,7 +93,7 @@ class WebKitClientImpl : public WebKit::WebKitClient {
    double shared_timer_fire_time_;
    int shared_timer_suspended_;  // counter
  

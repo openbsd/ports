@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_sync_engine_syncer_thread_h,v 1.3 2011/03/15 11:38:05 robert Exp $
---- chrome/browser/sync/engine/syncer_thread.h.orig	Mon Mar 14 11:37:38 2011
-+++ chrome/browser/sync/engine/syncer_thread.h	Mon Mar 14 11:37:51 2011
+$OpenBSD: patch-chrome_browser_sync_engine_syncer_thread_h,v 1.4 2011/04/29 13:18:01 robert Exp $
+--- chrome/browser/sync/engine/syncer_thread.h.orig	Tue Apr 26 10:01:40 2011
++++ chrome/browser/sync/engine/syncer_thread.h	Thu Apr 28 11:17:49 2011
 @@ -26,7 +26,7 @@
  #include "chrome/browser/sync/syncable/model_type.h"
  #include "chrome/common/deprecated/event_sys-inl.h"
@@ -10,9 +10,9 @@ $OpenBSD: patch-chrome_browser_sync_engine_syncer_thread_h,v 1.3 2011/03/15 11:3
  #include "chrome/browser/sync/engine/idle_query_linux.h"
  #endif
  
-@@ -329,7 +329,7 @@ class SyncerThread : public base::RefCountedThreadSafe
+@@ -339,7 +339,7 @@ class SyncerThread : public base::RefCountedThreadSafe
        NudgeSource source,
-       const syncable::ModelTypeBitSet& model_types);
+       const sessions::TypePayloadMap& model_types_with_payloads);
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_OPENBSD)

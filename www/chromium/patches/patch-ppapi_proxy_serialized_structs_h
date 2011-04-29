@@ -1,7 +1,7 @@
-$OpenBSD: patch-ppapi_proxy_serialized_structs_h,v 1.1 2011/03/15 11:38:05 robert Exp $
---- ppapi/proxy/serialized_structs.h.orig	Mon Mar 14 13:19:38 2011
-+++ ppapi/proxy/serialized_structs.h	Mon Mar 14 13:19:47 2011
-@@ -102,7 +102,7 @@ struct PPBFlash_DrawGlyphs_Params {
+$OpenBSD: patch-ppapi_proxy_serialized_structs_h,v 1.2 2011/04/29 13:18:01 robert Exp $
+--- ppapi/proxy/serialized_structs.h.orig	Tue Apr 26 10:01:08 2011
++++ ppapi/proxy/serialized_structs.h	Thu Apr 28 11:17:49 2011
+@@ -131,7 +131,7 @@ struct PPBURLLoader_UpdateProgress_Params {
  
  #if defined(OS_WIN)
  typedef HANDLE ImageHandle;

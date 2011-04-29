@@ -1,7 +1,7 @@
-$OpenBSD: patch-webkit_plugins_ppapi_ppapi_plugin_instance_h,v 1.1 2011/03/15 11:38:05 robert Exp $
---- webkit/plugins/ppapi/ppapi_plugin_instance.h.orig	Mon Mar 14 11:54:10 2011
-+++ webkit/plugins/ppapi/ppapi_plugin_instance.h	Mon Mar 14 11:54:17 2011
-@@ -297,7 +297,7 @@ class PluginInstance : public base::RefCounted<PluginI
+$OpenBSD: patch-webkit_plugins_ppapi_ppapi_plugin_instance_h,v 1.2 2011/04/29 13:18:02 robert Exp $
+--- webkit/plugins/ppapi/ppapi_plugin_instance.h.orig	Tue Apr 26 10:01:06 2011
++++ webkit/plugins/ppapi/ppapi_plugin_instance.h	Thu Apr 28 11:17:49 2011
+@@ -322,7 +322,7 @@ class PluginInstance : public base::RefCounted<PluginI
    // to keep the pixels valid until CGContextEndPage is called. We use this
    // variable to hold on to the pixels.
    scoped_refptr<PPB_ImageData_Impl> last_printed_page_;

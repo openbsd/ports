@@ -1,16 +1,16 @@
-$OpenBSD: patch-chrome_browser_browser_about_handler_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
---- chrome/browser/browser_about_handler.cc.orig	Mon Mar 14 11:04:14 2011
-+++ chrome/browser/browser_about_handler.cc	Mon Mar 14 11:05:03 2011
-@@ -70,7 +70,7 @@
- #include "chrome/browser/zygote_host_linux.h"
- #elif defined(OS_MACOSX)
- #include "chrome/browser/ui/cocoa/about_ipc_dialog.h"
+$OpenBSD: patch-chrome_browser_browser_about_handler_cc,v 1.3 2011/04/29 13:18:01 robert Exp $
+--- chrome/browser/browser_about_handler.cc.orig	Thu Apr 28 11:20:53 2011
++++ chrome/browser/browser_about_handler.cc	Thu Apr 28 11:21:28 2011
+@@ -71,7 +71,7 @@
+ #include "chrome/browser/chromeos/login/wizard_controller.h"
+ #include "chrome/browser/chromeos/version_loader.h"
+ #include "content/browser/zygote_host_linux.h"
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_OPENBSD)
- #include "chrome/browser/zygote_host_linux.h"
+ #include "content/browser/zygote_host_linux.h"
  #endif
  
-@@ -121,7 +121,7 @@ const char kNetInternalsPath[] = "net-internals";
+@@ -126,7 +126,7 @@ const char kNetInternalsPath[] = "net-internals";
  const char kPluginsPath[] = "plugins";
  const char kSyncInternalsPath[] = "sync-internals";
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_browser_about_handler_cc,v 1.2 2011/03/15 11:38:0
  const char kLinuxProxyConfigPath[] = "linux-proxy-config";
  const char kSandboxPath[] = "sandbox";
  #endif
-@@ -153,7 +153,7 @@ const char *kAllAboutPaths[] = {
+@@ -160,7 +160,7 @@ const char *kAllAboutPaths[] = {
    kTcmallocPath,
    kTermsPath,
    kVersionPath,
@@ -28,7 +28,7 @@ $OpenBSD: patch-chrome_browser_browser_about_handler_cc,v 1.2 2011/03/15 11:38:0
    kSandboxPath,
  #endif
  #if defined(OS_CHROMEOS)
-@@ -544,7 +544,7 @@ std::string AboutStats() {
+@@ -648,7 +648,7 @@ std::string AboutStats(const std::string& query) {
    return data;
  }
  
@@ -37,10 +37,10 @@ $OpenBSD: patch-chrome_browser_browser_about_handler_cc,v 1.2 2011/03/15 11:38:0
  std::string AboutLinuxProxyConfig() {
    std::string data;
    data.append("<!DOCTYPE HTML>\n");
-@@ -766,7 +766,7 @@ void AboutSource::StartDataRequest(const std::string& 
-   } else if (path == kTermsPath) {
+@@ -863,7 +863,7 @@ void AboutSource::StartDataRequest(const std::string& 
      response = ResourceBundle::GetSharedInstance().GetRawDataResource(
          IDR_TERMS_HTML).as_string();
+ #endif
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_OPENBSD)
    } else if (path == kLinuxProxyConfigPath) {

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_renderer_pepper_devices_cc,v 1.1 2011/03/15 11:38:05 robert Exp $
---- chrome/renderer/pepper_devices.cc.orig	Tue Mar 15 10:02:39 2011
-+++ chrome/renderer/pepper_devices.cc	Tue Mar 15 10:19:59 2011
-@@ -52,7 +52,7 @@ NPError Graphics2DDeviceContext::Initialize(
+$OpenBSD: patch-chrome_renderer_pepper_devices_cc,v 1.2 2011/04/29 13:18:01 robert Exp $
+--- chrome/renderer/pepper_devices.cc.orig	Tue Apr 26 10:01:45 2011
++++ chrome/renderer/pepper_devices.cc	Thu Apr 28 11:17:49 2011
+@@ -53,7 +53,7 @@ NPError Graphics2DDeviceContext::Initialize(
    uint32 buffer_size = width * height * kBytesPerPixel;
  
    // Allocate the transport DIB and the PlatformCanvas pointing to it.

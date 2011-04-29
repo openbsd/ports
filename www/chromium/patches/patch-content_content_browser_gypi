@@ -1,0 +1,25 @@
+$OpenBSD: patch-content_content_browser_gypi,v 1.1 2011/04/29 13:18:01 robert Exp $
+--- content/content_browser.gypi.orig	Thu Apr 28 18:49:07 2011
++++ content/content_browser.gypi	Thu Apr 28 18:51:09 2011
+@@ -324,7 +324,7 @@
+         ['OS=="win"', {
+           'msvs_guid': '639DB58D-32C2-435A-A711-65A12F62E442',
+         }],
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="openbsd"', {
+           'dependencies': [
+             '../build/linux/system.gyp:dbus-glib',
+             # For FcLangSetAdd call in render_sandbox_host_linux.cc
+@@ -338,6 +338,12 @@
+             # TODO(mattm): Cert manager stuff is really !USE_NSS.
+             'browser/certificate_manager_model.cc',
+             'browser/certificate_manager_model.h',
++          ],
++        }],
++        ['OS=="openbsd"', {
++          'sources!': [
++            'browser/geolocation/gateway_data_provider_linux.cc',
++            'browser/geolocation/gateway_data_provider_linux.h',
+           ],
+         }],
+         ['OS=="linux" and chromeos==1', {

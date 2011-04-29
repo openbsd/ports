@@ -1,0 +1,18 @@
+$OpenBSD: patch-remoting_host_user_authenticator_bsd_cc,v 1.1 2011/04/29 13:18:01 robert Exp $
+--- remoting/host/user_authenticator_bsd.cc.orig	Fri Apr 29 09:53:14 2011
++++ remoting/host/user_authenticator_bsd.cc	Fri Apr 29 09:53:21 2011
+@@ -0,0 +1,14 @@
++// Copyright (c) 2011 The Chromium Authors. All rights reserved.
++// Use of this source code is governed by a BSD-style license that can be
++// found in the LICENSE file.
++
++#include "remoting/host/user_authenticator_fake.h"
++
++namespace remoting {
++
++// static
++UserAuthenticator* UserAuthenticator::Create() {
++  return new UserAuthenticatorFake();
++}
++
++}  // namespace remoting

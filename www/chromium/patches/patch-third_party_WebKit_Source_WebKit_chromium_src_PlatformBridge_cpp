@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_PlatformBridge_cpp,v 1.1 2011/03/15 11:38:05 robert Exp $
---- third_party/WebKit/Source/WebKit/chromium/src/PlatformBridge.cpp.orig	Mon Mar 14 11:49:42 2011
-+++ third_party/WebKit/Source/WebKit/chromium/src/PlatformBridge.cpp	Mon Mar 14 17:28:21 2011
+$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_PlatformBridge_cpp,v 1.2 2011/04/29 13:18:01 robert Exp $
+--- third_party/WebKit/Source/WebKit/chromium/src/PlatformBridge.cpp.orig	Thu Apr 28 11:56:06 2011
++++ third_party/WebKit/Source/WebKit/chromium/src/PlatformBridge.cpp	Thu Apr 28 11:56:33 2011
 @@ -70,7 +70,7 @@
  #include "win/WebThemeEngine.h"
  #endif
@@ -16,10 +16,10 @@ $OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_PlatformBridge_cpp
  
 -#if OS(LINUX) || OS(FREEBSD)
 +#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
- String PlatformBridge::getFontFamilyForCharacters(const UChar* characters, size_t numCharacters)
+ String PlatformBridge::getFontFamilyForCharacters(const UChar* characters, size_t numCharacters, const char* preferredLocale)
  {
      if (webKitClient()->sandboxSupport())
-@@ -778,7 +778,7 @@ void PlatformBridge::paintProgressBar(
+@@ -777,7 +777,7 @@ void PlatformBridge::paintProgressBar(
          gc->platformContext()->canvas(), barRect, valueRect, determinate, animatedSeconds);
  }
  

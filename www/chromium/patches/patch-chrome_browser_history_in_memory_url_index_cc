@@ -1,0 +1,14 @@
+$OpenBSD: patch-chrome_browser_history_in_memory_url_index_cc,v 1.1 2011/04/29 13:18:01 robert Exp $
+--- chrome/browser/history/in_memory_url_index.cc.orig	Thu Apr 28 12:43:27 2011
++++ chrome/browser/history/in_memory_url_index.cc	Thu Apr 28 12:43:36 2011
+@@ -864,8 +864,8 @@ bool InMemoryURLIndex::RestoreWordIDHistoryMap(
+       return false;
+     WordID word_id = iter->word_id();
+     HistoryIDSet history_id_set;
+-    const RepeatedField<int64>& history_ids(iter->history_id());
+-    for (RepeatedField<int64>::const_iterator jiter = history_ids.begin();
++    const RepeatedField<int64_t>& history_ids(iter->history_id());
++    for (RepeatedField<int64_t>::const_iterator jiter = history_ids.begin();
+          jiter != history_ids.end(); ++jiter)
+       history_id_set.insert(*jiter);
+     word_id_history_map_[word_id] = history_id_set;

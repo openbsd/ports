@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_browser_renderer_host_browser_render_process_host_cc,v 1.3 2011/03/15 11:38:05 robert Exp $
---- chrome/browser/renderer_host/browser_render_process_host.cc.orig	Fri Mar 11 10:01:42 2011
-+++ chrome/browser/renderer_host/browser_render_process_host.cc	Mon Mar 14 10:55:37 2011
-@@ -886,7 +886,7 @@ TransportDIB* BrowserRenderProcessHost::MapTransportDI
-   HANDLE section = app::win::GetSectionFromProcess(
+$OpenBSD: patch-chrome_browser_renderer_host_browser_render_process_host_cc,v 1.4 2011/04/29 13:18:01 robert Exp $
+--- chrome/browser/renderer_host/browser_render_process_host.cc.orig	Tue Apr 26 10:01:43 2011
++++ chrome/browser/renderer_host/browser_render_process_host.cc	Thu Apr 28 11:17:49 2011
+@@ -903,7 +903,7 @@ TransportDIB* BrowserRenderProcessHost::MapTransportDI
+   HANDLE section = chrome::GetSectionFromProcess(
        dib_id.handle, GetHandle(), false /* read write */);
    return TransportDIB::Map(section);
 -#elif defined(OS_MACOSX)

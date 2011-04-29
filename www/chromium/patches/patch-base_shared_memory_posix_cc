@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_shared_memory_posix_cc,v 1.1 2011/03/15 11:38:05 robert Exp $
---- base/shared_memory_posix.cc.orig	Mon Mar 14 19:21:35 2011
-+++ base/shared_memory_posix.cc	Mon Mar 14 19:21:44 2011
-@@ -149,7 +149,7 @@ bool SharedMemory::CreateNamed(const std::string& name
+$OpenBSD: patch-base_shared_memory_posix_cc,v 1.2 2011/04/29 13:18:01 robert Exp $
+--- base/shared_memory_posix.cc.orig	Tue Apr 26 10:01:34 2011
++++ base/shared_memory_posix.cc	Thu Apr 28 11:17:49 2011
+@@ -150,7 +150,7 @@ bool SharedMemory::CreateNamed(const std::string& name
      created_size_ = size;
    }
    if (fp == NULL) {

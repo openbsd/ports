@@ -1,8 +1,8 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.4 2011/03/15 11:38:05 robert Exp $
---- chrome/chrome_browser.gypi.orig	Mon Mar 14 11:43:18 2011
-+++ chrome/chrome_browser.gypi	Mon Mar 14 17:47:54 2011
-@@ -3621,7 +3621,7 @@
-             ['include', '^browser/chromeos/dom_ui/login/'],
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.5 2011/04/29 13:18:01 robert Exp $
+--- chrome/chrome_browser.gypi.orig	Thu Apr 28 11:40:57 2011
++++ chrome/chrome_browser.gypi	Thu Apr 28 11:42:34 2011
+@@ -3455,7 +3455,7 @@
+             ['exclude', '^browser/views/tab_contents/tab_contents_view_gtk.h'],
            ],
          }],
 -        ['OS=="linux"', {
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.4 2011/03/15 11:38:05 robert Exp 
            'dependencies': [
              '../build/linux/system.gyp:dbus-glib',
              '../build/linux/system.gyp:gconf',
-@@ -3633,13 +3633,13 @@
+@@ -3467,8 +3467,7 @@
            ],
            'link_settings': {
              'libraries': [
@@ -20,36 +20,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.4 2011/03/15 11:38:05 robert Exp 
              ],
            },
            'sources!': [
-             'browser/ui/views/extensions/extension_view.cc',
-             'browser/ui/views/extensions/extension_view.h',
-+            'browser/file_path_watcher/file_path_watcher_inotify.cc',
-           ],
-           'sources': [
-             'browser/crash_handler_host_linux.h',
-@@ -3694,7 +3694,6 @@
-             'browser/certificate_manager_model.h',
-             'browser/dom_ui/options/certificate_manager_handler.cc',
-             'browser/dom_ui/options/certificate_manager_handler.h',
--            'browser/file_path_watcher/file_path_watcher_inotify.cc',
-           ],
-         }],
-         ['OS=="freebsd" or OS=="openbsd"', {
-@@ -3705,8 +3704,14 @@
-             '../build/linux/system.gyp:x11',
-           ],
-           'sources': [
-+            #'browser/geolocation/gateway_data_provider_bsd.cc',
-+            #'browser/geolocation/gateway_data_provider_bsd.h',
-             'browser/file_path_watcher/file_path_watcher_stub.cc',
-           ],
-+          'sources!': [
-+            'browser/geolocation/gateway_data_provider_linux.cc',
-+            'browser/geolocation/gateway_data_provider_linux.h',
-+          ],
-         }],
-         # Use system SSL settings on Mac and Windows.  Use preferences
-         # for SSL settings on other platforms.
-@@ -4294,7 +4299,7 @@
+@@ -4118,7 +4117,7 @@
                ],
              }],
              # GTK build only

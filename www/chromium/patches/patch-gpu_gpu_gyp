@@ -1,7 +1,7 @@
-$OpenBSD: patch-gpu_gpu_gyp,v 1.3 2011/03/15 11:38:05 robert Exp $
---- gpu/gpu.gyp.orig	Fri Mar 11 10:01:07 2011
-+++ gpu/gpu.gyp	Mon Mar 14 10:55:37 2011
-@@ -214,7 +214,7 @@
+$OpenBSD: patch-gpu_gpu_gyp,v 1.4 2011/04/29 13:18:01 robert Exp $
+--- gpu/gpu.gyp.orig	Tue Apr 26 10:01:07 2011
++++ gpu/gpu.gyp	Thu Apr 28 11:17:49 2011
+@@ -213,7 +213,7 @@
          'command_buffer/service/texture_manager.cc',
        ],
        'conditions': [

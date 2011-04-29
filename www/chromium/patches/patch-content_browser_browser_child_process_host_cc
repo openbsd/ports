@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_browser_child_process_host_cc,v 1.1 2011/04/29 13:18:01 robert Exp $
+--- content/browser/browser_child_process_host.cc.orig	Thu Apr 28 11:24:41 2011
++++ content/browser/browser_child_process_host.cc	Thu Apr 28 11:24:52 2011
+@@ -25,7 +25,7 @@
+ #include "chrome/installer/util/google_update_settings.h"
+ #include "content/browser/browser_thread.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ #include "base/linux_util.h"
+ #endif  // OS_LINUX
+ 

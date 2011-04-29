@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_WebCore_dom_SelectElement_cpp,v 1.1 2011/03/15 11:38:05 robert Exp $
---- third_party/WebKit/Source/WebCore/dom/SelectElement.cpp.orig	Fri Mar 11 10:18:22 2011
-+++ third_party/WebKit/Source/WebCore/dom/SelectElement.cpp	Mon Mar 14 10:57:25 2011
-@@ -54,7 +54,7 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebCore_dom_SelectElement_cpp,v 1.2 2011/04/29 13:18:01 robert Exp $
+--- third_party/WebKit/Source/WebCore/dom/SelectElement.cpp.orig	Tue Apr 26 10:03:49 2011
++++ third_party/WebKit/Source/WebCore/dom/SelectElement.cpp	Thu Apr 28 11:17:49 2011
+@@ -53,7 +53,7 @@
  #if PLATFORM(MAC) || (PLATFORM(CHROMIUM) && OS(DARWIN))
  #define ARROW_KEYS_POP_MENU 1
  #define SPACE_OR_RETURN_POP_MENU 0

@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_renderer_renderer_glue_cc,v 1.2 2011/03/15 11:38:05 robert Exp $
---- chrome/renderer/renderer_glue.cc.orig	Fri Mar 11 10:01:45 2011
-+++ chrome/renderer/renderer_glue.cc	Mon Mar 14 10:55:37 2011
+$OpenBSD: patch-chrome_renderer_renderer_glue_cc,v 1.3 2011/04/29 13:18:01 robert Exp $
+--- chrome/renderer/renderer_glue.cc.orig	Tue Apr 26 10:01:45 2011
++++ chrome/renderer/renderer_glue.cc	Thu Apr 28 11:17:49 2011
 @@ -43,7 +43,7 @@
  
  #if defined(OS_WIN)
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_renderer_renderer_glue_cc,v 1.2 2011/03/15 11:38:05 rober
  #include "chrome/renderer/renderer_sandbox_support_linux.h"
  #endif
  
-@@ -305,7 +305,7 @@ bool LaunchSelLdr(const char* alleged_url, int socket_
+@@ -297,7 +297,7 @@ bool LaunchSelLdr(const char* alleged_url, int socket_
  }
  #endif
  

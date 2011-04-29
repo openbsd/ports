@@ -1,0 +1,21 @@
+$OpenBSD: patch-ui_views_events_accelerator_cc,v 1.1 2011/04/29 13:18:02 robert Exp $
+--- ui/views/events/accelerator.cc.orig	Fri Apr 29 10:49:35 2011
++++ ui/views/events/accelerator.cc	Fri Apr 29 10:49:46 2011
+@@ -6,7 +6,7 @@
+ 
+ #if defined(OS_WIN)
+ #include <windows.h>
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+ #include <gdk/gdk.h>
+ #endif
+ 
+@@ -99,7 +99,7 @@ string16 GetShortcutTextForAccelerator(const Accelerat
+     else
+       key = LOWORD(::MapVirtualKeyW(accelerator.GetKeyCode(), MAPVK_VK_TO_CHAR));
+     shortcut += key;
+-#elif defined(OS_LINUX)
++#elif defined(OS_LINUX) || defined(OS_OPENBSD)
+     const gchar* name = NULL;
+     switch (accelerator.GetKeyCode()) {
+       case ui::VKEY_OEM_2:

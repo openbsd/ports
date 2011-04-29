@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_renderer_render_view_h,v 1.3 2011/03/15 11:38:05 robert Exp $
---- chrome/renderer/render_view.h.orig	Fri Mar 11 10:01:45 2011
-+++ chrome/renderer/render_view.h	Mon Mar 14 10:55:37 2011
-@@ -1112,7 +1112,7 @@ class RenderView : public RenderWidget,
+$OpenBSD: patch-chrome_renderer_render_view_h,v 1.4 2011/04/29 13:18:01 robert Exp $
+--- chrome/renderer/render_view.h.orig	Tue Apr 26 10:01:45 2011
++++ chrome/renderer/render_view.h	Thu Apr 28 11:17:49 2011
+@@ -1079,7 +1079,7 @@ class RenderView : public RenderWidget,
    // periodic timer so we don't send too many messages.
    void SyncNavigationState();
  

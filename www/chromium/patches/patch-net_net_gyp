@@ -1,7 +1,7 @@
-$OpenBSD: patch-net_net_gyp,v 1.3 2011/03/15 11:38:05 robert Exp $
---- net/net.gyp.orig	Fri Mar 11 10:01:16 2011
-+++ net/net.gyp	Mon Mar 14 10:55:37 2011
-@@ -133,12 +133,12 @@
+$OpenBSD: patch-net_net_gyp,v 1.4 2011/04/29 13:18:01 robert Exp $
+--- net/net.gyp.orig	Tue Apr 26 10:01:16 2011
++++ net/net.gyp	Thu Apr 28 11:17:49 2011
+@@ -134,12 +134,12 @@
          'base/net_util_win.cc',
          'base/network_change_notifier.cc',
          'base/network_change_notifier.h',
@@ -18,7 +18,7 @@ $OpenBSD: patch-net_net_gyp,v 1.3 2011/03/15 11:38:05 robert Exp $
          'base/network_change_notifier_win.cc',
          'base/network_change_notifier_win.h',
          'base/network_config_watcher_mac.cc',
-@@ -242,7 +242,6 @@
+@@ -245,7 +245,6 @@
              'dependencies': [
                '../build/linux/system.gyp:gconf',
                '../build/linux/system.gyp:gdk',
@@ -26,7 +26,7 @@ $OpenBSD: patch-net_net_gyp,v 1.3 2011/03/15 11:38:05 robert Exp $
              ],
              'conditions': [
                ['use_openssl==1', {
-@@ -1029,7 +1028,7 @@
+@@ -1023,7 +1022,7 @@
              ],
            }
          ],
@@ -35,7 +35,7 @@ $OpenBSD: patch-net_net_gyp,v 1.3 2011/03/15 11:38:05 robert Exp $
            'conditions': [
              ['linux_use_tcmalloc==1', {
                'dependencies': [
-@@ -1194,7 +1193,7 @@
+@@ -1196,7 +1195,7 @@
              }],
            ],
          }],

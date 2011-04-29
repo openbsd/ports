@@ -1,16 +1,16 @@
-$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebFrameImpl_cpp,v 1.1 2011/03/15 11:38:05 robert Exp $
---- third_party/WebKit/Source/WebKit/chromium/src/WebFrameImpl.cpp.orig	Fri Mar 11 10:17:36 2011
-+++ third_party/WebKit/Source/WebKit/chromium/src/WebFrameImpl.cpp	Mon Mar 14 10:57:25 2011
-@@ -159,7 +159,7 @@
- #include "LocalCurrentGraphicsContext.h"
- #endif
+$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebFrameImpl_cpp,v 1.2 2011/04/29 13:18:02 robert Exp $
+--- third_party/WebKit/Source/WebKit/chromium/src/WebFrameImpl.cpp.orig	Thu Apr 28 11:56:44 2011
++++ third_party/WebKit/Source/WebKit/chromium/src/WebFrameImpl.cpp	Thu Apr 28 11:57:00 2011
+@@ -154,7 +154,7 @@
+ #include <algorithm>
+ #include <wtf/CurrentTime.h>
  
 -#if OS(LINUX) || OS(FREEBSD)
 +#if OS(LINUX) || OS(FREEBSD) || OS(OPENBSD)
  #include <gdk/gdk.h>
  #endif
  
-@@ -322,7 +322,7 @@ class ChromePrintContext : public PrintContext { (publ
+@@ -324,7 +324,7 @@ class ChromePrintContext : public PrintContext { (publ
          float scale = m_printedPageWidth / pageRect.width();
  
          ctx.save();
@@ -19,12 +19,3 @@ $OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebFrameImpl_cpp,v
          ctx.scale(WebCore::FloatSize(scale, scale));
  #endif
          ctx.translate(static_cast<float>(-pageRect.x()),
-@@ -1338,7 +1338,7 @@ float WebFrameImpl::printPage(int page, WebCanvas* can
-         return 0;
-     }
- 
--#if OS(WINDOWS) || OS(LINUX) || OS(FREEBSD) || OS(SOLARIS)
-+#if OS(WINDOWS) || OS(LINUX) || OS(FREEBSD) || OS(SOLARIS) || OS(OPENBSD)
-     PlatformContextSkia context(canvas);
-     GraphicsContext spool(&context);
- #elif OS(DARWIN)
