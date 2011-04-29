@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_iconloader_qticonloader_cpp,v 1.2 2011/03/19 14:38:44 rpointel Exp $
+$OpenBSD: patch-src_iconloader_qticonloader_cpp,v 1.3 2011/04/29 08:28:12 dcoppa Exp $
 
 Use the gnome icon theme unconditionally: fixes a problem with minitube
 GUI not having icons under fvwm/cwm/kde3/...
 
---- src/iconloader/qticonloader.cpp.orig	Thu Mar 17 00:07:11 2011
-+++ src/iconloader/qticonloader.cpp	Thu Mar 17 18:31:40 2011
+--- src/iconloader/qticonloader.cpp.orig	Fri Apr 15 17:09:19 2011
++++ src/iconloader/qticonloader.cpp	Tue Apr 26 14:13:20 2011
 @@ -104,7 +104,6 @@ Q_GLOBAL_STATIC(QtIconLoaderImplementation, iconLoader
      QIcon icon;
  
@@ -23,7 +23,12 @@ GUI not having icons under fvwm/cwm/kde3/...
          icon = QIcon(QString(":/images/%1.png").arg(name));
          if (!icon.isNull()) {
              icon.addPixmap(QString(":/images/%1_active.png").arg(name), QIcon::Active);
-@@ -183,6 +179,10 @@ void QtIconLoaderImplementation::lookupIconTheme() con
+@@ -179,10 +175,14 @@ void QtIconLoaderImplementation::lookupIconTheme() con
+ #ifdef Q_WS_X11
+     QString dataDirs = QFile::decodeName(getenv("XDG_DATA_DIRS"));
+     if (dataDirs.isEmpty())
+-        dataDirs = QLatin1String("/usr/local/share/:/usr/share/");
++        dataDirs = QLatin1String("${LOCALBASE}/share/:/usr/share/");
      
      dataDirs.prepend(QDir::homePath() + QLatin1String("/:"));
      iconDirs = dataDirs.split(QLatin1Char(':'));

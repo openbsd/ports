@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_SearchView_cpp,v 1.1 2011/04/29 08:28:12 dcoppa Exp $
+
+Fix spacing ugliness between keyword and channel lists
+(Commit 478db4144e268ce83d726fa6bac15260857c35c9)
+
+--- src/SearchView.cpp.orig	Thu Apr 28 23:27:05 2011
++++ src/SearchView.cpp	Thu Apr 28 23:27:50 2011
+@@ -134,6 +134,7 @@ SearchView::SearchView(QWidget *parent) : QWidget(pare
+ 
+     QHBoxLayout *otherLayout = new QHBoxLayout();
+     otherLayout->setMargin(0);
++    otherLayout->setSpacing(10);
+ 
+     recentKeywordsLayout = new QVBoxLayout();
+     recentKeywordsLayout->setSpacing(5);
