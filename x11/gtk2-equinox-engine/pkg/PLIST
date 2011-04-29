@@ -1,16 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/17 14:36:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/04/29 07:01:18 ajacoutot Exp $
 @comment lib/gtk-2.0/2.10.0/engines/libequinox.la
 lib/gtk-2.0/2.10.0/engines/libequinox.so
 share/themes/Equinox_Evolution/
 share/themes/Equinox_Evolution/gtk-2.0/
 share/themes/Equinox_Evolution/gtk-2.0/apps/
 share/themes/Equinox_Evolution/gtk-2.0/apps/gedit.rc
+share/themes/Equinox_Evolution/gtk-2.0/apps/globalmenu.rc
 share/themes/Equinox_Evolution/gtk-2.0/apps/gnome-system-monitor.rc
 share/themes/Equinox_Evolution/gtk-2.0/apps/gnome-terminal.rc
 share/themes/Equinox_Evolution/gtk-2.0/apps/google-chrome.rc
 share/themes/Equinox_Evolution/gtk-2.0/apps/nautilus-elementary.rc
 share/themes/Equinox_Evolution/gtk-2.0/apps/nautilus.rc
 share/themes/Equinox_Evolution/gtk-2.0/apps/nm-applet.gtkrc
+share/themes/Equinox_Evolution/gtk-2.0/apps/ubuntuone.rc
 share/themes/Equinox_Evolution/gtk-2.0/gtkrc
 share/themes/Equinox_Evolution/gtk-2.0/images/
 share/themes/Equinox_Evolution/gtk-2.0/images/arrow.png
@@ -29,12 +31,16 @@ share/themes/Equinox_Evolution/index.theme
 share/themes/Equinox_Evolution_Dawn/
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/apps/
+share/themes/Equinox_Evolution_Dawn/gtk-2.0/apps/banshee.rc
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/apps/gedit.rc
+share/themes/Equinox_Evolution_Dawn/gtk-2.0/apps/globalmenu.rc
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/apps/gnome-system-monitor.rc
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/apps/gnome-terminal.rc
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/apps/google-chrome.rc
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/apps/nautilus-elementary.rc
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/apps/nautilus.rc
+share/themes/Equinox_Evolution_Dawn/gtk-2.0/apps/rhythmbox.rc
+share/themes/Equinox_Evolution_Dawn/gtk-2.0/apps/ubuntuone.rc
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/gtkrc
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/images/
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/images/arrow.png
@@ -47,6 +53,7 @@ share/themes/Equinox_Evolution_Dawn/gtk-2.0/images/mode_normal.png
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/images/mode_prelight.png
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/images/mode_pressed.png
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/images/panel_bg.png
+share/themes/Equinox_Evolution_Dawn/gtk-2.0/images/panel_bg_global.png
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/images/resize_grip.png
 share/themes/Equinox_Evolution_Dawn/gtk-2.0/images/right_slider_normal.png
 share/themes/Equinox_Evolution_Dawn/index.theme
@@ -86,12 +93,16 @@ share/themes/Equinox_Evolution_Dawn_Squared/metacity-1/min_inactive.png
 share/themes/Equinox_Evolution_Dusk/
 share/themes/Equinox_Evolution_Dusk/gtk-2.0/
 share/themes/Equinox_Evolution_Dusk/gtk-2.0/apps/
+share/themes/Equinox_Evolution_Dusk/gtk-2.0/apps/banshee.rc
 share/themes/Equinox_Evolution_Dusk/gtk-2.0/apps/gedit.rc
+share/themes/Equinox_Evolution_Dusk/gtk-2.0/apps/globalmenu.rc
 share/themes/Equinox_Evolution_Dusk/gtk-2.0/apps/gnome-system-monitor.rc
 share/themes/Equinox_Evolution_Dusk/gtk-2.0/apps/gnome-terminal.rc
 share/themes/Equinox_Evolution_Dusk/gtk-2.0/apps/google-chrome.rc
 share/themes/Equinox_Evolution_Dusk/gtk-2.0/apps/nautilus-elementary.rc
 share/themes/Equinox_Evolution_Dusk/gtk-2.0/apps/nautilus.rc
+share/themes/Equinox_Evolution_Dusk/gtk-2.0/apps/softwarecenter.rc
+share/themes/Equinox_Evolution_Dusk/gtk-2.0/apps/ubuntuone.rc
 share/themes/Equinox_Evolution_Dusk/gtk-2.0/gtkrc
 share/themes/Equinox_Evolution_Dusk/gtk-2.0/images/
 share/themes/Equinox_Evolution_Dusk/gtk-2.0/images/arrow.png
@@ -125,11 +136,14 @@ share/themes/Equinox_Evolution_Light/
 share/themes/Equinox_Evolution_Light/gtk-2.0/
 share/themes/Equinox_Evolution_Light/gtk-2.0/apps/
 share/themes/Equinox_Evolution_Light/gtk-2.0/apps/gedit.rc
+share/themes/Equinox_Evolution_Light/gtk-2.0/apps/globalmenu.rc
 share/themes/Equinox_Evolution_Light/gtk-2.0/apps/gnome-system-monitor.rc
 share/themes/Equinox_Evolution_Light/gtk-2.0/apps/gnome-terminal.rc
 share/themes/Equinox_Evolution_Light/gtk-2.0/apps/google-chrome.rc
 share/themes/Equinox_Evolution_Light/gtk-2.0/apps/nautilus-elementary.rc
+share/themes/Equinox_Evolution_Light/gtk-2.0/apps/nautilus-elmentary.rc
 share/themes/Equinox_Evolution_Light/gtk-2.0/apps/nautilus.rc
+share/themes/Equinox_Evolution_Light/gtk-2.0/apps/ubuntuone.rc
 share/themes/Equinox_Evolution_Light/gtk-2.0/gtkrc
 share/themes/Equinox_Evolution_Light/gtk-2.0/images/
 share/themes/Equinox_Evolution_Light/gtk-2.0/images/arrow.png
@@ -141,21 +155,25 @@ share/themes/Equinox_Evolution_Light/gtk-2.0/images/left_slider_normal.png
 share/themes/Equinox_Evolution_Light/gtk-2.0/images/mode_normal.png
 share/themes/Equinox_Evolution_Light/gtk-2.0/images/mode_prelight.png
 share/themes/Equinox_Evolution_Light/gtk-2.0/images/mode_pressed.png
-share/themes/Equinox_Evolution_Light/gtk-2.0/images/panel_bg (copie).png
 share/themes/Equinox_Evolution_Light/gtk-2.0/images/panel_bg.png
+share/themes/Equinox_Evolution_Light/gtk-2.0/images/panel_bg_global.png
 share/themes/Equinox_Evolution_Light/gtk-2.0/images/resize_grip.png
 share/themes/Equinox_Evolution_Light/gtk-2.0/images/right_slider_normal.png
 share/themes/Equinox_Evolution_Light/index.theme
 share/themes/Equinox_Evolution_Midnight/
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/apps/
+share/themes/Equinox_Evolution_Midnight/gtk-2.0/apps/banshee.rc
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/apps/gedit.rc
+share/themes/Equinox_Evolution_Midnight/gtk-2.0/apps/globalmenu.rc
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/apps/gnome-panel.rc
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/apps/gnome-system-monitor.rc
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/apps/gnome-terminal.rc
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/apps/google-chrome.rc
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/apps/nautilus-elementary.rc
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/apps/nautilus.rc
+share/themes/Equinox_Evolution_Midnight/gtk-2.0/apps/softwarecenter.rc
+share/themes/Equinox_Evolution_Midnight/gtk-2.0/apps/ubuntuone.rc
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/fixes/
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/fixes/fixes.rc
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/gtkrc
@@ -167,9 +185,13 @@ share/themes/Equinox_Evolution_Midnight/gtk-2.0/images/breadcrumb_prelight.png
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/images/handle-nautilus.png
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/images/left_slider_normal.png
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/images/mode_normal.png
+share/themes/Equinox_Evolution_Midnight/gtk-2.0/images/mode_normal_global.png
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/images/mode_prelight.png
+share/themes/Equinox_Evolution_Midnight/gtk-2.0/images/mode_prelight_global.png
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/images/mode_pressed.png
+share/themes/Equinox_Evolution_Midnight/gtk-2.0/images/mode_pressed_global.png
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/images/panel_bg.png
+share/themes/Equinox_Evolution_Midnight/gtk-2.0/images/panel_bg_global.png
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/images/resize_grip.png
 share/themes/Equinox_Evolution_Midnight/gtk-2.0/images/right_slider_normal.png
 share/themes/Equinox_Evolution_Midnight/index.theme
