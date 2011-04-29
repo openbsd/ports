@@ -1,12 +1,13 @@
-$OpenBSD: patch-wscript,v 1.5 2011/04/28 22:02:44 jasper Exp $
+$OpenBSD: patch-wscript,v 1.6 2011/04/29 07:41:15 jasper Exp $
 
 - OpenBSD can also use libexecinfo.
 - Don't append EV_MULTIPLICITY_EV was it breaks the build with using the
   shared libev with an undefined reference to ev_rt_now.
+- Don't build with -O3.
 - Adjust some paths.
 
 --- wscript.orig	Sat Apr 23 02:06:25 2011
-+++ wscript	Thu Apr 28 23:02:42 2011
++++ wscript	Fri Apr 29 09:34:30 2011
 @@ -280,7 +280,7 @@ def configure(conf):
    if Options.options.efence:
      conf.check(lib='efence', libpath=['/usr/lib', '/usr/local/lib'], uselib_store='EFENCE')
@@ -28,6 +29,15 @@ $OpenBSD: patch-wscript,v 1.5 2011/04/28 22:02:44 jasper Exp $
    # Makes select on windows support more than 64 FDs
    if sys.platform.startswith("win32"):
      conf.env.append_value('CPPFLAGS', '-DFD_SETSIZE=1024');
+@@ -533,7 +535,7 @@ def configure(conf):
+   # Configure default variant
+   conf.setenv('default')
+   conf.env.append_value('CPPFLAGS', '-DNDEBUG')
+-  default_compile_flags = ['-g', '-O3']
++  default_compile_flags = ['-g']
+   conf.env.append_value('CCFLAGS', default_compile_flags)
+   conf.env.append_value('CXXFLAGS', default_compile_flags)
+   conf.write_config_header("config.h")
 @@ -908,11 +910,10 @@ def build(bld):
    # Only install the man page if it exists.
    # Do 'make doc install' to build and install it.

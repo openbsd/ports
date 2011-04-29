@@ -1,9 +1,19 @@
-$OpenBSD: patch-deps_v8_SConstruct,v 1.4 2011/04/12 10:32:49 jasper Exp $
+$OpenBSD: patch-deps_v8_SConstruct,v 1.5 2011/04/29 07:41:15 jasper Exp $
 
+- Remove extra zoom-zoom!
 - Don't link with -lpthread but use -pthread instead.
 
---- deps/v8/SConstruct.orig	Tue Apr 12 10:05:56 2011
-+++ deps/v8/SConstruct	Tue Apr 12 10:06:54 2011
+--- deps/v8/SConstruct.orig	Sat Apr 23 02:06:25 2011
++++ deps/v8/SConstruct	Fri Apr 29 00:07:18 2011
+@@ -154,7 +154,7 @@ LIBRARY_FLAGS = {
+       }
+     },
+     'mode:release': {
+-      'CCFLAGS':      ['-O3', '-fomit-frame-pointer', '-fdata-sections',
++      'CCFLAGS':      ['-fomit-frame-pointer', '-fdata-sections',
+                        '-ffunction-sections'],
+       'os:android': {
+         'CCFLAGS':    ['-mthumb', '-Os'],
 @@ -368,7 +368,8 @@ MKSNAPSHOT_EXTRA_FLAGS = {
        'LINKFLAGS': ['-mt']
      },
