@@ -1,0 +1,36 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/29 18:55:37 matthew Exp $
+@bin bin/openscad
+share/openscad/
+share/openscad/examples/
+share/openscad/examples/example001.scad
+share/openscad/examples/example002.scad
+share/openscad/examples/example003.scad
+share/openscad/examples/example004.scad
+share/openscad/examples/example005.scad
+share/openscad/examples/example006.scad
+share/openscad/examples/example007.dxf
+share/openscad/examples/example007.scad
+share/openscad/examples/example008.dxf
+share/openscad/examples/example008.scad
+share/openscad/examples/example009.dxf
+share/openscad/examples/example009.scad
+share/openscad/examples/example010.dat
+share/openscad/examples/example010.scad
+share/openscad/examples/example011.scad
+share/openscad/examples/example012.scad
+share/openscad/examples/example012.stl
+share/openscad/examples/example013.dxf
+share/openscad/examples/example013.scad
+share/openscad/examples/example014.scad
+share/openscad/examples/example015.scad
+share/openscad/examples/example016.scad
+share/openscad/examples/example016.stl
+share/openscad/examples/example017.scad
+share/openscad/examples/example018.scad
+share/openscad/examples/example019.scad
+share/openscad/examples/example020.scad
+share/openscad/examples/example021.scad
+share/openscad/examples/example022.scad
+share/openscad/libraries/
+share/openscad/libraries/boxes.scad
+share/openscad/libraries/shapes.scad

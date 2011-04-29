@@ -1,0 +1,11 @@
+$OpenBSD: patch-boost_pri,v 1.1.1.1 2011/04/29 18:55:37 matthew Exp $
+--- boost.pri.orig	Thu Apr 28 13:38:05 2011
++++ boost.pri	Thu Apr 28 13:38:12 2011
+@@ -13,6 +13,6 @@ boost {
+   win32 {
+      LIBS += -llibboost_thread-vc90-mt-s-1_46_1 -llibboost_program_options-vc90-mt-s-1_46_1
+   } else {
+-     LIBS += -lboost_thread -lboost_program_options
++     LIBS += -lboost_thread-mt -lboost_program_options-mt
+   }
+ }
