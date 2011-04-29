@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2011/04/28 05:22:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/04/29 08:41:51 ajacoutot Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
 GNOME_PROJECT=	gnome-screensaver
 GNOME_VERSION=	2.30.2
-REVISION=	1
+REVISION=	2
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,8 +20,8 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs startup-notification-1
 WANTLIB += xcb xcb-atom xcb-aux xcb-event xkbfile xklavier xml2
-WANTLIB += z xcb-render xcb-render-util gnome-desktop-2 gnome-menu
-WANTLIB += gnomekbdui gnomekbd notify drm
+WANTLIB += z xcb-render gnome-desktop-2 gnome-menu
+WANTLIB += gnomekbdui gnomekbd drm
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -30,13 +30,10 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	textproc/xmlto
 LIB_DEPENDS=	x11/gnome/desktop \
 		x11/gnome/menus \
-		x11/gnome/libgnomekbd \
-		devel/libnotify>=0.7.2
+		x11/gnome/libgnomekbd
 
-# notification-daemon is needed for the "Leave Message" button
 RUN_DEPENDS=	x11/gnome/librsvg \
-		x11/xscreensaver,-data,no_gle \
-		notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
+		x11/xscreensaver,-data,no_gle
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.67
@@ -54,8 +51,10 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-xscreensaverhackdir="${LOCALBASE}/libexec/xscreensaver" \
 		--with-mit-ext \
 		--with-xf86gamma-ext \
-		--with-kbd-layout-indicator \
-		--with-libnotify
+		--with-kbd-layout-indicator
+# doesn't work, removed upstream (be471c1097980f01f91cff6e485fb81861b5aeb7)
+CONFIGURE_ARGS+=--without-libnotify
+
 USE_GROFF =	Yes
 
 MODGNOME_HELP_FILES= Yes
