@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/20 08:57:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/29 09:18:53 dcoppa Exp $
 
 COMMENT =	status and workspace bar for i3
 
 DISTNAME =	i3bar-0.6.21
+REVISION =	0
 CATEGORIES =	x11
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_ipc_c,v 1.1.1.1 2011/04/20 08:57:54 dcoppa Exp $
+$OpenBSD: patch-src_ipc_c,v 1.2 2011/04/29 09:18:53 dcoppa Exp $
 --- src/ipc.c.orig	Mon Apr 11 16:26:03 2011
-+++ src/ipc.c	Tue Apr 12 10:53:45 2011
++++ src/ipc.c	Fri Apr 29 10:58:38 2011
 @@ -12,6 +12,7 @@
  #include <stdio.h>
  #include <unistd.h>
@@ -9,3 +9,17 @@ $OpenBSD: patch-src_ipc_c,v 1.1.1.1 2011/04/20 08:57:54 dcoppa Exp $
  #include <sys/socket.h>
  #include <sys/un.h>
  #include <i3/ipc.h>
+@@ -160,9 +161,11 @@ void got_data(struct ev_loop *loop, ev_io *watcher, in
+     }
+ 
+     char *walk = header + strlen(I3_IPC_MAGIC);
+-    uint32_t size = *((uint32_t*) walk);
++    uint32_t size;
++    memcpy(&size, (uint32_t*)walk, sizeof(uint32_t));
+     walk += sizeof(uint32_t);
+-    uint32_t type = *((uint32_t*) walk);
++    uint32_t type;
++    memcpy(&type, (uint32_t*)walk, sizeof(uint32_t));
+ 
+     /* Now that we know, what to expect, we can start read()ing the rest
+      * of the message */
