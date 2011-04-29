@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.48 2010/11/05 08:23:04 bernd Exp $
+@comment $OpenBSD: PLIST-main,v 1.49 2011/04/29 11:09:12 stsp Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -113,6 +113,8 @@ libexec/git/git-rebase--interactive
 @bin libexec/git/git-reflog
 libexec/git/git-relink
 @bin libexec/git/git-remote
+@bin libexec/git/git-remote-ext
+@bin libexec/git/git-remote-fd
 @bin libexec/git/git-remote-ftp
 @bin libexec/git/git-remote-ftps
 @bin libexec/git/git-remote-http
@@ -250,6 +252,8 @@ libexec/git/git-web--browse
 @man man/man1/git-receive-pack.1
 @man man/man1/git-reflog.1
 @man man/man1/git-relink.1
+@man man/man1/git-remote-ext.1
+@man man/man1/git-remote-fd.1
 @man man/man1/git-remote-helpers.1
 @man man/man1/git-remote.1
 @man man/man1/git-repack.1
@@ -513,6 +517,10 @@ share/doc/git/git-reflog.html
 share/doc/git/git-reflog.txt
 share/doc/git/git-relink.html
 share/doc/git/git-relink.txt
+share/doc/git/git-remote-ext.html
+share/doc/git/git-remote-ext.txt
+share/doc/git/git-remote-fd.html
+share/doc/git/git-remote-fd.txt
 share/doc/git/git-remote-helpers.html
 share/doc/git/git-remote-helpers.txt
 share/doc/git/git-remote.html

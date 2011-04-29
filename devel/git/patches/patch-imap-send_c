@@ -1,12 +1,12 @@
-$OpenBSD: patch-imap-send_c,v 1.9 2010/10/07 09:42:23 bernd Exp $
---- imap-send.c.orig	Fri Aug 20 01:44:47 2010
-+++ imap-send.c	Thu Sep  2 11:12:51 2010
+$OpenBSD: patch-imap-send_c,v 1.10 2011/04/29 11:09:12 stsp Exp $
+--- imap-send.c.orig	Sun Apr 24 19:48:31 2011
++++ imap-send.c	Thu Apr 28 18:00:41 2011
 @@ -1068,7 +1068,7 @@ static struct store *imap_open_store(struct imap_serve
  	/* open connection to IMAP server */
  
  	if (srvc->tunnel) {
 -		const char *argv[] = { srvc->tunnel, NULL };
 +		const char *argv[] = { srvc->tunnel, (void *)NULL };
- 		struct child_process tunnel = {0};
+ 		struct child_process tunnel = {NULL};
  
  		imap_info("Starting tunnel '%s'... ", srvc->tunnel);

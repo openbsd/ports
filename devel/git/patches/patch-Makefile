@@ -1,6 +1,6 @@
---- Makefile.orig	Fri Oct 22 05:49:16 2010
-+++ Makefile	Mon Oct 25 14:47:08 2010
-@@ -257,7 +257,7 @@ endif
+--- Makefile.orig	Sun Apr 24 19:48:31 2011
++++ Makefile	Thu Apr 28 18:00:03 2011
+@@ -262,7 +262,7 @@ endif
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -9,7 +9,7 @@
  LDFLAGS =
  ALL_CFLAGS = $(CPPFLAGS) $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
-@@ -275,30 +275,24 @@ STRIP ?= strip
+@@ -281,32 +281,25 @@ STRIP ?= strip
  # runtime figures out where they are based on the path to the executable.
  # This can help installing the suite in a relocatable way.
  
@@ -29,11 +29,14 @@
 -ifeq ($(prefix),/usr)
 -sysconfdir = /etc
 -ETC_GITCONFIG = $(sysconfdir)/gitconfig
+-ETC_GITATTRIBUTES = $(sysconfdir)/gitattributes
 -else
 -sysconfdir = $(prefix)/etc
 -ETC_GITCONFIG = etc/gitconfig
+-ETC_GITATTRIBUTES = etc/gitattributes
 -endif
 +ETC_GITCONFIG = $(SYSCONFDIR)/gitconfig
++ETC_GITATTRIBUTES = $(SYSCONFDIR)/gitattributes
  lib = lib
  # DESTDIR=
  pathsep = :
@@ -45,20 +48,21 @@
  AR = ar
  RM = rm -f
  DIFF = diff
-@@ -306,9 +300,9 @@ TAR = tar
+@@ -314,10 +307,10 @@ TAR = tar
  FIND = find
  INSTALL = install
  RPMBUILD = rpmbuild
 -TCL_PATH = tclsh
 -TCLTK_PATH = wish
--PTHREAD_LIBS = -lpthread
 +TCL_PATH ?= tclsh
 +TCLTK_PATH ?= wish
+ XGETTEXT = xgettext
+-PTHREAD_LIBS = -lpthread
 +PTHREAD_LIBS = -pthread
  PTHREAD_CFLAGS =
  GCOV = gcov
  
-@@ -924,13 +918,14 @@ ifeq ($(uname_S),FreeBSD)
+@@ -942,13 +935,14 @@ ifeq ($(uname_S),FreeBSD)
  	HAVE_PATHS_H = YesPlease
  endif
  ifeq ($(uname_S),OpenBSD)
@@ -76,16 +80,16 @@
  endif
  ifeq ($(uname_S),NetBSD)
  	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
-@@ -1247,7 +1242,7 @@ ifndef NO_POSIX_ONLY_PROGRAMS
- 	PROGRAM_OBJS += daemon.o
- endif
+@@ -1289,7 +1283,7 @@ endif
+ EXTLIBS += -lz
+ 
  ifndef NO_OPENSSL
 -	OPENSSL_LIBSSL = -lssl
 +	OPENSSL_LIBSSL = -lssl -lcrypto
  	ifdef OPENSSLDIR
  		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
  		OPENSSL_LINK = -L$(OPENSSLDIR)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLDIR)/$(lib)
-@@ -2037,7 +2032,7 @@ export NO_SVN_TESTS
+@@ -2135,7 +2129,7 @@ export NO_SVN_TESTS
  
  ### Testing rules
  
