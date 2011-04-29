@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2011/04/28 21:27:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/04/29 06:46:06 jasper Exp $
 
 COMMENT=		assembler/disassembler/simulator for MSP430 MCUs
 
-V=			2011-04-23
+V=			2011-04-28
 DISTNAME=		naken430asm-$V
 PKGNAME=		naken430asm-${V:S/-//g}
 CATEGORIES=		devel
