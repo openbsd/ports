@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/29 17:47:50 matthew Exp $
+# $OpenBSD: Makefile,v 1.2 2011/04/30 01:07:14 matthew Exp $
 
 # vax:	no fenv.h support
 NOT_FOR_ARCHS =		vax
@@ -25,8 +25,9 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+# m>=5.3 for fenv.h support
 WANTLIB =		GL GLU ICE SM X11 Xext boost_thread-mt gmp gmpxx \
-			lib/qt4/QtGui lib/qt4/QtOpenGL m mpfr stdc++ z
+			lib/qt4/QtGui lib/qt4/QtOpenGL m>=5.3 mpfr stdc++ z
 
 # Awkward hosting site; see https://gforge.inria.fr/frs/?group_id=52 for files index.
 MASTER_SITES =		https://gforge.inria.fr/frs/download.php/28500/
