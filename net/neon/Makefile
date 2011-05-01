@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/05/01 20:38:18 jasper Exp $
 
 COMMENT=		HTTP and WebDAV client library, with C interface
 
@@ -29,6 +29,8 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			ac_cv_path_CERTUTIL="" \
 			ac_cv_path_PK12UTIL=""
 
+FAKE_FLAGS=		docdir=${PREFIX}/share/doc/neon/
+
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-ca-bundle=/etc/ssl/cert.pem \
 			--with-ssl=openssl \
@@ -37,6 +39,10 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 
 post-extract:
 	${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
+
+# Prevent this from ending up in PLIST
+pre-configure:
+	rm ${WRKSRC}/macros/neon.m4.orig
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/neon/macros
