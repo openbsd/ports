@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/05/01 20:44:00 jasper Exp $
 
 COMMENT=		widgets library
 
@@ -26,5 +26,7 @@ LIB_DEPENDS=		x11/neXtaw
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
+
+FAKE_FLAGS+=		docdir=${PREFIX}/share/doc/Mowitz
 
 .include <bsd.port.mk>
