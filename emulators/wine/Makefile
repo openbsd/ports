@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2010/11/15 23:22:08 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2011/05/01 12:12:17 ajacoutot Exp $
 
 
 # XXX  This port is not finished and does not work.
@@ -81,7 +81,7 @@ CONFIGURE_ARGS +=	--without-alsa \
 			--without-nas \
 			--without-xml
 
-AUTOCONF_VERSION =	2.62
+AUTOCONF_VERSION =	2.63
 
 FLAVORS =		cups esd
 FLAVOR ?=
