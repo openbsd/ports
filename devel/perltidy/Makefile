@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2010/10/18 17:48:12 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/05/01 21:00:03 jim Exp $
 
 COMMENT =	tool to indent and reformat perl scripts
 
-V =	 	20090616
+V =	 	20101217
 DISTNAME =	Perl-Tidy-$V
 PKGNAME =	perltidy-$V
 CATEGORIES =	devel
