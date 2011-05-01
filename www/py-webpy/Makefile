@@ -1,14 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/05/01 18:08:01 jasper Exp $
 
 COMMENT=	web framework for python
 
-VERSION=	0.31
+VERSION=	0.34
 DISTNAME=	web.py-${VERSION}
 PKGNAME=	py-webpy-${VERSION}
-REVISION=	1
 CATEGORIES=	www
-
-MAINTAINER=	Benoit Chesneau <benoitc@metavers.net>
 
 MASTER_SITES=	${HOMEPAGE}/static/
 HOMEPAGE=	http://webpy.org
@@ -25,14 +22,8 @@ SUBST_VARS=	VERSION
 
 REGRESS_DEPENDS= databases/py-sqlite2
 
-WRKDIST=	${WRKDIR}/webpy
-
-post-install:
-	${INSTALL} ${WRKDIST}/web/wsgiserver/LICENSE.txt \
-		${WRKINST}${MODPY_SITEPKG}/web/wsgiserver/LICENSE.txt
-
 do-regress:
-	cd ${WRKSRC} && ${MODPY_BIN} ./test/alltests.py 
-	cd ${WRKSRC} && ${MODPY_BIN} ./test/db.py SqliteTest
+	cd ${WRKSRC} && ${MODPY_BIN} ./web/test.py 
+	cd ${WRKSRC} && ${MODPY_BIN} ./web/db.py SqliteTest
 
 .include <bsd.port.mk>
