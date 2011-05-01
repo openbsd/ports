@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/04/26 13:09:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2011/05/01 18:42:51 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -55,7 +55,7 @@ LIB_DEPENDS=		devel/libsoup,-gnome \
 MODGCONF2_LIBDEP=	Yes
 MODGCONF2_SCHEMAS_DIR=	evolution-rss
 
-AUTOCONF_VERSION=	2.62
+AUTOCONF_VERSION=	2.65
 AUTOMAKE_VERSION=	1.9
 
 CONFIGURE_STYLE=	autoconf automake
