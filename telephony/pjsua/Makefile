@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/12/22 14:58:53 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2011/05/01 20:14:21 sthen Exp $
 
 COMMENT=		lightweight sip client
 
@@ -26,7 +26,7 @@ LIB_DEPENDS=		audio/gsm \
 			audio/speex
 
 CONFIGURE_STYLE=	autoconf no-autoheader
-AUTOCONF_VERSION=	2.62
+AUTOCONF_VERSION=	2.61
 CONFIGURE_ARGS=		--disable-oss \
 			--with-external-gsm \
 			--with-external-pa \
