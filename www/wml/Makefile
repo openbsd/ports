@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/15 19:49:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/05/01 20:43:24 jasper Exp $
 
 COMMENT=		Website META Language
 
@@ -39,6 +39,6 @@ MAKE_ENV=		EXT_TIDY=${LOCALBASE}/bin/tidy \
 			EXT_HTMLCLEAN=${LOCALBASE}/bin/htmlclean
 
 post-extract:
-	@rm -f ${WRKSRC}/wml_aux/tidy/*.orig
+	rm ${WRKSRC}/wml_aux/tidy/*.orig
 
 .include <bsd.port.mk>
