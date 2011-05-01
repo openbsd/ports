@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2010/12/19 22:11:56 kili Exp $
+# $OpenBSD: Makefile,v 1.27 2011/05/01 12:32:19 sthen Exp $
 
 PKG_ARCH=	*
 
@@ -74,9 +74,9 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/x$i/*.* ${XML_INSTDIR}/$i
 	${INSTALL_DATA} ${WRKDIR}/x$i/ent/* ${XML_INSTDIR}/$i/ent
 	${INSTALL_DATA} ${FILESDIR}/xml_db${i:S/.//g}_catalog ${XML_INSTDIR}/$i/catalog
+.endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/libxml2
 	${INSTALL_DATA} ${FILESDIR}/docbook.spec ${PREFIX}/share/libxml2
-.endfor
 	sh ${FILESDIR}/makemastercatalog
 
 .include <bsd.port.mk>
