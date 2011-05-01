@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/11/22 11:16:33 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/05/01 11:28:10 sthen Exp $
 @bin bin/znc
 bin/znc-buildmod
 bin/znc-config
@@ -79,6 +79,9 @@ share/znc/notes/files/
 share/znc/notes/files/trash.gif
 share/znc/notes/tmpl/
 share/znc/notes/tmpl/index.tmpl
+share/znc/perform/
+share/znc/perform/tmpl/
+share/znc/perform/tmpl/index.tmpl
 share/znc/stickychan/
 share/znc/stickychan/tmpl/
 share/znc/stickychan/tmpl/index.tmpl
