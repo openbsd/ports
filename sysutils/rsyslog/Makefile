@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/04/15 16:10:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/05/01 11:43:06 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -41,7 +41,7 @@ MASTER_SITES =		http://www.rsyslog.com/files/download/rsyslog/ \
 			http://download.rsyslog.com/rsyslog/
 
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.63
+AUTOCONF_VERSION =	2.65
 USE_LIBTOOL =		Yes
 LIBTOOL_FLAGS = 	--tag=disable-static
 USE_GROFF =	Yes
