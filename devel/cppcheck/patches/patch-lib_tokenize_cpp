@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_tokenize_cpp,v 1.1 2011/05/01 21:08:49 gsoares Exp $
+
+Fix Ticket http://sourceforge.net/apps/trac/cppcheck/ticket/2755
+#2755 (cppcheck goes into infinite loop while scanning OpenSSL sources)
+
+--- lib/tokenize.cpp.orig	Fri Apr 29 15:25:06 2011
++++ lib/tokenize.cpp	Fri Apr 29 15:25:33 2011
+@@ -8629,7 +8629,7 @@ void Tokenizer::removeExceptionSpecifications(Token *t
+ 
+         else if (Token::Match(tok, "class|namespace|struct %type%"))
+         {
+-            while (tok && !Token::Match(tok, "[;{]"))
++            while (tok && !Token::Match(tok, "[;{=]"))
+                 tok = tok->next();
+             if (tok && tok->str() == "{")
+             {

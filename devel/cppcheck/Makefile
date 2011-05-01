@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2011/03/12 13:25:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2011/05/01 21:08:49 gsoares Exp $
 
 COMMENT =		C/C++ static checker
 
-DISTNAME =		cppcheck-1.47
+DISTNAME =		cppcheck-1.48
 
 CATEGORIES =		devel
 
@@ -26,12 +26,11 @@ LIB_DEPENDS =		devel/pcre
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cppcheck/}
 
 ALL_TARGET =		cppcheck
+REGRESS_TARGET = 	test
 MAKE_FLAGS =		BIN=${PREFIX}/bin CXX="${CXX}" \
 			CXXFLAGS="${CXXFLAGS} -I${PREFIX}/include -L${PREFIX}/lib"
 
 USE_GMAKE =		Yes
-
-NO_REGRESS =		Yes
 
 post-build:
 	cd ${WRKSRC} && \
@@ -41,6 +40,6 @@ post-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cppcheck ${PREFIX}/bin/
-	${INSTALL_DATA} ${WRKSRC}/cppcheck.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/cppcheck.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
