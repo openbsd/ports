@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2011/04/07 09:45:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2011/05/01 18:14:51 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -18,7 +18,7 @@ COMMENT=		GNOME shell and file manager
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		2.32.2.1
 
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=	nautilus-extension   2.0      # .2.0
 
@@ -59,8 +59,6 @@ LIB_DEPENDS=		graphics/libexif \
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	nautilus
 
-AUTOCONF_VERSION=	2.63
-CONFIGURE_STYLE=	autoconf gnu
 USE_GROFF =	Yes
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
@@ -72,7 +70,7 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 CONFIGURE_ARGS+=	--enable-xmp=no
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 REGRESS_IS_INTERACTIVE=x11
 
