@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/22 09:30:38 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2011/05/01 16:26:10 rpointel Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
 MODPY_EGG_VERSION=	1.3.0
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 CATEGORIES=		math devel
 
 HOMEPAGE=		http://numpy.scipy.org/
