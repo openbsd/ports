@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/03/09 06:23:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2011/05/01 11:34:17 ajacoutot Exp $
 
 COMMENT=		high-performance CORBA Object Request Broker
 
@@ -30,7 +30,7 @@ REGRESS_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 
 CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.63
+AUTOCONF_VERSION=	2.67
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
