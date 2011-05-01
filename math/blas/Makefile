@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/23 15:09:57 steven Exp $
+# $OpenBSD: Makefile,v 1.18 2011/05/01 13:43:04 steven Exp $
 
 COMMENT=	Basic Linear Algebra Subprograms
 
 VERSION=	1.0
 DISTNAME=	blas
 PKGNAME=	${DISTNAME}-${VERSION}
-REVISION=	4
+REVISION=	5
 SHARED_LIBS=	blas	2.0
 
 CATEGORIES=	math
@@ -38,7 +38,7 @@ MAKE_ENV=	SHLIB_MAJOR=${LIBblas_VERSION:R} \
 FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
 USE_GROFF =	Yes
 
-MANSRC=		${WRKDIR}/lapack-3.2.0/manpages/blas/man/manl
+MANSRC=		${WRKDIR}/manpages/blas/man/manl
 
 # See bsd.lib.mk:162
 .if ${MACHINE_ARCH:Mmips64*}
