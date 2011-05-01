@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/12/27 14:50:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/05/01 20:22:34 sthen Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	advanced, stable and fast irc server
@@ -36,7 +36,7 @@ SUBST_VARS +=		CONFDIR LOGDIR
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-AUTOCONF_VERSION =	2.62
+AUTOCONF_VERSION =	2.65
 
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS =	--enable-ipv6 \
