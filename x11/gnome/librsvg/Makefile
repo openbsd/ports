@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2011/04/05 14:42:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2011/05/01 21:44:48 jasper Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
@@ -39,8 +39,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-theme \
 		--with-svgz \
 		--with-croco
-
-USE_GROFF=	Yes
 
 MODPY_ADJ_FILES=	rsvg.in
 
