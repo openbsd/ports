@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2011/04/25 10:02:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2011/05/01 17:56:46 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -150,7 +150,8 @@ USE_LIBTOOL=	Yes
 MODPY_RUNDEP=	No
 MODMONO_DEPS=	No
 
-AUTOCONF_VERSION= 2.63
+# Should be 2.68
+AUTOCONF_VERSION= 2.67
 
 CONFIGURE_STYLE=autoconf no-autoheader
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
