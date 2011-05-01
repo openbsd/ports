@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/01 20:05:54 sthen Exp $
 
 COMMENT =	greytrapping daemon to compliment OpenBSD spamd
 
 DISTNAME =	greyscanner-1.01
+REVISION =	0
 CATEGORIES =	mail
 HOMEPAGE =	http://bitbucket.org/bonetruck/greyscanner/
 

@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: greyscanner.rc,v 1.1 2011/05/01 20:05:54 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/greyscanner"
+
+. /etc/rc.d/rc.subr
+
+pexp="/usr/bin/perl ${daemon}"
+rc_reload=NO
+
+rc_cmd $1

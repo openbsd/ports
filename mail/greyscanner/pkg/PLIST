@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/11 22:27:29 jim Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/01 20:05:54 sthen Exp $
 @man man/man1/greyscanner.1
 sbin/greyscanner
 share/examples/greyscanner/
 share/examples/greyscanner/greyscanner.conf
 @sample ${SYSCONFDIR}/greyscanner.conf
+@rcscript ${RCDIR}/greyscanner
