@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/04/29 16:50:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2011/05/02 15:59:43 sthen Exp $
 
 VMEM_WARNING =	Yes
 
@@ -6,7 +6,7 @@ HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
 COMMENT =	portable build system
 DISTNAME =	cmake-2.8.4
-REVISION =	1
+REVISION =	2
 MASTER_SITES =	${HOMEPAGE}files/v2.8/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>

@@ -1,31 +1,29 @@
-$OpenBSD: patch-Modules_CMakeDetermineSystem_cmake,v 1.1 2011/04/29 16:50:32 sthen Exp $
+$OpenBSD: patch-Modules_CMakeDetermineSystem_cmake,v 1.2 2011/05/02 15:59:43 sthen Exp $
 
 programs expect CMAKE_HOST_SYSTEM_PROCESSOR to contain a simple,
 single-word processor type. "arch -s" provides the closest to
 this on OpenBSD.
+ http://cmake.org/gitweb?p=cmake.git;a=commit;h=0bfabf96
 
 --- Modules/CMakeDetermineSystem.cmake.orig	Tue Feb 15 17:47:26 2011
-+++ Modules/CMakeDetermineSystem.cmake	Fri Apr 29 11:29:23 2011
-@@ -51,12 +51,17 @@ IF(CMAKE_HOST_UNIX)
++++ Modules/CMakeDetermineSystem.cmake	Mon May  2 16:53:02 2011
+@@ -50,14 +50,17 @@ IF(CMAKE_HOST_UNIX)
+     IF(CMAKE_HOST_SYSTEM_NAME MATCHES "Linux|CYGWIN.*")
        EXEC_PROGRAM(uname ARGS -m OUTPUT_VARIABLE CMAKE_HOST_SYSTEM_PROCESSOR
          RETURN_VALUE val)
-     ELSE(CMAKE_HOST_SYSTEM_NAME MATCHES "Linux|CYGWIN.*")
--      EXEC_PROGRAM(uname ARGS -p OUTPUT_VARIABLE CMAKE_HOST_SYSTEM_PROCESSOR
--        RETURN_VALUE val)
--      IF("${val}" GREATER 0)
--        EXEC_PROGRAM(uname ARGS -m OUTPUT_VARIABLE CMAKE_HOST_SYSTEM_PROCESSOR
-+      IF(CMAKE_HOST_SYSTEM_NAME MATCHES "OpenBSD")
-+        EXEC_PROGRAM(arch ARGS -s OUTPUT_VARIABLE CMAKE_HOST_SYSTEM_PROCESSOR
+-    ELSE(CMAKE_HOST_SYSTEM_NAME MATCHES "Linux|CYGWIN.*")
++    ELSEIF(CMAKE_HOST_SYSTEM_NAME MATCHES "OpenBSD")
++      EXEC_PROGRAM(arch ARGS -s OUTPUT_VARIABLE CMAKE_HOST_SYSTEM_PROCESSOR
++        RETURN_VALUE val)
++    ELSE()
+       EXEC_PROGRAM(uname ARGS -p OUTPUT_VARIABLE CMAKE_HOST_SYSTEM_PROCESSOR
+         RETURN_VALUE val)
+       IF("${val}" GREATER 0)
+         EXEC_PROGRAM(uname ARGS -m OUTPUT_VARIABLE CMAKE_HOST_SYSTEM_PROCESSOR
            RETURN_VALUE val)
--      ENDIF("${val}" GREATER 0)
-+      ELSE(CMAKE_HOST_SYSTEM_NAME MATCHES "OpenBSD")
-+        EXEC_PROGRAM(uname ARGS -p OUTPUT_VARIABLE CMAKE_HOST_SYSTEM_PROCESSOR
-+          RETURN_VALUE val)
-+        IF("${val}" GREATER 0)
-+          EXEC_PROGRAM(uname ARGS -m OUTPUT_VARIABLE CMAKE_HOST_SYSTEM_PROCESSOR
-+            RETURN_VALUE val)
-+        ENDIF("${val}" GREATER 0)
-+      ENDIF(CMAKE_HOST_SYSTEM_NAME MATCHES "OpenBSD")
-     ENDIF(CMAKE_HOST_SYSTEM_NAME MATCHES "Linux|CYGWIN.*")
+       ENDIF("${val}" GREATER 0)
+-    ENDIF(CMAKE_HOST_SYSTEM_NAME MATCHES "Linux|CYGWIN.*")
++    ENDIF()
      # check the return of the last uname -m or -p 
      IF("${val}" GREATER 0)
+         SET(CMAKE_HOST_SYSTEM_PROCESSOR "unknown")
