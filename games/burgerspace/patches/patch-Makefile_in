@@ -1,15 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2010/04/04 15:37:19 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.5 2011/05/02 18:46:09 jasper Exp $
 --- Makefile.in.orig	Wed Mar 31 04:28:08 2010
 +++ Makefile.in	Thu Apr  1 09:55:35 2010
-@@ -197,7 +197,7 @@ build_vendor = @build_vendor@
- builddir = @builddir@
- datadir = @datadir@
- datarootdir = @datarootdir@
--docdir = $(datadir)/doc/$(PACKAGE)-$(VERSION)
-+docdir = $(datadir)/doc/$(PACKAGE)
- dvidir = @dvidir@
- exec_prefix = @exec_prefix@
- host = @host@
 @@ -740,7 +740,7 @@ info: info-recursive
  
  info-am:
