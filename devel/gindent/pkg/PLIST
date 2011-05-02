@@ -1,12 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.8 2004/08/09 00:21:29 espie Exp $
-bin/gindent
-bin/gtexinfo2man
+@comment $OpenBSD: PLIST,v 1.9 2011/05/02 11:34:14 jasper Exp $
+@bin bin/gindent
+@bin bin/gtexinfo2man
 @info info/indent.info
 @man man/man1/gindent.1
-share/doc/indent/
-share/doc/indent/indent.html
-share/locale/ca/
-share/locale/ca/LC_MESSAGES/
+share/doc/gindent/
+share/doc/gindent/indent.html
 share/locale/ca/LC_MESSAGES/indent.mo
 share/locale/da/LC_MESSAGES/indent.mo
 share/locale/de/LC_MESSAGES/indent.mo
