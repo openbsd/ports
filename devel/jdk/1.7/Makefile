@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/02/05 23:11:18 ian Exp $
+# $OpenBSD: Makefile,v 1.43 2011/05/02 07:23:17 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -9,9 +9,9 @@ V=		1.7.0.00
 B=		b122
 PKGNAME=	jdk-${V}
 PKGNAME-main=	jdk-${V}${B:S/b/beta/}
-REVISION-main =	0
+REVISION-main =	1
 PKGNAME-jre=	jre-${V}${B:S/b/beta/}
-REVISION-jre =	0
+REVISION-jre =	1
 EPOCH=		0
 
 # see openjdk/jaxp/jaxp.properties & openjdk/jaxws/jaxws.properties 
@@ -71,7 +71,7 @@ ALT_BOOTDIR=	${LOCALBASE}/jdk-1.6.0
 .endif
 
 VMEM_WARNING=	Yes
-BUILD_DEPENDS+=	devel/apache-ant \
+BUILD_DEPENDS+=	devel/apache-ant->=1.8.2 \
 		archivers/zip \
 		archivers/unzip \
 		print/cups
@@ -86,7 +86,6 @@ MAKE_ENV=	ALT_BOOTDIR=${ALT_BOOTDIR} \
 		ALT_DROPS_DIR=${DISTDIR} \
 		ALT_PACKAGE_PATH=${LOCALBASE} \
 		ALT_X11_PATH=${X11BASE} \
-		ANT_HOME=${LOCALBASE} \
 		DEFAULT_LIBPATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
 		NO_DOCS=true \
 		CC="${CC}" \
