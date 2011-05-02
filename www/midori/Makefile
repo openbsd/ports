@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2011/04/26 15:01:17 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.34 2011/05/02 19:01:10 landry Exp $
 
 COMMENT =	lightweight web browser
 
-XFCE_VERSION =	0.3.3
+XFCE_VERSION =	0.3.5
 XFCE_GOODIE =	midori
-
-REVISION =	1
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	www
@@ -43,7 +41,7 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread sqlite3 z \
 		cairo pixman-1 png pthread-stubs xcb xml2 \
 		Xss xcb-render webkit-1.0 notify sqlite3 unique-1.0 soup-2.4 \
-		GL Xxf86vm drm xcb-shm
+		GL Xxf86vm drm xcb-shm tasn1
 
 
 .include <bsd.port.mk>
