@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2011/04/07 12:08:02 pea Exp $
+# $OpenBSD: Makefile,v 1.103 2011/05/02 11:43:37 pea Exp $
 
 COMMENT-main=	Open source LDAP software (client)
 COMMENT-server=	Open source LDAP software (server)
@@ -6,6 +6,8 @@ COMMENT-server=	Open source LDAP software (server)
 DISTNAME=		openldap-2.4.25
 PKGNAME-main=		${DISTNAME:S/-/-client-/}
 PKGNAME-server=		${DISTNAME:S/-/-server-/}
+
+REVISION-server=	0
 
 SHARED_LIBS +=	lber                 11.0      # .8.0
 SHARED_LIBS +=	ldap                 11.0      # .8.0
@@ -34,8 +36,8 @@ MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
 EXTRACT_SUFX=		.tgz
 
 SEPARATE_BUILD=		concurrent
-AUTOCONF_VERSION=	2.61
-CONFIGURE_STYLE=	gnu autoconf
+AUTOCONF_VERSION=	2.65
+CONFIGURE_STYLE=	autoconf
 USE_GROFF=		Yes
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
@@ -63,7 +65,7 @@ CONFIGURE_ARGS+=	--enable-bdb \
 			--enable-passwd \
 			--enable-perl \
 			--enable-shell \
-			--enable-overlay
+			--enable-overlays
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/build
 
