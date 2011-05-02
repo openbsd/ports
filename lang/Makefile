@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2011/04/12 11:49:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.111 2011/05/02 20:46:42 jasper Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -17,6 +17,7 @@
      SUBDIR += expect
      SUBDIR += expect,no_tk
      SUBDIR += ezm3
+     SUBDIR += feldspar
      SUBDIR += gawk
      SUBDIR += g77
      SUBDIR += g77-old
