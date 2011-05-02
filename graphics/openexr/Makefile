@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/17 08:05:15 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/05/02 18:54:06 jasper Exp $
 
 COMMENT-main=	high dynamic range image format
 COMMENT-tools=	image viewing tools for OpenEXR
@@ -42,6 +42,7 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
 DOCDIR= 		${PREFIX}/share/doc/OpenEXR
+FAKE_FLAGS+=		docdir=${DOCDIR}
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/*.pdf ${DOCDIR}
