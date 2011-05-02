@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/13 17:05:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/05/02 14:40:33 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,6 +12,7 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-editor=	dconf-editor-${GNOME_VERSION}
 
 REVISION-main=	0
+REVISION-editor=0
 
 SHARED_LIBS+=	dconf        0.0 # 0.0.0
 SHARED_LIBS+=	dconf-dbus-1 0.0 # 0.0.0
@@ -39,7 +40,7 @@ WANTLIB-editor += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB-editor += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject
 WANTLIB-editor += drm expat fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB-editor += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
-WANTLIB-editor += png pthread-stubs xcb xcb-render xcb-shm xml2 z
+WANTLIB-editor += png pthread-stubs xcb xcb-render xcb-shm xml2 z dconf
 
 MULTI_PACKAGES=	-main
 

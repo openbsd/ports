@@ -1,0 +1,18 @@
+$OpenBSD: patch-editor_dconf-schema_vala,v 1.1 2011/05/02 14:40:33 ajacoutot Exp $
+
+From 0d00a6ad3385e08eff0c50efe970af8d5d63c536 Mon Sep 17 00:00:00 2001
+From: Robert Ancell <robert.ancell@canonical.com>
+Date: Tue, 29 Mar 2011 05:50:12 +0000
+Subject: editor: Load *.enums.xml as well as *.gschema.xml.  This was stopping some enums from being loaded.
+
+--- editor/dconf-schema.vala.orig	Tue Mar 22 16:59:23 2011
++++ editor/dconf-schema.vala	Mon May  2 16:34:47 2011
+@@ -371,7 +371,7 @@ public class SchemaList
+         while ((info = i.next_file (null)) != null) {
+             string name = info.get_name();
+ 
+-            if (!name.has_suffix(".gschema.xml"))
++            if (!name.has_suffix(".gschema.xml") && !name.has_suffix(".enums.xml"))
+                 continue;
+ 
+             string path = Path.build_filename(dir, name, null);
