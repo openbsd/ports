@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: bird.rc,v 1.1 2011/05/02 10:49:46 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/bird"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
