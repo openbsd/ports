@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/24 21:06:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2011/05/02 19:02:40 jasper Exp $
 
 COMMENT=compile Java source into .class files (quickly!)
 
@@ -29,5 +29,7 @@ USE_GROFF=	Yes
 
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+
+FAKE_FLAGS+=	docdir=${PREFIX}/share/doc/jikes/
 
 .include <bsd.port.mk>
