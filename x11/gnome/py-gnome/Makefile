@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/22 08:36:58 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2011/05/02 18:38:59 rpointel Exp $
 
 COMMENT=	GNOME Python bindings
 
 GNOME_PROJECT=	gnome-python
 GNOME_VERSION=	2.28.1
 PKGNAME=	py-gnome-${VERSION}
-REVISION=	4
+REVISION=	5
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -17,16 +17,16 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common
-WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 cairo
+WANTLIB += Xrender art_lgpl_2 atk-1.0 GL Xxf86vm drm xcb-shm
+WANTLIB += bonobo-2 bonobo-activation bonoboui-2 cairo
 WANTLIB += crypto dbus-1 dbus-glib-1 expat fontconfig freetype
 WANTLIB += gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring gnomevfs-2
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread-stubs ssl
 WANTLIB += util xcb xml2 z gcrypt gpg-error xcb-render
-WANTLIB += gnomeui-2 xcb-render-util gnomecanvas-2 gnome-2
-WANTLIB += canberra ltdl ogg pthread vorbis vorbisfile
+WANTLIB += gnomeui-2 gnomecanvas-2 gnome-2
+WANTLIB += canberra ltdl ogg vorbis vorbisfile
 WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=	devel/gettext \
