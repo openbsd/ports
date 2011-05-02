@@ -1,7 +1,7 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2010/12/27 12:05:13 rpointel Exp $
---- setup.py.orig	Sun Dec 26 20:58:41 2010
-+++ setup.py	Sun Dec 26 21:00:14 2010
-@@ -75,7 +75,7 @@
+$OpenBSD: patch-setup_py,v 1.2 2011/05/02 16:02:13 rpointel Exp $
+--- setup.py.orig	Thu Apr  7 22:21:33 2011
++++ setup.py	Fri Apr 29 18:37:55 2011
+@@ -81,7 +81,7 @@
  def collect_data_files():
  	# Search for data files to be installed in share/
  	data_files = [
@@ -10,26 +10,25 @@ $OpenBSD: patch-setup_py,v 1.1.1.1 2010/12/27 12:05:13 rpointel Exp $
  		('share/applications', ['xdg/zim.desktop']),
  		('share/mime/packages', ['xdg/zim.xml']),
  		('share/pixmaps', ['xdg/hicolor/48x48/apps/zim.png']),
-@@ -88,6 +88,13 @@
+@@ -104,6 +104,12 @@
  			files = [os.path.join(dir, f) for f in files]
  			data_files.append((target, files))
  
-+	for dir, dirs, files in os.walk('man'):
-+		if files:
-+			target = os.path.join('man', dir[4:])
-+			files = [os.path.join(dir, f) for f in files]
-+			data_files.append((target, files))
++        for dir, dirs, files in os.walk('man'):
++                if files:
++                        target = os.path.join('man', dir[4:])
++                        files = [os.path.join(dir, f) for f in files]
++                        data_files.append((target, files))
 +
-+
- 	# data -> PREFIX/share/zim
- 	for dir, dirs, files in os.walk('data'):
- 		if '.zim' in dirs:
-@@ -240,7 +247,7 @@
+ 	if build_target == 'maemo':
+ 		# Remove default .desktop files and replace with our set
+ 		prefix = os.path.join('share', 'zim', 'applications')
+@@ -246,7 +252,7 @@
  
  	def initialize_options(self):
  		install_class.initialize_options(self)
 -		self.skip_xdg_cmd = 0
 +		self.skip_xdg_cmd = 1
- 	
+ 
  	def run(self):
  		install_class.run(self)
