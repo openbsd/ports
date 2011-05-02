@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/15 19:45:56 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/05/02 07:20:34 landry Exp $
 
-COMMENT=        java replacement for make
+COMMENT=        build tool for java applications
 
-DISTNAME=	apache-ant-1.7.1
-REVISION =	1
+DISTNAME=	apache-ant-1.8.2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://ant.apache.org/
 
-MAINTAINER=	Kurt Miller <kurt@openbsd.org>
+MAINTAINER=	Daniel Dickman <didickman@gmail.com>
 
 # Apache Software License 2.0 &
 # W3C Consortium License (August 14 1998)
@@ -23,7 +22,7 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=ant/binaries/} \
 EXTRACT_SUFX=	-bin.tar.bz2
 
 MODULES=	java
-MODJAVA_VER=	1.3+
+MODJAVA_VER=	1.5+
 
 RUN_DEPENDS=	java/javaPathHelper
 BUILD_DEPENDS=	archivers/gtar
@@ -33,19 +32,21 @@ NO_REGRESS=	Yes
 
 TAR=		${LOCALBASE}/bin/gtar
 
+ANTHOME=	${PREFIX}/ant
 ANTDOCS=	${PREFIX}/share/doc/java/ant
 TXT=		LICENSE NOTICE README WHATSNEW
 
 do-install:
-	@cd ${WRKDIST}/bin; \
-	    perl -pi -e 's|_antlibs_|${TRUEPREFIX}/ant/lib|;' \
-		ant runant.pl; \
-	    ${INSTALL_SCRIPT} ant antRun runant.pl ${PREFIX}/bin
+	@${INSTALL_DATA_DIR} ${ANTHOME}/bin
+.for i in ant antRun runant.pl
+	@${INSTALL_SCRIPT} ${WRKDIST}/bin/$i ${ANTHOME}/bin
+	@ln -s ${TRUEPREFIX}/ant/bin/$i ${PREFIX}/bin/$i
+.endfor
 	@${INSTALL_DATA_DIR} ${ANTDOCS}
 	@cp -Rp ${WRKDIST}/docs/* ${ANTDOCS}
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${ANTDOCS}
 	@cd ${WRKDIST} && ${INSTALL_DATA} ${TXT} ${ANTDOCS}
-	@${INSTALL_DATA_DIR} ${PREFIX}/ant/lib
-	@cd ${WRKDIST}/lib && ${INSTALL_DATA} *.jar ${PREFIX}/ant/lib
+	@${INSTALL_DATA_DIR} ${ANTHOME}/lib
+	@cd ${WRKDIST}/lib && ${INSTALL_DATA} *.jar ${ANTHOME}/lib
 
 .include <bsd.port.mk>

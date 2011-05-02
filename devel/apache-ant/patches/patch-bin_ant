@@ -1,12 +1,9 @@
-$OpenBSD: patch-bin_ant,v 1.5 2007/01/12 14:34:30 kurt Exp $
---- bin/ant.orig	Mon Jan  8 19:14:09 2007
-+++ bin/ant	Mon Jan  8 19:15:42 2007
-@@ -120,29 +120,11 @@ if $cygwin ; then
- fi
- 
+$OpenBSD: patch-bin_ant,v 1.6 2011/05/02 07:20:34 landry Exp $
+--- bin/ant.orig	Fri Jun 27 01:03:55 2008
++++ bin/ant	Thu Feb 11 17:00:29 2010
+@@ -122,27 +122,9 @@ fi
  # set ANT_LIB location
--ANT_LIB="${ANT_HOME}/lib"
-+ANT_LIB="_antlibs_"
+ ANT_LIB="${ANT_HOME}/lib"
  
 -if [ -z "$JAVACMD" ] ; then
 -  if [ -n "$JAVA_HOME"  ] ; then
