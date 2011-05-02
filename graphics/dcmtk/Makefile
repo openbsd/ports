@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/05/02 19:15:49 jasper Exp $
 
 COMMENT=		DICOM toolkit
 
@@ -36,7 +36,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config
 FAKE_FLAGS=		DESTDIR=${WRKINST} \
-			etcdir=${WRKINST}${PREFIX}/share/examples/dcmtk
+			etcdir=${WRKINST}${PREFIX}/share/examples/dcmtk \
+			datadir=${WRKINST}${PREFIX}/share/dcmtk \
+			docdir=${WRKINST}${PREFIX}/share/doc/dcmtk
 USE_GROFF =		Yes
 
 
