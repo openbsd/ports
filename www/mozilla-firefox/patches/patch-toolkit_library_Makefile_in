@@ -1,8 +1,8 @@
-$OpenBSD: patch-toolkit_library_Makefile_in,v 1.6 2011/04/09 11:05:06 landry Exp $
+$OpenBSD: patch-toolkit_library_Makefile_in,v 1.7 2011/05/02 15:08:28 jasper Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=648726
 https://bugzilla.mozilla.org/show_bug.cgi?id=648730
---- toolkit/library/Makefile.in.orig	Sat Mar 19 00:34:11 2011
-+++ toolkit/library/Makefile.in	Sat Apr  9 11:34:06 2011
+--- toolkit/library/Makefile.in.orig	Thu Apr 14 07:28:48 2011
++++ toolkit/library/Makefile.in	Mon May  2 17:07:43 2011
 @@ -187,6 +187,12 @@ OS_LIBS += \
  	$(NULL)
  endif
@@ -16,7 +16,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=648730
  ifeq ($(OS_ARCH),Darwin)
  ifdef MOZ_SYDNEYAUDIO
  EXTRA_DSO_LDOPTS += \
-@@ -278,6 +284,11 @@ export:: $(RDF_UTIL_SRC_CPPSRCS) $(INTL_UNICHARUTIL_UT
+@@ -281,6 +287,11 @@ export:: $(RDF_UTIL_SRC_CPPSRCS) $(INTL_UNICHARUTIL_UT
  
  ifdef MOZ_ENABLE_LIBXUL
  include $(srcdir)/libxul-rules.mk

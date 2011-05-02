@@ -1,8 +1,8 @@
-$OpenBSD: patch-toolkit_components_startup_src_nsAppStartup_cpp,v 1.1 2011/04/19 09:16:33 landry Exp $
+$OpenBSD: patch-toolkit_components_startup_src_nsAppStartup_cpp,v 1.2 2011/05/02 15:08:28 jasper Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=633193
 http://hg.mozilla.org/projects/cedar/rev/c5fcc4d54945
---- toolkit/components/startup/src/nsAppStartup.cpp.orig	Thu Feb  3 21:12:14 2011
-+++ toolkit/components/startup/src/nsAppStartup.cpp	Thu Feb 10 16:19:26 2011
+--- toolkit/components/startup/src/nsAppStartup.cpp.orig	Thu Apr 14 07:28:47 2011
++++ toolkit/components/startup/src/nsAppStartup.cpp	Mon May  2 17:07:41 2011
 @@ -26,6 +26,7 @@
   *   Benjamin Smedberg <bsmedberg@covad.net>
   *   Daniel Brooks <db48x@db48x.net>
@@ -23,7 +23,7 @@ http://hg.mozilla.org/projects/cedar/rev/c5fcc4d54945
  static NS_DEFINE_CID(kAppShellCID, NS_APPSHELL_CID);
  #ifdef MOZ_ENABLE_LIBXUL
  extern PRTime gXRE_mainTimestamp;
-@@ -641,6 +647,25 @@ CalculateProcessCreationTimestamp()
+@@ -645,6 +651,25 @@ CalculateProcessCreationTimestamp()
    }
    PRTime starttime = static_cast<PRTime>(proc->kp_proc.p_un.__p_starttime.tv_sec) * PR_USEC_PER_SEC;
    starttime += proc->kp_proc.p_un.__p_starttime.tv_usec;

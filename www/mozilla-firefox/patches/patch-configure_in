@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.20 2011/04/15 11:43:46 landry Exp $
+$OpenBSD: patch-configure_in,v 1.21 2011/05/02 15:08:28 jasper Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=648721
---- configure.in.orig	Sat Mar 19 00:33:33 2011
-+++ configure.in	Mon Apr 11 10:48:46 2011
+--- configure.in.orig	Thu Apr 14 07:28:22 2011
++++ configure.in	Mon May  2 17:07:42 2011
 @@ -2676,7 +2676,8 @@ ia64*-hpux*)
  	;;
  
@@ -12,7 +12,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=648721
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -4524,7 +4525,7 @@ if test "$ac_cv_thread_keyword" = yes; then
+@@ -4525,7 +4526,7 @@ if test "$ac_cv_thread_keyword" = yes; then
        :
        ;;
      *)
@@ -21,7 +21,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=648721
        ;;
    esac
  fi
-@@ -5791,14 +5792,7 @@ dnl ==================================================
+@@ -5792,14 +5793,7 @@ dnl ==================================================
  
  # The GNOME component is built if one of 
  # gnome-vfs, gio, gconf or libnotify is available.
