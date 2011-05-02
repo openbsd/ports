@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2010/12/03 11:46:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/05/02 18:42:56 gsoares Exp $
 
 COMMENT=		automated interface to the Wikipedia encyclopedia
 
-DISTNAME=		WWW-Wikipedia-1.97
-REVISION=		0
+DISTNAME=		WWW-Wikipedia-2.00
 CATEGORIES=		www
 
-MAINTAINER=		Stephan A. Rickauer <stephan@openbsd.org>
+MAINTAINER=		Gleydson Soares <gsoares@openbsd.org>
 
 MODULES=		cpan
-USE_GROFF =		Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,5 +20,6 @@ RUN_DEPENDS=		textproc/p5-Text-Autoformat \
 			www/p5-libwww \
 			www/p5-URI
 REGRESS_DEPENDS=	devel/p5-Test-Exception
+MAKE_ENV+=		TEST_POD=1
 
 .include <bsd.port.mk>
