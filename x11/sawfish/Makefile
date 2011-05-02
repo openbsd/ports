@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.54 2011/03/15 13:30:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2011/05/02 17:23:03 jasper Exp $
 
 COMMENT=	extensible window manager
 
 SHARED_ONLY=	Yes
 
-VERSION=	1.8.0
+VERSION=	1.8.1
 DISTNAME=	sawfish-${VERSION}
 CATEGORIES=	x11
 
@@ -21,9 +21,9 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	archivers/gtar \
-		x11/rep-gtk>=0.90.5
+		x11/rep-gtk>=0.90.6
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/rep-gtk>=0.90.5
+		x11/rep-gtk>=0.90.6
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xft Xi Xinerama Xrandr Xrender atk-1.0 c cairo
@@ -57,7 +57,7 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/themes/Makefile.in
 
 post-install:
-	cd ${PREFIX}/share/sawfish/${VERSION}/themes/ && \
+	cd ${PREFIX}/share/sawfish/themes/ && \
 		chown -R ${SHAREOWN}:${SHAREGRP} StyleTab
 
 .include <bsd.port.mk>
