@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/03/25 02:56:13 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/05/02 17:43:43 merdely Exp $
 @newgroup _privoxy:516
 @newuser _privoxy:516:_privoxy:daemon:Privoxy Account:/var/privoxy:/sbin/nologin
 bin/privoxy-log-parser.pl
@@ -261,6 +261,12 @@ share/examples/privoxy/user.action
 @owner _privoxy
 @group _privoxy
 @sample ${SYSCONFDIR}/privoxy/user.action
+@owner
+@group
+share/examples/privoxy/user.filter
+@owner _privoxy
+@group _privoxy
+@sample ${SYSCONFDIR}/privoxy/user.filter
 @sample /var/privoxy/
 @mode 775
 @owner

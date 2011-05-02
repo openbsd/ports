@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/03/25 07:01:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/05/02 17:43:43 merdely Exp $
 
 COMMENT=	web proxy with advanced filtering capabilities
 
@@ -7,7 +7,7 @@ DISTNAME=	privoxy-${V}-stable
 PKGNAME=	privoxy-${V}
 CATEGORIES=	www
 
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.privoxy.org/
 
@@ -51,6 +51,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/privoxy
 	${INSTALL_DATA} ${WRKSRC}/config ${PREFIX}/share/examples/privoxy
 	${INSTALL_DATA} ${WRKSRC}/default.filter ${PREFIX}/share/examples/privoxy
+	${INSTALL_DATA} ${WRKSRC}/user.filter ${PREFIX}/share/examples/privoxy
 	${INSTALL_DATA} ${WRKSRC}/*.action ${PREFIX}/share/examples/privoxy
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/privoxy/templates
 	${INSTALL_DATA} ${WRKSRC}/templates/* ${PREFIX}/share/examples/privoxy/templates
