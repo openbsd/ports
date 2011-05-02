@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.51 2011/03/02 06:39:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2011/05/02 17:22:37 jasper Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
 SHARED_ONLY=	Yes
 
-VERSION=	0.91.1
+VERSION=	0.92.0
 DISTNAME=	librep-${VERSION}
-SHARED_LIBS +=  rep                  13.0     # .13.0
+SHARED_LIBS +=  rep                  14.0     # .16.0
 
 CATEGORIES=	lang
 
@@ -46,14 +46,12 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -liconv -lintl"
 
-REP_LT= 		${PREFIX}/lib/rep/${GNU_ARCH}/
-
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/rep-xgettext.jl
 
 # The bundled libtool gets installed by default, override it by installing
 # the ports version directly.
 post-install:
-	${INSTALL_SCRIPT} ${LIBTOOL} ${REP_LT}
+	${INSTALL_SCRIPT} ${LIBTOOL} ${PREFIX}/lib/rep/
 
 .include <bsd.port.mk>
