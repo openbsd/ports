@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_hash_c,v 1.1 2011/05/02 06:55:07 kevlo Exp $
+--- src/hash.c.orig	Mon May  2 12:34:53 2011
++++ src/hash.c	Mon May  2 13:05:53 2011
+@@ -524,7 +524,7 @@ int InitHash( const char *path )
+ 	} else {
+ 		sprintf( hashfilename, "%s" PLAT_SEPARATOR "%s", path, HASH_FILE );
+ 	}
+-	memset( hashtable, (int) NULL, HASH_TABLE_SIZE );
++	memset( hashtable, 0, HASH_TABLE_SIZE );
+ 
+ open_hash_file:
+ 	dump = _load_hash_file( hashfilename, &fsize );
