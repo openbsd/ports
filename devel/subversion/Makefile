@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2011/03/18 16:25:26 stsp Exp $
+# $OpenBSD: Makefile,v 1.90 2011/05/02 17:13:33 stsp Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -164,8 +164,7 @@ CFLAGS+=	-pthread
 
 MAKE_FLAGS=	MAKE=${MAKE_PROGRAM}
 USE_LIBTOOL=	Yes
-# should be 2.63
-AUTOCONF_VERSION=2.62
+AUTOCONF_VERSION=2.64
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	PYTHON2=${MODPY_BIN}
 CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
