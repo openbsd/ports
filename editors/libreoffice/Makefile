@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/04/14 19:45:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2011/05/02 07:26:20 landry Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -18,7 +18,7 @@ CATEGORIES=	editors productivity
 
 EPOCH=		0
 
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -176,7 +176,7 @@ MODJAVA_VER=		1.4+
 MODJAVA_JRERUN=		Yes
 .endif
 LIB_DEPENDS-java=	db-java->=4,<5:databases/db/v4,-java,java \
-			devel/apache-ant
+			devel/apache-ant->=1.8.2
 RUN_DEPENDS-java=	${MODJAVA_RUN_DEPENDS} \
 			editors/libreoffice \
 			java/javaPathHelper
@@ -212,7 +212,7 @@ CONFIGURE_ARGS=	--disable-post-install-scripts \
 .if !${FLAVOR:L:Mno_java}
 CONFIGURE_ARGS+=--with-java \
 		--with-jdk-home=${JAVA_HOME} \
-		--with-ant-home=${LOCALBASE}/ant/lib \
+		--with-ant-home=${LOCALBASE}/ant \
 		--with-db-jar=${LOCALBASE}/lib/db4/db.jar
 .else
 CONFIGURE_ARGS+=--without-java
