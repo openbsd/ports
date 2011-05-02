@@ -1,0 +1,10 @@
+$OpenBSD: patch-man_gen-cam-menu_pre,v 1.1 2011/05/02 21:22:58 dcoppa Exp $
+--- man/gen-cam-menu.pre.orig	Mon May  2 14:41:34 2011
++++ man/gen-cam-menu.pre	Mon May  2 14:41:48 2011
+@@ -1,5 +1,5 @@
+ .Dd $DATE$
+-.Dt GEN-CAM-Menu 1
++.Dt GEN-CAM-MENU 1
+ .Os
+ .
+ .Sh NAME

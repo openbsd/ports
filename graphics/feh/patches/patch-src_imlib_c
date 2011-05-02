@@ -1,49 +1,16 @@
-$OpenBSD: patch-src_imlib_c,v 1.3 2010/10/15 12:52:23 dcoppa Exp $
+$OpenBSD: patch-src_imlib_c,v 1.4 2011/05/02 21:22:58 dcoppa Exp $
+
+Fix rotate arg in error message
+(commit ef3f1979c2d443823bfc761d98b30c232992494a)
+
 --- src/imlib.c.orig	Thu Oct  7 20:28:39 2010
 +++ src/imlib.c	Fri Oct 15 14:47:36 2010
-@@ -438,6 +438,7 @@ char *feh_http_load_image(char *url)
- 		close(sockno);
- 		fclose(fp);
- 	} else {
-+		int fd;
- 		int pid;
- 		int status;
- 
-@@ -446,18 +447,20 @@ char *feh_http_load_image(char *url)
- 			free(tmpname);
- 			return(NULL);
- 		} else if (pid == 0) {
--			char *quiet = NULL;
--
--			if (!opt.verbose)
--				quiet = estrdup("-q");
--
--			execlp("wget", "wget", "--cache=off", "-O", tmpname, url, quiet, NULL);
--			eprintf("url: Is 'wget' installed? Failed to exec wget:");
-+				if (!opt.verbose) {
-+					if ((fd = open("/dev/null", O_WRONLY)) != -1) {
-+					dup2(fd, fileno(stdout));
-+					dup2(fd, fileno(stderr));
-+				}
-+				if (fd > 2) close(fd);
-+			}
-+			execlp("ftp", "ftp", "-o", tmpname, url, (char *)NULL);
-+			eprintf("url: Is 'ftp' installed? Failed to exec ftp:");
- 		} else {
- 			waitpid(pid, &status, 0);
- 
- 			if (!WIFEXITED(status) || WEXITSTATUS(status) != 0) {
--				weprintf("url: wget failed to load URL %s\n", url);
-+				weprintf("url: ftp failed to load URL %s\n", url);
- 				unlink(tmpname);
- 				free(tmpname);
- 				return(NULL);
-@@ -1038,7 +1041,7 @@ void feh_edit_inplace_lossless_rotate(winwidget w, int
- 	} else if (pid == 0) {
- 
- 		execlp("jpegtran", "jpegtran", "-copy", "all", "-rotate",
--				rotate_str, "-outfile", file_str, file_str, NULL);
-+				rotate_str, "-outfile", file_str, file_str, (char *)NULL);
- 
- 		eprintf("lossless rotate: Is 'jpegtran' installed? Failed to exec:");
- 	} else {
+@@ -857,7 +857,7 @@ void feh_edit_inplace_lossless_rotate(winwidget w, int
+ 		if (!WIFEXITED(status) || WEXITSTATUS(status) != 0) {
+ 			weprintf("lossless rotate: Got exitcode %d from jpegtran."
+ 					" Commandline was:\n"
+-					"jpegtran -copy all -rotate %d -outfile %s %s\n",
++					"jpegtran -copy all -rotate %s -outfile %s %s\n",
+ 					status >> 8, rotate_str, file_str, file_str);
+ 			return;
+ 		}

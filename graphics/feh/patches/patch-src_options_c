@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_options_c,v 1.1 2011/05/02 21:22:58 dcoppa Exp $
+
+Improve '.fehrc -> .config/feh/themes' warning message
+(commit bd3aa36a5ab8d8d221d64f15202525dddb149365)
+
+--- src/options.c.orig	Mon May  2 15:23:04 2011
++++ src/options.c	Mon May  2 15:22:47 2011
+@@ -166,12 +166,14 @@ static void feh_load_options_for_theme(char *theme)
+ 	free(rcpath);
+ 
+ 	if (!fp && ((fp = fopen(oldrcpath, "r")) != NULL))
+-		weprintf("the config is now read from .config/feh/themes, "
+-			"please update your path!");
++		weprintf("The theme config file was moved from ~/.fehrc to "
++			"~/.config/feh/themes. Run\n"
++			"    mkdir -p ~/.config/feh; mv ~/.fehrc ~/.config/feh/themes\n"
++			"to fix this.");
+ 
+ 	free(oldrcpath);
+ 
+-	if (!fp && ((fp = fopen("/etc/feh/themes", "r")) == NULL))
++	if (!fp && ((fp = fopen("${SYSCONFDIR}/feh/themes", "r")) == NULL))
+ 		return;
+ 
+ 	/* Oooh. We have an options file :) */

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/12/07 08:42:35 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/05/02 21:22:58 dcoppa Exp $
 @bin bin/feh
 bin/feh-cam
 bin/gen-cam-menu
@@ -10,6 +10,12 @@ share/doc/feh/AUTHORS
 share/doc/feh/ChangeLog
 share/doc/feh/README
 share/doc/feh/TODO
+share/examples/feh/
+@sample ${SYSCONFDIR}/feh/
+share/examples/feh/keys
+@sample ${SYSCONFDIR}/feh/keys
+share/examples/feh/themes
+@sample ${SYSCONFDIR}/feh/themes
 share/feh/
 share/feh/fonts/
 share/feh/fonts/black.style

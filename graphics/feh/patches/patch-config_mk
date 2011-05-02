@@ -1,12 +1,15 @@
-$OpenBSD: patch-config_mk,v 1.1 2010/07/11 14:46:13 dcoppa Exp $
---- config.mk.orig	Fri Jun 25 17:13:11 2010
-+++ config.mk	Wed Jul  7 13:27:30 2010
-@@ -14,7 +14,7 @@ font_dir = ${main_dir}/share/feh/fonts
+$OpenBSD: patch-config_mk,v 1.2 2011/05/02 21:22:58 dcoppa Exp $
+
+gcc3 does not like "-Wextra"
+
+--- config.mk.orig	Sat Apr 23 22:02:31 2011
++++ config.mk	Mon May  2 14:17:26 2011
+@@ -15,7 +15,7 @@ example_dir = ${main_dir}/share/doc/feh/examples
  
  # default CFLAGS
  CFLAGS ?= -g -O2
 -CFLAGS += -Wall -Wextra -pedantic
 +CFLAGS += -Wall -pedantic
  
- # Comment these out if you don't have libxinerama
- xinerama = -DHAVE_LIBXINERAMA
+ curl ?= 1
+ debug ?= 0
