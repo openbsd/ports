@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/04/29 18:56:45 matthew Exp $
+# $OpenBSD: Makefile,v 1.18 2011/05/03 18:28:06 jasper Exp $
 
      SUBDIR =
      SUBDIR += chipmunk
@@ -8,6 +8,7 @@
      SUBDIR += gnucap
      SUBDIR += gtkwave
      SUBDIR += kicad
+     SUBDIR += kicad-library
      SUBDIR += klogic
      SUBDIR += necpp
      SUBDIR += openscad
