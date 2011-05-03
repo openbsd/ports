@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2010/09/16 22:36:08 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2011/05/03 17:17:01 fgsch Exp $
 @option no-default-conflict
 @conflict python->=2.6,<2.7
 @conflict python-bz2->=2.6,<2.7
@@ -6,11 +6,12 @@
 @pkgpath lang/python/2.6,-bz2
 @pkgpath lang/python/2.6,-sqlite
 @pkgpath lang/python/2.6,-expat
-bin/2to3
+@comment bin/2to3
 @comment bin/pydoc
 bin/pydoc2.6
 @comment bin/python-config
 @bin bin/python2.6
+bin/python2.6-2to3
 bin/python2.6-config
 include/python2.6/
 include/python2.6/Python-ast.h

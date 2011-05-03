@@ -1,0 +1,22 @@
+$OpenBSD: patch-Lib_urllib_py,v 1.1 2011/05/03 17:17:01 fgsch Exp $
+--- Lib/urllib.py.orig	Thu Aug 12 23:39:08 2010
++++ Lib/urllib.py	Tue May  3 01:13:19 2011
+@@ -652,6 +652,18 @@ class FancyURLopener(URLopener):
+         fp.close()
+         # In case the server sent a relative URL, join with original:
+         newurl = basejoin(self.type + ":" + url, newurl)
++
++        # For security reasons we do not allow redirects to protocols
++        # other than HTTP, HTTPS or FTP.
++        newurl_lower = newurl.lower()
++        if not (newurl_lower.startswith('http://') or
++                newurl_lower.startswith('https://') or
++                newurl_lower.startswith('ftp://')):
++            raise IOError('redirect error', errcode,
++                          errmsg + " - Redirection to url '%s' is not allowed" %
++                          newurl,
++                          headers)
++
+         return self.open(newurl)
+ 
+     def http_error_301(self, url, fp, errcode, errmsg, headers, data=None):
