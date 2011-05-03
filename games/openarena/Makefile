@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/22 10:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/05/03 06:48:21 jasper Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
@@ -10,24 +10,23 @@ MULTI_PACKAGES =	-main -server -data
 
 CATEGORIES =		games x11
 
-V =			0.8.1
+V =			0.8.5
+E_V =			0.8.1	# engine version
 
+PKGNAME =		openarena-${V}
 PKGNAME-main =		openarena-${V}
-REVISION-main =		1
 PKGNAME-server =	openarena-server-${V}
-REVISION-server =	0
 PKGNAME-data =		openarena-data-${V}
-REVISION-data =		1
 
 PKG_ARCH-data =		amd64,i386,macppc
 
 DISTNAME =		oa${V:S/.//g}
-DISTFILES =		${DISTNAME}.zip openarena-engine-${V}-1.tar.bz2
+DISTFILES =		${DISTNAME}.zip openarena-engine-${E_V}-1.tar.bz2
 
 MS_PREFIX =		http://download.tuxfamily.org/openarena/rel/
 HOMEPAGE =		http://www.openarena.ws/
 MASTER_SITES =		${MS_PREFIX}/${V:S/.//g}/ \
-			${MS_PREFIX}/${V:S/.//g}/source/ \
+			${MS_PREFIX}/${E_V:S/.//g}/source/ \
 			http://openbsd.fi/distfiles/
 
 # GPLv2 but contains software with other (free) licenses as well
@@ -52,7 +51,7 @@ MAKE_FLAGS =		USE_OPENAL=0 \
 			BINEXT='' \
 			DEFAULT_BASEDIR=${LOCALBASE}/share/openarena
 
-WRKDIST =		${WRKDIR}/openarena-engine-${V}
+WRKDIST =		${WRKDIR}/openarena-engine-${E_V}
 
 post-extract:
 	find ${WRKDIR} -name '*.orig' -print0 | xargs -0r rm -f
@@ -67,12 +66,14 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/openarena/missionpack
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/openarena
 	${INSTALL_DATA} \
-		${WRKDIR}/openarena-$V/README \
-		${WRKDIR}/openarena-$V/COPYING \
-		${WRKDIR}/openarena-$V/CHANGES \
+		${WRKDIR}/openarena-${E_V}/README \
+		${WRKDIR}/openarena-${E_V}/COPYING \
+		${WRKDIR}/openarena-${E_V}/CHANGES \
 		${PREFIX}/share/doc/openarena/
-	${INSTALL_DATA} ${WRKDIR}/openarena-$V/baseoa/* ${PREFIX}/share/openarena/baseoa/
-	${INSTALL_DATA} ${WRKDIR}/openarena-$V/missionpack/* ${PREFIX}/share/openarena/missionpack/
+	${INSTALL_DATA} ${WRKDIR}/openarena-${E_V}/baseoa/* \
+		${PREFIX}/share/openarena/baseoa/
+	${INSTALL_DATA} ${WRKDIR}/openarena-${E_V}/missionpack/* \
+		${PREFIX}/share/openarena/missionpack/
 
 
 .include <bsd.port.mk>
