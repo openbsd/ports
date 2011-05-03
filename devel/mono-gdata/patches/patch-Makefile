@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2011/05/03 16:36:59 ajacoutot Exp $
+--- Makefile.orig	Wed Feb 11 10:34:10 2009
++++ Makefile	Tue May  3 11:31:49 2011
+@@ -4,7 +4,7 @@ CSC=gmcs
+ DEFINES=/d:TRACE
+ 
+ VERSION=$(shell egrep AssemblyVersion version/AssemblyVersion.cs | egrep -o \([[:digit:]]\.\)+[[:digit:]]+)
+-PREFIX=/usr/local
++PREFIX?=/usr/local
+ 
+ CORELIBS=\
+ 	Google.GData.Client.dll		\
+@@ -119,9 +119,9 @@ clean:
+ 	-rm *.sn *.dll *exe $(PKGCONFIG_FILES)
+ 
+ install: all
+-	for i in $(ALLLIBS); do gacutil -i $$i -package GData-Sharp -root "$(DESTDIR)$(PREFIX)/lib"; done
+-	install -d "$(DESTDIR)$(PREFIX)/lib/pkgconfig"
+-	install -m 644 -t "$(DESTDIR)$(PREFIX)/lib/pkgconfig" $(PKGCONFIG_FILES) 
++	for i in $(ALLLIBS); do gacutil -i $$i -package GData-Sharp -root "$(PREFIX)/lib"; done
++	install -d "$(PREFIX)/lib/pkgconfig"
++	install -m 644 $(PKGCONFIG_FILES) "$(PREFIX)/lib/pkgconfig"
+ 
+ uninstall:
+ 	for i in $(ALLLIBS); do gacutil -u $$i -package GData-Sharp -root "$(DESTDIR)$(PREFIX)/lib"; done
