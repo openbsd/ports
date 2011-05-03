@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2011/03/09 06:23:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2011/05/03 19:27:54 landry Exp $
 
 COMMENT=	additional Python bindings for GNOME
 
 GNOME_PROJECT=	gnome-python-extras
 GNOME_VERSION=	2.25.3
 PKGNAME=	py-gnome-extras-${VERSION}
-REVISION=	12
+REVISION=	13
 
 HOMEPAGE=	http://www.pygtk.org/
 
@@ -17,15 +17,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 avahi-client avahi-common
-WANTLIB += avahi-glib bonobo-2 bonobo-activation bonoboui-2 cairo
+WANTLIB += Xrender art_lgpl_2 atk-1.0 ogg vorbis vorbisfile
+WANTLIB += bonobo-2 bonobo-activation bonoboui-2 cairo xcb-shm
 WANTLIB += crypto dbus-1 dbus-glib-1 expat ffi fontconfig freetype
 WANTLIB += gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2
 WANTLIB += gnomeui-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png popt pthread-stubs ssl stdc++
-WANTLIB += gcrypt gpg-error xcb-render xcb-render-util
+WANTLIB += gcrypt gpg-error xcb-render GL Xxf86vm canberra drm ltdl
 WANTLIB += util xcb xml2 z gtkspell gdl-1 enchant gda-4.0
 WANTLIB += ${MODPY_WANTLIB}
 

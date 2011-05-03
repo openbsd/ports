@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/05/03 19:27:26 landry Exp $
 
 COMMENT=		avant window navigator
 
 V=			0.3.2
 DISTNAME=		avant-window-navigator-$V
-REVISION=		10
+REVISION=		11
 
 SHARED_LIBS +=	awn                  0.0      # .0.1
 
@@ -28,8 +28,8 @@ MODULES=		devel/gettext \
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 XRes Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 avahi-client avahi-common
-WANTLIB += avahi-glib bonobo-activation bonobo-2 c
+WANTLIB += Xrender atk-1.0 GL Xxf86vm canberra drm ltdl ogg vorbis
+WANTLIB += bonobo-activation bonobo-2 c xcb-render xcb-shm vorbisfile
 WANTLIB += cairo crypto dbus-1 dbus-glib-1 expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnome-2 wnck-1 gnome-desktop-2
