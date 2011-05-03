@@ -1,93 +1,77 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/05/03 18:31:14 jasper Exp $
 
-COMMENT-main=	circuit drawing and schematic capture
+COMMENT-main=	schematic and PCB editing software
 COMMENT-docs=	documentation for the kicad library of components
 
-V=		2007-01-15
-DISTNAME=	kicad-sources-${V}
-PKGNAME=	kicad-20070115
-PKGNAME-main=	kicad-20070115
-REVISION-main=	0
-PKGNAME-docs=	kicad-docs-20070115
+V=		2010-05-05
+S=		BZR2356-stable
+DISTNAME=	kicad-sources-${V}-${S}
+PKGNAME=	kicad-${V:S/-//g}
+PKGNAME-main=	kicad-${V:S/-//g}
+PKGNAME-docs=	kicad-docs-${V:S/-//g}
 
 CATEGORIES=	cad
 
-HOMEPAGE=	http://www.lis.inpg.fr/realise_au_lis/kicad/
+HOMEPAGE=	http://kicad.sourceforge.net/
 
-# GPL 
+# LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://iut-tice.ujf-grenoble.fr/cao/sources/
-MASTER_SITES0=	ftp://iut-tice.ujf-grenoble.fr/cao/
+MASTER_SITES=	ftp://iut-tice.ujf-grenoble.fr/cao/
 
-MODULES=	devel/gettext
+DOCDIST=	doc_components-${V}-${S}.tgz
+DISTFILES=	${DISTNAME}.zip ${DOCDIST}
+EXTRACT_ONLY=	${DISTNAME}.zip
+DIST_SUBDIR=	kicad
 
 MULTI_PACKAGES=	-main -docs
 
-WANTLIB-main=	${WANTLIB} GL GLU c m pthread stdc++
+MODULES=	devel/cmake \
+		devel/gettext
+
+BUILD_DEPENDS=		misc/shared-mime-info
+RUN_DEPENDS-main=	cad/kicad-library \
+			devel/desktop-file-utils \
+			misc/shared-mime-info
+
+LIB_DEPENDS=	x11/wxWidgets
+
+WANTLIB-main += ${WANTLIB} GL GLU c m pthread stdc++
+WANTLIB-main += ICE SM X11 Xext wx_base wx_base_net wx_gtk2_adv wx_gtk2_aui
+WANTLIB-main += wx_gtk2_core wx_gtk2_gl wx_gtk2_html z
 WANTLIB-docs=
 RUN_DEPENDS-docs=
 LIB_DEPENDS-docs=
 PKG_ARCH-docs=	*
 
-LIB_DEPENDS = x11/wxWidgets
-WANTLIB-main += wx_base wx_base_net wx_base_odbc wx_base_xml
-WANTLIB-main += wx_gtk2_adv wx_gtk2_core wx_gtk2_dbgrid wx_gtk2_gl 
-WANTLIB-main += wx_gtk2_html wx_gtk2_qa wx_gtk2_xrc wx_gtk2_aui 
-WANTLIB-main += wx_gtk2_richtext
-
-DOCDIST=	doc_components-2006-12-08.zip
-PKGDIST=	kicad-${V}.tgz
-DISTFILES=	${DISTNAME}.zip ${PKGDIST}:0 ${DOCDIST}:0
-EXTRACT_ONLY=	${DISTNAME}.zip ${PKGDIST}
-DIST_SUBDIR=	kicad
-
-WRKDIST=	${WRKDIR}/kicad-dev
-MAKE_FILE=	makefile.gtk
-USE_GMAKE=	Yes
+WRKDIST=	${WRKDIR}/kicad-sources-${V}-${S:S/-stable//}
 
 MAKE_FLAGS=	CC=${CXX} CXX=${CXX} LD=${CXX} \
 		CXXFLAGS="${CXXFLAGS}" X11BASE=${X11BASE}
 
-KICADBIN=	eeschema pcbnew cvpcb kicad gerbview
-LANGS=		de es fr hu it ko pl pt sl
-
-pre-patch:
-	@find ${WRKSRC} -type f -exec perl -pi -e 's/\r$$//' {} \;
+LANGS=		ca cs de es fi fr hu it ko nl pl pt ru sl sv zh_CN
 
 pre-configure:
-	@perl -pi -e 's,/usr/bin,${LOCALBASE}/bin,g' \
-		${WRKSRC}/common/eda_doc.cpp
-	@perl -pi -e 's,!!LOCALBASE!!,${LOCALBASE},g' \
-		${WRKSRC}/common/edaappl.cpp ${WRKSRC}/common/gestfich.cpp
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt ${WRKSRC}/common/gestfich.cpp
 
 post-build:
 .for l in ${LANGS}
-	cd ${WRKDIR}/kicad/internat/$l && rm -f *.mo && \
+	cd ${WRKSRC}/internat/$l && rm -f *.mo && \
 		msgfmt -o kicad.mo kicad.po
 .endfor
 
-do-install:
-.for k in ${KICADBIN}
-	${INSTALL_PROGRAM} ${WRKBUILD}/$k/$k ${PREFIX}/bin
-.endfor
-	${INSTALL_PROGRAM} ${WRKBUILD}/eeschema/plugins/netlist_form_pads-pcb \
-		${PREFIX}/bin
-	${INSTALL_DATA_DIR} ${PREFIX}/share/kicad
-	cd ${WRKDIR}/kicad && tar -cf - help library modules | tar \
-		-C ${PREFIX}/share/kicad -xf -
-	rmdir ${PREFIX}/share/kicad/modules/packages3d/conn_HExx
+post-install:
 .for l in ${LANGS}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/locale/$l/LC_MESSAGES
-	${INSTALL_DATA} ${WRKDIR}/kicad/internat/$l/kicad.mo \
+	${INSTALL_DATA} ${WRKSRC}/internat/$l/kicad.mo \
 		${PREFIX}/share/locale/$l/LC_MESSAGES
 .endfor
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/kicad/library
 	cd ${PREFIX}/share/doc/kicad/library && \
-		unzip -q ${FULLDISTDIR}/${DOCDIST}
+		tar -xzf ${FULLDISTDIR}/${DOCDIST}
 	cd ${PREFIX}/share/doc/kicad/library/doc && \
 		mv analog_mux\&switches analog_mux_and_switches
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/kicad \

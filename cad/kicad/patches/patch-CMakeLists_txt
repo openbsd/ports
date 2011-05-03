@@ -1,0 +1,29 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1 2011/05/03 18:31:14 jasper Exp $
+
+Don't use "-isystem /usr/..." but regular "-I/usr/..."
+Prevents "error: template with C linkage" errors.
+
+http://www.mail-archive.com/cmake@cmake.org/msg13226.html
+
+--- CMakeLists.txt.orig	Thu Apr 22 19:48:48 2010
++++ CMakeLists.txt	Fri Apr 29 13:41:49 2011
+@@ -6,6 +6,8 @@ else(WIN32)
+     cmake_minimum_required(VERSION 2.6.0 FATAL_ERROR)
+ endif(WIN32)
+ 
++SET(wxWidgets_INCLUDE_DIRS_NO_SYSTEM 1)
++
+ # Path to local CMake modules.
+ set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
+ 
+@@ -163,7 +165,9 @@ endif(EXISTS ${CMAKE_SOURCE_DIR}/include/config.h)
+ 
+ 
+ # Include paths.
+-include_directories(${CMAKE_SOURCE_DIR}/include
++include_directories(${X11BASE}/include/
++		    ${LOCALBASE}/include/
++		    ${CMAKE_SOURCE_DIR}/include
+                     ${CMAKE_SOURCE_DIR}/share
+                     ${CMAKE_BINARY_DIR})
+ 
