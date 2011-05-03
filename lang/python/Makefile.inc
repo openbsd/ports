@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.76 2011/05/03 17:14:43 fgsch Exp $
+# $OpenBSD: Makefile.inc,v 1.77 2011/05/03 17:52:04 rpointel Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -97,7 +97,6 @@ PKG_ARGS+=	-Dctypes=0
 
 USE_GROFF =	Yes
 
-AUTOCONF_VERSION?=	2.61
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 # --srcdir is needed for systrace to work correctly
