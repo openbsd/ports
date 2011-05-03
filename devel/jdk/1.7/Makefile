@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/05/02 07:23:17 landry Exp $
+# $OpenBSD: Makefile,v 1.44 2011/05/03 09:35:56 landry Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
@@ -71,7 +71,7 @@ ALT_BOOTDIR=	${LOCALBASE}/jdk-1.6.0
 .endif
 
 VMEM_WARNING=	Yes
-BUILD_DEPENDS+=	devel/apache-ant->=1.8.2 \
+BUILD_DEPENDS+=	devel/apache-ant>=1.8.2 \
 		archivers/zip \
 		archivers/unzip \
 		print/cups
