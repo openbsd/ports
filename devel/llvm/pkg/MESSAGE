@@ -5,6 +5,6 @@ For instance, the scanner on the kernel build can be launched with:
 
 cd /usr/src/sys/arch/`uname -m`/conf && config GENERIC.MP
 cd /usr/src/sys/arch/`uname -m`/compile/GENERIC.MP
-make clean && make depend && scan-build make
+make clean && scan-build make
 
 This will generate HTML reports in /tmp/scan-build-(date).
