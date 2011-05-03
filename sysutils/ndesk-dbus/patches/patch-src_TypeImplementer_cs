@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_TypeImplementer_cs,v 1.1 2011/05/03 09:51:24 ajacoutot Exp $
+
+Patch from Debian.
+(Crash with interfaces with the same name but in different namespaces)
+https://bugs.launchpad.net/ndesk-dbus/+bug/377672
+
+--- src/TypeImplementer.cs.orig	Sat Jan 12 18:18:53 2008
++++ src/TypeImplementer.cs	Tue May  3 11:40:38 2011
+@@ -34,7 +34,7 @@ namespace NDesk.DBus
+ 
+ 			InitHack ();
+ 
+-			TypeBuilder typeB = modB.DefineType (declType.Name + "Proxy", TypeAttributes.Class | TypeAttributes.Public, typeof (BusObject));
++			TypeBuilder typeB = modB.DefineType (declType.FullName + "Proxy", TypeAttributes.Class | TypeAttributes.Public, typeof (BusObject));
+ 
+ 			Implement (typeB, declType);
+ 
