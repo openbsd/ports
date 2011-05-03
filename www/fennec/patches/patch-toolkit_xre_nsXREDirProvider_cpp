@@ -1,4 +1,4 @@
-$OpenBSD: patch-toolkit_xre_nsXREDirProvider_cpp,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-toolkit_xre_nsXREDirProvider_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- toolkit/xre/nsXREDirProvider.cpp.orig	Wed Feb 23 06:53:53 2011
 +++ toolkit/xre/nsXREDirProvider.cpp	Sat Feb 26 09:25:37 2011
 @@ -1169,11 +1169,7 @@ nsXREDirProvider::GetSystemExtensionsDirectory(nsILoca

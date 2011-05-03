@@ -1,4 +1,4 @@
-$OpenBSD: patch-xpcom_io_nsAppFileLocationProvider_cpp,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-xpcom_io_nsAppFileLocationProvider_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- xpcom/io/nsAppFileLocationProvider.cpp.orig	Wed Jul 21 02:53:09 2010
 +++ xpcom/io/nsAppFileLocationProvider.cpp	Sun Aug  1 12:58:35 2010
 @@ -238,12 +238,7 @@ nsAppFileLocationProvider::GetFile(const char *prop, P

@@ -1,4 +1,4 @@
-/*	$OpenBSD: nsSound.cpp,v 1.1.1.1 2011/04/12 19:48:57 landry Exp $	*/
+/*	$OpenBSD: nsSound.cpp,v 1.2 2011/05/03 11:11:37 landry Exp $	*/
 
 /*
  * Copyright (c) 2009 Martynas Venckus <martynas@openbsd.org>

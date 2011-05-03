@@ -1,4 +1,4 @@
-$OpenBSD: patch-gfx_thebes_gfxTextRunWordCache_cpp,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-gfx_thebes_gfxTextRunWordCache_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- gfx/thebes/gfxTextRunWordCache.cpp.orig	Thu Feb  3 21:11:48 2011
 +++ gfx/thebes/gfxTextRunWordCache.cpp	Mon Feb 14 20:41:37 2011
 @@ -49,6 +49,10 @@

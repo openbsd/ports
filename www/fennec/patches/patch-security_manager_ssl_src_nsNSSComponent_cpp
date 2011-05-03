@@ -1,4 +1,4 @@
-$OpenBSD: patch-security_manager_ssl_src_nsNSSComponent_cpp,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-security_manager_ssl_src_nsNSSComponent_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- security/manager/ssl/src/nsNSSComponent.cpp.orig	Wed Dec 15 02:03:34 2010
 +++ security/manager/ssl/src/nsNSSComponent.cpp	Wed Dec 22 22:33:04 2010
 @@ -855,11 +855,10 @@ nsNSSComponent::InstallLoadableRoots()

@@ -1,4 +1,4 @@
-$OpenBSD: patch-widget_src_gtk2_nsBidiKeyboard_cpp,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-widget_src_gtk2_nsBidiKeyboard_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- widget/src/gtk2/nsBidiKeyboard.cpp.orig	Thu Mar  5 23:32:52 2009
 +++ widget/src/gtk2/nsBidiKeyboard.cpp	Fri Mar 13 17:26:18 2009
 @@ -55,10 +55,10 @@ nsBidiKeyboard::nsBidiKeyboard()

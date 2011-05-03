@@ -1,4 +1,4 @@
-$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_xptcstubs_asm_ppc_openbsd_s,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-xpcom_reflect_xptcall_src_md_unix_xptcstubs_asm_ppc_openbsd_s,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- xpcom/reflect/xptcall/src/md/unix/xptcstubs_asm_ppc_openbsd.s.orig	Sun Dec 23 01:57:11 2007
 +++ xpcom/reflect/xptcall/src/md/unix/xptcstubs_asm_ppc_openbsd.s	Sun Sep 14 22:21:55 2008
 @@ -1,43 +1,43 @@

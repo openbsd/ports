@@ -1,4 +1,4 @@
-$OpenBSD: patch-toolkit_library_libxul-config_mk,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-toolkit_library_libxul-config_mk,v 1.2 2011/05/03 11:11:37 landry Exp $
 Ensure systemwide nss is taken
 Ensure local libjs is taken (build failure when spidermonkey is installed,
 its libjs_static.a is found first in lib search path)

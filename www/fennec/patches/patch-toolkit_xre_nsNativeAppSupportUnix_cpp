@@ -1,4 +1,4 @@
-$OpenBSD: patch-toolkit_xre_nsNativeAppSupportUnix_cpp,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-toolkit_xre_nsNativeAppSupportUnix_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- toolkit/xre/nsNativeAppSupportUnix.cpp.orig	Wed Jul 21 02:53:08 2010
 +++ toolkit/xre/nsNativeAppSupportUnix.cpp	Sun Aug  1 12:58:34 2010
 @@ -496,11 +496,11 @@ nsNativeAppSupportUnix::Start(PRBool *aRetVal)

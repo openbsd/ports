@@ -1,4 +1,4 @@
-$OpenBSD: patch-xpcom_base_nsStackWalk_cpp,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-xpcom_base_nsStackWalk_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- xpcom/base/nsStackWalk.cpp.orig	Wed Dec 15 02:03:41 2010
 +++ xpcom/base/nsStackWalk.cpp	Wed Dec 22 22:33:05 2010
 @@ -1236,7 +1236,7 @@ myinit()

@@ -1,4 +1,4 @@
-$OpenBSD: patch-widget_src_xpwidgets_nsPrintSettingsImpl_cpp,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-widget_src_xpwidgets_nsPrintSettingsImpl_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- widget/src/xpwidgets/nsPrintSettingsImpl.cpp.orig	Wed Jul 21 02:53:09 2010
 +++ widget/src/xpwidgets/nsPrintSettingsImpl.cpp	Sun Aug  1 12:58:34 2010
 @@ -61,7 +61,7 @@ nsPrintSettings::nsPrintSettings() :

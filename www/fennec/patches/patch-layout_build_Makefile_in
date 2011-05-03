@@ -1,4 +1,4 @@
-$OpenBSD: patch-layout_build_Makefile_in,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-layout_build_Makefile_in,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- layout/build/Makefile.in.orig	Tue Jan 11 04:26:19 2011
 +++ layout/build/Makefile.in	Sat Jan 15 01:03:20 2011
 @@ -294,6 +294,10 @@ ifneq (,$(filter gtk2,$(MOZ_WIDGET_TOOLKIT)))

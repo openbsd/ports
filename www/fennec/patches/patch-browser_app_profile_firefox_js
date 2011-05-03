@@ -1,4 +1,4 @@
-$OpenBSD: patch-browser_app_profile_firefox_js,v 1.1.1.1 2011/04/12 19:48:57 landry Exp $
+$OpenBSD: patch-browser_app_profile_firefox_js,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- browser/app/profile/firefox.js.orig	Wed Feb 23 06:53:25 2011
 +++ browser/app/profile/firefox.js	Sat Feb 26 09:25:33 2011
 @@ -137,7 +137,7 @@ pref("app.update.certs.2.issuerName", "CN=Thawte SSL C

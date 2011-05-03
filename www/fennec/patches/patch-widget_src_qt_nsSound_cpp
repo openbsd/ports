@@ -1,4 +1,4 @@
-$OpenBSD: patch-widget_src_qt_nsSound_cpp,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-widget_src_qt_nsSound_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- widget/src/qt/nsSound.cpp.orig	Wed Jul 21 02:53:09 2010
 +++ widget/src/qt/nsSound.cpp	Sun Aug  1 13:00:45 2010
 @@ -123,7 +123,7 @@ nsSound::Init()

@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_unix_mozilla_in,v 1.1.1.1 2011/04/12 19:48:57 landry Exp $
+$OpenBSD: patch-build_unix_mozilla_in,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- build/unix/mozilla.in.orig	Wed Jan  6 05:35:11 2010
 +++ build/unix/mozilla.in	Sun Jan 10 17:47:23 2010
 @@ -50,6 +50,11 @@

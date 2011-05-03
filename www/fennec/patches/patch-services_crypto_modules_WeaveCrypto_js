@@ -1,4 +1,4 @@
-$OpenBSD: patch-services_crypto_modules_WeaveCrypto_js,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-services_crypto_modules_WeaveCrypto_js,v 1.2 2011/05/03 11:11:37 landry Exp $
 Fix libnss3 opening
 --- services/crypto/modules/WeaveCrypto.js.orig	Fri Mar 18 20:07:29 2011
 +++ services/crypto/modules/WeaveCrypto.js	Thu Mar 31 23:04:26 2011

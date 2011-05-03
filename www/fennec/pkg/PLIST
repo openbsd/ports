@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/03 11:11:37 landry Exp $
 bin/${MOZILLA_PROJECT}
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/application.ini

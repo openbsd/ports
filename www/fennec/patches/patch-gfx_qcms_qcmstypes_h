@@ -1,4 +1,4 @@
-$OpenBSD: patch-gfx_qcms_qcmstypes_h,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-gfx_qcms_qcmstypes_h,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- gfx/qcms/qcmstypes.h.orig	Wed Jul 21 02:52:13 2010
 +++ gfx/qcms/qcmstypes.h	Sun Aug  1 12:35:46 2010
 @@ -13,14 +13,6 @@

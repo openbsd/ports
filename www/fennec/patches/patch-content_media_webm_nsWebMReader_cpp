@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_media_webm_nsWebMReader_cpp,v 1.1.1.1 2011/04/12 19:48:57 landry Exp $
+$OpenBSD: patch-content_media_webm_nsWebMReader_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
 nsWebMReader.cpp:704: error: invalid conversion from 'PRUint64*' to 'uint64_t*'
 --- content/media/webm/nsWebMReader.cpp.orig	Thu Feb  3 21:11:41 2011
 +++ content/media/webm/nsWebMReader.cpp	Tue Feb  8 22:37:33 2011

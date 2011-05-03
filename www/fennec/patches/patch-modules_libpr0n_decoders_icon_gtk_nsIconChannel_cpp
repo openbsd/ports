@@ -1,4 +1,4 @@
-$OpenBSD: patch-modules_libpr0n_decoders_icon_gtk_nsIconChannel_cpp,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-modules_libpr0n_decoders_icon_gtk_nsIconChannel_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- modules/libpr0n/decoders/icon/gtk/nsIconChannel.cpp.orig	Wed Feb 23 06:53:46 2011
 +++ modules/libpr0n/decoders/icon/gtk/nsIconChannel.cpp	Sat Feb 26 09:25:36 2011
 @@ -187,7 +187,7 @@ ensure_libgnomeui()

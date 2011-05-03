@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/14 15:55:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/03 11:11:37 landry Exp $
 
 COMMENT =	Mozilla mobile web browser
 
-MOZILLA_VERSION =	4.0
+MOZILLA_VERSION =	4.0.1
 MOZILLA_BRANCH =	2.1
 MOZILLA_PROJECT =	fennec
 MOZILLA_CODENAME =	mobile
-# XXX rc1 is the final release
-DISTNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION}rc1.source
 
 SO_VERSION =	0.0
 NSS_SO_VERSION =	27.0
@@ -58,7 +56,7 @@ BUILD_DEPENDS +=	archivers/gtar
 INSTALL_TARGET =	package
 
 post-configure:
-	rm ${WRKSRC}/services/crypto/modules/WeaveCrypto.js.{orig,beforesubst}
+	rm -f ${WRKSRC}/services/crypto/modules/WeaveCrypto.js.{orig,beforesubst}
 
 post-install:
 	cd ${WRKSRC} && tar -C ${PREFIX}/lib/ -xjf dist/fennec*.tar.bz2

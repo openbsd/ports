@@ -1,4 +1,4 @@
-$OpenBSD: patch-xulrunner_installer_libxul-embedding_pc_in,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-xulrunner_installer_libxul-embedding_pc_in,v 1.2 2011/05/03 11:11:37 landry Exp $
 no libdl on OpenBSD
 --- xulrunner/installer/libxul-embedding.pc.in.orig	Sun Feb 20 21:50:47 2011
 +++ xulrunner/installer/libxul-embedding.pc.in	Sun Feb 20 21:50:52 2011

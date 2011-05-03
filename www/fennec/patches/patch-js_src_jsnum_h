@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_src_jsnum_h,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-js_src_jsnum_h,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- js/src/jsnum.h.orig	Fri Aug  6 03:09:08 2010
 +++ js/src/jsnum.h	Sun Aug 15 14:08:46 2010
 @@ -68,7 +68,7 @@

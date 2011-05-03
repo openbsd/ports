@@ -1,4 +1,4 @@
-$OpenBSD: patch-content_xslt_src_base_txDouble_cpp,v 1.1.1.1 2011/04/12 19:48:57 landry Exp $
+$OpenBSD: patch-content_xslt_src_base_txDouble_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
 alignment issue on some arch ? been there since ffx3
 --- content/xslt/src/base/txDouble.cpp.orig	Wed Dec 15 02:02:41 2010
 +++ content/xslt/src/base/txDouble.cpp	Wed Dec 22 22:50:20 2010

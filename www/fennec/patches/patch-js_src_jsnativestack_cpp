@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_src_jsnativestack_cpp,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-js_src_jsnativestack_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=634609
 --- js/src/jsnativestack.cpp.orig	Thu Nov  4 21:05:49 2010
 +++ js/src/jsnativestack.cpp	Sat Nov 13 11:56:34 2010

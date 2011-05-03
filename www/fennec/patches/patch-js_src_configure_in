@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_src_configure_in,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-js_src_configure_in,v 1.2 2011/05/03 11:11:37 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=589754
 --- js/src/configure.in.orig	Thu Mar  3 23:11:32 2011
 +++ js/src/configure.in	Sun Mar 13 11:35:50 2011

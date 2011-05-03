@@ -1,4 +1,4 @@
-$OpenBSD: patch-modules_plugin_base_src_nsPluginNativeWindowGtk2_cpp,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-modules_plugin_base_src_nsPluginNativeWindowGtk2_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- modules/plugin/base/src/nsPluginNativeWindowGtk2.cpp.orig	Wed Jul 21 02:52:34 2010
 +++ modules/plugin/base/src/nsPluginNativeWindowGtk2.cpp	Sun Aug  1 12:58:33 2010
 @@ -365,7 +365,7 @@ nsresult nsPluginNativeWindowGtk2::CreateXCompositedWi

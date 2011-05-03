@@ -1,4 +1,4 @@
-$OpenBSD: patch-other-licenses_branding_firefox_locales_browserconfig_properties,v 1.1.1.1 2011/04/12 19:48:58 landry Exp $
+$OpenBSD: patch-other-licenses_branding_firefox_locales_browserconfig_properties,v 1.2 2011/05/03 11:11:37 landry Exp $
 --- other-licenses/branding/firefox/locales/browserconfig.properties.orig	Sat Jan 15 01:07:21 2011
 +++ other-licenses/branding/firefox/locales/browserconfig.properties	Sat Jan 15 01:07:44 2011
 @@ -1,2 +1,3 @@
