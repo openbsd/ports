@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.75 2011/04/24 09:19:01 rpointel Exp $
+# $OpenBSD: Makefile.inc,v 1.76 2011/05/03 17:14:43 fgsch Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -123,10 +123,15 @@ post-extract:
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} Makefile
 
+ADJ_FILES = ${WRKSRC}/Tools/scripts/pydoc
+.if ${VERSION} == "2.6" || ${VERSION} == "2.7"
+ADJ_FILES += ${WRKSRC}/Tools/scripts/2to3
+.endif
+
 post-build:
 	perl -pi -e \
 		's@#! */usr/bin/env +python@#!${PREFIX}/bin/python${VERSION}@' \
-		${WRKSRC}/Tools/scripts/pydoc
+		${ADJ_FILES}
 
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/pydoc \
@@ -143,6 +148,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp
 	${INSTALL_DATA} ${WRKSRC}/Misc/python-mode.el \
 		${PREFIX}/share/emacs/site-lisp/python-mode-${VERSION}.el
+.endif
+.if ${VERSION} == "2.6" || ${VERSION} == "2.7"
+	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/2to3 \
+		${PREFIX}/bin/python${VERSION}-2to3
 .endif
 
 REGRESS_TARGET=	test
