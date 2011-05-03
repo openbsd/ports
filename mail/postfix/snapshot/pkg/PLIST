@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.56 2011/01/15 22:37:39 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.57 2011/05/03 23:12:00 sthen Exp $
 @conflict postfix-*
 @newgroup _postfix:507
 @newgroup _postdrop:508
 @newuser _postfix:507:507:daemon:Postfix Daemon:/var/empty:/sbin/nologin
-@unexec ${PREFIX}/sbin/postfix stop
 @unexec-delete ${PREFIX}/sbin/postfix-disable
 @unexec-delete rm -f /etc/mailer.conf.postfix
 @extra ${SYSCONFDIR}/postfix/
