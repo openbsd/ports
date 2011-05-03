@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Name=Rxvt: ouR X Virtual Terminal
+GenericName=Terminal
+Comment=Command-line terminal
+Categories=System;Terminal;
+Exec=rxvt
+Icon=terminal
+Path=
+Type=Application
+Terminal=false
+X-KDE-StartupNotify=true
+X-KDE-AuthorizeAction=shell_access
