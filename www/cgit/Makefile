@@ -1,11 +1,18 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/03 21:32:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/03 13:57:26 stsp Exp $
 
 COMMENT =	web frontend for git repositories
 
 DISTNAME =	cgit-0.8.3.5
+REVISION = 	0
 CATEGORIES =	www devel
 
-MASTER_SITES =	http://distfiles.nl/
+DISTFILES = 	cgit-0.8.3.5.tar.gz:0 \
+		git-1.7.4.5.tar.gz:1
+
+MASTER_SITES0 =		http://distfiles.nl/
+MASTER_SITES1 =		ftp://ftp.kernel.org/pub/software/scm/git/ \
+			ftp://ftp.de.kernel.org/pub/software/scm/git/ \
+			ftp://ftp.au.kernel.org/pub/software/scm/git/
 HOMEPAGE =	http://hjemli.net/git/cgit/about/
 
 # GPLv2
@@ -17,7 +24,6 @@ PERMIT_DISTFILES_FTP =	Yes
 USE_GMAKE =	yes
 
 MODULES =	converters/libiconv
-BUILD_DEPENDS =	devel/git:patch
 WANTLIB +=	c crypto pthread z
 
 PREFIX =	/var/www
@@ -25,7 +31,7 @@ MAKE_FLAGS +=	V=1 NEEDS_LIBICONV=1 LDFLAGS+=-L${LOCALBASE}/lib
 
 post-extract:
 	rmdir ${WRKSRC}/git
-	ln -s ${WRKDIR}/devel/git/git-* ${WRKSRC}/git
+	ln -s ${WRKDIR}/git-* ${WRKSRC}/git
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/conf/modules.sample
