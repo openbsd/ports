@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/04 14:11:59 sthen Exp $
+bin/chronic
+bin/combine
+@bin bin/ifdata
+@bin bin/ifne
+@bin bin/isutf8
+@bin bin/lckdo
+@bin bin/mispipe
+@bin bin/pee
+@bin bin/sponge
+bin/ts
+bin/vidir
+bin/vipe
+bin/zrun
+@man man/man1/chronic.1
+@man man/man1/combine.1
+@man man/man1/ifdata.1
+@man man/man1/ifne.1
+@man man/man1/isutf8.1
+@man man/man1/lckdo.1
+@man man/man1/mispipe.1
+@comment @man man/man1/parallel.1
+@man man/man1/pee.1
+@man man/man1/sponge.1
+@man man/man1/ts.1
+@man man/man1/vidir.1
+@man man/man1/vipe.1
+@man man/man1/zrun.1

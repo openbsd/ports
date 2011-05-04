@@ -1,0 +1,11 @@
+moreutils is a growing collection of the unix tools that nobody thought
+to write long ago when unix was young, including amongst others:
+
+lckdo: execute a program with a lock held
+mispipe: pipe two commands, returning the exit status of the first
+pee: tee standard input to pipes
+sponge: soak up standard input and write to a file
+ts: timestamp standard input
+vidir: edit a directory in your text editor
+vipe: insert a text editor into a pipe
+zrun: automatically uncompress arguments to command
