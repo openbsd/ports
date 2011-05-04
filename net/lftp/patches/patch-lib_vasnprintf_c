@@ -1,0 +1,22 @@
+$OpenBSD: patch-lib_vasnprintf_c,v 1.1 2011/05/04 00:59:30 kevlo Exp $
+Initialize variable e
+--- lib/vasnprintf.c.orig	Fri Mar  4 03:33:31 2011
++++ lib/vasnprintf.c	Mon May  2 14:23:52 2011
+@@ -1265,7 +1265,7 @@ scale10_round_decimal_decoded (int e, mpn_t m, void *m
+ static char *
+ scale10_round_decimal_long_double (long double x, int n)
+ {
+-  int e IF_LINT(= 0);
++  int e = 0;
+   mpn_t m;
+   void *memory = decode_long_double (x, &e, &m);
+   return scale10_round_decimal_decoded (e, m, memory, n);
+@@ -1283,7 +1283,7 @@ scale10_round_decimal_long_double (long double x, int 
+ static char *
+ scale10_round_decimal_double (double x, int n)
+ {
+-  int e IF_LINT(= 0);
++  int e = 0;
+   mpn_t m;
+   void *memory = decode_double (x, &e, &m);
+   return scale10_round_decimal_decoded (e, m, memory, n);
