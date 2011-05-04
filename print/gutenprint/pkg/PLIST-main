@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2010/08/21 21:43:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2011/05/04 14:55:02 ajacoutot Exp $
 @conflict foomatic-db-gutenprint-<5.2.4p1
 %%SHARED%%
 @bin bin/escputil
@@ -93,6 +93,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/inks/f360_photo7_japan.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/f360_ultrachrome.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/f360_ultrachrome_k3.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/f360_ultrachrome_k3v.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/inks/f360_ultrachrome_k3v_2.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/nx100.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/photo_gen0.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/photo_gen1.xml
@@ -108,7 +109,9 @@ share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_gen2.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_pigment.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k3.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k34.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k3v.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k3v4.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/standard.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/standard_gen0.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/ultrachrome.xml
@@ -189,7 +192,15 @@ share/gutenprint/${MAJOR_V}/xml/escp2/model/model_104.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_105.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_106.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_107.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_108.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_109.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_11.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_110.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_111.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_112.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_113.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_114.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_115.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_12.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_13.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_14.xml
@@ -341,6 +352,8 @@ share/locale/ru/LC_MESSAGES/gutenprint.mo
 share/locale/ru/gutenprint_ru.po
 share/locale/sk/LC_MESSAGES/gutenprint.mo
 share/locale/sk/gutenprint_sk.po
+share/locale/sl/LC_MESSAGES/gutenprint.mo
+share/locale/sl/gutenprint_sl.po
 share/locale/sv/LC_MESSAGES/gutenprint.mo
 share/locale/sv/gutenprint_sv.po
 share/locale/zh_TW/LC_MESSAGES/gutenprint.mo

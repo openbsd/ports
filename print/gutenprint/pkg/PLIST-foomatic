@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-foomatic,v 1.8 2010/08/21 21:43:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST-foomatic,v 1.9 2011/05/04 14:55:02 ajacoutot Exp $
 share/foomatic/db/source/driver/gutenprint-ijs-simplified.${MAJOR_V}.xml
 share/foomatic/db/source/driver/gutenprint-ijs.${MAJOR_V}.xml
 share/foomatic/db/source/opt/gutenprint-ijs-simplified.${MAJOR_V}-color.xml
@@ -173,6 +173,7 @@ share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inklimit-3.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inklimit-4.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inklimit-5.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inklimit-6.xml
+share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inklimit-7.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inkset.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inktype.xml
 share/foomatic/db/source/opt/gutenprint-ijs.${MAJOR_V}-stp_inputslot.xml
