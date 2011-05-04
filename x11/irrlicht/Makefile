@@ -1,4 +1,4 @@
-# $OpenBSD:
+# $OpenBSD: Makefile,v 1.3 2011/05/04 11:34:49 jasper Exp $
 
 COMMENT =		fast, real time 3D engine
 DISTNAME =		irrlicht-1.7.2
