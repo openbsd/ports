@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/20 09:48:39 espie Exp $
-
-SHARED_ONLY=		Yes
+# $OpenBSD: Makefile,v 1.14 2011/05/04 09:09:10 ajacoutot Exp $
 
 COMMENT=		CUPS bindings for Python
 
-VERSION=		1.9.51
-DISTNAME=		pycups-${VERSION}
-PKGNAME=		py-cups-${VERSION}
-REVISION =		0
+MODPY_EGG_VERSION=	1.9.55
+DISTNAME=		pycups-${MODPY_EGG_VERSION}
+PKGNAME=		py-cups-${MODPY_EGG_VERSION}
 
 CATEGORIES=		print
 
@@ -31,9 +28,9 @@ MODULES=		converters/libiconv \
 
 LIB_DEPENDS=		print/cups
 
-CFLAGS+=		-I${LOCALBASE}/include -DVERSION=\"${VERSION}\"
+CFLAGS+=		-I${LOCALBASE}/include -DVERSION=\"${MODPY_EGG_VERSION}\"
 LDFLAGS+=		-L${LOCALBASE}/lib
-MAKE_ENV=		PYTON="${MODPY_BIN}" \
+MAKE_ENV=		PYTHON="${MODPY_BIN}" \
 			CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
 
