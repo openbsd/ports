@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.37 2011/04/17 10:39:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2011/05/04 14:50:53 sthen Exp $
 
 COMMENT=	threaded NNTP- and spool-based UseNet newsreader
 
 DISTNAME=	tin-${MAJORVERSION}.${PATCHLEVEL}
-REVISION=	1
+REVISION=	2
 MAJORVERSION=	1.8
 PATCHLEVEL=	3
 CATEGORIES=	news
@@ -27,7 +27,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	no fee
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c ncurses pcre utf8 idn icuuc
+WANTLIB=		c>=58.2 ncurses pcre idn
 
 CONFIGURE_STYLE=	autoconf no-autoheader
 AUTOCONF_VERSION=	2.13
@@ -48,9 +48,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 LIB_DEPENDS+=	devel/pcre \
-		misc/libutf8 \
-		devel/libidn \
-		textproc/icu4c
+		devel/libidn
 
 ALL_TARGET=	build
 
