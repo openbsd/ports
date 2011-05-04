@@ -1,20 +1,24 @@
-# $OpenBSD: Makefile,v 1.16 2010/10/18 21:41:45 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/05/04 16:16:24 gsoares Exp $
 
 COMMENT=	library to interface the ident protocol server (rfc1413)
 
-DISTNAME=	libident-0.22
-CATEGORIES=	devel net security
-MASTER_SITES=	ftp://ftp.lysator.liu.se/pub/ident/libs/
+SHARED_LIBS +=	ident                     0.0 # 0.0
 
-# License: PD
+DISTNAME=	libident-0.32
+CATEGORIES=	devel net security
+MASTER_SITES=	http://www.remlab.net/files/libident/
+
+HOMEPAGE=	http://www.remlab.net/libident/
+
+# Public Domain
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-ALL_TARGET=	openbsd
+CONFIGURE_STYLE=	gnu
+USE_LIBTOOL=		Yes
 
-NO_REGRESS=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 .include <bsd.port.mk>
