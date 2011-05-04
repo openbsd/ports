@@ -1,0 +1,14 @@
+$OpenBSD: patch-gl_tests_test-getaddrinfo_c,v 1.1 2011/05/04 15:48:10 ajacoutot Exp $
+--- gl/tests/test-getaddrinfo.c.orig	Wed May  4 16:59:41 2011
++++ gl/tests/test-getaddrinfo.c	Wed May  4 17:01:59 2011
+@@ -28,9 +28,9 @@ SIGNATURE_CHECK (getaddrinfo, int, (char const *, char
+                                     struct addrinfo const *,
+                                     struct addrinfo **));
+ 
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <errno.h>
+-#include <netinet/in.h>
+ #include <stdio.h>
+ #include <string.h>
+ 

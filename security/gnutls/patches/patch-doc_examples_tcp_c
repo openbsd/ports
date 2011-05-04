@@ -1,0 +1,13 @@
+$OpenBSD: patch-doc_examples_tcp_c,v 1.1 2011/05/04 15:48:10 ajacoutot Exp $
+--- doc/examples/tcp.c.orig	Wed May  4 16:59:41 2011
++++ doc/examples/tcp.c	Wed May  4 17:02:55 2011
+@@ -9,8 +9,8 @@
+ #include <string.h>
+ #include <sys/types.h>
+ #include <sys/socket.h>
+-#include <arpa/inet.h>
+ #include <netinet/in.h>
++#include <arpa/inet.h>
+ #include <unistd.h>
+ 
+ #define SA struct sockaddr

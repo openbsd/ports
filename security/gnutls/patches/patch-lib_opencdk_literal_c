@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_opencdk_literal_c,v 1.1 2011/05/04 15:48:10 ajacoutot Exp $
+
+literal.c:124: warning: format '%lu' expects type 'long unsigned int', but argument 4 has type 'off_t'
+literal.c:124: warning: format '%lu' expects type 'long unsigned int', but argument 4 has type 'off_t'
+
+--- lib/opencdk/literal.c.orig	Wed May  4 17:37:45 2011
++++ lib/opencdk/literal.c	Wed May  4 17:38:11 2011
+@@ -122,7 +122,7 @@ literal_decode (void *data, FILE * in, FILE * out)
+   while (!feof (in))
+     {
+       _cdk_log_debug ("literal_decode: part on %d size %lu\n",
+-                      (int) pfx->blkmode.on, pfx->blkmode.size);
++                      (int) pfx->blkmode.on, (long unsigned int) pfx->blkmode.size);
+       if (pfx->blkmode.on)
+         bufsize = pfx->blkmode.size;
+       else

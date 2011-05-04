@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/04/15 16:09:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/05/04 15:48:10 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/gnutls-cli
 @bin bin/gnutls-cli-debug
@@ -53,7 +53,6 @@ lib/pkgconfig/gnutls.pc
 @man man/man1/srptool.1
 @man man/man3/gnutls_alert_get.3
 @man man/man3/gnutls_alert_get_name.3
-@man man/man3/gnutls_alert_send.3
 @man man/man3/gnutls_alert_send_appropriate.3
 @man man/man3/gnutls_anon_allocate_client_credentials.3
 @man man/man3/gnutls_anon_allocate_server_credentials.3
@@ -620,7 +619,6 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_crt_get_raw_dn.3
 @man man/man3/gnutls_x509_crt_get_raw_issuer_dn.3
 @man man/man3/gnutls_x509_crt_get_serial.3
-@man man/man3/gnutls_x509_crt_get_signature.3
 @man man/man3/gnutls_x509_crt_get_signature_algorithm.3
 @man man/man3/gnutls_x509_crt_get_subject.3
 @man man/man3/gnutls_x509_crt_get_subject_alt_name.3

@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_opencdk_keydb_c,v 1.1 2011/05/04 15:48:10 ajacoutot Exp $
+
+keydb.c:123: warning: format '%lu' expects type 'long unsigned int', but argument 3 has type 'off_t'
+keydb.c:123: warning: format '%lu' expects type 'long unsigned int', but argument 3 has type 'off_t'
+
+--- lib/opencdk/keydb.c.orig	Wed May  4 17:37:00 2011
++++ lib/opencdk/keydb.c	Wed May  4 17:37:34 2011
+@@ -120,7 +120,7 @@ keydb_idx_build (const char *file)
+       rc = cdk_pkt_read (inp, pkt);
+       if (rc)
+         {
+-          _cdk_log_debug ("index build failed packet off=%lu\n", pos);
++          _cdk_log_debug ("index build failed packet off=%lu\n", (long unsigned int)pos);
+           /* FIXME: The index is incomplete */
+           break;
+         }
