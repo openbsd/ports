@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/27 22:03:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/05/04 12:52:50 ajacoutot Exp $
 %%SHARED%%
 include/vmime/
 include/vmime/address.hpp
@@ -58,10 +58,13 @@ include/vmime/net/imap/
 include/vmime/net/imap/IMAPConnection.hpp
 include/vmime/net/imap/IMAPFolder.hpp
 include/vmime/net/imap/IMAPMessage.hpp
+include/vmime/net/imap/IMAPMessagePartContentHandler.hpp
 include/vmime/net/imap/IMAPParser.hpp
+include/vmime/net/imap/IMAPPart.hpp
 include/vmime/net/imap/IMAPSStore.hpp
 include/vmime/net/imap/IMAPServiceInfos.hpp
 include/vmime/net/imap/IMAPStore.hpp
+include/vmime/net/imap/IMAPStructure.hpp
 include/vmime/net/imap/IMAPTag.hpp
 include/vmime/net/imap/IMAPUtils.hpp
 include/vmime/net/maildir/
