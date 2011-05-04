@@ -1,0 +1,10 @@
+docbook2X is a software package that converts DocBook documents into
+the traditional Unix man page format and the GNU Texinfo format.
+
+It is free software under a MIT-style license.
+
+Notable features include table support for man pages, internationalization
+support, and easy customization of the output using XSLT. (Easy, because
+unlike other converters, the docbook2X stylesheets are written in a modular
+way, and the character escaping and whitespace issues with the man-page and
+Texinfo formats are encapsulated away from the user.)
