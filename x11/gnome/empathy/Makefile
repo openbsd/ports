@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.66 2011/04/21 07:07:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2011/05/04 10:54:28 ajacoutot Exp $
 
 COMMENT= 		telepathy based messenger for GNOME
 
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.34.0
 
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net
 
@@ -25,7 +25,7 @@ MODULES=		devel/gettext \
 WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm asn1
 WANTLIB += atk-1.0 c cairo clutter-glx-1.0 com_err crypto dbus-1
-WANTLIB += dbus-glib-1 drm expat fontconfig freetype
+WANTLIB += dbus-glib-1 drm expat fontconfig freetype gmp hogweed nettle
 WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 unique-1.0
 WANTLIB += gmodule-2.0 gnome-keyring gnutls gobject-2.0
 WANTLIB += gpg-error gssapi gstbase-0.10 gstfarsight-0.10 gstinterfaces-0.10
@@ -40,8 +40,8 @@ WANTLIB += champlain-gtk-0.8 clutter-gtk-0.10 telepathy-farsight
 WANTLIB += telepathy-logger folks folks-telepathy gcr gp11
 
 BUILD_DEPENDS=		devel/iso-codes \
-			x11/py-gtk2 \
-			x11/gnome/nautilus-sendto
+			x11/py-gtk2
+#XXX see below		x11/gnome/nautilus-sendto
 LIB_DEPENDS=		audio/libcanberra,-gtk \
 			databases/evolution-data-server \
 			devel/json-glib \
@@ -75,13 +75,16 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-location=Yes \
 			--enable-map=Yes\
 			--enable-webkit=no \
-			--enable-nautilus-sendto \
 			--enable-control-center-embedding=no \
 			--with-connectivity=no \
 			--with-eds \
 			--with-ca-file=/etc/ssl/cert.pem \
 			--disable-Werror \
 			--enable-call=no
+# XXX lots of 'libnstempathy.so: undefined symbol' at runtime
+# revisit when telepathy-yell is moved out from empathy(?)
+CONFIGURE_ARGS+=	--disable-nautilus-sendto \
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =		Yes

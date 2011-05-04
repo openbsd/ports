@@ -1,12 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/04/05 18:58:09 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2011/05/04 10:54:28 ajacoutot Exp $
 @bin bin/empathy
 @bin bin/empathy-accounts
 @bin bin/empathy-debugger
-lib/nautilus-sendto/
-lib/nautilus-sendto/plugins/
-@comment lib/nautilus-sendto/plugins/libnstempathy.a
-@comment lib/nautilus-sendto/plugins/libnstempathy.la
-lib/nautilus-sendto/plugins/libnstempathy.so
 @bin libexec/empathy-auth-client
 @bin libexec/empathy-av
 @man man/man1/empathy-accounts.1
