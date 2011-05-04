@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/05/03 18:31:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/05/04 11:59:45 jasper Exp $
 
 COMMENT-main=	schematic and PCB editing software
 COMMENT-docs=	documentation for the kicad library of components
@@ -21,9 +21,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	ftp://iut-tice.ujf-grenoble.fr/cao/
+MASTER_SITES0=	http://distfiles.nl/
 
 DOCDIST=	doc_components-${V}-${S}.tgz
-DISTFILES=	${DISTNAME}.zip ${DOCDIST}
+DISTFILES=	${DISTNAME}.zip ${DOCDIST}:0
 EXTRACT_ONLY=	${DISTNAME}.zip
 DIST_SUBDIR=	kicad
 
