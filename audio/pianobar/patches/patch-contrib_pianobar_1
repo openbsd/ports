@@ -1,4 +1,7 @@
-$OpenBSD: patch-contrib_pianobar_1,v 1.1 2011/04/21 10:02:09 dcoppa Exp $
+$OpenBSD: patch-contrib_pianobar_1,v 1.2 2011/05/04 07:48:04 dcoppa Exp $
+
+Make mandoc happy
+
 --- contrib/pianobar.1.orig	Thu Apr 21 11:15:29 2011
 +++ contrib/pianobar.1	Thu Apr 21 11:20:22 2011
 @@ -1,4 +1,4 @@

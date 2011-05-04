@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2011/04/21 10:02:09 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.14 2011/05/04 07:48:04 dcoppa Exp $
 
 COMMENT =	console client for pandora
 
-DISTNAME =	pianobar-2011.04.10
+DISTNAME =	pianobar-2011.04.27
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
@@ -33,8 +33,8 @@ CFLAGS +=	-I${LOCALBASE}/include
 CFLAGS +=	-DNDEBUG
 .endif
 
-MAKE_FLAGS =	LIBAO_INCLUDE="${LOCALBASE}/include/ao" \
-		LIBAO_LIB="-L${LOCALBASE}/lib -lao" \
+MAKE_FLAGS =	DYNLINK=1 \
+		LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBpiano_VERSION="${LIBpiano_VERSION}" \
 		MANDIR="${PREFIX}/man"
 
@@ -44,10 +44,8 @@ FAKE_FLAGS =	PREFIX="${PREFIX}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 USE_GMAKE =	Yes
-NO_REGRESS =	Yes
 
-ALL_TARGET =	pianobar libpiano
-INSTALL_TARGET =install install-libpiano
+NO_REGRESS =	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pianobar
