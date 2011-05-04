@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.36 2010/11/19 07:23:07 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.37 2011/05/04 07:49:40 sthen Exp $
 
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.mutt.org/
 
-MASTER_SITES_MUTT= ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
-		   ftp://ftp.mutt.org/mutt/ \
+MASTER_SITES_MUTT= ftp://ftp.mutt.org/mutt/ \
+		   ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/ \
 		   ftp://ftp.gbnet.net/pub/mutt-international/ \
 		   ftp://ftp.gwdg.de/pub/unix/mail/mutt/international/
 
