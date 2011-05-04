@@ -1,10 +1,23 @@
-$OpenBSD: patch-src_imlib_c,v 1.4 2011/05/02 21:22:58 dcoppa Exp $
+$OpenBSD: patch-src_imlib_c,v 1.5 2011/05/04 11:43:31 dcoppa Exp $
+
+Fix use-after-free
+(commit 1c420e26c23f302e54c28d6e473fe2f95e970a8e)
 
 Fix rotate arg in error message
 (commit ef3f1979c2d443823bfc761d98b30c232992494a)
 
---- src/imlib.c.orig	Thu Oct  7 20:28:39 2010
-+++ src/imlib.c	Fri Oct 15 14:47:36 2010
+--- src/imlib.c.orig	Sat Apr 23 22:02:31 2011
++++ src/imlib.c	Wed May  4 13:22:06 2011
+@@ -291,8 +291,8 @@ char *feh_http_load_image(char *url)
+ 			return sfn;
+ 		} else {
+ 			weprintf("open url: fdopen failed:");
+-			free(sfn);
+ 			unlink(sfn);
++			free(sfn);
+ 			close(fd);
+ 		}
+ 	} else {
 @@ -857,7 +857,7 @@ void feh_edit_inplace_lossless_rotate(winwidget w, int
  		if (!WIFEXITED(status) || WEXITSTATUS(status) != 0) {
  			weprintf("lossless rotate: Got exitcode %d from jpegtran."
