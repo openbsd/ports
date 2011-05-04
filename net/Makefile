@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.692 2011/04/28 10:51:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.693 2011/05/04 08:03:54 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -430,6 +430,7 @@
      SUBDIR += py-nmap
      SUBDIR += py-pcapy
      SUBDIR += py-pcs
+     SUBDIR += py-smbc
      SUBDIR += py-snmp
      SUBDIR += py-twitter
      SUBDIR += py-xmpp
