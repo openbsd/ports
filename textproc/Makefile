@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.323 2011/04/17 18:40:23 phessler Exp $
+# $OpenBSD: Makefile,v 1.324 2011/05/04 14:05:22 gsoares Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -322,6 +322,7 @@
      SUBDIR += txt2tags
      SUBDIR += unrtf
      SUBDIR += urlview
+     SUBDIR += urlview,slang
      SUBDIR += validate
      SUBDIR += vgrind
      SUBDIR += wdg-sgml-lib
