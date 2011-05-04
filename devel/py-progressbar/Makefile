@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/03/14 09:17:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/04 09:39:52 jasper Exp $
 
 COMMENT =		text progressbar library for python
 
@@ -9,7 +9,7 @@ CATEGORIES =		devel
 REVISION =		0
 
 HOMEPAGE =		http://code.google.com/p/python-progressbar/
-MASTER_SITES =		http://pypi.python.org/packages/source/p/progressbar/
+MASTER_SITES =		${MASTER_SITE_PYPI:=p/progressbar/}
 
 MAINTAINER = 		Remi Pointel <remi.pointel@xiri.fr>
 

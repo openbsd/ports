@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/07 22:18:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/04 09:39:52 jasper Exp $
 
 COMMENT=		Python module dependency analysis tool
 
@@ -23,6 +23,6 @@ MODPY_SETUPTOOLS=	Yes
 RUN_DEPENDS=		devel/py-altgraph
 REGRESS_DEPENDS=	${RUN_DEPENDS}
 
-MASTER_SITES=           http://pypi.python.org/packages/source/m/modulegraph/
+MASTER_SITES=		${MASTER_SITE_PYPI:=m/modulegraph/}
 
 .include <bsd.port.mk>

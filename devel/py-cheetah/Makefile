@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/01/16 20:32:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/05/04 09:39:52 jasper Exp $
 
 COMMENT=		Python-powered template engine and code generator
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://pypi.python.org/packages/source/C/Cheetah/
+MASTER_SITES=		${MASTER_SITE_PYPI:=C/Cheetah/}
 
 MODULES=		lang/python
 REGRESS_DEPENDS=	devel/py-cheetah

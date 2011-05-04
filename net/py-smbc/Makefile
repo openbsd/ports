@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/04 08:03:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/04 09:39:52 jasper Exp $
 
 COMMENT=	Python bindings to wrap the libsmbclient API
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += smbclient
 
-MASTER_SITES=	http://pypi.python.org/packages/source/p/pysmbc/
+MASTER_SITES=	${MASTER_SITE_PYPI:=p/pysmbc/}
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python

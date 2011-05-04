@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/07 22:17:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/04 09:39:52 jasper Exp $
 
 COMMENT=		Python graph (network) package
 
@@ -20,6 +20,6 @@ MODULES=		lang/python
 
 MODPY_SETUPTOOLS=	Yes
 
-MASTER_SITES=           http://pypi.python.org/packages/source/a/altgraph/
+MASTER_SITES=		${MASTER_SITE_PYPI:=a/altgraph/}
 
 .include <bsd.port.mk>
