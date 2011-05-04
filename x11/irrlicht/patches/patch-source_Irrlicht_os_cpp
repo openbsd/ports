@@ -1,0 +1,19 @@
+$OpenBSD: patch-source_Irrlicht_os_cpp,v 1.1.1.1 2011/05/04 09:41:50 jasper Exp $
+--- source/Irrlicht/os.cpp.orig	Sun Dec 26 20:30:26 2010
++++ source/Irrlicht/os.cpp	Sun Dec 26 20:31:35 2010
+@@ -19,10 +19,14 @@
+ 	#include <libkern/OSByteOrder.h>
+ 	#define bswap_16(X) OSReadSwapInt16(&X,0)
+ 	#define bswap_32(X) OSReadSwapInt32(&X,0)
+-#elif defined(__FreeBSD__) || defined(__OpenBSD__)
++#elif defined(__FreeBSD__)
+ 	#include <sys/endian.h>
+ 	#define bswap_16(X) bswap16(X)
+ 	#define bswap_32(X) bswap32(X)
++#elif defined(__OpenBSD__)
++	#include <sys/endian.h>
++	#define bswap_16(x) letoh16(x)
++	#define bswap_32(x) letoh32(x)
+ #elif !defined(_IRR_SOLARIS_PLATFORM_) && !defined(__PPC__) && !defined(_IRR_WINDOWS_API_)
+ 	#include <byteswap.h>
+ #else
