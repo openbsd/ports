@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/11 14:45:15 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/05/04 08:05:36 jasper Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Data/
 lib/ghc/${DISTNAME}/Data/Convertible/
@@ -9,6 +9,7 @@ lib/ghc/${DISTNAME}/Data/Convertible/Instances.hi
 lib/ghc/${DISTNAME}/Data/Convertible/Instances/C.hi
 lib/ghc/${DISTNAME}/Data/Convertible/Instances/Map.hi
 lib/ghc/${DISTNAME}/Data/Convertible/Instances/Num.hi
+lib/ghc/${DISTNAME}/Data/Convertible/Instances/Text.hi
 lib/ghc/${DISTNAME}/Data/Convertible/Instances/Time.hi
 lib/ghc/${DISTNAME}/Data/Convertible/Utils.hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
@@ -24,6 +25,7 @@ share/doc/hs-${DISTNAME}/html/Data-Convertible-Base.html
 share/doc/hs-${DISTNAME}/html/Data-Convertible-Instances-C.html
 share/doc/hs-${DISTNAME}/html/Data-Convertible-Instances-Map.html
 share/doc/hs-${DISTNAME}/html/Data-Convertible-Instances-Num.html
+share/doc/hs-${DISTNAME}/html/Data-Convertible-Instances-Text.html
 share/doc/hs-${DISTNAME}/html/Data-Convertible-Instances-Time.html
 share/doc/hs-${DISTNAME}/html/Data-Convertible-Instances.html
 share/doc/hs-${DISTNAME}/html/Data-Convertible-Utils.html
@@ -39,6 +41,7 @@ share/doc/hs-${DISTNAME}/html/mini_Data-Convertible-Base.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Convertible-Instances-C.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Convertible-Instances-Map.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Convertible-Instances-Num.html
+share/doc/hs-${DISTNAME}/html/mini_Data-Convertible-Instances-Text.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Convertible-Instances-Time.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Convertible-Instances.html
 share/doc/hs-${DISTNAME}/html/mini_Data-Convertible-Utils.html
