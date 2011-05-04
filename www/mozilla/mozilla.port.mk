@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.26 2011/04/28 20:44:47 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.27 2011/05/04 08:11:15 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -71,8 +71,8 @@ CONFIGURE_ARGS +=--with-system-jpeg=${LOCALBASE}	\
 		--enable-svg-renderer=cairo	\
 		--enable-canvas
 
-# for mozilla branch 1.9.2, build against systemwide cairo
-.if ${MOZILLA_BRANCH} == 1.9.2
+# for mozilla branches 1.9.2 and 2.x.x, build against systemwide cairo
+.if ${MOZILLA_BRANCH} != 1.9.1
 CONFIGURE_ARGS +=--enable-system-cairo
 .endif
 

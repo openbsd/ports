@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/03 11:11:37 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/04 08:11:15 dcoppa Exp $
 
 COMMENT =	Mozilla mobile web browser
 
@@ -6,6 +6,7 @@ MOZILLA_VERSION =	4.0.1
 MOZILLA_BRANCH =	2.1
 MOZILLA_PROJECT =	fennec
 MOZILLA_CODENAME =	mobile
+REVISION =	0
 
 SO_VERSION =	0.0
 NSS_SO_VERSION =	27.0
