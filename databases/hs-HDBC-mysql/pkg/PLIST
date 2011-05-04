@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/04/11 14:34:17 kili Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/05/04 08:06:34 jasper Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Database/
 lib/ghc/${DISTNAME}/Database/HDBC/
 lib/ghc/${DISTNAME}/Database/HDBC/MySQL/
 lib/ghc/${DISTNAME}/Database/HDBC/MySQL.hi
 lib/ghc/${DISTNAME}/Database/HDBC/MySQL/Connection.hi
+lib/ghc/${DISTNAME}/Database/HDBC/MySQL/RTS.hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/register.sh
