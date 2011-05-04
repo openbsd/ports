@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/20 19:56:52 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/05/04 14:00:13 gsoares Exp $
 
 COMMENT=	curses-based URL ripper
 
 DISTNAME=	urlview-0.9
-REVISION=	2
+REVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.fu-berlin.de/pub/unix/mail/mutt/contrib/ \
 		ftp://ftp.mutt.org/mutt/contrib/ \
@@ -26,7 +26,7 @@ FLAVORS=	slang
 FLAVOR?=
 
 .if ${FLAVOR:L:Mslang}
-WANTLIB+=	slang
+WANTLIB+=	slang curses m
 LIB_DEPENDS=	devel/libslang
 CONFIGURE_ARGS=	--with-slang=${LOCALBASE}
 CONFIGURE_ENV=	LIBS=-lcurses
