@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-web,v 1.5 2011/04/04 07:43:22 dcoppa Exp $
+@comment $OpenBSD: PLIST-web,v 1.6 2011/05/04 14:58:39 dcoppa Exp $
 lib/mozilla/
 lib/mozilla/plugins/
-lib/mozilla/plugins/libvlcplugin.la
+@comment lib/mozilla/plugins/libvlcplugin.la
 lib/mozilla/plugins/libvlcplugin.so
 share/vlc/mozilla/
 share/vlc/mozilla/fullscreen.xpm
