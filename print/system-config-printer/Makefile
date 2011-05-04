@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/05/04 09:10:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2011/05/04 10:17:30 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
@@ -19,10 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://cyberelk.net/tim/data/system-config-printer/1.3/
 EXTRACT_SUFX=		.tar.xz
 
-BUILD_DEPENDS=  archivers/xz
-EXTRACT_CASES=  *.tar.xz) \
-	${LOCALBASE}/bin/xz -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
-
 MODULES=		lang/python \
 			textproc/intltool
 
@@ -36,6 +32,10 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			textproc/py-xml \
 			x11/dbus-python \
 			x11/gnome/py-gnome
+
+BUILD_DEPENDS+=  archivers/xz
+EXTRACT_CASES=  *.tar.xz) \
+	${LOCALBASE}/bin/xz -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
