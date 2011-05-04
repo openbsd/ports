@@ -1,30 +1,12 @@
-$OpenBSD: patch-applet_py,v 1.5 2009/01/31 12:37:30 ajacoutot Exp $
---- applet.py.orig	Sat Jan 31 12:09:28 2009
-+++ applet.py	Sat Jan 31 12:10:37 2009
-@@ -43,7 +43,7 @@ except locale.Error, e:
-     os.environ['LC_ALL'] = 'C'
-     locale.setlocale (locale.LC_ALL, "")
+$OpenBSD: patch-applet_py,v 1.6 2011/05/04 09:10:52 ajacoutot Exp $
+--- applet.py.orig	Wed Mar 16 17:44:41 2011
++++ applet.py	Wed May  4 10:04:38 2011
+@@ -47,7 +47,7 @@ except RuntimeError, e:
+     print "This is a graphical application and requires DISPLAY to be set."
+     sys.exit (1)
  
 -APPDIR="/usr/share/system-config-printer"
 +APPDIR="${PREFIX}/share/system-config-printer"
- DOMAIN="system-config-printer"
- GLADE="applet.glade"
  ICON="printer"
-@@ -61,7 +61,7 @@ class NewPrinterNotification(dbus.service.Object):
-     STATUS_GENERIC_DRIVER = 2
-     STATUS_NO_DRIVER = 3
  
--    INSTALL_PACKAGES_COMMAND="/usr/bin/gpk-install-package-name"
-+    INSTALL_PACKAGES_COMMAND="/usr/bin/true"
- 
-     def __init__ (self, bus):
-         self.bus = bus
-@@ -173,7 +173,7 @@ class NewPrinterNotification(dbus.service.Object):
-         pid = os.fork ()
-         if pid == 0:
-             # Child.
--            cmd = "/usr/bin/system-config-printer"
-+            cmd = "${PREFIX}/bin/system-config-printer"
-             argv.insert (0, cmd)
-             os.execvp (cmd, argv)
-             sys.exit (1)
+ # We need to call pynotify.init before we can check the server for caps

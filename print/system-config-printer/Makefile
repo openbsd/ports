@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/20 09:48:40 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/05/04 09:10:52 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
-DISTNAME=		system-config-printer-1.0.16
-REVISION =		3
+DISTNAME=		system-config-printer-1.3.2
 
 CATEGORIES=		print sysutils
 
@@ -17,8 +16,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://cyberelk.net/tim/data/system-config-printer/1.0.x/
-EXTRACT_SUFX=		.tar.bz2
+MASTER_SITES=		http://cyberelk.net/tim/data/system-config-printer/1.3/
+EXTRACT_SUFX=		.tar.xz
+
+BUILD_DEPENDS=  archivers/xz
+EXTRACT_CASES=  *.tar.xz) \
+	${LOCALBASE}/bin/xz -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 
 MODULES=		lang/python \
 			textproc/intltool
@@ -28,7 +31,8 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/gettext \
 			devel/py-notify \
-			print/py-cups \
+			net/py-smbc \
+			print/py-cups>=1.9.55 \
 			textproc/py-xml \
 			x11/dbus-python \
 			x11/gnome/py-gnome
@@ -40,17 +44,18 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+= 	CPPFLAGS=-I${LOCALBASE}/include \
 			LDFLAGS=-L${LOCALBASE}/lib
 
-SUBST_FILES=		applet.py cupshelpers/cupshelpers.py pysmb.py \
-			system-config-printer.py \
-			manage-print-jobs.desktop.in \
-			my-default-printer.desktop.in \
-			print-applet.desktop.in \
-			system-config-printer.desktop.in \
-			troubleshoot/SchedulerNotRunning.py \
-			Makefile.in
+SUBST_FILES=		applet.py cupshelpers/cupshelpers.py \
+			probe_printer.py newprinter.py \
+			udev/udev-configure-printer.c \
+			troubleshoot/CheckSELinux.py \
+			cupshelpers/xmldriverprefs.py \
+			dbus/org.fedoraproject.Config.Printing.service \
+			check-device-ids.py
+
 
 FAKE_FLAGS=	dbusdir=${PREFIX}/share/examples/system-config-printer/dbus-1/system.d/ \
-		autostartdir=${PREFIX}/share/examples/system-config-printer/xdg/autostart/
+		autostartdir=${PREFIX}/share/examples/system-config-printer/xdg/autostart/ \
+		cupshelpersdir=${PREFIX}/share/examples/system-config-printer/cupshelpers/
 
 pre-configure:
 	find ${WRKDIST} -name \*.py | \
@@ -59,11 +64,5 @@ pre-configure:
 .for f in ${SUBST_FILES}
 	${SUBST_CMD} ${WRKSRC}/$f
 .endfor
-
-# no need for this utility, we can achieve the same from the main program
-post-install:
-	rm ${PREFIX}/bin/my-default-printer \
-		${PREFIX}/share/applications/my-default-printer.desktop \
-		${PREFIX}/share/system-config-printer/my-default-printer.py
 
 .include <bsd.port.mk>

@@ -1,0 +1,12 @@
+$OpenBSD: patch-probe_printer_py,v 1.1 2011/05/04 09:10:52 ajacoutot Exp $
+--- probe_printer.py.orig	Wed May  4 10:21:21 2011
++++ probe_printer.py	Wed May  4 10:21:33 2011
+@@ -259,7 +259,7 @@ class PrinterFinder:
+         null = file ("/dev/null", "r+")
+         try:
+             debugprint ("snmp: trying")
+-            p = subprocess.Popen (args=["/usr/lib/cups/backend/snmp",
++            p = subprocess.Popen (args=["${LOCALBASE}/libexec/cups/backend/snmp",
+                                         self.hostname],
+                                   close_fds=True,
+                                   stdin=null,

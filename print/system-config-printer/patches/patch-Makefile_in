@@ -1,65 +1,45 @@
-$OpenBSD: patch-Makefile_in,v 1.7 2009/06/08 19:24:43 ajacoutot Exp $
---- Makefile.in.orig	Wed Feb 18 17:10:32 2009
-+++ Makefile.in	Thu Jun  4 03:22:18 2009
-@@ -308,7 +308,7 @@ man_MANS = \
- dbus_DATA = \
- 	newprinternotification.conf
+$OpenBSD: patch-Makefile_in,v 1.8 2011/05/04 09:10:52 ajacoutot Exp $
+--- Makefile.in.orig	Fri Mar 18 17:07:11 2011
++++ Makefile.in	Wed May  4 10:36:00 2011
+@@ -434,7 +434,7 @@ dbus_DATA = \
+ 	dbus/com.redhat.NewPrinterNotification.conf		\
+ 	dbus/com.redhat.PrinterDriversInstaller.conf
  
 -dbusdir = $(sysconfdir)/dbus-1/system.d/
 +dbusdir = $(datadir)/examples/system-config-printer/
- desktop_DATA = \
- 	system-config-printer.desktop \
- 	print-applet.desktop \
-@@ -1040,35 +1040,31 @@ clean-local:
- install-desktopDATA: $(desktop_DATA)
- 	mkdir -p $(DESTDIR)$(desktopdir)
- 	mkdir -p $(DESTDIR)$(desktopdir)
--	desktop-file-install --vendor redhat	\
-+	desktop-file-install 			\
- 	  --dir $(DESTDIR)$(desktopdir)		\
--	  --add-category X-Red-Hat-Base		\
- 	  --add-category System			\
- 	  --add-category Settings		\
- 	  --add-category HardwareSettings	\
- 	  --add-category Printing		\
- 	  --add-category GTK			\
- 	  system-config-printer.desktop
--	desktop-file-install --vendor redhat	\
-+	desktop-file-install 			\
- 	  --dir $(DESTDIR)$(desktopdir)		\
--	  --add-category X-Red-Hat-Base		\
- 	  --add-category System			\
- 	  --add-category Monitor		\
- 	  --add-category GTK			\
- 	  manage-print-jobs.desktop
--	desktop-file-install --vendor redhat	\
-+	desktop-file-install 			\
- 	  --dir $(DESTDIR)$(desktopdir)		\
--	  --add-category X-Red-Hat-Base		\
- 	  --add-category Settings		\
- 	  --add-category HardwareSettings	\
- 	  --add-category GTK			\
- 	  my-default-printer.desktop
--	desktop-file-install --vendor redhat	\
--	  --dir $(DESTDIR)$(autostartdir)	\
--	  --add-category X-Red-Hat-Base		\
--	  --add-category System			\
--	  --add-category Monitor		\
--	  --add-category GTK			\
-+	desktop-file-install			\
-+	  --dir $(DESTDIR)$(autostartdir)       \
-+	  --add-category System                 \
-+	  --add-category Monitor                \
-+	  --add-category GTK                    \
- 	  print-applet.desktop
+ dbusinterfaces_DATA = \
+ 	dbus/org.fedoraproject.Config.Printing.xml
  
- uninstall-desktopDATA:
-@@ -1120,7 +1116,7 @@ help:
- 	@echo " run-applet         Run system-config-printer-applet with local glade file"
+@@ -1551,7 +1551,7 @@ update-po: missing-languages
+ 	$(MAKE) -C po update-po
  
- test-ppd-module.sh:
--	echo "#!/usr/bin/env python" > "$@"
-+	echo "#!${MODPY_BIN}" > "$@"
- 	echo "import sys; sys.path.append ('$(top_srcdir)')" >> "$@"
- 	echo "from cupshelpers.ppds import _self_test" >> "$@"
- 	echo "_self_test(sys.argv)" >> "$@"
+ missing-languages:
+-	bash -c '\
++	sh -c '\
+ 	eval $$(grep ALL_LINGUAS configure.in); \
+ 	diff -u <(echo $$ALL_LINGUAS | xargs -rn1 echo) \
+ 		<(cd po; ls -1 *.po | sed -e "s,\.po$$,,")'
+@@ -1584,7 +1584,7 @@ run-dbus-service:	config.py cupshelpers/config.py
+ 	$(PYTHON) $(top_srcdir)/scp-dbus-service.py --debug
+ 
+ test-xmldriverprefs:	cupshelpers/xmldriverprefs.py xml/preferreddrivers.xml
+-	python -c 'from cupshelpers.xmldriverprefs import test; test()' \
++	$(PYTHON) -c 'from cupshelpers.xmldriverprefs import test; test()' \
+ 		2>&1 | less
+ 
+ help:
+@@ -1607,12 +1607,12 @@ test-ppd-module.sh:	FORCE
+ 	chmod 755 "$@"
+ 
+ test-xml-validity.sh:	FORCE
+-	echo "#!/bin/bash" > "$@"
++	echo "#!/bin/sh" > "$@"
+ 	echo "set -e" >> "$@"
+ 	echo "xmllint --relaxng \\" >> "$@"
+ 	echo "    $(top_srcdir)/xml/preferreddrivers.rng \\" >> "$@"
+ 	echo "    $(top_srcdir)/xml/preferreddrivers.xml >/dev/null" >> "$@"
+-	echo "python $(top_srcdir)/xml/validate.py \\" >> "$@"
++	echo "$(PYTHON) $(top_srcdir)/xml/validate.py \\" >> "$@"
+ 	echo "    $(top_srcdir)/xml/preferreddrivers.xml" >> "$@"
+ 	chmod 755 "$@"
+ 

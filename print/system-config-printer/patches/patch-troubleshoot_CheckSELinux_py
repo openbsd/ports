@@ -1,0 +1,12 @@
+$OpenBSD: patch-troubleshoot_CheckSELinux_py,v 1.1 2011/05/04 09:10:52 ajacoutot Exp $
+--- troubleshoot/CheckSELinux.py.orig	Wed May  4 10:25:31 2011
++++ troubleshoot/CheckSELinux.py	Wed May  4 10:26:56 2011
+@@ -45,7 +45,7 @@ class CheckSELinux(Question):
+         if not selinux.is_selinux_enabled():
+             return False
+ 
+-        paths = "/etc/cups/ /usr/lib/cups/ /usr/share/cups/"
++        paths = "${SYSCONFDIR}/cups/ ${LOCALBASE}/libexec/cups/ ${LOCALBASE}/share/cups/"
+         null = file ("/dev/null", "r+")
+         parent = self.troubleshooter.get_window ()
+         contexts = {}

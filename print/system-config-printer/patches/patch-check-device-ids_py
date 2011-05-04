@@ -1,0 +1,29 @@
+$OpenBSD: patch-check-device-ids_py,v 1.1 2011/05/04 09:10:52 ajacoutot Exp $
+--- check-device-ids.py.orig	Wed May  4 10:27:58 2011
++++ check-device-ids.py	Wed May  4 10:28:33 2011
+@@ -163,13 +163,13 @@ def driver_uri_to_filename (uri):
+         elif uri.startswith ("lsb/opt/"):
+             return "/opt/share/ppd/" + uri[8:]
+         elif uri.startswith ("lsb/local/"):
+-            return "/usr/local/share/ppd/" + uri[10:]
++            return "${LOCALBASE}/local/share/ppd/" + uri[10:]
+ 
+-        return "/usr/share/cups/model/" + uri
++        return "${LOCALBASE}/share/cups/model/" + uri
+ 
+     scheme = schemeparts[0]
+     if scheme != "drv":
+-        return "/usr/lib/cups/driver/" + scheme
++        return "${LOCALBASE}/libexec/cups/driver/" + scheme
+ 
+     rest = schemeparts[1]
+     rest = rest.lstrip ('/')
+@@ -177,7 +177,7 @@ def driver_uri_to_filename (uri):
+     if len (parts) > 1:
+         parts = parts[:len (parts) - 1]
+ 
+-    return "/usr/share/cups/drv/" + reduce (lambda x, y: x + "/" + y, parts)
++    return "${LOCALBASE}/share/cups/drv/" + reduce (lambda x, y: x + "/" + y, parts)
+ 
+ def driver_uri_to_pkg (uri):
+     filename = driver_uri_to_filename (uri)
