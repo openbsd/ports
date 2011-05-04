@@ -1,0 +1,21 @@
+$OpenBSD: patch-program_include_rcube_imap_generic_php,v 1.1 2011/05/04 13:03:40 sthen Exp $
+
+Don't spam the log for tls connections, $auth_methods isn't defined at this
+point. Seems to be a mis-merge; http://trac.roundcube.net/ticket/1487901
+
+--- program/include/rcube_imap_generic.php.orig	Wed May  4 13:07:35 2011
++++ program/include/rcube_imap_generic.php	Wed May  4 13:07:43 2011
+@@ -777,13 +777,6 @@ class rcube_imap_generic
+                 // Now we're secure, capabilities need to be reread
+                 $this->clearCapability();
+             }
+-
+-            // Use best (for security) supported authentication method
+-            foreach (array('DIGEST-MD5', 'CRAM-MD5', 'CRAM_MD5', 'PLAIN', 'LOGIN') as $auth_method) {
+-                if (in_array($auth_method, $auth_methods)) {
+-                    break;
+-                }
+-            }
+         }
+ 
+         // Send ID info
