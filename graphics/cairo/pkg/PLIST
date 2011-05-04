@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/01/05 13:26:06 eric Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/05/04 08:01:56 dcoppa Exp $
 %%SHARED%%
 bin/cairo-trace
 include/cairo/
@@ -11,6 +11,7 @@ include/cairo/cairo-pdf.h
 include/cairo/cairo-ps.h
 include/cairo/cairo-script-interpreter.h
 include/cairo/cairo-svg.h
+include/cairo/cairo-tee.h
 include/cairo/cairo-version.h
 include/cairo/cairo-xcb.h
 include/cairo/cairo-xlib-xrender.h
@@ -36,6 +37,7 @@ lib/pkgconfig/cairo-pdf.pc
 lib/pkgconfig/cairo-png.pc
 lib/pkgconfig/cairo-ps.pc
 lib/pkgconfig/cairo-svg.pc
+lib/pkgconfig/cairo-tee.pc
 lib/pkgconfig/cairo-xcb-shm.pc
 lib/pkgconfig/cairo-xcb.pc
 lib/pkgconfig/cairo-xlib-xrender.pc
