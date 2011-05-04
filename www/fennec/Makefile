@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/04 08:11:15 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/04 12:15:33 landry Exp $
 
 COMMENT =	Mozilla mobile web browser
 
@@ -6,7 +6,7 @@ MOZILLA_VERSION =	4.0.1
 MOZILLA_BRANCH =	2.1
 MOZILLA_PROJECT =	fennec
 MOZILLA_CODENAME =	mobile
-REVISION =	0
+REVISION =	1
 
 SO_VERSION =	0.0
 NSS_SO_VERSION =	27.0
@@ -44,6 +44,8 @@ WANTLIB +=	event
 CONFIGURE_ARGS +=	--disable-tracejit --disable-methodjit
 .endif
 
+# ensure we depend on cairo with tee backend enabled
+LIB_DEPENDS =	graphics/cairo>=1.10.2p0
 # --with-system-png=${LOCALBASE}
 # no system png : apng support not bundled in
 
