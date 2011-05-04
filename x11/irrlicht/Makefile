@@ -3,6 +3,8 @@
 COMMENT =		fast, real time 3D engine
 DISTNAME =		irrlicht-1.7.2
 
+REVISION =		0
+
 SO_VERSION =		0.0
 SHARED_LIBS =		Irrlicht ${SO_VERSION}
 
@@ -18,7 +20,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB += 		GL Xxf86vm bz2 jpeg m png stdc++ z
+WANTLIB += 		GL Xxf86vm bz2 jpeg m png stdc++>=51.0 z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=irrlicht/}
 
@@ -68,34 +70,34 @@ pre-patch:
 		ninja\ animation\ ranges.txt opengl.{frag,psh,vert,vsh}
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include/${PORTNAME}
-	${INSTALL_DATA} ${WRKDIST}/include/*.h ${PREFIX}/include/${PORTNAME}/
+	${INSTALL_DATA_DIR} ${PREFIX}/include/irrlicht
+	${INSTALL_DATA} ${WRKDIST}/include/*.h ${PREFIX}/include/irrlicht/
 
 	${INSTALL_DATA} ${WRKDIST}/lib/OpenBSD/libIrrlicht.a ${PREFIX}/lib/
 	${INSTALL_DATA} ${WRKDIST}/lib/OpenBSD/libIrrlicht.so.${LIBIrrlicht_VERSION} \
 		${PREFIX}/lib/
 
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${PORTNAME}/doc
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${PORTNAME}/doc/html
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/irrlicht
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/irrlicht/doc
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/irrlicht/doc/html
 	cd ${WRKDIST}/doc && ${INSTALL_DATA} aesGladman.txt bzip2-license.txt \
 		index.html readme.txt upgrade-guide.txt \
-		${PREFIX}/share/doc/${PORTNAME}/doc
+		${PREFIX}/share/doc/irrlicht/doc
 	find ${WRKDIST}/doc/html -type f -exec ${INSTALL_DATA} "{}" \
-		${PREFIX}/share/doc/${PORTNAME}/doc/html/ \;
+		${PREFIX}/share/doc/irrlicht/doc/html/ \;
 
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${PORTNAME}/media
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/irrlicht/media
 	find ${WRKDIST}/media -type f -exec ${INSTALL_DATA} "{}" \
-		${PREFIX}/share/doc/${PORTNAME}/media/ \;
+		${PREFIX}/share/doc/irrlicht/media/ \;
 
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${PORTNAME}/examples
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/irrlicht/examples
 	${INSTALL_DATA} ${WRKDIST}/examples/Makefile \
-		${PREFIX}/share/doc/${PORTNAME}/examples/
+		${PREFIX}/share/doc/irrlicht/examples/
 .	for DIR in ${EXAMPLEDIRS}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${PORTNAME}/examples/${DIR}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/irrlicht/examples/${DIR}
 	find ${WRKDIST}/examples/${DIR} -type f \( -name "*.cpp" -or -name \
 		"*.h" -or -name Makefile \) -exec ${INSTALL_DATA} "{}" \
-		${PREFIX}/share/doc/${PORTNAME}/examples/${DIR}/ \;
+		${PREFIX}/share/doc/irrlicht/examples/${DIR}/ \;
 .	endfor
 
 
