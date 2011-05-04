@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2010/11/22 10:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2011/05/04 19:31:51 rpointel Exp $
 
 SHARED_ONLY=		Yes
 
@@ -17,7 +17,10 @@ PKGNAME-bin=		py-Imaging-bin-${MODPY_EGG_VERSION}
 FULLPKGNAME-docs=	py-Imaging-docs-${MODPY_EGG_VERSION}
 FULLPKGPATH-docs=	graphics/py-Imaging,-docs
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-examples=	0
+REVISION-bin=		0
+REVISION-docs=		0
 
 CATEGORIES=		graphics
 
@@ -44,12 +47,14 @@ LIB_DEPENDS-main=	graphics/jpeg \
 			graphics/lcms \
 			${MODTK_LIB_DEPENDS}
 
-FLAVORS=		python2.4 python2.6
+FLAVORS=		python2.4 python2.6 python2.7
 FLAVOR?=		python2.6
 
 .if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
 MULTI_PACKAGES= -main
 .elif ${FLAVOR:L:Mpython2.6} && !${FLAVOR:L:Npython2.6}
+MULTI_PACKAGES= -main -examples -bin -docs
+.elif ${FLAVOR:L:Mpython2.7} && !${FLAVOR:L:Npython2.7}
 MULTI_PACKAGES= -main -examples -bin -docs
 .else
 ERRORS+=		"Fatal: You must select one version: ${FLAVORS}"
