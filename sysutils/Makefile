@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.228 2011/04/20 20:04:16 landry Exp $
+# $OpenBSD: Makefile,v 1.229 2011/05/04 14:12:35 sthen Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -88,6 +88,7 @@
      SUBDIR += modlogan
      SUBDIR += monit
      SUBDIR += monitord
+     SUBDIR += moreutils
      SUBDIR += mtools
      SUBDIR += multitail
      SUBDIR += ncdu
