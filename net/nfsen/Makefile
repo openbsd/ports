@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2011/03/24 23:04:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2011/05/05 21:49:48 sthen Exp $
 
 MULTI_PACKAGES=		-main -web
 COMMENT-main=		web-based front end for the nfdump netflow tools
 COMMENT-web=		html/php parts for nfsen
 
 V=			1.3.5
+REVISION-main=		0
 DISTNAME=		nfsen-$V
 PKGNAME-main=		${DISTNAME}
 PKGNAME-web=		nfsen-web-$V

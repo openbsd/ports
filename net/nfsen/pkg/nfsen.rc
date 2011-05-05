@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $OpenBSD: nfsen.rc,v 1.1 2011/05/05 21:49:48 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/nfsend"
+
+. /etc/rc.d/rc.subr
+
+ctl="${TRUEPREFIX}/bin/nfsen"
+pexp="/usr/bin/perl -w ${daemon}"
+
+rc_start() {
+	${rcexec} "${ctl} start"
+}
+
+rc_stop() {
+	${rcexec} "${ctl} stop"
+}
+
+rc_reload() {
+	${rcexec} "${ctl} reconfig"
+}
+
+rc_cmd $1
