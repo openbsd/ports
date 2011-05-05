@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.9 2011/04/14 15:55:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/05/05 08:50:05 sebastia Exp $
 
 COMMENT=        XMPP transport/gateway
 
-DISTNAME=       spectrum-1.4.6
+DISTNAME =	spectrum-1.4.7
 CATEGORIES=     net
 
-REVISION=	1
-
 HOMEPAGE=       http://spectrum.im/
-MASTER_SITES=   ${HOMEPAGE}/attachments/download/34/
+MASTER_SITES =	${HOMEPAGE}/attachments/download/37/
 MAINTAINER=     Sebastian Reitenbach <sebastia@openbsd.org>
 
 # GPLv2
