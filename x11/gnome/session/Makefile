@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.142 2011/04/26 18:40:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.143 2011/05/05 09:59:45 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.32.1
 
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		x11
 
@@ -51,7 +51,8 @@ DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-session
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-rebuilds
+		--disable-rebuilds \
+		--with-gtk=2.0
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
 USE_GROFF =	Yes
