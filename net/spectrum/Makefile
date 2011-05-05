@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/05/05 08:50:05 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2011/05/05 13:59:12 sebastia Exp $
 
 COMMENT=        XMPP transport/gateway
 
 DISTNAME =	spectrum-1.4.7
+REVISION =	0
 CATEGORIES=     net
 
 HOMEPAGE=       http://spectrum.im/
@@ -17,11 +18,12 @@ PERMIT_DISTFILES_FTP=   Yes
 
 MODULES=	lang/python devel/cmake
 WANTLIB += c m pthread stdc++ gloox purple glib-2.0 gthread-2.0 event
-WANTLIB += PocoData PocoFoundation PocoMySQL PocoODBC PocoSQLite
+WANTLIB += PocoData PocoFoundation PocoMySQL PocoODBC PocoSQLite Magick++
 LIB_DEPENDS=	net/py-xmpppy \
 		net/gloox \
 		net/pidgin,-libpurple \
-		net/poco 
+		net/poco \
+		graphics/ImageMagick
 RUN_DEPENDS =	net/py-xmpppy
 
 SPVARDIR=	/var/spectrum
