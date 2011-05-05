@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_ipc_c,v 1.2 2011/04/29 09:18:53 dcoppa Exp $
+$OpenBSD: patch-src_ipc_c,v 1.3 2011/05/05 12:19:36 dcoppa Exp $
+
+Make code compatible with libyajl-2.0 (API got changed)
+
 --- src/ipc.c.orig	Wed Jan 19 21:26:37 2011
-+++ src/ipc.c	Wed Apr 27 16:56:21 2011
++++ src/ipc.c	Mon May  2 11:35:58 2011
 @@ -91,7 +91,7 @@ static void ipc_send_message(int fd, const unsigned ch
          char msg[buffer_size];
          char *walk = msg;
@@ -10,6 +13,60 @@ $OpenBSD: patch-src_ipc_c,v 1.2 2011/04/29 09:18:53 dcoppa Exp $
          walk += strlen("i3-ipc");
          memcpy(walk, &message_size, sizeof(uint32_t));
          walk += sizeof(uint32_t);
+@@ -182,7 +182,7 @@ IPC_HANDLER(get_workspaces) {
+         if (last_focused == SLIST_END(&(c_ws->focus_stack)))
+                 last_focused = NULL;
+ 
+-        yajl_gen gen = yajl_gen_alloc(NULL, NULL);
++        yajl_gen gen = yajl_gen_alloc(NULL);
+         y(array_open);
+ 
+         TAILQ_FOREACH(ws, workspaces, workspaces) {
+@@ -226,7 +226,7 @@ IPC_HANDLER(get_workspaces) {
+         y(array_close);
+ 
+         const unsigned char *payload;
+-        unsigned int length;
++        size_t length;
+         y(get_buf, &payload, &length);
+ 
+         ipc_send_message(fd, payload, I3_IPC_REPLY_TYPE_WORKSPACES, length);
+@@ -241,7 +241,7 @@ IPC_HANDLER(get_workspaces) {
+ IPC_HANDLER(get_outputs) {
+         Output *output;
+ 
+-        yajl_gen gen = yajl_gen_alloc(NULL, NULL);
++        yajl_gen gen = yajl_gen_alloc(NULL);
+         y(array_open);
+ 
+         TAILQ_FOREACH(output, &outputs, outputs) {
+@@ -276,7 +276,7 @@ IPC_HANDLER(get_outputs) {
+         y(array_close);
+ 
+         const unsigned char *payload;
+-        unsigned int length;
++        size_t length;
+         y(get_buf, &payload, &length);
+ 
+         ipc_send_message(fd, payload, I3_IPC_REPLY_TYPE_OUTPUTS, length);
+@@ -288,7 +288,7 @@ IPC_HANDLER(get_outputs) {
+  *
+  */
+ static int add_subscription(void *extra, const unsigned char *s,
+-                            unsigned int len) {
++                            size_t len) {
+         ipc_client *client = extra;
+ 
+         DLOG("should add subscription to extra %p, sub %.*s\n", client, len, s);
+@@ -338,7 +338,7 @@ IPC_HANDLER(subscribe) {
+         memset(&callbacks, 0, sizeof(yajl_callbacks));
+         callbacks.yajl_string = add_subscription;
+ 
+-        p = yajl_alloc(&callbacks, NULL, NULL, (void*)client);
++        p = yajl_alloc(&callbacks, NULL, (void*)client);
+         stat = yajl_parse(p, (const unsigned char*)message, message_size);
+         if (stat != yajl_status_ok) {
+                 unsigned char *err;
 @@ -437,7 +437,8 @@ static void ipc_receive_message(EV_P_ struct ev_io *w,
                  n -= strlen(I3_IPC_MAGIC);
  

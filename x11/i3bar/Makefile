@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/29 09:18:53 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/05 12:20:20 dcoppa Exp $
 
 COMMENT =	status and workspace bar for i3
 
 DISTNAME =	i3bar-0.6.21
-REVISION =	0
+REVISION =	1
 CATEGORIES =	x11
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
@@ -26,7 +26,7 @@ BUILD_DEPENDS =	textproc/asciidoc \
 		x11/i3
 
 LIB_DEPENDS =	devel/libev \
-		devel/libyajl
+		devel/libyajl>=2.0.0
 
 RUN_DEPENDS =	x11/i3
 

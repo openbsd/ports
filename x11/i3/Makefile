@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2011/04/29 09:18:53 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2011/05/05 12:19:36 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-3.e-bf2
 PKGNAME =	i3-3.5.2
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	x11
 
@@ -25,7 +25,7 @@ WANTLIB +=	xcb-xinerama yajl
 
 MODULES =	converters/libiconv
 LIB_DEPENDS =	devel/libev \
-		devel/libyajl
+		devel/libyajl>=2.0.0
 BUILD_DEPENDS =	devel/bison
 RUN_DEPENDS =	x11/dmenu \
 		devel/p5-IPC-Run \
