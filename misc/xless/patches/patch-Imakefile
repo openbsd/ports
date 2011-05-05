@@ -1,6 +1,6 @@
-$OpenBSD: patch-Imakefile,v 1.1 2002/07/26 19:38:47 naddy Exp $
---- Imakefile.orig	Fri Jun  3 01:22:14 1994
-+++ Imakefile	Fri Jul 26 21:35:26 2002
+$OpenBSD: patch-Imakefile,v 1.2 2011/05/05 18:19:11 gsoares Exp $
+--- Imakefile.orig	Thu Jun  2 20:22:14 1994
++++ Imakefile	Wed May  4 20:24:38 2011
 @@ -5,7 +5,8 @@
   *	-DPRINTCMD=\"/usr/ucb/lpr\"	- path to send file to printer
   *	-DTILDE_EXPANSION		- perform ~ expansion on filenames
@@ -11,7 +11,7 @@ $OpenBSD: patch-Imakefile,v 1.1 2002/07/26 19:38:47 naddy Exp $
  
  
             SRCS = help.c init.c popup.c util.c callbacks.c window.c main.c \
-@@ -27,7 +28,7 @@ LOCAL_LIBRARIES = -Lregexp -lregexp XawC
+@@ -27,7 +28,7 @@ LOCAL_LIBRARIES = -Lregexp -lregexp XawClientLibs
  MakeSubdirs($(SUBDIRS))
  ComplexProgramTarget(xless)
  
