@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2011/04/26 18:32:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.134 2011/05/05 13:20:43 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -112,6 +112,7 @@
      SUBDIR += vinagre
      SUBDIR += vino
      SUBDIR += yelp
+     SUBDIR += yelp-xsl
      SUBDIR += zenity
 
 .include <bsd.port.subdir.mk>
