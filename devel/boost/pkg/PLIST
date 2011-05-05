@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/04/21 09:26:58 landry Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/05/05 17:08:27 jasper Exp $
 @bin bin/bjam
 include/boost/
 include/boost/accumulators/
@@ -7765,6 +7765,10 @@ lib/libboost_math_tr1l-mt.a
 @lib lib/libboost_math_tr1l-mt.so.${LIBboost_math_tr1l-mt_VERSION}
 lib/libboost_math_tr1l.a
 @lib lib/libboost_math_tr1l.so.${LIBboost_math_tr1l_VERSION}
+lib/libboost_prg_exec_monitor-mt.a
+@lib lib/libboost_prg_exec_monitor-mt.so.${LIBboost_prg_exec_monitor-mt_VERSION}
+lib/libboost_prg_exec_monitor.a
+@lib lib/libboost_prg_exec_monitor.so.${LIBboost_prg_exec_monitor_VERSION}
 lib/libboost_program_options-mt.a
 @lib lib/libboost_program_options-mt.so.${LIBboost_program_options-mt_VERSION}
 lib/libboost_program_options.a
@@ -7789,8 +7793,14 @@ lib/libboost_system-mt.a
 @lib lib/libboost_system-mt.so.${LIBboost_system-mt_VERSION}
 lib/libboost_system.a
 @lib lib/libboost_system.so.${LIBboost_system_VERSION}
+lib/libboost_test_exec_monitor-mt.a
+lib/libboost_test_exec_monitor.a
 lib/libboost_thread-mt.a
 @lib lib/libboost_thread-mt.so.${LIBboost_thread-mt_VERSION}
+lib/libboost_unit_test_framework-mt.a
+@lib lib/libboost_unit_test_framework-mt.so.${LIBboost_unit_test_framework-mt_VERSION}
+lib/libboost_unit_test_framework.a
+@lib lib/libboost_unit_test_framework.so.${LIBboost_unit_test_framework_VERSION}
 lib/libboost_wave-mt.a
 @lib lib/libboost_wave-mt.so.${LIBboost_wave-mt_VERSION}
 lib/libboost_wave.a
