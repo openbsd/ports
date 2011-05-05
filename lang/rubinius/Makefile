@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/22 20:23:10 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2011/05/05 18:22:35 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT =	Ruby virtual machine and core library
 V=		1.2.3
 DISTNAME =	rubinius-${V}-20110315
 PKGNAME =	rubinius-$V
+REVISION =	0
 
 CATEGORIES =	lang lang/ruby
 
@@ -28,7 +29,7 @@ MASTER_SITES =	http://asset.rubini.us/
 BUILD_DEPENDS =	devel/bison \
 		devel/ruby-rake \
 		devel/libffi \
-		devel/llvm
+		devel/llvm>=2.9
 LIB_DEPENDS =	databases/gdbm \
 		databases/db/v4 \
 		${MODRUBY_LIB_DEPENDS}
