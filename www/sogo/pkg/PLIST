@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/04/22 05:36:12 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/05/05 23:00:20 sebastia Exp $
 @newgroup _sogo:659
 @newuser _sogo:659:_sogo:daemon:SOGo user:/var/sogo:/bin/sh
 include/GDLContentStore/
@@ -1417,6 +1417,8 @@ lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/about/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/about/dialogs/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/about/dialogs/about.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/about/dialogs/logo_ckeditor.png
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/ajax/
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/ajax/plugin.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/autogrow/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/autogrow/plugin.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/clipboard/
@@ -1483,6 +1485,7 @@ lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/placeholder/dialogs/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/placeholder/dialogs/placeholder.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/placeholder/lang/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/placeholder/lang/en.js
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/placeholder/lang/he.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/placeholder/placeholder.gif
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/placeholder/plugin.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/scayt/
@@ -1574,6 +1577,8 @@ lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/ciframe.html
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/tmpFrameset.html
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/wsc.css
 lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/wsc/dialogs/wsc.js
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/xml/
+lib/GNUstep/SOGo/WebServerResources/ckeditor/plugins/xml/plugin.js
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/kama/
 lib/GNUstep/SOGo/WebServerResources/ckeditor/skins/kama/dialog.css
