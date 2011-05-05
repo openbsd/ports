@@ -1,14 +1,14 @@
 Diff from GetLive CVS to incorporate Hotmail site changes.
 
-$OpenBSD: patch-GetLive_pl,v 1.6 2010/07/21 02:21:52 merdely Exp $
---- GetLive.pl.orig	Tue Jul 20 22:08:31 2010
-+++ GetLive.pl	Tue Jul 20 22:15:36 2010
-@@ -65,7 +65,7 @@ my $Password                = "";
- my $Domain                  = 'hotmail.com';
- my $CurlCommand             = 'curl -k';
- my $Verbosity               = 1; 									  # 0:Silent; 1:Normal; 2:Verbose; 10:debug; 100:heavy debug 
--my $MailProcessor           = '/usr/bin/procmail';	# Any program taking mbox formatted at stdin will do.
-+my $MailProcessor           = '${LOCALBASE}/bin/procmail';	# Any program taking mbox formatted at stdin will do.
- my $DownloadedIdsFile       = "";                   # Local file with Ids of already downloaded messages.
- my $RetryLimit              = 2;
- my $MarkRead                = "No";                 # No,Yes : But never when downloaded before !
+$OpenBSD: patch-GetLive_pl,v 1.7 2011/05/05 13:37:04 gsoares Exp $
+--- GetLive.pl.orig	Mon May  2 14:49:46 2011
++++ GetLive.pl	Mon May  2 15:02:56 2011
+@@ -91,7 +91,7 @@ sub new {
+   $Self->{'Login'}             = "";
+   $Self->{'Domain'}            = "hotmail.com";
+   $Self->{'Password'}          = "";
+-  $Self->{'MailProcessor'}     = '/usr/bin/procmail'; # Any program taking mbox formatted at stdin will do.
++  $Self->{'MailProcessor'}     = '${LOCALBASE}/bin/procmail'; # Any program taking mbox formatted at stdin will do.
+   $Self->{'DownloadedIdsFile'} = "";                  # Local file with Ids of already downloaded messages.
+   $Self->{'MarkRead'}          = "No";                # No,Yes : But never when downloaded before !
+   $Self->{'Delete'}            = "No";                # No,Yes : But never when downloaded before !

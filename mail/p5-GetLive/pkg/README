@@ -1,3 +1,8 @@
+$OpenBSD: README,v 1.1 2011/05/05 13:37:04 gsoares Exp $
+
+Running p5-GetLive on OpenBSD
+=============================
+
 Refer to ${PREFIX}/share/doc/GetLive/Manual for configuration file
 options.
 
