@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib_Automake_Wrap_pm,v 1.1 2011/05/05 12:30:16 dcoppa Exp $
+
+Avoid a warning from perl-5.11
+
+--- lib/Automake/Wrap.pm.orig	Thu May  5 11:17:06 2011
++++ lib/Automake/Wrap.pm	Thu May  5 11:17:18 2011
+@@ -57,7 +57,7 @@ sub tab_length($)
+ {
+   my ($txt) = @_;
+   my $len = length ($txt);
+-  $len += 7 * ($txt =~ tr/\t/\t/d);
++  $len += 7 * ($txt =~ tr/\t/\t/);
+   return $len;
+ }
+ 
