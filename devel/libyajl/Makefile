@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2011/04/27 21:02:06 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/05 12:17:44 dcoppa Exp $
 
 COMMENT =	small JSON library written in ANSI C
 
-V =		1.0.12
+V =		2.0.1
 PKGNAME =	libyajl-${V}
 
 DISTNAME =	lloyd-yajl-${V}
 
 CATEGORIES =	devel
 
-SHARED_LIBS =	yajl	0.0
+SHARED_LIBS =	yajl	1.0	# 2.0
 
 HOMEPAGE =	http://lloyd.github.com/yajl/
 
@@ -30,7 +30,7 @@ MODULES =	devel/cmake
 
 SEPARATE_BUILD =simple
 
-WRKDIST =	${WRKDIR}/lloyd-yajl-17b1790
+WRKDIST =	${WRKDIR}/lloyd-yajl-f4b2b1a
 
 pre-regress:
 	ln -s ${WRKBUILD} ${WRKSRC}/build
