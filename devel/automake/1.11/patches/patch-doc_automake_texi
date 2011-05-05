@@ -1,0 +1,31 @@
+$OpenBSD: patch-doc_automake_texi,v 1.1.1.1 2011/05/05 18:55:34 jasper Exp $
+--- doc/automake.texi.orig	Tue Dec  8 19:15:40 2009
++++ doc/automake.texi	Thu May  5 19:57:31 2011
+@@ -1,7 +1,8 @@
+ \input texinfo   @c -*-texinfo-*-
+ @c %**start of header
+-@setfilename automake.info
+-@settitle automake
++@setfilename automake${SUFFIX}.info
++@dircategory Programming & development tools
++@settitle automake${SUFFIX}
+ @setchapternewpage off
+ @c %**end of header
+ 
+@@ -40,13 +41,13 @@ section entitled ``@acronym{GNU} Free Documentation Li
+ @c (Autoconf has a similar setup.)
+ @dircategory Software development
+ @direntry
+-* Automake: (automake).         Making GNU standards-compliant Makefiles.
++* automake${SUFFIX}: (automake${SUFFIX}).         Making GNU standards-compliant Makefiles.
+ @end direntry
+ 
+ @dircategory Individual utilities
+ @direntry
+-* aclocal: (automake)Invoking aclocal.          Generating aclocal.m4.
+-* automake: (automake)Invoking Automake.        Generating Makefile.in.
++* aclocal${SUFFIX}: (automake${SUFFIX})Invoking aclocal.          Generating aclocal.m4.
++* automake${SUFFIX}: (automake${SUFFIX})Invoking automake.        Generating Makefile.in.
+ @end direntry
+ 
+ @titlepage
