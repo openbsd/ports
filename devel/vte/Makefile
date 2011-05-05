@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2011/04/16 12:17:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2011/05/05 13:14:20 jasper Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
@@ -61,7 +61,8 @@ RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS} \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-introspection \
-			--disable-Bsymbolic
+			--disable-Bsymbolic \
+			--with-gtk=2.0
 .if ! ${MACHINE_ARCH:Mmips64*}
 CONFIGURE_ARGS+=	--enable-python
 .endif
