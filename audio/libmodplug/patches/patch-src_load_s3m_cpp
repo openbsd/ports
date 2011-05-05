@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_load_s3m_cpp,v 1.2 2011/05/05 21:25:48 jasper Exp $
+
+Fixed a potential memory overread in CSoundFile::ReadS3M()
+From upstream git: 537e9fd5b95cf6c448e9bd2ea2973e8b139bce00
+
+--- src/load_s3m.cpp.orig	Fri Mar 25 23:17:18 2011
++++ src/load_s3m.cpp	Thu May  5 23:20:07 2011
+@@ -393,7 +393,8 @@ BOOL CSoundFile::ReadS3M(const BYTE *lpStream, DWORD d
+ 		if (insflags[iRaw-1] & 2) flags |= RSF_STEREO;
+ 		if (inspack[iRaw-1] == 4) flags = RS_ADPCM4;
+ 		dwMemPos = insfile[iRaw];
+-		dwMemPos += ReadSample(&Ins[iRaw], flags, (LPSTR)(lpStream + dwMemPos), dwMemLength - dwMemPos);
++		if (dwMemPos < dwMemLength)
++			dwMemPos += ReadSample(&Ins[iRaw], flags, (LPSTR)(lpStream + dwMemPos), dwMemLength - dwMemPos);
+ 	}
+ 	m_nMinPeriod = 64;
+ 	m_nMaxPeriod = 32767;
