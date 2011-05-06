@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2011/05/05 13:20:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2011/05/06 11:26:30 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -38,6 +38,7 @@
      SUBDIR += genius
      SUBDIR += ghex
      SUBDIR += gjs
+     SUBDIR += gnote
      SUBDIR += gok
      SUBDIR += gucharmap
      SUBDIR += gvfs
@@ -101,7 +102,6 @@
      SUBDIR += terminal
      SUBDIR += themes
      SUBDIR += themes-extras
-     SUBDIR += tomboy
      SUBDIR += totem
      SUBDIR += totem-pl-parser
      SUBDIR += tracker
