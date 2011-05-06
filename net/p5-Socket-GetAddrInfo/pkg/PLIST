@@ -1,0 +1,21 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/06 08:55:26 jasper Exp $
+bin/getaddrinfo
+bin/getnameinfo
+${P5ARCH}/
+${P5ARCH}/Socket/
+${P5ARCH}/Socket/GetAddrInfo/
+${P5ARCH}/Socket/GetAddrInfo.pm
+${P5ARCH}/Socket/GetAddrInfo/Core.pm
+${P5ARCH}/Socket/GetAddrInfo/Emul.pm
+${P5ARCH}/Socket/GetAddrInfo/Socket6api.pm
+${P5ARCH}/Socket/GetAddrInfo/XS.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Socket/
+${P5ARCH}/auto/Socket/GetAddrInfo/
+${P5ARCH}/auto/Socket/GetAddrInfo/GetAddrInfo.bs
+${P5ARCH}/auto/Socket/GetAddrInfo/GetAddrInfo.so
+@man man/man1/getaddrinfo.1
+@man man/man1/getnameinfo.1
+@man man/man3p/Socket::GetAddrInfo.3p
+@man man/man3p/Socket::GetAddrInfo::Emul.3p
+@man man/man3p/Socket::GetAddrInfo::Socket6api.3p
