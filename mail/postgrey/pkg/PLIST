@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/11/06 14:50:54 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/05/06 08:40:06 sthen Exp $
 @newgroup _postgrey:563
 @newuser _postgrey:563:563:daemon:Postgrey Daemon:/var/empty:/sbin/nologin
 libexec/postgrey
@@ -17,3 +17,4 @@ share/examples/postgrey/postgrey_whitelist_clients
 @sample ${SYSCONFDIR}/postfix/postgrey_whitelist_clients
 share/examples/postgrey/postgrey_whitelist_recipients
 @sample ${SYSCONFDIR}/postfix/postgrey_whitelist_recipients
+@rcscript ${RCDIR}/postgrey

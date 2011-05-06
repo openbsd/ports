@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: postgrey.rc,v 1.1 2011/05/06 08:40:06 sthen Exp $
+
+daemon="${TRUEPREFIX}/libexec/postgrey"
+daemon_flags="--inet=10023 -d"
+
+. /etc/rc.d/rc.subr
+
+pexp="perl: ${daemon} ${daemon_flags}"
+
+rc_cmd $1
