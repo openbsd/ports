@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2011/01/06 04:24:22 jeremy Exp $
+# $OpenBSD: Makefile,v 1.16 2011/05/06 16:05:12 jeremy Exp $
 
 COMMENT=	Ruby interface to the id3lib C++ library
 
-VERSION=	0.5.0
+VERSION=	0.6.0
 DISTNAME=	id3lib-ruby-${VERSION}
 PKGNAME=	id3lib-${VERSION}
-REVISION=	6
 CATEGORIES=	audio
 
 MAINTAINER=	Paul Irofti <pirofti@openbsd.org>
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	lang/ruby
+MODULES=	lang/ruby converters/libiconv
 WANTLIB=	id3>=4 stdc++ z
 LIB_DEPENDS=	audio/id3lib
 
