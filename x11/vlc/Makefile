@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2011/05/04 14:58:39 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.126 2011/05/06 08:18:54 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,9 +7,9 @@ COMMENT-main=	VideoLAN client; multimedia player
 V=		1.0.6
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	25
-REVISION-jack=	4
-REVISION-web=	6
+REVISION-main=	26
+REVISION-jack=	5
+REVISION-web=	7
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.bz2
@@ -31,8 +31,8 @@ MODULES=	devel/gettext \
 		x11/qt4
 LIB_DEPENDS+=	x11/dbus
 LIB_DEPENDS-main=${LIB_DEPENDS} \
+		audio/faad \
 		audio/libcddb \
-		audio/libmpcdec \
 		audio/libvorbis \
 		audio/speex \
 		audio/taglib \
@@ -56,11 +56,11 @@ RUN_DEPENDS=	devel/desktop-file-utils
 WANTLIB-main=	GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
 		Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrender Xv \
 		Xxf86vm avcodec avformat avutil bz2 c cddb dbus-1 \
-		drm dvbpsi dvdnav dvdread ebml expat faac fontconfig \
-		freetype fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gsm gthread-2.0 jpeg m \
-		matroska modman mp3lame mpcdec notify orc-0.4 ogg \
-		pcre png postproc proxy pthread-stubs pthread stdc++ \
+		drm dvbpsi dvdnav dvdread ebml expat faac faad \
+		fontconfig freetype fribidi gdk_pixbuf-2.0 gio-2.0 \
+		glib-2.0 gmodule-2.0 gobject-2.0 gsm gthread-2.0 jpeg \
+		m matroska modman mp3lame notify orc-0.4 ogg pcre \
+		png postproc proxy pthread-stubs pthread stdc++ \
 		schroedinger-1.0>=2.0 sndio speex swscale tag tiff \
 		theoradec theoraenc usbhid vorbis vorbisenc vpx x264 \
 		xcb-keysyms xcb xml2 z ${WANTLIB}
@@ -92,6 +92,7 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-lua \
 		--disable-mad \
 		--disable-mod \
+		--disable-mpc \
 		--disable-mtp \
 		--disable-oss \
 		--disable-pulse \
@@ -103,6 +104,7 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-upnp \
 		--disable-zvbi \
 		--enable-dvdread \
+		--enable-faad \
 		--enable-real \
 		--enable-realrtsp \
 		--enable-release \
@@ -175,5 +177,6 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/share/vlc${_img}.png \
 	    ${PREFIX}/share/icons/hicolor/${_img}/apps/vlc.png
 .endfor
+	@find ${PREFIX}/lib -name '*.la' -print | xargs rm -f
 
 .include <bsd.port.mk>
