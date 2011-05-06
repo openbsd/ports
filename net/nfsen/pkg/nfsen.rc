@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: nfsen.rc,v 1.1 2011/05/05 21:49:48 sthen Exp $
+# $OpenBSD: nfsen.rc,v 1.2 2011/05/06 13:04:08 sthen Exp $
 
 daemon="${TRUEPREFIX}/bin/nfsend"
 
@@ -9,16 +9,15 @@ daemon="${TRUEPREFIX}/bin/nfsend"
 ctl="${TRUEPREFIX}/bin/nfsen"
 pexp="/usr/bin/perl -w ${daemon}"
 
+# nfsen reconfig is interactive when certain changes are made
+rc_reload=NO
+
 rc_start() {
 	${rcexec} "${ctl} start"
 }
 
 rc_stop() {
-	${rcexec} "${ctl} stop"
-}
-
-rc_reload() {
-	${rcexec} "${ctl} reconfig"
+	${ctl} stop
 }
 
 rc_cmd $1
