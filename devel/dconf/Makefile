@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/05/05 08:33:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/05/06 14:22:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,13 +6,10 @@ COMMENT-main=	configuration backend system
 COMMENT-editor=	editor for the dconf configuration storage system
 
 GNOME_PROJECT=	dconf
-GNOME_VERSION=	0.7.3
+GNOME_VERSION=	0.7.4
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-editor=	dconf-editor-${GNOME_VERSION}
-
-REVISION-main=	1
-REVISION-editor=0
 
 SHARED_LIBS+=	dconf        0.0 # 0.0.0
 SHARED_LIBS+=	dconf-dbus-1 0.0 # 0.0.0
@@ -65,6 +62,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 CONFIGURE_ARGS=	--disable-gtk-doc
+
+FAKE_FLAGS=	completiondir=${PREFIX}/share/examples/dconf/bash_completion.d
 
 .if ${FLAVOR:L:Mno_editor}
 CONFIGURE_ARGS +=	--disable-editor

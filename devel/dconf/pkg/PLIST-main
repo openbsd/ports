@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2011/04/05 18:45:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2011/05/06 14:22:27 ajacoutot Exp $
 @conflict vala-<0.10
 @pkgpath devel/dconf
 @bin bin/dconf
@@ -17,11 +17,13 @@ lib/gio/modules/libdconfsettings.so
 lib/pkgconfig/dconf-dbus-1.pc
 lib/pkgconfig/dconf.pc
 @bin libexec/dconf-service
-share/dbus-1/
-share/dbus-1/services/
 share/dbus-1/services/ca.desrt.dconf.service
-share/dbus-1/system-services/
 share/dbus-1/system-services/ca.desrt.dconf.service
+share/examples/dconf/
+share/examples/dconf/bash_completion.d/
+@sample ${SYSCONFDIR}/bash_completion.d/
+share/examples/dconf/bash_completion.d/dconf-bash-completion.sh
+@sample ${SYSCONFDIR}/bash_completion.d/dconf-bash-completion.sh
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/dconf/

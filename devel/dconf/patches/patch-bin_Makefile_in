@@ -1,21 +1,21 @@
-$OpenBSD: patch-bin_Makefile_in,v 1.2 2011/04/05 18:45:05 ajacoutot Exp $
---- bin/Makefile.in.orig	Tue Mar 22 17:09:56 2011
-+++ bin/Makefile.in	Tue Apr  5 14:43:06 2011
-@@ -50,7 +50,7 @@ am_dconf_OBJECTS = dconf.$(OBJEXT) dconf-update.$(OBJE
+$OpenBSD: patch-bin_Makefile_in,v 1.3 2011/05/06 14:22:27 ajacoutot Exp $
+--- bin/Makefile.in.orig	Fri May  6 14:58:32 2011
++++ bin/Makefile.in	Fri May  6 15:44:35 2011
+@@ -51,7 +51,7 @@ am_dconf_OBJECTS = dconf.$(OBJEXT) dconf-update.$(OBJE
  	gvdb-builder.$(OBJEXT)
  dconf_OBJECTS = $(am_dconf_OBJECTS)
  am__DEPENDENCIES_1 =
 -dconf_DEPENDENCIES = $(am__DEPENDENCIES_1) ../client/libdconf.so.0
 +dconf_DEPENDENCIES = $(am__DEPENDENCIES_1) ../client/libdconf.so.${LIBdconf_VERSION}
- DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
- depcomp = $(SHELL) $(top_srcdir)/aux/depcomp
- am__depfiles_maybe = depfiles
-@@ -195,7 +195,7 @@ top_srcdir = @top_srcdir@
+ am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
+ am__vpath_adj = case $$p in \
+     $(srcdir)/*) f=`echo "$$p" | sed "s|^$$srcdirstrip/||"`;; \
+@@ -218,7 +218,7 @@ top_srcdir = @top_srcdir@
  AM_CFLAGS = -std=c89 -Wall -Wmissing-prototypes -Wwrite-strings
  INCLUDES = -I$(top_srcdir)/common -I$(top_srcdir)/engine -I$(top_srcdir)/client -I$(top_srcdir)/gvdb $(gio_CFLAGS)
  dconf_VALAFLAGS = --vapidir ../client --pkg=gio-2.0 --pkg=posix --pkg=dconf
 -dconf_LDADD = $(gio_LIBS) ../client/libdconf.so.0
 +dconf_LDADD = $(gio_LIBS) ../client/libdconf.so.${LIBdconf_VERSION}
  dconf_SOURCES = dconf.vala dconf-update.vala ../gvdb/gvdb-builder.c gvdb.vapi fixes.vapi
- all: all-am
- 
+ completiondir = $(sysconfdir)/bash_completion.d
+ completion_SCRIPTS = dconf-bash-completion.sh
