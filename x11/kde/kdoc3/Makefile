@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/19 08:13:58 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/05/06 14:32:37 ajacoutot Exp $
 
 COMMENT= 		embedded documentation in C++
 CATEGORIES=		x11 x11/kde devel
 VERSION=		2.0a54
 DISTNAME=		kdoc-${VERSION}
 
-MASTER_SITES=		${MASTER_SITE_KDE:=stable/3.0.1/src/}
+MASTER_SITES=		http://distfiles.bsdfrog.org/
 
 MODULES=	
 AUTOCONF_VERSION=	2.52
