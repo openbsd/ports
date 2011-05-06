@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2011/04/16 07:47:04 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.71 2011/05/06 15:49:53 giovanni Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
@@ -72,7 +72,7 @@ MODULES=	devel/gettext \
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-AUTOCONF_VERSION= 2.64
+AUTOCONF_VERSION= 2.67
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=--without-gvfs \
