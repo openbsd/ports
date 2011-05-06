@@ -1,0 +1,24 @@
+$OpenBSD: patch-dbus_dbus-sysdeps-util-unix_c,v 1.1 2011/05/06 07:34:18 ajacoutot Exp $
+
+Don't try to use /proc; we don't provide a replacement because this
+function is only called once for logging purpose, its return code is not
+checked and as the code says: "This string <...> may not be trusted".
+
+--- dbus/dbus-sysdeps-util-unix.c.orig	Fri May  6 08:00:22 2011
++++ dbus/dbus-sysdeps-util-unix.c	Fri May  6 08:04:41 2011
+@@ -1086,6 +1086,7 @@ _dbus_command_for_pid (unsigned long  pid,
+                        int            max_len,
+                        DBusError     *error)
+ {
++#ifndef __OpenBSD__
+   /* This is all Linux-specific for now */
+   DBusString path;
+   DBusString cmdline;
+@@ -1145,4 +1146,7 @@ fail:
+   _dbus_string_free (&cmdline);
+   _dbus_string_free (&path);
+   return FALSE;
++#else // OpenBSD
++  return FALSE;
++#endif
+ }
