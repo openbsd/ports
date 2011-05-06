@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.229 2011/05/04 14:12:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.230 2011/05/06 14:25:52 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -27,6 +27,9 @@
      SUBDIR += colorls
      SUBDIR += colortail
      SUBDIR += conky
+     SUBDIR += conky,audacious
+     SUBDIR += conky,audacious,imlib2
+     SUBDIR += conky,imlib2
      SUBDIR += conky,no_x11
      SUBDIR += consolekit
      SUBDIR += contool
