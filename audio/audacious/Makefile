@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/04/27 11:44:12 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.26 2011/05/06 09:43:08 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,7 +6,7 @@ COMMENT =		gtk+2 media player based on BMP and XMMS
 
 DISTNAME =		audacious-2.4.4
 
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		audclient	1.1 	# 2.0
 SHARED_LIBS +=		audcore		0.0 	# 1.0
