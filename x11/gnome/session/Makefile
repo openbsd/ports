@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.144 2011/05/06 11:27:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.145 2011/05/06 15:05:48 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.32.1
 
-REVISION=		9
+REVISION=		10
 
 CATEGORIES=		x11
 
@@ -54,7 +54,7 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-rebuilds \
 		--with-gtk=2.0
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo"
+		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =	Yes
 
 # XXX gconf2 MODULE changes this value but gsm-gconf.c uses this to
