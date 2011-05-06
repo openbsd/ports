@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.934 2011/05/03 16:37:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.935 2011/05/06 08:57:49 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -530,6 +530,7 @@
      SUBDIR += p5-Expect-Simple
      SUBDIR += p5-Exporter-Lite
      SUBDIR += p5-Exporter-Tidy
+     SUBDIR += p5-ExtUtils-CChecker
      SUBDIR += p5-ExtUtils-Depends
      SUBDIR += p5-ExtUtils-PkgConfig
      SUBDIR += p5-ExtUtils-XSBuilder

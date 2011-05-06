@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.693 2011/05/04 08:03:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.694 2011/05/06 08:58:43 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -260,6 +260,7 @@
      SUBDIR += p5-IO-Socket-Multicast
      SUBDIR += p5-IO-Socket-Socks
      SUBDIR += p5-IP-Country
+     SUBDIR += p5-IRC-Utils
      SUBDIR += p5-Net-Amazon
      SUBDIR += p5-Net-BGP
      SUBDIR += p5-Net-CIDR
@@ -351,6 +352,7 @@
      SUBDIR += p5-SNMP-BridgeQuery
      SUBDIR += p5-SNMP-Info
      SUBDIR += p5-SNMP_Session
+     SUBDIR += p5-Socket-GetAddrInfo
      SUBDIR += p5-Socket6
      SUBDIR += p5-Sys-Hostname-Long
      SUBDIR += p5-Test-TCP
