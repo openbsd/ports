@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2011/04/26 18:40:24 ajacoutot Exp $
+$OpenBSD: README,v 1.8 2011/05/06 11:27:51 jasper Exp $
 
 Running GNOME on OpenBSD
 ========================
@@ -103,7 +103,7 @@ related ports under the x11/gnome category)
    * hamster-applet - time tracker applet
    * meta-tracker - powerful desktop search tool and indexer
    * planner - project management
-   * tomboy - desktop note-taking
+   * gnote - desktop note-taking
 
  - Utilities
    * alacarte - simple menu editing tool
