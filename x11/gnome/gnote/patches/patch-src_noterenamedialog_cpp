@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_noterenamedialog_cpp,v 1.1.1.1 2011/05/06 11:25:46 jasper Exp $
+
+Incorrect ModelColumnRecord passing
+https://bugzilla.gnome.org/show_bug.cgi?id=649481
+
+--- src/noterenamedialog.cpp.orig	Thu May  5 18:55:11 2011
++++ src/noterenamedialog.cpp	Thu May  5 18:57:45 2011
+@@ -64,6 +64,8 @@ class ModelColumnRecord (private)
+   Gtk::TreeModelColumn<Note::Ptr> m_column_note;
+ };
+ 
++ModelColumnRecord model_column_record;
++
+ ModelColumnRecord::ModelColumnRecord()
+   : Gtk::TreeModelColumnRecord()
+   , m_column_selected()
+@@ -152,7 +154,7 @@ NoteRenameDialog::NoteRenameDialog(const Note::List & 
+   : Gtk::Dialog(_("Rename Note Links?"),
+                 *renamed_note->get_window(),
+                 false)
+-  , m_notes_model(Gtk::ListStore::create(ModelColumnRecord()))
++  , m_notes_model(Gtk::ListStore::create(model_column_record))
+   , m_dont_rename_button(_("_Don't Rename Links"), true)
+   , m_rename_button(_("_Rename Links"), true)
+   , m_select_all_button(_("Select All"))
