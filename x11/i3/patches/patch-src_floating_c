@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_floating_c,v 1.3 2011/05/06 14:14:31 dcoppa Exp $
+
+Fix a pasto in the floating_resize_window function
+(Commit ef3e241b78e9ed856d01608c24a223b82132403c)
+
+--- src/floating.c.orig	Fri May  6 16:05:12 2011
++++ src/floating.c	Fri May  6 16:06:33 2011
+@@ -361,7 +361,7 @@ void floating_resize_window(xcb_connection_t *conn, Cl
+ 
+         if (event->event_y <= (client->rect.height / 2))
+                 corner |= BORDER_TOP;
+-        else corner |= BORDER_RIGHT;
++        else corner |= BORDER_BOTTOM;
+ 
+         struct resize_window_callback_params params = { corner, proportional, event };
+ 

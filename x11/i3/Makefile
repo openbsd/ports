@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.15 2011/05/05 12:19:36 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2011/05/06 14:14:31 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-3.e-bf2
 PKGNAME =	i3-3.5.2
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
-HOMEPAGE = 	http://i3.zekjur.net/
-MASTER_SITES =	${HOMEPAGE}downloads/
+HOMEPAGE =	http://i3wm.org/
+MASTER_SITES =	${HOMEPAGE}/downloads/
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
 # BSD
