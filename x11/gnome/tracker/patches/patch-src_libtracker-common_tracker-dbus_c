@@ -1,19 +1,70 @@
-$OpenBSD: patch-src_libtracker-common_tracker-dbus_c,v 1.1 2010/04/28 09:51:09 ajacoutot Exp $
+$OpenBSD: patch-src_libtracker-common_tracker-dbus_c,v 1.2 2011/05/07 16:17:26 ajacoutot Exp $
 
-XXX fix not to use /proc
-/proc is not mounted by default in OpenBSD, no need to spam xsession-errors.
+Don't use /proc for getting the process name.
 
---- src/libtracker-common/tracker-dbus.c.orig	Wed Apr 28 11:04:19 2010
-+++ src/libtracker-common/tracker-dbus.c	Wed Apr 28 11:18:55 2010
-@@ -214,9 +214,11 @@ client_data_new (gchar *sender)
- 		g_free (pid_str);
+--- src/libtracker-common/tracker-dbus.c.orig	Wed Apr 27 10:42:28 2011
++++ src/libtracker-common/tracker-dbus.c	Sat May  7 18:15:43 2011
+@@ -23,6 +23,14 @@
  
- 		if (!g_file_get_contents (filename, &contents, NULL, &error)) {
-+/*
- 			g_warning ("Could not get process name from id %ld, %s",
- 			           cd->pid,
- 			           error ? error->message : "no error given");
-+*/
- 			g_clear_error (&error);
- 			g_free (filename);
- 			return cd;
+ #include <dbus/dbus-glib-bindings.h>
+ 
++#ifdef __OpenBSD__
++#include <sys/param.h>
++#include <sys/types.h>
++#include <sys/sysctl.h>
++#include <stdio.h>
++#include <kvm.h>
++#endif
++
+ #include "tracker-dbus.h"
+ #include "tracker-log.h"
+ 
+@@ -199,13 +207,15 @@ client_data_new (gchar *sender)
+ 	}
+ 
+ 	if (get_binary) {
+-		gchar *filename;
+-		gchar *pid_str;
++#ifndef __OpenBSD__
+ 		gchar *contents = NULL;
+-		GError *error = NULL;
+ 		gchar **strv;
++		gchar *filename;
++		GError *error = NULL;
++		gchar *pid_str;
+ 
+ 		pid_str = g_strdup_printf ("%ld", cd->pid);
++
+ 		filename = g_build_filename (G_DIR_SEPARATOR_S,
+ 		                             "proc",
+ 		                             pid_str,
+@@ -231,6 +241,29 @@ client_data_new (gchar *sender)
+ 
+ 		g_strfreev (strv);
+ 		g_free (contents);
++#else
++		int nproc;
++		struct kinfo_proc *kp;
++		kvm_t *kd;
++		char **pargv;
++
++		if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, NULL)) == NULL)
++			return cd;
++
++		if ((kp = kvm_getproc2(kd, KERN_PROC_PID, cd->pid, sizeof(*kp), &nproc)) == NULL)
++			goto out;
++
++		if ((kp->p_flag & P_SYSTEM) != 0) 
++			goto out;
++
++		if ((pargv = kvm_getargv2(kd, kp, 0)) == NULL)
++			goto out;
++
++		cd->binary = g_path_get_basename(pargv[0]);
++
++out:
++		kvm_close(kd);
++#endif
+ 	}
+ 
+ 	return cd;

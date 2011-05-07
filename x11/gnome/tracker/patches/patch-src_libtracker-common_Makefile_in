@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_libtracker-common_Makefile_in,v 1.1 2011/05/07 16:17:26 ajacoutot Exp $
+--- src/libtracker-common/Makefile.in.orig	Fri May  6 18:31:58 2011
++++ src/libtracker-common/Makefile.in	Fri May  6 18:19:17 2011
+@@ -482,6 +482,7 @@ libtracker_common_la_LIBADD = \
+ 	$(HAL_LIBS)					\
+ 	$(DEVKIT_POWER_LIBS)				\
+ 	$(DBUS_LIBS)					\
++	-lkvm						\
+ 	$(GIO_LIBS)					\
+ 	$(GCOV_LIBS)					\
+ 	$(GLIB2_LIBS)
