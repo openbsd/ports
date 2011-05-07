@@ -1,5 +1,7 @@
-$OpenBSD: patch-Lib_urllib2_py,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp $
-# fix for CVE-2011-1521: http://hg.python.org/cpython/rev/a778b963eae3
+$OpenBSD: patch-Lib_urllib2_py,v 1.2 2011/05/07 09:35:13 fgsch Exp $
+
+Fix for CVE-2011-1521: http://hg.python.org/cpython/rev/a778b963eae3
+
 --- Lib/urllib2.py.orig	Sat Apr 23 15:02:11 2011
 +++ Lib/urllib2.py	Sat Apr 23 15:09:17 2011
 @@ -578,6 +578,17 @@ class HTTPRedirectHandler(BaseHandler):

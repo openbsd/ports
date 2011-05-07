@@ -1,5 +1,7 @@
-$OpenBSD: patch-Lib_test_test_urllib2_py,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp $
-# test fix for CVE-2011-1521: http://hg.python.org/cpython/rev/a778b963eae3
+$OpenBSD: patch-Lib_test_test_urllib2_py,v 1.2 2011/05/07 09:35:13 fgsch Exp $
+
+Test fix for CVE-2011-1521: http://hg.python.org/cpython/rev/a778b963eae3
+
 --- Lib/test/test_urllib2.py.orig	Mon Nov 22 06:04:33 2010
 +++ Lib/test/test_urllib2.py	Sat Apr 23 14:10:32 2011
 @@ -969,6 +969,28 @@
