@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/05/07 14:45:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2011/05/07 15:15:39 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -76,7 +76,7 @@ CONFIGURE_ARGS +=	--enable-editor
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/{bin,client,editor}/Makefile.in \
-		${WRKSRC}/editor/dconf-model.{c,vala} \
+		${WRKSRC}/editor/dconf-model.vala \
 		${WRKSRC}/dbus-1/Makefile.in
 
 .include <bsd.port.mk>
