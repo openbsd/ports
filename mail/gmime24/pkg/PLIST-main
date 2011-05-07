@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2011/03/27 18:25:15 ajacoutot Exp $
-@option no-default-conflict
-@conflict gmime->=2.4.7
+@comment $OpenBSD: PLIST-main,v 1.6 2011/05/07 06:03:39 ajacoutot Exp $
 @pkgpath mail/gmime
 @pkgpath mail/gmime24
 %%SHARED%%
