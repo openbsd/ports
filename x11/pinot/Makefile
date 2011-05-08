@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2011/01/16 19:52:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/05/08 13:20:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-0.97
+REVISION=	0
 
 CATEGORIES=	x11 misc
 
@@ -30,8 +31,7 @@ WANTLIB += textcat xapian GL Xxf86vm drm xcb-shm
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=pinot/}
 
-MODULES=	devel/gettext \
-		lang/python
+MODULES=	devel/gettext
 
 BUILD_DEPENDS=	devel/boost \
 		misc/shared-mime-info \
@@ -66,9 +66,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 USE_LIBTOOL=	gnu
 
 USE_GROFF=	Yes
-
-MODPY_BUILDDEP=	No
-MODPY_RUNDEP=	No
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/21 20:46:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/05/08 13:20:28 ajacoutot Exp $
 @bin bin/pinot
 @bin bin/pinot-dbus-daemon
 @bin bin/pinot-index
@@ -13,14 +13,6 @@ lib/pinot/filters/libexifimagefilter.so
 lib/pinot/filters/libexternalfilter.so
 lib/pinot/filters/libmboxfilter.so
 lib/pinot/filters/libtaglibfilter.so
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
-lib/python${MODPY_VERSION}/site-packages/deskbar/
-lib/python${MODPY_VERSION}/site-packages/deskbar/handlers/
-lib/python${MODPY_VERSION}/site-packages/deskbar/handlers/pinot-live.py
-libexec/deskbar-applet/
-libexec/deskbar-applet/modules-2.20-compatible/
-libexec/deskbar-applet/modules-2.20-compatible/pinot-module.py
 @man man/man1/pinot-dbus-daemon.1
 @man man/man1/pinot-index.1
 @man man/man1/pinot-label.1
