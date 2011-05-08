@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_init_cpp,v 1.1 2011/04/02 17:39:33 kili Exp $
---- src/init.cpp.orig	Fri Apr  1 03:03:11 2011
-+++ src/init.cpp	Fri Apr  1 03:29:23 2011
-@@ -461,9 +461,11 @@ void cleanup()
+$OpenBSD: patch-src_init_cpp,v 1.2 2011/05/08 21:47:44 kili Exp $
+--- src/init.cpp.orig	Sun Apr 17 16:56:56 2011
++++ src/init.cpp	Sun May  8 15:41:13 2011
+@@ -473,9 +473,11 @@ void cleanup()
  	if (SDL_NumJoysticks() > 0)
  	{
  		SDL_JoystickEventState(SDL_DISABLE);
