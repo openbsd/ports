@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/05/04 05:12:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2011/05/08 17:45:48 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	GNOME settings daemon
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	2.32.1
 
-REVISION=	3
+REVISION=	4
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -35,7 +35,8 @@ BUILD_DEPENDS=	textproc/rarian
 LIB_DEPENDS=	devel/libnotify>=0.7.2 \
 		x11/gnome/desktop \
 		x11/gnome/libgnomekbd \
-		sysutils/polkit
+		sysutils/polkit \
+		security/nss
 
 # otherwise we end up without icons on minimal install
 RUN_DEPENDS=	x11/gnome/icon-theme
