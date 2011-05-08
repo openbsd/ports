@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.40 2011/04/11 00:36:31 bluhm Exp $
+# $OpenBSD: Makefile,v 1.41 2011/05/08 22:12:53 bluhm Exp $
 
 COMMENT =		perl interface to SSL sockets
 
-DISTNAME =		IO-Socket-SSL-1.39
+DISTNAME =		IO-Socket-SSL-1.40
 
 CATEGORIES =		security
 
@@ -16,8 +16,10 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		security/p5-Net_SSLeay>=1.21
-REGRESS_DEPENDS =	net/p5-IO-Socket-INET6
+RUN_DEPENDS =		security/p5-Net_SSLeay>=1.33
+REGRESS_DEPENDS =	net/p5-IO-Socket-INET6 \
+			converters/p5-Net-IDN-Encode \
+			www/p5-URI>=1.50
 USE_GROFF =		Yes
 
 MODCPAN_EXAMPLES =	Yes
