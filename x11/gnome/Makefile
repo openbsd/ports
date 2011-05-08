@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.135 2011/05/06 11:26:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.136 2011/05/08 13:22:10 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -16,7 +16,6 @@
      SUBDIR += conduit
      SUBDIR += controlcenter2
      SUBDIR += dasher
-     SUBDIR += deskbar-applet
      SUBDIR += desktop
      SUBDIR += devel-docs
      SUBDIR += development-monitor
