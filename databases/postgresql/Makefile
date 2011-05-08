@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2011/04/19 08:39:21 pea Exp $
+# $OpenBSD: Makefile,v 1.151 2011/05/08 23:11:36 fgsch Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -116,7 +116,7 @@ MAKE_ENV=	LIBpq_MAJOR=${LIBpq_VERSION:R} \
 #	$ make regress NO_REGRESS=No
 #
 # Note, you may also need to change a variety of SYSV IPC parameters.
-# See files/README.OpenBSD for more details
+# See pkg/README-server for more details
 NO_REGRESS=	Yes
 
 DOCS=	${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
