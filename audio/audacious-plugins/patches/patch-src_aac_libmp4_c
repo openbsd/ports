@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_aac_libmp4_c,v 1.7 2011/03/02 14:07:55 shadchin Exp $
---- src/aac/libmp4.c.orig	Tue Feb 22 22:29:46 2011
-+++ src/aac/libmp4.c	Wed Feb 23 21:59:39 2011
+$OpenBSD: patch-src_aac_libmp4_c,v 1.8 2011/05/08 14:08:44 dcoppa Exp $
+
+Our faad port uses a patched neaacdec.h header
+
+--- src/aac/libmp4.c.orig	Sun Apr 17 15:29:25 2011
++++ src/aac/libmp4.c	Wed May  4 12:04:11 2011
 @@ -64,7 +64,7 @@ static guint32 mp4_read_callback(void *data, void *buf
      return vfs_fread(buffer, 1, len, (VFSFile *) data);
  }
@@ -10,6 +13,15 @@ $OpenBSD: patch-src_aac_libmp4_c,v 1.7 2011/03/02 14:07:55 shadchin Exp $
  {
      g_return_val_if_fail (data != NULL, -1);
      g_return_val_if_fail (pos <= G_MAXINT64, -1);
+@@ -353,7 +353,7 @@ static void calc_aac_info (VFSFile * handle, gint * le
+         if (! initted)
+         {
+             gint inner, a;
+-            gulong r;
++            guint r;
+             guchar ch;
+ 
+             inner = find_aac_header (buffer + offset, filled, & a);
 @@ -583,7 +583,7 @@ static int my_decode_mp4( InputPlayback *playback, cha
      NeAACDecHandle   decoder;
      guchar      *buffer = NULL;
@@ -19,3 +31,21 @@ $OpenBSD: patch-src_aac_libmp4_c,v 1.7 2011/03/02 14:07:55 shadchin Exp $
      guchar      channels = 0;
      guint       numSamples;
      gulong      sampleID = 1;
+@@ -771,7 +771,7 @@ static void aac_seek (VFSFile * file, NeAACDecHandle d
+     }
+ 
+     guchar chan;
+-    gulong rate;
++    guint rate;
+     * used += NeAACDecInit (dec, buf + * used, * fill - * used, & rate, & chan);
+ 
+     AUDDBG ("After init, used %d of %d bytes.\n", * used, * fill);
+@@ -782,7 +782,7 @@ void my_decode_aac( InputPlayback *playback, char *fil
+     NeAACDecHandle   decoder = 0;
+     guchar      streambuffer[BUFFER_SIZE];
+     gint bufferconsumed = 0;
+-    gulong      samplerate = 0;
++    guint       samplerate = 0;
+     guchar      channels = 0;
+     gint buffervalid = 0;
+     gulong	ret = 0;
