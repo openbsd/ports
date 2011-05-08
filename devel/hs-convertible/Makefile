@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/05/04 08:05:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/05/08 14:19:39 jasper Exp $
 
 COMMENT =		library to convert between different types
 
 DISTNAME =		convertible-1.0.10.0
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -17,7 +18,8 @@ MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-RUN_DEPENDS +=		devel/hs-mtl
+RUN_DEPENDS +=		devel/hs-mtl \
+			devel/hs-text>=0.7
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>
