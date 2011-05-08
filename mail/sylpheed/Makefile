@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.92 2011/03/04 16:35:40 rpointel Exp $
+# $OpenBSD: Makefile,v 1.93 2011/05/08 08:18:10 rpointel Exp $
 
 COMMENT =		lightweight and user-friendly e-mail client
 
-DISTNAME =		sylpheed-3.1.0
+DISTNAME =		sylpheed-3.1.1
 
-SHARED_LIBS += 	 	sylph-0                   2.0
-SHARED_LIBS += 		sylpheed-plugin-0         2.0
+SHARED_LIBS += 	 	sylph-0                   2.0 # 2.0
+SHARED_LIBS += 		sylpheed-plugin-0         2.0 # 2.0
 
 CATEGORIES=	mail news x11
 HOMEPAGE=	http://sylpheed.sraoss.jp/en
