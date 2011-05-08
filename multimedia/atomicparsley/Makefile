@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/06 14:29:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/08 20:48:10 sthen Exp $
 
 COMMENT=	read and set MPEG-4/3GPP metadata tags
 
 DISTNAME=	AtomicParsley-source-0.9.0
+REVISION=	0
 EXTRACT_SUFX=	.zip
 PKGNAME=	${DISTNAME:L:S/-source//}
 
