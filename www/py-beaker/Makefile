@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/08 22:42:28 fgsch Exp $
 
 COMMENT =	session and caching library with wsgi middleware
 
-MODPY_EGG_VERSION = 1.5.3
+MODPY_EGG_VERSION = 1.5.4
 DISTNAME =	Beaker-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	0
 
 CATEGORIES =	www devel
 
@@ -21,13 +20,20 @@ MASTER_SITES =	${MASTER_SITE_PYPI:=B/Beaker/}
 
 MODULES =	lang/python
 
+RUN_DEPENDS =	security/py-crypto
 REGRESS_DEPENDS = databases/py-sqlalchemy \
+		  devel/py-coverage \
 		  devel/py-nose \
-		  www/py-webtest
+		  misc/py-memcached \
+		  www/py-webtest \
+		  ${RUN_DEPENDS}
 
 MODPY_SETUPTOOLS = Yes
 
-do-regress:
-	cd ${WRKSRC} && env PYTHONPATH=. ${LOCALBASE}/bin/nosetests
+# needs a running memcached instance in 127.0.0.1:11211
+REGRESS_IS_INTERACTIVE = Yes
+
+pre-regress:
+	perl -pi -e 's|pycryptopp,||g' ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
