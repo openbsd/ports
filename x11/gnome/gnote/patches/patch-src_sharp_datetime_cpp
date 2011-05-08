@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_sharp_datetime_cpp,v 1.1.1.1 2011/05/06 11:25:46 jasper Exp $
+$OpenBSD: patch-src_sharp_datetime_cpp,v 1.2 2011/05/08 20:38:46 jasper Exp $
 
 Incorrect arguments to localtime_r(3) break build
-https://bugzilla.gnome.org/show_bug.cgi?id=649472
+Fixes bug 649472.
+
+Upstream git: 612cf8e96aaa119d88a4ecc302fc98e3fa53f9c2
 
 --- src/sharp/datetime.cpp.orig	Thu May  5 18:30:30 2011
 +++ src/sharp/datetime.cpp	Thu May  5 18:31:41 2011
