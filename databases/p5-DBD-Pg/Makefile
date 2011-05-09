@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.60 2011/01/06 14:12:16 pea Exp $
+# $OpenBSD: Makefile,v 1.61 2011/05/09 13:59:50 pea Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	access to PostgreSQL databases through the DBI
 
 MODULES=	cpan
-DISTNAME=	DBD-Pg-2.17.2
+DISTNAME=	DBD-Pg-2.18.0
 CATEGORIES=	databases
-USE_GROFF =	Yes
 
 LIB_DEPENDS=	databases/postgresql
-RUN_DEPENDS=	databases/p5-DBI
+RUN_DEPENDS=	databases/p5-DBI>=1.52
 BUILD_DEPENDS=	${RUN_DEPENDS}
 REGRESS_DEPENDS=databases/postgresql,-server \
 		devel/p5-Test-Warn
