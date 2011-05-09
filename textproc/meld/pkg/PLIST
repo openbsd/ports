@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/09/11 07:00:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/05/09 17:38:56 shadchin Exp $
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
 lib/python${MODPY_VERSION}/site-packages/meld/meld/
@@ -29,12 +29,18 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/meldapp.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/melddoc.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/melddoc.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/melddoc.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/meldwindow.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/meldwindow.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/meldwindow.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/merge.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/merge.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/merge.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/misc.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/misc.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/misc.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/patchdialog.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/patchdialog.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/patchdialog.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/paths.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/paths.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/paths.pyo
@@ -51,15 +57,24 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/__init__.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/emblemcellrenderer.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/emblemcellrenderer.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/emblemcellrenderer.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/findbar.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/findbar.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/findbar.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/gladesupport.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/gladesupport.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/gladesupport.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/gnomeglade.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/gnomeglade.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/gnomeglade.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/historyentry.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/historyentry.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/historyentry.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/listwidget.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/listwidget.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/listwidget.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/msgarea.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/msgarea.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/ui/msgarea.pyo
@@ -76,6 +91,9 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/util/
 lib/python${MODPY_VERSION}/site-packages/meld/meld/util/__init__.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/util/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/util/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/util/namedtuple.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/util/namedtuple.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/util/namedtuple.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/util/prefs.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/util/prefs.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/util/prefs.pyo
@@ -104,6 +122,9 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/cvs.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/darcs.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/darcs.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/darcs.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/fossil.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/fossil.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/fossil.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/git.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/git.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vc/git.pyo
@@ -145,7 +166,9 @@ share/icons/hicolor/scalable/apps/meld.svg
 share/locale/ar/LC_MESSAGES/meld.mo
 share/locale/bg/LC_MESSAGES/meld.mo
 share/locale/ca/LC_MESSAGES/meld.mo
+share/locale/ca@valencia/LC_MESSAGES/meld.mo
 share/locale/cs/LC_MESSAGES/meld.mo
+share/locale/da/LC_MESSAGES/meld.mo
 share/locale/de/LC_MESSAGES/meld.mo
 share/locale/dz/LC_MESSAGES/meld.mo
 share/locale/el/LC_MESSAGES/meld.mo
@@ -183,20 +206,13 @@ share/meld/icons/button_apply1.xpm
 share/meld/icons/button_copy0.xpm
 share/meld/icons/button_copy1.xpm
 share/meld/icons/button_delete.xpm
+share/meld/icons/emblem-meld-newer-file.png
 share/meld/icons/filter-ignored-24.png
 share/meld/icons/filter-modified-24.png
 share/meld/icons/filter-nonvc-24.png
 share/meld/icons/filter-normal-24.png
-share/meld/icons/icon.png
-share/meld/icons/tree-file-changed.png
-share/meld/icons/tree-file-missing.png
-share/meld/icons/tree-file-new.png
-share/meld/icons/tree-file-newer.png
-share/meld/icons/tree-file-normal.png
-share/meld/icons/tree-folder-changed.png
-share/meld/icons/tree-folder-missing.png
-share/meld/icons/tree-folder-new.png
-share/meld/icons/tree-folder-normal.png
+share/meld/icons/meld-locked.png
+share/meld/icons/meld-unlocked.png
 share/meld/icons/vc-add-24.png
 share/meld/icons/vc-checkout-24.png
 share/meld/icons/vc-commit-24.png
@@ -205,21 +221,22 @@ share/meld/icons/vc-remove-24.png
 share/meld/icons/vc-resolve-24.png
 share/meld/icons/vc-update-24.png
 share/meld/ui/
+share/meld/ui/EditableList.ui
 share/meld/ui/dirdiff-ui.xml
-share/meld/ui/dirdiff.glade
+share/meld/ui/dirdiff.ui
 share/meld/ui/filediff-ui.xml
-share/meld/ui/filediff.glade
-share/meld/ui/findbar.glade
+share/meld/ui/filediff.ui
+share/meld/ui/findbar.ui
 share/meld/ui/meldapp-ui.xml
-share/meld/ui/meldapp.glade
-share/meld/ui/preferences.glade
+share/meld/ui/meldapp.ui
+share/meld/ui/patch-dialog.ui
+share/meld/ui/preferences.ui
 share/meld/ui/vcview-ui.xml
-share/meld/ui/vcview.glade
+share/meld/ui/vcview.ui
 share/omf/meld/
 share/omf/meld/meld-C.omf
 share/omf/meld/meld-es.omf
 share/omf/meld/meld-fr.omf
-share/pixmaps/meld.png
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database

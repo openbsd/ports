@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/05/09 17:38:56 shadchin Exp $
 
 COMMENT=	graphical diff and merge tool
 
-GNOME_VERSION=	1.4.0
+GNOME_VERSION=	1.5.1
 GNOME_PROJECT=	meld
-
-REVISION=	0
 
 CATEGORIES=	textproc x11
 
@@ -32,7 +30,9 @@ CONFIGURE_STYLE=none
 NO_REGRESS=	yes
 MAKE_ENV=	PYTHON=${MODPY_BIN}
 
+MODPY_ADJ_FILES=bin/meld
+
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/bin/meld ${WRKSRC}/INSTALL
+	${SUBST_CMD} ${WRKSRC}/INSTALL
 
 .include <bsd.port.mk>
