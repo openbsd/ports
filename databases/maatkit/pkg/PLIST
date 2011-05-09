@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/09/22 10:14:25 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/05/09 13:53:10 giovanni Exp $
 bin/mk-archiver
 bin/mk-checksum-filter
+bin/mk-config-diff
 bin/mk-deadlock-logger
 bin/mk-duplicate-key-checker
 bin/mk-error-log
@@ -27,6 +28,8 @@ bin/mk-slave-prefetch
 bin/mk-slave-restart
 bin/mk-table-checksum
 bin/mk-table-sync
+bin/mk-table-usage
+bin/mk-tcp-model
 bin/mk-upgrade
 bin/mk-variable-advisor
 bin/mk-visual-explain
@@ -34,6 +37,7 @@ ${P5SITE}/maatkit.pod
 @man man/man1/maatkit.1
 @man man/man1/mk-archiver.1
 @man man/man1/mk-checksum-filter.1
+@man man/man1/mk-config-diff.1
 @man man/man1/mk-deadlock-logger.1
 @man man/man1/mk-duplicate-key-checker.1
 @man man/man1/mk-error-log.1
@@ -60,6 +64,8 @@ ${P5SITE}/maatkit.pod
 @man man/man1/mk-slave-restart.1
 @man man/man1/mk-table-checksum.1
 @man man/man1/mk-table-sync.1
+@man man/man1/mk-table-usage.1
+@man man/man1/mk-tcp-model.1
 @man man/man1/mk-upgrade.1
 @man man/man1/mk-variable-advisor.1
 @man man/man1/mk-visual-explain.1
