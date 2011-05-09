@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2011/04/02 16:56:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/05/09 15:25:21 ajacoutot Exp $
 
 COMMENT=	follow GNOME development activity
 
 GNOME_PROJECT=	gnome-development-monitor
-GNOME_VERSION=	0.1
-REVISION=	2
+# git pull from 20110508
+GNOME_VERSION=	0.1.1
 
 CATEGORIES=	devel
 
@@ -31,6 +31,8 @@ PKG_ARCH=	*
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
+MODPY_ADJ_FILES=gnome.py
+
 BASE=		gnome.py gnome.ui loading.tmpl pygooglechart.py \
 		summary.tmpl
 INC=		footer.tmpl header.tmpl
@@ -38,7 +40,6 @@ IMG=		gnome.svg
 DOC=		README.md
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/gnome.py
 	${SUBST_CMD} -c ${FILESDIR}/gnome-development-monitor.sh \
 		${WRKSRC}/gnome-development-monitor
 

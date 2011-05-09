@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/01/11 15:01:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/09 15:25:21 ajacoutot Exp $
 bin/gnome-development-monitor
 share/applications/gnome-development-monitor.desktop
 share/doc/gnome-development-monitor/
@@ -12,7 +12,6 @@ share/gnome-development-monitor/inc/header.tmpl
 share/gnome-development-monitor/loading.tmpl
 share/gnome-development-monitor/pygooglechart.py
 share/gnome-development-monitor/summary.tmpl
-share/pixmaps/
 share/pixmaps/gnome.svg
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
