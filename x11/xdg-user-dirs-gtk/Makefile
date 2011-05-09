@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/10 10:26:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/05/09 17:03:37 ajacoutot Exp $
 
 COMMENT=	integration of xdg-user-dirs into GNOME/gtk+
 
 GNOME_PROJECT=	xdg-user-dirs-gtk
 GNOME_VERSION=	0.8
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	x11 devel
 
