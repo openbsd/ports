@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.80 2011/03/10 12:07:24 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.81 2011/05/09 21:56:13 sthen Exp $
 
 COMMENT=	fast, secure sendmail replacement
 
@@ -8,10 +8,10 @@ CATEGORIES=	mail
 
 MASTER_SITE_POSTFIX= \
 		http://ftp.porcupine.org/mirrors/postfix-release/ \
+		http://de.postfix.org/ftpmirror/ \
+		http://mirror.tje.me.uk/pub/mirrors/postfix-release/ \
+		http://mirror.postfix.jp/postfix-release/ \
 		ftp://ftp.porcupine.org/mirrors/postfix-release/ \
-		ftp://ftp.merit.edu/postfix/ \
-		ftp://ftp.sunet.se/pub/unix/mail/postfix/ \
-		ftp://ftp.tau.ac.il/pub/unix/mail/postfix/ \
 		ftp://ftp.cs.uu.nl/mirror/postfix/postfix-release/
 
 DIST_SUBDIR=	postfix
