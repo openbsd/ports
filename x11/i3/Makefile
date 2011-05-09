@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/05/06 14:14:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2011/05/09 11:03:40 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
-DISTNAME =	i3-3.e-bf2
-PKGNAME =	i3-3.5.2
-REVISION =	3
+DISTNAME =	i3-3.e-bf3
+PKGNAME =	i3-3.5.3
 
 CATEGORIES =	x11
 
@@ -20,8 +19,8 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =   Yes
 
 WANTLIB +=	X11 c ev m xcb xcb-atom xcb-aux xcb-event
-WANTLIB +=	xcb-icccm xcb-keysyms xcb-property xcb-randr
-WANTLIB +=	xcb-xinerama yajl
+WANTLIB +=	xcb-icccm xcb-keysyms xcb-randr xcb-xinerama
+WANTLIB +=	yajl
 
 MODULES =	converters/libiconv
 LIB_DEPENDS =	devel/libev \
@@ -37,6 +36,10 @@ USE_GMAKE =	Yes
 USE_GROFF =	Yes
 
 NO_REGRESS =	Yes
+
+.if defined(DEBUG)
+MAKE_FLAGS +=	DEBUG=1
+.endif
 
 FAKE_FLAGS =	PREFIX=${PREFIX} \
 		SYSCONFDIR=${PREFIX}/share/examples \

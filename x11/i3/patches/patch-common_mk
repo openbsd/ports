@@ -1,9 +1,10 @@
-$OpenBSD: patch-common_mk,v 1.3 2011/03/14 12:55:18 dcoppa Exp $
---- common.mk.orig	Wed Jan 19 21:26:43 2011
-+++ common.mk	Mon Mar 14 13:39:50 2011
+$OpenBSD: patch-common_mk,v 1.4 2011/05/09 11:03:40 dcoppa Exp $
+--- common.mk.orig	Sun May  8 14:20:48 2011
++++ common.mk	Mon May  9 12:01:55 2011
 @@ -1,12 +1,12 @@
  UNAME=$(shell uname)
- DEBUG=1
+-DEBUG=1
++DEBUG=0
  INSTALL=install
 -PREFIX=/usr
 -ifeq ($(PREFIX),/usr)
@@ -16,8 +17,8 @@ $OpenBSD: patch-common_mk,v 1.3 2011/03/14 12:55:18 dcoppa Exp $
 +ifndef SYSCONFDIR
 +  SYSCONFDIR=/etc
 +endif
- GIT_VERSION="3.e-bf2 (2011-01-19)"
- VERSION=3.e-bf2
+ GIT_VERSION="3.e-bf3 (2011-05-08)"
+ VERSION=3.e-bf3
  
 @@ -17,7 +17,7 @@ CFLAGS += -Wall
  # We don’t want unused-parameter because of the use of many callbacks
@@ -28,7 +29,7 @@ $OpenBSD: patch-common_mk,v 1.3 2011/03/14 12:55:18 dcoppa Exp $
  CFLAGS += -DI3_VERSION=\"${GIT_VERSION}\"
  
  # Check if pkg-config is installed, because without pkg-config, the following
-@@ -49,7 +49,7 @@ LDFLAGS += -lxcb
+@@ -53,7 +53,7 @@ LDFLAGS += -lxcb
  LDFLAGS += -lyajl
  LDFLAGS += -lX11
  LDFLAGS += -lev
@@ -37,7 +38,7 @@ $OpenBSD: patch-common_mk,v 1.3 2011/03/14 12:55:18 dcoppa Exp $
  
  ifeq ($(UNAME),NetBSD)
  # We need -idirafter instead of -I to prefer the system’s iconv over GNU libiconv
-@@ -78,9 +78,6 @@ CFLAGS += -g3
+@@ -86,9 +86,6 @@ CFLAGS += -g3
  else
  CFLAGS += -O2
  endif
