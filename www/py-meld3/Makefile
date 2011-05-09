@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2011/05/09 19:19:24 fgsch Exp $
 
 COMMENT =	html/xml templating engine
 
-MODPY_EGG_VERSION = 0.6.6
+MODPY_EGG_VERSION = 0.6.7
 DISTNAME =	meld3-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	0
 
 CATEGORIES =	www
 
@@ -17,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	http://dist.repoze.org/meld3/
+MASTER_SITES =	${MASTER_SITE_PYPI:=m/meld3/}
 
 MODULES =	lang/python
 
