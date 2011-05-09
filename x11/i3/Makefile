@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2011/05/09 11:03:40 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.18 2011/05/09 11:33:35 dcoppa Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-3.e-bf3
 PKGNAME =	i3-3.5.3
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -33,7 +34,6 @@ RUN_DEPENDS =	x11/dmenu \
 		x11/p5-AnyEvent-I3
 
 USE_GMAKE =	Yes
-USE_GROFF =	Yes
 
 NO_REGRESS =	Yes
 

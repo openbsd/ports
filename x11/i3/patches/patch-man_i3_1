@@ -1,0 +1,21 @@
+$OpenBSD: patch-man_i3_1,v 1.1 2011/05/09 11:33:35 dcoppa Exp $
+--- man/i3.1.orig	Mon May  9 13:16:58 2011
++++ man/i3.1	Mon May  9 13:17:26 2011
+@@ -252,7 +252,7 @@ When starting, i3 looks for configuration files in the
+ .sp
+ You can specify a custom path using the \-c option\&.
+ .PP
+-\fBSample configuration\fR. 
++\fBSample configuration\fR.
+ .sp
+ .if n \{\
+ .RS 4
+@@ -349,7 +349,7 @@ bind Mod1+Shift+11 2
+ .sp
+ This file is where you should configure your locales and start i3\&. It is run by your login manager (xdm, slim, gdm, \&...) as soon as you login\&.
+ .PP
+-\fBSample xsession\fR. 
++\fBSample xsession\fR.
+ .sp
+ .if n \{\
+ .RS 4
