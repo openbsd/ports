@@ -1,15 +1,16 @@
-$OpenBSD: patch-maildir_configure,v 1.1 2010/04/21 07:18:25 giovanni Exp $
---- maildir/configure.orig	Sun Nov 22 15:45:17 2009
-+++ maildir/configure	Tue Mar 30 11:23:32 2010
-@@ -18366,7 +18366,6 @@ if test "${ac_cv_lib_fam_FAMOpen+set}" = set; then
+$OpenBSD: patch-maildir_configure,v 1.2 2011/05/09 09:30:26 giovanni Exp $
+--- maildir/configure.orig	Mon Apr  4 17:04:53 2011
++++ maildir/configure	Wed Apr 13 15:58:52 2011
+@@ -15904,7 +15904,7 @@ if test "${ac_cv_lib_fam_FAMOpen+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lfam  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -18430,7 +18429,7 @@ if test "x$ac_cv_lib_fam_FAMOpen" = x""yes; then
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -15939,7 +15939,7 @@ if test "x$ac_cv_lib_fam_FAMOpen" = x""yes; then :
  			LIBFAM=-lfam
  
  cat >>confdefs.h <<_ACEOF
@@ -18,11 +19,11 @@ $OpenBSD: patch-maildir_configure,v 1.1 2010/04/21 07:18:25 giovanni Exp $
  _ACEOF
  
  
-@@ -18593,7 +18592,6 @@ fi
+@@ -15969,7 +15969,6 @@ fi
  
  
  
 -echo "$LIBFAM" >maildir.libdeps
  
- { $as_echo "$as_me:$LINENO: checking for missing gethostname prototype" >&5
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for missing gethostname prototype" >&5
  $as_echo_n "checking for missing gethostname prototype... " >&6; }
