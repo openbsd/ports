@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2011/04/22 12:54:32 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.30 2011/05/09 08:04:13 giovanni Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -98,6 +98,7 @@ piwik/core/ExceptionHandler.php
 piwik/core/FrontController.php
 piwik/core/HTMLPurifier.php
 piwik/core/Http.php
+piwik/core/IP.php
 piwik/core/Loader.php
 piwik/core/Log/
 piwik/core/Log.php
@@ -128,6 +129,10 @@ piwik/core/PluginsFunctions/WidgetsList.php
 piwik/core/PluginsManager.php
 piwik/core/ProxyHeaders.php
 piwik/core/QuickForm2.php
+piwik/core/ReportRenderer/
+piwik/core/ReportRenderer.php
+piwik/core/ReportRenderer/Html.php
+piwik/core/ReportRenderer/Pdf.php
 piwik/core/ScheduledTask.php
 piwik/core/ScheduledTime/
 piwik/core/ScheduledTime.php
@@ -221,6 +226,8 @@ piwik/core/Updates/1.2-rc2.php
 piwik/core/Updates/1.2.3.php
 piwik/core/Updates/1.2.5-rc1.php
 piwik/core/Updates/1.2.5-rc7.php
+piwik/core/Updates/1.4-rc1.php
+piwik/core/Updates/1.4-rc2.php
 piwik/core/Url.php
 piwik/core/Version.php
 piwik/core/View.php
@@ -397,6 +404,24 @@ piwik/libs/PclZip/pclzip.lib.php
 piwik/libs/PiwikTracker/
 piwik/libs/PiwikTracker/LICENSE.txt
 piwik/libs/PiwikTracker/PiwikTracker.php
+piwik/libs/PiwikTracker/java/
+piwik/libs/PiwikTracker/java/pom.xml
+piwik/libs/PiwikTracker/java/src/
+piwik/libs/PiwikTracker/java/src/main/
+piwik/libs/PiwikTracker/java/src/main/java/
+piwik/libs/PiwikTracker/java/src/main/java/org/
+piwik/libs/PiwikTracker/java/src/main/java/org/piwik/
+piwik/libs/PiwikTracker/java/src/main/java/org/piwik/EBrowserPlugins.java
+piwik/libs/PiwikTracker/java/src/main/java/org/piwik/IPiwikTracker.java
+piwik/libs/PiwikTracker/java/src/main/java/org/piwik/PiwikException.java
+piwik/libs/PiwikTracker/java/src/main/java/org/piwik/ResponseData.java
+piwik/libs/PiwikTracker/java/src/main/java/org/piwik/SimplePiwikTracker.java
+piwik/libs/PiwikTracker/java/src/main/resources/
+piwik/libs/PiwikTracker/java/src/test/
+piwik/libs/PiwikTracker/java/src/test/java/
+piwik/libs/PiwikTracker/java/src/test/java/org/
+piwik/libs/PiwikTracker/java/src/test/java/org/piwik/
+piwik/libs/PiwikTracker/java/src/test/java/org/piwik/SimplePiwikTrackerTest.java
 piwik/libs/README_LIBS
 piwik/libs/Smarty/
 piwik/libs/Smarty/Config_File.class.php
@@ -1171,8 +1196,6 @@ piwik/libs/upgradephp/upgrade.php
 piwik/misc/
 piwik/misc/ExamplePiwikTracker.php
 piwik/misc/How to install Piwik.html
-piwik/misc/api_community_sticker.php
-piwik/misc/api_example_marketing.php
 piwik/misc/api_internal_call.php
 piwik/misc/api_rest_call.php
 piwik/misc/cron/
@@ -1242,6 +1265,9 @@ piwik/plugins/CoreHome/templates/date.js
 piwik/plugins/CoreHome/templates/graph.tpl
 piwik/plugins/CoreHome/templates/header.tpl
 piwik/plugins/CoreHome/templates/header_message.tpl
+piwik/plugins/CoreHome/templates/html_report_body.tpl
+piwik/plugins/CoreHome/templates/html_report_footer.tpl
+piwik/plugins/CoreHome/templates/html_report_header.tpl
 piwik/plugins/CoreHome/templates/images/
 piwik/plugins/CoreHome/templates/images/bg_header.jpg
 piwik/plugins/CoreHome/templates/images/bullet1.gif
@@ -1456,7 +1482,6 @@ piwik/plugins/MultiSites/templates/styles.css
 piwik/plugins/PDFReports/
 piwik/plugins/PDFReports/API.php
 piwik/plugins/PDFReports/Controller.php
-piwik/plugins/PDFReports/PDFRenderer.php
 piwik/plugins/PDFReports/PDFReports.php
 piwik/plugins/PDFReports/config/
 piwik/plugins/PDFReports/config/tcpdf_config.php
@@ -1524,6 +1549,7 @@ piwik/plugins/Referers/images/searchEngines/images.yandex.com.png
 piwik/plugins/Referers/images/searchEngines/infospace.com.png
 piwik/plugins/Referers/images/searchEngines/iwon.ask.com.png
 piwik/plugins/Referers/images/searchEngines/ixquick.com.png
+piwik/plugins/Referers/images/searchEngines/junglekey.com.png
 piwik/plugins/Referers/images/searchEngines/jyxo.1188.cz.png
 piwik/plugins/Referers/images/searchEngines/ko.search.need2find.com.png
 piwik/plugins/Referers/images/searchEngines/lo.st.png
@@ -1791,6 +1817,7 @@ piwik/plugins/UserCountry/flags/bl.png
 piwik/plugins/UserCountry/flags/bm.png
 piwik/plugins/UserCountry/flags/bn.png
 piwik/plugins/UserCountry/flags/bo.png
+piwik/plugins/UserCountry/flags/bq.png
 piwik/plugins/UserCountry/flags/br.png
 piwik/plugins/UserCountry/flags/bs.png
 piwik/plugins/UserCountry/flags/bt.png
@@ -1817,6 +1844,7 @@ piwik/plugins/UserCountry/flags/cr.png
 piwik/plugins/UserCountry/flags/cs.png
 piwik/plugins/UserCountry/flags/cu.png
 piwik/plugins/UserCountry/flags/cv.png
+piwik/plugins/UserCountry/flags/cw.png
 piwik/plugins/UserCountry/flags/cx.png
 piwik/plugins/UserCountry/flags/cy.png
 piwik/plugins/UserCountry/flags/cz.png
@@ -1982,6 +2010,7 @@ piwik/plugins/UserCountry/flags/sr.png
 piwik/plugins/UserCountry/flags/st.png
 piwik/plugins/UserCountry/flags/su.png
 piwik/plugins/UserCountry/flags/sv.png
+piwik/plugins/UserCountry/flags/sx.png
 piwik/plugins/UserCountry/flags/sy.png
 piwik/plugins/UserCountry/flags/sz.png
 piwik/plugins/UserCountry/flags/ta.png
@@ -2246,6 +2275,7 @@ piwik/themes/default/images/expanded_arrows.gif
 piwik/themes/default/images/export.png
 piwik/themes/default/images/feed.png
 piwik/themes/default/images/goal.png
+piwik/themes/default/images/html_icon.png
 piwik/themes/default/images/ico_alert.png
 piwik/themes/default/images/ico_delete.png
 piwik/themes/default/images/ico_edit.png
