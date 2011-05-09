@@ -1,10 +1,10 @@
-$OpenBSD: patch-man_Makefile_in,v 1.8 2010/06/30 17:10:08 naddy Exp $
+$OpenBSD: patch-man_Makefile_in,v 1.9 2011/05/09 08:14:43 giovanni Exp $
 
 Replace .3tiff man page suffix with standard .3
 
---- man/Makefile.in.orig	Tue Jun 15 20:58:54 2010
-+++ man/Makefile.in	Sat Jun 26 23:53:39 2010
-@@ -406,7 +406,7 @@ install-man3: $(dist_man3_MANS)
+--- man/Makefile.in.orig	Sat Apr  9 22:00:49 2011
++++ man/Makefile.in	Thu Apr 21 15:35:54 2011
+@@ -403,7 +403,7 @@ install-man3: $(dist_man3_MANS)
  	  if test -f $$p; then d=; else d="$(srcdir)/"; fi; \
  	  echo "$$d$$p"; echo "$$p"; \
  	done | \
