@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.110 2011/04/28 13:07:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.111 2011/05/09 12:37:04 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -8,7 +8,8 @@ DISTNAME=		glib-${VERSION}
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-docs=		0
 
 CATEGORIES=		devel
 
@@ -79,7 +80,10 @@ pre-configure:
 	perl -pi -e "s,/usr/local,${LOCALBASE},g;" \
 		-e "s,/usr/share,${LOCALBASE}/share,g;" \
 		-e "s,/etc/xdg,${SYSCONFDIR}/xdg,g" \
-		${WRKSRC}/glib/gutils.c ${WRKSRC}/gio/xdgmime/xdgmime.c
+		${WRKSRC}/glib/gutils.c ${WRKSRC}/gio/xdgmime/xdgmime.c \
+		${WRKSRC}/gio/tests/desktop-app-info.c \
+		${WRKSRC}/docs/reference/gio/html/glib-compile-schemas.html \
+		${WRKSRC}/docs/reference/gio/glib-compile-schemas.1
 	perl -pi -e 's,/var/lib/dbus/machine-id,${SYSCONFDIR}/dbus-1/machine-id,g' \
 		${WRKSRC}/gio/gdbusconnection.c \
 		${WRKSRC}/gio/gdbusaddress.c \
