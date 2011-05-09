@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/05/08 12:20:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/05/09 08:43:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,13 +6,10 @@ COMMENT-main=	configuration backend system
 COMMENT-editor=	editor for the dconf configuration storage system
 
 GNOME_PROJECT=	dconf
-GNOME_VERSION=	0.7.4
+GNOME_VERSION=	0.7.5
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-editor=	dconf-editor-${GNOME_VERSION}
-
-REVISION-main=	1
-REVISION-editor=1
 
 SHARED_LIBS+=	dconf        0.0 # 0.0.0
 SHARED_LIBS+=	dconf-dbus-1 0.0 # 0.0.0
@@ -48,7 +45,8 @@ PSEUDO_FLAVORS=	no_editor
 FLAVOR?=
 
 MODULES=	devel/gettext \
-		x11/gnome
+		x11/gnome \
+		devel/dconf
 
 BUILD_DEPENDS=	lang/vala>=0.12.0
 
@@ -57,7 +55,7 @@ LIB_DEPENDS-main=	devel/glib2 \
 			x11/dbus
 
 RUN_DEPENDS-editor=	${MODGETTEXT_RUN_DEPENDS} \
-			${BASE_PKGPATH},-main \
+			${MODDCONF_RUN_DEPENDS} \
 			devel/desktop-file-utils
 LIB_DEPENDS-editor=	x11/gtk+3
 
@@ -77,7 +75,6 @@ CONFIGURE_ARGS +=	--enable-editor
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/{bin,client,editor}/Makefile.in \
-		${WRKSRC}/editor/dconf-model.vala \
 		${WRKSRC}/dbus-1/Makefile.in
 
 .include <bsd.port.mk>
