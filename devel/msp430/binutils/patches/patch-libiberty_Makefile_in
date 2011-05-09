@@ -1,7 +1,7 @@
-$OpenBSD: patch-libiberty_Makefile_in,v 1.1.1.1 2010/12/01 09:06:53 jasper Exp $
---- libiberty/Makefile.in.orig	Mon Nov 29 19:39:00 2010
-+++ libiberty/Makefile.in	Mon Nov 29 19:39:17 2010
-@@ -321,7 +321,8 @@ libiberty.html : $(srcdir)/libiberty.texi $(TEXISRC)
+$OpenBSD: patch-libiberty_Makefile_in,v 1.2 2011/05/09 08:58:56 jasper Exp $
+--- libiberty/Makefile.in.orig	Tue Nov  2 16:20:46 2010
++++ libiberty/Makefile.in	Mon Apr 25 21:47:07 2011
+@@ -340,7 +340,8 @@ libiberty.html : $(srcdir)/libiberty.texi $(TEXISRC)
  @MAINT@	echo stamp > stamp-functions
  
  INSTALL_DEST = @INSTALL_DEST@

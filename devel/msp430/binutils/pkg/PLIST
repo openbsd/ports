@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/01 09:06:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/09 08:58:56 jasper Exp $
 @bin bin/msp430-addr2line
 @bin bin/msp430-ar
 @bin bin/msp430-as
 @bin bin/msp430-c++filt
+@bin bin/msp430-elfedit
 @bin bin/msp430-gprof
 @bin bin/msp430-ld
+@bin bin/msp430-ld.bfd
 @bin bin/msp430-nm
 @bin bin/msp430-objcopy
 @bin bin/msp430-objdump
@@ -25,6 +27,7 @@
 @man man/man1/msp430-as.1
 @man man/man1/msp430-c++filt.1
 @man man/man1/msp430-dlltool.1
+@man man/man1/msp430-elfedit.1
 @man man/man1/msp430-gprof.1
 @man man/man1/msp430-ld.1
 @man man/man1/msp430-nlmconv.1
@@ -43,6 +46,7 @@ msp430/bin/
 @bin msp430/bin/ar
 @bin msp430/bin/as
 @bin msp430/bin/ld
+@bin msp430/bin/ld.bfd
 @bin msp430/bin/nm
 @bin msp430/bin/objcopy
 @bin msp430/bin/objdump
@@ -300,6 +304,16 @@ msp430/lib/ldscripts/msp430x2131.xbn
 msp430/lib/ldscripts/msp430x2131.xn
 msp430/lib/ldscripts/msp430x2131.xr
 msp430/lib/ldscripts/msp430x2131.xu
+msp430/lib/ldscripts/msp430x2132.x
+msp430/lib/ldscripts/msp430x2132.xbn
+msp430/lib/ldscripts/msp430x2132.xn
+msp430/lib/ldscripts/msp430x2132.xr
+msp430/lib/ldscripts/msp430x2132.xu
+msp430/lib/ldscripts/msp430x2201.x
+msp430/lib/ldscripts/msp430x2201.xbn
+msp430/lib/ldscripts/msp430x2201.xn
+msp430/lib/ldscripts/msp430x2201.xr
+msp430/lib/ldscripts/msp430x2201.xu
 msp430/lib/ldscripts/msp430x2211.x
 msp430/lib/ldscripts/msp430x2211.xbn
 msp430/lib/ldscripts/msp430x2211.xn
@@ -585,6 +599,11 @@ msp430/lib/ldscripts/msp430x449.xbn
 msp430/lib/ldscripts/msp430x449.xn
 msp430/lib/ldscripts/msp430x449.xr
 msp430/lib/ldscripts/msp430x449.xu
+msp430/lib/ldscripts/msp430x47163.x
+msp430/lib/ldscripts/msp430x47163.xbn
+msp430/lib/ldscripts/msp430x47163.xn
+msp430/lib/ldscripts/msp430x47163.xr
+msp430/lib/ldscripts/msp430x47163.xu
 msp430/lib/ldscripts/msp430x47166.x
 msp430/lib/ldscripts/msp430x47166.xbn
 msp430/lib/ldscripts/msp430x47166.xn
@@ -595,6 +614,11 @@ msp430/lib/ldscripts/msp430x47167.xbn
 msp430/lib/ldscripts/msp430x47167.xn
 msp430/lib/ldscripts/msp430x47167.xr
 msp430/lib/ldscripts/msp430x47167.xu
+msp430/lib/ldscripts/msp430x47173.x
+msp430/lib/ldscripts/msp430x47173.xbn
+msp430/lib/ldscripts/msp430x47173.xn
+msp430/lib/ldscripts/msp430x47173.xr
+msp430/lib/ldscripts/msp430x47173.xu
 msp430/lib/ldscripts/msp430x47176.x
 msp430/lib/ldscripts/msp430x47176.xbn
 msp430/lib/ldscripts/msp430x47176.xn
@@ -605,6 +629,11 @@ msp430/lib/ldscripts/msp430x47177.xbn
 msp430/lib/ldscripts/msp430x47177.xn
 msp430/lib/ldscripts/msp430x47177.xr
 msp430/lib/ldscripts/msp430x47177.xu
+msp430/lib/ldscripts/msp430x47183.x
+msp430/lib/ldscripts/msp430x47183.xbn
+msp430/lib/ldscripts/msp430x47183.xn
+msp430/lib/ldscripts/msp430x47183.xr
+msp430/lib/ldscripts/msp430x47183.xu
 msp430/lib/ldscripts/msp430x47186.x
 msp430/lib/ldscripts/msp430x47186.xbn
 msp430/lib/ldscripts/msp430x47186.xn
@@ -615,6 +644,11 @@ msp430/lib/ldscripts/msp430x47187.xbn
 msp430/lib/ldscripts/msp430x47187.xn
 msp430/lib/ldscripts/msp430x47187.xr
 msp430/lib/ldscripts/msp430x47187.xu
+msp430/lib/ldscripts/msp430x47193.x
+msp430/lib/ldscripts/msp430x47193.xbn
+msp430/lib/ldscripts/msp430x47193.xn
+msp430/lib/ldscripts/msp430x47193.xr
+msp430/lib/ldscripts/msp430x47193.xu
 msp430/lib/ldscripts/msp430x47196.x
 msp430/lib/ldscripts/msp430x47196.xbn
 msp430/lib/ldscripts/msp430x47196.xn
@@ -675,6 +709,56 @@ msp430/lib/ldscripts/msp430x5438.xbn
 msp430/lib/ldscripts/msp430x5438.xn
 msp430/lib/ldscripts/msp430x5438.xr
 msp430/lib/ldscripts/msp430x5438.xu
+msp430/lib/ldscripts/msp430x5500.x
+msp430/lib/ldscripts/msp430x5500.xbn
+msp430/lib/ldscripts/msp430x5500.xn
+msp430/lib/ldscripts/msp430x5500.xr
+msp430/lib/ldscripts/msp430x5500.xu
+msp430/lib/ldscripts/msp430x5501.x
+msp430/lib/ldscripts/msp430x5501.xbn
+msp430/lib/ldscripts/msp430x5501.xn
+msp430/lib/ldscripts/msp430x5501.xr
+msp430/lib/ldscripts/msp430x5501.xu
+msp430/lib/ldscripts/msp430x5502.x
+msp430/lib/ldscripts/msp430x5502.xbn
+msp430/lib/ldscripts/msp430x5502.xn
+msp430/lib/ldscripts/msp430x5502.xr
+msp430/lib/ldscripts/msp430x5502.xu
+msp430/lib/ldscripts/msp430x5503.x
+msp430/lib/ldscripts/msp430x5503.xbn
+msp430/lib/ldscripts/msp430x5503.xn
+msp430/lib/ldscripts/msp430x5503.xr
+msp430/lib/ldscripts/msp430x5503.xu
+msp430/lib/ldscripts/msp430x5504.x
+msp430/lib/ldscripts/msp430x5504.xbn
+msp430/lib/ldscripts/msp430x5504.xn
+msp430/lib/ldscripts/msp430x5504.xr
+msp430/lib/ldscripts/msp430x5504.xu
+msp430/lib/ldscripts/msp430x5505.x
+msp430/lib/ldscripts/msp430x5505.xbn
+msp430/lib/ldscripts/msp430x5505.xn
+msp430/lib/ldscripts/msp430x5505.xr
+msp430/lib/ldscripts/msp430x5505.xu
+msp430/lib/ldscripts/msp430x5506.x
+msp430/lib/ldscripts/msp430x5506.xbn
+msp430/lib/ldscripts/msp430x5506.xn
+msp430/lib/ldscripts/msp430x5506.xr
+msp430/lib/ldscripts/msp430x5506.xu
+msp430/lib/ldscripts/msp430x5507.x
+msp430/lib/ldscripts/msp430x5507.xbn
+msp430/lib/ldscripts/msp430x5507.xn
+msp430/lib/ldscripts/msp430x5507.xr
+msp430/lib/ldscripts/msp430x5507.xu
+msp430/lib/ldscripts/msp430x5508.x
+msp430/lib/ldscripts/msp430x5508.xbn
+msp430/lib/ldscripts/msp430x5508.xn
+msp430/lib/ldscripts/msp430x5508.xr
+msp430/lib/ldscripts/msp430x5508.xu
+msp430/lib/ldscripts/msp430x5509.x
+msp430/lib/ldscripts/msp430x5509.xbn
+msp430/lib/ldscripts/msp430x5509.xn
+msp430/lib/ldscripts/msp430x5509.xr
+msp430/lib/ldscripts/msp430x5509.xu
 msp430/lib/ldscripts/msp430x5510.x
 msp430/lib/ldscripts/msp430x5510.xbn
 msp430/lib/ldscripts/msp430x5510.xn

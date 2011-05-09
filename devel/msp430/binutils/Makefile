@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/01 09:06:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/09 08:58:55 jasper Exp $
 
 COMMENT=		GNU binutils for msp430
 
-V=			2.20
+V=			2.21
 DISTNAME=		binutils-$V
 PKGNAME=		${TARGET}-${DISTNAME}
 
