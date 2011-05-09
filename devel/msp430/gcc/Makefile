@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/04/27 17:30:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/09 08:59:19 jasper Exp $
 
 COMMENT=		GNU Compiler Collection for msp430
 
-VERSION=		4.4.4
+VERSION=		4.4.5
 DISTNAME=		gcc-${VERSION}
 PKGNAME=		${TARGET}-${DISTNAME}
-REVISION=		0
 
 MASTER_SITES= 		${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
 PATCHFILES=		gcc-${VERSION}.patch:0
@@ -16,7 +15,8 @@ DISTFILES=		gcc-core-${VERSION}${EXTRACT_SUFX} \
 
 WANTLIB +=		c gmp mpfr
 
-BUILD_DEPENDS=		devel/msp430/binutils
+BUILD_DEPENDS=		${RUN_DEPENDS}
+RUN_DEPENDS=		devel/msp430/binutils>=2.21
 LIB_DEPENDS=            devel/gmp>=4.2 \
                         devel/mpfr
 
