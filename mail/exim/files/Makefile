@@ -249,6 +249,19 @@ SUPPORT_MBX=yes
 
 
 #------------------------------------------------------------------------------
+# See below for dynamic lookup modules.
+# LOOKUP_MODULE_DIR=/usr/lib/exim/lookups/
+# If not using package management but using this anyway, then think about how
+# you perform upgrades and revert them. You should consider the benefit of
+# embedding the Exim version number into LOOKUP_MODULE_DIR, so that you can
+# maintain two concurrent sets of modules.
+
+# To build a module dynamically, you'll need to define CFLAGS_DYNAMIC for
+# your platform.  Eg:
+# CFLAGS_DYNAMIC=-shared -rdynamic
+# CFLAGS_DYNAMIC=-shared -rdynamic -fPIC
+
+#------------------------------------------------------------------------------
 # These settings determine which file and database lookup methods are included
 # in the binary. See the manual chapter entitled "File and database lookups"
 # for discussion. DBM and lsearch (linear search) are included by default. If
@@ -256,6 +269,18 @@ SUPPORT_MBX=yes
 # LOOKUP_DNSDB does *not* refer to general mail routing using the DNS. It is
 # for the specialist case of using the DNS as a general database facility (not
 # common).
+# If set to "2" instead of "yes" then the corresponding lookup will be
+# built as a module and must be installed into LOOKUP_MODULE_DIR. You need to
+# add -export-dynamic -rdynamic to EXTRALIBS. You may also need to add -ldl to
+# EXTRALIBS so that dlopen() is available to Exim. You need to define
+# LOOKUP_MODULE_DIR above so the exim binary actually loads dynamic lookup
+# modules.
+# Also, instead of adding all the libraries/includes to LOOKUP_INCLUDE and
+# LOOKUP_LIBS, add them to the respective LOOKUP_*_INCLUDE and LOOKUP_*_LIBS
+# (where * is the name as given here in this list). That ensures that only
+# the dynamic library and not the exim binary will be linked against the
+# library.
+# NOTE: LDAP cannot be built as a module!
 
 LOOKUP_DBM=yes
 LOOKUP_LSEARCH=yes
@@ -503,7 +528,7 @@ FIXED_NEVER_USERS=root
 #
 # As a strictly transient measure to ease migration to 4.73, the
 # WHITELIST_D_MACROS value definies a colon-separated list of macro-names
-# which are permitted to be overriden from the command-line which will be
+# which are permitted to be overridden from the command-line which will be
 # honoured by the Exim user.  So these are macros that can persist to delivery
 # time.
 # Examples might be -DTLS or -DSPOOL=/some/dir.  The values on the
