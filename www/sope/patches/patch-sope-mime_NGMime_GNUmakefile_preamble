@@ -1,0 +1,22 @@
+$OpenBSD: patch-sope-mime_NGMime_GNUmakefile_preamble,v 1.1 2011/05/09 16:06:12 sebastia Exp $
+
+OpenBSD has strndup(3)
+
+--- sope-mime/NGMime/GNUmakefile.preamble.orig	Tue Nov  2 15:12:14 2010
++++ sope-mime/NGMime/GNUmakefile.preamble	Mon May  9 13:04:27 2011
+@@ -5,15 +5,6 @@ ADDITIONAL_CPPFLAGS += \
+ 	-DLIBRARY_MINOR_VERSION=${MINOR_VERSION} \
+ 	-DLIBRARY_SUBMINOR_VERSION=${SUBMINOR_VERSION} \
+ 
+-ifeq ($(patsubstr GNU/%,glibc,$(shell uname -o)),glibc)
+-ADDITIONAL_CPPFLAGS += \
+-        -DHAVE_STRNDUP
+-endif
+-
+-ifneq ($(findstring openbsd, $(GNUSTEP_TARGET_OS)), openbsd)
+-	ADDITIONAL_CPPFLAGS += -DHAVE_STRNDUP
+-endif
+-
+ NGMime_INCLUDE_DIRS += \
+ 	-I.. -I../..			\
+ 	-I../../sope-core/NGStreams/	\

@@ -1,0 +1,61 @@
+$OpenBSD: patch-sope-mime_NGMime_NGMimeRFC822DateHeaderFieldParser_m,v 1.1 2011/05/09 16:06:12 sebastia Exp $
+
+fix kind of random crasher in the webmail interface see bug #1022
+
+--- sope-mime/NGMime/NGMimeRFC822DateHeaderFieldParser.m.orig	Sat Dec 18 12:43:50 2010
++++ sope-mime/NGMime/NGMimeRFC822DateHeaderFieldParser.m	Mon May  9 13:04:55 2011
+@@ -19,10 +19,6 @@
+   02111-1307, USA.
+ */
+ 
+-#ifdef HAVE_STRNDUP
+-#define _GNU_SOURCE 1
+-#endif
+-
+ #include <string.h>
+ 
+ #include "NGMimeHeaderFieldParser.h"
+@@ -30,18 +26,6 @@
+ #include "NGMimeUtilities.h"
+ #include "common.h"
+ 
+-#ifndef HAVE_STRNDUP
+-char *strndup(const char *str, size_t len)
+-{
+-  char *dup = (char *)malloc(len+1);
+-  if (dup) {
+-    strncpy(dup,str,len);
+-    dup[len]= '\0';
+-  }
+-  return dup;
+-}
+-#endif
+-
+ @implementation NGMimeRFC822DateHeaderFieldParser
+ 
+ static NSTimeZone *gmt = nil;
+@@ -165,8 +149,11 @@ static NSTimeZone *parseTimeZone(const char *s, unsign
+       sign = -sign;
+     p++;
+   }
+-  digits = digitsString(p);
+-  p = digits;
++  digits = NULL;
++  if (strlen(p)) {
++    digits = digitsString(p);
++    p = digits;
++  }
+   remaining = strlen(p);
+   switch(remaining) {
+   case 6: /* hhmmss */
+@@ -186,7 +173,9 @@ static NSTimeZone *parseTimeZone(const char *s, unsign
+   default:
+     NSLog (@"parseTimeZone: cannot parse time notation '%s'", newString);
+   }
+-  free(digits);
++  if (digits != NULL) {
++    free(digits);
++  }
+ 
+   seconds += sign * (3600 * hours + 60 * minutes);
+   tz = [NSTimeZone timeZoneForSecondsFromGMT: seconds];
