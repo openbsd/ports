@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/01/19 16:22:31 sthen Exp $
+$OpenBSD: README,v 1.3 2011/05/09 15:54:56 ajacoutot Exp $
 
 README for OpenBSD users
 ------------------------
@@ -199,12 +199,12 @@ NOTE: amd64 hosts cannot use '-net user' without SEGV'ing, to work around
 	- preparation of the floppy image to force serial console mode is
 	  straightforward:
 
-		vnconfig svnd0 floppy49.fs
-		mount /dev/svnd0c /mnt
+		vnconfig vnd0 floppy49.fs
+		mount /dev/vnd0c /mnt
 		mkdir /mnt/etc
 		echo set tty com0 > /mnt/etc/boot.conf
 		umount /mnt
-		vnconfig -u svnd0
+		vnconfig -u vnd0
 
      .. be sure to choose 'yes' for setting com0 to be the serial console.
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2011/03/25 01:05:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2011/05/09 15:54:56 ajacoutot Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS =	i386 amd64 sparc64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	i386 amd64 sparc64
 COMMENT =		multi system emulator
 
 DISTNAME =		qemu-0.14.0
-REVISION =		1
+REVISION =		2
 CATEGORIES =		emulators
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=qemu/}
 
