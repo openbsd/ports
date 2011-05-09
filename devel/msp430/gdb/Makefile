@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/04/27 17:30:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/09 08:59:39 jasper Exp $
 
 COMMENT=		GNU debugger for msp430
 
-VERSION=		7.1
+VERSION=		7.2
 DISTNAME=		gdb-${VERSION}
 PKGNAME=		${TARGET}-${DISTNAME}
 
