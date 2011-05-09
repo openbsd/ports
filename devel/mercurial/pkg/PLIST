@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/03/28 00:11:34 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.19 2011/05/09 08:01:37 fgsch Exp $
 %%SHARED%%
 bin/hg
 lib/python${MODPY_VERSION}/site-packages/hgext/
@@ -311,6 +311,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templater.py
 lib/python${MODPY_VERSION}/site-packages/mercurial/templater.pyc
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/atom/
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/atom/bookmarkentry.tmpl
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/atom/bookmarks.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/atom/changelog.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/atom/changelogentry.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/atom/error.tmpl
@@ -323,6 +325,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/coal/
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/coal/header.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/coal/map
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/bookmarks.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/branches.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/changelog.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/gitweb/changelogentry.tmpl
@@ -350,6 +353,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/map-cmdline.compact
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/map-cmdline.default
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/map-cmdline.xml
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/bookmarks.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/branches.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/changelog.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/changelogentry.tmpl
@@ -373,6 +377,7 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/shortlog.t
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/summary.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/monoblue/tags.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/bookmarks.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/branches.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/changeset.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/paper/error.tmpl
@@ -404,6 +409,8 @@ lib/python${MODPY_VERSION}/site-packages/mercurial/templates/raw/manifest.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/raw/map
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/raw/notfound.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/rss/
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/rss/bookmarkentry.tmpl
+lib/python${MODPY_VERSION}/site-packages/mercurial/templates/rss/bookmarks.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/rss/changelog.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/rss/changelogentry.tmpl
 lib/python${MODPY_VERSION}/site-packages/mercurial/templates/rss/error.tmpl
