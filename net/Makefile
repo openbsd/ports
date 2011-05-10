@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.695 2011/05/10 16:19:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.696 2011/05/10 16:21:04 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -170,7 +170,6 @@
      SUBDIR += libnice
      SUBDIR += libnids
      SUBDIR += libpcapnav
-     SUBDIR += libproxy
      SUBDIR += libproxy,mozilla,webkit
      SUBDIR += librest
      SUBDIR += librsync
