@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/04/26 08:06:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/05/10 16:17:47 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -41,11 +41,12 @@ MODULES=		devel/cmake \
 			devel/gettext
 
 # do not enable webkit support by default because of cyclic dependency:
-# libproxy,-webkit -> webkit -> libsoup -> libproxy
-PSEUDO_FLAVORS=		webkit
+#     libproxy,-webkit -> webkit -> libsoup -> libproxy
+# do not enable mozilla support by default, xulrunner doesn't build on all arches
+PSEUDO_FLAVORS=		mozilla webkit
 FLAVOR?=
 
-MULTI_PACKAGES=		-main -gnome -mozilla
+MULTI_PACKAGES=		-main -gnome
 
 BUILD_DEPENDS=		devel/xulrunner/1.9,-devel>=1.9.1 \
 			lang/vala
@@ -90,11 +91,17 @@ CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS} -pthread" \
 			-DWITH_PYTHON:BOOL=ON \
 			-DWITH_PERL:BOOL=ON \
 			-DWITH_GNOME:BOOL=ON \
-			-DWITH_MOZJS:BOOL=ON \
 			-DWITH_VALA:BOOL=ON \
 			-DWITH_KDE4:BOOL=OFF \
 			-DWITH_DOTNET:BOOL=OFF \
 			-DWITH_NM:BOOL=OFF
+
+.if ${FLAVOR:L:Mmozilla}
+MULTI_PACKAGES +=	-mozilla
+CONFIGURE_ARGS +=	-DWITH_MOZJS:BOOL=ON
+.else
+CONFIGURE_ARGS +=	-DWITH_MOZJS:BOOL=OFF
+.endif
 
 .if ${FLAVOR:L:Mwebkit}
 MULTI_PACKAGES +=	-webkit
