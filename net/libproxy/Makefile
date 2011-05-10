@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/05/10 16:17:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/05/10 16:23:03 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -48,8 +48,7 @@ FLAVOR?=
 
 MULTI_PACKAGES=		-main -gnome
 
-BUILD_DEPENDS=		devel/xulrunner/1.9,-devel>=1.9.1 \
-			lang/vala
+BUILD_DEPENDS=		lang/vala
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
 
@@ -97,6 +96,7 @@ CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS} -pthread" \
 			-DWITH_NM:BOOL=OFF
 
 .if ${FLAVOR:L:Mmozilla}
+BUILD_DEPENDS +=	devel/xulrunner/1.9,-devel>=1.9.1
 MULTI_PACKAGES +=	-mozilla
 CONFIGURE_ARGS +=	-DWITH_MOZJS:BOOL=ON
 .else
