@@ -1,42 +1,37 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/01 09:17:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2011/05/10 23:44:54 ian Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		database exploration/builder written in Java
 
-V=			1.0.0
-DISTNAME=		Architect-generic-${V}
+V=			1.0.6
+DISTNAME=		SQL-Power-Architect-generic-jdbc-${V}
+MASTER_SITES=		http://power-architect.googlecode.com/files/
 PKGNAME=		architect-${V}
-REVISION=		3
 CATEGORIES=		databases
-WRKDIST=		${WRKDIR}	# no subdirectory
+WRKDIST=		${WRKDIR}/${PKGNAME}
 
 HOMEPAGE=		http://www.sqlpower.ca/page/architect
 
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 
-# Custom non-open-source license "...free for individual use" and 
-# "You may redistribute unmodified copies..." See $HOMEPAGE.
-PERMIT_PACKAGE_CDROM=	not allowed to charge a fee
+# GPLv3
+PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	not allowed to charge a fee
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://download.sqlpower.ca/architect/${V}/ \
-			ftp://ftp.darwinsys.com/pub/OpenBSD/distfiles/
-
 MODULES=		java
-MODJAVA_VER=	1.5+
+MODJAVA_VER =		1.6+
 
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/architect/jdbc
+	${INSTALL_DATA} ${WRKDIST}/jdbc/* ${PREFIX}/architect/jdbc
 	${INSTALL_DATA} ${WRKDIST}/architect.jar ${WRKDIST}/lib/* ${PREFIX}/architect/
-	${INSTALL_DATA} ${WRKDIST}/jdbc/default_database_types.ini ${PREFIX}/architect/jdbc
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/architect
-	${INSTALL_DATA} ${WRKDIST}/PowerArchitectUserGuide.pdf ${PREFIX}/share/doc/architect
 	${INSTALL_PROGRAM} ${FILESDIR}/architect ${PREFIX}/bin 
 
 .include <bsd.port.mk>
