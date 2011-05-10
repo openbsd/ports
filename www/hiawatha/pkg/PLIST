@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/04/13 17:44:59 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/05/10 07:47:05 ajacoutot Exp $
 @newgroup _hiawatha:579
 @newuser _hiawatha:579:579:daemon:Hiawatha HTTP Server:/nonexistent:/sbin/nologin
 @bin bin/ssi-cgi
@@ -28,6 +28,8 @@ share/examples/hiawatha/mimetype.conf
 @sample ${SYSCONFDIR}/hiawatha/mimetype.conf
 share/examples/hiawatha/php-fcgi.conf
 @sample ${SYSCONFDIR}/hiawatha/php-fcgi.conf
+@extraunexec rm -rf /var/db/hiawatha/*
+@extraunexec rm -rf /var/log/hiawatha/*
 @sample /var/log/hiawatha/
 @owner _hiawatha
 @group _hiawatha
@@ -37,4 +39,3 @@ share/examples/hiawatha/php-fcgi.conf
 @group
 @mode
 @rcscript ${RCDIR}/hiawatha
-@extraunexec rm -rf /var/db/hiawatha/
