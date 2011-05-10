@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/05 07:06:13 kevlo Exp $
+# $OpenBSD: Makefile,v 1.7 2011/05/10 09:56:06 kevlo Exp $
 
 COMMENT=	secure concurrent multi-server terminal control
 
-DISTNAME=	App-ClusterSSH-4.00_06
-PKGNAME=	clusterssh-4.00.06
+DISTNAME=	App-ClusterSSH-4.00_07
+PKGNAME=	clusterssh-4.00.07
 
 CATEGORIES=	security
 
@@ -26,7 +26,5 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 REGRESS_DEPENDS=devel/p5-Test-Trap
 
 MAKE_ENV=	TEST_POD=Yes
-
-USE_GROFF=	Yes
 
 .include <bsd.port.mk>
