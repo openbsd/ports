@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2011/05/10 08:03:49 sthen Exp $
 
 COMMENT=	module that embeds a Perl interpreter into Apache
 
 DISTNAME=	mod_perl-1.31
 PKGNAME=	${DISTNAME}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://perl.apache.org/dist/ \
 		${MASTER_SITE_PERL_CPAN:=Apache/}
@@ -24,7 +24,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m perl util 
 
-RUN_DEPENDS=		www/p5-libwww \
+RUN_DEPENDS=		devel/p5-Devel-Symdump \
+			www/p5-libwww \
 			www/p5-HTML-Parser
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
