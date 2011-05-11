@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.36 2011/03/02 13:28:24 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.37 2011/05/11 15:07:15 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -379,6 +379,7 @@ share/asterisk/phoneprov/000000000000-phone.cfg
 share/asterisk/phoneprov/000000000000.cfg
 share/asterisk/phoneprov/polycom.xml
 share/asterisk/phoneprov/polycom_line.xml
+share/asterisk/phoneprov/snom-mac.xml
 share/asterisk/sounds/
 share/asterisk/sounds/.${SOUNDS_CORE}
 share/asterisk/sounds/en/

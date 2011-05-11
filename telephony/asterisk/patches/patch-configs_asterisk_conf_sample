@@ -1,6 +1,6 @@
-$OpenBSD: patch-configs_asterisk_conf_sample,v 1.1 2011/01/19 11:25:16 sthen Exp $
---- configs/asterisk.conf.sample.orig	Tue Aug 24 21:00:26 2010
-+++ configs/asterisk.conf.sample	Tue Aug 24 21:01:19 2010
+$OpenBSD: patch-configs_asterisk_conf_sample,v 1.2 2011/05/11 15:07:15 sthen Exp $
+--- configs/asterisk.conf.sample.orig	Tue Feb  8 20:22:35 2011
++++ configs/asterisk.conf.sample	Wed May 11 10:11:21 2011
 @@ -57,8 +57,8 @@ astlogdir => /var/log/asterisk
  				; not otherwise require one.
  ;transcode_via_sln = yes	; Build transcode paths via SLINEAR, instead of
@@ -11,8 +11,8 @@ $OpenBSD: patch-configs_asterisk_conf_sample,v 1.1 2011/01/19 11:25:16 sthen Exp
 +rungroup = _asterisk		; The group to run as.
  ;lightbackground = yes		; If your terminal is set for a light-colored
  				; background.
- documentation_language = en_US	; Set the language you want documentation
-@@ -71,11 +71,11 @@ documentation_language = en_US	; Set the language you 
+ ;forceblackbackground = yes     ; Force the background of the terminal to be 
+@@ -75,11 +75,11 @@ documentation_language = en_US	; Set the language you 
  				; lock.
  
  ; Changing the following lines may compromise your security.
