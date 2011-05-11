@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/12/21 20:46:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/05/11 08:03:22 ajacoutot Exp $
+@unexec-delete rm -f %D/share/icons/Tango/icon-theme.cache
 @comment lib/locale/
 share/icons/
 share/icons/Tango/
@@ -4279,4 +4280,3 @@ share/icons/Tango/scalable/status/weather-snow.svg
 share/icons/Tango/scalable/status/weather-storm.svg
 share/icons/Tango/scalable/status/xfce-trash_full.svg
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Tango 2> /dev/null || true
-@unexec-delete rm -f %D/share/icons/Tango/icon-theme.cache

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.28 2011/03/29 20:04:41 edd Exp $
+@comment $OpenBSD: PLIST,v 1.29 2011/05/11 08:03:22 ajacoutot Exp $
 @pkgpath x11/mplayer,mad
 @pkgpath x11/mplayer,mad,no_x11
 @pkgpath x11/mplayer,sdl,mad
@@ -125,4 +125,5 @@ share/examples/mplayer/input.conf
 share/examples/mplayer/menu.conf
 @sample ${CONFDIR}/menu.conf
 share/examples/mplayer/mplayer.conf
-@extraunexec rm -rf ${CONFDIR}
+@extra${CONFDIR}/mplayer/codecs.conf
+@extra${CONFDIR}/mplayer/mplayer.conf

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/11 08:03:21 ajacoutot Exp $
 
 COMMENT=		Human icon theme from Ubuntu
 
 DISTNAME=		human-icon-theme_0.33.6ubuntu2
 PKGNAME=		human-icon-theme-0.33.6
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 

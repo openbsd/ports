@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.28 2010/10/06 13:51:58 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.29 2011/05/11 08:03:23 ajacoutot Exp $
+@unexec-delete rm -f %D/share/icons/gnome/icon-theme.cache
 lib/pkgconfig/
 lib/pkgconfig/gnome-icon-theme.pc
 share/examples/gnome-icon-theme/
@@ -5653,4 +5654,3 @@ share/icons/gnome/8x8/emblems/emblem-symbolic-link.png
 share/icons/gnome/8x8/emblems/emblem-unreadable.png
 share/icons/gnome/index.theme
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome 2> /dev/null || true
-@unexec-delete rm -f %D/share/icons/gnome/icon-theme.cache

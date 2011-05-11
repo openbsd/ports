@@ -1,4 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.12 2009/12/21 18:03:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/05/11 08:03:24 ajacoutot Exp $
+@unexec-delete rm -f %D/share/icons/Foxtrot/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/Gion/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/Neu/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/gnome-alternative/icon-theme.cache
 share/icons/Foxtrot/
 share/icons/Foxtrot/16x16/
 share/icons/Foxtrot/16x16/actions/
@@ -5701,7 +5705,3 @@ share/themes/Unity/metacity-1/metacity-theme-1.xml
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Gion 2> /dev/null || true
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Neu 2> /dev/null || true
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/gnome-alternative 2> /dev/null || true
-@unexec-delete rm -f %D/share/icons/Foxtrot/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Gion/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Neu/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/gnome-alternative/icon-theme.cache

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.16 2010/07/08 21:28:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.17 2011/05/11 08:03:24 ajacoutot Exp $
+@unexec-delete rm -f %D/share/icons/mono/icon-theme.cache
 @bin bin/kmag
 @bin bin/kmousetool
 @bin bin/kmouth
@@ -2983,4 +2984,3 @@ share/servicetypes/kttsd_synthplugin.desktop
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/locolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/locolor 2> /dev/null || true
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/mono 2> /dev/null || true
-@unexec-delete rm -f %D/share/icons/mono/icon-theme.cache
