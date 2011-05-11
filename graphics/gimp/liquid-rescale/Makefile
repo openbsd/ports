@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:13 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/05/11 08:09:06 ajacoutot Exp $
 
 COMMENT = 			seam-carving smart rescale gimp plugin
 CATEGORIES =			graphics
@@ -6,7 +6,7 @@ CATEGORIES =			graphics
 HOMEPAGE = 			http://liquidrescale.wikidot.com/
 DISTNAME = 			gimp-lqr-plugin-0.4.0-4
 PKGNAME = 			gimp-lqr-plugin-0.4.0.4
-REVISION =			2
+REVISION =			3
 WRKDIST =			${WRKDIR}/gimp-lqr-plugin-0.4.0
 MASTER_SITES =			${HOMEPAGE}local--files/en:download-page/
 

@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/01 11:15:29 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/11 08:09:06 ajacoutot Exp $
 lib/gimp/
 lib/gimp/2.0/
 lib/gimp/2.0/plug-ins/
 @bin lib/gimp/2.0/plug-ins/gimp-lqr-plugin
-lib/locale/
+@comment lib/locale/
 share/gimp-lqr-plugin/
 share/gimp-lqr-plugin/help/
 share/gimp-lqr-plugin/help/en/
