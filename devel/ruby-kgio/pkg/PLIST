@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/03/14 20:43:18 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/05/11 23:40:47 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.document
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.manifest
-${GEM_LIB}/gems/${DISTNAME}/.require_paths
 ${GEM_LIB}/gems/${DISTNAME}/.wrongdoc.yml
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/ChangeLog
@@ -27,6 +26,8 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/accept.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/ancient_ruby.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/autopush.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/autopush.o
+${GEM_LIB}/gems/${DISTNAME}/ext/kgio/blocking_io_region.h
+${GEM_LIB}/gems/${DISTNAME}/ext/kgio/broken_system_compat.h
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/connect.c
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/connect.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/kgio/extconf.rb
@@ -57,6 +58,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/lib_server_accept.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_accept_class.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_autopush.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_connect_fd_leak.rb
+${GEM_LIB}/gems/${DISTNAME}/test/test_cross_thread_close.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_default_wait.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_kgio_addr.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_no_dns_on_tcp_connect.rb
