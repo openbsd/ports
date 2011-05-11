@@ -1,0 +1,18 @@
+$OpenBSD: patch-Source_WebKit_gtk_resources_error_html,v 1.1 2011/05/11 06:00:08 ajacoutot Exp $
+--- Source/WebKit/gtk/resources/error.html.orig	Thu May  5 14:40:23 2011
++++ Source/WebKit/gtk/resources/error.html	Thu May  5 14:40:34 2011
+@@ -21,12 +21,12 @@ body {
+ }
+ 
+ #errorTitleText {
+- font-size: 120%;
++ font-size: 120%%;
+  font-weight: bold;
+ }
+ 
+ #errorMessageText {
+- font-size: 80%;
++ font-size: 80%%;
+ }
+ 
+ </style>

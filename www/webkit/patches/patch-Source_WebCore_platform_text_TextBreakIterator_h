@@ -1,0 +1,14 @@
+$OpenBSD: patch-Source_WebCore_platform_text_TextBreakIterator_h,v 1.1 2011/05/11 06:00:08 ajacoutot Exp $
+https://bugs.webkit.org/show_bug.cgi?id=36381
+http://bugs.gentoo.org/show_bug.cgi?id=308699
+--- Source/WebCore/platform/text/TextBreakIterator.h.orig	Thu May  5 14:43:46 2011
++++ Source/WebCore/platform/text/TextBreakIterator.h	Thu May  5 14:44:03 2011
+@@ -26,7 +26,7 @@
+ 
+ namespace WebCore {
+ 
+-    class TextBreakIterator;
++    typedef struct UBreakIterator TextBreakIterator;
+ 
+     // Note: The returned iterator is good only until you get another iterator, with the exception of acquireLineBreakIterator.
+ 

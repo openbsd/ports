@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2011/04/15 23:03:03 dhill Exp $
+# $OpenBSD: Makefile,v 1.46 2011/05/11 06:00:08 ajacoutot Exp $
 
 COMMENT =	open source web browser engine
 
-DISTNAME =	webkit-1.2.7
+V =		1.4.0
+DISTNAME =	webkit-${V}
 EPOCH =		0
-REVISION =	2	
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/
@@ -12,7 +12,8 @@ MASTER_SITES =	${HOMEPAGE}
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
-SHARED_LIBS =	webkit-1.0	2.2 #.19.5
+SHARED_LIBS +=  webkitgtk-1.0 0.0                # .7.0
+SHARED_LIBS +=  webkitgtk-3.0 0.0                # .7.0
 
 # LGPLv2 / BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -28,7 +29,11 @@ USE_GMAKE =	Yes
 USE_LIBTOOL =	gnu
 
 MODULES =	devel/gettext \
-		textproc/intltool
+		textproc/intltool  \
+		lang/python \
+		devel/dconf
+
+MODPY_RUNDEP =	No
 
 .include <bsd.own.mk>
 .if ${COMPILER_VERSION:L:Mgcc4*}
@@ -45,7 +50,10 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lX11" \
 		ac_cv_path_FLEX=${LOCALBASE}/bin/gflex
-CONFIGURE_ARGS+=--enable-introspection
+CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
+		--disable-gtk-doc \
+		--enable-introspection \
+		--enable-spellcheck
 
 MAKE_FILE =	GNUmakefile
 MAKE_FLAGS =	STDCPPLIB=${STDCPPLIB}
@@ -56,29 +64,47 @@ RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-ffmpeg \
 
 WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c xcb-render \
-		expat fontconfig freetype gcrypt gio-2.0 glib-2.0 gmodule-2.0 \
-		gnutls gobject-2.0 gpg-error gthread-2.0 jpeg m \
-		gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 gailutil \
+		expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
+		gobject-2.0 gthread-2.0 jpeg m gstinterfaces-0.10 \
+		gdk_pixbuf-2.0 \
 		gstreamer-0.10 gstbase-0.10 gstvideo-0.10 gstapp-0.10 gstpbutils-0.10 \
 		icudata icui18n icuuc sqlite3 xslt enchant soup-2.4 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread GL Xxf86vm drm xcb-shm \
-		tasn1 z cairo pixman-1 png pthread-stubs xcb xml2 ${STDCPPLIB}
+		z cairo pixman-1 png pthread-stubs xcb xml2 ${STDCPPLIB}
 
-LIB_DEPENDS =	x11/gtk+2,-main \
-		multimedia/gstreamer-0.10/core \
+LIB_DEPENDS =	multimedia/gstreamer-0.10/core \
 		multimedia/gstreamer-0.10/plugins-base \
 		textproc/icu4c>=4.4 \
 		databases/sqlite3 \
 		textproc/libxslt \
 		textproc/enchant \
-		devel/libsoup>=2.28
+		devel/libsoup>=2.34
 
 BUILD_DEPENDS =	devel/bison \
 		devel/flex \
 		devel/gperf \
 		devel/gobject-introspection
 
+FLAVORS = gtk3
+FLAVOR ?=
+
+.if ${FLAVOR:L:Mgtk3}
+FULLPKGNAME =	webkit-gtk3-${V}
+LIB_DEPENDS +=	x11/gtk+3,-main
+WANTLIB +=	cairo-gobject gailutil-3 gdk-3 gtk-3
+CONFIGURE_ARGS += --with-gtk=3.0
+.else
+WANTLIB +=	gailutil gdk-x11-2.0 gtk-x11-2.0
+LIB_DEPENDS +=	x11/gtk+2,-main
+CONFIGURE_ARGS += --with-gtk=2.0
+.endif
+
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/WebCore/plugins/PluginDatabase.cpp
+	${SUBST_CMD} ${WRKSRC}/Source/WebCore/plugins/PluginDatabase.cpp
+
+.if ${FLAVOR:L:Mgtk3}
+post-install:
+	mv ${PREFIX}/bin/GtkLauncher ${PREFIX}/bin/GtkLauncher-3
+.endif
 
 .include <bsd.port.mk>

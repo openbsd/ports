@@ -1,0 +1,12 @@
+$OpenBSD: patch-Source_JavaScriptCore_wtf_text_StringHash_h,v 1.1 2011/05/11 06:00:08 ajacoutot Exp $
+--- Source/JavaScriptCore/wtf/text/StringHash.h.orig	Thu May  5 14:44:36 2011
++++ Source/JavaScriptCore/wtf/text/StringHash.h	Thu May  5 14:44:57 2011
+@@ -55,7 +55,7 @@ namespace WTF {
+ 
+             // FIXME: perhaps we should have a more abstract macro that indicates when
+             // going 4 bytes at a time is unsafe
+-#if CPU(ARM) || CPU(SH4) || CPU(MIPS)
++#if CPU(ARM) || CPU(SH4) || CPU(MIPS) || CPU(SPARC64) || CPU(MIPS64)
+             const UChar* aChars = a->characters();
+             const UChar* bChars = b->characters();
+             for (unsigned i = 0; i != aLength; ++i) {
