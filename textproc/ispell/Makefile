@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2010/12/05 18:24:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2011/05/11 07:45:52 ajacoutot Exp $
 
 COMMENT-main=		interactive spelling checker
 COMMENT-dutch=		ispell dictionary for Dutch
@@ -59,7 +59,7 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz \
 SUBST_VARS+=	VERSION
 
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	5
+REVISION-main=	6
 MULTI_PACKAGES=	-main -dutch -french -german -swedish -russian -portuguese \
 		-slovak -spanish
 .for i in ${MULTI_PACKAGES}

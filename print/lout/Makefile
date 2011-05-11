@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/04/23 21:49:27 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2011/05/11 07:45:53 ajacoutot Exp $
 
 COMMENT-main= 	object oriented type setting language
 COMMENT-doc=	Lout user and expert documentation
@@ -7,6 +7,8 @@ DISTNAME=       lout-3.39
 PKGNAME-main=	${DISTNAME}
 PKGNAME-doc=    ${DISTNAME:S/-/-doc-/}
 CATEGORIES=	print
+
+REVISION-main=	0
 
 HOMEPAGE=	http://savannah.nongnu.org/projects/lout/
 MASTER_SITES=   ${MASTER_SITE_SAVANNAH:=lout/}

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.51 2010/11/20 09:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2011/05/11 07:45:52 ajacoutot Exp $
 
 COMMENT=		USENET software package designed for small sites
 
 VERSION=		1.11.6
 DISTNAME=		leafnode-${VERSION}
-REVISION=		0
+REVISION=		1
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		news
 

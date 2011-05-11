@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2004/11/26 17:14:49 alek Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/05/11 07:45:52 ajacoutot Exp $
+@extraunexec rm -fr /var/spool/anacron/*
 @man man/man5/anacrontab.5
 @man man/man8/anacron.8
 sbin/anacron
@@ -7,4 +8,3 @@ sbin/anacron
 @comment var/spool/anacron/
 @sample /var/spool/anacron/
 @extra ${SYSCONFDIR}/anacrontab
-@extraunexec rm -fr /var/spool/anacron

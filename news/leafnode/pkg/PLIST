@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.15 2009/02/12 13:33:07 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.16 2011/05/11 07:45:52 ajacoutot Exp $
 @newuser _news:519:news::NNTP server:/var/spool/news:/sbin/nologin
+@extraunexec rm -rf /var/spool/news/*
 @bin bin/leafnode-version
 @bin bin/newsq
 @man man/man1/leafnode-version.1
@@ -1040,4 +1041,3 @@ share/examples/leafnode/run.tcpserver.dist
 @sample /var/spool/news/message.id/998/
 @sample /var/spool/news/message.id/999/
 @sample /var/spool/news/temp.files/
-@extraunexec rm -rf /var/spool/news

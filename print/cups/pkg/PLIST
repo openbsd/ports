@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.30 2011/03/02 06:49:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.31 2011/05/11 07:45:53 ajacoutot Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS printer spooler daemon:/var/empty:/sbin/nologin
+@extraunexec rm -rf /var/log/cups/*
 %%SHARED%%
 @bin bin/cancel
 bin/cups-config
@@ -1072,7 +1073,6 @@ share/locale/zh_TW/cups_zh_TW.po
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @unexec rm -rf /var/cache/cups
-@extraunexec rm -rf /var/log/cups
 @extraunexec rm -rf /var/spool/cups
 @owner
 @group

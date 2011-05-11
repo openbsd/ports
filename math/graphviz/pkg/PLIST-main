@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2011/01/05 19:37:11 landry Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2011/05/11 07:45:52 ajacoutot Exp $
+@unexec rm -f %D/lib/graphviz/config
 %%SHARED%%
 @bin bin/acyclic
 @bin bin/bcomps
@@ -430,4 +431,3 @@ share/examples/graphviz/lefty/lefty.psp
 share/examples/graphviz/lefty/slides.lefty
 share/examples/graphviz/lefty/tree.lefty
 @exec %D/bin/dot -c
-@unexec rm -f %D/lib/graphviz/config

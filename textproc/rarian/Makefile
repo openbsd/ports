@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/20 19:56:51 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/05/11 07:45:52 ajacoutot Exp $
 
 COMMENT=		documentation metadata library
 
@@ -7,7 +7,7 @@ GNOME_VERSION=		0.8.1
 SHARED_LIBS +=	rarian               0.0      # .0.0
 CATEGORIES=		textproc
 
-REVISION=		8
+REVISION=		9
 
 HOMEPAGE=		http://rarian.freedesktop.org/
 

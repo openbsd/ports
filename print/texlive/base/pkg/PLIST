@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2011/03/08 00:09:42 edd Exp $
+@comment $OpenBSD: PLIST,v 1.17 2011/05/11 07:45:53 ajacoutot Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @pkgpath print/teTeX/base
@@ -762,5 +762,3 @@ share/texmf/scripts/texlive/tlmgr.pl
 @comment share/texmf/xindy/modules/styles/makeidx.xdy
 @extra share/texmf/ls-R
 @extra share/texmf-dist/ls-R
-@extra share/texmf-var/ls-R
-@extra share/texmf-config/ls-R
