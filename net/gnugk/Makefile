@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/05/11 09:01:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	H.323 gatekeeper
 
 DISTNAME=	gnugk-2.3.2
+REVISION=	0
 
 CATEGORIES=	net telephony
 
@@ -27,7 +28,7 @@ LIB_DEPENDS=	net/h323plus \
 		databases/sqlite3
 
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 ALL_TARGET=	optshared addpasswd
 NO_REGRESS=	Yes
 

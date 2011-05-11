@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/03/23 21:14:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/05/11 09:01:26 ajacoutot Exp $
 @newgroup _gnugk:586
 @newuser _gnugk:586:586:daemon:Gatekeeper Daemon:/var/empty:/sbin/nologin
+@extraunexec rm -rf /var/log/gnugk/*
 @bin bin/addpasswd
 @bin bin/gnugk
 @man man/man1/gnugk.1
@@ -41,5 +42,6 @@ share/examples/gnugk/status.ini
 share/examples/gnugk/syslog.ini
 share/examples/gnugk/uri.ini
 share/examples/gnugk/vqueue.ini
+@rcscript ${RCDIR}/gnugk
 @owner _gnugk
 @sample /var/log/gnugk/
