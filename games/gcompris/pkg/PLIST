@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/01/14 21:29:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/05/11 15:14:10 ajacoutot Exp $
 @bin bin/gcompris
 @info info/gcompris.info
 lib/gcompris/
@@ -95,6 +95,11 @@ lib/gcompris/libwordsgame.so
 @man man/man6/gcompris.6
 share/applications/gcompris-edit.desktop
 share/applications/gcompris.desktop
+share/doc/gcompris/
+share/doc/gcompris/html/
+share/doc/gcompris/html/gcompris.html
+share/doc/gcompris/html/overview.jpg
+share/doc/gcompris/html/topic.dat
 share/gcompris/
 share/gcompris/boards/
 @comment share/gcompris/boards/README
@@ -9000,11 +9005,6 @@ share/gcompris/python/searace.py
 share/gcompris/python/sudoku.py
 share/gcompris/python/tuxpaint.py
 share/gcompris/python/watercycle.py
-share/gnome/help/gcompris/
-share/gnome/help/gcompris/eu/
-share/gnome/help/gcompris/eu/gcompris.html
-share/gnome/help/gcompris/eu/overview.jpg
-share/gnome/help/gcompris/eu/topic.dat
 share/locale/af/LC_MESSAGES/gcompris.mo
 share/locale/am/LC_MESSAGES/gcompris.mo
 share/locale/ar/LC_MESSAGES/gcompris.mo

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2011/01/14 21:29:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2011/05/11 15:14:10 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	educational game for children
 
 DISTNAME=	gcompris-9.5
+REVISION=	0
 
 CATEGORIES=	games education
 
@@ -41,15 +42,15 @@ LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		net/gnet \
 		databases/sqlite3 \
 		gstreamer->=0.10,<0.11:multimedia/gstreamer-0.10/core \
-		x11/gnome/librsvg
+		x11/gnome/librsvg \
+		x11/gtk+2
 RUN_DEPENDS=	games/gnuchess \
 		databases/py-sqlite2 \
 		x11/py-gtk2 \
 		games/tuxpaint \
 		cad/gnucap \
 		devel/desktop-file-utils \
-		multimedia/gstreamer-0.10/plugins-base \
-		x11/gnome/yelp
+		multimedia/gstreamer-0.10/plugins-base
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
@@ -73,6 +74,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-gnet \
 		--enable-py-build-only \
 		--with-python=${MODPY_BIN}
+
+# don't install under share/gnome/help/, there is no yelp (xml) file
+FAKE_FLAGS=	gcompris_helpdir=${PREFIX}/share/doc/gcompris/html
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/chess_computer-activity/chess.c \
