@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_demuxers_demux_ts_c,v 1.1 2011/05/11 09:05:54 dcoppa Exp $
+
+Check boundaries during MPEG TS stream detection.
+
+--- src/demuxers/demux_ts.c.orig	Mon May  9 20:47:00 2011
++++ src/demuxers/demux_ts.c	Mon May  9 20:49:06 2011
+@@ -2360,18 +2360,20 @@ static demux_plugin_t *open_plugin (demux_class_t *cla
+   demux_ts_t *this;
+   int         i;
+   int         hdmv = -1;
++  int         size;
+ 
+   switch (stream->content_detection_method) {
+ 
+   case METHOD_BY_CONTENT: {
+     uint8_t buf[2069];
+ 
+-    if (!_x_demux_read_header(input, buf, sizeof(buf)))
++    size = _x_demux_read_header(input, buf, sizeof(buf));
++    if (size < PKT_SIZE)
+       return NULL;
+ 
+     if (detect_ts(buf, sizeof(buf), PKT_SIZE))
+       hdmv = 0;
+-    else if (detect_ts(buf, sizeof(buf), PKT_SIZE+4))
++    else if (size >= PKT_SIZE + 4 && detect_ts(buf, sizeof(buf), PKT_SIZE+4))
+       hdmv = 1;
+     else
+       return NULL;

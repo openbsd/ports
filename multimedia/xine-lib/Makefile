@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2011/04/18 23:11:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2011/05/11 09:05:54 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.1.19
-REVISION=	5
+REVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
@@ -61,7 +61,6 @@ PKG_ARGS+=	-Di386=0
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
-LIBTOOL_FLAGS+=	--tag=disable-static
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.65
 CONFIGURE_ARGS+=--disable-aalib \
@@ -96,5 +95,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 NO_REGRESS=	Yes
+
+post-install:
+	@find ${PREFIX}/lib/xine/plugins -name '*.a' -print | xargs rm
+	@rm ${PREFIX}/lib/libxine.la
 
 .include <bsd.port.mk>

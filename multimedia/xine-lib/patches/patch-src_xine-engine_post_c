@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_xine-engine_post_c,v 1.1 2011/05/11 09:05:55 dcoppa Exp $
+
+Do not copy pointer to acceleration data of a frame when propagating changes
+downwards within post plugins because this corrupted the receiving frame
+acceleration data.
+
+--- src/xine-engine/post.c.orig	Mon May  9 21:06:38 2011
++++ src/xine-engine/post.c	Mon May  9 21:06:53 2011
+@@ -424,7 +424,6 @@ void _x_post_frame_copy_down(vo_frame_t *from, vo_fram
+   to->progressive_frame   = from->progressive_frame;
+   to->picture_coding_type = from->picture_coding_type;
+   to->drawn               = from->drawn;
+-  to->accel_data          = from->accel_data;
+   to->stream              = from->stream;
+   to->crop_left           = from->crop_left;
+   to->crop_right          = from->crop_right;

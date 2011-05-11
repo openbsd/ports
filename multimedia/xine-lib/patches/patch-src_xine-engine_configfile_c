@@ -1,4 +1,8 @@
-$OpenBSD: patch-src_xine-engine_configfile_c,v 1.1 2010/11/22 11:15:55 sthen Exp $
+$OpenBSD: patch-src_xine-engine_configfile_c,v 1.2 2011/05/11 09:05:55 dcoppa Exp $
+
+Using binary mode when checking configfile. New configfile would not be
+written only when switching binaries for different platforms.
+
 --- src/xine-engine/configfile.c.orig	Sat Nov 13 13:39:27 2010
 +++ src/xine-engine/configfile.c	Sat Nov 13 13:39:59 2010
 @@ -1012,8 +1012,8 @@ void xine_config_save (xine_t *xine, const char *filen

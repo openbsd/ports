@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_demuxers_demux_qt_c,v 1.12 2011/04/15 23:22:31 sthen Exp $
+$OpenBSD: patch-src_demuxers_demux_qt_c,v 1.13 2011/05/11 09:05:54 dcoppa Exp $
+
+Add f4v/f4a file extensions to the Qt demuxer.
+
 --- src/demuxers/demux_qt.c.orig	Sat Jul 24 18:21:31 2010
 +++ src/demuxers/demux_qt.c	Fri Apr 15 17:46:25 2011
 @@ -3255,7 +3255,7 @@ static const char *get_identifier (demux_class_t *this

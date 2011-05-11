@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_demuxers_demux_aac_c,v 1.1 2011/05/11 09:05:54 dcoppa Exp $
+
+Check that we've found both AAC signatures.
+
+--- src/demuxers/demux_aac.c.orig	Mon May  9 21:12:42 2011
++++ src/demuxers/demux_aac.c	Mon May  9 21:13:13 2011
+@@ -122,6 +122,10 @@ static int open_aac_file(demux_aac_t *this) {
+     syncword = (syncword << 8) | peak[i];
+   }
+ 
++  /* did we really find the ADTS header? */
++  if (i == MAX_PREVIEW_SIZE)
++    return 0; /* No, we didn't */
++
+   /* Look for second ADTS header to confirm it's really aac */
+   if (data_start + 5 < MAX_PREVIEW_SIZE) {
+     int frame_size = ((peak[data_start+3] & 0x03) << 11) |

@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_input_vcd_xineplug_inp_vcd_c,v 1.1 2011/05/11 09:05:54 dcoppa Exp $
+
+Small memory leaks in VCD input plugin.
+
+--- src/input/vcd/xineplug_inp_vcd.c.orig	Mon May  9 20:44:31 2011
++++ src/input/vcd/xineplug_inp_vcd.c	Mon May  9 20:45:22 2011
+@@ -1525,6 +1525,10 @@ vcd_class_dispose (input_class_t *this_gen) {
+   dbg_print((INPUT_DBG_CALL|INPUT_DBG_EXT), "called\n");
+ 
+   vcd_close(class);
++  free(class->vcd_device);
++  free(my_vcd.v_config.title_format);
++  free(my_vcd.v_config.comment_format);
++  free(class);
+ }
+ 
+ /* Update the xine player title text. */
