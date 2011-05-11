@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.10 2009/12/22 15:43:15 ajacoutot Exp $
-bin/grip
+@comment $OpenBSD: PLIST,v 1.11 2011/05/11 15:51:10 ajacoutot Exp $
+@bin bin/grip
 share/applications/grip.desktop
-share/gnome/
-share/gnome/help/
 share/gnome/help/grip/
 share/gnome/help/grip/C/
 share/gnome/help/grip/C/cdconfig.png
@@ -65,8 +63,6 @@ share/locale/ja/LC_MESSAGES/grip.mo
 share/locale/pt_BR/LC_MESSAGES/grip.mo
 share/locale/ru/LC_MESSAGES/grip.mo
 share/locale/zh_CN/LC_MESSAGES/grip.mo
-share/locale/zh_HK/
-share/locale/zh_HK/LC_MESSAGES/
 share/locale/zh_HK/LC_MESSAGES/grip.mo
 share/locale/zh_TW/LC_MESSAGES/grip.mo
 share/pixmaps/

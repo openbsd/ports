@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2011/04/16 21:21:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2011/05/11 15:51:10 ajacoutot Exp $
 
 COMMENT=	front-end to external cd audio rippers and mp3 encoders
 
 DISTNAME=	grip-3.2.0
-REVISION=	19
+REVISION=	20
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.nostatic.org/grip/
@@ -31,6 +31,8 @@ WANTLIB += xml2 z
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=grip/}
 
 MODULES=	devel/gettext
+
+BUILD_DEPENDS=	textproc/rarian
 
 LIB_DEPENDS=	x11/gnome/libgnomeui \
 		audio/id3lib \
