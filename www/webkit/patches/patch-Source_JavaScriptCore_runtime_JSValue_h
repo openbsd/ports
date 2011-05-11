@@ -1,0 +1,15 @@
+$OpenBSD: patch-Source_JavaScriptCore_runtime_JSValue_h,v 1.1 2011/05/11 06:00:36 ajacoutot Exp $
+--- Source/JavaScriptCore/runtime/JSValue.h.orig	Mon Apr 25 21:26:05 2011
++++ Source/JavaScriptCore/runtime/JSValue.h	Wed May 11 07:58:52 2011
+@@ -445,7 +445,11 @@ namespace JSC {
+             u.asBits.tag = CellTag;
+         else
+             u.asBits.tag = EmptyValueTag;
++#if defined(__sparc64__)
++        u.asBits.payload = reinterpret_cast<int64_t>(ptr);
++#else
+         u.asBits.payload = reinterpret_cast<int32_t>(ptr);
++#endif
+ #if ENABLE(JSC_ZOMBIES)
+         ASSERT(!isZombie());
+ #endif
