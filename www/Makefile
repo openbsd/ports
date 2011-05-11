@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.510 2011/04/25 13:11:56 todd Exp $
+# $OpenBSD: Makefile,v 1.511 2011/05/11 06:03:16 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -467,6 +467,7 @@
      SUBDIR += webalizer
      SUBDIR += webcollab
      SUBDIR += webkit
+     SUBDIR += webkit,gtk3
      SUBDIR += weblint
      SUBDIR += wml
      SUBDIR += wordpress
