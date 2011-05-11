@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2011/05/08 16:20:16 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.128 2011/05/11 09:08:07 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 V=		1.0.6
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	27
+REVISION-main=	28
 REVISION-jack=	5
 REVISION-web=	7
 CATEGORIES=	x11
@@ -67,7 +67,6 @@ WANTLIB-main=	GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.65
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/autotools
@@ -177,6 +176,8 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/share/vlc${_img}.png \
 	    ${PREFIX}/share/icons/hicolor/${_img}/apps/vlc.png
 .endfor
-	@find ${PREFIX}/lib -name '*.la' -print | xargs rm -f
+	@rm ${PREFIX}/lib/mozilla/plugins/libvlcplugin.a
+	@find ${PREFIX}/lib/vlc -name '*.a' -print | xargs rm
+	@find ${PREFIX}/lib -name '*.la' -print | xargs rm
 
 .include <bsd.port.mk>

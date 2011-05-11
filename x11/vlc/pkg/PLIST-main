@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2011/05/06 08:18:54 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2011/05/11 09:08:07 dcoppa Exp $
 @pkgpath x11/vlc
 %%amd64%%
 %%i386%%
@@ -71,7 +71,9 @@ include/vlc/plugins/vlc_vout.h
 include/vlc/plugins/vlc_window.h
 include/vlc/plugins/vlc_xml.h
 include/vlc/vlc.h
+lib/libvlc.a
 @lib lib/libvlc.so.${LIBvlc_VERSION}
+lib/libvlccore.a
 @lib lib/libvlccore.so.${LIBvlccore_VERSION}
 lib/pkgconfig/libvlc.pc
 lib/pkgconfig/vlc-plugin.pc
