@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/12/08 21:46:50 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/05/11 23:40:05 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/CHANGES
@@ -174,6 +174,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Mazatlan.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Mendoza.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Menominee.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Merida.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Metlakatla.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Mexico_City.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Miquelon.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Moncton.rb
@@ -187,6 +188,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Nipigon.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Nome.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Noronha.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/North_Dakota/
+${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/North_Dakota/Beulah.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/North_Dakota/Center.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/North_Dakota/New_Salem.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Ojinaga.rb
@@ -213,6 +215,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Santo_Domingo.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Sao_Paulo.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Scoresbysund.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Shiprock.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/Sitka.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/St_Barthelemy.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/St_Johns.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/tzinfo/definitions/America/St_Kitts.rb
