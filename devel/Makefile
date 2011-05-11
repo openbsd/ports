@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.935 2011/05/06 08:57:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.936 2011/05/11 16:56:21 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1122,6 +1122,7 @@
      SUBDIR += xdg-utils
      SUBDIR += xmake
      SUBDIR += xulrunner
+     SUBDIR += yaml-cpp
      SUBDIR += yasm
 
 .include <bsd.port.subdir.mk>
