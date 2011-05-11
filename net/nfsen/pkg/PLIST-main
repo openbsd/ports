@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2011/05/05 21:49:48 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2011/05/11 12:03:19 jasper Exp $
+@extraunexec rm -rf /var/db/nfsen/ports-db/*
 bin/RebuildHierarchy.pl
 bin/install-nfsen.pl
 bin/nfsen
@@ -38,5 +39,4 @@ share/examples/nfsen/nfsen.conf
 @group
 @owner
 @exec-add usermod -v -G www _nfcapd 
-@extraunexec rm -rf /var/db/nfsen
 @rcscript ${RCDIR}/nfsen

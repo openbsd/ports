@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/23 21:11:57 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/11 12:03:19 jasper Exp $
 @conflict openh323-*
 @pkgpath net/openh323
 include/openh323/
@@ -105,4 +105,4 @@ lib/ptlib/codecs/video/h263-ffmpeg_video_pwplugin.so
 share/openh323/
 share/openh323/openh323u.mak
 share/openh323/version.h
-@unexec-delete rm -f %D/lib/ptlib/libavcodec.so
+@extra lib/ptlib/libavcodec.so

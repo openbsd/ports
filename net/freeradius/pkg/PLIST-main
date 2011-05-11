@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2011/04/15 09:44:06 pea Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2011/05/11 12:03:19 jasper Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
 @newgroup _freeradius:559
 @newuser _freeradius:559:559:daemon:Freeradius:/nonexistent:/sbin/nologin
+@extraunexec rm -rf ${SYSCONFDIR}/raddb/*
+@extraunexec rm -rf /var/log/radius/*
 @bin bin/radclient
 @bin bin/radconf2xml
 bin/radcrypt
@@ -615,7 +617,5 @@ share/freeradius/dictionary.zyxel
 @exec-add ln -s ../sites-available/control-socket ${SYSCONFDIR}/raddb/sites-enabled/
 @exec-add ln -s ../sites-available/default ${SYSCONFDIR}/raddb/sites-enabled/
 @exec-add ln -s ../sites-available/inner-tunnel ${SYSCONFDIR}/raddb/sites-enabled/
-@extraunexec rm -rf ${SYSCONFDIR}/raddb
-@extraunexec rm -rf /var/log/radius
 @extra /var/log/radius/radwtmp
 @rcscript ${RCDIR}/radiusd

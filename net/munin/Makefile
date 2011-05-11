@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/04/14 15:55:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/05/11 12:03:19 jasper Exp $
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
@@ -7,8 +7,8 @@ V =		1.4.5
 DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
-REVISION-main = 5
-REVISION-server = 1
+REVISION-main = 6
+REVISION-server = 2
 CATEGORIES =	net
 
 HOMEPAGE =	http://munin-monitoring.org/

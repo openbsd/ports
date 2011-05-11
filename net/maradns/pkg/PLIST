@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/08/20 20:13:36 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/05/11 12:03:19 jasper Exp $
 @pkgpath net/maradns/stable
 @newgroup _maradns:537
 @newuser _maradns:537:_maradns::MaraDNS Account:${SYSCONFDIR}/maradns:/sbin/nologin
+@extraunexec rm -f ${SYSCONFDIR}/maradns/*
 @bin bin/askmara
 @bin bin/duende
 @bin bin/fetchzone
@@ -268,5 +269,4 @@ share/examples/maradns/example_full_mararc
 share/examples/maradns/example_mararc
 share/examples/maradns/example_recursive_mararc.txt
 @sample ${SYSCONFDIR}/maradns/
-@extraunexec rm -f ${SYSCONFDIR}/maradns/*
 @extra ${SYSCONFDIR}/mararc

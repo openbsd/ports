@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/06/08 00:26:45 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/05/11 12:03:19 jasper Exp $
 @newgroup _mirmon:651
 @newuser _mirmon:651:_mirmon::mirmon user:/nonexistent:/sbin/nologin
+@extraunexec rm -rf /var/db/mirmon/*
 bin/mirmon
 bin/mirmon-probe
 ${P5SITE}/Mirmon.pm
@@ -234,4 +235,3 @@ share/examples/mirmon/icons/vbrw.gif
 @sample /var/www/htdocs/mirmon/icons/vbrw.gif
 share/examples/mirmon/mirmon.conf
 @sample /etc/mirmon.conf
-@extraunexec rm -rf /var/db/mirmon

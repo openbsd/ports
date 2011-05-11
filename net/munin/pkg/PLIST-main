@@ -1,8 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2010/10/28 20:59:05 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2011/05/11 12:03:19 jasper Exp $
 @newgroup _munin:644
 @newgroup _munin-plugin:645
 @newuser _munin:644:_munin:daemon:munin user:/nonexistent:/sbin/nologin
 @newuser _munin-plugin:645:_munin-plugin::munin-plugin user:/nonexistent:/sbin/nologin
+@extraunexec rm -rf ${SYSCONFDIR}/munin/plugins/*
+@extraunexec rm -rf ${SYSCONFDIR}/munin/plugin-conf.d/*
+@extraunexec rm -rf /var/log/munin/*
 @mode 775
 @owner _munin-plugin
 @group _munin
@@ -307,7 +310,4 @@ share/examples/munin/plugin-conf.d/openbsd-packages
 @sample ${SYSCONFDIR}/munin/plugin-conf.d/openbsd-packages
 share/examples/munin/plugins/
 @sample ${SYSCONFDIR}/munin/plugins/
-@extraunexec rm -rf ${SYSCONFDIR}/munin/plugins/
-@extraunexec rm -rf ${SYSCONFDIR}/munin/plugin-conf.d/
-@extraunexec rm -rf /var/log/munin
 @rcscript ${RCDIR}/munin_node

@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-server,v 1.2 2010/10/23 15:52:23 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.3 2011/05/11 12:03:19 jasper Exp $
+@extraunexec rm -rf /var/www/htdocs/munin/*
+@extraunexec rm -rf /var/db/munin/*
 @owner _munin
 @sample /var/db/munin/
 @sample /var/www/htdocs/munin/
@@ -74,5 +76,3 @@ share/examples/munin/www/munin-cgi-graph
 @sample /var/www/cgi-bin/munin-cgi-graph
 share/examples/munin/www/munin-fastcgi-graph
 @sample /var/www/cgi-bin/munin-fastcgi-graph
-@extraunexec rm -rf /var/www/htdocs/munin
-@extraunexec rm -rf /var/db/munin

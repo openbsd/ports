@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2010/10/25 22:59:12 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2011/05/11 12:03:19 jasper Exp $
 @pkgpath net/net-snmp
+@extraunexec rm -rf /var/net-snmp/*
 %%SHARED%%
 @bin bin/agentxtrap
 @bin bin/encode_keychange
@@ -533,6 +534,5 @@ share/snmp/snmpconf-data/snmptrapd-data/runtime
 share/snmp/snmpconf-data/snmptrapd-data/snmpconf-config
 share/snmp/snmpconf-data/snmptrapd-data/traphandle
 @sample /var/net-snmp/
-@extraunexec rm -rf /var/net-snmp/*
 @extra ${SYSCONFDIR}/snmp/snmp.conf
 @extra ${SYSCONFDIR}/snmp/snmptrapd.conf

@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/07/02 18:07:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/05/11 12:03:19 jasper Exp $
 @conflict freeradius-*
 @conflict radiusd-cistron-*
+@extraunexec rm -rf ${SYSCONFDIR}/raddb/*
+@extraunexec rm -rf /var/log/radacct/*
 @bin bin/builddbm
 @bin bin/dbmkeys
 @bin bin/dbmrec
@@ -33,5 +35,3 @@ share/examples/radiusd-lucent/proxy
 share/examples/radiusd-lucent/users
 @sample ${SYSCONFDIR}/raddb/users
 @sample /var/log/radacct/
-@extraunexec rm -rf ${SYSCONFDIR}/raddb/
-@extraunexec rm -rf /var/log/radacct/

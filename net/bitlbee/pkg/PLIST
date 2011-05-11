@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.13 2008/07/11 01:13:05 martynas Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/05/11 12:03:19 jasper Exp $
 @pkgpath net/bitlbee,no_ssl
 @newgroup _bitlbee:509
 @newuser _bitlbee:509:_bitlbee:daemon:Bitlbee Account:/nonexistent:/sbin/nologin
+@extraunexec rm -rf ${DB_DIR}/*
 @bin libexec/bitlbee
 @man man/man5/bitlbee.conf.5
 @man man/man8/bitlbee.8
@@ -18,4 +19,3 @@ share/examples/bitlbee/motd.txt
 @owner _bitlbee
 @group _bitlbee
 @sample ${DB_DIR}/
-@extraunexec rm -rf ${DB_DIR}/

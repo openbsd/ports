@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/03/22 17:35:44 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/11 12:03:20 jasper Exp $
+@extraunexec rm -rf /var/log/snmptt/*
 sbin/snmptt
 sbin/snmptthandler
 share/doc/snmptt/
@@ -20,5 +21,3 @@ share/snmptt/sample-trap-daemon
 share/snmptt/sample-unknown-trap
 share/snmptt/sample-unknown-trap-daemon
 @sample /var/log/snmptt/
-@extraunexec rm -rf /var/log/snmptt/*
-

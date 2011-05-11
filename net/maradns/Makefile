@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/03/02 06:54:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/05/11 12:03:19 jasper Exp $
 
 COMMENT=	simple and performant DNS server
 
 VERSION=	1.3.07.11
 DISTNAME=	maradns-${VERSION}
+REVISION=	0
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.maradns.org/

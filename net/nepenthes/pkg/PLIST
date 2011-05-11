@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2008/02/16 10:56:41 rui Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/05/11 12:03:19 jasper Exp $
 @newgroup _nepenthes:584
 @newuser _nepenthes:584:584:daemon:nepenthes user:/nonexistent:/sbin/nologin
+@extraunexec rm -fr /var/nepenthes/*
 %%SHARED%%
 bin/nepenthes
 lib/nepenthes/
@@ -170,4 +171,3 @@ share/examples/nepenthes/vuln-wins.conf
 @sample ${SYSCONFDIR}/nepenthes/vuln-wins.conf
 share/examples/nepenthes/x-2.conf
 @sample ${SYSCONFDIR}/nepenthes/x-2.conf
-@extraunexec rm -fr /var/nepenthes/
