@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/04/15 16:13:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2011/05/11 06:02:15 ajacoutot Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
@@ -11,11 +11,11 @@ SHARED_ONLY=	Yes
 VERSION=	0.5.8
 DISTNAME=	kazehakase-${VERSION}
 PKGNAME-main=	kazehakase-common-${VERSION}
-REVISION-main=	4
+REVISION-main=	5
 PKGNAME-gecko=	${DISTNAME}
-REVISION-gecko=	4
+REVISION-gecko=	5
 PKGNAME-webkit=	kazehakase-webkit-${VERSION}
-REVISION-webkit=4
+REVISION-webkit=5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=kazehakase/43802/}
 
 HOMEPAGE=	http://kazehakase.sourceforge.jp/
@@ -71,23 +71,25 @@ LIB_DEPENDS-gecko =	${LIB_DEPENDS-main} \
 			${BUILD_PKGPATH},-main
 
 LIB_DEPENDS-webkit =	${LIB_DEPENDS} \
-			www/webkit
+			www/webkit>=1.4.0
 
 WANTLIB =		ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			Xrandr Xrender Xcomposite Xdamage expat fontconfig \
 			freetype m z png cairo atk-1.0 gio-2.0 glib-2.0 \
 			gmodule-2.0 gobject-2.0 gthread-2.0 pango-1.0 \
-			pangocairo-1.0 pangoft2-1.0 pcre pixman-1 tasn1 \
-			pthread-stubs xcb xcb-render GL Xxf86vm drm gmp \
-			gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 hogweed nettle \
+			pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
+			pthread-stubs xcb xcb-render GL Xxf86vm drm \
+			gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 \
 			xcb-shm
 
-WANTLIB-main =		${WANTLIB} dbus-glib-1 dbus-1 gnutls c gcrypt gpg-error pthread
-WANTLIB-gecko =		${WANTLIB} gnutls stdc++ gcrypt gpg-error lib/kazehakase/kazehakase
-WANTLIB-webkit =	${WANTLIB} Xt enchant gailutil gcrypt gnutls gpg-error \
+WANTLIB-main =		${WANTLIB} dbus-glib-1 dbus-1 gnutls c gcrypt gpg-error pthread \
+			hogweed nettle gmp tasn1
+WANTLIB-gecko =		${WANTLIB} gnutls stdc++ gcrypt gpg-error lib/kazehakase/kazehakase \
+			hogweed nettle gmp tasn1
+WANTLIB-webkit =	${WANTLIB} Xt enchant gailutil \
 			icudata icui18n icuuc jpeg soup-2.4 sqlite3 stdc++ xml2 xslt \
 			gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 \
-			gstapp-0.10 webkit-1.0
+			gstapp-0.10 webkitgtk-1.0 gstinterfaces-0.10
 
 
 .include <bsd.port.mk>

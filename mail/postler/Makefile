@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2011/04/21 07:05:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/11 06:02:15 ajacoutot Exp $
 
 COMMENT =	lightweight mail user agent
 
 XFCE_VERSION =	0.1.1
 XFCE_GOODIE =	postler
 
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
@@ -22,7 +22,7 @@ MODULES =	x11/xfce4 devel/waf
 DESKTOP_FILES =	Yes
 NO_REGRESS =	Yes
 
-LIB_DEPENDS =	www/webkit \
+LIB_DEPENDS =	www/webkit>=1.4.0 \
 		devel/libnotify \
 		databases/db/v4 \
 		audio/libcanberra \
@@ -41,7 +41,7 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 intl \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pthread z \
 		cairo pixman-1 png pthread-stubs xcb xml2 \
-		xcb-render webkit-1.0 notify unique-1.0 soup-2.4 \
+		xcb-render webkitgtk-1.0 notify unique-1.0 soup-2.4 \
 		GL Xxf86vm drm xcb-shm crypto ssl canberra db
 
 pre-configure:

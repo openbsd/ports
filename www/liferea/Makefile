@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/04/21 07:06:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2011/05/11 06:02:15 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		simple GTK desktop news aggregator
 DISTNAME=		liferea-1.6.5
 CATEGORIES=		www x11
 
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://liferea.sourceforge.net/
 
@@ -28,8 +28,8 @@ WANTLIB += gstapp-0.10 gstbase-0.10 gstpbutils-0.10 gstreamer-0.10
 WANTLIB += gstvideo-0.10 gthread-2.0 gtk-x11-2.0 icudata icui18n
 WANTLIB += icuuc jpeg lua m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs soup-2.4 sqlite3
-WANTLIB += stdc++ webkit-1.0 xcb xcb-render xcb-shm xml2 xslt
-WANTLIB += z
+WANTLIB += stdc++ webkitgtk-1.0 xcb xcb-render xcb-shm xml2 xslt
+WANTLIB += z gstinterfaces-0.10
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=liferea/}
 
@@ -42,7 +42,7 @@ LIB_DEPENDS=		lang/lua \
 			devel/libglade2 \
 			devel/libsoup,-main \
 			textproc/enchant \
-			www/webkit
+			www/webkit>=1.4.0
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/hicolor-icon-theme

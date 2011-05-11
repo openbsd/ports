@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2011/04/26 13:09:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/05/11 06:02:15 ajacoutot Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
 GNOME_PROJECT=		epiphany-extensions
 GNOME_VERSION=		2.32.0
 
-REVISION=		2
+REVISION=		3
 
 # sync with www/epiphany
 API_V=		2.29
@@ -27,14 +27,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 cairo
-WANTLIB += enchant expat fontconfig freetype gailutil gcrypt gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnutls
+WANTLIB += enchant expat fontconfig freetype gailutil gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gstapp-0.10 gstbase-0.10 gstpbutils-0.10
 WANTLIB += gstreamer-0.10 gstvideo-0.10 gthread-2.0 gtk-x11-2.0
 WANTLIB += icudata icui18n icuuc jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs soup-2.4
-WANTLIB += sqlite3 stdc++ tasn1 webkit-1.0 xcb xcb-render
-WANTLIB += xml2 xslt z gpg-error GL Xxf86vm drm util xcb-shm
+WANTLIB += sqlite3 stdc++ webkitgtk-1.0 xcb xcb-render
+WANTLIB += xml2 xslt z GL Xxf86vm drm xcb-shm
+WANTLIB += gstinterfaces-0.10
 
 MODULES=	devel/gettext \
 		lang/python \

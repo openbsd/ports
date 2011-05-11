@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/04/05 18:43:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/05/11 06:02:15 ajacoutot Exp $
 
 COMMENT =	digital photo organizer
 
@@ -7,6 +7,7 @@ CATEGORIES =	graphics
 MASTER_SITES =	http://yorba.org/download/shotwell/0.9/
 HOMEPAGE =	http://yorba.org/shotwell/
 EXTRACT_SUFX =	.tar.bz2
+REVISION =	0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -21,7 +22,7 @@ WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		pthread-stubs xcb z ORBit-2 exif json-glib-1.0 gnomevfs-2 \
 		gconf-2 gthread-2.0 pthread soup-2.4 sqlite3 usb \
 		xcb-render xml2 exiv2 stdc++ gee gphoto2 gstbase-0.10 gstreamer-0.10 \
-		gphoto2_port unique-1.0 webkit-1.0 raw gexiv2 gdk-x11-2.0 \
+		gphoto2_port unique-1.0 webkitgtk-1.0 raw gexiv2 gdk-x11-2.0 \
 		gdk_pixbuf-2.0 gtk-x11-2.0 GL Xxf86vm drm xcb-shm
 
 MODULES =	devel/gettext x11/gnome devel/gconf2
@@ -37,7 +38,7 @@ LIB_DEPENDS =	x11/gtk+2 \
 		graphics/libgexiv2 \
 		graphics/libraw \
 		devel/json-glib \
-		www/webkit \
+		www/webkit>=1.4.0 \
 		devel/libunique \
 		devel/libgee \
 		graphics/libgphoto2 \

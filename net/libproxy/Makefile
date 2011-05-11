@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/05/10 16:23:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/05/11 06:02:15 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -18,7 +18,7 @@ PKGNAME-webkit=		libproxy-webkit-${VERSION}
 REVISION-main=		0
 REVISION-gnome=		0
 REVISION-mozilla=	0
-REVISION-webkit=	0
+REVISION-webkit=	1
 
 CATEGORIES=		net
 
@@ -63,7 +63,7 @@ LIB_DEPENDS-mozilla=	${BUILD_PKGPATH}>=${VERSION} \
 
 RUN_DEPENDS-webkit=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-webkit=	STEM->=${VERSION}:${BUILD_PKGPATH}, \
-			www/webkit
+			www/webkit>=1.4.0
 
 cWANTLIB += m stdc++
 
@@ -83,7 +83,7 @@ WANTLIB-webkit += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-webkit += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB-webkit += gtk-x11-2.0 modman pango-1.0 pangocairo-1.0
 WANTLIB-webkit += pangoft2-1.0 pixman-1 png proxy pthread-stubs soup-2.4
-WANTLIB-webkit += webkit-1.0 xcb xcb-render xcb-shm xml2 z
+WANTLIB-webkit += webkitgtk-1.0 xcb xcb-render xcb-shm xml2 z
 
 CONFIGURE_ARGS=		-DCMAKE_C_FLAGS="${CFLAGS} -pthread" \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS} -pthread" \
