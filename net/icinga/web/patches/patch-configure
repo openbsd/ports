@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1 2011/05/11 13:57:41 sthen Exp $
+--- configure.orig	Wed May 11 12:03:42 2011
++++ configure	Wed May 11 12:03:01 2011
+@@ -3828,7 +3828,8 @@ fi
+ $as_echo "$as_me: Create api config in $FILE" >&6;}
+ 	for T in $BLOCKS; do
+ 
+-	$SED -i -e "/###BEGIN_$T###/,/###END_$T###/d" $FILE
++	$SED -e "/###BEGIN_$T###/,/###END_$T###/d" < $FILE > $FILE.tmp
++	mv $FILE.tmp $FILE
+ 
+ 	done
+ 

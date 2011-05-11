@@ -1,0 +1,13 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2011/05/11 13:57:41 sthen Exp $
+--- Makefile.in.orig	Wed May 11 11:59:06 2011
++++ Makefile.in	Wed May 11 11:59:46 2011
+@@ -226,7 +226,8 @@ db-purge-userprefs:
+ 	$(PHING_CALL) db-purge-userprefs
+ 
+ make-create-files:
+-	$(SED) -i '/^# INSTALL_FILES_BEGIN/,/^# INSTALL_FILES_END/{D}' $(INC_MAKE_FILES)
++	$(SED) '/^# INSTALL_FILES_BEGIN/,/^# INSTALL_FILES_END/{D}' < $(INC_MAKE_FILES) > $(INC_MAKE_FILES).tmp
++	mv $(INC_MAKE_FILES).tmp $(INC_MAKE_FILES)
+ 	./bin/create-makefile.sh ./ >> $(INC_MAKE_FILES)
+ 
+ loc-update-catalog:

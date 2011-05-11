@@ -1,27 +1,46 @@
-@comment $OpenBSD: PLIST-ido,v 1.3 2011/03/31 10:25:25 sthen Exp $
+@comment $OpenBSD: PLIST-ido,v 1.4 2011/05/11 13:57:41 sthen Exp $
 @bin bin/ido2db
 @bin bin/idomod.o
 @bin bin/log2ido
 share/examples/icinga/db/
 share/examples/icinga/db/README
 share/examples/icinga/db/mysql/
-share/examples/icinga/db/mysql/mysql-upgrade-0.8.3.sql
-share/examples/icinga/db/mysql/mysql-upgrade-1.0.1.sql
-share/examples/icinga/db/mysql/mysql-upgrade-1.0.2-fix-object-relations.sql
-share/examples/icinga/db/mysql/mysql-upgrade-1.0.2.sql
-share/examples/icinga/db/mysql/mysql-upgrade-1.0.3.sql
-share/examples/icinga/db/mysql/mysql-upgrade-1.0.sql
-share/examples/icinga/db/mysql/mysql-upgrade-1.0rc.sql
-share/examples/icinga/db/mysql/mysql-upgrade-1.3.0.sql
-share/examples/icinga/db/mysql/mysql-upgrade-1.3.1.sql
 share/examples/icinga/db/mysql/mysql.sql
+share/examples/icinga/db/mysql/upgrade/
+share/examples/icinga/db/mysql/upgrade/mysql-upgrade-0.8.3.sql
+share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.0.1.sql
+share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.0.2-fix-object-relations.sql
+share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.0.2.sql
+share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.0.3.sql
+share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.0.sql
+share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.0rc.sql
+share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.3.0.sql
+share/examples/icinga/db/mysql/upgrade/mysql-upgrade-1.4.0.sql
+share/examples/icinga/db/oracle/
+share/examples/icinga/db/oracle/create_icinga_objects_oracle.sql
+share/examples/icinga/db/oracle/create_oracle_sys.sql
+share/examples/icinga/db/oracle/icinga_defines.sql
+share/examples/icinga/db/oracle/oracle-delete.sql
+share/examples/icinga/db/oracle/oracle-drop.sql
+share/examples/icinga/db/oracle/oracle-truncate.sql
+share/examples/icinga/db/oracle/oracle.sql
+share/examples/icinga/db/oracle/upgrade/
+share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.0.1.sql
+share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.0.2-fix-object-relations.sql
+share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.0.3.sql
+share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.3.0.sql
+share/examples/icinga/db/oracle/upgrade/oracle-upgrade-1.4.0.sql
+share/examples/icinga/db/oracle/upgrade/oracle_alter_icinga13_numbers.sql
+share/examples/icinga/db/oracle/upgrade/oracle_alter_icinga13_objects.sql
+share/examples/icinga/db/oracle/upgrade/oracle_recreate_icinga13_functions.sql
 share/examples/icinga/db/pgsql/
-share/examples/icinga/db/pgsql/pgsql-fix-0.8.3.sql
-share/examples/icinga/db/pgsql/pgsql-upgrade-1.0.1.sql
-share/examples/icinga/db/pgsql/pgsql-upgrade-1.0.3.sql
-share/examples/icinga/db/pgsql/pgsql-upgrade-1.3.0.sql
-share/examples/icinga/db/pgsql/pgsql-upgrade-1.3.1.sql
 share/examples/icinga/db/pgsql/pgsql.sql
+share/examples/icinga/db/pgsql/upgrade/
+share/examples/icinga/db/pgsql/upgrade/pgsql-fix-0.8.3.sql
+share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.0.1.sql
+share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.0.3.sql
+share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.3.0.sql
+share/examples/icinga/db/pgsql/upgrade/pgsql-upgrade-1.4.0.sql
 share/examples/icinga/db/queries/
 share/examples/icinga/db/queries/comment_history.sql
 share/examples/icinga/db/queries/comments.sql
@@ -57,6 +76,9 @@ share/examples/icinga/db/queries/state_history.sql
 share/examples/icinga/db/queries/timed_event_queue.sql
 share/examples/icinga/db/queries/timed_events.sql
 share/examples/icinga/db/scripts/
+share/examples/icinga/db/scripts/create_mysqldb.sh
+share/examples/icinga/db/scripts/create_oracledb.sh
+share/examples/icinga/db/scripts/create_pgsqldb.sh
 share/examples/icinga/db/scripts/installdb
 @comment share/examples/icinga/db/scripts/installdb.in
 share/examples/icinga/db/scripts/prepsql
@@ -67,4 +89,6 @@ share/examples/icinga/ido2db.cfg-sample
 @sample ${SYSCONFDIR}/icinga/ido2db.cfg
 share/examples/icinga/idomod.cfg-sample
 @sample ${SYSCONFDIR}/icinga/idomod.cfg
+share/examples/icinga/modules/idoutils.cfg
+@sample ${SYSCONFDIR}/icinga/modules/idoutils.cfg
 @rcscript ${RCDIR}/ido2db

@@ -1,7 +1,15 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
---- configure.orig	Tue Feb 15 13:28:41 2011
-+++ configure	Fri Mar 25 08:32:55 2011
-@@ -4774,13 +4774,13 @@ if test $ac_cv_lib_cma_pthread_create = yes; then
+$OpenBSD: patch-configure,v 1.2 2011/05/11 13:57:41 sthen Exp $
+--- configure.orig	Wed May 11 08:43:54 2011
++++ configure	Wed May 11 10:40:30 2011
+@@ -4797,20 +4797,20 @@ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_cma_pthread_create" >&5
+ $as_echo "$ac_cv_lib_cma_pthread_create" >&6; }
+ if test "x$ac_cv_lib_cma_pthread_create" = xyes; then :
+-  THREADLIBS="$THREADLIBS -lpthread"
++  THREADLIBS="$THREADLIBS -pthread"
+ fi
+ 
+ if test $ac_cv_lib_cma_pthread_create = yes; then
  	have_pthreads="yes"
  fi
  
@@ -9,7 +17,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
 -$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
 +{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -pthread" >&5
 +$as_echo_n "checking for pthread_create in -pthread... " >&6; }
- if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then :
+ if ${ac_cv_lib_pthread_pthread_create+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -18,16 +26,16 @@ $OpenBSD: patch-configure,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -4811,7 +4811,7 @@ fi
+@@ -4841,7 +4841,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
- if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then :
+ if test "x$ac_cv_lib_pthread_pthread_create" = xyes; then :
 -  THREADLIBS="$THREADLIBS -lpthread"
 +  THREADLIBS="$THREADLIBS -pthread"
  fi
  
  if test $ac_cv_lib_pthread_pthread_create = yes; then
-@@ -5102,7 +5102,7 @@ cat >>confdefs.h <<_ACEOF
+@@ -5132,7 +5132,7 @@ cat >>confdefs.h <<_ACEOF
  #define DEFAULT_NAGIOS_GROUP "$icinga_grp"
  _ACEOF
  
@@ -36,7 +44,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
  
  
  
-@@ -5123,7 +5123,7 @@ fi
+@@ -5153,7 +5153,7 @@ fi
  
  
  
@@ -45,7 +53,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
  
  
  MAIL_PROG=no
-@@ -5456,7 +5456,7 @@ $as_echo_n "checking for gdImagePng in -lgd (order 1).
+@@ -5502,7 +5502,7 @@ $as_echo_n "checking for gdImagePng in -lgd (order 1).
    $as_echo_n "(cached) " >&6
  else
    ac_save_LIBS="$LIBS"
@@ -54,7 +62,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
  	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  	/* Override any gcc2 internal prototype to avoid an error.  */
-@@ -5487,7 +5487,7 @@ fi
+@@ -5533,7 +5533,7 @@ fi
  $as_echo "yes" >&6; }
  
  			GDLIBFOUND=yep
@@ -63,7 +71,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
  
  	else
  	  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
-@@ -6725,7 +6725,7 @@ $as_echo_n "checking for SSL libraries... " >&6; }
+@@ -6789,7 +6789,7 @@ $as_echo_n "checking for SSL libraries... " >&6; }
  		found_ssl=no
  		for dir in $ssl_lib_dir $ssl_dir /usr/lib64 /usr/lib /usr/local/lib /usr/lib/ssl /usr/ssl/lib /usr/openssl/lib /usr/pkg/lib  /usr/freeware/lib/openssl; do
  			ssllibdir="$dir"

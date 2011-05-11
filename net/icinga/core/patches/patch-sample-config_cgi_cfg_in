@@ -1,7 +1,7 @@
-$OpenBSD: patch-sample-config_cgi_cfg_in,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
---- sample-config/cgi.cfg.in.orig	Thu Mar 24 13:14:16 2011
-+++ sample-config/cgi.cfg.in	Thu Mar 24 13:16:20 2011
-@@ -294,7 +294,10 @@ default_statuswrl_layout=4
+$OpenBSD: patch-sample-config_cgi_cfg_in,v 1.2 2011/05/11 13:57:41 sthen Exp $
+--- sample-config/cgi.cfg.in.orig	Wed May 11 08:43:54 2011
++++ sample-config/cgi.cfg.in	Wed May 11 10:38:33 2011
+@@ -345,7 +345,10 @@ default_statuswrl_layout=4
  # OS and distribution, so you may have to tweak this to
  # work on your system.
  

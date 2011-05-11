@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/11 12:03:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/11 13:57:41 sthen Exp $
 
 COMMENT-main =		network monitoring system (improved fork of Nagios)
 COMMENT-cgi =		cgi scripts for Icinga (classic Nagios-style UI)
@@ -10,8 +10,6 @@ PKGNAME-main =		icinga-$V
 PKGNAME-cgi =		icinga-cgi-$V
 PKGNAME-ido =		icinga-idoutils-$V
 PKGNAME-api =		icinga-api-$V
-
-REVISION-main = 	0
 
 MULTI_PACKAGES =	-main -cgi -api -ido
 PREFIX-cgi =		/var/www
@@ -82,13 +80,7 @@ post-install:
 	mv conf/modules.sample/icinga.conf \
 	    conf/modules.sample/icinga-cgi.conf.dist; \
 	chown -R ${SHAREOWN}:${SHAREGRP} icinga-api icinga-cgi conf
-	cd ${WRKSRC}/module/idoutils/db; \
-	${INSTALL_DATA} README ${PREFIX}/share/examples/icinga/db
-.for i in mysql pgsql queries
-	${INSTALL_DATA} ${WRKSRC}/module/idoutils/db/$i/* \
-	    ${PREFIX}/share/examples/icinga/db/$i
-.endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/module/idoutils/db/scripts/* \
-	    ${PREFIX}/share/examples/icinga/db/scripts; \
+	cd ${WRKSRC}/module/idoutils; \
+	pax -rw db ${PREFIX}/share/examples/icinga/
 
 .include <bsd.port.mk>
