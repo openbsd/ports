@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/01/08 10:50:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/05/11 06:56:43 ajacoutot Exp $
+@extraunexec rm /var/games/zangband/*/* 2>/dev/null || true
 @mode g+s
 @group games
 bin/zangband
@@ -167,4 +168,3 @@ share/zangband/xtra/sound/sound.cfg
 @sample /var/games/zangband/save/
 @sample /var/games/zangband/data/
 @sample /var/games/zangband/bone/
-@extraunexec rm /var/games/zangband/*/* 2>/dev/null || true

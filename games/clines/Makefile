@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/16 11:23:26 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/05/11 06:56:42 ajacoutot Exp $
 
 COMMENT=		curses-based Lines game
 
 DISTNAME=		clines-1.0.4
 CATEGORIES=		games
+REVISION=		0
 
 HOMEPAGE=		http://manticore.2y.net/prj/clines-a.html
 

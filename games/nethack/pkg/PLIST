@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.11 2008/01/26 19:07:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/05/11 06:56:42 ajacoutot Exp $
 @option no-default-conflict
 @conflict nethack-${V}
+@unexec rm -rf ${GAMEDIR}/save/*
 @comment bin/nethack
 @group games
 bin/nethack-${V}
@@ -155,5 +156,4 @@ ${GAMEDIR}/wizard3.lev
 ${GAMEDIR}/wizhelp
 @man man/man6/nethack-${V}.6
 @man man/man6/recover-${V}.6
-@unexec rm -rf ${GAMEDIR}/save/*
 !%%no_x11%%

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/26 07:20:12 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/05/11 06:56:43 ajacoutot Exp $
 
 COMMENT =	maze game resembling boulderdash
 
 DISTNAME =	rocksndiamonds-3.3.0.1
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	http://www.artsoft.org/rocksndiamonds/
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/16 11:23:26 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/05/11 06:56:42 ajacoutot Exp $
 
 COMMENT =	NetHack derivative
 
 VERSION =	1.9.3
 DISTNAME =	nethack_source_331_jtp_${VERSION:S/.//g}
 PKGNAME =	falconseye-${VERSION}
-REVISION =	3
+REVISION =	4
 CATEGORIES =	games x11
 EXTRACT_SUFX =	.zip
 

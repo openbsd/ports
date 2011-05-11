@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/03/03 13:43:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/05/11 06:56:43 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
+@extraunexec rm -rf /var/spool/lock/sane/*
 %%SHARED%%
 @bin bin/gamma4scanimage
 bin/sane-config
@@ -514,4 +515,3 @@ share/sane/snapscan/
 @mode 775
 @group _saned
 @sample /var/spool/lock/sane/
-@extraunexec rm -rf /var/spool/lock/sane/

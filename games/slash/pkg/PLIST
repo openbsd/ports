@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2008/01/26 19:07:40 espie Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/05/11 06:56:43 ajacoutot Exp $
+@unexec rm -rf %B/save
 @group games
 bin/slash
 bin/srecover
@@ -200,6 +201,5 @@ ${GAMEDIR}/wizard3.lev
 ${GAMEDIR}/wizhelp
 ${GAMEDIR}/yeenoghu.lev
 @man man/man6/slash.6
-@unexec rm -rf %B/save
 @man man/man6/srecover.6
 !%%no_x11%%

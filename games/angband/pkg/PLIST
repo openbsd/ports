@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2005/11/03 17:01:05 niallo Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/05/11 06:56:42 ajacoutot Exp $
+@extraunexec rm /var/games/angband/*/* 2>/dev/null || true
 @group games
 @mode g+s
 bin/angband
@@ -94,4 +95,3 @@ share/angband/xtra/font/16x16.txt
 @sample /var/games/angband/save/
 @sample /var/games/angband/data/
 @sample /var/games/angband/bone/
-@extraunexec rm /var/games/angband/*/* 2>/dev/null || true

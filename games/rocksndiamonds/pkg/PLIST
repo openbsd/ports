@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/06/07 08:13:53 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/05/11 06:56:43 ajacoutot Exp $
+@extraunexec rm -rf /var/games/rocksndiamonds/*
 @mode 2555
 @group games
 @bin bin/rocksndiamonds
@@ -541,4 +542,3 @@ share/rocksndiamonds/sounds/snd_classic/zonkpush.wav
 @mode 775
 @group games
 @sample /var/games/rocksndiamonds/
-@extraunexec rm -rf /var/games/rocksndiamonds/* >/dev/null || true

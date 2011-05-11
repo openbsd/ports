@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.9 2004/11/13 20:07:10 alek Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/05/11 06:56:43 ajacoutot Exp $
+@extraunexec rm -rf /var/games/xkobo.scores/*
 @mode 2755
 @group games
 bin/xkobo
@@ -7,4 +8,3 @@ bin/xkobo
 @mode
 @group
 @man man/man1/xkobo.1
-@extraunexec rm -rf /var/games/xkobo.scores/*

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2004/08/11 10:42:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/05/11 06:56:43 ajacoutot Exp $
 bin/imlib-config
 bin/imlib_config
 include/Imlib.h
@@ -26,4 +26,3 @@ share/examples/imlib/im_palette.pal
 share/examples/imlib/imrc
 @sample ${SYSCONFDIR}/imlib/imrc
 %%SHARED%%
-@extraunexec rm -rf ${SYSCONFDIR}/imlib
