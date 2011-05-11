@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/04/15 16:10:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2011/05/11 08:24:41 ajacoutot Exp $
 
 # XXX fails to build if not using the bundled libtool
 
@@ -8,7 +8,7 @@ MODPY_EGG_VERSION=0.9.24.1
 DISTNAME=	libprelude-${MODPY_EGG_VERSION}
 PKGNAME=	prelude-${DISTNAME}
 
-REVISION=	3
+REVISION=	4
 
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/libprelude/
 

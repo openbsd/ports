@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/05/28 18:08:49 jakob Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/05/11 08:24:41 ajacoutot Exp $
 @newgroup _stunnel:528
 @newuser _stunnel:528:_stunnel:daemon:stunnel account:/var/stunnel:/sbin/nologin
+@extraunexec rm -rf /var/stunnel/*
 @man man/man8/stunnel.8
 @bin sbin/stunnel
 share/examples/stunnel/
@@ -8,5 +9,4 @@ share/examples/stunnel/
 share/examples/stunnel/stunnel.conf-sample
 @sample ${SYSCONFDIR}/stunnel/stunnel.conf
 @sample /var/stunnel/
-@extraunexec rm -rf /var/stunnel
 @extra /var/run/stunnel.pid

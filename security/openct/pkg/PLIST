@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2008/12/23 19:09:32 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/05/11 08:24:41 ajacoutot Exp $
 @newgroup _openct:614
 @newuser _openct:614:_openct:daemon:OpenCT:/nonexistent:/sbin/nologin
+@extraunexec rm -rf /var/run/openct/*
 %%SHARED%%
 @bin bin/openct-tool
 include/openct/
@@ -40,4 +41,3 @@ share/examples/openct/openct.conf
 @sample ${SYSCONFDIR}/openct.conf
 @mode 755
 @sample /var/run/openct/
-@extraunexec rm -rf /var/run/openct/*

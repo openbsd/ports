@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/20 17:22:44 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/05/11 08:24:41 ajacoutot Exp $
 
 COMMENT=	Nessus Attack Scripting Language
 DISTNAME=	libnasl-${V}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS=	nasl	4.7
 

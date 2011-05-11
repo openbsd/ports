@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/08/30 20:37:16 rui Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/05/11 08:24:41 ajacoutot Exp $
 @newgroup _prelude:564
 @newuser _prelude:564:564:daemon:Prelude IDS:/var/empty:/sbin/nologin
+@extraunexec rm -rf ${SYSCONFDIR}/prelude/profile/*
+@extraunexec rm -rf /var/prelude/*
+@extraunexec rm -rf /var/spool/prelude/*
 %%SHARED%%
 bin/libprelude-config
 bin/prelude-adduser
@@ -140,6 +143,3 @@ share/gtk-doc/html/libprelude/pt04.html
 share/gtk-doc/html/libprelude/right.png
 share/gtk-doc/html/libprelude/style.css
 share/gtk-doc/html/libprelude/up.png
-@extraunexec rm -rf ${SYSCONFDIR}/prelude/*
-@extraunexec rm -rf /var/prelude/*
-@extraunexec rm -rf /var/spool/prelude/*

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/12/05 22:07:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/05/11 08:24:40 ajacoutot Exp $
 @newgroup _ipguard:612
 @newuser _ipguard:612:612:daemon:IPguard User:/var/empty:/sbin/nologin
 @man man/man8/ipguard.8
 @bin sbin/ipguard
-@extraunexec rm -rf /var/log/ipguard
+@extraunexec rm -rf /var/log/ipguard/*
 @group _ipguard
 @sample /var/log/ipguard/

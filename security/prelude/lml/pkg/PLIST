@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/11/16 10:11:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/05/11 08:24:41 ajacoutot Exp $
+@extraunexec rm -rf /var/prelude-lml/*
+@extraunexec rm -rf /var/spool/prelude-lml/*
 %%SHARED%%
 @bin bin/prelude-lml
 include/prelude-lml/
@@ -136,5 +138,3 @@ share/examples/prelude-lml/ruleset/wu-ftp.rules
 @sample ${SYSCONFDIR}/prelude-lml/ruleset/wu-ftp.rules
 @sample /var/prelude-lml/
 @sample /var/spool/prelude-lml/
-@extraunexec rm -rf /var/prelude-lml/*
-@extraunexec rm -rf /var/spool/prelude-lml/*

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2011/04/15 16:10:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2011/05/11 08:24:41 ajacoutot Exp $
 
 COMMENT=	Prelude manager
 
 DISTNAME=	prelude-manager-0.9.15
-REVISION=	2
+REVISION=	3
 
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/prelude-manager/
 

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.19 2010/10/28 11:21:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/05/11 08:24:40 ajacoutot Exp $
 @conflict cyrus-sasl-*
+@extraunexec rm -rf /var/sasl2/*
 include/sasl/
 include/sasl/hmac-md5.h
 include/sasl/md5.h
@@ -127,5 +128,4 @@ share/examples/sasl2/
 %%sql%%
 %%SHARED%%
 @sample /var/sasl2/
-@extraunexec rm -rf /var/sasl2/*
 @rcscript ${RCDIR}/saslauthd
