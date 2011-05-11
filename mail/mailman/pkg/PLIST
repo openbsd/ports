@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.20 2010/11/09 21:46:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2011/05/11 12:57:48 jasper Exp $
 @newgroup _mailman:504
 @newuser _mailman:504:_mailman:daemon:Mailing List Manager:${PREFIX}/lib/mailman:/sbin/nologin
+@extraunexec rm -fr /var/spool/mailman/*
 @mode 775
 @owner _mailman
 @group _mailman
@@ -2449,7 +2450,6 @@ share/doc/mailman/UPGRADING
 @sample /var/spool/mailman/qfiles/
 @sample /var/spool/mailman/spam/
 @unexec find %D/lib/mailman -name paths.pyc -exec rm -f {} \;
-@extraunexec rm -fr /var/spool/mailman
 @mode
 @owner
 @group

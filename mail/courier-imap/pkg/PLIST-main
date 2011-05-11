@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/12/16 17:55:10 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2011/05/11 12:57:47 jasper Exp $
 @conflict imap-uw-*
 @conflict courier-utils-*
 @pkgpath ${BASE_PKGPATH}
 @newgroup _courier:571
 @newuser _courier:571:571:daemon:Courier Mail Server:/var/empty:/sbin/nologin
+@extraunexec rm -rf ${SYSCONFDIR}/*
+@extraunexec rm -rf ${COURIERSTATE}/*
 @bin bin/couriertls
 @bin bin/deliverquota
 @bin bin/imapd
@@ -58,7 +60,5 @@ share/examples/courier/quotawarnmsg.example
 @sample ${SYSCONFDIR}/shared.tmp/
 @mode 750
 @sample ${COURIERSTATE}/
-@extraunexec rm -rf ${SYSCONFDIR}/
-@extraunexec rm -rf ${COURIERSTATE}
 @rcscript ${RCDIR}/courier_imap
 @rcscript ${RCDIR}/courier_imap-ssl

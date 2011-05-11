@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/12/09 01:46:05 okan Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/05/11 12:57:48 jasper Exp $
 @newgroup _milter-regex:527
 @newuser _milter-regex:527:_milter-regex:daemon:milter-regex Account:/nonexistent:/sbin/nologin
+@extraunexec rm -rf /var/spool/milter-regex/*
 @bin libexec/milter-regex
 @man man/man8/milter-regex.8
 @rcscript ${RCDIR}/milter_regex
@@ -8,4 +9,3 @@
 @owner _milter-regex
 @group _milter-regex
 @sample /var/spool/milter-regex/
-@extraunexec rm -rf /var/spool/milter-regex

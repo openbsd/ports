@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/12/30 17:51:25 landry Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/05/11 12:57:48 jasper Exp $
 @newgroup _sympa:648
 @newuser _sympa:648:648:daemon:Sympa Daemon:/var/empty:/sbin/nologin
+@extraunexec rm -rf /var/sympa/*
 @mode 755
 @owner _sympa
 @group _sympa
@@ -574,6 +575,5 @@ share/sympa/web_tt2/which.tt2
 share/sympa/web_tt2/your_lists.tt2
 @exec cp -r ${PREFIX}/share/sympa/icons /var/www/sympa/
 @unexec rm -Rf /var/www/sympa/icons
-@extraunexec rm -rf /var/sympa
 @rcscript ${RCDIR}/sympa
 @rcscript ${RCDIR}/wwsympa

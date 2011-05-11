@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/12/09 01:47:31 okan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/05/11 12:57:48 jasper Exp $
 @newgroup _milter-spamd:532
 @newuser _milter-spamd:532:_milter-spamd:daemon:milter-spamd Account:/nonexistent:/sbin/nologin
+@extraunexec rm -rf /var/spool/milter-spamd/*
 @bin libexec/milter-spamd
 @man man/man8/milter-spamd.8
 @rcscript ${RCDIR}/milter_spamd
@@ -8,4 +9,3 @@
 @owner _milter-spamd
 @group _milter-spamd
 @sample /var/spool/milter-spamd/
-@extraunexec rm -rf /var/spool/milter-spamd

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2006/10/18 05:12:35 aanriot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/05/11 12:57:48 jasper Exp $
 @newgroup _dspam:540
 @newuser _dspam:540:540:daemon:DSPAM Account:/var/dspam:/sbin/nologin
+@extraunexec rm -rf /var/dspam/*
 %%SHARED%%
 bin/dspam
 bin/dspam_2sql
@@ -71,4 +72,3 @@ share/examples/dspam/dspam.conf
 @group _dspam
 @sample /var/dspam/
 @sample /var/dspam/data/
-@extraunexec rm -rf /var/dspam

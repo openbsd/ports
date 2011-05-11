@@ -1,6 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/12/07 02:56:19 okan Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/05/11 12:57:48 jasper Exp $
 @newgroup _mdefang:570
 @newuser _mdefang:570:_mdefang:daemon:MIMEDefang:/nonexistent:/sbin/nologin
+@extraunexec rm -rf /var/run/mdefang/*
+@extraunexec rm -rf /var/spool/MIMEDefang/*
+@extraunexec rm -rf /var/spool/MD-Quarantine/*
 @bin bin/md-mx-ctrl
 @bin bin/mimedefang
 @bin bin/mimedefang-multiplexor
@@ -32,6 +35,3 @@ share/examples/mimedefang/sa-mimedefang.cf
 @sample /var/spool/MD-Quarantine/
 @mode 0755
 @sample /var/run/mdefang/
-@extraunexec rm -rf /var/run/mdefang/*
-@extraunexec rm -rf /var/spool/MIMEDefang/*
-@extraunexec rm -rf /var/spool/MD-Quarantine/*

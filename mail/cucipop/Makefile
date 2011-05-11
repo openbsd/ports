@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 19:59:15 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/05/11 12:57:47 jasper Exp $
 
 COMMENT=	Cubic Circle's POP3 daemon
 
 DISTNAME=	cucipop-1.31
+REVISION=	0
 CATEGORIES=	mail
 
 MASTER_SITES=	ftp://ftp.informatik.rwth-aachen.de/pub/packages/cucipop/

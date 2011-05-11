@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2011/04/13 12:51:00 giovanni Exp $
+# $OpenBSD: Makefile,v 1.21 2011/05/11 12:57:47 jasper Exp $
 
 COMMENT=		interface between mailer MTA and content checkers
 
 DISTNAME=		amavisd-new-2.6.5
+REVISION=		0
 CATEGORIES=		mail security
 
 HOMEPAGE=		http://www.ijs.si/software/amavisd/
