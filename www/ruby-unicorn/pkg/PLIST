@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/03/14 20:44:19 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/05/11 23:41:23 jeremy Exp $
 ${GEM_BIN}/unicorn${GEM_BIN_SUFFIX}
 ${GEM_BIN}/unicorn_rails${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -8,7 +8,6 @@ ${GEM_LIB}/gems/${DISTNAME}/.document
 ${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.mailmap
 ${GEM_LIB}/gems/${DISTNAME}/.manifest
-${GEM_LIB}/gems/${DISTNAME}/.require_paths
 ${GEM_LIB}/gems/${DISTNAME}/.wrongdoc.yml
 ${GEM_LIB}/gems/${DISTNAME}/CONTRIBUTORS
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
@@ -45,6 +44,7 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/echo.ru
 ${GEM_LIB}/gems/${DISTNAME}/examples/git.ru
 ${GEM_LIB}/gems/${DISTNAME}/examples/init.sh
 ${GEM_LIB}/gems/${DISTNAME}/examples/logger_mp_safe.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/logrotate.conf
 ${GEM_LIB}/gems/${DISTNAME}/examples/nginx.conf
 ${GEM_LIB}/gems/${DISTNAME}/examples/unicorn.conf.minimal.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/unicorn.conf.rb
@@ -105,6 +105,8 @@ ${GEM_LIB}/gems/${DISTNAME}/t/bin/unused_listen
 ${GEM_LIB}/gems/${DISTNAME}/t/bin/utee
 ${GEM_LIB}/gems/${DISTNAME}/t/env.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/my-tap-lib.sh
+${GEM_LIB}/gems/${DISTNAME}/t/oob_gc.ru
+${GEM_LIB}/gems/${DISTNAME}/t/oob_gc_path.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/pid.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/preread_input.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/rack-input-tests.ru
@@ -191,6 +193,8 @@ ${GEM_LIB}/gems/${DISTNAME}/t/t0302-rails3-alt-working_directory.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0303-rails3-alt-working_directory_config.ru.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0304-rails3-alt-working_directory_no_embed_cli.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t9000-preread-input.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t9001-oob_gc.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t9002-oob_gc-path.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/test-lib.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/test-rails3.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/write-on-close.ru
@@ -299,31 +303,6 @@ ${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.2.2/log/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.2.2/public/
 ${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.2.2/public/404.html
 ${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.2.2/public/500.html
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/Rakefile
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/app/
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/app/controllers/
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/app/controllers/application_controller.rb
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/app/controllers/foo_controller.rb
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/app/helpers/
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/app/helpers/application_helper.rb
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/config/
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/config/boot.rb
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/config/database.yml
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/config/environment.rb
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/config/environments/
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/config/environments/development.rb
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/config/environments/production.rb
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/config/routes.rb
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/db/
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/db/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/log/
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/log/.gitignore
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/public/
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/public/404.html
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/public/500.html
-${GEM_LIB}/gems/${DISTNAME}/test/rails/app-2.3.8/public/x.txt
 ${GEM_LIB}/gems/${DISTNAME}/test/rails/test_rails.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/
