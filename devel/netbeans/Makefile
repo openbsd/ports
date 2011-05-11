@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/05/11 06:22:17 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,6 +7,7 @@ COMMENT=		NetBeans Java IDE
 V=			6.9.1
 DISTNAME=		netbeans-${V}
 CATEGORIES=		java devel
+REVISION=		0
 
 HOMEPAGE=		http://www.netbeans.org/
 

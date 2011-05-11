@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2011/03/07 19:17:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2011/05/11 06:22:17 ajacoutot Exp $
 @conflict glib2-fam-*
 @pkgpath devel/glib2
 @pkgpath devel/glib2,-fam
+@unexec-delete rm -f %D/share/glib-2.0/schemas/gschemas.compiled
 @bin bin/gdbus
 @bin bin/gio-querymodules
 @bin bin/glib-compile-schemas
@@ -469,4 +470,3 @@ share/locale/zh_HK/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
 %%SHARED%%
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas 2> /dev/null || true
-@unexec-delete rm -f %D/share/glib-2.0/schemas/gschemas.compiled

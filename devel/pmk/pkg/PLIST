@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2006/08/15 11:09:37 steven Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/05/11 06:22:17 ajacoutot Exp $
 bin/pmk
 bin/pmkinstall
 bin/pmkpc
@@ -18,4 +18,4 @@ share/pmk/pmkcpu.dat
 share/pmk/pmkfile.sample
 share/pmk/pmkscan.dat
 @exec %D/bin/pmksetup
-@extraunexec rm -rf ${SYSCONFDIR}/pmk/*
+@extraunexec rm -rf ${SYSCONFDIR}/pmk/

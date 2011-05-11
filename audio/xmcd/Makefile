@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2011/04/10 18:00:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2011/05/11 06:22:16 ajacoutot Exp $
 
 COMMENT=	Motif CD player
 
 DISTNAME=	xmcd-2.6
-REVISION=	11
+REVISION=	12
 CATEGORIES=	audio
 HOMEPAGE=	http://www.amb.org/xmcd/
 

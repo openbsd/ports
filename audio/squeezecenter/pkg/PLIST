@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/07/12 19:58:28 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/05/11 06:22:16 ajacoutot Exp $
 @newgroup _squeezecenter:610
 @newuser _squeezecenter:610:_squeezecenter:daemon:squeezecenter user:/nonexistent:/sbin/nologin
+@extraunexec rm -rf /var/db/squeezecenter/*
+@extraunexec rm -rf /var/log/squeezecenter/*
 bin/scanner.pl
 bin/slimserver.pl
 libdata/perl5/site_perl/Slim/
@@ -816,8 +818,6 @@ share/examples/squeezecenter/
 share/examples/squeezecenter/convert.conf
 @sample ${SYSCONFDIR}/squeezecenter/
 @sample ${SYSCONFDIR}/squeezecenter/convert.conf
-@extraunexec rm -rf /var/db/squeezecenter
-@extraunexec rm -rf /var/log/squeezecenter
 share/examples/squeezecenter/empty
 @owner _squeezecenter
 @group _squeezecenter

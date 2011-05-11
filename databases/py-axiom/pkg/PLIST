@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/12/31 12:31:44 eric Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/05/11 06:22:16 ajacoutot Exp $
+@unexec /bin/rm %D/lib/python${MODPY_VERSION}/site-packages/axiom/plugins/dropin.cache
 bin/axiomatic
 lib/python${MODPY_VERSION}/site-packages/Axiom-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/axiom/
@@ -56,7 +57,6 @@ lib/python${MODPY_VERSION}/site-packages/axiom/item.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/listversions.py
 lib/python${MODPY_VERSION}/site-packages/axiom/listversions.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/plugins/
-@unexec /bin/rm %D/lib/python${MODPY_VERSION}/site-packages/axiom/plugins/dropin.cache
 lib/python${MODPY_VERSION}/site-packages/axiom/plugins/__init__.py
 lib/python${MODPY_VERSION}/site-packages/axiom/plugins/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/axiom/plugins/axiom_plugins.py

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/02 08:35:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2011/05/11 06:22:16 ajacoutot Exp $
 
 COMMENT =	streaming audio server for Squeezebox network music players
 
@@ -6,7 +6,7 @@ COMMENT =	streaming audio server for Squeezebox network music players
 V =		7.3.3
 PKGNAME =	squeezecenter-${V}
 DISTNAME =	squeezecenter-${V}-noCPAN
-REVISION =	1
+REVISION =	2
 CATEGORIES =	audio net
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>

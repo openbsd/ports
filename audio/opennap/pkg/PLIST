@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/02/14 09:46:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/05/11 06:22:16 ajacoutot Exp $
 @newgroup _opennap:500
 @newuser _opennap:500:_opennap:daemon:Opennap Account:/nonexistent:/sbin/nologin
+@extraunexec rm -rf ${SYSCONFDIR}/opennap/*
 @bin sbin/metaserver
 @bin sbin/opennap
 @bin sbin/setup
@@ -23,4 +24,3 @@ share/examples/opennap/sample.users
 @sample ${SYSCONFDIR}/opennap/
 @mode 600
 @sample ${SYSCONFDIR}/opennap/users
-@extraunexec rm ${SYSCONFDIR}/opennap/*

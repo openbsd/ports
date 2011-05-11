@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/11/03 18:18:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/05/11 06:22:16 ajacoutot Exp $
 @newgroup _mpd:560
 @newuser _mpd:560:560:daemon:Music Player Daemon:/var/empty:/sbin/nologin
+@extraunexec rm -rf /var/log/mpd/*
+@extraunexec find /var/spool/mpd \! -name playlists -mindepth 1 -exec rm -rf "{}" \;
 @man man/man1/mpd.1
 @man man/man5/mpd.conf.5
 @bin sbin/mpd
@@ -19,8 +21,6 @@ share/examples/mpd/mpd.conf
 @sample /var/log/mpd/
 @sample /var/spool/mpd/
 @sample /var/spool/mpd/playlists/
-@extraunexec rm -rf /var/log/mpd/*
-@extraunexec find /var/spool/mpd \! -name playlists -mindepth 1 -exec rm -rf "{}" \;
 @mode
 @owner
 @group

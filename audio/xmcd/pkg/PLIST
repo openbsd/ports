@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/04/10 18:00:23 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/05/11 06:22:16 ajacoutot Exp $
 @pkgpath audio/xmcd,lesstif
+@extraunexec rm -rf ${SYSCONFDIR}/xmcd/*
+@extraunexec rm -rf /var/db/xmcd/*
 bin/cda
 bin/cddbcmd
 bin/dp2xmcd
@@ -211,5 +213,3 @@ share/xmcd/tbl/Tatung
 share/xmcd/tbl/Teac
 share/xmcd/tbl/Toshiba
 share/xmcd/tbl/Yamaha
-@extraunexec rm -rf ${SYSCONFDIR}/xmcd
-@extraunexec rm -rf /var/db/xmcd

@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/12 12:26:16 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/05/11 06:22:17 ajacoutot Exp $
+@unexec rm -rf %D/netbeans/nb/servicetag
 bin/netbeans
 netbeans/
 netbeans/CREDITS.html
@@ -11120,7 +11121,6 @@ netbeans/websvccommon/update_tracking/org-netbeans-modules-websvc-saas-services-
 netbeans/websvccommon/update_tracking/org-netbeans-modules-websvc-saas-services-zillow.xml
 netbeans/websvccommon/update_tracking/org-netbeans-modules-websvc-saas-services-zvents.xml
 netbeans/websvccommon/update_tracking/org-netbeans-modules-websvc-saas-ui.xml
-@unexec rm -rf %D/netbeans/nb/servicetag
 share/applications/netbeans.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
 @exec %D/bin/update-desktop-database
