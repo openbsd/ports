@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/27 11:41:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/05/11 15:20:02 ajacoutot Exp $
 
 COMMENT =		Othello/Reversi-like game
 DISTNAME =		grhino-${V}
@@ -19,7 +19,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=rhino/GRhino/${V}/}
 
 MODULES =		devel/gettext
 
-BUILD_DEPENDS =		x11/gnome/doc-utils
+BUILD_DEPENDS =		textproc/rarian
 RUN_DEPENDS =		x11/gnome/yelp
 LIB_DEPENDS =		x11/gnome/libgnomeui
 
