@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/03/14 20:45:10 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/11 23:42:15 jeremy Exp $
 
 COMMENT =	ruby-unicorn for sleepy apps and slow clients
 
-DISTNAME =	rainbows-3.1.0
+DISTNAME =	rainbows-3.2.0
 CATEGORIES =	www
 
 HOMEPAGE =	http://rainbows.rubyforge.org/
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP = Yes
 MODULES =	lang/ruby
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	www/ruby-unicorn,${MODRUBY_FLAVOR}>=3.4,<4.0 \
+RUN_DEPENDS =	www/ruby-unicorn,${MODRUBY_FLAVOR}>=3.5,<4.0 \
 		www/ruby-rack,${MODRUBY_FLAVOR}>=1.1.0,<2.0
 
 CONFIGURE_STYLE = ruby gem ext
