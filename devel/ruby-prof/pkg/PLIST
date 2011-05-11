@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/20 18:07:39 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/11 23:39:02 jeremy Exp $
 ${GEM_BIN}/ruby-prof${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -75,8 +75,6 @@ ${GEM_LIB}/gems/${DISTNAME}/rails/example/example_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/rails/profile_test_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/aggregate_test.rb
-${GEM_LIB}/gems/${DISTNAME}/test/bad.rb
-${GEM_LIB}/gems/${DISTNAME}/test/basic2_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/basic_test.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/current_failures_windows
 ${GEM_LIB}/gems/${DISTNAME}/test/do_nothing.rb
