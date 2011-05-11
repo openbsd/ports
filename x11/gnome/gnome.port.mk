@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.36 2011/05/11 12:50:20 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.37 2011/05/11 14:56:42 ajacoutot Exp $
 #
 # Module for GNOME related ports
 #
@@ -21,9 +21,10 @@ MODULES+=		textproc/intltool
 MODGNOME_RUN_DEPENDS+=	devel/desktop-file-utils
 .endif
 
-# Set to 'yes' if there are .xml GNOME help files under
-# share/gnome/help/ in the package list.
-# gnome-doc-utils is needed for rarian/scrollkeeper and gnome-doc-*.
+# Set to 'yes' if there are .xml GNOME help files under share/gnome/help/
+# in the pkg list and it calls gnome_help_display() -- gnome-doc-utils is
+# here to make sure we have a dependency on rarian (scrollkeeper-*) and
+# have access to the gnome-doc-* tools (not always needed but easier).
 .if defined(MODGNOME_HELP_FILES) && ${MODGNOME_HELP_FILES:L} == "yes"
 MODGNOME_BUILD_DEPENDS+= x11/gnome/doc-utils
 MODGNOME_RUN_DEPENDS+=	x11/gnome/yelp
