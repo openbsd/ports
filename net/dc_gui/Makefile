@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2010/12/08 13:36:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/05/11 14:59:56 ajacoutot Exp $
 
 COMMENT=		GUI for dctc (Direct Connect Text Clone)
 
 V=			0.80
 DISTNAME=		dc_gui2-$V
 PKGNAME=		dc_gui-$V
-REVISION=		6
+REVISION=		7
 CATEGORIES=		net x11
 HOMEPAGE=		http://ac2i.homelinux.com/dctc/
 
@@ -36,8 +36,7 @@ MODULES=		devel/gettext
 
 BUILD_DEPENDS=		net/dctc>=0.85.9
 RUN_DEPENDS=		devel/desktop-file-utils \
-			net/dctc>=0.85.9 \
-			x11/gnome/yelp
+			net/dctc>=0.85.9
 LIB_DEPENDS=		databases/db/v4 \
 			net/curl \
 			x11/gnome/libgnomeui
@@ -52,5 +51,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/db4 \
 			-I${WRKSRC}/dc_gui2_com_channel/src/" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# don't install under share/gnome/help/, there is no yelp (xml) file
+FAKE_FLAGS=		dc_gui_helpdir=${PREFIX}/share/doc/dc_gui/html
 
 .include <bsd.port.mk>
