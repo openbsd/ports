@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST-gmp,v 1.3 2010/06/29 01:10:45 robert Exp $
+@comment $OpenBSD: PLIST-gmp,v 1.4 2011/05/12 14:30:12 robert Exp $
 @conflict php5-gmp->=5.2
-@pkgpath www/php5/extensions,-gmp
 lib/php-${PV}/modules/gmp.so
 share/examples/php-${PV}/gmp.ini
 @sample ${SYSCONFDIR}/php-${PV}.sample/gmp.ini

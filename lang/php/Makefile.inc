@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.10 2011/03/26 10:23:13 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2011/05/12 14:30:12 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -162,7 +162,7 @@ COMMENT-imap=		imap, pop3 and nntp extensions for php5
 CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-kerberos=/usr --with-imap-ssl
 LIB_DEPENDS-imap=	mail/imap-uw,-c-client
-WANTLIB-imap=		crypto gssapi krb5 ssl c-client>=5 z
+WANTLIB-imap=		crypto gssapi krb5 ssl c-client>=5
 
 # ldap
 MULTI_PACKAGES+=	-ldap
