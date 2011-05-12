@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/05/12 06:08:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/05/12 22:13:12 ajacoutot Exp $
 
 COMMENT=		plugins for EOG
 
@@ -40,7 +40,7 @@ RUN_DEPENDS=		x11/gnome/eog>=2.30.0
 
 MODGCONF2_SCHEMAS_DIR=	eog-plugins
 AUTOCONF_VERSION=	2.68
-CONFIGURE_STYLE= 	autoconf gnu
+CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS+=	--with-plugins=all
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
