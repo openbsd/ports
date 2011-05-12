@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/05/08 14:08:44 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.28 2011/05/12 07:34:54 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
@@ -53,10 +53,8 @@ MAKE_ENV =		LIBaudclient_VERSION=${LIBaudclient_VERSION} \
 
 USE_GMAKE =		Yes
 
-# Should be 2.68
-AUTOCONF_VERSION =	2.67
-
 CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.68
 
 .if ${MACHINE_ARCH} != "amd64"
 CONFIGURE_ARGS +=	--disable-sse2

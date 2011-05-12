@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/05/08 14:08:44 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.33 2011/05/12 07:34:54 dcoppa Exp $
 
 SHARED_ONLY =		Yes
 
@@ -84,10 +84,8 @@ MULTI_PACKAGES +=	-jack
 
 USE_GMAKE =		Yes
 
-# Should be 2.68
-AUTOCONF_VERSION =	2.67
-
 CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.68
 CONFIGURE_ARGS +=	--enable-ipv6 \
 			--enable-sndio \
 			--disable-pulse \
