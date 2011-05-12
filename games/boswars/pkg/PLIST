@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/04/14 18:29:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/05/12 05:43:04 ajacoutot Exp $
 @bin bin/boswars
 share/boswars/
 share/boswars/campaigns/
@@ -106,8 +106,6 @@ share/boswars/graphics/screens/
 share/boswars/graphics/screens/defeat.png
 share/boswars/graphics/screens/menu.png
 share/boswars/graphics/screens/victory.png
-share/boswars/graphics/tiles/
-share/boswars/graphics/tiles/desert.png
 share/boswars/graphics/ui/
 share/boswars/graphics/ui/cursor-info.png
 share/boswars/graphics/ui/cursors/
@@ -692,15 +690,14 @@ share/doc/boswars/html/scripts/config.html
 share/doc/boswars/html/scripts/findlua.py
 share/doc/boswars/html/scripts/game.html
 share/doc/boswars/html/scripts/index.html
+share/doc/boswars/html/scripts/limits.html
 share/doc/boswars/html/scripts/magic.html
 share/doc/boswars/html/scripts/makeindex.py
 share/doc/boswars/html/scripts/mappresentation.html
 share/doc/boswars/html/scripts/mapsetup.html
-share/doc/boswars/html/scripts/research.html
 share/doc/boswars/html/scripts/savegame.html
 share/doc/boswars/html/scripts/showindex.py
 share/doc/boswars/html/scripts/sound.html
-share/doc/boswars/html/scripts/tileset.html
 share/doc/boswars/html/scripts/triggers.html
 share/doc/boswars/html/scripts/ui.html
 share/doc/boswars/html/scripts/unittype.html

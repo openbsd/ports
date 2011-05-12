@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/16 11:23:26 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/05/12 05:43:04 ajacoutot Exp $
 
 COMMENT=	real-time strategy game
 
-V=		2.6
+V=		2.6.1
 DISTNAME=	boswars-${V}-src
 PKGNAME=	boswars-${V}
 CATEGORIES=	games x11
@@ -36,7 +36,7 @@ NO_REGRESS=	Yes
 DATA_DIR=	campaigns graphics intro maps languages scripts sounds units
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/SConstruct \
+	@${SUBST_CMD} ${WRKSRC}/SConstruct \
 		${WRKSRC}/engine/include/stratagus.h
 
 do-install:
