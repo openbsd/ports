@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2011/05/10 07:47:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2011/05/12 15:39:46 rpointel Exp $
 
 COMMENT=	secure webserver
 
 DISTNAME=	hiawatha-7.4.1
 CATEGORIES=	www net
 
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.hiawatha-webserver.org/
 
@@ -42,6 +42,8 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/hiawatha/
 	${INSTALL_DATA} ${WRKSRC}/etc/hiawatha/*.conf \
+		${PREFIX}/share/examples/hiawatha 
+	${INSTALL_DATA} ${WRKSRC}/etc/hiawatha/index.xslt \
 		${PREFIX}/share/examples/hiawatha 
 	${INSTALL_DATA} ${WRKSRC}/doc/index.html \
 		${PREFIX}/share/examples/hiawatha 
