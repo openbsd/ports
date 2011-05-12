@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/12 09:58:51 kevlo Exp $
+%%SHARED%%
+@bin bin/cconv
+include/cconv.h
+include/unicode.h
+lib/libcconv.a
+lib/libcconv.la
