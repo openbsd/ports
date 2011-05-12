@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/13 07:43:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/12 09:50:26 ajacoutot Exp $
 share/doc/gtkmm-3.0/
 share/doc/gtkmm-3.0/tutorial/
 share/doc/gtkmm-3.0/tutorial/html/
+share/doc/gtkmm-3.0/tutorial/html/changes-gtkmm3.html
 share/doc/gtkmm-3.0/tutorial/html/chapter-adjustment.html
 share/doc/gtkmm-3.0/tutorial/html/chapter-basics.html
 share/doc/gtkmm-3.0/tutorial/html/chapter-builder.html
