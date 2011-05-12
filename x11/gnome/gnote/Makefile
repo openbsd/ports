@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/08 20:39:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/12 06:05:16 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,6 +42,7 @@ MODGCONF2_SCHEMAS_DIR=	gnote
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
 
+# Should be 2.66
 AUTOCONF_VERSION=	2.65
 
 CONFIGURE_STYLE=	autoconf gnu
