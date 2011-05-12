@@ -1,15 +1,13 @@
-
-# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:18 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/05/12 02:11:52 joshe Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
-V =			1.0.41
+V =			1.0.48
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
-REVISION =		0
 WRKDIST=		${WRKDIR}/sbcl-${V}
 EXTRACT_SUFX=		.tar.bz2
 
@@ -26,11 +24,12 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c m util
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sbcl/}
+DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
+			sbcl-${V}-documentation-html${EXTRACT_SUFX}
 
 PSEUDO_FLAVORS=		native_bootstrap
 FLAVOR?=
 
-BUILD_DEPENDS=		print/texlive/base
 USE_GROFF =		Yes
 
 .if ${FLAVOR:L:Mnative_bootstrap}
@@ -55,12 +54,11 @@ PORTHOME=		${TMPDIR}
 MAKE_ENV=		GNUMAKE=${GMAKE} INSTALL_ROOT=${PREFIX} \
 			MAN_DIR=${PREFIX}/man INFO_DIR=${PREFIX}/info
 
-pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/src/runtime/runtime.c
-
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} /bin/sh make.sh "${BOOTSTRAP_CMD}"
-	cd ${WRKSRC}/doc/manual && ${SETENV} ${MAKE_ENV} ${GMAKE}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} /bin/sh make.sh \
+		--prefix=${PREFIX} --xc-host="${BOOTSTRAP_CMD}"
+	cd ${WRKSRC}/doc/manual && touch sbcl.texinfo && \
+		${SETENV} ${MAKE_ENV} ${GMAKE} asdf.info sbcl.info
 
 do-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} /bin/sh install.sh

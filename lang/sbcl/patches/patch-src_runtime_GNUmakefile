@@ -1,12 +1,14 @@
-$OpenBSD: patch-src_runtime_GNUmakefile,v 1.2 2009/11/17 10:45:00 pirofti Exp $
---- src/runtime/GNUmakefile.orig	Wed Feb 20 09:55:26 2008
-+++ src/runtime/GNUmakefile	Thu Apr 10 14:13:34 2008
-@@ -23,7 +23,7 @@ NM = nm -gp
- DEPEND_FLAGS = -MM
- GREP = grep
+Don't override external CFLAGS.
+
+$OpenBSD: patch-src_runtime_GNUmakefile,v 1.3 2011/05/12 02:11:52 joshe Exp $
+--- src/runtime/GNUmakefile.orig	Sun May  8 19:49:39 2011
++++ src/runtime/GNUmakefile	Sun May  8 20:59:01 2011
+@@ -25,7 +25,7 @@ GREP = grep
+ 
+ include ../../output/prefix.def
  
 -CFLAGS = -g -Wall -Wsign-compare -O3
 +CFLAGS += -Wall -Wsign-compare
  ASFLAGS = $(CFLAGS)
- CPPFLAGS = -I.
+ CPPFLAGS = -I. -DSBCL_PREFIX=\"$(SBCL_PREFIX)\"
  
