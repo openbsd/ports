@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.65 2011/05/09 15:54:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2011/05/12 22:19:24 sthen Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS =	i386 amd64 sparc64
 
 COMMENT =		multi system emulator
 
-DISTNAME =		qemu-0.14.0
-REVISION =		2
+DISTNAME =		qemu-0.14.1
 CATEGORIES =		emulators
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=qemu/}
 
@@ -26,7 +25,7 @@ BUILD_DEPENDS =		textproc/texi2html
 LIB_DEPENDS =		graphics/jpeg \
 			graphics/png
 
-MAKE_ENV +=		V=1
+MAKE_ENV =		V=1
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples
 
 USE_GMAKE =		Yes
