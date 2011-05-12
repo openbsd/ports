@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/05/01 18:00:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/05/12 06:04:32 ajacoutot Exp $
 
 COMMENT-main=	implementation of the Freedesktop sound theme spec.
 COMMENT-gtk=	gtk+2 helper for libcanberra
@@ -62,8 +62,7 @@ MODGCONF2_LIBDEP=	No
 
 SUBST_VARS=		V
 
-# Should be 2.68
-AUTOCONF_VERSION=	2.67
+AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION= 	1.10
 
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
