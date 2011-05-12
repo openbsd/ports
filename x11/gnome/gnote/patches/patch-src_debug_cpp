@@ -1,7 +1,9 @@
-$OpenBSD: patch-src_debug_cpp,v 1.1.1.1 2011/05/06 11:25:46 jasper Exp $
+$OpenBSD: patch-src_debug_cpp,v 1.2 2011/05/12 06:14:54 jasper Exp $
 
 Incorrect explicit cast: error: cast from 'pthread*' to 'int' loses precision
-https://bugzilla.gnome.org/show_bug.cgi?id=649478
+Fixes bug #649478.
+
+Upstream git: 326ec37cd316ae3bbf602a7517a4a37a8ebd2f11
 
 --- src/debug.cpp.orig	Thu May  5 18:32:59 2011
 +++ src/debug.cpp	Thu May  5 18:33:15 2011
@@ -10,7 +12,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=649478
  //    boost::recursive_mutex::scoped_lock lock(mutex);
      char buf[128];
 -    snprintf(buf, 128, "(%d) ", (int)pthread_self());
-+    snprintf(buf, 128, "(%ld) ", (pthread_t)pthread_self());
++    snprintf(buf, 128, "(%lu) ", (pthread_t)pthread_self());
      fwrite(buf, 1, strlen(buf), stderr);
      fwrite(prefix, 1, strlen(prefix), stderr);
  

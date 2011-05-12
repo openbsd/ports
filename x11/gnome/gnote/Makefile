@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/12 06:05:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/12 06:14:54 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		desktop note-taking application written in C++
 
 GNOME_PROJECT=		gnote
 GNOME_VERSION=		0.7.4
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://live.gnome.org/Gnote
 
