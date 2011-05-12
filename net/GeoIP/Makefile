@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/18 18:36:45 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/05/12 15:32:32 giovanni Exp $
 
 COMMENT=	find the country where IP address/hostname originates from
 
-DISTNAME=	GeoIP-1.4.6
-SHARED_LIBS +=  GeoIP		7.1	# .5.6
+DISTNAME=	GeoIP-1.4.7
+SHARED_LIBS +=  GeoIP		8.0	# .5.7
 SHARED_LIBS +=  GeoIPUpdate	1.0	# .0.0
 CATEGORIES=	net geo
 
@@ -24,7 +24,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--datadir=/var/db \
 		${CONFIGURE_SHARED}
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/GeoIP
 
