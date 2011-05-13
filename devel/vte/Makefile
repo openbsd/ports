@@ -1,12 +1,16 @@
-# $OpenBSD: Makefile,v 1.72 2011/05/13 20:44:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2011/05/13 22:01:46 jasper Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
+COMMENT-pty-helper=	setuid helper for opening ptys
 
 GNOME_PROJECT=		vte
 GNOME_VERSION=		0.28.0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python= 	py-${DISTNAME}
+PKGNAME-pty-helper=	vte-ptyhelper-${GNOME_VERSION}
+
+REVISION-main=		0
 
 CATEGORIES=		devel
 
@@ -28,7 +32,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 MODPY_RUNDEP=		No
-MULTI_PACKAGES= 	-main -python
+MULTI_PACKAGES= 	-main -python -pty-helper
 # Don't pull in x11/py-gtk2 on these archs; build fails with binutils 2.15
 NOT_FOR_ARCHS-python=	mips64 mips64el
 
@@ -39,9 +43,12 @@ WANTLIB += m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread-stubs xcb xcb-render drm xcb-shm
 WANTLIB += z gthread-2.0 gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0 GL Xxf86vm
 
-WANTLIB-main=		${WANTLIB} util c pthread
+WANTLIB-main=		${WANTLIB} c pthread
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			x11/gtk+2
+
+WANTLIB-pty-helper=	util c
+RUN_DEPENDS-main=	${BASE_PKGPATH},-pty-helper
 
 WANTLIB-python= 	${WANTLIB} ffi vte>=14 gtk-x11-2.0
 

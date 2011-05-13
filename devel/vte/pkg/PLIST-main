@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.13 2011/05/13 20:44:55 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.14 2011/05/13 22:01:46 jasper Exp $
 @pkgpath devel/vte
 @bin bin/vte
 include/vte-0.0/
@@ -16,11 +16,6 @@ lib/libvte.a
 lib/libvte.la
 @lib lib/libvte.so.${LIBvte_VERSION}
 lib/pkgconfig/vte.pc
-@mode g+s
-@group utmp
-@bin libexec/gnome-pty-helper
-@mode
-@group
 share/gir-1.0/Vte-0.0.gir
 share/gtk-doc/html/vte-0.0/
 share/gtk-doc/html/vte-0.0/VteReaper.html
