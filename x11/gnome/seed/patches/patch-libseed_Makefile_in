@@ -1,0 +1,12 @@
+$OpenBSD: patch-libseed_Makefile_in,v 1.1.1.1 2011/05/13 09:59:35 jasper Exp $
+--- libseed/Makefile.in.orig	Fri May 13 10:05:55 2011
++++ libseed/Makefile.in	Fri May 13 10:06:05 2011
+@@ -368,7 +368,7 @@ libseed@SEED_GTK_VERSION@_la_LIBADD = \
+ 	$(WEBKIT_LIBS) \
+ 	$(SEED_PROFILE_LIBS) \
+ 	$(SEED_OSX_LIBS) \
+-	$(FFI_LIBS) -ldl
++	$(FFI_LIBS)
+ 
+ seedheaders_HEADERS = seed.h seed-debug.h seed-module.h
+ seedheadersdir = $(pkgincludedir)@SEED_GTK_VERSION@

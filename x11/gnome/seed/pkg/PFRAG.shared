@@ -1,0 +1,17 @@
+@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/05/13 09:59:35 jasper Exp $
+@lib lib/libseed-gtk3.so.${LIBseed-gtk3_VERSION}
+lib/seed-gtk3/libseed_DynamicObject.so
+lib/seed-gtk3/libseed_cairo.so
+lib/seed-gtk3/libseed_canvas.so
+lib/seed-gtk3/libseed_dbusnative.so
+lib/seed-gtk3/libseed_example.so
+lib/seed-gtk3/libseed_ffi.so
+lib/seed-gtk3/libseed_gettext.so
+lib/seed-gtk3/libseed_gtkbuilder.so
+lib/seed-gtk3/libseed_libxml.so
+lib/seed-gtk3/libseed_mpfr.so
+lib/seed-gtk3/libseed_multiprocessing.so
+lib/seed-gtk3/libseed_os.so
+lib/seed-gtk3/libseed_readline.so
+lib/seed-gtk3/libseed_sandbox.so
+lib/seed-gtk3/libseed_sqlite.so

@@ -1,0 +1,15 @@
+$OpenBSD: patch-libseed_seed-private_h,v 1.1.1.1 2011/05/13 09:59:35 jasper Exp $
+--- libseed/seed-private.h.orig	Fri May 13 10:03:20 2011
++++ libseed/seed-private.h	Fri May 13 10:05:11 2011
+@@ -20,8 +20,10 @@
+ #ifndef _SEED_PRIVATE_H
+ #define _SEED_PRIVATE_H
+ 
+-#include <stdlib.h>
+ #include <sys/types.h>
++#include <pthread.h>
++
++#include <stdlib.h>
+ #include <JavaScriptCore/JavaScript.h>
+ #include <glib.h>
+ #include <glib-object.h>

@@ -1,0 +1,31 @@
+$OpenBSD: patch-modules_gettext_seed-gettext_c,v 1.1.1.1 2011/05/13 09:59:35 jasper Exp $
+
+Fix build if various locale defines are missing.
+
+--- modules/gettext/seed-gettext.c.orig	Tue Feb 22 23:44:01 2011
++++ modules/gettext/seed-gettext.c	Fri May 13 10:37:48 2011
+@@ -313,12 +313,24 @@ seed_module_init(SeedEngine *local_eng)
+ 	DEFINE_ENUM_MEMBER(ns_ref, LC_MONETARY);
+ 	DEFINE_ENUM_MEMBER(ns_ref, LC_MESSAGES);
+ 	DEFINE_ENUM_MEMBER(ns_ref, LC_ALL);
++#ifdef LC_PAPER
+ 	DEFINE_ENUM_MEMBER(ns_ref, LC_PAPER);
++#endif
++#ifdef LC_NAME
+ 	DEFINE_ENUM_MEMBER(ns_ref, LC_NAME);
++#endif
++#ifdef LC_ADDRESS
+ 	DEFINE_ENUM_MEMBER(ns_ref, LC_ADDRESS);
++#endif
++#ifdef LC_TELEPHONE
+ 	DEFINE_ENUM_MEMBER(ns_ref, LC_TELEPHONE);
++#endif
++#ifdef LC_MEASUREMENT
+ 	DEFINE_ENUM_MEMBER(ns_ref, LC_MEASUREMENT);
++#endif
++#ifdef LC_IDENTIFICATION
+ 	DEFINE_ENUM_MEMBER(ns_ref, LC_IDENTIFICATION);
++#endif
+ 	DEFINE_ENUM_MEMBER(ns_ref, LC_CTYPE);
+ 
+ 	return ns_ref;
