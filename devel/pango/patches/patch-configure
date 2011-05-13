@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure,v 1.19 2011/05/13 23:52:55 jasper Exp $
+
+Don't add -R/usr/X11R6/lib, as our ld(1) already searches there by default and
+it breaks g-ir-scanner (doesn't recognize -R when coming in via pkg-config).
+
+--- configure.orig	Fri May 13 12:43:51 2011
++++ configure	Fri May 13 12:45:29 2011
+@@ -17546,9 +17546,9 @@ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+-       X_LIBS="$X_LIBS -R$x_libraries"
++       X_LIBS="$X_LIBS"
+ else
+-  LIBS="$ac_xsave_LIBS -R $x_libraries"
++  LIBS="$ac_xsave_LIBS"
+        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -17563,7 +17563,7 @@ _ACEOF
+ if ac_fn_c_try_link "$LINENO"; then :
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+-	  X_LIBS="$X_LIBS -R $x_libraries"
++	  X_LIBS="$X_LIBS"
+ else
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: neither works" >&5
+ $as_echo "neither works" >&6; }
