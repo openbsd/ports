@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/04/07 14:50:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/05/13 22:18:34 ajacoutot Exp $
 bin/g-ir-annotation-tool
 @bin bin/g-ir-compiler
 @bin bin/g-ir-generate
@@ -52,8 +52,8 @@ lib/python${MODPY_VERSION}/site-packages/gobject-introspection/giscanner/
 lib/python${MODPY_VERSION}/site-packages/gobject-introspection/giscanner/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gobject-introspection/giscanner/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gobject-introspection/giscanner/__init__.pyo
-lib/python${MODPY_VERSION}/site-packages/gobject-introspection/giscanner/_giscanner.a
-lib/python${MODPY_VERSION}/site-packages/gobject-introspection/giscanner/_giscanner.la
+@comment lib/python${MODPY_VERSION}/site-packages/gobject-introspection/giscanner/_giscanner.a
+@comment lib/python${MODPY_VERSION}/site-packages/gobject-introspection/giscanner/_giscanner.la
 lib/python${MODPY_VERSION}/site-packages/gobject-introspection/giscanner/_giscanner.so
 lib/python${MODPY_VERSION}/site-packages/gobject-introspection/giscanner/annotationmain.py
 lib/python${MODPY_VERSION}/site-packages/gobject-introspection/giscanner/annotationmain.pyc
