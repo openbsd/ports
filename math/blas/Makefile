@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/05/01 13:43:04 steven Exp $
+# $OpenBSD: Makefile,v 1.19 2011/05/13 14:52:27 sthen Exp $
 
 COMMENT=	Basic Linear Algebra Subprograms
 
@@ -19,7 +19,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.netlib.org/blas/ \
+MASTER_SITES=	http://spacehopper.org/mirrors/blas-20110419/ \
+		ftp://ftp.netlib.org/blas/ \
 		ftp://netlib.bell-labs.com/netlib/blas/ \
 		http://www.netlib.no/netlib/blas/
 MASTER_SITES0=	${MASTER_SITES:S/blas/lapack/}
