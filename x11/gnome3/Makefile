@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/05/13 12:52:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/05/13 13:32:38 jasper Exp $
 
      SUBDIR =
      SUBDIR += desktop
@@ -9,5 +9,6 @@
      SUBDIR += notification-daemon
      SUBDIR += user-docs
      SUBDIR += yelp
+     SUBDIR += zenity
 
 .include <bsd.port.subdir.mk>
