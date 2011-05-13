@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/13 08:52:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/13 10:21:33 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 GNOME_VERSION=		3.0.1
+
+REVISION=		0
 
 SHARED_LIBS +=  gnome-desktop-3      0.0      # 0.9
 
@@ -33,7 +35,6 @@ LIB_DEPENDS=		devel/startup-notification \
 			x11/gtk+3
 
 MODGNOME_HELP_FILES=	Yes
-DESKTOP_FILES=		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-gnome-distributor="OpenBSD Ports" \
 			--disable-gtk-doc \

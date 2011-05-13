@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/13 08:52:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/13 10:21:33 ajacoutot Exp $
 include/gnome-desktop-3.0/
 include/gnome-desktop-3.0/libgnome-desktop/
 include/gnome-desktop-3.0/libgnome-desktop/gnome-bg-crossfade.h
@@ -332,5 +332,3 @@ share/omf/lgpl/lgpl-sv.omf
 share/omf/lgpl/lgpl-uk.omf
 share/omf/lgpl/lgpl-vi.omf
 share/omf/lgpl/lgpl-zh_CN.omf
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
