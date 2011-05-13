@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.12 2011/04/07 07:50:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.13 2011/05/13 20:44:55 jasper Exp $
 @pkgpath devel/vte
 @bin bin/vte
 include/vte-0.0/
@@ -16,12 +16,6 @@ lib/libvte.a
 lib/libvte.la
 @lib lib/libvte.so.${LIBvte_VERSION}
 lib/pkgconfig/vte.pc
-lib/vte-0.0/
-lib/vte-0.0/decset
-@bin lib/vte-0.0/interpret
-lib/vte-0.0/osc
-@bin lib/vte-0.0/slowcat
-lib/vte-0.0/window
 @mode g+s
 @group utmp
 @bin libexec/gnome-pty-helper
@@ -36,6 +30,7 @@ share/gtk-doc/html/vte-0.0/annotation-glossary.html
 share/gtk-doc/html/vte-0.0/api-index-0-20.html
 share/gtk-doc/html/vte-0.0/api-index-0-24.html
 share/gtk-doc/html/vte-0.0/api-index-0-26.html
+share/gtk-doc/html/vte-0.0/api-index-0-28.html
 share/gtk-doc/html/vte-0.0/api-index-deprecated.html
 share/gtk-doc/html/vte-0.0/api-index-full.html
 share/gtk-doc/html/vte-0.0/ch01.html
@@ -149,5 +144,5 @@ share/locale/zh_CN/LC_MESSAGES/vte-0.0.mo
 share/locale/zh_HK/LC_MESSAGES/vte-0.0.mo
 share/locale/zh_TW/LC_MESSAGES/vte-0.0.mo
 share/vte/
-share/vte/termcap/
-share/vte/termcap/xterm
+share/vte/termcap-0.0/
+share/vte/termcap-0.0/xterm

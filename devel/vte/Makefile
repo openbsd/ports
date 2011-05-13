@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.71 2011/05/05 13:14:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2011/05/13 20:44:55 jasper Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.26.2
+GNOME_VERSION=		0.28.0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python= 	py-${DISTNAME}
-
-REVISION-main=		0
 
 CATEGORIES=		devel
 
@@ -39,7 +37,7 @@ WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m ncurses pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += pixman-1 png pthread-stubs xcb xcb-render drm xcb-shm
-WANTLIB += z gthread-2.0 gdk_pixbuf-2.0 gdk-x11-2.0 GL Xxf86vm
+WANTLIB += z gthread-2.0 gdk_pixbuf-2.0 gdk-x11-2.0 gtk-x11-2.0 GL Xxf86vm
 
 WANTLIB-main=		${WANTLIB} util c pthread
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
