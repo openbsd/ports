@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_libpiano_xml_c,v 1.1 2011/05/13 09:52:51 dcoppa Exp $
+
+Fix useQuickMix attribute
+(Commit 49f64fd33c202831407ba6b02fa74c2037052f1c)
+
+--- src/libpiano/xml.c.orig	Fri May 13 11:44:10 2011
++++ src/libpiano/xml.c	Fri May 13 11:45:07 2011
+@@ -373,8 +373,9 @@ static void PianoXmlParseQuickMixStationsCb (const cha
+ 			}
+ 		}
+ 		ids[idsN-1] = NULL;
++
++		*retIds = ids;
+ 	}
+-	*retIds = ids;
+ }
+ 
+ /*	parse stations returned by pandora
