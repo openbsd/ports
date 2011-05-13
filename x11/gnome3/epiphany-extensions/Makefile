@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/13 14:31:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/13 21:23:58 ajacoutot Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
 GNOME_PROJECT=		epiphany-extensions
 GNOME_VERSION=		3.0.0
-REVISION=		0
+REVISION=		1
 
 # sync with www/epiphany
 M=		${GNOME_VERSION:R}
