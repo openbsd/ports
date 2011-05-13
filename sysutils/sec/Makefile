@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2010/10/19 07:43:02 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/05/13 12:43:56 okan Exp $
 
 COMMENT=	simple event correlator
 
-DISTNAME=	sec-2.5.3
+DISTNAME=	sec-2.6.0
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=simple-evcorr/}
 
@@ -18,15 +18,14 @@ PERMIT_DISTFILES_FTP=	Yes
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
-USE_GROFF =	Yes
 PKG_ARCH=	*
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/sec.pl ${PREFIX}/bin/sec
-	perl -pi -e "s/sec.pl/sec/g" ${WRKSRC}/sec.pl.man
-	${INSTALL_MAN} ${WRKSRC}/sec.pl.man ${PREFIX}/man/man1/sec.1
+	${INSTALL_SCRIPT} ${WRKSRC}/sec ${PREFIX}/bin/sec
+	${INSTALL_MAN} ${WRKSRC}/sec.man ${PREFIX}/man/man1/sec.1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sec
 	${INSTALL_DATA} ${WRKSRC}/contrib/itostream.c \
+		${WRKSRC}/contrib/swatch2sec.pl \
 		${PREFIX}/share/examples/sec
 
 .include <bsd.port.mk>
