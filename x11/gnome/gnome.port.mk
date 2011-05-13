@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.37 2011/05/11 14:56:42 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.38 2011/05/13 21:10:49 ajacoutot Exp $
 #
 # Module for GNOME related ports
 #
@@ -27,7 +27,11 @@ MODGNOME_RUN_DEPENDS+=	devel/desktop-file-utils
 # have access to the gnome-doc-* tools (not always needed but easier).
 .if defined(MODGNOME_HELP_FILES) && ${MODGNOME_HELP_FILES:L} == "yes"
 MODGNOME_BUILD_DEPENDS+= x11/gnome/doc-utils
+.  if ${PKGPATH:Mx11/gnome3/*}
+MODGNOME_RUN_DEPENDS+=	x11/gnome3/yelp
+.  else
 MODGNOME_RUN_DEPENDS+=	x11/gnome/yelp
+.  endif
 .endif
 
 .if defined(MODGNOME_BUILD_DEPENDS)
