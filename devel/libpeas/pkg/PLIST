@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/04/28 07:35:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/05/13 12:39:11 ajacoutot Exp $
 @bin bin/peas-demo
 include/libpeas-1.0/
 include/libpeas-1.0/libpeas/
@@ -18,25 +18,22 @@ include/libpeas-1.0/libpeas/peas.h
 lib/girepository-1.0/Peas-1.0.typelib
 lib/girepository-1.0/PeasGtk-1.0.typelib
 lib/libpeas-1.0/
-lib/libpeas-1.0.a
 lib/libpeas-1.0.la
 @lib lib/libpeas-1.0.so.${LIBpeas-1.0_VERSION}
 lib/libpeas-1.0/loaders/
-@comment lib/libpeas-1.0/loaders/libcloader.a
 @comment lib/libpeas-1.0/loaders/libcloader.la
 lib/libpeas-1.0/loaders/libcloader.so
-@comment lib/libpeas-1.0/loaders/libpythonloader.a
 @comment lib/libpeas-1.0/loaders/libpythonloader.la
 lib/libpeas-1.0/loaders/libpythonloader.so
-lib/libpeas-gtk-1.0.a
+@comment lib/libpeas-1.0/loaders/libseedloader.la
+lib/libpeas-1.0/loaders/libseedloader.so
 lib/libpeas-gtk-1.0.la
 @lib lib/libpeas-gtk-1.0.so.${LIBpeas-gtk-1.0_VERSION}
 lib/peas-demo/
 lib/peas-demo/plugins/
 lib/peas-demo/plugins/helloworld/
 lib/peas-demo/plugins/helloworld/helloworld.plugin
-lib/peas-demo/plugins/helloworld/libhelloworld.a
-lib/peas-demo/plugins/helloworld/libhelloworld.la
+@comment lib/peas-demo/plugins/helloworld/libhelloworld.la
 lib/peas-demo/plugins/helloworld/libhelloworld.so
 lib/peas-demo/plugins/pythonhello/
 lib/peas-demo/plugins/pythonhello/pythonhello.plugin
@@ -44,13 +41,14 @@ lib/peas-demo/plugins/pythonhello/pythonhello.py
 lib/peas-demo/plugins/pythonhello/pythonhello.pyc
 lib/peas-demo/plugins/pythonhello/pythonhello.pyo
 lib/peas-demo/plugins/secondtime/
-lib/peas-demo/plugins/secondtime/libsecondtime.a
-lib/peas-demo/plugins/secondtime/libsecondtime.la
+@comment lib/peas-demo/plugins/secondtime/libsecondtime.la
 lib/peas-demo/plugins/secondtime/libsecondtime.so
 lib/peas-demo/plugins/secondtime/secondtime.plugin
+lib/peas-demo/plugins/seedhello/
+lib/peas-demo/plugins/seedhello/seedhello.js
+lib/peas-demo/plugins/seedhello/seedhello.plugin
 lib/peas-demo/plugins/valahello/
-lib/peas-demo/plugins/valahello/libvalahello.a
-lib/peas-demo/plugins/valahello/libvalahello.la
+@comment lib/peas-demo/plugins/valahello/libvalahello.la
 lib/peas-demo/plugins/valahello/libvalahello.so
 lib/peas-demo/plugins/valahello/valahello.plugin
 lib/pkgconfig/libpeas-1.0.pc
