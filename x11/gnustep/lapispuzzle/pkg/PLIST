@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/13 11:35:18 sebastia Exp $
+bin/LapisPuzzle
+libexec/GNUstep/
+libexec/GNUstep/LapisPuzzle.app/
+@bin libexec/GNUstep/LapisPuzzle.app/LapisPuzzle
+libexec/GNUstep/LapisPuzzle.app/Resources/
+libexec/GNUstep/LapisPuzzle.app/Resources/Info-gnustep.plist
+libexec/GNUstep/LapisPuzzle.app/Resources/LapisPuzzle.desktop
+libexec/GNUstep/LapisPuzzle.app/Resources/LapisPuzzle.gorm/
+libexec/GNUstep/LapisPuzzle.app/Resources/LapisPuzzle.gorm/data.classes
+libexec/GNUstep/LapisPuzzle.app/Resources/LapisPuzzle.gorm/objects.gorm
+libexec/GNUstep/LapisPuzzle.app/Resources/LapisPuzzle.tiff
+libexec/GNUstep/LapisPuzzle.app/Resources/LapisPuzzleInfo.plist
+libexec/GNUstep/LapisPuzzle.app/stamp.make
