@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2011/05/08 17:45:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2011/05/13 20:37:17 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -53,8 +53,5 @@ CONFIGURE_ARGS=	${CONFIUGRE_SHARED} \
 FAKE_FLAGS+=	desktopdir=${PREFIX}/share/examples/gnome-settings-daemon/xdg/autostart \
 		sysconfdir=${PREFIX}/share/examples/gnome-settings-daemon \
 		DBUS_SYS_DIR=${PREFIX}/share/examples/gnome-settings-daemon/dbus-1/system.d
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/gnome-settings-daemon/gnome-settings-module.c
 
 .include <bsd.port.mk>
