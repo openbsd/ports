@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/13 09:39:54 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/13 09:49:36 ajacoutot Exp $
 
 COMMENT =		complete, multi-colored suite of icons
 
@@ -6,6 +6,8 @@ V =			5.5.1
 DISTNAME =		gnome-colors-${V}
 PKGNAME =		gnome-colors-icon-theme-${V}
 CATEGORIES =		x11
+
+REVISION =		0
 
 HOMEPAGE =		http://code.google.com/p/gnome-colors/
 MASTER_SITES =		http://gnome-colors.googlecode.com/files/
