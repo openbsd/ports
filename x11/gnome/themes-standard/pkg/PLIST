@@ -1,5 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/13 09:26:07 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/13 09:40:46 ajacoutot Exp $
 @conflict gnome-themes-<3
+@unexec-delete rm -f %D/share/icons/Adwaita/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/HighContrast/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/HighContrastInverse/icon-theme.cache
+@unexec-delete rm -f %D/share/icons/LowContrast/icon-theme.cache
 lib/gtk-3.0/3.0.0/theming-engines/
 @comment lib/gtk-3.0/3.0.0/theming-engines/libadwaita.la
 lib/gtk-3.0/3.0.0/theming-engines/libadwaita.so
@@ -117,7 +121,7 @@ share/icons/HighContrast/48x48/stock/gtk-select-color.png
 share/icons/HighContrast/48x48/stock/gtk-select-font.png
 share/icons/HighContrast/48x48/stock/gtk-undelete.png
 share/icons/HighContrast/48x48/stock/gtk-yes.png
-@comment share/icons/HighContrast/index.theme
+share/icons/HighContrast/index.theme
 share/icons/HighContrast/scalable/
 share/icons/HighContrast/scalable/actions/
 share/icons/HighContrast/scalable/actions/application-exit.svg
@@ -468,7 +472,7 @@ share/icons/HighContrastInverse/48x48/stock/zoom-fit-best.png
 share/icons/HighContrastInverse/48x48/stock/zoom-in.png
 share/icons/HighContrastInverse/48x48/stock/zoom-original.png
 share/icons/HighContrastInverse/48x48/stock/zoom-out.png
-@comment share/icons/HighContrastInverse/index.theme
+share/icons/HighContrastInverse/index.theme
 share/icons/LowContrast/
 share/icons/LowContrast/48x48/
 share/icons/LowContrast/48x48/actions/
@@ -667,13 +671,13 @@ share/themes/HighContrast/gtk-2.0/
 share/themes/HighContrast/gtk-2.0/gtkrc
 share/themes/HighContrast/gtk-3.0/
 share/themes/HighContrast/gtk-3.0/gtk.css
-@comment share/themes/HighContrast/index.theme
+share/themes/HighContrast/index.theme
 share/themes/HighContrastInverse/
 share/themes/HighContrastInverse/gtk-2.0/
 share/themes/HighContrastInverse/gtk-2.0/gtkrc
 share/themes/HighContrastInverse/gtk-3.0/
 share/themes/HighContrastInverse/gtk-3.0/gtk.css
-@comment share/themes/HighContrastInverse/index.theme
+share/themes/HighContrastInverse/index.theme
 share/themes/LowContrast/
 share/themes/LowContrast/gtk-2.0/
 share/themes/LowContrast/gtk-2.0/gtkrc
@@ -681,4 +685,6 @@ share/themes/LowContrast/gtk-3.0/
 share/themes/LowContrast/gtk-3.0/gtk.css
 share/themes/LowContrast/index.theme
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/Adwaita 2> /dev/null || true
-@unexec-delete rm -f %D/share/icons/Adwaita/icon-theme.cache
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrast 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/HighContrastInverse 2> /dev/null || true
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/LowContrast 2> /dev/null || true
