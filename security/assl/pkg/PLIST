@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/03/12 22:55:05 dhill Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/05/13 21:20:15 dhill Exp $
 include/assl.h
 lib/libassl.a
 %%SHARED%%
@@ -48,11 +48,16 @@ share/examples/assl/client/client/client.csr
 share/examples/assl/client/client/private/
 share/examples/assl/client/client/private/client.key
 share/examples/assl/client/create_client
+share/examples/assl/client/event/
+share/examples/assl/client/event/GNUmakefile
+share/examples/assl/client/event/Makefile
+share/examples/assl/client/event/evclient.c
 share/examples/assl/client/nonblocking/
 share/examples/assl/client/nonblocking/GNUmakefile
 share/examples/assl/client/nonblocking/Makefile
 share/examples/assl/client/nonblocking/nbclient.c
 share/examples/assl/client/nonblocking_event/
+share/examples/assl/client/nonblocking_event/GNUmakefile
 share/examples/assl/client/nonblocking_event/Makefile
 share/examples/assl/client/nonblocking_event/nbclient.c
 share/examples/assl/client/nullcrypt/
@@ -71,9 +76,11 @@ share/examples/assl/server/blocking/Makefile
 share/examples/assl/server/blocking/bserver.c
 share/examples/assl/server/create_server
 share/examples/assl/server/event/
+share/examples/assl/server/event/GNUmakefile
 share/examples/assl/server/event/Makefile
 share/examples/assl/server/event/evserver.c
 share/examples/assl/server/fork_event/
+share/examples/assl/server/fork_event/GNUmakefile
 share/examples/assl/server/fork_event/Makefile
 share/examples/assl/server/fork_event/evserver.c
 share/examples/assl/server/fork_nonblocking/
