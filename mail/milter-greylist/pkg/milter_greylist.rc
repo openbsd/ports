@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: milter_greylist.rc,v 1.1 2011/05/13 12:52:22 okan Exp $
+
+daemon="${TRUEPREFIX}/libexec/milter-greylist"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

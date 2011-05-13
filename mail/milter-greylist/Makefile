@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:07 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/05/13 12:52:22 okan Exp $
 
 COMMENT=	greylist milter
 
-DISTNAME=	milter-greylist-4.2.3
+DISTNAME=	milter-greylist-4.2.7
 CATEGORIES=	mail
 HOMEPAGE=	http://hcpnet.free.fr/milter-greylist/
 
@@ -27,7 +27,7 @@ USERNAME=	_milter-greylist:_milter-greylist
 GREYLISTDIR=	/var/db/milter-greylist
 EXAMPLESDIR=	share/examples/milter-greylist
 
-SUBST_VARS=	GREYLISTDIR
+SUBST_VARS=	GREYLISTDIR USERNAME
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-user=${USERNAME} \
@@ -38,9 +38,7 @@ USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 pre-configure:
-	@perl -pi -e 's,!!USERNAME!!,${USERNAME},; \
-		s,!!GREYLISTDIR!!,${GREYLISTDIR},' ${WRKSRC}/greylist.conf
-	@perl -pi -e 's,!!GREYLISTDIR!!,${GREYLISTDIR},' \
+	${SUBST_CMD} ${WRKSRC}/greylist.conf \
 		${WRKSRC}/greylist.conf.5 ${WRKSRC}/milter-greylist.8
 
 do-install:
