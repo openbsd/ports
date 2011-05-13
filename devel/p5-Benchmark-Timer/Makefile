@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/05/13 13:20:31 giovanni Exp $
 
 COMMENT=	benchmarking with statistical confidence
 
 MODULES=	cpan
-DISTNAME=	Benchmark-Timer-0.7101
-REVISION=	0
+DISTNAME=	Benchmark-Timer-0.7102
 CATEGORIES=	devel benchmarks
-USE_GROFF =	Yes
 
 MAINTAINER=	Giovanni Bechis <giovanni@openbsd.org>
 
