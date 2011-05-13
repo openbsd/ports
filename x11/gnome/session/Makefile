@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.146 2011/05/07 12:07:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.147 2011/05/13 12:56:19 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
@@ -27,8 +27,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-BUILD_DEPENDS=	textproc/rarian \
-		textproc/xmlto \
+BUILD_DEPENDS=	textproc/xmlto \
 		x11/gnome/settings-daemon
 LIB_DEPENDS=	devel/libexecinfo
 RUN_DEPENDS=	x11/gnome/settings-daemon \
