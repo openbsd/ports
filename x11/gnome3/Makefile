@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/05/13 12:17:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/05/13 12:52:39 jasper Exp $
 
      SUBDIR =
      SUBDIR += desktop
@@ -7,7 +7,6 @@
      SUBDIR += icon-theme-extras
      SUBDIR += icon-theme-symbolic
      SUBDIR += notification-daemon
-     SUBDIR += themes
      SUBDIR += user-docs
      SUBDIR += yelp
 
