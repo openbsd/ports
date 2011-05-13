@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2011/05/13 10:08:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/05/13 12:17:44 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += desktop
+     SUBDIR += devhelp
      SUBDIR += icon-theme
      SUBDIR += icon-theme-extras
      SUBDIR += icon-theme-symbolic
