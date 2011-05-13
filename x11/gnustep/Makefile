@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/04/24 14:06:51 sebastia Exp $
+# $OpenBSD: Makefile,v 1.21 2011/05/13 11:37:10 sebastia Exp $
 
      SUBDIR =
      SUBDIR += addresses
@@ -18,6 +18,7 @@
      SUBDIR += gworkspace
      SUBDIR += highlighterkit
      SUBDIR += imageviewer
+     SUBDIR += lapispuzzle
      SUBDIR += laternamagica
      SUBDIR += make
      SUBDIR += mpdcon
