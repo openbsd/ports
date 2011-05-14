@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/09/30 07:41:02 ajacoutot Exp $
-@bin bin/gtkhtml-editor-test
+@comment $OpenBSD: PLIST,v 1.9 2011/05/14 10:09:20 jasper Exp $
+@bin bin/gtkhtml3-editor-test
 include/libgtkhtml-${API_VERSION}/
 include/libgtkhtml-${API_VERSION}/editor/
 include/libgtkhtml-${API_VERSION}/editor/gtkhtml-editor-actions.h

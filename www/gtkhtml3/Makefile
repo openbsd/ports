@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2011/03/07 19:27:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2011/05/14 10:09:20 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,6 +9,8 @@ GNOME_VERSION=		3.32.2
 API_VERSION=		3.14
 
 PKGNAME=		gtkhtml3-${VERSION}
+
+REVISION=		0
 
 HOMEPAGE=		http://www.gnome.org/
 
@@ -51,5 +53,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 SUBST_VARS=		API_VERSION
+
+# Resolve conflict with gtkhtml4.
+post-install:
+	mv ${PREFIX}/bin/gtkhtml-editor-test ${PREFIX}/bin/gtkhtml3-editor-test
 
 .include <bsd.port.mk>
