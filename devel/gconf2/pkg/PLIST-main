@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2011/04/25 11:05:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2011/05/14 21:34:30 ajacoutot Exp $
 @pkgpath devel/gconf2
 %%SHARED%%
 @unexec-delete rm -fr /var/db/gconf/gconf.xml.defaults/*
@@ -36,7 +36,6 @@ lib/libgconf-2.a
 lib/libgconf-2.la
 lib/pkgconfig/
 lib/pkgconfig/gconf-2.0.pc
-@bin libexec/gconf-sanity-check-2
 @bin libexec/gconfd-2
 @man man/man1/gconftool-2.1
 @man man/man1/gsettings-data-convert.1
