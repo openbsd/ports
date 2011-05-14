@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/05/14 20:22:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/05/14 22:17:38 jasper Exp $
 
      SUBDIR =
      SUBDIR += backgrounds
@@ -6,6 +6,7 @@
      SUBDIR += devhelp
      SUBDIR += epiphany
      SUBDIR += epiphany-extensions
+     #SUBDIR += gedit
      SUBDIR += icon-theme
      SUBDIR += icon-theme-extras
      SUBDIR += icon-theme-symbolic
