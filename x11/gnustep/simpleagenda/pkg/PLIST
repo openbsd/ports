@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/25 09:39:31 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/14 08:35:30 sebastia Exp $
 bin/SimpleAgenda
 libexec/GNUstep/SimpleAgenda.app/
 libexec/GNUstep/SimpleAgenda.app/Resources/
@@ -37,6 +37,7 @@ libexec/GNUstep/SimpleAgenda.app/Resources/Task.gorm/
 libexec/GNUstep/SimpleAgenda.app/Resources/Task.gorm/data.classes
 libexec/GNUstep/SimpleAgenda.app/Resources/Task.gorm/data.info
 libexec/GNUstep/SimpleAgenda.app/Resources/Task.gorm/objects.gorm
+libexec/GNUstep/SimpleAgenda.app/Resources/bell.tiff
 libexec/GNUstep/SimpleAgenda.app/Resources/iCalendar.gorm/
 libexec/GNUstep/SimpleAgenda.app/Resources/iCalendar.gorm/data.classes
 libexec/GNUstep/SimpleAgenda.app/Resources/iCalendar.gorm/data.info
@@ -44,5 +45,6 @@ libexec/GNUstep/SimpleAgenda.app/Resources/iCalendar.gorm/objects.gorm
 libexec/GNUstep/SimpleAgenda.app/Resources/iCalendar.gorm/warning.tiff
 libexec/GNUstep/SimpleAgenda.app/Resources/ical-file.tiff
 libexec/GNUstep/SimpleAgenda.app/Resources/repeat.tiff
+libexec/GNUstep/SimpleAgenda.app/Resources/small-bell.tiff
 @bin libexec/GNUstep/SimpleAgenda.app/SimpleAgenda
 libexec/GNUstep/SimpleAgenda.app/stamp.make
