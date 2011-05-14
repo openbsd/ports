@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/05/14 08:28:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/05/14 09:42:56 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += desktop
@@ -8,6 +8,7 @@
      SUBDIR += icon-theme
      SUBDIR += icon-theme-extras
      SUBDIR += icon-theme-symbolic
+     SUBDIR += keyring
      SUBDIR += libgnome-keyring
      SUBDIR += libgnomekbd
      SUBDIR += libgweather
