@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/04/21 07:07:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2011/05/14 21:56:18 jasper Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
@@ -44,7 +44,6 @@ LIB_DEPENDS=	net/avahi,no_gtk,no_mono,no_qt3,no_qt4 \
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=Yes
 MODGCONF2_SCHEMAS_DIR= ekiga
-USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
