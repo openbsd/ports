@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/04 14:07:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/14 20:16:11 jasper Exp $
 
 COMMENT =	convert DocBook to man pages and Texinfo
 
 DISTNAME =	docbook2X-0.8.8
 PKGNAME =	${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	textproc
 
@@ -21,6 +22,7 @@ MASTER_SITES = ${MASTER_SITE_SOURCEFORGE:=docbook2x/}
 
 MODULES +=		converters/libiconv
 RUN_DEPENDS =		textproc/libxml \
+			textproc/libxslt \
 			textproc/p5-XML-SAX
 BUILD_DEPENDS =		${RUN_DEPENDS}
 
