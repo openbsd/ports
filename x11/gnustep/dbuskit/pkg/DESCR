@@ -1,0 +1,3 @@
+DBusKit is the GNUstep D-Bus bindings framework. The framework allows
+Objective-C applications to access the D-Bus inter-process communication
+system.

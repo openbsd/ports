@@ -1,0 +1,66 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/14 08:32:30 sebastia Exp $
+@bin bin/dk_make_protocol
+include/DBusKit
+@info info/DBusKit.info
+lib/GNUstep/Frameworks/
+lib/GNUstep/Frameworks/DBusKit.framework/
+lib/GNUstep/Frameworks/DBusKit.framework/DBusKit
+lib/GNUstep/Frameworks/DBusKit.framework/Headers
+lib/GNUstep/Frameworks/DBusKit.framework/Resources
+lib/GNUstep/Frameworks/DBusKit.framework/Versions/
+lib/GNUstep/Frameworks/DBusKit.framework/Versions/0.0/
+lib/GNUstep/Frameworks/DBusKit.framework/Versions/0.0/DBusKit
+lib/GNUstep/Frameworks/DBusKit.framework/Versions/0.0/Headers/
+lib/GNUstep/Frameworks/DBusKit.framework/Versions/0.0/Headers/DBusKit.h
+lib/GNUstep/Frameworks/DBusKit.framework/Versions/0.0/Headers/DKNotificationCenter.h
+lib/GNUstep/Frameworks/DBusKit.framework/Versions/0.0/Headers/DKPort.h
+lib/GNUstep/Frameworks/DBusKit.framework/Versions/0.0/Headers/DKPortNameServer.h
+lib/GNUstep/Frameworks/DBusKit.framework/Versions/0.0/Headers/DKProxy.h
+lib/GNUstep/Frameworks/DBusKit.framework/Versions/0.0/Headers/NSConnection+DBus.h
+lib/GNUstep/Frameworks/DBusKit.framework/Versions/0.0/Resources/
+lib/GNUstep/Frameworks/DBusKit.framework/Versions/0.0/Resources/Info-gnustep.plist
+@lib lib/GNUstep/Frameworks/DBusKit.framework/Versions/0.0/libDBusKit.so.${LIBDBusKit_VERSION}
+lib/GNUstep/Frameworks/DBusKit.framework/Versions/Current
+@lib lib/GNUstep/Frameworks/DBusKit.framework/libDBusKit.so.${LIBDBusKit_VERSION}
+@lib lib/libDBusKit.so.${LIBDBusKit_VERSION}
+share/doc/GNUstep/
+share/doc/GNUstep/Developer/
+share/doc/GNUstep/Developer/DBusKit/
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit/
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit.html
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit.pdf
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit/dependencies
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_1.html
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_2.html
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_3.html
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_4.html
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_5.html
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_abt.html
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_fot.html
+share/doc/GNUstep/Developer/DBusKit/ProgrammingManual/DBusKit_toc.html
+share/doc/GNUstep/Developer/DBusKit/Reference/
+share/doc/GNUstep/Developer/DBusKit/Reference/ClassesTOC.gsdoc
+share/doc/GNUstep/Developer/DBusKit/Reference/ClassesTOC.html
+share/doc/GNUstep/Developer/DBusKit/Reference/DBusKit.html
+share/doc/GNUstep/Developer/DBusKit/Reference/DBusKit.igsdoc
+share/doc/GNUstep/Developer/DBusKit/Reference/DKNotificationCenter.gsdoc
+share/doc/GNUstep/Developer/DBusKit/Reference/DKNotificationCenter.html
+share/doc/GNUstep/Developer/DBusKit/Reference/DKPort.gsdoc
+share/doc/GNUstep/Developer/DBusKit/Reference/DKPort.html
+share/doc/GNUstep/Developer/DBusKit/Reference/DKProxy.gsdoc
+share/doc/GNUstep/Developer/DBusKit/Reference/DKProxy.html
+share/doc/GNUstep/Developer/DBusKit/Reference/MainIndex.html
+share/doc/GNUstep/Developer/DBusKit/Reference/OrderedSymbolDeclarations.plist
+share/doc/GNUstep/Developer/DBusKit/Reference/TypesAndConstants.gsdoc
+share/doc/GNUstep/Developer/DBusKit/Reference/TypesAndConstants.html
+share/doc/GNUstep/Developer/DBusKit/Reference/TypesTOC.gsdoc
+share/doc/GNUstep/Developer/DBusKit/Reference/TypesTOC.html
+share/doc/GNUstep/Developer/DBusKit/Reference/VariablesTOC.gsdoc
+share/doc/GNUstep/Developer/DBusKit/Reference/VariablesTOC.html
+share/doc/GNUstep/Developer/DBusKit/Reference/index.html
+share/doc/GNUstep/Developer/DBusKit/ReleaseNotes/
+share/doc/GNUstep/Developer/DBusKit/ReleaseNotes/0.1/
+share/doc/GNUstep/Developer/DBusKit/ReleaseNotes/0.1/ANNOUNCE
+share/doc/GNUstep/Developer/DBusKit/ReleaseNotes/0.1/INSTALL
+share/doc/GNUstep/Developer/DBusKit/ReleaseNotes/0.1/README
