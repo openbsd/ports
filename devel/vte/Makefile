@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2011/05/13 23:07:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.75 2011/05/14 13:17:28 jasper Exp $
 
 COMMENT-main=		terminal emulation library (gtk+2)
 COMMENT-python= 	python bindings for vte
@@ -50,9 +50,6 @@ RUN_DEPENDS-main=	${BASE_PKGPATH},-pty-helper
 WANTLIB-python= 	${WANTLIB} ffi vte>=14 gtk-x11-2.0
 
 BUILD_DEPENDS=		devel/gobject-introspection
-.if ! ${MACHINE_ARCH:Mmips64*}
-BUILD_DEPENDS+=		x11/py-gtk2
-.endif
 
 LIB_DEPENDS-python=	${LIB_DEPENDS-main} \
 			${BASE_PKGPATH} \
@@ -78,15 +75,18 @@ CONFIGURE_ARGS+=	--with-gtk=2.0
 MULTI_PACKAGES+=	-python
 PKGNAME-main=		vte-${GNOME_VERSION}
 SHARED_LIBS+=	vte	14.1    # 2609.0
+
+.if ! ${MACHINE_ARCH:Mmips64*}
+BUILD_DEPENDS+=		x11/py-gtk2
+CONFIGURE_ARGS+=	--enable-python
+.endif
+
 .endif
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-introspection \
 			--disable-Bsymbolic
-.if ! ${MACHINE_ARCH:Mmips64*}
-CONFIGURE_ARGS+=	--enable-python
-.endif
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
