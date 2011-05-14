@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_stat_directory_complete_pl,v 1.1.1.1 2011/05/14 15:02:50 sthen Exp $
+--- scripts/stat_directory_complete.pl.orig	Thu May  5 20:04:22 2011
++++ scripts/stat_directory_complete.pl	Thu May  5 20:04:47 2011
+@@ -254,7 +254,7 @@ foreach my $c (@cfiles) {
+     mylog "found corrected";
+   }
+   my $onlychange = 0;
+-  open TMP, "diff -u -b -B $bef $aft |";
++  open TMP, "gdiff -u -b -B $bef $aft |";
+   
+   my $count = 0;
+   while(<TMP>) {

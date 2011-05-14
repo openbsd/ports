@@ -1,0 +1,16 @@
+$OpenBSD: patch-pycaml_Makefile,v 1.1.1.1 2011/05/14 15:02:50 sthen Exp $
+--- pycaml/Makefile.orig	Sat Jan 29 14:43:21 2011
++++ pycaml/Makefile	Thu May  5 22:23:52 2011
+@@ -1,9 +1,9 @@
+ #pad: was called Makefile.deb-pycaml before
+ 
+ OCAMLMAKEFILE = OCamlMakefile
+-PY_PREFIX = $(shell python getprefix.py)
+-PY_VERSION = $(shell python getversion.py)
+-CLIBS = python$(PY_VERSION) pthread dl util m c
++PY_PREFIX = $(shell ${MODPY_BIN} getprefix.py)
++PY_VERSION = $(shell ${MODPY_BIN} getversion.py)
++CLIBS = python$(PY_VERSION) pthread util m c
+ 
+ SOURCES = pycaml.ml pycaml_ml.c
+ RESULT = pycaml

@@ -1,0 +1,32 @@
+$OpenBSD: patch-cocci_ml,v 1.1.1.1 2011/05/14 15:02:50 sthen Exp $
+--- cocci.ml.orig	Wed Apr 13 06:25:58 2011
++++ cocci.ml	Mon May  9 08:08:26 2011
+@@ -263,8 +263,8 @@ let show_or_not_diff2 cfile outfile =
+ 
+ 	let line =
+ 	  match !Flag_parsing_c.diff_lines with
+-	  | None ->   "diff -u -p " ^ cfile ^ " " ^ outfile
+-	  | Some n -> "diff -U "^n^" -p "^cfile^" "^outfile in
++	  | None ->   "gdiff -u -p " ^ cfile ^ " " ^ outfile
++	  | Some n -> "gdiff -U "^n^" -p "^cfile^" "^outfile in
+ 	let xs =
+ 	  let res = Common.cmd_to_list line in
+ 	  match (!Flag.patch,res) with
+@@ -495,7 +495,7 @@ let worth_trying cfiles tokens =
+ 	| _ -> s
+ 
+       ) in
+-      let com = sprintf "egrep -q '(%s)' %s" (join "|" tokens) (join " " cfiles)
++      let com = sprintf "gegrep -q '(%s)' %s" (join "|" tokens) (join " " cfiles)
+       in
+       (match Sys.command com with
+       | 0 (* success *) -> true
+@@ -1979,7 +1979,7 @@ let check_duplicate_modif2 xs =
+               match res2 with
+               | None -> false
+               | Some res2 ->
+-                  let diff = Common.cmd_to_list ("diff -u -b -B "^res^" "^res2)
++                  let diff = Common.cmd_to_list ("gdiff -u -b -B "^res^" "^res2)
+                   in
+                   null diff
+             ) xs) then begin
