@@ -1,18 +1,17 @@
-# $OpenBSD: Makefile,v 1.41 2011/04/07 11:23:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2011/05/14 12:36:18 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
-GNOME_VERSION=		2.32.1
-REVISION=		0
+GNOME_VERSION=		3.0.1
 
 SHARED_LIBS +=	gucharmap            2.0      # .7.0
 
 HOMEPAGE=		http://live.gnome.org/Gucharmap
 
-# GPLv2
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -41,8 +40,8 @@ DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gucharmap
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-python-bindings \
-			--enable-introspection
+			--enable-introspection \
+			--with-gtk=2.0
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

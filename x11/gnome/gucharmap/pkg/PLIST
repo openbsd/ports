@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2011/04/07 11:23:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2011/05/14 12:36:18 jasper Exp $
 bin/charmap
 bin/gnome-character-map
 @bin bin/gucharmap
@@ -105,6 +105,11 @@ share/gnome/help/gucharmap/ru/figures/
 share/gnome/help/gucharmap/ru/figures/gucharmap_start_window.png
 share/gnome/help/gucharmap/ru/figures/gucharmap_window.png
 share/gnome/help/gucharmap/ru/gucharmap.xml
+share/gnome/help/gucharmap/sl/
+share/gnome/help/gucharmap/sl/figures/
+share/gnome/help/gucharmap/sl/figures/gucharmap_start_window.png
+share/gnome/help/gucharmap/sl/figures/gucharmap_window.png
+share/gnome/help/gucharmap/sl/gucharmap.xml
 share/gnome/help/gucharmap/sv/
 share/gnome/help/gucharmap/sv/figures/
 share/gnome/help/gucharmap/sv/figures/gucharmap_start_window.png
@@ -208,6 +213,7 @@ share/locale/ta/LC_MESSAGES/gucharmap.mo
 share/locale/te/LC_MESSAGES/gucharmap.mo
 share/locale/th/LC_MESSAGES/gucharmap.mo
 share/locale/tr/LC_MESSAGES/gucharmap.mo
+share/locale/ug/LC_MESSAGES/gucharmap.mo
 share/locale/uk/LC_MESSAGES/gucharmap.mo
 share/locale/vi/LC_MESSAGES/gucharmap.mo
 share/locale/wa/LC_MESSAGES/gucharmap.mo
@@ -232,6 +238,7 @@ share/omf/gucharmap/gucharmap-ko.omf
 share/omf/gucharmap/gucharmap-oc.omf
 share/omf/gucharmap/gucharmap-pt_BR.omf
 share/omf/gucharmap/gucharmap-ru.omf
+share/omf/gucharmap/gucharmap-sl.omf
 share/omf/gucharmap/gucharmap-sv.omf
 share/omf/gucharmap/gucharmap-vi.omf
 share/omf/gucharmap/gucharmap-zh_CN.omf
