@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2011/05/13 11:37:10 sebastia Exp $
+# $OpenBSD: Makefile,v 1.22 2011/05/14 08:33:52 sebastia Exp $
 
      SUBDIR =
      SUBDIR += addresses
      SUBDIR += back
      SUBDIR += base
+     SUBDIR += dbuskit
      SUBDIR += examples
      SUBDIR += fisicalab
      SUBDIR += ftp
