@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2011/04/28 13:08:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/05/14 12:13:13 ajacoutot Exp $
 
 COMMENT=	framework for defining and tracking users
 
-DISTNAME=	ConsoleKit-0.4.4
+DISTNAME=	ConsoleKit-0.4.5
 PKGNAME=	${DISTNAME:L}
 
 CATEGORIES=	sysutils	
@@ -32,7 +32,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	sysutils/polkit>=0.101 \
 		x11/dbus-glib
 
-AUTOCONF_VERSION= 2.64
+AUTOCONF_VERSION= 2.68
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
