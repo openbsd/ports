@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.57 2011/03/25 06:44:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2011/05/14 14:01:15 ajacoutot Exp $
 
-COMMENT-main=		GNOME Structured File library
-COMMENT-gnome=		GNOME specific extensions to libgsf
+COMMENT=		GNOME Structured File library
 
 GNOME_PROJECT=		libgsf
 GNOME_VERSION=		1.14.20
 
-PKGNAME-main=		${DISTNAME}
-PKGNAME-gnome=		libgsf-gnome-${VERSION}
+REVISION=		0
 
 CATEGORIES=		devel
 
 SHARED_LIBS+=		gsf-1		114.12
-SHARED_LIBS+=		gsf-gnome-1	114.11
 
 HOMEPAGE=		http://www.gnome.org/
 
@@ -25,46 +22,31 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MULTI_PACKAGES=		-main -gnome
-
-WANTLIB += c m z pcre pthread bz2>=10.2 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 xml2>=8.4
+WANTLIB += bz2 c gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gthread-2.0 m pcre png pthread xml2 z
 
 MODULES=		devel/gettext \
-			lang/python \
 			x11/gnome \
 			devel/gconf2
 
-BUILD_DEPENDS=  	x11/py-gtk2>=2.10 \
-			devel/popt
 LIB_DEPENDS=		archivers/bzip2 \
 			devel/glib2 \
 			textproc/libxml
-
-RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
-			${MODGETTEXT_RUN_DEPENDS}
 
 MODGCONF2_LIBDEP=	No
 MODGCONF2_SCHEMAS_DIR=	libgsf
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
+			--disable-gtk-doc \
+			--without-bonobo \
+			--without-gnome-vfs \
+			--without-python \
 			--with-bz2 \
-			--with-gio \
-			--with-python
+			--with-gio
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-MAKE_ENV+=		GCONF2_SCHEMAS_DIR="${LOCALBASE}/${SCHEMAS_INSTDIR}"
-
-USE_GROFF =		Yes
-
-RUN_DEPENDS-gnome=	${RUN_DEPENDS} \
-			${MODGCONF2_RUN_DEPENDS}
-LIB_DEPENDS-gnome=	${LIB_DEPENDS} \
-			${BUILD_PKGPATH} \
-			x11/gnome/libbonobo
-WANTLIB-gnome += ${WANTLIB} gsf-1 bonobo-2 bonobo-activation png
-WANTLIB-gnome += ORBit-2 ORBitCosNaming-2 gdk_pixbuf-2.0 gthread-2.0
+USE_GROFF=		Yes
 
 .include <bsd.port.mk>

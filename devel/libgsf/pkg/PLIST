@@ -1,11 +1,21 @@
-@comment $OpenBSD: PLIST-main,v 1.14 2011/03/25 06:44:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/05/14 14:01:15 ajacoutot Exp $
+@conflict devel/libgsf-gnome-*
 @pkgpath devel/libgsf
 @pkgpath devel/libgsf,no_gnome
+@pkgpath devel/libgsf,-main
+@pkgpath devel/libgsf,-gnome
 %%SHARED%%
 @bin bin/gsf
+@bin bin/gsf-office-thumbnailer
 @bin bin/gsf-vba-dump
 include/libgsf-1/
 include/libgsf-1/gsf/
+include/libgsf-1/gsf-gnome/
+include/libgsf-1/gsf-gnome/gsf-input-bonobo.h
+include/libgsf-1/gsf-gnome/gsf-input-gnomevfs.h
+include/libgsf-1/gsf-gnome/gsf-output-bonobo.h
+include/libgsf-1/gsf-gnome/gsf-output-gnomevfs.h
+include/libgsf-1/gsf-gnome/gsf-shared-bonobo-stream.h
 include/libgsf-1/gsf/gsf-blob.h
 include/libgsf-1/gsf/gsf-clip-data.h
 include/libgsf-1/gsf/gsf-doc-meta-data.h
@@ -57,14 +67,6 @@ include/libgsf-1/gsf/gsf.h
 lib/libgsf-1.a
 lib/libgsf-1.la
 lib/pkgconfig/libgsf-1.pc
-lib/python${MODPY_VERSION}/site-packages/gsf/
-lib/python${MODPY_VERSION}/site-packages/gsf/__init__.py
-lib/python${MODPY_VERSION}/site-packages/gsf/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/gsf/__init__.pyo
-@comment lib/python${MODPY_VERSION}/site-packages/gsf/_gsfmodule.a
-@comment lib/python${MODPY_VERSION}/site-packages/gsf/_gsfmodule.la
-@comment lib/python${MODPY_VERSION}/site-packages/gsf/gnomemodule.a
-@comment lib/python${MODPY_VERSION}/site-packages/gsf/gnomemodule.la
 @man man/man1/gsf-office-thumbnailer.1
 @man man/man1/gsf-vba-dump.1
 @man man/man1/gsf.1
@@ -127,4 +129,7 @@ share/locale/sv/LC_MESSAGES/libgsf.mo
 share/locale/zh_CN/LC_MESSAGES/libgsf.mo
 share/locale/zh_HK/LC_MESSAGES/libgsf.mo
 share/locale/zh_TW/LC_MESSAGES/libgsf.mo
-share/schemas/
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/
+${SCHEMAS_INSTDIR}/gsf-office-thumbnailer.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
