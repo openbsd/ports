@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.511 2011/05/11 06:03:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.512 2011/05/14 10:11:06 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -53,6 +53,7 @@
      SUBDIR += gecko-mediaplayer
      SUBDIR += gnash
      SUBDIR += gtkhtml3
+     SUBDIR += gtkhtml4
      SUBDIR += havp
      SUBDIR += hiawatha
      SUBDIR += horde
