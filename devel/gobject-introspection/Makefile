@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/05/14 11:22:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2011/05/14 20:24:02 ajacoutot Exp $
 
 COMMENT=		GObject Introspection
 
@@ -6,7 +6,7 @@ GNOME_VERSION=		0.10.8
 GNOME_PROJECT=		gobject-introspection
 CATEGORIES=		devel
 
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  girepository-1.0     1.0      # 1.0
 
@@ -56,8 +56,6 @@ MODPY_ADJ_FILES=	giscanner/scannermain.py \
 			tests/offsets/gen-gitestoffsets
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/giscanner/dumper.py \
-		${WRKSRC}/giscanner/scannermain.py
-	perl -pi -e "s,'cc','${CC}'," ${WRKSRC}/giscanner/sourcescanner.py
+	${SUBST_CMD} ${WRKSRC}/giscanner/{dumper,scannermain,sourcescanner}.py
 
 .include <bsd.port.mk>
