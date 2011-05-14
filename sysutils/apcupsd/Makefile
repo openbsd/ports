@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/07 18:54:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/05/14 21:29:03 ajacoutot Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
@@ -9,7 +9,7 @@ PKGNAME-main =		${DISTNAME}
 REVISION-main = 	2
 PKGNAME-cgi =		${DISTNAME:S/-/-cgi-/}
 PKGNAME-x11 =		${DISTNAME:S/-/-x11-/}
-REVISION-x11 = 		1
+REVISION-x11 = 		2
 
 CATEGORIES =		sysutils
 
@@ -63,6 +63,7 @@ RUN_DEPENDS-cgi =
 MULTI_PACKAGES +=	-x11
 CONFIGURE_ARGS +=	--enable-gapcmon
 LIB_DEPENDS-x11 =	devel/gconf2 \
+			x11/gtk+2 \
 			${MODGETTEXT_LIB_DEPENDS}
 RUN_DEPENDS-x11 =	devel/desktop-file-utils \
 			${MODGETTEXT_RUN_DEPENDS}

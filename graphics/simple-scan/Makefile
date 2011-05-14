@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/26 13:09:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/05/14 21:29:03 ajacoutot Exp $
 
 COMMENT=	simple scanning utility
 
 GNOME_PROJECT=	simple-scan
 GNOME_VERSION=	2.32.0.2
+
+REVISION=	0
 
 EXTRACT_SUFX=	.tar.gz
 
@@ -34,7 +36,8 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	graphics/sane-backends
+LIB_DEPENDS=	graphics/sane-backends \
+		x11/gtk+2
 
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES= Yes

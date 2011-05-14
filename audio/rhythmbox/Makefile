@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2011/04/21 07:04:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2011/05/14 21:29:03 ajacoutot Exp $
 
 # coherence plugin is installed but not activated by default so we don't
 # enforce dependency on multimedia/coherence to lower requirements
@@ -8,7 +8,7 @@ COMMENT=		music management application for GNOME
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.12.8
 
-REVISION =		11
+REVISION =		12
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -52,7 +52,8 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			multimedia/gstreamer-0.10/plugins-base \
 			devel/libsoup,-gnome \
 			net/avahi \
-			audio/libgpod
+			audio/libgpod \
+			x11/gtk+2
 RUN_DEPENDS+=		x11/gnome/icon-theme \
 			multimedia/gstreamer-0.10/py-gstreamer
 

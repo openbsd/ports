@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/05/08 17:45:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2011/05/14 21:29:03 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		components for the GNOME desktop
 GNOME_PROJECT=		gnome-desktop
 GNOME_VERSION=		2.32.1
 
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  gnome-desktop-2      8.0      # .15.2
 
@@ -35,7 +35,8 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		x11/gnome/py-gnome
 LIB_DEPENDS=		devel/gconf2 \
-			devel/startup-notification
+			devel/startup-notification \
+			x11/gtk+2
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/04/21 07:07:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/05/14 21:29:04 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	monitor kerberos tickets
 
 GNOME_PROJECT=	krb5-auth-dialog
 GNOME_VERSION=	0.17
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	security
 
@@ -30,7 +30,8 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	devel/libnotify>=0.7.2
+LIB_DEPENDS=	devel/libnotify>=0.7.2 \
+		x11/gtk+2
 
 MODGCONF2_SCHEMAS_DIR= krb5-auth-dialog
 MODGNOME_HELP_FILES= Yes

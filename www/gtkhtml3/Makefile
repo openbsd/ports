@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/05/14 10:09:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2011/05/14 21:29:03 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,7 +10,7 @@ API_VERSION=		3.14
 
 PKGNAME=		gtkhtml3-${VERSION}
 
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://www.gnome.org/
 
@@ -41,7 +41,8 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS=		devel/gconf2 \
-			textproc/enchant
+			textproc/enchant \
+			x11/gtk+2
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/iso-codes \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/05/08 17:45:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2011/05/14 21:29:04 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		keyboard configuration library
 
 GNOME_PROJECT=		libgnomekbd
 GNOME_VERSION=		2.32.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=	gnomekbd             4.0      # .5.0
 SHARED_LIBS +=	gnomekbdui           4.0      # .5.0
@@ -31,7 +31,8 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-LIB_DEPENDS=		x11/gnome/libxklavier
+LIB_DEPENDS=		x11/gnome/libxklavier \
+			x11/gtk+2
 
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	libgnomekbd

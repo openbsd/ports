@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2011/04/06 16:10:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2011/05/14 21:29:04 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		2.30.2
 
-REVISION=		2
+REVISION=		3
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -38,7 +38,8 @@ RUN_DEPENDS=		misc/shared-mime-info \
 LIB_DEPENDS=		devel/startup-notification \
 			devel/xulrunner/1.9,-main>=1.9.2 \
 			textproc/libxslt \
-			textproc/rarian
+			textproc/rarian \
+			x11/gtk+2
 
 MODGCONF2_SCHEMAS_DIR=	yelp
 DESKTOP_FILES=		Yes

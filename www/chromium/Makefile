@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/05/13 11:48:19 robert Exp $
+# $OpenBSD: Makefile,v 1.43 2011/05/14 21:29:03 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -6,6 +6,8 @@ COMMENT=		Chromium browser
 
 V=			11.0.696.68
 DISTNAME=		chromium-${V}
+
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -54,7 +56,8 @@ LIB_DEPENDS=	devel/libexecinfo \
 		devel/gconf2 \
 		multimedia/libvpx \
 		x11/gnome/libgnome-keyring \
-		textproc/libxslt
+		textproc/libxslt \
+		x11/gtk+2
 
 .include <bsd.own.mk>
 

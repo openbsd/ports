@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/03/25 07:24:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2011/05/14 21:29:03 ajacoutot Exp $
 
 # XXX on goffice version change,
 # update API_VERSION in math/gnumeric, bump PKGNAME then change the
@@ -10,6 +10,8 @@ COMMENT=	document centric objects and utilities
 
 GNOME_PROJECT=	goffice
 GNOME_VERSION=	0.8.14
+
+REVISION=	0
 
 SHARED_LIBS +=	goffice-0.8          0.0      # .8.0
 
@@ -33,7 +35,8 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 LIB_DEPENDS=		devel/libgsf \
-			devel/gconf2
+			devel/gconf2 \
+			x11/gtk+2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

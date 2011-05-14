@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 23:22:08 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/05/14 21:29:03 ajacoutot Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -11,9 +11,9 @@ COMMENT-tools =		tools to manipulate MAME/MESS roms and disk images
 V =			0.132
 DISTNAME =		sdlmame${V:S/.//}
 PKGNAME-main =		sdlmame-${V}
-REVISION-main =		5
+REVISION-main =		6
 PKGNAME-tools =		sdlmame-tools-${V}
-REVISION-tools =	3
+REVISION-tools =	4
 
 CATEGORIES =		emulators games
 
@@ -28,10 +28,12 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	may not sell
 PERMIT_DISTFILES_FTP =		Yes
 
+MODULE =	devel/gettext
+
 WANTLIB +=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB +=	Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
 WANTLIB +=	expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB +=	gobject-2.0 gthread-2.0 iconv intl m pango-1.0 pangocairo-1.0
+WANTLIB +=	gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB +=	pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb z
 WANTLIB +=	SDL gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0
 
@@ -44,7 +46,8 @@ DISTFILES+=		${DISTNAME}${EXTRACT_SUFX} \
 
 BUILD_DEPENDS = 	archivers/unzip
 LIB_DEPENDS =		devel/sdl \
-			devel/gconf2
+			devel/gconf2 \
+			x11/gtk+2
 RUN_DEPENDS-main =	${PKGNAME-tools}:emulators/sdlmame,-tools
 
 USE_GMAKE =		Yes

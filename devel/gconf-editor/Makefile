@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2011/03/13 18:56:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2011/05/14 21:29:03 ajacoutot Exp $
 
 COMMENT=	editor for the GConf configuration system
 
 GNOME_PROJECT=	gconf-editor
 GNOME_VERSION=	2.32.0
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	devel x11
 
@@ -30,6 +30,8 @@ WANTLIB += xcb-render xcb-render-util
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
+
+LIB_DEPENDS=	x11/gtk+2
 
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/05/14 21:29:03 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.2
 DISTNAME =	compiz-${V}
-REVISION=	6
+REVISION=	7
 
 SHARED_LIBS =	decoration	0.0
 
@@ -41,7 +41,8 @@ LIB_DEPENDS =	graphics/png \
 		devel/startup-notification \
 		devel/libwnck \
 		textproc/libxml \
-		textproc/libxslt
+		textproc/libxslt \
+		x11/gtk+2
 
 USE_GMAKE =	Yes
 USE_LIBTOOL =	Yes

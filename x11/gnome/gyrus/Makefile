@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2010/12/29 13:41:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/05/14 21:29:04 ajacoutot Exp $
 
 COMMENT=	Cyrus imapd administration GUI
 
 GNOME_PROJECT=	gyrus
 GNOME_VERSION=	0.3.10
+
+REVISION=	0
 
 CATEGORIES=	mail
 
@@ -26,7 +28,8 @@ WANTLIB += xcb-render GL Xxf86vm drm xcb-shm
 MODULES=	devel/gettext \
 		x11/gnome
 
-LIB_DEPENDS=	devel/gconf2
+LIB_DEPENDS=	devel/gconf2 \
+		x11/gtk+2
 
 DESKTOP_FILES=	Yes
 

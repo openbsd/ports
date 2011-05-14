@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/07 19:51:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/14 21:29:03 ajacoutot Exp $
 
 COMMENT=	interactive game for young children
 
 DISTNAME=	gamine-1.1
+REVISION=	0
 
 CATEGORIES=	games
 
@@ -33,7 +34,8 @@ MODULES=	devel/gettext \
 RUN_DEPENDS=	devel/desktop-file-utils \
 		multimedia/gstreamer-0.10/plugins-good
 
-LIB_DEPENDS=	multimedia/gstreamer-0.10/core
+LIB_DEPENDS=	multimedia/gstreamer-0.10/core \
+		x11/gtk+2
 
 USE_GMAKE=	Yes
 ALL_TARGET=	# empty

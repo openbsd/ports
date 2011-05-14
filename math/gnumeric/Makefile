@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2011/05/14 13:59:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2011/05/14 21:29:03 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.10.14
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=    		math
 
@@ -34,7 +34,8 @@ MODULES=		devel/gconf2 \
 			x11/gnome
 
 LIB_DEPENDS=		goffice->=0.8.14,<0.8.15:devel/goffice \
-			devel/libgsf
+			devel/libgsf \
+			x11/gtk+2
 
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes

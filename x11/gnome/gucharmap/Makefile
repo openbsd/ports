@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/05/14 12:36:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2011/05/14 21:29:03 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		Unicode character map for the GNOME project
 
 GNOME_PROJECT=		gucharmap
 GNOME_VERSION=		3.0.1
+
+REVISION=		0
 
 SHARED_LIBS +=	gucharmap            2.0      # .7.0
 
@@ -30,6 +32,8 @@ MODULES=		devel/gettext \
 			devel/gconf2
 
 BUILD_DEPENDS=		devel/gobject-introspection
+
+LIB_DEPENDS=		x11/gtk+2
 
 # XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
 # instead of the actual library

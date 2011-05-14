@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/04/21 07:07:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2011/05/14 21:29:04 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		manage encryption keys
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		2.32.0
-REVISION=		5
+REVISION=		6
 
 SHARED_LIBS +=	cryptui              1.0      # .0.0
 
@@ -39,7 +39,8 @@ LIB_DEPENDS=		databases/openldap \
 			security/gpgme \
 			x11/gnome/libgnome-keyring \
 			x11/gnome/keyring>=2.30.0 \
-			net/avahi
+			net/avahi \
+			x11/gtk+2
 
 MODULES=		devel/gettext \
 			x11/gnome \

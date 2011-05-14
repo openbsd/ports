@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/04/15 16:13:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/14 21:29:03 ajacoutot Exp $
 
 COMMENT=	X.509 Certification Authority management tool
 
 DISTNAME=	gnomint-1.2.1
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	security x11
 
@@ -39,7 +39,8 @@ RUN_DEPENDS=	misc/shared-mime-info \
 
 LIB_DEPENDS=	security/gnutls \
 		databases/sqlite3 \
-		security/libgcrypt
+		security/libgcrypt \
+		x11/gtk+2
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
