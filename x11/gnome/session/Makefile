@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.147 2011/05/13 12:56:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.148 2011/05/14 21:35:08 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		2.32.1
 
-REVISION=		11
+REVISION=		12
 
 CATEGORIES=		x11
 
@@ -29,10 +29,12 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	textproc/xmlto \
 		x11/gnome/settings-daemon
-LIB_DEPENDS=	devel/libexecinfo
+LIB_DEPENDS=	devel/libexecinfo \
+		x11/gtk+2
 RUN_DEPENDS=	x11/gnome/settings-daemon \
 		sysutils/consolekit \
-		x11/xdg-user-dirs-gtk>=0.8p6
+		x11/xdg-user-dirs-gtk>=0.8p6 \
+		devel/gconf2,-gtk
 
 # Install accessibility components -- daemons will start only if
 # accessibility is enabled by the user.
