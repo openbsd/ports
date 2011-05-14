@@ -1,17 +1,11 @@
-$OpenBSD: patch-src_idle-server-connection_c,v 1.1 2009/06/02 04:46:29 jasper Exp $
---- src/idle-server-connection.c.orig	Mon Jun  1 20:20:58 2009
-+++ src/idle-server-connection.c	Mon Jun  1 20:21:19 2009
-@@ -26,11 +26,13 @@
+$OpenBSD: patch-src_idle-server-connection_c,v 1.2 2011/05/14 09:35:05 jasper Exp $
+--- src/idle-server-connection.c.orig	Sat May 14 11:07:02 2011
++++ src/idle-server-connection.c	Sat May 14 11:07:13 2011
+@@ -26,6 +26,7 @@
  #include <string.h>
  #include <time.h>
  
 +#include <netdb.h>
  #include <arpa/inet.h>
  #include <fcntl.h>
- #include <netinet/tcp.h>
  #include <sys/types.h>
- #include <sys/socket.h>
-+#include <netinet/in.h>
- #include <unistd.h>
- 
- #define IDLE_DEBUG_FLAG IDLE_DEBUG_NETWORK
