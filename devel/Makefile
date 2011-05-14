@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.937 2011/05/13 23:19:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.938 2011/05/14 15:03:20 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -52,6 +52,7 @@
      SUBDIR += cil
      SUBDIR += cln
      SUBDIR += cmake
+     SUBDIR += coccinelle
      SUBDIR += codeblocks
      SUBDIR += codeworker
      SUBDIR += commoncpp
