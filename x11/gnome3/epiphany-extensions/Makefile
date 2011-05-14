@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/13 21:23:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/14 09:48:17 ajacoutot Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
 GNOME_PROJECT=		epiphany-extensions
 GNOME_VERSION=		3.0.0
-REVISION=		1
+REVISION=		2
 
 # sync with www/epiphany
 M=		${GNOME_VERSION:R}
@@ -40,7 +40,7 @@ MODULES=	devel/dconf \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	x11/gnome3/epiphany>=3.0.3
-LIB_DEPENDS=	security/libgpg-error
+LIB_DEPENDS=	www/webkit,gtk3
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
