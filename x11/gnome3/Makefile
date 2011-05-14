@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.16 2011/05/14 09:42:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/05/14 20:22:15 jasper Exp $
 
      SUBDIR =
+     SUBDIR += backgrounds
      SUBDIR += desktop
      SUBDIR += devhelp
      SUBDIR += epiphany
