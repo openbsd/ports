@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/05/11 06:56:43 ajacoutot Exp $
-@unexec rm -rf %B/save
+@comment $OpenBSD: PLIST,v 1.11 2011/05/14 10:36:44 jasper Exp $
+@unexec rm -rf %D/lib/slashdir/save
 @group games
 bin/slash
 bin/srecover
