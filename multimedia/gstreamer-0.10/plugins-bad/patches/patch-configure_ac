@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.11 2011/03/07 19:43:35 ajacoutot Exp $
---- configure.ac.orig	Fri Jan 21 14:38:58 2011
-+++ configure.ac	Sat Feb 26 19:26:55 2011
-@@ -388,7 +388,7 @@ if test "x$HAVE_WINSOCK2_H" = "xyes"; then
+$OpenBSD: patch-configure_ac,v 1.12 2011/05/15 08:32:37 ajacoutot Exp $
+--- configure.ac.orig	Mon May  9 22:45:37 2011
++++ configure.ac	Sun May 15 08:53:49 2011
+@@ -402,7 +402,7 @@ if test "x$HAVE_WINSOCK2_H" = "xyes"; then
  fi
  
  if test "x$HAVE_PTHREAD_H" = "xyes"; then
@@ -10,16 +10,16 @@ $OpenBSD: patch-configure_ac,v 1.11 2011/03/07 19:43:35 ajacoutot Exp $
    AC_SUBST(DCCP_LIBS)
  fi
  
-@@ -774,7 +774,7 @@ return 0;
+@@ -832,7 +832,7 @@ return 0;
  dnl *** resindvd ***
  translit(dnm, m, l) AM_CONDITIONAL(USE_RESINDVD, true)
  AG_GST_CHECK_FEATURE(RESINDVD, [resindvd plugin], resindvd, [
 -  PKG_CHECK_MODULES(DVDNAV, dvdnav >= 4.1.2 dvdread >= 4.1.2, HAVE_RESINDVD="yes", [
 +  PKG_CHECK_MODULES(DVDNAV, dvdnav >= 4.1.2, HAVE_RESINDVD="yes", [
      HAVE_RESINDVD="no"
-     AC_MSG_RESULT(no)
    ])
-@@ -991,7 +991,7 @@ PKG_CHECK_EXISTS(mjpegtools >= 1.6.1.93 mjpegtools < 1
+ ])
+@@ -1047,7 +1047,7 @@ PKG_CHECK_EXISTS(mjpegtools >= 1.6.1.93 mjpegtools < 1
        OLD_CFLAGS="$CFLAGS"
        OLD_LIBS="$LIBS"
        CFLAGS="$MJPEG_CFLAGS"
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure_ac,v 1.11 2011/03/07 19:43:35 ajacoutot Exp $
        AC_CHECK_FUNC(mjpeg_loglev_t, [
          mjpegtools_api=10903
          ], [
-@@ -1028,7 +1028,7 @@ AG_GST_CHECK_FEATURE(MPEG2ENC, [mpeg2enc], mpeg2enc, [
+@@ -1084,7 +1084,7 @@ AG_GST_CHECK_FEATURE(MPEG2ENC, [mpeg2enc], mpeg2enc, [
        dnl check headers
        mpeg2enc_headers_ok=no
        AC_CHECK_HEADER([mpeg2encoder.hh], [
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure_ac,v 1.11 2011/03/07 19:43:35 ajacoutot Exp $
          OLD_LIBS="$LIBS"
          LIBS="$LIBS $MPEG2ENC_LIBS"
          AC_MSG_CHECKING([for valid mpeg2enc objects])
-@@ -1427,7 +1427,7 @@ AG_GST_CHECK_FEATURE(XVID, [xvid plugins], xvid, [
+@@ -1467,7 +1467,7 @@ AG_GST_CHECK_FEATURE(XVID, [xvid plugins], xvid, [
    HAVE_XVID=no
    AC_CHECK_HEADER(xvid.h, [
      OLD_LIBS="$LIBS"
@@ -46,7 +46,7 @@ $OpenBSD: patch-configure_ac,v 1.11 2011/03/07 19:43:35 ajacoutot Exp $
      AC_CHECK_LIB(xvidcore, xvid_encore, [
        AC_CHECK_LIB(xvidcore, xvid_decore, [
          AC_CHECK_LIB(xvidcore, xvid_global, [
-@@ -1535,6 +1535,8 @@ AG_GST_CHECK_FEATURE(ZBAR, [ZBar barcode detector], zb
+@@ -1575,6 +1575,8 @@ AG_GST_CHECK_FEATURE(ZBAR, [ZBar barcode detector], zb
  
  dnl *** vp8 ***
  translit(dnm, m, l) AM_CONDITIONAL(USE_VP8, vp8)
@@ -55,7 +55,7 @@ $OpenBSD: patch-configure_ac,v 1.11 2011/03/07 19:43:35 ajacoutot Exp $
  AG_GST_CHECK_FEATURE(VP8, [VP8 decoder], vp8, [
    VPX_LIBS=""
    AG_GST_CHECK_LIBHEADER(VPX, vpx,
-@@ -1543,8 +1545,6 @@ AG_GST_CHECK_FEATURE(VP8, [VP8 decoder], vp8, [
+@@ -1583,8 +1585,6 @@ AG_GST_CHECK_FEATURE(VP8, [VP8 decoder], vp8, [
      HAVE_VP8_ENCODER=no
      HAVE_VP8_DECODER=no
  
@@ -64,7 +64,7 @@ $OpenBSD: patch-configure_ac,v 1.11 2011/03/07 19:43:35 ajacoutot Exp $
      AC_CHECK_LIB(vpx, vpx_codec_vp8_cx_algo, [
        HAVE_VP8=yes
        AC_DEFINE(HAVE_VP8_ENCODER, 1, [Defined if the VP8 encoder is available])
-@@ -1555,10 +1555,10 @@ AG_GST_CHECK_FEATURE(VP8, [VP8 decoder], vp8, [
+@@ -1595,10 +1595,10 @@ AG_GST_CHECK_FEATURE(VP8, [VP8 decoder], vp8, [
        AC_DEFINE(HAVE_VP8_DECODER, 1, [Defined if the VP8 decoder is available])
        VPX_LIBS="-lvpx"
      ])

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.52 2011/04/20 19:28:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2011/05/15 08:32:37 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
 COMMENT-mjpeg =		mplex+mpeg2enc elements for GStreamer (plugins-bad)
 
-V =			0.10.21
+V =			0.10.22
 DISTNAME =		gst-plugins-bad-${V}
 
 PKGNAME-main =		gstreamer-plugins-bad-${V}
@@ -18,7 +18,8 @@ SHARED_LIBS +=  gstsignalprocessor-0.10      1.0 # .0.0
 SHARED_LIBS +=  gstbasevideo-0.10            1.0 # .0.0
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-plugins-bad/}
-MODULES =		devel/gettext
+MODULES =		devel/gettext \
+			devel/dconf
 
 WANTLIB =		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 xml2 \
 			z m pcre gstreamer-0.10
@@ -64,7 +65,8 @@ LIB_DEPENDS-main = 	${LIB_DEPENDS} \
 			multimedia/libdvdnav>=4.1.3p0v0 \
 			textproc/liblrdf
 
-RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-main =	${MODGETTEXT_RUN_DEPENDS} \
+			${MODDCONF_RUN_DEPENDS}
 
 WANTLIB-neon =		${WANTLIB} \
 			gstbase-0.10 neon \
@@ -90,7 +92,6 @@ CONFIGURE_ARGS =	--disable-acm \
 			--disable-divx \
 			--disable-dvb \
 			--disable-fbdev \
-			--disable-jack \
 			--disable-gme \
 			--disable-alsa \
 			--disable-kate \

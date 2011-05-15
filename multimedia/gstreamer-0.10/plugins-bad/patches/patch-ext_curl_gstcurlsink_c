@@ -1,0 +1,11 @@
+$OpenBSD: patch-ext_curl_gstcurlsink_c,v 1.1 2011/05/15 08:32:37 ajacoutot Exp $
+--- ext/curl/gstcurlsink.c.orig	Sun May 15 09:58:06 2011
++++ ext/curl/gstcurlsink.c	Sun May 15 09:07:19 2011
+@@ -50,6 +50,7 @@
+ #include <sys/types.h>
+ #include <netinet/in.h>
+ #include <unistd.h>
++#include <netinet/in_systm.h>
+ #include <netinet/ip.h>
+ #include <netinet/tcp.h>
+ #include <sys/stat.h>
