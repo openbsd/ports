@@ -1,6 +1,6 @@
-$OpenBSD: patch-examples-scmpc_in,v 1.2 2009/05/31 20:47:08 jasper Exp $
---- examples/scmpc.conf.in.orig	Fri Dec  8 16:38:28 2006
-+++ examples/scmpc.conf.in	Fri Dec  8 16:38:40 2006
+$OpenBSD: patch-scmpc_conf_example,v 1.1 2011/05/15 14:56:50 jasper Exp $
+--- scmpc.conf.example.orig	Mon Apr 25 19:08:33 2011
++++ scmpc.conf.example	Mon Apr 25 19:09:03 2011
 @@ -31,7 +31,7 @@
  # cache_file
  #

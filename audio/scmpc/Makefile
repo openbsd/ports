@@ -1,40 +1,37 @@
-# $OpenBSD: Makefile,v 1.16 2011/05/11 06:22:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/05/15 14:56:50 jasper Exp $
 
 COMMENT=		client for MPD to submit tracks to Last.fm
 CATEGORIES=		audio
-DISTNAME=		scmpc-0.2.2
-REVISION=		9
+DISTNAME=		scmpc-0.3.1
 
-HOMEPAGE=		http://scmpc.berlios.de/
+HOMEPAGE=		http://cmende.github.com/scmpc/
 
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c pthread argtable2>=1 confuse daemon>=2 curl>=5
+WANTLIB += c confuse curl glib-2.0
 
-MASTER_SITES=		${MASTER_SITE_BERLIOS:=scmpc/}
-EXTRACT_SUFX=		.tar.bz2
+MASTER_SITES=		https://github.com/downloads/cmende/scmpc/
 
-MODULES=		gcc3
-MODGCC3_ARCHES= 	sparc
-MODGCC3_LANGS=		c
+# XXX: Still needed?
+#MODULES=		gcc3
+#MODGCC3_ARCHES= 	sparc
+#MODGCC3_LANGS=		c
 
 MODULES+=		devel/gettext
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include" \
-			CFLAGS="-I${LOCALBASE}/include"
-USE_GROFF =		Yes
 
-LIB_DEPENDS=		devel/argtable \
+LIB_DEPENDS=		devel/glib2 \
 			devel/libconfuse \
-			devel/libdaemon \
 			net/curl
 
-USE_GMAKE=		Yes
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/scmpc/
+	${INSTALL_DATA} ${WRKSRC}/scmpc.conf.example \
+		${PREFIX}/share/examples/scmpc/
 
 .include <bsd.port.mk>

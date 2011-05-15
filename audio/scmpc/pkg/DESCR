@@ -1,1 +1,9 @@
 scmpc is a client for MPD which submits your tracks to Last.fm.
+
+  - Can be run as a daemon, either as a user or as root.
+  - Keeps unsubmitted songs in a queue which is saved to a file at a
+    configurable interval.
+  - Will try to reconnect to MPD and Audioscrobbler if the network
+    connection fails.
+  - Works with a password-protected MPD server.
+  - Works when crossfading is enabled.

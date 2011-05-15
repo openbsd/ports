@@ -1,0 +1,12 @@
+$OpenBSD: patch-scmpc_1_in,v 1.1 2011/05/15 14:56:50 jasper Exp $
+--- scmpc.1.in.orig	Mon Apr 25 19:09:21 2011
++++ scmpc.1.in	Mon Apr 25 19:09:32 2011
+@@ -162,7 +162,7 @@ Your md5 hashed Audioscrobbler password. password_hash
+ Configuration files
+ .RE
+ .PP
+-.I /var/lib/scmpc/scmpc.cache
++.I /var/scmpc/scmpc.cache
+ .RS
+ The default location of the cache file.
+ .RE
