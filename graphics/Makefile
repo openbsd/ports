@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.289 2011/05/15 18:34:49 landry Exp $
+# $OpenBSD: Makefile,v 1.290 2011/05/15 18:50:06 landry Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -43,6 +43,7 @@
      SUBDIR += djview4
      SUBDIR += djvulibre
      SUBDIR += djvulibre,no_x11
+     SUBDIR += dpic
      SUBDIR += dumpmpeg
      SUBDIR += dvdrip
      SUBDIR += enblend-enfuse
