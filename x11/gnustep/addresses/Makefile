@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/18 12:20:50 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2011/05/15 13:03:26 sebastia Exp $
 
 COMMENT=	GNUstep address book
 
 DISTNAME=	Addresses-0.4.7
-PKGNAME=	${DISTNAME:L}
 REVISION=	6
 
 SHARED_LIBS+=	Addresses 0.1	# .0.1
