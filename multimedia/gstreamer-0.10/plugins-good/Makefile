@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.74 2011/04/28 13:10:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2011/05/15 08:32:09 ajacoutot Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
 COMMENT-dv =		dv element for GStreamer (plugins-good)
 COMMENT-caca =		libcaca element for GStreamer (plugins-good)
 
-V =			0.10.28
+V =			0.10.29
 DISTNAME =		gst-plugins-good-$V
 
 PKGNAME-main =		gstreamer-plugins-good-${V}
@@ -14,8 +14,6 @@ PKGNAME-dv =		gstreamer-dv-${V}
 PKGNAME-caca =		gstreamer-libcaca-${V}
 
 EPOCH-main =		0
-
-REVISION-main =		1
 
 MULTI_PACKAGES =	-main -aalib \
 			-dv -caca
@@ -43,7 +41,7 @@ LIB_DEPENDS =		$P/core>=0.10.30
 
 WANTLIB-main =		${WANTLIB} ${MODGCONF2_WANTLIB} gdk_pixbuf-2.0 \
 			ICE SM X11 Xdamage Xext Xfixes sndio ossaudio \
-			gstcontroller-0.10 Xau Xdmcp xcb-render \
+			gstcontroller-0.10 Xau Xdmcp xcb-render cairo-gobject \
 			pthread-stubs xcb Xrender cairo expat orc-0.4 \
 			fontconfig freetype ogg pixman-1 png Xv \
 			stdc++ theora vorbis ORBit-2 dbus-1 GL Xxf86vm \
@@ -97,6 +95,7 @@ CONFIGURE_ARGS +=	--with-aalib-prefix=${LOCALBASE} \
 			--disable-esdtest \
 			--disable-jack \
 			--disable-oss4 \
+			--disable-jack \
 			--enable-gst_v4l2 \
 			--enable-goom \
 			--enable-orc
@@ -112,6 +111,6 @@ BUILD_DEPENDS +=	${MODGNU_AUTOMAKE_DEPENDS}
 pre-configure:
 	cd ${WRKSRC} && HOME=${WRKDIST} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} AUTOMAKE=automake-${AUTOMAKE_VERSION} \
-		NOCONFIGURE="true" ./autogen.sh
+		NOCONFIGURE="true" ${CONFIGURE_ENV} ./autogen.sh ${CONFIGURE_ARGS}
 
 .include <bsd.port.mk>

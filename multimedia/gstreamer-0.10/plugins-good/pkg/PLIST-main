@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2010/09/30 13:46:06 ajacoutot Exp $
-@conflict gstreamer-plugins-bad-<0.10.18
+@comment $OpenBSD: PLIST-main,v 1.26 2011/05/15 08:32:09 ajacoutot Exp $
+@conflict gstreamer-plugins-bad-<0.10.22
 @conflict gstreamer-jpeg-*
 @conflict gstreamer-png-*
 @conflict gstreamer-cairo-*
@@ -34,6 +34,8 @@ lib/gstreamer-${VERSION}/libgstannodex.so
 lib/gstreamer-${VERSION}/libgstapetag.so
 @comment lib/gstreamer-${VERSION}/libgstaudiofx.la
 lib/gstreamer-${VERSION}/libgstaudiofx.so
+@comment lib/gstreamer-${VERSION}/libgstaudioparsers.la
+lib/gstreamer-${VERSION}/libgstaudioparsers.so
 @comment lib/gstreamer-${VERSION}/libgstauparse.la
 lib/gstreamer-${VERSION}/libgstauparse.so
 @comment lib/gstreamer-${VERSION}/libgstautodetect.la
@@ -76,6 +78,8 @@ lib/gstreamer-${VERSION}/libgstimagefreeze.la
 lib/gstreamer-${VERSION}/libgstimagefreeze.so
 @comment lib/gstreamer-${VERSION}/libgstinterleave.la
 lib/gstreamer-${VERSION}/libgstinterleave.so
+@comment lib/gstreamer-${VERSION}/libgstisomp4.la
+lib/gstreamer-${VERSION}/libgstisomp4.so
 @comment lib/gstreamer-${VERSION}/libgstjpeg.la
 lib/gstreamer-${VERSION}/libgstjpeg.so
 @comment lib/gstreamer-${VERSION}/libgstlevel.la
@@ -96,8 +100,6 @@ lib/gstreamer-${VERSION}/libgstnavigationtest.so
 lib/gstreamer-${VERSION}/libgstossaudio.so
 @comment lib/gstreamer-${VERSION}/libgstpng.la
 lib/gstreamer-${VERSION}/libgstpng.so
-@comment lib/gstreamer-${VERSION}/libgstqtdemux.la
-lib/gstreamer-${VERSION}/libgstqtdemux.so
 @comment lib/gstreamer-${VERSION}/libgstreplaygain.la
 lib/gstreamer-${VERSION}/libgstreplaygain.so
 @comment lib/gstreamer-${VERSION}/libgstrtp.la
