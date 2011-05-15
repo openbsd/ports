@@ -1,6 +1,6 @@
-$OpenBSD: patch-hexcalc_man,v 1.1.1.1 2001/01/12 15:59:05 reinhard Exp $
+$OpenBSD: patch-hexcalc_man,v 1.2 2011/05/15 10:40:10 sthen Exp $
 --- hexcalc.man.orig	Wed Nov 22 21:25:28 1989
-+++ hexcalc.man	Tue Jan  9 21:14:33 2001
++++ hexcalc.man	Sun May 15 11:30:29 2011
 @@ -11,14 +11,14 @@
  .if n .sp 1
  .if t .sp .5
@@ -20,7 +20,7 @@ $OpenBSD: patch-hexcalc_man,v 1.1.1.1 2001/01/12 15:59:05 reinhard Exp $
  is a mutli-radix calculator that offers the standard C integer operations.
  .SH OPTIONS
  .PP
-@@ -129,7 +129,7 @@ binds the return key to act as though th
+@@ -129,7 +129,7 @@ binds the return key to act as though the equals butto
  
  .PP
  .SH RESOURCES
