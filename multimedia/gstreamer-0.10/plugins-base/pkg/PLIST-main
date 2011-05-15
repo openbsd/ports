@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2011/04/07 12:46:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2011/05/15 08:31:48 ajacoutot Exp $
 @conflict gstreamer-plugins-bad-<0.10.17
 @conflict gstreamer-gnome-*
 @conflict gstreamer-ogg-*
@@ -91,6 +91,7 @@ include/gstreamer-${VERSION}/gst/sdp/gstsdpmessage.h
 include/gstreamer-${VERSION}/gst/tag/
 include/gstreamer-${VERSION}/gst/tag/gsttagdemux.h
 include/gstreamer-${VERSION}/gst/tag/tag.h
+include/gstreamer-${VERSION}/gst/tag/xmpwriter.h
 include/gstreamer-${VERSION}/gst/video/
 include/gstreamer-${VERSION}/gst/video/gstvideofilter.h
 include/gstreamer-${VERSION}/gst/video/gstvideosink.h
