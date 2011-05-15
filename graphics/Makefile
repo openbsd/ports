@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.288 2011/04/29 18:15:04 matthew Exp $
+# $OpenBSD: Makefile,v 1.289 2011/05/15 18:34:49 landry Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -215,6 +215,7 @@
      SUBDIR += scrot
      SUBDIR += shotwell
      SUBDIR += simple-scan
+     SUBDIR += sketch
      SUBDIR += smpeg-xmms
      SUBDIR += sng
      SUBDIR += swfdec
