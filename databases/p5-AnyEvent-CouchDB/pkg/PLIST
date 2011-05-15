@@ -1,12 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/09/17 17:26:51 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/05/15 16:28:47 gsoares Exp $
 bin/couchdb-push
 ${P5SITE}/AnyEvent/CouchDB/
 ${P5SITE}/AnyEvent/CouchDB.pm
 ${P5SITE}/AnyEvent/CouchDB/Database.pm
+${P5SITE}/AnyEvent/CouchDB/Exceptions.pm
 ${P5SITE}/AnyEvent/CouchDB/Stream.pm
 @man man/man1/couchdb-push.1
 @man man/man3p/AnyEvent::CouchDB.3p
 @man man/man3p/AnyEvent::CouchDB::Database.3p
+@man man/man3p/AnyEvent::CouchDB::Exceptions.3p
 @man man/man3p/AnyEvent::CouchDB::Stream.3p
 share/examples/p5-AnyEvent-CouchDB/
 share/examples/p5-AnyEvent-CouchDB/NOTES
