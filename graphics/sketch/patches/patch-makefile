@@ -1,0 +1,13 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2011/05/15 18:34:20 landry Exp $
+Honour ${CC}
+--- makefile.orig	Sun May 15 20:25:19 2011
++++ makefile	Sun May 15 20:25:25 2011
+@@ -5,7 +5,7 @@
+ #
+ # makefile v0.03
+ #
+-CC = gcc -O1 -g -Wall
++CC ?= gcc -O1 -g -Wall
+ #CC = gcc -g -Wall
+ YACC = bison --defines --debug --report=all --yacc
+ LEX = flex

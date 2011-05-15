@@ -1,0 +1,4 @@
+Sketch is a small, simple system for producing line drawings of two- or
+three-dimensional solid objects and scenes. The input language is
+reminiscent of PSTricks, so will be easy to learn for current PSTricks
+users. Sketch can generate output for PSTricks and Tikz/PGF.
