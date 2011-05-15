@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST-gnome,v 1.2 2011/03/24 06:50:10 ajacoutot Exp $
-lib/libproxy/0.4.6/modules/config_gnome.so
-@bin libexec/pxgconf
