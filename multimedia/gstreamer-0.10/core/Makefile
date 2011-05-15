@@ -1,21 +1,19 @@
-# $OpenBSD: Makefile,v 1.21 2011/04/07 12:46:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2011/05/15 08:31:32 ajacoutot Exp $
 
 COMMENT =		multimedia framework
 
-V =			0.10.32
-
-REVISION =		0
+V =			0.10.34
 
 PKGNAME =		gstreamer-${V}
 
 DISTNAME =		gstreamer-${V}
 
-SHARED_LIBS +=  gstreamer-0.10       2.3      # .28.0
-SHARED_LIBS +=  gstbase-0.10         2.3      # .28.0
-SHARED_LIBS +=  gstcontroller-0.10   3.3      # .28.0
-SHARED_LIBS +=  gstdataprotocol-0.10 2.3      # .28.0
-SHARED_LIBS +=  gstcheck-0.10        1.3      # .28.0
-SHARED_LIBS +=  gstnet-0.10          2.3      # .28.0
+SHARED_LIBS +=  gstreamer-0.10       2.4      # .28.0
+SHARED_LIBS +=  gstbase-0.10         2.4      # .28.0
+SHARED_LIBS +=  gstcontroller-0.10   3.4      # .28.0
+SHARED_LIBS +=  gstdataprotocol-0.10 2.4      # .28.0
+SHARED_LIBS +=  gstcheck-0.10        1.4      # .28.0
+SHARED_LIBS +=  gstnet-0.10          2.4      # .28.0
 
 WANTLIB += c m pcre pthread z xml2 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0

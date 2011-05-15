@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/04/07 12:46:15 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/05/15 08:31:32 ajacoutot Exp $
 @conflict gstreamer-frontend-*
 @conflict gstreamer->=0.8,<0.10
 @pkgpath multimedia/gstreamer-0.10/core,-main
@@ -18,6 +18,7 @@ include/gstreamer-${VERSION}/
 include/gstreamer-${VERSION}/gst/
 include/gstreamer-${VERSION}/gst/base/
 include/gstreamer-${VERSION}/gst/base/gstadapter.h
+include/gstreamer-${VERSION}/gst/base/gstbaseparse.h
 include/gstreamer-${VERSION}/gst/base/gstbasesink.h
 include/gstreamer-${VERSION}/gst/base/gstbasesrc.h
 include/gstreamer-${VERSION}/gst/base/gstbasetransform.h
@@ -42,6 +43,7 @@ include/gstreamer-${VERSION}/gst/dataprotocol/
 include/gstreamer-${VERSION}/gst/dataprotocol/dataprotocol.h
 include/gstreamer-${VERSION}/gst/glib-compat.h
 include/gstreamer-${VERSION}/gst/gst.h
+include/gstreamer-${VERSION}/gst/gstatomicqueue.h
 include/gstreamer-${VERSION}/gst/gstbin.h
 include/gstreamer-${VERSION}/gst/gstbuffer.h
 include/gstreamer-${VERSION}/gst/gstbufferlist.h
