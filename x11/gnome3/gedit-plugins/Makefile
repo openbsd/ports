@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/14 22:43:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/15 09:25:01 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		3.0.2
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		editors
 
@@ -30,7 +30,7 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			devel/gsettings-desktop-schemas
-LIB_DEPENDS=		x11/gnome/gucharmap>=3.0.1
+LIB_DEPENDS=		x11/gnome/gucharmap>=3.0.1p0
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/vte,gtk3 \
 			x11/dbus-python \
