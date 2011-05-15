@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.58 2011/05/14 14:01:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2011/05/15 15:17:18 jasper Exp $
 
 COMMENT=		GNOME Structured File library
 
 GNOME_PROJECT=		libgsf
 GNOME_VERSION=		1.14.20
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -31,6 +31,7 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		archivers/bzip2 \
 			devel/glib2 \
+			graphics/gdk-pixbuf2 \
 			textproc/libxml
 
 MODGCONF2_LIBDEP=	No
