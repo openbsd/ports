@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2011/04/21 07:07:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.106 2011/05/15 09:23:01 jasper Exp $
 
 COMMENT-main=		applets for use with the GNOME panel
 COMMENT-battstat=	GNOME applet for monitoring battery level
@@ -9,7 +9,7 @@ GNOME_VERSION=		2.32.1.1
 PKGNAME-main=		gnome-applets2-${VERSION}
 PKGNAME-battstat=	gnome-applets2-battstat-${VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 REVISION-battstat=	1
 
 CATEGORIES=		x11
@@ -45,7 +45,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			multimedia/gstreamer-0.10/core \
 			multimedia/gstreamer-0.10/plugins-base \
 			devel/libgtop2 \
-			x11/gnome/gucharmap>=1.8
+			x11/gnome/gucharmap,gtk2
 
 # clicking on the multiload-applet will attempt to start gnome-system-monitor
 RUN_DEPENDS+=		x11/gnome/system-monitor
