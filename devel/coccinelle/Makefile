@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/14 15:02:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/15 10:17:38 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,6 +8,7 @@ COMMENT =	program matching and transformation engine
 # may need to be switched to gdiff/ggrep
 DISTNAME =	coccinelle-1.0.0-rc1
 PKGNAME =	${DISTNAME:S/-rc/rc/}
+REVISION =	0
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	devel
@@ -20,7 +21,7 @@ PERMIT_PACKAGE_FTP =	 Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	 Yes
 
-WANTLIB += c curses m pthread util ${MODPY_WANTLIB}
+WANTLIB += c m pthread util ${MODPY_WANTLIB}
 
 MASTER_SITES = ${HOMEPAGE}distrib/
 
@@ -45,9 +46,15 @@ SUBST_VARS +=		MAKE_PROGRAM
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/pycaml/Makefile
+	perl -pi -e s,/usr/local,${TRUEPREFIX},g ${WRKSRC}/scripts/spatch*
+
+# can't use MODOCAML_NATIVE because it also needs dynlink
+.if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
+ALL_TARGET =	all.opt
+PKG_ARGS +=	-DOCAMLOPT=.opt
+.else
+WANTLIB +=	curses
+PKG_ARGS +=	-DOCAMLOPT=
+.endif
 
 .include <bsd.port.mk>
-
-.if defined(MODOCAML_NATIVE) && ${MODOCAML_NATIVE:L} == "yes"
-ALL_TARGET =		world
-.endif
