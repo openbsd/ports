@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_mpeg_encode_c,v 1.1 2009/12/23 12:01:10 benoit Exp $
---- src/mpeg_encode.c.orig	Fri Dec 18 11:50:02 2009
-+++ src/mpeg_encode.c	Fri Dec 18 11:50:19 2009
-@@ -141,7 +141,7 @@
+$OpenBSD: patch-src_mpeg_encode_c,v 1.2 2011/05/15 21:16:06 jasper Exp $
+--- src/mpeg_encode.c.orig	Mon Nov 16 07:55:52 2009
++++ src/mpeg_encode.c	Sun May 15 23:15:55 2011
+@@ -141,7 +141,7 @@ static void convert_rgb_pixbuf_to_yuv(yuv_t * yuv, Gdk
  /* -------------------------------------------------------- */
  #ifdef AMIDE_FFMPEG_SUPPORT
  
