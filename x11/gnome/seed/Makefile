@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/13 10:11:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/15 14:11:52 jasper Exp $
 
 COMMENT=		GObject JavaScriptCore bridge
 
 GNOME_PROJECT=		seed
 GNOME_VERSION=		3.0.0
-REVISION=		0
+REVISION=		1
 SHARED_LIBS +=  seed-gtk3                 0.0 # 0.0
 
 CATEGORIES=		devel www
@@ -30,7 +30,7 @@ WANTLIB += gstapp-0.10 gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10
 WANTLIB += gstreamer-0.10 gstvideo-0.10 gthread-2.0 gtk-3 icudata
 WANTLIB += icui18n icuuc jpeg m mpfr pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += readline soup-2.4 sqlite3 stdc++ util webkitgtk-3.0
+WANTLIB += readline soup-2.4 sqlite3 stdc++ termcap util webkitgtk-3.0
 WANTLIB += xcb xcb-render xcb-shm xml2 xslt z
 
 BUILD_DEPENDS=		${RUN_DEPENDS}

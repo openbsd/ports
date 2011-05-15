@@ -1,0 +1,15 @@
+$OpenBSD: patch-modules_readline_Makefile_in,v 1.1 2011/05/15 14:11:52 jasper Exp $
+
+Prevent undefined symbols from readline module.
+
+--- modules/readline/Makefile.in.orig	Sun May 15 16:06:47 2011
++++ modules/readline/Makefile.in	Sun May 15 16:06:50 2011
+@@ -332,7 +332,7 @@ top_srcdir = @top_srcdir@
+ 
+ @BUILD_READLINE_MODULE_TRUE@libseed_readline_la_LIBADD = \
+ @BUILD_READLINE_MODULE_TRUE@	$(top_builddir)/libseed/libseed@SEED_GTK_VERSION@.la \
+-@BUILD_READLINE_MODULE_TRUE@	-lreadline \
++@BUILD_READLINE_MODULE_TRUE@	-lreadline -ltermcap \
+ @BUILD_READLINE_MODULE_TRUE@	$(SEED_PROFILE_LIBS) 
+ 
+ all: all-am
