@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/05/11 20:36:06 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/05/15 19:48:59 rpointel Exp $
 @option no-default-conflict
 @conflict py-mxDateTime-*-python${MODPY_VERSION}
 %%python2.6%%
-lib/python${MODPY_VERSION}/site-packages/egenix_mx_base-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+!%%python2.4%%
 lib/python${MODPY_VERSION}/site-packages/mx/
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/BeeBase.py
