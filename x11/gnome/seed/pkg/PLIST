@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/13 09:59:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/15 14:35:58 jasper Exp $
 %%SHARED%%
 @bin bin/seed
 include/seed-gtk3/
@@ -7,7 +7,6 @@ include/seed-gtk3/seed-module.h
 include/seed-gtk3/seed.h
 lib/libseed-gtk3.a
 lib/libseed-gtk3.la
-lib/pkgconfig/
 lib/pkgconfig/seed.pc
 lib/seed-gtk3/
 lib/seed-gtk3/libseed_DynamicObject.a
@@ -28,8 +27,6 @@ lib/seed-gtk3/libseed_gtkbuilder.a
 lib/seed-gtk3/libseed_gtkbuilder.la
 lib/seed-gtk3/libseed_libxml.a
 lib/seed-gtk3/libseed_libxml.la
-lib/seed-gtk3/libseed_mpfr.a
-lib/seed-gtk3/libseed_mpfr.la
 lib/seed-gtk3/libseed_multiprocessing.a
 lib/seed-gtk3/libseed_multiprocessing.la
 lib/seed-gtk3/libseed_os.a
