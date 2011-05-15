@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2011/05/14 08:33:52 sebastia Exp $
+# $OpenBSD: Makefile,v 1.23 2011/05/15 13:06:47 sebastia Exp $
 
      SUBDIR =
      SUBDIR += addresses
+     SUBDIR += affiche
      SUBDIR += back
      SUBDIR += base
      SUBDIR += dbuskit
