@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2011/05/14 22:23:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.141 2011/05/15 09:24:12 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -40,6 +40,7 @@
      SUBDIR += gnote
      SUBDIR += gok
      SUBDIR += gucharmap
+     SUBDIR += gucharmap,gtk2
      SUBDIR += gvfs
      SUBDIR += gyrus
      SUBDIR += hamster-applet
