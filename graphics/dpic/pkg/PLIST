@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/15 18:49:41 landry Exp $
+@bin bin/dpic
+@man man/man1/dpic.1
+share/examples/dpic/
+share/examples/dpic/Examples.txt
+share/examples/dpic/Makefile
+share/examples/dpic/README
+share/examples/dpic/sources/
+share/examples/dpic/sources/diag1.pic
+share/examples/dpic/sources/diag2.pic
+share/examples/dpic/sources/diag3.pic
+share/examples/dpic/sources/diag5.pic
+share/examples/dpic/sources/diag6.pic
+share/examples/dpic/sources/diag8.pic
+share/examples/dpic/sources/diag9.pic
+share/examples/dpic/sources/diagA.pic
+share/examples/dpic/sources/diagB.pic
+share/examples/dpic/sources/test1.tex
+share/examples/dpic/sources/test2.tex
+share/examples/dpic/sources/test3.tex
+share/examples/dpic/sources/test4.tex
+share/examples/dpic/sources/test5.tex
+share/examples/dpic/sources/test6.tex
+share/examples/dpic/sources/test7.tex
+share/examples/dpic/sources/test8.tex
+share/examples/dpic/sources/test9.tex

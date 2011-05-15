@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2011/05/15 18:49:41 landry Exp $
+Honour CC and CFLAGS
+--- Makefile.orig	Sun May 15 20:37:54 2011
++++ Makefile	Sun May 15 20:38:31 2011
+@@ -44,8 +44,8 @@ DEST = ${DESTDIR}/${PREFIX}/bin
+ # CC=xlc
+ 
+ # other.  cc usually works too.
+-CFLAGS = $(DEFINEA) $(DEFINEB) $(SAFEMODE) -O
+-CC=gcc
++CFLAGS += $(DEFINEA) $(DEFINEB) $(SAFEMODE) -O
++CC?=gcc
+ 
+ OBJECTS = dpic.o dpic2.o p2clib.o
+ 
