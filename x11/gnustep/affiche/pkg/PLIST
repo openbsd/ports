@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/15 13:05:54 sebastia Exp $
+bin/Affiche
+libexec/GNUstep/
+libexec/GNUstep/Affiche.app/
+@bin libexec/GNUstep/Affiche.app/Affiche
+libexec/GNUstep/Affiche.app/Resources/
+libexec/GNUstep/Affiche.app/Resources/Affiche.desktop
+libexec/GNUstep/Affiche.app/Resources/Affiche.tiff
+libexec/GNUstep/Affiche.app/Resources/English.lproj/
+libexec/GNUstep/Affiche.app/Resources/English.lproj/Localizable.strings
+libexec/GNUstep/Affiche.app/Resources/French.lproj/
+libexec/GNUstep/Affiche.app/Resources/French.lproj/Localizable.strings
+libexec/GNUstep/Affiche.app/Resources/German.lproj/
+libexec/GNUstep/Affiche.app/Resources/German.lproj/Localizable.strings
+libexec/GNUstep/Affiche.app/Resources/Info-gnustep.plist
+libexec/GNUstep/Affiche.app/Resources/Lojban.lproj/
+libexec/GNUstep/Affiche.app/Resources/Lojban.lproj/Localizable.strings
+libexec/GNUstep/Affiche.app/Resources/Spanish.lproj/
+libexec/GNUstep/Affiche.app/Resources/Spanish.lproj/Localizable.strings
+libexec/GNUstep/Affiche.app/Resources/Swedish.lproj/
+libexec/GNUstep/Affiche.app/Resources/Swedish.lproj/Localizable.strings
+libexec/GNUstep/Affiche.app/Resources/buttons_blue.tiff
+libexec/GNUstep/Affiche.app/Resources/buttons_gray.tiff
+libexec/GNUstep/Affiche.app/Resources/buttons_green.tiff
+libexec/GNUstep/Affiche.app/Resources/buttons_purple.tiff
+libexec/GNUstep/Affiche.app/Resources/buttons_yellow.tiff
+libexec/GNUstep/Affiche.app/Resources/resize_blue.tiff
+libexec/GNUstep/Affiche.app/Resources/resize_gray.tiff
+libexec/GNUstep/Affiche.app/Resources/resize_green.tiff
+libexec/GNUstep/Affiche.app/Resources/resize_purple.tiff
+libexec/GNUstep/Affiche.app/Resources/resize_yellow.tiff
+libexec/GNUstep/Affiche.app/stamp.make
