@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/13 21:45:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/16 20:45:02 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,6 +30,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
+BUILD_DEPENDS=	devel/gobject-introspection
 LIB_DEPENDS=	x11/gnome/libxklavier \
 		x11/gtk+3
 
