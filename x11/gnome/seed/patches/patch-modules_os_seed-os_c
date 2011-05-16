@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_os_seed-os_c,v 1.1.1.1 2011/05/13 09:59:35 jasper Exp $
+$OpenBSD: patch-modules_os_seed-os_c,v 1.2 2011/05/16 09:40:44 jasper Exp $
 
-Port to FreeBSD and OpenBSD.
-Based on FreeBSD's patch-modules_os_seed-os.c
+fix #650234 Add FreeBSD/OpenBSD support to os/seed-os.c
+from upstream git: 03c808137331be912e9adde997dd2830cf2e5593
 
 --- modules/os/seed-os.c.orig	Tue Feb 22 23:44:01 2011
 +++ modules/os/seed-os.c	Fri May 13 10:36:23 2011

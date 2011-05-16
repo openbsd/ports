@@ -1,7 +1,7 @@
-$OpenBSD: patch-libseed_seed-importer_c,v 1.1.1.1 2011/05/13 09:59:35 jasper Exp $
+$OpenBSD: patch-libseed_seed-importer_c,v 1.2 2011/05/16 09:40:44 jasper Exp $
 
-Fix importing .js files
-From FreeBSD's patch-libseed_seed-importer.c
+fix #650233 Fix importing scripts on *BSD
+from upstream git: 18861a32f2a251c323c21e172ad39fd91fc80e3f
 
 --- libseed/seed-importer.c.orig	Sat Apr  2 04:46:08 2011
 +++ libseed/seed-importer.c	Fri May 13 11:27:20 2011

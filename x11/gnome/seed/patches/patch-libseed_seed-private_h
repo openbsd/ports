@@ -1,4 +1,8 @@
-$OpenBSD: patch-libseed_seed-private_h,v 1.1.1.1 2011/05/13 09:59:35 jasper Exp $
+$OpenBSD: patch-libseed_seed-private_h,v 1.2 2011/05/16 09:40:44 jasper Exp $
+
+fix #650232 - Missing includes cause build to fail on OpenBSD
+from upstream git: 7afc3b2138e559bfc65c056153141c2ccc747ac4
+
 --- libseed/seed-private.h.orig	Fri May 13 10:03:20 2011
 +++ libseed/seed-private.h	Fri May 13 10:05:11 2011
 @@ -20,8 +20,10 @@
