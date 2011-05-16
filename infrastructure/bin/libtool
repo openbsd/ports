@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: libtool,v 1.31 2011/03/02 08:06:33 jasper Exp $
+# $OpenBSD: libtool,v 1.32 2011/05/16 20:09:54 sthen Exp $
 
 # Copyright (c) 2007-2010 Steven Mestdagh <steven@openbsd.org>
 #
@@ -403,7 +403,7 @@ if ($mode eq 'compile') {
 		my $sharedlib = $libname.'.so';
 		my $sharedlib_symlink;
 
-		if ($opts{'static'}) {
+		if ($opts{'static'} || $opts{'all-static'}) {
 			$shared = 0;
 			$static = 1;
 		}
