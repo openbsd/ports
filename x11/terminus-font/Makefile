@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.24 2011/05/16 11:16:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2011/05/16 11:25:13 sthen Exp $
 
 COMMENT =		fixed width fonts especially for long hacking sessions
 
-DISTNAME =		terminus-font-4.30
+DISTNAME =		terminus-font-4.35
 CATEGORIES =		x11
 
 HOMEPAGE =		http://terminus-font.sourceforge.net/
 
-MAINTAINER =		Ray Lai <ray@cyth.net>
+MAINTAINER =		LEVAI Daniel <leva@ecentrum.hu>
 
-# GPLv2+
+# OFL http://scripts.sil.org/OFL
 PERMIT_PACKAGE_CDROM =		Yes
 PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
@@ -20,18 +20,18 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=terminus-font/}
 CONFIGURE_STYLE =	simple
 NO_REGRESS =		Yes
 
-ALL_TARGET =		n12
+ALL_TARGET =		pcf
 
 FONTDIR =		${PREFIX}/lib/X11/fonts/terminus
+
+USE_GMAKE =		Yes
 
 FLAVORS =		symquotes
 FLAVOR ?=
 
 .if ${FLAVOR:L:Msymquotes}
-DISTFILES +=		${DISTNAME}-gq2.diff.gz
-
 post-patch:
-	${PATCH} -d ${WRKSRC} < ${WRKDIR}/${DISTNAME}-gq2.diff
+	${PATCH} -d ${WRKSRC} < ${WRKSRC}/alt/gq2.diff
 .endif
 
 do-install:
