@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/03/07 19:33:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2011/05/16 20:42:15 jasper Exp $
 
 COMMENT=		utility library for XKB
 
@@ -27,7 +27,6 @@ LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-x \
 			--with-xkb-base="${SYSCONFDIR}/X11/xkb/" \
 			--with-xkb-bin-base="${X11BASE}/bin/" \
 			--with-xmodmap-base="${LOCALBASE}/share/xmodmap"
