@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.939 2011/05/14 22:18:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.940 2011/05/16 20:37:27 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -247,6 +247,7 @@
      SUBDIR += libev
      SUBDIR += libeventextra
      SUBDIR += libexecinfo
+     SUBDIR += libexude
      SUBDIR += libf2c
      SUBDIR += libf2c-old
      SUBDIR += libffi
