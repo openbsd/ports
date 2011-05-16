@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/18 13:15:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/05/16 18:49:37 gsoares Exp $
 @conflict links+-*
-bin/links
+@bin bin/links
 @man man/man1/links.1
