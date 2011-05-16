@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/05/14 20:24:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/05/16 15:14:00 ajacoutot Exp $
 
 COMMENT=		GObject Introspection
 
@@ -48,7 +48,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 CFLAGS+=		-pthread
 
-SUBST_VARS+=		MODPY_SITEPKG LIBTOOL CC
+SUBST_VARS+=		MODPY_SITEPKG CC
 
 MODPY_ADJ_FILES=	giscanner/scannermain.py \
 			giscanner/shlibs.py \
