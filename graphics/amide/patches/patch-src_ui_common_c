@@ -1,6 +1,11 @@
-$OpenBSD: patch-src_ui_common_c,v 1.1 2009/12/23 12:01:10 benoit Exp $
---- src/ui_common.c.orig	Fri Dec 18 11:52:11 2009
-+++ src/ui_common.c	Fri Dec 18 11:52:24 2009
+$OpenBSD: patch-src_ui_common_c,v 1.2 2011/05/16 07:42:50 jasper Exp $
+
+- Fix include path.
+- Remove call to amide_gnome_help_display(), thus dropping the
+  dependency on gnome-vfs2.
+
+--- src/ui_common.c.orig	Mon Nov 16 06:00:11 2009
++++ src/ui_common.c	Sun May 15 23:28:51 2011
 @@ -46,7 +46,7 @@
  #include <medcon.h>
  #endif
@@ -10,3 +15,21 @@ $OpenBSD: patch-src_ui_common_c,v 1.1 2009/12/23 12:01:10 benoit Exp $
  #endif
  #ifdef AMIDE_LIBFAME_SUPPORT
  #include <fame_version.h>
+@@ -1070,7 +1070,7 @@ void amide_unregister_all_windows(void) {
+ 
+ void amide_call_help(const gchar * link_id) {
+ 
+-#ifndef OLD_WIN32_HACKS
++#ifndef __OpenBSD__
+   GError *error=NULL;
+   amide_gnome_help_display(PACKAGE, link_id, &error);
+   if (error != NULL) {
+@@ -1079,7 +1079,7 @@ void amide_call_help(const gchar * link_id) {
+   }
+ 
+ #else
+-  g_warning("Help is unavailable in the Windows version. Please see the help documentation online at http://amide.sf.net, or in the AMIDE install folder");
++  g_warning("Help is unavailable in this version. Please see the help documentation online at http://amide.sf.net, or in the AMIDE install folder");
+ #endif
+ 
+   return;
