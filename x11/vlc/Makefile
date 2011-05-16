@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2011/05/11 09:08:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.129 2011/05/16 17:37:59 jolan Exp $
 
 SHARED_ONLY=	Yes
 
@@ -176,7 +176,9 @@ post-install:
 	${INSTALL_DATA} ${WRKBUILD}/share/vlc${_img}.png \
 	    ${PREFIX}/share/icons/hicolor/${_img}/apps/vlc.png
 .endfor
+.if !${FLAVOR:L:Mno_web}
 	@rm ${PREFIX}/lib/mozilla/plugins/libvlcplugin.a
+.endif
 	@find ${PREFIX}/lib/vlc -name '*.a' -print | xargs rm
 	@find ${PREFIX}/lib -name '*.la' -print | xargs rm
 
