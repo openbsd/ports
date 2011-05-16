@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/05/14 22:35:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/05/16 09:45:05 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += backgrounds
@@ -20,6 +20,7 @@
      SUBDIR += settings-daemon
      SUBDIR += terminal
      SUBDIR += user-docs
+     SUBDIR += video-arcade
      SUBDIR += yelp
      SUBDIR += zenity
 
