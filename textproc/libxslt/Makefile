@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2011/05/16 09:58:28 sthen Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
@@ -7,7 +7,7 @@ VERSION=		1.1.26
 DISTNAME=		libxslt-${VERSION}
 PKGNAME-main=		libxslt-${VERSION}
 PKGNAME-python= 	py-libxslt-${VERSION}
-REVISION-main=		1
+REVISION-main=		2
 REVISION-python=	1
 SHARED_LIBS=		exslt	9.8 \
 			xslt	3.8
@@ -41,7 +41,7 @@ LIB_DEPENDS-main=	${MODGETTEXT_LIB_DEPENDS} \
 
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
-USE_GROFF =		Yes
+USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-libxml-include-prefix="${LOCALBASE}/include/" \
@@ -50,8 +50,11 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 .if !${FLAVOR:L:Mno_python}
 MULTI_PACKAGES+=	-python
 MODULES+=		lang/python
+MODPY_RUNDEP=		No
 BUILD_DEPENDS+= 	textproc/libxml,-python
 WANTLIB-python= 	${WANTLIB} gcrypt xml2 exslt xslt
+RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS} \
+			${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-python=	textproc/libxslt,-main \
 			${MODGETTEXT_LIB_DEPENDS}
 FAKE_FLAGS=		EXAMPLE_DIR=${PREFIX}/share/examples/libxslt/
