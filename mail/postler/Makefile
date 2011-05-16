@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/11 06:02:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/16 08:24:31 ajacoutot Exp $
 
 COMMENT =	lightweight mail user agent
 
 XFCE_VERSION =	0.1.1
 XFCE_GOODIE =	postler
 
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
@@ -22,7 +22,7 @@ MODULES =	x11/xfce4 devel/waf
 DESKTOP_FILES =	Yes
 NO_REGRESS =	Yes
 
-LIB_DEPENDS =	www/webkit>=1.4.0 \
+LIB_DEPENDS =	www/webkit>=1.4.0v0 \
 		devel/libnotify \
 		databases/db/v4 \
 		audio/libcanberra \

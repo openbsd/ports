@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/05/11 06:02:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/05/16 08:24:31 ajacoutot Exp $
 
 COMMENT =	simple webbrowser based on webkit/gtk+
 
 DISTNAME =	surf-0.4.1
-REVISION=	1
+REVISION=	2
 CATEGORIES =	www
 HOMEPAGE =	http://surf.suckless.org/
 
@@ -27,7 +27,7 @@ MASTER_SITES =	http://dl.suckless.org/surf/
 MODULES =	devel/gettext
 USE_GROFF =	Yes
 
-LIB_DEPENDS =	www/webkit>=1.4.0
+LIB_DEPENDS =	www/webkit>=1.4.0v0
 RUN_DEPENDS =	x11/dmenu
 
 NO_REGRESS =	Yes

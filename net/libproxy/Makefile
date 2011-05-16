@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/05/15 09:34:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/05/16 08:24:31 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -15,7 +15,7 @@ PKGNAME-webkit=		libproxy-webkit-${VERSION}
 
 REVISION-main=		1
 REVISION-mozilla=	1
-REVISION-webkit=	2
+REVISION-webkit=	3
 
 CATEGORIES=		net
 
@@ -58,7 +58,7 @@ LIB_DEPENDS-mozilla=	${BUILD_PKGPATH}>=${VERSION} \
 
 RUN_DEPENDS-webkit=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-webkit=	STEM->=${VERSION}:${BUILD_PKGPATH}, \
-			www/webkit>=1.4.0
+			www/webkit>=1.4.0v0
 
 cWANTLIB += m stdc++
 

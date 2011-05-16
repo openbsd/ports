@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/05/11 06:02:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2011/05/16 08:24:31 ajacoutot Exp $
 
 COMMENT-main=	common files for kazehakase
 COMMENT-gecko=	lightweight gecko-based web browser
@@ -15,7 +15,7 @@ REVISION-main=	5
 PKGNAME-gecko=	${DISTNAME}
 REVISION-gecko=	5
 PKGNAME-webkit=	kazehakase-webkit-${VERSION}
-REVISION-webkit=5
+REVISION-webkit=6
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP:=kazehakase/43802/}
 
 HOMEPAGE=	http://kazehakase.sourceforge.jp/
@@ -71,7 +71,7 @@ LIB_DEPENDS-gecko =	${LIB_DEPENDS-main} \
 			${BUILD_PKGPATH},-main
 
 LIB_DEPENDS-webkit =	${LIB_DEPENDS} \
-			www/webkit>=1.4.0
+			www/webkit>=1.4.0v0
 
 WANTLIB =		ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			Xrandr Xrender Xcomposite Xdamage expat fontconfig \

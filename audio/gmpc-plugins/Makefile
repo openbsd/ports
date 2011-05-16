@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/05/11 06:02:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/05/16 08:24:31 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -10,7 +10,7 @@ DISTNAME =	gmpc-plugins-${VERSION}
 PKGNAME-main =		${DISTNAME}
 REVISION-main =		2
 PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}
-REVISION-wikipedia =	3
+REVISION-wikipedia =	4
 
 CATEGORIES =	audio
 
@@ -47,7 +47,7 @@ WANTLIB-main = ${WANTLIB} dbus-1 glade-2.0 tag tag_c dbus-glib-1
 WANTLIB-main += avahi-client avahi-common avahi-glib
 
 LIB_DEPENDS-wikipedia =	${LIB_DEPENDS} \
-			www/webkit>=1.4.0
+			www/webkit>=1.4.0v0
 WANTLIB-wikipedia =	${WANTLIB} \
 			ICE SM Xt enchant gailutil gstapp-0.10 gstbase-0.10 \
 			ICE SM Xt enchant gailutil gstapp-0.10 gstbase-0.10 \

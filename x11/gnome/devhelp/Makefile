@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2011/05/11 06:02:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2011/05/16 08:24:31 ajacoutot Exp $
 
 COMMENT=	API documentation browser for GNOME
 
 GNOME_PROJECT=	devhelp
 GNOME_VERSION=	2.32.0
 
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=	devhelp-2             0.0        # 1.0
 
@@ -43,7 +43,7 @@ LIB_DEPENDS=	devel/libwnck \
 		devel/startup-notification \
 		devel/ORBit2 \
 		devel/libunique \
-		www/webkit>=1.4.0
+		www/webkit>=1.4.0v0
 
 DESKTOP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	devhelp

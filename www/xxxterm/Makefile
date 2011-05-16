@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/05/11 06:02:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/05/16 08:24:31 ajacoutot Exp $
 
 COMMENT =		vi-like minimalists web browser
 DISTNAME =		xxxterm-1.382
 CATEGORIES =		www
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://opensource.conformal.com/wiki/XXXTerm
 
@@ -27,7 +27,7 @@ WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 MASTER_SITES =		http://opensource.conformal.com/snapshots/xxxterm/
 
-LIB_DEPENDS =		www/webkit>=1.4.0
+LIB_DEPENDS =		www/webkit>=1.4.0v0
 RUN_DEPENDS =		devel/desktop-file-utils
 
 EXTRACT_SUFX =		.tgz

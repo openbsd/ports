@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/11 06:02:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/16 08:24:31 ajacoutot Exp $
 
 COMMENT=	CAD program for designing model railroad layouts
 
@@ -6,7 +6,7 @@ VERSION=	4.0.3a
 DISTNAME=	xtrkcad-source-${VERSION}
 PKGNAME=	xtrkcad-${VERSION}
 CATEGORIES=	cad
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.xtrkcad.org/
 
@@ -30,7 +30,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0
 
-LIB_DEPENDS=	www/webkit>=1.4.0
+LIB_DEPENDS=	www/webkit>=1.4.0v0
 
 CONFIGURE_STYLE=cmake
 CONFIGURE_ENV+=	CFLAGS=-I${PREFIX}/include \
