@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.4 2010/04/26 00:11:37 jolan Exp $
---- configure.orig	Fri Apr 23 03:15:47 2010
-+++ configure	Sat Apr 24 18:56:34 2010
-@@ -11227,7 +11227,7 @@ if test "$release" = "true"
+$OpenBSD: patch-configure,v 1.5 2011/05/16 17:31:08 jolan Exp $
+--- configure.orig	Thu Apr 14 10:09:51 2011
++++ configure	Fri May  6 17:09:03 2011
+@@ -10663,8 +10663,6 @@ fi
+ if test "$release" = "true"
  then
    CFLAGS="${CFLAGS} -O6"
- else
+-else
 -  CFLAGS="${CFLAGS} -O2"
-+  CFLAGS="${CFLAGS} ${ac_save_CFLAGS}"
  fi
  
- 
+ for ac_header in stdint.h inttypes.h

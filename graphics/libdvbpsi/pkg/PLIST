@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/04/26 00:11:37 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/05/16 17:31:08 jolan Exp $
 include/dvbpsi/
+include/dvbpsi/bat.h
 include/dvbpsi/cat.h
 include/dvbpsi/demux.h
 include/dvbpsi/descriptor.h
@@ -20,6 +21,7 @@ include/dvbpsi/dr_0e.h
 include/dvbpsi/dr_0f.h
 include/dvbpsi/dr_42.h
 include/dvbpsi/dr_43.h
+include/dvbpsi/dr_44.h
 include/dvbpsi/dr_45.h
 include/dvbpsi/dr_47.h
 include/dvbpsi/dr_48.h
@@ -32,6 +34,7 @@ include/dvbpsi/dr_58.h
 include/dvbpsi/dr_59.h
 include/dvbpsi/dr_5a.h
 include/dvbpsi/dr_69.h
+include/dvbpsi/dr_8a.h
 include/dvbpsi/dvbpsi.h
 include/dvbpsi/eit.h
 include/dvbpsi/nit.h
@@ -39,6 +42,7 @@ include/dvbpsi/pat.h
 include/dvbpsi/pmt.h
 include/dvbpsi/psi.h
 include/dvbpsi/sdt.h
+include/dvbpsi/sis.h
 include/dvbpsi/tot.h
 lib/libdvbpsi.a
 lib/libdvbpsi.la
