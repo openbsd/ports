@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:44 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/16 18:24:19 gsoares Exp $
 
 SHARED_ONLY=	Yes
 
@@ -24,14 +24,12 @@ WANTLIB+=	crypto ssl
 
 MAKE_ENV+=	INCDIR="-I${LOCALBASE}/include/" SAVECFLAGS="${CFLAGS}"
 ALL_TARGET=	bsd
-LIBDIR=		${PREFIX}/lib/lua/5.1
-SHAREDIR=	${PREFIX}/share/lua/5.1
 EXAMPLEDIR=	${PREFIX}/share/examples/luasec
 
 do-install:
-	${INSTALL_DATA_DIR} ${LIBDIR} ${SHAREDIR} ${EXAMPLEDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/ssl.so ${LIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/ssl.lua ${SHAREDIR}
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR} ${MODLUA_DATADIR} ${EXAMPLEDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/ssl.so ${MODLUA_LIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/ssl.lua ${MODLUA_DATADIR}
 	cd ${WRKSRC}/samples && \
 		find . -type d \
 			-exec ${INSTALL_DATA_DIR} ${EXAMPLEDIR}/{} \; && \
