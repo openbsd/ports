@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/05 08:57:47 armani Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/05/16 19:39:18 kili Exp $
 @bin bin/inkscape
 @bin bin/inkview
 man/fr/
@@ -628,6 +628,7 @@ share/inkscape/tutorials/potrace-es.png
 share/inkscape/tutorials/potrace-eu.png
 share/inkscape/tutorials/potrace-fr.png
 share/inkscape/tutorials/potrace-hu.png
+share/inkscape/tutorials/potrace-id.png
 share/inkscape/tutorials/potrace-ja.png
 share/inkscape/tutorials/potrace-nl.png
 share/inkscape/tutorials/potrace-pl.png
@@ -697,7 +698,9 @@ share/inkscape/tutorials/tutorial-calligraphy.eu.svg
 share/inkscape/tutorials/tutorial-calligraphy.fa.svg
 share/inkscape/tutorials/tutorial-calligraphy.fr.svg
 share/inkscape/tutorials/tutorial-calligraphy.hu.svg
+share/inkscape/tutorials/tutorial-calligraphy.id.svg
 share/inkscape/tutorials/tutorial-calligraphy.ja.svg
+share/inkscape/tutorials/tutorial-calligraphy.nl.svg
 share/inkscape/tutorials/tutorial-calligraphy.pl.svg
 share/inkscape/tutorials/tutorial-calligraphy.pt_BR.svg
 share/inkscape/tutorials/tutorial-calligraphy.ru.svg
@@ -714,7 +717,9 @@ share/inkscape/tutorials/tutorial-elements.eu.svg
 share/inkscape/tutorials/tutorial-elements.fa.svg
 share/inkscape/tutorials/tutorial-elements.fr.svg
 share/inkscape/tutorials/tutorial-elements.hu.svg
+share/inkscape/tutorials/tutorial-elements.id.svg
 share/inkscape/tutorials/tutorial-elements.ja.svg
+share/inkscape/tutorials/tutorial-elements.nl.svg
 share/inkscape/tutorials/tutorial-elements.pl.svg
 share/inkscape/tutorials/tutorial-elements.pt_BR.svg
 share/inkscape/tutorials/tutorial-elements.ru.svg
@@ -727,6 +732,7 @@ share/inkscape/tutorials/tutorial-interpolate.de.svg
 share/inkscape/tutorials/tutorial-interpolate.fr.svg
 share/inkscape/tutorials/tutorial-interpolate.hu.svg
 share/inkscape/tutorials/tutorial-interpolate.ja.svg
+share/inkscape/tutorials/tutorial-interpolate.nl.svg
 share/inkscape/tutorials/tutorial-interpolate.pl.svg
 share/inkscape/tutorials/tutorial-interpolate.sk.svg
 share/inkscape/tutorials/tutorial-interpolate.sl.svg
@@ -763,8 +769,10 @@ share/inkscape/tutorials/tutorial-tips.eu.svg
 share/inkscape/tutorials/tutorial-tips.fa.svg
 share/inkscape/tutorials/tutorial-tips.fr.svg
 share/inkscape/tutorials/tutorial-tips.hu.svg
+share/inkscape/tutorials/tutorial-tips.id.svg
 share/inkscape/tutorials/tutorial-tips.it.svg
 share/inkscape/tutorials/tutorial-tips.ja.svg
+share/inkscape/tutorials/tutorial-tips.nl.svg
 share/inkscape/tutorials/tutorial-tips.pl.svg
 share/inkscape/tutorials/tutorial-tips.pt_BR.svg
 share/inkscape/tutorials/tutorial-tips.ru.svg
@@ -781,6 +789,7 @@ share/inkscape/tutorials/tutorial-tracing.eu.svg
 share/inkscape/tutorials/tutorial-tracing.fa.svg
 share/inkscape/tutorials/tutorial-tracing.fr.svg
 share/inkscape/tutorials/tutorial-tracing.hu.svg
+share/inkscape/tutorials/tutorial-tracing.id.svg
 share/inkscape/tutorials/tutorial-tracing.ja.svg
 share/inkscape/tutorials/tutorial-tracing.nl.svg
 share/inkscape/tutorials/tutorial-tracing.pl.svg
