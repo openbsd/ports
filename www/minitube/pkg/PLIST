@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/03/19 14:38:44 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/05/17 11:33:46 rpointel Exp $
 @bin bin/minitube
 share/applications/minitube.desktop
 share/icons/hicolor/
@@ -34,6 +34,7 @@ share/minitube/locale/
 share/minitube/locale/ar.qm
 share/minitube/locale/bg.qm
 share/minitube/locale/bg_BG.qm
+share/minitube/locale/ca_ES.qm
 share/minitube/locale/cs_CZ.qm
 share/minitube/locale/de_DE.qm
 share/minitube/locale/el.qm
@@ -42,6 +43,7 @@ share/minitube/locale/en_US.qm
 share/minitube/locale/es.qm
 share/minitube/locale/es_AR.qm
 share/minitube/locale/es_ES.qm
+share/minitube/locale/fi.qm
 share/minitube/locale/fi_FI.qm
 share/minitube/locale/fr_FR.qm
 share/minitube/locale/gl.qm
@@ -64,9 +66,12 @@ share/minitube/locale/pt_PT.qm
 share/minitube/locale/ro.qm
 share/minitube/locale/ro_RO.qm
 share/minitube/locale/ru_RU.qm
+share/minitube/locale/sq.qm
 share/minitube/locale/sr.qm
+share/minitube/locale/sv_SE.qm
 share/minitube/locale/tr_TR.qm
 share/minitube/locale/uk.qm
+share/minitube/locale/uk_UA.qm
 share/minitube/locale/zh_CN.qm
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
