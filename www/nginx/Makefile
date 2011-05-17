@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2011/04/09 01:21:55 william Exp $
+# $OpenBSD: Makefile,v 1.41 2011/05/17 03:31:00 william Exp $
 
 COMMENT=	robust and small HTTP server and mail proxy server
 
-DISTNAME=	nginx-0.8.54
+DISTNAME=	nginx-1.0.2
 CATEGORIES=	www
 
-HOMEPAGE=	http://nginx.net/
+HOMEPAGE=	http://nginx.org/
 
 MAINTAINER=	William Yodlowsky <william@openbsd.org>
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c crypto pcre ssl z
 
-MASTER_SITES=		http://sysoev.ru/nginx/
+MASTER_SITES=		http://nginx.org/download/
 
 LIB_DEPENDS=		devel/pcre
 
@@ -46,7 +46,7 @@ CONFIGURE_ARGS=		--prefix=${SYSCONFDIR}/nginx \
 			--with-mail_ssl_module \
 			--with-ipv6
 
-FLAVORS=               passenger
+FLAVORS=		passenger
 FLAVOR?=
 
 .if ${FLAVOR:L:Mpassenger}
@@ -65,6 +65,7 @@ pre-configure:
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nginx/
 	${INSTALL_PROGRAM} ${WRKSRC}/objs/nginx ${PREFIX}/sbin
+	${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${PREFIX}/man/man8/
 .for i in koi-win koi-utf win-utf mime.types nginx.conf \
 	fastcgi_params scgi_params uwsgi_params
 	${INSTALL_DATA} ${WRKSRC}/conf/${i} ${PREFIX}/share/nginx/
