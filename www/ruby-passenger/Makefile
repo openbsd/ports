@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2011/01/15 01:09:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2011/05/17 03:25:18 william Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	Nginx module for deploying Ruby applications
 
-DISTNAME =	passenger-3.0.0
+DISTNAME =	passenger-3.0.7
 PKGNAME =	ruby-${DISTNAME}
-REVISION =	3
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.modrails.com/
@@ -35,15 +34,19 @@ PORTHOME =		${WRKDIR}
 
 MAKE_ENV +=		CC=${CC} CXX=${CXX}
 
-do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RAKE} nginx
-	@perl -pi -e "s#PASSENGER_ROOT =.*#PASSENGER_ROOT = '${PREFIX}/lib/phusion_passenger'#g" \
+pre-configure:
+	perl -pi -e "s#PASSENGER_ROOT =.*#PASSENGER_ROOT = '${PREFIX}/lib/phusion_passenger'#g" \
 		${WRKSRC}/bin/passenger-config
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${RAKE} fakeroot
-	@find ${WRKBUILD}/pkg/fakeroot -name '*.orig' | xargs -r rm -f
+	perl -pi -e "s#\\$$\\{LOCALBASE\\}#${LOCALBASE}#g" ${WRKSRC}/build/packaging.rb \
+		${WRKSRC}/ext/common/ResourceLocator.h ${WRKSRC}/lib/phusion_passenger.rb
+
+do-build:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RAKE} nginx
+	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${RAKE} fakeroot
 
 do-install:
-	cd ${WRKBUILD}/pkg/fakeroot/usr/local && \
+	find ${WRKBUILD}/pkg/fakeroot -name '*.orig' | xargs -r rm -f
+	cd ${WRKBUILD}/pkg/fakeroot${LOCALBASE} && \
 		tar -cf - * | tar -C ${PREFIX} -xf -
 	rm -f ${PREFIX}/bin/passenger-install-nginx-module
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/phusion-passenger/ext

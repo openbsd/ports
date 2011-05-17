@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_documentation_rb,v 1.1 2010/11/08 23:47:37 jeremy Exp $
---- build/documentation.rb.orig	Sun Nov  7 19:51:08 2010
-+++ build/documentation.rb	Sun Nov  7 19:51:47 2010
-@@ -29,7 +29,7 @@ task :doc => Packaging::ASCII_DOCS
+$OpenBSD: patch-build_documentation_rb,v 1.2 2011/05/17 03:25:18 william Exp $
+--- build/documentation.rb.orig	Sun Dec  5 11:54:35 2010
++++ build/documentation.rb	Wed Apr 27 10:30:11 2011
+@@ -36,7 +36,7 @@ task :doc => Packaging::ASCII_DOCS
  Packaging::ASCII_DOCS.each do |target|
  	source = target.sub(/\.html$/, '.txt')
  	file target => [source] + Dir["doc/users_guide_snippets/**/*"] do

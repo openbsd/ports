@@ -1,12 +1,23 @@
-$OpenBSD: patch-ext_common_AgentBase_cpp,v 1.1 2010/11/08 23:47:37 jeremy Exp $
---- ext/common/AgentBase.cpp.orig	Wed Oct 27 15:44:19 2010
-+++ ext/common/AgentBase.cpp	Wed Oct 27 15:44:34 2010
-@@ -132,8 +132,6 @@ appendSignalReason(char *buf, siginfo_t *info) {
- 	#endif
- 	SI_CODE_HANDLER(SI_QUEUE);
- 	SI_CODE_HANDLER(SI_TIMER);
--	SI_CODE_HANDLER(SI_ASYNCIO);
--	SI_CODE_HANDLER(SI_MESGQ);
- 	#ifdef SI_SIGIO
- 		SI_CODE_HANDLER(SI_SIGIO);
- 	#endif
+$OpenBSD: patch-ext_common_AgentBase_cpp,v 1.2 2011/05/17 03:25:18 william Exp $
+
+Apparently there are issues using sigaltstack with pthreads.
+
+--- ext/common/AgentBase.cpp.orig	Wed Apr 27 12:51:06 2011
++++ ext/common/AgentBase.cpp	Wed Apr 27 12:51:20 2011
+@@ -302,10 +302,12 @@ installAbortHandler() {
+ 	stack.ss_flags = 0;
+ 	if (sigaltstack(&stack, NULL) != 0) {
+ 		int e = errno;
+-		fprintf(stderr, "Cannot install an alternative stack for use in signal handlers: %s (%d)\n",
+-			strerror(e), e);
+-		fflush(stderr);
+-		abort();
++		if (e != EINVAL) {
++			fprintf(stderr, "Cannot install an alternative stack for use in signal handlers: %s (%d)\n",
++				strerror(e), e);
++			fflush(stderr);
++			abort();
++		}
+ 	}
+ 	
+ 	struct sigaction action;

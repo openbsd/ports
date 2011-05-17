@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_config_rb,v 1.1 2010/11/08 23:47:37 jeremy Exp $
---- build/config.rb.orig	Wed Oct 27 15:09:05 2010
-+++ build/config.rb	Wed Oct 27 15:10:41 2010
-@@ -18,9 +18,9 @@ OPTIMIZE = boolean_option("OPTIMIZE")
+$OpenBSD: patch-build_config_rb,v 1.2 2011/05/17 03:25:18 william Exp $
+--- build/config.rb.orig	Sun Dec  5 11:54:35 2010
++++ build/config.rb	Wed Apr 27 10:30:11 2011
+@@ -25,9 +25,9 @@ OPTIMIZE = boolean_option("OPTIMIZE")
  CC       = string_option("CC", "gcc")
  CXX      = string_option("CXX", "g++")
  if OPTIMIZE

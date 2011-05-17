@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_packaging_rb,v 1.1 2010/11/08 23:47:37 jeremy Exp $
---- build/packaging.rb.orig	Wed Oct 27 15:11:05 2010
-+++ build/packaging.rb	Wed Oct 27 15:20:48 2010
-@@ -83,7 +83,7 @@ Rake::Task['package:force'].prerequisites.unshift(:doc
+$OpenBSD: patch-build_packaging_rb,v 1.2 2011/05/17 03:25:18 william Exp $
+--- build/packaging.rb.orig	Mon Apr 11 03:22:53 2011
++++ build/packaging.rb	Wed Apr 27 10:35:15 2011
+@@ -100,7 +100,7 @@ Rake::Task['package:force'].prerequisites.unshift(:doc
  task :clobber => :'package:clean'
  
  desc "Create a fakeroot, useful for building native packages"
@@ -10,35 +10,32 @@ $OpenBSD: patch-build_packaging_rb,v 1.1 2010/11/08 23:47:37 jeremy Exp $
  	require 'rbconfig'
  	require 'fileutils'
  	include Config
-@@ -92,17 +92,17 @@ task :fakeroot => [:apache2, :nginx] + Packaging::ASCI
+@@ -109,14 +109,14 @@ task :fakeroot => [:apache2, :nginx] + Packaging::ASCI
  	# We don't use CONFIG['archdir'] and the like because we want
  	# the files to be installed to /usr, and the Ruby interpreter
  	# on the packaging machine might be in /usr/local.
 -	fake_libdir = "#{fakeroot}/usr/lib/ruby/#{CONFIG['ruby_version']}"
 -	fake_native_support_dir = "#{fakeroot}/usr/lib/ruby/#{CONFIG['ruby_version']}/#{CONFIG['arch']}"
-+	fake_libdir = "#{fakeroot}/usr/local/lib/ruby/#{CONFIG['ruby_version']}"
-+	fake_native_support_dir = "#{fakeroot}/usr/local/lib/ruby/#{CONFIG['ruby_version']}/#{CONFIG['arch']}"
++	fake_libdir = "#{fakeroot}${LOCALBASE}/lib/ruby/#{CONFIG['ruby_version']}"
++	fake_native_support_dir = "#{fakeroot}${LOCALBASE}/lib/ruby/#{CONFIG['ruby_version']}/#{CONFIG['arch']}"
  	fake_agents_dir = "#{fakeroot}#{NATIVELY_PACKAGED_AGENTS_DIR}"
  	fake_helper_scripts_dir = "#{fakeroot}#{NATIVELY_PACKAGED_HELPER_SCRIPTS_DIR}"
+-	fake_resources_dir = "#{fakeroot}/usr/share/phusion-passenger"
++	fake_resources_dir = "#{fakeroot}${LOCALBASE}/share/phusion-passenger"
  	fake_docdir = "#{fakeroot}#{NATIVELY_PACKAGED_DOCDIR}"
 -	fake_bindir = "#{fakeroot}/usr/bin"
 -	fake_sbindir = "#{fakeroot}/usr/sbin"
-+	fake_bindir = "#{fakeroot}/usr/local/bin"
-+	fake_sbindir = "#{fakeroot}/usr/local/sbin"
++	fake_bindir = "#{fakeroot}${LOCALBASE}/bin"
++	fake_sbindir = "#{fakeroot}${LOCALBASE}/sbin"
  	fake_source_root = "#{fakeroot}#{NATIVELY_PACKAGED_SOURCE_ROOT}"
  	fake_apache2_module = "#{fakeroot}#{NATIVELY_PACKAGED_APACHE2_MODULE}"
  	fake_apache2_module_dir = File.dirname(fake_apache2_module)
--	fake_certificates_dir = "#{fakeroot}/usr/share/phusion-passenger/certificates"
-+	fake_certificates_dir = "#{fakeroot}/usr/local/share/phusion-passenger/certificates"
- 	
- 	sh "rm -rf #{fakeroot}"
- 	sh "mkdir -p #{fakeroot}"
-@@ -140,8 +140,6 @@ task :fakeroot => [:apache2, :nginx] + Packaging::ASCI
+@@ -160,8 +160,6 @@ task :fakeroot => [:apache2, :nginx] + Packaging::ASCI
  		sh "cp bin/#{exe} #{fake_sbindir}/"
  	end
  	
 -	sh "mkdir -p #{fake_apache2_module_dir}"
 -	sh "cp #{APACHE2_MODULE} #{fake_apache2_module_dir}/"
  	
- 	sh "mkdir -p #{fake_certificates_dir}"
- 	sh "cp misc/*.crt #{fake_certificates_dir}/"
+ 	sh "mkdir -p #{fake_source_root}"
+ 	spec.files.each do |filename|
