@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 1.2 2011/04/29 13:18:02 robert Exp $
---- third_party/WebKit/Source/WebKit/chromium/src/WebViewImpl.cpp.orig	Tue Apr 26 10:03:27 2011
-+++ third_party/WebKit/Source/WebKit/chromium/src/WebViewImpl.cpp	Thu Apr 28 11:17:49 2011
+$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 1.3 2011/05/17 08:35:31 robert Exp $
+--- third_party/WebKit/Source/WebKit/chromium/src/WebViewImpl.cpp.orig	Sat May  7 11:42:23 2011
++++ third_party/WebKit/Source/WebKit/chromium/src/WebViewImpl.cpp	Mon May 16 16:10:05 2011
 @@ -132,7 +132,7 @@
  #if OS(WINDOWS)
  #include "RenderThemeChromiumWin.h"
@@ -60,7 +60,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 
  // Mac has no way to open a context menu based on a keyboard event.
  bool WebViewImpl::sendContextMenuEvent(const WebKeyboardEvent& event)
  {
-@@ -2062,7 +2062,7 @@ void WebViewImpl::setDomainRelaxationForbidden(bool fo
+@@ -2063,7 +2063,7 @@ void WebViewImpl::setDomainRelaxationForbidden(bool fo
  void WebViewImpl::setScrollbarColors(unsigned inactiveColor,
                                       unsigned activeColor,
                                       unsigned trackColor) {
@@ -69,7 +69,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 
      PlatformThemeChromiumGtk::setScrollbarColors(inactiveColor,
                                                   activeColor,
                                                   trackColor);
-@@ -2073,7 +2073,7 @@ void WebViewImpl::setSelectionColors(unsigned activeBa
+@@ -2074,7 +2074,7 @@ void WebViewImpl::setSelectionColors(unsigned activeBa
                                       unsigned activeForegroundColor,
                                       unsigned inactiveBackgroundColor,
                                       unsigned inactiveForegroundColor) {
@@ -78,7 +78,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebViewImpl_cpp,v 
      RenderThemeChromiumLinux::setSelectionColors(activeBackgroundColor,
                                                   activeForegroundColor,
                                                   inactiveBackgroundColor,
-@@ -2149,7 +2149,7 @@ bool WebViewImpl::navigationPolicyFromMouseEvent(unsig
+@@ -2150,7 +2150,7 @@ bool WebViewImpl::navigationPolicyFromMouseEvent(unsig
                                                   bool alt, bool meta,
                                                   WebNavigationPolicy* policy)
  {

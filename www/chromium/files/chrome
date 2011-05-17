@@ -1,19 +1,13 @@
 #!/bin/sh
-# $OpenBSD: chrome,v 1.3 2011/02/08 21:10:28 sthen Exp $
+# $OpenBSD: chrome,v 1.4 2011/05/17 08:35:31 robert Exp $
 
 PROGDIR=TRUEPREFIX/chrome
 SHMALL=32768
-DATASIZ=716800
 FDS=400
 
 if [ `/usr/sbin/sysctl -n kern.shminfo.shmall` -lt ${SHMALL} ]; then
 	MSG="You should increase the kern.shminfo.shmall sysctl to at least ${SHMALL},"
 	MSG="${MSG}\ne.g.: sysctl kern.shminfo.shmall=${SHMALL}. This can be added to /etc/sysctl.conf.\n"
-fi
-
-[ `ulimit -Sd` -lt ${DATASIZ} ] || ulimit -Sd ${DATASIZ}
-if [ `ulimit -Sd` -lt ${DATASIZ} ]; then
-	LMSG="- increase datasize-max to at least ${DATASIZ}.\n"
 fi
 
 [ `ulimit -Sn` -lt ${FDS} ] || ulimit -Sn ${FDS}

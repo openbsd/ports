@@ -1,0 +1,12 @@
+$OpenBSD: patch-v8_src_heap_cc,v 1.1 2011/05/17 08:35:31 robert Exp $
+--- v8/src/heap.cc.orig	Mon May 16 17:04:03 2011
++++ v8/src/heap.cc	Mon May 16 17:07:18 2011
+@@ -87,7 +87,7 @@ intptr_t Heap::max_old_generation_size_ = 192*MB;
+ int Heap::initial_semispace_size_ = 128*KB;
+ intptr_t Heap::code_range_size_ = 0;
+ intptr_t Heap::max_executable_size_ = max_old_generation_size_;
+-#elif defined(V8_TARGET_ARCH_X64)
++#elif defined(V8_TARGET_ARCH_X64) && !defined(__OpenBSD__)
+ static const int default_max_semispace_size_  = 16*MB;
+ intptr_t Heap::max_old_generation_size_ = 1*GB;
+ int Heap::initial_semispace_size_ = 1*MB;

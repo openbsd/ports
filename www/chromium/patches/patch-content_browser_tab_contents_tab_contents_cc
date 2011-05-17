@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_browser_tab_contents_tab_contents_cc,v 1.1 2011/04/29 13:18:01 robert Exp $
---- content/browser/tab_contents/tab_contents.cc.orig	Thu Apr 28 11:30:45 2011
-+++ content/browser/tab_contents/tab_contents.cc	Thu Apr 28 11:31:37 2011
+$OpenBSD: patch-content_browser_tab_contents_tab_contents_cc,v 1.2 2011/05/17 08:35:31 robert Exp $
+--- content/browser/tab_contents/tab_contents.cc.orig	Sat May  7 11:40:02 2011
++++ content/browser/tab_contents/tab_contents.cc	Mon May 16 16:10:04 2011
 @@ -301,7 +301,7 @@ TabContents::TabContents(Profile* profile,
  
    registrar_.Add(this, NotificationType::RENDER_WIDGET_HOST_DESTROYED,
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_browser_tab_contents_tab_contents_cc,v 1.1 2011/04/29 13
    registrar_.Add(this, NotificationType::BROWSER_THEME_CHANGED,
                   NotificationService::AllSources());
  #endif
-@@ -2721,7 +2721,7 @@ void TabContents::Observe(NotificationType type,
+@@ -2723,7 +2723,7 @@ void TabContents::Observe(NotificationType type,
        break;
      }
  
