@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/17 14:08:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/17 14:11:30 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		3.0.2
 
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  yelp                      0.0 # 0.0
 

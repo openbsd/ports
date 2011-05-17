@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2011/05/17 14:03:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/17 14:11:30 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		3.0.2
+REVISION=		0
 
 CATEGORIES=		editors
 
