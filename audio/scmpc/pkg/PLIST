@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/05/15 14:56:50 jasper Exp $
-@comment $OpenBSD: PLIST,v 1.4 2011/05/15 14:56:50 jasper Exp $
-@bin bin/scmpc
+@comment $OpenBSD: PLIST,v 1.5 2011/05/17 06:46:36 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/05/17 06:46:36 jasper Exp $
 @extraunexec rm -rf /var/scmpc/*
 @bin bin/scmpc
 @man man/man1/scmpc.1
