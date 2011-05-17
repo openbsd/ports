@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/04/28 13:09:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/05/17 15:02:46 ajacoutot Exp $
 
 COMMENT=	PolicyKit integration for GNOME/GTK+2
 
 DISTNAME=	polkit-gnome-0.101
+REVISION=	0
 
 CATEGORIES=	x11 sysutils
 
@@ -22,11 +23,11 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
-WANTLIB += drm expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png polkit-agent-1 polkit-gobject-1 pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += drm expat fontconfig freetype gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png polkit-agent-1
+WANTLIB += polkit-gobject-1 pthread pthread-stubs xcb xcb-render
+WANTLIB += xcb-shm z
 
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
@@ -35,8 +36,7 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	devel/gobject-introspection
 
-LIB_DEPENDS=	sysutils/polkit>=0.97p6 \
-		x11/gtk+2
+LIB_DEPENDS=	sysutils/polkit>=0.97p6
 
 # XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
 # instead of the actual library
@@ -51,8 +51,20 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--localstatedir=/var \
 		--enable-introspection \
 		--disable-gtk-doc \
-		--disable-silent-rules \
-		--with-gtk=2.0
+		--disable-silent-rules
+
+FLAVORS=	gtk2
+FLAVOR?=
+
+.if ${FLAVOR:L:Mgtk2}
+CONFIGURE_ARGS+=--with-gtk=2.0
+LIB_DEPENDS+=	x11/gtk+2
+WANTLIB += gdk-x11-2.0 gtk-x11-2.0
+.else
+CONFIGURE_ARGS+=--with-gtk=3.0
+LIB_DEPENDS+=	x11/gtk+3
+WANTLIB += cairo-gobject gdk-3 gtk-3
+.endif
 
 # revert the following commit:
 # From 47ca445decf21b8de13d804b870d6ce171bad306 Mon Sep 17 00:00:00 2001
