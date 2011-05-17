@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_media-keys_gsd-media-keys-manager_c,v 1.1 2011/05/17 14:03:48 ajacoutot Exp $
+
+No roundl(3) in OpenBSD.
+
+--- plugins/media-keys/gsd-media-keys-manager.c.orig	Tue Apr 26 11:13:41 2011
++++ plugins/media-keys/gsd-media-keys-manager.c	Fri May 13 23:26:09 2011
+@@ -1132,7 +1132,7 @@ do_magnifier_zoom_action (GsdMediaKeysManager *manager
+ 	settings = g_settings_new ("org.gnome.desktop.a11y.magnifier");
+ 	value = g_settings_get_double (settings, "mag-factor");
+ 	value += offset;
+-	value = roundl (value);
++	value = round (value);
+ 	g_settings_set_double (settings, "mag-factor", value);
+ 	g_object_unref (settings);
+ }

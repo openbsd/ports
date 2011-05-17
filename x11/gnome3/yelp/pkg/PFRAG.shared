@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1 2011/05/13 10:04:10 ajacoutot Exp $
-@lib lib/libyelp.so.${LIByelp_VERSION}

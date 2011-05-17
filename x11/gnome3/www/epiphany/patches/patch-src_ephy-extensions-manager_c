@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ephy-extensions-manager_c,v 1.1 2011/05/17 14:03:47 ajacoutot Exp $
+
+ephy-extensions-manager: plug leak
+From upstream git: 6d839481ccf0e1718f98df27b7cf6890d8059d5b
+
+--- src/ephy-extensions-manager.c.orig	Sun May 15 00:36:43 2011
++++ src/ephy-extensions-manager.c	Sun May 15 00:37:05 2011
+@@ -917,6 +917,7 @@ ephy_extensions_manager_load_dir (EphyExtensionsManage
+ 
+ 	directory = g_file_new_for_path (path);
+ 	monitor = g_file_monitor_directory (directory, 0, NULL, NULL);
++	g_object_unref (directory);
+ 
+ 	if (monitor != NULL)
+ 	{
