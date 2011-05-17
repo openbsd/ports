@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2011/04/25 14:03:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/05/17 11:49:49 jasper Exp $
 
 COMMENT=	Qt4 poker game with online capabilities
 
-V=		0.8.1
+V=		0.8.3
 DISTNAME=	PokerTH-${V}-src
 PKGNAME=	pokerth-${V}
-REVISION=	0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://www.pokerth.net/
@@ -20,10 +19,10 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pokerth/}
 
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB+=	c crypto m pthread ssl stdc++
-WANTLIB+=	boost_filesystem-mt boost_iostreams-mt boost_program_options-mt
-WANTLIB+=	boost_regex-mt boost_system-mt boost_thread-mt QtGui
-WANTLIB+=	QtNetwork QtSql SDL SDL_mixer curl gsasl
+WANTLIB += QtGui QtNetwork QtSql SDL SDL_mixer boost_filesystem-mt
+WANTLIB += boost_iostreams-mt boost_program_options-mt boost_regex-mt
+WANTLIB += boost_system-mt boost_thread-mt c crypto curl gsasl
+WANTLIB += m pthread sqlite3 ssl stdc++
 
 MODULES=	devel/gettext \
 		x11/qt4
@@ -50,6 +49,8 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
 do-configure:
+	cd ${WRKSRC} && \
+		perl -pi -e 's,-std=gnu\+\+0x,,g' *.pro
 	cd ${WRKBUILD} && \
 		env -i ${CONFIGURE_ENV} qmake4 ${MAKE_FLAGS} \
 		${WRKSRC}/pokerth.pro
