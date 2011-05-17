@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.149 2011/05/14 22:19:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.150 2011/05/17 15:05:03 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
@@ -46,7 +46,7 @@ RUN_DEPENDS+=	x11/gnome/at-spi2-atk
 # auth. dialog ; same for gconf2-polkit, gconf2 and polkit are already
 # dependencies and we want to be able to handle system-wide gconf entries.
 # This should really be a dep. of a "gnome" metapackage.
-RUN_DEPENDS+=	x11/polkit-gnome
+RUN_DEPENDS+=	x11/polkit-gnome,gtk2
 RUN_DEPENDS+=	devel/gconf2,-polkit
 
 DESKTOP_FILES=		Yes

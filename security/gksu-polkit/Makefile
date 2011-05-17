@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/04/28 13:10:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/05/17 15:05:03 ajacoutot Exp $
 
 COMMENT=	command line utility to run programs as root
 
 DISTNAME=	gksu-polkit-0.0.2
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  gksu-polkit               0.0 # 0.1
 
@@ -37,7 +37,7 @@ LIB_DEPENDS=	sysutils/polkit \
 		x11/dbus-glib
 
 BUILD_DEPENDS=	lang/vala
-RUN_DEPENDS=	polkit-gnome-*|polkit-qt4-*:x11/polkit-gnome
+RUN_DEPENDS=	polkit-gnome-*|polkit-qt4-*:x11/polkit-gnome,gtk2
 
 MODULES=	devel/gettext \
 		textproc/intltool
