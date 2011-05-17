@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2011/03/13 18:19:32 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.20 2011/05/17 08:53:50 dcoppa Exp $
 
 COMMENT =	desktop geographical information system
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 DISTNAME =	qgis-1.6.0
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
@@ -30,17 +30,17 @@ MODULES =	devel/cmake \
 		devel/gettext \
 		lang/python
 
-BUILD_DEPENDS =	x11/py-qt4 \
+BUILD_DEPENDS =	x11/py-qt4>=4.8.4 \
 		geo/gdal,-python \
 		devel/bison
 
-RUN_DEPENDS =	x11/py-qt4 \
+RUN_DEPENDS =	x11/py-qt4>=4.8.4 \
 		geo/gdal,-python \
 		devel/desktop-file-utils
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		devel/proj \
-		x11/qt4 \
+		x11/qt4>=4.7.2 \
 		x11/qwt \
 		www/fcgi \
 		geo/gdal \
