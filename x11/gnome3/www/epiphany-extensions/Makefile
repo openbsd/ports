@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/17 14:11:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/17 14:34:05 ajacoutot Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
@@ -39,7 +39,7 @@ MODULES=	devel/dconf \
 		x11/gnome
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	x11/gnome/epiphany>=3.0.3
+RUN_DEPENDS=	www/epiphany>=3.0.3
 LIB_DEPENDS=	www/webkit,gtk3
 
 LIBTOOL_FLAGS=	--tag=disable-static
