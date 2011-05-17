@@ -1,0 +1,43 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2011/05/17 17:07:32 ajacoutot Exp $
+
+"$host" fails for some reason.
+
+--- configure.orig	Sun Apr 24 19:39:33 2011
++++ configure	Tue May 17 14:39:47 2011
+@@ -4472,13 +4472,6 @@ AM_CPPFLAGS="$WARNING_FLAGS -fno-strict-aliasing"
+ 
+ 
+ 
+-case "$host" in
+-*openbsd*|*freebsd*)
+-		;;
+-*)
+-	LDFLAGS="$LDFLAGS -Wl,--no-undefined"
+-	;;
+-esac
+ 
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to enable maintainer-specific portions of Makefiles" >&5
+@@ -15374,6 +15367,13 @@ fi
+ $as_echo "#define _WIN32_WINNT 0x501" >>confdefs.h
+ 
+ 	;;
++*openbsd*)
++	os_win32='no'
++	NO_UNDEFINED=''
++	SOCKET_LIBS=''
++	DL_LIB=''
++	LIBEXECDIR_IN_SERVER_FILE="$libexecdir"
++	;;
+ *)
+ 	os_win32='no'
+ 	NO_UNDEFINED=''
+@@ -17358,7 +17358,7 @@ $as_echo_n "checking for Kerberos 5... " >&6; }
+ 		LIBS_save="$LIBS"
+ 
+ 		mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
+-		heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi"
++		heimlibs="-lkrb5 -lcrypto -lasn1 -lcom_err -lgssapi"
+ 		sunlibs="-lkrb5 -lgss"
+ 		if test "${ac_cv_lib_kerberos5+set}" = set; then :
+   $as_echo_n "(cached) " >&6

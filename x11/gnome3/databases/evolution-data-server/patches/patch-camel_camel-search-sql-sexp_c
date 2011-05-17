@@ -1,0 +1,57 @@
+$OpenBSD: patch-camel_camel-search-sql-sexp_c,v 1.1.1.1 2011/05/17 17:07:32 ajacoutot Exp $
+--- camel/camel-search-sql-sexp.c.orig	Thu Sep 16 14:47:54 2010
++++ camel/camel-search-sql-sexp.c	Tue May 17 13:40:32 2011
+@@ -176,7 +176,7 @@ eval_eq (struct _ESExp *f, gint argc, struct _ESExpTer
+ 		if (r1->type == ESEXP_RES_INT)
+ 			g_string_append_printf(str, "%d", r1->value.number);
+ 		else if (r1->type == ESEXP_RES_TIME)
+-			g_string_append_printf(str, "%ld", r1->value.time);
++			g_string_append_printf(str, "%lld", (long long)r1->value.time);
+ 		else if (r1->type == ESEXP_RES_STRING)
+ 			g_string_append_printf(str, "%s", r1->value.string);
+ 
+@@ -194,7 +194,7 @@ eval_eq (struct _ESExp *f, gint argc, struct _ESExpTer
+ 			if (r2->type == ESEXP_RES_BOOL)
+ 				g_string_append_printf(str, "%d", r2->value.boolean);
+ 			else if (r2->type == ESEXP_RES_TIME)
+-				g_string_append_printf(str, "%ld", r2->value.time);
++				g_string_append_printf(str, "%lld", (long long)r2->value.time);
+ 			else if (r2->type == ESEXP_RES_STRING) {
+ 				gchar *tmp = g_strdup_printf("%c%s%c", ut ? '%':' ', r2->value.string, ut?'%':' ');
+ 				gchar *safe = get_db_safe_string (tmp);
+@@ -229,7 +229,7 @@ eval_lt (struct _ESExp *f, gint argc, struct _ESExpTer
+ 		if (r1->type == ESEXP_RES_INT)
+ 			g_string_append_printf(str, "%d", r1->value.number);
+ 		else if (r1->type == ESEXP_RES_TIME)
+-			g_string_append_printf(str, "%ld", r1->value.time);
++			g_string_append_printf(str, "%lld", (long long)r1->value.time);
+ 		else if (r1->type == ESEXP_RES_STRING)
+ 			g_string_append_printf(str, "%s", r1->value.string);
+ 
+@@ -239,7 +239,7 @@ eval_lt (struct _ESExp *f, gint argc, struct _ESExpTer
+ 		if (r2->type == ESEXP_RES_BOOL)
+ 			g_string_append_printf(str, "%d", r2->value.boolean);
+ 		else if (r2->type == ESEXP_RES_TIME)
+-			g_string_append_printf(str, "%ld", r2->value.time);
++			g_string_append_printf(str, "%lld", (long long)r2->value.time);
+ 		else if (r2->type == ESEXP_RES_STRING)
+ 			g_string_append_printf(str, "%s", r2->value.string);
+ 		e_sexp_result_free (f, r1);
+@@ -268,7 +268,7 @@ eval_gt (struct _ESExp *f, gint argc, struct _ESExpTer
+ 		if (r1->type == ESEXP_RES_INT)
+ 			g_string_append_printf(str, "%d", r1->value.number);
+ 		else if (r1->type == ESEXP_RES_TIME)
+-			g_string_append_printf(str, "%ld", r1->value.time);
++			g_string_append_printf(str, "%lld", (long long)r1->value.time);
+ 		else if (r1->type == ESEXP_RES_STRING)
+ 			g_string_append_printf(str, "%s", r1->value.string);
+ 
+@@ -278,7 +278,7 @@ eval_gt (struct _ESExp *f, gint argc, struct _ESExpTer
+ 		if (r2->type == ESEXP_RES_BOOL)
+ 			g_string_append_printf(str, "%d", r2->value.boolean);
+ 		else if (r2->type == ESEXP_RES_TIME)
+-			g_string_append_printf(str, "%ld", r2->value.time);
++			g_string_append_printf(str, "%lld", (long long)r2->value.time);
+ 		else if (r2->type == ESEXP_RES_STRING)
+ 			g_string_append_printf(str, "%s", r2->value.string);
+ 		e_sexp_result_free (f, r1);
