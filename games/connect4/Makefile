@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2010/10/18 18:00:17 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2011/05/17 09:05:49 espie Exp $
 
 COMMENT=	curses version of the classic game
 
@@ -14,7 +14,8 @@ PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 WANTLIB=		c curses termcap
 
-MASTER_SITES= 	ftp://ftp.uu.net/usenet/comp.sources.games/volume6/
+MASTER_SITES= 	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/ \
+		ftp://ftp.uu.net/usenet/comp.sources.games/volume6/
 EXTRACT_SUFX=	.Z
 EXTRACT_CASES=	*.Z) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | \
 		${_PERL_FIX_SHAR} | /bin/sh ;;

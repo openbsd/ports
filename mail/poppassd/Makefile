@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/05/17 09:05:49 espie Exp $
 
 COMMENT=	server: allow users to change password from within Eudora
 
@@ -8,7 +8,8 @@ REVISION =	0
 DISTFILES=	pwserve-4
 CATEGORIES=	mail
 
-MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/password/
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/ \
+		ftp://ftp.qualcomm.com/eudora/servers/unix/password/
 
 # License: NONE
 PERMIT_PACKAGE_CDROM=	no license
