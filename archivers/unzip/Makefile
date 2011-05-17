@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2010/10/18 16:47:00 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2011/05/17 19:01:39 landry Exp $
 
 COMMENT=	extract, list & test files in a ZIP archive
 
 VERSION=	6.0
 DISTNAME=	unzip${VERSION:S/.//}
 PKGNAME=	unzip-${VERSION}
+REVISION=	0
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=infozip/} \
 		http://mirror.switch.ch/ftp/mirror/infozip/src/ \
@@ -19,16 +20,10 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c
 
-MAKE_FLAGS=	CC="${CC}" LD="${CC}" CF='-I. $$(LOC)'
+MAKE_FLAGS=	CC="${CC}" LD="${CC}" CF='-I. $$(LOC)' \
+		LOC="${CFLAGS} -DUSE_UNSHRINK -DNO_LCHMOD -DNO_LCHOWN"
 FAKE_FLAGS=	prefix="${WRKINST}${PREFIX}"
 USE_GROFF =	Yes
-
-# Workaround compiler bug on hppa which causes crashes
-.if ${MACHINE_ARCH} == "hppa"
-MAKE_FLAGS+=	LOC="${CFLAGS} -O0 -DUSE_UNSHRINK -DNO_LCHMOD -DNO_LCHOWN"
-.else
-MAKE_FLAGS+=	LOC="${CFLAGS} -DUSE_UNSHRINK -DNO_LCHMOD -DNO_LCHOWN"
-.endif
 
 MAKE_FILE=	unix/Makefile
 
