@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2011/05/17 11:30:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.35 2011/05/17 14:03:30 dcoppa Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
 DISTNAME=		awesome-3.4.10
+REVISION=		0
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		x11
 
@@ -55,8 +56,6 @@ MODULES=		devel/cmake
 CONFIGURE_STYLE=	cmake
 
 CONFIGURE_ARGS=		-DCOMPRESS_MANPAGES=off
-
-USE_GROFF =		Yes
 
 NO_REGRESS=		Yes
 
