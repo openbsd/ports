@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2011/04/20 20:02:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.60 2011/05/17 18:21:28 ajacoutot Exp $
 
 COMMENT=	official media player for GNOME
 
@@ -34,13 +34,6 @@ MODULES=	devel/gettext \
 		lang/python \
 		x11/gnome \
 		devel/gconf2
-
-# XXX make port-lib-depends-check happy (a52 and xklavier libs errors)
-# Missing library for a52
-# Can't resolve libspec a52
-# Can't call method "name" on an undefined value at /usr/libdata/perl5/OpenBSD/PackingList.pm line 371.
-BUILD_DEPENDS+=	graphics/ffmpeg \
-		x11/gnome/settings-daemon
 
 BUILD_DEPENDS+=	x11/py-gtk2 \
 		devel/py-gdata \
