@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2011/04/21 09:32:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2011/05/17 11:14:53 ajacoutot Exp $
 
 COMMENT=		collection of games for the GNOME desktop
 
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		2.32.1
 
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  games-support-gi          0.0 # 0.0
 
@@ -38,7 +38,8 @@ BUILD_DEPENDS=		devel/gobject-introspection \
 			x11/gnome/py-gnome-desktop
 LIB_DEPENDS=		graphics/clutter/clutter-gtk \
 			lang/guile \
-			x11/gnome/librsvg
+			x11/gnome/librsvg \
+			audio/libcanberra,-gtk
 RUN_DEPENDS=		x11/gnome/py-gnome-desktop \
 			multimedia/gstreamer-0.10/plugins-good
 REGRESS_DEPENDS=	devel/check
