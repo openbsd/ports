@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2011/01/16 15:26:28 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2011/05/17 08:38:33 dcoppa Exp $
 @bin bin/pylupdate4
 @bin bin/pyrcc4
 bin/pyuic4
@@ -148,6 +148,7 @@ share/sip/QtCore/qpluginloader.sip
 share/sip/QtCore/qpoint.sip
 share/sip/QtCore/qprocess.sip
 share/sip/QtCore/qpropertyanimation.sip
+share/sip/QtCore/qpynullvariant.sip
 share/sip/QtCore/qreadwritelock.sip
 share/sip/QtCore/qrect.sip
 share/sip/QtCore/qregexp.sip
@@ -236,6 +237,7 @@ share/sip/QtGui/qcolordialog.sip
 share/sip/QtGui/qcolumnview.sip
 share/sip/QtGui/qcombobox.sip
 share/sip/QtGui/qcommandlinkbutton.sip
+share/sip/QtGui/qcommonstyle.sip
 share/sip/QtGui/qcompleter.sip
 share/sip/QtGui/qcursor.sip
 share/sip/QtGui/qdatawidgetmapper.sip
@@ -496,7 +498,6 @@ share/sip/QtTest/qtestcase.sip
 share/sip/QtTest/qtestkeyboard.sip
 share/sip/QtTest/qtestmouse.sip
 share/sip/QtTest/qtestsystem.sip
-share/sip/QtTest/qtesttouch.sip
 share/sip/QtWebKit/
 share/sip/QtWebKit/QtWebKitmod.sip
 share/sip/QtWebKit/qgraphicswebview.sip

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/04/20 05:19:06 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.32 2011/05/17 08:38:32 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT-main=	python Qt4 bindings
 COMMENT-docs=	py-qt4 documentation
 
 # XXX: Upstream doesn't keep old files; if updating please mirror or ask sthen@
-V=		4.8.1
+V=		4.8.4
 DISTNAME=	PyQt-x11-gpl-${V}
 PKGNAME=	py-qt4-${V}
 PKGNAME-main=	py-qt4-${V}
@@ -24,8 +24,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += GL GLU X11 Xext c dbus-1 m pthread stdc++ 
-WANTLIB += QtDesigner QtGui QtNetwork QtOpenGL
-WANTLIB += QtScript QtSql QtSvg QtTest QtXml
+WANTLIB += QtDesigner QtGui QtHelp QtNetwork QtOpenGL
+WANTLIB += QtScript QtSql QtSvg QtTest QtWebKit QtXml
 WANTLIB += ${MODPY_WANTLIB}
 
 MULTI_PACKAGES=	-main -docs
@@ -36,9 +36,9 @@ RUN_DEPENDS-docs=
 PKG_ARCH-docs=	*
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/py-sip>=4.12 \
+RUN_DEPENDS=	devel/py-sip>=4.12.2 \
 		x11/dbus-python
-LIB_DEPENDS=	${MODQT4_LIB_DEPENDS}>=4.7.0 \
+LIB_DEPENDS=	${MODQT4_LIB_DEPENDS}>=4.7.2 \
 		${MODPY_LIB_DEPENDS}
 
 NO_REGRESS=	Yes
