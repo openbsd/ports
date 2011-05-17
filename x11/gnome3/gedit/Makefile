@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/14 22:17:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/17 06:35:04 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -33,8 +33,7 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		devel/gobject-introspection \
-			devel/gsettings-desktop-schemas \
+BUILD_DEPENDS=		${RUN_DEPENDS} \
 			devel/iso-codes
 LIB_DEPENDS=		devel/libpeas \
 			textproc/enchant \
