@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/05/16 08:24:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/05/17 06:29:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -13,7 +13,7 @@ PKGNAME-main=		libproxy-${VERSION}
 PKGNAME-mozilla=	libproxy-mozilla-${VERSION}
 PKGNAME-webkit=		libproxy-webkit-${VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 REVISION-mozilla=	1
 REVISION-webkit=	3
 
@@ -47,7 +47,8 @@ MULTI_PACKAGES=		-main
 
 BUILD_DEPENDS=		lang/vala
 
-RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS}
+RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
+			${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/gconf2
 
