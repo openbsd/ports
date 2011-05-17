@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2011/04/15 16:13:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2011/05/17 08:26:53 dcoppa Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -30,7 +30,7 @@ SHARED_LIBS =	Qt3Support 8.0 \
 		QtDesigner 7.0 \
 		QtDesignerComponents 7.0 \
 		QtGui 10.0 \
-		QtNetwork 9.0 \
+		QtNetwork 9.1 \
 		QtOpenGL 7.0 \
 		QtSql 8.0 \
 		QtXml 8.0 \
@@ -48,12 +48,13 @@ SHARED_LIBS =	Qt3Support 8.0 \
 		QtDeclarative 0.0 
 
 
-VERSION =	4.7.2
-PKGVERSION =	4.7.2
+VERSION =	4.7.3
+PKGVERSION =	4.7.3
 DISTNAME =	qt-everywhere-opensource-src-${VERSION}
 
 CATEGORIES =	x11
-MASTER_SITES =	ftp://ftp.qt.nokia.com/qt/source/ \
+MASTER_SITES =	http://get.qt.nokia.com/qt/source/ \
+		ftp://ftp.qt.nokia.com/qt/source/ \
 		ftp://ftp.troll.no/qt/source/ \
 		ftp://ftp.iasi.roedu.net/mirrors/ftp.trolltech.com/qt/source/ \
 		ftp://ftp.ntua.gr/pub/X11/Qt/qt/source/ \
@@ -146,21 +147,27 @@ SUBTARGETS = 		sub-tools-bootstrap \
 			sub-corelib \
 			sub-xml \
 			sub-network \
-			sub-gui \
 			sub-sql \
-			sub-script \
 			sub-testlib \
-			sub-qt3support \
 			sub-dbus \
+			sub-gui \
+			sub-qt3support \
 			sub-uic3 \
 			sub-opengl \
 			sub-xmlpatterns \
 			sub-phonon \
+			sub-multimedia \
 			sub-svg \
+			sub-script \
+			sub-declarative \
+			sub-javascriptcore \
+			sub-webkit \
 			sub-scripttools \
 			sub-plugins \
+			sub-imports \
+			sub-webkitdeclarative \
 			sub-tools \
-			sub-tools-qdoc3
+			sub-translations
 
 ALL_TARGET =		${SUBTARGETS}
 INSTALL_TARGET =	${SUBTARGETS:S/$/-install_subtargets/} \
