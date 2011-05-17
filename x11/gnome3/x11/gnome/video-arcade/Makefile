@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1 2011/05/17 14:03:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/17 14:08:15 ajacoutot Exp $
 
 COMMENT=	MAME front-end for GNOME
 
 GNOME_PROJECT=	gnome-video-arcade
 GNOME_VERSION=	0.8.0
+REVISION=	0
 
 CATEGORIES=	emulators games
 
@@ -32,7 +33,7 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/glade
 RUN_DEPENDS=	emulators/sdlmame,-main>=0.132p2 \
-		x11/gnome3/icon-theme
+		x11/gnome/icon-theme
 LIB_DEPENDS=	databases/sqlite3 \
 		devel/libwnck3 \
 		multimedia/gstreamer-0.10/core

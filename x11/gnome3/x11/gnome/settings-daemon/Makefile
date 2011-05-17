@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2011/05/17 14:03:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/17 14:08:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	3.0.1
+REVISION=	0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -30,14 +31,14 @@ MODULES=	devel/gettext \
 		x11/gnome
 
 LIB_DEPENDS=	devel/libnotify>=0.7.2 \
-		x11/gnome3/desktop \
-		x11/gnome3/libgnomekbd \
+		x11/gnome/desktop \
+		x11/gnome/libgnomekbd \
 		sysutils/polkit \
 		security/nss \
 		print/cups
 
 # otherwise we end up without icons on minimal install
-RUN_DEPENDS=	x11/gnome3/icon-theme
+RUN_DEPENDS=	x11/gnome/icon-theme
 
 DESKTOP_FILES=	Yes
 

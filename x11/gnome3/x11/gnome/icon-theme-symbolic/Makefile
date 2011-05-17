@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1 2011/05/17 14:03:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/17 14:08:15 ajacoutot Exp $
 
 COMMENT=	base icon theme extension for special UI contexts
 
 GNOME_PROJECT=	gnome-icon-theme-symbolic
 GNOME_VERSION=	3.0.0
+REVISION=	0
 
 CATEGORIES=	x11
 
@@ -18,7 +19,7 @@ MODULES=	x11/gnome
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		x11/icon-naming-utils \
 		x11/icontool
-RUN_DEPENDS=	x11/gnome3/icon-theme \
+RUN_DEPENDS=	x11/gnome/icon-theme \
 		x11/gnome/librsvg
 
 PKG_ARCH=	*
