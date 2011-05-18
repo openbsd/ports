@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/11 12:35:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2011/05/18 08:09:27 ajacoutot Exp $
 
 COMMENT=	insert random 'Zippy the Pinhead' quotes in your documents
 
@@ -10,7 +10,7 @@ REVISION=	0
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.zope.org/Members/michel/Products/Zippy/
-MASTER_SITES=	${HOMEPAGE}
+MASTER_SITES=	http://distfiles.bsdfrog.org/
 DIST_SUBDIR=	zope-zippy-${VERSION}
 EXTRACT_SUFX=	.tgz	
 
