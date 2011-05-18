@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/18 08:56:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/18 09:12:28 jasper Exp $
 
 # Don't forget to check eog-plugins when updating this port!
 
@@ -6,6 +6,7 @@ COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		3.0.1
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -38,7 +39,8 @@ LIB_DEPENDS=		devel/libpeas \
 			graphics/libexif \
 			textproc/exempi \
 			x11/gnome/desktop
-RUN_DEPENDS=		misc/shared-mime-info>=0.21 \
+RUN_DEPENDS=		devel/gsettings-desktop-schemas \
+			misc/shared-mime-info>=0.21 \
 			x11/gnome/icon-theme>=3.0.0
 
 MODGNOME_HELP_FILES=	Yes
