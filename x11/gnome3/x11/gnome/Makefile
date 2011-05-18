@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/18 08:58:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/18 15:33:29 jasper Exp $
 
      SUBDIR =
      SUBDIR += backgrounds
@@ -17,6 +17,7 @@
      SUBDIR += libgweather
      SUBDIR += menus
      SUBDIR += nettool
+#     SUBDIR += panel
      SUBDIR += settings-daemon
      SUBDIR += terminal
      SUBDIR += user-docs
