@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/05/18 01:03:52 espie Exp $
 
 COMMENT-main =	template engine for PHP
 COMMENT-docs =	documentation for Smarty
@@ -21,7 +21,8 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${HOMEPAGE}/do_download.php?download_file=
-MASTER_SITES0 =	${HOMEPAGE}/distributions/manual/en/
+MASTER_SITES0 =	${HOMEPAGE}/distributions/manual/en/ \
+		ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/ \
 
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		${DISTNAME-docs}${EXTRACT_SUFX}:0
