@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/03/02 06:41:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/05/18 21:06:28 ajacoutot Exp $
 
 COMMENT=	automatic color temperature adjustment
 
@@ -6,7 +6,7 @@ V=		1.6
 DISTNAME=	redshift-${V}
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	misc
 
@@ -31,6 +31,10 @@ LIB_DEPENDS=	devel/gconf2
 
 MODULES=	devel/gettext \
 		lang/python
+
+# nothing in the dep chain provides librsvg, so explicitely depend on it
+# so that the icon is correctly displayed
+RUN_DEPENDS=	x11/gnome/librsvg
 
 USE_GMAKE=	Yes
 
