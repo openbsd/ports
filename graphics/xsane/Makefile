@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2011/05/02 18:57:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2011/05/18 13:13:07 ajacoutot Exp $
 
 COMMENT=	scanner frontend for SANE
 
 DISTNAME=	xsane-0.998
+REVISION=	0
 
 CATEGORIES=	graphics
 
@@ -57,8 +58,8 @@ CONFIGURE_ENV += CPPFLAGS+="-I${LOCALBASE}/include/gimp-2.0"
 CONFIGURE_ARGS+=--disable-gimp
 .endif
 
-FAKE_FLAGS+=	localedir=${PREFIX}/share/locale \
-		sanedatadir=${PREFIX}/share/ \
-		xsanedocdir=${PREFIX}/share/doc/xsane/
+MAKE_FLAGS=	localedir=${TRUEPREFIX}/share/locale \
+		sanedatadir=${TRUEPREFIX}/share/ \
+		xsanedocdir=${TRUEPREFIX}/share/doc/xsane/
 
 .include <bsd.port.mk>
