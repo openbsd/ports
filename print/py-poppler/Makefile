@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/18 10:56:06 landry Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.2 2011/05/18 11:06:24 ajacoutot Exp $
 
 COMMENT=	python bindings for poppler
 
 DISTNAME=	pypoppler-0.12.1
 PKGNAME=        ${DISTNAME:S/^py/py-/}
 CATEGORIES=	print
+
+REVISION=	0
 
 MAINTAINER=	Ido Admon <idoadm@gmail.com>
 
