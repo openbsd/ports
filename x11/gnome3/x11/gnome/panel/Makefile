@@ -1,0 +1,72 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2011/05/18 15:32:44 jasper Exp $
+
+# XXX: py-gnome may be needed to load the old applets?
+
+SHARED_ONLY=	Yes
+
+COMMENT=	GNOME panel
+
+GNOME_PROJECT=	gnome-panel
+GNOME_VERSION=	3.0.0.1
+
+SHARED_LIBS=	panel-applet-4            0.0 # 0.0
+
+CATEGORIES=	x11
+
+# GPLv2/LGPLv2/GFDLv1.1
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+WANTLIB += GL ICE ORBit-2 SM X11 XRes Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += asn1 atk-1.0 c cairo cairo-gobject camel-1.2 com_err
+WANTLIB += croco-0.6 crypto dbus-1 dbus-glib-1 dconf drm ebook-1.2
+WANTLIB += ecal-1.2 edataserver-1.2 edataserverui-3.0 execinfo
+WANTLIB += expat fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gnome-keyring
+WANTLIB += gnome-menu gobject-2.0 gpg-error gssapi gthread-2.0
+WANTLIB += gtk-3 gweather-3 ical icalss icalvcal krb5 m nspr4
+WANTLIB += nss3 nssutil3 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += rsvg-2 smime3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3
+WANTLIB += startup-notification-1 telepathy-glib wnck-3 xcb xcb-atom
+WANTLIB += xcb-aux xcb-event xcb-render xcb-shm xml2 z
+
+MODULES=	devel/dconf \
+		devel/gconf2 \
+		devel/gettext \
+		lang/python \
+		x11/gnome
+
+BUILD_DEPENDS=	devel/gobject-introspection
+LIB_DEPENDS=	databases/evolution-data-server \
+		devel/libwnck3 \
+		net/telepathy/telepathy-glib \
+		x11/gnome/desktop \
+		x11/gnome/libgweather \
+		x11/gnome/menus \
+		x11/gnome/librsvg
+RUN_DEPENDS=	notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon \
+		x11/gnome/icon-theme-symbolic
+
+MODGNOME_HELP_FILES= 	Yes
+DESKTOP_FILES=		Yes
+MODGCONF2_SCHEMAS_DIR=	gnome-panel
+
+FAKE_FLAGS=	dbus_confdir=${PREFIX}/share/examples/gnome-panel/dbus-1/system.d
+
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--disable-gtk-doc \
+		--disable-network-manager \
+		--enable-introspection \
+		--enable-eds \
+		--enable-telepathy-glib \
+		--with-in-process-applets=all
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
+USE_GROFF =	Yes
+
+.include <bsd.port.mk>

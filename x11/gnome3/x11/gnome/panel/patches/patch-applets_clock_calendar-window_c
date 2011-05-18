@@ -1,0 +1,21 @@
+$OpenBSD: patch-applets_clock_calendar-window_c,v 1.1.1.1 2011/05/18 15:32:45 jasper Exp $
+
+From 241e288c0a9d30f9f2e8d608b0bbd950c1ac959c Mon Sep 17 00:00:00 2001
+From: Rodrigo Moya <rodrigo@gnome-db.org>
+Date: Mon, 02 May 2011 13:55:19 +0000
+Subject: clock applet: Pass the correct month to Evolution command line
+
+gtk_calendar_get_date returns the month between 0 and 11, so we need to add
+1 to the month being passed to Evolution
+
+--- applets/clock/calendar-window.c.orig	Wed May 18 13:36:13 2011
++++ applets/clock/calendar-window.c	Wed May 18 13:36:41 2011
+@@ -1245,7 +1245,7 @@ calendar_day_activated (GtkCalendar    *calendar,
+ 
+ 	argument = g_strdup_printf ("calendar:///?startdate="
+ 				    "%.4d%.2d%.2d",
+-				    year, month, day);
++				    year, month + 1, day);
+ 
+ 	clock_launch_calendar_app (calwin, argument);
+ 
