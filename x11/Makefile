@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.456 2011/05/17 15:04:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.457 2011/05/18 01:10:50 jeremy Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -232,6 +232,7 @@
      SUBDIR += rox-filer
      SUBDIR += roxterm
      SUBDIR += ruby-dbus
+     SUBDIR += ruby-profligacy
      SUBDIR += rxvt
      SUBDIR += rxvt-unicode
      SUBDIR += sawfish
