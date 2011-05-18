@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2011/01/18 21:03:05 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2011/05/18 21:13:49 ajacoutot Exp $
 
 COMMENT=	Xfce4 dictionary application
 
 XFCE_VERSION=	0.6.0
 XFCE_GOODIE=	xfce4-dict
-REVISION=	2
+REVISION=	3
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,6 +17,10 @@ DESKTOP_FILES=	Yes
 
 LIB_DEPENDS=	x11/xfce4/xfce4-panel \
 		x11/xfce4/libxfcegui4
+
+# nothing in the dep chain provides librsvg, so explicitely depend on it
+# so that the icon is correctly displayed
+RUN_DEPENDS+=	x11/gnome/librsvg
 
 WANTLIB=	ICE SM X11 Xdmcp Xrender Xdamage Xau fontconfig freetype \
 		Xcursor Xext Xfixes Xi Xinerama Xcomposite Xrandr expat \
