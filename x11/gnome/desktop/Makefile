@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2011/05/14 21:29:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2011/05/18 15:49:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -46,10 +46,5 @@ CONFIGURE_ARGS+=	--with-gnome-distributor="OpenBSD Ports" \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =		Yes
-
-# stop systrace spam by avoiding xsltproc to access net
-pre-configure:
-	find ${WRKSRC}/desktop-docs/ -name Makefile.in \
-		-exec perl -pi -e 's,xsltproc,xsltproc --nonet,g' {} \;
 
 .include <bsd.port.mk>
