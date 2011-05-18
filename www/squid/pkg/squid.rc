@@ -1,17 +1,17 @@
 #!/bin/sh
 #
-# $OpenBSD: squid.rc,v 1.4 2010/12/27 14:50:24 ajacoutot Exp $
+# $OpenBSD: squid.rc,v 1.5 2011/05/18 14:47:55 sthen Exp $
 
 daemon="${TRUEPREFIX}/sbin/squid"
 
 . /etc/rc.d/rc.subr
 
 rc_stop() {
-	${daemon} -k shutdown
+	${daemon} ${daemon_flags} -k shutdown
 }
 
 rc_reload() {
-	${daemon} -k reconfigure
+	${daemon} ${daemon_flags} -k reconfigure
 }
 
 rc_cmd $1
