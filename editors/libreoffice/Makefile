@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/05/17 07:57:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2011/05/18 07:42:29 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -146,7 +146,7 @@ LIB_DEPENDS-main=x11/gtk+2 \
 WANTLIB-main=	gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
 		db>=4 xslt>=3 curl>=7 neon>=24 \
 		icuuc>=0 icudata>=0 icui18n icule \
-		raptor>=2 rasqal rdf>=0 poppler hunspell
+		raptor>=2 rasqal rdf>=0 poppler
 WANTLIB-main+=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
 		crypto expat fontconfig freetype gio-2.0 glib-2.0 \
