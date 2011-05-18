@@ -1,6 +1,6 @@
-$OpenBSD: patch-Configure,v 1.30 2011/01/15 01:19:35 naddy Exp $
---- Configure.orig	Mon Jan 18 12:01:14 2010
-+++ Configure	Fri Jan 14 18:17:37 2011
+$OpenBSD: patch-Configure,v 1.31 2011/05/18 16:25:14 ajacoutot Exp $
+--- Configure.orig	Mon Jan 18 20:01:14 2010
++++ Configure	Tue May 17 19:42:36 2011
 @@ -3738,12 +3738,6 @@ return(0); }
  	LSOF_TSTBIGF=" "
  	LSOF_VERS=2090
@@ -86,7 +86,19 @@ $OpenBSD: patch-Configure,v 1.30 2011/01/15 01:19:35 naddy Exp $
        ;;
      *)
        echo "Unknown OpenBSD version: $LSOF_VERS"
-@@ -4041,6 +4075,14 @@ return(0); }
+@@ -3863,11 +3897,6 @@ return(0); }
+ 	LSOF_TMP1=1
+       fi	# }
+     fi	# }
+-    if test -d ${OPENBSD_SYS}/miscfs/procfs	# {
+-    then
+-      LSOF_CFGF="$LSOF_CFGF -DHASPROCFS"
+-      LSOF_TMP1=1
+-    fi	# }
+     if test -d ${OPENBSD_SYS}/isofs/cd9660	# {
+     then
+       LSOF_CFGF="$LSOF_CFGF -DHAS9660FS=1"
+@@ -4041,6 +4070,14 @@ return(0); }
      if test -r ${LSOF_INCLUDE}/sys/pipe.h	# {
      then
        LSOF_CFGF="$LSOF_CFGF -DHAS_SYS_PIPEH"
