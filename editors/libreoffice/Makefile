@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/05/18 07:42:29 robert Exp $
+# $OpenBSD: Makefile,v 1.29 2011/05/18 16:31:07 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -18,7 +18,7 @@ CATEGORIES=	editors productivity
 
 EPOCH=		0
 
-REVISION=	2
+REVISION=	3
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
