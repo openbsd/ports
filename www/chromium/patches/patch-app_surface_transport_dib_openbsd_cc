@@ -1,7 +1,7 @@
-$OpenBSD: patch-app_surface_transport_dib_openbsd_cc,v 1.3 2011/03/21 11:27:46 robert Exp $
---- app/surface/transport_dib_openbsd.cc.orig	Fri Mar 18 09:12:57 2011
-+++ app/surface/transport_dib_openbsd.cc	Mon Mar 21 09:25:51 2011
-@@ -0,0 +1,96 @@
+$OpenBSD: patch-app_surface_transport_dib_openbsd_cc,v 1.4 2011/05/18 17:02:56 robert Exp $
+--- app/surface/transport_dib_openbsd.cc.orig	Mon May 16 16:10:03 2011
++++ app/surface/transport_dib_openbsd.cc	Wed May 18 18:13:53 2011
+@@ -0,0 +1,102 @@
 +// Copyright (c) 2009 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -12,8 +12,9 @@ $OpenBSD: patch-app_surface_transport_dib_openbsd_cc,v 1.3 2011/03/21 11:27:46 r
 +#include <sys/stat.h>
 +
 +#include "base/eintr_wrapper.h"
-+#include "base/shared_memory.h"
++#include "base/logging.h"
 +#include "base/scoped_ptr.h"
++#include "base/shared_memory.h"
 +#include "skia/ext/platform_canvas.h"
 +
 +TransportDIB::TransportDIB()
@@ -53,6 +54,20 @@ $OpenBSD: patch-app_surface_transport_dib_openbsd_cc,v 1.3 2011/03/21 11:27:46 r
 +  return new TransportDIB(handle);
 +}
 +
++// static
++bool TransportDIB::is_valid(Handle dib) {
++  return dib.fd >= 0;
++}
++
++skia::PlatformCanvas* TransportDIB::GetPlatformCanvas(int w, int h) {
++  if (!memory() && !Map())
++    return NULL;
++  scoped_ptr<skia::PlatformCanvas> canvas(new skia::PlatformCanvas);
++  if (!canvas->initialize(w, h, true, reinterpret_cast<uint8_t*>(memory())))
++    return NULL;
++  return canvas.release();
++}
++
 +bool TransportDIB::Map() {
 +  if (!is_valid(handle()))
 +    return false;
@@ -67,15 +82,6 @@ $OpenBSD: patch-app_surface_transport_dib_openbsd_cc,v 1.3 2011/03/21 11:27:46 r
 +
 +  size_ = st.st_size;
 +  return true;
-+}
-+
-+bool TransportDIB::is_valid(Handle dib) {
-+  return dib.fd >= 0;
-+}
-+
-+skia::PlatformCanvas* TransportDIB::GetPlatformCanvas(int w, int h) {
-+  return new skia::PlatformCanvas(w, h, true,
-+                                  reinterpret_cast<uint8_t*>(memory()));
 +}
 +
 +void* TransportDIB::memory() const {
