@@ -1,6 +1,16 @@
-$OpenBSD: patch-src_nettool_c,v 1.1.1.1 2010/04/10 16:51:07 ajacoutot Exp $
---- src/nettool.c.orig	Tue Sep 22 15:30:34 2009
-+++ src/nettool.c	Tue Mar 30 15:38:15 2010
+$OpenBSD: patch-src_nettool_c,v 1.2 2011/05/18 15:25:55 jasper Exp $
+
+On OpenBSD configured interfaces have default IPv6 address, this would
+cause the code in netinfo_get_ip_version() to believe we should use the IPv6
+version of various tools, like ping6 and traceroute6. While in reality many people
+leave the interfaces as is (don't remove the IPv6 address) and use the interface
+over IPv4. So the IPv6 tools wouldn't have a proper way out and fail, this was the
+default behaviour...
+Now the code defaults to checking if for AF_INET address family instead
+of the other way around (which would thus always return IPv6).
+
+--- src/nettool.c.orig	Thu Dec  2 10:26:14 2010
++++ src/nettool.c	Wed May 18 15:43:49 2011
 @@ -24,6 +24,7 @@
  #include <string.h>
  #include <sys/types.h>
@@ -9,6 +19,32 @@ $OpenBSD: patch-src_nettool_c,v 1.1.1.1 2010/04/10 16:51:07 ajacoutot Exp $
  #include <signal.h>
  #include <errno.h>
  #include <sys/wait.h>
+@@ -137,21 +138,21 @@ netinfo_get_ip_version (Netinfo * netinfo)
+ 				   (GTK_BIN (netinfo->host)))));
+ 
+ 	if (strlen (ip) > 0) {
+-		host = gethostbyname2 (ip, AF_INET6);
++		host = gethostbyname2 (ip, AF_INET);
+ 		if (host == NULL) {
+-			host = gethostbyname2 (ip, AF_INET);
++			host = gethostbyname2 (ip, AF_INET6);
+ 			if (host == NULL)
+ 				return -1;
+ 			else {
+ 				g_free (ip);
+-				return IPV4;
++				return IPV6;
+ 			}
+ 			
+ 			return -1;
+ 		}
+ 		else {
+ 			g_free (ip);
+-			return IPV6;
++			return IPV4;
+ 		}
+ 
+ 	}
 @@ -374,6 +375,10 @@ netinfo_io_text_buffer_dialog (GIOChannel * channel,
  						 	len, NULL);
  			}

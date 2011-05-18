@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2011/05/14 21:29:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/05/18 15:25:55 jasper Exp $
 
 COMMENT=	GNOME interface for various networking tools
 
 GNOME_PROJECT=	gnome-nettool
 GNOME_VERSION=	2.32.0
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net
 
