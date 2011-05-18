@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2011/05/05 12:30:16 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.19 2011/05/18 19:38:15 matthieu Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
 VERSION=	1.9
 DISTNAME=	automake-${VERSION}.6
-REVISION=	6
+REVISION=	7
 PKGSPEC =	automake->=${VERSION},<1.10
 
 CATEGORIES=	devel
