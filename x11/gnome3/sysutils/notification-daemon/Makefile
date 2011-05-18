@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/17 14:11:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/18 11:06:05 jasper Exp $
 
 COMMENT=		send small notifications to your desktop
 
 GNOME_VERSION=		0.7.1
 GNOME_PROJECT=		notification-daemon
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		sysutils net
 
@@ -30,7 +30,6 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		devel/libnotify>=0.7.2 \
 			devel/libtool,-ltdl \
-			devel/libwnck \
 			audio/libcanberra,-gtk3
 RUN_DEPENDS=		devel/desktop-file-utils
 
