@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/18 15:32:45 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/18 16:22:55 jasper Exp $
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
 @bin bin/panel-test-applets
@@ -441,11 +441,7 @@ share/locale/fy/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/ga/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/gl/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/gu/LC_MESSAGES/gnome-panel-3.0.mo
-share/locale/gv/
-share/locale/gv/LC_MESSAGES/
 share/locale/gv/LC_MESSAGES/gnome-panel-3.0.mo
-share/locale/ha/
-share/locale/ha/LC_MESSAGES/
 share/locale/ha/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/he/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/hi/LC_MESSAGES/gnome-panel-3.0.mo
@@ -453,8 +449,6 @@ share/locale/hr/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/hu/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/hy/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/id/LC_MESSAGES/gnome-panel-3.0.mo
-share/locale/ig/
-share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/is/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/it/LC_MESSAGES/gnome-panel-3.0.mo
@@ -513,8 +507,6 @@ share/locale/vi/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/wa/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/xh/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/yi/LC_MESSAGES/gnome-panel-3.0.mo
-share/locale/yo/
-share/locale/yo/LC_MESSAGES/
 share/locale/yo/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-panel-3.0.mo
