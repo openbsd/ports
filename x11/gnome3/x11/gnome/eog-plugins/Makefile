@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/18 08:57:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/18 09:06:28 ajacoutot Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
 GNOME_VERSION=		3.0.0
+REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -31,9 +32,8 @@ MODULES=		devel/dconf \
 LIB_DEPENDS=    	devel/libpeas \
 			graphics/libexif
 BUILD_DEPENDS=		${RUN_DEPENDS}
-# Depend on the same x.yy version of eog
-RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			x11/gnome/eog>=3.0
+# Depends on the same X.Y version of eog.
+RUN_DEPENDS=		x11/gnome/eog>=3.0
 
 # XXX: All plugins minus 'map' which requires libchamplain -> clutter
 PLUGINS=		fit-to-width,exif-display,send-by-mail,postasa
