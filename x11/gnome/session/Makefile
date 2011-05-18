@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.150 2011/05/17 15:05:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.151 2011/05/18 15:40:11 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
@@ -62,7 +62,5 @@ USE_GROFF =	Yes
 # XXX gconf2 MODULE changes this value but gsm-gconf.c uses this to
 # find the right path for gconftool-2
 CONFIGURE_ENV+=		GCONFTOOL=${LOCALBASE}/bin/gconftool-2
-
-MAKE_FLAGS=		XSLTPROC="${LOCALBASE}/bin/xsltproc -nonet"
 
 .include <bsd.port.mk>
