@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2011/05/17 18:21:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2011/05/18 15:50:37 ajacoutot Exp $
 
 COMMENT=	official media player for GNOME
 
@@ -87,11 +87,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-narrowspace-plugin \
 		--disable-mully-plugin \
 		--disable-cone-plugin
-
-# stop systrace spam by avoiding xsltproc to access net
-pre-configure:
-	perl -pi -e 's,xsltproc,xsltproc --nonet,g' \
-		${WRKSRC}/help/Makefile.in
 
 post-install:
 	${INSTALL_DATA_DIR}  ${PREFIX}/share/vala/vapi

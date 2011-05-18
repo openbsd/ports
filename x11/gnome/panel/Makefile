@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2011/04/13 06:47:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2011/05/18 15:50:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -76,10 +76,5 @@ MODULES+=	lang/python
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 USE_GROFF =	Yes
-
-pre-configure:
-	perl -pi -e 's,xsltproc -o,xsltproc --nonet -o,g' \
-		${WRKSRC}/help/clock/Makefile.in \
-		${WRKSRC}/help/fish/Makefile.in
 
 .include <bsd.port.mk>
