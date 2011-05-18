@@ -1,6 +1,11 @@
-$OpenBSD: patch-src_info_c,v 1.1.1.1 2011/05/17 17:21:35 jasper Exp $
---- src/info.c.orig	Tue Sep 22 15:30:34 2009
-+++ src/info.c	Tue Mar 30 15:42:12 2010
+$OpenBSD: patch-src_info_c,v 1.2 2011/05/18 13:29:11 jasper Exp $
+
+- Add OpenBSD/FreeBSD specific code
+- g_object_unref() prevents interface name and pixmap from being displayed,
+  and creates a storm of critial gtk warnings, upstream bz: #647896.
+
+--- src/info.c.orig	Thu Dec  2 10:26:14 2010
++++ src/info.c	Wed May 18 15:21:05 2011
 @@ -20,6 +20,10 @@
  #include <gtk/gtk.h>
  #include <glib/gi18n.h>
@@ -77,3 +82,19 @@ $OpenBSD: patch-src_info_c,v 1.1.1.1 2011/05/17 17:21:35 jasper Exp $
  			(*iface) = g_strdup_printf ("%s (%s)", _(info_iface_desc[i].name), dev_name);
  			if (info_iface_desc[i].pixbuf == NULL) {
  				path = g_build_filename (PIXMAPS_DIR, info_iface_desc[i].icon, NULL);
+@@ -200,13 +243,13 @@ info_load_iface (Netinfo *info)
+ 	gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (info->combo), renderer, TRUE);
+ 	gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (info->combo), renderer,
+ 					"pixbuf", 0, NULL);
+-	g_object_unref (renderer);
++	/* g_object_unref (renderer); */
+ 
+ 	renderer = gtk_cell_renderer_text_new ();
+ 	gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (info->combo), renderer, TRUE);
+ 	gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (info->combo), renderer,
+ 					"markup", 1, NULL);
+-	g_object_unref (renderer);
++	/* g_object_unref (renderer); */
+ 
+ 	gtk_combo_box_set_active (GTK_COMBO_BOX (info->combo), 0);
+ }

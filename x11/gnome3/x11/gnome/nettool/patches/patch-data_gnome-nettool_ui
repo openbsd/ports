@@ -1,0 +1,33 @@
+$OpenBSD: patch-data_gnome-nettool_ui,v 1.1 2011/05/18 13:29:11 jasper Exp $
+
+Gtkcombo of the address for traceroute/port scan/and whois
+should not extend.
+
+Upstream bz #647895.
+
+--- data/gnome-nettool.ui.orig	Tue Jan 11 11:32:42 2011
++++ data/gnome-nettool.ui	Wed May 18 15:09:03 2011
+@@ -1623,6 +1623,7 @@
+                     <property name="visible">True</property>
+                     <property name="border_width">6</property>
+                     <property name="spacing">12</property>
++                    <property name="expand">False</property>
+                     <child>
+                       <object class="GtkHBox" id="hbox36">
+                         <property name="visible">True</property>
+@@ -1775,6 +1776,7 @@
+                     <property name="visible">True</property>
+                     <property name="border_width">6</property>
+                     <property name="spacing">12</property>
++                    <property name="expand">False</property>
+                     <child>
+                       <object class="GtkHBox" id="hbox37">
+                         <property name="visible">True</property>
+@@ -2337,6 +2339,7 @@
+                     <property name="visible">True</property>
+                     <property name="border_width">6</property>
+                     <property name="spacing">12</property>
++                    <property name="expand">False</property>
+                     <child>
+                       <object class="GtkHBox" id="hbox38">
+                         <property name="visible">True</property>
