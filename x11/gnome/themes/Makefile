@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.52 2011/05/19 10:38:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2011/05/19 12:45:23 ajacoutot Exp $
 
 COMMENT=		themes collection for GNOME
 
 GNOME_PROJECT=		gnome-themes
 GNOME_VERSION=		2.32.1
 
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		x11
 
@@ -27,5 +27,26 @@ RUN_DEPENDS +=		x11/gnome/icon-theme
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+# Accessibility themes are now in gnome-themes-standard.
+RM_THEMES=	themes/HighContrast \
+		themes/HighContrastInverse \
+		themes/HighContrastLargePrint \
+		themes/HighContrastLargePrintInverse \
+		themes/LowContrast \
+		themes/LowContrastLargePrint \
+		themes/Inverted \
+		themes/LargePrint \
+		icons/HighContrast \
+		icons/HighContrastInverse \
+		icons/HighContrastLargePrint \
+		icons/HighContrastLargePrintInverse \
+		icons/HighContrast-SVG \
+		icons/LargePrint
+
+post-install:
+.for t in ${RM_THEMES}
+	rm -rf ${PREFIX}/share/$t
+.endfor
 
 .include <bsd.port.mk>
