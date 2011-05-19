@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2011/05/19 10:31:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/05/19 10:38:54 ajacoutot Exp $
 
 COMMENT=		themes collection for GNOME
 
 GNOME_PROJECT=		gnome-themes-extras
 GNOME_VERSION=		2.22.0
-REVISION=		10
+REVISION=		11
 
 CATEGORIES=		x11
 
@@ -28,7 +28,7 @@ RUN_DEPENDS=		devel/gettext \
 			x11/gtk-engines2>=2.11
 
 # Add the corresponding "Inherits" theme.
-RUN_DEPENDS +=		x11/gnome/themes
+RUN_DEPENDS +=		x11/gnome/icon-theme
 
 USE_LIBTOOL=		No
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
