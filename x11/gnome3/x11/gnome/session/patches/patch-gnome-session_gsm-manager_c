@@ -1,0 +1,92 @@
+$OpenBSD: patch-gnome-session_gsm-manager_c,v 1.1.1.1 2011/05/19 08:36:41 ajacoutot Exp $
+
+OpenBSD does not support uPower.
+
+--- gnome-session/gsm-manager.c.orig	Wed May 18 15:27:29 2011
++++ gnome-session/gsm-manager.c	Wed May 18 15:28:58 2011
+@@ -39,7 +39,9 @@
+ #include <dbus/dbus-glib-lowlevel.h>
+ #include <librsvg/rsvg.h>
+ 
++#ifndef __OpenBSD__
+ #include <upower.h>
++#endif
+ 
+ #include <gtk/gtk.h> /* for logout dialog */
+ 
+@@ -154,7 +156,9 @@ struct GsmManagerPrivate
+         DBusGConnection        *connection;
+ 
+         /* Interface with other parts of the system */
++#ifndef __OpenBSD__
+         UpClient               *up_client;
++#endif
+ 
+         GsmShell               *shell;
+         guint                   shell_end_session_dialog_canceled_id;
+@@ -1096,6 +1100,7 @@ manager_perhaps_lock (GsmManager *manager)
+ static void
+ manager_attempt_hibernate (GsmManager *manager)
+ {
++#ifndef __OpenBSD__
+         gboolean  can_hibernate;
+         GError   *error;
+         gboolean  ret;
+@@ -1114,11 +1119,13 @@ manager_attempt_hibernate (GsmManager *manager)
+                         g_error_free (error);
+                 }
+         }
++#endif
+ }
+ 
+ static void
+ manager_attempt_suspend (GsmManager *manager)
+ {
++#ifndef __OpenBSD__
+         gboolean  can_suspend;
+         GError   *error;
+         gboolean  ret;
+@@ -1137,6 +1144,7 @@ manager_attempt_suspend (GsmManager *manager)
+                         g_error_free (error);
+                 }
+         }
++#endif
+ }
+ 
+ static void
+@@ -2519,10 +2527,12 @@ gsm_manager_dispose (GObject *object)
+                 manager->priv->lockdown_settings = NULL;
+         }
+ 
++#ifndef __OpenBSD__
+         if (manager->priv->up_client != NULL) {
+                 g_object_unref (manager->priv->up_client);
+                 manager->priv->up_client = NULL;
+         }
++#endif
+ 
+         if (manager->priv->shell != NULL) {
+                 g_object_unref (manager->priv->shell);
+@@ -2728,7 +2738,9 @@ gsm_manager_init (GsmManager *manager)
+                                       NULL,
+                                       NULL, NULL);
+ 
++#ifndef __OpenBSD__
+         manager->priv->up_client = up_client_new ();
++#endif
+ 
+         manager->priv->shell = gsm_get_shell ();
+ }
+@@ -3332,10 +3344,12 @@ gsm_manager_can_shutdown (GsmManager *manager,
+         gboolean can_suspend;
+         gboolean can_hibernate;
+ 
++#ifndef __OpenBSD__
+         g_object_get (manager->priv->up_client,
+                       "can-suspend", &can_suspend,
+                       "can-hibernate", &can_hibernate,
+                       NULL);
++#endif
+ 
+         g_debug ("GsmManager: CanShutdown called");
+ 

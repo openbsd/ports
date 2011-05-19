@@ -1,0 +1,73 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2011/05/19 08:36:41 ajacoutot Exp $
+--- configure.orig	Tue Apr 26 09:13:11 2011
++++ configure	Wed May 18 14:37:50 2011
+@@ -11298,14 +11298,12 @@ if test -n "$GNOME_SESSION_CFLAGS"; then
+         gio-2.0 >= \$GLIB_REQUIRED
+         gtk+-3.0 >= \$GTK3_REQUIRED
+         dbus-glib-1 >= \$DBUS_GLIB_REQUIRED
+-        upower-glib >= \$UPOWER_REQUIRED
+         librsvg-2.0
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "glib-2.0 >= $GLIB_REQUIRED
+         gio-2.0 >= $GLIB_REQUIRED
+         gtk+-3.0 >= $GTK3_REQUIRED
+         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+-        upower-glib >= $UPOWER_REQUIRED
+         librsvg-2.0
+ ") 2>&5
+   ac_status=$?
+@@ -11315,7 +11313,6 @@ if test -n "$GNOME_SESSION_CFLAGS"; then
+         gio-2.0 >= $GLIB_REQUIRED
+         gtk+-3.0 >= $GTK3_REQUIRED
+         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+-        upower-glib >= $UPOWER_REQUIRED
+         librsvg-2.0
+ " 2>/dev/null`
+ else
+@@ -11332,14 +11329,12 @@ if test -n "$GNOME_SESSION_LIBS"; then
+         gio-2.0 >= \$GLIB_REQUIRED
+         gtk+-3.0 >= \$GTK3_REQUIRED
+         dbus-glib-1 >= \$DBUS_GLIB_REQUIRED
+-        upower-glib >= \$UPOWER_REQUIRED
+         librsvg-2.0
+ \""; } >&5
+   ($PKG_CONFIG --exists --print-errors "glib-2.0 >= $GLIB_REQUIRED
+         gio-2.0 >= $GLIB_REQUIRED
+         gtk+-3.0 >= $GTK3_REQUIRED
+         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+-        upower-glib >= $UPOWER_REQUIRED
+         librsvg-2.0
+ ") 2>&5
+   ac_status=$?
+@@ -11349,7 +11344,6 @@ if test -n "$GNOME_SESSION_LIBS"; then
+         gio-2.0 >= $GLIB_REQUIRED
+         gtk+-3.0 >= $GTK3_REQUIRED
+         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+-        upower-glib >= $UPOWER_REQUIRED
+         librsvg-2.0
+ " 2>/dev/null`
+ else
+@@ -11375,7 +11369,6 @@ fi
+         gio-2.0 >= $GLIB_REQUIRED
+         gtk+-3.0 >= $GTK3_REQUIRED
+         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+-        upower-glib >= $UPOWER_REQUIRED
+         librsvg-2.0
+ " 2>&1`
+         else
+@@ -11383,7 +11376,6 @@ fi
+         gio-2.0 >= $GLIB_REQUIRED
+         gtk+-3.0 >= $GTK3_REQUIRED
+         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+-        upower-glib >= $UPOWER_REQUIRED
+         librsvg-2.0
+ " 2>&1`
+         fi
+@@ -11394,7 +11386,6 @@ fi
+         gio-2.0 >= $GLIB_REQUIRED
+         gtk+-3.0 >= $GTK3_REQUIRED
+         dbus-glib-1 >= $DBUS_GLIB_REQUIRED
+-        upower-glib >= $UPOWER_REQUIRED
+         librsvg-2.0
+ ) were not met:
+ 

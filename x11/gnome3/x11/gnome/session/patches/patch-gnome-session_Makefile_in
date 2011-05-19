@@ -1,0 +1,11 @@
+$OpenBSD: patch-gnome-session_Makefile_in,v 1.1.1.1 2011/05/19 08:36:41 ajacoutot Exp $
+--- gnome-session/Makefile.in.orig	Tue Apr 26 09:13:13 2011
++++ gnome-session/Makefile.in	Wed May 18 14:37:20 2011
+@@ -399,6 +399,7 @@ gnome_session_CPPFLAGS = \
+ 
+ gnome_session_LDADD = \
+ 	libgsmutil.la 				\
++	-lexecinfo				\
+ 	$(top_builddir)/egg/libeggdesktopfile.la \
+ 	$(SM_LIBS)				\
+ 	$(ICE_LIBS)				\
