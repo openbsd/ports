@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.25 2011/04/04 08:01:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.26 2011/05/19 17:18:19 ajacoutot Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
@@ -58,6 +58,7 @@ include/libfreebusy/recurrence.h
 include/libzarafasync/
 include/libzarafasync/ECLibSync.h
 include/libzarafasync/ECOfflineABImporter.h
+include/libzarafasync/ECResyncSet.h
 include/libzarafasync/ECSync.h
 include/libzarafasync/ECSyncContext.h
 include/libzarafasync/ECSyncLog.h
@@ -140,6 +141,7 @@ include/zarafa/rtfutil.h
 include/zarafa/str1252.h
 include/zarafa/stringutil.h
 include/zarafa/threadutil.h
+include/zarafa/userutil.h
 lib/libarchiver.la
 @lib lib/libarchiver.so.${LIBarchiver_VERSION}
 lib/libcommon_mapi.la

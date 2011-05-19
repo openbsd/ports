@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.9 2011/03/11 08:44:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.10 2011/05/19 17:18:19 ajacoutot Exp $
 @conflict php5-mapi-*
 @pkgpath mail/zarafa/webaccess
 @pkgpath mail/zarafa/zarafa,-php
@@ -346,6 +346,7 @@ zarafa-webaccess/client/layout/img/icon_stickynote_white_large.gif
 zarafa-webaccess/client/layout/img/icon_stickynote_yellow.gif
 zarafa-webaccess/client/layout/img/icon_stickynote_yellow_large.gif
 zarafa-webaccess/client/layout/img/icon_store.gif
+zarafa-webaccess/client/layout/img/icon_stubbed.gif
 zarafa-webaccess/client/layout/img/icon_task.gif
 zarafa-webaccess/client/layout/img/icon_task_complete.gif
 zarafa-webaccess/client/layout/img/icon_task_recurring.gif

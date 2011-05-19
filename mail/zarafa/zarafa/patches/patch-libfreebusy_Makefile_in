@@ -1,7 +1,7 @@
-$OpenBSD: patch-libfreebusy_Makefile_in,v 1.9 2011/03/11 08:44:44 ajacoutot Exp $
---- libfreebusy/Makefile.in.orig	Sun Feb 27 19:34:35 2011
-+++ libfreebusy/Makefile.in	Thu Mar 10 17:22:03 2011
-@@ -262,7 +262,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX \
+$OpenBSD: patch-libfreebusy_Makefile_in,v 1.10 2011/05/19 17:18:19 ajacoutot Exp $
+--- libfreebusy/Makefile.in.orig	Thu May 19 12:24:06 2011
++++ libfreebusy/Makefile.in	Thu May 19 18:30:37 2011
+@@ -266,7 +266,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX \
  	-I${top_srcdir}/common
  
  libfreebusy_la_includedir = $(includedir)/libfreebusy

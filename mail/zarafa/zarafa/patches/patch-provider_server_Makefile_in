@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_server_Makefile_in,v 1.9 2011/03/11 08:44:44 ajacoutot Exp $
---- provider/server/Makefile.in.orig	Sun Feb 27 19:34:36 2011
-+++ provider/server/Makefile.in	Thu Mar 10 17:22:03 2011
-@@ -280,10 +280,11 @@ zarafa_server_LDADD = $(UUID_LIBS) $(INTL_LIBS) $(ICON
+$OpenBSD: patch-provider_server_Makefile_in,v 1.10 2011/05/19 17:18:19 ajacoutot Exp $
+--- provider/server/Makefile.in.orig	Thu May 19 12:24:07 2011
++++ provider/server/Makefile.in	Thu May 19 18:30:37 2011
+@@ -284,10 +284,11 @@ zarafa_server_LDADD = $(UUID_LIBS) $(INTL_LIBS) $(ICON
  	${top_builddir}/provider/soap/libgsoap.la								\
  	${top_builddir}/provider/soap/libsoapserver.la							\
  	${top_builddir}/provider/common/libzarafacommon.la						\

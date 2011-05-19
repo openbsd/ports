@@ -1,6 +1,6 @@
-$OpenBSD: patch-doc_manual_xml,v 1.19 2011/04/04 08:01:04 ajacoutot Exp $
---- doc/manual.xml.orig	Mon Mar 28 20:32:05 2011
-+++ doc/manual.xml	Mon Apr  4 09:05:53 2011
+$OpenBSD: patch-doc_manual_xml,v 1.20 2011/05/19 17:18:18 ajacoutot Exp $
+--- doc/manual.xml.orig	Thu May 19 12:22:26 2011
++++ doc/manual.xml	Thu May 19 18:30:36 2011
 @@ -837,9 +837,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
@@ -176,7 +176,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.19 2011/04/04 08:01:04 ajacoutot Exp $
  	  </refsection>
  
  	  <refsection>
-@@ -9013,9 +8974,7 @@
+@@ -9039,9 +9000,7 @@
  		  <varlistentry>
  			<term><option>pid_file</option></term>
  			<listitem>
@@ -187,7 +187,7 @@ $OpenBSD: patch-doc_manual_xml,v 1.19 2011/04/04 08:01:04 ajacoutot Exp $
  			  </para>
  			  <para>Default:
  			  <replaceable>/var/run/zarafa-licensed.pid</replaceable>
-@@ -9634,13 +9593,6 @@
+@@ -9660,13 +9619,6 @@
  		  <option>-c</option>
  		  <replaceable>/path/to/indexer.cfg</replaceable>
  		</para>
