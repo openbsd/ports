@@ -1,7 +1,27 @@
-$OpenBSD: patch-scripts_xdg-open,v 1.5 2011/03/28 07:12:05 ajacoutot Exp $
+$OpenBSD: patch-scripts_xdg-open,v 1.6 2011/05/19 18:35:43 ajacoutot Exp $
+
+Merge part of:
+From 79fe2261b0025b36515d17d3c22c162bf1c7efb3 Mon Sep 17 00:00:00 2001
+From: Rex Dieter <rdieter@math.unl.edu>
+Date: Fri, 16 Oct 2009 17:10:55 +0000
+Subject: * prefer gvfs-open over gnome-open
+
 --- scripts/xdg-open.orig	Sun Jun 24 21:58:01 2007
-+++ scripts/xdg-open	Mon Mar 28 08:58:36 2011
-@@ -364,7 +364,9 @@ open_generic()
++++ scripts/xdg-open	Thu May 19 20:24:15 2011
+@@ -338,7 +338,11 @@ open_kde()
+ 
+ open_gnome()
+ {
+-    gnome-open "$1"
++    if gvfs-open --help 2>/dev/null 1>&2; then
++        gvfs-open "$1"
++    else
++        gnome-open "$1"
++    fi
+ 
+     if [ $? -eq 0 ]; then
+         exit_success
+@@ -364,7 +368,9 @@ open_generic()
      for browser in $BROWSER; do
          if [ x"$browser" != x"" ]; then
  
@@ -12,7 +32,7 @@ $OpenBSD: patch-scripts_xdg-open,v 1.5 2011/03/28 07:12:05 ajacoutot Exp $
  
              if [ x"$browser_with_arg" = x"$browser" ]; then "$browser" "$1";
              else $browser_with_arg;
-@@ -403,12 +405,21 @@ if [ -z "${url}" ] ; then
+@@ -403,12 +409,21 @@ if [ -z "${url}" ] ; then
      exit_failure_syntax "file or URL argument missing"
  fi
  
