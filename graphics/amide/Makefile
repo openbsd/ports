@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2011/05/17 08:37:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/05/19 15:28:26 ajacoutot Exp $
 
 COMMENT =	Amide a Medical Imaging Data Examiner
 
 DISTNAME =	amide-0.9.2
-REVISION =	8
+REVISION =	9
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://amide.sourceforge.net/
@@ -49,8 +49,8 @@ USE_GMAKE =	Yes
 USE_GROFF =		Yes
 
 AUTOCONF_VERSION =	2.63
-CONFIGURE_STYLE =	autoconf gnu
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
+CONFIGURE_STYLE =	autoconf
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			XMEDCON_CONFIG="${LOCALBASE}/bin/xmedcon-config"
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \

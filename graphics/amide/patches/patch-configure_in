@@ -1,19 +1,19 @@
-$OpenBSD: patch-configure_in,v 1.1 2011/05/16 07:42:50 jasper Exp $
+$OpenBSD: patch-configure_in,v 1.2 2011/05/19 15:28:27 ajacoutot Exp $
 
 - Remove over-the-top optimization
 - Fix pthread library
 - Remove gnome-vfs2 dependency.
 
---- configure.in.orig	Sun May 15 23:21:42 2011
-+++ configure.in	Sun May 15 23:22:19 2011
+--- configure.in.orig	Wed Dec  9 01:34:33 2009
++++ configure.in	Wed May 18 20:41:16 2011
 @@ -45,8 +45,8 @@ dnl the library paths with strings that have longer le
  case "$host_os" in
  darwin*) 	CFLAGS="-g -O2 -Wall"
  		LDFLAGS="-headerpad_max_install_names";;
 -*)		CFLAGS="-g -O6 -Wall"
 -		CXXFLAGS="-g -O6 -Wall";;
-+*)		CFLAGS="-g -Wall"
-+		CXXFLAGS="-g -Wall";;
++*)		CFLAGS="${CFLAGS} -Wall"
++		CXXFLAGS="${CXXFLAGS} -Wall";;
  esac
  
  if test $CC = "gcc"; then
