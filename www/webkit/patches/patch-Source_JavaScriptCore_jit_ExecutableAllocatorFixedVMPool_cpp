@@ -1,0 +1,13 @@
+$OpenBSD: patch-Source_JavaScriptCore_jit_ExecutableAllocatorFixedVMPool_cpp,v 1.1 2011/05/19 19:01:03 otto Exp $
+--- Source/JavaScriptCore/jit/ExecutableAllocatorFixedVMPool.cpp.orig	Thu May 19 20:57:31 2011
++++ Source/JavaScriptCore/jit/ExecutableAllocatorFixedVMPool.cpp	Thu May 19 20:58:44 2011
+@@ -392,7 +392,8 @@ typedef AllocationTableDirectory<LazyAllocationTable<P
+ 
+ #if CPU(ARM)
+ typedef PageTables16MB FixedVMPoolPageTables;
+-#elif CPU(X86_64)
++// We don't want an initial allocation of 1GB, it's above the default ulimit
++#elif CPU(X86_64) && !defined(__OpenBSD__)
+ typedef PageTables1GB FixedVMPoolPageTables;
+ #else
+ typedef PageTables32MB FixedVMPoolPageTables;
