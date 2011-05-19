@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2011/05/17 14:03:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/19 21:01:13 ajacoutot Exp $
 %%SHARED%%
 bin/gnome-keyring
 @bin bin/gnome-keyring-3
@@ -116,7 +116,9 @@ share/gtk-doc/html/gcr-3/GcrImporter.html
 share/gtk-doc/html/gcr-3/GcrParser.html
 share/gtk-doc/html/gcr-3/GcrPkcs11Certificate.html
 share/gtk-doc/html/gcr-3/GcrSimpleCertificate.html
+share/gtk-doc/html/gcr-3/certificate-widget.png
 share/gtk-doc/html/gcr-3/certificates.html
+share/gtk-doc/html/gcr-3/ch01.html
 share/gtk-doc/html/gcr-3/gcr-3.devhelp
 share/gtk-doc/html/gcr-3/gcr-3.devhelp2
 share/gtk-doc/html/gcr-3/gcr-GcrCertificate.html
@@ -130,6 +132,7 @@ share/gtk-doc/html/gcr-3/gcr-gcr-misc.html
 share/gtk-doc/html/gcr-3/home.png
 share/gtk-doc/html/gcr-3/index.html
 share/gtk-doc/html/gcr-3/index.sgml
+share/gtk-doc/html/gcr-3/key-widget.png
 share/gtk-doc/html/gcr-3/left.png
 share/gtk-doc/html/gcr-3/misc.html
 share/gtk-doc/html/gcr-3/right.png

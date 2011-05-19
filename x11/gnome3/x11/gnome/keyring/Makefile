@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/17 14:11:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/19 21:01:13 ajacoutot Exp $
 
 COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
-GNOME_VERSION=		3.0.1
-REVISION=		0
+GNOME_VERSION=		3.0.2
 
 SHARED_LIBS +=  gck                       0.0 # 0.0
 SHARED_LIBS +=  gcr-3                     0.0 # 0.0
