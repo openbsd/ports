@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.17 2011/05/11 08:03:24 ajacoutot Exp $
-@unexec-delete rm -f %D/share/icons/mono/icon-theme.cache
+@comment $OpenBSD: PLIST,v 1.18 2011/05/19 14:43:16 ajacoutot Exp $
+@unexec rm -f %D/share/icons/mono/icon-theme.cache
 @bin bin/kmag
 @bin bin/kmousetool
 @bin bin/kmouth

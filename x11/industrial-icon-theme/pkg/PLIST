@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/05/11 08:03:21 ajacoutot Exp $
-@unexec-delete rm -f %D/share/icons/Industrial/icon-theme.cache
+@comment $OpenBSD: PLIST,v 1.5 2011/05/19 14:43:16 ajacoutot Exp $
+@unexec rm -f %D/share/icons/Industrial/icon-theme.cache
 @comment lib/locale/
 share/icons/
 share/icons/Industrial/

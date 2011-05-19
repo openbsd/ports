@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2011/05/19 07:57:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2011/05/19 14:43:17 ajacoutot Exp $
 PKG_ARCH=	*
 
 COMMENT=	Xfce4 icon theme
 
 XFCE_ARTWORK=	xfce4-icon-theme
 XFCE_VERSION=	4.4.3
-REVISION=	7
+REVISION=	8
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

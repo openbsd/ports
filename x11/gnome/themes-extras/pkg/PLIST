@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/05/11 08:03:24 ajacoutot Exp $
-@unexec-delete rm -f %D/share/icons/Foxtrot/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Gion/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/Neu/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/gnome-alternative/icon-theme.cache
+@comment $OpenBSD: PLIST,v 1.14 2011/05/19 14:43:16 ajacoutot Exp $
+@unexec rm -f %D/share/icons/Foxtrot/icon-theme.cache
+@unexec rm -f %D/share/icons/Gion/icon-theme.cache
+@unexec rm -f %D/share/icons/Neu/icon-theme.cache
+@unexec rm -f %D/share/icons/gnome-alternative/icon-theme.cache
 share/icons/Foxtrot/
 share/icons/Foxtrot/16x16/
 share/icons/Foxtrot/16x16/actions/

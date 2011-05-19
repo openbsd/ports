@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.35 2011/05/11 08:03:24 ajacoutot Exp $
-@unexec-delete rm -f %D/share/icons/Locolor/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/ikons/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/kdeclassic/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/kids/icon-theme.cache
-@unexec-delete rm -f %D/share/icons/slick/icon-theme.cache
+@comment $OpenBSD: PLIST,v 1.36 2011/05/19 14:43:16 ajacoutot Exp $
+@unexec rm -f %D/share/icons/Locolor/icon-theme.cache
+@unexec rm -f %D/share/icons/ikons/icon-theme.cache
+@unexec rm -f %D/share/icons/kdeclassic/icon-theme.cache
+@unexec rm -f %D/share/icons/kids/icon-theme.cache
+@unexec rm -f %D/share/icons/slick/icon-theme.cache
 @bin bin/kbanner.kss
 @bin bin/kblob.kss
 @bin bin/kclock.kss

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2011/05/19 07:50:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2011/05/19 14:43:16 ajacoutot Exp $
 
 COMMENT=	base icon theme for GNOME
 
 GNOME_PROJECT=	gnome-icon-theme
 GNOME_VERSION=	2.30.3
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11
 
