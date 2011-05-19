@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/05/17 15:02:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/05/19 17:55:45 ajacoutot Exp $
 
 COMMENT=	PolicyKit integration for GNOME/GTK+2
 
 DISTNAME=	polkit-gnome-0.101
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11 sysutils
 
@@ -67,6 +67,7 @@ WANTLIB += cairo-gobject gdk-3 gtk-3
 .endif
 
 # revert the following commit:
+# ----------------------------------------------------------------------
 # From 47ca445decf21b8de13d804b870d6ce171bad306 Mon Sep 17 00:00:00 2001
 # From: David Zeuthen <davidz@redhat.com>
 # Date: Mon, 21 Feb 2011 21:44:43 +0000
@@ -74,10 +75,18 @@ WANTLIB += cairo-gobject gdk-3 gtk-3
 # It is much easier if the desktops (and power users) using this
 # authentication agent just loads it themselves (via e.g. XDG autostart
 # or whatever).
+# ----------------------------------------------------------------------
+# Also add an autostart condition: gnome-shell comes with its own
+# implementation of a policy kit agent, however the fallback session
+# does not and needs polkit-gnome-authentication-agent to be started.
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/polkit-gnome/xdg/autostart
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
 		-c ${FILESDIR}/polkit-gnome-authentication-agent-1.desktop \
 		${PREFIX}/share/examples/polkit-gnome/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
+.if ! ${FLAVOR:L:Mgtk2}
+	echo 'AutostartCondition=GNOME3 if-session gnome-fallback' >> \
+		${PREFIX}/share/examples/polkit-gnome/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
+.endif
 
 .include <bsd.port.mk>
