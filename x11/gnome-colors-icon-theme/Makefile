@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/13 09:49:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/19 07:57:51 ajacoutot Exp $
 
 COMMENT =		complete, multi-colored suite of icons
 
@@ -7,7 +7,7 @@ DISTNAME =		gnome-colors-${V}
 PKGNAME =		gnome-colors-icon-theme-${V}
 CATEGORIES =		x11
 
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://code.google.com/p/gnome-colors/
 MASTER_SITES =		http://gnome-colors.googlecode.com/files/
@@ -21,6 +21,9 @@ PERMIT_DISTFILES_FTP =	Yes
 PKG_ARCH =		*
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
+
+# Add the corresponding "Inherits" theme.
+RUN_DEPENDS +=		x11/gnome/icon-theme
 
 WRKDIST =		${WRKDIR}
 ICONSDIR =		${PREFIX}/share/icons/

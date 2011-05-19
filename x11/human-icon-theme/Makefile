@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/05/11 08:03:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/05/19 07:57:51 ajacoutot Exp $
 
 COMMENT=		Human icon theme from Ubuntu
 
 DISTNAME=		human-icon-theme_0.33.6ubuntu2
 PKGNAME=		human-icon-theme-0.33.6
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
@@ -20,6 +20,9 @@ WRKDIST=	${WRKDIR}/${DISTNAME:S/_/-/}
 MODULES=	textproc/intltool
 
 BUILD_DEPENDS=	x11/icon-naming-utils
+
+# Add the corresponding "Inherits" theme.
+RUN_DEPENDS +=	x11/tangerine-icon-theme
 
 NO_REGRESS=	Yes
 ALL_TARGET=	build
