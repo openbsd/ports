@@ -1,0 +1,6 @@
+$OpenBSD: patch-add-include-prefix,v 1.1.1.1 2011/05/19 18:40:59 ajacoutot Exp $
+--- add-include-prefix.orig	2003-09-19 03:04:08.000000000 -0600
++++ add-include-prefix	2004-06-21 00:10:02.000000000 -0600
+@@ -1 +1 @@
+-sed -e 's/^/ /' -e 's/  */ /g' -e 's/ / -I /g' -e 's/ -I $//'
++sed -e 's/^/ /' -e 's/ / -I /g'
