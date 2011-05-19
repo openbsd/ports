@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/05/13 12:52:58 jasper Exp $
-@conflict gnome-themes-*
+@comment $OpenBSD: PLIST,v 1.4 2011/05/19 12:45:53 ajacoutot Exp $
+@conflict gnome-themes-<2.32.1p3
 @unexec-delete rm -f %D/share/icons/Adwaita/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/HighContrast/icon-theme.cache
 @unexec-delete rm -f %D/share/icons/HighContrastInverse/icon-theme.cache
