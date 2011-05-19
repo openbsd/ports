@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# $OpenBSD: symux.rc,v 1.1 2011/03/02 07:13:13 ajacoutot Exp $
+# $OpenBSD: symux.rc,v 1.2 2011/05/19 20:01:27 gsoares Exp $
 
-daemon="${PREFIX}/libexec/symux"
+daemon="${TRUEPREFIX}/libexec/symux"
 
 . /etc/rc.d/rc.subr
 
