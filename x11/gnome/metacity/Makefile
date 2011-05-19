@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2011/04/13 06:47:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2011/05/19 10:06:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	lightweight window manager
 GNOME_PROJECT=	metacity
 GNOME_VERSION=	2.34.0
 
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  metacity-private     1.0      # .0.0
 
@@ -39,6 +39,9 @@ LIB_DEPENDS=	devel/startup-notification \
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		x11/gnome/doc-utils
 RUN_DEPENDS=	x11/gnome/zenity
+
+# defaults to the "Clearlooks" theme
+RUN_DEPENDS +=	x11/gnome/themes
 
 SEPARATE_BUILD=	concurrent
 DESKTOP_FILES=	Yes
