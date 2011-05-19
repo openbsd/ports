@@ -1,14 +1,8 @@
 #!/bin/sh
-# $OpenBSD: chrome,v 1.4 2011/05/17 08:35:31 robert Exp $
+# $OpenBSD: chrome,v 1.5 2011/05/19 11:52:07 robert Exp $
 
 PROGDIR=TRUEPREFIX/chrome
-SHMALL=32768
 FDS=400
-
-if [ `/usr/sbin/sysctl -n kern.shminfo.shmall` -lt ${SHMALL} ]; then
-	MSG="You should increase the kern.shminfo.shmall sysctl to at least ${SHMALL},"
-	MSG="${MSG}\ne.g.: sysctl kern.shminfo.shmall=${SHMALL}. This can be added to /etc/sysctl.conf.\n"
-fi
 
 [ `ulimit -Sn` -lt ${FDS} ] || ulimit -Sn ${FDS}
 if [ `ulimit -Sn` -lt ${FDS} ]; then

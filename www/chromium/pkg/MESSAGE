@@ -1,10 +1,7 @@
-You may need to crank shared memory limits for chromium to work
-properly under load:
-
-# sysctl kern.shminfo.shmall=32768
-
-Your default datasize might not be enough for v8 so make sure it
-is more than 512M, so try to set it to 715M by doing:
+Your default datasize might not be enough for v8 so if you
+experience the infamous "Aw, Snap!" error messages try to
+raise your datasize limit to a higher value.
+To set it to 715M you can do the following:
 
 $ ulimit -d 716800
 

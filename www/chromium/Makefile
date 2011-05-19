@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/05/18 17:02:56 robert Exp $
+# $OpenBSD: Makefile,v 1.46 2011/05/19 11:52:06 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -7,7 +7,7 @@ COMMENT=		Chromium browser
 V=			11.0.696.68
 DISTNAME=		chromium-${V}
 
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		www
 
@@ -117,5 +117,13 @@ do-install:
 .for f in ffmpegsumo_nolink libffmpegsumo.so mksnapshot protoc
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/chrome
 .endfor
+.for s in 16 22 24 32 48 64 128 256
+	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/${s}x${s}/apps
+	${INSTALL_DATA} ${WRKSRC}/chrome/app/theme/chromium/product_logo_${s}.png \
+		${PREFIX}/share/icons/hicolor/${s}x${s}/apps/chrome.png
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${FILESDIR}/chrome.desktop \
+		${PREFIX}/share/applications/chrome.desktop
 
 .include <bsd.port.mk>
