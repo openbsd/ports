@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/05/12 15:33:59 giovanni Exp $
+# $OpenBSD: Makefile,v 1.8 2011/05/19 21:15:32 sthen Exp $
 
 COMMENT =		GeoIP Python API
 
 MODPY_EGG_VERSION =	1.2.5
+REVISION =		0
 DISTNAME =		GeoIP-Python-${MODPY_EGG_VERSION}
 PKGNAME =		py-GeoIP-${MODPY_EGG_VERSION}
 CATEGORIES =		net
@@ -21,7 +22,7 @@ MASTER_SITES =		http://geolite.maxmind.com/download/geoip/api/python/
 
 MODULES =		lang/python
 
-LIB_DEPENDS =		net/GeoIP
+LIB_DEPENDS =		net/GeoIP>=1.4.7
 WANTLIB =		GeoIP>=8
 
 EXAMPLEDIR =		${PREFIX}/share/examples/py-GeoIP
