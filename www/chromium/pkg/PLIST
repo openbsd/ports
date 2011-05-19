@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/05/19 11:52:07 robert Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/05/19 11:57:37 ajacoutot Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -233,7 +233,6 @@ chrome/resources/inspector/Images/warningsErrors.png
 chrome/resources/inspector/devTools.css
 chrome/resources/inspector/devtools.html
 @man man/man1/chrome.1
-share/applications/
 share/applications/chrome.desktop
 share/icons/hicolor/128x128/apps/chrome.png
 share/icons/hicolor/16x16/apps/chrome.png
