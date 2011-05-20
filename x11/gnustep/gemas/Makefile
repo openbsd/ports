@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/18 11:59:49 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/20 07:33:45 sebastia Exp $
 
 COMMENT =	simple code editor for GNUstep
 
-DISTNAME =	Gemas-0.1
-REVISION =	0
+DISTNAME =	Gemas-0.2
 PKGNAME =	gnustep-${DISTNAME:L}
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/Gemas.app
-MASTER_SITES =	${MASTER_SITE_GNUSTEP:=contrib/}
+MASTER_SITES =	http://download.gna.org/gnustep-nonfsf/
 
 MODULES =	x11/gnustep
 WANTLIB +=	c m pthread HighlighterKit
