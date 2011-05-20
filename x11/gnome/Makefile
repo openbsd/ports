@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2011/05/19 08:40:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.143 2011/05/20 16:06:56 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -25,8 +25,8 @@
      SUBDIR += empathy
      SUBDIR += eog
      SUBDIR += eog-plugins
-     SUBDIR += file-roller
      SUBDIR += f-spot
+     SUBDIR += file-roller
      SUBDIR += games
      SUBDIR += games-extra-data
      SUBDIR += gcalctool
@@ -57,14 +57,14 @@
      SUBDIR += libgdamm
      SUBDIR += libgnome
      SUBDIR += libgnome-keyring
-     SUBDIR += libgnomemm
      SUBDIR += libgnomecanvas
      SUBDIR += libgnomecanvasmm
      SUBDIR += libgnomecups
      SUBDIR += libgnomekbd
-     SUBDIR += libgnomeui
+     SUBDIR += libgnomemm
      SUBDIR += libgnomeprint
      SUBDIR += libgnomeprintui
+     SUBDIR += libgnomeui
      SUBDIR += libgweather
      SUBDIR += librsvg
      SUBDIR += libslab
