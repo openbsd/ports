@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/01/13 15:44:10 pea Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/20 08:06:56 sthen Exp $
 
 COMMENT=	Open source LDAP software (server)
 
-DISTNAME=		openldap-2.3.43
-PKGNAME=		${DISTNAME:S/-/-server-/}
-REVISION=		7
+DISTNAME=	openldap-2.3.43
+PKGNAME=	${DISTNAME:S/-/-server-/}
+REVISION=	8
 
 CATEGORIES=	databases net
 
@@ -12,18 +12,17 @@ HOMEPAGE=	http://www.openldap.org/
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes 
+PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += 		asn1 c com_err crypto gssapi krb5 m perl pthread ssl \
-			util wrap sasl2
+WANTLIB += asn1 c com_err crypto gssapi krb5 m perl pthread ssl
+WANTLIB += util wrap sasl2
 
-MASTER_SITES=	ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
-		ftp://sunsite.cnlab-switch.ch/mirror/OpenLDAP/openldap-release/ \
-		ftp://mirror.aarnet.edu.au/pub/openldap/openldap-release/ \
-		ftp://gd.tuwien.ac.at/infosys/network/OpenLDAP/openldap-release/ \
-		http://www.unibase.cz/ldapcz/Programy/Free/OpenLDAP/openldap-release/ \
-		ftp://ftp.ntua.gr/mirror/OpenLDAP/openldap-release/
+MASTER_SITES=	http://mirror.switch.ch/ftp/mirror/OpenLDAP/openldap-release/ \
+		http://gd.tuwien.ac.at/infosys/network/OpenLDAP/openldap-release/ \
+		http://mirror.aarnet.edu.au/pub/openldap/openldap-release/ \
+		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
+		http://ftp.ntua.gr/mirror/OpenLDAP/openldap-release/
 
 EXTRACT_SUFX=		.tgz
 
@@ -70,8 +69,6 @@ CONFIGURE_ARGS+=	--disable-bdb --disable-hdb
 CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
 			LIBS="${LIBS}"
-
-RUN_DEPENDS=	${BASE_PKGPATH}
 
 USE_LIBTOOL=	Yes
 
