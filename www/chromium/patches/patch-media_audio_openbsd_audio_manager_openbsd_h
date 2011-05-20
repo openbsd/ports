@@ -1,29 +1,39 @@
-$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_h,v 1.4 2011/04/29 13:18:01 robert Exp $
---- media/audio/openbsd/audio_manager_openbsd.h.orig	Tue Apr 26 10:01:05 2011
-+++ media/audio/openbsd/audio_manager_openbsd.h	Fri Apr 29 09:48:16 2011
-@@ -5,8 +5,16 @@
+$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_h,v 1.5 2011/05/20 08:35:24 robert Exp $
+--- media/audio/openbsd/audio_manager_openbsd.h.orig	Sat May  7 11:39:59 2011
++++ media/audio/openbsd/audio_manager_openbsd.h	Thu May 19 14:20:55 2011
+@@ -5,15 +5,16 @@
  #ifndef MEDIA_AUDIO_OPENBSD_AUDIO_MANAGER_OPENBSD_H_
  #define MEDIA_AUDIO_OPENBSD_AUDIO_MANAGER_OPENBSD_H_
  
 -#include "media/audio/audio_io.h"
-+#include <map>
- 
-+#include "base/ref_counted.h"
-+#include "base/scoped_ptr.h"
-+#include "base/synchronization/lock.h"
-+#include "base/threading/thread.h"
++#include "base/basictypes.h"
 +#include "media/audio/audio_manager_base.h"
-+
-+class AlsaPcmOutputStream;
+ 
++class PCMQueueInAudioInputStream;
++class PCMQueueOutAudioOutputStream;
 +
  class AudioManagerOpenBSD : public AudioManagerBase {
   public:
    AudioManagerOpenBSD();
-@@ -19,6 +27,7 @@ class AudioManagerOpenBSD : public AudioManagerBase {
+ 
+-  // Call before using a newly created AudioManagerOpenBSD instance.
+-  virtual void Init();
+-
+   // Implementation of AudioManager.
+   virtual bool HasAudioOutputDevices();
    virtual bool HasAudioInputDevices();
-   virtual AudioOutputStream* MakeAudioOutputStream(AudioParameters params);
-   virtual AudioInputStream* MakeAudioInputStream(AudioParameters params);
-+
+@@ -22,10 +23,12 @@ class AudioManagerOpenBSD : public AudioManagerBase {
    virtual void MuteAll();
    virtual void UnMuteAll();
+ 
+- protected:
+-  virtual ~AudioManagerOpenBSD();
++  void ReleaseOutputStream(PCMQueueOutAudioOutputStream* stream);
++  void ReleaseInputStream(PCMQueueInAudioInputStream* stream);
+ 
+  private:
++  virtual ~AudioManagerOpenBSD();
++
+   DISALLOW_COPY_AND_ASSIGN(AudioManagerOpenBSD);
+ };
  

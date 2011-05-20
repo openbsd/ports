@@ -1,7 +1,16 @@
-$OpenBSD: patch-media_media_gyp,v 1.4 2011/04/29 13:18:01 robert Exp $
---- media/media.gyp.orig	Tue Apr 26 10:01:05 2011
-+++ media/media.gyp	Thu Apr 28 11:17:49 2011
-@@ -177,6 +177,9 @@
+$OpenBSD: patch-media_media_gyp,v 1.5 2011/05/20 08:35:24 robert Exp $
+--- media/media.gyp.orig	Sat May  7 11:39:59 2011
++++ media/media.gyp	Thu May 19 14:20:05 2011
+@@ -54,6 +54,8 @@
+         'audio/linux/alsa_util.h',
+         'audio/linux/alsa_wrapper.cc',
+         'audio/linux/alsa_wrapper.h',
++        'audio/openbsd/sndio_output.cc',
++        'audio/openbsd/sndio_output.h',
+         'audio/openbsd/audio_manager_openbsd.cc',
+         'audio/openbsd/audio_manager_openbsd.h',
+         'audio/mac/audio_input_mac.cc',
+@@ -177,6 +179,9 @@
            'link_settings': {
              'libraries': [
                '-lasound',
@@ -11,3 +20,18 @@ $OpenBSD: patch-media_media_gyp,v 1.4 2011/04/29 13:18:01 robert Exp $
              ],
            },
          }],
+@@ -186,11 +191,14 @@
+                         ['exclude', '\\.mm?$' ] ],
+           'link_settings': {
+             'libraries': [
++              '-lsndio',
+             ],
+           },
+         }],
+         ['OS!="openbsd"', {
+           'sources!': [
++            'audio/openbsd/sndio_output.cc',
++            'audio/openbsd/sndio_output.h',
+             'audio/openbsd/audio_manager_openbsd.cc',
+             'audio/openbsd/audio_manager_openbsd.h',
+           ],

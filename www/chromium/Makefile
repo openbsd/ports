@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/05/19 11:57:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2011/05/20 08:35:24 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -7,7 +7,7 @@ COMMENT=		Chromium browser
 V=			11.0.696.68
 DISTNAME=		chromium-${V}
 
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		www
 
@@ -31,7 +31,7 @@ WANTLIB += gtk-x11-2.0 jpeg m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs xcb xml2
 WANTLIB += z execinfo bz2 nss3 nssutil3 ssl3 smime3 softokn3 gconf-2
 WANTLIB += GL Xxf86vm drm stdc++ xcb-render xcb-shm
-WANTLIB += Xtst event xslt vpx kvm>=10.0
+WANTLIB += Xtst event xslt vpx kvm>=10.0 sndio
 
 MASTER_SITES=	http://build.chromium.org/buildbot/official/ \
 		http://blade2k.humppa.hu/distfiles/ \
