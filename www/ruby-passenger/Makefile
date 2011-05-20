@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/05/17 03:25:18 william Exp $
+# $OpenBSD: Makefile,v 1.17 2011/05/20 17:33:18 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,6 +6,7 @@ COMMENT =	Nginx module for deploying Ruby applications
 
 DISTNAME =	passenger-3.0.7
 PKGNAME =	ruby-${DISTNAME}
+REVISION =	0
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.modrails.com/
@@ -20,7 +21,7 @@ MASTER_SITES =		http://files.rubyforge.vm.bytemark.co.uk/passenger/
 
 MODULES =		lang/ruby
 
-WANTLIB =		c m pthread stdc++ ${MODRUBY_WANTLIB}
+WANTLIB =		c crypto curl idn m pthread stdc++ ssl z ${MODRUBY_WANTLIB} 
 
 LIB_DEPENDS =		${MODRUBY_LIB_DEPENDS}
 
