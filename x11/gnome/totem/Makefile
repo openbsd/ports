@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2011/05/18 15:50:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2011/05/20 08:50:11 ajacoutot Exp $
 
 COMMENT=	official media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.32.0
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	multimedia
 
@@ -45,7 +45,8 @@ RUN_DEPENDS+=	x11/gnome/settings-daemon \
 		devel/iso-codes \
 		x11/gromit \
 		devel/py-gdata \
-		devel/py-xdg
+		devel/py-xdg \
+		x11/dbus-python
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS} \
 		multimedia/gstreamer-0.10/plugins-base>=0.10.29 \
 		x11/gnome/totem-pl-parser>=2.28.1 \
