@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/05/16 15:14:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2011/05/20 13:33:53 ajacoutot Exp $
 
 COMMENT=		GObject Introspection
 
@@ -6,7 +6,7 @@ GNOME_VERSION=		0.10.8
 GNOME_PROJECT=		gobject-introspection
 CATEGORIES=		devel
 
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  girepository-1.0     1.0      # 1.0
 
@@ -49,6 +49,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 CFLAGS+=		-pthread
 
 SUBST_VARS+=		MODPY_SITEPKG CC
+
+# XXX ugly
+MAKE_FLAGS=		CAIRO_SHARED_LIBRARY=libcairo-gobject.so.0.0
 
 MODPY_ADJ_FILES=	giscanner/scannermain.py \
 			giscanner/shlibs.py \
