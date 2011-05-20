@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:45:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/05/20 08:40:12 sthen Exp $
 
 COMMENT=		helper routines for writing Nagios plugins
 
-DISTNAME=		Nagios-Plugin-0.33
-REVISION=		1
+DISTNAME=		Nagios-Plugin-0.35
 CATEGORIES=		net
 MODULES=		cpan
 USE_GROFF =		Yes
