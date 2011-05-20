@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/05/19 19:21:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/05/20 16:05:17 jasper Exp $
 
      SUBDIR =
      SUBDIR += backgrounds
@@ -23,6 +23,7 @@
      SUBDIR += session
      SUBDIR += settings-daemon
      SUBDIR += terminal
+     SUBDIR += totem
      SUBDIR += user-docs
      SUBDIR += utils
      SUBDIR += video-arcade
