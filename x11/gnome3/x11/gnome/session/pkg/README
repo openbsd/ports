@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2011/05/19 08:36:41 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2011/05/20 16:41:47 ajacoutot Exp $
 
 Running GNOME on OpenBSD
 ========================
@@ -92,6 +92,7 @@ related ports under the x11/gnome category)
    * f-spot - photo management application
    * gnome-games (+gnome-games-extra-data) - collection of games
    * gnome-video-arcade - MAME front-end
+   * nautilus-totem - display media information in the properties window
    * rhythmbox - music management application
    * simple-scan - simple scanning utility
    * totem - multimedia player
