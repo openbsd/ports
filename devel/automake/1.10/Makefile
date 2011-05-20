@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/05/18 19:38:15 matthieu Exp $
+# $OpenBSD: Makefile,v 1.9 2011/05/20 21:18:38 sthen Exp $
 
 COMMENT=	GNU standards-compliant Makefile generator
 
@@ -23,8 +23,7 @@ MODULES=		lang/python
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
 
-AUTOCONF_VERSION=	2.60
-AUTOCONF_REGRESS=	2.65
+AUTOCONF_VERSION=	2.65
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS}
@@ -42,7 +41,6 @@ FAKE_FLAGS=		docdir=${PREFIX}/share/doc/automake${SUFFIX}
 
 REGRESS_DEPENDS=	${BASE_PKGPATH} \
 			${MODPY_RUN_DEPENDS} \
-			devel/autoconf/${AUTOCONF_REGRESS} \
 			devel/libtool \
 			devel/gmake \
 			archivers/bzip2 \
@@ -50,7 +48,7 @@ REGRESS_DEPENDS=	${BASE_PKGPATH} \
 			editors/emacs21 \
 			devel/dejagnu
 
-TESTS_ENVIRONMENT=	AUTOCONF_VERSION=${AUTOCONF_REGRESS} \
+TESTS_ENVIRONMENT=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			MAKE=${GMAKE}
 
 do-regress:
