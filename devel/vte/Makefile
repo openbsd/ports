@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2011/05/14 13:17:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.76 2011/05/21 08:02:08 ajacoutot Exp $
 
 COMMENT-main=		terminal emulation library (gtk+2)
 COMMENT-python= 	python bindings for vte
@@ -11,7 +11,7 @@ PKGNAME-main=		${DISTNAME}
 PKGNAME-python= 	py-${DISTNAME}
 PKGNAME-pty-helper=	vte-ptyhelper-${GNOME_VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 
 CATEGORIES=		devel
 
@@ -45,7 +45,6 @@ WANTLIB += z gthread-2.0 gdk_pixbuf-2.0 GL Xxf86vm
 WANTLIB-main=		${WANTLIB} c pthread
 
 WANTLIB-pty-helper=	util c
-RUN_DEPENDS-main=	${BASE_PKGPATH},-pty-helper
 
 WANTLIB-python= 	${WANTLIB} ffi vte>=14 gtk-x11-2.0
 
@@ -61,6 +60,7 @@ PSEUDO_FLAVORS= 	gtk3
 FLAVOR?=
 
 .if ${FLAVOR:L:Mgtk3}
+RUN_DEPENDS-main+=	${BASE_PKGPATH},gtk3,-pty-helper
 LIB_DEPENDS-main+=	${LIB_DEPENDS} \
 			x11/gtk+3
 WANTLIB-main+=		cairo-gobject gdk-3 gtk-3
@@ -68,6 +68,7 @@ CONFIGURE_ARGS+=	--with-gtk=3.0
 PKGNAME-main=		vte3-${GNOME_VERSION}
 SHARED_LIBS +=  vte2_90                   0.0 # 2809.0
 .else
+RUN_DEPENDS-main+=	${BASE_PKGPATH},-pty-helper
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			x11/gtk+2
 WANTLIB-main+=		gdk-x11-2.0 gtk-x11-2.0
