@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2011/05/16 17:30:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/05/21 05:00:07 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
 DISTNAME=	polkit-0.101
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  polkit-gobject-1	1.0 # .0.0
 SHARED_LIBS +=  polkit-backend-1	1.0 # .0.0
@@ -32,6 +32,8 @@ MODULES=	textproc/intltool \
 BUILD_DEPENDS=	${MODGNU_AUTOMAKE_DEPENDS} \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		devel/gobject-introspection
+
+RUN_DEPENDS=	x11/dbus
 
 # XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
 # instead of the actual library

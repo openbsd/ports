@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/04/28 13:09:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/05/21 05:00:07 ajacoutot Exp $
 %%SHARED%%
 @bin bin/pk-example-frobnicate
 @bin bin/pkaction
@@ -79,7 +79,9 @@ share/dbus-1/system-services/
 share/dbus-1/system-services/org.freedesktop.PolicyKit1.service
 share/examples/polkit/
 share/examples/polkit/dbus-1/
+@sample ${SYSCONFDIR}/dbus-1/
 share/examples/polkit/dbus-1/system.d/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
 share/examples/polkit/dbus-1/system.d/org.freedesktop.PolicyKit1.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.PolicyKit1.conf
 share/examples/polkit/polkit-1/
