@@ -1,4 +1,4 @@
-$OpenBSD: patch-wscript,v 1.6 2011/04/29 07:41:15 jasper Exp $
+$OpenBSD: patch-wscript,v 1.7 2011/05/21 20:32:54 sthen Exp $
 
 - OpenBSD can also use libexecinfo.
 - Don't append EV_MULTIPLICITY_EV was it breaks the build with using the
@@ -6,9 +6,9 @@ $OpenBSD: patch-wscript,v 1.6 2011/04/29 07:41:15 jasper Exp $
 - Don't build with -O3.
 - Adjust some paths.
 
---- wscript.orig	Sat Apr 23 02:06:25 2011
-+++ wscript	Fri Apr 29 09:34:30 2011
-@@ -280,7 +280,7 @@ def configure(conf):
+--- wscript.orig	Sat May 21 03:40:06 2011
++++ wscript	Sat May 21 08:42:12 2011
+@@ -269,7 +269,7 @@ def configure(conf):
    if Options.options.efence:
      conf.check(lib='efence', libpath=['/usr/lib', '/usr/local/lib'], uselib_store='EFENCE')
  
@@ -17,7 +17,7 @@ $OpenBSD: patch-wscript,v 1.6 2011/04/29 07:41:15 jasper Exp $
       if not conf.check(lib="execinfo",
                         includes=['/usr/include', '/usr/local/include'],
                         libpath=['/usr/lib', '/usr/local/lib'],
-@@ -462,8 +462,10 @@ def configure(conf):
+@@ -451,8 +451,10 @@ def configure(conf):
    # LFS
    conf.env.append_value('CPPFLAGS',  '-D_LARGEFILE_SOURCE')
    conf.env.append_value('CPPFLAGS',  '-D_FILE_OFFSET_BITS=64')
@@ -29,16 +29,16 @@ $OpenBSD: patch-wscript,v 1.6 2011/04/29 07:41:15 jasper Exp $
    # Makes select on windows support more than 64 FDs
    if sys.platform.startswith("win32"):
      conf.env.append_value('CPPFLAGS', '-DFD_SETSIZE=1024');
-@@ -533,7 +535,7 @@ def configure(conf):
+@@ -521,7 +523,7 @@ def configure(conf):
+ 
    # Configure default variant
    conf.setenv('default')
-   conf.env.append_value('CPPFLAGS', '-DNDEBUG')
 -  default_compile_flags = ['-g', '-O3']
 +  default_compile_flags = ['-g']
    conf.env.append_value('CCFLAGS', default_compile_flags)
    conf.env.append_value('CXXFLAGS', default_compile_flags)
    conf.write_config_header("config.h")
-@@ -908,11 +910,10 @@ def build(bld):
+@@ -890,11 +892,10 @@ def build(bld):
    # Only install the man page if it exists.
    # Do 'make doc install' to build and install it.
    if os.path.exists('doc/node.1'):
