@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_common_c,v 1.1 2011/05/21 11:19:24 fgsch Exp $
+--- src/common.c.orig	Mon May  9 09:14:48 2011
++++ src/common.c	Mon May  9 09:33:03 2011
+@@ -31,6 +31,7 @@
+ #define isHex(c) (hexToInt(c) != -1)
+ #define HEX_BASE 16
+ 
++#if !defined(__OpenBSD__)
+ int get_ram_size(void) {
+ 	FILE *fp;
+ 	char str[256];
+@@ -52,6 +53,20 @@ int get_ram_size(void) {
+ 	fclose(fp);
+ 	return ret;
+ }
++#else
++#include <sys/param.h>
++#include <sys/sysctl.h>
++
++int get_ram_size(void) {
++	int mib[2] = { CTL_HW, HW_PHYSMEM };
++	unsigned int physmem;
++	size_t len = sizeof(physmem);
++
++	if (sysctl(mib, 2, &physmem, &len, NULL, 0) < 0)
++		return -1;
++	return (physmem / 1024);
++}
++#endif
+ 
+ /* Return the version number */
+ char * getVersion(char * progname, int maj, int min, int submin, int svnrev, int beta, int rc)

@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_osdep_byteorder_h,v 1.1 2011/05/21 11:19:24 fgsch Exp $
+--- src/osdep/byteorder.h.orig	Fri Jan 22 01:01:28 2010
++++ src/osdep/byteorder.h	Sun May  1 08:21:24 2011
+@@ -212,6 +212,19 @@
+ 		#include <machine/endian.h>
+ 	#endif
+ 
++	#ifdef __OpenBSD__
++		#include <machine/endian.h>
++
++		#define __cpu_to_be64(x)	htobe64(x)
++		#define __cpu_to_be32(x)	htobe32(x)
++		#define __be64_to_cpu(x)	betoh64(x)
++		#define __be32_to_cpu(x)	betoh32(x)
++		#define __le32_to_cpu(x)	letoh32(x)
++		#define __le16_to_cpu(x)	letoh16(x)
++
++		#define AIRCRACK_NG_BYTE_ORDER_DEFINED
++	#endif
++
+ 	// XXX: Is there anything to include on OpenBSD/NetBSD/DragonFlyBSD/...?
+ 
+ 

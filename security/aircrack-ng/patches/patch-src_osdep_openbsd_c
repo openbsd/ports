@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_osdep_openbsd_c,v 1.1 2011/05/21 11:19:24 fgsch Exp $
+--- src/osdep/openbsd.c.orig	Mon Apr 25 09:26:31 2011
++++ src/osdep/openbsd.c	Mon Apr 25 09:26:34 2011
+@@ -273,7 +273,7 @@ static int obsd_write(struct wif *wi, unsigned char *h
+ 	if (rc == -1)
+ 		return rc;
+ 
+-	return 0;
++	return rc;
+ }
+ 
+ static void do_free(struct wif *wi)

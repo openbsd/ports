@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/05/06 20:39:29 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/21 11:19:24 fgsch Exp $
 @bin bin/aircrack-ng
 @bin bin/airdecap-ng
 @bin bin/airdecloak-ng
@@ -32,8 +32,12 @@
 @bin sbin/aireplay-ng
 @comment sbin/airmon-ng
 @bin sbin/airodump-ng
+@comment sbin/airodump-ng-oui-update
 @bin sbin/airserv-ng
 @comment sbin/airtun-ng
 @bin sbin/easside-ng
 @bin sbin/tkiptun-ng
 @bin sbin/wesside-ng
+@extraunexec rm -rf %D/share/aircrack-ng/*
+@sample share/aircrack-ng/
+share/doc/pkg-readmes/${FULLPKGNAME}
