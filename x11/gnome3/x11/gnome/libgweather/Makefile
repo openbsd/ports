@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/17 14:11:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/21 08:22:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
 GNOME_VERSION=		3.0.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=		gweather-3             0.0      # 0.2
 
@@ -24,7 +24,6 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		devel/gobject-introspection
 LIB_DEPENDS=		devel/libsoup,-gnome \
-			x11/dbus-glib \
 			x11/gtk+3
 
 WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
