@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/20 16:41:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/21 06:49:52 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.0.1
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -41,17 +41,32 @@ RUN_DEPENDS=	x11/gnome/settings-daemon \
 		x11/xdg-user-dirs-gtk>=0.8p6 \
 		devel/gconf2,-gtk
 
+# gnome.session+gnome-fallback.session RequiredComponents.
+RUN_DEPENDS+=	notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon \
+
+# gnome.session RequiredComponents.
+#RUN_DEPENDS+=	x11/gnome/shell
+
+# gnome-fallback.session RequiredComponents.
+# polkit-gnome isn't strictly *required* but then we will loose the
+# polkit authentication dialog in the gnome-fallback session.
+RUN_DEPENDS+=	x11/gnome/metacity \
+		x11/gnome/panel \
+		x11/polkit-gnome
+
+# Defaults from gsettings-desktop-schema.
+RUN_DEPENDS+=	x11/cantarell-fonts \
+		x11/gnome/backgrounds \
+		x11/gnome/themes-standard
+
 # Install accessibility components -- daemons will start only if
 # accessibility is enabled by the user.
 # This should really be a dep. of a "gnome-accessibility" metapackage.
 RUN_DEPENDS+=	x11/gnome/at-spi2-atk
 
-# polkit-gnome isn't really *required* but then we will loose the polkit
-# auth. dialog in the gnome fallback session; same for gconf2-polkit,
 # gconf2 and polkit are already dependencies and we want to be able to
 # handle system-wide gconf entries. This should really be a dep. of a
 # "gnome" metapackage.
-RUN_DEPENDS+=	x11/polkit-gnome
 RUN_DEPENDS+=	devel/gconf2,-polkit
 
 DESKTOP_FILES=		Yes
