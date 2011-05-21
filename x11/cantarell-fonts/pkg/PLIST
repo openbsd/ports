@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/21 06:29:05 ajacoutot Exp $
+lib/X11/fonts/
+@fontdir lib/X11/fonts/cantarell/
+lib/X11/fonts/cantarell/Cantarell-Bold.otf
+lib/X11/fonts/cantarell/Cantarell-Regular.otf
+share/examples/cantarell-fonts/
+share/examples/cantarell-fonts/31-cantarell.conf
+@sample ${SYSCONFDIR}/fonts/conf.avail/31-cantarell.conf
+@exec-add ln -sf ../conf.avail/31-cantarell.conf ${SYSCONFDIR}/fonts/conf.d/
+@unexec-delete rm ${SYSCONFDIR}/fonts/conf.d/31-cantarell.conf
