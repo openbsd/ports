@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.457 2011/05/18 01:10:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.458 2011/05/21 06:29:30 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -32,6 +32,7 @@
      SUBDIR += bluetile
      SUBDIR += bricons
      SUBDIR += bwidget
+     SUBDIR += cantarell-fonts
      SUBDIR += chbg
      SUBDIR += compiz
      SUBDIR += ctwm
