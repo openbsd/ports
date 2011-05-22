@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/03/05 19:26:45 millert Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/05/22 10:34:38 rpointel Exp $
 bin/ack
 ${P5SITE}/App/
 ${P5SITE}/App/Ack/
@@ -9,8 +9,3 @@ ${P5SITE}/App/Ack/Plugin/Basic.pm
 ${P5SITE}/App/Ack/Repository.pm
 ${P5SITE}/App/Ack/Resource.pm
 @man man/man1/ack.1
-@man man/man3p/Ack.3p
-@man man/man3p/Basic.3p
-@man man/man3p/Plugin.3p
-@man man/man3p/Repository.3p
-@man man/man3p/Resource.3p
