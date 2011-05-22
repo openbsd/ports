@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/03/03 13:19:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/05/22 10:06:51 ajacoutot Exp $
 include/libgoffice-0.8/
 include/libgoffice-0.8/goffice/
 include/libgoffice-0.8/goffice/app/
@@ -225,6 +225,7 @@ lib/goffice/${GNOME_VERSION}/plugins/plot_surface/surface.so
 lib/goffice/${GNOME_VERSION}/plugins/plot_xy/
 lib/goffice/${GNOME_VERSION}/plugins/plot_xy/gog-bubble-prefs.ui
 lib/goffice/${GNOME_VERSION}/plugins/plot_xy/gog-xy-color-prefs.ui
+lib/goffice/${GNOME_VERSION}/plugins/plot_xy/gog-xy-dropbar-prefs.ui
 lib/goffice/${GNOME_VERSION}/plugins/plot_xy/gog-xy-prefs.ui
 lib/goffice/${GNOME_VERSION}/plugins/plot_xy/gog-xy-series-prefs.ui
 lib/goffice/${GNOME_VERSION}/plugins/plot_xy/plot-types.xml
@@ -530,6 +531,8 @@ share/pixmaps/goffice/${GNOME_VERSION}/chart_cylinder_2_3.png
 share/pixmaps/goffice/${GNOME_VERSION}/chart_cylinder_3_1.png
 share/pixmaps/goffice/${GNOME_VERSION}/chart_dropbar_1_1.png
 share/pixmaps/goffice/${GNOME_VERSION}/chart_dropbar_1_2.png
+share/pixmaps/goffice/${GNOME_VERSION}/chart_dropbar_1_3.png
+share/pixmaps/goffice/${GNOME_VERSION}/chart_dropbar_1_4.png
 share/pixmaps/goffice/${GNOME_VERSION}/chart_histogram_1_1.png
 share/pixmaps/goffice/${GNOME_VERSION}/chart_histogram_1_3.png
 share/pixmaps/goffice/${GNOME_VERSION}/chart_histogram_1_4.png
