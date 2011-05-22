@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/06 17:47:11 merdely Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/22 14:03:40 jasper Exp $
 
 ONLY_FOR_ARCHS =	i386 amd64
 
@@ -30,7 +30,7 @@ USE_GMAKE =		Yes
 
 NO_REGRESS =		Yes
 
-WRKDIST =		${WRKDIR}/${PKGNAME}
+WRKDIST =		${WRKDIR}/chntpw-${V}/
 
 PROGS =			chntpw chntpw.static cpnt reged reged.static
 DOCDIR =		$(PREFIX)/share/doc/chntpw

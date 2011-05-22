@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/05/10 23:44:54 ian Exp $
+# $OpenBSD: Makefile,v 1.13 2011/05/22 14:03:39 jasper Exp $
 
 PKG_ARCH=		*
 
@@ -9,7 +9,7 @@ DISTNAME=		SQL-Power-Architect-generic-jdbc-${V}
 MASTER_SITES=		http://power-architect.googlecode.com/files/
 PKGNAME=		architect-${V}
 CATEGORIES=		databases
-WRKDIST=		${WRKDIR}/${PKGNAME}
+WRKDIST=		${WRKDIR}/architect-${V}/
 
 HOMEPAGE=		http://www.sqlpower.ca/page/architect
 
