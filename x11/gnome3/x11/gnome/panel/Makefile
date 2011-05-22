@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/18 16:22:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/22 08:58:21 ajacoutot Exp $
 
 # XXX: py-gnome may be needed to load the old applets?
 
@@ -8,7 +8,7 @@ COMMENT=	GNOME panel
 
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	3.0.0.1
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	panel-applet-4            0.0 # 0.0
 
