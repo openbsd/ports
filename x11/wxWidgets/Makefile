@@ -1,34 +1,33 @@
-# $OpenBSD: Makefile,v 1.34 2011/04/28 17:50:43 kili Exp $
+# $OpenBSD: Makefile,v 1.35 2011/05/22 08:13:18 dcoppa Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	c++ cross-platform GUI toolkit
 
-V =		2.8.11
+V =		2.8.12
 DISTNAME =	wxWidgets-${V}
 PKGNAME =	wxWidgets-gtk2-${V}
-REVISION =	4
 
-SHARED_LIBS =	wx_base			2.0	\
-		wx_base_net		2.0	\
-		wx_base_odbc		2.0	\
-		wx_base_xml		2.0	\
-		wx_gtk2_adv		2.0	\
-		wx_gtk2_aui		2.0	\
-		wx_gtk2_core		2.0	\
-		wx_gtk2_dbgrid		2.0	\
-		wx_gtk2_fl		2.0	\
-		wx_gtk2_gizmos		2.0	\
-		wx_gtk2_gizmos_xrc	2.0	\
-		wx_gtk2_gl		2.0	\
-		wx_gtk2_html		2.0	\
-		wx_gtk2_ogl		2.0	\
-		wx_gtk2_plot		2.0	\
-		wx_gtk2_qa		2.0	\
-		wx_gtk2_richtext	2.0	\
-		wx_gtk2_stc		2.0	\
-		wx_gtk2_svg		2.0	\
-		wx_gtk2_xrc		2.0
+SHARED_LIBS =	wx_base			2.1	\
+		wx_base_net		2.1	\
+		wx_base_odbc		2.1	\
+		wx_base_xml		2.1	\
+		wx_gtk2_adv		2.1	\
+		wx_gtk2_aui		2.1	\
+		wx_gtk2_core		2.1	\
+		wx_gtk2_dbgrid		2.1	\
+		wx_gtk2_fl		2.1	\
+		wx_gtk2_gizmos		2.1	\
+		wx_gtk2_gizmos_xrc	2.1	\
+		wx_gtk2_gl		2.1	\
+		wx_gtk2_html		2.1	\
+		wx_gtk2_ogl		2.1	\
+		wx_gtk2_plot		2.1	\
+		wx_gtk2_qa		2.1	\
+		wx_gtk2_richtext	2.1	\
+		wx_gtk2_stc		2.1	\
+		wx_gtk2_svg		2.1	\
+		wx_gtk2_xrc		2.1
 CATEGORIES =	x11
 
 HOMEPAGE =	http://www.wxwidgets.org/

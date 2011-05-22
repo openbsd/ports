@@ -1,0 +1,16 @@
+$OpenBSD: patch-build_aclocal_bakefile_m4,v 1.1 2011/05/22 08:13:18 dcoppa Exp $
+
+Update bakefile.m4 for the new version (unbreak configure).
+From upstream svn revision 66836.
+
+--- build/aclocal/bakefile.m4.orig	Wed May 18 11:45:26 2011
++++ build/aclocal/bakefile.m4	Wed May 18 11:45:51 2011
+@@ -837,7 +837,7 @@ AC_DEFUN([AC_BAKEFILE],
+     AC_SUBST(OBJCXXFLAGS)
+ 
+ 
+-    BAKEFILE_BAKEFILE_M4_VERSION="0.2.8"
++    BAKEFILE_BAKEFILE_M4_VERSION="0.2.9"
+ 
+     dnl includes autoconf_inc.m4:
+     $1
