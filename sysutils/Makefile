@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.230 2011/05/06 14:25:52 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.231 2011/05/22 10:58:15 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
      SUBDIR += LPRng
+     SUBDIR += accountsservice
      SUBDIR += acx-firmware
      SUBDIR += anacron
      SUBDIR += apachetop
