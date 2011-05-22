@@ -1,0 +1,87 @@
+$OpenBSD: patch-src_user_c,v 1.1.1.1 2011/05/22 10:57:32 ajacoutot Exp $
+--- src/user.c.orig	Thu May 19 05:38:50 2011
++++ src/user.c	Sun May 22 12:34:15 2011
+@@ -29,7 +29,11 @@
+ #include <sys/wait.h>
+ #include <unistd.h>
+ #include <grp.h>
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++#include <pwd.h>
++#else
+ #include <shadow.h>
++#endif
+ 
+ #include <glib.h>
+ #include <glib/gi18n.h>
+@@ -46,7 +50,7 @@
+ #include "user-glue.h"
+ #include "util.h"
+ 
+-#define ICONDIR LOCALSTATEDIR "/lib/AccountsService/icons"
++#define ICONDIR LOCALSTATEDIR "/db/AccountsService/icons"
+ 
+ enum {
+         PROP_0,
+@@ -464,7 +468,11 @@ void
+ user_local_update_from_pwent (User          *user,
+                               struct passwd *pwent)
+ {
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++        struct passwd *spent;
++#else
+         struct spwd *spent;
++#endif
+         gchar *real_name;
+         gboolean changed;
+         const gchar *passwd;
+@@ -555,9 +563,15 @@ user_local_update_from_pwent (User          *user,
+         }
+ 
+         passwd = pwent->pw_passwd;
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++        spent = getpwnam (pwent->pw_name);
++        if (spent)
++                passwd = spent->pw_passwd;
++#else
+         spent = getspnam (pwent->pw_name);
+         if (spent)
+                 passwd = spent->sp_pwdp;
++#endif
+ 
+         if (passwd && passwd[0] == '!') {
+                 locked = TRUE;
+@@ -579,11 +593,13 @@ user_local_update_from_pwent (User          *user,
+                 mode = PASSWORD_MODE_REGULAR;
+         }
+ 
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+         if (spent) {
+                 if (spent->sp_lstchg == 0) {
+                         mode = PASSWORD_MODE_SET_AT_LOGIN;
+                 }
+         }
++#endif
+ 
+         if (user->password_mode != mode) {
+                 user->password_mode = mode;
+@@ -686,7 +702,7 @@ save_extra_data (User *user)
+         error = NULL;
+         data = g_key_file_to_data (keyfile, NULL, &error);
+         if (error == NULL) {
+-                filename = g_build_filename ("/var/lib/AccountsService/users",
++                filename = g_build_filename ("/var/db/AccountsService/users",
+                                              user->user_name,
+                                              NULL);
+                 g_file_set_contents (filename, data, -1, &error);
+@@ -707,9 +723,9 @@ move_extra_data (const gchar *old_name,
+         gchar *old_filename;
+         gchar *new_filename;
+ 
+-        old_filename = g_build_filename ("/var/lib/AccountsService/users",
++        old_filename = g_build_filename ("/var/db/AccountsService/users",
+                                          old_name, NULL);
+-        new_filename = g_build_filename ("/var/lib/AccountsService/users",
++        new_filename = g_build_filename ("/var/db/AccountsService/users",
+                                          new_name, NULL);
+ 
+         g_rename (old_filename, new_filename);

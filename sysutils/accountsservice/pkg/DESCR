@@ -1,0 +1,5 @@
+The AccountsService project provides:
+    * A set of D-Bus interfaces for querying and manipulating user
+      account information.
+    * An implementation of these interfaces based on the usermod(8),
+      useradd(8) and userdel(8) commands.

@@ -1,0 +1,108 @@
+$OpenBSD: patch-src_daemon_c,v 1.1.1.1 2011/05/22 10:57:32 ajacoutot Exp $
+--- src/daemon.c.orig	Thu May 19 05:39:12 2011
++++ src/daemon.c	Sun May 22 12:36:56 2011
+@@ -50,11 +50,14 @@
+ #define PATH_SHADOW "/etc/shadow"
+ #define PATH_LOGIN_DEFS "/etc/login.defs"
+ 
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++#define FALLBACK_MINIMAL_UID 1000
++#endif
+ #ifndef FALLBACK_MINIMAL_UID
+ #define FALLBACK_MINIMAL_UID 500
+ #endif
+ 
+-#define USERDIR LOCALSTATEDIR "/lib/AccountsService/users"
++#define USERDIR LOCALSTATEDIR "/db/AccountsService/users"
+ 
+ static const char *default_excludes[] = {
+         "bin",
+@@ -494,16 +497,24 @@ reload_passwd (Daemon *daemon)
+         old_users = NULL;
+         new_users = NULL;
+ 
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++       setpwent();
++#else
+         errno = 0;
+         fp = fopen (PATH_PASSWD, "r");
+         if (fp == NULL) {
+                 g_warning ("Unable to open %s: %s", PATH_PASSWD, g_strerror (errno));
+                 goto out;
+         }
++#endif
+         g_hash_table_foreach (daemon->priv->users, listify_hash_values_hfunc, &old_users);
+         g_slist_foreach (old_users, (GFunc) g_object_ref, NULL);
+ 
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++        for (pwent = getpwent (); pwent != NULL; pwent = getpwent ()) {
++#else
+         for (pwent = fgetpwent (fp); pwent != NULL; pwent = fgetpwent (fp)) {
++#endif
+                 /* Skip users below MINIMAL_UID... */
+                 if (daemon_local_user_is_excluded (daemon, pwent->pw_name, pwent->pw_uid)) {
+                         g_debug ("skipping user: %s", pwent->pw_name);
+@@ -556,7 +567,11 @@ reload_passwd (Daemon *daemon)
+  out:
+         /* Cleanup */
+ 
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
++        endpwent ();
++#else
+         fclose (fp);
++#endif
+ 
+         g_slist_foreach (new_users, (GFunc) g_object_thaw_notify, NULL);
+         g_slist_foreach (new_users, (GFunc) g_object_unref, NULL);
+@@ -676,9 +691,16 @@ on_passwd_monitor_changed (GFileMonitor      *monitor,
+         reload_users (daemon);
+ }
+ 
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ static uid_t
+ get_minimal_uid (void)
+ {
++	return FALLBACK_MINIMAL_UID;
++}
++#else
++static uid_t
++get_minimal_uid (void)
++{
+         GError *error;
+         char *contents;
+         gboolean contents_loaded;
+@@ -728,6 +750,7 @@ out:
+         g_free (contents);
+         return uid;
+ }
++#endif
+ 
+ static void
+ daemon_init (Daemon *daemon)
+@@ -1042,7 +1065,7 @@ finish_list_cached_users (gpointer user_data)
+         while (g_hash_table_iter_next (&iter, (gpointer *)&name, (gpointer *)&user)) {
+                 uid = user_local_get_uid (user);
+                 if (!daemon_local_user_is_excluded (data->daemon, name, uid)) {
+-                        g_debug ("user %s %ld not excluded\n", name, uid);
++                        g_debug ("user %s %ld not excluded\n", name, (long int)uid);
+                         g_ptr_array_add (object_paths, g_strdup (user_local_get_object_path (user)));
+                 }
+         }
+@@ -1381,7 +1404,7 @@ load_autologin (Daemon      *daemon,
+         GError *local_error;
+         gchar *string;
+ 
+-        filename = "/etc/gdm/custom.conf";
++        filename = "${SYSCONFDIR}/gdm/custom.conf";
+ 
+         keyfile = g_key_file_new ();
+         if (!g_key_file_load_from_file (keyfile,
+@@ -1431,7 +1454,7 @@ save_autologin (Daemon      *daemon,
+         gchar *data;
+         gboolean result;
+ 
+-        filename = "/etc/gdm/custom.conf";
++        filename = "${SYSCONFDIR}/gdm/custom.conf";
+ 
+         keyfile = g_key_file_new ();
+         if (!g_key_file_load_from_file (keyfile,
