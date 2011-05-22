@@ -1,5 +1,7 @@
-$OpenBSD: patch-plugins_giggle-view-terminal_c,v 1.1 2010/04/22 15:01:53 landry Exp $
+$OpenBSD: patch-plugins_giggle-view-terminal_c,v 1.2 2011/05/22 17:02:35 jasper Exp $
+
 Needed if we actually want a real shell inside the term
+
 --- plugins/giggle-view-terminal.c.orig	Thu Apr 22 16:09:37 2010
 +++ plugins/giggle-view-terminal.c	Thu Apr 22 16:09:57 2010
 @@ -193,7 +193,7 @@ giggle_view_terminal_append_tab (GiggleViewTerminal *v
