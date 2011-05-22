@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.512 2011/05/14 10:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.513 2011/05/22 19:31:41 landry Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -10,6 +10,7 @@
      SUBDIR += ap2-mod_perl
      SUBDIR += apache-httpd
      SUBDIR += aria2
+     SUBDIR += arora
      SUBDIR += august
      SUBDIR += bk2site
      SUBDIR += blogsum
