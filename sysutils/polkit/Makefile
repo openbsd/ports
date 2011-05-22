@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2011/05/21 05:00:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2011/05/22 13:34:19 ajacoutot Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
 DISTNAME=	polkit-0.101
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  polkit-gobject-1	1.0 # .0.0
 SHARED_LIBS +=  polkit-backend-1	1.0 # .0.0
 SHARED_LIBS +=  polkit-agent-1		1.0 # .0.0
 
-CATEGORIES=	sysutils
+CATEGORIES=	sysutils security
 
 HOMEPAGE=	http://www.freedesktop.org/wiki/Software/PolicyKit
 
