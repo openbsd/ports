@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/04/02 16:56:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/05/22 16:19:31 espie Exp $
 
 COMMENT=	farsi bornaray fonts
 
@@ -19,7 +19,8 @@ PERMIT_PACKAGE_FTP=	No license
 PERMIT_DISTFILES_CDROM= No license
 PERMIT_DISTFILES_FTP=	No license
 
-MASTER_SITES=	http://www.bornaray.com/download/fonts/
+MASTER_SITES = 	http://www.borna.ir/download/fonts/ \
+		http://www.bornaray.com/download/fonts/
 MASTER_SITES0=	http://distfiles.bsdfrog.org/
 
 EXTRACT_SUFX=	.exe
