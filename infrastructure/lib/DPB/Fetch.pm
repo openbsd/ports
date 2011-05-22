@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.2 2011/05/22 08:21:39 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.3 2011/05/22 09:01:27 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -99,22 +99,29 @@ sub filename
 sub check
 {
 	my ($self, $logger) = @_;
+	return $self->checksum($self->filename, $logger);
 
-	if (!stat $self->filename) {
+}
+
+sub checksum
+{
+	my ($self, $logger, $name) = @_;
+	# XXX if we matched once, then we match "forever"
+	return 1 if $self->{okay};
+	if (!stat $name) {
 		return 0;
 	}
 	if ((stat _)[7] != $self->{sz}) {
-		my $fh = $logger->open($logger->make_distlogs($self));
+		my $fh = $logger->open('dist/'.$self->{name});
 		print $fh "size does not match\n";
-		close $fh;
 		return 0;
 	}
-	if (OpenBSD::sha->new($self->filename)->equals($self->{sha})) {
+	if (OpenBSD::sha->new($name)->equals($self->{sha})) {
+		$self->{okay} = 1;
 		return 1;
 	}
-	my $fh = $logger->open($logger->make_distlogs($self));
+	my $fh = $logger->open('dist/'.$self->{name});
 	print $fh "checksum does not match\n";
-	close $fh;
 	return 0;
 }
 
@@ -261,29 +268,26 @@ sub finalize
 	my $job = $core->job;
 	# XXX should be a bit smarter about keeping/not keeping files
 	# based on core's status
-	if (stat $job->{file}->tempfilename) {
-		if ((stat _)[7] == $job->{file}->{sz}) {
-			rename($job->{file}->tempfilename,
-			    $job->{file}->filename);
-			$core->{status} = 0;
-			my $sz = $job->{file}->{sz};
-			if (defined $self->{initial_sz}) {
-				$sz -= $self->{initial_sz};
-			}
-			my $fh = $job->{logger}->open("fetch/good");
-			my $elapsed = $self->elapsed;
-			print $fh $self->{site}.$job->{file}->{short}, " in ",
-			    $elapsed, "s ";
-			if ($elapsed != 0) {
-				print $fh "(", 
-				sprintf("%.2f", $sz / $elapsed / 1024), "KB/s)";
-			}
-			print $fh "\n";
-			return 1;
-		} else {
-			unlink($job->{file}->tempfilename);
+	if ($job->{file}->checksum($job->{logger}, 
+	    $job->{file}->tempfilename)) {
+		rename($job->{file}->tempfilename, $job->{file}->filename);
+		$core->{status} = 0;
+		my $sz = $job->{file}->{sz};
+		if (defined $self->{initial_sz}) {
+			$sz -= $self->{initial_sz};
 		}
+		my $fh = $job->{logger}->open("fetch/good");
+		my $elapsed = $self->elapsed;
+		print $fh $self->{site}.$job->{file}->{short}, " in ",
+		    $elapsed, "s ";
+		if ($elapsed != 0) {
+			print $fh "(", 
+			sprintf("%.2f", $sz / $elapsed / 1024), "KB/s)";
+		}
+		print $fh "\n";
+		return 1;
 	}
+	unlink($job->{file}->tempfilename);
 	my $fh = $job->{logger}->open("fetch/bad");
 	print $fh $self->{site}.$job->{file}->{short}, "\n";
 	if ($job->new_fetch_task) {
