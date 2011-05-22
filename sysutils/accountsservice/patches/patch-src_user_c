@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_user_c,v 1.1.1.1 2011/05/22 10:57:32 ajacoutot Exp $
+$OpenBSD: patch-src_user_c,v 1.2 2011/05/22 17:30:00 ajacoutot Exp $
 --- src/user.c.orig	Thu May 19 05:38:50 2011
-+++ src/user.c	Sun May 22 12:34:15 2011
++++ src/user.c	Sun May 22 19:26:22 2011
 @@ -29,7 +29,11 @@
  #include <sys/wait.h>
  #include <unistd.h>
@@ -34,7 +34,7 @@ $OpenBSD: patch-src_user_c,v 1.1.1.1 2011/05/22 10:57:32 ajacoutot Exp $
          gchar *real_name;
          gboolean changed;
          const gchar *passwd;
-@@ -555,9 +563,15 @@ user_local_update_from_pwent (User          *user,
+@@ -555,16 +563,31 @@ user_local_update_from_pwent (User          *user,
          }
  
          passwd = pwent->pw_passwd;
@@ -48,9 +48,25 @@ $OpenBSD: patch-src_user_c,v 1.1.1.1 2011/05/22 10:57:32 ajacoutot Exp $
                  passwd = spent->sp_pwdp;
 +#endif
  
++#ifdef __OpenBSD__
++        if (g_strrstr (user->shell, "/sbin/nologin") != 0) {
++                locked = TRUE;
++        }
++        else {
++                locked = FALSE;
++        }
++#else
          if (passwd && passwd[0] == '!') {
                  locked = TRUE;
-@@ -579,11 +593,13 @@ user_local_update_from_pwent (User          *user,
+         }
+         else {
+                 locked = FALSE;
+         }
++#endif
+ 
+         if (user->locked != locked) {
+                 user->locked = locked;
+@@ -579,11 +602,13 @@ user_local_update_from_pwent (User          *user,
                  mode = PASSWORD_MODE_REGULAR;
          }
  
@@ -64,7 +80,7 @@ $OpenBSD: patch-src_user_c,v 1.1.1.1 2011/05/22 10:57:32 ajacoutot Exp $
  
          if (user->password_mode != mode) {
                  user->password_mode = mode;
-@@ -686,7 +702,7 @@ save_extra_data (User *user)
+@@ -686,7 +711,7 @@ save_extra_data (User *user)
          error = NULL;
          data = g_key_file_to_data (keyfile, NULL, &error);
          if (error == NULL) {
@@ -73,7 +89,7 @@ $OpenBSD: patch-src_user_c,v 1.1.1.1 2011/05/22 10:57:32 ajacoutot Exp $
                                               user->user_name,
                                               NULL);
                  g_file_set_contents (filename, data, -1, &error);
-@@ -707,9 +723,9 @@ move_extra_data (const gchar *old_name,
+@@ -707,9 +732,9 @@ move_extra_data (const gchar *old_name,
          gchar *old_filename;
          gchar *new_filename;
  
@@ -85,3 +101,48 @@ $OpenBSD: patch-src_user_c,v 1.1.1.1 2011/05/22 10:57:32 ajacoutot Exp $
                                           new_name, NULL);
  
          g_rename (old_filename, new_filename);
+@@ -1550,16 +1575,27 @@ user_change_locked_authorized_cb (Daemon              
+ {
+         gboolean locked = GPOINTER_TO_INT (data);
+         GError *error;
++#ifdef __OpenBSD__
++        gchar *argv[5];
++#else
+         gchar *argv[4];
++#endif
+ 
+         if (user->locked != locked) {
+                 sys_log (context,
+                          "%s account of user '%s' (%d)",
+                          locked ? "locking" : "unlocking", user->user_name, user->uid);
+                 argv[0] = "/usr/sbin/usermod";
++#ifdef __OpenBSD__
++                argv[1] = "-s";
++                argv[2] = locked ? "/sbin/nologin" : "/bin/ksh";
++                argv[3] = user->user_name;
++                argv[4] = NULL;
++#else
+                 argv[1] = locked ? "-L" : "-U";
+                 argv[2] = user->user_name;
+                 argv[3] = NULL;
++#endif
+ 
+                 error = NULL;
+                 if (!spawn_with_login_uid (context, argv, &error)) {
+@@ -1753,9 +1789,16 @@ user_change_password_mode_authorized_cb (Daemon       
+                 }
+                 else if (user->locked) {
+                         argv[0] = "/usr/sbin/usermod";
++#ifdef __OpenBSD__
++                        argv[1] = "-s";
++                        argv[2] = "/bin/ksh";
++                        argv[3] = user->user_name;
++                        argv[4] = NULL;
++#else
+                         argv[1] = "-U";
+                         argv[2] = user->user_name;
+                         argv[3] = NULL;
++#endif
+ 
+                         error = NULL;
+                         if (!spawn_with_login_uid (context, argv, &error)) {
