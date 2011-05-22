@@ -1,0 +1,18 @@
+$OpenBSD: patch-Imakefile,v 1.1.1.1 2011/05/22 12:32:41 schwarze Exp $
+--- Imakefile.orig	Fri Feb  2 00:25:28 2001
++++ Imakefile	Wed May 18 15:00:23 2011
+@@ -17,13 +17,10 @@ XCOMM License along with this program; if not, write t
+ XCOMM Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ XCOMM 
+ 
+-BINDIR = /usr/local/bin
+-MANDIR = /usr/local/man/cat1
+-
+ LOCAL_LIBRARIES = $(XLIB)
+ 
+ SRCS = xbattbar.c
+ OBJS = xbattbar.o
+ TARGET = xbattbar
+ 
+-ComplexProgramTarget($(TARGET))
++ComplexProgramTargetNoMan($(TARGET))

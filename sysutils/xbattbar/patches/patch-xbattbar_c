@@ -1,0 +1,12 @@
+$OpenBSD: patch-xbattbar_c,v 1.1.1.1 2011/05/22 12:32:41 schwarze Exp $
+--- xbattbar.c.orig	Tue May 17 12:29:19 2011
++++ xbattbar.c	Tue May 17 12:32:20 2011
+@@ -575,7 +575,7 @@ void battery_check(void)
+ 
+ #endif /* __FreeBSD__ */
+ 
+-#ifdef __NetBSD__
++#if defined(__NetBSD__) || defined(__OpenBSD__)
+ 
+ #include <machine/apmvar.h>
+ 
