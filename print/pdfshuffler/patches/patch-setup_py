@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2011/05/22 19:37:04 landry Exp $
+--- setup.py.orig	Sun May 15 21:03:31 2011
++++ setup.py	Sun May 15 21:03:39 2011
+@@ -25,7 +25,7 @@ import re
+ from distutils.core import setup
+ 
+ data_files=[('share/applications/', ['data/pdfshuffler.desktop']),
+-            ('share/man/man1', ['doc/pdfshuffler.1']),
++            ('man/man1', ['doc/pdfshuffler.1']),
+             ('share/pixmaps/', ['data/pdfshuffler.svg']),
+             ('share/pixmaps/', ['data/pdfshuffler.png']) ]
+ 
