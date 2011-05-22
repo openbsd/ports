@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/04 17:36:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/05/22 18:25:39 jasper Exp $
 
 COMMENT=	library for handling microsoft compression formats
 
-DISTNAME=	libmspack-0.2alpha
+DISTNAME=	libmspack-0.3alpha
 EPOCH=		0
 SHARED_LIBS +=	mspack               2.0      # .1.0
 CATEGORIES=	archivers
@@ -20,5 +20,7 @@ MASTER_SITES=	${HOMEPAGE}
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
+		--disable-silent-rules
 
 .include <bsd.port.mk>
