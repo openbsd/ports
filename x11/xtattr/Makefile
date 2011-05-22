@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/05/22 16:01:01 espie Exp $
 
 COMMENT=	changing xterm attributes
 
@@ -10,6 +10,7 @@ PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 
+MASTER_SITES =	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
 WANTLIB=		c 
 
 USE_GROFF =	Yes
