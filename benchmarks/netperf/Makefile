@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2011/05/21 19:21:15 jakob Exp $
+# $OpenBSD: Makefile,v 1.29 2011/05/22 18:04:10 jasper Exp $
 
 COMMENT=	Network performance benchmark
 
 DISTNAME=	netperf-2.3
-REVISION=	2
+REVISION=	3
 CATEGORIES=	benchmarks net
 
 #MASTER_SITES=	ftp://ftp.cup.hp.com/dist/networking/benchmarks/netperf/ \
