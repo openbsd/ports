@@ -1,12 +1,12 @@
-$OpenBSD: patch-wxPython_setup_py,v 1.2 2007/10/23 11:45:14 steven Exp $
+$OpenBSD: patch-wxPython_setup_py,v 1.3 2011/05/22 08:21:34 dcoppa Exp $
 --- wxPython/setup.py.orig	Thu Jul 19 00:33:55 2007
 +++ wxPython/setup.py	Wed Oct  3 11:08:48 2007
-@@ -912,7 +912,7 @@ if __name__ == "__main__":
-                   packages = ['wxaddons']
-              )
+@@ -1053,7 +1053,7 @@ if __name__ == "__main__":
+               )
  
--        if INSTALL_MULTIVERSION:
-+        if 1:
-             setup(name             = 'wxPython-common',
-                   version          = VERSION,
-                   description      = DESCRIPTION,
+         if not EGGing:
+-            if INSTALL_MULTIVERSION:
++            if 1:
+                 setup(name             = 'wxPython-common',
+                       version          = VERSION,
+                       description      = DESCRIPTION,
