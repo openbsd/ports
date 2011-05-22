@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.7 2011/04/25 11:58:46 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.8 2011/05/22 08:21:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -29,6 +29,7 @@ sub new
 {
 	my ($class, $state) = @_;
 	my $self = bless {
+	    state => $state,
 	    clean => $state->opt('c'),  
 	    size => $state->opt('s'),
 	    rebuild => $state->opt('R'),
@@ -45,12 +46,6 @@ sub new
 	}
 	$self->init;
 	return $self;
-}
-
-sub set_grabber
-{
-	my ($self, $g) = @_;
-	$self->{grabber} = $g;
 }
 
 sub init
@@ -91,7 +86,7 @@ sub check_signature
 	my $plist = $p->plist(\&OpenBSD::PackingList::UpdateInfoOnly);
 	my $pkgsig = $plist->signature->string;
 	# and the port
-	my $portsig = $self->{grabber}->grab_signature($core,
+	my $portsig = $self->{state}->grabber->grab_signature($core,
 	    $v->fullpkgpath);
 	if ($portsig eq $pkgsig) {
 		$signature_is_uptodate->{$name} = 1;
@@ -99,7 +94,7 @@ sub check_signature
 		return 1;
 	} else {
 		print {$self->{logrebuild}} "$name: rebuild\n";
-		$self->{grabber}->clean_packages($core,
+		$self->{state}->grabber->clean_packages($core,
 		    $v->fullpkgpath);
 		return 0;
 	}

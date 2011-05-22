@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.6 2011/03/22 19:48:01 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.7 2011/05/22 08:21:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -87,6 +87,29 @@ sub string
 	return join(' ', @$self);
 }
 
+package FetchManually;
+our @ISA = qw(AddOrderedList);
+sub add
+{
+	my ($class, $var, $o, $value, $parent) = @_;
+	return if $value =~ /no/i;
+	$class->SUPER::add($var, $o, $value, $parent);
+}
+
+sub make_list
+{
+	my ($class, $value) = @_;
+	$value =~ s/^\s*\"//;
+	$value =~ s/\"\s*$//;
+	return split(/\"\s*\"/, $value);
+}
+
+sub string
+{
+	my $self = shift;
+	return join("\n", @$self);
+}
+
 package AddDepends;
 our @ISA = qw(AddList);
 sub new
@@ -156,6 +179,7 @@ my %adder = (
 	PATCHFILES => 'AddList',
 	DIST_SUBDIR => 'AddInfo', 
 	CHECKSUM_FILE => 'AddInfo',
+	FETCH_MANUALLY => 'FetchManually',
 	MASTER_SITES => 'AddOrderedList',
 	MASTER_SITES0 => 'AddOrderedList',
 	MASTER_SITES1 => 'AddOrderedList',

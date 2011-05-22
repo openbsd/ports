@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.11 2011/04/25 11:58:46 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.12 2011/05/22 08:21:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -24,17 +24,24 @@ use DPB::Util;
 package DPB::Grabber;
 sub new
 {
-	my ($class, $state, $engine, $endcode) = @_;
+	my ($class, $state, $endcode) = @_;
 
 	my $o = bless { ports => $state->ports, make => $state->make,
 		loglist => DPB::Util->make_hot($state->logger->open("vars")),
 		logger => $state->logger,
-		engine => $engine,
-		dpb => $state->opt('f') ? "fetch" : "normal",
+		engine => $state->engine,
+		state => $state,
 		keep_going => 1,
 		endcode => $endcode
 	    }, $class;
-	$engine->set_grabber($o);
+	if ($state->opt('f')) {
+		require DPB::Fetch;
+		$o->{dpb} = "fetch";
+		$o->{fetch} = DPB::Fetch->new($state->distdir);
+	} else {
+		$o->{dpb} = "normal";
+		$o->{fetch} = DPB::FetchDummy->new;
+	}
 	return $o;
 }
 
@@ -113,6 +120,17 @@ sub complete_subdirs
 
 		$self->grab_subdirs($core, \@subdirlist);
 	}
+}
+
+package DPB::FetchDummy;
+sub new
+{
+	my $class = shift;
+	bless {}, $class;
+}
+
+sub build_distinfo
+{
 }
 
 1;

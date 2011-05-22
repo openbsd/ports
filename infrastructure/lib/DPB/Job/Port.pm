@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.7 2011/04/25 11:58:46 espie Exp $
+# $OpenBSD: Port.pm,v 1.8 2011/05/22 08:21:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -18,11 +18,11 @@ use strict;
 use warnings;
 
 use DPB::Job;
+use DPB::Clock;
 package DPB::Task::Port;
-use Time::HiRes qw(time);
 use OpenBSD::Paths;
 
-our @ISA = qw(DPB::Task::Fork);
+our @ISA = qw(DPB::Task::Clocked);
 sub new
 {
 	my ($class, $phase) = @_;
@@ -39,32 +39,16 @@ sub fork
 {
 	my ($self, $core) = @_;
 
-	my $job = $core->job;
-	$self->{started} = time();
-	DPB::Clock->register($self);
-	$job->{current} = $self->{phase};
+	$core->job->{current} = $self->{phase};
 	return $self->SUPER::fork($core);
 }
 
 sub finalize
 {
 	my ($self, $core) = @_;
-	$self->{ended} = time();
-	DPB::Clock->unregister($self);
+	$self->SUPER::finalize($core);
 	$core->job->finished_task($self);
 	return $core->{status} == 0;
-}
-
-sub elapsed
-{
-	my $self = shift;
-	return $self->{ended} - $self->{started};
-}
-
-sub stopped_clock
-{
-	my ($self, $gap) = @_;
-	$self->{started} += $gap;
 }
 
 sub run
@@ -259,10 +243,7 @@ sub finalize
 	# so that we DON'T take prepare into account.
 	my $job = $core->job;
 	if (defined $job->{watched}) {
-		my $sz = (stat $job->{watched})[7];
-		if (defined $sz) {
-			$job->{offset} = $sz;
-		}
+		$job->{watched}->reset_offset;
 	}
 	$self->SUPER::finalize($core);
 }
@@ -423,73 +404,40 @@ sub add_build_info
 sub set_watch
 {
 	my ($self, $logger, $v) = @_;
+	my $expected;
 	for my $w ($logger->pathlist($v)) {
 		if (defined $logsize->{$w}) {
-			$self->{expected} = $logsize->{$w};
+			$expected = $logsize->{$w};
 			last;
 		}
 	}
-	$self->{watched} = $logger->log_pkgpath($v);
-}
-
-sub watch
-{
-	my $self = shift;
-	my $sz = (stat $self->{watched})[7];
-	if (defined $self->{offset} && defined $sz) {
-		$sz -= $self->{offset};
-	}
-	if (!defined $self->{sz} || $self->{sz} != $sz) {
-		$self->{sz} = $sz;
-		$self->{time} = time();
-	}
+	$self->{watched} = DPB::Watch->new($logger->log_pkgpath($v),
+	    $expected, $self->{offset}, $self->{started});
 }
 
 sub watched
 {
 	my ($self, $current, $core) = @_;
 	return "" unless defined $self->{watched};
-	$self->watch;
-	my $progress = '';
-	if (defined $self->{sz}) {
-		if (defined $self->{expected} &&
-		    $self->{sz} < 4 * $self->{expected}) {
-			$progress = ' '.
-			    int($self->{sz}*100/$self->{expected}). '%';
-		} else {
-			$progress = ' '.$self->{sz};
-	    	}
-	}
-
-	my $diff = $current - $self->{time};
-	my $unchanged = " unchanged for ";
-	if ($diff > 7200) {
-		$unchanged .= int($diff/3600)." hours";
-	} elsif ($diff > 300) {
-		$unchanged .= int($diff/60)." minutes";
-	} elsif ($diff > 10) {
-		$unchanged .= int($diff)." seconds";
-	} else {
-		$unchanged = "";
-	}
+	my $diff = $self->{watched}->check_change($current);
+	my $msg = $self->{watched}->change_message($diff);
 	my $stuck = $core->stuck_timeout;
 	if (defined $stuck) {
-		if ($diff / $core->sf > $stuck) {
+		if ($diff > $stuck) {
 			$self->{stuck} = 
-			    "KILLED: $self->{current} stuck at $progress,$unchanged";
+			    "KILLED: $self->{current} stuck at $msg";
 			kill 9, $core->{pid};
 			return $self->{stuck};
 		}
 	}
-	return $progress.$unchanged;
+	return $msg;
 }
 
 sub really_watch
 {
 	my ($self, $current) = @_;
 	return "" unless defined $self->{watched};
-	$self->watch;
-	my $diff = $current - $self->{time};
+	my $diff = $self->{watched}->check_change($current);
 	$self->{lastdiff} //= 5;
 	if ($diff > $self->{lastdiff} * 2) {
 		$self->{lastdiff} = $diff;

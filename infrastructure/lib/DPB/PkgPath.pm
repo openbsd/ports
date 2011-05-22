@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.3 2011/03/22 19:48:53 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.4 2011/05/22 08:21:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -47,6 +47,8 @@ sub create
 	}
 
 	bless {pkgpath => $pkgpath,
+		# XXX
+		has => 1,
 		flavors => \%flavors,
 		sawflavor => $sawflavor,
 		multi => $multi}, $class;
@@ -108,6 +110,38 @@ sub fullpkgpath
 	return join (',', @list);
 }
 
+sub logname
+{
+	return shift->fullpkgpath;
+}
+
+sub lockname
+{
+	&logname;
+}
+
+sub simple_lockname
+{
+	return shift->{pkgpath};
+}
+
+sub unlock_conditions
+{
+	my ($v, $engine) = @_;
+	return $v->{info} && $engine->{builder}->check($v);
+}
+
+sub requeue
+{
+	my ($v, $engine) = @_;
+	$engine->requeue($v);
+}
+
+# for weights, we are ourselves
+sub representative
+{
+	return shift;
+}
 
 # without multi. Used by the SUBDIRs code to make sure we get the right
 # value for default subpackage.

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.7 2011/04/25 11:58:46 espie Exp $
+# $OpenBSD: Core.pm,v 1.8 2011/05/22 08:21:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -27,6 +27,9 @@ sub new
 	my ($class, $name, $prop) = @_;
 	$prop //= {};
 	$prop->{sf} //= 1;
+	if (defined $prop->{stuck}) {
+		$prop->{stuck_timeout} = $prop->{stuck} * $prop->{sf};
+	}
 	$hosts->{$name} //= bless {host => $name, prop => $prop }, $class;
 }
 
@@ -130,7 +133,7 @@ sub sf
 sub stuck_timeout
 {
 	my $self = shift;
-	return $self->prop->{stuck};
+	return $self->prop->{stuck_timeout};
 }
 
 sub memory
@@ -431,6 +434,11 @@ sub init_cores
 			));
 		}
 		$core->start_job($job);
+	}
+	if ($state->opt('f')) {
+		for (1 .. $state->opt('f')) {
+			DPB::Core::Fetcher->new('localhost', {})->mark_ready;
+		}
 	}
 }
 

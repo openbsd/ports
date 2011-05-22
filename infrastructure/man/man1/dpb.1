@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.11 2011/04/25 11:58:46 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.12 2011/05/22 08:21:39 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: April 25 2011 $
+.Dd $Mdocdate: May 22 2011 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -27,6 +27,7 @@
 .Op Fl A Ar arch
 .Op Fl b Ar logfile
 .Op Fl D Ar PARAM Ns = Ns Ar value
+.Op Fl f Ar m
 .Op Fl h Ar hosts
 .Op Fl j Ar n
 .Op Fl L Ar logdir
@@ -81,6 +82,12 @@ Note that this will always be divided by the core's speed factor.
 .It Fl e
 The listing job is extra and won't be given back to the pool when it's
 finished.
+.It Fl f Ar m
+Create
+.Ar m
+jobs for fetching files.
+Those are separate from the build jobs, since they don't consume cpu, and they
+run on the localhost.
 .It Fl h Ar hosts
 File with hosts to use for building.
 One host per line, plus properties, such as:
@@ -186,6 +193,10 @@ number of packages in the queue, e.g., stuff that can be built now, assuming
 we have a free slot.
 .It T=
 number of packages to build, where dependencies are not yet resolved.
+.It F=
+number of distfiles to fetch, when
+.Fl f
+is used.
 .It !=
 number of ignored packages.
 .It L=
@@ -369,6 +380,11 @@ information.
 performs best with lots of paths to build.
 When just used to build a few ports, there's a high risk of starvation
 as there are bottlenecks in parts of the tree.
+.Pp
+The
+.Fl f
+option is somewhat experimental.
+It doesn't have any good heuristics yet when faced with a lot of distfiles to get.
 .Pp
 .Nm
 considers all pkgpaths it explores as valid candidates for packages.

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.3 2010/12/06 19:35:06 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.4 2011/05/22 08:21:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -29,8 +29,8 @@ my (%weight, %bad_weight, %wrkdir, %needed_by);
 
 sub new
 {
-	my ($class) = @_;
-	bless {}, $class;
+	my ($class, $state) = @_;
+	bless {state => $state}, $class;
 }
 
 sub random
@@ -131,6 +131,7 @@ sub mark_depend
 sub compute_measure
 {
 	my ($self, $v) = @_;
+	$v = $v->representative;
 	my $dependencies = {$v => $v};
 	my @todo = values %{$needed_by{$v}};
 	while (my $k = pop (@todo)) {
@@ -302,6 +303,12 @@ sub add
 {
 	my ($self, $v) = @_;
 	$self->{o}{$v} = $v;
+}
+
+sub contains
+{
+	my ($self, $v) = @_;
+	return exists $self->{o}{$v};
 }
 
 sub remove

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Logger.pm,v 1.2 2010/12/12 21:21:03 espie Exp $
+# $OpenBSD: Logger.pm,v 1.3 2011/05/22 08:21:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -114,6 +114,12 @@ sub make_logs
 		$self->link($log, $self->log_pkgname($w));
 	}
 	return $log;
+}
+
+sub make_distlogs
+{
+	my ($self, $f) = @_;
+	return $self->logfile("/dist/".$f->{name});
 }
 
 sub make_log_link

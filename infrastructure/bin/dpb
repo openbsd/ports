@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.18 2011/04/25 11:58:46 espie Exp $
+# $OpenBSD: dpb,v 1.19 2011/05/22 08:21:38 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -42,7 +42,7 @@ sub init
 	my $self = shift;
 	$self->SUPER::init;
 	$self->{no_exports} = 1;
-	$self->{heuristics} = DPB::Heuristics->new;
+	$self->{heuristics} = DPB::Heuristics->new($self);
 	$self->{make} = $ENV{MAKE} || OpenBSD::Paths->make;
 	($self->{ports}, $self->{repo}, $self->{localarch}, $self->{distdir}) =
 	    DPB::Vars->get($self->make, 
@@ -143,6 +143,26 @@ sub logger
 sub heuristics
 {
 	return shift->{heuristics};
+}
+
+sub locker
+{
+	return shift->{locker};
+}
+
+sub builder
+{
+	return shift->{builder};
+}
+
+sub engine
+{
+	return shift->{engine};
+}
+
+sub grabber
+{
+	return shift->{grabber};
 }
 
 sub make
@@ -280,13 +300,12 @@ for my $arg (@ARGV) {
 	$pkgpath->add_to_subdirlist(\@subdirlist);
 }
 
-my $builder = DPB::PortBuilder->new($state);
+$state->{builder} = DPB::PortBuilder->new($state);
 
-my $locker = DPB::Locks->new(join("/", $state->logdir, "locks"));
-my $engine = DPB::Engine->new($builder, $state->heuristics, $state->logger, 
-    $locker);
+$state->{locker} = DPB::Locks->new(join("/", $state->logdir, "locks"));
+$state->{engine} = DPB::Engine->new($state);
 my $reporter = DPB::Reporter->new($state->opt('x'),
-    $state->heuristics, "DPB::Core", $engine);
+    $state->heuristics, "DPB::Core", $state->engine);
 while (!DPB::Core->avail) {
 	DPB::Core->reap;
 	sleep 1;
@@ -303,13 +322,17 @@ sub handle_non_waiting_jobs
 	my $reaped = DPB::Core->reap;
 	$keep_going = !-e $state->logdir."/stop";
 	if (DPB::Core->avail > 1) {
-		$engine->recheck_errors;
+		$state->engine->recheck_errors;
 	}
 	if (DPB::Core->avail) {
-		$engine->check_buildable;
+		$state->engine->check_buildable;
 	}
-	while ($keep_going && DPB::Core->avail && $engine->can_build) {
-		$engine->start_new_job;
+	while ($keep_going && DPB::Core->avail && $state->engine->can_build) {
+		$state->engine->start_new_job;
+	}
+	while ($keep_going && DPB::Core::Fetcher->avail && 
+	    $state->engine->can_fetch) {
+		$state->engine->start_new_fetch;
 	}
 	if ($need_clock) {
 		my $current = time();
@@ -324,31 +347,31 @@ sub handle_non_waiting_jobs
 	return $keep_going;
 }
 
-my $grabber = DPB::Grabber->new($state, $engine, 
+$state->{grabber} = DPB::Grabber->new($state, 
     sub { handle_non_waiting_jobs(1) });
 
 if ($state->{all}) {
 	# when restarting interrupted dpb,
 	# find the most important paths first
-	my $list = $engine->find_best($state->logger->logfile("dependencies"), 10);
+	my $list = $state->engine->find_best($state->logger->logfile("dependencies"), 10);
 	# if we have them, list them before the full ports tree walk.
 	if (@$list > 0) {
-		$grabber->grab_subdirs($core, $list);
+		$state->grabber->grab_subdirs($core, $list);
 	}
 }
 
 if (@subdirlist > 0) {
-	$grabber->grab_subdirs($core, \@subdirlist);
+	$state->grabber->grab_subdirs($core, \@subdirlist);
 }
 
-$grabber->complete_subdirs($core);
+$state->grabber->complete_subdirs($core);
 
 if ($state->{all}) {
-	$grabber->grab_subdirs($core);
+	$state->grabber->grab_subdirs($core);
 }
 
 
-$grabber->complete_subdirs($core);
+$state->grabber->complete_subdirs($core);
 # give back "our" core to the pool.
 
 if (!$state->opt('e')) {
@@ -357,20 +380,20 @@ if (!$state->opt('e')) {
 # and let's wait for all jobs now.
 
 if ($state->{all}) {
-	$engine->dump_dependencies;
+	$state->engine->dump_dependencies;
 }
-#$engine->dump($dump);
-$engine->check_buildable;
-#$engine->dump($dump);
+#$state->engine->dump($dump);
+$state->engine->check_buildable;
+#$state->engine->dump($dump);
 
 DPB::Core->start_clock($state->{display_timeout});
 while (1) {
 	while (1) {
 		handle_non_waiting_jobs(0);
 		if (!DPB::Core->running &&
-		    (!$keep_going || !$engine->can_build)) {
-			$engine->check_buildable;
-			if (!$engine->can_build) {
+		    (!$keep_going || !$state->engine->can_build)) {
+			$state->engine->check_buildable;
+			if (!$state->engine->can_build) {
 				last;
 			}
 		}
@@ -378,13 +401,13 @@ while (1) {
 			DPB::Core->reap_wait;
 		}
 	}
-	if (!$state->opt('q') || !$engine->recheck_errors) {
+	if (!$state->opt('q') || !$state->engine->recheck_errors) {
 		last;
 	}
 }
 
 $reporter->reset;
 DPB::Core->cleanup;
-print $engine->report;
-$engine->dump_category('tobuild', $state->logger->open('dump'));
+print $state->engine->report;
+$state->engine->dump_category('tobuild', $state->logger->open('dump'));
 

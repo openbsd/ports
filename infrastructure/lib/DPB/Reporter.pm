@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.4 2010/10/25 17:31:25 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.5 2011/05/22 08:21:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -20,30 +20,7 @@ use warnings;
 use Term::Cap;
 use OpenBSD::Error;
 use DPB::Util;
-use Time::HiRes qw(time);
-
-package DPB::Clock;
-
-my $items = {};
-sub register
-{
-	my ($class, $o) = @_;
-	$items->{$o} = $o;
-}
-
-sub unregister
-{
-	my ($class, $o) = @_;
-	delete $items->{$o};
-}
-
-sub stopped
-{
-	my ($class, $gap) = @_;
-	for my $o (values %$items) {
-		$o->stopped_clock($gap);
-	}
-}
+use DPB::Clock;
 
 package DPB::Reporter;
 my $singleton;
@@ -73,14 +50,12 @@ sub reset
 	print $self->{clear} if defined $self->{clear};
 }
 
-my $stopped_clock;
-
 sub set_sigtstp
 {
 	my $self =shift;
 	$SIG{TSTP} = sub {
 		$self->reset_cursor;
-		$stopped_clock = time();
+		DPB::Clock->stop;
 		$SIG{TSTP} = 'DEFAULT';
 		kill TSTP => $$;
 	};
@@ -93,7 +68,7 @@ sub set_sig_handlers
 	$SIG{'CONT'} = sub {
 		$self->set_sigtstp;
 		$self->{continued} = 1;
-		DPB::Clock->stopped(time() - $stopped_clock);
+		DPB::Clock->restart;
 		$self->handle_window;
 	};
 }

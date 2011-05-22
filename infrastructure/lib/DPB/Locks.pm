@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.5 2010/12/06 13:20:45 espie Exp $
+# $OpenBSD: Locks.pm,v 1.6 2011/05/22 08:21:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -41,22 +41,22 @@ sub build_lockname
 sub simple_lockname
 {
 	my ($self, $v) = @_;
-	return $self->build_lockname($v->{pkgpath});
+	return $self->build_lockname($v->simple_lockname);
 }
 
 sub lockname
 {
 	my ($self, $v) = @_;
-	return $self->build_lockname($v->fullpkgpath);
+	return $self->build_lockname($v->lockname);
 }
 
 sub dolock
 {
 	my ($self, $name, $v) = @_;
 	if (sysopen my $fh, $name, O_CREAT|O_EXCL|O_WRONLY, 0666) {
-		print $fh "fullpkgpath=", $v->fullpkgpath, "\n";
+		print $fh "fullpkgpath=", $v->lockname, "\n";
 		if (defined $v->{parent}) {
-			print $fh "parent=", $v->{parent}->fullpkgpath, "\n";
+			print $fh "parent=", $v->{parent}->lockname, "\n";
 		}
 		return $fh;
 	} else {
@@ -114,7 +114,7 @@ sub recheck_errors
 		my $e = $engine->{$name};
 		$engine->{$name} = [];
 		while (my $v = shift @$e) {
-			if ($v->{info} && $engine->{builder}->check($v)) {
+			if ($v->unlock_conditions($engine)) {
 				$self->unlock($v);
 			}
 			if ($self->locked($v)) {
@@ -123,7 +123,7 @@ sub recheck_errors
 				if ($name eq 'errors') {
 					$engine->rescan($v);
 				} else {
-					$engine->requeue($v);
+					$v->requeue($engine);
 				}
 			}
 		}
