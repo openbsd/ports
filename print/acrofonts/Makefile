@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/20 09:48:39 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/05/22 16:29:15 espie Exp $
 
 COMMENT=		asian font pack for acroread
 
@@ -15,7 +15,8 @@ PERMIT_DISTFILES_CDROM= commercial software
 PERMIT_DISTFILES_FTP=	Adobe are control freaks
 
 MASTER_SITES=		http://download.adobe.com/pub/adobe/acrobatreader/unix/5.x/
-DISTFILES=		chsfont.tar.gz chtfont.tar.gz \
+MASTER_SITES0=		ftp://ftp.adobe.com/pub/adobe/acrobatreader/unix/5.x/
+DISTFILES=		chsfont.tar.gz chtfont.tar.gz:0 \
 			jpnfont.tar.gz korfont.tar.gz
 
 DIST_SUBDIR=		acrofonts
