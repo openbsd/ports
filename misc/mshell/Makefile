@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2011/05/22 16:07:25 espie Exp $
 
 COMMENT=	Unix menuing shell
 
@@ -17,6 +17,7 @@ PERMIT_PACKAGE_FTP=	no explict license
 PERMIT_DISTFILES_CDROM=	no explict license
 PERMIT_DISTFILES_FTP=	no explict license
 
+MASTER_SITES =		ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/
 WANTLIB=		c curses termlib
 
 post-extract:

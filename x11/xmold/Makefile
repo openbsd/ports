@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2011/05/22 16:01:48 espie Exp $
 
 COMMENT=	mold spreading over your X11 screen
 
@@ -16,7 +16,8 @@ PERMIT_DISTFILES_FTP=	no license
 
 WANTLIB=	X11 Xau Xdmcp Xext c m 
 
-MASTER_SITES=	ftp://cclub.cc.tut.ac.jp/pub/xwin/
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/ \
+		ftp://cclub.cc.tut.ac.jp/pub/xwin/
 
 CONFIGURE_STYLE=	imake
 

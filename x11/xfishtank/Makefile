@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2011/05/22 16:02:33 espie Exp $
 
 COMMENT=	fish swim in the background of your screen
 
@@ -6,7 +6,8 @@ DISTNAME=	xfishtank-2.2
 REVISION=	1
 CATEGORIES=	x11
 
-MASTER_SITES=	ftp://ftp.uni-koeln.de/windows/xcontrib/
+MASTER_SITES=	ftp://ftp.freebsd.org/pub/FreeBSD/distfiles/ \
+		ftp://ftp.uni-koeln.de/windows/xcontrib/
 
 PERMIT_PACKAGE_CDROM=	no license
 PERMIT_PACKAGE_FTP=	no license
