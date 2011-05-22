@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.86 2011/05/18 10:56:41 landry Exp $
+#	$OpenBSD: Makefile,v 1.87 2011/05/22 14:19:25 ajacoutot Exp $
 
     SUBDIR =
     SUBDIR += a2ps,a4
@@ -12,6 +12,7 @@
     SUBDIR += bibview
     SUBDIR += cups
     SUBDIR += cups-pdf
+    SUBDIR += cups-pk-helper
     SUBDIR += detex
     SUBDIR += dvi2tty
     SUBDIR += enscript
