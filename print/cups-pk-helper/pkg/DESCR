@@ -1,0 +1,5 @@
+cups-pk-helper is a PolicyKit helper to configure cups with fine-grained
+privileges.
+For example, it's possible to let users enable/disable printers without
+requiring a password, while still requiring a password for editing
+printer settings.
