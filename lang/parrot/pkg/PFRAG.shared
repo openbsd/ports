@@ -1,14 +1,14 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2011/03/08 20:12:15 landry Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.3 2011/05/22 20:22:08 landry Exp $
 @lib lib/libparrot.so.${LIBparrot_VERSION}
-lib/parrot/3.0.0/dynext/bit_ops.so
-lib/parrot/3.0.0/dynext/debug_ops.so
-lib/parrot/3.0.0/dynext/dynlexpad.so
-lib/parrot/3.0.0/dynext/file.so
-lib/parrot/3.0.0/dynext/gziphandle.so
-lib/parrot/3.0.0/dynext/io_ops.so
-lib/parrot/3.0.0/dynext/math_ops.so
-lib/parrot/3.0.0/dynext/obscure_ops.so
-lib/parrot/3.0.0/dynext/os.so
-lib/parrot/3.0.0/dynext/rational.so
-lib/parrot/3.0.0/dynext/sys_ops.so
-lib/parrot/3.0.0/dynext/trans_ops.so
+lib/parrot/${V}/dynext/bit_ops.so
+lib/parrot/${V}/dynext/debug_ops.so
+lib/parrot/${V}/dynext/dynlexpad.so
+lib/parrot/${V}/dynext/file.so
+lib/parrot/${V}/dynext/gziphandle.so
+lib/parrot/${V}/dynext/io_ops.so
+lib/parrot/${V}/dynext/math_ops.so
+lib/parrot/${V}/dynext/obscure_ops.so
+lib/parrot/${V}/dynext/os.so
+lib/parrot/${V}/dynext/rational.so
+lib/parrot/${V}/dynext/sys_ops.so
+lib/parrot/${V}/dynext/trans_ops.so

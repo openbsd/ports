@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2011/03/08 20:12:15 landry Exp $
+# $OpenBSD: Makefile,v 1.14 2011/05/22 20:22:08 landry Exp $
 
 BROKEN-sparc64 =	fails a lot of regression tests
 
 COMMENT=	virtual machine designed for interpreted languages
 
-V=		3.0.0
+V=		3.3.0
 DISTNAME=	parrot-$V
 CATEGORIES=	lang perl6
-SHARED_LIBS=	parrot	1.0
+SHARED_LIBS=	parrot	2.0
 
 HOMEPAGE=	http://www.parrot.org/
 
@@ -39,9 +39,11 @@ CONFIGURE_ENV =		LIBparrot_VERSION=${LIBparrot_VERSION}
 
 MAKE_ENV=		LIBparrot_VERSION=${LIBparrot_VERSION}
 
-ALL_TARGET=		installable docs
+ALL_TARGET=		installable
 INSTALL_TARGET =	install install-doc
 REGRESS_TARGET=		test
+
+SUBST_VARS +=		V
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/config/init/hints/openbsd.pm
