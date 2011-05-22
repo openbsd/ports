@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2011/05/22 17:20:58 jasper Exp $
 
 COMMENT-main=		Quake/Quake-world client
 COMMENT-server=		Quake world server
@@ -9,7 +9,7 @@ FULLPKGPATH-server=	games/quake,-server
 REVISION-server=	7
 
 PKGNAME-main=		quake-20000101
-REVISION-main=		9
+REVISION-main=		10
 
 DISTNAME=		quake-v6-bsd-kame
 PATCHFILES=		quake6-00-v6-20000202b.diff.gz:0
@@ -19,7 +19,7 @@ HOMEPAGE=		http://www.viagenie.qc.ca/en/ipv6-quake.shtml
 MASTER_SITES=		${MASTER_SITE_BACKUP}
 MASTER_SITES0=		ftp://ftp.kame.net/pub/kame/misc/
 
-# GPL
+# GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
@@ -36,8 +36,7 @@ FLAVOR?=		sdl
 CONFIGURE_ENV=LDFLAGS='-L${LOCALBASE}/lib -L${X11BASE}/lib'
 CONFIGURE_ENV+=CPPFLAGS='-I${LOCALBASE}/include -I${X11BASE}/include'
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS=		--enable-release
-CONFIGURE_ARGS+=	--bindir=/bin \
+CONFIGURE_ARGS =	--bindir=/bin \
 			--with-opengl=no --with-opengl-includes=no
 
 WANTLIB-main=		${WANTLIB} sndio
@@ -58,9 +57,11 @@ CFLAGS+=		-pthread
 .elif ${FLAVOR:L} == x11
 CONFIGURE_ARGS+=	--without-sdl --without-ggi
 MAKE_FLAGS=	
-WANTLIB-main=		X11 Xext c m pthread-stubs sndio xcb
+WANTLIB-main=		X11 Xext c m sndio
 .elif ${FLAVOR:L} == gl
-CONFIGURE_ARGS+=	--with-opengl=yes --with-opengl-includes=${X11BASE}/include
+CONFIGURE_ARGS+=	--with-opengl=yes \
+			--with-opengl-includes=${X11BASE}/include \
+			--without-ggi
 WANTLIB-main+=		GL X11 Xext pthread
 .else
 ERRORS+=		choose either sdl, ggi, gl or x11
