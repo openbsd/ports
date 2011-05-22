@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.87 2011/05/22 14:19:25 ajacoutot Exp $
+#	$OpenBSD: Makefile,v 1.88 2011/05/22 19:37:39 landry Exp $
 
     SUBDIR =
     SUBDIR += a2ps,a4
@@ -50,6 +50,7 @@
     SUBDIR += openclipart
     SUBDIR += pdfjam
     SUBDIR += pdflib
+    SUBDIR += pdfshuffler
     SUBDIR += pkfonts
     SUBDIR += poppler
     SUBDIR += poppler-data
