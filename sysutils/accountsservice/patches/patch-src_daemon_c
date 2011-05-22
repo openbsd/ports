@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_daemon_c,v 1.1.1.1 2011/05/22 10:57:32 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_c,v 1.2 2011/05/22 12:21:41 ajacoutot Exp $
 --- src/daemon.c.orig	Thu May 19 05:39:12 2011
-+++ src/daemon.c	Sun May 22 12:36:56 2011
++++ src/daemon.c	Sun May 22 14:19:04 2011
 @@ -50,11 +50,14 @@
  #define PATH_SHADOW "/etc/shadow"
  #define PATH_LOGIN_DEFS "/etc/login.defs"
@@ -88,21 +88,97 @@ $OpenBSD: patch-src_daemon_c,v 1.1.1.1 2011/05/22 10:57:32 ajacoutot Exp $
                          g_ptr_array_add (object_paths, g_strdup (user_local_get_object_path (user)));
                  }
          }
-@@ -1381,7 +1404,7 @@ load_autologin (Daemon      *daemon,
-         GError *local_error;
-         gchar *string;
+@@ -1119,7 +1142,12 @@ daemon_create_user_authorized_cb (Daemon              
+         CreateUserData *cd = data;
+         User *user;
+         GError *error;
++#ifndef __OpenBSD__
+         gchar *argv[8];
++#else
++        gchar *argv[12];
++        gchar *gargv[3];
++#endif
  
--        filename = "/etc/gdm/custom.conf";
-+        filename = "${SYSCONFDIR}/gdm/custom.conf";
+         if (getpwnam (cd->user_name) != NULL) {
+                 throw_error (context, ERROR_USER_EXISTS, "A user with name '%s' already exists", cd->user_name);
+@@ -1127,6 +1155,23 @@ daemon_create_user_authorized_cb (Daemon              
+                 return;
+         }
  
-         keyfile = g_key_file_new ();
-         if (!g_key_file_load_from_file (keyfile,
-@@ -1431,7 +1454,7 @@ save_autologin (Daemon      *daemon,
-         gchar *data;
-         gboolean result;
++#ifdef __OpenBSD__
++        GError *gerror;
++        sys_log (context, "create group '%s'", cd->user_name);
++
++        gargv[0] = "/usr/sbin/groupadd";
++        gargv[1] = cd->user_name;
++        gargv[2] = NULL;
++
++        gerror = NULL;
++        if (!spawn_with_login_uid (context, gargv, &gerror)) {
++                throw_error (context, ERROR_FAILED, "running '%s' failed: %s", gargv[0], gerror->message);
++                g_error_free (gerror);
++                return;
++        }
++#endif
++
++
+         sys_log (context, "create user '%s'", cd->user_name);
  
--        filename = "/etc/gdm/custom.conf";
-+        filename = "${SYSCONFDIR}/gdm/custom.conf";
+         argv[0] = "/usr/sbin/useradd";
+@@ -1135,13 +1180,32 @@ daemon_create_user_authorized_cb (Daemon              
+         argv[3] = cd->real_name;
+         if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
+                 argv[4] = "-G";
++#ifdef __OpenBSD__
++                argv[5] = "wheel,users";
++                argv[6] = "-g";
++                argv[7] = cd->user_name;
++                argv[8] = "-L";
++                argv[9] = "staff";
++                argv[10] = cd->user_name;
++                argv[11] = NULL;
++#else
+                 argv[5] = "wheel";
+                 argv[6] = cd->user_name;
+                 argv[7] = NULL;
++#endif
+         }
+         else if (cd->account_type == ACCOUNT_TYPE_STANDARD) {
++#ifdef __OpenBSD__
++                argv[4] = "-G";
++                argv[5] = "users";
++                argv[6] = "-g";
++                argv[7] = cd->user_name;
++                argv[8] = cd->user_name;
++                argv[9] = NULL;
++#else
+                 argv[4] = cd->user_name;
+                 argv[5] = NULL;
++#endif
+         }
+         else {
+                 throw_error (context, ERROR_FAILED, "Don't know how to add user of type %d", cd->account_type);
+@@ -1211,6 +1275,23 @@ daemon_delete_user_authorized_cb (Daemon              
  
-         keyfile = g_key_file_new ();
-         if (!g_key_file_load_from_file (keyfile,
+                 return;
+         }
++
++#ifdef __OpenBSD__
++        GError *gerror;
++        gchar *gargv[2];
++
++        sys_log (context, "delete group '%d'", pwent->pw_gid);
++
++        gargv[0] = "/usr/sbin/groupdel";
++        gargv[1] = pwent->pw_name;
++
++        gerror = NULL;
++        if (!spawn_with_login_uid (context, gargv, &gerror)) {
++                throw_error (context, ERROR_FAILED, "running '%s' failed: %s", argv[0], gerror->message);
++                g_error_free (gerror);
++                return;
++        }
++#endif
+ 
+         sys_log (context, "delete user '%s' (%d)", pwent->pw_name, ud->uid);
+ 
