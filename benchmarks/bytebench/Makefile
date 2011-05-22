@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/10/30 21:18:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2011/05/22 16:25:38 espie Exp $
 
 COMMENT=	BYTE magazine benchmark suite
 DISTNAME=       bytebench-3.1
@@ -10,7 +10,8 @@ PERMIT_PACKAGE_FTP=	no license
 PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 
-MASTER_SITES=   http://www.netsw.org/benchmark/system/
+MASTER_SITES=   ftp://ftp.42.org/pub/OLD/b/	\
+		http://www.netsw.org/benchmark/system/
 EXTRACT_SUFX=	.tar.Z
 
 MAKE_ENV=	CC="${CC}"
