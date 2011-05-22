@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/22 17:30:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/22 17:34:55 ajacoutot Exp $
 
 COMMENT=	D-Bus interface for user account query and manipulation
 
 DISTNAME=	accountsservice-0.6.12
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  accountsservice           0.0 # 0.0
 
