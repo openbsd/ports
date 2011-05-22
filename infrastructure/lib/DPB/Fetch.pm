@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.4 2011/05/22 09:06:49 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.5 2011/05/22 09:19:08 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -99,13 +99,13 @@ sub filename
 sub check
 {
 	my ($self, $logger) = @_;
-	return $self->checksum($logger, $self->filename);
+	return $self->checksum($logger, $self->filename, 1);
 
 }
 
 sub checksum
 {
-	my ($self, $logger, $name) = @_;
+	my ($self, $logger, $name, $quick) = @_;
 	# XXX if we matched once, then we match "forever"
 	return 1 if $self->{okay};
 	if (!stat $name) {
@@ -116,6 +116,7 @@ sub checksum
 		print $fh "size does not match\n";
 		return 0;
 	}
+	return 1 if $quick;
 	if (OpenBSD::sha->new($name)->equals($self->{sha})) {
 		$self->{okay} = 1;
 		return 1;
@@ -128,7 +129,7 @@ sub checksum
 sub unlock_conditions
 {
 	my ($self, $engine) = @_;
-	return $self->check($engine->{logger});
+	return $self->check($engine->{logger}, 1);
 }
 
 sub requeue
