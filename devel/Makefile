@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.941 2011/05/22 20:41:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.942 2011/05/22 20:43:35 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -181,12 +181,12 @@
      SUBDIR += hs-hood
      SUBDIR += hs-hslogger
      SUBDIR += hs-iteratee
-     SUBDIR += hs-largeword
      SUBDIR += hs-language-c
+     SUBDIR += hs-largeword
      SUBDIR += hs-mmap
-     SUBDIR += hs-mtl
      SUBDIR += hs-monads-fd
      SUBDIR += hs-monads-tf
+     SUBDIR += hs-mtl
      SUBDIR += hs-murmur-hash
      SUBDIR += hs-network
      SUBDIR += hs-pango
@@ -275,7 +275,6 @@
      SUBDIR += liboobs
      SUBDIR += liboop
      SUBDIR += libopensync
-     SUBDIR += lpc21isp
      SUBDIR += libpeas
      SUBDIR += libproplist
      SUBDIR += libregexp9
@@ -299,6 +298,7 @@
      SUBDIR += libyajl
      SUBDIR += libyaml
      SUBDIR += llvm
+     SUBDIR += lpc21isp
      SUBDIR += lpeg
      SUBDIR += luaalarm
      SUBDIR += luabitop
@@ -352,8 +352,8 @@
      SUBDIR += p5-Algorithm-Dependency
      SUBDIR += p5-Algorithm-Diff
      SUBDIR += p5-Algorithm-IncludeExclude
-     SUBDIR += p5-Algorithm-Munkres
      SUBDIR += p5-Algorithm-MarkovChain
+     SUBDIR += p5-Algorithm-Munkres
      SUBDIR += p5-Algorithm-Permute
      SUBDIR += p5-Alien-wxWidgets
      SUBDIR += p5-Any-Moose
