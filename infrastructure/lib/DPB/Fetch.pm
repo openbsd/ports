@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.3 2011/05/22 09:01:27 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.4 2011/05/22 09:06:49 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -99,7 +99,7 @@ sub filename
 sub check
 {
 	my ($self, $logger) = @_;
-	return $self->checksum($self->filename, $logger);
+	return $self->checksum($logger, $self->filename);
 
 }
 
