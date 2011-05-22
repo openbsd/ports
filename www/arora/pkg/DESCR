@@ -1,0 +1,19 @@
+Arora is a lightweight cross-platform web browser.
+
+Arora uses the QtWebKit port of the fully standards-compliant WebKit
+layout engine. It features fast rendering, powerful JavaScript engine
+and supports Netscape plugins.
+
+Apart from the must-have features such as bookmarks, history and tabbed
+browsing Arora boasts:
+
+- very fast startup
+- integration with desktop environments
+- smart location bar
+- session management
+- privacy mode
+- flexible search engine management
+- ClickToFlash plugin
+- download manager
+- WebInspector, a set of tools for web developers
+- 30 translations

@@ -1,0 +1,34 @@
+$OpenBSD: patch-src_src_pro,v 1.1.1.1 2011/05/22 19:31:09 landry Exp $
+--- src/src.pro.orig	Sun Sep 26 22:42:17 2010
++++ src/src.pro	Sun May 15 02:26:22 2011
+@@ -23,7 +23,7 @@ include(locale/locale.pri)
+ 
+ !mac {
+ unix {
+-    INSTALLS += translations desktop iconxpm iconsvg icon16 icon32 icon128 man man-compress
++    INSTALLS += translations desktop iconxpm iconsvg icon16 icon32 icon128 man
+ 
+     translations.path = $$PKGDATADIR
+     translations.files += .qm/locale
+@@ -46,20 +46,11 @@ unix {
+     icon128.path = $$DATADIR/icons/hicolor/128x128/apps
+     icon128.files += data/128x128/arora.png
+ 
+-    man.path = $$DATADIR/man/man1
++    man.path = $$PREFIX/man/man1
+     man.files += data/arora.1
+ 
+     man-compress.path = $$DATADIR/man/man1
+     man-compress.extra = "" "gzip -9 -f \$(INSTALL_ROOT)/$$DATADIR/man/man1/arora.1" ""
+     man-compress.depends = install_man
+-
+-    GNOME_DEFAULT_APPS_PATH = $$system(pkg-config --variable=defappsdir gnome-default-applications)
+-
+-    !isEmpty(GNOME_DEFAULT_APPS_PATH) {
+-        INSTALLS += gnome-default-app
+-
+-        gnome-default-app.path = $$GNOME_DEFAULT_APPS_PATH
+-        gnome-default-app.files = data/arora.xml
+-    }
+ }
+ }

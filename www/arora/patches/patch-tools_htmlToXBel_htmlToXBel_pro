@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_htmlToXBel_htmlToXBel_pro,v 1.1.1.1 2011/05/22 19:31:09 landry Exp $
+--- tools/htmlToXBel/htmlToXBel.pro.orig	Sun Sep 26 22:42:17 2010
++++ tools/htmlToXBel/htmlToXBel.pro	Sun May 15 02:28:19 2011
+@@ -23,9 +23,9 @@ include(../../webkittrunk.pri)
+ 
+ !mac {
+ unix {
+-    INSTALLS += man man-compress
++    INSTALLS += man
+ 
+-    man.path = $$DATADIR/man/man1
++    man.path = $$PREFIX/man/man1
+     man.files += data/htmlToXBel.1
+ 
+     man-compress.path = $$DATADIR/man/man1

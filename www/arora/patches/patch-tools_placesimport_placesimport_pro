@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_placesimport_placesimport_pro,v 1.1.1.1 2011/05/22 19:31:09 landry Exp $
+--- tools/placesimport/placesimport.pro.orig	Sun Sep 26 22:42:17 2010
++++ tools/placesimport/placesimport.pro	Sun May 15 02:28:44 2011
+@@ -18,9 +18,9 @@ include(../../src/src.pri)
+ 
+ !mac {
+ unix {
+-    INSTALLS += man man-compress
++    INSTALLS += man
+ 
+-    man.path = $$DATADIR/man/man1
++    man.path = $$PREFIX/man/man1
+     man.files += data/arora-placesimport.1
+ 
+     man-compress.path = $$DATADIR/man/man1

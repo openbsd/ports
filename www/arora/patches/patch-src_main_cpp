@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_main_cpp,v 1.1.1.1 2011/05/22 19:31:09 landry Exp $
+--- src/main.cpp.orig	Sun May 15 01:47:10 2011
++++ src/main.cpp	Sun May 15 01:47:43 2011
+@@ -27,7 +27,7 @@ int main(int argc, char **argv)
+ {
+     Q_INIT_RESOURCE(htmls);
+     Q_INIT_RESOURCE(data);
+-#ifdef Q_WS_X11
++#if 0
+     QApplication::setGraphicsSystem(QString::fromLatin1("raster"));
+ #endif
+     BrowserApplication application(argc, argv);
