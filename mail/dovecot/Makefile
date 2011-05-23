@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.165 2011/05/23 23:15:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.166 2011/05/23 23:29:52 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ V_MAJOR=	2.0
 V_DOVECOT=	2.0.13
 
 DISTNAME=	dovecot-${V_DOVECOT}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
 
