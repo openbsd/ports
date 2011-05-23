@@ -1,0 +1,29 @@
+$OpenBSD: patch-doc_example-config_conf_d_20-managesieve_conf,v 1.1.1.1 2011/05/23 22:49:00 sthen Exp $
+--- doc/example-config/conf.d/20-managesieve.conf.orig	Thu Mar 10 14:28:00 2011
++++ doc/example-config/conf.d/20-managesieve.conf	Thu Mar 10 14:28:10 2011
+@@ -3,18 +3,18 @@
+ ##
+ 
+ # Uncomment to enable managesieve protocol:
+-#protocols = $protocols sieve
++protocols = $protocols sieve
+ 
+ # Service definitions
+ 
+ service managesieve-login {
+-  #inet_listener sieve {
+-  #  port = 4190
+-  #}
++  inet_listener sieve {
++    port = 4190
++  }
+ 
+-  #inet_listener sieve_deprecated {
+-  #  port = 2000
+-  #}
++  inet_listener sieve_deprecated {
++    port = 2000
++  }
+ 
+   # Number of connections to handle before starting a new process. Typically
+   # the only useful values are 0 (unlimited) or 1. 1 is more secure, but 0
