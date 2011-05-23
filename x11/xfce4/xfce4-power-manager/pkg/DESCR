@@ -1,0 +1,5 @@
+This software is a power manager for the Xfce desktop, Xfce power
+manager manages the power sources on the computer. In addition,
+xfce4-power-manager provides a set of freedesktop-compliant DBus
+interfaces to inform other applications about current power level so
+that they can adjust their power consumption.

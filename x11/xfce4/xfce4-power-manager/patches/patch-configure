@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2011/05/23 19:18:15 landry Exp $
+--- configure.orig	Sun Feb 20 14:29:29 2011
++++ configure	Sat May 21 18:49:27 2011
+@@ -18684,18 +18684,10 @@ $as_echo "$as_me: WARNING: unrecognized options: $ac_u
+ fi
+ 
+ 
+-echo "
+---------------------------------------------------
+- 	    Xfce Power Manager $VERSION
+-	======================================
+-
+-	prefix:			${prefix}
+-	xdg autostart:		${sysconfdir/xdg/autostart}
+-	POLKIT:			${polkit}
+-   	DPMS:   		${have_dpms}
+-	Network manager:	${ac_network_manager}
+-  	Build panel plugins:	${build_panel_plugins}
+-   	Debug:		   	${enable_debug}
+---------------------------------------------------
+-
+-Configuration finished, type make to compile"
++echo	prefix:			${prefix}
++echo	xdg autostart:		${sysconfdir}/xdg/autostart
++echo	POLKIT:			${polkit}
++echo   	DPMS:   		${have_dpms}
++echo	Network manager:	${ac_network_manager}
++echo  	Build panel plugins:	${build_panel_plugins}
++echo 	Debug:		   	${enable_debug}
