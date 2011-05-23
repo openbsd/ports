@@ -1,3 +1,5 @@
+/* $OpenBSD: fsusage.c,v 1.3 2011/05/23 19:35:53 jasper Exp $	*/
+
 #include <config.h>
 
 #undef HAVE_SYS_STATVFS_H

@@ -1,3 +1,5 @@
+/* $OpenBSD: netlist.c,v 1.2 2011/05/23 19:35:54 jasper Exp $	*/
+
 /*
    This file is part of LibGTop 2.0.
 

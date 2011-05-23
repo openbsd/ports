@@ -1,3 +1,5 @@
+/* $OpenBSD: procargs.c,v 1.3 2011/05/23 19:35:54 jasper Exp $	*/
+
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
 

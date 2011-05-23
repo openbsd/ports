@@ -1,3 +1,5 @@
+/* $OpenBSD: shm_limits.c,v 1.3 2011/05/23 19:35:56 jasper Exp $	*/
+
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
 

@@ -1,3 +1,4 @@
+# $OpenBSD: Makefile.am,v 1.2 2011/05/23 19:35:52 jasper Exp $
 
 INCLUDES			= @INCLUDES@
 

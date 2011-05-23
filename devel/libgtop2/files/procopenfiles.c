@@ -1,3 +1,5 @@
+/* $OpenBSD: procopenfiles.c,v 1.2 2011/05/23 19:35:55 jasper Exp $	*/
+
 /* Copyright (C) 1998-99 Martin Baulig
    Copyright (C) 2004 Nicolás Lichtmaier
    Copyright (C) 2007 Joe Marcus Clarke

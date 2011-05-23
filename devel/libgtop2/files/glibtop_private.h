@@ -1,3 +1,5 @@
+/* $OpenBSD: glibtop_private.h,v 1.2 2011/05/23 19:35:53 jasper Exp $	*/
+
 /* Copyright (C) 2007 Joe Marcus Clarke
    This file is part of LibGTop 2.0.
 
