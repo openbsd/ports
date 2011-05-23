@@ -1,7 +1,7 @@
-$OpenBSD: patch-arcio_c,v 1.2 2005/10/13 18:05:20 naddy Exp $
---- arcio.c.orig	Tue Oct 11 23:47:55 2005
-+++ arcio.c	Tue Oct 11 23:48:12 2005
-@@ -46,7 +46,7 @@ readhdr(hdr, f)			/* read a header from 
+$OpenBSD: patch-arcio_c,v 1.3 2011/05/23 13:42:10 gsoares Exp $
+--- arcio.c.orig	Sat Aug  7 10:06:42 2010
++++ arcio.c	Thu May 19 23:35:46 2011
+@@ -46,7 +46,7 @@ readhdr(hdr, f)			/* read a header from an archive */
  		return 0;	/* then signal end of archive */
  
  	if (hdrver != ARCMARK) {	/* check archive validity */
@@ -10,7 +10,7 @@ $OpenBSD: patch-arcio_c,v 1.2 2005/10/13 18:05:20 naddy Exp $
  			printf("An entry in %s has a bad header.\n", arcname);
  			nerrs++;
  		}
-@@ -63,10 +63,10 @@ readhdr(hdr, f)			/* read a header from 
+@@ -67,10 +67,10 @@ readhdr(hdr, f)			/* read a header from an archive */
  		if (feof(f) && first)
  			arcdie("%s is not an archive", arcname);
  
