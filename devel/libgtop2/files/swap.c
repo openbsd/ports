@@ -1,4 +1,4 @@
-/* $OpenBSD: swap.c,v 1.3 2011/05/23 19:35:56 jasper Exp $	*/
+/* $OpenBSD: swap.c,v 1.4 2011/05/23 21:26:41 jasper Exp $	*/
 
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
@@ -91,7 +91,7 @@ glibtop_get_swap_p (glibtop *server, glibtop_swap *buf)
 	swappgsin = uvmexp.swapins;
 	swappgsout = uvmexp.swapouts;
 
-	nswap = swapctl (SWAP_NSWAP, NULL, 0);
+	nswap = swapctl (SWAP_NSWAP, 0, 0);
 	if (nswap < 0) {
 		glibtop_warn_io_r (server, "swapctl (SWAP_NSWAP)");
 		return;
@@ -106,8 +106,10 @@ glibtop_get_swap_p (glibtop *server, glibtop_swap *buf)
 	}
 
 	for (i = 0; i < nswap; i++) {
-		avail += swaplist[i].se_nblks;
-		inuse += swaplist[i].se_inuse;
+		if (swaplist[i].se_flags & SWF_ENABLE) {
+			avail += swaplist[i].se_nblks;
+			inuse += swaplist[i].se_inuse;
+		}
 	}
 
 	g_free (swaplist);
