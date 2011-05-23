@@ -47,19 +47,10 @@ char *
 glibtop_get_proc_args_p (glibtop *server, glibtop_proc_args *buf,
 			 pid_t pid, unsigned max_len)
 {
-#if defined(__OpenBSD__)
 	struct kinfo_proc2 *pinfo;
-#else
-	struct kinfo_proc *pinfo;
-#endif
 	char *retval, **args, **ptr;
 	size_t size = 0, pos = 0;
 	int count;
-
-#if !defined(__bsdi__) && !defined(__OpenBSD__)
-	char filename [BUFSIZ];
-	struct stat statb;
-#endif
 
 	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_ARGS), 0);
 
@@ -68,31 +59,18 @@ glibtop_get_proc_args_p (glibtop *server, glibtop_proc_args *buf,
 	/* swapper, init, pagedaemon, vmdaemon, update - this doen't work. */
 	if (pid < 5) return NULL;
 
-#if !defined(__bsdi__) && !defined(__OpenBSD__)
-	sprintf (filename, "/proc/%d/mem", pid);
-	if (stat (filename, &statb)) return NULL;
-#endif
-
 	glibtop_suid_enter (server);
 
 	/* Get the process data */
-#if defined(__OpenBSD__)
 	pinfo = kvm_getproc2 (server->machine.kd, KERN_PROC_PID, pid,
 			       sizeof (*pinfo), &count);
-#else
-	pinfo = kvm_getprocs (server->machine.kd, KERN_PROC_PID, pid, &count);
-#endif
 	if ((pinfo == NULL) || (count < 1)) {
 		glibtop_suid_leave (server);
 		glibtop_warn_io_r (server, "kvm_getprocs (%d)", pid);
 		return NULL;
 	}
 
-#if defined(__OpenBSD__)
 	args = kvm_getargv2 (server->machine.kd, pinfo, max_len);
-#else
-	args = kvm_getargv (server->machine.kd, pinfo, max_len);
-#endif
 	if (args == NULL) {
 		glibtop_suid_leave (server);
 		glibtop_warn_io_r (server, "kvm_getargv (%d)", pid);

@@ -54,9 +54,7 @@ static const unsigned long _glibtop_sysdeps_netload =
 
 static const unsigned _glibtop_sysdeps_netload_data =
 (1L << GLIBTOP_NETLOAD_ADDRESS) +
-#if !defined(__bsdi__)
 (1L << GLIBTOP_NETLOAD_SUBNET) +
-#endif
 (1L << GLIBTOP_NETLOAD_MTU);
 
 /* nlist structure for kernel access */
@@ -85,9 +83,6 @@ glibtop_get_netload_p (glibtop *server, glibtop_netload *buf,
     struct ifnet ifnet;
     u_long ifnetaddr, ifnetfound;
     struct sockaddr *sa = NULL;
-#if (defined(__FreeBSD__) && (__FreeBSD_version < 501113)) || defined(__bsdi__)
-    char tname [16];
-#endif
     char name [32];
 
     union {
@@ -115,33 +110,13 @@ glibtop_get_netload_p (glibtop *server, glibtop_netload *buf,
 			  sizeof (ifnet)) != sizeof (ifnet))
 		    glibtop_error_io_r (server, "kvm_read (ifnetaddr)");
 
-#if (defined(__FreeBSD__) && (__FreeBSD_version < 501113)) || defined(__bsdi__)
-	    if (kvm_read (server->machine.kd, (u_long) ifnet.if_name,
-			  tname, 16) != 16)
-		    glibtop_error_io_r (server, "kvm_read (if_name)");
-	    tname[15] = '\0';
-	    snprintf (name, 32, "%s%d", tname, ifnet.if_unit);
-#else
 	    g_strlcpy (name, ifnet.if_xname, sizeof(name));
-#endif
-#if defined(__FreeBSD__) && (__FreeBSD_version >= 300000)
-	    ifnetaddr = (u_long) ifnet.if_link.tqe_next;
-#elif defined(__FreeBSD__) || defined(__bsdi__)
-	    ifnetaddr = (u_long) ifnet.if_next;
-#else
 	    ifnetaddr = (u_long) ifnet.if_list.tqe_next;
-#endif
 
 	    if (strcmp (name, interface) != 0)
 		    continue;
 
-#if defined(__FreeBSD__) && (__FreeBSD_version >= 300000)
-	    ifaddraddr = (u_long) ifnet.if_addrhead.tqh_first;
-#elif defined(__FreeBSD__) || defined(__bsdi__)
-	    ifaddraddr = (u_long) ifnet.if_addrlist;
-#else
 	    ifaddraddr = (u_long) ifnet.if_addrlist.tqh_first;
-#endif
 	}
 	if (ifnet.if_flags & IFF_UP)
 		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_UP);
@@ -179,10 +154,6 @@ glibtop_get_netload_p (glibtop *server, glibtop_netload *buf,
 		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_LINK1);
 	if (ifnet.if_flags & IFF_LINK2)
 		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_LINK2);
-#ifdef __FreeBSD__
-	if (ifnet.if_flags & IFF_ALTPHYS)
-		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_ALTPHYS);
-#endif
 	if (ifnet.if_flags & IFF_MULTICAST)
 		buf->if_flags |= (1L << GLIBTOP_IF_FLAGS_MULTICAST);
 
@@ -218,16 +189,7 @@ glibtop_get_netload_p (glibtop *server, glibtop_netload *buf,
 		buf->flags |= GLIBTOP_NETLOAD_HWADDRESS;
 	    } else if (sa->sa_family == AF_INET) {
 		sin = (struct sockaddr_in *)sa;
-#if !defined(__bsdi__)
-		/* Commenting out to "fix" #13345. */
-#if defined(__NetBSD__)
-		buf->subnet = ifaddr.in.ia_net;
-#elif defined(__OpenBSD__)
 		buf->subnet = ifaddr.in.ia_netmask;
-#else
-		buf->subnet = htonl (ifaddr.in.ia_subnet);
-#endif
-#endif
 		buf->address = sin->sin_addr.s_addr;
 		buf->mtu = ifnet.if_mtu;
 
@@ -239,11 +201,7 @@ glibtop_get_netload_p (glibtop *server, glibtop_netload *buf,
 		buf->flags |= GLIBTOP_NETLOAD_ADDRESS6;
 	    }
 	    /* FIXME prefix6, scope6 */
-#if defined (__OpenBSD__)
 	    ifaddraddr = (u_long) ifaddr.ifa.ifa_list.tqe_next;
-#else
-	    ifaddraddr = (u_long) ifaddr.ifa.ifa_link.tqe_next;
-#endif
 	}
 	return;
     }

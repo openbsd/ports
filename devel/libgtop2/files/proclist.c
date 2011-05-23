@@ -60,11 +60,7 @@ pid_t *
 glibtop_get_proclist_p (glibtop *server, glibtop_proclist *buf,
 			gint64 real_which, gint64 arg)
 {
-#if defined(__OpenBSD__)
 	struct kinfo_proc2 *pinfo;
-#else
-	struct kinfo_proc *pinfo;
-#endif
 	unsigned *pids = NULL;
 	int which, count;
 	int i,j;
@@ -76,12 +72,8 @@ glibtop_get_proclist_p (glibtop *server, glibtop_proclist *buf,
 	which = (int)(real_which & GLIBTOP_KERN_PROC_MASK);
 
 	/* Get the process data */
-#if defined(__OpenBSD__)
 	pinfo = kvm_getproc2 (server->machine.kd, which, arg,
 			      sizeof (*pinfo), &count);
-#else
- 	pinfo = kvm_getprocs (server->machine.kd, which, arg, &count);
-#endif
 	if ((pinfo == NULL) || (count < 1)) {
 		glibtop_warn_io_r (server, "kvm_getprocs (proclist)");
 		return NULL;
@@ -93,23 +85,9 @@ glibtop_get_proclist_p (glibtop *server, glibtop_proclist *buf,
 	pids = g_realloc (pids, count * sizeof (unsigned));
 	/* Copy the pids over to this chain */
 	for (i=j=0; i < count; i++) {
-#if (defined(__FreeBSD__) && (__FreeBSD_version >= 500013)) || defined(__FreeBSD_kernel__)
-#define PROC_STAT	ki_stat
-#define PROC_RUID	ki_ruid
-#define PROC_PID	ki_pid
-
-#elif defined(__OpenBSD__)
-
 #define PROC_STAT	p_stat
 #define PROC_RUID	p_ruid
 #define PROC_PID	p_pid
-
-#else
-#define PROC_STAT	kp_proc.p_stat
-#define PROC_RUID	kp_eproc.e_pcred.p_ruid
-#define PROC_PID	kp_proc.p_pid
-
-#endif
 
 		if ((real_which & GLIBTOP_EXCLUDE_IDLE) &&
 		    (pinfo[i].PROC_STAT != SRUN))

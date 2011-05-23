@@ -64,10 +64,6 @@ glibtop_open_p (glibtop *server, const char *program_name,
 	server->machine.gid = getgid ();
 	server->machine.egid = getegid ();
 
-#ifdef __FreeBSD__
-	server->os_version_code = __FreeBSD_version;
-#endif
-
 	/* Setup machine-specific data */
 	server->machine.kd = kvm_open (NULL, NULL, NULL, O_RDONLY, "kvm_open");
 

@@ -28,23 +28,14 @@
 
 #include <sys/sysctl.h>
 #include <sys/vmmeter.h>
-#if defined(__NetBSD__)  && (__NetBSD_Version__ < 105020000)
-#include <vm/vm_param.h>
-#endif
-
-#if defined(__NetBSD__)  && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
 #include <uvm/uvm_extern.h>
 #include <uvm/uvm_param.h>
-#endif
 
 static const unsigned long _glibtop_sysdeps_mem =
 (1L << GLIBTOP_MEM_TOTAL) + (1L << GLIBTOP_MEM_USED) +
 (1L << GLIBTOP_MEM_FREE) +
 (1L << GLIBTOP_MEM_SHARED) +
 (1L << GLIBTOP_MEM_BUFFER) +
-#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-(1L << GLIBTOP_MEM_CACHED) +
-#endif
 (1L << GLIBTOP_MEM_USER) + (1L << GLIBTOP_MEM_LOCKED);
 
 #ifndef LOG1024
@@ -59,32 +50,13 @@ static int pageshift;		/* log base 2 of the pagesize */
 
 /* nlist structure for kernel access */
 static struct nlist nlst [] = {
-#if defined(__NetBSD__)  && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
 	{ "_bufpages" },
 	{ 0 }
-#else
-#if defined(__bsdi__)
-	{ "_bufcachemem" },
-#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-	{ "_bufspace" },
-#else
-	{ "_bufpages" },
-#endif
-	{ "_cnt" },
-	{ 0 }
-#endif
 };
 
 /* MIB array for sysctl */
-#ifdef __bsdi__
-static int mib [] = { CTL_VM, VM_TOTAL };
-#else
 static int mib [] = { CTL_VM, VM_METER };
-#endif
-
-#if defined(__NetBSD__)  && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
 static int mib_uvmexp [] = { CTL_VM, VM_UVMEXP };
-#endif
 
 /* Init function. */
 
@@ -118,12 +90,8 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 {
 	struct vmtotal vmt;
 	size_t length_vmt;
-#if defined(__NetBSD__)  && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
 	struct uvmexp uvmexp;
 	size_t length_uvmexp;
-#else
-	struct vmmeter vmm;
-#endif
 	u_int v_used_count;
 	u_int v_total_count;
 	u_int v_free_count;
@@ -147,20 +115,11 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 		return;
 	}
 
-#if defined(__NetBSD__)  && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
 	length_uvmexp = sizeof (uvmexp);
 	if (sysctl (mib_uvmexp, 2, &uvmexp, &length_uvmexp, NULL, 0)) {
 		glibtop_warn_io_r (server, "sysctl (uvmexp)");
 		return;
 	}
-#else
-	/* Get the data from kvm_* */
-	if (kvm_read (server->machine.kd, nlst[1].n_value,
-		      &vmm, sizeof (vmm)) != sizeof (vmm)) {
-		glibtop_warn_io_r (server, "kvm_read (cnt)");
-		return;
-	}
-#endif
 
 	if (kvm_read (server->machine.kd, nlst[0].n_value,
 		      &bufspace, sizeof (bufspace)) != sizeof (bufspace)) {
@@ -170,50 +129,20 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 
 	/* convert memory stats to Kbytes */
 
-#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-	v_total_count = vmm.v_page_count;
-#else
-#if defined(__NetBSD__)  && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
 	v_total_count = uvmexp.reserve_kernel +
 		uvmexp.reserve_pagedaemon +
 		uvmexp.free + uvmexp.wired + uvmexp.active +
 		uvmexp.inactive;
-#else
-	v_total_count = vmm.v_kernel_pages +
-		vmm.v_free_count + vmm.v_wire_count +
-		vmm.v_active_count + vmm.v_inactive_count;
-#endif
-#endif
 
-#if defined(__NetBSD__)  && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
 	v_used_count = uvmexp.active + uvmexp.inactive;
 	v_free_count = uvmexp.free;
-#else
-	v_used_count = vmm.v_active_count + vmm.v_inactive_count;
-	v_free_count = vmm.v_free_count;
-#endif
 
 	buf->total = (guint64) pagetok (v_total_count) << LOG1024;
 	buf->used  = (guint64) pagetok (v_used_count) << LOG1024;
 	buf->free  = (guint64) pagetok (v_free_count) << LOG1024;
-
-#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-	buf->cached = (guint64) pagetok (vmm.v_cache_count) << LOG1024;
-#endif
-
-#if defined(__NetBSD__)  && (__NetBSD_Version__ >= 104000000) || defined(__OpenBSD__)
 	buf->locked = (guint64) pagetok (uvmexp.wired) << LOG1024;
-#else
-	buf->locked = (guint64) pagetok (vmm.v_wire_count) << LOG1024;
-#endif
-
 	buf->shared = (guint64) pagetok (vmt.t_rmshr) << LOG1024;
-
-#if defined(__FreeBSD__) || defined(__FreeBSD_kernel__)
-	buf->buffer = (guint64) bufspace;
-#else
 	buf->buffer = (guint64) pagetok (bufspace) << LOG1024;
-#endif
 
 	/* user */
 	buf->user = buf->total - buf->free - buf->shared - buf->buffer;

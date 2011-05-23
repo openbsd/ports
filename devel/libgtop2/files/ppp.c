@@ -38,11 +38,7 @@
 #include <net/netisr.h>
 #include <net/route.h>
 
-#if defined(__FreeBSD__) || defined(__NetBSD__) || defined(__OpenBSD__)
 #include <net/if_sppp.h>
-#else
-#include <i4b/sppp/if_sppp.h>
-#endif
 
 /* Read `misc/i4b_acct.txt' for details ... */
 #ifdef HAVE_I4B_ACCT

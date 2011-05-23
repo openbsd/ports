@@ -26,23 +26,6 @@
 
 #include <glibtop_suid.h>
 
-#if (defined __bsdi__) && (_BSDI_VERSION < 199700)
-/* Older versions of BSDI don't seem to have this. */
-
-void
-_glibtop_init_msg_limits_p (glibtop *server)
-{ }
-
-void
-glibtop_get_msg_limits_p (glibtop *server, glibtop_msg_limits *buf)
-{
-        glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_MSG_LIMITS), 0);
-
-        memset (buf, 0, sizeof (glibtop_msg_limits));
-}
-
-#else
-
 /* Define the appropriate macro (if any) to get declaration of `struct
  * msginfo'.  Needed on, at least, FreeBSD. */
 #if defined (STRUCT_MSGINFO_NEEDS_KERNEL)
@@ -109,6 +92,3 @@ glibtop_get_msg_limits_p (glibtop *server, glibtop_msg_limits *buf)
 
 	buf->flags = _glibtop_sysdeps_msg_limits;
 }
-
-#endif /* either a newer BSDI or no BSDI at all. */
-
