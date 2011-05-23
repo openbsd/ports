@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2011/05/07 12:07:10 ajacoutot Exp $
+$OpenBSD: README,v 1.10 2011/05/23 21:31:56 ajacoutot Exp $
 
 Running GNOME on OpenBSD
 ========================
@@ -19,6 +19,7 @@ install at least the following packages:
 	gnome-keyring \
 	gnome-media \
 	gnome-panel \
+	gnome-power-manager \
 	gnome-screensaver \
 	gnome-terminal \
 	gnome-themes \

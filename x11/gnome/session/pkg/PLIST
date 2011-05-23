@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2011/05/05 09:59:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2011/05/23 21:31:56 ajacoutot Exp $
 @bin bin/gnome-session
 @bin bin/gnome-session-properties
 @bin bin/gnome-session-save
@@ -15,24 +15,11 @@ share/doc/pkg-readmes/${FULLPKGNAME}
 share/gnome-session/
 share/gnome-session/gsm-inhibit-dialog.ui
 share/gnome-session/session-properties.ui
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/session-properties.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/session-properties.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/session-properties.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/session-properties.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/session-properties.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/session-properties.svg
 share/locale/af/LC_MESSAGES/gnome-session-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-session-2.0.mo
