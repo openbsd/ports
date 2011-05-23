@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2011/05/23 22:54:38 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.23 2011/05/23 23:15:05 sthen Exp $
 @pkgpath mail/dovecot,-server
 @pkgpath mail/dovecot,-server,bdb
 @pkgpath mail/dovecot,-server,ldap
@@ -6,13 +6,6 @@
 @pkgpath mail/dovecot,-server,postgresql
 @pkgpath mail/dovecot,-server,sqlite
 @pkgpath mail/dovecot,-server,bdb,ldap,mysql,postgresql,sqlite
-@pkgpath mail/dovecot
-@pkgpath mail/dovecot,bdb
-@pkgpath mail/dovecot,ldap
-@pkgpath mail/dovecot,mysql
-@pkgpath mail/dovecot,postgresql
-@pkgpath mail/dovecot,sqlite
-@pkgpath mail/dovecot,bdb,ldap,mysql,postgresql,sqlite
 @ask-update dovecot-<2.0 You will need to change your conf
 @newgroup _dovecot:518
 @newgroup _dovenull:666

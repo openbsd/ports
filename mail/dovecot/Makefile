@@ -1,20 +1,15 @@
-# $OpenBSD: Makefile,v 1.164 2011/05/23 22:54:38 sthen Exp $
-
-#
-# Dont forget to bump the Sieve package when you
-# update Dovecot !!
-# When the Dovecot V_MAJOR will change, dont forget
-# to report it in mail/dovecot-pigeonhole
-#
+# $OpenBSD: Makefile,v 1.165 2011/05/23 23:15:05 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT= compact IMAP/POP3 server
 
+# Bump dovecot-pigeonhole every time you update to a new Dovecot version.
 V_MAJOR=	2.0
 V_DOVECOT=	2.0.13
 
 DISTNAME=	dovecot-${V_DOVECOT}
+REVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
 
@@ -53,15 +48,8 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-FLAVORS=	bdb ldap mysql postgresql sqlite
+FLAVORS=	ldap mysql postgresql sqlite
 FLAVOR?=
-
-.if ${FLAVOR:L:Mbdb}
-CONFIGURE_ARGS+=--with-db
-LIB_DEPENDS+=	databases/db/v4
-WANTLIB+=	db>=5
-CPPFLAGS+=	-I${LOCALBASE}/include/db4
-.endif
 
 .if ${FLAVOR:L:Mldap}
 CONFIGURE_ARGS+=--with-ldap
