@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/05/11 06:56:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/05/23 12:00:49 ajacoutot Exp $
 @conflict gtk+2-<2.22
 @conflict gtk+2-docs-<2.22
 @unexec-delete rm -f %D/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache
@@ -86,21 +86,21 @@ share/gtk-doc/html/gdk-pixbuf/api-index-2-8.html
 share/gtk-doc/html/gdk-pixbuf/api-index-deprecated.html
 share/gtk-doc/html/gdk-pixbuf/api-index-full.html
 share/gtk-doc/html/gdk-pixbuf/composite.png
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Animations.html
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-File-Loading.html
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-File-saving.html
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Image-Data-in-Memory.html
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Inline-data.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Module-Interface.html
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Reference-Counting-and-Memory-Mangement.html
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Scaling.html
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-The-GdkPixbuf-Structure.html
+share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Utilities.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-Versioning.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-animation.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-creating.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-csource.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-file-loading.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-file-saving.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-from-drawables.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf-rendering.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-gdk-pixbuf.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-inline.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-query-loaders.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-refcounting.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-scaling.html
-share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf-util.html
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf.devhelp
 share/gtk-doc/html/gdk-pixbuf/gdk-pixbuf.devhelp2
 share/gtk-doc/html/gdk-pixbuf/home.png
@@ -165,6 +165,9 @@ share/locale/dz/
 share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/el/LC_MESSAGES/gdk-pixbuf.mo
+share/locale/en@shaw/
+share/locale/en@shaw/LC_MESSAGES/
+share/locale/en@shaw/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/en_CA/
 share/locale/en_CA/LC_MESSAGES/
 share/locale/en_CA/LC_MESSAGES/gdk-pixbuf.mo
