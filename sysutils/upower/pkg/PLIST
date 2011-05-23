@@ -1,0 +1,54 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/23 19:04:57 landry Exp $
+%%SHARED%%
+@bin bin/upower
+include/libupower-glib/
+include/libupower-glib/up-client.h
+include/libupower-glib/up-device.h
+include/libupower-glib/up-history-item.h
+include/libupower-glib/up-qos-item.h
+include/libupower-glib/up-stats-item.h
+include/libupower-glib/up-types.h
+include/libupower-glib/up-version.h
+include/libupower-glib/up-wakeup-item.h
+include/libupower-glib/up-wakeups.h
+include/libupower-glib/upower.h
+lib/girepository-1.0/
+lib/girepository-1.0/UPowerGlib-1.0.typelib
+lib/libupower-glib.a
+lib/libupower-glib.la
+lib/pkgconfig/
+lib/pkgconfig/upower-glib.pc
+@bin libexec/upowerd
+@man man/man1/upower.1
+@man man/man7/UPower.7
+@man man/man8/upowerd.8
+share/dbus-1/
+share/dbus-1/interfaces/
+share/dbus-1/interfaces/org.freedesktop.UPower.Device.xml
+share/dbus-1/interfaces/org.freedesktop.UPower.KbdBacklight.xml
+share/dbus-1/interfaces/org.freedesktop.UPower.QoS.xml
+share/dbus-1/interfaces/org.freedesktop.UPower.Wakeups.xml
+share/dbus-1/interfaces/org.freedesktop.UPower.xml
+share/dbus-1/system-services/
+share/dbus-1/system-services/org.freedesktop.UPower.service
+share/examples/upower/
+share/examples/upower/UPower/
+@sample ${SYSCONFDIR}/UPower/
+share/examples/upower/UPower/UPower.conf
+@sample ${SYSCONFDIR}/UPower/UPower.conf
+share/examples/upower/dbus-1/
+@sample ${SYSCONFDIR}/dbus-1/
+share/examples/upower/dbus-1/system.d/
+@sample ${SYSCONFDIR}/dbus-1/system.d/
+share/examples/upower/dbus-1/system.d/org.freedesktop.UPower.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.freedesktop.UPower.conf
+share/gir-1.0/
+share/gir-1.0/UPowerGlib-1.0.gir
+share/locale/fr/LC_MESSAGES/upower.mo
+share/locale/it/LC_MESSAGES/upower.mo
+share/locale/pl/LC_MESSAGES/upower.mo
+share/locale/sv/LC_MESSAGES/upower.mo
+share/polkit-1/
+share/polkit-1/actions/
+share/polkit-1/actions/org.freedesktop.upower.policy
+share/polkit-1/actions/org.freedesktop.upower.qos.policy

@@ -1,0 +1,11 @@
+$OpenBSD: patch-tools_Makefile_in,v 1.1.1.1 2011/05/23 19:04:57 landry Exp $
+--- tools/Makefile.in.orig	Mon Mar 21 19:42:07 2011
++++ tools/Makefile.in	Sat May 21 13:07:51 2011
+@@ -292,6 +292,7 @@ upower_LDFLAGS = -pthread
+ upower_LDADD = \
+ 	$(DBUS_GLIB_LIBS)				\
+ 	$(UPOWER_LIBS)					\
++	-pthread \
+ 	$(POLKIT_DBUS_LIBS)
+ 
+ CLEANFILES = $(BUILT_SOURCES)

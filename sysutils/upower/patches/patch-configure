@@ -1,0 +1,14 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2011/05/23 19:04:57 landry Exp $
+--- configure.orig	Mon Mar 21 19:42:08 2011
++++ configure	Sat May 21 13:07:51 2011
+@@ -14138,10 +14138,6 @@ else
+ fi
+ 
+ 
+-if test "x$GCC" = "xyes"; then
+-  LDFLAGS="-Wl,--as-needed $LDFLAGS"
+-fi
+-
+ 
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether NLS is requested" >&5
+ $as_echo_n "checking whether NLS is requested... " >&6; }
