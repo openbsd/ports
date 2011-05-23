@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/18 15:49:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/23 21:30:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
-GNOME_VERSION=		3.0.1
-
-REVISION=		3
+GNOME_VERSION=		3.0.2
 
 SHARED_LIBS +=  gnome-desktop-3      0.0      # 0.9
 
