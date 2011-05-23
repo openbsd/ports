@@ -1,4 +1,4 @@
-$OpenBSD: patch-gio_gunixconnection_c,v 1.1 2011/04/28 13:07:53 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixconnection_c,v 1.2 2011/05/23 16:36:13 ajacoutot Exp $
 
 XXX
 Workaround the fact that we cannot pass SCM_CREDS over unix sockets:
@@ -10,8 +10,8 @@ This works as long as creds are not retreived from an fd which has
 already been handed over to a different process via SCM_RIGHTS. It will
 probably not be enough in the future but we'll see then.
 
---- gio/gunixconnection.c.orig	Thu Apr 14 00:55:29 2011
-+++ gio/gunixconnection.c	Wed Apr 27 18:54:47 2011
+--- gio/gunixconnection.c.orig	Sat May 21 05:29:24 2011
++++ gio/gunixconnection.c	Mon May 23 18:20:08 2011
 @@ -42,7 +42,7 @@
  #include <gio/gsocket.h>
  #include <unistd.h>
@@ -32,7 +32,7 @@ probably not be enough in the future but we'll see then.
    GSocket *socket;
    gboolean ret;
    GOutputVector vector;
-@@ -340,18 +342,25 @@ g_unix_connection_send_credentials (GUnixConnection   
+@@ -340,18 +342,28 @@ g_unix_connection_send_credentials (GUnixConnection   
  
    ret = FALSE;
  
@@ -43,7 +43,9 @@ probably not be enough in the future but we'll see then.
  
    vector.buffer = &nul_byte;
    vector.size = 1;
--  scm = g_unix_credentials_message_new_with_credentials (credentials);
++#ifndef __OpenBSD__
+   scm = g_unix_credentials_message_new_with_credentials (credentials);
++#endif
    g_object_get (connection, "socket", &socket, NULL);
    if (g_socket_send_message (socket,
                               NULL, /* address */
@@ -59,7 +61,7 @@ probably not be enough in the future but we'll see then.
                               G_SOCKET_MSG_NONE,
                               cancellable,
                               error) != 1)
-@@ -364,8 +373,10 @@ g_unix_connection_send_credentials (GUnixConnection   
+@@ -364,8 +376,10 @@ g_unix_connection_send_credentials (GUnixConnection   
  
   out:
    g_object_unref (socket);
@@ -70,7 +72,7 @@ probably not be enough in the future but we'll see then.
    return ret;
  }
  
-@@ -406,6 +417,10 @@ g_unix_connection_receive_credentials (GUnixConnection
+@@ -406,6 +420,10 @@ g_unix_connection_receive_credentials (GUnixConnection
  #ifdef __linux__
    gboolean turn_off_so_passcreds;
  #endif
@@ -81,7 +83,7 @@ probably not be enough in the future but we'll see then.
  
    g_return_val_if_fail (G_IS_UNIX_CONNECTION (connection), NULL);
    g_return_val_if_fail (error == NULL || *error == NULL, NULL);
-@@ -497,16 +512,25 @@ g_unix_connection_receive_credentials (GUnixConnection
+@@ -497,16 +515,25 @@ g_unix_connection_receive_credentials (GUnixConnection
        goto out;
      }
  
@@ -107,7 +109,7 @@ probably not be enough in the future but we'll see then.
    if (!G_IS_UNIX_CREDENTIALS_MESSAGE (scms[0]))
      {
        g_set_error_literal (error,
-@@ -518,6 +542,21 @@ g_unix_connection_receive_credentials (GUnixConnection
+@@ -518,6 +545,21 @@ g_unix_connection_receive_credentials (GUnixConnection
  
    ret = g_unix_credentials_message_get_credentials (G_UNIX_CREDENTIALS_MESSAGE (scms[0]));
    g_object_ref (ret);
