@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/17 14:11:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/23 10:31:50 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
-GNOME_VERSION=	3.0.1
-REVISION=	1
+GNOME_VERSION=	3.0.2
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,7 +24,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += plc4 plds4 png polkit-gobject-1 pthread pthread-stubs
 WANTLIB += smime3 softokn3 sqlite3 ssl ssl3 startup-notification-1
 WANTLIB += xcb xcb-atom xcb-aux xcb-event xcb-render xcb-shm xkbfile
-WANTLIB += xklavier xml2 z
+WANTLIB += xklavier xml2 z X11-xcb
 
 MODULES=	devel/gettext \
 		x11/gnome
