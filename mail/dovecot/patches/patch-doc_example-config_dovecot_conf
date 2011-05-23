@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_example-config_dovecot_conf,v 1.1 2011/05/23 22:54:38 sthen Exp $
+--- doc/example-config/dovecot.conf.orig	Wed Mar  9 12:03:07 2011
++++ doc/example-config/dovecot.conf	Wed Mar  9 12:03:19 2011
+@@ -26,7 +26,7 @@
+ #listen = *, ::
+ 
+ # Base directory where to store runtime data.
+-#base_dir = /var/run/dovecot/
++#base_dir = /var/dovecot/
+ 
+ # Greeting message for clients.
+ #login_greeting = Dovecot ready.

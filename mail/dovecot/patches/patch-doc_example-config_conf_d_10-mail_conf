@@ -1,0 +1,37 @@
+$OpenBSD: patch-doc_example-config_conf_d_10-mail_conf,v 1.1 2011/05/23 22:54:38 sthen Exp $
+--- doc/example-config/conf.d/10-mail.conf.orig	Thu Dec 30 10:42:54 2010
++++ doc/example-config/conf.d/10-mail.conf	Tue Mar 22 15:11:14 2011
+@@ -132,8 +132,9 @@
+ ##
+ 
+ # Don't use mmap() at all. This is required if you store indexes to shared
+-# filesystems (NFS or clustered filesystem).
+-#mmap_disable = no
++# filesystems (NFS or clustered filesystem) or for some operating systems
++# which use a separate cache for mmap, such as OpenBSD.
++mmap_disable = yes
+ 
+ # Rely on O_EXCL to work when creating dotlock files. NFS supports O_EXCL
+ # since version 3, so this should be safe to use nowadays by default.
+@@ -197,10 +198,10 @@
+ 
+ # UNIX socket path to master authentication server to find users.
+ # This is used by imap (for shared users) and lda.
+-#auth_socket_path = /var/run/dovecot/auth-userdb
++#auth_socket_path = /var/dovecot/auth-userdb
+ 
+ # Directory where to look up mail plugins.
+-#mail_plugin_dir = /usr/lib/dovecot
++mail_plugin_dir = ${PREFIX}/lib/dovecot
+ 
+ # Space separated list of plugins to load for all services. Plugins specific to
+ # IMAP, LDA, etc. are added to this list in their own .conf files.
+@@ -266,7 +267,7 @@
+ # locking methods as well. Some operating systems don't allow using some of
+ # them simultaneously.
+ #mbox_read_locks = fcntl
+-#mbox_write_locks = dotlock fcntl
++mbox_write_locks = fcntl
+ 
+ # Maximum time to wait for lock (all of them) before aborting.
+ #mbox_lock_timeout = 5 mins

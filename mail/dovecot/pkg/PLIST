@@ -1,0 +1,699 @@
+@comment $OpenBSD: PLIST,v 1.22 2011/05/23 22:54:38 sthen Exp $
+@pkgpath mail/dovecot,-server
+@pkgpath mail/dovecot,-server,bdb
+@pkgpath mail/dovecot,-server,ldap
+@pkgpath mail/dovecot,-server,mysql
+@pkgpath mail/dovecot,-server,postgresql
+@pkgpath mail/dovecot,-server,sqlite
+@pkgpath mail/dovecot,-server,bdb,ldap,mysql,postgresql,sqlite
+@pkgpath mail/dovecot
+@pkgpath mail/dovecot,bdb
+@pkgpath mail/dovecot,ldap
+@pkgpath mail/dovecot,mysql
+@pkgpath mail/dovecot,postgresql
+@pkgpath mail/dovecot,sqlite
+@pkgpath mail/dovecot,bdb,ldap,mysql,postgresql,sqlite
+@ask-update dovecot-<2.0 You will need to change your conf
+@newgroup _dovecot:518
+@newgroup _dovenull:666
+@newuser _dovecot:518:_dovecot:daemon:Dovecot Account:/nonexistent:/sbin/nologin
+@newuser _dovenull:666:_dovenull:daemon:Dovecot Login User:/nonexistent:/sbin/nologin
+@extraunexec rm -rf /var/dovecot/*
+@bin bin/doveadm
+@bin bin/doveconf
+@bin bin/dsync
+include/dovecot/
+include/dovecot/abspath.h
+include/dovecot/access-lookup.h
+include/dovecot/anvil-client.h
+include/dovecot/aqueue.h
+include/dovecot/array-decl.h
+include/dovecot/array.h
+include/dovecot/askpass.h
+include/dovecot/auth-cache.h
+include/dovecot/auth-client-connection.h
+include/dovecot/auth-client-interface.h
+include/dovecot/auth-client-private.h
+include/dovecot/auth-client-request.h
+include/dovecot/auth-client.h
+include/dovecot/auth-common.h
+include/dovecot/auth-master-connection.h
+include/dovecot/auth-master.h
+include/dovecot/auth-penalty.h
+include/dovecot/auth-request-handler.h
+include/dovecot/auth-request.h
+include/dovecot/auth-server-connection.h
+include/dovecot/auth-settings.h
+include/dovecot/auth-stream.h
+include/dovecot/auth-worker-client.h
+include/dovecot/auth-worker-server.h
+include/dovecot/auth.h
+include/dovecot/backtrace-string.h
+include/dovecot/base64.h
+include/dovecot/bsearch-insert-pos.h
+include/dovecot/buffer.h
+include/dovecot/charset-utf8.h
+include/dovecot/child-wait.h
+include/dovecot/client-common.h
+include/dovecot/close-keep-errno.h
+include/dovecot/compat.h
+include/dovecot/config-filter.h
+include/dovecot/config-parser-private.h
+include/dovecot/config-parser.h
+include/dovecot/config-request.h
+include/dovecot/config.h
+include/dovecot/crc32.h
+include/dovecot/cydir-storage.h
+include/dovecot/cydir-sync.h
+include/dovecot/data-stack.h
+include/dovecot/db-checkpassword.h
+include/dovecot/db-ldap.h
+include/dovecot/db-passwd-file.h
+include/dovecot/db-sql.h
+include/dovecot/dbox-attachment.h
+include/dovecot/dbox-file.h
+include/dovecot/dbox-mail.h
+include/dovecot/dbox-save.h
+include/dovecot/dbox-storage.h
+include/dovecot/dbox-sync-rebuild.h
+include/dovecot/dict-client.h
+include/dovecot/dict-private.h
+include/dovecot/dict-sql-settings.h
+include/dovecot/dict-sql.h
+include/dovecot/dict.h
+include/dovecot/dns-lookup.h
+include/dovecot/dovecot-version.h
+include/dovecot/duplicate.h
+include/dovecot/eacces-error.h
+include/dovecot/env-util.h
+include/dovecot/execv-const.h
+include/dovecot/failures.h
+include/dovecot/fd-close-on-exec.h
+include/dovecot/fd-set-nonblock.h
+include/dovecot/fdatasync-path.h
+include/dovecot/fdpass.h
+include/dovecot/file-cache.h
+include/dovecot/file-copy.h
+include/dovecot/file-dotlock.h
+include/dovecot/file-lock.h
+include/dovecot/file-set-size.h
+include/dovecot/fs-api-private.h
+include/dovecot/fs-api.h
+include/dovecot/fs-sis-common.h
+include/dovecot/fsync-mode.h
+include/dovecot/hash-format.h
+include/dovecot/hash-method.h
+include/dovecot/hash.h
+include/dovecot/hash2.h
+include/dovecot/hex-binary.h
+include/dovecot/hex-dec.h
+include/dovecot/hmac-md5.h
+include/dovecot/home-expand.h
+include/dovecot/hostpid.h
+include/dovecot/imap-arg.h
+include/dovecot/imap-base-subject.h
+include/dovecot/imap-bodystructure.h
+include/dovecot/imap-client.h
+include/dovecot/imap-commands-util.h
+include/dovecot/imap-commands.h
+include/dovecot/imap-common.h
+include/dovecot/imap-date.h
+include/dovecot/imap-envelope.h
+include/dovecot/imap-expunge.h
+include/dovecot/imap-fetch.h
+include/dovecot/imap-id.h
+include/dovecot/imap-match.h
+include/dovecot/imap-parser.h
+include/dovecot/imap-quote.h
+include/dovecot/imap-resp-code.h
+include/dovecot/imap-search-args.h
+include/dovecot/imap-search.h
+include/dovecot/imap-seqset.h
+include/dovecot/imap-settings.h
+include/dovecot/imap-status.h
+include/dovecot/imap-sync.h
+include/dovecot/imap-utf7.h
+include/dovecot/imap-util.h
+include/dovecot/imem.h
+include/dovecot/index-attachment.h
+include/dovecot/index-mail.h
+include/dovecot/index-mailbox-list.h
+include/dovecot/index-search-result.h
+include/dovecot/index-sort-private.h
+include/dovecot/index-sort.h
+include/dovecot/index-storage.h
+include/dovecot/index-sync-changes.h
+include/dovecot/index-sync-private.h
+include/dovecot/index-thread-private.h
+include/dovecot/ioloop-internal.h
+include/dovecot/ioloop-iolist.h
+include/dovecot/ioloop-notify-fd.h
+include/dovecot/ioloop.h
+include/dovecot/iostream-internal.h
+include/dovecot/ipwd.h
+include/dovecot/istream-attachment.h
+include/dovecot/istream-base64-encoder.h
+include/dovecot/istream-concat.h
+include/dovecot/istream-crlf.h
+include/dovecot/istream-dot.h
+include/dovecot/istream-header-filter.h
+include/dovecot/istream-internal.h
+include/dovecot/istream-mail-stats.h
+include/dovecot/istream-raw-mbox.h
+include/dovecot/istream-seekable.h
+include/dovecot/istream-tee.h
+include/dovecot/istream.h
+include/dovecot/lda-settings.h
+include/dovecot/lib-signals.h
+include/dovecot/lib.h
+include/dovecot/llist.h
+include/dovecot/lmtp-client.h
+include/dovecot/login-common.h
+include/dovecot/login-proxy-state.h
+include/dovecot/login-proxy.h
+include/dovecot/login-settings.h
+include/dovecot/macros.h
+include/dovecot/mail-cache-private.h
+include/dovecot/mail-cache.h
+include/dovecot/mail-copy.h
+include/dovecot/mail-deliver.h
+include/dovecot/mail-error.h
+include/dovecot/mail-index-alloc-cache.h
+include/dovecot/mail-index-modseq.h
+include/dovecot/mail-index-private.h
+include/dovecot/mail-index-strmap.h
+include/dovecot/mail-index-sync-private.h
+include/dovecot/mail-index-transaction-private.h
+include/dovecot/mail-index-util.h
+include/dovecot/mail-index-view-private.h
+include/dovecot/mail-index.h
+include/dovecot/mail-namespace.h
+include/dovecot/mail-search-build.h
+include/dovecot/mail-search-parser-private.h
+include/dovecot/mail-search-parser.h
+include/dovecot/mail-search-register.h
+include/dovecot/mail-search.h
+include/dovecot/mail-send.h
+include/dovecot/mail-storage-hooks.h
+include/dovecot/mail-storage-private.h
+include/dovecot/mail-storage-service.h
+include/dovecot/mail-storage-settings.h
+include/dovecot/mail-storage.h
+include/dovecot/mail-thread.h
+include/dovecot/mail-transaction-log-private.h
+include/dovecot/mail-transaction-log-view-private.h
+include/dovecot/mail-transaction-log.h
+include/dovecot/mail-types.h
+include/dovecot/mail-user.h
+include/dovecot/mailbox-list-delete.h
+include/dovecot/mailbox-list-fs.h
+include/dovecot/mailbox-list-index-private.h
+include/dovecot/mailbox-list-index.h
+include/dovecot/mailbox-list-maildir.h
+include/dovecot/mailbox-list-private.h
+include/dovecot/mailbox-list-subscriptions.h
+include/dovecot/mailbox-list.h
+include/dovecot/mailbox-log.h
+include/dovecot/mailbox-search-result-private.h
+include/dovecot/mailbox-tree.h
+include/dovecot/mailbox-uidvalidity.h
+include/dovecot/maildir-filename.h
+include/dovecot/maildir-keywords.h
+include/dovecot/maildir-settings.h
+include/dovecot/maildir-storage.h
+include/dovecot/maildir-sync.h
+include/dovecot/maildir-uidlist.h
+include/dovecot/master-auth.h
+include/dovecot/master-interface.h
+include/dovecot/master-login-auth.h
+include/dovecot/master-login.h
+include/dovecot/master-service-private.h
+include/dovecot/master-service-settings-cache.h
+include/dovecot/master-service-settings.h
+include/dovecot/master-service.h
+include/dovecot/mbox-file.h
+include/dovecot/mbox-from.h
+include/dovecot/mbox-lock.h
+include/dovecot/mbox-md5.h
+include/dovecot/mbox-settings.h
+include/dovecot/mbox-storage.h
+include/dovecot/mbox-sync-private.h
+include/dovecot/md4.h
+include/dovecot/md5.h
+include/dovecot/mdbox-file.h
+include/dovecot/mdbox-map-private.h
+include/dovecot/mdbox-map.h
+include/dovecot/mdbox-settings.h
+include/dovecot/mdbox-storage-rebuild.h
+include/dovecot/mdbox-storage.h
+include/dovecot/mdbox-sync.h
+include/dovecot/mech-otp-skey-common.h
+include/dovecot/mech-plain-common.h
+include/dovecot/mech.h
+include/dovecot/mempool.h
+include/dovecot/message-address.h
+include/dovecot/message-date.h
+include/dovecot/message-decoder.h
+include/dovecot/message-header-decode.h
+include/dovecot/message-header-encode.h
+include/dovecot/message-header-parser.h
+include/dovecot/message-id.h
+include/dovecot/message-parser.h
+include/dovecot/message-part-serialize.h
+include/dovecot/message-search.h
+include/dovecot/message-send.h
+include/dovecot/message-size.h
+include/dovecot/mkdir-parents.h
+include/dovecot/mmap-util.h
+include/dovecot/module-context.h
+include/dovecot/module-dir.h
+include/dovecot/mountpoint.h
+include/dovecot/mycrypt.h
+include/dovecot/network.h
+include/dovecot/nfs-workarounds.h
+include/dovecot/notify-plugin-private.h
+include/dovecot/notify-plugin.h
+include/dovecot/ostream-cmp.h
+include/dovecot/ostream-internal.h
+include/dovecot/ostream.h
+include/dovecot/passdb-blocking.h
+include/dovecot/passdb-cache.h
+include/dovecot/passdb.h
+include/dovecot/password-scheme.h
+include/dovecot/pop3-capability.h
+include/dovecot/pop3-client.h
+include/dovecot/pop3-commands.h
+include/dovecot/pop3-common.h
+include/dovecot/pop3-settings.h
+include/dovecot/primes.h
+include/dovecot/printf-format-fix.h
+include/dovecot/priorityq.h
+include/dovecot/process-title.h
+include/dovecot/quoted-printable.h
+include/dovecot/randgen.h
+include/dovecot/raw-storage.h
+include/dovecot/raw-sync.h
+include/dovecot/read-full.h
+include/dovecot/restrict-access.h
+include/dovecot/restrict-process-size.h
+include/dovecot/rfc2231-parser.h
+include/dovecot/rfc822-parser.h
+include/dovecot/safe-memset.h
+include/dovecot/safe-mkdir.h
+include/dovecot/safe-mkstemp.h
+include/dovecot/sasl-server.h
+include/dovecot/sdbox-file.h
+include/dovecot/sdbox-storage.h
+include/dovecot/sdbox-sync.h
+include/dovecot/sendfile-util.h
+include/dovecot/seq-range-array.h
+include/dovecot/service-settings.h
+include/dovecot/settings-parser.h
+include/dovecot/settings.h
+include/dovecot/sha1.h
+include/dovecot/sha2.h
+include/dovecot/shared-storage.h
+include/dovecot/smtp-client.h
+include/dovecot/sql-api-private.h
+include/dovecot/sql-api.h
+include/dovecot/sql-db-cache.h
+include/dovecot/ssl-proxy.h
+include/dovecot/str-find.h
+include/dovecot/str-sanitize.h
+include/dovecot/str.h
+include/dovecot/strescape.h
+include/dovecot/strfuncs.h
+include/dovecot/strnum.h
+include/dovecot/subscription-file.h
+include/dovecot/syslog-util.h
+include/dovecot/test-common.h
+include/dovecot/time-util.h
+include/dovecot/unichar.h
+include/dovecot/unix-socket-create.h
+include/dovecot/unlink-directory.h
+include/dovecot/unlink-old-files.h
+include/dovecot/userdb-blocking.h
+include/dovecot/userdb-static.h
+include/dovecot/userdb-vpopmail.h
+include/dovecot/userdb.h
+include/dovecot/utc-mktime.h
+include/dovecot/utc-offset.h
+include/dovecot/var-expand.h
+include/dovecot/wildcard-match.h
+include/dovecot/write-full.h
+lib/dovecot/
+lib/dovecot/auth/
+lib/dovecot/doveadm/
+lib/dovecot/doveadm/lib10_doveadm_acl_plugin.so
+lib/dovecot/doveadm/lib10_doveadm_expire_plugin.so
+lib/dovecot/doveadm/lib10_doveadm_quota_plugin.so
+lib/dovecot/doveadm/lib10_doveadm_zlib_plugin.so
+lib/dovecot/dovecot-config
+lib/dovecot/lib01_acl_plugin.so
+lib/dovecot/lib02_imap_acl_plugin.so
+lib/dovecot/lib02_lazy_expunge_plugin.so
+lib/dovecot/lib05_snarf_plugin.so
+lib/dovecot/lib10_quota_plugin.so
+lib/dovecot/lib11_imap_quota_plugin.so
+lib/dovecot/lib11_trash_plugin.so
+lib/dovecot/lib15_notify_plugin.so
+lib/dovecot/lib20_autocreate_plugin.so
+lib/dovecot/lib20_expire_plugin.so
+lib/dovecot/lib20_fts_plugin.so
+lib/dovecot/lib20_listescape_plugin.so
+lib/dovecot/lib20_mail_log_plugin.so
+lib/dovecot/lib20_virtual_plugin.so
+lib/dovecot/lib20_zlib_plugin.so
+lib/dovecot/lib21_fts_squat_plugin.so
+lib/dovecot/lib30_imap_zlib_plugin.so
+@lib lib/dovecot/libdovecot-lda.so.${LIBdovecot-lda_VERSION}
+@lib lib/dovecot/libdovecot-login.so.${LIBdovecot-login_VERSION}
+@lib lib/dovecot/libdovecot-sql.so.${LIBdovecot-sql_VERSION}
+@lib lib/dovecot/libdovecot-storage.so.${LIBdovecot-storage_VERSION}
+@lib lib/dovecot/libdovecot.so.${LIBdovecot_VERSION}
+libexec/dovecot/
+@bin libexec/dovecot/anvil
+@bin libexec/dovecot/auth
+@bin libexec/dovecot/checkpassword-reply
+@bin libexec/dovecot/config
+libexec/dovecot/deliver
+@bin libexec/dovecot/dict
+@bin libexec/dovecot/director
+@bin libexec/dovecot/dns-client
+@bin libexec/dovecot/doveadm-server
+@bin libexec/dovecot/dovecot-lda
+@bin libexec/dovecot/gdbhelper
+@bin libexec/dovecot/imap
+@bin libexec/dovecot/imap-login
+@bin libexec/dovecot/listview
+@bin libexec/dovecot/lmtp
+@bin libexec/dovecot/log
+@bin libexec/dovecot/maildirlock
+@bin libexec/dovecot/pop3
+@bin libexec/dovecot/pop3-login
+@bin libexec/dovecot/rawlog
+@bin libexec/dovecot/script
+@bin libexec/dovecot/script-login
+@bin libexec/dovecot/ssl-params
+@man man/man1/deliver.1
+@man man/man1/doveadm-altmove.1
+@man man/man1/doveadm-auth.1
+@man man/man1/doveadm-config.1
+@man man/man1/doveadm-director.1
+@man man/man1/doveadm-dump.1
+@man man/man1/doveadm-expunge.1
+@man man/man1/doveadm-fetch.1
+@man man/man1/doveadm-force-resync.1
+@man man/man1/doveadm-help.1
+@man man/man1/doveadm-import.1
+@man man/man1/doveadm-index.1
+@man man/man1/doveadm-kick.1
+@man man/man1/doveadm-log.1
+@man man/man1/doveadm-mailbox.1
+@man man/man1/doveadm-penalty.1
+@man man/man1/doveadm-purge.1
+@man man/man1/doveadm-pw.1
+@man man/man1/doveadm-quota.1
+@man man/man1/doveadm-reload.1
+@man man/man1/doveadm-search.1
+@man man/man1/doveadm-stop.1
+@man man/man1/doveadm-user.1
+@man man/man1/doveadm-who.1
+@man man/man1/doveadm.1
+@man man/man1/doveconf.1
+@man man/man1/dovecot-lda.1
+@man man/man1/dovecot.1
+@man man/man1/dsync.1
+@man man/man7/doveadm-search-query.7
+@bin sbin/dovecot
+sbin/dovecot-mkcert.sh
+share/aclocal/
+share/aclocal/dovecot.m4
+share/doc/dovecot/
+share/doc/dovecot/auth-protocol.txt
+share/doc/dovecot/documentation.txt
+@sample ${SYSCONFDIR}/dovecot/
+@sample ${SYSCONFDIR}/dovecot/conf.d/
+share/doc/dovecot/securecoding.txt
+share/doc/dovecot/thread-refs.txt
+share/doc/dovecot/wiki/
+share/doc/dovecot/wiki/ACL.txt
+share/doc/dovecot/wiki/AixPluginsSupport.txt
+share/doc/dovecot/wiki/AuthDatabase.CheckPassword.txt
+share/doc/dovecot/wiki/AuthDatabase.LDAP.AuthBinds.txt
+share/doc/dovecot/wiki/AuthDatabase.LDAP.PasswordLookups.txt
+share/doc/dovecot/wiki/AuthDatabase.LDAP.Userdb.txt
+share/doc/dovecot/wiki/AuthDatabase.LDAP.txt
+share/doc/dovecot/wiki/AuthDatabase.Passwd.txt
+share/doc/dovecot/wiki/AuthDatabase.PasswdFile.txt
+share/doc/dovecot/wiki/AuthDatabase.SQL.txt
+share/doc/dovecot/wiki/AuthDatabase.VPopMail.txt
+share/doc/dovecot/wiki/AuthDatabase.txt
+share/doc/dovecot/wiki/Authentication.Caching.txt
+share/doc/dovecot/wiki/Authentication.Kerberos.txt
+share/doc/dovecot/wiki/Authentication.MasterUsers.txt
+share/doc/dovecot/wiki/Authentication.Mechanisms.DigestMD5.txt
+share/doc/dovecot/wiki/Authentication.Mechanisms.NTLM.txt
+share/doc/dovecot/wiki/Authentication.Mechanisms.Winbind.txt
+share/doc/dovecot/wiki/Authentication.Mechanisms.txt
+share/doc/dovecot/wiki/Authentication.MultipleDatabases.txt
+share/doc/dovecot/wiki/Authentication.PasswordSchemes.txt
+share/doc/dovecot/wiki/Authentication.RestrictAccess.txt
+share/doc/dovecot/wiki/Authentication.txt
+share/doc/dovecot/wiki/BasicConfiguration.txt
+share/doc/dovecot/wiki/Chrooting.txt
+share/doc/dovecot/wiki/Clients.NegativeUIDs.txt
+share/doc/dovecot/wiki/Clients.txt
+share/doc/dovecot/wiki/CompilingSource.txt
+share/doc/dovecot/wiki/Debugging.Authentication.txt
+share/doc/dovecot/wiki/Debugging.ProcessTracing.txt
+share/doc/dovecot/wiki/Debugging.Rawlog.txt
+share/doc/dovecot/wiki/Debugging.Thunderbird.txt
+share/doc/dovecot/wiki/Design.Arrays.txt
+share/doc/dovecot/wiki/Design.AuthProcess.txt
+share/doc/dovecot/wiki/Design.Buffers.txt
+share/doc/dovecot/wiki/Design.Dsync.txt
+share/doc/dovecot/wiki/Design.Indexes.Cache.txt
+share/doc/dovecot/wiki/Design.Indexes.MailIndexApi.txt
+share/doc/dovecot/wiki/Design.Indexes.MainIndex.txt
+share/doc/dovecot/wiki/Design.Indexes.TransactionLog.txt
+share/doc/dovecot/wiki/Design.Indexes.txt
+share/doc/dovecot/wiki/Design.InputStreams.txt
+share/doc/dovecot/wiki/Design.MailProcess.txt
+share/doc/dovecot/wiki/Design.Memory.txt
+share/doc/dovecot/wiki/Design.OutputStreams.txt
+share/doc/dovecot/wiki/Design.Plugins.txt
+share/doc/dovecot/wiki/Design.Processes.txt
+share/doc/dovecot/wiki/Design.Storage.ErrorHandling.txt
+share/doc/dovecot/wiki/Design.Storage.Mail.txt
+share/doc/dovecot/wiki/Design.Storage.MailNamespace.txt
+share/doc/dovecot/wiki/Design.Storage.MailStorage.txt
+share/doc/dovecot/wiki/Design.Storage.MailUser.txt
+share/doc/dovecot/wiki/Design.Storage.Mailbox.Save.txt
+share/doc/dovecot/wiki/Design.Storage.Mailbox.Search.txt
+share/doc/dovecot/wiki/Design.Storage.Mailbox.Sync.txt
+share/doc/dovecot/wiki/Design.Storage.Mailbox.Transaction.txt
+share/doc/dovecot/wiki/Design.Storage.Mailbox.txt
+share/doc/dovecot/wiki/Design.Storage.MailboxList.txt
+share/doc/dovecot/wiki/Design.Storage.Plugins.txt
+share/doc/dovecot/wiki/Design.Strings.txt
+share/doc/dovecot/wiki/Design.txt
+share/doc/dovecot/wiki/Dict.txt
+share/doc/dovecot/wiki/Director.txt
+share/doc/dovecot/wiki/DomainLost.txt
+share/doc/dovecot/wiki/Errors.ChgrpNoPerm.txt
+share/doc/dovecot/wiki/FindMailLocation.txt
+share/doc/dovecot/wiki/FinishBasicConfiguration.txt
+share/doc/dovecot/wiki/HowTo.EximAndDovecotSASL.txt
+share/doc/dovecot/wiki/HowTo.PopBSMTPAndDovecot.txt
+share/doc/dovecot/wiki/HowTo.PopRelay.txt
+share/doc/dovecot/wiki/HowTo.PostfixAndDovecotSASL.txt
+share/doc/dovecot/wiki/HowTo.Rootless.txt
+share/doc/dovecot/wiki/HowTo.SimpleVirtualInstall.txt
+share/doc/dovecot/wiki/HowTo.txt
+share/doc/dovecot/wiki/IndexFiles.txt
+share/doc/dovecot/wiki/LDA.Exim.txt
+share/doc/dovecot/wiki/LDA.Indexing.txt
+share/doc/dovecot/wiki/LDA.Postfix.txt
+share/doc/dovecot/wiki/LDA.Qmail.txt
+share/doc/dovecot/wiki/LDA.Sendmail.txt
+share/doc/dovecot/wiki/LDA.txt
+share/doc/dovecot/wiki/LMTP.txt
+share/doc/dovecot/wiki/Logging.txt
+share/doc/dovecot/wiki/LoginProcess.txt
+share/doc/dovecot/wiki/MDA.txt
+share/doc/dovecot/wiki/MTA.txt
+share/doc/dovecot/wiki/MailLocation.LocalDisk.txt
+share/doc/dovecot/wiki/MailLocation.Maildir.txt
+share/doc/dovecot/wiki/MailLocation.SharedDisk.txt
+share/doc/dovecot/wiki/MailLocation.dbox.txt
+share/doc/dovecot/wiki/MailLocation.mbox.txt
+share/doc/dovecot/wiki/MailLocation.txt
+share/doc/dovecot/wiki/MailboxFormat.Cydir.txt
+share/doc/dovecot/wiki/MailboxFormat.MH.txt
+share/doc/dovecot/wiki/MailboxFormat.Maildir.txt
+share/doc/dovecot/wiki/MailboxFormat.dbox.txt
+share/doc/dovecot/wiki/MailboxFormat.mailstore.txt
+share/doc/dovecot/wiki/MailboxFormat.mbox.txt
+share/doc/dovecot/wiki/MailboxFormat.mbx.txt
+share/doc/dovecot/wiki/MailboxFormat.txt
+share/doc/dovecot/wiki/MboxChildFolders.txt
+share/doc/dovecot/wiki/MboxLocking.txt
+share/doc/dovecot/wiki/MboxProblems.txt
+share/doc/dovecot/wiki/Migration.BincIMAP.txt
+share/doc/dovecot/wiki/Migration.Courier.txt
+share/doc/dovecot/wiki/Migration.Cyrus.txt
+share/doc/dovecot/wiki/Migration.Linuxconf.txt
+share/doc/dovecot/wiki/Migration.MailFormat.txt
+share/doc/dovecot/wiki/Migration.Online.txt
+share/doc/dovecot/wiki/Migration.Teapop.txt
+share/doc/dovecot/wiki/Migration.UW.txt
+share/doc/dovecot/wiki/Migration.Vm-pop3d.txt
+share/doc/dovecot/wiki/Migration.txt
+share/doc/dovecot/wiki/MissingMailboxes.txt
+share/doc/dovecot/wiki/NFS.txt
+share/doc/dovecot/wiki/Namespaces.txt
+share/doc/dovecot/wiki/OSCompatibility.txt
+share/doc/dovecot/wiki/POP3Server.txt
+share/doc/dovecot/wiki/PasswordDatabase.BSDAuth.txt
+share/doc/dovecot/wiki/PasswordDatabase.ExtraFields.AllowNets.txt
+share/doc/dovecot/wiki/PasswordDatabase.ExtraFields.Host.txt
+share/doc/dovecot/wiki/PasswordDatabase.ExtraFields.NoDelay.txt
+share/doc/dovecot/wiki/PasswordDatabase.ExtraFields.NoLogin.txt
+share/doc/dovecot/wiki/PasswordDatabase.ExtraFields.Proxy.txt
+share/doc/dovecot/wiki/PasswordDatabase.ExtraFields.User.txt
+share/doc/dovecot/wiki/PasswordDatabase.ExtraFields.txt
+share/doc/dovecot/wiki/PasswordDatabase.PAM.txt
+share/doc/dovecot/wiki/PasswordDatabase.Shadow.txt
+share/doc/dovecot/wiki/PasswordDatabase.Static.txt
+share/doc/dovecot/wiki/PasswordDatabase.txt
+share/doc/dovecot/wiki/PerformanceTuning.txt
+share/doc/dovecot/wiki/Pigeonhole.Installation.txt
+share/doc/dovecot/wiki/Pigeonhole.ManageSieve.Clients.txt
+share/doc/dovecot/wiki/Pigeonhole.ManageSieve.Configuration.txt
+share/doc/dovecot/wiki/Pigeonhole.ManageSieve.Install.txt
+share/doc/dovecot/wiki/Pigeonhole.ManageSieve.Troubleshooting.txt
+share/doc/dovecot/wiki/Pigeonhole.ManageSieve.txt
+share/doc/dovecot/wiki/Pigeonhole.Sieve.Configuration.txt
+share/doc/dovecot/wiki/Pigeonhole.Sieve.Examples.txt
+share/doc/dovecot/wiki/Pigeonhole.Sieve.Extensions.SpamtestVirustest.txt
+share/doc/dovecot/wiki/Pigeonhole.Sieve.Extensions.Vacation.txt
+share/doc/dovecot/wiki/Pigeonhole.Sieve.Extensions.txt
+share/doc/dovecot/wiki/Pigeonhole.Sieve.Plugins.Extdata.txt
+share/doc/dovecot/wiki/Pigeonhole.Sieve.Plugins.txt
+share/doc/dovecot/wiki/Pigeonhole.Sieve.Usage.txt
+share/doc/dovecot/wiki/Pigeonhole.Sieve.txt
+share/doc/dovecot/wiki/Pigeonhole.txt
+share/doc/dovecot/wiki/Plugins.Autocreate.txt
+share/doc/dovecot/wiki/Plugins.Compress.txt
+share/doc/dovecot/wiki/Plugins.Expire.txt
+share/doc/dovecot/wiki/Plugins.FTS.Lucene.txt
+share/doc/dovecot/wiki/Plugins.FTS.Solr.txt
+share/doc/dovecot/wiki/Plugins.FTS.Squat.txt
+share/doc/dovecot/wiki/Plugins.FTS.txt
+share/doc/dovecot/wiki/Plugins.Lazyexpunge.txt
+share/doc/dovecot/wiki/Plugins.Listescape.txt
+share/doc/dovecot/wiki/Plugins.MailLog.txt
+share/doc/dovecot/wiki/Plugins.Snarf.txt
+share/doc/dovecot/wiki/Plugins.Trash.txt
+share/doc/dovecot/wiki/Plugins.Virtual.txt
+share/doc/dovecot/wiki/Plugins.Zlib.txt
+share/doc/dovecot/wiki/Plugins.txt
+share/doc/dovecot/wiki/PostLoginScripting.txt
+share/doc/dovecot/wiki/PreAuth.txt
+share/doc/dovecot/wiki/QuickConfiguration.txt
+share/doc/dovecot/wiki/Quota.Configuration.txt
+share/doc/dovecot/wiki/Quota.Dict.txt
+share/doc/dovecot/wiki/Quota.Dirsize.txt
+share/doc/dovecot/wiki/Quota.FS.txt
+share/doc/dovecot/wiki/Quota.Maildir.txt
+share/doc/dovecot/wiki/Quota.txt
+share/doc/dovecot/wiki/RunningDovecot.txt
+share/doc/dovecot/wiki/SSL.CertificateClientImporting.txt
+share/doc/dovecot/wiki/SSL.CertificateCreation.txt
+share/doc/dovecot/wiki/SSL.DovecotConfiguration.txt
+share/doc/dovecot/wiki/SSL.txt
+share/doc/dovecot/wiki/Sasl.txt
+share/doc/dovecot/wiki/SecurityTuning.txt
+share/doc/dovecot/wiki/SharedMailboxes.Permissions.txt
+share/doc/dovecot/wiki/SharedMailboxes.Public.txt
+share/doc/dovecot/wiki/SharedMailboxes.Shared.txt
+share/doc/dovecot/wiki/SharedMailboxes.Symlinks.txt
+share/doc/dovecot/wiki/SharedMailboxes.txt
+share/doc/dovecot/wiki/SystemUsers.txt
+share/doc/dovecot/wiki/TestInstallation.txt
+share/doc/dovecot/wiki/TestPop3Installation.txt
+share/doc/dovecot/wiki/TimeMovedBackwards.txt
+share/doc/dovecot/wiki/Upgrading.1.0.txt
+share/doc/dovecot/wiki/Upgrading.1.1.txt
+share/doc/dovecot/wiki/Upgrading.1.2.txt
+share/doc/dovecot/wiki/Upgrading.2.0.txt
+share/doc/dovecot/wiki/Upgrading.txt
+share/doc/dovecot/wiki/UserDatabase.ExtraFields.txt
+share/doc/dovecot/wiki/UserDatabase.NSS.txt
+share/doc/dovecot/wiki/UserDatabase.Prefetch.txt
+share/doc/dovecot/wiki/UserDatabase.Static.txt
+share/doc/dovecot/wiki/UserDatabase.txt
+share/doc/dovecot/wiki/UserIds.txt
+share/doc/dovecot/wiki/Variables.txt
+share/doc/dovecot/wiki/VirtualUsers.Home.txt
+share/doc/dovecot/wiki/VirtualUsers.txt
+share/doc/dovecot/wiki/WhyDoesItNotWork.txt
+share/doc/dovecot/wiki/maildrop.txt
+share/doc/dovecot/wiki/mutt.txt
+share/doc/dovecot/wiki/uw2dovecot.sh.txt
+share/examples/dovecot/
+share/examples/dovecot/dovecot-openssl.cnf
+@sample /etc/ssl/dovecot-openssl.cnf
+share/examples/dovecot/example-config/
+share/examples/dovecot/example-config/conf.d/
+share/examples/dovecot/example-config/conf.d/10-auth.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/10-auth.conf
+share/examples/dovecot/example-config/conf.d/10-director.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/10-director.conf
+share/examples/dovecot/example-config/conf.d/10-logging.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/10-logging.conf
+share/examples/dovecot/example-config/conf.d/10-mail.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/10-mail.conf
+share/examples/dovecot/example-config/conf.d/10-master.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/10-master.conf
+share/examples/dovecot/example-config/conf.d/10-ssl.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/10-ssl.conf
+share/examples/dovecot/example-config/conf.d/15-lda.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/15-lda.conf
+share/examples/dovecot/example-config/conf.d/20-imap.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/20-imap.conf
+share/examples/dovecot/example-config/conf.d/20-lmtp.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/20-lmtp.conf
+share/examples/dovecot/example-config/conf.d/20-pop3.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/20-pop3.conf
+share/examples/dovecot/example-config/conf.d/90-acl.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/90-acl.conf
+share/examples/dovecot/example-config/conf.d/90-plugin.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/90-plugin.conf
+share/examples/dovecot/example-config/conf.d/90-quota.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/90-quota.conf
+share/examples/dovecot/example-config/conf.d/auth-checkpassword.conf.ext
+share/examples/dovecot/example-config/conf.d/auth-deny.conf.ext
+share/examples/dovecot/example-config/conf.d/auth-ldap.conf.ext
+share/examples/dovecot/example-config/conf.d/auth-master.conf.ext
+share/examples/dovecot/example-config/conf.d/auth-passwdfile.conf.ext
+share/examples/dovecot/example-config/conf.d/auth-sql.conf.ext
+share/examples/dovecot/example-config/conf.d/auth-static.conf.ext
+share/examples/dovecot/example-config/conf.d/auth-system.conf.ext
+@sample ${SYSCONFDIR}/dovecot/conf.d/auth-system.conf.ext
+share/examples/dovecot/example-config/conf.d/auth-vpopmail.conf.ext
+share/examples/dovecot/example-config/dovecot-db.conf.ext
+share/examples/dovecot/example-config/dovecot-dict-sql.conf.ext
+share/examples/dovecot/example-config/dovecot-ldap.conf.ext
+share/examples/dovecot/example-config/dovecot-sql.conf.ext
+share/examples/dovecot/example-config/dovecot.conf
+@sample ${SYSCONFDIR}/dovecot/dovecot.conf
+@mode 755
+@sample /var/dovecot/
+@mode 750
+@group _dovecot
+@sample /var/dovecot/login/
+@extra /etc/ssl/dovecotcert.pem
+@extra /etc/ssl/private/dovecot.pem
+@rcscript ${RCDIR}/dovecot

@@ -1,166 +1,101 @@
-# $OpenBSD: Makefile,v 1.163 2011/05/11 12:57:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.164 2011/05/23 22:54:38 sthen Exp $
+
+#
+# Dont forget to bump the Sieve package when you
+# update Dovecot !!
+# When the Dovecot V_MAJOR will change, dont forget
+# to report it in mail/dovecot-pigeonhole
+#
 
 SHARED_ONLY=	Yes
 
-COMMENT-server= compact IMAP/POP3 server
-COMMENT-sieve=	Sieve mail filtering for Dovecot
+COMMENT= compact IMAP/POP3 server
 
-V_MAJOR=	1.2
-V_DOVECOT=	1.2.16
-V_SIEVE=	0.1.18
-V_MANAGESIEVE=	0.11.12
-
-PKGNAME=	dovecot-${V_DOVECOT}
-PKGNAME-server=	dovecot-${V_DOVECOT}
-REVISION-server=5
-FULLPKGNAME-sieve= dovecot-sieve-${V_SIEVE}
-REVISION-sieve=	0
-EPOCH-sieve=	0
-FULLPKGPATH-sieve= ${PKGPATH},-sieve
+V_MAJOR=	2.0
+V_DOVECOT=	2.0.13
 
 DISTNAME=	dovecot-${V_DOVECOT}
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
-MASTER_SITES0=	http://www.rename-it.nl/dovecot/${V_MAJOR}/
 
-DISTFILES=	dovecot-${V_DOVECOT}.tar.gz \
-		dovecot-${V_MAJOR}-sieve-${V_SIEVE}.tar.gz:0 \
-		dovecot-${V_MAJOR}-managesieve-${V_MANAGESIEVE}.tar.gz:0 \
-		${DIST_MANAGESIEVE}:0
-
-DIST_MANAGESIEVE= dovecot-${V_DOVECOT}-managesieve-${V_MANAGESIEVE}.diff.gz
+SHARED_LIBS=	dovecot-lda	0.0 \
+		dovecot-login	0.0 \
+		dovecot-sql	0.0 \
+		dovecot-storage	0.0 \
+		dovecot		0.0
 
 HOMEPAGE=	http://www.dovecot.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
-# MIT/LGPLv2.1
+# LGPLv2.1 and MIT
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-WANTLIB-server=		${MODLIBICONV_WANTLIB} bz2 c crypto gssapi krb5 ssl z
-WANTLIB-sieve=		${MODLIBICONV_WANTLIB} c crypto ssl
+WANTLIB=	${MODLIBICONV_WANTLIB} bz2 c crypto gssapi krb5 ssl z
 
 MODULES=	converters/libiconv
 LIB_DEPENDS+=	archivers/bzip2
 
-MULTI_PACKAGES=	-server
-SUBPACKAGE?=	-server
+CPPFLAGS=	-I/usr/include/kerberosV -I${LOCALBASE}/include
 
-PSEUDO_FLAVORS=	no_sieve
+USE_LIBTOOL=	Yes
+AUTOCONF_VERSION= 2.67
+CONFIGURE_STYLE= autoconf
+CONFIGURE_ARGS=	--localstatedir=/var \
+		--with-gssapi \
+		--with-pam=no \
+		--with-shadow=no \
+		--with-vpopmail=no \
+		--with-rundir=/var/dovecot \
+		--with-statedir=/var/dovecot
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+
 FLAVORS=	bdb ldap mysql postgresql sqlite
 FLAVOR?=
 
-CFLAGS+=	-I/usr/include/kerberosV -I${LOCALBASE}/include
-
-USE_LIBTOOL=		Yes
-AUTOCONF_VERSION=	2.65
-CONFIGURE_STYLE=	autoconf
-CONFIGURE_ARGS+=	--localstatedir=/var \
-			--with-gssapi \
-			--with-pam=no \
-			--with-shadow=no \
-			--with-vpopmail=no
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib"
-
-.if !${FLAVOR:L:Mno_sieve}
-# XXX The produced dovecot-sieve package ends up linked to any
-# other library (database/ldap) used in the build thus producing
-# bad packages in bulk build. Temporarily work around this in a
-# nasty way by knocking out the sieve subpackage if another
-# flavor is used. This means you have to build without FLAVORS
-# to get the -sieve subpackage.
-.if ${FLAVOR} == ""
-MULTI_PACKAGES+=	-sieve
-.endif
-SIEVE_DIR=		${WRKDIR}/dovecot-${V_MAJOR}-sieve-${V_SIEVE}
-MANAGESIEVE_DIR=	${WRKDIR}/dovecot-${V_MAJOR}-managesieve-${V_MANAGESIEVE}
-AUTOCONF_DIR+=		${WRKSRC} ${MANAGESIEVE_DIR}
-RUN_DEPENDS-sieve=	${PKGPATH}
-LIB_DEPENDS-sieve=	${MODLIBICONV_LIB_DEPENDS}
-PATCH_LIST=		patch-* managesieve-patch-*
-.else
-PATCH_LIST=		patch-* nosieve-patch-*
-.endif
-
 .if ${FLAVOR:L:Mbdb}
-CONFIGURE_ARGS+=	--with-db
-LIB_DEPENDS+=		databases/db/v4
-WANTLIB-server+=	db>=5
-CFLAGS+=		-I${LOCALBASE}/include/db4
+CONFIGURE_ARGS+=--with-db
+LIB_DEPENDS+=	databases/db/v4
+WANTLIB+=	db>=5
+CPPFLAGS+=	-I${LOCALBASE}/include/db4
 .endif
 
 .if ${FLAVOR:L:Mldap}
-CONFIGURE_ARGS+=	--with-ldap
-LIB_DEPENDS+=		databases/openldap
-WANTLIB-server+=	lber ldap sasl2 asn1 com_err
+CONFIGURE_ARGS+=--with-ldap
+LIB_DEPENDS+=	databases/openldap
+WANTLIB+=	lber ldap sasl2 asn1 com_err
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-CONFIGURE_ARGS+=	--with-mysql
-LIB_DEPENDS+=		databases/mysql
-WANTLIB-server+=	m lib/mysql/mysqlclient>=10
+CONFIGURE_ARGS+=--with-mysql
+LIB_DEPENDS+=	databases/mysql
+WANTLIB+=	m lib/mysql/mysqlclient>=10
 .endif
 
 .if ${FLAVOR:L:Mpostgresql}
-CONFIGURE_ARGS+=	--with-pgsql
-LIB_DEPENDS+=		databases/postgresql
-WANTLIB-server+=	pq>=4
+CONFIGURE_ARGS+=--with-pgsql
+LIB_DEPENDS+=	databases/postgresql
+WANTLIB+=	pq>=4
 .endif
 
 .if ${FLAVOR:L:Msqlite}
-CONFIGURE_ARGS+=	--with-sqlite
-LIB_DEPENDS+=		databases/sqlite3
-WANTLIB-server+=	sqlite3
-.endif
-
-.if !${FLAVOR:L:Mno_sieve}
-pre-patch:
-	@cd ${WRKSRC} && \
-	gunzip -c ${DISTDIR}/${DIST_MANAGESIEVE} | \
-		patch -z.managesieve.orig -p1 2> /dev/null
-
-post-configure:
-	@(cd ${WRKSRC}; ${MAKE_PROGRAM} dovecot-config)
-	@(cd ${SIEVE_DIR}; ${SETENV} ${CONFIGURE_ENV} \
-		./configure --with-dovecot=${WRKSRC} \
-		--mandir=${PREFIX}/man --docdir=${PREFIX}/share/doc/)
-	@(cd ${MANAGESIEVE_DIR}; ${SETENV} ${CONFIGURE_ENV} \
-		./configure --with-dovecot=${WRKSRC} \
-		--with-dovecot-sieve=${SIEVE_DIR})
+CONFIGURE_ARGS+=--with-sqlite
+LIB_DEPENDS+=	databases/sqlite3
+WANTLIB+=	sqlite3
 .endif
 
 pre-build:
-	@${SUBST_CMD} ${WRKSRC}/dovecot-example.conf
-
-.if !${FLAVOR:L:Mno_sieve}
-post-build:
-	(cd ${SIEVE_DIR}; ${MAKE_PROGRAM} ${MAKE_FLAGS})
-	(cd ${MANAGESIEVE_DIR}; ${MAKE_PROGRAM} ${MAKE_FLAGS})
-.endif
+	@${SUBST_CMD} ${WRKSRC}/doc/example-config/conf.d/10-mail.conf
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dovecot
 	${INSTALL_DATA} ${WRKSRC}/doc/dovecot-openssl.cnf \
-		${WRKSRC}/doc/dovecot-sql-example.conf \
-		${WRKSRC}/doc/dovecot-ldap-example.conf \
-		${WRKSRC}/doc/dovecot-db-example.conf \
-		${WRKSRC}/dovecot-example.conf \
-		${WRKSRC}/doc/dovecot-dict-sql-example.conf \
 		${PREFIX}/share/examples/dovecot
 	${INSTALL_SCRIPT} ${WRKSRC}/doc/mkcert.sh \
 		${PREFIX}/sbin/dovecot-mkcert.sh
-.if !${FLAVOR:L:Mno_sieve}
-	cd ${SIEVE_DIR} &&  env -i ${MAKE_ENV} \
-		PREFIX=${WRKINST}${PREFIX} ${DESTDIRNAME}=${WRKINST} \
-		TRUEPREFIX=${PREFIX} \
-		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
-	cd ${MANAGESIEVE_DIR} && env -i ${MAKE_ENV} \
-		PREFIX=${WRKINST}${PREFIX} ${DESTDIRNAME}=${WRKINST} \
-		TRUEPREFIX=${PREFIX} \
-		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} ${FAKE_TARGET}
-.endif
+	@find ${PREFIX}/lib/dovecot -name '*.a' -print | xargs rm
+	@find ${PREFIX}/lib/dovecot -name '*.la' -print | xargs rm
 
 .include <bsd.port.mk>

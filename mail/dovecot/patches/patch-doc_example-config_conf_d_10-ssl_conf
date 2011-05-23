@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_example-config_conf_d_10-ssl_conf,v 1.1 2011/05/23 22:54:38 sthen Exp $
+--- doc/example-config/conf.d/10-ssl.conf.orig	Thu Mar 10 14:39:31 2011
++++ doc/example-config/conf.d/10-ssl.conf	Thu Mar 10 14:40:01 2011
+@@ -9,7 +9,7 @@
+ # dropping root privileges, so keep the key file unreadable by anyone but
+ # root. Included doc/mkcert.sh can be used to easily generate self-signed
+ # certificate, just make sure to update the domains in dovecot-openssl.cnf
+-ssl_cert = </etc/ssl/certs/dovecot.pem
++ssl_cert = </etc/ssl/dovecotcert.pem
+ ssl_key = </etc/ssl/private/dovecot.pem
+ 
+ # If key file is password protected, give the password here. Alternatively
