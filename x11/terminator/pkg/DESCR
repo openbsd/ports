@@ -1,0 +1,5 @@
+Terminator is a powerful terminal emulator written in Python.
+
+Its behaviour and look is based on GNOME Terminal, but it has a lot of
+extra functionality like splitting the window in multiple tiles, and
+sending commands to multiple terminals at once (think clusterssh).
