@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.232 2011/05/22 12:39:06 schwarze Exp $
+# $OpenBSD: Makefile,v 1.233 2011/05/23 19:05:29 landry Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -183,6 +183,7 @@
      SUBDIR += tphdisk
      SUBDIR += tree
      SUBDIR += upgt-firmware
+     SUBDIR += upower
      SUBDIR += upsd
      SUBDIR += usbutil
      SUBDIR += uvideo-firmware
