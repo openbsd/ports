@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/23 07:47:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/23 14:12:23 ajacoutot Exp $
 
 COMMENT-main=		official media player for GNOME
 COMMENT-nautilus=	totem properties plugin for nautilus
@@ -9,7 +9,7 @@ GNOME_VERSION=		3.0.1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-nautilus=	0
 
 SHARED_LIBS +=  totem                     0.0 # 0.0
@@ -55,8 +55,7 @@ BUILD_DEPENDS+= 	devel/iso-codes \
 RUN_DEPENDS-main+=	devel/iso-codes \
 			devel/py-xdg \
 			x11/dbus-python \
-			x11/gnome/settings-daemon \
-			x11/gromit
+			x11/gnome/settings-daemon
 
 LIB_DEPENDS-main+=	${MODGETTEXT_LIB_DEPENDS} \
 			multimedia/gstreamer-0.10/plugins-base>=0.10.30 \
@@ -84,7 +83,7 @@ USE_GROFF=	Yes
 # properties publish pythonconsole save-file sample-python sample-vala
 # screensaver screenshot sidebar-test skipto thumbnail tracker youtube
 # zeitgeist-dp
-TOTEM_PLUGINS=	"gromit media-player-keys ontop properties \
+TOTEM_PLUGINS=	"media-player-keys ontop properties \
 		screensaver skipto thumbnail \
 		opensubtitles jamendo screenshot dbus-service"
 
