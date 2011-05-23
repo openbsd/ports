@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/17 17:07:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/23 11:52:56 jasper Exp $
 include/evolution-data-server-${R}/
 include/evolution-data-server-${R}/camel/
 include/evolution-data-server-${R}/camel/camel-address.h
@@ -287,6 +287,7 @@ lib/evolution-data-server/camel-providers/libcamelsendmail.urls
 @comment lib/evolution-data-server/camel-providers/libcamelsmtp.la
 lib/evolution-data-server/camel-providers/libcamelsmtp.so
 lib/evolution-data-server/camel-providers/libcamelsmtp.urls
+lib/girepository-1.0/EBook-1.2.typelib
 lib/girepository-1.0/ECalendar-1.2.typelib
 lib/girepository-1.0/EDataServer-1.2.typelib
 lib/libcamel-1.2.a
@@ -340,6 +341,7 @@ share/dbus-1/services/org.gnome.evolution.dataserver.AddressBook.service
 share/dbus-1/services/org.gnome.evolution.dataserver.Calendar.service
 share/evolution-data-server-${R}/
 share/evolution-data-server-${R}/evolutionperson.schema
+share/gir-1.0/EBook-1.2.gir
 share/gir-1.0/ECalendar-1.2.gir
 share/gir-1.0/EDataServer-1.2.gir
 share/gtk-doc/html/camel/
@@ -472,7 +474,6 @@ share/gtk-doc/html/camel/camel-camel-url-scanner.html
 share/gtk-doc/html/camel/camel-camel-url.html
 share/gtk-doc/html/camel/camel-camel-utf8.html
 share/gtk-doc/html/camel/camel-camel.html
-share/gtk-doc/html/camel/camel.devhelp
 share/gtk-doc/html/camel/camel.devhelp2
 share/gtk-doc/html/camel/classes.html
 share/gtk-doc/html/camel/home.png
@@ -530,7 +531,6 @@ share/gtk-doc/html/libebook/libebook-EAddressWestern.html
 share/gtk-doc/html/libebook/libebook-ENameWestern.html
 share/gtk-doc/html/libebook/libebook-e-book-query.html
 share/gtk-doc/html/libebook/libebook-e-book-types.html
-share/gtk-doc/html/libebook/libebook.devhelp
 share/gtk-doc/html/libebook/libebook.devhelp2
 share/gtk-doc/html/libebook/right.png
 share/gtk-doc/html/libebook/style.css

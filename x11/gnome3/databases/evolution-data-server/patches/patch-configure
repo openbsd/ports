@@ -1,10 +1,11 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2011/05/17 17:07:32 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.2 2011/05/23 11:52:56 jasper Exp $
 
-"$host" fails for some reason.
+- "$host" fails for some reason.
+- distfile is missing vala/ directory (#650845)
 
---- configure.orig	Sun Apr 24 19:39:33 2011
-+++ configure	Tue May 17 14:39:47 2011
-@@ -4472,13 +4472,6 @@ AM_CPPFLAGS="$WARNING_FLAGS -fno-strict-aliasing"
+--- configure.orig	Mon May 23 06:13:12 2011
++++ configure	Mon May 23 13:38:48 2011
+@@ -4548,13 +4548,6 @@ AM_CPPFLAGS="$WARNING_FLAGS -fno-strict-aliasing"
  
  
  
@@ -18,7 +19,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2011/05/17 17:07:32 ajacoutot Exp $
  
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether to enable maintainer-specific portions of Makefiles" >&5
-@@ -15374,6 +15367,13 @@ fi
+@@ -15539,6 +15532,13 @@ fi
  $as_echo "#define _WIN32_WINNT 0x501" >>confdefs.h
  
  	;;
@@ -32,7 +33,7 @@ $OpenBSD: patch-configure,v 1.1.1.1 2011/05/17 17:07:32 ajacoutot Exp $
  *)
  	os_win32='no'
  	NO_UNDEFINED=''
-@@ -17358,7 +17358,7 @@ $as_echo_n "checking for Kerberos 5... " >&6; }
+@@ -17523,7 +17523,7 @@ $as_echo_n "checking for Kerberos 5... " >&6; }
  		LIBS_save="$LIBS"
  
  		mitlibs="-lkrb5 -lk5crypto -lcom_err -lgssapi_krb5"
@@ -41,3 +42,12 @@ $OpenBSD: patch-configure,v 1.1.1.1 2011/05/17 17:07:32 ajacoutot Exp $
  		sunlibs="-lkrb5 -lgss"
  		if test "${ac_cv_lib_kerberos5+set}" = set; then :
    $as_echo_n "(cached) " >&6
+@@ -20482,7 +20482,7 @@ export privlibdir
+ export privincludedir
+ export privdatadir
+ 
+-ac_config_files="$ac_config_files Makefile evolution-data-server-zip evolution-data-server.pc addressbook/Makefile addressbook/libebook/Makefile addressbook/libebook/libebook.pc addressbook/libedata-book/Makefile addressbook/libedata-book/libedata-book.pc addressbook/libegdbus/Makefile addressbook/backends/Makefile addressbook/backends/file/Makefile addressbook/backends/vcf/Makefile addressbook/backends/ldap/Makefile addressbook/backends/google/Makefile addressbook/backends/groupwise/Makefile addressbook/backends/webdav/Makefile addressbook/tests/Makefile addressbook/tests/ebook/Makefile addressbook/tests/vcard/Makefile art/Makefile calendar/Makefile calendar/libecal/Makefile calendar/libecal/libecal.pc calendar/libedata-cal/Makefile calendar/libedata-cal/libedata-cal.pc calendar/libegdbus/Makefile calendar/backends/Makefile calendar/backends/caldav/Makefile calendar/backends/file/Makefile calendar/backends/groupwise/Makefile calendar/backends/http/Makefile calendar/backends/contacts/Makefile calendar/backends/weather/Makefile calendar/tests/Makefile calendar/tests/ecal/Makefile camel/Makefile camel/providers/Makefile camel/providers/groupwise/Makefile camel/providers/imap/Makefile camel/providers/imapx/Makefile camel/providers/local/Makefile camel/providers/nntp/Makefile camel/providers/pop3/Makefile camel/providers/sendmail/Makefile camel/providers/smtp/Makefile camel/tests/Makefile camel/tests/folder/Makefile camel/tests/lib/Makefile camel/tests/message/Makefile camel/tests/mime-filter/Makefile camel/tests/misc/Makefile camel/tests/smime/Makefile camel/camel.pc camel/camel-provider.pc libebackend/Makefile libebackend/libebackend.pc libedataserver/Makefile libedataserver/eds-version.h libedataserver/libedataserver.pc libedataserverui/Makefile libedataserverui/libedataserverui.pc servers/Makefile servers/groupwise/Makefile servers/groupwise/libegroupwise.pc docs/Makefile docs/reference/Makefile docs/reference/addressbook/Makefile docs/reference/addressbook/libebook/Makefile docs/reference/addressbook/libedata-book/Makefile docs/reference/calendar/Makefile docs/reference/calendar/libecal/Makefile docs/reference/calendar/libedata-cal/Makefile docs/reference/camel/Makefile docs/reference/libedataserver/Makefile docs/reference/libedataserverui/Makefile docs/reference/libebackend/Makefile po/Makefile.in vala/Makefile"
++ac_config_files="$ac_config_files Makefile evolution-data-server-zip evolution-data-server.pc addressbook/Makefile addressbook/libebook/Makefile addressbook/libebook/libebook.pc addressbook/libedata-book/Makefile addressbook/libedata-book/libedata-book.pc addressbook/libegdbus/Makefile addressbook/backends/Makefile addressbook/backends/file/Makefile addressbook/backends/vcf/Makefile addressbook/backends/ldap/Makefile addressbook/backends/google/Makefile addressbook/backends/groupwise/Makefile addressbook/backends/webdav/Makefile addressbook/tests/Makefile addressbook/tests/ebook/Makefile addressbook/tests/vcard/Makefile art/Makefile calendar/Makefile calendar/libecal/Makefile calendar/libecal/libecal.pc calendar/libedata-cal/Makefile calendar/libedata-cal/libedata-cal.pc calendar/libegdbus/Makefile calendar/backends/Makefile calendar/backends/caldav/Makefile calendar/backends/file/Makefile calendar/backends/groupwise/Makefile calendar/backends/http/Makefile calendar/backends/contacts/Makefile calendar/backends/weather/Makefile calendar/tests/Makefile calendar/tests/ecal/Makefile camel/Makefile camel/providers/Makefile camel/providers/groupwise/Makefile camel/providers/imap/Makefile camel/providers/imapx/Makefile camel/providers/local/Makefile camel/providers/nntp/Makefile camel/providers/pop3/Makefile camel/providers/sendmail/Makefile camel/providers/smtp/Makefile camel/tests/Makefile camel/tests/folder/Makefile camel/tests/lib/Makefile camel/tests/message/Makefile camel/tests/mime-filter/Makefile camel/tests/misc/Makefile camel/tests/smime/Makefile camel/camel.pc camel/camel-provider.pc libebackend/Makefile libebackend/libebackend.pc libedataserver/Makefile libedataserver/eds-version.h libedataserver/libedataserver.pc libedataserverui/Makefile libedataserverui/libedataserverui.pc servers/Makefile servers/groupwise/Makefile servers/groupwise/libegroupwise.pc docs/Makefile docs/reference/Makefile docs/reference/addressbook/Makefile docs/reference/addressbook/libebook/Makefile docs/reference/addressbook/libedata-book/Makefile docs/reference/calendar/Makefile docs/reference/calendar/libecal/Makefile docs/reference/calendar/libedata-cal/Makefile docs/reference/camel/Makefile docs/reference/libedataserver/Makefile docs/reference/libedataserverui/Makefile docs/reference/libebackend/Makefile po/Makefile.in"
+ 
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure

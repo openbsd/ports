@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/17 17:07:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/23 11:52:56 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.0.1
+GNOME_VERSION=		3.0.2
 
 CATEGORIES=		databases
 
@@ -62,6 +62,7 @@ YACC=			bison
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
+			--disable-vala-bindings \
 			--enable-introspection \
 			--enable-ssl \
 			--enable-smime \
