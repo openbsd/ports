@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.5 2011/05/22 09:19:08 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.6 2011/05/23 09:44:05 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -69,7 +69,7 @@ sub logname
 
 sub lockname
 {
-	return shift->{name};
+	return shift->{name}."dist";
 }
 
 sub simple_lockname
@@ -99,13 +99,13 @@ sub filename
 sub check
 {
 	my ($self, $logger) = @_;
-	return $self->checksum($logger, $self->filename, 1);
+	return $self->checksize($logger, $self->filename);
 
 }
 
-sub checksum
+sub checksize
 {
-	my ($self, $logger, $name, $quick) = @_;
+	my ($self, $logger, $name) = @_;
 	# XXX if we matched once, then we match "forever"
 	return 1 if $self->{okay};
 	if (!stat $name) {
@@ -116,20 +116,28 @@ sub checksum
 		print $fh "size does not match\n";
 		return 0;
 	}
-	return 1 if $quick;
+	return 1;
+}
+
+sub checksum
+{
+	my ($self, $name) = @_;
+	# XXX if we matched once, then we match "forever"
+	return 1 if $self->{okay};
+	print "checksum for $name: ";
 	if (OpenBSD::sha->new($name)->equals($self->{sha})) {
 		$self->{okay} = 1;
+		print "OK\n";
 		return 1;
 	}
-	my $fh = $logger->open('dist/'.$self->{name});
-	print $fh "checksum does not match\n";
+	print "BAD\n";
 	return 0;
 }
 
 sub unlock_conditions
 {
 	my ($self, $engine) = @_;
-	return $self->check($engine->{logger}, 1);
+	return $self->check($engine->{logger});
 }
 
 sub requeue
@@ -219,6 +227,55 @@ sub fetch
 	$core->start_job($job, $file);
 }
 
+package DPB::Task::Checksum;
+our @ISA = qw(DPB::Task::Fork);
+
+sub new
+{
+	my ($class, $fetcher, $status) = @_;
+	bless {fetcher => $fetcher, fetch_status => $status}, $class;
+}
+
+sub run
+{
+	my ($self, $core) = @_;
+	my $job = $core->job;
+	$self->redirect($job->{log});
+	exit(!$job->{file}->checksum($job->{file}->tempfilename));
+}
+
+sub finalize
+{
+	my ($self, $core) = @_;
+	$self->SUPER::finalize($core);
+	my $job = $core->job;
+	if ($core->{status} != 0) {
+		# XXX if we continued, and it failed, then maybe we
+		# got a stupid error message instead, so retry for
+		# full size.
+		if (defined $self->{fetcher}->{initial_sz}) {
+			unlink($job->{file}->tempfilename);
+		} else {
+			shift @{$job->{sites}};
+		}
+		return $job->bad_file($self->{fetcher}, $core);
+	}
+	rename($job->{file}->tempfilename, $job->{file}->filename);
+	my $sz = $job->{file}->{sz};
+	if (defined $self->{fetcher}->{initial_sz}) {
+		$sz -= $self->{fetcher}->{initial_sz};
+	}
+	my $fh = $job->{logger}->open("fetch/good");
+	my $elapsed = $self->{fetcher}->elapsed;
+	print $fh $self->{fetcher}{site}.$job->{file}->{short}, " in ",
+	    $elapsed, "s ";
+	if ($elapsed != 0) {
+		print $fh "(", sprintf("%.2f", $sz / $elapsed / 1024), "KB/s)";
+	}
+	print $fh "\n";
+	return 1;
+}
+
 # Fetching stuff is almost a normal job
 package DPB::Task::Fetch;
 our @ISA = qw(DPB::Task::Clocked);
@@ -227,7 +284,7 @@ sub new
 {
 	my ($class, $job) = @_;
 	if (@{$job->{sites}}) {
-		my $o = bless { site => shift @{$job->{sites}}}, $class;
+		my $o = bless { site => $job->{sites}[0]}, $class;
 		my $sz = (stat $job->{file}->tempfilename)[7];
 		if (defined $sz) {
 			$o->{initial_sz} = $sz;
@@ -246,7 +303,7 @@ sub run
 	my $site = $self->{site};
 	my $ftp = OpenBSD::Paths->ftp;
 	$self->redirect($job->{log});
-	my @cmd = ($ftp, '-o', $job->{file}->tempfilename, '-v', 
+	my @cmd = ($ftp, '-C', '-o', $job->{file}->tempfilename, '-v', 
 	    $site.$job->{file}->{short});
 	print STDERR "===> Trying $site\n";
 	print STDERR join(' ', @cmd), "\n";
@@ -267,36 +324,19 @@ sub finalize
 	my ($self, $core) = @_;
 	$self->SUPER::finalize($core);
 	my $job = $core->job;
-	# XXX should be a bit smarter about keeping/not keeping files
-	# based on core's status
-	if ($job->{file}->checksum($job->{logger}, 
+	if ($job->{file}->checksize($job->{logger}, 
 	    $job->{file}->tempfilename)) {
-		rename($job->{file}->tempfilename, $job->{file}->filename);
-		$core->{status} = 0;
-		my $sz = $job->{file}->{sz};
-		if (defined $self->{initial_sz}) {
-			$sz -= $self->{initial_sz};
-		}
-		my $fh = $job->{logger}->open("fetch/good");
-		my $elapsed = $self->elapsed;
-		print $fh $self->{site}.$job->{file}->{short}, " in ",
-		    $elapsed, "s ";
-		if ($elapsed != 0) {
-			print $fh "(", 
-			sprintf("%.2f", $sz / $elapsed / 1024), "KB/s)";
-		}
-		print $fh "\n";
-		return 1;
-	}
-	unlink($job->{file}->tempfilename);
-	my $fh = $job->{logger}->open("fetch/bad");
-	print $fh $self->{site}.$job->{file}->{short}, "\n";
-	if ($job->new_fetch_task) {
-		$core->{status} = 0;
-		return 1;
+	    	$job->new_checksum_task($self, $core->{status});
 	} else {
-		$core->{status} = 1;
-		return 0;
+		# Fetch exited okay, but the file is not the right size
+		if ($core->{status} == 0 ||
+		# definite error also if file is too large
+		    stat($job->{file}->tempfilename) &&
+		    (stat _)[7] > $job->{file}->{sz}) {
+			unlink($job->{file}->tempfilename);
+		}
+		shift @{$job->{sites}};
+		return $job->bad_file($self, $core);
 	}
 }
 
@@ -317,6 +357,26 @@ sub new_fetch_task
 	} else {
 		return 0;
 	}
+}
+
+sub bad_file
+{
+	my ($job, $task, $core) = @_;
+	my $fh = $job->{logger}->open("fetch/bad");
+	print $fh $task->{site}.$job->{file}->{short}, "\n";
+	if ($job->new_fetch_task) {
+		$core->{status} = 0;
+		return 1;
+	} else {
+		$core->{status} = 1;
+		return 0;
+	}
+}
+
+sub new_checksum_task
+{
+	my ($self, $fetcher, $status) = @_;
+	push(@{$self->{tasks}}, DPB::Task::Checksum->new($fetcher, $status));
 }
 
 sub new
