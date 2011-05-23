@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/05/23 08:24:41 jasper Exp $
 
-COMMENT=	GNOME Devtool Libraries
+COMMENT=	GNOME Docking library
 
 GNOME_PROJECT=	gdl
 GNOME_VERSION=	2.30.1
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  gdl-1                1.0      # 3.0
 
