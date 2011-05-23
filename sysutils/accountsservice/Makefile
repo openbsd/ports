@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/22 17:34:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/23 08:22:43 ajacoutot Exp $
 
 COMMENT=	D-Bus interface for user account query and manipulation
 
 DISTNAME=	accountsservice-0.6.12
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS +=  accountsservice           0.0 # 0.0
 
@@ -22,7 +22,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += c crypto dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 pcre polkit-gobject-1 pthread
+WANTLIB += gobject-2.0 gthread-2.0 kvm pcre polkit-gobject-1 pthread
 WANTLIB += z
 
 MASTER_SITES=	http://www.freedesktop.org/software/accountsservice/

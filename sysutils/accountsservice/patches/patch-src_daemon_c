@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_daemon_c,v 1.2 2011/05/22 12:21:41 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_c,v 1.3 2011/05/23 08:22:43 ajacoutot Exp $
 --- src/daemon.c.orig	Thu May 19 05:39:12 2011
-+++ src/daemon.c	Sun May 22 14:19:04 2011
++++ src/daemon.c	Mon May 23 09:15:22 2011
 @@ -50,11 +50,14 @@
  #define PATH_SHADOW "/etc/shadow"
  #define PATH_LOGIN_DEFS "/etc/login.defs"
@@ -17,7 +17,15 @@ $OpenBSD: patch-src_daemon_c,v 1.2 2011/05/22 12:21:41 ajacoutot Exp $
  
  static const char *default_excludes[] = {
          "bin",
-@@ -494,16 +497,24 @@ reload_passwd (Daemon *daemon)
+@@ -488,22 +491,32 @@ reload_passwd (Daemon *daemon)
+         GSList *old_users;
+         GSList *new_users;
+         GSList *list;
++#if !defined(__FreeBSD__) && !defined(__OpenBSD__)
+         FILE *fp;
++#endif
+         User *user = NULL;
+ 
          old_users = NULL;
          new_users = NULL;
  
@@ -42,19 +50,22 @@ $OpenBSD: patch-src_daemon_c,v 1.2 2011/05/22 12:21:41 ajacoutot Exp $
                  /* Skip users below MINIMAL_UID... */
                  if (daemon_local_user_is_excluded (daemon, pwent->pw_name, pwent->pw_uid)) {
                          g_debug ("skipping user: %s", pwent->pw_name);
-@@ -556,7 +567,11 @@ reload_passwd (Daemon *daemon)
-  out:
-         /* Cleanup */
+@@ -553,10 +566,14 @@ reload_passwd (Daemon *daemon)
+                 }
+         }
  
 +#if defined(__FreeBSD__) || defined(__OpenBSD__)
 +        endpwent ();
 +#else
+  out:
+         /* Cleanup */
+ 
          fclose (fp);
 +#endif
  
          g_slist_foreach (new_users, (GFunc) g_object_thaw_notify, NULL);
          g_slist_foreach (new_users, (GFunc) g_object_unref, NULL);
-@@ -676,9 +691,16 @@ on_passwd_monitor_changed (GFileMonitor      *monitor,
+@@ -676,9 +693,16 @@ on_passwd_monitor_changed (GFileMonitor      *monitor,
          reload_users (daemon);
  }
  
@@ -71,7 +82,7 @@ $OpenBSD: patch-src_daemon_c,v 1.2 2011/05/22 12:21:41 ajacoutot Exp $
          GError *error;
          char *contents;
          gboolean contents_loaded;
-@@ -728,6 +750,7 @@ out:
+@@ -728,6 +752,7 @@ out:
          g_free (contents);
          return uid;
  }
@@ -79,7 +90,7 @@ $OpenBSD: patch-src_daemon_c,v 1.2 2011/05/22 12:21:41 ajacoutot Exp $
  
  static void
  daemon_init (Daemon *daemon)
-@@ -1042,7 +1065,7 @@ finish_list_cached_users (gpointer user_data)
+@@ -1042,7 +1067,7 @@ finish_list_cached_users (gpointer user_data)
          while (g_hash_table_iter_next (&iter, (gpointer *)&name, (gpointer *)&user)) {
                  uid = user_local_get_uid (user);
                  if (!daemon_local_user_is_excluded (data->daemon, name, uid)) {
@@ -88,7 +99,7 @@ $OpenBSD: patch-src_daemon_c,v 1.2 2011/05/22 12:21:41 ajacoutot Exp $
                          g_ptr_array_add (object_paths, g_strdup (user_local_get_object_path (user)));
                  }
          }
-@@ -1119,7 +1142,12 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1119,7 +1144,12 @@ daemon_create_user_authorized_cb (Daemon              
          CreateUserData *cd = data;
          User *user;
          GError *error;
@@ -101,7 +112,7 @@ $OpenBSD: patch-src_daemon_c,v 1.2 2011/05/22 12:21:41 ajacoutot Exp $
  
          if (getpwnam (cd->user_name) != NULL) {
                  throw_error (context, ERROR_USER_EXISTS, "A user with name '%s' already exists", cd->user_name);
-@@ -1127,6 +1155,23 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1127,6 +1157,23 @@ daemon_create_user_authorized_cb (Daemon              
                  return;
          }
  
@@ -125,7 +136,7 @@ $OpenBSD: patch-src_daemon_c,v 1.2 2011/05/22 12:21:41 ajacoutot Exp $
          sys_log (context, "create user '%s'", cd->user_name);
  
          argv[0] = "/usr/sbin/useradd";
-@@ -1135,13 +1180,32 @@ daemon_create_user_authorized_cb (Daemon              
+@@ -1135,13 +1182,32 @@ daemon_create_user_authorized_cb (Daemon              
          argv[3] = cd->real_name;
          if (cd->account_type == ACCOUNT_TYPE_ADMINISTRATOR) {
                  argv[4] = "-G";
@@ -158,7 +169,7 @@ $OpenBSD: patch-src_daemon_c,v 1.2 2011/05/22 12:21:41 ajacoutot Exp $
          }
          else {
                  throw_error (context, ERROR_FAILED, "Don't know how to add user of type %d", cd->account_type);
-@@ -1211,6 +1275,23 @@ daemon_delete_user_authorized_cb (Daemon              
+@@ -1211,6 +1277,23 @@ daemon_delete_user_authorized_cb (Daemon              
  
                  return;
          }
