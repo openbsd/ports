@@ -1,0 +1,33 @@
+$OpenBSD: patch-src_TooltipWindow_cc,v 1.1 2011/05/23 09:13:36 dcoppa Exp $
+
+Fixes for TextDialog and ToolTipWindow style rendering bugs
+(commits fd6fbb80e7a6c1d62d696a4f598edc1101b13194 and
+ 822c02e96a88a90540fa622afa5ab196b9ba5a7c)
+
+--- src/TooltipWindow.cc.orig	Thu Sep  9 14:39:18 2010
++++ src/TooltipWindow.cc	Sun May 22 19:20:51 2011
+@@ -55,8 +55,8 @@ void TooltipWindow::raiseTooltip() {
+ 
+     resize(m_lastText);
+     reconfigTheme();
+-    int h = theme()->font().height() + theme()->bevelWidth() * 2;
+-    int w = theme()->font().textWidth(m_lastText) + theme()->bevelWidth() * 2;
++    int h = theme()->iconbarTheme().text().font().height() + theme()->bevelWidth() * 2;
++    int w = theme()->iconbarTheme().text().font().textWidth(m_lastText) + theme()->bevelWidth() * 2;
+ 
+     Window root_ret; // not used
+     Window window_ret; // not used
+@@ -90,11 +90,11 @@ void TooltipWindow::raiseTooltip() {
+ 
+     show();
+     clear();
+-    theme()->font().drawText(*this, screen().screenNumber(),
++    theme()->iconbarTheme().text().font().drawText(*this, screen().screenNumber(),
+                              theme()->iconbarTheme().text().textGC(), 
+                              m_lastText,
+                              theme()->bevelWidth(),
+-                             theme()->bevelWidth() + theme()->font().ascent());
++                             theme()->bevelWidth() + theme()->iconbarTheme().text().font().ascent());
+ }
+ 
+ void TooltipWindow::updateText(const FbTk::BiDiString& text) {
