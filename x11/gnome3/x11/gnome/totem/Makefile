@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/20 16:04:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/23 07:47:39 ajacoutot Exp $
 
 COMMENT-main=		official media player for GNOME
 COMMENT-nautilus=	totem properties plugin for nautilus
@@ -8,6 +8,9 @@ GNOME_VERSION=		3.0.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
+
+REVISION-main=		0
+REVISION-nautilus=	0
 
 SHARED_LIBS +=  totem                     0.0 # 0.0
 
@@ -42,27 +45,32 @@ WANTLIB += z
 
 WANTLIB-main += ${WANTLIB} ICE SM Xtst c dbus-glib-1 ffi girepository-1.0
 WANTLIB-main += peas-1.0 peas-gtk-1.0 pthread
+
 WANTLIB-nautilus += ${WANTLIB} nautilus-extension
 
 BUILD_DEPENDS+= 	devel/iso-codes \
 			lang/vala \
 			multimedia/gstreamer-0.10/plugins-good>=0.10.30
+
 RUN_DEPENDS-main+=	devel/iso-codes \
 			devel/py-xdg \
 			x11/dbus-python \
 			x11/gnome/settings-daemon \
 			x11/gromit
-LIB_DEPENDS=		multimedia/gstreamer-0.10/plugins-base>=0.10.30 \
-			x11/gnome/totem-pl-parser>=2.32.4
-LIB_DEPENDS-main+=	${LIB_DEPENDS} \
+
+LIB_DEPENDS-main+=	${MODGETTEXT_LIB_DEPENDS} \
+			multimedia/gstreamer-0.10/plugins-base>=0.10.30 \
+			x11/gnome/totem-pl-parser>=2.32.4 \
 			devel/gobject-introspection \
 			devel/libpeas
-LIB_DEPENDS-nautilus=	${LIB_DEPENDS} \
-			x11/gnome/nautilus
+
+RUN_DEPENDS-nautilus=	x11/gnome/totem,-main
+LIB_DEPENDS-nautilus=	x11/gnome/nautilus \
+			x11/gnome/totem-pl-parser
 
 # while the following are not "required" for totem to run, there's no
 # point in using a media player that can't play most modern media files
-RUN_DEPENDS+=	multimedia/gstreamer-0.10/plugins-good \
+RUN_DEPENDS-main+=multimedia/gstreamer-0.10/plugins-good \
 		multimedia/gstreamer-0.10/plugins-ffmpeg>=0.10.5
 
 # gst-inspect-0.10 needs to access ${HOME}
@@ -70,7 +78,7 @@ PORTHOME=	${WRKDIR}
 
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 # im-status gromit iplayer jamendo lirc media-player-keys ontop opensubtitles
 # properties publish pythonconsole save-file sample-python sample-vala
