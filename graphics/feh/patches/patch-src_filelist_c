@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_filelist_c,v 1.1 2011/05/23 14:03:06 dcoppa Exp $
+
+Fix memleak in add_file_to_filelist_recursively scandir call
+(commit f2be037b77015dc9eba66620d49928ef1f0ef3aa)
+
+--- src/filelist.c.orig	Mon May 23 15:56:24 2011
++++ src/filelist.c	Mon May 23 15:57:13 2011
+@@ -221,8 +221,8 @@ void add_file_to_filelist_recursively(char *origpath, 
+ 					add_file_to_filelist_recursively(newfile, FILELIST_LAST);
+ 
+ 				free(newfile);
+-				free(de[cnt]);
+ 			}
++			free(de[cnt]);
+ 		}
+ 		free(de);
+ 		closedir(dir);
