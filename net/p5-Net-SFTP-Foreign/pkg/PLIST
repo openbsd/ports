@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/12/20 14:23:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/23 14:13:50 gsoares Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/SFTP/
 ${P5SITE}/Net/SFTP/Foreign/
@@ -6,6 +6,9 @@ ${P5SITE}/Net/SFTP/Foreign.pm
 ${P5SITE}/Net/SFTP/Foreign/Attributes/
 ${P5SITE}/Net/SFTP/Foreign/Attributes.pm
 ${P5SITE}/Net/SFTP/Foreign/Attributes/Compat.pm
+${P5SITE}/Net/SFTP/Foreign/Backend/
+${P5SITE}/Net/SFTP/Foreign/Backend/Unix.pm
+${P5SITE}/Net/SFTP/Foreign/Backend/Windows.pm
 ${P5SITE}/Net/SFTP/Foreign/Buffer.pm
 ${P5SITE}/Net/SFTP/Foreign/Common.pm
 ${P5SITE}/Net/SFTP/Foreign/Compat.pm
@@ -19,3 +22,9 @@ ${P5SITE}/Net/SFTP/Foreign/Local.pm
 @man man/man3p/Net::SFTP::Foreign::Compat.3p
 @man man/man3p/Net::SFTP::Foreign::Constants.3p
 @man man/man3p/Net::SFTP::Foreign::Local.3p
+share/examples/p5-Net-SFTP-Foreign/
+share/examples/p5-Net-SFTP-Foreign/capture_stderr.pl
+share/examples/p5-Net-SFTP-Foreign/passwd_conn.pl
+share/examples/p5-Net-SFTP-Foreign/psftp
+share/examples/p5-Net-SFTP-Foreign/resume_put.pl
+share/examples/p5-Net-SFTP-Foreign/sftp_tail.pl
