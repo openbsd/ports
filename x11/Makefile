@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.458 2011/05/21 06:29:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.459 2011/05/23 20:37:36 rpointel Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -253,6 +253,7 @@
      SUBDIR += tango-icon-theme
      SUBDIR += tango-icon-theme-extras
      SUBDIR += tellico
+     SUBDIR += terminator
      SUBDIR += terminus-font
      SUBDIR += thewidgetfactory
      SUBDIR += tilda
