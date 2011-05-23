@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/05/07 12:37:10 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/05/23 14:49:42 gsoares Exp $
 @newgroup _pound:626
 @newuser _pound:626:_pound::pound user:/nonexistent:/sbin/nologin
 @man man/man8/pound.8
@@ -8,3 +8,4 @@
 share/examples/pound/
 share/examples/pound/pound.cfg
 @sample ${SYSCONFDIR}/pound.cfg
+@rcscript ${RCDIR}/pound

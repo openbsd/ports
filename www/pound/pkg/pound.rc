@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: pound.rc,v 1.1 2011/05/23 14:49:42 gsoares Exp $
+
+daemon="${TRUEPREFIX}/sbin/pound"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
