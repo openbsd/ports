@@ -48,7 +48,6 @@ _glibtop_init_uptime_p (glibtop *server)
 void
 glibtop_get_uptime_p (glibtop *server, glibtop_uptime *buf)
 {
-#if defined(__NetBSD__) || defined(__OpenBSD__)
 	time_t now;
 	time_t uptime;
 	int mib[2];
@@ -66,27 +65,4 @@ glibtop_get_uptime_p (glibtop *server, glibtop_uptime *buf)
 		buf->idletime = 0;
 		buf->flags = _glibtop_sysdeps_uptime;
 	}
-#else
-	glibtop_cpu cpu;
-
-	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_UPTIME), 0);
-
-	memset (buf, 0, sizeof (glibtop_uptime));
-
-	/* We simply calculate it from the CPU usage. */
-
-	glibtop_get_cpu_p (server, &cpu);
-
-	/* Make sure all required fields are present. */
-
-	if ((cpu.flags & _required_cpu_flags) != _required_cpu_flags)
-		return;
-
-	/* Calculate values. */
-
-	buf->uptime = (double) cpu.total / (double) cpu.frequency;
-	buf->idletime = (double) cpu.idle / (double) cpu.frequency;
-
-	buf->flags = _glibtop_sysdeps_uptime;
-#endif
 }

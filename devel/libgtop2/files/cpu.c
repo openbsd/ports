@@ -26,9 +26,7 @@
 
 #include <glibtop_suid.h>
 
-#if defined(__NetBSD__) || defined(__OpenBSD__)
 #include <sys/sched.h>
-#endif
 
 static const unsigned long _glibtop_sysdeps_cpu =
 (1L << GLIBTOP_CPU_TOTAL) + (1L << GLIBTOP_CPU_USER) +
@@ -39,11 +37,7 @@ static const unsigned long _glibtop_sysdeps_cpu =
 #ifndef KERN_CP_TIME
 /* nlist structure for kernel access */
 static struct nlist nlst [] = {
-#ifdef __bsdi__
-	{ "_cpustats" },
-#else
 	{ "_cp_time" },
-#endif
 	{ 0 }
 };
 #endif

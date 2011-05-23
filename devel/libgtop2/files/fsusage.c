@@ -1,10 +1,7 @@
 #include <config.h>
 
-/* Although FreeBSD ships with statvfs it seems incomplete, so prefer statfs */
-#if defined (__FreeBSD__) || defined (__FreeBSD_kernel__) || defined (__OpenBSD__)
 #undef HAVE_SYS_STATVFS_H
 #undef STAT_STATVFS
-#endif
 
 #include <glibtop.h>
 #include <glibtop/error.h>

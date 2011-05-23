@@ -26,38 +26,14 @@
 
 #include <glibtop_suid.h>
 
-#if defined(__bsdi__) && (_BSDI_VERSION < 199700)
-/* Older versions of BSDI don't seem to have this. */
+/* #define _KERNEL to get declaration of `struct seminfo'. */
 
-void
-_glibtop_init_sem_limits_p (glibtop *server)
-{ }
-
-void
-glibtop_get_sem_limits_p (glibtop *server, glibtop_sem_limits *buf)
-{
-        glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_SEM_LIMITS), 0);
-
-        memset (buf, 0, sizeof (glibtop_sem_limits));
-}
-
-#else
-
-/* #define KERNEL to get declaration of `struct seminfo'. */
-
-#if (defined(__FreeBSD__) && (__FreeBSD_version < 410000)) || defined(__bsdi__)
-#define KERNEL 1
-#else
 #define _KERNEL 1
-#endif
 
 #include <sys/ipc.h>
 #include <sys/sem.h>
 
 static unsigned long _glibtop_sysdeps_sem_limits =
-#ifndef __OpenBSD__
-(1L << GLIBTOP_IPC_SEMMAP) +
-#endif
 (1L << GLIBTOP_IPC_SEMMNI) +
 (1L << GLIBTOP_IPC_SEMMNS) + (1L << GLIBTOP_IPC_SEMMNU) +
 (1L << GLIBTOP_IPC_SEMMSL) + (1L << GLIBTOP_IPC_SEMOPM) +
@@ -106,9 +82,6 @@ glibtop_get_sem_limits_p (glibtop *server, glibtop_sem_limits *buf)
 	if (server->sysdeps.sem_limits == 0)
 		return;
 
-#ifndef __OpenBSD__
-	buf->semmap = _seminfo.semmap;
-#endif
 	buf->semmni = _seminfo.semmni;
 	buf->semmns = _seminfo.semmns;
 	buf->semmnu = _seminfo.semmnu;
@@ -119,6 +92,3 @@ glibtop_get_sem_limits_p (glibtop *server, glibtop_sem_limits *buf)
 
 	buf->flags = _glibtop_sysdeps_sem_limits;
 }
-
-#endif /* either a newer BSDI or no BSDI at all. */
-

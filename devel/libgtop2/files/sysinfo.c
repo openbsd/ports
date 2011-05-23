@@ -36,12 +36,8 @@ static void
 init_sysinfo (glibtop *server)
 {
 	char *model;
-#if defined(__OpenBSD__)
 	int mib[2];
 	int ncpus = 1;
-#else
-	guint64 ncpus = 1;
-#endif
 	int mhz = 0;
 	size_t len;
 
@@ -50,7 +46,6 @@ init_sysinfo (glibtop *server)
 
 	glibtop_init_s (&server, GLIBTOP_SYSDEPS_CPU, 0);
 
-#if defined(__OpenBSD__)
 	mib[0] = CTL_HW;
 
 	/* Get the number of CPU's present */
@@ -77,17 +72,6 @@ init_sysinfo (glibtop *server)
 
 	if (sysctl(mib, 2, &mhz, &len, NULL, 0) != 0)
 		printf("Couldn't determine hw.cpuspeed.\n");
-#else
-	len = sizeof (ncpus);
-	sysctlbyname ("hw.ncpu", &ncpus, &len, NULL, 0);
-	len = 0;
-	sysctlbyname ("hw.model", NULL, &len, NULL, 0);
-	model = g_malloc (len);
-	sysctlbyname ("hw.model", model, &len, NULL, 0);
-	len = sizeof (mhz);
-	sysctlbyname ("hw.clockrate", &mhz, &len, NULL, 0);
-
-#endif /* __OpenBSD__ */
 
 	for (sysinfo.ncpu = 0;
 	     sysinfo.ncpu < GLIBTOP_NCPU && sysinfo.ncpu < ncpus;

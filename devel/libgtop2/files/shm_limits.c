@@ -26,31 +26,6 @@
 
 #include <glibtop_suid.h>
 
-#if defined(__bsdi__) && (_BSDI_VERSION < 199700)
-/* Older versions of BSDI don't seem to have this. */
-
-void
-_glibtop_init_shm_limits_p (glibtop *server)
-{ }
-
-void
-glibtop_get_shm_limits_p (glibtop *server, glibtop_shm_limits *buf)
-{
-        glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_SHM_LIMITS), 0);
-
-        memset (buf, 0, sizeof (glibtop_shm_limits));
-}
-
-#else
-
-/* #define KERNEL to get declaration of `struct shminfo'. */
-
-#if (defined(__FreeBSD__) && (__FreeBSD_version < 410000)) || defined(__bsdi__)
-#define KERNEL 1
-#else
-#define _KERNEL 1
-#endif
-
 #include <sys/ipc.h>
 #include <sys/shm.h>
 
@@ -109,6 +84,3 @@ glibtop_get_shm_limits_p (glibtop *server, glibtop_shm_limits *buf)
 
 	buf->flags = _glibtop_sysdeps_shm_limits;
 }
-
-#endif /* either a newer BSDI or no BSDI at all. */
-
