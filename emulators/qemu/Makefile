@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.66 2011/05/12 22:19:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.67 2011/05/23 23:43:28 sthen Exp $
 
 # no success building on other archs yet
-ONLY_FOR_ARCHS =	i386 amd64 sparc64
+ONLY_FOR_ARCHS =	amd64 i386 sparc64
 
 COMMENT =		multi system emulator
 
 DISTNAME =		qemu-0.14.1
+REVISION =		0
 CATEGORIES =		emulators
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=qemu/}
 
@@ -56,6 +57,7 @@ LIB_DEPENDS +=    	devel/sdl
 
 WANTLIB +=		SDL X11
 .endif
+
 .if ${FLAVOR:L:Mdebug}
 VMEM_WARNING =	yes
 CONFIGURE_ARGS +=	--enable-debug

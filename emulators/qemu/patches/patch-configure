@@ -1,30 +1,51 @@
-$OpenBSD: patch-configure,v 1.16 2011/03/12 23:28:39 sthen Exp $
---- configure.orig	Mon Feb 14 17:02:07 2011
-+++ configure	Tue Feb 15 20:46:07 2011
-@@ -223,9 +223,8 @@ sdl_config="${cross_prefix}${SDL_CONFIG-sdl-config}"
+$OpenBSD: patch-configure,v 1.17 2011/05/23 23:43:28 sthen Exp $
+--- configure.orig	Fri May  6 15:01:43 2011
++++ configure	Mon May 23 12:58:28 2011
+@@ -223,13 +223,11 @@ sdl_config="${cross_prefix}${SDL_CONFIG-sdl-config}"
  
  # default flags for all hosts
  QEMU_CFLAGS="-fno-strict-aliasing $QEMU_CFLAGS"
 -CFLAGS="-g $CFLAGS"
  QEMU_CFLAGS="-Wall -Wundef -Wendif-labels -Wwrite-strings -Wmissing-prototypes $QEMU_CFLAGS"
--QEMU_CFLAGS="-Wstrict-prototypes -Wredundant-decls $QEMU_CFLAGS"
-+QEMU_CFLAGS="-Wstrict-prototypes $QEMU_CFLAGS"
+ QEMU_CFLAGS="-Wstrict-prototypes -Wredundant-decls $QEMU_CFLAGS"
  QEMU_CFLAGS="-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE $QEMU_CFLAGS"
  QEMU_CFLAGS="-D_FORTIFY_SOURCE=2 $QEMU_CFLAGS"
  QEMU_INCLUDES="-I. -I\$(SRC_PATH)"
-@@ -931,10 +930,9 @@ else
-     exit 1
- fi
+-LDFLAGS="-g $LDFLAGS"
  
--gcc_flags="-Wold-style-declaration -Wold-style-definition -Wtype-limits"
-+gcc_flags="-Wold-style-definition -Wtype-limits"
+ # make source path absolute
+ source_path=`cd "$source_path"; pwd`
+@@ -275,6 +273,12 @@ elif check_define __s390__ ; then
+   else
+     cpu="s390"
+   fi
++elif check_define __ARMEB__ ; then
++  cpu="armv4b"
++elif check_define __ARMEL__ ; then
++  cpu="armv4l"
++elif check_define __hppa__ ; then
++  cpu="hppa"
+ else
+   cpu=`uname -m`
+ fi
+@@ -295,7 +299,7 @@ case "$cpu" in
+   armv*l)
+     cpu="armv4l"
+   ;;
+-  parisc|parisc64)
++  hppa|parisc|parisc64)
+     cpu="hppa"
+   ;;
+   mips*)
+@@ -934,7 +938,6 @@ fi
+ gcc_flags="-Wold-style-declaration -Wold-style-definition -Wtype-limits"
  gcc_flags="-Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers $gcc_flags"
  gcc_flags="-Wmissing-include-dirs -Wempty-body -Wnested-externs $gcc_flags"
 -gcc_flags="-fstack-protector-all $gcc_flags"
  cat > $TMPC << EOF
  int main(void) { return 0; }
  EOF
-@@ -1345,7 +1343,7 @@ int main(void) {
+@@ -1345,7 +1348,7 @@ int main(void) {
  }
  EOF
      vnc_png_cflags=""
@@ -33,16 +54,16 @@ $OpenBSD: patch-configure,v 1.16 2011/03/12 23:28:39 sthen Exp $
    if compile_prog "$vnc_png_cflags" "$vnc_png_libs" ; then
      vnc_png=yes
      libs_softmmu="$vnc_png_libs $libs_softmmu"
-@@ -1760,7 +1758,7 @@ fi
+@@ -1760,7 +1763,7 @@ fi
  
  ##########################################
  # pthread probe
 -PTHREADLIBS_LIST="-lpthread -lpthreadGC2"
-+PTHREADLIBS_LIST="-pthread"
++PTHREADLIBS_LIST="-pthread -lpthread -lpthreadGC2"
  
  pthread=no
  cat > $TMPC << EOF
-@@ -2329,8 +2327,8 @@ fi
+@@ -2329,8 +2332,9 @@ fi
  # End of CC checks
  # After here, no more $cc or $ld runs
  
@@ -50,10 +71,11 @@ $OpenBSD: patch-configure,v 1.16 2011/03/12 23:28:39 sthen Exp $
 -  CFLAGS="-O2 $CFLAGS"
 +if test "$debug" = "yes" ; then
 +  CFLAGS="-O0 -g $CFLAGS"
++  LDFLAGS="-g $LDFLAGS"
  fi
  
  # Consult white-list to determine whether to enable werror
-@@ -2788,7 +2786,7 @@ echo "TOOLS=$tools" >> $config_host_mak
+@@ -2788,7 +2792,7 @@ echo "TOOLS=$tools" >> $config_host_mak
  echo "ROMS=$roms" >> $config_host_mak
  echo "MAKE=$make" >> $config_host_mak
  echo "INSTALL=$install" >> $config_host_mak
@@ -62,7 +84,7 @@ $OpenBSD: patch-configure,v 1.16 2011/03/12 23:28:39 sthen Exp $
  echo "INSTALL_DATA=$install -m0644 -p" >> $config_host_mak
  echo "INSTALL_PROG=$install -m0755 -p" >> $config_host_mak
  echo "CC=$cc" >> $config_host_mak
-@@ -3223,7 +3221,11 @@ if test "$gprof" = "yes" ; then
+@@ -3223,7 +3227,11 @@ if test "$gprof" = "yes" ; then
    fi
  fi
  
