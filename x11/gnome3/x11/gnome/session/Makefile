@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/21 06:49:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/23 21:32:47 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.0.1
 
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 
@@ -21,8 +21,8 @@ WANTLIB += atk-1.0 c cairo cairo-gobject croco-0.6 dbus-1 dbus-glib-1
 WANTLIB += drm execinfo expat fontconfig freetype gconf-2 gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs rsvg-2 xcb
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += pcre pixman-1 png pthread pthread-stubs rsvg-2 upower-glib
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -34,8 +34,8 @@ BUILD_DEPENDS=	textproc/xmlto \
 LIB_DEPENDS=	devel/libexecinfo \
 		x11/gtk+3 \
 		devel/gconf2 \
-		x11/dbus-glib \
-		x11/gnome/librsvg
+		x11/gnome/librsvg \
+		sysutils/upower
 RUN_DEPENDS=	x11/gnome/settings-daemon \
 		sysutils/consolekit \
 		x11/xdg-user-dirs-gtk>=0.8p6 \
@@ -51,12 +51,12 @@ RUN_DEPENDS+=	notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:s
 # polkit-gnome isn't strictly *required* but then we will loose the
 # polkit authentication dialog in the gnome-fallback session.
 RUN_DEPENDS+=	x11/gnome/metacity \
-		x11/gnome/panel \
+		x11/gnome/panel>=3 \
 		x11/polkit-gnome
 
 # Defaults from gsettings-desktop-schema.
 RUN_DEPENDS+=	x11/cantarell-fonts \
-		x11/gnome/backgrounds \
+		x11/gnome/backgrounds>=3 \
 		x11/gnome/themes-standard
 
 # Install accessibility components -- daemons will start only if
