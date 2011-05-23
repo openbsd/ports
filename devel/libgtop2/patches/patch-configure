@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.11 2011/04/07 08:09:35 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.12 2011/05/23 18:09:10 jasper Exp $
 
 ./configure[3240]: ${INTROSPECTION_GIRDIR/$datadir/\$(datadir)}: bad substitution
 
---- configure.orig	Thu Apr  7 10:05:32 2011
-+++ configure	Thu Apr  7 10:05:19 2011
+--- configure.orig	Fri Mar 25 15:54:05 2011
++++ configure	Mon May 23 19:46:25 2011
 @@ -3231,9 +3231,9 @@ $as_echo "$found_introspection" >&6; }
         INTROSPECTION_COMPILER=`$PKG_CONFIG --variable=g_ir_compiler gobject-introspection-1.0`
         INTROSPECTION_GENERATE=`$PKG_CONFIG --variable=g_ir_generate gobject-introspection-1.0`
@@ -32,16 +32,28 @@ $OpenBSD: patch-configure,v 1.11 2011/04/07 08:09:35 ajacoutot Exp $
    fi
    ;;
  
-@@ -13053,7 +13055,7 @@ $as_echo_n "checking for libgtop sysdeps directory... 
+@@ -13049,12 +13051,18 @@ $as_echo_n "checking for libgtop sysdeps directory... 
+ 	  libgtop_sysdeps_private_mountlist=yes
+ 	  libgtop_sysdeps_private_fsusage=yes
+ 	  ;;
+-	netbsd*|openbsd*|bsdi*)
++	netbsd*|bsdi*)
  	  libgtop_sysdeps_dir=bsd
  	  libgtop_use_machine_h=yes
  	  libgtop_need_server=yes
 -	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod 2755 $(bindir)/libgtop_server2'
 +	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod 2555 $(bindir)/libgtop_server2'
  	  ;;
++	openbsd*)
++	  libgtop_sysdeps_dir=openbsd
++	  libgtop_use_machine_h=yes
++	  libgtop_need_server=yes
++	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod 2555 $(bindir)/libgtop_server2'
++	  ;;
  	freebsd*|kfreebsd*)
  	  libgtop_sysdeps_dir=freebsd
-@@ -14903,7 +14905,7 @@ if ${ac_cv_lib_intl_strftime+:} false; then :
+ 	  libgtop_use_machine_h=yes
+@@ -14903,7 +14911,7 @@ if ${ac_cv_lib_intl_strftime+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -50,7 +62,7 @@ $OpenBSD: patch-configure,v 1.11 2011/04/07 08:09:35 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -14936,7 +14938,7 @@ $as_echo "$ac_cv_lib_intl_strftime" >&6; }
+@@ -14936,7 +14944,7 @@ $as_echo "$ac_cv_lib_intl_strftime" >&6; }
  if test "x$ac_cv_lib_intl_strftime" = xyes; then :
    $as_echo "#define HAVE_STRFTIME 1" >>confdefs.h
  
@@ -59,7 +71,7 @@ $OpenBSD: patch-configure,v 1.11 2011/04/07 08:09:35 ajacoutot Exp $
  fi
  
  fi
-@@ -15674,7 +15676,7 @@ if ${ac_cv_lib_intl_bindtextdomain+:} false; then :
+@@ -15674,7 +15682,7 @@ if ${ac_cv_lib_intl_bindtextdomain+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -68,7 +80,7 @@ $OpenBSD: patch-configure,v 1.11 2011/04/07 08:09:35 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -15711,7 +15713,7 @@ if ${ac_cv_lib_intl_ngettext+:} false; then :
+@@ -15711,7 +15719,7 @@ if ${ac_cv_lib_intl_ngettext+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -77,7 +89,7 @@ $OpenBSD: patch-configure,v 1.11 2011/04/07 08:09:35 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -15748,7 +15750,7 @@ if ${ac_cv_lib_intl_dgettext+:} false; then :
+@@ -15748,7 +15756,7 @@ if ${ac_cv_lib_intl_dgettext+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -86,7 +98,7 @@ $OpenBSD: patch-configure,v 1.11 2011/04/07 08:09:35 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -15885,7 +15887,7 @@ fi
+@@ -15885,7 +15893,7 @@ fi
          #
          if test "$gt_cv_func_dgettext_libintl" = "yes" ; then
            glib_save_LIBS="$LIBS"
@@ -95,7 +107,7 @@ $OpenBSD: patch-configure,v 1.11 2011/04/07 08:09:35 ajacoutot Exp $
            unset ac_cv_func_bind_textdomain_codeset
            for ac_func in bind_textdomain_codeset
  do :
-@@ -15917,7 +15919,7 @@ done
+@@ -15917,7 +15925,7 @@ done
        fi
  
        if test "$gt_cv_func_dgettext_libintl" = "yes"; then
@@ -104,7 +116,7 @@ $OpenBSD: patch-configure,v 1.11 2011/04/07 08:09:35 ajacoutot Exp $
        fi
  
        if test "$gt_cv_have_gettext" = "yes"; then
-@@ -16232,11 +16234,6 @@ glib_save_datarootdir="$datarootdir"
+@@ -16232,11 +16240,6 @@ glib_save_datarootdir="$datarootdir"
  test "x$prefix" = xNONE && prefix=$ac_default_prefix
  test "x$exec_prefix" = xNONE && exec_prefix=$prefix
  datarootdir=`eval echo "${datarootdir}"`
@@ -116,7 +128,7 @@ $OpenBSD: patch-configure,v 1.11 2011/04/07 08:09:35 ajacoutot Exp $
  prefix="$glib_save_prefix"
  exec_prefix="$glib_save_exec_prefix"
  datarootdir="$glib_save_datarootdir"
-@@ -17394,9 +17391,9 @@ else
+@@ -17394,9 +17397,9 @@ else
    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
@@ -127,3 +139,12 @@ $OpenBSD: patch-configure,v 1.11 2011/04/07 08:09:35 ajacoutot Exp $
  int
  main ()
  {
+@@ -18280,7 +18283,7 @@ fi
+ 
+ 
+ 
+-ac_config_files="$ac_config_files Makefile libgtop.spec po/Makefile.in misc/Makefile include/Makefile include/glibtop/Makefile sysdeps/Makefile sysdeps/common/Makefile sysdeps/stub/Makefile sysdeps/stub_suid/Makefile sysdeps/sun4/Makefile sysdeps/osf1/Makefile sysdeps/linux/Makefile sysdeps/freebsd/Makefile sysdeps/solaris/Makefile sysdeps/aix/Makefile sysdeps/bsd/Makefile sysdeps/darwin/Makefile sysdeps/cygwin/Makefile src/Makefile src/daemon/Makefile lib/Makefile examples/Makefile doc/Makefile doc/reference/Makefile doc/reference/version.xml libgtop-2.0.pc libgtopconfig.h"
++ac_config_files="$ac_config_files Makefile libgtop.spec po/Makefile.in misc/Makefile include/Makefile include/glibtop/Makefile sysdeps/Makefile sysdeps/common/Makefile sysdeps/stub/Makefile sysdeps/stub_suid/Makefile sysdeps/sun4/Makefile sysdeps/osf1/Makefile sysdeps/linux/Makefile sysdeps/freebsd/Makefile sysdeps/solaris/Makefile sysdeps/aix/Makefile sysdeps/bsd/Makefile sysdeps/darwin/Makefile sysdeps/cygwin/Makefile sysdeps/openbsd/Makefile src/Makefile src/daemon/Makefile lib/Makefile examples/Makefile doc/Makefile doc/reference/Makefile doc/reference/version.xml libgtop-2.0.pc libgtopconfig.h"
+ 
+ 
+ cat >confcache <<\_ACEOF

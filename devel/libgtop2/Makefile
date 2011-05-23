@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2011/04/16 21:28:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2011/05/23 18:09:10 jasper Exp $
 
 COMMENT=		portable library for obtaining system information
 
@@ -6,7 +6,7 @@ GNOME_VERSION=		2.28.3
 GNOME_PROJECT=		libgtop
 PKGNAME=		libgtop2-${VERSION}
 
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS=		gtop-2.0	9.0	# .9.0
 
@@ -46,10 +46,6 @@ CPPFLAGS+=		-DDEBUG \
 .endif
 
 post-extract:
-	cp ${FILESDIR}/procaffinity.c ${WRKSRC}/sysdeps/bsd/
-	cp ${WRKSRC}/sysdeps/{freebsd,bsd}/glibtop_private.h
-	cp ${WRKSRC}/sysdeps/{freebsd,bsd}/procwd.c
-	cp ${WRKSRC}/sysdeps/{freebsd,bsd}/glibtop_private.c
-	cp ${WRKSRC}/sysdeps/{freebsd,bsd}/procopenfiles.c
+	cp -r ${FILESDIR} ${WRKSRC}/sysdeps/openbsd/
 
 .include <bsd.port.mk>
