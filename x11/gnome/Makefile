@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.143 2011/05/20 16:06:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.144 2011/05/23 19:13:20 landry Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -87,6 +87,7 @@
      SUBDIR += panel
      SUBDIR += pessulus
      SUBDIR += planner
+     SUBDIR += power-manager
      SUBDIR += py-atspi
      SUBDIR += py-gnome
      SUBDIR += py-gnome-desktop
