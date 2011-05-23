@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/17 18:39:21 phessler Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/23 06:10:43 weerd Exp $
 
 COMMENT =		ebook management application
 
 # 0.7.46 and higher have problems repainting their windows..
 DISTNAME =		calibre-0.7.45
+REVISION =		0
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
+
+HOMEPAGE =		http://calibre-ebook.com/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -23,6 +26,7 @@ LIB_DEPENDS=		devel/chmlib \
 			textproc/icu4c
 RUN_DEPENDS =		devel/py-dateutil \
 			devel/xdg-utils \
+			graphics/ImageMagick \
 			graphics/py-Imaging \
 			net/py-dnspython \
 			textproc/py-cssutils>=0.9.7 \
