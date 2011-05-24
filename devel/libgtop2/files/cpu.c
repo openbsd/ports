@@ -1,4 +1,4 @@
-/* $OpenBSD: cpu.c,v 1.3 2011/05/23 19:35:53 jasper Exp $	*/
+/* $OpenBSD: cpu.c,v 1.4 2011/05/24 12:37:15 jasper Exp $	*/
 
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
@@ -36,34 +36,16 @@ static const unsigned long _glibtop_sysdeps_cpu =
 (1L << GLIBTOP_CPU_IDLE) + (1L << GLIBTOP_CPU_FREQUENCY) +
 (1L << GLIBTOP_CPU_IOWAIT);
 
-#ifndef KERN_CP_TIME
-/* nlist structure for kernel access */
-static struct nlist nlst [] = {
-	{ "_cp_time" },
-	{ 0 }
-};
-#endif
-
 /* MIB array for sysctl */
 static int mib_length=2;
 static int mib [] = { CTL_KERN, KERN_CLOCKRATE };
-#ifdef KERN_CP_TIME
-static int mib2 [] = { CTL_KERN, KERN_CP_TIME };
-#endif
+static int mib2 [] = { CTL_KERN, KERN_CPTIME };
 
 /* Init function. */
 
 void
 _glibtop_init_cpu_p (glibtop *server)
 {
-#ifndef KERN_CP_TIME
-	if (kvm_nlist (server->machine.kd, nlst) < 0) {
-		glibtop_warn_io_r (server, "kvm_nlist (cpu)");
-		return;
-	}
-#endif
-
-	/* Set this only if kvm_nlist () succeeded. */
 	server->sysdeps.cpu = _glibtop_sysdeps_cpu;
 }
 
@@ -72,11 +54,8 @@ _glibtop_init_cpu_p (glibtop *server)
 void
 glibtop_get_cpu_p (glibtop *server, glibtop_cpu *buf)
 {
-#ifdef KERN_CP_TIME
 	guint64 cpts [CPUSTATES];
-#else
-	long cpts [CPUSTATES];
-#endif
+
 	/* sysctl vars*/
 	struct clockinfo ci;
 	size_t length;
@@ -89,19 +68,11 @@ glibtop_get_cpu_p (glibtop *server, glibtop_cpu *buf)
 	if (server->sysdeps.cpu == 0)
 		return;
 
-#ifdef KERN_CP_TIME
 	length = sizeof (cpts);
 	if (sysctl (mib2, mib_length, cpts, &length, NULL, 0)) {
 		glibtop_warn_io_r (server, "sysctl");
 		return;
 	}
-#else
-	if (kvm_read (server->machine.kd, nlst [0].n_value,
-		      &cpts, sizeof (cpts)) != sizeof (cpts)) {
-		glibtop_warn_io_r (server, "kvm_read (cp_time)");
-		return;
-	}
-#endif
 
 	/* Get the clockrate data */
 	length = sizeof (struct clockinfo);
