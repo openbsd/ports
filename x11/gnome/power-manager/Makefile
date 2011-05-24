@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/24 09:21:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/24 10:41:58 ajacoutot Exp $
 
 COMMENT=		GNOME power manager
 
 GNOME_PROJECT=		gnome-power-manager
 GNOME_VERSION=		2.32.0
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://projects.gnome.org/gnome-power-manager/
 
