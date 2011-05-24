@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2011/05/23 23:29:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.167 2011/05/24 09:40:24 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -40,11 +40,11 @@ AUTOCONF_VERSION= 2.67
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-gssapi \
-		--with-pam=no \
-		--with-shadow=no \
-		--with-vpopmail=no \
 		--with-rundir=/var/dovecot \
-		--with-statedir=/var/dovecot
+		--with-statedir=/var/dovecot \
+		--without-pam \
+		--without-shadow \
+		--without-vpopmail
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
