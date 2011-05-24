@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/23 19:12:51 landry Exp $
-bin/gnome-power-bugreport.sh
+@comment $OpenBSD: PLIST,v 1.2 2011/05/24 09:21:00 jasper Exp $
 @bin bin/gnome-power-manager
 @bin bin/gnome-power-preferences
 @bin bin/gnome-power-statistics
