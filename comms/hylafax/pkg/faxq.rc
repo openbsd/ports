@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: faxq.rc,v 1.1 2011/05/24 16:24:35 giovanni Exp $
+
+daemon="${TRUEPREFIX}/sbin/faxq"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

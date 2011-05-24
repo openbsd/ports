@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2011/05/24 16:24:35 giovanni Exp $
+--- Makefile.in.orig	Fri Apr 22 10:35:47 2011
++++ Makefile.in	Fri Apr 22 10:40:45 2011
+@@ -232,7 +232,7 @@ makeServerDirs::
+ 	-${INSTALL} -u ${FAXUSER} -g ${FAXGROUP} -m ${DIRMODE} \
+ 	    -idb hylafax.sw.server -dir \
+ 	    -F ${SPOOL} bin client config dev etc info log recvq status
+-	-${INSTALL} -u ${FAXUSER} -g ${FAXGROUP} -m 700 \
++	-${INSTALL} -u ${FAXUSER} -g ${FAXGROUP} -m 755 \
+ 	    -idb hylafax.sw.server -dir \
+ 	    -F ${SPOOL} sendq doneq docq tmp pollq archive
+ makeDirs: makeClientDirs makeServerDirs

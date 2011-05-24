@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.61 2010/11/29 22:33:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.62 2011/05/24 16:24:35 giovanni Exp $
 
 COMMENT=		send/receive faxes and share modems
-DISTNAME=		hylafax-4.4.6
-REVISION=		1
+DISTNAME=		hylafax-6.0.5
 CATEGORIES=		comms
 
 HOMEPAGE=		http://www.HylaFAX.org/
 
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
-MASTER_SITES=		ftp://ftp.hylafax.org/source/
+MASTER_SITES=		ftp://ftp.hylafax.org/source/ \
+			ftp://ftp.ntua.gr/pub/net/hylafax/source/ \
+			ftp://mirror.aarnet.edu.au/pub/hylafax/source/
 
 # License: BSD
 # http://www.hylafax.org/HylaFAQ/copyright.html
@@ -22,6 +23,7 @@ FLAVORS=		a4
 FLAVOR?=
 
 WANTLIB=		c jbig m stdc++ tiff util z
+MODULES=		devel/gettext
 
 BUILD_DEPENDS=		print/ghostscript/gnu
 RUN_DEPENDS=		mail/metamail
@@ -34,13 +36,16 @@ USE_GROFF =		Yes
 
 CONFIGURE_ARGS=		--nointeractive \
 			--disable-pam \
+			--disable-nls \
 			--with-CC="${CC}" \
 			--with-CXX="${CXX}" \
-			--with-INSTALL=""
+			--with-INSTALL="" \
+			--with-OPTIMIZER=""
 
 CONFIGURE_ENV+=		CCOMPILER="${CC}" CXXCOMPILER="${CXX}" \
 			GCOPTS="${CFLAGS}" GCXXOPTS="${CXXFLAGS}" \
 			PREFIX="${PREFIX}" LOCALBASE="${LOCALBASE}" \
+			INETDCONF=/etc/inetd.conf MKFIFO=/sbin/mkfifo \
 			SCRIPT_SH=/bin/ksh
 
 .if ${FLAVOR:L} == "a4"
@@ -52,6 +57,6 @@ FAKE_FLAGS=	ROOT=${WRKINST} SPOOL=${PREFIX}/libdata/hylafax
 NO_REGRESS=	Yes
 
 pre-configure:
-	@perl -pi -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/configure
+	${SUBST_CMD} ${WRKSRC}/configure
 
 .include <bsd.port.mk>

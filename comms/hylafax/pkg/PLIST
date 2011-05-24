@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2010/11/15 10:05:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2011/05/24 16:24:35 giovanni Exp $
 @conflict p5-SendPage-*
 @mode 4555
 @owner uucp
@@ -90,7 +90,9 @@ libdata/hylafax/config/lucent-mt-10
 libdata/hylafax/config/lucent-mt-2
 libdata/hylafax/config/lucent-mt-20
 libdata/hylafax/config/lucent-mt-21
+libdata/hylafax/config/mainpine-10
 libdata/hylafax/config/mainpine-2
+libdata/hylafax/config/mainpine-20
 libdata/hylafax/config/mainpine-21
 libdata/hylafax/config/moto-288
 libdata/hylafax/config/mt-1432
@@ -148,6 +150,7 @@ libdata/hylafax/etc/templates/de/notify-done-page.txt
 libdata/hylafax/etc/templates/de/notify-done.txt
 libdata/hylafax/etc/templates/de/notify-failed-page.txt
 libdata/hylafax/etc/templates/de/notify-failed.txt
+libdata/hylafax/etc/templates/de/notify-faxmaster.txt
 libdata/hylafax/etc/templates/de/notify-format_failed.txt
 libdata/hylafax/etc/templates/de/notify-killed.txt
 libdata/hylafax/etc/templates/de/notify-no_formatter.txt
@@ -169,6 +172,7 @@ libdata/hylafax/etc/templates/en/notify-done-page.txt
 libdata/hylafax/etc/templates/en/notify-done.txt
 libdata/hylafax/etc/templates/en/notify-failed-page.txt
 libdata/hylafax/etc/templates/en/notify-failed.txt
+libdata/hylafax/etc/templates/en/notify-faxmaster.txt
 libdata/hylafax/etc/templates/en/notify-format_failed.txt
 libdata/hylafax/etc/templates/en/notify-killed.txt
 libdata/hylafax/etc/templates/en/notify-no_formatter.txt
@@ -190,6 +194,7 @@ libdata/hylafax/etc/templates/es/notify-done-page.txt
 libdata/hylafax/etc/templates/es/notify-done.txt
 libdata/hylafax/etc/templates/es/notify-failed-page.txt
 libdata/hylafax/etc/templates/es/notify-failed.txt
+libdata/hylafax/etc/templates/es/notify-faxmaster.txt
 libdata/hylafax/etc/templates/es/notify-format_failed.txt
 libdata/hylafax/etc/templates/es/notify-killed.txt
 libdata/hylafax/etc/templates/es/notify-no_formatter.txt
@@ -211,6 +216,7 @@ libdata/hylafax/etc/templates/fr/notify-done-page.txt
 libdata/hylafax/etc/templates/fr/notify-done.txt
 libdata/hylafax/etc/templates/fr/notify-failed-page.txt
 libdata/hylafax/etc/templates/fr/notify-failed.txt
+libdata/hylafax/etc/templates/fr/notify-faxmaster.txt
 libdata/hylafax/etc/templates/fr/notify-format_failed.txt
 libdata/hylafax/etc/templates/fr/notify-killed.txt
 libdata/hylafax/etc/templates/fr/notify-no_formatter.txt
@@ -239,6 +245,7 @@ libdata/hylafax/etc/templates/html-sample1/job-data.inc
 libdata/hylafax/etc/templates/html-sample1/notify-blocked.txt
 libdata/hylafax/etc/templates/html-sample1/notify-done.txt
 libdata/hylafax/etc/templates/html-sample1/notify-failed.txt
+libdata/hylafax/etc/templates/html-sample1/notify-faxmaster.txt
 libdata/hylafax/etc/templates/html-sample1/notify-format_failed.txt
 libdata/hylafax/etc/templates/html-sample1/notify-killed.txt
 libdata/hylafax/etc/templates/html-sample1/notify-no_formatter.txt
@@ -258,6 +265,7 @@ libdata/hylafax/etc/templates/it/notify-done-page.txt
 libdata/hylafax/etc/templates/it/notify-done.txt
 libdata/hylafax/etc/templates/it/notify-failed-page.txt
 libdata/hylafax/etc/templates/it/notify-failed.txt
+libdata/hylafax/etc/templates/it/notify-faxmaster.txt
 libdata/hylafax/etc/templates/it/notify-format_failed.txt
 libdata/hylafax/etc/templates/it/notify-killed.txt
 libdata/hylafax/etc/templates/it/notify-no_formatter.txt
@@ -279,6 +287,7 @@ libdata/hylafax/etc/templates/pl/notify-done-page.txt
 libdata/hylafax/etc/templates/pl/notify-done.txt
 libdata/hylafax/etc/templates/pl/notify-failed-page.txt
 libdata/hylafax/etc/templates/pl/notify-failed.txt
+libdata/hylafax/etc/templates/pl/notify-faxmaster.txt
 libdata/hylafax/etc/templates/pl/notify-format_failed.txt
 libdata/hylafax/etc/templates/pl/notify-killed.txt
 libdata/hylafax/etc/templates/pl/notify-no_formatter.txt
@@ -300,6 +309,7 @@ libdata/hylafax/etc/templates/pt/notify-done-page.txt
 libdata/hylafax/etc/templates/pt/notify-done.txt
 libdata/hylafax/etc/templates/pt/notify-failed-page.txt
 libdata/hylafax/etc/templates/pt/notify-failed.txt
+libdata/hylafax/etc/templates/pt/notify-faxmaster.txt
 libdata/hylafax/etc/templates/pt/notify-format_failed.txt
 libdata/hylafax/etc/templates/pt/notify-killed.txt
 libdata/hylafax/etc/templates/pt/notify-no_formatter.txt
@@ -321,6 +331,7 @@ libdata/hylafax/etc/templates/pt_BR/notify-done-page.txt
 libdata/hylafax/etc/templates/pt_BR/notify-done.txt
 libdata/hylafax/etc/templates/pt_BR/notify-failed-page.txt
 libdata/hylafax/etc/templates/pt_BR/notify-failed.txt
+libdata/hylafax/etc/templates/pt_BR/notify-faxmaster.txt
 libdata/hylafax/etc/templates/pt_BR/notify-format_failed.txt
 libdata/hylafax/etc/templates/pt_BR/notify-killed.txt
 libdata/hylafax/etc/templates/pt_BR/notify-no_formatter.txt
@@ -342,6 +353,7 @@ libdata/hylafax/etc/templates/ro/notify-done-page.txt
 libdata/hylafax/etc/templates/ro/notify-done.txt
 libdata/hylafax/etc/templates/ro/notify-failed-page.txt
 libdata/hylafax/etc/templates/ro/notify-failed.txt
+libdata/hylafax/etc/templates/ro/notify-faxmaster.txt
 libdata/hylafax/etc/templates/ro/notify-format_failed.txt
 libdata/hylafax/etc/templates/ro/notify-killed.txt
 libdata/hylafax/etc/templates/ro/notify-no_formatter.txt
@@ -477,8 +489,10 @@ sbin/recvstats
 @bin sbin/tsitest
 @bin sbin/typetest
 sbin/xferfaxstats
-share/doc/pkg-readmes/${FULLPKGNAME}
 @exec ln -sf %D/libdata/hylafax /var/spool/hylafax
 @exec mkfifo %D/libdata/hylafax/FIFO; chown uucp:dialer %D/libdata/hylafax/FIFO; chmod 600 %D/libdata/hylafax/FIFO
 @unexec rm %D/libdata/hylafax/FIFO
 @extraunexec rm -f /var/spool/hylafax
+share/doc/pkg-readmes/${FULLPKGNAME}
+@rcscript ${RCDIR}/hfaxd
+@rcscript ${RCDIR}/faxq
