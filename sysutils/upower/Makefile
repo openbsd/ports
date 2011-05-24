@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/23 19:04:57 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/24 07:47:52 jasper Exp $
+
+ONLY_FOR_ARCHS =${APM_ARCHS}
 
 COMMENT =	userland power management interface
 

@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2011/05/23 21:37:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/05/24 07:47:53 jasper Exp $
+
+ONLY_FOR_ARCHS= 	${APM_ARCHS}
 
 COMMENT=		GNOME session
 
