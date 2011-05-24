@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/19 18:40:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/24 19:59:10 ajacoutot Exp $
 %%SHARED%%
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
@@ -34,6 +34,13 @@ share/applications/nautilus.desktop
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/org.gnome.Nautilus.service
+share/examples/nautilus/
+share/examples/nautilus/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/nautilus/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/nautilus/xdg/autostart/nautilus-autostart.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/nautilus-autostart.desktop
 share/gir-1.0/
 share/gir-1.0/Nautilus-3.0.gir
 share/glib-2.0/schemas/org.gnome.nautilus.gschema.xml

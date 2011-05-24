@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/20 08:52:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/24 19:59:10 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -16,7 +16,7 @@ COMMENT=		GNOME file manager
 # x11/gnome/tracker
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		3.0.1.1
+GNOME_VERSION=		3.0.2
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -38,7 +38,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += startup-notification-1 xcb xcb-atom xcb-aux xcb-event
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += xcb-render xcb-shm xml2 z X11-xcb
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -72,6 +72,8 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/nautilus
 
 # needs 'org.gnome.nautilus.preferences'
 REGRESS_DEPENDS=	${BASE_PKGPATH}
