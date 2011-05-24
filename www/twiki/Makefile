@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2011/05/19 06:27:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/05/24 20:15:31 naddy Exp $
 
 COMMENT=	web-based collaboration platform
 
 DISTNAME=	TWiki-4.1.1
 EXTRACT_SUFX=	.tgz
-REVISION=	0
+EPOCH=		0
 CATEGORIES=	www
 
 HOMEPAGE=	http://twiki.org/
