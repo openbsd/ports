@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2011/01/05 08:19:18 giovanni Exp $
+# $OpenBSD: Makefile,v 1.33 2011/05/24 16:32:08 giovanni Exp $
 
 COMMENT=	web server log file analysis program
 
-V=		28
-DISTNAME=	webalizer-2.23-03-RB${V}-src
-PKGNAME=	webalizer-2.23.03.${V}
+V=		29
+DISTNAME=	webalizer-2.23-05-RB${V}-src
+PKGNAME=	webalizer-2.23.05.${V}
 CATEGORIES=	www
 MASTER_SITES=	http://www.patrickfrei.ch/webalizer/rb${V}/
 
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes 
 WANTLIB=		c db jpeg m png z gd>=18 GeoIP>=5
 
-WRKDIST=	${WRKDIR}/webalizer-2.23-03-RB${V}
+WRKDIST=	${WRKDIR}/webalizer-2.23-05-RB${V}
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	--enable-dns --enable-geoip \
