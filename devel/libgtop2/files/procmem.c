@@ -1,4 +1,4 @@
-/* $OpenBSD: procmem.c,v 1.3 2011/05/23 19:35:55 jasper Exp $	*/
+/* $OpenBSD: procmem.c,v 1.4 2011/05/24 10:40:47 jasper Exp $	*/
 
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
@@ -75,9 +75,8 @@ _glibtop_init_proc_mem_p (glibtop *server)
 {
 	register int pagesize;
 
-	/* get the page size with "getpagesize" and calculate pageshift
-	 * from it */
-	pagesize = getpagesize ();
+	/* get the page size and calculate pageshift from it */
+	pagesize = sysconf(_SC_PAGESIZE);
 	pageshift = 0;
 	while (pagesize > 1) {
 		pageshift++;
