@@ -1,5 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/15 14:00:11 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/24 21:07:20 jasper Exp $
 ${P5SITE}/Geo/
 ${P5SITE}/Geo/StreetAddress/
 ${P5SITE}/Geo/StreetAddress/US.pm
 @man man/man3p/Geo::StreetAddress::US.3p
+share/examples/p5-Geo-StreetAddress-US/
+share/examples/p5-Geo-StreetAddress-US/get_state_abbrev.pl
+share/examples/p5-Geo-StreetAddress-US/get_state_fips.pl
+share/examples/p5-Geo-StreetAddress-US/get_street_abbrev.pl
+share/examples/p5-Geo-StreetAddress-US/manual_test.pl
