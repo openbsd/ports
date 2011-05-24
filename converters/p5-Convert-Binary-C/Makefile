@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/05/24 21:12:43 jasper Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		binary data conversion using C types
 
-DISTNAME =		Convert-Binary-C-0.74
-REVISION =		1
+DISTNAME =		Convert-Binary-C-0.76
 CATEGORIES =		converters
 
 # perl
@@ -15,6 +14,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
-USE_GROFF =	Yes
+MODCPAN_EXAMPLES =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>
