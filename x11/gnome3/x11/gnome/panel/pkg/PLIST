@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/18 16:22:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/05/24 05:32:28 ajacoutot Exp $
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
 @bin bin/panel-test-applets
@@ -512,7 +512,6 @@ share/locale/zh_CN/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-panel-3.0.mo
 share/locale/zu/LC_MESSAGES/gnome-panel-3.0.mo
-share/omf/
 share/omf/clock/
 share/omf/clock/clock-C.omf
 share/omf/clock/clock-ar.omf
