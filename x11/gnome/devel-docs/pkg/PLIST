@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/05/14 09:10:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/05/24 05:47:09 ajacoutot Exp $
 share/gnome/help/accessibility-devel-guide/
 share/gnome/help/accessibility-devel-guide/C/
 share/gnome/help/accessibility-devel-guide/C/accessibility-devel-guide.xml
@@ -141,6 +141,29 @@ share/gnome/help/accessibility-devel-guide/ja/figures/label_below.png
 share/gnome/help/accessibility-devel-guide/ja/figures/label_left.png
 share/gnome/help/accessibility-devel-guide/ja/figures/label_right.png
 share/gnome/help/accessibility-devel-guide/ja/figures/nodrop.png
+share/gnome/help/accessibility-devel-guide/pt_BR/
+share/gnome/help/accessibility-devel-guide/pt_BR/accessibility-devel-guide.xml
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/GNOME_desktop_Accessibility.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/at-arch.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/badfocus1.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/badfocus2.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/badfocus3.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/colour_and_arrows.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/colour_only.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/depend1.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/depend1a.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/depend2.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/depend2a.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/depend3.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/goodfocus.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/goodfocus2.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/goodfocus3.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/label_above.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/label_below.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/label_left.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/label_right.png
+share/gnome/help/accessibility-devel-guide/pt_BR/figures/nodrop.png
 share/gnome/help/accessibility-devel-guide/sl/
 share/gnome/help/accessibility-devel-guide/sl/accessibility-devel-guide.xml
 share/gnome/help/accessibility-devel-guide/sl/figures/
@@ -2397,6 +2420,7 @@ share/gnome/help/platform-overview/zh_CN/notify.page
 share/gnome/help/platform-overview/zh_CN/pango.page
 share/gnome/help/platform-overview/zh_CN/telepathy.page
 share/gnome/help/platform-overview/zh_CN/webkit.page
+share/omf/
 share/omf/accessibility-devel-guide/
 share/omf/accessibility-devel-guide/accessibility-devel-guide-C.omf
 share/omf/accessibility-devel-guide/accessibility-devel-guide-de.omf
@@ -2404,6 +2428,7 @@ share/omf/accessibility-devel-guide/accessibility-devel-guide-el.omf
 share/omf/accessibility-devel-guide/accessibility-devel-guide-es.omf
 share/omf/accessibility-devel-guide/accessibility-devel-guide-fr.omf
 share/omf/accessibility-devel-guide/accessibility-devel-guide-ja.omf
+share/omf/accessibility-devel-guide/accessibility-devel-guide-pt_BR.omf
 share/omf/accessibility-devel-guide/accessibility-devel-guide-sl.omf
 share/omf/hig-book/
 share/omf/hig-book/hig-book-C.omf
