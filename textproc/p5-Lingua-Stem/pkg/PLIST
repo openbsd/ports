@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2004/12/30 04:20:34 msf Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/24 20:59:03 jasper Exp $
 ${P5SITE}/Lingua/Stem.pm
+${P5SITE}/Lingua/Stem.pod
 ${P5SITE}/Lingua/Stem/AutoLoader.pm
 ${P5SITE}/Lingua/Stem/Da.pm
 ${P5SITE}/Lingua/Stem/De.pm
@@ -19,3 +20,9 @@ ${P5SITE}/Lingua/Stem/Sv.pm
 @man man/man3p/Lingua::Stem::No.3p
 @man man/man3p/Lingua::Stem::Pt.3p
 @man man/man3p/Lingua::Stem::Sv.3p
+share/examples/p5-Lingua-Stem/
+share/examples/p5-Lingua-Stem/benchmark-stemmers.pl
+share/examples/p5-Lingua-Stem/benchmark_stemmers.plx
+share/examples/p5-Lingua-Stem/collected_works_poe.txt
+share/examples/p5-Lingua-Stem/huckfinn.txt
+share/examples/p5-Lingua-Stem/voc.txt
