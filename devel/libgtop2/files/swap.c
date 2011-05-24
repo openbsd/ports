@@ -1,4 +1,4 @@
-/* $OpenBSD: swap.c,v 1.4 2011/05/23 21:26:41 jasper Exp $	*/
+/* $OpenBSD: swap.c,v 1.5 2011/05/24 08:48:22 jasper Exp $	*/
 
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
@@ -62,6 +62,9 @@ glibtop_get_swap_p (glibtop *server, glibtop_swap *buf)
 	int nswap, i;
 	int avail = 0, inuse = 0;
 
+	int blocksize = 512; /* Default blocksize, use getbize() ? */
+	int blockdiv = blocksize / DEV_BSIZE;
+
 	struct uvmexp uvmexp;
 	size_t length_uvmexp;
         static int swappgsin = -1;
@@ -105,12 +108,17 @@ glibtop_get_swap_p (glibtop *server, glibtop_swap *buf)
 		return;
 	}
 
+	/* Total things up, returns in 512 bytes blocks! */
 	for (i = 0; i < nswap; i++) {
 		if (swaplist[i].se_flags & SWF_ENABLE) {
-			avail += swaplist[i].se_nblks;
-			inuse += swaplist[i].se_inuse;
+			avail += (swaplist[i].se_nblks / blockdiv);
+			inuse += (swaplist[i].se_inuse / blockdiv);
 		}
 	}
+
+	/* Convert back to bytes, the libgtop2 is not clear about unites... */
+	avail *= 512;
+	inuse *= 512;
 
 	g_free (swaplist);
 
