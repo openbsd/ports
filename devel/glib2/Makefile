@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2011/05/23 16:36:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.115 2011/05/24 09:10:23 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -8,7 +8,7 @@ DISTNAME=		glib-${VERSION}
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 
 CATEGORIES=		devel
 
@@ -71,6 +71,11 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-selinux \
 			--disable-xattr \
 			--disable-silent-rules
+
+# OpenBSD has support for monotonic clock (CLOCK_MONOTONIC), however we
+# we currently don't have most of the _POSIX_* defines in unistd.h (e.g.
+# _POSIX_MONOTONIC_CLOCK 200112L) and the associated sysconf(3)
+# _SC_MONOTONIC_CLOCK variable.
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include \
 				-D_POSIX_MONOTONIC_CLOCK=200112L" \
 			LDFLAGS="-L${LOCALBASE}/lib -pthread"
