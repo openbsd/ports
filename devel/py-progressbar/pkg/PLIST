@@ -1,4 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/10/16 07:11:27 landry Exp $
-lib/python${MODPY_VERSION}/site-packages/progressbar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
-lib/python${MODPY_VERSION}/site-packages/progressbar.py
-lib/python${MODPY_VERSION}/site-packages/progressbar.pyc
+@comment $OpenBSD: PLIST,v 1.2 2011/05/24 05:28:55 rpointel Exp $
+lib/python${MODPY_VERSION}/site-packages/progressbar/
+lib/python${MODPY_VERSION}/site-packages/progressbar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/progressbar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/progressbar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/progressbar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/progressbar-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/progressbar/__init__.py
+lib/python${MODPY_VERSION}/site-packages/progressbar/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/progressbar/compat.py
+lib/python${MODPY_VERSION}/site-packages/progressbar/compat.pyc
+lib/python${MODPY_VERSION}/site-packages/progressbar/widgets.py
+lib/python${MODPY_VERSION}/site-packages/progressbar/widgets.pyc
