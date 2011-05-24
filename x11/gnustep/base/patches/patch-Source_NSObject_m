@@ -1,12 +1,12 @@
-$OpenBSD: patch-Source_NSObject_m,v 1.9 2011/04/18 11:54:49 sebastia Exp $
+$OpenBSD: patch-Source_NSObject_m,v 1.10 2011/05/24 13:58:28 sebastia Exp $
 
 fix building with clang, not needed yet, but to not forget about it
 
---- Source/NSObject.m.orig	Sun Apr  3 10:53:10 2011
-+++ Source/NSObject.m	Mon Apr  4 17:16:24 2011
-@@ -945,7 +947,7 @@ objc_create_block_classes_as_subclasses_of(Class super
+--- Source/NSObject.m.orig	Thu Apr 14 14:36:06 2011
++++ Source/NSObject.m	Mon May 23 12:57:03 2011
+@@ -955,7 +955,7 @@ objc_create_block_classes_as_subclasses_of(Class super
+       finalize_sel = @selector(finalize);
        finalize_imp = class_getMethodImplementation(self, finalize_sel);
- #endif
  
 -#if (defined(__FreeBSD__) || defined(__OpenBSD__)) && defined(__i386__)
 +#if defined(__FreeBSD__) && defined(__i386__)
