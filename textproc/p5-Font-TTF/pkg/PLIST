@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2008/09/08 00:04:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/05/24 20:52:56 jasper Exp $
 ${P5SITE}/Font/
 ${P5SITE}/Font/TTF/
 ${P5SITE}/Font/TTF.pm
@@ -10,6 +10,7 @@ ${P5SITE}/Font/TTF/Changes
 ${P5SITE}/Font/TTF/Cmap.pm
 ${P5SITE}/Font/TTF/Coverage.pm
 ${P5SITE}/Font/TTF/Cvt_.pm
+${P5SITE}/Font/TTF/DSIG.pm
 ${P5SITE}/Font/TTF/Delta.pm
 ${P5SITE}/Font/TTF/Dumper.pm
 ${P5SITE}/Font/TTF/EBDT.pm
@@ -60,6 +61,7 @@ ${P5SITE}/Font/TTF/Post.pm
 ${P5SITE}/Font/TTF/Prep.pm
 ${P5SITE}/Font/TTF/Prop.pm
 ${P5SITE}/Font/TTF/Segarr.pm
+${P5SITE}/Font/TTF/Sill.pm
 ${P5SITE}/Font/TTF/Table.pm
 ${P5SITE}/Font/TTF/Ttc.pm
 ${P5SITE}/Font/TTF/Ttopen.pm
@@ -126,6 +128,7 @@ ${P5SITE}/ttfmod.pl
 @man man/man3p/Font::TTF::Prep.3p
 @man man/man3p/Font::TTF::Prop.3p
 @man man/man3p/Font::TTF::Segarr.3p
+@man man/man3p/Font::TTF::Sill.3p
 @man man/man3p/Font::TTF::Table.3p
 @man man/man3p/Font::TTF::Ttc.3p
 @man man/man3p/Font::TTF::Ttopen.3p
