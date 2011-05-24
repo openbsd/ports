@@ -1,4 +1,4 @@
-/* $OpenBSD: mem.c,v 1.3 2011/05/23 19:35:54 jasper Exp $	*/
+/* $OpenBSD: mem.c,v 1.4 2011/05/24 09:30:20 jasper Exp $	*/
 
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
@@ -105,10 +105,6 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 
 	if (server->sysdeps.mem == 0)
 		return;
-
-	/* [FIXME: On FreeBSD 2.2.6, sysctl () returns an incorrect
-	 *         value for `vmt.vm'. We use some code from Unix top
-	 *         here.] */
 
 	/* Get the data from sysctl */
 	length_vmt = sizeof (vmt);
