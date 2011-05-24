@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/05 21:58:43 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/24 00:11:48 sthen Exp $
 @bin bin/chocolate-doom
 @bin bin/chocolate-server
 @bin bin/chocolate-setup
@@ -7,5 +7,21 @@
 @man man/man6/chocolate-doom.6
 @man man/man6/chocolate-server.6
 @man man/man6/chocolate-setup.6
+share/applications/chocolate-doom.desktop
+share/applications/chocolate-setup.desktop
+share/applications/screensavers/
+share/applications/screensavers/chocolate-doom-screensaver.desktop
+share/doc/chocolate-doom/
+share/doc/chocolate-doom/CMDLINE
+share/doc/chocolate-doom/ChangeLog
+share/doc/chocolate-doom/NEWS
+share/doc/chocolate-doom/NOT-BUGS
+share/doc/chocolate-doom/README
+share/doc/chocolate-doom/README.OPL
 share/games/
 share/games/doom/
+share/icons/
+share/icons/chocolate-doom.png
+share/icons/chocolate-setup.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

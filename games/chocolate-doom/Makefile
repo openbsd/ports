@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/14 09:17:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2011/05/24 00:11:48 sthen Exp $
 
 COMMENT =	portable version of iD Software's Doom
-DISTNAME =	chocolate-doom-1.5.0
+DISTNAME =	chocolate-doom-1.6.0
 CATEGORIES =	games x11
-REVISION =	0
 
 HOMEPAGE =	http://www.chocolate-doom.org/
 
@@ -23,7 +22,10 @@ LIB_DEPENDS =	devel/sdl-mixer \
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=chocolate-doom/}
 
+RUN_DEPENDS =	devel/desktop-file-utils
+
 USE_GROFF =	Yes
+USE_GMAKE =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--without-python
