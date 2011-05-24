@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/24 14:01:48 sebastia Exp $
+bin/EdenMath
+libexec/GNUstep/
+libexec/GNUstep/EdenMath.app/
+@bin libexec/GNUstep/EdenMath.app/EdenMath
+libexec/GNUstep/EdenMath.app/Resources/
+libexec/GNUstep/EdenMath.app/Resources/Bulgarian.lproj/
+libexec/GNUstep/EdenMath.app/Resources/Bulgarian.lproj/MainMenu.gorm/
+libexec/GNUstep/EdenMath.app/Resources/Bulgarian.lproj/MainMenu.gorm/10x.tiff
+libexec/GNUstep/EdenMath.app/Resources/Bulgarian.lproj/MainMenu.gorm/data.classes
+libexec/GNUstep/EdenMath.app/Resources/Bulgarian.lproj/MainMenu.gorm/data.info
+libexec/GNUstep/EdenMath.app/Resources/Bulgarian.lproj/MainMenu.gorm/ex.tiff
+libexec/GNUstep/EdenMath.app/Resources/Bulgarian.lproj/MainMenu.gorm/objects.gorm
+libexec/GNUstep/EdenMath.app/Resources/Bulgarian.lproj/MainMenu.gorm/xy.tiff
+libexec/GNUstep/EdenMath.app/Resources/EdenMath.desktop
+libexec/GNUstep/EdenMath.app/Resources/EdenMath.tiff
+libexec/GNUstep/EdenMath.app/Resources/English.lproj/
+libexec/GNUstep/EdenMath.app/Resources/English.lproj/MainMenu.gorm/
+libexec/GNUstep/EdenMath.app/Resources/English.lproj/MainMenu.gorm/10x.tiff
+libexec/GNUstep/EdenMath.app/Resources/English.lproj/MainMenu.gorm/data.classes
+libexec/GNUstep/EdenMath.app/Resources/English.lproj/MainMenu.gorm/data.info
+libexec/GNUstep/EdenMath.app/Resources/English.lproj/MainMenu.gorm/ex.tiff
+libexec/GNUstep/EdenMath.app/Resources/English.lproj/MainMenu.gorm/objects.gorm
+libexec/GNUstep/EdenMath.app/Resources/English.lproj/MainMenu.gorm/xy.tiff
+libexec/GNUstep/EdenMath.app/Resources/Info-gnustep.plist
+libexec/GNUstep/EdenMath.app/stamp.make
