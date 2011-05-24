@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/26 18:30:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/24 05:32:58 ajacoutot Exp $
 @conflict at-spi-<=1.32.0p3
 lib/gnome-settings-daemon-3.0/
 lib/gnome-settings-daemon-3.0/gtk-modules/
@@ -56,6 +56,7 @@ share/locale/nl/LC_MESSAGES/at-spi2-atk.mo
 share/locale/nn/LC_MESSAGES/at-spi2-atk.mo
 share/locale/or/LC_MESSAGES/at-spi2-atk.mo
 share/locale/pa/LC_MESSAGES/at-spi2-atk.mo
+share/locale/pl/LC_MESSAGES/at-spi2-atk.mo
 share/locale/pt/LC_MESSAGES/at-spi2-atk.mo
 share/locale/pt_BR/LC_MESSAGES/at-spi2-atk.mo
 share/locale/ro/LC_MESSAGES/at-spi2-atk.mo
