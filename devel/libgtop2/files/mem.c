@@ -1,4 +1,4 @@
-/* $OpenBSD: mem.c,v 1.5 2011/05/24 10:40:47 jasper Exp $	*/
+/* $OpenBSD: mem.c,v 1.6 2011/05/24 11:21:56 jasper Exp $	*/
 
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
@@ -96,7 +96,6 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 	u_int v_used_count;
 	u_int v_total_count;
 	u_int v_free_count;
-	int bufspace;
 
 	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_MEM), 0);
 
@@ -108,7 +107,7 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 	/* Get the data from sysctl */
 	length_vmt = sizeof (vmt);
 	if (sysctl (mib, 2, &vmt, &length_vmt, NULL, 0)) {
-		glibtop_warn_io_r (server, "sysctl (vmt)");
+		glibtop_warn_io_r (server, "sysctl (vm.meter)");
 		return;
 	}
 
@@ -118,30 +117,18 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 		return;
 	}
 
-	if (kvm_read (server->machine.kd, nlst[0].n_value,
-		      &bufspace, sizeof (bufspace)) != sizeof (bufspace)) {
-		glibtop_warn_io_r (server, "kvm_read (bufspace)");
-		return;
-	}
+	v_total_count = vmt.t_rm + vmt.t_free;
+	v_used_count = vmt.t_rm;
+	v_free_count = vmt.t_free;
 
 	/* convert memory stats to Kbytes */
-
-	v_total_count = uvmexp.reserve_kernel +
-		uvmexp.reserve_pagedaemon +
-		uvmexp.free + uvmexp.wired + uvmexp.active +
-		uvmexp.inactive;
-
-	v_used_count = uvmexp.active + uvmexp.inactive;
-	v_free_count = uvmexp.free;
-
 	buf->total = (guint64) pagetok (v_total_count) << LOG1024;
 	buf->used  = (guint64) pagetok (v_used_count) << LOG1024;
 	buf->free  = (guint64) pagetok (v_free_count) << LOG1024;
 	buf->locked = (guint64) pagetok (uvmexp.wired) << LOG1024;
 	buf->shared = (guint64) pagetok (vmt.t_rmshr) << LOG1024;
-	buf->buffer = (guint64) pagetok (bufspace) << LOG1024;
+	buf->buffer = 0;
 
-	/* user */
 	buf->user = buf->total - buf->free - buf->shared - buf->buffer;
 
 	/* Set the values to return */
