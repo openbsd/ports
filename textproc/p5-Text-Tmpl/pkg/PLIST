@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2005/09/05 13:12:47 espie Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/05/25 20:12:40 gsoares Exp $
 ${P5ARCH}/
 ${P5ARCH}/Text/
 ${P5ARCH}/Text/Tmpl.pm
@@ -15,3 +15,10 @@ ${P5ARCH}/auto/Text/Tmpl/autosplit.ix
 @man man/man3p/libtmpl.3
 @man man/man3p/template_extend.3
 @man man/man3p/template_syntax.3
+share/examples/p5-Text-Tmpl/
+share/examples/p5-Text-Tmpl/Makefile
+share/examples/p5-Text-Tmpl/README
+share/examples/p5-Text-Tmpl/tmpl-eg-perl
+share/examples/p5-Text-Tmpl/tmpl-eg.c
+share/examples/p5-Text-Tmpl/tmpl-eg.cc
+share/examples/p5-Text-Tmpl/tmpl-eg.tmpl
