@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2011/04/15 16:10:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/05/25 05:21:43 lum Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
-V=		3.4.0
+V=		3.5.0
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 EXTRACT_SUFX=	.tar.bz2
-REVISION=	1
 
 CATEGORIES=	net
 
@@ -28,13 +27,14 @@ WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread-stubs xcb xcb-render xcb-shm
 WANTLIB += idn gnutls>=13 dbus-1 wx_gtk2_aui wx_base_xml wx_gtk2_adv
 WANTLIB += wx_gtk2_xrc wx_base_net wx_base wx_gtk2_core
-WANTLIB += GL Xxf86vm drm
+WANTLIB += GL Xxf86vm drm sqlite3
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	devel/libidn \
 		security/gnutls \
 		x11/dbus \
-		x11/wxWidgets>=2.8.6
+		x11/wxWidgets>=2.8.6 \
+		databases/sqlite3
 
 BUILD_DEPENDS=	devel/cppunit \
 		devel/xdg-utils
