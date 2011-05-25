@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/25 17:08:15 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2011/05/25 20:27:02 robert Exp $
 
 COMMENT=	flock(2) manager for shell scripts
 PKGNAME=	flock-20110525
 CATEGORIES=	sysutils
-DISTNAME=	buildbot-07f9a8b1b75e01250b227d9fcf10da9c35c06402
 
-HOMEPAGE=	http://cgit.freedesktop.org/libreoffice/contrib/buildbot/
+DISTFILES=	flock.c
+DIST_SUBDIR=	flock
+
+REVISION=	0
+
 MASTER_SITES=	http://blade2k.humppa.hu/distfiles/
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
@@ -20,12 +23,15 @@ WANTLIB=	c
 
 NO_REGRESS=	Yes
 
+do-extract:
+	@cp ${DISTDIR}/flock.c ${WRKSRC}
+
 do-build:
-	cd ${WRKSRC}/flock && \
+	cd ${WRKSRC} && \
 	       	${CC} ${CFLAGS} -o flock flock.c
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/flock/flock \
+	${INSTALL_PROGRAM} ${WRKSRC}/flock \
 		${PREFIX}/bin
 
 .include <bsd.port.mk>
