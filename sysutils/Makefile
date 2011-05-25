@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.233 2011/05/23 19:05:29 landry Exp $
+# $OpenBSD: Makefile,v 1.234 2011/05/25 17:03:28 robert Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -54,6 +54,7 @@
      SUBDIR += fdupes
      SUBDIR += filelight
      SUBDIR += findlib
+     SUBDIR += flock
      SUBDIR += flyback
      SUBDIR += freedt
      SUBDIR += freeipmi
