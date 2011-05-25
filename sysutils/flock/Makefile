@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/25 20:27:02 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/25 21:21:15 robert Exp $
 
 COMMENT=	flock(2) manager for shell scripts
-PKGNAME=	flock-20110525
+
+V=		20110525
+
+PKGNAME=	flock-${V}
 CATEGORIES=	sysutils
 
-DISTFILES=	flock.c
+DISTFILES=	flock-${V}.c
 DIST_SUBDIR=	flock
 
-REVISION=	0
+REVISION=	1
 
 MASTER_SITES=	http://blade2k.humppa.hu/distfiles/
 
@@ -24,11 +27,11 @@ WANTLIB=	c
 NO_REGRESS=	Yes
 
 do-extract:
-	@cp ${DISTDIR}/flock.c ${WRKSRC}
+	@cp ${FULLDISTDIR}/flock-${V}.c ${WRKSRC}
 
 do-build:
 	cd ${WRKSRC} && \
-	       	${CC} ${CFLAGS} -o flock flock.c
+	       	${CC} ${CFLAGS} -o flock flock-${V}.c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/flock \
