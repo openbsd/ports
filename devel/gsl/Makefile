@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2011/05/25 17:32:33 jasper Exp $
 
 COMMENT=	GNU Scientific Library
 
-DISTNAME=	gsl-1.12
+DISTNAME=	gsl-1.15
 SHARED_LIBS +=	gslcblas             1.0      # .0.0
-SHARED_LIBS +=	gsl                  11.0     # .13.0
+SHARED_LIBS +=	gsl                  12.0     # .16.0
 
 CATEGORIES=	devel
 
@@ -24,7 +24,6 @@ MASTER_SITES=		${MASTER_SITE_GNU:=gsl/}
 
 SEPARATE_BUILD=		simple
 USE_LIBTOOL=		Yes
-USE_GROFF =		Yes
 
 CONFIGURE_STYLE=	gnu
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/06/01 13:37:05 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/05/25 17:32:33 jasper Exp $
 %%SHARED%%
 bin/gsl-config
 @bin bin/gsl-histogram
@@ -87,9 +87,11 @@ include/gsl/gsl_multifit.h
 include/gsl/gsl_multifit_nlin.h
 include/gsl/gsl_multimin.h
 include/gsl/gsl_multiroots.h
+include/gsl/gsl_multiset.h
 include/gsl/gsl_nan.h
 include/gsl/gsl_ntuple.h
 include/gsl/gsl_odeiv.h
+include/gsl/gsl_odeiv2.h
 include/gsl/gsl_permutation.h
 include/gsl/gsl_permute.h
 include/gsl/gsl_permute_char.h
