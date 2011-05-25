@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/25 17:02:56 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/25 17:08:15 robert Exp $
 
 COMMENT=	flock(2) manager for shell scripts
 PKGNAME=	flock-20110525
@@ -6,7 +6,7 @@ CATEGORIES=	sysutils
 DISTNAME=	buildbot-07f9a8b1b75e01250b227d9fcf10da9c35c06402
 
 HOMEPAGE=	http://cgit.freedesktop.org/libreoffice/contrib/buildbot/
-MASTER_SITES=	${HOMEPAGE}snapshot/
+MASTER_SITES=	http://blade2k.humppa.hu/distfiles/
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
