@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2011/05/04 05:35:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.37 2011/05/25 12:35:33 dcoppa Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 DISTNAME =		gnome-mplayer-1.0.3
-REVISION =		0
+REVISION =		1
 CATEGORIES =		x11 multimedia
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
@@ -49,6 +49,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include \
 			LDFLAGS="-L${LOCALBASE}/lib \
 				-L${X11BASE}/lib -pthread"
 CONFIGURE_ARGS =	--with-gio \
+			--with-gpm-new-method \
 			--with-libnotify \
 			--with-libgpod \
 			--with-libmusicbrainz3 \

@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.5 2011/04/28 11:47:48 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.6 2011/05/25 12:35:33 dcoppa Exp $
 
 don't check for libgpod 0.6.x: it's not in our ports tree
 disable gnome-power-manager support
@@ -130,52 +130,4 @@ disable gnome-power-manager support
 +GPOD_LIBS="$GPOD07_LIBS"
  
  
- 
-@@ -9318,47 +9231,6 @@ $as_echo "#define SM_INHIBIT 0" >>confdefs.h
- $as_echo "#define SS_INHIBIT 0" >>confdefs.h
- 
- 
--
--# Check whether --with-gpm-new-method was given.
--if test "${with_gpm_new_method+set}" = set; then :
--  withval=$with_gpm_new_method; CHECK_GPM=no
--$as_echo "#define SM_INHIBIT 1" >>confdefs.h
--
--fi
--
--
--# Check whether --with-gpm-old-method was given.
--if test "${with_gpm_old_method+set}" = set; then :
--  withval=$with_gpm_old_method; CHECK_GPM=no
--$as_echo "#define SS_INHIBIT 1" >>confdefs.h
--
--fi
--
--
--if test x$CHECK_GPM = "xyes"; then
--	GPM=`which gnome-power-manager`
--    if test "$GPM" != ""; then
--            { $as_echo "$as_me:${as_lineno-$LINENO}: Checking for gnome-power-manager support" >&5
--$as_echo "$as_me: Checking for gnome-power-manager support" >&6;}
--            GPMVER=`$GPM --version | sed -e 's/.* 2.//' | cut -b1-2`
--            if test -n $GPMVER; then
--
--$as_echo "#define SM_INHIBIT 1" >>confdefs.h
--
--            else
--                if test $GPMVER -ge 26; then
--
--$as_echo "#define SM_INHIBIT 1" >>confdefs.h
--
--                fi
--                if test $GPMVER -lt 26; then
--
--$as_echo "#define SS_INHIBIT 1" >>confdefs.h
--
--                fi
--            fi
--    fi
--fi
- 
- if test x$with_gsettings = "xyes"; then
  

@@ -1,0 +1,15 @@
+$OpenBSD: README,v 1.1 2011/05/25 12:35:33 dcoppa Exp $
+
+Running gnome-mplayer on OpenBSD
+================================
+
+To prevent errors, the "unclutter" program (from x11/unclutter) must not
+be running when using gnome-mplayer.
+
+MPlayer software volume control (softvol) is enabled by default because
+there is no volume control in mplayer's sndio(7) backend.
+
+To use the gnome-power-manager's inhibit method instead of the
+XScrnSaver one, go into Edit->Preferences->Interface and remove the
+checkmark from "Use X Screen Saver control over Gnome Power Manager"
+(this obviously needs the gnome-power-manager package to be installed).

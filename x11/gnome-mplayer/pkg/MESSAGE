@@ -1,5 +1,0 @@
-To prevent errors, the "unclutter" program (from x11/unclutter) must not
-be running when using gnome-mplayer.
-
-MPlayer software volume control (softvol) is enabled by default because 
-there is no volume control in mplayer's sndio backend.
