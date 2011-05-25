@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.2 2011/01/06 04:04:37 jeremy Exp $
+$OpenBSD: patch-configure,v 1.3 2011/05/25 17:50:45 jasper Exp $
 
 Fix so name, checking for DOT and DOXYGEN, and use -pthread.
 
---- configure.orig	Sat Dec 25 02:50:49 2010
-+++ configure	Sun Jan  2 17:26:32 2011
+--- configure.orig	Fri Feb 18 13:13:10 2011
++++ configure	Wed May 25 19:50:01 2011
 @@ -5823,7 +5823,7 @@ IFS=$as_save_IFS
  
  fi
@@ -48,7 +48,7 @@ Fix so name, checking for DOT and DOXYGEN, and use -pthread.
  fi
  
  if test x"$DOXYGEN" = x; then
-@@ -14777,13 +14777,13 @@ fi
+@@ -14779,13 +14779,13 @@ fi
  if test x"$enable_pthread" = xyes; then
      for pthread_lib in thr pthread pthreads c c_r root; do
  	as_ac_Lib=`$as_echo "ac_cv_lib_$pthread_lib''_pthread_kill" | $as_tr_sh`
@@ -65,7 +65,7 @@ Fix so name, checking for DOT and DOXYGEN, and use -pthread.
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -14849,7 +14849,7 @@ done
+@@ -14851,7 +14851,7 @@ done
    c_r) :
      MAINLIBS="-pthread $MAINLIBS" ;; #(
    *) :
@@ -74,7 +74,7 @@ Fix so name, checking for DOT and DOXYGEN, and use -pthread.
  esac
      else
  	{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: \"Don't know how to find pthread library on your system -- thread support disabled\"" >&5
-@@ -15697,7 +15697,7 @@ if test "$enable_shared" = 'yes'; then
+@@ -15699,7 +15699,7 @@ if test "$enable_shared" = 'yes'; then
    openbsd*) :
  
  	SOLIBS='$(LIBS)'
