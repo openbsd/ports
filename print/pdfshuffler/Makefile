@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/22 19:37:04 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/25 07:35:07 jasper Exp $
 
 COMMENT =		merge, split, rotate and crop PDF documents
 DISTNAME =		pdfshuffler-0.5.1
+REVISION =		0
 CATEGORIES =		print
 
 HOMEPAGE =		http://sourceforge.net/projects/pdfshuffler/
@@ -16,7 +17,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=pdfshuffler/}
 
-RUN_DEPENDS = 		print/py-poppler \
+BUILD_DEPENDS = 	devel/gettext
+RUN_DEPENDS = 		devel/gettext \
+			print/py-poppler \
 			textproc/py-pdf \
 			devel/desktop-file-utils
 
