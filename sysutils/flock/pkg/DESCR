@@ -1,0 +1,2 @@
+This utility manages flock(2) locks from within shell scripts or
+the command line.
