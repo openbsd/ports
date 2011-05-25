@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.67 2011/05/23 23:43:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2011/05/25 07:43:48 sthen Exp $
 
 # no success building on other archs yet
-ONLY_FOR_ARCHS =	amd64 i386 sparc64
+ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc64
+VMEM_WARNING =		yes
 
 COMMENT =		multi system emulator
 
@@ -59,7 +60,6 @@ WANTLIB +=		SDL X11
 .endif
 
 .if ${FLAVOR:L:Mdebug}
-VMEM_WARNING =	yes
 CONFIGURE_ARGS +=	--enable-debug
 .endif
 
