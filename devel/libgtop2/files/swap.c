@@ -1,4 +1,4 @@
-/* $OpenBSD: swap.c,v 1.5 2011/05/24 08:48:22 jasper Exp $	*/
+/* $OpenBSD: swap.c,v 1.6 2011/05/25 10:44:34 jasper Exp $	*/
 
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
@@ -60,7 +60,7 @@ glibtop_get_swap_p (glibtop *server, glibtop_swap *buf)
 	struct swapent *swaplist;
 
 	int nswap, i;
-	int avail = 0, inuse = 0;
+	guint64 avail = 0, inuse = 0;
 
 	int blocksize = 512; /* Default blocksize, use getbize() ? */
 	int blockdiv = blocksize / DEV_BSIZE;
