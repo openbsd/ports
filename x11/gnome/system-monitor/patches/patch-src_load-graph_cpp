@@ -1,7 +1,10 @@
-$OpenBSD: patch-src_load-graph_cpp,v 1.1 2011/05/26 07:29:34 jasper Exp $
+$OpenBSD: patch-src_load-graph_cpp,v 1.2 2011/05/26 07:31:01 jasper Exp $
 
 It's much more intuitive for the user to see the memory usage values
 aligning with the familiar information presented by top(1).
+
+XXX: When gtop2's mem.cached is implemented,
+     adjust mem.user and remove this patch.
 
 --- src/load-graph.cpp.orig	Tue Sep 28 01:13:17 2010
 +++ src/load-graph.cpp	Wed May 25 12:03:52 2011
