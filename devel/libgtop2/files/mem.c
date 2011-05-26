@@ -1,4 +1,4 @@
-/* $OpenBSD: mem.c,v 1.6 2011/05/24 11:21:56 jasper Exp $	*/
+/* $OpenBSD: mem.c,v 1.7 2011/05/26 07:28:51 jasper Exp $	*/
 
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
@@ -117,8 +117,13 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 		return;
 	}
 
-	v_total_count = vmt.t_rm + vmt.t_free;
-	v_used_count = vmt.t_rm;
+	/*
+	 * t_arm = active real memory
+	 * t_rm = total real memory in use
+	 * t_free = free memory pages
+	 */
+	v_total_count = vmt.t_rm;
+	v_used_count = vmt.t_arm;
 	v_free_count = vmt.t_free;
 
 	/* convert memory stats to Kbytes */
