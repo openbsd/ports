@@ -1,4 +1,7 @@
-$OpenBSD: patch-Commands_SetStatus_hs,v 1.1 2011/01/02 10:40:48 kili Exp $
+$OpenBSD: patch-Commands_SetStatus_hs,v 1.2 2011/05/26 08:24:59 dcoppa Exp $
+
+ghc7 fix: add explicit type signature to a catch
+
 --- Commands/SetStatus.hs.orig	Wed Jul  2 17:32:27 2008
 +++ Commands/SetStatus.hs	Fri Dec 31 12:35:07 2010
 @@ -56,7 +56,7 @@ cmd_worker gi (args, episodes) = lock $

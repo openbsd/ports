@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2011/04/23 14:32:51 kili Exp $
+# $OpenBSD: Makefile,v 1.14 2011/05/26 08:24:59 dcoppa Exp $
 
 COMMENT =		command line podcast aggregator
 
 DISTNAME =		hpodder-1.1.5
-REVISION =		6
+REVISION =		7
 CATEGORIES =		net
-HOMEPAGE =		http://software.complete.org/hpodder
+HOMEPAGE =		https://github.com/jgoerzen/hpodder/wiki
 
 MAINTAINER =		David Coppa <dcoppa@openbsd.org>
 
@@ -18,12 +18,12 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB =		c gmp m pthread sqlite3 util
 
 MODULES =		lang/ghc converters/libiconv
-USE_GROFF =		Yes
+
 MODGHC_BUILD =		cabal hackage nort
 
 BUILD_DEPENDS =		devel/hs-ConfigFile \
 			devel/hs-mtl \
-			hs-HaXml->=1.13.2<1.19:textproc/hs-HaXml \
+			textproc/hs-HaXml>=1.20 \
 			databases/hs-HDBC-sqlite3
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/gmp
