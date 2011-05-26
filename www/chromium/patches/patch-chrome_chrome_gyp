@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_chrome_gyp,v 1.4 2011/04/29 13:18:01 robert Exp $
---- chrome/chrome.gyp.orig	Tue Apr 26 10:01:59 2011
-+++ chrome/chrome.gyp	Thu Apr 28 11:17:49 2011
+$OpenBSD: patch-chrome_chrome_gyp,v 1.5 2011/05/26 11:39:14 robert Exp $
+--- chrome/chrome.gyp.orig	Fri May 20 10:35:46 2011
++++ chrome/chrome.gyp	Thu May 26 11:51:15 2011
 @@ -99,6 +99,10 @@
            }],
          ],
@@ -39,3 +39,15 @@ $OpenBSD: patch-chrome_chrome_gyp,v 1.4 2011/04/29 13:18:01 robert Exp $
            'dependencies': [
              '../build/linux/system.gyp:gtk',
            ],
+@@ -1178,6 +1182,11 @@
+                   '-lgcrypt',
+                 ],
+               },
++            }],
++            ['OS=="openbsd"', {
++              'include_dirs': [
++                '/usr/local/include',
++              ],
+             }],
+           ],
+         }],

@@ -1,6 +1,6 @@
-$OpenBSD: patch-build_common_gypi,v 1.5 2011/04/29 13:18:01 robert Exp $
---- build/common.gypi.orig	Tue Apr 26 10:01:32 2011
-+++ build/common.gypi	Thu Apr 28 11:17:49 2011
+$OpenBSD: patch-build_common_gypi,v 1.6 2011/05/26 11:39:14 robert Exp $
+--- build/common.gypi.orig	Fri May 20 10:35:18 2011
++++ build/common.gypi	Thu May 26 11:41:51 2011
 @@ -97,7 +97,7 @@
        'fastbuild%': 0,
  
@@ -37,6 +37,15 @@ $OpenBSD: patch-build_common_gypi,v 1.5 2011/04/29 13:18:01 robert Exp $
          'conditions': [
            ['branding=="Chrome"', {
              'linux_breakpad%': 1,
+@@ -460,7 +460,7 @@
+         ],
+       }],
+ 
+-      ['OS=="mac" or (OS=="linux" and chromeos==0 and target_arch!="arm")', {
++      ['OS=="mac" or OS=="openbsd" or (OS=="linux" and chromeos==0 and target_arch!="arm")', {
+         'use_cups%': 1,
+       }, {
+         'use_cups%': 0,
 @@ -752,7 +752,7 @@
                ['exclude', '(^|/)(gtk|x11)_[^/]*\\.(h|cc)$'],
              ],

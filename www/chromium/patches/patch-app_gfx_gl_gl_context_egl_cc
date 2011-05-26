@@ -1,6 +1,6 @@
-$OpenBSD: patch-app_gfx_gl_gl_context_egl_cc,v 1.4 2011/04/29 13:18:01 robert Exp $
---- app/gfx/gl/gl_context_egl.cc.orig	Tue Apr 26 10:01:05 2011
-+++ app/gfx/gl/gl_context_egl.cc	Thu Apr 28 11:17:48 2011
+$OpenBSD: patch-app_gfx_gl_gl_context_egl_cc,v 1.5 2011/05/26 11:39:14 robert Exp $
+--- app/gfx/gl/gl_context_egl.cc.orig	Fri May 20 10:34:51 2011
++++ app/gfx/gl/gl_context_egl.cc	Wed May 25 21:40:31 2011
 @@ -13,7 +13,7 @@
  // it brings in #defines that cause conflicts.
  #include "app/gfx/gl/gl_bindings.h"
@@ -10,3 +10,12 @@ $OpenBSD: patch-app_gfx_gl_gl_context_egl_cc,v 1.4 2011/04/29 13:18:01 robert Ex
  extern "C" {
  #include <X11/Xlib.h>
  }
+@@ -85,7 +85,7 @@ bool BaseEGLContext::InitializeOneOff() {
+   if (initialized)
+     return true;
+ 
+-#ifdef OS_LINUX
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+   EGLNativeDisplayType native_display = XOpenDisplay(NULL);
+ #else
+   EGLNativeDisplayType native_display = EGL_DEFAULT_DISPLAY;

@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_browser_main_posix_cc,v 1.1 2011/05/26 11:39:14 robert Exp $
+--- chrome/browser/browser_main_posix.cc.orig	Thu May 26 09:51:56 2011
++++ chrome/browser/browser_main_posix.cc	Thu May 26 11:05:25 2011
+@@ -20,7 +20,7 @@
+ #include "chrome/common/chrome_switches.h"
+ #include "content/browser/browser_thread.h"
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_OPENBSD)) && !defined(OS_CHROMEOS)
+ #include "chrome/browser/printing/print_dialog_gtk.h"
+ #endif
+ 
+@@ -236,7 +236,7 @@ void BrowserMainPartsPosix::PostMainMessageLoopStart()
+     }
+   }
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_OPENBSD)) && !defined(OS_CHROMEOS)
+   printing::PrintingContextCairo::SetPrintingFunctions(
+       &PrintDialogGtk::CreatePrintDialog,
+       &PrintDialogGtk::PrintDocument);
