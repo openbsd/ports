@@ -1,7 +1,6 @@
-$OpenBSD: patch-configure,v 1.6 2011/05/25 12:35:33 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.7 2011/05/26 12:47:53 dcoppa Exp $
 
 don't check for libgpod 0.6.x: it's not in our ports tree
-disable gnome-power-manager support
 
 --- configure.orig	Tue Apr 26 15:08:48 2011
 +++ configure	Tue Apr 26 15:10:54 2011
