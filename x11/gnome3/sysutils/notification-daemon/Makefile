@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/18 11:06:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/26 09:03:56 ajacoutot Exp $
 
 COMMENT=		send small notifications to your desktop
 
@@ -32,8 +32,6 @@ LIB_DEPENDS=		devel/libnotify>=0.7.2 \
 			devel/libtool,-ltdl \
 			audio/libcanberra,-gtk3
 RUN_DEPENDS=		devel/desktop-file-utils
-
-MODGCONF2_SCHEMAS_DIR=	notification-daemon
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
