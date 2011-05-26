@@ -1,0 +1,5 @@
+A variety of alternative parser combinator libraries, including the
+original HuttonMeijer set. The Poly sets have features like good error
+reporting, arbitrary token type, running state, lazy parsing, and so on.
+Finally, Text.Parse is a proposed replacement for the standard Read
+class, for better deserialization of Haskell values from Strings.
