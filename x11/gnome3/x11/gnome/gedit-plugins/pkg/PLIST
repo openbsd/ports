@@ -1,6 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2011/05/17 14:05:11 ajacoutot Exp $
-lib/gedit/
-lib/gedit/plugins/
+@comment $OpenBSD: PLIST,v 1.2 2011/05/26 16:52:42 jasper Exp $
 lib/gedit/plugins/bookmarks.plugin
 lib/gedit/plugins/bracketcompletion.plugin
 lib/gedit/plugins/bracketcompletion.py
@@ -149,8 +147,6 @@ lib/gedit/plugins/textsize/signals.py
 lib/gedit/plugins/textsize/signals.pyc
 lib/gedit/plugins/textsize/signals.pyo
 lib/gedit/plugins/wordcompletion.plugin
-share/gedit/
-share/gedit/plugins/
 share/gedit/plugins/bookmarks/
 share/gedit/plugins/bookmarks/bookmark.png
 share/gedit/plugins/commander/
