@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2011/04/16 14:59:54 ajacoutot Exp $
+$OpenBSD: README,v 1.8 2011/05/26 12:52:49 ajacoutot Exp $
 
 Using CUPS under OpenBSD
 ========================
@@ -19,8 +19,8 @@ Depending on your printer model you may also need to install some driver
 package like (non-exhaustive list): hplip/hpijs, gutenprint, foo2zjs,
 splix...
 
-To be able to use CUPS printers from gtk+2 applications, the gtk+2-cups
-package needs to be installed.
+To be able to use CUPS printers from GTK applications, the corresponding
+package needs to be installed: gtk+2-cups and/or gtk+3-cups.
 
 This package supports both ulpt(4) and libusb for printing to USB
 devices. ulpt(4) should work out of the box, however:
