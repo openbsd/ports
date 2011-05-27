@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/15 00:22:53 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/05/27 10:39:37 jasper Exp $
 
 COMMENT =		database toolkit for Python
 
-MODPY_EGG_VERSION =	0.6.3
+MODPY_EGG_VERSION =	0.7.0
 DISTNAME =		SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME =		py-sqlalchemy-${MODPY_EGG_VERSION:S/p/./}
 
@@ -38,7 +38,6 @@ post-install:
 		pax -rw * ${PREFIX}/share/examples/py-sqlalchemy
 
 do-regress:
-	${_MODPY_CMD} develop -d.
-	@cd ${WRKSRC} && ${MAKE_ENV} nosetests
+	@cd ${WRKSRC} && ${MODPY_BIN} setup.py test
 
 .include <bsd.port.mk>
