@@ -1,0 +1,39 @@
+$OpenBSD: patch-src_tools_radiant_radiant_render_qgl_cpp,v 1.1.1.1 2011/05/27 07:20:11 ajacoutot Exp $
+--- src/tools/radiant/radiant/render/qgl.cpp.orig	Mon Apr 25 19:47:45 2011
++++ src/tools/radiant/radiant/render/qgl.cpp	Mon Apr 25 19:48:56 2011
+@@ -34,7 +34,7 @@
+ # include <wtypes.h>
+ PROC ( WINAPI * qwglGetProcAddress)(LPCSTR);
+ 
+-#elif defined(__linux__) || defined (__FreeBSD__) || defined(__APPLE__)
++#elif defined(__linux__) || defined (__FreeBSD__) || defined(__APPLE__) || defined (__OpenBSD__)
+ 
+ # include <GL/glx.h>
+ # include <dlfcn.h>
+@@ -55,7 +55,7 @@ void QGL_Shutdown (OpenGLBinding& table)
+ 
+ #if defined(WIN32)
+ 	qwglGetProcAddress = 0;
+-#elif defined(__linux__) || defined (__FreeBSD__) || defined(__APPLE__)
++#elif defined(__linux__) || defined (__FreeBSD__) || defined(__APPLE__) || defined (__OpenBSD__)
+ 	qglXQueryExtension = 0;
+ 	qglXGetProcAddressARB = 0;
+ #else
+@@ -133,7 +133,7 @@ typedef int (QGL_DLLEXPORT *QGLFunctionPointer) ();
+ 
+ QGLFunctionPointer QGL_getExtensionFunc (const char* symbol)
+ {
+-#if defined(__linux__) || defined (__FreeBSD__) || defined(__APPLE__)
++#if defined(__linux__) || defined (__FreeBSD__) || defined(__APPLE__) || defined (__OpenBSD__)
+ 	if (qglXGetProcAddressARB == 0) {
+ 		return reinterpret_cast<QGLFunctionPointer> (glInvalidFunction);
+ 	} else {
+@@ -170,7 +170,7 @@ int QGL_Init (OpenGLBinding& table)
+ 
+ #if defined(WIN32)
+ 	qwglGetProcAddress = wglGetProcAddress;
+-#elif defined(__linux__) || defined (__FreeBSD__) || defined(__APPLE__)
++#elif defined(__linux__) || defined (__FreeBSD__) || defined(__APPLE__) || defined (__OpenBSD__)
+ 	qglXQueryExtension = glXQueryExtension;
+ 	qglXGetProcAddressARB = (glXGetProcAddressARBProc) dlsym(RTLD_DEFAULT, "glXGetProcAddressARB");
+ 	if ((qglXQueryExtension == 0) || (qglXQueryExtension(GDK_DISPLAY(), 0, 0) != True))

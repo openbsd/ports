@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_ports_unix_unix_main_c,v 1.1.1.1 2011/05/27 07:20:11 ajacoutot Exp $
+
+XXX: OpenBSD's locale support is very limited. This can probably
+be removed when support for LC_MESSAGES is added.
+
+--- src/ports/unix/unix_main.c.orig	Tue May 17 12:21:10 2011
++++ src/ports/unix/unix_main.c	Tue May 17 12:32:54 2011
+@@ -140,9 +140,14 @@ const char *Sys_SetLocale (const char *localeID)
+ 	}
+ # endif /* __APPLE__ */
+ 
++# ifdef __OpenBSD__
++	if (Sys_Setenv("LC_ALL", localeID) != 0)
++		Com_Printf("...setenv for LC_ALL failed: %s\n", localeID);
++# endif /* __OpenBSD__ */
++
+ 	/* set to system default */
+ 	setlocale(LC_ALL, "C");
+-	locale = setlocale(LC_MESSAGES, localeID);
++	locale = setlocale(LC_ALL, localeID);
+ 	if (!locale) {
+ 		Com_DPrintf(DEBUG_CLIENT, "...could not set to language: %s\n", localeID);
+ 		locale = setlocale(LC_MESSAGES, "");
+@@ -160,7 +165,7 @@ const char *Sys_SetLocale (const char *localeID)
+ const char *Sys_GetLocale (void)
+ {
+ 	/* Calling with NULL param should return current system settings. */
+-	const char *currentLocale = setlocale(LC_MESSAGES, NULL);
++	const char *currentLocale = setlocale(LC_ALL, NULL);
+ 	if (currentLocale != NULL && currentLocale[0] != '\0')
+ 		return currentLocale;
+ 	else
