@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/05/27 20:49:53 naddy Exp $
 
 COMMENT=	library for multiple-precision floating-point computations
 
-DISTNAME=	mpfr-2.3.2
-SHARED_LIBS +=  mpfr                 0.2      # .2.2
+DISTNAME=	mpfr-3.0.1
+PKGNAME=	${DISTNAME}.4		# patch level
+SHARED_LIBS=	mpfr		1.0	# 4.1
 CATEGORIES=	devel math
 HOMEPAGE=	http://www.mpfr.org/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
-# (L)GPL
+# LGPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -17,25 +18,25 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}${DISTNAME}/
 DIST_SUBDIR=	${DISTNAME}
+.for i in 01 02 03 04
+PATCHFILES+=	patch$i
+.endfor
+PATCH_DIST_STRIP=-p1
 
-LIB_DEPENDS =	devel/gmp>=4.2.0
-# no interlibrary dependency, though
-WANTLIB =	gmp
+LIB_DEPENDS=	devel/gmp>=4.2.0
+WANTLIB=	gmp
 
 SEPARATE_BUILD=	simple
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-gmp=${LOCALBASE}
-REORDER_DEPENDENCIES=${PORTSDIR}/infrastructure/mk/automake.dep
 
-# needed on sparc64 at least: the mpfr tests are insufficient without 
-# gmp's internals
+# Do not install useless docs and misplaced examples.
+FAKE_FLAGS=	docdir=""
 
-BUILD_DEPENDS=	devel/gmp>=4.2.0:configure
-pre-configure:
-	ln -s ${WRKDIR}/devel/gmp/gmp-* ${WRKDIR}/gmp
-	cd ${WRKDIR}/gmp && ${MAKE} fib_table.h mp_bases.h
-CONFIGURE_ARGS+=--with-gmp-build=${WRKDIR}/gmp
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mpfr
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${PREFIX}/share/examples/mpfr
 
 .include <bsd.port.mk>
