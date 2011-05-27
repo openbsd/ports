@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2011/04/21 10:20:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2011/05/27 12:48:19 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		GNOME control center
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.32.1
 
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=	gnome-window-settings 3.0      # .1.0
 
@@ -45,7 +45,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk \
 			x11/gnome/libgnomekbd \
 			x11/gnome/librsvg \
 			x11/gnome/libxklavier \
-			x11/gnome/metacity \
+			STEM-*-gtk2:x11/gnome/metacity,gtk2 \
 			devel/libunique \
 			x11/gnome/desktop \
 			x11/gnome/menus \

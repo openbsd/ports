@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2011/04/06 18:26:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/05/27 12:48:19 ajacoutot Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
 GNOME_PROJECT=		gnome-python-desktop
 GNOME_VERSION=		2.32.0
 PKGNAME=		py-gnome-desktop-${VERSION}
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		http://www.pygtk.org/
 
@@ -46,7 +46,7 @@ LIB_DEPENDS=		devel/libgsf \
 			x11/gnome/libgnomeprintui \
 			x11/gnome/librsvg \
 			x11/gnome/media \
-			x11/gnome/metacity \
+			STEM-*-gtk2:x11/gnome/metacity,gtk2 \
 			x11/gnome/panel \
 			x11/gnome/totem-pl-parser>=2.28.1 \
 			graphics/evince,-main>=2.32.0 \
