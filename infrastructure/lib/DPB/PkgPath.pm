@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.4 2011/05/22 08:21:39 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.5 2011/05/27 10:27:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -135,12 +135,6 @@ sub requeue
 {
 	my ($v, $engine) = @_;
 	$engine->requeue($v);
-}
-
-# for weights, we are ourselves
-sub representative
-{
-	return shift;
 }
 
 # without multi. Used by the SUBDIRs code to make sure we get the right

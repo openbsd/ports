@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.6 2011/05/23 09:44:05 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.7 2011/05/27 10:27:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -46,12 +46,6 @@ sub create
 		path => $v,
 		distdir => $distdir,
 	}, $class;
-}
-
-# a distfile is represented by its pkgpath, yeah.
-sub representative
-{
-	return shift->{path};
 }
 
 sub new

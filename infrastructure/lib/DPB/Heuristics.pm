@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.4 2011/05/22 08:21:39 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.5 2011/05/27 10:27:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -131,7 +131,6 @@ sub mark_depend
 sub compute_measure
 {
 	my ($self, $v) = @_;
-	$v = $v->representative;
 	my $dependencies = {$v => $v};
 	my @todo = values %{$needed_by{$v}};
 	while (my $k = pop (@todo)) {
@@ -479,6 +478,69 @@ sub new_queue
 {
 	my $self = shift;
 	return DPB::Heuristics::Queue->new($self);
+}
+
+package DPB::Heuristics::FetchQueue;
+our @ISA = qw(DPB::Heuristics::Queue);
+
+# heuristic 1: grab the smallest distfiles that can build directly
+# so that we avoid queue starvation
+sub set_h1
+{
+	my $o = shift;
+	$o->{compare} = sub {
+		my ($h, $a, $b) = @_;
+		my $c = $b->{path}{has} <=> $a->{path}{has};
+		if ($c != 0) {
+			return $c;
+		} else {
+			return $b->{sz} <=> $a->{sz};
+		}
+	};
+	return $o;
+}
+
+# heuristic 2: assume we're running good enough, grab distfiles that allow
+# build to proceed as usual
+# we don't care so much about multiple distfiles
+sub set_h2
+{
+	my $o = shift;
+	$o->{compare} = sub {
+		my ($h, $a, $b) = @_;
+		my $c = ($b->{path}{has} == 2) <=> ($a->{path}{has} == 2);
+		if ($c != 0) {
+			return $c;
+		} else {
+			return $h->compare($a->{path}, $b->{path})
+		}
+	};
+	return $o;
+}
+
+# heuristic 3: grab the largest distfiles first, as they will take time
+# to build
+sub set_h3
+{
+	my $o = shift;
+	$o->{compare} = sub {
+		my ($h, $a, $b) = @_;
+		return $a->{sz} <=> $b->{sz};
+	};
+	return $o;
+}
+
+sub new
+{
+	my ($class, $h) = @_;
+	$class->SUPER::new($h)->set_h1;
+}
+
+sub sorted_values
+{
+	my $self = shift;
+	return [sort {&{$self->{compare}}($self->{h}, $a, $b)} 
+	    values %{$self->{o}}];
 }
 
 1;
