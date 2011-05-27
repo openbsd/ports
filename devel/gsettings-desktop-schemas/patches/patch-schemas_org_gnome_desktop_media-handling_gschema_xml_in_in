@@ -1,0 +1,28 @@
+$OpenBSD: patch-schemas_org_gnome_desktop_media-handling_gschema_xml_in_in,v 1.1 2011/05/27 16:43:33 ajacoutot Exp $
+
+Media handling requires udev(8) which doesn't exist under OpenBSD, so no
+need to try to auto{mount,run} removable devices by default.
+
+--- schemas/org.gnome.desktop.media-handling.gschema.xml.in.in.orig	Fri May 27 18:28:04 2011
++++ schemas/org.gnome.desktop.media-handling.gschema.xml.in.in	Fri May 27 18:29:05 2011
+@@ -1,17 +1,17 @@
+ <schemalist gettext-domain="gsettings-desktop-schemas">
+   <schema id="org.gnome.desktop.media-handling" path="/org/gnome/desktop/media-handling/">
+     <key name="automount" type="b">
+-      <default>true</default>
++      <default>false</default>
+       <_summary>Whether to automatically mount media</_summary>
+       <_description>If set to true, then Nautilus will automatically mount media such as user-visible hard disks and removable media on start-up and media insertion.</_description>
+     </key>
+     <key name="automount-open" type="b">
+-      <default>true</default>
++      <default>false</default>
+       <_summary>Whether to automatically open a folder for automounted media</_summary>
+       <_description>If set to true, then Nautilus will automatically open a folder when media is automounted. This only applies to media where no known x-content/* type was detected; for media where a known x-content type is detected, the user configurable action will be taken instead.</_description>
+     </key>
+     <key name="autorun-never" type="b">
+-      <default>false</default>
++      <default>true</default>
+       <_summary>Never prompt or autorun/autostart programs when media are inserted</_summary>
+       <_description>If set to true, then Nautilus will never prompt nor autorun/autostart programs when a medium is inserted.</_description>
+     </key>
