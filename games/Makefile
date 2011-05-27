@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.222 2011/05/22 15:13:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.223 2011/05/27 07:20:58 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -171,6 +171,7 @@
      SUBDIR += tuxpaint
      SUBDIR += tuxpaint-config
      SUBDIR += tuxpaint-stamps
+     SUBDIR += ufoai
      SUBDIR += uqm
      SUBDIR += vectoroids
      SUBDIR += vitetris
