@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/19 07:23:11 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/05/27 10:10:19 eric Exp $
 
 COMMENT=		maths, science and engineering modules for Python
 
-MODPY_EGG_VERSION=	0.7.0
+MODPY_EGG_VERSION=	0.9.0
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION =		5
 CATEGORIES=		math devel
 
 MAINTAINER=		Eric Faurot <eric@openbsd.org>
@@ -33,7 +32,7 @@ LIB_DEPENDS=		math/umfpack \
 			math/arpack \
 			math/amd \
 			${MODFORTRAN_LIB_DEPENDS}
-RUN_DEPENDS=		math/py-numpy \
+RUN_DEPENDS=		math/py-numpy>=1.6.0 \
 			devel/swig
 
 REGRESS_DEPENDS=	devel/py-nose
