@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/15 14:35:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/27 13:12:34 jasper Exp $
 
 COMMENT=		GObject JavaScriptCore bridge
 
 GNOME_PROJECT=		seed
 GNOME_VERSION=		3.0.0
-REVISION=		2
+REVISION=		3
 SHARED_LIBS +=  seed-gtk3                 0.0 # 0.0
 
 CATEGORIES=		devel www
