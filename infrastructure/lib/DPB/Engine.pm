@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.18 2011/05/27 10:27:50 espie Exp $
+# $OpenBSD: Engine.pm,v 1.19 2011/05/27 11:22:13 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -600,6 +600,15 @@ sub dump
 	}
 	print $fh "\n";
 }
+
+# special case: dump all dependencies at end of listing, and use that to
+# restart dpb quicker if we abort and restart.
+#
+# namely, scan the most important ports first.
+#
+# use case: when we restart dpb after a few hours, we want the listing job
+# to get to groff very quickly, as the queue will stay desperately empty
+# otherwise...
 
 sub dump_dependencies
 {
