@@ -1,4 +1,7 @@
-$OpenBSD: patch-gio_gnetworkingprivate_h,v 1.1 2010/09/30 07:17:19 ajacoutot Exp $
+$OpenBSD: patch-gio_gnetworkingprivate_h,v 1.2 2011/05/27 09:13:09 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=651223
+
 --- gio/gnetworkingprivate.h.orig	Tue Sep 28 15:25:02 2010
 +++ gio/gnetworkingprivate.h	Tue Sep 28 15:26:25 2010
 @@ -49,11 +49,6 @@
