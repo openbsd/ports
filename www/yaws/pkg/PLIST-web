@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.1.1.1 2010/12/22 18:38:03 jasper Exp $
+@comment $OpenBSD: PLIST-web,v 1.2 2011/05/27 17:04:43 jasper Exp $
 yaws/
 yaws/ebin/
 yaws/ebin/myappmod.beam
@@ -26,7 +26,7 @@ yaws/www/compile_layout.dia
 yaws/www/compile_layout.png
 yaws/www/configuration.yaws
 yaws/www/contact.yaws
-yaws/www/contribs.yaws
+yaws/www/contributors.txt
 yaws/www/cookies.yaws
 yaws/www/doc.yaws
 yaws/www/dynamic.yaws

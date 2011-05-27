@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2010/12/29 11:50:34 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2011/05/27 17:04:43 jasper Exp $
 %%SHARED%%
 bin/yaws
 lib/pkgconfig/
@@ -9,10 +9,11 @@ lib/yaws/ebin/.empty
 lib/yaws/ebin/authmod_gssapi.beam
 lib/yaws/ebin/haxe.beam
 lib/yaws/ebin/json.beam
+lib/yaws/ebin/json2.beam
 lib/yaws/ebin/jsonrpc.beam
-lib/yaws/ebin/mime_type_c.beam
 lib/yaws/ebin/mime_types.beam
 lib/yaws/ebin/yaws.app
+lib/yaws/ebin/yaws.appup
 lib/yaws/ebin/yaws.beam
 lib/yaws/ebin/yaws_api.beam
 lib/yaws/ebin/yaws_app.beam
@@ -29,6 +30,7 @@ lib/yaws/ebin/yaws_html.beam
 lib/yaws/ebin/yaws_jsonrpc.beam
 lib/yaws/ebin/yaws_log.beam
 lib/yaws/ebin/yaws_log_file_h.beam
+lib/yaws/ebin/yaws_logger.beam
 lib/yaws/ebin/yaws_ls.beam
 lib/yaws/ebin/yaws_multipart.beam
 lib/yaws/ebin/yaws_outmod.beam
@@ -37,15 +39,16 @@ lib/yaws/ebin/yaws_revproxy.beam
 lib/yaws/ebin/yaws_rpc.beam
 lib/yaws/ebin/yaws_rss.beam
 lib/yaws/ebin/yaws_sendfile.beam
-lib/yaws/ebin/yaws_sendfile_compat.beam
 lib/yaws/ebin/yaws_server.beam
 lib/yaws/ebin/yaws_session_server.beam
+lib/yaws/ebin/yaws_shaper.beam
 lib/yaws/ebin/yaws_soap_lib.beam
 lib/yaws/ebin/yaws_soap_srv.beam
 lib/yaws/ebin/yaws_stats.beam
 lib/yaws/ebin/yaws_sup.beam
 lib/yaws/ebin/yaws_sup_restarts.beam
 lib/yaws/ebin/yaws_ticker.beam
+lib/yaws/ebin/yaws_vdir.beam
 lib/yaws/ebin/yaws_websockets.beam
 lib/yaws/ebin/yaws_xmlrpc.beam
 lib/yaws/ebin/yaws_zlib.beam
