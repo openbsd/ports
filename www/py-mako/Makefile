@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/05/27 16:10:00 fgsch Exp $
 
 COMMENT =	super-fast templating language
 
-MODPY_EGG_VERSION = 0.3.4
+MODPY_EGG_VERSION = 0.4.1
 DISTNAME =	Mako-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
 
@@ -20,15 +20,15 @@ MASTER_SITES =	${HOMEPAGE}/downloads/
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	textproc/py-MarkupSafe \
-		www/py-beaker
-REGRESS_DEPENDS = ${RUN_DEPENDS} \
-		  devel/py-nose>=0.11
+RUN_DEPENDS =	textproc/py-MarkupSafe>=0.9.2 \
+		www/py-beaker>=1.1
+REGRESS_DEPENDS = devel/py-nose>=0.11 \
+		  ${RUN_DEPENDS}
 
 MODPY_SETUPTOOLS = Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-mako
-	cd ${WRKSRC}/doc && pax -rw *.html *.css ${PREFIX}/share/doc/py-mako
+	cd ${WRKSRC}/doc && pax -rw *.html _static ${PREFIX}/share/doc/py-mako
 
 .include <bsd.port.mk>
