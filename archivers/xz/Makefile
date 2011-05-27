@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/05/03 19:48:08 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2011/05/27 19:08:20 naddy Exp $
 
 COMMENT=	LZMA compression and decompression tools
 
-DISTNAME=	xz-5.0.2
-SHARED_LIBS=	lzma                 1.0      # .5.0
+DISTNAME=	xz-5.0.3
+SHARED_LIBS=	lzma                 1.0      # .5.3
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://tukaani.org/xz/
