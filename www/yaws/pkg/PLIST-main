@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2011/05/27 17:04:43 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2011/05/27 17:13:09 jasper Exp $
 %%SHARED%%
 bin/yaws
 lib/pkgconfig/
@@ -73,6 +73,10 @@ share/doc/yaws/
 share/doc/yaws/yaws.ps
 share/examples/yaws/
 @sample ${SYSCONFDIR}/yaws/
+share/examples/yaws/munin/
+share/examples/yaws/munin/README.munin
+share/examples/yaws/munin/yaws_hits_
+share/examples/yaws/munin/yaws_sent_
 share/examples/yaws/yaws-cert.pem
 @sample ${SYSCONFDIR}/yaws/yaws-cert.pem
 share/examples/yaws/yaws-key.pem
