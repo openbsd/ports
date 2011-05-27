@@ -1,0 +1,12 @@
+$OpenBSD: patch-ext_gmp_gmp_c,v 1.1 2011/05/27 20:42:36 naddy Exp $
+--- ext/gmp/gmp.c.orig	Fri May 27 21:32:54 2011
++++ ext/gmp/gmp.c	Fri May 27 21:33:33 2011
+@@ -1396,7 +1396,7 @@ ZEND_FUNCTION(gmp_random)
+ 
+ 		GMPG(rand_initialized) = 1;
+ 	}
+-	mpz_urandomb(*gmpnum_result, GMPG(rand_state), GMP_ABS (limiter) * __GMP_BITS_PER_MP_LIMB);
++	mpz_urandomb(*gmpnum_result, GMPG(rand_state), GMP_ABS (limiter) * GMP_LIMB_BITS);
+ 
+ 	ZEND_REGISTER_RESOURCE(return_value, gmpnum_result, le_gmp);
+ }
