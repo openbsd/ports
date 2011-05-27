@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/05/27 13:12:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/05/27 21:03:03 jasper Exp $
 
 COMMENT=		GObject JavaScriptCore bridge
 
 GNOME_PROJECT=		seed
 GNOME_VERSION=		3.0.0
-REVISION=		3
+REVISION=		4
 SHARED_LIBS +=  seed-gtk3                 0.0 # 0.0
 
 CATEGORIES=		devel www
@@ -25,10 +25,10 @@ WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm atk-1.0
 WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm enchant
 WANTLIB += expat ffi fontconfig freetype gailutil-3 gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gmp gobject-2.0
 WANTLIB += gstapp-0.10 gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10
 WANTLIB += gstreamer-0.10 gstvideo-0.10 gthread-2.0 gtk-3 icudata
-WANTLIB += icui18n icuuc jpeg m pango-1.0 pangocairo-1.0
+WANTLIB += icui18n icuuc jpeg m mpfr pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += readline soup-2.4 sqlite3 stdc++ termcap util webkitgtk-3.0
 WANTLIB += xcb xcb-render xcb-shm xml2 xslt z
@@ -36,6 +36,7 @@ WANTLIB += xcb xcb-render xcb-shm xml2 xslt z
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		x11/gnome/js-common
 LIB_DEPENDS=		devel/gobject-introspection \
+			devel/mpfr>=3.0.1 \
 			www/webkit,gtk3
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
@@ -49,9 +50,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-libxml-module \
 			--enable-gtkbuilder-module \
 			--enable-cairo-module \
-			--enable-gettext-module
-# MPFR module needs mpfr 3.x, so disable it for now.
-CONFIGURE_ARGS+=	--disable-mpfr-module
+			--enable-gettext-module \
+			--enable-mpfr-module
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
