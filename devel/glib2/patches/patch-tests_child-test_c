@@ -1,12 +1,18 @@
-$OpenBSD: patch-tests_child-test_c,v 1.2 2007/10/24 22:29:03 jasper Exp $
---- tests/child-test.c.orig	Sun Sep 16 18:28:30 2007
-+++ tests/child-test.c	Tue Oct  2 20:47:04 2007
-@@ -175,7 +175,7 @@ main (int argc, char *argv[])
- #ifdef G_OS_WIN32
-   system ("ipconfig /all");
- #else
--  system ("/bin/true");
-+  system ("/usr/bin/true");
+$OpenBSD: patch-tests_child-test_c,v 1.3 2011/05/27 08:25:14 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=651219
+
+--- tests/child-test.c.orig	Mon Sep 27 20:48:34 2010
++++ tests/child-test.c	Fri May 27 10:17:00 2011
+@@ -172,8 +172,10 @@ main (int argc, char *argv[])
  #endif
+   main_loop = g_main_loop_new (NULL, FALSE);
  
-   alive = 2;
+-#ifdef G_OS_WIN32
++#if defined(G_OS_WIN32)
+   system ("ipconfig /all");
++#elif defined(__OpenBSD__)
++  system ("/usr/bin/true");
+ #else
+   system ("/bin/true");
+ #endif
