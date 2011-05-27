@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2011/05/19 10:06:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2011/05/27 12:47:42 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	lightweight window manager
 GNOME_PROJECT=	metacity
 GNOME_VERSION=	2.34.0
 
-REVISION=	2
+REVISION=	4
 
 SHARED_LIBS +=  metacity-private     1.0      # .0.0
 
@@ -40,18 +40,27 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		x11/gnome/doc-utils
 RUN_DEPENDS=	x11/gnome/zenity
 
-# defaults to the "Clearlooks" theme
-RUN_DEPENDS +=	x11/gnome/themes
-
 SEPARATE_BUILD=	concurrent
 DESKTOP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR= metacity
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-gtk=2.0
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 USE_GROFF =	Yes
+
+FLAVORS=	gtk2
+FLAVOR?=
+
+.if ${FLAVOR:L:Mgtk2}
+# defaults to the "Clearlooks" theme
+RUN_DEPENDS +=	x11/gnome/themes
+PATCH_LIST +=	patch-* gtk2-patch-src_metacity_schemas_in_in
+.else
+# defaults to the "Adwaita" theme and "Cantarell" font
+RUN_DEPENDS +=	x11/gnome/themes-standard \
+		x11/cantarell-fonts
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/metacity

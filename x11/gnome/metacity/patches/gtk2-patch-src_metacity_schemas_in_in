@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_metacity_schemas_in_in,v 1.1 2011/04/10 08:36:26 ajacoutot Exp $
+$OpenBSD: gtk2-patch-src_metacity_schemas_in_in,v 1.1 2011/05/27 12:47:42 ajacoutot Exp $
 
 * Revert the following until we move to GNOME3:
 From 72dfc33520472306d7b8f791b8f23e65dd3ff88e Mon Sep 17 00:00:00 2001
