@@ -1,7 +1,7 @@
-$OpenBSD: powerpc-patch-numpy_distutils_fcompiler_gnu_py,v 1.1 2010/01/17 19:45:47 ajacoutot Exp $
---- numpy/distutils/fcompiler/gnu.py.orig	Fri Jan 15 11:07:00 2010
-+++ numpy/distutils/fcompiler/gnu.py	Fri Jan 15 11:07:50 2010
-@@ -191,7 +191,8 @@ class GnuFCompiler(FCompiler):
+$OpenBSD: powerpc-patch-numpy_distutils_fcompiler_gnu_py,v 1.2 2011/05/27 10:06:12 eric Exp $
+--- numpy/distutils/fcompiler/gnu.py.orig	Thu May  5 22:41:53 2011
++++ numpy/distutils/fcompiler/gnu.py	Wed May 18 12:22:16 2011
+@@ -199,7 +199,8 @@ class GnuFCompiler(FCompiler):
              opt = ['-O2']
          else:
              opt = ['-O3']
@@ -10,4 +10,4 @@ $OpenBSD: powerpc-patch-numpy_distutils_fcompiler_gnu_py,v 1.1 2010/01/17 19:45:
 +#        opt.append('-funroll-loops')
          return opt
  
-     def get_flags_arch(self):
+     def _c_arch_flags(self):
