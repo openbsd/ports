@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2009/06/06 17:45:48 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2011/05/27 20:48:39 naddy Exp $
 
 COMMENT=	library for arbitrary precision arithmetic
 
-DISTNAME=	gmp-4.3.1
-SHARED_LIBS +=  gmp                  8.0      # .8.0
-SHARED_LIBS +=  gmpxx                0.0      # .5.0
+DISTNAME=	gmp-5.0.2
+SHARED_LIBS +=  gmp                  9.0      # 10.2
+SHARED_LIBS +=  gmpxx                1.0      # 6.2
 CATEGORIES=	devel math
 
 HOMEPAGE=	http://gmplib.org/
