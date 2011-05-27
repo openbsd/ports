@@ -1,0 +1,32 @@
+$OpenBSD: patch-atk_atkhyperlink_c,v 1.1 2011/05/27 14:46:06 jasper Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=651253
+
+--- atk/atkhyperlink.c.orig	Fri May 27 15:23:46 2011
++++ atk/atkhyperlink.c	Fri May 27 15:25:33 2011
+@@ -162,7 +162,9 @@ atk_hyperlink_real_get_property (GObject    *object,
+   switch (prop_id)
+     {
+     case PROP_SELECTED_LINK:
++#ifndef ATK_DISABLE_DEPRECATED
+       g_value_set_boolean (value, atk_hyperlink_is_selected_link (link));
++#endif /* ATK_DISABLE_DEPRECATED */
+       break;
+     case PROP_NUMBER_ANCHORS:
+       g_value_set_int (value,  atk_hyperlink_get_n_anchors (link));
+@@ -351,6 +353,7 @@ atk_hyperlink_get_n_anchors (AtkHyperlink *link)
+     return 0;
+ }
+ 
++#ifndef ATK_DISABLE_DEPRECATED
+ /**
+  * atk_hyperlink_is_selected_link:
+  * @link_: an #AtkHyperlink
+@@ -378,6 +381,7 @@ atk_hyperlink_is_selected_link (AtkHyperlink *link)
+   else
+     return FALSE;
+ }
++#endif /* ATK_DISABLE_DEPRECATED */
+ 
+ static void atk_hyperlink_action_iface_init (AtkActionIface *iface)
+ {
