@@ -1,6 +1,9 @@
-$OpenBSD: patch-gio_tests_memory-output-stream_c,v 1.2 2010/09/30 07:17:19 ajacoutot Exp $
+$OpenBSD: patch-gio_tests_memory-output-stream_c,v 1.3 2011/05/28 07:32:06 ajacoutot Exp $
 
-Fix build with GCC2.
+From ce0f7cafa1746a94f90b74860c2890b6c18ca385 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@bsdfrog.org>
+Date: Mon, 23 May 2011 17:11:10 +0000
+Subject: Fix build with gcc-2.*.
 
 --- gio/tests/memory-output-stream.c.orig	Mon Aug  9 15:34:46 2010
 +++ gio/tests/memory-output-stream.c	Mon Sep 27 14:42:36 2010

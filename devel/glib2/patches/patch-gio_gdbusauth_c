@@ -1,0 +1,34 @@
+$OpenBSD: patch-gio_gdbusauth_c,v 1.1 2011/05/28 07:32:06 ajacoutot Exp $
+
+From 77f4f5aa02458e6c7f909dc6087a39d9b75d0ba6 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Fri, 27 May 2011 13:51:08 +0000
+Subject: Add glib credentials support to OpenBSD.
+
+--- gio/gdbusauth.c.orig	Sat May 21 05:29:51 2011
++++ gio/gdbusauth.c	Fri May 27 15:42:09 2011
+@@ -612,7 +612,7 @@ _g_dbus_auth_run_client (GDBusAuth     *auth,
+   g_data_input_stream_set_newline_type (dis, G_DATA_STREAM_NEWLINE_TYPE_CR_LF);
+ 
+ #ifdef G_OS_UNIX
+-  if (G_IS_UNIX_CONNECTION (auth->priv->stream) && g_unix_credentials_message_is_supported ())
++  if (G_IS_UNIX_CONNECTION (auth->priv->stream))
+     {
+       credentials = g_credentials_new ();
+       if (!g_unix_connection_send_credentials (G_UNIX_CONNECTION (auth->priv->stream),
+@@ -989,13 +989,13 @@ _g_dbus_auth_run_server (GDBusAuth              *auth,
+ 
+   /* first read the NUL-byte (TODO: read credentials if using a unix domain socket) */
+ #ifdef G_OS_UNIX
+-  if (G_IS_UNIX_CONNECTION (auth->priv->stream) && g_unix_credentials_message_is_supported ())
++  if (G_IS_UNIX_CONNECTION (auth->priv->stream))
+     {
+       local_error = NULL;
+       credentials = g_unix_connection_receive_credentials (G_UNIX_CONNECTION (auth->priv->stream),
+                                                            cancellable,
+                                                            &local_error);
+-      if (credentials == NULL)
++      if (credentials == NULL && !g_error_matches (local_error, G_IO_ERROR, G_IO_ERROR_NOT_SUPPORTED))
+         {
+           g_propagate_error (error, local_error);
+           goto out;
