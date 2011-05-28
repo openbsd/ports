@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2011/05/28 08:15:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2011/05/28 21:15:47 ajacoutot Exp $
 @conflict glib2-fam-*
 @pkgpath devel/glib2
 @pkgpath devel/glib2,-fam
@@ -12,6 +12,7 @@ bin/glib-mkenums
 @bin bin/gobject-query
 @bin bin/gsettings
 @bin bin/gtester
+bin/gtester-report
 include/gio-unix-2.0/
 include/gio-unix-2.0/gio/
 include/gio-unix-2.0/gio/gdesktopappinfo.h
@@ -256,6 +257,7 @@ lib/pkgconfig/gthread-2.0.pc
 @man man/man1/glib-mkenums.1
 @man man/man1/gobject-query.1
 @man man/man1/gsettings.1
+@man man/man1/gtester-report.1
 @man man/man1/gtester.1
 share/aclocal/
 share/aclocal/glib-2.0.m4
