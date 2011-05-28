@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/10/04 06:49:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.16 2011/05/28 08:15:34 ajacoutot Exp $
 @bin bin/gcalccmd
 @bin bin/gcalctool
 bin/gnome-calculator
@@ -745,5 +745,5 @@ share/locale/xh/LC_MESSAGES/gcalctool.mo
 share/locale/zh_CN/LC_MESSAGES/gcalctool.mo
 share/locale/zh_HK/LC_MESSAGES/gcalctool.mo
 share/locale/zh_TW/LC_MESSAGES/gcalctool.mo
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

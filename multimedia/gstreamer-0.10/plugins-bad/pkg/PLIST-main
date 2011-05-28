@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2011/05/15 08:32:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2011/05/28 08:15:33 ajacoutot Exp $
 @conflict gstreamer-plugins-base-<0.10.25
 @conflict gstreamer-bz2-*
 @conflict gstreamer-faac-*
@@ -254,5 +254,5 @@ share/locale/tr/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/uk/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/vi/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
 share/locale/zh_CN/LC_MESSAGES/gst-plugins-bad-${VERSION}.mo
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/18 11:17:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/05/28 08:15:34 ajacoutot Exp $
 lib/epiphany/
 lib/epiphany/${M}/
 lib/epiphany/${M}/extensions/
@@ -289,5 +289,5 @@ share/omf/epiphany-extensions/epiphany-extensions-fr.omf
 share/omf/epiphany-extensions/epiphany-extensions-oc.omf
 share/omf/epiphany-extensions/epiphany-extensions-sl.omf
 share/omf/epiphany-extensions/epiphany-extensions-sv.omf
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

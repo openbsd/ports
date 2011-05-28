@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/24 19:59:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/05/28 08:15:34 ajacoutot Exp $
 %%SHARED%%
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
@@ -248,7 +248,7 @@ share/pixmaps/nautilus/thumbnail_frame.png
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

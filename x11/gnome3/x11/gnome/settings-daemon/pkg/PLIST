@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1 2011/05/17 14:03:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/28 08:15:34 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gnome-settings-plugin.h
@@ -207,8 +207,8 @@ share/locale/zh_HK/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/zu/LC_MESSAGES/gnome-settings-daemon.mo
 share/polkit-1/actions/org.gnome.settingsdaemon.datetimemechanism.policy
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database

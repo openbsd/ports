@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/09/30 10:41:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/05/28 08:15:53 ajacoutot Exp $
 @conflict nautilus-sendto-pidgin-*
 @pkgpath x11/gnome/nautilus-sendto,-main
 @bin bin/nautilus-sendto
@@ -117,5 +117,5 @@ share/locale/zh_TW/LC_MESSAGES/nautilus-sendto.mo
 share/nautilus-sendto/
 share/nautilus-sendto/ui/
 share/nautilus-sendto/ui/nautilus-sendto.ui
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

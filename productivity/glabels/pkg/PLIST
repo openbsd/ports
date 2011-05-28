@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/05/17 17:05:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/05/28 08:15:34 ajacoutot Exp $
 %%SHARED%%
 @bin bin/glabels-3
 @bin bin/glabels-3-batch
@@ -515,8 +515,8 @@ share/locale/sv/LC_MESSAGES/glabels-3.0.mo
 share/locale/zh_CN/LC_MESSAGES/glabels-3.0.mo
 share/locale/zh_TW/LC_MESSAGES/glabels-3.0.mo
 share/mime/packages/glabels-3.0.xml
-@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
-@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

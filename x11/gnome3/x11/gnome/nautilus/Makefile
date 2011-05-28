@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/24 19:59:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/28 08:15:53 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -17,6 +17,8 @@ COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.0.2
+
+REVISION=		0
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 

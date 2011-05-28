@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2011/03/25 09:13:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2011/05/28 08:15:53 ajacoutot Exp $
 
 COMMENT=		password agent for the GNOME project
 
@@ -8,7 +8,7 @@ GNOME_VERSION=		2.32.1
 SHARED_LIBS +=  gp11                 1.0      # .0.0
 SHARED_LIBS +=  gcr                  1.0      # .0.0
 
-REVISION=	2
+REVISION=	3
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
