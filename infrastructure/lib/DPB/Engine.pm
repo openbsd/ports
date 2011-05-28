@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.19 2011/05/27 11:22:13 espie Exp $
+# $OpenBSD: Engine.pm,v 1.20 2011/05/28 08:21:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -169,7 +169,7 @@ sub done
 		}
 	}
 	delete $self->{doing}{$v->{pkgpath}};
-	$self->{engine}{locker}->recheck_errors($self);
+	$self->{engine}{locker}->recheck_errors($self->{engine});
 }
 
 package DPB::SubEngine::Fetch;
