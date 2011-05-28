@@ -1,7 +1,7 @@
-$OpenBSD: patch-get_iplayer,v 1.44 2011/04/20 23:07:24 sthen Exp $
---- get_iplayer.orig	Sun Jan  9 16:13:43 2011
-+++ get_iplayer	Wed Apr 20 13:04:32 2011
-@@ -295,6 +295,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
+$OpenBSD: patch-get_iplayer,v 1.45 2011/05/28 20:42:17 sthen Exp $
+--- get_iplayer.orig	Sat May 28 21:00:47 2011
++++ get_iplayer	Sat May 28 21:04:09 2011
+@@ -296,6 +296,7 @@ $opt->{verbose} = 1 if $opt_pre->{verbose};
  $opt->{quiet} = 1 if $opt_pre->{quiet};
  $opt->{pvr} = 1 if $opt_pre->{pvr};
  $opt->{stdout} = 1 if $opt_pre->{stdout} || $opt_pre->{stream};
@@ -9,7 +9,7 @@ $OpenBSD: patch-get_iplayer,v 1.44 2011/04/20 23:07:24 sthen Exp $
  
  # show version and exit
  if ( $opt_pre->{showver} ) {
-@@ -331,7 +332,7 @@ mkpath $profile_dir if ! -d $profile_dir;
+@@ -332,7 +333,7 @@ mkpath $profile_dir if ! -d $profile_dir;
  
  
  # get list of additional user plugins and load plugin
@@ -18,7 +18,7 @@ $OpenBSD: patch-get_iplayer,v 1.44 2011/04/20 23:07:24 sthen Exp $
  my $plugin_dir_user = "$profile_dir/plugins";
  for my $plugin_dir ( ( $plugin_dir_user, $plugin_dir_system ) ) {
  	if ( opendir( DIR, $plugin_dir ) ) {
-@@ -659,7 +660,7 @@ sub init_search {
+@@ -660,7 +661,7 @@ sub init_search {
  	delete $binopts->{vlc};
  	push @{ $binopts->{vlc} }, '-vv' if $opt->{debug};
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-get_iplayer,v 1.44 2011/04/20 23:07:24 sthen Exp $
  	$bin->{atomicparsley}	= $opt->{atomicparsley} || 'AtomicParsley';
  
  	$bin->{tee}		= 'tee';
-@@ -1987,7 +1988,7 @@ sub update_script {
+@@ -1988,7 +1989,7 @@ sub update_script {
  		} elsif ( $opt->{packagemanager} =~ /disable/i ) {
  			logger "ERROR: get_iplayer should only be updated using your local package management system, for more information see http://linuxcentre.net/installation\n";
  		} else {
@@ -36,7 +36,7 @@ $OpenBSD: patch-get_iplayer,v 1.44 2011/04/20 23:07:24 sthen Exp $
  		}
  		exit 1;
  	} 
-@@ -4253,7 +4254,7 @@ sub tag_file {
+@@ -4254,7 +4255,7 @@ sub tag_file {
  		my ( $id3_name, $id3_episode, $id3_desc, $id3_channel ) = ( $prog->{name}, $prog->{episode}, $prog->{desc}, $prog->{channel} );
  		s|"|\\"|g for ($id3_name, $id3_episode, $id3_desc, $id3_channel);
  		# Only tag if the required tool exists
@@ -45,36 +45,3 @@ $OpenBSD: patch-get_iplayer,v 1.44 2011/04/20 23:07:24 sthen Exp $
  			main::logger "INFO: id3 tagging $prog->{ext} file\n";
  			my @cmd = (
  				$bin->{id3v2}, 
-@@ -5823,7 +5824,7 @@ sub get_stream_data_cdn {
- 		# Common attributes
- 		# swfurl = Default iPlayer swf version
- 		my $conn = {
--			swfurl		=> "http://www.bbc.co.uk/emp/10player.swf?revision=18269_21576",
-+			swfurl		=> "http://www.bbc.co.uk/emp/revisions/18269_21576_10player.swf?revision=18269_21576",
- 			ext		=> $ext,
- 			streamer	=> $streamer,
- 			bitrate		=> $mattribs->{bitrate},
-@@ -7086,6 +7087,7 @@ sub channels {
- 		'bbc_radio_two'				=> 'BBC Radio 2',
- 		'bbc_radio_three'			=> 'BBC Radio 3',
- 		'bbc_radio_four'			=> 'BBC Radio 4',
-+		'bbc_radio_four_extra'			=> 'BBC Radio 4 Extra',
- 		'bbc_radio_five_live'			=> 'BBC Radio 5 live',
- 		'bbc_radio_five_live_sports_extra'	=> 'BBC 5 live Sports Extra',
- 		'bbc_6music'				=> 'BBC 6 Music',
-@@ -7156,6 +7158,7 @@ sub channels_schedule {
- 		'radio3/programmes/schedules'		=> 'BBC Radio 3',
- 		'radio4/programmes/schedules/fm'	=> 'BBC Radio 4 FM',
- 		'radio4/programmes/schedules/lw'	=> 'BBC Radio 4 LW',
-+		'radio4extra/programmes/schedules'	=> 'BBC Radio 4 Extra',
- 		'5live/programmes/schedules'		=> 'BBC Radio 5 live',
- 		'5livesportsextra/programmes/schedules'	=> 'BBC 5 live Sports Extra',
- 		'6music/programmes/schedules'		=> 'BBC 6 Music',
-@@ -7565,6 +7568,7 @@ sub channels {
- 		'bbc_radio_three'			=> 'BBC Radio 3',
- 		'bbc_radio_fourfm'			=> 'BBC Radio 4 FM',
- 		'bbc_radio_fourlw'			=> 'BBC Radio 4 LW',
-+		'bbc_radio_four_extra'			=> 'BBC Radio 4 Extra',
- 		'bbc_radio_five_live'			=> 'BBC Radio 5 live',
- 		'bbc_radio_five_live_sports_extra'	=> 'BBC 5 live Sports Extra',
- 		'bbc_6music'				=> 'BBC 6 Music',
