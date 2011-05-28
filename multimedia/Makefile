@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2011/04/26 08:51:45 eric Exp $
+# $OpenBSD: Makefile,v 1.50 2011/05/28 20:51:38 sthen Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -17,7 +17,6 @@
      SUBDIR += get_iplayer
      SUBDIR += gstreamer-0.10
      SUBDIR += hdhomerun
-     SUBDIR += iplayer-dl
      SUBDIR += k3b
      SUBDIR += kaffeine
      SUBDIR += libdv
