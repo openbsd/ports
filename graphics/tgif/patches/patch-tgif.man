@@ -1,12 +1,12 @@
-$OpenBSD: patch-tgif.man,v 1.6 2009/12/19 22:35:31 benoit Exp $
---- tgif.man.orig	Tue Nov 17 01:57:19 2009
-+++ tgif.man	Sat Dec 19 09:46:18 2009
+$OpenBSD: patch-tgif.man,v 1.7 2011/05/28 09:30:38 benoit Exp $
+--- tgif.man.orig	Mon May 23 04:58:23 2011
++++ tgif.man	Mon May 23 11:15:56 2011
 @@ -8,7 +8,7 @@
  .\"
  .\"
  .\"
--.TH tgif n "Version 4.2 Patchlevel 2 and Above" "Tgif"
-+.TH tgif 1L "Version 4.2 Patchlevel 2 and Above" "Tgif"
+-.TH tgif n "Version 4.2 Patchlevel 3 and Above" "Tgif"
++.TH tgif 1L "Version 4.2 Patchlevel 3 and Above" "Tgif"
  .\"
  .SH NAME
  .\"
