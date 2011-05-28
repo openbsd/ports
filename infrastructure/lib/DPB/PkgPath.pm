@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.5 2011/05/27 10:27:50 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.6 2011/05/28 19:32:59 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -128,7 +128,7 @@ sub simple_lockname
 sub unlock_conditions
 {
 	my ($v, $engine) = @_;
-	return $v->{info} && $engine->{builder}->check($v);
+	return $v->{info} && $engine->{buildable}{builder}->check($v);
 }
 
 sub requeue
