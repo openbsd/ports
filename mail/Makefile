@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.262 2011/05/23 23:15:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.263 2011/05/28 19:44:56 sthen Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -37,11 +37,6 @@
      SUBDIR += cyrus-imapd,drac
      SUBDIR += dkim-milter
      SUBDIR += dovecot
-     SUBDIR += dovecot,ldap
-     SUBDIR += dovecot,ldap,mysql,postgresql,sqlite
-     SUBDIR += dovecot,mysql
-     SUBDIR += dovecot,postgresql
-     SUBDIR += dovecot,sqlite
      SUBDIR += dovecot-pigeonhole
      SUBDIR += drac
      SUBDIR += dspam
