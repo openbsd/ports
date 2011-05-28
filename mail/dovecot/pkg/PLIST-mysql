@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-mysql,v 1.1 2011/05/28 19:40:41 sthen Exp $
+lib/dovecot/auth/libdriver_mysql.so
+lib/dovecot/dict/libdriver_mysql.so
+lib/dovecot/libdriver_mysql.so

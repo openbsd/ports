@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-ldap,v 1.1 2011/05/28 19:40:41 sthen Exp $
+lib/dovecot/auth/libauthdb_ldap.so

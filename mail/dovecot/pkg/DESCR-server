@@ -1,0 +1,6 @@
+Dovecot is an IMAP and POP3 server for Linux/UNIX-like systems, written
+with security primarily in mind.  Although it's written in C, it uses
+several coding techniques to avoid most of the common pitfalls.  Dovecot
+can work with standard mbox and maildir formats and it's fully compatible
+with UW-IMAP and Courier IMAP servers as well as mail clients accessing
+the mailboxes directly.

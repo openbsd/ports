@@ -1,15 +1,25 @@
-# $OpenBSD: Makefile,v 1.167 2011/05/24 09:40:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.168 2011/05/28 19:40:41 sthen Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT= compact IMAP/POP3 server
+COMMENT-server=	compact IMAP/POP3 server
+COMMENT-ldap=	LDAP authentication support for Dovecot
+COMMENT-mysql=	MySQL authentication / dictionary support for Dovecot
+COMMENT-postgresql= PostgreSQL authentication / dictionary support for Dovecot
+COMMENT-sqlite=	SQLite authentication / dictionary support for Dovecot
 
 # Bump dovecot-pigeonhole every time you update to a new Dovecot version.
 V_MAJOR=	2.0
 V_DOVECOT=	2.0.13
 
 DISTNAME=	dovecot-${V_DOVECOT}
-REVISION=	1
+PKGNAME=	dovecot-${V_DOVECOT}
+PKGNAME-server=	dovecot-${V_DOVECOT}
+REVISION-server= 2
+PKGNAME-ldap=	dovecot-ldap-${V_DOVECOT}
+PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
+PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
+PKGNAME-sqlite=	dovecot-sqlite-${V_DOVECOT}
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
 
@@ -28,12 +38,16 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	${MODLIBICONV_WANTLIB} bz2 c crypto gssapi krb5 ssl z
+WANTLIB-server=	${MODLIBICONV_WANTLIB} bz2 c crypto gssapi krb5 ssl z
 
 MODULES=	converters/libiconv
 LIB_DEPENDS+=	archivers/bzip2
 
-CPPFLAGS=	-I/usr/include/kerberosV -I${LOCALBASE}/include
+MULTI_PACKAGES=	-server
+SUBPACKAGE?=	-server
+
+PSEUDO_FLAVORS=	no_db no_ldap no_mysql no_postgresql no_sqlite
+FLAVOR?=
 
 USE_LIBTOOL=	Yes
 AUTOCONF_VERSION= 2.67
@@ -41,38 +55,47 @@ CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-gssapi \
 		--with-rundir=/var/dovecot \
+		--with-sql=plugin \
 		--with-statedir=/var/dovecot \
 		--without-pam \
 		--without-shadow \
 		--without-vpopmail
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
+CONFIGURE_ENV=	CPPFLAGS="-I/usr/include/kerberosV -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-FLAVORS=	ldap mysql postgresql sqlite
+PSEUDO_FLAVORS=	no_db no_ldap no_mysql no_postgresql no_sqlite
 FLAVOR?=
 
-.if ${FLAVOR:L:Mldap}
-CONFIGURE_ARGS+=--with-ldap
-LIB_DEPENDS+=	databases/openldap
-WANTLIB+=	lber ldap sasl2 asn1 com_err
+.if !${FLAVOR:L:Mno_db} && !${FLAVOR:L:Mno_ldap}
+MULTI_PACKAGES+= -ldap
+CONFIGURE_ARGS+=--with-ldap=plugin
+LIB_DEPENDS-ldap= databases/openldap
+RUN_DEPENDS-ldap= ${BASE_PKGPATH}=${V_DOVECOT}
+WANTLIB-ldap=	asn1 com_err crypto gssapi krb5 lber-2.4 ldap-2.4 sasl2 ssl
 .endif
 
-.if ${FLAVOR:L:Mmysql}
+.if !${FLAVOR:L:Mno_db} &&!${FLAVOR:L:Mno_mysql}
+MULTI_PACKAGES+= -mysql
 CONFIGURE_ARGS+=--with-mysql
-LIB_DEPENDS+=	databases/mysql
-WANTLIB+=	m lib/mysql/mysqlclient>=10
+LIB_DEPENDS-mysql= databases/mysql
+RUN_DEPENDS-mysql= ${BASE_PKGPATH}=${V_DOVECOT}
+WANTLIB-mysql=	crypto m lib/mysql/mysqlclient>=10 ssl z
 .endif
 
-.if ${FLAVOR:L:Mpostgresql}
+.if !${FLAVOR:L:Mno_db} && !${FLAVOR:L:Mno_postgresql}
+MULTI_PACKAGES+= -postgresql
 CONFIGURE_ARGS+=--with-pgsql
-LIB_DEPENDS+=	databases/postgresql
-WANTLIB+=	pq>=4
+LIB_DEPENDS-postgresql=	databases/postgresql
+RUN_DEPENDS-postgresql= ${BASE_PKGPATH}=${V_DOVECOT}
+WANTLIB-postgresql= com_err crypto pq>=4 ssl
 .endif
 
-.if ${FLAVOR:L:Msqlite}
+.if !${FLAVOR:L:Mno_db} && !${FLAVOR:L:Mno_sqlite}
+MULTI_PACKAGES+= -sqlite
 CONFIGURE_ARGS+=--with-sqlite
-LIB_DEPENDS+=	databases/sqlite3
-WANTLIB+=	sqlite3
+LIB_DEPENDS-sqlite= databases/sqlite3
+RUN_DEPENDS-sqlite= ${BASE_PKGPATH}=${V_DOVECOT}
+WANTLIB-sqlite=	sqlite3 z
 .endif
 
 pre-build:
