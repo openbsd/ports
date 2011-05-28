@@ -1,0 +1,18 @@
+$OpenBSD: patch-gtk_gtkwindow_c,v 1.1 2011/05/28 15:20:46 ajacoutot Exp $
+
+From 847df205ede7f624c2bc4c4498495352cc865423 Mon Sep 17 00:00:00 2001
+From: Benjamin Otte <otte@redhat.com>
+Date: Mon, 23 May 2011 13:46:59 +0000
+Subject: window: Only draw resize grip if its window exists
+
+--- gtk/gtkwindow.c.orig	Mon May 23 04:12:26 2011
++++ gtk/gtkwindow.c	Sat May 28 16:58:28 2011
+@@ -7304,7 +7304,7 @@ gtk_window_draw (GtkWidget *widget,
+   if (GTK_WIDGET_CLASS (gtk_window_parent_class)->draw)
+     ret = GTK_WIDGET_CLASS (gtk_window_parent_class)->draw (widget, cr);
+ 
+-  if (priv->resize_grip_visible &&
++  if (priv->grip_window &&
+       gtk_cairo_should_draw_window (cr, priv->grip_window))
+     {
+       GdkRectangle rect;
