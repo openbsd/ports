@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.21 2011/05/28 19:24:15 espie Exp $
+# $OpenBSD: Engine.pm,v 1.22 2011/05/29 09:30:13 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -424,6 +424,7 @@ sub adjust_distfiles
 		}
 		if ($self->{tofetch}->is_done($f)) {
 			delete $v->{info}{distfiles}{$f};
+			$v->{info}{got}{$f} = $f;
 			next;
 		}
 		$has++;

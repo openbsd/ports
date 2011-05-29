@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.8 2011/05/22 08:21:39 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.9 2011/05/29 09:30:13 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -31,6 +31,7 @@ sub new
 	my $self = bless {
 	    state => $state,
 	    clean => $state->opt('c'),  
+	    fetch => $state->opt('f'),
 	    size => $state->opt('s'),
 	    rebuild => $state->opt('R'),
 	    fullrepo => $state->fullrepo,
