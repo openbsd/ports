@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/05/25 07:53:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.11 2011/05/29 20:27:28 dcoppa Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
 DISTNAME =	rxvt-unicode-9.11
+REVISION =	0
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
@@ -35,7 +36,5 @@ CONFIGURE_ARGS =	--enable-256-color \
 			--disable-afterimage
 # missing locale support
 CONFIGURE_ARGS +=	--disable-xim
-
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>
