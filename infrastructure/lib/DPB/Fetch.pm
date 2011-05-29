@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.8 2011/05/27 13:13:43 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.9 2011/05/29 11:06:23 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -53,6 +53,15 @@ sub new
 	my ($class, $file, $dir, @r) = @_;
 	my $full = (defined $dir) ? join('/', $dir->string, $file) : $file;
 	$cache->{$full} //= $class->create($full, $file, @r);
+}
+
+sub dump
+{
+	my ($class, $logger) = @_;
+	my $log = $logger->create("fetch/distfiles");
+	for my $f (sort map {$_->{name}} values %$cache) {
+		print $log $f, "\n";
+	}
 }
 
 sub logname
@@ -175,7 +184,8 @@ sub build_distinfo
 	for my $v (values %$h) {
 		my $info = $v->{info};
 		next unless defined $info->{DISTFILES} || 
-		    defined $info->{PATCHFILES};
+		    defined $info->{PATCHFILES} || 
+		    defined $info->{SUPDISTFILES};
 
 		my $dir = $info->{DIST_SUBDIR};
 		my $checksum_file = $info->{CHECKSUM_FILE};
@@ -189,22 +199,29 @@ sub build_distinfo
 		my $checksums = $distinfo->{$checksum_file};
 
 		my $files = {};
-
-		for my $d ((keys %{$info->{DISTFILES}}), (keys %{$info->{PATCHFILES}})) {
+		my $build = sub { 
+			my $arg = shift;
 			my $site = 'MASTER_SITES';
-			if ($d =~ m/^(.*)\:(\d)$/) {
-				$d = $1;
+			if ($arg =~ m/^(.*)\:(\d)$/) {
+				$arg = $1;
 				$site.= $2;
 			}
 			if (!defined $info->{$site}) {
-				die "Can't find $site for $d";
+				die "Can't find $site for $arg";
 			}
-			my $file = DPB::Distfile->new($d, $dir, 
+			return DPB::Distfile->new($arg, $dir, 
 			    $info->{$site}, $checksums, $v, $self->{distdir});
+		};
+
+		for my $d ((keys %{$info->{DISTFILES}}), (keys %{$info->{PATCHFILES}})) {
+			my $file = &$build($d);
 			$files->{$file} = $file;
 		}
+		for my $d (keys %{$info->{SUPDISTFILES}}) {
+			&$build($d);
+		}
 		for my $k (qw(DIST_SUBDIR CHECKSUM_FILE DISTFILES
-		    PATCHFILES MASTER_SITES MASTER_SITES0 
+		    PATCHFILES SUPDISTFILES MASTER_SITES MASTER_SITES0 
 		    MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 
 		    MASTER_SITES4 MASTER_SITES5 MASTER_SITES6 
 		    MASTER_SITES7 MASTER_SITES8 MASTER_SITES9)) {

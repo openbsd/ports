@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.7 2011/05/22 08:21:39 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.8 2011/05/29 11:06:23 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -177,6 +177,7 @@ my %adder = (
 	BNEEDED_BY => "AddDepends",
 	DISTFILES => 'AddList',
 	PATCHFILES => 'AddList',
+	SUPDISTFILES => 'AddList',
 	DIST_SUBDIR => 'AddInfo', 
 	CHECKSUM_FILE => 'AddInfo',
 	FETCH_MANUALLY => 'FetchManually',
