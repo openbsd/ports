@@ -1,29 +1,31 @@
-$OpenBSD: patch-Makefile_common,v 1.4 2010/10/17 19:59:51 jsg Exp $
---- Makefile.common.orig	Sun Oct 17 15:47:53 2010
-+++ Makefile.common	Sun Oct 17 15:48:25 2010
-@@ -156,27 +156,6 @@ VER_MINOR = $(shell echo $(VERSION) | cut -d. -f 2)
+$OpenBSD: patch-Makefile_common,v 1.5 2011/05/29 11:48:45 jsg Exp $
+--- Makefile.common.orig	Sun May 29 11:34:23 2011
++++ Makefile.common	Sun May 29 11:34:51 2011
+@@ -160,29 +160,6 @@ VER_MINOR = $(shell echo $(VERSION) | cut -d. -f 2)
  VER_PATCH = $(shell echo $(VERSION) | cut -d. -f 3 | cut -c1)
  VER_EXTRA = $(shell echo $(VERSION) | cut -d. -f 3 | cut -c2-)
  
 -
 -######################################################################
--# Get Subversion's working copy information
+-# Get git's working copy information
 -######################################################################
 -
--ifneq ($(shell svn info $(srcdir) 1>/dev/null 2>&1 || echo "error"),error)
--SVNROOT := $(srcdir)
--ifeq ($(origin VER_SVNREV), undefined)
+-ifneq ($(shell cd $(srcdir); git rev-parse --verify HEAD 1>/dev/null 2>&1 || echo "error"),error)
+-GITROOT := $(srcdir)
+-ifeq ($(origin VER_REV), undefined)
+-# Are there uncommitted changes? (describe --dirty is only available since 1.6.6)
+-VER_DIRTY := $(shell cd $(srcdir); git update-index --refresh --unmerged 1>/dev/null 2>&1; git diff-index --quiet HEAD || echo "-dirty")
 -# Get the working copy base revision
--VER_SVNREV := $(shell LANG=C svn info $(SVNROOT) | grep "^Revision" | cut -d ' ' -f 2)
+-VER_REV := $(shell cd $(srcdir); git describe --match desc/\* | cut -d '-' -f 2-)$(VER_DIRTY)
 -endif
 -else
--SVNROOT := https://scummvm.svn.sourceforge.net/svnroot/scummvm/scummvm/trunk/
+-GITROOT := git://github.com/scummvm/scummvm.git
 -endif
 -
 -# Define the Subversion revision if available, either autodetected or
 -# specified by the user, but only for base/version.cpp.
--ifneq ($(origin VER_SVNREV), undefined)
--base/version.o: CXXFLAGS:=$(CXXFLAGS) -DSCUMMVM_SVN_REVISION=\"$(VER_SVNREV)\"
+-ifneq ($(origin VER_REV), undefined)
+-base/version.o: CXXFLAGS:=$(CXXFLAGS) -DSCUMMVM_REVISION=\"$(VER_REV)\"
 -endif
 -
  ######################################################################
