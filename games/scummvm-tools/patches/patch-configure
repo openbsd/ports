@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure,v 1.1 2011/05/29 14:05:15 jsg Exp $
+--- configure.orig	Sun May 29 14:18:48 2011
++++ configure	Sun May 29 14:20:00 2011
+@@ -338,6 +338,9 @@ EOF
+ 	fi
+ done # for parm in ...
+ 
++PNG_CFLAGS=$(pkg-config --cflags libpng)
++PNG_LIBS=$(pkg-config --libs libpng)
++
+ for ac_option in $@; do
+ 	case "$ac_option" in
+ 	--enable-vorbis)          _vorbis=yes     ;;

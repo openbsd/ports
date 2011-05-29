@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/16 11:23:28 espie Exp $
-# XXX hardcoded endian list
+# $OpenBSD: Makefile,v 1.18 2011/05/29 14:05:15 jsg Exp $
 
 COMMENT=	collection of various tools for scummvm
-DISTNAME=	scummvm-tools-1.0.0
+DISTNAME=	scummvm-tools-1.3.0
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -15,38 +14,43 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m ogg stdc++ z FLAC png vorbis vorbisenc
+WANTLIB=		c m ogg stdc++ z FLAC mad png pthread vorbis \
+			vorbisenc vorbisfile \
+			wx_base_net wx_base wx_base_odbc wx_base_xml \
+			wx_gtk2_adv wx_gtk2_aui wx_gtk2_core \
+			wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa \
+			wx_gtk2_richtext wx_gtk2_xrc
 
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
-.if (!${MACHINE_ARCH} == "alpha" && !${MACHINE_ARCH} == "amd64" && \
-	!${MACHINE_ARCH} == "arm" && !${MACHINE_ARCH} == "i386" && \
-	!${MACHINE_ARCH} == "vax")
-
-CFLAGS+=	-DSCUMM_BIG_ENDIAN
-CXXFLAGS+=	-DSCUMM_BIG_ENDIAN
-.endif
-
 LIB_DEPENDS=	audio/flac \
 		graphics/png \
-		audio/libvorbis
+		audio/libvorbis \
+		audio/libmad \
+		x11/wxWidgets
 
 RUN_DEPENDS=	audio/lame \
 		audio/vorbis-tools
 
+CONFIGURE_STYLE=simple
+CONFIGURE_ARGS+=--disable-boost
+CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include" \
+                LDFLAGS="-L${LOCALBASE}/lib"
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scummvm-tools
 	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/scummvm-tools	
+	${INSTALL_DATA_DIR} ${PREFIX}/share/scummvm-tools
+	${INSTALL_DATA} ${WRKSRC}/gui/media/{logo.jpg,detaillogo.jpg,tile.gif} \
+	    ${PREFIX}/share/scummvm-tools	
 	${INSTALL_PROGRAM} \
-		${WRKBUILD}/compress_{agos,gob,kyra,queen,saga} \
-		${WRKBUILD}/compress_{scumm_bun,scumm_san,scumm_sou} \
-		${WRKBUILD}/compress_{sword1,sword2,tinsel,touche,tucker} \
-		${WRKBUILD}/de{cine,kyra,scumm,sword2,gob} \
-		${WRKBUILD}/encode_dxa \
-		${WRKBUILD}/extract_{agos,cine,cruise_pc,kyra,loom_tg16} \
-		${WRKBUILD}/extract_{mm_apple,mm_c64,mm_nes,parallaction} \
-		${WRKBUILD}/extract_{scumm_mac,t7g_mac,zak_c64,gob_stk} \
+		${WRKBUILD}/scummvm-tools \
+		${WRKBUILD}/scummvm-tools-cli \
+		${WRKBUILD}/de{cine,kyra,scumm,sword2,gob,riven} \
+		${WRKBUILD}/extract_mohawk \
+		${WRKBUILD}/construct_mohawk \
+		${WRKBUILD}/gob_loadcalc \
 		${PREFIX}/bin
 
 .include <bsd.port.mk>
