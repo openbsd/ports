@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2011/05/29 11:48:45 jsg Exp $
+# $OpenBSD: Makefile,v 1.45 2011/05/29 20:41:50 sthen Exp $
 
 BROKEN-hppa=	gcc bug
 
 COMMENT=	graphical adventure game interpreter
 DISTNAME=	scummvm-1.3.0
+REVISION=	0
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -11,22 +12,23 @@ HOMEPAGE=	http://scummvm.sourceforge.net/
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	X11 Xext c m pthread pthread-stubs stdc++ usbhid xcb z \
-		SDL mad>=2 FLAC>=5
+
+WANTLIB=	FLAC>=5 SDL c m mad>=2 pthread stdc++ theoradec z
 
 .if ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS=	devel/nasm
 .endif
 
 RUN_DEPENDS=	devel/desktop-file-utils
-LIB_DEPENDS=	devel/sdl \
-		audio/libmad \
-		audio/flac
+LIB_DEPENDS=	audio/libmad \
+		audio/flac \
+		devel/sdl \
+		multimedia/libtheora
 
 CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--disable-alsa --disable-debug
@@ -46,7 +48,7 @@ WANTLIB +=		ogg vorbis>=0 vorbisfile>=1
 NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
-MAKE_ENV+=	CXXFLAGS="${CXXFLAGS}" CXX="${CXX}"
+MAKE_ENV+=	CXXFLAGS="${CXXFLAGS}" CXX="${CXX}" VERBOSE_BUILD=1
 
 # XXX gcc3 compiling compact.cpp with -O2 gobbles 800MB
 # ICE on sparc with >= -O1

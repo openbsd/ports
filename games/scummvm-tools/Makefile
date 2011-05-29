@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/05/29 14:05:15 jsg Exp $
+# $OpenBSD: Makefile,v 1.19 2011/05/29 20:41:50 sthen Exp $
 
 COMMENT=	collection of various tools for scummvm
 DISTNAME=	scummvm-tools-1.3.0
@@ -9,11 +9,12 @@ HOMEPAGE=	http://scummvm.sourceforge.net/
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c m ogg stdc++ z FLAC mad png pthread vorbis \
 			vorbisenc vorbisfile \
 			wx_base_net wx_base wx_base_odbc wx_base_xml \
@@ -37,6 +38,7 @@ CONFIGURE_STYLE=simple
 CONFIGURE_ARGS+=--disable-boost
 CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include" \
                 LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ENV=	CXXFLAGS="${CXXFLAGS}" CXX="${CXX}" VERBOSE_BUILD=1
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scummvm-tools
