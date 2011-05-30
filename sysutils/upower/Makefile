@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/24 16:02:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/05/30 07:48:53 landry Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
 COMMENT =	userland power management interface
 
-DISTNAME =	upower-0.9.10
+DISTNAME =	upower-0.9.11
 CATEGORIES =	sysutils
 SHARED_LIBS +=  upower-glib               0.0 # 1.1
-
-REVISION =	0
 
 HOMEPAGE =	http://upower.freedesktop.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -48,8 +46,5 @@ BUILD_DEPENDS =	textproc/libxslt,-main \
 WANTLIB =	c dbus-1 dbus-glib-1 glib-2.0 gobject-2.0 m \
 		polkit-gobject-1 pthread gthread-2.0 gio-2.0 \
 		gmodule-2.0 pcre z
-
-post-extract:
-	cp ${FILESDIR}/up-apm-native.h ${WRKSRC}/src/openbsd
 
 .include <bsd.port.mk>
