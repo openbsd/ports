@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2011/03/03 21:10:38 landry Exp $
+@comment $OpenBSD: PLIST,v 1.15 2011/05/30 18:20:15 landry Exp $
 @conflict xffm-*
 %%SHARED%%
 @bin bin/Thunar
@@ -46,6 +46,8 @@ share/applications/Thunar-bulk-rename.desktop
 share/applications/Thunar-folder-handler.desktop
 share/applications/Thunar.desktop
 share/applications/thunar-settings.desktop
+share/dbus-1/
+share/dbus-1/services/
 share/dbus-1/services/org.xfce.FileManager.service
 share/dbus-1/services/org.xfce.Thunar.service
 share/doc/Thunar/
@@ -342,8 +344,6 @@ share/examples/Thunar/
 @sample ${SYSCONFDIR}/xdg/Thunar/
 share/examples/Thunar/uca.xml
 @sample ${SYSCONFDIR}/xdg/Thunar/uca.xml
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/thunarx/
 share/gtk-doc/html/thunarx/ThunarxFileInfo.html
 share/gtk-doc/html/thunarx/ThunarxMenuProvider.html
@@ -377,28 +377,15 @@ share/gtk-doc/html/thunarx/thunarx-writing-extensions.html
 share/gtk-doc/html/thunarx/thunarx.devhelp
 share/gtk-doc/html/thunarx/thunarx.devhelp2
 share/gtk-doc/html/thunarx/up.png
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/Thunar.png
-share/icons/hicolor/16x16/stock/
-share/icons/hicolor/16x16/stock/navigation/
 share/icons/hicolor/16x16/stock/navigation/stock_folder-copy.png
 share/icons/hicolor/16x16/stock/navigation/stock_folder-move.png
 share/icons/hicolor/16x16/stock/navigation/stock_thunar-shortcuts.png
 share/icons/hicolor/16x16/stock/navigation/stock_thunar-templates.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/Thunar.png
-share/icons/hicolor/24x24/stock/
-share/icons/hicolor/24x24/stock/navigation/
 share/icons/hicolor/24x24/stock/navigation/stock_folder-copy.png
 share/icons/hicolor/24x24/stock/navigation/stock_folder-move.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/Thunar.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/Thunar.svg
 share/locale/ar/LC_MESSAGES/Thunar.mo
 share/locale/ast/LC_MESSAGES/Thunar.mo
@@ -408,8 +395,6 @@ share/locale/ca/LC_MESSAGES/Thunar.mo
 share/locale/cs/LC_MESSAGES/Thunar.mo
 share/locale/da/LC_MESSAGES/Thunar.mo
 share/locale/de/LC_MESSAGES/Thunar.mo
-share/locale/dz/
-share/locale/dz/LC_MESSAGES/
 share/locale/dz/LC_MESSAGES/Thunar.mo
 share/locale/el/LC_MESSAGES/Thunar.mo
 share/locale/en_GB/LC_MESSAGES/Thunar.mo
@@ -426,8 +411,6 @@ share/locale/hu/LC_MESSAGES/Thunar.mo
 share/locale/id/LC_MESSAGES/Thunar.mo
 share/locale/it/LC_MESSAGES/Thunar.mo
 share/locale/ja/LC_MESSAGES/Thunar.mo
-share/locale/ka/
-share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/Thunar.mo
 share/locale/kk/LC_MESSAGES/Thunar.mo
 share/locale/ko/LC_MESSAGES/Thunar.mo
@@ -444,8 +427,6 @@ share/locale/pt/LC_MESSAGES/Thunar.mo
 share/locale/pt_BR/LC_MESSAGES/Thunar.mo
 share/locale/ro/LC_MESSAGES/Thunar.mo
 share/locale/ru/LC_MESSAGES/Thunar.mo
-share/locale/si/
-share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/Thunar.mo
 share/locale/sk/LC_MESSAGES/Thunar.mo
 share/locale/sq/LC_MESSAGES/Thunar.mo
@@ -453,8 +434,6 @@ share/locale/sv/LC_MESSAGES/Thunar.mo
 share/locale/tr/LC_MESSAGES/Thunar.mo
 share/locale/ug/LC_MESSAGES/Thunar.mo
 share/locale/uk/LC_MESSAGES/Thunar.mo
-share/locale/ur/
-share/locale/ur/LC_MESSAGES/
 share/locale/ur/LC_MESSAGES/Thunar.mo
 share/locale/ur_PK/
 share/locale/ur_PK/LC_MESSAGES/
@@ -462,7 +441,6 @@ share/locale/ur_PK/LC_MESSAGES/Thunar.mo
 share/locale/vi/LC_MESSAGES/Thunar.mo
 share/locale/zh_CN/LC_MESSAGES/Thunar.mo
 share/locale/zh_TW/LC_MESSAGES/Thunar.mo
-share/pixmaps/
 share/pixmaps/Thunar/
 share/pixmaps/Thunar/Thunar-about-logo.png
 share/xfce4/panel-plugins/
