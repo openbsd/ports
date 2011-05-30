@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/30 11:04:14 shadchin Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 BROKEN-sparc64=		build stalls
 
-DISTNAME=		asymptote-2.04.src
+DISTNAME=		asymptote-2.10.src
 PKGNAME=		${DISTNAME:S/.src//g}
 CATEGORIES=		graphics
 
@@ -18,30 +18,42 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=asymptote/}
 EXTRACT_SUFX=		.tgz
 
-WANTLIB += GL GLU c m ncurses pthread readline stdc++ z
-WANTLIB += gc glut sigsegv fftw3
+MODULES=		lang/python
 
-BUILD_DEPENDS= 		${RUN_DEPENDS}
-RUN_DEPENDS=		print/texlive/base
+WANTLIB += GL GLU c m ncurses pthread readline stdc++ z
+WANTLIB += gc glut gsl gslcblas sigsegv fftw3
+
+BUILD_DEPENDS=		print/texlive/base
+RUN_DEPENDS=		graphics/py-Imaging \
+			print/texlive/base \
+			${MODPY_TKINTER_DEPENDS}
+
 LIB_DEPENDS=		devel/boehm-gc \
+			devel/gsl \
 			devel/libsigsegv \
 			graphics/freeglut \
 			math/fftw3
 
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
+VMEM_WARNING=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-gc=${LOCALBASE} \
+			--enable-fftw \
 			--enable-gl \
-			--infodir=${PREFIX}/info
+			--enable-gsl
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -pthread" \
 			ac_cv_prog_kpsewhich="${LOCALBASE}/bin/kpsewhich"
 
+FAKE_FLAGS+=		exampledir="${WRKINST}${PREFIX}/share/examples/asymptote"
+
 PORTHOME=		${WRKDIR}
 
-WRKDIST= 		${WRKDIR}/${DISTNAME:S/.src//g}/
+MODPY_ADJ_FILES=	GUI/*.py
+
+WRKDIST=		${WRKDIR}/${DISTNAME:S/.src//g}/
 
 post-install:
 	mv ${PREFIX}/man/man1/xasy.1x ${PREFIX}/man/man1/xasy.1

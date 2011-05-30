@@ -1,0 +1,15 @@
+$OpenBSD: patch-xstream_h,v 1.1 2011/05/30 11:04:14 shadchin Exp $
+--- xstream.h.orig	Tue Jul  7 06:06:06 2009
++++ xstream.h	Sun Feb  7 21:54:07 2010
+@@ -38,6 +38,11 @@ extern "C" off_t ftello(FILE *);
+ #define xdr_u_longlong_t xdr_uint64_t
+ #endif  
+ 
++#ifdef __OpenBSD__
++#define xdr_longlong_t xdr_int64_t
++#define xdr_u_longlong_t xdr_u_int64_t
++#endif
++
+ #ifdef _POSIX_SOURCE
+ #undef _POSIX_SOURCE
+ #include <rpc/rpc.h>

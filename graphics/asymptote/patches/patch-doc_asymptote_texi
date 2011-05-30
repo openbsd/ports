@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_asymptote_texi,v 1.1 2011/05/30 11:04:14 shadchin Exp $
+--- doc/asymptote.texi.orig	Mon Feb  8 00:12:41 2010
++++ doc/asymptote.texi	Mon Feb  8 00:13:05 2010
+@@ -21,7 +21,7 @@ file LICENSE in the top-level source directory).
+      
+ @dircategory Languages
+ @direntry
+-* asymptote: (asymptote/asymptote). Vector graphics language.
++* asymptote: (asymptote). Vector graphics language.
+ @end direntry
+ 
+ @titlepage
