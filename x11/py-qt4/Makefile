@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/05/17 08:38:32 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.33 2011/05/30 08:07:05 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,7 +17,7 @@ CATEGORIES=	x11 devel
 
 HOMEPAGE=	http://www.riverbankcomputing.co.uk/software/pyqt/intro
 
-# GPLv2
+# GPLv2 or v3 with exceptions for use with certain named open-source licenses
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
