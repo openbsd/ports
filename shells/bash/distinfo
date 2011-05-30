@@ -7,6 +7,8 @@ MD5 (bash/bash42-005) = 5w5F3jNCazgVOzkL4Nu81A==
 MD5 (bash/bash42-006) = zk5cSEmTcFsn2qFR7KJCwg==
 MD5 (bash/bash42-007) = iNH5bbKUYXZ2AuJUaAO9pw==
 MD5 (bash/bash42-008) = JMV0v21qWB4wCCPZwSdq9g==
+MD5 (bash/bash42-009) = TFg18vurNsQpK7M0l35bbQ==
+MD5 (bash/bash42-010) = ClFgK1Ne9mHucHvmyL2zcw==
 RMD160 (bash/bash-4.2.tar.gz) = 33rlF4PwOaEjTTtyD/z0v6XQlnM=
 RMD160 (bash/bash42-001) = HmQyECzA8N0d0KIH5KiStPE8ALA=
 RMD160 (bash/bash42-002) = gzVErWWGsOzlOIHMhQ/0SOxWPLs=
@@ -16,6 +18,8 @@ RMD160 (bash/bash42-005) = CVcvOXG+qqqb4b3l+efTpuVuUVk=
 RMD160 (bash/bash42-006) = kqTD62Ev4edKbe02I9H72DIv6EM=
 RMD160 (bash/bash42-007) = cyhbYdJaf5mNUpZdBhXN1UclJSc=
 RMD160 (bash/bash42-008) = Rc6INMHKb42/wlUf0ZBnwdQl4Bs=
+RMD160 (bash/bash42-009) = OxkcERBx/KSUkNjavG2XO1dFPso=
+RMD160 (bash/bash42-010) = 530nJcBhPdjVqDqOffy6KbeqQZ8=
 SHA1 (bash/bash-4.2.tar.gz) = SHhAq3E063kB+7Lkmw7j0i3hXLg=
 SHA1 (bash/bash42-001) = wGnwdJLJGZvHz/caTwMvZouk6go=
 SHA1 (bash/bash42-002) = dbZyZlagjkcXJwRUXFeikOKQdek=
@@ -25,6 +29,8 @@ SHA1 (bash/bash42-005) = wd0y+aq5Y4MMub9cCXPu+k1/iIE=
 SHA1 (bash/bash42-006) = SuKLR6RoUNs6WTb/D6+5BW8VMp8=
 SHA1 (bash/bash42-007) = Mc8Dc7HU1hVAR0tvUnv3Z16Hc/M=
 SHA1 (bash/bash42-008) = fwlhqvKEs26sFQOCTNnoWSZigSA=
+SHA1 (bash/bash42-009) = x/ne3jTjBJSprbR55AaBT01i2io=
+SHA1 (bash/bash42-010) = ZiGSxGdTAPSIiXpu2HdOFuehPi4=
 SHA256 (bash/bash-4.2.tar.gz) = onoReeycCDDGXGql19q2D3zhoqYIYYVw+Wv6culas9g=
 SHA256 (bash/bash42-001) = jWygKFdsSvI+ZgovvCESIhoRyKeFwLN/Azln5c0StHo=
 SHA256 (bash/bash42-002) = /rrJJ+GZrO66IASQjZcdSvtJtSF5bD9C0RZvn7v7zvk=
@@ -34,6 +40,8 @@ SHA256 (bash/bash42-005) = qBdJ5zAEuBz98P4HW+w2XcH+91buXj/RQoIeMX0UWaA=
 SHA256 (bash/bash42-006) = yRFIlFot2vp5JoLXyGaMWefmRerhM0sVsNXZrSJjS9E=
 SHA256 (bash/bash42-007) = QFgmrPRD3RCE8jahXLdtfw7i2+Xt/0XF+4NttXH7fpU=
 SHA256 (bash/bash42-008) = IwgNEaYKeJQSEOJHf2vKBmtF2wPe+mDahv12UQe6JDc=
+SHA256 (bash/bash42-009) = 5+1UQLTBl2V4bpDk8d7UMZXTiz5NHEs5/MI96adMyyA=
+SHA256 (bash/bash42-010) = rPxUgsJeaSMRb89LT39jRbgPda1ymXSdtLc2rWeqQ9w=
 SIZE (bash/bash-4.2.tar.gz) = 7009201
 SIZE (bash/bash42-001) = 2944
 SIZE (bash/bash42-002) = 1780
@@ -43,3 +51,5 @@ SIZE (bash/bash42-005) = 3424
 SIZE (bash/bash42-006) = 1187
 SIZE (bash/bash42-007) = 1394
 SIZE (bash/bash42-008) = 2164
+SIZE (bash/bash42-009) = 2384
+SIZE (bash/bash42-010) = 1818
