@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_warmux_net_network_cpp,v 1.1.1.1 2011/05/30 09:14:11 landry Exp $
+--- lib/warmux/net/network.cpp.orig	Wed May 25 15:08:02 2011
++++ lib/warmux/net/network.cpp	Wed May 25 15:08:14 2011
+@@ -35,6 +35,7 @@
+ #    define connect net_connect
+ #    define setsockopt net_setsockopt
+ #  else
++#    include <sys/types.h>
+ #    include <sys/socket.h>
+ #    include <netdb.h>
+ #    include <netinet/in.h>
