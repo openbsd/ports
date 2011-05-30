@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/01/08 13:07:12 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/05/30 09:38:07 sthen Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}filefield/
@@ -28,10 +28,6 @@ ${DRUPAL_MODS}filefield/filefield_meta/includes/filefield_meta_handler_field_bit
 ${DRUPAL_MODS}filefield/filefield_meta/includes/filefield_meta_handler_field_duration.inc
 ${DRUPAL_MODS}filefield/filefield_meta/includes/filefield_meta_handler_field_samplerate.inc
 ${DRUPAL_MODS}filefield/filefield_meta/includes/filefield_meta_handler_field_tags.inc
-${DRUPAL_MODS}filefield/filefield_meta/translations/
-${DRUPAL_MODS}filefield/filefield_meta/translations/de.po
-${DRUPAL_MODS}filefield/filefield_meta/translations/filefield_meta.pot
-${DRUPAL_MODS}filefield/filefield_meta/translations/ja.po
 ${DRUPAL_MODS}filefield/filefield_widget.inc
 ${DRUPAL_MODS}filefield/icons/
 ${DRUPAL_MODS}filefield/icons/application-octet-stream.png
@@ -50,21 +46,8 @@ ${DRUPAL_MODS}filefield/icons/x-office-presentation.png
 ${DRUPAL_MODS}filefield/icons/x-office-spreadsheet.png
 ${DRUPAL_MODS}filefield/tests/
 ${DRUPAL_MODS}filefield/tests/filefield.test
-${DRUPAL_MODS}filefield/translations/
-${DRUPAL_MODS}filefield/translations/cs.po
-${DRUPAL_MODS}filefield/translations/da.po
-${DRUPAL_MODS}filefield/translations/de.po
-${DRUPAL_MODS}filefield/translations/filefield.pot
-${DRUPAL_MODS}filefield/translations/fr-ca.po
-${DRUPAL_MODS}filefield/translations/fr.po
-${DRUPAL_MODS}filefield/translations/hu.po
-${DRUPAL_MODS}filefield/translations/ja.po
-${DRUPAL_MODS}filefield/translations/nl.po
-${DRUPAL_MODS}filefield/translations/pt-br.po
-${DRUPAL_MODS}filefield/translations/sv.po
-${DRUPAL_MODS}filefield/translations/uk-ua.po
-${DRUPAL_MODS}filefield/translations/uk.po
 ${DRUPAL_MODS}filefield/views/
 ${DRUPAL_MODS}filefield/views/filefield.views.inc
 ${DRUPAL_MODS}filefield/views/filefield.views_convert.inc
 ${DRUPAL_MODS}filefield/views/filefield_handler_field_data.inc
+${DRUPAL_MODS}filefield/views/filefield_handler_field_icon.inc
