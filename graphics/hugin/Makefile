@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2011/03/02 08:30:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2011/05/30 09:06:28 sthen Exp $
 
 VMEM_WARNING =		Yes
+SHARED_ONLY =		Yes
 
 COMMENT =		panorama image stitcher
 
-DISTNAME =		hugin-2010.4.0
+DISTNAME =		hugin-2011.0.0
 EXTRACT_SUFX =		.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with
@@ -35,9 +36,9 @@ PERMIT_DISTFILES_FTP =	Yes
 WANTLIB += GL GLEW GLU Half Iex Imath IlmImf IlmThread ICE SM X11
 WANTLIB += Xext Xi Xmu boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_regex-mt boost_signals-mt
-WANTLIB += boost_system-mt boost_thread-mt c
-WANTLIB += exiv2 glut>=4.1 jpeg m pano13>=2.0 png pthread
-WANTLIB += stdc++ tiff wx_base wx_base_net wx_base_xml wx_gtk2_adv
+WANTLIB += boost_system-mt boost_thread-mt c exiv2 glut>=4.1
+WANTLIB += jpeg m pano13>=2.0 png pthread stdc++ tiff wx_base
+WANTLIB += wx_base_net wx_base_xml wx_gtk2_adv wx_gtk2_aui
 WANTLIB += wx_gtk2_core wx_gtk2_gl wx_gtk2_html wx_gtk2_xrc z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=hugin/}
@@ -52,11 +53,11 @@ LIB_DEPENDS =		devel/boost \
 			graphics/freeglut \
 			graphics/ilmbase \
 			graphics/jpeg \
-			graphics/libpano13>=2.9.17rc1 \
+			graphics/libpano13>=2.9.18beta1 \
 			graphics/openexr \
 			graphics/png \
 			graphics/tiff \
-			x11/wxWidgets
+			x11/wxWidgets>=2.7
 
 USE_GROFF =		Yes
 MODULES +=		devel/cmake
