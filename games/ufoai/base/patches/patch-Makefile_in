@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.1.1.1 2011/05/27 07:20:11 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.2 2011/05/30 05:28:31 ajacoutot Exp $
 --- Makefile.in.orig	Mon Nov 29 19:46:35 2010
-+++ Makefile.in	Tue May 17 17:38:00 2011
++++ Makefile.in	Sun May 29 16:13:54 2011
 @@ -199,7 +199,6 @@ install_data: pk3
  # datadir.
  #
@@ -9,7 +9,12 @@ $OpenBSD: patch-Makefile_in,v 1.1.1.1 2011/05/27 07:20:11 ajacoutot Exp $
  	$(INSTALL) -d $(DESTDIR)$(PKGDATADIR)/base
  # Copy each compiled file to datadir (with path)
  	for file in $(TARGETS); do $(INSTALL) -m 755 $$file $(DESTDIR)$(PKGDATADIR)/$$file; done
-@@ -216,6 +215,15 @@ install_exec: $(TARGETS)
+@@ -212,10 +211,19 @@ install_exec: $(TARGETS)
+ 	@echo "#!/bin/sh" > ufo.sh
+ 	@echo "cd $(PKGDATADIR); ./ufo \$$*; exit \$$?" >> ufo.sh
+ 	$(INSTALL) -d $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 755 ufo.sh $(DESTDIR)$(BINDIR)/ufo
++	$(INSTALL) -m 755 ufo.sh $(DESTDIR)$(BINDIR)/ufoai
  	@echo "#!/bin/sh" > ufoded.sh
  	@echo "cd $(PKGDATADIR); ./ufoded \$$*; exit \$$?" >> ufoded.sh
  	$(INSTALL) -m 755 ufoded.sh $(DESTDIR)$(BINDIR)/ufoded

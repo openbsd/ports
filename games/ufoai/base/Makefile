@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/27 07:20:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/05/30 05:28:31 ajacoutot Exp $
 
 SHARED_ONLY = 		Yes
 
@@ -8,7 +8,9 @@ COMMENT-editor = 	UFO:AI map editor
 V = 			2.3.1
 DISTNAME =		ufoai-${V}-source
 PKGNAME-main =		${DISTNAME:S/-source//}
+REVISION-main = 	0
 PKGNAME-editor = 	uforadiant-${V}
+REVISION-editor = 	0
 
 EXTRACT_SUFX =		.tar.bz2
 
@@ -79,6 +81,7 @@ INSTALL_TARGET = 	install_exec
 
 post-extract:
 	mkdir -p ${WRKSRC}/base/{maps,models}
+	mv ${WRKSRC}/debian/ufo.6 ${WRKSRC}/debian/ufoai.6
 
 pre-configure:
 	perl -pi -e 's,/usr/share/games/,${PREFIX}/share/,g' ${WRKSRC}/debian/*.6

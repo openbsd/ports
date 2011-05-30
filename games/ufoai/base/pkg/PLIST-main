@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/05/27 07:20:11 ajacoutot Exp $
-bin/ufo
+@comment $OpenBSD: PLIST-main,v 1.2 2011/05/30 05:28:31 ajacoutot Exp $
+bin/ufoai
 bin/ufoded
-@man man/man6/ufo.6
+@man man/man6/ufoai.6
 @man man/man6/ufoded.6
 share/applications/ufoai-safe.desktop
 share/applications/ufoai.desktop
