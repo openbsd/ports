@@ -1,0 +1,24 @@
+$OpenBSD: patch-debian_ufoded_6,v 1.1 2011/05/30 05:29:09 ajacoutot Exp $
+
+Resolve conflict with lang/rakudo.
+
+--- debian/ufoded.6.orig	Sun May 29 16:44:47 2011
++++ debian/ufoded.6	Sun May 29 16:46:54 2011
+@@ -4,7 +4,7 @@ ufoded \- UFO: Alien Invasion server
+ 
+ .SH SYNOPSIS
+ .PP
+-\fBufo\fR [\fB+set \fIoption\fR \fIvalue\fP] ...
++\fBufoded\fR [\fB+set \fIoption\fR \fIvalue\fP] ...
+ 
+ .SH DESCRIPTION
+ This manual page documents briefly the
+@@ -35,7 +35,7 @@ This defines the mapcycle the dedicated server is usin
+ 
+ .SH "SEE ALSO"
+ .PP
+-\fBufo\fR(6)
++\fBufoai\fR(6)
+ 
+ .SH AUTHOR
+ \fBufoded\fP was written by the UFO: Alien Invasion team.

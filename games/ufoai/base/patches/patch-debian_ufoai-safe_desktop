@@ -1,0 +1,15 @@
+$OpenBSD: patch-debian_ufoai-safe_desktop,v 1.1 2011/05/30 05:29:09 ajacoutot Exp $
+
+Resolve conflict with lang/rakudo.
+
+--- debian/ufoai-safe.desktop.orig	Sun May 29 16:21:26 2011
++++ debian/ufoai-safe.desktop	Sun May 29 16:21:42 2011
+@@ -5,7 +5,7 @@ Name=UFO: Alien Invasion (Safe mode)
+ GenericName=UFO: Alien Invasion (Safe mode)
+ Comment=Turn-based tactical combat against hostile alien forces (Safe mode)
+ Comment[de_DE]=Rundenbasiertes Taktikspiel
+-Exec=/usr/games/ufo +exec safemode.cfg
++Exec=/usr/games/ufoai +exec safemode.cfg
+ Icon=ufoai.xpm
+ Terminal=false
+ Type=Application

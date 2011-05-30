@@ -1,0 +1,15 @@
+$OpenBSD: patch-debian_uforadiant_6,v 1.1 2011/05/30 05:29:09 ajacoutot Exp $
+
+Resolve conflict with lang/rakudo.
+
+--- debian/uforadiant.6.orig	Sun May 29 16:47:52 2011
++++ debian/uforadiant.6	Sun May 29 16:48:10 2011
+@@ -31,7 +31,7 @@ This file is included in the 0ufos.pk3 in your system 
+ 
+ .SH "SEE ALSO"
+ .PP
+-\fBufo\fR(6)
++\fBufoai\fR(6)
+ 
+ .SH AUTHOR
+ \fBuforadiant\fP was written by the UFO: Alien Invasion team and based on the GPLed release of GtkRadiant 1.5 by id Software.

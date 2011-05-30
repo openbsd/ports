@@ -1,0 +1,37 @@
+$OpenBSD: patch-debian_ufoai_6,v 1.1 2011/05/30 05:29:09 ajacoutot Exp $
+
+Resolve conflict with lang/rakudo.
+
+--- debian/ufoai.6.orig	Sun May 29 16:43:05 2011
++++ debian/ufoai.6	Sun May 29 16:44:21 2011
+@@ -1,17 +1,17 @@
+ .TH UFO 6 "January 13, 2008"
+ .SH NAME
+-ufo \- UFO: Alien Invasion client
++ufoai \- UFO: Alien Invasion client
+ 
+ .SH SYNOPSIS
+ .PP
+-\fBufo\fR [\fB+set \fIoption\fR \fIvalue\fP] ...
++\fBufoai\fR [\fB+set \fIoption\fR \fIvalue\fP] ...
+ 
+ .SH DESCRIPTION
+ This manual page documents briefly the
+-.B ufo
++.B ufoai
+ command.
+ .PP
+-\fBufo\fP is the client for the strategy game UFO: Alien Invasion.
++\fBufoai\fP is the client for the strategy game UFO: Alien Invasion.
+ 
+ .SH OPTIONS
+ .PP
+@@ -48,7 +48,7 @@ Commands that are executed when starting the dedicated
+ \fBufoded\fR(6)
+ 
+ .SH AUTHOR
+-\fBufo\fP was written by the UFO: Alien Invasion team.
++\fBufoai\fP was written by the UFO: Alien Invasion team.
+ .PP
+ This manual page was written by Florian Ludwig <dino@phidev.org>,
+ for the Debian project (but may be used by others).
