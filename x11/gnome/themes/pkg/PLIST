@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.40 2011/05/19 14:43:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.41 2011/05/30 13:55:56 ajacoutot Exp $
 @conflict gtk2-clearlooks-engine-*
 @unexec rm -f %D/share/icons/Crux/icon-theme.cache
 @unexec rm -f %D/share/icons/Mist/icon-theme.cache
@@ -904,6 +904,11 @@ share/themes/Glossy/gtk-2.0/gtkrc
 share/themes/Glossy/index.theme
 share/themes/Glossy/metacity-1/
 share/themes/Glossy/metacity-1/metacity-theme-1.xml
+share/themes/Inverted/
+share/themes/Inverted/gtk-2.0/
+share/themes/Inverted/gtk-2.0/gtkrc
+share/themes/Inverted/metacity-1/
+share/themes/Inverted/metacity-1/metacity-theme-1.xml
 share/themes/Mist/index.theme
 share/themes/Mist/metacity-1/
 share/themes/Mist/metacity-1/metacity-theme-1.xml

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.54 2011/05/19 14:43:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2011/05/30 13:55:56 ajacoutot Exp $
 
 COMMENT=		themes collection for GNOME
 
 GNOME_PROJECT=		gnome-themes
 GNOME_VERSION=		2.32.1
 
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		x11
 
@@ -35,7 +35,6 @@ RM_THEMES=	themes/HighContrast \
 		themes/HighContrastLargePrintInverse \
 		themes/LowContrast \
 		themes/LowContrastLargePrint \
-		themes/Inverted \
 		themes/LargePrint \
 		icons/HighContrast \
 		icons/HighContrastInverse \
