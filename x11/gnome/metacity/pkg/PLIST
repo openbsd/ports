@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2011/05/27 12:47:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2011/05/30 22:13:31 ajacoutot Exp $
 @pkgpath x11/gnome/metacity
 @bin bin/metacity
 @bin bin/metacity-message
@@ -26,6 +26,7 @@ share/doc/metacity/
 share/doc/metacity/README
 share/doc/metacity/metacity-theme.dtd
 share/doc/metacity/theme-format.txt
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/gnome-control-center/
 share/gnome-control-center/keybindings/
 share/gnome-control-center/keybindings/50-metacity-launchers.xml

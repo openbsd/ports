@@ -1,0 +1,12 @@
+$OpenBSD: README,v 1.1 2011/05/30 22:13:31 ajacoutot Exp $
+
+Running metacity on OpenBSD
+===========================
+
+To enable the compositor manager of metacity, use the following command:
+    gconftool-2 -s '/apps/metacity/general/compositing_manager' \
+      --type bool true
+
+To disable it:
+    gconftool-2 -s '/apps/metacity/general/compositing_manager' \
+      --type bool false
