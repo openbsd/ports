@@ -1,0 +1,29 @@
+$OpenBSD: patch-Modules_selectmodule_c,v 1.1 2011/05/30 21:11:44 rpointel Exp $
+--- Modules/selectmodule.c.orig	Sat May 28 13:29:10 2011
++++ Modules/selectmodule.c	Sat May 28 13:30:55 2011
+@@ -1215,6 +1215,7 @@ static PyTypeObject kqueue_queue_Type;
+  */
+ 
+ #define KQ_OFF(x) offsetof(kqueue_event_Object, x)
++#if !defined(__OpenBSD__)
+ static struct PyMemberDef kqueue_event_members[] = {
+     {"ident",           T_UINTPTRT,     KQ_OFF(e.ident)},
+     {"filter",          T_SHORT,        KQ_OFF(e.filter)},
+@@ -1224,6 +1225,17 @@ static struct PyMemberDef kqueue_event_members[] = {
+     {"udata",           T_UINTPTRT,     KQ_OFF(e.udata)},
+     {NULL} /* Sentinel */
+ };
++#else
++static struct PyMemberDef kqueue_event_members[] = {
++    {"ident",           T_UINT,         KQ_OFF(e.ident)},
++    {"filter",          T_SHORT,        KQ_OFF(e.filter)},
++    {"flags",           T_USHORT,       KQ_OFF(e.flags)},
++    {"fflags",          T_UINT,         KQ_OFF(e.fflags)},
++    {"data",            T_INT,          KQ_OFF(e.data)},
++    {"udata",           T_UINTPTRT,     KQ_OFF(e.udata)},
++    {NULL} /* Sentinel */
++};
++#endif
+ #undef KQ_OFF
+ 
+ static PyObject *

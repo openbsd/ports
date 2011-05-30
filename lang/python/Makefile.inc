@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.78 2011/05/23 06:42:02 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.79 2011/05/30 21:11:44 rpointel Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -62,16 +62,19 @@ LIB_DEPENDS-main +=	databases/sqlite3
 WANTLIB-main +=		sqlite3
 .endif
 
-LIB_DEPENDS-bsddb =	databases/db/v4
-WANTLIB-bsddb =		lib/db4/db>=4
-LIB_DEPENDS-gdbm =	databases/gdbm
-WANTLIB-gdbm =		gdbm>=3
+LIB_DEPENDS-bsddb =	databases/db/v4 \
+			lang/python/${VERSION},-main
+WANTLIB-bsddb =		lib/db4/db>=4 python${VERSION}
+LIB_DEPENDS-gdbm =	databases/gdbm \
+			lang/python/${VERSION},-main
+WANTLIB-gdbm =		gdbm>=3 python${VERSION}
 RUN_DEPENDS-idle =	${RUN_DEPENDS} \
 			lang/python/${VERSION},-tkinter
 # XXX Tcl/Tk version number handled in patch-setup_py
 MODULES +=		x11/tk
-LIB_DEPENDS-tkinter =	${MODTK_LIB_DEPENDS}
-WANTLIB-tkinter =	X11 ${MODTK_WANTLIB}
+LIB_DEPENDS-tkinter =	${MODTK_LIB_DEPENDS} \
+			lang/python/${VERSION},-main
+WANTLIB-tkinter =	X11 ${MODTK_WANTLIB} python${VERSION}
 
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
     ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH:Mmips64*}
@@ -107,11 +110,12 @@ CONFIGURE_ARGS+=	--enable-ipv6
 THREAD_STACK_SIZE?=0x20000
 
 CONFIGURE_ENV+= OPT='${CFLAGS} -DTHREAD_STACK_SIZE=${THREAD_STACK_SIZE} -fPIC' \
-		LDFLAGS='-L${WRKSRC}' SVNVERSION=no \
+		LDFLAGS='-L${LOCALBASE}/lib/' SVNVERSION=no \
 		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 MAKE_ENV+=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 MAKE_FLAGS+=	LDLIBRARY=libpython${VERSION}.so.${LIBpython${VERSION}_VERSION}
 MAKE_FLAGS+=	LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
+MAKE_FLAGS+=	LDFLAGS='-L${WRKSRC}'
 FAKE_FLAGS+=	RANLIB=:
 
 ALL_TARGET?=	everything ./Lib/plat-openbsd4
