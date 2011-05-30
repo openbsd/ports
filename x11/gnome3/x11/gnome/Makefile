@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/05/27 12:50:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/05/30 18:33:13 jasper Exp $
 
      SUBDIR =
      SUBDIR += backgrounds
@@ -18,6 +18,7 @@
      SUBDIR += libgweather
      SUBDIR += menus
      SUBDIR += nautilus
+     SUBDIR += nautilus-open-terminal
      SUBDIR += nettool
      SUBDIR += panel
      SUBDIR += session
