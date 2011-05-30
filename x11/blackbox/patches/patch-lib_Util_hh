@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_Util_hh,v 1.1 2011/05/30 19:08:35 matthieu Exp $
+--- lib/Util.hh.orig	Thu May 19 21:58:48 2011
++++ lib/Util.hh	Thu May 19 21:57:34 2011
+@@ -94,7 +94,7 @@ namespace bt {
+ 
+   std::string tolower(const std::string &string);
+ 
+-#ifdef _XUTIL_H_
++#if defined(_XUTIL_H_) || defined(_X11_XUTIL_H_)
+   std::string textPropertyToString(::Display *display,
+                                    ::XTextProperty& text_prop);
+ #endif

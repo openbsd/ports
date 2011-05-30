@@ -1,0 +1,12 @@
+$OpenBSD: patch-image_h,v 1.1 2011/05/30 19:08:35 matthieu Exp $
+--- image.h.orig	Thu May 19 21:39:53 2011
++++ image.h	Thu May 19 21:38:04 2011
+@@ -63,7 +63,7 @@ typedef struct {
+     unsigned long sourceMask;
+ } Image;
+ 
+-#ifdef _XLIB_H_
++#if defined(_XLIB_H_) || defined(_X11_XLIB_H_)
+ /* Used to transfer information to routines in iprocess.c */
+ struct imageprocessinfo {
+     int oilArea;
