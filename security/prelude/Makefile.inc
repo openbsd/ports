@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2009/08/30 20:37:16 rui Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2011/05/30 10:05:03 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,3 +17,4 @@ PERMIT_PACKAGE_FTP=	Yes
 USE_GMAKE=	Yes
 
 CONFIGURE_ARGS+=--localstatedir=/var
+CONFIGURE_ENV += ac_cv_path_GREP=/usr/bin/grep ac_cv_path_EGREP=/usr/bin/egrep
