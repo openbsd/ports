@@ -1,0 +1,18 @@
+$OpenBSD: patch-libzip_pc_in,v 1.1 2011/05/30 16:53:40 shadchin Exp $
+--- libzip.pc.in.orig	Mon May 30 21:53:48 2011
++++ libzip.pc.in	Mon May 30 21:54:22 2011
+@@ -2,7 +2,6 @@ prefix=@prefix@
+ exec_prefix=@exec_prefix@
+ libdir=@libdir@
+ includedir=@includedir@
+-libincludedir=@libdir@/libzip/include
+ 
+ zipcmp=@prefix@/bin/zipcmp
+ 
+@@ -10,5 +9,5 @@ Name: libzip
+ Description: library for handling zip archives
+ Version: @VERSION@
+ Libs: -L${libdir} -lzip @LIBS@
+-Cflags: -I${includedir} -I${libincludedir}
++Cflags: -I${includedir}
+ 
