@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2009/09/03 13:20:04 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/05/30 09:37:37 sthen Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}imagecache/
@@ -7,8 +7,10 @@ ${DRUPAL_MODS}imagecache/LICENSE.txt
 ${DRUPAL_MODS}imagecache/README.txt
 ${DRUPAL_MODS}imagecache/UPGRADE.txt
 ${DRUPAL_MODS}imagecache/imagecache.api.php
+${DRUPAL_MODS}imagecache/imagecache.drush.inc
 ${DRUPAL_MODS}imagecache/imagecache.info
 ${DRUPAL_MODS}imagecache/imagecache.install
+${DRUPAL_MODS}imagecache/imagecache.js
 ${DRUPAL_MODS}imagecache/imagecache.module
 ${DRUPAL_MODS}imagecache/imagecache_actions.inc
 ${DRUPAL_MODS}imagecache/imagecache_ui.info
@@ -18,8 +20,3 @@ ${DRUPAL_MODS}imagecache/imagecache_ui.pages.inc
 ${DRUPAL_MODS}imagecache/sample.png
 ${DRUPAL_MODS}imagecache/tests/
 ${DRUPAL_MODS}imagecache/tests/imagecache_create_url.test
-${DRUPAL_MODS}imagecache/translations/
-${DRUPAL_MODS}imagecache/translations/de.po
-${DRUPAL_MODS}imagecache/translations/fr.po
-${DRUPAL_MODS}imagecache/translations/ja.po
-${DRUPAL_MODS}imagecache/translations/nl.po
