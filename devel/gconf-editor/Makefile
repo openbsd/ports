@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2011/05/14 21:29:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2011/05/30 19:02:24 ajacoutot Exp $
 
 COMMENT=	editor for the GConf configuration system
 
 GNOME_PROJECT=	gconf-editor
 GNOME_VERSION=	2.32.0
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	devel x11
 
@@ -42,5 +42,9 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =	Yes
+
+# the devel/gconf2 MODULE overrides the path to gconftool-2
+CONFIGURE_ARGS += --with-gconf-defaults-source="xml:merged:/var/db/gconf/gconf.xml.defaults" \
+	--with-gconf-mandatory-source="xml:merged:/var/db/gconf/gconf.xml.mandatory"
 
 .include <bsd.port.mk>
