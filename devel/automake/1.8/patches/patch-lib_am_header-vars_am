@@ -1,0 +1,16 @@
+$OpenBSD: patch-lib_am_header-vars_am,v 1.1 2011/05/30 09:08:24 jasper Exp $
+--- lib/am/header-vars.am.orig	Mon Jan  5 20:28:28 2004
++++ lib/am/header-vars.am	Mon May 30 11:07:20 2011
+@@ -41,9 +41,9 @@ top_builddir = %TOPDIR%
+ 
+ am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
+ INSTALL = @INSTALL@
+-install_sh_DATA = $(install_sh) -c -m 644
+-install_sh_PROGRAM = $(install_sh) -c
+-install_sh_SCRIPT = $(install_sh) -c
++install_sh_DATA = ${SHELL} $(install_sh) -c -m 644
++install_sh_PROGRAM = ${SHELL} $(install_sh) -c
++install_sh_SCRIPT = ${SHELL} $(install_sh) -c
+ INSTALL_HEADER = $(INSTALL_DATA)
+ transform = $(program_transform_name)
+ 
