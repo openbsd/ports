@@ -1,0 +1,72 @@
+$OpenBSD: patch-client_dconf-client_vala,v 1.1 2011/05/30 15:51:51 ajacoutot Exp $
+
+From 03066011b7fe3a58d451d93a134022b0607ff1dc Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Tue, 10 May 2011 10:15:53 +0000
+Subject: Don't compare VariantType by pointer value
+
+From 70d1b330a7a09a555a1c66c17dc5111e08e77b8b Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Tue, 10 May 2011 10:16:20 +0000
+Subject: Properly support watching in DConfClient
+
+--- client/dconf-client.vala.orig	Mon May 30 17:41:21 2011
++++ client/dconf-client.vala	Mon May 30 17:41:09 2011
+@@ -8,18 +8,48 @@ namespace DConf {
+ 		WatchFunc watch_func;
+ 		Engine engine;
+ 
++		void got_signal (DBusConnection connection, string sender_name, string object_path, string interface_name, string signal_name, Variant parameters) {
++			unowned string path;
++			unowned string tag;
++			string[] items;
++
++			if (signal_name == "Notify" && parameters.is_of_type ((VariantType) "(sass)")) {
++				VariantIter iter;
++
++				parameters.get ("(&sas&s)", out path, out iter, out tag);
++				items = new string[iter.n_children ()];
++				for (var i = 0; i < items.length; i++) {
++					iter.next ("s", out items[i]);
++				}
++			} else if (signal_name == "WritabilityNotify" && parameters.is_of_type ((VariantType) "(s)")) {
++				parameters.get ("(&s)", out path);
++				items = new string[0];
++				tag = "";
++			} else {
++				assert_not_reached ();
++			}
++
++			watch_func (this, path, items, tag);
++		}
++
+ 		void call_sync (EngineMessage dcem, out string tag, Cancellable? cancellable) throws Error {
+ 			DBusConnection connection;
+ 
+ 			if (dcem.bus_types[0] == 'e') {
+ 				if (session == null) {
+ 					session = Bus.get_sync (BusType.SESSION, cancellable);
++					if (watch_func != null) {
++						session.signal_subscribe (null, "ca.desrt.dconf.Writer", null, null, null, DBusSignalFlags.NO_MATCH_RULE, got_signal);
++					}
+ 				}
+ 				connection = session;
+ 			} else {
+ 				assert (dcem.bus_types[0] == 'y');
+ 				if (system == null) {
+ 					system = Bus.get_sync (BusType.SYSTEM, cancellable);
++					if (watch_func != null) {
++						system.signal_subscribe (null, "ca.desrt.dconf.Writer", null, null, null, DBusSignalFlags.NO_MATCH_RULE, got_signal);
++					}
+ 				}
+ 				connection = system;
+ 			}
+@@ -27,7 +57,7 @@ namespace DConf {
+ 			foreach (var message in dcem.parameters) {
+ 				var reply = connection.call_sync (dcem.bus_name, dcem.object_path, dcem.interface_name, dcem.method_name,
+ 				                                  message, dcem.reply_type, DBusCallFlags.NONE, -1, cancellable);
+-				if (dcem.reply_type != VariantType.UNIT) {
++				if (!dcem.reply_type.equal (VariantType.UNIT)) {
+ 					reply.get ("(s)", out tag);
+ 				}
+ 			}

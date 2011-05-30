@@ -1,0 +1,103 @@
+$OpenBSD: patch-bin_dconf_vala,v 1.1 2011/05/30 15:51:51 ajacoutot Exp $
+
+From 8a7c838d9d574dfe16722154ff7e5842cae795e1 Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Mon, 09 May 2011 12:42:33 +0000
+Subject: Add 'dconf reset'.
+
+From 8046ebb2cc9e84364a4f2f580499e7dbfa4e7b8a Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Tue, 10 May 2011 10:18:10 +0000
+Subject: cli: make 'dconf watch' actually write output
+
+--- bin/dconf.vala.orig	Mon May 30 17:42:20 2011
++++ bin/dconf.vala	Mon May 30 17:42:12 2011
+@@ -49,6 +49,11 @@ void show_help (bool requested, string? command) {
+ 			synopsis = "KEY VALUE";
+ 			break;
+ 
++		case "reset":
++			description = "Reset a key or dir.  -f is required for dirs.";
++			synopsis = "[-f] PATH";
++			break;
++
+ 		case "update":
+ 			description = "Update the system dconf databases";
+ 			synopsis = "";
+@@ -85,6 +90,7 @@ Commands:
+   read              Read the value of a key
+   list              List the contents of a dir
+   write             Change the value of a key
++  reset             Reset the value of a key or dir
+   update            Update the system databases
+   lock              Set a lock on a path
+   unlock            Clear a lock on a path
+@@ -170,6 +176,27 @@ void dconf_write (string?[] args) throws Error {
+ 	client.write (key, Variant.parse (null, val));
+ }
+ 
++void dconf_reset (string?[] args) throws Error {
++	var client = new DConf.Client ();
++	bool force = false;
++	var index = 2;
++
++	if (args[index] == "-f") {
++		force = true;
++		index++;
++	}
++
++	var path = args[index];
++
++	DConf.verify_path (path);
++
++	if (DConf.is_dir (path) && !force) {
++		throw new OptionError.FAILED ("-f must be given to (recursively) reset entire dirs");
++	}
++
++	client.write (path, null);
++}
++
+ void dconf_lock (string?[] args) throws Error {
+ 	var client = new DConf.Client ();
+ 	var key = args[2];
+@@ -188,8 +215,31 @@ void dconf_unlock (string?[] args) throws Error {
+ 	client.set_locked (key, false);
+ }
+ 
++void show_path (DConf.Client client, string path) {
++	if (DConf.is_key (path)) {
++		var value = client.read (path);
++
++		print ("  %s\n", value != null ? value.print (true) : "unset");
++	}
++}
++
++void watch_function (DConf.Client client, string path, string[] items, string tag) {
++	if (items.length == 0) {
++		print ("%s\n", path);
++		show_path (client, path);
++		print ("\n");
++	} else {
++		foreach (var item in items) {
++			var full = path + item;
++			print ("%s\n", full);
++			show_path (client, full);
++		}
++		print ("\n");
++	}
++}
++
+ void dconf_watch (string?[] args) throws Error {
+-	var client = new DConf.Client ();
++	var client = new DConf.Client (null, watch_function);
+ 	var path = args[2];
+ 
+ 	DConf.verify_path (path);
+@@ -249,6 +299,7 @@ int main (string[] args) {
+ 		CommandMapping ("read",      dconf_read),
+ 		CommandMapping ("list",      dconf_list),
+ 		CommandMapping ("write",     dconf_write),
++		CommandMapping ("reset",     dconf_reset),
+ 		CommandMapping ("update",    dconf_update),
+ 		CommandMapping ("lock",      dconf_lock),
+ 		CommandMapping ("unlock",    dconf_unlock),

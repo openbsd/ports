@@ -1,0 +1,30 @@
+$OpenBSD: patch-editor_dconf-model_vala,v 1.4 2011/05/30 15:51:51 ajacoutot Exp $
+
+From 9d6096ff7790cb39f2cd1638d98b211556c73ff9 Mon Sep 17 00:00:00 2001
+From: Robert Ancell <robert.ancell@canonical.com>
+Date: Mon, 09 May 2011 12:25:46 +0000
+Subject: Handle flags
+
+--- editor/dconf-model.vala.orig	Mon May 30 17:37:37 2011
++++ editor/dconf-model.vala	Mon May 30 17:30:46 2011
+@@ -456,7 +456,7 @@ public class EnumModel: GLib.Object, Gtk.TreeModel
+             return typeof(int);
+     }
+     
+-    private void set_iter(out Gtk.TreeIter iter, SchemaEnumValue value)
++    private void set_iter(out Gtk.TreeIter iter, SchemaValue value)
+     {
+         iter.stamp = 0;
+         iter.user_data = value;
+@@ -464,9 +464,9 @@ public class EnumModel: GLib.Object, Gtk.TreeModel
+         iter.user_data3 = value;
+     }
+ 
+-    public SchemaEnumValue get_enum_value(Gtk.TreeIter iter)
++    public SchemaValue get_enum_value(Gtk.TreeIter iter)
+     {
+-        return (SchemaEnumValue)iter.user_data;
++        return (SchemaValue)iter.user_data;
+     }
+ 
+     public bool get_iter(out Gtk.TreeIter iter, Gtk.TreePath path)
