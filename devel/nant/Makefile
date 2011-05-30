@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/12 13:20:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/05/30 20:36:05 jasper Exp $
 
 BROKEN-amd64=	build hangs due threading?
 
@@ -9,8 +9,11 @@ DISTNAME=	nant-${V}-src
 PKGNAME=	${DISTNAME:S/-src//}
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nant/}
+REVISION=	0
 
 HOMEPAGE=	http://nant.sourceforge.net/
+
+MAINTAINER=	Ryan Boggs <rmboggs@gmail.com>
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
