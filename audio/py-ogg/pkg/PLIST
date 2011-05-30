@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/14 23:16:55 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/05/30 15:10:17 dcoppa Exp $
 include/python${MODPY_VERSION}/pyogg/
 include/python${MODPY_VERSION}/pyogg/pyogg.h
 lib/python${MODPY_VERSION}/site-packages/ogg/
 lib/python${MODPY_VERSION}/site-packages/ogg/__init__.py
 lib/python${MODPY_VERSION}/site-packages/ogg/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/ogg/_ogg.so
+lib/python${MODPY_VERSION}/site-packages/pyogg-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info

@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_pyoggpage_c,v 1.1 2011/05/30 15:10:17 dcoppa Exp $
+
+Fix memory allocation/deallocation for Python 2.5 and above
+(from Debian's patchset for dev-python/pyogg)
+
+--- src/pyoggpage.c.orig	Mon Oct  7 01:04:57 2002
++++ src/pyoggpage.c	Tue Jun  1 15:38:26 2010
+@@ -75,7 +75,7 @@ static PyMethodDef py_ogg_page_methods[] = {
+ static void 
+ py_ogg_page_dealloc(PyObject *self)
+ {
+-  PyMem_DEL(self);
++  PyObject_Del(self);
+ }
+ 
+ static PyObject* 
