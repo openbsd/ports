@@ -1,6 +1,6 @@
-WebKit is an open source web browser rendering engine. WebKit's HTML
-and JavaScript code began as a branch of the KHTML and KJS libraries
-from KDE.
+WebKitGtk+ is an open source web browser rendering engine for Gtk+.
+WebKit's HTML and JavaScript code began as a branch of the KHTML and
+KJS libraries from KDE.
 
 Available FLAVOR:
-	gtk3 - Build with gtk+3 support (instead of gtk+2)
+	gtk3 - Build with Gtk+3 support (instead of Gtk+2)

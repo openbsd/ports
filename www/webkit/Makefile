@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.48 2011/05/28 08:15:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2011/05/30 20:29:05 landry Exp $
 
-COMMENT =	open source web browser engine
+COMMENT =	open source web browser engine for Gtk+
 
 V =		1.4.0
 DISTNAME =	webkit-${V}
+REVISION =	2
 EPOCH =		0
-REVISION =	1
 CATEGORIES =	www
 
 HOMEPAGE =	http://webkitgtk.org/
@@ -16,7 +16,7 @@ MAINTAINER =	Landry Breuil <gaston@gcu.info>
 SHARED_LIBS +=  webkitgtk-1.0 0.0                # .7.0
 SHARED_LIBS +=  webkitgtk-3.0 0.0                # .7.0
 
-# LGPLv2 / BSD
+# LGPLv2 and BSD
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
