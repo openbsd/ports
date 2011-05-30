@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/11/15 12:58:52 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/05/30 15:35:28 landry Exp $
 @option no-default-conflict
 @conflict drupal->=6,<7
 @owner ${DRUPAL_OWNER}
@@ -50,6 +50,7 @@ ${DRUPAL_ROOT}/includes/tablesort.inc
 ${DRUPAL_ROOT}/includes/theme.inc
 ${DRUPAL_ROOT}/includes/theme.maintenance.inc
 ${DRUPAL_ROOT}/includes/unicode.inc
+${DRUPAL_ROOT}/includes/unicode.entities.inc
 ${DRUPAL_ROOT}/includes/xmlrpc.inc
 ${DRUPAL_ROOT}/includes/xmlrpcs.inc
 ${DRUPAL_ROOT}/index.php
@@ -303,6 +304,7 @@ ${DRUPAL_ROOT}/modules/statistics/statistics.module
 ${DRUPAL_ROOT}/modules/statistics/statistics.pages.inc
 ${DRUPAL_ROOT}/modules/syslog/
 ${DRUPAL_ROOT}/modules/syslog/syslog.info
+${DRUPAL_ROOT}/modules/syslog/syslog.install
 ${DRUPAL_ROOT}/modules/syslog/syslog.module
 ${DRUPAL_ROOT}/modules/system/
 ${DRUPAL_ROOT}/modules/system/admin-rtl.css
