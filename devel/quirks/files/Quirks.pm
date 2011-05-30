@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.51 2011/05/23 22:58:35 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.52 2011/05/30 09:15:16 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -202,6 +202,7 @@ my $stem_extensions = {
 	'hs-xhtml' => 'ghc',
 	'tomboy' => 'gnote',
 	'dovecot-sieve' => 'dovecot-pigeonhole',
+	'wormux' => 'warmux',
 };
 
 # ->is_base_system($handle, $state):
