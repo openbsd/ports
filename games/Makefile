@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.223 2011/05/27 07:20:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.224 2011/05/30 09:14:52 landry Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -184,7 +184,7 @@
      SUBDIR += widelands
      SUBDIR += wmminichess
      SUBDIR += wmtictactoe
-     SUBDIR += wormux
+     SUBDIR += warmux
      SUBDIR += wtf
      SUBDIR += xasteroids
      SUBDIR += xbat
