@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/05/28 08:15:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/05/30 12:53:07 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	gettext(1) files editor for GNOME
 GNOME_PROJECT=	gtranslator
 GNOME_VERSION=	1.9.13
 
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	textproc devel
 
@@ -41,7 +41,7 @@ LIB_DEPENDS=	x11/gnome/gdl \
 		x11/gnome/utils \
 		x11/gtksourceview \
 		textproc/gtkspell \
-		x11/gnome/gucharmap,gtk2 \
+		STEM-*-gtk2:x11/gnome/gucharmap,gtk2 \
 		x11/gnome/libgda \
 		devel/libunique \
 		devel/json-glib
