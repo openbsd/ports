@@ -1,12 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/11/08 20:08:55 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/30 23:55:18 kili Exp $
 @bin bin/gummi
 @man man/man1/gummi.1
 share/applications/gummi.desktop
 share/gummi/
-share/gummi/gummi.glade
-share/gummi/gummi.png
-share/gummi/icon.png
-share/gummi/prefs.glade
+share/gummi/icons/
+share/gummi/icons/gummi.png
+share/gummi/icons/icon.png
+share/gummi/snippets/
+share/gummi/snippets/snippets.cfg
+share/gummi/snippets/snippets.lang
+share/gummi/ui/
+share/gummi/ui/gummi.glade
+share/gummi/ui/prefs.glade
+share/gummi/ui/snippets.glade
 share/pixmaps/
 share/pixmaps/gummi.png
 @exec %D/bin/update-desktop-database
