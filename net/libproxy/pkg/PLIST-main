@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.3 2011/05/15 09:34:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.4 2011/05/30 13:02:26 ajacoutot Exp $
 @conflict libproxy-gnome-*
-@pkgpath net/libproxy,gnome
+@pkgpath net/libproxy,-gnome
 @bin bin/proxy
 include/proxy.h
 @lib lib/libmodman.so.${LIBmodman_VERSION}
