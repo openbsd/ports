@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.120 2011/05/28 21:15:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.121 2011/05/31 07:53:30 jasper Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -8,7 +8,7 @@ DISTNAME=		glib-${VERSION}
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
 
-REVISION-main=		5
+REVISION-main=		6
 
 CATEGORIES=		devel
 
