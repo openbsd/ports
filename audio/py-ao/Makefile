@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/05/31 07:21:04 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Python wrapper module for the ao library
 
-DISTNAME=	pyao-0.82
+MODPY_EGG_VERSION=0.82
+DISTNAME=	pyao-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION =	5
+REVISION =	6
 CATEGORIES=	audio
 HOMEPAGE=	http://ekyo.nerim.net/software/pyogg/
 
@@ -26,13 +27,14 @@ LIB_DEPENDS=	audio/libao
 
 NO_REGRESS=	Yes
 
+MODPY_ADJ_FILES=	test.py
+
 EXAMPLESDIR=	${PREFIX}/share/examples/py-ao
 
 do-configure:
 	@cd ${WRKSRC} && ${MODPY_BIN} ./config_unix.py --prefix ${PREFIX} 
 
 post-install:
-	@perl -pi -e 's,/usr/bin/python,${MODPY_BIN},g' ${WRKSRC}/test.py
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/test.py ${EXAMPLESDIR}
 
