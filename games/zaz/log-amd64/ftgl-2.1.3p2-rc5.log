@@ -1,9 +1,0 @@
-+++ Tue May 31 19:45:19 CEST 2011
-===> Updating for ftgl-2.1.3p2-rc5
-===>  Verifying specs: GL GLU ICE SM X11 Xau Xdmcp Xext Xmu Xt freetype m  pthread-stubs xcb z
-===>  found GL.10.0 GLU.7.0 ICE.9.0 SM.8.0 X11.14.0 Xau.9.0 Xdmcp.10.0 Xext.11.0 Xmu.10.0 Xt.10.0 freetype.17.2 m.5.3 pthread-stubs.1.0 xcb.2.2 z.4.1
-Upgrading from ftgl-2.1.3p1-rc5
-quirks-1.43->quirks-1.43: ok
-ftgl-2.1.3p1-rc5->ftgl-2.1.3p2-rc5: ok
-Read shared items: ok
---- Tue May 31 19:45:42 CEST 2011
