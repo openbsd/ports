@@ -1,0 +1,16 @@
+$OpenBSD: patch-schemas_org_gnome_desktop_screensaver_gschema_xml_in_in,v 1.1 2011/05/31 10:48:21 ajacoutot Exp $
+
+By default it is not possible to run >1 instance of X(7) under OpenBSD
+at securelevel(7) 1, hence it is not possible to switch user.
+
+--- schemas/org.gnome.desktop.screensaver.gschema.xml.in.in.orig	Tue May 31 12:44:50 2011
++++ schemas/org.gnome.desktop.screensaver.gschema.xml.in.in	Tue May 31 12:45:00 2011
+@@ -41,7 +41,7 @@
+       <_description>The command to invoke when the logout button is clicked.  This command should simply log the user out without any interaction. This key has effect only if the "logout_enable" key is set to TRUE.</_description>
+     </key>
+     <key name="user-switch-enabled" type="b">
+-      <default>true</default>
++      <default>false</default>
+       <_summary>Allow user switching</_summary>
+       <_description>Set this to TRUE to offer an option in the unlock dialog to switch to a different user account.</_description>
+     </key>
