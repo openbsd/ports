@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_gs-auth-pam_c,v 1.1.1.1 2011/05/31 13:00:33 ajacoutot Exp $
+$OpenBSD: patch-src_gs-auth-pam_c,v 1.2 2011/05/31 14:27:49 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=651554
+
 --- src/gs-auth-pam.c.orig	Fri Oct  1 14:32:08 2010
 +++ src/gs-auth-pam.c	Tue May 31 11:45:10 2011
 @@ -24,6 +24,8 @@

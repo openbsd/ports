@@ -1,6 +1,9 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2011/05/31 13:00:33 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2011/05/31 14:27:49 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=651554
+
 --- configure.ac.orig	Mon Apr  4 16:27:55 2011
-+++ configure.ac	Tue May 31 12:30:59 2011
++++ configure.ac	Tue May 31 16:10:13 2011
 @@ -459,6 +459,38 @@ if test "$ac_macosx" = yes; then
  fi
  
@@ -32,7 +35,7 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2011/05/31 13:00:33 ajacoutot Exp $
 +      [have_bsdauth=yes],
 +      [have_bsdauth=no])])
 +  if test "$have_bsdauth" = yes; then
-+    AC_DEFINE(HAVE_BSDAUTH, 1, [Define if you have bsd_auth(3) authentication])
++    AC_DEFINE(HAVE_BSDAUTH, 1, [Define to 1 if using bsd_auth(3) authentication])
 +  fi
 +fi
 +
@@ -51,15 +54,16 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2011/05/31 13:00:33 ajacoutot Exp $
  fi
  AC_SUBST(HAVE_PAM)
  AC_SUBST(AUTH_LIBS)
-@@ -717,7 +751,9 @@ echo "
+@@ -717,7 +751,12 @@ echo "
  
          Screen locking enabled:   ${enable_locking}
          Show keyboard indicator:  ${with_kbd_layout_indicator}
--        PAM prefix:               ${PAM_PREFIX}
--
- "
++"
 +
 +if test "x$have_bsdauth" = "xno" ; then
-+        PAM prefix:               ${PAM_PREFIX}
++echo "\
+         PAM prefix:               ${PAM_PREFIX}
+ 
+ "
 +fi
  

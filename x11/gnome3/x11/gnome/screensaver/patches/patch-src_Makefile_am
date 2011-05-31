@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_Makefile_am,v 1.1.1.1 2011/05/31 13:00:33 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.2 2011/05/31 14:27:49 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=651554
+
 --- src/Makefile.am.orig	Tue Mar  8 15:33:01 2011
 +++ src/Makefile.am	Tue May 31 12:28:14 2011
 @@ -80,6 +80,7 @@ test_passwd_SOURCES = 			\
