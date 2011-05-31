@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/30 22:24:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/05/31 05:44:27 rpointel Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Radix tree implementation for Python
 
 DISTNAME=	py-radix-0.4
-REVISION =	3
+REVISION =	4
 CATEGORIES=	devel net
 MAINTAINER=	Damien Miller <djm@openbsd.org>
 
@@ -19,6 +19,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		lang/python
+
+WANTLIB +=		${MODPY_WANTLIB}
 
 do-regress: fake
 	@cd ${WRKSRC} && ${MAKE_ENV} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/04/25 15:01:28 jolan Exp $
+# $OpenBSD: Makefile,v 1.15 2011/05/31 05:44:27 rpointel Exp $
 
 COMMENT=		rule-based dispatching and generic functions
 
@@ -6,7 +6,7 @@ VERSION=		0.5
 REV=			2306
 DISTNAME=		RuleDispatch
 PKGNAME=		py-ruledispatch-${VERSION}r${REV}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES=		devel
 
@@ -28,6 +28,8 @@ RUN_DEPENDS=		devel/py-protocols
 REGRESS_DEPENDS=	devel/py-protocols
 
 MODPY_SETUPTOOLS=	Yes
+
+WANTLIB +=		${MODPY_WANTLIB}
 
 # make regress happy after fake
 post-install:

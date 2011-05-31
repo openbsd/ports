@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/30 10:53:51 eric Exp $
+# $OpenBSD: Makefile,v 1.12 2011/05/31 05:44:27 rpointel Exp $
 
 COMMENT=	object interface infrastructure from Zope 3
 
 MODPY_EGG_VERSION=	3.6.1
+REVISION=	0
 
 DISTNAME=	zope.interface-${MODPY_EGG_VERSION}
 PKGNAME=	py-zopeinterface-${MODPY_EGG_VERSION}
@@ -23,6 +24,8 @@ MASTER_SITES=	${MASTER_SITE_PYPI:=z/zope.interface/}
 MODULES=	lang/python
 
 MODPY_SETUPTOOLS=	Yes
+
+WANTLIB +=	${MODPY_WANTLIB}
 
 do-regress: install
 	for f in `ls ${WRKSRC}/src/zope/interface/tests/test_*.py`; do \

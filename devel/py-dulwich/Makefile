@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/05/31 05:44:27 rpointel Exp $
 
 COMMENT =	pure Python implementation of Git file formats and protocols
 
 MODPY_EGG_VERSION =	0.6.1
 DISTNAME =		dulwich-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -25,6 +25,8 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_BADEGGS =		dulwich
 
 REGRESS_DEPENDS =	devel/py-nose
+
+WANTLIB +=	${MODPY_WANTLIB}
 
 do-regress:
 	cd ${WRKSRC} && nosetests

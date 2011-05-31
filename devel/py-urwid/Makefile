@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/05/31 05:44:27 rpointel Exp $
 
 COMMENT =	console user interface library for python
 
 MODPY_EGG_VERSION = 0.9.9.1
 DISTNAME =	urwid-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://excess.org/urwid/
@@ -25,6 +26,8 @@ MODPY_SETUPTOOLS = Yes
 MODPY_BADEGGS =	urwid
 
 PKG_ARCH =	*
+
+WANTLIB +=	${MODPY_WANTLIB}
 
 do-regress:
 	@cd ${WRKSRC} && ${MODPY_BIN} ./test_urwid.py

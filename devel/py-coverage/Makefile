@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/03/31 22:56:28 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/31 05:44:26 rpointel Exp $
 
 COMMENT =	code coverage measurement for Python
 
 MODPY_EGG_VERSION = 3.4
 DISTNAME =	coverage-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -23,5 +24,7 @@ MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes 
 
 NO_REGRESS =	Yes
+
+WANTLIB +=	${MODPY_WANTLIB}
 
 .include <bsd.port.mk>

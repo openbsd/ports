@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/05/31 05:44:27 rpointel Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	Python bindings for the SILC toolkit
 V=		0.5
 DISTNAME=	pysilc-${V}
 PKGNAME=	py-silc-${V}
-REVISION=	1
+REVISION=	2
 EPOCH=		0
 CATEGORIES=	devel
 
@@ -28,6 +28,7 @@ MODULES=	lang/python converters/libiconv
 
 LIB_DEPENDS=	devel/silc-toolkit
 WANTLIB +=	silc>=7 silcclient>=5
+WANTLIB +=	${MODPY_WANTLIB}
 
 NO_REGRESS=	Yes
 

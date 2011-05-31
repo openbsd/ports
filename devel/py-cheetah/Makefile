@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2011/05/04 09:39:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/05/31 05:44:26 rpointel Exp $
 
 COMMENT=		Python-powered template engine and code generator
 
 VERSION=		2.4.4
+REVISION=		0
 DISTNAME=		Cheetah-${VERSION}
 PKGNAME=		py-cheetah-${VERSION}
 CATEGORIES=		devel textproc
@@ -22,6 +23,8 @@ REGRESS_DEPENDS=	devel/py-cheetah
 MODPY_SETUPTOOLS=	Yes
 MAKE_ENV+=		CHEETAH_USE_SETUPTOOLS=1
 MODPY_BADEGGS=		Cheetah
+
+WANTLIB +=		${MODPY_WANTLIB}
 
 SUBST_VARS=		VERSION
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/31 07:41:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/05/31 05:44:26 rpointel Exp $
 COMMENT=	Python foreign function interface library
 
 DISTNAME=	ctypes-1.0.1
 PKGNAME=	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 CATEGORIES=	devel
 
 MAINTAINER=	Damien Miller <djm@openbsd.org>
@@ -22,6 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/python
 SHARED_ONLY=	Yes
+
+WANTLIB += 	${MODPY_WANTLIB}
 
 do-regress: fake
 	cd ${WRKSRC} && ${SETENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
