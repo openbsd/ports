@@ -1,7 +1,7 @@
-$OpenBSD: patch-util_c,v 1.6 2011/03/06 09:11:57 jakob Exp $
---- util.c.orig	Mon Jan 24 15:24:36 2011
-+++ util.c	Sun Mar  6 10:09:43 2011
-@@ -275,10 +275,10 @@ ldns_init_random(FILE *fd, unsigned int size)
+$OpenBSD: patch-util_c,v 1.7 2011/05/31 17:40:50 jakob Exp $
+--- util.c.orig	Wed May 18 16:15:05 2011
++++ util.c	Tue May 31 19:39:46 2011
+@@ -369,10 +369,10 @@ ldns_init_random(FILE *fd, unsigned int size)
          }
  
  	if (!fd) {
