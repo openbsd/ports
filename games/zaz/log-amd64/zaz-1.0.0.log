@@ -1,0 +1,257 @@
++++ Tue May 31 19:45:17 CEST 2011
+===>  Checking files for zaz-1.0.0
+`/var/ports/distfiles/zaz-1.0.0.tar.bz2' is up to date.
+>> (SHA256) zaz-1.0.0.tar.bz2: OK
+===>  Verifying update for gettext->=0.10.38 in devel/gettext
+===> Returning to build of zaz-1.0.0
+===>  zaz-1.0.0 depends on: gettext->=0.10.38 - found
+===>  Verifying update for metaauto-* in devel/metaauto
+===> Returning to build of zaz-1.0.0
+===>  zaz-1.0.0 depends on: metaauto-* - found
+===>  Verifying update for autoconf-2.65 in devel/autoconf/2.65
+===> Returning to build of zaz-1.0.0
+===>  zaz-1.0.0 depends on: autoconf-2.65 - found
+===>  Verifying update for bzip2-* in archivers/bzip2
+===> Returning to build of zaz-1.0.0
+===>  zaz-1.0.0 depends on: bzip2-* - found
+===>  Verifying update for libvorbis-* in audio/libvorbis
+===> Returning to build of zaz-1.0.0
+===>  zaz-1.0.0 depends on: libvorbis-* - found
+===>  Verifying update for sdl-image-* in devel/sdl-image
+===> Returning to build of zaz-1.0.0
+===>  zaz-1.0.0 depends on: sdl-image-* - found
+===>  Verifying update for sdl-mixer-* in devel/sdl-mixer
+===> Returning to build of zaz-1.0.0
+===>  zaz-1.0.0 depends on: sdl-mixer-* - found
+===>  Verifying update for sdl-net-* in devel/sdl-net
+===> Returning to build of zaz-1.0.0
+===>  zaz-1.0.0 depends on: sdl-net-* - found
+===>  Verifying update for sdl-ttf-* in devel/sdl-ttf
+===> Returning to build of zaz-1.0.0
+===>  zaz-1.0.0 depends on: sdl-ttf-* - found
+===>  Verifying update for ftgl-* in graphics/ftgl
+`/var/ports/bulk/amd64/ftgl-2.1.3p2-rc5' is up to date.
+--- Tue May 31 19:45:19 CEST 2011
++++ Tue May 31 19:45:42 CEST 2011
+===> Returning to build of zaz-1.0.0
+===>  zaz-1.0.0 depends on: ftgl-* - found
+===>  Verifying update for libtheora-* in multimedia/libtheora
+===> Returning to build of zaz-1.0.0
+===>  zaz-1.0.0 depends on: libtheora-* - found
+===>  Verifying update for libiconv-* in converters/libiconv
+===> Returning to build of zaz-1.0.0
+===>  zaz-1.0.0 depends on: libiconv-* - found
+===>  Verifying specs: GL SDL SDL_image c freetype ftgl m ogg pthread stdc++  theoradec theoraenc vorbis vorbisenc vorbisfile z intl>=5 iconv>=6 GL SDL SDL_image c freetype ftgl m ogg pthread stdc++  theoradec theoraenc vorbis vorbisenc vorbisfile z intl>=5 iconv>=6
+===>  found GL.10.0 SDL.8.0 SDL_image.3.0 c.58.2 freetype.17.2 ftgl.0.0 m.5.3 ogg.6.1 pthread.13.1 stdc++.51.0 theoradec.1.1 theoraenc.1.2 vorbis.8.0 vorbisenc.3.1 vorbisfile.6.0 z.4.1 intl.5.0 iconv.6.0
+===>  Extracting for zaz-1.0.0
+===>  Patching for zaz-1.0.0
+===>   Ignoring patchfile patch-configure_ac.orig
+Running autoconf-2.65 in /usr/obj/ports/zaz-1.0.0/zaz-1.0.0
+Running autoheader-2.65 in /usr/obj/ports/zaz-1.0.0/zaz-1.0.0
+===>  Configuring for zaz-1.0.0
+configure: WARNING: unrecognized options: --disable-silent-rules
+configure: loading site script /usr/ports/infrastructure/db/config.site
+checking for a BSD-compatible install... /usr/bin/install -c -o root -g bin
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... mkdir -p
+checking for gawk... (cached) awk
+checking whether make sets $(MAKE)... (cached) yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether NLS is requested... yes
+checking for msgfmt... /usr/local/bin/msgfmt
+checking for gmsgfmt... /usr/local/bin/msgfmt
+checking for xgettext... /usr/local/bin/xgettext
+checking for msgmerge... /usr/local/bin/msgmerge
+checking for style of include used by make... GNU
+checking for gcc... cc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... (cached) o
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether cc accepts -g... (cached) yes
+checking for cc option to accept ISO C89... none needed
+checking dependency style of cc... gcc3
+checking build system type... x86_64-unknown-openbsd4.9
+checking host system type... x86_64-unknown-openbsd4.9
+checking for ld used by GCC... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyCurrent... no
+checking for GNU gettext in libc... no
+checking for iconv... yes
+checking for working iconv... yes
+checking how to link with libiconv... /usr/local/lib/libiconv.so.6.0
+checking for GNU gettext in libintl... yes
+checking whether to use NLS... yes
+checking where the gettext function comes from... external libintl
+checking how to link with libintl... /usr/local/lib/libintl.so.5.0 /usr/local/lib/libiconv.so.6.0
+checking for library containing strerror... none required
+checking whether we are using the GNU C++ compiler... (cached) yes
+checking whether c++ accepts -g... (cached) yes
+checking dependency style of c++... gcc3
+checking for gcc... (cached) cc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether cc accepts -g... (cached) yes
+checking for cc option to accept ISO C89... (cached) none needed
+checking dependency style of cc... (cached) gcc3
+checking how to run the C preprocessor... cc -E
+checking for grep that handles long lines and -e... /usr/local/bin/ggrep
+checking for egrep... /usr/local/bin/ggrep -E
+checking for ANSI C header files... (cached) yes
+checking for ranlib... (cached) ranlib
+checking for pkg-config... /usr/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for ZAZ... yes
+checking for FTGL... yes
+checking for IMG_Load in -lSDL_image... yes
+checking for vorbis_encode_init in -lvorbisenc... yes
+checking for main in -lGL... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for GL/gl.h... (cached) yes
+configure: creating ./config.status
+config.status: creating po/Makefile.in
+config.status: creating Makefile
+config.status: creating data/Makefile
+config.status: creating src/Makefile
+config.status: creating extra/Makefile
+config.status: creating config.h
+config.status: executing po-directories commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: executing depfiles commands
+configure: WARNING: unrecognized options: --disable-silent-rules
+===>  Building for zaz-1.0.0
+make  all-recursive
+Making all in po
+Making all in src
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT main.o -MD -MP -MF .deps/main.Tpo -c -o main.o main.cpp
+mv -f .deps/main.Tpo .deps/main.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT audiobuffer.o -MD -MP -MF .deps/audiobuffer.Tpo -c -o audiobuffer.o audiobuffer.cpp
+mv -f .deps/audiobuffer.Tpo .deps/audiobuffer.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT mixer.o -MD -MP -MF .deps/mixer.Tpo -c -o mixer.o mixer.cpp
+mv -f .deps/mixer.Tpo .deps/mixer.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT oggsample.o -MD -MP -MF .deps/oggsample.Tpo -c -o oggsample.o oggsample.cpp
+mv -f .deps/oggsample.Tpo .deps/oggsample.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT scene.o -MD -MP -MF .deps/scene.Tpo -c -o scene.o scene.cpp
+mv -f .deps/scene.Tpo .deps/scene.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT settings.o -MD -MP -MF .deps/settings.Tpo -c -o settings.o settings.cpp
+mv -f .deps/settings.Tpo .deps/settings.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT wavesample.o -MD -MP -MF .deps/wavesample.Tpo -c -o wavesample.o wavesample.cpp
+mv -f .deps/wavesample.Tpo .deps/wavesample.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT streamingoggsample.o -MD -MP -MF .deps/streamingoggsample.Tpo -c -o streamingoggsample.o streamingoggsample.cpp
+mv -f .deps/streamingoggsample.Tpo .deps/streamingoggsample.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT frame_events.o -MD -MP -MF .deps/frame_events.Tpo -c -o frame_events.o frame_events.cpp
+mv -f .deps/frame_events.Tpo .deps/frame_events.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT ogvexport.o -MD -MP -MF .deps/ogvexport.Tpo -c -o ogvexport.o ogvexport.cpp
+mv -f .deps/ogvexport.Tpo .deps/ogvexport.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT bezier.o -MD -MP -MF .deps/bezier.Tpo -c -o bezier.o bezier.cpp
+mv -f .deps/bezier.Tpo .deps/bezier.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT textureloader.o -MD -MP -MF .deps/textureloader.Tpo -c -o textureloader.o textureloader.cpp
+mv -f .deps/textureloader.Tpo .deps/textureloader.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT player.o -MD -MP -MF .deps/player.Tpo -c -o player.o player.cpp
+mv -f .deps/player.Tpo .deps/player.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT level.o -MD -MP -MF .deps/level.Tpo -c -o level.o level.cpp
+mv -f .deps/level.Tpo .deps/level.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT ballpath.o -MD -MP -MF .deps/ballpath.Tpo -c -o ballpath.o ballpath.cpp
+mv -f .deps/ballpath.Tpo .deps/ballpath.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT game.o -MD -MP -MF .deps/game.Tpo -c -o game.o game.cpp
+mv -f .deps/game.Tpo .deps/game.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT editor.o -MD -MP -MF .deps/editor.Tpo -c -o editor.o editor.cpp
+mv -f .deps/editor.Tpo .deps/editor.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT mainmenu.o -MD -MP -MF .deps/mainmenu.Tpo -c -o mainmenu.o mainmenu.cpp
+mv -f .deps/mainmenu.Tpo .deps/mainmenu.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT menu.o -MD -MP -MF .deps/menu.Tpo -c -o menu.o menu.cpp
+mv -f .deps/menu.Tpo .deps/menu.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT gameloop.o -MD -MP -MF .deps/gameloop.Tpo -c -o gameloop.o gameloop.cpp
+mv -f .deps/gameloop.Tpo .deps/gameloop.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT hiscores.o -MD -MP -MF .deps/hiscores.Tpo -c -o hiscores.o hiscores.cpp
+mv -f .deps/hiscores.Tpo .deps/hiscores.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT lineeditor.o -MD -MP -MF .deps/lineeditor.Tpo -c -o lineeditor.o lineeditor.cpp
+mv -f .deps/lineeditor.Tpo .deps/lineeditor.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT tests.o -MD -MP -MF .deps/tests.Tpo -c -o tests.o tests.cpp
+mv -f .deps/tests.Tpo .deps/tests.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT profile.o -MD -MP -MF .deps/profile.Tpo -c -o profile.o profile.cpp
+mv -f .deps/profile.Tpo .deps/profile.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT directorylister.o -MD -MP -MF .deps/directorylister.Tpo -c -o directorylister.o directorylister.cpp
+mv -f .deps/directorylister.Tpo .deps/directorylister.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT levelset.o -MD -MP -MF .deps/levelset.Tpo -c -o levelset.o levelset.cpp
+mv -f .deps/levelset.Tpo .deps/levelset.Po
+c++ -DHAVE_CONFIG_H -I. -I..   -DPACKAGE_LOCALE_DIR=\""/usr/local/share/locale"\"  -DPACKAGE_SRC_DIR=\""."\"  -DPACKAGE_DATA_DIR=\""/usr/local/share"\" -I/usr/include/freetype2 -DENABLE_SPLASH=true -I/usr/local/include  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread -MT splash.o -MD -MP -MF .deps/splash.Tpo -c -o splash.o splash.cpp
+mv -f .deps/splash.Tpo .deps/splash.Po
+c++  -O2 -pipe  -I/usr/X11R6/include  -I/usr/X11R6/include/freetype2 -pthread   -pthread -L/usr/local/lib -o zaz main.o audiobuffer.o mixer.o  oggsample.o scene.o settings.o  wavesample.o streamingoggsample.o  frame_events.o ogvexport.o bezier.o  textureloader.o player.o level.o  ballpath.o game.o editor.o  mainmenu.o menu.o gameloop.o  hiscores.o lineeditor.o tests.o  profile.o directorylister.o levelset.o  splash.o -L/usr/local/lib -pthread -L/usr/X11R6/lib -R/usr/X11R6/lib -lSDL -lvorbisfile -lvorbis -lm -ltheoraenc -ltheoradec -logg -L/usr/local/lib -L/usr/X11R6/lib -lftgl -lfreetype -lz  /usr/local/lib/libintl.so.5.0 /usr/local/lib/libiconv.so.6.0 -lGL -lvorbisenc -lSDL_image
+scene.o(.text+0x1fa1): In function `Scenes::Scene::Go()':
+: warning: strcpy() is almost always misused, please use strlcpy()
+main.o(.text+0x1206): In function `main':
+: warning: sprintf() is often misused, please use snprintf()
+/usr/local/lib/libvorbis.so.8.0: warning: strcat() is almost always misused, please use strlcat()
+Making all in data
+Making all in extra
+===>  Faking installation for zaz-1.0.0
+Making install in po
+mkdir -p -- /usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share
+installing de.gmo as /usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/locale/de/LC_MESSAGES/zaz.mo
+installing es.gmo as /usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/locale/es/LC_MESSAGES/zaz.mo
+installing pl.gmo as /usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/locale/pl/LC_MESSAGES/zaz.mo
+installing ru.gmo as /usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/locale/ru/LC_MESSAGES/zaz.mo
+installing hu.gmo as /usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/locale/hu/LC_MESSAGES/zaz.mo
+installing it.gmo as /usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/locale/it/LC_MESSAGES/zaz.mo
+installing fr.gmo as /usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/locale/fr/LC_MESSAGES/zaz.mo
+installing tr.gmo as /usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/locale/tr/LC_MESSAGES/zaz.mo
+if test "zaz" = "gettext-tools"; then  mkdir -p -- /usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/gettext/po;  for file in Makefile.in.in remove-potcdate.sin  quot.sed boldquot.sed en@quot.header en@boldquot.header insert-header.sin Rules-quot   Makevars.template; do  install -c -o root -g bin -m 444 ./$file  /usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/gettext/po/$file;  done;  for file in Makevars; do  rm -f /usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/gettext/po/$file;  done;  else  : ;  fi
+Making install in src
+test -z "/usr/local/bin" || mkdir -p "/usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/bin"
+  install -c -s -o root -g bin -m 555 zaz '/usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/bin'
+Making install in data
+test -z "/usr/local/share/zaz" || mkdir -p "/usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/zaz"
+ install -c -o root -g bin -m 444 phbx_logo.png phbx_logo_overlay.png phbx_snd.ogg copyright.txt ptr.png balls1.png balls2.png cb.png bonus1.png bonus2.png bonus3.png bonus4.png bonus5.png explosion.png logo.png gpl3.png font1.ttf player.png FreeSans.ttf FreeMonoBold.ttf mus1.ogg mus2.ogg mus3.ogg mus4.ogg pull.ogg push.ogg ouch.ogg combo.ogg eliminate.ogg roll.ogg bonus.ogg extraball.ogg extralife.ogg timebonus.wav newcolor.ogg failedlevel.ogg menu.lvl levels.list level1.lvl level1.jpg '/usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/zaz'
+ install -c -o root -g bin -m 444 level1_thumb.jpg level2.lvl level2.jpg level2_thumb.jpg level3.lvl level3.jpg level3_thumb.jpg level4.lvl level4.jpg level4_thumb.jpg level5.lvl level5.jpg level5_thumb.jpg level6.lvl level6.jpg level6_thumb.jpg level7.lvl level7.jpg level7_thumb.jpg level8.lvl level8.jpg level8_thumb.jpg level9.lvl level9.jpg level9_thumb.jpg level10.lvl level10.jpg level10_thumb.jpg level11.lvl level11.jpg level11_thumb.jpg level12.lvl level12.jpg level12_thumb.jpg level12_overlay.png level13.lvl level13.jpg level13_thumb.jpg level13_overlay.png level14.lvl '/usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/zaz'
+ install -c -o root -g bin -m 444 level14.jpg level14_thumb.jpg level14_overlay.png level15.lvl level15.jpg level15_thumb.jpg level16.lvl level16.jpg level16_thumb.jpg level16_overlay.png level17.lvl level17.jpg level17_thumb.jpg level17_overlay.png level18.lvl level18.jpg level18_thumb.jpg level19.lvl level19.jpg level19_thumb.jpg level19_overlay.png level20.lvl level20.jpg level20_thumb.jpg level20_overlay.png level21.lvl level21.jpg level21_thumb.jpg level21_overlay.png level22.lvl level22.jpg level22_thumb.jpg level23.lvl level23.jpg level23_thumb.jpg level23_overlay.png pro.set easy.set '/usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/zaz'
+Making install in extra
+test -z "/usr/local/share/applications" || mkdir -p "/usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/applications"
+ install -c -o root -g bin -m 444 zaz.desktop '/usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/applications'
+test -z "/usr/local/share/pixmaps" || mkdir -p "/usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/pixmaps"
+ install -c -o root -g bin -m 444 zaz.xpm '/usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/pixmaps'
+test -z "/usr/local/share/doc/zaz" || mkdir -p "/usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/doc/zaz"
+ install -c -o root -g bin -m 444 README COPYING AUTHORS ChangeLog INSTALL NEWS '/usr/obj/ports/zaz-1.0.0/fake-amd64/usr/local/share/doc/zaz'
+===>  Building package for zaz-1.0.0
+Create /var/ports/packages/amd64/all/zaz-1.0.0.tgz
+[K
+/var/ports/plistdb/amd64/zaz-1.0.0 was updated
+graphics/ftgl:ftgl-*:ftgl-2.1.3p1-rc5 -> graphics/ftgl:ftgl-*:ftgl-2.1.3p2-rc5
+Link to /var/ports/packages/amd64/ftp/zaz-1.0.0.tgz
+Link to /var/ports/packages/amd64/cdrom/zaz-1.0.0.tgz
+===>  Cleaning for zaz-1.0.0
+===> Updating for zaz-1.0.0
+===>  zaz-1.0.0 depends on: desktop-file-utils-* - found
+===>  zaz-1.0.0 depends on: gettext->=0.10.38 - found
+===>  zaz-1.0.0 depends on: libvorbis-* - found
+===>  zaz-1.0.0 depends on: sdl-image-* - found
+===>  zaz-1.0.0 depends on: sdl-mixer-* - found
+===>  zaz-1.0.0 depends on: sdl-net-* - found
+===>  zaz-1.0.0 depends on: sdl-ttf-* - found
+===>  zaz-1.0.0 depends on: ftgl-* - found
+===>  zaz-1.0.0 depends on: libtheora-* - found
+===>  zaz-1.0.0 depends on: libiconv-* - found
+===>  zaz-1.0.0 depends on: metaauto-* - found
+===>  zaz-1.0.0 depends on: autoconf-2.65 - found
+===>  zaz-1.0.0 depends on: bzip2-* - found
+===>  Verifying specs: GL SDL SDL_image c freetype ftgl m ogg pthread stdc++  theoradec theoraenc vorbis vorbisenc vorbisfile z intl>=5 iconv>=6
+===>  found GL.10.0 SDL.8.0 SDL_image.3.0 c.58.2 freetype.17.2 ftgl.0.0 m.5.3 ogg.6.1 pthread.13.1 stdc++.51.0 theoradec.1.1 theoraenc.1.2 vorbis.8.0 vorbisenc.3.1 vorbisfile.6.0 z.4.1 intl.5.0 iconv.6.0
+Upgrading from zaz-1.0.0
+quirks-1.43->quirks-1.43: ok
+zaz-1.0.0->zaz-1.0.0: ok
+Read shared items: ok
+===>  Cleaning for zaz-1.0.0
+      101.61 real        61.08 user        10.94 sys
+--- Tue May 31 19:46:58 CEST 2011

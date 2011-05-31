@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_frame_events_cpp,v 1.1.1.1 2011/05/31 17:51:32 kili Exp $
+--- src/frame_events.cpp.orig	Sun Jan 31 04:55:48 2010
++++ src/frame_events.cpp	Sat May 21 15:32:33 2011
+@@ -46,6 +46,8 @@ FrameEvents::FrameEvents()
+     {
+         buttUp[i] = buttDown[i] = false;
+     }
++    relmouseX = relmouseY = 0;
++    mouseX = mouseY = 0;
+ }
+ 
+ }

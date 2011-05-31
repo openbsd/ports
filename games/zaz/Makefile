@@ -1,0 +1,43 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2011/05/31 17:51:32 kili Exp $
+
+COMMENT =	zuma-like arkade game
+DISTNAME =	zaz-1.0.0
+CATEGORIES =	games
+
+HOMEPAGE =	http://zaz.sourceforge.net/
+
+MAINTAINER =	Matthias Kilian <kili@openbsd.org>
+
+# GPLv3+
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =		Yes
+
+WANTLIB =	GL SDL SDL_image c freetype ftgl m ogg pthread stdc++ \
+		theoradec theoraenc vorbis vorbisenc vorbisfile z
+
+EXTRACT_SUFX =	.tar.bz2
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=zaz/}
+
+MODULES =	devel/gettext
+
+LIB_DEPENDS =	audio/libvorbis \
+		devel/sdl-image \
+		devel/sdl-mixer \
+		devel/sdl-net \
+		devel/sdl-ttf \
+		graphics/ftgl \
+		multimedia/libtheora
+
+RUN_DEPENDS =	devel/desktop-file-utils
+
+AUTOCONF_VERSION =	2.65
+CONFIGURE_STYLE =	gnu autoconf
+CONFIGURE_ENV =		CFLAGS="$(CFLAGS) -I${X11BASE}/include \
+				-I$(X11BASE)/include/freetype2 -pthread" \
+			CXXFLAGS="$(CXXFLAGS) -I${X11BASE}/include \
+				-I$(X11BASE)/include/freetype2 -pthread" \
+			LDFLAGS="-pthread -L${LOCALBASE}/lib"
+
+.include <bsd.port.mk>
