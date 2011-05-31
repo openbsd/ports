@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/27 23:12:07 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/05/31 09:26:39 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/decorator-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/decorator-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/decorator-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -7,5 +7,3 @@ lib/python${MODPY_VERSION}/site-packages/decorator-${MODPY_EGG_VERSION}-py${MODP
 lib/python${MODPY_VERSION}/site-packages/decorator-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/decorator.py
 lib/python${MODPY_VERSION}/site-packages/decorator.pyc
-share/doc/py-decorator/
-share/doc/py-decorator/documentation.html

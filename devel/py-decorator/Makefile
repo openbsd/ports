@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/09/16 07:34:25 fgsch Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/31 09:26:39 jasper Exp $
 
 COMMENT =	simplify usage of decorators	
 
-MODPY_EGG_VERSION = 3.2.0
+MODPY_EGG_VERSION = 3.3.1
 DISTNAME =	decorator-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -23,10 +23,5 @@ MODULES =	lang/python
 MODPY_SETUPTOOLS = Yes 
 
 NO_REGRESS =	Yes
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-decorator
-	${INSTALL_DATA} ${WRKSRC}/documentation.html \
-	    ${PREFIX}/share/doc/py-decorator
 
 .include <bsd.port.mk>
