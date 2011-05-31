@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.224 2011/05/30 09:14:52 landry Exp $
+# $OpenBSD: Makefile,v 1.225 2011/05/31 17:52:43 kili Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -234,6 +234,7 @@
      SUBDIR += xzip
      SUBDIR += zangband
      SUBDIR += zangband,no_x11
+     SUBDIR += zaz
      SUBDIR += zoom
      SUBDIR += ztrack
 
