@@ -1,0 +1,23 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2011/05/31 09:19:45 dcoppa Exp $
+
+Fix linking with vorbis libraries
+
+--- setup.py.orig	Tue Jun  1 17:58:01 2010
++++ setup.py	Tue Jun  1 17:58:39 2010
+@@ -43,7 +43,6 @@ data = get_setup()
+ 
+ vorbis_include_dir = data['vorbis_include_dir']
+ vorbis_lib_dir = data['vorbis_lib_dir']
+-vorbis_libs = string.split(data['vorbis_libs'])
+ 
+ ogg_include_dir = data['ogg_include_dir']
+ ogg_lib_dir = data['ogg_lib_dir']
+@@ -61,7 +60,7 @@ vorbismodule = Extension(name='vorbis',
+                                        ogg_include_dir],
+                          library_dirs=[vorbis_lib_dir,
+                                        ogg_lib_dir],
+-                         libraries=vorbis_libs)
++                         libraries=['vorbis', 'vorbisfile', 'vorbisenc', 'ogg'])
+ 
+ setup ( name = "pyvorbis",
+         version = pyvorbis_version,

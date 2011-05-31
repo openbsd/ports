@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_pyvorbisfile_c,v 1.1.1.1 2011/05/31 09:19:45 dcoppa Exp $
+
+Fixes for python2.5 memory management
+Fix redundant double free
+(from Debian's patchset for python-pyvorbis)
+
+--- src/pyvorbisfile.c.orig	Fri Dec 19 08:11:02 2003
++++ src/pyvorbisfile.c	Tue Jun  8 08:27:27 2010
+@@ -171,10 +171,9 @@ py_file_new(PyObject *self, PyObject *args) /* change 
+ 
+   ret = py_ov_open(newobj, args);
+   if (ret == NULL) {
+-    PyMem_DEL(newobj);
++    PyObject_Del(newobj);
+     return NULL;
+-  } else
+-    Py_DECREF(ret);
++  }
+ 
+   return (PyObject *) newobj;
+ }
+@@ -190,12 +189,10 @@ py_ov_file_dealloc(PyObject *self)
+     /* If file was opened from a file object, decref it, so it can
+        close */
+     Py_DECREF(py_self->py_file);
+-  } else {
+-    /* Otherwise, we opened the file and should close it. */
+-    fclose(py_self->c_file);
+   }
+ 
+-  PyMem_DEL(self);
++  free(py_self->ovf);
++  PyObject_Del(self);
+ }
+ 
+ static PyObject *

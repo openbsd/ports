@@ -1,0 +1,126 @@
+$OpenBSD: patch-src_pyvorbisinfo_c,v 1.1.1.1 2011/05/31 09:19:45 dcoppa Exp $
+
+Fixes for python2.5 memory management
+(from Debian's patchset for python-pyvorbis)
+
+--- src/pyvorbisinfo.c.orig	Fri Dec 19 08:51:36 2003
++++ src/pyvorbisinfo.c	Fri May 27 10:36:34 2011
+@@ -72,7 +72,7 @@ PyObject*
+ py_info_new_from_vi(vorbis_info *vi)
+ {
+   py_vinfo *newobj;
+-  newobj = (py_vinfo *) PyObject_NEW(py_vinfo, 
++  newobj = (py_vinfo *) PyObject_New(py_vinfo, 
+                                      &py_vinfo_type);
+   newobj->vi = *vi;
+   return (PyObject *) newobj;
+@@ -134,7 +134,7 @@ py_ov_info_clear(PyObject *self, PyObject *args)
+ static void
+ py_ov_info_dealloc(PyObject *self)
+ {
+-  PyMem_DEL(self);
++  PyObject_Del(self);
+ }
+ 
+ #define CMP_RET(x) \
+@@ -225,17 +225,21 @@ static PyObject *
+ py_vorbis_analysis_init(PyObject *self, PyObject *args)
+ {
+   int res;
++  py_dsp *ret;
++  py_vinfo *py_vi = (py_vinfo *) self;
+ 
+-  py_vinfo *ovi_self = (py_vinfo *) self;
+-  vorbis_dsp_state vd;
+-
+   if (!PyArg_ParseTuple(args, ""))
+     return NULL;
+ 
+-  if ((res = vorbis_analysis_init(&vd, &ovi_self->vi)))
+-    return v_error_from_code(res, "vorbis_analysis_init");
++  ret = (py_dsp *) py_dsp_alloc((PyObject*) py_vi);
++  if (ret == NULL)
++    return NULL;
+ 
+-  return py_dsp_from_dsp(&vd, self);
++  if ((res = vorbis_analysis_init(&ret->vd, &py_vi->vi))) {
++    py_dsp_dealloc((PyObject *) py_vi);
++    return v_error_from_code(res, "vorbis_analysis_init");
++  }
++  return (PyObject*) ret;
+ }
+ 
+ /*  
+@@ -300,7 +304,7 @@ static int py_comment_assign(py_vcomment *, 
+ static PyObject *py_comment_subscript(py_vcomment *, PyObject *);
+ 
+ static PyMappingMethods py_vcomment_Mapping_Methods = {
+-  (inquiry) py_comment_length,
++  (lenfunc) py_comment_length,
+   (binaryfunc) py_comment_subscript,
+   (objobjargproc) py_comment_assign
+ };
+@@ -360,7 +364,7 @@ py_comment_new_from_vc(vorbis_comment *vc, PyObject *p
+ {
+   py_vcomment *newobj;
+ 
+-  newobj = (py_vcomment *) PyObject_NEW(py_vcomment, 
++  newobj = (py_vcomment *) PyObject_New(py_vcomment, 
+                                         &py_vcomment_type);
+   newobj->vc = vc;
+   newobj->parent = parent;
+@@ -373,7 +377,7 @@ static PyObject *
+ py_comment_new_empty(void)
+ {
+   py_vcomment *newobj;
+-  newobj = (py_vcomment *) PyObject_NEW(py_vcomment, 
++  newobj = (py_vcomment *) PyObject_New(py_vcomment, 
+                                         &py_vcomment_type);
+   if (!newobj)
+     return NULL;
+@@ -418,7 +422,7 @@ py_vorbis_comment_dealloc(PyObject *self)
+     free(ovc_self->vc);
+   }
+ 
+-  PyMem_DEL(self);
++  PyObject_Del(self);
+ }
+ 
+ 
+@@ -644,7 +648,8 @@ py_comment_keys(PyObject *self, PyObject *args)
+ static PyObject *
+ py_comment_items(PyObject *self, PyObject *args)
+ {
+-  int curitem, curpos, j;
++  Py_ssize_t curitem, curpos;
++  int j;
+   PyObject *key, *val, *curval, *tuple;
+   PyObject *retlist;
+   PyObject *dict;
+@@ -682,7 +687,8 @@ py_comment_items(PyObject *self, PyObject *args)
+ static PyObject *
+ py_comment_values(PyObject *self, PyObject *args)
+ {
+-  int curitem, curpos, j;
++  Py_ssize_t curitem, curpos;
++  int j;
+   PyObject *key, *val, *curval;
+   PyObject *retlist;
+   PyObject *dict;
+@@ -942,7 +948,7 @@ py_comment_new(PyObject *self, PyObject *args)
+   vcomment = create_comment_from_dict(dict);
+   if (!vcomment)
+     return NULL;
+-  pvc = (py_vcomment *) PyObject_NEW(py_vcomment,
++  pvc = (py_vcomment *) PyObject_New(py_vcomment,
+                                      &py_vcomment_type);
+   if (!pvc) {
+     vorbis_comment_clear(vcomment);
+@@ -999,6 +1005,7 @@ py_comment_as_dict(PyObject *self, PyObject *args)
+ #if PY_UNICODE
+       item = PyUnicode_DecodeUTF8(val, vallen, NULL);
+       if (!item) {
++        PyErr_Clear();
+         /* To deal with non-UTF8 comments (against the standard) */
+         item = PyString_FromStringAndSize(val, vallen); 
+       } 

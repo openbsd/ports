@@ -1,0 +1,65 @@
+$OpenBSD: patch-test_ogg123_py,v 1.1.1.1 2011/05/31 09:19:45 dcoppa Exp $
+
+whrandom in python2.4 is deprecated, and in python2.5 is gone: use
+the 'random' module which is a drop-in replacement
+Use py-ao as backend
+(from Debian's patchset for python-pyvorbis)
+
+Use sndio as default libao backend
+
+--- test/ogg123.py.orig	Mon Oct  7 01:04:59 2002
++++ test/ogg123.py	Tue Jun  8 08:24:59 2010
+@@ -17,7 +17,7 @@ import sys
+ import string
+ import re
+ import os
+-import whrandom
++import random
+ import time
+ 
+ import ogg.vorbis
+@@ -98,7 +98,7 @@ class AOPlayer(Player):
+     def __init__(self, id=None):
+         import ao
+         if id is None:
+-            id = ao.driver_id('esd')
++            id = ao.driver_id('sndio')
+         self.dev = ao.AudioDevice(id)
+ 
+     def write(self, buff, bytes):
+@@ -165,9 +165,10 @@ def main():
+             sys.exit(0)
+ 
+         elif arg == '-d' or arg == '--device':
++            import ao
+             try:
+-                driver_id = ao_get_driver_id(val)
+-            except aoError:
++                driver_id = ao.driver_id(val)
++            except ao.aoError:
+                 sys.stderr.write('No such device %s\n' % val)
+                 sys.exit(1)
+                 
+@@ -188,7 +189,7 @@ def main():
+             verbose = 0
+ 
+         elif arg == '-z' or arg == '--shuffle':
+-            ri = whrandom.randrange
++            ri = random.randrange
+             for pos in range(len(args)):
+                 newpos = ri(pos, len(args))
+                 tmp = args[pos]
+@@ -199,7 +200,12 @@ def main():
+         usage()
+         sys.exit(0)
+ 
+-    myplayer = choices[modchoice]() # Either AOPlayer or LADPlayer
++    if modchoice == 'ao' and driver_id:
++        playerargs = (driver_id,)
++    else:
++        playerargs = ()
++
++    myplayer = apply(choices[modchoice],playerargs) # Either AOPlayer or LADPlayer
+     if verbose:
+         print "Module choice: %s" % modchoice
+ 

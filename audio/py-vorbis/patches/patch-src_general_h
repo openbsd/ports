@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_general_h,v 1.1.1.1 2011/05/31 09:19:45 dcoppa Exp $
+
+Avoid unused symbol warnings from the static callbacks defined in
+vorbisfile.h (see http://svn.xiph.org/trunk/vorbis/CHANGES)
+
+--- src/general.h.orig	Tue Jun  8 11:31:58 2010
++++ src/general.h	Tue Jun  8 11:32:34 2010
+@@ -7,6 +7,8 @@
+ #define MSG_SIZE 256
+ #define KEY_SIZE 1024
+ 
++#define OV_EXCLUDE_STATIC_CALLBACKS
++
+ #define PY_UNICODE (PY_VERSION_HEX >= 0x01060000)
+ 
+ ogg_int64_t arg_to_64(PyObject *longobj);

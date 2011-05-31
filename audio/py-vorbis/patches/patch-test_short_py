@@ -1,0 +1,15 @@
+$OpenBSD: patch-test_short_py,v 1.1.1.1 2011/05/31 09:19:45 dcoppa Exp $
+
+Use sndio as default libao backend
+
+--- test/short.py.orig	Tue Jun  8 08:24:43 2010
++++ test/short.py	Tue Jun  8 08:25:09 2010
+@@ -6,7 +6,7 @@ import ogg.vorbis
+ import ao
+ 
+ filename = 'test.ogg'
+-device = 'esd'
++device = 'sndio'
+ SIZE = 4096
+ 
+ vf = ogg.vorbis.VorbisFile(filename)

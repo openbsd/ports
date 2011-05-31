@@ -1,0 +1,177 @@
+$OpenBSD: patch-src_pyvorbiscodec_c,v 1.1.1.1 2011/05/31 09:19:45 dcoppa Exp $
+
+Fixes for python2.5 memory management
+(from Debian's patchset for python-pyvorbis)
+
+--- src/pyvorbiscodec.c.orig	Tue May 13 10:17:13 2003
++++ src/pyvorbiscodec.c	Fri May 27 10:36:17 2011
+@@ -29,7 +29,6 @@ FDEF(dsp_write_wav) "Write audio data to the dsp devic
+ FDEF(dsp_close) "Signal that all audio data has been written to the object.";
+ FDEF(vorbis_bitrate_flushpacket) "";
+ 
+-static void py_dsp_dealloc(PyObject *);
+ static PyObject *py_dsp_getattr(PyObject *, char*);
+ 
+ char py_dsp_doc[] = "";
+@@ -82,14 +81,11 @@ static PyMethodDef DSP_methods[] = {
+ };
+ 
+ PyObject *
+-py_dsp_from_dsp(vorbis_dsp_state *vd, PyObject *parent)
++py_dsp_alloc(PyObject *parent)
+ {
+-  py_dsp *ret = (py_dsp *) PyObject_NEW(py_dsp, &py_dsp_type);
+-
++  py_dsp *ret = (py_dsp *) PyObject_New(py_dsp, &py_dsp_type);
+   if (ret == NULL) 
+     return NULL;
+-  
+-  ret->vd = *vd;
+   ret->parent = parent;
+   Py_XINCREF(parent);
+   return (PyObject *) ret;
+@@ -100,25 +96,23 @@ py_dsp_new(PyObject *self, PyObject *args)
+ {
+   py_vinfo* py_vi;
+   py_dsp *ret;
+-  vorbis_info *vi;
+-  vorbis_dsp_state vd;
+   
+   if (!PyArg_ParseTuple(args, "O!", &py_vinfo_type, &py_vi))
+     return NULL;
+   
+-  ret = (py_dsp *) PyObject_NEW(py_dsp, &py_dsp_type);
+-  ret->parent = NULL;
+-  vi = &py_vi->vi;
+-  vorbis_synthesis_init(&vd, vi);
+-  return py_dsp_from_dsp(&vd, (PyObject *) py_vi);
++  ret = (py_dsp *) py_dsp_alloc((PyObject*) py_vi);
++  if (ret == NULL)
++    return NULL;
++  vorbis_synthesis_init(&ret->vd, &py_vi->vi);
++  return (PyObject *) ret;
+ }
+ 
+-static void
++void
+ py_dsp_dealloc(PyObject *self)
+ {
+   vorbis_dsp_clear(PY_DSP(self));
+   Py_XDECREF(((py_dsp *)self)->parent);
+-  PyMem_DEL(self);
++  PyObject_Del(self);
+ }
+ 
+ static PyObject*
+@@ -127,21 +121,26 @@ py_dsp_getattr(PyObject *self, char *name)
+   return Py_FindMethod(DSP_methods, self, name);
+ }
+ 
++static void py_block_dealloc(PyObject *);
++PyObject * py_block_alloc(PyObject *parent);
++
+ static PyObject *
+ py_vorbis_analysis_blockout(PyObject *self, PyObject *args)
+ {
+-  vorbis_block vb;
+-  int ret;
+   py_dsp *dsp_self = (py_dsp *) self;
++  py_block* py_vb;
+ 
+   if (!PyArg_ParseTuple(args, ""))
+     return NULL;
+ 
+-  vorbis_block_init(&dsp_self->vd, &vb);
+-  ret = vorbis_analysis_blockout(&dsp_self->vd, &vb);
+-  if (ret == 1)
+-    return py_block_from_block(&vb, self);
++  py_vb = (py_block*) py_block_alloc(self);
++  if (py_vb == NULL)
++    return NULL;
++
++  if (vorbis_analysis_blockout(&dsp_self->vd, &py_vb->vb) == 1)
++    return (PyObject*) py_vb;
+   else {
++    py_block_dealloc((PyObject*) py_vb);
+     Py_INCREF(Py_None);
+     return Py_None;
+   }
+@@ -207,16 +206,16 @@ py_vorbis_analysis_headerout(PyObject *self, PyObject 
+ static PyObject *
+ py_vorbis_block_init(PyObject *self, PyObject *args)
+ {
+-  vorbis_block vb;
+-  py_dsp *dsp_self = (py_dsp *) self;
+-  PyObject *ret;
++  py_block *py_vb;
+ 
+   if (!PyArg_ParseTuple(args, ""))
+     return NULL;
+ 
+-  vorbis_block_init(&dsp_self->vd,&vb);
+-  ret = py_block_from_block(&vb, self);
+-  return ret;
++  py_vb = (py_block*) py_block_alloc(self);
++  if (py_vb == NULL)
++    return NULL;
++
++  return (PyObject*) py_vb;
+ }
+ 
+ /* Returns "len" if all arguments are strings of the same length, 
+@@ -397,7 +396,6 @@ py_vorbis_bitrate_flushpacket(PyObject *self, PyObject
+ /*********************************************************
+ 			VorbisBlock
+ *********************************************************/
+-static void py_block_dealloc(PyObject *);
+ static PyObject *py_block_getattr(PyObject *, char*);
+ 
+ FDEF(vorbis_analysis) "Output an OggPage.";
+@@ -442,12 +440,25 @@ static PyMethodDef Block_methods[] = {
+   {NULL, NULL}
+ };
+ 
++PyObject *
++py_block_alloc(PyObject *parent)
++{
++  py_block *ret = (py_block *) PyObject_New(py_block, 
++					    &py_block_type);
++  if (ret == NULL)
++    return NULL;
++  vorbis_block_init(PY_DSP(parent), PY_BLOCK(ret));
++  ret->parent = parent;
++  Py_XINCREF(parent);
++  return (PyObject *)ret;
++}
++
+ static void
+ py_block_dealloc(PyObject *self)
+ {
+   vorbis_block_clear(PY_BLOCK(self));
+   Py_XDECREF(((py_block *)self)->parent);
+-  PyMem_DEL(self);
++  PyObject_Del(self);
+ }
+ 
+ static PyObject*
+@@ -488,20 +499,4 @@ py_vorbis_bitrate_addblock(PyObject *self, PyObject *a
+   Py_INCREF(Py_None);
+   return Py_None;
+ }
+-
+-PyObject *
+-py_block_from_block(vorbis_block *vb, PyObject *parent)
+-{
+-  py_block *ret = (py_block *) PyObject_NEW(py_block, 
+-					    &py_block_type);
+-  if (ret == NULL)
+-    return NULL;
+-  
+-  ret->vb = *vb;
+-  ret->parent = parent;
+-  Py_XINCREF(parent);
+-  return (PyObject *)ret;
+-}
+-
+-
+ 

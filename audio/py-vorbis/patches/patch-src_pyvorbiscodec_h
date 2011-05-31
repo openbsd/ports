@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_pyvorbiscodec_h,v 1.1.1.1 2011/05/31 09:19:45 dcoppa Exp $
+
+Fixes for python2.5 memory management
+(from Debian's patchset for python-pyvorbis)
+
+--- src/pyvorbiscodec.h.orig	Mon Oct  7 01:04:59 2002
++++ src/pyvorbiscodec.h	Tue Jun  8 08:21:46 2010
+@@ -22,8 +22,8 @@ typedef struct {
+ extern PyTypeObject py_dsp_type;
+ extern PyTypeObject py_block_type;
+ 
+-PyObject *py_dsp_from_dsp(vorbis_dsp_state *vd, PyObject *parent);
+-PyObject *py_block_from_block(vorbis_block *vb, PyObject *parent);
++PyObject *py_dsp_alloc(PyObject *parent);
++void py_dsp_dealloc(PyObject *self);
+ 
+ #endif /* __VORBISCODEC_H__ */
+ 
