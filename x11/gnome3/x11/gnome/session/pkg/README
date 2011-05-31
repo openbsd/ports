@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2011/05/23 21:32:47 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2011/05/31 15:00:45 ajacoutot Exp $
 
 Running GNOME on OpenBSD
 ========================
@@ -16,14 +16,10 @@ install at least the following packages:
 	gnome-audio \
 	gnome-control-center \
 	gnome-keyring \
-	gnome-media \
 	gnome-power-manager \
-	gnome-screensaver \
 	gnome-system-monitor \
 	gnome-terminal \
 	gnome-utils
-
-(xscreensaver can be used instead of gnome-screensaver)
 
 Login into GNOME
 ----------------
@@ -79,7 +75,7 @@ related ports under the x11/gnome category)
    * devhelp - API documentation browser
    * gedit-plugins - plugins for Gedit
    * ghex - HEX editor
-   * glade3 - user interface builder
+   * glade - user interface builder
    * gnome-devel-docs - developer documentation
    * gnome-development-monitor - GUI to follow GNOME development activity
 
