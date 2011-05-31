@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/05/28 08:15:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/05/31 14:38:24 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.0.2
 
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		x11
 
@@ -43,6 +43,7 @@ RUN_DEPENDS=	x11/gnome/settings-daemon \
 
 # gnome.session+gnome-fallback.session RequiredComponents.
 RUN_DEPENDS+=	notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon \
+		devel/gsettings-desktop-schemas # org.gnome.desktop.session.gschema.xml
 
 # gnome.session RequiredComponents.
 #RUN_DEPENDS+=	x11/gnome/shell
