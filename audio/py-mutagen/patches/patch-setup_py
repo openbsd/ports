@@ -1,8 +1,8 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2009/01/29 17:44:27 sthen Exp $
---- setup.py.orig	Mon Jan 19 19:19:52 2009
-+++ setup.py	Mon Jan 19 19:20:13 2009
-@@ -191,7 +191,7 @@ class coverage_cmd(Command):
-             100.0 * (total_lines - bad_lines) / float(total_lines))
+$OpenBSD: patch-setup_py,v 1.2 2011/05/31 09:49:52 dcoppa Exp $
+--- setup.py.orig	Thu Oct  8 09:26:23 2009
++++ setup.py	Thu May 26 12:02:03 2011
+@@ -196,7 +196,7 @@ class coverage_cmd(Command):
+             raise SystemExit("Coverage percentage went up; change setup.py.")
  
  if os.name == "posix":
 -    data_files = [('share/man/man1', glob.glob("man/*.1"))]

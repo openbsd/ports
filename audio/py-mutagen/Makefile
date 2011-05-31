@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 16:52:47 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/31 09:49:52 dcoppa Exp $
 
 COMMENT =	Python module to handle audio metadata 
 
-MODPY_EGG_VERSION = 1.15
+MODPY_EGG_VERSION = 1.20
 DISTNAME =	mutagen-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 CATEGORIES =	audio
 
-HOMEPAGE =	http://code.google.com/p/quodlibet/wiki/Development/Mutagen
+HOMEPAGE =	http://mutagen.googlecode.com/
 
-MASTER_SITES =	http://quodlibet.googlecode.com/files/
+MASTER_SITES =	${HOMEPAGE}files/
 
 # GPLv2 
 PERMIT_PACKAGE_CDROM =	Yes
@@ -20,8 +19,23 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		lang/python
 
-USE_GROFF =	Yes
+MODPY_ADJ_FILES =	mutagen/__init__.py \
+			tools/mid3iconv \
+			tools/mid3v2 \
+			tools/moggsplit \
+			tools/mutagen-inspect \
+			tools/mutagen-pony
+
+REGRESS_DEPENDS =	audio/faad \
+			audio/flac \
+			audio/py-eyed3 \
+			audio/py-vorbis \
+			audio/vorbis-tools \
+			multimedia/oggz
 REGRESS_TARGET =	test
+
+pre-build:
+	@rm ${WRKDIST}/tools/*.orig
 
 do-regress:
 	${_MODPY_CMD} ${REGRESS_TARGET}
