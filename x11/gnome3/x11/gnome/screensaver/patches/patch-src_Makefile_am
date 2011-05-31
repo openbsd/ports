@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_Makefile_am,v 1.1.1.1 2011/05/31 13:00:33 ajacoutot Exp $
+--- src/Makefile.am.orig	Tue Mar  8 15:33:01 2011
++++ src/Makefile.am	Tue May 31 12:28:14 2011
+@@ -80,6 +80,7 @@ test_passwd_SOURCES = 			\
+ 	test-passwd.c 			\
+ 	gs-auth.h			\
+ 	gs-auth-pam.c			\
++	gs-auth-bsdauth.c		\
+ 	setuid.c			\
+ 	setuid.h			\
+ 	subprocs.c			\
+@@ -138,6 +139,7 @@ gnome_screensaver_dialog_SOURCES = 	\
+ 	subprocs.h			\
+ 	gs-auth.h			\
+ 	gs-auth-pam.c			\
++	gs-auth-bsdauth.c		\
+ 	$(NULL)
+ 
+ gnome_screensaver_dialog_LDADD =	\
+@@ -213,8 +215,7 @@ install-exec-hook:
+ 	@if [ "x@NEED_SETUID@" = "xyes" ]; then \
+ 	    echo "***" ; \
+ 	    echo "***  Warning: gnome-screensaver has been compiled with support for" ; \
+-	    echo "***           shadow passwords.  If your system actually uses shadow" ; \
+-	    echo "***           passwords then it must be installed as a setuid root" ; \
++	    echo "***           bsdauth(3) and must be installed as a setuid root" ; \
+ 	    echo "***           program in order for locking to work.  To do this, you" ; \
+ 	    echo "***           must run:" ; \
+ 	    echo "***" ; \

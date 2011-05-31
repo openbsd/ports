@@ -1,0 +1,65 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2011/05/31 13:00:33 ajacoutot Exp $
+--- configure.ac.orig	Mon Apr  4 16:27:55 2011
++++ configure.ac	Tue May 31 12:30:59 2011
+@@ -459,6 +459,38 @@ if test "$ac_macosx" = yes; then
+ fi
+ 
+ dnl ---------------------------------------------------------------------------
++dnl - Check for bsd_auth(3) (OpenBSD)
++dnl ---------------------------------------------------------------------------
++
++have_bsdauth=no
++with_bsdauth_req=unspecified
++
++case "$host" in                                                                                       
++  *-openbsd*)                                                                                         
++    have_bsdauth=yes
++    NEED_SETUID=no
++    if test "x$enable_locking" = "xyes"; then
++      with_bsdauth_req=yes
++      NEED_SETUID=yes
++    fi
++    AC_SUBST(NEED_SETUID)
++esac  
++
++if test "$have_bsdauth" = yes ; then
++  AC_CACHE_CHECK([for BSD Authentication], ac_cv_bsdauth,
++    [AC_TRY_X_COMPILE([#include <stdlib.h>
++                       #include <unistd.h>
++                       #include <sys/types.h>
++                       #include <bsd_auth.h>],
++      [int ok = auth_userokay("x", 0, "x", "x");],
++      [have_bsdauth=yes],
++      [have_bsdauth=no])])
++  if test "$have_bsdauth" = yes; then
++    AC_DEFINE(HAVE_BSDAUTH, 1, [Define if you have bsd_auth(3) authentication])
++  fi
++fi
++
++dnl ---------------------------------------------------------------------------
+ dnl - Check for PAM
+ dnl ---------------------------------------------------------------------------
+ 
+@@ -518,7 +550,9 @@ if test "x$have_pam" = "xyes"; then
+         fi
+ 
+ else
+-	AC_MSG_ERROR("PAM libraries not found")
++	if test "x$have_bsdauth" = "xno" ; then
++	    AC_MSG_ERROR("PAM libraries not found")
++	fi
+ fi
+ AC_SUBST(HAVE_PAM)
+ AC_SUBST(AUTH_LIBS)
+@@ -717,7 +751,9 @@ echo "
+ 
+         Screen locking enabled:   ${enable_locking}
+         Show keyboard indicator:  ${with_kbd_layout_indicator}
+-        PAM prefix:               ${PAM_PREFIX}
+-
+ "
++
++if test "x$have_bsdauth" = "xno" ; then
++        PAM prefix:               ${PAM_PREFIX}
++fi
+ 
