@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.326 2011/05/20 10:10:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.327 2011/05/31 12:25:55 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -51,6 +51,7 @@
      SUBDIR += hs-bytestring-show
      SUBDIR += hs-heist
      SUBDIR += hs-hexpat
+     SUBDIR += hs-polyparse
      SUBDIR += hs-xml
      SUBDIR += html
      SUBDIR += hunspell
