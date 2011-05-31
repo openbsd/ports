@@ -1,4 +1,4 @@
-/* $OpenBSD: procmap.c,v 1.4 2011/05/26 17:47:25 jasper Exp $	*/
+/* $OpenBSD: procmap.c,v 1.5 2011/05/31 14:02:26 jasper Exp $	*/
 
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
@@ -167,7 +167,7 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_map *buf,
 	GArray *maps = g_array_sized_new(FALSE, FALSE,
 					 sizeof(glibtop_map_entry),
 					 100);
-	int count, i = 0;
+	int count = 0;
 
 	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_MAP), 0);
 

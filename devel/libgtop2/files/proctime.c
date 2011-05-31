@@ -1,4 +1,4 @@
-/* $OpenBSD: proctime.c,v 1.3 2011/05/23 19:35:56 jasper Exp $	*/
+/* $OpenBSD: proctime.c,v 1.4 2011/05/31 14:02:26 jasper Exp $	*/
 
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
@@ -39,7 +39,7 @@ static const unsigned long _glibtop_sysdeps_proc_time_user =
 #define tv2sec(tv)	(((guint64) tv.tv_sec * 1000000) + (guint64) tv.tv_usec)
 
 static unsigned int clockrate;
-static const int mib [] = { CTL_KERN, KERN_CLOCKRATE };
+static int mib [] = { CTL_KERN, KERN_CLOCKRATE };
 
 /* Init function. */
 

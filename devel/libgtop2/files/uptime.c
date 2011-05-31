@@ -1,4 +1,4 @@
-/* $OpenBSD: uptime.c,v 1.3 2011/05/23 19:35:57 jasper Exp $	*/
+/* $OpenBSD: uptime.c,v 1.4 2011/05/31 14:02:26 jasper Exp $	*/
 
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
@@ -51,7 +51,6 @@ void
 glibtop_get_uptime_p (glibtop *server, glibtop_uptime *buf)
 {
 	time_t now;
-	time_t uptime;
 	int mib[2];
 	struct timeval boottime;
 	size_t size;

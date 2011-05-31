@@ -1,4 +1,4 @@
-/* $OpenBSD: sysinfo.c,v 1.3 2011/05/23 19:35:56 jasper Exp $	*/
+/* $OpenBSD: sysinfo.c,v 1.4 2011/05/31 14:02:26 jasper Exp $	*/
 
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
@@ -37,10 +37,10 @@ static glibtop_sysinfo sysinfo = { .flags = 0 };
 static void
 init_sysinfo (glibtop *server)
 {
-	char *model;
+	char *model = NULL;
 	int mib[2];
-	int ncpus = 1;
-	int mhz = 0;
+	guint ncpus = 1;
+	guint mhz = 0;
 	size_t len;
 
 	if (G_LIKELY (sysinfo.flags))

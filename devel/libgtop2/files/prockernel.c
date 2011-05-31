@@ -1,4 +1,4 @@
-/* $OpenBSD: prockernel.c,v 1.3 2011/05/23 19:35:55 jasper Exp $	*/
+/* $OpenBSD: prockernel.c,v 1.4 2011/05/31 14:02:26 jasper Exp $	*/
 
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
@@ -59,9 +59,6 @@ glibtop_get_proc_kernel_p (glibtop *server,
 {
 	struct kinfo_proc2 *pinfo;
 	int count;
-
-	char filename [BUFSIZ];
-	struct stat statb;
 
 	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_PROC_KERNEL), 0);
 
