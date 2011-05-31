@@ -1,4 +1,4 @@
-/* $OpenBSD: cpu.c,v 1.5 2011/05/31 13:47:56 jasper Exp $	*/
+/* $OpenBSD: cpu.c,v 1.6 2011/05/31 14:19:18 jasper Exp $	*/
 
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
@@ -54,7 +54,7 @@ _glibtop_init_cpu_p (glibtop *server)
 void
 glibtop_get_cpu_p (glibtop *server, glibtop_cpu *buf)
 {
-	guint64 cpts [CPUSTATES];
+	gulong cpts [CPUSTATES];
 
 	/* sysctl vars*/
 	struct clockinfo ci;
