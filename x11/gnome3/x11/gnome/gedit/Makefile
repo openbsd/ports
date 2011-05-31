@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/28 08:15:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/05/31 14:46:10 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		3.0.3
-
-REVISION=		0
+GNOME_VERSION=		3.0.4
 
 CATEGORIES=		editors
 
@@ -51,8 +49,8 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-python \
 			--disable-updater \
-			--enable-introspection
-CONFIGURE_ARGS+=	--enable-gvfs-metadata
+			--enable-introspection \
+			--enable-gvfs-metadata
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lm -lstdc++ -lintl -liconv"
 USE_GROFF =		Yes
