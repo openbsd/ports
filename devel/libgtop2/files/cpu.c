@@ -1,4 +1,4 @@
-/* $OpenBSD: cpu.c,v 1.4 2011/05/24 12:37:15 jasper Exp $	*/
+/* $OpenBSD: cpu.c,v 1.5 2011/05/31 13:47:56 jasper Exp $	*/
 
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
@@ -34,7 +34,7 @@ static const unsigned long _glibtop_sysdeps_cpu =
 (1L << GLIBTOP_CPU_TOTAL) + (1L << GLIBTOP_CPU_USER) +
 (1L << GLIBTOP_CPU_NICE) + (1L << GLIBTOP_CPU_SYS) +
 (1L << GLIBTOP_CPU_IDLE) + (1L << GLIBTOP_CPU_FREQUENCY) +
-(1L << GLIBTOP_CPU_IOWAIT);
+(1L << GLIBTOP_CPU_IRQ);
 
 /* MIB array for sysctl */
 static int mib_length=2;
@@ -89,20 +89,14 @@ glibtop_get_cpu_p (glibtop *server, glibtop_cpu *buf)
 	buf->sys = cpts [CP_SYS];
 	/* set idle time */
 	buf->idle = cpts [CP_IDLE];
-	/* set iowait (really just interrupt) time */
-	buf->iowait = cpts [CP_INTR];
+	/* set interrupt time */
+	buf->irq = cpts [CP_INTR];
 
 	/* set frequency */
-	/*
-	   FIXME --  is hz, tick, profhz or stathz wanted?
-	   buf->frequency = sysctl("kern.clockrate", ...);
-
-	   struct clockinfo
-	*/
 	buf->frequency = ci.hz;
 	/* set total */
 	buf->total = cpts [CP_USER] + cpts [CP_NICE]
-		+ cpts [CP_SYS] + cpts [CP_IDLE];
+		+ cpts [CP_SYS] + cpts [CP_IDLE] + cpts [CP_INTR];
 
 	/* Set the flags last. */
 	buf->flags = _glibtop_sysdeps_cpu;
