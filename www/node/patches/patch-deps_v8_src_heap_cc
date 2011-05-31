@@ -1,16 +1,16 @@
-$OpenBSD: patch-deps_v8_src_heap_cc,v 1.1 2011/05/21 20:32:54 sthen Exp $
+$OpenBSD: patch-deps_v8_src_heap_cc,v 1.2 2011/05/31 07:55:16 robert Exp $
 
-Don't allocate a huge chunk of VM upfront on amd64, use the same allocation
-policy as done on i386.
+Don't allocate a huge chunk of VM upfront on amd64, but still use a bigger
+code range size to avoid crashing with vmmap.
 
---- deps/v8/src/heap.cc.orig	Sat May 21 09:07:11 2011
-+++ deps/v8/src/heap.cc	Sat May 21 09:07:31 2011
-@@ -87,7 +87,7 @@ intptr_t Heap::max_old_generation_size_ = 192*MB;
- int Heap::initial_semispace_size_ = 128*KB;
- intptr_t Heap::code_range_size_ = 0;
- intptr_t Heap::max_executable_size_ = max_old_generation_size_;
--#elif defined(V8_TARGET_ARCH_X64)
-+#elif defined(V8_TARGET_ARCH_X64) && !defined(__OpenBSD__)
+--- deps/v8/src/heap.cc.orig	Sat May 21 04:40:06 2011
++++ deps/v8/src/heap.cc	Mon May 30 22:57:26 2011
+@@ -91,7 +91,7 @@ intptr_t Heap::max_executable_size_ = max_old_generati
  static const int default_max_semispace_size_  = 16*MB;
  intptr_t Heap::max_old_generation_size_ = 1*GB;
  int Heap::initial_semispace_size_ = 1*MB;
+-intptr_t Heap::code_range_size_ = 512*MB;
++intptr_t Heap::code_range_size_ = 32*MB;
+ intptr_t Heap::max_executable_size_ = 256*MB;
+ #else
+ static const int default_max_semispace_size_  = 8*MB;
