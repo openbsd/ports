@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/05/28 08:15:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/05/31 13:03:26 ajacoutot Exp $
 
 # XXX: py-gnome may be needed to load the old applets?
 
@@ -9,7 +9,7 @@ COMMENT=	GNOME panel
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	3.0.2
 
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	panel-applet-4            0.0 # 0.0
 
@@ -51,7 +51,8 @@ LIB_DEPENDS=	databases/evolution-data-server \
 		x11/gnome/menus \
 		x11/gnome/librsvg
 RUN_DEPENDS=	notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon \
-		x11/gnome/icon-theme-symbolic
+		x11/gnome/icon-theme-symbolic \
+		x11/gnome/screensaver # "Lock Screen"
 
 MODGNOME_HELP_FILES= 	Yes
 DESKTOP_FILES=		Yes
