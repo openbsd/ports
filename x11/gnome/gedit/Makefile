@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2011/05/14 22:10:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2011/05/31 16:10:20 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,7 +12,7 @@ COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		2.30.4
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		editors
 
@@ -54,14 +54,13 @@ DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gedit
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--enable-python \
 			--disable-attr \
 			--disable-updater
 #CONFIGURE_ARGS+=	--enable-gvfs-metadata
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib -lm -lstdc++ -lintl -liconv"
+			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =		Yes
 
 .include <bsd.port.mk>
