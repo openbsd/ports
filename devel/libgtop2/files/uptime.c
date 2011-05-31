@@ -1,4 +1,4 @@
-/* $OpenBSD: uptime.c,v 1.4 2011/05/31 14:02:26 jasper Exp $	*/
+/* $OpenBSD: uptime.c,v 1.5 2011/05/31 19:25:31 jasper Exp $	*/
 
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
@@ -28,8 +28,6 @@
 
 #include <glibtop/cpu.h>
 
-#include <glibtop_suid.h>
-
 static const unsigned long _glibtop_sysdeps_uptime =
 (1L << GLIBTOP_UPTIME_UPTIME) + (1L << GLIBTOP_UPTIME_IDLETIME);
 
@@ -54,6 +52,7 @@ glibtop_get_uptime_p (glibtop *server, glibtop_uptime *buf)
 	int mib[2];
 	struct timeval boottime;
 	size_t size;
+	glibtop_cpu cpu;
 
 	mib[0] = CTL_KERN;
 	mib[1] = KERN_BOOTTIME;
@@ -62,8 +61,13 @@ glibtop_get_uptime_p (glibtop *server, glibtop_uptime *buf)
 	    boottime.tv_sec != 0) {
 		time(&now);
 		buf->uptime = now - boottime.tv_sec;
-		/* XXX: don't know a useful value to put here. */
-		buf->idletime = 0;
-		buf->flags = _glibtop_sysdeps_uptime;
 	}
+
+	glibtop_get_cpu_p (server, &cpu);
+
+	/* Put something clever in buf->idletime: CP_IDLE. */
+	buf->idletime = (double) cpu.idle / (double) cpu.frequency;
+	buf->idletime /= (double) (server->ncpu + 1);
+
+	buf->flags = _glibtop_sysdeps_uptime;
 }

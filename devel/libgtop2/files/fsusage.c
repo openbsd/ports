@@ -1,7 +1,12 @@
-/* $OpenBSD: fsusage.c,v 1.3 2011/05/23 19:35:53 jasper Exp $	*/
+/* $OpenBSD: fsusage.c,v 1.4 2011/05/31 19:25:31 jasper Exp $	*/
 
 #include <config.h>
 
+/*
+ * statvfs is lacking various members which are present in statfs,
+ * like f_(a)syncreads and f_(a)syncwrites. So eventhough we have
+ * statvfs, undef it here untill those members are added.
+ */
 #undef HAVE_SYS_STATVFS_H
 #undef STAT_STATVFS
 
@@ -26,12 +31,12 @@
 #include <stdlib.h>
 
 void
-_glibtop_bsd_get_fsusage_read_write(glibtop *server,
+_glibtop_openbsd_get_fsusage_read_write(glibtop *server,
 				      glibtop_fsusage *buf,
 				      const char *path);
 
 void
-_glibtop_bsd_get_fsusage_read_write(glibtop *server,
+_glibtop_openbsd_get_fsusage_read_write(glibtop *server,
 				      glibtop_fsusage *buf,
 				      const char *path)
 {
