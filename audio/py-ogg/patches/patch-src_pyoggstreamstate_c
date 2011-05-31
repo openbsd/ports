@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_pyoggstreamstate_c,v 1.1 2011/05/30 15:16:35 dcoppa Exp $
+$OpenBSD: patch-src_pyoggstreamstate_c,v 1.2 2011/05/31 09:30:43 dcoppa Exp $
 
 Fix memory allocation/deallocation for Python 2.5 and above
-(from Debian's patchset for dev-python/pyogg)
+(from Debian's patchset for python-ogg)
 
 --- src/pyoggstreamstate.c.orig	Mon Oct  7 01:04:57 2002
 +++ src/pyoggstreamstate.c	Tue Jun  1 15:38:26 2010
