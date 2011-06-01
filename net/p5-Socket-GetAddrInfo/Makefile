@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/06 08:55:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/01 17:05:01 jasper Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT	= 	RFC 2553 getaddrinfo and getnameinfo functions
 
 MODULES =	cpan
-DISTNAME =	Socket-GetAddrInfo-0.20
+DISTNAME =	Socket-GetAddrInfo-0.21
 CATEGORIES =	net
 
 # perl
