@@ -1,8 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/30 22:15:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/01 11:15:14 ajacoutot Exp $
 @bin bin/gconf-editor
 @man man/man1/gconf-editor.1
 share/applications/gconf-editor.desktop
-share/doc/pkg-readmes/${FULLPKGNAME}
 share/gconf-editor/
 share/gconf-editor/icons/
 share/gconf-editor/icons/hicolor/
