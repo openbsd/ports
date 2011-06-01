@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.5 2011/05/27 10:27:50 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.6 2011/06/01 12:34:29 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -482,65 +482,70 @@ sub new_queue
 
 package DPB::Heuristics::FetchQueue;
 our @ISA = qw(DPB::Heuristics::Queue);
-
-# heuristic 1: grab the smallest distfiles that can build directly
-# so that we avoid queue starvation
-sub set_h1
-{
-	my $o = shift;
-	$o->{compare} = sub {
-		my ($h, $a, $b) = @_;
-		my $c = $b->{path}{has} <=> $a->{path}{has};
-		if ($c != 0) {
-			return $c;
-		} else {
-			return $b->{sz} <=> $a->{sz};
-		}
-	};
-	return $o;
-}
-
-# heuristic 2: assume we're running good enough, grab distfiles that allow
-# build to proceed as usual
-# we don't care so much about multiple distfiles
-sub set_h2
-{
-	my $o = shift;
-	$o->{compare} = sub {
-		my ($h, $a, $b) = @_;
-		my $c = ($b->{path}{has} == 2) <=> ($a->{path}{has} == 2);
-		if ($c != 0) {
-			return $c;
-		} else {
-			return $h->compare($a->{path}, $b->{path})
-		}
-	};
-	return $o;
-}
-
-# heuristic 3: grab the largest distfiles first, as they will take time
-# to build
-sub set_h3
-{
-	my $o = shift;
-	$o->{compare} = sub {
-		my ($h, $a, $b) = @_;
-		return $a->{sz} <=> $b->{sz};
-	};
-	return $o;
-}
-
 sub new
 {
 	my ($class, $h) = @_;
 	$class->SUPER::new($h)->set_h1;
 }
 
+sub set_h1
+{
+	bless shift, "DPB::Heuristics::FetchQueue1";
+}
+
+sub set_h2
+{
+	bless shift, "DPB::Heuristics::FetchQueue2";
+}
+
+sub set_h3
+{
+	bless shift, "DPB::Heuristics::FetchQueue3";
+}
+
+package DPB::Heuristics::FetchQueue1;
+our @ISA = qw(DPB::Heuristics::FetchQueue);
+
+# heuristic 1: grab the smallest distfiles that can build directly
+# so that we avoid queue starvation
 sub sorted_values
 {
 	my $self = shift;
-	return [sort {&{$self->{compare}}($self->{h}, $a, $b)} 
-	    values %{$self->{o}}];
+	my @l = grep {$_->{path}{has} < 2} values %{$self->{o}};
+	if (!@l) {
+		@l = values %{$self->{o}};
+	}
+	return [sort {$b->{sz} <=> $a->{sz}} @l];
+}
+
+package DPB::Heuristics::FetchQueue2;
+our @ISA = qw(DPB::Heuristics::FetchQueue);
+
+# heuristic 2: assume we're running good enough, grab distfiles that allow
+# build to proceed as usual
+# we don't care so much about multiple distfiles
+sub sorted_values
+{
+	my $self = shift;
+	my @l = grep {$_->{path}{has} == 0} values %{$self->{o}};
+	if (!@l) {
+		@l = values %{$self->{o}};
+	}
+	my $h = $self->{h};
+	return [sort 
+	    {$h->measure($a->{path}) <=> $h->measure($b->{path})}
+	    @l];
+}
+
+package DPB::Heuristics::FetchQueue3;
+our @ISA = qw(DPB::Heuristics::FetchQueue);
+
+# heuristic 3: grab the largest distfiles first, as they will take time
+# to build
+sub sorted_values
+{
+	my $self = shift;
+	return [sort {$a->{sz} <=> $b->{sz}} values %{$self->{o}}];
 }
 
 1;
