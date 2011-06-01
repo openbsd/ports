@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.22 2011/05/29 09:30:13 espie Exp $
+# $OpenBSD: Engine.pm,v 1.23 2011/06/01 12:34:09 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -495,7 +495,6 @@ sub check_buildable
 			# but put the patch/dist/small stuff down the line
 			# as otherwise we will tend to grab patch files first
 			$v->{has} = 2 * ($has != 0) + ($has2 != 0);
-			$has += $self->adjust_distfiles($v);
 			if ($has + $has2 == 0) {
 				$self->{buildable}->add($v);
 				$self->log_no_ts('Q', $v);
