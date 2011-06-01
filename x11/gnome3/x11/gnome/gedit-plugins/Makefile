@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/05/30 13:01:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/01 15:41:09 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
@@ -24,6 +24,8 @@ WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 gtksourceview-3.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
 WANTLIB += pthread-stubs xcb xcb-render xcb-shm xml2 z
+
+EXTRACT_SUFX=		.tar.xz
 
 MODULES=		devel/gettext \
 			lang/python \

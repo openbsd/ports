@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/26 15:52:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/06/01 15:41:09 jasper Exp $
 
 COMMENT=	library for gnome keyring integration
 
@@ -14,6 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += dbus-1 glib-2.0 gpg-error pcre gcrypt
+
+EXTRACT_SUFX=	.tar.xz
 
 MODULES=	devel/gettext \
 		x11/gnome
