@@ -1,7 +1,13 @@
+$OpenBSD: README,v 1.1 2011/06/01 11:29:53 ajacoutot Exp $
+
+Running consolekit on OpenBSD
+=============================
+
 To enable ConsoleKit in a graphical session, prepend ck-launch-session
 to the session script (note: gdm(1) does this automatically). e.g.
     ${PREFIX}/bin/ck-launch-session ${PREFIX}/bin/openbox-session
 
 Note that you need a system-wide DBus daemon running.
+
 The /var/log/ConsoleKit/history logfile can grow very large after some
 time. It is advised to use newsyslog(8) to rotate it.

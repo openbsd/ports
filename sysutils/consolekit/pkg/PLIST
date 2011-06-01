@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/28 13:08:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/06/01 11:29:53 ajacoutot Exp $
 %%SHARED%%
 @bin bin/ck-history
 @bin bin/ck-launch-session
@@ -31,6 +31,7 @@ share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Seat.xml
 share/dbus-1/interfaces/org.freedesktop.ConsoleKit.Session.xml
 share/dbus-1/system-services/
 share/dbus-1/system-services/org.freedesktop.ConsoleKit.service
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/consolekit/
 share/examples/consolekit/ConsoleKit/
 @sample ${SYSCONFDIR}/ConsoleKit/
