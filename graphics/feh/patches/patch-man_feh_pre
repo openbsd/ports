@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_feh_pre,v 1.3 2011/06/01 11:55:22 dcoppa Exp $
+--- man/feh.pre.orig	Wed Jun  1 13:45:59 2011
++++ man/feh.pre	Wed Jun  1 13:46:43 2011
+@@ -670,7 +670,7 @@ can also be used as a background setter.  It will stor
+ necessary to set the background in
+ .Pa ~/.fehbg ,
+ so to have your background restored everytime you start X, you can add
+-.Qq `eval cat ~/.fehbg`
++.Qq eval $(cat ~/.fehbg)
+ to your X startup script
+ .Pq like Pa ~/.xinitrc .
+ .
