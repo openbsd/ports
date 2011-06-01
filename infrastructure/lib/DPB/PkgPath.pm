@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.6 2011/05/28 19:32:59 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.7 2011/06/01 15:39:47 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -48,7 +48,7 @@ sub create
 
 	bless {pkgpath => $pkgpath,
 		# XXX
-		has => 1,
+		has => 5,
 		flavors => \%flavors,
 		sawflavor => $sawflavor,
 		multi => $multi}, $class;
