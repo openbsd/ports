@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1080 2011/05/16 23:40:24 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1081 2011/06/01 12:04:06 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1183,10 +1183,14 @@ EXTRACT_ONLY ?= ${_DISTFILES}
 .if !empty(EXTRACT_ONLY:M*.zip)
 _USE_ZIP ?= Yes
 .endif
+.if !empty(EXTRACT_ONLY:M*.tar.xz)
+_USE_XZ ?= Yes
+.endif
 .if !empty(EXTRACT_ONLY:M*.tar.bz2) || !empty(EXTRACT_ONLY:M*.tbz2) || \
 	(defined(PATCHFILES) && !empty(_PATCHFILES:M*.bz2))
 _USE_BZIP2 ?= Yes
 .endif
+_USE_XZ ?= No
 _USE_ZIP ?= No
 _USE_BZIP2 ?= No
 
@@ -1195,6 +1199,11 @@ EXTRACT_CASES ?=
 _PERL_FIX_SHAR ?= perl -ne 'print if $$s || ($$s = m:^\#(\!\s*/bin/sh\s*| This is a shell archive):)'
 
 # XXX note that we DON'T set EXTRACT_SUFX.
+.if ${_USE_XZ:L} != "no"
+BUILD_DEPENDS += archivers/xz
+EXTRACT_CASES += *.tar.xz) \
+	xzcat ${FULLDISTDIR}/$$archive| tar xf -;;
+.endif
 .if ${_USE_ZIP:L} != "no"
 BUILD_DEPENDS += archivers/unzip
 EXTRACT_CASES += *.zip) \
@@ -2263,6 +2272,13 @@ ${_WRKDIR_COOKIE}:
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
 	@${_MAKE} _internal-checksum _internal-prepare
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
+.if ${_USE_XZ:L} != "no"
+	@echo ""; \
+	echo "*** WARNING: this port uses xz distfiles."; \
+	echo "*** so it won't build on vax."; \
+	echo "*** and it will be a pain to build on sparc."; \
+	echo ""
+.endif
 .if target(pre-extract)
 	@${_MAKESYS} pre-extract
 .endif
