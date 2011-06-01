@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/01 17:41:49 jasper Exp $
 
 COMMENT=		validate and convert data types
 
 MODULES=		cpan
-DISTNAME=		Data-Types-0.06
-REVISION=		1
+DISTNAME=		Data-Types-0.08
 CATEGORIES=		devel
 USE_GROFF =		Yes
 
