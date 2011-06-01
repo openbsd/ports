@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/06/01 05:38:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/06/01 15:09:30 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += backgrounds
@@ -6,7 +6,6 @@
      SUBDIR += devhelp
      SUBDIR += eog
      SUBDIR += eog-plugins
-     SUBDIR += gcalctool
      SUBDIR += gdl
      SUBDIR += gedit
 #     SUBDIR += gedit-plugins
