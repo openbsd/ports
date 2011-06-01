@@ -1,15 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2011/04/06 12:05:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2011/06/01 16:14:52 ajacoutot Exp $
 
 COMMENT=		compiler for the GObject type system
 
 GNOME_PROJECT=		vala
-GNOME_VERSION=		0.12.0
+GNOME_VERSION=		0.12.1
 
-# XXX regened .c from patched .vala
-DISTFILES=		_${DISTNAME}.tar.gz
-MASTER_SITES=		http://distfiles.bsdfrog.org/
-
-REVISION=		0
+EXTRACT_SUFX=		.tar.xz
 
 SHARED_LIBS +=  vala-0.12                 0.0 # 0.0
 
@@ -37,7 +33,7 @@ RUN_DEPENDS=		textproc/libxslt \
 LIB_DEPENDS=		devel/glib2
 REGRESS_DEPENDS=	shells/bash	
 
-USE_GROFF =		Yes
+USE_GROFF=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \

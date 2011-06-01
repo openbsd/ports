@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2011/04/05 18:40:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2011/06/01 16:14:52 ajacoutot Exp $
 %%SHARED%%
 bin/vala
 bin/vala-0.12
@@ -49,6 +49,7 @@ share/devhelp/books/vala-0.12/types.html
 share/devhelp/books/vala-0.12/vala.devhelp2
 share/vala-0.12/
 share/vala-0.12/vapi/
+share/vala-0.12/vapi/alsa.deps
 share/vala-0.12/vapi/alsa.vapi
 share/vala-0.12/vapi/atk.vapi
 share/vala-0.12/vapi/avahi-gobject.deps
