@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/06/01 17:41:52 jasper Exp $
 
 COMMENT =		magical config file parser
 
 MODULES =		cpan
 
-DISTNAME =		Config-Auto-0.20
-REVISION =		0
+DISTNAME =		Config-Auto-0.34
 CATEGORIES =		devel
 USE_GROFF =		Yes
 
@@ -16,6 +15,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 RUN_DEPENDS =		devel/p5-Config-IniFiles \
+			devel/p5-IO-String \
 			devel/p5-YAML
 REGRESS_DEPENDS =	devel/p5-Test-Pod
 
