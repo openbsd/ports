@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.10 2011/05/23 21:31:56 ajacoutot Exp $
+$OpenBSD: README,v 1.11 2011/06/01 15:08:23 ajacoutot Exp $
 
 Running GNOME on OpenBSD
 ========================
@@ -98,7 +98,7 @@ related ports under the x11/gnome category)
 
  - Office & Productivity
    * abiword - WYSIWYG word processor
-   * gcalctool - desktop calculator
+   * gcalctool--gtk2 - desktop calculator
    * gnumeric - spreadsheet application
    * hamster-applet - time tracker applet
    * meta-tracker - powerful desktop search tool and indexer
