@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2010/12/03 11:44:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/06/01 17:41:50 jasper Exp $
 
 COMMENT= 	find memory cycles in objects
 
 MODULES=	cpan
 
-DISTNAME=	Devel-Cycle-1.10
-REVISION=	2
+DISTNAME=	Devel-Cycle-1.11
 CATEGORIES=	devel
 USE_GROFF =	Yes
 
-# Artistic
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
