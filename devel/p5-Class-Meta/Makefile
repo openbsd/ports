@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/03 11:44:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/01 17:41:51 jasper Exp $
 
 COMMENT=		class automation, introspection and validation
 
 MODULES=		cpan
-DISTNAME=		Class-Meta-0.53
-REVISION=		2
+DISTNAME=		Class-Meta-0.63
 CATEGORIES=		devel
 USE_GROFF=		Yes
 
