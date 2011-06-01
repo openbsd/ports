@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_gnupod_convert_RIFF_pl,v 1.1 2011/06/01 00:04:16 sthen Exp $
+--- src/gnupod_convert_RIFF.pl.orig	Mon May 30 11:56:59 2011
++++ src/gnupod_convert_RIFF.pl	Mon May 30 12:07:42 2011
+@@ -45,7 +45,7 @@ elsif($gimme eq "GET_VIDEO") {
+ 	
+ 	my $x = system("ffmpeg", "-i", $file, "-acodec", $acodec, "-ab", "128k", "-vcodec", "mpeg4",
+ 	               "-b", "1200kb", "-mbd", 2, "-flags", "+4mv+trell", "-aic", 2, "-cmp", 2,
+-	               "-subcmp", 2, "-s", "320x240", "-r", "29.97", $tmpout);
++	               "-subcmp", 2, "-s", "320x240", "-r", "29.97", "-strict", "experimental", $tmpout);
+ 	print "PATH:$tmpout\n";
+ }
+ else {
+@@ -58,7 +58,7 @@ else {
+ # still shall call it with AAC
+ sub check_ffmpeg_aac {
+ 	my @newstyle = grep(/\s+EA\s+libfaac/,split(/\n/,
+-	               `ffmpeg -formats 2> /dev/null`));
++	               `ffmpeg -codecs 2> /dev/null`));
+ 	return (defined(@newstyle) ? 'libfaac' : 'aac');
+ }
+ 

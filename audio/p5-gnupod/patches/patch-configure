@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2011/06/01 00:04:16 sthen Exp $
+--- configure.orig	Tue Aug  4 01:49:56 2009
++++ configure	Mon May 30 13:44:37 2011
+@@ -1872,7 +1872,7 @@ echo " done"
+ 
+ 
+ echo $ECHO_N "checking for ffmpeg with AAC support... "
+-ffmpeg -formats 2>&1|egrep " aac" > /dev/null
++ffmpeg -codecs 2>&1|egrep " aac" > /dev/null
+  if test $? = 0; then
+   echo "found!"
+   ENCS="mpeg4 $ENCS"
+@@ -1884,7 +1884,7 @@ ffmpeg -formats 2>&1|egrep " aac" > /dev/null
+ 
+ echo $ECHO_N "checking for ImageMagick..."
+ convert --version > /dev/null 2>&1
+- if test $? = 0; then
++ if test $? = 1; then
+   echo "found!"
+   IMAGIC="Yes"
+  else
