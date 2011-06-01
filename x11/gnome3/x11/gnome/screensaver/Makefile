@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/31 13:00:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/01 11:19:07 ajacoutot Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
 GNOME_PROJECT=	gnome-screensaver
 GNOME_VERSION=	3.0.0
+
+REVISION=	0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -33,7 +35,8 @@ LIB_DEPENDS=	x11/gnome/desktop \
 		x11/gnome/menus \
 		x11/gnome/libgnomekbd
 
-RUN_DEPENDS=	devel/gsettings-desktop-schemas
+RUN_DEPENDS=	devel/gsettings-desktop-schemas \
+		sysutils/consolekit # src/gs-listener-dbus.c
 
 AUTOCONF_VERSION= 2.68
 AUTOMAKE_VERSION= 1.11
