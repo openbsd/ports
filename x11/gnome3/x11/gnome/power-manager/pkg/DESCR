@@ -1,0 +1,3 @@
+GNOME Power Manager is a GNOME session daemon that acts as a policy
+agent on top of UPower. GNOME Power Manager listens for system events
+and responds with user-configurable actions.
