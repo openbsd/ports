@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/01/14 22:50:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/06/01 17:41:48 jasper Exp $
 
 COMMENT=	stack trace and stack trace frame objects
 
 MODULES=	cpan
-DISTNAME=	Devel-StackTrace-1.26
-REVISION=	0
+DISTNAME=	Devel-StackTrace-1.27
 CATEGORIES=	devel
 USE_GROFF =	Yes
 
