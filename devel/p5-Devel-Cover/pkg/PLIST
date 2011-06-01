@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/06 09:53:05 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/01 17:41:49 jasper Exp $
 bin/cover
 bin/cpancover
 bin/gcov2perl
@@ -6,6 +6,7 @@ ${P5ARCH}/Devel/
 ${P5ARCH}/Devel/Cover/
 ${P5ARCH}/Devel/Cover.pm
 ${P5ARCH}/Devel/Cover/Annotation/
+${P5ARCH}/Devel/Cover/Annotation/Git.pm
 ${P5ARCH}/Devel/Cover/Annotation/Random.pm
 ${P5ARCH}/Devel/Cover/Annotation/Svk.pm
 ${P5ARCH}/Devel/Cover/Branch.pm
@@ -18,7 +19,12 @@ ${P5ARCH}/Devel/Cover/Condition_xor_4.pm
 ${P5ARCH}/Devel/Cover/Criterion.pm
 ${P5ARCH}/Devel/Cover/DB/
 ${P5ARCH}/Devel/Cover/DB.pm
+${P5ARCH}/Devel/Cover/DB/Digests.pm
 ${P5ARCH}/Devel/Cover/DB/File.pm
+${P5ARCH}/Devel/Cover/DB/IO/
+${P5ARCH}/Devel/Cover/DB/IO.pm
+${P5ARCH}/Devel/Cover/DB/IO/JSON.pm
+${P5ARCH}/Devel/Cover/DB/IO/Storable.pm
 ${P5ARCH}/Devel/Cover/DB/Structure.pm
 ${P5ARCH}/Devel/Cover/Inc.pm
 ${P5ARCH}/Devel/Cover/Op.pm
@@ -47,6 +53,7 @@ ${P5ARCH}/auto/Devel/Cover/Cover.so
 @man man/man1/cpancover.1
 @man man/man1/gcov2perl.1
 @man man/man3p/Devel::Cover.3p
+@man man/man3p/Devel::Cover::Annotation::Git.3p
 @man man/man3p/Devel::Cover::Annotation::Random.3p
 @man man/man3p/Devel::Cover::Annotation::Svk.3p
 @man man/man3p/Devel::Cover::Branch.3p
@@ -58,7 +65,11 @@ ${P5ARCH}/auto/Devel/Cover/Cover.so
 @man man/man3p/Devel::Cover::Condition_xor_4.3p
 @man man/man3p/Devel::Cover::Criterion.3p
 @man man/man3p/Devel::Cover::DB.3p
+@man man/man3p/Devel::Cover::DB::Digests.3p
 @man man/man3p/Devel::Cover::DB::File.3p
+@man man/man3p/Devel::Cover::DB::IO.3p
+@man man/man3p/Devel::Cover::DB::IO::JSON.3p
+@man man/man3p/Devel::Cover::DB::IO::Storable.3p
 @man man/man3p/Devel::Cover::DB::Structure.3p
 @man man/man3p/Devel::Cover::Op.3p
 @man man/man3p/Devel::Cover::Pod.3p
