@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/03/14 09:17:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/01 17:41:53 jasper Exp $
 
 COMMENT=		concise expressive creations of Class::Meta classes
 
 MODULES=		cpan
-DISTNAME=		Class-Meta-Express-0.04
-REVISION=		2
+DISTNAME=		Class-Meta-Express-0.11
 CATEGORIES=		devel
 USE_GROFF =		Yes
 
@@ -15,7 +14,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		devel/p5-Class-Meta
+RUN_DEPENDS=		devel/p5-Class-Meta>=0.63
 
 CONFIGURE_STYLE= 	modbuild
 
