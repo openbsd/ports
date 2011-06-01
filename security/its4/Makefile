@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/06/01 23:34:53 kili Exp $
 
 COMMENT=	scan C/C++ source code for security problems
 
 DISTNAME=	its4-1.1.1
-REVISION =	0
+REVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	#see-do-fetch-target
 EXTRACT_SUFX=	.tgz
@@ -14,15 +14,16 @@ PERMIT_DISTFILES_CDROM=	commercial. licensing restrictions.
 PERMIT_DISTFILES_FTP=	commercial. licensing restrictions.
 WANTLIB=		c m stdc++
 
-CONFIGURE_STYLE= gnu dest old
-
-CONFIGURE_ARGS=	--datadir='$${DESTDIR}${PREFIX}/share/its4' \
+CONFIGURE_STYLE= simple
+CONFIGURE_ARGS=	--prefix='${PREFIX}' \
+		--mandir='${PREFIX}/man' \
+		--datadir='${PREFIX}/share/its4' \
 		--with-cpp="${CXX}"
 
 WRKDIST=	${WRKDIR}/its4
 
 NO_REGRESS=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 FETCH_MANUALLY=	"The source to this port may not be automatically fetched" \
 		"due to licensing restrictions. You MUST fetch the source" \
