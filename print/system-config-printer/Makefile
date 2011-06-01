@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/05/22 14:19:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/06/01 18:53:52 jasper Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
@@ -34,10 +34,6 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/dbus-python \
 			x11/gnome/py-gnome \
 			print/cups-pk-helper
-
-BUILD_DEPENDS+=  archivers/xz
-EXTRACT_CASES=  *.tar.xz) \
-	${LOCALBASE}/bin/xz -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 
 USE_GMAKE=		Yes
 USE_GROFF =		Yes

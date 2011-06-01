@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2011/03/15 21:10:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.64 2011/06/01 18:53:52 jasper Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
@@ -17,10 +17,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_GNU:=tar/}
 EXTRACT_SUFX=	.tar.xz
-
-BUILD_DEPENDS=	archivers/xz
-EXTRACT_CASES=	*.tar.xz) \
-		${LOCALBASE}/bin/xz -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 
 MODULES=	devel/gettext
 # only force dependencies for compressors that have a single-letter option
