@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/03 11:46:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/06/01 17:05:02 jasper Exp $
 
 COMMENT=	expand crontab(5)-style integer lists
 
 MODULES=	cpan
-DISTNAME=	Set-Crontab-1.02
-REVISION=	0
+DISTNAME=	Set-Crontab-1.03
 CATEGORIES=	sysutils
 USE_GROFF =	Yes
 
