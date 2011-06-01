@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/05/21 05:00:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/06/01 12:23:53 ajacoutot Exp $
 %%SHARED%%
 @bin bin/pk-example-frobnicate
 @bin bin/pkaction
@@ -54,7 +54,6 @@ lib/libpolkit-backend-1.a
 lib/libpolkit-backend-1.la
 lib/libpolkit-gobject-1.a
 lib/libpolkit-gobject-1.la
-lib/pkgconfig/
 lib/pkgconfig/polkit-agent-1.pc
 lib/pkgconfig/polkit-backend-1.pc
 lib/pkgconfig/polkit-gobject-1.pc
@@ -74,9 +73,8 @@ lib/polkit-1/extensions/
 @man man/man8/pklocalauthority.8
 @man man/man8/polkit.8
 @man man/man8/polkitd.8
-share/dbus-1/
-share/dbus-1/system-services/
 share/dbus-1/system-services/org.freedesktop.PolicyKit1.service
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/polkit/
 share/examples/polkit/dbus-1/
 @sample ${SYSCONFDIR}/dbus-1/
