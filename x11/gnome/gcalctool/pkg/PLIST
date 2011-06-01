@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.16 2011/05/28 08:15:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2011/06/01 15:07:48 ajacoutot Exp $
+@pkgpath x11/gnome/gcalctool
 @bin bin/gcalccmd
 @bin bin/gcalctool
 bin/gnome-calculator
+@man man/man1/gcalccmd.1
 @man man/man1/gcalctool.1
 share/applications/gcalctool.desktop
 share/gcalctool/
@@ -10,8 +12,6 @@ share/gcalctool/buttons-basic.ui
 share/gcalctool/buttons-financial.ui
 share/gcalctool/buttons-programming.ui
 share/gcalctool/preferences.ui
-share/glib-2.0/
-share/glib-2.0/schemas/
 share/glib-2.0/schemas/org.gnome.gcalctool.gschema.xml
 share/gnome/help/gcalctool/
 share/gnome/help/gcalctool/C/
@@ -536,6 +536,35 @@ share/gnome/help/gcalctool/ru/scientific.page
 share/gnome/help/gcalctool/ru/superscript.page
 share/gnome/help/gcalctool/ru/trigonometry.page
 share/gnome/help/gcalctool/ru/variables.page
+share/gnome/help/gcalctool/sl/
+share/gnome/help/gcalctool/sl/absolute.page
+share/gnome/help/gcalctool/sl/base.page
+share/gnome/help/gcalctool/sl/boolean.page
+share/gnome/help/gcalctool/sl/complex.page
+share/gnome/help/gcalctool/sl/conv-base.page
+share/gnome/help/gcalctool/sl/conv-character.page
+share/gnome/help/gcalctool/sl/conv-currency.page
+share/gnome/help/gcalctool/sl/conv-length.page
+share/gnome/help/gcalctool/sl/conv-time.page
+share/gnome/help/gcalctool/sl/conv-weight.page
+share/gnome/help/gcalctool/sl/equation.page
+share/gnome/help/gcalctool/sl/factorial.page
+share/gnome/help/gcalctool/sl/factorize.page
+share/gnome/help/gcalctool/sl/financial.page
+share/gnome/help/gcalctool/sl/functions.page
+share/gnome/help/gcalctool/sl/index.page
+share/gnome/help/gcalctool/sl/keyboard.page
+share/gnome/help/gcalctool/sl/legal.xml
+share/gnome/help/gcalctool/sl/logarithm.page
+share/gnome/help/gcalctool/sl/modulus.page
+share/gnome/help/gcalctool/sl/mouse.page
+share/gnome/help/gcalctool/sl/number-display.page
+share/gnome/help/gcalctool/sl/percentage.page
+share/gnome/help/gcalctool/sl/power.page
+share/gnome/help/gcalctool/sl/scientific.page
+share/gnome/help/gcalctool/sl/superscript.page
+share/gnome/help/gcalctool/sl/trigonometry.page
+share/gnome/help/gcalctool/sl/variables.page
 share/gnome/help/gcalctool/sv/
 share/gnome/help/gcalctool/sv/absolute.page
 share/gnome/help/gcalctool/sv/base.page
@@ -739,6 +768,7 @@ share/locale/tk/
 share/locale/tk/LC_MESSAGES/
 share/locale/tk/LC_MESSAGES/gcalctool.mo
 share/locale/tr/LC_MESSAGES/gcalctool.mo
+share/locale/ug/LC_MESSAGES/gcalctool.mo
 share/locale/uk/LC_MESSAGES/gcalctool.mo
 share/locale/vi/LC_MESSAGES/gcalctool.mo
 share/locale/xh/LC_MESSAGES/gcalctool.mo

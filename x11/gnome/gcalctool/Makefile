@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2011/05/28 08:15:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2011/06/01 15:07:48 ajacoutot Exp $
 
-COMMENT=		GTK2 desktop calculator
+COMMENT=		GTK desktop calculator
 
 GNOME_PROJECT=		gcalctool
-GNOME_VERSION=		5.32.2
+GNOME_VERSION=		6.0.2
 
-REVISION=		2
+REVISION=		1
 
 CATEGORIES=		math
 
@@ -15,13 +15,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
-WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pixman-1 png pthread pthread-stubs xcb z xcb-render
-WANTLIB += xml2 GL Xxf86vm drm xcb-shm
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
+WANTLIB += drm expat fontconfig freetype gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread pthread-stubs
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -30,6 +29,10 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		x11/gtk+2
 
 BUILD_DEPENDS=		devel/bison
+YACC=			bison
+
+# needed to download IMF/ECB rates (Financial mode)
+RUN_DEPENDS=		x11/gnome/gvfs
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
@@ -37,6 +40,17 @@ DESKTOP_FILES=		Yes
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
-USE_GROFF=		Yes
+FLAVORS=		gtk2
+FLAVOR?=
+
+.if ${FLAVOR:L:Mgtk2}
+CONFIGURE_ARGS+=	--with-gtk=2.0
+LIB_DEPENDS+=		x11/gtk+2
+WANTLIB += gdk-x11-2.0 gtk-x11-2.0
+.else
+CONFIGURE_ARGS+=	--with-gtk=3.0
+LIB_DEPENDS+=		x11/gtk+3
+WANTLIB += cairo-gobject gdk-3 gtk-3
+.endif
 
 .include <bsd.port.mk>
