@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/09/24 13:43:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/01 17:10:05 jasper Exp $
 ${P5SITE}/Statistics/
 ${P5SITE}/Statistics/Descriptive.pm
 @man man/man3p/Statistics::Descriptive.3p
+share/examples/p5-Statistics-Descriptive/
+share/examples/p5-Statistics-Descriptive/statistical-analysis.pl
