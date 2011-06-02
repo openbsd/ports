@@ -1,7 +1,7 @@
-$OpenBSD: patch-drivers_blazer_usb_c,v 1.1 2010/03/31 22:11:11 sthen Exp $
---- drivers/blazer_usb.c.orig	Sat Mar 20 23:31:35 2010
-+++ drivers/blazer_usb.c	Sat Mar 20 23:31:48 2010
-@@ -387,7 +387,9 @@ int blazer_command(const char *cmd, char *buf, size_t 
+$OpenBSD: patch-drivers_blazer_usb_c,v 1.2 2011/06/02 10:37:08 sthen Exp $
+--- drivers/blazer_usb.c.orig	Tue May 31 11:36:49 2011
++++ drivers/blazer_usb.c	Thu Jun  2 09:20:58 2011
+@@ -396,7 +396,9 @@ int blazer_command(const char *cmd, char *buf, size_t 
  
  	case -ETIMEDOUT:	/* Connection timed out */
  	case -EOVERFLOW:	/* Value too large for defined data type */
