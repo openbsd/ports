@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.196 2011/04/01 23:19:01 jeremy Exp $
+# $OpenBSD: Makefile,v 1.197 2011/06/02 00:28:33 fgsch Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -30,6 +30,7 @@
      SUBDIR += luma
      SUBDIR += maatkit
      SUBDIR += mdbtools/snapshot
+     SUBDIR += mongodb
      SUBDIR += mysql
      SUBDIR += mysql-zrm
      SUBDIR += mysql2pgsql
