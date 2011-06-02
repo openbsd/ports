@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/05/12 15:39:46 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/06/02 18:53:39 rpointel Exp $
 @newgroup _hiawatha:579
 @newuser _hiawatha:579:579:daemon:Hiawatha HTTP Server:/nonexistent:/sbin/nologin
 @bin bin/ssi-cgi
@@ -33,11 +33,11 @@ share/examples/hiawatha/index.xslt
 @extraunexec rm -rf /var/db/hiawatha/*
 @extraunexec rm -rf /var/log/hiawatha/*
 @sample /var/log/hiawatha/
+@mode 0700
 @owner _hiawatha
 @group _hiawatha
-@mode 0700
 @sample /var/db/hiawatha/
+@mode
 @owner
 @group
-@mode
 @rcscript ${RCDIR}/hiawatha
