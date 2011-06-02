@@ -1,0 +1,21 @@
+$OpenBSD: patch-db_nonce_cpp,v 1.1.1.1 2011/06/02 00:26:32 fgsch Exp $
+--- db/nonce.cpp.orig	Sat Apr  2 04:01:52 2011
++++ db/nonce.cpp	Sat Apr  2 04:05:01 2011
+@@ -40,7 +40,7 @@ namespace mongo {
+         massert( 10353 ,  "can't open dev/urandom", _devrandom->is_open() );
+ #elif defined(_WIN32)
+         srand(curTimeMicros());
+-#else
++#elif !defined(__openbsd__)
+         srandomdev();
+ #endif
+ 
+@@ -70,6 +70,8 @@ namespace mongo {
+         assert( rand_s(&a) == 0 );
+         assert( rand_s(&b) == 0 );
+         n = (((unsigned long long)a)<<32) | b;
++#elif defined(__openbsd__)
++        n = arc4random();
+ #else
+         n = (((unsigned long long)random())<<32) | random();
+ #endif

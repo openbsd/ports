@@ -1,0 +1,59 @@
+$OpenBSD: patch-SConstruct,v 1.1.1.1 2011/06/02 00:26:32 fgsch Exp $
+--- SConstruct.orig	Wed Apr  6 05:40:13 2011
++++ SConstruct	Sun Apr 10 22:48:00 2011
+@@ -668,12 +668,13 @@ if nix:
+     if has_option( "distcc" ):
+         env["CXX"] = "distcc " + env["CXX"]
+         
+-    env.Append( CPPFLAGS="-fPIC -fno-strict-aliasing -ggdb -pthread -Wall -Wsign-compare -Wno-unknown-pragmas -Winvalid-pch" )
++    env.Append( CPPFLAGS="-fPIC -fno-strict-aliasing -pthread -Wall -Wsign-compare -Wno-unknown-pragmas -Winvalid-pch" )
+     # env.Append( " -Wconversion" ) TODO: this doesn't really work yet
+     if linux:
+         env.Append( CPPFLAGS=" -Werror " )
+         env.Append( CPPFLAGS=" -fno-builtin-memcmp " ) # glibc's memcmp is faster than gcc's
+     env.Append( CXXFLAGS=" -Wnon-virtual-dtor " )
++    env.Append( CXXFLAGS = os.environ['CXXFLAGS'] )
+     env.Append( LINKFLAGS=" -fPIC -pthread -rdynamic" )
+     env.Append( LIBS=[] )
+ 
+@@ -685,10 +686,10 @@ if nix:
+         env.Append( LINKFLAGS=" -Wl,--as-needed -Wl,-zdefs " )
+ 
+     if debugBuild:
+-        env.Append( CPPFLAGS=" -O0 -fstack-protector " );
++        env.Append( CPPFLAGS=" -O0 -fstack-protector -ggdb " );
+         env['ENV']['GLIBCXX_FORCE_NEW'] = 1; # play nice with valgrind
+-    else:
+-        env.Append( CPPFLAGS=" -O3" )
++    #else:
++        #env.Append( CPPFLAGS=" -O3" )
+         #env.Append( CPPFLAGS=" -fprofile-generate" )
+         #env.Append( LINKFLAGS=" -fprofile-generate" )
+         # then:
+@@ -911,8 +912,6 @@ def doConfigure( myenv , needPcre=True , shell=False )
+                 
+         myCheckLib( J , True )
+         mozHeader = "js"
+-        if bigLibString(myenv).find( "mozjs" ) >= 0:
+-            mozHeader = "mozjs"
+ 
+         if not conf.CheckHeader( mozHeader + "/jsapi.h" ):
+             if conf.CheckHeader( "jsapi.h" ):
+@@ -1118,7 +1117,7 @@ mongos = env.Program( "mongos" , commonFiles + coreDbF
+ # c++ library
+ clientLibName = str( env.Library( "mongoclient" , allClientFiles )[0] )
+ if has_option( "sharedclient" ):
+-    sharedClientLibName = str( env.SharedLibrary( "mongoclient" , allClientFiles )[0] )
++    sharedClientLibName = str( env.SharedLibrary( "mongoclient" , allClientFiles, SHLIBSUFFIX=".so.%s" % os.environ["LIBmongoclient_VERSION"] )[0] )
+ env.Library( "mongotestfiles" , commonFiles + coreDbFiles + coreServerFiles + serverOnlyFiles + ["client/gridfs.cpp"])
+ env.Library( "mongoshellfiles" , allClientFiles + coreServerFiles )
+ 
+@@ -1473,7 +1472,7 @@ def installBinary( e , name ):
+     fullInstallName = installDir + "/bin/" + name
+ 
+     allBinaries += [ name ]
+-    if (solaris or linux) and (not has_option("nostrip")):
++    if (solaris or linux or openbsd) and (not has_option("nostrip")):
+         e.AddPostAction( inst, e.Action( 'strip ' + fullInstallName ) )
+ 
+     if linux and len( COMMAND_LINE_TARGETS ) == 1 and str( COMMAND_LINE_TARGETS[0] ) == "s3dist":

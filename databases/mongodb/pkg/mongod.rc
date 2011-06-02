@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: mongod.rc,v 1.1.1.1 2011/06/02 00:26:32 fgsch Exp $
+
+daemon="${TRUEPREFIX}/bin/mongod"
+daemon_flags="-f ${SYSCONFDIR}/mongodb.conf"
+daemon_user="_mongodb"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
