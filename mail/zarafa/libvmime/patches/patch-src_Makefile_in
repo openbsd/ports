@@ -1,21 +1,21 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2009/02/16 09:42:47 ajacoutot Exp $
---- src/Makefile.in.orig	Wed Jan 28 22:49:26 2009
-+++ src/Makefile.in	Wed Jan 28 22:49:52 2009
-@@ -357,7 +357,7 @@ target_vendor = @target_vendor@
+$OpenBSD: patch-src_Makefile_in,v 1.2 2011/06/02 12:45:43 ajacoutot Exp $
+--- src/Makefile.in.orig	Mon Dec 13 10:26:09 2010
++++ src/Makefile.in	Thu Feb  3 15:22:20 2011
+@@ -497,7 +497,7 @@ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = no-dependencies foreign
  INTERNALS = 
- INCLUDES = -I$(top_srcdir) -I$(srcdir) @PKGCONFIG_CFLAGS@ @EXTRA_CFLAGS@
+ INCLUDES = -I$(prefix)/include -I$(top_srcdir) @PKGCONFIG_CFLAGS@ @EXTRA_CFLAGS@
 -lib_LTLIBRARIES = libvmime.la
 +lib_LTLIBRARIES = libvmime-zarafa.la
  libvmime_la_LDFLAGS = -export-dynamic -version-info @LIBRARY_VERSION@ @PKGCONFIG_LIBS@ @EXTRA_LIBS@
- libvmime_la_SOURCES = address.cpp \
- 	addressList.cpp \
-@@ -494,7 +494,7 @@ clean-libLTLIBRARIES:
+ libvmime_la_SOURCES = address.cpp addressList.cpp attachmentHelper.cpp \
+ 	base.cpp body.cpp bodyPart.cpp bodyPartAttachment.cpp \
+@@ -605,7 +605,7 @@ clean-libLTLIBRARIES:
  	  echo "rm -f \"$${dir}/so_locations\""; \
  	  rm -f "$${dir}/so_locations"; \
  	done
 -libvmime.la: $(libvmime_la_OBJECTS) $(libvmime_la_DEPENDENCIES) 
 +libvmime-zarafa.la: $(libvmime_la_OBJECTS) $(libvmime_la_DEPENDENCIES) 
- 	$(CXXLINK) -rpath $(libdir) $(libvmime_la_LDFLAGS) $(libvmime_la_OBJECTS) $(libvmime_la_LIBADD) $(LIBS)
+ 	$(libvmime_la_LINK) -rpath $(libdir) $(libvmime_la_OBJECTS) $(libvmime_la_LIBADD) $(LIBS)
  
  mostlyclean-compile:
