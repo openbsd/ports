@@ -1,7 +1,8 @@
-$OpenBSD: README-server,v 1.5 2011/04/07 14:45:26 pea Exp $
+$OpenBSD: README-server,v 1.6 2011/06/02 13:41:38 ajacoutot Exp $
 
-Using PostgreSQL in an OpenBSD environment
-==========================================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 At least two different accounts are involved when working with PostgreSQL:
 One is an OpenBSD userid, '_postgresql', which is used as the userid of files
@@ -100,7 +101,6 @@ To generate the keytab:
 
 Upgrade Howto (for a major upgrade)
 ===================================
-
 If you didn't install PostgreSQL by following this README, 
 you must adapt these instructions to your setup.
 
@@ -135,10 +135,8 @@ $ pg_ctl -D /var/postgresql/data -l /var/postgresql/logfile start
 8) Restore your data:
 $ psql -U postgres < /var/postgresql/full.sqldump
 
-
 Clients/Frontends
 =================
-
 Many applications can use the PostgreSQL database right away.  To facilitate
 administration of a PostgreSQL database, two clients are notable:
 

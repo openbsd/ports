@@ -1,3 +1,9 @@
+$OpenBSD: README-main,v 1.2 2011/06/02 13:41:42 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 The licensing of OpenMotif is a bit weird. The actual copyright refers
 to the web site, which is quite nasty, as they can come back and change
 the licence when they want.

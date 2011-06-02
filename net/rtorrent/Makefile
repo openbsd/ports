@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/19 22:31:38 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/06/02 13:41:40 ajacoutot Exp $
 
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
 DISTNAME=		rtorrent-0.8.6
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 
 HOMEPAGE=		http://libtorrent.rakshasa.no/

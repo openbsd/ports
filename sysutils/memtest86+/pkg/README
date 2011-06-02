@@ -1,5 +1,9 @@
-$OpenBSD: README,v 1.1 2010/11/07 18:29:54 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
 $RuOBSD: README.OpenBSD,v 1.2 2009/02/07 16:01:57 form Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 Using Memtest86+ in OpenBSD environment
 

@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/08 21:29:10 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 You will need to have a ~/.flickcurl.conf .
 

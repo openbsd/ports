@@ -1,7 +1,8 @@
-$OpenBSD: README,v 1.2 2010/12/27 13:51:31 jasper Exp $
+$OpenBSD: README,v 1.3 2011/06/02 13:41:39 ajacoutot Exp $
 
-Running igmpproxy on OpenBSD
------------------------------
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 To use igmpproxy on OpenBSD, you will need to configure it by
 editing ${SYSCONFDIR}/igmpproxy.conf, and configure the OS for

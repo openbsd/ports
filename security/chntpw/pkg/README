@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/06 17:47:11 merdely Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:40 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 USE AT OWN RISK. READ ALL DOCUMENTS CAREFULLY. One thing worse than
 being unable to login is being unable to boot; you can get there from here.

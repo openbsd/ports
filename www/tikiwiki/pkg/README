@@ -1,7 +1,8 @@
-$OpenBSD: README,v 1.2 2010/11/06 08:38:44 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2011/06/02 13:41:42 ajacoutot Exp $
 
-Post-install/update instructions for Tikiwiki
-=============================================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 Tikiwiki has been installed into ${INSTDIR}
 

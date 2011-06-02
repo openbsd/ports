@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.4 2011/01/18 23:24:12 landry Exp $
+$OpenBSD: README,v 1.5 2011/06/02 13:41:42 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 Tips and tricks for a pleasant Xfce desktop environment experience
 ==================================================================

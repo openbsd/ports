@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/16 09:17:55 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 The MailScanner port is using the original MailScanner tarball from 
 www.mailscanner.info. This tarball puts all the MailScanner files in 

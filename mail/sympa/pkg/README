@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.3 2010/12/30 17:51:25 landry Exp $
+$OpenBSD: README,v 1.4 2011/06/02 13:41:39 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 SYMPA is now installed, and sample configuration files were created in
 ${SYMPA_HOME}/${SYSCONFDIR}/sympa.conf and ${SYMPA_HOME}/${SYSCONFDIR}/wwsympa.conf

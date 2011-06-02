@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/19 07:23:05 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/06/02 13:41:39 ajacoutot Exp $
 
 COMMENT-main=	UW e-mail client
 COMMENT-pico=	UW text editor
@@ -18,7 +18,7 @@ PKGNAME-main=	alpine-${V}
 PKGNAME-pico=	pico-${PICO_V}
 PKGNAME-pilot=	pilot-${PILOT_V}
 
-REVISION-main=	3
+REVISION-main=	4
 REVISION-pico=	1
 REVISION-pilot=	3
 

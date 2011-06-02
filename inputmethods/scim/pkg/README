@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/08 09:00:20 fgsch Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 To make SCIM work when X is started add the following lines to
 ~/.xinitrc or ~/.xsession:

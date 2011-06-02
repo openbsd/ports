@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2011/06/02 13:41:40 ajacoutot Exp $
 
 COMMENT-main=	nagios base plugins
 COMMENT-fping=	fping plugin
@@ -23,7 +23,7 @@ PKGNAME-samba=	nagios-plugins-samba-${V}
 PKGNAME-snmp=	nagios-plugins-snmp-${V}
 CATEGORIES=	net
 
-REVISION-main=	0
+REVISION-main=	1
 
 HOMEPAGE=	http://nagiosplug.sourceforge.net/
 

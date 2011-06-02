@@ -1,6 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/09 21:39:57 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:38 ajacoutot Exp $
 
-Running Hudson on OpenBSD.
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 To arrange for the standalone Hudson server to run automatically
 on reboot, add the following to /etc/rc.local:

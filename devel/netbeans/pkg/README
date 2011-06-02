@@ -1,10 +1,11 @@
-$OpenBSD: README,v 1.1 2010/11/12 12:26:16 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:38 ajacoutot Exp $
 
-NetBeans 6.8 on OpenBSD
-=======================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
-1. Help System
---------------
+Help System
+===========
 
 NetBeans relies on the presence of a firefox binary for access to
 the online help system. Firefox is not set up as a runtime dependency
@@ -18,8 +19,8 @@ ln -s ${LOCALBASE}/bin/firefox35 ${LOCALBASE}/bin/firefox
 You can also customize this setting within the IDE by going to
 Tools> Options> General> Web Browser.
 
-2. Font issues in the output window
------------------------------------
+Font issues in the output window
+================================
 
 After hitting the Clean & Build or the Run buttons from
 within the IDE, the output window will show square boxes
@@ -28,8 +29,8 @@ instead of fonts.
 Bug 145696 was filed but marked as WONTFIX by NetBeans developers:
 	https://netbeans.org/bugzilla/show_bug.cgi?id=145696
 
-3. Native Libraries
--------------------
+Native Libraries
+================
 
 The profiler module is not included in the port. Additionally,
 the following modules, although included, contain native code which

@@ -1,7 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/12 13:54:28 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
 
-Post-install/update memo for Community-ID
-=========================================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 The complete installation instructions are available at
     ${BASE_URL}/wiki/communityid/How_to_install_Community-ID_under_Linux
@@ -15,7 +16,7 @@ You should point this to the DocumentRoot of your web-server:
 
 
 Installation
-------------
+============
 
 * Creating a dedicated user and database for Community-ID.
 
@@ -66,7 +67,7 @@ Installation
 
 
 Restricting configuration file access
--------------------------------------
+=====================================
 
 * IMPORTANT!
   After having successfully installed and configured Community-ID, you
@@ -76,7 +77,7 @@ Restricting configuration file access
 
 
 Update
-------
+======
 
   After upgrading Community-ID to a new version, always check:
     ${BASE_URL}/wiki/communityid/Upgrade_instructions_for_Community-ID

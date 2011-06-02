@@ -1,13 +1,15 @@
-$OpenBSD: README,v 1.1 2011/04/17 14:54:47 sthen Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:40 ajacoutot Exp $
 
-Running Radicale on OpenBSD
-===========================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
 Radicale will run out of the box but with NO SECURITY.
 There are two things you should do to enable security:
 enable passwords and enable encryption.
 
 Authentication
---------------
+==============
 To enable passwords, edit ${SYSCONFDIR}/radicale/config and change
 "type = fake" (i.e. passwords are not requested or checked) to
 "type = htpasswd".
@@ -20,7 +22,7 @@ To restrict calendars so that "/user1/calendar_name" can ONLY be
 accessed by user1, also change "personal = False" to "personal = True".
 
 Encryption
-----------
+==========
 To enable encryption, you need both to change "ssl = False" to
 "ssl = True" in file "config", and install a certificate and key in
 the files named in "certificate" and "key".

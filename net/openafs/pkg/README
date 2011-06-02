@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/15 08:11:17 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:40 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 Using OpenAFS in an OpenBSD environment
 

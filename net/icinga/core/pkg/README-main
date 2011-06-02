@@ -1,10 +1,11 @@
-$OpenBSD: README-main,v 1.1.1.1 2011/03/28 14:06:08 sthen Exp $
+$OpenBSD: README-main,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
 
-Running ICINGA on OpenBSD
-=========================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 Getting Started
----------------
+===============
 
 The main documentation for Icinga is provided in HTML format as part of
 the icinga-cgi package, see /var/www/icinga-cgi/docs/en/index.html
@@ -20,7 +21,7 @@ This will parse all configuration files and warn about any problems
 which have been identified.
 
 Chroot Considerations
----------------------
+=====================
 
 If using OpenBSD's default chroot environment for httpd, some files
 will need to be moved inside the jail and symbolic links created:
@@ -34,7 +35,7 @@ will need to be moved inside the jail and symbolic links created:
 	ln -s /var/www/var/log/icinga /var/log
 
 Web User-Interfaces
--------------------
+===================
 
 Two web-based user interfaces are available for Icinga:
 
@@ -62,7 +63,7 @@ You should then be able to access the web interface at
 http://localhost/icinga/
 
 Moving from Nagios
-------------------
+==================
 
 The configuration format is compatible with Nagios.  If you'd like
 to move across with minimal changes, you can point Icinga at your

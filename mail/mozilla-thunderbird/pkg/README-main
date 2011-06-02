@@ -1,4 +1,8 @@
-$OpenBSD: README-main,v 1.1 2010/11/11 09:30:36 jasper Exp $
+$OpenBSD: README-main,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 If you encounter strange problems or Thunderbird doesn't start at
 all, try the -safe-mode switch.
@@ -6,7 +10,7 @@ all, try the -safe-mode switch.
 To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
 
 Links
-
+=====
 To make Thunderbird open links using Firefox, shut down Thunderbird
 and add these lines to ~/.thunderbird/<something>.default/prefs.js:
 
@@ -15,7 +19,7 @@ user_pref("network.protocol-handler.app.http", "${LOCALBASE}/bin/firefox");
 user_pref("network.protocol-handler.app.https", "${LOCALBASE}/bin/firefox");
 
 Plugins
-
+=======
 Thunderbird looks for plugins in ~/.mozilla/plugins
 ${TRUEPREFIX}/mozilla-thunderbird/plugins and
 ${LOCALBASE}/lib/mozilla/plugins.
@@ -23,7 +27,7 @@ If the environment variable MOZ_PLUGIN_PATH is specified, this
 location will be overridden.
 
 Debugging
-
+=========
 If you encounter crashes, you might want to build the debug FLAVOR of
 this package, and run 'thunderbird -g' to run thunderbird inside gdb, so
 that you can gather debugging logs and traces.

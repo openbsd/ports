@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/05/14 21:29:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/06/02 13:41:42 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	OpenGL window and compositing manager
 
 V =		0.8.2
 DISTNAME =	compiz-${V}
-REVISION=	7
+REVISION=	8
 
 SHARED_LIBS =	decoration	0.0
 

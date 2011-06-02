@@ -1,6 +1,8 @@
-$OpenBSD: README-main,v 1.4 2011/01/17 17:58:04 ajacoutot Exp $
+$OpenBSD: README-main,v 1.5 2011/06/02 13:41:40 ajacoutot Exp $
 
-Using samba package in an OpenBSD environment:
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 1. Edit ${SYSCONFDIR}/samba/smb.conf to suit your needs.
 

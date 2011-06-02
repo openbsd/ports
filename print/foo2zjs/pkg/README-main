@@ -1,7 +1,8 @@
-$OpenBSD: README-main,v 1.2 2011/03/03 13:42:16 ajacoutot Exp $
+$OpenBSD: README-main,v 1.3 2011/06/02 13:41:40 ajacoutot Exp $
 
-Using foo2zjs under OpenBSD
-===========================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 Before using foo2zjs you should get extra files from the web, such as
 .ICM profiles (for color correction) and firmware using the command

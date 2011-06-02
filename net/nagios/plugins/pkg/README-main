@@ -1,7 +1,8 @@
-$OpenBSD: README-main,v 1.1 2010/11/15 09:56:53 sthen Exp $
+$OpenBSD: README-main,v 1.2 2011/06/02 13:41:40 ajacoutot Exp $
 
-Setting up Nagios' plugins on OpenBSD
--------------------------------------
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 The check_icmp and check_dhcp Nagios plugins need elevated privileges to
 run properly. As the code quality of these plugins is not really good,

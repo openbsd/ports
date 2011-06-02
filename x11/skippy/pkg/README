@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/07 19:28:48 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:42 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 Copy the sample ${TRUEPREFIX}/share/examples/skippy/skippyrc-default to
 your home directory as .skippyrc before running it.

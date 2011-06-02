@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/12 14:35:23 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:42 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 In this document we'll see how to create a zope instance and have it
 start at boot time. Throughout this document, we will assume that the

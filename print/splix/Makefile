@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/20 09:48:40 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/02 13:41:40 ajacoutot Exp $
 
 COMMENT=	CUPS drivers for SPL printers
 
 DISTNAME=	splix-2.0.0
-REVISION =	5
+REVISION =	6
 CATEGORIES=	print
 
 EXTRACT_SUFX=	.tar.bz2

@@ -1,7 +1,8 @@
-$OpenBSD: README-server,v 1.2 2011/01/04 16:03:00 ajacoutot Exp $
+$OpenBSD: README-server,v 1.3 2011/06/02 13:41:37 ajacoutot Exp $
 
-Using MySQL in an OpenBSD environment
-=====================================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 If you are installing MySQL for the first time, you have to create
 a default database first. In order to create the database, please run

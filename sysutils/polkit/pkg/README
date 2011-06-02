@@ -1,7 +1,8 @@
-$OpenBSD: README,v 1.1 2011/06/01 12:23:53 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
 
-Running polkit on OpenBSD
-=========================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 In most situations, PolicyKit will require a session to be marked as
 "active" before granting privileges. This is done using ConsoleKit, so
@@ -13,7 +14,7 @@ Administrative users	-> "wheel" group
 Standard users 		-> "users" group
 
 Disabling polkit
-----------------
+================
 If you'd like to completely disable privilege granting through the
 PolicyKit framework, create the file:
     ${SYSCONFDIR}/polkit-1/nullbackend.conf.d/99-nullbackend.conf
@@ -22,7 +23,7 @@ containing the following lines:
 Priority=99
 
 Security considerations
------------------------
+=======================
 polkitd(8) runs setuid(2) root in order to allow applications
 to request additional fine-grained privileges (e.g. adjust the clock,
 change the timezone...). Access to these privileges is controlled by

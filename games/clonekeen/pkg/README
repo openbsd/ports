@@ -1,7 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/07 18:58:39 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:38 ajacoutot Exp $
 
-CloneKeen Game Data Install Instructions
-========================================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 1) Go and download/buy commander keen for DOS and unzip it somewhere.
    In this example we unzip in /tmp/dos.

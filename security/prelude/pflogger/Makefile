@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/20 17:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/06/02 13:41:40 ajacoutot Exp $
 
 COMMENT=	Prelude sensors for Packet Filter
 
 DISTNAME=	prelude-pflogger-0.9.0-rc2
 PKGNAME=	prelude-pflogger-0.9.0rc2
 
-REVISION=	7
+REVISION=	8
 
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/prelude-pflogger/
 

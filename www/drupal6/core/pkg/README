@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/15 12:58:52 stephan Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 To enable a decent configuration of drupal, please create a symbolic
 link from ${TRUEPREFIX}/conf/modules.sample/drupal6.conf

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/12 14:35:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/02 13:41:42 ajacoutot Exp $
 
 VERSION=	2.10
 PATCHLEVEL=	.5
 
 PKGNAME=	${DISTNAME:S/-final//:L}
-REVISION=	3
+REVISION=	4
 
 .include <bsd.port.mk>

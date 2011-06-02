@@ -1,4 +1,8 @@
-$OpenBSD: README-main,v 1.1 2010/11/15 10:45:54 sthen Exp $
+$OpenBSD: README-main,v 1.2 2011/06/02 13:41:42 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 The tomcat package does not install the example webapps and
 documentation.  You must supply your own webapps and configuration or

@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.2 2010/11/11 09:42:11 fgsch Exp $
+$OpenBSD: README,v 1.3 2011/06/02 13:41:39 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 To make IBus work when X is started add the following lines to
 ~/.xinitrc or ~/.xsession:

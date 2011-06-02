@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2011/06/02 13:41:42 ajacoutot Exp $
 
 COMMENT-main=		Motif toolkit
 COMMENT-demos=		Motif toolkit demos
@@ -8,7 +8,7 @@ DISTNAME=		openmotif-${VERSION}
 PKGNAME-main=		openmotif-${VERSION}
 PKGNAME-demos=		openmotif-demos-${VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 REVISION-demos= 	1
 
 SHARED_LIBS=		Mrm	4.1	\

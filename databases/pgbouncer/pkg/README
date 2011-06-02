@@ -1,10 +1,11 @@
-$OpenBSD: README,v 1.3 2011/01/04 14:54:28 pea Exp $
+$OpenBSD: README,v 1.4 2011/06/02 13:41:38 ajacoutot Exp $
 
-Running pgbouncer on OpenBSD
-============================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
-Post-installation steps:
-------------------------
+Post-installation steps
+=======================
 1. Carefully edit ${SYSCONFDIR}/pgbouncer/pgbouncer.ini and 
    ${SYSCONFDIR}/pgbouncer/userlist.txt to fit your needs.
 
@@ -16,6 +17,6 @@ Post-installation steps:
 
 3. Launch pgbouncer with /etc/rc.d/pgbouncer start
 
-Random hints:
--------------
+Random hints
+============
 Check /var/log/pgbouncer/pgbouncer.log if something goes wrong.

@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/10 21:21:26 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:40 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 Several steps need to be taken to properly configure the NTP daemon.
 

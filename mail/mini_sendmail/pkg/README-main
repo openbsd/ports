@@ -1,4 +1,8 @@
-$OpenBSD: README-main,v 1.1 2010/11/15 18:18:55 jasper Exp $
+$OpenBSD: README-main,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 First things first, we need to install the chroot subpackage of
 mini_sendmail if you have not done so already.  This will put a

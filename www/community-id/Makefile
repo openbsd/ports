@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/02 13:41:41 ajacoutot Exp $
 
 COMMENT=	PHP OpenID implementation
 
@@ -8,7 +8,7 @@ BASE_URL=	http://source.keyboard-monkeys.org
 DISTNAME=	cid-${V}
 PKGNAME=	community-id-${V}
 
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	www security
 

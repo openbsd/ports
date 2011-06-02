@@ -1,7 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/15 17:39:47 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
 
-Running KnowledgeTree in a chroot on OpenBSD
-============================================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 In order to make A::G operate in a chrooted environment, it is
 necessary to copy all of the relevant libraries and perl modules
@@ -76,7 +77,7 @@ $ cd /var/www${LOCALBASE}/libdata/perl5/site_perl/
 
 
 Setting up httpd
-------------------------------
+================
 <VirtualHost *>
 	ServerAdmin webmaster@host.some_domain.com
 	DocumentRoot /var/www/htdocs

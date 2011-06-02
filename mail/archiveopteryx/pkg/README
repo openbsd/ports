@@ -1,7 +1,8 @@
-$OpenBSD: README,v 1.1.1.1 2011/01/09 09:36:21 landry Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
 
-Running Archiveopteryx on OpenBSD
-=================================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 Archiveopteryx is now installed, and sample configuration files were
 created in ${SYSCONFDIR}/archiveopteryx.conf and ${SYSCONFDIR}/aoxsuper.conf
@@ -10,8 +11,8 @@ Before using it, you will need to create PostgreSQL users and database,
 and you'll need to set aox db user password in archiveopteryx.conf,
 and aoxsuper db user password in aoxsuper.conf.
 
-Database initialisation:
-------------------------
+Database initialisation
+=======================
 Assuming you have an administrative account named `postgres',
 you can create the aox/aoxsuper users and archiveopteryx database like
 this:
@@ -42,9 +43,8 @@ If performing an upgrade, you might need to update schema with:
 
 aox upgrade schema
 
-Certificate generation:
------------------------
-
+Certificate generation
+======================
 By default, archiveopteryx uses TLS (unless use-tls is set to no), so it
 needs an ssl certificate file in /etc/ssl/archiveopteryx.pem containing
 both private key and signed certificate to function properly. If you
@@ -56,9 +56,8 @@ openssl req -config /etc/ssl/archiveopteryx-openssl.conf -x509 -days \
 	1764 -newkey rsa -nodes -keyout /etc/ssl/archiveopteryx.pem \
 	-out /etc/ssl/archiveopteryx.pem
 
-Startup/Shutdown configuration:
--------------------------------
-
+Startup/Shutdown configuration
+==============================
 Make sure to startup archiveopteryx after your DB server.
 aox show status can give you the status of processes.
 

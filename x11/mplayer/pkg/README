@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.2 2011/03/29 20:04:41 edd Exp $
+$OpenBSD: README,v 1.3 2011/06/02 13:41:42 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 Possible issues with using MPlayer on OpenBSD:
 

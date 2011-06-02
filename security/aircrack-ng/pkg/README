@@ -1,10 +1,11 @@
-$OpenBSD: README,v 1.1 2011/05/21 11:19:24 fgsch Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:40 ajacoutot Exp $
 
-Running aircrack-ng on OpenBSD
-==============================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
-Post-installation steps:
-------------------------
+Post-installation steps
+=======================
 The kismet format output from airodump-ng(1) can optionally include
 the device manufacturer. To enable this, type
 

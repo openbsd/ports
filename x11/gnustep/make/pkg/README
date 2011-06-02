@@ -1,8 +1,8 @@
-$OpenBSD: README,v 1.2 2010/11/09 09:05:31 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2011/06/02 13:41:42 ajacoutot Exp $
 
-Running GNUstep on OpenBSD
-==========================
-
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 #
 # post-install optionnal steps

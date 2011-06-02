@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/06/02 13:41:42 ajacoutot Exp $
 
 COMMENT=	all-in-one wiki/groupware/CMS solution
 
@@ -6,7 +6,7 @@ V=		4.2
 DISTNAME=	tikiwiki-${V}
 CATEGORIES=	www
 
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://tikiwiki.org/
 

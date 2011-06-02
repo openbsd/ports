@@ -1,10 +1,11 @@
-$OpenBSD: README,v 1.1.1.1 2011/03/10 13:42:30 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:40 ajacoutot Exp $
 
-Running snort2pf on OpenBSD
-==============================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 Adjusting pf.conf(5)
---------------------
+====================
 In order to make use of snort2pf, one must add an anchor for in your pf.conf(5)
 file, like:
 

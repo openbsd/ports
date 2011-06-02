@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/06/02 13:41:41 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT =	vmware userland helper for X
 V =		0.20101029
 DISTNAME =	jcs-vmwh-ebb7669
 PKGNAME =	vmwh-${V}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	sysutils x11
 
 HOMEPAGE =	https://github.com/jcs/vmwh/

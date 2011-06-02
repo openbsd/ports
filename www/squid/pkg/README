@@ -1,7 +1,8 @@
-$OpenBSD: README,v 1.3 2011/04/14 08:11:50 sthen Exp $
+$OpenBSD: README,v 1.4 2011/06/02 13:41:41 ajacoutot Exp $
 
-Running Squid on OpenBSD
-========================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 The local (OpenBSD) differences are:
 - configuration files are in		${SYSCONFDIR}/squid
@@ -18,7 +19,7 @@ Please remember to initialize the cache by running "squid -z" before
 trying to run Squid for the first time.
 
 Transparent Proxying with PF
-----------------------------
+============================
 
 To configure a transparent proxy, bind to a specific address in
 ${SYSCONFDIR}/squid/squid.conf, for example:

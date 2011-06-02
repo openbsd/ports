@@ -1,7 +1,8 @@
-$OpenBSD: README,v 1.1 2011/05/24 16:02:39 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
 
-Running uPower on OpenBSD
-=========================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 To get all upower(1) functionalities (battery status on APM-only
 machines, suspend...), apmd(8) needs to be running.

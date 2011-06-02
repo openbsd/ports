@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.2 2011/03/30 21:39:14 landry Exp $
+$OpenBSD: README,v 1.3 2011/06/02 13:41:41 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 If you encounter strange problems relating to bookmarks, downloads,
 window placement, toolbars, history, or other settings, it is

@@ -1,7 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/15 17:37:16 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
 
-Running KnowledgeTree on OpenBSD
-================================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 To finish the installation of KnowledgeTree, setup a database.
 In order to create the dms database issue the following command,

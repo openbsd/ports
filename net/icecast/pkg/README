@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/11 10:32:54 edd Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 Icecast v2 is very versatile and can be used in many different
 environments.  A streaming service provider has different requirements

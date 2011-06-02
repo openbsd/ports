@@ -1,7 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/22 13:04:22 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:38 ajacoutot Exp $
 
-Running OpenTTD on OpenBSD
-==========================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 OpenTTD comes with free data and music. However, if you prefer to
 play with the original Transport Tycoon Deluxe data files you can

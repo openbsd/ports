@@ -1,10 +1,11 @@
-$OpenBSD: README,v 1.5 2011/05/24 16:24:35 giovanni Exp $
+$OpenBSD: README,v 1.6 2011/06/02 13:41:36 ajacoutot Exp $
 
-Running Hylafax on OpenBSD
-==========================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
-Post-installation steps:
-------------------------
+Post-installation steps
+=======================
 Hylafax needs some manual configuration before it is usable.
 
 Make sure that you have configured HylaFAX before running faxq:
@@ -22,6 +23,6 @@ something like this:
 
 and send a SIGHUP to init(8).
 
-References:
------------
+References
+==========
 Additional documentation at http://www.hylafax.org/.

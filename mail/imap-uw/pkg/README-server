@@ -1,4 +1,8 @@
-$OpenBSD: README-server,v 1.1 2010/11/06 08:14:37 ajacoutot Exp $
+$OpenBSD: README-server,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 The ipop2d, ipop3d, and imapd daemons should be invoked by your
 /etc/inetd.conf file with lines such as:

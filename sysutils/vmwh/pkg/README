@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/11 14:52:01 dcoppa Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 In order to use vmwh add the following line to ~/.xinitrc or
 ~/.xsession before the window manager:

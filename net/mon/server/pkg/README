@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/10 13:54:56 pea Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 mon is a tool for monitoring the availability of services and sending alerts 
 on prescribed events.

@@ -1,7 +1,8 @@
-$OpenBSD: README,v 1.1 2011/04/21 10:22:38 eric Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:38 ajacoutot Exp $
 
-Using BuildBot slave in an OpenBSD environment
-==============================================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 On OpenBSD, the BuildBot package has an associated _buildslave user
 for running the slave.  The default slave directory is expected to be

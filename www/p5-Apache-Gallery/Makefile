@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/06/02 13:41:41 ajacoutot Exp $
 
 
 COMMENT=		mod_perl Apache gallery handler
 
 MODULES=		cpan
 DISTNAME=		Apache-Gallery-1.0RC3
-REVISION=		1
+REVISION=		2
 CATEGORIES=		www
 USE_GROFF =		Yes
 

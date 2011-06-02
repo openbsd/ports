@@ -1,7 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/06 08:35:34 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:42 ajacoutot Exp $
 
-Post-install/update instructions for TimeTrex
-=============================================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 TimeTrex has been installed into ${INSTDIR}
 
@@ -21,7 +22,7 @@ The administrator Guide is available as a PDF here:
 
 
 Installation
-------------
+============
 
 * Creating a dedicated user and database for TimeTrex.
   While TimeTrex supports MySQL and PostreSQL, MySQL will be used in the
@@ -62,7 +63,7 @@ Installation
 
 
 Update
-------
+======
 
 * IMPORTANT!
   Create a backup of your current installation and timetrex database.

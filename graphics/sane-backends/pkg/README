@@ -1,12 +1,13 @@
-$OpenBSD: README,v 1.7 2011/03/09 13:05:20 ajacoutot Exp $
+$OpenBSD: README,v 1.8 2011/06/02 13:41:38 ajacoutot Exp $
 
-Using sane(7) under OpenBSD
-===========================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 First read ${TRUEPREFIX}/share/doc/sane-backends/PROBLEMS.
 
 USB
----
+===
 Since USB scanning will be handled by libusb, you need to allow the
 _saned user access to the corresponding USB endpoint. To do so, find
 where your scanner is attached to using `sudo usbdevs -vd` then change
@@ -35,19 +36,19 @@ You can then grant users direct access to the scanner by adding them to
 the _saned group.
 
 SCSI
-----
+====
 SANE only supports the generic SCSI uk(4) devices.
 Make sure your user account has access to the scanner device node or you
 will not be able to scan.
 
 LOCKING
--------
+=======
 Some backends (like sane-plustek(5)) use a lockfile for allowing
 multiple access to one scanner. If using such a backend, you must
 add yourself to the _saned group or you will not be able to scan.
 
 NETWORK
--------
+=======
 By default, the saned(8) daemon runs as _saned, so you need to allow the
 _saned user access to the scanner device node.
 If you're planning on using the SANE network daemon (saned) with

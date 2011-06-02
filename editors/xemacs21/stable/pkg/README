@@ -1,10 +1,11 @@
-$OpenBSD: README,v 1.1 2011/01/03 10:44:27 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:38 ajacoutot Exp $
 
-Running XEmacs on OpenBSD
-==============================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
-Installing modules:
--------------------
+Installing modules
+==================
 XEmacs is pretty useless as-is.  It is just an engine.
 You need to install modules to provide your users full functionality.
 There are two methods to achieve this:

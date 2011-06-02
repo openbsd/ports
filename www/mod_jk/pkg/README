@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/09 21:38:37 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
                           OpenBSD mod_jk Package
                        Apache-Tomcat AJP Connector

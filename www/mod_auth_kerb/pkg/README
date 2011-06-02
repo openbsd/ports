@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/13 07:44:33 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 If you haven't already run the module enabler, you can manually enable
 Kerberos support by adding the following lines into httpd.conf near the

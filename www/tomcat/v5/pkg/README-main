@@ -1,7 +1,8 @@
-$OpenBSD: README-main,v 1.2 2010/11/29 21:26:01 sthen Exp $
+$OpenBSD: README-main,v 1.3 2011/06/02 13:41:42 ajacoutot Exp $
 
-Running Tomcat 5.5 on OpenBSD
-=============================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 The tomcat package does not install the example webapps, documentation
 or admin webapp. You must supply your own webapps and configuration or

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/05/30 15:35:28 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2011/06/02 13:41:41 ajacoutot Exp $
 
 COMMENT =	powerful content management system
  
 DISTNAME =	drupal-6.22
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
+REVISION=	0
 
 RUN_DEPENDS = 	www/php5/core \
 	php5-mysql-*|php5-mysqli-*|php5-pgsql-*:www/php5/extensions,-mysql \

@@ -1,6 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/11 23:02:21 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
 
-# Blogsum README for OpenBSD
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 #########################
 ### UPGRADING BLOGSUM ###

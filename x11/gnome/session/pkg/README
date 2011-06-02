@@ -1,10 +1,11 @@
-$OpenBSD: README,v 1.11 2011/06/01 15:08:23 ajacoutot Exp $
+$OpenBSD: README,v 1.12 2011/06/02 13:41:42 ajacoutot Exp $
 
-Running GNOME on OpenBSD
-========================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 Introduction
-------------
+============
 The gnome-session package only takes care of installing minimal GNOME
 libraries.  For a satisfying GNOME user experience, it is advised to
 install at least the following packages:
@@ -28,7 +29,7 @@ install at least the following packages:
 (xscreensaver can be used instead of gnome-screensaver)
 
 Login into GNOME
-----------------
+================
 Login can be made using the GNOME Login Manager: GDM. Or you can add the
 following line corresponding to your login preference:
     exec ${TRUEPREFIX}/bin/gnome-session
@@ -41,7 +42,7 @@ session startup command: ${LOCALBASE}/bin/ck-launch-session.
     e.g. exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
 
 A note about accessibility
---------------------------
+==========================
 If you want to make the GNOME applications "accessible" (e.g. nautilus),
 you'll need to install the libgail-gnome package which adds ATK
 interfaces for libbonoboui and libgnomeui widgets (see below).
@@ -54,7 +55,7 @@ To enable it, run the following command:
     gconftool-2 --set --type bool /desktop/gnome/interface/at-spi-corba true
 
 Installing more packages
-------------------------
+========================
 If your needs aren't satisfied yet, there are many other packages
 you can install. The most important ones will be mentioned by category:
 

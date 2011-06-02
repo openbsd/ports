@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/08 08:24:32 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 On OpenBSD, RANCID lives and works in /var/rancid, with user id _rancid.
 

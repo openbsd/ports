@@ -1,10 +1,11 @@
-$OpenBSD: README,v 1.1 2010/12/12 20:20:56 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:38 ajacoutot Exp $
 
-Running AVRDUDE on OpenBSD
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Programming Arduio devices
 ==========================
-
-Programming Arduio devices:
----------------------------
 If you're planning on programming *duino devices (with an FTDI chip)
 using avrdude, you'll want to invoke it something like this:
 

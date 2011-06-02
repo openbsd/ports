@@ -1,7 +1,8 @@
-$OpenBSD: README,v 1.4 2011/05/09 15:54:56 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2011/06/02 13:41:38 ajacoutot Exp $
 
-README for OpenBSD users
-------------------------
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 ==> Quick Start
 

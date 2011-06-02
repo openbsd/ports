@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/29 21:27:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/02 13:41:42 ajacoutot Exp $
 
 COMMENT-main=	Java servlet 2.5 and Java server pages 2.1 server
 COMMENT-examples=example applications and full documentation
@@ -8,7 +8,7 @@ DISTNAME=	apache-tomcat-${V}
 PKGNAME=	tomcat-${V}
 PKGNAME-main=	tomcat-${V}
 PKGNAME-examples=tomcat-examples-${V}
-REVISION-main=	1
+REVISION-main=	2
 REVISION-examples= 1
 CATEGORIES=	www
 

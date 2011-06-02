@@ -1,10 +1,11 @@
-$OpenBSD: README,v 1.1 2010/12/07 02:56:19 okan Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
 
-Running MIMEDEFANG on OpenBSD
-=============================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
-1. Post-installation steps:
----------------------------
+Post-installation steps
+=======================
 Register the mimedefang milter with sendmail(8) by adding the following
 to your .mc file:
 
@@ -14,7 +15,7 @@ to your .mc file:
 
 Then re-generate your .cf file.
 
-2. Start-up order:
-------------------
+Start-up order
+==============
 Be sure to start mimedefang_multiplexor before mimedefang_daemon in
 rc.local(8).

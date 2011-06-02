@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/13 07:44:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/06/02 13:41:41 ajacoutot Exp $
 
 COMMENT=	Apache Kerberos authentication module
 
-REVISION=	6
+REVISION=	7
 DISTNAME=	mod_auth_kerb-5.3
 CATEGORIES=	www
 

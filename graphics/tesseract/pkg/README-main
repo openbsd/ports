@@ -1,7 +1,8 @@
-$OpenBSD: README-main,v 1.1 2010/11/07 18:49:10 jasper Exp $
+$OpenBSD: README-main,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
 
-OCR with tesseract under OpenBSD
-================================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 Here's a quick HOWTO about optical character recognition using:
     scanimage(1) -- from the sane-backends package

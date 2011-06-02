@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/08 20:12:13 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 GRUB's configuration file is /grub/menu.lst which is described in detail
 in GRUB's info page. A minimal menu.lst looks like this:

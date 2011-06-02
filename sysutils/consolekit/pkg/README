@@ -1,7 +1,8 @@
-$OpenBSD: README,v 1.1 2011/06/01 11:29:53 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
 
-Running consolekit on OpenBSD
-=============================
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 To enable ConsoleKit in a graphical session, prepend ck-launch-session
 to the session script (note: gdm(1) does this automatically). e.g.

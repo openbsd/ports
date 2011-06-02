@@ -1,4 +1,8 @@
-$OpenBSD: README,v 1.1 2010/11/16 10:11:51 jasper Exp $
+$OpenBSD: README,v 1.2 2011/06/02 13:41:40 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
 
 To start with prelude-manager, you have to create a starting profile,
 e.g. "prelude-manager" by running:
