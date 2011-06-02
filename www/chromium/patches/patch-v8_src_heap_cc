@@ -1,12 +1,33 @@
-$OpenBSD: patch-v8_src_heap_cc,v 1.2 2011/05/31 07:55:04 robert Exp $
+$OpenBSD: patch-v8_src_heap_cc,v 1.3 2011/06/02 07:22:12 robert Exp $
 --- v8/src/heap.cc.orig	Fri May 20 10:56:51 2011
-+++ v8/src/heap.cc	Mon May 30 23:09:01 2011
-@@ -91,7 +91,7 @@ intptr_t Heap::max_executable_size_ = max_old_generati
- static const int default_max_semispace_size_  = 16*MB;
- intptr_t Heap::max_old_generation_size_ = 1*GB;
- int Heap::initial_semispace_size_ = 1*MB;
--intptr_t Heap::code_range_size_ = 512*MB;
-+intptr_t Heap::code_range_size_ = 32*MB;
- intptr_t Heap::max_executable_size_ = 256*MB;
- #else
- static const int default_max_semispace_size_  = 8*MB;
++++ v8/src/heap.cc	Wed Jun  1 13:43:18 2011
+@@ -4503,6 +4503,29 @@ bool Heap::ConfigureHeap(int max_semispace_size,
+   initial_semispace_size_ = Min(initial_semispace_size_, max_semispace_size_);
+   external_allocation_limit_ = 10 * max_semispace_size_;
+ 
++  intptr_t max_virtual = OS::MaxVirtualMemory();
++
++  if (max_virtual > 0) {
++    intptr_t half = max_virtual >> 1;
++    intptr_t quarter = max_virtual >> 2;
++    // If we have limits on the amount of virtual memory we can use then we may
++    // be forced to lower the allocation limits.  We reserve one quarter of the
++    // memory for young space and off-heap data.  The rest is distributed as
++    // described below.
++    if (code_range_size_ > 0) {
++      // Reserve a quarter of the memory for the code range.  The old space
++      // heap gets the remaining half.  There is some unavoidable double
++      // counting going on here since the heap size is measured in committed
++      // virtual memory and the code range is only reserved virtual memory.
++      code_range_size_ = Min(code_range_size_, quarter);
++      max_old_generation_size_ = Min(max_old_generation_size_, half);
++    } else {
++      // Reserve three quarters of the memory for the old space heap including
++      // the executable code.
++      max_old_generation_size_ = Min(max_old_generation_size_, half + quarter);
++    }
++  }
++
+   // The old generation is paged.
+   max_old_generation_size_ = RoundUp(max_old_generation_size_, Page::kPageSize);
+ 

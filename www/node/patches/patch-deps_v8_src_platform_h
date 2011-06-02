@@ -1,0 +1,14 @@
+$OpenBSD: patch-deps_v8_src_platform_h,v 1.1 2011/06/02 07:21:14 robert Exp $
+--- deps/v8/src/platform.h.orig	Sat May 21 04:40:06 2011
++++ deps/v8/src/platform.h	Wed Jun  1 14:26:51 2011
+@@ -287,6 +287,10 @@ class OS {
+   // positions indicated by the members of the CpuFeature enum from globals.h
+   static uint64_t CpuFeaturesImpliedByPlatform();
+ 
++  // Maximum size of the virtual memory.  0 means there is no artificial
++  // limit.
++  static intptr_t MaxVirtualMemory();
++
+   // Returns the double constant NAN
+   static double nan_value();
+ 

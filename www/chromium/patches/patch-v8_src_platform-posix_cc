@@ -1,0 +1,22 @@
+$OpenBSD: patch-v8_src_platform-posix_cc,v 1.1 2011/06/02 07:22:12 robert Exp $
+--- v8/src/platform-posix.cc.orig	Fri May 20 10:56:51 2011
++++ v8/src/platform-posix.cc	Wed Jun  1 13:43:18 2011
+@@ -54,6 +54,18 @@
+ namespace v8 {
+ namespace internal {
+ 
++
++// Maximum size of the virtual memory.  0 means there is no artificial
++// limit.
++
++intptr_t OS::MaxVirtualMemory() {
++  struct rlimit limit;
++  int result = getrlimit(RLIMIT_DATA, &limit);
++  if (result != 0) return 0;
++  return limit.rlim_cur;
++}
++
++
+ // ----------------------------------------------------------------------------
+ // Math functions
+ 
