@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2011/06/01 18:53:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.65 2011/06/02 17:09:31 kili Exp $
 
 COMMENT=	GNU version of the traditional tape archiver
 
@@ -23,8 +23,7 @@ MODULES=	devel/gettext
 RUN_DEPENDS=	archivers/bzip2 archivers/xz
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--program-prefix=g \
-		--disable-silent-rules
+CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${LDSTATIC}" \
 		DEFAULT_ARCHIVE=/dev/rst0 \

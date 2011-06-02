@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/05/30 12:45:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/06/02 17:09:31 kili Exp $
 
 COMMENT=		library to provide a Gtk+ widget to display maps
 
@@ -25,8 +25,7 @@ LIB_DEPENDS=		databases/sqlite3 \
 			devel/libsoup,-gnome \
 			graphics/clutter/clutter-gtk>=0.10
 
-CONFIGURE_ARGS= 	--enable-introspection \
-			--disable-silent-rules
+CONFIGURE_ARGS= 	--enable-introspection
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/demos/launcher-gtk \

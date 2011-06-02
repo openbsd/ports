@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/05 21:25:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/06/02 17:09:31 kili Exp $
 
 COMMENT =		library for decoding mod-like music formats
 
@@ -25,7 +25,6 @@ USE_LIBTOOL =		Yes
 NO_REGRESS =		Yes
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-silent-rules
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

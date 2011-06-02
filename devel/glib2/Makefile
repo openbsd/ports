@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2011/05/31 07:53:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.122 2011/06/02 17:09:31 kili Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -75,8 +75,7 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
 			--disable-Bsymbolic \
 			--disable-selinux \
-			--disable-xattr \
-			--disable-silent-rules
+			--disable-xattr
 
 # OpenBSD has support for monotonic clock (CLOCK_MONOTONIC), however we
 # we currently don't have most of the _POSIX_* defines in unistd.h (e.g.

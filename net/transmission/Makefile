@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2011/01/10 08:35:16 fgsch Exp $
+# $OpenBSD: Makefile,v 1.66 2011/06/02 17:09:32 kili Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gtk=	lightweight BitTorrent client with GTK+ interface
@@ -40,7 +40,6 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-shared \
-		--disable-silent-rules \
 		--disable-libnotify \
 		--disable-libappindicator \
 		--disable-libcanberra \

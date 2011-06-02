@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/05/28 08:15:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/06/02 17:09:32 kili Exp $
 
 COMMENT=	flexible communications framework, logger component
 
@@ -36,7 +36,6 @@ MODPY_RUNDEP=		No
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-silent-rules \
 			--disable-gtk-doc \
 			--enable-introspection
 CONFIGURE_ENV=		ac_cv_prog_PYTHON="${MODPY_BIN}"

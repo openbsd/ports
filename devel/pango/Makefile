@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2011/05/13 23:52:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2011/06/02 17:09:31 kili Exp $
 
 COMMENT=		library for layout and rendering of text
 
@@ -46,7 +46,6 @@ USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
-			--disable-silent-rules \
 			--enable-introspection
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include"
 

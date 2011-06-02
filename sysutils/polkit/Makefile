@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/06/02 13:41:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/06/02 17:09:32 kili Exp $
 
 COMMENT=	framework for granting privileged operations to users
 
@@ -56,7 +56,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--disable-silent-rules \
 		--localstatedir=/var \
 		--mandir=${PREFIX}/man \
 		--enable-introspection \

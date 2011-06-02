@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/03/03 21:40:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2011/06/02 17:09:31 kili Exp $
 
 COMMENT =	emulates the Super Nintendo Entertainment System
 
@@ -46,8 +46,7 @@ VMEM_WARNING =	Yes
 USE_GMAKE =	Yes
 
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS = --disable-silent-rules \
-		 --without-portaudio \
+CONFIGURE_ARGS = --without-portaudio \
 		 --without-oss \
 		 --without-alsa \
 		 --without-pulseaudio \

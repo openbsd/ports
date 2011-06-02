@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/06/02 13:41:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/02 17:09:32 kili Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
@@ -23,7 +23,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-silent-rules \
 			--disable-gtk-doc \
 			--enable-introspection \
 			--enable-man-pages \

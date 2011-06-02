@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/05/11 06:22:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2011/06/02 17:09:31 kili Exp $
 
 COMMENT=	utilities for dot.desktop entries
 
@@ -32,7 +32,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_prog_EMACS=no
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-silent-rules
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/20 09:48:39 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/02 17:09:32 kili Exp $
 
 # libgs from ghostscript is only provided on shared libs archs
 SHARED_ONLY=	Yes
@@ -32,8 +32,7 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-silent-rules
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .ifdef DEBUG
 BUILD_DEPENDS+=	graphics/cairo

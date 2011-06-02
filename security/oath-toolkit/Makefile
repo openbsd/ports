@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/16 10:10:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/02 17:09:32 kili Exp $
 
 COMMENT =	toolkit for OATH/HOTP and TOTP
 DISTNAME =	oath-toolkit-1.6.2
@@ -26,6 +26,6 @@ SEPARATE_BUILD =	simple
 USE_GMAKE =		Yes
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} --disable-silent-rules
+CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

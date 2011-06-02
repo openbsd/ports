@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/03/06 11:43:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2011/06/02 17:09:31 kili Exp $
 
 COMMENT=	read and manipulate raw images from digital cameras
 
@@ -42,7 +42,6 @@ USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
-CONFIGURE_ARGS=	--enable-extras \
-		--enable-silent-rules=no
+CONFIGURE_ARGS=	--enable-extras
 
 .include <bsd.port.mk>

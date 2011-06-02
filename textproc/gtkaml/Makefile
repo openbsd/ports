@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/04/05 18:42:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2011/06/02 17:09:32 kili Exp $
 
 COMMENT=		XML parser that extends the Vala.Parser
 
@@ -34,6 +34,5 @@ USE_GMAKE=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=		--disable-silent-rules
 
 .include <bsd.port.mk>

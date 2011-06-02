@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/30 09:33:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/02 17:09:32 kili Exp $
 
 COMMENT=	implementation of Gadu-Gadu IM protocol
 
@@ -20,7 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-silent-rules \
 		--without-bind \
 		--without-gnutls \
 		--without-openssl

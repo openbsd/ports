@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/06/02 17:09:32 kili Exp $
 
 SHARED_ONLY =	Yes
 
@@ -61,7 +61,6 @@ CONFIGURE_STYLE =gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS = ${CONFIGURE_SHARED} \
-		--disable-silent-rules \
 		--disable-static \
 		--enable-animation \
 		--disable-rgba

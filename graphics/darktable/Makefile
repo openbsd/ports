@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/04/16 00:15:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2011/06/02 17:09:31 kili Exp $
 
 COMMENT=	virtual lighttable and darkroom for photographers
 DISTNAME=	darktable-0.6
@@ -57,7 +57,6 @@ USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --disable-gegl \
-		--disable-silent-rules \
 		--localedir=${TRUEPREFIX}/share/locale
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 

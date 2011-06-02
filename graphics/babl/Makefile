@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/04/07 11:17:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/02 17:09:31 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -41,8 +41,7 @@ CONFIGURE_ENV=	ac_cv_path_W3M=no \
 		ac_cv_path_RSVG=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-introspection \
-		--disable-static \
-		--disable-silent-rules
+		--disable-static
 
 # be safe until proven stable
 CONFIGURE_ARGS+= --enable-mmx \

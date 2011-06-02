@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/06/02 13:41:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/06/02 17:09:32 kili Exp $
 
 SHARED_ONLY =	Yes
 
@@ -55,8 +55,7 @@ USE_LIBTOOL =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 
 CONFIGURE_STYLE = gnu
-CONFIGURE_ARGS = --disable-silent-rules \
-		 --enable-vala \
+CONFIGURE_ARGS = --enable-vala \
 		 --enable-introspection \
 		 --enable-gtk-doc-html=no
 CONFIGURE_ENV =	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${X11BASE}/include" \

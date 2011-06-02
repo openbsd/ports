@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/05/04 08:01:56 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.34 2011/06/02 17:09:31 kili Exp $
 
 COMMENT=		vector graphics library
 
@@ -40,8 +40,7 @@ CONFIGURE_ENV=		PTHREAD_LIBS="-pthread"
 CONFIGURE_ARGS=		--enable-gl \
 			--enable-tee \
 			--enable-xml \
-			--enable-xcb \
-			--disable-silent-rules
+			--enable-xcb
 
 REGRESS_DEPENDS=	print/ghostscript/gnu
 

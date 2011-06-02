@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/06/02 13:41:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2011/06/02 17:09:32 kili Exp $
 
 COMMENT=	framework for defining and tracking users
 
@@ -39,7 +39,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--localstatedir=/var \
-		--disable-silent-rules \
 		--with-pid-file=/var/run/ConsoleKit/pid \
 		--enable-pam-module=no
 

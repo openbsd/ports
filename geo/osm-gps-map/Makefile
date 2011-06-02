@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/05/01 11:39:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/06/02 17:09:31 kili Exp $
 
 COMMENT=		Gtk+ Widget for Displaying OpenStreetMap tiles
 
@@ -34,7 +34,6 @@ LIB_DEPENDS=		devel/libsoup \
 CONFIGURE_STYLE=	gnu
 AUTOMAKE_VERSION=	1.8
 AUTOCONF_VERSION=	2.64
-CONFIGURE_ARGS+=	--disable-silent-rules
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

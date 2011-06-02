@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/04/14 11:17:49 sebastia Exp $
+# $OpenBSD: Makefile,v 1.9 2011/06/02 17:09:31 kili Exp $
 
 COMMENT=		C C++ API for memcached
 
@@ -43,7 +43,6 @@ pre-configure:
 .endif
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-silent-rules
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib" 
 CONFIGURE_ENV+= 	CFLAGS="-I${LOCALBASE}/include"
 

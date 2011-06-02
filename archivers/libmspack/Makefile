@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/05/22 18:25:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/02 17:09:31 kili Exp $
 
 COMMENT=	library for handling microsoft compression formats
 
@@ -20,7 +20,6 @@ MASTER_SITES=	${HOMEPAGE}
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--disable-silent-rules
+CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

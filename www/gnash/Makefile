@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/04/15 21:43:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2011/06/02 17:09:32 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -50,7 +50,6 @@ CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.67
 CONFIGURE_ARGS=	--disable-cygnal \
 		--disable-jemalloc \
-		--disable-silent-rules \
 		--enable-renderer=agg \
 		--enable-gui=gtk \
 		--enable-media=ffmpeg \

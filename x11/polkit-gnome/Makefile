@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/05/19 17:55:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/06/02 17:09:32 kili Exp $
 
 COMMENT=	PolicyKit integration for GNOME/GTK+2
 
@@ -50,8 +50,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--localstatedir=/var \
 		--enable-introspection \
-		--disable-gtk-doc \
-		--disable-silent-rules
+		--disable-gtk-doc
 
 FLAVORS=	gtk2
 FLAVOR?=

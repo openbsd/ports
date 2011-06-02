@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/05/17 19:08:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/06/02 17:09:32 kili Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
@@ -43,7 +43,6 @@ PORTHOME=	${WRKDIR}
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--disable-silent-rules \
 		--disable-guile \
 		--with-included-libcfg \
 		--with-lzo \

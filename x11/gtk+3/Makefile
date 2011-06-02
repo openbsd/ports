@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/05/28 15:20:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/06/02 17:09:32 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -85,7 +85,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include/freetype2/ \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--disable-silent-rules \
 		--disable-man \
 		--disable-papi \
 		--disable-packagekit \

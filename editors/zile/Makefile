@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/05/02 20:11:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2011/06/02 17:09:31 kili Exp $
 
 COMMENT=		lightweight Emacs clone
 DISTNAME=		zile-2.3.24
@@ -16,6 +16,5 @@ MASTER_SITES=		${MASTER_SITE_GNU:=zile/}
 WANTLIB=		c ncursesw
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-silent-rules
 
 .include <bsd.port.mk>

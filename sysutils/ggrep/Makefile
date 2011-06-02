@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/05/31 19:36:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2011/06/02 17:09:32 kili Exp $
 
 COMMENT=	GNU versions of grep pattern matching utilities
 
@@ -23,8 +23,7 @@ LIB_DEPENDS=	devel/pcre
 BUILD_DEPENDS=	devel/gperf
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--program-prefix=g \
-		--disable-silent-rules
+CONFIGURE_ARGS=	--program-prefix=g
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux

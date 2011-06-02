@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/04/18 23:11:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2011/06/02 17:09:31 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -75,7 +75,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		ac_cv_prog_RUBY=""
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
-		--disable-silent-rules \
 		--disable-static \
 		--disable-docs \
 		--without-sdl \

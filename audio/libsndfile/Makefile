@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/04/14 07:27:00 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.21 2011/06/02 17:09:31 kili Exp $
 
 COMMENT=	library to handle various audio file formats
 
@@ -23,7 +23,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-alsa \
 		--disable-external-libs \
 		--disable-octave \
-		--disable-silent-rules \
 		--disable-sqlite
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/Cfg
 USE_GROFF =	Yes

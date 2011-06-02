@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/05/28 08:15:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/06/02 17:09:32 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -41,8 +41,7 @@ DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES= Yes
 MODGCONF2_SCHEMAS_DIR= gnome-system-tools
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-silent-rules
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

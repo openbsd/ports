@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/12/13 10:41:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/06/02 17:09:32 kili Exp $
 
 COMMENT=	glib bindings for dbus message system
 
@@ -37,7 +37,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-bash-completion \
 		--enable-gtk-doc=no \
-		--disable-silent-rules \
 		--with-test-socket-dir=${WRKDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2011/03/20 20:52:01 kili Exp $
+# $OpenBSD: Makefile,v 1.47 2011/06/02 17:09:32 kili Exp $
 .include <bsd.own.mk>
 
 COMMENT-main=	PDF rendering library
@@ -87,7 +87,6 @@ WANTLIB-qt4=	${cWANTLIB} ICE QtCore QtGui QtXml SM X11 Xau Xdmcp Xext Xi \
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --enable-xpdf-headers \
 		--disable-poppler-cpp \
-		--disable-silent-rules \
 		--enable-utils \
 		--enable-zlib
 

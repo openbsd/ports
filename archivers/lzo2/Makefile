@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/04/25 21:46:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2011/06/02 17:09:31 kili Exp $
 
 COMMENT=	portable speedy lossless data compression library
 
@@ -19,8 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
-CONFIGURE_ARGS+= --enable-static \
-		 --disable-silent-rules
+CONFIGURE_ARGS+= --enable-static
 
 REGRESS_TARGET=	test
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/29 20:03:46 matthieu Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/02 17:09:32 kili Exp $
 
 COMMENT=	X Render extension test suite
 
@@ -22,6 +22,5 @@ MASTER_SITES=	ftp://ftp.x.org/pub/individual/app/ \
 		ftp://ftp.sunet.se/pub/X11/ftp.x.org/individual/app/
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-silent-rules
 
 .include <bsd.port.mk>

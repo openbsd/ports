@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/02 06:31:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/06/02 17:09:31 kili Exp $
 
 COMMENT =		device firmware update (DFU) USB programmer
 
@@ -22,7 +22,6 @@ LIB_DEPENDS =		devel/libusb
 WANTLIB =		c usb
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--disable-silent-rules
 
 NO_REGRESS =		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/06/02 13:41:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2011/06/02 17:09:32 kili Exp $
 
 COMMENT =		GTK+/GNOME frontend for MPlayer
 DISTNAME =		gnome-mplayer-1.0.3
@@ -57,7 +57,6 @@ CONFIGURE_ARGS =	--with-gio \
 			--without-alsa \
 			--without-gconf \
 			--without-pulseaudio \
-			--disable-nautilus \
-			--disable-silent-rules
+			--disable-nautilus
 
 .include <bsd.port.mk>

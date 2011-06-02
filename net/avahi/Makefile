@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2011/05/12 05:54:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2011/06/02 17:09:32 kili Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -173,7 +173,6 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-core-docs \
 		--enable-tests \
 		--enable-introspection \
-		--disable-silent-rules \
 		--disable-doxygen-doc \
 		--disable-doxygen-dot \
 		--disable-doxygen-xml \

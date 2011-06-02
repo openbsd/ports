@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/05/11 08:24:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2011/06/02 17:09:32 kili Exp $
 
 COMMENT=		virus scanner
 DISTNAME=		clamav-0.97
@@ -45,7 +45,6 @@ CONFIGURE_ARGS+=        --disable-clamav \
 			--disable-clamuko \
 			--enable-bigstack \
 			--enable-milter \
-			--enable-silent-rules=no \
 			--with-user=_clamav \
 			--with-group=_clamav \
                         --disable-cr \

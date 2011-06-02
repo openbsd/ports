@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/05/18 21:11:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/02 17:09:32 kili Exp $
 
 COMMENT=	automatic color temperature adjustment
 
@@ -39,8 +39,7 @@ RUN_DEPENDS+=	x11/gnome/librsvg
 USE_GMAKE=	Yes
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--disable-silent-rules \
-		--enable-randr \
+CONFIGURE_ARGS=	--enable-randr \
 		--enable-vidmode \
 		--enable-gnome-clock \
 		--enable-gui

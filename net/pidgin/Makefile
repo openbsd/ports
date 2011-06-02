@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2011/04/15 21:43:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.93 2011/06/02 17:09:32 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -91,7 +91,6 @@ CONFIGURE_ARGS+= --disable-avahi \
 		 --disable-nm \
 		 --disable-nss \
 		 --disable-perl \
-		 --disable-silent-rules \
 		 --disable-tcl \
 		 --disable-tk \
 		 --disable-vv \

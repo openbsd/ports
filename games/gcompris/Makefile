@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/05/11 15:14:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/06/02 17:09:31 kili Exp $
 
 SHARED_ONLY=	Yes
 
@@ -64,7 +64,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		ac_cv_path_TETEX=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
-		--disable-silent-rules \
 		--disable-nsbundle \
 		--disable-sdlmixer \
 		--disable-dbus \

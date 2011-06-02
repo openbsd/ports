@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2011/06/02 13:41:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2011/06/02 17:09:32 kili Exp $
 
 # XXX patches/patch-configure disables PIE on arm/hppa. This is just a
 # temporary workaround until PIE works.
@@ -37,7 +37,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-dbus-user=_dbus \
 		--with-xml=expat \
 		--enable-kqueue \
-		--disable-silent-rules \
 		--disable-xml-docs \
 		--disable-doxygen-docs \
 		--disable-abstract-sockets \

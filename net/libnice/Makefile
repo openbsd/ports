@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/02 07:32:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/02 17:09:32 kili Exp $
 
 SHARED_ONLY =	Yes
 
@@ -31,7 +31,6 @@ BUILD_DEPENDS =		textproc/gsed
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS = 	${CONFIGURE_SHARED} \
 			--disable-static \
-			--disable-silent-rules \
 			--disable-gupnp \
 			--with-gstreamer
 

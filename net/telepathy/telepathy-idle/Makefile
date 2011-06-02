@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/05/14 09:35:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2011/06/02 17:09:32 kili Exp $
 
 COMMENT=		flexible communications framework, IRC component
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=		textproc/libxslt
 LIB_DEPENDS=		net/telepathy/telepathy-glib
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-silent-rules
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_prog_PYTHON="${MODPY_BIN}"
