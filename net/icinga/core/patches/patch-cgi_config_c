@@ -1,0 +1,15 @@
+$OpenBSD: patch-cgi_config_c,v 1.1 2011/06/02 19:48:17 sthen Exp $
+
+fix XSS; from cbe9993f upstream
+
+--- cgi/config.c.orig	Thu Jun  2 14:26:09 2011
++++ cgi/config.c	Thu Jun  2 14:26:27 2011
+@@ -429,7 +429,7 @@ int process_cgivars(void){
+ 				error=TRUE;
+ 				break;
+ 			}
+-			strncpy(to_expand,variables[x],MAX_COMMAND_BUFFER);
++			strncpy(to_expand,escape_string(variables[x]),MAX_COMMAND_BUFFER);
+ 			to_expand[MAX_COMMAND_BUFFER-1]='\0';
+ 		}
+ 
