@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/03/18 23:01:22 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/06/02 00:11:50 jeremy Exp $
 jruby/
 jruby/bin/
 jruby/bin/ast
@@ -15,10 +15,14 @@ jruby/bin/testrb
 jruby/lib/
 jruby/lib/jruby-complete.jar
 jruby/lib/native/
+jruby/lib/native/${JFFI_ARCH}/
+jruby/lib/native/${JFFI_ARCH}/libjffi-1.0.so
+jruby/lib/native/${JFFI_ARCH}/libjruby-cext.so
 jruby/lib/native/include/
 jruby/lib/native/include/config.h
 jruby/lib/native/include/ruby/
 jruby/lib/native/include/ruby.h
+jruby/lib/native/include/ruby/asprintf.h
 jruby/lib/native/include/ruby/defines.h
 jruby/lib/native/include/ruby/dl.h
 jruby/lib/native/include/ruby/intern.h
@@ -30,9 +34,6 @@ jruby/lib/native/include/ruby/rubysig.h
 jruby/lib/native/include/ruby/st.h
 jruby/lib/native/include/ruby/st_sizes.h
 jruby/lib/native/include/ruby/version.h
-jruby/lib/native/${JFFI_ARCH}/
-jruby/lib/native/${JFFI_ARCH}/libjffi-1.0.so
-jruby/lib/native/${JFFI_ARCH}/libjruby-cext.so
 jruby/lib/ruby/
 jruby/lib/ruby/1.8/
 jruby/lib/ruby/1.8/.document
@@ -471,7 +472,6 @@ jruby/lib/ruby/1.8/test/unit/util/
 jruby/lib/ruby/1.8/test/unit/util/backtracefilter.rb
 jruby/lib/ruby/1.8/test/unit/util/observable.rb
 jruby/lib/ruby/1.8/test/unit/util/procwrapper.rb
-jruby/lib/ruby/1.8/thread.rb
 jruby/lib/ruby/1.8/thwait.rb
 jruby/lib/ruby/1.8/time.rb
 jruby/lib/ruby/1.8/tmpdir.rb
@@ -1170,7 +1170,6 @@ jruby/lib/ruby/1.9/test/unit/
 jruby/lib/ruby/1.9/test/unit.rb
 jruby/lib/ruby/1.9/test/unit/assertions.rb
 jruby/lib/ruby/1.9/test/unit/testcase.rb
-jruby/lib/ruby/1.9/thread.rb
 jruby/lib/ruby/1.9/thwait.rb
 jruby/lib/ruby/1.9/time.rb
 jruby/lib/ruby/1.9/tmpdir.rb
@@ -1543,10 +1542,6 @@ jruby/lib/ruby/site_ruby/shared/ffi/platform.rb
 jruby/lib/ruby/site_ruby/shared/ffi/platform/errno.rb.ffi
 jruby/lib/ruby/site_ruby/shared/ffi/platform/etc.rb.ffi
 jruby/lib/ruby/site_ruby/shared/ffi/platform/fcntl.rb.ffi
-jruby/lib/ruby/site_ruby/shared/ffi/platform/socket.rb.ffi
-jruby/lib/ruby/site_ruby/shared/ffi/platform/stat.rb.ffi
-jruby/lib/ruby/site_ruby/shared/ffi/platform/sysconf.rb.ffi
-jruby/lib/ruby/site_ruby/shared/ffi/platform/syslog.rb.ffi
 jruby/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/
 jruby/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/errno.rb
 jruby/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/etc.rb
@@ -1558,6 +1553,10 @@ jruby/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/sysconf.rb
 jruby/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/syslog.rb
 jruby/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/types.conf
 jruby/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/zlib.rb
+jruby/lib/ruby/site_ruby/shared/ffi/platform/socket.rb.ffi
+jruby/lib/ruby/site_ruby/shared/ffi/platform/stat.rb.ffi
+jruby/lib/ruby/site_ruby/shared/ffi/platform/sysconf.rb.ffi
+jruby/lib/ruby/site_ruby/shared/ffi/platform/syslog.rb.ffi
 jruby/lib/ruby/site_ruby/shared/ffi/platform/zlib.rb.ffi
 jruby/lib/ruby/site_ruby/shared/ffi/pointer.rb
 jruby/lib/ruby/site_ruby/shared/ffi/rbx.rb
