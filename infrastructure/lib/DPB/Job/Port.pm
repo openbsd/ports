@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.9 2011/05/29 09:30:13 espie Exp $
+# $OpenBSD: Port.pm,v 1.10 2011/06/02 17:09:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -62,6 +62,9 @@ sub run
 	my $sudo = OpenBSD::Paths->sudo;
 	my $shell = $core->{shell};
 	$self->redirect($job->{log});
+	if ($builder->{state}->opt('v')) {
+		print ">>> Running $t in $fullpkgpath\n";
+	}
 	my @args = ($t, "TRUST_PACKAGES=Yes",
 	    "FETCH_PACKAGES=No",
 	    "REPORT_PROBLEM='exit 1'", "BULK=No");
@@ -128,7 +131,7 @@ sub run
 	my $job = $core->job;
 	$self->redirect($job->{log});
 	my $exit = 0;
-	for my $dist (values %{$job->{v}{info}{got}}) {
+	for my $dist (values %{$job->{v}{info}{DIST}}) {
 		if (!$dist->checksum($dist->filename)) {
 			$exit = 1;
 		}

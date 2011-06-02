@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.20 2011/05/29 11:06:23 espie Exp $
+# $OpenBSD: dpb,v 1.21 2011/06/02 17:09:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -89,8 +89,8 @@ sub handle_options
 		},
 	};
 
-	$state->SUPER::handle_options('aceqrRsuUh:xA:f:j:m:P:b:L:S:t:T:',
-    "[-acerRsuUx] [-A arch] [-f N] [-j N] [-P plist] [-h hosts] [-L logdir]",
+	$state->SUPER::handle_options('aceqrRsuUvh:xA:f:j:m:P:b:L:S:t:T:',
+    "[-acerRsuUvx] [-A arch] [-f N] [-j N] [-P plist] [-h hosts] [-L logdir]",
     "[-b log] [-t ctimeout] [-m threshold] [path ...]");
     	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
 	$state->{logdir} //= $ENV{LOGDIR} // 
@@ -319,19 +319,25 @@ my $last_time = time() - $state->{display_timeout};
 sub handle_non_waiting_jobs
 {
 	my $need_clock = shift;
+	my $checked = !$need_clock; # XXX
 	my $reaped = DPB::Core->reap;
 	$keep_going = !-e $state->logdir."/stop";
 	if (DPB::Core->avail > 1) {
 		$state->engine->recheck_errors;
 	}
 	if (DPB::Core->avail) {
-		$state->engine->check_buildable;
+		$state->engine->check_buildable(0);
+		$checked = 1;
 	}
 	while ($keep_going && DPB::Core->avail && $state->engine->can_build) {
 		$state->engine->start_new_job;
 	}
 	while ($keep_going && DPB::Core::Fetcher->avail && 
 	    $state->engine->can_fetch) {
+	    	if (!$checked) {
+			$state->engine->check_buildable(1);
+			$checked = 1;
+		}
 		$state->engine->start_new_fetch;
 	}
 	if ($need_clock) {
@@ -386,7 +392,7 @@ if ($state->{all}) {
 	}
 }
 #$state->engine->dump($dump);
-$state->engine->check_buildable;
+$state->engine->check_buildable(1);
 #$state->engine->dump($dump);
 
 DPB::Core->start_clock($state->{display_timeout});
@@ -395,7 +401,7 @@ while (1) {
 		handle_non_waiting_jobs(0);
 		if (!DPB::Core->running &&
 		    (!$keep_going || !$state->engine->can_build)) {
-			$state->engine->check_buildable;
+			$state->engine->check_buildable(0);
 			if (!$state->engine->can_build) {
 				last;
 			}

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.23 2011/06/01 12:34:09 espie Exp $
+# $OpenBSD: Engine.pm,v 1.24 2011/06/02 17:09:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -23,7 +23,7 @@ sub new
 {
 	my ($class, $engine) = @_;
 	bless { engine => $engine, queue => $class->new_queue($engine),
-		doing => {}}, $class;
+		doing => {}, later => {}}, $class;
 }
 
 sub count
@@ -68,6 +68,85 @@ sub log
 	return $self->{engine}->log(@r);
 }
 
+sub key_for_doing
+{
+	my ($self, $v) = @_;
+	return $v;
+}
+
+sub already_done
+{
+}
+
+sub start
+{
+	my $self = shift;
+	my $core = $self->get_core;
+	if (@{$self->{engine}{requeued}} > 0) {
+		$self->{engine}->rebuild_info($core);
+		return;
+	}
+	my $o = $self->sorted($core);
+	while (my $v = $o->next) {
+		$self->remove($v);
+		if ($self->is_done($v)) {
+			$self->already_done($v);
+			$self->done($v);
+			next;
+		}
+		if ($self->{doing}{$self->key_for_doing($v)}) {
+			$self->{later}{$v} = $v;
+			$self->log('^', $v);
+		} elsif (my $lock = $self->{engine}{locker}->lock($v)) {
+			$self->{doing}{$self->key_for_doing($v)} = 1;
+			return $self->start_build($v, $core, $lock);
+		} else {
+			push(@{$self->{engine}{locks}}, $v);
+			$self->log('L', $v);
+		}
+	}
+	$core->mark_ready;
+}
+
+sub done
+{
+	my ($self, $v) = @_;
+	my $k = $self->key_for_doing($v);
+	for my $candidate (values %{$self->{later}}) {
+		if ($self->key_for_doing($candidate) eq $k) {
+			delete $self->{later}{$candidate};
+			$self->log('V', $candidate);
+			$self->add($candidate);
+		}
+	}
+	delete $self->{doing}{$self->key_for_doing($v)};
+	$self->{engine}{locker}->recheck_errors($self->{engine});
+}
+
+sub end
+{
+	my ($self, $core, $v) = @_;
+	my $e = $core->mark_ready;
+	if ($self->is_done($v)) {
+		$self->{engine}{locker}->unlock($v);
+		$self->end_build($v);
+		$core->success;
+	} else {
+		$core->failure;
+		if (!$e || $core->{status} == 65280) {
+			$self->add($v);
+			$self->{engine}{locker}->unlock($v);
+			$self->log('N', $v);
+		} else {
+			unshift(@{$self->{engine}{errors}}, $v);
+			$v->{host} = $core->host;
+			$self->{engine}{locker}->simple_unlock($v);
+			$self->log('E', $v);
+		}
+	}
+	$self->done($v);
+}
+
 package DPB::SubEngine::Build;
 our @ISA = qw(DPB::SubEngine);
 sub new
@@ -75,7 +154,6 @@ sub new
 	my ($class, $engine, $builder) = @_;
 	my $o = $class->SUPER::new($engine);
 	$o->{builder} = $builder;
-	$o->{later} = {};
 	return $o;
 }
 
@@ -99,77 +177,38 @@ sub is_done
 	}
 }
 
-sub start
+sub get_core
 {
 	my $self = shift;
-	my $core = $self->{builder}->get;
-	if (@{$self->{engine}{requeued}} > 0) {
-		$self->{engine}->rebuild_info($core);
-		return;
-	}
-	my $o = $self->sorted($core);
-	while (my $v = $o->next) {
-		$self->remove($v);
-		if ($self->is_done($v)) {
-			$self->{engine}{logger}->make_log_link($v);
-			$self->done($v);
-			next;
-		}
-		if ($self->{doing}{$v->{pkgpath}}) {
-			$self->{later}{$v} = $v;
-			$self->log('^', $v);
-		} elsif (my $lock = $self->{engine}{locker}->lock($v)) {
-			$self->{doing}{$v->{pkgpath}} = 1;
-			my $special = $self->{engine}{heuristics}->
-			    special_parameters($core->host, $v);
-			$self->log('J', $v, " ".$core->hostname." ".$special);
-			$self->{builder}->build($v, $core, $special,
-			    $lock, sub {$self->end($core, $v)});
-			return;
-		} else {
-			push(@{$self->{engine}{locks}}, $v);
-			$self->log('L', $v);
-		}
-	}
-	$core->mark_ready;
+	return $self->{builder}->get;
 }
 
-sub end
-{
-	my ($self, $core, $v) = @_;
-	my $e = $core->mark_ready;
-	if (!$self->is_done($v)) {
-		$core->failure;
-		if (!$e || $core->{status} == 65280) {
-			$self->add($v);
-			$self->{engine}{locker}->unlock($v);
-			$self->log('N', $v);
-		} else {
-			unshift(@{$self->{engine}{errors}}, $v);
-			$v->{host} = $core->host;
-			$self->{engine}{locker}->simple_unlock($v);
-			$self->log('E', $v);
-		}
-	} else {
-		$self->{engine}{locker}->unlock($v);
-		$self->{engine}{heuristics}->finish_special($v);
-		$core->success;
-	}
-	$self->done($v);
-}
-
-sub done
+sub key_for_doing
 {
 	my ($self, $v) = @_;
-	for my $candidate (values %{$self->{later}}) {
-		if ($candidate->{pkgpath} eq $v->{pkgpath}) {
-			delete $self->{later}{$candidate};
-			$self->log('V', $candidate);
-			$self->add($candidate);
-		}
-	}
-	delete $self->{doing}{$v->{pkgpath}};
-	$self->{engine}{locker}->recheck_errors($self->{engine});
+	return $v->{pkgpath};
+}
+
+sub already_done
+{
+	my ($self, $v) = @_;
+	$self->{engine}{logger}->make_log_link($v);
+}
+
+sub start_build
+{
+	my ($self, $v, $core, $lock) = @_;
+	my $special = $self->{engine}{heuristics}->
+	    special_parameters($core->host, $v);
+	$self->log('J', $v, " ".$core->hostname." ".$special);
+	$self->{builder}->build($v, $core, $special,
+	    $lock, sub {$self->end($core, $v)});
+}
+
+sub end_build
+{
+	my ($self, $v) = @_;
+	$self->{engine}{heuristics}->finish_special($v);
 }
 
 package DPB::SubEngine::Fetch;
@@ -184,48 +223,28 @@ sub is_done
 {
 	my ($self, $v) = @_;
 	if ($v->check($self->{engine}{logger})) {
-		$self->log('b', $v);
+		$self->log('B', $v);
 		return 1;
 	} else {
 		return 0;
     	}
 }
 
-sub start
+sub get_core
 {
-	my $self = shift;
-	my $core = DPB::Core::Fetcher->get;
-	my $o = $self->sorted($core);
-	while (my $v = $o->next) {
-		$self->remove($v);
-		if (my $lock = $self->{engine}{locker}->lock($v)) {
-			$self->{doing}{$v} = $v;
-			$self->log('j', $v);
-			DPB::Fetch->fetch($self->{engine}{logger}, $v, $core, 
-			    sub { $self->end($core, $v)});
-			return;
-	    	} else {
-			push(@{$self->{engine}{locks}}, $v);
-			$self->log('l', $v);
-		}
-	}
-	$core->mark_ready;
+	return DPB::Core::Fetcher->get;
 }
 
-sub end
+sub start_build
 {
-	my ($self, $core, $v) = @_;
-	my $e = $core->mark_ready;
-	if ($self->is_done($v)) {
-		$self->{engine}{locker}->unlock($v);
-		delete $self->{doing}{$v};
-		$core->success;
-	} else {
-		unshift(@{$self->{engine}{errors}}, $v);
-		$v->{host} = $core->host;
-		$self->log('e', $v);
-		$core->failure;
-	}
+	my ($self, $v, $core, $lock) = @_;
+	$self->log('J', $v);
+	DPB::Fetch->fetch($self->{engine}{logger}, $v, $core,
+	    sub { $self->end($core, $v)});
+}
+
+sub end_build
+{
 }
 
 package DPB::Engine;
@@ -236,10 +255,10 @@ use DPB::Util;
 sub new
 {
 	my ($class, $state) = @_;
-	my $o = bless {built => {}, 
+	my $o = bless {built => {},
 	    tobuild => {},
 	    state => $state,
-	    installable => {}, 
+	    installable => {},
 	    heuristics => $state->heuristics,
 	    locker => $state->locker,
 	    logger => $state->logger,
@@ -315,11 +334,7 @@ sub fetchcount
 	if ($q < 30) {
 		$self->{tofetch}{queue}->set_h1;
 	} else {
-		if ($t > $q) {
-			$self->{tofetch}{queue}->set_h2;
-		} else {
-			$self->{tofetch}{queue}->set_h3;
-		}
+		$self->{tofetch}{queue}->set_h2;
 	}
 	return ("F=".$self->{tofetch}->count);
 }
@@ -414,24 +429,18 @@ sub adjust_extra
 sub adjust_distfiles
 {
 	my ($self, $v) = @_;
-	my $has = 0;
-	return $has unless defined $v->{info}{distfiles};
-	for my $f (values %{$v->{info}{distfiles}}) {
-		if ($self->{tofetch}->contains($f) || 
-		    $self->{tofetch}{doing}{$f}) {
-			$has++;
-			next;
-		}
+	return 0 if !exists $v->{info}{FDEPENDS};
+	my $not_yet = 0;
+	for my $f (values %{$v->{info}{FDEPENDS}}) {
 		if ($self->{tofetch}->is_done($f)) {
-			delete $v->{info}{distfiles}{$f};
-			$v->{info}{got}{$f} = $f;
+			delete $v->{info}{FDEPENDS}{$f};
 			next;
 		}
-		$has++;
-		$self->{tofetch}->add($f);
-		$self->log('F', $f);
+		$not_yet++;
 	}
-	return $has;
+	return $not_yet if $not_yet;
+	delete $v->{info}{FDEPENDS};
+	return 0;
 }
 
 my $output = {};
@@ -452,12 +461,13 @@ sub log_fetch
 
 sub check_buildable
 {
-	my $self = shift;
+	my ($self, $quick) = @_;
 	$self->{ts} = time();
 	my $changes;
 	do {
 		$changes = 0;
 		for my $v (values %{$self->{tobuild}}) {
+			next if $quick && !$v->{new};
 			if ($self->{buildable}->is_done($v)) {
 				$changes++;
 			} else {
@@ -473,16 +483,20 @@ sub check_buildable
 				}
 			}
 		}
-		for my $v (values %{$self->{built}}) {
-			if ($self->adjust($v, 'RDEPENDS') == 0) {
-				delete $self->{built}{$v};
-				$self->{installable}{$v} = $v;
-				$self->log_no_ts('I', $v);
-				$changes++;
+		if (!$quick) {
+			for my $v (values %{$self->{built}}) {
+				if ($self->adjust($v, 'RDEPENDS') == 0) {
+					delete $self->{built}{$v};
+					$self->{installable}{$v} = $v;
+					$self->log_no_ts('I', $v);
+					$changes++;
+				}
 			}
 		}
 
 		for my $v (values %{$self->{tobuild}}) {
+			next if $quick && !$v->{new};
+			delete $v->{new};
 			if ($self->{buildable}->is_done($v)) {
 				$changes++;
 				next;
@@ -494,7 +508,7 @@ sub check_buildable
 			# buying buildable directly is a priority,
 			# but put the patch/dist/small stuff down the line
 			# as otherwise we will tend to grab patch files first
-			$v->{has} = 2 * ($has != 0) + ($has2 != 0);
+			$v->{has} = 2 * ($has != 0) + ($has2 > 1);
 			if ($has + $has2 == 0) {
 				$self->{buildable}->add($v);
 				$self->log_no_ts('Q', $v);
@@ -513,6 +527,19 @@ sub new_path
 #		$self->{heuristics}->todo($v);
 		$self->{tobuild}{$v} = $v;
 		$self->log('T', $v);
+		return unless defined $v->{info}{FDEPENDS};
+		for my $f (values %{$v->{info}{FDEPENDS}}) {
+			if ($self->{tofetch}->contains($f) ||
+			    $self->{tofetch}{doing}{$f}) {
+				next;
+			}
+			if ($self->{tofetch}->is_done($f)) {
+				delete $v->{info}{FDEPENDS}{$f};
+				next;
+			}
+			$self->{tofetch}->add($f);
+			$self->log('F', $f);
+		}
 	}
 }
 

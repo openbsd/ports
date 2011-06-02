@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.6 2011/06/01 12:34:29 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.7 2011/06/02 17:09:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -498,9 +498,15 @@ sub set_h2
 	bless shift, "DPB::Heuristics::FetchQueue2";
 }
 
-sub set_h3
+sub sorted
 {
-	bless shift, "DPB::Heuristics::FetchQueue3";
+	my $self = shift;
+	if ($self->{results}++ > 50 || 
+	    defined $self->{sorted} && @{$self->{sorted}} < 10) {
+		$self->{results} = 0;
+		undef $self->{sorted};
+	}
+	return $self->{sorted} //= DPB::Heuristics::SimpleSorter->new($self);
 }
 
 package DPB::Heuristics::FetchQueue1;
@@ -511,9 +517,12 @@ our @ISA = qw(DPB::Heuristics::FetchQueue);
 sub sorted_values
 {
 	my $self = shift;
-	my @l = grep {$_->{path}{has} < 2} values %{$self->{o}};
+	my @l = grep {$_->{path}{has} == 0} values %{$self->{o}};
 	if (!@l) {
-		@l = values %{$self->{o}};
+		@l = grep {$_->{path}{has} < 2} values %{$self->{o}};
+		if (!@l) {
+			@l = values %{$self->{o}};
+		}
 	}
 	return [sort {$b->{sz} <=> $a->{sz}} @l];
 }
@@ -527,7 +536,7 @@ our @ISA = qw(DPB::Heuristics::FetchQueue);
 sub sorted_values
 {
 	my $self = shift;
-	my @l = grep {$_->{path}{has} == 0} values %{$self->{o}};
+	my @l = grep {$_->{path}{has} < 2} values %{$self->{o}};
 	if (!@l) {
 		@l = values %{$self->{o}};
 	}
@@ -535,17 +544,6 @@ sub sorted_values
 	return [sort 
 	    {$h->measure($a->{path}) <=> $h->measure($b->{path})}
 	    @l];
-}
-
-package DPB::Heuristics::FetchQueue3;
-our @ISA = qw(DPB::Heuristics::FetchQueue);
-
-# heuristic 3: grab the largest distfiles first, as they will take time
-# to build
-sub sorted_values
-{
-	my $self = shift;
-	return [sort {$a->{sz} <=> $b->{sz}} values %{$self->{o}}];
 }
 
 1;

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.15 2011/05/22 08:21:39 espie Exp $
+# $OpenBSD: Vars.pm,v 1.16 2011/06/02 17:09:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -121,8 +121,8 @@ sub grab_list
 			for my $v (values %$h) {
 				$v->handle_default($h);
 			}
-			DPB::PkgPath->merge_depends($h);
 			$grabber->{fetch}->build_distinfo($h);
+			DPB::PkgPath->merge_depends($h);
 			&$code($h);
 			$h = {};
 		    };

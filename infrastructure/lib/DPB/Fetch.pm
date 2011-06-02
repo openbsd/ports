@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.9 2011/05/29 11:06:23 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.10 2011/06/02 17:09:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -225,9 +225,10 @@ sub build_distinfo
 		    MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 
 		    MASTER_SITES4 MASTER_SITES5 MASTER_SITES6 
 		    MASTER_SITES7 MASTER_SITES8 MASTER_SITES9)) {
-		    	undef $info->{$k};
+		    	delete $info->{$k};
 		}
-		$info->{distfiles} = $files;
+		bless $files, "AddDepends";
+		$info->{DIST} = $files;
 	}
 }
 

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.7 2011/06/01 15:39:47 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.8 2011/06/02 17:09:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -49,6 +49,7 @@ sub create
 	bless {pkgpath => $pkgpath,
 		# XXX
 		has => 5,
+		new => 1,
 		flavors => \%flavors,
 		sawflavor => $sawflavor,
 		multi => $multi}, $class;
@@ -242,6 +243,12 @@ sub merge_depends
 			for my $d (values %{$info->{RUN_DEPENDS}}) {
 				$info->{RDEPENDS}{$d} = $d;
 				bless $info->{RDEPENDS}, "AddDepends";
+			}
+		}
+		if (defined $info->{DIST}) {
+			for my $f (values %{$info->{DIST}}) {
+				$info->{FDEPENDS}{$f} = $f;
+				bless $info->{FDEPENDS}, "AddDepends";
 			}
 		}
 	}

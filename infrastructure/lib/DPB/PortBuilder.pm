@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortBuilder.pm,v 1.9 2011/05/29 09:30:13 espie Exp $
+# $OpenBSD: PortBuilder.pm,v 1.10 2011/06/02 17:09:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -162,6 +162,12 @@ sub build
 	my ($self, $v, $core, $special, $lock, $final_sub) = @_;
 	my $start = time();
 	my $log = $self->{logger}->make_logs($v);
+	if ($self->{state}->opt('v')) {
+		open my $fh, ">>", $log;
+		print $fh ">>> Building under ";
+		$v->quick_dump($fh);
+		close($fh);
+	}
 	my $job;
 	$job = DPB::Job::Port->new($log, $v, $self, $special,
 	    sub {$self->end_lock($lock, $core, $job); $self->report($v, $job, $core); &$final_sub;});
