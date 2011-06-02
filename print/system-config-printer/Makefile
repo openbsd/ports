@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.24 2011/06/01 18:53:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/06/02 16:16:23 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
-DISTNAME=		system-config-printer-1.3.2
-REVISION=		0
+DISTNAME=		system-config-printer-1.3.3
 
 CATEGORIES=		print sysutils
 
@@ -32,7 +31,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			print/py-cups>=1.9.55 \
 			textproc/py-xml \
 			x11/dbus-python \
-			x11/gnome/py-gnome \
+			x11/gnome/py-gnome-desktop \
 			print/cups-pk-helper
 
 USE_GMAKE=		Yes

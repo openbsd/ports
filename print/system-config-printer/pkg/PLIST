@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/05/04 09:10:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/06/02 16:16:23 ajacoutot Exp $
 bin/scp-dbus-service
 bin/system-config-printer
 bin/system-config-printer-applet
@@ -180,19 +180,19 @@ share/system-config-printer/troubleshoot/Welcome.py
 share/system-config-printer/troubleshoot/__init__.py
 share/system-config-printer/troubleshoot/base.py
 share/system-config-printer/ui/
-share/system-config-printer/ui/AboutDialog.glade
-share/system-config-printer/ui/ConnectDialog.glade
-share/system-config-printer/ui/ConnectingDialog.glade
-share/system-config-printer/ui/InstallDialog.glade
-share/system-config-printer/ui/JobsWindow.glade
-share/system-config-printer/ui/NewPrinterName.glade
-share/system-config-printer/ui/NewPrinterWindow.glade
-share/system-config-printer/ui/PrinterPropertiesDialog.glade
-share/system-config-printer/ui/PrintersWindow.glade
-share/system-config-printer/ui/SMBBrowseDialog.glade
-share/system-config-printer/ui/ServerSettingsDialog.glade
-share/system-config-printer/ui/WaitWindow.glade
-share/system-config-printer/ui/statusicon_popupmenu.glade
+share/system-config-printer/ui/AboutDialog.ui
+share/system-config-printer/ui/ConnectDialog.ui
+share/system-config-printer/ui/ConnectingDialog.ui
+share/system-config-printer/ui/InstallDialog.ui
+share/system-config-printer/ui/JobsWindow.ui
+share/system-config-printer/ui/NewPrinterName.ui
+share/system-config-printer/ui/NewPrinterWindow.ui
+share/system-config-printer/ui/PrinterPropertiesDialog.ui
+share/system-config-printer/ui/PrintersWindow.ui
+share/system-config-printer/ui/SMBBrowseDialog.ui
+share/system-config-printer/ui/ServerSettingsDialog.ui
+share/system-config-printer/ui/WaitWindow.ui
+share/system-config-printer/ui/statusicon_popupmenu.ui
 share/system-config-printer/userdefault.py
 share/system-config-printer/xml/
 share/system-config-printer/xml/preferreddrivers.rng
