@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.26 2011/05/19 17:18:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.27 2011/06/02 12:46:37 ajacoutot Exp $
 @newgroup _zarafa:627
 @newuser _zarafa:627:_zarafa:daemon:Zarafa Account:/var/empty:/sbin/nologin
 @bin bin/zarafa-admin
 bin/zarafa-autorespond
-@bin bin/zarafa-cfgchecker
 @bin bin/zarafa-dagent
 @bin bin/zarafa-fsck
 @bin bin/zarafa-gateway
@@ -78,13 +77,21 @@ include/mapi4linux/mapiutil.h
 include/mapi4linux/mapix.h
 include/zarafa/CommonUtil.h
 include/zarafa/ECABEntryID.h
+include/zarafa/ECCache.h
 include/zarafa/ECChannel.h
 include/zarafa/ECConfig.h
+include/zarafa/ECConfigImpl.h
 include/zarafa/ECDebug.h
+include/zarafa/ECDebugPrint.h
 include/zarafa/ECDefs.h
+include/zarafa/ECFeatureList.h
+include/zarafa/ECFeatures.h
 include/zarafa/ECFifoBuffer.h
+include/zarafa/ECGetText.h
 include/zarafa/ECGuid.h
 include/zarafa/ECIConv.h
+include/zarafa/ECInterfaceDefs.h
+include/zarafa/ECInvariantChecker.h
 include/zarafa/ECKeyTable.h
 include/zarafa/ECLogger.h
 include/zarafa/ECMemStream.h
@@ -95,6 +102,8 @@ include/zarafa/ECSerializer.h
 include/zarafa/ECTags.h
 include/zarafa/ECUnknown.h
 include/zarafa/EMSAbTag.h
+include/zarafa/HtmlEntity.h
+include/zarafa/HtmlToTextParser.h
 include/zarafa/IECChangeAdviseSink.h
 include/zarafa/IECChangeAdvisor.h
 include/zarafa/IECExportAddressbookChanges.h
@@ -108,6 +117,7 @@ include/zarafa/IECServiceAdmin.h
 include/zarafa/IECSingleInstance.h
 include/zarafa/IECSpooler.h
 include/zarafa/IECStatsCollector.h
+include/zarafa/IECTestProtocol.h
 include/zarafa/IECUnknown.h
 include/zarafa/IMAPIOffline.h
 include/zarafa/RecurrenceState.h
@@ -120,9 +130,15 @@ include/zarafa/Util.h
 include/zarafa/ZarafaCode.h
 include/zarafa/auto_free.h
 include/zarafa/base64.h
+include/zarafa/checked.h
 include/zarafa/codepage.h
+include/zarafa/convert.h
+include/zarafa/convstring.h
+include/zarafa/core.h
 include/zarafa/edkguid.h
 include/zarafa/favoritesutil.h
+include/zarafa/itercomp.h
+include/zarafa/localeutil.h
 include/zarafa/mapi_array_ptr.h
 include/zarafa/mapi_memory_ptr.h
 include/zarafa/mapi_object_ptr.h
@@ -138,19 +154,29 @@ include/zarafa/platform.h
 include/zarafa/platform.linux.h
 include/zarafa/restrictionutil.h
 include/zarafa/rtfutil.h
-include/zarafa/str1252.h
 include/zarafa/stringutil.h
 include/zarafa/threadutil.h
+include/zarafa/traits.h
+include/zarafa/tstring.h
+include/zarafa/unchecked.h
 include/zarafa/userutil.h
+include/zarafa/ustringutil.h
+include/zarafa/utf16string.h
+include/zarafa/utf32iter.h
+include/zarafa/utf32string.h
+include/zarafa/utf8.h
+include/zarafa/utf8iter.h
+include/zarafa/utf8string.h
+include/zarafa/utfutil.h
 lib/libarchiver.la
 @lib lib/libarchiver.so.${LIBarchiver_VERSION}
-lib/libcommon_mapi.la
+@comment lib/libcommon_mapi.la
 @lib lib/libcommon_mapi.so.${LIBcommon_mapi_VERSION}
-lib/libcommon_ssl.la
+@comment lib/libcommon_ssl.la
 @lib lib/libcommon_ssl.so.${LIBcommon_ssl_VERSION}
-lib/libcommon_util.la
+@comment lib/libcommon_util.la
 @lib lib/libcommon_util.so.${LIBcommon_util_VERSION}
-lib/libfreebusy.la
+@comment lib/libfreebusy.la
 @lib lib/libfreebusy.so.${LIBfreebusy_VERSION}
 lib/libicalmapi.la
 @lib lib/libicalmapi.so.${LIBicalmapi_VERSION}
@@ -163,19 +189,49 @@ lib/libzarafaclient.la
 @comment lib/libzarafasync.la
 @lib lib/libzarafasync.so.${LIBzarafasync_VERSION}
 lib/pkgconfig/zarafa.pc
+lib/python${MODPY_VERSION}/site-packages/MAPI/
+lib/python${MODPY_VERSION}/site-packages/MAPI-1.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/MAPI/Defs.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/Defs.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPI/Struct.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/Struct.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPI/Tags.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/Tags.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPI/Time.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/Time.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPI/Util.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/Util.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPI/__init__.py
+lib/python${MODPY_VERSION}/site-packages/MAPI/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/MAPICore.py
+@comment lib/python${MODPY_VERSION}/site-packages/_MAPICore.la
+lib/python${MODPY_VERSION}/site-packages/_MAPICore.so
+@comment lib/python${MODPY_VERSION}/site-packages/_icalmapi.la
+lib/python${MODPY_VERSION}/site-packages/_icalmapi.so
+@comment lib/python${MODPY_VERSION}/site-packages/_inetmapi.la
+lib/python${MODPY_VERSION}/site-packages/_inetmapi.so
+lib/python${MODPY_VERSION}/site-packages/icalmapi.py
+lib/python${MODPY_VERSION}/site-packages/inetmapi.py
+lib/python${MODPY_VERSION}/site-packages/zarafalib/
+lib/python${MODPY_VERSION}/site-packages/zarafalib-1.0-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/zarafalib/__init__.py
+lib/python${MODPY_VERSION}/site-packages/zarafalib/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/zarafalib/msr.py
+lib/python${MODPY_VERSION}/site-packages/zarafalib/msr.pyc
 lib/zarafa/
 @comment lib/zarafa/dbplugin.la
 lib/zarafa/dbplugin.so
 @comment lib/zarafa/ldapplugin.la
 lib/zarafa/ldapplugin.so
 @man man/man1/zarafa-admin.1
+@man man/man1/zarafa-archiver.1
 @man man/man1/zarafa-backup.1
-@man man/man1/zarafa-cfgchecker.1
 @man man/man1/zarafa-dagent.1
 @man man/man1/zarafa-fsck.1
 @man man/man1/zarafa-gateway.1
 @man man/man1/zarafa-ical.1
 @man man/man1/zarafa-indexer.1
+@man man/man1/zarafa-licensed.1
 @man man/man1/zarafa-monitor.1
 @man man/man1/zarafa-msr.1
 @man man/man1/zarafa-passwd.1
@@ -185,15 +241,19 @@ lib/zarafa/ldapplugin.so
 @man man/man1/zarafa-spooler.1
 @man man/man1/zarafa-stats.1
 @man man/man1/zarafa.1
+@man man/man5/zarafa-archiver.cfg.5
 @man man/man5/zarafa-dagent.cfg.5
 @man man/man5/zarafa-gateway.cfg.5
 @man man/man5/zarafa-ical.cfg.5
 @man man/man5/zarafa-indexer.cfg.5
 @man man/man5/zarafa-ldap.cfg.5
+@man man/man5/zarafa-ldapms.cfg.5
+@man man/man5/zarafa-licensed.cfg.5
 @man man/man5/zarafa-monitor.cfg.5
 @man man/man5/zarafa-msr.cfg.5
 @man man/man5/zarafa-server.cfg.5
 @man man/man5/zarafa-spooler.cfg.5
+@man man/man5/zarafa-unix.cfg.5
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/zarafa/
 share/doc/zarafa/AGPL-3
@@ -208,6 +268,8 @@ share/doc/zarafa/db-convert-attachments-to-files
 share/doc/zarafa/db-upgrade-objectsid-to-objectguid.pl
 share/doc/zarafa/eula.txt
 share/doc/zarafa/ldap-switch-sendas.pl
+share/doc/zarafa/optimize-imap.py
+share/doc/zarafa/zarafa7-upgrade
 share/examples/zarafa/
 @sample ${SYSCONFDIR}/zarafa/
 @mode 750

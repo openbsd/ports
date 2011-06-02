@@ -1,6 +1,9 @@
-$OpenBSD: patch-common_ECLogger_cpp,v 1.9 2011/04/04 08:01:04 ajacoutot Exp $
---- common/ECLogger.cpp.orig	Tue Mar 29 00:04:07 2011
-+++ common/ECLogger.cpp	Tue Mar 29 17:48:35 2011
+$OpenBSD: patch-common_ECLogger_cpp,v 1.10 2011/06/02 12:46:37 ajacoutot Exp $
+
+Needs newlocale(3).
+
+--- common/ECLogger.cpp.orig	Wed Apr 20 19:51:45 2011
++++ common/ECLogger.cpp	Thu Jun  2 11:07:53 2011
 @@ -55,6 +55,10 @@
  #include <assert.h>
  #include "stringutil.h"
@@ -12,48 +15,62 @@ $OpenBSD: patch-common_ECLogger_cpp,v 1.9 2011/04/04 08:01:04 ajacoutot Exp $
  #include "config.h"
  #if HAVE_SYSLOG_H
  #include <syslog.h>
-@@ -164,7 +168,7 @@ ECLogger_File::~ECLogger_File() {
- 		if (timestamp)
- 			fnPrintf(log, "%s: ", MakeTimestamp());
- 		if (prefix == LP_TID)
--			fnPrintf(log, "[0x%08x] ", (unsigned int)pthread_self());
-+			fnPrintf(log, "[0x%08lx] ", (unsigned long)pthread_self());
- 		else if (prefix == LP_PID)
- 			fnPrintf(log, "[%5d] ", getpid());
- 		fnPrintf(log, "Previous message logged %d times\n", prevcount);
-@@ -206,7 +210,7 @@ bool ECLogger_File::DupFilter(const std::string &messa
- 		if (timestamp)
- 			fnPrintf(log, "%s: ", MakeTimestamp());
- 		if (prefix == LP_TID)
--			fnPrintf(log, "[0x%08x] ", (unsigned int)pthread_self());
-+			fnPrintf(log, "[0x%08lx] ", (unsigned long)pthread_self());
- 		else if (prefix == LP_PID)
- 			fnPrintf(log, "[%5d] ", getpid());
- 		fnPrintf(log, "Previous message logged %d times\n", prevcount);
-@@ -257,7 +261,7 @@ void ECLogger_File::LogVA(int loglevel, const char *fo
- 		if (timestamp)
- 			fnPrintf(log, "%s: ", MakeTimestamp());
- 		if (prefix == LP_TID)
--			fnPrintf(log, "[0x%08x] ", (unsigned int)pthread_self());
-+			fnPrintf(log, "[0x%08lx] ", (unsigned long)pthread_self());
- 		else if (prefix == LP_PID)
- 			fnPrintf(log, "[%5d] ", getpid());
- 		fnPrintf(log, "%s\n", msgbuffer);
-@@ -343,7 +347,7 @@ void ECLogger_Pipe::Log(int loglevel, const std::strin
+@@ -78,15 +82,19 @@ ECLogger::ECLogger(int max_ll) {
+ 	max_loglevel = max_ll;
+ 	msgbuffer = new char[_LOG_BUFSIZE];
+ 	// get system locale for time, NULL is returned if locale was not found.
++#ifndef __OpenBSD__
+ 	timelocale = createlocale(LC_TIME, "");
++#endif
+ 	prefix = LP_NONE;
+ 	m_ulRef = 1;
+ }
+ 
+ ECLogger::~ECLogger() {
+ 	delete [] msgbuffer;
++#ifndef __OpenBSD__
+ 	if (timelocale)
+ 		freelocale(timelocale);
++#endif
+ 
+ 	pthread_mutex_destroy(&msgbuflock);
+ }
+@@ -101,9 +109,11 @@ char* ECLogger::MakeTimestamp() {
+ 
+ 	localtime_r(&now, &local);
+ 
++#ifndef __OpenBSD__
+ 	if (timelocale)
+ 		strftime_l(timestring, _LOG_TSSIZE, "%c", &local, timelocale);
+ 	else
++#endif
+ 		strftime(timestring, _LOG_TSSIZE, "%c", &local);
+ 
+ 	return timestring;
+@@ -222,7 +232,7 @@ void ECLogger_File::DoPrefix() {
+ 	if (timestamp)
+ 		fnPrintf(log, "%s: ", MakeTimestamp());
+ 	if (prefix == LP_TID)
+-		fnPrintf(log, "[0x%08x] ", (unsigned int)pthread_self());
++		fnPrintf(log, "[0x%08x] ", (uintptr_t)pthread_self());
+ 	else if (prefix == LP_PID)
+ 		fnPrintf(log, "[%5d] ", getpid());
+ }
+@@ -473,7 +483,7 @@ void ECLogger_Pipe::Log(int loglevel, const std::strin
  	off += 1;
  
  	if (prefix == LP_TID)
 -		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[0x%08x] ", (unsigned int)pthread_self());
-+		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[0x%08lx] ", (unsigned long)pthread_self());
++		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[0x%08x] ", (uintptr_t)pthread_self());
  	else if (prefix == LP_PID)
  		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[%5d] ", getpid());
  	off += len;
-@@ -377,7 +381,7 @@ void ECLogger_Pipe::LogVA(int loglevel, const char *fo
+@@ -507,7 +517,7 @@ void ECLogger_Pipe::LogVA(int loglevel, const char *fo
  	off += 1;
  
  	if (prefix == LP_TID)
 -		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[0x%08x] ", (unsigned int)pthread_self());
-+		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[0x%08lx] ", (unsigned long)pthread_self());
++		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[0x%08x] ", (uintptr_t)pthread_self());
  	else if (prefix == LP_PID)
  		len = snprintf(msgbuffer+off, _LOG_BUFSIZE -off, "[%5d] ", getpid());
  	off += len;

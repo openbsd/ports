@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.10 2011/05/19 17:18:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.11 2011/06/02 12:46:37 ajacoutot Exp $
 @conflict php5-mapi-*
 @pkgpath mail/zarafa/webaccess
 @pkgpath mail/zarafa/zarafa,-php
@@ -8,8 +8,10 @@ conf/php5.sample/mapi.ini.dist
 include/
 include/php/
 include/php/mapi/
+include/php/mapi/class.baseexception.php
 include/php/mapi/class.baserecurrence.php
 include/php/mapi/class.freebusypublish.php
+include/php/mapi/class.mapiexception.php
 include/php/mapi/class.meetingrequest.php
 include/php/mapi/class.recurrence.php
 include/php/mapi/class.taskrecurrence.php
@@ -912,6 +914,7 @@ zarafa-webaccess/debug.txt
 zarafa-webaccess/defaults.php
 zarafa-webaccess/index.php
 zarafa-webaccess/plugins/
+zarafa-webaccess/senddocument.php
 zarafa-webaccess/server/
 zarafa-webaccess/server/PEAR/
 zarafa-webaccess/server/PEAR/JSON.php
@@ -945,6 +948,10 @@ zarafa-webaccess/server/core/class.xmlparser.php
 zarafa-webaccess/server/core/constants.php
 zarafa-webaccess/server/core/htmlfilter.php
 zarafa-webaccess/server/language/
+zarafa-webaccess/server/language/cs_CZ.UTF-8/
+zarafa-webaccess/server/language/cs_CZ.UTF-8/LC_MESSAGES/
+zarafa-webaccess/server/language/cs_CZ.UTF-8/LC_MESSAGES/zarafa.mo
+zarafa-webaccess/server/language/cs_CZ.UTF-8/language.txt
 zarafa-webaccess/server/language/da_DK.UTF-8/
 zarafa-webaccess/server/language/da_DK.UTF-8/LC_MESSAGES/
 zarafa-webaccess/server/language/da_DK.UTF-8/LC_MESSAGES/zarafa.mo
@@ -977,10 +984,30 @@ zarafa-webaccess/server/language/fr_FR.UTF-8/
 zarafa-webaccess/server/language/fr_FR.UTF-8/LC_MESSAGES/
 zarafa-webaccess/server/language/fr_FR.UTF-8/LC_MESSAGES/zarafa.mo
 zarafa-webaccess/server/language/fr_FR.UTF-8/language.txt
+zarafa-webaccess/server/language/he_IL.UTF-8/
+zarafa-webaccess/server/language/he_IL.UTF-8/LC_MESSAGES/
+zarafa-webaccess/server/language/he_IL.UTF-8/LC_MESSAGES/zarafa.mo
+zarafa-webaccess/server/language/he_IL.UTF-8/language.txt
+zarafa-webaccess/server/language/hu_HU.UTF-8/
+zarafa-webaccess/server/language/hu_HU.UTF-8/LC_MESSAGES/
+zarafa-webaccess/server/language/hu_HU.UTF-8/LC_MESSAGES/zarafa.mo
+zarafa-webaccess/server/language/hu_HU.UTF-8/language.txt
 zarafa-webaccess/server/language/it_IT.UTF-8/
 zarafa-webaccess/server/language/it_IT.UTF-8/LC_MESSAGES/
 zarafa-webaccess/server/language/it_IT.UTF-8/LC_MESSAGES/zarafa.mo
 zarafa-webaccess/server/language/it_IT.UTF-8/language.txt
+zarafa-webaccess/server/language/ja_JP.UTF-8/
+zarafa-webaccess/server/language/ja_JP.UTF-8/LC_MESSAGES/
+zarafa-webaccess/server/language/ja_JP.UTF-8/LC_MESSAGES/zarafa.mo
+zarafa-webaccess/server/language/ja_JP.UTF-8/language.txt
+zarafa-webaccess/server/language/lt_LT.UTF-8/
+zarafa-webaccess/server/language/lt_LT.UTF-8/LC_MESSAGES/
+zarafa-webaccess/server/language/lt_LT.UTF-8/LC_MESSAGES/zarafa.mo
+zarafa-webaccess/server/language/lt_LT.UTF-8/language.txt
+zarafa-webaccess/server/language/nb_NO.UTF-8/
+zarafa-webaccess/server/language/nb_NO.UTF-8/LC_MESSAGES/
+zarafa-webaccess/server/language/nb_NO.UTF-8/LC_MESSAGES/zarafa.mo
+zarafa-webaccess/server/language/nb_NO.UTF-8/language.txt
 zarafa-webaccess/server/language/nl_BE.UTF-8/
 zarafa-webaccess/server/language/nl_BE.UTF-8/LC_MESSAGES/
 zarafa-webaccess/server/language/nl_BE.UTF-8/LC_MESSAGES/zarafa.mo
@@ -993,6 +1020,10 @@ zarafa-webaccess/server/language/no_NO.UTF-8/
 zarafa-webaccess/server/language/no_NO.UTF-8/LC_MESSAGES/
 zarafa-webaccess/server/language/no_NO.UTF-8/LC_MESSAGES/zarafa.mo
 zarafa-webaccess/server/language/no_NO.UTF-8/language.txt
+zarafa-webaccess/server/language/pl_PL.UTF-8/
+zarafa-webaccess/server/language/pl_PL.UTF-8/LC_MESSAGES/
+zarafa-webaccess/server/language/pl_PL.UTF-8/LC_MESSAGES/zarafa.mo
+zarafa-webaccess/server/language/pl_PL.UTF-8/language.txt
 zarafa-webaccess/server/language/pt_BR.UTF-8/
 zarafa-webaccess/server/language/pt_BR.UTF-8/LC_MESSAGES/
 zarafa-webaccess/server/language/pt_BR.UTF-8/LC_MESSAGES/zarafa.mo
@@ -1001,10 +1032,22 @@ zarafa-webaccess/server/language/pt_PT.UTF-8/
 zarafa-webaccess/server/language/pt_PT.UTF-8/LC_MESSAGES/
 zarafa-webaccess/server/language/pt_PT.UTF-8/LC_MESSAGES/zarafa.mo
 zarafa-webaccess/server/language/pt_PT.UTF-8/language.txt
+zarafa-webaccess/server/language/ru_RU.UTF-8/
+zarafa-webaccess/server/language/ru_RU.UTF-8/LC_MESSAGES/
+zarafa-webaccess/server/language/ru_RU.UTF-8/LC_MESSAGES/zarafa.mo
+zarafa-webaccess/server/language/ru_RU.UTF-8/language.txt
 zarafa-webaccess/server/language/sv_SE.UTF-8/
 zarafa-webaccess/server/language/sv_SE.UTF-8/LC_MESSAGES/
 zarafa-webaccess/server/language/sv_SE.UTF-8/LC_MESSAGES/zarafa.mo
 zarafa-webaccess/server/language/sv_SE.UTF-8/language.txt
+zarafa-webaccess/server/language/uk_UA.UTF-8/
+zarafa-webaccess/server/language/uk_UA.UTF-8/LC_MESSAGES/
+zarafa-webaccess/server/language/uk_UA.UTF-8/LC_MESSAGES/zarafa.mo
+zarafa-webaccess/server/language/uk_UA.UTF-8/language.txt
+zarafa-webaccess/server/language/zh_CN.UTF-8/
+zarafa-webaccess/server/language/zh_CN.UTF-8/LC_MESSAGES/
+zarafa-webaccess/server/language/zh_CN.UTF-8/LC_MESSAGES/zarafa.mo
+zarafa-webaccess/server/language/zh_CN.UTF-8/language.txt
 zarafa-webaccess/server/mimetypes.dat
 zarafa-webaccess/server/modules/
 zarafa-webaccess/server/modules/class.addressbookitemmodule.php
@@ -1012,6 +1055,7 @@ zarafa-webaccess/server/modules/class.addressbooklistmodule.php
 zarafa-webaccess/server/modules/class.advancedfindlistmodule.php
 zarafa-webaccess/server/modules/class.appointmentitemmodule.php
 zarafa-webaccess/server/modules/class.appointmentlistmodule.php
+zarafa-webaccess/server/modules/class.attachitemlistmodule.php
 zarafa-webaccess/server/modules/class.buttonsmodule.php
 zarafa-webaccess/server/modules/class.categoriesitemmodule.php
 zarafa-webaccess/server/modules/class.contactitemmodule.php
@@ -1031,8 +1075,6 @@ zarafa-webaccess/server/modules/class.listmodule.php
 zarafa-webaccess/server/modules/class.maillistmodule.php
 zarafa-webaccess/server/modules/class.mailoptionsitemmodule.php
 zarafa-webaccess/server/modules/class.module.php
-zarafa-webaccess/server/modules/class.multiusercalendarappointmentlistmodule.php
-zarafa-webaccess/server/modules/class.multiusercalendarmodule.php
 zarafa-webaccess/server/modules/class.notificationmodule.php
 zarafa-webaccess/server/modules/class.previewreadmailitemmodule.php
 zarafa-webaccess/server/modules/class.printitemmodule.php

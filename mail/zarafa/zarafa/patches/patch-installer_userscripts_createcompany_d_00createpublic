@@ -1,11 +1,12 @@
-$OpenBSD: patch-installer_userscripts_createcompany_d_00createpublic,v 1.1.1.1 2009/02/16 09:44:38 ajacoutot Exp $
---- installer/userscripts/createcompany.d/00createpublic.orig	Sun Jan  4 15:21:37 2009
-+++ installer/userscripts/createcompany.d/00createpublic	Sun Jan  4 15:26:28 2009
-@@ -2,6 +2,6 @@
+$OpenBSD: patch-installer_userscripts_createcompany_d_00createpublic,v 1.2 2011/06/02 12:46:37 ajacoutot Exp $
+--- installer/userscripts/createcompany.d/00createpublic.orig	Wed Apr 20 16:39:09 2011
++++ installer/userscripts/createcompany.d/00createpublic	Mon May  2 12:47:53 2011
+@@ -2,7 +2,7 @@
  
  # Create a Zarafa Public store for the new company.
  
 -PATH=$PATH:/sbin:/usr/local/sbin:/usr/sbin
 +PATH=$PATH:${PREFIX}/bin
  
- zarafa-admin -s -I "${ZARAFA_COMPANY}"
+ # The ZARAFA_COMPANY variable from the server will always be in UTF-8
+ # format.  The --utf8 option must be set before this value is used,

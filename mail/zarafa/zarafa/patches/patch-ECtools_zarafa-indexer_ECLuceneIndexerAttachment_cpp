@@ -1,10 +1,10 @@
-$OpenBSD: patch-ECtools_zarafa-indexer_ECLuceneIndexerAttachment_cpp,v 1.1 2011/04/04 08:01:04 ajacoutot Exp $
+$OpenBSD: patch-ECtools_zarafa-indexer_ECLuceneIndexerAttachment_cpp,v 1.2 2011/06/02 12:46:37 ajacoutot Exp $
 
-XXX OpenBSD does not have RLIMIT_AS.
+OpenBSD does not have RLIMIT_AS.
 
---- ECtools/zarafa-indexer/ECLuceneIndexerAttachment.cpp.orig	Sun Apr  3 10:04:11 2011
-+++ ECtools/zarafa-indexer/ECLuceneIndexerAttachment.cpp	Sun Apr  3 10:04:24 2011
-@@ -74,6 +74,10 @@
+--- ECtools/zarafa-indexer/ECLuceneIndexerAttachment.cpp.orig	Wed Apr 20 19:51:46 2011
++++ ECtools/zarafa-indexer/ECLuceneIndexerAttachment.cpp	Mon May  2 12:47:51 2011
+@@ -76,6 +76,10 @@
  
  #define STREAM_BUFFER   ( 64*1024 )
  

@@ -1,14 +1,18 @@
-$OpenBSD: patch-ECtools_zarafa-cfgchecker_Makefile_in,v 1.8 2011/05/19 17:18:18 ajacoutot Exp $
---- ECtools/zarafa-cfgchecker/Makefile.in.orig	Thu May 19 12:24:03 2011
-+++ ECtools/zarafa-cfgchecker/Makefile.in	Thu May 19 18:30:36 2011
-@@ -261,7 +261,9 @@ target_alias = @target_alias@
+$OpenBSD: patch-ECtools_zarafa-cfgchecker_Makefile_in,v 1.9 2011/06/02 12:46:37 ajacoutot Exp $
+
+XXX see USE_LIBTOOL=gnu in the port Makefile
+../../common/.libs/libcommon_mapi.so.X.X:
+undefined reference to `MAPILogonEx' (and more)
+
+--- ECtools/zarafa-cfgchecker/Makefile.in.orig	Thu Jun  2 11:42:38 2011
++++ ECtools/zarafa-cfgchecker/Makefile.in	Thu Jun  2 11:43:26 2011
+@@ -268,7 +268,8 @@ target_alias = @target_alias@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX -I${top_srcdir}/common
--zarafa_cfgchecker_LDADD = ${top_builddir}/common/libcommon_util.la $(PROG_LIBS)
+-zarafa_cfgchecker_LDADD = ${top_builddir}/common/libcommon_util.la ${top_builddir}/common/libcommon_mapi.la $(PROG_LIBS)
 +zarafa_cfgchecker_LDADD = ${top_builddir}/mapi4linux/src/libmapi.la \
-+			${top_builddir}/common/libcommon_mapi.la \
-+			${top_builddir}/common/libcommon_util.la $(PROG_LIBS)
++			  ${top_builddir}/common/libcommon_util.la ${top_builddir}/common/libcommon_mapi.la $(PROG_LIBS)
  zarafa_cfgchecker_SOURCES = \
  	zarafa-cfg.cpp \
  	ECConfigCheck.cpp ECConfigCheck.h \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2011/05/19 17:18:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2011/06/02 12:46:37 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -9,20 +9,21 @@ PKGNAME-web=	zarafa-webaccess-${V}
 
 CATEGORIES=	mail www productivity
 
-SHARED_LIBS +=  common_util          1.0      # 1.0
-SHARED_LIBS +=  common_mapi          1.0      # 1.0
-SHARED_LIBS +=  common_ssl           1.0      # 1.0
-SHARED_LIBS +=  freebusy             1.0      # 1.0
-SHARED_LIBS +=  zarafasync           1.0      # 1.0
-SHARED_LIBS +=  mapi                 1.0      # unknown
-SHARED_LIBS +=  zarafaclient         1.0      # unknown
-SHARED_LIBS +=  icalmapi             1.0      # 1.0
-SHARED_LIBS +=  inetmapi             1.0      # 1.0
-SHARED_LIBS +=  archiver             0.0      # unknown
+SHARED_LIBS +=  mapi                 2.0      # 0.0
+SHARED_LIBS +=  zarafaclient         2.0      # 0.0
+SHARED_LIBS +=  icalmapi             2.0      # 1.0
+SHARED_LIBS +=  inetmapi             2.0      # 1.0
+SHARED_LIBS +=  archiver             1.0      # 0.0
+SHARED_LIBS +=  common_util          2.0      # 1.0
+SHARED_LIBS +=  common_mapi          2.0      # 1.0
+SHARED_LIBS +=  common_ssl           2.0      # 1.0
+SHARED_LIBS +=  freebusy             2.0      # 1.0
+SHARED_LIBS +=  zarafasync           2.0      # 1.0
 
 MULTI_PACKAGES=	-main -web
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext \
+		lang/python
 
 BUILD_DEPENDS=	www/php5/core \
 		textproc/xmlto \
@@ -30,10 +31,13 @@ BUILD_DEPENDS=	www/php5/core \
 		devel/boost \
 		textproc/clucene
 
-WANTLIB-main =	${MODGETTEXT_WANTLIB}
-WANTLIB-main += asn1 c com_err crypto gssapi krb5 m ncurses pthread ssl
-WANTLIB-main += sasl2 stdc++ z xml2 mysqlclient uuid execinfo
-WANTLIB-main += vmime-zarafa ical icalss lber-2.4 ldap-2.4
+WANTLIB += m stdc++ z ${MODGETTEXT_WANTLIB}
+
+WANTLIB-main += ${WANTLIB}
+WANTLIB-main += asn1 boost_filesystem-mt boost_system-mt c com_err
+WANTLIB-main += crypto execinfo gssapi ical icalss icudata icui18n
+WANTLIB-main += icuuc krb5 lber ldap mysqlclient ncurses pthread python2.6
+WANTLIB-main += sasl2 ssl util uuid vmime-zarafa xml2
 
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		textproc/libxml \
@@ -41,22 +45,33 @@ LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
 		databases/openldap \
 		devel/uuid \
 		devel/libexecinfo \
-		mail/zarafa/libvmime>=0.7.1p9 \
-		textproc/libical
+		mail/zarafa/libvmime>=0.9.2 \
+		textproc/libical \
+		textproc/icu4c \
+		devel/boost
 
-WANTLIB-web += ${MODGETTEXT_WANTLIB}
-WANTLIB-web += execinfo ical icalss uuid vmime-zarafa common_mapi
-WANTLIB-web += common_util freebusy icalmapi inetmapi mapi m stdc++ z
+WANTLIB-web += ${WANTLIB}
+WANTLIB-web += boost_filesystem-mt boost_system-mt common_mapi common_util
+WANTLIB-web += execinfo freebusy ical icalmapi icalss icudata icui18n
+WANTLIB-web += icuuc inetmapi mapi uuid vmime-zarafa
 
-LIB_DEPENDS-web= ${MODGETTEXT_LIB_DEPENDS} \
-		mail/zarafa/zarafa,-main
-RUN_DEPENDS-web= www/php5/core
+LIB_DEPENDS-web= ${BASE_PKGPATH}>=7.0.0
+RUN_DEPENDS-web= www/php5/core \
+		${MODGETTEXT_RUN_DEPENDS}
 
-USE_LIBTOOL=	Yes
+# XXX  ../../common/.libs/libcommon_mapi.so.1.0: undefined reference to
+# `MAPILogonEx', `zarafa_dcgettext_wide' (and more)
+# see patch-provider_server_Makefile_in
+#     patch-ECtools_zarafa-cfgchecker_Makefile_in
+#     patch-ECtools_zarafa-cfgchecker_Makefile_in
+USE_LIBTOOL=	gnu
 LIBTOOL_FLAGS=	--tag=disable-static
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
+
+MODPY_ADJ_FILES=tools/python-scripts/optimize-imap.py \
+		installer/linux/zarafa7-upgrade
 
 WEBROOT=	/var/www
 
@@ -72,7 +87,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo \
 			-L${LOCALBASE}/lib/zarafa" \
 		ZAFARA_LDFLAGS="-L${LOCALBASE}/lib/zarafa" \
-		PHP_SYSCONF_DIR="${PREFIX-web}/conf/php5"
+		PHP_SYSCONF_DIR="${PREFIX-web}/conf/php5" \
+		ac_cv_lib_pam_pam_start=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
 		--disable-perl \
@@ -81,11 +97,14 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-dependency-tracking \
 		--enable-release \
 		--enable-oss \
+		--enable-unicode \
+		--enable-python \
 		--with-distro=openbsd \
 		--with-vmime-prefix=${LOCALBASE}/include/zarafa \
 		--with-ical-prefix=${LOCALBASE}/include \
 		--with-clucene-lib-prefix=${LOCALBASE}/lib \
-		--with-clucene-include-prefix=${LOCALBASE}/include
+		--with-clucene-include-prefix=${LOCALBASE}/include \
+		--with-python=${MODPY_BIN}
 
 # XXX in-tree heimdal does not provide krb5_free_unparsed_name()
 CONFIGURE_ARGS+= --with-krb5-config=/usr/bin/true
@@ -114,6 +133,9 @@ pre-configure:
 		${SUBST_CMD} ${WRKSRC}/installer/userscripts/$$i; done
 	${SUBST_CMD} ${WRKSRC}/php-ext/Makefile.in \
 		${WRKSRC}/spooler/DAgent.cpp
+	perl -pi -e 's,!!MODPY_BIN!!,${MODPY_BIN},' \
+		${WRKSRC}/installer/linux/Makefile.in \
+		${WRKSRC}/swig/python/Makefile.in
 	perl -pi -e 's,/usr/share/zarafa,${PREFIX}/share/examples/zarafa,g;' \
 		-e 's,/etc/zarafa,${SYSCONFDIR}/zarafa,g;' \
 		-e 's,/usr/bin,${PREFIX}/bin,g;' \

@@ -1,21 +1,15 @@
-$OpenBSD: patch-provider_client_Makefile_in,v 1.12 2011/05/19 17:18:19 ajacoutot Exp $
---- provider/client/Makefile.in.orig	Thu May 19 12:24:07 2011
-+++ provider/client/Makefile.in	Thu May 19 18:30:37 2011
-@@ -302,7 +302,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX				\
+$OpenBSD: patch-provider_client_Makefile_in,v 1.13 2011/06/02 12:46:37 ajacoutot Exp $
+
+*** Warning: This system can not link to static lib archive ../../common/libcommon_XXX.la.
+
+--- provider/client/Makefile.in.orig	Wed Apr 20 16:39:43 2011
++++ provider/client/Makefile.in	Sun May 29 07:23:39 2011
+@@ -311,7 +311,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) $(BOOST_CPPFLAGS) -DLINUX	
  	-I${top_srcdir}/common						\
  	-I${top_srcdir}/zarafa-libsync
  
--libzarafaclient_la_LDFLAGS = -avoid-version -export-symbols ${top_srcdir}/provider/client/client-exports.sym
-+libzarafaclient_la_LDFLAGS = -export-symbols ${top_srcdir}/provider/client/client-exports.sym
+-libzarafaclient_la_LDFLAGS = -avoid-version
++libzarafaclient_la_LDFLAGS =
  libzarafaclient_la_LIBADD = $(GSOAP_LIBS) $(SSL_LIBS)	\
  	${top_builddir}/provider/soap/libgsoap.la			\
  	${top_builddir}/provider/soap/libsoapclient.la		\
-@@ -315,7 +315,7 @@ libzarafaclient_la_LIBADD = $(GSOAP_LIBS) $(SSL_LIBS)	
- 	${top_builddir}/zarafa-libsync/libzarafasync.la		\
- 	-lstdc++ $(UUID_LIBS)
- 
--CXXLD = --tag=none gcc
-+CXXLD = --tag=none $(CXX)
- libzarafaclient_la_SOURCES = ECABLogon.cpp ECABProvider.cpp											\
- 	ECAttach.cpp ECMAPIContainer.cpp ECMAPIFolder.cpp ECMAPIProp.cpp								\
- 	ECMAPITable.cpp ECMessage.cpp ECMsgStore.cpp													\

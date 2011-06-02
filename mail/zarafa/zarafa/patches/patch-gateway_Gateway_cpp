@@ -1,6 +1,6 @@
-$OpenBSD: patch-gateway_Gateway_cpp,v 1.6 2010/08/22 10:13:27 ajacoutot Exp $
---- gateway/Gateway.cpp.orig	Tue Aug  3 14:51:43 2010
-+++ gateway/Gateway.cpp	Sun Aug 22 10:22:53 2010
+$OpenBSD: patch-gateway_Gateway_cpp,v 1.7 2011/06/02 12:46:37 ajacoutot Exp $
+--- gateway/Gateway.cpp.orig	Wed Apr 20 19:51:46 2011
++++ gateway/Gateway.cpp	Mon May  2 12:50:37 2011
 @@ -84,6 +84,10 @@
  
  #include "UnixUtil.h"
@@ -9,6 +9,6 @@ $OpenBSD: patch-gateway_Gateway_cpp,v 1.6 2010/08/22 10:13:27 ajacoutot Exp $
 +#include <sys/resource.h>
 +#endif
 +
- #ifdef max
- #undef max
+ #if HAVE_ICU
+ #include "unicode/uclean.h"
  #endif

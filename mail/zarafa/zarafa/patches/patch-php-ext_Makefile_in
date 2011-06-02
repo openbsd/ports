@@ -1,7 +1,7 @@
-$OpenBSD: patch-php-ext_Makefile_in,v 1.12 2011/05/19 17:18:19 ajacoutot Exp $
---- php-ext/Makefile.in.orig	Thu May 19 12:24:06 2011
-+++ php-ext/Makefile.in	Thu May 19 18:30:37 2011
-@@ -236,7 +236,7 @@ build_cpu = @build_cpu@
+$OpenBSD: patch-php-ext_Makefile_in,v 1.13 2011/06/02 12:46:37 ajacoutot Exp $
+--- php-ext/Makefile.in.orig	Wed Apr 20 16:39:43 2011
++++ php-ext/Makefile.in	Sun May 29 07:13:39 2011
+@@ -249,7 +249,7 @@ build_cpu = @build_cpu@
  build_os = @build_os@
  build_vendor = @build_vendor@
  builddir = @builddir@
@@ -10,7 +10,7 @@ $OpenBSD: patch-php-ext_Makefile_in,v 1.12 2011/05/19 17:18:19 ajacoutot Exp $
  datarootdir = @datarootdir@
  docdir = @docdir@
  dvidir = @dvidir@
-@@ -284,7 +284,7 @@ mapi_la_LDFLAGS = -module -avoid-version \
+@@ -299,7 +299,7 @@ mapi_la_LIBADD = \
  	${top_builddir}/common/libcommon_util.la \
  	${top_builddir}/libfreebusy/libfreebusy.la \
  	${top_builddir}/inetmapi/libinetmapi.la \
@@ -19,7 +19,7 @@ $OpenBSD: patch-php-ext_Makefile_in,v 1.12 2011/05/19 17:18:19 ajacoutot Exp $
  
  
  # it seems linking libraries with -pthread will not contain -lpthread.
-@@ -567,7 +567,7 @@ install-data-am: install-dist_dataDATA
+@@ -582,7 +582,7 @@ install-data-am: install-dist_dataDATA
  
  install-dvi: install-dvi-am
  

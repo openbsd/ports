@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_libserver_ECAttachmentStorage_cpp,v 1.5 2010/06/30 02:46:48 ajacoutot Exp $
---- provider/libserver/ECAttachmentStorage.cpp.orig	Mon May 31 19:28:59 2010
-+++ provider/libserver/ECAttachmentStorage.cpp	Mon Jun 14 09:24:54 2010
-@@ -1033,7 +1033,7 @@ ECFileAttachment::ECFileAttachment(ECDatabase *lpDatab
+$OpenBSD: patch-provider_libserver_ECAttachmentStorage_cpp,v 1.6 2011/06/02 12:46:37 ajacoutot Exp $
+--- provider/libserver/ECAttachmentStorage.cpp.orig	Wed Apr 20 19:51:49 2011
++++ provider/libserver/ECAttachmentStorage.cpp	Mon May  2 12:47:53 2011
+@@ -1213,7 +1213,7 @@ ECFileAttachment::ECFileAttachment(ECDatabase *lpDatab
  {
  	m_basepath = basepath;
  	if (m_basepath.empty())

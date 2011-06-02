@@ -1,7 +1,10 @@
-$OpenBSD: patch-common_Makefile_in,v 1.10 2011/05/19 17:18:18 ajacoutot Exp $
---- common/Makefile.in.orig	Thu May 19 12:24:04 2011
-+++ common/Makefile.in	Thu May 19 18:30:36 2011
-@@ -299,7 +299,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) -DLINUX \
+$OpenBSD: patch-common_Makefile_in,v 1.11 2011/06/02 12:46:37 ajacoutot Exp $
+
+*** Warning: This system can not link to static lib archive ../../common/libcommon_XXX.la.
+
+--- common/Makefile.in.orig	Tue May 31 19:10:33 2011
++++ common/Makefile.in	Tue May 31 19:11:14 2011
+@@ -332,7 +332,7 @@ AM_CPPFLAGS = $(DEBUGFLAGS) $(BOOST_CPPFLAGS) -DLINUX 
  	-I${top_srcdir}/mapi4linux/include -I${top_srcdir}/provider/common \
  	-I${top_srcdir}/libfreebusy
  
@@ -9,20 +12,20 @@ $OpenBSD: patch-common_Makefile_in,v 1.10 2011/05/19 17:18:18 ajacoutot Exp $
 +libcommon_mapi_la_LDFLAGS = -version-info $(ECCLIENT_LIBRARY_VERSION)
  libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
  			rtfutil.cpp									\
- 			codepage.cpp							\
-@@ -314,7 +314,7 @@ libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
- 			ZarafaCode.cpp								\
- 			ECABEntryID.cpp
+ 			codepage.cpp								\
+@@ -350,7 +350,7 @@ libcommon_mapi_la_SOURCES = CommonUtil.cpp				\
+ 			ECABEntryID.cpp								\
+ 			ECDebugPrint.cpp
  
 -libcommon_util_la_LDFLAGS = -static
 +libcommon_util_la_LDFLAGS = -version-info $(ECCLIENT_LIBRARY_VERSION)
- libcommon_util_la_SOURCES = platform.cpp			\
- 			platform.linux.cpp						\
- 			md5.cpp									\
-@@ -337,7 +337,7 @@ libcommon_util_la_SOURCES = platform.cpp			\
- 			ECRestriction.cpp						\
- 			userutil.cpp							
- 
+ libcommon_util_la_SOURCES = platform.cpp platform.linux.cpp md5.cpp \
+ 	base64.cpp ECLogger.cpp ECConfig.cpp ECConfigImpl.cpp \
+ 	ECFifoBuffer.cpp ECSerializer.cpp ECCache.cpp my_getopt.cpp \
+@@ -360,7 +360,7 @@ libcommon_util_la_SOURCES = platform.cpp platform.linu
+ 	charset/localeutil.cpp TimeUtil.cpp RecurrenceState.cpp \
+ 	ECGetText.cpp threadutil.cpp ECRestriction.cpp userutil.cpp \
+ 	ECFeatures.cpp $(am__append_1)
 -libcommon_ssl_la_LDFLAGS = -static
 +libcommon_ssl_la_LDFLAGS = -version-info $(ECCLIENT_LIBRARY_VERSION)
  libcommon_ssl_la_SOURCES = \

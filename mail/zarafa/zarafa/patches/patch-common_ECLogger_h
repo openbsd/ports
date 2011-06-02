@@ -1,0 +1,16 @@
+$OpenBSD: patch-common_ECLogger_h,v 1.1 2011/06/02 12:46:37 ajacoutot Exp $
+
+Needs newlocale(3).
+
+--- common/ECLogger.h.orig	Wed Apr 20 19:51:45 2011
++++ common/ECLogger.h	Mon May  2 12:47:51 2011
+@@ -108,7 +108,9 @@ class ECLogger { (protected)
+ 	int max_loglevel;
+ 	char *msgbuffer;
+ 	pthread_mutex_t msgbuflock;
++#ifndef __OpenBSD__
+ 	locale_t timelocale;
++#endif
+ 	char timestring[_LOG_TSSIZE];
+ 	logprefix prefix;
+ 

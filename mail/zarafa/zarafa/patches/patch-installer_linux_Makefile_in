@@ -1,7 +1,7 @@
-$OpenBSD: patch-installer_linux_Makefile_in,v 1.18 2011/05/19 17:18:18 ajacoutot Exp $
---- installer/linux/Makefile.in.orig	Thu May 19 12:24:05 2011
-+++ installer/linux/Makefile.in	Thu May 19 18:30:36 2011
-@@ -55,15 +55,15 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGUR
+$OpenBSD: patch-installer_linux_Makefile_in,v 1.19 2011/06/02 12:46:37 ajacoutot Exp $
+--- installer/linux/Makefile.in.orig	Wed Apr 20 16:39:42 2011
++++ installer/linux/Makefile.in	Wed Jun  1 15:24:18 2011
+@@ -53,15 +53,15 @@ am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGUR
  mkinstalldirs = $(install_sh) -d
  CONFIG_HEADER = $(top_builddir)/common/config.h
  CONFIG_CLEAN_FILES =
@@ -20,7 +20,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.18 2011/05/19 17:18:18 ajacoutot
  SOURCES =
  DIST_SOURCES =
  am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
-@@ -73,19 +73,17 @@ am__vpath_adj = case $$p in \
+@@ -71,11 +71,10 @@ am__vpath_adj = case $$p in \
    esac;
  am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
  dist_dataDATA_INSTALL = $(INSTALL_DATA)
@@ -35,18 +35,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.18 2011/05/19 17:18:18 ajacoutot
  dist_data_configDATA_INSTALL = $(INSTALL_DATA)
  am__dist_sysconf_cert_DATA_DIST = addtrust.crt
  dist_sysconf_certDATA_INSTALL = $(INSTALL_DATA)
--am__dist_sysconf_config_DATA_DIST = server.cfg unix.cfg \
-+am__dist_sysconf_config_DATA_DIST = server.cfg \
- 	ldap.propmap.cfg spooler.cfg gateway.cfg monitor.cfg \
--	dagent.cfg ical.cfg indexer.cfg autorespond licensed.cfg \
--	archiver.cfg ldap.openldap.cfg ldap.active-directory.cfg \
--	ldapms.openldap.cfg ldapms.active-directory.cfg
-+	dagent.cfg ical.cfg indexer.cfg autorespond \
-+	ldap.openldap.cfg ldap.active-directory.cfg
- dist_sysconf_configDATA_INSTALL = $(INSTALL_DATA)
- am__dist_sysconf_rotate_DATA_DIST = zarafa.logrotate \
- 	zarafa-indexer.logrotate zarafa-licensed.logrotate
-@@ -244,6 +242,7 @@ datadir = ${docdir}
+@@ -247,6 +246,7 @@ datadir = ${docdir}
  datarootdir = @datarootdir@
  docdir = @docdir@
  dvidir = @dvidir@
@@ -54,7 +43,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.18 2011/05/19 17:18:18 ajacoutot
  exec_prefix = @exec_prefix@
  host = @host@
  host_alias = @host_alias@
-@@ -273,7 +272,7 @@ sysconfdir = @sysconfdir@
+@@ -276,7 +276,7 @@ sysconfdir = @sysconfdir@
  target_alias = @target_alias@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -63,16 +52,16 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.18 2011/05/19 17:18:18 ajacoutot
  	gateway.cfg monitor.cfg dagent.cfg ical.cfg indexer.cfg \
  	autorespond $(am__append_2) $(BUILT_SOURCES)
  rhel_initscript_files = zarafa-server.init.rhel \
-@@ -310,7 +309,7 @@ sysconf_sysconfigdir = ${@DISTRO@_sysconfig_path}
+@@ -311,7 +311,7 @@ sysconf_sysconfigdir = ${@DISTRO@_sysconfig_path}
  sysconf_sysconfig_DATA = ${@DISTRO@_sysconfig_files}
  dist_data_DATA = \
  	db-convert-4.1-to-4.2 db-convert-4.20-to-4.21 db-convert-4.20-to-innodb.sql db-calc-storesize db-convert-attachments-to-files \
 -	createuser.dotforward db-convert-4.2x-to-5.00 ssl-certificates.sh db-upgrade-objectsid-to-objectguid.pl ldap-switch-sendas.pl \
 +	createuser.dotforward db-convert-4.2x-to-5.00 db-upgrade-objectsid-to-objectguid.pl ldap-switch-sendas.pl \
- 	audit-parse.pl
+ 	${top_srcdir}/tools/python-scripts/optimize-imap.py audit-parse.pl zarafa7-upgrade
  
  BUILT_SOURCES = ldap.openldap.cfg ldap.active-directory.cfg \
-@@ -470,15 +469,7 @@ uninstall-dist_sysconf_configDATA:
+@@ -471,15 +471,7 @@ uninstall-dist_sysconf_configDATA:
  	  echo " rm -f '$(DESTDIR)$(sysconf_configdir)/$$f'"; \
  	  rm -f "$(DESTDIR)$(sysconf_configdir)/$$f"; \
  	done
@@ -89,7 +78,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.18 2011/05/19 17:18:18 ajacoutot
  
  uninstall-dist_sysconf_rotateDATA:
  	@$(NORMAL_UNINSTALL)
-@@ -542,7 +533,7 @@ check: $(BUILT_SOURCES)
+@@ -543,7 +535,7 @@ check: $(BUILT_SOURCES)
  	$(MAKE) $(AM_MAKEFLAGS) check-am
  all-am: Makefile $(SCRIPTS) $(DATA)
  installdirs:
@@ -98,7 +87,7 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.18 2011/05/19 17:18:18 ajacoutot
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: $(BUILT_SOURCES)
-@@ -589,9 +580,9 @@ info: info-am
+@@ -590,9 +582,9 @@ info: info-am
  
  info-am:
  
@@ -110,36 +99,37 @@ $OpenBSD: patch-installer_linux_Makefile_in,v 1.18 2011/05/19 17:18:18 ajacoutot
  	install-sysconf_sysconfigDATA
  	@$(NORMAL_INSTALL)
  	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
-@@ -671,13 +662,7 @@ ldapms.active-directory.cfg: ldap.m4
+@@ -673,11 +665,7 @@ ldapms.active-directory.cfg: ldap.m4
  	m4 -DTYPE=ADS -DMULTISERVER=1 ${top_srcdir}/installer/linux/ldap.m4 > $@
  
  install-data-hook:
 -	install -d -m 755 ${DESTDIR}/${sysconf_configdir}/license
  	install -d -m 755 ${DESTDIR}/${sysconf_configdir}/report
--	mv ${DESTDIR}/${sysconf_rotatedir}/zarafa.logrotate ${DESTDIR}/${sysconf_rotatedir}/zarafa
--	mv ${DESTDIR}/${sysconf_rotatedir}/zarafa-indexer.logrotate ${DESTDIR}/${sysconf_rotatedir}/zarafa-indexer
--	if test -f ${DESTDIR}/${sysconf_rotatedir}/zarafa-licensed.logrotate; then \
--		mv ${DESTDIR}/${sysconf_rotatedir}/zarafa-licensed.logrotate ${DESTDIR}/${sysconf_rotatedir}/zarafa-licensed; \
--	fi
+-	for f in ${DESTDIR}/${sysconf_rotatedir}/*.logrotate; do \
+-		mv $$f $${f%.logrotate}; \
+-	done
  	if test ${DISTRO} = "sles" -o ${DISTRO} = "suse"; then \
  		mv ${DESTDIR}${sysconf_sysconfigdir}/sysconfig.suse ${DESTDIR}${sysconf_sysconfigdir}/sysconfig.zarafa || true; \
- 		mv ${DESTDIR}${sysconf_sysconfigdir}/sysconfig-indexer.suse ${DESTDIR}${sysconf_sysconfigdir}/sysconfig.zarafa-indexer || true; \
-@@ -692,18 +677,6 @@ install-data-hook:
- 		fi; \
+ 	elif test ${DISTRO} = "rhel"; then \
+@@ -685,18 +673,12 @@ install-data-hook:
  	else \
  		true; \
--	fi
+ 	fi
 -	if test `ls -1A ${DESTDIR}${sysconf_initdir}/ | wc -l` -ne 0; then \
 -		for f in ${DESTDIR}${sysconf_initdir}/*; do \
 -			newf=`echo "$$f" | sed -e 's/\(zarafa-.*\).init.*/\1/'`; \
 -			mv "$$f" "$$newf"; \
 -		done \
 -	fi
--	install -d -m 755 ${DESTDIR}/${datarootdir}/doc/zarafa-indexer/example-config
--	mv ${DESTDIR}/${data_configdir}/indexer.cfg ${DESTDIR}/${datarootdir}/doc/zarafa-indexer/example-config
--	if [ -f ${DESTDIR}/${data_configdir}/archiver.cfg ]; then \
--		install -d -m 755 ${DESTDIR}/${datarootdir}/doc/zarafa-archiver/example-config; \
--		mv ${DESTDIR}/${data_configdir}/archiver.cfg ${DESTDIR}/${datarootdir}/doc/zarafa-archiver/example-config; \
- 	fi
+-	mkdir -p ${DESTDIR}/${docdir}/../zarafa-gateway
+-	mv ${DESTDIR}/${docdir}/optimize-imap.py ${DESTDIR}/${docdir}/../zarafa-gateway
++	mkdir -p ${DESTDIR}/${docdir}/../zarafa
++	mv ${DESTDIR}/${docdir}/optimize-imap.py ${DESTDIR}/${docdir}/../zarafa
+ 
+ .NOTPARALLEL: install-exec-local
+ install-exec-local:
+-	cd ${top_srcdir}/installer/linux/ && python setup.py install --root="$(DESTDIR)" --prefix="$(prefix)" --install-purelib $(pythonexeclibdir)
++	cd ${top_srcdir}/installer/linux/ && !!MODPY_BIN!! setup.py install --root="$(DESTDIR)" --prefix="$(prefix)" --install-purelib $(pythonexeclibdir)
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
+ .NOEXPORT:

@@ -1,7 +1,7 @@
-$OpenBSD: patch-spooler_DAgent_cpp,v 1.13 2011/05/19 17:18:19 ajacoutot Exp $
---- spooler/DAgent.cpp.orig	Thu May 19 17:01:35 2011
-+++ spooler/DAgent.cpp	Thu May 19 18:30:37 2011
-@@ -88,6 +88,10 @@
+$OpenBSD: patch-spooler_DAgent_cpp,v 1.14 2011/06/02 12:46:37 ajacoutot Exp $
+--- spooler/DAgent.cpp.orig	Wed Apr 20 19:51:46 2011
++++ spooler/DAgent.cpp	Sun May 29 07:13:40 2011
+@@ -89,6 +89,10 @@
  #include <sys/mman.h>
  #include <pwd.h>
  
@@ -12,12 +12,12 @@ $OpenBSD: patch-spooler_DAgent_cpp,v 1.13 2011/05/19 17:18:19 ajacoutot Exp $
  /*
    This is actually from sysexits.h
    but since those windows lamers don't have it ..
-@@ -2641,7 +2645,7 @@ int main(int argc, char *argv[]) {
+@@ -3058,7 +3062,7 @@ int main(int argc, char *argv[]) {
  
  	DeliveryArgs sDeliveryArgs;
  	sDeliveryArgs.strPath = "";
 -	sDeliveryArgs.strAutorespond = "/usr/bin/zarafa-autorespond";
 +	sDeliveryArgs.strAutorespond = "${PREFIX}/bin/zarafa-autorespond";
  	sDeliveryArgs.bCreateFolder = false;
- 	sDeliveryArgs.strDeliveryFolder = "";
+ 	sDeliveryArgs.strDeliveryFolder.clear();
  	sDeliveryArgs.szPathSeperator = '\\';

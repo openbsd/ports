@@ -1,17 +1,20 @@
-$OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.1 2010/06/30 02:46:48 ajacoutot Exp $
---- provider/libserver/StreamUtil.cpp.orig	Tue Jun 29 01:35:22 2010
-+++ provider/libserver/StreamUtil.cpp	Tue Jun 29 01:25:44 2010
-@@ -265,7 +265,9 @@ ECRESULT SerializeDatabasePropVal(DB_ROW lpRow, DB_LEN
+$OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.2 2011/06/02 12:46:37 ajacoutot Exp $
+
+Needs newlocale(3).
+
+--- provider/libserver/StreamUtil.cpp.orig	Wed Apr 20 19:51:48 2011
++++ provider/libserver/StreamUtil.cpp	Mon May  2 12:47:53 2011
+@@ -280,7 +280,9 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  	unsigned int ulKind;
  	unsigned int ulNameId;
  	std::string strNameString;
 +#ifndef __OpenBSD__
  	locale_t loc = createlocale(LC_NUMERIC, "C");
 +#endif
+ 	convert_context converter;
  
  	short i;
- 	unsigned int ul;
-@@ -301,7 +303,11 @@ ECRESULT SerializeDatabasePropVal(DB_ROW lpRow, DB_LEN
+@@ -317,7 +319,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  			er = ZARAFA_E_NOT_FOUND;
  			goto exit;
  		}
@@ -23,7 +26,7 @@ $OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.1 2010/06/30 02:46:48 ajac
  		er = lpSink->Write(&flt, sizeof(flt), 1);
  		break;
  	case PT_BOOLEAN:
-@@ -318,7 +324,11 @@ ECRESULT SerializeDatabasePropVal(DB_ROW lpRow, DB_LEN
+@@ -334,7 +340,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  			er = ZARAFA_E_NOT_FOUND;
  			goto exit;
  		}
@@ -35,7 +38,7 @@ $OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.1 2010/06/30 02:46:48 ajac
  		er = lpSink->Write(&dbl, sizeof(dbl), 1);
  		break;
  	case PT_CURRENCY:
-@@ -407,7 +417,11 @@ ECRESULT SerializeDatabasePropVal(DB_ROW lpRow, DB_LEN
+@@ -431,7 +441,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  		for (unsigned x = 0; er == erSuccess && x < ulCount; x++)
  		{
  			ParseMVProp(lpRow[FIELD_NR_DOUBLE], lpLen[FIELD_NR_DOUBLE], &ulLastPos, &strData);
@@ -47,7 +50,7 @@ $OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.1 2010/06/30 02:46:48 ajac
  			er = lpSink->Write(&flt, sizeof(flt), 1);
  		}
  		break;
-@@ -424,7 +438,11 @@ ECRESULT SerializeDatabasePropVal(DB_ROW lpRow, DB_LEN
+@@ -448,7 +462,11 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  		for (unsigned x = 0; er == erSuccess && x < ulCount; x++)
  		{
  			ParseMVProp(lpRow[FIELD_NR_DOUBLE], lpLen[FIELD_NR_DOUBLE], &ulLastPos, &strData);
@@ -59,7 +62,7 @@ $OpenBSD: patch-provider_libserver_StreamUtil_cpp,v 1.1 2010/06/30 02:46:48 ajac
  			er = lpSink->Write(&dbl, sizeof(flt), 1);
  		}
  		break;
-@@ -534,7 +552,9 @@ ECRESULT SerializeDatabasePropVal(DB_ROW lpRow, DB_LEN
+@@ -566,7 +584,9 @@ ECRESULT SerializeDatabasePropVal(LPCSTREAMCAPS lpStre
  	}
  
  exit:

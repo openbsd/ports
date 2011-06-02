@@ -1,6 +1,6 @@
-$OpenBSD: patch-common_platform_linux_h,v 1.10 2011/03/03 13:16:05 ajacoutot Exp $
---- common/platform.linux.h.orig	Mon Jan 24 16:55:03 2011
-+++ common/platform.linux.h	Tue Jan 25 12:56:17 2011
+$OpenBSD: patch-common_platform_linux_h,v 1.11 2011/06/02 12:46:37 ajacoutot Exp $
+--- common/platform.linux.h.orig	Wed Apr 20 19:51:45 2011
++++ common/platform.linux.h	Thu Jun  2 10:41:55 2011
 @@ -63,8 +63,16 @@
  #include <dlfcn.h>
  #include <stddef.h>
@@ -44,9 +44,9 @@ $OpenBSD: patch-common_platform_linux_h,v 1.10 2011/03/03 13:16:05 ajacoutot Exp
  	#endif
  #endif
  
- #define OutputDebugString(dstr) fprintf(stderr,"%s",dstr)
+ #define OutputDebugStringA(dstr) fprintf(stderr,"%s",dstr)
 -#define GetCurrentThreadId() (int)pthread_self()
-+#define GetCurrentThreadId() (long)pthread_self()
++#define GetCurrentThreadId() (intptr_t)pthread_self()
  #define GetTickCount() 0L
  
  #define TICKS_PER_SEC (sysconf(_SC_CLK_TCK))

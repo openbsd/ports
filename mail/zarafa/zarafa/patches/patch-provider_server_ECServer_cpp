@@ -1,9 +1,9 @@
-$OpenBSD: patch-provider_server_ECServer_cpp,v 1.12 2011/05/19 17:18:19 ajacoutot Exp $
---- provider/server/ECServer.cpp.orig	Thu May 19 17:01:37 2011
-+++ provider/server/ECServer.cpp	Thu May 19 18:30:37 2011
-@@ -82,6 +82,10 @@
- #include <libintl.h>
- #include <map>
+$OpenBSD: patch-provider_server_ECServer_cpp,v 1.13 2011/06/02 12:46:37 ajacoutot Exp $
+--- provider/server/ECServer.cpp.orig	Wed Apr 20 19:51:48 2011
++++ provider/server/ECServer.cpp	Sun May 29 07:13:40 2011
+@@ -86,6 +86,10 @@
+ #include "unicode/uclean.h"
+ #endif
  
 +#ifdef __OpenBSD__
 +#include <sys/resource.h>
@@ -12,7 +12,7 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.12 2011/05/19 17:18:19 ajacouto
  #ifdef _DEBUG
  #define new DEBUG_NEW
  #undef THIS_FILE
-@@ -757,7 +761,7 @@ int running_server(char *szName, char *szConfig)
+@@ -677,7 +681,7 @@ int running_server(char *szName, char *szConfig)
  		{ "mysql_config_file",			"/etc/zarafa/my.cnf" },
  #endif
  		{ "attachment_storage",			"database" },
@@ -21,7 +21,7 @@ $OpenBSD: patch-provider_server_ECServer_cpp,v 1.12 2011/05/19 17:18:19 ajacouto
  		{ "attachment_compression",		"6" },
  
  		// Log options
-@@ -828,7 +832,7 @@ int running_server(char *szName, char *szConfig)
+@@ -748,7 +752,7 @@ int running_server(char *szName, char *szConfig)
  		{ "cache_sortkey_size",		"0", CONFIGSETTING_UNUSED }, // Option not support, only for backward compatibility of all configurations under the 6.20
  
  		{ "client_update_enabled",	"no" },

@@ -1,12 +1,12 @@
-$OpenBSD: patch-provider_soap_stdsoap2_h,v 1.3 2011/04/04 14:42:51 ajacoutot Exp $
---- provider/soap/stdsoap2.h.orig	Tue Mar 29 00:04:06 2011
-+++ provider/soap/stdsoap2.h	Mon Apr  4 12:23:33 2011
+$OpenBSD: patch-provider_soap_stdsoap2_h,v 1.4 2011/06/02 12:46:37 ajacoutot Exp $
+--- provider/soap/stdsoap2.h.orig	Wed Apr 20 19:51:43 2011
++++ provider/soap/stdsoap2.h	Wed Jun  1 07:14:02 2011
 @@ -426,6 +426,24 @@ A commercial use license is available from Genivia, In
  #  define ULONG64 unsigned LONG64
  #  define SOAP_LONG_FORMAT "%ld"
  #  define SOAP_ULONG_FORMAT "%lu"
 +#elif defined(OPENBSD) || defined(__OpenBSD__)
-+// for FD_SETSIZE
++/* for FD_SETSIZE */
 +#include <sys/types.h>
 +#include <sys/select.h>
 +#  define HAVE_STRRCHR

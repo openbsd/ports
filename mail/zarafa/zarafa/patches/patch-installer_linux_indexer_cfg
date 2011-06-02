@@ -1,7 +1,7 @@
-$OpenBSD: patch-installer_linux_indexer_cfg,v 1.1 2011/04/04 08:01:04 ajacoutot Exp $
---- installer/linux/indexer.cfg.orig	Sun Apr  3 09:12:52 2011
-+++ installer/linux/indexer.cfg	Sun Apr  3 09:15:54 2011
-@@ -2,13 +2,13 @@
+$OpenBSD: patch-installer_linux_indexer_cfg,v 1.2 2011/06/02 12:46:37 ajacoutot Exp $
+--- installer/linux/indexer.cfg.orig	Wed Apr 20 16:39:10 2011
++++ installer/linux/indexer.cfg	Wed Jun  1 07:12:54 2011
+@@ -2,19 +2,19 @@
  # INDEXER SERVICE SETTINGS
  
  # Location of the index files
@@ -18,6 +18,13 @@ $OpenBSD: patch-installer_linux_indexer_cfg,v 1.1 2011/04/04 08:01:04 ajacoutot 
  
  # control pid file
  pid_file            =   /var/run/zarafa-indexer.pid
+ 
+ # run server in this path (when not using the -F switch)
+-running_path        =   /
++running_path        =   /var/empty
+ 
+ # Force remove lockfiles on startup. Leaves possibly corrupt indexes on disk.
+ # See log for info of removed locks.
 @@ -29,7 +29,7 @@ cleanup_lockfiles	=	no
  server_socket   =   file:///var/run/zarafa
  
@@ -40,7 +47,7 @@ $OpenBSD: patch-installer_linux_indexer_cfg,v 1.1 2011/04/04 08:01:04 ajacoutot 
  
  ##############################################################
  # LOG SETTINGS
-@@ -107,7 +107,7 @@ index_attachments	= yes
+@@ -103,7 +103,7 @@ index_attachments	= yes
  index_attachment_max_size = 5120
  
  # Scripts to attachment to text parser
