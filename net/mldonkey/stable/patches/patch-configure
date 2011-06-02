@@ -1,0 +1,10 @@
+$OpenBSD: patch-configure,v 1.1 2011/06/02 10:38:50 dcoppa Exp $
+--- configure.orig	Wed Jun  1 23:56:39 2011
++++ configure	Wed Jun  1 23:56:54 2011
+@@ -43,5 +43,5 @@ else
+           echo "Running m4 to generate Makefile..."
+           m4 Makefile.in > ../Makefile
+        fi \
+-    && ./configure --enable-option-checking=fatal "$@"
++    && ./configure --enable-option-checking "$@"
+ fi
