@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 
-# $OpenBSD: getpkgpath,v 1.1 2010/08/20 15:01:12 espie Exp $
+# $OpenBSD: getpkgpath,v 1.2 2011/06/02 17:00:14 espie Exp $
 #
 # Copyright (c) 2006 Marc Espie <espie@openbsd.org>
 #
@@ -25,8 +25,14 @@ my $path = $ENV{PORTSDIR_PATH} or exit 1;
 
 my $pkgpath;
 my $real_dir = abs_path($dir);
+if (!defined $real_dir) {
+	print STDERR "Error: $dir does not resolve (broken symlink ?)\n";
+}
 for my $d (split ':', $path) {
 	my $real_d = abs_path($d);
+	if (!defined $real_d) {
+		print STDERR "Error: $d does not resolve (broken symlink ?)\n";
+	}
 	if ($real_dir =~ m/^\Q$real_d\E\//) {
 		my $newpath = $';
 		if (!defined $pkgpath or length $newpath < length $pkgpath) {
