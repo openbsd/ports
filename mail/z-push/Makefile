@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/27 05:18:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/02 10:40:51 ajacoutot Exp $
 
 COMMENT=	ActiveSync protocol implementation	
 
-DISTNAME=	z-push-1.5
+V=		1.5.3
+DISTNAME=	z-push-${V}-685
+PKGNAME=	z-push-${V}
 CATEGORIES=	mail www
-
-REVISION=	1
 
 HOMEPAGE=	http://z-push.sourceforge.net/
 
@@ -27,8 +27,6 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/z-push
 TINSTDIR=	${TRUEPREFIX}/z-push
 SUBST_VARS=	INSTDIR TINSTDIR
-
-WRKDIST=	${WRKDIR}/z-push
 
 RUN_DEPENDS=	mail/zarafa/zarafa,-web \
 		www/php5/extensions,-imap

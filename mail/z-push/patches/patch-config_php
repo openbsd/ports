@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_php,v 1.4 2011/03/07 19:50:26 ajacoutot Exp $
---- config.php.orig	Fri Nov 19 22:20:24 2010
-+++ config.php	Tue Jan 25 09:47:57 2011
+$OpenBSD: patch-config_php,v 1.5 2011/06/02 10:40:51 ajacoutot Exp $
+--- config.php.orig	Fri Mar 18 20:22:53 2011
++++ config.php	Thu Jun  2 12:29:57 2011
 @@ -42,7 +42,7 @@
  ************************************************/
      // Defines the default time zone
@@ -24,7 +24,7 @@ $OpenBSD: patch-config_php,v 1.4 2011/03/07 19:50:26 ajacoutot Exp $
  
      define('STATE_DIR', BASE_PATH.'/state');
  
-@@ -89,7 +90,8 @@
+@@ -99,7 +100,8 @@
      // ************************
  
      // Defines the server to which we want to connect
