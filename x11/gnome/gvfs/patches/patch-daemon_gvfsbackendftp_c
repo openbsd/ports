@@ -1,0 +1,21 @@
+$OpenBSD: patch-daemon_gvfsbackendftp_c,v 1.1 2011/06/02 18:34:16 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=651729
+
+--- daemon/gvfsbackendftp.c.orig	Thu Jun  2 20:16:07 2011
++++ daemon/gvfsbackendftp.c	Thu Jun  2 20:19:05 2011
+@@ -1073,13 +1073,7 @@ try_query_settable_attributes (GVfsBackend *backend,
+   GFileAttributeInfoList *list;
+ 
+   if (!g_vfs_backend_ftp_has_feature (ftp, G_VFS_FTP_FEATURE_CHMOD))
+-    {    
+-      g_vfs_job_failed (G_VFS_JOB (job),
+-                        G_IO_ERROR,
+-                        G_IO_ERROR_NOT_SUPPORTED,
+-                        _("Operation unsupported"));
+-      return FALSE;
+-    }    
++    return FALSE;
+ 
+   list = g_file_attribute_info_list_new ();
+ 
