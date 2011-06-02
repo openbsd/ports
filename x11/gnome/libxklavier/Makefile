@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2011/05/16 20:42:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2011/06/02 17:16:34 ajacoutot Exp $
 
 COMMENT=		utility library for XKB
 
 GNOME_PROJECT=		libxklavier
 GNOME_VERSION=		5.1
+
+REVISION=		0
 
 SHARED_LIBS +=  xklavier             17.0     # .17.0
 
@@ -27,7 +29,8 @@ LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-xkb-base="${SYSCONFDIR}/X11/xkb/" \
+			--disable-gtk-doc \
+			--with-xkb-base="${X11BASE}/share/X11/xkb/" \
 			--with-xkb-bin-base="${X11BASE}/bin/" \
 			--with-xmodmap-base="${LOCALBASE}/share/xmodmap"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
