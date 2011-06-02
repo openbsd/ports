@@ -1,6 +1,6 @@
 #-*- mode: Fundamental; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-# $OpenBSD: gnu.port.mk,v 1.41 2010/12/20 16:39:53 espie Exp $
+# $OpenBSD: gnu.port.mk,v 1.42 2011/06/02 15:54:10 naddy Exp $
 #	Based on bsd.port.mk, originally by Jordan K. Hubbard.
 #	This file is in the public domain.
 
@@ -80,6 +80,8 @@ CONFIGURE_ARGS += --mandir='${PREFIX}/man'
 CONFIGURE_ARGS += --infodir='${PREFIX}/info'
 .    endif
 .  endif
+
+CONFIGURE_ARGS += --disable-silent-rules
 .endif
 
 REGRESS_TARGET ?= check
