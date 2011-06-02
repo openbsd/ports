@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2011/04/07 09:28:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2011/06/02 07:16:33 ajacoutot Exp $
 @conflict libgda-db4-*
 @pkgpath x11/gnome/libgda,-odbc
-@pkgpath x11/gnome/libgda,-ldap
 bin/gda-list-config
 @bin bin/gda-list-config-${GDA_MAJOR}
 bin/gda-list-server-op
@@ -128,18 +127,17 @@ include/libgda-${GDA_MAJOR}/libgda/virtual/gda-virtual-provider.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/gda-vprovider-data-model.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/gda-vprovider-hub.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/libgda-virtual.h
-lib/girepository-1.0/Gda-${GDA_MAJOR}.typelib
 lib/libgda-${GDA_MAJOR}/
 lib/libgda-${GDA_MAJOR}.la
 @lib lib/libgda-${GDA_MAJOR}.so.${LIBgda-4.0_VERSION}
 lib/libgda-${GDA_MAJOR}/providers/
-lib/libgda-${GDA_MAJOR}/providers/libgda-bdb.la
+@comment lib/libgda-${GDA_MAJOR}/providers/libgda-bdb.la
 lib/libgda-${GDA_MAJOR}/providers/libgda-bdb.so
-lib/libgda-${GDA_MAJOR}/providers/libgda-sqlcipher.la
+@comment lib/libgda-${GDA_MAJOR}/providers/libgda-sqlcipher.la
 lib/libgda-${GDA_MAJOR}/providers/libgda-sqlcipher.so
-lib/libgda-${GDA_MAJOR}/providers/libgda-sqlite.la
+@comment lib/libgda-${GDA_MAJOR}/providers/libgda-sqlite.la
 lib/libgda-${GDA_MAJOR}/providers/libgda-sqlite.so
-lib/libgda-${GDA_MAJOR}/providers/libgda-web.la
+@comment lib/libgda-${GDA_MAJOR}/providers/libgda-web.la
 lib/libgda-${GDA_MAJOR}/providers/libgda-web.so
 lib/libgda-report-${GDA_MAJOR}.la
 @lib lib/libgda-report-${GDA_MAJOR}.so.${LIBgda-report-4.0_VERSION}
@@ -161,6 +159,7 @@ share/examples/libgda/config
 share/examples/libgda/sales_test.db
 @sample ${SYSCONFDIR}/libgda-${GDA_MAJOR}/sales_test.db
 share/gir-1.0/Gda-${GDA_MAJOR}.gir
+share/gir-1.0/Gda-${GDA_MAJOR}.typelib
 share/gtk-doc/html/libgda-${GDA_MAJOR}/
 share/gtk-doc/html/libgda-${GDA_MAJOR}/DataModels.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/GdaBatch.html
@@ -338,6 +337,10 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-1.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-2.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-3.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-4.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-5.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-6.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-7.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-8.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-deprecated.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index.html
@@ -394,6 +397,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/libgda-xslt-introduction.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/libgdaui-packaging.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/limitations.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/limitations_jdbc.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/limitations_ldap.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/limitations_mysql.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/limitations_oracle.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/limitations_postgres.html
@@ -421,6 +425,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/part_tools.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/parts.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/prov-metadata.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/provider-notes.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/provider_notes_ldap.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/provider_notes_sqlcipher.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/provider_notes_sqlite.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/psupport.html
@@ -483,8 +488,6 @@ share/libgda-${GDA_MAJOR}/import_encodings.xml
 share/libgda-${GDA_MAJOR}/information_schema.xml
 share/libgda-${GDA_MAJOR}/language-specs/
 share/libgda-${GDA_MAJOR}/language-specs/gda-sql.lang
-share/libgda-${GDA_MAJOR}/mysql_specs_comment_column.xml
-share/libgda-${GDA_MAJOR}/mysql_specs_comment_table.xml
 share/libgda-${GDA_MAJOR}/php/
 share/libgda-${GDA_MAJOR}/php/README
 share/libgda-${GDA_MAJOR}/php/gda-clean.php
@@ -496,10 +499,6 @@ share/libgda-${GDA_MAJOR}/php/gda-setup.php
 share/libgda-${GDA_MAJOR}/php/gda-tester.php
 share/libgda-${GDA_MAJOR}/php/gda-utils.php
 share/libgda-${GDA_MAJOR}/php/gda-worker.php
-share/libgda-${GDA_MAJOR}/postgres_specs_create_role.xml
-share/libgda-${GDA_MAJOR}/postgres_specs_create_user.xml
-share/libgda-${GDA_MAJOR}/postgres_specs_drop_role.xml
-share/libgda-${GDA_MAJOR}/postgres_specs_drop_user.xml
 share/libgda-${GDA_MAJOR}/server_operation.glade
 share/libgda-${GDA_MAJOR}/sqlcipher_specs_add_column.xml
 share/libgda-${GDA_MAJOR}/sqlcipher_specs_auth.xml

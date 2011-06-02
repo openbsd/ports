@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.6 2011/04/20 16:43:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.7 2011/06/02 07:16:33 ajacoutot Exp $
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
 @bin bin/gdaui-demo-${GDA_MAJOR}
@@ -28,7 +28,6 @@ include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-rt-editor.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-server-operation.h
 include/libgda-${GDA_MAJOR}/libgda-ui/gdaui-tree-store.h
 include/libgda-${GDA_MAJOR}/libgda-ui/libgda-ui.h
-lib/girepository-1.0/Gdaui-${GDA_MAJOR}.typelib
 lib/libgda-${GDA_MAJOR}/plugins/
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-filesel-spec.xml
 lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-password.xml
@@ -43,6 +42,7 @@ lib/pkgconfig/libgda-ui-${GDA_MAJOR}.pc
 share/applications/gda-browser-${GDA_MAJOR}.desktop
 share/applications/gda-control-center-${GDA_MAJOR}.desktop
 share/gir-1.0/Gdaui-${GDA_MAJOR}.gir
+share/gir-1.0/Gdaui-${GDA_MAJOR}.typelib
 share/gnome/help/gda-browser/
 share/gnome/help/gda-browser/C/
 share/gnome/help/gda-browser/C/actions.page
@@ -65,6 +65,10 @@ share/gnome/help/gda-browser/C/figures/data-man-xmlcompose.png
 share/gnome/help/gda-browser/C/figures/declaredfk-dialog.png
 share/gnome/help/gda-browser/C/figures/declaredfk.png
 share/gnome/help/gda-browser/C/figures/diagram.png
+share/gnome/help/gda-browser/C/figures/ldap-browser-persp.png
+share/gnome/help/gda-browser/C/figures/ldap-classes.png
+share/gnome/help/gda-browser/C/figures/ldap-search.png
+share/gnome/help/gda-browser/C/figures/ldap-table-mapping.png
 share/gnome/help/gda-browser/C/figures/mainwin.png
 share/gnome/help/gda-browser/C/figures/query-exec-persp.png
 share/gnome/help/gda-browser/C/figures/schema-browser-persp.png
@@ -79,6 +83,8 @@ share/gnome/help/gda-browser/C/figures/virtual-cnc-5.png
 share/gnome/help/gda-browser/C/figures/virtual-cnc.png
 share/gnome/help/gda-browser/C/general-ui.page
 share/gnome/help/gda-browser/C/index.page
+share/gnome/help/gda-browser/C/ldap-browser-perspective.page
+share/gnome/help/gda-browser/C/ldap-connections.page
 share/gnome/help/gda-browser/C/legal.xml
 share/gnome/help/gda-browser/C/query-execution-perspective.page
 share/gnome/help/gda-browser/C/schema-browser-perspective.page
@@ -107,6 +113,10 @@ share/gnome/help/gda-browser/de/figures/data-man-xmlcompose.png
 share/gnome/help/gda-browser/de/figures/declaredfk-dialog.png
 share/gnome/help/gda-browser/de/figures/declaredfk.png
 share/gnome/help/gda-browser/de/figures/diagram.png
+share/gnome/help/gda-browser/de/figures/ldap-browser-persp.png
+share/gnome/help/gda-browser/de/figures/ldap-classes.png
+share/gnome/help/gda-browser/de/figures/ldap-search.png
+share/gnome/help/gda-browser/de/figures/ldap-table-mapping.png
 share/gnome/help/gda-browser/de/figures/mainwin.png
 share/gnome/help/gda-browser/de/figures/query-exec-persp.png
 share/gnome/help/gda-browser/de/figures/schema-browser-persp.png
@@ -121,6 +131,8 @@ share/gnome/help/gda-browser/de/figures/virtual-cnc-5.png
 share/gnome/help/gda-browser/de/figures/virtual-cnc.png
 share/gnome/help/gda-browser/de/general-ui.page
 share/gnome/help/gda-browser/de/index.page
+share/gnome/help/gda-browser/de/ldap-browser-perspective.page
+share/gnome/help/gda-browser/de/ldap-connections.page
 share/gnome/help/gda-browser/de/legal.xml
 share/gnome/help/gda-browser/de/query-execution-perspective.page
 share/gnome/help/gda-browser/de/schema-browser-perspective.page
@@ -149,6 +161,10 @@ share/gnome/help/gda-browser/es/figures/data-man-xmlcompose.png
 share/gnome/help/gda-browser/es/figures/declaredfk-dialog.png
 share/gnome/help/gda-browser/es/figures/declaredfk.png
 share/gnome/help/gda-browser/es/figures/diagram.png
+share/gnome/help/gda-browser/es/figures/ldap-browser-persp.png
+share/gnome/help/gda-browser/es/figures/ldap-classes.png
+share/gnome/help/gda-browser/es/figures/ldap-search.png
+share/gnome/help/gda-browser/es/figures/ldap-table-mapping.png
 share/gnome/help/gda-browser/es/figures/mainwin.png
 share/gnome/help/gda-browser/es/figures/query-exec-persp.png
 share/gnome/help/gda-browser/es/figures/schema-browser-persp.png
@@ -163,6 +179,8 @@ share/gnome/help/gda-browser/es/figures/virtual-cnc-5.png
 share/gnome/help/gda-browser/es/figures/virtual-cnc.png
 share/gnome/help/gda-browser/es/general-ui.page
 share/gnome/help/gda-browser/es/index.page
+share/gnome/help/gda-browser/es/ldap-browser-perspective.page
+share/gnome/help/gda-browser/es/ldap-connections.page
 share/gnome/help/gda-browser/es/legal.xml
 share/gnome/help/gda-browser/es/query-execution-perspective.page
 share/gnome/help/gda-browser/es/schema-browser-perspective.page
@@ -191,6 +209,10 @@ share/gnome/help/gda-browser/sl/figures/data-man-xmlcompose.png
 share/gnome/help/gda-browser/sl/figures/declaredfk-dialog.png
 share/gnome/help/gda-browser/sl/figures/declaredfk.png
 share/gnome/help/gda-browser/sl/figures/diagram.png
+share/gnome/help/gda-browser/sl/figures/ldap-browser-persp.png
+share/gnome/help/gda-browser/sl/figures/ldap-classes.png
+share/gnome/help/gda-browser/sl/figures/ldap-search.png
+share/gnome/help/gda-browser/sl/figures/ldap-table-mapping.png
 share/gnome/help/gda-browser/sl/figures/mainwin.png
 share/gnome/help/gda-browser/sl/figures/query-exec-persp.png
 share/gnome/help/gda-browser/sl/figures/schema-browser-persp.png
@@ -205,6 +227,8 @@ share/gnome/help/gda-browser/sl/figures/virtual-cnc-5.png
 share/gnome/help/gda-browser/sl/figures/virtual-cnc.png
 share/gnome/help/gda-browser/sl/general-ui.page
 share/gnome/help/gda-browser/sl/index.page
+share/gnome/help/gda-browser/sl/ldap-browser-perspective.page
+share/gnome/help/gda-browser/sl/ldap-connections.page
 share/gnome/help/gda-browser/sl/legal.xml
 share/gnome/help/gda-browser/sl/query-execution-perspective.page
 share/gnome/help/gda-browser/sl/schema-browser-perspective.page
@@ -283,6 +307,7 @@ share/libgda-${GDA_MAJOR}/icons/hicolor/24x24/actions/
 share/libgda-${GDA_MAJOR}/icons/hicolor/24x24/actions/bookmark-view.png
 share/libgda-${GDA_MAJOR}/icons/hicolor/24x24/actions/glade.png
 share/libgda-${GDA_MAJOR}/icons/hicolor/24x24/actions/history-view.png
+share/libgda-${GDA_MAJOR}/icons/hicolor/24x24/actions/table-add.png
 share/libgda-${GDA_MAJOR}/icons/hicolor/24x24/actions/transaction-begin.png
 share/libgda-${GDA_MAJOR}/icons/hicolor/24x24/actions/transaction-commit.png
 share/libgda-${GDA_MAJOR}/icons/hicolor/24x24/actions/transaction-rollback.png
@@ -291,6 +316,8 @@ share/libgda-${GDA_MAJOR}/icons/hicolor/32x32/actions/
 share/libgda-${GDA_MAJOR}/icons/hicolor/32x32/actions/bookmark-view.png
 share/libgda-${GDA_MAJOR}/icons/hicolor/32x32/actions/glade.png
 share/libgda-${GDA_MAJOR}/icons/hicolor/32x32/actions/history-view.png
+share/libgda-${GDA_MAJOR}/icons/hicolor/32x32/actions/ldap-entries.png
+share/libgda-${GDA_MAJOR}/icons/hicolor/32x32/actions/table-add.png
 share/libgda-${GDA_MAJOR}/icons/hicolor/scalable/
 share/libgda-${GDA_MAJOR}/icons/hicolor/scalable/actions/
 share/libgda-${GDA_MAJOR}/icons/hicolor/scalable/actions/bookmark-view.svg
@@ -312,6 +339,14 @@ share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-connected.png
 share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-diagram.png
 share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-form.png
 share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-grid.png
+share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-ldap-class-a.png
+share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-ldap-class-s.png
+share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-ldap-class-u.png
+share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-ldap-class-x.png
+share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-ldap-entry.png
+share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-ldap-group.png
+share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-ldap-organization.png
+share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-ldap-person.png
 share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-menu-ind.png
 share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-non-connected-big.png
 share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-non-connected.png

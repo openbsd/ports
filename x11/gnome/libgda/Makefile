@@ -1,28 +1,31 @@
-# $OpenBSD: Makefile,v 1.35 2011/05/05 15:51:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2011/06/02 07:16:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		GNOME Data Access library
-COMMENT-ui=		GTK+ extension and tools for libgda
+COMMENT-ldap=		LDAP backend for libgda
 COMMENT-mdb=		MS Access MDB backend for libgda
 COMMENT-mysql=		MySQL backend for libgda
 COMMENT-pgsql=		PostreSQL backend for libgda
+COMMENT-ui=		GTK+ extension and tools for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		4.2.7
+GNOME_VERSION=		4.2.8
 
 # NOTE: when major version changes, increment GDA_MAJOR accordingly and
 # bump "x11/gnome/libgdamm"
 GDA_MAJOR=		4.0
 
 PKGNAME-main=		${DISTNAME}
-EPOCH-main=		2
-PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
+PKGNAME-ldap=		libgda-ldap-${GNOME_VERSION}
 PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}
-EPOCH-mdb=		0
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
-EPOCH-mysql=		0
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
+PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
+
+EPOCH-main=		2
+EPOCH-mdb=		0
+EPOCH-mysql=		0
 EPOCH-pgsql=		0
 
 CATEGORIES=		databases
@@ -42,8 +45,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += m pcre z gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 xml2 dbus-1 gcrypt
-WANTLIB += gnome-keyring gpg-error
+WANTLIB += gthread-2.0 xml2 dbus-1 gcrypt gnome-keyring
+WANTLIB += gpg-error
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -53,7 +56,7 @@ DESKTOP_FILES=		Yes
 
 SUBST_VARS=		GDA_MAJOR
 
-PSEUDO_FLAVORS=		no_ui no_mdb no_mysql no_pgsql
+PSEUDO_FLAVORS=		no_ldap no_mdb no_mysql no_pgsql no_ui
 FLAVOR?=
 
 MULTI_PACKAGES=		-main
@@ -73,6 +76,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-static \
 			--disable-gtk-doc \
 			--enable-introspection \
+			--enable-system-sqlite \
 			--with-bdb="${LOCALBASE}" \
 			--without-firebird \
 			--without-oracle \
@@ -156,6 +160,16 @@ LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
 CONFIGURE_ARGS+=	--with-postgres="${LOCALBASE}"
 .endif
 
-CONFIGURE_ARGS+=	--enable-system-sqlite
+.if ${FLAVOR:L:Mno_ldap}
+CONFIGURE_ARGS+=	--without-ldap
+.else
+RUN_DEPENDS-ldap=	${MODGETTEXT_RUN_DEPENDS}
+MULTI_PACKAGES+=	-ldap
+WANTLIB-ldap=		${WANTLIB} crypto gda-4.0 gssapi krb5 lber-2.4 \
+			ldap-2.4 sasl2 ssl
+LIB_DEPENDS-ldap=	x11/gnome/libgda \
+			databases/openldap
+CONFIGURE_ARGS+=	--with-ldap
+.endif
 
 .include <bsd.port.mk>
