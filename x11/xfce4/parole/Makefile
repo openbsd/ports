@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/04/17 10:36:50 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/02 17:35:47 kili Exp $
 
 COMMENT =	Xfce4 media player
 
@@ -15,8 +15,7 @@ PERMIT_PACKAGE_FTP =	Yes
 MODULES =	x11/xfce4
 DESKTOP_FILES =	Yes
 
-CONFIGURE_ARGS =	--disable-silent-rules \
-			--disable-power-manager-plugin
+CONFIGURE_ARGS =	--disable-power-manager-plugin
 
 LIB_DEPENDS =	multimedia/gstreamer-0.10/core \
 		multimedia/gstreamer-0.10/plugins-base \

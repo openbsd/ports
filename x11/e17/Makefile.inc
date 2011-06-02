@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2011/03/15 19:42:04 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2011/06/02 17:35:47 kili Exp $
 
 CATEGORIES ?=		x11
 
@@ -15,7 +15,6 @@ MASTER_SITES ?=		http://download.enlightenment.org/releases/ \
 DIST_SUBDIR ?=		e17
 
 CONFIGURE_STYLE ?=	gnu
-CONFIGURE_ARGS +=	--disable-silent-rules
 
 MAINTAINER ?=		Laurent FANIS <laurent@openbsd.org>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2011/05/27 09:03:14 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2011/06/02 17:35:47 kili Exp $
 
 CATEGORIES ?=	multimedia devel
 
@@ -37,7 +37,6 @@ CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
 			--with-default-videosrc=v4l2src \
 			--with-default-visualizer=goom \
 			--enable-introspection \
-			--disable-silent-rules \
 			--disable-gtk-doc \
 			--disable-valgrind \
 			--disable-static

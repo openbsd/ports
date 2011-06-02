@@ -1,4 +1,4 @@
-# $OpenBSD: xfce4.port.mk,v 1.12 2011/01/18 19:48:30 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.13 2011/06/02 17:35:47 kili Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
@@ -18,12 +18,6 @@ MODULES+=	devel/gettext textproc/intltool
 # if version is not defined, it's the DE version
 .if !defined(XFCE_VERSION)
 XFCE_VERSION=	${XFCE_DESKTOP_VERSION}
-.endif
-
-.if defined(CONFIGURE_STYLE)
-. if ${CONFIGURE_STYLE:L:Mgnu} || ${CONFIGURE_STYLE:L:Mautoconf}
-CONFIGURE_ARGS +=	--disable-silent-rules
-. endif
 .endif
 
 XFCE_BRANCH=	${XFCE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
