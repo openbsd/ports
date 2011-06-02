@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2011/06/02 07:16:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2011/06/02 15:54:10 ajacoutot Exp $
 @conflict libgda-db4-*
+@conflict libgda-ldap-<4.2.8p0
 @pkgpath x11/gnome/libgda,-odbc
 bin/gda-list-config
 @bin bin/gda-list-config-${GDA_MAJOR}
@@ -46,6 +47,7 @@ include/libgda-${GDA_MAJOR}/libgda/gda-data-model-extra.h
 include/libgda-${GDA_MAJOR}/libgda/gda-data-model-import.h
 include/libgda-${GDA_MAJOR}/libgda/gda-data-model-iter-extra.h
 include/libgda-${GDA_MAJOR}/libgda/gda-data-model-iter.h
+include/libgda-${GDA_MAJOR}/libgda/gda-data-model-ldap.h
 include/libgda-${GDA_MAJOR}/libgda/gda-data-model-private.h
 include/libgda-${GDA_MAJOR}/libgda/gda-data-model.h
 include/libgda-${GDA_MAJOR}/libgda/gda-data-proxy.h
@@ -78,6 +80,7 @@ include/libgda-${GDA_MAJOR}/libgda/gda-transaction-status.h
 include/libgda-${GDA_MAJOR}/libgda/gda-tree-manager.h
 include/libgda-${GDA_MAJOR}/libgda/gda-tree-mgr-columns.h
 include/libgda-${GDA_MAJOR}/libgda/gda-tree-mgr-label.h
+include/libgda-${GDA_MAJOR}/libgda/gda-tree-mgr-ldap.h
 include/libgda-${GDA_MAJOR}/libgda/gda-tree-mgr-schemas.h
 include/libgda-${GDA_MAJOR}/libgda/gda-tree-mgr-select.h
 include/libgda-${GDA_MAJOR}/libgda/gda-tree-mgr-tables.h
@@ -120,6 +123,7 @@ include/libgda-${GDA_MAJOR}/libgda/sqlite/gda-sqlite-provider.h
 include/libgda-${GDA_MAJOR}/libgda/thread-wrapper/
 include/libgda-${GDA_MAJOR}/libgda/thread-wrapper/gda-thread-wrapper.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/
+include/libgda-${GDA_MAJOR}/libgda/virtual/gda-ldap-connection.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/gda-vconnection-data-model.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/gda-vconnection-hub.h
 include/libgda-${GDA_MAJOR}/libgda/virtual/gda-virtual-connection.h

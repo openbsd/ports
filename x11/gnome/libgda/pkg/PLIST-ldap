@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST-ldap,v 1.5 2011/06/02 07:16:33 ajacoutot Exp $
-include/libgda-${GDA_MAJOR}/libgda/gda-data-model-ldap.h
-include/libgda-${GDA_MAJOR}/libgda/gda-tree-mgr-ldap.h
-include/libgda-${GDA_MAJOR}/libgda/virtual/gda-ldap-connection.h
+@comment $OpenBSD: PLIST-ldap,v 1.6 2011/06/02 15:54:10 ajacoutot Exp $
 @comment lib/libgda-${GDA_MAJOR}/providers/libgda-ldap.la
 lib/libgda-${GDA_MAJOR}/providers/libgda-ldap.so
 lib/pkgconfig/libgda-ldap-${GDA_MAJOR}.pc
