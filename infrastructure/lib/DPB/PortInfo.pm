@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.8 2011/05/29 11:06:23 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.9 2011/06/02 11:53:55 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -140,7 +140,7 @@ sub new
 sub string
 {
 	my $self = shift;
-	return '['.join(';', map {$_->fullpkgpath} (values %$self)).']';
+	return '['.join(';', map {$_->logname} (values %$self)).']';
 }
 
 sub quickie
@@ -172,6 +172,8 @@ my %adder = (
 	EXTRA => "Extra",
 	DEPENDS => "AddDepends",
 	RDEPENDS => "AddDepends",
+	DIST => "AddDepends",
+	FDEPENDS => "AddDepends",
 	IGNORE => "AddInfo",
 	NEEDED_BY => "AddDepends",
 	BNEEDED_BY => "AddDepends",
