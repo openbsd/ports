@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/05/11 12:03:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/06/02 20:01:19 sthen Exp $
 
 COMMENT=	management tool for Ubiquiti wireless devices
 
-DISTNAME=	aircontrol-1.3.6-beta
+DISTNAME=	aircontrol-1.3.8-beta
 PKGNAME=	${DISTNAME:S/-beta/beta/}
-REVISION=	4
 
 CATEGORIES=	net
 
