@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/08 23:31:59 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/06/02 00:13:41 jeremy Exp $
 ${GEM_BIN}/edit_json.rb${GEM_BIN_SUFFIX}
 ${GEM_BIN}/prettify_json.rb${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -6,8 +6,10 @@ ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.require_paths
 ${GEM_LIB}/gems/${DISTNAME}/CHANGES
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
+${GEM_LIB}/gems/${DISTNAME}/COPYING-json-jruby
 ${GEM_LIB}/gems/${DISTNAME}/GPL
 ${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/README-json-jruby.markdown
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/TODO
 ${GEM_LIB}/gems/${DISTNAME}/VERSION
@@ -82,6 +84,27 @@ ${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/parser/parser.o
 ${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/parser/parser.rl
 ${GEM_LIB}/gems/${DISTNAME}/ext/json/ext/parser/parser.so
 ${GEM_LIB}/gems/${DISTNAME}/install.rb
+${GEM_LIB}/gems/${DISTNAME}/java/
+${GEM_LIB}/gems/${DISTNAME}/java/lib/
+${GEM_LIB}/gems/${DISTNAME}/java/lib/bytelist-1.0.6.jar
+${GEM_LIB}/gems/${DISTNAME}/java/lib/jcodings.jar
+${GEM_LIB}/gems/${DISTNAME}/java/src/
+${GEM_LIB}/gems/${DISTNAME}/java/src/json/
+${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/
+${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/ByteListTranscoder.java
+${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/Generator.java
+${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/GeneratorMethods.java
+${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/GeneratorService.java
+${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/GeneratorState.java
+${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/OptionsReader.java
+${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/Parser.java
+${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/Parser.rl
+${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/ParserService.java
+${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/RuntimeInfo.java
+${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/StringDecoder.java
+${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/StringEncoder.java
+${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/Utils.java
+${GEM_LIB}/gems/${DISTNAME}/json-java.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/json/
 ${GEM_LIB}/gems/${DISTNAME}/lib/json.rb
@@ -138,12 +161,13 @@ ${GEM_LIB}/gems/${DISTNAME}/tests/fixtures/pass17.json
 ${GEM_LIB}/gems/${DISTNAME}/tests/fixtures/pass2.json
 ${GEM_LIB}/gems/${DISTNAME}/tests/fixtures/pass26.json
 ${GEM_LIB}/gems/${DISTNAME}/tests/fixtures/pass3.json
+${GEM_LIB}/gems/${DISTNAME}/tests/setup_variant.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_json.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_json_addition.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_json_encoding.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_json_fixtures.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_json_generate.rb
-${GEM_LIB}/gems/${DISTNAME}/tests/test_json_rails.rb
+${GEM_LIB}/gems/${DISTNAME}/tests/test_json_string_matching.rb
 ${GEM_LIB}/gems/${DISTNAME}/tests/test_json_unicode.rb
 ${GEM_LIB}/gems/${DISTNAME}/tools/
 ${GEM_LIB}/gems/${DISTNAME}/tools/fuzz.rb
