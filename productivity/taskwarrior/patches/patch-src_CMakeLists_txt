@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_CMakeLists_txt,v 1.1.1.1 2011/06/03 21:07:10 kili Exp $
+--- src/CMakeLists.txt.orig	Fri Mar  4 00:09:59 2011
++++ src/CMakeLists.txt	Fri Jun  3 20:13:44 2011
+@@ -25,7 +25,3 @@ target_link_libraries (task_executable task ${TASK_LIB
+ set_property (TARGET task_executable PROPERTY OUTPUT_NAME "task")
+ 
+ install (TARGETS task_executable DESTINATION ${TASK_BINDIR})
+-
+-set (CMAKE_BUILD_TYPE debug)
+-set (CMAKE_C_FLAGS_DEBUG "-ggdb3")
+-set (CMAKE_C_FLAGS_RELEASE "-O3")

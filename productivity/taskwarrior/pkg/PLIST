@@ -1,0 +1,71 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/03 21:07:10 kili Exp $
+@bin bin/task
+@man man/man1/task.1
+@man man/man5/task-color.5
+@man man/man5/task-faq.5
+@man man/man5/task-sync.5
+@man man/man5/task-tutorial.5
+@man man/man5/taskrc.5
+share/taskwarrior/
+share/taskwarrior/AUTHORS
+@comment share/taskwarrior/COPYING
+@comment share/taskwarrior/ChangeLog
+@comment share/taskwarrior/INSTALL
+@comment share/taskwarrior/NEWS
+@comment share/taskwarrior/README
+share/taskwarrior/i18n/
+share/taskwarrior/i18n/strings.de-DE
+share/taskwarrior/i18n/strings.en-US
+share/taskwarrior/i18n/strings.es-ES
+share/taskwarrior/i18n/strings.fr-FR
+share/taskwarrior/i18n/strings.nl-NL
+share/taskwarrior/i18n/strings.sv-SE
+share/taskwarrior/i18n/tips.de-DE
+share/taskwarrior/i18n/tips.en-US
+share/taskwarrior/i18n/tips.sv-SE
+share/taskwarrior/rc/
+share/taskwarrior/rc/dark-16.theme
+share/taskwarrior/rc/dark-256.theme
+share/taskwarrior/rc/dark-blue-256.theme
+share/taskwarrior/rc/dark-gray-256.theme
+share/taskwarrior/rc/dark-green-256.theme
+share/taskwarrior/rc/dark-red-256.theme
+share/taskwarrior/rc/dark-violets-256.theme
+share/taskwarrior/rc/dark-yellow-green.theme
+share/taskwarrior/rc/holidays-AT.rc
+share/taskwarrior/rc/holidays-CA.rc
+share/taskwarrior/rc/holidays-DE.rc
+share/taskwarrior/rc/holidays-DK.rc
+share/taskwarrior/rc/holidays-ES.rc
+share/taskwarrior/rc/holidays-FR.rc
+share/taskwarrior/rc/holidays-IT.rc
+share/taskwarrior/rc/holidays-NL.rc
+share/taskwarrior/rc/holidays-NO.rc
+share/taskwarrior/rc/holidays-NZ.rc
+share/taskwarrior/rc/holidays-SE.rc
+share/taskwarrior/rc/holidays-UK.rc
+share/taskwarrior/rc/holidays-US.rc
+share/taskwarrior/rc/light-16.theme
+share/taskwarrior/rc/light-256.theme
+share/taskwarrior/scripts/
+share/taskwarrior/scripts/add-ons/
+share/taskwarrior/scripts/add-ons/export-csv.pl
+share/taskwarrior/scripts/add-ons/export-ical.pl
+share/taskwarrior/scripts/add-ons/export-xml.pl
+share/taskwarrior/scripts/add-ons/export-xml.py
+share/taskwarrior/scripts/add-ons/export-xml.rb
+share/taskwarrior/scripts/add-ons/export-yaml.pl
+share/taskwarrior/scripts/bash/
+share/taskwarrior/scripts/bash/task_completion.sh
+share/taskwarrior/scripts/fish/
+share/taskwarrior/scripts/fish/task.fish
+share/taskwarrior/scripts/vim/
+share/taskwarrior/scripts/vim/README
+share/taskwarrior/scripts/vim/ftdetect/
+share/taskwarrior/scripts/vim/ftdetect/task.vim
+share/taskwarrior/scripts/vim/syntax/
+share/taskwarrior/scripts/vim/syntax/taskdata.vim
+share/taskwarrior/scripts/vim/syntax/taskedit.vim
+share/taskwarrior/scripts/vim/syntax/taskrc.vim
+share/taskwarrior/scripts/zsh/
+share/taskwarrior/scripts/zsh/_task

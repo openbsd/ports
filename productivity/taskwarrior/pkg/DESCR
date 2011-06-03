@@ -1,0 +1,4 @@
+Taskwarrior is a command line todo list manager. It maintains a
+list of tasks that you want to do, allowing you to add/remove, and
+otherwise manipulate them.  Task has a rich list of subcommands
+that allow you to do various things with it.
