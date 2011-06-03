@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/10/29 12:59:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/06/03 16:51:23 ajacoutot Exp $
 @newgroup _dbus:572
 @newuser _dbus:572:_dbus:daemon:dbus user:/nonexistent:/sbin/nologin
 %%SHARED%%
@@ -34,7 +34,6 @@ lib/libdbus-1.a
 lib/libdbus-1.la
 lib/pkgconfig/
 lib/pkgconfig/dbus-1.pc
-@comment libexec/dbus-1/
 @mode 4750
 @group _dbus
 @bin libexec/dbus-daemon-launch-helper
@@ -61,6 +60,7 @@ share/examples/dbus/dbus-1/system.conf
 @sample ${SYSCONFDIR}/dbus-1/system.conf
 share/examples/dbus/dbus-1/system.d/
 @sample ${SYSCONFDIR}/dbus-1/system.d/
+@sample /var/db/dbus/
 @exec ${PREFIX}/bin/dbus-uuidgen --ensure
-@extra ${SYSCONFDIR}/dbus-1/machine-id
+@extra /var/db/dbus/machine-id
 @rcscript ${RCDIR}/dbus_daemon

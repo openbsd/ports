@@ -1,18 +1,15 @@
-$OpenBSD: patch-configure,v 1.13 2011/04/28 13:09:32 ajacoutot Exp $
-
-Unbreak on gcc3: remove non supported -Wno-address.
-
---- configure.orig	Fri Apr  8 15:30:41 2011
-+++ configure	Wed Apr 27 17:47:39 2011
-@@ -17886,13 +17886,13 @@ fi
+$OpenBSD: patch-configure,v 1.14 2011/06/03 16:51:23 ajacoutot Exp $
+--- configure.orig	Wed Jun  1 16:09:28 2011
++++ configure	Fri Jun  3 18:09:38 2011
+@@ -18526,13 +18526,13 @@ fi
  # Thread lib detection
  ac_fn_c_check_func "$LINENO" "pthread_cond_timedwait" "ac_cv_func_pthread_cond_timedwait"
- if test "x$ac_cv_func_pthread_cond_timedwait" = x""yes; then :
+ if test "x$ac_cv_func_pthread_cond_timedwait" = xyes; then :
 -  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_cond_timedwait in -lpthread" >&5
 -$as_echo_n "checking for pthread_cond_timedwait in -lpthread... " >&6; }
 +  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_cond_timedwait in -pthread" >&5
 +$as_echo_n "checking for pthread_cond_timedwait in -pthread... " >&6; }
- if test "${ac_cv_lib_pthread_pthread_cond_timedwait+set}" = set; then :
+ if ${ac_cv_lib_pthread_pthread_cond_timedwait+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -21,24 +18,24 @@ Unbreak on gcc3: remove non supported -Wno-address.
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -17923,7 +17923,7 @@ fi
+@@ -18563,7 +18563,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_cond_timedwait" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_cond_timedwait" >&6; }
- if test "x$ac_cv_lib_pthread_pthread_cond_timedwait" = x""yes; then :
+ if test "x$ac_cv_lib_pthread_pthread_cond_timedwait" = xyes; then :
 -  THREAD_LIBS="-lpthread"
 +  THREAD_LIBS="-pthread"
  fi
  
  fi
-@@ -18138,13 +18138,13 @@ if test x$have_selinux = xyes ; then
- if test "x$ac_cv_func_pthread_create" = x""yes; then :
+@@ -18778,13 +18778,13 @@ if test x$have_selinux = xyes ; then
+ if test "x$ac_cv_func_pthread_create" = xyes; then :
  
  else
 -  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthread" >&5
 -$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
 +  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -pthread" >&5
 +$as_echo_n "checking for pthread_create in -pthread... " >&6; }
- if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then :
+ if ${ac_cv_lib_pthread_pthread_create+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -47,16 +44,16 @@ Unbreak on gcc3: remove non supported -Wno-address.
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -18175,7 +18175,7 @@ fi
+@@ -18815,7 +18815,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
- if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then :
+ if test "x$ac_cv_lib_pthread_pthread_create" = xyes; then :
 -  SELINUX_THREAD_LIBS="-lpthread"
 +  SELINUX_THREAD_LIBS="-pthread"
  fi
  
  fi
-@@ -18565,6 +18565,7 @@ $as_echo_n "checking for SCM_RIGHTS... " >&6; }
+@@ -19205,6 +19205,7 @@ $as_echo_n "checking for SCM_RIGHTS... " >&6; }
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
@@ -64,49 +61,3 @@ Unbreak on gcc3: remove non supported -Wno-address.
  #include <sys/socket.h>
  #include <sys/un.h>
  static int x = SCM_RIGHTS;
-@@ -19474,11 +19475,6 @@ if test "x$GCC" = "xyes"; then
-   esac
- 
-   case " $CFLAGS " in
--  *[\ \	]-Wno-address[\ \	]*) ;;
--  *) CFLAGS="$CFLAGS -Wno-address" ;;
--  esac
--
--  case " $CFLAGS " in
-   *[\ \	]-Wfloat-equal[\ \	]*) ;;
-   *) if cc_supports_flag -Wfloat-equal; then
-         CFLAGS="$CFLAGS -Wfloat-equal"
-@@ -19513,7 +19509,10 @@ if test "x$GCC" = "xyes"; then
-      ;;
-   esac
- 
--  case " $CFLAGS " in
-+  case $host in
-+  arm-*-openbsd*) ;;
-+  hppa-*-openbsd*) ;;
-+  *) case " $CFLAGS " in
-   *[\ \	]-fPIE[\ \	]*) ;;
-   *) if test x$dbus_win = xno && cc_supports_flag -fPIE; then
-         PIE_CFLAGS="-fPIE"
-@@ -19525,6 +19524,7 @@ if test "x$GCC" = "xyes"; then
-      fi
-      ;;
-   esac
-+  esac
- 
-   ### Disabled warnings, and compiler flag overrides
- 
-@@ -19541,13 +19541,6 @@ if test "x$GCC" = "xyes"; then
-   case " $CFLAGS " in
-   *[\ \	]-Wno-sign-compare[\ \	]*) ;;
-   *) CFLAGS="$CFLAGS -Wno-sign-compare" ;;
--  esac
--  case " $CFLAGS " in
--  *[\ \	]-Wno-pointer-sign[\ \	]*) ;;
--  *) if cc_supports_flag -Wno-pointer-sign; then
--        CFLAGS="$CFLAGS -Wno-pointer-sign"
--     fi
--     ;;
-   esac
- 
-   # This one is special - it's not a warning override.

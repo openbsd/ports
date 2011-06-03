@@ -1,32 +1,29 @@
-$OpenBSD: patch-doc_dbus-uuidgen_1,v 1.1 2010/12/21 14:59:49 ajacoutot Exp $
---- doc/dbus-uuidgen.1.orig	Fri Nov  5 19:17:24 2010
-+++ doc/dbus-uuidgen.1	Tue Dec 21 15:10:24 2010
+$OpenBSD: patch-doc_dbus-uuidgen_1,v 1.2 2011/06/03 16:51:23 ajacoutot Exp $
+--- doc/dbus-uuidgen.1.orig	Wed May 25 18:40:28 2011
++++ doc/dbus-uuidgen.1	Fri Jun  3 18:18:58 2011
 @@ -30,7 +30,7 @@ script of a D-Bus package like this:
  .fi
  
  .PP
 -This will ensure that /var/lib/dbus/machine-id exists and has the uuid in it.
-+This will ensure that ${SYSCONFDIR}/dbus-1/machine-id exists and has the uuid in it.
++This will ensure that /var/db/dbus/machine-id exists and has the uuid in it.
  It won't overwrite an existing uuid, since this id should remain fixed
  for a single machine until the next reboot at least.
  
-@@ -64,15 +64,15 @@ because there are two different kernels.
+@@ -64,14 +64,14 @@ because there are two different kernels.
  The following options are supported:
  .TP
  .I "--get[=FILENAME]"
 -If a filename is not given, defaults to localstatedir/lib/dbus/machine-id
--(localstatedir is usually /var). If this file exists and is valid, the
-+If a filename is not given, defaults to ${SYSCONFDIR}/dbus-1/machine-id.
-+If this file exists and is valid, the
++If a filename is not given, defaults to localstatedir/db/dbus/machine-id.
+ (localstatedir is usually /var). If this file exists and is valid, the
  uuid in the file is printed on stdout. Otherwise, the command exits 
  with a nonzero status.
  
  .TP
  .I "--ensure[=FILENAME]"
 -If a filename is not given, defaults to localstatedir/lib/dbus/machine-id
--(localstatedir is usually /var). If this file exists then it will be
-+If a filename is not given, defaults to ${SYSCONFDIR}/dbus-1/machine-id.
-+If this file exists then it will be
++If a filename is not given, defaults to localstatedir/db/dbus/machine-id.
+ (localstatedir is usually /var). If this file exists then it will be
  validated, and a failure code returned if it contains the wrong thing.
  If the file does not exist, it will be created with a new uuid in it.
- On success, prints no output.

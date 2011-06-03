@@ -1,23 +1,21 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.11 2011/03/07 19:20:28 ajacoutot Exp $
---- tools/Makefile.in.orig	Thu Feb 17 21:06:59 2011
-+++ tools/Makefile.in	Fri Mar  4 21:59:31 2011
-@@ -358,7 +358,7 @@ top_build_prefix = @top_build_prefix@
+$OpenBSD: patch-tools_Makefile_in,v 1.12 2011/06/03 16:51:23 ajacoutot Exp $
+--- tools/Makefile.in.orig	Wed Jun  1 16:09:29 2011
++++ tools/Makefile.in	Fri Jun  3 18:13:48 2011
+@@ -357,7 +357,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  configdir = $(sysconfdir)/dbus-1
 -INCLUDES = -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) $(DBUS_X_CFLAGS) -DDBUS_LOCALEDIR=\"@EXPANDED_DATADIR@/locale\" -DDBUS_COMPILATION -DDBUS_MACHINE_UUID_FILE=\""$(localstatedir)/lib/dbus/machine-id"\"
-+INCLUDES = -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) $(DBUS_X_CFLAGS) -DDBUS_LOCALEDIR=\"@EXPANDED_DATADIR@/locale\" -DDBUS_COMPILATION -DDBUS_MACHINE_UUID_FILE=\""$(configdir)/machine-id"\"
++INCLUDES = -I$(top_srcdir) $(DBUS_CLIENT_CFLAGS) $(DBUS_X_CFLAGS) -DDBUS_LOCALEDIR=\"@EXPANDED_DATADIR@/locale\" -DDBUS_COMPILATION -DDBUS_MACHINE_UUID_FILE=\""$(localstatedir)/db/dbus/machine-id"\"
  extra_bin_programs = $(am__append_1)
  dbus_send_SOURCES = \
  	dbus-print-message.c			\
-@@ -398,8 +398,8 @@ CLEANFILES = \
- 	run-with-tmp-session-bus.conf
+@@ -398,7 +398,7 @@ CLEANFILES = \
  
  
--#create the /var/lib/data directory for dbus-uuidgen
+ #create the /var/lib/data directory for dbus-uuidgen
 -localstatelibdir = $(localstatedir)/lib/dbus
-+#create the /var/run/data directory for dbus-uuidgen
-+localstatelibdir = $(configdir)
++#localstatelibdir = $(localstatedir)/lib/dbus
  localstatelib_DATA = 
  all: all-am
  

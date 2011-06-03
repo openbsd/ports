@@ -1,25 +1,25 @@
-$OpenBSD: patch-bus_Makefile_in,v 1.11 2011/03/07 19:20:28 ajacoutot Exp $
---- bus/Makefile.in.orig	Thu Feb 17 21:06:58 2011
-+++ bus/Makefile.in	Fri Mar  4 21:59:30 2011
-@@ -2535,7 +2535,6 @@ uninstall-hook:
- 	rm -f $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper$(EXEEXT)
+$OpenBSD: patch-bus_Makefile_in,v 1.12 2011/06/03 16:51:23 ajacoutot Exp $
+--- bus/Makefile.in.orig	Wed Jun  1 16:09:28 2011
++++ bus/Makefile.in	Fri Jun  3 18:08:22 2011
+@@ -2576,7 +2576,6 @@ clean-local:
+ 	/bin/rm *.bb *.bbg *.da *.gcov || true
  
  install-data-hook:
 -	$(mkinstalldirs) $(DESTDIR)$(localstatedir)/run/dbus
  	$(mkinstalldirs) $(DESTDIR)$(configdir)/system.d
  	$(mkinstalldirs) $(DESTDIR)$(configdir)/session.d
  	$(mkinstalldirs) $(DESTDIR)$(datadir)/dbus-1/services
-@@ -2548,13 +2547,6 @@ install-data-hook:
- @DBUS_UNIX_TRUE@	$(mkinstalldirs) $(DESTDIR)$(libexecdir)/dbus-1
- @DBUS_UNIX_TRUE@	if test -f dbus-daemon-launch-helper$(EXEEXT) ; then \
- @DBUS_UNIX_TRUE@	$(LIBTOOL) --mode=install $(INSTALL_PROGRAM) dbus-daemon-launch-helper$(EXEEXT) $(DESTDIR)$(libexecdir); \
+@@ -2591,13 +2590,6 @@ install-data-hook:
+ @HAVE_SYSTEMD_TRUE@	$(LN_S) ../dbus.service $(DESTDIR)$(systemdsystemunitdir)/multi-user.target.wants/dbus.service
+ 
+ @DBUS_UNIX_TRUE@install-exec-hook:
 -@DBUS_UNIX_TRUE@	if test `id -u` -eq 0; then \
 -@DBUS_UNIX_TRUE@		chown root:$(DBUS_USER) $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper$(EXEEXT); \
 -@DBUS_UNIX_TRUE@		chmod 4750 $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper$(EXEEXT); \
 -@DBUS_UNIX_TRUE@	else \
 -@DBUS_UNIX_TRUE@		echo "Not installing $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper binary setuid!"; \
 -@DBUS_UNIX_TRUE@		echo "You'll need to manually set permissions to root:$(DBUS_USER) and permissions 4750"; \
--@DBUS_UNIX_TRUE@	fi \
- @DBUS_UNIX_TRUE@	fi
- # Install dbus.socket as default implementation of a D-Bus stack
- @HAVE_SYSTEMD_TRUE@	$(mkinstalldirs) $(DESTDIR)$(systemdsystemunitdir)/dbus.target.wants
+-@DBUS_UNIX_TRUE@	fi
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
