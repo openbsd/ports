@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2011/04/15 15:47:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.40 2011/06/03 21:07:55 kili Exp $
 
      SUBDIR =
      SUBDIR += bruce
@@ -25,6 +25,7 @@
      SUBDIR += sunbird
      SUBDIR += taskjuggler
      SUBDIR += tasks
+     SUBDIR += taskwarrior
      SUBDIR += tdl
      SUBDIR += thinkingrock
      SUBDIR += vym
