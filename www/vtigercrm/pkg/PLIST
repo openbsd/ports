@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/11/19 07:52:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/06/03 22:07:39 sthen Exp $
 vtigercrm/
 vtigercrm/Copyright.txt
 vtigercrm/DEPENDENCIES.txt
@@ -466,7 +466,9 @@ vtigercrm/Smarty/templates/com_vtiger_workflow/taskforms/VTEntityMethodTask.tpl
 vtigercrm/Smarty/templates/com_vtiger_workflow/taskforms/VTSMSTask.tpl
 vtigercrm/Smarty/templates/iCalImport.tpl
 vtigercrm/Smarty/templates/loginheader.tpl
+@owner www
 vtigercrm/Smarty/templates/modules/
+@owner
 vtigercrm/Smarty/templates/modules/Bookmarklet/
 vtigercrm/Smarty/templates/modules/Bookmarklet/Bookmarklet.tpl
 vtigercrm/Smarty/templates/modules/Calendar/
@@ -636,16 +638,20 @@ vtigercrm/adodb/xsl/convert-0.2-0.1.xsl
 vtigercrm/adodb/xsl/convert-0.2-0.3.xsl
 vtigercrm/adodb/xsl/remove-0.2.xsl
 vtigercrm/adodb/xsl/remove-0.3.xsl
-vtigercrm/backup/
 @owner www
+vtigercrm/backup/
 vtigercrm/cache/
-@owner
 vtigercrm/cache/images/
+@owner
 vtigercrm/cache/images/index.html
+@owner www
 vtigercrm/cache/import/
+@owner
 vtigercrm/cache/import/index.html
 vtigercrm/cache/index.html
+@owner www
 vtigercrm/cache/upload/
+@owner
 vtigercrm/cache/upload/index.html
 vtigercrm/class_http/
 vtigercrm/class_http/class_http.php
@@ -675,7 +681,9 @@ vtigercrm/cron/intimateTaskStatus.php
 vtigercrm/cron/jobstartwindows.bat
 vtigercrm/cron/language/
 vtigercrm/cron/language/phpmailer.lang-en.php
+@owner www
 vtigercrm/cron/modules/
+@owner
 vtigercrm/cron/modules/README.txt
 vtigercrm/cron/modules/SalesOrder/
 vtigercrm/cron/modules/SalesOrder/RecurringInvoice.service
@@ -2799,7 +2807,9 @@ vtigercrm/log4php/LoggerPropertyConfigurator.php
 vtigercrm/logs/
 @owner
 vtigercrm/logs/todel.txt.txt
+@owner www
 vtigercrm/modules/
+@owner
 vtigercrm/modules/Accounts/
 vtigercrm/modules/Accounts/AccountHierarchy.php
 vtigercrm/modules/Accounts/Accounts.js
@@ -4086,8 +4096,10 @@ vtigercrm/test/upload/vtigercrm.txt
 vtigercrm/test/user/
 @owner
 vtigercrm/test/user/a.txt
+@owner www
 vtigercrm/test/vtlib/
 vtigercrm/test/vtlib/HTML/
+@owner
 vtigercrm/test/vtlib/HTML/README.txt
 vtigercrm/test/vtlib/README.txt
 @owner www
