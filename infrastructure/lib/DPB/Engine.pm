@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.24 2011/06/02 17:09:25 espie Exp $
+# $OpenBSD: Engine.pm,v 1.25 2011/06/03 13:38:58 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -466,23 +466,6 @@ sub check_buildable
 	my $changes;
 	do {
 		$changes = 0;
-		for my $v (values %{$self->{tobuild}}) {
-			next if $quick && !$v->{new};
-			if ($self->{buildable}->is_done($v)) {
-				$changes++;
-			} else {
-				if (defined $v->{info}{FETCH_MANUALLY}) {
-					$self->log_fetch($v);
-					delete $v->{info}{FETCH_MANUALLY};
-					$changes++;
-				}
-				if (defined $v->{info}{IGNORE}) {
-					delete $self->{tobuild}{$v};
-					push(@{$self->{ignored}}, $v);
-					$changes++;
-				}
-			}
-		}
 		if (!$quick) {
 			for my $v (values %{$self->{built}}) {
 				if ($self->adjust($v, 'RDEPENDS') == 0) {
@@ -524,6 +507,14 @@ sub new_path
 {
 	my ($self, $v) = @_;
 	if (!$self->{buildable}->is_done($v)) {
+		if (defined $v->{info}{FETCH_MANUALLY}) {
+			$self->log_fetch($v);
+			delete $v->{info}{FETCH_MANUALLY};
+		}
+		if (defined $v->{info}{IGNORE}) {
+			push(@{$self->{ignored}}, $v);
+			return;
+		}
 #		$self->{heuristics}->todo($v);
 		$self->{tobuild}{$v} = $v;
 		$self->log('T', $v);
