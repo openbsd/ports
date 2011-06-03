@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/04/11 14:34:17 kili Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/06/03 09:19:25 dcoppa Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Database/
 lib/ghc/${DISTNAME}/Database/Redis/
 lib/ghc/${DISTNAME}/Database/Redis/ByteStringClass.hi
+lib/ghc/${DISTNAME}/Database/Redis/Info.hi
 lib/ghc/${DISTNAME}/Database/Redis/Internal.hi
 lib/ghc/${DISTNAME}/Database/Redis/Monad/
 lib/ghc/${DISTNAME}/Database/Redis/Monad.hi
