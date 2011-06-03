@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/05/30 15:51:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2011/06/03 13:26:57 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ GNOME_VERSION=	0.7.5
 PKGNAME-main=	${DISTNAME}
 PKGNAME-editor=	dconf-editor-${GNOME_VERSION}
 
-REVISION-main=	1
+REVISION-main=	2
 REVISION-editor=1
 
 SHARED_LIBS+=	dconf        0.0 # 0.0.0
@@ -79,5 +79,7 @@ CONFIGURE_ARGS +=	--enable-editor
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/{bin,client,editor}/Makefile.in \
 		${WRKSRC}/dbus-1/Makefile.in
+	perl -pi -e 's,/etc/dconf,${SYSCONFDIR}/dconf,g' \
+		${WRKSRC}/{engine/dconf-engine,bin/dconf-update}.c
 
 .include <bsd.port.mk>
