@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2011/01/14 09:38:48 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/06/03 19:17:44 sthen Exp $
 roundcubemail/
 roundcubemail/.htaccess.dist
 @sample roundcubemail/.htaccess
@@ -178,6 +178,10 @@ roundcubemail/plugins/managesieve/skins/default/templates/
 roundcubemail/plugins/managesieve/skins/default/templates/filteredit.html
 roundcubemail/plugins/managesieve/skins/default/templates/managesieve.html
 roundcubemail/plugins/managesieve/skins/default/templates/setedit.html
+roundcubemail/plugins/managesieve/tests/
+roundcubemail/plugins/managesieve/tests/Makefile
+roundcubemail/plugins/managesieve/tests/parser.phpt
+roundcubemail/plugins/managesieve/tests/tokenize.phpt
 roundcubemail/plugins/markasjunk/
 roundcubemail/plugins/markasjunk/localization/
 roundcubemail/plugins/markasjunk/localization/cs_CZ.inc
