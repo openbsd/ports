@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2011/06/02 20:10:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.116 2011/06/03 16:08:01 sthen Exp $
 
 SHARED_ONLY=		Yes
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
@@ -65,7 +65,8 @@ CONFIGURE_STYLE=	gnu
 AUTOCONF_VERSION=	2.65
 AUTOMAKE_VERSION=	1.10
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool,-ltdl # bogus dependencies in menuselect
 
 CPPFLAGS+=		-I${X11BASE}/include -I${LOCALBASE}/include
 LDFLAGS+= 		-L${X11BASE}/lib -L${LOCALBASE}/lib
