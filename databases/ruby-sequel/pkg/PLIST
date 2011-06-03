@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/05/11 23:35:36 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/06/03 17:25:56 jeremy Exp $
 ${GEM_BIN}/sequel${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -57,6 +57,7 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.20.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.21.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.22.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.23.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.24.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.3.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.4.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.5.0.txt
@@ -89,11 +90,14 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/jdbc/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/jdbc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/jdbc/as400.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/jdbc/h2.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/jdbc/informix.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/jdbc/jtds.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/jdbc/mssql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/jdbc/mysql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/jdbc/oracle.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/jdbc/postgresql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/jdbc/sqlite.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/jdbc/sqlserver.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/mysql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/mysql2.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/odbc/
@@ -104,6 +108,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/oracle.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/postgres.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/shared/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/shared/access.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/shared/informix.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/shared/mssql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/shared/mysql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/shared/oracle.rb
@@ -119,6 +124,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/swift/sqlite.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/tinytds.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/utils/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/utils/stored_procedures.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/ast_transformer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/connection_pool/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/connection_pool.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/connection_pool/sharded_single.rb
@@ -183,6 +189,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/boolean_readers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/caching.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/class_table_inheritance.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/composition.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/defaults_setter.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/force_encoding.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/hook_class_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/identity_map.rb
@@ -194,6 +201,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/list.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/many_through_many.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/nested_attributes.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/optimistic_locking.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/prepared_statements.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/prepared_statements_associations.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/prepared_statements_safe.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/prepared_statements_with_pk.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/rcte_tree.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/schema.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/plugins/serialization.rb
@@ -250,6 +261,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/caching_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/class_table_inheritance_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/columns_introspection_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/composition_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/defaults_setter_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/force_encoding_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/hook_class_methods_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/identity_map_spec.rb
@@ -266,6 +278,10 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/named_timezones_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/nested_attributes_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/optimistic_locking_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/pagination_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/prepared_statements_associations_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/prepared_statements_safe_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/prepared_statements_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/extensions/prepared_statements_with_pk_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/pretty_table_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/query_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/extensions/rcte_tree_spec.rb
