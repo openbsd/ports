@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2011/06/02 13:41:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2011/06/03 08:26:57 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -7,7 +7,8 @@ PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
 
-REVISION-main=	0
+REVISION-main=	1
+REVISION-web=	0
 
 CATEGORIES=	mail www productivity
 
@@ -33,12 +34,12 @@ BUILD_DEPENDS=	www/php5/core \
 		devel/boost \
 		textproc/clucene
 
-WANTLIB += m stdc++ z ${MODGETTEXT_WANTLIB}
+WANTLIB += m pthread stdc++ z ${MODGETTEXT_WANTLIB}
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += asn1 boost_filesystem-mt boost_system-mt c com_err
 WANTLIB-main += crypto execinfo gssapi ical icalss icudata icui18n
-WANTLIB-main += icuuc krb5 lber ldap mysqlclient ncurses pthread python2.6
+WANTLIB-main += icuuc krb5 lber ldap mysqlclient ncurses python2.6
 WANTLIB-main += sasl2 ssl util uuid vmime-zarafa xml2
 
 LIB_DEPENDS-main= ${MODGETTEXT_LIB_DEPENDS} \
@@ -125,6 +126,7 @@ WRKDIST=	${WRKDIR}/zarafa-${V}/
 post-patch:
 	mv ${WRKSRC}/php-webclient-ajax/client/layout/img/login.jpg \
 		${WRKSRC}/php-webclient-ajax/client/layout/img/login.jpg.dist
+	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
 pre-configure:
 	cd ${WRKSRC}/installer/linux && \
@@ -135,9 +137,6 @@ pre-configure:
 		${SUBST_CMD} ${WRKSRC}/installer/userscripts/$$i; done
 	${SUBST_CMD} ${WRKSRC}/php-ext/Makefile.in \
 		${WRKSRC}/spooler/DAgent.cpp
-	perl -pi -e 's,!!MODPY_BIN!!,${MODPY_BIN},' \
-		${WRKSRC}/installer/linux/Makefile.in \
-		${WRKSRC}/swig/python/Makefile.in
 	perl -pi -e 's,/usr/share/zarafa,${PREFIX}/share/examples/zarafa,g;' \
 		-e 's,/etc/zarafa,${SYSCONFDIR}/zarafa,g;' \
 		-e 's,/usr/bin,${PREFIX}/bin,g;' \
@@ -148,36 +147,60 @@ pre-configure:
 		${WRKSRC}/installer/indexerscripts/{attachments_parser,zmktemp}
 
 post-install:
-	${SUBST_CMD} ${WRKSRC}/php-webclient-ajax/config.php.dist
-	find ${WRKSRC}/php-webclient-ajax -name \*.orig -or -name \*.bak \
-		-or -name \*.beforesubst | xargs rm
 	${INSTALL_DATA_DIR} ${WRKINST}${INSTDIR}
-	cd ${WRKSRC}/php-webclient-ajax && tar cf - ./ | \
+	${INSTALL_DATA_DIR} ${WRKINST}/${PREFIX-web}/{include,conf/php5.sample}
+
+	${SUBST_CMD} ${WRKBUILD}/php-webclient-ajax/config.php.dist
+	find ${WRKBUILD}/php-webclient-ajax -name \*.orig -or -name \*.bak \
+		-or -name \*.beforesubst | xargs rm
+	cd ${WRKBUILD}/php-webclient-ajax && tar cf - ./ | \
 		tar -xf - -C ${WRKINST}${INSTDIR}
 	${INSTALL_DATA} ${WRKINST}${INSTDIR}/debug.php \
 		${WRKINST}${INSTDIR}/debug.php.disabled
 	${INSTALL_DATA} /dev/null ${WRKINST}${INSTDIR}/debug.txt 
 	${SUBST_CMD} -c ${FILESDIR}/zarafa.conf \
 		${WRKINST}/${INSTDIR}/zarafa.conf.dist
+	find ${PREFIX}/share/php -type f \
+		-exec perl -pi -e 's,\?php\?,\?php,' {} \;
 	for i in ${WRKINST}${INSTDIR}/server/language/* ; do \
 		msgfmt -f -v -o $$i/LC_MESSAGES/zarafa.mo $$i/LC_MESSAGES/zarafa.po ; \
 		rm $$i/LC_MESSAGES/zarafa.po ; \
 	done
-	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKINST}${INSTDIR}
 
 	${SUBST_CMD} -c ${FILESDIR}/zarafa.m4 ${PREFIX}/share/examples/zarafa/zarafa.m4
 	${SUBST_CMD} -c ${FILESDIR}/local_zarafa.m4 ${PREFIX}/share/examples/zarafa/local_zarafa.m4
+
+	# move files where we want them to be
+	mv ${PREFIX}/share/doc/zarafa-gateway/* \
+		${PREFIX}/share/doc/zarafa
+	mv ${PREFIX}/share/doc/zarafa/example-config/* \
+		${PREFIX}/share/examples/zarafa
+	mv ${PREFIX}/share/doc/zarafa/zarafa.schema \
+		${PREFIX}/share/examples/zarafa
+	mv ${PREFIX}/share/examples/zarafa.ini \
+		${PREFIX}/share/examples/zarafa
+	mv ${PREFIX}/share/examples/zarafa/zarafa.ini \
+		${WRKINST}/${PREFIX-web}/conf/php5.sample/${MODULE_NAME}.ini.dist
+	mv ${PREFIX}/share/php ${WRKINST}${PREFIX-web}/include/php
+	rm ${PREFIX}/share/examples/zarafa/unix.cfg
+	rm ${PREFIX}/share/doc/zarafa/ssl-certificates.sh
+	rmdir ${PREFIX}/share/doc/{zarafa/example-config,zarafa-gateway}
+	rm -rf ${PREFIX}/share/examples/{init.d,logrotate.d,zarafa/zarafa-gateway,zarafa/license}
+
+	# part of zarafa-licensed (i.e. commercial edition, linux bin only)
+	cd ${PREFIX} && rm \
+		man/man1/zarafa-licensed.1 \
+		man/man5/zarafa-licensed.cfg.5 \
+		man/man1/zarafa-restore.1 \
+		man/man1/zarafa-backup.1 \
+		man/man1/zarafa-report.1
+	rmdir ${PREFIX}/share/examples/zarafa/{report,report-ca}
+
+	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKINST}${INSTDIR}
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/zarafa
-	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/share/examples/zarafa/zarafa.m4 \
+	chown ${BINOWN}:${BINGRP} ${PREFIX}/share/examples/zarafa/zarafa.m4 \
 		${PREFIX}/share/examples/zarafa/local_zarafa.m4
 	chmod ${SHAREMODE} ${PREFIX}/share/examples/zarafa/zarafa.m4 \
 		${PREFIX}/share/examples/zarafa/local_zarafa.m4
-	${INSTALL_DATA_DIR} ${WRKINST}/${PREFIX-web}/conf/php5.sample
-	${INSTALL_DATA} ${WRKSRC}/php-ext/zarafa.ini \
-		${WRKINST}/${PREFIX-web}/conf/php5.sample/${MODULE_NAME}.ini.dist
-	mv ${PREFIX}/share/doc/zarafa/zarafa.schema \
-		${PREFIX}/share/examples/zarafa/
-	find ${WRKINST}${PREFIX-web}/include/php -type f \
-		-exec perl -pi -e 's,\?php\?,\?php,' {} \;
 
 .include <bsd.port.mk>

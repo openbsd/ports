@@ -1,22 +1,6 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.13 2011/06/02 12:46:37 ajacoutot Exp $
+$OpenBSD: patch-doc_Makefile_in,v 1.14 2011/06/03 08:26:58 ajacoutot Exp $
 --- doc/Makefile.in.orig	Wed Apr 20 16:39:41 2011
 +++ doc/Makefile.in	Sun May 29 07:13:39 2011
-@@ -389,12 +389,12 @@ uninstall-man5:
- 	done
- install-dist_dataDATA: $(dist_data_DATA)
- 	@$(NORMAL_INSTALL)
--	test -z "$(datadir)" || $(MKDIR_P) "$(DESTDIR)$(datadir)"
-+	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
- 	@list='$(dist_data_DATA)'; for p in $$list; do \
- 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f=$(am__strip_dir) \
--	  echo " $(dist_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(datadir)/$$f'"; \
--	  $(dist_dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(datadir)/$$f"; \
-+	  echo " $(dist_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(docdir)/$$f'"; \
-+	  $(dist_dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(docdir)/$$f"; \
- 	done
- 
- uninstall-dist_dataDATA:
 @@ -550,7 +550,7 @@ $(BUILT_SOURCES): manual.xml
  	@if [ -z $(PROG_XMLTO) ]; then \
  		echo Please install xmlto to generate manual pages; \
