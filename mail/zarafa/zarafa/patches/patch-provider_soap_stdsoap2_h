@@ -1,7 +1,7 @@
-$OpenBSD: patch-provider_soap_stdsoap2_h,v 1.4 2011/06/02 12:46:37 ajacoutot Exp $
+$OpenBSD: patch-provider_soap_stdsoap2_h,v 1.5 2011/06/03 15:52:12 ajacoutot Exp $
 --- provider/soap/stdsoap2.h.orig	Wed Apr 20 19:51:43 2011
-+++ provider/soap/stdsoap2.h	Wed Jun  1 07:14:02 2011
-@@ -426,6 +426,24 @@ A commercial use license is available from Genivia, In
++++ provider/soap/stdsoap2.h	Fri Jun  3 16:02:03 2011
+@@ -426,6 +426,27 @@ A commercial use license is available from Genivia, In
  #  define ULONG64 unsigned LONG64
  #  define SOAP_LONG_FORMAT "%ld"
  #  define SOAP_ULONG_FORMAT "%lu"
@@ -14,6 +14,9 @@ $OpenBSD: patch-provider_soap_stdsoap2_h,v 1.4 2011/06/02 12:46:37 ajacoutot Exp
 +#  define HAVE_SSCANF 
 +#  define HAVE_STRTOL 
 +#  define HAVE_STRTOUL
++#  define HAVE_STRTOLL
++#  define HAVE_STRTOULL
++#  define HAVE_TIMEGM
 +#  define HAVE_GETTIMEOFDAY
 +#  define HAVE_SYS_TIMEB_H
 +#  define HAVE_FTIME  
@@ -26,7 +29,7 @@ $OpenBSD: patch-provider_soap_stdsoap2_h,v 1.4 2011/06/02 12:46:37 ajacoutot Exp
  # else
  /* Default asumptions on supported functions */
  #  define HAVE_STRRCHR
-@@ -628,7 +646,7 @@ extern "C" {
+@@ -628,7 +649,7 @@ extern "C" {
  # endif
  #elif defined(SOCKLEN_T)
  # define SOAP_SOCKLEN_T SOCKLEN_T
