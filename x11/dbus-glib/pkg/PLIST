@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/12/13 10:41:41 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/06/03 16:55:16 ajacoutot Exp $
 %%SHARED%%
 @bin bin/dbus-binding-tool
 include/dbus-1.0/
 include/dbus-1.0/dbus/
 include/dbus-1.0/dbus/dbus-glib-bindings.h
-include/dbus-1.0/dbus/dbus-glib-error-enum.h
 include/dbus-1.0/dbus/dbus-glib-lowlevel.h
 include/dbus-1.0/dbus/dbus-glib.h
 include/dbus-1.0/dbus/dbus-gtype-specialized.h
