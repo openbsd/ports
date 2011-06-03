@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.5 2011/06/02 13:41:40 ajacoutot Exp $
+$OpenBSD: README-main,v 1.6 2011/06/03 10:21:54 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -62,7 +62,7 @@ and kern.maxfiles should be increased to 16384.
 
 Rebuild the login.conf.db file if necessary:
 
-        # cap_mkdb /etc/login.conf
+        # [ -f /etc/login/conf.db ] && cap_mkdb /etc/login.conf
 
 Don't forget to add the entry kern.maxfiles=16384 to the /etc/sysctl.conf
 file to keep the change across reboots.
