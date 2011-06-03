@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.122 2011/06/02 17:09:31 kili Exp $
+# $OpenBSD: Makefile,v 1.123 2011/06/03 16:54:05 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -8,7 +8,7 @@ DISTNAME=		glib-${VERSION}
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
 
-REVISION-main=		6
+REVISION-main=		7
 
 CATEGORIES=		devel
 
@@ -94,9 +94,8 @@ pre-configure:
 		${WRKSRC}/gio/tests/desktop-app-info.c \
 		${WRKSRC}/docs/reference/gio/html/glib-compile-schemas.html \
 		${WRKSRC}/docs/reference/gio/glib-compile-schemas.1
-	perl -pi -e "s,/var/lib/dbus/machine-id,${SYSCONFDIR}/dbus-1/machine-id,g" \
+	perl -pi -e "s,/var/lib/dbus,/var/db/dbus,g" \
 		${WRKSRC}/gio/gdbusconnection.c \
-		${WRKSRC}/gio/gdbusaddress.c \
 		${WRKSRC}/gio/gdbusprivate.c \
 		${WRKSRC}/po/*.po
 
