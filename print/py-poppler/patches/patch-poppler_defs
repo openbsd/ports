@@ -1,0 +1,16 @@
+$OpenBSD: patch-poppler_defs,v 1.1 2011/06/04 19:07:59 kili Exp $
+--- poppler.defs.orig	Sun Sep 27 11:07:59 2009
++++ poppler.defs	Mon May 23 21:42:00 2011
+@@ -1796,6 +1796,12 @@
+   (of-object "PopplerPage")
+   (c-name "poppler_page_get_text")
+   (return-type "char*")
++)
++
++(define-method get_selected_text
++  (of-object "PopplerPage")
++  (c-name "poppler_page_get_selected_text")
++  (return-type "char*")
+   (parameters
+     '("PopplerSelectionStyle" "style")
+     '("PopplerRectangle*" "rect")
