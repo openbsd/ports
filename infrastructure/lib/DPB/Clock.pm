@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.1 2011/05/22 08:21:39 espie Exp $
+# $OpenBSD: Clock.pm,v 1.2 2011/06/04 12:58:24 espie Exp $
 #
 # Copyright (c) 2011 Marc Espie <espie@openbsd.org>
 #
@@ -24,7 +24,7 @@ use Time::HiRes qw(time);
 # explicit stop/restart clock where needed
 package DPB::Clock;
 
-# users will register/unregister, they must have a 
+# users will register/unregister, they must have a
 # stopped_clock($gap) method to adjust.
 my $items = {};
 sub register
@@ -95,8 +95,8 @@ package DPB::Watch;
 sub new
 {
 	my ($class, $filename, $expected, $offset, $time) = @_;
-	my $o = bless { 
-		name => $filename, 
+	my $o = bless {
+		name => $filename,
 		expected => $expected,
 		offset => $offset,
 		time => $time,
@@ -113,7 +113,7 @@ sub check_change
 	if (defined $sz && defined $self->{offset}) {
 		$sz -= $self->{offset};
 	}
-	if ((defined $sz && 
+	if ((defined $sz &&
 	    (!defined $self->{sz} || $self->{sz} != $sz)) ||
 		(!defined $sz && defined $self->{sz})) {
 		$self->{sz} = $sz;

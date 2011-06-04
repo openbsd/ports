@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.10 2011/06/02 17:09:25 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.11 2011/06/04 12:58:24 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -183,8 +183,8 @@ sub build_distinfo
 	my $distinfo = {};
 	for my $v (values %$h) {
 		my $info = $v->{info};
-		next unless defined $info->{DISTFILES} || 
-		    defined $info->{PATCHFILES} || 
+		next unless defined $info->{DISTFILES} ||
+		    defined $info->{PATCHFILES} ||
 		    defined $info->{SUPDISTFILES};
 
 		my $dir = $info->{DIST_SUBDIR};
@@ -194,12 +194,12 @@ sub build_distinfo
 			die "No checksum file for ".$v->fullpkgpath;
 		}
 		$checksum_file = $checksum_file->string;
-		$distinfo->{$checksum_file} //= 
+		$distinfo->{$checksum_file} //=
 		    read_checksums($checksum_file);
 		my $checksums = $distinfo->{$checksum_file};
 
 		my $files = {};
-		my $build = sub { 
+		my $build = sub {
 			my $arg = shift;
 			my $site = 'MASTER_SITES';
 			if ($arg =~ m/^(.*)\:(\d)$/) {
@@ -209,7 +209,7 @@ sub build_distinfo
 			if (!defined $info->{$site}) {
 				die "Can't find $site for $arg";
 			}
-			return DPB::Distfile->new($arg, $dir, 
+			return DPB::Distfile->new($arg, $dir,
 			    $info->{$site}, $checksums, $v, $self->{distdir});
 		};
 
@@ -221,9 +221,9 @@ sub build_distinfo
 			&$build($d);
 		}
 		for my $k (qw(DIST_SUBDIR CHECKSUM_FILE DISTFILES
-		    PATCHFILES SUPDISTFILES MASTER_SITES MASTER_SITES0 
-		    MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 
-		    MASTER_SITES4 MASTER_SITES5 MASTER_SITES6 
+		    PATCHFILES SUPDISTFILES MASTER_SITES MASTER_SITES0
+		    MASTER_SITES1 MASTER_SITES2 MASTER_SITES3
+		    MASTER_SITES4 MASTER_SITES5 MASTER_SITES6
 		    MASTER_SITES7 MASTER_SITES8 MASTER_SITES9)) {
 		    	delete $info->{$k};
 		}
@@ -315,7 +315,7 @@ sub run
 	my $site = $self->{site};
 	my $ftp = OpenBSD::Paths->ftp;
 	$self->redirect($job->{log});
-	my @cmd = ($ftp, '-C', '-o', $job->{file}->tempfilename, '-v', 
+	my @cmd = ($ftp, '-C', '-o', $job->{file}->tempfilename, '-v',
 	    $site.$job->{file}->{short});
 	print STDERR "===> Trying $site\n";
 	print STDERR join(' ', @cmd), "\n";
@@ -336,7 +336,7 @@ sub finalize
 	my ($self, $core) = @_;
 	$self->SUPER::finalize($core);
 	my $job = $core->job;
-	if ($job->{file}->checksize($job->{logger}, 
+	if ($job->{file}->checksize($job->{logger},
 	    $job->{file}->tempfilename)) {
 	    	$job->new_checksum_task($self, $core->{status});
 	} else {

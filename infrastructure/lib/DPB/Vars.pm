@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Vars.pm,v 1.16 2011/06/02 17:09:25 espie Exp $
+# $OpenBSD: Vars.pm,v 1.17 2011/06/04 12:58:24 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -136,7 +136,7 @@ sub grab_list
 			my $dir = DPB::PkgPath->new_hidden($1);
 			$dir->{broken} = 1;
 			$h->{$dir} = $dir;
-			open my $quicklog,  '>>', 
+			open my $quicklog,  '>>',
 			    $grabber->logger->log_pkgpath($dir);
 			print $quicklog @current;
 			&$reset;

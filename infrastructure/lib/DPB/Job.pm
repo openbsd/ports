@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Job.pm,v 1.1.1.1 2010/08/20 13:40:13 espie Exp $
+# $OpenBSD: Job.pm,v 1.2 2011/06/04 12:58:24 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #

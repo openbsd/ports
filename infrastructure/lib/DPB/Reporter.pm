@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Reporter.pm,v 1.5 2011/05/22 08:21:39 espie Exp $
+# $OpenBSD: Reporter.pm,v 1.6 2011/06/04 12:58:24 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #

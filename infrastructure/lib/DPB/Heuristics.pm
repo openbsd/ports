@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.7 2011/06/02 17:09:25 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.8 2011/06/04 12:58:24 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -501,7 +501,7 @@ sub set_h2
 sub sorted
 {
 	my $self = shift;
-	if ($self->{results}++ > 50 || 
+	if ($self->{results}++ > 50 ||
 	    defined $self->{sorted} && @{$self->{sorted}} < 10) {
 		$self->{results} = 0;
 		undef $self->{sorted};
@@ -541,7 +541,7 @@ sub sorted_values
 		@l = values %{$self->{o}};
 	}
 	my $h = $self->{h};
-	return [sort 
+	return [sort
 	    {$h->measure($a->{path}) <=> $h->measure($b->{path})}
 	    @l];
 }

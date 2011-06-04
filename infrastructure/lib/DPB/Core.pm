@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.8 2011/05/22 08:21:39 espie Exp $
+# $OpenBSD: Core.pm,v 1.9 2011/06/04 12:58:24 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -597,7 +597,7 @@ sub has_sf
 sub parse_hosts_file
 {
 	my ($class, $filename, $state) = @_;
-	open my $fh, '<', $filename or 
+	open my $fh, '<', $filename or
 		$state->fatal("Can't read host files #1: #2", $filename, $!);
 	my $_;
 	my $sf;
@@ -633,7 +633,7 @@ sub parse_hosts_file
 		if (defined $state->{stuck_timeout}) {
 			$prop->{stuck} //= $state->{stuck_timeout};
 		}
-		$state->heuristics->calibrate(DPB::Core::Factory->new($host, 
+		$state->heuristics->calibrate(DPB::Core::Factory->new($host,
 		    $prop));
 	}
 }
