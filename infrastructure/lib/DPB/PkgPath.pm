@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.8 2011/06/02 17:09:25 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.9 2011/06/04 12:56:54 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -226,16 +226,19 @@ sub quick_dump
 	}
 }
 
+# we're always called from values corresponding to the same subdir.
 sub merge_depends
 {
 	my ($class, $h) = @_;
 	my $global = bless {}, "AddDepends";
+	my $global2 = bless {}, "AddDepends";
 	for my $v (values %$h) {
 		my $info = $v->{info};
 		for my $k (qw(LIB_DEPENDS BUILD_DEPENDS)) {
 			if (defined $info->{$k}) {
 				for my $d (values %{$info->{$k}}) {
 					$global->{$d} = $d;
+					$global2->{$d} = $d;
 				}
 			}
 		}
@@ -255,7 +258,11 @@ sub merge_depends
 	if (values %$global > 0) {
 		for my $v (values %$h) {
 			my $info = $v->{info};
+			# remove stuff that depends on itself
+			delete $global->{$v};
+			delete $global2->{$v};
 			$info->{DEPENDS} = $global;
+			$info->{BDEPENDS} = $global2;
 		}
 	}
 }

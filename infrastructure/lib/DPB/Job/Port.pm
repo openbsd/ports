@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.10 2011/06/02 17:09:25 espie Exp $
+# $OpenBSD: Port.pm,v 1.11 2011/06/04 12:56:54 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -148,22 +148,17 @@ sub run
 	my $job = $core->job;
 	my $dep = {};
 	my $v = $job->{v};
-	for my $kind (qw(BUILD_DEPENDS LIB_DEPENDS)) {
-		if (exists $v->{info}{$kind}) {
-			for my $d (values %{$v->{info}{$kind}}) {
-				next if $d->{pkgpath} eq $v->{pkgpath};
-				$dep->{$d->fullpkgname} = 1;
-			}
+	if (exists $v->{info}{BDEPENDS}) {
+		for my $d (values %{$v->{info}{BDEPENDS}}) {
+			$dep->{$d->fullpkgname} = 1;
 		}
 	}
 	# recurse for extra stuff
 	if (exists $v->{info}{EXTRA}) {
 		for my $two (values %{$v->{info}{EXTRA}}) {
-			for my $kind (qw(RUN_DEPENDS LIB_DEPENDS)) {
-				if (exists $two->{info}{$kind}) {
-					for my $d (values %{$two->{info}{$kind}}) {
-						$dep->{$d->fullpkgname} = 1;
-					}
+			if (exists $two->{info}{BDEPENDS}) {
+				for my $d (values %{$two->{info}{BDEPENDS}}) {
+					$dep->{$d->fullpkgname} = 1;
 				}
 			}
 		}
