@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_ApvlvFile_cpp,v 1.1 2011/06/04 19:04:24 kili Exp $
+--- src/ApvlvFile.cpp.orig	Tue Apr 20 03:01:33 2010
++++ src/ApvlvFile.cpp	Sat May 14 15:21:07 2011
+@@ -267,9 +267,9 @@ ApvlvPDF::ApvlvPDF (const char *filename, bool check):
+ 
+   bool ApvlvPDF::pagetext (int pn, int x1, int y1, int x2, int y2, char **out)
+   {
+-    PopplerRectangle rect = { x1, y1, x2, y2 };
++    PopplerRectangle rect = { x1, y2, x2, y1 };
+     PopplerPage *page = poppler_document_get_page (mDoc, pn);
+-    *out = poppler_page_get_text (page, POPPLER_SELECTION_WORD, &rect);
++    *out = poppler_page_get_selected_text (page, POPPLER_SELECTION_WORD, &rect);
+     if (*out != NULL)
+       {
+ 	return true;
