@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/05/18 16:31:07 robert Exp $
+# $OpenBSD: Makefile,v 1.30 2011/06/04 11:28:55 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -94,7 +94,7 @@ MULTI_PACKAGES=		-main -kde
 
 PSEUDO_FLAVORS=	parallel no_lang
 FLAVORS=	debug no_java
-FLAVOR?=
+FLAVOR?=	no_java
 
 .if !${FLAVOR:L:Mno_java}
 MULTI_PACKAGES+=	-java
