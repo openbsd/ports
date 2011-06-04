@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.8 2011/06/02 13:41:39 ajacoutot Exp $
+$OpenBSD: README-main,v 1.9 2011/06/04 06:59:00 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -23,16 +23,17 @@ your web server to proxy HTTP requests with URI=/zarafa to
 http://localhost:236.
 
 It is advised to tune the MySQL installation according to:
+    http://doc.zarafa.com/trunk/Administrator_Manual/en-US/html/_memory_usage_setup.html
     http://zarafa.com/wiki/index.php/MySQL_tuning
 (especially for max_allowed_packet)
 
 Before Starting zarafa-server for the first time
-================================================
+------------------------------------------------
 A MySQL datatabase access needs to be configured in
     ${SYSCONFDIR}/zarafa/server.cfg
 
 After zarafa-server was started for the first time
-==================================================
+--------------------------------------------------
 Creating the public store.
     # ${TRUEPREFIX}/bin/zarafa-admin -s
 
@@ -111,7 +112,7 @@ ${PREFIX-web}/conf/php5/${MODULE_NAME}.ini:
         ${PREFIX-web}/conf/php5/${MODULE_NAME}.ini
 
 The PHP mapi module and OpenBSD Apache
-======================================
+--------------------------------------
 When using the OpenBSD Apache server, the runtime loader will need to
 pre-load the pthread shared library. While the php binary is linked with
 -pthread, httpd is not and the PHP mapi module needs
@@ -131,4 +132,4 @@ Each zarafa-* command has its corresponding manpage.
 Some documentation is also available on the Internet:
     http://www.zarafa.com/wiki/index.php/Main_Page
     http://www.zarafa.com/content/documentation
-    http://doc.zarafa.com/6.40/Administrator_Manual/en-US/html-single/index.html
+    http://doc.zarafa.com/trunk/Administrator_Manual/en-US/html/
