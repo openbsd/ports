@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2011/01/18 19:11:06 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2011/06/04 16:39:00 dcoppa Exp $
 
 COMMENT=		easy GNOME menu editing tool
 
 GNOME_PROJECT=		alacarte
 GNOME_VERSION=		0.12.4
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		x11
 
@@ -20,8 +20,7 @@ MODULES=		lang/python \
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/gettext \
 			x11/py-gtk2>=2.8.6 \
-			gnome-panel-*|exo->0.6:x11/gnome/panel \
-			x11/gnome/py-gnome
+			gnome-panel-*|exo->0.6:x11/gnome/panel
 
 DESKTOP_FILES=		Yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
