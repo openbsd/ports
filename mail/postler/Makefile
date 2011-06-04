@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/05/16 08:24:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/04 09:09:36 ajacoutot Exp $
 
 COMMENT =	lightweight mail user agent
 
 XFCE_VERSION =	0.1.1
 XFCE_GOODIE =	postler
 
-REVISION =	2
+REVISION =	3
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail

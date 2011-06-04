@@ -1,0 +1,16 @@
+$OpenBSD: patch-postler_postler-content_vala,v 1.1 2011/06/04 09:09:36 ajacoutot Exp $
+
+Unbreak with vala 0.12.1.
+../postler/postler-content.vala:1089.25-1089.101: error: missing return statement at end of subroutine body
+
+--- postler/postler-content.vala.orig	Sat Jun  4 11:04:21 2011
++++ postler/postler-content.vala	Sat Jun  4 11:04:30 2011
+@@ -1086,7 +1086,7 @@ public class Postler.Content : WebKit.WebView {
+                     var escaped = GLib.Regex.escape_string (" " + emoticon.token);
+                     var regex = new GLib.Regex (escaped);
+                     body_chunk = regex.replace_eval (body_chunk, -1, 0, 0,
+-                        (match_info, result) => { evaluate_emoticon (match_info, result, emoticon); });
++                        (match_info, result) => { evaluate_emoticon (match_info, result, emoticon); return true; });
+                 }
+                 catch (GLib.RegexError error) { }
+             }
