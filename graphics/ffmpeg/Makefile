@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2011/04/12 22:59:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2011/06/04 09:20:36 sthen Exp $
 
 COMMENT=	audio/video converter and streamer
 
@@ -20,7 +20,7 @@ HOMEPAGE=	http://ffmpeg.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
-# LGPLv2.1 / GPLv2
+# LGPLv2.1 and GPLv2
 PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -113,12 +113,12 @@ CONFIGURE_ENV+=	LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
 		TMPDIR=${WRKTMP} \
 		CPPFLAGS="-I${X11BASE}/include"
 
-VERSION_FLAGS=	libavcodec_VERSION=$(LIBavcodec_VERSION) \
-		libavdevice_VERSION=$(LIBavdevice_VERSION) \
-		libavfilter_VERSION=$(LIBavfilter_VERSION) \
-		libavformat_VERSION=$(LIBavformat_VERSION) \
-		libavutil_VERSION=$(LIBavutil_VERSION) \
-		libpostproc_VERSION=$(LIBpostproc_VERSION) \
+VERSION_FLAGS=	libavcodec_VERSION=${LIBavcodec_VERSION} \
+		libavdevice_VERSION=${LIBavdevice_VERSION} \
+		libavfilter_VERSION=${LIBavfilter_VERSION} \
+		libavformat_VERSION=${LIBavformat_VERSION} \
+		libavutil_VERSION=${LIBavutil_VERSION} \
+		libpostproc_VERSION=${LIBpostproc_VERSION} \
 		libswscale_VERSION=${LIBswscale_VERSION}
 
 MAKE_ENV=	V=1
@@ -139,8 +139,8 @@ CONFIGURE_ARGS+=--disable-stripping
 .endif
 
 ALL_TARGET=	all tools/qt-faststart
+
 # regression tests incompatible with libswscale
-#REGRESS_TARGET=	codectest
 NO_REGRESS=	Yes
 
 HTML_DOCS=	developer faq ffmpeg ffplay ffprobe ffserver general libavfilter
