@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2011/03/14 09:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/04 11:41:09 sthen Exp $
 
 COMMENT=	integrated Templates for PHP
 
 DISTNAME=	HTML_Template_IT-1.1.3
-PKGNAME=	pear-${DISTNAME:S/_/-/}
 REVISION=	2
 CATEGORIES=	www
 

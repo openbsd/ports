@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/06/04 11:41:08 sthen Exp $
 
 COMMENT=	interface to oEmbed
 
 DISTNAME=	Services_oEmbed-0.1.0
-PKGNAME=	pear-${DISTNAME:S/_/-/}
 CATEGORIES=	net
 
 MODULES=	www/pear

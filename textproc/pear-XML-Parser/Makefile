@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/20 19:56:51 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/04 11:41:08 sthen Exp $
 
 COMMENT=	XML parsing class based on PHP's bundled expat
 
 DISTNAME=	XML_Parser-1.2.6
-PKGNAME=	pear-${DISTNAME:S/_/-/}
 REVISION =	1
 CATEGORIES=	textproc
 

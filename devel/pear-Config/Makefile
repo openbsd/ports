@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/06/04 11:41:08 sthen Exp $
 
 COMMENT=	configuration file library for PHP
 
 DISTNAME=	Config-1.10.7
-PKGNAME=	pear-${DISTNAME}
 REVISION =	1
 CATEGORIES=	devel
 

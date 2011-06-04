@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2010/07/24 07:55:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/06/04 11:41:08 sthen Exp $
 
 COMMENT=	framework to benchmark PHP scripts or function calls
 
 DISTNAME=	Benchmark-1.2.6
-PKGNAME=	pear-${DISTNAME}
 REVISION=	1
 CATEGORIES=	benchmarks
 

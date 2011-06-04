@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/19 15:46:56 giovanni Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/04 11:41:08 sthen Exp $
 
 COMMENT=	utility class for dealing with MIME types
 
 DISTNAME=	MIME_Type-1.2.1
-PKGNAME=	pear-${DISTNAME:S/_/-/}
 CATEGORIES=	mail
 
 MODULES=	www/pear

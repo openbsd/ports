@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2011/04/19 15:09:12 giovanni Exp $
+# $OpenBSD: Makefile,v 1.14 2011/06/04 11:41:08 sthen Exp $
 
 COMMENT=	class that provides multiple interfaces for sending email
 
 DISTNAME=	Mail-1.2.0
-PKGNAME=	pear-${DISTNAME}
 CATEGORIES=	mail
 EPOCH=		0
 

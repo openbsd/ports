@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2011/03/14 09:17:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2011/06/04 11:41:08 sthen Exp $
 
 COMMENT=	validation class
 
 DISTNAME=	Validate-0.8.2
-PKGNAME=	pear-${DISTNAME}
 REVISION =	1
 CATEGORIES=	devel
 

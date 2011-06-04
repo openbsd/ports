@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2009/11/18 19:12:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/04 11:41:08 sthen Exp $
 
 COMMENT=	class for parsing and handling URL
 
 DISTNAME=	Net_URL2-0.3.0
-PKGNAME=	pear-${DISTNAME:S/_/-/}
 CATEGORIES=	net
 
 MODULES=	www/pear

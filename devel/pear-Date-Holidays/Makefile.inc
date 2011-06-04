@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2011/04/05 17:36:47 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2011/06/04 11:41:08 sthen Exp $
 
 CATEGORIES =	devel
 MAINTAINER ?=	Johan Huldtgren <jhuldtgren@gmail.com>
-
-PKGNAME ?=	pear-${DISTNAME:S/_/-/}
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes

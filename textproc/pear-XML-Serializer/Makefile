@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/20 19:56:51 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/04 11:41:08 sthen Exp $
 
 COMMENT=	Swiss-army knife for reading and writing XML files
 
 DISTNAME=	XML_Serializer-0.18.0
-PKGNAME=	pear-${DISTNAME:S/_/-/}
 REVISION =	1
 CATEGORIES=	textproc
 
