@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.19 2011/05/28 19:40:41 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.20 2011/06/04 11:38:43 sthen Exp $
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
 @pkgpath mail/dovecot,-server,bdb,ldap,mysql,postgresql,sqlite
@@ -691,7 +691,7 @@ share/examples/dovecot/example-config/dovecot.conf
 @mode 755
 @sample /var/dovecot/
 @mode 750
-@group _dovecot
+@group _dovenull
 @sample /var/dovecot/login/
 @extra /etc/ssl/dovecotcert.pem
 @extra /etc/ssl/private/dovecot.pem
