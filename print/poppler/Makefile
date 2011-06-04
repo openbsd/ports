@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.47 2011/06/02 17:09:32 kili Exp $
+# $OpenBSD: Makefile,v 1.48 2011/06/04 19:03:19 kili Exp $
 .include <bsd.own.mk>
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
 COMMENT-qt4=	qt4 interface to PDF rendering library
 
-V=		0.14.5
+V=		0.16.5
 DISTNAME=	poppler-$V
 CATEGORIES=	print
 PKGNAME-main=	poppler-$V
-REVISION-main=	2
 FULLPKGNAME-qt=	poppler-qt-$V
 FULLPKGNAME-qt4=poppler-qt4-$V
 
-SHARED_LIBS +=	poppler              9.0
-SHARED_LIBS +=	poppler-glib         7.0
-SHARED_LIBS +=	poppler-qt           7.0
-SHARED_LIBS +=	poppler-qt4          6.0
+SHARED_LIBS +=	poppler              10.0
+SHARED_LIBS +=	poppler-glib         8.0
+SHARED_LIBS +=	poppler-qt           8.0
+SHARED_LIBS +=	poppler-qt4          7.0
 
 HOMEPAGE=	http://poppler.freedesktop.org/
 
-MAINTAINER=	Matthias Kilian <kili@openbsd.org>
+MAINTAINER=    Matthias Kilian <kili@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_FTP=	Yes
@@ -86,6 +85,7 @@ WANTLIB-qt4=	${cWANTLIB} ICE QtCore QtGui QtXml SM X11 Xau Xdmcp Xext Xi \
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --enable-xpdf-headers \
+		--disable-introspection \
 		--disable-poppler-cpp \
 		--enable-utils \
 		--enable-zlib

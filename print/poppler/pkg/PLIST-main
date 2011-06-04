@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.8 2011/03/20 20:52:01 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.9 2011/06/04 19:03:20 kili Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 %%SHARED%%
@@ -10,6 +10,7 @@
 @comment @bin bin/pdftoppm
 @comment @bin bin/pdftops
 @comment @bin bin/pdftotext
+@comment @bin bin/poppler-glib-demo
 include/poppler/
 include/poppler/Annot.h
 include/poppler/Array.h
@@ -36,9 +37,11 @@ include/poppler/GfxFont.h
 include/poppler/GfxState.h
 include/poppler/GfxState_helpers.h
 include/poppler/GlobalParams.h
+include/poppler/Hints.h
 include/poppler/JArithmeticDecoder.h
 include/poppler/JBIG2Stream.h
 include/poppler/Lexer.h
+include/poppler/Linearization.h
 include/poppler/Link.h
 include/poppler/LocalPDFDocBuilder.h
 include/poppler/Movie.h
@@ -101,11 +104,11 @@ include/poppler/glib/poppler.h
 include/poppler/goo/
 include/poppler/goo/FixedPoint.h
 include/poppler/goo/GooHash.h
+include/poppler/goo/GooLikely.h
 include/poppler/goo/GooList.h
 include/poppler/goo/GooMutex.h
 include/poppler/goo/GooString.h
 include/poppler/goo/GooTimer.h
-include/poppler/goo/GooVector.h
 include/poppler/goo/ImgWriter.h
 include/poppler/goo/JpegWriter.h
 include/poppler/goo/PNGWriter.h
@@ -157,19 +160,27 @@ lib/pkgconfig/poppler.pc
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/poppler/
+share/gtk-doc/html/poppler/PopplerAnnot.html
+share/gtk-doc/html/poppler/PopplerAttachment.html
+share/gtk-doc/html/poppler/PopplerDocument.html
+share/gtk-doc/html/poppler/PopplerFormField.html
+share/gtk-doc/html/poppler/PopplerLayer.html
+share/gtk-doc/html/poppler/PopplerMedia.html
+share/gtk-doc/html/poppler/PopplerMovie.html
+share/gtk-doc/html/poppler/PopplerPage.html
+share/gtk-doc/html/poppler/annotation-glossary.html
+share/gtk-doc/html/poppler/api-index-0-12.html
+share/gtk-doc/html/poppler/api-index-0-14.html
+share/gtk-doc/html/poppler/api-index-0-16.html
+share/gtk-doc/html/poppler/api-index-deprecated.html
+share/gtk-doc/html/poppler/api-index-full.html
 share/gtk-doc/html/poppler/ch01.html
 share/gtk-doc/html/poppler/home.png
 share/gtk-doc/html/poppler/index.html
 share/gtk-doc/html/poppler/index.sgml
 share/gtk-doc/html/poppler/left.png
-share/gtk-doc/html/poppler/poppler-poppler-action.html
-share/gtk-doc/html/poppler/poppler-poppler-annot.html
-share/gtk-doc/html/poppler/poppler-poppler-document.html
-share/gtk-doc/html/poppler/poppler-poppler-enums.html
-share/gtk-doc/html/poppler/poppler-poppler-features.html
-share/gtk-doc/html/poppler/poppler-poppler-form-field.html
-share/gtk-doc/html/poppler/poppler-poppler-layer.html
-share/gtk-doc/html/poppler/poppler-poppler-page.html
+share/gtk-doc/html/poppler/poppler-PopplerAction.html
+share/gtk-doc/html/poppler/poppler-Version-and-Features-Information.html
 share/gtk-doc/html/poppler/poppler-poppler.html
 share/gtk-doc/html/poppler/poppler.devhelp
 share/gtk-doc/html/poppler/poppler.devhelp2
