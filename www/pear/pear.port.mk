@@ -1,6 +1,7 @@
-# $OpenBSD: pear.port.mk,v 1.4 2010/11/22 08:36:52 espie Exp $
+# $OpenBSD: pear.port.mk,v 1.5 2011/06/04 11:40:00 sthen Exp $
 # PHP PEAR module
 
+PKGNAME?=	pear-${DISTNAME:S/_/-/}
 RUN_DEPENDS+=	www/pear
 BUILD_DEPENDS+=	${RUN_DEPENDS}
 
