@@ -1,10 +1,12 @@
-$OpenBSD: patch-src_PDFDocument_cxx,v 1.1 2010/01/12 21:45:20 jasper Exp $
+$OpenBSD: patch-src_PDFDocument_cxx,v 1.2 2011/06/04 19:05:23 kili Exp $
 
 Fixes error handling, bogus encrypted files, r339.
+Fix API breakage introduced with poppler-0.16, and a stupid bug
+calculating the value of x2.
 
---- src/PDFDocument.cxx.orig	Sat Feb 28 16:00:35 2009
-+++ src/PDFDocument.cxx	Tue Dec 29 23:00:29 2009
-@@ -246,23 +246,25 @@ PDFDocument::loadFile (const gchar *filename, const gc
+--- src/PDFDocument.cxx.orig	Sat Feb 28 22:00:35 2009
++++ src/PDFDocument.cxx	Sat May 14 12:43:43 2011
+@@ -246,24 +246,26 @@ PDFDocument::loadFile (const gchar *filename, const gc
      // Check if the document couldn't be opened successfully and why.
      if ( NULL == newDocument )
      {
@@ -16,16 +18,6 @@ Fixes error handling, bogus encrypted files, r339.
 +        switch ( loadError->code )
          {
 -            errorCode = DocumentErrorEncrypted;
--        }
--        else
--        {
--            // OK, the glib's wrapper don't pass the error code directly
--            // from Poppler. Instead returns G_FILE_ERROR_FAILED and a
--            // non translated string.
--            // Maybe I'm wrong (very probable) but that's a wrong way.
--            // So I'm reading the error code from the error string...
--            sscanf (loadError->message, "Failed to load document (error %d)",
--                    (gint *)&errorCode);
 +            case POPPLER_ERROR_OPEN_FILE:
 +            case POPPLER_ERROR_INVALID:
 +                errorCode = DocumentErrorOpenFile;
@@ -43,5 +35,36 @@ Fixes error handling, bogus encrypted files, r339.
 +                errorCode = DocumentErrorEncrypted;
 +                break;
          }
+-        else
+-        {
+-            // OK, the glib's wrapper don't pass the error code directly
+-            // from Poppler. Instead returns G_FILE_ERROR_FAILED and a
+-            // non translated string.
+-            // Maybe I'm wrong (very probable) but that's a wrong way.
+-            // So I'm reading the error code from the error string...
+-            sscanf (loadError->message, "Failed to load document (error %d)",
+-                    (gint *)&errorCode);
+-        }
          g_error_free (loadError);
          // Get our error message.
+         gchar *errorMessage = IDocument::getErrorMessage (errorCode);
+@@ -678,15 +680,14 @@ PDFDocument::setTextSelection (DocumentRectangle *rect
+     gdouble pageWidth, pageHeight;
+     poppler_page_get_size(page, &pageWidth, &pageHeight);
+ 
+-    //for get text we must exchange y coordinate, don't ask me where logic here.
+     PopplerRectangle textRect = { rect->getX1() / getZoom(),
+-                                  (pageHeight - rect->getY2() / getZoom()),
+-                                  rect->getX2() * getZoom() / getZoom(),
+-                                  (pageHeight - rect->getY1() / getZoom())};
++                                  rect->getY1() / getZoom(),
++                                  rect->getX2() / getZoom(),
++                                  rect->getY2() / getZoom()};
+     repairEmpty(textRect);
+ 
+ #if defined (HAVE_POPPLER_0_6_0)
+-    gchar *text = poppler_page_get_text(page, POPPLER_SELECTION_GLYPH,
++    gchar *text = poppler_page_get_selected_text(page, POPPLER_SELECTION_GLYPH,
+             &textRect);
+ #else // !HAVE_POPPLER_0_6_0
+     gchar *text = poppler_page_get_text(page, &textRect);
