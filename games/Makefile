@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.226 2011/06/05 11:15:20 stsp Exp $
+# $OpenBSD: Makefile,v 1.227 2011/06/05 16:31:12 kili Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -178,6 +178,7 @@
      SUBDIR += vitetris
      SUBDIR += vodovod
      SUBDIR += wanderer
+     SUBDIR += warmux
      SUBDIR += warzone2100
      SUBDIR += wesnoth
      SUBDIR += wesnoth,lite
@@ -185,7 +186,6 @@
      SUBDIR += widelands
      SUBDIR += wmminichess
      SUBDIR += wmtictactoe
-     SUBDIR += warmux
      SUBDIR += wtf
      SUBDIR += xasteroids
      SUBDIR += xbat
