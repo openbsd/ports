@@ -1,0 +1,20 @@
+$OpenBSD: patch-src_background_cpp,v 1.1.1.1 2011/06/05 11:13:47 stsp Exp $
+
+This fixes a random crash that happened during the second screen in the game.
+
+--- src/background.cpp.orig	Fri Apr 10 12:57:23 2009
++++ src/background.cpp	Sat Jun  4 23:31:33 2011
+@@ -184,7 +184,12 @@ void Background::MueveOvni ()
+      int Velocidad;
+      for (int n = 0; n < MaxOvnis; n++) {
+          Ovni[n].IncX ((int) Ovni[n].VerVelX());
+-         Ovni[n].SetY ((int) (OrigOvni[n] + (3 + n) * FuncionSeno[Ovni[n].VerX()]));
++	 int x = Ovni[n].VerX();
++	 if (x < 0)
++	     x = 0;
++	 else if (x >= FramesCirculo)
++	     x = FramesCirculo - 1;
++         Ovni[n].SetY ((int) (OrigOvni[n] + (3 + n) * FuncionSeno[x]));
+ 
+          if ((Ovni[n].VerX(true) < 0 || Ovni[n].VerX(false) > 640) && !((int)(rand() % 60))) {
+             if ((int)rand() % 2)

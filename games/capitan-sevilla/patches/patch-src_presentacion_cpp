@@ -1,0 +1,88 @@
+$OpenBSD: patch-src_presentacion_cpp,v 1.1.1.1 2011/06/05 11:13:47 stsp Exp $
+--- src/presentacion.cpp.orig	Sat Jun  4 22:41:37 2011
++++ src/presentacion.cpp	Sat Jun  4 22:42:11 2011
+@@ -40,17 +40,17 @@ int Presentacion::CEZTeam(bool Comprueba)
+            strcat (Temp, "0");
+         sprintf (Titulo, "%s%i", Temp, n);
+         LogWrite ("Cargando %s...", Titulo);
+-        FrameLogo[n] = load_datafile_object ("./data/bitmaps1.dat",Titulo);
++        FrameLogo[n] = load_datafile_object (CAPITAN_DATA_DIR "./data/bitmaps1.dat",Titulo);
+         LogWrite ("OK.\n");
+         if (!FrameLogo[n])
+            return 1;
+         }
+     LogWrite ("Cargando DFBM_CEZT_CS...");
+-    CuboSolo = load_datafile_object ("./data/bitmaps1.dat","DFBM_CEZT_CS");
++    CuboSolo = load_datafile_object (CAPITAN_DATA_DIR "./data/bitmaps1.dat","DFBM_CEZT_CS");
+     LogWrite ("OK.\nCargando DFBM_CEZT_HC...");
+-    HaloCubo = load_datafile_object ("./data/bitmaps1.dat","DFBM_CEZT_HC");
++    HaloCubo = load_datafile_object (CAPITAN_DATA_DIR "./data/bitmaps1.dat","DFBM_CEZT_HC");
+     LogWrite ("OK.\nCargando DFBM_CEZT_TUB...");
+-    Tuberia = load_datafile_object ("./data/bitmaps1.dat","DFBM_CEZT_TUB");
++    Tuberia = load_datafile_object (CAPITAN_DATA_DIR "./data/bitmaps1.dat","DFBM_CEZT_TUB");
+     LogWrite ("OK.\n");
+ 
+     if (!HaloCubo || !CuboSolo)
+@@ -145,7 +145,7 @@ int Presentacion::CEZRD(bool Comprueba)
+   DATAFILE *Logo;
+ 
+   LogWrite ("Cargando DFBM_CEZRD...");
+-  Logo = load_datafile_object ("./data/bitmaps1.dat","DFBM_CEZRD");
++  Logo = load_datafile_object (CAPITAN_DATA_DIR "./data/bitmaps1.dat","DFBM_CEZRD");
+   LogWrite ("OK.\n");
+ 
+   Velar = 255;
+@@ -263,7 +263,7 @@ void Presentacion::IntroComic()
+       if (n < 10)
+         sprintf (Titulo, "DFBM_INTRO_00%i", n);
+       LogWrite ("Cargando %s...", Titulo);
+-      Logo = load_datafile_object ("./data/bitmaps1.dat",Titulo);
++      Logo = load_datafile_object (CAPITAN_DATA_DIR "./data/bitmaps1.dat",Titulo);
+       if (Logo)
+         LogWrite ("OK.\n");
+       else
+@@ -289,7 +289,7 @@ void Presentacion::IntroComic()
+             case 4:
+ /*                if (!Suena[DF_SEXPL]) {
+                     LogWrite ("Sample explosión.\n");
+-                    Logo = load_datafile_object ("./data/sfx.dat", "DF_SEXPL");
++                    Logo = load_datafile_object (CAPITAN_DATA_DIR "./data/sfx.dat", "DF_SEXPL");
+                     play_sample ((SAMPLE*)Logo->dat, Config->VerVolMus(), 127, 1000, 0);
+                     }
+                 Suena[DF_SEXPL] = true;*/
+@@ -432,7 +432,7 @@ int Presentacion::FinComic ()
+       sprintf (Titulo, "DFBM_ENDCOMIC_00%i", n);
+ 
+       LogWrite ("Cargando %s...", Titulo);
+-      Logo = load_datafile_object ("./data/bitmaps1.dat",Titulo);
++      Logo = load_datafile_object (CAPITAN_DATA_DIR "./data/bitmaps1.dat",Titulo);
+       LogWrite ("OK.\n");
+ 
+       Ciclos = 0;
+@@ -544,7 +544,7 @@ int Presentacion::FinPeriodico ()
+     H->cls (0);
+     H->CopyFondo();
+ 
+-    Logo = load_datafile_object ("./data/bitmaps1.dat", "DFBM_PERIODICO");
++    Logo = load_datafile_object (CAPITAN_DATA_DIR "./data/bitmaps1.dat", "DFBM_PERIODICO");
+ 
+     y = 50;
+ 
+@@ -569,7 +569,7 @@ int Presentacion::FinPeriodico ()
+ 
+     GiraPeriodico (Logo->dat);
+ 
+-    Text = load_datafile_object ("./data/bitmaps1.dat", "DFBM_PERTXT");
++    Text = load_datafile_object (CAPITAN_DATA_DIR "./data/bitmaps1.dat", "DFBM_PERTXT");
+ 
+     for (int n = 0; n < 9; n ++) {
+ 
+@@ -581,7 +581,7 @@ int Presentacion::FinPeriodico ()
+ 
+         unload_datafile_object (Logo);
+         sprintf (Titulo, "DFBM_PERIOD_00%i", (int) (rand() % 3));
+-        Logo = load_datafile_object ("./data/bitmaps1.dat", Titulo);
++        Logo = load_datafile_object (CAPITAN_DATA_DIR "./data/bitmaps1.dat", Titulo);
+         y = 50;
+ 
+         switch (n) {

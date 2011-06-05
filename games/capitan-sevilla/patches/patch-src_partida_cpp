@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_partida_cpp,v 1.1.1.1 2011/06/05 11:13:47 stsp Exp $
+--- src/partida.cpp.orig	Fri Apr 10 12:57:23 2009
++++ src/partida.cpp	Sun Jun  5 00:01:03 2011
+@@ -299,9 +299,9 @@ void Partida::InterFase ()
+     LogWrite ("¡¡¡FIN DE LA PRIMERA FASE!!!\n\n");
+ 
+     LogWrite ("Cargando DFBM_COHETE...");
+-    Cohete = load_datafile_object ("./data/bitmaps1.dat","DFBM_COHETE");
++    Cohete = load_datafile_object (CAPITAN_DATA_DIR "./data/bitmaps1.dat","DFBM_COHETE");
+     LogWrite ("OK.\nCargando DFBM_HANGAR...");
+-    Pantalla = load_datafile_object ("./data/bitmaps1.dat","DFBM_HANGAR");
++    Pantalla = load_datafile_object (CAPITAN_DATA_DIR "./data/bitmaps1.dat","DFBM_HANGAR");
+ 
+     AM->DestroyEnemies();
+ 
+@@ -445,7 +445,7 @@ void Partida::InterFase ()
+         sprintf (Titulo, "DFBM_INTLV_00%i", n);
+ 
+       LogWrite ("Cargando %s...", Titulo);
+-      Logo = load_datafile_object ("./data/bitmaps1.dat",Titulo);
++      Logo = load_datafile_object (CAPITAN_DATA_DIR "./data/bitmaps1.dat",Titulo);
+       LogWrite ("OK.\n");
+ 
+       Ciclos = 0;

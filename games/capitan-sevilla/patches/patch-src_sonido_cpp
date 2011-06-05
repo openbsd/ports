@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_sonido_cpp,v 1.1.1.1 2011/06/05 11:13:47 stsp Exp $
+--- src/sonido.cpp.orig	Fri Apr 10 12:57:23 2009
++++ src/sonido.cpp	Sun Jun  5 00:01:03 2011
+@@ -72,7 +72,7 @@ int Sonido::PlayMusic (const char *Nombre, bool Loop, 
+        alogg_destroy_ogg (ActFx);
+        }
+ 
+-    dfMusic = load_datafile_object("./data/music.dat", Nombre);
++    dfMusic = load_datafile_object(CAPITAN_DATA_DIR "./data/music.dat", Nombre);
+ 
+     if (!dfMusic) {
+        LogWrite ("ERROR: No se ha podido cargar fichero de música: %s\n", Nombre);

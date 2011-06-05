@@ -1,0 +1,176 @@
+$OpenBSD: patch-src_hardware_cpp,v 1.1.1.1 2011/06/05 11:13:47 stsp Exp $
+--- src/hardware.cpp.orig	Fri Apr 10 13:11:28 2009
++++ src/hardware.cpp	Sun Jun  5 00:09:51 2011
+@@ -1,5 +1,7 @@
+ #include "hardware.h"
+ 
++#include <limits.h>
++
+ void Hardware::Indicador ()
+ {
+      BITMAP *BMPPointer[2];
+@@ -262,7 +264,7 @@ int Hardware::SelectLang()
+        return ContLang - 1;
+ 
+     LogWrite ("Cargando fondo de Selección de lenguaje...");
+-    Objeto = load_datafile_object ("./data/bitmaps1.dat", "DFBM_BMLANG");
++    Objeto = load_datafile_object (CAPITAN_DATA_DIR "./data/bitmaps1.dat", "DFBM_BMLANG");
+     if (Objeto) {
+        draw_sprite (screen, (BITMAP*)Objeto->dat, (screen->w - 640) / 2, (screen->h - 480) / 2);
+        unload_datafile_object (Objeto);
+@@ -314,7 +316,7 @@ void Hardware::LocateBuffer (int Ancho, int Alto)
+ int Hardware::LoadDF1()
+ {
+     LogWrite ("Cargando archivo de datos LOADING.DAT: ");
+-    DataP = load_datafile ("./data/loading.dat");
++    DataP = load_datafile (CAPITAN_DATA_DIR "./data/loading.dat");
+     if (!DataP) {
+        allegro_message ("                   ERROR DE E/S\n\n No se encuentra el archivo LOADING.DAT");
+        set_gfx_mode(GFX_TEXT,0,0,0,0);
+@@ -324,7 +326,7 @@ int Hardware::LoadDF1()
+     LogWrite ("OK.\n");
+ 
+     LogWrite ("Cargando archivo de datos SPRITES.DAT: ");
+-    SpritesBM = load_datafile("./data/sprites.dat");
++    SpritesBM = load_datafile(CAPITAN_DATA_DIR "./data/sprites.dat");
+     if (!SpritesBM) {
+       allegro_message ("                   ERROR DE E/S\n\n No se encuentra el archivo SPRITES.DAT");
+       set_gfx_mode(GFX_TEXT,0,0,0,0);
+@@ -345,7 +347,7 @@ int Hardware::LoadDF2 ()
+     VuelcaBuffer();
+ 
+     LogWrite ("Cargando archivo de datos SCREENS.DAT: ");
+-    ScreensBM = load_datafile_callback ("./data/screens.dat", IndicadorCarga);
++    ScreensBM = load_datafile_callback (CAPITAN_DATA_DIR "./data/screens.dat", IndicadorCarga);
+     if (!ScreensBM) {
+        allegro_message ("                   ERROR DE E/S\n\n No se encuentra el archivo SCREENS.DAT");
+        set_gfx_mode(GFX_TEXT,0,0,0,0);
+@@ -355,7 +357,7 @@ int Hardware::LoadDF2 ()
+     LogWrite ("OK.\n");
+ 
+     LogWrite ("Cargando archivo de datos BITMAPS0.DAT: ");
+-    BitMapsBM = load_datafile_callback ("./data/bitmaps0.dat", IndicadorCarga);
++    BitMapsBM = load_datafile_callback (CAPITAN_DATA_DIR "./data/bitmaps0.dat", IndicadorCarga);
+     if (!BitMapsBM) {
+        allegro_message ("                   ERROR DE E/S\n\n No se encuentra el archivo BITMAPS0.DAT");
+        set_gfx_mode(GFX_TEXT,0,0,0,0);
+@@ -365,7 +367,7 @@ int Hardware::LoadDF2 ()
+     LogWrite ("OK.\n");
+ 
+     LogWrite ("Cargando archivo de datos SFX.DAT: ");
+-    SFx = load_datafile_callback ("./data/sfx.dat", IndicadorCarga);
++    SFx = load_datafile_callback (CAPITAN_DATA_DIR "./data/sfx.dat", IndicadorCarga);
+     if (!BitMapsBM) {
+        allegro_message ("                   ERROR DE E/S\n\n No se encuentra el archivo SFX.DAT");
+        set_gfx_mode(GFX_TEXT,0,0,0,0);
+@@ -380,7 +382,7 @@ int Hardware::LoadDF2 ()
+ int Hardware::LoadDF3 ()
+ {
+     LogWrite ("Cargando archivo de datos SCREENS.DAT: ");
+-    ScreensBM = load_datafile ("./data/screens.dat");
++    ScreensBM = load_datafile (CAPITAN_DATA_DIR "./data/screens.dat");
+     if (!ScreensBM) {
+        allegro_message ("                   ERROR DE E/S\n\n No se encuentra el archivo SCREENS.DAT");
+        set_gfx_mode(GFX_TEXT,0,0,0,0);
+@@ -390,7 +392,7 @@ int Hardware::LoadDF3 ()
+     LogWrite ("OK.\n");
+ 
+     LogWrite ("Cargando archivo de datos BITMAPS0.DAT: ");
+-    BitMapsBM = load_datafile ("./data/bitmaps0.dat");
++    BitMapsBM = load_datafile (CAPITAN_DATA_DIR "./data/bitmaps0.dat");
+     if (!BitMapsBM) {
+        allegro_message ("                   ERROR DE E/S\n\n No se encuentra el archivo BITMAPS0.DAT");
+        set_gfx_mode(GFX_TEXT,0,0,0,0);
+@@ -572,7 +574,7 @@ int Hardware::SetFont_af (const char *s1, int points)
+ 
+      DelFont_af();
+      LogWrite ("Cargando fuente TTF (%s)..", s1);
+-     PreFuente = load_datafile_object ("./data/fonts.dat", s1);
++     PreFuente = load_datafile_object (CAPITAN_DATA_DIR "./data/fonts.dat", s1);
+      LogWrite (".");
+ 
+      for (int n = 0; n < 20; n++) {
+@@ -612,7 +614,7 @@ void Hardware::SetFont (const char *s1, const char *s2
+      PALETTE pal;
+      DelFont();
+      char *names[] = {(char*) s1,(char*) s2};
+-     MyFont = load_dat_font("./data/fonts.dat", pal, names);
++     MyFont = load_dat_font(CAPITAN_DATA_DIR "./data/fonts.dat", pal, names);
+      set_palette (pal);
+      font = MyFont;
+ }
+@@ -769,8 +771,8 @@ void Hardware::Dibuja (const char* File, const char* O
+ {
+      LogWrite ("Cargando %s en %s...", Obj, File);
+      DATAFILE *Objeto;
+-     char Fichero[255];
+-     sprintf (Fichero, "./data/%s.dat", File);
++     char Fichero[PATH_MAX];
++     snprintf (Fichero, PATH_MAX, CAPITAN_DATA_DIR "./data/%s.dat", File);
+      Objeto = load_datafile_object (Fichero, Obj);
+      if (Objeto) {
+         Dibuja (x, y, (void*)Objeto->dat, BitMap);
+@@ -783,8 +785,8 @@ void Hardware::Dibuja2x (const char* File, const char*
+ {
+      LogWrite ("Cargando %s en %s...", Obj, File);
+      DATAFILE *Objeto;
+-     char Fichero[255];
+-     sprintf (Fichero, "./data/%s.dat", File);
++     char Fichero[PATH_MAX];
++     snprintf (Fichero, PATH_MAX, CAPITAN_DATA_DIR "./data/%s.dat", File);
+      Objeto = load_datafile_object (Fichero, Obj);
+      if (Objeto) {
+         Dibuja2x (x, y, (void*)Objeto->dat);
+@@ -797,8 +799,8 @@ void Hardware::DibujaCentr (const char* File, const ch
+ {
+      LogWrite ("Cargando %s en %s...", Obj, File);
+      DATAFILE *Objeto;
+-     char Fichero[255];
+-     sprintf (Fichero, "./data/%s.dat", File);
++     char Fichero[PATH_MAX];
++     snprintf (Fichero, PATH_MAX, CAPITAN_DATA_DIR "./data/%s.dat", File);
+      Objeto = load_datafile_object (Fichero, Obj);
+      if (Objeto) {
+         DibujaCentr ((void*)Objeto->dat,x,y);
+@@ -811,8 +813,8 @@ void Hardware::Dibuja_Outline (const char *File, const
+ {
+      LogWrite ("Cargando %s en %s...", Obj, File);
+      DATAFILE *Objeto;
+-     char Fichero[255];
+-     sprintf (Fichero, "./data/%s.dat", File);
++     char Fichero[PATH_MAX];
++     snprintf (Fichero, PATH_MAX, CAPITAN_DATA_DIR "./data/%s.dat", File);
+      Objeto = load_datafile_object (Fichero, Obj);
+      if (Objeto) {
+         DibujaNegro (x - w, y, (void*)Objeto->dat);
+@@ -864,8 +866,8 @@ void Hardware::DibujaHalo (int x, int y, void *Spr, in
+ void Hardware::Dibuja_Trans  (int x, int y, int Trans, const char *File, const char *Obj, bool Force)
+ {
+      DATAFILE *Objeto;
+-     char Fichero[255];
+-     sprintf (Fichero, "./data/%s.dat", File);
++     char Fichero[PATH_MAX];
++     snprintf (Fichero, PATH_MAX, CAPITAN_DATA_DIR "./data/%s.dat", File);
+      Objeto = load_datafile_object (Fichero, Obj);
+      if (Objeto) {
+         Dibuja_Trans (x, y, (void*)Objeto->dat, Trans, Force);
+@@ -903,8 +905,8 @@ void Hardware::Dibuja_Trans (int x, int y, void* Spr, 
+ void Hardware::Dibuja_TransAdd (int x, int y, int Trans, const char *File, const char *Obj, bool Force)
+ {
+      DATAFILE *Objeto;
+-     char Fichero[255];
+-     sprintf (Fichero, "./data/%s.dat", File);
++     char Fichero[PATH_MAX];
++     snprintf (Fichero, PATH_MAX, CAPITAN_DATA_DIR "./data/%s.dat", File);
+      Objeto = load_datafile_object (Fichero, Obj);
+      if (Objeto) {
+         Dibuja_TransAdd (x, y, (void*)Objeto->dat, Trans, Force);
+@@ -1704,7 +1706,7 @@ int Hardware::ScreenShot ()
+ 
+ int Hardware::MapLoadInit()
+ {
+-    MapaDat = load_datafile("./data/map.dat");
++    MapaDat = load_datafile(CAPITAN_DATA_DIR "./data/map.dat");
+     if (!MapaDat) {
+        allegro_message ("                   ERROR DE E/S\n\n No se encuentra el archivo MAP.DAT");
+        set_gfx_mode(GFX_TEXT,0,0,0,0);

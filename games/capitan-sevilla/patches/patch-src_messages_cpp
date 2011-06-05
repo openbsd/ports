@@ -1,0 +1,29 @@
+$OpenBSD: patch-src_messages_cpp,v 1.1.1.1 2011/06/05 11:13:47 stsp Exp $
+--- src/messages.cpp.orig	Sat Jun  4 21:59:53 2011
++++ src/messages.cpp	Sat Jun  4 22:01:16 2011
+@@ -1,5 +1,7 @@
+ #include "messages.h"
+ 
++#include <limits.h>
++
+ Messages::Messages()
+ {
+     LogWrite ("Creado Gestor de mensajes.\n");
+@@ -13,7 +15,7 @@ Messages::~Messages()
+ 
+ int Messages::Init (int Lang)
+ {
+-    char FileName[20];
++    char FileName[PATH_MAX];
+     ifstream Source;
+     int Ret = 0, Cont = 0;
+     string Buffer;
+@@ -21,7 +23,7 @@ int Messages::Init (int Lang)
+     if (!MaxMens)
+ 	   return 0;
+ 
+-    sprintf (FileName, "./lang/lang%i.txt", Lang);
++    snprintf (FileName, PATH_MAX, CAPITAN_DATA_DIR "./lang/lang%i.txt", Lang);
+     LogWrite ("Intentando cargar mensajes de %s...", FileName);
+     Source.open (FileName);
+     if (Source.fail()) {

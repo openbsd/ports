@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/05 11:13:47 stsp Exp $
+@bin bin/capitan
+share/applications/
+share/applications/capitan.desktop
+share/capitan-sevilla/
+share/capitan-sevilla/data/
+share/capitan-sevilla/data/bitmaps0.dat
+share/capitan-sevilla/data/bitmaps1.dat
+share/capitan-sevilla/data/capitan.at1
+share/capitan-sevilla/data/capitan.at2
+share/capitan-sevilla/data/fonts.dat
+share/capitan-sevilla/data/loading.dat
+share/capitan-sevilla/data/map.dat
+share/capitan-sevilla/data/music.dat
+share/capitan-sevilla/data/screens.dat
+share/capitan-sevilla/data/sfx.dat
+share/capitan-sevilla/data/sprites.dat
+share/capitan-sevilla/lang/
+share/capitan-sevilla/lang/lang0.txt
+share/capitan-sevilla/lang/lang1.txt
+share/doc/capitan-sevilla/
+share/doc/capitan-sevilla/instructions.pdf
+share/pixmaps/
+share/pixmaps/capitan.png

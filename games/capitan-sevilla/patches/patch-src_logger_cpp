@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_logger_cpp,v 1.1.1.1 2011/06/05 11:13:47 stsp Exp $
+--- src/logger.cpp.orig	Fri Apr 10 12:57:23 2009
++++ src/logger.cpp	Sun Jun  5 00:10:03 2011
+@@ -1,6 +1,8 @@
+ #include "logger.h"
+ #include "filehandling.h"
+ 
++#include <limits.h>
++
+ int LogInit ()
+ {
+     char fname[512];
+@@ -37,12 +39,12 @@ int LogEnd ()
+ 
+ int GameLogInit (int AMode, int &Fase)
+ {
+-    char Titulo[128];
++    char Titulo[PATH_MAX];
+     int Ret;
+     if (AMode == 1)
+-        sprintf (Titulo, "./data/capitan.at%i", Fase);
++        snprintf (Titulo, PATH_MAX, CAPITAN_DATA_DIR "./data/capitan.at%i", Fase);
+       else
+-        sprintf (Titulo, "./data/capitan.at%i", (int) (rand() % 2) + 1);
++        snprintf (Titulo, PATH_MAX, CAPITAN_DATA_DIR "./data/capitan.at%i", (int) (rand() % 2) + 1);
+     LogWrite ("Abriendo fichero %s... ", Titulo);
+ 
+     if (AMode == 1) {

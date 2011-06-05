@@ -1,0 +1,74 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2011/06/05 11:13:47 stsp Exp $
+
+COMMENT =		platform game set in seville and in space
+VERSION = 		1.0.3
+DISTNAME =		capitan-sevilla-${VERSION}
+CATEGORIES =		games
+HOMEPAGE =		http://computeremuzone.com/ficha.php?id=754&l=en
+
+# GPLv3
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
+
+WANTLIB = 	alleg c freetype m ogg png pthread stdc++ vorbis vorbisfile z
+
+MASTER_SITES =		http://computeremuzone.com/cezgs/remakes/
+EXTRACT_SUFX = 		.tar.bz2
+# XXX upstream distfile has no version number
+DISTFILES = 		Capitan${EXTRACT_SUFX}
+
+LIB_DEPENDS =		games/allegro \
+			graphics/png \
+			audio/libvorbis \
+			audio/libogg
+
+LDFLAGS =		-L${LOCALBASE}/lib -L${X11BASE}/lib \
+			-lvorbis -lvorbisfile -logg -lfreetype \
+			-Llib -lalogg `allegro-config --libs` -lalfont \
+			-lpng -lz
+MAKE_FLAGS =		LDFLAGS="$(LDFLAGS)" DESTDIR="$(DESTDIR)"
+
+USE_GMAKE =		Yes
+NO_REGRESS =		Yes
+
+CFLAGS =		-O2 -pipe -pthread \
+			-I${LOCALBASE}/include/libpng \
+			-I${X11BASE}/include \
+			-I${X11BASE}/include/freetype2 \
+			-I./include \
+			-I./src/include \
+			-I./dependencies/alogg/include \
+			-I./dependencies/alfont/include \
+			`allegro-config --cflags` \
+			-DCAPITAN_DATA_DIR="\"${LOCALBASE}/share/capitan-sevilla/\""
+WRKDIST =		${WRKDIR}/capitan-${VERSION}
+
+ALL_TARGET =		deps all
+	
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/capitan ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/capitan-sevilla/data
+.for _f in bitmaps0.dat bitmaps1.dat capitan.at1 capitan.at2 fonts.dat \
+	loading.dat map.dat music.dat screens.dat sfx.dat sprites.dat
+	${INSTALL_DATA} ${WRKSRC}/data/${_f} \
+		${PREFIX}/share/capitan-sevilla/data
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/capitan-sevilla/lang
+	${INSTALL_DATA} ${WRKSRC}/lang/lang0.txt \
+		${PREFIX}/share/capitan-sevilla/lang
+	${INSTALL_DATA} ${WRKSRC}/lang/lang1.txt \
+		${PREFIX}/share/capitan-sevilla/lang
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/capitan-sevilla
+	${INSTALL_DATA} ${WRKSRC}/extra/instructions.pdf \
+		${PREFIX}/share/doc/capitan-sevilla
+	${INSTALL_DATA} ${WRKSRC}/extra/instructions.pdf \
+		${PREFIX}/share/doc/capitan-sevilla
+	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/extra/capitan.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/extra/capitan.desktop \
+		${PREFIX}/share/applications
+
+.include <bsd.port.mk>
