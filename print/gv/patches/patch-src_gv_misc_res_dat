@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_gv_misc_res_dat,v 1.1 2011/06/05 15:03:09 jasper Exp $
+
+Fix Unknown keysym name: apLineDel.
+From FreeBSD ports/50074.
+
+--- src/gv_misc_res.dat.orig	Sun Jun  5 16:58:53 2011
++++ src/gv_misc_res.dat	Sun Jun  5 16:59:02 2011
+@@ -476,7 +476,6 @@ GV.control.baseTranslations:#replace		\n\
+  <Key>BackSpace:	GV_Page(up,left-bottom,!page-1,bottom-rightedge)\n\
+  <Key>Insert:		GV_Page(page-5)		\n\
+  <Key>Delete:		GV_Page(page+5)		\n\
+- <Key>apLineDel:	GV_Page(page+5)		\n\
+  <Key>Home:		GV_Page(page=0)		\n\
+  <Key>End:		GV_Page(page=99999)	\n\
+  <Key>Prior:		GV_Page(page-1)		\n\
