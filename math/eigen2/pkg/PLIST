@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/07/12 04:51:37 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/05 14:28:53 jasper Exp $
 include/eigen2/
 include/eigen2/Eigen/
 include/eigen2/Eigen/Array
@@ -143,5 +143,5 @@ include/eigen2/unsupported/Eigen/src/
 include/eigen2/unsupported/Eigen/src/IterativeSolvers/
 include/eigen2/unsupported/Eigen/src/IterativeSolvers/ConstrainedConjGrad.h
 include/eigen2/unsupported/Eigen/src/IterativeSolvers/IterationController.h
-share/pkgconfig/
-share/pkgconfig/eigen2.pc
+lib/pkgconfig/
+lib/pkgconfig/eigen2.pc
