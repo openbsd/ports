@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2011/06/04 11:17:08 robert Exp $
+# $OpenBSD: Makefile,v 1.61 2011/06/05 15:16:48 robert Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
@@ -39,8 +39,6 @@ USE_GMAKE=	Yes
 USE_GROFF =	Yes
 
 SUBST_VARS=	LIBTOOL
-
-MAKE_FLAGS=	EXTERNAL_MCS=false
 
 BUILD_DEPENDS=	devel/bison \
 		${RUN_DEPENDS}
@@ -92,5 +90,10 @@ pre-configure:
 	for i in ${BASH_SCRIPTS}; do \
 		perl -pi -e 's,/bin/bash,/bin/sh,' ${WRKSRC}/$${i}; \
 	done
+
+# Force using the internal mcs compiler
+pre-build:
+	@mkdir ${WRKSRC}/mcs/build/deps
+	@touch ${WRKSRC}/mcs/build/deps/use-monolite
 
 .include <bsd.port.mk>
