@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/05 11:13:47 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/05 14:24:53 ajacoutot Exp $
 
 COMMENT =		platform game set in seville and in space
 VERSION = 		1.0.3
 DISTNAME =		capitan-sevilla-${VERSION}
 CATEGORIES =		games
 HOMEPAGE =		http://computeremuzone.com/ficha.php?id=754&l=en
+
+REVISION =		0
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -19,10 +21,10 @@ EXTRACT_SUFX = 		.tar.bz2
 # XXX upstream distfile has no version number
 DISTFILES = 		Capitan${EXTRACT_SUFX}
 
+RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		games/allegro \
 			graphics/png \
-			audio/libvorbis \
-			audio/libogg
+			audio/libvorbis
 
 LDFLAGS =		-L${LOCALBASE}/lib -L${X11BASE}/lib \
 			-lvorbis -lvorbisfile -logg -lfreetype \

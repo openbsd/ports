@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/05 11:13:47 stsp Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/05 14:24:53 ajacoutot Exp $
 @bin bin/capitan
-share/applications/
 share/applications/capitan.desktop
 share/capitan-sevilla/
 share/capitan-sevilla/data/
@@ -22,3 +21,5 @@ share/doc/capitan-sevilla/
 share/doc/capitan-sevilla/instructions.pdf
 share/pixmaps/
 share/pixmaps/capitan.png
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
