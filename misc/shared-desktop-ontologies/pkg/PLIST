@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/19 19:32:27 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/05 14:37:16 jasper Exp $
+lib/pkgconfig/
+lib/pkgconfig/shared-desktop-ontologies.pc
 share/cmake/
 share/cmake/SharedDesktopOntologies/
 share/cmake/SharedDesktopOntologies/SharedDesktopOntologiesConfig.cmake
@@ -49,5 +51,3 @@ share/ontology/pimo/pimo.ontology
 share/ontology/pimo/pimo.trig
 share/ontology/pimo/tmo.ontology
 share/ontology/pimo/tmo.trig
-share/pkgconfig/
-share/pkgconfig/shared-desktop-ontologies.pc

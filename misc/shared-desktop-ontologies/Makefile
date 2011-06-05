@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/09/14 07:53:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/05 14:37:16 jasper Exp $
 
 COMMENT = 		shared desktop ontologies
 PKG_ARCH =		*
 
 DISTNAME = 		shared-desktop-ontologies-0.5
-REVISION =		0
+REVISION =		1
 EXTRACT_SUFX =		.tar.bz2
 
 HOMEPAGE =		http://sourceforge.net/apps/trac/oscaf/
@@ -22,5 +22,8 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		devel/cmake
 
+CONFIGURE_ARGS +=	-DPKGCONFIG_INSTALL_DIR:STRING="lib/pkgconfig/"
+
 NO_REGRESS =		Yes
+
 .include <bsd.port.mk>
