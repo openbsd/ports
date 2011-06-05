@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.225 2011/05/31 17:52:43 kili Exp $
+# $OpenBSD: Makefile,v 1.226 2011/06/05 11:15:20 stsp Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -25,6 +25,7 @@
      SUBDIR += boswars
      SUBDIR += burgerspace
      SUBDIR += bzflag
+     SUBDIR += capitan-sevilla
      SUBDIR += castle-combat
      SUBDIR += cgoban
      SUBDIR += childsplay
