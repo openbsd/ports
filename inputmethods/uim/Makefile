@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/05/04 07:32:11 landry Exp $
+# $OpenBSD: Makefile,v 1.34 2011/06/06 15:10:40 jasper Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -23,7 +23,7 @@ REVISION-main=	4
 REVISION-gtk=	7
 REVISION-qt=	3
 REVISION-kde=	3
-REVISION-gnome=	8
+REVISION-gnome=	9
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -107,7 +107,7 @@ LIB_DEPENDS-gnome =	inputmethods/uim \
 WANTLIB-gnome=	${Wgtk} ICE SM crypto gthread-2.0 pthread ssl \
 		ORBit-2 ORBitCosNaming-2 art_lgpl_2 bonobo-2 \
 		bonobo-activation gconf-2 gnome-2 gnomecanvas-2 \
-		popt xml2 bonoboui-2 gnome-keyring gnomeui-2 gnomevfs-2 \
+		popt xml2 bonoboui-2 gnome-keyring gnomevfs-2 \
 		dbus-1 dbus-glib-1 gailutil util panel-applet-2 \
 		canberra gcrypt gpg-error ltdl ogg vorbis vorbisfile
 

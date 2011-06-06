@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2010/11/20 17:22:40 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2011/06/06 15:10:40 jasper Exp $
 
 COMMENT=		GNOME panel applet that displays CPU and memory load
 
 DISTNAME=		bubblemon-2.0.15
-REVISION=		0
+REVISION=		1
 CATEGORIES=		sysutils x11/gnome
 
 HOMEPAGE=		http://www.nongnu.org/bubblemon/
@@ -19,15 +19,16 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		devel/gettext \
 			textproc/intltool
 
-WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0
-WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c cairo dbus-1
-WANTLIB += expat fontconfig freetype gailutil gconf-2 gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-2
-WANTLIB += gnomecanvas-2 gnome-keyring gnomeui-2 gnomevfs-2 gobject-2.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png popt pthread pthread-stubs
-WANTLIB += xcb xml2 z panel-applet-2 gtop-2.0>=3
+WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation bonoboui-2
+WANTLIB += c cairo canberra drm expat fontconfig freetype gailutil
+WANTLIB += gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2
+WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 gtop-2.0 m panel-applet-2
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
+WANTLIB += popt pthread pthread-stubs xcb xcb-render xcb-shm xml2
+WANTLIB += z
 
 LIB_DEPENDS=		x11/gnome/panel \
 			devel/libgtop2
