@@ -1,21 +1,12 @@
-$OpenBSD: patch-configure,v 1.17 2010/05/19 15:27:18 giovanni Exp $
---- configure.orig	Thu May  6 09:56:07 2010
-+++ configure	Fri May 14 15:12:54 2010
-@@ -8444,7 +8444,7 @@ $as_echo "$ac_try_echo") >&5
- 	 test "$cross_compiling" = yes ||
- 	 $as_test_x conftest$ac_exeext
-        }; then
--  LIBINTL="$LIBINTL $LIBICONV"
-+  LIBINTL="$LTLIBINTL $LTLIBICONV"
-                 LTLIBINTL="$LTLIBINTL $LTLIBICONV"
-                 gt_cv_func_gnugettext2_libintl=yes
- 
-@@ -12718,7 +12718,7 @@ cat >>confdefs.h <<\_ACEOF
- _ACEOF
+$OpenBSD: patch-configure,v 1.18 2011/06/06 13:57:07 sthen Exp $
+--- configure.orig	Mon Jun  6 12:22:44 2011
++++ configure	Mon Jun  6 14:18:30 2011
+@@ -9300,7 +9300,7 @@ $as_echo "#define HEIMDAL 1" >>confdefs.h
+ $as_echo "#define KERBEROS_V5 1" >>confdefs.h
  
    CFLAGS="$CFLAGS -I/usr/include/kerberosV"
 -  LIBS="$LIBS -lasn1 -lkrb5 -lcom_err -lkafs"
 +  LIBS="$LIBS -lkrb5"
  elif krb5-config 2> /dev/null >/dev/null ; then
    krb5_prefix=`krb5-config --prefix krb5`
-   { $as_echo "$as_me:$LINENO: result: krb5-config points to kerberosV under $krb5_prefix" >&5
+   { $as_echo "$as_me:${as_lineno-$LINENO}: result: krb5-config points to kerberosV under $krb5_prefix" >&5
