@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/05/30 13:47:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/06 22:08:42 kili Exp $
 
 COMMENT =		font rendering library for OpenGL applications
 
 V =			2.1.3
 DISTNAME =		ftgl-$V-rc5
-REVISION =		2
+PKGNAME =		ftgl-$Vrc5
+EPOCH =			0
 SHARED_LIBS =		ftgl	0.0	# 2.1
 CATEGORIES =		graphics
 
