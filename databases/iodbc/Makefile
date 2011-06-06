@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2011/06/06 07:59:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/06/06 08:10:46 ajacoutot Exp $
 
 COMMENT-main=		ODBC 3.x driver manager
 COMMENT-admin=		ODBC 3.x driver manager admin application
 
 V=			3.52.6
-REVISION-main=		1
+REVISION-main=		2
 REVISION-admin=		2
 
 DISTNAME=		libiodbc-$V
