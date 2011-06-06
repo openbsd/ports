@@ -1,13 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.5 2004/09/15 18:17:41 espie Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/06/06 08:34:57 sthen Exp $
+@extraunexec rm -rf /var/ipcad/*
 @man man/man5/ipcad.conf.5
 @man man/man8/ipcad.8
-sbin/ipcad
+@bin sbin/ipcad
 share/doc/ipcad/
 share/doc/ipcad/AUTHORS
 share/doc/ipcad/BUGS
 share/doc/ipcad/COPYING
 share/doc/ipcad/README
 share/examples/ipcad/
-share/examples/ipcad/ipcad.conf.sample
+share/examples/ipcad/ipcad.conf.default
 @sample ${SYSCONFDIR}/ipcad.conf
-@extraunexec rm -rf /var/ipcad
+@sample /var/ipcad/
+@rcscript ${RCDIR}/ipcad

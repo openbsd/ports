@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/06/06 08:34:57 sthen Exp $
 # $RuOBSD: Makefile,v 1.1.1.1 2002/04/08 02:46:36 form Exp $
 
 COMMENT=		IP accounting daemon simulating Cisco ip accounting
 
-DISTNAME=		ipcad-3.4.4
-REVISION=		0
+DISTNAME=		ipcad-3.7.3
 CATEGORIES=		net
 HOMEPAGE=		http://sourceforge.net/projects/ipcad/
 
@@ -29,8 +28,8 @@ do-install:
 	perl -pi -e 's:%%SYSCONFDIR%%:${SYSCONFDIR}:' \
 		${PREFIX}/man/man5/ipcad.conf.5
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/ipcad
-	${INSTALL_DATA} ${WRKDIST}/ipcad.conf \
-		${PREFIX}/share/examples/ipcad/ipcad.conf.sample
+	${INSTALL_DATA} ${WRKDIST}/ipcad.conf.default \
+		${PREFIX}/share/examples/ipcad/ipcad.conf.default
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ipcad
 .for f in AUTHORS BUGS COPYING README
 	${INSTALL_DATA} ${WRKDIST}/${f} ${PREFIX}/share/doc/ipcad

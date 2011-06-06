@@ -1,0 +1,28 @@
+$OpenBSD: patch-ipcad_conf_default,v 1.1 2011/06/06 08:34:57 sthen Exp $
+--- ipcad.conf.default.orig	Sun Apr 17 13:18:07 2011
++++ ipcad.conf.default	Sun Apr 17 13:20:21 2011
+@@ -191,11 +191,11 @@ rsh enable at 127.0.0.1;
+ #
+
+ rsh root@127.0.0.1 admin;	/* Can shutdown ipcad */
+-rsh staff@127.0.0.1 backup;	/* Can dump/restore/import accounting table */
+-rsh yourself@127.0.0.1;		/* Can view and modify accounting tables */
++#rsh staff@127.0.0.1 backup;	/* Can dump/restore/import accounting table */
++#rsh yourself@127.0.0.1;		/* Can view and modify accounting tables */
+ /* Note the order! */
+-rsh luser@127.0.0.1 deny;	/* Deny this user from even viewing tables */
+-rsh 127.0.0.1 view-only;	/* Other users can view current tables */
++#rsh luser@127.0.0.1 deny;	/* Deny this user from even viewing tables */
++#rsh 127.0.0.1 view-only;	/* Other users can view current tables */
+
+ # Keep IP packet time to live reasonably low to avoid remote attacks.
+ # (The rsh client must reside no more than three hops away from the
+@@ -226,7 +226,7 @@ dumpfile = ipcad.dump;	# The file is inside chroot(),
+ # to encourage you to change it.
+ #
+
+-chroot = /adm/tmp;
++chroot = /var/ipcad;
+
+ #
+ # File to keep getpid() in it. ipcad will also hold a lock.
