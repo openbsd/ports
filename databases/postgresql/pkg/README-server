@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.6 2011/06/02 13:41:38 ajacoutot Exp $
+$OpenBSD: README-server,v 1.7 2011/06/06 08:43:59 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -36,8 +36,8 @@ Please consult the PostgreSQL website for more information, especially when
 you are upgrading an existing database installation.
 
 
-Network Connections and Tuning
-
+Network Connections
+===================
 To allow connections over TCP (and other options) edit the file:
 
 	/var/postgresql/data/postgresql.conf
@@ -45,6 +45,25 @@ To allow connections over TCP (and other options) edit the file:
 and also edit the pg_hba.conf (in the same directory) making the
 appropriate changes to allow connection from your network.
 
+To allow SSL connections, edit postgresql.conf and enable the
+'ssl' keyword, and create keys and certificates:
+
+       # su - _postgresql
+       $ cd /var/postgresql/data
+       $ umask 077
+       $ openssl genrsa -out server.key 2048
+       $ openssl req -new -key server.key -out server.csr
+
+Either take the CSR to a Certifying Authority (CA) to sign your
+certificate, or self-sign it:
+
+       $ openssl x509 -req -days 365 -in server.csr \
+         -signkey server.key -out server.crt
+
+Restart PostgreSQL to allow these changes to take effect.
+
+Tuning for busy servers
+=======================
 The default sizes in the GENERIC kernel for SysV semaphores
 are not really large enough for a database with more than a
 handful of connections. A server running such a database should
@@ -79,14 +98,14 @@ For example, add this to the login.conf(5) file:
 
 Rebuild the login.conf.db file if necessary:
 
-	# cap_mkdb /etc/login.conf
+	# [ -f /etc/login/conf.db ] && cap_mkdb /etc/login.conf
 
 For more than about 250 connections, these numbers should be
 increased. Please report any changes and experiences to the package
 maintainers so that we can update this file for future versions.
 
 Kerberos authentication
-
+=======================
 By default the postgresql server requires it's own krb5.keytab file.  It
 should be readable only by the _postgresql user.  The default location of
 the file is '/etc/postgresql/krb5.keytab' but is tunable by setting the
@@ -97,7 +116,6 @@ To generate the keytab:
 	# mkdir /etc/postgresql
 	# ktutil -k /etc/postgresql/krb5.keytab get postgres/server.domain
 	# chown _postgresql:_postgresql /etc/postgresql/krb5.keytab
-
 
 Upgrade Howto (for a major upgrade)
 ===================================
