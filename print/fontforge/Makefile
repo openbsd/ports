@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2010/12/21 18:41:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2011/06/06 18:46:49 rpointel Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		vector font editor/converter
 
 DISTNAME=		fontforge_full-20100501
 PKGNAME=		${DISTNAME:S,_full,,}
-REVISION =		4
+REVISION =		5
 EXTRACT_SUFX=		.tar.bz2
 SHARED_LIBS=		fontforge	3.0 \
 			gdraw		5.0 \
@@ -33,8 +33,8 @@ WANTLIB +=		ICE SM X11 Xau Xdmcp Xext Xft Xi Xrender c cairo \
 			gmodule-2.0 gobject-2.0 gthread-2.0 jpeg m pcre \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 \
 			pixman-1 png pthread pthread-stubs tiff util xcb \
-			xcb-render xcb-render-util xkbfile xkbui xml2 z
-WANTLIB += ${MODPY_WANTLIB}
+			xcb-render xkbfile xkbui xml2 z GL Xdamage \
+			Xfixes Xxf86vm drm xcb-shm ${MODPY_WANTLIB}
  
 MODULES=		devel/gettext lang/python
 
