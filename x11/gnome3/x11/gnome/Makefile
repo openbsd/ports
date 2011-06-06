@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/06/01 15:09:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/06/06 16:06:27 jasper Exp $
 
      SUBDIR =
      SUBDIR += backgrounds
@@ -8,7 +8,7 @@
      SUBDIR += eog-plugins
      SUBDIR += gdl
      SUBDIR += gedit
-#     SUBDIR += gedit-plugins
+     SUBDIR += gedit-plugins
      SUBDIR += icon-theme
      SUBDIR += icon-theme-extras
      SUBDIR += icon-theme-symbolic
