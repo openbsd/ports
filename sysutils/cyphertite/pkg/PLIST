@@ -1,0 +1,14 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/06 21:12:28 dhill Exp $
+@bin bin/ct
+@bin bin/cyphertite
+include/ct_socket.h
+include/ctutil.h
+lib/libctutil.a
+lib/libctutil_p.a
+@man man/cat5/cyphertite.conf.0
+@man man/cat8/ct.0
+@man man/cat8/cyphertite.0
+share/examples/cyphertite/
+@sample ${SYSCONFDIR}/cyphertite/
+share/examples/cyphertite/cyphertite.conf.sample
+@sample ${SYSCONFDIR}/cyphertite/cyphertite.conf
