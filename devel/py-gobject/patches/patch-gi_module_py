@@ -1,0 +1,18 @@
+$OpenBSD: patch-gi_module_py,v 1.1 2011/06/06 16:05:59 jasper Exp $
+
+Fix TypeError: unable to create a wrapper for GLib.Variant
+https://bugzilla.gnome.org/show_bug.cgi?id=647509
+
+--- gi/module.py.orig	Mon Apr 18 17:35:33 2011
++++ gi/module.py	Mon Jun  6 17:43:29 2011
+@@ -150,7 +150,9 @@ class IntrospectionModule(object):
+             elif isinstance(info, (StructInfo, UnionInfo)):
+                 if g_type.is_a(gobject.TYPE_BOXED):
+                     bases = (Boxed,)
+-                elif g_type.is_a(gobject.TYPE_POINTER) or g_type == gobject.TYPE_NONE:
++                elif g_type.is_a(gobject.TYPE_POINTER) or \
++                     g_type == gobject.TYPE_NONE or \
++                     g_type.fundamental == g_type:
+                     bases = (Struct,)
+                 else:
+                     raise TypeError("unable to create a wrapper for %s.%s" % (info.get_namespace(), info.get_name()))
