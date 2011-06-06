@@ -1,0 +1,12 @@
+$OpenBSD: patch-iodbcinst_unicode_c,v 1.1 2011/06/06 10:55:17 naddy Exp $
+--- iodbcinst/unicode.c.orig	Sun Jun  5 23:35:43 2011
++++ iodbcinst/unicode.c	Sun Jun  5 23:36:27 2011
+@@ -230,7 +230,7 @@ towlower (wchar_t wc)
+ 
+ 
+ #if !defined(HAVE_WCSNCASECMP)
+-int wcsncasecmp (wchar_t* s1, wchar_t* s2, size_t n)
++int wcsncasecmp (const wchar_t* s1, const wchar_t* s2, size_t n)
+ {
+   wchar_t c1, c2;
+   
