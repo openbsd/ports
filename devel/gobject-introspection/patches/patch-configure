@@ -1,0 +1,36 @@
+$OpenBSD: patch-configure,v 1.1 2011/06/06 18:15:53 ajacoutot Exp $
+--- configure.orig	Mon Jun  6 20:09:02 2011
++++ configure	Mon Jun  6 20:11:20 2011
+@@ -12663,10 +12663,30 @@ fi
+ fi
+ 
+ if test x$have_cairo_gobject = xyes; then
+-  CAIRO_SHARED_LIBRARY="libcairo-gobject.so.2"
++  case "$host" in
++    *-*-darwin*)
++      CAIRO_SHARED_LIBRARY="libcairo-gobject.2.dylib"
++      ;;
++    *-*-openbsd*)
++      CAIRO_SHARED_LIBRARY="libcairo-gobject.so"
++      ;;
++    *)
++      CAIRO_SHARED_LIBRARY="libcairo-gobject.so.2"
++      ;;
++esac
+   CAIRO_GIR_PACKAGE="cairo-gobject"
+ elif test x$have_cairo = xyes; then
+-  CAIRO_SHARED_LIBRARY="libcairo.so.2"
++  case "$host" in
++    *-*-darwin*)
++      CAIRO_SHARED_LIBRARY="libcairo.2.dylib"
++      ;;
++    *-*-openbsd*)
++      CAIRO_SHARED_LIBRARY="libcairo.2.so"
++      ;;
++    *)
++      CAIRO_SHARED_LIBRARY="libcairo.so.2"
++      ;;
++  esac
+   CAIRO_GIR_PACKAGE="cairo"
+ fi
+ 
