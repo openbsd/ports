@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/19 22:31:39 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/06/06 13:02:45 sthen Exp $
 
 COMMENT-main=	eXtensible Open Router Platform
 
@@ -27,23 +27,24 @@ PREFIX-main=	${LOCALBASE}
 
 WANTLIB=	c crypto curses m pcap stdc++
 
-# No BUILD_DEPENDS:
-# Python only used to rebuild already included file with no changes.
-
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
+
+MODULES=	lang/python
+MODPY_BUILDDEP=	no
+MODPY_RUNDEP=	no
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-optimize --disable-debug
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config ${WRKSRC}/cli/libtecla
 
 REGRESS_DEPENDS=	shells/bash \
-			lang/python/2.5
+			${MODPY_RUN_DEPENDS}
 
 # some regression tests must be run as root
 do-regress:
-	@ln -s ${LOCALBASE}/bin/python2.5 ${WRKDIR}/bin/python
+	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 	@cd ${WRKBUILD}; ${SUDO} ${SETENV} ${MAKE_ENV} \
 		${MAKE_PROGRAM} ${ALL_REGRESS_FLAGS} ${REGRESS_TARGET}
 
