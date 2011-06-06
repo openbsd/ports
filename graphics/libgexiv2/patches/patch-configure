@@ -1,9 +1,40 @@
-$OpenBSD: patch-configure,v 1.1.1.1 2010/10/24 22:29:50 landry Exp $
---- configure.orig	Thu Jul  1 22:15:58 2010
-+++ configure	Thu Jul  1 22:16:02 2010
+$OpenBSD: patch-configure,v 1.2 2011/06/06 14:07:40 naddy Exp $
+--- configure.orig	Thu Dec 23 22:20:13 2010
++++ configure	Mon Jun  6 15:55:38 2011
 @@ -1,4 +1,4 @@
 -#! /bin/bash
 +#!/bin/sh
  #
  # Copyright 2010 Yorba Foundation
  #
+@@ -30,7 +30,8 @@ abort() {
+ while [ $# != 0 ]
+ do
+     option=`echo $1 | sed 's/=.*//'`
+-    if [ `echo $1 | grep '='` ]
++    value=
++    if [ "`echo $1 | grep '='`" ]
+     then
+         value=`echo $1 | sed 's/.*=//'`
+     fi
+@@ -65,7 +66,7 @@ do
+         --release)          variables="${variables}BUILD_DEBUG=\nBUILD_RELEASE=1\n"
+                             ;;
+         
+-        *)                  if [ ! $value ]
++        *)                  if [ ! "$value" ]
+                             then
+                                 abort $1
+                             fi
+@@ -78,9 +79,9 @@ do
+ done
+ 
+ rm -f $CONFIG_IN
+-if [ $variables ]
++if [ "$variables" ]
+ then
+-    echo -e -n $variables > $CONFIG_IN
++    echo -e -n "$variables" > $CONFIG_IN
+ fi
+ echo "CONFIG_IN=${CONFIG_IN}" >> $CONFIG_IN
+ 

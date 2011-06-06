@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/01/17 09:59:02 landry Exp $
+# $OpenBSD: Makefile,v 1.4 2011/06/06 14:07:40 naddy Exp $
 
 COMMENT=	GObject wrapper around exiv2
 CATEGORIES=	graphics
@@ -17,7 +17,11 @@ MASTER_SITES=	http://yorba.org/download/gexiv2/0.2/
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=simple
+CONFIGURE_ARGS=	--prefix='${PREFIX}' \
+		CXX='${CXX}' \
+		INSTALL_PROGRAM='${INSTALL_PROGRAM}' \
+		INSTALL_DATA='${INSTALL_DATA}'
 
 MODULES=	devel/gettext
 
