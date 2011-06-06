@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2011/05/11 12:57:47 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2011/06/06 15:01:52 giovanni Exp $
 @conflict imap-uw-*
 @conflict courier-utils-*
 @pkgpath ${BASE_PKGPATH}
@@ -60,5 +60,8 @@ share/examples/courier/quotawarnmsg.example
 @sample ${SYSCONFDIR}/shared.tmp/
 @mode 750
 @sample ${COURIERSTATE}/
+@owner
+@group
+@mode
 @rcscript ${RCDIR}/courier_imap
 @rcscript ${RCDIR}/courier_imap-ssl
