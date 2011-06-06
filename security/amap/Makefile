@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/12/06 12:08:55 stephan Exp $
+# $OpenBSD: Makefile,v 1.16 2011/06/06 15:00:36 naddy Exp $
 
 COMMENT=	application protocol detection tool
 
@@ -23,7 +23,8 @@ WANTLIB=	c crypto ssl pcre
 
 LIB_DEPENDS=	devel/pcre
 
-CONFIGURE_STYLE=	gnu dest
+CONFIGURE_STYLE=simple
+CONFIGURE_ARGS=	--prefix='$${${DESTDIRNAME}}${PREFIX}'
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
