@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2011/05/27 10:10:19 eric Exp $
+# $OpenBSD: Makefile,v 1.13 2011/06/07 07:33:24 rpointel Exp $
 
 COMMENT=		maths, science and engineering modules for Python
 
 MODPY_EGG_VERSION=	0.9.0
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 CATEGORIES=		math devel
 
 MAINTAINER=		Eric Faurot <eric@openbsd.org>
@@ -15,7 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += amd arpack blas stdc++ lapack m umfpack ${MODFORTRAN_WANTLIB}
+WANTLIB += amd arpack blas stdc++ lapack m umfpack util
+WANTLIB += ${MODPY_WANTLIB} ${MODFORTRAN_WANTLIB}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=scipy/}
 HOMEPAGE=		http://numeric.scipy.org/
@@ -37,12 +39,11 @@ RUN_DEPENDS=		math/py-numpy>=1.6.0 \
 
 REGRESS_DEPENDS=	devel/py-nose
 
-MAKE_ENV+=		LDSHARED="${CC} -shared -fPIC"
 MAKE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include/amd -I${LOCALBASE}/include"
+MAKE_ENV+=		LDFLAGS="-shared -L${LOCALBASE}/lib -pthread -lutil"
 
 do-regress: fake
 	${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} ${MODPY_BIN} -c \
 		'import scipy ; scipy.test("full")'
-
 
 .include <bsd.port.mk>

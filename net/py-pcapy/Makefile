@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/03/14 09:17:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/07 07:34:52 rpointel Exp $
 
 COMMENT =		libpcap module for Python
 
 MODPY_EGG_VERSION =	0.10.5
 DISTNAME =		pcapy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		net devel
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		pcap
+WANTLIB += 		${MODPY_WANTLIB} m stdc++ pcap
 
 MASTER_SITES =		http://oss.coresecurity.com/repo/
 
@@ -26,6 +26,7 @@ MODULES =		lang/python
 NO_REGRESS =		Yes
 
 MAKE_ENV +=		LDSHARED="${CC} -shared -fPIC"
+MAKE_ENV +=		LDFLAGS="-L${LOCALBASE}/lib"
 
 # fix msdos line-endings
 pre-patch:
