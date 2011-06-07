@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/06/04 11:29:52 robert Exp $
+# $OpenBSD: Makefile,v 1.32 2011/06/07 19:41:39 naddy Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -158,7 +158,7 @@ WANTLIB-main+=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		png pthread pthread-stubs ssl xcb xml2 z gdk_pixbuf-2.0 \
 		util ${MODGCONF2_WANTLIB}
-WANTLIB-main+=	GL GLU Xxf86vm drm python2.6 stdc++ xcb-render xcb-shm
+WANTLIB-main+=	GL GLU Xxf86vm drm stdc++ xcb-render xcb-shm
 WANTLIB-main+=	${MODPY_WANTLIB}
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
