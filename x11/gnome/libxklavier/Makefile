@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2011/06/02 17:16:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/06/07 17:28:07 ajacoutot Exp $
 
 COMMENT=		utility library for XKB
 
 GNOME_PROJECT=		libxklavier
 GNOME_VERSION=		5.1
 
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  xklavier             17.0     # .17.0
 
@@ -32,7 +32,7 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
 			--with-xkb-base="${X11BASE}/share/X11/xkb/" \
 			--with-xkb-bin-base="${X11BASE}/bin/" \
-			--with-xmodmap-base="${LOCALBASE}/share/xmodmap"
+			--with-xmodmap-base="/usr/share/xmodmap"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
