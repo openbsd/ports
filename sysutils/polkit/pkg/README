@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2011/06/07 14:52:32 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,9 +9,15 @@ In most situations, PolicyKit will require a session to be marked as
 you will most likely want to install the consolekit package along with
 polkit.
 
+To grant privileges interactively in a GUI, PolicyKit will need the user
+to input his password. This is done using a helper daemon (launched when
+starting your X session) which needs to be installed (if not already):
+    for a GTK based Desktop	-> polkit-gnome
+    for a QT based Desktop	-> polkit-qt4
+
 On OpenBSD, the following identities are setup by default:
-Administrative users	-> "wheel" group
-Standard users 		-> "users" group
+    Administrative users	-> "wheel" group
+    Standard users 		-> "users" group
 
 Disabling polkit
 ================
