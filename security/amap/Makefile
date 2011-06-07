@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/06/06 15:00:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2011/06/07 00:13:08 sthen Exp $
 
 COMMENT=	application protocol detection tool
 
 DISTNAME=	amap-5.2
-REVISION =	3
+REVISION=	4
 CATEGORIES=    	security
 
 MAINTAINER=	Stephan A. Rickauer <stephan@openbsd.org>
@@ -23,10 +23,10 @@ WANTLIB=	c crypto ssl pcre
 
 LIB_DEPENDS=	devel/pcre
 
-CONFIGURE_STYLE=simple
-CONFIGURE_ARGS=	--prefix='$${${DESTDIRNAME}}${PREFIX}'
+CONFIGURE_STYLE= simple
+CONFIGURE_ARGS=	--prefix='${PREFIX}'
 
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 NO_REGRESS=	Yes
 MAKE_FLAGS=	OPT="${CFLAGS} -I${LOCALBASE}/include"
 

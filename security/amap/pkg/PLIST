@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2005/09/14 10:41:02 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/06/07 00:13:08 sthen Exp $
 @pkgpath net/amap
-bin/amap
-bin/amap6
-bin/amapcrap
+@bin bin/amap
+@bin bin/amap6
+@bin bin/amapcrap
 @man man/man1/amap.1
 share/amap/
 share/amap/appdefs.resp

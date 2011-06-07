@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_am,v 1.3 2005/09/30 07:47:27 aanriot Exp $
---- Makefile.am.orig	Fri Sep 30 07:30:26 2005
-+++ Makefile.am	Fri Sep 30 07:30:31 2005
+$OpenBSD: patch-Makefile_am,v 1.4 2011/06/07 00:13:08 sthen Exp $
+--- Makefile.am.orig	Thu Sep 22 11:39:18 2005
++++ Makefile.am	Mon Jun  6 18:43:32 2011
 @@ -1,13 +1,13 @@
 -CC=gcc
 -LIB=-lpcre -L./pcre-3.9/ -I./pcre-3.9/
@@ -31,11 +31,11 @@ $OpenBSD: patch-Makefile_am,v 1.3 2005/09/30 07:47:27 aanriot Exp $
 -	-cp -f $(SCRIPTS) $(PREFIX)$(DATADIR)
 -	-cp -f $(MANPAGE) $(PREFIX)$(MANDIR)
 -	-test $(PREFIX)$(BINDIR)/amap6 || cd $(PREFIX)$(BINDIR) && ln -s amap amap6
-+	@test -e amap && $(BSD_INSTALL_PROGRAM) amap amap6 amapcrap $(PREFIX)$(BINDIR)
-+	@test -d $(PREFIX)$(MANDIR) || mkdir -p $(PREFIX)$(MANDIR)
-+	$(BSD_INSTALL_MAN) $(MANPAGE) $(PREFIX)$(MANDIR)
-+	@test -d $(PREFIX)$(DATADIR) || mkdir -p $(PREFIX)$(DATADIR)
-+	$(BSD_INSTALL_SCRIPT) $(SCRIPTS) $(PREFIX)$(DATADIR)
++	@test -e amap && $(BSD_INSTALL_PROGRAM) amap amap6 amapcrap $(DESTDIR)$(PREFIX)$(BINDIR)
++	@test -d $(DESTDIR)$(PREFIX)$(MANDIR) || mkdir -p $(DESTDIR)$(PREFIX)$(MANDIR)
++	$(BSD_INSTALL_MAN) $(MANPAGE) $(DESTDIR)$(PREFIX)$(MANDIR)
++	@test -d $(DESTDIR)$(PREFIX)$(DATADIR) || mkdir -p $(DESTDIR)$(PREFIX)$(DATADIR)
++	$(BSD_INSTALL_SCRIPT) $(SCRIPTS) $(DESTDIR)$(PREFIX)$(DATADIR)
  
  clean:	
  	cd pcre-3.9 && make clean
