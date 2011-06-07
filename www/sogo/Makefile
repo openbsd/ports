@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2011/06/02 13:41:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/06/07 11:29:55 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
 VERSION =	1.3.7
 DISTNAME =	SOGo-${VERSION}a
 PKGNAME =	sogo-${VERSION}.0
-REVISION =		0
+REVISION =	1
 
 SHLIB_VERSION =	1.0
 .for _lib in GDLContentStore NGCards OGoContentStore \
@@ -33,7 +33,7 @@ WANTLIB +=		NGMime NGObjWeb NGStreams SaxObjC WEExtensions
 WANTLIB +=		objc gnustep-base
 
 LIB_DEPENDS +=		devel/libmemcached \
-			www/sope=${VERSION}
+			www/sope
 RUN_DEPENDS +=		sope-postgres-*|sope-mysql-*:www/sope,-postgres \
 			archivers/zip
 
