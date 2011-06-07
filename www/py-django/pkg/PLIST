@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/04/24 18:40:03 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/06/07 05:15:40 rpointel Exp $
 bin/${LNAME}-admin.py
 lib/python${MODPY_VERSION}/site-packages/Django-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/${LNAME}/
@@ -6642,4 +6642,4 @@ share/doc/${LNAME}/topics/settings.txt
 share/doc/${LNAME}/topics/signals.txt
 share/doc/${LNAME}/topics/templates.txt
 share/doc/${LNAME}/topics/testing.txt
-share/doc/pkg-readmes/py-${LNAME}-${MODPY_EGG_VERSION}
+share/doc/pkg-readmes/${FULLPKGNAME}
