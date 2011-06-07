@@ -1,42 +1,25 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/03/02 06:59:03 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2011/06/07 15:47:59 ajacoutot Exp $
 @conflict hplip-docs-*
-@conflict hplip-gui-<3.10.2p0
-bin/hp-align
+@conflict hplip-gui-<3.11.3p0
 bin/hp-check
 bin/hp-clean
-bin/hp-colorcal
-bin/hp-devicesettings
-bin/hp-fab
-bin/hp-faxsetup
-bin/hp-firmware
-bin/hp-info
-bin/hp-levels
-bin/hp-linefeedcal
-bin/hp-makecopies
 bin/hp-makeuri
 @bin bin/hp-mkuri
 bin/hp-pkservice
-bin/hp-plugin
-bin/hp-pqdiag
-bin/hp-printsettings
 bin/hp-probe
 bin/hp-query
 bin/hp-scan
-bin/hp-sendfax
-bin/hp-setup
-bin/hp-testpage
 bin/hp-timedate
 bin/hp-unload
-bin/hp-wificonfig
-lib/python${MODPY_VERSION}/site-packages/cupsext.la
+@comment lib/python${MODPY_VERSION}/site-packages/cupsext.la
 lib/python${MODPY_VERSION}/site-packages/cupsext.so
-lib/python${MODPY_VERSION}/site-packages/hpmudext.la
+@comment lib/python${MODPY_VERSION}/site-packages/hpmudext.la
 lib/python${MODPY_VERSION}/site-packages/hpmudext.so
-lib/python${MODPY_VERSION}/site-packages/pcardext.la
+@comment lib/python${MODPY_VERSION}/site-packages/pcardext.la
 lib/python${MODPY_VERSION}/site-packages/pcardext.so
-lib/python${MODPY_VERSION}/site-packages/scanext.la
+@comment lib/python${MODPY_VERSION}/site-packages/scanext.la
 lib/python${MODPY_VERSION}/site-packages/scanext.so
-lib/sane/libsane-hpaio.la
+@comment lib/sane/libsane-hpaio.la
 lib/sane/libsane-hpaio.so
 @bin libexec/cups/backend/hp
 libexec/cups/backend/hpfax
@@ -154,6 +137,10 @@ share/hplip/base/vcard.py
 share/hplip/base/vcard.pyc
 share/hplip/base/wifi.py
 share/hplip/base/wifi.pyc
+share/hplip/check.py
+share/hplip/check.pyc
+share/hplip/clean.py
+share/hplip/clean.pyc
 share/hplip/colorcal.py
 share/hplip/colorcal.pyc
 share/hplip/copier/
@@ -265,6 +252,8 @@ share/hplip/plugin.py
 share/hplip/plugin.pyc
 share/hplip/pqdiag.py
 share/hplip/pqdiag.pyc
+share/hplip/print.py
+share/hplip/print.pyc
 share/hplip/printsettings.py
 share/hplip/printsettings.pyc
 share/hplip/prnt/
@@ -293,10 +282,14 @@ share/hplip/sendfax.py
 share/hplip/sendfax.pyc
 share/hplip/setup.py
 share/hplip/setup.pyc
+share/hplip/systray.py
+share/hplip/systray.pyc
 share/hplip/testpage.py
 share/hplip/testpage.pyc
 share/hplip/timedate.py
 share/hplip/timedate.pyc
+share/hplip/toolbox.py
+share/hplip/toolbox.pyc
 share/hplip/unload.py
 share/hplip/unload.pyc
 share/hplip/wificonfig.py

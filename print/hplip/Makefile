@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/04/17 07:19:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2011/06/07 15:47:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,6 +16,9 @@ PKGNAME-hpijs=	hpijs-${V}
 PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
+
+REVISION-main=	0
+REVISION-gui=	0
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
 SHARED_LIBS +=  hpip		2.0 # .0.1
@@ -58,7 +61,7 @@ RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 		devel/py-notify \
 		graphics/py-Imaging \
 		print/hplip,-hpcups \
-		devel/xdg-utils
+		sysutils/polkit
 
 WANTLIB-hpijs += ${cWANTLIB} hpip
 WANTLIB-hpijs += c jpeg netsnmp stdc++ usb dbus-1 hpmud
@@ -79,6 +82,7 @@ LIB_DEPENDS-libs= net/net-snmp \
 WANTLIB-gui +=	# empty
 RUN_DEPENDS-gui= x11/py-qt4 \
 		print/hplip,-main \
+		devel/xdg-utils \
 		devel/desktop-file-utils
 LIB_DEPENDS-gui= # empty
 

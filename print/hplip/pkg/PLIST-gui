@@ -1,8 +1,25 @@
-@comment $OpenBSD: PLIST-gui,v 1.5 2011/03/02 06:59:03 ajacoutot Exp $
-@conflict hplip-<3.9.6b
+@comment $OpenBSD: PLIST-gui,v 1.6 2011/06/07 15:47:59 ajacoutot Exp $
+@conflict hplip-<3.11.3p0
+bin/hp-align
+bin/hp-colorcal
+bin/hp-devicesettings
+bin/hp-fab
+bin/hp-faxsetup
+bin/hp-firmware
+bin/hp-info
+bin/hp-levels
+bin/hp-linefeedcal
+bin/hp-makecopies
+bin/hp-plugin
+bin/hp-pqdiag
 bin/hp-print
+bin/hp-printsettings
+bin/hp-sendfax
+bin/hp-setup
 bin/hp-systray
+bin/hp-testpage
 bin/hp-toolbox
+bin/hp-wificonfig
 share/applications/hplip.desktop
 share/examples/hplip/xdg/
 @sample ${SYSCONFDIR}/xdg/
@@ -10,10 +27,6 @@ share/examples/hplip/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/hplip/xdg/autostart/hplip-systray.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/hplip-systray.desktop
-share/hplip/check.py
-share/hplip/check.pyc
-share/hplip/clean.py
-share/hplip/clean.pyc
 share/hplip/data/images/
 share/hplip/data/images/128x128/
 share/hplip/data/images/128x128/audio.png
@@ -338,12 +351,6 @@ share/hplip/data/images/other/v-k-3.png
 share/hplip/data/images/other/v-kc-2.png
 share/hplip/data/images/other/v-kc-3.png
 share/hplip/data/images/other/zca.png
-share/hplip/print.py
-share/hplip/print.pyc
-share/hplip/systray.py
-share/hplip/systray.pyc
-share/hplip/toolbox.py
-share/hplip/toolbox.pyc
 share/hplip/ui4/
 share/hplip/ui4/__init__.py
 share/hplip/ui4/__init__.pyc
