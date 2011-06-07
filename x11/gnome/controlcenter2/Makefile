@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2011/05/27 12:48:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.90 2011/06/07 15:52:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		GNOME control center
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		2.32.1
 
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=	gnome-window-settings 3.0      # .1.0
 
@@ -54,7 +54,8 @@ BUILD_DEPENDS=		x11/gnome/settings-daemon \
 			misc/shared-mime-info>=0.21
 RUN_DEPENDS=		misc/shared-mime-info>=0.21 \
 			x11/gnome/settings-daemon \
-			x11/gnome/terminal
+			x11/gnome/terminal \
+			sysutils/polkit # share/polkit-1/actions/org.gnome.randr.policy
 
 # XXX see patch-capplets_default-applications_gnome-at-commandline_in_in
 RUN_DEPENDS+=		shells/bash
@@ -78,5 +79,7 @@ pre-configure:
 		${WRKSRC}/capplets/default-applications/gnome-at-commandline.in.in \
 		${WRKSRC}/capplets/appearance/appearance-desktop.c \
 		${WRKSRC}/libwindow-settings/metacity-window-manager.c
+	perl -pi -e 's,/usr/sbin,${PREFIX}/sbin,,' \
+		${WRKSRC}/capplets/display/org.gnome.randr.policy.in
 
 .include <bsd.port.mk>
