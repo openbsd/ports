@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/04/18 23:11:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2011/06/07 11:34:43 sthen Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -55,6 +55,8 @@ WANTLIB-iaxcomm	+= png pthread-stubs stdc++ tiff usbhid wx_base wx_base_net
 WANTLIB-iaxcomm	+= wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core
 WANTLIB-iaxcomm	+= wx_gtk2_dbgrid wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext
 WANTLIB-iaxcomm	+= wx_gtk2_xrc xcb xcb-render xcb-shm ${cWANTLIB}
+
+BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS}
 
 LIB_DEPENDS=	audio/gsm \
 		audio/portaudio-svn \
