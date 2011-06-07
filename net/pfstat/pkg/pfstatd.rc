@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: pfstatd.rc,v 1.1 2011/06/07 22:15:38 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/pfstatd"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
