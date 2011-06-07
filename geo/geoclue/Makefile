@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/25 08:56:57 sebastia Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/07 14:19:46 ajacoutot Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
 DISTNAME=		geoclue-0.12.0
 SHARED_LIBS +=  geoclue              1.0      # .0.0
 CATEGORIES=		geo devel
+
+REVISION=		0
 
 HOMEPAGE=		http://geoclue.freedesktop.org/
 
@@ -18,10 +20,10 @@ MASTER_SITES=		http://folks.o-hand.com/jku/geoclue-releases/
 
 MODULES=		devel/gettext
 
-WANTLIB += dbus-glib-1 tasn1 ORBit-2 c dbus-1 m soup-gnome-2.4
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += pcre pthread xml2 z gconf-2 gcrypt gnome-keyring gnutls
-WANTLIB += gps>=19 sqlite3 soup-2.4 proxy gpg-error
+WANTLIB += ORBit-2 c dbus-1 dbus-glib-1 gconf-2 gcrypt gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
+WANTLIB += gps gthread-2.0 m pcre pthread soup-2.4 soup-gnome-2.4
+WANTLIB += sqlite3 xml2 z
 
 LIB_DEPENDS =		devel/libsoup,-gnome \
 			misc/gpsd
