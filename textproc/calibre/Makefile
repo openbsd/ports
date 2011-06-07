@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/23 06:10:43 weerd Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/07 19:45:16 landry Exp $
 
 COMMENT =		ebook management application
 
 # 0.7.46 and higher have problems repainting their windows..
 DISTNAME =		calibre-0.7.45
-REVISION =		0
+REVISION =		1
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 
@@ -27,7 +27,7 @@ LIB_DEPENDS=		devel/chmlib \
 RUN_DEPENDS =		devel/py-dateutil \
 			devel/xdg-utils \
 			graphics/ImageMagick \
-			graphics/py-Imaging \
+			py-Imaging-*-python${MODPY_VERSION}:graphics/py-Imaging,python${MODPY_VERSION} \
 			net/py-dnspython \
 			textproc/py-cssutils>=0.9.7 \
 			textproc/py-lxml>=2.2.8 \
