@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.29 2011/06/06 14:07:22 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.30 2011/06/07 10:05:07 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -161,7 +161,7 @@ pre-configure:
 # common install target - ports can use post-install for specific stuff
 .if (${MOZILLA_PROJECT} == "mozilla-thunderbird" && ${MOZILLA_BRANCH} == "1.9.2") || \
 	(${MOZILLA_PROJECT} == "seamonkey" && ${MOZILLA_BRANCH} == "1.9.1") || \
-	(${MOZILLA_PROJECT} == "xulrunner" && ${MOZILLA_BRANCH} == "1.9.2") || \
+	(${MOZILLA_PROJECT} == "xulrunner1.9" && ${MOZILLA_BRANCH} == "1.9.2") || \
 	${MOZILLA_PROJECT} == "firefox35" || \
 	${MOZILLA_PROJECT} == "firefox36" || \
 	${MOZILLA_PROJECT} == "sunbird"
