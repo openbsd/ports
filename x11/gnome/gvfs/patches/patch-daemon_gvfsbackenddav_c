@@ -1,70 +1,31 @@
-$OpenBSD: patch-daemon_gvfsbackenddav_c,v 1.4 2011/05/23 22:41:04 ajacoutot Exp $
+$OpenBSD: patch-daemon_gvfsbackenddav_c,v 1.5 2011/06/07 12:53:56 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=567664
-(Properly implement unmount)
+From 6abbff2a11c28660a090e8b9398fb19332380094 Mon Sep 17 00:00:00 2001
+From: Christian Kellner <gicmo@gnome.org>
+Date: Sun, 05 Jun 2011 11:23:05 +0000
+Subject: dav: Use default unmount logic
 
 --- daemon/gvfsbackenddav.c.orig	Mon May 23 16:38:56 2011
-+++ daemon/gvfsbackenddav.c	Tue May 24 00:33:42 2011
-@@ -56,6 +56,7 @@
- #include "gvfsjobqueryfsinfo.h"
- #include "gvfsjobqueryattributes.h"
- #include "gvfsjobenumerate.h"
-+#include "gvfsjobunmount.h"
- #include "gvfsdaemonprotocol.h"
- 
- #include "soup-input-stream.h"
-@@ -2379,13 +2380,49 @@ do_set_display_name (GVfsBackend           *backend,
++++ daemon/gvfsbackenddav.c	Tue Jun  7 14:47:36 2011
+@@ -2379,15 +2379,6 @@ do_set_display_name (GVfsBackend           *backend,
    soup_uri_free (source);
  }
  
-+static void
-+unmount_cb (GVfsBackend  *backend,
-+            GAsyncResult *res,
-+            gpointer      user_data)
-+{
-+  GVfsJobUnmount *job = G_VFS_JOB_UNMOUNT (user_data);
-+  gboolean should_unmount;
-+
-+  should_unmount = g_vfs_backend_unmount_with_operation_finish (backend,
-+                                                                res);
-+
-+  if (should_unmount)
-+    g_vfs_job_succeeded (G_VFS_JOB (job));
-+  else
-+    g_vfs_job_failed_literal (G_VFS_JOB (job),
-+                              G_IO_ERROR, G_IO_ERROR_BUSY,
-+                              _("Filesystem is busy"));
-+}
-+
- static gboolean
+-static gboolean
 -try_unmount (GVfsBackend    *backend,
 -             GVfsJobUnmount *job,
 -             GMountUnmountFlags flags,
 -             GMountSource *mount_source)
-+try_unmount (GVfsBackend        *backend,
-+             GVfsJobUnmount     *job,
-+             GMountUnmountFlags  flags,
-+             GMountSource       *mount_source)
- {
+-{
 -  _exit (0);
-+
-+  if (! g_vfs_backend_has_blocking_processes (backend) ||
-+      flags & G_MOUNT_UNMOUNT_FORCE)
-+    {
-+      g_vfs_job_succeeded (G_VFS_JOB (job));
-+    }
-+  else if (g_mount_source_is_dummy (mount_source))
-+    {
-+      g_vfs_job_failed_literal (G_VFS_JOB (job),
-+                                G_IO_ERROR, G_IO_ERROR_BUSY,
-+                                _("Filesystem is busy"));
-+    }
-+  else
-+    g_vfs_backend_unmount_with_operation (backend,
-+                                          mount_source,
-+                                          (GAsyncReadyCallback) unmount_cb,
-+                                          job);
-+  return TRUE;
- }
- 
+-}
+-
  /* ************************************************************************* */
+ /*  */
+ static void
+@@ -2414,5 +2405,4 @@ g_vfs_backend_dav_class_init (GVfsBackendDavClass *kla
+   backend_class->make_directory    = do_make_directory;
+   backend_class->delete            = do_delete;
+   backend_class->set_display_name  = do_set_display_name;
+-  backend_class->try_unmount       = try_unmount;
+ }
