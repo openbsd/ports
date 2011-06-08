@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/20 05:12:01 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/08 15:19:13 dcoppa Exp $
 
 COMMENT =		official Last.fm client
 
 VER =			1.5.4.27091
 DISTNAME =		lastfm-${VER}+dfsg
 PKGNAME =		last.fm-${VER}
-REVISION =		1
+REVISION =		2
 
 SHARED_ONLY =		Yes
 
@@ -79,6 +79,7 @@ do-install:
 	${INSTALL_DATA} ${MOOSELIB} ${PREFIX}/lib/
 	${INSTALL_DATA} ${TOOLSLIB} ${PREFIX}/lib/
 	${INSTALL_DATA} ${FPLIB} ${PREFIX}/lib/
+	${INSTALL_DATA_DIR} ${LASTFM_LIBDIR}/extensions
 	${INSTALL_DATA_DIR} ${LASTFM_LIBDIR}/services
 	${INSTALL_DATA} ${WRKBUILD}/bin/services/*.so \
 		${LASTFM_LIBDIR}/services/

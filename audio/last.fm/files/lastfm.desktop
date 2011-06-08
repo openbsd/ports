@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Name=Last.fm
 Comment=Official Last.fm radio player
-Exec=last.fm
+Exec=${TRUEPREFIX}/bin/last.fm
 Icon=${TRUEPREFIX}/share/last.fm/icons/as.png
 Type=Application
 Terminal=false
