@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/02 13:41:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/06/08 14:24:50 sthen Exp $
 
 # Work in progress. Not yet linked to the build.
 
 COMMENT =	web UI for icinga
 DISTNAME =	icinga-web-$V
-REVISION =	0
 
 BUILD_DEPENDS =	icinga-api-$V:net/icinga/core,-api
 RUN_DEPENDS =	www/pear \
@@ -47,8 +46,11 @@ INSTALL_TARGET = install install-apache-config
 PREFIX =	/var/www
 
 pre-install:
-	${INSTALL_DATA_DIR} ${WRKINST}/var/www/icinga-web
-	${INSTALL_DATA_DIR} ${WRKINST}/var/www/conf/modules.sample
+	cd ${WRKINST}; ${INSTALL_DATA_DIR} \
+	    ${WRKINST}/var/www/etc/schema/model \
+	    ${WRKINST}/var/www/etc/schema/updates \
+	    ${WRKINST}/var/www/icinga-web \
+	    ${WRKINST}/var/www/conf/modules.sample
 
 post-install:
 	find ${WRKINST} -name '*.orig' -print0 | xargs -0r rm

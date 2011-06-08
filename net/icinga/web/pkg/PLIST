@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/05/11 13:57:41 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/06/08 14:24:50 sthen Exp $
 conf/modules.sample/icinga-web.conf.dist
 @sample /var/www/conf/modules.sample/icinga-web.conf
 icinga-web/
@@ -200,7 +200,6 @@ icinga-web/app/modules/Api/lib/console/SshConsoleConnection.class.php
 icinga-web/app/modules/Api/lib/database/
 icinga-web/app/modules/Api/lib/database/IcingaDoctrineTable.class.php
 icinga-web/app/modules/Api/lib/database/models/
-icinga-web/app/modules/Api/lib/database/models/.gitignore
 icinga-web/app/modules/Api/lib/database/models/IcingaAcknowledgements.php
 icinga-web/app/modules/Api/lib/database/models/IcingaAcknowledgementsTable.php
 icinga-web/app/modules/Api/lib/database/models/IcingaCommands.php
@@ -516,7 +515,6 @@ icinga-web/app/modules/AppKit/lib/context/AppKitAgaviContext.class.php
 icinga-web/app/modules/AppKit/lib/database/
 icinga-web/app/modules/AppKit/lib/database/AppKitSQLConstants.class.php
 icinga-web/app/modules/AppKit/lib/database/models/
-icinga-web/app/modules/AppKit/lib/database/models/.gitignore
 icinga-web/app/modules/AppKit/lib/database/models/Cronk.php
 icinga-web/app/modules/AppKit/lib/database/models/CronkCategory.php
 icinga-web/app/modules/AppKit/lib/database/models/CronkCategoryCronk.php
@@ -881,6 +879,7 @@ icinga-web/app/modules/Cronks/data/xml/to/icinga-tactical-overview-groupstat.xml
 icinga-web/app/modules/Cronks/data/xml/to/icinga-tactical-overview-presets.xml
 icinga-web/app/modules/Cronks/data/xml/to/icinga-tactical-overview-template-charts.xml
 icinga-web/app/modules/Cronks/data/xml/to/icinga-tactical-overview-template-cv.xml
+icinga-web/app/modules/Cronks/data/xml/to/icinga-tactical-overview-template-cvtree.xml
 icinga-web/app/modules/Cronks/data/xml/to/icinga-tactical-overview-template-hg.xml
 icinga-web/app/modules/Cronks/data/xml/to/icinga-tactical-overview-template-iteration.xml
 icinga-web/app/modules/Cronks/lib/
@@ -898,6 +897,7 @@ icinga-web/app/modules/Cronks/lib/js/FilterHandler.js
 icinga-web/app/modules/Cronks/lib/js/Portlet.js
 icinga-web/app/modules/Cronks/lib/js/SearchHandler.js
 icinga-web/app/modules/Cronks/lib/js/SlidingTabs.js
+icinga-web/app/modules/Cronks/lib/js/StaticContentUtil.js
 icinga-web/app/modules/Cronks/lib/js/Tabhelper.js
 icinga-web/app/modules/Cronks/lib/js/grid/
 icinga-web/app/modules/Cronks/lib/js/grid/ColumnRenderer.js
@@ -1167,6 +1167,8 @@ icinga-web/etc/lib/doctrineTask.php
 icinga-web/etc/lib/doctrineToSqlTask.php
 icinga-web/etc/lib/resetPasswordTask.php
 icinga-web/etc/schema/
+icinga-web/etc/schema/model/
+icinga-web/etc/schema/model/icinga-web.mwb
 icinga-web/etc/schema/mysql.sql
 icinga-web/etc/schema/oracle.sql
 icinga-web/etc/schema/pgsql.sql

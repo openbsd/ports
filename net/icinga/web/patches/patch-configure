@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.1 2011/05/11 13:57:41 sthen Exp $
---- configure.orig	Wed May 11 12:03:42 2011
-+++ configure	Wed May 11 12:03:01 2011
-@@ -3828,7 +3828,8 @@ fi
+$OpenBSD: patch-configure,v 1.2 2011/06/08 14:24:50 sthen Exp $
+--- configure.orig	Wed Jun  8 07:16:30 2011
++++ configure	Wed Jun  8 10:43:01 2011
+@@ -3805,7 +3805,8 @@ fi
  $as_echo "$as_me: Create api config in $FILE" >&6;}
  	for T in $BLOCKS; do
  
