@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/19 07:54:22 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/08 18:09:58 jasper Exp $
 
 COMMENT=	Python program to create FAQ's list from formatted data file
 
 DISTNAME=	makefaq-2.5
-REVISION=	3
+REVISION=	4
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.makefaq.org/

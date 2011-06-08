@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/28 18:19:50 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/08 18:09:58 jasper Exp $
 
 COMMENT =		convert DocBook to LaTeX, DVI, PostScript, and PDF
 DISTNAME =		dblatex-0.3
-REVISION=		3
+REVISION=		4
 CATEGORIES =		textproc
 
 # GPLv2+

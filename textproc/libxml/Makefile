@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.136 2011/06/03 10:12:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.137 2011/06/08 18:09:58 jasper Exp $
 
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
@@ -7,7 +7,7 @@ VERSION=		2.7.8
 DISTNAME=		libxml2-${VERSION}
 PKGNAME-main=		libxml-${VERSION}
 REVISION =		2
-REVISION-python =	1
+REVISION-python =	2
 PKGNAME-python=		py-libxml-${VERSION}
 SHARED_LIBS=		xml2	12.0
 CATEGORIES=		textproc

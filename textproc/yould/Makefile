@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/08/30 21:47:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/08 18:09:59 jasper Exp $
 
 COMMENT=		generator for pronounceable random words
 
 MODPY_EGG_VERSION=	0.3.7
 DISTNAME=		yould-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://ygingras.net/yould

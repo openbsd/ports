@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2011/04/02 01:18:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/08 18:09:58 jasper Exp $
 
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
 MODPY_EGG_VERSION=	2.2.8
 DISTNAME=	lxml-${MODPY_EGG_VERSION}
 PKGNAME=	py-lxml-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES=	textproc devel
 
 EXTRACT_SUFX=	.tgz

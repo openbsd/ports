@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/05/18 21:13:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/08 18:09:58 jasper Exp $
 
 COMMENT =	versatile file searching tool
 
 DISTNAME =	catfish-0.3.2
-REVISION=	2
+REVISION=	3
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://www.twotoasts.de/index.php?/pages/catfish_summary.html

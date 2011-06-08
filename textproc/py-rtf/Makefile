@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/08/30 21:47:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/08 18:09:58 jasper Exp $
 
 COMMENT=	Rich Text Format document generation in Python
 
 DISTNAME=	PyRTF-0.45
 PKGNAME=	${DISTNAME:L:S/^py/py-/}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://pyrtf.sourceforge.net/

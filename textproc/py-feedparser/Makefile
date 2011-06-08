@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/16 22:52:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/08 18:09:58 jasper Exp $
 
 COMMENT=	RSS and Atom feeds parser written in Python
 
 V=		5.0.1
 DISTNAME=	feedparser-${V}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.feedparser.org/
