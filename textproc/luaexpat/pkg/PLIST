@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/15 18:19:02 jolan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/08 14:23:11 gsoares Exp $
 lib/lua/5.1/lxp.so
-lib/lua/5.1/lxp/
-lib/lua/5.1/lxp/lom.lua
 share/doc/luaexpat/
 share/doc/luaexpat/examples.html
 share/doc/luaexpat/index.html
@@ -9,3 +7,5 @@ share/doc/luaexpat/license.html
 share/doc/luaexpat/lom.html
 share/doc/luaexpat/luaexpat.png
 share/doc/luaexpat/manual.html
+share/lua/5.1/lxp/
+share/lua/5.1/lxp/lom.lua

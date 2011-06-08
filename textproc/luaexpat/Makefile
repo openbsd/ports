@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/08 14:23:11 gsoares Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		lua library for the expat XML parser
-DISTNAME =		luaexpat-1.1
+DISTNAME =		luaexpat-1.2.0
 
 CATEGORIES =		textproc
-HOMEPAGE =		http://www.keplerproject.org/luaexpat/
+HOMEPAGE =		http://matthewwild.co.uk/projects/luaexpat/
 MAINTAINER =		Scott Vokes <vokes.s@gmail.com>
 
 # MIT
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		expat
-MASTER_SITES =		http://luaforge.net/frs/download.php/2469/
+MASTER_SITES =		${HOMEPAGE}
 
 MODULES =		lang/lua
 REGRESS_DEPENDS =	textproc/luaexpat
@@ -29,12 +29,12 @@ ALL_TARGET =		lib
 LUA = 			${LOCALBASE}/bin/lua
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/lua/5.1
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/lua/5.1/lxp
-	${INSTALL_DATA_DIR} ${PREFIX}/share/lua/5.1
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR}
+	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}
+	${INSTALL_DATA_DIR} ${MODLUA_DATADIR}/lxp
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/luaexpat
-	${INSTALL_DATA} ${WRKSRC}/src/lxp.so ${PREFIX}/lib/lua/5.1
-	${INSTALL_DATA} ${WRKSRC}/src/lxp/lom.lua ${PREFIX}/lib/lua/5.1/lxp
+	${INSTALL_DATA} ${WRKSRC}/src/lxp.so ${MODLUA_LIBDIR}
+	${INSTALL_DATA} ${WRKSRC}/src/lxp/lom.lua ${MODLUA_DATADIR}/lxp
 	${INSTALL_DATA} ${WRKSRC}/doc/us/{examples,index,license,lom,manual}.html \
 		${PREFIX}/share/doc/luaexpat
 	${INSTALL_DATA} ${WRKSRC}/doc/us/luaexpat.png ${PREFIX}/share/doc/luaexpat
