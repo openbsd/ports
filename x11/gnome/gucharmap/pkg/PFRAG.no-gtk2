@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no_gtk2,v 1.1 2011/05/15 09:22:36 jasper Exp $
+@comment $OpenBSD: PFRAG.no-gtk2,v 1.1 2011/06/08 07:33:03 ajacoutot Exp $
 include/gucharmap-2.90/
 include/gucharmap-2.90/gucharmap/
 include/gucharmap-2.90/gucharmap/gucharmap-block-chapters-model.h
