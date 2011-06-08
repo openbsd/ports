@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/04/18 11:51:07 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2011/06/08 17:32:05 jasper Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
@@ -10,6 +10,7 @@ SHARED_LIBS +=  pst                  1.0      # .4.1
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python=		py-${DISTNAME}
+REVISION-python=	0
 
 CATEGORIES=		converters mail
 

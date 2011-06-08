@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/20 17:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/06/08 17:43:20 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT =		cryptographic tools for Python
 MODPY_EGG_VERSION =	2.0.1
 DISTNAME =		pycrypto-${MODPY_EGG_VERSION}
 PKGNAME =		py-crypto-${MODPY_EGG_VERSION}
-REVISION=		7
+REVISION=		8
 CATEGORIES =    	security devel
 
 HOMEPAGE =		http://www.amk.ca/python/code/crypto.html

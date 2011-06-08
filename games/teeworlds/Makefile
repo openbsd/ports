@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/06/08 17:35:05 jasper Exp $
 
 COMMENT =	platform game featuring buggers equipped with weapons
 
 V =		0.5.2
 DISTNAME =	teeworlds-${V}-src
 PKGNAME =	teeworlds-${V}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	games
 
 MAINTAINER =	Jonathan Armani <armani@openbsd.org>

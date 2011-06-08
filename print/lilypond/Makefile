@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/26 14:17:17 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2011/06/08 17:37:36 jasper Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -14,8 +14,9 @@ VERSION=		2.12.3
 DISTNAME=		lilypond-${VERSION}
 DISTNAME-docs=		${DISTNAME}-1.documentation
 PKGNAME-main=		lilypond-${VERSION}
-REVISION-main =		1
+REVISION-main=		2
 PKGNAME-docs=		lilypond-docs-${VERSION}
+REVISION-docs=		0
 CATEGORIES=		print
 
 DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0

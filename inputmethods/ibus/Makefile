@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2011/06/02 17:09:32 kili Exp $
+# $OpenBSD: Makefile,v 1.19 2011/06/08 17:35:44 jasper Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	intelligent input bus framework
 
 DISTNAME =	ibus-1.3.9
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS =	ibus	1.0	# 2.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/06/07 21:43:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2011/06/08 17:39:25 jasper Exp $
 
 ONLY_FOR_ARCHS =	i386
 SHARED_ONLY =		Yes
@@ -8,7 +8,7 @@ COMMENT =	extension module to speed up the execution of Python code
 MODPY_EGG_VERSION =	1.6
 DISTNAME =		psyco-${MODPY_EGG_VERSION}-src
 PKGNAME =		py-psyco-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =	devel
 

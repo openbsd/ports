@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:53 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/08 17:33:59 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,6 +6,7 @@ COMMENT =	ODBC bindings for Python
 
 MODPY_EGG_VERSION=2.1.8
 DISTNAME =	pyodbc-${MODPY_EGG_VERSION}
+REVISION =		0
 PKGNAME =	${DISTNAME:S/py/py-/}
 
 CATEGORIES =	databases

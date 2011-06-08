@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/26 07:07:56 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/08 17:31:33 jasper Exp $
 
 COMMENT =		free karaoke player
 
 V =			0.7.1
 MODPY_EGG_VERSION =	${V}
 DISTNAME =		pykaraoke-${V}
-REVISION =		2
+REVISION =		3
 CATEGORIES =		audio
 
 HOMEPAGE =		http://kibosh.org/pykaraoke/

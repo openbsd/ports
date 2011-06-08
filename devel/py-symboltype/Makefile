@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 22:24:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/08 17:39:25 jasper Exp $
 
 COMMENT =		symbol type for python
 
 MODPY_EGG_VERSION =	1.0
 DISTNAME =		SymbolType-${MODPY_EGG_VERSION}
 PKGNAME =		py-symboltype-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

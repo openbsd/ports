@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/09/07 19:21:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/06/08 17:33:59 jasper Exp $
 
 COMMENT=	Python extension module for accessing cdb databases
 
 DISTNAME=	python-cdb-0.32
 PKGNAME=	${DISTNAME:S/python/py/}
-REVISION =	5
+REVISION =	6
 CATEGORIES=	databases
 
 HOMEPAGE=	http://pilcrow.madison.wi.us/

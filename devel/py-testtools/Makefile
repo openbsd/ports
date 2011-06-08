@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/09 12:19:28 eric Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/08 17:39:25 jasper Exp $
 
 COMMENT=	extensions to the Python unit testing framework
 
 MODPY_EGG_VERSION= 0.9.8
 DISTNAME=	testtools-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION =	0
 CATEGORIES=	devel
 
 HOMEPAGE=	http://pypi.python.org/pypi/testtools

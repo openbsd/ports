@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/20 09:48:38 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/08 17:37:36 jasper Exp $
 
 COMMENT=		yEnc encoding/decoding extension for Python
 
 DISTNAME=		yenc-0.3
 PKGNAME=		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 CATEGORIES=		news
 
 HOMEPAGE=		http://www.hellanzb.com/

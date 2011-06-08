@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/20 09:48:40 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/08 17:37:46 jasper Exp $
 
 COMMENT=		Python-based presentation tool
 
 DISTNAME=		bruce-1.2.1
-REVISION =		1
+REVISION =		2
 
 CATEGORIES=		productivity
 

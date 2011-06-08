@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/02 13:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/06/08 17:39:24 jasper Exp $
 
 COMMENT=	buildslave implementation for the buildot system
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION=	0.8.3
 DISTNAME=	buildbot-slave-${MODPY_EGG_VERSION}
 PKGNAME=	py-buildslave-${MODPY_EGG_VERSION}
 
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 

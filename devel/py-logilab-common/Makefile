@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/08 17:39:25 jasper Exp $
 
 COMMENT=	common low-level libraries for logilab projects
 
 DISTNAME=	logilab-common-0.21.2
 PKGNAME=	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.logilab.org/projects/common/

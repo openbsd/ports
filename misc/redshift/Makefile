@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/06/02 17:09:32 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2011/06/08 17:36:18 jasper Exp $
 
 COMMENT=	automatic color temperature adjustment
 
@@ -6,7 +6,7 @@ V=		1.6
 DISTNAME=	redshift-${V}
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	misc
 

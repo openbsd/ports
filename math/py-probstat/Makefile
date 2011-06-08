@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/30 17:11:35 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/08 17:36:01 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	probability and statistics utilities for Python
 
 DISTNAME=	probstat_0.912
 PKGNAME=	py-${DISTNAME:S/_/-/}
-REVISION =	3
+REVISION =	4
 CATEGORIES=	math
 
 HOMEPAGE=	http://probstat.sourceforge.net/

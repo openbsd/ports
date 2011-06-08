@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/05/31 05:44:26 rpointel Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/08 17:39:25 jasper Exp $
 COMMENT=	Python foreign function interface library
 
 DISTNAME=	ctypes-1.0.1
 PKGNAME=	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 CATEGORIES=	devel
 
 MAINTAINER=	Damien Miller <djm@openbsd.org>

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/07 22:26:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/08 17:36:01 jasper Exp $
 
 COMMENT=		Library for Automated Deduction Research
 
 DISTNAME=		LADR-Dec-2007
 PKGNAME=		${DISTNAME:L:S/-Dec//}
+REVISION =		0
 
 MASTER_SITES=		http://www.cs.unm.edu/%7Emccune/prover9/download/
 

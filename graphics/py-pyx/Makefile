@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/08 17:35:28 jasper Exp $
 
 COMMENT=	package for creating PostScript/PDF graphics
 
 V=0.10
 DISTNAME=	PyX-${V}
 PKGNAME=	py-pyx-${V}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	graphics devel
 
 HOMEPAGE=	http://pyx.sourceforge.net/

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/06/08 17:31:33 jasper Exp $
 
 COMMENT=		curses front-end for various audio players
 
 DISTNAME=		cplay-1.49
-REVISION =		5
+REVISION =		6
 CATEGORIES=		audio
 
 HOMEPAGE=		http://mask.tf.hut.fi/~flu/hacks/cplay/

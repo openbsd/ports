@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/01/06 19:11:22 sebastia Exp $
+# $OpenBSD: Makefile,v 1.39 2011/06/08 17:35:28 jasper Exp $
 
 VMEM_WARNING=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Python charting and plotting API
 
 DISTNAME=	matplotlib-0.98.5.2
 PKGNAME=	py-${DISTNAME}
-REVISION=	7
+REVISION=	8
 CATEGORIES=	graphics devel math
 
 HOMEPAGE=	http://matplotlib.sourceforge.net/

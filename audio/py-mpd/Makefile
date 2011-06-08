@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/04/05 19:56:11 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/08 17:31:33 jasper Exp $
 
 COMMENT =	Python MPD client library
 
 MODPY_EGG_VERSION =	0.3.0
 DISTNAME =		python-mpd-${MODPY_EGG_VERSION}
 PKGNAME =		py-mpd-${MODPY_EGG_VERSION}
+REVISION =		0
 CATEGORIES =		audio
 
 HOMEPAGE =		http://jatreuman.indefero.net/p/python-mpd/

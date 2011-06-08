@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2010/11/25 08:55:24 sebastia Exp $
+# $OpenBSD: Makefile,v 1.41 2011/06/08 17:36:17 jasper Exp $
 
 COMMENT-main=		service daemon that monitors one or more GPSes
 COMMENT-x11=		GUI test apps using gpsd
@@ -12,6 +12,8 @@ PKGNAME-php=		gpsd-php-${VERSION}
 SHARED_LIBS=		gps	19.0 \
 			gpsd	0.0
 CATEGORIES=		misc geo
+
+REVISION-main=		0
 
 HOMEPAGE=		http://gpsd.berlios.de/
 

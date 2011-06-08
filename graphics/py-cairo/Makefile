@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/17 08:05:15 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2011/06/08 17:35:28 jasper Exp $
 
 COMMENT=	cairo bindings for Python
 
 VERSION=	1.8.10
 DISTNAME=	py2cairo-${VERSION}
 PKGNAME=	py-cairo-${VERSION}
+REVISION =	0
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://cairographics.org/pycairo/

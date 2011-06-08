@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/31 09:19:45 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/08 17:31:33 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,6 +7,7 @@ COMMENT =	Python wrapper for the Vorbis libraries
 MODPY_EGG_VERSION=1.4
 DISTNAME =	pyvorbis-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:S/py/py-/}
+REVISION =		0
 CATEGORIES =	audio
 HOMEPAGE =	http://ekyo.nerim.net/software/pyogg/
 

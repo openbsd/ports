@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/05/31 05:44:27 rpointel Exp $
+# $OpenBSD: Makefile,v 1.16 2011/06/08 17:39:25 jasper Exp $
 
 COMMENT=		protocol definition, declaration and adaptation
 
@@ -6,7 +6,7 @@ VERSION=		1.0
 REV=			2306
 DISTNAME=		PyProtocols
 PKGNAME=		py-protocols-${VERSION}r${REV}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES=		devel
 

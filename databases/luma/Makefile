@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/08 17:33:59 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	Qt-based LDAP browser and utility
 
 MODPY_EGG_VERSION=2.4
 DISTNAME=	luma-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	databases x11
 

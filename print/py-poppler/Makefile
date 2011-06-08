@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/04 19:07:59 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2011/06/08 17:37:36 jasper Exp $
 
 COMMENT=	python bindings for poppler
 
@@ -6,7 +6,7 @@ DISTNAME=	pypoppler-0.12.1
 PKGNAME=        ${DISTNAME:S/^py/py-/}
 CATEGORIES=	print
 
-REVISION=	1
+REVISION=	2
 
 MAINTAINER=	Ido Admon <idoadm@gmail.com>
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/06/08 17:35:13 jasper Exp $
 
 COMMENT =	tile caching frontend for WMS/TMS services
 
 MODPY_EGG_VERSION =	2.10
 DISTNAME =	tilecache-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	geo graphics
 

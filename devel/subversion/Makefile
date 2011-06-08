@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.91 2011/06/01 22:19:17 stsp Exp $
+# $OpenBSD: Makefile,v 1.92 2011/06/08 17:40:08 jasper Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -17,6 +17,12 @@ FULLPKGNAME-ruby=	ruby-subversion-${VERSION}
 FULLPKGPATH-ruby=	devel/subversion,-ruby
 FULLPKGNAME-ap2=	ap2-subversion-${VERSION}
 FULLPKGPATH-ap2=	devel/subversion,-ap2
+
+REVISION-main=		0
+REVISION-python=	0
+REVISION-perl=		0
+REVISION-ruby=		0
+REVISION-ap2=		0
 
 SO_VERSION=	1.2
 SVN_LIBS=	svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \

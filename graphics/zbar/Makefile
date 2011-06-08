@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.9 2010/11/17 08:05:16 espie Exp $
+#	$OpenBSD: Makefile,v 1.10 2011/06/08 17:35:28 jasper Exp $
 
 COMMENT=	ZBar barcode reader
 DISTNAME=	zbar-0.10
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS=	zbar	0.0 \
 		zbargtk	0.0

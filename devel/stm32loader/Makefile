@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/22 08:56:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/06/08 17:40:08 jasper Exp $
 
 COMMENT=	STM32 bootloader to upload and download firmware
 
 # git checkout at 5th November 2010 from https://github.com/jsnyder/stm32loader
 DISTNAME=	stm32loader-0.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

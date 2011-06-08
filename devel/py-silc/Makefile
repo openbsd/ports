@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/05/31 05:44:27 rpointel Exp $
+# $OpenBSD: Makefile,v 1.15 2011/06/08 17:39:25 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	Python bindings for the SILC toolkit
 V=		0.5
 DISTNAME=	pysilc-${V}
 PKGNAME=	py-silc-${V}
-REVISION=	2
+REVISION=	3
 EPOCH=		0
 CATEGORIES=	devel
 

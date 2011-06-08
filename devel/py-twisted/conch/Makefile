@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/06/08 17:39:26 jasper Exp $
 
 COMMENT=	SSH and SFTP protocol implementation
 
@@ -7,7 +7,7 @@ CATEGORIES=	net
 VERSION=	10.0.0
 DISTNAME=	TwistedConch-${VERSION}
 PKGNAME=	py-twisted-conch-${VERSION}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedConch
 

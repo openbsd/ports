@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/05/30 11:04:14 shadchin Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/08 17:35:28 jasper Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 BROKEN-sparc64=		build stalls
 
 DISTNAME=		asymptote-2.10.src
 PKGNAME=		${DISTNAME:S/.src//g}
+REVISION =		0
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://asymptote.sourceforge.net/

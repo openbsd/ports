@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/05/04 19:01:21 rpointel Exp $
+# $OpenBSD: Makefile,v 1.27 2011/06/08 17:33:59 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,9 +8,9 @@ COMMENT-examples=	example programs for the LDAP client API for Python
 V=			2.3.1
 DISTNAME=		python-ldap-${V}
 PKGNAME-main=		py-ldap-${V}
-REVISION-main =		5
+REVISION-main =		6
 FULLPKGNAME-examples=	py-ldap-examples-${V}
-REVISION-examples =	4
+REVISION-examples =	7
 FULLPKGPATH-examples=	databases/py-ldap,-examples
 
 CATEGORIES=		databases
@@ -35,7 +35,7 @@ LIB_DEPENDS-main=	databases/openldap \
 WANTLIB-main +=		ldap_r>=7 lber>=7 sasl2>=2
 
 FLAVORS=		python2.4 python2.6 python2.7
-FLAVOR?=		python2.6
+FLAVOR?=		python2.7
 
 .if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
 MULTI_PACKAGES= -main

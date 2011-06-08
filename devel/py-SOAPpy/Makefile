@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/08 17:39:24 jasper Exp $
 
 COMMENT=	Python API for SOAP HTTP/RPC
 
 DISTNAME=	SOAPpy-0.11.6
 PKGNAME=	${DISTNAME:S/^/py-/}
-REVISION =	5
+REVISION =	6
 CATEGORIES=    	devel www
 
 HOMEPAGE=	http://pywebsvcs.sourceforge.net/

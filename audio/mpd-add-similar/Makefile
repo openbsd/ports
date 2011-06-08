@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/08 17:31:33 jasper Exp $
 
 COMMENT =		add similar tracks to your mpd playlist
 
 MODPY_EGG_VERSION =	0.1.6
 DISTNAME =		mpd-add-similar-${MODPY_EGG_VERSION}
+REVISION =		0
 CATEGORIES =		audio net
 
 HOMEPAGE =		http://launchpad.net/mpd-add-similar

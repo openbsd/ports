@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/15 10:17:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/08 17:40:08 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,7 +8,7 @@ COMMENT =	program matching and transformation engine
 # may need to be switched to gdiff/ggrep
 DISTNAME =	coccinelle-1.0.0-rc1
 PKGNAME =	${DISTNAME:S/-rc/rc/}
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	devel

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2011/03/14 09:17:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2011/06/08 17:39:25 jasper Exp $
 
 COMMENT =		serial interface class for Python
 
 MODPY_EGG_VERSION =	2.4
 DISTNAME =		pyserial-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

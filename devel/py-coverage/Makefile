@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/05/31 05:44:26 rpointel Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/08 17:39:25 jasper Exp $
 
 COMMENT =	code coverage measurement for Python
 
 MODPY_EGG_VERSION = 3.4
 DISTNAME =	coverage-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

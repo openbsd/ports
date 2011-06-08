@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/08 17:39:25 jasper Exp $
 
 COMMENT=	small utility package for Divmod projects
 
 VERSION=	0.6.0
 DISTNAME=	Epsilon-${VERSION}
 PKGNAME=	py-epsilon-${VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://divmod.org/trac/wiki/DivmodEpsilon

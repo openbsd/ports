@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/20 09:48:40 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/08 17:37:46 jasper Exp $
 
 COMMENT=	command-line interface to Google services
 
 MODPY_EGG_VERSION= 0.9.8
 DISTNAME=	googlecl-${MODPY_EGG_VERSION}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES=    	productivity devel www
 

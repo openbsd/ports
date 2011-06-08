@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/01 11:19:00 benoit Exp $
+# $OpenBSD: Makefile,v 1.17 2011/06/08 17:31:16 jasper Exp $
 
 COMMENT =	Python module to access NOAA's METAR weather reports
 
 MODPY_EGG_VERSION =	0.17
 DISTNAME =		pymetar-${MODPY_EGG_VERSION}
 PKGNAME =		py-metar-${MODPY_EGG_VERSION}
+REVISION =		0
 CATEGORIES =		astro
 
 HOMEPAGE =		http://www.schwarzvogel.de/software-pymetar.shtml

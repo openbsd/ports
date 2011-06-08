@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/06 07:22:45 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/08 17:31:33 jasper Exp $
 
 COMMENT =		simple audio file converter for the GNOME Desktop
 
 DISTNAME =		soundconverter-1.5.4
+REVISION =		0
 CATEGORIES =		audio
 
 HOMEPAGE =		http://soundconverter.berlios.de/

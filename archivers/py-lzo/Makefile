@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/06/08 17:31:05 jasper Exp $
 
 COMMENT =		Python implementation of the LZO library
 
 MODPY_EGG_VERSION =	1.08
 DISTNAME =		python-lzo-${MODPY_EGG_VERSION}
 PKGNAME =		py-lzo-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		archivers
 
 HOMEPAGE =		http://www.oberhumer.com/opensource/lzo/
