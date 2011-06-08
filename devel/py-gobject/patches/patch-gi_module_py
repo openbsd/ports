@@ -1,10 +1,12 @@
-$OpenBSD: patch-gi_module_py,v 1.1 2011/06/06 16:05:59 jasper Exp $
+$OpenBSD: patch-gi_module_py,v 1.2 2011/06/08 07:25:55 ajacoutot Exp $
 
-Fix TypeError: unable to create a wrapper for GLib.Variant
-https://bugzilla.gnome.org/show_bug.cgi?id=647509
+From 2d73012e5dbcc45a5782a6c119dfb272c14b5a61 Mon Sep 17 00:00:00 2001
+From: Tomeu Vizoso <tomeu.vizoso@collabora.co.uk>
+Date: Mon, 06 Jun 2011 15:38:21 +0000
+Subject: Use _gi.Struct to wrap fundamentals
 
 --- gi/module.py.orig	Mon Apr 18 17:35:33 2011
-+++ gi/module.py	Mon Jun  6 17:43:29 2011
++++ gi/module.py	Wed Jun  8 07:58:53 2011
 @@ -150,7 +150,9 @@ class IntrospectionModule(object):
              elif isinstance(info, (StructInfo, UnionInfo)):
                  if g_type.is_a(gobject.TYPE_BOXED):
