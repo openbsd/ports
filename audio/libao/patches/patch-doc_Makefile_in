@@ -1,7 +1,7 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.9 2010/06/03 15:49:38 naddy Exp $
---- doc/Makefile.in.orig	Sun May 23 17:01:22 2010
-+++ doc/Makefile.in	Sun May 23 17:01:42 2010
-@@ -198,7 +198,7 @@ build_os = @build_os@
+$OpenBSD: patch-doc_Makefile_in,v 1.10 2011/06/08 20:00:47 naddy Exp $
+--- doc/Makefile.in.orig	Tue Feb 22 23:54:29 2011
++++ doc/Makefile.in	Wed Jun  8 15:48:58 2011
+@@ -202,7 +202,7 @@ build_os = @build_os@
  build_vendor = @build_vendor@
  datadir = @datadir@
  datarootdir = @datarootdir@

@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_plugins_Makefile_in,v 1.5 2010/06/03 15:49:38 naddy Exp $
---- src/plugins/Makefile.in.orig	Fri Mar 26 03:34:32 2010
-+++ src/plugins/Makefile.in	Sun May 23 17:07:53 2010
-@@ -295,7 +295,7 @@ $(RECURSIVE_TARGETS):
+$OpenBSD: patch-src_plugins_Makefile_in,v 1.6 2011/06/08 20:00:47 naddy Exp $
+--- src/plugins/Makefile.in.orig	Tue Feb 22 23:54:29 2011
++++ src/plugins/Makefile.in	Wed Jun  8 15:48:58 2011
+@@ -299,7 +299,7 @@ $(RECURSIVE_TARGETS):
  	  else \
  	    local_target="$$target"; \
  	  fi; \

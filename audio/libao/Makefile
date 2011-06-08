@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2010/10/18 16:52:45 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2011/06/08 20:00:47 naddy Exp $
 
 COMMENT=	portable audio output library
 
-DISTNAME=	libao-1.0.0
-REVISION=	0
+DISTNAME=	libao-1.1.0
 CATEGORIES=    	audio
 HOMEPAGE=	http://www.xiph.org/ao/
-SHARED_LIBS=	ao                   4.0      # .4.0
+SHARED_LIBS=	ao                   5.0      # .4.0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -21,7 +20,6 @@ MASTER_SITES=	http://downloads.xiph.org/releases/ao/
 WANTLIB=	sndio
 
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 
