@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/09 06:23:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/06/08 17:50:10 jasper Exp $
 
 COMMENT=	Sender-Policy-Framework queries in Python
 
 MODPY_EGG_VERSION=2.0.5
 DISTNAME=	pyspf-${MODPY_EGG_VERSION}
 PKGNAME=	py-spf-${MODPY_EGG_VERSION}
-REVISION =	3
+REVISION =	4
 CATEGORIES=	mail
 
 HOMEPAGE=	http://bmsi.com/python/milter.html

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/20 17:22:40 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/08 17:50:25 jasper Exp $
 
 COMMENT=		dbus debugger
 
 MODPY_EGG_VERSION=	0.1.12
 DISTNAME=		d-feet-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 CATEGORIES=		sysutils x11
 
 EXTRACT_SUFX=		.tar.bz2

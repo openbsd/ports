@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/08 17:50:10 jasper Exp $
 
 COMMENT =		collaborative, networked system to detect and block spam
 
 MODPY_EGG_VERSION =	0.5.0
 DISTNAME =		pyzor-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 CATEGORIES =		mail net
 
 HOMEPAGE =		http://pyzor.sourceforge.net/

@@ -1,10 +1,10 @@
-#	$OpenBSD: Makefile,v 1.14 2010/11/20 17:22:42 espie Exp $
+#	$OpenBSD: Makefile,v 1.15 2011/06/08 17:50:25 jasper Exp $
 
 COMMENT = 	incremental backup
 
 MODPY_EGG_VERSION =	1.2.8
 DISTNAME =	rdiff-backup-${MODPY_EGG_VERSION}
-REVISION =	2
+REVISION =	3
 CATEGORIES =	sysutils
 
 HOMEPAGE = 	http://www.nongnu.org/rdiff-backup/
