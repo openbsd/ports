@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/12/22 15:54:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/06/08 18:26:44 ajacoutot Exp $
 @bin bin/epdfview
+@man man/man1/epdfview.1
 share/applications/epdfview.desktop
 share/epdfview/
 share/epdfview/pixmaps/
@@ -25,6 +26,9 @@ share/icons/hicolor/32x32/apps/epdfview.png
 share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/epdfview.png
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/epdfview.mo
 share/locale/ca/LC_MESSAGES/epdfview.mo
 share/locale/cs/LC_MESSAGES/epdfview.mo
 share/locale/de/LC_MESSAGES/epdfview.mo
@@ -32,8 +36,16 @@ share/locale/el/LC_MESSAGES/epdfview.mo
 share/locale/es/LC_MESSAGES/epdfview.mo
 share/locale/eu/LC_MESSAGES/epdfview.mo
 share/locale/fr/LC_MESSAGES/epdfview.mo
+share/locale/gl/LC_MESSAGES/epdfview.mo
+share/locale/he_IL/
+share/locale/he_IL/LC_MESSAGES/
+share/locale/he_IL/LC_MESSAGES/epdfview.mo
+share/locale/hu/LC_MESSAGES/epdfview.mo
 share/locale/it/LC_MESSAGES/epdfview.mo
 share/locale/ja/LC_MESSAGES/epdfview.mo
+share/locale/nl_NL/
+share/locale/nl_NL/LC_MESSAGES/
+share/locale/nl_NL/LC_MESSAGES/epdfview.mo
 share/locale/pl/LC_MESSAGES/epdfview.mo
 share/locale/pt_BR/LC_MESSAGES/epdfview.mo
 share/locale/pt_PT/
