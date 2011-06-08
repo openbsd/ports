@@ -1,7 +1,7 @@
-$OpenBSD: patch-base_process_util_openbsd_cc,v 1.3 2011/03/16 10:52:46 robert Exp $
---- base/process_util_openbsd.cc.orig	Wed Mar 16 09:03:13 2011
-+++ base/process_util_openbsd.cc	Wed Mar 16 10:21:13 2011
-@@ -0,0 +1,349 @@
+$OpenBSD: patch-base_process_util_openbsd_cc,v 1.4 2011/06/08 21:23:04 robert Exp $
+--- base/process_util_openbsd.cc.orig	Wed Jun  8 18:32:02 2011
++++ base/process_util_openbsd.cc	Wed Jun  8 18:36:39 2011
+@@ -0,0 +1,339 @@
 +// Copyright (c) 2009 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -52,7 +52,6 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.3 2011/03/16 10:52:46 robert Ex
 +}
 +
 +FilePath GetProcessExecutablePath(ProcessHandle process) {
-+  printf("%s\n", __PRETTY_FUNCTION__);
 +  return FilePath(std::string("/usr/local/chrome/chrome"));
 +}
 +
@@ -61,8 +60,6 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.3 2011/03/16 10:52:46 robert Ex
 +  filter_(filter) {
 +
 +  int mib[6];
-+
-+  printf("%s\n", __PRETTY_FUNCTION__);
 +
 +  mib[0] = CTL_KERN;
 +  mib[1] = KERN_PROC;
@@ -116,8 +113,6 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.3 2011/03/16 10:52:46 robert Ex
 +
 +bool ProcessIterator::CheckForNextProcess() {
 +  std::string data;
-+
-+  printf("%s\n", __PRETTY_FUNCTION__);
 +
 +  for (; index_of_kinfo_proc_ < kinfo_procs_.size(); ++ index_of_kinfo_proc_) {
 +    int mib[3];
@@ -212,7 +207,6 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.3 2011/03/16 10:52:46 robert Ex
 +}
 +
 +size_t ProcessMetrics::GetPeakPagefileUsage() const {
-+	printf("%s\n", __PRETTY_FUNCTION__);
 +
 +  return 0;
 +}
@@ -236,7 +230,6 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.3 2011/03/16 10:52:46 robert Ex
 +}
 +
 +size_t ProcessMetrics::GetPeakWorkingSetSize() const {
-+	printf("%s\n", __PRETTY_FUNCTION__);
 +
 +  return 0;
 +}
@@ -329,8 +322,6 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.3 2011/03/16 10:52:46 robert Ex
 +  unsigned long mem_total, mem_free, mem_inactive;
 +  size_t len = sizeof(vmtotal);
 +
-+  printf("%s\n", __PRETTY_FUNCTION__);
-+
 +  mib[0] = CTL_VM;
 +  mib[1] = VM_METER;
 +
@@ -347,7 +338,6 @@ $OpenBSD: patch-base_process_util_openbsd_cc,v 1.3 2011/03/16 10:52:46 robert Ex
 +}
 +
 +void EnableTerminationOnOutOfMemory() {
-+  NOTIMPLEMENTED();
 +  return;
 +}
 +}
