@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/06/02 17:09:32 kili Exp $
+# $OpenBSD: Makefile,v 1.17 2011/06/08 18:03:52 jasper Exp $
 
 COMMENT=		flexible communications framework, farsight2 component
 
 DISTNAME=		telepathy-farsight-0.0.16
 
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		${HOMEPAGE_TP:=Telepathy-Farsight}
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/12/05 18:06:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/08 18:00:50 jasper Exp $
 
 COMMENT=		twitter python module
 
 MODPY_EGG_VERSION=	1.4.2
 DISTNAME=		twitter-${MODPY_EGG_VERSION}
 PKGNAME=		py-twitter-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net www
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/04/20 17:53:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/06/08 18:03:52 jasper Exp $
 
 COMMENT=		connection manager meant for testing Telepathy
 
 DISTNAME=		telepathy-pinocchio-0.3.1
-REVISION=		3
+REVISION=		4
 
 MASTER_SITES=		${MASTER_SITES_TP:=telepathy-pinocchio/}
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/08/30 21:21:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/08 18:00:50 jasper Exp $
 
 COMMENT=	SNMP framework for Python
 
 DISTNAME=	pysnmp-3.4.4
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	net
 
 HOMEPAGE=	http://pysnmp.sourceforge.net/

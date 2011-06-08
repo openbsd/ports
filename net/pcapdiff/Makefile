@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/19 22:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/06/08 18:00:49 jasper Exp $
 
 COMMENT =		compare pcap dump files
 
 MODPY_EGG_VERSION =	0.1
 DISTNAME =		pcapdiff-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net security
 
