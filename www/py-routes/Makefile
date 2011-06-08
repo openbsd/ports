@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:53 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/08 18:15:29 rpointel Exp $
 
 COMMENT =	re-implementation of the rails routes system
 
 MODPY_EGG_VERSION = 1.11
 DISTNAME =	Routes-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www devel
 

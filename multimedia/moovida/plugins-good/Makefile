@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:15 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/06/08 18:18:13 rpointel Exp $
 
 COMMENT =	Moovida media center - good plugins
 DISTNAME =	moovida-plugins-good-${VERSION}
-REVISION =	1
+REVISION =	2
 
 BUILD_DEPENDS +=	multimedia/moovida/core
 

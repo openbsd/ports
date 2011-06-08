@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/08/30 22:15:24 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/08 18:15:29 rpointel Exp $
 
 COMMENT=	Python weblog system
 
 DISTNAME=	pyblosxom-1.3.2
-REVISION=	2
+REVISION=	3
 CATEGORIES=	www
 PKG_ARCH=	*
 

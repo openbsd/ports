@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/08 18:18:13 rpointel Exp $
 
 COMMENT =	uPnP/DLNA media server
 
 MODPY_EGG_VERSION =	0.6.6.2
 DISTNAME =	Coherence-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 CATEGORIES =    	multimedia
 
 HOMEPAGE =	http://coherence.beebits.net

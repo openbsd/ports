@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/06/08 18:15:28 rpointel Exp $
 
 COMMENT = 		web-based SSH client
 
 DISTNAME =		Ajaxterm-0.10
 PKGNAME =		ajaxterm-0.10
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		net security www
 PKG_ARCH =		*

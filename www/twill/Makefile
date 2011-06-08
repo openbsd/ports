@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/03/16 14:36:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/08 18:15:30 rpointel Exp $
 
 COMMENT=		simple scripting language for web browsing
 
 DISTNAME=		twill-0.9
-REVISION=		2
+REVISION=		3
 CATEGORIES=		www
 
 HOMEPAGE=		http://twill.idyll.org/

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/08 18:15:30 rpointel Exp $
 
 COMMENT=		ldap authentication plugin for trac
 
 MODPY_EGG_VERSION=	0.6.0
 DISTNAME=		trac-ldapplugin-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		www devel
 
 MAINTAINER=		Michael Erdely <merdely@openbsd.org>

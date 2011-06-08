@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/08/30 22:02:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/08 18:15:29 rpointel Exp $
 
 COMMENT=	templating engine for separation of code and HTML
 
 MODPY_EGG_VERSION= 1.22
 DISTNAME=	htmltmpl-${MODPY_EGG_VERSION}
 PKGNAME=	py-htmltmpl-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www devel
 

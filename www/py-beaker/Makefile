@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/05/08 22:42:28 fgsch Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/08 18:15:29 rpointel Exp $
 
 COMMENT =	session and caching library with wsgi middleware
 
 MODPY_EGG_VERSION = 1.5.4
+REVISION =	0
 DISTNAME =	Beaker-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
 
