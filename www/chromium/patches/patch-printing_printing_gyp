@@ -1,7 +1,7 @@
-$OpenBSD: patch-printing_printing_gyp,v 1.4 2011/05/26 11:39:14 robert Exp $
---- printing/printing.gyp.orig	Fri May 20 10:34:53 2011
-+++ printing/printing.gyp	Thu May 26 11:46:28 2011
-@@ -142,6 +142,11 @@
+$OpenBSD: patch-printing_printing_gyp,v 1.5 2011/06/08 20:36:56 robert Exp $
+--- printing/printing.gyp.orig	Mon Jun  6 11:11:26 2011
++++ printing/printing.gyp	Wed Jun  8 09:58:36 2011
+@@ -150,6 +150,11 @@
                  ],
                },
              }],
@@ -13,7 +13,7 @@ $OpenBSD: patch-printing_printing_gyp,v 1.4 2011/05/26 11:39:14 robert Exp $
            ],
          }],
        ],
-@@ -170,7 +175,7 @@
+@@ -178,7 +183,7 @@
          'units_unittest.cc',
        ],
        'conditions': [
@@ -22,7 +22,7 @@ $OpenBSD: patch-printing_printing_gyp,v 1.4 2011/05/26 11:39:14 robert Exp $
          ['OS!="mac"', {'sources/': [['exclude', '_mac_unittest\\.(cc|mm?)$']]}],
          ['OS!="win"', {'sources/': [['exclude', '_win_unittest\\.cc$']]
            }, {  # else: OS=="win"
-@@ -181,14 +186,12 @@
+@@ -189,14 +194,12 @@
              'dependencies': [
                '../build/linux/system.gyp:gtk',
             ],

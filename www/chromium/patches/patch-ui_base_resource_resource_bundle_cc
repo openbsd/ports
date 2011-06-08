@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.1 2011/04/29 13:18:02 robert Exp $
---- ui/base/resource/resource_bundle.cc.orig	Fri Apr 29 08:21:35 2011
-+++ ui/base/resource/resource_bundle.cc	Fri Apr 29 08:21:42 2011
-@@ -129,7 +129,7 @@ gfx::Image& ResourceBundle::GetImageNamed(int resource
+$OpenBSD: patch-ui_base_resource_resource_bundle_cc,v 1.2 2011/06/08 20:36:56 robert Exp $
+--- ui/base/resource/resource_bundle.cc.orig	Mon Jun  6 11:12:14 2011
++++ ui/base/resource/resource_bundle.cc	Wed Jun  8 09:58:37 2011
+@@ -137,7 +137,7 @@ gfx::Image& ResourceBundle::GetImageNamed(int resource
    return *GetEmptyImage();
  }
  

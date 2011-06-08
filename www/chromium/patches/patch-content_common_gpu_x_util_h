@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_common_gpu_x_util_h,v 1.1 2011/06/08 20:36:56 robert Exp $
+--- content/common/gpu/x_util.h.orig	Wed Jun  8 10:30:44 2011
++++ content/common/gpu/x_util.h	Wed Jun  8 10:30:51 2011
+@@ -12,7 +12,7 @@
+ #include "build/build_config.h"
+ #include "content/common/gpu/gpu_config.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(USE_X11)
+ 
+ // Forward declares ------------------------------------------------------------
+ //

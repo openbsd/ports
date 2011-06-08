@@ -1,6 +1,6 @@
-$OpenBSD: patch-ui_gfx_image_cc,v 1.1 2011/04/29 13:18:02 robert Exp $
---- ui/gfx/image.cc.orig	Fri Apr 29 10:48:33 2011
-+++ ui/gfx/image.cc	Fri Apr 29 10:48:56 2011
+$OpenBSD: patch-ui_gfx_image_cc,v 1.2 2011/06/08 20:36:56 robert Exp $
+--- ui/gfx/image.cc.orig	Mon Jun  6 11:12:14 2011
++++ ui/gfx/image.cc	Wed Jun  8 09:58:37 2011
 @@ -9,7 +9,7 @@
  #include "base/logging.h"
  #include "third_party/skia/include/core/SkBitmap.h"
@@ -64,7 +64,7 @@ $OpenBSD: patch-ui_gfx_image_cc,v 1.1 2011/04/29 13:18:02 robert Exp $
      if (default_representation_ == Image::kGdkPixbufRep) {
        internal::GdkPixbufRep* pixbuf_rep = default_rep->AsGdkPixbufRep();
        rep = new internal::SkBitmapRep(
-@@ -261,7 +261,7 @@ internal::ImageRep* Image::GetRepresentation(Represent
+@@ -259,7 +259,7 @@ internal::ImageRep* Image::GetRepresentation(Represent
    if (default_rep->type() == Image::kSkBitmapRep) {
      internal::SkBitmapRep* skia_rep = default_rep->AsSkBitmapRep();
      internal::ImageRep* native_rep = NULL;

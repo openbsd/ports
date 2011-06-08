@@ -1,7 +1,7 @@
-$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebFrameImpl_cpp,v 1.2 2011/04/29 13:18:02 robert Exp $
---- third_party/WebKit/Source/WebKit/chromium/src/WebFrameImpl.cpp.orig	Thu Apr 28 11:56:44 2011
-+++ third_party/WebKit/Source/WebKit/chromium/src/WebFrameImpl.cpp	Thu Apr 28 11:57:00 2011
-@@ -154,7 +154,7 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebFrameImpl_cpp,v 1.3 2011/06/08 20:36:56 robert Exp $
+--- third_party/WebKit/Source/WebKit/chromium/src/WebFrameImpl.cpp.orig	Mon Jun  6 11:15:23 2011
++++ third_party/WebKit/Source/WebKit/chromium/src/WebFrameImpl.cpp	Wed Jun  8 09:58:37 2011
+@@ -157,7 +157,7 @@
  #include <algorithm>
  #include <wtf/CurrentTime.h>
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-third_party_WebKit_Source_WebKit_chromium_src_WebFrameImpl_cpp,v
  #include <gdk/gdk.h>
  #endif
  
-@@ -324,7 +324,7 @@ class ChromePrintContext : public PrintContext { (publ
+@@ -332,7 +332,7 @@ class ChromePrintContext : public PrintContext { (publ
          float scale = m_printedPageWidth / pageRect.width();
  
          ctx.save();

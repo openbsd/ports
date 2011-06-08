@@ -1,16 +1,16 @@
-$OpenBSD: patch-third_party_icu_icu_gyp,v 1.4 2011/04/29 13:18:02 robert Exp $
---- third_party/icu/icu.gyp.orig	Tue Apr 26 10:15:19 2011
-+++ third_party/icu/icu.gyp	Thu Apr 28 17:47:31 2011
-@@ -54,7 +54,7 @@
-             }, {  # else: OS != "win"
-               'sources!': ['windows/icudt46.dll'],
+$OpenBSD: patch-third_party_icu_icu_gyp,v 1.5 2011/06/08 20:36:56 robert Exp $
+--- third_party/icu/icu.gyp.orig	Mon Jun  6 11:14:23 2011
++++ third_party/icu/icu.gyp	Wed Jun  8 09:58:37 2011
+@@ -67,7 +67,7 @@
+                 },
+               ],
              }],
 -            [ 'OS != "linux" or chromeos == 1', {
 +            [ '(OS != "linux" and OS != "openbsd") or chromeos == 1', {
                'sources!': ['linux/icudt46l_dat.S'],
              }],
              [ 'OS != "mac"', {
-@@ -264,7 +264,7 @@
+@@ -277,7 +277,7 @@
              ],
            },
            'conditions': [
@@ -19,7 +19,7 @@ $OpenBSD: patch-third_party_icu_icu_gyp,v 1.4 2011/04/29 13:18:02 robert Exp $
                # Since ICU wants to internally use its own deprecated APIs, don't
                # complain about it.
                'cflags': [
-@@ -479,7 +479,7 @@
+@@ -492,7 +492,7 @@
                  'source/stubdata/stubdata.c',
                ],
              }],

@@ -1,40 +1,35 @@
-$OpenBSD: patch-remoting_remoting_gyp,v 1.3 2011/04/29 13:18:01 robert Exp $
---- remoting/remoting.gyp.orig	Tue Apr 26 10:01:06 2011
-+++ remoting/remoting.gyp	Fri Apr 29 09:52:53 2011
-@@ -237,22 +237,22 @@
-             'host/user_authenticator_win.cc',
-           ],
-         }],
+$OpenBSD: patch-remoting_remoting_gyp,v 1.4 2011/06/08 20:36:56 robert Exp $
+--- remoting/remoting.gyp.orig	Wed Jun  8 12:19:53 2011
++++ remoting/remoting.gyp	Wed Jun  8 16:25:52 2011
+@@ -233,12 +233,12 @@
+         'host/screen_recorder.cc',
+         'host/screen_recorder.h',
+         'host/user_authenticator.h',
+-        'host/user_authenticator_linux.cc',
++        'host/user_authenticator_bsd.cc',
+         'host/user_authenticator_mac.cc',
+         'host/user_authenticator_win.cc',
+       ],
+       'conditions': [
 -        ['OS=="linux"', {
 +        ['OS=="linux" or OS=="openbsd"', {
-           'sources': [
-             'host/capturer_linux.cc',
-             'host/capturer_linux.h',
-             'host/event_executor_linux.cc',
-             'host/event_executor_linux.h',
--            'host/user_authenticator_pam.cc',
--            'host/user_authenticator_pam.h',
--            'host/user_authenticator_linux.cc'
-+            'host/user_authenticator_fake.cc',
-+            'host/user_authenticator_fake.h',
-+            'host/user_authenticator_bsd.cc',
+           'dependencies': [
+             '../build/linux/system.gyp:gtk',
            ],
-+          'include_dirs': [ '/usr/X11R6/include' ],
-           'link_settings': {
-             'libraries': [
+@@ -251,7 +251,6 @@
                '-lX11',
                '-lXdamage',
                '-lXtst',
 -              '-lpam',
+               '-lXext'
              ],
            },
-         }],
-@@ -573,7 +573,7 @@
-             'host/capturer_gdi_unittest.cc',
-           ],
-         }],
+@@ -555,7 +554,7 @@
+         'run_all_unittests.cc',
+       ],
+       'conditions': [
 -        ['OS=="linux"', {
 +        ['OS=="linux" or OS=="openbsd"', {
            'dependencies': [
+             '../app/app.gyp:app_base',
              # Needed for the following #include chain:
-             #   base/run_all_unittests.cc

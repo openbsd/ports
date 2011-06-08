@@ -1,0 +1,54 @@
+$OpenBSD: patch-content_renderer_webplugin_delegate_proxy_cc,v 1.1 2011/06/08 20:36:56 robert Exp $
+--- content/renderer/webplugin_delegate_proxy.cc.orig	Wed Jun  8 10:27:33 2011
++++ content/renderer/webplugin_delegate_proxy.cc	Wed Jun  8 10:28:45 2011
+@@ -155,7 +155,7 @@ class ResourceClientProxy : public webkit::npapi::WebP
+   bool multibyte_response_expected_;
+ };
+ 
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+ static void ReleaseTransportDIB(TransportDIB* dib) {
+   if (dib) {
+     IPC::Message* message = new ViewHostMsg_FreeTransportDIB(dib->id());
+@@ -181,7 +181,7 @@ WebPluginDelegateProxy::WebPluginDelegateProxy(
+ }
+ 
+ WebPluginDelegateProxy::~WebPluginDelegateProxy() {
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+   // Ask the browser to release old TransportDIB objects for which no
+   // PluginHostMsg_UpdateGeometry_ACK was ever received from the plugin
+   // process.
+@@ -533,7 +533,7 @@ void WebPluginDelegateProxy::UpdateGeometry(const gfx:
+       bitmaps_changed = true;
+ 
+       bool needs_background_store = transparent_;
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+       // We don't support transparency under QuickDraw, and CoreGraphics
+       // preserves transparency information (and does the compositing itself)
+       // so plugins don't need access to the page background.
+@@ -605,7 +605,7 @@ void WebPluginDelegateProxy::UpdateGeometry(const gfx:
+ }
+ 
+ void WebPluginDelegateProxy::ResetWindowlessBitmaps() {
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+   DCHECK(!background_store_.get());
+   // The Mac TransportDIB implementation uses base::SharedMemory, which
+   // cannot be disposed of if an in-flight UpdateGeometry message refers to
+@@ -666,12 +666,12 @@ bool WebPluginDelegateProxy::CreateSharedBitmap(
+     scoped_ptr<TransportDIB>* memory,
+     scoped_ptr<skia::PlatformCanvas>* canvas) {
+   const size_t size = BitmapSizeForPluginRect(plugin_rect_);
+-#if defined(OS_POSIX) && !defined(OS_MACOSX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
+   memory->reset(TransportDIB::Create(size, 0));
+   if (!memory->get())
+     return false;
+ #endif
+-#if defined(OS_MACOSX)
++#if defined(OS_MACOSX) || defined(OS_OPENBSD)
+   TransportDIB::Handle handle;
+   IPC::Message* msg = new ViewHostMsg_AllocTransportDIB(size, true, &handle);
+   if (!RenderThread::current()->Send(msg))

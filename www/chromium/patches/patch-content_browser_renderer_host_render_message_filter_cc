@@ -1,17 +1,17 @@
-$OpenBSD: patch-content_browser_renderer_host_render_message_filter_cc,v 1.1 2011/04/29 13:18:01 robert Exp $
---- content/browser/renderer_host/render_message_filter.cc.orig	Thu Apr 28 11:27:55 2011
-+++ content/browser/renderer_host/render_message_filter.cc	Thu Apr 28 11:28:23 2011
-@@ -416,7 +416,7 @@ bool RenderMessageFilter::OnMessageReceived(const IPC:
-     IPC_MESSAGE_HANDLER(ViewHostMsg_V8HeapStats, OnV8HeapStats)
+$OpenBSD: patch-content_browser_renderer_host_render_message_filter_cc,v 1.2 2011/06/08 20:36:56 robert Exp $
+--- content/browser/renderer_host/render_message_filter.cc.orig	Wed Jun  8 12:17:34 2011
++++ content/browser/renderer_host/render_message_filter.cc	Wed Jun  8 15:45:53 2011
+@@ -365,7 +365,7 @@ bool RenderMessageFilter::OnMessageReceived(const IPC:
+     IPC_MESSAGE_HANDLER(ViewHostMsg_AllocateSharedMemoryBuffer,
+                         OnAllocateSharedMemoryBuffer)
      IPC_MESSAGE_HANDLER(ViewHostMsg_DidZoomURL, OnDidZoomURL)
-     IPC_MESSAGE_HANDLER_DELAY_REPLY(ViewHostMsg_ResolveProxy, OnResolveProxy)
 -#if defined(OS_MACOSX)
 +#if defined(OS_MACOSX) || defined(OS_OPENBSD)
      IPC_MESSAGE_HANDLER(ViewHostMsg_AllocTransportDIB, OnAllocTransportDIB)
      IPC_MESSAGE_HANDLER(ViewHostMsg_FreeTransportDIB, OnFreeTransportDIB)
  #endif
-@@ -1111,7 +1111,7 @@ void RenderMessageFilter::OnRendererHistograms(
-   HistogramSynchronizer::DeserializeHistogramList(sequence_number, histograms);
+@@ -740,7 +740,7 @@ ChromeURLRequestContext* RenderMessageFilter::GetReque
+       context_getter->GetURLRequestContext());
  }
  
 -#if defined(OS_MACOSX)

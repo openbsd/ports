@@ -1,0 +1,11 @@
+$OpenBSD: patch-ui_ui_gfx_gypi,v 1.1 2011/06/08 20:36:56 robert Exp $
+--- ui/ui_gfx.gypi.orig	Wed Jun  8 12:23:04 2011
++++ ui/ui_gfx.gypi	Wed Jun  8 12:23:24 2011
+@@ -150,6 +150,7 @@
+             'gfx/native_widget_types_gtk.cc',
+           ],
+         }],
++        ['OS=="openbsd"', { 'include_dirs': [ '/usr/local/include ' ] } ],
+         ['chromeos==1', {
+           'sources': [
+             'gfx/native_theme_chromeos.cc',

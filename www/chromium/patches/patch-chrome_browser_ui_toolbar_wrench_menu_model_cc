@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_ui_toolbar_wrench_menu_model_cc,v 1.2 2011/04/29 13:18:01 robert Exp $
---- chrome/browser/ui/toolbar/wrench_menu_model.cc.orig	Tue Apr 26 10:01:43 2011
-+++ chrome/browser/ui/toolbar/wrench_menu_model.cc	Thu Apr 28 11:17:49 2011
+$OpenBSD: patch-chrome_browser_ui_toolbar_wrench_menu_model_cc,v 1.3 2011/06/08 20:36:56 robert Exp $
+--- chrome/browser/ui/toolbar/wrench_menu_model.cc.orig	Mon Jun  6 11:12:09 2011
++++ chrome/browser/ui/toolbar/wrench_menu_model.cc	Wed Jun  8 09:58:36 2011
 @@ -38,7 +38,7 @@
  #include "ui/base/models/button_menu_item_model.h"
  #include "ui/base/resource/resource_bundle.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_ui_toolbar_wrench_menu_model_cc,v 1.2 2011/04/29 
  #include <gtk/gtk.h>
  #include "chrome/browser/ui/gtk/gtk_util.h"
  #endif
-@@ -359,7 +359,7 @@ void WrenchMenuModel::Build() {
+@@ -411,7 +411,7 @@ void WrenchMenuModel::Build() {
  #endif
  
    AddSeparator();
@@ -19,7 +19,7 @@ $OpenBSD: patch-chrome_browser_ui_toolbar_wrench_menu_model_cc,v 1.2 2011/04/29 
    // WARNING: Mac does not use the ButtonMenuItemModel, but instead defines the
    // layout for this menu item in Toolbar.xib. It does, however, use the
    // command_id value from AddButtonItem() to identify this special item.
-@@ -374,7 +374,7 @@ void WrenchMenuModel::Build() {
+@@ -426,7 +426,7 @@ void WrenchMenuModel::Build() {
  #endif
  
    AddSeparator();

@@ -1,0 +1,12 @@
+$OpenBSD: patch-ui_gfx_surface_surface_gyp,v 1.1 2011/06/08 20:36:56 robert Exp $
+--- ui/gfx/surface/surface.gyp.orig	Wed Jun  8 10:15:23 2011
++++ ui/gfx/surface/surface.gyp	Wed Jun  8 10:09:39 2011
+@@ -48,7 +48,7 @@
+         'io_surface_support_mac.cc',
+         'io_surface_support_mac.h',
+         'transport_dib.h',
+-        'transport_dib_linux.cc',
++        'transport_dib_openbsd.cc',
+         'transport_dib_mac.cc',
+         'transport_dib_win.cc',
+       ],

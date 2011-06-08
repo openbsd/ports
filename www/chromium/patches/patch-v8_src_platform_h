@@ -1,7 +1,7 @@
-$OpenBSD: patch-v8_src_platform_h,v 1.1 2011/06/02 07:22:12 robert Exp $
---- v8/src/platform.h.orig	Fri May 20 10:56:51 2011
-+++ v8/src/platform.h	Wed Jun  1 13:43:18 2011
-@@ -287,6 +287,10 @@ class OS {
+$OpenBSD: patch-v8_src_platform_h,v 1.2 2011/06/08 20:36:56 robert Exp $
+--- v8/src/platform.h.orig	Mon Jun  6 11:43:03 2011
++++ v8/src/platform.h	Wed Jun  8 09:58:37 2011
+@@ -288,6 +288,10 @@ class OS {
    // positions indicated by the members of the CpuFeature enum from globals.h
    static uint64_t CpuFeaturesImpliedByPlatform();
  

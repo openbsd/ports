@@ -1,8 +1,8 @@
-$OpenBSD: patch-build_common_gypi,v 1.6 2011/05/26 11:39:14 robert Exp $
---- build/common.gypi.orig	Fri May 20 10:35:18 2011
-+++ build/common.gypi	Thu May 26 11:41:51 2011
-@@ -97,7 +97,7 @@
-       'fastbuild%': 0,
+$OpenBSD: patch-build_common_gypi,v 1.7 2011/06/08 20:36:56 robert Exp $
+--- build/common.gypi.orig	Mon Jun  6 11:11:46 2011
++++ build/common.gypi	Wed Jun  8 09:58:35 2011
+@@ -95,7 +95,7 @@
+       'file_manager_extension%': 0,
  
        # Python version.
 -      'python_ver%': '2.5',
@@ -10,7 +10,7 @@ $OpenBSD: patch-build_common_gypi,v 1.6 2011/05/26 11:39:14 robert Exp $
  
        # Set ARM-v7 compilation flags
        'armv7%': 0,
-@@ -311,7 +311,7 @@
+@@ -316,7 +316,7 @@
      'linux_strip_reliability_tests%': 0,
  
      # Enable TCMalloc.
@@ -19,7 +19,7 @@ $OpenBSD: patch-build_common_gypi,v 1.6 2011/05/26 11:39:14 robert Exp $
  
      # Disable TCMalloc's debugallocation.
      'linux_use_debugallocation%': 0,
-@@ -332,7 +332,7 @@
+@@ -337,7 +337,7 @@
  
      # Used to disable Native Client at compile time, for platforms where it
      # isn't supported
@@ -28,7 +28,7 @@ $OpenBSD: patch-build_common_gypi,v 1.6 2011/05/26 11:39:14 robert Exp $
  
      # Set Thumb compilation flags.
      'arm_thumb%': 0,
-@@ -394,7 +394,7 @@
+@@ -405,7 +405,7 @@
          # This is used to tweak build flags for gcc 4.4.
          'gcc_version%': '<!(python <(DEPTH)/build/compiler_version.py)',
          # Figure out the python architecture to decide if we build pyauto.
@@ -37,7 +37,7 @@ $OpenBSD: patch-build_common_gypi,v 1.6 2011/05/26 11:39:14 robert Exp $
          'conditions': [
            ['branding=="Chrome"', {
              'linux_breakpad%': 1,
-@@ -460,7 +460,7 @@
+@@ -478,7 +478,7 @@
          ],
        }],
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-build_common_gypi,v 1.6 2011/05/26 11:39:14 robert Exp $
          'use_cups%': 1,
        }, {
          'use_cups%': 0,
-@@ -752,7 +752,7 @@
+@@ -779,7 +779,7 @@
                ['exclude', '(^|/)(gtk|x11)_[^/]*\\.(h|cc)$'],
              ],
            }],

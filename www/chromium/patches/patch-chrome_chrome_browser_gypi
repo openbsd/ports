@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.5 2011/04/29 13:18:01 robert Exp $
---- chrome/chrome_browser.gypi.orig	Thu Apr 28 11:40:57 2011
-+++ chrome/chrome_browser.gypi	Thu Apr 28 11:42:34 2011
-@@ -3455,7 +3455,7 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.6 2011/06/08 20:36:56 robert Exp $
+--- chrome/chrome_browser.gypi.orig	Mon Jun  6 11:12:14 2011
++++ chrome/chrome_browser.gypi	Wed Jun  8 09:58:36 2011
+@@ -3522,7 +3522,7 @@
              ['exclude', '^browser/views/tab_contents/tab_contents_view_gtk.h'],
            ],
          }],
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.5 2011/04/29 13:18:01 robert Exp 
            'dependencies': [
              '../build/linux/system.gyp:dbus-glib',
              '../build/linux/system.gyp:gconf',
-@@ -3467,8 +3467,7 @@
+@@ -3534,8 +3534,7 @@
            ],
            'link_settings': {
              'libraries': [
@@ -20,7 +20,7 @@ $OpenBSD: patch-chrome_chrome_browser_gypi,v 1.5 2011/04/29 13:18:01 robert Exp 
              ],
            },
            'sources!': [
-@@ -4118,7 +4117,7 @@
+@@ -4174,7 +4173,7 @@
                ],
              }],
              # GTK build only

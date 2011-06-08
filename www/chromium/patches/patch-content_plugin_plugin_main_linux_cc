@@ -1,0 +1,19 @@
+$OpenBSD: patch-content_plugin_plugin_main_linux_cc,v 1.1 2011/06/08 20:36:56 robert Exp $
+--- content/plugin/plugin_main_linux.cc.orig	Wed Jun  8 10:31:08 2011
++++ content/plugin/plugin_main_linux.cc	Wed Jun  8 10:31:20 2011
+@@ -5,13 +5,13 @@
+ #include <signal.h>
+ #include <string.h>
+ #include <sys/types.h>
+-#include <syscall.h>
++#include <sys/syscall.h>
+ #include <unistd.h>
+ 
+ #include "build/build_config.h"
+ 
+ // This whole file is only useful on 64-bit architectures.
+-#if defined(ARCH_CPU_64_BITS)
++#if defined(ARCH_CPU_64_BITS) && !defined(OS_OPENBSD)
+ 
+ namespace {
+ 

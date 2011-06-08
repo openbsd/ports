@@ -1,7 +1,7 @@
-$OpenBSD: patch-media_media_gyp,v 1.5 2011/05/20 08:35:24 robert Exp $
---- media/media.gyp.orig	Sat May  7 11:39:59 2011
-+++ media/media.gyp	Thu May 19 14:20:05 2011
-@@ -54,6 +54,8 @@
+$OpenBSD: patch-media_media_gyp,v 1.6 2011/06/08 20:36:56 robert Exp $
+--- media/media.gyp.orig	Mon Jun  6 11:11:24 2011
++++ media/media.gyp	Wed Jun  8 09:58:36 2011
+@@ -55,6 +55,8 @@
          'audio/linux/alsa_util.h',
          'audio/linux/alsa_wrapper.cc',
          'audio/linux/alsa_wrapper.h',
@@ -10,7 +10,7 @@ $OpenBSD: patch-media_media_gyp,v 1.5 2011/05/20 08:35:24 robert Exp $
          'audio/openbsd/audio_manager_openbsd.cc',
          'audio/openbsd/audio_manager_openbsd.h',
          'audio/mac/audio_input_mac.cc',
-@@ -177,6 +179,9 @@
+@@ -193,6 +195,9 @@
            'link_settings': {
              'libraries': [
                '-lasound',
@@ -20,7 +20,7 @@ $OpenBSD: patch-media_media_gyp,v 1.5 2011/05/20 08:35:24 robert Exp $
              ],
            },
          }],
-@@ -186,11 +191,14 @@
+@@ -202,11 +207,14 @@
                          ['exclude', '\\.mm?$' ] ],
            'link_settings': {
              'libraries': [

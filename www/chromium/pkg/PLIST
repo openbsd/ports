@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/05/19 11:57:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/06/08 20:36:56 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -108,6 +108,7 @@ chrome/resources/inspector/Images/excludeButtonGlyph.png
 chrome/resources/inspector/Images/focusButtonGlyph.png
 chrome/resources/inspector/Images/forward.png
 chrome/resources/inspector/Images/frame.png
+chrome/resources/inspector/Images/garbageCollectButtonGlyph.png
 chrome/resources/inspector/Images/gearButtonGlyph.png
 chrome/resources/inspector/Images/glossyHeader.png
 chrome/resources/inspector/Images/glossyHeaderPressed.png
@@ -230,6 +231,7 @@ chrome/resources/inspector/Images/warningIcon.png
 chrome/resources/inspector/Images/warningMediumIcon.png
 chrome/resources/inspector/Images/warningOrangeDot.png
 chrome/resources/inspector/Images/warningsErrors.png
+chrome/resources/inspector/ScriptFormatterWorker.js
 chrome/resources/inspector/devTools.css
 chrome/resources/inspector/devtools.html
 @man man/man1/chrome.1

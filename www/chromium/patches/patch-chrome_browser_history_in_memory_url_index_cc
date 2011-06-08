@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_history_in_memory_url_index_cc,v 1.1 2011/04/29 13:18:01 robert Exp $
---- chrome/browser/history/in_memory_url_index.cc.orig	Thu Apr 28 12:43:27 2011
-+++ chrome/browser/history/in_memory_url_index.cc	Thu Apr 28 12:43:36 2011
-@@ -864,8 +864,8 @@ bool InMemoryURLIndex::RestoreWordIDHistoryMap(
+$OpenBSD: patch-chrome_browser_history_in_memory_url_index_cc,v 1.2 2011/06/08 20:36:56 robert Exp $
+--- chrome/browser/history/in_memory_url_index.cc.orig	Mon Jun  6 11:12:10 2011
++++ chrome/browser/history/in_memory_url_index.cc	Wed Jun  8 09:58:35 2011
+@@ -1020,8 +1020,8 @@ bool InMemoryURLIndex::RestoreWordIDHistoryMap(
        return false;
      WordID word_id = iter->word_id();
      HistoryIDSet history_id_set;

@@ -1,13 +1,13 @@
-$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.1 2011/04/29 13:18:01 robert Exp $
---- content/browser/child_process_launcher.cc.orig	Thu Apr 28 11:23:09 2011
-+++ content/browser/child_process_launcher.cc	Thu Apr 28 11:24:09 2011
+$OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.2 2011/06/08 20:36:56 robert Exp $
+--- content/browser/child_process_launcher.cc.orig	Wed Jun  8 12:16:03 2011
++++ content/browser/child_process_launcher.cc	Wed Jun  8 18:19:53 2011
 @@ -20,7 +20,7 @@
  #if defined(OS_WIN)
  #include "base/file_path.h"
  #include "chrome/common/sandbox_policy.h"
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_OPENBSD)
- #include "base/singleton.h"
+ #include "base/memory/singleton.h"
  #include "chrome/browser/crash_handler_host_linux.h"
  #include "content/browser/zygote_host_linux.h"
 @@ -45,7 +45,7 @@ class ChildProcessLauncher::Context
@@ -25,19 +25,19 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.1 2011/04/29 13:18
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_OPENBSD)
-     if (use_zygote) {
-       base::GlobalDescriptors::Mapping mapping;
-       mapping.push_back(std::pair<uint32_t, int>(kPrimaryIPCChannel, ipcfd));
-@@ -131,7 +131,7 @@ class ChildProcessLauncher::Context
+     // On Linux, we need to add some extra file descriptors for crash handling.
+     std::string process_type =
+         cmd_line->GetSwitchValueASCII(switches::kProcessType);
+@@ -151,7 +151,7 @@ class ChildProcessLauncher::Context
            ipcfd,
            kPrimaryIPCChannel + base::GlobalDescriptors::kBaseDescriptor));
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_OPENBSD)
-       // On Linux, we need to add some extra file descriptors for crash handling
-       // and the sandbox.
-       bool is_renderer =
-@@ -205,20 +205,20 @@ class ChildProcessLauncher::Context
+       if (crash_signal_fd >= 0) {
+         fds_to_map.push_back(std::make_pair(
+             crash_signal_fd,
+@@ -200,20 +200,20 @@ class ChildProcessLauncher::Context
          NewRunnableMethod(
              this,
              &ChildProcessLauncher::Context::Notify,
@@ -61,7 +61,7 @@ $OpenBSD: patch-content_browser_child_process_launcher_cc,v 1.1 2011/04/29 13:18
      zygote_ = zygote;
  #endif
      if (client_) {
-@@ -238,7 +238,7 @@ class ChildProcessLauncher::Context
+@@ -233,7 +233,7 @@ class ChildProcessLauncher::Context
          BrowserThread::PROCESS_LAUNCHER, FROM_HERE,
          NewRunnableFunction(
              &ChildProcessLauncher::Context::TerminateInternal,

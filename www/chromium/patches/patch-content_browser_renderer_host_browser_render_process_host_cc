@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_browser_renderer_host_browser_render_process_host_cc,v 1.1 2011/06/08 20:36:56 robert Exp $
+--- content/browser/renderer_host/browser_render_process_host.cc.orig	Mon Jun  6 11:11:28 2011
++++ content/browser/renderer_host/browser_render_process_host.cc	Wed Jun  8 10:21:22 2011
+@@ -921,7 +921,7 @@ TransportDIB* BrowserRenderProcessHost::MapTransportDI
+   HANDLE section = chrome::GetSectionFromProcess(
+       dib_id.handle, GetHandle(), false /* read write */);
+   return TransportDIB::Map(section);
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_OPENBSD)
+   // On OSX, the browser allocates all DIBs and keeps a file descriptor around
+   // for each.
+   return widget_helper_->MapTransportDIB(dib_id);

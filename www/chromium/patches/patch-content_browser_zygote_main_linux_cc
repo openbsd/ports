@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_browser_zygote_main_linux_cc,v 1.1 2011/04/29 13:18:01 robert Exp $
---- content/browser/zygote_main_linux.cc.orig	Thu Apr 28 11:39:21 2011
-+++ content/browser/zygote_main_linux.cc	Thu Apr 28 11:40:51 2011
+$OpenBSD: patch-content_browser_zygote_main_linux_cc,v 1.2 2011/06/08 20:36:56 robert Exp $
+--- content/browser/zygote_main_linux.cc.orig	Mon Jun  6 11:11:28 2011
++++ content/browser/zygote_main_linux.cc	Wed Jun  8 09:58:36 2011
 @@ -2,12 +2,18 @@
  // Use of this source code is governed by a BSD-style license that can be
  // found in the LICENSE file.
@@ -20,7 +20,7 @@ $OpenBSD: patch-content_browser_zygote_main_linux_cc,v 1.1 2011/04/29 13:18:01 r
  #include <sys/socket.h>
  #include <sys/stat.h>
  #include <sys/types.h>
-@@ -51,7 +57,7 @@
+@@ -53,7 +59,7 @@
  #include "unicode/timezone.h"
  
  #if defined(ARCH_CPU_X86_FAMILY) && !defined(CHROMIUM_SELINUX) && \
@@ -29,7 +29,7 @@ $OpenBSD: patch-content_browser_zygote_main_linux_cc,v 1.1 2011/04/29 13:18:01 r
  // The seccomp sandbox is enabled on all ia32 and x86-64 processor as long as
  // we aren't using SELinux or clang.
  #define SECCOMP_SANDBOX
-@@ -174,6 +180,11 @@ class Zygote {
+@@ -176,6 +182,11 @@ class Zygote {
          case ZygoteHost::kCmdGetSandboxStatus:
            HandleGetSandboxStatus(fd, pickle, iter);
            return false;
@@ -41,7 +41,7 @@ $OpenBSD: patch-content_browser_zygote_main_linux_cc,v 1.1 2011/04/29 13:18:01 r
          default:
            NOTREACHED();
            break;
-@@ -649,6 +660,7 @@ static bool EnterSandbox() {
+@@ -663,6 +674,7 @@ static bool EnterSandbox() {
      SkiaFontConfigSetImplementation(
          new FontConfigIPC(kMagicSandboxIPCDescriptor));
  
@@ -49,7 +49,7 @@ $OpenBSD: patch-content_browser_zygote_main_linux_cc,v 1.1 2011/04/29 13:18:01 r
      // Previously, we required that the binary be non-readable. This causes the
      // kernel to mark the process as non-dumpable at startup. The thinking was
      // that, although we were putting the renderers into a PID namespace (with
-@@ -674,6 +686,7 @@ static bool EnterSandbox() {
+@@ -688,6 +700,7 @@ static bool EnterSandbox() {
          return false;
        }
      }

@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_common_common_param_traits_h,v 1.1 2011/06/08 20:36:56 robert Exp $
+--- content/common/common_param_traits.h.orig	Wed Jun  8 12:38:24 2011
++++ content/common/common_param_traits.h	Wed Jun  8 15:23:37 2011
+@@ -187,7 +187,7 @@ struct ParamTraits<TransportDIB::Id> {
+ };
+ #endif
+ 
+-#if defined(USE_X11)
++#if !defined(USE_X11)
+ template<>
+ struct ParamTraits<TransportDIB::Id> {
+   typedef TransportDIB::Id param_type;
