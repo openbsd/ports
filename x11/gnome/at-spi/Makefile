@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2011/04/26 18:39:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2011/06/08 17:41:57 rpointel Exp $
 
 COMMENT=		GNOME accessibility interface
 
 GNOME_PROJECT=		at-spi
 GNOME_VERSION=		1.32.0
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=	spi                  0.0      # .10.11
 SHARED_LIBS +=	loginhelper          0.0      # .0.0

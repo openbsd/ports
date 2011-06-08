@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2011/05/09 15:25:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/06/08 17:41:57 rpointel Exp $
 
 COMMENT=	follow GNOME development activity
 
 GNOME_PROJECT=	gnome-development-monitor
 # git pull from 20110508
 GNOME_VERSION=	0.1.1
+
+REVISION=	0
 
 CATEGORIES=	devel
 

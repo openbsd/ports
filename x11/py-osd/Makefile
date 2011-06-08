@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:04 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/08 17:41:58 rpointel Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	python bindings to the XOSD library
 
 DISTNAME=	pyosd-0.2.14
 PKGNAME=	${DISTNAME:S/^py/py-/}
-REVISION=	4
+REVISION=	5
 CATEGORIES=	x11
 
 HOMEPAGE=	http://ichi2.net/pyosd/

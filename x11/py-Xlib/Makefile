@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/17 19:27:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/08 17:41:58 rpointel Exp $
 
 COMMENT=		fully functional X client library for Python programs
 
 VERSION=		0.14
 DISTNAME=		python-xlib-${VERSION}
 PKGNAME=		py-Xlib-${VERSION}
+REVISION=		0
 
 CATEGORIES=		x11
 

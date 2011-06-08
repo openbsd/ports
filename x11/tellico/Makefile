@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/22 08:37:04 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/06/08 17:41:58 rpointel Exp $
 
 COMMENT=	organizer for book/dvd/music collections
 
 DISTNAME=	tellico-1.3.6
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11 databases
 

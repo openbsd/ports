@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/04/05 16:37:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2011/06/08 17:41:57 rpointel Exp $
 
 # XXX the following modules are commented in PLIST
 # N800Module ===> needs HAL which we don't provide
@@ -10,7 +10,7 @@ COMMENT=		synchronization application for GNOME
 
 GNOME_PROJECT=		conduit
 GNOME_VERSION=		0.3.17
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://www.conduit-project.org/
 
