@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/03/13 17:33:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/06/08 13:42:11 dhill Exp $
 
 COMMENT=	XML validation library
 
-DISTNAME=	xmlsd-0.2
+DISTNAME=	xmlsd-0.3
 PKGNAME=	lib${DISTNAME}
-REVISION=	0
 CATEGORIES=    	textproc devel
 SHARED_LIBS=	xmlsd	0.0
 EXTRACT_SUFX=	.tgz
