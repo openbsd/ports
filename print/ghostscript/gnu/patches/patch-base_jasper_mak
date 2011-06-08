@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_jasper_mak,v 1.4 2008/05/09 19:29:44 kili Exp $
---- src/jasper.mak.orig	Thu Oct 18 02:36:37 2007
-+++ src/jasper.mak	Sat Apr 26 14:03:43 2008
+$OpenBSD: patch-base_jasper_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
+--- base/jasper.mak.orig	Thu Oct 18 02:36:37 2007
++++ base/jasper.mak	Sat Apr 26 14:03:43 2008
 @@ -159,7 +159,7 @@ JAS_EXCF_=\
          $(D_)EXCLUDE_PNG_SUPPORT$(_D_)1$(_D)
  
