@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.6 2011/06/06 15:01:52 giovanni Exp $
+@comment $OpenBSD: PLIST-main,v 1.7 2011/06/09 13:30:42 ajacoutot Exp $
 @conflict imap-uw-*
 @conflict courier-utils-*
 @pkgpath ${BASE_PKGPATH}
@@ -42,7 +42,6 @@ share/doc/courier/README.proxy
 share/doc/courier/README.sharedfolders.txt
 share/doc/courier/README.unicode.txt
 share/examples/courier/
-@sample ${SYSCONFDIR}/
 @mode 600
 share/examples/courier/imapd-ssl.dist
 @sample ${SYSCONFDIR}/imapd-ssl
