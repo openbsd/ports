@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/09 17:08:14 sthen Exp $
+@pkgpath /home/damien/iwi-firmware
+@pkgpath /root/iwifw
+@pkgpath sysutils/iwi-firmware
+@ask-update iwi-firmware-<3.1 Make sure you have a matching kernel
+firmware/iwi-bss
+firmware/iwi-ibss
+firmware/iwi-license
+firmware/iwi-monitor

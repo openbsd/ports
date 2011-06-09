@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/09 17:08:14 sthen Exp $
+@pkgpath /root/wpifw
+@pkgpath /root/wpi-firmware
+@pkgpath sysutils/wpi-firmware
+@ask-update wpi-firmware-<3.2 Make sure you have a matching kernel
+firmware/wpi-3945abg
+firmware/wpi-license

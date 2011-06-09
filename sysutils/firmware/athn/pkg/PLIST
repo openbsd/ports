@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/09 17:08:14 sthen Exp $
+@pkgpath sysutils/athn-firmware
+@ask-update athn-firmware-<1.1 Make sure you have a matching kernel
+firmware/athn-ar7010
+firmware/athn-ar7010-11
+firmware/athn-ar9271
+firmware/athn-license
