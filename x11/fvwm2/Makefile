@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/04/26 18:50:46 shadchin Exp $
+# $OpenBSD: Makefile,v 1.53 2011/06/09 15:25:50 shadchin Exp $
 
 COMMENT-main=	multiple virtual desktop window manager, with icons
 COMMENT-fvicons=multiple virtual desktop window manager icons
@@ -37,6 +37,8 @@ MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/
 
 LIB_DEPENDS+=	graphics/png \
 		x11/gnome/librsvg
+
+BUILD_DEPENDS=	textproc/libxslt
 
 MULTI_PACKAGES=	-main -fvwm2 -fvicons
 
