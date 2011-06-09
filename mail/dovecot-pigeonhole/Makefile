@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/23 22:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/09 21:45:44 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ V_SIEVE=	0.2.2
 V_DOVECOT=	2.0
 
 DISTNAME=	dovecot-${V_DOVECOT}-pigeonhole-${V_SIEVE}
+REVISION=	0
 EPOCH=		0
 CATEGORIES=	mail
 PKGNAME= 	dovecot-pigeonhole-${V_SIEVE}
@@ -33,8 +34,7 @@ LIB_DEPENDS=	mail/dovecot>=2.0
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--mandir=${PREFIX}/man \
-		--docdir=${PREFIX}/share/doc
+CONFIGURE_ARGS=	--docdir=${PREFIX}/share/doc
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
