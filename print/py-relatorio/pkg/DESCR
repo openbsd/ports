@@ -1,0 +1,7 @@
+Relatorio is a templating library which provides a way to easily output
+several kinds of files (odt, ods, png, svg, ...). Support for more
+filetypes can be easily added by creating plugins for them.
+
+Relatorio also provides a report repository allowing you to link python
+objects and report together, find reports by mimetype/name/python
+object.

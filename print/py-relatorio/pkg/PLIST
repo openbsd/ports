@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/09 12:55:55 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/relatorio/
+lib/python${MODPY_VERSION}/site-packages/relatorio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/relatorio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/relatorio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/relatorio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/relatorio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/relatorio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/relatorio/__init__.py
+lib/python${MODPY_VERSION}/site-packages/relatorio/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/relatorio/reporting.py
+lib/python${MODPY_VERSION}/site-packages/relatorio/reporting.pyc
+lib/python${MODPY_VERSION}/site-packages/relatorio/templates/
+lib/python${MODPY_VERSION}/site-packages/relatorio/templates/__init__.py
+lib/python${MODPY_VERSION}/site-packages/relatorio/templates/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/relatorio/templates/base.py
+lib/python${MODPY_VERSION}/site-packages/relatorio/templates/base.pyc
+lib/python${MODPY_VERSION}/site-packages/relatorio/templates/chart.py
+lib/python${MODPY_VERSION}/site-packages/relatorio/templates/chart.pyc
+lib/python${MODPY_VERSION}/site-packages/relatorio/templates/opendocument.py
+lib/python${MODPY_VERSION}/site-packages/relatorio/templates/opendocument.pyc
+lib/python${MODPY_VERSION}/site-packages/relatorio/templates/pdf.py
+lib/python${MODPY_VERSION}/site-packages/relatorio/templates/pdf.pyc
