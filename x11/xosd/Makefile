@@ -1,28 +1,29 @@
-# $OpenBSD: Makefile,v 1.13 2010/10/24 21:15:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/06/09 15:28:40 shadchin Exp $
 
 COMMENT=	displays text on your screen
 
-DISTNAME=	xosd-2.2.12
-REVISION=	4
-SHARED_LIBS=	xosd 4.12
+DISTNAME=	xosd-2.2.14
+SHARED_LIBS+=	xosd		4.12	# 4.14
 CATEGORIES=	x11 graphics
-HOMEPAGE=	http://www.ignavus.net/software.html
+HOMEPAGE=	http://libxosd.sourceforge.net/
 
-MAINTAINER=	Jon Trembley <jon@brain-box.net>
-
-# GPL 
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		ICE SM X11 Xau Xdmcp Xext Xinerama Xt c pthread \
-			pthread-stubs xcb
+WANTLIB += X11 Xau Xdmcp Xext Xinerama c pthread pthread-stubs
+WANTLIB += xcb
 
-MASTER_SITES=	http://www.ignavus.net/
+MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=libxosd/}
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= --disable-new-plugin --disable-old-plugin
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--disable-new-plugin \
+			--disable-old-plugin \
+			--disable-gtktest \
+			--disable-gdk_pixbuftest \
+			--disable-beep_media_player_plugin
 
 USE_LIBTOOL=	Yes
 USE_GROFF =	Yes
