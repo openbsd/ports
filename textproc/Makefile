@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.327 2011/05/31 12:25:55 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.328 2011/06/09 16:41:46 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -316,6 +316,7 @@
      SUBDIR += source-highlight
      SUBDIR += sp
      SUBDIR += sphinx
+     SUBDIR += sphinx,pgsql
      SUBDIR += spiff
      SUBDIR += swish-e
      SUBDIR += tcpdf
