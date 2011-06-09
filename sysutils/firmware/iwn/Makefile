@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/09 17:08:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/09 21:38:21 sthen Exp $
 
 FW_DRIVER=	iwn
 FW_VER=		5.6
@@ -14,7 +14,7 @@ DISTFILES=	iwlwifi-4965-ucode-228.61.2.24.tgz \
 
 HOMEPAGE=	http://www.intellinuxwireless.org/
 MASTER_SITES=	${HOMEPAGE}iwlwifi/downloads/ \
-		http://firmware.openbsd.org/firmware/dist/
+		http://firmware.openbsd.org/firmware-dist/
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/iwlwifi-6050-ucode-41.28.5.1/LICENSE.iwlwifi-6050-ucode ${PREFIX}/firmware/iwn-license
