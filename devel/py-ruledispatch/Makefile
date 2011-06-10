@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/06/08 17:39:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/06/10 19:37:03 naddy Exp $
 
 COMMENT=		rule-based dispatching and generic functions
 
@@ -6,7 +6,7 @@ VERSION=		0.5
 REV=			2306
 DISTNAME=		RuleDispatch
 PKGNAME=		py-ruledispatch-${VERSION}r${REV}
-REVISION =		6
+EPOCH=			0
 
 CATEGORIES=		devel
 
