@@ -1,10 +1,10 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.5 2011/06/02 12:46:37 ajacoutot Exp $
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.6 2011/06/10 15:55:00 ajacoutot Exp $
 
 XXX to be revisited
 
---- spooler/Spooler.cpp.orig	Wed Apr 20 19:51:46 2011
-+++ spooler/Spooler.cpp	Sun May 29 07:13:40 2011
-@@ -1192,6 +1192,7 @@ int main(int argc, char *argv[]) {
+--- spooler/Spooler.cpp.orig	Fri Jun 10 03:37:37 2011
++++ spooler/Spooler.cpp	Fri Jun 10 13:33:17 2011
+@@ -1213,6 +1213,7 @@ int main(int argc, char *argv[]) {
  	if (g_lpConfig->HasWarnings())
  		LogConfigErrors(g_lpConfig, g_lpLogger);
  
@@ -12,7 +12,7 @@ XXX to be revisited
  	// detect linuxthreads, which is too broken to correctly run the spooler
  	if (!bForked) {
  		char buffer[256];
-@@ -1203,6 +1204,12 @@ int main(int argc, char *argv[]) {
+@@ -1224,6 +1225,12 @@ int main(int argc, char *argv[]) {
  			g_lpLogger->Log(EC_LOGLEVEL_FATAL, "WARNING: the zarafa-spooler will only be able to send one message at a time.");
  		}
  	}

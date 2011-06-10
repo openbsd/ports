@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.14 2011/06/02 12:46:37 ajacoutot Exp $
---- configure.orig	Wed Apr 20 16:39:39 2011
-+++ configure	Sun May 29 09:27:20 2011
-@@ -21919,13 +21919,13 @@ fi
+$OpenBSD: patch-configure,v 1.15 2011/06/10 15:55:00 ajacoutot Exp $
+--- configure.orig	Thu Jun  9 22:21:21 2011
++++ configure	Fri Jun 10 13:34:10 2011
+@@ -21920,13 +21920,13 @@ fi
  
  # Everything uses pthread
  # check lib, but do not set in link list, but use -pthread instead (gnu c/c++ only?)
@@ -18,16 +18,16 @@ $OpenBSD: patch-configure,v 1.14 2011/06/02 12:46:37 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -22044,7 +22044,7 @@ else
+@@ -22045,7 +22045,7 @@ else
    with_distro=rhel
  fi
  
--if test "$with_distro" != "rhel" -a "$with_distro" != "suse" -a "$with_distro" != "sles"; then
-+if test "$with_distro" != "rhel" -a "$with_distro" != "suse" -a "$with_distro" != "sles" -a "$with_distro" != "openbsd"; then
-    { echo "$as_me:$LINENO: result: invalid distro, using rhel instead" >&5
- echo "${ECHO_T}invalid distro, using rhel instead" >&6; }
+-if test "$with_distro" != "rhel" -a "$with_distro" != "suse" -a "$with_distro" != "sles" -a "$with_distro" != "cbs4"; then
++if test "$with_distro" != "rhel" -a "$with_distro" != "suse" -a "$with_distro" != "sles" -a "$with_distro" != "cbs4" -a "$with_distro" != "openbsd"; then
+    { echo "$as_me:$LINENO: result: unknown distro, using rhel instead" >&5
+ echo "${ECHO_T}unknown distro, using rhel instead" >&6; }
     with_distro=rhel
-@@ -24444,7 +24444,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then
+@@ -24445,7 +24445,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -36,7 +36,7 @@ $OpenBSD: patch-configure,v 1.14 2011/06/02 12:46:37 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -24504,7 +24504,7 @@ if test $ac_cv_lib_intl_strftime = yes; then
+@@ -24505,7 +24505,7 @@ if test $ac_cv_lib_intl_strftime = yes; then
  #define HAVE_STRFTIME 1
  _ACEOF
  
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure,v 1.14 2011/06/02 12:46:37 ajacoutot Exp $
  fi
  
  fi
-@@ -26018,7 +26018,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+@@ -26019,7 +26019,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
  _ACEOF
  
  		VMIME_CFLAGS=-I$VMIME_PREFIX
@@ -54,7 +54,7 @@ $OpenBSD: patch-configure,v 1.14 2011/06/02 12:46:37 ajacoutot Exp $
  
  else
  
-@@ -27535,13 +27535,13 @@ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -27536,13 +27536,13 @@ sed 's/^/| /' conftest.$ac_ext >&5
  	 { echo "$as_me:$LINENO: result: no" >&5
  echo "${ECHO_T}no" >&6; }
  
@@ -71,7 +71,7 @@ $OpenBSD: patch-configure,v 1.14 2011/06/02 12:46:37 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -27601,7 +27601,7 @@ if test $ac_cv_lib_crypt_crypt = yes; then
+@@ -27602,7 +27602,7 @@ if test $ac_cv_lib_crypt_crypt = yes; then
  #define HAVE_LIBCRYPT 1
  _ACEOF
  
@@ -80,7 +80,7 @@ $OpenBSD: patch-configure,v 1.14 2011/06/02 12:46:37 ajacoutot Exp $
  
  else
    { { echo "$as_me:$LINENO: error: required library libcrypt missing or unusable" >&5
-@@ -27695,7 +27695,7 @@ if test "${ac_cv_lib_ssl_SSL_accept+set}" = set; then
+@@ -27696,7 +27696,7 @@ if test "${ac_cv_lib_ssl_SSL_accept+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -89,7 +89,7 @@ $OpenBSD: patch-configure,v 1.14 2011/06/02 12:46:37 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -28802,7 +28802,7 @@ if test "${ac_cv_lib_intl_gettext+set}" = set; then
+@@ -28803,7 +28803,7 @@ if test "${ac_cv_lib_intl_gettext+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -98,7 +98,7 @@ $OpenBSD: patch-configure,v 1.14 2011/06/02 12:46:37 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -28858,7 +28858,7 @@ fi
+@@ -28859,7 +28859,7 @@ fi
  { echo "$as_me:$LINENO: result: $ac_cv_lib_intl_gettext" >&5
  echo "${ECHO_T}$ac_cv_lib_intl_gettext" >&6; }
  if test $ac_cv_lib_intl_gettext = yes; then

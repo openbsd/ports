@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2011/06/02 12:45:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2011/06/10 15:55:00 ajacoutot Exp $
 
 COMMENT=	modified libvmime library for Zarafa
 
-VMIME_V=	0.9.2
-DISTNAME=	libvmime-${VMIME_V}+svn581
+VMIME_V=	0.9.1
+DISTNAME=	libvmime-${VMIME_V}
 PKGNAME=	zarafa-libvmime-${VMIME_V}
 EXTRACT_SUFX=	.tar.bz2
+
+EPOCH=		0
 
 WRKDIST=	${WRKDIR}/libvmime-${VMIME_V}
 
@@ -22,7 +24,8 @@ PATCHFILES= \
 	vmime-fullname-without-email-address.diff:0 \
 	vmime-highchar-filename.diff:0
 
-MASTER_SITES0=	${MASTER_SITES:=/vmime-patches/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vmime/}
+MASTER_SITES0=	${MASTER_SITES_ZARAFA:=/vmime-patches/}
 
 CATEGORIES=	mail devel
 

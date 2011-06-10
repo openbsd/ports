@@ -1,7 +1,7 @@
-$OpenBSD: patch-installer_linux_spooler_cfg,v 1.4 2011/04/02 16:36:45 robert Exp $
---- installer/linux/spooler.cfg.orig	Mon Mar 28 20:32:18 2011
-+++ installer/linux/spooler.cfg	Sat Apr  2 18:20:01 2011
-@@ -8,16 +8,16 @@ smtp_server	=	localhost
+$OpenBSD: patch-installer_linux_spooler_cfg,v 1.5 2011/06/10 15:55:00 ajacoutot Exp $
+--- installer/linux/spooler.cfg.orig	Thu Jun  9 22:20:40 2011
++++ installer/linux/spooler.cfg	Fri Jun 10 13:33:16 2011
+@@ -11,16 +11,16 @@ smtp_port = 25
  server_socket	=	file:///var/run/zarafa
  
  # drop privileges and run the process as this user
@@ -22,7 +22,7 @@ $OpenBSD: patch-installer_linux_spooler_cfg,v 1.4 2011/04/02 16:36:45 robert Exp
  
  ##############################################################
  # SPOOLER LOG SETTINGS
-@@ -42,7 +42,7 @@ log_timestamp	=	1
+@@ -45,7 +45,7 @@ log_timestamp	=	1
  #       to use this type of login method
  
  # Login to the Zarafa server using this SSL Key

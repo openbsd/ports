@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2011/06/08 17:50:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.89 2011/06/10 15:55:00 ajacoutot Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -7,8 +7,8 @@ PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
 
-REVISION-main=	6
-REVISION-web=	1
+REVISION-main=	7
+REVISION-web=	2
 
 CATEGORIES=	mail www productivity
 
@@ -193,7 +193,10 @@ post-install:
 		man/man5/zarafa-licensed.cfg.5 \
 		man/man1/zarafa-restore.1 \
 		man/man1/zarafa-backup.1 \
-		man/man1/zarafa-report.1
+		man/man1/zarafa-report.1 \
+		man/man1/za-aclsync.1 \
+		man/man1/zarafa-msr.1 \
+		man/man5/zarafa-msr.cfg.5
 	rmdir ${PREFIX}/share/examples/zarafa/{report,report-ca}
 
 	chown -R ${SHAREOWN}:${SHAREGRP} ${WRKINST}${INSTDIR}
