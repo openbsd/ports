@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/06/08 17:35:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2011/06/10 05:40:56 rpointel Exp $
 
 SHARED_ONLY=		Yes
 
@@ -17,10 +17,10 @@ PKGNAME-bin=		py-Imaging-bin-${MODPY_EGG_VERSION}
 FULLPKGNAME-docs=	py-Imaging-docs-${MODPY_EGG_VERSION}
 FULLPKGPATH-docs=	graphics/py-Imaging,-docs
 
-REVISION-main=		2
-REVISION-examples=	1
-REVISION-bin=		1
-REVISION-docs=		1
+REVISION-main=		3
+REVISION-examples=	2
+REVISION-bin=		2
+REVISION-docs=		2
 
 CATEGORIES=		graphics
 
@@ -47,13 +47,11 @@ LIB_DEPENDS-main=	graphics/jpeg \
 			graphics/lcms \
 			${MODTK_LIB_DEPENDS}
 
-FLAVORS=		python2.4 python2.6 python2.7
-FLAVOR?=		python2.6
+FLAVORS=		python2.4 python2.7
+FLAVOR?=		python2.7
 
 .if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
 MULTI_PACKAGES= -main
-.elif ${FLAVOR:L:Mpython2.6} && !${FLAVOR:L:Npython2.6}
-MULTI_PACKAGES= -main -examples -bin -docs
 .elif ${FLAVOR:L:Mpython2.7} && !${FLAVOR:L:Npython2.7}
 MULTI_PACKAGES= -main -examples -bin -docs
 .else
