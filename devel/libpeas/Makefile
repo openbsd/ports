@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/06/08 17:40:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/10 09:38:18 ajacoutot Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	1.0.0
 
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	devel
 
@@ -42,8 +42,7 @@ MODULES=	devel/gettext \
 RUN_DEPENDS=	devel/py-gobject
 
 BUILD_DEPENDS=	lang/vala \
-		devel/py-gobject \
-		devel/glade
+		devel/py-gobject
 
 LIB_DEPENDS=	devel/gobject-introspection \
 		x11/gnome/seed
@@ -54,9 +53,14 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
 		--disable-gtk-doc \
-		--enable-glade-catalog \
 		--enable-seed \
 		--enable-python \
 		--enable-vala \
+
+# XXX
+# glade looks for libpeas-gtk-1.0.so instead of libpeas-gtk-1.0.so.XX
+# "library" should be s/libpeas-gtk-1.0/peas-gtk-1.0/ in the catalog
+#BUILD_DEPENDS+=devel/glade
+CONFIGURE_ARGS+=--disable-glade-catalog
 
 .include <bsd.port.mk>

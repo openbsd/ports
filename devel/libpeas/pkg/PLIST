@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/05/13 12:39:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/06/10 09:38:18 ajacoutot Exp $
 @bin bin/peas-demo
 include/libpeas-1.0/
 include/libpeas-1.0/libpeas/
@@ -55,9 +55,6 @@ lib/pkgconfig/libpeas-1.0.pc
 lib/pkgconfig/libpeas-gtk-1.0.pc
 share/gir-1.0/Peas-1.0.gir
 share/gir-1.0/PeasGtk-1.0.gir
-share/glade/
-share/glade/catalogs/
-share/glade/catalogs/libpeas-gtk.xml
 share/gtk-doc/html/libpeas/
 share/gtk-doc/html/libpeas/PeasActivatable.html
 share/gtk-doc/html/libpeas/PeasEngine.html
