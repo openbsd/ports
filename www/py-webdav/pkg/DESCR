@@ -1,0 +1,3 @@
+py-webdav is a Python WebDAV implementation (level 1 and 2) that
+features a library that enables you to integrate WebDAV server
+capabilities to your application.
