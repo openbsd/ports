@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.68 2011/06/02 17:09:32 kili Exp $
+# $OpenBSD: Makefile,v 1.69 2011/06/10 22:20:20 sthen Exp $
 
 COMMENT=		virus scanner
-DISTNAME=		clamav-0.97
-
-REVISION=		0
+DISTNAME=		clamav-0.97.1
 
 CATEGORIES=		security
-SHARED_LIBS=		clamav 18.0 \
+SHARED_LIBS=		clamav 18.1 \
 			clamunrar 2.0 \
 			clamunrar_iface 2.0
 
@@ -24,7 +22,6 @@ WANTLIB=		bz2 c ltdl m milter ncurses pthread stdc++ z
 
 BUILD_DEPENDS=		devel/check
 
-# XXX can this use llvm from ports rather than bundled?
 LIB_DEPENDS=		archivers/bzip2 \
 			devel/libtool,-ltdl
 

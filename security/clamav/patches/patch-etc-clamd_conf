@@ -1,5 +1,5 @@
---- etc/clamd.conf.orig	Fri Nov  5 14:25:19 2010
-+++ etc/clamd.conf	Tue Nov 30 20:13:07 2010
+--- etc/clamd.conf.orig	Fri May 13 12:25:31 2011
++++ etc/clamd.conf	Thu Jun  9 10:55:20 2011
 @@ -11,7 +11,7 @@ Example
  # LogFile must be writable for the user running daemon.
  # A full path is required.
@@ -18,7 +18,7 @@
  
  # Only load the official signatures published by the ClamAV project.
  # Default: no
-@@ -187,7 +187,7 @@ Example
+@@ -186,7 +186,7 @@ Example
  
  # Run as another user (clamd must be started by root for this option to work)
  # Default: don't drop privileges
@@ -27,7 +27,7 @@
  
  # Initialize supplementary group access (clamd must be started by root).
  # Default: no
-@@ -410,7 +410,7 @@ Example
+@@ -409,7 +409,7 @@ Example
  # deeply the process should be continued.
  # Note: setting this limit too high may result in severe damage to the system.
  # Default: 16

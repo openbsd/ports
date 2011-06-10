@@ -1,6 +1,6 @@
-$OpenBSD: patch-libclamav_Makefile_in,v 1.15 2010/10/25 23:36:38 sthen Exp $
---- libclamav/Makefile.in.orig	Mon Oct 25 16:52:31 2010
-+++ libclamav/Makefile.in	Mon Oct 25 21:52:50 2010
+$OpenBSD: patch-libclamav_Makefile_in,v 1.16 2011/06/10 22:20:20 sthen Exp $
+--- libclamav/Makefile.in.orig	Thu Jun  9 07:51:36 2011
++++ libclamav/Makefile.in	Thu Jun  9 10:55:20 2011
 @@ -535,7 +535,7 @@ EXTRA_DIST = c++/Makefile.nollvm.in $(am__append_4) re
  	jsparse/generated/keywords.h \
  	jsparse/future_reserved_words.list jsparse/keywords.list \
@@ -28,7 +28,7 @@ $OpenBSD: patch-libclamav_Makefile_in,v 1.15 2010/10/25 23:36:38 sthen Exp $
  	-no-undefined $(am__append_6)
  include_HEADERS = clamav.h
  libclamav_la_SOURCES = clamav.h matcher-ac.c matcher-ac.h matcher-bm.c \
-@@ -2314,6 +2314,9 @@ version.h: version.h.tmp
+@@ -2323,6 +2323,9 @@ version.h: version.h.tmp
  	fi
  
  version.h.tmp:
