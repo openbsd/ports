@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.197 2011/06/02 00:28:33 fgsch Exp $
+# $OpenBSD: Makefile,v 1.198 2011/06/10 05:51:01 rpointel Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -135,12 +135,12 @@
      SUBDIR += py-couchdb
      SUBDIR += py-elixir
      SUBDIR += py-ldap,python2.4
-     SUBDIR += py-ldap,python2.6
+     SUBDIR += py-ldap
      SUBDIR += py-mysql
      SUBDIR += py-odbc
      SUBDIR += py-pgsql
      SUBDIR += py-psycopg,python2.4
-     SUBDIR += py-psycopg,python2.6
+     SUBDIR += py-psycopg
      SUBDIR += py-psycopg2
      SUBDIR += py-pygresql
      SUBDIR += py-redis
