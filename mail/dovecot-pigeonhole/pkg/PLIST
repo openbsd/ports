@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/23 22:49:00 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/10 13:48:52 sthen Exp $
+@conflict dovecot-sieve-<=0.1.18p0v0
 @pkgpath mail/dovecot,-sieve
 @pkgpath mail/dovecot,-sieve,bdb
 @pkgpath mail/dovecot,-sieve,ldap
@@ -6,7 +7,6 @@
 @pkgpath mail/dovecot,-sieve,postgresql
 @pkgpath mail/dovecot,-sieve,sqlite
 @pkgpath mail/dovecot,-sieve,ldap,mysql,postgresql,sqlite,bdb
-@conflict dovecot-sieve-<=0.1.18p0v0
 @bin bin/sieve-dump
 @bin bin/sieve-test
 @bin bin/sievec
@@ -29,6 +29,7 @@ include/dovecot/sieve/sieve-config.h
 include/dovecot/sieve/sieve-dump.h
 include/dovecot/sieve/sieve-error-private.h
 include/dovecot/sieve/sieve-error.h
+include/dovecot/sieve/sieve-ext-copy.h
 include/dovecot/sieve/sieve-ext-enotify.h
 include/dovecot/sieve/sieve-ext-environment.h
 include/dovecot/sieve/sieve-ext-variables.h
@@ -74,3 +75,4 @@ share/doc/dovecot/example-config/conf.d/90-sieve.conf
 @sample ${SYSCONFDIR}/dovecot/conf.d/90-sieve.conf
 share/doc/dovecot/sieve/
 share/doc/dovecot/sieve/spamtest-virustest.txt
+share/doc/dovecot/sieve/vacation.txt
