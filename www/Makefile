@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.513 2011/05/22 19:31:41 landry Exp $
+# $OpenBSD: Makefile,v 1.514 2011/06/10 08:26:56 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -383,6 +383,7 @@
      SUBDIR += py-weberror
      SUBDIR += py-webhelpers
      SUBDIR += py-webkitgtk
+     SUBDIR += py-webdav
      SUBDIR += py-webob
      SUBDIR += py-webpy
      SUBDIR += py-webtest
