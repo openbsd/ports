@@ -3,4 +3,4 @@ for Courier-IMAP. Install this package in order to enable to
 authenticating using PostgreSQL.
 
 Documentation is installed in:
-  ${LOCALBASE}/share/doc/courier-authlib
+  ${TRUEPREFIX}/share/doc/courier-authlib

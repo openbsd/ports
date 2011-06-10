@@ -3,4 +3,4 @@ Courier-IMAP. Install this package in order to enable authentication
 using MySQL.
 
 Documentation is installed in:
-  ${LOCALBASE}/share/doc/courier-authlib
+  ${TRUEPREFIX}/share/doc/courier-authlib
