@@ -1,0 +1,43 @@
+$OpenBSD: README,v 1.1.1.1 2011/06/10 11:49:30 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Note that to produce graphs the py-dot package needs to be installed;
+the dependency is not enforced because it requires graphviz which
+depends on lots of graphical packages.
+
+Before starting the trytond server, several steps are required.
+
+Configuration
+=============
+Edit ${SYSCONFDIR}/trytond.conf based on your configuration and needs.
+The "db_password" and "admin_passwd" MUST be changed.
+
+PostgreSQL
+==========
+Assuming you have an administrative account named `postgres', you can
+create the 'tryton' user like this:
+    # createuser -U postgres --pwprompt --no-superuser --createdb \
+        --no-createrole tryton
+
+Make sure to set the 'tryton' DB user password to the value of
+"db_password" in ${SYSCONFDIR}/trytond.conf.
+
+First start
+===========
+Start the trytond server:
+    # /etc/rc.d/trytond start
+
+You can now launch the tryton client, then go under:
+    File -> Database -> New Database
+to initialise your new DB.
+
+The /var/log/trytond file can grow very marge with time, it is advised
+to use newsyslog(8) to rotate it.
+
+Documentation
+=============
+http://code.google.com/p/tryton/wiki/TableOfContents
+http://www.tryton.org/documentation.html

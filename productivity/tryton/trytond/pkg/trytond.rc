@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# $OpenBSD: trytond.rc,v 1.1.1.1 2011/06/10 11:49:31 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/bin/trytond"
+daemon_user="_tryton"
+
+. /etc/rc.d/rc.subr
+
+pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+rc_bg=YES
+rc_reload=NO
+
+rc_pre() {
+	touch /var/log/trytond
+	chown _tryton:_tryton /var/log/trytond
+}
+
+# XXX hangs forever (threads?)
+rc_stop() {
+	pkill -9 -f "^${pexp}"
+}
+
+rc_cmd $1
