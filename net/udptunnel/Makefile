@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/07/12 22:07:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/10 13:36:04 gsoares Exp $
 
 COMMENT=	UDP tunnel utility
 
@@ -6,7 +6,7 @@ DISTNAME=	udptunnel-1.1
 REVISION=	0
 CATEGORIES=	net
 
-MASTER_SITES=	ftp://ftp.cs.columbia.edu/pub/lennox/udptunnel/ 
+MASTER_SITES=	${HOMEPAGE}
 
 HOMEPAGE=	http://www.cs.columbia.edu/~lennox/udptunnel/
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c 
+WANTLIB=		c
 
 CONFIGURE_STYLE=	gnu
 
