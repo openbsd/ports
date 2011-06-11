@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2011/05/28 08:15:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/11 08:16:30 ajacoutot Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
 GNOME_PROJECT=		epiphany-extensions
 GNOME_VERSION=		3.0.0
-REVISION=		6
+REVISION=		7
 
 # sync with www/epiphany
 M=		${GNOME_VERSION:R}
@@ -47,10 +47,13 @@ LIBTOOL_FLAGS=	--tag=disable-static
 MODGNOME_HELP_FILES=	Yes
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
 		--enable-opensp=no
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+
+# prevents implicit declarations by not setting *_DISABLE_DEPRECATED
+CONFIGURE_ARGS += --disable-maintainer-mode
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/05/28 08:15:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/06/11 08:16:30 ajacoutot Exp $
 lib/epiphany/
 lib/epiphany/${M}/
 lib/epiphany/${M}/extensions/
@@ -281,6 +281,7 @@ share/locale/wa/LC_MESSAGES/epiphany-extensions-${M}.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany-extensions-${M}.mo
 share/locale/zh_HK/LC_MESSAGES/epiphany-extensions-${M}.mo
 share/locale/zh_TW/LC_MESSAGES/epiphany-extensions-${M}.mo
+share/omf/
 share/omf/epiphany-extensions/
 share/omf/epiphany-extensions/epiphany-extensions-C.omf
 share/omf/epiphany-extensions/epiphany-extensions-de.omf
