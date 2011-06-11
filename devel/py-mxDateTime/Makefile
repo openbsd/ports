@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2011/06/10 05:52:06 rpointel Exp $
+# $OpenBSD: Makefile,v 1.32 2011/06/11 12:34:32 rpointel Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	date and time types for Python
 
 MODPY_EGG_VERSION = 3.1.3
-REVISION =	2
+REVISION =	3
 DISTNAME =	egenix-mx-base-${MODPY_EGG_VERSION}
 PKGNAME =	py-mxDateTime-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
@@ -23,7 +23,7 @@ MASTER_SITES =	http://www.lemburg.com/files/python/
 FLAVORS =	python2.4 python2.7 # 2.4 needed for Zope, e.g.
 FLAVOR ?=	python2.7
 
-WANTLIB += m
+WANTLIB += m ${MODPY_WANTLIB}
 
 .if !${FLAVOR} || ${FLAVOR:L:Npython?.?}
 ERRORS +=	"Fatal: You must select one version: ${FLAVORS}"

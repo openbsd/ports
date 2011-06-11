@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.14 2011/05/15 19:48:59 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.15 2011/06/11 12:34:33 rpointel Exp $
 @option no-default-conflict
 @conflict py-mxDateTime-*-python${MODPY_VERSION}
-%%python2.6%%
+%%python2.7%%
 !%%python2.4%%
 lib/python${MODPY_VERSION}/site-packages/mx/
 lib/python${MODPY_VERSION}/site-packages/mx/BeeBase/
