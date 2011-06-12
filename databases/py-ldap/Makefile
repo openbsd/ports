@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/06/10 05:48:35 rpointel Exp $
+# $OpenBSD: Makefile,v 1.29 2011/06/12 09:02:32 rpointel Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ COMMENT-examples=	example programs for the LDAP client API for Python
 V=			2.3.1
 DISTNAME=		python-ldap-${V}
 PKGNAME-main=		py-ldap-${V}
-REVISION-main =		7
+REVISION-main =		8
 FULLPKGNAME-examples=	py-ldap-examples-${V}
 REVISION-examples =	8
 FULLPKGPATH-examples=	databases/py-ldap,-examples
@@ -23,7 +23,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-WANTLIB-main=		crypto ssl
+WANTLIB-main=		crypto ssl ${MODPY_WANTLIB}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=python-ldap/}
 
