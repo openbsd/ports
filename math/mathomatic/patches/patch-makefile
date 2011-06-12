@@ -1,13 +1,13 @@
-$OpenBSD: patch-makefile,v 1.12 2010/12/03 08:43:49 jasper Exp $
---- makefile.orig	Fri Oct  8 01:43:47 2010
-+++ makefile	Sat Oct 23 18:07:42 2010
-@@ -9,7 +9,8 @@ INSTALL		?= install # installer to use
- INSTALL_PROGRAM	?= $(INSTALL) # command to install program files
+$OpenBSD: patch-makefile,v 1.13 2011/06/12 19:03:02 shadchin Exp $
+--- makefile.orig	Sun May 22 02:54:29 2011
++++ makefile	Thu Jun  9 21:45:34 2011
+@@ -22,7 +22,8 @@ INSTALL		?= install # installer utility to use
+ INSTALL_PROGRAM	?= $(INSTALL) # command to install executable program files
  INSTALL_DATA	?= $(INSTALL) -m 0644 # command to install data files
  
--CC_OPTIMIZE	= -O # default C compiler optimization flags
+-CC_OPTIMIZE	= -O3 # Default C compiler optimization flags that are safe.
 +CC_OPTIMIZE	=
-+#CC_OPTIMIZE	= -O # default C compiler optimization flags
- #CC_OPTIMIZE	= -O3 -msse2 -mfpmath=sse -fomit-frame-pointer # optimize for speed on a Pentium 4 or higher CPU
++#CC_OPTIMIZE	= -O3 # Default C compiler optimization flags that are safe.
+ # Be sure and run tests to see if Mathomatic works and runs faster, if you uncomment the following line:
+ #CC_OPTIMIZE	+= -fno-signaling-nans -fno-trapping-math -fomit-frame-pointer # Possible additional optimizations, not tested.
  
- VERSION		= `cat VERSION`
