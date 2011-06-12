@@ -1,0 +1,16 @@
+$OpenBSD: patch-festival_examples_text2wave_sh,v 1.1 2011/06/12 12:21:26 sthen Exp $
+
+fixes occasional segfault/bus error in text2wave, especially using
+alternative voices e.g. 'text2wave -eval "(voice_cmu_us_slt_arctic_hts)"'
+
+--- festival/examples/text2wave.sh.orig	Sun Jun 12 13:00:45 2011
++++ festival/examples/text2wave.sh	Sun Jun 12 13:01:01 2011
+@@ -138,7 +138,7 @@ a single waveform at the end."
+ (define (combine_waves)
+   "Join all the waves together into the desired output file
+ and delete the intermediate ones."
+-  (let ((wholeutt (utt.synth (Utterance Text ""))))
++  (let ((wholeutt (Utterance Text "")))
+     (mapcar
+      (lambda (d) 
+        (utt.import.wave wholeutt d t)
