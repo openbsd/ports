@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2011/06/08 17:41:57 rpointel Exp $
+# $OpenBSD: Makefile,v 1.20 2011/06/12 18:28:55 jasper Exp $
 
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
 GNOME_VERSION=		2.30.2
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		graphics
 
@@ -36,7 +36,8 @@ LIB_DEPENDS=    	devel/libgdata \
 			security/gnutls
 BUILD_DEPENDS=		${RUN_DEPENDS}
 # Depend on the same x.yy version of eog
-RUN_DEPENDS=		x11/gnome/eog>=2.30.0
+RUN_DEPENDS=		x11/gnome/eog>=2.30.0 \
+			x11/gnome/py-gnome
 
 MODGCONF2_SCHEMAS_DIR=	eog-plugins
 AUTOCONF_VERSION=	2.68
