@@ -1,25 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/09 17:40:19 mglocker Exp $
+# $OpenBSD: Makefile,v 1.1 2011/06/12 00:20:51 sthen Exp $
 
-COMMENT=		firmware binary images for uvideo driver
+FW_DRIVER=	uvideo
+FW_VER=		1.2
+DISTNAME=	uvideo-firmware-${FW_VER}
+REVISION=	0
 
-DISTNAME=		uvideo-firmware-1.2
-CATEGORIES=		sysutils
-MASTER_SITES=		${HOMEPAGE}	
+MAINTAINER=	Marcus Glocker <mglocker@openbsd.org>
 
-HOMEPAGE=		http://www.nazgul.ch/uvideo/
-
-MAINTAINER=		Marcus Glocker <mglocker@openbsd.org>
-
-# Proprietary
-PERMIT_PACKAGE_CDROM=	No
-PERMIT_PACKAGE_FTP=	No
-PERMIT_DISTFILES_CDROM=	No
-PERMIT_DISTFILES_FTP=	No
-
-NO_REGRESS=		Yes
-PKG_ARCH=		*
-
-PREFIX=			/etc
+HOMEPAGE=	http://www.nazgul.ch/uvideo/
 
 # Info file
 FIRMWARE=	info

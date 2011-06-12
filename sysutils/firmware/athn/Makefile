@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/09 17:08:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/12 00:20:51 sthen Exp $
 
 FW_DRIVER=	athn
 FW_VER=		1.1
 REVISION=	0
+
+EXTRACT_SUFX=	.tgz
+WRKDIST=	${WRKDIR}
 
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes

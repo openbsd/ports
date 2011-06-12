@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/09 17:08:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/12 00:20:51 sthen Exp $
 
 FW_DRIVER=	uath
 FW_VER=		2.0
 REVISION=	0
+
+WRKDIST=	${WRKDIR}
+EXTRACT_SUFX=	.tgz
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/license.txt ${PREFIX}/firmware/uath-license

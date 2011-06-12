@@ -1,8 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/09 17:08:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/12 00:20:51 sthen Exp $
 
 FW_DRIVER=	urtwn
 FW_VER=		1.1
+DISTNAME=	urtwn-1.1p0
 REVISION=	1
+
+WRKDIST=	${WRKDIR}
+EXTRACT_SUFX=	.tgz
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/urtwn-license ${PREFIX}/firmware/urtwn-license

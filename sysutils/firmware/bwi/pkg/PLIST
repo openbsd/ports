@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1 2011/06/12 00:20:51 sthen Exp $
+@pkgpath sysutils/bwi-firmware
+firmware/bwi-airforce
+firmware/bwi-info

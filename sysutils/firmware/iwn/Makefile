@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/09 21:38:21 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/12 00:20:51 sthen Exp $
 
 FW_DRIVER=	iwn
 FW_VER=		5.6
@@ -11,6 +11,8 @@ DISTFILES=	iwlwifi-4965-ucode-228.61.2.24.tgz \
 		iwlwifi-6050-ucode-41.28.5.1.tgz \
 		iwlwifi-6000g2a-ucode-17.168.5.1.tgz \
 		iwlwifi-6000g2b-ucode-17.168.5.1.tgz
+
+WRKDIST=	${WRKDIR}
 
 HOMEPAGE=	http://www.intellinuxwireless.org/
 MASTER_SITES=	${HOMEPAGE}iwlwifi/downloads/ \

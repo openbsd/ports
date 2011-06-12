@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.237 2011/06/09 17:08:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.238 2011/06/12 00:20:50 sthen Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
      SUBDIR += LPRng
      SUBDIR += accountsservice
-     SUBDIR += acx-firmware
      SUBDIR += anacron
      SUBDIR += apachetop
      SUBDIR += apc-upsd
@@ -18,7 +17,6 @@
      SUBDIR += bchunk
      SUBDIR += bubblemon
      SUBDIR += bubblemon-dockapp
-     SUBDIR += bwi-firmware
      SUBDIR += cdrtools
      SUBDIR += cfengine
      SUBDIR += checkbashisms
@@ -87,7 +85,6 @@
      SUBDIR += lsof
      SUBDIR += luastatgrab
      SUBDIR += mac-robber
-     SUBDIR += malo-firmware
      SUBDIR += memtest86+
      SUBDIR += memtester
      SUBDIR += mencal
@@ -129,7 +126,6 @@
      SUBDIR += py-lockfile
      SUBDIR += pciutils
      SUBDIR += pftop
-     SUBDIR += pgt-firmware
      SUBDIR += pkg_mgr
      SUBDIR += polkit
      SUBDIR += pscpug
@@ -184,11 +180,9 @@
      SUBDIR += tpb
      SUBDIR += tphdisk
      SUBDIR += tree
-     SUBDIR += upgt-firmware
      SUBDIR += upower
      SUBDIR += upsd
      SUBDIR += usbutil
-     SUBDIR += uvideo-firmware
      SUBDIR += vifm
      SUBDIR += vmwh
      SUBDIR += wdsetup

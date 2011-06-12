@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/12/25 10:39:12 mglocker Exp $
+@comment $OpenBSD: PLIST,v 1.1 2011/06/12 00:20:51 sthen Exp $
+@pkgpath sysutils/acx-firmware
 firmware/tiacx-info
 firmware/tiacx100
 firmware/tiacx100r0D

@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/09 17:08:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/12 00:20:51 sthen Exp $
 
 FW_DRIVER=	ipw
 FW_VER=		1.3
 DISTNAME=	ipw2100-fw-${FW_VER}
 REVISION=	1
+
+WRKDIST=	${WRKDIR}
+EXTRACT_SUFX=	.tgz
 
 # license info at http://ipw2100.sourceforge.net/firmware.php?fid=3
 HOMEPAGE=	http://ipw2100.sourceforge.net/firmware.php
