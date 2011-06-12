@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/06/07 15:47:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/06/12 16:00:03 rpointel Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,8 +17,8 @@ PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
 
-REVISION-main=	0
-REVISION-gui=	0
+REVISION-main=	1
+REVISION-gui=	1
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
 SHARED_LIBS +=  hpip		2.0 # .0.1
