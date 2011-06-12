@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/06/10 05:47:01 rpointel Exp $
+# $OpenBSD: Makefile,v 1.43 2011/06/12 09:36:56 rpointel Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,12 +10,12 @@ VERSION=		1.1.21
 DISTNAME=		psycopg-${VERSION}
 PKGNAME=		py-${DISTNAME}
 PKGNAME-main=		py-${DISTNAME}
-REVISION-main =		11
+REVISION-main =		12
 FULLPKGNAME-examples=	py-psycopg-examples-${VERSION}
-REVISION-examples =	4
+REVISION-examples =	5
 FULLPKGPATH-examples=	databases/py-psycopg,-examples
 FULLPKGNAME-zope=	py-psycopg-zope-${VERSION}
-REVISION-zope =		5
+REVISION-zope =		6
 FULLPKGPATH-zope=	databases/py-psycopg,-zope,python2.4
 CATEGORIES=		databases
 

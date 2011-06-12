@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2010/09/03 12:34:55 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.5 2011/06/12 09:36:56 rpointel Exp $
 @option no-default-conflict
 @conflict py-psycopg-*-python${MODPY_VERSION}
 @pkgpath databases/py-psycopg,no_zope
 @pkgpath databases/py-psycopg
-%%python2.6%%
+%%python2.7%%
 lib/python${MODPY_VERSION}/lib-dynload/psycopgmodule.so

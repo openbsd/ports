@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.python2.7-main,v 1.1 2011/06/12 09:36:56 rpointel Exp $
+@pkgpath databases/py-psycopg,-main[,python2.5][,python2.6]

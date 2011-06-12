@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST-examples,v 1.3 2010/08/30 20:59:41 fgsch Exp $
-@pkgpath databases/py-psycopg,-examples,python2.4
-@pkgpath databases/py-psycopg,-examples,python2.5
-@pkgpath databases/py-psycopg,-examples,python2.6
+@comment $OpenBSD: PLIST-examples,v 1.4 2011/06/12 09:36:56 rpointel Exp $
+@pkgpath databases/py-psycopg,-examples[,python2.4][,python2.5][,python2.6]
 share/examples/py-psycopg/
 share/examples/py-psycopg/binary.py
 share/examples/py-psycopg/bool.py
