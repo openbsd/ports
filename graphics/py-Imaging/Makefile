@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/06/10 05:40:56 rpointel Exp $
+# $OpenBSD: Makefile,v 1.53 2011/06/12 08:44:44 rpointel Exp $
 
 SHARED_ONLY=		Yes
 
@@ -17,10 +17,10 @@ PKGNAME-bin=		py-Imaging-bin-${MODPY_EGG_VERSION}
 FULLPKGNAME-docs=	py-Imaging-docs-${MODPY_EGG_VERSION}
 FULLPKGPATH-docs=	graphics/py-Imaging,-docs
 
-REVISION-main=		3
-REVISION-examples=	2
-REVISION-bin=		2
-REVISION-docs=		2
+REVISION-main=		4
+REVISION-examples=	3
+REVISION-bin=		3
+REVISION-docs=		3
 
 CATEGORIES=		graphics
 
@@ -33,7 +33,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB-main=		freetype z jpeg>=62 lcms ${MODTK_WANTLIB}
+WANTLIB-main=		freetype z jpeg>=62 lcms ${MODTK_WANTLIB} \
+			${MODPY_WANTLIB}
 
 MASTER_SITES=		http://effbot.org/media/downloads/
 
