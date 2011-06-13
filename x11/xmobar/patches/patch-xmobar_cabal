@@ -1,23 +1,16 @@
-$OpenBSD: patch-xmobar_cabal,v 1.1 2010/07/17 14:55:21 kili Exp $
---- xmobar.cabal.orig	Mon May 17 12:17:50 2010
-+++ xmobar.cabal	Tue Jul  6 18:56:36 2010
-@@ -15,8 +15,6 @@ maintainer:         andrea.rossato@unitn.it
- cabal-version:      >= 1.6
- build-type:         Simple
+$OpenBSD: patch-xmobar_cabal,v 1.2 2011/06/13 21:23:04 kili Exp $
+--- xmobar.cabal.orig	Mon Mar 28 01:16:24 2011
++++ xmobar.cabal	Sat Jun 11 22:56:38 2011
+@@ -71,9 +71,11 @@ executable xmobar
+       Plugins.Monitors.MultiCpu, Plugins.Monitors.Net,
+       Plugins.Monitors.Swap, Plugins.Monitors.Thermal,
+       Plugins.Monitors.ThermalZone, Plugins.Monitors.Top,
+-      Plugins.Monitors.Uptime, Plugins.Monitors.Weather
++      Plugins.Monitors.Uptime, Plugins.Monitors.Weather,
++      Plugins.Monitors.Batt.Binding
  
--data-files:         xmobar.config-sample
--
- flag small_base
-   description: Choose the new smaller, split-up base package.
- 
-@@ -42,8 +40,9 @@ flag with_mpd
- 
- executable xmobar
-     main-is:            Main.hs
--    other-modules:      Xmobar, Config, Parsers, Commands, XUtil, StatFS, Runnable, Plugins
-+    other-modules:      Xmobar, Config, Parsers, Commands, XUtil, StatFS, Runnable, Plugins, Plugins.Monitors.Batt.Binding
      ghc-prof-options:   -prof -auto-all
-+    c-sources:          Plugins/Monitors/Batt/apm.c
++    c-sources:		src/Plugins/Monitors/Batt/apm.c
  
      if true
         ghc-options: -funbox-strict-fields -Wall

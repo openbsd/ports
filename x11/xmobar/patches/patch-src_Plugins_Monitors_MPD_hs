@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Plugins_Monitors_MPD_hs,v 1.1 2011/06/13 21:23:04 kili Exp $
+--- src/Plugins/Monitors/MPD.hs.orig	Mon May  2 20:48:52 2011
++++ src/Plugins/Monitors/MPD.hs	Mon May  2 20:49:06 2011
+@@ -91,7 +91,7 @@ parseSong (Right Nothing) = return $ repeat ""
+ parseSong (Right (Just s)) =
+   let join [] = ""
+       join (x:xs) = foldl (\a o -> a ++ ", " ++ o) x xs
+-      str sel = maybe "" join (M.sgGet sel s)
++      str sel = maybe "" join (M.sgGetTag sel s)
+       sels = [ M.Name, M.Artist, M.Composer, M.Performer
+              , M.Album, M.Title, M.Track, M.Genre ]
+       fields = M.sgFilePath s : map str sels

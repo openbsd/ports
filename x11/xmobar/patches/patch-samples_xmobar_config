@@ -1,6 +1,6 @@
-$OpenBSD: patch-xmobar_config-sample,v 1.2 2010/07/17 14:55:21 kili Exp $
---- xmobar.config-sample.orig	Mon May 17 12:17:50 2010
-+++ xmobar.config-sample	Mon Jul 12 16:03:46 2010
+$OpenBSD: patch-samples_xmobar_config,v 1.1 2011/06/13 21:23:04 kili Exp $
+--- samples/xmobar.config.orig	Mon Mar 28 01:16:24 2011
++++ samples/xmobar.config	Sat Jun 11 23:46:39 2011
 @@ -4,15 +4,11 @@ Config { font = "-misc-fixed-*-*-*-*-10-*-*-*-*-*-*-*"
         , position = Top
         , lowerOnStart = True
