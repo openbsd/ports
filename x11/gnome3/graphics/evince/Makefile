@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/13 13:55:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/13 15:52:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
-REVISION-main=	0
+REVISION-main=	1
 REVISION-djvu=	0
 REVISION-dvi=	0
 REVISION-nautilus=0
@@ -46,7 +46,8 @@ MODULES=	devel/gettext \
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	x11/gnome/icon-theme \
-		devel/gobject-introspection
+		devel/gobject-introspection \
+		devel/gsettings-desktop-schemas
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
@@ -68,6 +69,7 @@ LIB_DEPENDS-main= print/poppler \
 		x11/gnome/libgnome-keyring \
 		${LIB_DEPENDS}
 RUN_DEPENDS-main= ${RUN_DEPENDS} \
+		devel/gsettings-desktop-schemas \
 		misc/shared-mime-info \
 		print/ghostscript/gnu \
 		x11/gnome/icon-theme
