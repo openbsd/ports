@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/08 17:41:57 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2011/06/13 17:06:04 ajacoutot Exp $
+
+# https://bugzilla.gnome.org/show_bug.cgi?id=647132
+BROKEN=		needs gnome-shell which cannot be ported yet
 
 COMMENT=	tweak hidden GTK/GNOME settings
 
