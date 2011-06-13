@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.328 2011/06/09 16:41:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.329 2011/06/13 12:51:47 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -268,6 +268,7 @@
      SUBDIR += py-pygments
      SUBDIR += py-rtf
      SUBDIR += py-sphinx
+     SUBDIR += py-vatnumber
      SUBDIR += py-vobject
      SUBDIR += py-xml
      SUBDIR += py-xmldiff
