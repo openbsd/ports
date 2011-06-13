@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/01 11:19:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/13 05:24:32 ajacoutot Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
 GNOME_PROJECT=	gnome-screensaver
 GNOME_VERSION=	3.0.0
 
-REVISION=	0
+REVISION=	1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -50,8 +50,10 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-locking \
 		--with-x \
 		--with-mit-ext \
-		--with-xf86gamma-ext \
-		--with-kbd-layout-indicator
+		--with-xf86gamma-ext
+
+# configure switch is still here, but functionnality has been removed
+# --with-kbd-layout-indicator
 
 USE_GROFF=	Yes
 
