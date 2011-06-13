@@ -1,0 +1,21 @@
+$OpenBSD: patch-makefile,v 1.1.1.1 2011/06/13 14:03:03 jasper Exp $
+--- makefile.orig	Sun Jun 12 13:31:34 2011
++++ makefile	Sun Jun 12 13:32:05 2011
+@@ -6,15 +6,14 @@ SOURCE_FILES = $(wildcard $(SOURCE_DIR)*.c)
+ OBJECTS = $(subst .c,.o,$(subst $(SOURCE_DIR),$(OBJECT_DIR),$(SOURCE_FILES)))
+ SOURCES = $(OBJECT_FILE:xx=$(SOURCE_DIR))
+ 
+-CC		= cc
+ CCOUT	= -o
+ CCOPT	= -c
+ 
+ vtags:	$(OBJECTS)
+-	@$(CC) $(CCOUT) vtags $(OBJECTS) -g
++	$(CC) $(CFLAGS) $(CCOUT) vtags $(OBJECTS) -g
+ 
+ $(OBJECTS): $(SOURCE_FILES) $(SOURCE_DIR)vtags.h
+-	@$(CC) $(CCOPT) $(CCOUT)$(@) $(SOURCE_DIR)$(*F).c -g
++	$(CC) $(CFLAGS) $(CCOPT) $(CCOUT)$(@) $(SOURCE_DIR)$(*F).c -g
+ 
+ clean:
+ 	-@rm $(OBJECTS)

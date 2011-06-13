@@ -1,0 +1,4 @@
+vtags will generate a tags file that can be used by tagging editors like
+vi(m). It is designed to generate tags from VHDL '87 files. It should
+work with later versions of VHDL but does not support all the language
+constructs.
