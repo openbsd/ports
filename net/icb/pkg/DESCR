@@ -1,5 +1,5 @@
 This is a chat client similar to irc, but for the icb protocol.
 Virtually nobody uses it these days.
 
-Note that both iircII and irssi-icb have icb protocol support, and are
+Note that both ircII and irssi-icb have icb protocol support, and are
 somewhat more convenient.
