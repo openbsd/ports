@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2011/06/08 17:40:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.79 2011/06/13 07:19:59 ajacoutot Exp $
 
 COMMENT-main=		terminal emulation library (gtk+2)
 COMMENT-python= 	python bindings for vte
@@ -14,7 +14,7 @@ PKGNAME-pty-helper=	vte-ptyhelper-${GNOME_VERSION}
 REVISION-main=		3
 REVISION-python=	1
 REVISION-pty-helper=	0
-REVISIOn-gtk3=		0
+REVISION-gtk3=		0
 
 CATEGORIES=		devel
 
