@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-nautilus,v 1.1.1.1 2011/06/13 12:20:41 jasper Exp $
+lib/nautilus/
+lib/nautilus/extensions-${MAJ_V}/
+@comment lib/nautilus/extensions-${MAJ_V}/libevince-properties-page.la
+lib/nautilus/extensions-${MAJ_V}/libevince-properties-page.so

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST-djvu,v 1.1.1.1 2011/06/13 12:20:40 jasper Exp $
+lib/evince/3/backends/djvudocument.evince-backend
+@comment lib/evince/3/backends/libdjvudocument.la
+lib/evince/3/backends/libdjvudocument.so
