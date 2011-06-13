@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/13 16:40:20 jasper Exp $
 
 COMMENT=	mock database driver for testing
 
 MODULES=	cpan
-DISTNAME=	DBD-Mock-1.37
-REVISION=	0
+DISTNAME=	DBD-Mock-1.39
 CATEGORIES=	databases devel
 USE_GROFF =	Yes
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	databases/p5-DBI
+RUN_DEPENDS=	databases/p5-DBI>=1.3
 
 CONFIGURE_STYLE=modbuild
 
