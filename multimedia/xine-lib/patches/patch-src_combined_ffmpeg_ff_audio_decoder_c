@@ -1,0 +1,74 @@
+$OpenBSD: patch-src_combined_ffmpeg_ff_audio_decoder_c,v 1.1 2011/06/13 08:10:01 dcoppa Exp $
+
+Eliminate use of old FFmpeg APIs.
+
+--- src/combined/ffmpeg/ff_audio_decoder.c.orig	Tue Mar 23 11:41:49 2010
++++ src/combined/ffmpeg/ff_audio_decoder.c	Mon May 16 20:42:58 2011
+@@ -46,6 +46,12 @@
+ 
+ #define AUDIOBUFSIZE (64 * 1024)
+ 
++#if LIBAVCODEC_VERSION_MAJOR >= 53 || (LIBAVCODEC_VERSION_MAJOR == 52 && LIBAVCODEC_VERSION_MINOR >= 32)
++#  define AVAUDIO 3
++#else
++#  define AVAUDIO 2
++#endif
++
+ typedef struct {
+   audio_decoder_class_t   decoder_class;
+ } ff_audio_class_t;
+@@ -255,6 +261,9 @@ static void ff_audio_decode_data (audio_decoder_t *thi
+       buf->decoder_info[2]);
+ 
+   } else if (!(buf->decoder_flags & BUF_FLAG_SPECIAL)) {
++#if AVAUDIO > 2
++    AVPacket avpkt;
++#endif
+ 
+     if( !this->decoder_ok ) {
+       if ( ! this->context || ! this->codec ) {
+@@ -286,11 +295,21 @@ static void ff_audio_decode_data (audio_decoder_t *thi
+     if (!this->output_open) {
+       if (!this->audio_bits || !this->audio_sample_rate || !this->audio_channels) {
+         decode_buffer_size = AVCODEC_MAX_AUDIO_FRAME_SIZE;
++#if AVAUDIO > 2
++	av_init_packet (&avpkt);
++	avpkt.data = (uint8_t *)&this->buf[0];
++	avpkt.size = this->size;
++	avpkt.flags = AV_PKT_FLAG_KEY;
++	avcodec_decode_audio3 (this->context,
++			       (int16_t *)this->decode_buffer,
++			       &decode_buffer_size, &avpkt);
++#else
+         avcodec_decode_audio2 (this->context,
+                               (int16_t *)this->decode_buffer,
+                               &decode_buffer_size,
+                               &this->buf[0],
+                               this->size);
++#endif
+ 	this->audio_bits = this->context->bits_per_sample;
+ 	this->audio_sample_rate = this->context->sample_rate;
+ 	this->audio_channels = this->context->channels;
+@@ -311,12 +330,21 @@ static void ff_audio_decode_data (audio_decoder_t *thi
+       offset = 0;
+       while (this->size>0) {
+         decode_buffer_size = AVCODEC_MAX_AUDIO_FRAME_SIZE;
++#if AVAUDIO > 2
++	av_init_packet (&avpkt);
++	avpkt.data = (uint8_t *)&this->buf[offset];
++	avpkt.size = this->size;
++	avpkt.flags = AV_PKT_FLAG_KEY;
++	bytes_consumed = avcodec_decode_audio3 (this->context,
++						(int16_t *)this->decode_buffer,
++						&decode_buffer_size, &avpkt);
++#else
+         bytes_consumed = avcodec_decode_audio2 (this->context,
+                                                (int16_t *)this->decode_buffer,
+                                                &decode_buffer_size,
+                                                &this->buf[offset],
+                                                this->size);
+-
++#endif
+         if (bytes_consumed<0) {
+           xprintf (this->stream->xine, XINE_VERBOSITY_DEBUG,
+                    "ffmpeg_audio_dec: error decompressing audio frame\n");
