@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/04/25 10:02:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2011/06/13 07:04:11 ajacoutot Exp $
 @conflict howl-*
 @newgroup _avahi:629
-@newgroup _avahi-autoipd:630
 @newuser _avahi:629:629:daemon:Avahi User:/var/empty:/sbin/nologin
-@newuser _avahi-autoipd:630:630:daemon:Avahi Autoipd User:/var/empty:/sbin/nologin
 %%SHARED%%
 @bin bin/avahi-browse
 bin/avahi-browse-domains

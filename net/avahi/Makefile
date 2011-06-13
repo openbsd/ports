@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2011/06/08 18:00:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.61 2011/06/13 07:04:11 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -26,13 +26,10 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 SHARED_LIBS +=  avahi-common         0.0      # .8.0
 SHARED_LIBS +=  avahi-core           0.0      # .5.5
-SHARED_LIBS +=  avahi-qt3            0.0      # .1.2
-SHARED_LIBS +=  avahi-qt4            0.0      # .1.2
 SHARED_LIBS +=  avahi-client         0.0      # .5.4
 SHARED_LIBS +=  avahi-glib           0.0      # .1.1
 SHARED_LIBS +=  avahi-gobject        0.0      # .0.1
 SHARED_LIBS +=  howl                 0.0      # .0.0
-SHARED_LIBS +=  avahi-ui             0.0      # .1.0
 SHARED_LIBS +=  dns_sd               0.0      # .1.0
 
 HOMEPAGE=	http://www.avahi.org/
@@ -95,6 +92,7 @@ CONFIGURE_ARGS+= --disable-mono \
 .endif
 
 .if !${FLAVOR:L:Mno_gtk} || ${BUILD_MONO:L} == "yes"
+SHARED_LIBS +=  avahi-ui             0.0      # .1.0
 MULTI_PACKAGES+= -gtk
 MODULES+=	lang/python
 BUILD_DEPENDS+=	lang/python/${MODPY_VERSION},-gdbm \
@@ -124,6 +122,7 @@ CONFIGURE_ARGS+= -disable-gtk \
 .endif
 
 .if !${FLAVOR:L:Mno_qt3}
+SHARED_LIBS +=  avahi-qt3            0.0      # .1.2
 MULTI_PACKAGES+= -qt3
 MODULES+=	x11/qt3
 LIB_DEPENDS-qt3= ${MODGETTEXT_LIB_DEPENDS} \
@@ -139,6 +138,7 @@ CONFIGURE_ARGS+= --disable-qt3
 .endif
 
 .if !${FLAVOR:L:Mno_qt4}
+SHARED_LIBS +=  avahi-qt4            0.0      # .1.2
 MULTI_PACKAGES+= -qt4
 MODULES+=	x11/qt4
 LIB_DEPENDS-qt4= ${MODGETTEXT_LIB_DEPENDS} \
@@ -156,9 +156,9 @@ USE_LIBTOOL=	Yes
 MODPY_RUNDEP=	No
 MODMONO_DEPS=	No
 
-AUTOCONF_VERSION= 2.68
+CFLAGS+=	-D_BSD_SOURCE
 
-CONFIGURE_STYLE=autoconf no-autoheader
+CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		PTHREAD_CFLAGS="-pthread" \
@@ -170,15 +170,14 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--with-avahi-user=_avahi \
 		--with-avahi-group=_avahi \
 		--with-avahi-priv-access-group=wheel \
-		--with-autoipd-user=_avahi-autoipd \
-		--with-autoipd-group=_avahi-autoipd \
 		--with-xml=expat \
-		--with-distro=openbsd \
+		--with-distro=none \
 		--enable-compat-howl \
 		--enable-compat-libdns_sd \
 		--enable-core-docs \
 		--enable-tests \
 		--enable-introspection \
+		--disable-autoipd \
 		--disable-doxygen-doc \
 		--disable-doxygen-dot \
 		--disable-doxygen-xml \
@@ -188,9 +187,6 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 # don't link with libssp from the gcc4 port
 # __guard and __stack_smash_handler are part of libc
 CONFIGURE_ARGS+=--disable-stack-protector
-
-# XXX
-CONFIGURE_ARGS+=--disable-autoipd
 
 FAKE_FLAGS=	SYSCONFDIR=${SYSCONFDIR}
 
