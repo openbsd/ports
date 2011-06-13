@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.52 2011/05/30 09:15:16 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.53 2011/06/13 16:35:02 edd Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -228,10 +228,12 @@ sub quick_add
 sub is_base_system
 {
 	my ($self, $handle, $state) = @_;
+
+	# texlive_base has junk which we need to clear
 	if ($handle->pkgname =~ m/^texlive_base-2009/) {
+
 		# we need to alter its packing-list
-		my $plist = OpenBSD::PackingList->from_installation(
-		    $handle->pkgname);
+		my $plist = OpenBSD::PackingList->from_installation($handle->pkgname);
 		require File::Find;
 		File::Find::find(
 		    sub {
@@ -242,7 +244,59 @@ sub is_base_system
 		    }, 
 		    '/usr/local/share/texmf-var');
 		quick_add($plist, '/usr/local/share/texmf/web2c/fmtutil.cnf');
+
 		$plist->to_installation;
+	}
+
+	if (($handle->pkgname =~ m/^texlive_base-2009/) ||
+	    ($handle->pkgname eq "texlive_texmf-minimal-2010p0") ||
+	    ($handle->pkgname eq "texlive_texmf-minimal-2010")) {
+
+	    my $plist = OpenBSD::PackingList->from_installation($handle->pkgname);
+	    quick_add($plist, '/usr/local/share/texmf/web2c/updmap.cfg');
+
+	    # add links that were outside the plist
+	    my @links = qw(
+	    lamed dvilualatex dviluatex lualatex metafun mfplain
+	    amstex cslatex csplain eplain etex jadetex latex mex
+	    mllatex mltex pdfcslatex pdfcsplain pdfetex pdfjadetex
+	    pdflatex pdfmex pdfxmltex physe phyzzx texsis utf8mex
+	    xmltex platex xelatex
+	    );
+	    foreach (@links) {
+		quick_add($plist, '/usr/local/bin/'.$_);
+	    }
+
+	    $plist->to_installation;
+	}
+
+	# nullify some scripts which can't run upgrading 2009 and some 2010
+	if(($handle->pkgname =~ m/^texlive_.*2009/) ||
+	    ($handle->pkgname eq "texlive_base-2010p1") ||
+	    ($handle->pkgname eq "texlive_base-2010p0") ||
+	    ($handle->pkgname eq "texlive_base-2010") ||
+	    ($handle->pkgname eq "texlive_texmf-full-2010") ||
+	    ($handle->pkgname eq "texlive_texmf-docs-2010") ||
+	    ($handle->pkgname eq "texlive_texmf-minimal-2010p0") ||
+	    ($handle->pkgname eq "texlive_texmf-minimal-2010")) {
+
+		# we need to alter its packing-list
+		my $plist1 = OpenBSD::PackingList->from_installation(
+		    $handle->pkgname);
+
+		for my $i (@{$plist1->{items}}) {
+			if ($i->isa("OpenBSD::PackingElement::Unexec")) {
+				bless $i, "OpenBSD::PackingElement::Comment";
+				$i->{name} = "quirk: ".$i->{name};
+			}
+			if (($i->isa("OpenBSD::PackingElement::Sample")) &&
+					(($i->{name} =~ /share\/texmf\/web2c\/updmap.cfg$/))) {
+				bless $i, "OpenBSD::PackingElement::Comment";
+				$i->{name} = "quirk: ".$i->{name};
+			}
+		}
+
+		$plist1->to_installation;
 	}
 
 	my $stem = OpenBSD::PackageName::splitstem($handle->pkgname);
