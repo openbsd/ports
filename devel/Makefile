@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.944 2011/06/13 12:50:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.945 2011/06/13 14:04:29 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1119,6 +1119,7 @@
      SUBDIR += vanessa
      SUBDIR += varconf
      SUBDIR += vim-taglist
+     SUBDIR += vtags
      SUBDIR += vtcl
      SUBDIR += vte
      SUBDIR += vte,gtk3
