@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.697 2011/06/08 09:09:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.698 2011/06/13 20:16:27 landry Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -220,6 +220,7 @@
      SUBDIR += nfsen
      SUBDIR += ngrep
      SUBDIR += nicotine
+     SUBDIR += nload
      SUBDIR += nmap
      SUBDIR += no-ip
      SUBDIR += ns
