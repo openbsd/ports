@@ -1,0 +1,38 @@
+$OpenBSD: patch-modules_demux_playlist_xspf_c,v 1.1 2011/06/13 23:51:12 sthen Exp $
+
+Fix heap corruption / integer overflow in playlist parser. CVE-2011-2194
+
+--- modules/demux/playlist/xspf.c.orig	Thu Apr 15 12:53:01 2010
++++ modules/demux/playlist/xspf.c	Fri Jun 10 18:27:22 2011
+@@ -517,7 +517,8 @@ static bool parse_track_node COMPLEX_INTERFACE
+                     }
+                     free( psz_uri );
+ 
+-                    if( p_demux->p_sys->i_track_id < 0 )
++                    if( p_demux->p_sys->i_track_id < 0
++                     || p_demux->p_sys->i_track_id >= (SIZE_MAX / sizeof(p_new_input)) )
+                     {
+                         input_item_AddSubItem( p_input_item, p_new_input );
+                         vlc_gc_decref( p_new_input );
+@@ -531,11 +532,21 @@ static bool parse_track_node COMPLEX_INTERFACE
+                         pp = realloc( p_demux->p_sys->pp_tracklist,
+                             (p_demux->p_sys->i_track_id + 1) * sizeof(*pp) );
+                         if( !pp )
++                        {
++                            vlc_gc_decref( p_new_input );
+                             return false;
++                        }
+                         p_demux->p_sys->pp_tracklist = pp;
+                         while( p_demux->p_sys->i_track_id >=
+                                p_demux->p_sys->i_tracklist_entries )
+                             pp[p_demux->p_sys->i_tracklist_entries++] = NULL;
++                    }
++                    else if( p_demux->p_sys->pp_tracklist[p_demux->p_sys->i_track_id] != NULL )
++                    {
++                        msg_Err( p_demux, "track ID %d collision",
++                                 p_demux->p_sys->i_track_id );
++                        vlc_gc_decref( p_new_input );
++                        return false;
+                     }
+ 
+                     p_demux->p_sys->pp_tracklist[
