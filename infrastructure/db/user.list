@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.163 2011/06/09 18:00:07 ajacoutot Exp $
+$OpenBSD: user.list,v 1.164 2011/06/13 07:05:15 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -138,7 +138,7 @@ id  user		group		port options
 627 _zarafa		_zarafa		mail/zarafa/zarafa
 628 _kamailio		_kamailio	telephony/kamailio
 629 _avahi		_avahi		net/avahi
-630 _avahi-autoipd	_avahi-autoipd	net/avahi
+630 _avahi-autoipd	_avahi-autoipd	net/avahi (DEPRECATED)
 631 _dnsmasq		_dnsmasq	net/dnsmasq
 632 _openfire		_openfire	net/openfire
 633 _nbaudit		_nbaudit	security/nbaudit
