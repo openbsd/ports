@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2011/05/21 17:37:06 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2011/06/13 16:40:51 edd Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME = 		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		kpathsea	3.0
 SHARED_LIBS +=		ptexenc		0.0
@@ -106,6 +106,19 @@ SUBST_VARS +=		TRUEPREFIX LOCALBASE
 pre-install:
 	mkdir -p ${WRKSRC}/inst
 
+# symlinks that would have been installed by texlinks.
+# texlinks can not do this itself in the fake dir, as it requires
+# a fully hashed texmf tree and working kpse configuration.
+ALEPH_LN =	lamed 
+LUATEX_LN =	dvilualatex dviluatex lualatex
+MPOST_LN =	metafun mfplain
+PDFTEX_LN =	amstex cslatex csplain eplain etex jadetex latex mex \
+		mllatex mltex pdfcslatex pdfcsplain pdfetex pdfjadetex \
+		pdflatex pdfmex pdfxmltex physe phyzzx texsis utf8mex \
+		xmltex
+PTEX_LN =	platex
+XETEX_LN =	xelatex
+
 post-install:
 	rm -Rf ${WRKSRC}/inst
 
@@ -121,4 +134,25 @@ post-install:
 		fi \
 	done
 
+	# emulate texlinks
+	for i in ${ALEPH_LN}; do \
+		ln -s ${TRUEPREFIX}/bin/aleph ${PREFIX}/bin/$$i; \
+	done
+	for i in ${LUATEX_LN}; do \
+		ln -s ${TRUEPREFIX}/bin/luatex ${PREFIX}/bin/$$i; \
+	done
+	for i in ${MPOST_LN}; do \
+		ln -s ${TRUEPREFIX}/bin/mpost ${PREFIX}/bin/$$i; \
+	done
+	for i in ${PDFTEX_LN}; do \
+		ln -s ${TRUEPREFIX}/bin/pdftex ${PREFIX}/bin/$$i; \
+	done
+	for i in ${PTEX_LN}; do \
+		ln -s ${TRUEPREFIX}/bin/ptex ${PREFIX}/bin/$$i; \
+	done
+	for i in ${XETEX_LN}; do \
+		ln -s ${TRUEPREFIX}/bin/xetex ${PREFIX}/bin/$$i; \
+	done
+
 .include <bsd.port.mk>
+

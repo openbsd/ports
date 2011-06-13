@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2011/03/08 00:09:42 edd Exp $
+$OpenBSD: README,v 1.2 2011/06/13 16:40:51 edd Exp $
 
 Porting of TeX Live 2010 is now complete. Any remaining bugs will be
 fixed in-tree. This file remains as a reference when the time comes to
@@ -22,6 +22,7 @@ TeX Live 2010 - Porting progress.
    -> fix $HOME ls-R owned root bug:	done
    -> make fmtutil.cnf configs:		not needed this year
  * Implement remaining @xxx directives:	done
+ * emulate texlinks			done
  * Test lots:				done (several months)
  * Link to build as print/texlive:	done
 

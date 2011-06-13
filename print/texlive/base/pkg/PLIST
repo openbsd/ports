@@ -1,11 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.17 2011/05/11 07:45:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2011/06/13 16:40:51 edd Exp $
 @conflict teTeX_base-*
 @conflict ht-<2
 @pkgpath print/teTeX/base
 @pkgpath print/teTeX/base,-fmt
-@comment mptopdf must be before texlinks -u
-bin/mptopdf
-@unexec texlinks -u
 bin/a2ping
 bin/afm2afm
 @bin bin/afm2pl
@@ -14,6 +11,7 @@ bin/afm2afm
 bin/allcm
 bin/allec
 bin/allneeded
+bin/amstex
 bin/arlatex
 bin/authorindex
 bin/autoinst
@@ -42,6 +40,8 @@ bin/cefspdflatex
 bin/chkweb
 bin/cmap2enc
 bin/context
+bin/cslatex
+bin/csplain
 @bin bin/ctangle
 @bin bin/ctie
 bin/ctxtools
@@ -64,6 +64,8 @@ bin/dvihp
 @bin bin/dvilj4
 @bin bin/dvilj4l
 bin/dvilj6
+bin/dvilualatex
+bin/dviluatex
 bin/dvipdfm
 @bin bin/dvipdfmx
 bin/dvipdft
@@ -79,9 +81,11 @@ bin/dvitomp
 bin/e2pall
 bin/ebb
 bin/ebong
+bin/eplain
 bin/epspdf
 bin/epspdftk
 bin/epstopdf
+bin/etex
 @bin bin/extconv
 bin/extractbb
 bin/fig4latex
@@ -106,6 +110,7 @@ bin/httex
 bin/httexi
 bin/htxelatex
 bin/htxetex
+bin/jadetex
 @bin bin/kpseaccess
 bin/kpsepath
 @bin bin/kpsereadlink
@@ -115,12 +120,15 @@ bin/kpsewhere
 @bin bin/kpsewhich
 bin/kpsexpand
 @bin bin/lacheck
+bin/lamed
+bin/latex
 bin/latex2man
 bin/latexdiff
 bin/latexdiff-vc
 @comment bin/latexmk
 bin/latexrevise
 bin/listings-ext.sh
+bin/lualatex
 @bin bin/luatex
 bin/luatools
 @bin bin/mag
@@ -129,8 +137,11 @@ bin/makeglossaries
 @bin bin/makejvf
 bin/mathspic
 @bin bin/mendex
+bin/metafun
+bin/mex
 @bin bin/mf
 @bin bin/mf-nowin
+bin/mfplain
 @bin bin/mft
 bin/mk4ht
 bin/mkgrkindex
@@ -145,11 +156,14 @@ bin/mktexlsr
 bin/mktexmf
 bin/mktexpk
 bin/mktextfm
+bin/mllatex
+bin/mltex
 @bin bin/mmafm
 @bin bin/mmpfb
 @bin bin/mpost
 %%SHARED%%
 %%xindy%%
+bin/mptopdf
 bin/mtxrun
 @bin bin/musixflx
 @bin bin/odvicopy
@@ -175,27 +189,37 @@ bin/pdfatfi
 @comment bin/pdfbook
 @bin bin/pdfclose
 bin/pdfcrop
+bin/pdfcslatex
+bin/pdfcsplain
+bin/pdfetex
 @comment bin/pdfflip
+bin/pdfjadetex
 @comment bin/pdfjam
 @comment bin/pdfjam-pocketmod
 @comment bin/pdfjam-slides3up
 @comment bin/pdfjam-slides6up
 @comment bin/pdfjoin
+bin/pdflatex
+bin/pdfmex
 @comment bin/pdfnup
 @bin bin/pdfopen
 @comment bin/pdfpun
 @bin bin/pdftex
 bin/pdfthumb
 @bin bin/pdftosrc
+bin/pdfxmltex
 @bin bin/pdvitype
 bin/perltex
 @bin bin/pfb2pfa
 bin/pfm2kpx
+bin/physe
+bin/phyzzx
 @bin bin/pk2bm
 bin/pkfix
 bin/pkfix-helper
 @bin bin/pktogf
 @bin bin/pktype
+bin/platex
 @bin bin/pltotf
 @bin bin/pooltype
 @bin bin/ppltotf
@@ -249,11 +273,10 @@ bin/texloganalyser
 bin/texlua
 bin/texluac
 bin/texmfstart
+bin/texsis
 @bin bin/tftopl
 bin/thumbpdf
 @bin bin/tie
-@comment bin/tl-link-config
-@comment bin/tl-link-config.beforesubst
 @comment bin/tlmgr
 bin/tpic2pdftex
 @bin bin/ttf2afm
@@ -264,6 +287,7 @@ bin/tpic2pdftex
 bin/ulqda
 bin/updmap
 bin/updmap-sys
+bin/utf8mex
 @bin bin/vftovp
 @bin bin/vlna
 bin/vpe
@@ -274,7 +298,9 @@ bin/vpl2vpl
 bin/xdvi
 @bin bin/xdvi-xaw
 @bin bin/xdvipdfmx
+bin/xelatex
 @bin bin/xetex
+bin/xmltex
 include/kpathsea/
 include/kpathsea/absolute.h
 include/kpathsea/c-auto.h
@@ -489,7 +515,6 @@ lib/libptexenc.la
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/lcdf-typetools-for-tex-live/
 @exec mktexlsr > /dev/null 2>&1
-@exec texlinks
 @extraunexec rm -Rf %D/share/texmf-var/
 @extraunexec rm -Rf %D/share/texmf-config/
 @comment share/texmf-dist/bibtex/csf/base/88591lat.csf
