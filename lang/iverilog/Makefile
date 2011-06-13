@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/03/14 08:40:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/13 19:42:25 jasper Exp $
 
 COMMENT=		Verilog simulation and synthesis tool
 
-V=			0.9.3
+V=			0.9.4
 DISTNAME=		verilog-$V
 PKGNAME=		iverilog-$V
-REVISION=		0
 CATEGORIES=		lang devel
 
 HOMEPAGE=		http://www.icarus.com/eda/verilog/
