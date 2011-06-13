@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/10 08:26:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/13 15:20:12 jasper Exp $
 
 COMMENT=		standards compliant Python WebDAV server and library
 
@@ -19,6 +19,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}files/
 
 MODULES=		lang/python
+MODPY_SETUPTOOLS=	Yes
 
 NO_REGRESS=		Yes
 
