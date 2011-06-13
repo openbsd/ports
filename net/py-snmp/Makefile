@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/08 18:00:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/13 08:47:52 jasper Exp $
 
 COMMENT=	SNMP framework for Python
 
@@ -25,9 +25,8 @@ DOCSDIR=	${PREFIX}/share/doc/py-snmp
 EXAMPLESDIR=	${PREFIX}/share/examples/py-snmp
 
 post-install:
-	${INSTALL_DATA_DIR} ${DOCSDIR}
+	${INSTALL_DATA_DIR} ${DOCSDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/docs; tar cf - . | tar xf - -C ${DOCSDIR} 
-	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples; tar cf - . | tar xf - -C ${EXAMPLESDIR}
 
 do-regress: fake

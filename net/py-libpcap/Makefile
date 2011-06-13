@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/06/08 18:00:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2011/06/13 08:47:52 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -21,16 +21,13 @@ WANTLIB=		pcap
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pylibpcap/}
 
 MODULES=	lang/python
+MODPY_ADJ_FILES=examples/*.py
 
 BUILD_DEPENDS=	devel/swig
 
 NO_REGRESS=	Yes
 
 EXAMPLESDIR=	${PREFIX}/share/examples/py-libpcap
-
-pre-build:
-	@perl -p -i -e "s,^\#\! /usr/bin/env python,#!${MODPY_BIN}," \
-		${WRKSRC}/examples/*.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}

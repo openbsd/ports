@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/06/08 18:00:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/06/13 08:47:52 jasper Exp $
 
 COMMENT=		DNS toolkit for Python
 
@@ -21,10 +21,9 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}/kits/${MODPY_EGG_VERSION}/
 
 MODULES=		lang/python
+MODPY_ADJ_FILES=	examples/*.py
 
 post-install:
-	@perl -pi -e "s,/usr/bin/env python,${MODPY_BIN}," \
-		${WRKSRC}/examples/*.py
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-dnspython
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/* \
 		${PREFIX}/share/examples/py-dnspython

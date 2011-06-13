@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/06/08 18:00:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/06/13 08:47:52 jasper Exp $
 
 COMMENT=		Python XMPP and Jabber implementation
 
@@ -28,12 +28,12 @@ RUN_DEPENDS=	textproc/libxml,-python \
 		net/py-dnspython
 REGRESS_DEPENDS=${RUN_DEPENDS}
 
+MODPY_ADJ_FILES=examples/*.py
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-xmpp
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.py \
 		${PREFIX}/share/examples/py-xmpp
-	perl -pi -e "s,/usr/bin/python,${MODPY_BIN}," \
-		${PREFIX}/share/examples/py-xmpp/*.py
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-xmpp
 	cd ${WRKSRC}/doc/www/api && tar cf - . | \
 		(cd ${PREFIX}/share/doc/py-xmpp && tar xf -)

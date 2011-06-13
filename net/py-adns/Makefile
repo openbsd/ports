@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/06/08 18:00:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/06/13 08:47:52 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -20,6 +20,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		${HOMEPAGE}/files/
 
 MODULES=		lang/python
+MODPY_ADJ_FILES=	ADNS.py DNSBL.py
 CATEGORIES =		net
 
 LIB_DEPENDS=		net/adns
@@ -29,8 +30,5 @@ NO_REGRESS=		Yes
 
 pre-configure:
 	perl -pi -e 's,!!PREFIX!!,${PREFIX},g' ${WRKSRC}/setup.py
-	find ${WRKSRC} -name \*.py | \
-		xargs perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g;' \
-			-e 's,/usr/bin/python,${MODPY_BIN},g'
 
 .include <bsd.port.mk>
