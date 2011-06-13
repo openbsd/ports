@@ -1,0 +1,16 @@
+$OpenBSD: patch-wordwarvi_6,v 1.1.1.1 2011/06/13 20:33:19 kili Exp $
+--- wordwarvi.6.orig	Thu Jun  9 06:06:22 2011
++++ wordwarvi.6	Sun Jun 12 17:17:16 2011
+@@ -227,11 +227,7 @@ Beware of viruses which may be living inside.
+ .PP 
+ .SH FILES
+ .PP
+-/dev/input/js0, the joystick device node.
+-.PP
+-/dev/input/event5, the rumble effect device. 
+-.PP
+-/usr/share/wordwarvi/sounds/*.ogg contain the audio data used by the game.
++${PREFIX}/share/wordwarvi/sounds/*.ogg contain the audio data used by the game.
+ .PP
+ ~/.wordwarvi/.highscores
+ Contains high score data.
