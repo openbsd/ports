@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-gtk,v 1.4 2010/07/17 14:12:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gtk,v 1.5 2011/06/13 07:11:30 ajacoutot Exp $
 bin/avahi-bookmarks
 bin/avahi-discover
 @bin bin/avahi-discover-standalone
@@ -30,6 +30,6 @@ share/applications/avahi-discover.desktop
 share/applications/bssh.desktop
 share/applications/bvnc.desktop
 share/avahi/interfaces/
+share/avahi/interfaces/avahi-discover.ui
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-share/avahi/interfaces/avahi-discover.ui
