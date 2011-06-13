@@ -1,0 +1,3 @@
+This is the "product" module for the Tryton application platform.
+it defines products, categories of product, units of measure, categories
+of units of measure.
