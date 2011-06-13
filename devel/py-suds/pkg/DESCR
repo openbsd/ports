@@ -1,0 +1,6 @@
+py-suds is a python soap web services client library. Suds leverages
+python meta programming to provide an intuative API for consuming web
+services. Objectification of types defined in the WSDL is provided
+without class generation.  Programmers rarely need to read the WSDL
+since services and WSDL based objects can be easily inspected.
+It supports pluggable soap bindings.
