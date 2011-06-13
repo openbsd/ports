@@ -1,0 +1,3 @@
+This is the "currency" module for the Tryton application platform.
+it defines currencies and exchange rate and allows to customize the
+formatting of the currency amount.
