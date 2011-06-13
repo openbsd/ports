@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/04/28 10:31:16 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/06/13 10:11:05 dcoppa Exp $
+@pkgpath ${BASE_PKGPATH},imlib2
 @bin bin/conky
 lib/conky/
 @man man/man1/conky.1

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2011/04/28 10:31:16 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.23 2011/06/13 10:11:05 dcoppa Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
 COMMENT=	light-weight system monitor
 
 DISTNAME=	conky-1.8.1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	sysutils
 HOMEPAGE=	http://conky.sourceforge.net/
 
@@ -32,11 +32,11 @@ LIB_DEPENDS=	devel/glib2 \
 
 USE_LIBTOOL=	Yes
 
-FLAVORS=	no_x11 audacious imlib2 xmms2
+FLAVORS=	no_x11 audacious xmms2
 FLAVOR?=
 
 .if ${FLAVOR:L:Mno_x11}
-.  if ${FLAVOR:L:Maudacious} || ${FLAVOR:L:Mimlib2} || ${FLAVOR:L:Mxmms2}
+.  if ${FLAVOR:L:Maudacious} || ${FLAVOR:L:Mxmms2}
 ERRORS+="Fatal: nonsense combination of flavors"
 .  else
 CONFIGURE_ARGS+=--disable-double-buffer \
@@ -46,8 +46,11 @@ CONFIGURE_ARGS+=--disable-double-buffer \
 		--disable-x11
 .  endif
 .else
-WANTLIB+=	X11 Xau Xdamage Xdmcp Xext Xfixes Xft Xrender \
-		expat fontconfig freetype pthread-stubs xcb
+CONFIGURE_ARGS+=--enable-imlib2
+LIB_DEPENDS+=	graphics/imlib2
+WANTLIB+=	Imlib2 X11 Xau Xdamage Xdmcp Xext Xfixes Xft \
+		Xrender expat fontconfig freetype \
+		pthread-stubs xcb
 .endif
 
 .if ${FLAVOR:L:Maudacious}
@@ -60,12 +63,6 @@ WANTLIB +=      GL Xcomposite Xcursor Xi Xinerama Xrandr Xxf86vm \
 		gthread-2.0 gtk-x11-2.0 mcs mowgli pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pixman-1 png \
 		xcb-render xcb-shm
-.endif
-
-.if ${FLAVOR:L:Mimlib2}
-CONFIGURE_ARGS+=--enable-imlib2
-LIB_DEPENDS+=	graphics/imlib2
-WANTLIB+=	Imlib2
 .endif
 
 .if ${FLAVOR:L:Mxmms2}
