@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.943 2011/06/10 05:53:20 rpointel Exp $
+# $OpenBSD: Makefile,v 1.944 2011/06/13 12:50:01 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -968,6 +968,7 @@
      SUBDIR += py-simplejson
      SUBDIR += py-sip
      SUBDIR += py-subvertpy
+     SUBDIR += py-suds
      SUBDIR += py-symboltype
      SUBDIR += py-testtools
      SUBDIR += py-tpg
