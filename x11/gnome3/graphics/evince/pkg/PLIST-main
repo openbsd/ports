@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/06/13 12:20:41 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/06/13 13:55:10 ajacoutot Exp $
 @pkgpath graphics/evince
 @bin bin/evince
 @bin bin/evince-previewer
@@ -58,7 +58,6 @@ lib/evince/3/
 lib/evince/3/backends/
 @comment lib/evince/3/backends/libpdfdocument.la
 lib/evince/3/backends/libpdfdocument.so
-@comment lib/evince/3/backends/libpixbufdocument.la
 @comment lib/evince/3/backends/libpsdocument.la
 lib/evince/3/backends/libpsdocument.so
 @comment lib/evince/3/backends/libtiffdocument.la
