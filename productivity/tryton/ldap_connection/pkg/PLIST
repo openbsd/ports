@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/13 17:15:31 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/__tryton__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/__tryton__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/bg_BG.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/connection.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/connection.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/connection.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/de_DE.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/es_CO.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/es_ES.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/fr_FR.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/tests/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/tests/test_ldap_connection.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/ldap_connection/tests/test_ldap_connection.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond_ldap_connection-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/trytond_ldap_connection-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/trytond_ldap_connection-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_ldap_connection-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_ldap_connection-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_ldap_connection-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/trytond_ldap_connection-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_ldap_connection-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt

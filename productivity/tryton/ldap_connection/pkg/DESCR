@@ -1,0 +1,3 @@
+This is the "ldap_connection" module for the Tryton application
+platform.
+It adds basic support for LDAP connection.
