@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/06/13 19:04:10 jasper Exp $
 
 COMMENT=	organize data in tables
 
 MODULES=	cpan
-DISTNAME=	Text-Table-1.114
-REVISION=	0
+DISTNAME=	Text-Table-1.123
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 
@@ -16,6 +15,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	textproc/p5-Text-Aligner>=0.03
+RUN_DEPENDS=	textproc/p5-Text-Aligner>=0.05
 
 .include <bsd.port.mk>
