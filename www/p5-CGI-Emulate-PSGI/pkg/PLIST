@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/14 12:04:11 robert Exp $
+${P5SITE}/CGI/
+${P5SITE}/CGI/Emulate/
+${P5SITE}/CGI/Emulate/PSGI.pm
+${P5SITE}/CGI/Parse/
+${P5SITE}/CGI/Parse/PSGI.pm
+@man man/man3p/CGI::Emulate::PSGI.3p
+@man man/man3p/CGI::Parse::PSGI.3p
