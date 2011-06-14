@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/06/13 17:06:04 ajacoutot Exp $
-
-# https://bugzilla.gnome.org/show_bug.cgi?id=647132
-BROKEN=		needs gnome-shell which cannot be ported yet
+# $OpenBSD: Makefile,v 1.6 2011/06/14 07:22:07 ajacoutot Exp $
 
 COMMENT=	tweak hidden GTK/GNOME settings
 
 GNOME_PROJECT=	gnome-tweak-tool
 GNOME_VERSION=	3.0.4
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 
@@ -29,5 +26,12 @@ RUN_DEPENDS=	devel/gsettings-desktop-schemas \
 MODPY_ADJ_FILES=gnome-tweak-tool
 
 DESKTOP_FILES=		Yes
+
+# XXX see post-install
+# https://bugzilla.gnome.org/show_bug.cgi?id=647132
+#RUN_DEPENDS +=	x11/gnome/shell
+
+post-install:
+	rm ${WRKINST}${MODPY_LIBDIR}/site-packages/gtweak/tweaks/tweak_shell{,_extensions}.p*
 
 .include <bsd.port.mk>

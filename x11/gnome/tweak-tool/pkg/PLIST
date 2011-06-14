@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/22 10:08:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/06/14 07:22:07 ajacoutot Exp $
 bin/gnome-tweak-tool
 lib/python${MODPY_VERSION}/site-packages/gtweak/
 lib/python${MODPY_VERSION}/site-packages/gtweak/__init__.py
@@ -32,12 +32,6 @@ lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_interface.pyo
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_nautilus.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_nautilus.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_nautilus.pyo
-lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_shell.py
-lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_shell.pyc
-lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_shell.pyo
-lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_shell_extensions.py
-lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_shell_extensions.pyc
-lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_shell_extensions.pyo
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_test.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_test.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweaks/tweak_test.pyo
