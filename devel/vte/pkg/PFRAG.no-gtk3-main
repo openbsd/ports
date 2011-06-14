@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.no-gtk3-main,v 1.1 2011/05/13 23:07:16 jasper Exp $
+@comment $OpenBSD: PFRAG.no-gtk3-main,v 1.2 2011/06/14 21:58:48 jasper Exp $
 @bin bin/vte
 include/vte-0.0/
 include/vte-0.0/vte/
@@ -17,26 +17,29 @@ lib/libvte.la
 lib/pkgconfig/vte.pc
 share/gir-1.0/Vte-0.0.gir
 share/gtk-doc/html/vte-0.0/
-share/gtk-doc/html/vte-0.0/VteReaper.html
 share/gtk-doc/html/vte-0.0/VteTerminal.html
-share/gtk-doc/html/vte-0.0/VteTerminalAccessible.html
 share/gtk-doc/html/vte-0.0/annotation-glossary.html
 share/gtk-doc/html/vte-0.0/api-index-0-20.html
 share/gtk-doc/html/vte-0.0/api-index-0-24.html
 share/gtk-doc/html/vte-0.0/api-index-0-26.html
 share/gtk-doc/html/vte-0.0/api-index-0-28.html
+share/gtk-doc/html/vte-0.0/api-index-0-30.html
 share/gtk-doc/html/vte-0.0/api-index-deprecated.html
 share/gtk-doc/html/vte-0.0/api-index-full.html
 share/gtk-doc/html/vte-0.0/ch01.html
 share/gtk-doc/html/vte-0.0/ch02.html
 share/gtk-doc/html/vte-0.0/ch03.html
-share/gtk-doc/html/vte-0.0/deprecated-objects.html
+share/gtk-doc/html/vte-0.0/ch04s02.html
+share/gtk-doc/html/vte-0.0/ch04s03.html
+share/gtk-doc/html/vte-0.0/ch04s04.html
+share/gtk-doc/html/vte-0.0/ch04s05.html
+share/gtk-doc/html/vte-0.0/ch04s06.html
 share/gtk-doc/html/vte-0.0/home.png
 share/gtk-doc/html/vte-0.0/index.html
 share/gtk-doc/html/vte-0.0/index.sgml
-share/gtk-doc/html/vte-0.0/internal-objects.html
 share/gtk-doc/html/vte-0.0/left.png
 share/gtk-doc/html/vte-0.0/licence.html
+share/gtk-doc/html/vte-0.0/migration-0-30.html
 share/gtk-doc/html/vte-0.0/object-hierarchy.html
 share/gtk-doc/html/vte-0.0/pt01.html
 share/gtk-doc/html/vte-0.0/right.png

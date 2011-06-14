@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2011/06/13 07:19:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2011/06/14 21:58:48 jasper Exp $
 
 COMMENT-main=		terminal emulation library (gtk+2)
 COMMENT-python= 	python bindings for vte
@@ -6,15 +6,10 @@ COMMENT-pty-helper=	setuid helper for opening ptys
 COMMENT-gtk3=		terminal emulation library (gtk+3)
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.28.0
+GNOME_VERSION=		0.28.1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python= 	py-${DISTNAME}
 PKGNAME-pty-helper=	vte-ptyhelper-${GNOME_VERSION}
-
-REVISION-main=		3
-REVISION-python=	1
-REVISION-pty-helper=	0
-REVISION-gtk3=		0
 
 CATEGORIES=		devel
 
@@ -32,6 +27,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
+
+EXTRACT_SUFX=		.tar.xz
 
 MODPY_RUNDEP=		No
 MULTI_PACKAGES= 	-main -pty-helper
