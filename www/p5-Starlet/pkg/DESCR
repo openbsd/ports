@@ -1,0 +1,9 @@
+Starlet is a standalone HTTP/1.0 server with keep-alive support,
+formerly known as Plack::Server::Standalone::Prefork and
+Plack::Server::Standalone::Prefork::Server::Starter.
+
+The server supports following features, and is suitable for
+running HTTP application servers behind a reverse proxy:
+- prefork and graceful shutdown using Parallel::Prefork
+- hot deploy using Server::Starter
+- fast HTTP processing using HTTP::Parser::XS (optional)

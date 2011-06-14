@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/14 12:16:58 robert Exp $
+${P5SITE}/Plack/
+${P5SITE}/Plack/Handler/
+${P5SITE}/Plack/Handler/Starlet.pm
+${P5SITE}/Plack/Server/
+${P5SITE}/Plack/Server/Standalone/
+${P5SITE}/Plack/Server/Standalone/Prefork/
+${P5SITE}/Plack/Server/Standalone/Prefork/Server/
+${P5SITE}/Plack/Server/Standalone/Prefork/Server/Starter.pm
+${P5SITE}/Starlet/
+${P5SITE}/Starlet.pm
+${P5SITE}/Starlet/Server.pm
+@man man/man3p/Starlet.3p
