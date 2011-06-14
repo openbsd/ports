@@ -1,24 +1,24 @@
-$OpenBSD: patch-source_configure,v 1.7 2010/04/05 21:40:24 landry Exp $
---- source/configure.orig	Tue Mar 16 06:15:14 2010
-+++ source/configure	Sat Mar 20 11:16:31 2010
-@@ -6915,13 +6915,13 @@ if test $threads = true; then
+$OpenBSD: patch-source_configure,v 1.8 2011/06/14 10:12:48 ajacoutot Exp $
+--- source/configure.orig	Mon May 23 23:59:04 2011
++++ source/configure	Tue Jun  7 14:44:28 2011
+@@ -5958,13 +5958,13 @@ if test $threads = true; then
+   # If this fails, then we must test for HPUX specials, before
    # moving on to a more generic test
  
- 
--{ $as_echo "$as_me:$LINENO: checking for pthread_attr_init in -lpthread" >&5
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_attr_init in -lpthread" >&5
 -$as_echo_n "checking for pthread_attr_init in -lpthread... " >&6; }
-+{ $as_echo "$as_me:$LINENO: checking for pthread_attr_init in -pthread" >&5
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_attr_init in -pthread" >&5
 +$as_echo_n "checking for pthread_attr_init in -pthread... " >&6; }
- if test "${ac_cv_lib_pthread_pthread_attr_init+set}" = set; then
+ if test "${ac_cv_lib_pthread_pthread_attr_init+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -6985,7 +6985,7 @@ if test "x$ac_cv_lib_pthread_pthread_attr_init" = x""y
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -5999,7 +5999,7 @@ if test "x$ac_cv_lib_pthread_pthread_attr_init" = x""y
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  
@@ -27,24 +27,24 @@ $OpenBSD: patch-source_configure,v 1.7 2010/04/05 21:40:24 landry Exp $
  
  fi
  
-@@ -7136,13 +7136,13 @@ fi
+@@ -6087,13 +6087,13 @@ fi
+       ICU_USE_THREADS=1
      else
        # For HP 11
- 
--{ $as_echo "$as_me:$LINENO: checking for pthread_mutex_init in -lpthread" >&5
+-      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_mutex_init in -lpthread" >&5
 -$as_echo_n "checking for pthread_mutex_init in -lpthread... " >&6; }
-+{ $as_echo "$as_me:$LINENO: checking for pthread_mutex_init in -pthread" >&5
++      { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_mutex_init in -pthread" >&5
 +$as_echo_n "checking for pthread_mutex_init in -pthread... " >&6; }
- if test "${ac_cv_lib_pthread_pthread_mutex_init+set}" = set; then
+ if test "${ac_cv_lib_pthread_pthread_mutex_init+set}" = set; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -7206,7 +7206,7 @@ if test "x$ac_cv_lib_pthread_pthread_mutex_init" = x""
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -6128,7 +6128,7 @@ if test "x$ac_cv_lib_pthread_pthread_mutex_init" = x""
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  

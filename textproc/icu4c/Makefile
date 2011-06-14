@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2011/03/14 09:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2011/06/14 10:12:48 ajacoutot Exp $
 
 COMMENT=		International Components for Unicode
 
-VERSION=		4.4
+VERSION=		4.8
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME=		icu4c-${VERSION}
-REVISION =		1
-SO_VERSION=		3.0
+SO_VERSION=		4.0
 .for _lib in icudata icui18n icuio icule iculx icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
@@ -23,14 +22,19 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
 WANTLIB=		c m pthread stdc++
 
 MASTER_SITES=		http://download.icu-project.org/files/icu4c/${VERSION}/ \
 			${MASTER_SITE_SOURCEFORGE:=icu/}
 EXTRACT_SUFX=		.tgz
 
+MODULES=		gcc3
+MODGCC3_ARCHES=		sparc
+MODGCC3_LANGS=		c++
+
 USE_GMAKE=		Yes
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-static \
@@ -49,8 +53,10 @@ MAKE_FLAGS+=		SO_TARGET_VERSION=${SO_VERSION} \
 
 post-install:
 # Bug #7506, #7567 and #7574, libicutest is not installed
-	${INSTALL_PROGRAM} ${WRKBUILD}/tools/ctestfw/libicutest.a ${PREFIX}/lib/
-	${INSTALL_PROGRAM} ${WRKBUILD}/tools/ctestfw/libicutest.so.3.0 ${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKBUILD}/tools/ctestfw/libicutest.a ${PREFIX}/lib/
+	${INSTALL_DATA} \
+		${WRKBUILD}/tools/ctestfw/libicutest.so.${LIBicutest_VERSION} \
+		 ${PREFIX}/lib/
 # who needs those annoying symlinks ?
 	find ${PREFIX}/lib -type l -name 'libicu*.so*' -exec rm '{}' \;
 

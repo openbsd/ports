@@ -1,10 +1,10 @@
 There is no good reason to use different names for static and shared
 libraries
 
-$OpenBSD: patch-source_icudefs_mk_in,v 1.5 2010/04/05 21:40:24 landry Exp $
---- source/icudefs.mk.in.orig	Fri Apr  2 18:09:15 2010
-+++ source/icudefs.mk.in	Fri Apr  2 18:10:15 2010
-@@ -193,7 +193,7 @@ STATIC_PREFIX_WHEN_USED = 
+$OpenBSD: patch-source_icudefs_mk_in,v 1.6 2011/06/14 10:12:48 ajacoutot Exp $
+--- source/icudefs.mk.in.orig	Mon May 23 23:59:04 2011
++++ source/icudefs.mk.in	Tue Jun  7 14:42:16 2011
+@@ -195,7 +195,7 @@ STATIC_PREFIX_WHEN_USED = 
  endif
  
  # Static library prefix and file extension

@@ -1,18 +1,18 @@
-$OpenBSD: patch-source_layout_LESwaps_h,v 1.1 2009/01/27 22:11:15 landry Exp $
+$OpenBSD: patch-source_layout_LESwaps_h,v 1.2 2011/06/14 10:12:48 ajacoutot Exp $
 
 Suggested by jasper. workaround for broken font tables.
 
---- source/layout/LESwaps.h.orig	Mon Sep 22 21:04:12 2008
-+++ source/layout/LESwaps.h	Sun Nov 16 15:12:06 2008
-@@ -2,6 +2,7 @@
+--- source/layout/LESwaps.h.orig	Mon May 23 23:59:02 2011
++++ source/layout/LESwaps.h	Tue Jun  7 14:44:02 2011
+@@ -1,6 +1,7 @@
  /*
   *
-  * (C) Copyright IBM Corp. 1998-2008 - All Rights Reserved
+  * (C) Copyright IBM Corp. 1998-2010 - All Rights Reserved
 + * with additions by Sun Microsystems 2002-2006
   *
   */
  
-@@ -17,12 +18,21 @@
+@@ -16,12 +17,21 @@
  
  U_NAMESPACE_BEGIN
  
@@ -31,13 +31,13 @@ Suggested by jasper. workaround for broken font tables.
   * @stable ICU 2.8
   */
 +#ifndef ALLOW_UNALIGNED_HACK
- #define SWAPW(value) LESwaps::swapWord((const le_uint16 &) (value))
+ #define SWAPW(value) LESwaps::swapWord((le_uint16)(value))
  
  /**
-@@ -32,6 +42,25 @@ U_NAMESPACE_BEGIN
+@@ -31,6 +41,26 @@ U_NAMESPACE_BEGIN
   * @stable ICU 2.8
   */
- #define SWAPL(value) LESwaps::swapLong((const le_uint32 &) (value))
+ #define SWAPL(value) LESwaps::swapLong((le_uint32)(value))
 +
 +#else // ALLOW_UNALIGNED_HACK
 +
@@ -57,6 +57,7 @@ Suggested by jasper. workaround for broken font tables.
 +}
 +
 +#endif // ALLOW_UNALIGNED_HACK
++
  
  /**
   * This class is used to access data which stored in big endian order

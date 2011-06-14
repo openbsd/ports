@@ -1,7 +1,7 @@
-$OpenBSD: patch-source_Makefile_in,v 1.4 2010/04/05 21:40:24 landry Exp $
---- source/Makefile.in.orig	Tue Mar 16 06:15:14 2010
-+++ source/Makefile.in	Sat Apr  3 14:53:41 2010
-@@ -216,8 +216,8 @@ $(top_builddir)/config/pkgdataMakefile:
+$OpenBSD: patch-source_Makefile_in,v 1.5 2011/06/14 10:12:48 ajacoutot Exp $
+--- source/Makefile.in.orig	Mon May 23 23:59:04 2011
++++ source/Makefile.in	Tue Jun  7 14:42:15 2011
+@@ -280,8 +280,8 @@ $(top_builddir)/config/pkgdataMakefile:
  
  $(top_builddir)/config/icu-config: $(top_builddir)/Makefile $(top_srcdir)/config/icu-config-top $(top_srcdir)/config/icu-config-bottom $(top_builddir)/config/Makefile.inc @platform_make_fragment@ $(top_srcdir)/config/make2sh.sed
  	-$(RMV) $@
@@ -10,5 +10,5 @@ $OpenBSD: patch-source_Makefile_in,v 1.4 2010/04/05 21:40:24 landry Exp $
 +	cp $(top_srcdir)/config/icu-config-top $@
 +	chmod 755 $@
  	@echo "# Following from @platform_make_fragment@" >> $@
- 	sed -f $(top_srcdir)/config/make2sh.sed < $(top_builddir)/config/Makefile.inc | grep -v '#M#' | uniq >> $@
- 	sed -f $(top_srcdir)/config/make2sh.sed < @platform_make_fragment@ | grep -v '#M#' | uniq >> $@
+ 	LC_ALL=C sed -f $(top_srcdir)/config/make2sh.sed < $(top_builddir)/config/Makefile.inc | grep -v '#M#' | uniq >> $@
+ 	LC_ALL=C sed -f $(top_srcdir)/config/make2sh.sed < @platform_make_fragment@ | grep -v '#M#' | uniq >> $@

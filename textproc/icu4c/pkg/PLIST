@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/04/05 21:40:24 landry Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/06/14 10:12:48 ajacoutot Exp $
 @bin bin/derb
 @bin bin/genbrk
 @bin bin/gencfu
@@ -25,11 +25,15 @@ include/layout/loengine.h
 include/layout/playout.h
 include/layout/plruns.h
 include/unicode/
+include/unicode/alphaindex.h
+include/unicode/appendable.h
 include/unicode/basictz.h
 include/unicode/bms.h
 include/unicode/bmsearch.h
 include/unicode/brkiter.h
 include/unicode/bytestream.h
+include/unicode/bytestrie.h
+include/unicode/bytestriebuilder.h
 include/unicode/calendar.h
 include/unicode/caniter.h
 include/unicode/chariter.h
@@ -59,12 +63,14 @@ include/unicode/fpositer.h
 include/unicode/gregocal.h
 include/unicode/icudataver.h
 include/unicode/icuplug.h
+include/unicode/idna.h
 include/unicode/localpointer.h
 include/unicode/locdspnm.h
 include/unicode/locid.h
 include/unicode/measfmt.h
 include/unicode/measunit.h
 include/unicode/measure.h
+include/unicode/messagepattern.h
 include/unicode/msgfmt.h
 include/unicode/normalizer2.h
 include/unicode/normlzr.h
@@ -94,6 +100,7 @@ include/unicode/sortkey.h
 include/unicode/std_string.h
 include/unicode/strenum.h
 include/unicode/stringpiece.h
+include/unicode/stringtriebuilder.h
 include/unicode/stsearch.h
 include/unicode/symtable.h
 include/unicode/tblcoll.h
@@ -110,6 +117,8 @@ include/unicode/ucal.h
 include/unicode/ucasemap.h
 include/unicode/ucat.h
 include/unicode/uchar.h
+include/unicode/ucharstrie.h
+include/unicode/ucharstriebuilder.h
 include/unicode/uchriter.h
 include/unicode/uclean.h
 include/unicode/ucnv.h
@@ -123,6 +132,7 @@ include/unicode/ucsdet.h
 include/unicode/ucurr.h
 include/unicode/udat.h
 include/unicode/udata.h
+include/unicode/udateintervalformat.h
 include/unicode/udatpg.h
 include/unicode/udeprctd.h
 include/unicode/udraft.h
@@ -147,6 +157,7 @@ include/unicode/unorm2.h
 include/unicode/unum.h
 include/unicode/uobject.h
 include/unicode/uobslete.h
+include/unicode/upluralrules.h
 include/unicode/uregex.h
 include/unicode/urename.h
 include/unicode/urep.h
@@ -161,6 +172,7 @@ include/unicode/usprep.h
 include/unicode/ustdio.h
 include/unicode/ustream.h
 include/unicode/ustring.h
+include/unicode/ustringtrie.h
 include/unicode/usystem.h
 include/unicode/utext.h
 include/unicode/utf.h
@@ -190,6 +202,12 @@ lib/libiculx.a
 lib/libicutest.a
 lib/libicutu.a
 lib/libicuuc.a
+lib/pkgconfig/
+lib/pkgconfig/icu-i18n.pc
+lib/pkgconfig/icu-io.pc
+lib/pkgconfig/icu-le.pc
+lib/pkgconfig/icu-lx.pc
+lib/pkgconfig/icu-uc.pc
 @man man/man1/derb.1
 @man man/man1/genbrk.1
 @man man/man1/gencnval.1
@@ -201,13 +219,11 @@ lib/libicuuc.a
 @man man/man8/genccode.8
 @man man/man8/gencmn.8
 @man man/man8/gensprep.8
-@man man/man8/genuca.8
 @man man/man8/icupkg.8
 @bin sbin/genccode
 @bin sbin/gencmn
 @bin sbin/gennorm2
 @bin sbin/gensprep
-@bin sbin/genuca
 @bin sbin/icupkg
 share/icu/
 share/icu/${VERSION}/

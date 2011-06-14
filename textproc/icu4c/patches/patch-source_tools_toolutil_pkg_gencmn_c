@@ -1,0 +1,15 @@
+$OpenBSD: patch-source_tools_toolutil_pkg_gencmn_c,v 1.1 2011/06/14 10:12:48 ajacoutot Exp $
+
+gencmn: out of memory
+
+--- source/tools/toolutil/pkg_gencmn.c.orig	Fri Jun 10 08:37:20 2011
++++ source/tools/toolutil/pkg_gencmn.c	Fri Jun 10 08:37:31 2011
+@@ -18,7 +18,7 @@
+ #include "putilimp.h"
+ #include "pkg_gencmn.h"
+ 
+-#define STRING_STORE_SIZE 100000
++#define STRING_STORE_SIZE 131072
+ 
+ #define COMMON_DATA_NAME U_ICUDATA_NAME
+ #define DATA_TYPE "dat"
