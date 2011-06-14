@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2011/04/15 11:54:05 robert Exp $
+# $OpenBSD: Makefile,v 1.14 2011/06/14 12:51:50 robert Exp $
 
 COMMENT=		industrial-grade ticketing system
 
-DISTNAME=		rt-3.8.10
+DISTNAME=		rt-4.0.0
 CATEGORIES=		www
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
@@ -12,50 +12,66 @@ HOMEPAGE=		http://www.bestpractical.com/rt/
 MASTER_SITES=		http://www.fsck.com/pub/rt/release/ \
 			ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
 
-RUN_DEPENDS=		converters/p5-Calendar-Simple \
+RUN_DEPENDS=		converters/p5-Convert-Color \
+			converters/p5-JSON \
+			databases/p5-DBD-mysql \
+			databases/p5-DBI \
 			databases/p5-DBIx-SearchBuilder \
+			devel/p5-Class-ReturnValue \
 			devel/p5-Data-ICal \
-			devel/p5-Date-ICal \
+			devel/p5-DateTime \
+			devel/p5-Devel-GlobalDestruction \
+			devel/p5-Devel-StackTrace \
 			devel/p5-File-ShareDir \
 			devel/p5-IPC-Run \
 			devel/p5-IPC-Run-SafeHandles \
+			devel/p5-IPC-Run3 \
 			devel/p5-Locale-Maketext-Fuzzy \
 			devel/p5-Locale-Maketext-Lexicon \
 			devel/p5-Log-Dispatch \
-			devel/p5-MLDBM \
-			devel/p5-Module-Refresh \
 			devel/p5-Module-Versions-Report \
-			devel/p5-Net-Server \
 			devel/p5-PerlIO-eol \
+			devel/p5-Regexp-IPv6 \
 			devel/p5-Term-ReadKey \
-			devel/p5-Test-Inline \
-			devel/p5-Test-WWW-Mechanize \
-			devel/p5-Tree-Simple \
 			devel/p5-Time-modules \
-			devel/p5-Time-TimeDate \
+			devel/p5-Tree-Simple \
 			devel/p5-Universal-require \
+			graphics/gd \
 			graphics/p5-GD-Graph \
+			mail/p5-Email-Address \
 			mail/p5-MIME-Types \
 			mail/p5-MIME-tools \
-			mail/p5-Email-Address \
+			math/graphviz,-main \
 			math/p5-GraphViz \
+			net/p5-Net-CIDR \
+			net/p5-Regexp-Common-net-CIDR \
+			security/gnupg \
 			security/p5-GnuPG-Interface \
+			security/p5-Text-Password-Pronounceable \
+			textproc/p5-List-UtilsBy \
 			textproc/p5-Regexp-Common \
+			textproc/p5-Text-Quoted \
 			textproc/p5-Text-Quoted \
 			textproc/p5-Text-Template \
 			textproc/p5-Text-WikiFormat \
 			textproc/p5-Text-Wrapper \
 			textproc/p5-XML-RSS \
-			textproc/p5-XML-Simple \
 			www/fcgi \
-			www/p5-Apache-DBI \
 			www/p5-Apache-Session \
-			www/p5-Apache-Test \
+			www/p5-CGI-Emulate-PSGI \
+			www/p5-CGI-PSGI \
 			www/p5-CSS-Squish \
 			www/p5-HTML-Format \
+			www/p5-HTML-Mason-PSGIHandler \
+			www/p5-HTML-Quoted \
 			www/p5-HTML-RewriteAttributes \
 			www/p5-HTML-Scrubber \
-			www/p5-HTTP-Server-Simple-Mason 
+			www/p5-HTML-Tree \
+			www/p5-HTTP-Server-Simple-Mason \
+			www/p5-JavaScript-Minifier \
+			www/p5-Starlet \
+			www/p5-Starman \
+			www/p5-libwww
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes 
@@ -107,11 +123,6 @@ pre-configure:
 	@perl -pi -e 's#%%SYSCONFDIR%%#${SYSCONFDIR}#' ${WRKSRC}/config.layout
 
 post-install:
-	@for e in fcgi scgi svc; do \
-		mv ${PREFIX}/bin/mason_handler.$$e \
-	       	   ${PREFIX}/bin/rt-mason_handler.$$e;\
-	done
-	@mv ${PREFIX}/bin/standalone_httpd ${PREFIX}/bin/rt-standalone_httpd
-	@mv ${PREFIX}/bin/webmux.pl ${PREFIX}/bin/rt-webmux.pl
+	@mv ${PREFIX}/sbin/standalone_httpd ${PREFIX}/sbin/rt-standalone_httpd
 	
 .include <bsd.port.mk>
