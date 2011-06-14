@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2011/03/07 19:22:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2011/06/14 11:24:43 landry Exp $
 
 COMMENT=	Xfce4 extension library
 
-XFCE_VERSION=	0.6.0
+XFCE_VERSION=	0.6.2
 XFCE_PROJECT=	exo
 
 REVISION=	1
@@ -37,5 +37,11 @@ WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 \
 		png pthread z pthread-stubs xcb \
 		xcb-render xfce4util GL Xxf86vm drm xcb-shm
+
+# XXX workaround for pkg_add bug when a symlink to a dir becomes a real dir
+post-install:
+	rm -Rf ${PREFIX}/share/doc/exo/html/{el,sv}/images/
+	ln -s ${TRUEPREFIX}/share/doc/exo/html/C/images ${PREFIX}/share/doc/exo/html/el/images
+	ln -s ${TRUEPREFIX}/share/doc/exo/html/C/images ${PREFIX}/share/doc/exo/html/sv/images
 
 .include <bsd.port.mk>
