@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/14 11:29:28 robert Exp $
+${P5SITE}/Regexp/
+${P5SITE}/Regexp/Common/
+${P5SITE}/Regexp/Common/net/
+${P5SITE}/Regexp/Common/net/CIDR.pm
+@man man/man3p/Regexp::Common::net::CIDR.3p
