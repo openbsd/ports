@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.329 2011/06/13 12:51:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.330 2011/06/14 11:14:52 robert Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -126,6 +126,7 @@
      SUBDIR += p5-Lingua-Stem-Snowball-No
      SUBDIR += p5-Lingua-Stem-Snowball-Se
      SUBDIR += p5-Lingua-Treebank
+     SUBDIR += p5-List-UtilsBy
      SUBDIR += p5-MojoX-Renderer-TT
      SUBDIR += p5-Number-Format
      SUBDIR += p5-Object-MultiType
