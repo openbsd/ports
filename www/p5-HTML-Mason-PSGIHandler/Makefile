@@ -1,0 +1,16 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2011/06/14 12:08:28 robert Exp $
+
+COMMENT=	PSGI handler for HTML::Mason
+
+MODULES=	cpan
+DISTNAME=	HTML-Mason-PSGIHandler-0.52
+CATEGORIES=	www
+USE_GROFF=	Yes
+
+# Perl
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+.include <bsd.port.mk>

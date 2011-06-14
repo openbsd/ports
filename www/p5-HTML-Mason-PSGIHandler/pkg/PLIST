@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/14 12:08:28 robert Exp $
+${P5SITE}/HTML/
+${P5SITE}/HTML/Mason/
+${P5SITE}/HTML/Mason/PSGIHandler/
+${P5SITE}/HTML/Mason/PSGIHandler.pm
+${P5SITE}/HTML/Mason/PSGIHandler/Streamy.pm
+@man man/man3p/HTML::Mason::PSGIHandler.3p
