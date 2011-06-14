@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/14 11:16:10 robert Exp $
+${P5SITE}/Convert/
+${P5SITE}/Convert/Color/
+${P5SITE}/Convert/Color.pm
+${P5SITE}/Convert/Color/CMY.pm
+${P5SITE}/Convert/Color/CMYK.pm
+${P5SITE}/Convert/Color/HSL.pm
+${P5SITE}/Convert/Color/HSV.pm
+${P5SITE}/Convert/Color/HueBased.pm
+${P5SITE}/Convert/Color/RGB.pm
+${P5SITE}/Convert/Color/RGB16.pm
+${P5SITE}/Convert/Color/RGB8.pm
+${P5SITE}/Convert/Color/VGA.pm
+${P5SITE}/Convert/Color/X11.pm
+@man man/man3p/Convert::Color.3p
+@man man/man3p/Convert::Color::CMY.3p
+@man man/man3p/Convert::Color::CMYK.3p
+@man man/man3p/Convert::Color::HSL.3p
+@man man/man3p/Convert::Color::HSV.3p
+@man man/man3p/Convert::Color::RGB.3p
+@man man/man3p/Convert::Color::RGB16.3p
+@man man/man3p/Convert::Color::RGB8.3p
+@man man/man3p/Convert::Color::VGA.3p
+@man man/man3p/Convert::Color::X11.3p
