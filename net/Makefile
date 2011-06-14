@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.698 2011/06/13 20:16:27 landry Exp $
+# $OpenBSD: Makefile,v 1.699 2011/06/14 11:30:19 robert Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -348,6 +348,7 @@
      SUBDIR += p5-POE-Filter-IRCD
      SUBDIR += p5-PlRPC
      SUBDIR += p5-RPC-XML
+     SUBDIR += p5-Regexp-Common-net-CIDR
      SUBDIR += p5-Server-Starter
      SUBDIR += p5-SNMP-BridgeQuery
      SUBDIR += p5-SNMP-Info
