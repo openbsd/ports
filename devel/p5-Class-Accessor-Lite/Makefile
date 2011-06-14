@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/14 12:13:51 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/14 12:54:18 jasper Exp $
 
-COMMENT=	a minimalistic variant of Class::Accessor
+COMMENT=	minimalistic variant of Class::Accessor
 COMMENT=	automated accessor generation
 
 MODULES=	cpan
 DISTNAME=	Class-Accessor-Lite-0.05
+REVISION=	0
 CATEGORIES=	devel
 USE_GROFF=	Yes
 
