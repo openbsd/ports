@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/14 11:29:28 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/14 11:34:50 jasper Exp $
 
 COMMENT=	provide patterns for CIDR blocks
 
@@ -8,7 +8,7 @@ USE_GROFF =	Yes
 DISTNAME=	Regexp-Common-net-CIDR-0.02
 CATEGORIES=	net textproc
 
-# Perl
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
