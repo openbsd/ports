@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.514 2011/06/10 08:26:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.515 2011/06/14 11:35:51 robert Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -224,6 +224,7 @@
      SUBDIR += p5-HTML-PopupTreeSelect
      SUBDIR += p5-HTML-PrettyPrinter
      SUBDIR += p5-HTML-Prototype
+     SUBDIR += p5-HTML-Quoted
      SUBDIR += p5-HTML-ResolveLink
      SUBDIR += p5-HTML-RewriteAttributes
      SUBDIR += p5-HTML-SBC
