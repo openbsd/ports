@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: vmpsd.rc,v 1.1 2011/06/14 05:52:03 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/bin/vmpsd"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
