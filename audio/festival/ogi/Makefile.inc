@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.5 2011/04/25 15:01:28 jolan Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2011/06/14 01:19:10 sthen Exp $
 
-MASTER_SITES?=	${MASTER_SITE_BACKUP}	
+MASTER_SITES?=	http://spacehopper.org/mirrors/festival/
 DIST_SUBDIR?=	festival
 CATEGORIES?=	audio
 
