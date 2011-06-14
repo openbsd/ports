@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/14 11:16:10 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/14 11:18:06 jasper Exp $
 
 COMMENT=	color space conversions and named lookups
 
 DISTNAME=	Convert-Color-0.08
+REVISION=	0
 CATEGORIES=	converters
 MODULES=	cpan
 USE_GROFF =	Yes
@@ -15,5 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=	textproc/p5-List-UtilsBy
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+CONFIGURE_STYLE=modbuild
+MODCPAN_EXAMPLES=Yes
 
 .include <bsd.port.mk>
