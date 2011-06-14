@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2011/01/18 22:56:00 marco Exp $
+# $OpenBSD: Makefile,v 1.27 2011/06/14 16:26:45 sthen Exp $
 
 COMMENT=		small tiling window manager
 
 SHARED_LIBS=		swmhack 0.0
 
-DISTNAME=		scrotwm-0.9.28
+DISTNAME=		scrotwm-0.9.30
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		x11
 
@@ -23,12 +23,11 @@ NO_REGRESS=     Yes
 WANTLIB=        c X11 Xrandr util
 
 RUN_DEPENDS=	x11/dmenu>=3.9
-		
+
 MAKE_FLAGS=	BINDIR="${TRUEPREFIX}/bin" \
 		MANDIR="${TRUEPREFIX}/man/cat" \
 		SHLIB_MAJOR=${LIBswmhack_VERSION:C/\..*//} \
 		SHLIB_MINOR=${LIBswmhack_VERSION:C/.*\.//}
-USE_GROFF =	Yes
 
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/scrotwm.conf ${WRKSRC}/scrotwm.c

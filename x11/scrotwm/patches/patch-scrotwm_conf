@@ -1,6 +1,6 @@
---- scrotwm.conf.orig	Tue Jan 18 20:00:23 2011
-+++ scrotwm.conf	Tue Jun 14 17:01:53 2011
-@@ -10,7 +10,7 @@ bar_border[1]		= rgb:00/80/80
+--- scrotwm.conf.orig	Tue Jun 14 16:51:33 2011
++++ scrotwm.conf	Tue Jun 14 17:09:22 2011
+@@ -11,7 +11,7 @@ bar_border[1]		= rgb:00/80/80
  bar_color[1]		= black
  bar_font_color[1]	= rgb:a0/a0/a0
  bar_font		= -*-terminus-medium-*-*-*-*-*-*-*-*-*-*-*
@@ -9,7 +9,7 @@
  #bar_delay		= 1
  #bar_at_bottom		= 1
  stack_enabled		= 1
-@@ -24,10 +24,10 @@ window_name_enabled	= 0
+@@ -26,10 +26,10 @@ window_name_enabled	= 0
  
  # spawn app
  # program[term]		= xterm
