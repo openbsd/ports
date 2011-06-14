@@ -1,0 +1,11 @@
+$OpenBSD: patch-rmt_rmt_c,v 1.1 2011/06/14 22:00:13 naddy Exp $
+--- rmt/rmt.c.orig	Tue Jun 14 23:42:53 2011
++++ rmt/rmt.c	Tue Jun 14 23:43:46 2011
+@@ -102,6 +102,7 @@ rmt_write (const char *fmt, ...)
+   vfprintf (stdout, fmt, ap);
+   fflush (stdout);
+   VDEBUG (10, "S: ", fmt, ap);
++  va_end (ap);
+ }
+ 
+ static void
