@@ -1,6 +1,6 @@
-$OpenBSD: patch-libyelp_yelp-man-parser_c,v 1.1 2011/05/17 14:03:48 ajacoutot Exp $
+$OpenBSD: patch-libyelp_yelp-man-parser_c,v 1.2 2011/06/14 22:17:00 ajacoutot Exp $
 
-stdout already defined in stdio.h.
+https://bugzilla.gnome.org/show_bug.cgi?id=652605
 
 --- libyelp/yelp-man-parser.c.orig	Wed May 11 12:48:23 2011
 +++ libyelp/yelp-man-parser.c	Wed May 11 12:48:35 2011

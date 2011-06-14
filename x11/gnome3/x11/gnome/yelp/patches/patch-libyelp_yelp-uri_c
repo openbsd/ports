@@ -1,6 +1,6 @@
-$OpenBSD: patch-libyelp_yelp-uri_c,v 1.1 2011/05/17 14:03:48 ajacoutot Exp $
+$OpenBSD: patch-libyelp_yelp-uri_c,v 1.2 2011/06/14 22:17:00 ajacoutot Exp $
 
-stdout already defined in stdio.h.
+https://bugzilla.gnome.org/show_bug.cgi?id=652605
 
 --- libyelp/yelp-uri.c.orig	Wed May 11 12:47:43 2011
 +++ libyelp/yelp-uri.c	Wed May 11 12:48:16 2011
