@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/06/08 17:40:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2011/06/14 13:53:30 sebastia Exp $
 
 COMMENT=		GObject Introspection
 
@@ -24,7 +24,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext \
 			lang/python \
-			x11/gnome
+			x11/gnome \
+			gcc3
+MODGCC3_ARCHES =        sparc
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += m pcre pthread z
