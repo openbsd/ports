@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/03/09 09:31:46 robert Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/06/14 18:18:24 robert Exp $
 @bin bin/mc
 bin/mcdiff
 bin/mcedit
@@ -189,6 +189,7 @@ share/mc/skins/default.ini
 share/mc/skins/double-lines.ini
 share/mc/skins/featured.ini
 share/mc/skins/gotar.ini
+share/mc/skins/mc46.ini
 share/mc/skins/nicedark.ini
 share/mc/syntax/
 share/mc/syntax/PKGBUILD.syntax
