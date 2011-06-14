@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2011/06/14 21:31:04 sthen Exp $
 
 COMMENT=	character set conversion library
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://www.gnu.org/software/libiconv/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
-# LGPLv2, GPLv3
+# LGPLv2 and GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -22,6 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	c
 
 BUILD_DEPENDS=	devel/gperf
+
+MAKE_FLAGS=	INSTALL_DATA=cp
 
 USE_LIBTOOL=	Yes
 SEPARATE_BUILD=	simple
@@ -32,7 +34,6 @@ CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
 		--enable-extra-encodings \
 		--enable-static
 CONFIGURE_ENV=	am_cv_proto_iconv='extern size_t iconv (iconv_t cd, char * *inbuf, size_t *inbytesleft, char * *outbuf, size_t *outbytesleft);'
-MAKE_FLAGS=	INSTALL_DATA=cp
 
 pre-configure:
 	@cd ${WRKSRC}; \
