@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/05/04 12:52:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/14 22:29:15 ajacoutot Exp $
 
 COMMENT=	C++ class library for working with Internet mail
 
@@ -22,6 +22,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=vmime/}
 WANTLIB += gmp gnutls hogweed m nettle stdc++ tasn1 z
 
 MODULES=	devel/gettext
+
+# "#include <gcrypt.h>" in src/net/tls/TLSSession.cpp
+BUILD_DEPENDS=	security/libgcrypt
 
 LIB_DEPENDS=	security/gnutls
 
