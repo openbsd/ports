@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2011/05/11 12:03:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/14 00:35:36 sthen Exp $
 
 COMMENT=	monitors the status of mirrors
 
-DISTNAME=	mirmon-2.3
-REVISION=	2
+DISTNAME=	mirmon-2.4
 
 CATEGORIES=	net
 HOMEPAGE=	http://people.cs.uu.nl/henkp/mirmon/
