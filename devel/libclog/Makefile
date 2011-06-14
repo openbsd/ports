@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/14 18:32:10 dhill Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/14 21:23:45 dhill Exp $
 
 COMMENT=		configurable logging library
 
-DISTNAME=		clog-0.3.3
+DISTNAME=		clog-0.3.4
 PKGNAME=		lib${DISTNAME}
 CATEGORIES=		devel
 SHARED_LIBS=		clog 1.3
