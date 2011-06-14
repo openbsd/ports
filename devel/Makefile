@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.946 2011/06/14 11:25:41 robert Exp $
+# $OpenBSD: Makefile,v 1.947 2011/06/14 12:14:52 robert Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -395,6 +395,7 @@
      SUBDIR += p5-Catalyst-Plugin-C3
      SUBDIR += p5-Catalyst-Plugin-StackTrace
      SUBDIR += p5-Class-Accessor
+     SUBDIR += p5-Class-Accessor-Lite
      SUBDIR += p5-Class-Accessor-Chained
      SUBDIR += p5-Class-Accessor-Grouped
      SUBDIR += p5-Class-AutoClass
@@ -698,6 +699,7 @@
      SUBDIR += p5-Pango
      SUBDIR += p5-Parallel-ForkManager
      SUBDIR += p5-Parallel-Forker
+     SUBDIR += p5-Parallel-Prefork
      SUBDIR += p5-Params-CallbackRequest
      SUBDIR += p5-Params-Coerce
      SUBDIR += p5-Params-Util
