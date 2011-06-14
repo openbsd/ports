@@ -1,15 +1,17 @@
-$OpenBSD: patch-src_openfiles_cpp,v 1.1.1.1 2011/06/07 13:31:39 jasper Exp $
---- src/openfiles.cpp.orig	Tue Jun 23 02:03:02 2009
-+++ src/openfiles.cpp	Thu Apr  8 18:08:11 2010
-@@ -67,7 +67,11 @@ friendlier_hostname(const char *addr_str, int port)
- 		goto failsafe;
+$OpenBSD: patch-src_openfiles_cpp,v 1.2 2011/06/14 21:56:13 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=652602
+
+--- src/openfiles.cpp.orig	Fri Mar 25 01:39:45 2011
++++ src/openfiles.cpp	Tue Jun 14 23:44:01 2011
+@@ -15,6 +15,10 @@
+ #include "util.h"
+ #include "settings-keys.h"
  
- 	if (getnameinfo(res->ai_addr, res->ai_addrlen, hostname,
-+#ifdef NI_IDN
- 			sizeof hostname, service, sizeof service, NI_IDN))
-+#else
-+	    		sizeof hostname, service, sizeof service, 0))
++#ifndef NI_IDN
++#define NI_IDN 0
 +#endif
- 		goto failsafe;
- 
- 	if (res) freeaddrinfo(res);
++
+ enum
+ {
+ 	COL_FD,
