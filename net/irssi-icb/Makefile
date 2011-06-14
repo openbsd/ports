@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/19 22:31:34 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/06/14 10:22:16 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	ICB plugin for irssi
 
 DISTNAME=	irssi-icb-0.14
-REVISION=	6
+REVISION=	7
 MASTER_SITES=   http://distfiles.nl/
 
 CATEGORIES=     net
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
 		net/irssi:configure \
 		devel/glib2
-RUN_DEPENDS=  	net/irssi
+RUN_DEPENDS=	net/irssi
 
 # GPL
 PERMIT_PACKAGE_CDROM=   Yes

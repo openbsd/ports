@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_core_Makefile_am,v 1.1 2011/06/14 10:22:16 sthen Exp $
+--- src/core/Makefile.am.orig	Tue Jun 14 10:53:41 2011
++++ src/core/Makefile.am	Tue Jun 14 10:53:53 2011
+@@ -12,6 +12,7 @@ libicb_core_la_SOURCES = \
+ 	icb-channels.c \
+ 	icb-commands.c \
+ 	icb-core.c \
++	icb-nicklist.c \
+ 	icb-queries.c \
+ 	icb-servers-reconnect.c \
+ 	icb-protocol.c \
+@@ -22,6 +23,7 @@ noinst_HEADERS = \
+ 	icb.h \
+ 	icb-channels.h \
+ 	icb-commands.h \
++	icb-nicklist.h \
+ 	icb-protocol.h \
+ 	icb-queries.h \
+ 	icb-servers.h \
