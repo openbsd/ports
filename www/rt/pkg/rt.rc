@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# $OpenBSD: rt.rc,v 1.1 2011/06/14 12:51:50 robert Exp $
+# $OpenBSD: rt.rc,v 1.2 2011/06/14 13:19:33 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/rt-server"
 
 . /etc/rc.d/rc.subr
 
-pexp="/usr/bin/perl -w ${TRUEPREFIX}/sbin/rt-server"
+pexp="/usr/bin/perl -w ${daemon}"
 rc_bg=YES
 rc_reload=NO
 

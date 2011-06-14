@@ -1,0 +1,22 @@
+$OpenBSD: README,v 1.1 2011/06/14 13:19:33 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+In order to complete your rt installations you will first need to
+initialize the database by following these steps.
+
+Edit ${SYSCONFDIR}/rt3/RT_SiteConfig.pm and make the appropriate
+adjustments for your database environment and then run
+
+# rt-setup-database --dba <yourdbauser> --action init \
+	--prompt-for-dba-password
+
+Once the database has been initialized you will need to configure
+httpd. Instructions for configuring httpd can be found in
+${PREFIX}/share/doc/rt3/README
+
+If you are upgrading your installation, don't forget to run:
+# rt-setup-database --dba <yourdbauser> --prompt-for-dba-password \
+	--action upgrade

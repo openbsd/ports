@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/06/14 12:51:50 robert Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/06/14 13:19:33 ajacoutot Exp $
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
@@ -232,6 +232,7 @@ sbin/rt-shredder
 sbin/rt-standalone_httpd
 sbin/rt-test-dependencies
 sbin/rt-validator
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/rt3/
 share/doc/rt3/README
 share/examples/rt3/
@@ -1592,6 +1593,7 @@ share/rt3/local/
 share/rt3/local/html/
 share/rt3/local/plugins/
 share/rt3/local/po/
+@rcscript ${RCDIR}/rt
 @mode 770
 @owner www
 @group www
@@ -1601,4 +1603,3 @@ share/rt3/local/po/
 @sample /var/www/rt3/mason_data/etc/
 @sample /var/www/rt3/mason_data/obj/
 @sample /var/www/rt3/session_data/
-@rcscript ${RCDIR}/rt
