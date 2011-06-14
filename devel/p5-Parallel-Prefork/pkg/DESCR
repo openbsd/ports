@@ -1,0 +1,2 @@
+Parallel::Prefork is much like Parallel::ForkManager,
+but supports graceful shutdown and run-time reconfiguration.
