@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.945 2011/06/13 14:04:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.946 2011/06/14 11:25:41 robert Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -723,6 +723,7 @@
      SUBDIR += p5-Readonly
      SUBDIR += p5-Readonly-XS
      SUBDIR += p5-Regexp-Copy
+     SUBDIR += p5-Regexp-IPv6
      SUBDIR += p5-Regexp-Shellish
      SUBDIR += p5-Return-Value
      SUBDIR += p5-SDL
