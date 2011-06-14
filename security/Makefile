@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.261 2011/04/15 16:08:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.262 2011/06/14 11:32:25 robert Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -167,6 +167,7 @@
      SUBDIR += p5-PGP-Sign
      SUBDIR += p5-PGP-Sign,pgp
      SUBDIR += p5-POE-Component-SSLify
+     SUBDIR += p5-Text-Password-Pronounceable
      SUBDIR += p5-Tie-EncryptedHash
      SUBDIR += parse
      SUBDIR += passwdqc
