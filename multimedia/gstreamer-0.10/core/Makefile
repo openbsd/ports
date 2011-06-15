@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/05/24 09:10:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/06/15 12:41:33 ajacoutot Exp $
 
 COMMENT =		multimedia framework
 
@@ -28,7 +28,7 @@ LIB_DEPENDS =		textproc/libxml \
 			devel/glib2
 
 # OpenBSD has support for monotonic clock (CLOCK_MONOTONIC), however we
-# we currently don't have most of the _POSIX_* defines in unistd.h (e.g.
+# currently don't have most of the _POSIX_* defines in unistd.h (e.g.
 # _POSIX_MONOTONIC_CLOCK 200112L) and the associated sysconf(3)
 # _SC_MONOTONIC_CLOCK variable.
 CPPFLAGS +=		-D_POSIX_MONOTONIC_CLOCK=200112L
