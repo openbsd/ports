@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/15 19:36:38 rpointel Exp $
+bin/virtualenv
+lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/virtualenv.py
+lib/python${MODPY_VERSION}/site-packages/virtualenv.pyc
+lib/python${MODPY_VERSION}/site-packages/virtualenv_support/
+lib/python${MODPY_VERSION}/site-packages/virtualenv_support/__init__.py
+lib/python${MODPY_VERSION}/site-packages/virtualenv_support/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/virtualenv_support/distribute-0.6.16.tar.gz
+lib/python${MODPY_VERSION}/site-packages/virtualenv_support/pip-1.0.1.tar.gz
+lib/python${MODPY_VERSION}/site-packages/virtualenv_support/setuptools-0.6c11-py${MODPY_VERSION}.egg
