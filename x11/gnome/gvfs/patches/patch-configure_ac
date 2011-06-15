@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_ac,v 1.1 2011/06/15 07:21:13 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=652623
+
+--- configure.ac.orig	Wed Jun 15 08:59:42 2011
++++ configure.ac	Wed Jun 15 08:59:58 2011
+@@ -99,7 +99,7 @@ dnl ****************************
+ dnl *** Checks for pty stuff ***
+ dnl ****************************
+ 
+-AC_CHECK_HEADERS(sys/un.h stropts.h termios.h utmp.h sys/uio.h sys/param.h)
++AC_CHECK_HEADERS(sys/un.h stropts.h termios.h util.h utmp.h sys/uio.h sys/param.h)
+ 
+ # Check for PTY handling functions.
+ AC_CHECK_FUNCS(getpt posix_openpt grantpt unlockpt ptsname ptsname_r)
