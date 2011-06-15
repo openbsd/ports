@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.9 2011/06/04 12:56:54 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.10 2011/06/15 10:09:31 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -242,10 +242,12 @@ sub merge_depends
 				}
 			}
 		}
-		if (defined $info->{RUN_DEPENDS}) {
-			for my $d (values %{$info->{RUN_DEPENDS}}) {
-				$info->{RDEPENDS}{$d} = $d;
-				bless $info->{RDEPENDS}, "AddDepends";
+		for my $k (qw(LIB_DEPENDS RUN_DEPENDS)) {
+			if (defined $info->{$k}) {
+				for my $d (values %{$info->{$k}}) {
+					$info->{RDEPENDS}{$d} = $d;
+					bless $info->{RDEPENDS}, "AddDepends";
+				}
 			}
 		}
 		if (defined $info->{DIST}) {
