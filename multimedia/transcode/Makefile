@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.42 2011/06/15 18:11:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2011/06/15 23:16:15 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.5
-REVISION=	8
+REVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=tcforge/}
 EXTRACT_SUFX=	.tar.bz2
@@ -24,6 +24,10 @@ WANTLIB += gsm jpeg m mp3lame mpeg2 mpeg2convert ogg orc-0.4 postproc
 WANTLIB += pthread pthread-stubs schroedinger-1.0 sndio speex
 WANTLIB += theora theoradec theoraenc usbhid vorbis vorbisenc
 WANTLIB += vorbisfile vpx x264 xcb xml2 z
+
+# xvidcore is dlopen()d so check-lib-depends shows it as Extra, however we
+# want to track changes to the ABI to ensure transcode is updated if needed.
+WANTLIB += xvidcore
 
 FLAVORS=	lzo mjpegtools quicktime altivec
 FLAVOR?=
@@ -49,17 +53,16 @@ LIB_DEPENDS=	audio/faac \
 		multimedia/libdv \
 		multimedia/libtheora \
 		multimedia/x264 \
+		multimedia/xvidcore \
 		textproc/libxml
 
 RUN_DEPENDS=	audio/sox \
 		audio/vorbis-tools \
 		audio/toolame \
 		graphics/ffmpeg \
-		multimedia/xvidcore \
 		x11/mplayer
 
-BUILD_DEPENDS+=	devel/libtool \
-		multimedia/xvidcore
+BUILD_DEPENDS+=	devel/libtool
 
 SEPARATE_BUILD=	concurrent
 
