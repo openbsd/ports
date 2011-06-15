@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2011/06/10 21:47:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.71 2011/06/15 21:13:33 sthen Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc64
@@ -7,7 +7,7 @@ VMEM_WARNING =		yes
 COMMENT =		multi system emulator
 
 DISTNAME =		qemu-0.14.1
-REVISION =		2
+REVISION =		3
 CATEGORIES =		emulators
 MASTER_SITES =		${MASTER_SITE_SAVANNAH:=qemu/}
 
@@ -40,11 +40,17 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--extra-cflags="-I${LOCALBASE}/include \
 					-I${LOCALBASE}/include/libpng" \
 			--extra-ldflags=-L${LOCALBASE}/lib \
-			--disable-bsd-user \
 			--disable-curl \
 			--disable-uuid \
 			--disable-vnc-sasl \
 			--disable-vnc-tls
+
+.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mmips64*}
+CONFIGURE_ARGS +=	--disable-bsd-user
+PKG_ARGS+=	-Dbsduser=0
+.else
+PKG_ARGS+=	-Dbsduser=1
+.endif
 
 FLAVORS =		debug no_x11
 FLAVOR ?=
@@ -52,7 +58,7 @@ FLAVOR ?=
 .if ${FLAVOR:L:Mno_x11}
 CONFIGURE_ARGS +=	--disable-sdl
 .else
-LIB_DEPENDS +=    	devel/sdl
+LIB_DEPENDS +=		devel/sdl
 
 WANTLIB +=		SDL X11
 .endif
