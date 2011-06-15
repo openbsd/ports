@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/15 19:45:56 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/06/15 19:13:48 sthen Exp $
 
 COMMENT=	Apache Portable Runtime
 
 V=		1.2.11
 DISTNAME=	apr-$V
 FULLPKGNAME=	apr${MT}-$V
-REVISION =	4
+REVISION=	5
 SHARED_LIBS +=	apr-1${MT}             3.0     # .2.11
 
 CATEGORIES=	devel
@@ -27,7 +27,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--includedir=${LOCALBASE}/include/apr-1${MT}/ \
 		--with-installbuilddir=${LOCALBASE}/lib/apr-1${MT}/ \
-		--enable-other-child
+		--enable-other-child \
+		ac_cv_prog_AWK=awk
 
 FLAVORS=	mt
 FLAVOR?=
