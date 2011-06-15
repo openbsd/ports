@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.6 2011/06/02 13:41:42 ajacoutot Exp $
+$OpenBSD: README,v 1.7 2011/06/15 13:33:01 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,18 +9,18 @@ Introduction
 The gnome-session package only takes care of installing minimal GNOME
 libraries.  For a satisfying GNOME user experience, it is advised to
 install at least the following packages:
-    sudo pkg_add \
-	eog \
-	file-roller \
-	gdm \
-	gedit \
-	gnome-audio \
-	gnome-control-center \
-	gnome-keyring \
-	gnome-power-manager \
-	gnome-system-monitor \
-	gnome-terminal \
-	gnome-utils
+    $ sudo pkg_add \
+        eog \
+        file-roller \
+        gdm \
+        gedit \
+        gnome-audio \
+        gnome-control-center \
+        gnome-keyring \
+        gnome-power-manager \
+        gnome-system-monitor \
+        gnome-terminal \
+        gnome-util
 
 Login into GNOME
 ================
@@ -48,76 +48,94 @@ libgail-gnome and gnome-mag.
 To enable it, run the following command:
     gconftool-2 --set --type bool /desktop/gnome/interface/at-spi-corba true
 
+Dependency on a11y packages is never enforced so to activate an
+assistive technology you need to explicitely install the corresponding
+package (see "Accessibility" under the "Installing more package" section
+below).
+
 Installing more packages
 ========================
 If your needs aren't satisfied yet, there are many other packages
-you can install. The most important ones will be mentioned by category:
-
+you can install. The most important ones will be mentioned by category.
 (if you have access to an OpenBSD ports tree, you can find most GNOME
 related ports under the x11/gnome category)
 
- - Accessibility
-   * dasher - predictive text input system
-   * gnome-mag - screen magnifier
-   * gnome-speech - speech module
-   * gok - on-screen keyboard
-   * libgail-gnome - ATK interface to other applications (see above)
-   * mousetweaks - mouse accessibility enhancements
-   * orca - assistive technology for visually impaired
+Accessibility
+-------------
 
- - Communication
-   * ekiga - SIP and H.323 conferencing application
-   * empathy - Telepathy based messenger for e.g. MSN, Jabber, etc
-   * epiphany (+epiphany-extensions) - lightweight and simple web browser
-   * evolution (+evolution-plugins) - integrated email and PIM software
+    * dasher - predictive text input system
+    * gnome-mag - screen magnifier
+    * gnome-speech - speech module
+    * gok - on-screen keyboard
+    * libgail-gnome - ATK interface to other applications (see above)
+    * mousetweaks - mouse accessibility enhancements
+    * orca - assistive technology for visually impaired
 
- - Development
-   * anjuta (+anjuta-extras) - full blown IDE
-   * devhelp - API documentation browser
-   * gedit-plugins - plugins for Gedit
-   * ghex - HEX editor
-   * glade - user interface builder
-   * gnome-devel-docs - developer documentation
-   * gnome-development-monitor - GUI to follow GNOME development activity
+Communication
+-------------
 
- - Graphics & Multimedia
-   * byzanz - makes a desktop recording optimized for webpages
-   * eog-plugins - plugins for EOG
-   * evince (+nautilus-evince) - viewer for multiple document formats
-   * f-spot - photo management application
-   * gnome-games (+gnome-games-extra-data) - collection of games
-   * gnome-video-arcade - MAME front-end
-   * nautilus-totem - display media information in the properties window
-   * rhythmbox - music management application
-   * simple-scan - simple scanning utility
-   * totem - multimedia player
+    * ekiga - SIP and H.323 conferencing application
+    * empathy - Telepathy based messenger for e.g. MSN, Jabber, etc
+    * epiphany (+epiphany-extensions) - lightweight and simple web browser
+    * evolution (+evolution-plugins) - integrated email and PIM software
 
- - Office & Productivity
-   * abiword - WYSIWYG word processor
-   * gcalctool - desktop calculator
-   * gnumeric - spreadsheet application
-   * hamster-applet - time tracker applet
-   * meta-tracker - powerful desktop search tool and indexer
-   * planner - project management
-   * gnote - desktop note-taking
+Development
+-----------
 
- - Utilities
-   * alacarte - simple menu editing tool
-   * conduit - all-in-one synchronization application
-   * gconf-editor - editor for GConf settings
-   * gnome-nettool - interface for various networking tools
-   * gnome-system-tools - sytem configuration GUI for desktops
-   * gnome-tweak-tool - tool to tweak hidden GTK/GNOME settings
-   * gnomebaker - CD/DVD burning application
-   * nautilus-sendto - integrate applications into Nautilus
-   * pessulus - lockdown editor for desktop
-   * seahorse (+seahorse-plugins) - encryption, keys and passwords manager
-   * system-config-printer - printer (CUPS) administration tool
-   * vinagre - VNC Client (remote Desktop client)
-   * vino - VNC server (allows remote access to your Desktop)
+    * anjuta (+anjuta-extras) - full blown IDE
+    * devhelp - API documentation browser
+    * gedit-plugins - plugins for Gedit
+    * ghex - HEX editor
+    * glade - user interface builder
+    * gnome-devel-docs - developer documentation
+    * gnome-development-monitor - GUI to follow GNOME development activity
 
- - Themes
-   * gnome-icon-theme-extras - extra icons
-   * gnome-icon-theme-symbolic - theme extension for special UI contexts
-   * gnome-themes-extras - extra themes
-   * tango-icon-theme (+tango-icon-theme-extras) - Tango icon theme
+Graphics & Multimedia
+---------------------
+
+    * byzanz - makes a desktop recording optimized for webpages
+    * eog-plugins - plugins for EOG
+    * evince (+nautilus-evince) - viewer for multiple document formats
+    * f-spot - photo management application
+    * gnome-games (+gnome-games-extra-data) - collection of games
+    * gnome-video-arcade - MAME front-end
+    * nautilus-totem - display media information in the properties window
+    * rhythmbox - music management application
+    * simple-scan - simple scanning utility
+    * totem - multimedia player
+
+Office & Productivity
+---------------------
+
+    * abiword - WYSIWYG word processor
+    * gcalctool - desktop calculator
+    * gnumeric - spreadsheet application
+    * hamster-applet - time tracker applet
+    * meta-tracker - powerful desktop search tool and indexer
+    * planner - project management
+    * gnote - desktop note-taking
+
+Utilities
+---------
+
+    * alacarte - simple menu editing tool
+    * conduit - all-in-one synchronization application
+    * gconf-editor - editor for GConf settings
+    * gnome-nettool - interface for various networking tools
+    * gnome-system-tools - sytem configuration GUI for desktops
+    * gnome-tweak-tool - tool to tweak hidden GTK/GNOME settings
+    * gnomebaker - CD/DVD burning application
+    * nautilus-sendto - integrate applications into Nautilus
+    * pessulus - lockdown editor for desktop
+    * seahorse (+seahorse-plugins) - encryption, keys and passwords manager
+    * system-config-printer - printer (CUPS) administration tool
+    * vinagre - VNC Client (remote Desktop client)
+    * vino - VNC server (allows remote access to your Desktop)
+
+Themes
+------
+
+    * gnome-icon-theme-extras - extra icons
+    * gnome-icon-theme-symbolic - theme extension for special UI contexts
+    * gnome-themes-extras - extra themes
+    * tango-icon-theme (+tango-icon-theme-extras) - Tango icon theme
