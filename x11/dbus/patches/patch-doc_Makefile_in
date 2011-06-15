@@ -1,10 +1,10 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.13 2011/06/03 16:51:23 ajacoutot Exp $
+$OpenBSD: patch-doc_Makefile_in,v 1.14 2011/06/15 16:26:07 ajacoutot Exp $
 
 Don't install apidir since we disable doxygen docs.
 
---- doc/Makefile.in.orig	Wed Jun  1 16:09:29 2011
-+++ doc/Makefile.in	Fri Jun  3 18:06:05 2011
-@@ -549,7 +549,7 @@ info: info-am
+--- doc/Makefile.in.orig	Fri Jun 10 22:57:25 2011
++++ doc/Makefile.in	Wed Jun 15 18:17:02 2011
+@@ -552,7 +552,7 @@ info: info-am
  
  info-am:
  

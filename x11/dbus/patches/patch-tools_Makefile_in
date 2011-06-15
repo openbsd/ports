@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_Makefile_in,v 1.12 2011/06/03 16:51:23 ajacoutot Exp $
---- tools/Makefile.in.orig	Wed Jun  1 16:09:29 2011
-+++ tools/Makefile.in	Fri Jun  3 18:13:48 2011
-@@ -357,7 +357,7 @@ top_build_prefix = @top_build_prefix@
+$OpenBSD: patch-tools_Makefile_in,v 1.13 2011/06/15 16:26:07 ajacoutot Exp $
+--- tools/Makefile.in.orig	Fri Jun 10 22:57:25 2011
++++ tools/Makefile.in	Wed Jun 15 18:17:02 2011
+@@ -360,7 +360,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  configdir = $(sysconfdir)/dbus-1
@@ -10,7 +10,7 @@ $OpenBSD: patch-tools_Makefile_in,v 1.12 2011/06/03 16:51:23 ajacoutot Exp $
  extra_bin_programs = $(am__append_1)
  dbus_send_SOURCES = \
  	dbus-print-message.c			\
-@@ -398,7 +398,7 @@ CLEANFILES = \
+@@ -401,7 +401,7 @@ CLEANFILES = \
  
  
  #create the /var/lib/data directory for dbus-uuidgen
