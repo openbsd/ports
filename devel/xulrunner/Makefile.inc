@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.20 2011/03/26 13:25:50 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.21 2011/06/15 16:16:10 sthen Exp $
 
 COMMENT-main =		standalone XUL/XPCOM runtime environment
 COMMENT-devel =		devel files for Gecko
@@ -21,6 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 # lots of logic in mozilla.port.mk
 MODULES =		www/mozilla devel/gettext lang/python
+MODPY_RUNDEP =		No
 
 LIB_DEPENDS-main =	${LIB_DEPENDS}
 WANTLIB-main =		${WANTLIB}

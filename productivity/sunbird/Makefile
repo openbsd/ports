@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/06/08 17:37:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2011/06/15 16:16:10 sthen Exp $
 
 COMMENT =		Mozilla calendar
 
@@ -10,7 +10,7 @@ MOZILLA_CODENAME =	calendar
 
 DISTNAME =		thunderbird-${TB_VERSION}.source
 EPOCH =			0
-REVISION =		3
+REVISION =		4
 
 MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${TB_VERSION}/source/
 
@@ -34,6 +34,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES =	www/mozilla devel/gettext lang/python
+MODPY_RUN_DEP =	No
 
 # Regression tests are too hard to adapt to run here
 NO_REGRESS =	Yes

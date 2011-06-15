@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/06/08 17:40:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2011/06/15 16:16:10 sthen Exp $
 
 MOZILLA_VERSION =	1.9.2.17
 FFX_VERSION =		3.6.17
@@ -7,8 +7,8 @@ MOZILLA_PROJECT =	xulrunner1.9
 DISTNAME =		firefox-${FFX_VERSION}.source
 MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FFX_VERSION}/source/
 
-REVISION-main =		0
-REVISION-devel =	0
+REVISION-main =		1
+REVISION-devel =	1
 
 SO_VERSION =		3.2
 # NOTE: Must bump minor version if any shlib's are removed from the
