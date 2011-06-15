@@ -1,5 +1,5 @@
---- Makefile.orig	Thu Apr  7 15:55:08 2011
-+++ Makefile	Thu Apr 21 03:20:20 2011
+--- Makefile.orig	Thu Jun  9 16:24:13 2011
++++ Makefile	Wed Jun 15 01:04:35 2011
 @@ -20,21 +20,10 @@ MANPAGES=$(patsubst %.xml, %.gz, $(wildcard $(DOCS_DIR
  WEB_MANPAGES=$(patsubst %.xml, %.man.xml, $(wildcard $(DOCS_DIR)/*.[0-9].xml) $(DOCS_DIR)/rabbitmq-service.xml)
  USAGES_XML=$(DOCS_DIR)/rabbitmqctl.1.xml
@@ -25,17 +25,18 @@
  
  BASIC_PLT=basic.plt
  RABBIT_PLT=rabbit.plt
-@@ -61,6 +50,9 @@ ERL_CALL=erl_call -sname $(RABBITMQ_NODENAME) -e
+@@ -61,6 +50,10 @@ ERL_CALL=erl_call -sname $(RABBITMQ_NODENAME) -e
  
  ERL_EBIN=erl -noinput -pa $(EBIN_DIR)
  
-+REGRESS_DIR=/tmp/rabbitmq-regress
-+REGRESS_EXEC=$(shell [ `id -u` = "0" ] && echo "HOME=$(REGRESS_DIR) su -m `id -u -n 1000` -c" || echo "HOME=$(REGRESS_DIR) sh -c")
++CHECK_NAME=rabbitmq-check
++CHECK_DIR=/tmp/$(CHECK_NAME)
++CHECK_CALL=HOME=$(CHECK_DIR) erl_call -sname $(CHECK_NAME) -e
 +
  define usage_xml_to_erl
    $(subst __,_,$(patsubst $(DOCS_DIR)/rabbitmq%.1.xml, $(SOURCE_DIR)/rabbit_%_usage.erl, $(subst -,_,$(1))))
  endef
-@@ -71,7 +63,7 @@ endef
+@@ -71,7 +64,7 @@ endef
  
  ifneq "$(SBIN_DIR)" ""
  ifneq "$(TARGET_DIR)" ""
@@ -44,7 +45,7 @@
  endif
  endif
  
-@@ -132,7 +124,7 @@ clean:
+@@ -132,7 +125,7 @@ clean:
  	rm -f $(EBIN_DIR)/*.beam
  	rm -f $(EBIN_DIR)/rabbit.app $(EBIN_DIR)/rabbit.boot $(EBIN_DIR)/rabbit.script $(EBIN_DIR)/rabbit.rel
  	rm -f $(INCLUDE_DIR)/rabbit_framing.hrl $(SOURCE_DIR)/rabbit_framing_amqp_*.erl codegen.pyc
@@ -53,39 +54,41 @@
  	rm -f $(RABBIT_PLT)
  	rm -f $(DEPS_FILE)
  
-@@ -164,6 +156,21 @@ run-node: all
- run-tests: all
- 	echo "rabbit_tests:all_tests()." | $(ERL_CALL)
+@@ -165,6 +158,23 @@ run-tests: all
+ 	OUT=$$(echo "rabbit_tests:all_tests()." | $(ERL_CALL)) ; \
+ 	  echo $$OUT ; echo $$OUT | grep '^{ok, passed}$$' > /dev/null
  
 +regress:
-+	rm -rf $(REGRESS_DIR)
-+	mkdir -m 777 -p $(REGRESS_DIR)
-+	RABBITMQ_NODENAME="rabbitmq-regress" \
-+		RABBITMQ_NODE_PORT="55672" \
-+		RABBITMQ_LOG_BASE="$(REGRESS_DIR)/logs" \
-+		RABBITMQ_MNESIA_BASE="$(REGRESS_DIR)/mnesia" \
++	@[ "`id -u`" != "0" ] || (echo "Don't run tests as a superuser." && false)
++	rm -rf $(CHECK_DIR)
++	mkdir -m 777 -p $(CHECK_DIR)
++	HOME=$(CHECK_DIR) \
++		RABBITMQ_NODENAME="$(CHECK_NAME)" \
++		RABBITMQ_NODE_PORT="45672" \
++		RABBITMQ_LOG_BASE="$(CHECK_DIR)/logs" \
++		RABBITMQ_MNESIA_BASE="$(CHECK_DIR)/mnesia" \
 +		RABBITMQ_SERVER_START_ARGS="$(RABBITMQ_SERVER_START_ARGS) -detached" \
-+		$(REGRESS_EXEC) ./scripts/rabbitmq-server
++		./scripts/rabbitmq-server
 +	@sleep 5
-+	echo "rabbit_tests:all_tests()." | $(REGRESS_EXEC) "erl_call -sname rabbitmq-regress -e" | tee $(REGRESS_DIR)/result
-+	[ "`cat $(REGRESS_DIR)/result | cut -b2-3`" = "ok" ] || \
-+		($(REGRESS_EXEC) "erl_call -sname rabbitmq-regress -e -q" && rm -rf $(REGRESS_DIR) && false)
-+	$(REGRESS_EXEC) "erl_call -sname rabbitmq-regress -e -q" && rm -rf $(REGRESS_DIR) && echo "Passed."
++	OUT=$$(echo "rabbit_tests:all_tests()." | $(CHECK_CALL)) ; \
++		echo $$OUT ; echo $$OUT | grep '^{ok, passed}$$' > /dev/null || \
++		($(CHECK_CALL) -q && rm -rf $(CHECK_DIR) && false)
++	$(CHECK_CALL) -q && rm -rf $(CHECK_DIR) && echo "Passed."
 +
  start-background-node:
  	$(BASIC_SCRIPT_ENVIRONMENT_SETTINGS) \
  		RABBITMQ_NODE_ONLY=true \
-@@ -234,8 +241,7 @@ distclean: clean
+@@ -235,8 +245,7 @@ distclean: clean
  %.gz: %.xml $(DOCS_DIR)/examples-to-end.xsl
  	xmlto --version | grep -E '^xmlto version 0\.0\.([0-9]|1[1-8])$$' >/dev/null || opt='--stringparam man.indent.verbatims=0' ; \
- 	    xsltproc $(DOCS_DIR)/examples-to-end.xsl $< > $<.tmp && \
+ 	    xsltproc --novalid $(DOCS_DIR)/examples-to-end.xsl $< > $<.tmp && \
 -	    xmlto -o $(DOCS_DIR) $$opt man $<.tmp && \
 -	    gzip -f $(DOCS_DIR)/`basename $< .xml`
 +	    xmlto -o $(DOCS_DIR) $$opt man $<.tmp
  	rm -f $<.tmp
  
  # Use tmp files rather than a pipeline so that we get meaningful errors
-@@ -278,7 +284,7 @@ install_bin: all install_dirs
+@@ -279,7 +288,7 @@ install_bin: all install_dirs
  install_docs: docs_all install_dirs
  	for section in 1 5; do \
  		mkdir -p $(MAN_DIR)/man$$section; \
