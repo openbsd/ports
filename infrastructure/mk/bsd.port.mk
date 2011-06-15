@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1082 2011/06/01 16:04:12 ajacoutot Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1083 2011/06/15 16:29:48 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1365,18 +1365,21 @@ DEPENDS_TARGET = install
 ################################################################
 
 # Various dependency styles
+_resolve_lib = LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
+			${_PERLSCRIPT}/resolve-lib 
 
 .if ${NO_SHARED_LIBS:L} == "yes"
-_noshared = -noshared
-.else
-_noshared =
+_resolve_lib += -noshared
 .endif
+_wantlib_args ?= _port-wantlib-args
+
+# fairly good approximation of libraries we want
+# XXX this is ksh, be less perfect with pure sh
+_lib=/lib*.{so.+([0-9]).+([0-9]),a}
 
 _libresolve_fragment = \
 	check=`for _lib in $$libs; do echo $$_lib; done | \
-		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
-			${_PERLSCRIPT}/resolve-lib \
-				${_noshared} $$d` \
+		${_resolve_lib} $$d` \
 			|| check=Failed
 
 PORT_LD_LIBRARY_PATH = ${LOCALBASE}/lib:${X11BASE}/lib:/usr
@@ -1692,7 +1695,8 @@ ${_PACKAGE_COOKIE${_S}}:
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
 	@cd ${.CURDIR} && \
 	tmp=${_TMP_REPO}${_PKGFILE${_S}} && \
-	if deps=`SUBPACKAGE=${_S} ${MAKE} _print-package-args` && \
+	if deps=`SUBPACKAGE=${_S} _wantlib_args=_wantlib-args \
+			${MAKE} _print-package-args` && \
 		${SUDO} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
 			$$deps ${PKG_ARGS${_S}} $$tmp && \
 		${_check_lib_depends} $$tmp && \
@@ -1960,21 +1964,19 @@ ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 	${_DEP${_m}LIB_COOKIES} ${_DEPBUILD_COOKIES} ${_WRKDIR_COOKIE}
 .    if !empty(_DEP${_m}LIBS)
 	@${ECHO_MSG} "===>  Verifying specs: ${_DEP${_m}LIBS}"
-	@libs=`for i in ${_LIB4:QL}; do echo "$$i"| { \
-		${_parse_spec}; \
-		eval $$toset ${MAKE} print-plist-libs; \
-		}; \
-		done;`; \
-	listlibs="echo $$libs; echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
-	for d in ${_DEP${_m}LIBS:QL}; do \
-		case "$$d" in \
-		/*) listlibs="$$listlibs $${d%/*}/lib*";; \
-		*/*) listlibs="$$listlibs ${DEPBASE}/$${d%/*}/lib*";; \
-		esac; \
-	done; \
-	if found=`eval $$listlibs 2>/dev/null| \
-		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
-		${_PERLSCRIPT}/resolve-lib ${_noshared} ${_DEP${_m}LIBS:QL}`; then \
+	@if found=`{ \
+		for i in ${_LIB4:QL}; do echo "$$i"| { \
+			${_parse_spec}; \
+			eval $$toset ${MAKE} print-plist-libs; \
+			}; \
+		done; echo ${LOCALBASE}/lib${_lib} /usr/lib${_lib} ${X11BASE}/lib${_lib}; \
+		for d in ${_DEP${_m}LIBS:QL}; do \
+			case "$$d" in \
+			/*) echo $${d%/*}${_lib};; \
+			*/*) echo ${LOCALBASE}/$${d%/*}${_lib};; \
+			esac; \
+		done; } | ${_resolve_lib} ${_DEP${_m}LIBS:QL}`; \
+	then \
 		line="===>  found"; \
 		for k in $$found; do line="$$line $$k"; done; \
 		${ECHO_MSG} "$$line"; \
@@ -2662,7 +2664,7 @@ print-plist-contents:
 	@${_plist_header}; ${_PKG_CREATE} -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}};${_plist_footer}
 
 print-plist-libs:
-	@${_plist_header}; ${_PKG_CREATE} -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}|${_grab_libs_from_plist};${_plist_footer}
+	@${_plist_header}; ${_PKG_CREATE} -n -Q ${PKG_ARGS${SUBPACKAGE}} ${_PACKAGE_COOKIE${SUBPACKAGE}}|${_grab_libs_from_plist}; ${_plist_footer}
 
 _internal-package-only: ${_PACKAGE_COOKIES}
 
@@ -3054,7 +3056,13 @@ print-package-signature:
 	@echo
 
 
-_print-package-args:
+_print-package-args: _run-depends-args
+
+.if ${NO_SHARED_LIBS:L} != "yes"
+_print-package-args: _lib-depends-args ${_wantlib_args}
+.endif
+
+_run-depends-args:
 .for _i in ${RUN_DEPENDS${SUBPACKAGE}}
 	@echo '${_i}' |{ \
 		${_parse_spec}; \
@@ -3062,8 +3070,9 @@ _print-package-args:
 		echo "-P $$subdir:$$pkg:$$default"; \
 	}
 .endfor
-.if ${NO_SHARED_LIBS:L} != "yes"
-.  for _i in ${LIB_DEPENDS${SUBPACKAGE}}
+
+_lib-depends-args:
+.for _i in ${LIB_DEPENDS${SUBPACKAGE}}
 	@echo '${_i}'|{ \
 		${_parse_spec}; \
 		${_complete_pkgspec}; \
@@ -3084,35 +3093,66 @@ _print-package-args:
 		exec 2>&3; \
 		if $$needed; then echo "-P $$subdir:$$pkg:$$default"; fi; \
 	}
-.  endfor
-	@libs=`for i in ${_LIB4${SUBPACKAGE}:QL}; do echo "$$i"| { \
-		${_parse_spec}; \
-		if ! eval $$toset ${MAKE} print-plist-libs; \
-		then \
-			echo 1>&2 "Problem with dependency ${_i}"; \
-			exit 1; \
-		fi; }; \
-		done;`; \
-	listlibs="echo $$libs; echo ${LOCALBASE}/lib/lib* /usr/lib/lib* ${X11BASE}/lib/lib*"; \
-	for d in ${_DEPRUNLIBS:QL}; do \
-		case "$$d" in \
-		/*) listlibs="$$listlibs $${d%/*}/lib*";; \
-		*/*) listlibs="$$listlibs ${LOCALBASE}/$${d%/*}/lib*";; \
-		esac; \
-	done; \
-	if found=`eval $$listlibs 2>/dev/null| \
-		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
-		${_PERLSCRIPT}/resolve-lib ${_noshared} ${_DEPRUNLIBS:QL}`; then \
-		for k in $$found; do \
-			case $$k in *.a) ;; \
-			*) echo "-W $$k";; \
-			esac; \
-		done; \
+.endfor
+
+_wantlib-args:
+	@a=`${_MAKE} _port-wantlib-args`; b=`${_MAKE} _fake-wantlib-args`; \
+	if test "X$$a" = "X$$b"; \
+	then \
+		echo $$a; \
 	else \
-		echo 1>&2 "Can't resolve libspec"; \
+		echo 1>&2 "Error: packing-lists and reality don't match"; \
+		echo 1>&2 "Compare make _port-wantlib-args _fake-wantlib-args"; \
 		exit 1; \
 	fi
-.endif
+
+_port-wantlib-args:
+	@if found=`{ for i in ${_LIB4${SUBPACKAGE}:QL}; do \
+			echo "$$i"| { \
+				${_parse_spec}; \
+				if ! eval $$toset ${MAKE} print-plist-libs; \
+				then \
+					echo 1>&2 "Problem with dependency $$i"; \
+					exit 1; \
+				fi; }; \
+			done; \
+		${MAKE} run-dir-depends|${_sort_dependencies}|while read subdir; do \
+			${_flavor_fragment}; \
+			if ! eval $$toset ${MAKE} print-plist-libs; \
+			then \
+				echo 1>&2 "Problem with dependency $$subdir"; \
+				exit 1; \
+			fi; done; \
+		echo /usr/lib${_lib} ${X11BASE}/lib${_lib}; } | \
+		${_resolve_lib} ${_DEPRUNLIBS:QL}`; \
+		then \
+			for k in $$found; do \
+				case $$k in *.a) ;; \
+				*) echo "-W $$k";; \
+				esac; \
+			done; \
+		else \
+			exit 1; \
+		fi
+
+_fake-wantlib-args:
+	@if found=`{ \
+		echo {${WRKINST},}${LOCALBASE}/lib${_lib} /usr/lib${_lib} ${X11BASE}/lib${_lib}; \
+		for d in ${_DEPRUNLIBS:QL}; do \
+			case "$$d" in \
+			/*) echo {${WRKINST},}$${d%/*}${_lib};; \
+			*/*) echo {${WRKINST},}${LOCALBASE}/$${d%/*}${_lib};; \
+			esac; \
+		done } | perl -pe 's,\Q${WRKINST}\E,,g' | \
+			${_resolve_lib} ${_DEPRUNLIBS:QL}`; then \
+			for k in $$found; do \
+				case $$k in *.a) ;; \
+				*) echo "-W $$k";; \
+				esac; \
+			done; \
+		else \
+			exit 1; \
+		fi
 
 _list-port-libs:
 .if defined(_PORT_LIBS_CACHE) && defined(_DEPENDS_CACHE) && \
@@ -3148,7 +3188,7 @@ _print-package-signature-run:
 .endfor
 
 _print-package-signature-lib:
-	@echo $$LIST_LIBS| LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} ${_PERLSCRIPT}/resolve-lib ${_DEPRUNLIBS:QL}
+	@echo $$LIST_LIBS| ${_resolve_lib} ${_DEPRUNLIBS:QL}
 .for _i in ${LIB_DEPENDS${SUBPACKAGE}}
 	@echo '${_i}' |{ \
 		${_parse_spec}; \
@@ -3429,7 +3469,9 @@ _all_phony = ${_recursive_depends_targets} \
 	print-build-depends print-run-depends readme readmes rebuild \
 	regress-depends run-depends run-depends-list show-required-by \
 	subpackage uninstall mirror-maker-fetch _print-pkgspec \
-	lock unlock _print-plist-with-extra-depends
+	lock unlock _print-plist-with-extra-depends \
+	_run-depends-args _lib-depends-args _wantlib-args \
+	_port-wantlib-args _fake-wantlib-args
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}
