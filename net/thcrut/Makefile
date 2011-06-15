@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/26 14:56:15 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/06/15 11:45:04 sthen Exp $
 
 COMMENT=	local network discovery tool
 
@@ -17,6 +17,8 @@ PERMIT_DISTFILES_CDROM=	no license
 PERMIT_DISTFILES_FTP=	no license
 
 WANTLIB=		c pcap lib/libnet-1.0/net=0
+
+MASTER_SITES=	http://dl.packetstormsecurity.net/wireless/
 
 CONFIGURE_STYLE= gnu old
 
