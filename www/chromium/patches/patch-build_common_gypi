@@ -1,4 +1,4 @@
-$OpenBSD: patch-build_common_gypi,v 1.7 2011/06/08 20:36:56 robert Exp $
+$OpenBSD: patch-build_common_gypi,v 1.8 2011/06/15 19:41:02 robert Exp $
 --- build/common.gypi.orig	Mon Jun  6 11:11:46 2011
 +++ build/common.gypi	Wed Jun  8 09:58:35 2011
 @@ -95,7 +95,7 @@
@@ -6,7 +6,7 @@ $OpenBSD: patch-build_common_gypi,v 1.7 2011/06/08 20:36:56 robert Exp $
  
        # Python version.
 -      'python_ver%': '2.5',
-+      'python_ver%': '2.6',
++      'python_ver%': '${MODPY_VERSION}',
  
        # Set ARM-v7 compilation flags
        'armv7%': 0,
