@@ -1,4 +1,10 @@
-$OpenBSD: patch-src_lookup_c,v 1.1.1.1 2010/04/10 16:51:07 ajacoutot Exp $
+$OpenBSD: patch-src_lookup_c,v 1.2 2011/06/15 08:37:22 jasper Exp $
+
+From bf26bf3996d2947feedfaa8cd8eecaa2809c0aa1 Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Wed, 15 Jun 2011 08:33:26 +0000
+Subject: Add missing header to make this compile on OpenBSD (and others too perhaps)
+
 --- src/lookup.c.orig	Tue Sep 22 15:30:34 2009
 +++ src/lookup.c	Tue Mar 30 15:38:12 2010
 @@ -21,6 +21,7 @@
