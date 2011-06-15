@@ -1,15 +1,17 @@
-$OpenBSD: patch-client_gdaemonfileinputstream_c,v 1.1 2010/07/24 16:04:21 ajacoutot Exp $
+$OpenBSD: patch-client_gdaemonfileinputstream_c,v 1.2 2011/06/15 06:36:44 ajacoutot Exp $
 
-XXX Remove non-blocking flag from fd. This is needed because the
-g_input_stream_*() functions are blocking but we compile with -pthread
-which sets all fds to non-blocking. See pthreads(3).
+https://bugzilla.gnome.org/show_bug.cgi?id=650883
 
---- client/gdaemonfileinputstream.c.orig	Mon Oct 19 15:11:03 2009
-+++ client/gdaemonfileinputstream.c	Fri Jul 23 20:15:17 2010
-@@ -376,6 +376,12 @@ g_daemon_file_input_stream_new (int fd,
+--- client/gdaemonfileinputstream.c.orig	Mon May 23 16:38:05 2011
++++ client/gdaemonfileinputstream.c	Wed Jun 15 08:20:07 2011
+@@ -376,6 +376,16 @@ g_daemon_file_input_stream_new (int fd,
  {
    GDaemonFileInputStream *stream;
  
++/*
++ * Prevent EINTR caused by OpenBSD userland threads setting all file
++ * descriptors to non-blocking mode
++ */
 +#ifdef __OpenBSD__
 +  int flags = fcntl(fd, F_GETFL);
 +  if (fcntl(fd, F_SETFL, flags & ~O_NONBLOCK) < 0)
