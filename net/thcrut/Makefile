@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2011/06/15 11:45:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2011/06/15 11:46:00 sthen Exp $
 
 COMMENT=	local network discovery tool
 
 DISTNAME=	thcrut-0.1
 REVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	${HOMEPAGE}/releases/
 
 HOMEPAGE=	http://www.thehackerschoice.com/
 
