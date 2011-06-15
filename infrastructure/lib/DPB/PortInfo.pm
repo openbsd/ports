@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PortInfo.pm,v 1.10 2011/06/04 12:56:54 espie Exp $
+# $OpenBSD: PortInfo.pm,v 1.11 2011/06/15 10:06:22 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -40,6 +40,23 @@ sub string
 sub quickie
 {
 	return 0;
+}
+
+package AddYesNo;
+our @ISA = qw(AddInfo);
+
+sub add
+{
+	my ($class, $var, $o, $value, $parent) = @_;
+	return if $value =~ m/^no$/i;
+	$o->{$var} = $class->new($value, $o, $parent);
+}
+
+sub new
+{
+	my ($class, $value) = @_;
+	my $a = 1;
+	bless \$a, $class;
 }
 
 package AddInfoShow;
@@ -112,6 +129,11 @@ sub string
 
 package AddDepends;
 our @ISA = qw(AddList);
+sub extra
+{
+	return 'EXTRA';
+}
+
 sub new
 {
 	my ($class, $value, $self, $parent) = @_;
@@ -122,7 +144,7 @@ sub new
 		s/^\:+//;
 		s/^[^\/]*\://;
 		if (s/\:(?:patch|build|configure)$//) {
-			Extra->add('EXTRA', $self, $_);
+			Extra->add($class->extra, $self, $_);
 		} else {
 			s/\:$//;
 			if (m/[:<>=]/) {
@@ -148,6 +170,13 @@ sub quickie
 	return 1;
 }
 
+package AddRegressDepends;
+our @ISA = qw(AddDepends);
+sub extra
+{
+	return 'EXTRA2';
+}
+
 package Extra;
 our @ISA = qw(AddDepends);
 
@@ -167,9 +196,13 @@ my %adder = (
 	RUN_DEPENDS => "AddDepends",
 	BUILD_DEPENDS => "AddDepends",
 	LIB_DEPENDS => "AddDepends",
+	REGRESS_DEPENDS => "AddRegressDepends",
+	NO_REGRESS => "AddYesNo",
+	REGRESS_IS_INTERACTIVE => "AddYesNo",
 	SUBPACKAGE => "AddInfo",
 	MULTI_PACKAGES => "AddList",
 	EXTRA => "Extra",
+	EXTRA2 => "Extra",
 	DEPENDS => "AddDepends",
 	BDEPENDS => "AddDepends",
 	RDEPENDS => "AddDepends",
