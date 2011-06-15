@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.48 2011/01/03 19:22:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2011/06/15 08:29:34 sthen Exp $
 
 COMMENT=	Sound eXchange, the Swiss Army knife of audio manipulation
 
-DISTNAME=	sox-14.3.0
-SHARED_LIBS +=	sox 1.0 # .1.0
-REVISION=	0
+DISTNAME=	sox-14.3.2
+SHARED_LIBS +=	sox 2.0 # .1.0
+
 CATEGORIES=	audio
 HOMEPAGE=	http://sox.sourceforge.net/
+MAINTAINER=	Jan Stary <hans@stare.cz>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -33,8 +34,8 @@ LIB_DEPENDS=	audio/libvorbis \
 		graphics/png \
 		audio/gsm
 
+USE_GROFF=	Yes
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-silent-libtool
@@ -64,7 +65,7 @@ CONFIGURE_ARGS+=--without-sndfile \
 		--without-ladspa
 
 CONFIGURE_ENV= \
-	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+	CPPFLAGS="-I${LOCALBASE}/include" \
 	LDFLAGS="-L${LOCALBASE}/lib"
 
 do-regress:
