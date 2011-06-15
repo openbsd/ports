@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.948 2011/06/15 18:25:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.949 2011/06/15 19:50:24 rpointel Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -984,6 +984,7 @@
      SUBDIR += py-unit
      SUBDIR += py-unit,no_x11
      SUBDIR += py-urwid
+     SUBDIR += py-virtualenv
      SUBDIR += py-wsgiutils
      SUBDIR += py-xdg
      SUBDIR += py-zopeinterface
