@@ -1,28 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 18:49:52 espie Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/06/15 13:31:45 sthen Exp $
 ${P5ARCH}/
-@comment ${P5ARCH}/Makefile.am
 ${P5ARCH}/WWW/
 ${P5ARCH}/WWW/Curl/
 ${P5ARCH}/WWW/Curl.pm
 ${P5ARCH}/WWW/Curl/Easy.pm
 ${P5ARCH}/WWW/Curl/Form.pm
-@comment ${P5ARCH}/WWW/Curl/Makefile.am
 ${P5ARCH}/WWW/Curl/Multi.pm
-${P5ARCH}/WWW/Curl/easy.pm
-@comment ${P5ARCH}/WWW/Makefile.am
+${P5ARCH}/WWW/Curl/Share.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/WWW/
 ${P5ARCH}/auto/WWW/Curl/
 ${P5ARCH}/auto/WWW/Curl/Curl.bs
 ${P5ARCH}/auto/WWW/Curl/Curl.so
-${P5ARCH}/auto/WWW/Curl/Easy/
-${P5ARCH}/auto/WWW/Curl/Easy/autosplit.ix
 @man man/man3p/WWW::Curl.3p
-@man man/man3p/WWW::Curl::Easy.3p
-@man man/man3p/WWW::Curl::Multi.3p
-@man man/man3p/WWW::Curl::easy.3p
-share/examples/p5-WWW-Curl/
-share/examples/p5-WWW-Curl/basicfirst.pl
-share/examples/p5-WWW-Curl/easy.pl
-@comment share/examples/p5-WWW-Curl/multi-threaded.pl
-share/examples/p5-WWW-Curl/multi.pl

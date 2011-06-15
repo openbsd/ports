@@ -1,33 +1,25 @@
-# $OpenBSD: Makefile,v 1.17 2011/04/25 15:01:28 jolan Exp $
+# $OpenBSD: Makefile,v 1.18 2011/06/15 13:31:44 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	perl binding for curl
 
 MODULES=	cpan
-DISTNAME=	p5-WWW-Curl-20040519
-PKGNAME=	${DISTNAME}
-REVISION=	3
+DISTNAME=	WWW-Curl-4.15
+EPOCH=		0
 CATEGORIES=	www net
-MASTER_SITES=	${MASTER_SITE_BACKUP}	
-USE_GROFF =	Yes
 
 HOMEPAGE=	http://curl.haxx.se/libcurl/perl/
 
-# MIT
+# Your choice of MIT or MPL
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB += crypto curl>=2.2 idn ssl z 
+WANTLIB += crypto curl>=2.2 idn ssl z
 
 LIB_DEPENDS=	net/curl
-
-MAKE_ENV+=	CURL_TEST_URL="http://www.openbsd.org/"
-
-MODCPAN_EXAMPLES=	Yes
-MODCPAN_EXAMPLES_DIR=	${PREFIX}/share/examples/p5-WWW-Curl
 
 post-configure:
 	@perl -pi -e s,'t/\*.t','t/new/\*.t',g ${WRKSRC}/Makefile
