@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/13 20:15:45 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/15 15:19:05 sthen Exp $
 
 COMMENT=		network traffic and bandwidth usage in real time
 
@@ -14,7 +14,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://www.roland-riegel.de/nload/
+MASTER_SITES=		http://www.roland-riegel.de/nload/ \
+			http://x61.com.ar/nload/
 
 CONFIGURE_STYLE= gnu
 
