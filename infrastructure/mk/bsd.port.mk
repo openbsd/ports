@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1083 2011/06/15 16:29:48 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1084 2011/06/15 16:31:11 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1429,14 +1429,14 @@ ERRORS += "Fatal: old style depends ${_CHECK_DEPENDS:M\:*}"
 # then we rebuild it as STEM->=something:pkgpath
 
 .for _v in BUILD LIB RUN REGRESS
-${_v}_DEPENDS := ${${_v}_DEPENDS:S/^://:S/^://:C,^([^:]+/[^:<=>]+)([<=>][^:]+)$,STEM-\2:\1,}
+${_v}_DEPENDS := ${${_v}_DEPENDS:C,^([^:]+/[^:<=>]+)([<=>][^:]+)$,STEM-\2:\1,}
 .endfor
 .for _v in BUILD REGRESS
 ${_v}_DEPENDS := ${${_v}_DEPENDS:C,^([^:]+/[^:<=>]+)([<=>][^:]+)(:patch|:configure|:build)$,STEM-\2:\1\3,}
 .endfor
 .for _s in ${MULTI_PACKAGES}
 .  for _v in RUN LIB
-${_v}_DEPENDS${_s} := ${${_v}_DEPENDS${_s}:S/^://:S/^://:C,^([^:]+/[^:<=>]+)([<=>][^:]+)$,STEM-\2:\1,}
+${_v}_DEPENDS${_s} := ${${_v}_DEPENDS${_s}:C,^([^:]+/[^:<=>]+)([<=>][^:]+)$,STEM-\2:\1,}
 .  endfor
 .endfor
 
