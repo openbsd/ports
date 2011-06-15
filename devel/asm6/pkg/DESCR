@@ -1,0 +1,5 @@
+Asm6 is another 6502 assembler. It was built to do NES development, but
+you can probably use it for just about anything. It was written because
+the author thought most other assemblers either were too finicky, had
+weird syntax, took too much work to set up, or were too bug-ridden to be
+useful.
