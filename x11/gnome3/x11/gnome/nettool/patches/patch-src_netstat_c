@@ -1,4 +1,7 @@
-$OpenBSD: patch-src_netstat_c,v 1.1.1.1 2011/05/17 17:21:35 jasper Exp $
+$OpenBSD: patch-src_netstat_c,v 1.2 2011/06/15 06:37:17 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=652619
+
 --- src/netstat.c.orig	Tue Mar 30 06:11:19 2010
 +++ src/netstat.c	Wed Apr 21 11:35:42 2010
 @@ -110,12 +110,17 @@ netstat_get_active_option (Netinfo * netinfo)
