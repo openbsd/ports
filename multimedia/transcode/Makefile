@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2011/04/18 23:37:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.42 2011/06/15 18:11:16 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.5
-REVISION=	7
+REVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=tcforge/}
 EXTRACT_SUFX=	.tar.bz2
@@ -49,16 +49,17 @@ LIB_DEPENDS=	audio/faac \
 		multimedia/libdv \
 		multimedia/libtheora \
 		multimedia/x264 \
-		multimedia/xvidcore \
 		textproc/libxml
 
 RUN_DEPENDS=	audio/sox \
 		audio/vorbis-tools \
 		audio/toolame \
 		graphics/ffmpeg \
+		multimedia/xvidcore \
 		x11/mplayer
 
-BUILD_DEPENDS+=	devel/libtool
+BUILD_DEPENDS+=	devel/libtool \
+		multimedia/xvidcore
 
 SEPARATE_BUILD=	concurrent
 
