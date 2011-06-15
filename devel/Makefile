@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.947 2011/06/14 12:14:52 robert Exp $
+# $OpenBSD: Makefile,v 1.948 2011/06/15 18:25:27 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -17,6 +17,7 @@
      SUBDIR += argp-standalone
      SUBDIR += argtable
      SUBDIR += arm-elf
+     SUBDIR += asm6
      SUBDIR += asp2php
      SUBDIR += asp2php,no_x11
      SUBDIR += astyle
