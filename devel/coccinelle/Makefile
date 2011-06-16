@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/12 12:31:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2011/06/16 23:24:49 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	program matching and transformation engine
 
 # if updating, check for any additional use of diff/grep which
 # may need to be switched to gdiff/ggrep
-DISTNAME =	coccinelle-1.0.0-rc2
+DISTNAME =	coccinelle-1.0.0-rc3
 PKGNAME =	${DISTNAME:S/-rc/rc/}
 EXTRACT_SUFX =	.tgz
 
@@ -47,9 +47,14 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/pycaml/Makefile
 	perl -pi -e s,/usr/local,${TRUEPREFIX},g ${WRKSRC}/scripts/spatch*
 
-# can't use MODOCAML_NATIVE because it also needs dynlink
+# can't use MODOCAML_NATIVE here because we need not
+# just native code, but also dynlink
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-ALL_TARGET =	all.opt
+# "world"=build both bytecode and native binaries
+# "all.opt"=only build native binaries (but regression
+# tests didn't work with this)
+ALL_TARGET =	world
+INSTALL_TARGET = install-common install-def
 PKG_ARGS +=	-DOCAMLOPT=.opt
 .else
 WANTLIB +=	curses

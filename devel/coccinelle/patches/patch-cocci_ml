@@ -1,6 +1,6 @@
-$OpenBSD: patch-cocci_ml,v 1.1.1.1 2011/05/14 15:02:50 sthen Exp $
---- cocci.ml.orig	Wed Apr 13 06:25:58 2011
-+++ cocci.ml	Mon May  9 08:08:26 2011
+$OpenBSD: patch-cocci_ml,v 1.2 2011/06/16 23:24:49 sthen Exp $
+--- cocci.ml.orig	Fri Jun  3 17:55:52 2011
++++ cocci.ml	Thu Jun 16 23:48:24 2011
 @@ -263,8 +263,8 @@ let show_or_not_diff2 cfile outfile =
  
  	let line =
@@ -12,7 +12,7 @@ $OpenBSD: patch-cocci_ml,v 1.1.1.1 2011/05/14 15:02:50 sthen Exp $
  	let xs =
  	  let res = Common.cmd_to_list line in
  	  match (!Flag.patch,res) with
-@@ -495,7 +495,7 @@ let worth_trying cfiles tokens =
+@@ -501,7 +501,7 @@ let worth_trying cfiles tokens =
  	| _ -> s
  
        ) in
@@ -21,7 +21,7 @@ $OpenBSD: patch-cocci_ml,v 1.1.1.1 2011/05/14 15:02:50 sthen Exp $
        in
        (match Sys.command com with
        | 0 (* success *) -> true
-@@ -1979,7 +1979,7 @@ let check_duplicate_modif2 xs =
+@@ -1995,7 +1995,7 @@ let check_duplicate_modif2 xs =
                match res2 with
                | None -> false
                | Some res2 ->
