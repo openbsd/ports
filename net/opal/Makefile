@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/04/01 06:52:47 jakemsr Exp $
+# $OpenBSD: Makefile,v 1.17 2011/06/16 08:07:20 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	Open Phone Abstraction Library
 V=		3.6.8
 DISTNAME=	opal-${V}
 
-REVISION=	2
+REVISION=	3
 
 SUBST_VARS+=	V
 
@@ -38,8 +38,10 @@ LIB_DEPENDS=	audio/speex \
 		devel/ptlib \
 		multimedia/x264
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	graphics/ffmpeg>=20110306 # dlopen(3) libavcodec.so
+# dlopen(3) libavcodec.so; shows as Extra: in check-lib-depends but
+# this is ok, we want to be sure we track ABI changes
+WANTLIB+=	avcodec
+LIB_DEPENDS+=	graphics/ffmpeg>=20110306
 
 ALL_TARGET=	opt
 OPAL_FILE=	libopal.so
