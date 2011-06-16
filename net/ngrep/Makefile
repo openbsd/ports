@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2011/06/16 17:42:56 sthen Exp $
 
 COMMENT=	network grep
 
 DISTNAME=	ngrep-1.45
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ngrep/}
 EXTRACT_SUFX=	.tar.bz2
@@ -23,7 +23,6 @@ NO_REGRESS=	Yes
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
 AUTOCONF_VERSION= 2.60
 CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS+= --enable-ipv6 \
@@ -31,5 +30,10 @@ CONFIGURE_ARGS+= --enable-ipv6 \
 		 --with-dropprivs-user=_ngrep
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS=-L${LOCALBASE}/lib
+
+do-install:
+	cd ${WRKSRC}; \
+	${INSTALL_PROGRAM} ngrep ${PREFIX}/sbin/ngrep; \
+	${INSTALL_MAN} ngrep.8 ${PREFIX}/man/man8/ngrep.8
 
 .include <bsd.port.mk>
