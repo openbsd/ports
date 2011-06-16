@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.21 2011/06/16 09:53:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2011/06/16 10:08:35 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += backgrounds
+     SUBDIR += controlcenter
      SUBDIR += desktop
      SUBDIR += devhelp
      SUBDIR += eog
