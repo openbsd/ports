@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.44 2011/06/02 13:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2011/06/16 10:14:58 ajacoutot Exp $
 
 COMMENT=	API for accessing scanners, backends
 
 DISTNAME=	sane-backends-1.0.22
 
-REVISION=	4
+REVISION=	5
 
 SHARED_LIBS=	sane 2.0 # .1.0
 CATEGORIES=	graphics
@@ -19,24 +19,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += avahi-client avahi-common c dbus-1 exif gphoto2
-WANTLIB += gphoto2_port jpeg ltdl m pthread tiff usb z
+WANTLIB += c jpeg m tiff usb z
 
 MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/${DISTNAME}/ \
 		ftp://ftp.sane-project.org/pub/sane/old-versions/${DISTNAME}/
 
 LIB_DEPENDS=	graphics/tiff \
-		graphics/libgphoto2 \
-		net/avahi
-
-MODULES=	devel/gettext
+		devel/libusb
 
 FLAVORS=	snmp
 FLAVOR?=
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 NO_REGRESS=	Yes
 
@@ -48,10 +44,12 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--sbindir=${PREFIX}/libexec \
 		--with-docdir=${PREFIX}/share/doc/sane-backends \
 		--localstatedir=/var/spool \
-		--with-gphoto2 \
+		--without-gphoto2 \
 		--with-group=553 \
-		--enable-avahi \
 		--disable-latex
+
+# XXX doesn't work
+#CONFIGURE_ARGS+=--enable-avahi
 
 .if ${FLAVOR:L:Msnmp}
 LIB_DEPENDS +=	net/net-snmp

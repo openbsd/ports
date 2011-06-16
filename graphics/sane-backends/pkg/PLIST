@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2011/05/11 06:56:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2011/06/16 10:14:58 ajacoutot Exp $
 @newgroup _saned:553
 @newuser _saned:553:_saned:daemon:SANE Scanner Daemon:/var/empty:/sbin/nologin
 @extraunexec rm -rf /var/spool/lock/sane/*
@@ -65,8 +65,6 @@ lib/sane/
 @comment lib/sane/libsane-fujitsu.la
 @comment lib/sane/libsane-genesys.a
 @comment lib/sane/libsane-genesys.la
-@comment lib/sane/libsane-gphoto2.a
-@comment lib/sane/libsane-gphoto2.la
 @comment lib/sane/libsane-gt68xx.a
 @comment lib/sane/libsane-gt68xx.la
 @comment lib/sane/libsane-hp.a
@@ -199,7 +197,6 @@ lib/sane/
 @man man/man5/sane-epson2.5
 @man man/man5/sane-fujitsu.5
 @man man/man5/sane-genesys.5
-@man man/man5/sane-gphoto2.5
 @man man/man5/sane-gt68xx.5
 @man man/man5/sane-hp.5
 @man man/man5/sane-hp3500.5
@@ -395,8 +392,6 @@ share/examples/sane-backends/sane.d/fujitsu.conf
 @sample ${SYSCONFDIR}/sane.d/fujitsu.conf
 share/examples/sane-backends/sane.d/genesys.conf
 @sample ${SYSCONFDIR}/sane.d/genesys.conf
-share/examples/sane-backends/sane.d/gphoto2.conf
-@sample ${SYSCONFDIR}/sane.d/gphoto2.conf
 share/examples/sane-backends/sane.d/gt68xx.conf
 @sample ${SYSCONFDIR}/sane.d/gt68xx.conf
 share/examples/sane-backends/sane.d/hp.conf
