@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2011/05/15 08:32:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.76 2011/06/16 09:10:10 ajacoutot Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
 COMMENT-dv =		dv element for GStreamer (plugins-good)
 COMMENT-caca =		libcaca element for GStreamer (plugins-good)
 
-V =			0.10.29
+V =			0.10.30
 DISTNAME =		gst-plugins-good-$V
 
 PKGNAME-main =		gstreamer-plugins-good-${V}
