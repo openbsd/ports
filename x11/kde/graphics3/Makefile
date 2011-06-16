@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.95 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.96 2011/06/16 10:16:43 ajacoutot Exp $
 
 COMMENT-main =		K Desktop Environment, graphic applications
 COMMENT-kamera =	KDE interface to digital cameras
@@ -29,7 +29,7 @@ SHARED_LIBS +=	kscan                2.0      # .1.0
 MODULES =		x11/kde devel/gettext
 
 BUILD_DEPENDS =		print/texlive/base
-WANTLIB = ICE SM X11 Xau Xdmcp Xext art_lgpl_2 fam idn jpeg lib/kde3/DCOP \
+WANTLIB = ICE SM X11 Xau Xdmcp Xext art_lgpl_2 idn jpeg lib/kde3/DCOP \
 	lib/kde3/kdecore>=6 lib/kde3/kdefx lib/kde3/kdesu lib/kde3/kdeui \
 	lib/kde3/kio m png pthread-stubs qt-mt stdc++ util xcb z
 LIB_DEPENDS =		${MODGETTEXT_LIB_DEPENDS} \
@@ -60,12 +60,12 @@ LIB_DEPENDS-sane =	${LIB_DEPENDS} \
 WANTLIB-main = 		${WANTLIB}
 WANTLIB-kpov =		${WANTLIB}
 WANTLIB-kamera =	${WANTLIB}
-WANTLIB-sane =		${WANTLIB-kamera}
+WANTLIB-sane =		${WANTLIB}
 
-REVISION-main = 8
-REVISION-kamera = 4
-REVISION-kpov = 4
-REVISION-sane = 6
+REVISION-main = 9
+REVISION-kamera = 5
+REVISION-kpov = 5
+REVISION-sane = 7
 
 WANTLIB-main +=	 GL Half ICE Iex IlmImf IlmThread Imath Imlib SM \
 	Xcursor Xdamage Xext Xfixes Xft Xi Xinerama Xmu Xrandr Xrender Xt \
@@ -75,13 +75,15 @@ WANTLIB-main +=	 GL Half ICE Iex IlmImf IlmThread Imath Imlib SM \
 	poppler-qt pthread tiff ungif xml2
 
 WANTLIB-kpov += GL GLU Xdamage Xfixes Xi Xmu Xrender Xt Xxf86vm c \
-	drm freetype lib/kde3/kparts lib/kde3/kwalletclient pthread
+	drm freetype lib/kde3/kparts lib/kde3/kwalletclient pthread \
+	expat fontconfig
 
 WANTLIB-kamera +=  Xrender exif gphoto2 gphoto2_port \
-	lib/kde3/kwalletclient ltdl
-WANTLIB-sane +=	avahi-client avahi-common c dbus-1 \
+	lib/kde3/kwalletclient Xfixes Xt expat fontconfig freetype ltdl
+
+WANTLIB-sane +=	c Xfixes Xrender Xt expat fontconfig freetype lib/kde3/kwalletclient \
 	lib/kde3/kabc lib/kde3/kdeprint lib/kde3/kparts lib/kde3/kresources \
-	lib/kde3/kspell lib/kde3/ktexteditor lib/kde3/vcard ltdl pthread sane \
+	lib/kde3/kspell lib/kde3/ktexteditor lib/kde3/vcard pthread sane \
 	tiff usb
 
 post-patch:

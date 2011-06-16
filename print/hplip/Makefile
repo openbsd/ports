@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/06/12 16:00:03 rpointel Exp $
+# $OpenBSD: Makefile,v 1.39 2011/06/16 10:16:43 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -17,8 +17,11 @@ PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
 
-REVISION-main=	1
-REVISION-gui=	1
+REVISION-main=	2
+REVISION-hpijs=	0
+REVISION-hpcups=0
+REVISION-libs=	0
+REVISION-gui=	2
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
 SHARED_LIBS +=  hpip		2.0 # .0.1
@@ -45,9 +48,9 @@ MODPY_RUNDEP=	No
 
 cWANTLIB = crypto m pthread
 
-WANTLIB-main += ${WANTLIB} ${cWANTLIB} sane cups hpip hpmud asn1 gssapi krb5 
-WANTLIB-main += ssl avahi-client avahi-common c crypto dbus-1 exif gphoto2
-WANTLIB-main += gphoto2_port jpeg ltdl netsnmp tiff usb z
+WANTLIB-main += ${WANTLIB} ${cWANTLIB}
+WANTLIB-main += asn1 c cups dbus-1 gssapi hpip hpmud jpeg krb5 netsnmp
+WANTLIB-main += sane ssl tiff usb z
 
 BUILD_DEPENDS=	sysutils/polkit
 
@@ -86,8 +89,7 @@ RUN_DEPENDS-gui= x11/py-qt4 \
 		devel/desktop-file-utils
 LIB_DEPENDS-gui= # empty
 
-MODULES=	devel/gettext \
-		lang/python
+MODULES=	lang/python
 
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
