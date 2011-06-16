@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/10 11:49:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/16 06:59:13 ajacoutot Exp $
 
 COMMENT=		client of the Tryton application platform
 
 DISTNAME=		tryton-${MODPY_EGG_VERSION}
+
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -18,5 +20,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/tryton.desktop \
 		${PREFIX}/share/applications
+	ln -sf ${TRUEPREFIX}/share/pixmaps/tryton/tryton-icon.svg \
+		${PREFIX}/share/pixmaps/tryton-icon.svg
 
 .include <bsd.port.mk>

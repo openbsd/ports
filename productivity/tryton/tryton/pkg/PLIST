@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/10 11:49:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/16 06:59:13 ajacoutot Exp $
 bin/tryton
 lib/python${MODPY_VERSION}/site-packages/tryton/
 lib/python${MODPY_VERSION}/site-packages/tryton-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -271,6 +271,7 @@ share/locale/ru_RU/
 share/locale/ru_RU/LC_MESSAGES/
 share/locale/ru_RU/LC_MESSAGES/tryton.mo
 share/pixmaps/tryton/
+share/pixmaps/tryton-icon.svg
 share/pixmaps/tryton/tryton-attachment-hi.svg
 share/pixmaps/tryton/tryton-attachment.svg
 share/pixmaps/tryton/tryton-cancel.svg
