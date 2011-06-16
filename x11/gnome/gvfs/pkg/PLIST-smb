@@ -1,5 +1,10 @@
-@comment $OpenBSD: PLIST-smb,v 1.1 2008/11/24 16:15:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST-smb,v 1.2 2011/06/16 08:38:20 dcoppa Exp $
+@conflict gvfs-<=1.8.2p3
 @bin libexec/gvfsd-smb
 @bin libexec/gvfsd-smb-browse
+share/GConf/gsettings/gvfs-smb.convert
+share/glib-2.0/schemas/org.gnome.system.smb.gschema.xml
 share/gvfs/mounts/smb-browse.mount
 share/gvfs/mounts/smb.mount
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
