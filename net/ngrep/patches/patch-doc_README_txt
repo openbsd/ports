@@ -1,0 +1,11 @@
+$OpenBSD: patch-doc_README_txt,v 1.1 2011/06/16 21:21:43 sthen Exp $
+--- doc/README.txt.orig	Tue Nov 28 13:37:34 2006
++++ doc/README.txt	Thu Jun 16 16:04:12 2011
+@@ -41,6 +41,7 @@ Usage: ngrep <LhNXViwqpevxlDtTRM> <-IO pcap_dump> <-n 
+    -D  is replay pcap_dumps with their recorded time intervals
+    -t  is print timestamp every time a packet is matched
+    -T  is print delta timestamp every time a packet is matched
++         specify twice for delta from first match
+    -M  is don't do multi-line match (do single-line match instead)
+    -I  is read packet stream from pcap format file pcap_dump
+    -O  is dump matched packets in pcap format to pcap_dump

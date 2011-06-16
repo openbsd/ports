@@ -1,7 +1,32 @@
-$OpenBSD: patch-ngrep_c,v 1.4 2011/06/16 17:42:56 sthen Exp $
+$OpenBSD: patch-ngrep_c,v 1.5 2011/06/16 21:21:43 sthen Exp $
 --- ngrep.c.orig	Tue Nov 28 13:38:43 2006
-+++ ngrep.c	Thu Jun 16 18:40:08 2011
-@@ -92,7 +92,7 @@
++++ ngrep.c	Thu Jun 16 18:34:55 2011
+@@ -1,7 +1,7 @@
+ /*
+  * $Id: patch-ngrep_c,v 1.5 2011/06/16 21:21:43 sthen Exp $
+  *
+- * Copyright (c) 2006  Jordan Ritter <jpr5@darkridge.com>
++ * Copyright (c) 2007  Jordan Ritter <jpr5@darkridge.com>
+  *
+  * Please refer to the LICENSE file for more information.
+  *
+@@ -60,6 +60,7 @@
+ #include <config.h>
+ 
+ #define strcasecmp stricmp
++#define strncasecmp strnicmp
+ 
+ #else
+ 
+@@ -74,6 +75,7 @@
+ #include <stdlib.h>
+ #include <string.h>
+ #include <signal.h>
++#include <locale.h>
+ 
+ #if !defined(_WIN32)
+ #include <errno.h>
+@@ -92,7 +94,7 @@
  #endif
  
  #if USE_PCRE
@@ -10,7 +35,113 @@ $OpenBSD: patch-ngrep_c,v 1.4 2011/06/16 17:42:56 sthen Exp $
  #else
  #include "regex-0.12/regex.h"
  #endif
-@@ -391,7 +391,7 @@ int main(int argc, char **argv) {
+@@ -114,6 +116,7 @@ uint8_t  show_empty = 0, show_hex = 0, show_proto = 0,
+ uint8_t  invert_match = 0, bin_match = 0;
+ uint8_t  live_read = 1, want_delay = 0;
+ uint8_t  dont_dropprivs = 0;
++uint8_t  enable_hilite = 0;
+ 
+ char *read_file = NULL, *dump_file = NULL;
+ char *usedev = NULL;
+@@ -145,7 +148,7 @@ uint16_t match_len = 0;
+ int8_t (*match_func)() = &blank_match_func;
+ 
+ int8_t dump_single = 0;
+-void (*dump_func)(unsigned char *, uint32_t) = &dump_formatted;
++void (*dump_func)(unsigned char *, uint32_t, uint16_t, uint16_t) = &dump_formatted;
+ 
+ /*
+  * BPF/Network
+@@ -153,10 +156,10 @@ void (*dump_func)(unsigned char *, uint32_t) = &dump_f
+ 
+ char *filter = NULL, *filter_file = NULL;
+ char pc_err[PCAP_ERRBUF_SIZE];
+-uint8_t link_offset;
++uint8_t link_offset, vlan_offset = 0;
+ uint8_t radiotap_present = 0;
+ 
+-pcap_t *pd = NULL;
++pcap_t *pd = NULL, *pd_dumppcap = NULL;
+ pcap_dumper_t *pd_dump = NULL;
+ struct bpf_program pcapfilter;
+ struct in_addr net, mask;
+@@ -176,8 +179,7 @@ void (*print_time)() = NULL, (*dump_delay)() = dump_de
+ 
+ 
+ /*
+- * When !Win32, windowsize stuff.  We leave it in regardless to avoid
+- * any additional #if complication/obfuscation.
++ * Window-size functionality (adjust output based on width of console display)
+  */
+ 
+ uint32_t ws_row, ws_col = 80, ws_col_forced = 0;
+@@ -195,7 +197,17 @@ int main(int argc, char **argv) {
+     signal(SIGWINCH, update_windowsize);
+ #endif
+ 
+-    while ((c = getopt(argc, argv, "LNhXViwqpevxlDtTRMs:n:c:d:A:I:O:S:P:F:W:")) != EOF) {
++#if !defined(_WIN32)
++    {
++        char const *locale = getenv("LANG");
++        if (locale == NULL)
++            locale = "en_US";
++
++        setlocale(LC_CTYPE, locale);
++    }
++#endif
++
++    while ((c = getopt(argc, argv, "LNhXViwqpevxlDtTRMCs:n:c:d:A:I:O:S:P:F:W:")) != EOF) {
+         switch (c) {
+             case 'W': {
+                 if (!strcasecmp(optarg, "normal"))
+@@ -257,6 +269,9 @@ int main(int argc, char **argv) {
+                 if (value > 0)
+                     snaplen = value;
+             } break;
++            case 'C':
++                enable_hilite = 1;
++                break;
+             case 'M':
+                 re_multiline_match = 0;
+                 break;
+@@ -264,13 +279,18 @@ int main(int argc, char **argv) {
+                 dont_dropprivs = 1;
+                 break;
+             case 'T':
+-                print_time = &print_time_diff;
++                if (print_time == &print_time_diff) {
++                    print_time = print_time_offset;
++                    memset(&prev_ts, 0, sizeof(prev_ts));
++                } else {
++                    print_time = &print_time_diff;
+ #if defined(_WIN32)
+-                prev_ts.tv_sec  = (uint32_t)time(NULL);
+-                prev_ts.tv_usec = 0;
++                    prev_ts.tv_sec  = (uint32_t)time(NULL);
++                    prev_ts.tv_usec = 0;
+ #else
+-                gettimeofday(&prev_ts, NULL);
++                    gettimeofday(&prev_ts, NULL);
+ #endif
++                }
+                 break;
+             case 't':
+                 print_time = &print_time_absolute;
+@@ -337,7 +357,12 @@ int main(int argc, char **argv) {
+ 
+     } else {
+ 
+-        char *dev = usedev ? usedev : pcap_lookupdev(pc_err);
++        char *dev = usedev ? usedev :
++#if defined(_WIN32)
++            win32_choosedevice();
++#else
++            pcap_lookupdev(pc_err);
++#endif
+ 
+         if (!dev) {
+             perror(pc_err);
+@@ -391,7 +416,7 @@ int main(int argc, char **argv) {
              filter = get_filter_from_argv(&argv[optind-1]);
  
  #if USE_PCAP_RESTART
@@ -19,7 +150,25 @@ $OpenBSD: patch-ngrep_c,v 1.4 2011/06/16 17:42:56 sthen Exp $
  #endif
              if (pcap_compile(pd, &pcapfilter, filter, 0, mask.s_addr)) {
                  pcap_perror(pd, "pcap compile");
-@@ -549,6 +549,10 @@ int main(int argc, char **argv) {
+@@ -408,6 +433,17 @@ int main(int argc, char **argv) {
+         }
+     }
+ 
++    /* VLAN support: determine # of +4 offsets to accommodate */
++    if (filter) {
++        char const bpf_vlan[] = "vlan";
++        char *s = filter;
++        while (*s)
++            if (strncasecmp(s++, bpf_vlan, sizeof(bpf_vlan)-1) == 0)
++                vlan_offset++;
++
++        vlan_offset *= VLANHDR_SIZE;
++    }
++
+     if (filter && quiet < 2)
+         printf("filter: %s\n", filter);
+ 
+@@ -549,6 +585,10 @@ int main(int argc, char **argv) {
              link_offset = PPPHDR_SIZE;
              break;
  
@@ -30,7 +179,364 @@ $OpenBSD: patch-ngrep_c,v 1.4 2011/06/16 17:42:56 sthen Exp $
  #if HAVE_DLT_LOOP
          case DLT_LOOP:
  #endif
-@@ -1197,6 +1201,14 @@ void drop_privs(void) {
+@@ -579,21 +619,28 @@ int main(int argc, char **argv) {
+             break;
+ #endif
+ 
++#if HAVE_DLT_PFLOG
++        case DLT_PFLOG:
++            link_offset = PFLOGHDR_SIZE;
++            break;
++#endif
++
+         default:
+             fprintf(stderr, "fatal: unsupported interface type %u\n", pcap_datalink(pd));
+             clean_exit(-1);
+     }
+ 
++    link_offset += vlan_offset;
++
+     if (dump_file) {
+-        if (!(pd_dump = pcap_dump_open(pd, dump_file))) {
++        pd_dump = pcap_dump_open(pd, dump_file);
++        if (!pd_dump) {
+             fprintf(stderr, "fatal: %s\n", pcap_geterr(pd));
+             clean_exit(-1);
+         } else printf("output: %s\n", dump_file);
+     }
+ 
+-#if !defined(_WIN32)
+     update_windowsize(0);
+-#endif
+ 
+ #if defined(_WIN32)
+     win32_initwinsock();
+@@ -603,7 +650,7 @@ int main(int argc, char **argv) {
+     drop_privs();
+ #endif
+ 
+-    while (pcap_loop(pd, 0, (pcap_handler)process, 0));
++    while (pcap_loop(pd, -1, (pcap_handler)process, 0));
+ 
+     clean_exit(0);
+ 
+@@ -699,11 +746,6 @@ void process(u_char *d, struct pcap_pkthdr *h, u_char 
+             data = (unsigned char *)(tcp_pkt) + tcphdr_offset;
+             len -= link_offset + ip_hl + tcphdr_offset;
+ 
+-#if USE_IPv6
+-            if (ip_ver == 6)
+-                len -= ntohs(ip6_pkt->ip6_plen);
+-#endif
+-
+             if ((int32_t)len < 0)
+                 len = 0;
+ 
+@@ -719,20 +761,11 @@ void process(u_char *d, struct pcap_pkthdr *h, u_char 
+             data = (unsigned char *)(udp_pkt) + udphdr_offset;
+             len -= link_offset + ip_hl + udphdr_offset;
+ 
+-#if USE_IPv6
+-            if (ip_ver == 6)
+-                len -= ntohs(ip6_pkt->ip6_plen);
+-#endif
+-
+             if ((int32_t)len < 0)
+                 len = 0;
+ 
+             dump_packet(h, p, ip_proto, data, len, ip_src, ip_dst,
+-#if HAVE_DUMB_UDPHDR
+-                        ntohs(udp_pkt->source), ntohs(udp_pkt->dest), 0,
+-#else
+                         ntohs(udp_pkt->uh_sport), ntohs(udp_pkt->uh_dport), 0,
+-#endif
+                         udphdr_offset, fragmented, frag_offset, frag_id);
+         } break;
+ 
+@@ -757,7 +790,7 @@ void process(u_char *d, struct pcap_pkthdr *h, u_char 
+             uint16_t icmp6hdr_offset    = (frag_offset) ? 0 : 4;
+ 
+             data = (unsigned char *)(icmp6_pkt) + icmp6hdr_offset;
+-            len -= link_offset + ip_hl + ntohs(ip6_pkt->ip6_plen) + icmp6hdr_offset;
++            len -= link_offset + ip_hl + icmp6hdr_offset;
+ 
+             if ((int32_t)len < 0)
+                 len = 0;
+@@ -808,13 +841,15 @@ void dump_packet(struct pcap_pkthdr *h, u_char *p, uin
+                  const char *ip_src, const char *ip_dst, uint16_t sport, uint16_t dport, uint8_t flags,
+                  uint16_t hdr_offset, uint8_t frag, uint16_t frag_offset, uint32_t frag_id) {
+ 
++    uint16_t match_size, match_index;
++
+     if (!show_empty && len == 0)
+         return;
+ 
+     if (len > limitlen)
+         len = limitlen;
+ 
+-    if ((len > 0 && match_func(data, len) == invert_match) && !keep_matching)
++    if ((len > 0 && match_func(data, len, &match_index, &match_size) == invert_match) && !keep_matching)
+         return;
+ 
+     if (!live_read && want_delay)
+@@ -879,15 +914,17 @@ void dump_packet(struct pcap_pkthdr *h, u_char *p, uin
+         printf("\n");
+ 
+     if (quiet < 3)
+-        dump_func(data, len);
++        dump_func(data, len, match_index, match_size);
+ 
+     if (pd_dump)
+         pcap_dump((u_char*)pd_dump, h, p);
+ }
+ 
+-int8_t re_match_func(unsigned char *data, uint32_t len) {
++int8_t re_match_func(unsigned char *data, uint32_t len, uint16_t *mindex, uint16_t *msize) {
+ #if USE_PCRE
+-    switch(pcre_exec(pattern, 0, data, (int32_t)len, 0, 0, 0, 0)) {
++
++    static int sub[2];
++    switch(pcre_exec(pattern, 0, (char const *)data, (int32_t)len, 0, 0, 0, 0)) {
+         case PCRE_ERROR_NULL:
+         case PCRE_ERROR_BADOPTION:
+         case PCRE_ERROR_BADMAGIC:
+@@ -898,15 +935,25 @@ int8_t re_match_func(unsigned char *data, uint32_t len
+ 
+         case PCRE_ERROR_NOMATCH:
+             return 0;
++
++        default:
++            *mindex = sub[0];
++            *msize  = sub[1] - sub[0];
+     }
+ #else
+-    switch (re_search(&pattern, data, (int32_t)len, 0, len, 0)) {
++
++    static struct re_registers regs;
++    switch (re_search(&pattern, (char const *)data, (int32_t)len, 0, len, &regs)) {
+         case -2:
+             perror("she's dead, jim\n");
+             clean_exit(-2);
+ 
+         case -1:
+             return 0;
++
++        default:
++            *mindex = regs.start[0];
++            *msize  = regs.end[0] - regs.start[0];
+     }
+ #endif
+ 
+@@ -919,7 +966,7 @@ int8_t re_match_func(unsigned char *data, uint32_t len
+     return 1;
+ }
+ 
+-int8_t bin_match_func(unsigned char *data, uint32_t len) {
++int8_t bin_match_func(unsigned char *data, uint32_t len, uint16_t *mindex, uint16_t *msize) {
+     int32_t stop = len - match_len;
+     int32_t i    = 0;
+ 
+@@ -934,71 +981,118 @@ int8_t bin_match_func(unsigned char *data, uint32_t le
+             if (match_after && keep_matching != match_after)
+                 keep_matching = match_after;
+ 
++            *mindex = i - 1;
++            *msize  = match_len;
++
+             return 1;
+         }
+ 
+     return 0;
+ }
+ 
+-
+-int8_t blank_match_func(unsigned char *data, uint32_t len) {
++int8_t blank_match_func(unsigned char *data, uint32_t len, uint16_t *mindex, uint16_t *msize) {
+     if (max_matches)
+         matches++;
+ 
++    *mindex = 0;
++    *msize  = 0;
++
+     return 1;
+ }
+ 
+-void dump_byline(unsigned char *data, uint32_t len) {
++void dump_byline(unsigned char *data, uint32_t len, uint16_t mindex, uint16_t msize) {
+     if (len > 0) {
+-        const unsigned char *s = data;
++        const unsigned char *s      = data;
++        uint8_t should_hilite       = (msize && enable_hilite);
++        unsigned char *hilite_start = data + mindex;
++        unsigned char *hilite_end   = hilite_start + msize;
+ 
+         while (s < data + len) {
++            if (should_hilite && s == hilite_start)
++                printf(ANSI_hilite);
++
+             printf("%c", (*s == '\n' || isprint(*s)) ? *s : nonprint_char);
+             s++;
++
++            if (should_hilite && s == hilite_end)
++                printf(ANSI_off);
+         }
+ 
+         printf("\n");
+     }
+ }
+ 
+-void dump_unwrapped(unsigned char *data, uint32_t len) {
++void dump_unwrapped(unsigned char *data, uint32_t len, uint16_t mindex, uint16_t msize) {
+     if (len > 0) {
+-        const unsigned char *s = data;
++        const unsigned char *s      = data;
++        uint8_t should_hilite       = (msize && enable_hilite);
++        unsigned char *hilite_start = data + mindex;
++        unsigned char *hilite_end   = hilite_start + msize;
+ 
+         while (s < data + len) {
++            if (should_hilite && s == hilite_start)
++                printf(ANSI_hilite);
++
+             printf("%c", isprint(*s) ? *s : nonprint_char);
+             s++;
++
++            if (should_hilite && s == hilite_end)
++                printf(ANSI_off);
+         }
+ 
+         printf("\n");
+     }
+ }
+ 
+-void dump_formatted(unsigned char *data, uint32_t len) {
++void dump_formatted(unsigned char *data, uint32_t len, uint16_t mindex, uint16_t msize) {
+     if (len > 0) {
+-        unsigned char *str = data;
+-             uint8_t width = show_hex ? 16 : (ws_col-5);
+-                uint32_t i = 0,
+-                         j = 0;
++        uint8_t should_hilite = (msize && enable_hilite);
++           unsigned char *str = data;
++             uint8_t hiliting = 0;
++                uint8_t width = show_hex ? 16 : (ws_col-5);
++                   uint32_t i = 0,
++                            j = 0;
+ 
+         while (i < len) {
+             printf("  ");
+ 
+-            if (show_hex)
++            if (show_hex) {
+                 for (j = 0; j < width; j++) {
++                    if (should_hilite && (mindex <= (i+j) && (i+j) < mindex + msize)) {
++                        hiliting = 1;
++                        printf(ANSI_hilite);
++                    }
++
+                     if (i + j < len)
+                         printf("%02x ", str[j]);
+                     else printf("   ");
+ 
+                     if ((j+1) % (width/2) == 0)
+                         printf("   ");
++
++                    if (hiliting) {
++                        hiliting = 0;
++                        printf(ANSI_off);
++                    }
+                 }
++            }
+ 
+-            for (j = 0; j < width; j++)
++            for (j = 0; j < width; j++) {
++                if (should_hilite && mindex <= (i+j) && (i+j) < mindex + msize) {
++                    hiliting = 1;
++                    printf(ANSI_hilite);
++                }
++
+                 if (i + j < len)
+                     printf("%c", isprint(str[j]) ? str[j] : nonprint_char);
+                 else printf(" ");
+ 
++                if (hiliting) {
++                    hiliting = 0;
++                    printf(ANSI_off);
++                }
++            }
++
+             str += width;
+             i   += j;
+ 
+@@ -1104,6 +1198,27 @@ void print_time_diff(struct pcap_pkthdr *h) {
+     prev_ts.tv_usec = h->ts.tv_usec;
+ }
+ 
++void print_time_offset(struct pcap_pkthdr *h) {
++    uint32_t secs, usecs;
++
++    secs = h->ts.tv_sec - prev_ts.tv_sec;
++    if (h->ts.tv_usec >= prev_ts.tv_usec)
++        usecs = h->ts.tv_usec - prev_ts.tv_usec;
++    else {
++        secs--;
++        usecs = 1000000 - (prev_ts.tv_usec - h->ts.tv_usec);
++    }
++
++    if (prev_ts.tv_sec == 0 && prev_ts.tv_usec == 0) {
++        prev_ts.tv_sec  = h->ts.tv_sec;
++        prev_ts.tv_usec = h->ts.tv_usec;
++        secs  = 0;
++        usecs = 0;
++    }
++
++    printf("+%u.%06u ", secs, usecs);
++}
++
+ void dump_delay_proc_init(struct pcap_pkthdr *h) {
+     dump_delay = &dump_delay_proc;
+ 
+@@ -1155,26 +1270,36 @@ void dump_delay_proc(struct pcap_pkthdr *h) {
+     prev_delay_ts.tv_usec = h->ts.tv_usec;
+ }
+ 
+-#if !defined(_WIN32)
+ void update_windowsize(int32_t e) {
+     if (e == 0 && ws_col_forced)
+ 
+         ws_col = ws_col_forced;
+ 
+     else if (!ws_col_forced) {
++
++#if !defined(_WIN32)
+         const struct winsize ws;
+ 
+         if (!ioctl(0, TIOCGWINSZ, &ws)) {
+             ws_row = ws.ws_row;
+             ws_col = ws.ws_col;
+-        } else {
++        }
++#else
++        CONSOLE_SCREEN_BUFFER_INFO csbi;
++        if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi)) {
++            ws_row = csbi.dwSize.Y;
++            ws_col = csbi.dwSize.X;
++        }
++#endif
++        else {
+             ws_row = 24;
+             ws_col = 80;
+         }
++
+     }
+ }
+ 
+-#if USE_DROPPRIVS
++#if !defined(_WIN32) && USE_DROPPRIVS
+ void drop_privs(void) {
+     struct passwd *pw;
+     uid_t newuid;
+@@ -1197,6 +1322,14 @@ void drop_privs(void) {
              perror("attempt to drop privileges failed");
              clean_exit(-1);
          }
@@ -45,3 +551,60 @@ $OpenBSD: patch-ngrep_c,v 1.4 2011/06/16 17:42:56 sthen Exp $
  
      if (((getgid()  != newgid) && (setgid(newgid)  == -1)) ||
          ((getegid() != newgid) && (setegid(newgid) == -1)) ||
+@@ -1209,7 +1342,6 @@ void drop_privs(void) {
+ }
+ 
+ #endif
+-#endif
+ 
+ void usage(int8_t e) {
+     printf("usage: ngrep <-"
+@@ -1234,6 +1366,7 @@ void usage(int8_t e) {
+            "   -D  is replay pcap_dumps with their recorded time intervals\n"
+            "   -t  is print timestamp every time a packet is matched\n"
+            "   -T  is print delta timestamp every time a packet is matched\n"
++           "         specify twice for delta from first match\n"
+            "   -M  is don't do multi-line match (do single-line match instead)\n"
+            "   -I  is read packet stream from pcap format file pcap_dump\n"
+            "   -O  is dump matched packets in pcap format to pcap_dump\n"
+@@ -1292,8 +1425,9 @@ void clean_exit(int32_t sig) {
+      && pd && !pcap_stats(pd, &s))
+         printf("%u received, %u dropped\n", s.ps_recv, s.ps_drop);
+ 
+-    if (pd)      pcap_close(pd);
+-    if (pd_dump) pcap_dump_close(pd_dump);
++    if (pd)           pcap_close(pd);
++    if (pd_dumppcap)  pcap_close(pd_dumppcap);
++    if (pd_dump)      pcap_dump_close(pd_dump);
+ 
+ #if defined(_WIN32)
+     if (delay_socket) closesocket(delay_socket);
+@@ -1379,6 +1513,28 @@ char *win32_usedevice(const char *index) {
+     }
+ 
+     pcap_freealldevs(alldevs);
++
++    return dev;
++}
++
++char *win32_choosedevice(void) {
++    pcap_if_t *alldevs, *d;
++    char errbuf[PCAP_ERRBUF_SIZE];
++    char *dev = NULL;
++
++    if (pcap_findalldevs(&alldevs, errbuf) == -1) {
++        perror("unable to enumerate devices");
++        clean_exit(-1);
++    }
++
++    for (d = alldevs; d != NULL; d = d->next)
++        if ((d->addresses) && (d->addresses->addr))
++            dev = _strdup(d->name);
++
++    pcap_freealldevs(alldevs);
++
++    if (!dev)
++        dev = pcap_lookupdev(errbuf);
+ 
+     return dev;
+ }

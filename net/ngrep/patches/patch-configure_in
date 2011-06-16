@@ -1,5 +1,5 @@
 --- configure.in.orig	Wed Nov 15 03:43:56 2006
-+++ configure.in	Thu Mar 26 22:07:10 2009
++++ configure.in	Thu Jun 16 16:09:24 2011
 @@ -111,47 +111,12 @@ else
  fi
  
@@ -51,11 +51,10 @@
  echo
  echo 'Configuring Network Grep (ngrep) ...'
  echo 
-@@ -193,18 +158,6 @@ unsigned short bar = foo.source;
- 
+@@ -194,18 +159,6 @@ unsigned short bar = foo.source;
  *bsd*)
  	AC_SUBST(OS, BSD)
--
+ 
 -	if test "$USE_PCAP_RESTART" = "0"; then 
 -
 -        AC_MSG_WARN(
@@ -67,6 +66,34 @@
 -	sleep 3
 -
 -	fi
- 
+-
          ;;
  
+ *solaris*)
+@@ -381,6 +334,18 @@ yes
+ [HAVE_DLT_RAW="1" && echo yes], [HAVE_DLT_RAW="0" && echo no])
+ 
+ 
++present=""
++AC_MSG_CHECKING(for DLT_PFLOG in bpf.h)
++AC_EGREP_CPP(yes,
++[
++#include <$BPF>
++#ifdef DLT_PFLOG
++yes
++#endif
++],
++[HAVE_DLT_PFLOG="1" && echo yes], [HAVE_DLT_PFLOG="0" && echo no])
++
++
+ dnl
+ dnl Now that we're past the OS-specific stuff, which could have
+ dnl modified our USE_* and other defines, define them all now.
+@@ -397,6 +362,7 @@ AC_DEFINE_UNQUOTED(DROPPRIVS_USER,           "$DROPPRI
+ AC_DEFINE_UNQUOTED(HAVE_DUMB_UDPHDR,          $HAVE_DUMB_UDPHDR,          [whether to accommodate broken redhat-glibc udphdr declaration (default no)])
+ 
+ AC_DEFINE_UNQUOTED(HAVE_DLT_RAW,              $HAVE_DLT_RAW,              [presence of DLT_RAW in bpf.h]) 
++AC_DEFINE_UNQUOTED(HAVE_DLT_PFLOG,            $HAVE_DLT_PFLOG,            [presence of DLT_PFLOG in bpf.h]) 
+ AC_DEFINE_UNQUOTED(HAVE_DLT_IEEE802_11,       $HAVE_DLT_IEEE802_11,       [presence of DLT_IEEE802_11 in bpf.h]) 
+ AC_DEFINE_UNQUOTED(HAVE_DLT_IEEE802_11_RADIO, $HAVE_DLT_IEEE802_11_RADIO, [presence of DLT_IEEE802_11_RADIO in bpf.h]) 
+ AC_DEFINE_UNQUOTED(HAVE_DLT_LOOP,             $HAVE_DLT_LOOP,             [presence of DLT_LOOP in bpf.h]) 
