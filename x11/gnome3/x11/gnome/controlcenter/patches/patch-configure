@@ -1,0 +1,71 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2011/06/16 10:07:57 ajacoutot Exp $
+--- configure.orig	Tue May 24 10:49:23 2011
++++ configure	Tue May 24 11:13:07 2011
+@@ -15061,21 +15061,15 @@ if test -n "$SOUND_PANEL_CFLAGS"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$COMMON_MODULES libxml-2.0
+                   libcanberra-gtk3 >= \$CANBERRA_REQUIRED_VERSION
+-                  libpulse >= \$PA_REQUIRED_VERSION
+-                  libpulse-mainloop-glib >= \$PA_REQUIRED_VERSION
+                   gconf-2.0\""; } >&5
+   ($PKG_CONFIG --exists --print-errors "$COMMON_MODULES libxml-2.0
+                   libcanberra-gtk3 >= $CANBERRA_REQUIRED_VERSION
+-                  libpulse >= $PA_REQUIRED_VERSION
+-                  libpulse-mainloop-glib >= $PA_REQUIRED_VERSION
+                   gconf-2.0") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_SOUND_PANEL_CFLAGS=`$PKG_CONFIG --cflags "$COMMON_MODULES libxml-2.0
+                   libcanberra-gtk3 >= $CANBERRA_REQUIRED_VERSION
+-                  libpulse >= $PA_REQUIRED_VERSION
+-                  libpulse-mainloop-glib >= $PA_REQUIRED_VERSION
+                   gconf-2.0" 2>/dev/null`
+ else
+   pkg_failed=yes
+@@ -15089,21 +15083,15 @@ if test -n "$SOUND_PANEL_LIBS"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"\$COMMON_MODULES libxml-2.0
+                   libcanberra-gtk3 >= \$CANBERRA_REQUIRED_VERSION
+-                  libpulse >= \$PA_REQUIRED_VERSION
+-                  libpulse-mainloop-glib >= \$PA_REQUIRED_VERSION
+                   gconf-2.0\""; } >&5
+   ($PKG_CONFIG --exists --print-errors "$COMMON_MODULES libxml-2.0
+                   libcanberra-gtk3 >= $CANBERRA_REQUIRED_VERSION
+-                  libpulse >= $PA_REQUIRED_VERSION
+-                  libpulse-mainloop-glib >= $PA_REQUIRED_VERSION
+                   gconf-2.0") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_SOUND_PANEL_LIBS=`$PKG_CONFIG --libs "$COMMON_MODULES libxml-2.0
+                   libcanberra-gtk3 >= $CANBERRA_REQUIRED_VERSION
+-                  libpulse >= $PA_REQUIRED_VERSION
+-                  libpulse-mainloop-glib >= $PA_REQUIRED_VERSION
+                   gconf-2.0" 2>/dev/null`
+ else
+   pkg_failed=yes
+@@ -15126,14 +15114,10 @@ fi
+         if test $_pkg_short_errors_supported = yes; then
+ 	        SOUND_PANEL_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "$COMMON_MODULES libxml-2.0
+                   libcanberra-gtk3 >= $CANBERRA_REQUIRED_VERSION
+-                  libpulse >= $PA_REQUIRED_VERSION
+-                  libpulse-mainloop-glib >= $PA_REQUIRED_VERSION
+                   gconf-2.0" 2>&1`
+         else
+ 	        SOUND_PANEL_PKG_ERRORS=`$PKG_CONFIG --print-errors "$COMMON_MODULES libxml-2.0
+                   libcanberra-gtk3 >= $CANBERRA_REQUIRED_VERSION
+-                  libpulse >= $PA_REQUIRED_VERSION
+-                  libpulse-mainloop-glib >= $PA_REQUIRED_VERSION
+                   gconf-2.0" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+@@ -15141,8 +15125,6 @@ fi
+ 
+ 	as_fn_error $? "Package requirements ($COMMON_MODULES libxml-2.0
+                   libcanberra-gtk3 >= $CANBERRA_REQUIRED_VERSION
+-                  libpulse >= $PA_REQUIRED_VERSION
+-                  libpulse-mainloop-glib >= $PA_REQUIRED_VERSION
+                   gconf-2.0) were not met:
+ 
+ $SOUND_PANEL_PKG_ERRORS
