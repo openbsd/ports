@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.57 2011/05/14 22:18:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2011/06/16 15:30:14 ajacoutot Exp $
 
 COMMENT-main=	configuration database system for GNOME
 COMMENT-polkit=	PolicyKit integration for GConf2
 COMMENT-gtk=	GConf2 configuration checker
 
 GNOME_PROJECT=	GConf
-GNOME_VERSION=	2.32.3
+GNOME_VERSION=	2.32.4
 
 PKGNAME-main=	gconf2-${GNOME_VERSION}
 PKGNAME-polkit=	gconf2-polkit-${GNOME_VERSION}
@@ -15,9 +15,6 @@ FULLPKGNAME-main= gconf2-${GNOME_VERSION}
 FULLPKGPATH-main= devel/gconf2,-main
 FULLPKGNAME-polkit= gconf2-polkit-${GNOME_VERSION}
 FULLPKGPATH-polkit= devel/gconf2,-polkit
-
-REVISION-main=	0
-REVISION-polkit= 1
 
 SHARED_LIBS +=	gconf-2              6.2      # 5.5
 
