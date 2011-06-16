@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/02 17:09:32 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/16 08:58:32 sthen Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	GLib ICE implementation
 
 DISTNAME =	libnice-0.1.0
+REVISION =	0
 SHARED_LIBS +=  nice                 1.1
 CATEGORIES =	net
 

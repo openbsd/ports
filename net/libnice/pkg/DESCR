@@ -1,4 +1,4 @@
-libnice is an implementation of the IETF's draft Interactice 
+libnice is an implementation of the IETF's draft Interactive 
 Connectivity Establishment standard (ICE). It provides GLib-based 
 library, libnice and GStreamer elements.
 
