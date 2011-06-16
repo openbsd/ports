@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_nautilus-application_c,v 1.1 2011/06/16 12:50:49 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=652724
+
+--- src/nautilus-application.c.orig	Thu Jun 16 14:31:06 2011
++++ src/nautilus-application.c	Thu Jun 16 14:31:20 2011
+@@ -567,14 +567,16 @@ nautilus_application_close_all_windows (NautilusApplic
+ 		NautilusWindow *window;
+ 		
+ 		window = NAUTILUS_WINDOW (l->data);
+-		gtk_widget_hide (GTK_WIDGET (window));
++		if (!NAUTILUS_IS_DESKTOP_WINDOW (window))
++			gtk_widget_hide (GTK_WIDGET (window));
+ 	}
+ 
+ 	for (l = list_copy; l != NULL; l = l->next) {
+ 		NautilusWindow *window;
+ 		
+ 		window = NAUTILUS_WINDOW (l->data);
+-		nautilus_window_close (window);
++		if (!NAUTILUS_IS_DESKTOP_WINDOW (window))
++			nautilus_window_close (window);
+ 	}
+ 	g_list_free (list_copy);
+ }
