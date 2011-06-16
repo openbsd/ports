@@ -1,16 +1,24 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/28 21:18:47 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/06/16 08:53:36 jasper Exp $
 @bin bin/naken430asm
 @bin bin/naken430util
 share/naken430asm/
 share/naken430asm/examples/
+share/naken430asm/examples/call.asm
+share/naken430asm/examples/comments.asm
 share/naken430asm/examples/defines.asm
+share/naken430asm/examples/expression.asm
 share/naken430asm/examples/guitar_proc.asm
 share/naken430asm/examples/ifdef.asm
 share/naken430asm/examples/launchpad_blink.asm
 share/naken430asm/examples/launchpad_blink_gcc.asm
+share/naken430asm/examples/nested_defs.asm
 share/naken430asm/examples/octal.asm
 share/naken430asm/examples/olimex.asm
+share/naken430asm/examples/overflow.asm
+share/naken430asm/examples/rotate.asm
 share/naken430asm/examples/simulator.asm
+share/naken430asm/examples/subc.asm
+share/naken430asm/examples/subtract.asm
 share/naken430asm/examples/test.asm
 share/naken430asm/examples/test.inc
 share/naken430asm/examples/test2.asm
