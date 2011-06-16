@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2011/06/08 17:41:57 rpointel Exp $
+# $OpenBSD: Makefile,v 1.133 2011/06/16 08:38:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,16 +6,12 @@ COMMENT-main=	multi-platform graphical toolkit
 COMMENT-docs=	gtk+2 documentation
 COMMENT-cups=	gtk+2 CUPS print backend
 
-V=		2.24.4
+V=		2.24.5
 DISTNAME=	gtk+-${V}
 
 PKGNAME-main=	gtk+2-${V}
 PKGNAME-docs=	gtk+2-docs-${V}
 PKGNAME-cups=	gtk+2-cups-${V}
-
-REVISION-main=	4
-REVISION-docs=	0
-REVISION-cups=	0
 
 CATEGORIES=	x11 devel
 
@@ -51,7 +47,7 @@ RUN_DEPENDS-main= ${RUN_DEPENDS} \
 		misc/shared-mime-info
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
-		devel/glib2>=2.26.0 \
+		devel/glib2>=2.28.8 \
 		devel/pango>=1.28.4p0 \
 		devel/atk>=2.0.0p0 \
 		graphics/gdk-pixbuf2>=2.22.1p0
