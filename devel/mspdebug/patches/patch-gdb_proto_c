@@ -1,0 +1,14 @@
+$OpenBSD: patch-gdb_proto_c,v 1.1 2011/06/16 08:51:07 jasper Exp $
+
+Fix implicit declaration of memset().
+
+--- gdb_proto.c.orig	Thu Jun 16 10:48:43 2011
++++ gdb_proto.c	Thu Jun 16 10:48:58 2011
+@@ -23,6 +23,7 @@
+ #include <sys/socket.h>
+ #include <unistd.h>
+ #include <errno.h>
++#include <string.h>
+ 
+ #include "gdb_proto.h"
+ #include "output.h"
