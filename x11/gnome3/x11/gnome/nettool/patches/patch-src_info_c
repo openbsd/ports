@@ -1,23 +1,24 @@
-$OpenBSD: patch-src_info_c,v 1.3 2011/06/15 17:01:07 ajacoutot Exp $
+$OpenBSD: patch-src_info_c,v 1.4 2011/06/16 11:01:36 ajacoutot Exp $
 
-- Add OpenBSD/FreeBSD specific code
-- g_object_unref() prevents interface name and pixmap from being displayed,
-  and creates a storm of critial gtk warnings, upstream bz: #647896.
+https://bugzilla.gnome.org/show_bug.cgi?id=652713
+https://bugzilla.gnome.org/show_bug.cgi?id=647896
 
 --- src/info.c.orig	Thu Dec  2 10:26:14 2010
-+++ src/info.c	Wed Jun 15 18:58:08 2011
-@@ -20,6 +20,10 @@
++++ src/info.c	Thu Jun 16 12:43:17 2011
+@@ -20,6 +20,12 @@
  #include <gtk/gtk.h>
  #include <glib/gi18n.h>
  #include <glib/gprintf.h>
++#if defined (__FreeBSD__) || defined (__OpenBSD__)
 +#include <sys/types.h>
 +#include <string.h>
 +#include <errno.h>
 +#include <unistd.h>
++#endif
  
  #ifdef HAVE_CONFIG_H
  #  include <config.h>
-@@ -37,6 +41,9 @@
+@@ -37,6 +43,9 @@
  #include <sys/ioctl.h>
  #include <stdlib.h>
  #include <net/if.h>
@@ -27,12 +28,12 @@ $OpenBSD: patch-src_info_c,v 1.3 2011/06/15 17:01:07 ajacoutot Exp $
  
  #include <glibtop.h>
  #include <glibtop/netlist.h>
-@@ -131,9 +138,44 @@ info_get_interface_from_dev_name (const gchar *dev_nam
+@@ -131,9 +140,39 @@ info_get_interface_from_dev_name (const gchar *dev_nam
  {
  	gint i;
  	gchar *path;
--	
 +	gchar *dev_type = NULL;
+ 	
 +#if defined (__FreeBSD__) || defined (__OpenBSD__)
 +	int s;
 +	struct ifmediareq ifmr;
@@ -47,17 +48,11 @@ $OpenBSD: patch-src_info_c,v 1.3 2011/06/15 17:01:07 ajacoutot Exp $
 +				case IFM_ETHER:
 +					dev_type = "eth";
 +					break;
-+				case IFM_FDDI:
-+#ifdef IFM_TOKEN
-+				case IFM_TOKEN:
-+#endif
-+#ifdef IFM_ATM
-+				case IFM_ATM:
-+#endif
-+					dev_type = "other_type";
-+					break;
 +				case IFM_IEEE80211:
 +					dev_type = "wlan";
++					break;
++				default:
++					dev_type = "other_type";
 +					break;
 +			}
 +		}
@@ -74,7 +69,7 @@ $OpenBSD: patch-src_info_c,v 1.3 2011/06/15 17:01:07 ajacoutot Exp $
  			(*iface) = g_strdup_printf ("%s (%s)", _(info_iface_desc[i].name), dev_name);
  			if (info_iface_desc[i].pixbuf == NULL) {
  				path = g_build_filename (PIXMAPS_DIR, info_iface_desc[i].icon, NULL);
-@@ -200,13 +242,13 @@ info_load_iface (Netinfo *info)
+@@ -200,13 +239,13 @@ info_load_iface (Netinfo *info)
  	gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (info->combo), renderer, TRUE);
  	gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (info->combo), renderer,
  					"pixbuf", 0, NULL);
