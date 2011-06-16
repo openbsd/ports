@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/24 08:23:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/16 21:11:56 sthen Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	conferencing application for asterisk
 
-V=		1.5
-DISTNAME=	appkonference-$V
+DISTNAME=	appkonference-1.5
 
 CATEGORIES=	telephony
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=appkonference/$V/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=appkonference/}
 
 HOMEPAGE=	http://sourceforge.net/projects/appkonference/
 
