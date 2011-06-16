@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/06/16 17:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2011/06/16 17:17:35 sthen Exp $
 
 COMMENT=		small tiling window manager
 
@@ -23,6 +23,7 @@ WANTLIB += c X11 Xrandr util
 MASTER_SITES=	http://opensource.conformal.com/snapshots/scrotwm/
 
 NO_REGRESS=	Yes
+# nroff is specifically used to format the Russian manpage
 USE_GROFF=	Yes
 
 RUN_DEPENDS=	x11/dmenu>=3.9
