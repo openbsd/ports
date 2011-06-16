@@ -1,0 +1,20 @@
+$OpenBSD: patch-iodbcadm_gtk_administrator_c,v 1.1 2011/06/16 01:29:57 sthen Exp $
+--- iodbcadm/gtk/administrator.c.orig	Thu Sep 10 14:04:55 2009
++++ iodbcadm/gtk/administrator.c	Fri Jun  3 12:35:57 2011
+@@ -111,11 +111,11 @@ static struct
+   char *lib_ver_sym;
+ } iODBC_Components[] =
+ {
+-  {"libiodbc.so.2", "iODBC Driver Manager", "iodbc_version"},
+-  {"libiodbcadm.so.2", "iODBC Administrator", "iodbcadm_version"},
+-  {"libiodbcinst.so.2", "iODBC Installer", "iodbcinst_version"},
+-  {"libdrvproxy.so.2", "iODBC Driver Setup Proxy", "iodbcproxy_version"},
+-  {"libtranslator.so.2", "iODBC Translation Manager", "iodbctrans_version"}
++  {"libiodbc.so", "iODBC Driver Manager", "iodbc_version"},
++  {"libiodbcadm.so", "iODBC Administrator", "iodbcadm_version"},
++  {"libiodbcinst.so", "iODBC Installer", "iodbcinst_version"},
++  {"libdrvproxy.so", "iODBC Driver Setup Proxy", "iodbcproxy_version"},
++  {"libtranslator.so", "iODBC Translation Manager", "iodbctrans_version"}
+ };
+ 
+ 

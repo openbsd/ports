@@ -1,0 +1,19 @@
+$OpenBSD: patch-etc_odbcinst_ini_sample,v 1.1 2011/06/16 01:29:57 sthen Exp $
+--- etc/odbcinst.ini.sample.orig	Thu Jun 16 01:16:51 2011
++++ etc/odbcinst.ini.sample	Thu Jun 16 01:29:28 2011
+@@ -1,6 +1,11 @@
+ [ODBC Drivers]
+-OpenLink (MT) = Installed
++PostgreSQL = Installed
++FreeTDS = Installed
+ 
+-[OpenLink (MT)]
+-Driver = /home/openlink/lib/oplodbc.so.1
+-Setup  = /home/openlink/lib/oplodbc.so.1
++[PostgreSQL]
++Description = ODBC driver for PostgreSQL
++Driver      = ${LOCALBASE}/lib/psqlodbcw.so
++
++[FreeTDS]
++Description = FreeTDS ODBC driver for MSSQL
++Driver      = ${LOCALBASE}/lib/libtdsodbc.so

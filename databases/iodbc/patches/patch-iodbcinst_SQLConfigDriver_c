@@ -1,0 +1,17 @@
+$OpenBSD: patch-iodbcinst_SQLConfigDriver_c,v 1.1 2011/06/16 01:29:57 sthen Exp $
+--- iodbcinst/SQLConfigDriver.c.orig	Thu Sep 10 14:04:55 2009
++++ iodbcinst/SQLConfigDriver.c	Fri Jun  3 12:35:57 2011
+@@ -372,11 +372,11 @@ SQLConfigDriver_Internal (HWND hwndParent, WORD fReque
+ #else
+   if (waMode == 'A')
+     {
+-      CALL_CONFIG_DRIVER ("libdrvproxy.so.2");
++      CALL_CONFIG_DRIVER ("libdrvproxy.so");
+     }
+   else
+     {
+-      CALL_CONFIG_DRIVERW ("libdrvproxy.so.2");
++      CALL_CONFIG_DRIVERW ("libdrvproxy.so");
+     }
+ #endif
+ 

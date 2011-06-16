@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2011/06/06 08:10:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2011/06/16 01:29:57 sthen Exp $
 
 COMMENT-main=		ODBC 3.x driver manager
 COMMENT-admin=		ODBC 3.x driver manager admin application
 
-V=			3.52.6
-REVISION-main=		2
-REVISION-admin=		2
+V=			3.52.7
 
 DISTNAME=		libiodbc-$V
 PKGNAME=		iodbc-$V
@@ -15,13 +13,13 @@ PKGNAME-admin=		iodbc-admin-$V
 CATEGORIES=		databases
 
 SHARED_LIBS +=		iodbcinst	3.15
-SHARED_LIBS +=		iodbc		3.15
+SHARED_LIBS +=		iodbc		3.16
 SHARED_LIBS +=		iodbcadm	3.15
 SHARED_LIBS +=		drvproxy	3.15
 
 HOMEPAGE=		http://www.iodbc.org/
 
-MAINTAINER=		Andrew Dalgleish <openbsd@ajd.net.au>
+MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 
 # Dual licensed: BSD or LGPLv2
 PERMIT_PACKAGE_CDROM=	yes
@@ -34,7 +32,7 @@ MASTER_SITES=		${HOMEPAGE}downloads/iODBC/
 MODULES=		devel/gettext
 
 USE_LIBTOOL=		Yes
-USE_GROFF =	Yes
+USE_GROFF=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-iodbc-inidir="${SYSCONFDIR}/iodbc" \
@@ -42,15 +40,15 @@ CONFIGURE_ARGS=		--with-iodbc-inidir="${SYSCONFDIR}/iodbc" \
 
 MULTI_PACKAGES=		-main -admin
 
-WANTLIB-main =		c pthread
+WANTLIB-main=		c pthread
 
-LIB_DEPENDS-admin =	${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-admin=	${MODGETTEXT_LIB_DEPENDS} \
 			databases/iodbc,-main \
 			x11/gtk+2
 
-LIB_DEPENDS-main =	# this space intentionally left blank
+LIB_DEPENDS-main=	# empty
 
-WANTLIB-admin = ${MODGETTEXT_WANTLIB} c pthread \
+WANTLIB-admin= ${MODGETTEXT_WANTLIB} c pthread \
         GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
         Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo drm \
         expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 \
@@ -59,9 +57,11 @@ WANTLIB-admin = ${MODGETTEXT_WANTLIB} c pthread \
         pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xcb-render \
         xcb-shm z
 
+EXDIR=${PREFIX}/share/examples/iodbc/
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/iodbc
-	${INSTALL_DATA} ${WRKSRC}/etc/*.ini.sample \
-		${PREFIX}/share/examples/iodbc
+	${INSTALL_DATA_DIR} ${EXDIR}
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
+	    ${WRKSRC}/etc/odbc.ini.sample ${EXDIR}/odbc.ini.sample \
+	    ${WRKSRC}/etc/odbcinst.ini.sample ${EXDIR}/odbcinst.ini.sample
 
 .include <bsd.port.mk>

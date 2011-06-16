@@ -1,0 +1,17 @@
+$OpenBSD: patch-iodbcinst_SQLCreateDataSource_c,v 1.1 2011/06/16 01:29:57 sthen Exp $
+--- iodbcinst/SQLCreateDataSource.c.orig	Thu Sep 10 14:04:55 2009
++++ iodbcinst/SQLCreateDataSource.c	Fri Jun  3 12:35:57 2011
+@@ -157,11 +157,11 @@ CreateDataSource (HWND parent, LPCSTR lpszDSN, SQLCHAR
+ #else
+   if (waMode == 'A')
+     {
+-      CALL_DRVCONN_DIALBOX ("libiodbcadm.so.2");
++      CALL_DRVCONN_DIALBOX ("libiodbcadm.so");
+     }
+   else
+     {
+-      CALL_DRVCONN_DIALBOXW ("libiodbcadm.so.2");
++      CALL_DRVCONN_DIALBOXW ("libiodbcadm.so");
+     }
+ #endif
+ 

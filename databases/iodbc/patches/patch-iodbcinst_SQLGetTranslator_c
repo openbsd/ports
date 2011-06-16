@@ -1,0 +1,21 @@
+$OpenBSD: patch-iodbcinst_SQLGetTranslator_c,v 1.1 2011/06/16 01:29:57 sthen Exp $
+--- iodbcinst/SQLGetTranslator.c.orig	Thu Sep 10 14:04:55 2009
++++ iodbcinst/SQLGetTranslator.c	Fri Jun  3 12:35:57 2011
+@@ -172,7 +172,7 @@ GetTranslator (HWND hwndParent, LPSTR lpszName, WORD c
+ 	    CFRelease (libname);
+ 	}
+ #else
+-      CALL_TRSCHOOSE_DIALBOX ("libiodbcadm.so.2");
++      CALL_TRSCHOOSE_DIALBOX ("libiodbcadm.so");
+ #endif
+ 
+       if (ret == SQL_NO_DATA)
+@@ -229,7 +229,7 @@ GetTranslator (HWND hwndParent, LPSTR lpszName, WORD c
+ 	    }
+ 
+ 	  /* The last ressort, a proxy driver */
+-	  CALL_CONFIG_TRANSLATOR ("libtranslator.so.2");
++	  CALL_CONFIG_TRANSLATOR ("libtranslator.so");
+ 
+ 	  /* Error : ConfigDSN could no be found */
+ 	  PUSH_ERROR (ODBC_ERROR_LOAD_LIB_FAILED);

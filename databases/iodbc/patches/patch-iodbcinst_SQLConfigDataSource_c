@@ -1,0 +1,17 @@
+$OpenBSD: patch-iodbcinst_SQLConfigDataSource_c,v 1.1 2011/06/16 01:29:57 sthen Exp $
+--- iodbcinst/SQLConfigDataSource.c.orig	Thu Sep 10 14:04:55 2009
++++ iodbcinst/SQLConfigDataSource.c	Fri Jun  3 12:35:57 2011
+@@ -452,11 +452,11 @@ SQLConfigDataSource_Internal (HWND hwndParent, WORD fR
+ #else
+   if (waMode == 'A')
+     {
+-      CALL_CONFIG_DSN ("libdrvproxy.so.2");
++      CALL_CONFIG_DSN ("libdrvproxy.so");
+     }
+   else
+     {
+-      CALL_CONFIG_DSNW ("libdrvproxy.so.2");
++      CALL_CONFIG_DSNW ("libdrvproxy.so");
+     }
+ #endif
+ 
