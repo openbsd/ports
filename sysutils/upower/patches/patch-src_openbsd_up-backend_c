@@ -1,0 +1,25 @@
+$OpenBSD: patch-src_openbsd_up-backend_c,v 1.1 2011/06/17 15:08:36 landry Exp $
+Return true if apm_fd wasn't initialized yet - fixes history
+--- src/openbsd/up-backend.c.orig	Thu Jun 16 09:19:40 2011
++++ src/openbsd/up-backend.c	Thu Jun 16 09:20:38 2011
+@@ -62,7 +62,7 @@ enum {
+ 
+ static guint signals [SIGNAL_LAST] = { 0 };
+ 
+-int apm_fd; /* ugly global.. needs to move to a device native object */
++int apm_fd = 0; /* ugly global.. needs to move to a device native object */
+ 
+ G_DEFINE_TYPE (UpBackend, up_backend, G_TYPE_OBJECT)
+ 
+@@ -423,6 +423,11 @@ up_apm_device_refresh(UpDevice* device)
+ 	UpDeviceKind type;
+ 	GTimeVal timeval;
+ 	gboolean ret;
++
++	if (apm_fd == 0) {
++		g_debug("refresh callback called but apm_fd is not initialized yet");
++		return TRUE;
++	}
+ 
+ 	g_object_get (device, "type", &type, NULL);
+ 

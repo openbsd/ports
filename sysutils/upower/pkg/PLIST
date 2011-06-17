@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/24 16:02:39 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/06/17 15:08:36 landry Exp $
 %%SHARED%%
 @bin bin/upower
 include/libupower-glib/
@@ -33,6 +33,7 @@ share/dbus-1/system-services/
 share/dbus-1/system-services/org.freedesktop.UPower.service
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/upower/
+@sample /var/db/upower/
 share/examples/upower/UPower/
 @sample ${SYSCONFDIR}/UPower/
 share/examples/upower/UPower/UPower.conf
