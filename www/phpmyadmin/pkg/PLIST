@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.34 2011/05/24 06:34:58 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.35 2011/06/17 15:03:45 giovanni Exp $
 @group daemon
 phpMyAdmin/
 phpMyAdmin/CREDITS
@@ -673,6 +673,9 @@ phpMyAdmin/locale/uz@latin/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/zh_CN/
 phpMyAdmin/locale/zh_CN/LC_MESSAGES/
 phpMyAdmin/locale/zh_CN/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/zh_TW/
+phpMyAdmin/locale/zh_TW/LC_MESSAGES/
+phpMyAdmin/locale/zh_TW/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/main.php
 phpMyAdmin/navigation.php
 phpMyAdmin/phpdoctor.ini
@@ -833,6 +836,7 @@ phpMyAdmin/themes/original/img/b_bookmark.png
 phpMyAdmin/themes/original/img/b_browse.png
 phpMyAdmin/themes/original/img/b_calendar.png
 phpMyAdmin/themes/original/img/b_chart.png
+phpMyAdmin/themes/original/img/b_close.png
 phpMyAdmin/themes/original/img/b_comment.png
 phpMyAdmin/themes/original/img/b_dbstatistics.png
 phpMyAdmin/themes/original/img/b_deltbl.png
@@ -859,6 +863,7 @@ phpMyAdmin/themes/original/img/b_primary.png
 phpMyAdmin/themes/original/img/b_print.png
 phpMyAdmin/themes/original/img/b_props.png
 phpMyAdmin/themes/original/img/b_relations.png
+phpMyAdmin/themes/original/img/b_save.png
 phpMyAdmin/themes/original/img/b_sbrowse.png
 phpMyAdmin/themes/original/img/b_search.png
 phpMyAdmin/themes/original/img/b_selboard.png
@@ -970,6 +975,7 @@ phpMyAdmin/themes/pmahomme/img/b_bookmark.png
 phpMyAdmin/themes/pmahomme/img/b_browse.png
 phpMyAdmin/themes/pmahomme/img/b_calendar.png
 phpMyAdmin/themes/pmahomme/img/b_chart.png
+phpMyAdmin/themes/pmahomme/img/b_close.png
 phpMyAdmin/themes/pmahomme/img/b_comment.png
 phpMyAdmin/themes/pmahomme/img/b_dbstatistics.png
 phpMyAdmin/themes/pmahomme/img/b_deltbl.png
