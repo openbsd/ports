@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_daemon_c,v 1.4 2011/05/29 08:27:05 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_c,v 1.5 2011/06/17 14:27:55 ajacoutot Exp $
 --- src/daemon.c.orig	Thu May 19 05:39:12 2011
-+++ src/daemon.c	Fri May 27 20:13:38 2011
++++ src/daemon.c	Fri Jun 17 16:25:09 2011
 @@ -50,11 +50,14 @@
  #define PATH_SHADOW "/etc/shadow"
  #define PATH_LOGIN_DEFS "/etc/login.defs"
@@ -169,11 +169,10 @@ $OpenBSD: patch-src_daemon_c,v 1.4 2011/05/29 08:27:05 ajacoutot Exp $
          }
          else {
                  throw_error (context, ERROR_FAILED, "Don't know how to add user of type %d", cd->account_type);
-@@ -1211,6 +1277,23 @@ daemon_delete_user_authorized_cb (Daemon              
- 
+@@ -1212,6 +1278,23 @@ daemon_delete_user_authorized_cb (Daemon              
                  return;
          }
-+
+ 
 +#ifdef __OpenBSD__
 +        GError *gerror;
 +        gchar *gargv[2];
@@ -190,6 +189,25 @@ $OpenBSD: patch-src_daemon_c,v 1.4 2011/05/29 08:27:05 ajacoutot Exp $
 +                return;
 +        }
 +#endif
- 
++
          sys_log (context, "delete user '%s' (%d)", pwent->pw_name, ud->uid);
  
+         argv[0] = "/usr/sbin/userdel";
+@@ -1381,7 +1464,7 @@ load_autologin (Daemon      *daemon,
+         GError *local_error;
+         gchar *string;
+ 
+-        filename = "/etc/gdm/custom.conf";
++        filename = "${SYSCONFDIR}/X11/gdm/custom.conf";
+ 
+         keyfile = g_key_file_new ();
+         if (!g_key_file_load_from_file (keyfile,
+@@ -1431,7 +1514,7 @@ save_autologin (Daemon      *daemon,
+         gchar *data;
+         gboolean result;
+ 
+-        filename = "/etc/gdm/custom.conf";
++        filename = "${SYSCONFDIR}/X11/gdm/custom.conf";
+ 
+         keyfile = g_key_file_new ();
+         if (!g_key_file_load_from_file (keyfile,
