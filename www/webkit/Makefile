@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.50 2011/06/08 18:15:30 rpointel Exp $
+# $OpenBSD: Makefile,v 1.51 2011/06/17 22:10:40 landry Exp $
 
 COMMENT =	open source web browser engine for Gtk+
 
-V =		1.4.0
+V =		1.4.1
 DISTNAME =	webkit-${V}
-REVISION =	3
 EPOCH =		0
 CATEGORIES =	www
 
@@ -13,8 +12,9 @@ MASTER_SITES =	${HOMEPAGE}
 
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
-SHARED_LIBS +=  webkitgtk-1.0 0.0                # .7.0
-SHARED_LIBS +=  webkitgtk-3.0 0.0                # .7.0
+# XXX should be handled in .if FLAVOR block
+SHARED_LIBS +=  webkitgtk-1.0 0.1                # .7.0
+SHARED_LIBS +=  webkitgtk-3.0 0.1                # .7.0
 
 # LGPLv2 and BSD
 PERMIT_PACKAGE_CDROM =	Yes
