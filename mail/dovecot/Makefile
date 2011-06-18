@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.169 2011/06/04 11:38:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.170 2011/06/18 22:41:27 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,7 +15,7 @@ V_DOVECOT=	2.0.13
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
 PKGNAME-server=	dovecot-${V_DOVECOT}
-REVISION-server= 3
+REVISION-server= 4
 PKGNAME-ldap=	dovecot-ldap-${V_DOVECOT}
 PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
 PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
@@ -38,7 +38,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB-server=	${MODLIBICONV_WANTLIB} bz2 c crypto gssapi krb5 ssl z
+WANTLIB-server=	${MODLIBICONV_WANTLIB} asn1 bz2 c crypto gssapi krb5 ssl z
 
 MODULES=	converters/libiconv
 LIB_DEPENDS+=	archivers/bzip2
@@ -50,8 +50,7 @@ PSEUDO_FLAVORS=	no_db no_ldap no_mysql no_postgresql no_sqlite
 FLAVOR?=
 
 USE_LIBTOOL=	Yes
-AUTOCONF_VERSION= 2.67
-CONFIGURE_STYLE= autoconf
+CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--localstatedir=/var \
 		--with-gssapi \
 		--with-rundir=/var/dovecot \
@@ -60,7 +59,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--without-pam \
 		--without-shadow \
 		--without-vpopmail
-CONFIGURE_ENV=	CPPFLAGS="-I/usr/include/kerberosV -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 PSEUDO_FLAVORS=	no_db no_ldap no_mysql no_postgresql no_sqlite
@@ -97,6 +96,9 @@ LIB_DEPENDS-sqlite= databases/sqlite3
 RUN_DEPENDS-sqlite= ${BASE_PKGPATH}=${V_DOVECOT}
 WANTLIB-sqlite=	sqlite3 z
 .endif
+
+post-extract:
+	@${INSTALL} -m 555 ${FILESDIR}/krb5-config ${WRKDIR}/bin
 
 pre-build:
 	@${SUBST_CMD} ${WRKSRC}/doc/example-config/conf.d/10-mail.conf

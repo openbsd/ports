@@ -1,0 +1,9 @@
+#! /bin/sh
+
+case x$1 in
+x--libs)
+	echo '-lgssapi -lkrb5 -lasn1 -lcrypto';;
+x--cflags)
+	echo '-I/usr/include/kerberosV';;
+esac
+exit 0
