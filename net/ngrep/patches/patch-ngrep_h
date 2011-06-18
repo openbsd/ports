@@ -1,15 +1,7 @@
-$OpenBSD: patch-ngrep_h,v 1.2 2011/06/16 21:21:43 sthen Exp $
---- ngrep.h.orig	Thu Jun 16 16:04:18 2011
-+++ ngrep.h	Thu Jun 16 16:04:12 2011
-@@ -1,13 +1,13 @@
- /*
-- * $Id: patch-ngrep_h,v 1.2 2011/06/16 21:21:43 sthen Exp $
-+ * $Id: patch-ngrep_h,v 1.2 2011/06/16 21:21:43 sthen Exp $
-  *
-- * Copyright (c) 2006  Jordan Ritter <jpr5@darkridge.com>
-+ * Copyright (c) 2007  Jordan Ritter <jpr5@darkridge.com>
-  *
-  * Please refer to the LICENSE file for more information.
+$OpenBSD: patch-ngrep_h,v 1.3 2011/06/18 14:02:38 kili Exp $
+--- ngrep.h.orig	Tue Nov 28 14:38:43 2006
++++ ngrep.h	Sat Jun 18 14:55:58 2011
+@@ -7,7 +7,7 @@
   *
   */
  

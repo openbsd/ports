@@ -1,9 +1,7 @@
-$OpenBSD: patch-ngrep_8,v 1.5 2011/06/16 21:21:43 sthen Exp $
---- ngrep.8.orig	Thu Jun 16 16:04:18 2011
-+++ ngrep.8	Thu Jun 16 16:04:12 2011
-@@ -1,12 +1,12 @@
--.\" $Id: patch-ngrep_8,v 1.5 2011/06/16 21:21:43 sthen Exp $
-+.\" $Id: patch-ngrep_8,v 1.5 2011/06/16 21:21:43 sthen Exp $
+$OpenBSD: patch-ngrep_8,v 1.6 2011/06/18 14:02:38 kili Exp $
+--- ngrep.8.orig	Tue Nov 28 14:36:31 2006
++++ ngrep.8	Sat Jun 18 14:57:33 2011
+@@ -2,11 +2,11 @@
  .\"
  .\" All content, except portions of the bpf filter explanation, are:
  .\"

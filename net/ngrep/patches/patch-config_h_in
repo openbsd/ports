@@ -1,15 +1,6 @@
-$OpenBSD: patch-config_h_in,v 1.1 2011/06/16 21:21:43 sthen Exp $
---- config.h.in.orig	Thu Jun 16 16:04:01 2011
-+++ config.h.in	Thu Jun 16 16:04:12 2011
-@@ -1,7 +1,7 @@
- /*
-  * $Id: patch-config_h_in,v 1.1 2011/06/16 21:21:43 sthen Exp $
-  *
-- * Copyright (c) 2006  Jordan Ritter <jpr5@darkridge.com>
-+ * Copyright (c) 2007  Jordan Ritter <jpr5@darkridge.com>
-  *
-  * Please refer to the LICENSE file for more information.
-  *
+$OpenBSD: patch-config_h_in,v 1.2 2011/06/18 14:02:38 kili Exp $
+--- config.h.in.orig	Tue Nov 28 14:36:02 2006
++++ config.h.in	Sat Jun 18 14:55:32 2011
 @@ -11,12 +11,11 @@
  #define USE_IPv6                     @USE_IPv6@
  
