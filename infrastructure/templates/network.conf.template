@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.162 2011/05/17 09:17:44 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.163 2011/06/18 10:35:53 sthen Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -168,6 +168,7 @@ MASTER_SITE_PERL_CPAN+=	\
 	http://www.dnsbalance.ring.gr.jp/archives/lang/perl/CPAN/modules/by-module/
 
 MASTER_SITE_TEX_CTAN+=	\
+	http://mirror.ctan.org/ \
 	http://ftp.funet.fi/pub/TeX/CTAN/ \
 	ftp://ctan.unsw.edu.au/tex-archive/ \
 	ftp://ftp.cise.ufl.edu/pub/mirrors/tex-archive/ \
