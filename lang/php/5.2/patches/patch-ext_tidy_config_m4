@@ -1,6 +1,6 @@
-$OpenBSD: patch-ext_tidy_config_m4,v 1.1 2011/03/15 19:49:42 jasper Exp $
---- ext/tidy/config.m4.orig	Sat Dec 23 18:58:47 2006
-+++ ext/tidy/config.m4	Sun Mar 13 21:23:50 2011
+$OpenBSD: patch-ext_tidy_config_m4,v 1.2 2011/06/18 19:49:50 sthen Exp $
+--- ext/tidy/config.m4.orig.port	Sat Dec 23 17:58:47 2006
++++ ext/tidy/config.m4	Sat Jun 18 12:44:56 2011
 @@ -14,12 +14,12 @@ if test "$PHP_TIDY" != "no"; then
    fi
  

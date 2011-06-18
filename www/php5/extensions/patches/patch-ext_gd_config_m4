@@ -1,6 +1,6 @@
-$OpenBSD: patch-ext_gd_config_m4,v 1.5 2007/07/02 08:53:17 robert Exp $
---- ext/gd/config.m4.orig	Fri May  4 23:57:47 2007
-+++ ext/gd/config.m4	Mon Jul  2 10:38:20 2007
+$OpenBSD: patch-ext_gd_config_m4,v 1.6 2011/06/18 19:49:22 sthen Exp $
+--- ext/gd/config.m4.orig.port	Tue Jul  3 18:25:43 2007
++++ ext/gd/config.m4	Sat Jun 18 12:19:28 2011
 @@ -111,13 +111,13 @@ AC_DEFUN([PHP_GD_PNG],[
        AC_MSG_ERROR([PNG support requires ZLIB. Use --with-zlib-dir=<DIR>])
      fi

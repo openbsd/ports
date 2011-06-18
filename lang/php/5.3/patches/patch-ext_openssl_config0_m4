@@ -1,6 +1,6 @@
-$OpenBSD: patch-ext_openssl_config0_m4,v 1.1 2011/03/21 19:50:18 jasper Exp $
---- ext/openssl/config0.m4.orig	Sat Mar 12 13:09:58 2011
-+++ ext/openssl/config0.m4	Sat Mar 12 13:10:19 2011
+$OpenBSD: patch-ext_openssl_config0_m4,v 1.2 2011/06/18 19:49:50 sthen Exp $
+--- ext/openssl/config0.m4.orig.port	Sun Jan  7 18:38:22 2007
++++ ext/openssl/config0.m4	Sat Jun 18 12:14:50 2011
 @@ -16,7 +16,7 @@ if test "$PHP_OPENSSL" != "no"; then
      PHP_SETUP_KERBEROS(OPENSSL_SHARED_LIBADD)
    fi

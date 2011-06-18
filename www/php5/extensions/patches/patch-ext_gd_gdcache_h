@@ -1,6 +1,6 @@
-$OpenBSD: patch-ext_gd_gdcache_h,v 1.1.1.1 2004/10/02 11:32:35 robert Exp $
---- ext/gd/gdcache.h.orig	Sun Dec 28 22:08:46 2003
-+++ ext/gd/gdcache.h	Tue Jul 27 01:42:24 2004
+$OpenBSD: patch-ext_gd_gdcache_h,v 1.2 2011/06/18 19:49:22 sthen Exp $
+--- ext/gd/gdcache.h.orig.port	Sun Dec 28 21:08:46 2003
++++ ext/gd/gdcache.h	Sat Jun 18 12:19:28 2011
 @@ -41,6 +41,7 @@
  /*********************************************************/
  

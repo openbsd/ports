@@ -1,5 +1,6 @@
---- ext/spl/php_spl.h.orig	Sun Jan  3 10:23:27 2010
-+++ ext/spl/php_spl.h	Wed Jan  5 10:02:06 2011
+$OpenBSD: patch-ext_spl_php_spl_h,v 1.3 2011/06/18 19:49:50 sthen Exp $
+--- ext/spl/php_spl.h.orig.port	Sun Jan  3 09:23:27 2010
++++ ext/spl/php_spl.h	Sat Jun 18 12:14:51 2011
 @@ -67,8 +67,8 @@ ZEND_BEGIN_MODULE_GLOBALS(spl)
  	HashTable *  autoload_functions;
  	int          autoload_running;

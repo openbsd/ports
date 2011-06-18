@@ -1,5 +1,6 @@
---- sapi/cgi/config9.m4.orig	Mon Oct  1 14:40:54 2007
-+++ sapi/cgi/config9.m4	Wed Jan  5 10:02:06 2011
+$OpenBSD: patch-sapi_cgi_config9_m4,v 1.3 2011/06/18 19:49:50 sthen Exp $
+--- sapi/cgi/config9.m4.orig.port	Mon Oct  1 13:40:54 2007
++++ sapi/cgi/config9.m4	Sat Jun 18 12:14:53 2011
 @@ -8,7 +8,6 @@ PHP_ARG_ENABLE(cgi,,
  dnl
  dnl CGI setup

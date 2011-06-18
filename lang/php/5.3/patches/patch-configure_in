@@ -1,5 +1,6 @@
---- configure.in.orig	Wed Jan  5 10:02:06 2011
-+++ configure.in	Wed Jan  5 10:02:09 2011
+$OpenBSD: patch-configure_in,v 1.3 2011/06/18 19:49:50 sthen Exp $
+--- configure.in.orig.port	Sat Jun 18 12:14:45 2011
++++ configure.in	Sat Jun 18 12:17:01 2011
 @@ -960,7 +960,7 @@ enable_static=yes
  
  case $php_build_target in

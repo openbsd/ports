@@ -1,6 +1,6 @@
-$OpenBSD: patch-php_ini-dist,v 1.14 2011/01/03 15:03:03 robert Exp $
---- php.ini-dist.orig	Mon Jan  3 14:35:22 2011
-+++ php.ini-dist	Mon Jan  3 14:38:34 2011
+$OpenBSD: patch-php_ini-dist,v 1.15 2011/06/18 19:49:22 sthen Exp $
+--- php.ini-dist.orig.port	Mon Aug 16 01:26:39 2010
++++ php.ini-dist	Sat Jun 18 12:14:55 2011
 @@ -471,10 +471,7 @@ default_mimetype = "text/html"
  ;;;;;;;;;;;;;;;;;;;;;;;;;
  

@@ -1,6 +1,6 @@
-$OpenBSD: patch-ext_odbc_config_m4,v 1.1.1.1 2010/06/27 20:28:45 robert Exp $
---- ext/odbc/config.m4.orig	Sat Jun 26 17:29:40 2010
-+++ ext/odbc/config.m4	Sat Jun 26 17:29:46 2010
+$OpenBSD: patch-ext_odbc_config_m4,v 1.2 2011/06/18 19:49:50 sthen Exp $
+--- ext/odbc/config.m4.orig.port	Tue Jul 31 14:02:00 2007
++++ ext/odbc/config.m4	Sat Jun 18 12:44:56 2011
 @@ -373,7 +373,6 @@ PHP_ARG_WITH(iodbc,,
      if test "$PHP_IODBC" = "yes"; then
        PHP_IODBC=/usr/local

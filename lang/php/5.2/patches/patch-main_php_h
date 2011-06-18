@@ -1,6 +1,6 @@
-$OpenBSD: patch-main_php_h,v 1.2 2011/01/05 09:31:23 robert Exp $
---- main/php.h.orig	Mon Jul  2 10:34:20 2007
-+++ main/php.h	Mon Jul  2 10:34:20 2007
+$OpenBSD: patch-main_php_h,v 1.3 2011/06/18 19:49:50 sthen Exp $
+--- main/php.h.orig.port	Sat Jun 18 12:44:53 2011
++++ main/php.h	Sat Jun 18 12:44:57 2011
 @@ -150,7 +150,7 @@ char *strtok_r(char *s, const char *delim, char **last
  END_EXTERN_C()
  #endif

@@ -1,5 +1,6 @@
---- configure.in.orig	Mon Jan  3 14:34:43 2011
-+++ configure.in	Mon Jan  3 14:34:45 2011
+$OpenBSD: patch-configure_in,v 1.14 2011/06/18 19:49:22 sthen Exp $
+--- configure.in.orig.port	Sat Jun 18 12:14:51 2011
++++ configure.in	Sat Jun 18 12:17:02 2011
 @@ -352,8 +352,8 @@ AC_CHECK_LIB(m, sin)
  
  dnl Check for resolver routines.

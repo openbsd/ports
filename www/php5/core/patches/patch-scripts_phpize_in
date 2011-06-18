@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_phpize_in,v 1.7 2007/09/05 09:11:34 robert Exp $
---- scripts/phpize.in.orig	Fri Jun 29 03:10:35 2007
-+++ scripts/phpize.in	Wed Sep  5 10:38:43 2007
+$OpenBSD: patch-scripts_phpize_in,v 1.8 2011/06/18 19:49:22 sthen Exp $
+--- scripts/phpize.in.orig.port	Wed Jun 24 08:43:18 2009
++++ scripts/phpize.in	Sat Jun 18 12:14:58 2011
 @@ -1,10 +1,10 @@
  #!/bin/sh
  

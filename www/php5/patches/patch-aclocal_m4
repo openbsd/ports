@@ -1,5 +1,6 @@
---- aclocal.m4.orig	Thu Jan  6 18:04:40 2011
-+++ aclocal.m4	Tue Jan 25 18:56:25 2011
+$OpenBSD: patch-aclocal_m4,v 1.13 2011/06/18 19:49:22 sthen Exp $
+--- aclocal.m4.orig.port	Thu Jan  6 23:04:40 2011
++++ aclocal.m4	Sat Jun 18 12:17:02 2011
 @@ -194,7 +194,7 @@ dnl the path is interpreted relative to the top build-
  dnl
  dnl which array to append to?

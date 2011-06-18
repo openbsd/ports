@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.11 2011/05/12 14:30:12 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.12 2011/06/18 19:49:50 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -56,6 +56,7 @@ PSEUDO_FLAVORS+=	no_suhosin
 FLAVOR?=
 
 USE_GROFF=		Yes
+PATCHORIG=		.orig.port
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.13
 CONFIGURE_ENV=          CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \

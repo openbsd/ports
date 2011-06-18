@@ -1,5 +1,6 @@
---- sapi/cgi/cgi_main.c.orig	Mon Jan  3 14:34:43 2011
-+++ sapi/cgi/cgi_main.c	Mon Jan  3 14:34:43 2011
+$OpenBSD: patch-sapi_cgi_cgi_main_c,v 1.1 2011/06/18 19:49:22 sthen Exp $
+--- sapi/cgi/cgi_main.c.orig.port	Sat Jun 18 12:14:53 2011
++++ sapi/cgi/cgi_main.c	Sat Jun 18 12:14:57 2011
 @@ -1327,7 +1327,7 @@ int main(int argc, char *argv[])
  	char *orig_optarg = php_optarg;
  	char *script_file = NULL;
