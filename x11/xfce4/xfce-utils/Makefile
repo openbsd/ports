@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2011/03/03 21:03:52 landry Exp $
+# $OpenBSD: Makefile,v 1.36 2011/06/18 08:25:59 landry Exp $
 
 COMMENT=	Xfce4 essential utilities and scripts
 
 XFCE_PROJECT=	xfce-utils
-XFCE_VERSION=	4.8.1
+XFCE_VERSION=	4.8.2
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -37,4 +37,10 @@ CONFIGURE_ARGS+=--with-browser="xterm -e lynx" \
 
 FAKE_FLAGS=	conffilesdir=${PREFIX}/share/examples/xfce-utils \
 		autostartdir=${PREFIX}/share/examples/xfce-utils
+
+# XXX workaround for pkg_add bug when a symlink to a dir becomes a real dir
+post-install:
+	rm -Rf ${PREFIX}/share/doc/xfce-utils/html/el/images/
+	ln -s ${TRUEPREFIX}/share/doc/xfce-utils/html/C/images ${PREFIX}/share/doc/xfce-utils/html/el/images
+
 .include <bsd.port.mk>
