@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/19 10:19:43 sthen Exp $
+@newgroup _scamper:675
+@newuser _scamper:675:_scamper:daemon:Scamper Account:/nonexistent:/sbin/nologin
+%%SHARED%%
+@bin bin/sc_ally
+@bin bin/sc_analysis_dump
+@bin bin/sc_attach
+@bin bin/sc_tracediff
+@bin bin/sc_warts2pcap
+@bin bin/sc_warts2text
+@bin bin/sc_wartscat
+@bin bin/sc_wartsdump
+@bin bin/sc_wartsfix
+@bin bin/scamper
+include/scamper_addr.h
+include/scamper_dealias.h
+include/scamper_file.h
+include/scamper_icmpext.h
+include/scamper_list.h
+include/scamper_neighbourdisc.h
+include/scamper_ping.h
+include/scamper_sniff.h
+include/scamper_sting.h
+include/scamper_tbit.h
+include/scamper_trace.h
+include/scamper_tracelb.h
+lib/libscamperfile.a
+lib/libscamperfile.la
+@man man/man1/sc_ally.1
+@man man/man1/sc_analysis_dump.1
+@man man/man1/sc_attach.1
+@man man/man1/sc_tracediff.1
+@man man/man1/sc_warts2pcap.1
+@man man/man1/sc_warts2text.1
+@man man/man1/sc_wartscat.1
+@man man/man1/sc_wartsdump.1
+@man man/man1/scamper.1
+@man man/man3/libscamperfile.3

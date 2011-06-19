@@ -1,0 +1,12 @@
+$OpenBSD: patch-scamper_scamper_privsep_c,v 1.1.1.1 2011/06/19 10:19:43 sthen Exp $
+--- scamper/scamper_privsep.c.orig	Tue Jun  7 01:00:55 2011
++++ scamper/scamper_privsep.c	Tue Jun  7 01:01:00 2011
+@@ -55,7 +55,7 @@ static const char rcsid[] =
+ #endif
+ 
+ #ifndef PRIVSEP_USER
+-#define PRIVSEP_USER "nobody"
++#define PRIVSEP_USER "_scamper"
+ #endif
+ 
+ typedef struct privsep_msg
