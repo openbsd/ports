@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2011/06/19 17:45:54 kili Exp $
+--- configure.in.orig	Sat Feb  6 16:49:28 2010
++++ configure.in	Sat Mar  5 22:16:25 2011
+@@ -237,9 +237,6 @@ if test x"$LIBTOOL" = x; then
+ 	AC_MSG_ERROR([could not detect libtool, bailing out])
+ fi
+ 
+-dnl Check if the X libraries are installed (needed for libungif on at least Solaris)
+-AC_CHECK_LIB(X11, XGetImage, XLIB="-lX11", XLIB="")
+-
+ AC_ARG_ENABLE(
+ [freetype],
+ [  --enable-freetype       Enable freetype support (default: enabled)],
+@@ -278,13 +275,12 @@ dnl Check for the gif or ungif libraries
+ AC_CHECK_LIB(gif, PrintGifError, GIFLIB="-lgif", GIFLIB="")
+ dnl MinGW check for libungif
+ AC_CHECK_LIB(ungif, DGifOpen, GIFLIB="-lungif")
+-dnl Solaris needs -lX11 on the linker line for ungif to work
+-AC_CHECK_LIB(ungif, PrintGifError, GIFLIB="-lungif",, "-lX11")
++AC_CHECK_LIB(ungif, PrintGifError, GIFLIB="-lungif")
+ AC_CHECK_HEADERS([gif_lib.h], GIFINC="true", GIFINC="")
+ 
+ dnl Check for the png library
+ dnl Solaris needs -lm on the linker line, and other platforms aren't bothered having it there. :)
+-AC_CHECK_LIB(png, png_read_image, PNGLIB="-lpng", PNGLIB="", "-lm")
++AC_CHECK_LIB(png, png_read_image, PNGLIB="-lpng", PNGLIB="", [-lm -lz])
+ 
+ dnl Check for the zlib library
+ AC_CHECK_LIB(z, compress2,

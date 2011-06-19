@@ -1,0 +1,28 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/19 17:45:54 kili Exp $
+%%SHARED%%
+@bin bin/dbl2png
+@bin bin/gif2dbl
+@bin bin/gif2mask
+@bin bin/listaction
+@bin bin/listaction_d
+@bin bin/listfdb
+@bin bin/listjpeg
+@bin bin/listmp3
+@bin bin/listswf
+@bin bin/listswf_d
+@bin bin/makefdb
+@bin bin/makeswf
+bin/ming-config
+@bin bin/png2dbl
+@bin bin/raw2adpcm
+@bin bin/swftocxx
+@bin bin/swftoperl
+@bin bin/swftophp
+@bin bin/swftopython
+@bin bin/swftotcl
+include/ming.h
+include/mingpp.h
+lib/libming.a
+lib/libming.la
+lib/pkgconfig/
+lib/pkgconfig/libming.pc
