@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.262 2011/06/14 11:32:25 robert Exp $
+# $OpenBSD: Makefile,v 1.263 2011/06/19 08:53:43 kili Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -8,6 +8,7 @@
      SUBDIR += ADMsnmp
      SUBDIR += aescrypt
      SUBDIR += aide
+     SUBDIR += aircrack-ng
      SUBDIR += amap
      SUBDIR += antisniff
      SUBDIR += apg
