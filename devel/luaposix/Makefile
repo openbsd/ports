@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/06/20 13:14:03 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	posix library for the lua language
 DISTNAME=	luaposix-5.1.4
+EPOCH=		0
 CATEGORIES=	devel
 MASTER_SITES=	http://luaforge.net/frs/download.php/3572/
 
