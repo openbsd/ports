@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2011/06/20 18:09:51 jasper Exp $
+
+It makes no sense to explicitly run pkg-config like this;
+g-ir-scanner's --pkg is meant for this.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=653031 
+
+--- src/Makefile.in.orig	Mon Jun 20 19:33:27 2011
++++ src/Makefile.in	Mon Jun 20 19:33:35 2011
+@@ -1575,7 +1575,6 @@ stamp-ephy-dbus-client-bindings.h: $(top_srcdir)/data/
+ @HAVE_INTROSPECTION_TRUE@		--pkg=gtk+-3.0 \
+ @HAVE_INTROSPECTION_TRUE@		--pkg=libxml-2.0 \
+ @HAVE_INTROSPECTION_TRUE@		--output=$@ \
+-@HAVE_INTROSPECTION_TRUE@		`pkg-config --libs libxml-2.0 gtk+-3.0` \
+ @HAVE_INTROSPECTION_TRUE@		$(top_srcdir)/lib/egg/egg-editable-toolbar.h \
+ @HAVE_INTROSPECTION_TRUE@		$(top_srcdir)/lib/egg/egg-toolbars-model.h \
+ @HAVE_INTROSPECTION_TRUE@		$(top_srcdir)/lib/egg/egg-editable-toolbar.c \
