@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2011/05/13 21:20:15 dhill Exp $
+# $OpenBSD: Makefile,v 1.13 2011/06/20 15:30:40 dhill Exp $
 
 COMMENT=		hide awful SSL API in a sane interface
 
-DISTNAME=		assl-0.9.6
+DISTNAME=		assl-0.9.7
 EPOCH=			0
 CATEGORIES=		security devel
-SHARED_LIBS=		assl 3.0
-EXTRACT_SUFX=		.tgz
+SHARED_LIBS=		assl 3.1
 
 HOMEPAGE=		http://opensource.conformal.com/wiki/Assl
 MASTER_SITES=		http://opensource.conformal.com/snapshots/assl/
