@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/13 20:43:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/20 15:31:26 dhill Exp $
 
 COMMENT=	compression wrapper library
 
-DISTNAME=	shrink-0.2
+DISTNAME=	shrink-0.2.1
 PKGNAME=	lib${DISTNAME}
-REVISION=	0
 CATEGORIES=    	archivers devel
-SHARED_LIBS=	shrink	0.0
-EXTRACT_SUFX=	.tgz
+SHARED_LIBS=	shrink	0.1
 
 HOMEPAGE=	http://opensource.conformal.com/wiki/Shrink	
 MASTER_SITES=	http://opensource.conformal.com/snapshots/shrink/
