@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.13 2011/06/20 09:03:29 jasper Exp $
+$OpenBSD: patch-configure,v 1.14 2011/06/20 21:29:47 jasper Exp $
 
 ./configure[3240]: ${INTROSPECTION_GIRDIR/$datadir/\$(datadir)}: bad substitution
 
 https://bugzilla.gnome.org/show_bug.cgi?id=652981
 
 --- configure.orig	Fri Mar 25 15:54:05 2011
-+++ configure	Mon May 23 19:46:25 2011
++++ configure	Mon Jun 20 23:29:15 2011
 @@ -3231,9 +3231,9 @@ $as_echo "$found_introspection" >&6; }
         INTROSPECTION_COMPILER=`$PKG_CONFIG --variable=g_ir_compiler gobject-introspection-1.0`
         INTROSPECTION_GENERATE=`$PKG_CONFIG --variable=g_ir_generate gobject-introspection-1.0`
@@ -43,8 +43,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=652981
  	  libgtop_sysdeps_dir=bsd
  	  libgtop_use_machine_h=yes
  	  libgtop_need_server=yes
--	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod 2755 $(bindir)/libgtop_server2'
-+	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod 2555 $(bindir)/libgtop_server2'
+ 	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod 2755 $(bindir)/libgtop_server2'
  	  ;;
 +	openbsd*)
 +	  libgtop_sysdeps_dir=openbsd
