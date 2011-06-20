@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/09/12 11:50:13 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/20 08:53:55 fgsch Exp $
 @comment lib/python${MODPY_VERSION}/site-packages/_anthy.la
 lib/python${MODPY_VERSION}/site-packages/_anthy.so
 lib/python${MODPY_VERSION}/site-packages/anthy.py
@@ -6,6 +6,7 @@ libexec/ibus-engine-anthy
 libexec/ibus-setup-anthy
 share/ibus-anthy/
 share/ibus-anthy/dicts/
+share/ibus-anthy/dicts/oldchar.t
 share/ibus-anthy/dicts/symbol.t
 share/ibus-anthy/engine/
 share/ibus-anthy/engine/engine.py
