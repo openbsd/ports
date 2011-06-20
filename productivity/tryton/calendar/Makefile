@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/13 17:08:33 ajacoutot Exp $
-
-COMMENT =		trytond calendar module
+# $OpenBSD: Makefile,v 1.2 2011/06/20 05:19:26 ajacoutot Exp $
 
 MODPY_EGG_VERSION =	2.0.0
-DISTNAME =		trytond_calendar-${MODPY_EGG_VERSION}
-PKGNAME =		trytond-module-calendar-${MODPY_EGG_VERSION}
+TRYTOND_MODULE =	calendar
+REVISION =		0
 
-RUN_DEPENDS =		productivity/tryton/trytond \
-			textproc/py-vobject
+RUN_DEPENDS =		textproc/py-vobject
 
 .include <bsd.port.mk>

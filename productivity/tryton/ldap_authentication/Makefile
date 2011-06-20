@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/13 17:14:37 ajacoutot Exp $
-
-COMMENT =		trytond ldap_authentication module
+# $OpenBSD: Makefile,v 1.2 2011/06/20 05:19:26 ajacoutot Exp $
 
 MODPY_EGG_VERSION =	2.0.0
-DISTNAME =		trytond_ldap_authentication-${MODPY_EGG_VERSION}
-PKGNAME =		trytond-module-ldap_authentication-${MODPY_EGG_VERSION}
+TRYTOND_MODULE =	ldap_authentication
+REVISION =		0
 
-RUN_DEPENDS =		productivity/tryton/trytond \
-			databases/py-ldap
+RUN_DEPENDS =		databases/py-ldap
 
 .include <bsd.port.mk>

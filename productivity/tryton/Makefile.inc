@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2011/06/13 17:07:45 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2011/06/20 05:19:26 ajacoutot Exp $
 
 MODPY_EGG_VERSION ?=	2.0.1
 
@@ -27,3 +27,10 @@ REGRESS_DEPENDS ?=	${RUN_DEPENDS}
 # Some regression tests need read access to /etc/trytond.conf (not
 # available for unprivilege users) and a trytond server running.
 REGRESS_IS_INTERACTIVE=	Yes
+
+.if defined(TRYTOND_MODULE)
+COMMENT ?=		trytond ${TRYTOND_MODULE} account
+DISTNAME ?=		trytond_${TRYTOND_MODULE}-${MODPY_EGG_VERSION}
+PKGNAME ?=		trytond-module-${TRYTOND_MODULE}-${MODPY_EGG_VERSION}
+RUN_DEPENDS +=		productivity/tryton/trytond
+.endif
