@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.4 2011/06/20 05:19:26 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2011/06/20 16:04:12 ajacoutot Exp $
 
 MODPY_EGG_VERSION ?=	2.0.1
 
@@ -29,7 +29,7 @@ REGRESS_DEPENDS ?=	${RUN_DEPENDS}
 REGRESS_IS_INTERACTIVE=	Yes
 
 .if defined(TRYTOND_MODULE)
-COMMENT ?=		trytond ${TRYTOND_MODULE} account
+COMMENT ?=		trytond ${TRYTOND_MODULE} module
 DISTNAME ?=		trytond_${TRYTOND_MODULE}-${MODPY_EGG_VERSION}
 PKGNAME ?=		trytond-module-${TRYTOND_MODULE}-${MODPY_EGG_VERSION}
 RUN_DEPENDS +=		productivity/tryton/trytond
