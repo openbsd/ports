@@ -1,4 +1,4 @@
-/* $OpenBSD: netload.c,v 1.3 2011/05/23 19:35:54 jasper Exp $	*/
+/* $OpenBSD: netload.c,v 1.4 2011/06/20 09:50:04 jasper Exp $	*/
 
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
@@ -188,7 +188,7 @@ glibtop_get_netload_p (glibtop *server, glibtop_netload *buf,
 		struct sockaddr_dl *dl = (struct sockaddr_dl *) sa;
 
 		memcpy (buf->hwaddress, LLADDR (dl), sizeof (buf->hwaddress));
-		buf->flags |= GLIBTOP_NETLOAD_HWADDRESS;
+		buf->flags |= (1L << GLIBTOP_NETLOAD_HWADDRESS);
 	    } else if (sa->sa_family == AF_INET) {
 		sin = (struct sockaddr_in *)sa;
 		buf->subnet = ifaddr.in.ia_netmask;
