@@ -1,4 +1,4 @@
-/* $OpenBSD: netload.c,v 1.4 2011/06/20 09:50:04 jasper Exp $	*/
+/* $OpenBSD: netload.c,v 1.5 2011/06/20 11:48:39 jasper Exp $	*/
 
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
@@ -33,6 +33,8 @@
 #include <net/if.h>
 #include <net/if_dl.h>
 #include <net/if_types.h>
+
+#include <sys/ioctl.h>
 
 #ifdef HAVE_NET_IF_VAR_H
 #include <net/if_var.h>
@@ -198,11 +200,37 @@ glibtop_get_netload_p (glibtop *server, glibtop_netload *buf,
 		buf->flags |= _glibtop_sysdeps_netload_data;
 	    } else if (sa->sa_family == AF_INET6) {
 		struct sockaddr_in6 *sin6 = (struct sockaddr_in6 *) sa;
+		int in6fd;
 
-		memcpy (buf->address6, &sin6->sin6_addr, sizeof (buf->address6));
-		buf->flags |= GLIBTOP_NETLOAD_ADDRESS6;
+		memcpy (buf->address6, &sin6->sin6_addr,
+		    sizeof (buf->address6));
+		buf->flags |= (1L << GLIBTOP_NETLOAD_ADDRESS6);
+
+		if (IN6_IS_ADDR_LINKLOCAL(&sin6->sin6_addr)) {
+			sin6->sin6_scope_id =
+				ntohs(*(u_int16_t *)&sin6->sin6_addr.s6_addr[2]);
+			sin6->sin6_addr.s6_addr[2] = sin6->sin6_addr.s6_addr[3] = 0;
+		}
+
+		buf->scope6 = (guint8) sin6->sin6_scope_id;
+		buf->flags |= (1L << GLIBTOP_NETLOAD_SCOPE6);
+
+		in6fd = socket (AF_INET6, SOCK_DGRAM, 0);
+		if (in6fd >= 0) {
+			struct in6_ifreq ifr;
+
+			memset (&ifr, 0, sizeof (ifr));
+			ifr.ifr_addr = *sin6;
+			g_strlcpy (ifr.ifr_name, interface,
+			    sizeof (ifr.ifr_name));
+			if (ioctl (in6fd, SIOCGIFNETMASK_IN6, (char *) &ifr) >= 0) {
+				memcpy (buf->prefix6, &ifr.ifr_addr.sin6_addr,
+				    sizeof (buf->prefix6));
+				buf->flags |= (1L << GLIBTOP_NETLOAD_PREFIX6);
+			}
+			close (in6fd);
+		}
 	    }
-	    /* FIXME prefix6, scope6 */
 	    ifaddraddr = (u_long) ifaddr.ifa.ifa_list.tqe_next;
 	}
 	return;
