@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.41 2011/05/30 13:55:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.42 2011/06/20 12:07:21 ajacoutot Exp $
 @conflict gtk2-clearlooks-engine-*
+@pkgpath x11/gtk2-clearlooks-engine
 @unexec rm -f %D/share/icons/Crux/icon-theme.cache
 @unexec rm -f %D/share/icons/Mist/icon-theme.cache
 share/icons/Crux/
