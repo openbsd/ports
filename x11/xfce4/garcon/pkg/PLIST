@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/04/17 10:34:06 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/06/20 19:17:32 landry Exp $
 @conflict xfdesktop-<=4.7.0
 %%SHARED%%
 include/garcon-1/
@@ -32,7 +32,6 @@ share/desktop-directories/xfce-multimedia.directory
 share/desktop-directories/xfce-network.directory
 share/desktop-directories/xfce-office.directory
 share/desktop-directories/xfce-other.directory
-share/desktop-directories/xfce-science.directory
 share/desktop-directories/xfce-screensavers.directory
 share/desktop-directories/xfce-settings.directory
 share/desktop-directories/xfce-system.directory
@@ -124,10 +123,14 @@ share/locale/pt_PT/LC_MESSAGES/
 share/locale/pt_PT/LC_MESSAGES/garcon.mo
 share/locale/ro/LC_MESSAGES/garcon.mo
 share/locale/ru/LC_MESSAGES/garcon.mo
+share/locale/sk/LC_MESSAGES/garcon.mo
 share/locale/sq/
 share/locale/sq/LC_MESSAGES/
 share/locale/sq/LC_MESSAGES/garcon.mo
 share/locale/sv/LC_MESSAGES/garcon.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/garcon.mo
 share/locale/tr/LC_MESSAGES/garcon.mo
 share/locale/ug/
 share/locale/ug/LC_MESSAGES/
