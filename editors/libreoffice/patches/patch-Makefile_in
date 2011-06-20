@@ -1,0 +1,15 @@
+$OpenBSD: patch-Makefile_in,v 1.4 2011/06/20 13:29:35 robert Exp $
+--- Makefile.in.orig.port	Wed Jun 15 04:10:03 2011
++++ Makefile.in	Wed Jun 15 04:10:29 2011
+@@ -47,8 +47,9 @@ dmake/dmake@EXEEXT@:
+         ./bootstrap
+ 
+ src.downloaded: ooo.lst download
+-	@. ./*[Ee]nv.[Ss]et.sh && \
+-	$$SRC_ROOT/download $$SRC_ROOT/ooo.lst && touch $@
++	@. ./*[Ee]nv.[Ss]et.sh && [ "$$DO_FETCH_TARBALLS" = "yes" ] && \
++	( $$SRC_ROOT/download $$SRC_ROOT/ooo.lst && touch $@ ) || \
++	touch $@
+ 
+ fetch: src.downloaded
+ 

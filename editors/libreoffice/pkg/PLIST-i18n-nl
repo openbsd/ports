@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-nl,v 1.7 2011/04/14 19:45:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST-i18n-nl,v 1.8 2011/06/20 13:29:35 robert Exp $
 @conflict openoffice-i18n-nl-*
 @pkgpath editors/openoffice3,-i18n-nl
 !%%no_java%%
@@ -60,12 +60,6 @@ lib/libreoffice/basis${BV}/help/nl/swriter.ht
 lib/libreoffice/basis${BV}/help/nl/swriter.jar
 lib/libreoffice/basis${BV}/help/nl/swriter.key
 lib/libreoffice/basis${BV}/help/nl/swriter.tree
-lib/libreoffice/basis${BV}/presets/config/arrowhd_nl.soe
-lib/libreoffice/basis${BV}/presets/config/classic_nl.sog
-lib/libreoffice/basis${BV}/presets/config/hatching_nl.soh
-lib/libreoffice/basis${BV}/presets/config/modern_nl.sog
-lib/libreoffice/basis${BV}/presets/config/palette_nl.soc
-lib/libreoffice/basis${BV}/presets/config/styles_nl.sod
 lib/libreoffice/basis${BV}/program/resource/abpnl.res
 lib/libreoffice/basis${BV}/program/resource/accnl.res
 lib/libreoffice/basis${BV}/program/resource/adabasuinl.res
@@ -96,13 +90,7 @@ lib/libreoffice/basis${BV}/program/resource/deploymentguinl.res
 lib/libreoffice/basis${BV}/program/resource/deploymentnl.res
 lib/libreoffice/basis${BV}/program/resource/dktnl.res
 lib/libreoffice/basis${BV}/program/resource/editengnl.res
-lib/libreoffice/basis${BV}/program/resource/eginl.res
-lib/libreoffice/basis${BV}/program/resource/emenl.res
-lib/libreoffice/basis${BV}/program/resource/epbnl.res
-lib/libreoffice/basis${BV}/program/resource/epgnl.res
-lib/libreoffice/basis${BV}/program/resource/eppnl.res
 lib/libreoffice/basis${BV}/program/resource/epsnl.res
-lib/libreoffice/basis${BV}/program/resource/eptnl.res
 lib/libreoffice/basis${BV}/program/resource/eurnl.res
 lib/libreoffice/basis${BV}/program/resource/fornl.res
 lib/libreoffice/basis${BV}/program/resource/foruinl.res
@@ -130,7 +118,7 @@ lib/libreoffice/basis${BV}/program/resource/smnl.res
 lib/libreoffice/basis${BV}/program/resource/solvernl.res
 lib/libreoffice/basis${BV}/program/resource/spanl.res
 lib/libreoffice/basis${BV}/program/resource/sttnl.res
-lib/libreoffice/basis${BV}/program/resource/svsnl.res
+lib/libreoffice/basis${BV}/program/resource/svlnl.res
 lib/libreoffice/basis${BV}/program/resource/svtnl.res
 lib/libreoffice/basis${BV}/program/resource/svxnl.res
 lib/libreoffice/basis${BV}/program/resource/swnl.res
@@ -191,18 +179,6 @@ lib/libreoffice/basis${BV}/share/template/nl/wizard/fax/pri-bottle_f.ott
 lib/libreoffice/basis${BV}/share/template/nl/wizard/fax/pri-fax_f.ott
 lib/libreoffice/basis${BV}/share/template/nl/wizard/fax/pri-lines_f.ott
 lib/libreoffice/basis${BV}/share/template/nl/wizard/fax/pri-marine_f.ott
-lib/libreoffice/basis${BV}/share/template/nl/wizard/letter/
-lib/libreoffice/basis${BV}/share/template/nl/wizard/letter/nl/
-lib/libreoffice/basis${BV}/share/template/nl/wizard/letter/nl/bus-elegant_l.ott
-lib/libreoffice/basis${BV}/share/template/nl/wizard/letter/nl/bus-modern_l.ott
-lib/libreoffice/basis${BV}/share/template/nl/wizard/letter/nl/bus-office_l.ott
-lib/libreoffice/basis${BV}/share/template/nl/wizard/letter/nl/off-elegant_l.ott
-lib/libreoffice/basis${BV}/share/template/nl/wizard/letter/nl/off-modern_l.ott
-lib/libreoffice/basis${BV}/share/template/nl/wizard/letter/nl/off-office_l.ott
-lib/libreoffice/basis${BV}/share/template/nl/wizard/letter/nl/pri-bottle_l.ott
-lib/libreoffice/basis${BV}/share/template/nl/wizard/letter/nl/pri-mail_l.ott
-lib/libreoffice/basis${BV}/share/template/nl/wizard/letter/nl/pri-marine_l.ott
-lib/libreoffice/basis${BV}/share/template/nl/wizard/letter/nl/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/template/nl/wizard/report/
 lib/libreoffice/basis${BV}/share/template/nl/wizard/report/cnt-01.ott
 lib/libreoffice/basis${BV}/share/template/nl/wizard/report/cnt-011.ott
@@ -266,7 +242,6 @@ lib/libreoffice/basis${BV}/share/template/wizard/letter/nl/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/wordbook/nl/
 lib/libreoffice/basis${BV}/share/wordbook/nl/soffice.dic
 lib/libreoffice/basis${BV}/share/wordbook/nl/technical.dic
-lib/libreoffice/program/resource/ooonl.res
 lib/libreoffice/readmes/README_nl
 lib/libreoffice/share/extensions/dict-nl/
 lib/libreoffice/share/extensions/dict-nl/META-INF/

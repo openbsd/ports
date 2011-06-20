@@ -1,0 +1,12 @@
+$OpenBSD: patch-desktop_source_app_app_cxx,v 1.1 2011/06/20 13:29:35 robert Exp $
+--- desktop/source/app/app.cxx.orig.port	Sun Jun 19 02:17:50 2011
++++ desktop/source/app/app.cxx	Sun Jun 19 02:17:40 2011
+@@ -1767,7 +1767,7 @@ int Desktop::Main()
+ 
+         if ( !pExecGlobals->bRestartRequested )
+         {
+-            if ((!pCmdLineArgs->WantsToLoadDocument() && !pCmdLineArgs->IsInvisible() && !pCmdLineArgs->IsHeadless() ) &&
++            if ((!pCmdLineArgs->WantsToLoadDocument() && !pCmdLineArgs->IsInvisible() && !pCmdLineArgs->IsHeadless() && !pCmdLineArgs->IsQuickstart()) &&
+                 (SvtModuleOptions().IsModuleInstalled(SvtModuleOptions::E_SSTARTMODULE)) &&
+                 (!bExistsRecoveryData                                                  ) &&
+                 (!bExistsSessionData                                                   ) &&

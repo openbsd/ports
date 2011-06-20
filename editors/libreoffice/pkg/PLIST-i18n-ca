@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ca,v 1.7 2011/04/14 19:45:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST-i18n-ca,v 1.8 2011/06/20 13:29:35 robert Exp $
 @conflict openoffice-i18n-ca-*
 @pkgpath editors/openoffice3,-i18n-ca
 !%%no_java%%
@@ -60,12 +60,6 @@ lib/libreoffice/basis${BV}/help/ca/swriter.ht
 lib/libreoffice/basis${BV}/help/ca/swriter.jar
 lib/libreoffice/basis${BV}/help/ca/swriter.key
 lib/libreoffice/basis${BV}/help/ca/swriter.tree
-lib/libreoffice/basis${BV}/presets/config/arrowhd_ca.soe
-lib/libreoffice/basis${BV}/presets/config/classic_ca.sog
-lib/libreoffice/basis${BV}/presets/config/hatching_ca.soh
-lib/libreoffice/basis${BV}/presets/config/modern_ca.sog
-lib/libreoffice/basis${BV}/presets/config/palette_ca.soc
-lib/libreoffice/basis${BV}/presets/config/styles_ca.sod
 lib/libreoffice/basis${BV}/program/resource/abpca.res
 lib/libreoffice/basis${BV}/program/resource/accca.res
 lib/libreoffice/basis${BV}/program/resource/adabasuica.res
@@ -96,13 +90,7 @@ lib/libreoffice/basis${BV}/program/resource/deploymentca.res
 lib/libreoffice/basis${BV}/program/resource/deploymentguica.res
 lib/libreoffice/basis${BV}/program/resource/dktca.res
 lib/libreoffice/basis${BV}/program/resource/editengca.res
-lib/libreoffice/basis${BV}/program/resource/egica.res
-lib/libreoffice/basis${BV}/program/resource/emeca.res
-lib/libreoffice/basis${BV}/program/resource/epbca.res
-lib/libreoffice/basis${BV}/program/resource/epgca.res
-lib/libreoffice/basis${BV}/program/resource/eppca.res
 lib/libreoffice/basis${BV}/program/resource/epsca.res
-lib/libreoffice/basis${BV}/program/resource/eptca.res
 lib/libreoffice/basis${BV}/program/resource/eurca.res
 lib/libreoffice/basis${BV}/program/resource/forca.res
 lib/libreoffice/basis${BV}/program/resource/foruica.res
@@ -130,7 +118,7 @@ lib/libreoffice/basis${BV}/program/resource/smca.res
 lib/libreoffice/basis${BV}/program/resource/solverca.res
 lib/libreoffice/basis${BV}/program/resource/spaca.res
 lib/libreoffice/basis${BV}/program/resource/sttca.res
-lib/libreoffice/basis${BV}/program/resource/svsca.res
+lib/libreoffice/basis${BV}/program/resource/svlca.res
 lib/libreoffice/basis${BV}/program/resource/svtca.res
 lib/libreoffice/basis${BV}/program/resource/svxca.res
 lib/libreoffice/basis${BV}/program/resource/swca.res
@@ -191,18 +179,6 @@ lib/libreoffice/basis${BV}/share/template/ca/wizard/fax/pri-bottle_f.ott
 lib/libreoffice/basis${BV}/share/template/ca/wizard/fax/pri-fax_f.ott
 lib/libreoffice/basis${BV}/share/template/ca/wizard/fax/pri-lines_f.ott
 lib/libreoffice/basis${BV}/share/template/ca/wizard/fax/pri-marine_f.ott
-lib/libreoffice/basis${BV}/share/template/ca/wizard/letter/
-lib/libreoffice/basis${BV}/share/template/ca/wizard/letter/en-US/
-lib/libreoffice/basis${BV}/share/template/ca/wizard/letter/en-US/bus-elegant_l.ott
-lib/libreoffice/basis${BV}/share/template/ca/wizard/letter/en-US/bus-modern_l.ott
-lib/libreoffice/basis${BV}/share/template/ca/wizard/letter/en-US/bus-office_l.ott
-lib/libreoffice/basis${BV}/share/template/ca/wizard/letter/en-US/off-elegant_l.ott
-lib/libreoffice/basis${BV}/share/template/ca/wizard/letter/en-US/off-modern_l.ott
-lib/libreoffice/basis${BV}/share/template/ca/wizard/letter/en-US/off-office_l.ott
-lib/libreoffice/basis${BV}/share/template/ca/wizard/letter/en-US/pri-bottle_l.ott
-lib/libreoffice/basis${BV}/share/template/ca/wizard/letter/en-US/pri-mail_l.ott
-lib/libreoffice/basis${BV}/share/template/ca/wizard/letter/en-US/pri-marine_l.ott
-lib/libreoffice/basis${BV}/share/template/ca/wizard/letter/en-US/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/template/ca/wizard/report/
 lib/libreoffice/basis${BV}/share/template/ca/wizard/report/cnt-01.ott
 lib/libreoffice/basis${BV}/share/template/ca/wizard/report/cnt-011.ott
@@ -255,7 +231,6 @@ lib/libreoffice/basis${BV}/share/template/ca/wizard/styles/xos.ots
 lib/libreoffice/basis${BV}/share/wordbook/ca/
 lib/libreoffice/basis${BV}/share/wordbook/ca/soffice.dic
 lib/libreoffice/basis${BV}/share/wordbook/ca/technical.dic
-lib/libreoffice/program/resource/oooca.res
 lib/libreoffice/readmes/README_ca
 lib/libreoffice/share/extensions/dict-ca/
 lib/libreoffice/share/extensions/dict-ca/LICENSES-en.txt

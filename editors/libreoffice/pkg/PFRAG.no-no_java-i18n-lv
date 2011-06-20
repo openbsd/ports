@@ -1,36 +1,4 @@
-@comment $OpenBSD: PFRAG.no-no_java-i18n-lv,v 1.3 2010/12/20 09:07:49 robert Exp $
-lib/libreoffice/basis${BV}/help/lv/sbasic.idxl/
-lib/libreoffice/basis${BV}/help/lv/sbasic.idxl/_0.cfs
-lib/libreoffice/basis${BV}/help/lv/sbasic.idxl/segments.gen
-lib/libreoffice/basis${BV}/help/lv/sbasic.idxl/segments_3
-lib/libreoffice/basis${BV}/help/lv/scalc.idxl/
-lib/libreoffice/basis${BV}/help/lv/scalc.idxl/_0.cfs
-lib/libreoffice/basis${BV}/help/lv/scalc.idxl/segments.gen
-lib/libreoffice/basis${BV}/help/lv/scalc.idxl/segments_3
-lib/libreoffice/basis${BV}/help/lv/schart.idxl/
-lib/libreoffice/basis${BV}/help/lv/schart.idxl/_0.cfs
-lib/libreoffice/basis${BV}/help/lv/schart.idxl/segments.gen
-lib/libreoffice/basis${BV}/help/lv/schart.idxl/segments_3
-lib/libreoffice/basis${BV}/help/lv/sdatabase.idxl/
-lib/libreoffice/basis${BV}/help/lv/sdatabase.idxl/_0.cfs
-lib/libreoffice/basis${BV}/help/lv/sdatabase.idxl/segments.gen
-lib/libreoffice/basis${BV}/help/lv/sdatabase.idxl/segments_3
-lib/libreoffice/basis${BV}/help/lv/sdraw.idxl/
-lib/libreoffice/basis${BV}/help/lv/sdraw.idxl/_0.cfs
-lib/libreoffice/basis${BV}/help/lv/sdraw.idxl/segments.gen
-lib/libreoffice/basis${BV}/help/lv/sdraw.idxl/segments_3
-lib/libreoffice/basis${BV}/help/lv/simpress.idxl/
-lib/libreoffice/basis${BV}/help/lv/simpress.idxl/_0.cfs
-lib/libreoffice/basis${BV}/help/lv/simpress.idxl/segments.gen
-lib/libreoffice/basis${BV}/help/lv/simpress.idxl/segments_3
-lib/libreoffice/basis${BV}/help/lv/smath.idxl/
-lib/libreoffice/basis${BV}/help/lv/smath.idxl/_0.cfs
-lib/libreoffice/basis${BV}/help/lv/smath.idxl/segments.gen
-lib/libreoffice/basis${BV}/help/lv/smath.idxl/segments_3
-lib/libreoffice/basis${BV}/help/lv/swriter.idxl/
-lib/libreoffice/basis${BV}/help/lv/swriter.idxl/_0.cfs
-lib/libreoffice/basis${BV}/help/lv/swriter.idxl/segments.gen
-lib/libreoffice/basis${BV}/help/lv/swriter.idxl/segments_3
+@comment $OpenBSD: PFRAG.no-no_java-i18n-lv,v 1.4 2011/06/20 13:29:35 robert Exp $
 lib/libreoffice/share/extensions/presenter-screen/help/lv/
 lib/libreoffice/share/extensions/presenter-screen/help/lv/com.sun.PresenterScreen-openbsd_${OA}/
 lib/libreoffice/share/extensions/presenter-screen/help/lv/com.sun.PresenterScreen-openbsd_${OA}/presenter.xhp

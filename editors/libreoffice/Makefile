@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/06/08 17:34:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2011/06/20 13:29:34 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -6,10 +6,10 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
-BV=		3.3
-VERSION=	3.3.2.2
+BV=		3.4
+VERSION=	3.4.0.2
 DISTNAME=	libreoffice-${VERSION}
-WRKDIST=	${WRKDIR}/libreoffice-build-${VERSION}
+WRKDIST=	${WRKDIR}/libreoffice-bootstrap-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
 PKGNAME-main=	libreoffice-${VERSION}
 PKGNAME-kde=	libreoffice-kde-${VERSION}
@@ -18,21 +18,28 @@ CATEGORIES=	editors productivity
 
 EPOCH=		0
 
-REVISION=	4
-
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
+
+http://hg.services.openoffice.org/binaries
+http://download.go-oo.org/src
+http://download.go-oo.org/extern
+http://www.numbertext.org/linux
+http://ooo.itc.hu/oxygenoffice/download/libreoffice/
 
 HOMEPAGE=	http://www.libreoffice.org/
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/ \
 		http://humppa.hu/libreoffice/ \
-		http://download.go-oo.org/3.3/ \
 		http://download.go-oo.org/src/
-MASTER_SITES0=	http://www.numbertext.org/linux/
+MASTER_SITES0=	http://hg.services.openoffice.org/binaries/ \
+		http://download.go-oo.org/src/ \
+		http://download.go-oo.org/extern/ \
+		http://www.numbertext.org/linux/ \
+		http://ooo.itc.hu/oxygenoffice/download/libreoffice/
 
-EDISTFILES=	libreoffice-build-${VERSION}.tar.gz
+EDISTFILES=	libreoffice-bootstrap-${VERSION}.tar.bz2
 
-COMPONENTS=	artwork base bootstrap calc components extensions extras \
-		filters help impress l10n libs-core libs-extern \
+COMPONENTS=	artwork base calc components extensions extras \
+		filters help impress translations libs-core libs-extern \
 		libs-extern-sys libs-gui postprocess sdk testing \
 		ure writer
 
@@ -42,46 +49,50 @@ EDISTFILES+=	libreoffice-${_dfile}-${VERSION}.tar.bz2
 EXTRACT_ONLY=	${EDISTFILES:C/:[0-9]$//}
 
 DISTFILES+=	${EDISTFILES} \
-		067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz \
-		128cfc86ed5953e57fe0f5ae98b62c2e-libtextcat-2.2.tar.gz \
-		17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip \
-		1756c4fa6c616ae15973c104cd8cb256-Adobe-Core35_AFMs-314.tar.gz \
-		26b3e95ddf3d9c077c480ea45874b3b8-lp_solve_5.5.tar.gz \
-		2a177023f9ea8ec8bd00837605c5df1b-jakarta-tomcat-5.0.30-src.tar.gz \
-		2ae988b339daec234019a7066f96733e-commons-lang-2.3-src.tar.gz \
-		2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz \
-		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip \
-		35efabc239af896dfb79be7ebdd6e6b9-gentiumbasic-fonts-1.10.zip \
-		37282537d0ed1a087b1c8f050dc812d9-dejavu-fonts-ttf-2.32.zip \
-		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip \
-		3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz \
-		48d8169acc35f97e05d8dcdfd45be7f2-lucene-2.3.2.tar.gz \
-		5aba06ede2daa9f2c11892fbd7bc3057-libserializer.zip \
-		67b42915c8432abf0a922438f00860a2-libxml.zip \
-		79600e696a98ff95c2eba976f7a8dfbb-liblayout.zip \
-		798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip \
-		9e436bff44c60dc8b97cba0c7fc11a5c-libwps-0.2.0.tar.bz2 \
-		8294d6c42e3553229af9934c5c0ed997-stax-api-1.0-2-sources.jar \
-		8ea307d71d11140574bfb9fcc2487e33-libbase.zip \
-		a06a496d7a43cbdc35e69dbe678efadb-libloader.zip \
-		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip \
-		ada24d37d8d638b3d8a9985e80bc2978-source-9.0.0.7-bj.zip \
-		af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz \
+		067201ea8b126597670b5eff72e1f66c-mythes-1.2.0.tar.gz:0 \
+		128cfc86ed5953e57fe0f5ae98b62c2e-libtextcat-2.2.tar.gz:0 \
+		17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:0 \
+		1756c4fa6c616ae15973c104cd8cb256-Adobe-Core35_AFMs-314.tar.gz:0 \
+		26b3e95ddf3d9c077c480ea45874b3b8-lp_solve_5.5.tar.gz:0 \
+		2a177023f9ea8ec8bd00837605c5df1b-jakarta-tomcat-5.0.30-src.tar.gz:0 \
+		2ae988b339daec234019a7066f96733e-commons-lang-2.3-src.tar.gz:0 \
+		2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz:0 \
+		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:0 \
+		35efabc239af896dfb79be7ebdd6e6b9-gentiumbasic-fonts-1.10.zip:0 \
+		37282537d0ed1a087b1c8f050dc812d9-dejavu-fonts-ttf-2.32.zip:0 \
+		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:0 \
+		3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz:0 \
+		48d8169acc35f97e05d8dcdfd45be7f2-lucene-2.3.2.tar.gz:0 \
+		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
+		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:0 \
+		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:0 \
+		798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:0 \
+		83d4029aebf290c0a9a8fee9c99638d3-libwps-0.2.1.tar.bz2:0 \
+		8294d6c42e3553229af9934c5c0ed997-stax-api-1.0-2-sources.jar:0 \
+		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0 \
+		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:0 \
+		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:0 \
+		ada24d37d8d638b3d8a9985e80bc2978-source-9.0.0.7-bj.zip:0 \
+		af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz:0 \
 		881af2b7dca9b8259abbca00bbbc004d-LinLibertineG-20110101.zip:0 \
-		ca4870d899fd7e943ffc310a5421ad4d-liberation-fonts-ttf-1.06.0.20100721.tar.gz \
-		cf8a6967f7de535ae257fa411c98eb88-mdds_0.3.0.tar.bz2 \
-		d0b5af6e408b8d2958f3d83b5244f5e8-hyphen-2.4.tar.gz \
-		d1a3205871c3c52e8a50c9f18510ae12-libformula.zip \
-		d4c4d91ab3a8e52a2e69d48d34ef4df4-core.zip \
-		5ba6a61a2f66dfd5fee8cdd4cd262a37-libwpg-0.2.0.tar.bz2 \
-		dbb3757275dc5cc80820c0b4dd24ed95-librepository.zip \
-		ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz \
-		ea91f2fb4212a21d708aced277e6e85a-vigra1.4.0.tar.gz \
-		f3e2febd267c8e4b13df00dac211dd6d-flute.zip \
-		f7925ba8491fe570e5164d2c72791358-libfonts.zip \
-		fdb27bfe2dbe2e7b57ae194d9bf36bab-SampleICC-1.3.2.tar.gz \
-		fe5b3e2b7c4577f30dc001054365653e-dejavu-fonts-ttf-2.30.zip \
-		5ff846847dab351604ad859e2fd4ed3c-libwpd-0.9.1.tar.bz2
+		ca4870d899fd7e943ffc310a5421ad4d-liberation-fonts-ttf-1.06.0.20100721.tar.gz:0 \
+		cf8a6967f7de535ae257fa411c98eb88-mdds_0.3.0.tar.bz2:0 \
+		d0b5af6e408b8d2958f3d83b5244f5e8-hyphen-2.4.tar.gz:0 \
+		48a9f787f43a09c0a9b7b00cd1fddbbf-hyphen-2.7.1.tar.gz:0 \
+		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:0 \
+		d4c4d91ab3a8e52a2e69d48d34ef4df4-core.zip:0 \
+		5ba6a61a2f66dfd5fee8cdd4cd262a37-libwpg-0.2.0.tar.bz2:0 \
+		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:0 \
+		ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz:0 \
+		ea91f2fb4212a21d708aced277e6e85a-vigra1.4.0.tar.gz:0 \
+		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:0 \
+		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:0 \
+		fdb27bfe2dbe2e7b57ae194d9bf36bab-SampleICC-1.3.2.tar.gz:0 \
+		fe5b3e2b7c4577f30dc001054365653e-dejavu-fonts-ttf-2.30.zip:0 \
+		8d265a592619166f29c4672ea54812b7-libwpd-0.9.2.tar.bz2:0 \
+		b4cae0700aa1c2aef7eb7f345365e6f1-translate-toolkit-1.8.1.tar.bz2:0 \
+		7a0dcb3fe1e8c7229ab4fb868b7325e6-mdds_0.5.2.tar.bz2:0 \
+		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:0
 
 DIST_SUBDIR=	libreoffice
 
@@ -94,11 +105,7 @@ MULTI_PACKAGES=		-main -kde
 
 PSEUDO_FLAVORS=	parallel no_lang
 FLAVORS=	debug no_java
-.if ${MACHINE_ARCH} == "amd64"
-FLAVOR?=	no_java
-.else
 FLAVOR?=
-.endif
 
 .if !${FLAVOR:L:Mno_java}
 MULTI_PACKAGES+=	-java
@@ -191,30 +198,82 @@ VMEM_WARNING=	Yes
 
 PATCHORIG=	.orig.port
 
-CONFIGURE_STYLE=	autoconf automake no-autoheader
-AUTOCONF_VERSION=	2.61
+CONFIGURE_STYLE=	autoconf no-autoheader
+AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.9
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		QTINC="${MODQT_INCDIR}" QTDIR="${MODQT_LIBDIR}"
 
-CONFIGURE_ARGS=	--disable-post-install-scripts \
+CONFIGURE_ARGS=	--disable-build-mozilla \
+		--disable-dbus \
+		--disable-epm \
+		--disable-fetch-external \
+		--disable-gnome-vfs \
+		--disable-kde4 \
+		--disable-mozilla \
+		--disable-nss-module \
+		--disable-odk \
+		--disable-opengl \
+		--disable-post-install-scripts \
+		--disable-randr-link \
+		--disable-unix-qstart-libpng \
+		--disable-xrender-link \
+		--enable-binfilter \
+		--enable-cairo \
+		--enable-gnome-vfs \
+		--enable-gstreamer \
 		--enable-kde \
-		--with-distro=LibreOfficeOpenBSD \
+		--enable-lockdown \
+		--enable-ext-presenter-minimizer \
+		--enable-ext-pdfimport \
+		--enable-ext-presenter-console \
+		--enable-ext-report-builder \
+		--enable-systray \
+		--with-alloc=system \
+		--with-compat-oowrappers \
+		--with-extension-integration \
+		--with-external-tar=${DISTDIR}/libreoffice \
 		--with-docdir=${PREFIX}/share/doc/libreoffice \
+		--with-fonts \
 		--with-gnu-tar=${LOCALBASE}/bin/gtar \
 		--with-installed-ooo-dirname=libreoffice \
 		--with-lang="en-US ${LANGS}" \
+		--with-myspell-dicts \
 		--with-ooo-builddir=${WRKSRC}/build/libreoffice \
-		--with-srcdir=${DISTDIR}/libreoffice \
-		--without-git \
+		--with-system-boost \
+		--with-system-cairo \
+		--with-system-cppunit \
+		--with-system-curl \
+		--with-system-db \
+		--with-system-expat \
+		--with-system-hunspell \
+		--with-system-icu \
+		--with-system-jars \
+		--with-system-jpeg \
+		--with-system-libxml \
+		--with-system-libxslt \
+		--with-system-mesa-headers \
+		--with-system-neon \
+		--with-system-openssl \
+		--with-system-poppler \
+		--with-system-python \
+		--with-system-redland \
+		--with-system-stdlibs \
+		--with-system-xrender-headers \
+		--with-system-zlib \
+		--with-vendor="The OpenBSD project" \
+		--without-junit \
+		--without-openldap \
 		--without-system-libwpd \
-		--with-compat-oowrappers \
-		--disable-gnome-vfs
+		--without-system-mozilla \
+		--without-unix-wrapper
 
 .if !${FLAVOR:L:Mno_java}
-CONFIGURE_ARGS+=--with-java \
+CONFIGURE_ARGS+=--enable-ext-wiki-publisher \
+		--with-java \
+		--with-java-target-version=1.5 \
 		--with-jdk-home=${JAVA_HOME} \
 		--with-ant-home=${LOCALBASE}/ant \
 		--with-db-jar=${LOCALBASE}/lib/db4/db.jar
@@ -224,15 +283,17 @@ CONFIGURE_ARGS+=--without-java
 
 .if ${FLAVOR:L:Mparallel}
 NCPU!=		echo $$((`sysctl -n hw.ncpu`+1))
-CONFIGURE_ARGS+=--with-num-cpus=${NCPU}
+.else
+NCPU=		1
 .endif
+CONFIGURE_ARGS+=--with-num-cpus=${NCPU}
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS+=--enable-symbols \
 		--enable-debug
 .endif
 
-MAKE_ENV+=	TMP=${WRKSRC} PYTHON="${MODPY_BIN}" VERBOSE=true
+MAKE_ENV+=	TMP=${WRKSRC} PYTHON="${MODPY_BIN}" verbose=t
 
 .if ${MACHINE_ARCH} == "i386"
 OA=		x86
@@ -246,19 +307,38 @@ pre-patch:
 	@ln -fs /bin/md5 ${WRKDIR}/bin/md5sum
 	@ln -fs /usr/local/bin/gfind ${WRKDIR}/bin/find
 	@ln -fs /usr/local/bin/gcat ${WRKDIR}/bin/cat
-	@mkdir -p ${WRKSRC}/build/libreoffice
-	@mkdir -p ${WRKSRC}/clone
 .for _c in ${COMPONENTS}
-	@mv ${WRKDIR}/libreoffice-${_c}-${VERSION}/* ${WRKSRC}/build/libreoffice/
+	@mv ${WRKDIR}/libreoffice-${_c}-${VERSION}/* ${WRKSRC}
 	@rmdir ${WRKDIR}/libreoffice-${_c}-${VERSION}
 .endfor
-	@touch ${WRKSRC}/build/libreoffice/unpack
-	@touch ${WRKSRC}/clone/repos_changed
 
 post-install:
+	${INSTALL_SCRIPT} ${FILESDIR}/soffice.sh ${PREFIX}/bin/soffice
+	${SUBST_CMD} ${PREFIX}/bin/soffice
+
 	cd ${PREFIX}/bin && \
-	ln -sf ${TRUEPREFIX}/bin/libreoffice${BV} libreoffice && \
-	for _a in soffice soffice${BV}; do \
-		ln -sf ${TRUEPREFIX}/lib/libreoffice/program/soffice $$_a; done
+	for _a in sbase scalc sdraw simpress smath swriter \
+		lobase localc lodraw loimpress lomath lowriter \
+		oobase oocalc oodraw ooimpress oomath oowriter \
+		libreoffice libreoffice${BV} soffice${BV} unopkg; do \
+		ln -sf soffice $${_a}; done
+
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications \
+				${PREFIX}/share/icons \
+				${PREFIX}/share/mime/packages
+
+	for _d in base calc draw impress math printeradmin \
+		qstart startcenter writer; do \
+		perl -pi -e "s,Icon=libreoffice34-,Icon=libreoffice-,g" \
+			${PREFIX}/lib/libreoffice/share/xdg/$${_d}.desktop && \
+		ln -sf ${TRUEPREFIX}/lib/libreoffice/share/xdg/$${_d}.desktop \
+			${PREFIX}/share/applications/$${_d}.desktop; done
+
+	cp -R ${WRKSRC}/sysui/desktop/icons/hicolor ${PREFIX}/share/icons
+	for _f in `find ${PREFIX}/share/icons/*/*/apps -type f`; \
+		do mv $${_f} `echo $${_f} | sed "s,apps/,apps/libreoffice-,g"`; done
+
+	${INSTALL_DATA} ${WRKSRC}/sysui/unxobsd.pro/misc/libreoffice/openoffice.org.xml \
+		${PREFIX}/share/mime/packages
 
 .include <bsd.port.mk>

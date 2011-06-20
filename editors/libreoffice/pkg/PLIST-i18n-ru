@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-ru,v 1.7 2011/04/14 19:45:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST-i18n-ru,v 1.8 2011/06/20 13:29:35 robert Exp $
 @conflict openoffice-i18n-ru-*
 @pkgpath editors/openoffice3,-i18n-ru
 !%%no_java%%
@@ -60,12 +60,6 @@ lib/libreoffice/basis${BV}/help/ru/swriter.ht
 lib/libreoffice/basis${BV}/help/ru/swriter.jar
 lib/libreoffice/basis${BV}/help/ru/swriter.key
 lib/libreoffice/basis${BV}/help/ru/swriter.tree
-lib/libreoffice/basis${BV}/presets/config/arrowhd_ru.soe
-lib/libreoffice/basis${BV}/presets/config/classic_ru.sog
-lib/libreoffice/basis${BV}/presets/config/hatching_ru.soh
-lib/libreoffice/basis${BV}/presets/config/modern_ru.sog
-lib/libreoffice/basis${BV}/presets/config/palette_ru.soc
-lib/libreoffice/basis${BV}/presets/config/styles_ru.sod
 lib/libreoffice/basis${BV}/program/resource/abpru.res
 lib/libreoffice/basis${BV}/program/resource/accru.res
 lib/libreoffice/basis${BV}/program/resource/adabasuiru.res
@@ -96,13 +90,7 @@ lib/libreoffice/basis${BV}/program/resource/deploymentguiru.res
 lib/libreoffice/basis${BV}/program/resource/deploymentru.res
 lib/libreoffice/basis${BV}/program/resource/dktru.res
 lib/libreoffice/basis${BV}/program/resource/editengru.res
-lib/libreoffice/basis${BV}/program/resource/egiru.res
-lib/libreoffice/basis${BV}/program/resource/emeru.res
-lib/libreoffice/basis${BV}/program/resource/epbru.res
-lib/libreoffice/basis${BV}/program/resource/epgru.res
-lib/libreoffice/basis${BV}/program/resource/eppru.res
 lib/libreoffice/basis${BV}/program/resource/epsru.res
-lib/libreoffice/basis${BV}/program/resource/eptru.res
 lib/libreoffice/basis${BV}/program/resource/eurru.res
 lib/libreoffice/basis${BV}/program/resource/forru.res
 lib/libreoffice/basis${BV}/program/resource/foruiru.res
@@ -130,7 +118,7 @@ lib/libreoffice/basis${BV}/program/resource/smru.res
 lib/libreoffice/basis${BV}/program/resource/solverru.res
 lib/libreoffice/basis${BV}/program/resource/sparu.res
 lib/libreoffice/basis${BV}/program/resource/sttru.res
-lib/libreoffice/basis${BV}/program/resource/svsru.res
+lib/libreoffice/basis${BV}/program/resource/svlru.res
 lib/libreoffice/basis${BV}/program/resource/svtru.res
 lib/libreoffice/basis${BV}/program/resource/svxru.res
 lib/libreoffice/basis${BV}/program/resource/swru.res
@@ -190,18 +178,6 @@ lib/libreoffice/basis${BV}/share/template/ru/wizard/fax/pri-bottle_f.ott
 lib/libreoffice/basis${BV}/share/template/ru/wizard/fax/pri-fax_f.ott
 lib/libreoffice/basis${BV}/share/template/ru/wizard/fax/pri-lines_f.ott
 lib/libreoffice/basis${BV}/share/template/ru/wizard/fax/pri-marine_f.ott
-lib/libreoffice/basis${BV}/share/template/ru/wizard/letter/
-lib/libreoffice/basis${BV}/share/template/ru/wizard/letter/ru/
-lib/libreoffice/basis${BV}/share/template/ru/wizard/letter/ru/bus-elegant_l.ott
-lib/libreoffice/basis${BV}/share/template/ru/wizard/letter/ru/bus-modern_l.ott
-lib/libreoffice/basis${BV}/share/template/ru/wizard/letter/ru/bus-office_l.ott
-lib/libreoffice/basis${BV}/share/template/ru/wizard/letter/ru/off-elegant_l.ott
-lib/libreoffice/basis${BV}/share/template/ru/wizard/letter/ru/off-modern_l.ott
-lib/libreoffice/basis${BV}/share/template/ru/wizard/letter/ru/off-office_l.ott
-lib/libreoffice/basis${BV}/share/template/ru/wizard/letter/ru/pri-bottle_l.ott
-lib/libreoffice/basis${BV}/share/template/ru/wizard/letter/ru/pri-mail_l.ott
-lib/libreoffice/basis${BV}/share/template/ru/wizard/letter/ru/pri-marine_l.ott
-lib/libreoffice/basis${BV}/share/template/ru/wizard/letter/ru/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/template/ru/wizard/report/
 lib/libreoffice/basis${BV}/share/template/ru/wizard/report/cnt-01.ott
 lib/libreoffice/basis${BV}/share/template/ru/wizard/report/cnt-011.ott
@@ -265,7 +241,6 @@ lib/libreoffice/basis${BV}/share/template/wizard/letter/ru/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/wordbook/ru/
 lib/libreoffice/basis${BV}/share/wordbook/ru/soffice.dic
 lib/libreoffice/basis${BV}/share/wordbook/ru/technical.dic
-lib/libreoffice/program/resource/oooru.res
 lib/libreoffice/readmes/README_ru
 lib/libreoffice/share/extensions/dict-ru/
 lib/libreoffice/share/extensions/dict-ru/META-INF/

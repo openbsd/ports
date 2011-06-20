@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-pl,v 1.7 2011/04/14 19:45:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST-i18n-pl,v 1.8 2011/06/20 13:29:35 robert Exp $
 @conflict openoffice-i18n-pl-*
 @pkgpath editors/openoffice3,-i18n-pl
 !%%no_java%%
@@ -60,12 +60,6 @@ lib/libreoffice/basis${BV}/help/pl/swriter.ht
 lib/libreoffice/basis${BV}/help/pl/swriter.jar
 lib/libreoffice/basis${BV}/help/pl/swriter.key
 lib/libreoffice/basis${BV}/help/pl/swriter.tree
-lib/libreoffice/basis${BV}/presets/config/arrowhd_pl.soe
-lib/libreoffice/basis${BV}/presets/config/classic_pl.sog
-lib/libreoffice/basis${BV}/presets/config/hatching_pl.soh
-lib/libreoffice/basis${BV}/presets/config/modern_pl.sog
-lib/libreoffice/basis${BV}/presets/config/palette_pl.soc
-lib/libreoffice/basis${BV}/presets/config/styles_pl.sod
 lib/libreoffice/basis${BV}/program/resource/abppl.res
 lib/libreoffice/basis${BV}/program/resource/accpl.res
 lib/libreoffice/basis${BV}/program/resource/adabasuipl.res
@@ -96,13 +90,7 @@ lib/libreoffice/basis${BV}/program/resource/deploymentguipl.res
 lib/libreoffice/basis${BV}/program/resource/deploymentpl.res
 lib/libreoffice/basis${BV}/program/resource/dktpl.res
 lib/libreoffice/basis${BV}/program/resource/editengpl.res
-lib/libreoffice/basis${BV}/program/resource/egipl.res
-lib/libreoffice/basis${BV}/program/resource/emepl.res
-lib/libreoffice/basis${BV}/program/resource/epbpl.res
-lib/libreoffice/basis${BV}/program/resource/epgpl.res
-lib/libreoffice/basis${BV}/program/resource/epppl.res
 lib/libreoffice/basis${BV}/program/resource/epspl.res
-lib/libreoffice/basis${BV}/program/resource/eptpl.res
 lib/libreoffice/basis${BV}/program/resource/eurpl.res
 lib/libreoffice/basis${BV}/program/resource/forpl.res
 lib/libreoffice/basis${BV}/program/resource/foruipl.res
@@ -130,7 +118,7 @@ lib/libreoffice/basis${BV}/program/resource/smpl.res
 lib/libreoffice/basis${BV}/program/resource/solverpl.res
 lib/libreoffice/basis${BV}/program/resource/spapl.res
 lib/libreoffice/basis${BV}/program/resource/sttpl.res
-lib/libreoffice/basis${BV}/program/resource/svspl.res
+lib/libreoffice/basis${BV}/program/resource/svlpl.res
 lib/libreoffice/basis${BV}/program/resource/svtpl.res
 lib/libreoffice/basis${BV}/program/resource/svxpl.res
 lib/libreoffice/basis${BV}/program/resource/swpl.res
@@ -190,18 +178,6 @@ lib/libreoffice/basis${BV}/share/template/pl/wizard/fax/pri-bottle_f.ott
 lib/libreoffice/basis${BV}/share/template/pl/wizard/fax/pri-fax_f.ott
 lib/libreoffice/basis${BV}/share/template/pl/wizard/fax/pri-lines_f.ott
 lib/libreoffice/basis${BV}/share/template/pl/wizard/fax/pri-marine_f.ott
-lib/libreoffice/basis${BV}/share/template/pl/wizard/letter/
-lib/libreoffice/basis${BV}/share/template/pl/wizard/letter/pl/
-lib/libreoffice/basis${BV}/share/template/pl/wizard/letter/pl/bus-elegant_l.ott
-lib/libreoffice/basis${BV}/share/template/pl/wizard/letter/pl/bus-modern_l.ott
-lib/libreoffice/basis${BV}/share/template/pl/wizard/letter/pl/bus-office_l.ott
-lib/libreoffice/basis${BV}/share/template/pl/wizard/letter/pl/off-elegant_l.ott
-lib/libreoffice/basis${BV}/share/template/pl/wizard/letter/pl/off-modern_l.ott
-lib/libreoffice/basis${BV}/share/template/pl/wizard/letter/pl/off-office_l.ott
-lib/libreoffice/basis${BV}/share/template/pl/wizard/letter/pl/pri-bottle_l.ott
-lib/libreoffice/basis${BV}/share/template/pl/wizard/letter/pl/pri-mail_l.ott
-lib/libreoffice/basis${BV}/share/template/pl/wizard/letter/pl/pri-marine_l.ott
-lib/libreoffice/basis${BV}/share/template/pl/wizard/letter/pl/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/template/pl/wizard/report/
 lib/libreoffice/basis${BV}/share/template/pl/wizard/report/cnt-01.ott
 lib/libreoffice/basis${BV}/share/template/pl/wizard/report/cnt-011.ott
@@ -265,7 +241,6 @@ lib/libreoffice/basis${BV}/share/template/wizard/letter/pl/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/wordbook/pl/
 lib/libreoffice/basis${BV}/share/wordbook/pl/soffice.dic
 lib/libreoffice/basis${BV}/share/wordbook/pl/technical.dic
-lib/libreoffice/program/resource/ooopl.res
 lib/libreoffice/readmes/README_pl
 lib/libreoffice/share/extensions/dict-pl/
 lib/libreoffice/share/extensions/dict-pl/META-INF/
@@ -274,7 +249,6 @@ lib/libreoffice/share/extensions/dict-pl/README_en.txt
 lib/libreoffice/share/extensions/dict-pl/README_pl.txt
 lib/libreoffice/share/extensions/dict-pl/description.xml
 lib/libreoffice/share/extensions/dict-pl/dictionaries.xcu
-lib/libreoffice/share/extensions/dict-pl/flaga.png
 lib/libreoffice/share/extensions/dict-pl/hyph_pl_PL.dic
 lib/libreoffice/share/extensions/dict-pl/pl_PL.aff
 lib/libreoffice/share/extensions/dict-pl/pl_PL.dic

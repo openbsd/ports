@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-sl,v 1.7 2011/04/14 19:45:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST-i18n-sl,v 1.8 2011/06/20 13:29:35 robert Exp $
 @conflict openoffice-i18n-sl-*
 @pkgpath editors/openoffice3,-i18n-sl
 !%%no_java%%
@@ -60,12 +60,6 @@ lib/libreoffice/basis${BV}/help/sl/swriter.ht
 lib/libreoffice/basis${BV}/help/sl/swriter.jar
 lib/libreoffice/basis${BV}/help/sl/swriter.key
 lib/libreoffice/basis${BV}/help/sl/swriter.tree
-lib/libreoffice/basis${BV}/presets/config/arrowhd_sl.soe
-lib/libreoffice/basis${BV}/presets/config/classic_sl.sog
-lib/libreoffice/basis${BV}/presets/config/hatching_sl.soh
-lib/libreoffice/basis${BV}/presets/config/modern_sl.sog
-lib/libreoffice/basis${BV}/presets/config/palette_sl.soc
-lib/libreoffice/basis${BV}/presets/config/styles_sl.sod
 lib/libreoffice/basis${BV}/program/resource/abpsl.res
 lib/libreoffice/basis${BV}/program/resource/accsl.res
 lib/libreoffice/basis${BV}/program/resource/adabasuisl.res
@@ -96,13 +90,7 @@ lib/libreoffice/basis${BV}/program/resource/deploymentguisl.res
 lib/libreoffice/basis${BV}/program/resource/deploymentsl.res
 lib/libreoffice/basis${BV}/program/resource/dktsl.res
 lib/libreoffice/basis${BV}/program/resource/editengsl.res
-lib/libreoffice/basis${BV}/program/resource/egisl.res
-lib/libreoffice/basis${BV}/program/resource/emesl.res
-lib/libreoffice/basis${BV}/program/resource/epbsl.res
-lib/libreoffice/basis${BV}/program/resource/epgsl.res
-lib/libreoffice/basis${BV}/program/resource/eppsl.res
 lib/libreoffice/basis${BV}/program/resource/epssl.res
-lib/libreoffice/basis${BV}/program/resource/eptsl.res
 lib/libreoffice/basis${BV}/program/resource/eursl.res
 lib/libreoffice/basis${BV}/program/resource/forsl.res
 lib/libreoffice/basis${BV}/program/resource/foruisl.res
@@ -130,7 +118,7 @@ lib/libreoffice/basis${BV}/program/resource/smsl.res
 lib/libreoffice/basis${BV}/program/resource/solversl.res
 lib/libreoffice/basis${BV}/program/resource/spasl.res
 lib/libreoffice/basis${BV}/program/resource/sttsl.res
-lib/libreoffice/basis${BV}/program/resource/svssl.res
+lib/libreoffice/basis${BV}/program/resource/svlsl.res
 lib/libreoffice/basis${BV}/program/resource/svtsl.res
 lib/libreoffice/basis${BV}/program/resource/svxsl.res
 lib/libreoffice/basis${BV}/program/resource/swsl.res
@@ -193,18 +181,6 @@ lib/libreoffice/basis${BV}/share/template/sl/wizard/fax/pri-bottle_f.ott
 lib/libreoffice/basis${BV}/share/template/sl/wizard/fax/pri-fax_f.ott
 lib/libreoffice/basis${BV}/share/template/sl/wizard/fax/pri-lines_f.ott
 lib/libreoffice/basis${BV}/share/template/sl/wizard/fax/pri-marine_f.ott
-lib/libreoffice/basis${BV}/share/template/sl/wizard/letter/
-lib/libreoffice/basis${BV}/share/template/sl/wizard/letter/sl/
-lib/libreoffice/basis${BV}/share/template/sl/wizard/letter/sl/bus-elegant_l.ott
-lib/libreoffice/basis${BV}/share/template/sl/wizard/letter/sl/bus-modern_l.ott
-lib/libreoffice/basis${BV}/share/template/sl/wizard/letter/sl/bus-office_l.ott
-lib/libreoffice/basis${BV}/share/template/sl/wizard/letter/sl/off-elegant_l.ott
-lib/libreoffice/basis${BV}/share/template/sl/wizard/letter/sl/off-modern_l.ott
-lib/libreoffice/basis${BV}/share/template/sl/wizard/letter/sl/off-office_l.ott
-lib/libreoffice/basis${BV}/share/template/sl/wizard/letter/sl/pri-bottle_l.ott
-lib/libreoffice/basis${BV}/share/template/sl/wizard/letter/sl/pri-mail_l.ott
-lib/libreoffice/basis${BV}/share/template/sl/wizard/letter/sl/pri-marine_l.ott
-lib/libreoffice/basis${BV}/share/template/sl/wizard/letter/sl/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/template/sl/wizard/report/
 lib/libreoffice/basis${BV}/share/template/sl/wizard/report/cnt-01.ott
 lib/libreoffice/basis${BV}/share/template/sl/wizard/report/cnt-011.ott
@@ -268,7 +244,6 @@ lib/libreoffice/basis${BV}/share/template/wizard/letter/sl/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/wordbook/sl/
 lib/libreoffice/basis${BV}/share/wordbook/sl/soffice.dic
 lib/libreoffice/basis${BV}/share/wordbook/sl/technical.dic
-lib/libreoffice/program/resource/ooosl.res
 lib/libreoffice/readmes/README_sl
 lib/libreoffice/share/extensions/dict-sl/
 lib/libreoffice/share/extensions/dict-sl/META-INF/

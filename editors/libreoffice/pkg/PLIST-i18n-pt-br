@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-pt-br,v 1.7 2011/04/14 19:45:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST-i18n-pt-br,v 1.8 2011/06/20 13:29:35 robert Exp $
 @conflict openoffice-i18n-pt-br-*
 @pkgpath editors/openoffice3,-i18n-br
 !%%no_java%%
@@ -60,12 +60,6 @@ lib/libreoffice/basis${BV}/help/pt-BR/swriter.ht
 lib/libreoffice/basis${BV}/help/pt-BR/swriter.jar
 lib/libreoffice/basis${BV}/help/pt-BR/swriter.key
 lib/libreoffice/basis${BV}/help/pt-BR/swriter.tree
-lib/libreoffice/basis${BV}/presets/config/arrowhd_pt-BR.soe
-lib/libreoffice/basis${BV}/presets/config/classic_pt-BR.sog
-lib/libreoffice/basis${BV}/presets/config/hatching_pt-BR.soh
-lib/libreoffice/basis${BV}/presets/config/modern_pt-BR.sog
-lib/libreoffice/basis${BV}/presets/config/palette_pt-BR.soc
-lib/libreoffice/basis${BV}/presets/config/styles_pt-BR.sod
 lib/libreoffice/basis${BV}/program/resource/abppt-BR.res
 lib/libreoffice/basis${BV}/program/resource/accpt-BR.res
 lib/libreoffice/basis${BV}/program/resource/adabasuipt-BR.res
@@ -96,13 +90,7 @@ lib/libreoffice/basis${BV}/program/resource/deploymentguipt-BR.res
 lib/libreoffice/basis${BV}/program/resource/deploymentpt-BR.res
 lib/libreoffice/basis${BV}/program/resource/dktpt-BR.res
 lib/libreoffice/basis${BV}/program/resource/editengpt-BR.res
-lib/libreoffice/basis${BV}/program/resource/egipt-BR.res
-lib/libreoffice/basis${BV}/program/resource/emept-BR.res
-lib/libreoffice/basis${BV}/program/resource/epbpt-BR.res
-lib/libreoffice/basis${BV}/program/resource/epgpt-BR.res
-lib/libreoffice/basis${BV}/program/resource/epppt-BR.res
 lib/libreoffice/basis${BV}/program/resource/epspt-BR.res
-lib/libreoffice/basis${BV}/program/resource/eptpt-BR.res
 lib/libreoffice/basis${BV}/program/resource/eurpt-BR.res
 lib/libreoffice/basis${BV}/program/resource/forpt-BR.res
 lib/libreoffice/basis${BV}/program/resource/foruipt-BR.res
@@ -130,7 +118,7 @@ lib/libreoffice/basis${BV}/program/resource/smpt-BR.res
 lib/libreoffice/basis${BV}/program/resource/solverpt-BR.res
 lib/libreoffice/basis${BV}/program/resource/spapt-BR.res
 lib/libreoffice/basis${BV}/program/resource/sttpt-BR.res
-lib/libreoffice/basis${BV}/program/resource/svspt-BR.res
+lib/libreoffice/basis${BV}/program/resource/svlpt-BR.res
 lib/libreoffice/basis${BV}/program/resource/svtpt-BR.res
 lib/libreoffice/basis${BV}/program/resource/svxpt-BR.res
 lib/libreoffice/basis${BV}/program/resource/swpt-BR.res
@@ -192,18 +180,6 @@ lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/fax/pri-bottle_f.ott
 lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/fax/pri-fax_f.ott
 lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/fax/pri-lines_f.ott
 lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/fax/pri-marine_f.ott
-lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/letter/
-lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/letter/pt-BR/
-lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/letter/pt-BR/bus-elegant_l.ott
-lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/letter/pt-BR/bus-modern_l.ott
-lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/letter/pt-BR/bus-office_l.ott
-lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/letter/pt-BR/off-elegant_l.ott
-lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/letter/pt-BR/off-modern_l.ott
-lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/letter/pt-BR/off-office_l.ott
-lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/letter/pt-BR/pri-bottle_l.ott
-lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/letter/pt-BR/pri-mail_l.ott
-lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/letter/pt-BR/pri-marine_l.ott
-lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/letter/pt-BR/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/report/
 lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/report/cnt-01.ott
 lib/libreoffice/basis${BV}/share/template/pt-BR/wizard/report/cnt-011.ott
@@ -267,7 +243,6 @@ lib/libreoffice/basis${BV}/share/template/wizard/letter/pt-BR/pri-redline_l.ott
 lib/libreoffice/basis${BV}/share/wordbook/pt-BR/
 lib/libreoffice/basis${BV}/share/wordbook/pt-BR/soffice.dic
 lib/libreoffice/basis${BV}/share/wordbook/pt-BR/technical.dic
-lib/libreoffice/program/resource/ooopt-BR.res
 lib/libreoffice/readmes/README_pt-BR
 lib/libreoffice/share/extensions/dict-pt/
 lib/libreoffice/share/extensions/dict-pt/META-INF/
