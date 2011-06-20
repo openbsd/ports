@@ -1,6 +1,6 @@
-$OpenBSD: patch-devede_py,v 1.14 2010/03/23 21:48:41 ajacoutot Exp $
---- devede.py.orig	Fri Mar 19 00:42:12 2010
-+++ devede.py	Tue Mar 23 22:41:28 2010
+$OpenBSD: patch-devede_py,v 1.15 2011/06/20 13:24:28 ajacoutot Exp $
+--- devede.py.orig	Sat Jul  3 00:09:18 2010
++++ devede.py	Mon Jun 20 15:19:37 2011
 @@ -19,6 +19,13 @@
  # You should have received a copy of the GNU General Public License
  # along with this program.  If not, see <http://www.gnu.org/licenses/>.
@@ -15,13 +15,11 @@ $OpenBSD: patch-devede_py,v 1.14 2010/03/23 21:48:41 ajacoutot Exp $
  
  import sys
  import os
-@@ -34,8 +41,8 @@ import shutil
- import pickle
+@@ -35,7 +42,7 @@ import pickle
  import cairo
  
--print "DeVeDe 3.16.5"
+ print "DeVeDe 3.16.9"
 -if (sys.platform!="win32") and (sys.platform!="win64"):
-+print "DeVeDe 3.16.6"
 +if (sys.platform!="win32") and (sys.platform!="win64") and not sys.platform.startswith('openbsd'):
  	try:
  		print "Locale: "+str(os.environ["LANG"])

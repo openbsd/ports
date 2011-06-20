@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.25 2011/06/08 18:18:13 rpointel Exp $
+# $OpenBSD: Makefile,v 1.26 2011/06/20 13:24:28 ajacoutot Exp $
 
 COMMENT=	video DVDs and CDs creation tool
 
-DISTNAME=	devede-3.16.6
-REVISION =	1
+DISTNAME=	devede-3.16.9
 
 CATEGORIES=	multimedia x11
 
 EXTRACT_SUFX=	.tar.bz2
-
-MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 HOMEPAGE=	http://www.rastersoft.com/programas/devede.html
 
