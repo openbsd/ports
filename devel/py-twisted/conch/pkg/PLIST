@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/07/05 13:37:02 eric Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/06/20 10:25:32 eric Exp $
 @conflict cftp-*
 bin/cftp
 bin/ckeygen
@@ -83,8 +83,6 @@ lib/python${MODPY_VERSION}/site-packages/twisted/conch/ssh/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/ssh/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/ssh/agent.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/ssh/agent.pyc
-lib/python${MODPY_VERSION}/site-packages/twisted/conch/ssh/asn1.py
-lib/python${MODPY_VERSION}/site-packages/twisted/conch/ssh/asn1.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/ssh/channel.py
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/ssh/channel.pyc
 lib/python${MODPY_VERSION}/site-packages/twisted/conch/ssh/common.py

@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2011/06/08 17:39:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/06/20 10:25:32 eric Exp $
 
 COMMENT=	DNS protocol implementation
 
 CATEGORIES+=	net
 
-VERSION=	10.0.0
+VERSION=	11.0.0
 DISTNAME=	TwistedNames-${VERSION}
 PKGNAME=	py-twisted-names-${VERSION}
-REVISION =	1
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedNames
 
-MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Names/${VERSION:R}/
+MASTER_SITES=	http://twistedmatrix.com/Releases/Names/${VERSION:R}/
 
 REGRESS_DEPENDS=devel/py-twisted/names
 

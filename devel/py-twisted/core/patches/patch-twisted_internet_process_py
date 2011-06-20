@@ -1,0 +1,73 @@
+$OpenBSD: patch-twisted_internet_process_py,v 1.1 2011/06/20 10:25:32 eric Exp $
+--- twisted/internet/process.py.orig	Mon Mar 21 03:43:05 2011
++++ twisted/internet/process.py	Tue May  3 13:02:00 2011
+@@ -502,25 +502,25 @@ class _FDDetector(object):
+         /proc/%d/fd exists, if so use that.
+         
+         Otherwise, ask resource.getrlimit, if that throws an exception, then
+-        fallback to _fallbackFDImplementation.
++        fallback to _resourceFDImplementation or _fallbackFDImplementation as
++        last resort.
+         """
+         try:
+             self.listdir("/dev/fd")
+             if self._checkDevFDSanity(): # FreeBSD support :-)
+                 return self._devFDImplementation
+-            else:
+-                return self._fallbackFDImplementation
+         except:
+             try:
+                 self.listdir("/proc/%d/fd" % (self.getpid(),))
+                 return self._procFDImplementation
+             except:
+-                try:
+-                    self._resourceFDImplementation() # Imports resource
+-                    return self._resourceFDImplementation
+-                except:
+-                    return self._fallbackFDImplementation
++                pass
+ 
++        try:
++            self._resourceFDImplementation() # Imports resource
++            return self._resourceFDImplementation
++        except:
++            return self._fallbackFDImplementation
+ 
+     def _checkDevFDSanity(self):
+         """
+@@ -560,11 +560,7 @@ class _FDDetector(object):
+         Note that on OS-X we expect to be using the /dev/fd implementation.
+         """
+         import resource
+-        maxfds = resource.getrlimit(resource.RLIMIT_NOFILE)[1] + 1
+-        # OS-X reports 9223372036854775808. That's a lot of fds
+-        # to close
+-        if maxfds > 1024:
+-            maxfds = 1024
++        maxfds = resource.getrlimit(resource.RLIMIT_NOFILE)[0]
+         return xrange(maxfds)
+ 
+ 
+@@ -584,7 +580,21 @@ def _listOpenFDs():
+     Use the global detector object to figure out which FD implementation to
+     use.
+     """
+-    return detector._listOpenFDs()
++
++    def _filterReallyOpenFDs(guess):
++        """
++        Remove false-positive from a list of supposedly open file descriptors.
++        
++        Returns a set of open file descriptors.
++        """
++        fds = set(guess)
++        poll = select.poll()
++        for fd in fds:
++            poll.register(fd, select.POLLIN)
++        return sorted(fds.difference(set(fd for (fd, ev) in poll.poll(0)
++                                  if ev == select.POLLNVAL)))
++
++    return _filterReallyOpenFDs(detector._listOpenFDs())
+ 
+ 
+ class Process(_BaseProcess):

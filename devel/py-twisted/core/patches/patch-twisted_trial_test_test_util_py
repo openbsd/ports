@@ -1,0 +1,12 @@
+$OpenBSD: patch-twisted_trial_test_test_util_py,v 1.1 2011/06/20 10:25:32 eric Exp $
+--- twisted/trial/test/test_util.py.orig	Wed May  4 15:36:05 2011
++++ twisted/trial/test/test_util.py	Wed May  4 15:35:48 2011
+@@ -250,7 +250,7 @@ class TestRunSequentially(TestCase):
+             self.assertEqual(fail.getErrorMessage(), 'foo')
+             self.assertEqual(result, 'bar')
+         return d.addCallback(check)
+-    test_stripFlags.todo = "YAGNI"
++    test_stripFlags.skip = "YAGNI"
+ 
+ 
+ 

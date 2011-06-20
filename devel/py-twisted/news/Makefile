@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2011/06/08 17:39:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/06/20 10:25:32 eric Exp $
 
 COMMENT=	NNTP protocol implementation
 
 CATEGORIES+=	news
 
-VERSION=	10.0.0
+VERSION=	11.0.0
 DISTNAME=	TwistedNews-${VERSION}
 PKGNAME=	py-twisted-news-${VERSION}
-REVISION =	1
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedNews
 
-MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/News/${VERSION:R}/
+MASTER_SITES=	http://twistedmatrix.com/Releases/News/${VERSION:R}/
 
 REGRESS_DEPENDS=devel/py-twisted/news
 RUN_DEPENDS=	devel/py-twisted/mail

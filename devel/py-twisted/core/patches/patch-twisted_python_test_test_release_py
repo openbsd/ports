@@ -1,0 +1,17 @@
+These tests are for the release process. skip them.
+
+$OpenBSD: patch-twisted_python_test_test_release_py,v 1.1 2011/06/20 10:25:32 eric Exp $
+--- twisted/python/test/test_release.py.orig	Wed May  4 15:29:20 2011
++++ twisted/python/test/test_release.py	Wed May  4 15:29:13 2011
+@@ -41,10 +41,7 @@ from twisted.python._release import UncleanWorkingDire
+ from twisted.python._release import ChangeVersionsScript, BuildTarballsScript
+ from twisted.python._release import NewsBuilder
+ 
+-if os.name != 'posix':
+-    skip = "Release toolchain only supported on POSIX."
+-else:
+-    skip = None
++skip = "Nothing to see here"
+ 
+ 
+ # Check a bunch of dependencies to skip tests if necessary.
