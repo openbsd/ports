@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/20 11:40:20 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/__tryton__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/__tryton__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/address.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/address.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/address.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/bg_BG.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/de_DE.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/es_CO.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/es_ES.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/fr_FR.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/test_google_maps.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/google_maps/tests/test_google_maps.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond_google_maps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/trytond_google_maps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/trytond_google_maps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_google_maps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_google_maps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_google_maps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/trytond_google_maps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_google_maps-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
