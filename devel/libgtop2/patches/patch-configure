@@ -1,8 +1,12 @@
-$OpenBSD: patch-configure,v 1.14 2011/06/20 21:29:47 jasper Exp $
+$OpenBSD: patch-configure,v 1.15 2011/06/21 07:19:36 jasper Exp $
 
-./configure[3240]: ${INTROSPECTION_GIRDIR/$datadir/\$(datadir)}: bad substitution
+commit 51afc705520a03618f34c9320302688e88e05316
+Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date:   Mon Jun 20 10:59:56 2011 +0200
 
-https://bugzilla.gnome.org/show_bug.cgi?id=652981
+    Use a more portable construct for doing substitutions.
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=652981
 
 --- configure.orig	Fri Mar 25 15:54:05 2011
 +++ configure	Mon Jun 20 23:29:15 2011
