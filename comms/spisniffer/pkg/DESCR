@@ -1,0 +1,4 @@
+This is a small program that displays SPI sniffer data from the Bus
+Pirate. It uses the binary mode SPI sniffer access, so it has a speed
+advantage over the terminal mode display. The computer takes the burden
+of converting raw byte values to HEX output.

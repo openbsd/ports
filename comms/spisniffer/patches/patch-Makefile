@@ -1,0 +1,10 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2011/06/21 19:14:59 jasper Exp $
+--- Makefile.orig	Tue Jun 21 20:10:49 2011
++++ Makefile	Tue Jun 21 21:13:23 2011
+@@ -1,5 +1,5 @@
+ #CC	=	gcc
+-CFLAGS	=	-Wall -Os -DTRUE=1 -DFALSE=0
++CFLAGS	=	-Wall -Os -DTRUE=1 -DFALSE=0 ${STD_CFLAGS}
+ 
+ VERSION	=	\"V0.10\"
+ CFLAGS	+=	-DVERSION=$(VERSION)
