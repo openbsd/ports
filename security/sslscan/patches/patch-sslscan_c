@@ -1,0 +1,20 @@
+$OpenBSD: patch-sslscan_c,v 1.1.1.1 2011/06/21 21:05:48 ajacoutot Exp $
+--- sslscan.c.orig	Tue Sep  1 14:35:59 2009
++++ sslscan.c	Tue Jun 21 23:03:21 2011
+@@ -41,6 +41,7 @@
+ #include <openssl/pkcs12.h>
+ #include <openssl/x509.h>
+ #include <openssl/x509v3.h>
++#include <netinet/in.h>
+ 
+ // Defines...
+ #define false 0
+@@ -59,7 +60,7 @@
+ #define tls_v1 3
+ 
+ // Colour Console Output...
+-#if !defined(__WIN32__)
++#if !defined(__WIN32__) && !defined(__OpenBSD__)
+ const char *RESET = "[0m";			// DEFAULT
+ const char *COL_RED = "[31m";		// RED
+ const char *COL_BLUE = "[34m";		// BLUE
