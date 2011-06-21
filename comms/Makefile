@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2010/02/01 17:00:12 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2011/06/21 19:15:28 jasper Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR =
@@ -34,6 +34,7 @@
      SUBDIR += scmxx
      SUBDIR += seyon
      SUBDIR += smstools
+     SUBDIR += spisniffer
      SUBDIR += sredird
      SUBDIR += tkhylafax
      SUBDIR += tlf
