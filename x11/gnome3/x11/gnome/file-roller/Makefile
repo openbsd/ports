@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/21 17:05:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/21 17:42:18 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,6 +10,8 @@ GNOME_VERSION=		3.0.2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
+
+REVISION-main=		0
 
 CATEGORIES=		archivers
 
@@ -34,13 +36,14 @@ MODULES=		devel/dconf \
 MULTI_PACKAGES= 	-main -nautilus
 
 WANTLIB-main=		${WANTLIB} c pthread
-RUN_DEPENDS-main=	archivers/gtar \
-			archivers/xz \
-			archivers/unzip \
-			archivers/zip \
-			archivers/gcpio \
+RUN_DEPENDS-main=	archivers/gcpio \
+			archivers/gtar \
+			archivers/p7zip \
 			archivers/unrar \
-			archivers/p7zip
+			archivers/unzip \
+			archivers/xz \
+			archivers/zip \
+			sysutils/cdrtools
 LIB_DEPENDS-main=	x11/gtk+3
 
 WANTLIB-nautilus=	${WANTLIB} nautilus-extension

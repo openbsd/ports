@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/06/21 14:32:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2011/06/21 17:42:08 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		archive manager for GNOME
 
 GNOME_PROJECT=		file-roller
 GNOME_VERSION=		2.32.2
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		archivers
 
@@ -28,13 +28,14 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-RUN_DEPENDS=		archivers/gtar \
-			archivers/xz \
-			archivers/unzip \
-			archivers/zip \
-			archivers/gcpio \
+RUN_DEPENDS=		archivers/gcpio \
+			archivers/gtar \
+			archivers/p7zip \
 			archivers/unrar \
-			archivers/p7zip
+			archivers/unzip \
+			archivers/xz \
+			archivers/zip \
+			sysutils/cdrtools
 LIB_DEPENDS=		x11/gnome/nautilus
 
 MODGNOME_HELP_FILES=	Yes
