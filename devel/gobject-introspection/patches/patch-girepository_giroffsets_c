@@ -1,8 +1,12 @@
-$OpenBSD: patch-girepository_giroffsets_c,v 1.6 2011/06/15 09:46:40 jasper Exp $
+$OpenBSD: patch-girepository_giroffsets_c,v 1.7 2011/06/21 13:12:05 jasper Exp $
 
-Prevent redefinition of ALIGN in giroffsets.c with /usr/include/machine/param.h
+commit 023a7ed00e33a6a9e5f3fee742d4c210ce108ecd
+Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date:   Tue Jun 21 13:44:56 2011 +0200
 
-https://bugzilla.gnome.org/show_bug.cgi?id=652625
+    Rename ALIGN to GI_ALIGN to prevent redefining this macro on some platforms
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=652625
 
 --- girepository/giroffsets.c.orig	Wed Nov 17 15:02:51 2010
 +++ girepository/giroffsets.c	Thu Dec 23 15:21:17 2010
@@ -11,7 +15,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=652625
  }
  
 -#define ALIGN(n, align) (((n) + (align) - 1) & ~((align) - 1))
-+#define G_ALIGN(n, align) (((n) + (align) - 1) & ~((align) - 1))
++#define GI_ALIGN(n, align) (((n) + (align) - 1) & ~((align) - 1))
  
  static gboolean
  compute_struct_field_offsets (GIrTypelibBuild   *build,
@@ -20,7 +24,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=652625
  					    &member_size, &member_alignment))
  		{
 -		  size = ALIGN (size, member_alignment);
-+		  size = G_ALIGN (size, member_alignment);
++		  size = GI_ALIGN (size, member_alignment);
  		  alignment = MAX (alignment, member_alignment);
  		  field->offset = size;
  		  size += member_size;
@@ -29,7 +33,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=652625
        else if (member->type == G_IR_NODE_CALLBACK)
  	{
 -          size = ALIGN (size, ffi_type_pointer.alignment);
-+          size = G_ALIGN (size, ffi_type_pointer.alignment);
++          size = GI_ALIGN (size, ffi_type_pointer.alignment);
            alignment = MAX (alignment, ffi_type_pointer.alignment);
  	  size += ffi_type_pointer.size;
  	}
@@ -37,7 +41,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=652625
  
    /* Structs are tail-padded out to a multiple of their alignment */
 -  size = ALIGN (size, alignment);
-+  size = G_ALIGN (size, alignment);
++  size = GI_ALIGN (size, alignment);
  
    if (!have_error)
      {
@@ -46,7 +50,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=652625
  
    /* Unions are tail-padded out to a multiple of their alignment */
 -  size = ALIGN (size, alignment);
-+  size = G_ALIGN (size, alignment);
++  size = GI_ALIGN (size, alignment);
  
    if (!have_error)
      {
