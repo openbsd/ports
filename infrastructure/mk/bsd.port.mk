@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1084 2011/06/15 16:31:11 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1085 2011/06/21 17:04:32 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -650,6 +650,8 @@ _CONFIGURE_COOKIE =		${WRKDIR}/.configure_done
 _BUILD_COOKIE =			${WRKDIR}/.build_done
 _REGRESS_COOKIE =		${WRKDIR}/.regress_done
 .endif
+_P_WANTLIB_COOKIE =	${WRKDIR}/.portstree-${FULLPKGNAME${SUBPACKAGE}}
+_I_WANTLIB_COOKIE =	${WRKDIR}/.installed-${FULLPKGNAME${SUBPACKAGE}}
 
 _ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 	${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_REGRESS_COOKIE} \
@@ -658,6 +660,7 @@ _ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 	${_WRKDIR_COOKIE} ${_DEPBUILD_COOKIES} \
 	${_DEPRUN_COOKIES} ${_DEPREGRESS_COOKIES} ${_UPDATE_COOKIES} \
 	${_DEPBUILDLIB_COOKIES} ${_DEPRUNLIB_COOKIES} \
+	${_P_WANTLIB_COOKIE} ${_I_WANTLIB_COOKIE} \
 	${_DEPBUILDWANTLIB_COOKIE} ${_DEPRUNWANTLIB_COOKIE} ${_DEPLIBSPECS_COOKIES}
 
 _MAKE_COOKIE = touch
@@ -3096,13 +3099,16 @@ _lib-depends-args:
 .endfor
 
 _wantlib-args:
-	@a=`${_MAKE} _port-wantlib-args`; b=`${_MAKE} _fake-wantlib-args`; \
-	if test "X$$a" = "X$$b"; \
+	@${_MAKE} _port-wantlib-args >${_P_WANTLIB_COOKIE}
+	@${_MAKE} _fake-wantlib-args >${_I_WANTLIB_COOKIE}
+	@echo zoinx >>${_I_WANTLIB_COOKIE}
+	@if cmp -s ${_P_WANTLIB_COOKIE} ${_I_WANTLIB_COOKIE}; \
 	then \
-		echo $$a; \
+		cat ${_P_WANTLIB_COOKIE}; \
 	else \
-		echo 1>&2 "Error: packing-lists and reality don't match"; \
-		echo 1>&2 "Compare make _port-wantlib-args _fake-wantlib-args"; \
+		echo 1>&2 "Error: Libraries in packing-lists in the ports tree"; \
+		echo 1>&2 "       and libraries from installed packages don't match"; \
+		diff 1>&2 -u ${_P_WANTLIB_COOKIE} ${_I_WANTLIB_COOKIE}; \
 		exit 1; \
 	fi
 
