@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2011/06/01 15:07:48 ajacoutot Exp $
-@pkgpath x11/gnome/gcalctool
+@comment $OpenBSD: PLIST,v 1.18 2011/06/21 10:26:18 ajacoutot Exp $
 @bin bin/gcalccmd
 @bin bin/gcalctool
 bin/gnome-calculator
