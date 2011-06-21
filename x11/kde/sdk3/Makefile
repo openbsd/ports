@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2011/06/21 12:36:29 jasper Exp $
 
 COMMENT-main = 		K Desktop Environment, developer extensions
 COMMENT-svn = 		K Desktop Environment, svn extensions
@@ -7,7 +7,9 @@ VERSION =		3.5.10
 DISTNAME =		kdesdk-${VERSION}
 
 PKGNAME-main =		${DISTNAME}
+REVISION-main =		6
 PKGNAME-svn =		kdesvn-${VERSION}
+REVISION-svn =		6
 
 MODKDE_VERSION =	3.5.8
 SHARED_LIBS +=	cvsservice           1.0      # .0.1
@@ -41,8 +43,6 @@ WANTLIB	= ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg \
 WANTLIB-main = ${WANTLIB}
 WANTLIB-svn = ${WANTLIB}
 
-REVISION-main = 5
-REVISION-svn = 6
 WANTLIB-main += Xfixes Xt expat fontconfig freetype kabc kdeprint \
 	khtml kjs kparts kresources kspell ktexteditor ktnef ktnef kunittest \
 	kutils lib/kde3/kcal lib/kde3/kmime pcre pcreposix qui-mt vcard xml2 \
@@ -51,6 +51,20 @@ WANTLIB-svn += apr-1 aprutil-1 asn1 crypto db expat gssapi krb5 \
 	neon sasl2 sqlite3 ssl svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 \
 	svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1 svn_ra_local-1 \
 	svn_ra_neon-1 svn_ra_svn-1 svn_repos-1 svn_subr-1 svn_wc-1
+
+post-patch:
+	find "${WRKSRC}"/scripts -type f | while read F; do \
+		case $$F in \
+		*${PATCHORIG}|*.new) ;; \
+		*) sed -E \
+			-e 's@/usr/bin/env (bash|python)@${LOCALBASE}/bin/\1@g' \
+			-e 's@/usr/bin/env perl@/usr/bin/perl@g' \
+			-e 's@/usr/bin/svn@${LOCALBASE}/bin/svn@g' \
+			<"$$F" >"$$F".new && \
+			mv "$$F".new "$$F" \
+			;; \
+		esac \
+	done
 
 post-install:
 	cd ${PREFIX}/bin && mv cvscheck kcvscheck
