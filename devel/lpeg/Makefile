@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/06/20 21:40:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/21 06:09:34 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,9 +19,6 @@ MODULES=	lang/lua
 
 ALL_TARGET=	lpeg.so
 MAKE_FILE=	makefile
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/makefile
 
 do-install:
 	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR} ${MODLUA_DATADIR}
