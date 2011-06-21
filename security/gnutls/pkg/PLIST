@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/05/04 15:48:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/06/21 09:55:43 ajacoutot Exp $
 @bin bin/certtool
 @bin bin/gnutls-cli
 @bin bin/gnutls-cli-debug
@@ -53,6 +53,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man1/srptool.1
 @man man/man3/gnutls_alert_get.3
 @man man/man3/gnutls_alert_get_name.3
+@man man/man3/gnutls_alert_send.3
 @man man/man3/gnutls_alert_send_appropriate.3
 @man man/man3/gnutls_anon_allocate_client_credentials.3
 @man man/man3/gnutls_anon_allocate_server_credentials.3
@@ -75,6 +76,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_certificate_free_credentials.3
 @man man/man3/gnutls_certificate_free_crls.3
 @man man/man3/gnutls_certificate_free_keys.3
+@man man/man3/gnutls_certificate_get_issuer.3
 @man man/man3/gnutls_certificate_get_openpgp_keyring.3
 @man man/man3/gnutls_certificate_get_ours.3
 @man man/man3/gnutls_certificate_get_peers.3
@@ -183,6 +185,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_global_set_log_level.3
 @man man/man3/gnutls_global_set_mem_functions.3
 @man man/man3/gnutls_global_set_mutex.3
+@man man/man3/gnutls_global_set_time_function.3
 @man man/man3/gnutls_handshake.3
 @man man/man3/gnutls_handshake_get_last_in.3
 @man man/man3/gnutls_handshake_get_last_out.3
@@ -580,6 +583,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_crq_set_version.3
 @man man/man3/gnutls_x509_crq_sign.3
 @man man/man3/gnutls_x509_crq_sign2.3
+@man man/man3/gnutls_x509_crq_verify.3
 @man man/man3/gnutls_x509_crt_check_hostname.3
 @man man/man3/gnutls_x509_crt_check_issuer.3
 @man man/man3/gnutls_x509_crt_check_revocation.3
@@ -619,6 +623,7 @@ lib/pkgconfig/gnutls.pc
 @man man/man3/gnutls_x509_crt_get_raw_dn.3
 @man man/man3/gnutls_x509_crt_get_raw_issuer_dn.3
 @man man/man3/gnutls_x509_crt_get_serial.3
+@man man/man3/gnutls_x509_crt_get_signature.3
 @man man/man3/gnutls_x509_crt_get_signature_algorithm.3
 @man man/man3/gnutls_x509_crt_get_subject.3
 @man man/man3/gnutls_x509_crt_get_subject_alt_name.3

@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.38 2011/06/02 17:09:32 kili Exp $
+# $OpenBSD: Makefile,v 1.39 2011/06/21 09:55:43 ajacoutot Exp $
 
 COMMENT=	GNU Transport Layer Security library
 
-DISTNAME=	gnutls-2.12.5
+DISTNAME=	gnutls-2.12.7
 CATEGORIES=	security
 
-SHARED_LIBS +=  gnutls               17.0     # 44.10
+SHARED_LIBS +=  gnutls               17.1     # 47.1
 SHARED_LIBS +=  gnutlsxx             17.0     # 27.0
-SHARED_LIBS +=  gnutls-extra         17.0     # 44.10
+SHARED_LIBS +=  gnutls-extra         17.0     # 47.1
 SHARED_LIBS +=  gnutls-openssl       17.0     # 27.0
 
 HOMEPAGE=	http://www.gnutls.org/
@@ -70,7 +70,5 @@ post-install:
 	# needed by at least:
 	# devel/libvmime, security/prelude/manager, textproc/iksemel
 	${INSTALL} -m 555 ${FILESDIR}/libgnutls-config ${PREFIX}/bin
-	# empty manual pages
-	rm ${PREFIX}/man/man3/{gnutls_alert_send,gnutls_x509_crt_get_signature}.3
 
 .include <bsd.port.mk>
