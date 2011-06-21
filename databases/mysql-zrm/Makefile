@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/04/14 15:55:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/06/21 20:21:21 naddy Exp $
 
 COMMENT =	MySQL backup scripts
 
@@ -24,7 +24,6 @@ RUN_DEPENDS =	archivers/gtar \
 		databases/p5-DBD-mysql \
 		security/gnupg \
 		textproc/p5-XML-Parser
-USE_GROFF =	Yes
 NO_BUILD =	Yes
 NO_REGRESS =	Yes
 

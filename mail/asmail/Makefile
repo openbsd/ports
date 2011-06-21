@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/04/25 12:39:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2011/06/21 20:21:21 naddy Exp $
 
 COMMENT=	biff-type program, designed to match AfterStep
 
@@ -19,8 +19,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xpm Xt c jpeg>=62
-
-USE_GROFF =	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-shaping

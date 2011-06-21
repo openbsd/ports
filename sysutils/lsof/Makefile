@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2011/05/18 16:25:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2011/06/21 20:21:21 naddy Exp $
 
 COMMENT=	list information about open files
 
@@ -30,7 +30,6 @@ CONFIGURE_STYLE= simple
 CONFIGURE_SCRIPT= Configure
 CONFIGURE_ARGS=	-n openbsd
 CONFIGURE_ENV=	LSOF_CC="${CC}"
-USE_GROFF =	Yes
 
 SRCBALL_NAME=	${DISTNAME}_src
 WRKDIST=	${WRKDIR}/${DISTNAME}/${SRCBALL_NAME}

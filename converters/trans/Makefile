@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/15 00:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/06/21 20:21:21 naddy Exp $
 
 COMMENT=	character encoding converter generator package
 
@@ -18,7 +18,6 @@ MASTER_SITES=	http://www.kostis.net/freeware/
 
 LIBDIR= ${PREFIX}/lib/trans
 ALL= transhtm transiso transce8 transtab checkiso checkuni
-USE_GROFF =	Yes
 
 do-install:
 	cd ${WRKSRC}/src && $(INSTALL_PROGRAM) $(ALL) ${PREFIX}/bin

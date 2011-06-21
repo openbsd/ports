@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/06/21 20:21:21 naddy Exp $
 
 COMMENT=	Simulation Program for Integrated Circuit Electronics
 
@@ -19,7 +19,6 @@ WANTLIB=		X11 Xaw Xext Xmu Xt c m pthread-stubs termlib xcb
 MASTER_SITES=		http://embedded.eecs.berkeley.edu/pubs/downloads/spice/
 HOMEPAGE=		http://bwrc.eecs.berkeley.edu/Classes/IcBook/SPICE/
 
-USE_GROFF =		Yes
 MAKE_ENV=		MAKE_PROGRAM='${MAKE_PROGRAM}' CC="${CC}"
 
 NO_REGRESS=		Yes
