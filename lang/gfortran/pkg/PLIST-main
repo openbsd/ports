@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2010/11/28 21:30:37 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2011/06/21 20:17:53 naddy Exp $
 @conflict g95-*
 @bin bin/${CONFIG}-gfortran
 @comment bin/gccbug
@@ -12,4 +12,4 @@ libexec/gcc/${CONFIG}/${V}/
 libexec/gcc/${CONFIG}/${V}/cc1
 @comment @bin libexec/gcc/${CONFIG}/${V}/collect2
 @bin libexec/gcc/${CONFIG}/${V}/f951
-@man man/cat1/gfortran.0
+@man man/man1/gfortran.1

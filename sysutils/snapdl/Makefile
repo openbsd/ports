@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.4 2010/10/20 15:23:04 naddy Exp $
+#$OpenBSD: Makefile,v 1.5 2011/06/21 20:17:54 naddy Exp $
 
 COMMENT =		download snapshots of OpenBSD-current
 
@@ -17,10 +17,11 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		http://www.ethelred.fr/stuffs/ \
 			http://devio.us/~nlegrand/stuffs/
 
+NO_BUILD =		Yes
 NO_REGRESS =		Yes
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/snapdl.pl ${PREFIX}/bin/snapdl
-	${INSTALL_MAN} ${WRKSRC}/snapdl.cat1 ${PREFIX}/man/cat1/snapdl.0
+	${INSTALL_MAN} ${WRKSRC}/snapdl.1 ${PREFIX}/man/man1/snapdl.1
 
 .include <bsd.port.mk>

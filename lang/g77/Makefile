@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/01/15 01:09:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2011/06/21 20:17:53 naddy Exp $
 
 .include <bsd.own.mk>
 .  if ${COMPILER_VERSION:L:Mgcc4*}
@@ -78,8 +78,8 @@ INSTALL_TARGET = 	install-common f77.install-info f77.install-normal
 post-install:
 	ln -sf /usr/lib/gcc-lib/${CONFIG}/${SYSV}/libgcc.a ${PREFIX}/lib/gcc-lib/${CONFIG}/$V/libgcc.a
 	ln -s /usr/lib/gcc-lib/${CONFIG}/${SYSV}/cc1 ${PREFIX}/lib/gcc-lib/${CONFIG}/$V/cc1
-	mandoc ${WRKBUILD}/f/g77.1 >${PREFIX}/man/cat1/g77.0
-	cd ${PREFIX}/man/cat1 && ln -f g77.0 f77.0
+	${INSTALL_MAN} ${WRKBUILD}/f/g77.1 ${PREFIX}/man/man1/g77.1
+	cd ${PREFIX}/man/man1 && ln -f g77.1 f77.1
 	cd ${PREFIX}/bin && ln -f g77 f77
 
 WANTLIB =		c iberty

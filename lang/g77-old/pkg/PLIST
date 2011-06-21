@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/05/27 08:36:21 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/21 20:17:53 naddy Exp $
 @bin bin/f77
 @bin bin/g77
 @info info/g77.info
@@ -10,5 +10,5 @@ lib/gcc-lib/${CONFIG}/${V}/cpp0
 lib/gcc-lib/${CONFIG}/${V}/libgcc.a
 %%PIC%%
 lib/gcc-lib/${CONFIG}/${V}/specs
-@man man/cat1/f77.0
-@man man/cat1/g77.0
+@man man/man1/f77.1
+@man man/man1/g77.1

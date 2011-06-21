@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/01/15 01:09:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/21 20:17:53 naddy Exp $
 
 ONLY_FOR_ARCHS = ${GCC4_ARCHS}
 SYSV =		4.2.1
@@ -112,6 +112,6 @@ PKG_ARGS += -DPIC=0
 post-install:
 	ln -sf /usr/lib/gcc-lib/${CONFIG}/${SYSV}/libgcc.a ${PREFIX}/lib/gcc/${CONFIG}/$V/libgcc.a
 	ln -sf /usr/lib/gcc-lib/${CONFIG}/${SYSV}/cc1 ${PREFIX}/libexec/gcc/${CONFIG}/$V/cc1
-	mandoc ${WRKBUILD}/gcc/doc/gfortran.1 >${PREFIX}/man/cat1/gfortran.0
+	${INSTALL_MAN} ${WRKBUILD}/gcc/doc/gfortran.1 ${PREFIX}/man/man1/gfortran.1
 
 .include <bsd.port.mk>

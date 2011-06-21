@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2010/10/20 15:36:46 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2011/06/21 20:17:54 naddy Exp $
 
 COMMENT=	USB developer utilities
 
@@ -16,9 +16,7 @@ WANTLIB=		c
 
 NO_REGRESS=	Yes
 
-ALL_TARGET=	all man
-
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/usbgen.0 ${PREFIX}/man/cat8
+	${INSTALL_MAN} ${WRKSRC}/usbgen.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>
