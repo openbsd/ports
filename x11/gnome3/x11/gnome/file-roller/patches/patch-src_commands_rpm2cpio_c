@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_commands_rpm2cpio_c,v 1.1.1.1 2011/06/21 17:05:24 jasper Exp $
+--- src/commands/rpm2cpio.c.orig	Tue Jun 21 16:28:03 2011
++++ src/commands/rpm2cpio.c	Tue Jun 21 16:28:23 2011
+@@ -127,7 +127,7 @@ main (int argc, char **argv)
+ 		archive_command = "bzip2 -dc";
+ 	fclose (stream);
+ 
+-	command = g_strdup_printf ("sh -c \"dd if=%s ibs=%u skip=1 2>/dev/null | %s | cpio %s\"", g_shell_quote (filename), offset, archive_command, cpio_args->str);
++	command = g_strdup_printf ("sh -c \"dd if=%s ibs=%u skip=1 2>/dev/null | %s | gcpio %s\"", g_shell_quote (filename), offset, archive_command, cpio_args->str);
+ 
+ 	return system (command);
+ }
