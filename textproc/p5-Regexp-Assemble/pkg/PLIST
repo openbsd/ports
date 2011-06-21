@@ -1,4 +1,25 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/02/05 22:05:02 simon Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/21 14:36:36 jasper Exp $
 ${P5SITE}/Regexp/
 ${P5SITE}/Regexp/Assemble.pm
 @man man/man3p/Regexp::Assemble.3p
+share/examples/p5-Regexp-Assemble/
+share/examples/p5-Regexp-Assemble/assemble
+share/examples/p5-Regexp-Assemble/debugging
+share/examples/p5-Regexp-Assemble/fee
+share/examples/p5-Regexp-Assemble/file.1
+share/examples/p5-Regexp-Assemble/file.2
+share/examples/p5-Regexp-Assemble/file.3
+share/examples/p5-Regexp-Assemble/file.4
+share/examples/p5-Regexp-Assemble/hostmatch/
+share/examples/p5-Regexp-Assemble/hostmatch/bad.canonical
+share/examples/p5-Regexp-Assemble/hostmatch/error.canonical
+share/examples/p5-Regexp-Assemble/hostmatch/good.canonical
+share/examples/p5-Regexp-Assemble/hostmatch/hostmatch
+share/examples/p5-Regexp-Assemble/hostmatch/source.in
+share/examples/p5-Regexp-Assemble/ircwatcher
+share/examples/p5-Regexp-Assemble/naive
+share/examples/p5-Regexp-Assemble/roman
+share/examples/p5-Regexp-Assemble/stress-test.pl
+share/examples/p5-Regexp-Assemble/tld
+share/examples/p5-Regexp-Assemble/track-5.10
+share/examples/p5-Regexp-Assemble/unquotemeta
