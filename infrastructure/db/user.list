@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.164 2011/06/13 07:05:15 ajacoutot Exp $
+$OpenBSD: user.list,v 1.165 2011/06/21 07:55:59 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -184,3 +184,4 @@ id  user		group		port options
 673 _buildbot		_buildbot	devel/py-buildbot
 674 _buildslave		_buildslave	devel/py-buildslave
 675 _tryton		_tryton		productivity/tryton/trytond
+676 _gdm		_gdm		x11/gnome/gdm
