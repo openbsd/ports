@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.27 2011/06/21 10:26:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.28 2011/06/21 17:54:25 jasper Exp $
 @bin bin/metacity
 @bin bin/metacity-message
 @bin bin/metacity-theme-viewer
@@ -169,7 +169,6 @@ share/themes/Bright/
 share/themes/Bright/metacity-1/
 share/themes/Bright/metacity-1/metacity-theme-1.xml
 share/themes/Bright/metacity-1/metacity-theme-2.xml
-share/themes/Crux/
 share/themes/Crux/metacity-1/
 share/themes/Crux/metacity-1/active-above-button.png
 share/themes/Crux/metacity-1/active-border-top-left-border.png

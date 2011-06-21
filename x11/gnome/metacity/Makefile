@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2011/06/21 10:26:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2011/06/21 17:54:25 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	lightweight window manager
 
 GNOME_PROJECT=	metacity
-GNOME_VERSION=	2.34.0
-
-REVISION=	8
+GNOME_VERSION=	2.34.1
 
 SHARED_LIBS +=  metacity-private     1.0      # .0.0
 
@@ -25,13 +23,15 @@ WANTLIB += execinfo expat fontconfig freetype
 WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 kvm ltdl m ogg
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs vorbis vorbisfile xcb xcb-atom
-WANTLIB += xcb-aux xcb-event xcb-render z GL Xxf86vm drm xcb-shm
+WANTLIB += png pthread pthread-stubs vorbis vorbisfile xcb X11-xcb
+WANTLIB += xcb-aux xcb-render z GL Xxf86vm drm xcb-shm
 WANTLIB += startup-notification-1 canberra-gtk canberra gtop-2.0
 
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
+
+EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=	devel/startup-notification \
 		audio/libcanberra,-gtk \
