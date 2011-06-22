@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.125 2011/06/15 16:16:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.126 2011/06/22 12:01:54 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -6,7 +6,7 @@ COMMENT-lightning =	Mozilla Thunderbird calendar extension
 # Don't forget to bump mail/thunderbird-i18n after updates.
 # Don't forget to update productivity/sunbird if patches changes.
 
-MOZILLA_VERSION =	3.1.10
+MOZILLA_VERSION =	3.1.11
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	mozilla-thunderbird
 MOZILLA_CODENAME =	mail
@@ -16,7 +16,7 @@ PKGNAME-main =		${PKGNAME}
 REVISION-main =		2
 PKGNAME-lightning =	lightning-1.0beta2
 EPOCH-lightning =	0
-REVISION-lightning =	18
+REVISION-lightning =	19
 
 # need to be in synch with SO_VERSION in mail/enigmail/thunderbird
 SO_VERSION =	17.1
