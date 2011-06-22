@@ -1,0 +1,12 @@
+$OpenBSD: patch-libswscale_rgb2rgb_c,v 1.1 2011/06/22 08:10:26 dcoppa Exp $
+--- libswscale/rgb2rgb.c.orig	Tue Mar 29 01:23:17 2011
++++ libswscale/rgb2rgb.c	Tue Jun 21 14:17:21 2011
+@@ -201,7 +201,7 @@ DECLARE_ASM_CONST(8, uint64_t, blue_15mask)  = 0x00000
+ 
+ void sws_rgb2rgb_init(int flags)
+ {
+-#if HAVE_MMX2 || HAVE_AMD3DNOW || HAVE_MMX
++#if HAVE_SSE2 || HAVE_MMX2 || HAVE_AMD3DNOW || HAVE_MMX
+     if (flags & SWS_CPU_CAPS_SSE2)
+         rgb2rgb_init_SSE2();
+     else if (flags & SWS_CPU_CAPS_MMX2)
