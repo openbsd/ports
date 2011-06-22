@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/22 08:31:14 jasper Exp $
+${P5SITE}/Devel/
+${P5SITE}/Devel/Size/
+${P5SITE}/Devel/Size/Report.pm
+@man man/man3p/Devel::Size::Report.3p
+share/examples/p5-Devel-Size-Report/
+share/examples/p5-Devel-Size-Report/grind
+share/examples/p5-Devel-Size-Report/psize
+share/examples/p5-Devel-Size-Report/size.pl

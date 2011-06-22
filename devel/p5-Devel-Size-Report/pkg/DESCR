@@ -1,0 +1,4 @@
+Devel::Size can only report the size of a single element or the total
+size of a structure (array, hash etc). This module enhances Devel::Size
+by giving you the ability to generate a full size report for each
+element in a structure.
