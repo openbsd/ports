@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/06/16 23:24:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/22 11:28:36 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,11 +8,14 @@ COMMENT =	program matching and transformation engine
 # may need to be switched to gdiff/ggrep
 DISTNAME =	coccinelle-1.0.0-rc3
 PKGNAME =	${DISTNAME:S/-rc/rc/}
+REVISION =	0
 EXTRACT_SUFX =	.tgz
 
 CATEGORIES =	devel
 
 HOMEPAGE =	http://coccinelle.lip6.fr/
+
+MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE_CDROM =	 Yes
