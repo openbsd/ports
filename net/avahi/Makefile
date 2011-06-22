@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2011/06/17 08:43:06 landry Exp $
+# $OpenBSD: Makefile,v 1.64 2011/06/22 15:27:55 shadchin Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
 COMMENT-gtk=	GUI client utilities for avahi
@@ -202,7 +202,7 @@ pre-configure:
 	find ${WRKSRC} -name Makefile.in -exec \
 		perl -pi -e 's,LIBINTL,INTLLIBS,g;' \
 			-e 's,LIBICONV,LTLIBICONV,g' {} \;
-	find ${WRKSRC}/man -type f | xargs \
+	find ${WRKSRC}/man -name '*.[1-9]*' | xargs \
 		perl -pi -e 's,/etc/avahi,${SYSCONFDIR}/avahi,g'
 	perl -pi -e 's,dbus_connection_disconnect,dbus_connection_close,g' \
 		${WRKSRC}/avahi-client/client.c \
