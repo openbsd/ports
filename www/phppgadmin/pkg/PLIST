@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/04/28 18:09:05 pea Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/06/22 11:51:32 pea Exp $
 phpPgAdmin/
-phpPgAdmin/BUGS
 phpPgAdmin/CREDITS
 phpPgAdmin/DEVELOPERS
 phpPgAdmin/FAQ
@@ -9,11 +8,12 @@ phpPgAdmin/INSTALL
 phpPgAdmin/LICENSE
 phpPgAdmin/TODO
 phpPgAdmin/TRANSLATORS
-phpPgAdmin/aciur.js
+phpPgAdmin/admin.php
 phpPgAdmin/aggregates.php
+phpPgAdmin/ajax-ac-insert.php
 phpPgAdmin/all_db.php
-phpPgAdmin/autocomplete.php
 phpPgAdmin/browser.php
+phpPgAdmin/build_tests.php
 phpPgAdmin/casts.php
 phpPgAdmin/classes/
 phpPgAdmin/classes/ArrayRecordSet.php
@@ -25,21 +25,19 @@ phpPgAdmin/classes/database/
 phpPgAdmin/classes/database/ADODB_base.php
 phpPgAdmin/classes/database/Connection.php
 phpPgAdmin/classes/database/Postgres.php
-phpPgAdmin/classes/database/Postgres71.php
-phpPgAdmin/classes/database/Postgres72.php
-phpPgAdmin/classes/database/Postgres73.php
 phpPgAdmin/classes/database/Postgres74.php
 phpPgAdmin/classes/database/Postgres80.php
 phpPgAdmin/classes/database/Postgres81.php
 phpPgAdmin/classes/database/Postgres82.php
 phpPgAdmin/classes/database/Postgres83.php
+phpPgAdmin/classes/database/Postgres84.php
 phpPgAdmin/classes/plugins/
 phpPgAdmin/classes/plugins/Plugin.php
 phpPgAdmin/classes/plugins/Slony.php
 phpPgAdmin/colproperties.php
 phpPgAdmin/conf/
+phpPgAdmin/conf/config.inc.php
 phpPgAdmin/conf/config.inc.php-dist
-@sample phpPgAdmin/conf/config.inc.php
 phpPgAdmin/constraints.php
 phpPgAdmin/conversions.php
 phpPgAdmin/database.php
@@ -54,18 +52,24 @@ phpPgAdmin/functions.php
 phpPgAdmin/groups.php
 phpPgAdmin/help/
 phpPgAdmin/help.php
-phpPgAdmin/help/PostgresDoc70.php
-phpPgAdmin/help/PostgresDoc71.php
-phpPgAdmin/help/PostgresDoc72.php
-phpPgAdmin/help/PostgresDoc73.php
 phpPgAdmin/help/PostgresDoc74.php
 phpPgAdmin/help/PostgresDoc80.php
 phpPgAdmin/help/PostgresDoc81.php
 phpPgAdmin/help/PostgresDoc82.php
 phpPgAdmin/help/PostgresDoc83.php
+phpPgAdmin/help/PostgresDoc84.php
+phpPgAdmin/help/PostgresDoc90.php
 phpPgAdmin/history.php
 phpPgAdmin/images/
 phpPgAdmin/images/themes/
+phpPgAdmin/images/themes/cappuccino/
+phpPgAdmin/images/themes/cappuccino/Lminus.png
+phpPgAdmin/images/themes/cappuccino/Lplus.png
+phpPgAdmin/images/themes/cappuccino/Tminus.png
+phpPgAdmin/images/themes/cappuccino/Tplus.png
+phpPgAdmin/images/themes/cappuccino/inputbckg.png
+phpPgAdmin/images/themes/cappuccino/openListe.png
+phpPgAdmin/images/themes/cappuccino/title.png
 phpPgAdmin/images/themes/default/
 phpPgAdmin/images/themes/default/AddArguments.png
 phpPgAdmin/images/themes/default/Admin.png
@@ -208,6 +212,10 @@ phpPgAdmin/indexes.js
 phpPgAdmin/indexes.php
 phpPgAdmin/info.php
 phpPgAdmin/intro.php
+phpPgAdmin/js/
+phpPgAdmin/js/ac_insert_row.js
+phpPgAdmin/js/database.js
+phpPgAdmin/js/display.js
 phpPgAdmin/lang/
 phpPgAdmin/lang/Makefile
 phpPgAdmin/lang/afrikaans.php
@@ -223,7 +231,9 @@ phpPgAdmin/lang/danish.php
 phpPgAdmin/lang/dutch.php
 phpPgAdmin/lang/english.php
 phpPgAdmin/lang/french.php
+phpPgAdmin/lang/galician.php
 phpPgAdmin/lang/german.php
+phpPgAdmin/lang/greek.php
 phpPgAdmin/lang/hebrew.php
 phpPgAdmin/lang/hungarian.php
 phpPgAdmin/lang/italian.php
@@ -249,7 +259,9 @@ phpPgAdmin/lang/recoded/danish.php
 phpPgAdmin/lang/recoded/dutch.php
 phpPgAdmin/lang/recoded/english.php
 phpPgAdmin/lang/recoded/french.php
+phpPgAdmin/lang/recoded/galician.php
 phpPgAdmin/lang/recoded/german.php
+phpPgAdmin/lang/recoded/greek.php
 phpPgAdmin/lang/recoded/hebrew.php
 phpPgAdmin/lang/recoded/hungarian.php
 phpPgAdmin/lang/recoded/italian.php
@@ -259,6 +271,7 @@ phpPgAdmin/lang/recoded/polish.php
 phpPgAdmin/lang/recoded/portuguese-br.php
 phpPgAdmin/lang/recoded/portuguese-pt.php
 phpPgAdmin/lang/recoded/romanian.php
+phpPgAdmin/lang/recoded/russian-utf8.php
 phpPgAdmin/lang/recoded/russian.php
 phpPgAdmin/lang/recoded/slovak.php
 phpPgAdmin/lang/recoded/spanish.php
@@ -266,6 +279,7 @@ phpPgAdmin/lang/recoded/swedish.php
 phpPgAdmin/lang/recoded/turkish.php
 phpPgAdmin/lang/recoded/ukrainian.php
 phpPgAdmin/lang/romanian.php
+phpPgAdmin/lang/russian-utf8.php
 phpPgAdmin/lang/russian.php
 phpPgAdmin/lang/slovak.php
 phpPgAdmin/lang/spanish.php
@@ -282,7 +296,6 @@ phpPgAdmin/libraries/adodb/adodb-datadict.inc.php
 phpPgAdmin/libraries/adodb/adodb-error.inc.php
 phpPgAdmin/libraries/adodb/adodb-iterator.inc.php
 phpPgAdmin/libraries/adodb/adodb-lib.inc.php
-phpPgAdmin/libraries/adodb/adodb-php4.inc.php
 phpPgAdmin/libraries/adodb/adodb-time.inc.php
 phpPgAdmin/libraries/adodb/adodb.inc.php
 phpPgAdmin/libraries/adodb/drivers/
@@ -302,6 +315,7 @@ phpPgAdmin/libraries/adodb/lang/adodb-de.inc.php
 phpPgAdmin/libraries/adodb/lang/adodb-en.inc.php
 phpPgAdmin/libraries/adodb/lang/adodb-es.inc.php
 phpPgAdmin/libraries/adodb/lang/adodb-esperanto.inc.php
+phpPgAdmin/libraries/adodb/lang/adodb-fa.inc.php
 phpPgAdmin/libraries/adodb/lang/adodb-fr.inc.php
 phpPgAdmin/libraries/adodb/lang/adodb-hu.inc.php
 phpPgAdmin/libraries/adodb/lang/adodb-it.inc.php
@@ -312,6 +326,7 @@ phpPgAdmin/libraries/adodb/lang/adodb-ro.inc.php
 phpPgAdmin/libraries/adodb/lang/adodb-ru1251.inc.php
 phpPgAdmin/libraries/adodb/lang/adodb-sv.inc.php
 phpPgAdmin/libraries/adodb/lang/adodb-uk1251.inc.php
+phpPgAdmin/libraries/adodb/lang/adodb_th.inc.php
 phpPgAdmin/libraries/adodb/license.txt
 phpPgAdmin/libraries/adodb/readme.txt
 phpPgAdmin/libraries/adodb/toexport.inc.php
@@ -319,7 +334,10 @@ phpPgAdmin/libraries/adodb/tohtml.inc.php
 phpPgAdmin/libraries/decorator.inc.php
 phpPgAdmin/libraries/errorhandler.inc.php
 phpPgAdmin/libraries/highlight.php
+phpPgAdmin/libraries/js/
+phpPgAdmin/libraries/js/jquery.js
 phpPgAdmin/libraries/lib.inc.php
+@comment phpPgAdmin/libraries/lib.inc.php.orig
 phpPgAdmin/links.js
 phpPgAdmin/login.php
 phpPgAdmin/logout.php
@@ -345,8 +363,14 @@ phpPgAdmin/tables.php
 phpPgAdmin/tablespaces.php
 phpPgAdmin/tblproperties.php
 phpPgAdmin/themes/
+phpPgAdmin/themes/cappuccino/
+phpPgAdmin/themes/cappuccino/global.css
 phpPgAdmin/themes/default/
 phpPgAdmin/themes/default/global.css
+phpPgAdmin/themes/global.css
+phpPgAdmin/themes/gotar/
+phpPgAdmin/themes/gotar/global.css
+phpPgAdmin/themes/themes.php
 phpPgAdmin/triggers.php
 phpPgAdmin/types.php
 phpPgAdmin/users.php
