@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/06/20 13:29:34 robert Exp $
+# $OpenBSD: Makefile,v 1.35 2011/06/22 15:39:31 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -17,6 +17,7 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
 EPOCH=		0
+REVISION=	1
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -222,7 +223,6 @@ CONFIGURE_ARGS=	--disable-build-mozilla \
 		--disable-xrender-link \
 		--enable-binfilter \
 		--enable-cairo \
-		--enable-gnome-vfs \
 		--enable-gstreamer \
 		--enable-kde \
 		--enable-lockdown \
