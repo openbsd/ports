@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.15 2011/06/21 07:19:36 jasper Exp $
+$OpenBSD: patch-configure,v 1.16 2011/06/22 15:30:01 jasper Exp $
 
-commit 51afc705520a03618f34c9320302688e88e05316
+commit cecf53394ba213c03b7165749eb011d3809de48d
 Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-Date:   Mon Jun 20 10:59:56 2011 +0200
+Date:   Wed Jun 22 17:22:26 2011 +0200
 
     Use a more portable construct for doing substitutions.
     

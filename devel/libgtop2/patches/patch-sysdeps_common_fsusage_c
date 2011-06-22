@@ -1,6 +1,12 @@
-$OpenBSD: patch-sysdeps_common_fsusage_c,v 1.4 2011/06/20 09:03:29 jasper Exp $
+$OpenBSD: patch-sysdeps_common_fsusage_c,v 1.5 2011/06/22 15:30:01 jasper Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=652980
+commit 93829c8cbb6c719266dd522f7d1cf76afff0f4a8
+Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date:   Wed Jun 22 17:24:37 2011 +0200
+
+    Fix filesystem read/write accounting on OpenBSD
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=652980
 
 --- sysdeps/common/fsusage.c.orig	Mon Mar 14 23:08:03 2011
 +++ sysdeps/common/fsusage.c	Tue May 31 20:50:38 2011
