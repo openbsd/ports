@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: make-plist,v 1.3 2010/10/29 10:22:14 espie Exp $
+# $OpenBSD: make-plist,v 1.4 2011/06/22 12:55:26 espie Exp $
 # Copyright (c) 2004-2008 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -59,7 +59,9 @@ sub value
 sub add
 {
 	my ($self, $k, $v) = @_;
-	if ($k =~ m/^LIB(.*)_VERSION$/) {
+	if ($k =~ m/^FULLPKGNAME/) {
+		unshift(@{$self->{r}}, $k) if $v ne '';
+	} elsif ($k =~ m/^LIB(.*)_VERSION$/) {
 		$self->{l}->{$1} = $v;
 	} else {
 		push(@{$self->{r}}, $k) if $v ne '';
@@ -441,7 +443,11 @@ sub add_to_haystack
 	my ($self, $plist, $haystack) = @_;
 
 	$self->SUPER::add_to_haystack($plist, $haystack);
-	push(@{$haystack->{$main::subst->do($self->fullname)}}, $self);
+	my $fullname = $main::subst->do($self->{name});
+	if ($fullname !~ m/^\//) {
+		$fullname = $main::subst->do($self->fullname);
+	}
+	push(@{$haystack->{$fullname}}, $self);
 }
 
 sub bugfix
