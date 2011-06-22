@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST-utils,v 1.1.1.1 2009/06/04 17:55:39 landry Exp $
+@comment $OpenBSD: PLIST-utils,v 1.2 2011/06/22 20:16:43 landry Exp $
 @bin bin/legend
 bin/mapserver-config
 @bin bin/msencrypt
 @bin bin/scalebar
 @bin bin/shp2img
-@bin bin/shp2pdf
 @bin bin/shptree
 @bin bin/shptreetst
 @bin bin/shptreevis

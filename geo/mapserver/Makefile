@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/01/11 09:47:55 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/22 20:16:43 landry Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -8,14 +8,12 @@ COMMENT-utils=	mapserver utilities
 COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 
-V =		5.6.5
+V =		6.0.0
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
 PKGNAME-php=	php5-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
-REVISION-main=	1
-REVISION-utils=	0
 
 CATEGORIES=	geo www
 
@@ -34,21 +32,25 @@ BUILD_DEPENDS=	www/php5/core \
 		graphics/agg
 
 LIB_DEPENDS=	devel/proj \
+		graphics/cairo \
 		geo/gdal \
 		geo/geos \
-		devel/geotiff \
 		graphics/gd
 
 RUN_DEPENDS-php=	www/php5/core
 
-WANTLIB=	crypto curl expat freetype gif iconv idn jasper jpeg \
-		com_err readline termcap m png pq ssl tiff xml2 z \
-		proj gdal geos_c geotiff gd
 
-WANTLIB-main=	${WANTLIB} pthread c stdc++
-WANTLIB-utils=	${WANTLIB} pthread c stdc++
-WANTLIB-php=	${WANTLIB} stdc++
-WANTLIB-perl=	${WANTLIB} stdc++
+WANTLIB=	crypto curl expat freetype iconv idn jpeg \
+		m png pq ssl xml2 z proj gdal geos_c gd stdc++
+
+WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
+WANTLIB += cairo drm fontconfig glib-2.0 gobject-2.0 gthread-2.0
+WANTLIB += intl pixman-1 pthread-stubs xcb xcb-render xcb-shm
+
+WANTLIB-main=	${WANTLIB} pthread c gif
+WANTLIB-utils=	${WANTLIB} pthread c gif
+WANTLIB-php=	${WANTLIB}
+WANTLIB-perl=	${WANTLIB} gif
 
 USE_GMAKE=	yes
 CONFIGURE_STYLE=gnu
@@ -56,7 +58,6 @@ CONFIGURE_ARGS=	--with-proj=${LOCALBASE} \
 		--with-png=${LOCALBASE} \
 		--with-agg=${LOCALBASE} \
 		--without-pdf \
-		--with-tiff=${LOCALBASE} \
 		--with-freetype=${X11BASE}/bin \
 		--with-gdal=${LOCALBASE}/bin/gdal-config \
 		--with-php=${LOCALBASE}/share/php5/include \
@@ -65,6 +66,8 @@ CONFIGURE_ARGS=	--with-proj=${LOCALBASE} \
 		--with-ogr=${LOCALBASE}/bin/gdal-config \
 		--with-xml2-config=${LOCALBASE}/bin/xml2-config \
 		--with-curl-config=${LOCALBASE}/bin/curl-config \
+		--with-cairo \
+		--with-kml \
 		--with-wmsclient \
 		--with-wfsclient \
 		--with-wcs \
@@ -76,7 +79,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 MAKE_ENV=	CFLAGS+=-fPIC
 
-UTILS=	shp2img shp2pdf legend shptree shptreevis shptreetst scalebar \
+UTILS=	shp2img legend shptree shptreevis shptreetst scalebar \
 	sortshp tile4ms msencrypt
 
 PREFIX-main=	/var/www
@@ -95,7 +98,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mapserver/perl
 
 	${INSTALL_PROGRAM} ${WRKSRC}/mapserv ${WRKINST}/${PREFIX-main}/cgi-bin
-	${INSTALL_DATA} ${WRKSRC}/mapscript/php3/php_mapscript.so \
+	${INSTALL_DATA} ${WRKSRC}/mapscript/php/php_mapscript.so \
 		${WRKINST}/${PREFIX-php}/lib/php/modules/mapscript.so
 	echo "; Enable Mapscript extension module\nextension=mapscript.so" \
 		> ${WRKINST}/${PREFIX-php}/conf/php5.sample/mapscript.ini
@@ -103,7 +106,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin/
 .endfor
 	${INSTALL_SCRIPT} ${WRKSRC}/mapserver-config ${PREFIX}/bin/
-	${INSTALL_DATA}	${WRKSRC}/mapscript/php3/examples/* \
+	${INSTALL_DATA}	${WRKSRC}/mapscript/php/examples/* \
 		${PREFIX}/share/examples/mapserver/php
 	${INSTALL_DATA}	${WRKSRC}/mapscript/perl/examples/* \
 		${PREFIX}/share/examples/mapserver/perl
