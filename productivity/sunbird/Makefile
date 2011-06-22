@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/06/22 12:34:42 landry Exp $
+# $OpenBSD: Makefile,v 1.30 2011/06/22 14:52:11 landry Exp $
 
 COMMENT =		Mozilla calendar
 
@@ -10,7 +10,7 @@ MOZILLA_CODENAME =	calendar
 
 DISTNAME =		thunderbird-${TB_VERSION}.source
 EPOCH =			0
-REVISION =		5
+REVISION =		6
 
 MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${TB_VERSION}/source/
 
@@ -19,7 +19,7 @@ CATEGORIES =	productivity mail
 SO_VERSION =	17.0
 
 MOZILLA_LIBS = calbasecomps accessibility auth autoconfig caps chardet chrome \
-	commandlines cookie docshell embedcomponents fileview gkgfxthebes \
+	commandlines composer cookie docshell embedcomponents fileview gkgfxthebes \
 	gklayout gkplugin htmlpars i18n imgicon imglib2 intlapp jar50 jsd jsctypes mork \
 	mozfind necko nsappshell permissions pipboot pipnss pippki pref rdf \
 	remoteservice satchel spellchecker storagecomps system-pref \

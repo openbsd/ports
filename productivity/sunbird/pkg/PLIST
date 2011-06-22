@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/05/11 07:45:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/06/22 14:52:11 landry Exp $
 @conflict sunbird-<=1.0b1
 @pkgpath productivity/sunbird,-main
 @unexec rm -f %D/sunbird/components/compreg.dat
@@ -172,6 +172,7 @@ ${MOZILLA_PROJECT}/components/layout_xul_tree.xpt
 @lib ${MOZILLA_PROJECT}/components/libchardet.so.${LIBchardet_VERSION}
 @lib ${MOZILLA_PROJECT}/components/libchrome.so.${LIBchrome_VERSION}
 @lib ${MOZILLA_PROJECT}/components/libcommandlines.so.${LIBcommandlines_VERSION}
+@lib ${MOZILLA_PROJECT}/components/libcomposer.so.${LIBcomposer_VERSION}
 @lib ${MOZILLA_PROJECT}/components/libcookie.so.${LIBcookie_VERSION}
 @lib ${MOZILLA_PROJECT}/components/libdocshell.so.${LIBdocshell_VERSION}
 @lib ${MOZILLA_PROJECT}/components/libembedcomponents.so.${LIBembedcomponents_VERSION}
@@ -384,6 +385,7 @@ ${MOZILLA_PROJECT}/plugins/
 @lib ${MOZILLA_PROJECT}/plugins/libunixprintplugin.so.${LIBunixprintplugin_VERSION}
 @bin ${MOZILLA_PROJECT}/regxpcom
 ${MOZILLA_PROJECT}/res/
+${MOZILLA_PROJECT}/res/EditorOverride.css
 ${MOZILLA_PROJECT}/res/arrow.gif
 ${MOZILLA_PROJECT}/res/arrowd.gif
 ${MOZILLA_PROJECT}/res/broken-image.png
@@ -400,6 +402,7 @@ ${MOZILLA_PROJECT}/res/entityTables/html40Symbols.properties
 ${MOZILLA_PROJECT}/res/entityTables/htmlEntityVersions.properties
 ${MOZILLA_PROJECT}/res/entityTables/transliterate.properties
 ${MOZILLA_PROJECT}/res/forms.css
+${MOZILLA_PROJECT}/res/grabber.gif
 ${MOZILLA_PROJECT}/res/hiddenWindow.html
 ${MOZILLA_PROJECT}/res/html/
 ${MOZILLA_PROJECT}/res/html.css
@@ -409,6 +412,24 @@ ${MOZILLA_PROJECT}/res/language.properties
 ${MOZILLA_PROJECT}/res/loading-image.png
 ${MOZILLA_PROJECT}/res/quirk.css
 ${MOZILLA_PROJECT}/res/svg.css
+${MOZILLA_PROJECT}/res/table-add-column-after-active.gif
+${MOZILLA_PROJECT}/res/table-add-column-after-hover.gif
+${MOZILLA_PROJECT}/res/table-add-column-after.gif
+${MOZILLA_PROJECT}/res/table-add-column-before-active.gif
+${MOZILLA_PROJECT}/res/table-add-column-before-hover.gif
+${MOZILLA_PROJECT}/res/table-add-column-before.gif
+${MOZILLA_PROJECT}/res/table-add-row-after-active.gif
+${MOZILLA_PROJECT}/res/table-add-row-after-hover.gif
+${MOZILLA_PROJECT}/res/table-add-row-after.gif
+${MOZILLA_PROJECT}/res/table-add-row-before-active.gif
+${MOZILLA_PROJECT}/res/table-add-row-before-hover.gif
+${MOZILLA_PROJECT}/res/table-add-row-before.gif
+${MOZILLA_PROJECT}/res/table-remove-column-active.gif
+${MOZILLA_PROJECT}/res/table-remove-column-hover.gif
+${MOZILLA_PROJECT}/res/table-remove-column.gif
+${MOZILLA_PROJECT}/res/table-remove-row-active.gif
+${MOZILLA_PROJECT}/res/table-remove-row-hover.gif
+${MOZILLA_PROJECT}/res/table-remove-row.gif
 ${MOZILLA_PROJECT}/res/ua.css
 ${MOZILLA_PROJECT}/res/unixcharset.properties
 ${MOZILLA_PROJECT}/res/viewsource.css
