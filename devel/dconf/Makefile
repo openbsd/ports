@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/06/03 13:26:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2011/06/22 16:08:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,7 +12,7 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-editor=	dconf-editor-${GNOME_VERSION}
 
 REVISION-main=	2
-REVISION-editor=1
+REVISION-editor=2
 
 SHARED_LIBS+=	dconf        0.0 # 0.0.0
 SHARED_LIBS+=	dconf-dbus-1 0.0 # 0.0.0
