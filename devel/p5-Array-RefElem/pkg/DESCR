@@ -1,0 +1,2 @@
+This module gives direct access to some of the internal Perl routines
+that let you store things in arrays and hashes.

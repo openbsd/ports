@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/22 08:30:22 jasper Exp $
+${P5ARCH}/
+${P5ARCH}/Array/
+${P5ARCH}/Array/RefElem.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Array/
+${P5ARCH}/auto/Array/RefElem/
+${P5ARCH}/auto/Array/RefElem/RefElem.bs
+${P5ARCH}/auto/Array/RefElem/RefElem.so
+@man man/man3p/Array::RefElem.3p
