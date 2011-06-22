@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2011/06/14 21:58:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.81 2011/06/22 14:46:22 sthen Exp $
 
 COMMENT-main=		terminal emulation library (gtk+2)
 COMMENT-python= 	python bindings for vte
@@ -10,6 +10,9 @@ GNOME_VERSION=		0.28.1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python= 	py-${DISTNAME}
 PKGNAME-pty-helper=	vte-ptyhelper-${GNOME_VERSION}
+
+REVISION-python=	0
+REVISION-pty-helper=	0
 
 CATEGORIES=		devel
 
@@ -46,15 +49,16 @@ WANTLIB-main=		${WANTLIB} c pthread
 
 WANTLIB-pty-helper=	util c
 
-WANTLIB-python= 	${WANTLIB} ffi vte>=14 gtk-x11-2.0
+WANTLIB-python= 	${WANTLIB} ffi vte>=14
 
 BUILD_DEPENDS=		devel/gobject-introspection
 
 LIB_DEPENDS-python=	${LIB_DEPENDS-main} \
 			${BASE_PKGPATH} \
 			devel/libffi
-RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS} \
-			x11/py-gtk2
+RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
+
+LIB_DEPENDS-pty-helper=	# empty
 
 PSEUDO_FLAVORS= 	gtk3
 FLAVOR?=
@@ -72,6 +76,8 @@ RUN_DEPENDS-main+=	${BASE_PKGPATH},-pty-helper
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			x11/gtk+2
 WANTLIB-main+=		gdk-x11-2.0 gtk-x11-2.0
+RUN_DEPENDS-python+=	x11/py-gtk2
+WANTLIB-python+=	gdk-x11-2.0 gtk-x11-2.0
 CONFIGURE_ARGS+=	--with-gtk=2.0
 MULTI_PACKAGES+=	-python
 PKGNAME-main=		vte-${GNOME_VERSION}
