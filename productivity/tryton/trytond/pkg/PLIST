@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/10 11:49:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/22 11:47:13 espie Exp $
 @newgroup _tryton:675
 @newuser _tryton:675:_tryton:daemon:Tryton Daemon:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/db/trytond/*
@@ -379,7 +379,7 @@ lib/python${MODPY_VERSION}/site-packages/trytond/workflow/ru_RU.csv
 lib/python${MODPY_VERSION}/site-packages/trytond/workflow/workflow.py
 lib/python${MODPY_VERSION}/site-packages/trytond/workflow/workflow.pyc
 lib/python${MODPY_VERSION}/site-packages/trytond/workflow/workflow.xml
-share/doc/pkg-readmes/trytond-${MODPY_EGG_VERSION}
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/trytond/
 share/examples/trytond/trytond.conf
 @mode 0640
