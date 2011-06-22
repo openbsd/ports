@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.949 2011/06/15 19:50:24 rpointel Exp $
+# $OpenBSD: Makefile,v 1.950 2011/06/22 08:32:07 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -366,6 +366,7 @@
      SUBDIR += p5-AppConfig-Std
      SUBDIR += p5-Array-Compare
      SUBDIR += p5-Array-Diff
+     SUBDIR += p5-Array-RefElem
      SUBDIR += p5-Array-Window
      SUBDIR += p5-AutoXS-Header
      SUBDIR += p5-B-Deobfuscate
@@ -515,6 +516,7 @@
      SUBDIR += p5-Devel-PartialDump
      SUBDIR += p5-Devel-SawAmpersand
      SUBDIR += p5-Devel-Size
+     SUBDIR += p5-Devel-Size-Report
      SUBDIR += p5-Devel-SmallProf
      SUBDIR += p5-Devel-StackTrace
      SUBDIR += p5-Devel-StackTrace-AsHTML
