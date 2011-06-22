@@ -1,26 +1,22 @@
-# $OpenBSD: Makefile,v 1.16 2011/06/08 17:35:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/06/22 12:53:12 landry Exp $
 
 COMMENT-main=	translator library for geospatial data formats
 COMMENT-python=	python bindings and utilities for GDAL
 COMMENT-perl=	perl bindings for GDAL
 
-V=		1.7.3
+V=		1.8.0
 DISTNAME=	gdal-${V}
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-python=	py-${DISTNAME}
 PKGNAME-perl=   p5-Geo-GDAL-${V}
 
-REVISION-main=	0
-REVISION-python=0
-REVISION-perl=	0
-
-SHARED_LIBS=	gdal 16.0
+SHARED_LIBS=	gdal 17.0
 CATEGORIES=	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
 
-MAINTAINER =	Landry Breuil <gaston@gcu.info>
+MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # MIT/X
 PERMIT_PACKAGE_CDROM=	Yes
@@ -34,8 +30,8 @@ MODULES =	perl lang/python devel/gettext
 
 WANTLIB-main =	${WANTLIB} c crypto expat m ssl stdc++ z
 WANTLIB-perl =	crypto curl expat geos_c geotiff gif idn jasper jpeg m \
-		png pq ssl tiff z
-WANTLIB-python =	m stdc++
+		png pq ssl tiff z pthread
+WANTLIB-python =	${MODPY_WANTLIB} m stdc++
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 		graphics/tiff \
@@ -64,7 +60,6 @@ MULTI_PACKAGES=	-main -python -perl
 MODPY_SETUPTOOLS=Yes
 MODPY_EGG_VERSION=${V}
 
-NO_REGRESS=	Yes
 MAKE_FILE=	GNUmakefile
 MAKE_FLAGS=	LIBTOOL_FINISH=:
 USE_GMAKE=	Yes
@@ -88,13 +83,13 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-libgrass \
 		--without-php \
 		--without-ruby \
-		--without-threads \
 		--with-pg=${LOCALBASE}/bin/pg_config \
 		--with-python \
 		--with-perl \
 		--with-geos \
 		--with-png=${LOCALBASE} \
 		--with-geotiff=${LOCALBASE} \
+		--with-libtiff=${LOCALBASE} \
 		--with-curl=${LOCALBASE} \
 		--with-gif=${LOCALBASE} \
 		--with-jpeg=${LOCALBASE} \

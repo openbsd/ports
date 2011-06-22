@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-python,v 1.1 2009/03/13 08:56:53 landry Exp $
+@comment $OpenBSD: PLIST-python,v 1.2 2011/06/22 12:53:12 landry Exp $
 bin/epsg_tr.py
 bin/esri2wkt.py
 bin/gcps2vec.py
@@ -27,15 +27,12 @@ lib/python${MODPY_VERSION}/site-packages/gdal.py
 lib/python${MODPY_VERSION}/site-packages/gdal.pyc
 lib/python${MODPY_VERSION}/site-packages/gdalconst.py
 lib/python${MODPY_VERSION}/site-packages/gdalconst.pyc
-lib/python${MODPY_VERSION}/site-packages/gdalnumeric.py
-lib/python${MODPY_VERSION}/site-packages/gdalnumeric.pyc
 lib/python${MODPY_VERSION}/site-packages/ogr.py
 lib/python${MODPY_VERSION}/site-packages/ogr.pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo/
 lib/python${MODPY_VERSION}/site-packages/osgeo/__init__.py
 lib/python${MODPY_VERSION}/site-packages/osgeo/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo/_gdal.so
-lib/python${MODPY_VERSION}/site-packages/osgeo/_gdal_array.so
 lib/python${MODPY_VERSION}/site-packages/osgeo/_gdalconst.so
 lib/python${MODPY_VERSION}/site-packages/osgeo/_ogr.so
 lib/python${MODPY_VERSION}/site-packages/osgeo/_osr.so
