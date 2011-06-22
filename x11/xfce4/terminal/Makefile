@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2011/05/17 18:11:28 landry Exp $
+# $OpenBSD: Makefile,v 1.27 2011/06/22 14:36:39 landry Exp $
 
 COMMENT=	Xfce4 vte-based terminal
 
-XFCE_VERSION=	0.4.7
+XFCE_VERSION=	0.4.8
 XFCE_GOODIE=	Terminal
 # :L is here for a reason
 PKGNAME=	xfce4-${DISTNAME:L}
