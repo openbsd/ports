@@ -1,6 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/11 09:51:31 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/22 05:36:49 rpointel Exp $
 bin/plackup
-${P5SITE}/HTTP/
 ${P5SITE}/HTTP/Message/
 ${P5SITE}/HTTP/Message/PSGI.pm
 ${P5SITE}/HTTP/Server/
@@ -11,7 +10,6 @@ ${P5SITE}/Plack/App/
 ${P5SITE}/Plack/App/CGIBin.pm
 ${P5SITE}/Plack/App/Cascade.pm
 ${P5SITE}/Plack/App/Directory.pm
-${P5SITE}/Plack/App/FCGIDispatcher.pm
 ${P5SITE}/Plack/App/File.pm
 ${P5SITE}/Plack/App/PSGIBin.pm
 ${P5SITE}/Plack/App/URLMap.pm
@@ -33,8 +31,6 @@ ${P5SITE}/Plack/Handler/HTTP/
 ${P5SITE}/Plack/Handler/HTTP/Server/
 ${P5SITE}/Plack/Handler/HTTP/Server/PSGI.pm
 ${P5SITE}/Plack/Handler/HTTP/Server/Simple.pm
-${P5SITE}/Plack/Handler/Net/
-${P5SITE}/Plack/Handler/Net/FastCGI.pm
 ${P5SITE}/Plack/Handler/Standalone.pm
 ${P5SITE}/Plack/Loader/
 ${P5SITE}/Plack/Loader.pm
@@ -58,12 +54,12 @@ ${P5SITE}/Plack/Middleware/ContentMD5.pm
 ${P5SITE}/Plack/Middleware/ErrorDocument.pm
 ${P5SITE}/Plack/Middleware/HTTPExceptions.pm
 ${P5SITE}/Plack/Middleware/Head.pm
+${P5SITE}/Plack/Middleware/IIS6ScriptNameFix.pm
 ${P5SITE}/Plack/Middleware/JSONP.pm
 ${P5SITE}/Plack/Middleware/LighttpdScriptNameFix.pm
 ${P5SITE}/Plack/Middleware/Lint.pm
 ${P5SITE}/Plack/Middleware/Log4perl.pm
 ${P5SITE}/Plack/Middleware/LogDispatch.pm
-${P5SITE}/Plack/Middleware/MethodOverride.pm
 ${P5SITE}/Plack/Middleware/NullLogger.pm
 ${P5SITE}/Plack/Middleware/RearrangeHeaders.pm
 ${P5SITE}/Plack/Middleware/Recursive.pm
@@ -105,15 +101,10 @@ ${P5SITE}/Plack/Test/Suite.pm
 ${P5SITE}/Plack/Util/
 ${P5SITE}/Plack/Util.pm
 ${P5SITE}/Plack/Util/Accessor.pm
-${P5SITE}/auto/
-${P5SITE}/auto/share/
-${P5SITE}/auto/share/dist/
 ${P5SITE}/auto/share/dist/Plack/
 ${P5SITE}/auto/share/dist/Plack/#foo
 ${P5SITE}/auto/share/dist/Plack/baybridge.jpg
 ${P5SITE}/auto/share/dist/Plack/face.jpg
-${P5SITE}/auto/share/dist/Plack/stuff../
-${P5SITE}/auto/share/dist/Plack/stuff../Hello.txt
 @man man/man1/plackup.1
 @man man/man3p/HTTP::Message::PSGI.3p
 @man man/man3p/HTTP::Server::PSGI.3p
@@ -121,7 +112,6 @@ ${P5SITE}/auto/share/dist/Plack/stuff../Hello.txt
 @man man/man3p/Plack::App::CGIBin.3p
 @man man/man3p/Plack::App::Cascade.3p
 @man man/man3p/Plack::App::Directory.3p
-@man man/man3p/Plack::App::FCGIDispatcher.3p
 @man man/man3p/Plack::App::File.3p
 @man man/man3p/Plack::App::PSGIBin.3p
 @man man/man3p/Plack::App::URLMap.3p
@@ -138,7 +128,6 @@ ${P5SITE}/auto/share/dist/Plack/stuff../Hello.txt
 @man man/man3p/Plack::Handler::FCGI.3p
 @man man/man3p/Plack::Handler::HTTP::Server::PSGI.3p
 @man man/man3p/Plack::Handler::HTTP::Server::Simple.3p
-@man man/man3p/Plack::Handler::Net::FastCGI.3p
 @man man/man3p/Plack::Handler::Standalone.3p
 @man man/man3p/Plack::Loader.3p
 @man man/man3p/Plack::Loader::Delayed.3p
@@ -158,12 +147,12 @@ ${P5SITE}/auto/share/dist/Plack/stuff../Hello.txt
 @man man/man3p/Plack::Middleware::ErrorDocument.3p
 @man man/man3p/Plack::Middleware::HTTPExceptions.3p
 @man man/man3p/Plack::Middleware::Head.3p
+@man man/man3p/Plack::Middleware::IIS6ScriptNameFix.3p
 @man man/man3p/Plack::Middleware::JSONP.3p
 @man man/man3p/Plack::Middleware::LighttpdScriptNameFix.3p
 @man man/man3p/Plack::Middleware::Lint.3p
 @man man/man3p/Plack::Middleware::Log4perl.3p
 @man man/man3p/Plack::Middleware::LogDispatch.3p
-@man man/man3p/Plack::Middleware::MethodOverride.3p
 @man man/man3p/Plack::Middleware::NullLogger.3p
 @man man/man3p/Plack::Middleware::RearrangeHeaders.3p
 @man man/man3p/Plack::Middleware::Recursive.3p
