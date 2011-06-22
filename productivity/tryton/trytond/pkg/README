@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2011/06/10 11:49:30 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2011/06/22 08:19:12 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -17,6 +17,9 @@ The "db_password" and "admin_passwd" MUST be changed.
 
 PostgreSQL
 ==========
+Trytond uses a PostgreSQL database to store its data. Dependency is not
+enforced because the database can run on another machine.
+
 Assuming you have an administrative account named `postgres', you can
 create the 'tryton' user like this:
     # createuser -U postgres --pwprompt --no-superuser --createdb \
@@ -30,12 +33,39 @@ First start
 Start the trytond server:
     # /etc/rc.d/trytond start
 
-You can now launch the tryton client, then go under:
+Database initialization
+-----------------------
+There are 2 ways to initialize the 'tryton' database.
+
+1. Start directly the tryton client, then go under:
     File -> Database -> New Database
 to initialise your new DB.
 
+2. Manually initialize the DB on the server itself:
+    # createdb -U postgres -E UNICODE -O tryton -T template0 tryton
+    # trytond -i all -d tryton
+
+When the "Admin Password Confirmation" is requested, make sure to match
+the value of "admin_passwd" in ${SYSCONFDIR}/trytond.conf.
+
 The /var/log/trytond file can grow very marge with time, it is advised
 to use newsyslog(8) to rotate it.
+
+Modules installation
+====================
+Several trytond-module packages are available in OpenBSD. Just running
+pkg_add(1) is not enough, they need to get installed into the database
+itself.
+    # trytond -i all -d tryton
+
+This can instead be done directly from the tryton client as well if
+prefered.
+
+Upgrades
+========
+After upgrading to a new major version of trytond, the database needs to
+be updated.
+    # trytond -u all -d tryton
 
 Documentation
 =============
