@@ -1,8 +1,11 @@
-$OpenBSD: patch-doc_reference_texi,v 1.1 2010/04/08 15:57:46 ajacoutot Exp $
+$OpenBSD: patch-doc_reference_texi,v 1.2 2011/06/22 16:48:01 jasper Exp $
 
-Prevent the following:
+Fix makeinfo(1) warning in reference.texi
+
     doc/reference.texi:746: warning: @strong{Note...} produces a
     spurious cross-reference in Info; reword to avoid that.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=653180
 
 --- doc/reference.texi.orig	Mon Apr  5 15:05:02 2010
 +++ doc/reference.texi	Mon Apr  5 15:05:32 2010
