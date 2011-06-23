@@ -1,0 +1,4 @@
+This is the "analytic_invoice" module for the Tryton application
+platform.
+It adds analytic account on invoice lines and generate analytic lines on
+the moves of invoice.
