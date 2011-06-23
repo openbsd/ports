@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/23 10:11:10 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/__tryton__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/__tryton__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/account.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/de_DE.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/fr_FR.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/product.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/product.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/product.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/stock.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/stock.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/tests/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/tests/test_account_stock_continental.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_stock_continental/tests/test_account_stock_continental.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond_account_stock_continental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/trytond_account_stock_continental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/trytond_account_stock_continental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_account_stock_continental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_account_stock_continental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_account_stock_continental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/trytond_account_stock_continental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_account_stock_continental-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
