@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.29 2010/11/04 12:07:09 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.30 2011/06/23 17:32:46 sthen Exp $
 @pkgpath mail/p5-Mail-SpamAssassin
 @newgroup _spamdaemon:506
 @newuser _spamdaemon:506:506:daemon:SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
@@ -117,6 +117,7 @@ ${P5SITE}/Mail/SpamAssassin/Util/RegistrarBoundaries.pm
 ${P5SITE}/Mail/SpamAssassin/Util/ScopedTimer.pm
 ${P5SITE}/Mail/SpamAssassin/Util/TieOneStringHash.pm
 ${P5SITE}/spamassassin-run.pod
+@man man/man1/sa-awl.1
 @man man/man1/sa-compile.1
 @man man/man1/sa-learn.1
 @man man/man1/sa-update.1
@@ -215,9 +216,9 @@ share/examples/SpamAssassin/v330.pre
 @owner _spamdaemon
 @group _spamdaemon
 @sample ${LOCALSTATEDIR}/
+@extraunexec rm -rf ${CONFDIR}/sa-update-keys
 @owner
 @group
-@extraunexec rm -rf ${CONFDIR}/sa-update-keys
 share/spamassassin/
 share/spamassassin/10_default_prefs.cf
 share/spamassassin/20_advance_fee.cf
@@ -269,6 +270,7 @@ share/spamassassin/60_whitelist_spf.cf
 share/spamassassin/60_whitelist_subject.cf
 share/spamassassin/72_active.cf
 share/spamassassin/72_scores.cf
+share/spamassassin/73_sandbox_manual_scores.cf
 share/spamassassin/STATISTICS-set0-72_scores.cf.txt
 share/spamassassin/STATISTICS-set1-72_scores.cf.txt
 share/spamassassin/STATISTICS-set2-72_scores.cf.txt

@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.72 2011/05/04 10:17:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2011/06/23 17:32:46 sthen Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
-VER=			3.3.1
+VER=			3.3.2
 DISTNAME=		Mail-SpamAssassin-${VER}
 PKGNAME=		p5-${DISTNAME:S/-rc/rc/}
-REVISION=		8
-RULESNAME=		Mail-SpamAssassin-rules-${VER}.r923114
+RULESNAME=		Mail-SpamAssassin-rules-${VER}-r1104058.tar.gz
 CATEGORIES=		mail perl5
 
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${RULESNAME}.tgz
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} ${RULESNAME}
 EXTRACT_SUFX=		.tar.bz2
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 WRKDIST=		${WRKDIR}/${DISTNAME:C/-rc.*//}
@@ -75,7 +74,7 @@ post-install:
 .for i in ${FAQ} ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/SpamAssassin
 .endfor
-	cd ${PREFIX}/share/spamassassin; tar xzf ${FULLDISTDIR}/${RULESNAME}.tgz
+	cd ${PREFIX}/share/spamassassin; tar xzf ${FULLDISTDIR}/${RULESNAME}
 	chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/spamassassin/*
 
 pre-regress:
