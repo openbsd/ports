@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/19 10:19:43 sthen Exp $
-@newgroup _scamper:675
-@newuser _scamper:675:_scamper:daemon:Scamper Account:/nonexistent:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.2 2011/06/23 07:46:12 sthen Exp $
+@newgroup _scamper:677
+@newuser _scamper:677:_scamper:daemon:Scamper Account:/nonexistent:/sbin/nologin
 %%SHARED%%
 @bin bin/sc_ally
 @bin bin/sc_analysis_dump

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/19 11:33:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/23 07:46:12 sthen Exp $
 
 SHARED_LIBS +=  scamperfile               0.0 # 0.0
 
 COMMENT =	parallel internet measurement utility
 
-V =		20110608
+V =		20110623
 DISTNAME =	scamper-cvs-$V
 PKGNAME =	scamper-0.0.$V
 
@@ -27,6 +27,6 @@ MASTER_SITES = ${HOMEPAGE}
 USE_GROFF =		Yes
 USE_LIBTOOL =		Yes
 CONFIGURE_STYLE =	gnu
-MAKE_FLAGS =		PRIVSEP_USER=_scamper
+CONFIGURE_ARGS =	--with-privsep-user=_scamper
 
 .include <bsd.port.mk>
