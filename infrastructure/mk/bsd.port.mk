@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1086 2011/06/21 17:11:45 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1087 2011/06/23 21:49:18 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1350,6 +1350,8 @@ IGNORE += "-- ${FULLPKGNAME${SUBPACKAGE}:C/-[0-9].*//g} comes with OpenBSD as of
 .endif
 
 IGNORE_IS_FATAL ?= "No"
+# XXX even if subpackage is invalid, define this
+IGNORE${SUBPACKAGE} ?= 
 .if !empty(IGNORE${SUBPACKAGE}) && ${IGNORE_IS_FATAL:L} == "yes"
 ERRORS += "Fatal: can't build"
 ERRORS += ${IGNORE${SUBPACKAGE}}
