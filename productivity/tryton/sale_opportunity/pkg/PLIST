@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/23 10:15:59 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/__tryton__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/__tryton__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/bg_BG.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/de_DE.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/fr_FR.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/opportunity.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/opportunity.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/opportunity.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/party.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/tests/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/tests/test_sale_opportunity.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/sale_opportunity/tests/test_sale_opportunity.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_opportunity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_opportunity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_opportunity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_opportunity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_opportunity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_opportunity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_opportunity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_sale_opportunity-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
