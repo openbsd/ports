@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/23 10:09:28 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_price_list/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_price_list/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_price_list/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_price_list/__tryton__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_price_list/__tryton__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_price_list/bg_BG.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_price_list/de_DE.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_price_list/es_CO.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_price_list/es_ES.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_price_list/fr_FR.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_price_list/party.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_price_list/price_list.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_price_list/price_list.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/product_price_list/price_list.xml
+lib/python${MODPY_VERSION}/site-packages/trytond_product_price_list-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/trytond_product_price_list-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/trytond_product_price_list-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_product_price_list-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_product_price_list-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_product_price_list-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/trytond_product_price_list-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_product_price_list-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
