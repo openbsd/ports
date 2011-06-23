@@ -1,0 +1,25 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/23 10:09:06 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/__tryton__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/__tryton__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/bg_BG.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/de_DE.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/es_CO.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/es_ES.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/fr_FR.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/invoice.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/invoice.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/party.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/party.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/payment_term.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/account_invoice_history/payment_term.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond_account_invoice_history-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/trytond_account_invoice_history-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/trytond_account_invoice_history-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_account_invoice_history-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_account_invoice_history-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_account_invoice_history-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/trytond_account_invoice_history-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_account_invoice_history-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
