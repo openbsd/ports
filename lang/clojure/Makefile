@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/13 16:04:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/06/23 07:40:25 jasper Exp $
 
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
-V =			1.2.0
+V =			1.2.1
 DISTNAME =		clojure-${V}
 EXTRACT_SUFX =		.zip
-REVISION =		1
 PKG_ARCH =		*
 
 CATEGORIES =		lang java
@@ -33,15 +32,13 @@ NO_REGRESS =		Yes
 
 CLOJURE_HOME =		${PREFIX}/clojure
 
-
 do-install:
 	${INSTALL_DATA_DIR} ${CLOJURE_HOME}
 	${INSTALL_DATA} ${WRKDIST}/clojure.jar ${CLOJURE_HOME}
 	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} -c \
 		${FILESDIR}/clojure \
 		${PREFIX}/bin/clojure
-	cd ${WRKDIST} && tar -cf - src | \
-		tar -C ${CLOJURE_HOME} -xf -
+	cd ${WRKDIST} && tar -cf - src | tar -C ${CLOJURE_HOME} -xf -
 	${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${CLOJURE_HOME}/src
 
 .include <bsd.port.mk>
