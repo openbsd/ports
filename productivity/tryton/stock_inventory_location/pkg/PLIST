@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/23 10:16:57 ajacoutot Exp $
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/__tryton__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/__tryton__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/bg_BG.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/de_DE.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/es_CO.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/es_ES.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/fr_FR.csv
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/inventory.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/inventory.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/inventory.xml
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/tests/
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/tests/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/tests/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/tests/test_stock_inventory_location.py
+lib/python${MODPY_VERSION}/site-packages/trytond/modules/stock_inventory_location/tests/test_stock_inventory_location.pyc
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_inventory_location-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_inventory_location-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_inventory_location-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_inventory_location-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_inventory_location-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_inventory_location-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_inventory_location-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/trytond_stock_inventory_location-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
