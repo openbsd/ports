@@ -1,0 +1,3 @@
+This is the "calendar_classification" module for the Tryton application
+platform.
+It handles classification of event.
