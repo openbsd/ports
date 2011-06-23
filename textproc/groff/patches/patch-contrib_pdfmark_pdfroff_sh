@@ -1,0 +1,23 @@
+$OpenBSD: patch-contrib_pdfmark_pdfroff_sh,v 1.1 2011/06/23 12:14:51 schwarze Exp $
+# http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=538330
+# references a large patch by Solar Designer.
+# Some of those things are fixed in 1.21, most do not look exploitable.
+# This is the only one that seems worth patching away:
+--- contrib/pdfmark/pdfroff.sh.orig	Fri Dec 31 08:33:09 2010
++++ contrib/pdfmark/pdfroff.sh	Wed Jun 22 01:37:47 2011
+@@ -153,11 +153,10 @@
+   else
+   #
+   # Creation of a private temporary directory was unsuccessful;
+-  # fall back to user nominated directory, (using current directory
+-  # as default), and schedule removal of only the temporary files.
+-  #
+-    GROFF_TMPDIR=${TMPDIR}
+-    trap "rm -f ${GROFF_TMPDIR}/pdf$$.*" 0
++  # DO NOT fall back to user nominated directory,
++  # because that would allow symlink attacks.
++    echo >&2 "$CMD: mktemp(1) -d failure"
++    exit 1
+   fi
+   #
+   # In the case of abnormal termination events, we force an exit
