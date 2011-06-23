@@ -1,0 +1,5 @@
+This is the "party_siret" module for the Tryton application platform.
+It adds SIRET/SIREN number fields on party. These numbers are used in
+France, for geographical identification of enterprises:
+- SIREN (Système d'Identification du Répertoire des ENtreprises)
+- SIRET (Système d'Identification du Répertoire des ETablissements)
