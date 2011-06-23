@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/06/19 21:00:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2011/06/23 14:16:46 jasper Exp $
 
 COMMENT =	command-driven interactive function plotting program
 
@@ -29,7 +29,8 @@ CONFIGURE_ARGS =	--without-linux-vga \
 			--with-lasergnu \
 			--disable-wxwidgets \
 			--disable-lua \
-			--without-lisp-files
+			--without-lisp-files \
+			--without-pdf
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
