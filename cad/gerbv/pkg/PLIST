@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/09/09 07:54:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/06/23 07:50:35 jasper Exp $
 %%SHARED%%
 @bin bin/gerbv
-include/gerbv-2.4.0/
-include/gerbv-2.4.0/gerbv.h
+include/gerbv-2.5.0/
+include/gerbv-2.5.0/gerbv.h
 lib/libgerbv.a
 lib/libgerbv.la
 lib/pkgconfig/
