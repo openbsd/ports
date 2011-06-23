@@ -1,7 +1,7 @@
-$OpenBSD: patch-scrotwm_c,v 1.16 2011/06/14 16:26:45 sthen Exp $
---- scrotwm.c.orig	Tue Jun 14 16:51:33 2011
-+++ scrotwm.c	Tue Jun 14 17:09:22 2011
-@@ -161,7 +161,7 @@ u_int32_t		swm_debug = 0
+$OpenBSD: patch-scrotwm_c,v 1.17 2011/06/23 22:58:06 sthen Exp $
+--- scrotwm.c.orig	Thu Jun 23 13:13:51 2011
++++ scrotwm.c	Thu Jun 23 23:54:34 2011
+@@ -162,7 +162,7 @@ u_int32_t		swm_debug = 0
  #define SWM_FOCUS_FOLLOW	(2)
  
  #ifndef SWM_LIB
