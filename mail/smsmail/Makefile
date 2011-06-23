@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/23 22:50:27 naddy Exp $
 
 COMMENT=	LDAP enabled MDA to deliver mails as SMS
 
 DISTNAME=	smsmail-1.0.2
-REVISION =	1
+REVISION=	2
 
 CATEGORIES=    	mail
 
@@ -24,6 +24,10 @@ EXTRACT_SUFX=	.tgz
 
 LIB_DEPENDS=	databases/openldap
 RUN_DEPENDS=	comms/hylafax
+
+FAKE_FLAGS=	BINDIR=${PREFIX}/bin \
+		MANDIR=${PREFIX}/man/man \
+		SPATH=${PREFIX}/share/examples/smsmail
 
 NO_REGRESS=	Yes
 

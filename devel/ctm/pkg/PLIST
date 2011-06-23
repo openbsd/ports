@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/08/08 17:55:29 espie Exp $
-bin/ctm
-bin/ctm_rmail
-@man man/cat1/ctm.0
-@man man/cat1/ctm_rmail.0
-@man man/cat5/ctm.0
+@comment $OpenBSD: PLIST,v 1.4 2011/06/23 22:50:27 naddy Exp $
+@bin bin/ctm
+@bin bin/ctm_rmail
+@man man/man1/ctm.1
+@man man/man1/ctm_rmail.1
+@man man/man5/ctm.5

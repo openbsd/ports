@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/06/23 22:50:27 naddy Exp $
 
 COMMENT=		directory synchronization over mail
 
 PKGNAME=		ctm-19960528
-REVISION =		0
+REVISION=		1
 DISTNAME=		ctmkit
 CATEGORIES=     	net devel
 HOMEPAGE=		http://www.openbsd.org/ctm.html

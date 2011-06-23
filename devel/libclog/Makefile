@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/06/14 21:23:45 dhill Exp $
+# $OpenBSD: Makefile,v 1.12 2011/06/23 22:50:27 naddy Exp $
 
 COMMENT=		configurable logging library
 
@@ -27,6 +27,8 @@ PKG_ARGS+=	-Dno_mips64=0
 .else
 PKG_ARGS+=	-Dno_mips64=1
 .endif
+
+FAKE_FLAGS=	MANDIR=${PREFIX}/man/man
 
 do-configure:
 	printf "major=${LIBclog_VERSION:R}\nminor=${LIBclog_VERSION:E}\n" \

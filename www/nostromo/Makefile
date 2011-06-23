@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/03/20 12:04:19 mglocker Exp $
+# $OpenBSD: Makefile,v 1.38 2011/06/23 22:50:30 naddy Exp $
 
 COMMENT=		Nostromo webserver
 
@@ -26,8 +26,7 @@ WRKSRC=			${WRKDIST}/src
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/nhttpd/nhttpd ${PREFIX}/sbin
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/crypt ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/nhttpd/nhttpd.cat8 \
-		${PREFIX}/man/cat8/nhttpd.0
+	${INSTALL_MAN} ${WRKSRC}/nhttpd/nhttpd.8 ${PREFIX}/man/man8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nostromo
 	${INSTALL_DATA} ${WRKDIST}/ChangeLog ${PREFIX}/share/doc/nostromo
 	${INSTALL_DATA} ${WRKDIST}/README ${PREFIX}/share/doc/nostromo

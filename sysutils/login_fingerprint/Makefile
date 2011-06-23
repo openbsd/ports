@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/23 22:50:29 naddy Exp $
 
 COMMENT=	provide fingerprint authentication
 
@@ -19,7 +19,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto freetype fprint>=0 MagickCore>=1 \
 			MagickWand>=1 usb
 
-
 LIB_DEPENDS=		security/libfprint \
 			graphics/ImageMagick \
 			devel/libusb
@@ -27,6 +26,10 @@ LIB_DEPENDS=		security/libfprint \
 NO_REGRESS=	Yes
 
 WRKDIST=	${WRKDIR}/login_fingerprint
+
+FAKE_FLAGS=	BINDIR=${PREFIX}/libexec/auth \
+		DOCDIR=${PREFIX}/share/doc/login_fingerprint \
+		MANDIR=${PREFIX}/man/man
 
 pre-configure:
 	@perl -pi -e "s@/usr/local@${PREFIX}@" ${WRKSRC}/login_fingerprint.8

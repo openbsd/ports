@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/31 12:21:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/06/23 22:50:29 naddy Exp $
 
 COMMENT=		daemon for changing passwords
 
@@ -23,7 +23,7 @@ WRKDIST=		${WRKDIR}/openpoppassd
 
 WANTLIB=		c
 
-MAKE_ENV=		MANDIR="${PREFIX}/man/cat" \
+MAKE_ENV=		MANDIR="${PREFIX}/man/man" \
 			BINDIR="${PREFIX}/libexec"
 
 .include <bsd.port.mk>

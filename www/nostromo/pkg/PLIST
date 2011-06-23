@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/04/08 13:59:03 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/06/23 22:50:30 naddy Exp $
 @newgroup _nostromo:536
 @newuser _nostromo:536:_nostromo:daemon:Nostromo Account:/nonexistent:/sbin/nologin
-@man man/cat8/nhttpd.0
+@man man/man8/nhttpd.8
 @bin sbin/crypt
 @bin sbin/nhttpd
 share/doc/nostromo/

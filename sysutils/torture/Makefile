@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/20 15:23:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.4 2011/06/23 22:50:29 naddy Exp $
 
 COMMENT =		set of kernel torture tools	
 
@@ -19,7 +19,7 @@ MASTER_SITES =	http://notendur.hi.is/~thb45/
 NO_REGRESS =	Yes
 WANTLIB =	c
 
-MAKE_FLAGS =     BINDIR="${TRUEPREFIX}/sbin" \
-                MANDIR="${TRUEPREFIX}/man/cat"
+MAKE_FLAGS =	BINDIR="${TRUEPREFIX}/sbin" \
+		MANDIR="${TRUEPREFIX}/man/man"
 
 .include <bsd.port.mk>

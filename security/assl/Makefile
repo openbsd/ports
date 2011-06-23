@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/06/20 15:30:40 dhill Exp $
+# $OpenBSD: Makefile,v 1.14 2011/06/23 22:50:28 naddy Exp $
 
 COMMENT=		hide awful SSL API in a sane interface
 
@@ -28,6 +28,8 @@ PKG_ARGS+=	-Dno_mips64=0
 .else
 PKG_ARGS+=	-Dno_mips64=1
 .endif
+
+FAKE_FLAGS=	MANDIR=${PREFIX}/man/man
 
 do-configure:
 	printf "major=${LIBassl_VERSION:R}\nminor=${LIBassl_VERSION:E}\n" \

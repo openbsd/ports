@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/06/23 22:50:30 naddy Exp $
 
 COMMENT=		graphical ports system frontend
 
@@ -36,6 +36,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/pbrowser
 	${INSTALL_PROGRAM} ${WRKSRC}/src/pbrowser ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/* ${PREFIX}/share/icons/pbrowser  
-	${INSTALL_MAN} ${WRKSRC}/src/pbrowser.cat1 ${PREFIX}/man/cat1/pbrowser.0
+	${INSTALL_MAN} ${WRKSRC}/src/pbrowser.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

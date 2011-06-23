@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/20 15:23:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2011/06/23 22:50:29 naddy Exp $
 #
 
 COMMENT=	powerful command-line front end to diff
 
-PKGNAME=	idiff-1.0
 DISTNAME=	idiff-1.0
+REVISION=	0
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.darwinsys.com/freeware/
 
@@ -19,6 +19,6 @@ WANTLIB=		c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/idiff ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/idiff.cat1 ${PREFIX}/man/cat1/idiff.0
+	${INSTALL_MAN} ${WRKSRC}/idiff.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/03/08 06:44:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/23 22:50:27 naddy Exp $
 
 COMMENT=	tool to program the eeprom on FTDI usb devices
 
 DISTNAME=	ftdi-eeprom-1.1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	misc
 
 # BSD
@@ -16,6 +16,6 @@ WANTLIB=		c
 MASTER_SITES=	http://www.bwct.de/
 
 FAKE_FLAGS=	BINDIR="${TRUEPREFIX}/sbin" \
-		MANDIR="${TRUEPREFIX}/man/cat"
+		MANDIR="${TRUEPREFIX}/man/man"
 
 .include <bsd.port.mk>

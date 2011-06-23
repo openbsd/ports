@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2011/05/11 12:57:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2011/06/23 22:50:27 naddy Exp $
 
 COMMENT=	sendmail milter to scan messages for viruses and spam
 
 DISTNAME=	smtp-vilter-1.3.6
-REVISION=	12
+REVISION=	13
 
 CATEGORIES=    	mail
 
@@ -32,6 +32,11 @@ MAKE_FLAGS+=	-DENABLE_LDAP
 LIB_DEPENDS+=	databases/openldap
 WANTLIB += ldap_r lber
 .endif
+
+FAKE_FLAGS=	BINDIR=${PREFIX}/sbin \
+		LIBDIR=${PREFIX}/lib/smtp-vilter \
+		MANDIR=${PREFIX}/man/man \
+		SPATH=${PREFIX}/share/examples/smtp-vilter
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/etc/smtp-vilter/smtp-vilter.conf

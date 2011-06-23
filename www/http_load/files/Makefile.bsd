@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.bsd,v 1.1.1.1 2001/08/06 00:35:05 brad Exp $
+# $OpenBSD: Makefile.bsd,v 1.2 2011/06/23 22:50:30 naddy Exp $
 
 PROG =	http_load
 SRCS =	http_load.c timers.c
@@ -7,7 +7,7 @@ CPPFLAGS+=	-DUSE_SSL
 LDADD +=	-lssl -lcrypto
 
 BINDIR =	${PREFIX}/bin
-MANDIR =	${PREFIX}/man/cat
+MANDIR =	${PREFIX}/man/man
 
 .include <bsd.prog.mk>
 

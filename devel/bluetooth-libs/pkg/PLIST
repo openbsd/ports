@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/03/21 10:54:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/06/23 22:50:27 naddy Exp $
 %%SHARED%%
 %%no_mips64%%
 include/bluetooth.h
@@ -7,42 +7,42 @@ lib/libbluetooth.a
 lib/libbluetooth_p.a
 lib/libsdp.a
 lib/libsdp_p.a
-@man man/cat3/SDP_GET128.0
-@man man/cat3/SDP_GET16.0
-@man man/cat3/SDP_GET32.0
-@man man/cat3/SDP_GET64.0
-@man man/cat3/SDP_GET8.0
-@man man/cat3/SDP_PUT128.0
-@man man/cat3/SDP_PUT16.0
-@man man/cat3/SDP_PUT32.0
-@man man/cat3/SDP_PUT64.0
-@man man/cat3/SDP_PUT8.0
-@man man/cat3/bluetooth.0
-@man man/cat3/bt_aton.0
-@man man/cat3/bt_devaddr.0
-@man man/cat3/bt_devname.0
-@man man/cat3/bt_endhostent.0
-@man man/cat3/bt_endprotoent.0
-@man man/cat3/bt_gethostbyaddr.0
-@man man/cat3/bt_gethostbyname.0
-@man man/cat3/bt_gethostent.0
-@man man/cat3/bt_getprotobyname.0
-@man man/cat3/bt_getprotobynumber.0
-@man man/cat3/bt_getprotoent.0
-@man man/cat3/bt_ntoa.0
-@man man/cat3/bt_sethostent.0
-@man man/cat3/bt_setprotoent.0
-@man man/cat3/sdp.0
-@man man/cat3/sdp_attr2desc.0
-@man man/cat3/sdp_change_service.0
-@man man/cat3/sdp_close.0
-@man man/cat3/sdp_error.0
-@man man/cat3/sdp_open.0
-@man man/cat3/sdp_open_local.0
-@man man/cat3/sdp_register_service.0
-@man man/cat3/sdp_search.0
-@man man/cat3/sdp_unregister_service.0
-@man man/cat3/sdp_uuid2desc.0
+@man man/man3/SDP_GET128.3
+@man man/man3/SDP_GET16.3
+@man man/man3/SDP_GET32.3
+@man man/man3/SDP_GET64.3
+@man man/man3/SDP_GET8.3
+@man man/man3/SDP_PUT128.3
+@man man/man3/SDP_PUT16.3
+@man man/man3/SDP_PUT32.3
+@man man/man3/SDP_PUT64.3
+@man man/man3/SDP_PUT8.3
+@man man/man3/bluetooth.3
+@man man/man3/bt_aton.3
+@man man/man3/bt_devaddr.3
+@man man/man3/bt_devname.3
+@man man/man3/bt_endhostent.3
+@man man/man3/bt_endprotoent.3
+@man man/man3/bt_gethostbyaddr.3
+@man man/man3/bt_gethostbyname.3
+@man man/man3/bt_gethostent.3
+@man man/man3/bt_getprotobyname.3
+@man man/man3/bt_getprotobynumber.3
+@man man/man3/bt_getprotoent.3
+@man man/man3/bt_ntoa.3
+@man man/man3/bt_sethostent.3
+@man man/man3/bt_setprotoent.3
+@man man/man3/sdp.3
+@man man/man3/sdp_attr2desc.3
+@man man/man3/sdp_change_service.3
+@man man/man3/sdp_close.3
+@man man/man3/sdp_error.3
+@man man/man3/sdp_open.3
+@man man/man3/sdp_open_local.3
+@man man/man3/sdp_register_service.3
+@man man/man3/sdp_search.3
+@man man/man3/sdp_unregister_service.3
+@man man/man3/sdp_uuid2desc.3
 share/examples/bluetooth/
 @sample ${SYSCONFDIR}/bluetooth/
 share/examples/bluetooth/hosts

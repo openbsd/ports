@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/10/29 11:34:23 mbalmer Exp $
-@man man/cat8/smtpsend.0
-@man man/cat8/smtpsink.0
-sbin/smtpsend
-sbin/smtpsink
+@comment $OpenBSD: PLIST,v 1.2 2011/06/23 22:50:27 naddy Exp $
+@man man/man8/smtpsend.8
+@man man/man8/smtpsink.8
+@bin sbin/smtpsend
+@bin sbin/smtpsink

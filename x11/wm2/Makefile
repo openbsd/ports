@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/06/23 22:50:30 naddy Exp $
 
 COMMENT=		stylish window manager
 
 DISTNAME=		wm2-4
+REVISION=		0
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.all-day-breakfast.com/wm2/

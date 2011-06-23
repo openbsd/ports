@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/31 10:53:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/06/23 22:50:30 naddy Exp $
 @bin bin/pbrowser
-@man man/cat1/pbrowser.0
+@man man/man1/pbrowser.1
 share/icons/
 share/icons/pbrowser/
 share/icons/pbrowser/pb-install_pkg.png

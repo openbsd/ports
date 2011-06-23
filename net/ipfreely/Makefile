@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/23 22:50:28 naddy Exp $
 
 COMMENT=		simple, secure TCP proxy daemon
 
 DISTNAME=		ipfreely-20050327
-REVISION=		1
+REVISION=		2
 CATEGORIES=		net
 
 HOMEPAGE=		http://ipfreely.sourceforge.net/
@@ -21,11 +21,10 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=ipfreely/}
 WRKDIST=		${WRKDIR}/ipfreely
 WANTLIB=		c
 
-USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM}  ${WRKSRC}/ipfreely ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/ipfreely.cat8 ${PREFIX}/man/man8/ipfreely.0
+	${INSTALL_MAN} ${WRKSRC}/ipfreely.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>

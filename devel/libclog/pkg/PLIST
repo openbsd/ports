@@ -1,28 +1,28 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/06/14 18:32:10 dhill Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/06/23 22:50:27 naddy Exp $
 %%SHARED%%
 include/clog.h
 lib/libclog.a
 lib/libclog_p.a
 %%no_mips64%%
-@man man/cat3/CABORT.0
-@man man/cat3/CABORTX.0
-@man man/cat3/CDBG.0
-@man man/cat3/CFATAL.0
-@man man/cat3/CFATALX.0
-@man man/cat3/CINFO.0
-@man man/cat3/CNABORT.0
-@man man/cat3/CNABORTX.0
-@man man/cat3/CNDBG.0
-@man man/cat3/CNFATAL.0
-@man man/cat3/CNFATALX.0
-@man man/cat3/CNINFO.0
-@man man/cat3/CNWARN.0
-@man man/cat3/CNWARNX.0
-@man man/cat3/CWARN.0
-@man man/cat3/CWARNX.0
-@man man/cat3/clog.0
-@man man/cat3/clog_init.0
-@man man/cat3/clog_set_flags.0
-@man man/cat3/clog_set_logfile.0
-@man man/cat3/clog_set_mask.0
-@man man/cat3/clog_version.0
+@man man/man3/CABORT.3
+@man man/man3/CABORTX.3
+@man man/man3/CDBG.3
+@man man/man3/CFATAL.3
+@man man/man3/CFATALX.3
+@man man/man3/CINFO.3
+@man man/man3/CNABORT.3
+@man man/man3/CNABORTX.3
+@man man/man3/CNDBG.3
+@man man/man3/CNFATAL.3
+@man man/man3/CNFATALX.3
+@man man/man3/CNINFO.3
+@man man/man3/CNWARN.3
+@man man/man3/CNWARNX.3
+@man man/man3/CWARN.3
+@man man/man3/CWARNX.3
+@man man/man3/clog.3
+@man man/man3/clog_init.3
+@man man/man3/clog_set_flags.3
+@man man/man3/clog_set_logfile.3
+@man man/man3/clog_set_mask.3
+@man man/man3/clog_version.3

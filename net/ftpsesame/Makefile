@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/25 20:23:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2011/06/23 22:50:28 naddy Exp $
 
 COMMENT=	automagic packet filter configurator for FTP
 
 DISTNAME=	ftpsesame-0.95
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 HOMEPAGE=	http://www.sentia.org/projects/ftpsesame/
@@ -20,7 +20,6 @@ MASTER_SITES=	http://www.sentia.org/downloads/
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/ftpsesame ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKBUILD}/ftpsesame.cat8 \
-		${PREFIX}/man/cat8/ftpsesame.0
+	${INSTALL_DATA} ${WRKBUILD}/ftpsesame.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>

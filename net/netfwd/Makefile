@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/10/19 21:04:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/23 22:50:28 naddy Exp $
 
 COMMENT=	netword traffic redirector
 
 DISTNAME=	netfwd-0.4
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	Alexey Vatchenko <av@bsdua.org>
@@ -24,6 +24,6 @@ EXTRACT_SUFX=	.tar.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/netfwd ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/netfwd.cat1 ${PREFIX}/man/cat1/netfwd.0
+	${INSTALL_MAN} ${WRKSRC}/netfwd.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>

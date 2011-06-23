@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2007/04/27 18:31:12 matthieu Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/23 22:50:30 naddy Exp $
 
 BINDIR=	${PREFIX}/bin
-MANDIR=	${PREFIX}/man/cat
+MANDIR=	${PREFIX}/man/man
 
 PROG=	wm2
 SRCS=	Border.C Buttons.C Client.C Events.C Main.C Manager.C Rotated.C

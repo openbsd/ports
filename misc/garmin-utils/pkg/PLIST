@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 17:54:16 espie Exp $
-bin/gardump
-bin/garload
-@man man/cat1/gardump.0
-@man man/cat1/garload.0
+@comment $OpenBSD: PLIST,v 1.3 2011/06/23 22:50:27 naddy Exp $
+@bin bin/gardump
+@bin bin/garload
+@man man/man1/gardump.1
+@man man/man1/garload.1

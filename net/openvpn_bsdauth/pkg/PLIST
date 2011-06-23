@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/08/30 18:33:45 fkr Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/06/23 22:50:28 naddy Exp $
 @newgroup _openvpnusers:596
 @mode 2550
 @owner _openvpn
@@ -7,4 +7,4 @@
 @mode
 @owner
 @group
-@man man/cat8/openvpn_bsdauth.0
+@man man/man8/openvpn_bsdauth.8

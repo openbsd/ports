@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/23 22:50:29 naddy Exp $
 
 COMMENT=	print ascii formatted tree of a directory structure
 
 DISTNAME=	tree-0.61
-REVISION =	2
+REVISION =	3
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://spootnik.org/tree/

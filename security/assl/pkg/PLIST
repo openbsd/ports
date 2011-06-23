@@ -1,31 +1,31 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/05/13 21:20:15 dhill Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/06/23 22:50:28 naddy Exp $
 include/assl.h
 lib/libassl.a
 %%SHARED%%
 lib/libassl_p.a
 %%no_mips64%%
-@man man/cat3/assl.0
-@man man/cat3/assl_accept.0
-@man man/cat3/assl_alloc_context.0
-@man man/cat3/assl_close.0
-@man man/cat3/assl_connect.0
-@man man/cat3/assl_event_accept.0
-@man man/cat3/assl_event_close.0
-@man man/cat3/assl_event_connect.0
-@man man/cat3/assl_event_disable_write.0
-@man man/cat3/assl_event_enable_write.0
-@man man/cat3/assl_event_serve.0
-@man man/cat3/assl_event_serve_stop.0
-@man man/cat3/assl_fatalx.0
-@man man/cat3/assl_gets.0
-@man man/cat3/assl_initialize.0
-@man man/cat3/assl_load_file_certs.0
-@man man/cat3/assl_poll.0
-@man man/cat3/assl_puts.0
-@man man/cat3/assl_read.0
-@man man/cat3/assl_serve.0
-@man man/cat3/assl_set_cert_flags.0
-@man man/cat3/assl_write.0
+@man man/man3/assl.3
+@man man/man3/assl_accept.3
+@man man/man3/assl_alloc_context.3
+@man man/man3/assl_close.3
+@man man/man3/assl_connect.3
+@man man/man3/assl_event_accept.3
+@man man/man3/assl_event_close.3
+@man man/man3/assl_event_connect.3
+@man man/man3/assl_event_disable_write.3
+@man man/man3/assl_event_enable_write.3
+@man man/man3/assl_event_serve.3
+@man man/man3/assl_event_serve_stop.3
+@man man/man3/assl_fatalx.3
+@man man/man3/assl_gets.3
+@man man/man3/assl_initialize.3
+@man man/man3/assl_load_file_certs.3
+@man man/man3/assl_poll.3
+@man man/man3/assl_puts.3
+@man man/man3/assl_read.3
+@man man/man3/assl_serve.3
+@man man/man3/assl_set_cert_flags.3
+@man man/man3/assl_write.3
 share/examples/assl/
 share/examples/assl/GNUmakefile
 share/examples/assl/Makefile

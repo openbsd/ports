@@ -1,3 +1,3 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2006/03/05 00:21:53 marco Exp $
-bin/moo
-@man man/cat1/moo.0
+@comment $OpenBSD: PLIST,v 1.2 2011/06/23 22:50:27 naddy Exp $
+@bin bin/moo
+@man man/man1/moo.1

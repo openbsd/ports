@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/06/02 13:41:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/06/23 22:50:28 naddy Exp $
 
 COMMENT=		DNS relay for ad blocking
 
@@ -23,7 +23,7 @@ WANTLIB += c event ldns
 LIB_DEPENDS=	net/ldns/libldns>=1.6.5
 
 MAKE_FLAGS=	BINDIR="${TRUEPREFIX}/sbin" \
-		MANDIR="${TRUEPREFIX}/man/cat"
+		MANDIR="${TRUEPREFIX}/man/man"
 _files= Hosts.blc Hosts.rsk regex \
 	Hosts.pub Hosts.trc hosts.small resolv.conf
 

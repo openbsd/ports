@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/15 19:45:56 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/06/23 22:50:27 naddy Exp $
 
 COMMENT=		bluetooth network libraries
 DISTNAME=		bluetooth-libs-20081122
@@ -18,10 +18,10 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://www.bsdx.de/openbsd/distfiles/
 
 MAKE_ENV=		LIBDIR=${TRUEPREFIX}/lib \
-			MANDIR=${TRUEPREFIX}/man/cat \
 			LIBbluetooth_VERSION=${LIBbluetooth_VERSION} \
 			LIBsdp_VERSION=${LIBsdp_VERSION}
-FAKE_FLAGS=		DEBUGLIBS=No
+FAKE_FLAGS=		DEBUGLIBS=No \
+			MANDIR=${PREFIX}/man/man
 NO_REGRESS=		Yes
 
 # See bsd.lib.mk:162

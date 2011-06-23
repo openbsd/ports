@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/19 22:31:32 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/06/23 22:50:28 naddy Exp $
 
 COMMENT=		bluetooth network tools
 DISTNAME=		bluetooth-tools-20081122
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 MAINTAINER=		Uwe Stuehler <uwe@openbsd.org>
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=		devel/bluetooth-libs
 
 MAKE_ENV=		BINDIR=${TRUEPREFIX}/bin \
 			SBINDIR=${TRUEPREFIX}/sbin \
-			MANDIR=${TRUEPREFIX}/man/cat \
+			MANDIR=${TRUEPREFIX}/man/man \
 			COPTS=-I${LOCALBASE}/include \
 			LDADD=-L${LOCALBASE}/lib
 NO_REGRESS=		Yes

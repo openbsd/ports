@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2005/09/05 13:18:57 espie Exp $
-@man man/cat8/getquota.0
-@man man/cat8/setquota.0
-sbin/getquota
-sbin/setquota
+@comment $OpenBSD: PLIST,v 1.6 2011/06/23 22:50:29 naddy Exp $
+@man man/man8/getquota.8
+@man man/man8/setquota.8
+@bin sbin/getquota
+@bin sbin/setquota

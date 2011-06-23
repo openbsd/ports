@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/06/23 22:50:29 naddy Exp $
 
 COMMENT=	daemon to modify pf tables from userland
 
 DISTNAME=	tabled-1.0.5
-REVISION =	3
+REVISION =	4
 
 CATEGORIES=    	sysutils
 
@@ -18,6 +18,8 @@ WANTLIB=		c
 
 MASTER_SITES=  	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
+
+FAKE_FLAGS=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
 
 NO_REGRESS=	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/04/27 14:01:46 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2011/06/23 22:50:28 naddy Exp $
 
 COMMENT =		MDNS/DNS-SD daemon
 
@@ -21,6 +21,6 @@ MASTER_SITES =		http://www.haesbaert.org/openmdns/releases/ \
 WANTLIB += 		c event util
 
 MAKE_FLAGS =		BINDIR="${TRUEPREFIX}/bin" \
-			MANDIR="${TRUEPREFIX}/man/cat"
+			MANDIR="${TRUEPREFIX}/man/man"
 
 .include <bsd.port.mk>

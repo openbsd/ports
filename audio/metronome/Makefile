@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/22 09:17:06 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/23 22:50:26 naddy Exp $
 
 COMMENT = 	simple metronome
 CATEGORIES =	audio
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_FTP = 	Yes
 PERMIT_PACKAGE_CDROM = 	Yes
 PERMIT_PACKAGE_FTP = 	Yes
 
-FAKE_FLAGS = 	BINDIR=${TRUEPREFIX}/bin MANDIR=${TRUEPREFIX}/man/cat
+FAKE_FLAGS = 	BINDIR=${TRUEPREFIX}/bin MANDIR=${TRUEPREFIX}/man/man
 WANTLIB += 	c m sndio
 
 NO_REGRESS =	Yes

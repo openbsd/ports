@@ -1,8 +1,9 @@
-#	$OpenBSD: Makefile,v 1.8 2010/10/20 15:23:04 naddy Exp $
+#	$OpenBSD: Makefile,v 1.9 2011/06/23 22:50:27 naddy Exp $
 
 COMMENT=		Marco's Object Oriented calculator
 
 DISTNAME=		moo-1.3
+REVISION=		0
 CATEGORIES=		math
 
 MAINTAINER=		Raymond Lai <ray@cyth.net>
@@ -19,5 +20,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 MAKE_FLAGS=		CC=${CC}
+FAKE_FLAGS=		BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/19 22:31:38 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/23 22:50:28 naddy Exp $
 
 COMMENT=	removes sensitive information from a tcpdump -w file
 
 DISTNAME=	tcpdpriv-1.1.10
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net security
 
 HOMEPAGE=	http://ita.ee.lbl.gov/html/contrib/tcpdpriv.html
@@ -28,7 +28,7 @@ NO_REGRESS=		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpdpriv ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/tcpdpriv.0 ${PREFIX}/man/cat1
+	${INSTALL_MAN} ${WRKSRC}/tcpdpriv.1 ${PREFIX}/man/man1
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/tcpdpriv
 	${INSTALL_DATA} ${WRKSRC}/attack50.ps ${PREFIX}/share/doc/tcpdpriv
 

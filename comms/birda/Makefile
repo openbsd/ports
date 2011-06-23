@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2011/03/10 17:28:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/06/23 22:50:27 naddy Exp $
 # $RuOBSD: Makefile,v 1.7 2003/08/18 18:40:14 grange Exp $
 
 COMMENT=		Bohlin's IrDA utilities
 
 DISTNAME=		birda-1.1
-REVISION=		0
+REVISION=		1
 CATEGORIES=		comms
 MASTER_SITES=		http://distfiles.nl/
 
@@ -16,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
-FAKE_FLAGS=	PREFIX="${LOCALBASE}" MANDIR="${LOCALBASE}/man/cat" \
-		LIBDIR="${LOCALBASE}/lib" DEBUGLIBS=No
+FAKE_FLAGS=	BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/man" \
+		LIBDIR="${PREFIX}/lib" DEBUGLIBS=No
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.4 2007/04/14 06:32:19 mbalmer Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/06/23 22:50:29 naddy Exp $
 @newgroup _tabled:582
 @newuser _tabled:582:582:daemon:tabled:/var/empty:/sbin/nologin
-@man man/cat5/tabled.conf.0
-@man man/cat8/tablec.0
-@man man/cat8/tabled.0
-sbin/tablec
-sbin/tabled
+@man man/man5/tabled.conf.5
+@man man/man8/tablec.8
+@man man/man8/tabled.8
+@bin sbin/tablec
+@bin sbin/tabled
 share/examples/tabled.conf
 @sample /etc/tabled.conf

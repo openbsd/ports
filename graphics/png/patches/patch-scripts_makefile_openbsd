@@ -1,13 +1,14 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.31 2010/06/27 19:55:04 kili Exp $
---- scripts/makefile.openbsd.orig	Sat Jun 26 02:31:16 2010
-+++ scripts/makefile.openbsd	Sun Jun 27 08:39:13 2010
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.32 2011/06/23 22:50:27 naddy Exp $
+--- scripts/makefile.openbsd.orig	Fri Jun 25 18:31:16 2010
++++ scripts/makefile.openbsd	Mon Jun 20 13:22:02 2011
 @@ -7,11 +7,12 @@
  # and license in png.h
  
  PREFIX?= /usr/local
 +BINDIR= ${PREFIX}/bin
  LIBDIR=	${PREFIX}/lib
- MANDIR= ${PREFIX}/man/cat
+-MANDIR= ${PREFIX}/man/cat
++MANDIR= ${PREFIX}/man/man
 +INCDIR= ${PREFIX}/include/libpng
 +DOCDIR= ${PREFIX}/share/doc/png
  

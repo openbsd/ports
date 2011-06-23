@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/04/15 05:40:03 lum Exp $
+# $OpenBSD: Makefile,v 1.12 2011/06/23 22:50:29 naddy Exp $
 
 COMMENT=	modified OpenBSD top command
 
@@ -22,6 +22,6 @@ WANTLIB=	c curses
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/toprump ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/toprump.cat1 ${PREFIX}/man/cat1/toprump.0
+	${INSTALL_MAN} ${WRKSRC}/toprump.1 ${PREFIX}/man/man1/toprump.1
 
 .include <bsd.port.mk>

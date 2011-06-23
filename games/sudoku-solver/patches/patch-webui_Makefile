@@ -1,0 +1,12 @@
+$OpenBSD: patch-webui_Makefile,v 1.1 2011/06/23 22:50:27 naddy Exp $
+--- webui/Makefile.orig	Tue Jun 21 07:13:47 2011
++++ webui/Makefile	Tue Jun 21 07:14:07 2011
+@@ -13,7 +13,7 @@ CFLAGS+=	-pthread -Wall -fpic -static -I/usr/local/inc
+ LDADD+=		-L/usr/local/lib -lneo_cgi -lneo_utl -lneo_cs -lpthread \
+ 		-lintl -liconv -lcrypto -lz -lc -lfcgi
+ 
+-BINDIR=		/usr/local/libexec
++BINDIR=		${TRUEPREFIX}/libexec
+ NOMAN=	1
+ 
+ .include <bsd.prog.mk>

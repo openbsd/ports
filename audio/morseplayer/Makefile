@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/06/23 22:50:27 naddy Exp $
 
 COMMENT=		morse player
 
@@ -20,9 +20,8 @@ MASTER_SITES=		${MASTER_SITE_OPENBSD}
 
 MAKE_FLAGS+=		LDADD="-lsndio -lm"
 
-FAKE_FLAGS=		BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/cat"
+FAKE_FLAGS=		BINDIR="${PREFIX}/bin" MANDIR="${PREFIX}/man/man"
 
-USE_GROFF =		Yes
 NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

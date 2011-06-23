@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/16 10:11:37 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/23 22:50:29 naddy Exp $
 @group auth
 libexec/auth/
 @bin libexec/auth/login_totp
@@ -14,6 +14,6 @@ libexec/auth/
 @mode
 @owner
 @group
-@man man/cat8/login_totp-and-pwd.0
-@man man/cat8/login_totp.0
+@man man/man8/login_totp-and-pwd.8
+@man man/man8/login_totp.8
 share/doc/pkg-readmes/${FULLPKGNAME}

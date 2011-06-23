@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/05 08:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2011/06/23 22:50:28 naddy Exp $
 
 COMMENT=	yet another dump utility
 
 DISTNAME=	xd-8087
-REVISION=	0
+REVISION=	1
 CATEGORIES=	misc
 
 # BSD 
@@ -14,8 +14,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c
 
-MAKE_ENV=	CC="${CC}"
-FAKE_FLAGS=	PREFIX=${PREFIX}
-USE_GROFF =	Yes
+FAKE_FLAGS=	CC="${CC}" BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man
 
 .include <bsd.port.mk>

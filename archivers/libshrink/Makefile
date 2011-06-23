@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/20 15:31:26 dhill Exp $
+# $OpenBSD: Makefile,v 1.4 2011/06/23 22:50:26 naddy Exp $
 
 COMMENT=	compression wrapper library
 
@@ -30,6 +30,8 @@ PKG_ARGS+=	-Dno_mips64=0
 .else
 PKG_ARGS+=	-Dno_mips64=1
 .endif 
+
+FAKE_FLAGS=	MANDIR=${PREFIX}/man/man
 
 do-configure:
 	printf "major=${LIBshrink_VERSION:R}\nminor=${LIBshrink_VERSION:E}\n" \

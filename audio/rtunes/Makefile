@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/10/19 21:04:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.13 2011/06/23 22:50:27 naddy Exp $
 
 COMMENT=		Streams audio to Apple AirPort Express device
 
@@ -19,15 +19,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c crypto
 
+MAKE_FLAGS=		-DNOPIC -DNOPROFILE
+FAKE_FLAGS=		BINDIR=${PREFIX}/bin LIBDIR=${PREFIX}/lib \
+			MANDIR=${PREFIX}/man/man
+
 NO_REGRESS=		Yes
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/rtunes/rtunes ${PREFIX}/bin/rtunes
-	${INSTALL_MAN} ${WRKSRC}/rtunes/rtunes.cat1 \
-	    ${PREFIX}/man/cat1/rtunes.0
-	${INSTALL_MAN} ${WRKSRC}/rtunes/rtunes.conf.cat5 \
-	    ${PREFIX}/man/cat5/rtunes.conf.0
-	${INSTALL_DATA} ${WRKSRC}/librtunes/librtunes.a ${PREFIX}/lib
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rtunes
 	${INSTALL_DATA} ${WRKSRC}/rtunes/rtunes.conf \
 	    ${PREFIX}/share/examples/rtunes

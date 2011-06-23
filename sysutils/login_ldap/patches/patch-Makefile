@@ -1,0 +1,23 @@
+$OpenBSD: patch-Makefile,v 1.1 2011/06/23 22:50:29 naddy Exp $
+--- Makefile.orig	Thu Feb  7 09:56:28 2008
++++ Makefile	Tue Jun 21 09:40:06 2011
+@@ -4,14 +4,14 @@ PROG=login_-ldap
+ SRCS=login_ldap.c util.c search.c bind.c
+ MAN=login_ldap.8
+ EXAMPLES=login_ldap.conf active-directory.login_ldap.conf
+-BINDIR=$(LOCALBASE)/libexec/auth
+-MANDIR=$(LOCALBASE)/man/cat
+-EXAMPLEDIR=$(LOCALBASE)/share/examples/login_ldap
++BINDIR=$(TRUEPREFIX)/libexec/auth
++MANDIR=$(TRUEPREFIX)/man/man
++EXAMPLEDIR=$(TRUEPREFIX)/share/examples/login_ldap
+ 
+ 
+ CFLAGS+= -Wall
+-CPPFLAGS= -I$(PREFIX)/include
+-LDADD= -L$(PREFIX)/lib -lldap -llber
++CPPFLAGS= -I$(LOCALBASE)/include
++LDADD= -L$(LOCALBASE)/lib -lldap -llber
+ 
+ beforeinstall:
+ 	${INSTALL} -d -o ${BINOWN} -g ${BINGRP} -m ${DIRMODE} \

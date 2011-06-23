@@ -1,20 +1,20 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/08/06 16:06:03 espie Exp $
-bin/ircomm
-bin/irobex
-bin/irs
-bin/mkobexcard
-bin/mkobexdate
-bin/mkobexmemo
-bin/mkobexpdb
-bin/mkobextel
-bin/mkobextodo
+@comment $OpenBSD: PLIST,v 1.3 2011/06/23 22:50:27 naddy Exp $
+@bin bin/ircomm
+@bin bin/irobex
+@bin bin/irs
+@bin bin/mkobexcard
+@bin bin/mkobexdate
+@bin bin/mkobexmemo
+@bin bin/mkobexpdb
+@bin bin/mkobextel
+@bin bin/mkobextodo
 lib/libirda.a
-@man man/cat1/ircomm.0
-@man man/cat1/irobex.0
-@man man/cat1/irs.0
-@man man/cat1/mkobexcard.0
-@man man/cat1/mkobexdate.0
-@man man/cat1/mkobexmemo.0
-@man man/cat1/mkobexpdb.0
-@man man/cat1/mkobextel.0
-@man man/cat1/mkobextodo.0
+@man man/man1/ircomm.1
+@man man/man1/irobex.1
+@man man/man1/irs.1
+@man man/man1/mkobexcard.1
+@man man/man1/mkobexdate.1
+@man man/man1/mkobexmemo.1
+@man man/man1/mkobexpdb.1
+@man man/man1/mkobextel.1
+@man man/man1/mkobextodo.1

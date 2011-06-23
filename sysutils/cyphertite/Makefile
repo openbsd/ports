@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/09 05:34:05 dhill Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/23 22:50:29 naddy Exp $
 
 COMMENT =		tar-like secure remote deduplicating archiver
 
@@ -26,6 +26,8 @@ LIB_DEPENDS =		archivers/libshrink	\
 			devel/libexude		\
 			security/assl>=0.9.6	\
 			textproc/libxmlsd
+
+FAKE_FLAGS=		MANDIR=${PREFIX}/man/man
 
 NO_REGRESS =		Yes
 

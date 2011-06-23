@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/23 22:50:28 naddy Exp $
 
 COMMENT =	OpenMoko serial console tool
 
@@ -19,6 +19,9 @@ WANTLIB =		ftdi usb c
 MASTER_SITES =		ftp://ftp.laas.fr/pub/ii/matthieu/
 
 LIB_DEPENDS =		devel/libftdi
+
+MAKE_ENV=		LOCAL_BASE=${LOCALBASE}
+MAKE_FLAGS=		BINDIR=${PREFIX}/bin MANDIR=${PREFIX}/man/man
 
 NO_REGRESS =		yes
 

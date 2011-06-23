@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/16 10:11:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/23 22:50:29 naddy Exp $
 
 COMMENT=	authentication provider for OATH one-time passwords
 
@@ -20,6 +20,9 @@ WANTLIB=	c oath util
 NO_REGRESS=	Yes
 
 LIB_DEPENDS=	security/oath-toolkit
+
+FAKE_FLAGS=	BINDIR=${PREFIX}/libexec/auth \
+		MANDIR=${PREFIX}/man/man
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/README \

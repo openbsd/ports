@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/10/19 21:04:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/23 22:50:27 naddy Exp $
 
 COMMENT=	SMTP benchmark to measure throughput of an MTA
 
 DISTNAME=	smtp-benchmark-1.0.4
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=    	benchmarks mail
 
@@ -20,6 +20,8 @@ WANTLIB=		c pthread
 
 MASTER_SITES=  	${HOMEPAGE}
 EXTRACT_SUFX=	.tgz
+
+FAKE_FLAGS=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
 
 NO_REGRESS=	Yes
 

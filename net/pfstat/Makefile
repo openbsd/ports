@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/06/07 22:15:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2011/06/23 22:50:28 naddy Exp $
 
 COMMENT-main=	packet filter statistics visualization
 COMMENT-daemon=	pfstat daemon
@@ -40,10 +40,9 @@ pre-configure:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pfstat ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pfstat.cat8 ${PREFIX}/man/cat8/pfstat.0
+	${INSTALL_MAN} ${WRKSRC}/pfstat.8 ${PREFIX}/man/man8
 	${INSTALL_PROGRAM} ${WRKSRC}/pfstatd/pfstatd ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/pfstatd/pfstatd.cat8 \
-		       ${PREFIX}/man/cat8/pfstatd.0
+	${INSTALL_MAN} ${WRKSRC}/pfstatd/pfstatd.8 ${PREFIX}/man/man8
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pfstat
 	${INSTALL_DATA} ${WRKSRC}/pfstat.conf.example	\
 			${PREFIX}/share/examples/pfstat/pfstat.conf

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/10/20 15:23:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.18 2011/06/23 22:50:29 naddy Exp $
 
 COMMENT=	interactive process killer
 
-PKGNAME=	zap-1.3
 DISTNAME=	zap-1.3
+REVISION=	0
 WRKDIST=	${WRKDIR}/zap
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.darwinsys.com/freeware/
@@ -18,6 +18,6 @@ WANTLIB=		c
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/zap ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/zap.cat1 ${PREFIX}/man/cat1/zap.0
+	${INSTALL_MAN} ${WRKSRC}/zap.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
