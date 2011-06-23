@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1087 2011/06/23 21:49:18 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1088 2011/06/23 22:03:15 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -3101,15 +3101,18 @@ _lib-depends-args:
 .endfor
 
 _wantlib-args:
-	@${_MAKE} _port-wantlib-args >${_P_WANTLIB_COOKIE}
-	@${_MAKE} _fake-wantlib-args >${_I_WANTLIB_COOKIE}
-	@if cmp -s ${_P_WANTLIB_COOKIE} ${_I_WANTLIB_COOKIE}; \
+	@a=`mktemp /tmp/portstree.XXXXXX`; b=`mktemp /tmp/inst.XXXXXX`; \
+	cd ${.CURDIR} && \
+	${MAKE} _port-wantlib-args >$$a && \
+	${MAKE} _fake-wantlib-args >$$b; \
+	if cmp -s $$a $$b; \
 	then \
-		cat ${_P_WANTLIB_COOKIE}; \
+		cat $$a; \
+		rm -f $$a $$b; \
 	else \
 		echo 1>&2 "Error: Libraries in packing-lists in the ports tree"; \
 		echo 1>&2 "       and libraries from installed packages don't match"; \
-		diff 1>&2 -u ${_P_WANTLIB_COOKIE} ${_I_WANTLIB_COOKIE}; \
+		diff 1>&2 -u $$a $$b; \
 		exit 1; \
 	fi
 
