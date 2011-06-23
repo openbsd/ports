@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.330 2011/06/14 11:14:52 robert Exp $
+# $OpenBSD: Makefile,v 1.331 2011/06/23 08:48:15 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -256,7 +256,6 @@
      SUBDIR += py-ElementTree
      SUBDIR += py-HappyDoc
      SUBDIR += py-MarkupSafe
-     SUBDIR += py-cElementTree
      SUBDIR += py-chardet
      SUBDIR += py-cssutils
      SUBDIR += py-docutils
