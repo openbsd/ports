@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.4 2011/06/20 13:29:35 robert Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.5 2011/06/23 11:59:08 robert Exp $
 lib/libreoffice/basis${BV}/program/basprovob.uno.so
 lib/libreoffice/basis${BV}/program/cairocanvas.uno.so
 lib/libreoffice/basis${BV}/program/canvasfactory.uno.so
@@ -242,7 +242,6 @@ lib/libreoffice/basis${BV}/program/stringresourceob.uno.so
 lib/libreoffice/basis${BV}/program/syssh.uno.so
 lib/libreoffice/basis${BV}/program/ucpexpand1.uno.so
 lib/libreoffice/basis${BV}/program/ucpext.uno.so
-lib/libreoffice/basis${BV}/program/ucpgvfs1.uno.so
 lib/libreoffice/basis${BV}/program/ucptdoc1.uno.so
 lib/libreoffice/basis${BV}/program/updatefeed.uno.so
 lib/libreoffice/basis${BV}/program/vbaeventsob.uno.so
