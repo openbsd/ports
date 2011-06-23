@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/06/22 15:39:31 robert Exp $
+# $OpenBSD: Makefile,v 1.36 2011/06/23 16:38:51 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -17,7 +17,7 @@ PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
 EPOCH=		0
-REVISION=	1
+REVISION=	2
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -167,6 +167,7 @@ WANTLIB-main+=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		png pthread pthread-stubs ssl xcb xml2 z gdk_pixbuf-2.0 \
 		util ${MODGCONF2_WANTLIB}
 WANTLIB-main+=	GL GLU Xxf86vm drm stdc++ xcb-render xcb-shm
+WANTLIB-main+=	hunspell-1.2 gdk_pixbuf_xlib-2.0
 WANTLIB-main+=	${MODPY_WANTLIB}
 
 RUN_DEPENDS-main=	devel/desktop-file-utils \
