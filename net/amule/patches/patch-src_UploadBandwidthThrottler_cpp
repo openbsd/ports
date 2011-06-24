@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_UploadBandwidthThrottler_cpp,v 1.1 2011/06/24 08:42:31 dcoppa Exp $
+
+Bugfix from upstream git: fix a crash on close if the throttler is
+active and sleeping when the sockets are destroyed.
+
+--- src/UploadBandwidthThrottler.cpp.orig	Sat Mar 28 20:29:59 2009
++++ src/UploadBandwidthThrottler.cpp	Fri Dec  3 10:41:19 2010
+@@ -287,7 +287,7 @@ void* UploadBandwidthThrottler::Entry()
+ 	uint32 rememberedSlotCounter = 0;
+ 	uint32 extraSleepTime = TIME_BETWEEN_UPLOAD_LOOPS;
+ 	
+-	while (m_doRun) {
++	while (m_doRun && !TestDestroy()) {
+ 		uint32 timeSinceLastLoop = ::GetTickCountFullRes() - lastLoopTick;
+ 
+ 		// Get current speed from UploadSpeedSense
+@@ -322,6 +322,11 @@ void* UploadBandwidthThrottler::Entry()
+ 
+ 		if(timeSinceLastLoop < sleepTime) {
+ 			Sleep(sleepTime-timeSinceLastLoop);
++		}
++
++		// Check after sleep in case the thread has been signaled to end
++		if (!m_doRun || TestDestroy()) {
++			break;
+ 		}
+ 
+ 		const uint32 thisLoopTick = ::GetTickCountFullRes();

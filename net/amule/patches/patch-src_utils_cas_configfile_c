@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_utils_cas_configfile_c,v 1.1 2011/06/24 08:42:31 dcoppa Exp $
+
+Sane defaults.
+
+--- src/utils/cas/configfile.c.orig	Wed Dec  1 16:59:01 2010
++++ src/utils/cas/configfile.c	Wed Dec  1 17:01:45 2010
+@@ -44,9 +44,9 @@ int writeconfig(void)
+ 		"# font_size - size the font\n",
+ 		"# source_image - image where the text will be writen\n",
+ 		"# *_line - x,y,[1/0] enabled or disabled\n\n",
+-		"font /usr/share/fonts/corefonts/times.ttf\n",
++		"font ${X11BASE}/lib/X11/fonts/TTF/DejaVuSerif.ttf\n",
+ 		"font_size 10.5\n",
+-		"source_image /usr/share/pixmaps/stat.png\n",
++		"source_image ${TRUEPREFIX}/share/cas/stat.png\n",
+ 		"first_line 23,17,1\n",
+ 		"second_line 23,34,1\n",
+ 		"third_line 23,51,1\n",
+@@ -54,7 +54,7 @@ int writeconfig(void)
+ 		"fifth_line 23,85,1\n",
+ 		"sixth_line 23,102,1\n",
+ 		"seventh_line 23,119,1\n",
+-		"template /usr/share/pixmaps/tmp.html\n",
++		"template ${TRUEPREFIX}/share/cas/tmp.html\n",
+ 		"img_type 0\n"
+ 	};
+ 

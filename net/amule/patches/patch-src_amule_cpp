@@ -1,11 +1,23 @@
-$OpenBSD: patch-src_amule_cpp,v 1.1 2007/10/26 15:00:39 steven Exp $
---- src/amule.cpp.orig	Fri Apr 21 05:13:51 2006
-+++ src/amule.cpp	Wed Oct 10 17:53:08 2007
-@@ -97,6 +97,7 @@
- 		#include <CoreFoundation/CFBundle.h>
- 		#include <wx/mac/corefoundation/cfstring.h>
- 	#endif
-+	#include <wx/msgdlg.h>
- #endif
+$OpenBSD: patch-src_amule_cpp,v 1.2 2011/06/24 08:42:31 dcoppa Exp $
+
+Disable checking for new versions at startup: it's useless and was
+causing a crash with amuled on sparc64.
+
+--- src/amule.cpp.orig	Tue Aug 18 18:24:58 2009
++++ src/amule.cpp	Thu Nov  4 15:25:39 2010
+@@ -727,6 +727,7 @@ bool CamuleApp::OnInit()
+ 		printf("\n%s\n", (const char *)unicode2char(msg));
+ 	}
  
++#ifndef __OPENBSD__
+ 	// Test if there's any new version
+ 	if (thePrefs::CheckNewVersion()) {
+ 		// We use the thread base because I don't want a dialog to pop up.
+@@ -736,6 +737,7 @@ bool CamuleApp::OnInit()
+ 		version_check->Create();
+ 		version_check->Run();
+ 	}
++#endif
  
+ 	// Create main dialog, or fork to background (daemon).
+ 	InitGui(geometry_enabled, geom_string);

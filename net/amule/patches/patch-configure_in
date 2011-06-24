@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure_in,v 1.1 2011/06/24 08:42:31 dcoppa Exp $
+--- configure.in.orig	Wed Sep 16 23:02:52 2009
++++ configure.in	Fri Jun 17 20:27:14 2011
+@@ -297,7 +297,7 @@ MULE_CHECK_CXXABI
+ AC_LANG_POP([C++])
+ 
+ # Ok, we have all needed libs, now checking for other stuff
+-AS_IF([test "$LEX" = "flex"], [MULE_CHECK_FLEX_EXTENDED], [HAVE_FLEX_EXTENDED=no])
++MULE_CHECK_FLEX_EXTENDED
+ 
+ # Flush standard test results for speeding cache
+ AC_CACHE_SAVE
+@@ -386,10 +386,6 @@ dnl AM_GNU_GETTEXT_VERSION *must not* be moved away fr
+ AM_GNU_GETTEXT_VERSION(0.11.5)
+ MULE_CHECK_NLS
+ 
+-# Check for bfd.h (to have proper backtraces without using wxExecute)
+-MULE_CHECK_BFD
+-MULE_CHECK_EXECINFO
+-
+ # Flush standard test results for speeding cache
+ AC_CACHE_SAVE
+ 
+@@ -399,7 +395,7 @@ MULE_COMPILATION_FLAGS
+ 
+ # autoconf >= 2.60 already defines ${docdir}, but we always need it.
+ AC_MSG_CHECKING([for docdir])
+-AS_IF([test -z "$docdir"], [docdir="${datadir}/doc/${PACKAGE_NAME}-${PACKAGE_VERSION}"])
++AS_IF([test -z "$docdir"], [docdir="${datadir}/doc/amule"])
+ AC_SUBST([docdir])dnl
+ AC_MSG_RESULT([$docdir])
+ 
