@@ -1,5 +1,5 @@
-Yet another library of cryptographic functions, this one in C++.
-All code is public domain, except the mars implementation.
-
-This is a dependency of current amule, otherwise it wouldn't even be
-there.
+The Crypto++ library is a free C++ class library of cryptographic
+algorithms. Although the library is copyrighted as a compilation,
+the individual files in it are either written specifically for
+this project by its contributors and placed in the public domain,
+or derived from other sources that are public domain.

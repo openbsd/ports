@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2008/08/26 14:57:58 espie Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/24 07:55:17 dcoppa Exp $
 
 COMMENT = 	C++ library of cryptographic algorithms
 CATEGORIES = 	devel security
 
 HOMEPAGE = 	http://www.cryptopp.com/
 MASTER_SITES = 	${HOMEPAGE}
-DISTNAME = 	cryptopp552
-PKGNAME = 	cryptopp-5.5.2
+DISTNAME = 	cryptopp561
+PKGNAME = 	cryptopp-5.6.1
 
 EXTRACT_SUFX = 	.zip
 WRKDIST = 	${WRKDIR}
@@ -19,13 +19,21 @@ PERMIT_DISTFILES_CDROM = 	Yes
 PERMIT_PACKAGE_FTP = 		Yes
 PERMIT_DISTFILES_FTP = 		Yes
 
-SHARED_LIBS = 	cryptopp	0.0
+SHARED_LIBS = 	cryptopp	1.0
+
+WANTLIB +=	m stdc++
 
 USE_GMAKE = 	Yes
-MAKE_FLAGS = 	CXXFLAGS="-DNDEBUG -pthread ${CXXFLAGS}" PREFIX=${PREFIX} \
+MAKE_FLAGS +=	CXXFLAGS="${CXXFLAGS} -Wno-deprecated -Wno-sign-compare \
+			  -Wno-unused -DCRYPTOPP_DISABLE_SSSE3 \
+			  -DCRYPTOPP_DISABLE_AESNI -DNDEBUG -fPIC" \
+		LDFLAGS="-pthread" \
+		PREFIX=${PREFIX} \
 		LIBcryptopp_VERSION=${LIBcryptopp_VERSION}
 MAKE_FILE = 	${WRKDIR}/GNUmakefile
-NO_REGRESS = 	Yes
+
+REGRESS_FLAGS += WRKDIST=${WRKDIST}
+REGRESS_TARGET = test
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/cryptopp

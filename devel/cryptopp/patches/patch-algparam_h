@@ -1,7 +1,7 @@
-$OpenBSD: patch-algparam_h,v 1.1.1.1 2008/08/26 14:57:58 espie Exp $
+$OpenBSD: patch-algparam_h,v 1.2 2011/06/24 07:55:17 dcoppa Exp $
 --- algparam.h.orig	Wed Jun 18 13:46:19 2008
 +++ algparam.h	Fri Jun 20 15:05:20 2008
-@@ -17,9 +17,9 @@ class ConstByteArrayParameter (public)
+@@ -17,9 +17,9 @@ class ConstByteArrayParameter (public)
  	{
  		Assign((const byte *)data, data ? strlen(data) : 0, deepCopy);
  	}
@@ -13,7 +13,7 @@ $OpenBSD: patch-algparam_h,v 1.1.1.1 2008/08/26 14:57:58 espie Exp $
  	}
  	template <class T> ConstByteArrayParameter(const T &string, bool deepCopy = false)
  	{
-@@ -27,14 +27,14 @@ class ConstByteArrayParameter (public)
+@@ -27,14 +27,14 @@ class ConstByteArrayParameter (public)
  		Assign((const byte *)string.data(), string.size(), deepCopy);
  	}
  
@@ -31,7 +31,7 @@ $OpenBSD: patch-algparam_h,v 1.1.1.1 2008/08/26 14:57:58 espie Exp $
  		}
  		m_deepCopy = deepCopy;
  	}
-@@ -53,8 +53,8 @@ class ConstByteArrayParameter (public)
+@@ -53,8 +53,8 @@ class ConstByteArrayParameter (public)
  class ByteArrayParameter
  {
  public:

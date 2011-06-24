@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/08/26 14:57:58 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/24 07:55:18 dcoppa Exp $
 %%SHARED%%
 include/cryptopp/
 include/cryptopp/3way.h
@@ -9,6 +9,7 @@ include/cryptopp/algparam.h
 include/cryptopp/arc4.h
 include/cryptopp/argnames.h
 include/cryptopp/asn.h
+include/cryptopp/authenc.h
 include/cryptopp/base32.h
 include/cryptopp/base64.h
 include/cryptopp/basecode.h
@@ -18,7 +19,9 @@ include/cryptopp/blumshub.h
 include/cryptopp/camellia.h
 include/cryptopp/cast.h
 include/cryptopp/cbcmac.h
+include/cryptopp/ccm.h
 include/cryptopp/channels.h
+include/cryptopp/cmac.h
 include/cryptopp/config.h
 include/cryptopp/cpu.h
 include/cryptopp/crc.h
@@ -30,6 +33,7 @@ include/cryptopp/dh2.h
 include/cryptopp/dll.h
 include/cryptopp/dmac.h
 include/cryptopp/dsa.h
+include/cryptopp/eax.h
 include/cryptopp/ec2n.h
 include/cryptopp/eccrypto.h
 include/cryptopp/ecp.h
@@ -42,6 +46,7 @@ include/cryptopp/files.h
 include/cryptopp/filters.h
 include/cryptopp/fips140.h
 include/cryptopp/fltrimpl.h
+include/cryptopp/gcm.h
 include/cryptopp/gf256.h
 include/cryptopp/gf2_32.h
 include/cryptopp/gf2n.h
@@ -98,6 +103,7 @@ include/cryptopp/salsa.h
 include/cryptopp/seal.h
 include/cryptopp/secblock.h
 include/cryptopp/seckey.h
+include/cryptopp/seed.h
 include/cryptopp/serpent.h
 include/cryptopp/serpentp.h
 include/cryptopp/sha.h
