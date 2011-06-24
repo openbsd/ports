@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2011/06/24 09:40:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2011/06/24 09:42:39 sthen Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
@@ -11,7 +11,7 @@ PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
 
-REVISION-main = 	0
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -neon -mjpeg
 
@@ -46,7 +46,7 @@ WANTLIB-main =		${WANTLIB} xcb-render \
 			SDL mms gsm rsvg-2 schroedinger-1.0>=2.0 cdaudio BPM \
 			SoundTouch dvdnav jasper GL Xdamage Xext Xfixes Xxf86vm \
 			drm xcb-shm vpx crypto curl idn lrdf raptor ssl xslt
-LIB_DEPENDS-main = 	${LIB_DEPENDS} \
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			${P}/plugins-base \
 			audio/faac \
 			audio/faad \
@@ -83,38 +83,38 @@ LIB_DEPENDS-mjpeg =	${LIB_DEPENDS} \
 
 CONFIGURE_ENV =		ac_cv_path_PYTHON=""
 CONFIGURE_ARGS =	--disable-acm \
+			--disable-alsa \
 			--disable-amrwb \
 			--disable-celt \
-			--disable-dc1394 \
 			--disable-cog \
-			--disable-directfb \
+			--disable-dc1394 \
 			--disable-dirac \
 			--disable-directdraw \
+			--disable-directfb \
 			--disable-directsound \
 			--disable-divx \
 			--disable-dvb \
+			--disable-dvdspu \
 			--disable-fbdev \
 			--disable-gme \
-			--disable-alsa \
 			--disable-kate \
 			--disable-lv2 \
 			--disable-mimic \
 			--disable-modplug \
+			--disable-musicbrainz \
 			--disable-mythtv \
-			--disable-ofa \
 			--disable-nas \
+			--disable-ofa \
+			--disable-opencv \
 			--disable-osx_video \
+			--disable-quicktime \
 			--disable-real \
 			--disable-spc \
+			--disable-vcd \
 			--disable-vdpau \
 			--disable-wildmidi \
 			--disable-wininet \
-			--disable-vcd \
-			--disable-dvdspu \
-			--disable-quicktime \
-			--disable-musicbrainz \
-			--disable-zbar \
-			--disable-opencv
+			--disable-zbar
 
 # XXX subpackage?
 # swfdec not before it's ported from 0.3 to 0.8 API
