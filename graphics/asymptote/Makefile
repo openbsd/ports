@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2011/06/08 17:35:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/24 14:44:41 jasper Exp $
 
 COMMENT=		powerful descriptive vector graphics language
-BROKEN-sparc64=		build stalls
 
 DISTNAME=		asymptote-2.10.src
 PKGNAME=		${DISTNAME:S/.src//g}
@@ -38,6 +37,11 @@ LIB_DEPENDS=		devel/boehm-gc \
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
 VMEM_WARNING=		Yes
+
+# XXX eats all memory
+.if ${MACHINE_ARCH:Msparc64}
+CFLAGS+=		-O0
+.endif
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-gc=${LOCALBASE} \
