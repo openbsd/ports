@@ -1,26 +1,27 @@
-# $OpenBSD: Makefile,v 1.6 2008/01/22 18:51:04 merdely Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/24 14:06:57 sthen Exp $
 
 COMMENT=		configuration file parser library
-DISTNAME=		confuse-2.6
+DISTNAME=		confuse-2.7
 PKGNAME=		lib${DISTNAME}
 SHARED_LIBS=		confuse 1.0	# .0.0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.nongnu.org/confuse/
 
-# LGPL
+# ISC
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://bzero.se/confuse/
+MASTER_SITES=		${MASTER_SITE_SAVANNAH:=confuse/}
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			converters/libiconv
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ENV+= 	CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
 CONFIGURE_ARGS+=	--without-check
 
 USE_LIBTOOL=		Yes
