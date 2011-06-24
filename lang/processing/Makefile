@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/24 07:00:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/24 21:12:52 jasper Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		language and IDE for electronic arts and designers
+COMMENT=		language/IDE for images, animations and interactions
 
 V=			1.5.1
 DISTNAME=		processing-$V-linux
 PKGNAME=		${DISTNAME:S/-linux//}
+REVISION=		0
 
 CATEGORIES=		lang graphics java
 
