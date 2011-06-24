@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1088 2011/06/23 22:03:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1089 2011/06/24 14:34:15 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1376,7 +1376,15 @@ _resolve_lib = LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
 .if ${NO_SHARED_LIBS:L} == "yes"
 _resolve_lib += -noshared
 .endif
-_wantlib_args ?= _port-wantlib-args
+
+PKG_CREATE_NO_CHECKS ?= No
+.if ${PKG_CREATE_NO_CHECKS:L} == "yes"
+_pkg_wantlib_args = fake-wantlib-args
+.else
+_pkg_wantlib_args = wantlib-args
+.endif
+wantlib_args ?= port-wantlib-args
+
 
 # fairly good approximation of libraries we want
 # XXX this is ksh, be less perfect with pure sh
@@ -3064,7 +3072,7 @@ print-package-signature:
 _print-package-args: _run-depends-args
 
 .if ${NO_SHARED_LIBS:L} != "yes"
-_print-package-args: _lib-depends-args ${_wantlib_args}
+_print-package-args: _lib-depends-args ${wantlib_args}
 .endif
 
 _run-depends-args:
@@ -3076,8 +3084,12 @@ _run-depends-args:
 	}
 .endfor
 
+.if empty(_DEPRUNLIBS)
+_lib-depends-args wantlib-args port-wantlib-args fake-wantlib-args:
+.else
+
 _lib-depends-args:
-.for _i in ${LIB_DEPENDS${SUBPACKAGE}}
+.  for _i in ${LIB_DEPENDS${SUBPACKAGE}}
 	@echo '${_i}'|{ \
 		${_parse_spec}; \
 		${_complete_pkgspec}; \
@@ -3098,9 +3110,9 @@ _lib-depends-args:
 		exec 2>&3; \
 		if $$needed; then echo "-P $$subdir:$$pkg:$$default"; fi; \
 	}
-.endfor
+.  endfor
 
-_wantlib-args:
+wantlib-args:
 	@a=`mktemp /tmp/portstree.XXXXXX`; b=`mktemp /tmp/inst.XXXXXX`; \
 	cd ${.CURDIR} && \
 	${MAKE} _port-wantlib-args >$$a && \
@@ -3116,16 +3128,8 @@ _wantlib-args:
 		exit 1; \
 	fi
 
-_port-wantlib-args:
-	@if found=`{ for i in ${_LIB4${SUBPACKAGE}:QL}; do \
-			echo "$$i"| { \
-				${_parse_spec}; \
-				if ! eval $$toset ${MAKE} print-plist-libs; \
-				then \
-					echo 1>&2 "Problem with dependency $$i"; \
-					exit 1; \
-				fi; }; \
-			done; \
+port-wantlib-args:
+	@if found=`{ \
 		${MAKE} run-dir-depends|${_sort_dependencies}|while read subdir; do \
 			${_flavor_fragment}; \
 			if ! eval $$toset ${MAKE} print-plist-libs; \
@@ -3145,7 +3149,7 @@ _port-wantlib-args:
 			exit 1; \
 		fi
 
-_fake-wantlib-args:
+fake-wantlib-args:
 	@if found=`{ \
 		echo {${WRKINST},}${LOCALBASE}/lib${_lib} /usr/lib${_lib} ${X11BASE}/lib${_lib}; \
 		for d in ${_DEPRUNLIBS:QL}; do \
@@ -3163,6 +3167,9 @@ _fake-wantlib-args:
 		else \
 			exit 1; \
 		fi
+.endif
+
+no-wantlib-args:
 
 _list-port-libs:
 .if defined(_PORT_LIBS_CACHE) && defined(_DEPENDS_CACHE) && \
@@ -3480,8 +3487,8 @@ _all_phony = ${_recursive_depends_targets} \
 	regress-depends run-depends run-depends-list show-required-by \
 	subpackage uninstall mirror-maker-fetch _print-pkgspec \
 	lock unlock _print-plist-with-extra-depends \
-	_run-depends-args _lib-depends-args _wantlib-args \
-	_port-wantlib-args _fake-wantlib-args
+	_run-depends-args _lib-depends-args wantlib-args \
+	port-wantlib-args fake-wantlib-args no-wantlib-args
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}
