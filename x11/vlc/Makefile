@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2011/06/13 23:51:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.131 2011/06/24 07:19:08 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 V=		1.0.6
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	29
+REVISION-main=	30
 REVISION-jack=	5
 REVISION-web=	7
 CATEGORIES=	x11
@@ -65,6 +65,8 @@ WANTLIB-main=	GL GLU ICE lib/qt4/QtGui SM SDL SDL_image X11 Xau \
 		theoradec theoraenc usbhid vorbis vorbisenc vpx x264 \
 		xcb-keysyms xcb xml2 z ${WANTLIB}
 
+CPPFLAGS=	-I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng
+
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= autoconf
@@ -109,11 +111,10 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--enable-release \
 		--without-contrib \
 		--without-tuning
-CONFIGURE_ENV+=	LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" \
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/qt4/pkgconfig" \
 		LOCALBASE=${LOCALBASE}
-
-CPPFLAGS=	-I${WRKSRC}/include -I${X11BASE}/include -I${LOCALBASE}/include -I${LOCALBASE}/include/libpng
 
 MULTI_PACKAGES=-main
 
@@ -151,8 +152,6 @@ LIB_DEPENDS-jack=${LIB_DEPENDS} \
 RUN_DEPENDS-jack=${BASE_PKGPATH}
 WANTLIB-jack=	${WANTLIB} m jack vlccore dbus-1
 .endif
-
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
 
 .if ${MACHINE_ARCH} == "amd64"
 PKG_ARGS+=-Damd64=1
