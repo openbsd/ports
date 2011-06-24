@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2011/04/30 05:12:51 benoit Exp $
+# $OpenBSD: Makefile,v 1.44 2011/06/24 15:19:18 benoit Exp $
 
 COMMENT =		extremely fast password cracker
 
-DISTNAME =		john-1.7.7
+DISTNAME =		john-1.7.8
 CATEGORIES =		security
 
 HOMEPAGE =		http://www.openwall.com/john/
