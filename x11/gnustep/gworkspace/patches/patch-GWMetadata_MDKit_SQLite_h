@@ -1,0 +1,16 @@
+$OpenBSD: patch-GWMetadata_MDKit_SQLite_h,v 1.1 2011/06/24 10:54:51 sebastia Exp $
+
+fix to build with gcc-2.95
+
+--- GWMetadata/MDKit/SQLite.h.orig	Wed Jun 22 12:49:23 2011
++++ GWMetadata/MDKit/SQLite.h	Wed Jun 22 12:49:42 2011
+@@ -26,7 +26,9 @@
+ #define SQLITE_H
+ 
+ #include <Foundation/Foundation.h>
++#define id sqlite_id
+ #include <sqlite3.h>
++#undef id
+ 
+ @class SQLitePreparedStatement;
+ 

@@ -1,0 +1,16 @@
+$OpenBSD: patch-Headers_cairo_CairoFontEnumerator_h,v 1.1 2011/06/24 10:51:48 sebastia Exp $
+
+protect id
+
+--- Headers/cairo/CairoFontEnumerator.h.orig	Mon Jun 20 09:41:53 2011
++++ Headers/cairo/CairoFontEnumerator.h	Mon Jun 20 10:14:04 2011
+@@ -30,7 +30,9 @@
+ 
+ #include <GNUstepGUI/GSFontInfo.h>
+ #include <cairo.h>
++#define id cairo_id
+ #include <fontconfig/fontconfig.h>
++#undef id
+ #include "cairo/CairoFaceInfo.h"
+ 
+ @interface CairoFontEnumerator : GSFontEnumerator

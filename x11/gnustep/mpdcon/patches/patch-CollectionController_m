@@ -1,0 +1,20 @@
+$OpenBSD: patch-CollectionController_m,v 1.1 2011/06/24 10:55:54 sebastia Exp $
+
+fix to build with gcc-2.95
+
+--- CollectionController.m.orig	Wed Jun 22 17:14:16 2011
++++ CollectionController.m	Wed Jun 22 17:14:58 2011
+@@ -361,11 +361,10 @@ objectValueForTableColumn: (NSTableColumn *)tableColum
+ 
+ - (void) _getAllAlbumsForArtistAt: (int)row
+ {
+-  RELEASE(allAlbums);
+-  
+   NSMutableSet *tmpAlbums = [[NSMutableSet alloc] init];
+-     
+   int i;
++  RELEASE(allAlbums);
++     
+      
+   for (i = 0; i < [filteredTracks count]; i++)
+     {

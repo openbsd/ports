@@ -1,0 +1,14 @@
+$OpenBSD: patch-GWMetadata_Preferences_MDIndexing_m,v 1.1 2011/06/24 10:54:51 sebastia Exp $
+
+fix to build with gcc-2.95
+
+--- GWMetadata/Preferences/MDIndexing.m.orig	Wed Jun 22 15:10:45 2011
++++ GWMetadata/Preferences/MDIndexing.m	Wed Jun 22 15:10:53 2011
+@@ -23,7 +23,6 @@
+  */
+ 
+ #include <AppKit/AppKit.h>
+-#include <GNUstepBase/NSTask+GS.h>
+ #include "MDIndexing.h"
+ #include "CategoriesEditor.h"
+ #include "StartAppWin.h"

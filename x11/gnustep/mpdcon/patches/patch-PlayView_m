@@ -1,0 +1,44 @@
+$OpenBSD: patch-PlayView_m,v 1.1 2011/06/24 10:55:54 sebastia Exp $
+
+fix to build with gcc-2.95
+
+--- PlayView.m.orig	Wed Jun 22 17:07:51 2011
++++ PlayView.m	Wed Jun 22 17:08:57 2011
+@@ -70,7 +70,7 @@
+ 
+ - (void) drawRect: (NSRect)rect
+ {
+-  NSRect myBounds;
++  NSRect myBounds, strokeRect;
+   NSData *colorData;
+   NSColor *displayColor;
+   
+@@ -108,7 +108,7 @@
+   [NSBezierPath fillRect: myBounds];
+   [[NSColor blackColor] set];
+   
+-  NSRect strokeRect = NSMakeRect(myBounds.origin.x, myBounds.origin.y+1, myBounds.size.width-1, myBounds.size.height-1);
++  strokeRect = NSMakeRect(myBounds.origin.x, myBounds.origin.y+1, myBounds.size.width-1, myBounds.size.height-1);
+   [NSBezierPath strokeRect: strokeRect];
+ 
+   if (displayEnabled) 
+@@ -429,6 +429,8 @@
+ 
+   NSMutableDictionary *attributes;
+   NSFont *theFont;
++  NSString *timeString;
++  NSSize timeSize;
+ 
+   
+   myBounds = [self bounds];
+@@ -439,8 +441,8 @@
+ 
+   [attributes setObject: theFont forKey: NSFontAttributeName];
+   
+-  NSString *timeString = [self _getTime];
+-  NSSize timeSize = [timeString sizeWithAttributes: attributes];
++  timeString = [self _getTime];
++  timeSize = [timeString sizeWithAttributes: attributes];
+   [timeString drawAtPoint: NSMakePoint(myBounds.size.width-timeSize.width-2
+ 				       , 60) 
+ 	   withAttributes: attributes];

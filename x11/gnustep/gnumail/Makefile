@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/05/15 13:03:26 sebastia Exp $
+# $OpenBSD: Makefile,v 1.14 2011/06/24 10:53:18 sebastia Exp $
 
 COMMENT=	GNUstep mail application
 
 DISTNAME=	GNUMail-1.2.0pre3
-REVISION =	8
+REVISION =	9
 SHARED_LIBS=	GNUMail 2.0	# .1.2
 CATEGORIES=	mail
 
@@ -26,6 +26,8 @@ BUNDLES=	Account Advanced Clock Colors Compose Emoticon Fonts \
 
 post-extract:
 	@rm ${WRKSRC}/Framework/GNUMail/MailWindowController.m.orig
+	perl -pi -e 's/\x0d/\x0a/g' ${WRKSRC}/Framework/GNUMail/EditWindowToolbar.m \
+				${WRKSRC}/Framework/GNUMail/MailboxManagerToolbar.m
 
 pre-configure:
 .for i in ${BUNDLES}
