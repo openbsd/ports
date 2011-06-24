@@ -1,3 +1,12 @@
+$OpenBSD: README,v 1.1 2011/06/24 22:41:56 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Initial setup
+=============
+
 To configure a Trac environment, you must run the following command
 and follow the prompts:
     trac-admin </path/to/projectenv> initenv
@@ -15,6 +24,12 @@ Now you can open up a web brower and go to http://localhost:8085/. You
 should see a single link for the project you just created. If you follow
 the link, you should see trac in action.
 
+Further information
+===================
+
 You can find the Trac Installation and Upgrade Guides here:
   http://projects.edgewall.com/trac/wiki/TracInstall
   http://projects.edgewall.com/trac/wiki/TracUpgrade
+
+By default only Subversion is supported. Other VCS backends are
+available as modules; see the documentation.

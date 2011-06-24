@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2011/06/08 18:15:30 rpointel Exp $
+# $OpenBSD: Makefile,v 1.34 2011/06/24 22:41:56 sthen Exp $
 
 COMMENT=	wiki and bug tracking system for software projects
 
 MODPY_EGG_VERSION=0.12.2
 DISTNAME=	Trac-${MODPY_EGG_VERSION}
 PKGNAME=	trac-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
@@ -28,10 +28,8 @@ MODULES=	lang/python
 RUN_DEPENDS=	databases/py-sqlite2 \
 		devel/py-babel \
 		devel/subversion,-python \
-		print/enscript \
 		textproc/py-docutils \
 		textproc/py-pygments \
-		clearsilver-*-python:www/clearsilver,python \
 		www/py-genshi>=0.6
 
 BUILD_DEPENDS=	devel/py-babel \
