@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.72 2011/06/22 08:10:26 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.73 2011/06/24 11:16:21 sthen Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		20110408
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 
-SHARED_LIBS=	avcodec		15.1 \
+SHARED_LIBS=	avcodec		16.0 \
 		avdevice	4.0 \
 		avfilter	2.1 \
 		avformat	14.1 \
@@ -30,16 +30,15 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=	gcc3
 MODGCC3_ARCHES=	sparc
 
-WANTLIB=	SDL X11 Xext Xfixes bz2 c faac gsm m mp3lame ogg \
-		orc-0.4 pthread schroedinger-1.0>=2 sndio speex \
-		theoradec theoraenc vorbis vorbisenc vpx x264 z
+WANTLIB=	SDL X11 Xext Xfixes bz2 c gsm m mp3lame ogg orc-0.4 \
+		pthread schroedinger-1.0>=2 sndio speex theoradec \
+		theoraenc vorbis vorbisenc vpx x264 z
 
 BUILD_DEPENDS=	textproc/texi2html
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
 BUILD_DEPENDS+=	devel/yasm
 .endif
 LIB_DEPENDS=	archivers/bzip2 \
-		audio/faac \
 		audio/lame \
 		audio/libvorbis \
 		audio/speex \
@@ -51,7 +50,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		multimedia/x264
 
 # inter-library dependencies for the current configuration
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lfaac -lgsm -lm -lmp3lame -logg -lorc-0.4 -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lz -pthread -Wl,-rpath,${LOCALBASE}/lib 
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -lgsm -lm -lmp3lame -logg -lorc-0.4 -lschroedinger-1.0 -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lz -pthread -Wl,-rpath,${LOCALBASE}/lib
 LIBavdevice_EXTRALIBS=-L${X11BASE}/lib -lX11 -lXext -lXfixes -lm -lsndio -Wl,-rpath,${LOCALBASE}/lib -Wl,-rpath,${X11BASE}/lib
 LIBavfilter_EXTRALIBS=-lm
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lm -Wl,-rpath,${LOCALBASE}/lib
@@ -87,7 +86,6 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-optimizations \
 		--disable-outdev=oss \
 		--enable-gpl \
-		--enable-libfaac \
 		--enable-libgsm \
 		--enable-libmp3lame \
 		--enable-libschroedinger \
@@ -96,7 +94,6 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--enable-libvorbis \
 		--enable-libvpx \
 		--enable-libx264 \
-		--enable-nonfree \
 		--enable-postproc \
 		--enable-runtime-cpudetect \
 		--enable-x11grab \
