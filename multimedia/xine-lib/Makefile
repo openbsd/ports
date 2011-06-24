@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.78 2011/06/24 11:17:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2011/06/24 20:11:14 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.1.19
-REVISION=	8
+REVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
@@ -17,7 +17,7 @@ HOMEPAGE=	http://www.xine-project.org/
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
