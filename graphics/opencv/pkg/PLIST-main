@@ -1,0 +1,123 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/06/24 09:30:22 jasper Exp $
+@bin bin/opencv_createsamples
+@bin bin/opencv_haartraining
+@bin bin/opencv_performance
+@bin bin/opencv_traincascade
+include/opencv/
+include/opencv/cv.h
+include/opencv/cv.hpp
+include/opencv/cvaux.h
+include/opencv/cvaux.hpp
+include/opencv/cvwimage.h
+include/opencv/cxcore.h
+include/opencv/cxcore.hpp
+include/opencv/cxeigen.hpp
+include/opencv/cxmisc.h
+include/opencv/highgui.h
+include/opencv/ml.h
+include/opencv2/
+include/opencv2/calib3d/
+include/opencv2/calib3d/calib3d.hpp
+include/opencv2/contrib/
+include/opencv2/contrib/contrib.hpp
+include/opencv2/core/
+include/opencv2/core/core.hpp
+include/opencv2/core/core_c.h
+include/opencv2/core/eigen.hpp
+include/opencv2/core/internal.hpp
+include/opencv2/core/mat.hpp
+include/opencv2/core/operations.hpp
+include/opencv2/core/types_c.h
+include/opencv2/core/version.hpp
+include/opencv2/core/wimage.hpp
+include/opencv2/features2d/
+include/opencv2/features2d/features2d.hpp
+include/opencv2/flann/
+include/opencv2/flann/all_indices.h
+include/opencv2/flann/allocator.h
+include/opencv2/flann/autotuned_index.h
+include/opencv2/flann/composite_index.h
+include/opencv2/flann/dist.h
+include/opencv2/flann/flann.hpp
+include/opencv2/flann/flann_base.hpp
+include/opencv2/flann/general.h
+include/opencv2/flann/ground_truth.h
+include/opencv2/flann/hdf5.h
+include/opencv2/flann/heap.h
+include/opencv2/flann/index_testing.h
+include/opencv2/flann/kdtree_index.h
+include/opencv2/flann/kmeans_index.h
+include/opencv2/flann/linear_index.h
+include/opencv2/flann/logger.h
+include/opencv2/flann/matrix.h
+include/opencv2/flann/nn_index.h
+include/opencv2/flann/object_factory.h
+include/opencv2/flann/random.h
+include/opencv2/flann/result_set.h
+include/opencv2/flann/sampling.h
+include/opencv2/flann/saving.h
+include/opencv2/flann/simplex_downhill.h
+include/opencv2/flann/timer.h
+include/opencv2/gpu/
+include/opencv2/gpu/devmem2d.hpp
+include/opencv2/gpu/gpu.hpp
+include/opencv2/gpu/matrix_operations.hpp
+include/opencv2/gpu/stream_accessor.hpp
+include/opencv2/highgui/
+include/opencv2/highgui/highgui.hpp
+include/opencv2/highgui/highgui_c.h
+include/opencv2/imgproc/
+include/opencv2/imgproc/imgproc.hpp
+include/opencv2/imgproc/imgproc_c.h
+include/opencv2/imgproc/types_c.h
+include/opencv2/legacy/
+include/opencv2/legacy/blobtrack.hpp
+include/opencv2/legacy/compat.hpp
+include/opencv2/legacy/legacy.hpp
+include/opencv2/legacy/streams.hpp
+include/opencv2/ml/
+include/opencv2/ml/ml.hpp
+include/opencv2/objdetect/
+include/opencv2/objdetect/objdetect.hpp
+include/opencv2/opencv.hpp
+include/opencv2/video/
+include/opencv2/video/background_segm.hpp
+include/opencv2/video/tracking.hpp
+@lib lib/libopencv_calib3d.so.${LIBopencv_calib3d_VERSION}
+@lib lib/libopencv_contrib.so.${LIBopencv_contrib_VERSION}
+@lib lib/libopencv_core.so.${LIBopencv_core_VERSION}
+@lib lib/libopencv_features2d.so.${LIBopencv_features2d_VERSION}
+@lib lib/libopencv_flann.so.${LIBopencv_flann_VERSION}
+@lib lib/libopencv_gpu.so.${LIBopencv_gpu_VERSION}
+@lib lib/libopencv_highgui.so.${LIBopencv_highgui_VERSION}
+@lib lib/libopencv_imgproc.so.${LIBopencv_imgproc_VERSION}
+@lib lib/libopencv_legacy.so.${LIBopencv_legacy_VERSION}
+@lib lib/libopencv_ml.so.${LIBopencv_ml_VERSION}
+@lib lib/libopencv_objdetect.so.${LIBopencv_objdetect_VERSION}
+@lib lib/libopencv_video.so.${LIBopencv_video_VERSION}
+lib/pkgconfig/opencv.pc
+lib/python${MODPY_VERSION}/site-packages/cv.so
+share/opencv/
+share/opencv/OpenCVConfig.cmake
+share/opencv/haarcascades/
+share/opencv/haarcascades/haarcascade_eye.xml
+share/opencv/haarcascades/haarcascade_eye_tree_eyeglasses.xml
+share/opencv/haarcascades/haarcascade_frontalface_alt.xml
+share/opencv/haarcascades/haarcascade_frontalface_alt2.xml
+share/opencv/haarcascades/haarcascade_frontalface_alt_tree.xml
+share/opencv/haarcascades/haarcascade_frontalface_default.xml
+share/opencv/haarcascades/haarcascade_fullbody.xml
+share/opencv/haarcascades/haarcascade_lefteye_2splits.xml
+share/opencv/haarcascades/haarcascade_lowerbody.xml
+share/opencv/haarcascades/haarcascade_mcs_eyepair_big.xml
+share/opencv/haarcascades/haarcascade_mcs_eyepair_small.xml
+share/opencv/haarcascades/haarcascade_mcs_lefteye.xml
+share/opencv/haarcascades/haarcascade_mcs_mouth.xml
+share/opencv/haarcascades/haarcascade_mcs_nose.xml
+share/opencv/haarcascades/haarcascade_mcs_righteye.xml
+share/opencv/haarcascades/haarcascade_mcs_upperbody.xml
+share/opencv/haarcascades/haarcascade_profileface.xml
+share/opencv/haarcascades/haarcascade_righteye_2splits.xml
+share/opencv/haarcascades/haarcascade_upperbody.xml
+share/opencv/lbpcascades/
+share/opencv/lbpcascades/lbpcascade_frontalface.xml

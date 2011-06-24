@@ -1,0 +1,12 @@
+$OpenBSD: patch-modules_ml_src_gbt_cpp,v 1.1.1.1 2011/06/24 09:30:21 jasper Exp $
+--- modules/ml/src/gbt.cpp.orig	Sat May 14 12:36:21 2011
++++ modules/ml/src/gbt.cpp	Sat May 14 12:35:56 2011
+@@ -11,7 +11,7 @@
+ #define CV_CMP_FLOAT(a,b) ((a) < (b))
+ static CV_IMPLEMENT_QSORT_EX( icvSortFloat, float, CV_CMP_FLOAT, float)
+ 
+-#if ANDROID
++#if defined(ANDROID) || defined(__OpenBSD__)
+ #define expl(x) exp(x)
+ #endif
+ 

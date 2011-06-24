@@ -1,0 +1,31 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2011/06/24 09:30:21 jasper Exp $
+--- CMakeLists.txt.orig	Sun Dec  5 04:35:23 2010
++++ CMakeLists.txt	Fri May  6 20:34:46 2011
+@@ -430,7 +430,7 @@ if(UNIX)
+         if(WITH_V4L)
+             CHECK_MODULE(libv4l1 HAVE_LIBV4L)
+             CHECK_INCLUDE_FILE(linux/videodev.h HAVE_CAMV4L)
+-            CHECK_INCLUDE_FILE(linux/videodev2.h HAVE_CAMV4L2)
++            CHECK_INCLUDE_FILE(sys/videoio.h HAVE_CAMV4L2)
+         else()
+             set(HAVE_LIBV4L FALSE)
+             set(HAVE_CAMV4L FALSE)
+@@ -464,7 +464,8 @@ if(UNIX)
+             endif()
+         endif()
+ 
+-        if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" OR ${CMAKE_SYSTEM_NAME} MATCHES "NetBSD")
++        if(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD" OR ${CMAKE_SYSTEM_NAME}
++				MATCHES "NetBSD" OR ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+             set(OPENCV_LINKER_LIBS m pthread)
+         else()
+             set(OPENCV_LINKER_LIBS dl m pthread rt)
+@@ -865,7 +866,7 @@ include_directories("."
+ # Should be set to true for development
+ set(OPENCV_WARNINGS_ARE_ERRORS OFF CACHE BOOL "Treat warnings as errors")
+ 
+-set(EXTRA_C_FLAGS "")
++set(EXTRA_C_FLAGS "-DHAVE_JPEG -DHAVE_TIFF -DHAVE_PNG -DHAVE_JASPER -DHAVE_OPENEXR")
+ set(EXTRA_C_FLAGS_RELEASE "")
+ set(EXTRA_C_FLAGS_DEBUG "")
+ set(EXTRA_EXE_LINKER_FLAGS "")
