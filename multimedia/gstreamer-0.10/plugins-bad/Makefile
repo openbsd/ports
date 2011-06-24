@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2011/05/28 08:15:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2011/06/24 09:40:30 jasper Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
@@ -113,7 +113,8 @@ CONFIGURE_ARGS =	--disable-acm \
 			--disable-dvdspu \
 			--disable-quicktime \
 			--disable-musicbrainz \
-			--disable-zbar
+			--disable-zbar \
+			--disable-opencv
 
 # XXX subpackage?
 # swfdec not before it's ported from 0.3 to 0.8 API
