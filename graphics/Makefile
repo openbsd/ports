@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.291 2011/06/10 05:43:34 rpointel Exp $
+# $OpenBSD: Makefile,v 1.292 2011/06/24 09:31:01 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -149,6 +149,7 @@
      SUBDIR += netpbm
      SUBDIR += ocrad
      SUBDIR += opencsg
+     SUBDIR += opencv
      SUBDIR += openexr
      SUBDIR += openexr-ctl
      SUBDIR += openexr-viewers
