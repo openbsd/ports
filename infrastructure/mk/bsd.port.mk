@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1089 2011/06/24 14:34:15 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1090 2011/06/24 14:44:05 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -650,8 +650,6 @@ _CONFIGURE_COOKIE =		${WRKDIR}/.configure_done
 _BUILD_COOKIE =			${WRKDIR}/.build_done
 _REGRESS_COOKIE =		${WRKDIR}/.regress_done
 .endif
-_P_WANTLIB_COOKIE =	${WRKDIR}/.portstree-${FULLPKGNAME${SUBPACKAGE}}
-_I_WANTLIB_COOKIE =	${WRKDIR}/.installed-${FULLPKGNAME${SUBPACKAGE}}
 
 _ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 	${_INSTALL_PRE_COOKIE} ${_BUILD_COOKIE} ${_REGRESS_COOKIE} \
@@ -660,7 +658,6 @@ _ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 	${_WRKDIR_COOKIE} ${_DEPBUILD_COOKIES} \
 	${_DEPRUN_COOKIES} ${_DEPREGRESS_COOKIES} ${_UPDATE_COOKIES} \
 	${_DEPBUILDLIB_COOKIES} ${_DEPRUNLIB_COOKIES} \
-	${_P_WANTLIB_COOKIE} ${_I_WANTLIB_COOKIE} \
 	${_DEPBUILDWANTLIB_COOKIE} ${_DEPRUNWANTLIB_COOKIE} ${_DEPLIBSPECS_COOKIES}
 
 _MAKE_COOKIE = touch
