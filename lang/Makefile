@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.111 2011/05/02 20:46:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.112 2011/06/24 07:01:30 jasper Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -58,6 +58,7 @@
      SUBDIR += petite-chez
      SUBDIR += pfe
      SUBDIR += pm3
+     SUBDIR += processing
      SUBDIR += pugs
      SUBDIR += python
      SUBDIR += rakudo
