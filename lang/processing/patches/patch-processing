@@ -1,0 +1,13 @@
+$OpenBSD: patch-processing,v 1.1.1.1 2011/06/24 07:00:20 jasper Exp $
+--- processing.orig	Fri Jun 24 00:29:03 2011
++++ processing	Fri Jun 24 00:29:40 2011
+@@ -66,8 +66,7 @@ make_jdkcp() {
+ 
+ 
+ # Get absolute path of directory where this script is located
+-APPDIR=`readlink -f "$0"`
+-APPDIR=`dirname "$APPDIR"`
++APPDIR=${PREFIX}/share/processing/
+ log APPDIR
+ 
+ # Try using a local JDK from the same directory as this script

@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_preferences_txt,v 1.1.1.1 2011/06/24 07:00:20 jasper Exp $
+--- lib/preferences.txt.orig	Thu Jun 23 20:14:40 2011
++++ lib/preferences.txt	Thu Jun 23 20:14:53 2011
+@@ -229,6 +229,7 @@ preproc.imports.list = java.applet.*,java.awt.Dimensio
+ 
+ # set to the program to be used for opening HTML files, folders, etc.
+ #launcher.linux = xdg-open
++launcher = xdg-open
+ 
+ # FULL SCREEN (PRESENT MODE)
+ run.present.bgcolor = #666666
