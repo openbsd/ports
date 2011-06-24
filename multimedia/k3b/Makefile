@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/19 08:25:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/24 11:17:05 sthen Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		CD/DVD creator
 DISTNAME =		k3b-1.0.4
-REVISION=		5
+REVISION=		6
 
 SHARED_LIBS =		k3b	0.0	# 3.0
 SHARED_LIBS +=		k3bdevice	0.0	# 5.0
@@ -21,12 +21,11 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += DCOP FLAC FLAC++ ICE SM X11 Xau Xdmcp Xext Xfixes Xrender
 WANTLIB += Xt art_lgpl_2 artsc avcodec avformat avutil bz2 c dvdread
-WANTLIB += expat faac fontconfig freetype gsm idn jpeg kdecore
-WANTLIB += kdefx kdesu kdeui kio kparts kwalletclient m mad mp3lame
-WANTLIB += mpcdec ogg orc-0.4 png pthread pthread-stubs samplerate
-WANTLIB += schroedinger-1.0 sndfile speex stdc++ tag theoradec
-WANTLIB += theoraenc util vorbis vorbisenc vorbisfile vpx x264
-WANTLIB += xcb z
+WANTLIB += expat fontconfig freetype gsm idn jpeg kdecore kdefx kdesu
+WANTLIB += kdeui kio kparts kwalletclient m mad mp3lame mpcdec ogg
+WANTLIB += orc-0.4 png pthread pthread-stubs samplerate schroedinger-1.0
+WANTLIB += sndfile speex stdc++ tag theoradec theoraenc util vorbis
+WANTLIB += vorbisenc vorbisfile vpx x264 xcb z
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=k3b/}
 EXTRACT_SUFX =		.tar.bz2

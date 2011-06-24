@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.19 2011/04/25 22:38:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2011/06/24 11:17:05 sthen Exp $
 
 COMMENT=		DVD authoring application
 
 DISTNAME=		DVDStyler-1.8.0.3
 PKGNAME=		${DISTNAME:L}
-REVISION=		3
+REVISION=		4
 CATEGORIES=		multimedia
 
 HOMEPAGE=		http://www.dvdstyler.de/
@@ -24,7 +24,7 @@ WANTLIB=	GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage \
 		Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm \
 		art_lgpl_2 atk-1.0 avcodec avformat avutil bonobo-2 \
 		bonobo-activation bonoboui-2 bz2 c cairo canberra drm \
-		exif expat faac fontconfig freetype gailutil gconf-2 \
+		exif expat fontconfig freetype gailutil gconf-2 \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 		gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2 gnomevfs-2 \
 		gobject-2.0 gsm gthread-2.0 gtk-x11-2.0 jpeg m mp3lame \

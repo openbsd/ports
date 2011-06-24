@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.77 2011/06/13 08:10:01 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.78 2011/06/24 11:17:05 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	multimedia decoding library
 
 DISTNAME=	xine-lib-1.1.19
-REVISION=	7
+REVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xine/}
 EXTRACT_SUFX=	.tar.bz2
@@ -23,7 +23,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=	FLAC GL GLU SDL X11 Xau Xdamage Xdmcp Xext Xfixes Xinerama \
 		Xv XvMCW Xxf86vm a52 avcodec avutil c cdio dca drm dvdnav \
-		dvdread expat faac faad fontconfig freetype gsm iso9660 jpeg \
+		dvdread expat faad fontconfig freetype gsm iso9660 jpeg \
 		lcms m mad modplug mpcdec mng mp3lame ogg orc-0.4 postproc \
 		pthread-stubs pthread schroedinger-1.0 sndio speex theora \
 		theoradec theoraenc usbhid vcdinfo vorbis vorbisenc vpx \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/05/12 07:34:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.34 2011/06/24 11:17:05 sthen Exp $
 
 SHARED_ONLY =		Yes
 
@@ -8,6 +8,7 @@ COMMENT-jack =		jack plugin for audacious
 V =			2.4.5
 DISTNAME =		audacious-plugins-$V
 PKGNAME-main =		${DISTNAME}
+REVISION-main =		0
 PKGNAME-jack =		audacious-jack-$V
 
 CATEGORIES =		audio multimedia
@@ -29,10 +30,10 @@ WANTLIB =	GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		png pthread-stubs samplerate xcb xcb-render xcb-shm z \
 		${MODGETTEXT_WANTLIB}
 WANTLIB-main =	${WANTLIB} FLAC SDL audtag avcodec avformat avutil bz2 \
-		cddb cdio cdio_cdda cue curl faac faad gsm mp3lame neon \
-		notify ogg orc-0.4 schroedinger-1.0 sndfile sndio speex \
-		stdc++ theoradec theoraenc vorbis vorbisenc vorbisfile \
-		vpx wavpack x264 xml2
+		cddb cdio cdio_cdda cue curl faad gsm mp3lame neon notify \
+		ogg orc-0.4 schroedinger-1.0 sndfile sndio speex stdc++ \
+		theoradec theoraenc vorbis vorbisenc vorbisfile vpx \
+		wavpack x264 xml2
 WANTLIB-jack =	${WANTLIB} jack
 
 MASTER_SITES =		http://distfiles.atheme.org/

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/06/13 08:22:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2011/06/24 11:17:05 sthen Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -6,11 +6,11 @@ COMMENT-iaxcomm=IAX softphone
 
 DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	5
+REVISION-main=	6
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION-tcl=	6
+REVISION-tcl=	7
 PKGNAME-iaxcomm= iaxcomm-1.1.0
-REVISION-iaxcomm= 6
+REVISION-iaxcomm= 7
 
 CATEGORIES=	telephony
 USE_LIBTOOL=	Yes
@@ -30,12 +30,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=	-main -tcl -iaxcomm
 MODULES=	devel/gettext x11/tk
 
-cWANTLIB	+= avcodec avutil faac gsm m mp3lame ogg orc-0.4 ossaudio
-cWANTLIB	+= portaudio pthread schroedinger-1.0 speex speexdsp
-cWANTLIB	+= sndio theora theoradec theoraenc vidcap vorbis vorbisenc
-cWANTLIB	+= vpx x264 z
+cWANTLIB	+= avcodec gsm m mp3lame ogg orc-0.4 ossaudio portaudio
+cWANTLIB	+= pthread schroedinger-1.0 speex speexdsp sndio theora
+cWANTLIB	+= theoradec theoraenc vidcap vorbis vorbisenc vpx x264
+cWANTLIB	+= z
 
-WANTLIB-main	+= c ${cWANTLIB}
+WANTLIB-main 	+= avutil c ${cWANTLIB}
 
 WANTLIB-tcl	+= GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB-tcl	+= Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
