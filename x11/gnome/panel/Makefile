@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2011/06/08 17:41:57 rpointel Exp $
+# $OpenBSD: Makefile,v 1.91 2011/06/24 08:01:43 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	GNOME panel
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	2.32.1
 
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS=	panel-applet-2            4.0 # .2.67
 SHARED_LIBS +=  panel-applet-3            0.0 # 0.5
@@ -54,7 +54,8 @@ LIB_DEPENDS= 	databases/evolution-data-server \
 		x11/gnome/librsvg \
 		devel/libsoup,-gnome \
 		x11/gnome/libbonoboui
-RUN_DEPENDS=	notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
+RUN_DEPENDS=	notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon \
+		x11/gnome/user-docs
 
 MODGNOME_HELP_FILES= 	Yes
 DESKTOP_FILES=		Yes
