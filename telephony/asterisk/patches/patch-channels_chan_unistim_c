@@ -1,7 +1,7 @@
-$OpenBSD: patch-channels_chan_unistim_c,v 1.1 2011/04/09 19:16:51 ian Exp $
+$OpenBSD: patch-channels_chan_unistim_c,v 1.2 2011/06/24 13:50:09 sthen Exp $
 # Patch is from https://bugs.digium.com/view.php?id=18229, in particular, chan_unistim.c.r299906-6.diff
---- channels/chan_unistim.c.orig	Wed Jul 14 11:48:36 2010
-+++ channels/chan_unistim.c	Fri Apr  8 20:50:05 2011
+--- channels/chan_unistim.c.orig	Wed Jul 14 16:48:36 2010
++++ channels/chan_unistim.c	Fri Jun 24 14:21:26 2011
 @@ -32,6 +32,15 @@
   * \ingroup channel_drivers
   */
@@ -17,8 +17,8 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.1 2011/04/09 19:16:51 ian Exp $
 +
  #include "asterisk.h"
  
- ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.1 $")
-@@ -69,6 +78,8 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.1 $")
+ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.2 $")
+@@ -69,6 +78,8 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.2 $")
  #include "asterisk/musiconhold.h"
  #include "asterisk/causes.h"
  #include "asterisk/indications.h"
@@ -27,7 +27,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.1 2011/04/09 19:16:51 ian Exp $
  
  /*! Beware, G729 and G723 are not supported by asterisk, except with the proper licence */
  #define CAPABILITY AST_FORMAT_ALAW | AST_FORMAT_ULAW    /* | AST_FORMAT_G729A | AST_FORMAT_G723_1 */
-@@ -78,11 +89,14 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.1 $")
+@@ -78,11 +89,14 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.2 $")
  #define DEFAULTCALLERNAME       " "
  #define DEFAULTHEIGHT	 3
  #define USTM_LOG_DIR	    "unistimHistory"
@@ -42,7 +42,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.1 2011/04/09 19:16:51 ian Exp $
  /*! Try x times before removing the phone */
  #define NB_MAX_RETRANSMIT       8
  /*! Nb of milliseconds waited when no events are scheduled */
-@@ -99,8 +113,9 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.1 $")
+@@ -99,8 +113,9 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.2 $")
  #define MAX_ENTRY_LOG	   30
  
  #define SUB_REAL		0
