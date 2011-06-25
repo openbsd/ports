@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2010/12/03 11:45:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/06/25 18:01:13 jasper Exp $
 
 COMMENT =	charset Informations for MIME
 
-DISTNAME =	MIME-Charset-1.008
-REVISION =	0
+DISTNAME =	MIME-Charset-1.009.1
 CATEGORIES =	mail
 
 # Perl
