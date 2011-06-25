@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.58 2011/03/29 20:04:41 edd Exp $
+$OpenBSD: patch-configure,v 1.59 2011/06/25 14:15:43 edd Exp $
 --- configure.orig	Wed Mar  9 00:33:03 2011
-+++ configure	Wed Mar  9 00:46:58 2011
++++ configure	Fri Jun 24 12:19:32 2011
 @@ -35,29 +35,33 @@
  #
  #############################################################################
