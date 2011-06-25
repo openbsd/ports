@@ -1,7 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/12 20:25:18 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/25 18:01:08 jasper Exp $
+${P5SITE}/Encode/
+${P5SITE}/Encode/MIME/
+${P5SITE}/Encode/MIME/EncWords/
+${P5SITE}/Encode/MIME/EncWords.pm
+${P5SITE}/Encode/MIME/EncWords/JA_JP.pod
 ${P5SITE}/MIME/EncWords/
 ${P5SITE}/MIME/EncWords.pm
 ${P5SITE}/MIME/EncWords/Defaults.pm.sample
 ${P5SITE}/MIME/EncWords/JA_JP.pod
+@man man/man3p/Encode::MIME::EncWords.3p
+@man man/man3p/Encode::MIME::EncWords::JA_JP.3p
 @man man/man3p/MIME::EncWords.3p
 @man man/man3p/MIME::EncWords::JA_JP.3p
