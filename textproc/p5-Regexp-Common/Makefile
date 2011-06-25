@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/03 11:46:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/06/25 08:23:40 jasper Exp $
 
-COMMENT=		use other catalog formats in Locale::Maketext
+COMMENT=		provide commonly requested regular expressions  
 
 MODULES=		cpan
 USE_GROFF =		Yes
-DISTNAME=		Regexp-Common-2010010201
-REVISION=		0
+DISTNAME=		Regexp-Common-2011041701
 CATEGORIES=		textproc
 
-# mit
+# MIT
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
