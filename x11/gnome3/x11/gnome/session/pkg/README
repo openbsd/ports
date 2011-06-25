@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.7 2011/06/15 13:33:01 ajacoutot Exp $
+$OpenBSD: README,v 1.8 2011/06/25 16:18:07 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -128,7 +128,6 @@ Utilities
     * nautilus-sendto - integrate applications into Nautilus
     * pessulus - lockdown editor for desktop
     * seahorse (+seahorse-plugins) - encryption, keys and passwords manager
-    * system-config-printer - printer (CUPS) administration tool
     * vinagre - VNC Client (remote Desktop client)
     * vino - VNC server (allows remote access to your Desktop)
 
