@@ -1,0 +1,32 @@
+$OpenBSD: patch-configure-al_m4,v 1.1 2011/06/25 18:43:07 jasper Exp $
+--- configure-al.m4.orig	Fri Oct  2 01:22:31 2009
++++ configure-al.m4	Thu Jun 23 00:00:52 2011
+@@ -7,25 +7,9 @@ AC_ARG_ENABLE(openaltest, 
+ 	[  --disable-openaltest    Do not try to compile and run a test OpenAL program],
+ 		    , enable_openaltest=yes)
+ AC_MSG_CHECKING(for OpenAL support)
+-AC_PATH_PROG(OPENAL_CONFIG, openal-config, no)
+-if test x$OPENAL_CONFIG = xno; then
+-	echo "*** The openal-config script installed by OpenAL could not be found"
+-	echo "*** Make sure openal-config is in your path, or set the OPENAL_CONFIG"
+-	echo "*** environment variable to the full path to openal-config."
+-
+-	AC_MSG_ERROR([*** Can't find the openal library. Try: http://www.openal.org/])
+-else
+-
+-	if test x"$use_static_openal" = x"yes"; then
+-		AL_LIBS="/usr/local/lib/libopenal.a"
+-	else
+-		AL_LIBS="`$OPENAL_CONFIG --libs`"
+-	fi
+-	
+-	AL_CFLAGS="`$OPENAL_CONFIG --cflags`"
+-
+-	AC_MSG_RESULT(yes)
+-fi
++AL_LIBS="`pkg-config --libs openal`"
++AL_CFLAGS="`pkg-config --cflags openal`"
++AC_MSG_RESULT(yes)
+ 
+ AC_MSG_CHECKING(for Freealut support)
+ AC_PATH_PROG(FREEALUT_CONFIG, freealut-config, no)
