@@ -1,11 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.3 2006/10/30 23:31:37 steven Exp $
-bin/openal-config
+@comment $OpenBSD: PLIST,v 1.4 2011/06/25 18:42:02 jasper Exp $
+@bin bin/openal-info
 include/AL/
 include/AL/al.h
 include/AL/alc.h
 include/AL/alext.h
-lib/libopenal.a
-lib/libopenal.la
 %%SHARED%%
+include/AL/efx-creative.h
+include/AL/efx.h
 lib/pkgconfig/
 lib/pkgconfig/openal.pc
+share/examples/openal/
+@sample ${SYSCONFDIR}/openal/
+share/examples/openal/alsoftrc.sample
+@sample ${SYSCONFDIR}/openal/alsoft.conf

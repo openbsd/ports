@@ -1,54 +1,34 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/06/25 18:42:02 jasper Exp $
 
-COMMENT=	cross-platform 3D audio API
+COMMENT =	cross-platform 3D audio API
 
-DISTNAME=	openal-0.0.8
-REVISION=	8
-CATEGORIES=	audio
-SHARED_LIBS +=  openal               1.0      # .0.0
+V =		20110624
+DISTNAME =	openal-soft-$V
+PKGNAME =	openal-$V
+CATEGORIES =	audio
+SHARED_LIBS =	openal	2.0
 
-HOMEPAGE=	http://www.openal.org/
+HOMEPAGE =	http://kcat.strangesoft.net/openal.html
 
 # LGPL
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB=		m sndio
+WANTLIB =		c m pthread sndio portaudio
 
-MASTER_SITES=	http://openbsd.dead-parrot.de/distfiles/
+MASTER_SITES =		${HOMEPAGE:S,.html,-releases/,} \
+			http://openbsd.fi/dist/
 
-USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
+LIB_DEPENDS =		audio/portaudio-svn
+MODULES =		devel/cmake
 
-# auto* uses libtool macros
-BUILD_DEPENDS=	devel/libtool
+NO_REGRESS =		Yes
 
-AUTOCONF_VERSION=2.59
-AUTOMAKE_VERSION=1.9
-CONFIGURE_STYLE=autoconf automake
-CONFIGURE_ARGS=	--disable-vorbis \
-		--disable-arts \
-		--disable-mp3 \
-		--disable-esd \
-		--disable-sdl \
-		--disable-solaris
-
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/admin/autotools
-
-post-extract:
-	@cp ${FILESDIR}/alc_backend_sndio.c ${WRKSRC}/src/backends/
-
-AUTO_ENV=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION}
-
-post-patch:
-	@echo "Running aclocal-${AUTOMAKE_VERSION} in ${WRKSRC}"
-	@cd ${WRKSRC}; ${AUTO_ENV} aclocal -I admin/autotools/m4
-
-pre-configure:
-	@echo "Running automake-${AUTOMAKE_VERSION} in ${WRKSRC}"
-	@cd ${WRKSRC}; ${AUTO_ENV} automake --foreign
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openal
+	${INSTALL_DATA} ${WRKSRC}/alsoftrc.sample \
+		${PREFIX}/share/examples/openal
 
 .include <bsd.port.mk>

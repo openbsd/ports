@@ -1,0 +1,42 @@
+$OpenBSD: patch-Alc_sndio_c,v 1.1 2011/06/25 18:42:02 jasper Exp $
+--- Alc/sndio.c.orig	Thu Jun 23 06:48:45 2011
++++ Alc/sndio.c	Fri Jun 24 01:21:24 2011
+@@ -136,31 +136,19 @@ static ALuint sndio_proc(ALvoid *ptr)
+     ALsizei frameSize;
+     size_t wrote;
+ 
+-    SetRTPriority();
+-
+     frameSize = FrameSizeFromDevFmt(device->FmtChans, device->FmtType);
+ 
+     while(!data->killNow && device->Connected)
+     {
+-        ALsizei len = data->data_size;
+-        ALubyte *WritePtr = data->mix_data;
+-
+-        aluMixData(device, WritePtr, len/frameSize);
+-        while(len > 0 && !data->killNow)
++        aluMixData(device, data->mix_data, data->data_size / frameSize);
++        wrote = sio_write(data->sndHandle, data->mix_data, data->data_size);
++        if(wrote < data->data_size)
+         {
+-            wrote = sio_write(data->sndHandle, WritePtr, len);
+-            if(wrote == 0)
+-            {
+-                AL_PRINT("sio_write failed\n");
+-                aluHandleDisconnect(device);
+-                break;
+-            }
+-
+-            len -= wrote;
+-            WritePtr += wrote;
+-        }
++	    AL_PRINT("sio_write: short write\n");
++	    aluHandleDisconnect(device);
++	    break;
++	}
+     }
+-
+     return 0;
+ }
+ 
