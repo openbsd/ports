@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/06/25 08:23:43 jasper Exp $
 
 COMMENT=		module to diff based on word, not lines
 
 MODULES=		cpan
-DISTNAME=		Text-WordDiff-0.05
-REVISION=		0
+DISTNAME=		Text-WordDiff-0.07
 CATEGORIES=		textproc
 USE_GROFF =		Yes
 
