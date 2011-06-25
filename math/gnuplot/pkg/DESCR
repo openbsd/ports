@@ -22,12 +22,9 @@ printer, Tek 401x, Tek 410x, Vectrix 384, VT like Tektronix emulator,
 Unix PC (ATT 3b1 or ATT 7300), unixplot, and X11.  The PC version
 compiled by Microsoft C supports IBM CGA, EGA, VGA, Hercules, ATT
 6300, and Corona 325 graphics.  The PC version compiled by Borland C++
-sup- ports IBM CGA, EGA, MCGA, VGA, Hercules and ATT 6300 graphics.
+supports IBM CGA, EGA, MCGA, VGA, Hercules and ATT 6300 graphics.
 Other devices can be added simply, but will require recompiling.
 
 Shell escapes and command line substitution.
 
 Output redirection.
-
-Eventual modifications to the source are in 
-${PREFIX}/share/gnuplot/4.0/patches
