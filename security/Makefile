@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.264 2011/06/21 21:06:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.265 2011/06/25 07:11:30 rpointel Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -62,6 +62,7 @@
      SUBDIR += hs-cryptohash
      SUBDIR += hs-tls
      SUBDIR += hydra
+     SUBDIR += ikeman
      SUBDIR += integrit
      SUBDIR += ipguard
      SUBDIR += isic
