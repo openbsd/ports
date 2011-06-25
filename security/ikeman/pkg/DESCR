@@ -1,0 +1,8 @@
+ikeman is a tool designed to simplify management of X.509 public key
+infrastructure used to create IPsec flows by isakmpd(8) or iked(8).
+It displays all PKI data in a hierarchical view and can also create
+new certificate authorities, sign new certificate requests and revoke
+or un-revoke currently loaded certificates.
+
+All this in a user-friendly ncurses GUI, which also warns user about
+errors like already expired, revoked or not yet valid certificates.
