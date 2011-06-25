@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/25 18:01:10 jasper Exp $
 
 COMMENT=	extracts embedded tests and code examples from pod
 
 MODULES=	cpan
 USE_GROFF =	Yes
 
-DISTNAME=	Pod-Tests-0.18
-REVISION=	1
+DISTNAME=	Pod-Tests-1.19
 CATEGORIES=	textproc
 
-# Artistic
+# perl
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
