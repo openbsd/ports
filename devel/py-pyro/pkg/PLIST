@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/01/16 18:07:39 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/06/25 01:11:26 fgsch Exp $
 bin/pyro-es
 bin/pyro-esd
 bin/pyro-genguid
@@ -71,6 +71,13 @@ lib/python${MODPY_VERSION}/site-packages/Pyro/nsc.pyo
 lib/python${MODPY_VERSION}/site-packages/Pyro/protocol.py
 lib/python${MODPY_VERSION}/site-packages/Pyro/protocol.pyc
 lib/python${MODPY_VERSION}/site-packages/Pyro/protocol.pyo
+lib/python${MODPY_VERSION}/site-packages/Pyro/test/
+lib/python${MODPY_VERSION}/site-packages/Pyro/test/__init__.py
+lib/python${MODPY_VERSION}/site-packages/Pyro/test/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/Pyro/test/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/Pyro/test/echoserver.py
+lib/python${MODPY_VERSION}/site-packages/Pyro/test/echoserver.pyc
+lib/python${MODPY_VERSION}/site-packages/Pyro/test/echoserver.pyo
 lib/python${MODPY_VERSION}/site-packages/Pyro/util.py
 lib/python${MODPY_VERSION}/site-packages/Pyro/util.pyc
 lib/python${MODPY_VERSION}/site-packages/Pyro/util.pyo
@@ -170,7 +177,9 @@ share/examples/py-pyro/authenticate/server.py
 share/examples/py-pyro/autoreconnect/
 share/examples/py-pyro/autoreconnect/Readme.txt
 share/examples/py-pyro/autoreconnect/client.py
+share/examples/py-pyro/autoreconnect/client_no_ns.py
 share/examples/py-pyro/autoreconnect/server.py
+share/examples/py-pyro/autoreconnect/server_no_ns.py
 share/examples/py-pyro/benchmark/
 share/examples/py-pyro/benchmark/Readme.txt
 share/examples/py-pyro/benchmark/bench.py
