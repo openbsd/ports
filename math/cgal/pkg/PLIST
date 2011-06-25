@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/29 17:47:51 matthew Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/06/25 19:12:36 jasper Exp $
 bin/cgal_create_cmake_script
 include/CGAL/
 include/CGAL/AABB_intersections.h
@@ -2567,6 +2567,7 @@ lib/CGAL/test_MPFI.cpp
 @lib lib/libCGAL_Core.so.${LIBCGAL_Core_VERSION}
 @lib lib/libCGAL_ImageIO.so.${LIBCGAL_ImageIO_VERSION}
 @lib lib/libCGAL_Qt4.so.${LIBCGAL_Qt4_VERSION}
+@man man/man1/cgal_create_cmake_script.1
 share/doc/CGAL-3.8/
 share/doc/CGAL-3.8/AUTHORS
 share/doc/CGAL-3.8/CHANGES
@@ -2574,6 +2575,3 @@ share/doc/CGAL-3.8/LICENSE
 share/doc/CGAL-3.8/LICENSE.FREE_USE
 share/doc/CGAL-3.8/LICENSE.LGPL
 share/doc/CGAL-3.8/LICENSE.QPL
-share/man/
-share/man/man1/
-@man share/man/man1/cgal_create_cmake_script.1

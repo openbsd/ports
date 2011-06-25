@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/30 01:07:14 matthew Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/25 19:12:36 jasper Exp $
 
 # vax:	no fenv.h support
 NOT_FOR_ARCHS =		vax
 
 COMMENT =		Computational Geometry Algorithms Library
 
-V =			3.8
-PKGNAME =		cgal-${V}
-DISTNAME =		CGAL-${V}
+DISTNAME =		CGAL-3.8
+PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 SHARED_ONLY =		Yes
 SHARED_LIBS =		CGAL		0.0 \
@@ -38,6 +38,7 @@ LIB_DEPENDS =		devel/boost \
 			devel/gmp \
 			devel/mpfr
 
+CONFIGURE_ARGS +=	-DCGAL_INSTALL_MAN_DIR="man/man1"
 CONFIGURE_ENV =         CFLAGS="${CFLAGS} -I${X11BASE}/include" \
                         CXXFLAGS="${CXXFLAGS} -I${X11BASE}/include" \
                         LDFLAGS="${LDFLAGS} -L${X11BASE}/lib"
