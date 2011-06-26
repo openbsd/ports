@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/26 07:07:56 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/06/26 06:47:20 ajacoutot Exp $
 
 COMMENT=		small and easy to use graphical MPD client
 
 DISTNAME=		gimmix-0.5.7.1
-REVISION=	0
+REVISION=		1
 CATEGORIES=		audio x11
 
 HOMEPAGE=		http://gimmix.berlios.de/
@@ -39,7 +39,8 @@ LIB_DEPENDS=		audio/libmpd>=0.17 \
 			textproc/libnxml \
 			audio/taglib \
 			devel/libglade2
-RUN_DEPENDS=		devel/desktop-file-utils
+RUN_DEPENDS=		devel/desktop-file-utils \
+			x11/gnome/icon-theme
 
 post-extract:
 	rm ${WRKSRC}/po/Makefile.in.in
