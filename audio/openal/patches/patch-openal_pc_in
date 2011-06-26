@@ -1,4 +1,14 @@
-$OpenBSD: patch-openal_pc_in,v 1.1 2011/06/26 09:58:08 sthen Exp $
+$OpenBSD: patch-openal_pc_in,v 1.2 2011/06/26 10:36:16 sthen Exp $
+--- openal.pc.in.orig	Sat Jun 25 21:24:40 2011
++++ openal.pc.in	Sat Jun 25 21:28:26 2011
+@@ -7,5 +7,5 @@ Name: OpenAL
+ Description: OpenAL is a cross-platform 3D audio API
+ Requires: @PKG_CONFIG_REQUIRES@
+ Version: @PACKAGE_VERSION@
+-Libs: -L${libdir} -l@LIBNAME@ @PKG_CONFIG_LIBS@
++Libs: -L${libdir} -l@LIBNAME@ @PKG_CONFIG_LIBS@ -lm -lsndio -pthread
+ Cflags: -I${includedir} @PKG_CONFIG_CFLAGS@
+$OpenBSD: patch-openal_pc_in,v 1.2 2011/06/26 10:36:16 sthen Exp $
 --- openal.pc.in.orig	Sat Jun 25 21:24:40 2011
 +++ openal.pc.in	Sat Jun 25 21:28:26 2011
 @@ -7,5 +7,5 @@ Name: OpenAL

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2011/06/26 09:58:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2011/06/26 10:36:16 sthen Exp $
 
 COMMENT =	cross-platform 3D audio API
 
 V =		20110624
 DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
-REVISION =	0
+REVISION =	1
 CATEGORIES =	audio
 SHARED_LIBS =	openal	2.0
 
@@ -17,16 +17,13 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c m pthread sndio
+WANTLIB =		c m pthread sndio portaudio
 
 MASTER_SITES =		${HOMEPAGE:S,.html,-releases/,} \
 			http://openbsd.fi/dist/
 
+LIB_DEPENDS =		audio/portaudio-svn
 MODULES =		devel/cmake
-
-CONFIGURE_STYLE =	cmake
-CONFIGURE_ARGS =	-DALSA=off -DOSS=off -DSOLARIS=off -DPORTAUDIO=off \
-			-DPULSEAUDIO=off -DDLOPEN=off
 
 NO_REGRESS =		Yes
 
