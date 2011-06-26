@@ -1,7 +1,6 @@
-$OpenBSD: patch-src_dialogs_dialog-preferences_c,v 1.4 2011/03/25 07:25:27 ajacoutot Exp $
+$OpenBSD: patch-src_dialogs_dialog-preferences_c,v 1.5 2011/06/26 06:01:57 ajacoutot Exp $
 
-gcc3 doesn't like function names that end with a numeral right after
-alphabetical characters.
+powerof2 is already defined in sys/param.h.
 
 --- src/dialogs/dialog-preferences.c.orig	Wed Mar  9 13:29:36 2011
 +++ src/dialogs/dialog-preferences.c	Fri Mar 25 07:56:08 2011

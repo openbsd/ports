@@ -1,7 +1,6 @@
-$OpenBSD: patch-src_sheet_c,v 1.5 2011/06/17 09:37:48 ajacoutot Exp $
+$OpenBSD: patch-src_sheet_c,v 1.6 2011/06/26 06:01:57 ajacoutot Exp $
 
-gcc3 doesn't like function names that end with a numeral right after
-alphabetical characters.
+powerof2 is already defined in sys/param.h.
 
 --- src/sheet.c.orig	Sat Jun  4 03:38:56 2011
 +++ src/sheet.c	Fri Jun 17 10:38:14 2011
