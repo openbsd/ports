@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/30 21:14:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2011/06/26 10:29:11 sthen Exp $
 
 COMMENT=	monitoring and managing daemons utility
 
 DISTNAME=	monit-4.10.1
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	sysutils
 
@@ -11,13 +11,13 @@ HOMEPAGE=	http://www.tildeslash.com/monit/
 
 MAINTAINER=	Ben Lovett <ben@tilderoot.com>
 
-# GPL
+# GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += c crypto kvm pthread ssl 
+WANTLIB += c crypto kvm pthread ssl
 
 MASTER_SITES=	${HOMEPAGE}dist/ \
 		${HOMEPAGE}dist/old/

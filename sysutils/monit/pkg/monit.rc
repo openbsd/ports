@@ -1,0 +1,10 @@
+#!/bin/sh
+#
+# $OpenBSD: monit.rc,v 1.1 2011/06/26 10:29:11 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/monit"
+daemon_flags="-d 300 -c ${SYSCONFDIR}/monitrc"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
