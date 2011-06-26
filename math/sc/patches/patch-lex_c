@@ -1,7 +1,16 @@
-$OpenBSD: patch-lex_c,v 1.5 2011/06/25 15:33:33 jasper Exp $
---- lex.c.orig	Wed Aug 21 00:44:26 2002
-+++ lex.c	Sat Jun 25 17:31:00 2011
-@@ -107,7 +107,7 @@ int
+$OpenBSD: patch-lex_c,v 1.6 2011/06/26 09:48:50 sthen Exp $
+--- lex.c.orig	Sat Jun 25 23:40:11 2011
++++ lex.c	Sat Jun 25 23:39:40 2011
+@@ -34,6 +34,8 @@
+ #include <signal.h>
+ #include <setjmp.h>
+ #include <ctype.h>
++#include <unistd.h>
++#include <math.h>
+ #include "sc.h"
+ 
+ #ifdef NONOTIMEOUT
+@@ -107,7 +109,7 @@ int
  yylex()
  {
      char *p = line + linelim;
@@ -10,7 +19,7 @@ $OpenBSD: patch-lex_c,v 1.5 2011/06/25 15:33:33 jasper Exp $
      static int isfunc = 0;
      static bool isgoto = 0;
      static bool colstate = 0;
-@@ -642,7 +642,7 @@ nmgetch() 
+@@ -642,7 +644,7 @@ nmgetch() 
  
  #endif
  

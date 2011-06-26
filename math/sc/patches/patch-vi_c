@@ -1,0 +1,24 @@
+$OpenBSD: patch-vi_c,v 1.1 2011/06/26 09:48:50 sthen Exp $
+--- vi.c.orig	Fri Jul 12 01:48:29 2002
++++ vi.c	Sat Jun 25 23:52:50 2011
+@@ -16,7 +16,9 @@
+ #include <signal.h>
+ #include <curses.h>
+ #include <ctype.h>
++#include <unistd.h>
+ #include <stdlib.h>
++#include <stdbool.h>
+ #include "sc.h"
+ 
+ #if defined(REGCOMP)
+@@ -39,10 +41,6 @@ void gototop();
+ void gotobottom();
+ 
+ #define istext(a) (isalnum(a) || ((a) == '_'))
+-
+-#define bool	int
+-#define true	1
+-#define false	0
+ 
+ static void append_line();
+ static void back_hist();

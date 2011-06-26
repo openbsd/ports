@@ -1,0 +1,11 @@
+$OpenBSD: patch-sc_h,v 1.1 2011/06/26 09:48:50 sthen Exp $
+--- sc.h.orig	Sat Jun 25 23:49:22 2011
++++ sc.h	Sat Jun 25 23:50:59 2011
+@@ -304,6 +304,7 @@ struct go_save {
+ #define is_deleted   0020
+ #define is_locked    0040
+ #define is_label     0100
++#undef is_cleared
+ #define is_cleared   0200
+ #define may_sync     0400
+ 
