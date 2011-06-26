@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/06/26 10:36:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2011/06/26 20:05:26 sthen Exp $
 
 COMMENT =	cross-platform 3D audio API
 
@@ -10,6 +10,8 @@ CATEGORIES =	audio
 SHARED_LIBS =	openal	2.0
 
 HOMEPAGE =	http://kcat.strangesoft.net/openal.html
+
+MAINTAINER =	Antti Harri <iku@openbsd.fi>
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
