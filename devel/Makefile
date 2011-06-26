@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.950 2011/06/22 08:32:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.951 2011/06/26 14:34:19 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -62,6 +62,7 @@
      SUBDIR += cppcheck
      SUBDIR += cpphs
      SUBDIR += cppunit
+     SUBDIR += cryptopp
      SUBDIR += cscope
      SUBDIR += ctm
      SUBDIR += cunit
