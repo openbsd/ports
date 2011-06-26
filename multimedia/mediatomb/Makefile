@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2011/06/21 14:29:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/26 19:04:21 edd Exp $
 
 COMMENT =	UPnP media server
 
 VER =		0.12.1
 DISTNAME =	mediatomb-${VER}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	multimedia
 
@@ -29,7 +29,8 @@ LIB_DEPENDS =	audio/taglib \
 		graphics/ffmpegthumbnailer \
 		graphics/libexif \
 		lang/spidermonkey \
-		net/curl
+		net/curl \
+		multimedia/libmp4v2
 
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS +=	--disable-inotify \
