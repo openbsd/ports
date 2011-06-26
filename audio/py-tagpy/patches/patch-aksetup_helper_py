@@ -1,0 +1,18 @@
+$OpenBSD: patch-aksetup_helper_py,v 1.1 2011/06/26 06:34:01 ajacoutot Exp $
+--- aksetup_helper.py.orig	Tue Jul 20 04:38:24 2010
++++ aksetup_helper.py	Sun Jun 26 08:26:33 2011
+@@ -1,11 +1,11 @@
+ # dealings with ez_setup ------------------------------------------------------
+-import distribute_setup
+-distribute_setup.use_setuptools()
++#import distribute_setup
++#distribute_setup.use_setuptools()
+ 
+ import setuptools
+ from setuptools import Extension
+ 
+-if 'distribute' not in setuptools.__file__:
++if False and 'distribute' not in setuptools.__file__:
+     print "-------------------------------------------------------------------------"
+     print "Setuptools conflict detected."
+     print "-------------------------------------------------------------------------"
