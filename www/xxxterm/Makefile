@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2011/05/16 08:24:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/06/26 20:02:31 edd Exp $
 
 COMMENT =		vi-like minimalists web browser
-DISTNAME =		xxxterm-1.382
+DISTNAME =		xxxterm-1.399
 CATEGORIES =		www
-REVISION =		1
 
 HOMEPAGE =		http://opensource.conformal.com/wiki/XXXTerm
 
