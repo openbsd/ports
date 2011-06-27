@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.239 2011/06/13 10:11:05 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.240 2011/06/27 10:12:31 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -68,6 +68,7 @@
      SUBDIR += hcidump
      SUBDIR += heartbeat
      SUBDIR += hot-babe
+     SUBDIR += hotplug-diskmount
      SUBDIR += idled
      SUBDIR += iogen
      SUBDIR += ipmitool
