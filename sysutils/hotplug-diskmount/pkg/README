@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2011/06/27 10:06:56 dcoppa Exp $
+$OpenBSD: README,v 1.2 2011/06/27 10:15:13 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,7 +11,7 @@ Before using it for the first time, create the directory where all
 mountpoints will be placed:
 
 
-# /usr/local/libexec/hotplug-diskmount init
+# ${TRUEPREFIX}/libexec/hotplug-diskmount init
 
 
 Enable hotplugd at boot time:
@@ -32,7 +32,7 @@ LOGIN=joeuser
 
 case ${DEVCLASS} in
 2)
-	/usr/local/libexec/hotplug-diskmount attach -u ${LOGIN} -m 700 ${DEVNAME}
+	${TRUEPREFIX}/libexec/hotplug-diskmount attach -u ${LOGIN} -m 700 ${DEVNAME}
 	;;
 esac
 
