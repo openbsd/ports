@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/14 22:57:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/06/27 18:54:06 gsoares Exp $
 
 COMMENT= 	database schema manipulation
 
@@ -35,8 +35,7 @@ RUN_DEPENDS=	databases/p5-DBI \
 		textproc/p5-XML-Writer>=0.5
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-REGRESS_DEPENDS= ${RUN_DEPENDS} \
-		devel/p5-Graph \
+REGRESS_DEPENDS=devel/p5-Graph \
 		misc/p5-Spreadsheet-ParseExcel \
 		textproc/p5-Text-RecordParser \
 		textproc/p5-XML-LibXML
