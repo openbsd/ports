@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2010/12/03 11:44:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/06/27 18:41:53 jasper Exp $
 
 COMMENT=	perl DBI driver for CSV files
 
-DISTNAME=	DBD-CSV-0.22
-REVISION=	0
+DISTNAME=	DBD-CSV-0.31
+EXTRACT_SUFX=	.tgz
 CATEGORIES=	databases
 MODULES=	cpan
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 MAINTAINER=	Chris Kuethe <ckuethe@ualberta.ca>
 
@@ -16,8 +16,10 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-RUN_DEPENDS=	databases/p5-DBI>=1.08 \
-		textproc/p5-Text-CSV_XS>0.22 \
-		databases/p5-SQL-Statement
+CPAN_AUTHOR=	HMBRAND
+
+RUN_DEPENDS=	databases/p5-DBI>=1.613 \
+		textproc/p5-Text-CSV_XS>0.71 \
+		databases/p5-SQL-Statement>=1.30
 
 .include <bsd.port.mk>
