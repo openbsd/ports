@@ -1,0 +1,20 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/27 06:45:04 jasper Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/HISTORY.md
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/sanitize/
+${GEM_LIB}/gems/${DISTNAME}/lib/sanitize.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sanitize/config/
+${GEM_LIB}/gems/${DISTNAME}/lib/sanitize/config.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sanitize/config/basic.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sanitize/config/relaxed.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sanitize/config/restricted.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sanitize/transformers/
+${GEM_LIB}/gems/${DISTNAME}/lib/sanitize/transformers/clean_cdata.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sanitize/transformers/clean_comment.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sanitize/transformers/clean_element.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sanitize/version.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
