@@ -1,0 +1,5 @@
+hotplug-diskmount is a plugin for OpenBSD's hotplugd(8) that
+automatically mounts removable disks. It works with any disk type
+(USB mass storage devices, card readers and CD/DVD drives) and it
+is intended to be used in single-user environments like desktops
+or laptops.

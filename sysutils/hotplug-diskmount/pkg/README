@@ -1,0 +1,42 @@
+$OpenBSD: README,v 1.1.1.1 2011/06/27 10:06:56 dcoppa Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+The hotplug-diskmount command is invoked by the hotplugd(8) daemon
+from its attach script and terminates when the device is detached.
+
+Before using it for the first time, create the directory where all
+mountpoints will be placed:
+
+
+# /usr/local/libexec/hotplug-diskmount init
+
+
+Enable hotplugd at boot time:
+
+
+# echo "hotplugd_flags=\"\"" >> /etc/rc.conf.local
+
+
+Edit the /etc/hotplug/attach script (remember to set the executable
+bit, if needed):
+
+
+#!/bin/sh
+
+DEVCLASS=${1}
+DEVNAME=${2}
+LOGIN=joeuser
+
+case ${DEVCLASS} in
+2)
+	/usr/local/libexec/hotplug-diskmount attach -u ${LOGIN} -m 700 ${DEVNAME}
+	;;
+esac
+
+
+When a new device is inserted into the system, filesystems from
+this device will be automatically mounted under /vol/DRIVE_NAME.
+hotplug-diskmount will mount as many partitions as disk contains.
