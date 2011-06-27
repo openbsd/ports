@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/05/11 12:03:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/27 13:38:30 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	H.323 video conferencing library
 V=		1_21_0
 DISTNAME=	h323plus-v${V}
 PKGNAME=	h323plus-${V:S/_/./g}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net devel
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} plugins-v${V}${EXTRACT_SUFX}
@@ -27,7 +27,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	${HOMEPAGE}/source/download/
 
 WANTLIB += SDL c crypto expat lber ldap ldap_r m sasl2
-WANTLIB += ssl pt>=3 avutil>=6 speex>=4 gsm>=1
+WANTLIB += ssl pt>=3 avutil>=6 speex>=4 gsm>=1 stdc++
 
 LIB_DEPENDS=	devel/ptlib \
 		graphics/ffmpeg \

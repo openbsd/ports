@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.43 2011/06/15 23:16:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2011/06/27 13:38:30 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.5
-REVISION=	9
+REVISION=	10
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=tcforge/}
 EXTRACT_SUFX=	.tar.bz2
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SDL SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt Xv a52
-WANTLIB += avcodec avformat avutil bz2 c dv dvdread faac freetype
+WANTLIB += avcodec avformat avutil bz2 c dv dvdread freetype
 WANTLIB += gsm jpeg m mp3lame mpeg2 mpeg2convert ogg orc-0.4 postproc
 WANTLIB += pthread pthread-stubs schroedinger-1.0 sndio speex
 WANTLIB += theora theoradec theoraenc usbhid vorbis vorbisenc
@@ -40,8 +40,7 @@ PKG_ARGS+=	-Di386=0
 
 MODULES=	converters/libiconv
 
-LIB_DEPENDS=	audio/faac \
-		audio/lame \
+LIB_DEPENDS=	audio/lame \
 		audio/liba52 \
 		audio/libogg \
 		audio/libvorbis \
