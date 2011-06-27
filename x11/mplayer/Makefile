@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.189 2011/06/25 14:15:42 edd Exp $
+# $OpenBSD: Makefile,v 1.190 2011/06/27 23:29:20 edd Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	alpha amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -13,7 +13,7 @@ SUBST_VARS += 		PREFIX CONFDIR
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		x11 multimedia
 
@@ -27,7 +27,7 @@ PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
 		avformat avutil bz2 c cdda_interface cdda_paranoia \
-		crypto dv enca faac fontconfig freetype fribidi gsm jpeg lcms \
+		crypto dv enca fontconfig freetype fribidi gsm jpeg lcms \
 		m mng mp3lame ncurses ogg>=5 orc-0.4 png postproc \
 		pthread SDL schroedinger-1.0>=2.0 sndio speex stdc++ \
 		swscale theoradec theoraenc ungif util vpx x264>=5 \
@@ -55,7 +55,6 @@ LIB_DEPENDS =	graphics/png \
 		graphics/libmng \
 		archivers/bzip2 \
 		multimedia/schroedinger>=1.0.10 \
-		audio/faac \
 		multimedia/x264>=20101023 \
 		devel/sdl>=1.2.5 \
 		multimedia/libass
@@ -132,6 +131,8 @@ CONFIGURE_ARGS += --disable-smb \
 		--disable-libopenjpeg \
 		--disable-mpg123 \
 		--disable-librtmp \
+		--disable-faac \
+		--disable-faac-lavc \
 		--disable-faad \
 		--disable-theora
 

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1 2011/03/29 20:04:41 edd Exp $
+$OpenBSD: README,v 1.2 2011/06/27 23:29:20 edd Exp $
 
 Porting notes for MPlayer
 =========================
@@ -32,6 +32,11 @@ external library so that users can encode with mencoder.
 Be aware that some hardware lacks a floating point unit (ARM for
 example).  On these architectures, you should select integer decoders
 where possible. Eg. Tremor instead of Vorbis.
+
+External FAAC linkage (and multimedia/ffmpeg's external FAAC linkage)
+was disabled due to conflicting licenses. Only the FFMPEG's
+internal "ffaac" encoder remains for use with encoding AAC in mencoder.
+https://bugs.launchpad.net/ubuntu/+source/faac/+bug/374900
 
 FFMPEG OGG Demuxer Bug
 ----------------------
