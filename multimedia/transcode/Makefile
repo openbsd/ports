@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.44 2011/06/27 13:38:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2011/06/27 21:17:55 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.5
-REVISION=	10
+REVISION=	11
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=tcforge/}
 EXTRACT_SUFX=	.tar.bz2
@@ -75,7 +75,7 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 CONFIGURE_ARGS+=--enable-a52 \
 		--enable-a52-default-decoder \
 		--enable-bktr \
-		--enable-faac \
+		--disable-faac \
 		--enable-freetype2 \
 		--enable-lame \
 		--enable-libdv \
