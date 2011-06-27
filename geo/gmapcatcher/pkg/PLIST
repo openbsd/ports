@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/09/07 10:23:02 kevlo Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/06/27 06:33:33 ajacoutot Exp $
 bin/mapcatcher
 bin/mapdownloader
 lib/python${MODPY_VERSION}/site-packages/GMapCatcher-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/DLWindow.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/DLWindow.pyc
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/EXWindow.py
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/EXWindow.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/changeableConst.py
@@ -33,10 +35,11 @@ lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapDownloader.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapDownloader.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapGPS.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapGPS.pyc
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapLogging.py
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapLogging.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapMark.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapMark.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapPixbuf.py
-lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapPixbuf.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/__init__.pyc
@@ -52,12 +55,18 @@ lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/openCycleMap.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/openCycleMap.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/openStreetMaps.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/openStreetMaps.pyc
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/seznam.py
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/seznam.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/virtualEarth.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/virtualEarth.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/yahoo.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/yahoo.pyc
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/yandex.py
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServers/yandex.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServices.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapServices.pyc
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapTilesTransfer.py
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapTilesTransfer.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapTools.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapTools.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/mapUpdate.py
@@ -133,12 +142,16 @@ lib/python${MODPY_VERSION}/site-packages/gmapcatcher/pyGPSD/nmea/track.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/pyGPSD/nmea/track.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/pyGPSD/scan.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/pyGPSD/scan.pyc
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tileFStoMGMaps.py
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tileFStoMGMaps.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepo.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepo.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepoFS.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepoFS.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepoFactory.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepoFactory.pyc
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepoMGMaps.py
+lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepoMGMaps.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepoSQLite3.py
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/tilesRepoSQLite3.pyc
 lib/python${MODPY_VERSION}/site-packages/gmapcatcher/widChangeTheme.py
@@ -161,10 +174,10 @@ share/applications/gmapcatcher.desktop
 share/doc/mapcatcher/
 share/doc/mapcatcher/README
 share/doc/mapcatcher/changelog
-share/pixmaps/
 share/pixmaps/gmapcatcher/
 share/pixmaps/gmapcatcher/downloading.png
 share/pixmaps/gmapcatcher/map.png
+share/pixmaps/gmapcatcher/map.svg
 share/pixmaps/gmapcatcher/maps.ico
 share/pixmaps/gmapcatcher/marker.png
 share/pixmaps/gmapcatcher/marker1.png
