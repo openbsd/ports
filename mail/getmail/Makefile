@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.77 2011/06/08 17:50:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.78 2011/06/27 12:49:42 jasper Exp $
 
 COMMENT=	IMAP/POP3/SDPS mail retriever
 
-MODPY_EGG_VERSION=	4.20.2
+MODPY_EGG_VERSION=	4.20.3
 DISTNAME=	getmail-${MODPY_EGG_VERSION}
-REVISION=	0
 CATEGORIES=	mail
 
 HOMEPAGE=	http://pyropus.ca/software/getmail/
