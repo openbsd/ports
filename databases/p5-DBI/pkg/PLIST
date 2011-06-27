@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.30 2008/06/01 20:25:50 simon Exp $
+@comment $OpenBSD: PLIST,v 1.31 2011/06/27 18:35:44 jasper Exp $
 bin/dbilogstrip
 bin/dbiprof
 bin/dbiproxy
@@ -8,7 +8,11 @@ ${P5ARCH}/Bundle/DBI.pm
 ${P5ARCH}/DBD/
 ${P5ARCH}/DBD/DBM.pm
 ${P5ARCH}/DBD/ExampleP.pm
+${P5ARCH}/DBD/File/
 ${P5ARCH}/DBD/File.pm
+${P5ARCH}/DBD/File/Developers.pod
+${P5ARCH}/DBD/File/HowTo.pod
+${P5ARCH}/DBD/File/Roadmap.pod
 ${P5ARCH}/DBD/Gofer/
 ${P5ARCH}/DBD/Gofer.pm
 ${P5ARCH}/DBD/Gofer/Policy/
@@ -18,6 +22,7 @@ ${P5ARCH}/DBD/Gofer/Policy/pedantic.pm
 ${P5ARCH}/DBD/Gofer/Policy/rush.pm
 ${P5ARCH}/DBD/Gofer/Transport/
 ${P5ARCH}/DBD/Gofer/Transport/Base.pm
+${P5ARCH}/DBD/Gofer/Transport/corostream.pm
 ${P5ARCH}/DBD/Gofer/Transport/null.pm
 ${P5ARCH}/DBD/Gofer/Transport/pipeone.pm
 ${P5ARCH}/DBD/Gofer/Transport/stream.pm
@@ -36,6 +41,10 @@ ${P5ARCH}/DBI/Const/GetInfoType.pm
 ${P5ARCH}/DBI/DBD/
 ${P5ARCH}/DBI/DBD.pm
 ${P5ARCH}/DBI/DBD/Metadata.pm
+${P5ARCH}/DBI/DBD/SqlEngine/
+${P5ARCH}/DBI/DBD/SqlEngine.pm
+${P5ARCH}/DBI/DBD/SqlEngine/Developers.pod
+${P5ARCH}/DBI/DBD/SqlEngine/HowTo.pod
 ${P5ARCH}/DBI/FAQ.pm
 ${P5ARCH}/DBI/Gofer/
 ${P5ARCH}/DBI/Gofer/Execute.pm
@@ -57,15 +66,12 @@ ${P5ARCH}/DBI/ProfileDumper/Apache.pm
 ${P5ARCH}/DBI/ProfileSubs.pm
 ${P5ARCH}/DBI/ProxyServer.pm
 ${P5ARCH}/DBI/PurePerl.pm
-${P5ARCH}/DBI/Roadmap.pm
 ${P5ARCH}/DBI/SQL/
 ${P5ARCH}/DBI/SQL/Nano.pm
 ${P5ARCH}/DBI/Util/
 ${P5ARCH}/DBI/Util/CacheMemory.pm
 ${P5ARCH}/DBI/Util/_accessor.pm
 ${P5ARCH}/DBI/W32ODBC.pm
-@comment ${P5ARCH}/Roadmap.pod
-@comment ${P5ARCH}/TASKS.pod
 ${P5ARCH}/Win32/
 ${P5ARCH}/Win32/DBIODBC.pm
 ${P5ARCH}/auto/
@@ -87,12 +93,16 @@ ${P5ARCH}/dbixs_rev.pl
 @man man/man3p/Bundle::DBI.3p
 @man man/man3p/DBD::DBM.3p
 @man man/man3p/DBD::File.3p
+@man man/man3p/DBD::File::Developers.3p
+@man man/man3p/DBD::File::HowTo.3p
+@man man/man3p/DBD::File::Roadmap.3p
 @man man/man3p/DBD::Gofer.3p
 @man man/man3p/DBD::Gofer::Policy::Base.3p
 @man man/man3p/DBD::Gofer::Policy::classic.3p
 @man man/man3p/DBD::Gofer::Policy::pedantic.3p
 @man man/man3p/DBD::Gofer::Policy::rush.3p
 @man man/man3p/DBD::Gofer::Transport::Base.3p
+@man man/man3p/DBD::Gofer::Transport::corostream.3p
 @man man/man3p/DBD::Gofer::Transport::null.3p
 @man man/man3p/DBD::Gofer::Transport::pipeone.3p
 @man man/man3p/DBD::Gofer::Transport::stream.3p
@@ -105,6 +115,9 @@ ${P5ARCH}/dbixs_rev.pl
 @man man/man3p/DBI::Const::GetInfoType.3p
 @man man/man3p/DBI::DBD.3p
 @man man/man3p/DBI::DBD::Metadata.3p
+@man man/man3p/DBI::DBD::SqlEngine.3p
+@man man/man3p/DBI::DBD::SqlEngine::Developers.3p
+@man man/man3p/DBI::DBD::SqlEngine::HowTo.3p
 @man man/man3p/DBI::FAQ.3p
 @man man/man3p/DBI::Gofer::Execute.3p
 @man man/man3p/DBI::Gofer::Request.3p
@@ -125,6 +138,4 @@ ${P5ARCH}/dbixs_rev.pl
 @man man/man3p/DBI::SQL::Nano.3p
 @man man/man3p/DBI::Util::CacheMemory.3p
 @man man/man3p/DBI::W32ODBC.3p
-@comment @man man/man3p/Roadmap.3p
-@comment @man man/man3p/TASKS.3p
 @man man/man3p/Win32::DBIODBC.3p
