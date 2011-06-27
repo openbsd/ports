@@ -1,0 +1,12 @@
+$OpenBSD: patch-Lib_tempfile_py,v 1.1.1.1 2011/06/27 18:44:13 rpointel Exp $
+--- Lib/tempfile.py.orig	Wed Jun 22 14:12:22 2011
++++ Lib/tempfile.py	Wed Jun 22 14:12:37 2011
+@@ -139,7 +139,7 @@ def _candidate_tempdir_list():
+     if _os.name == 'nt':
+         dirlist.extend([ r'c:\temp', r'c:\tmp', r'\temp', r'\tmp' ])
+     else:
+-        dirlist.extend([ '/tmp', '/var/tmp', '/usr/tmp' ])
++        dirlist.extend([ '/tmp', '/var/tmp' ])
+ 
+     # As a last resort, the current directory.
+     try:

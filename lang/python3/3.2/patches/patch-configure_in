@@ -1,0 +1,62 @@
+$OpenBSD: patch-configure_in,v 1.1.1.1 2011/06/27 18:44:13 rpointel Exp $
+--- configure.in.orig	Sat Feb 19 09:58:23 2011
++++ configure.in	Mon Jun 27 08:09:44 2011
+@@ -743,7 +743,7 @@
+ 	      PY3LIBRARY=libpython3.so
+ 	  fi
+           ;;
+-    Linux*|GNU*|NetBSD*|FreeBSD*|DragonFly*)
++    Linux*|GNU*|NetBSD*|FreeBSD*|OpenBSD*|DragonFly*)
+ 	  LDLIBRARY='libpython$(LDVERSION).so'
+ 	  BLDLIBRARY='-L. -lpython$(LDVERSION)'
+ 	  RUNSHARED=LD_LIBRARY_PATH=`pwd`:${LD_LIBRARY_PATH}
+@@ -1730,7 +1730,7 @@
+ 	BSD/OS*/4*)
+ 		LDSHARED="gcc -shared"
+ 		LDCXXSHARED="g++ -shared";;
+-	FreeBSD*)
++	FreeBSD*|OpenBSD*)
+ 		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
+ 		then
+ 			LDSHARED='$(CC) -shared'
+@@ -1738,22 +1738,6 @@
+ 		else
+ 			LDSHARED="ld -Bshareable"
+ 		fi;;
+-	OpenBSD*)
+-		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
+-		then
+-				LDSHARED='$(CC) -shared $(CCSHARED)'
+-				LDCXXSHARED='$(CXX) -shared $(CCSHARED)'
+-		else
+-				case `uname -r` in
+-				[[01]].* | 2.[[0-7]] | 2.[[0-7]].*)
+-				   LDSHARED="ld -Bshareable ${LDFLAGS}"
+-				   ;;
+-				*)
+-				   LDSHARED='$(CC) -shared $(CCSHARED)'
+-				   LDCXXSHARED='$(CXX) -shared $(CCSHARED)'
+-				   ;;
+-				esac
+-		fi;;
+ 	NetBSD*|DragonFly*)
+ 		LDSHARED='$(CC) -shared'
+ 		LDCXXSHARED='$(CXX) -shared';;
+@@ -1903,9 +1887,14 @@
+ 
+ # only check for sem_init if thread support is requested
+ if test "$with_threads" = "yes" -o -z "$with_threads"; then
+-    AC_SEARCH_LIBS(sem_init, pthread rt posix4) # 'Real Time' functions on Solaris
+-						# posix4 on Solaris 2.6
+-						# pthread (first!) on Linux
++	case $ac_sys_system/$ac_sys_release in
++        OpenBSD*)
++		LIBS="-pthread $(LIBS)" ;;
++	*)
++    		AC_SEARCH_LIBS(sem_init, pthread rt posix4) ;;  # 'Real Time' functions on Solaris
++								# posix4 on Solaris 2.6
++								# pthread (first!) on Linux
++	esac
+ fi
+ 
+ # check if we need libintl for locale functions

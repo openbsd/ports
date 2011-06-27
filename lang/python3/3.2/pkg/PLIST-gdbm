@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-gdbm,v 1.1.1.1 2011/06/27 18:44:15 rpointel Exp $
+lib/python3.2/lib-dynload/_gdbm.so

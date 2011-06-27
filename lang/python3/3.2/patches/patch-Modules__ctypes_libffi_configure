@@ -1,0 +1,12 @@
+$OpenBSD: patch-Modules__ctypes_libffi_configure,v 1.1.1.1 2011/06/27 18:44:13 rpointel Exp $
+--- Modules/_ctypes/libffi/configure.orig	Wed Jun 22 14:24:16 2011
++++ Modules/_ctypes/libffi/configure	Wed Jun 22 14:24:29 2011
+@@ -11254,7 +11254,7 @@ case "$host" in
+   mips-sgi-irix5.* | mips-sgi-irix6.*)
+ 	TARGET=MIPS_IRIX; TARGETDIR=mips
+ 	;;
+-  mips*-*-linux*)
++  mips*-*-linux* | mips*-*-openbsd*)
+ 	# Support 128-bit long double for NewABI.
+ 	HAVE_LONG_DOUBLE='defined(__mips64)'
+ 	TARGET=MIPS_IRIX; TARGETDIR=mips
