@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2011/06/28 11:57:39 landry Exp $
+# $OpenBSD: Makefile,v 1.184 2011/06/28 15:53:38 landry Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -10,6 +10,7 @@ MOZILLA_VERSION =	5.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	mozilla-firefox
 MOZILLA_CODENAME =	browser
+REVISION =	0
 
 SO_VERSION =	24.0
 NSS_SO_VERSION =	27.0
