@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/05/24 14:04:17 sebastia Exp $
+# $OpenBSD: Makefile,v 1.25 2011/06/28 16:00:55 sebastia Exp $
 
      SUBDIR =
      SUBDIR += addresses
@@ -27,6 +27,7 @@
      SUBDIR += mpdcon
      SUBDIR += pantomime
      SUBDIR += pdfkit
+     SUBDIR += performance
      SUBDIR += price
      SUBDIR += projectcenter
      SUBDIR += remotedesk
@@ -35,5 +36,6 @@
      SUBDIR += systempreferences
      SUBDIR += terminal
      SUBDIR += timemon
+     SUBDIR += webservices
 
 .include <bsd.port.subdir.mk>
