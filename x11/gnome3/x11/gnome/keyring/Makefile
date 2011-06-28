@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2011/06/01 15:41:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/28 12:57:47 ajacoutot Exp $
 
 COMMENT=		password agent for the GNOME project
 
 GNOME_PROJECT=		gnome-keyring
 GNOME_VERSION=		3.0.3
 
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gck                       0.0 # 0.0
 SHARED_LIBS +=  gcr-3                     0.0 # 0.0
@@ -48,5 +48,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples
+
+pre-configure:
+	perl -pi -e 's,make --version,${MAKE_PROGRAM} --version,' \
+		${WRKSRC}/configure
 
 .include <bsd.port.mk>
