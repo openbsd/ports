@@ -1,15 +1,7 @@
-$OpenBSD: patch-glib_gmacros_h,v 1.13 2010/09/30 07:17:19 ajacoutot Exp $
---- glib/gmacros.h.orig	Mon Aug  9 15:34:46 2010
-+++ glib/gmacros.h	Mon Sep 27 14:42:36 2010
-@@ -38,6 +38,7 @@
- /* We include stddef.h to get the system's definition of NULL
-  */
- #include <stddef.h>
-+#include <sys/param.h>
- 
- /* Here we provide G_GNUC_EXTENSION as an alias for __extension__,
-  * where this is valid. This allows for warningless compilation of
-@@ -86,8 +87,13 @@
+$OpenBSD: patch-glib_gmacros_h,v 1.14 2011/06/28 09:40:13 ajacoutot Exp $
+--- glib/gmacros.h.orig	Mon Jun  6 01:18:49 2011
++++ glib/gmacros.h	Mon Jun 27 15:46:33 2011
+@@ -86,8 +86,13 @@
    __attribute__((__noreturn__))
  #define G_GNUC_CONST                            \
    __attribute__((__const__))
@@ -23,19 +15,3 @@ $OpenBSD: patch-glib_gmacros_h,v 1.13 2010/09/30 07:17:19 ajacoutot Exp $
  #define G_GNUC_NO_INSTRUMENT			\
    __attribute__((__no_instrument_function__))
  #else   /* !__GNUC__ */
-@@ -194,11 +200,13 @@
- #define	TRUE	(!FALSE)
- #endif
- 
--#undef	MAX
-+#ifndef MAX
- #define MAX(a, b)  (((a) > (b)) ? (a) : (b))
-+#endif
- 
--#undef	MIN
-+#ifndef MIN
- #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
-+#endif
- 
- #undef	ABS
- #define ABS(a)	   (((a) < 0) ? -(a) : (a))
