@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/24 14:06:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/28 09:10:32 rpointel Exp $
 
 COMMENT=		configuration file parser library
 DISTNAME=		confuse-2.7
 PKGNAME=		lib${DISTNAME}
+REVISION=		0
 SHARED_LIBS=		confuse 1.0	# .0.0
 CATEGORIES=		devel
 
@@ -22,7 +23,6 @@ MODULES=		devel/gettext \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
-CONFIGURE_ARGS+=	--without-check
 
 USE_LIBTOOL=		Yes
 
@@ -31,4 +31,5 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/html/* ${PREFIX}/share/doc/libconfuse
 	${INSTALL_DATA} ${WRKSRC}/doc/tutorial-html/* \
 		${PREFIX}/share/doc/libconfuse/tutorial
+
 .include <bsd.port.mk>

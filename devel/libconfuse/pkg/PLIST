@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/01/22 18:51:04 merdely Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/06/28 09:10:32 rpointel Exp $
 %%SHARED%%
 include/confuse.h
 lib/libconfuse.a
@@ -7,6 +7,7 @@ lib/pkgconfig/
 lib/pkgconfig/libconfuse.pc
 share/doc/libconfuse/
 share/doc/libconfuse/annotated.html
+share/doc/libconfuse/classes.html
 share/doc/libconfuse/confuse_8h-source.html
 share/doc/libconfuse/confuse_8h.html
 share/doc/libconfuse/doxygen.png
@@ -16,6 +17,8 @@ share/doc/libconfuse/ftpconf_8c-example.html
 share/doc/libconfuse/functions.html
 share/doc/libconfuse/functions_vars.html
 share/doc/libconfuse/globals.html
+share/doc/libconfuse/globals_defs.html
+share/doc/libconfuse/globals_enum.html
 share/doc/libconfuse/globals_eval.html
 share/doc/libconfuse/globals_func.html
 share/doc/libconfuse/globals_type.html
