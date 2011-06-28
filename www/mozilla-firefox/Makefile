@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.182 2011/06/28 05:43:57 landry Exp $
+# $OpenBSD: Makefile,v 1.183 2011/06/28 11:57:39 landry Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -44,6 +44,9 @@ WANTLIB +=	event
 .if ${MACHINE_ARCH:Msparc64}
 CONFIGURE_ARGS +=	--disable-tracejit --disable-methodjit
 .endif
+
+# needed during make install
+BUILD_DEPENDS +=	archivers/unzip
 
 # ensure we depend on cairo with tee backend enabled
 LIB_DEPENDS =	graphics/cairo>=1.10.2p0
