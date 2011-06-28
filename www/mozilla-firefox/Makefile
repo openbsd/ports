@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.181 2011/06/19 21:48:46 landry Exp $
+# $OpenBSD: Makefile,v 1.182 2011/06/28 05:43:57 landry Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -6,13 +6,12 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump www/firefox-i18n after updates.
 # Don't forget to update devel/xulrunner/2.0 if patches changes.
 
-MOZILLA_VERSION =	4.0.1
-MOZILLA_BRANCH =	2.0
+MOZILLA_VERSION =	5.0
+MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	mozilla-firefox
 MOZILLA_CODENAME =	browser
-REVISION =		5
 
-SO_VERSION =	23.0
+SO_VERSION =	24.0
 NSS_SO_VERSION =	27.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -37,7 +36,7 @@ USE_GROFF =	Yes
 NO_REGRESS =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
-CONFIGURE_ARGS +=	--enable-official-branding --disable-install-strip
+CONFIGURE_ARGS +=	--enable-official-branding
 CONFIGURE_ARGS +=	--with-system-libevent=/usr/
 CONFIGURE_ARGS +=	--with-system-zlib=/usr/ --with-system-bz2=${LOCALBASE}
 WANTLIB +=	event

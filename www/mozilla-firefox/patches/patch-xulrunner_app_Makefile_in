@@ -1,8 +1,8 @@
-$OpenBSD: patch-xulrunner_app_Makefile_in,v 1.4 2011/04/09 11:05:06 landry Exp $
+$OpenBSD: patch-xulrunner_app_Makefile_in,v 1.5 2011/06/28 05:43:57 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=648726
---- xulrunner/app/Makefile.in.orig	Sat Mar 19 00:34:14 2011
-+++ xulrunner/app/Makefile.in	Sat Apr  9 10:50:43 2011
-@@ -105,6 +105,12 @@ EXTRA_DSO_LIBS += xul
+--- xulrunner/app/Makefile.in.orig	Fri May 27 18:13:00 2011
++++ xulrunner/app/Makefile.in	Tue May 31 22:18:41 2011
+@@ -87,6 +87,12 @@ EXTRA_DSO_LIBS += xul
  endif
  endif
  
@@ -13,5 +13,5 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=648726
 +endif
 +
  LIBS += \
- 	$(EXTRA_DSO_LIBS) \
- 	$(MOZ_JS_LIBS) \
+   $(EXTRA_DSO_LIBS) \
+   $(DIST)/lib/$(LIB_PREFIX)xpcomglue_s.$(LIB_SUFFIX) \

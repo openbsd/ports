@@ -1,0 +1,13 @@
+$OpenBSD: patch-ipc_chromium_src_chrome_common_ipc_channel_posix_cc,v 1.1 2011/06/28 05:43:57 landry Exp $
+--- ipc/chromium/src/chrome/common/ipc_channel_posix.cc.orig	Fri May 27 18:12:07 2011
++++ ipc/chromium/src/chrome/common/ipc_channel_posix.cc	Wed Jun  1 08:48:32 2011
+@@ -12,6 +12,9 @@
+ #include <sys/stat.h>
+ #include <sys/un.h>
+ 
++// error: variable 'iovec iov' has initializer but incomplete type
++#include <sys/uio.h>
++
+ #include <string>
+ #include <map>
+ 
