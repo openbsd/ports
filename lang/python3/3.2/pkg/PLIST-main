@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/06/27 18:44:16 rpointel Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/06/28 09:29:28 jasper Exp $
 @comment bin/2to3
 bin/2to3-3.2
 @comment bin/pydoc3
@@ -850,11 +850,11 @@ lib/python3.2/distutils/command/install_scripts.py
 lib/python3.2/distutils/command/register.py
 lib/python3.2/distutils/command/sdist.py
 lib/python3.2/distutils/command/upload.py
-lib/python3.2/distutils/command/wininst-6.0.exe
-lib/python3.2/distutils/command/wininst-7.1.exe
-lib/python3.2/distutils/command/wininst-8.0.exe
-lib/python3.2/distutils/command/wininst-9.0-${MACHINE_ARCH}.exe
-lib/python3.2/distutils/command/wininst-9.0.exe
+@comment lib/python3.2/distutils/command/wininst-6.0.exe
+@comment lib/python3.2/distutils/command/wininst-7.1.exe
+@comment lib/python3.2/distutils/command/wininst-8.0.exe
+@comment lib/python3.2/distutils/command/wininst-9.0-${MACHINE_ARCH}.exe
+@comment lib/python3.2/distutils/command/wininst-9.0.exe
 lib/python3.2/distutils/config.py
 lib/python3.2/distutils/core.py
 lib/python3.2/distutils/cygwinccompiler.py
