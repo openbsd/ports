@@ -1,0 +1,19 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/28 23:12:29 sthen Exp $
+@bin bin/jpgicc
+@bin bin/linkicc
+@bin bin/psicc
+@bin bin/tificc
+@bin bin/transicc
+include/lcms2.h
+include/lcms2_plugin.h
+lib/liblcms2.a
+lib/liblcms2.la
+lib/pkgconfig/
+lib/pkgconfig/lcms2.pc
+@man man/man1/jpgicc.1
+@man man/man1/tificc.1
+%%SHARED%%
+share/doc/lcms2/
+share/doc/lcms2/api.pdf
+share/doc/lcms2/plugin-api.pdf
+share/doc/lcms2/tutorial.pdf
