@@ -1,0 +1,29 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/28 15:49:56 sebastia Exp $
+include/Performance/
+include/Performance/GSCache.h
+include/Performance/GSIOThreadPool.h
+include/Performance/GSLinkedList.h
+include/Performance/GSSkipMutableArray.h
+include/Performance/GSThreadPool.h
+include/Performance/GSThroughput.h
+include/Performance/GSTicker.h
+@lib lib/libPerformance.so.${LIBPerformance_VERSION}
+share/doc/GNUstep/
+share/doc/GNUstep/Performance/
+share/doc/GNUstep/Performance/GSCache.gsdoc
+share/doc/GNUstep/Performance/GSCache.html
+share/doc/GNUstep/Performance/GSIOThreadPool.gsdoc
+share/doc/GNUstep/Performance/GSIOThreadPool.html
+share/doc/GNUstep/Performance/GSLinkedList.gsdoc
+share/doc/GNUstep/Performance/GSLinkedList.html
+share/doc/GNUstep/Performance/GSSkipMutableArray.gsdoc
+share/doc/GNUstep/Performance/GSSkipMutableArray.html
+share/doc/GNUstep/Performance/GSThreadPool.gsdoc
+share/doc/GNUstep/Performance/GSThreadPool.html
+share/doc/GNUstep/Performance/GSThroughput.gsdoc
+share/doc/GNUstep/Performance/GSThroughput.html
+share/doc/GNUstep/Performance/GSTicker.gsdoc
+share/doc/GNUstep/Performance/GSTicker.html
+share/doc/GNUstep/Performance/OrderedSymbolDeclarations.plist
+share/doc/GNUstep/Performance/Performance.igsdoc
+share/doc/GNUstep/Performance/dependencies

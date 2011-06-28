@@ -1,0 +1,19 @@
+# $OpenBSD: Makefile,v 1.1.1.1 2011/06/28 15:49:56 sebastia Exp $
+
+COMMENT =	GNUstep performance library
+
+VERSION =	0.3.0
+DISTNAME =	Performance-${VERSION}
+PKGNAME =	gnustep-performance-${VERSION}
+CATEGORIES =	devel
+SHARED_LIBS +=  Performance               0.0
+
+HOMEPAGE =	http://wiki.gnustep.org/index.php/Performance
+MASTER_SITES =	${MASTER_SITE_GNUSTEP:=libs/}
+
+MODULES =		x11/gnustep
+MODGNUSTEP_NEEDS_GUI = 	No
+
+MAKE_FLAGS +=	Performance_INTERFACE_VERSION=${LIBPerformance_VERSION}
+
+.include <bsd.port.mk>
