@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/06/14 13:53:30 sebastia Exp $
+# $OpenBSD: Makefile,v 1.43 2011/06/28 10:41:48 ajacoutot Exp $
 
 COMMENT=		GObject Introspection
 
@@ -6,7 +6,7 @@ GNOME_VERSION=		0.10.8
 GNOME_PROJECT=		gobject-introspection
 CATEGORIES=		devel
 
-REVISION=		6
+REVISION=		7
 
 SHARED_LIBS +=  girepository-1.0     1.0      # 1.0
 
@@ -31,7 +31,7 @@ MODGCC3_ARCHES =        sparc
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += m pcre pthread z
 
-LIB_DEPENDS=		devel/glib2 \
+LIB_DEPENDS=		devel/glib2>=2.28.8p0 \
 			devel/libffi
 BUILD_DEPENDS=		devel/bison \
 			graphics/cairo
