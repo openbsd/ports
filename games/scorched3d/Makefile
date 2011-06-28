@@ -1,4 +1,4 @@
- # $OpenBSD: Makefile,v 1.4 2011/06/25 18:43:07 jasper Exp $
+ # $OpenBSD: Makefile,v 1.5 2011/06/28 11:55:51 jasper Exp $
 
 COMMENT =		modernization of the classic DOS game Scorched Earth
 
@@ -24,6 +24,8 @@ WANTLIB +=		wx_gtk2_html wx_gtk2_qa wx_gtk2_richtext wx_gtk2_xrc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=scorched3d/}
 
+BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS =		audio/openal \
 			audio/libvorbis \
 			audio/freealut \
