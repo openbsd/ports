@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.15 2011/06/24 11:17:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2011/06/28 13:43:03 dcoppa Exp $
 
 COMMENT=	lightweight video thumbnailer for file managers
 
-DISTNAME=	ffmpegthumbnailer-2.0.2
-REVISION=	4
+DISTNAME=	ffmpegthumbnailer-2.0.6
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://ffmpegthumbnailer.googlecode.com/files/
 
-SHARED_LIBS=	ffmpegthumbnailer	4.0
+SHARED_LIBS=	ffmpegthumbnailer	4.1
 
 HOMEPAGE=	http://code.google.com/p/ffmpegthumbnailer
 
@@ -29,8 +28,10 @@ WANTLIB=	avcodec avformat avutil bz2 c gsm jpeg m mp3lame ogg \
 		swscale theoradec theoraenc vorbis vorbisenc vpx x264 \
 		z
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoconf
+AUTOCONF_VERSION=2.67
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng"
+CONFIGURE_ARGS= --disable-as-needed
 
 .include <bsd.port.mk>
