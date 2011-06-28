@@ -1,4 +1,4 @@
-$OpenBSD: patch-memory_mozalloc_mozalloc_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
+$OpenBSD: patch-memory_mozalloc_mozalloc_cpp,v 1.3 2011/06/28 22:01:18 landry Exp $
 --- memory/mozalloc/mozalloc.cpp.orig	Thu Aug  5 21:51:32 2010
 +++ memory/mozalloc/mozalloc.cpp	Thu Aug  5 21:53:09 2010
 @@ -43,6 +43,7 @@

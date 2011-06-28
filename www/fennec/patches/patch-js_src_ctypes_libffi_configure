@@ -1,4 +1,4 @@
-$OpenBSD: patch-js_src_ctypes_libffi_configure,v 1.2 2011/05/03 11:11:37 landry Exp $
+$OpenBSD: patch-js_src_ctypes_libffi_configure,v 1.3 2011/06/28 22:01:18 landry Exp $
 --- js/src/ctypes/libffi/configure.orig	Wed Aug 18 21:20:57 2010
 +++ js/src/ctypes/libffi/configure	Sat Sep  4 11:20:37 2010
 @@ -11212,7 +11212,7 @@ case "$host" in

@@ -1,0 +1,35 @@
+$OpenBSD: patch-ipc_chromium_src_base_debug_util_posix_cc,v 1.1 2011/06/28 22:01:18 landry Exp $
+--- ipc/chromium/src/base/debug_util_posix.cc.orig	Fri May 27 18:12:07 2011
++++ ipc/chromium/src/base/debug_util_posix.cc	Wed Jun  1 08:48:32 2011
+@@ -8,10 +8,12 @@
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <stdio.h>
++#include <limits.h>
+ #include <sys/stat.h>
++#include <sys/param.h>
+ #include <sys/types.h>
+ #include <unistd.h>
+-#ifndef ANDROID
++#ifdef __GLIBC__
+ #include <execinfo.h>
+ #include <sys/sysctl.h>
+ #endif
+@@ -119,7 +121,7 @@ StackTrace::StackTrace() {
+   const int kMaxCallers = 256;
+ 
+   void* callers[kMaxCallers];
+-#ifndef ANDROID
++#ifdef __GLIBC__
+   int count = backtrace(callers, kMaxCallers);
+ #else
+   int count = 0;
+@@ -138,7 +140,7 @@ StackTrace::StackTrace() {
+ 
+ void StackTrace::PrintBacktrace() {
+   fflush(stderr);
+-#ifndef ANDROID
++#ifdef __GLIBC__
+   backtrace_symbols_fd(&trace_[0], trace_.size(), STDERR_FILENO);
+ #endif
+ }

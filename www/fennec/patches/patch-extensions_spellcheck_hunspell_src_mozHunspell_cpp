@@ -1,4 +1,4 @@
-$OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.2 2011/05/03 11:11:37 landry Exp $
+$OpenBSD: patch-extensions_spellcheck_hunspell_src_mozHunspell_cpp,v 1.3 2011/06/28 22:01:18 landry Exp $
 --- extensions/spellcheck/hunspell/src/mozHunspell.cpp.orig	Tue Jul 13 21:10:13 2010
 +++ extensions/spellcheck/hunspell/src/mozHunspell.cpp	Wed Jul 21 09:54:44 2010
 @@ -63,6 +63,7 @@

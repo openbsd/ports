@@ -1,0 +1,16 @@
+$OpenBSD: patch-gfx_thebes_GLContextProviderGLX_cpp,v 1.1 2011/06/28 22:01:18 landry Exp $
+Open correct libGL for WebGL
+--- gfx/thebes/GLContextProviderGLX.cpp.orig	Wed Jun 15 23:57:26 2011
++++ gfx/thebes/GLContextProviderGLX.cpp	Wed Jun 22 14:24:23 2011
+@@ -102,7 +102,11 @@ GLXLibrary::EnsureInitialized()
+         // see e.g. bug 608526: it is intrinsically interesting to know whether we have dynamically linked to libGL.so.1
+         // because at least the NVIDIA implementation requires an executable stack, which causes mprotect calls,
+         // which trigger glibc bug http://sourceware.org/bugzilla/show_bug.cgi?id=12225
++#ifdef __OpenBSD__
++        const char *libGLfilename = "libGL.so";
++#else
+         const char *libGLfilename = "libGL.so.1";
++#endif
+         ScopedGfxFeatureReporter reporter(libGLfilename);
+         mOGLLibrary = PR_LoadLibrary(libGLfilename);
+         if (!mOGLLibrary) {

@@ -1,4 +1,4 @@
-$OpenBSD: patch-gfx_thebes_GLContext_h,v 1.2 2011/05/03 11:11:37 landry Exp $
+$OpenBSD: patch-gfx_thebes_GLContext_h,v 1.3 2011/06/28 22:01:18 landry Exp $
 Allow to build with --enable-debug
 --- gfx/thebes/GLContext.h.orig	Thu Feb  3 21:11:48 2011
 +++ gfx/thebes/GLContext.h	Mon Feb 14 20:41:03 2011

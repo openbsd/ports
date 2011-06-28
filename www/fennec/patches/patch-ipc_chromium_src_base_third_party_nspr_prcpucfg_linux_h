@@ -1,0 +1,14 @@
+$OpenBSD: patch-ipc_chromium_src_base_third_party_nspr_prcpucfg_linux_h,v 1.1 2011/06/28 22:01:18 landry Exp $
+--- ipc/chromium/src/base/third_party/nspr/prcpucfg_linux.h.orig	Fri May 27 18:12:07 2011
++++ ipc/chromium/src/base/third_party/nspr/prcpucfg_linux.h	Wed Jun  1 08:48:32 2011
+@@ -42,10 +42,6 @@
+ #define XP_UNIX
+ #endif
+ 
+-#ifndef LINUX
+-#define LINUX
+-#endif
+-
+ #define PR_AF_INET6 10  /* same as AF_INET6 */
+ 
+ #ifdef __powerpc64__

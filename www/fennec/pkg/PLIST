@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/03 11:11:37 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/06/28 22:01:18 landry Exp $
 bin/${MOZILLA_PROJECT}
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/application.ini
@@ -46,6 +46,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/contentSecurityPolicy.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/crypto-SDR.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/interfaces.manifest
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/jsconsole-clhandler.js
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/messageWakeupService.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/mobile.xpt
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/nsBadCertHandler.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/components/nsBlocklistService.js
@@ -105,6 +106,7 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/AddonUpdateChecker.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/CSPUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/CertUtils.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/CommonDialog.jsm
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/Dict.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/DownloadLastDir.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/DownloadPaths.jsm
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/DownloadUtils.jsm
@@ -163,14 +165,15 @@ lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/utils.js
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/modules/video.jsm
 @bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/mozilla-xremote-client
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/platform.ini
+@bin lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/plugin-container
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/precomplete
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/removed-files
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/res/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/res/EditorOverride.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/res/contenteditable.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/res/designmode.css
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/res/dtd/
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/res/dtd/mathml.dtd
-lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/res/dtd/xhtml11.dtd
+lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/res/dtd/htmlmathml-f.ent
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/res/entityTables/
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/res/entityTables/html40Latin1.properties
 lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/res/entityTables/html40Special.properties

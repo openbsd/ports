@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2011/06/08 18:15:29 rpointel Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/28 22:01:17 landry Exp $
 
 COMMENT =	Mozilla mobile web browser
 
-MOZILLA_VERSION =	4.0.1
-MOZILLA_BRANCH =	2.1
+MOZILLA_VERSION =	5.0
+MOZILLA_BRANCH =	mobile-${MOZILLA_VERSION}
 MOZILLA_PROJECT =	fennec
 MOZILLA_CODENAME =	mobile
-REVISION =	2
 
-SO_VERSION =	0.0
+SO_VERSION =	1.0
 NSS_SO_VERSION =	27.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
@@ -35,7 +34,7 @@ USE_GROFF =	Yes
 NO_REGRESS =	Yes
 
 CONFIGURE_STYLE =	autoconf no-autoheader
-CONFIGURE_ARGS +=	--enable-official-branding --disable-install-strip
+CONFIGURE_ARGS +=	--enable-official-branding
 CONFIGURE_ARGS +=	--with-system-libevent=/usr/
 CONFIGURE_ARGS +=	--with-system-zlib=/usr/ --with-system-bz2=${LOCALBASE}
 WANTLIB +=	event
@@ -57,6 +56,9 @@ SUBST_VARS +=	MOZILLA_VERSION NSS_SO_VERSION
 # package target uses gtar options
 BUILD_DEPENDS +=	archivers/gtar
 INSTALL_TARGET =	package
+
+# unzip used during install
+BUILD_DEPENDS +=	archivers/unzip
 
 post-configure:
 	rm -f ${WRKSRC}/services/crypto/modules/WeaveCrypto.js.{orig,beforesubst}

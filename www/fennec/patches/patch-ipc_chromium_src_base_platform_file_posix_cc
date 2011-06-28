@@ -1,0 +1,13 @@
+$OpenBSD: patch-ipc_chromium_src_base_platform_file_posix_cc,v 1.1 2011/06/28 22:01:18 landry Exp $
+--- ipc/chromium/src/base/platform_file_posix.cc.orig	Fri May 27 18:12:07 2011
++++ ipc/chromium/src/base/platform_file_posix.cc	Wed Jun  1 08:48:32 2011
+@@ -4,6 +4,9 @@
+ 
+ #include "base/platform_file.h"
+ 
++#ifdef __OpenBSD__
++#include <sys/stat.h>
++#endif
+ #include <fcntl.h>
+ #include <errno.h>
+ #ifdef ANDROID

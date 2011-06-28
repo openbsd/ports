@@ -1,0 +1,15 @@
+$OpenBSD: patch-js_src_ctypes_libffi_src_mips_ffitarget_h,v 1.1 2011/06/28 22:01:18 landry Exp $
+
+There's no sgidefs on OpenBSD, so don't bother including it.
+
+--- js/src/ctypes/libffi/src/mips/ffitarget.h.orig	Fri Apr 15 10:03:48 2011
++++ js/src/ctypes/libffi/src/mips/ffitarget.h	Fri Apr 15 10:04:04 2011
+@@ -29,7 +29,7 @@
+ 
+ #ifdef linux
+ # include <asm/sgidefs.h>
+-#else
++#elif !defined(__OpenBSD__)
+ # include <sgidefs.h>
+ #endif
+ #  ifndef _ABIN32

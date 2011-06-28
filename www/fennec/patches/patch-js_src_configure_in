@@ -1,26 +1,20 @@
-$OpenBSD: patch-js_src_configure_in,v 1.2 2011/05/03 11:11:37 landry Exp $
+$OpenBSD: patch-js_src_configure_in,v 1.3 2011/06/28 22:01:18 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=648721
+https://bugzilla.mozilla.org/show_bug.cgi?id=650742
 https://bugzilla.mozilla.org/show_bug.cgi?id=589754
---- js/src/configure.in.orig	Thu Mar  3 23:11:32 2011
-+++ js/src/configure.in	Sun Mar 13 11:35:50 2011
-@@ -1211,7 +1211,7 @@ WIN_TOP_SRC=
- MOZ_USER_DIR=".mozilla"
- 
- MOZ_JS_LIBS='-L$(libdir) -lmozjs'
--MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(prefix)/lib'
-+MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(PREFIX)/lib -L$(LIBXUL_DIST)/bin'
- 
- MOZ_COMPONENT_NSPR_LIBS='-L$(LIBXUL_DIST)/bin $(NSPR_LIBS)'
- 
-@@ -2582,7 +2582,7 @@ ia64*-hpux*)
+--- js/src/configure.in.orig	Fri May 27 18:12:08 2011
++++ js/src/configure.in	Tue May 31 22:18:21 2011
+@@ -2517,7 +2517,8 @@ ia64*-hpux*)
  	;;
  
  *-openbsd*)
 -    DLL_SUFFIX=".so.1.0"
-+    DLL_SUFFIX=".so.${SO_VERSION}"
++    DLL_SUFFIX='.so.$(if $(SO_VERSION),$(SO_VERSION),1.0)'
++    MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(prefix)/lib -Wl,-rpath-link,$(if $(X11BASE),$(X11BASE),/usr/X11R6)/lib'
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -2956,7 +2956,7 @@ arm*-*)
+@@ -2869,7 +2870,7 @@ arm*-*)
      AC_DEFINE(JS_CPU_ARM)
      AC_DEFINE(JS_NUNBOX32)
      ;;
@@ -29,7 +23,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=589754
      ENABLE_TRACEJIT=1
      NANOJIT_ARCH=Sparc
      AC_DEFINE(JS_CPU_SPARC)
-@@ -3025,6 +3025,10 @@ arm*-*)
+@@ -2938,6 +2939,10 @@ arm*-*)
  sparc-*)
      AC_DEFINE(AVMPLUS_SPARC)
      ;;
@@ -40,7 +34,7 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=589754
  esac
  
  case "$target" in
-@@ -3039,6 +3043,9 @@ case "$target" in
+@@ -2952,6 +2957,9 @@ case "$target" in
      AC_DEFINE(AVMPLUS_UNIX)
      ;;
  *-freebsd*|*-kfreebsd*)
