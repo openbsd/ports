@@ -1,0 +1,4 @@
+The WebServices library contains a collection of classes to be used for
+creating client and server 'web service' applications. It is also useful
+for general XML work as the API that is particularly simple and
+efficient.
