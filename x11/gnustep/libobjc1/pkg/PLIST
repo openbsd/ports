@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/28 16:06:20 sebastia Exp $
+include/gnustep/
+include/gnustep/objc/
+include/gnustep/objc/NXConstStr.h
+include/gnustep/objc/Object.h
+include/gnustep/objc/Protocol.h
+include/gnustep/objc/encoding.h
+include/gnustep/objc/hash.h
+include/gnustep/objc/objc-api.h
+include/gnustep/objc/objc-decls.h
+include/gnustep/objc/objc-list.h
+include/gnustep/objc/objc.h
+include/gnustep/objc/sarray.h
+include/gnustep/objc/thr.h
+include/gnustep/objc/typedstream.h
+@lib lib/libgobjc.so.${LIBgobjc_VERSION}
