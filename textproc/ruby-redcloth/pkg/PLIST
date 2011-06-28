@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/06/27 11:21:57 jasper Exp $
-${GEM_BIN}/redcloth
+@comment $OpenBSD: PLIST,v 1.7 2011/06/28 11:33:33 robert Exp $
+${GEM_BIN}/redcloth${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.gemtest
