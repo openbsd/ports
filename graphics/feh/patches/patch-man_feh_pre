@@ -1,7 +1,22 @@
-$OpenBSD: patch-man_feh_pre,v 1.3 2011/06/01 11:55:22 dcoppa Exp $
---- man/feh.pre.orig	Wed Jun  1 13:45:59 2011
-+++ man/feh.pre	Wed Jun  1 13:46:43 2011
-@@ -670,7 +670,7 @@ can also be used as a background setter.  It will stor
+$OpenBSD: patch-man_feh_pre,v 1.4 2011/06/28 07:40:08 dcoppa Exp $
+--- man/feh.pre.orig	Thu May 19 22:36:13 2011
++++ man/feh.pre	Tue Jun 28 09:33:26 2011
+@@ -239,6 +239,14 @@ below each thumbnail. Enables
+ .It Cm -F , --fullscreen
+ .
+ Make the window fullscreen.
++Note that in this mode, large images will always be scaled down to fit the
++screen,
++.Cm --zoom Ar zoom
++only affects smaller images and never scales larger than necessary to fit the
++screen size. The only exception is a
++.Ar zoom
++of 100, in which case images will always be shown at 100% zoom, no matter
++their dimensions.
+ .
+ .It Cm -g , --geometry Ar width No x Ar height
+ .
+@@ -670,7 +678,7 @@ can also be used as a background setter.  It will stor
  necessary to set the background in
  .Pa ~/.fehbg ,
  so to have your background restored everytime you start X, you can add
