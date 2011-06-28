@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2011/05/11 07:45:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2011/06/28 11:52:38 ajacoutot Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS printer spooler daemon:/var/empty:/sbin/nologin
@@ -987,8 +987,10 @@ share/doc/cups/images/cups-raster-chain.png
 share/doc/cups/images/cups.png
 share/doc/cups/images/generic.png
 share/doc/cups/images/left.gif
+share/doc/cups/images/raster-organization.png
 share/doc/cups/images/raster.png
 share/doc/cups/images/right.gif
+share/doc/cups/images/sample-image.png
 share/doc/cups/images/sel.gif
 share/doc/cups/images/smiley.jpg
 share/doc/cups/images/unsel.gif

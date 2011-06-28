@@ -1,0 +1,15 @@
+$OpenBSD: patch-filter_raster_c,v 1.1 2011/06/28 11:52:38 ajacoutot Exp $
+
+raster.c:154: error: 'intptr_t' undeclared (first use in this function)
+
+--- filter/raster.c.orig	Tue Jun 28 13:40:29 2011
++++ filter/raster.c	Tue Jun 28 13:40:51 2011
+@@ -44,6 +44,8 @@
+  * Include necessary headers...
+  */
+ 
++#include <stdint.h>
++
+ #include "image-private.h"
+ #if defined(WIN32) || defined(__EMX__)
+ #  include <io.h>
