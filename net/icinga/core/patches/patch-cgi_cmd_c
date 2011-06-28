@@ -1,0 +1,20 @@
+$OpenBSD: patch-cgi_cmd_c,v 1.1 2011/06/28 06:34:33 sthen Exp $
+
+Fix from upstream ed01c63
+
+--- cgi/cmd.c.orig	Wed Jun  8 08:58:48 2011
++++ cgi/cmd.c	Mon Jun 27 23:47:45 2011
+@@ -2175,11 +2175,11 @@ void commit_command_data(int cmd){
+ 		   cmd==CMD_ENABLE_HOSTGROUP_SVC_CHECKS		|| cmd==CMD_DISABLE_HOSTGROUP_SVC_CHECKS || \
+ 		   cmd==CMD_SCHEDULE_HOSTGROUP_HOST_DOWNTIME	|| cmd==CMD_SCHEDULE_HOSTGROUP_SVC_DOWNTIME ){
+ 			temp_hostgroup=find_hostgroup(hostgroup_name);
+-			if(is_authorized_for_hostgroup(temp_hostgroup,&current_authdata)==TRUE)
++			if(is_authorized_for_hostgroup_commands(temp_hostgroup,&current_authdata)==TRUE)
+ 				is_authorized[x]=TRUE;
+ 		} else {
+ 			temp_servicegroup=find_servicegroup(servicegroup_name);
+-			if(is_authorized_for_servicegroup(temp_servicegroup,&current_authdata)==TRUE)
++			if(is_authorized_for_servicegroup_commands(temp_servicegroup,&current_authdata)==TRUE)
+ 				is_authorized[x]=TRUE;
+ 		}
+ 
