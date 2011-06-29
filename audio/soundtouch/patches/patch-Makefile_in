@@ -1,0 +1,16 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2011/06/29 11:30:31 jasper Exp $
+--- Makefile.in.orig	Wed Jun 29 13:21:02 2011
++++ Makefile.in	Wed Jun 29 13:21:25 2011
+@@ -188,10 +188,11 @@ pkgdocdir = $(prefix)/doc/@PACKAGE@
+ SUBDIRS = include source
+ 
+ # list files that are documentation to be packaged in a release tarball and installed
+-pkgdoc_DATA = COPYING.TXT README.html
++pkgdoc_DATA = README.html
+ 
+ # extra data files that are to be pacakged in a release tarball and installed into the data directory
+ #pkgdata_DATA=
++pkgdocdir=$(datadir)/doc/soundtouch
+ 
+ # sets up for soundtouch.m4 to be installed
+ m4datadir = $(datadir)/aclocal

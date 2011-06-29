@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_example_bpm_Makefile_in,v 1.1 2011/06/29 11:30:31 jasper Exp $
+--- source/example/bpm/Makefile.in.orig	Wed Jun 29 13:22:49 2011
++++ source/example/bpm/Makefile.in	Wed Jun 29 13:22:54 2011
+@@ -186,7 +186,7 @@ lib_LTLIBRARIES = libBPM.la
+ libBPM_la_SOURCES = BPMDetect.cpp PeakFinder.cpp
+ 
+ # other compiler flags to add
+-AM_CXXFLAGS = -O3 -I../../../include
++AM_CXXFLAGS = -I../../../include
+ all: all-am
+ 
+ .SUFFIXES:
