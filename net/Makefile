@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.701 2011/06/22 08:29:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.702 2011/06/29 10:41:15 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -423,6 +423,7 @@
      SUBDIR += py-dns
      SUBDIR += py-dnspython
      SUBDIR += py-dpkt
+     SUBDIR += py-enet
      SUBDIR += py-flowd
      SUBDIR += py-flowtools
      SUBDIR += py-ftpdlib
