@@ -1,10 +1,6 @@
---- frontend/Makefile.am.orig	Tue Dec 16 01:56:00 2008
-+++ frontend/Makefile.am	Wed Jun 29 12:06:48 2011
-@@ -1,11 +1,11 @@
- bin_PROGRAMS = faac
--man_MANS = ../docs/faac.1
-+#man_MANS = ../docs/faac.1
- 
+--- frontend/Makefile.am.orig	Mon Dec 15 19:56:00 2008
++++ frontend/Makefile.am	Wed Jun 29 15:33:51 2011
+@@ -4,8 +4,8 @@ man_MANS = ../docs/faac.1
  faac_SOURCES = main.c input.c
  
  if WITH_MP4V2
