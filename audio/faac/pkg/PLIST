@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/09/15 22:00:38 jakemsr Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/06/29 10:57:17 jasper Exp $
 %%SHARED%%
 @bin bin/faac
 include/faac.h
 include/faaccfg.h
 lib/libfaac.a
 lib/libfaac.la
+@man man/man1/faac.1
