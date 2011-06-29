@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/06/29 12:06:58 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -27,7 +27,7 @@ LIB_DEPENDS =		math/fftw3,float
 
 USE_LIBTOOL =		Yes
 
-AUTOMAKE_VERSION =	1.8
+AUTOMAKE_VERSION =	1.9
 AUTOCONF_VERSION =	2.59
 CONFIGURE_STYLE =	autoconf automake
 CONFIGURE_ARGS +=	${CONFIGURE_SHARED}
