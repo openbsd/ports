@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_netgame_cc,v 1.1 2011/06/29 09:06:32 jasper Exp $
+
+Adjust to libenet > 1.3 API.
+
+--- src/netgame.cc.orig	Tue Jun 28 19:36:09 2011
++++ src/netgame.cc	Tue Jun 28 19:41:09 2011
+@@ -155,7 +155,7 @@ void netgame::Start ()
+     network_address.host = ENET_HOST_ANY;
+     network_address.port = 12345;
+ 
+-    network_host = enet_host_create (&network_address, 1, 0, 0);
++    network_host = enet_host_create (&network_address, 1, 0, 0, 0);
+     if (network_host == NULL) {
+         fprintf (stderr, 
+                  "SV: An error occurred while trying to create an ENet server host.\n");
+@@ -240,6 +240,7 @@ void netgame::Join (std::string hostname, int port)
+     ENetHost *m_network_host;
+     m_network_host = enet_host_create (NULL,
+                                        1 /* only allow 1 outgoing connection */,
++                                       1 /* only allow 1 outgoing connection */,
+                                        57600 / 8 /* 56K modem with 56 Kbps downstream bandwidth */,
+                                        14400 / 8 /* 56K modem with 14 Kbps upstream bandwidth */);
+ 
+@@ -260,7 +261,7 @@ void netgame::Join (std::string hostname, int port)
+ 
+     /* Initiate the connection, allocating the two channels 0 and 1. */
+     int numchannels = 2;
+-    m_server = enet_host_connect (m_network_host, &sv_address, numchannels);
++    m_server = enet_host_connect (m_network_host, &sv_address, numchannels, 57600);
+     
+     if (m_server == NULL) {
+         fprintf (stderr, 
