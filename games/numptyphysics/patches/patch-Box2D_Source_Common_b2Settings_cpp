@@ -1,4 +1,4 @@
-$OpenBSD: patch-Box2D_Source_Common_b2Settings_cpp,v 1.2 2011/04/08 21:13:59 dcoppa Exp $
+$OpenBSD: patch-Box2D_Source_Common_b2Settings_cpp,v 1.3 2011/06/29 07:42:02 dcoppa Exp $
 
 Fix LP64 architectures (i.e. sparc64)
 
@@ -9,9 +9,9 @@ Fix LP64 architectures (i.e. sparc64)
  #include <cstdlib>
  
 +#if defined(__LP64__)
-+#define PADDING 8
++#define ALIGNBYTES 8
 +#else
-+#define PADDING 4
++#define ALIGNBYTES 4
 +#endif
 +
  b2Version b2_version = {2, 0, 1};
@@ -22,12 +22,12 @@ Fix LP64 architectures (i.e. sparc64)
  void* b2Alloc(int32 size)
  {
 -	size += 4;
-+	size += PADDING;
++	size += ALIGNBYTES;
  	b2_byteCount += size;
  	char* bytes = (char*)malloc(size);
  	*(int32*)bytes = size;
 -	return bytes + 4;
-+	return bytes + PADDING;
++	return bytes + ALIGNBYTES;
  }
  
  void b2Free(void* mem)
@@ -36,7 +36,7 @@ Fix LP64 architectures (i.e. sparc64)
  
  	char* bytes = (char*)mem;
 -	bytes -= 4;
-+	bytes -= PADDING;
++	bytes -= ALIGNBYTES;
  	int32 size = *(int32*)bytes;
  	b2Assert(b2_byteCount >= size);
  	b2_byteCount -= size;
