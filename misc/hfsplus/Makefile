@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/06/29 12:20:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/06/29 12:25:31 jasper Exp $
 
 COMMENT=	hfsplus filesystem access tool
 
@@ -25,6 +25,7 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
 AUTOCONF_VERSION=	2.59
+AUTOMAKE_VERSION=	1.9
 BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS}
 # needs the AM_PROG_LIBTOOL macro                                           
 BUILD_DEPENDS +=	devel/libtool
@@ -40,6 +41,7 @@ WRKDIST=		${WRKDIR}/hfsplus-${VERSION}
 DOC=bugs.html hfsp.html libhfsp.html
 
 pre-configure:
+	@cd ${WRKDIST} && ln -s ${LOCALBASE}/share/libtool/config/ltmain.sh
 	@cd ${WRKDIST} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		${MAKE_PROGRAM} -f Makefile.cvs all
