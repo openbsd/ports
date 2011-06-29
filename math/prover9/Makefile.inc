@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2011/03/07 22:26:24 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2011/06/29 18:11:25 jasper Exp $
 
 CATEGORIES ?=	math
 
-HOMEPAGE ?=	http://www.cs.unm.edu/~mccune/prover9/
+HOMEPAGE ?=	http://www.cs.unm.edu/%7Emccune/prover9/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM= 	Yes
