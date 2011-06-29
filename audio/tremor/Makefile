@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/04/02 16:56:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2011/06/29 11:41:34 jasper Exp $
 
 COMMENT=	integer-only, fully Ogg Vorbis compliant decoder library
 
@@ -16,9 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 
 MASTER_SITES=	http://distfiles.bsdfrog.org/                       
 
-BUILD_DEPENDS=	devel/autoconf/${AUTOCONF_VERSION} \
-		devel/automake/${AUTOMAKE_VERSION} \
-		devel/metaauto
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 
 AUTOCONF_VERSION=2.61
 AUTOMAKE_VERSION=1.9
