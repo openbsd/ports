@@ -1,0 +1,22 @@
+$OpenBSD: patch-libsoup_soup-message-io_c,v 1.1 2011/06/29 19:21:46 jasper Exp $
+
+From d0388e6efac759ae13a7812ae1114c056fafe1e8 Mon Sep 17 00:00:00 2001
+From: Jens Georg <mail@jensge.org>
+Date: Sat, 25 Jun 2011 10:54:44 +0000
+Subject: soup-message-io.c: Fix integer overflow on 32bit
+
+Fixes a bug serving large files, eg, in Rygel.
+
+https://bugzilla.gnome.org/show_bug.cgi?id=638468
+
+--- libsoup/soup-message-io.c.orig	Wed Jun 29 21:16:33 2011
++++ libsoup/soup-message-io.c	Wed Jun 29 21:16:49 2011
+@@ -64,7 +64,7 @@ typedef struct {
+ 	GString              *write_buf;
+ 	SoupMessageBody      *write_body;
+ 	SoupBuffer           *write_chunk;
+-	gsize                 write_body_offset;
++	goffset               write_body_offset;
+ 	goffset               write_length;
+ 	goffset               written;
+ 

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.59 2011/05/23 21:34:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2011/06/29 19:21:46 jasper Exp $
 
 COMMENT-main =		SOAP implementation in C
 COMMENT-gnome =		GNOME specific libsoup parts
 
 GNOME_PROJECT =		libsoup
 GNOME_VERSION =		2.34.2
+
+REVISION-main =		0
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gnome =		${GNOME_PROJECT}-gnome-${GNOME_VERSION}
