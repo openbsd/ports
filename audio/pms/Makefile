@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/06/29 18:22:46 naddy Exp $
 
 COMMENT=		curses based frontend for mpd
 
@@ -26,5 +26,9 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 USE_GROFF =		Yes
+
+# fix up timestamp to keep autotools cascade from triggering
+post-patch:
+	@touch -r ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
