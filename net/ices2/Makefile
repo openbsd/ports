@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/01/16 19:53:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2011/06/29 12:00:45 jasper Exp $
 
 COMMENT=	icecast source for streaming Ogg Vorbis
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://downloads.xiph.org/releases/ices/
 
 AUTOCONF_VERSION=2.59
-AUTOMAKE_VERSION=1.8
+AUTOMAKE_VERSION=1.9
 CONFIGURE_STYLE=autoconf automake
 CONFIGURE_ARGS=	--program-suffix=2 --disable-sun-audio
 
