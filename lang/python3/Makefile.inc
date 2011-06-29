@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2011/06/27 18:44:13 rpointel Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2011/06/29 11:58:31 rpointel Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -57,9 +57,10 @@ LIB_DEPENDS=
 LIB_DEPENDS-main =	archivers/bzip2
 RUN_DEPENDS-main =
 WANTLIB-main =		ssl panelw m crypto c util z readline pthread \
-			ncursesw stdc++ expat bz2
+			ncursesw stdc++ expat bz2 ffi
 #.if ${VERSION} == "2.5" || ${VERSION} == "2.6" || ${VERSION} == "2.7"
-LIB_DEPENDS-main +=	databases/sqlite3
+LIB_DEPENDS-main +=	databases/sqlite3 \
+			devel/libffi
 WANTLIB-main +=		sqlite3
 #.endif
 
@@ -104,7 +105,8 @@ CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 # --srcdir is needed for systrace to work correctly
 CONFIGURE_ARGS+=	--with-fpectl --with-threads --srcdir=${WRKSRC}
-CONFIGURE_ARGS+=	--enable-ipv6
+CONFIGURE_ARGS+=	--enable-ipv6 --with-cxx_main 
+CONFIGURE_ARGS+=	--with-system-ffi --with-system-expat
 
 # THREAD_STACK_SIZE value might be changed by particular python release
 THREAD_STACK_SIZE?=0x20000
@@ -123,6 +125,7 @@ ALL_TARGET?=	everything ./Lib/plat-openbsd4
 
 post-extract:
 	rm -r ${WRKDIST}/Modules/expat
+	rm -r ${WRKDIST}/Modules/_ctypes/libffi
 
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} Makefile
