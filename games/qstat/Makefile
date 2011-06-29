@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2008/01/08 15:33:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/29 19:25:34 jasper Exp $
 
 COMMENT=	displays the status of multi-player Internet Game servers
 
 DISTNAME=	qstat-2.11
+REVISION=	0
 CATEGORIES=	games
-
-HOMEPAGE=	http://www.qstat.org/
 
 # Artistic
 PERMIT_PACKAGE_CDROM=	Yes
