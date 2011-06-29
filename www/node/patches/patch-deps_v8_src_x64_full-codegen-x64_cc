@@ -1,6 +1,6 @@
-$OpenBSD: patch-deps_v8_src_x64_full-codegen-x64_cc,v 1.1 2011/03/30 19:54:29 jasper Exp $
---- deps/v8/src/x64/full-codegen-x64.cc.orig	Sat Mar 26 09:48:02 2011
-+++ deps/v8/src/x64/full-codegen-x64.cc	Wed Mar 30 21:21:39 2011
+$OpenBSD: patch-deps_v8_src_x64_full-codegen-x64_cc,v 1.2 2011/06/29 18:44:07 jasper Exp $
+--- deps/v8/src/x64/full-codegen-x64.cc.orig	Wed Jun 29 13:24:02 2011
++++ deps/v8/src/x64/full-codegen-x64.cc	Wed Jun 29 20:25:09 2011
 @@ -991,7 +991,7 @@ void FullCodeGenerator::VisitForInStatement(ForInState
    __ push(rcx);  // Enumerable.
    __ push(rbx);  // Current entry.
@@ -10,7 +10,7 @@ $OpenBSD: patch-deps_v8_src_x64_full-codegen-x64_cc,v 1.1 2011/03/30 19:54:29 ja
    __ j(equal, loop_statement.continue_target());
    __ movq(rbx, rax);
  
-@@ -2498,15 +2498,15 @@ void FullCodeGenerator::EmitIsConstructCall(ZoneList<E
+@@ -2502,15 +2502,15 @@ void FullCodeGenerator::EmitIsConstructCall(ZoneList<E
  
    // Skip the arguments adaptor frame if it exists.
    Label check_frame_marker;
@@ -30,7 +30,7 @@ $OpenBSD: patch-deps_v8_src_x64_full-codegen-x64_cc,v 1.1 2011/03/30 19:54:29 ja
    PrepareForBailoutBeforeSplit(TOS_REG, true, if_true, if_false);
    Split(equal, if_true, if_false, fall_through);
  
-@@ -2560,8 +2560,8 @@ void FullCodeGenerator::EmitArgumentsLength(ZoneList<E
+@@ -2564,8 +2564,8 @@ void FullCodeGenerator::EmitArgumentsLength(ZoneList<E
  
    // Check if the calling frame is an arguments adaptor frame.
    __ movq(rbx, Operand(rbp, StandardFrameConstants::kCallerFPOffset));
