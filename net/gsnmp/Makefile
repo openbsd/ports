@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/06/29 17:23:32 naddy Exp $
 
 COMMENT=		SNMP library based on glib2 and gnet
 
 DISTNAME=		gsnmp-0.2.0
+REVISION=		0
 SHARED_LIBS +=  gsnmp           0.0              # .0.0
 CATEGORIES=		net
 
