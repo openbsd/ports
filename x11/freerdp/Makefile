@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 16:46:18 giovanni Exp $
+# $OpenBSD: Makefile,v 1.6 2011/06/29 12:45:02 sebastia Exp $
 
 COMMENT =		open source client for Windows Terminal Server
 DISTNAME =		freerdp-0.8.2
@@ -20,7 +20,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MODULES =		converters/libiconv
+MODULES =		converters/libiconv gcc3
+MODGCC3_ARCHES =	sparc
 
 LIB_DEPENDS =		print/cups
 WANTLIB +=		X11 Xau Xcursor Xdmcp Xfixes Xrender asn1 c crypto
