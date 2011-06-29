@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2011/06/24 07:01:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.113 2011/06/29 08:28:47 rpointel Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -10,6 +10,7 @@
      SUBDIR += classpath
      SUBDIR += clisp
      SUBDIR += clojure
+     SUBDIR += cython
      SUBDIR += eagle
      SUBDIR += ecl
      SUBDIR += eltclsh
