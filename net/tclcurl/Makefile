@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/01/05 19:30:26 stu Exp $
+# $OpenBSD: Makefile,v 1.20 2011/06/30 07:23:29 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	Tcl bindings for Curl
 DISTNAME =	TclCurl-7.19.6
 SHARED_LIBS =	TclCurl7196 0.0
 CATEGORIES =	net
-HOMEPAGE =	http://personal.iddeo.es/andresgarci/tclcurl/english/
+REVISION =	0
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
 
 # BSD
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	crypto idn ssl z curl>=2.2
 
-MASTER_SITES =	${HOMEPAGE:H:H:=/download/tarball/}
+MASTER_SITES =	http://distfiles.nl/
 MODULES =	lang/tcl
 LIB_DEPENDS =	net/curl
 BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS}
