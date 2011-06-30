@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.190 2011/06/27 23:29:20 edd Exp $
+# $OpenBSD: Makefile,v 1.191 2011/06/30 15:31:15 edd Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	alpha amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -96,7 +96,7 @@ CONFIGURE_ARGS += --disable-alsa \
 		--disable-sunaudio \
 		--disable-vidix \
 		--disable-select \
-		--disable-libcdio \
+		--disable-libcdio
 # seems stable dvdnav does not work with a new mplayer.
 # if they make a release in the future, maybe we can pull that in,
 # but for now we have to use the internal one.
