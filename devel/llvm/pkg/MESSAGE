@@ -1,5 +1,5 @@
 For more information about using scan-build for the static
-analyser, look at http://clang.llvm.org/StaticAnalysisUsage.html
+analyser, look at http://clang-analyzer.llvm.org/scan-build.html
 
 For instance, the scanner on the kernel build can be launched with:
 
