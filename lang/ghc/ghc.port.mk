@@ -1,10 +1,10 @@
-# $OpenBSD: ghc.port.mk,v 1.22 2011/04/23 20:16:38 kili Exp $
+# $OpenBSD: ghc.port.mk,v 1.23 2011/06/30 21:26:15 kili Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
 ONLY_FOR_ARCHS =	i386 amd64
 
-MODGHC_VER =		7.0.3
+MODGHC_VER =		7.0.4
 SUBST_VARS +=		MODGHC_VER
 
 MODGHC_BIN =		${LOCALBASE}/bin/ghc

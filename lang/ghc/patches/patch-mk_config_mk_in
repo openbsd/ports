@@ -1,20 +1,20 @@
-$OpenBSD: patch-mk_config_mk_in,v 1.6 2011/04/11 14:30:33 kili Exp $
+$OpenBSD: patch-mk_config_mk_in,v 1.7 2011/06/30 21:26:15 kili Exp $
 
 Don't build shared libs for now.
 
 Remove now unused LLVM configuration setting.
 
---- mk/config.mk.in.orig	Sat Mar 26 19:10:06 2011
-+++ mk/config.mk.in	Tue Mar 29 19:26:21 2011
+--- mk/config.mk.in.orig	Mon Jun 13 19:10:05 2011
++++ mk/config.mk.in	Wed Jun 15 21:50:25 2011
 @@ -107,7 +107,6 @@ GhcProfiled=NO
- PlatformSupportsSharedLibs = $(if $(filter $(TARGETPLATFORM),\
+ SharedLibsPlatformList = \
  	i386-unknown-linux x86_64-unknown-linux \
  	i386-unknown-freebsd x86_64-unknown-freebsd \
 -	i386-unknown-openbsd x86_64-unknown-openbsd \
  	i386-unknown-mingw32 \
  	i386-unknown-solaris2 \
- 	i386-apple-darwin powerpc-apple-darwin),YES,NO)
-@@ -145,9 +144,6 @@ OsSupportsNCG=$(strip $(patsubst $(HostOS_CPP), YES, $
+ 	i386-apple-darwin powerpc-apple-darwin
+@@ -152,9 +151,6 @@ OsSupportsNCG=$(strip $(patsubst $(HostOS_CPP), YES, $
  GhcWithNativeCodeGen=$(strip\
      $(if $(filter YESYESNO,\
  		  $(OsSupportsNCG)$(ArchSupportsNCG)$(GhcUnregisterised)),YES,NO))

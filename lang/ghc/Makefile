@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2011/04/25 22:06:43 kili Exp $
+# $OpenBSD: Makefile,v 1.56 2011/06/30 21:26:15 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
 
 DISTNAME =		ghc-${MODGHC_VER}
 PKGNAME-main =		ghc-${MODGHC_VER}
-REVISION-main =		0
 PKGNAME-doc =		ghc-doc-${MODGHC_VER}
-REVISION-doc =		0
 CATEGORIES =		lang devel
 HOMEPAGE =		http://www.haskell.org/ghc/
 
