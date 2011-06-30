@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.240 2011/06/27 10:12:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.241 2011/06/30 21:01:19 kili Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -39,6 +39,7 @@
      SUBDIR += dcled
      SUBDIR += ddrescue
      SUBDIR += dellflash
+     SUBDIR += detox
      SUBDIR += diskrescue
      SUBDIR += dmassage
      SUBDIR += dmidecode
