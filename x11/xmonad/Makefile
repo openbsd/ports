@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.27 2011/04/23 14:32:51 kili Exp $
+# $OpenBSD: Makefile,v 1.28 2011/06/30 21:41:06 kili Exp $
 
 COMMENT-main =		tiling window manager
 COMMENT-lib =		libraries for runtime configuration
 
 DISTNAME =		xmonad-0.9.2
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		1
+REVISION-main =		2
 PKGNAME-lib =		${DISTNAME:S,-,-lib-,}
-REVISION-lib =		1
+REVISION-lib =		2
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 
@@ -25,11 +25,7 @@ WANTLIB-lib =
 MODULES =		lang/ghc converters/libiconv
 # No documentation for now (haddock thinks that module `xmonad-0.9.2:Main'
 # is defined in multiple files).
-MODGHC_BUILD =		cabal hackage register
-
-.if defined (SUBPACKAGE) && ${SUBPACKAGE:M-main}
-MODGHC_BUILD +=		nort
-.endif
+MODGHC_BUILD =		cabal hackage register nort
 
 BUILD_DEPENDS =		${RUN_DEPENDS-lib}
 RUN_DEPENDS-lib =	devel/hs-mtl \
@@ -37,6 +33,14 @@ RUN_DEPENDS-lib =	devel/hs-mtl \
 			x11/hs-X11>=1.5.0.0
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/gmp
+
+# Instead of adding `nort' to MODGHC_BUILD for -main, explicitely set
+# MODGHC_SETUP_CONF_ARGS and add lang/ghc to RUN_DEPENDS-lib.
+# Otherwise, we may end up in xmonad configured with `nort', which
+# causes xmonad-lib to be installed in the wrong place.
+MODGHC_SETUP_CONF_ARGS +=	--docdir=\$$datadir/doc/hs-\$$pkgid
+MODGHC_SETUP_CONF_ARGS +=	--libsubdir=ghc/\$$pkgid
+RUN_DEPENDS-lib +=		lang/ghc=${MODGHC_VER}
 
 USE_GROFF =		Yes
 
