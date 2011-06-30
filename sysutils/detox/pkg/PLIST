@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/30 21:00:29 kili Exp $
+@bin bin/detox
+@bin bin/inline-detox
+@man man/man1/detox.1
+@man man/man5/detox.tbl.5
+@man man/man5/detoxrc.5
+share/detox/
+share/detox/iso8859_1.tbl
+share/detox/unicode.tbl
+share/examples/detox/
+share/examples/detox/detoxrc
+@sample ${SYSCONFDIR}/detoxrc
