@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/29 11:30:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/06/30 08:23:30 jasper Exp $
 
 COMMENT=	tempo/pitch audio processing library
 
@@ -20,20 +20,27 @@ MASTER_SITES=	${HOMEPAGE}
 
 WANTLIB=	c m stdc++
 
-BUILD_DEPENDS=	devel/libtool
+BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS} \
+		devel/libtool
 
 USE_LIBTOOL=	Yes
+
+AUTOCONF_VERSION=2.59
+AUTOMAKE_VERSION=1.9
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
-MAKE_FLAGS=	CXXFLAGS="${CXXFLAGS}"
+MAKE_FLAGS=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		CXXFLAGS="${CXXFLAGS}"
 
-# Cleanup the symlink mess in config/
-post-extract:
-.for f in install-sh config.sub config.guess depcomp
-	cd ${WRKSRC}/config/ && rm $f && \
-		ln -s ${LOCALBASE}/share/libtool/config/$f
-.endfor
+pre-configure:
+	cd ${WRKSRC} && \
+		touch NEWS README AUTHORS ChangeLog && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
+		autoreconf -i
 
 .include <bsd.port.mk>
