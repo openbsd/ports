@@ -1,0 +1,110 @@
+$OpenBSD: patch-CMakeLists_txt,v 1.1.1.1 2011/06/30 12:07:02 jasper Exp $
+
+Sync with upstream 0b10c9ea6ef5d85d862edd044d96561c4fd16e9b
+
+--- CMakeLists.txt.orig	Wed Jun 29 20:04:37 2011
++++ CMakeLists.txt	Wed Jun 29 20:04:47 2011
+@@ -24,36 +24,6 @@ SET(LIBGIT2_VERSION_STRING "${LIBGIT2_VERSION_MAJOR}.$
+ # Find required dependencies
+ INCLUDE_DIRECTORIES(deps/zlib src include)
+ 
+-# Try finding openssl
+-FIND_PACKAGE(OpenSSL)
+-IF (OPENSSL_CRYPTO_LIBRARIES)
+-    SET(SHA1_TYPE "openssl" CACHE STRING "Which SHA1 implementation to use: builtin, ppc, openssl")
+-ELSEIF ()
+-    SET(SHA1_TYPE "builtin" CACHE STRING "Which SHA1 implementation to use: builtin, ppc")
+-ENDIF ()
+-
+-INCLUDE(FindPkgConfig)
+-
+-# Show SQLite3 settings in GUI (if they won't be found out)
+-SET(SQLITE3_INCLUDE_DIRS "" CACHE PATH "SQLite include directory")
+-SET(SQLITE3_LIBRARIES "" CACHE FILEPATH "SQLite library")
+-
+-# Are SQLite3 variables already set up? (poor Windows/no pkg-config/no sqlite3.pc)
+-IF (SQLITE3_INCLUDE_DIRS AND SQLITE3_LIBRARIES)
+-	SET(SQLITE3_FOUND 1)
+-ENDIF ()
+-
+-# Try to find SQLite3 via pkg-config
+-IF (PKG_CONFIG_FOUND AND NOT SQLITE3_FOUND)
+-	pkg_check_modules(SQLITE3 sqlite3)
+-ENDIF ()
+-
+-# Compile SQLite backend if SQLite3 is available
+-IF (SQLITE3_FOUND)
+-	ADD_DEFINITIONS(-DGIT2_SQLITE_BACKEND)
+-	INCLUDE_DIRECTORIES(${SQLITE3_INCLUDE_DIRS})
+-ENDIF ()
+-
+ # Installation paths
+ SET(INSTALL_BIN bin CACHE PATH "Where to install binaries to.")
+ SET(INSTALL_LIB lib CACHE PATH "Where to install libraries to.")
+@@ -64,9 +34,21 @@ OPTION (BUILD_SHARED_LIBS "Build Shared Library (OFF f
+ OPTION (BUILD_TESTS "Build Tests" ON)
+ OPTION (THREADSAFE "Build libgit2 as threadsafe" OFF)
+ 
+-# Build Release by default
++# Platform specific compilation flags
++IF (MSVC)
++	SET(CMAKE_C_FLAGS "/W4 /WX /nologo /Zi")
++	# TODO: bring back /RTC1 /RTCc
++	SET(CMAKE_C_FLAGS_DEBUG "/Od /DEBUG /MTd")
++	SET(CMAKE_C_FLAGS_RELEASE "/MT /O2")
++ELSE ()
++	SET(CMAKE_C_FLAGS "-Wall -Wextra -fPIC")
++	SET(CMAKE_C_FLAGS_DEBUG "-g -O0")
++	SET(CMAKE_C_FLAGS_RELEASE "-O2")
++ENDIF()
++
++# Build Debug by default
+ IF (NOT CMAKE_BUILD_TYPE)
+-    SET(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build, options are: Debug Release RelWithDebInfo MinSizeRel." FORCE)
++	SET(CMAKE_BUILD_TYPE "Debug" CACHE STRING "Choose the type of build, options are: Debug Release RelWithDebInfo MinSizeRel." FORCE)
+ ENDIF ()
+ 
+ IF (THREADSAFE)
+@@ -90,20 +72,9 @@ IF (WIN32 AND NOT CYGWIN)
+     FILE(GLOB SRC_PLAT src/win32/*.c)
+ ENDIF ()
+ 
+-# Specify sha1 implementation
+-IF (SHA1_TYPE STREQUAL "ppc")
+-    ADD_DEFINITIONS(-DPPC_SHA1)
+-    FILE(GLOB SRC_SHA1 src/ppc/*.c)
+-ELSEIF (SHA1_TYPE STREQUAL "openssl")
+-    ADD_DEFINITIONS(-DOPENSSL_SHA1)
+-    SET (SRC_SHA1)
+-    INCLUDE_DIRECTORIES(${OPENSSL_INCLUDE_DIR})
+-    SET (LIB_SHA1 ${OPENSSL_CRYPTO_LIBRARIES})
+-ENDIF ()
+-
+ # Compile and link libgit2
+ ADD_LIBRARY(git2 ${SRC} ${SRC_PLAT} ${SRC_SHA1} ${SRC_ZLIB})
+-TARGET_LINK_LIBRARIES(git2 ${LIB_SHA1} ${CMAKE_THREAD_LIBS_INIT} ${SQLITE3_LIBRARIES})
++TARGET_LINK_LIBRARIES(git2 ${CMAKE_THREAD_LIBS_INIT})
+ SET_TARGET_PROPERTIES(git2 PROPERTIES VERSION ${LIBGIT2_VERSION_STRING})
+ SET_TARGET_PROPERTIES(git2 PROPERTIES SOVERSION ${LIBGIT2_VERSION_MAJOR})
+ 
+@@ -118,16 +89,15 @@ INSTALL(FILES include/git2.h DESTINATION ${INSTALL_INC
+ 
+ # Tests
+ IF (BUILD_TESTS)
+-    SET(TEST_RESOURCES "${CMAKE_CURRENT_SOURCE_DIR}/tests/resources" CACHE PATH "Path to test resources.")
++	SET(TEST_RESOURCES "${CMAKE_CURRENT_SOURCE_DIR}/tests/resources" CACHE PATH "Path to test resources.")
+     ADD_DEFINITIONS(-DTEST_RESOURCES=\"${TEST_RESOURCES}\")
+-    
+-    ENABLE_TESTING()
+-    INCLUDE_DIRECTORIES(tests)
+ 
++    INCLUDE_DIRECTORIES(tests)
+ 	FILE(GLOB SRC_TEST tests/t??-*.c)
+ 
+ 	ADD_EXECUTABLE(libgit2_test tests/test_main.c tests/test_lib.c tests/test_helpers.c ${SRC} ${SRC_PLAT} ${SRC_SHA1} ${SRC_TEST} ${SRC_ZLIB})
+-	TARGET_LINK_LIBRARIES(libgit2_test ${LIB_SHA1} ${CMAKE_THREAD_LIBS_INIT} ${SQLITE3_LIBRARIES})
++	TARGET_LINK_LIBRARIES(libgit2_test ${CMAKE_THREAD_LIBS_INIT})
+ 
++	ENABLE_TESTING()
+ 	ADD_TEST(libgit2_test libgit2_test)
+ ENDIF ()

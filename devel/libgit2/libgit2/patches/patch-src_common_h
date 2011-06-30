@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_common_h,v 1.1.1.1 2011/06/30 12:07:02 jasper Exp $
+--- src/common.h.orig	Tue May 10 23:47:51 2011
++++ src/common.h	Thu Jun 30 13:21:38 2011
+@@ -40,8 +40,8 @@
+ typedef SSIZE_T ssize_t;
+ 
+ #else
+-# include <unistd.h>
+ # include <arpa/inet.h>
++# include <unistd.h>
+ 
+ # ifdef GIT_THREADS
+ #  include <pthread.h>
