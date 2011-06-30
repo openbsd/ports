@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/04/23 14:32:51 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2011/06/30 22:02:19 kili Exp $
 
 COMMENT =		modern tiling window manager
 
 DISTNAME =		bluetile-0.5.3
-REVISION =		3
+REVISION =		4
 CATEGORIES =		x11
 HOMEPAGE =		http://www.bluetile.org/
 
