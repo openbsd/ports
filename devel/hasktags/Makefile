@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/13 13:31:11 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2011/06/30 21:30:20 kili Exp $
 
 COMMENT =	ctags-like tool for Haskell sources
 
 DISTNAME =	hasktags-0.68.1
+REVISION =	0
 CATEGORIES =	devel
 
 MAINTAINER =	Matthias Kilian <kili@openbsd.org>

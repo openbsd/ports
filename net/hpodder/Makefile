@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/05/26 08:24:59 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2011/06/30 21:36:37 kili Exp $
 
 COMMENT =		command line podcast aggregator
 
 DISTNAME =		hpodder-1.1.5
-REVISION =		7
+REVISION =		8
 CATEGORIES =		net
 HOMEPAGE =		https://github.com/jgoerzen/hpodder/wiki
 

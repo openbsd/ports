@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/11 14:48:07 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2011/06/30 21:30:20 kili Exp $
 
 COMMENT=	D-Bus profiler
 
 DISTNAME=	bustle-0.2.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://willthompson.co.uk/bustle/
