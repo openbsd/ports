@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.15 2010/10/03 20:45:52 armani Exp $
+@comment $OpenBSD: PLIST,v 1.16 2011/07/01 11:28:02 jasper Exp $
+@pkgpath devel/geany,vte
 @bin bin/geany
 include/geany/
 include/geany/document.h
@@ -86,6 +87,8 @@ share/doc/geany/manual.txt
 share/geany/
 share/geany/GPL-2
 share/geany/c99.tags
+share/geany/colorschemes/
+share/geany/colorschemes/alt.conf
 share/geany/filetype_extensions.conf
 share/geany/filetypes.Genie.conf
 share/geany/filetypes.abc
@@ -103,8 +106,10 @@ share/geany/filetypes.css
 share/geany/filetypes.d
 share/geany/filetypes.diff
 share/geany/filetypes.docbook
+share/geany/filetypes.erlang
 share/geany/filetypes.f77
 share/geany/filetypes.ferite
+share/geany/filetypes.forth
 share/geany/filetypes.fortran
 share/geany/filetypes.freebasic
 share/geany/filetypes.glsl
@@ -114,6 +119,7 @@ share/geany/filetypes.html
 share/geany/filetypes.java
 share/geany/filetypes.javascript
 share/geany/filetypes.latex
+share/geany/filetypes.lisp
 share/geany/filetypes.lua
 share/geany/filetypes.makefile
 share/geany/filetypes.markdown
@@ -142,6 +148,9 @@ share/geany/php.tags
 share/geany/python.tags
 share/geany/snippets.conf
 share/geany/templates/
+share/geany/templates/bsd
+share/geany/templates/changelog
+share/geany/templates/fileheader
 share/geany/templates/files/
 share/geany/templates/files/file.html
 share/geany/templates/files/file.php
@@ -153,6 +162,8 @@ share/geany/templates/files/main.d
 share/geany/templates/files/main.java
 share/geany/templates/files/main.py
 share/geany/templates/files/program.pas
+share/geany/templates/function
+share/geany/templates/gpl
 share/geany/ui_toolbar.xml
 share/icons/hicolor/16x16/apps/classviewer-class.png
 share/icons/hicolor/16x16/apps/classviewer-macro.png
@@ -180,6 +191,7 @@ share/locale/gl/LC_MESSAGES/geany.mo
 share/locale/hu/LC_MESSAGES/geany.mo
 share/locale/it/LC_MESSAGES/geany.mo
 share/locale/ja/LC_MESSAGES/geany.mo
+share/locale/kk/LC_MESSAGES/geany.mo
 share/locale/ko/LC_MESSAGES/geany.mo
 share/locale/lb/
 share/locale/lb/LC_MESSAGES/
