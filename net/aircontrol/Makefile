@@ -1,34 +1,34 @@
-# $OpenBSD: Makefile,v 1.13 2011/07/01 10:54:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2011/07/01 10:55:47 sthen Exp $
 
-COMMENT=	management tool for Ubiquiti wireless devices
+COMMENT =	management tool for Ubiquiti wireless devices
 
-DISTNAME=	aircontrol-1.3.8-beta
-REVISION=	0
-PKGNAME=	${DISTNAME:S/-beta/beta/}
+DISTNAME =	aircontrol-1.3.8-beta
+REVISION =	0
+PKGNAME =	${DISTNAME:S/-beta/beta/}
 
-CATEGORIES=	net
+CATEGORIES =	net
 
-HOMEPAGE=	http://www.ubnt.com/aircontrol
+HOMEPAGE  =	http://www.ubnt.com/aircontrol
 
-PERMIT_PACKAGE_CDROM=	proprietary license
-PERMIT_PACKAGE_FTP=	proprietary license
-PERMIT_DISTFILES_CDROM=	proprietary license
-PERMIT_DISTFILES_FTP=	proprietary license
+PERMIT_PACKAGE_CDROM =	 proprietary license
+PERMIT_PACKAGE_FTP =	 proprietary license
+PERMIT_DISTFILES_CDROM = proprietary license
+PERMIT_DISTFILES_FTP =	 proprietary license
 
-MASTER_SITES=	http://www.ubnt.com/downloads/aircontrol/
+MASTER_SITES =	http://www.ubnt.com/downloads/aircontrol/
 
-MODULES=	java
-MODJAVA_VER=	1.7
-MODJAVA_JRERUN=	Yes
+MODULES =	 java
+MODJAVA_VER =	 1.7
+MODJAVA_JRERUN = Yes
 
-RUN_DEPENDS=	java/javaPathHelper
+RUN_DEPENDS =	java/javaPathHelper
 
-PREFIX=		/var/aircontrol
+PREFIX =	/var/aircontrol
 
-NO_BUILD=	Yes
-NO_REGRESS=	Yes
+NO_BUILD =	Yes
+NO_REGRESS =	Yes
 
-WRKDIST=	${WRKDIR}/aircontrol
+WRKDIST =	${WRKDIR}/aircontrol
 
 pre-patch:
 	cd ${WRKDIST}; \
