@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.35 2011/06/17 15:03:45 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.36 2011/07/01 16:08:37 sthen Exp $
 @group daemon
 phpMyAdmin/
 phpMyAdmin/CREDITS
@@ -583,15 +583,30 @@ phpMyAdmin/libraries/zip.lib.php
 phpMyAdmin/libraries/zip_extension.lib.php
 phpMyAdmin/license.php
 phpMyAdmin/locale/
+phpMyAdmin/locale/ar/
+phpMyAdmin/locale/ar/LC_MESSAGES/
+phpMyAdmin/locale/ar/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/be/
+phpMyAdmin/locale/be/LC_MESSAGES/
+phpMyAdmin/locale/be/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/be@latin/
+phpMyAdmin/locale/be@latin/LC_MESSAGES/
+phpMyAdmin/locale/be@latin/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/bg/
 phpMyAdmin/locale/bg/LC_MESSAGES/
 phpMyAdmin/locale/bg/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/bn/
+phpMyAdmin/locale/bn/LC_MESSAGES/
+phpMyAdmin/locale/bn/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/ca/
 phpMyAdmin/locale/ca/LC_MESSAGES/
 phpMyAdmin/locale/ca/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/cs/
 phpMyAdmin/locale/cs/LC_MESSAGES/
 phpMyAdmin/locale/cs/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/da/
+phpMyAdmin/locale/da/LC_MESSAGES/
+phpMyAdmin/locale/da/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/de/
 phpMyAdmin/locale/de/LC_MESSAGES/
 phpMyAdmin/locale/de/LC_MESSAGES/phpmyadmin.mo
@@ -604,6 +619,9 @@ phpMyAdmin/locale/en_GB/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/es/
 phpMyAdmin/locale/es/LC_MESSAGES/
 phpMyAdmin/locale/es/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/et/
+phpMyAdmin/locale/et/LC_MESSAGES/
+phpMyAdmin/locale/et/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/fi/
 phpMyAdmin/locale/fi/LC_MESSAGES/
 phpMyAdmin/locale/fi/LC_MESSAGES/phpmyadmin.mo
@@ -616,9 +634,15 @@ phpMyAdmin/locale/gl/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/hi/
 phpMyAdmin/locale/hi/LC_MESSAGES/
 phpMyAdmin/locale/hi/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/hr/
+phpMyAdmin/locale/hr/LC_MESSAGES/
+phpMyAdmin/locale/hr/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/hu/
 phpMyAdmin/locale/hu/LC_MESSAGES/
 phpMyAdmin/locale/hu/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/id/
+phpMyAdmin/locale/id/LC_MESSAGES/
+phpMyAdmin/locale/id/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/it/
 phpMyAdmin/locale/it/LC_MESSAGES/
 phpMyAdmin/locale/it/LC_MESSAGES/phpmyadmin.mo
@@ -631,6 +655,9 @@ phpMyAdmin/locale/ka/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/lt/
 phpMyAdmin/locale/lt/LC_MESSAGES/
 phpMyAdmin/locale/lt/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/mn/
+phpMyAdmin/locale/mn/LC_MESSAGES/
+phpMyAdmin/locale/mn/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/nb/
 phpMyAdmin/locale/nb/LC_MESSAGES/
 phpMyAdmin/locale/nb/LC_MESSAGES/phpmyadmin.mo
@@ -658,6 +685,12 @@ phpMyAdmin/locale/sk/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/sl/
 phpMyAdmin/locale/sl/LC_MESSAGES/
 phpMyAdmin/locale/sl/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/sr/
+phpMyAdmin/locale/sr/LC_MESSAGES/
+phpMyAdmin/locale/sr/LC_MESSAGES/phpmyadmin.mo
+phpMyAdmin/locale/sr@latin/
+phpMyAdmin/locale/sr@latin/LC_MESSAGES/
+phpMyAdmin/locale/sr@latin/LC_MESSAGES/phpmyadmin.mo
 phpMyAdmin/locale/sv/
 phpMyAdmin/locale/sv/LC_MESSAGES/
 phpMyAdmin/locale/sv/LC_MESSAGES/phpmyadmin.mo
