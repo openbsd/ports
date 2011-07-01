@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2011/05/28 08:15:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2011/07/01 22:25:58 ajacoutot Exp $
 @conflict gstreamer-plugins-base-<0.10.25
 @conflict gstreamer-bz2-*
 @conflict gstreamer-faac-*
@@ -42,6 +42,8 @@ lib/gstreamer-${VERSION}/libgstaiff.so
 lib/gstreamer-${VERSION}/libgstapexsink.so
 @comment lib/gstreamer-${VERSION}/libgstasfmux.la
 lib/gstreamer-${VERSION}/libgstasfmux.so
+@comment lib/gstreamer-${VERSION}/libgstassrender.la
+lib/gstreamer-${VERSION}/libgstassrender.so
 @comment lib/gstreamer-${VERSION}/libgstautoconvert.la
 lib/gstreamer-${VERSION}/libgstautoconvert.so
 @comment lib/gstreamer-${VERSION}/libgstbayer.la
