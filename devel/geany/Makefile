@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2011/07/01 07:29:38 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	small and lightweight IDE
 
 DISTNAME=	geany-0.19.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -50,7 +50,7 @@ FLAVORS=	vte
 FLAVOR?=
 
 .if ${FLAVOR:L:Mvte}
-LIB_DEPENDS+=	:vte-*:devel/vte
+LIB_DEPENDS+=	devel/vte
 .else
 CONFIGURE_ARGS+=--disable-vte
 .endif
