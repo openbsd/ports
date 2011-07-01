@@ -1,7 +1,9 @@
-$OpenBSD: patch-postler_postler-content_vala,v 1.1 2011/06/04 09:09:36 ajacoutot Exp $
+$OpenBSD: patch-postler_postler-content_vala,v 1.2 2011/07/01 23:28:41 ajacoutot Exp $
 
-Unbreak with vala 0.12.1.
-../postler/postler-content.vala:1089.25-1089.101: error: missing return statement at end of subroutine body
+Committer: Christian Dywan
+Date: 2011-06-30 20:56:57
+Revision ID: git-v1:9caec846fe7f71a842137ab2d22ca8c338b50535
+Add the return value as asserted the last commit
 
 --- postler/postler-content.vala.orig	Sat Jun  4 11:04:21 2011
 +++ postler/postler-content.vala	Sat Jun  4 11:04:30 2011
@@ -10,7 +12,7 @@ Unbreak with vala 0.12.1.
                      var regex = new GLib.Regex (escaped);
                      body_chunk = regex.replace_eval (body_chunk, -1, 0, 0,
 -                        (match_info, result) => { evaluate_emoticon (match_info, result, emoticon); });
-+                        (match_info, result) => { evaluate_emoticon (match_info, result, emoticon); return true; });
++                        (match_info, result) => { return evaluate_emoticon (match_info, result, emoticon); });
                  }
                  catch (GLib.RegexError error) { }
              }
