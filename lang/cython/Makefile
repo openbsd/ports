@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/29 08:27:26 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/01 12:41:23 jasper Exp $
 
 COMMENT =		C-Extensions for Python
 
@@ -23,6 +23,9 @@ MODULES =		lang/python
 WANTLIB += 		${MODPY_WANTLIB}
 
 REGRESS_TARGET =	test
+
+MAKE_ENV +=		PYTHON=${MODPY_BIN}
+
 do-regress:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
         ${ALL_REGRESS_FLAGS} -f ${MAKE_FILE} ${REGRESS_TARGET}
