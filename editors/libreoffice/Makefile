@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/06/23 16:38:51 robert Exp $
+# $OpenBSD: Makefile,v 1.37 2011/07/01 21:52:04 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -20,12 +20,6 @@ EPOCH=		0
 REVISION=	2
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
-
-http://hg.services.openoffice.org/binaries
-http://download.go-oo.org/src
-http://download.go-oo.org/extern
-http://www.numbertext.org/linux
-http://ooo.itc.hu/oxygenoffice/download/libreoffice/
 
 HOMEPAGE=	http://www.libreoffice.org/
 MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/ \
