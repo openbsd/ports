@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/05/14 21:29:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/07/01 22:02:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		weather information access library
 
 GNOME_PROJECT=		libgweather
 GNOME_VERSION=		2.30.3
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=		gweather             3.0      # 7.10
 
@@ -26,15 +26,14 @@ LIB_DEPENDS=		devel/libsoup,-gnome \
 			x11/dbus-glib \
 			x11/gtk+2
 
-WANTLIB +=		ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB +=		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1
-WANTLIB +=		expat fontconfig freetype gcrypt gdk-x11-2.0
-WANTLIB +=		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB +=		gnutls gnome-keyring gobject-2.0 gpg-error 
-WANTLIB +=		gthread-2.0 gtk-x11-2.0	m pango-1.0 pangocairo-1.0
-WANTLIB +=		pangoft2-1.0 pcre pixman-1 png proxy pthread-stubs
-WANTLIB +=		soup-2.4 sqlite3 tasn1 xcb xcb-render xcb-render-util
-WANTLIB +=		xml2 z soup-gnome-2.4
+WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
+WANTLIB += cairo dbus-1 drm expat fontconfig freetype gcrypt gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
+WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0 m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
+WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 xcb xcb-render xcb-shm
+WANTLIB += xml2 z
 
 MODGCONF2_SCHEMAS_DIR=	libgweather
 
