@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/06/02 17:09:32 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2011/07/01 22:04:27 ajacoutot Exp $
 
 COMMENT=	PolicyKit integration for GNOME/GTK+2
 
 DISTNAME=	polkit-gnome-0.101
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11 sysutils
 

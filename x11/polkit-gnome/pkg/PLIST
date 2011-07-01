@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/05/17 15:02:46 ajacoutot Exp $
-@pkgpath x11/polkit-gnome
+@comment $OpenBSD: PLIST,v 1.5 2011/07/01 22:04:27 ajacoutot Exp $
 %%SHARED%%
 include/polkit-gtk-1/
 include/polkit-gtk-1/polkitgtk/
