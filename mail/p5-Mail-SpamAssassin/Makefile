@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.73 2011/06/23 17:32:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2011/07/01 06:39:17 giovanni Exp $
 
 COMMENT=		mailfilter to identify and mark spam
 
 VER=			3.3.2
 DISTNAME=		Mail-SpamAssassin-${VER}
 PKGNAME=		p5-${DISTNAME:S/-rc/rc/}
+REVISION=		0
 RULESNAME=		Mail-SpamAssassin-rules-${VER}-r1104058.tar.gz
 CATEGORIES=		mail perl5
 
@@ -65,6 +66,7 @@ DOCS=		README UPGRADE LICENSE procmailrc.example \
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/SpamAssassin/sql
 	${INSTALL_DATA_DIR} ${SAMPLE_CONFDIR}
 	${SUBST_CMD} -c ${FILESDIR}/${FAQ} ${WRKSRC}/${FAQ}
 	pod2man --section=1 ${WRKSRC}/spamc/spamc.pod > \
@@ -74,6 +76,7 @@ post-install:
 .for i in ${FAQ} ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${i} ${PREFIX}/share/doc/SpamAssassin
 .endfor
+	${INSTALL_DATA} ${WRKSRC}/sql/* ${PREFIX}/share/doc/SpamAssassin/sql
 	cd ${PREFIX}/share/spamassassin; tar xzf ${FULLDISTDIR}/${RULESNAME}
 	chown ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/spamassassin/*
 
