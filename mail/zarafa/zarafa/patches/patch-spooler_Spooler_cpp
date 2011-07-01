@@ -1,9 +1,9 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.6 2011/06/10 15:55:00 ajacoutot Exp $
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.7 2011/07/01 23:23:02 robert Exp $
 
 XXX to be revisited
 
---- spooler/Spooler.cpp.orig	Fri Jun 10 03:37:37 2011
-+++ spooler/Spooler.cpp	Fri Jun 10 13:33:17 2011
+--- spooler/Spooler.cpp.orig	Wed Jun 22 00:02:19 2011
++++ spooler/Spooler.cpp	Sat Jul  2 01:07:50 2011
 @@ -1213,6 +1213,7 @@ int main(int argc, char *argv[]) {
  	if (g_lpConfig->HasWarnings())
  		LogConfigErrors(g_lpConfig, g_lpLogger);
@@ -12,16 +12,30 @@ XXX to be revisited
  	// detect linuxthreads, which is too broken to correctly run the spooler
  	if (!bForked) {
  		char buffer[256];
-@@ -1224,6 +1225,12 @@ int main(int argc, char *argv[]) {
+@@ -1224,7 +1225,13 @@ int main(int argc, char *argv[]) {
  			g_lpLogger->Log(EC_LOGLEVEL_FATAL, "WARNING: the zarafa-spooler will only be able to send one message at a time.");
  		}
  	}
 +#endif
-+
+ 
 +#ifdef __OpenBSD__
 +	bNPTL = false;
 +#endif
 +
- 
++
  	// set socket filename
  	if (!szPath)
+ 		szPath = g_lpConfig->GetSetting("server_socket");
+@@ -1321,11 +1328,8 @@ int main(int argc, char *argv[]) {
+ 		if (bNPTL) {
+ 			g_lpLogger->Log(EC_LOGLEVEL_DEBUG, "Joining signal thread");
+ 			pthread_join(signal_thread, NULL);
+-			g_lpLogger->Log(EC_LOGLEVEL_FATAL, "Spooler shutdown complete");
+-		} else {
+-			// ignore the death of the pipe logger
+-			signal(SIGCHLD, SIG_IGN);
+ 		}
++		g_lpLogger->Log(EC_LOGLEVEL_FATAL, "Spooler shutdown complete");
+ 	}
+ 
+ 	MAPIUninitialize();
