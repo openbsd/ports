@@ -1,17 +1,39 @@
-$OpenBSD: patch-configure_ac,v 1.18 2010/09/17 12:15:20 sthen Exp $
+$OpenBSD: patch-configure_ac,v 1.19 2011/07/01 11:10:53 sthen Exp $
 --- configure.ac.orig	Sun Apr 18 09:03:54 2010
-+++ configure.ac	Fri Jul 30 22:43:56 2010
-@@ -826,6 +826,9 @@ if test "${SYS}" != "mingw32" -a "${SYS}" != "mingwce"
++++ configure.ac	Thu Jun 30 20:32:15 2011
+@@ -193,9 +193,9 @@ case "${host_os}" in
+     ;;
+   *bsd*)
+     SYS="${host_os}"
+-    CFLAGS_save="${CFLAGS_save} -pthread"; CFLAGS="${CFLAGS_save}"
+     case "${host_os}" in
+       freebsd*)
++        CFLAGS_save="${CFLAGS_save} -pthread"; CFLAGS="${CFLAGS_save}"
+         CPPFLAGS_save="${CPPFLAGS_save} -I/usr/local/include"
+         CPPFLAGS="${CPPFLAGS_save}"
+         LDFLAGS_save="${LDFLAGS_save} -L/usr/local/lib"
+@@ -826,6 +826,20 @@ if test "${SYS}" != "mingw32" -a "${SYS}" != "mingwce"
  dnl Check for pthreads - borrowed from XMMS
  THREAD_LIB=error
  if test "${THREAD_LIB}" = "error"; then
-+  AC_CHECK_LIB(pthread,main,THREAD_LIB="-pthread")
++  AC_MSG_CHECKING(for pthread_create in -pthread)
++  save_LDFLAGS="${LDFLAGS}"
++  LDFLAGS="${LDFLAGS} -pthread"
++  AC_LINK_IFELSE(
++    [AC_LANG_PROGRAM(
++      [[#include <pthread.h>
++      pthread_t thr;]],
++      [pthread_create(&thr, NULL, NULL, NULL);])],
++    [THREAD_LIB="-pthread"
++     AC_MSG_RESULT(yes)],
++     [AC_MSG_RESULT(no)])
++  LDFLAGS="${save_LDFLAGS}"
 +fi
 +if test "${THREAD_LIB}" = "error"; then
    AC_CHECK_LIB(pthread,main,THREAD_LIB="-lpthread")
  fi
  if test "${THREAD_LIB}" = "error"; then
-@@ -872,13 +875,17 @@ AC_EGREP_HEADER(strncasecmp,strings.h,[
+@@ -872,13 +886,17 @@ AC_EGREP_HEADER(strncasecmp,strings.h,[
  
  dnl Check for headers
  AC_CHECK_HEADERS(getopt.h strings.h locale.h xlocale.h)
@@ -30,7 +52,7 @@ $OpenBSD: patch-configure_ac,v 1.18 2010/09/17 12:15:20 sthen Exp $
  if test "${SYS}" != "mingw32" -a "${SYS}" != "mingwce"; then
  AC_CHECK_HEADERS(machine/param.h sys/shm.h)
  AC_CHECK_HEADERS([linux/version.h linux/dccp.h])
-@@ -2525,7 +2532,7 @@ then
+@@ -2525,7 +2543,7 @@ then
    fi
  
    CPPFLAGS="${CPPFLAGS_save} ${CPPFLAGS_v4l2}"
@@ -39,7 +61,7 @@ $OpenBSD: patch-configure_ac,v 1.18 2010/09/17 12:15:20 sthen Exp $
      VLC_ADD_PLUGIN([v4l2])
    ],[])
    CPPFLAGS="${CPPFLAGS_save}"
-@@ -3753,14 +3760,14 @@ AC_ARG_ENABLE(png,
+@@ -3753,14 +3771,14 @@ AC_ARG_ENABLE(png,
    [  --enable-png            PNG support (default enabled)])
  if test "${enable_png}" != "no"; then
  AC_CHECK_HEADERS(png.h, [
@@ -57,7 +79,7 @@ $OpenBSD: patch-configure_ac,v 1.18 2010/09/17 12:15:20 sthen Exp $
      LDFLAGS="${LDFLAGS_save}"
    ])
  fi
-@@ -5746,7 +5753,7 @@ then
+@@ -5746,7 +5764,7 @@ then
      PLUGINS_BINDINGS="${PLUGINS_BINDINGS} mozilla"
      VLC_ADD_CPPFLAGS([mozilla],[-DXPCOM_GLUE -DHAVE_CPP_MODERN_SPECIALIZE_TEMPLATE_SYNTAX -I${real_mozilla_sdk} -I${real_mozilla_sdk}/include -I${real_mozilla_sdk}/embedstring/include -I${real_mozilla_sdk}/xpcom/include -I${real_mozilla_sdk}/nspr/include -I${real_mozilla_sdk}/string/include -I${real_mozilla_sdk}/plugin/include -I${real_mozilla_sdk}/java/include])
      if ${need_xpcom_libs}; then
