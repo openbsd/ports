@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/06/08 14:24:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2011/07/01 16:57:41 sthen Exp $
 
 # Work in progress. Not yet linked to the build.
 
 COMMENT =	web UI for icinga
+V =		1.4.1
 DISTNAME =	icinga-web-$V
 
 BUILD_DEPENDS =	icinga-api-$V:net/icinga/core,-api

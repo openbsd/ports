@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-cgi,v 1.4 2011/06/08 14:24:50 sthen Exp $
+@comment $OpenBSD: PLIST-cgi,v 1.5 2011/07/01 16:57:41 sthen Exp $
 cgi-bin/icinga/
 @bin cgi-bin/icinga/avail.cgi
 @bin cgi-bin/icinga/cmd.cgi
@@ -522,44 +522,6 @@ icinga-cgi/images/hostevent.gif
 icinga-cgi/images/hourglass-arrow.png
 icinga-cgi/images/hourglass-exclamation.png
 icinga-cgi/images/icinga-logo.png
-icinga-cgi/images/icinga-web-admin_groups1.png
-icinga-cgi/images/icinga-web-admin_groups2.png
-icinga-cgi/images/icinga-web-admin_logs1.png
-icinga-cgi/images/icinga-web-admin_principals.png
-icinga-cgi/images/icinga-web-admin_tasks.png
-icinga-cgi/images/icinga-web-admin_users1.png
-icinga-cgi/images/icinga-web-admin_users2.png
-icinga-cgi/images/icinga-web-commands_hst.png
-icinga-cgi/images/icinga-web-commands_hst_1.3.png
-icinga-cgi/images/icinga-web-commands_svc.png
-icinga-cgi/images/icinga-web-commands_svc_1.3.png
-icinga-cgi/images/icinga-web-cronks1.png
-icinga-cgi/images/icinga-web-cronks1_1.3.png
-icinga-cgi/images/icinga-web-cronks2.png
-icinga-cgi/images/icinga-web-cronks2_1.3.png
-icinga-cgi/images/icinga-web-cronks3.png
-icinga-cgi/images/icinga-web-cronks3_1.3.png
-icinga-cgi/images/icinga-web-filter1.png
-icinga-cgi/images/icinga-web-filter1_1.3.png
-icinga-cgi/images/icinga-web-filter2.png
-icinga-cgi/images/icinga-web-filter2_1.3.png
-icinga-cgi/images/icinga-web-filter3.png
-icinga-cgi/images/icinga-web-log.png
-icinga-cgi/images/icinga-web-log_1.3.png
-icinga-cgi/images/icinga-web-login.png
-icinga-cgi/images/icinga-web-main_bar.png
-icinga-cgi/images/icinga-web-mainscreen1.png
-icinga-cgi/images/icinga-web-mainscreen1_1.3.png
-icinga-cgi/images/icinga-web-open_problems.png
-icinga-cgi/images/icinga-web-overview.png
-icinga-cgi/images/icinga-web-overview_1.3.png
-icinga-cgi/images/icinga-web-search1.png
-icinga-cgi/images/icinga-web-search1_1.3.png
-icinga-cgi/images/icinga-web-settings.png
-icinga-cgi/images/icinga-web-statuscronk.png
-icinga-cgi/images/icinga-web-topmenu1.png
-icinga-cgi/images/icinga-web-topmenu2.png
-icinga-cgi/images/icinga-web-topmenu2_1.3.png
 icinga-cgi/images/icon_collapse.gif
 icinga-cgi/images/icon_expand.gif
 icinga-cgi/images/info.png
