@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/01/06 04:24:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2011/07/01 15:22:34 jeremy Exp $
 
 COMMENT =	replacement for Ruby's URI implementation
 
@@ -18,8 +18,6 @@ PERMIT_DISTFILES_FTP = Yes
 MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem
-
-REGRESS_DEPENDS =	devel/ruby-rcov,${MODRUBY_FLAVOR}
 
 MODRUBY_REGRESS =	rake rspec
 
