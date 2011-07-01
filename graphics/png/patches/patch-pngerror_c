@@ -1,0 +1,26 @@
+$OpenBSD: patch-pngerror_c,v 1.5 2011/07/01 17:09:36 jasper Exp $
+
+Fix for CVE-2011-2501
+libpng "png_format_buffer()" Denial of Service Vulnerability
+
+From upstream git:
+http://libpng.git.sourceforge.net/git/gitweb.cgi?p=libpng/libpng;a=commitdiff;h=65e6d5a34f49acdb362a0625a706c6b914e670af
+
+--- pngerror.c.orig	Fri Jul  1 19:07:03 2011
++++ pngerror.c	Fri Jul  1 19:07:42 2011
+@@ -181,8 +181,13 @@ png_format_buffer(png_structp png_ptr, png_charp buffe
+    {
+       buffer[iout++] = ':';
+       buffer[iout++] = ' ';
+-      png_memcpy(buffer + iout, error_message, PNG_MAX_ERROR_TEXT);
+-      buffer[iout + PNG_MAX_ERROR_TEXT - 1] = '\0';
++
++      iin = 0;
++      while (iin < PNG_MAX_ERROR_TEXT-1 && error_message[iin] != '\0')
++         buffer[iout++] = error_message[iin++];
++
++      /* iin < PNG_MAX_ERROR_TEXT, so the following is safe: */
++      buffer[iout] = '\0';
+    }
+ }
+ 
