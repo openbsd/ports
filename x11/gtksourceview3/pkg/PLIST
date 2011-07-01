@@ -1,10 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/06/19 20:26:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/07/01 11:16:40 jasper Exp $
 %%SHARED%%
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/completion-providers/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/completion-providers/words/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/completion-providers/words/gtksourcecompletionwords.h
+include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksource.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcebuffer.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcecompletion.h
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/gtksourcecompletioncontext.h
