@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-i18n-pt-br,v 1.8 2011/06/20 13:29:35 robert Exp $
+@comment $OpenBSD: PLIST-i18n-pt-br,v 1.9 2011/07/02 15:22:39 robert Exp $
 @conflict openoffice-i18n-pt-br-*
 @pkgpath editors/openoffice3,-i18n-br
 !%%no_java%%
@@ -247,8 +247,8 @@ lib/libreoffice/readmes/README_pt-BR
 lib/libreoffice/share/extensions/dict-pt/
 lib/libreoffice/share/extensions/dict-pt/META-INF/
 lib/libreoffice/share/extensions/dict-pt/META-INF/manifest.xml
-lib/libreoffice/share/extensions/dict-pt/README_en.TXT
-lib/libreoffice/share/extensions/dict-pt/README_hyph_pt_BR.TXT
+lib/libreoffice/share/extensions/dict-pt/README_en.txt
+lib/libreoffice/share/extensions/dict-pt/README_hyph_pt_BR.txt
 lib/libreoffice/share/extensions/dict-pt/README_pt_BR.txt
 lib/libreoffice/share/extensions/dict-pt/description.xml
 lib/libreoffice/share/extensions/dict-pt/dictionaries.xcu

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.16 2011/06/23 11:59:08 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.17 2011/07/02 15:22:39 robert Exp $
 @conflict openoffice-*
 @pkgpath editors/openoffice3,-main
 %%SHARED%%
@@ -1723,6 +1723,33 @@ lib/libreoffice/basis${BV}/share/registry/xsltfilter.xcd
 lib/libreoffice/basis${BV}/share/samples/
 lib/libreoffice/basis${BV}/share/samples/en-US/
 lib/libreoffice/basis${BV}/share/template/
+lib/libreoffice/basis${BV}/share/template/common/
+lib/libreoffice/basis${BV}/share/template/common/layout/
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-aqua.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-blackandwhite.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-bluegrey.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-bluelinesgrad.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-bluetitledown.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-book.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-brown.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-charglow.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-forest.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-frepa.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-glacier.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-greengradlines.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-keyboard.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-movwaves.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-numdark.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-ocean.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-organic.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-paper.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-rededges.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-roundedrect.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-sunrise.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-techpoly.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-tunnel.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-water.otp
+lib/libreoffice/basis${BV}/share/template/common/layout/lyt-wine.otp
 lib/libreoffice/basis${BV}/share/template/en-US/
 lib/libreoffice/basis${BV}/share/template/en-US/internal/
 lib/libreoffice/basis${BV}/share/template/en-US/internal/html.stw
@@ -1811,32 +1838,6 @@ lib/libreoffice/basis${BV}/share/template/en-US/wizard/styles/pastell.ots
 lib/libreoffice/basis${BV}/share/template/en-US/wizard/styles/pool.ots
 lib/libreoffice/basis${BV}/share/template/en-US/wizard/styles/pumpkin.ots
 lib/libreoffice/basis${BV}/share/template/en-US/wizard/styles/xos.ots
-lib/libreoffice/basis${BV}/share/template/layout/
-lib/libreoffice/basis${BV}/share/template/layout/lyt-aqua.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-blackandwhite.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-bluegrey.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-bluelinesgrad.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-bluetitledown.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-book.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-brown.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-charglow.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-forest.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-frepa.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-glacier.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-greengradlines.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-keyboard.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-movwaves.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-numdark.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-ocean.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-organic.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-paper.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-rededges.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-roundedrect.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-sunrise.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-techpoly.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-tunnel.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-water.otp
-lib/libreoffice/basis${BV}/share/template/layout/lyt-wine.otp
 lib/libreoffice/basis${BV}/share/template/wizard/
 lib/libreoffice/basis${BV}/share/template/wizard/bitmap/
 lib/libreoffice/basis${BV}/share/template/wizard/bitmap/Import_1.bmp
@@ -2369,7 +2370,6 @@ share/applications/calc.desktop
 share/applications/draw.desktop
 share/applications/impress.desktop
 share/applications/math.desktop
-share/applications/printeradmin.desktop
 share/applications/qstart.desktop
 share/applications/startcenter.desktop
 share/applications/writer.desktop
