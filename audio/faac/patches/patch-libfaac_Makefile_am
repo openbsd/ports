@@ -1,9 +1,0 @@
---- libfaac/Makefile.am.orig	Mon Aug 20 11:03:23 2007
-+++ libfaac/Makefile.am	Sun Jun  1 13:23:41 2008
-@@ -9,5 +9,5 @@ libfaac_la_INCLUDES = aacquant.h channels.h filtbank.h
- libfaac_la_LIBADD = -lm
- 
- INCLUDES = -I$(top_srcdir)/include
--
-+LIBS =
- 
