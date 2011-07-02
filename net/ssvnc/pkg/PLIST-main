@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2009/12/31 14:49:45 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2011/07/02 10:37:05 sthen Exp $
 @conflict tightvnc-viewer-*
+@pkgpath net/tightvnc,-viewer
 @bin bin/vncviewer
 @man man/man1/vncviewer.1
 @comment share/applications/
