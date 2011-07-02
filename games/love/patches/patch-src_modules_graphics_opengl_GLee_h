@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_modules_graphics_opengl_GLee_h,v 1.1.1.1 2011/07/02 09:54:39 jasper Exp $
+
+Prevent redefining __GLXextFuncPtr.
+
+--- src/modules/graphics/opengl/GLee.h.orig	Wed May  4 18:00:10 2011
++++ src/modules/graphics/opengl/GLee.h	Wed Jun 29 21:57:38 2011
+@@ -799,8 +799,6 @@ GLEE_EXTERN GLboolean _GLEE_SGIX_texture_range;
+ 
+ 	/* GLX */
+ 
+-	typedef void (*__GLXextFuncPtr)(void);
+-
+ 	#ifndef GLX_ARB_get_proc_address 
+ 	#define GLX_ARB_get_proc_address 1
+ 	    extern __GLXextFuncPtr glXGetProcAddressARB (const GLubyte *);

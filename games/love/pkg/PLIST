@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/02 09:54:39 jasper Exp $
+@bin bin/love

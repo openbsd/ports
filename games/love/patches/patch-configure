@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1.1.1 2011/07/02 09:54:39 jasper Exp $
+--- configure.orig	Wed May  4 18:00:39 2011
++++ configure	Wed Jun 29 22:19:27 2011
+@@ -15819,7 +15819,7 @@ for ac_lib in '' vorbisfile; do
+     ac_res="none required"
+   else
+     ac_res=-l$ac_lib
+-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++    LIBS="-l$ac_lib -lvorbis -lm -logg $ac_func_search_save_LIBS"
+   fi
+   if ac_fn_c_try_link "$LINENO"; then :
+   ac_cv_search_ov_open=$ac_res
+@@ -15836,7 +15836,7 @@ else
+   ac_cv_search_ov_open=no
+ fi
+ rm conftest.$ac_ext
+-LIBS=$ac_func_search_save_LIBS
++LIBS="$ac_func_search_save_LIBS -lvorbis -lm -logg"
+ fi
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_search_ov_open" >&5
+ $as_echo "$ac_cv_search_ov_open" >&6; }
