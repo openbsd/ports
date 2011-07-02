@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2011/06/02 13:41:42 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2011/07/02 23:10:25 edd Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -13,13 +13,13 @@ all arches:
   Mencoder is not expected to do a good job of multiplexing into container
   formats other than AVI or MPEG.
 
-  ffmpeg's ogg demuxer is broken for ogg streams. If mplayer says "cache
+  FFmpeg's Ogg demuxer is broken for Ogg streams. If MPlayer says "cache
   not filling" when a song changes, you have been bitten by this bug.
   You can try '-demuxer ogg' as a workaround (or try using ogg123 from
   the vorbis-tools package).
 
 i386:
-  win32 codecs were disabled in OpenBSD's build, as the open-source codecs
+  Win32 codecs were disabled in OpenBSD's build, as the open source codecs
   are now of decent quality.
 
 arm:

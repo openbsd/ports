@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2011/06/30 15:31:15 edd Exp $
+# $OpenBSD: Makefile,v 1.192 2011/07/02 23:10:25 edd Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	alpha amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -13,7 +13,7 @@ SUBST_VARS += 		PREFIX CONFDIR
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		x11 multimedia
 
@@ -31,7 +31,7 @@ WANTLIB =	GL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass avcodec \
 		m mng mp3lame ncurses ogg>=5 orc-0.4 png postproc \
 		pthread SDL schroedinger-1.0>=2.0 sndio speex stdc++ \
 		swscale theoradec theoraenc ungif util vpx x264>=5 \
-		xvidcore z
+		z
 
 # we use a snapshot
 MASTER_SITES =	http://theunixzoo.co.uk/distfiles/
@@ -47,7 +47,6 @@ LIB_DEPENDS =	graphics/png \
 		audio/cdparanoia>=3.a9.8 \
 		audio/speex \
 		audio/libogg \
-		multimedia/xvidcore \
 		audio/lame \
 		multimedia/libdv \
 		devel/fribidi \
@@ -96,7 +95,8 @@ CONFIGURE_ARGS += --disable-alsa \
 		--disable-sunaudio \
 		--disable-vidix \
 		--disable-select \
-		--disable-libcdio
+		--disable-libcdio \
+		--disable-libmpeg2-internal
 # seems stable dvdnav does not work with a new mplayer.
 # if they make a release in the future, maybe we can pull that in,
 # but for now we have to use the internal one.
@@ -125,16 +125,21 @@ CONFIGURE_ARGS += --disable-smb \
 		--disable-openal \
 		--disable-libdca \
 		--disable-liba52 \
+		--disable-libmpeg2 \
 		--disable-toolame \
 		--disable-win32dll \
 		--disable-ggi \
+		--disable-libopencore_amrnb \
+		--disable-libopencore_amrwb \
 		--disable-libopenjpeg \
 		--disable-mpg123 \
 		--disable-librtmp \
 		--disable-faac \
 		--disable-faac-lavc \
 		--disable-faad \
-		--disable-theora
+		--disable-theora \
+		--disable-xvid \
+		--disable-xvid-lavc
 
 # internal tremor, external tremor, external libvorbis all conflict
 # we choose libvorbis to enable encoding to vorbis
