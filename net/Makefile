@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.702 2011/06/29 10:41:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.703 2011/07/02 10:41:59 sthen Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -527,7 +527,6 @@
      SUBDIR += tcptraceroute
      SUBDIR += telepathy
      SUBDIR += thcrut
-     SUBDIR += tightvnc
      SUBDIR += tintin++
      SUBDIR += tinyfugue
      SUBDIR += tircd

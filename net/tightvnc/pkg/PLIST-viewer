@@ -1,4 +1,0 @@
-@comment $OpenBSD: PLIST-viewer,v 1.10 2010/10/23 21:55:56 naddy Exp $
-@bin bin/vncviewer
-@comment @man man/cat1/vncviewer.0
-@man man/man1/vncviewer.1
