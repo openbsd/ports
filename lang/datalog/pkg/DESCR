@@ -1,0 +1,7 @@
+The Datalog package contains a lightweight deductive database system.
+Queries and database updates are expressed using Datalog -- a
+declarative logic language in which each formula is a function-free
+Horn clause, and every variable in the head of a clause must appear
+in the body of the clause. The use of Datalog syntax and an
+implementation based on tabling intermediate results, ensures that
+all queries terminate.
