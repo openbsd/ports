@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2011/05/22 15:10:36 rpointel Exp $
+# $OpenBSD: Makefile,v 1.10 2011/07/02 12:29:12 rpointel Exp $
 
 COMMENT =		lightweight multi-protocol & multi-source download utility
-DISTNAME =		aria2-1.11.2
+DISTNAME =		aria2-1.12.0
 CATEGORIES =		www
 HOMEPAGE =		http://aria2.sourceforge.net/
 
@@ -38,5 +38,7 @@ CONFIGURE_ARGS +=	--with-sqlite3 \
 			--without-libxml2
 
 USE_GROFF =		Yes
+
+REGRESS_FLAGS +=	LDFLAGS="-lcppunit"
 
 .include <bsd.port.mk>
