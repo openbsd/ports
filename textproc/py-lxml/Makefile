@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/08 18:09:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/02 10:10:06 rpointel Exp $
 
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
-MODPY_EGG_VERSION=	2.2.8
+MODPY_EGG_VERSION=	2.3
 DISTNAME=	lxml-${MODPY_EGG_VERSION}
 PKGNAME=	py-lxml-${MODPY_EGG_VERSION}
-REVISION =	1
 CATEGORIES=	textproc devel
 
 EXTRACT_SUFX=	.tgz
@@ -19,13 +18,15 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-WANTLIB=	m xml2 z exslt xslt
+WANTLIB=	m xml2 z exslt xslt ${MODPY_WANTLIB}
 
 MODULES=	lang/python
 
 LIB_DEPENDS=	textproc/libxslt
 
 MODPY_SETUPTOOLS=Yes
+
+VMEM_WARNING=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-lxml
