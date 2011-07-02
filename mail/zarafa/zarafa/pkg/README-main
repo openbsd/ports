@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.9 2011/06/04 06:59:00 ajacoutot Exp $
+$OpenBSD: README-main,v 1.10 2011/07/02 22:33:35 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -46,7 +46,7 @@ Mail delivery agent configuration
 The easiest way to use zarafa-dagent system-wide under a stock OpenBSD
 sendmail(8) installation is to use procmail(1).
 See the following URL for other MTA integration:
-    http://www.zarafa.com/?q=en/faq/61
+    http://www.zarafa.com/faq/mta/mta
 
 Anyway, here are the 3 ways of integrating Zarafa with sendmail(8).
 
