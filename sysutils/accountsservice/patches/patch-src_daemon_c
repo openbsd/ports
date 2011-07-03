@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_daemon_c,v 1.5 2011/06/17 14:27:55 ajacoutot Exp $
+$OpenBSD: patch-src_daemon_c,v 1.6 2011/07/03 20:16:35 ajacoutot Exp $
 --- src/daemon.c.orig	Thu May 19 05:39:12 2011
 +++ src/daemon.c	Fri Jun 17 16:25:09 2011
 @@ -50,11 +50,14 @@
@@ -90,15 +90,6 @@ $OpenBSD: patch-src_daemon_c,v 1.5 2011/06/17 14:27:55 ajacoutot Exp $
  
  static void
  daemon_init (Daemon *daemon)
-@@ -1042,7 +1067,7 @@ finish_list_cached_users (gpointer user_data)
-         while (g_hash_table_iter_next (&iter, (gpointer *)&name, (gpointer *)&user)) {
-                 uid = user_local_get_uid (user);
-                 if (!daemon_local_user_is_excluded (data->daemon, name, uid)) {
--                        g_debug ("user %s %ld not excluded\n", name, uid);
-+                        g_debug ("user %s %ld not excluded\n", name, (long int)uid);
-                         g_ptr_array_add (object_paths, g_strdup (user_local_get_object_path (user)));
-                 }
-         }
 @@ -1119,7 +1144,12 @@ daemon_create_user_authorized_cb (Daemon              
          CreateUserData *cd = data;
          User *user;
