@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/07/03 23:13:14 naddy Exp $
 
 COMMENT =	proxy that can transliterate japanese
 
@@ -21,17 +21,16 @@ RUN_DEPENDS =	japanese/p5-Text-Kakasi \
 		devel/p5-AppConfig \
 		www/p5-libwww
 
-USE_GROFF =	Yes
 NO_REGRESS =	Yes
 
 do-build:
-	cd ${WRKSRC} && pod2man japana|nroff -man >japana.cat1
+	cd ${WRKSRC} && pod2man japana >japana.1
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/japana/
 	${INSTALL_DATA} ${WRKDIST}/default.conf \
 	    ${PREFIX}/share/examples/japana/japana.conf
-	${INSTALL_MAN} ${WRKBUILD}/japana.cat1 ${PREFIX}/man/cat1/japana.0
-	${INSTALL_PROGRAM} ${WRKDIST}/japana ${PREFIX}/sbin/japana
+	${INSTALL_MAN} ${WRKBUILD}/japana.1 ${PREFIX}/man/man1/japana.1
+	${INSTALL_SCRIPT} ${WRKDIST}/japana ${PREFIX}/sbin/japana
 
 .include <bsd.port.mk>
