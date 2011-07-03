@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2010/10/24 12:17:01 naddy Exp $
+# $OpenBSD: Makefile,v 1.23 2011/07/03 20:30:42 naddy Exp $
 
 COMMENT=	once-popular mail user agent
 
 DISTNAME=	elm-2.4ME+66
+REVISION=	0
 CATEGORIES=	mail
 
 MASTER_SITES=	ftp://ftp.ozone.fmi.fi/KEH/
@@ -41,7 +42,7 @@ post-install:
 	@cd ${WRKSRC}/nls; make install
 	${INSTALL_DATA} \
 		${FILESDIR}/elm.mimetypes ${PREFIX}/lib/elm.mimetypes-dist
-	ln -f ${PREFIX}/man/cat1/newmail.0 ${PREFIX}/man/cat1/wnewmail.0
+	ln -f ${PREFIX}/man/man1/newmail.1 ${PREFIX}/man/man1/wnewmail.1
 	ln -f ${PREFIX}/bin/frm ${PREFIX}/bin/nfrm
 	ln -f ${PREFIX}/bin/newmail ${PREFIX}/bin/wnewmail
 
