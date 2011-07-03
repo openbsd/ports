@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2011/05/11 08:24:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.59 2011/07/03 22:51:25 naddy Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
 DISTNAME=	cyrus-sasl-2.1.23
-REVISION=	6
+REVISION=	7
 
 SHARED_LIBS=	anonymous	2.22 \
 		crammd5		2.22 \
@@ -124,15 +124,9 @@ pre-configure:
 		${WRKSRC}/saslauthd/saslauthd.mdoc \
 		${WRKSRC}/saslauthd/LDAP_SASLAUTHD
 
-post-build:
-	cd ${WRKBUILD}/saslauthd; \
-	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
-		testsaslauthd saslauthd.8
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sasl2
 	${INSTALL_DATA} ${WRKSRC}/doc/{*.html,*.txt} ${PREFIX}/share/doc/sasl2
-	${INSTALL_PROGRAM} ${WRKBUILD}/saslauthd/testsaslauthd ${PREFIX}/sbin
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sasl2
 .if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Mpgsql} || ${FLAVOR:L:Msqlite}
 	${INSTALL_DATA} ${FILESDIR}/Sendmail.conf-sql \
