@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.265 2011/06/25 07:11:30 rpointel Exp $
+# $OpenBSD: Makefile,v 1.266 2011/07/03 22:19:52 naddy Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -26,7 +26,6 @@
      SUBDIR += clamav
      SUBDIR += clamav-unofficial-sigs
      SUBDIR += clusterssh
-     SUBDIR += cops
      SUBDIR += corkscrew
      SUBDIR += cracklib
      SUBDIR += cryptcat
