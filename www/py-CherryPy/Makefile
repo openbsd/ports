@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2011/06/08 18:15:29 rpointel Exp $
+# $OpenBSD: Makefile,v 1.18 2011/07/03 22:14:42 zinke Exp $
 
 COMMENT=	pythonic, object-oriented web development framework
 
-MODPY_EGG_VERSION=	3.1.2
+MODPY_EGG_VERSION=	3.2.0
 REVISION=		0
 DISTNAME=		CherryPy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
@@ -22,7 +22,18 @@ MASTER_SITES=	http://download.cherrypy.org/cherrypy/${MODPY_EGG_VERSION}/
 
 MODULES=	lang/python
 
+REGRESS_DEPENDS =	devel/py-nose \
+			www/py-routes
+
+MODPY_SETUPTOOLS =	Yes
+
+# test_antistampede requires higher file descriptor limit
+# test_cache_control requires higher SECONDS variable
+# test_states requires signal handling fixed
+REGRESS_IS_INTERACTIVE =Yes
+
 do-regress:
-	@cd ${WRKSRC} && ${MODPY_BIN} ./cherrypy/test/test.py --dumb
+	@cd ${WRKSRC} && ${LOCALBASE}/bin/nosetests -s -v \
+		py2/cherrypy/test
 
 .include <bsd.port.mk>
