@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/07/02 17:58:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/07/03 22:38:12 naddy Exp $
 bin/maildir
 @bin bin/safecat
-@man man/cat1/maildir.0
-@man man/cat1/safecat.0
+@man man/man1/maildir.1
+@man man/man1/safecat.1
