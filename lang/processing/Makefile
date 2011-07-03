@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/24 21:12:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/03 21:49:30 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		language/IDE for images, animations and interactions
 V=			1.5.1
 DISTNAME=		processing-$V-linux
 PKGNAME=		${DISTNAME:S/-linux//}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		lang graphics java
 
@@ -24,6 +24,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		http://processing.googlecode.com/files/
 EXTRACT_SUFX=		.tgz
+
+RUN_DEPENDS=		devel/desktop-file-utils
 
 MODULES=		java
 MODJAVA_VER=		1.6+
@@ -46,5 +48,9 @@ do-install:
 	ln -s ${JAVA_HOME} ${PROCESSING_HOME}/java
 	rm -f ${PROCESSING_HOME}/processing.{beforesubst,orig}
 	mv ${PROCESSING_HOME}/processing ${PREFIX}/bin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${FILESDIR}/processing.desktop \
+		${PREFIX}/share/applications/
+	${INSTALL_DATA} ${FILESDIR}/processing-48.xpm ${PREFIX}/share/pixmaps/
 
 .include <bsd.port.mk>

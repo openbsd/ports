@@ -1,5 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/06/24 07:00:20 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/03 21:49:30 jasper Exp $
 bin/processing
+share/applications/processing.desktop
+share/pixmaps/
+share/pixmaps/processing-48.xpm
 share/processing/
 share/processing/java
 share/processing/lib/
@@ -5284,3 +5287,5 @@ share/processing/tools/Mangler/src/
 share/processing/tools/Mangler/src/Mangler.java
 share/processing/tools/Mangler/tool/
 share/processing/tools/howto.txt
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Processing
+Comment=Processing IDE
+Exec=processing %f
+TryExec=processing
+Terminal=false
+Type=Application
+Icon=processing-48
+Categories=Development;TextEditor;
