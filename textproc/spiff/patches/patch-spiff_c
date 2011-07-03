@@ -1,7 +1,15 @@
-$OpenBSD: patch-spiff_c,v 1.1 2005/09/05 13:25:04 espie Exp $
+$OpenBSD: patch-spiff_c,v 1.2 2011/07/03 22:55:26 naddy Exp $
 --- spiff.c.orig	Mon Feb  5 21:17:20 1990
-+++ spiff.c	Mon Sep  5 15:21:26 2005
-@@ -27,7 +27,8 @@ static char rcsid[]= "$Header: spiff.c,v
++++ spiff.c	Fri Jun 24 18:58:34 2011
+@@ -13,6 +13,7 @@ static char rcsid[]= "$Header: spiff.c,v 1.1 88/09/15 
+ 
+ 
+ #include <stdio.h>
++#include <string.h>
+ #include "misc.h"
+ #include "flagdefs.h"
+ #include "parse.h"
+@@ -27,7 +28,8 @@ static char rcsid[]= "$Header: spiff.c,v 1.1 88/09/15 
  #include "visual.h"
  #include "output.h"
  
@@ -11,7 +19,7 @@ $OpenBSD: patch-spiff_c,v 1.1 2005/09/05 13:25:04 espie Exp $
  
  static int _Y_eflag = 0;	/* use exact match algorithm */
  static int _Y_vflag = 0;	/* use visual mode */
-@@ -38,9 +39,8 @@ static int _Y_vflag = 0;	/* use visual m
+@@ -38,9 +40,8 @@ static int _Y_vflag = 0;	/* use visual mode */
  */
  static int _Y_flags;
  
@@ -23,7 +31,7 @@ $OpenBSD: patch-spiff_c,v 1.1 2005/09/05 13:25:04 espie Exp $
  {
  	E_edit edit_end;
  	char *filename[2];
-@@ -120,9 +120,9 @@ char *argv[];
+@@ -120,9 +121,9 @@ char *argv[];
  	if (E_NULL != edit_end)
  	{
  		O_output(edit_end,_Y_flags);
@@ -35,7 +43,7 @@ $OpenBSD: patch-spiff_c,v 1.1 2005/09/05 13:25:04 espie Exp $
  }
  
  /*
-@@ -174,11 +174,7 @@ char *from;
+@@ -174,11 +175,7 @@ char *from;
  #define SETPTR	{if(strlen(argv[1]) == 2) {argv++;argc--;ptr=argv[1];}else ptr=(&argv[1][2]);}
  
  static void

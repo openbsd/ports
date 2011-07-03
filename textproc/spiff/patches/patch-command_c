@@ -1,7 +1,15 @@
-$OpenBSD: patch-command_c,v 1.1 2005/09/05 13:25:04 espie Exp $
+$OpenBSD: patch-command_c,v 1.2 2011/07/03 22:55:26 naddy Exp $
 --- command.c.orig	Wed Sep 23 20:06:51 1998
-+++ command.c	Mon Sep  5 15:21:26 2005
-@@ -172,17 +172,17 @@ C_clear_cmd()
++++ command.c	Fri Jun 24 19:02:50 2011
+@@ -12,6 +12,7 @@ static char rcsid[]= "$Header: /home/ian/ports/textpro
+ #endif
+ 
+ 
++#include <string.h>
+ #include "misc.h"
+ #include "tol.h"
+ #include "comment.h"
+@@ -172,17 +173,17 @@ C_clear_cmd()
  }
  
  int
