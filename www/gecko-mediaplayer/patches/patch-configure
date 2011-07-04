@@ -1,8 +1,8 @@
-$OpenBSD: patch-configure,v 1.6 2011/04/28 11:49:56 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.7 2011/07/04 13:33:30 dcoppa Exp $
 
-use -pthread instead of -lpthread for pthreads linkage
-remove -ldl
-fix GECKO_CFLAGS and GECKO_LIBS
+Use '-pthread' instead of '-lpthread' for libpthread linkage
+Remove -ldl
+Fix GECKO_CFLAGS and GECKO_LIBS
 
 --- configure.orig	Thu Apr 21 16:59:11 2011
 +++ configure	Tue Apr 26 16:26:20 2011

@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Makefile_in,v 1.5 2011/04/28 11:49:56 dcoppa Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.6 2011/07/04 13:33:30 dcoppa Exp $
 
-fix library linking (remove -ldl)
+Fix library linking (remove -ldl)
 
 --- src/Makefile.in.orig	Tue Apr 26 16:27:58 2011
 +++ src/Makefile.in	Tue Apr 26 16:28:19 2011

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/08 15:06:32 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/07/04 13:33:30 dcoppa Exp $
 lib/mozilla/
 lib/mozilla/plugins/
 lib/mozilla/plugins/gecko-mediaplayer-dvx.so
@@ -22,5 +22,6 @@ share/locale/it/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/ja/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/nl/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/pl/LC_MESSAGES/gecko-mediaplayer.mo
+share/locale/pt/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/pt_BR/LC_MESSAGES/gecko-mediaplayer.mo
 share/locale/tr/LC_MESSAGES/gecko-mediaplayer.mo
