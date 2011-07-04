@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/04 15:18:31 jasper Exp $
+%%SHARED%%
+@bin bin/gssdp-device-sniffer
+include/gssdp-1.0/
+include/gssdp-1.0/libgssdp/
+include/gssdp-1.0/libgssdp/gssdp-client.h
+include/gssdp-1.0/libgssdp/gssdp-error.h
+include/gssdp-1.0/libgssdp/gssdp-resource-browser.h
+include/gssdp-1.0/libgssdp/gssdp-resource-group.h
+include/gssdp-1.0/libgssdp/gssdp.h
+lib/girepository-1.0/
+lib/girepository-1.0/GSSDP-1.0.typelib
+lib/libgssdp-1.0.a
+lib/libgssdp-1.0.la
+lib/pkgconfig/
+lib/pkgconfig/gssdp-1.0.pc
+share/gir-1.0/
+share/gir-1.0/GSSDP-1.0.gir
+share/gssdp/
+share/gssdp/gssdp-device-sniffer.ui
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/gssdp/
+share/gtk-doc/html/gssdp/GSSDPClient.html
+share/gtk-doc/html/gssdp/GSSDPResourceBrowser.html
+share/gtk-doc/html/gssdp/GSSDPResourceGroup.html
+share/gtk-doc/html/gssdp/ch01.html
+share/gtk-doc/html/gssdp/gssdp-Error-codes.html
+share/gtk-doc/html/gssdp/gssdp.devhelp
+share/gtk-doc/html/gssdp/gssdp.devhelp2
+share/gtk-doc/html/gssdp/home.png
+share/gtk-doc/html/gssdp/index.html
+share/gtk-doc/html/gssdp/index.sgml
+share/gtk-doc/html/gssdp/left.png
+share/gtk-doc/html/gssdp/right.png
+share/gtk-doc/html/gssdp/style.css
+share/gtk-doc/html/gssdp/up.png
