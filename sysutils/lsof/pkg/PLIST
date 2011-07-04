@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/05/18 16:25:14 ajacoutot Exp $
-@man man/cat8/lsof.0
+@comment $OpenBSD: PLIST,v 1.14 2011/07/04 00:39:07 naddy Exp $
+@man man/man8/lsof.8
 @mode 2555
 @group kmem
 @bin sbin/lsof

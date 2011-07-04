@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2011/06/30 19:13:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.81 2011/07/04 00:39:07 naddy Exp $
 
 COMMENT=	list information about open files
 
@@ -60,7 +60,7 @@ NO_REGRESS=	Yes
 do-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/lsof
 	${INSTALL_PROGRAM} ${WRKBUILD}/lsof ${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/lsof.man ${PREFIX}/man/cat8/lsof.0
+	${INSTALL_MAN} ${WRKSRC}/lsof.8 ${PREFIX}/man/man8/lsof.8
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/share/lsof
 	@chmod 444 ${PREFIX}/share/lsof/00*
 
