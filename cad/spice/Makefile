@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.29 2011/06/21 20:21:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.30 2011/07/04 04:24:01 naddy Exp $
 
 COMMENT=	Simulation Program for Integrated Circuit Electronics
 
 V=			3f5
 DISTNAME=		spice${V}
 PKGNAME=		spice-${V}
-REVISION=		3
+REVISION=		4
 CATEGORIES=     	cad
 
 # BSD
@@ -21,6 +21,7 @@ HOMEPAGE=		http://bwrc.eecs.berkeley.edu/Classes/IcBook/SPICE/
 
 MAKE_ENV=		MAKE_PROGRAM='${MAKE_PROGRAM}' CC="${CC}"
 
+USE_GROFF=		Yes
 NO_REGRESS=		Yes
 
 do-configure:

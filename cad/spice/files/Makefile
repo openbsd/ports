@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2001/04/08 23:27:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2011/07/04 04:24:01 naddy Exp $
 #
 
 EXAMPLES=	bjtnoise.cir    ltra_1.cir      mos6inv.cir     pz2.cir \
@@ -13,12 +13,12 @@ all:
 
 install:
 	util/build OpenBSD install
-	${BSD_INSTALL_MAN} man/man1/nutmeg.0 ${PREFIX}/man/cat1
-	${BSD_INSTALL_MAN} man/man1/sconvert.0 ${PREFIX}/man/cat1
-	${BSD_INSTALL_MAN} man/man1/spice.0 ${PREFIX}/man/cat1
-	/bin/ln -sf spice.0 ${PREFIX}/man/cat1/spice3.0
-	${BSD_INSTALL_MAN} man/man3/mfb.0 ${PREFIX}/man/cat3
-	${BSD_INSTALL_MAN} man/man5/mfbcap.0 ${PREFIX}/man/cat5
+	${BSD_INSTALL_MAN} man/man1/nutmeg.1 ${PREFIX}/man/man1
+	${BSD_INSTALL_MAN} man/man1/sconvert.1 ${PREFIX}/man/man1
+	${BSD_INSTALL_MAN} man/man1/spice.1 ${PREFIX}/man/man1
+	/bin/ln -sf spice.1 ${PREFIX}/man/man1/spice3.1
+	${BSD_INSTALL_MAN} man/man3/mfb.3 ${PREFIX}/man/man3
+	${BSD_INSTALL_MAN} man/man5/mfbcap.5 ${PREFIX}/man/man5
 	${BSD_INSTALL_DATA_DIR} ${PREFIX}/share/examples/spice
 .for ex in ${EXAMPLES}
 	${BSD_INSTALL_DATA} examples/${ex} ${PREFIX}/share/examples/spice
