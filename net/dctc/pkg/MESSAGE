@@ -1,2 +1,0 @@
-dctc does not require any privileges and should not be run as root, just
-specify another port to listen on instead of the default (412).
