@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/17 15:08:36 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2011/07/04 17:44:27 dcoppa Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
@@ -41,7 +41,8 @@ MODULES =	devel/gettext \
 
 LIB_DEPENDS =	sysutils/polkit>=0.101 \
 		x11/dbus-glib
-BUILD_DEPENDS =	textproc/libxslt,-main \
+BUILD_DEPENDS =	devel/gobject-introspection \
+		textproc/libxslt,-main \
 		textproc/docbook-xsl
 
 WANTLIB =	c dbus-1 dbus-glib-1 glib-2.0 gobject-2.0 m \
