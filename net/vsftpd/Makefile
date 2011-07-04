@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2011/03/02 08:26:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2011/07/04 18:28:27 jasper Exp $
 
 COMMENT=		ftp daemon which aims to be secure
 
 DISTNAME=		vsftpd-2.3.4
+REVISION=		0
 CATEGORIES=		net
 
 HOMEPAGE =		http://vsftpd.beasts.org/
@@ -17,7 +18,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		c crypto util ssl wrap
 
-MASTER_SITES=		ftp://vsftpd.beasts.org/users/cevans/
+MASTER_SITES=		https://security.appspot.com/downloads/
 
 ALL_TARGET=		vsftpd
 
