@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/06/21 20:21:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.35 2011/07/04 00:25:46 naddy Exp $
 
 COMMENT=	biff-type program, designed to match AfterStep
 
@@ -20,6 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB=		ICE SM X11 Xext Xpm Xt c jpeg>=62
 
+USE_GROFF=	Yes
+
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-shaping
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
@@ -34,7 +36,7 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/include/X11/pixmaps/cloud-e
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/asmail
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/asmail
-	${INSTALL_MAN} ${WRKSRC}/asmail.man ${PREFIX}/man/cat1/asmail.0
+	${INSTALL_MAN} ${WRKSRC}/asmail.man.src ${PREFIX}/man/man1/asmail.1
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/cloud-e/*.xpm ${PREFIX}/include/X11/pixmaps/cloud-e
 	${INSTALL_DATA} ${WRKSRC}/pixmaps/*.xpm ${PREFIX}/include/X11/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/sample.asmailrc ${PREFIX}/share/examples/asmail

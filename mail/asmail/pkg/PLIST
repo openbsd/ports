@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/04/25 12:39:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/07/04 00:25:46 naddy Exp $
 @conflict xfaces-*
 @bin bin/asmail
 include/X11/pixmaps/
@@ -76,7 +76,7 @@ include/X11/pixmaps/nomail.xpm
 include/X11/pixmaps/nomail_s.xpm
 include/X11/pixmaps/oldmail.xpm
 include/X11/pixmaps/oldmail_s.xpm
-@man man/cat1/asmail.0
+@man man/man1/asmail.1
 share/doc/asmail/
 share/doc/asmail/README
 share/examples/asmail/
