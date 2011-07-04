@@ -1,22 +1,18 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/19 22:31:39 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/07/04 11:18:28 jasper Exp $
 
 COMMENT=	Graphical Direct-Connect client
 
 DISTNAME=	valknut-0.3.7
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 
-HOMEPAGE=	http://dcgui.berlios.de/
+HOMEPAGE=	http://wxdcgui.sourceforge.net/
 
-MAINTAINER=	Andrew Sveikauskas <asveikau@mail.rochester.edu>
-
-# GPL
+# GPLv2
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes  
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-
-MASTER_SITES=	${MASTER_SITE_BERLIOS:=dcgui/}
 
 MODULES=	converters/libiconv x11/qt3
 LIB_DEPENDS=	net/dclib \
