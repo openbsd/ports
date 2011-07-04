@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/06/21 17:06:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/07/04 15:12:49 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += backgrounds
@@ -26,6 +26,7 @@
      SUBDIR += panel
      SUBDIR += power-manager
      SUBDIR += screensaver
+     SUBDIR += seahorse
      SUBDIR += session
      SUBDIR += settings-daemon
      SUBDIR += system-monitor
