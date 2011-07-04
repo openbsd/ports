@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/05/28 08:15:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/07/04 13:32:55 dcoppa Exp $
 @bin bin/gnome-mplayer
 @man man/man1/gnome-mplayer.1
 share/applications/gnome-mplayer.desktop
@@ -19,24 +19,11 @@ share/glib-2.0/schemas/apps.gnome-mplayer.preferences.gschema.xml
 share/gnome-control-center/
 share/gnome-control-center/default-apps/
 share/gnome-control-center/default-apps/gnome-mplayer.xml
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/gnome-mplayer.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/gnome-mplayer.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/gnome-mplayer.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/gnome-mplayer.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/gnome-mplayer.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/gnome-mplayer.svg
 share/locale/ar/LC_MESSAGES/gnome-mplayer.mo
 share/locale/bg/LC_MESSAGES/gnome-mplayer.mo
@@ -80,6 +67,7 @@ share/locale/th/LC_MESSAGES/gnome-mplayer.mo
 share/locale/tr/LC_MESSAGES/gnome-mplayer.mo
 share/locale/ug/LC_MESSAGES/gnome-mplayer.mo
 share/locale/uk/LC_MESSAGES/gnome-mplayer.mo
+share/locale/vi/LC_MESSAGES/gnome-mplayer.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-mplayer.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-mplayer.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-mplayer.mo

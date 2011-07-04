@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_gui_c,v 1.15 2011/07/04 13:32:55 dcoppa Exp $
+
+Fix an issue when alsa is not being used
+(upstream svn revision r2151)
+
+--- src/gui.c.orig	Mon Jul  4 14:43:40 2011
++++ src/gui.c	Mon Jul  4 14:44:57 2011
+@@ -5073,7 +5073,7 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
+     gtk_spin_button_set_value(GTK_SPIN_BUTTON(config_volume), gm_pref_store_get_int(gm_store, VOLUME));
+     gm_pref_store_free(gm_store);
+     gtk_entry_set_width_chars(GTK_ENTRY(config_volume), 6);
+-    gtk_entry_set_editable(GTK_ENTRY(config_volume), FALSE);
++    gtk_editable_set_editable(GTK_EDITABLE(config_volume), FALSE);
+     gtk_entry_set_alignment(GTK_ENTRY(config_volume), 1);
+     gtk_widget_show(config_volume);
+     i++;

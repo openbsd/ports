@@ -1,6 +1,6 @@
-$OpenBSD: patch-apps_gnome-mplayer_preferences_gschema_xml,v 1.2 2011/05/04 05:35:54 dcoppa Exp $
+$OpenBSD: patch-apps_gnome-mplayer_preferences_gschema_xml,v 1.3 2011/07/04 13:32:55 dcoppa Exp $
 
-set some sane defaults:
+Set some sane defaults:
 use mplayer's software volume control
 disable bar animation in full screen
 use xscrnsaver controls over gnome-power-manager

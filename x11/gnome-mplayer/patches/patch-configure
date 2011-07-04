@@ -1,9 +1,9 @@
-$OpenBSD: patch-configure,v 1.7 2011/05/26 12:47:53 dcoppa Exp $
+$OpenBSD: patch-configure,v 1.8 2011/07/04 13:32:55 dcoppa Exp $
 
-don't check for libgpod 0.6.x: it's not in our ports tree
+Don't check for libgpod 0.6.x: it's not in our ports tree
 
---- configure.orig	Tue Apr 26 15:08:48 2011
-+++ configure	Tue Apr 26 15:10:54 2011
+--- configure.orig	Thu Jun  9 18:24:17 2011
++++ configure	Mon Jun 13 12:52:27 2011
 @@ -620,8 +620,6 @@ GPOD_CFLAGS
  GPOD07_LIBS
  GPOD07_CFLAGS
@@ -13,7 +13,7 @@ don't check for libgpod 0.6.x: it's not in our ports tree
  NOTIFY_DEFINES
  LIBNOTIFY_07_LIBS
  LIBNOTIFY_07_CFLAGS
-@@ -866,8 +864,6 @@ NOTIFY_CFLAGS
+@@ -876,8 +874,6 @@ NOTIFY_CFLAGS
  NOTIFY_LIBS
  LIBNOTIFY_07_CFLAGS
  LIBNOTIFY_07_LIBS
@@ -22,7 +22,7 @@ don't check for libgpod 0.6.x: it's not in our ports tree
  GPOD07_CFLAGS
  GPOD07_LIBS
  MUSICBRAINZ_CFLAGS
-@@ -1597,9 +1593,6 @@ Some influential environment variables:
+@@ -1615,9 +1611,6 @@ Some influential environment variables:
                C compiler flags for LIBNOTIFY_07, overriding pkg-config
    LIBNOTIFY_07_LIBS
                linker flags for LIBNOTIFY_07, overriding pkg-config
@@ -32,7 +32,7 @@ don't check for libgpod 0.6.x: it's not in our ports tree
    GPOD07_CFLAGS
                C compiler flags for GPOD07, overriding pkg-config
    GPOD07_LIBS linker flags for GPOD07, overriding pkg-config
-@@ -8926,86 +8919,6 @@ fi
+@@ -9404,86 +9397,6 @@ fi
  if test "x$with_libgpod" != xno; then :
  
  pkg_failed=no
@@ -119,7 +119,7 @@ don't check for libgpod 0.6.x: it's not in our ports tree
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for GPOD07" >&5
  $as_echo_n "checking for GPOD07... " >&6; }
  
-@@ -9083,8 +8996,8 @@ fi
+@@ -9561,8 +9474,8 @@ fi
  
  fi
  
