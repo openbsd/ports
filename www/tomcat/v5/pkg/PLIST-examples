@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.7 2010/11/29 21:26:01 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.8 2011/07/04 07:41:37 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v5,-examples
 @owner _tomcat
@@ -1248,6 +1248,7 @@ webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/package-summar
 webapps/tomcat-docs/catalina/docs/api/org/apache/naming/resources/package-tree.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/
 webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/
+webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/ExceptionUtils.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/IntrospectionUtils.AttributeHolder.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/IntrospectionUtils.PropertySource.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/IntrospectionUtils.html
@@ -1371,7 +1372,6 @@ webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/TcpConnection.h
 webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/TcpConnectionHandler.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/URL.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/jsse/
-webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/jsse/JSSE13SocketFactory.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/jsse/JSSE14SocketFactory.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/jsse/JSSEImplementation.html
 webapps/tomcat-docs/catalina/docs/api/org/apache/tomcat/util/net/jsse/JSSEKeyManager.html

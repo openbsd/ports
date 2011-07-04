@@ -1,7 +1,7 @@
-$OpenBSD: patch-conf_server_xml,v 1.1.1.1 2009/01/09 21:38:43 kurt Exp $
---- conf/server.xml.orig	Mon Jul 21 20:01:12 2008
-+++ conf/server.xml	Thu Jan  1 15:03:32 2009
-@@ -64,12 +64,12 @@
+$OpenBSD: patch-conf_server_xml,v 1.2 2011/07/04 07:41:37 dcoppa Exp $
+--- conf/server.xml.orig	Wed Feb  2 20:06:47 2011
++++ conf/server.xml	Wed Jun 22 11:03:34 2011
+@@ -66,12 +66,12 @@
           APR (HTTP/AJP) Connector: /docs/apr.html
           Define a non-SSL HTTP/1.1 Connector on port 8080
      -->
@@ -16,7 +16,7 @@ $OpenBSD: patch-conf_server_xml,v 1.1.1.1 2009/01/09 21:38:43 kurt Exp $
                 port="8080" protocol="HTTP/1.1" 
                 connectionTimeout="20000" 
                 redirectPort="8443" />
-@@ -79,13 +79,13 @@
+@@ -81,13 +81,13 @@
           connector should be using the OpenSSL style configuration
           described in the APR documentation -->
      <!--
@@ -32,7 +32,7 @@ $OpenBSD: patch-conf_server_xml,v 1.1.1.1 2009/01/09 21:38:43 kurt Exp $
  
  
      <!-- An Engine represents the entry point (within Catalina) that processes
-@@ -123,7 +123,7 @@
+@@ -125,7 +125,7 @@
        <!-- Define the default virtual host
             Note: XML Schema validation will not work with Xerces 2.2.
         -->

@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2011/06/02 13:41:42 ajacoutot Exp $
+$OpenBSD: README-main,v 1.3 2011/07/04 07:41:37 dcoppa Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -11,9 +11,9 @@ documentation.  Sample config files for the manager webapp can be found
 in ${TRUEPREFIX}/share/examples/tomcat.
 
 The tomcat-examples package includes the examples, full documentation
-and localhost config file for the and manager webapp.
+and the localhost config file for the manager webapp.
 
-The packages are structured this way to facilate mantaining a server
+The packages are structured this way to facilitate maintaining a server
 which normally would not contain the examples and documentation webapp.
 
 Tomcat on OpenBSD uses the `${SYSCONFDIR}/tomcat' directory for its
@@ -34,7 +34,7 @@ sure the Connector port is 80 in your
 tcp traffic to port 80 to Tomcat's default listener port 8080 using a
 pf.conf(5) rule like:
 
-   pass quick on $NIC proto tcp to port 80 rdr-to 127.0.0.1 port 8080
+   pass in quick on $NIC proto tcp to port 80 rdr-to 127.0.0.1 port 8080
 
 If you are upgrading and use database drivers, don't forget to copy them
 into ${TRUEPREFIX}/tomcat/lib. You must also delete any work files in

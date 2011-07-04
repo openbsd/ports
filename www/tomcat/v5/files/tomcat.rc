@@ -1,4 +1,4 @@
-# $OpenBSD: tomcat.rc,v 1.2 2010/11/29 21:26:01 sthen Exp $
+# $OpenBSD: tomcat.rc,v 1.3 2011/07/04 07:41:37 dcoppa Exp $
 #
 # Define JAVA_HOME for _tomcat here
 # Start tomcat with following command:
@@ -8,7 +8,7 @@
 # javaPathHelper will pickup JAVA_HOME from the env. if
 # it is not set in the env it will default the jdk that
 # satisfied the RUN_DEPEND.
-JAVA_HOME=$(javaPathHelper -h tomcat)
+JAVA_HOME=$(${LOCALBASE}/bin/javaPathHelper -h tomcat)
 JAVA_OPTS=-server
 
 # override other environment options:

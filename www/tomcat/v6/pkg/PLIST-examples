@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.3 2010/11/15 10:45:54 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.4 2011/07/04 07:41:37 dcoppa Exp $
 @conflict jakarta-tomcat-examples-*
 @pkgpath www/jakarta-tomcat/v6,-examples
 @owner _tomcat
@@ -37,6 +37,7 @@ webapps/docs/api/org/apache/
 webapps/docs/api/org/apache/AnnotationProcessor.html
 webapps/docs/api/org/apache/PeriodicEventListener.html
 webapps/docs/api/org/apache/catalina/
+webapps/docs/api/org/apache/catalina/AccessLog.html
 webapps/docs/api/org/apache/catalina/Authenticator.html
 webapps/docs/api/org/apache/catalina/Cluster.html
 webapps/docs/api/org/apache/catalina/CometEvent.EventSubType.html
@@ -153,17 +154,21 @@ webapps/docs/api/org/apache/catalina/connector/package-tree.html
 webapps/docs/api/org/apache/catalina/core/
 webapps/docs/api/org/apache/catalina/core/ApplicationContext.html
 webapps/docs/api/org/apache/catalina/core/ApplicationContextFacade.html
+webapps/docs/api/org/apache/catalina/core/ApplicationFilterConfig.html
 webapps/docs/api/org/apache/catalina/core/ApplicationFilterFactory.html
 webapps/docs/api/org/apache/catalina/core/AprLifecycleListener.html
 webapps/docs/api/org/apache/catalina/core/Constants.html
 webapps/docs/api/org/apache/catalina/core/ContainerBase.ContainerBackgroundProcessor.html
+webapps/docs/api/org/apache/catalina/core/ContainerBase.NoopAccessLog.html
 webapps/docs/api/org/apache/catalina/core/ContainerBase.PrivilegedAddChild.html
 webapps/docs/api/org/apache/catalina/core/ContainerBase.html
 webapps/docs/api/org/apache/catalina/core/DummyRequest.html
 webapps/docs/api/org/apache/catalina/core/DummyResponse.html
 webapps/docs/api/org/apache/catalina/core/JasperListener.html
+webapps/docs/api/org/apache/catalina/core/JreMemoryLeakPreventionListener.html
 webapps/docs/api/org/apache/catalina/core/NamingContextListener.html
 webapps/docs/api/org/apache/catalina/core/StandardContext.html
+webapps/docs/api/org/apache/catalina/core/StandardEngine.AccessLogListener.html
 webapps/docs/api/org/apache/catalina/core/StandardEngine.html
 webapps/docs/api/org/apache/catalina/core/StandardHost.html
 webapps/docs/api/org/apache/catalina/core/StandardPipeline.html
@@ -200,6 +205,14 @@ webapps/docs/api/org/apache/catalina/deploy/SecurityRoleRef.html
 webapps/docs/api/org/apache/catalina/deploy/package-frame.html
 webapps/docs/api/org/apache/catalina/deploy/package-summary.html
 webapps/docs/api/org/apache/catalina/deploy/package-tree.html
+webapps/docs/api/org/apache/catalina/filters/
+webapps/docs/api/org/apache/catalina/filters/Constants.html
+webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.CsrfResponseWrapper.html
+webapps/docs/api/org/apache/catalina/filters/CsrfPreventionFilter.html
+webapps/docs/api/org/apache/catalina/filters/FilterBase.html
+webapps/docs/api/org/apache/catalina/filters/package-frame.html
+webapps/docs/api/org/apache/catalina/filters/package-summary.html
+webapps/docs/api/org/apache/catalina/filters/package-tree.html
 webapps/docs/api/org/apache/catalina/ha/
 webapps/docs/api/org/apache/catalina/ha/CatalinaCluster.html
 webapps/docs/api/org/apache/catalina/ha/ClusterDeployer.html
@@ -274,12 +287,14 @@ webapps/docs/api/org/apache/catalina/ha/util/package-summary.html
 webapps/docs/api/org/apache/catalina/ha/util/package-tree.html
 webapps/docs/api/org/apache/catalina/loader/
 webapps/docs/api/org/apache/catalina/loader/Constants.html
+webapps/docs/api/org/apache/catalina/loader/JdbcLeakPrevention.html
 webapps/docs/api/org/apache/catalina/loader/Reloader.html
 webapps/docs/api/org/apache/catalina/loader/ResourceEntry.html
 webapps/docs/api/org/apache/catalina/loader/StandardClassLoader.html
 webapps/docs/api/org/apache/catalina/loader/StandardClassLoaderMBean.html
 webapps/docs/api/org/apache/catalina/loader/VirtualWebappLoader.html
 webapps/docs/api/org/apache/catalina/loader/WebappClassLoader.PrivilegedFindResource.html
+webapps/docs/api/org/apache/catalina/loader/WebappClassLoader.PrivilegedFindResourceByName.html
 webapps/docs/api/org/apache/catalina/loader/WebappClassLoader.PrivilegedGetClassLoader.html
 webapps/docs/api/org/apache/catalina/loader/WebappClassLoader.html
 webapps/docs/api/org/apache/catalina/loader/WebappLoader.html
@@ -314,12 +329,15 @@ webapps/docs/api/org/apache/catalina/manager/util/package-tree.html
 webapps/docs/api/org/apache/catalina/mbeans/
 webapps/docs/api/org/apache/catalina/mbeans/ClassNameMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/ConnectorMBean.html
+webapps/docs/api/org/apache/catalina/mbeans/Constants.html
 webapps/docs/api/org/apache/catalina/mbeans/ContextEnvironmentMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/ContextResourceLinkMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/ContextResourceMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/DefaultContextMBean.html
 webapps/docs/api/org/apache/catalina/mbeans/GlobalResourcesLifecycleListener.html
 webapps/docs/api/org/apache/catalina/mbeans/GroupMBean.html
+webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.RmiClientLocalhostSocketFactory.html
+webapps/docs/api/org/apache/catalina/mbeans/JmxRemoteLifecycleListener.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanFactory.html
 webapps/docs/api/org/apache/catalina/mbeans/MBeanUtils.html
 webapps/docs/api/org/apache/catalina/mbeans/MemoryUserDatabaseMBean.html
@@ -347,6 +365,7 @@ webapps/docs/api/org/apache/catalina/realm/JAASCallbackHandler.html
 webapps/docs/api/org/apache/catalina/realm/JAASMemoryLoginModule.html
 webapps/docs/api/org/apache/catalina/realm/JAASRealm.html
 webapps/docs/api/org/apache/catalina/realm/JDBCRealm.html
+webapps/docs/api/org/apache/catalina/realm/JNDIRealm.User.html
 webapps/docs/api/org/apache/catalina/realm/JNDIRealm.html
 webapps/docs/api/org/apache/catalina/realm/LockOutRealm.LockRecord.html
 webapps/docs/api/org/apache/catalina/realm/LockOutRealm.html
@@ -382,6 +401,7 @@ webapps/docs/api/org/apache/catalina/session/
 webapps/docs/api/org/apache/catalina/session/Constants.html
 webapps/docs/api/org/apache/catalina/session/FileStore.html
 webapps/docs/api/org/apache/catalina/session/JDBCStore.html
+webapps/docs/api/org/apache/catalina/session/ManagerBase.SessionTiming.html
 webapps/docs/api/org/apache/catalina/session/ManagerBase.html
 webapps/docs/api/org/apache/catalina/session/PersistentManager.html
 webapps/docs/api/org/apache/catalina/session/PersistentManagerBase.html
@@ -609,6 +629,7 @@ webapps/docs/api/org/apache/catalina/tribes/util/
 webapps/docs/api/org/apache/catalina/tribes/util/Arrays.html
 webapps/docs/api/org/apache/catalina/tribes/util/Logs.html
 webapps/docs/api/org/apache/catalina/tribes/util/StringManager.html
+webapps/docs/api/org/apache/catalina/tribes/util/TcclThreadFactory.html
 webapps/docs/api/org/apache/catalina/tribes/util/UUIDGenerator.html
 webapps/docs/api/org/apache/catalina/tribes/util/package-frame.html
 webapps/docs/api/org/apache/catalina/tribes/util/package-summary.html
@@ -708,6 +729,7 @@ webapps/docs/api/org/apache/catalina/valves/JDBCAccessLogValve.html
 webapps/docs/api/org/apache/catalina/valves/PersistentValve.html
 webapps/docs/api/org/apache/catalina/valves/RemoteAddrValve.html
 webapps/docs/api/org/apache/catalina/valves/RemoteHostValve.html
+webapps/docs/api/org/apache/catalina/valves/RemoteIpValve.html
 webapps/docs/api/org/apache/catalina/valves/RequestDumperValve.html
 webapps/docs/api/org/apache/catalina/valves/RequestFilterValve.html
 webapps/docs/api/org/apache/catalina/valves/SSLValve.html
@@ -774,6 +796,7 @@ webapps/docs/api/org/apache/coyote/http11/filters/
 webapps/docs/api/org/apache/coyote/http11/filters/BufferedInputFilter.html
 webapps/docs/api/org/apache/coyote/http11/filters/ChunkedInputFilter.html
 webapps/docs/api/org/apache/coyote/http11/filters/ChunkedOutputFilter.html
+webapps/docs/api/org/apache/coyote/http11/filters/FlushableGZIPOutputStream.html
 webapps/docs/api/org/apache/coyote/http11/filters/GzipOutputFilter.FakeOutputStream.html
 webapps/docs/api/org/apache/coyote/http11/filters/GzipOutputFilter.html
 webapps/docs/api/org/apache/coyote/http11/filters/IdentityInputFilter.html
@@ -878,6 +901,7 @@ webapps/docs/api/org/apache/el/util/
 webapps/docs/api/org/apache/el/util/ConcurrentCache.html
 webapps/docs/api/org/apache/el/util/MessageFactory.html
 webapps/docs/api/org/apache/el/util/ReflectionUtil.html
+webapps/docs/api/org/apache/el/util/Validation.html
 webapps/docs/api/org/apache/el/util/package-frame.html
 webapps/docs/api/org/apache/el/util/package-summary.html
 webapps/docs/api/org/apache/el/util/package-tree.html
@@ -892,6 +916,7 @@ webapps/docs/api/org/apache/jasper/compiler/
 webapps/docs/api/org/apache/jasper/compiler/AntCompiler.JasperAntLogger.html
 webapps/docs/api/org/apache/jasper/compiler/AntCompiler.SystemLogHandler.html
 webapps/docs/api/org/apache/jasper/compiler/AntCompiler.html
+webapps/docs/api/org/apache/jasper/compiler/AttributeParser.html
 webapps/docs/api/org/apache/jasper/compiler/BeanRepository.html
 webapps/docs/api/org/apache/jasper/compiler/Compiler.html
 webapps/docs/api/org/apache/jasper/compiler/ELFunctionMapper.html
@@ -1125,6 +1150,8 @@ webapps/docs/api/org/apache/naming/TransactionRef.html
 webapps/docs/api/org/apache/naming/factory/
 webapps/docs/api/org/apache/naming/factory/BeanFactory.html
 webapps/docs/api/org/apache/naming/factory/Constants.html
+webapps/docs/api/org/apache/naming/factory/DataSourceLinkFactory.DataSourceHandler.html
+webapps/docs/api/org/apache/naming/factory/DataSourceLinkFactory.html
 webapps/docs/api/org/apache/naming/factory/EjbFactory.html
 webapps/docs/api/org/apache/naming/factory/MailSessionFactory.html
 webapps/docs/api/org/apache/naming/factory/OpenEjbFactory.html
@@ -1229,6 +1256,7 @@ webapps/docs/api/org/apache/tomcat/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/
 webapps/docs/api/org/apache/tomcat/util/DomUtil.NullResolver.html
 webapps/docs/api/org/apache/tomcat/util/DomUtil.html
+webapps/docs/api/org/apache/tomcat/util/ExceptionUtils.html
 webapps/docs/api/org/apache/tomcat/util/IntrospectionUtils.AttributeHolder.html
 webapps/docs/api/org/apache/tomcat/util/IntrospectionUtils.PropertySource.html
 webapps/docs/api/org/apache/tomcat/util/IntrospectionUtils.html
@@ -1523,6 +1551,7 @@ webapps/docs/config/cluster.html
 webapps/docs/config/context.html
 webapps/docs/config/engine.html
 webapps/docs/config/executor.html
+webapps/docs/config/filter.html
 webapps/docs/config/globalresources.html
 webapps/docs/config/host.html
 webapps/docs/config/http.html
@@ -1582,9 +1611,14 @@ webapps/docs/setup.html
 webapps/docs/ssi-howto.html
 webapps/docs/ssl-howto.html
 webapps/docs/tribes/
+webapps/docs/tribes/developers.html
 webapps/docs/tribes/faq.html
+webapps/docs/tribes/interceptors.html
 webapps/docs/tribes/introduction.html
+webapps/docs/tribes/membership.html
 webapps/docs/tribes/setup.html
+webapps/docs/tribes/status.html
+webapps/docs/tribes/transport.html
 webapps/docs/virtual-hosting-howto.html
 webapps/docs/windows-service-howto.html
 webapps/examples/
@@ -1730,8 +1764,8 @@ webapps/examples/jsp/cal/cal2.jsp.html
 webapps/examples/jsp/cal/calendar.html
 webapps/examples/jsp/cal/login.html
 webapps/examples/jsp/chat/
-webapps/examples/jsp/chat/chat.jsp
-webapps/examples/jsp/chat/chat.jsp.html
+webapps/examples/jsp/chat/index.jsp
+webapps/examples/jsp/chat/index.jsp.html
 webapps/examples/jsp/chat/login.jsp
 webapps/examples/jsp/chat/login.jsp.html
 webapps/examples/jsp/chat/post.jsp

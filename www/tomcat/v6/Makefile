@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/02 13:41:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/04 07:41:37 dcoppa Exp $
 
 COMMENT-main=	Java servlet 2.5 and Java server pages 2.1 server
 COMMENT-examples=example applications and full documentation
 
-V=		6.0.20
+V=		6.0.32
 DISTNAME=	apache-tomcat-${V}
 PKGNAME=	tomcat-${V}
 PKGNAME-main=	tomcat-${V}
 PKGNAME-examples=tomcat-examples-${V}
-REVISION-main=	2
-REVISION-examples= 1
 CATEGORIES=	www
 
 DISTFILES=	${DISTNAME}.tar.gz \
@@ -19,8 +17,6 @@ MASTER_SITES=	${MASTER_SITE_APACHE:=tomcat/tomcat-6/v$V/bin/} \
 		http://archive.apache.org/dist/tomcat/tomcat-6/archive/v${V}/bin/
 
 HOMEPAGE=	http://tomcat.apache.org/
-
-MAINTAINER=	Kurt Miller <kurt@openbsd.org>
 
 MULTI_PACKAGES=	-main -examples
 
@@ -76,12 +72,17 @@ do-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${CONFDIR}/Catalina/localhost
 	${INSTALL_DATA} ${WRKDIST}/webapps/host-manager/manager.xml \
 		${WRKINST}/${CONFDIR}/Catalina/localhost
-	find ${WRKINST} -name \*.orig -or -name \*.bat -or -name \*.exe | \
-		xargs rm
-	@perl -pi -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},' \
+	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} \
 		${PREFIX}/tomcat/bin/setclasspath.sh
-	@sed -e 's,%%PREFIX%%,${TRUEPREFIX},' \
-		-e 's,%%CATALINA_BASE%%,${CATALINA_BASE},' \
-		< ${FILESDIR}/tomcat.rc > ${SAMPLEDIR}/tomcat.rc
+	@${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
+		${FILESDIR}/tomcat.rc \
+		${SAMPLEDIR}/tomcat.rc
+	find ${WRKINST} \
+		-name \*.beforesubst -or \
+		-name \*.orig -or \
+		-name \*.bat -or \
+		-name \*.exe -or \
+		-name \*.dll \
+		| xargs rm
 
 .include <bsd.port.mk>
