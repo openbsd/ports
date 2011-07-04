@@ -1,0 +1,3 @@
+supuner executes a command and manipulates its stderr and stdout,
+allowing the user control over when they are displayed and / or
+outputted.
