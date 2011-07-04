@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_Settings_c,v 1.1.1.1 2011/07/04 10:00:38 jasper Exp $
+
+Remove Linux device names in favor of what BSD uses.
+
+--- src/Settings.c.orig	Sat Jul  2 10:19:04 2011
++++ src/Settings.c	Sat Jul  2 10:19:47 2011
+@@ -503,7 +503,7 @@ static void settings_class_init (SettingsClass * klass
+ 	g_object_class_install_property (G_OBJECT_CLASS (klass), SETTINGS_HANDSHAKE, g_param_spec_enum ("handshake", "handshake", "handshake", SETTINGS_TYPE_HANDSHAKE, 0, G_PARAM_STATIC_NAME | G_PARAM_STATIC_NICK | G_PARAM_STATIC_BLURB | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
+ 	g_object_class_install_property (G_OBJECT_CLASS (klass), SETTINGS_ACCESS_MODE, g_param_spec_enum ("accessMode", "accessMode", "accessMode", SETTINGS_TYPE_ACCESS_MODE, 0, G_PARAM_STATIC_NAME | G_PARAM_STATIC_NICK | G_PARAM_STATIC_BLURB | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
+ 	g_object_class_install_property (G_OBJECT_CLASS (klass), SETTINGS_LOCAL_ECHO, g_param_spec_boolean ("localEcho", "localEcho", "localEcho", FALSE, G_PARAM_STATIC_NAME | G_PARAM_STATIC_NICK | G_PARAM_STATIC_BLURB | G_PARAM_READABLE | G_PARAM_WRITABLE | G_PARAM_CONSTRUCT_ONLY));
+-	settings_DEFAULT_DEVICEFILE = g_strdup ("/dev/ttyS0");
++	settings_DEFAULT_DEVICEFILE = g_strdup ("/dev/cua00");
+ }
+ 
+ 

@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_MainWindow_c,v 1.1.1.1 2011/07/04 10:00:38 jasper Exp $
+
+Tweak message if the device can't be opened.
+
+--- src/MainWindow.c.orig	Thu May 19 17:13:24 2011
++++ src/MainWindow.c	Sat Jul  2 18:24:05 2011
+@@ -1347,7 +1347,7 @@ static gboolean moserial_main_window_startConnection (
+ 		GtkMessageDialog* _tmp1_;
+ 		GtkMessageDialog* dialog;
+ 		gtk_toggle_tool_button_set_active (self->priv->connectButton, FALSE);
+-		dialog = (_tmp1_ = g_object_ref_sink ((GtkMessageDialog*) gtk_message_dialog_new (self->priv->gtkWindow, GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, _tmp0_ = g_strdup_printf ("%s: %s", _ ("Error: Could not open device"), settings_get_device (self->priv->currentSettings)))), _g_free0 (_tmp0_), _tmp1_);
++		dialog = (_tmp1_ = g_object_ref_sink ((GtkMessageDialog*) gtk_message_dialog_new (self->priv->gtkWindow, GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, _tmp0_ = g_strdup_printf ("%s: %s\n%s", _ ("Error: Could not open device"), settings_get_device (self->priv->currentSettings), _ ("Make sure you are a member of the dialer group")))), _g_free0 (_tmp0_), _tmp1_);
+ 		gtk_dialog_run ((GtkDialog*) dialog);
+ 		gtk_object_destroy ((GtkObject*) dialog);
+ 		result = FALSE;

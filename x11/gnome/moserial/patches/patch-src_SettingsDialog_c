@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_SettingsDialog_c,v 1.1.1.1 2011/07/04 10:00:38 jasper Exp $
+
+Remove Linux device names in favor of what BSD uses.
+
+--- src/SettingsDialog.c.orig	Thu May 19 17:13:24 2011
++++ src/SettingsDialog.c	Sat Jul  2 15:45:16 2011
+@@ -178,8 +178,8 @@ static void moserial_settings_dialog_populateDevices (
+ 	GtkTreeIter iter = {0};
+ 	g_return_if_fail (self != NULL);
+ 	deviceTypes = NULL;
+-	deviceTypes = g_list_append (deviceTypes, g_strdup ("/dev/ttyS"));
+-	deviceTypes = g_list_append (deviceTypes, g_strdup ("/dev/ttyUSB"));
++	deviceTypes = g_list_append (deviceTypes, g_strdup ("/dev/cua0"));
++	deviceTypes = g_list_append (deviceTypes, g_strdup ("/dev/cuaU"));
+ 	deviceTypes = g_list_append (deviceTypes, g_strdup ("/dev/rfcomm"));
+ 	gtk_list_store_clear (self->priv->ls);
+ 	{

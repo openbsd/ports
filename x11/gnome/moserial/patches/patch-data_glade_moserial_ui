@@ -1,0 +1,43 @@
+$OpenBSD: patch-data_glade_moserial_ui,v 1.1.1.1 2011/07/04 10:00:38 jasper Exp $
+
+Remove Linux device names in favor of what BSD uses.
+
+--- data/glade/moserial.ui.orig	Sat Jul  2 10:22:58 2011
++++ data/glade/moserial.ui	Sat Jul  2 10:23:34 2011
+@@ -207,28 +207,28 @@
+     </columns>
+     <data>
+       <row>
+-        <col id="0" translatable="yes">/dev/ttyS0</col>
++        <col id="0" translatable="yes">/dev/cua00</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">/dev/ttyS1</col>
++        <col id="0" translatable="yes">/dev/cua01</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">/dev/ttyS2</col>
++        <col id="0" translatable="yes">/dev/cua02</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">/dev/ttyS3</col>
++        <col id="0" translatable="yes">/dev/cua03</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">/dev/ttyUSB0</col>
++        <col id="0" translatable="yes">/dev/cuaU0</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">/dev/ttyUSB1</col>
++        <col id="0" translatable="yes">/dev/cuaU1</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">/dev/ttyUSB2</col>
++        <col id="0" translatable="yes">/dev/cuaU2</col>
+       </row>
+       <row>
+-        <col id="0" translatable="yes">/dev/ttyUSB3</col>
++        <col id="0" translatable="yes">/dev/cuaU3</col>
+       </row>
+     </data>
+   </object>
