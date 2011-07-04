@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_user_c,v 1.5 2011/07/03 23:26:25 ajacoutot Exp $
+$OpenBSD: patch-src_user_c,v 1.6 2011/07/04 01:35:57 ajacoutot Exp $
 --- src/user.c.orig	Thu May 19 05:38:50 2011
-+++ src/user.c	Mon Jul  4 01:21:36 2011
++++ src/user.c	Mon Jul  4 03:18:05 2011
 @@ -29,7 +29,11 @@
  #include <sys/wait.h>
  #include <unistd.h>
@@ -93,7 +93,7 @@ $OpenBSD: patch-src_user_c,v 1.5 2011/07/03 23:26:25 ajacoutot Exp $
 +#endif
  
 +#ifdef __OpenBSD__
-+        if (g_strcmp0 (user->shell, "/sbin/nologin") == 0) {
++        if (g_str_has_suffix (user->shell, "-") == 1) {
 +                locked = TRUE;
 +        }
 +        else {
@@ -145,12 +145,16 @@ $OpenBSD: patch-src_user_c,v 1.5 2011/07/03 23:26:25 ajacoutot Exp $
                                           new_name, NULL);
  
          g_rename (old_filename, new_filename);
-@@ -1550,16 +1591,27 @@ user_change_locked_authorized_cb (Daemon              
+@@ -1550,16 +1591,31 @@ user_change_locked_authorized_cb (Daemon              
  {
          gboolean locked = GPOINTER_TO_INT (data);
          GError *error;
++
 +#ifdef __OpenBSD__
 +        gchar *argv[5];
++        gchar *lockshell, *nolockshell;
++        lockshell = g_strjoin (NULL, user->shell, "-", NULL);
++        nolockshell = g_strndup (user->shell, sizeof(user->shell));
 +#else
          gchar *argv[4];
 +#endif
@@ -162,7 +166,7 @@ $OpenBSD: patch-src_user_c,v 1.5 2011/07/03 23:26:25 ajacoutot Exp $
                  argv[0] = "/usr/sbin/usermod";
 +#ifdef __OpenBSD__
 +                argv[1] = "-s";
-+                argv[2] = locked ? "/sbin/nologin" : "/bin/ksh";
++                argv[2] = locked ? lockshell : nolockshell;
 +                argv[3] = user->user_name;
 +                argv[4] = NULL;
 +#else
@@ -173,7 +177,18 @@ $OpenBSD: patch-src_user_c,v 1.5 2011/07/03 23:26:25 ajacoutot Exp $
  
                  error = NULL;
                  if (!spawn_with_login_uid (context, argv, &error)) {
-@@ -1634,7 +1686,11 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -1568,6 +1624,10 @@ user_change_locked_authorized_cb (Daemon              
+                         return;
+                 }
+ 
++#ifdef __OpenBSD__
++               g_free (lockshell);
++               g_free (nolockshell);
++#endif
+                 user->locked = locked;
+ 
+                 g_signal_emit (user, signals[CHANGED], 0);
+@@ -1634,7 +1694,11 @@ user_change_account_type_authorized_cb (Daemon        
                  }
                  switch (account_type) {
                  case ACCOUNT_TYPE_ADMINISTRATOR:
@@ -185,13 +200,13 @@ $OpenBSD: patch-src_user_c,v 1.5 2011/07/03 23:26:25 ajacoutot Exp $
                          break;
                  default:
                          /* remove excess comma */
-@@ -1753,9 +1809,16 @@ user_change_password_mode_authorized_cb (Daemon       
+@@ -1753,9 +1817,16 @@ user_change_password_mode_authorized_cb (Daemon       
                  }
                  else if (user->locked) {
                          argv[0] = "/usr/sbin/usermod";
 +#ifdef __OpenBSD__
 +                        argv[1] = "-s";
-+                        argv[2] = "/bin/ksh";
++                        argv[2] = g_strndup (user->shell, sizeof(user->shell));
 +                        argv[3] = user->user_name;
 +                        argv[4] = NULL;
 +#else
