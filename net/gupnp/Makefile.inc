@@ -1,0 +1,11 @@
+# $OpenBSD: Makefile.inc,v 1.1 2011/07/04 15:28:42 jasper Exp $
+
+CATEGORIES ?=		net devel
+
+HOMEPAGE ?=		http://gupnp.org/
+
+# GPLv2
+PERMIT_PACKAGE_CDROM?= 	Yes
+PERMIT_PACKAGE_FTP?=	Yes
+PERMIT_DISTFILES_CDROM?=Yes
+PERMIT_DISTFILES_FTP?=	Yes

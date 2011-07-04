@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.705 2011/07/04 15:19:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.706 2011/07/04 15:28:42 jasper Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -107,6 +107,7 @@
      SUBDIR += gsnmp
      SUBDIR += gssdp
      SUBDIR += gtk-gnutella
+     SUBDIR += gupnp
      SUBDIR += h323plus
      SUBDIR += haproxy
      SUBDIR += honeyd
