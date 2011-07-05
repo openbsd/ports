@@ -1,0 +1,45 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/05 16:59:40 jasper Exp $
+%%SHARED%%
+@bin bin/gupnp-dlna-info
+@bin bin/gupnp-dlna-ls-profiles
+include/gupnp-dlna-1.0/
+include/gupnp-dlna-1.0/libgupnp-dlna/
+include/gupnp-dlna-1.0/libgupnp-dlna/gupnp-dlna-discoverer.h
+include/gupnp-dlna-1.0/libgupnp-dlna/gupnp-dlna-information.h
+include/gupnp-dlna-1.0/libgupnp-dlna/gupnp-dlna-profile.h
+lib/libgupnp-dlna-1.0.a
+lib/libgupnp-dlna-1.0.la
+lib/pkgconfig/
+lib/pkgconfig/gupnp-dlna-1.0.pc
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/gupnp-dlna/
+share/gtk-doc/html/gupnp-dlna/GUPnPDLNADiscoverer.html
+share/gtk-doc/html/gupnp-dlna/GUPnPDLNAInformation.html
+share/gtk-doc/html/gupnp-dlna/GUPnPDLNAProfile.html
+share/gtk-doc/html/gupnp-dlna/ch01.html
+share/gtk-doc/html/gupnp-dlna/gupnp-dlna.devhelp
+share/gtk-doc/html/gupnp-dlna/gupnp-dlna.devhelp2
+share/gtk-doc/html/gupnp-dlna/home.png
+share/gtk-doc/html/gupnp-dlna/index.html
+share/gtk-doc/html/gupnp-dlna/index.sgml
+share/gtk-doc/html/gupnp-dlna/left.png
+share/gtk-doc/html/gupnp-dlna/right.png
+share/gtk-doc/html/gupnp-dlna/style.css
+share/gtk-doc/html/gupnp-dlna/up.png
+share/gupnp-dlna/
+share/gupnp-dlna/dlna-profiles/
+share/gupnp-dlna/dlna-profiles/aac.xml
+share/gupnp-dlna/dlna-profiles/ac3.xml
+share/gupnp-dlna/dlna-profiles/amr.xml
+share/gupnp-dlna/dlna-profiles/avc.xml
+share/gupnp-dlna/dlna-profiles/common.xml
+share/gupnp-dlna/dlna-profiles/dlna-profiles.rng
+share/gupnp-dlna/dlna-profiles/jpeg.xml
+share/gupnp-dlna/dlna-profiles/lpcm.xml
+share/gupnp-dlna/dlna-profiles/mp3.xml
+share/gupnp-dlna/dlna-profiles/mpeg-ts.xml
+share/gupnp-dlna/dlna-profiles/mpeg1.xml
+share/gupnp-dlna/dlna-profiles/mpeg4.xml
+share/gupnp-dlna/dlna-profiles/png.xml
+share/gupnp-dlna/dlna-profiles/wma.xml
