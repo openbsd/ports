@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2011/05/29 20:27:28 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.12 2011/07/05 15:08:49 dcoppa Exp $
 
 COMMENT =	clone of rxvt with Unicode and Xft support
 
-DISTNAME =	rxvt-unicode-9.11
-REVISION =	0
+DISTNAME =	rxvt-unicode-9.12
 CATEGORIES =	x11
 
 EXTRACT_SUFX =	.tar.bz2
-MASTER_SITES =	http://dist.schmorp.de/rxvt-unicode/
+MASTER_SITES =	http://dist.schmorp.de/rxvt-unicode/ \
+		http://dist.schmorp.de/rxvt-unicode/Attic/
 
 HOMEPAGE =	http://software.schmorp.de/pkg/rxvt-unicode.html
 

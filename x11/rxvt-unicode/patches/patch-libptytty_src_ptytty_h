@@ -1,0 +1,17 @@
+$OpenBSD: patch-libptytty_src_ptytty_h,v 1.1 2011/07/05 15:08:49 dcoppa Exp $
+
+Fix compilation on systems with bsd style utmp and no utmpx, such
+as OpenBSD (upstream cvs revision 1.30 of libptytty)
+
+--- libptytty/src/ptytty.h.orig	Tue May 31 08:21:52 2011
++++ libptytty/src/ptytty.h	Tue Jul  5 13:20:23 2011
+@@ -69,9 +69,7 @@ struct ptytty_unix : ptytty (public)
+ #ifdef HAVE_STRUCT_UTMPX
+   struct utmpx utx;
+ #endif
+-#if (defined(HAVE_STRUCT_UTMP) && defined(HAVE_UTMP_PID)) || defined(HAVE_STRUCT_UTMPX)
+   char ut_id[5];
+-#endif
+ 
+   void logout ();
+ #endif

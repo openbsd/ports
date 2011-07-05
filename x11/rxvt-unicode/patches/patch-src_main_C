@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_main_C,v 1.4 2011/05/25 07:53:07 dcoppa Exp $
+$OpenBSD: patch-src_main_C,v 1.5 2011/07/05 15:08:49 dcoppa Exp $
 
-Fix a bug causing artifacts on the bottom of the screen when using
+Fix a bug causing artifacts at the bottom of the screen when using
 rxvt-unicode without hints
 (From: https://awesome.naquadah.org/wiki/Urxvt_Hints)
 
