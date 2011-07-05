@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/06/20 18:09:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/07/05 16:45:40 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,9 +10,7 @@ COMMENT=	GNOME web browser based on webkit
 # www/epiphany-extensions
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	3.0.3
-
-REVISION=	5
+GNOME_VERSION=	3.0.4
 
 M=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	M
@@ -43,6 +41,8 @@ WANTLIB += png pthread pthread-stubs seed-gtk3 soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 startup-notification-1 stdc++ webkitgtk-3.0
 WANTLIB += xcb xcb-atom xcb-aux xcb-event xcb-render xcb-shm xml2
 WANTLIB += xslt z
+
+EXTRACT_SUFX=	.tar.xz
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/iso-codes \

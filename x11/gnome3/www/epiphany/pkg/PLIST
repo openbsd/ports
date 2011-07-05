@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/28 08:15:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/07/05 16:45:41 jasper Exp $
 @bin bin/ephy-profile-migrator
 @bin bin/epiphany
 include/epiphany/
@@ -130,6 +130,8 @@ share/gir-1.0/EphyEgg-${M}.gir
 share/gir-1.0/Epiphany-${M}.gir
 share/glib-2.0/schemas/org.gnome.Epiphany.enums.xml
 share/glib-2.0/schemas/org.gnome.epiphany.gschema.xml
+share/gnome/
+share/gnome/help/
 share/gnome/help/epiphany/
 share/gnome/help/epiphany/C/
 share/gnome/help/epiphany/C/epiphany.xml
@@ -379,6 +381,7 @@ share/locale/yo/LC_MESSAGES/epiphany.mo
 share/locale/zh_CN/LC_MESSAGES/epiphany.mo
 share/locale/zh_HK/LC_MESSAGES/epiphany.mo
 share/locale/zh_TW/LC_MESSAGES/epiphany.mo
+share/omf/
 share/omf/epiphany/
 share/omf/epiphany/epiphany-C.omf
 share/omf/epiphany/epiphany-bg.omf
