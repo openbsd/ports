@@ -1,10 +1,10 @@
 #!/bin/sh
-# $OpenBSD: chrome,v 1.6 2011/06/17 04:25:06 canacar Exp $
+# $OpenBSD: chrome,v 1.7 2011/07/05 09:16:19 halex Exp $
 
 PROGDIR=TRUEPREFIX/chrome
 FDS=400
 
-[ `ulimit -Sn` -lt ${FDS} ] && ulimit -n ${FDS}
+[ `ulimit -Sn` -lt ${FDS} ] && ulimit -n ${FDS} 2>&-
 if [ `ulimit -Sn` -lt ${FDS} ]; then
 	LMSG="${LMSG}- increase openfiles-max to at least ${FDS}.\n"
 fi
@@ -15,15 +15,11 @@ if [ ! -z "${LMSG}" ]; then
 	MSG="${MSG}(you will need to logout and login for these to take effect).\n${LMSG}"
 fi
 
-if [ ! -z "${MSG}" ]; then
+if ! pgrep -f  "^${PROGDIR}/chrome($| )" >&- && [ -n "${MSG}" ]; then
 	MSG="${MSG}\nDo you want to run Chromium anyway?"
 	MSG="${MSG}\n(If you don't increase these limits, Chromium might fail to work properly.)"
 
-	answer=`echo ${MSG} | /usr/X11R6/bin/xmessage -center -buttons yes,no -print -file -`
-
-	if [ X"${answer}" = X"no" ]; then
-		exit 0
-	fi
+	echo "${MSG}" | /usr/X11R6/bin/xmessage -file - -center -buttons yes:0,no:1 -default no || exit
 fi
 
 exec "${PROGDIR}/chrome" "$@"
