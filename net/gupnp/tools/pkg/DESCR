@@ -1,0 +1,3 @@
+GUPnP Tools are free replacements of Intel UPnP tools that use GUPnP.
+They provides the following client and server side tools which enable
+one to easily test and debug one's UPnP devices and control points.

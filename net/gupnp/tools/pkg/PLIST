@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/05 17:00:53 jasper Exp $
+@bin bin/gupnp-av-cp
+@bin bin/gupnp-network-light
+@bin bin/gupnp-universal-cp
+@bin bin/gupnp-upload
+share/applications/gupnp-av-cp.desktop
+share/applications/gupnp-network-light.desktop
+share/applications/gupnp-universal-cp.desktop
+share/gupnp-tools/
+share/gupnp-tools/gupnp-av-cp.ui
+share/gupnp-tools/gupnp-network-light.ui
+share/gupnp-tools/gupnp-universal-cp.ui
+share/gupnp-tools/pixmaps/
+share/gupnp-tools/pixmaps/av-cp.png
+share/gupnp-tools/pixmaps/media-renderer.png
+share/gupnp-tools/pixmaps/network-light-22x22.png
+share/gupnp-tools/pixmaps/network-light-256x256.png
+share/gupnp-tools/pixmaps/network-light-off.png
+share/gupnp-tools/pixmaps/network-light-on.png
+share/gupnp-tools/pixmaps/universal-cp.png
+share/gupnp-tools/pixmaps/upnp-action-arg-in.png
+share/gupnp-tools/pixmaps/upnp-action-arg-out.png
+share/gupnp-tools/pixmaps/upnp-device.png
+share/gupnp-tools/pixmaps/upnp-service.png
+share/gupnp-tools/pixmaps/upnp-state-variable.png
+share/gupnp-tools/xml/
+share/gupnp-tools/xml/Dimming-scpd.xml
+share/gupnp-tools/xml/SwitchPower-scpd.xml
+share/gupnp-tools/xml/network-light-desc.xml
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
