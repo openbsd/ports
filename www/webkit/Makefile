@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.51 2011/06/17 22:10:40 landry Exp $
+# $OpenBSD: Makefile,v 1.52 2011/07/05 11:34:27 landry Exp $
 
 COMMENT =	open source web browser engine for Gtk+
 
-V =		1.4.1
+V =		1.4.2
 DISTNAME =	webkit-${V}
 EPOCH =		0
 CATEGORIES =	www

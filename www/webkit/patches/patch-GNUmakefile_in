@@ -1,7 +1,7 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.11 2011/06/17 22:10:40 landry Exp $
+$OpenBSD: patch-GNUmakefile_in,v 1.12 2011/07/05 11:34:27 landry Exp $
 install GtkLauncher, remove silent build lines, fix lpthread/pthread
---- GNUmakefile.in.orig	Sun Jun  5 19:14:10 2011
-+++ GNUmakefile.in	Tue Jun  7 09:12:33 2011
+--- GNUmakefile.in.orig	Fri Jul  1 01:08:07 2011
++++ GNUmakefile.in	Fri Jul  1 09:26:33 2011
 @@ -78,9 +78,9 @@ POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@
@@ -14,7 +14,7 @@ install GtkLauncher, remove silent build lines, fix lpthread/pthread
  
  # For the Gtk port we want to use XP_UNIX both in X11 and Mac
  @TARGET_WIN32_FALSE@am__append_1 = \
-@@ -15086,7 +15086,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
+@@ -15090,7 +15090,7 @@ COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES
  	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
  AM_V_CC = $(am__v_CC_$(V))
  am__v_CC_ = $(am__v_CC_$(AM_DEFAULT_VERBOSITY))
@@ -23,7 +23,7 @@ install GtkLauncher, remove silent build lines, fix lpthread/pthread
  AM_V_at = $(am__v_at_$(V))
  am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))
  am__v_at_0 = @
-@@ -15096,22 +15096,22 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
+@@ -15100,22 +15100,22 @@ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAG
  	$(AM_LDFLAGS) $(LDFLAGS) -o $@
  AM_V_CCLD = $(am__v_CCLD_$(V))
  am__v_CCLD_ = $(am__v_CCLD_$(AM_DEFAULT_VERBOSITY))
@@ -50,7 +50,7 @@ install GtkLauncher, remove silent build lines, fix lpthread/pthread
  SOURCES = $(TestNetscapePlugin_libtestnetscapeplugin_la_SOURCES) \
  	$(libJavaScriptCore_la_SOURCES) \
  	$(nodist_libJavaScriptCore_la_SOURCES) \
-@@ -20130,9 +20130,10 @@ libJavaScriptCore_la_SOURCES = \
+@@ -20137,9 +20137,10 @@ libJavaScriptCore_la_SOURCES = \
  
  libJavaScriptCore_la_LIBADD = \
  	$(UNICODE_LIBS) \
@@ -63,7 +63,7 @@ install GtkLauncher, remove silent build lines, fix lpthread/pthread
  libJavaScriptCore_la_CXXFLAGS = \
  	$(global_cxxflags) \
  	$(libJavaScriptCore_la_CFLAGS)
-@@ -20175,7 +20176,7 @@ Programs_minidom_LDADD = \
+@@ -20182,7 +20183,7 @@ Programs_minidom_LDADD = \
  	 libJavaScriptCore.la \
  	 $(WINMM_LIBS) \
  	 -lm \
@@ -72,7 +72,7 @@ install GtkLauncher, remove silent build lines, fix lpthread/pthread
  
  Programs_minidom_LDFLAGS = \
  	-no-install \
-@@ -21237,12 +21238,13 @@ dist_webresources_DATA = \
+@@ -21245,12 +21246,13 @@ dist_webresources_DATA = \
  @ENABLE_WEBKIT2_FALSE@	$(XT_CFLAGS)
  
  @ENABLE_WEBKIT2_FALSE@libwebkitgtk_@WEBKITGTK_API_MAJOR_VERSION@_@WEBKITGTK_API_MINOR_VERSION@_la_LDFLAGS = \
