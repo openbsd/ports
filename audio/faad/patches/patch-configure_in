@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_in,v 1.6 2011/07/05 17:37:33 jasper Exp $
+--- configure.in.orig	Mon Jul  4 18:33:36 2011
++++ configure.in	Mon Jul  4 18:34:42 2011
+@@ -16,9 +16,10 @@ AC_SUBST(LIBTOOL_DEPS)
+ 
+ dnl Checks for programs.
+ AC_PROG_CC
++AM_PROG_CC_C_O
+ AC_PROG_CPP
+ dnl disable for mpeg4ip plugin
+-dnl AC_PROG_CXX
++AC_PROG_CXX
+ AC_PROG_INSTALL
+ AC_PROG_LN_S
+ AC_PROG_MAKE_SET
