@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_imapoptions,v 1.5 2011/06/22 06:51:10 ajacoutot Exp $
---- lib/imapoptions.orig	Tue Jun 21 21:50:39 2011
-+++ lib/imapoptions	Wed Jun 22 08:43:42 2011
-@@ -257,7 +257,7 @@ Blank lines and lines beginning with ``#'' are ignored
+$OpenBSD: patch-lib_imapoptions,v 1.6 2011/07/05 22:58:48 ajacoutot Exp $
+--- lib/imapoptions.orig	Mon Jul  4 17:05:01 2011
++++ lib/imapoptions	Tue Jul  5 23:36:08 2011
+@@ -263,7 +263,7 @@ Blank lines and lines beginning with ``#'' are ignored
  /* Debug command to be used by processes started with -D option.  The string
     is a C format string that gets 3 options: the first is the name of the
     executable (without path).  The second is the pid (integer) and the third
@@ -10,7 +10,7 @@ $OpenBSD: patch-lib_imapoptions,v 1.5 2011/06/22 06:51:10 ajacoutot Exp $
  
  { "defaultacl", "anyone lrs", STRING }
  /* The Access Control List (ACL) placed on a newly-created (non-user)
-@@ -1043,7 +1043,7 @@ And the notification message will be available on \fIs
+@@ -1062,7 +1062,7 @@ And the notification message will be available on \fIs
  { "seenstate_db", "skiplist", STRINGLIST("flat", "berkeley", "berkeley-hash", "skiplist")}
  /* The cyrusdb backend to use for the seen state. */
  
