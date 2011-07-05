@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2011/06/08 17:41:57 rpointel Exp $
+# $OpenBSD: Makefile,v 1.40 2011/07/05 07:48:52 jasper Exp $
 
 COMMENT=		project management application
 
 GNOME_PROJECT=		planner
-GNOME_VERSION=		0.14.4
-REVISION=		14
+GNOME_VERSION=		0.14.5
 
-CATEGORIES=		x11
+CATEGORIES=		productivity
 
 SHARED_LIBS +=  planner-1            0.0      # .0.0
 
@@ -18,17 +17,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
+EXTRACT_SUFX=		.tar.xz
+
+WANTLIB += GL ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation
-WANTLIB += c cairo crypto dbus-1 dbus-glib-1 expat exslt fontconfig
-WANTLIB += freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glade-2.0 glib-2.0 gmodule-2.0 gnome-2
-WANTLIB += gnome-keyring gnomecanvas-2 gnomevfs-2 gobject-2.0 gnomeui-2
-WANTLIB += gpg-error gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread ssl util
-WANTLIB += xml2 xslt z bonoboui-2
-WANTLIB += pthread-stubs xcb xcb-render xcb-render-util
+WANTLIB += Xrender Xxf86vm art_lgpl_2 atk-1.0 bonobo-2 bonobo-activation
+WANTLIB += bonoboui-2 c cairo canberra crypto dbus-1 dbus-glib-1
+WANTLIB += drm expat exslt fontconfig freetype gailutil gcrypt
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glade-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gnome-2 gnome-keyring gnomecanvas-2 gnomeui-2
+WANTLIB += gnomevfs-2 gobject-2.0 gpg-error gthread-2.0 gtk-x11-2.0
+WANTLIB += ltdl m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
+WANTLIB += pixman-1 png popt pthread pthread-stubs ssl util vorbis
+WANTLIB += vorbisfile xcb xcb-render xcb-shm xml2 xslt z
 WANTLIB += ${MODPY_WANTLIB}
 
 MODULES=		devel/gettext \
@@ -60,6 +61,5 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			UPDATE_DESKTOP_DATABASE="/usr/bin/false"
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>
