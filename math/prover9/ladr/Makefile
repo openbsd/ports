@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/29 18:11:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/05 09:13:36 jasper Exp $
 
 COMMENT=		Library for Automated Deduction Research
 
 DISTNAME=		LADR-Dec-2007
 PKGNAME=		${DISTNAME:L:S/-Dec//}
-REVISION =		0
+REVISION =		1
 
 MASTER_SITES=		${HOMEPAGE}/download/
 

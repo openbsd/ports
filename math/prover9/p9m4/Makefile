@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/29 18:11:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/05 09:13:36 jasper Exp $
 
 COMMENT=		prover9/mace4 GUI
 
 DISTNAME=		p9m4-v05
 PKGNAME=		${DISTNAME:S/v//}
-REVISION =		0
+REVISION =		1
 
 MASTER_SITES=		${HOMEPAGE}/gui/
 
