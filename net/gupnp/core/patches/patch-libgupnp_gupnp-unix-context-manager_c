@@ -1,0 +1,17 @@
+$OpenBSD: patch-libgupnp_gupnp-unix-context-manager_c,v 1.1 2011/07/05 17:27:15 jasper Exp $
+
+Fix a warning:
+/usr/include/arpa/inet.h:74: warning: 'struct in_addr' declared inside parameter list
+/usr/include/arpa/inet.h:74: warning: its scope is only this definition or declaration,
+    which is probably not what you want
+
+--- libgupnp/gupnp-unix-context-manager.c.orig	Tue Jul  5 19:21:59 2011
++++ libgupnp/gupnp-unix-context-manager.c	Tue Jul  5 19:22:58 2011
+@@ -39,6 +39,7 @@
+ #include <sys/socket.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #include <net/if.h>
+ #include <ifaddrs.h>
