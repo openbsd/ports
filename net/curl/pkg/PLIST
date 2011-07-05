@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2009/05/21 19:58:02 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.23 2011/07/05 08:18:11 jasper Exp $
 @bin bin/curl
 bin/curl-config
 include/curl/
@@ -11,7 +11,6 @@ include/curl/mprintf.h
 include/curl/multi.h
 include/curl/stdcheaders.h
 include/curl/typecheck-gcc.h
-include/curl/types.h
 lib/libcurl.a
 lib/libcurl.la
 lib/pkgconfig/
