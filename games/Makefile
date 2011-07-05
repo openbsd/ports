@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.229 2011/07/02 09:55:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.230 2011/07/05 07:51:23 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -124,6 +124,7 @@
      SUBDIR += openarena
      SUBDIR += opensonic
      SUBDIR += openttd
+     SUBDIR += openxcom
      SUBDIR += pathological
      SUBDIR += pingus
      SUBDIR += pioneers
