@@ -1,0 +1,11 @@
+$OpenBSD: patch-modules_submit-http_HTTPSession_cpp,v 1.1 2011/07/05 08:18:30 jasper Exp $
+--- modules/submit-http/HTTPSession.cpp.orig	Tue Jul  5 09:29:55 2011
++++ modules/submit-http/HTTPSession.cpp	Tue Jul  5 09:29:58 2011
+@@ -28,7 +28,6 @@
+ 
+ 
+ #include <curl/curl.h>
+-#include <curl/types.h> /* new for v7 */
+ #include <curl/easy.h> /* new for v7 */
+ #include <sstream>
+ #include <netinet/in.h>

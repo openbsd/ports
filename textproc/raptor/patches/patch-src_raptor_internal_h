@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_raptor_internal_h,v 1.1 2011/07/05 08:18:30 jasper Exp $
+--- src/raptor_internal.h.orig	Tue Jul  5 09:31:34 2011
++++ src/raptor_internal.h	Tue Jul  5 09:31:42 2011
+@@ -786,7 +786,6 @@ int raptor_utf8_is_nfc(const unsigned char *input, siz
+ 
+ #ifdef RAPTOR_WWW_LIBCURL
+ #include <curl/curl.h>
+-#include <curl/types.h>
+ #include <curl/easy.h>
+ #endif
+ 

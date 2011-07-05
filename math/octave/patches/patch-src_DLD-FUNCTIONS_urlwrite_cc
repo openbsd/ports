@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_DLD-FUNCTIONS_urlwrite_cc,v 1.1 2011/07/05 08:18:30 jasper Exp $
+--- src/DLD-FUNCTIONS/urlwrite.cc.orig	Tue Jul  5 09:23:47 2011
++++ src/DLD-FUNCTIONS/urlwrite.cc	Tue Jul  5 09:23:51 2011
+@@ -43,7 +43,6 @@ along with Octave; see the file COPYING.  If not, see
+ #if defined (HAVE_CURL)
+ 
+ #include <curl/curl.h>
+-#include <curl/types.h>
+ #include <curl/easy.h>
+ 
+ // Write callback function for curl.

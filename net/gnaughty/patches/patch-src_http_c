@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_http_c,v 1.1 2011/07/05 08:18:30 jasper Exp $
+--- src/http.c.orig	Tue Jul  5 09:25:32 2011
++++ src/http.c	Tue Jul  5 09:25:36 2011
+@@ -21,7 +21,6 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ #include <string.h>
+ #include <gtk/gtk.h>
+ #include <curl/curl.h>
+-#include <curl/types.h>
+ #include <curl/easy.h>
+ #include "http.h"
+ #include "callbacks.h"

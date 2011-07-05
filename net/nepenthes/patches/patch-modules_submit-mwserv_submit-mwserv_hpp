@@ -1,0 +1,11 @@
+$OpenBSD: patch-modules_submit-mwserv_submit-mwserv_hpp,v 1.1 2011/07/05 08:18:30 jasper Exp $
+--- modules/submit-mwserv/submit-mwserv.hpp.orig	Tue Jul  5 09:30:50 2011
++++ modules/submit-mwserv/submit-mwserv.hpp	Tue Jul  5 09:30:54 2011
+@@ -27,7 +27,6 @@
+  *******************************************************************************/
+  
+ #include <curl/curl.h>
+-#include <curl/types.h>
+ #include <curl/easy.h>
+ 
+ #include "Nepenthes.hpp"

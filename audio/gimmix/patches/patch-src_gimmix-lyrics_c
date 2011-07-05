@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_gimmix-lyrics_c,v 1.1 2011/07/05 08:18:29 jasper Exp $
+--- src/gimmix-lyrics.c.orig	Tue Jul  5 08:46:03 2011
++++ src/gimmix-lyrics.c	Tue Jul  5 08:46:52 2011
+@@ -30,7 +30,6 @@
+ #include <nxml.h>
+ #include <glib/gstdio.h>
+ #include <curl/curl.h>
+-#include <curl/types.h>
+ #include <curl/easy.h>
+ #include <libxml/xmlreader.h>
+ #include "gimmix-lyrics.h"

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_osm_api_c,v 1.1 2011/07/05 08:18:30 jasper Exp $
+--- src/osm_api.c.orig	Tue Jul  5 09:20:21 2011
++++ src/osm_api.c	Tue Jul  5 09:20:28 2011
+@@ -20,7 +20,6 @@
+ #include "appdata.h"
+ 
+ #include <curl/curl.h>
+-#include <curl/types.h> /* new for v7 */
+ #include <curl/easy.h> /* new for v7 */
+ #include <unistd.h>
+ 

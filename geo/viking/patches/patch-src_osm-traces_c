@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_osm-traces_c,v 1.1 2011/07/05 08:18:30 jasper Exp $
+--- src/osm-traces.c.orig	Tue Jul  5 09:23:05 2011
++++ src/osm-traces.c	Tue Jul  5 09:23:11 2011
+@@ -27,7 +27,6 @@
+ #include <errno.h>
+ 
+ #include <curl/curl.h>
+-#include <curl/types.h>
+ #include <curl/easy.h>
+ 
+ #include <glib.h>

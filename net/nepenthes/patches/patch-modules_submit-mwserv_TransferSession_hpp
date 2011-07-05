@@ -1,0 +1,11 @@
+$OpenBSD: patch-modules_submit-mwserv_TransferSession_hpp,v 1.1 2011/07/05 08:18:30 jasper Exp $
+--- modules/submit-mwserv/TransferSession.hpp.orig	Tue Jul  5 09:31:01 2011
++++ modules/submit-mwserv/TransferSession.hpp	Tue Jul  5 09:31:07 2011
+@@ -27,7 +27,6 @@
+  *******************************************************************************/
+ 
+ #include <curl/curl.h>
+-#include <curl/types.h>
+ #include <curl/easy.h>
+ 
+ #include <string>

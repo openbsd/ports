@@ -1,0 +1,11 @@
+$OpenBSD: patch-sources_F1Shttp_cpp,v 1.1 2011/07/05 08:18:29 jasper Exp $
+--- sources/F1Shttp.cpp.orig	Tue Jul  5 09:17:36 2011
++++ sources/F1Shttp.cpp	Tue Jul  5 09:17:42 2011
+@@ -3,7 +3,6 @@
+ #include "string.h"
+ 
+ #include <curl/curl.h>
+-#include <curl/types.h>
+ #include <curl/easy.h>
+ 
+ #include "F1Shttp.h"

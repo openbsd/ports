@@ -1,0 +1,11 @@
+$OpenBSD: patch-modules_submit-http_HTTPSession_hpp,v 1.1 2011/07/05 08:18:30 jasper Exp $
+--- modules/submit-http/HTTPSession.hpp.orig	Tue Jul  5 09:29:28 2011
++++ modules/submit-http/HTTPSession.hpp	Tue Jul  5 09:29:35 2011
+@@ -29,7 +29,6 @@
+  /* $Id: patch-modules_submit-http_HTTPSession_hpp,v 1.1 2011/07/05 08:18:30 jasper Exp $ */
+  
+ #include <curl/curl.h>
+-#include <curl/types.h>
+ 
+ #include "Download.hpp"
+ 

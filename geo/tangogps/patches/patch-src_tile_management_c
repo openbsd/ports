@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_tile_management_c,v 1.1 2011/07/05 08:18:30 jasper Exp $
+--- src/tile_management.c.orig	Tue Jul  5 09:18:51 2011
++++ src/tile_management.c	Tue Jul  5 09:18:58 2011
+@@ -5,7 +5,6 @@
+ #include <glib/gprintf.h>
+ #include <string.h>
+ #include <curl/curl.h>
+-#include <curl/types.h> 
+ #include <curl/easy.h> 
+ #include <math.h>
+ #include "globals.h"

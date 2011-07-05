@@ -1,0 +1,11 @@
+$OpenBSD: patch-modules_submit-http_submit-http_hpp,v 1.1 2011/07/05 08:18:30 jasper Exp $
+--- modules/submit-http/submit-http.hpp.orig	Tue Jul  5 09:29:15 2011
++++ modules/submit-http/submit-http.hpp	Tue Jul  5 09:29:19 2011
+@@ -29,7 +29,6 @@
+  /* $Id: patch-modules_submit-http_submit-http_hpp,v 1.1 2011/07/05 08:18:30 jasper Exp $ */
+ 
+ #include <curl/curl.h>
+-#include <curl/types.h> /* new for v7 */
+ #include <curl/easy.h> /* new for v7 */
+ 
+ #include "Nepenthes.hpp"

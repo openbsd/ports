@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_net_io_c,v 1.1 2011/07/05 08:18:30 jasper Exp $
+--- src/net_io.c.orig	Tue Jul  5 09:21:09 2011
++++ src/net_io.c	Tue Jul  5 09:21:14 2011
+@@ -20,7 +20,6 @@
+ #include "appdata.h"
+ 
+ #include <curl/curl.h>
+-#include <curl/types.h> /* new for v7 */
+ #include <curl/easy.h>  /* new for v7 */
+ #include <unistd.h>
+ 

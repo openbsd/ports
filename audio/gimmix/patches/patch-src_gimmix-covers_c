@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_gimmix-covers_c,v 1.1 2011/07/05 08:18:29 jasper Exp $
+--- src/gimmix-covers.c.orig	Tue Jul  5 08:45:56 2011
++++ src/gimmix-covers.c	Tue Jul  5 08:46:37 2011
+@@ -29,7 +29,6 @@
+ #include <glib.h>
+ #include <glib/gstdio.h>
+ #include <curl/curl.h>
+-#include <curl/types.h>
+ #include <curl/easy.h>
+ #include <nxml.h>
+ #include <libxml/xmlreader.h>
