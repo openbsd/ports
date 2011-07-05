@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2010/09/03 15:49:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2011/07/05 01:13:06 ajacoutot Exp $
 @conflict gstreamer-bad-<0.10.17
 @conflict gstreamer-a52-*
 @conflict gstreamer-mad-*
@@ -22,8 +22,6 @@ lib/gstreamer-${VERSION}/libgstdvdsub.so
 lib/gstreamer-${VERSION}/libgstiec958.so
 @comment lib/gstreamer-${VERSION}/libgstmad.la
 lib/gstreamer-${VERSION}/libgstmad.so
-@comment lib/gstreamer-${VERSION}/libgstmpeg2dec.la
-lib/gstreamer-${VERSION}/libgstmpeg2dec.so
 @comment lib/gstreamer-${VERSION}/libgstmpegaudioparse.la
 lib/gstreamer-${VERSION}/libgstmpegaudioparse.so
 @comment lib/gstreamer-${VERSION}/libgstmpegstream.la
