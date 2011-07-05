@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/04/02 16:56:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/05 21:25:04 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -37,16 +37,16 @@ LIB_DEPENDS=		mysql-client->=5:databases/mysql \
 CONFIGURE_STYLE=	none
 WRKDIST=		${WRKDIR}/deepfryed-dbicpp-4fe45f7
 
+NO_REGRESS=		Yes
+
 pre-configure:
-			${SUBST_CMD} ${WRKSRC}/{CMakeLists.txt,inc/dbic++.h,src/dbic++.cc,pkgconfig/dbic++.pc}
+	${SUBST_CMD} ${WRKSRC}/{CMakeLists.txt,inc/dbic++.h,src/dbic++.cc,pkgconfig/dbic++.pc}
 
 do-build:
-			cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} ${LOCALBASE}/bin/bash build.sh
+	cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} ${LOCALBASE}/bin/bash build.sh
 
 do-install:
-			cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} \
-				${SUDO} ${LOCALBASE}/bin/bash build.sh -i
-
-NO_REGRESS=		Yes
+	cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} \
+		${SUDO} ${LOCALBASE}/bin/bash build.sh -i
 
 .include <bsd.port.mk>
