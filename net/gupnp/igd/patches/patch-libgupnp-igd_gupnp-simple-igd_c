@@ -1,0 +1,26 @@
+$OpenBSD: patch-libgupnp-igd_gupnp-simple-igd_c,v 1.1.1.1 2011/07/05 17:00:18 jasper Exp $
+
+commit 521d1b4004537ddc2f24e021ab54740e693411dd
+Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date:   Mon Jul 4 21:45:31 2011 +0200
+
+    Fix build on OpenBSD.
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=653970
+
+--- libgupnp-igd/gupnp-simple-igd.c.orig	Mon Jul  4 21:41:26 2011
++++ libgupnp-igd/gupnp-simple-igd.c	Mon Jul  4 21:42:39 2011
+@@ -35,8 +35,12 @@
+ #include "gupnp-simple-igd.h"
+ #include "gupnp-simple-igd-marshal.h"
+ 
+-#include <string.h>
++#include <sys/types.h>
++#include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
++
++#include <string.h>
+ 
+ #include <libgupnp/gupnp.h>
+ 
