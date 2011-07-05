@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/05 17:02:42 jasper Exp $
-lib/pkgconfig/
+@comment $OpenBSD: PLIST,v 1.2 2011/07/05 17:10:53 jasper Exp $
 lib/pkgconfig/gupnp-vala-1.0.pc
 share/vala/
 share/vala/vapi/
@@ -9,3 +8,7 @@ share/vala/vapi/gupnp-1.0.deps
 share/vala/vapi/gupnp-1.0.vapi
 share/vala/vapi/gupnp-av-1.0.deps
 share/vala/vapi/gupnp-av-1.0.vapi
+share/vala/vapi/gupnp-dlna-1.0.deps
+share/vala/vapi/gupnp-dlna-1.0.vapi
+share/vala/vapi/gupnp-ui-1.0.deps
+share/vala/vapi/gupnp-ui-1.0.vapi
