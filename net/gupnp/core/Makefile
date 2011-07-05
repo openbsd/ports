@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/05 17:07:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/05 17:09:39 jasper Exp $
 
 COMMENT=		framework for creating UPnP devices and control points
 
@@ -25,7 +25,8 @@ AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
-			--enable-introspection \
-			--with-context-manager=unix
+			--enable-introspection
+# Requires libconic
+#			--with-context-manager=unix
 
 .include <bsd.port.mk>
