@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1091 2011/06/26 14:40:21 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1092 2011/07/05 15:11:20 sthen Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -399,6 +399,17 @@ MAKE_ENV += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 MAKE_FLAGS += LIBTOOL="${LIBTOOL} ${LIBTOOL_FLAGS}" ${_lt_libs}
 .endif
 MAKE_FLAGS += SHARED_LIBS_LOG=${WRKBUILD}/shared_libs.log
+USE_CCACHE ?= No
+NO_CCACHE ?= No
+.if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
+CCACHE_DIR ?= ${WRKOBJDIR_${PKGPATH}}/.ccache
+MAKE_ENV += CCACHE_DIR=${CCACHE_DIR}
+.  if defined(CCACHE_ENV)
+MAKE_ENV += ${CCACHE_ENV}
+.  endif
+CONFIGURE_ENV += CCACHE_DIR=${CCACHE_DIR}
+BUILD_DEPENDS += devel/ccache
+.endif
 
 ALL_FAKE_FLAGS=	${MAKE_FLAGS} ${DESTDIRNAME}=${WRKINST} ${FAKE_FLAGS}
 
@@ -892,9 +903,13 @@ _SYSTRACE_CMD ?= /bin/systrace -e -i -a -f ${_SYSTRACE_COOKIE}
 _SYSTRACE_CMD =
 .endif
 SYSTRACE_FILTER ?= ${PORTSDIR}/infrastructure/db/systrace.filter
+SYSTRACE_FILTER_CCACHE ?= ${PORTSDIR}/infrastructure/db/systrace.filter.ccache
 _SYSTRACE_POLICIES += /bin/sh /usr/bin/env /usr/bin/make \
 	/usr/bin/patch ${DEPBASE}/bin/gmake
 SYSTRACE_SUBST_VARS += DISTDIR PKG_TMPDIR PORTSDIR TMPDIR WRKDIR
+.if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
+SYSTRACE_SUBST_VARS += CCACHE_DIR
+.endif
 .for _v in ${SYSTRACE_SUBST_VARS}
 _SYSTRACE_SED_SUBST += -e 's,$${${_v}},${${_v}},g'
 .endfor
@@ -1805,6 +1820,9 @@ ${_SYSTRACE_COOKIE}: ${_WRKDIR_COOKIE}
 		sed ${_SYSTRACE_SED_SUBST} ${.CURDIR}/systrace.filter >> $@; \
 	fi
 	@sed ${_SYSTRACE_SED_SUBST} ${SYSTRACE_FILTER} >> $@
+.  if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
+	@sed ${_SYSTRACE_SED_SUBST} ${SYSTRACE_FILTER_CCACHE} >> $@
+.  endif
 .endfor
 	@if [ -f ${.CURDIR}/systrace.policy ]; then \
 		sed ${_SYSTRACE_SED_SUBST} ${.CURDIR}/systrace.policy >> $@; \
@@ -2277,6 +2295,13 @@ ${_WRKDIR_COOKIE}:
 	@rm -rf ${WRKDIR}
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin ${DEPDIR}
 #	@ln -s ${LOCALBASE}/bin/pkg-config ${WRKDIR}/bin
+.if ${USE_CCACHE:L} == "yes"
+	@${ECHO_MSG} "===>  Enabling ccache for ${FULLPKGNAME}${_MASTER}"
+	@ln -s ${LOCALBASE}/bin/ccache ${WRKDIR}/bin/gcc
+	@ln -s ${LOCALBASE}/bin/ccache ${WRKDIR}/bin/g++
+	@ln -s ${LOCALBASE}/bin/ccache ${WRKDIR}/bin/cc
+	@ln -s ${LOCALBASE}/bin/ccache ${WRKDIR}/bin/c++
+.endif
 .if !empty(WRKDIR_LINKNAME)
 	@ln -sf ${WRKDIR} ${.CURDIR}/${WRKDIR_LINKNAME}
 .endif
