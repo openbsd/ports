@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2011/07/01 22:25:58 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2011/07/05 00:54:47 ajacoutot Exp $
 @conflict gstreamer-plugins-base-<0.10.25
 @conflict gstreamer-bz2-*
 @conflict gstreamer-faac-*
@@ -74,10 +74,6 @@ lib/gstreamer-${VERSION}/libgstdtmf.so
 lib/gstreamer-${VERSION}/libgstdtsdec.so
 @comment lib/gstreamer-${VERSION}/libgstdvbsuboverlay.la
 lib/gstreamer-${VERSION}/libgstdvbsuboverlay.so
-@comment lib/gstreamer-${VERSION}/libgstfaac.la
-lib/gstreamer-${VERSION}/libgstfaac.so
-@comment lib/gstreamer-${VERSION}/libgstfaad.la
-lib/gstreamer-${VERSION}/libgstfaad.so
 @comment lib/gstreamer-${VERSION}/libgstfestival.la
 lib/gstreamer-${VERSION}/libgstfestival.so
 @comment lib/gstreamer-${VERSION}/libgstfieldanalysis.la
@@ -200,8 +196,6 @@ lib/gstreamer-${VERSION}/libgstvideosignal.so
 lib/gstreamer-${VERSION}/libgstvmnc.so
 @comment lib/gstreamer-${VERSION}/libgstvp8.la
 lib/gstreamer-${VERSION}/libgstvp8.so
-@comment lib/gstreamer-${VERSION}/libgstxvid.la
-lib/gstreamer-${VERSION}/libgstxvid.so
 @comment lib/gstreamer-${VERSION}/libgsty4mdec.la
 lib/gstreamer-${VERSION}/libgsty4mdec.so
 @comment lib/gstreamer-${VERSION}/libresindvd.la

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2011/07/01 22:25:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.58 2011/07/05 00:54:47 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
@@ -11,7 +11,7 @@ PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
 
-REVISION-main =		1
+REVISION-main =		2
 
 MULTI_PACKAGES =	-main -neon -mjpeg
 
@@ -37,19 +37,17 @@ BUILD_DEPENDS +=        audio/ladspa
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += BPM GL SDL SoundTouch X11 Xau Xdamage Xdmcp Xext Xfixes
 WANTLIB-main += Xrender Xxf86vm ass bz2 cairo cdaudio croco-0.6 crypto
-WANTLIB-main += curl dca drm dvdnav dvdread enca expat faac faad fontconfig
+WANTLIB-main += curl dca drm dvdnav dvdread enca expat fontconfig
 WANTLIB-main += freetype gdk_pixbuf-2.0 gio-2.0 gsm gstaudio-0.10 gstbase-0.10
 WANTLIB-main += gstcontroller-0.10 gstinterfaces-0.10 gstpbutils-0.10
 WANTLIB-main += gstriff-0.10 gstrtp-0.10 gstsdp-0.10 gsttag-0.10 gstvideo-0.10
 WANTLIB-main += idn jasper lrdf mms mpcdec orc-0.4 pango-1.0 pangocairo-1.0
 WANTLIB-main += pangoft2-1.0 pixman-1 png pthread-stubs raptor rsvg-2
 WANTLIB-main += schroedinger-1.0 sndfile sndio ssl stdc++ usbhid vpx
-WANTLIB-main += xcb xcb-render xcb-shm xslt xvidcore
+WANTLIB-main += xcb xcb-render xcb-shm xslt
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			${P}/plugins-base \
-			audio/faac \
-			audio/faad \
 			audio/gsm \
 			audio/libcdaudio \
 			audio/libdca \
@@ -63,7 +61,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			multimedia/libmms \
 			multimedia/libvpx \
 			multimedia/schroedinger>=1.0.10 \
-			multimedia/xvidcore \
 			x11/gnome/librsvg \
 			multimedia/libdvdnav>=4.1.3p0v0 \
 			textproc/liblrdf
@@ -96,6 +93,8 @@ CONFIGURE_ARGS =	--disable-acm \
 			--disable-divx \
 			--disable-dvb \
 			--disable-dvdspu \
+			--disable-faac \
+			--disable-faad \
 			--disable-fbdev \
 			--disable-gme \
 			--disable-kate \
@@ -115,6 +114,7 @@ CONFIGURE_ARGS =	--disable-acm \
 			--disable-vdpau \
 			--disable-wildmidi \
 			--disable-wininet \
+			--disable-xvid \
 			--disable-zbar
 
 # XXX subpackage?
