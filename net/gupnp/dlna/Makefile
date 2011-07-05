@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/05 16:59:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/05 17:07:20 jasper Exp $
 
 COMMENT=		DLNA integration for GUPnP
 
@@ -17,9 +17,6 @@ WANTLIB += xml2 z
 LIB_DEPENDS=		multimedia/gstreamer-0.10/plugins-base \
 			net/gupnp/core
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-gtk-doc
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

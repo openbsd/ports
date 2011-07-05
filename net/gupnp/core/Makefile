@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/04 15:28:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/05 17:07:20 jasper Exp $
 
 COMMENT=		framework for creating UPnP devices and control points
 
@@ -22,12 +22,10 @@ MODPY_ADJ_FILES=	tools/gupnp-binding-tool
 
 AUTOCONF_VERSION=	2.68
 
-CONFIGURE_STYLE=	gnu autoconf
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
 			--enable-introspection \
 			--with-context-manager=unix
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

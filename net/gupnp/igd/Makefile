@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/05 17:00:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/05 17:07:20 jasper Exp $
 
 COMMENT=		library to handle UPnP IGD port mapping
 
@@ -20,9 +20,6 @@ BUILD_DEPENDS=		devel/gobject-introspection \
 			devel/py-gobject
 RUN_DEPENDS=		devel/py-gobject
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-gtk-doc
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>

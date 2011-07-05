@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/05 17:01:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/05 17:07:20 jasper Exp $
 
 COMMENT=		collection of GTK+ widgets on top of GUPnp
 
@@ -20,10 +20,7 @@ WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 LIB_DEPENDS=		net/gupnp/core
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-gtk-doc
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 REGRESS_IS_INTERACTIVE=x11
 

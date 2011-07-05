@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/05 17:00:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/05 17:07:20 jasper Exp $
 
 COMMENT=		free replacements of Intel UPnP tools
 
@@ -24,7 +24,5 @@ RUN_DEPENDS=		devel/desktop-file-utils
 AUTOCONF_VERSION=	2.67
 
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
