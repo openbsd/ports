@@ -1,0 +1,3 @@
+GUPnP-UI is a collection of GTK+ widgets on top of GUPnP. It features a
+GtkTreeModel exposing devices discovered by a GUPnPControlPoint and a
+GtkTreeView for exposing such models.

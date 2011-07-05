@@ -1,0 +1,20 @@
+$OpenBSD: patch-gupnp-ui-1_0_pc_in,v 1.1.1.1 2011/07/05 17:01:18 jasper Exp $
+
+From 414a8258b82333ce4471184cf100a5a06f961a3f Mon Sep 17 00:00:00 2001
+From: Ross Burton <ross@linux.intel.com>
+Date: Mon, 27 Apr 2009 19:57:58 +0000
+Subject: Fix pkg-config paths (#1570)
+
+--- gupnp-ui-1.0.pc.in.orig	Wed Aug 15 09:49:00 2007
++++ gupnp-ui-1.0.pc.in	Mon Jul  4 21:07:59 2011
+@@ -1,7 +1,7 @@
+ prefix=@prefix@
+-exec_prefix=${prefix}
+-libdir=${exec_prefix}/lib
+-includedir=${prefix}/include
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
+ 
+ Name: gupnp-ui-1.0
+ Description: Collection of GTK+ widgets on top of GUPnP
