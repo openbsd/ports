@@ -1,4 +1,4 @@
-# $OpenBSD: scons.port.mk,v 1.4 2010/11/15 19:46:09 espie Exp $
+# $OpenBSD: scons.port.mk,v 1.5 2011/07/05 15:17:26 sthen Exp $
 
 BUILD_DEPENDS+=	devel/scons
 
@@ -16,6 +16,7 @@ MODSCONS_ENV?=	CC="${CC}" \
 
 MODSCONS_FLAGS?=
 ALL_TARGET?=
+NO_CCACHE?=Yes
 
 .if !target(do-build)
 do-build:
