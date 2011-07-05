@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/05 17:07:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/05 17:14:30 jasper Exp $
 
 COMMENT=		library to handle UPnP IGD port mapping
 
 GNOME_PROJECT=		gupnp-igd
 GNOME_VERSION=		0.1.11
+REVISION=		0
 
 SHARED_LIBS +=  gupnp-igd-1.0        0.0      # 3.4
 
