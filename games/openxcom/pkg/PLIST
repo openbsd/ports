@@ -1,0 +1,26 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/05 07:50:33 ajacoutot Exp $
+bin/openxcom
+@bin bin/openxcom-bin
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/openxcom/
+share/openxcom/DATA/
+share/openxcom/DATA/Language/
+share/openxcom/DATA/Language/English.lng
+share/openxcom/DATA/Language/French.geo
+share/openxcom/DATA/Language/French.lng
+share/openxcom/DATA/Language/German.geo
+share/openxcom/DATA/Language/German.lng
+share/openxcom/DATA/Language/Italian.geo
+share/openxcom/DATA/Language/Italian.lng
+share/openxcom/DATA/Language/Spanish.geo
+share/openxcom/DATA/Language/Spanish.lng
+share/openxcom/DATA/README.txt
+share/openxcom/DATA/SoldierName/
+share/openxcom/DATA/SoldierName/American.nam
+share/openxcom/DATA/SoldierName/British.nam
+share/openxcom/DATA/SoldierName/French.nam
+share/openxcom/DATA/SoldierName/German.nam
+share/openxcom/DATA/SoldierName/Japanese.nam
+share/openxcom/DATA/SoldierName/Russian.nam
+share/openxcom/USER/
+share/openxcom/USER/README.txt

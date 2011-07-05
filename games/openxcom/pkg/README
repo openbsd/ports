@@ -1,0 +1,17 @@
+$OpenBSD: README,v 1.1.1.1 2011/07/05 07:50:33 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+In order to play the game you need original data from
+"UFO: Enemy Unknown" / "X-Com: UFO Defense".
+For a system wide installation you can copy them to:
+    ${PREFIX}/share/openxcom/DATA/
+
+You can also make a user specific installation like this:
+    $ mkdir ~/ufoxcom
+    $ cp -r ${PREFIX}/share/openxcom ~/ufoxcom
+
+Now you need to put the original data under ~/ufoxcom/DATA and to run
+the game, execute 'openxcom-bin' under ~/ufoxcom.

@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# wrapper for running openxcom
+
+cd ${TRUEPREFIX}/share/openxcom && ./openxcom-bin
