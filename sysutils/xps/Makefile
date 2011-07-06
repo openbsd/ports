@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.18 2011/04/11 16:44:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/07/06 13:02:01 jasper Exp $
 
 DISTNAME=       xps-4.2
-REVISION=	4
+REVISION=	5
 CATEGORIES=     sysutils x11
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=motif-pstree/}
