@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/07/06 13:41:29 jasper Exp $
 
 COMMENT=	signal or reprioritize specified processes
 
 VERSION=		4.1
 DISTNAME=		skill-${VERSION}
-REVISION =		3
+REVISION =		4
 CATEGORIES=     	sysutils
 
 MAINTAINER=		Jakob Schlyter <jakob@openbsd.org>

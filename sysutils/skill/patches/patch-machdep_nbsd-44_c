@@ -1,12 +1,32 @@
-$OpenBSD: patch-machdep_nbsd-44_c,v 1.1 2010/01/19 15:25:21 okan Exp $
---- machdep/nbsd-44.c.orig	Mon Jan 18 16:52:28 2010
-+++ machdep/nbsd-44.c	Mon Jan 18 16:53:28 2010
-@@ -211,7 +211,7 @@ static	int	pidmapsiz = sizeof(pidmap) / sizeof(pidmap[
+$OpenBSD: patch-machdep_nbsd-44_c,v 1.2 2011/07/06 13:41:29 jasper Exp $
+--- machdep/nbsd-44.c.orig	Mon Apr  8 04:35:21 2002
++++ machdep/nbsd-44.c	Wed Jul  6 15:40:43 2011
+@@ -211,6 +211,28 @@ static	int	pidmapsiz = sizeof(pidmap) / sizeof(pidmap[
  #endif
  #endif	/* __FreeBSD__ */
  
--#if defined(__NetBSD_Version__) && defined(KERN_PROC2)
-+#if defined(KERN_PROC2)
++#if defined(__OpenBSD__)
++#define	_SYSCTL_ARG	KERN_PROC
++#define	_SYSCTL_NMIB	6
++#define	_SYSCTL_PROC	kinfo_proc
++#define	_SYSCTL_MIBINIT(m)			\
++	m[0] = CTL_KERN;			\
++	m[1] = KERN_PROC;			\
++	m[2] = KERN_PROC_ALL;			\
++	m[3] = 0;				\
++	m[4] = sizeof(struct _SYSCTL_PROC);	\
++	m[5] = 0
++#define	_SYSCTL_MIBPROC(m,sz)			\
++	m[5] = (sz) / sizeof(struct _SYSCTL_PROC)
++
++#define	_PROC_COMM(p)	(p)->p_comm
++#define	_PROC_FLAG(p)	(p)->p_flag
++#define	_PROC_PID(p)	(p)->p_pid
++#define	_PROC_STAT(p)	(p)->p_stat
++#define	_PROC_TDEV(p)	(p)->p_tdev
++#define	_PROC_UID(p)	(p)->p_uid
++#endif
++
+ #if defined(__NetBSD_Version__) && defined(KERN_PROC2)
  #define	_SYSCTL_ARG	KERN_PROC2
  #define	_SYSCTL_NMIB	6
- #define	_SYSCTL_PROC	kinfo_proc2
