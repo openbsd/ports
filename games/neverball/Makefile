@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/22 06:50:30 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/06 18:41:41 ajacoutot Exp $
 
 COMMENT-main =	tilt the floor to roll a ball through an obstacle course
 COMMENT-data =	data for Neverball/Neverputt
@@ -8,7 +8,7 @@ DISTNAME =	neverball-$V
 PKGNAME-main =	neverball-$V
 PKGNAME-data =	neverball-data-$V
 EPOCH =		0
-REVISION-main = 0
+REVISION-main = 1
 
 CATEGORIES =	games x11
 
@@ -24,7 +24,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB-main =	GL SDL X11 c iconv intl m pthread z ogg vorbis vorbisfile \
+WANTLIB-main =	GL SDL X11 c m pthread z ogg vorbis vorbisfile \
 		jpeg png SDL_ttf physfs
 
 MASTER_SITES =	${HOMEPAGE}
