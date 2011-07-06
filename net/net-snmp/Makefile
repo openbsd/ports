@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.54 2011/07/06 21:32:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2011/07/06 22:02:25 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
 COMMENT-tkmib=	graphical SNMP MIB browser
 
-V=		5.6.1
+V=		5.6.1.1
 DISTNAME=	net-snmp-$V
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	2
 PKGNAME-perl=	p5-SNMP-$V
 PKGNAME-tkmib=	net-snmp-tkmib-$V
-SHARED_LIBS=	netsnmp		10.0	\
-		netsnmpagent	10.0	\
-		netsnmphelpers	10.0	\
-		netsnmpmibs	10.0	\
-		netsnmptrapd	10.0
+SHARED_LIBS=	netsnmp		11.0	\
+		netsnmpagent	11.0	\
+		netsnmphelpers	11.0	\
+		netsnmpmibs	11.0	\
+		netsnmptrapd	11.0
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=net-snmp/}
 
