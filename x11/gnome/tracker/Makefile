@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2011/07/06 07:23:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2011/07/06 14:01:51 jasper Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -9,7 +9,7 @@ GNOME_VERSION=	0.8.18
 # as meta-tracker.
 PKGNAME=	meta-tracker-${VERSION}
 
-REVISION=	3
+REVISION=	4
 
 EVO_VERSION=	2.32
 SUBST_VARS=	EVO_VERSION

@@ -1,9 +1,9 @@
-$OpenBSD: patch-src_libtracker-common_tracker-dbus_c,v 1.2 2011/05/07 16:17:26 ajacoutot Exp $
+$OpenBSD: patch-src_libtracker-common_tracker-dbus_c,v 1.3 2011/07/06 14:01:51 jasper Exp $
 
 Don't use /proc for getting the process name.
 
 --- src/libtracker-common/tracker-dbus.c.orig	Wed Apr 27 10:42:28 2011
-+++ src/libtracker-common/tracker-dbus.c	Sat May  7 18:15:43 2011
++++ src/libtracker-common/tracker-dbus.c	Wed Jul  6 15:09:37 2011
 @@ -23,6 +23,14 @@
  
  #include <dbus/dbus-glib-bindings.h>
@@ -51,13 +51,13 @@ Don't use /proc for getting the process name.
 +		if ((kd = kvm_openfiles(NULL, NULL, NULL, KVM_NO_FILES, NULL)) == NULL)
 +			return cd;
 +
-+		if ((kp = kvm_getproc2(kd, KERN_PROC_PID, cd->pid, sizeof(*kp), &nproc)) == NULL)
++		if ((kp = kvm_getprocs(kd, KERN_PROC_PID, cd->pid, sizeof(*kp), &nproc)) == NULL)
 +			goto out;
 +
 +		if ((kp->p_flag & P_SYSTEM) != 0) 
 +			goto out;
 +
-+		if ((pargv = kvm_getargv2(kd, kp, 0)) == NULL)
++		if ((pargv = kvm_getargv(kd, kp, 0)) == NULL)
 +			goto out;
 +
 +		cd->binary = g_path_get_basename(pargv[0]);
