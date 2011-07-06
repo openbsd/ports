@@ -1,10 +1,10 @@
-$OpenBSD: patch-Lib_test_test_urllib_py,v 1.2 2011/05/07 09:35:13 fgsch Exp $
+$OpenBSD: patch-Lib_test_test_urllib_py,v 1.3 2011/07/06 12:05:56 jasper Exp $
 
 Test fix for CVE-2011-1521: http://hg.python.org/cpython/rev/a778b963eae3
 
 --- Lib/test/test_urllib.py.orig	Sun Nov 21 14:34:58 2010
-+++ Lib/test/test_urllib.py	Sat Apr 23 14:10:32 2011
-@@ -161,6 +161,20 @@ Content-Type: text/html; charset=iso-885
++++ Lib/test/test_urllib.py	Wed Jul  6 14:05:40 2011
+@@ -161,6 +161,20 @@ Content-Type: text/html; charset=iso-8859-1
          finally:
              self.unfakehttp()
  

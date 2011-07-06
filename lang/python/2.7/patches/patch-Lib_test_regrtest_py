@@ -1,12 +1,12 @@
-$OpenBSD: patch-Lib_test_regrtest_py,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp $
---- Lib/test/regrtest.py.orig	Sun Oct 31 14:17:46 2010
-+++ Lib/test/regrtest.py	Sun Mar 27 18:05:35 2011
-@@ -1433,6 +1433,8 @@
- _expectations['freebsd7'] = _expectations['freebsd4']
- _expectations['freebsd8'] = _expectations['freebsd4']
- 
-+_expectations['openbsd4'] = _expectations['openbsd3']
-+
- class _ExpectedSkips:
-     def __init__(self):
-         import os.path
+$OpenBSD: patch-Lib_test_regrtest_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
+--- Lib/test/regrtest.py.orig	Wed Jul  6 14:05:40 2011
++++ Lib/test/regrtest.py	Wed Jul  6 14:05:41 2011
+@@ -1170,6 +1170,8 @@ _expectations = {
+         """,
+     'unixware7':
+         """
++        test_audioop
++        test_imageop
+         test_bsddb
+         test_bsddb185
+         test_dl

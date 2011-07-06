@@ -1,7 +1,7 @@
-$OpenBSD: patch-Lib_test_test_kqueue_py,v 1.1.1.1 2011/04/24 09:31:44 rpointel Exp $
+$OpenBSD: patch-Lib_test_test_kqueue_py,v 1.2 2011/07/06 12:05:56 jasper Exp $
 --- Lib/test/test_kqueue.py.orig	Sun Nov 21 14:34:58 2010
-+++ Lib/test/test_kqueue.py	Sun Mar 27 18:13:43 2011
-@@ -96,7 +96,8 @@
++++ Lib/test/test_kqueue.py	Wed Jul  6 14:05:40 2011
+@@ -96,7 +96,8 @@ class TestKQueue(unittest.TestCase):
              pass # FreeBSD doesn't raise an exception here
          server, addr = serverSocket.accept()
  
