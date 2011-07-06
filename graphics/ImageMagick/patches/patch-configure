@@ -1,15 +1,7 @@
-$OpenBSD: patch-configure,v 1.4 2008/11/29 05:00:20 okan Exp $
---- configure.orig	Fri Nov 14 12:33:21 2008
-+++ configure	Wed Nov 26 18:33:17 2008
-@@ -20808,6 +20808,7 @@ with_ltdl='no'
- if test "$libtool_build_shared_libs" != 'no'; then
-     with_ltdl='yes'
- fi
-+with_ltdl='no'
- 
-  if test "$with_ltdl" != 'no'; then
-   WITH_LTDL_TRUE=
-@@ -42154,7 +42155,7 @@ fi
+$OpenBSD: patch-configure,v 1.5 2011/07/06 22:43:00 kili Exp $
+--- configure.orig	Fri Dec 31 15:04:17 2010
++++ configure	Thu Jan  6 14:43:30 2011
+@@ -29429,7 +29429,7 @@ fi
  #
  
  # Subdirectory under lib to place ImageMagick lib files
@@ -18,7 +10,7 @@ $OpenBSD: patch-configure,v 1.4 2008/11/29 05:00:20 okan Exp $
  
  cat >>confdefs.h <<_ACEOF
  #define LIBRARY_RELATIVE_PATH "$LIBRARY_RELATIVE_PATH"
-@@ -42258,7 +42259,7 @@ _ACEOF
+@@ -29533,7 +29533,7 @@ _ACEOF
  
  #
  # Path to ImageMagick documentation files
@@ -27,7 +19,7 @@ $OpenBSD: patch-configure,v 1.4 2008/11/29 05:00:20 okan Exp $
  DOCUMENTATION_PATH="${DATA_DIR}/doc/${DOCUMENTATION_RELATIVE_PATH}"
  DEFINE_DOCUMENTATION_PATH="${DATA_DIR}/doc/${DOCUMENTATION_RELATIVE_PATH}/"
  case "${build_os}" in
-@@ -42275,7 +42276,7 @@ _ACEOF
+@@ -29550,7 +29550,7 @@ _ACEOF
  
  #
  # Path to ImageMagick share files
@@ -36,3 +28,12 @@ $OpenBSD: patch-configure,v 1.4 2008/11/29 05:00:20 okan Exp $
  SHARE_PATH="${DATA_DIR}/${SHARE_RELATIVE_PATH}"
  DEFINE_SHARE_PATH="${DATA_DIR}/${SHARE_RELATIVE_PATH}/"
  case "${build_os}" in
+@@ -32677,7 +32677,7 @@ MAGICK_CFLAGS=$CFLAGS
+ MAGICK_CXXFLAGS="$CXXFLAGS"
+ MAGICK_CPPFLAGS=`echo $MAGICK_CPPFLAGS | sed -e 's/  */ /g'`
+ MAGICK_PCFLAGS=`echo $MAGICK_PCFLAGS | sed -e 's/  */ /g'`
+-MAGICK_LDFLAGS="-L$LIB_DIR $LDFLAGS"
++MAGICK_LDFLAGS="$LDFLAGS"
+ MAGICK_LIBS="-lMagickCore $MAGICK_DEP_LIBS $MAGICK_API_LIBLTDL"
+ 
+ 

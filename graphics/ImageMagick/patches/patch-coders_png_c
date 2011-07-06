@@ -1,12 +1,12 @@
-$OpenBSD: patch-coders_png_c,v 1.7 2008/11/29 05:00:20 okan Exp $
---- coders/png.c.orig	Tue Nov 11 20:58:15 2008
-+++ coders/png.c	Thu Nov 20 14:38:55 2008
-@@ -1783,7 +1783,7 @@ static Image *ReadOnePNGImage(MngInfo *mng_info,
-   png_set_read_user_chunk_fn(ping, image, read_vpag_chunk_callback);
- #endif
+$OpenBSD: patch-coders_png_c,v 1.8 2011/07/06 22:43:00 kili Exp $
+--- coders/png.c.orig	Fri Dec 24 19:00:33 2010
++++ coders/png.c	Sat Jan  1 23:06:23 2011
+@@ -1786,7 +1786,7 @@ static Image *ReadOnePNGImage(MngInfo *mng_info,
  
--#if defined(PNG_USE_PNGGCCRD) && defined(PNG_ASSEMBLER_CODE_SUPPORTED) && (PNG_LIBPNG_VER >= 10200) && defined(__i386__)
-+#if defined(PNG_USE_PNGGCCRD) && defined(PNG_ASSEMBLER_CODE_SUPPORTED) && (PNG_LIBPNG_VER >= 10200) && defined(PNG_MMX_CODE_SUPPORTED)
+ #if (PNG_LIBPNG_VER < 10400)
+ #  if defined(PNG_USE_PNGGCCRD) && defined(PNG_ASSEMBLER_CODE_SUPPORTED) && \
+-   (PNG_LIBPNG_VER >= 10200) && (PNG_LIBPNG_VER < 10220) && defined(__i386__)
++   (PNG_LIBPNG_VER >= 10200) && (PNG_LIBPNG_VER < 10220) && defined(PNG_MMX_CODE_SUPPORTED)
    /* Disable thread-unsafe features of pnggccrd */
    if (png_access_version_number() >= 10200)
    {

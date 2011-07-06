@@ -1,0 +1,11 @@
+$OpenBSD: patch-wand_MagickWand_pc_in,v 1.1 2011/07/06 22:43:00 kili Exp $
+--- wand/MagickWand.pc.in.orig	Sat Sep  5 23:47:34 2009
++++ wand/MagickWand.pc.in	Thu Jan  6 19:56:45 2011
+@@ -7,5 +7,5 @@ Name: MagickWand
+ Version: @PACKAGE_VERSION@
+ Description:  MagickWand - C API for ImageMagick
+ Requires: ImageMagick
+-Libs: -L${libdir} -lMagickWand -lMagickCore
+-Cflags: -I${includedir} @MAGICK_PCFLAGS@
++Libs: -L${libdir} -lMagickWand -lMagickCore -pthread
++Cflags: -I${includedir} @MAGICK_PCFLAGS@ -pthread
