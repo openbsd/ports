@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/03/14 20:45:10 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/07/06 01:19:20 jeremy Exp $
 ${GEM_BIN}/rainbows${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -25,6 +25,7 @@ ${GEM_LIB}/gems/${DISTNAME}/NEWS
 ${GEM_LIB}/gems/${DISTNAME}/README
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/SIGNALS
+${GEM_LIB}/gems/${DISTNAME}/Sandbox
 ${GEM_LIB}/gems/${DISTNAME}/Static_Files
 ${GEM_LIB}/gems/${DISTNAME}/Summary
 ${GEM_LIB}/gems/${DISTNAME}/TODO
@@ -111,6 +112,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/never_block/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/never_block.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/never_block/core.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/never_block/event_machine.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/pool_size.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/process_client.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/queue_pool.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/response.rb
@@ -136,6 +138,9 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/sendfile.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/server_token.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/socket_proxy.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/stream_file.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/stream_response_epoll/
+${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/stream_response_epoll.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/stream_response_epoll/client.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/sync_close.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/thread_pool.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/thread_spawn.rb
@@ -150,6 +155,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/writer_thread_spawn/client.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/xepoll/
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/xepoll.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/xepoll/client.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/xepoll_thread_pool/
+${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/xepoll_thread_pool.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/xepoll_thread_pool/client.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/xepoll_thread_spawn/
+${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/xepoll_thread_spawn.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/rainbows/xepoll_thread_spawn/client.rb
 ${GEM_LIB}/gems/${DISTNAME}/local.mk.sample
 ${GEM_LIB}/gems/${DISTNAME}/pkg.mk
 ${GEM_LIB}/gems/${DISTNAME}/rainbows.gemspec
@@ -173,6 +184,7 @@ ${GEM_LIB}/gems/${DISTNAME}/t/bin/sha1sum.rb
 ${GEM_LIB}/gems/${DISTNAME}/t/bin/unused_listen
 ${GEM_LIB}/gems/${DISTNAME}/t/bin/utee
 ${GEM_LIB}/gems/${DISTNAME}/t/byte-range-common.sh
+${GEM_LIB}/gems/${DISTNAME}/t/client_header_buffer_size.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/close-has-env.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/close-pipe-response.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/close-pipe-to_path-response.ru
@@ -215,6 +227,8 @@ ${GEM_LIB}/gems/${DISTNAME}/t/simple-http_ThreadSpawn.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/simple-http_WriterThreadPool.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/simple-http_WriterThreadSpawn.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/simple-http_XEpoll.ru
+${GEM_LIB}/gems/${DISTNAME}/t/simple-http_XEpollThreadPool.ru
+${GEM_LIB}/gems/${DISTNAME}/t/simple-http_XEpollThreadSpawn.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/sleep.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/t0000-simple-http.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0000.ru
@@ -246,6 +260,8 @@ ${GEM_LIB}/gems/${DISTNAME}/t/t0022-copy_stream-byte-range.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0023-sendfile-byte-range.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0024-pipelined-sendfile-response.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0025-write-on-close.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0026-splice-copy_stream-byte-range.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0027-nil-copy_stream.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0030-fast-pipe-response.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0031-close-pipe-response.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0032-close-pipe-to_path-response.sh
@@ -253,6 +269,10 @@ ${GEM_LIB}/gems/${DISTNAME}/t/t0034-pipelined-pipe-response.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0035-kgio-pipe-response.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0040-keepalive_requests-setting.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0041-optional-pool-size.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0042-client_header_buffer_size.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0043-quit-keepalive-disconnect.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0044-autopush.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0045-client_max_header_size.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0050-response-body-close-has-env.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0100-rack-input-hammer-chunked.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0100-rack-input-hammer-content-length.sh
