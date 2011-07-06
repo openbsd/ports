@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/20 17:22:40 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/07/06 07:21:24 jasper Exp $
 # $FreeBSD: ports/sysutils/e2fsprogs/Makefile,v 1.8 2003/02/20 19:00:47 knu Exp $
 
 COMMENT=		utilities to manipulate ext2 filesystems
 
 DISTNAME=		e2fsprogs-1.41.4
-REVISION =		4
+REVISION =		5
 CATEGORIES=		sysutils devel
 SHARED_LIBS=		blkid		0.0 \
 			e2p		3.0 \
@@ -47,6 +47,5 @@ post-install:
 	cd ${PREFIX}/sbin && mv fsck fsck_ext2fs
 	cd ${PREFIX}/man/man8 && mv fsck.8 fsck_ext2fs.8
 	cd ${PREFIX}/man/man3 && mv uuid.3 e2fs-uuid.3
-	mv ${PREFIX}/lib/pkgconfig/uuid.pc ${PREFIX}/lib/pkgconfig/e2fs-uuid.pc
 
 .include <bsd.port.mk>

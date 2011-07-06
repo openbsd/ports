@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/12/23 23:04:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2011/07/06 07:21:24 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -12,6 +12,8 @@ FULLPKGNAME-perl= 	p5-ossp-UUID-${VERSION}
 CATEGORIES=		devel
 SHARED_LIBS=		uuid	13.22 \
 			uuid++	14.21
+
+REVISION-main=		0
 
 # Note there is a different libuuid in sysutils/e2fsprogs,-uuid.
 # If you are porting something which needs libuuid, you may need
@@ -43,5 +45,8 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-perl --with-cxx \
 			--without-php --without-pgsql
+
+post-install:
+	mv ${PREFIX}/lib/pkgconfig/uuid.pc ${PREFIX}/lib/pkgconfig/ossp-uuid.pc
 
 .include <bsd.port.mk>
