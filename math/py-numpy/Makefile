@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2011/06/08 17:36:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2011/07/06 09:31:46 jasper Exp $
 
 COMMENT=		fast array and numeric programming library for Python
 
 MODPY_EGG_VERSION=	1.6.0
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 CATEGORIES=		math devel
 
 HOMEPAGE=		http://numpy.scipy.org/
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		blas m lapack ${MODFORTRAN_WANTLIB}
+WANTLIB=		blas m lapack ${MODFORTRAN_WANTLIB} ${MODPY_WANTLIB}
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=numpy/}
 
