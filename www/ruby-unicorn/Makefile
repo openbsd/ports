@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/11 23:41:23 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/06 01:18:27 jeremy Exp $
 
 COMMENT =	ruby-rack HTTP server for Unix and fast clients
 
-DISTNAME =	unicorn-3.6.2
+DISTNAME =	unicorn-4.0.1
 CATEGORIES =	www
 
 HOMEPAGE =	http://unicorn.bogomips.org/
@@ -18,8 +18,9 @@ PERMIT_DISTFILES_FTP = Yes
 MODULES =	lang/ruby
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	www/ruby-rack,${MODRUBY_FLAVOR} \
-		devel/ruby-kgio,${MODRUBY_FLAVOR}>=2.2,<3.0
+RUN_DEPENDS =	devel/ruby-kgio,${MODRUBY_FLAVOR}>=2.4,<3.0 \
+		www/ruby-rack,${MODRUBY_FLAVOR} \
+		www/ruby-raindrops,${MODRUBY_FLAVOR}>=0.6,<1.0
 
 CONFIGURE_STYLE = ruby gem ext
 

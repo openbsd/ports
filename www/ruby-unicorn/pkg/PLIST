@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/05/11 23:41:23 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/07/06 01:18:27 jeremy Exp $
 ${GEM_BIN}/unicorn${GEM_BIN_SUFFIX}
 ${GEM_BIN}/unicorn_rails${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -27,6 +27,7 @@ ${GEM_LIB}/gems/${DISTNAME}/ISSUES
 ${GEM_LIB}/gems/${DISTNAME}/KNOWN_ISSUES
 ${GEM_LIB}/gems/${DISTNAME}/LATEST
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/Links
 ${GEM_LIB}/gems/${DISTNAME}/NEWS
 ${GEM_LIB}/gems/${DISTNAME}/PHILOSOPHY
 ${GEM_LIB}/gems/${DISTNAME}/README
@@ -103,7 +104,9 @@ ${GEM_LIB}/gems/${DISTNAME}/t/bin/content-md5-put
 ${GEM_LIB}/gems/${DISTNAME}/t/bin/sha1sum.rb
 ${GEM_LIB}/gems/${DISTNAME}/t/bin/unused_listen
 ${GEM_LIB}/gems/${DISTNAME}/t/bin/utee
+${GEM_LIB}/gems/${DISTNAME}/t/broken-app.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/env.ru
+${GEM_LIB}/gems/${DISTNAME}/t/heartbeat-timeout.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/my-tap-lib.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/oob_gc.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/oob_gc_path.ru
@@ -166,12 +169,14 @@ ${GEM_LIB}/gems/${DISTNAME}/t/t0001-reload-bad-config.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0002-config-conflict.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0002-parser-error.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0003-working_directory.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0004-heartbeat-timeout.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0004-working_directory_broken.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0005-working_directory_app.rb.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0006-reopen-logs.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0006.ru
 ${GEM_LIB}/gems/${DISTNAME}/t/t0007-working_directory_no_embed_cli.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0008-back_out_of_upgrade.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0009-broken-app.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0009-winch_ttin.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0010-reap-logging.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0011-active-unix-socket.sh
@@ -184,6 +189,8 @@ ${GEM_LIB}/gems/${DISTNAME}/t/t0015-configurator-internals.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0016-trust-x-forwarded-false.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0017-trust-x-forwarded-true.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0018-write-on-close.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0019-max_header_len.sh
+${GEM_LIB}/gems/${DISTNAME}/t/t0020-at_exit-handler.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0100-rack-input-tests.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0116-client_body_buffer_size.sh
 ${GEM_LIB}/gems/${DISTNAME}/t/t0116.ru
@@ -203,6 +210,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/aggregate.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/benchmark/
 ${GEM_LIB}/gems/${DISTNAME}/test/benchmark/README
 ${GEM_LIB}/gems/${DISTNAME}/test/benchmark/dd.ru
+${GEM_LIB}/gems/${DISTNAME}/test/benchmark/stack.ru
 ${GEM_LIB}/gems/${DISTNAME}/test/exec/
 ${GEM_LIB}/gems/${DISTNAME}/test/exec/README
 ${GEM_LIB}/gems/${DISTNAME}/test/exec/test_exec.rb
@@ -307,6 +315,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/rails/test_rails.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_configurator.rb
+${GEM_LIB}/gems/${DISTNAME}/test/unit/test_droplet.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_http_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_http_parser_ng.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/unit/test_http_parser_xftrust.rb
