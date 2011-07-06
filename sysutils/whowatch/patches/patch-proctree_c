@@ -1,24 +1,6 @@
-$OpenBSD: patch-proctree_c,v 1.1 2010/01/18 12:07:45 sthen Exp $
+$OpenBSD: patch-proctree_c,v 1.2 2011/07/06 13:15:40 jasper Exp $
 --- proctree.c.orig	Mon Jan 18 11:36:53 2010
 +++ proctree.c	Mon Jan 18 11:52:10 2010
-@@ -41,7 +41,7 @@
- #define change_head(a,b,f) ({b=a; if(a) a->f.ppv=&b;})
- 
- #ifdef HAVE_PROCESS_SYSCTL
--int get_all_info(struct kinfo_proc **);
-+int get_all_info(struct kinfo_proc2 **);
- #endif 
- 
- struct pinfo {
-@@ -155,7 +155,7 @@ static inline void change_parent(struct proc_t* p,stru
- int update_tree(void del(void*))
- {
- #ifdef HAVE_PROCESS_SYSCTL
--	struct kinfo_proc *pi;
-+	struct kinfo_proc2 *pi;
- 	int i, el;
- #else
- 	struct pinfo info;
 @@ -170,8 +170,8 @@ int update_tree(void del(void*))
  #ifdef HAVE_PROCESS_SYSCTL
  	el = get_all_info(&pi);
