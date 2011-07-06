@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/03 11:46:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/06 21:09:55 ajacoutot Exp $
 
 COMMENT=	Perl interface to gpgme
 SHARED_ONLY=	Yes
 
 MODULES=	cpan
 DISTNAME=	Crypt-GpgME-0.08
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel security
 USE_GROFF =	Yes
 
@@ -17,7 +17,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	gpg-error iconv intl gpgme
+WANTLIB=	gpg-error gpgme
+
+MODULES=	devel/gettext
 
 LIB_DEPENDS=	security/gpgme>=1.1.4
 

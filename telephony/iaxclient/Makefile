@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/06/27 13:38:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2011/07/06 21:09:56 ajacoutot Exp $
 
 COMMENT-main=	IAX client library
 COMMENT-tcl=	IAX client library, tcl bindings
@@ -8,9 +8,9 @@ DISTNAME=	iaxclient-2.1beta3
 PKGNAME-main=	${DISTNAME}
 REVISION-main=	7
 PKGNAME-tcl=	${DISTNAME:S/iaxclient/iaxclient-tcl/}
-REVISION-tcl=	8
+REVISION-tcl=	9
 PKGNAME-iaxcomm= iaxcomm-1.1.0
-REVISION-iaxcomm= 8
+REVISION-iaxcomm= 10
 
 CATEGORIES=	telephony
 USE_LIBTOOL=	Yes
@@ -41,15 +41,15 @@ WANTLIB-tcl	+= GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB-tcl	+= Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
 WANTLIB-tcl	+= drm expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-tcl	+= gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB-tcl	+= gtk-x11-2.0 iaxclient iconv intl pango-1.0 pangocairo-1.0
+WANTLIB-tcl	+= gtk-x11-2.0 iaxclient pango-1.0 pangocairo-1.0
 WANTLIB-tcl	+= pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xcb-render
-WANTLIB-tcl	+= xcb-shm ${cWANTLIB}
+WANTLIB-tcl	+= xcb-shm ${cWANTLIB} ${MODGETTEXT_WANTLIB}
 
 WANTLIB-iaxcomm	+= GL ICE SDL SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB-iaxcomm	+= Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB-iaxcomm	+= c cairo drm expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
 WANTLIB-iaxcomm	+= gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB-iaxcomm	+= gtk-x11-2.0 iaxclient iconv intl iodbc jpeg mspack
+WANTLIB-iaxcomm	+= gtk-x11-2.0 iaxclient iodbc jpeg mspack ${MODGETTEXT_WANTLIB}
 WANTLIB-iaxcomm	+= pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB-iaxcomm	+= png pthread-stubs stdc++ tiff usbhid wx_base wx_base_net
 WANTLIB-iaxcomm	+= wx_base_odbc wx_base_xml wx_gtk2_adv wx_gtk2_aui wx_gtk2_core

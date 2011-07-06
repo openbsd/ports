@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 17:22:43 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/07/06 21:09:55 ajacoutot Exp $
 
 COMMENT=	library for fingerprint reader devices
 
 DISTNAME=	libfprint-0.0.6
-REVISION =	3
+REVISION =	4
 CATEGORIES=    	security
 
 SHARED_LIBS=	fprint 0.0
@@ -20,7 +20,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes 
 PERMIT_DISTFILES_FTP=	Yes 
 
-WANTLIB=		crypto iconv intl m MagickCore>=1 glib-2.0>=0.8 usb
+WANTLIB=		crypto m MagickCore>=1 glib-2.0>=0.8 usb
+
+MODULES=		devel/gettext
+
 LIB_DEPENDS=		graphics/ImageMagick \
 			devel/glib2 \
 			devel/libusb
