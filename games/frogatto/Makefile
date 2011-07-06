@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/16 11:23:26 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/06 04:18:19 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	2D adventure platformer game
 
-DISTNAME=	frogatto-1.0.3
+DISTNAME=	frogatto-1.1
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	games
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_FTP=	may not modify
 PERMIT_DISTFILES_CDROM=	may not charge
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL GLU X11 c m pthread stdc++ GLEW SDL SDL_image SDL_mixer
+WANTLIB += GL GLU c m pthread stdc++ GLEW SDL SDL_image SDL_mixer
 WANTLIB += SDL_ttf boost_iostreams-mt boost_regex-mt boost_system-mt
 WANTLIB += boost_thread-mt png
 
