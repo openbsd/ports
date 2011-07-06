@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.107 2011/06/28 11:52:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.108 2011/07/06 01:01:27 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
@@ -14,7 +14,6 @@ PATCH_DIST_STRIP= -p1
 
 CATEGORIES=	print sysutils
 
-# XXX ghostscript needs to dlopen() libcupsimage.so.4
 SHARED_LIBS+=	cupsimage	4.0
 SHARED_LIBS+=	cups		5.0
 SHARED_LIBS+=	cupscgi		0.0
