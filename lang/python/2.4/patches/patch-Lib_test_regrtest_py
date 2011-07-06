@@ -1,36 +1,13 @@
-$OpenBSD: patch-Lib_test_regrtest_py,v 1.2 2006/11/01 20:38:37 alek Exp $
---- Lib/test/regrtest.py.orig	Mon Mar 13 06:53:04 2006
-+++ Lib/test/regrtest.py	Fri Oct 20 10:26:06 2006
-@@ -1113,6 +1113,32 @@ _expectations = {
-         test_zipimport
-         test_zlib
+$OpenBSD: patch-Lib_test_regrtest_py,v 1.3 2011/07/06 12:25:29 jasper Exp $
+--- Lib/test/regrtest.py.orig	Wed Jul  6 14:06:46 2011
++++ Lib/test/regrtest.py	Wed Jul  6 14:06:46 2011
+@@ -1115,6 +1115,9 @@ _expectations = {
          """,
-+     'openbsd3':
-+         """
-+       test_aepack
-+       test_al
-+       test_applesingle
-+       test_cd
-+       test_cl
-+       test_dl
-+       test_email_codecs
-+       test_gl
-+       test_imgfile
-+       test_linuxaudiodev
-+       test_locale
-+       test_macfs
-+       test_macostools
-+       test_nis
-+       test_normalization
-+       test_ossaudiodev
-+       test_pep277
-+       test_plistlib
-+       test_scriptpackages
-+       test_sunaudiodev
-+       test_unicode_file
-+       test_winreg
-+       test_winsound
-+        """,
- }
- _expectations['freebsd5'] = _expectations['freebsd4']
- _expectations['freebsd6'] = _expectations['freebsd4']
+      'openbsd3':
+          """
++       test_audioop
++       test_rgbimg
++       test_imageop
+        test_aepack
+        test_al
+        test_applesingle
