@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:11 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/06 18:57:09 ajacoutot Exp $
 
 COMMENT=	graphical front-end for octave
 
 DISTNAME=	qtoctave-0.8.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	math
 
 HOMEPAGE=	http://qtoctave.wordpress.com/
@@ -16,12 +16,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	https://forja.rediris.es/frs/download.php/352/
 
-MODULES=	x11/qt4
+MODULES=	x11/qt4 \
+		devel/gettext
 
 RUN_DEPENDS=	math/octave
 LIB_DEPENDS=	x11/qt4
 WANTLIB=	ICE SM X11 Xext Xi Xinerama Xrender \
-		c fontconfig freetype glib-2.0 gthread-2.0 iconv intl \
+		c fontconfig freetype glib-2.0 gthread-2.0 \
 		m png pthread pthread-stubs stdc++ xcb z expat gobject-2.0 \
 		QtGui QtXml
 

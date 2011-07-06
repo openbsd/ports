@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/19 07:23:13 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/07/06 18:57:09 ajacoutot Exp $
 
 COMMENT=	video player for KDE
 
 VERSION=	0.8.8
 DISTNAME=	kaffeine-${VERSION}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	multimedia x11 x11/kde
 MASTER_SITES=	http://hftom.free.fr/ \
 		${MASTER_SITE_SOURCEFORGE:=kaffeine/}
@@ -22,7 +22,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xinerama Xrender Xtst art_lgpl_2
-WANTLIB += c expat fam fontconfig freetype iconv idn intl jpeg m ogg
+WANTLIB += c expat fam fontconfig freetype idn jpeg m ogg
 WANTLIB += pcre pcreposix png pthread pthread-stubs rpcsvc stdc++
 WANTLIB += util xcb z kdecore DCOP kdesu kio kdefx kparts kutils
 WANTLIB += kdeprint kdeui kwalletclient khtml kjs vorbis vorbisenc
@@ -36,7 +36,7 @@ LIB_DEPENDS=	x11/kde/libs3 \
 
 SUBST_VARS=	VERSION
 
-MODULES=	x11/kde
+MODULES=	x11/kde devel/gettext
 MODKDE_VERSION=	3.5.7
 
 PORTHOME=	${WRKDIR}

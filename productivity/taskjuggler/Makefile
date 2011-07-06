@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/20 09:48:40 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/07/06 18:57:09 ajacoutot Exp $
 
 COMMENT=	project management tool
 
 DISTNAME=	taskjuggler-2.4.1
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	productivity
 
@@ -18,7 +18,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += DCOP ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c
-WANTLIB += fam iconv idn intl jpeg kabc kdecore kdefx kdeprint
+WANTLIB += fam idn jpeg kabc kdecore kdefx kdeprint
 WANTLIB += kdesu kdeui khtml kio kjs kparts kresources ktexteditor
 WANTLIB += kutils kwalletclient m pcre pcreposix png pthread pthread-stubs
 WANTLIB += rpcsvc stdc++ util vcard xcb z kcal kmime ktnef
@@ -26,7 +26,7 @@ WANTLIB += rpcsvc stdc++ util vcard xcb z kcal kmime ktnef
 MASTER_SITES=	${HOMEPAGE}/download/
 EXTRACT_SUFX=	.tar.bz2
 
-MODULES=	x11/kde
+MODULES=	x11/kde devel/gettext
 MODKDE_VERSION=	3.4
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

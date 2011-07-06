@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2011/05/11 12:03:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2011/07/06 18:57:09 ajacoutot Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	determine the malware activity on a network
 
 DISTNAME=	nepenthes-0.2.2 
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 HOMEPAGE=	http://nepenthes.mwcollect.org/
@@ -23,12 +23,14 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GROFF =	Yes
 
+MODULES=	devel/gettext
+
 LIB_DEPENDS=	net/adns \
 		net/curl \
 		devel/libmagic \
 		devel/pcre
 
-WANTLIB=	c crypto iconv intl idn m ssl stdc++ pcap z \
+WANTLIB=	c crypto idn m ssl stdc++ pcap z \
 		adns>=1 curl>=3 magic>=1 pcre>=1
 
 FAKE_FLAGS+=	localstatedir='/var/nepenthes' \
@@ -52,7 +54,7 @@ LIB_DEPENDS+=   security/prelude/libprelude
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include  \
                 -I${LOCALBASE}/include/libprelude/" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
-WANTLIB+=	gcrypt gnutls gpg-error iconv intl pthread tasn1 prelude>=8
+WANTLIB+=	gcrypt gnutls gpg-error pthread tasn1 prelude>=8
 CONFIGURE_ARGS+=--enable-prelude
 MESSAGE=        ${PKGDIR}/MESSAGE-prelude
 .else

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/06 18:57:09 ajacoutot Exp $
 
 COMMENT=	mail purpose library
 
 DISTNAME=	libetpan-1.0
+REVISION=	0
 CATEGORIES=	mail devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libetpan/}
 
@@ -18,9 +19,9 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	converters/libiconv
+MODULES=	devel/gettext
 
-WANTLIB=	crypto expat intl m ssl stdc++ z curl idn sasl2
+WANTLIB=	crypto expat m ssl stdc++ z curl idn sasl2
 
 LIB_DEPENDS+=	net/curl \
 		devel/libidn \

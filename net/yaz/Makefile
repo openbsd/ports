@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:39 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/07/06 18:57:09 ajacoutot Exp $
 
 COMMENT=		Z39.50/SR client and API library
 DISTNAME=		yaz-3.0.49
 CATEGORIES=		net
+REVISION=		0
 
 SHARED_LIBS+=		yaz		1.1	# 3.0
 SHARED_LIBS+=		yaz_icu		1.2	# 3.0
@@ -21,7 +22,9 @@ PERMIT_DISTFILES_FTP=	Yes
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
 
-WANTLIB=		c m ncurses pthread readline z iconv intl \
+MODULES=		devel/gettext
+
+WANTLIB=		c m ncurses pthread readline z \
 			xml2 gpg-error gcrypt exslt xslt icudata \
 			icui18n icuuc
 
