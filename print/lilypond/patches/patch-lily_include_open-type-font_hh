@@ -1,7 +1,7 @@
-$OpenBSD: patch-lily_include_open-type-font_hh,v 1.1 2009/10/11 18:56:21 kili Exp $
---- lily/include/open-type-font.hh.orig	Mon Jan 19 01:04:57 2009
-+++ lily/include/open-type-font.hh	Wed Feb 11 18:51:27 2009
-@@ -13,8 +13,8 @@
+$OpenBSD: patch-lily_include_open-type-font_hh,v 1.2 2011/07/06 14:14:06 kili Exp $
+--- lily/include/open-type-font.hh.orig	Sun Jun 12 16:05:50 2011
++++ lily/include/open-type-font.hh	Sun Jun 19 13:45:40 2011
+@@ -24,8 +24,8 @@
  #include "font-metric.hh"
  
  Index_to_charcode_map make_index_to_charcode_map (FT_Face face);

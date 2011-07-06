@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/06/08 17:37:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2011/07/06 14:14:06 kili Exp $
 #
 # Credits to Matt Jibson. He did the initial work on this port and many
 # tools it depends on.
@@ -10,13 +10,11 @@ BROKEN-hppa=		SIGILL during build
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
 
-VERSION=		2.12.3
+VERSION=		2.14.1
 DISTNAME=		lilypond-${VERSION}
 DISTNAME-docs=		${DISTNAME}-1.documentation
 PKGNAME-main=		lilypond-${VERSION}
-REVISION-main=		2
 PKGNAME-docs=		lilypond-docs-${VERSION}
-REVISION-docs=		0
 CATEGORIES=		print
 
 DISTFILES=		${DISTNAME}.tar.gz ${DISTNAME-docs}.tar.bz2:0
@@ -28,7 +26,7 @@ HOMEPAGE=		http://lilypond.org/web/
 
 MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
-# GPLv2
+# GPLv3+
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
@@ -41,14 +39,17 @@ MASTER_SITES0=		${MASTER_BASE}binaries/documentation/
 # We don't use the standard autoconf mechanisms from the ports
 # system, because it doesn't work for lilypond. Instead, we use
 # autogen.sh and add AUTOCONV_VERSION to the environment.
-AUTOCONF_VERSION=	2.61
+AUTOCONF_VERSION=	2.63
 CONFIGURE_STYLE=	gnu
 CONFIGURE_SCRIPT=	autogen.sh
 CONFIGURE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 			BASH=/bin/sh \
 			GREP=/usr/bin/grep \
 			LDFLAGS=-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	--disable-{debugging,optimising,pipe} \
+CONFIGURE_ARGS+=	--disable-debugging \
+			--disable-documentation \
+			--disable-optimising \
+			--disable-pipe \
 			--with-ncsb-dir=${LOCALBASE}/share/ghostscript/fonts
 USE_GMAKE=		Yes
 USE_GROFF =		Yes
@@ -77,7 +78,6 @@ BUILD_DEPENDS= 		print/mftrace \
 			devel/bison \
 			archivers/bzip2 \
 			devel/autoconf/${AUTOCONF_VERSION} \
-			textproc/texi2html \
 			${RUN_DEPENDS}
 
 SUBST_VARS+=		VERSION
@@ -92,10 +92,19 @@ post-extract:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/lilypond/${VERSION}
-	umask 022 && cp -R ${WRKDIR}/docs/share/doc/lilypond/html/* \
+	umask 022 && cp -R ${WRKDIR}/docs/share/doc/lilypond/html/offline-root/* \
 		${PREFIX}/share/doc/lilypond/${VERSION}
+	for f in ${WRKDIR}/docs/share/man/man1/*; do \
+		${INSTALL_MAN} $$f ${PREFIX}/man/man1; \
+	done
 
-REGRESS_DEPENDS=	print/lilypond-test-baseline:patch
+
+# Regression tests temporarily disabled, because we don't
+# build the documentation for now.
+NO_REGRESS=		Yes
+
+REGRESS_DEPENDS=	graphics/ImageMagick \
+			print/lilypond-test-baseline:patch
 
 pre-regress:
 .for d in input/regression input/regression/musicxml

@@ -1,7 +1,7 @@
-$OpenBSD: patch-lily_ttf_cc,v 1.3 2009/10/11 18:56:21 kili Exp $
---- lily/ttf.cc.orig	Mon Jan 19 01:04:57 2009
-+++ lily/ttf.cc	Wed Feb 11 18:46:44 2009
-@@ -427,7 +427,7 @@ print_trailer (void *out,
+$OpenBSD: patch-lily_ttf_cc,v 1.4 2011/07/06 14:14:06 kili Exp $
+--- lily/ttf.cc.orig	Sun Jun 12 16:05:50 2011
++++ lily/ttf.cc	Sun Jun 19 13:45:47 2011
+@@ -440,7 +440,7 @@ print_trailer (void *out,
        if (!glyph_name[0] && ic_map.find (i) != ic_map.end ())
  	{
  	  FT_ULong ucode = ic_map[i];
@@ -10,7 +10,7 @@ $OpenBSD: patch-lily_ttf_cc,v 1.3 2009/10/11 18:56:21 kili Exp $
  	}
  
        if (i == 0)
-@@ -436,7 +436,7 @@ print_trailer (void *out,
+@@ -449,7 +449,7 @@ print_trailer (void *out,
  	glyph_name[0] = '\0';
  
        if (!glyph_name[0])
