@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2010/11/15 23:22:07 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2011/07/06 09:32:02 jasper Exp $
 # $RuOBSD: Makefile,v 1.4 2002/04/29 11:07:18 grange Exp $
 # $NetBSD: Makefile,v 1.1.1.1 2001/12/29 00:22:02 abs Exp $
 
@@ -8,7 +8,7 @@ DISTNAME=		BasiliskII_src_01052006
 PKGNAME=		BasiliskII-1.0
 CATEGORIES=		emulators
 
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://basilisk.cebix.net/
 
@@ -23,12 +23,12 @@ MODULES=		devel/gettext
 MASTER_SITES=		http://distfiles.nl/
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xxf86dga Xxf86vm
-WANTLIB += atk-1.0 audiofile c cairo expat fontconfig freetype
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread pthread-stubs
-WANTLIB += sndio stdc++ xcb z gdk_pixbuf-2.0 esd gdk-x11-2.0 gtk-x11-2.0
+WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += Xinerama Xrandr Xrender Xxf86dga Xxf86vm atk-1.0 c
+WANTLIB += cairo esd expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pthread sndio stdc++ z
 
 LIB_DEPENDS=		audio/esound \
 			x11/gtk+2
