@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.34 2010/11/15 23:22:07 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2011/07/06 18:29:00 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	XML editor for KDE
 
 DISTNAME=	kxmleditor-1.1.3
-REVISION=	5
+REVISION=	6
 CATEGORIES=	editors x11 x11/kde
 
 SHARED_LIBS=	kxmleditorpart	2.0
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=  Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c jpeg
-WANTLIB += m png fam intl rpcsvc pthread stdc++ util z iconv
+WANTLIB += m png fam rpcsvc pthread stdc++ util z
 WANTLIB += idn pthread-stubs xcb kdecore DCOP kdefx kdeprint
 WANTLIB += kdesu kdeui kio kparts kwalletclient
 
@@ -29,7 +29,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=kxmleditor/}
 
 LIB_DEPENDS=	x11/kde/libs3
 
-MODULES=	x11/kde
+MODULES=	x11/kde devel/gettext
 MODKDE_VERSION=	3.1
 
 PORTHOME=	${WRKDIR}

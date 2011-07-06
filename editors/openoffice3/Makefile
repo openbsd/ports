@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2011/01/15 11:13:49 robert Exp $
+# $OpenBSD: Makefile,v 1.75 2011/07/06 18:29:00 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -17,6 +17,8 @@ PKGNAME-main=	openoffice-${VERSION}
 PKGNAME-kde=	openoffice-kde-${VERSION}
 PKGNAME-java=	openoffice-java-${VERSION}
 CATEGORIES=	editors productivity
+
+REVISION-main=	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -154,10 +156,10 @@ WANTLIB-main=	gdk-x11-2.0>=400.14 gtk-x11-2.0>=400.14 \
 WANTLIB-main+=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo \
 		crypto expat fontconfig freetype gio-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gthread-2.0 iconv intl \
+		gmodule-2.0 gobject-2.0 gthread-2.0 \
 		jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 \
 		png pthread pthread-stubs ssl util xcb xml2 z gdk_pixbuf-2.0 \
-		${MODGCONF2_WANTLIB}
+		${MODGCONF2_WANTLIB} ${MODGETTEXT_WANTLIB}
 WANTLIB-main+=	GL Xxf86vm drm python2.6 stdc++ xcb-render xcb-shm
 WANTLIB-main+=	${MODPY_WANTLIB}
 

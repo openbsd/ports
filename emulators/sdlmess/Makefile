@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/15 23:22:08 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/07/06 18:29:00 ajacoutot Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,7 +8,7 @@ COMMENT =		emulates game consoles and old home computers
 V =			0.132
 DISTNAME =		sdlmess${V:S/.//}
 PKGNAME =		sdlmess-${V}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES =		emulators games
 
@@ -25,13 +25,15 @@ PERMIT_DISTFILES_FTP =		Yes
 WANTLIB +=	ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB +=	Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1
 WANTLIB +=	expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB +=	gobject-2.0 gthread-2.0 iconv intl m pango-1.0 pangocairo-1.0
+WANTLIB +=	gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB +=	pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb z
 WANTLIB +=	xcb-render xcb-render-util gdk_pixbuf-2.0 SDL
 WANTLIB +=	gdk-x11-2.0 gtk-x11-2.0 gconf-2>=5
 
 MASTER_SITES =		http://rbelmont.mameworld.info/
 EXTRACT_SUFX =		.zip
+
+MODULES =		devel/gettext
 
 LIB_DEPENDS =		devel/sdl devel/gconf2 x11/gtk+2
 RUN_DEPENDS =		sdlmame-tools-${V}:emulators/sdlmame,-tools
