@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/06 21:25:23 ajacoutot Exp $
 
 
 BROKEN=		Need to resolve various issues
@@ -7,7 +7,7 @@ CATEGORIES=	x11	x11/kde
 DISTNAME=	kmplayer-0.6.4
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	kparts_kmplayer  0.0 \
 		kdeinit_kmplayer 0.0
@@ -18,7 +18,7 @@ VERSION=3
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 MODKDE_VERSION=	3.1
-MODULES=	x11/kde
+MODULES=	x11/kde devel/gettext
 MODGNU_CONFIG_GUESS_DIRS=	${MODKDE_CONFIG_GUESS_DIRS}
 CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.52
@@ -38,7 +38,7 @@ PERMIT_DISTFILES_FTP=Yes
 PERMIT_DISTFILES_CDROM=Yes
 WANTLIB=	ICE SM X11 Xext Xrender art_lgpl_2 artsflow artsflow_idl \
 		audiofile c esd glib-2.0.0.0 gmodule-2.0.0.0 gthread-2.0.0.0 \
-		iconv intl jpeg kmedia2_idl kwalletclient m mad mcop ogg \
+		jpeg kmedia2_idl kwalletclient m mad mcop ogg \
 		ossaudio png pthread qtmcop soundserver_idl stdc++ util vorbis \
 		vorbisenc vorbisfile z kdecore DCOP kdefx kdesu kdeui kio \
 		kmediaplayer kparts artskde

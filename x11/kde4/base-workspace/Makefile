@@ -1,7 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/07/06 21:25:23 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, base workspace
 DISTNAME =		kdebase-workspace-${VERSION}
+REVISION =		0
+
+MODULES =		devel/gettext
 
 LIB_DEPENDS +=	x11/kde4/libs \
 		x11/gnome/libxklavier \
@@ -47,7 +50,7 @@ SHARED_LIBS += systemsettingsview	0.0
 WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xft \
 	Xinerama Xpm Xrandr Xrender Xss Xtst Xxf86misc akonadi-kde \
 	akonadi-kmime c fontconfig freetype glib-2.0 gmodule-2.0 gobject-2.0 \
-	gps gthread-2.0 iconv intl kabc kde3support kdecore>=8 kdefakes kdesu \
+	gps gthread-2.0 kabc kde3support kdecore>=8 kdefakes kdesu \
 	kdeui kfile kholidays khtml kio kjs kmime knewstuff2 knewstuff3 \
 	knotifyconfig kparts kpimutils kpty kresources ktexteditor \
 	kunitconversion kutils lib/qt4/Qt3Support lib/qt4/QtDBus lib/qt4/QtGui \

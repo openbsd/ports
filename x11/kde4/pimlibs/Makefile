@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/07/06 21:25:23 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, pimlibs
 DISTNAME =		kdepimlibs-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=	kabc                 5.0      # .4.0
 SHARED_LIBS +=	kabc_file_core       0.0      # .4.0
@@ -36,6 +37,7 @@ SHARED_LIBS +=	microblog	     0.0      # .4.4
 SHARED_LIBS += 	gpgmepp-pthread	     0.0      # .2.4
 SHARED_LIBS += 	gpgmepp		     0.0      # .2.4
 
+MODULES =	devel/gettext
 
 BUILD_DEPENDS += devel/boost \
 		x11/kde4/automoc
@@ -51,7 +53,7 @@ pre-install:
 	mkdir -p ${PREFIX}/share/doc/HTML/en/common
 
 WANTLIB += akonadiprotocolinternals c gpg-error gpgme gpgme-pthread ical \
-	icalss iconv intl kdecore.>=8 kdeui kio kparts kutils lber ldap \
+	icalss kdecore.>=8 kdeui kio kparts kutils lber ldap \
 	lib/qt4/QtDBus lib/qt4/QtGui lib/qt4/QtNetwork lib/qt4/QtSql \
 	lib/qt4/QtSvg lib/qt4/QtXml m phonon pthread sasl2 solid stdc++
 

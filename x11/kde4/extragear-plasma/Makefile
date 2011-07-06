@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/25 15:01:28 jolan Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/06 21:25:23 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, extra plasmoids
 DISTNAME =		extragear-plasma-${VERSION}
-REVISION =		1
+REVISION =		2
 
 MASTER_SITES =		${MASTER_SITE_KDE:=stable/${VERSION}/src/extragear/} 
+
+MODULES =		devel/gettext
 
 LIB_DEPENDS +=	x11/kde4/libs \
 		x11/kde4/pimlibs \
@@ -12,8 +14,7 @@ LIB_DEPENDS +=	x11/kde4/libs \
 
 WANTLIB += GL GLU ICE SM X11 Xau Xcursor Xdmcp Xext Xfixes Xft
 WANTLIB += Xi Xinerama Xpm Xrandr Xrender Xtst c fontconfig freetype
-WANTLIB += glib-2.0 gthread-2.0 iconv intl m png pthread
-WANTLIB += z
+WANTLIB += glib-2.0 gthread-2.0 m png pthread z
 WANTLIB += QtDBus QtGui QtNetwork QtOpenGL QtSvg QtXml
 WANTLIB += bz2 fam streamanalyzer streams
 WANTLIB += kdecore>=8 kdeui kio solid kfile syndication plasma

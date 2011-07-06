@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/06 21:25:23 ajacoutot Exp $
 
 COMMENT =		K Desktop Environment, network
 DISTNAME =		kdenetwork-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  kgetcore                0.0 # .4.0
 SHARED_LIBS +=  kopete                  3.0 # .4.0
@@ -18,6 +19,8 @@ SHARED_LIBS +=	kopetecontactlist	0.0 # .1.0
 SHARED_LIBS +=	kopetestatusmenu	0.0 # .1.0
 SHARED_LIBS +=	krdccore		0.0 # .4.4
 
+MODULES =	devel/gettext
+
 LIB_DEPENDS +=	x11/kde4/libs \
 		x11/kde4/pimlibs \
 		x11/kde4/base-workspace \
@@ -30,7 +33,7 @@ LIB_DEPENDS +=	x11/kde4/libs \
 		x11/kde4/base
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xss c gadu glib-2.0 gmp \
-	gpg-error gpgme++-pthread gpgme-pthread iconv idn intl kabc>=5 \
+	gpg-error gpgme++-pthread gpgme-pthread idn kabc>=5 \
 	kde3support kdecore>=8 kdeui kdnssd kfile khtml kio kjs knewstuff2 \
 	knotifyconfig konq kparts kpimidentities kresources krosscore krossui \
 	ktexteditor kutils kworkspace lib/qt4/Qt3Support lib/qt4/QtDBus \

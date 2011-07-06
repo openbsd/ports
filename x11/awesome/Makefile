@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.38 2011/07/06 09:58:15 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.39 2011/07/06 21:25:23 ajacoutot Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
 DISTNAME=		awesome-3.4.10
-REVISION=		2
+REVISION=		4
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		x11
 
@@ -20,8 +20,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB+=		GL Imlib2 X11 Xau Xdamage Xdmcp Xext Xfixes
 WANTLIB+=		Xrender Xxf86vm c cairo dbus-1 drm ev
 WANTLIB+=		execinfo expat fontconfig freetype glib-2.0
-WANTLIB+=		gmodule-2.0 gobject-2.0 gthread-2.0 iconv
-WANTLIB+=		intl lua m pango-1.0 pangocairo-1.0
+WANTLIB+=		gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB+=		lua m pango-1.0 pangocairo-1.0
 WANTLIB+=		pangoft2-1.0 pixman-1 png pthread
 WANTLIB+=		pthread-stubs startup-notification-1 xcb
 WANTLIB+=		xcb-atom xcb-aux xcb-event xcb-icccm
@@ -51,7 +51,8 @@ RUN_DEPENDS=		graphics/feh \
 			misc/rlwrap \
 			shells/bash
 
-MODULES=		devel/cmake
+MODULES=		devel/cmake \
+			devel/gettext
 
 CONFIGURE_STYLE=	cmake
 
