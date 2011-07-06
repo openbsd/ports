@@ -1,34 +1,27 @@
-$OpenBSD: patch-src_libstatgrab_process_stats_c,v 1.1 2010/01/18 22:03:46 okan Exp $
---- src/libstatgrab/process_stats.c.orig	Mon Oct  9 10:47:58 2006
-+++ src/libstatgrab/process_stats.c	Mon Jan 18 11:19:50 2010
-@@ -105,9 +105,9 @@ sg_process_stats *sg_get_process_stats(int *entries){
+$OpenBSD: patch-src_libstatgrab_process_stats_c,v 1.2 2011/07/06 12:45:04 jasper Exp $
+--- src/libstatgrab/process_stats.c.orig	Mon Oct  9 16:47:58 2006
++++ src/libstatgrab/process_stats.c	Wed Jul  6 14:39:36 2011
+@@ -105,7 +105,7 @@ sg_process_stats *sg_get_process_stats(int *entries){
  	int num, i;
  #endif
  #ifdef ALLBSD
 -	int mib[4];
 +	int mib[6];
  	size_t size;
--	struct kinfo_proc *kp_stats;
-+	struct kinfo_proc2 *kp_stats;
+ 	struct kinfo_proc *kp_stats;
  	int procs, i;
- 	char *proctitle;
- #if (defined(FREEBSD) && !defined(FREEBSD5)) || defined(DFBSD)
-@@ -347,29 +347,33 @@ sg_process_stats *sg_get_process_stats(int *entries){
- 
- #ifdef ALLBSD
+@@ -349,27 +349,31 @@ sg_process_stats *sg_get_process_stats(int *entries){
  	mib[0] = CTL_KERN;
--	mib[1] = KERN_PROC;
-+	mib[1] = KERN_PROC2;
+ 	mib[1] = KERN_PROC;
  	mib[2] = KERN_PROC_ALL;
 +	mib[3] = 0;
-+	mib[4] = sizeof(struct kinfo_proc2);
++	mib[4] = sizeof(struct kinfo_proc);
 +	mib[5] = 0;
  
 -	if(sysctl(mib, 3, NULL, &size, NULL, 0) < 0) {
 +	if(sysctl(mib, 6, NULL, &size, NULL, 0) < 0) {
  		sg_set_error_with_errno(SG_ERROR_SYSCTL,
--		                        "CTL_KERN.KERN_PROC.KERN_PROC_ALL");
-+		                        "CTL_KERN.KERN_PROC2.KERN_PROC_ALL");
+ 		                        "CTL_KERN.KERN_PROC.KERN_PROC_ALL");
  		return NULL;
  	}
  
@@ -42,15 +35,14 @@ $OpenBSD: patch-src_libstatgrab_process_stats_c,v 1.1 2010/01/18 22:03:46 okan E
  	memset(kp_stats, 0, size);
  
 -	if(sysctl(mib, 3, kp_stats, &size, NULL, 0) < 0) {
-+	mib[5] = (int)(size / sizeof(struct kinfo_proc2));
++	mib[5] = (int)(size / sizeof(struct kinfo_proc));
 +	if(sysctl(mib, 6, kp_stats, &size, NULL, 0) < 0) {
  		sg_set_error_with_errno(SG_ERROR_SYSCTL,
--		                        "CTL_KERN.KERN_PROC.KERN_PROC_ALL");
-+		                        "CTL_KERN.KERN_PROC2.KERN_PROC_ALL");
+ 		                        "CTL_KERN.KERN_PROC.KERN_PROC_ALL");
  		free(kp_stats);
  		return NULL;
  	}
-+	procs = (int)(size / sizeof(struct kinfo_proc2));
++	procs = (int)(size / sizeof(struct kinfo_proc));
  
  #if (defined(FREEBSD) && !defined(FREEBSD5)) || defined(DFBSD)
  	kvmd = sg_get_kvm2();

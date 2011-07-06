@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_libstatgrab_memory_stats_c,v 1.1 2011/07/06 12:45:04 jasper Exp $
+
+Fix implicit declarations of sysconf() and bzero().
+
+--- src/libstatgrab/memory_stats.c.orig	Wed Jul  6 14:37:07 2011
++++ src/libstatgrab/memory_stats.c	Wed Jul  6 14:38:26 2011
+@@ -50,6 +50,8 @@
+ #include <sys/types.h>
+ #include <sys/sysctl.h>
+ #include <sys/unistd.h>
++#include <unistd.h>
++#include <string.h>
+ #endif
+ #ifdef HPUX
+ #include <sys/param.h>
