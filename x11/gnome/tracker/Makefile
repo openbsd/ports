@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2011/07/05 17:54:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2011/07/06 07:23:20 jasper Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -9,7 +9,7 @@ GNOME_VERSION=	0.8.18
 # as meta-tracker.
 PKGNAME=	meta-tracker-${VERSION}
 
-REVISION=	2
+REVISION=	3
 
 EVO_VERSION=	2.32
 SUBST_VARS=	EVO_VERSION
@@ -65,7 +65,7 @@ LIB_DEPENDS=	audio/libvorbis \
 		x11/gnome/panel \
 		x11/gnome/nautilus>=2.28.4p1 \
 		x11/gnome/totem-pl-parser>=2.28.1 \
-		sysutils/e2fsprogs>=1.41.4p3 \
+		sysutils/e2fsprogs>=1.41.4p5 \
 		devel/libgee
 BUILD_DEPENDS=	devel/xdg-utils \
 		lang/vala

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/12 06:14:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/06 07:23:20 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		desktop note-taking application written in C++
 
 GNOME_PROJECT=		gnote
 GNOME_VERSION=		0.7.4
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://live.gnome.org/Gnote
 
@@ -31,7 +31,7 @@ WANTLIB += pcre pcrecpp pixman-1 png pthread pthread-stubs sigc-2.0
 WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 xslt z
 
 BUILD_DEPENDS=		devel/boost>=1.42.0p6
-LIB_DEPENDS=		sysutils/e2fsprogs \
+LIB_DEPENDS=		sysutils/e2fsprogs>=1.41.4p5 \
 			textproc/gtkspell \
 			textproc/libxslt \
 			x11/gtk2mm
