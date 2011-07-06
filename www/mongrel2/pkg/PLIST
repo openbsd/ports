@@ -1,7 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/01 22:28:02 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/06 01:23:50 jeremy Exp $
 @bin bin/m2sh
 @bin bin/mongrel2
+lib/mongrel2/
+lib/mongrel2/config_modules/
+lib/mongrel2/config_modules/null.so
+lib/mongrel2/config_modules/zmq.so
+lib/mongrel2/filters/
+lib/mongrel2/filters/null.so
 share/examples/mongrel2/
+share/examples/mongrel2/.dexy
 share/examples/mongrel2/bbs/
 share/examples/mongrel2/bbs/bbs.lua
 share/examples/mongrel2/bbs/client.py
@@ -55,6 +62,7 @@ share/examples/mongrel2/configs/any.conf
 share/examples/mongrel2/configs/complex.conf
 share/examples/mongrel2/configs/mongrel2.conf
 share/examples/mongrel2/configs/multi.conf
+share/examples/mongrel2/configs/multi_handler.conf
 share/examples/mongrel2/configs/sample.conf
 share/examples/mongrel2/http_0mq/
 share/examples/mongrel2/http_0mq/http.py
@@ -104,10 +112,12 @@ share/examples/mongrel2/python/mongrel2/config/args.py
 share/examples/mongrel2/python/mongrel2/config/commands.py
 share/examples/mongrel2/python/mongrel2/config/model.py
 share/examples/mongrel2/python/mongrel2/config/rc.py
+share/examples/mongrel2/python/mongrel2/control.py
 share/examples/mongrel2/python/mongrel2/handler.py
 share/examples/mongrel2/python/mongrel2/request.py
 share/examples/mongrel2/python/mongrel2/sql/
 share/examples/mongrel2/python/mongrel2/sql/config.sql
+share/examples/mongrel2/python/mongrel2/tnetstrings.py
 share/examples/mongrel2/python/setup.py
 share/examples/mongrel2/python/tests/
 share/examples/mongrel2/python/tests/__init__.py
