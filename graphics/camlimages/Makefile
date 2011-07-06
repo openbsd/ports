@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/01/13 10:22:54 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.15 2011/07/06 23:56:08 ajacoutot Exp $
 
 COMMENT=	image manipulation functions for Objective Caml
 CATEGORIES=	graphics
@@ -6,6 +6,8 @@ CATEGORIES=	graphics
 DISTNAME=	camlimages-3.0.2
 EXTRACT_SUFX=	.tgz
 MASTER_SITES=	http://caml.inria.fr/distrib/bazar-ocaml/
+
+REVISION=	0
 
 MAINTAINER=	Anil Madhavapeddy <avsm@openbsd.org>
 HOMEPAGE=	http://cristal.inria.fr/camlimages/
@@ -19,8 +21,7 @@ MODULES=	lang/ocaml
 
 WANTLIB+=	ICE SM X11 Xpm freetype gif jpeg m png tiff z
 
-LIB_DEPENDS=	graphics/jpeg \
-		graphics/libungif \
+LIB_DEPENDS=	graphics/libungif \
 		graphics/png \
 		graphics/tiff
 RUN_DEPENDS=	print/ghostscript/gnu \
@@ -50,11 +51,12 @@ post-install:
 .include <bsd.port.mk>
 
 .if ${MODOCAML_NATIVE:L} == "yes"
+MODULES +=	devel/gettext
 WANTLIB+=	GL Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo drm \
 		expat fontconfig gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 \
-		gtk-x11-2.0 iconv intl pango-1.0 pangocairo-1.0 \
+		gtk-x11-2.0 pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pixman-1 pthread pthread-stubs xcb \
 		xcb-render xcb-shm
 .endif

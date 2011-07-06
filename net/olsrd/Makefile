@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/07/06 23:56:08 ajacoutot Exp $
 
 COMMENT-main=		OLSR routing daemon
 COMMENT-gui=		OLSR routing daemon GUI
@@ -9,9 +9,9 @@ DISTNAME=		olsrd-${VERSION}
 PKGNAME-main=		olsrd-${VERSION}
 PKGNAME-gui=		olsrd-gui-${VERSION}
 PKGNAME-plugins=	olsrd-plugins-${VERSION}
-REVISION-main=		0
-REVISION-gui=		1
-REVISION-plugins=	0
+REVISION-main=		1
+REVISION-gui=		2
+REVISION-plugins=	1
 
 CATEGORIES=	net
 
@@ -29,25 +29,28 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES= -main -gui -plugins
 
 BUILD_DEPENDS=	devel/bison
+
+LIB_DEPENDS-main=	# empty
 WANTLIB-main=	c
 
 LIB_DEPENDS-gui= x11/gtk+2
-
 WANTLIB-gui=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
 		freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
-		gthread-2.0 iconv intl m pango-1.0 pangocairo-1.0 \
+		gthread-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb \
 		xcb-render xcb-render-util z gdk_pixbuf-2.0 gtk-x11-2.0 \
-		gdk-x11-2.0
+		gdk-x11-2.0 ${MODGETTEXT_WANTLIB}
 
-RUN_DEPENDS-plugins= olsrd-${VERSION}:net/olsrd
+WANTLIB-plugins=	# empty
+LIB_DEPENDS-plugins=	# empty
+RUN_DEPENDS-plugins=	olsrd-${VERSION}:net/olsrd
 
 USE_GMAKE=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
-MODULES=	gcc3
+MODULES=	gcc3 devel/gettext
 MODGCC3_ARCHES=	sparc
 
 ALL_TARGET=	build_all

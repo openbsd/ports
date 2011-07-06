@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/07/06 23:56:08 ajacoutot Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	i386 amd64 sparc64
 COMMENT=	essential libraries for java
 
 DISTNAME=	classpath-0.98
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	lang java
 
@@ -27,7 +27,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=	converters/libiconv gcc4
+MODULES=	devel/gettext gcc4
 MODGCC4_ARCHES=	*
 MODGCC4_LANGS=	java
 USE_GROFF =	Yes
@@ -48,7 +48,7 @@ LIB_DEPENDS=	x11/gtk+2 \
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 cairo \
 		dbus-1 expat fontconfig freetype gio-2.0 glib-2.0 \
-		gmodule-2.0 gobject-2.0 gthread-2.0 intl m pango-1.0 \
+		gmodule-2.0 gobject-2.0 gthread-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs \
 		xcb xcb-render xcb-render-util ORBit-2 gconf-2 magic gmp z \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0

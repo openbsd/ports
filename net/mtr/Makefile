@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2010/11/19 22:31:34 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2011/07/06 23:56:08 ajacoutot Exp $
 
 COMMENT=	Matt's traceroute - network diagnostic tool
 
 DISTNAME=	mtr-0.80
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
@@ -29,13 +29,14 @@ FLAVOR?=
 .if ${FLAVOR:L} == "no_x11"
 CONFIGURE_ARGS+=	--without-gtk
 .else
+MODULES +=		devel/gettext
 CONFIGURE_ARGS+=	--with-gtk-prefix=${LOCALBASE}
 LIB_DEPENDS+=		x11/gtk+2
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 iconv intl pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += gthread-2.0 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs xcb xcb-render xcb-render-util
 WANTLIB += z gtk-x11-2.0
 .endif

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.27 2011/06/24 10:51:48 sebastia Exp $
+# $OpenBSD: Makefile,v 1.28 2011/07/06 23:56:08 ajacoutot Exp $
 
 COMMENT=	GNUstep gui backend
 
 V =		0.20.1
 DISTNAME=	gnustep-back-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	devel
 
@@ -17,8 +17,8 @@ MODGNUSTEP_NEEDS_BACK=	No
 WANTLIB+= 	Xau Xdmcp Xft Xrender expat fontconfig pixman-1
 WANTLIB+= 	png cairo pthread-stubs xcb xcb-render xcb-shm
 WANTLIB+= 	Xdamage Xfixes Xxf86vm drm glib-2.0 gobject-2.0
-WANTLIB+= 	gthread-2.0 intl freetype z
-WANTLIB+=	GL X11 Xext Xmu Xt c m pthread
+WANTLIB+= 	gthread-2.0 freetype z GL X11 Xext Xmu Xt c m pthread
+
 LIB_DEPENDS=	graphics/cairo
 
 BACKENDV=	${V:C/([0-9])*[.]([0-9]*).*/\1\2/1}

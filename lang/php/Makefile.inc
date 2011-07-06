@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.12 2011/06/18 19:49:50 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.13 2011/07/06 23:56:08 ajacoutot Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -9,6 +9,11 @@ COMMENT-fastcgi=	stand-alone FastCGI version of PHP
 
 PKGNAME-main?=		php-${V}
 PKGNAME-fastcgi?=	php-fastcgi-${V}
+
+REVISION-main=		0
+REVISION-soap=		0
+REVISION-xmlrpc=	0
+REVISION-xsl=		0
 
 DISTFILES=		php-${V}.tar.gz
 
@@ -247,7 +252,7 @@ MULTI_PACKAGES+=	-soap
 COMMENT-soap=		SOAP functions for php5
 CONFIGURE_ARGS+=	--enable-soap=shared,${LOCALBASE}
 LIB_DEPENDS-soap=	textproc/libxml
-WANTLIB-soap=		iconv m z xml2>=8
+WANTLIB-soap=		${MODLIBICONV_WANTLIB} m z xml2>=8
 
 # snmp
 MULTI_PACKAGES+=	-snmp
@@ -289,14 +294,14 @@ MULTI_PACKAGES+=	-xmlrpc
 COMMENT-xmlrpc=		XML RPC functions for php5
 CONFIGURE_ARGS+=	--with-xmlrpc=shared
 LIB_DEPENDS-xmlrpc=	textproc/libxml
-WANTLIB-xmlrpc=		iconv m z xml2>=8
+WANTLIB-xmlrpc=		${MODLIBICONV_WANTLIB} m z xml2>=8
 
 # xsl
 MULTI_PACKAGES+=	-xsl
 COMMENT-xsl=		XSL functions for php5
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 LIB_DEPENDS-xsl=	textproc/libxslt
-WANTLIB-xsl=		iconv m xml2 z xslt>=3 exslt
+WANTLIB-xsl=		${MODLIBICONV_WANTLIB} m xml2 z xslt>=3 exslt
 
 # some variables to substitute
 SUBST_VARS=	PHP_CONFIG_FILE PHP_CONFIG_PATH PV ^MODULE_NAME
@@ -306,10 +311,10 @@ PHP_VERSION=	${V}
 PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
 
-MODULES=		devel/gettext
+MODULES=		converters/libiconv devel/gettext
 
-WANTLIB-main=		c crypto ssl z pthread gssapi iconv krb5 xml2>=8 \
-			intl m
+WANTLIB-main=		c crypto ssl z pthread gssapi krb5 xml2>=8 \
+			m ${MODGETTEXT_WANTLIB}
 WANTLIB-fastcgi=	${WANTLIB-main}
 LIB_DEPENDS-main=	textproc/libxml
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \

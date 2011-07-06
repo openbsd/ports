@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/01/18 20:22:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/07/06 23:56:08 ajacoutot Exp $
 
 MULTI_PACKAGES=	-main -themes
 
@@ -6,7 +6,7 @@ COMMENT-main=	tetrinet client
 COMMENT-themes=	collection of gtetrinet themes
 DISTNAME=	gtetrinet-0.7.11
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	13
+REVISION-main=	14
 PKGNAME-themes=	gtetrinet-themes-20070623
 REVISION-themes=1
 CATEGORIES=	x11 games
@@ -37,7 +37,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		textproc/intltool \
-			devel/gconf2
+			devel/gconf2 \
+			devel/gettext
 
 LIB_DEPENDS-main=	${MODGCONF2_LIB_DEPENDS} \
 			x11/gnome/libgnome \
@@ -57,9 +58,10 @@ WANTLIB-main += audiofile bonobo-2 bonobo-activation bonoboui-2 c cairo
 WANTLIB-main += expat fontconfig freetype gailutil gdk-x11-2.0
 WANTLIB-main += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
 WANTLIB-main += gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB-main += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-main += m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-main += pixman-1 png popt pthread pthread-stubs sndio xcb xml2 z
-WANTLIB-main += GL Xxf86vm canberra drm xcb-render xcb-shm
+WANTLIB-main += GL Xxf86vm canberra drm xcb-render xcb-shm ${MODGETTEXT_WANTLIB}
+
 WANTLIB-themes =
 
 MODGCONF2_SCHEMAS_DIR= gtetrinet

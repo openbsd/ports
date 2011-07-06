@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/22 20:16:43 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/06 23:56:08 ajacoutot Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -15,6 +15,11 @@ PKGNAME-utils=	mapserver-utils-${V}
 PKGNAME-php=	php5-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
 
+REVISION-main=	0
+REVISION-utils=	0
+REVISION-php=	0
+REVISION-perl=	0
+
 CATEGORIES=	geo www
 
 HOMEPAGE=	http://www.mapserver.org/
@@ -28,6 +33,8 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 MASTER_SITES=	http://download.osgeo.org/mapserver/
 
+MODULES=	devel/gettext
+
 BUILD_DEPENDS=	www/php5/core \
 		graphics/agg
 
@@ -40,12 +47,11 @@ LIB_DEPENDS=	devel/proj \
 RUN_DEPENDS-php=	www/php5/core
 
 
-WANTLIB=	crypto curl expat freetype iconv idn jpeg \
-		m png pq ssl xml2 z proj gdal geos_c gd stdc++
-
+WANTLIB += crypto curl expat freetype idn jpeg m png pq ssl xml2 z proj
+WANTLIB += gdal geos_c gd stdc++
 WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xxf86vm
 WANTLIB += cairo drm fontconfig glib-2.0 gobject-2.0 gthread-2.0
-WANTLIB += intl pixman-1 pthread-stubs xcb xcb-render xcb-shm
+WANTLIB += pixman-1 pthread-stubs xcb xcb-render xcb-shm
 
 WANTLIB-main=	${WANTLIB} pthread c gif
 WANTLIB-utils=	${WANTLIB} pthread c gif

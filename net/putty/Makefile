@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 22:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/07/06 23:56:08 ajacoutot Exp $
 
 COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
 
 DISTNAME=       putty-0.60
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	0
+REVISION-main=	1
 PKGNAME-gui=	${DISTNAME:S/putty/putty-gui/}
-REVISION-gui=	1
+REVISION-gui=	2
 CATEGORIES=	net security
 
 HOMEPAGE=	http://www.chiark.greenend.org.uk/~sgtatham/putty/
@@ -28,9 +28,13 @@ USE_GROFF =		Yes
 
 MULTI_PACKAGES= 	-main -gui
 
-WANTLIB=		c
-WANTLIB-gui=		X11 Xext Xi c glib gmodule iconv intl m \
+MODULES=		devel/gettext
+
+WANTLIB-main=		c
+WANTLIB-gui=		X11 Xext Xi c glib gmodule m ${MODGETTEXT_WANTLIB} \
 			pthread-stubs xcb gtk>=1 gdk>=1
+
+LIB_DEPENDS-main=	# empty
 LIB_DEPENDS-gui=	x11/gtk+
 
 pre-configure:
