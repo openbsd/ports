@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/01/15 01:09:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2011/07/06 22:56:23 ajacoutot Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -8,7 +8,7 @@ DISTNAME=		emacs-${VERSION}
 PKGNAME-main=		emacs-${VERSION}
 FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs22,-el
-REVISION-main=		8
+REVISION-main=		9
 REVISION-el=		1
 
 CATEGORIES=		editors
@@ -57,17 +57,18 @@ ERRORS=			"Fatal: gtk and no_x11 flavors are mutually exclusive"
 CONFIGURE_ARGS+=	--without-x
 
 .elif ${FLAVOR:L:Mgtk}
+MODULES +=		devel/gettext
 CONFIGURE_ARGS+=	--with-gtk
 LIB_DEPENDS-main+=	x11/gtk+2 \
 			graphics/libungif
 WANTLIB-main+=		ICE SM X11 Xdmcp Xext Xft Xpm Xrender Xau Xcomposite \
 			Xcursor Xdamage Xfixes Xi Xinerama Xrandr \
 			atk-1.0 cairo expat fontconfig freetype gio-2.0 \
-			glib-2.0 gmodule-2.0 gobject-2.0 iconv intl \
+			glib-2.0 gmodule-2.0 gobject-2.0 \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread \
 			z gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 \
 			jpeg png ungif tiff gthread-2.0 pthread-stubs xcb \
-			xcb-render xcb-render-util
+			xcb-render xcb-render-util ${MODGETTEXT_WANTLIB}
 .else
 CONFIGURE_ARGS+=	--with-x-toolkit=athena --without-toolkit-scroll-bars
 LIB_DEPENDS-main+=	graphics/png \

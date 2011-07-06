@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/04/15 16:10:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/07/06 22:56:23 ajacoutot Exp $
 
 V =			0.8.3-1
 COMMENT-main =		mysql driver for libdbi
@@ -13,7 +13,7 @@ REVISION-pgsql =	0
 PKGNAME-sqlite =	libdbi-drivers-sqlite-${V:S/-/./}
 PKGNAME-sqlite3 =	libdbi-drivers-sqlite3-${V:S/-/./}
 PKGNAME-freetds =	libdbi-drivers-freetds-${V:S/-/./}
-REVISION-freetds =	1
+REVISION-freetds =	2
 CATEGORIES =		databases
 
 HOMEPAGE =		http://libdbi-drivers.sourceforge.net/
@@ -29,7 +29,10 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
+MODULES =		devel/gettext
+
 USE_LIBTOOL =		Yes
+
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS =	--disable-docs \
@@ -61,8 +64,8 @@ WANTLIB-sqlite3 =	m sqlite3 dbi
 LIB_DEPENDS-sqlite3 =	databases/sqlite3 \
 			databases/libdbi
 
-WANTLIB-freetds =	iconv m ct dbi gcrypt gmp gnutls gpg-error hogweed \
-			intl nettle tasn1 z
+WANTLIB-freetds =	m ct dbi gcrypt gmp gnutls gpg-error hogweed \
+			nettle tasn1 z ${MODGETTEXT_WANTLIB}
 LIB_DEPENDS-freetds =	databases/freetds \
 			databases/libdbi \
 			security/libgcrypt

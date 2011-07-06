@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2011/07/06 22:56:23 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -12,7 +12,7 @@ ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
 PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}
-REVISION-main=		15
+REVISION-main=		16
 PKGNAME-swt=		swt-${ECLIPSE_VER}
 REVISION-swt=		2
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}
@@ -74,11 +74,11 @@ WANTLIB-main=		X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama \
 			Xcomposite Xdamage gdk_pixbuf-2.0 \
 			Xrandr Xrender c expat m z fontconfig \
 			freetype atk-1.0 glib-2.0 gmodule-2.0 \
-			gobject-2.0 png iconv intl \
+			gobject-2.0 png \
 			pango-1.0 pangoft2-1.0 pangocairo-1.0 cairo \
 			pixman-1 gio-2.0 pthread-stubs xcb \
 			gthread-2.0 pthread xcb-render GL Xxf86vm drm xcb-shm \
-			gdk-x11-2.0 gtk-x11-2.0
+			gdk-x11-2.0 gtk-x11-2.0 ${MODGETTEXT_WANTLIB}
 
 LIB_DEPENDS-swt=	x11/gtk+2
 WANTLIB-swt=		GL GLU Xtst m atk-1.0 cairo gthread-2.0 gtk-x11-2.0

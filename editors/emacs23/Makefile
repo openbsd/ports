@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/04/16 11:52:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/06 22:56:23 ajacoutot Exp $
 
 COMMENT-main =		GNU editor: extensible, customizable, self-documenting
 COMMENT-el =		elisp sources for those who want to read/modify them
@@ -8,6 +8,8 @@ DISTNAME =		emacs-${VERSION}
 PKGNAME-main =		emacs-${VERSION}
 FULLPKGNAME-el =	emacs-el-${VERSION}
 FULLPKGPATH-el =	editors/emacs23,-el
+
+REVISION-main=		0
 
 CATEGORIES =		editors
 
@@ -61,6 +63,7 @@ LIB_DEPENDS-main =	graphics/png \
 WANTLIB-main +=		ICE SM X11 Xaw Xext Xmu Xpm Xt z
 WANTLIB-main +=		jpeg png tiff ungif
 .else
+MODULES +=		devel/gettext
 CONFIGURE_ARGS +=	--with-x-toolkit=gtk
 LIB_DEPENDS-main +=	x11/gtk+2 \
 			graphics/libungif \
@@ -70,14 +73,12 @@ LIB_DEPENDS-main +=	x11/gtk+2 \
 			x11/gnome/librsvg
 WANTLIB-main +=		GL ICE ORBit-2 SM X11 Xdmcp Xext Xft Xpm Xrender \
 			Xau Xcomposite Xcursor Xdamage Xfixes Xi Xinerama \
-			Xrandr Xxf86vm \
+			Xrandr Xxf86vm jpeg png tiff gthread-2.0 pthread-stubs xcb \
 			atk-1.0 cairo dbus-1 drm expat fontconfig freetype \
-			gconf-2 gif gio-2.0 \
-			glib-2.0 gmodule-2.0 gobject-2.0 iconv intl \
+			gconf-2 gif gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 \
 			pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread \
 			rsvg-2 z gtk-x11-2.0 gdk-x11-2.0 gdk_pixbuf-2.0 \
-			jpeg png tiff gthread-2.0 pthread-stubs xcb \
-			xcb-render xcb-shm
+			xcb-render xcb-shm ${MODGETTEXT_WANTLIB}
 .endif
 
 RUN_DEPENDS-el =	emacs-${VERSION}:${PKGPATH}
