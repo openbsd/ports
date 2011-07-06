@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/06 13:46:27 kili Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/06 16:07:16 ajacoutot Exp $
 @conflict ghostscript-<9.02
 @pkgpath print/ghostscript/gnu
 @newgroup _cups:541
-libexec/cups/
-libexec/cups/filter/
 libexec/cups/filter/gstoraster
 libexec/cups/filter/pstoraster
 share/doc/gstoraster/
