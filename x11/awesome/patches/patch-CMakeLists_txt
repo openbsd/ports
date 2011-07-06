@@ -1,4 +1,9 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.9 2011/05/17 14:03:30 dcoppa Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.10 2011/07/06 09:58:16 dcoppa Exp $
+
+These auto-generated manpages (db2man.xsl) contain a mixture of ISO
+latin-1 characters and numerical HTML entities that neither mandoc
+nor groff can fully understand: do not install them.
+
 --- CMakeLists.txt.orig	Mon May 16 16:35:17 2011
 +++ CMakeLists.txt	Tue May 17 14:22:25 2011
 @@ -88,7 +88,6 @@ set(AWE_MAN_SRCS
