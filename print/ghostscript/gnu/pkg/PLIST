@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.19 2011/06/08 19:15:48 kili Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/07/06 13:49:17 kili Exp $
 @pkgpath print/ghostscript/afpl${FLAVOR_STRING}
 @pkgpath print/ghostscript/gnu${FLAVOR_STRING},cups
-@newgroup _cups:541
 %%SHARED%%
 bin/bdftops
 bin/dumphint
@@ -22,6 +21,7 @@ bin/pdf2ps
 bin/pdfopt
 bin/pf2afm
 bin/pfbtopfa
+bin/pphs
 bin/printafm
 bin/ps2ascii
 bin/ps2epsi
@@ -35,10 +35,6 @@ bin/ps2ps2
 bin/pv.sh
 bin/unix-lpr.sh
 bin/wftopfa
-libexec/cups/
-libexec/cups/filter/
-libexec/cups/filter/pstopxl
-libexec/cups/filter/pstoraster
 man/de/
 man/de/man1/
 @man man/de/man1/dvipdf.1
@@ -81,10 +77,6 @@ man/de/man1/
 @man man/man1/ps2pdfwr.1
 @man man/man1/ps2ps.1
 @man man/man1/wftopfa.1
-share/cups/
-share/cups/model/
-share/cups/model/pxlcolor.ppd
-share/cups/model/pxlmono.ppd
 share/ghostscript/${VERSION}/
 share/ghostscript/${VERSION}/Resource/
 share/ghostscript/${VERSION}/Resource/CMap/
@@ -440,7 +432,6 @@ share/ghostscript/${VERSION}/Resource/Init/gs_typ32.ps
 share/ghostscript/${VERSION}/Resource/Init/gs_typ42.ps
 share/ghostscript/${VERSION}/Resource/Init/gs_type1.ps
 share/ghostscript/${VERSION}/Resource/Init/gs_wan_e.ps
-share/ghostscript/${VERSION}/Resource/Init/opdfread.ps
 share/ghostscript/${VERSION}/Resource/Init/pdf_base.ps
 share/ghostscript/${VERSION}/Resource/Init/pdf_cslayer.ps
 share/ghostscript/${VERSION}/Resource/Init/pdf_draw.ps
@@ -498,19 +489,27 @@ share/ghostscript/${VERSION}/doc/Xfonts.htm
 share/ghostscript/${VERSION}/doc/gs.css
 share/ghostscript/${VERSION}/doc/index.html
 share/ghostscript/${VERSION}/examples/
-@group _cups
-@sample ${SYSCONFDIR}/cups/
-@group
 share/ghostscript/${VERSION}/examples/alphabet.ps
 share/ghostscript/${VERSION}/examples/annots.pdf
 share/ghostscript/${VERSION}/examples/chess.ps
+share/ghostscript/${VERSION}/examples/cjk/
+share/ghostscript/${VERSION}/examples/cjk/all_ac1.ps
+share/ghostscript/${VERSION}/examples/cjk/all_ag1.ps
+share/ghostscript/${VERSION}/examples/cjk/all_aj1.ps
+share/ghostscript/${VERSION}/examples/cjk/all_aj2.ps
+share/ghostscript/${VERSION}/examples/cjk/all_ak1.ps
+share/ghostscript/${VERSION}/examples/cjk/article9.ps
+share/ghostscript/${VERSION}/examples/cjk/gscjk_ac.ps
+share/ghostscript/${VERSION}/examples/cjk/gscjk_ag.ps
+share/ghostscript/${VERSION}/examples/cjk/gscjk_aj.ps
+share/ghostscript/${VERSION}/examples/cjk/gscjk_ak.ps
+share/ghostscript/${VERSION}/examples/cjk/iso2022.ps
+share/ghostscript/${VERSION}/examples/cjk/iso2022v.ps
 share/ghostscript/${VERSION}/examples/colorcir.ps
 share/ghostscript/${VERSION}/examples/doretree.ps
 share/ghostscript/${VERSION}/examples/escher.ps
 share/ghostscript/${VERSION}/examples/golfer.eps
 share/ghostscript/${VERSION}/examples/grayalph.ps
-share/ghostscript/${VERSION}/examples/pstoraster.convs
-@sample ${SYSCONFDIR}/cups/pstoraster.convs
 share/ghostscript/${VERSION}/examples/ridt91.eps
 share/ghostscript/${VERSION}/examples/snowflak.ps
 share/ghostscript/${VERSION}/examples/tiger.eps
@@ -618,7 +617,6 @@ share/ghostscript/${VERSION}/lib/pdfwrite.ps
 share/ghostscript/${VERSION}/lib/pf2afm.ps
 share/ghostscript/${VERSION}/lib/pfbtopfa.ps
 share/ghostscript/${VERSION}/lib/ppath.ps
-share/ghostscript/${VERSION}/lib/pphs
 share/ghostscript/${VERSION}/lib/pphs.ps
 share/ghostscript/${VERSION}/lib/prfont.ps
 share/ghostscript/${VERSION}/lib/printafm.ps

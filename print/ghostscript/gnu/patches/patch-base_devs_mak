@@ -1,22 +1,22 @@
-$OpenBSD: patch-base_devs_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
---- base/devs.mak.orig	Thu Sep  9 05:45:12 2010
-+++ base/devs.mak	Sun Sep 19 13:17:56 2010
-@@ -650,14 +650,13 @@ $(GLOBJ)gdevlj56.$(OBJ) : $(GLSRC)gdevlj56.c $(PDEVH) 
+$OpenBSD: patch-base_devs_mak,v 1.2 2011/07/06 13:49:17 kili Exp $
+--- base/devs.mak.orig	Thu Mar 10 01:58:08 2011
++++ base/devs.mak	Tue Jun 28 16:38:49 2011
+@@ -1807,14 +1807,11 @@ $(DD)plibk.dev : $(DEVS_MAK) $(plib_) $(GLD)page.dev
+ 	$(SETPDEV2) $(DD)plibk $(plib_)
  
- ### -------------------- The ijs client ----------------- ###
+ ### ------------------------------- CUPS ------------------------------- ###
+-lcups_dev=$(LCUPSGENDIR)$(D)lcups.dev
+-lcupsi_dev=$(LCUPSIGENDIR)$(D)lcupsi.dev
+-
+ cups_=$(GLOBJ)gdevcups.$(OBJ)
+-$(DD)cups.dev : $(DEVS_MAK) $(lcups_dev) $(lcupsi_dev) $(cups_) 
++$(DD)cups.dev : $(DEVS_MAK) $(cups_) 
+ 	$(SETPDEV2) $(DD)cups $(cups_)
+-	$(ADDMOD) $(DD)cups -include $(lcups_dev)
+-	$(ADDMOD) $(DD)cups -include $(lcupsi_dev)
++	$(ADDMOD) $(DD)cups
++	$(ADDMOD) $(DD)cups
  
--ijs_=$(GLOBJ)gdevijs.$(OBJ) $(IJSOBJ)ijs.$(OBJ) $(IJSOBJ)ijs_client.$(OBJ) \
-- $(IJSOBJ)ijs_exec_$(IJSEXECTYPE).$(OBJ)
-+ijs_=$(GLOBJ)gdevijs.$(OBJ) 
- 
--$(DD)ijs.dev : $(ijs_) $(GLD)page.dev $(DD)ijslib.dev
-+$(DD)ijs.dev : $(ijs_) $(GLD)page.dev
- 	$(SETPDEV) $(DD)ijs $(ijs_)
-+	$(ADDMOD) $(DD)ijs -lib ijs
- 
--$(GLOBJ)gdevijs.$(OBJ) : $(GLSRC)gdevijs.c $(PDEVH) $(unistd__h) $(gp_h)\
-- $(ijs_h) $(ijs_client_h)
-+$(GLOBJ)gdevijs.$(OBJ) : $(GLSRC)gdevijs.c $(PDEVH) $(unistd__h) $(gp_h)
- 	$(CC_) $(I_)$(GLI_) $(II)$(IJSI_)$(_I) $(GLF_) $(GLO_)gdevijs.$(OBJ) $(C_) $(GLSRC)gdevijs.c
- 
- # Please see ijs.mak for the Makefile fragment which builds the IJS
+ $(GLOBJ)gdevcups.$(OBJ) : cups$(D)gdevcups.c $(std_h)
+-	$(CUPS_CC) $(GLO_)gdevcups.$(OBJ) $(C_) $(CFLAGS) $(I_)$(GLSRC) $(I_)$(GLOBJ) $(I_)$(LCUPSSRCDIR)$(D)libs $(LCUPSSRCDIR)$(D)gdevcups.c
++	$(GLCC) $(GLO_)gdevcups.$(OBJ) $(C_) $(CFLAGS) $(I_)$(GLSRC) $(I_)$(GLOBJ) cups$(D)gdevcups.c

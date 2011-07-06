@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.83 2011/06/08 19:15:48 kili Exp $
+# $OpenBSD: Makefile,v 1.84 2011/07/06 13:49:17 kili Exp $
 
 COMMENT=	GNU PostScript interpreter
 
-VERSION=	9.00
+VERSION=	9.02
 DISTNAME=	ghostscript-${VERSION}
 CATEGORIES=	print lang
-SHARED_LIBS=	gs	12.0
+SHARED_LIBS=	gs	13.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ghostscript/}
 
@@ -52,10 +52,6 @@ STDLIBS=	-pthread -lm -liconv
 MAKE_FLAGS=	BINDIR=./obj				\
 		CFLAGS_STANDARD='${CFLAGS} -fPIC'	\
 		COMPILE_INITS=0				\
-		CUPSCFLAGS="$$(cups-config --cflags)"	\
-		CUPSSERVERBIN="$$(cups-config --serverbin)" \
-		CUPSSERVERROOT="$$(cups-config --serverroot)" \
-		CUPSDATA="$$(cups-config --datadir)"	\
 		DEVICE_DEVS='${DEVICES:C/.*/\$(DD)&.dev/}'	\
 		EXTRALIBS="${EXTRALIBS}"		\
 		FT_BRIDGE=${FT_BRIDGE}			\
@@ -128,13 +124,13 @@ ERRORS+= "Fatal: Conflicting flavors: ${FLAVOR}"
 .elif ${FLAVOR:L:Mgtk}
 LIB_DEPENDS+=	x11/gtk+2
 MODULES+=	devel/gettext
-WANTLIB+=	Xau Xcomposite Xcursor Xdamage Xdmcp Xfixes Xi Xinerama
+WANTLIB+=	GL Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
 WANTLIB+=	Xrandr Xrender atk-1.0 cairo expat fontconfig freetype
 WANTLIB+=	gdk-x11-2.0>=1000 gdk_pixbuf-2.0>=1000 gio-2.0 glib-2.0
 WANTLIB+=	gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0>=1000
 WANTLIB+=	pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 pthread-stubs
-WANTLIB+=	xcb xcb-render
-WANTLIB+=	GL Xxf86vm drm xcb-shm
+WANTLIB+=	xcb xcb-render xcb-shm
+WANTLIB+=	${MODGETTEXT_WANTLIB}
 NOT_FOR_ARCHS=	${NO_SHARED_ARCHS}
 SOC_CFLAGS=	$$(pkg-config gtk+-2.0 --cflags)
 SOC_LIBS+=	$$(pkg-config gtk+-2.0 --libs)
@@ -144,7 +140,7 @@ NOGTK_DEVICES=
 .else
 USE_GTK=	No
 GTK_DEVICES=
-NOGTK_DEVICES= display
+NOGTK_DEVICES=	display
 .endif
 
 .if !${FLAVOR:L:Mno_x11}
@@ -169,12 +165,6 @@ post-extract:
 	ln -s base/unix-gcc.mak ${WRKDIST}/Makefile
 	cd ${WRKSRC} && mkdir junk && \
 		mv freetype ijs jpeg libpng jbig2dec tiff zlib junk
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/cups/pstoraster
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/cups/pstoraster
 
 pre-build:
 	mkdir -p ${WRKDIST}/obj
@@ -210,8 +200,6 @@ post-install:
 		ln -sf ps2pdf.1 ps2pdf13.1 && \
 		ln -sf ps2pdf.1 ps2pdf14.1 && \
 		ln -sf ps2ps.1 eps2eps.1
-	mv ${DESTDIR}/${SYSCONFDIR}/cups/* ${PREFIX}/share/ghostscript/${VERSION}/examples
-	rm -rf ${DESTDIR}/${SYSCONFDIR}/cups
 
 # Device list based on configure.ac:
 # X_DEVS (skipping x11_ and x11alt_, since those are dependencies of

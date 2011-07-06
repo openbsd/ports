@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_unix-dll_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
---- base/unix-dll.mak.orig	Fri Jul 23 10:22:43 2010
-+++ base/unix-dll.mak	Sun Nov 14 22:05:26 2010
+$OpenBSD: patch-base_unix-dll_mak,v 1.2 2011/07/06 13:49:17 kili Exp $
+--- base/unix-dll.mak.orig	Tue Jan 18 11:22:12 2011
++++ base/unix-dll.mak	Tue Jun 28 13:50:10 2011
 @@ -23,10 +23,6 @@
  #  export LD_LIBRARY_PATH=/insert-path-here/sobin
  #  export GS_LIB=/insert-path-here/lib
@@ -31,33 +31,40 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
  
  # shared library
  GS_SONAME_BASE=lib$(GS)
-@@ -47,9 +47,9 @@ GS_SONAME_BASE=lib$(GS)
+@@ -47,16 +47,11 @@ GS_SONAME_BASE=lib$(GS)
  # GNU/Linux
  GS_SOEXT=so
  GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
 -GS_SONAME_MAJOR=$(GS_SONAME).$(GS_VERSION_MAJOR)
 -GS_SONAME_MAJOR_MINOR=$(GS_SONAME).$(GS_VERSION_MAJOR).$(GS_VERSION_MINOR)
--LDFLAGS_SO=-shared -Wl,-soname=$(GS_SONAME_MAJOR)
+-#LDFLAGS_SO=-shared -Wl,-soname=$(GS_SONAME_MAJOR)
 +GS_SONAME_MAJOR=$(GS_SONAME).$(basename $(LIBgs_VERSION))
 +GS_SONAME_MAJOR_MINOR=$(GS_SONAME).$(LIBgs_VERSION)
 +LDFLAGS_SO=-shared
  
+-# NOTE: the value of LD_SET_DT_SONAME for, for example, Solaris ld, must contain the
+-# trailing space to separation it from the value of the option. For GNU ld and
+-# similar linkers it must containt the trailing "=" 
+-LDFLAGS_SO=-shared -Wl,$(LD_SET_DT_SONAME)$(LDFLAGS_SO_PREFIX)$(GS_SONAME_MAJOR)
+ 
+-
  # MacOS X
  #GS_SOEXT=dylib
-@@ -77,25 +77,25 @@ $(GS_SO_MAJOR): $(GS_SO_MAJOR_MINOR)
+ #GS_SONAME=$(GS_SONAME_BASE).$(GS_SOEXT)
+@@ -83,25 +78,25 @@ $(GS_SO_MAJOR): $(GS_SO_MAJOR_MINOR)
  	ln -s $(GS_SONAME_MAJOR_MINOR) $(GS_SO_MAJOR)
  
  # Build the small Ghostscript loaders, with Gtk+ and without
 -$(GSSOC_XE): $(GS_SO) $(PSSRC)$(SOC_LOADER)
 -	$(GLCC) -g -o $(GSSOC_XE) $(PSSRC)dxmainc.c \
--	$(LDFLAGS) -L$(BINDIR) -l$(GS)
+-	-L$(BINDIR) -l$(GS)
 +$(GSSOC_XE): $(GS_SO) $(PSSRC)dxmainc.c
 +	$(GLCC) -g $(SOC_CFLAGS) -o $(GSSOC_XE) $(PSSRC)dxmainc.c \
 +	-L$(BINDIR) $(LDFLAGS) -l$(GS) $(SOC_LIBS)
  
 -$(GSSOX_XE): $(GS_SO) $(PSSRC)$(SOC_LOADER)
 -	$(GLCC) -g $(SOC_CFLAGS) -o $(GSSOX_XE) $(PSSRC)$(SOC_LOADER) \
--	$(LDFLAGS) -L$(BINDIR) -l$(GS) $(SOC_LIBS)
+-	-L$(BINDIR) -l$(GS) $(SOC_LIBS)
 +$(GSSOX_XE): $(GS_SO) $(PSSRC)dxmain.c
 +	$(GLCC) -g $(SOC_CFLAGS) -o $(GSSOX_XE) $(PSSRC)dxmain.c \
 +	-L$(BINDIR) $(LDFLAGS) -l$(GS) $(SOC_LIBS)
@@ -83,7 +90,7 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
  
  
  # Normal shared object
-@@ -104,8 +104,8 @@ so: SODIRS
+@@ -110,8 +105,8 @@ so: SODIRS
  	  then echo "Warning: this target requires gmake";\
  	fi
  	$(MAKE) $(SODEFS) LDFLAGS='$(LDFLAGS)' CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)' prefix=$(prefix) \
@@ -94,7 +101,7 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
                  prefix=$(prefix)
  	$(MAKE) $(SODEFS) LDFLAGS='$(LDFLAGS)' CFLAGS='$(CFLAGS_STANDARD) $(GCFLAGS) $(XCFLAGS)' prefix=$(prefix) $(GSSOC) $(GSSOX)
  
-@@ -133,13 +133,11 @@ install-so: so
+@@ -139,13 +134,11 @@ install-so: so
  	-mkdir -p $(DESTDIR)$(bindir)
  	-mkdir -p $(DESTDIR)$(libdir)
  	-mkdir -p $(DESTDIR)$(gsincludedir)
@@ -111,7 +118,7 @@ $OpenBSD: patch-base_unix-dll_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
  	$(INSTALL_DATA) $(PSSRC)iapi.h $(DESTDIR)$(gsincludedir)iapi.h
  	$(INSTALL_DATA) $(PSSRC)ierrors.h $(DESTDIR)$(gsincludedir)ierrors.h
  	$(INSTALL_DATA) $(GLSRC)gdevdsp.h $(DESTDIR)$(gsincludedir)gdevdsp.h
-@@ -148,17 +146,17 @@ soinstall: install-so install-scripts install-data $(I
+@@ -154,17 +147,17 @@ soinstall: install-so install-scripts install-data $(I
  
  # Make the build directories
  SODIRS: STDDIRS

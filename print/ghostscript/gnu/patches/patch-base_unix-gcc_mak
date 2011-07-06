@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_unix-gcc_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
---- base/unix-gcc.mak.orig	Wed Jul  7 19:47:09 2010
-+++ base/unix-gcc.mak	Sun Sep 19 13:26:55 2010
+$OpenBSD: patch-base_unix-gcc_mak,v 1.2 2011/07/06 13:49:17 kili Exp $
+--- base/unix-gcc.mak.orig	Thu Mar  3 21:23:43 2011
++++ base/unix-gcc.mak	Mon Jul  4 17:21:25 2011
 @@ -30,6 +30,7 @@ PSLIBDIR=./lib
  PSRESDIR=./Resource
  PSGENDIR=./obj
@@ -24,7 +24,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
  
  # Define whether or not searching for initialization files should always
  # look in the current directory first.  This leads to well-known security
-@@ -199,6 +200,9 @@ LCMSSRCDIR=lcms
+@@ -201,6 +202,9 @@ IJS_NAME=
  IJSSRCDIR=ijs
  IJSEXECTYPE=unix
  
@@ -34,7 +34,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
  # Define how to build the library archives.  (These are not used in any
  # standard configuration.)
  
-@@ -207,6 +211,11 @@ IJSEXECTYPE=unix
+@@ -209,6 +213,11 @@ IJSEXECTYPE=unix
  
  IMDISRCDIR=imdi
  
@@ -46,7 +46,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
  AR=ar
  ARFLAGS=qc
  RANLIB=ranlib
-@@ -215,7 +224,7 @@ RANLIB=ranlib
+@@ -217,7 +226,7 @@ RANLIB=ranlib
  
  # Define the name of the C compiler.
  
@@ -55,7 +55,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
  
  # Define the name of the linker for the final link step.
  # Normally this is the same as the C compiler.
-@@ -364,8 +373,6 @@ DISPLAY_DEV=
+@@ -366,8 +375,6 @@ DISPLAY_DEV=
  # Choose the device(s) to include.  See devs.mak for details,
  # devs.mak and contrib.mak for the list of available devices.
  
@@ -64,7 +64,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
  #DEVICE_DEVS1=
  #DEVICE_DEVS2=
  #DEVICE_DEVS3=
-@@ -387,35 +394,14 @@ DEVICE_DEVS=$(DISPLAY_DEV) $(DD)x11.dev $(DD)x11alpha.
+@@ -389,35 +396,14 @@ DEVICE_DEVS=$(DISPLAY_DEV) $(DD)x11.dev $(DD)x11alpha.
  #DEVICE_DEVS19=
  #DEVICE_DEVS20=
  
@@ -78,7 +78,7 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
 -DEVICE_DEVS8=$(DD)pcxmono.dev $(DD)pcxgray.dev $(DD)pcx16.dev $(DD)pcx256.dev $(DD)pcx24b.dev $(DD)pcxcmyk.dev
 -DEVICE_DEVS9=$(DD)pbm.dev $(DD)pbmraw.dev $(DD)pgm.dev $(DD)pgmraw.dev $(DD)pgnm.dev $(DD)pgnmraw.dev $(DD)pnm.dev $(DD)pnmraw.dev $(DD)ppm.dev $(DD)ppmraw.dev $(DD)pkm.dev $(DD)pkmraw.dev $(DD)pksm.dev $(DD)pksmraw.dev
 -DEVICE_DEVS10=$(DD)tiffcrle.dev $(DD)tiffg3.dev $(DD)tiffg32d.dev $(DD)tiffg4.dev $(DD)tifflzw.dev $(DD)tiffpack.dev
--DEVICE_DEVS11=$(DD)tiff12nc.dev $(DD)tiff24nc.dev $(DD)tiff48nc.dev $(DD)tiffgray.dev $(DD)tiff32nc.dev $(DD)tiff64nc.dev $(DD)tiffsep.dev $(DD)tiffsep1.dev
+-DEVICE_DEVS11=$(DD)tiff12nc.dev $(DD)tiff24nc.dev $(DD)tiff48nc.dev $(DD)tiffgray.dev $(DD)tiff32nc.dev $(DD)tiff64nc.dev $(DD)tiffsep.dev $(DD)tiffsep1.dev $(DD)tiffscaled.dev
 -DEVICE_DEVS12=$(DD)psmono.dev $(DD)psgray.dev $(DD)psrgb.dev $(DD)bit.dev $(DD)bitrgb.dev $(DD)bitcmyk.dev
 -DEVICE_DEVS13=$(DD)pngmono.dev $(DD)pnggray.dev $(DD)png16.dev $(DD)png256.dev $(DD)png16m.dev $(DD)pngalpha.dev
 -DEVICE_DEVS14=$(DD)jpeg.dev $(DD)jpeggray.dev $(DD)jpegcmyk.dev
@@ -88,8 +88,8 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
 -DEVICE_DEVS17=
 -DEVICE_DEVS18=
 -DEVICE_DEVS19=
--DEVICE_DEVS20=$(DD)cljet5.dev $(DD)cljet5c.dev
--DEVICE_DEVS21=$(DD)spotcmyk.dev $(DD)devicen.dev $(DD)xcf.dev $(DD)bmpsep1.dev $(DD)bmpsep8.dev $(DD)bmp16m.dev $(DD)bmp32b.dev $(DD)psdcmyk.dev $(DD)psdrgb.dev $(DD)pamcmyk32.dev
+-DEVICE_DEVS20=$(DD)cljet5.dev $(DD)cljet5c.dev $(DD)pamcmyk32.dev $(DD)pamcmyk4.dev
+-DEVICE_DEVS21=$(DD)spotcmyk.dev $(DD)devicen.dev $(DD)xcf.dev $(DD)bmpsep1.dev $(DD)bmpsep8.dev $(DD)bmp16m.dev $(DD)bmp32b.dev $(DD)psdcmyk.dev $(DD)psdrgb.dev
 -
  # Shared library target to build.
  # Note that the two vga devices are Linux specific, and requires svgalib
@@ -103,20 +103,19 @@ $OpenBSD: patch-base_unix-gcc_mak,v 1.1 2011/06/08 19:15:48 kili Exp $
  
  # ---------------------------- End of options --------------------------- #
  
-@@ -456,6 +442,7 @@ include $(GLSRCDIR)/zlib.mak
- include $(GLSRCDIR)/libpng.mak
- include $(GLSRCDIR)/libtiff.mak
+@@ -460,6 +446,7 @@ include $(GLSRCDIR)/zlib.mak
+ include $(GLSRCDIR)/png.mak
+ include $(GLSRCDIR)/tiff.mak
  include $(GLSRCDIR)/jbig2.mak
 +include $(GLSRCDIR)/jasper.mak
  include $(GLSRCDIR)/icclib.mak
  include $(GLSRCDIR)/lcms.mak
  include $(GLSRCDIR)/ijs.mak
-@@ -466,6 +453,8 @@ include $(GLSRCDIR)/unixlink.mak
+@@ -470,6 +457,7 @@ include $(GLSRCDIR)/unixlink.mak
  include $(GLSRCDIR)/unix-dll.mak
  include $(GLSRCDIR)/unix-end.mak
  include $(GLSRCDIR)/unixinst.mak
 +include contrib/contrib.mak
-+include cups/cups.mak
  
  # This has to come last so it won't be taken as the default target.
  $(AK):

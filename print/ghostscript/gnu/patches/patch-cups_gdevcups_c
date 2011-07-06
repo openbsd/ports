@@ -1,6 +1,6 @@
-$OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
---- cups/gdevcups.c.orig	Thu Aug 12 20:10:47 2010
-+++ cups/gdevcups.c	Sun Sep 19 17:34:22 2010
+$OpenBSD: patch-cups_gdevcups_c,v 1.5 2011/07/06 13:49:17 kili Exp $
+--- cups/gdevcups.c.orig	Mon Mar  7 16:40:13 2011
++++ cups/gdevcups.c	Tue Jun 28 13:37:01 2011
 @@ -70,6 +70,7 @@
  #include "gsparam.h"
  #include "arch.h"
@@ -9,7 +9,7 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
  #include <stdlib.h>
  #include <ctype.h>
  #include <cups/raster.h>
-@@ -221,6 +222,15 @@ typedef struct gx_device_cups_s
+@@ -227,6 +228,15 @@ typedef struct gx_device_cups_s
    int                   cupsRasterVersion;
  
    /* Used by cups_put_params(): */
@@ -25,10 +25,10 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
  } gx_device_cups;
  
  private gx_device_procs	cups_procs =
-@@ -417,7 +427,14 @@ gx_device_cups	gs_cups_device =
-   { },                                  /* EncodeLUT */
-   { },                                  /* Density */
-   { },                                  /* Matrix */
+@@ -425,7 +435,14 @@ gx_device_cups	gs_cups_device =
+   {0x00},                                  /* EncodeLUT */
+   {0x00},                                  /* Density */
+   {0x00},                                  /* Matrix */
 -  3                                     /* cupsRasterVersion */
 +  3,                                    /* cupsRasterVersion */
 +  0,					/* libCupsReady */
@@ -41,7 +41,7 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
  };
  
  /*
-@@ -450,7 +467,7 @@ cups_close(gx_device *pdev)		/* I - Device info */
+@@ -458,7 +475,7 @@ cups_close(gx_device *pdev)		/* I - Device info */
  
    if (cups->stream != NULL)
    {
@@ -50,7 +50,7 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
      close(fileno(cups->file));
      cups->stream = NULL;
      cups->file = NULL;
-@@ -2679,6 +2696,39 @@ cups_open(gx_device *pdev)		/* I - Device info */
+@@ -2687,6 +2704,39 @@ cups_open(gx_device *pdev)		/* I - Device info */
    dprintf1("DEBUG2: cups_open(%p)\n", pdev);
  #endif /* DEBUG */
  
@@ -90,7 +90,7 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
    dprintf("INFO: Start rendering...\n");
    cups->printer_procs.get_space_params = cups_get_space_params;
  
-@@ -2694,7 +2744,7 @@ cups_open(gx_device *pdev)		/* I - Device info */
+@@ -2702,7 +2752,7 @@ cups_open(gx_device *pdev)		/* I - Device info */
      return (code);
  
    if (cups->PPD == NULL)
@@ -99,7 +99,7 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
  
    return (0);
  }
-@@ -2791,7 +2841,7 @@ cups_print_pages(gx_device_printer *pdev,
+@@ -2799,7 +2849,7 @@ cups_print_pages(gx_device_printer *pdev,
  
    if (cups->stream == NULL)
    {
@@ -108,7 +108,7 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
      if (RasterVersion) {
  #ifdef DEBUG
        dprintf1("DEBUG2: cupsRasterVersion = %s\n", RasterVersion->value);
-@@ -2804,7 +2854,7 @@ cups_print_pages(gx_device_printer *pdev,
+@@ -2812,7 +2862,7 @@ cups_print_pages(gx_device_printer *pdev,
  	return_error(gs_error_unknownerror);
        }
      }
@@ -117,7 +117,7 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
                                         (cups->cupsRasterVersion == 3 ?
  					CUPS_RASTER_WRITE :
  					CUPS_RASTER_WRITE_COMPRESSED))) == NULL)
-@@ -2835,7 +2885,7 @@ cups_print_pages(gx_device_printer *pdev,
+@@ -2843,7 +2893,7 @@ cups_print_pages(gx_device_printer *pdev,
  
    for (copy = num_copies; copy > 0; copy --)
    {
@@ -126,7 +126,7 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
  
      if (pdev->color_info.num_components == 1)
        code = cups_print_chunked(pdev, src, dst, srcbytes);
-@@ -3130,7 +3180,7 @@ cups_put_params(gx_device     *pdev,	/* I - Device inf
+@@ -3150,7 +3200,7 @@ cups_put_params(gx_device     *pdev,	/* I - Device inf
        dprintf1("DEBUG2: cups->PPD = %p\n", cups->PPD);
  #endif /* DEBUG */
  
@@ -135,7 +135,7 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
        if (backside) {
  #ifdef DEBUG
  	dprintf1("DEBUG2: cupsBackSide = %s\n", backside->value);
-@@ -3142,7 +3192,7 @@ cups_put_params(gx_device     *pdev,	/* I - Device inf
+@@ -3162,7 +3212,7 @@ cups_put_params(gx_device     *pdev,	/* I - Device inf
  #endif /* DEBUG */
  
        backsiderequiresflippedmargins =
@@ -144,7 +144,7 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
  #ifdef DEBUG
        if (backsiderequiresflippedmargins)
  	dprintf1("DEBUG2: APDuplexRequiresFlippedMargin = %s\n",
-@@ -4061,7 +4111,7 @@ cups_print_chunked(gx_device_printer *pdev,
+@@ -4074,7 +4124,7 @@ cups_print_chunked(gx_device_printer *pdev,
  #endif /* DEBUG */
  
    if (cups->PPD) {
@@ -153,7 +153,7 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
      if (backside) {
  #ifdef DEBUG
        dprintf1("DEBUG2: cupsBackSide = %s\n", backside->value);
-@@ -4238,7 +4288,7 @@ cups_print_chunked(gx_device_printer *pdev,
+@@ -4251,7 +4301,7 @@ cups_print_chunked(gx_device_printer *pdev,
        * Write the bitmap data to the raster stream...
        */
  
@@ -162,7 +162,7 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
      }
      else
      {
-@@ -4246,7 +4296,7 @@ cups_print_chunked(gx_device_printer *pdev,
+@@ -4259,7 +4309,7 @@ cups_print_chunked(gx_device_printer *pdev,
        * Write the scanline data to the raster stream...
        */
  
@@ -171,7 +171,7 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
      }
    }
    return (0);
-@@ -4288,7 +4338,7 @@ cups_print_banded(gx_device_printer *pdev,
+@@ -4301,7 +4351,7 @@ cups_print_banded(gx_device_printer *pdev,
  #endif /* DEBUG */
  
    if (cups->PPD) {
@@ -180,7 +180,7 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
      if (backside) {
  #ifdef DEBUG
        dprintf1("DEBUG2: cupsBackSide = %s\n", backside->value);
-@@ -4959,7 +5009,7 @@ cups_print_banded(gx_device_printer *pdev,
+@@ -4972,7 +5022,7 @@ cups_print_banded(gx_device_printer *pdev,
      * Write the bitmap data to the raster stream...
      */
  
@@ -189,7 +189,7 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.4 2011/06/08 19:15:48 kili Exp $
    }
    return (0);
  }
-@@ -5331,7 +5381,7 @@ cups_print_planar(gx_device_printer *pdev,
+@@ -5344,7 +5394,7 @@ cups_print_planar(gx_device_printer *pdev,
        * Write the bitmap data to the raster stream...
        */
  
