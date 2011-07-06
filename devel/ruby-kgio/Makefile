@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/11 23:40:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/06 01:17:19 jeremy Exp $
 
 COMMENT =	kinder, gentler I/O for Ruby
 
-DISTNAME =	kgio-2.4.0
+DISTNAME =	kgio-2.5.0
 CATEGORIES =	devel
+
+MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 
 # LGPLv2.1/LGPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,7 +19,7 @@ CONFIGURE_STYLE =	ruby gem ext
 
 REGRESS_DEPENDS =	devel/gmake
 
-# One failing regress test
+# Couple failing regress tests
 do-regress:
 	@cd ${WRKSRC} && gmake test RUBY=${RUBY}
 
