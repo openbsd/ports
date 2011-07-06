@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_openbsd_c,v 1.10 2011/04/27 12:55:10 dcoppa Exp $
+$OpenBSD: patch-src_openbsd_c,v 1.11 2011/07/06 12:32:51 jasper Exp $
 
 declarations in common.h got changed, but upstream forgot to do the
 corresponding changes into openbsd.c
 
 --- src/openbsd.c.orig	Tue Oct  5 23:29:36 2010
-+++ src/openbsd.c	Tue Apr 19 19:40:39 2011
++++ src/openbsd.c	Wed Jul  6 14:30:14 2011
 @@ -140,7 +140,7 @@ int check_mount(char *s)
  	return 0;
  }
@@ -52,7 +52,7 @@ corresponding changes into openbsd.c
  	}
  
  	for (ifa = ifap; ifa; ifa = ifa->ifa_next) {
-@@ -266,19 +268,23 @@ void update_net_stats()
+@@ -266,28 +268,32 @@ void update_net_stats()
  	}
  
  	freeifaddrs(ifap);
@@ -77,8 +77,20 @@ corresponding changes into openbsd.c
 -void update_running_processes()
 +int update_running_processes()
  {
- 	struct kinfo_proc2 *p;
+-	struct kinfo_proc2 *p;
++	struct kinfo_proc *p;
  	int n_processes;
+ 	int i, cnt = 0;
+ 
+ 	kvm_init();
+-	int max_size = sizeof(struct kinfo_proc2);
++	int max_size = sizeof(struct kinfo_proc);
+ 
+-	p = kvm_getproc2(kd, KERN_PROC_ALL, 0, max_size, &n_processes);
++	p = kvm_getprocs(kd, KERN_PROC_ALL, 0, max_size, &n_processes);
+ 	for (i = 0; i < n_processes; i++) {
+ 		if (p[i].p_stat == SRUN) {
+ 			cnt++;
 @@ -295,6 +301,7 @@ void update_running_processes()
  	}
  
@@ -151,6 +163,27 @@ corresponding changes into openbsd.c
  /* While topless is obviously better, top is also not bad. */
  
  int comparecpu(const void *a, const void *b)
+@@ -708,7 +710,7 @@ int comparemem(const void *a, const void *b)
+ 
+ inline void proc_find_top(struct process **cpu, struct process **mem)
+ {
+-	struct kinfo_proc2 *p;
++	struct kinfo_proc *p;
+ 	int n_processes;
+ 	int i, j = 0;
+ 	struct process *processes;
+@@ -730,9 +732,9 @@ inline void proc_find_top(struct process **cpu, struct
+ 	/* translate bytes into page count */
+ 	total_pages = usermem / pagesize;
+ 
+-	int max_size = sizeof(struct kinfo_proc2);
++	int max_size = sizeof(struct kinfo_proc);
+ 
+-	p = kvm_getproc2(kd, KERN_PROC_ALL, 0, max_size, &n_processes);
++	p = kvm_getprocs(kd, KERN_PROC_ALL, 0, max_size, &n_processes);
+ 	processes = malloc(n_processes * sizeof(struct process));
+ 
+ 	for (i = 0; i < n_processes; i++) {
 @@ -784,7 +786,6 @@ inline void proc_find_top(struct process **cpu, struct
  	free(processes);
  }
