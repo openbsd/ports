@@ -1,7 +1,0 @@
-Wine is a Windows emulator running under Unix on i386 (and higher) CPUs.
-It is still Alpha quality, i.e. don't expect it to run your typical large 
-MS-Windows application package, but it is definitely on its way ...
-
-To use Wine, you need to enable the machdep.userldt sysctl, either via
-/etc/sysctl.conf, or by entering (as root):
-    sysctl -w machdep.userldt=1
