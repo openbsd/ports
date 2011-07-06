@@ -1,13 +1,15 @@
-$OpenBSD: patch-psinfo_c,v 1.1 2010/10/26 16:13:40 sthen Exp $
+$OpenBSD: patch-psinfo_c,v 1.2 2011/07/06 12:50:15 jasper Exp $
+
+Adapt to new OpenBSD kinfo_proc API.
+
 --- psinfo.c.orig	Sun Mar 15 03:15:49 2009
-+++ psinfo.c	Tue Oct 26 18:09:12 2010
++++ psinfo.c	Wed Jul  6 14:41:49 2011
 @@ -90,7 +90,11 @@ char *getProcessNameByProcessID(int pid)
      {
          int found;
          kvm_t *kd;
--        struct kinfo_proc *givenproc;
 +#if defined(__OpenBSD__)
-+        struct kinfo_proc2 *givenproc;
+         struct kinfo_proc *givenproc;
 +#else
 +        struct kinfo_procs *givenproc;
 +#endif
@@ -19,7 +21,7 @@ $OpenBSD: patch-psinfo_c,v 1.1 2010/10/26 16:13:40 sthen Exp $
           * Since pids are had better be unique, we should only get one.
           */
 +#if defined(__OpenBSD__)
-+        givenproc = kvm_getproc2(kd, KERN_PROC_PID, pid, sizeof(struct kinfo_proc2), &found);
++        givenproc = kvm_getprocs(kd, KERN_PROC_PID, pid, sizeof(struct kinfo_proc), &found);
 +#else
          givenproc = kvm_getprocs(kd, KERN_PROC_PID, pid, &found);
 +#endif
@@ -35,3 +37,24 @@ $OpenBSD: patch-psinfo_c,v 1.1 2010/10/26 16:13:40 sthen Exp $
                  # else
                  name = xstrdup(givenproc->kp_proc.p_comm);
                  #endif	/* __FreeBSD__ */
+@@ -249,10 +259,8 @@ float getProcessCPUPercentByProcessID(int pid)
+     }
+     #elif defined(USE_KVM)
+     {
+-        #if defined(__FreeBSD__) || defined(__DragonFly_version)
+         struct kinfo_proc *givenproc;
+-        #else
+-        struct kinfo_proc2 *givenproc;
++        #if !defined(__FreeBSD__) && !defined(__DragonFly_version)
+         struct nlist readnl[] = {{"_fscale"}, {NULL}};
+         #endif	/* __FreeBSD__ or __DragonFly_version */
+         kvm_t *kd;
+@@ -294,7 +302,7 @@ float getProcessCPUPercentByProcessID(int pid)
+ 		#if defined(__FreeBSD__) || defined(__DragonFly_version)
+ 		givenproc = kvm_getprocs(kd, KERN_PROC_PID, pid, &found);
+ 		#else
+-        givenproc = kvm_getproc2(kd, KERN_PROC_PID, pid, sizeof(struct kinfo_proc2), &found);
++        givenproc = kvm_getprocs(kd, KERN_PROC_PID, pid, sizeof(struct kinfo_proc), &found);
+         #endif	/* __FreeBSD__ or __DragonFly_version */
+         
+         switch (found) {

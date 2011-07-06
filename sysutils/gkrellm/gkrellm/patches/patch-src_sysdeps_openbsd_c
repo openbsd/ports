@@ -1,6 +1,9 @@
-$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.17 2011/03/02 06:59:55 ajacoutot Exp $
+$OpenBSD: patch-src_sysdeps_openbsd_c,v 1.18 2011/07/06 12:50:15 jasper Exp $
+
+Adapt to new OpenBSD kinfo_proc API.
+
 --- src/sysdeps/openbsd.c.orig	Tue Oct  5 18:31:00 2010
-+++ src/sysdeps/openbsd.c	Mon Feb 14 07:46:00 2011
++++ src/sysdeps/openbsd.c	Wed Jul  6 14:34:42 2011
 @@ -62,85 +62,96 @@ gkrellm_sys_main_cleanup(void)
  /* ===================================================================== */
  /* CPU monitor interface */
@@ -109,7 +112,7 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.17 2011/03/02 06:59:55 ajacoutot Exp $
  gkrellm_sys_proc_read_data(void)
  {
 -   static int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_ALL };
-+   static int proc_mib[] = { CTL_KERN, KERN_PROC2, KERN_PROC_ALL };
++   static int proc_mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_ALL };
 +   static int fork_mib[] = { CTL_KERN, KERN_FORKSTAT };
     double avenrun;
  	guint	n_forks = 0, n_processes = 0;
@@ -126,9 +129,8 @@ $OpenBSD: patch-src_sysdeps_openbsd_c,v 1.17 2011/03/02 06:59:55 ajacoutot Exp $
 -
 -
 -   if (sysctl(mib, 3, NULL, &len, NULL, 0) >= 0) {
--      n_processes = len / sizeof(struct kinfo_proc);
 +   if (sysctl(proc_mib, 3, NULL, &len, NULL, 0) >= 0) {
-+      n_processes = len / sizeof(struct kinfo_proc2);
+       n_processes = len / sizeof(struct kinfo_proc);
     }
  
 -   /* get name list if it is not done yet */
