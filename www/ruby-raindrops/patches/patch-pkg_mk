@@ -1,0 +1,12 @@
+$OpenBSD: patch-pkg_mk,v 1.1.1.1 2011/07/06 01:14:09 jeremy Exp $
+--- pkg.mk.orig	Mon Jun 27 10:49:35 2011
++++ pkg.mk	Mon Jun 27 10:49:43 2011
+@@ -146,7 +146,7 @@ all:: test
+ test_units := $(wildcard test/test_*.rb)
+ test: test-unit
+ test-unit: $(test_units)
+-$(test_units): build
++$(test_units): 
+ 	$(RUBY) -I $(lib) $@ $(RUBY_TEST_OPTS)
+ 
+ # this requires GNU coreutils variants
