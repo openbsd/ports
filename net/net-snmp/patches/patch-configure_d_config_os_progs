@@ -1,0 +1,13 @@
+$OpenBSD: patch-configure_d_config_os_progs,v 1.1 2011/07/06 21:32:58 sthen Exp $
+--- configure.d/config_os_progs.orig	Wed Jul  6 20:19:40 2011
++++ configure.d/config_os_progs	Wed Jul  6 20:20:23 2011
+@@ -184,6 +184,9 @@ AC_SUBST(NON_GNU_VPATH)
+ AC_CANONICAL_TARGET
+ changequote(, )
+ PARTIALTARGETOS=`echo $target_os | sed 's/[-._].*//'`
++if [ "${PARTIALTARGETOS%[3-9]}" = "openbsd" ]; then
++  PARTIALTARGETOS=openbsd
++fi
+ changequote([, ])
+ AC_MSG_CACHE_ADD(Building for:               $PARTIALTARGETOS)
+ 

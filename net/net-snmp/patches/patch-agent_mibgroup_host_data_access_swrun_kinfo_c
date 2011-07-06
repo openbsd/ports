@@ -1,84 +1,106 @@
-$OpenBSD: patch-agent_mibgroup_host_data_access_swrun_kinfo_c,v 1.2 2010/10/26 00:42:21 sthen Exp $
---- agent/mibgroup/host/data_access/swrun_kinfo.c.orig	Mon Jun  1 17:37:18 2009
-+++ agent/mibgroup/host/data_access/swrun_kinfo.c	Tue Oct 26 02:30:05 2010
-@@ -51,16 +51,28 @@
-     /*
-      * later FreeBSD kinfo_proc field names
-      */
-+#define SWRUN_TABLE	kinfo_proc
- #define SWRUN_K_STAT	ki_stat
- #define SWRUN_K_PID	ki_pid
+$OpenBSD: patch-agent_mibgroup_host_data_access_swrun_kinfo_c,v 1.3 2011/07/06 21:32:57 sthen Exp $
+--- agent/mibgroup/host/data_access/swrun_kinfo.c.orig	Mon Jun  1 16:37:18 2009
++++ agent/mibgroup/host/data_access/swrun_kinfo.c	Wed Jul  6 22:20:08 2011
+@@ -56,7 +56,32 @@
  #define SWRUN_K_COMM	ki_comm
  #define SWRUN_K_FLAG	ki_flag
  #define SWRUN_K_CLASS	ki_pri.pri_class
++# ifdef NOT_DEFINED
++   Apparently following these pointers triggers a SIG10 error
++#define SWRUN_K_UTICKS	ki_paddr->p_uticks
++#define SWRUN_K_STICKS	ki_paddr->p_sticks
++#define SWRUN_K_ITICKS	ki_paddr->p_iticks
++#define SWRUN_K_TSIZE	ki_vmspace->vm_tsize
++#define SWRUN_K_SSIZE	ki_vmspace->vm_ssize
++#define SWRUN_K_DSIZE	ki_vmspace->vm_dsize
++# endif
  
-+#elif defined(HAVE_KVM_GETPROC2)
++#elif defined(openbsd) /* XXX needs to check version number and fallback to old api for feeeding upstream */
++#define KINFO_NEWAPI
 +    /*
-+     * newer OpenBSD, NetBSD kinfo_proc2 field names
++     * newer OpenBSD kinfo_proc field names (like NetBSD kinfo_proc2)
 +     */
-+#define SWRUN_TABLE	kinfo_proc2
 +#define SWRUN_K_STAT	p_stat
 +#define SWRUN_K_PID	p_pid
 +#define SWRUN_K_COMM	p_comm
 +#define SWRUN_K_FLAG	p_flag
 +/*      SWRUN_K_CLASS	not defined     */
++#define SWRUN_K_UTICKS	p_uticks
++#define SWRUN_K_STICKS	p_sticks
++#define SWRUN_K_ITICKS	p_iticks
++#define SWRUN_K_TSIZE	p_vm_tsize
++#define SWRUN_K_SSIZE	p_vm_ssize
++#define SWRUN_K_DSIZE	p_vm_dsize
  #else
      /*
       * early FreeBSD, NetBSD, OpenBSD kinfo_proc field names
-      */
-+#define SWRUN_TABLE	kinfo_proc
- #define SWRUN_K_STAT	kp_proc.p_stat
- #define SWRUN_K_PID	kp_proc.p_pid
+@@ -66,6 +91,12 @@
  #define SWRUN_K_COMM	kp_proc.p_comm
-@@ -123,7 +135,7 @@ netsnmp_arch_swrun_init(void)
- int
- netsnmp_arch_swrun_container_load( netsnmp_container *container, u_int flags)
+ #define SWRUN_K_FLAG	kp_proc.p_flag
+ /*      SWRUN_K_CLASS	not defined     */
++#define SWRUN_K_UTICKS	kp_proc.p_uticks
++#define SWRUN_K_STICKS	kp_proc.p_sticks
++#define SWRUN_K_ITICKS	kp_proc.p_iticks
++#define SWRUN_K_TSIZE	kp_eproc.e_vm.vm_tsize
++#define SWRUN_K_SSIZE	kp_eproc.e_vm.vm_ssize
++#define SWRUN_K_DSIZE	kp_eproc.e_vm.vm_dsize
+ #endif
+ 
+ /*
+@@ -110,7 +141,7 @@ netsnmp_arch_swrun_init(void)
  {
--    struct kinfo_proc   *proc_table;
-+    struct SWRUN_TABLE  *proc_table;
-     int                  nprocs, i, rc;
-     char                 buf[BUFSIZ], **argv, *cp;
-     char                *name, *path;
-@@ -133,7 +145,11 @@ netsnmp_arch_swrun_container_load( netsnmp_container *
+ #if NETSNMP_CAN_USE_SYSCTL && defined(CTL_KERN) && defined(KERN_MAXPROC)
+     extern int _swrun_max;
+-    int max_size = sizeof(_swrun_max);
++    size_t max_size = sizeof(_swrun_max);
+     int maxproc_mib[] = { CTL_KERN, KERN_MAXPROC };
+     sysctl(maxproc_mib, 2, &_swrun_max, &max_size, NULL, 0);
+ #endif
+@@ -133,7 +164,11 @@ netsnmp_arch_swrun_container_load( netsnmp_container *
          DEBUGMSGTL(("swrun:load:arch"," Can't query kvm info\n"));
          return 1;     /* No handle for retrieving process table */
      }
--    proc_table = kvm_getprocs(kd, KERN_PROC_ALL, 0, &nprocs );
-+#ifdef HAVE_KVM_GETPROC2
-+    proc_table = kvm_getproc2(kd, KERN_PROC_ALL, 0, sizeof(struct kinfo_proc2), &nprocs );
++#ifdef KINFO_NEWAPI
++    proc_table = kvm_getprocs(kd, KERN_PROC_ALL, 0, sizeof(struct kinfo_proc), &nprocs );
 +#else
-+    proc_table = kvm_getproc(kd, KERN_PROC_ALL, 0, &nprocs );
+     proc_table = kvm_getprocs(kd, KERN_PROC_ALL, 0, &nprocs );
 +#endif
      for ( i=0 ; i<nprocs; i++ ) {
          if ( 0 == proc_table[i].SWRUN_K_STAT )
              continue;
-@@ -153,7 +169,11 @@ netsnmp_arch_swrun_container_load( netsnmp_container *
-          * We'll use SWRUN_K_COMM for hrSWRunName,
-          *   and as an alternative for hrSWRunPath
-          */
-+#ifdef HAVE_KVM_GETPROC2
-+        argv = kvm_getargv2( kd, &(proc_table[i]), 0);
-+#else
-         argv = kvm_getargv( kd, &(proc_table[i]), 0);
-+#endif
- 
-         entry->hrSWRunName_len = snprintf(entry->hrSWRunName,
-                                    sizeof(entry->hrSWRunName)-1,
-@@ -234,6 +254,17 @@ netsnmp_arch_swrun_container_load( netsnmp_container *
- # endif
+@@ -221,29 +256,15 @@ netsnmp_arch_swrun_container_load( netsnmp_container *
+         }
+         
+ #if defined(freebsd5) && __FreeBSD_version >= 500014
+-# ifdef NOT_DEFINED
+-   Apparently following these pointers triggers a SIG10 error
+-
+-        entry->hrSWRunPerfCPU  = proc_table[i].ki_paddr->p_uticks;
+-        entry->hrSWRunPerfCPU += proc_table[i].ki_paddr->p_sticks;
+-        entry->hrSWRunPerfCPU += proc_table[i].ki_paddr->p_iticks;
+-        entry->hrSWRunPerfMem  = proc_table[i].ki_vmspace->vm_tsize;
+-        entry->hrSWRunPerfMem += proc_table[i].ki_vmspace->vm_ssize;
+-        entry->hrSWRunPerfMem += proc_table[i].ki_vmspace->vm_dsize;
+-        entry->hrSWRunPerfMem *= (getpagesize()/1024);  /* in kB */
+-# endif
          entry->hrSWRunPerfCPU  = proc_table[i].ki_runtime / 100000;
          entry->hrSWRunPerfMem  = proc_table[i].ki_size / 1024;;
-+#elif defined(HAVE_KVM_GETPROC2)
-+        /*
-+         * new OpenBSD, NetBSD
-+         */
-+        entry->hrSWRunPerfCPU  = proc_table[i].p_uticks;
-+        entry->hrSWRunPerfCPU += proc_table[i].p_sticks;
-+        entry->hrSWRunPerfCPU += proc_table[i].p_iticks;
-+        entry->hrSWRunPerfMem  = proc_table[i].p_vm_tsize;
-+        entry->hrSWRunPerfMem += proc_table[i].p_vm_ssize;
-+        entry->hrSWRunPerfMem += proc_table[i].p_vm_dsize;
-+        entry->hrSWRunPerfMem *= (getpagesize() / 1024);
  #else
-         /*
-          * early FreeBSD, NetBSD, OpenBSD
+-        /*
+-         * early FreeBSD, NetBSD, OpenBSD
+-         */
+-        entry->hrSWRunPerfCPU  = proc_table[i].kp_proc.p_uticks;
+-        entry->hrSWRunPerfCPU += proc_table[i].kp_proc.p_sticks;
+-        entry->hrSWRunPerfCPU += proc_table[i].kp_proc.p_iticks;
+-        entry->hrSWRunPerfMem  = proc_table[i].kp_eproc.e_vm.vm_tsize;
+-        entry->hrSWRunPerfMem += proc_table[i].kp_eproc.e_vm.vm_ssize;
+-        entry->hrSWRunPerfMem += proc_table[i].kp_eproc.e_vm.vm_dsize;
++        entry->hrSWRunPerfCPU  = proc_table[i].SWRUN_K_UTICKS;
++        entry->hrSWRunPerfCPU += proc_table[i].SWRUN_K_STICKS;
++        entry->hrSWRunPerfCPU += proc_table[i].SWRUN_K_ITICKS;
++        entry->hrSWRunPerfMem  = proc_table[i].SWRUN_K_TSIZE;
++        entry->hrSWRunPerfMem += proc_table[i].SWRUN_K_SSIZE;
++        entry->hrSWRunPerfMem += proc_table[i].SWRUN_K_DSIZE;
+         entry->hrSWRunPerfMem *= (getpagesize() / 1024);
+ #endif
+     }

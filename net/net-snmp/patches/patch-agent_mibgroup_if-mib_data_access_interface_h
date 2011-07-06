@@ -1,0 +1,12 @@
+$OpenBSD: patch-agent_mibgroup_if-mib_data_access_interface_h,v 1.1 2011/07/06 21:32:57 sthen Exp $
+--- agent/mibgroup/if-mib/data_access/interface.h.orig	Wed Jul  6 17:15:34 2011
++++ agent/mibgroup/if-mib/data_access/interface.h	Wed Jul  6 17:16:03 2011
+@@ -36,7 +36,7 @@ config_exclude(mibII/interfaces)
+     config_require(if-mib/data_access/interface_linux)
+     config_require(if-mib/data_access/interface_ioctl)
+ 
+-#   elif defined( openbsd3 ) || defined( openbsd4 ) || \
++#   elif defined( openbsd ) || \
+     defined( freebsd4 ) || defined( freebsd5 ) || defined( freebsd6 ) || defined (darwin)
+ 
+     config_require(if-mib/data_access/interface_sysctl)

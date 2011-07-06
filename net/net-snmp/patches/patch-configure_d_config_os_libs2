@@ -1,25 +1,13 @@
-$OpenBSD: patch-configure_d_config_os_libs2,v 1.1 2011/01/15 09:38:31 sthen Exp $
+$OpenBSD: patch-configure_d_config_os_libs2,v 1.2 2011/07/06 21:32:57 sthen Exp $
 --- configure.d/config_os_libs2.orig	Wed Nov 17 19:39:24 2010
 +++ configure.d/config_os_libs2	Wed Jan  5 17:16:43 2011
-@@ -155,16 +155,19 @@ NETSNMP_SEARCH_LIBS(kstat_lookup, kstat,
+@@ -155,6 +155,9 @@ NETSNMP_SEARCH_LIBS(kstat_lookup, kstat,
          	[Define to 1 if you have the `kstat' library (-lkstat).]),,,
          LNETSNMPLIBS)
  
-+if test "x$PARTIALTARGETOS" = "xopenbsd4"; then
++if test "x${PARTIALTARGETOS%[0-9]}" = "xopenbsd"; then
 +  LMIBLIBS="$LMIBLIBS -pthread"
 +fi
  
  #   libkvm
  #
- NETSNMP_SEARCH_LIBS(kvm_read, kvm,,,, LAGENTLIBS)
- NETSNMP_SEARCH_LIBS(kvm_openfiles, kvm,,,, LAGENTLIBS)
--NETSNMP_SEARCH_LIBS(kvm_getprocs, kvm,,,, LMIBLIBS)
-+NETSNMP_SEARCH_LIBS(kvm_getproc2, kvm,,,, LMIBLIBS)
- NETSNMP_SEARCH_LIBS(kvm_getswapinfo, kvm,,,, LMIBLIBS)
- netsnmp_save_LIBS="$LIBS"
- LIBS="$LAGENTLIBS $LMIBLIBS $LIBS"
--AC_CHECK_FUNCS([kvm_openfiles kvm_getprocs kvm_getswapinfo])
-+AC_CHECK_FUNCS([kvm_openfiles kvm_getproc2 kvm_getswapinfo])
- LIBS="$netsnmp_save_LIBS"
- 
- 
