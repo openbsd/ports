@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2011/06/08 17:40:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2011/07/06 17:37:27 rpointel Exp $
 
 COMMENT =		fast, lightweight source control management
 
-MODPY_EGG_VERSION =	1.8.3
+MODPY_EGG_VERSION =	1.9
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
 CATEGORIES =     	devel
-REVISION =		0
 
 HOMEPAGE =		http://www.selenic.com/mercurial/
 
@@ -36,6 +35,8 @@ CONTRIBDIRS =		hgsh vim
 SCRIPTS =		convert-repo hg-ssh hgk \
 			tcsh_completion_build.sh dumprevlog \
 			undumprevlog simplemerge
+
+WANTLIB +=		${MODPY_WANTLIB}
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/hg.1 ${PREFIX}/man/man1
