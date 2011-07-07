@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/03/31 16:41:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/07/07 13:14:29 jasper Exp $
 %%SHARED%%
 bin/amsn
 bin/amsn-remote
@@ -20,6 +20,18 @@ share/amsn/automsg.tcl
 share/amsn/autoupdate.tcl
 share/amsn/balloon.tcl
 share/amsn/bugs.tcl
+share/amsn/ca-certs/
+share/amsn/ca-certs/37621ded.0
+share/amsn/ca-certs/6e7f22c1.0
+share/amsn/ca-certs/75ced341.0
+share/amsn/ca-certs/874806e2.0
+share/amsn/ca-certs/GTE_CyberTrust_Global_Root.pem
+share/amsn/ca-certs/Microsoft_Internet_Authority.pem
+share/amsn/ca-certs/Microsoft_Secure_Server_Authority.pem
+share/amsn/ca-certs/README
+share/amsn/ca-certs/VeriSign_Class3_Extended_Validation_CA.pem
+share/amsn/ca-certs/VeriSign_International_Server_Class_3_CA.pem
+share/amsn/ca-certs/c692a373.0
 share/amsn/chatwindow.tcl
 share/amsn/config.tcl
 share/amsn/console.tcl
@@ -62,8 +74,10 @@ share/amsn/lang.tcl
 share/amsn/lang/LANG-HOWTO
 share/amsn/lang/convert.tcl
 share/amsn/lang/langal
+share/amsn/lang/langar
 share/amsn/lang/langast
 share/amsn/lang/langbg
+share/amsn/lang/langbs
 share/amsn/lang/langca
 share/amsn/lang/langca_VC
 share/amsn/lang/langcs
@@ -103,6 +117,7 @@ share/amsn/lang/langsk
 share/amsn/lang/langsl
 share/amsn/lang/langsr
 share/amsn/lang/langsv
+share/amsn/lang/langth
 share/amsn/lang/langtr
 share/amsn/lang/langvn
 share/amsn/lang/langzh-CN
@@ -730,6 +745,9 @@ share/amsn/plugins/desktop_integration/plugininfo.xml
 share/amsn/plugins/devel/
 share/amsn/plugins/devel/devel.tcl
 share/amsn/plugins/devel/plugininfo.xml
+share/amsn/plugins/ebuddykiller/
+share/amsn/plugins/ebuddykiller/ebuddykiller.tcl
+share/amsn/plugins/ebuddykiller/plugininfo.xml
 share/amsn/plugins/emotes/
 share/amsn/plugins/emotes/emotes.tcl
 share/amsn/plugins/emotes/plugininfo.xml
@@ -1531,7 +1549,6 @@ share/amsn/skins/Oxygen/pixmaps/box_up.png
 share/amsn/skins/Oxygen/pixmaps/box_upleft.png
 share/amsn/skins/Oxygen/pixmaps/box_upright.png
 share/amsn/skins/Oxygen/pixmaps/busy.png
-share/amsn/skins/Oxygen/pixmaps/busy2.png
 share/amsn/skins/Oxygen/pixmaps/busy_emblem.png
 share/amsn/skins/Oxygen/pixmaps/busy_emblem_detailedview.png
 share/amsn/skins/Oxygen/pixmaps/butblock.png
@@ -1884,7 +1901,6 @@ share/amsn/skins/Oxygen/smileys/Winking_smiley.png
 share/amsn/skins/Oxygen/smileys/XD.png
 share/amsn/skins/Oxygen/smileys/Xbox.png
 share/amsn/skins/Oxygen/smileys/YIM.png
-share/amsn/skins/Oxygen/smileys/angry.png
 share/amsn/skins/Oxygen/smileys/im_xbox.gif
 share/amsn/skins/Oxygen/smileys/null
 share/amsn/skins/Oxygen/sounds/

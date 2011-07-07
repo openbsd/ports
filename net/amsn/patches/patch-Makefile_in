@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile_in,v 1.4 2010/09/14 12:34:42 jasper Exp $
---- Makefile.in.orig	Mon Oct 19 20:52:33 2009
-+++ Makefile.in	Sun Dec 27 22:50:18 2009
+$OpenBSD: patch-Makefile_in,v 1.5 2011/07/07 13:14:29 jasper Exp $
+--- Makefile.in.orig	Thu Mar 18 20:58:48 2010
++++ Makefile.in	Tue Jun 21 11:02:26 2011
 @@ -11,10 +11,10 @@ STATIC		:= @STATIC@
  doc_files	:= docs INSTALL CREDITS FAQ GNUGPL HELP README TODO AGREEMENT remote.help
  
@@ -13,8 +13,8 @@ $OpenBSD: patch-Makefile_in,v 1.4 2010/09/14 12:34:42 jasper Exp $
 +FILES_TO_INSTALL += utils/scalable-bg utils/sha1 utils/snit utils/dpbrowser
  FILES_TO_INSTALL += plugins utils/sexytile
  FILES_TO_INSTALL += utils/log utils/uri utils/combobox utils/voipcontrols
- 
-@@ -81,7 +81,7 @@ USE_MMX		:= @USE_MMX@
+ FILES_TO_INSTALL += utils/md4 utils/sasl ca-certs
+@@ -82,7 +82,7 @@ USE_MMX		:= @USE_MMX@
  # build final cflags
  CFLAGS   := @CFLAGS@
  ifeq (@DEBUG@,no)
@@ -23,7 +23,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2010/09/14 12:34:42 jasper Exp $
  else
  CFLAGS   += -g3 -DDEBUG
  endif
-@@ -103,9 +103,9 @@ CFLAGS   += -DPACKAGE='"$(PACKAGE)"'
+@@ -104,9 +104,9 @@ CFLAGS   += -DPACKAGE='"$(PACKAGE)"'
  CFLAGS   += -DVERSION='"$(VERSION)"'
  CFLAGS   += -DLIBDIR='"$(LIBDIR)"'
  
@@ -35,7 +35,7 @@ $OpenBSD: patch-Makefile_in,v 1.4 2010/09/14 12:34:42 jasper Exp $
  else
  CXXFLAGS   += -g3 -DDEBUG
  endif
-@@ -233,9 +233,9 @@ install:: $(FILES_TO_INSTALL)
+@@ -234,9 +234,9 @@ install:: $(FILES_TO_INSTALL)
  		rm -Rf $(DESTDIR)$(dstdir)/$(PACKAGE)/$$p; \
  	done
  
