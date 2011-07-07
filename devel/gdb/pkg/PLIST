@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/07/07 00:36:00 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/07/07 01:14:40 ajacoutot Exp $
 @bin bin/egdb
 @bin bin/egdbtui
 include/ansidecl.h
@@ -22,9 +22,9 @@ lib/libopcodes.la
 @man man/man1/egdbtui.1
 share/gdb/
 share/gdb/syscalls/
-share/gdb/syscalls/${MACHINE_ARCH}-linux.xml
 share/gdb/syscalls/gdb-syscalls.dtd
 share/gdb/syscalls/i386-linux.xml
+share/gdb/syscalls/amd64-linux.xml
 share/gdb/syscalls/ppc-linux.xml
 share/gdb/syscalls/ppc64-linux.xml
 share/gdb/syscalls/sparc-linux.xml
