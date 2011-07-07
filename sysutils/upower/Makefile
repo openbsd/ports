@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2011/07/04 17:44:27 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2011/07/07 19:02:43 dcoppa Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
 COMMENT =	userland power management interface
 
-DISTNAME =	upower-0.9.11
+DISTNAME =	upower-0.9.12
+EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	sysutils
 SHARED_LIBS +=  upower-glib               0.0 # 1.1
-
-REVISION =		1
 
 HOMEPAGE =	http://upower.freedesktop.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
