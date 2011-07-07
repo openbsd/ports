@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/29 20:20:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/07/07 00:22:37 ajacoutot Exp $
 
 COMMENT-main =		system metrics collection engine
 COMMENT-mysql =		collectd mysql plugin
@@ -15,6 +15,8 @@ PKGNAME-rrdtool =	collectd-rrdtool-$V
 PKGNAME-snmp =		collectd-snmp-$V
 CATEGORIES =		sysutils
 
+REVISION-main=		0
+
 HOMEPAGE =		http://www.collectd.org/
 SHARED_LIBS +=		collectdclient 0.0
 SHARED_ONLY =		Yes
@@ -27,7 +29,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/files/
 
-MODULES =		converters/libiconv
+MODULES =		devel/gettext
 
 MULTI_PACKAGES =	-main -mysql -pgsql -rrdtool -snmp
 
@@ -53,8 +55,8 @@ LIB_DEPENDS +=	net/curl \
 		security/libgcrypt \
 		devel/libtool,-ltdl
 
-WANTLIB += c crypto gpg-error idn intl kvm curl xml2 ltdl
-WANTLIB += m pcap pthread ssl xml2 z statgrab gcrypt
+WANTLIB += c crypto gpg-error idn kvm curl xml2 ltdl
+WANTLIB += m pcap pthread ssl xml2 z statgrab gcrypt ${MODGETTEXT_WANTLIB}
 
 CONFIGURE_STYLE =	gnu
 USE_LIBTOOL =		Yes

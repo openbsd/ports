@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/04/10 18:02:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2011/07/07 00:22:37 ajacoutot Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -7,7 +7,7 @@ COMMENT=		test-bed browser/authoring tool of the W3C
 AMAYA_VERSION=		5.1
 DISTNAME=		amaya-src-${AMAYA_VERSION}
 PKGNAME=		amaya-${AMAYA_VERSION}
-REVISION=		6
+REVISION=		7
 
 HOMEPAGE=		http://www.w3.org/Amaya/
 
@@ -17,15 +17,12 @@ FLAVOR?=		motif
 WANTLIB += ICE SM X11 Xext Xt c expat m pthread-stubs xcb z
 
 .if ${FLAVOR:L} == "gtk"
-
+MODULES +=		devel/gettext
 CONFIGURE_ARGS+=	--with-gtk=${LOCALBASE}
 # I'm too lazy to write a proper imlib autoconf test.
 LIB_DEPENDS+=		graphics/imlib
-
-WANTLIB += Xi gdk gif glib gmodule gtk iconv intl jpeg png tiff gdk_imlib.>=19
-
+WANTLIB += Xi gdk gif glib gmodule gtk jpeg png tiff gdk_imlib.>=19
 .elif ${FLAVOR:L} == "motif"
-
 WANTLIB += jpeg png Xm
 LIB_DEPENDS+=		graphics/jpeg \
 			graphics/png  \

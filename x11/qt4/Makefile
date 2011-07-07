@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2011/05/17 08:26:53 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.86 2011/07/07 00:22:37 ajacoutot Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -23,7 +23,15 @@ PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
-REVISION-tds =		0
+REVISION-mysql =	0
+REVISION-postgresql =	0
+REVISION-examples =	0
+REVISION-sqlite2 =	0
+REVISION-sqlite =	0
+PKGNAME-tds =		1
+REVISION-main =		0
+REVISION-debug =	0
+
 
 SHARED_LIBS =	Qt3Support 8.0 \
 		QtCore 9.0 \
@@ -178,9 +186,11 @@ MULTI_PACKAGES +=	-examples
 PROGRAMS +=		qtdemo pixeltool
 .endif
 
+MODULES =		devel/gettext
 
 LIB_DEPENDS =
 WANTLIB =
+RUN_DEPENDS =
 
 commonWANTLIB =		ICE Xrender c GLU SM freetype pthread Xinerama \
 			Xext GL Xi m X11>=10 z fontconfig \
@@ -190,7 +200,7 @@ commonLIB_DEPENDS =	graphics/png
 sqlWANTLIB =		m lib/qt4/QtCore>=4 QtSql
 sqlLIB_DEPENDS = 	${BASE_PKGPATH}
 
-
+RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-main =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
 			devel/glib2 \
 			graphics/jpeg \
@@ -200,35 +210,35 @@ WANTLIB-main =		${WANTLIB} ${commonWANTLIB} jpeg mng \
 			lcms tiff gobject-2.0 gstvideo-0.10 \
 			gstbase-0.10 gstreamer-0.10 xml2 \
 			gobject-2.0 gmodule-2.0 gstinterfaces-0.10 \
-			iconv intl glib-2.0 gthread-2.0 gstaudio-0.10
+			${MODGETTEXT_WANTLIB} glib-2.0 gthread-2.0 gstaudio-0.10
 
 
-LIB_DEPENDS-mysql =	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
+LIB_DEPENDS-mysql =	${sqlLIB_DEPENDS} \
 			databases/mysql
 WANTLIB-mysql =		${WANTLIB} ${sqlWANTLIB} \
 			crypto ssl pthread z mysqlclient_r
 
 
-LIB_DEPENDS-postgresql =${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
+LIB_DEPENDS-postgresql =${sqlLIB_DEPENDS} \
 			databases/postgresql
 WANTLIB-postgresql =	${WANTLIB} ${sqlWANTLIB}  pq
 			
 
-LIB_DEPENDS-sqlite2 =	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
+LIB_DEPENDS-sqlite2 =	${sqlLIB_DEPENDS} \
 			databases/sqlite
 WANTLIB-sqlite2 =	${WANTLIB} ${sqlWANTLIB} sqlite
 
 
-LIB_DEPENDS-sqlite =	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
+LIB_DEPENDS-sqlite =	${sqlLIB_DEPENDS} \
 			databases/sqlite3
 WANTLIB-sqlite =	${WANTLIB} ${sqlWANTLIB} sqlite3
 
 
-LIB_DEPENDS-tds =	${LIB_DEPENDS} ${sqlLIB_DEPENDS} \
+LIB_DEPENDS-tds =	${sqlLIB_DEPENDS} \
 			databases/freetds
 WANTLIB-tds =		${WANTLIB} ${sqlWANTLIB} sybdb
 
-LIB_DEPENDS-examples =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
+LIB_DEPENDS-examples =	${commonLIB_DEPENDS} \
 			${BASE_PKGPATH}
 WANTLIB-examples =	${WANTLIB} ${commonWANTLIB} lib/qt4/QtDesigner \
 			lib/qt4/QtCore lib/qt4/QtGui lib/qt4/QtNetwork \
