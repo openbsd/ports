@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_xitk_download_c,v 1.1 2011/07/07 08:00:03 jasper Exp $
+--- src/xitk/download.c.orig	Thu Jul  7 09:59:09 2011
++++ src/xitk/download.c	Thu Jul  7 09:59:13 2011
+@@ -28,7 +28,6 @@
+ 
+ #ifdef HAVE_CURL
+ #include <curl/curl.h>
+-#include <curl/types.h>
+ #include <curl/easy.h>
+ #endif
+ 
