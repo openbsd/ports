@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/07/07 00:42:04 ajacoutot Exp $
 
 COMMENT=	acoustic decoder for CMU Sphinx3 speech recognition system
 
 DISTNAME=	sphinx3-0.8
 PKGNAME=	cmu-${DISTNAME}
-REVISION=	3
+REVISION=	4
 CATEGORIES=	audio
 
 SHARED_LIBS=	s3decoder	0.0
@@ -21,7 +21,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cmusphinx/}
 
-WANTLIB=	blas c iconv lapack m pthread sndio ${MODFORTRAN_WANTLIB} \
+WANTLIB=	blas c lapack m pthread sndio ${MODFORTRAN_WANTLIB} \
 		sphinxad sphinxbase
 
 MODULES=	converters/libiconv fortran
