@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/06/30 20:18:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/07/07 11:18:25 jasper Exp $
 
 COMMENT=	hfsplus filesystem access tool
 
@@ -26,23 +26,27 @@ USE_LIBTOOL=		Yes
 
 AUTOCONF_VERSION=	2.59
 AUTOMAKE_VERSION=	1.9
-BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS}
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 # needs the AM_PROG_LIBTOOL macro                                           
-BUILD_DEPENDS +=	devel/libtool
+BUILD_DEPENDS+=		devel/libtool
 
-# actually uses automake/autoheader, but that is done in pre-configure now
-CONFIGURE_STYLE=	automake
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}
 
 WRKDIST=		${WRKDIR}/hfsplus-${VERSION}
 
-DOC=bugs.html hfsp.html libhfsp.html
+DOC=			bugs.html hfsp.html libhfsp.html
 
-pre-configure:
-	@cd ${WRKDIST} && ln -s ${LOCALBASE}/share/libtool/ltmain.sh
-	@cd ${WRKDIST} && AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+post-patch:
+	@if [ -f ${LOCALBASE}/share/libtool/config/ltmain.sh ]; then \
+	    cd ${WRKDIST} && ln -s ${LOCALBASE}/share/libtool/config/ltmain.sh; \
+	else \
+	    cd ${WRKDIST} && ln -s ${LOCALBASE}/share/libtool/ltmain.sh; \
+	fi
+	@cd ${WRKDIST} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		${MAKE_PROGRAM} -f Makefile.cvs all
 
