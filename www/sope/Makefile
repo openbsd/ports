@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.14 2011/05/09 16:06:11 sebastia Exp $
+# $OpenBSD: Makefile,v 1.15 2011/07/07 00:44:18 ajacoutot Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
 VERSION=		1.3.7
-REVISION =		0
 DISTNAME=		SOPE-${VERSION}
 PKGNAME-main=		sope-${VERSION}
 PKGNAME-mysql=		sope-mysql-${VERSION}
 PKGNAME-postgres=	sope-postgres-${VERSION}
+
+REVISION-main =		1
+REVISION-mysql =	0
+REVISION-postgres =	0
 
 SO_MAJOR=	0
 SO_MINOR=	1
@@ -36,7 +39,7 @@ MODULES=	converters/libiconv x11/gnustep
 MODGNUSTEP_NEEDS_GUI=	No
 
 WANTLIB-main = 		gnustep-base m objc c pthread crypto ssl z lber ldap xml2 \
-			iconv
+			${MODLIBICONV_WANTLIB}
 
 WANTLIB-mysql = 	gnustep-base m objc GDLAccess EOControl \
 			mysqlclient crypto ssl z
