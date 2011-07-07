@@ -1,44 +1,44 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/17 08:05:15 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/07/07 13:45:15 jasper Exp $
 
-COMMENT=			3D image rendering package
+COMMENT=	3D image rendering package
 
-DISTNAME=			povray-3.1g
-REVISION =			1
-CATEGORIES=			graphics
+DISTNAME=	povray-3.1g
+REVISION =	1
+CATEGORIES=	graphics
 
-HOMEPAGE=			http://www.povray.org
+HOMEPAGE=	http://www.povray.org
 
-PERMIT_PACKAGE_CDROM=		Perhaps we qualify for commercial distribution
-PERMIT_PACKAGE_FTP=		Yes
-PERMIT_DISTFILES_CDROM=		Our CDs are not too expensive, see povlegal.doc but I think we should ask them anyway
-PERMIT_DISTFILES_FTP=		Yes
-WANTLIB=			c m z png>=2
+PERMIT_PACKAGE_CDROM=	Perhaps we qualify for commercial distribution
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM=	Our CDs are not too expensive, see povlegal.doc but I think we should ask them anyway
+PERMIT_DISTFILES_FTP=	Yes
+WANTLIB=		c m z png>=2
 
-MASTER_SITES=			ftp://mirror.nucba.ac.jp/mirror/povray/Old-Versions/Official-3.1g/Unix/ \
-				ftp://ftp.povray.org/pub/povray/Old-Versions/Official-3.1g/Unix/
+MASTER_SITES=	ftp://mirror.nucba.ac.jp/mirror/povray/Old-Versions/Official-3.1g/Unix/ \
+		ftp://ftp.povray.org/pub/povray/Old-Versions/Official-3.1g/Unix/
 
-DISTFILES=			povuni_s.tgz povuni_d.tgz
-DIST_SUBDIR=			${DISTNAME}
-USE_GROFF =			Yes
+DISTFILES=	povuni_s.tgz povuni_d.tgz
+DIST_SUBDIR=	${DISTNAME}
+USE_GROFF =	Yes
 
-LIB_DEPENDS=			graphics/png
+LIB_DEPENDS=	graphics/png
 
-FLAVORS=			no_x11
+FLAVORS=	no_x11
 FLAVOR?=
 
-MAKE_FILE=			makefile
-WRKDIST=			${WRKDIR}/povray31/source/unix
+MAKE_FILE=	makefile
+WRKDIST=	${WRKDIR}/povray31/source/unix
 
 .if !${FLAVOR:L:Mno_x11}
-ALL_TARGET=                     newxwin
-WANTLIB+=			X11 pthread-stubs xcb
+ALL_TARGET=	newxwin
+WANTLIB+=	X11 pthread-stubs xcb
 .endif
-ALL_TARGET+=			newunix
+ALL_TARGET+=	newunix
 
 pre-configure:
 	@perl -i -p -e "s#/usr/local/lib#${PREFIX}/share#" ${WRKDIR}/povray31/povray.ini
 
-NO_REGRESS=			Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIST}/povray ${PREFIX}/bin
