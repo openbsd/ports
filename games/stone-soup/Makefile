@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/24 20:14:06 stsp Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/07 19:54:18 jasper Exp $
 
 COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games
@@ -9,6 +9,7 @@ VERSION = 	0.7.2
 DISTNAME=	stone_soup-${VERSION}-nodeps
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	stone-soup-${VERSION}
+REVISION=	0
 
 WRKDIST = 	${WRKDIR}/stone_soup-${VERSION}
 WRKSRC = 	${WRKDIST}/source
@@ -51,8 +52,9 @@ LIB_DEPENDS += 	devel/sdl \
 .endif
 
 post-install:
-	chmod 755 ${PREFIX}/bin/crawl
-	${INSTALL_MAN} ${WRKDIST}/docs/crawl.6 ${PREFIX}/man/man6/crawl.6
+	mv ${PREFIX}/bin/crawl ${PREFIX}/bin/crawl-ss
+	chmod 755 ${PREFIX}/bin/crawl-ss
+	${INSTALL_MAN} ${WRKDIST}/docs/crawl.6 ${PREFIX}/man/man6/crawl-ss.6
 	${INSTALL_DATA} ${WRKDIST}/README.txt ${PREFIX}/share/crawl/docs
 
 NO_REGRESS=Yes

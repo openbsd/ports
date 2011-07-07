@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/24 20:14:06 stsp Exp $
-@bin bin/crawl
-@man man/man6/crawl.6
+@comment $OpenBSD: PLIST,v 1.2 2011/07/07 19:54:18 jasper Exp $
+@bin bin/crawl-ss
+@man man/man6/crawl-ss.6
 share/crawl/
 share/crawl/dat/
 share/crawl/dat/clua/
