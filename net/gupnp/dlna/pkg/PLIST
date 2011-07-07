@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/05 16:59:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/07 11:07:17 jasper Exp $
 %%SHARED%%
 @bin bin/gupnp-dlna-info
 @bin bin/gupnp-dlna-ls-profiles
@@ -7,16 +7,21 @@ include/gupnp-dlna-1.0/libgupnp-dlna/
 include/gupnp-dlna-1.0/libgupnp-dlna/gupnp-dlna-discoverer.h
 include/gupnp-dlna-1.0/libgupnp-dlna/gupnp-dlna-information.h
 include/gupnp-dlna-1.0/libgupnp-dlna/gupnp-dlna-profile.h
+lib/girepository-1.0/
+lib/girepository-1.0/GUPnP-DLNA-1.0.typelib
 lib/libgupnp-dlna-1.0.a
 lib/libgupnp-dlna-1.0.la
 lib/pkgconfig/
 lib/pkgconfig/gupnp-dlna-1.0.pc
+share/gir-1.0/
+share/gir-1.0/GUPnP-DLNA-1.0.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gupnp-dlna/
 share/gtk-doc/html/gupnp-dlna/GUPnPDLNADiscoverer.html
 share/gtk-doc/html/gupnp-dlna/GUPnPDLNAInformation.html
 share/gtk-doc/html/gupnp-dlna/GUPnPDLNAProfile.html
+share/gtk-doc/html/gupnp-dlna/annotation-glossary.html
 share/gtk-doc/html/gupnp-dlna/ch01.html
 share/gtk-doc/html/gupnp-dlna/gupnp-dlna.devhelp
 share/gtk-doc/html/gupnp-dlna/gupnp-dlna.devhelp2
