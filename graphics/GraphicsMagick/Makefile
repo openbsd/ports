@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2011/03/14 09:17:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2011/07/07 01:06:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	image processing tools with stable ABI
 
 DISTNAME=	GraphicsMagick-1.3.12
-REVISION=	0
+REVISION=	1
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 
@@ -23,8 +23,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		bz2 c iconv jasper jbig lcms ltdl jpeg \
-			m png pthread stdc++ tiff xml2 z
+WANTLIB=		bz2 c jasper jbig lcms ltdl jpeg \
+			m png pthread stdc++ tiff xml2 z ${MODLIBICONV_WANTLIB}
+
+MODULES=		converters/libiconv
 
 LIB_DEPENDS=		archivers/bzip2 \
 			devel/libtool,-ltdl \

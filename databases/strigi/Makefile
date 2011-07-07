@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/15 00:22:54 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/07/07 01:06:59 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	document indexer
@@ -6,6 +6,8 @@ CATEGORIES =	databases devel textproc sysutils
 
 HOMEPAGE =	http://strigi.sourceforge.net
 DISTNAME =	strigi-0.7.2
+
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 MASTER_SITES =	http://www.vandenoever.info/software/strigi/ \
@@ -31,10 +33,10 @@ LIB_DEPENDS =	clucene-core->=0.9.21:textproc/clucene \
 		graphics/exiv2
 
 WANTLIB += ICE SM X11 Xext Xi Xinerama Xrender bz2 c clucene>=1 dbus-1 exiv2 \
-	fontconfig freetype glib-2.0 gthread-2.0 iconv lib/qt4/QtCore \
-	lib/qt4/QtDBus lib/qt4/QtGui m png pthread stdc++ xml2 z
+	fontconfig freetype glib-2.0 gthread-2.0 lib/qt4/QtCore \
+	lib/qt4/QtDBus lib/qt4/QtGui m png pthread stdc++ xml2 z ${MODLIBICONV_WANTLIB}
 
-MODULES +=		devel/cmake
+MODULES +=		devel/cmake converters/libiconv
 CONFIGURE_STYLE =	cmake
 SEPARATE_BUILD =	simple
 

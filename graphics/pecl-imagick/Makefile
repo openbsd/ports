@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/17 08:05:15 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/07 01:06:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	PHP support for the ImageMagick library
 
 DISTNAME=	imagick-2.3.0
 PKGNAME=	pecl-${DISTNAME}
+REVISION=	0
 CATEGORIES=	graphics www
 
 HOMEPAGE=	http://pecl.php.net/package/imagick/
@@ -22,13 +23,15 @@ EXTRACT_SUFX=	.tgz
 AUTOCONF_VERSION=	2.62
 AUTOMAKE_VERSION=	1.9
 
+MODULES=	converters/libiconv
+
 BUILD_DEPENDS=	www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=	graphics/ImageMagick
 RUN_DEPENDS=	www/php5/core
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt bz2 expat fontconfig freetype \
-		iconv jasper jbig jpeg lcms m png pthread-stubs tiff \
+		jasper jbig jpeg lcms m png pthread-stubs tiff \
 		wmflite xcb xml2 z MagickCore MagickWand
 
 CONFIGURE_STYLE=gnu

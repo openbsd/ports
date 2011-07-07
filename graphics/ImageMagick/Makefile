@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.112 2011/07/06 22:43:00 kili Exp $
+# $OpenBSD: Makefile,v 1.113 2011/07/07 01:06:59 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,6 +8,7 @@ VER=			6.6.6
 DASHVER=		10
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
+REVISION=		0
 
 SHARED_LIBS +=		Magick++	14.0	# .1.0
 SHARED_LIBS +=		MagickCore	2.0	# .1.0
@@ -84,8 +85,9 @@ CONFIGURE_ARGS +=	--without-x \
 			--without-freetype \
 			--without-wmf
 .else
+MODULES +=		converters/libiconv
 WANTLIB +=		ICE SM X11 Xau Xdmcp Xext Xt expat fontconfig \
-			freetype iconv pthread-stubs xcb wmf wmflite>=7 \
+			freetype pthread-stubs xcb wmf wmflite>=7 \
 			xml2>=9
 LIB_DEPENDS +=		graphics/libwmf \
 			textproc/libxml

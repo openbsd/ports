@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2011/06/24 11:17:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2011/07/07 01:06:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PHP support for ffmpeg
 DISTNAME=	ffmpeg-php-0.6.0
-REVISION=	5
+REVISION=	6
 EXTRACT_SUFX=	.tbz2
 CATEGORIES=	multimedia www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=ffmpeg-php/}
@@ -27,6 +27,8 @@ NO_REGRESS=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
+MODULES=	converters/libiconv
+
 BUILD_DEPENDS=	www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
@@ -36,7 +38,7 @@ RUN_DEPENDS=	www/php5/core \
 		www/php5/extensions,-gd
 
 WANTLIB += avcodec avformat avutil bz2 expat fontconfig freetype gd
-WANTLIB += gsm iconv jpeg m mp3lame ogg orc-0.4 png schroedinger-1.0
+WANTLIB += gsm jpeg m mp3lame ogg orc-0.4 png schroedinger-1.0
 WANTLIB += speex swscale theoradec theoraenc vorbis vorbisenc
 WANTLIB += vpx x264 z
 

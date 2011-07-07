@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/06/08 17:32:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2011/07/07 01:06:59 ajacoutot Exp $
 
 COMMENT-main=	radio/rotator control library
 COMMENT-python=	python bindings for hamlib
@@ -7,11 +7,11 @@ COMMENT-tcl=	tcl bindings for hamlib
 VERSION=	1.2.6
 DISTNAME=	hamlib-${VERSION}
 PKGNAME-main=	hamlib-${VERSION}
-REVISION-main =	5
+REVISION-main =	6
 PKGNAME-python=	hamlib-python-${VERSION}
-REVISION-python = 6
+REVISION-python = 7
 PKGNAME-tcl=	hamlib-tcl-${VERSION}
-REVISION-tcl =	5
+REVISION-tcl =	6
 CATEGORIES=    	comms hamradio
 
 MULTI_PACKAGES=	-main -python -tcl
@@ -21,7 +21,7 @@ SHARED_LIBS=	hamlib 2.5 \
 
 HOMEPAGE=	http://hamlib.sourceforge.net/
 
-MODULES=	lang/python lang/tcl
+MODULES=	lang/python lang/tcl converters/libiconv
 
 # GPLv2/LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,13 +29,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB =		m usb>=9
-WANTLIB-main =		${WANTLIB} c stdc++ z  xml2 iconv
-WANTLIB-python =	${WANTLIB} hamlib ${MODPY_WANTLIB}
-WANTLIB-tcl =		${WANTLIB} hamlib ${MODTCL_WANTLIB}
+cWANTLIB =		m usb>=9
+WANTLIB-main =		${cWANTLIB} c stdc++ z  xml2 ${MODLIBICONV_WANTLIB}
+WANTLIB-python =	${cWANTLIB} hamlib ${MODPY_WANTLIB}
+WANTLIB-tcl =		${cWANTLIB} hamlib ${MODTCL_WANTLIB}
 
 LIB_DEPENDS-main=	textproc/libxml \
-			converters/libiconv \
 			devel/libusb
 LIB_DEPENDS-python=	${BUILD_PKGPATH} \
 			${MODPY_LIB_DEPENDS}
@@ -50,8 +49,9 @@ CONFIGURE_STYLE=	gnu
 
 BUILD_DEPENDS=		devel/swig
 
-RUN_DEPENDS-main=
-RUN_DEPENDS-tcl=
+RUN_DEPENDS-main=	${MODLIBICONV_RUN_DEPENDS}
+RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
+RUN_DEPENDS-tcl=	${MODTCL_RUN_DEPENDS}
 
 # --without-winradio    do not build winradio backend
 # --with-gnuradio       build gnuradio backend

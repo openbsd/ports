@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/04/10 18:02:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/07/07 01:06:59 ajacoutot Exp $
 
 COMMENT=	Motif-based table widget
 
 DISTNAME=	xbae-4.60.4
-REVISION=	8
+REVISION=	9
 
 SHARED_LIBS=	Xbae 4.60
 
@@ -20,11 +20,13 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xft Xpm Xrender Xt jpeg m png
-WANTLIB += expat fontconfig freetype z iconv pthread-stubs xcb Xm
+WANTLIB += expat fontconfig freetype z pthread-stubs xcb Xm
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=xbae/}
+MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=xbae/}
 
-USE_LIBTOOL=	 Yes
+MODULES=	converters/libiconv
+
+USE_LIBTOOL=	Yes
 LIB_DEPENDS+=	x11/openmotif
 USE_GROFF =	Yes
 CONFIGURE_STYLE= gnu

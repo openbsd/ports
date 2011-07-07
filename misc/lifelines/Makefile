@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 07:23:11 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/07/07 01:06:59 ajacoutot Exp $
 
 COMMENT=		genealogical database and programming system
 DISTNAME=		lifelines-3.0.60
-REVISION=		2
+REVISION=		3
 CATEGORIES=		misc
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=lifelines/}
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m ncurses iconv
+WANTLIB=		c m ncurses
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		YACC="bison -y" \

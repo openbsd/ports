@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/20 17:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/07 01:06:59 ajacoutot Exp $
 
 COMMENT=		rar, 7zip and zip password bruteforcer
 
 DISTNAME=		rarcrack-0.2
-REVISION =		0
+REVISION =		1
 CATEGORIES=		security
 
 HOMEPAGE=		http://rarcrack.sourceforge.net/
@@ -16,7 +16,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		c m pthread z iconv xml2
+WANTLIB=		c m pthread z xml2
+
+MODULES=		converters/libiconv
+
 LIB_DEPENDS=		textproc/libxml
 
 RUN_DEPENDS=		archivers/p7zip \

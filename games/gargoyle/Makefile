@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/16 11:23:26 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/07 01:06:59 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,6 +6,7 @@ COMMENT =	cross-platform interactive fiction player
 
 DISTNAME =	gargoyle-2010.1-sources
 PKGNAME =	gargoyle-2010.1
+REVISION =	0
 EPOCH =		0
 
 CATEGORIES =	games x11
@@ -24,7 +25,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB +=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender c cairo expat fontconfig \
-		freetype iconv m pixman-1 pthread pthread-stubs xcb stdc++ \
+		freetype m pixman-1 pthread pthread-stubs xcb stdc++ \
 		vorbisfile z gdk_pixbuf-2.0 SDL>=2.0 SDL_sound SDL_mixer \
 		atk-1.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0 \
 		gdk-x11-2.0 jpeg>=62 pango-1.0>=1600.0 \
