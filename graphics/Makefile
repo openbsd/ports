@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.293 2011/06/28 23:12:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.294 2011/07/07 14:19:51 naddy Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -184,7 +184,6 @@
      SUBDIR += png
      SUBDIR += png2ico
      SUBDIR += pngcrush
-     SUBDIR += pngmeta
      SUBDIR += potrace
      SUBDIR += povray
      SUBDIR += povray,no_x11
@@ -220,7 +219,6 @@
      SUBDIR += simple-scan
      SUBDIR += sketch
      SUBDIR += smpeg-xmms
-     SUBDIR += sng
      SUBDIR += swfdec
      SUBDIR += synaesthesia
      SUBDIR += tesseract
