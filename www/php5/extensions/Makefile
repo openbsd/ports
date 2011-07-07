@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2011/03/30 08:23:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2011/07/07 01:20:58 ajacoutot Exp $
 
 FULLPKGNAME-main=	php5-extensions-${V}
 FULLPKGPATH-main=	www/php5/extensions,-main
@@ -16,7 +16,7 @@ FLAVOR?=
 
 #WANTLIB=		stdc++ m
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext converters/libiconv
 
 CONFIGURE_ARGS+=	--with-apxs=/usr/sbin/apxs \
 			--with-iconv-dir=${LOCALBASE} \
@@ -313,8 +313,8 @@ MULTI_PACKAGES+=	-soap
 COMMENT-soap=		SOAP functions for php5
 CONFIGURE_ARGS+=	--enable-soap=shared
 LIB_DEPENDS-soap =	textproc/libxml
-WANTLIB-soap =		m xml2 z iconv
-REVISION-soap = 	0
+WANTLIB-soap =		m xml2 z ${MODLIBICONV_WANTLIB}
+REVISION-soap = 	1
 .endif
 
 # snmp
