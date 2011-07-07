@@ -1,8 +1,8 @@
-$OpenBSD: patch-agent_Makefile_in,v 1.5 2010/10/25 22:59:12 sthen Exp $
---- agent/Makefile.in.orig	Tue Jun  8 22:05:11 2010
-+++ agent/Makefile.in	Wed Oct  6 23:29:46 2010
-@@ -18,8 +18,8 @@ top_builddir	= ..
- SUBDIRS=helpers mibgroup
+$OpenBSD: patch-agent_Makefile_in,v 1.6 2011/07/07 20:02:02 sthen Exp $
+--- agent/Makefile.in.orig	Fri Jul  1 23:35:46 2011
++++ agent/Makefile.in	Wed Jul  6 23:15:52 2011
+@@ -20,8 +20,8 @@ SUBDIRS=helpers mibgroup
+ FTSUBDIRS=mibgroup helpers
  
  INSTALLSBINPROGS= @SNMPD@
 -INSTALLLIBS	= libnetsnmpagent.$(LIB_EXTENSION)$(LIB_VERSION)
@@ -12,7 +12,7 @@ $OpenBSD: patch-agent_Makefile_in,v 1.5 2010/10/25 22:59:12 sthen Exp $
  
  INCLUDESUBDIR=agent
  HEADERS=\
-@@ -108,9 +108,9 @@ INSTALLUCDHEADERS= \
+@@ -110,9 +110,9 @@ INSTALLUCDHEADERS= \
  #
  # how to build it info
  #
@@ -25,7 +25,7 @@ $OpenBSD: patch-agent_Makefile_in,v 1.5 2010/10/25 22:59:12 sthen Exp $
  
  LOCAL_LIBS	= -L../snmplib/.libs -L../snmplib -L./.libs
  LAGENTLIBS	= @LAGENTLIBS@
-@@ -248,11 +248,11 @@ snmpd$(EXEEXT):	${LAGENTOBJS} $(USELIBS) $(AGENTLIB) $
+@@ -297,11 +297,11 @@ snmpd$(EXEEXT):	${LAGENTOBJS} $(USELIBS) $(AGENTLIB) $
  	$(LINK) $(CFLAGS) -o $@ ${LAGENTOBJS} $(LOCAL_LIBS) ${LDFLAGS} ${OUR_AGENT_LIBS}
  
  

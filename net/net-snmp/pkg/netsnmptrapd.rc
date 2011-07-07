@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: netsnmptrapd.rc,v 1.1 2011/07/07 20:02:02 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/snmptrapd"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1

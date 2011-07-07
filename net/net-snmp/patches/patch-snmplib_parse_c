@@ -1,0 +1,15 @@
+$OpenBSD: patch-snmplib_parse_c,v 1.1 2011/07/07 20:02:02 sthen Exp $
+
+XXX temporarily hack around the problem noted in
+http://permalink.gmane.org/gmane.network.net-snmp.user/34087
+
+--- snmplib/parse.c.orig	Thu Jul  7 08:50:07 2011
++++ snmplib/parse.c	Thu Jul  7 19:52:58 2011
+@@ -3921,6 +3921,7 @@ read_module_internal(const char *name)
+                 return MODULE_LOADED_OK;
+             else if (gMibError == MODULE_SYNTAX_ERROR) 
+                 return MODULE_SYNTAX_ERROR;
++            /* XXX */ return MODULE_LOADED_OK;
+         }
+ 
+     return MODULE_NOT_FOUND;

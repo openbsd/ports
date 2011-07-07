@@ -1,0 +1,9 @@
+$OpenBSD: patch-include_net-snmp_system_openbsd4_h,v 1.1 2011/07/07 20:02:02 sthen Exp $
+--- include/net-snmp/system/openbsd4.h.orig	Wed Jul  6 23:55:04 2011
++++ include/net-snmp/system/openbsd4.h	Wed Jul  6 23:56:50 2011
+@@ -0,0 +1,5 @@
++#include "openbsd.h"
++#define openbsd3 openbsd3
++
++/* kinfo_procs API changed in 4.9-current, pretend to be 5 until release */
++#define openbsd5 openbsd5

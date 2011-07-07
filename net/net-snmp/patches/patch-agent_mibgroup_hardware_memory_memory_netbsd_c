@@ -1,23 +1,10 @@
-$OpenBSD: patch-agent_mibgroup_hardware_memory_memory_netbsd_c,v 1.3 2011/07/06 21:32:57 sthen Exp $
---- agent/mibgroup/hardware/memory/memory_netbsd.c.orig	Mon Mar  6 16:23:52 2006
-+++ agent/mibgroup/hardware/memory/memory_netbsd.c	Fri Jun 13 22:07:29 2008
-@@ -30,18 +30,18 @@ int netsnmp_mem_arch_load( netsnmp_cache *cache, void 
-     long           pagesize;
- 
-     struct uvmexp  uvmexp;
--    int            uvmexp_size  = sizeof(uvmexp);
-+    size_t         uvmexp_size  = sizeof(uvmexp);
-     int            uvmexp_mib[] = { CTL_VM, VM_UVMEXP };
- 
-     struct vmtotal total;
-     size_t         total_size  = sizeof(total);
-     int            total_mib[] = { CTL_VM, VM_METER };
- 
--    long            phys_mem;
--    long            user_mem;
-+    int64_t         phys_mem;
-+    int64_t         user_mem;
+$OpenBSD: patch-agent_mibgroup_hardware_memory_memory_netbsd_c,v 1.4 2011/07/07 20:02:02 sthen Exp $
+--- agent/mibgroup/hardware/memory/memory_netbsd.c.orig	Fri Jul  1 23:35:46 2011
++++ agent/mibgroup/hardware/memory/memory_netbsd.c	Thu Jul  7 00:53:45 2011
+@@ -47,27 +47,26 @@ int netsnmp_mem_arch_load( netsnmp_cache *cache, void 
+     unsigned int    maxbufspace;
      size_t          mem_size  = sizeof(phys_mem);
+     size_t          buf_size  = sizeof(bufspace);
 -    int             phys_mem_mib[] = { CTL_HW, HW_PHYSMEM };
 -    int             user_mem_mib[] = { CTL_HW, HW_USERMEM };
 +    int             phys_mem_mib[] = { CTL_HW, HW_PHYSMEM64 };
@@ -25,12 +12,29 @@ $OpenBSD: patch-agent_mibgroup_hardware_memory_memory_netbsd_c,v 1.3 2011/07/06 
  
      /*
       * Retrieve the memory information from the underlying O/S...
-@@ -50,7 +50,7 @@ int netsnmp_mem_arch_load( netsnmp_cache *cache, void 
-     sysctl(total_mib,    2, &total,    &total_size,    NULL, 0);
-     sysctl(phys_mem_mib, 2, &phys_mem, &mem_size,      NULL, 0);
-     sysctl(user_mem_mib, 2, &user_mem, &mem_size,      NULL, 0);
+      */
+-#if defined(__NetBSD__)
++#if defined(openbsd)
++    sysctl(uvmexp_mib,   2, &uvmexp,   &uvmexp_size,   NULL, 0);
++    sysctl(total_mib,    2, &total,    &total_size,    NULL, 0);
++    sysctl(phys_mem_mib, 2, &phys_mem, &mem_size,      NULL, 0);
++    sysctl(user_mem_mib, 2, &user_mem, &mem_size,      NULL, 0);
++#else
+     sysctlbyname("vm.uvmexp",              &uvmexp, &uvmexp_size, NULL, 0);
+     sysctlbyname("vm.vmmeter",              &total,  &total_size, NULL, 0);
+     sysctlbyname("hw.physmem64",         &phys_mem,    &mem_size, NULL, 0);
+     sysctlbyname("hw.usermem64",         &user_mem,    &mem_size, NULL, 0);
+     sysctlbyname("vm.bufmem",            &bufspace,    &buf_size, NULL, 0);
+     sysctlbyname("vm.bufmem_hiwater", &maxbufspace,    &buf_size, NULL, 0);
+-    pagesize = sysconf(_SC_PAGESIZE);
+-#else  /* do we still need this section ? */
+-    sysctl(uvmexp_mib,   2, &uvmexp,   &uvmexp_size,   NULL, 0);
+-    sysctl(total_mib,    2, &total,    &total_size,    NULL, 0);
+-    sysctl(phys_mem_mib, 2, &phys_mem, &mem_size,      NULL, 0);
+-    sysctl(user_mem_mib, 2, &user_mem, &mem_size,      NULL, 0);
 -    pagesize = uvmexp.pagesize;
-+    pagesize = getpagesize();
+ #endif
++    pagesize = sysconf(_SC_PAGESIZE);
  
      /*
       * ... and save this in a standard form.

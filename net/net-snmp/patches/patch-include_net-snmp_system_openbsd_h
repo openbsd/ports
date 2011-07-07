@@ -1,8 +1,11 @@
-$OpenBSD: patch-include_net-snmp_system_openbsd_h,v 1.4 2010/10/25 22:59:12 sthen Exp $
---- include/net-snmp/system/openbsd.h.orig	Thu Jun 21 15:01:08 2007
-+++ include/net-snmp/system/openbsd.h	Thu Oct 14 19:12:35 2010
-@@ -3,8 +3,6 @@
+$OpenBSD: patch-include_net-snmp_system_openbsd_h,v 1.5 2011/07/07 20:02:02 sthen Exp $
+--- include/net-snmp/system/openbsd.h.orig	Fri Jul  1 23:35:46 2011
++++ include/net-snmp/system/openbsd.h	Thu Jul  7 00:56:08 2011
+@@ -1,10 +1,9 @@
+ #include "netbsd.h"
+ 
  #define netbsd1 netbsd1         /* we're really close to this */
++#define openbsd openbsd
  #define UVM
  
 -#undef MBPOOL_SYMBOL
@@ -10,7 +13,7 @@ $OpenBSD: patch-include_net-snmp_system_openbsd_h,v 1.4 2010/10/25 22:59:12 sthe
  #undef TOTAL_MEMORY_SYMBOL
  
  /* at least OpenBSD/SPARC 3.7 doesn't define this */
-@@ -15,3 +13,9 @@
+@@ -15,3 +14,8 @@
  /* define the extra mib modules that are supported */
  #define NETSNMP_INCLUDE_HOST_RESOURCES
  #define NETSNMP_INCLUDE_IFTABLE_REWRITES
@@ -19,4 +22,3 @@ $OpenBSD: patch-include_net-snmp_system_openbsd_h,v 1.4 2010/10/25 22:59:12 sthe
 +#define INP_NEXT_SYMBOL inp_next
 +#undef INP_PREV_SYMBOL
 +#define INP_PREV_SYMBOL inp_prev
-+

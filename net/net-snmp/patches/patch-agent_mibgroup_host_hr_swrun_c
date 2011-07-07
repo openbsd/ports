@@ -1,63 +1,61 @@
-$OpenBSD: patch-agent_mibgroup_host_hr_swrun_c,v 1.3 2011/07/06 21:32:57 sthen Exp $
---- agent/mibgroup/host/hr_swrun.c.orig	Thu Jul 29 15:58:47 2010
-+++ agent/mibgroup/host/hr_swrun.c	Wed Jul  6 16:53:05 2011
-@@ -614,6 +614,9 @@ var_hrswrun(struct variable * vp,
- #elif HAVE_KVM_GETPROCS
-     #if defined(freebsd5) && __FreeBSD_version >= 500014
+$OpenBSD: patch-agent_mibgroup_host_hr_swrun_c,v 1.4 2011/07/07 20:02:02 sthen Exp $
+--- agent/mibgroup/host/hr_swrun.c.orig	Fri Jul  1 23:35:46 2011
++++ agent/mibgroup/host/hr_swrun.c	Wed Jul  6 23:45:48 2011
+@@ -700,6 +700,8 @@ var_hrswrun(struct variable * vp,
          strcpy(string, proc_table[LowProcIndex].ki_comm);
-+    #elif defined(openbsd) /* XXX check version */
-+	/* p_comm[MAXCOMLEN+1] should fit in string[1024] */
+     #elif defined(dragonfly) && __DragonFly_version >= 190000
+         strcpy(string, proc_table[LowProcIndex].kp_comm);
++    #elif defined(openbsd5)
 +        strcpy(string, proc_table[LowProcIndex].p_comm);
      #else
          strcpy(string, proc_table[LowProcIndex].kp_proc.p_comm);
      #endif
-@@ -737,6 +740,9 @@ var_hrswrun(struct variable * vp,
- #elif HAVE_KVM_GETPROCS
-     #if defined(freebsd5) && __FreeBSD_version >= 500014
+@@ -822,6 +824,8 @@ var_hrswrun(struct variable * vp,
          strcpy(string, proc_table[LowProcIndex].ki_comm);
-+    #elif defined(openbsd) /* XXX check version */
-+        /* Should be path, but this is not available, just use argv[0] again */
+     #elif defined(dragonfly) && __DragonFly_version >= 190000
+         strcpy(string, proc_table[LowProcIndex].kp_comm);
++    #elif defined(openbsd5)
 +        strcpy(string, proc_table[LowProcIndex].p_comm);
      #else
          strcpy(string, proc_table[LowProcIndex].kp_proc.p_comm);
      #endif
-@@ -942,6 +948,11 @@ var_hrswrun(struct variable * vp,
+@@ -1008,6 +1012,11 @@ var_hrswrun(struct variable * vp,
  		long_return = 2;/* operatingSystem */
  	} else
  	    long_return = 4;	/* application */
-+    #elif defined(openbsd) /* XXX check version */
++    #elif defined(openbsd5)
 +        if (proc_table[LowProcIndex].p_flag & P_SYSTEM)
 +	    long_return = 2;	/* operatingSystem */
 +	else
 +	    long_return = 4;	/* application */
      #else
-         if (proc_table[LowProcIndex].kp_proc.p_flag & P_SYSTEM)
- 	    long_return = 2;	/* operatingSystem */
-@@ -984,6 +995,8 @@ var_hrswrun(struct variable * vp,
- #if HAVE_KVM_GETPROCS
-     #if defined(freebsd5) && __FreeBSD_version >= 500014
+       #if defined(dragonfly) && __DragonFly_version >= 190000
+         if (proc_table[LowProcIndex].kp_flags & P_SYSTEM)
+@@ -1058,6 +1067,8 @@ var_hrswrun(struct variable * vp,
          switch (proc_table[LowProcIndex].ki_stat) {
-+    #elif defined(openbsd) /* XXX check version */
+     #elif defined(dragonfly) && __DragonFly_version >= 190000
+         switch (proc_table[LowProcIndex].kp_stat) {
++    #elif defined(openbsd5)
 +        switch (proc_table[LowProcIndex].p_stat) {
      #else
          switch (proc_table[LowProcIndex].kp_proc.p_stat) {
      #endif
-@@ -1091,6 +1104,10 @@ var_hrswrun(struct variable * vp,
-         long_return = 0;
-     #elif defined(freebsd5)
-         long_return = proc_table[LowProcIndex].ki_runtime / 100000;
-+    #elif defined(openbsd) /* XXX check version */
+@@ -1163,6 +1174,10 @@ var_hrswrun(struct variable * vp,
+         long_return = proc_table[LowProcIndex].kp_lwp.kl_uticks +
+             proc_table[LowProcIndex].kp_lwp.kl_sticks +
+             proc_table[LowProcIndex].kp_lwp.kl_iticks;
++    #elif defined(openbsd5)
 +        long_return = proc_table[LowProcIndex].p_uticks +
 +            proc_table[LowProcIndex].p_sticks +
 +            proc_table[LowProcIndex].p_iticks;
-     #else
-         long_return = proc_table[LowProcIndex].kp_proc.p_uticks +
-             proc_table[LowProcIndex].kp_proc.p_sticks +
-@@ -1211,6 +1228,11 @@ var_hrswrun(struct variable * vp,
+     #elif defined(dragonfly)
+         long_return = proc_table[LowProcIndex].kp_eproc.e_uticks +
+             proc_table[LowProcIndex].kp_eproc.e_sticks +
+@@ -1284,6 +1299,11 @@ var_hrswrun(struct variable * vp,
      #else
              proc_table[LowProcIndex].kp_eproc.e_vm.vm_map.size / 1024;
      #endif
-+  #elif defined(openbsd) /* XXX check version */
++  #elif defined(openbsd5)
 +        long_return = proc_table[LowProcIndex].p_vm_tsize +
 +            proc_table[LowProcIndex].p_vm_ssize +
 +            proc_table[LowProcIndex].p_vm_dsize;
@@ -65,11 +63,11 @@ $OpenBSD: patch-agent_mibgroup_host_hr_swrun_c,v 1.3 2011/07/06 21:32:57 sthen E
    #else
          long_return = proc_table[LowProcIndex].kp_eproc.e_vm.vm_tsize +
              proc_table[LowProcIndex].kp_eproc.e_vm.vm_ssize +
-@@ -1474,7 +1496,11 @@ Init_HR_SWRun(void)
+@@ -1546,7 +1566,11 @@ Init_HR_SWRun(void)
              nproc = 0;
              return;
          }
-+  #if defined(openbsd) /* XXX check version */
++  #if defined(openbsd5)
 +        proc_table = kvm_getprocs(kd, KERN_PROC_ALL, 0, sizeof (struct kinfo_proc), &nproc);
 +  #else
          proc_table = kvm_getprocs(kd, KERN_PROC_ALL, 0, &nproc);
@@ -77,11 +75,11 @@ $OpenBSD: patch-agent_mibgroup_host_hr_swrun_c,v 1.3 2011/07/06 21:32:57 sthen E
      }
  #else
  
-@@ -1528,6 +1554,9 @@ Get_Next_HR_SWRun(void)
-     #if defined(freebsd5) && __FreeBSD_version >= 500014
-         if (proc_table[current_proc_entry].ki_stat != 0)
-             return proc_table[current_proc_entry++].ki_pid;
-+    #elif defined(openbsd) /* XXX check version */
+@@ -1606,6 +1630,9 @@ Get_Next_HR_SWRun(void)
+     #elif defined(dragonfly) && __DragonFly_version >= 190000
+         if (proc_table[current_proc_entry].kp_stat != 0)
+             return proc_table[current_proc_entry++].kp_pid;
++    #elif defined(openbsd5)
 +        if (proc_table[current_proc_entry].p_stat != 0)
 +            return proc_table[current_proc_entry++].p_pid;
      #else

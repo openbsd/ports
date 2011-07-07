@@ -1,20 +1,19 @@
-$OpenBSD: patch-agent_mibgroup_ucd-snmp_dlmod_c,v 1.4 2010/10/25 22:59:12 sthen Exp $
---- agent/mibgroup/ucd-snmp/dlmod.c.orig	Wed Jun 16 22:34:42 2010
-+++ agent/mibgroup/ucd-snmp/dlmod.c	Wed Oct  6 23:25:17 2010
-@@ -181,7 +181,12 @@ dlmod_load_module(struct dlmod *dlm)
-         if (dlm->status == DLMOD_ERROR)
+$OpenBSD: patch-agent_mibgroup_ucd-snmp_dlmod_c,v 1.5 2011/07/07 20:02:02 sthen Exp $
+--- agent/mibgroup/ucd-snmp/dlmod.c.orig	Fri Jul  1 23:35:46 2011
++++ agent/mibgroup/ucd-snmp/dlmod.c	Wed Jul  6 23:18:52 2011
+@@ -129,7 +129,11 @@ dlmod_load_module(struct dlmod *dlm)
              return;
      }
+     {
 +#ifdef __ELF__
-     snprintf(sym_init, sizeof(sym_init), "init_%s", dlm->name);
+         char sym_init[64 + sizeof("init_")];
 +#else
-+    snprintf(sym_init, sizeof(sym_init), "_init_%s", dlm->name);
++        char sym_init[64 + sizeof("_init_")];
 +#endif
-+
-     dl_init = dlsym(dlm->handle, sym_init);
-     if (dl_init == NULL) {
-         dlclose(dlm->handle);
-@@ -205,7 +210,11 @@ dlmod_unload_module(struct dlmod *dlm)
+         int  (*dl_init) (void);
+ 
+         snprintf(sym_init, sizeof(sym_init), "init_%s", dlm->name);
+@@ -157,7 +161,11 @@ dlmod_unload_module(struct dlmod *dlm)
      if (!dlm || dlm->status != DLMOD_LOADED)
          return;
  
@@ -24,5 +23,5 @@ $OpenBSD: patch-agent_mibgroup_ucd-snmp_dlmod_c,v 1.4 2010/10/25 22:59:12 sthen 
 +    snprintf(sym_deinit, sizeof(sym_deinit), "_deinit_%s", dlm->name);
 +#endif
      dl_deinit = dlsym(dlm->handle, sym_deinit);
-     if (dl_deinit) {
-         DEBUGMSGTL(("dlmod", "Calling deinit_%s()\n", dlm->name));
+     if (!dl_deinit) {
+         snprintf(sym_deinit, sizeof(sym_deinit), "shutdown_%s", dlm->name);

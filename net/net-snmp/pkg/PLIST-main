@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/05/11 12:03:19 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2011/07/07 20:02:02 sthen Exp $
 @pkgpath net/net-snmp
 @extraunexec rm -rf /var/net-snmp/*
 %%SHARED%%
@@ -89,7 +89,6 @@ include/net-snmp/library/asn1.h
 include/net-snmp/library/callback.h
 include/net-snmp/library/cert_util.h
 include/net-snmp/library/check_varbind.h
-include/net-snmp/library/cmu_compat.h
 include/net-snmp/library/container.h
 include/net-snmp/library/container_binary_array.h
 include/net-snmp/library/container_iterator.h
@@ -157,6 +156,7 @@ include/net-snmp/machine/
 include/net-snmp/machine/generic.h
 include/net-snmp/mib_api.h
 include/net-snmp/net-snmp-config.h
+include/net-snmp/net-snmp-features.h
 include/net-snmp/net-snmp-includes.h
 include/net-snmp/output_api.h
 include/net-snmp/pdu_api.h
@@ -190,6 +190,8 @@ include/net-snmp/system/mingw32.h
 include/net-snmp/system/mips.h
 include/net-snmp/system/netbsd.h
 include/net-snmp/system/openbsd.h
+include/net-snmp/system/openbsd4.h
+include/net-snmp/system/openbsd5.h
 include/net-snmp/system/osf5.h
 include/net-snmp/system/solaris.h
 include/net-snmp/system/solaris2.3.h
@@ -332,7 +334,6 @@ lib/libnetsnmptrapd.la
 @man man/man3/unregister_all_config_handlers.3
 @man man/man3/unregister_app_config_handler.3
 @man man/man3/unregister_config_handler.3
-@man man/man3p/NetSNMP::TrapReceiver.3p
 @man man/man5/mib2c.conf.5
 @man man/man5/snmp.conf.5
 @man man/man5/snmp_config.5
@@ -464,6 +465,7 @@ share/snmp/mibs/IF-MIB.txt
 share/snmp/mibs/INET-ADDRESS-MIB.txt
 share/snmp/mibs/IP-FORWARD-MIB.txt
 share/snmp/mibs/IP-MIB.txt
+share/snmp/mibs/IPV6-FLOW-LABEL-MIB.txt
 share/snmp/mibs/IPV6-ICMP-MIB.txt
 share/snmp/mibs/IPV6-MIB.txt
 share/snmp/mibs/IPV6-TC.txt
@@ -502,14 +504,13 @@ share/snmp/mibs/SNMPv2-TC.txt
 share/snmp/mibs/SNMPv2-TM.txt
 share/snmp/mibs/TCP-MIB.txt
 share/snmp/mibs/TRANSPORT-ADDRESS-MIB.txt
+share/snmp/mibs/TUNNEL-MIB.txt
 share/snmp/mibs/UCD-DEMO-MIB.txt
 share/snmp/mibs/UCD-DISKIO-MIB.txt
 share/snmp/mibs/UCD-DLMOD-MIB.txt
 share/snmp/mibs/UCD-IPFWACC-MIB.txt
 share/snmp/mibs/UCD-SNMP-MIB.txt
 share/snmp/mibs/UDP-MIB.txt
-share/snmp/snmp_perl.pl
-share/snmp/snmp_perl_trapd.pl
 share/snmp/snmpconf-data/
 share/snmp/snmpconf-data/snmp-data/
 share/snmp/snmpconf-data/snmp-data/authopts
@@ -536,3 +537,5 @@ share/snmp/snmpconf-data/snmptrapd-data/traphandle
 @sample /var/net-snmp/
 @extra ${SYSCONFDIR}/snmp/snmp.conf
 @extra ${SYSCONFDIR}/snmp/snmptrapd.conf
+@rcscript ${RCDIR}/netsnmpd
+@rcscript ${RCDIR}/netsnmptrapd

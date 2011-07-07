@@ -1,6 +1,6 @@
-$OpenBSD: patch-snmplib_Makefile_in,v 1.5 2010/10/25 22:59:12 sthen Exp $
---- snmplib/Makefile.in.orig	Thu May 27 05:06:32 2010
-+++ snmplib/Makefile.in	Wed Oct  6 23:28:02 2010
+$OpenBSD: patch-snmplib_Makefile_in,v 1.6 2011/07/07 20:02:02 sthen Exp $
+--- snmplib/Makefile.in.orig	Fri Jul  1 23:35:46 2011
++++ snmplib/Makefile.in	Wed Jul  6 23:15:53 2011
 @@ -133,7 +133,7 @@ INSTALLUCDHEADERS= asn1.h \
  	transform_oids.h
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-snmplib_Makefile_in,v 1.5 2010/10/25 22:59:12 sthen Exp $
  INSTALLUCDLIBS=libsnmp.$(LIB_EXTENSION)$(LIB_VERSION)
  
  #
-@@ -199,7 +199,7 @@ CPPFLAGS = $(TOP_INCLUDES) -I. 	$(SNMPLIB_INCLUDES) @C
+@@ -229,7 +229,7 @@ CPPFLAGS = $(TOP_INCLUDES) -I. 	$(SNMPLIB_INCLUDES) @C
  all: standardall
  
  # how to build the libraries.

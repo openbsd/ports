@@ -1,23 +1,28 @@
-# $OpenBSD: Makefile,v 1.55 2011/07/06 22:02:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.56 2011/07/07 20:02:02 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-perl=	SNMP modules for Perl
 COMMENT-tkmib=	graphical SNMP MIB browser
 
-V=		5.6.1.1
+V=		5.7
 DISTNAME=	net-snmp-$V
+
+MULTI_PACKAGES=	-main -perl -tkmib
 PKGNAME-main=	${DISTNAME}
 PKGNAME-perl=	p5-SNMP-$V
 PKGNAME-tkmib=	net-snmp-tkmib-$V
-SHARED_LIBS=	netsnmp		11.0	\
-		netsnmpagent	11.0	\
-		netsnmphelpers	11.0	\
-		netsnmpmibs	11.0	\
-		netsnmptrapd	11.0
+
+LIBV=		12.0
+.for i in netsnmp netsnmpagent netsnmphelpers netsnmpmibs netsnmptrapd
+SHARED_LIBS +=	$i ${LIBV}
+.endfor
+
 CATEGORIES=	net perl5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=net-snmp/}
 
 HOMEPAGE=	http://www.net-snmp.org/
+
+MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,17 +30,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB-main=		c crypto kvm m perl pthread util wrap
+WANTLIB-main=		c crypto kvm m perl util wrap
+WANTLIB-perl=		crypto m netsnmp netsnmpagent netsnmptrapd netsnmpmibs
 
-MULTI_PACKAGES=		-main -perl -tkmib
-
-WANTLIB-perl=		crypto netsnmp netsnmpagent netsnmptrapd netsnmpmibs
 LIB_DEPENDS-perl=	net/net-snmp,-main
-
 RUN_DEPENDS-tkmib=	net/net-snmp,-perl \
 			x11/p5-Tk
 
-NET_SNMP_MIB_LIST=	host disman/event-mib smux mibII/mta_sendmail
+NET_SNMP_MIB_LIST=	smux mibII/mta_sendmail
 
 # set the default mib search list:
 # - net-snmp default mibs (include/net-snmp/net-snmp-config.h.in)
@@ -48,7 +50,7 @@ USE_GROFF=	Yes
 USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=  autoconf
-AUTOCONF_VERSION= 2.63
+AUTOCONF_VERSION= 2.68
 CONFIGURE_ARGS=   ${CONFIGURE_SHARED} \
 	--enable-ipv6 \
 	--enable-mfd-rewrites \
@@ -62,7 +64,6 @@ CONFIGURE_ARGS=   ${CONFIGURE_SHARED} \
 	--with-sys-location="somewhere" \
 	--with-logfile="/var/log/snmpd" \
 	--with-persistent-directory="/var/net-snmp"
-
 REGRESS_TARGET=	test
 
 pre-configure:
@@ -80,7 +81,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/FAQ ${PREFIX}/share/doc/net-snmp
 	${INSTALL_DATA} ${WRKSRC}/AGENT.txt ${PREFIX}/share/doc/net-snmp
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/net-snmp
-	${INSTALL_DATA} ${WRKSRC}/EXAMPLE.conf \
+	${INSTALL_DATA} ${WRKBUILD}/EXAMPLE.conf \
 	    ${PREFIX}/share/examples/net-snmp
 
 .include <bsd.port.mk>
