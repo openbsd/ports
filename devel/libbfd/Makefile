@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/23 17:55:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/07 17:31:14 jasper Exp $
 
 COMMENT=	GNU Binary File Descriptor library
 
 VER=		2.20
 DISTNAME=	binutils-${VER}
 PKGNAME=	libbfd-${VER}
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.gnu.org/software/binutils/

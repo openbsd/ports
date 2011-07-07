@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/07/07 01:14:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/07/07 17:31:14 jasper Exp $
+@conflict libbfd-*
 @bin bin/egdb
 @bin bin/egdbtui
 include/ansidecl.h

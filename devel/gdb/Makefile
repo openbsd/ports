@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/07/07 01:14:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/07/07 17:31:14 jasper Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
@@ -6,7 +6,7 @@ COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-7.2
-REVISION=	0
+REVISION=	1
 
 MASTER_SITES=	${MASTER_SITE_GNU:=gdb/}
 
