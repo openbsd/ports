@@ -1,0 +1,21 @@
+$OpenBSD: patch-Makefile_in,v 1.1 2011/07/07 14:45:22 jasper Exp $
+--- Makefile.in.orig	Thu Jul  7 15:52:10 2011
++++ Makefile.in	Thu Jul  7 15:52:45 2011
+@@ -813,17 +813,6 @@ install-data-local:
+ 	for f in $$filelist ; do \
+ 	  $(INSTALL_DATA) $(top_srcdir)/doc/$$f $(DESTDIR)$(povdocdir)/$$f ; \
+ 	done
+-	@echo "Copying user configuration and INI files..."; \
+-	$(mkinstalldirs) $(povconfuser); \
+-	filelist='povray.conf povray.ini'; \
+-	for f in $$filelist ; do \
+-	  if test -e $(povconfuser)/$$f; then \
+-	    echo "Creating backup of $(povconfuser)/$$f"; \
+-	    mv -f $(povconfuser)/$$f $(povconfuser)/$$f.bak; \
+-	  fi; \
+-	done; \
+-	$(INSTALL_DATA) $(top_srcdir)/povray.conf $(povconfuser)/povray.conf ; \
+-	$(INSTALL_DATA) $(top_builddir)/povray.ini $(povconfuser)/povray.ini
+ 
+ # For 'make uninstall' we remove the whole POV-Ray data directory.
+ # We have to use uninstall-local and not uninstall-data-local.

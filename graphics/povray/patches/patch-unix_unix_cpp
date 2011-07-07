@@ -1,0 +1,34 @@
+$OpenBSD: patch-unix_unix_cpp,v 1.1 2011/07/07 14:45:22 jasper Exp $
+
+Redo pre-processor block to prevent:
+unix.cpp:2543:8: error: macro names must be identifiers
+
+--- unix/unix.cpp.orig	Tue Aug  3 01:14:17 2004
++++ unix/unix.cpp	Thu Jul  7 15:38:35 2011
+@@ -2339,12 +2339,13 @@ static bool unix_svga_mode (void)
+ static int unix_get_command_line (int *argc, char **argv[])
+ {
+   is_using_xwin = unix_xwin_mode(*argc, *argv);
+-  if(is_using_xwin)
+-#ifndef X_DISPLAY_MISSING
+-    XWIN_init_povray(argc, argv);  // this changes the command-line args
++  if(is_using_xwin) {
++#if X_DISPLAY_MISSING
++    ; // do nothing
+ #else
+-    ;  // do nothing
++    XWIN_init_povray(argc, argv);  // this changes the command-line args
+ #endif
++  }
+   else
+   {
+     is_using_svga = unix_svga_mode();
+@@ -2542,7 +2543,7 @@ int POV_Std_Test_Abort(void)
+ *
+ ******************************************************************************/
+ 
+-#ifdef UNDERFLOW
++#if 0
+ #ifdef exception
+ 
+ int matherr(struct exception *x)

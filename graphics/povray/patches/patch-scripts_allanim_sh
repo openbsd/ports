@@ -1,0 +1,31 @@
+$OpenBSD: patch-scripts_allanim_sh,v 1.1 2011/07/07 14:45:22 jasper Exp $
+--- scripts/allanim.sh.orig	Thu Jul  7 16:34:17 2011
++++ scripts/allanim.sh	Thu Jul  7 16:35:51 2011
+@@ -27,16 +27,16 @@
+ #SCENE_DIR=.
+ 
+ VERSION=3.6
+-VER_DIR=povray-$VERSION
+-DEFAULT_DIR=/usr/local
+-SYSCONFDIR=$DEFAULT_DIR/etc
++VER_DIR=povray
++DEFAULT_DIR=${PREFIX}
++SYSCONFDIR=${SYSCONFDIR}
+ 
+ install_dir()
+ {
+   if [ -z "$POVINI" ] ; then
+     test -f "$SYSCONFDIR/povray.ini" && POVINI="$SYSCONFDIR/povray.ini"
+     test -f "$HOME/.povrayrc" && POVINI="$HOME/.povrayrc"
+-    test -f "$SYSCONFDIR/povray/$VERSION/povray.ini" && POVINI="$SYSCONFDIR/povray/$VERSION/povray.ini"
++    test -f "$SYSCONFDIR/povray/$VERSION/povray.ini" && POVINI="$SYSCONFDIR/povray/povray.ini"
+     test -f "$HOME/.povray/$VERSION/povray.ini" && POVINI="$HOME/.povray/$VERSION/povray.ini"
+   fi
+ 
+@@ -213,4 +213,4 @@ echo "</table>
+ fi
+ 
+ test -f "bounce.txt" && rm -f "bounce.txt"
+-test -f "lifedata.inc" && rm -f "lifedata.inc"
+\ No newline at end of file
++test -f "lifedata.inc" && rm -f "lifedata.inc"

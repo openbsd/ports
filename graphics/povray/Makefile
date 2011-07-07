@@ -1,75 +1,55 @@
-# $OpenBSD: Makefile,v 1.18 2011/07/07 13:45:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/07/07 14:45:22 jasper Exp $
 
 COMMENT=	3D image rendering package
 
-DISTNAME=	povray-3.1g
-REVISION =	1
+DISTNAME=	povray-3.6.1
 CATEGORIES=	graphics
 
-HOMEPAGE=	http://www.povray.org
+HOMEPAGE=	http://www.povray.org/
 
 PERMIT_PACKAGE_CDROM=	Perhaps we qualify for commercial distribution
 PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Our CDs are not too expensive, see povlegal.doc but I think we should ask them anyway
+PERMIT_DISTFILES_CDROM= Our CDs are not too expensive, see povlegal.doc but I think we should ask them anyway
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=		c m z png>=2
 
-MASTER_SITES=	ftp://mirror.nucba.ac.jp/mirror/povray/Old-Versions/Official-3.1g/Unix/ \
-		ftp://ftp.povray.org/pub/povray/Old-Versions/Official-3.1g/Unix/
+WANTLIB += ICE SM X11 Xpm c jpeg m stdc++ tiff z
 
-DISTFILES=	povuni_s.tgz povuni_d.tgz
-DIST_SUBDIR=	${DISTNAME}
-USE_GROFF =	Yes
+MASTER_SITES=		http://www.povray.org/ftp/pub/povray/Official/Unix/ \
+			ftp://ftp.povray.org/pub/povray/Official/Unix/
+EXTRACT_SUFX=		.tar.bz2
+	
+USE_LIBTOOL=		yes
 
-LIB_DEPENDS=	graphics/png
+LIB_DEPENDS=		graphics/jpeg \
+			graphics/png \
+			graphics/tiff
 
-FLAVORS=	no_x11
-FLAVOR?=
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--with-x \
+			--enable-watch-cursor \
+			--disable-optimiz \
+			--x-includes="${X11BASE}/include" \
+			--includedir=${LOCALBASE}
+CONFIGURE_ENV+= 	COMPILED_BY="OpenBSD Ports <ports@openbsd.org>" \
+			CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \
+			CXXFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -lm"
 
-MAKE_FILE=	makefile
-WRKDIST=	${WRKDIR}/povray31/source/unix
+MAKE_FLAGS+=		povconfdir=${PREFIX}/share/examples/povray/ \
+			povdocdir=${PREFIX}/share/doc/povray/ \
+			povlibdir=${PREFIX}/share/povray/
 
-.if !${FLAVOR:L:Mno_x11}
-ALL_TARGET=	newxwin
-WANTLIB+=	X11 pthread-stubs xcb
-.endif
-ALL_TARGET+=	newunix
+NO_REGRESS=		Yes
 
-pre-configure:
-	@perl -i -p -e "s#/usr/local/lib#${PREFIX}/share#" ${WRKDIR}/povray31/povray.ini
+post-extract:
+	cd ${WRKSRC} && find . -type f -name \*.orig | xargs rm
 
-NO_REGRESS=	Yes
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKDIST}/povray ${PREFIX}/bin
-.if !${FLAVOR:L:Mno_x11}
-	${INSTALL_PROGRAM} ${WRKDIST}/x-povray ${PREFIX}/bin
-.endif
-	${INSTALL_MAN} ${WRKDIST}/povray.1 ${PREFIX}/man/man1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/povray31
-	cp -R ${WRKDIR}/povray31/allscene ${WRKDIR}/povray31/include \
-		${WRKDIR}/povray31/scenes ${PREFIX}/share/povray31
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/povray31
-	find ${PREFIX}/share/povray31 -type d | xargs chmod ${DIRMODE}
-	find ${PREFIX}/share/povray31 -type f | xargs chmod ${SHAREMODE}
-	${INSTALL_DATA} ${WRKDIR}/povray31/allscene.ini \
-		${WRKDIR}/povray31/allscene.sh ${WRKDIR}/povray31/pngflc.ini \
-		${WRKDIR}/povray31/pngfli.ini ${WRKDIR}/povray31/povray.ini \
-		${WRKDIR}/povray31/rerunpov.sh ${WRKDIR}/povray31/res.ini \
-		${WRKDIR}/povray31/res120.ini ${WRKDIR}/povray31/res1k.ini \
-		${WRKDIR}/povray31/res320.ini ${WRKDIR}/povray31/res640.ini \
-		${WRKDIR}/povray31/res800.ini ${WRKDIR}/povray31/runpov.sh \
-		${WRKDIR}/povray31/shapes.pov ${WRKDIR}/povray31/slow.ini \
-		${WRKDIR}/povray31/tgaflc.ini ${WRKDIR}/povray31/tgafli.ini \
-		${WRKDIR}/povray31/xpovicon.xpm ${WRKDIR}/povray31/zipflc.ini \
-		${WRKDIR}/povray31/zipfli.ini ${PREFIX}/share/povray31
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/povray31
-	${INSTALL_DATA} ${WRKDIR}/povray31/README.unix \
-		${WRKDIR}/povray31/betanews.txt ${WRKDIR}/povray31/gamma.gif \
-		${WRKDIR}/povray31/gamma.gif.txt \
-		${WRKDIR}/povray31/povlegal.doc \
-		${WRKDIR}/povray31/povuser.txt \
-		${WRKDIR}/povray31/povwhere.get\
-		${WRKDIR}/povray31/revision.doc ${PREFIX}/share/doc/povray31
+post-configure:
+	perl -pi -e 's,%INSTALLDIR%,${PREFIX}/share/povray/,g' \
+		${WRKSRC}/povray.conf
+.for f in povray.1 scripts/allanim.sh scripts/allscene.sh scripts/portfolio.sh
+	${SUBST_CMD} ${WRKSRC}/$f
+.endfor
 
 .include <bsd.port.mk>

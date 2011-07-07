@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_optout_h,v 1.1 2011/07/07 14:45:22 jasper Exp $
+--- source/optout.h.orig	Thu Jul  7 15:21:47 2011
++++ source/optout.h	Thu Jul  7 15:22:06 2011
+@@ -57,7 +57,7 @@ BEGIN_POV_NAMESPACE
+ #define DISTRIBUTION_MESSAGE_1 "This is an unofficial version compiled by:"
+ #ifndef DISTRIBUTION_MESSAGE_2
+ #error You must complete the following DISTRIBUTION_MESSAGE_2 definition
+-#define DISTRIBUTION_MESSAGE_2 " FILL IN NAME HERE........................."
++#define DISTRIBUTION_MESSAGE_2 "  The OpenBSD ports team <ports@openbsd.org>."
+ #endif
+ #define DISTRIBUTION_MESSAGE_3 " The POV-Ray Team(tm) is not responsible for supporting this version."
+ 

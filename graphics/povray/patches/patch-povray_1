@@ -1,0 +1,30 @@
+$OpenBSD: patch-povray_1,v 1.1 2011/07/07 14:45:22 jasper Exp $
+--- povray.1.orig	Tue Aug  3 01:16:20 2004
++++ povray.1	Thu Jul  7 16:32:45 2011
+@@ -27,7 +27,7 @@ its scene description language (a.k.a. \fBPOV\-Ray\fP 
+ or for a better explanation of the meaning of the
+ command\-line and INI file options, please consult the documentation
+ that should accompany all versions of \fBPOV\-Ray\fP.  The documentation
+-is installed in PREFIX/share/doc/povray-3.6, where PREFIX is /usr/local
++is installed in PREFIX/share/doc/povray, where PREFIX is ${PREFIX}
+ by default, or a path specified when configuring the source package for
+ compilation and installation.
+ .LP
+@@ -356,7 +356,7 @@ directory to override the individual setting in
+ Library_Path settings, which gives the location for the standard include
+ files, first in the environment variable \fI$POVINI\fP, then in
+ \fI./povray.ini\fP, then in \fI$HOME/.povray/3.6/povray.ini\fP, then in
+-\fIPREFIX/etc/povray/3.6/povray.ini\fP. The PREFIX directory can be changed
++\fIPREFIX${SYSCONFDIR}/povray/povray.ini\fP. The PREFIX directory can be changed
+ at compile\-time using the \-\-prefix option of the configure script.
+ For backward compatibility with \fBPOV\-Ray\fP version 3.5 and earlier,
+ the \fI$HOME/.povrayrc\fP and \fI$PREFIX/etc/povray.ini\fP files are also
+@@ -366,7 +366,7 @@ Since version 3.5 \fBPOV\-Ray\fP features an I/O Restr
+ I/O Restrictions attempt to at least partially protect a machine running
+ \fBPOV-Ray\fP from having files read or written outside of a given set
+ of directories. The settings are defined in two \fIconfiguration files\fP,
+-a system-level \fIPREFIX/etc/povray/3.6/povray.conf\fP file and an user-level
++a system-level \fIPREFIX${SYSCONFDIR}/povray/povray.conf\fP file and an user-level
+ \fI$HOME/.povray/3.6/povray.conf\fP file with more restrictive settings.
+ In \fBPOV-Ray\fP 3.6 the format of these configuration files has changed,
+ and no backward compatibility is retained with the configuration files

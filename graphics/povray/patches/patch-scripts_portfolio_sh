@@ -1,0 +1,24 @@
+$OpenBSD: patch-scripts_portfolio_sh,v 1.1 2011/07/07 14:45:22 jasper Exp $
+--- scripts/portfolio.sh.orig	Thu Jul  7 16:34:26 2011
++++ scripts/portfolio.sh	Thu Jul  7 16:35:58 2011
+@@ -26,16 +26,16 @@
+ #SCENE_DIR=.
+ 
+ VERSION=3.6
+-VER_DIR=povray-$VERSION
+-DEFAULT_DIR=/usr/local
+-SYSCONFDIR=$DEFAULT_DIR/etc
++VER_DIR=povray
++DEFAULT_DIR=${PREFIX}
++SYSCONFDIR=${SYSCONFDIR}
+ 
+ install_dir()
+ {
+   if [ -z "$POVINI" ] ; then
+     test -f "$SYSCONFDIR/povray.ini" && POVINI="$SYSCONFDIR/povray.ini"
+     test -f "$HOME/.povrayrc" && POVINI="$HOME/.povrayrc"
+-    test -f "$SYSCONFDIR/povray/$VERSION/povray.ini" && POVINI="$SYSCONFDIR/povray/$VERSION/povray.ini"
++    test -f "$SYSCONFDIR/povray/$VERSION/povray.ini" && POVINI="$SYSCONFDIR/povray/povray.ini"
+     test -f "$HOME/.povray/$VERSION/povray.ini" && POVINI="$HOME/.povray/$VERSION/povray.ini"
+   fi
+ 
