@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_app_qgisapp_cpp,v 1.1 2011/07/07 20:34:27 landry Exp $
+Fix paths to docs
+--- src/app/qgisapp.cpp.orig	Sun Jun  5 13:59:48 2011
++++ src/app/qgisapp.cpp	Thu Jun 30 08:57:21 2011
+@@ -854,7 +854,7 @@ void QgisApp::createActions()
+   mActionQgisHomePage->setShortcut( QString() );
+ #endif
+ 
+-  mActionHelpContents->setEnabled( QFileInfo( QgsApplication::pkgDataPath() + "/doc/index.html" ).exists() );
++  mActionHelpContents->setEnabled( QFileInfo( QgsApplication::pkgDataPath() + "/../doc/qgis/index.html" ).exists() );
+ 
+   connect( mActionHelpContents, SIGNAL( triggered() ), this, SLOT( helpContents() ) );
+   connect( mActionHelpAPI, SIGNAL( triggered() ), this, SLOT( apiDocumentation() ) );
+@@ -4991,7 +4991,7 @@ void QgisApp::helpContents()
+ 
+ void QgisApp::apiDocumentation()
+ {
+-  if ( QFileInfo( QgsApplication::pkgDataPath() + "/doc/api/index.html" ).exists() )
++  if ( QFileInfo( QgsApplication::pkgDataPath() + "/../doc/qgis/api/index.html" ).exists() )
+   {
+     openURL( "api/index.html" );
+   }
+@@ -5011,7 +5011,7 @@ void QgisApp::openURL( QString url, bool useQgisDocDir
+   // open help in user browser
+   if ( useQgisDocDirectory )
+   {
+-    url = "file://" + QgsApplication::pkgDataPath() + "/doc/" + url;
++    url = "file://" + QgsApplication::pkgDataPath() + "/../doc/qgis/" + url;
+   }
+ #ifdef Q_OS_MACX
+   /* Use Mac OS X Launch Services which uses the user's default browser

@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/12/08 09:07:48 landry Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/07/07 20:34:27 landry Exp $
 %%SHARED%%
 @bin bin/qgis
-@bin bin/qgis_help
 @bin bin/qgis_mapserv.fcgi
 include/qgis/
 include/qgis/characterwidget.h
@@ -11,6 +10,7 @@ include/qgis/qgis.h
 include/qgis/qgisgui.h
 include/qgis/qgisinterface.h
 include/qgis/qgisplugin.h
+include/qgis/qgsaddremoveitemcommand.h
 include/qgis/qgsapplication.h
 include/qgis/qgsattributeaction.h
 include/qgis/qgsattributeeditor.h
@@ -51,11 +51,13 @@ include/qgis/qgsdataprovider.h
 include/qgis/qgsdatasourceuri.h
 include/qgis/qgsdetaileditemdelegate.h
 include/qgis/qgsdetaileditemwidget.h
+include/qgis/qgsdiagramrendererv2.h
 include/qgis/qgsdistancearea.h
 include/qgis/qgsencodingfiledialog.h
 include/qgis/qgsexception.h
 include/qgis/qgsfeature.h
 include/qgis/qgsfield.h
+include/qgis/qgsfieldvalidator.h
 include/qgis/qgsfiledropedit.h
 include/qgis/qgsfillsymbollayerv2.h
 include/qgis/qgsformannotationitem.h
@@ -125,6 +127,8 @@ include/qgis/qgsquickprint.h
 include/qgis/qgsrasterbandstats.h
 include/qgis/qgsrasterdataprovider.h
 include/qgis/qgsrasterlayer.h
+include/qgis/qgsrasterprojector.h
+include/qgis/qgsrasterpyramid.h
 include/qgis/qgsrastershader.h
 include/qgis/qgsrastershaderfunction.h
 include/qgis/qgsrastertransparency.h
@@ -141,6 +145,7 @@ include/qgis/qgsrubberband.h
 include/qgis/qgsrulebasedrendererv2widget.h
 include/qgis/qgsrunprocess.h
 include/qgis/qgsscalecalculator.h
+include/qgis/qgssearchquerybuilder.h
 include/qgis/qgssearchstring.h
 include/qgis/qgssearchtreenode.h
 include/qgis/qgssinglesymbolrenderer.h
@@ -149,6 +154,7 @@ include/qgis/qgssinglesymbolrendererv2widget.h
 include/qgis/qgssnapper.h
 include/qgis/qgsspatialindex.h
 include/qgis/qgsstylev2.h
+include/qgis/qgsstylev2exportimportdialog.h
 include/qgis/qgsstylev2managerdialog.h
 include/qgis/qgssymbol.h
 include/qgis/qgssymbollayerv2.h
@@ -179,9 +185,9 @@ include/qgis/ui_qgsdetaileditemwidgetbase.h
 include/qgis/ui_qgsgenericprojectionselectorbase.h
 include/qgis/ui_qgsmessageviewer.h
 include/qgis/ui_qgsprojectionselectorbase.h
+include/qgis/ui_qgsquerybuilderbase.h
+@bin lib/qgis/qgis_help
 @man man/man1/qgis.1
-@man man/man1/qgis_help.1
-share/applications/
 share/applications/qgis.desktop
 share/doc/qgis/
 share/doc/qgis/AUTHORS
@@ -191,18 +197,18 @@ share/doc/qgis/DONORS
 share/doc/qgis/INSTALL
 share/doc/qgis/SPONSORS
 share/doc/qgis/TRANSLATORS
+share/doc/qgis/favicon.ico
+share/doc/qgis/images/
+share/doc/qgis/images/qgis_new_80pct.png
+share/doc/qgis/index.html
+share/doc/qgis/qgisdoc.css
 share/pixmaps/
 share/pixmaps/qgis-icon.png
 share/qgis/
+share/qgis/FindQGIS.cmake
 share/qgis/admin.sld
-share/qgis/wms_metadata.xml
-share/qgis/doc/
-share/qgis/doc/favicon.ico
-share/qgis/doc/images/
-share/qgis/doc/images/qgis_new_80pct.png
-share/qgis/doc/index.html
-share/qgis/doc/qgisdoc.css
 share/qgis/i18n/
+share/qgis/i18n/qgis_af.qm
 share/qgis/i18n/qgis_ar.qm
 share/qgis/i18n/qgis_bg.qm
 share/qgis/i18n/qgis_ca_ES.qm
@@ -210,6 +216,7 @@ share/qgis/i18n/qgis_cs_CZ.qm
 share/qgis/i18n/qgis_de.qm
 share/qgis/i18n/qgis_el_GR.qm
 share/qgis/i18n/qgis_es.qm
+share/qgis/i18n/qgis_fa.qm
 share/qgis/i18n/qgis_fi.qm
 share/qgis/i18n/qgis_fr.qm
 share/qgis/i18n/qgis_he.qm
@@ -233,7 +240,9 @@ share/qgis/i18n/qgis_ru.qm
 share/qgis/i18n/qgis_sk.qm
 share/qgis/i18n/qgis_sl_SI.qm
 share/qgis/i18n/qgis_sq_AL.qm
+share/qgis/i18n/qgis_sr_CS-Latn.qm
 share/qgis/i18n/qgis_sv.qm
+share/qgis/i18n/qgis_ta.qm
 share/qgis/i18n/qgis_th.qm
 share/qgis/i18n/qgis_tr.qm
 share/qgis/i18n/qgis_uk.qm
@@ -260,6 +269,7 @@ share/qgis/python/plugins/GdalTools/__init__.py
 share/qgis/python/plugins/GdalTools/icons/
 share/qgis/python/plugins/GdalTools/icons/about.png
 share/qgis/python/plugins/GdalTools/icons/contour.png
+share/qgis/python/plugins/GdalTools/icons/dem.png
 share/qgis/python/plugins/GdalTools/icons/grid.png
 share/qgis/python/plugins/GdalTools/icons/merge.png
 share/qgis/python/plugins/GdalTools/icons/nearblack.png
@@ -273,6 +283,7 @@ share/qgis/python/plugins/GdalTools/icons/raster-paletted.png
 share/qgis/python/plugins/GdalTools/icons/raster-rgb.png
 share/qgis/python/plugins/GdalTools/icons/rasterize.png
 share/qgis/python/plugins/GdalTools/icons/sieve.png
+share/qgis/python/plugins/GdalTools/icons/tileindex.png
 share/qgis/python/plugins/GdalTools/icons/translate.png
 share/qgis/python/plugins/GdalTools/icons/vrt.png
 share/qgis/python/plugins/GdalTools/icons/warp.png
@@ -286,6 +297,7 @@ share/qgis/python/plugins/GdalTools/tools/doAbout.py
 share/qgis/python/plugins/GdalTools/tools/doBuildVRT.py
 share/qgis/python/plugins/GdalTools/tools/doClipper.py
 share/qgis/python/plugins/GdalTools/tools/doContour.py
+share/qgis/python/plugins/GdalTools/tools/doDEM.py
 share/qgis/python/plugins/GdalTools/tools/doGrid.py
 share/qgis/python/plugins/GdalTools/tools/doInfo.py
 share/qgis/python/plugins/GdalTools/tools/doMerge.py
@@ -299,17 +311,24 @@ share/qgis/python/plugins/GdalTools/tools/doRasterize.py
 share/qgis/python/plugins/GdalTools/tools/doRgbPct.py
 share/qgis/python/plugins/GdalTools/tools/doSettings.py
 share/qgis/python/plugins/GdalTools/tools/doSieve.py
+share/qgis/python/plugins/GdalTools/tools/doTileIndex.py
 share/qgis/python/plugins/GdalTools/tools/doTranslate.py
 share/qgis/python/plugins/GdalTools/tools/doWarp.py
+share/qgis/python/plugins/GdalTools/tools/extentSelector.py
+share/qgis/python/plugins/GdalTools/tools/inOutSelector.py
 share/qgis/python/plugins/GdalTools/tools/optionsTable.py
+share/qgis/python/plugins/GdalTools/tools/terrain.txt
 share/qgis/python/plugins/GdalTools/tools/ui_dialogAbout.py
 share/qgis/python/plugins/GdalTools/tools/ui_dialogBase.py
 share/qgis/python/plugins/GdalTools/tools/ui_dialogSettings.py
+share/qgis/python/plugins/GdalTools/tools/ui_extentSelector.py
+share/qgis/python/plugins/GdalTools/tools/ui_inOutSelector.py
 share/qgis/python/plugins/GdalTools/tools/ui_optionsTable.py
 share/qgis/python/plugins/GdalTools/tools/ui_widgetBuildVRT.py
 share/qgis/python/plugins/GdalTools/tools/ui_widgetClipper.py
 share/qgis/python/plugins/GdalTools/tools/ui_widgetContour.py
 share/qgis/python/plugins/GdalTools/tools/ui_widgetConvert.py
+share/qgis/python/plugins/GdalTools/tools/ui_widgetDEM.py
 share/qgis/python/plugins/GdalTools/tools/ui_widgetGrid.py
 share/qgis/python/plugins/GdalTools/tools/ui_widgetInfo.py
 share/qgis/python/plugins/GdalTools/tools/ui_widgetMerge.py
@@ -320,16 +339,14 @@ share/qgis/python/plugins/GdalTools/tools/ui_widgetProjection.py
 share/qgis/python/plugins/GdalTools/tools/ui_widgetProximity.py
 share/qgis/python/plugins/GdalTools/tools/ui_widgetRasterize.py
 share/qgis/python/plugins/GdalTools/tools/ui_widgetSieve.py
+share/qgis/python/plugins/GdalTools/tools/ui_widgetTileIndex.py
 share/qgis/python/plugins/GdalTools/tools/ui_widgetTranslate.py
 share/qgis/python/plugins/GdalTools/tools/ui_widgetWarp.py
 share/qgis/python/plugins/GdalTools/tools/widgetBatchBase.py
 share/qgis/python/plugins/GdalTools/tools/widgetPluginBase.py
 share/qgis/python/plugins/fTools/
 share/qgis/python/plugins/fTools/__init__.py
-share/qgis/python/plugins/fTools/doAbout.py
 share/qgis/python/plugins/fTools/fTools.py
-share/qgis/python/plugins/fTools/ftools_help.xml
-share/qgis/python/plugins/fTools/ftools_help.xsl
 share/qgis/python/plugins/fTools/icons/
 share/qgis/python/plugins/fTools/icons/default/
 share/qgis/python/plugins/fTools/icons/default/analysis.png
@@ -423,7 +440,9 @@ share/qgis/python/plugins/fTools/icons/gis/to_lines.png
 share/qgis/python/plugins/fTools/icons/gis/union.png
 share/qgis/python/plugins/fTools/icons/gis/unique.png
 share/qgis/python/plugins/fTools/icons/gis/vector_grid.png
+share/qgis/python/plugins/fTools/icons/gis/voronoi.png
 share/qgis/python/plugins/fTools/icons/logo.svg
+share/qgis/python/plugins/fTools/icons/logo_small.png
 share/qgis/python/plugins/fTools/icons/menu_icons.svg
 share/qgis/python/plugins/fTools/resources_rc.py
 share/qgis/python/plugins/fTools/tools/
@@ -431,28 +450,26 @@ share/qgis/python/plugins/fTools/tools/doDefineProj.py
 share/qgis/python/plugins/fTools/tools/doGeometry.py
 share/qgis/python/plugins/fTools/tools/doGeoprocessing.py
 share/qgis/python/plugins/fTools/tools/doIntersectLines.py
-share/qgis/python/plugins/fTools/tools/doJoinAttributes.py
 share/qgis/python/plugins/fTools/tools/doMeanCoords.py
 share/qgis/python/plugins/fTools/tools/doMergeShapes.py
 share/qgis/python/plugins/fTools/tools/doPointDistance.py
 share/qgis/python/plugins/fTools/tools/doPointsInPolygon.py
 share/qgis/python/plugins/fTools/tools/doRandPoints.py
 share/qgis/python/plugins/fTools/tools/doRandom.py
-share/qgis/python/plugins/fTools/tools/doReProject.py
 share/qgis/python/plugins/fTools/tools/doRegPoints.py
 share/qgis/python/plugins/fTools/tools/doSelectByLocation.py
+share/qgis/python/plugins/fTools/tools/doSimplify.py
 share/qgis/python/plugins/fTools/tools/doSpatialJoin.py
 share/qgis/python/plugins/fTools/tools/doSubsetSelect.py
 share/qgis/python/plugins/fTools/tools/doSumLines.py
+share/qgis/python/plugins/fTools/tools/doValidate.py
 share/qgis/python/plugins/fTools/tools/doVectorGrid.py
 share/qgis/python/plugins/fTools/tools/doVectorSplit.py
 share/qgis/python/plugins/fTools/tools/doVisual.py
 share/qgis/python/plugins/fTools/tools/ftools_utils.py
-share/qgis/python/plugins/fTools/tools/ui_frmAbout.py
 share/qgis/python/plugins/fTools/tools/ui_frmGeometry.py
 share/qgis/python/plugins/fTools/tools/ui_frmGeoprocessing.py
 share/qgis/python/plugins/fTools/tools/ui_frmIntersectLines.py
-share/qgis/python/plugins/fTools/tools/ui_frmJoinAttributes.py
 share/qgis/python/plugins/fTools/tools/ui_frmMeanCoords.py
 share/qgis/python/plugins/fTools/tools/ui_frmMergeShapes.py
 share/qgis/python/plugins/fTools/tools/ui_frmPointDistance.py
@@ -461,6 +478,7 @@ share/qgis/python/plugins/fTools/tools/ui_frmRandPoints.py
 share/qgis/python/plugins/fTools/tools/ui_frmRandom.py
 share/qgis/python/plugins/fTools/tools/ui_frmReProject.py
 share/qgis/python/plugins/fTools/tools/ui_frmRegPoints.py
+share/qgis/python/plugins/fTools/tools/ui_frmSimplify.py
 share/qgis/python/plugins/fTools/tools/ui_frmSpatialJoin.py
 share/qgis/python/plugins/fTools/tools/ui_frmSubsetSelect.py
 share/qgis/python/plugins/fTools/tools/ui_frmSumLines.py
@@ -468,7 +486,6 @@ share/qgis/python/plugins/fTools/tools/ui_frmVectorGrid.py
 share/qgis/python/plugins/fTools/tools/ui_frmVectorSplit.py
 share/qgis/python/plugins/fTools/tools/ui_frmVisual.py
 share/qgis/python/plugins/fTools/tools/voronoi.py
-share/qgis/python/plugins/fTools/ui_frmAbout.py
 share/qgis/python/plugins/mapserver_export/
 share/qgis/python/plugins/mapserver_export/__init__.py
 share/qgis/python/plugins/mapserver_export/mapserver_export.png
@@ -529,6 +546,11 @@ share/qgis/python/plugins/plugin_installer/ui_qgsplugininstallerpluginerrorbase.
 share/qgis/python/plugins/plugin_installer/ui_qgsplugininstallerrepositorybase.py
 share/qgis/python/plugins/plugin_installer/unzip.py
 share/qgis/python/plugins/plugin_installer/version_compare.py
+share/qgis/python/pyspatialite/
+share/qgis/python/pyspatialite/__init__.py
+share/qgis/python/pyspatialite/_spatialite.so
+share/qgis/python/pyspatialite/dbapi2.py
+share/qgis/python/pyspatialite/dump.py
 share/qgis/python/qgis/
 share/qgis/python/qgis/__init__.py
 share/qgis/python/qgis/__init__.pyc
@@ -607,6 +629,9 @@ share/qgis/resources/context_help/QgsDelimitedTextPluginGui-pt_BR
 share/qgis/resources/context_help/QgsDelimitedTextPluginGui-ru_RU
 share/qgis/resources/context_help/QgsDelimitedTextPluginGui-sk_SK
 share/qgis/resources/context_help/QgsDelimitedTextPluginGui-sv_SE
+share/qgis/resources/context_help/QgsFieldCalculator-de_DE
+share/qgis/resources/context_help/QgsFieldCalculator-en_US
+share/qgis/resources/context_help/QgsFieldCalculator-fr_FR
 share/qgis/resources/context_help/QgsGPSPluginGui-de_DE
 share/qgis/resources/context_help/QgsGPSPluginGui-en_US
 share/qgis/resources/context_help/QgsGPSPluginGui-it_IT
@@ -625,13 +650,10 @@ share/qgis/resources/context_help/QgsIdentifyResults-pt_BR
 share/qgis/resources/context_help/QgsIdentifyResults-ru_RU
 share/qgis/resources/context_help/QgsIdentifyResults-sk_SK
 share/qgis/resources/context_help/QgsIdentifyResults-sv_SE
-share/qgis/resources/context_help/QgsMapserverExport-es_ES
-share/qgis/resources/context_help/QgsMapserverExport-pt_BR
-share/qgis/resources/context_help/QgsMapserverExport-ru_RU
-share/qgis/resources/context_help/QgsMapserverExport-sk_SK
 share/qgis/resources/context_help/QgsMeasureDialog-de_DE
 share/qgis/resources/context_help/QgsMeasureDialog-en_US
 share/qgis/resources/context_help/QgsMeasureDialog-es_ES
+share/qgis/resources/context_help/QgsMeasureDialog-fr_FR
 share/qgis/resources/context_help/QgsMeasureDialog-it_IT
 share/qgis/resources/context_help/QgsMeasureDialog-ja_JP
 share/qgis/resources/context_help/QgsMeasureDialog-pl_PL
@@ -642,6 +664,7 @@ share/qgis/resources/context_help/QgsMeasureDialog-sv_SE
 share/qgis/resources/context_help/QgsNewConnection-de_DE
 share/qgis/resources/context_help/QgsNewConnection-en_US
 share/qgis/resources/context_help/QgsNewConnection-es_ES
+share/qgis/resources/context_help/QgsNewConnection-fr_FR
 share/qgis/resources/context_help/QgsNewConnection-it_IT
 share/qgis/resources/context_help/QgsNewConnection-ja_JP
 share/qgis/resources/context_help/QgsNewConnection-pl_PL
@@ -649,15 +672,17 @@ share/qgis/resources/context_help/QgsNewConnection-pt_BR
 share/qgis/resources/context_help/QgsNewConnection-ru_RU
 share/qgis/resources/context_help/QgsNewConnection-sk_SK
 share/qgis/resources/context_help/QgsNewConnection-sv_SE
-share/qgis/resources/context_help/QgsNewHttpConnection-pt_BR
 share/qgis/resources/context_help/QgsNewOgrConnection-de_DE
 share/qgis/resources/context_help/QgsNewOgrConnection-en_US
+share/qgis/resources/context_help/QgsNewOgrConnection-fr_FR
 share/qgis/resources/context_help/QgsNewOgrConnection-it_IT
 share/qgis/resources/context_help/QgsNewOgrConnection-ja_JP
 share/qgis/resources/context_help/QgsNewOgrConnection-pt_BR
 share/qgis/resources/context_help/QgsNewOgrConnection-ru_RU
 share/qgis/resources/context_help/QgsNewSpatialiteLayerDialog-de_DE
 share/qgis/resources/context_help/QgsNewSpatialiteLayerDialog-en_US
+share/qgis/resources/context_help/QgsNewSpatialiteLayerDialog-es_ES
+share/qgis/resources/context_help/QgsNewSpatialiteLayerDialog-fr_FR
 share/qgis/resources/context_help/QgsNewSpatialiteLayerDialog-ja_JP
 share/qgis/resources/context_help/QgsNewSpatialiteLayerDialog-pt_BR
 share/qgis/resources/context_help/QgsNewVectorLayerDialog-de_DE
@@ -670,22 +695,26 @@ share/qgis/resources/context_help/QgsNewVectorLayerDialog-ru_RU
 share/qgis/resources/context_help/QgsNewVectorLayerDialog-sk_SK
 share/qgis/resources/context_help/QgsNorthArrowPluginGui-de_DE
 share/qgis/resources/context_help/QgsNorthArrowPluginGui-en_US
+share/qgis/resources/context_help/QgsNorthArrowPluginGui-fr_FR
 share/qgis/resources/context_help/QgsNorthArrowPluginGui-it_IT
 share/qgis/resources/context_help/QgsNorthArrowPluginGui-ja_JP
 share/qgis/resources/context_help/QgsNorthArrowPluginGui-pt_BR
 share/qgis/resources/context_help/QgsOpenVectorLayerDialog-de_DE
 share/qgis/resources/context_help/QgsOpenVectorLayerDialog-en_US
+share/qgis/resources/context_help/QgsOpenVectorLayerDialog-fr_FR
 share/qgis/resources/context_help/QgsOpenVectorLayerDialog-it_IT
 share/qgis/resources/context_help/QgsOpenVectorLayerDialog-ja_JP
 share/qgis/resources/context_help/QgsOpenVectorLayerDialog-pt_BR
 share/qgis/resources/context_help/QgsOpenVectorLayerDialog-ru_RU
 share/qgis/resources/context_help/QgsOptions-de_DE
 share/qgis/resources/context_help/QgsOptions-en_US
+share/qgis/resources/context_help/QgsOptions-fr_FR
 share/qgis/resources/context_help/QgsOptions-it_IT
 share/qgis/resources/context_help/QgsOptions-ja_JP
 share/qgis/resources/context_help/QgsOptions-pt_BR
 share/qgis/resources/context_help/QgsPgSourceSelect-de_DE
 share/qgis/resources/context_help/QgsPgSourceSelect-en_US
+share/qgis/resources/context_help/QgsPgSourceSelect-fr_FR
 share/qgis/resources/context_help/QgsPgSourceSelect-it_IT
 share/qgis/resources/context_help/QgsPgSourceSelect-ja_JP
 share/qgis/resources/context_help/QgsPgSourceSelect-pl_PL
@@ -695,6 +724,7 @@ share/qgis/resources/context_help/QgsPgSourceSelect-sk_SK
 share/qgis/resources/context_help/QgsPgSourceSelect-sv_SE
 share/qgis/resources/context_help/QgsPluginInstallerDialog-de_DE
 share/qgis/resources/context_help/QgsPluginInstallerDialog-en_US
+share/qgis/resources/context_help/QgsPluginInstallerDialog-fr_FR
 share/qgis/resources/context_help/QgsPluginInstallerDialog-it_IT
 share/qgis/resources/context_help/QgsPluginInstallerDialog-ja_JP
 share/qgis/resources/context_help/QgsPluginInstallerDialog-pl_PL
@@ -702,6 +732,7 @@ share/qgis/resources/context_help/QgsPluginInstallerDialog-pt_BR
 share/qgis/resources/context_help/QgsProjectProperties-de_DE
 share/qgis/resources/context_help/QgsProjectProperties-en_US
 share/qgis/resources/context_help/QgsProjectProperties-es_ES
+share/qgis/resources/context_help/QgsProjectProperties-fr_FR
 share/qgis/resources/context_help/QgsProjectProperties-it_IT
 share/qgis/resources/context_help/QgsProjectProperties-ja_JP
 share/qgis/resources/context_help/QgsProjectProperties-pl_PL
@@ -711,12 +742,15 @@ share/qgis/resources/context_help/QgsProjectProperties-sk_SK
 share/qgis/resources/context_help/QgsProjectProperties-sv_SE
 share/qgis/resources/context_help/QgsScaleBarPluginGui-de_DE
 share/qgis/resources/context_help/QgsScaleBarPluginGui-en_US
+share/qgis/resources/context_help/QgsScaleBarPluginGui-es_ES
+share/qgis/resources/context_help/QgsScaleBarPluginGui-fr_FR
 share/qgis/resources/context_help/QgsScaleBarPluginGui-it_IT
 share/qgis/resources/context_help/QgsScaleBarPluginGui-ja_JP
 share/qgis/resources/context_help/QgsScaleBarPluginGui-pl_PL
 share/qgis/resources/context_help/QgsScaleBarPluginGui-pt_BR
 share/qgis/resources/context_help/QgsSpatiaLiteSourceSelect-de_DE
 share/qgis/resources/context_help/QgsSpatiaLiteSourceSelect-en_US
+share/qgis/resources/context_help/QgsSpatiaLiteSourceSelect-fr_FR
 share/qgis/resources/context_help/QgsSpatiaLiteSourceSelect-it_IT
 share/qgis/resources/context_help/QgsSpatiaLiteSourceSelect-ja_JP
 share/qgis/resources/context_help/QgsSpatiaLiteSourceSelect-pl_PL
@@ -729,6 +763,7 @@ share/qgis/resources/context_help/QgsStyleV2ManagerDialog-pt_BR
 share/qgis/resources/context_help/QgsVectorLayerProperties-de_DE
 share/qgis/resources/context_help/QgsVectorLayerProperties-en_US
 share/qgis/resources/context_help/QgsVectorLayerProperties-es_ES
+share/qgis/resources/context_help/QgsVectorLayerProperties-fr_FR
 share/qgis/resources/context_help/QgsVectorLayerProperties-it_IT
 share/qgis/resources/context_help/QgsVectorLayerProperties-ja_JP
 share/qgis/resources/context_help/QgsVectorLayerProperties-pl_PL
@@ -739,6 +774,7 @@ share/qgis/resources/context_help/QgsVectorLayerSaveAsDialog-de_DE
 share/qgis/resources/context_help/QgsVectorLayerSaveAsDialog-en_US
 share/qgis/resources/context_help/QgsWMSSourceSelect-de_DE
 share/qgis/resources/context_help/QgsWMSSourceSelect-en_US
+share/qgis/resources/context_help/QgsWMSSourceSelect-fr_FR
 share/qgis/resources/context_help/QgsWMSSourceSelect-it_IT
 share/qgis/resources/context_help/QgsWMSSourceSelect-ja_JP
 share/qgis/resources/context_help/QgsWMSSourceSelect-pl_PL
@@ -746,6 +782,20 @@ share/qgis/resources/context_help/QgsWMSSourceSelect-pt_BR
 share/qgis/resources/context_help/QgsWMSSourceSelect-ru_RU
 share/qgis/resources/context_help/QgsWMSSourceSelect-sk_SK
 share/qgis/resources/context_help/QgsWMSSourceSelect-sv_SE
+share/qgis/resources/context_help/RgSettingsDlg-de_DE
+share/qgis/resources/context_help/RgSettingsDlg-en_US
+share/qgis/resources/context_help/RgSettingsDlg-fr_FR
+share/qgis/resources/context_help/RgSettingsDlg-ru_RU
+share/qgis/resources/context_help/RgShortestPathWidget-de_DE
+share/qgis/resources/context_help/RgShortestPathWidget-en_US
+share/qgis/resources/context_help/RgShortestPathWidget-fr_FR
+share/qgis/resources/context_help/RgShortestPathWidget-ru_RU
+share/qgis/resources/context_help/SaNewConnection-de_DE
+share/qgis/resources/context_help/SaNewConnection-en_US
+share/qgis/resources/context_help/SaNewConnection-fr_FR
+share/qgis/resources/context_help/SaSourceSelect-de_DE
+share/qgis/resources/context_help/SaSourceSelect-en_US
+share/qgis/resources/context_help/SaSourceSelect-fr_FR
 share/qgis/resources/context_help/eVisDatabaseConnectionGui-de_DE
 share/qgis/resources/context_help/eVisDatabaseConnectionGui-en_US
 share/qgis/resources/context_help/eVisDatabaseConnectionGui-es_ES
@@ -1121,5 +1171,6 @@ share/qgis/svg/transport/transport_traffic_lights.svg
 share/qgis/svg/transport/transport_train_station.svg
 share/qgis/svg/transport/transport_train_station2.svg
 share/qgis/svg/transport/transport_tram_stop.svg
+share/qgis/wms_metadata.xml
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

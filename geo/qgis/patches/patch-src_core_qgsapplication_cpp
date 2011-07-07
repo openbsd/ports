@@ -1,0 +1,48 @@
+$OpenBSD: patch-src_core_qgsapplication_cpp,v 1.1 2011/07/07 20:34:27 landry Exp $
+Fix paths to various doc files, installed in share/doc/qgis
+per doc/CMakeLists.txt patch
+--- src/core/qgsapplication.cpp.orig	Wed Jun 29 09:17:57 2011
++++ src/core/qgsapplication.cpp	Wed Jun 29 09:19:38 2011
+@@ -245,21 +245,21 @@ const QString QgsApplication::themeName()
+ */
+ const QString QgsApplication::authorsFilePath()
+ {
+-  return mPkgDataPath + QString( "/doc/AUTHORS" );
++  return mPkgDataPath + QString( "../doc/qgis/AUTHORS" );
+ }
+ /*!
+   Returns the path to the contributors file.
+ */
+ const QString QgsApplication::contributorsFilePath()
+ {
+-  return mPkgDataPath + QString( "/doc/CONTRIBUTORS" );
++  return mPkgDataPath + QString( "../doc/qgis/CONTRIBUTORS" );
+ }
+ /*!
+   Returns the path to the sponsors file.
+ */
+ const QString QgsApplication::sponsorsFilePath()
+ {
+-  return mPkgDataPath + QString( "/doc/SPONSORS" );
++  return mPkgDataPath + QString( "../doc/qgis/SPONSORS" );
+ }
+ 
+ /*!
+@@ -267,7 +267,7 @@ const QString QgsApplication::sponsorsFilePath()
+ */
+ const QString QgsApplication::donorsFilePath()
+ {
+-  return mPkgDataPath + QString( "/doc/DONORS" );
++  return mPkgDataPath + QString( "../doc/qgis/DONORS" );
+ }
+ 
+ /*!
+@@ -276,7 +276,7 @@ const QString QgsApplication::donorsFilePath()
+ */
+ const QString QgsApplication::translatorsFilePath()
+ {
+-  return mPkgDataPath + QString( "/doc/TRANSLATORS" );
++  return mPkgDataPath + QString( "../doc/qgis/TRANSLATORS" );
+ }
+ /*!
+   Returns the path to the developer image directory.

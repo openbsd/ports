@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.21 2011/06/08 17:35:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/07/07 20:34:27 landry Exp $
 
 COMMENT =	desktop geographical information system
 
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
-DISTNAME =	qgis-1.6.0
-REVISION =	2
+DISTNAME =	qgis-1.7.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 
-SHARED_LIBS =	qgis_core	4.0 \
-		qgis_gui	3.0 \
-		qgis_analysis	1.2 \
-		qgispython	1.1 # .1.3
+SHARED_LIBS =	qgis_core	5.0 \
+		qgis_gui	4.0 \
+		qgis_analysis	1.3 \
+		qgispython	1.1 \
+		qgissqlanyconnection 0.0 # 1.7
 
 HOMEPAGE =	http://www.qgis.org/
 
@@ -53,11 +53,15 @@ WANTLIB += 	ICE SM X11 Xext Xi Xinerama Xrender c expat \
 		mng png pthread gobject-2.0 util stdc++ z proj \
 		QtGui QtNetwork QtXml QtSql QtCore QtSvg \
 		QtWebKit gdal geos_c gsl gslcblas pq qwt fcgi
-WANTLIB += ${MODPY_WANTLIB}
+WANTLIB += ${MODPY_WANTLIB} jpeg tiff
 
 CONFIGURE_ENV+=	VERBOSE=1
+CONFIGURE_ARGS =	-DWITH_MAPSERVER=TRUE
 USE_GROFF =	Yes
+
 pre-configure:
+		# otherwise takes precedence over systemwide file
+		rm ${WRKSRC}/cmake/FindIconv.cmake
 		${SUBST_CMD} ${WRKSRC}/cmake/Find{GDAL,GEOS,Postgres}.cmake
 
 post-install:
