@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2011/04/28 18:38:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/07/07 21:16:44 jasper Exp $
 
-ONLY_FOR_ARCHS=	i386
+ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	3D realtime strategy on a future earth
 
-DISTNAME=	warzone2100-2.3.7
-REVISION=	0
+DISTNAME=	warzone2100-2.3.8
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=warzone2100/}
 
@@ -16,14 +15,14 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-WANTLIB=	GL GLC GLU SDL X11 c m physfs ogg openal>=1 png \
-		popt pthread sndio stdc++ theora vorbis vorbisfile \
-		z
+
+WANTLIB=	GL GLC GLU SDL X11 c m physfs ogg openal png popt \
+		pthread sndio stdc++ theora vorbis vorbisfile z
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	audio/libogg \
 		audio/libvorbis \
-		audio/openal>=0.0.8p7 \
+		audio/openal>=20110627 \
 		devel/physfs \
 		devel/popt \
 		devel/sdl \
