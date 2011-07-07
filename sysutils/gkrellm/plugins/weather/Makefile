@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2010/10/13 19:12:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/07/07 00:08:35 ajacoutot Exp $
 
 COMMENT=	weather plugin for GkrellM2
 
 DISTNAME=	gkrellweather-2.0.8
-REVISION=	2
+REVISION=	3
 CATEGORIES=	x11
 EXTRACT_SUFX=	.tgz
 

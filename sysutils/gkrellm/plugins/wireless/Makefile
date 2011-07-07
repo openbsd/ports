@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2010/10/13 19:12:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/07/07 00:08:36 ajacoutot Exp $
 
 COMMENT=	GkrellM2 plugin to monitor wi(4) signal strength
 
 DISTNAME=	gkrellmwireless-2.0.3
-REVISION=	6
+REVISION=	7
 CATEGORIES=	net
 
 HOMEPAGE=	http://gkrellm.luon.net/gkrellmwireless.php
