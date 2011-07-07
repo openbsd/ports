@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.16 2011/06/02 17:35:47 kili Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2011/07/07 23:18:43 ajacoutot Exp $
 
 CATEGORIES ?=	multimedia devel
 
 HOMEPAGE ?=	http://gstreamer.freedesktop.org/
+
+MAINTAINER ?=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM ?=		Yes

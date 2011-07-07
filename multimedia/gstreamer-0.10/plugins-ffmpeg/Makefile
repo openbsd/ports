@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2011/06/24 11:17:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2011/07/07 23:18:43 ajacoutot Exp $
 
 COMMENT =		ffmpeg element for GStreamer
 
 V =			0.10.11
 DISTNAME =		gst-ffmpeg-$V
 PKGNAME =		gstreamer-ffmpeg-$V
-REVISION =		3
+REVISION =		4
 
 MASTER_SITES =		${MASTER_SITE_GST:=gst-ffmpeg/}
 

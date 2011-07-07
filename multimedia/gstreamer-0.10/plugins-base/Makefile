@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/06/16 09:09:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.43 2011/07/07 23:18:43 ajacoutot Exp $
 
 COMMENT-main =		base elements for GStreamer
 COMMENT-cdda =		cd paranoia element for GStreamer (plugins-base)
@@ -8,6 +8,9 @@ DISTNAME =		gst-plugins-base-${V}
 
 PKGNAME-main =		gstreamer-plugins-base-${V}
 PKGNAME-cdda =		gstreamer-cdda-${V}
+
+REVISION-main = 	0
+REVISION-cdda = 	0
 
 MULTI_PACKAGES =	-main -cdda
 

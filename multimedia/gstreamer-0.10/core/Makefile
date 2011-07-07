@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/06/16 09:08:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/07/07 23:18:43 ajacoutot Exp $
 
 COMMENT =		multimedia framework
 
@@ -7,6 +7,7 @@ V =			0.10.35
 PKGNAME =		gstreamer-${V}
 
 DISTNAME =		gstreamer-${V}
+REVISION =		0
 
 SHARED_LIBS +=  gstreamer-0.10       2.4      # .28.0
 SHARED_LIBS +=  gstbase-0.10         2.4      # .28.0
