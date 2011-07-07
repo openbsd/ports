@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2011/06/26 20:02:31 edd Exp $
+# $OpenBSD: Makefile,v 1.19 2011/07/07 20:25:50 schwarze Exp $
 
 COMMENT =		vi-like minimalists web browser
 DISTNAME =		xxxterm-1.399
+REVISION =		0
 CATEGORIES =		www
 
 HOMEPAGE =		http://opensource.conformal.com/wiki/XXXTerm
@@ -37,7 +38,7 @@ EXAMPLEDIR =		${PREFIX}/share/examples/xxxterm
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xxxterm ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/xxxterm.1 ${PREFIX}/man/man8/xxxterm.1
+	${INSTALL_MAN} ${WRKSRC}/xxxterm.1 ${PREFIX}/man/man1/xxxterm.1
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/xxxterm.conf ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/favorites ${EXAMPLEDIR}

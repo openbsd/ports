@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/03/02 16:07:36 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/07/07 20:25:50 schwarze Exp $
 @bin bin/xxxterm
-man/man8/xxxterm.1
+@man man/man1/xxxterm.1
 share/applications/xxxterm.desktop
 share/examples/xxxterm/
 share/examples/xxxterm/favorites
