@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/07/07 17:18:11 jasper Exp $
 
 COMMENT=		plugin password complexity checker for passwd(1)
 
 DISTNAME=		passwdqc-1.2.2
+REVISION=		0
 CATEGORIES=     	security sysutils
 
 SHARED_LIBS=		passwdqc 0.0 # .0

@@ -1,15 +1,6 @@
-$OpenBSD: patch-pwqgen_1,v 1.1 2010/07/07 21:29:58 ajacoutot Exp $
+$OpenBSD: patch-pwqgen_1,v 1.2 2011/07/07 17:18:11 jasper Exp $
 --- pwqgen.1.orig	Sat Mar 13 22:29:15 2010
 +++ pwqgen.1	Wed Jul  7 11:38:13 2010
-@@ -32,7 +32,7 @@ The
- program generates a random passphrase using the libpasswdqc library.
- Strength of the generated passphrase depends on the amount of randomness
- read from
--.Pa /dev/urandom .
-+.Pa /dev/arandom .
- .Sh OPTIONS
- .Bl -tag -width indent
- .It Cm random Ns = Ns Ar N
 @@ -68,9 +68,8 @@ randomness, and in any case when it fails to generate 
  .Pa /etc/passwdqc.conf .
  .Sh SEE ALSO
