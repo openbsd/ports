@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2011/01/13 10:29:27 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2011/07/07 08:28:04 dcoppa Exp $
 @conflict gaim-*
 @conflict pidgin-facebookchat-<1.68p0
 @pkgpath net/pidgin
@@ -55,43 +55,24 @@ include/pidgin/pidgin.h
 include/pidgin/pidginstock.h
 include/pidgin/pidgintooltip.h
 lib/pidgin/
-lib/pidgin/convcolors.la
 lib/pidgin/convcolors.so
-lib/pidgin/extplacement.la
 lib/pidgin/extplacement.so
-lib/pidgin/gestures.la
 lib/pidgin/gestures.so
-lib/pidgin/gtkbuddynote.la
 lib/pidgin/gtkbuddynote.so
-lib/pidgin/history.la
 lib/pidgin/history.so
-lib/pidgin/iconaway.la
 lib/pidgin/iconaway.so
-lib/pidgin/markerline.la
 lib/pidgin/markerline.so
-lib/pidgin/musicmessaging.la
 lib/pidgin/musicmessaging.so
-lib/pidgin/notify.la
 lib/pidgin/notify.so
-lib/pidgin/pidginrc.la
 lib/pidgin/pidginrc.so
-lib/pidgin/relnot.la
 lib/pidgin/relnot.so
-lib/pidgin/sendbutton.la
 lib/pidgin/sendbutton.so
-lib/pidgin/spellchk.la
 lib/pidgin/spellchk.so
-lib/pidgin/themeedit.la
 lib/pidgin/themeedit.so
-lib/pidgin/ticker.la
 lib/pidgin/ticker.so
-lib/pidgin/timestamp.la
 lib/pidgin/timestamp.so
-lib/pidgin/timestamp_format.la
 lib/pidgin/timestamp_format.so
-lib/pidgin/xmppconsole.la
 lib/pidgin/xmppconsole.so
-lib/pidgin/xmppdisco.la
 lib/pidgin/xmppdisco.so
 lib/pkgconfig/pidgin.pc
 @man man/man1/pidgin.1

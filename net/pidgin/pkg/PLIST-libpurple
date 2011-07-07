@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libpurple,v 1.14 2011/03/06 14:13:20 steven Exp $
+@comment $OpenBSD: PLIST-libpurple,v 1.15 2011/07/07 08:28:04 dcoppa Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
 @pkgpath net/pidgin,-libpurple,gtkspell
@@ -82,73 +82,42 @@ include/libpurple/value.h
 include/libpurple/version.h
 include/libpurple/whiteboard.h
 include/libpurple/xmlnode.h
-lib/libjabber.la
-@lib lib/libjabber.so.${LIBjabber_VERSION}
-lib/liboscar.la
-@lib lib/liboscar.so.${LIBoscar_VERSION}
-lib/libpurple-client.la
+lib/libpurple-client.a
 @lib lib/libpurple-client.so.${LIBpurple-client_VERSION}
-lib/libpurple.la
+lib/libpurple.a
 @lib lib/libpurple.so.${LIBpurple_VERSION}
 lib/pkgconfig/purple.pc
 lib/purple-2/
-lib/purple-2/autoaccept.la
 lib/purple-2/autoaccept.so
-lib/purple-2/buddynote.la
 lib/purple-2/buddynote.so
-lib/purple-2/dbus-example.la
 lib/purple-2/dbus-example.so
-lib/purple-2/idle.la
 lib/purple-2/idle.so
-lib/purple-2/joinpart.la
 lib/purple-2/joinpart.so
-lib/purple-2/libaim.la
 lib/purple-2/libaim.so
-lib/purple-2/libgg.la
 lib/purple-2/libgg.so
-lib/purple-2/libicq.la
 lib/purple-2/libicq.so
-lib/purple-2/libirc.la
 lib/purple-2/libirc.so
-lib/purple-2/libmsn.la
+@lib lib/purple-2/libjabber.so.${LIBjabber_VERSION}
 lib/purple-2/libmsn.so
-lib/purple-2/libmxit.la
 lib/purple-2/libmxit.so
-lib/purple-2/libmyspace.la
 lib/purple-2/libmyspace.so
-lib/purple-2/libnovell.la
 lib/purple-2/libnovell.so
-lib/purple-2/libqq.la
+@lib lib/purple-2/liboscar.so.${LIBoscar_VERSION}
 lib/purple-2/libqq.so
-lib/purple-2/libsametime.la
 lib/purple-2/libsametime.so
-lib/purple-2/libsilcpurple.la
 lib/purple-2/libsilcpurple.so
-lib/purple-2/libsimple.la
 lib/purple-2/libsimple.so
-lib/purple-2/libxmpp.la
 lib/purple-2/libxmpp.so
-lib/purple-2/libyahoo.la
 lib/purple-2/libyahoo.so
-lib/purple-2/libyahoojp.la
 lib/purple-2/libyahoojp.so
-lib/purple-2/libymsg.la
 @lib lib/purple-2/libymsg.so.${LIBymsg_VERSION}
-lib/purple-2/libzephyr.la
 lib/purple-2/libzephyr.so
-lib/purple-2/log_reader.la
 lib/purple-2/log_reader.so
-lib/purple-2/newline.la
 lib/purple-2/newline.so
-lib/purple-2/offlinemsg.la
 lib/purple-2/offlinemsg.so
-lib/purple-2/psychic.la
 lib/purple-2/psychic.so
-lib/purple-2/ssl-openssl.la
 lib/purple-2/ssl-openssl.so
-lib/purple-2/ssl.la
 lib/purple-2/ssl.so
-lib/purple-2/statenotify.la
 lib/purple-2/statenotify.so
 share/aclocal/purple.m4
 share/dbus-1/services/purple.service

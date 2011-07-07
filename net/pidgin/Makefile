@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2011/06/08 18:00:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.95 2011/07/07 08:28:04 dcoppa Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,9 +11,9 @@ DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
 PKGNAME-libpurple= libpurple-${VERSION}
-REVISION-main=		0
-REVISION-finch= 	0
-REVISION-libpurple=	0
+REVISION-main=	1
+REVISION-finch=	1
+REVISION-libpurple= 1
 .for i in -finch -libpurple
 FULLPKGNAME$i= ${PKGNAME$i}${FLAVOR_EXT:S/-gtkspell//}
 FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
@@ -38,8 +38,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	c dbus-1 dbus-glib-1 glib-2.0 gmodule-2.0 gobject-2.0 \
-		gthread-2.0 m pcre pthread util xml2 z
+WANTLIB=	c dbus-1 dbus-glib-1 gio-2.0 glib-2.0 gmodule-2.0 \
+		gobject-2.0 gthread-2.0 m pcre pthread util xml2 z
 
 WANTLIB-main=	GL X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xss Xxf86vm atk-1.0 cairo \
@@ -80,7 +80,6 @@ MODGCONF2_LIBDEP=	No
 
 SEPARATE_BUILD=	simple
 USE_LIBTOOL=	Yes
-LIBTOOL_FLAGS+=	--tag=disable-static
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.67
@@ -133,6 +132,8 @@ WANTLIB-main+=		enchant gtkspell
 CONFIGURE_ARGS+=	--disable-gtkspell
 .endif
 
+ARCHIVE_DIR_LIST=	finch gnt pidgin purple-2
+
 post-extract:
 	@cp ${FILESDIR}/ssl-openssl.c ${WRKSRC}/libpurple/plugins/ssl
 
@@ -147,7 +148,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pidgin
 	${INSTALL_DATA} ${WRKSRC}/purple.service \
 	    ${PREFIX}/share/dbus-1/services
-	mv ${PREFIX}/lib/purple-2/libjabber.* ${PREFIX}/lib
-	mv ${PREFIX}/lib/purple-2/liboscar.* ${PREFIX}/lib
+.for dir in ${ARCHIVE_DIR_LIST}
+	@find ${PREFIX}/lib/${dir} -name '*.a' -print | xargs rm
+.endfor
+	@find ${PREFIX}/lib -name '*.la' -print | xargs rm
 
 .include <bsd.port.mk>

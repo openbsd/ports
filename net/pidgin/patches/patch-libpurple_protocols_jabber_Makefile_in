@@ -1,0 +1,12 @@
+$OpenBSD: patch-libpurple_protocols_jabber_Makefile_in,v 1.1 2011/07/07 08:28:04 dcoppa Exp $
+--- libpurple/protocols/jabber/Makefile.in.orig	Wed May 11 21:52:39 2011
++++ libpurple/protocols/jabber/Makefile.in	Wed May 11 21:53:49 2011
+@@ -138,7 +138,7 @@ libxmpp_la_OBJECTS = $(am_libxmpp_la_OBJECTS)
+ libxmpp_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(libxmpp_la_LDFLAGS) $(LDFLAGS) -o $@
+-@STATIC_JABBER_FALSE@am_libxmpp_la_rpath = -rpath $(pkgdir)
++@STATIC_JABBER_FALSE@am_libxmpp_la_rpath = -rpath $(pkgdir) -Wl,-rpath,$(pkgdir)
+ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
+ depcomp = $(SHELL) $(top_srcdir)/depcomp
+ am__depfiles_maybe = depfiles

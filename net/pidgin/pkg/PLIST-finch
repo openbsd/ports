@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-finch,v 1.4 2009/09/08 06:35:24 steven Exp $
+@comment $OpenBSD: PLIST-finch,v 1.5 2011/07/07 08:28:04 dcoppa Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
 @bin bin/finch
@@ -52,24 +52,16 @@ include/gnt/gntwindow.h
 include/gnt/gntwm.h
 include/gnt/gntws.h
 lib/finch/
-lib/finch/gntclipboard.la
 lib/finch/gntclipboard.so
-lib/finch/gntgf.la
 lib/finch/gntgf.so
-lib/finch/gnthistory.la
 lib/finch/gnthistory.so
-lib/finch/gntlastlog.la
 lib/finch/gntlastlog.so
-lib/finch/gnttinyurl.la
 lib/finch/gnttinyurl.so
-lib/finch/grouping.la
 lib/finch/grouping.so
 lib/gnt/
-lib/gnt/irssi.la
 lib/gnt/irssi.so
-lib/gnt/s.la
 lib/gnt/s.so
-lib/libgnt.la
+lib/libgnt.a
 @lib lib/libgnt.so.${LIBgnt_VERSION}
 lib/pkgconfig/finch.pc
 lib/pkgconfig/gnt.pc
