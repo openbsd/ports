@@ -1,14 +1,14 @@
-$OpenBSD: patch-Lib_test_test_signal_py,v 1.2 2011/05/08 22:46:19 fgsch Exp $
+$OpenBSD: patch-Lib_test_test_signal_py,v 1.3 2011/07/07 21:32:39 jasper Exp $
 
 workarounds for breakage caused by libpthread
 
---- Lib/test/test_signal.py.orig	Sun Nov 21 13:34:58 2010
-+++ Lib/test/test_signal.py	Sat May  7 10:45:56 2011
+--- Lib/test/test_signal.py.orig	Sun Nov 21 14:34:58 2010
++++ Lib/test/test_signal.py	Wed Jul  6 15:54:12 2011
 @@ -362,6 +362,8 @@ class SiginterruptTest(unittest.TestCase):
          i = self.readpipe_interrupted()
          self.assertTrue(i)
  
-+    @unittest.skipIf(sys.platform in ('openbsd3', 'openbsd4'),
++    @unittest.skipIf(sys.platform in ('openbsd3', 'openbsd4', 'openbsd5'),
 +        'siginterrupt not reliable (does not mix well with threading) on some BSDs.')
      def test_siginterrupt_off(self):
          """If a signal handler is installed and siginterrupt is called with
@@ -19,7 +19,7 @@ workarounds for breakage caused by libpthread
      # Issue 3864. Unknown if this affects earlier versions of freebsd also.
 -    @unittest.skipIf(sys.platform=='freebsd6',
 -        'itimer not reliable (does not mix well with threading) on freebsd6')
-+    @unittest.skipIf(sys.platform in ('freebsd6', 'openbsd3', 'openbsd4'),
++    @unittest.skipIf(sys.platform in ('freebsd6', 'openbsd3', 'openbsd4', 'openbsd5'),
 +        'itimer not reliable (does not mix well with threading) on some BSDs.')
      def test_itimer_prof(self):
          self.itimer = signal.ITIMER_PROF

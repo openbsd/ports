@@ -1,9 +1,18 @@
-$OpenBSD: patch-configure_in,v 1.4 2011/07/06 12:05:56 jasper Exp $
+$OpenBSD: patch-configure_in,v 1.5 2011/07/07 21:32:39 jasper Exp $
 
 Wrong value of LDSHARED in sysconfig, cf http://bugs.python.org/issue10547
 
 --- configure.in.orig	Mon Nov  1 02:47:19 2010
-+++ configure.in	Wed Jul  6 14:05:42 2011
++++ configure.in	Thu Jul  7 22:57:06 2011
+@@ -331,7 +331,7 @@ case $ac_sys_system/$ac_sys_release in
+     # As this has a different meaning on Linux, only define it on OpenBSD
+     AC_DEFINE(_BSD_SOURCE, 1, [Define on OpenBSD to activate all library features])
+     ;;
+-  OpenBSD/4.@<:@789@:>@)
++  OpenBSD/4.@<:@789@:>@ | OpenBSD/5.*)
+     # OpenBSD undoes our definition of __BSD_VISIBLE if _XOPEN_SOURCE is
+     # also defined. This can be overridden by defining _BSD_SOURCE
+     # As this has a different meaning on Linux, only define it on OpenBSD
 @@ -1850,30 +1850,14 @@ then
  	BSD/OS*/4*)
  		LDSHARED="gcc -shared"
