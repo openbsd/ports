@@ -1,3 +1,4 @@
+$OpenBSD: patch-POW_c,v 1.6 2011/07/07 17:16:18 jasper Exp $
 --- POW.c.orig	Fri Nov 23 02:03:09 2001
 +++ POW.c	Sat Oct  9 11:33:22 2010
 @@ -34,7 +34,7 @@
