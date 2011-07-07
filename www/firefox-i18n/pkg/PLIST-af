@@ -1,11 +1,2 @@
-@comment $OpenBSD: PLIST-af,v 1.5 2011/06/28 05:44:38 landry Exp $
+@comment $OpenBSD: PLIST-af,v 1.6 2011/07/07 19:45:19 jasper Exp $
 lib/firefox-${V}/extensions/langpack-af@firefox.mozilla.org.xpi
-lib/firefox-${V}/extensions/langpack-en-US@firefox.mozilla.org.xpi
-lib/firefox-${V}/extensions/langpack-en-ZA@firefox.mozilla.org.xpi
-lib/firefox-${V}/extensions/langpack-gd@firefox.mozilla.org.xpi
-lib/firefox-${V}/extensions/langpack-hy-AM@firefox.mozilla.org.xpi
-lib/firefox-${V}/extensions/langpack-lg@firefox.mozilla.org.xpi
-lib/firefox-${V}/extensions/langpack-mai@firefox.mozilla.org.xpi
-lib/firefox-${V}/extensions/langpack-son@firefox.mozilla.org.xpi
-lib/firefox-${V}/extensions/langpack-ta-LK@firefox.mozilla.org.xpi
-lib/firefox-${V}/extensions/langpack-zu@firefox.mozilla.org.xpi
