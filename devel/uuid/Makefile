@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/07/06 07:21:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2011/07/07 14:39:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -13,7 +13,7 @@ CATEGORIES=		devel
 SHARED_LIBS=		uuid	13.22 \
 			uuid++	14.21
 
-REVISION-main=		0
+REVISION-main=		1
 
 # Note there is a different libuuid in sysutils/e2fsprogs,-uuid.
 # If you are porting something which needs libuuid, you may need
