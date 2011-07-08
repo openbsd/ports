@@ -1,0 +1,192 @@
+$OpenBSD: patch-texk_web2c_pdftexdir_writepng_c,v 1.1 2011/07/08 20:37:01 naddy Exp $
+
+Fix build with png 1.5.
+http://tug.org/svn/texlive?view=revision&revision=21237
+
+--- texk/web2c/pdftexdir/writepng.c.origy	Tue Jun 22 09:35:42 2010
++++ texk/web2c/pdftexdir/writepng.c	Tue Jul  5 00:32:41 2011
+@@ -21,47 +21,19 @@ Franklin Street, Fifth Floor, Boston, MA 02110-1301 US
+ #include "ptexlib.h"
+ #include "image.h"
+ 
+-#if PNG_LIBPNG_VER_MINOR > 2
+-
+ /* ToDo:
+- *	use png_get_PLTE() to access num_palette and palette
+- *	use xxx to access transformations
++ *	Check if multiple use of, e.g., png_bit_depth(img) should be
++ *	replaced by
++ *		int bitdepth = png_bit_depth(img);
++ *	and subsequent use of bitdepth
+  */
+-
+ #define png_bit_depth(N)	png_get_bit_depth(png_ptr(N), png_info(N))
+ #define png_color_type(N)	png_get_color_type(png_ptr(N), png_info(N))
+ #define png_height(N)		png_get_image_height(png_ptr(N), png_info(N))
+ #define png_interlace_type(N)	png_get_interlace_type(png_ptr(N), png_info(N))
+-#define png_io_ptr(N)		png_get_io_ptr(png_ptr(N))
+-#define png_num_palette(N)	png_info(N)->num_palette
+-#define png_palette(N)		png_info(N)->palette
+ #define png_rowbytes(N)		png_get_rowbytes(png_ptr(N), png_info(N))
+-#define png_transformations(N)	png_ptr(N)->transformations
+-#define png_valid(N,flag)	png_get_valid(png_ptr(N), png_info(N), flag)
+ #define png_width(N)		png_get_image_width(png_ptr(N), png_info(N))
+ 
+-#define png_ptr_bit_depth(N)	png_get_bit_depth(png_ptr(N), png_info(N))
+-#define png_ptr_color_type(N)	png_get_color_type(png_ptr(N), png_info(N))
+-
+-#else
+-
+-#define png_bit_depth(N)	png_info(N)->bit_depth
+-#define png_color_type(N)	png_info(N)->color_type
+-#define png_height(N)		png_info(N)->height
+-#define png_interlace_type(N)	png_info(N)->interlace_type
+-#define png_io_ptr(N)		png_ptr(N)->io_ptr
+-#define png_num_palette(N)	png_info(N)->num_palette
+-#define png_palette(N)		png_info(N)->palette
+-#define png_rowbytes(N)		png_info(N)->rowbytes
+-#define png_transformations(N)	png_ptr(N)->transformations
+-#define png_valid(N,flag)	png_info(N)->valid & (flag)
+-#define png_width(N)		png_info(N)->width
+-
+-#define png_ptr_bit_depth(N)	png_ptr(N)->bit_depth
+-#define png_ptr_color_type(N)	png_ptr(N)->color_type
+-
+-#endif
+-
+ static int transparent_page_group = -1;
+ 
+ void read_png_info(integer img)
+@@ -84,7 +56,7 @@ void read_png_info(integer img)
+     }
+     /* alpha channel support  */
+     if (fixedpdfminorversion < 4
+-        && png_ptr_color_type(img) | PNG_COLOR_MASK_ALPHA)
++        && png_color_type(img) | PNG_COLOR_MASK_ALPHA)
+         png_set_strip_alpha(png_ptr(img));
+     /* 16bit depth support */
+     if (fixedpdfminorversion < 5)
+@@ -104,7 +76,7 @@ void read_png_info(integer img)
+     /* resolution support */
+     img_width(img) = png_width(img);
+     img_height(img) = png_height(img);
+-    if (png_valid(img, PNG_INFO_pHYs)) {
++    if (png_get_valid(png_ptr(img), png_info(img), PNG_INFO_pHYs)) {
+         img_xres(img) =
+             round(0.0254 *
+                   png_get_x_pixels_per_meter(png_ptr(img), png_info(img)));
+@@ -201,14 +173,18 @@ static void write_png_palette(integer img)
+     int i, j, k, l;
+     png_bytep row, r, *rows;
+     integer palette_objnum = 0;
++    png_colorp palette;
++    int num_palette;
++
++    png_get_PLTE(png_ptr(img), png_info(img), &palette, &num_palette);
++
+     pdfcreateobj(0, 0);
+     palette_objnum = objptr;
+     if (img_colorspace_ref(img) != 0) {
+         pdf_printf("%i 0 R\n", (int) img_colorspace_ref(img));
+     } else {
+         pdf_printf("[/Indexed /DeviceRGB %i %i 0 R]\n",
+-                   (int) (png_num_palette(img) - 1),
+-                   (int) palette_objnum);
++                   num_palette -1, (int) palette_objnum);
+     }
+     pdfbeginstream();
+     if (png_interlace_type(img) == PNG_INTERLACE_NONE) {
+@@ -230,11 +206,11 @@ static void write_png_palette(integer img)
+     if (palette_objnum > 0) {
+         pdfbegindict(palette_objnum, 0);
+         pdfbeginstream();
+-        for (i = 0; (unsigned) i < png_num_palette(img); i++) {
++        for (i = 0; (unsigned) i < num_palette; i++) {
+             pdfroom(3);
+-            pdfbuf[pdfptr++] = png_palette(img)[i].red;
+-            pdfbuf[pdfptr++] = png_palette(img)[i].green;
+-            pdfbuf[pdfptr++] = png_palette(img)[i].blue;
++            pdfbuf[pdfptr++] = palette[i].red;
++            pdfbuf[pdfptr++] = palette[i].green;
++            pdfbuf[pdfptr++] = palette[i].blue;
+         }
+         pdfendstream();
+     }
+@@ -461,7 +437,7 @@ static int spng_getint(FILE * fp)
+ 
+ static void copy_png(integer img)
+ {
+-    FILE *fp = (FILE *) png_io_ptr(img);
++    FILE *fp = (FILE *) png_get_io_ptr(png_ptr(img));
+     int i, len, type, streamlength = 0;
+     boolean endflag = false;
+     int idat = 0;               /* flag to check continuous IDAT chunks sequence */
+@@ -553,7 +529,12 @@ void write_png(integer img)
+     double gamma, checked_gamma;
+     int i;
+     integer palette_objnum = 0;
++    png_colorp palette;
++    int num_palette;
+     last_png_needs_page_group = false;
++
++    png_get_PLTE(png_ptr(img), png_info(img), &palette, &num_palette);
++
+     if (fixedpdfminorversion < 5)
+         fixedimagehicolor = 0;
+ 
+@@ -570,16 +551,12 @@ void write_png(integer img)
+             checked_gamma = (fixedgamma / 1000.0) * (1000.0 / fixedimagegamma);
+         }
+     }
+-    /* the switching between |png_info| and |png_ptr| queries has been trial and error.
+-     */
+     if (fixedpdfminorversion > 1
+         && png_interlace_type(img) == PNG_INTERLACE_NONE
+-        && (png_transformations(img) == PNG_TRANSFORM_IDENTITY
+-            || png_transformations(img) == 0x2000)
+         /* gamma */
+-        && !(png_ptr_color_type(img) == PNG_COLOR_TYPE_GRAY_ALPHA ||
+-             png_ptr_color_type(img) == PNG_COLOR_TYPE_RGB_ALPHA)
+-        && (fixedimagehicolor || (png_ptr_bit_depth(img) <= 8))
++        && !(png_color_type(img) == PNG_COLOR_TYPE_GRAY_ALPHA ||
++             png_color_type(img) == PNG_COLOR_TYPE_RGB_ALPHA)
++        && (fixedimagehicolor || (png_bit_depth(img) <= 8))
+         && (checked_gamma <= 1.01 && checked_gamma > 0.99)
+         ) {
+         if (img_colorspace_ref(img) != 0) {
+@@ -590,8 +567,7 @@ void write_png(integer img)
+                 pdfcreateobj(0, 0);
+                 palette_objnum = objptr;
+                 pdf_printf("[/Indexed /DeviceRGB %i %i 0 R]\n",
+-                           (int) (png_num_palette(img) - 1),
+-                           (int) palette_objnum);
++                           num_palette - 1, (int) palette_objnum);
+                 break;
+             case PNG_COLOR_TYPE_GRAY:
+                 pdf_puts("/DeviceGray\n");
+@@ -605,11 +581,11 @@ void write_png(integer img)
+         if (palette_objnum > 0) {
+             pdfbegindict(palette_objnum, 0);
+             pdfbeginstream();
+-            for (i = 0; i < png_num_palette(img); i++) {
++            for (i = 0; i < num_palette; i++) {
+                 pdfroom(3);
+-                pdfbuf[pdfptr++] = png_palette(img)[i].red;
+-                pdfbuf[pdfptr++] = png_palette(img)[i].green;
+-                pdfbuf[pdfptr++] = png_palette(img)[i].blue;
++                pdfbuf[pdfptr++] = palette[i].red;
++                pdfbuf[pdfptr++] = palette[i].green;
++                pdfbuf[pdfptr++] = palette[i].blue;
+             }
+             pdfendstream();
+         }
+@@ -619,9 +595,6 @@ void write_png(integer img)
+             if (fixedimageapplygamma &&
+                 (checked_gamma > 1.01 || checked_gamma < 0.99))
+                 tex_printf("gamma delta=%lf ", checked_gamma);
+-            if (png_transformations(img) != PNG_TRANSFORM_IDENTITY)
+-                tex_printf("transform=%lu",
+-                           (long) png_transformations(img));
+             if ((png_color_type(img) != PNG_COLOR_TYPE_GRAY)
+                 && (png_color_type(img) != PNG_COLOR_TYPE_RGB)
+                 && (png_color_type(img) != PNG_COLOR_TYPE_PALETTE))
