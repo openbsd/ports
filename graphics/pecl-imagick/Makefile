@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/07/07 01:06:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/08 20:19:14 robert Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	PHP support for the ImageMagick library
 
 DISTNAME=	imagick-2.3.0
 PKGNAME=	pecl-${DISTNAME}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	graphics www
 
 HOMEPAGE=	http://pecl.php.net/package/imagick/
@@ -23,13 +23,12 @@ EXTRACT_SUFX=	.tgz
 AUTOCONF_VERSION=	2.62
 AUTOMAKE_VERSION=	1.9
 
-MODULES=	converters/libiconv
+MODULES=	lang/php converters/libiconv
 
 BUILD_DEPENDS=	www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=	graphics/ImageMagick
-RUN_DEPENDS=	www/php5/core
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt bz2 expat fontconfig freetype \
 		jasper jbig jpeg lcms m png pthread-stubs tiff \
 		wmflite xcb xml2 z MagickCore MagickWand
@@ -38,7 +37,6 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
-PREFIX=		/var/www
 DESTDIRNAME=	INSTALL_ROOT
 
 NO_REGRESS=	Yes
@@ -46,12 +44,7 @@ NO_REGRESS=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 
-pre-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/phpize
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/conf/php5.sample
-	@echo "extension=imagick.so" > \
-		${PREFIX}/conf/php5.sample/imagick.ini
+MODPHP_DO_SAMPLE=	imagick
+MODPHP_DO_PHPIZE=	Yes
 
 .include <bsd.port.mk>

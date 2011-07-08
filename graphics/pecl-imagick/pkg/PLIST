@@ -1,11 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/08/16 05:50:30 jolan Exp $
-@comment conf/php5.sample/
-@group bin
-conf/php5.sample/imagick.ini
-@comment lib/
-@comment lib/php/
-@comment lib/php/modules/
-@owner root
-lib/php/modules/imagick.so
-@owner
-@group
+@comment $OpenBSD: PLIST,v 1.2 2011/07/08 20:19:14 robert Exp $
+lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
+share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
+@sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini
