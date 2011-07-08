@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2011/04/15 21:10:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2011/07/08 22:11:48 jasper Exp $
 
 COMMENT=	record and analyze your meals for nutrient composition
 
-V=		16.9
+V=		16.12
 DISTNAME=	nut-${V}
 PKGNAME=	nutdb-${V}
 CATEGORIES=	biology
@@ -20,7 +20,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nut/}
 
 NO_REGRESS=	Yes
 
-ALL_TARGET=	nut
+MAKE_FLAGS+=	CC="${CC}" prefix=${PREFIX}
 
 USE_GMAKE=	Yes
 
