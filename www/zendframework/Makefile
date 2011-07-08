@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/28 13:24:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/07/08 22:43:08 robert Exp $
 
 COMMENT=		framework for developing PHP web applications
 
@@ -6,7 +6,7 @@ V=			1.10.8
 DISTNAME=		zendframework-${V}
 DISTFILES=		ZendFramework-${V}.tar.gz
 
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		www devel
 
@@ -22,6 +22,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=		${HOMEPAGE}releases/ZendFramework-${V}/
 
+MODULES=		lang/php
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 PKG_ARCH=		*
@@ -31,8 +32,6 @@ WRKDIST=		${WRKDIR}/ZendFramework-${V}
 PREFIX=			/var/www
 INSTDIR=		${PREFIX}/zendframework
 SUBST_VARS=		INSTDIR
-
-RUN_DEPENDS=		www/php5/core
 
 do-install:
 	@-test ! -d ${INSTDIR} && mkdir ${INSTDIR}
