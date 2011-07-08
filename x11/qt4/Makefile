@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2011/07/07 00:22:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.87 2011/07/08 05:04:21 ajacoutot Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -28,7 +28,7 @@ REVISION-postgresql =	0
 REVISION-examples =	0
 REVISION-sqlite2 =	0
 REVISION-sqlite =	0
-PKGNAME-tds =		1
+REVISION-tds =		1
 REVISION-main =		0
 REVISION-debug =	0
 
