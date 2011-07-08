@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/14 21:29:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/08 21:57:02 ajacoutot Exp $
 
 COMMENT=	interactive game for young children
 
 DISTNAME=	gamine-1.1
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	games
 
-HOMEPAGE=	http://gnunux.info/dotclear2/
+HOMEPAGE=	http://gnunux.info/projets/gamine/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -26,7 +26,7 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb
 WANTLIB += xcb-render xcb-shm xml2 z
 
-MASTER_SITES=	http://gnunux.info/projets/gamine/
+MASTER_SITES=	${HOMEPAGE}
 
 MODULES=	devel/gettext \
 		devel/gconf2
