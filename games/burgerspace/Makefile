@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.23 2010/11/26 07:20:12 espie Exp $
+# $OpenBSD: Makefile,v 1.24 2011/07/08 22:38:52 ajacoutot Exp $
 
 COMMENT=	burgertime clone for X
 
-DISTNAME=	burgerspace-1.8.4
-REVISION =	0
+DISTNAME=	burgerspace-1.9.0
 
 CATEGORIES=	games
 
@@ -15,11 +14,13 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB += SDL SDL_image SDL_mixer c m pthread stdc++ flatzebra-0.1>=1
+WANTLIB += FLAC SDL SDL_image SDL_mixer c flatzebra-0.1 iconv
+WANTLIB += jpeg m mikmod ogg png pthread smpeg sndio stdc++ tiff
+WANTLIB += usbhid vorbis vorbisfile z
 
 MASTER_SITES=	http://sarrazip.com/dev/
 
-LIB_DEPENDS=	devel/flatzebra>=0.1.4
+LIB_DEPENDS=	devel/flatzebra>=0.1.5
 RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GROFF =	Yes

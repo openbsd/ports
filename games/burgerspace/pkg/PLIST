@@ -1,5 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/12/22 16:28:00 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/07/08 22:38:52 ajacoutot Exp $
 @bin bin/burgerspace
+@bin bin/burgerspace-server
+@man man/man6/burgerspace-server.6
 @man man/man6/burgerspace.6
 share/applications/burgerspace.desktop
 share/pixmaps/
