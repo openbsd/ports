@@ -1,7 +1,7 @@
-$OpenBSD: patch-fontforge_Makefile_dynamic_in,v 1.1 2010/06/23 08:00:42 kili Exp $
---- fontforge/Makefile.dynamic.in.orig	Tue Feb  2 06:23:06 2010
-+++ fontforge/Makefile.dynamic.in	Sun Jun 20 15:24:37 2010
-@@ -135,12 +135,12 @@ splinerefigure.lo: $(srcdir)/splinerefigure.c $(srcdir
+$OpenBSD: patch-fontforge_Makefile_dynamic_in,v 1.2 2011/07/08 19:04:05 kili Exp $
+--- fontforge/Makefile.dynamic.in.orig	Tue Feb 15 04:37:39 2011
++++ fontforge/Makefile.dynamic.in	Fri Jul  8 16:50:10 2011
+@@ -136,12 +136,12 @@ splinerefigure.lo: $(srcdir)/splinerefigure.c $(srcdir
  %.o: %.c
  
  %.o: %.c $(srcdir)/splinefont.h $(srcdir)/views.h $(srcdir)/stemdb.h $(srcdir)/ttf.h $(srcdir)/unicoderange.h $(srcdir)/psfont.h $(srcdir)/groups.h $(srcdir)/edgelist.h $(srcdir)/edgelist2.h $(srcdir)/uiinterface.h $(srcdir)/fontforgevw.h

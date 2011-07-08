@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/06/23 08:00:42 kili Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/07/08 19:04:05 kili Exp $
 @bin bin/fontforge
 bin/fontimage
 bin/fontlint
@@ -14,7 +14,7 @@ include/fontforge/bitmapcontrol.h
 include/fontforge/chardata.h
 include/fontforge/charset.h
 include/fontforge/config.h
-include/fontforge/configure-pfaedit.h
+include/fontforge/configure-fontforge.h
 include/fontforge/delta.h
 include/fontforge/dynamic.h
 include/fontforge/edgelist.h
@@ -23,6 +23,7 @@ include/fontforge/encoding.h
 include/fontforge/fffreetype.h
 include/fontforge/ffpython.h
 include/fontforge/fileutil.h
+include/fontforge/fontforge.h
 include/fontforge/fontforgevw.h
 include/fontforge/fvmetrics.h
 include/fontforge/gdraw.h
@@ -46,7 +47,6 @@ include/fontforge/mm.h
 include/fontforge/namehash.h
 include/fontforge/nonlineartrans.h
 include/fontforge/ofl.h
-include/fontforge/pfaedit.h
 include/fontforge/plugins.h
 include/fontforge/print.h
 include/fontforge/psfont.h
@@ -261,9 +261,7 @@ share/locale/es/LC_MESSAGES/FontForge.mo
 share/locale/fr/LC_MESSAGES/FontForge.mo
 share/locale/it/LC_MESSAGES/FontForge.mo
 share/locale/ja/LC_MESSAGES/FontForge.mo
-share/locale/mal/
-share/locale/mal/LC_MESSAGES/
-share/locale/mal/LC_MESSAGES/FontForge.mo
+share/locale/ml/LC_MESSAGES/FontForge.mo
 share/locale/pl/LC_MESSAGES/FontForge.mo
 share/locale/ru/LC_MESSAGES/FontForge.mo
 share/locale/uk/LC_MESSAGES/FontForge.mo
