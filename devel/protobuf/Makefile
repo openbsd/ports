@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/08 07:22:32 dcoppa Exp $
 
 COMMENT =		c++ protocol buffers
 
 DISTNAME =		protobuf-2.3.0
+REVISION =		0
 
 SHARED_LIBS +=		protobuf	0.0   # .4.0
 SHARED_LIBS +=		protoc		0.0   # .4.0
