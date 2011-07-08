@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_main_c,v 1.1.1.1 2004/07/01 21:53:16 robert Exp $
---- src/main.c.orig	Thu Jul  1 23:19:39 2004
-+++ src/main.c	Thu Jul  1 23:21:16 2004
-@@ -426,28 +426,28 @@
+$OpenBSD: patch-src_main_c,v 1.2 2011/07/08 11:25:47 jasper Exp $
+--- src/main.c.orig	Mon Jun 23 14:05:48 2003
++++ src/main.c	Fri Jul  8 13:22:30 2011
+@@ -426,28 +426,28 @@ im_printf(char *str, struct tm *tm,
        switch (*c) {
          case 'f':
            if (filename_im)
@@ -36,7 +36,7 @@ $OpenBSD: patch-src_main_c,v 1.1.1.1 2004/07/01 21:53:16 robert Exp $
            break;
          case 's':
            if (filename_im) {
-@@ -456,22 +456,22 @@
+@@ -456,22 +456,22 @@ im_printf(char *str, struct tm *tm,
  
                size = st.st_size;
                snprintf(buf, sizeof(buf), "%d", size);
@@ -64,7 +64,7 @@ $OpenBSD: patch-src_main_c,v 1.1.1.1 2004/07/01 21:53:16 robert Exp $
            break;
          default:
            strncat(ret, c, 1);
-@@ -482,7 +482,7 @@
+@@ -482,7 +482,7 @@ im_printf(char *str, struct tm *tm,
        switch (*c) {
          case 'n':
            if (filename_im)

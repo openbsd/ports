@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2004/07/01 21:53:16 robert Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2011/07/08 11:25:47 jasper Exp $
 --- src/Makefile.in.orig	Mon Jun 23 14:13:34 2003
-+++ src/Makefile.in	Mon Jun 28 15:42:33 2004
-@@ -73,13 +73,13 @@
++++ src/Makefile.in	Fri Jul  8 13:22:30 2011
+@@ -73,13 +73,13 @@ VERSION = @VERSION@
  
  MAINTAINERCLEANFILES = Makefile.in				
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2004/07/01 21:53:16 robert Exp $
  
  scrot_LDADD = -lX11 @GIBLIB_LIBS@
  mkinstalldirs = $(SHELL) $(top_srcdir)/mkinstalldirs
-@@ -91,7 +91,7 @@
+@@ -91,7 +91,7 @@ PROGRAMS =  $(bin_PROGRAMS)
  DEFS = @DEFS@ -I. -I$(srcdir) -I.
  CPPFLAGS = @CPPFLAGS@
  LIBS = @LIBS@
@@ -27,7 +27,7 @@ $OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2004/07/01 21:53:16 robert Exp $
  scrot_DEPENDENCIES = 
  scrot_LDFLAGS = 
  CFLAGS = @CFLAGS@
-@@ -239,11 +239,9 @@
+@@ -239,11 +239,9 @@ distdir: $(DISTFILES)
  	    || cp -p $$d/$$file $(distdir)/$$file || :; \
  	  fi; \
  	done

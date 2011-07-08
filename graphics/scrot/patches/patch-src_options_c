@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_options_c,v 1.1.1.1 2004/07/01 21:53:16 robert Exp $
+$OpenBSD: patch-src_options_c,v 1.2 2011/07/08 11:25:47 jasper Exp $
 --- src/options.c.orig	Mon Jun 23 14:09:08 2003
-+++ src/options.c	Thu Jul  1 23:22:32 2004
-@@ -141,6 +141,7 @@
++++ src/options.c	Fri Jul  8 13:22:30 2011
+@@ -141,6 +141,7 @@ name_thumbnail(char *name)
  
     length = strlen(name) + 7;
     new_title = gib_emalloc(length);
@@ -9,7 +9,7 @@ $OpenBSD: patch-src_options_c,v 1.1.1.1 2004/07/01 21:53:16 robert Exp $
  
     dot_pos = strrchr(name, '.');
     if (dot_pos)
-@@ -148,11 +149,11 @@
+@@ -148,11 +149,11 @@ name_thumbnail(char *name)
        diff = (dot_pos - name) / sizeof(char);
  
        strncpy(new_title, name, diff);
