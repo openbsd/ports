@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/03 12:04:47 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/08 09:09:43 dcoppa Exp $
 
 COMMENT =		minimalistic Mumble server 
 
-DISTNAME =		umurmur-0.2.6
+DISTNAME =		umurmur-0.2.7
 
 CATEGORIES =		audio
 
@@ -12,33 +12,32 @@ MASTER_SITES =		${HOMEPAGE}/files/
 
 MAINTAINER =		Jonathon Sisson <sisson.j@gmail.com>
 
-# BSD and Apache 2.0 (see src/google/protobuf-c/*)
+# BSD
 PERMIT_PACKAGE_CDROM =	Yes 
 PERMIT_PACKAGE_FTP =	Yes 
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes 
 
-LIB_DEPENDS =		devel/libconfig
+WANTLIB = 		c config crypto protobuf-c ssl
 
-MAKE_FLAGS =		EXTRA_CFLAGS="-I${LOCALBASE}/include" \
-			EXTRA_LDFLAGS="-L${LOCALBASE}/lib \
-					-lcrypto -lssl"
+LIB_DEPENDS =		devel/libconfig \
+			devel/protobuf-c
 
-USE_GMAKE =		Yes
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.63
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS =	--with-ssl=openssl
 
-WANTLIB = 		c config crypto ssl 
-
-WRKSRC = 		${WRKDIST}/src
+NO_REGRESS =		Yes
 
 post-configure:
-	${SUBST_CMD} ${WRKSRC}/conf.c
+	${SUBST_CMD} ${WRKSRC}/src/conf.c ${WRKSRC}/src/conf.h
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKBUILD}/umurmurd \
-		${PREFIX}/sbin/umurmurd
+post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/umurmur
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
-		-c ${WRKBUILD}/../umurmur.conf.example \
+		-c ${WRKBUILD}/umurmur.conf.example \
 		${PREFIX}/share/examples/umurmur/umurmur.conf
 	${INSTALL_MAN} ${FILESDIR}/umurmurd.1 \
 		${PREFIX}/man/man1/

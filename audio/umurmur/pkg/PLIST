@@ -1,9 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/03 12:04:47 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/08 09:09:43 dcoppa Exp $
 @newgroup _umurmur:671
 @newuser _umurmur:671:_umurmur:daemon:uMurmur Account:/nonexistent:/sbin/nologin
+@bin bin/umurmurd
 @man man/man1/umurmurd.1
 @man man/man1/umurmur.conf.1
-@bin sbin/umurmurd
 share/examples/umurmur/
 share/examples/umurmur/umurmur.conf
 @owner _umurmur

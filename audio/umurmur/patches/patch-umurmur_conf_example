@@ -1,7 +1,7 @@
-$OpenBSD: patch-umurmur_conf_example,v 1.1.1.1 2011/04/03 12:04:47 dcoppa Exp $
---- umurmur.conf.example.orig	Tue Feb  8 23:06:05 2011
-+++ umurmur.conf.example	Thu Mar 31 15:25:23 2011
-@@ -1,15 +1,15 @@
+$OpenBSD: patch-umurmur_conf_example,v 1.2 2011/07/08 09:09:43 dcoppa Exp $
+--- umurmur.conf.example.orig	Mon Apr 18 20:19:33 2011
++++ umurmur.conf.example	Thu Jul  7 14:30:37 2011
+@@ -1,7 +1,7 @@
  max_bandwidth = 48000;
  welcometext = "Welcome to uMurmur!";
 -certificate = "/etc/umurmur/cert.crt";
@@ -11,6 +11,8 @@ $OpenBSD: patch-umurmur_conf_example,v 1.1.1.1 2011/04/03 12:04:47 dcoppa Exp $
  password = "";
  max_users = 10;
  
+@@ -10,9 +10,9 @@ max_users = 10;
+ 
  # username and groupname for privilege dropping.
  # Will attempt to switch user if set. 
 -# username = "";
@@ -19,5 +21,5 @@ $OpenBSD: patch-umurmur_conf_example,v 1.1.1.1 2011/04/03 12:04:47 dcoppa Exp $
 -# groupname = "";
 +groupname = "_umurmur";
  
- # bindport = 64738;
- # bindaddr = "192.168.1.1";
+ # Log to file option. Default is logging to syslog.
+ # umurmurd will close and reopen the logfile if SIGHUP is received.
