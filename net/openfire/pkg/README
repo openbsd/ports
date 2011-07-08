@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2011/06/02 13:41:40 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2011/07/08 02:14:59 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,7 +15,7 @@ $OpenBSD: README,v 1.3 2011/06/02 13:41:40 ajacoutot Exp $
    ${SYSCONFDIR}/rc.d/openfire start
 
    as root. To arrange for this to happen at boot, include 'openfire'
-   in the rc_scripts variable in ${SYSCONFDIR}/rc.d/rc.conf/local
+   in the pkg_scripts variable in /etc/rc.conf.local
 
 3) After starting openfire, you may access the web interface at
    http://[hostname]:9090/; when you first login there is a configuration

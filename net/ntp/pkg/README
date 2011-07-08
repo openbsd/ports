@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:40 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2011/07/08 02:14:58 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -15,5 +15,5 @@ Several steps need to be taken to properly configure the NTP daemon.
 
      /etc/rc.d/ntpd start
 
-   Or to start 'ntpd' at every boot, add it to rc_scripts in
+   Or to start 'ntpd' at every boot, add it to pkg_scripts in
    /etc/rc.conf.local.

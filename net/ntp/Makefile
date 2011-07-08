@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/06/02 13:41:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2011/07/08 02:14:59 ajacoutot Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -9,7 +9,7 @@ COMMENT=	Network Time Protocol reference implementation
 VERSION=	4.2.6p2
 DISTNAME=	ntp-${VERSION}
 PKGNAME=	ntp-${VERSION:S/p/pl/}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://archive.ntp.org/ntp4/ntp-4.2/
 

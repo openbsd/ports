@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2011/07/08 02:14:58 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -54,8 +54,8 @@ unprivileged account.
 
   5. Make Icecast start at boot.
 
-     Add 'icecast' to rc_scripts in /etc/rc.conf.local. Eg:
-     rc_scripts="icecast"
+     Add 'icecast' to pkg_scripts in /etc/rc.conf.local. Eg:
+     pkg_scripts="icecast"
 
 Random hints:
 
