@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/15 00:22:53 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/07/08 18:46:16 robert Exp $
 
 COMMENT =	PostgreSQL log analyzer
 
 DISTNAME =	pgfouine-1.2
 CATEGORIES =	databases
+
+REVISION =	0
 
 HOMEPAGE =	http://pgfouine.projects.postgresql.org/
 
@@ -22,11 +24,11 @@ NO_BUILD =	Yes
 NO_REGRESS =	Yes
 PKG_ARCH =	*
 
-RUN_DEPENDS =	www/php5/core \
-		www/php5/extensions,-gd
+MODULES =	lang/php
+RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-gd
 
 pre-configure:
-	@perl -pi -e 's,/usr/bin/php,${LOCALBASE}/bin/php,g;' \
+	@perl -pi -e 's,/usr/bin/php,${MODPHP_BIN},g;' \
 		-e 's,!!PREFIX!!,${PREFIX},g' \
 		 ${WRKSRC}/pgfouine.php ${WRKSRC}/pgfouine_vacuum.php
 	@find ${WRKSRC} -type d -name CVS | xargs rm -fr

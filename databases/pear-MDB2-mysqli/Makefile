@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/26 07:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/07/08 18:46:16 robert Exp $
 
 COMMENT =	MySQLi database abstraction layer for PHP
 
@@ -8,7 +8,9 @@ PKGNAME =	pear-MDB2-mysqli-${V}
 CATEGORIES =	net databases
 
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
-MODULES =	www/pear
+MODULES =	lang/php www/pear
+
+REVISION =	0
 
 # PHP License
 PERMIT_PACKAGE_CDROM =	Yes
@@ -17,6 +19,6 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 RUN_DEPENDS =	databases/pear-MDB2>=2.4.1 \
-		www/php5/extensions,-mysqli
+		lang/php/${MODPHP_VERSION},-mysqli
 
 .include <bsd.port.mk>
