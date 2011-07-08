@@ -1,5 +1,6 @@
---- local.h.samp.orig	Mon Jan 21 11:54:21 2002
-+++ local.h.samp	Mon Jan 21 13:27:15 2002
+$OpenBSD: patch-local_h_samp,v 1.1 2011/07/08 09:52:50 jasper Exp $
+--- local.h.samp.orig	Wed Jul 25 23:51:47 2001
++++ local.h.samp	Fri Jul  8 11:47:35 2011
 @@ -105,7 +105,7 @@
   */
  

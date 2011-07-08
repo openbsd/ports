@@ -1,0 +1,19 @@
+$OpenBSD: patch-languages_english_english_3,v 1.1 2011/07/08 09:52:50 jasper Exp $
+--- languages/english/english.3.orig	Thu Jun  7 01:49:16 2001
++++ languages/english/english.3	Fri Jul  8 11:47:35 2011
+@@ -5200,6 +5200,7 @@ dirk
+ dirndl
+ disaccredit
+ disafforest
++disappear
+ disbranch
+ disbud
+ discalced
+@@ -5234,7 +5235,6 @@ dispersity
+ dispersoid
+ displayable
+ disproven
+-dissappear
+ disseminule
+ dissentious
+ dissepiment

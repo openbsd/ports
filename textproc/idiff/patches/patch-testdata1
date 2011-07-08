@@ -1,3 +1,4 @@
+$OpenBSD: patch-testdata1,v 1.2 2011/07/08 09:52:50 jasper Exp $
 --- s1.orig	Tue Sep 29 17:38:18 1998
 +++ s1	Tue Sep 29 17:39:00 1998
 @@ -0,0 +1,4 @@

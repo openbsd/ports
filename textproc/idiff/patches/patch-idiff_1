@@ -1,5 +1,6 @@
---- idiff.1.orig	Wed Sep 20 13:25:31 2000
-+++ idiff.1	Wed Sep 20 13:34:03 2000
+$OpenBSD: patch-idiff_1,v 1.1 2011/07/08 09:52:50 jasper Exp $
+--- idiff.1.orig	Fri Jul  8 11:46:48 2011
++++ idiff.1	Fri Jul  8 11:46:48 2011
 @@ -0,0 +1,79 @@
 +.TH IDIFF Local
 +.SH NAME

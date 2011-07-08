@@ -1,15 +1,16 @@
---- Makefile.orig	Wed Sep 16 15:56:29 1998
-+++ Makefile	Tue Sep 29 18:40:22 1998
+$OpenBSD: patch-Makefile,v 1.2 2011/07/08 09:52:50 jasper Exp $
+--- Makefile.orig	Wed Sep 16 21:56:29 1998
++++ Makefile	Fri Jul  8 11:46:48 2011
 @@ -1,7 +1,7 @@
 -all:	idiff
 +CFLAGS += -g
-+
-+PROG = idiff
  
 -idiff:	idiff.c
 -	$(CC) idiff.c -o idiff
-+all:	idiff
++PROG = idiff
  
 -clean:
 -	rm -f *.o a.out
++all:	idiff
++
 +.include <bsd.prog.mk>
