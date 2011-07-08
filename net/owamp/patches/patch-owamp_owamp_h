@@ -1,0 +1,37 @@
+$OpenBSD: patch-owamp_owamp_h,v 1.1.1.1 2011/07/08 09:31:06 sthen Exp $
+
+remove conflict with sys/time.h macros
+
+--- owamp/owamp.h.orig	Fri Jan 23 17:52:04 2009
++++ owamp/owamp.h	Tue Apr 21 18:03:37 2009
+@@ -1627,8 +1627,8 @@ OWPTestDiskspace(
+      ((tvp)->tv_sec cmp (uvp)->tv_sec))
+ #endif
+ 
+-#ifndef        timespecadd
+-#define timespecadd(vvp, uvp)               \
++#ifndef        mytimespecadd
++#define mytimespecadd(vvp, uvp)               \
+     do {                                    \
+         (vvp)->tv_sec += (uvp)->tv_sec;     \
+         (vvp)->tv_nsec += (uvp)->tv_nsec;   \
+@@ -1639,8 +1639,8 @@ OWPTestDiskspace(
+     } while (0)
+ #endif
+ 
+-#ifndef timespecsub
+-#define timespecsub(vvp, uvp)               \
++#ifndef mytimespecsub
++#define mytimespecsub(vvp, uvp)               \
+     do {                                    \
+         (vvp)->tv_sec -= (uvp)->tv_sec;     \
+         (vvp)->tv_nsec -= (uvp)->tv_nsec;   \
+@@ -1662,7 +1662,7 @@ OWPTestDiskspace(
+             ts1_ = *uvp;                    \
+             ts2_ = *vvp;                    \
+         }                                   \
+-        timespecsub(&ts1_,&ts2_);           \
++        mytimespecsub(&ts1_,&ts2_);           \
+         *vvp = ts1_;                        \
+     } while(0)
+ #endif

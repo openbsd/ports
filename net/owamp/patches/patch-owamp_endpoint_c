@@ -1,0 +1,112 @@
+$OpenBSD: patch-owamp_endpoint_c,v 1.1.1.1 2011/07/08 09:31:06 sthen Exp $
+
+remove conflict with sys/time.h macros
+
+--- owamp/endpoint.c.orig	Fri Jan 23 17:52:04 2009
++++ owamp/endpoint.c	Tue Apr 21 18:03:37 2009
+@@ -1320,7 +1320,7 @@ run_sender(
+                 OWPScheduleContextGenerateNextDelta(
+                     ep->tsession->sctx));
+         OWPNum64ToTimespec(&nexttime,nextoffset);
+-        timespecadd(&nexttime,&ep->start);
++        mytimespecadd(&nexttime,&ep->start);
+         *seq = htonl(i);
+ 
+         /*
+@@ -1371,7 +1371,7 @@ AGAIN:
+              * send time, then skip actually sending.
+              */
+             latetime = timeout;
+-            timespecadd(&latetime,&nexttime);
++            mytimespecadd(&latetime,&nexttime);
+             if(timespeccmp(&currtime,&latetime,>)){
+                 skip(ep,i);
+                 goto SKIP_SEND;
+@@ -1469,7 +1469,7 @@ SKIP_SEND:
+              */
+ 
+             sleeptime = nexttime;
+-            timespecsub(&sleeptime,&currtime);
++            mytimespecsub(&sleeptime,&currtime);
+             if((nanosleep(&sleeptime,NULL) == 0) || (errno == EINTR)){
+                 goto AGAIN;
+             }
+@@ -1492,8 +1492,8 @@ SKIP_SEND:
+             ep->tsession->test_spec.loss_timeout)+1;
+ #endif
+     latetime = timeout;
+-    timespecadd(&latetime,&nexttime);
+-    timespecadd(&latetime,&ep->enddelay);
++    mytimespecadd(&latetime,&nexttime);
++    mytimespecadd(&latetime,&ep->enddelay);
+ 
+     while(!owp_usr2 && !owp_int){
+         if(!_OWPGetTimespec(ep->cntrl->ctx,&currtime,&esterror,&sync)){
+@@ -1506,7 +1506,7 @@ SKIP_SEND:
+             break;
+ 
+         sleeptime = latetime;
+-        timespecsub(&sleeptime,&currtime);
++        mytimespecsub(&sleeptime,&currtime);
+ #if NOT
+ OWPError(ep->cntrl->ctx,OWPErrFATAL,OWPErrUNKNOWN,
+                     "run_sender: end nanosleep(%lu.%lu,nil)",
+@@ -1885,8 +1885,8 @@ flush_lost(
+      * in the missing packet queue should be declared lost.
+      */
+     timespecclear(&expectspec);
+-    timespecadd(&expectspec,&ep->begin->absolute);
+-    timespecadd(&expectspec,&lostspec);
++    mytimespecadd(&expectspec,&ep->begin->absolute);
++    mytimespecadd(&expectspec,&lostspec);
+ 
+     /*
+      * If owp_usr2, then StopSessions has been received. We
+@@ -1905,8 +1905,8 @@ flush_lost(
+      */
+     if(owp_usr2){
+         timespecclear(&currtime);
+-        timespecadd(&currtime,&expectspec);
+-        timespecadd(&currtime,&lostspec);
++        mytimespecadd(&currtime,&expectspec);
++        mytimespecadd(&currtime,&lostspec);
+     }
+ 
+     /*
+@@ -1977,16 +1977,16 @@ flush_lost(
+         free_node(ep,node);
+ 
+         timespecclear(&expectspec);
+-        timespecadd(&expectspec,&ep->begin->absolute);
+-        timespecadd(&expectspec,&lostspec);
++        mytimespecadd(&expectspec,&ep->begin->absolute);
++        mytimespecadd(&expectspec,&lostspec);
+ 
+         /*
+          * StopSessions received: fast-forward currtime
+          */
+         if(owp_usr2){
+             timespecclear(&currtime);
+-            timespecadd(&currtime,&expectspec);
+-            timespecadd(&currtime,&lostspec);
++            mytimespecadd(&currtime,&expectspec);
++            mytimespecadd(&currtime,&lostspec);
+         }
+     }
+ 
+@@ -2181,11 +2181,11 @@ again:
+          * and not the timer.)
+          */
+         tvalclear(&wake.it_value);
+-        timespecadd((struct timespec*)&wake.it_value,
++        mytimespecadd((struct timespec*)&wake.it_value,
+                 &ep->end->absolute);
+-        timespecadd((struct timespec*)&wake.it_value,&lostspec);
+-        timespecadd((struct timespec*)&wake.it_value,&fudgespec);
+-        timespecsub((struct timespec*)&wake.it_value,&currtime);
++        mytimespecadd((struct timespec*)&wake.it_value,&lostspec);
++        mytimespecadd((struct timespec*)&wake.it_value,&fudgespec);
++        mytimespecsub((struct timespec*)&wake.it_value,&currtime);
+ 
+         wake.it_value.tv_usec /= 1000;        /* convert nsec to usec        */
+         tvalclear(&wake.it_interval);

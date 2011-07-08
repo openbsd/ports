@@ -1,0 +1,57 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/08 09:31:06 sthen Exp $
+@newgroup _owampd:678
+@newuser _owampd:678:_owampd:daemon:owampd user:/nonexistent:/sbin/nologin
+@bin bin/aespasswd
+@bin bin/owampd
+bin/owfetch
+@bin bin/owping
+bin/owstats
+@bin bin/owtvec
+bin/owup
+@bin bin/pfstore
+@bin bin/powstream
+include/I2util/
+include/I2util/Pthread.h
+include/I2util/addr.h
+include/I2util/conf.h
+include/I2util/errlog.h
+include/I2util/errlogimmediate.h
+include/I2util/errlogsyslog.h
+include/I2util/hex.h
+include/I2util/hmac-sha1.h
+include/I2util/io.h
+include/I2util/mach_dep.h
+include/I2util/md5.h
+include/I2util/pbkdf2.h
+include/I2util/random.h
+include/I2util/readpassphrase.h
+include/I2util/saddr.h
+include/I2util/sha1.h
+include/I2util/sha1P.h
+include/I2util/table.h
+include/I2util/util.h
+lib/libI2util.a
+lib/libowamp.a
+@man man/man1/aespasswd.1
+@man man/man1/owfetch.1
+@man man/man1/owping.1
+@man man/man1/owstats.1
+@man man/man1/owup.1
+@man man/man1/pfstore.1
+@man man/man1/powstream.1
+@man man/man5/owampd.conf.5
+@man man/man5/owampd.limits.5
+@man man/man5/owampd.pfs.5
+@man man/man8/owampd.8
+@owner _owampd
+@group _owampd
+@sample /var/db/owampd/
+@owner
+@group
+share/examples/owampd/
+@sample ${SYSCONFDIR}/owampd/
+share/examples/owampd/owampd.conf
+@sample ${SYSCONFDIR}/owampd/owampd.conf
+share/examples/owampd/owampd.limits
+@sample ${SYSCONFDIR}/owampd/owampd.limits
+@rcscript ${RCDIR}/owampd

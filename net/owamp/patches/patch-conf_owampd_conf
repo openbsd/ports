@@ -1,0 +1,39 @@
+$OpenBSD: patch-conf_owampd_conf,v 1.1.1.1 2011/07/08 09:31:06 sthen Exp $
+--- conf/owampd.conf.orig	Fri Mar  7 23:13:35 2008
++++ conf/owampd.conf	Fri Mar  7 23:16:27 2008
+@@ -21,8 +21,8 @@
+ 
+ # run as group/user - only used if effective uid is root.
+ # (defaults to nil)
+-user		owamp
+-group		owamp
++user		_owampd
++group		_owampd
+ 
+ # not really used, but what the heck.
+ # (defaults to !verbose)
+@@ -30,7 +30,7 @@ verbose
+ 
+ # where should syslog messages go?
+ # (defaults to daemon)
+-facility	local5
++#facility	local5
+ 
+ # include src file:line in log messages
+ # keep this on, and help us with more specific bug reports!
+@@ -39,13 +39,13 @@ loglocation
+ 
+ # location for owampd.pid and owampd.info files
+ # (defaults to $cwd)
+-#vardir		/var/run
++vardir		/var/run/owampd
+ 
+ # location for "recv" session files.
+ # The "catalog" subdirectory is completely cleaned and recreated each time
+ # owampd is restarted. DONT PUT ANYTHING IN THERE!
+ # (defaults to $cwd)
+-#datadir		/big/enough
++datadir		/var/db/owampd
+ 
+ # authmode - uncomment to make only Open.
+ # (defaults to OAE)
