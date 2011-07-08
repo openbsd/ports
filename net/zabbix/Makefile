@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/06/02 13:41:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2011/07/08 22:31:59 robert Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -13,8 +13,9 @@ FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
 
-REVISION-web=		0
-REVISION-server=	0
+REVISION-main=		0
+REVISION-web=		1
+REVISION-server=	1
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -30,7 +31,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zabbix/}
 
-MODULES=		converters/libiconv
+MODULES=		converters/libiconv lang/php
 USE_GROFF =		Yes
 
 MULTI_PACKAGES =	-main -web
@@ -42,6 +43,8 @@ SUBST_VARS +=		PREFIX-web ZABBIX_WEB MAJV
 WANTLIB =		c kvm m execinfo lber ldap
 LIB_DEPENDS =		databases/openldap \
 			devel/libexecinfo
+
+RUN_DEPENDS-main =	${MODLIBICONV_RUN_DEPENDS}
 
 LIB_DEPENDS-server =	${LIB_DEPENDS} \
 			net/curl \
@@ -67,8 +70,7 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 PREFIX-web =		/var/www
 LIB_DEPENDS-web =
-RUN_DEPENDS-web =	www/php5/extensions,-gd \
-			www/php5/extensions,-mbstring
+RUN_DEPENDS-web =	lang/php/${MODPHP_VERSION},-gd
 WANTLIB-web =
 ZABBIX_WEB =		${PREFIX-web}/zabbix
 

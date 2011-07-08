@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/08 22:32:29 robert Exp $
 
 SHARED_ONLY =		Yes
 
@@ -8,6 +8,8 @@ DISTNAME =		Fileinfo-1.0.4
 PKGNAME =		pecl-${DISTNAME:L}
 CATEGORIES =		sysutils
 MAINTAINER =		Johan Huldtgren <jhuldtgren@gmail.com>
+
+REVISION =		0
 
 HOMEPAGE =		http://pecl.php.net/package/fileinfo/
 
@@ -23,19 +25,16 @@ EXTRACT_SUFX =		.tgz
 AUTOCONF_VERSION =	2.62
 AUTOMAKE_VERSION =	1.9
 
+MODULES=		lang/php
 BUILD_DEPENDS =		www/pear \
 			${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS}
-RUN_DEPENDS =		www/php5/core
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-			AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
 LIB_DEPENDS =		devel/libmagic
 WANTLIB +=		z magic
 
-PREFIX =		/var/www
 DESTDIRNAME =		INSTALL_ROOT
 
 REGRESS_TARGET =	test
@@ -43,12 +42,7 @@ REGRESS_TARGET =	test
 USE_LIBTOOL =		Yes
 LIBTOOL_FLAGS +=	--tag=disable-static
 
-pre-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/phpize
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/conf/php5.sample
-	@echo "extension=fileinfo.so" > \
-		${PREFIX}/conf/php5.sample/fileinfo.ini
+MODPHP_DO_SAMPLE=	fileinfo
+MODPHP_DO_PHPIZE=	Yes
 
 .include <bsd.port.mk>

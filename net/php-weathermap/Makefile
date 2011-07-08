@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/19 22:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/07/08 22:31:59 robert Exp $
 
 COMMENT=	graphical network traffic map
 
 DISTNAME=	php-weathermap-0.97a
-REVISION=	0
+REVISION=	1
 EXTRACT_SUFX=	.zip
 
 CATEGORIES=	net www
@@ -20,9 +20,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}files/
 
+MODULES=	lang/php
+
 RUN_DEPENDS=	www/pear \
-		www/php5/extensions,-gd \
-		www/php5/core
+		lang/php/${MODPHP_VERSION},-gd
 
 NO_REGRESS=	Yes
 

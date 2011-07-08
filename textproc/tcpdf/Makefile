@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/04/16 23:10:13 jolan Exp $
+# $OpenBSD: Makefile,v 1.23 2011/07/08 22:37:07 robert Exp $
 
 COMMENT=	PHP class for generating PDF documents
 DISTNAME=	tcpdf_5_9_068
@@ -6,6 +6,8 @@ PKGNAME=	tcpdf-5.9.068
 EXTRACT_SUFX=	.zip
 CATEGORIES=	textproc www/php5
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=tcpdf/}
+
+REVISION=	0
 
 HOMEPAGE=	http://www.tcpdf.org/
 
@@ -15,9 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
+MODULES=	lang/php
+MODPHP_BUILDDEP=No
+
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
-RUN_DEPENDS=	www/php5/core
 
 WRKDIST=	${WRKDIR}/tcpdf
 PREFIX=		/var/www

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2011/05/11 12:03:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2011/07/08 22:31:59 robert Exp $
 
 COMMENT-main=	host and service monitor
 COMMENT-web=	cgis and webpages for nagios
 
 V=		3.2.3
-REVISION-main=	2
-REVISION-web=	0
+REVISION-main=	3
+REVISION-web=	1
 DISTNAME=	nagios-${V}
 PKGNAME-main=	nagios-${V}
 PKGNAME-web=	nagios-web-${V}
@@ -23,10 +23,11 @@ MULTI_PACKAGES=	-main -web
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=nagios/}
 
+MODULES=	lang/php
+
 BUILD_DEPENDS=	graphics/gd
 LIB_DEPENDS=	devel/libtool,-ltdl
-RUN_DEPENDS=	net/nagios/plugins \
-		www/php5/core
+RUN_DEPENDS=	net/nagios/plugins
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--datadir=/var/www/nagios \
