@@ -1,0 +1,67 @@
+$OpenBSD: patch-data_gsmartcontrol-root_in,v 1.1.1.1 2011/07/08 18:17:12 sthen Exp $
+--- data/gsmartcontrol-root.in.orig	Sat Apr 30 20:39:54 2011
++++ data/gsmartcontrol-root.in	Fri Jul  8 13:04:54 2011
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ ############################################################################
+ # Copyright:
+ #      (C) 2008 - 2010  Alexander Shaduri <ashaduri 'at' gmail.com>
+@@ -22,7 +22,6 @@ elif [ "$DESKTOP" != "auto" ] && [ "$DESKTOP" != "kde"
+ 	echo "Usage: $0 [<auto|kde|gnome|other> [<${prog_name}_options>] ]";
+ 	exit 1;
+ fi
+-shift;  # remove $1
+ 
+ 
+ # Auto-detect current desktop if auto was specified.
+@@ -46,8 +45,8 @@ fi
+ # sux requires xterm to ask for the password.
+ # xdg-su is basically like this script, except worse :)
+ # su-to-root is a debian/ubuntu official method (although gksu is available).
+-gnome_sus="su-to-root gnomesu gksu kdesu beesu xdg-su sux";
+-kde_sus="su-to-root kdesu gnomesu gksu beesu xdg-su sux";
++gnome_sus="gksu-polkit";
++kde_sus="kdesu";
+ other_sus="$gnome_sus";
+ 
+ 
+@@ -64,7 +63,7 @@ fi
+ 
+ if [ "$GSMARTCONTROL_SU" = "" ]; then
+ 	for subin in $candidates; do
+-		which $subin &>/dev/null
++		which $subin > /dev/null 2>&1
+ 		if [ $? -eq 0 ]; then
+ 			found_su="$subin";
+ 			break;
+@@ -73,7 +72,7 @@ if [ "$GSMARTCONTROL_SU" = "" ]; then
+ 
+ 	if [ "$found_su" = "" ]; then
+ 		xmessage "Error launching ${prog_name}: No suitable su mechanism found.
+-Try installing kdesu, gnomesu, gksu, beesu or sux first.";
++Try installing kdesu or gksu-polkit first.";
+ 		exit 1;
+ 	fi
+ fi
+@@ -88,7 +87,7 @@ fi
+ # the user's env after all).
+ # Note that beesu won't show a GUI login box if /usr/sbin is before /usr/bin,
+ # so add it first as well.
+-EXTRA_PATHS="/usr/bin:/usr/sbin:/usr/local/sbin";
++EXTRA_PATHS="/usr/bin:/usr/sbin:@prefix@/sbin";
+ export PATH="$EXTRA_PATHS:$PATH"
+ 
+ 
+@@ -118,7 +117,10 @@ elif [ "$found_su" = "beesu" ]; then
+ elif [ "$found_su" = "su-to-root" ]; then
+ 	full_cmd="$found_su -X -c '$EXEC_BIN $@'";
+ 
+-else  # gnomesu, kdesu, xdg-su
++elif [ "$found_su" = "$gnome_sus" ]; then
++	full_cmd="$found_su $EXEC_BIN $@";
++
++else  # kdesu, xdg-su
+ 	full_cmd="$found_su -c '$EXEC_BIN $@'";
+ fi
+ 

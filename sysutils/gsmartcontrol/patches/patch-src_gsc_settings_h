@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_gsc_settings_h,v 1.1.1.1 2011/07/08 18:17:12 sthen Exp $
+--- src/gsc_settings.h.orig	Sun May  1 14:13:09 2011
++++ src/gsc_settings.h	Fri Jul  8 15:19:14 2011
+@@ -31,7 +31,7 @@ inline void init_default_settings()
+ 
+ 
+ #ifndef _WIN32
+-	rconfig::set_default_data("system/smartctl_binary", "smartctl");  // must be in PATH or use absolute path.
++	rconfig::set_default_data("system/smartctl_binary", "${LOCALBASE}/sbin/smartctl");  // must be in PATH or use absolute path.
+ 	rconfig::set_default_data("system/tw_cli_binary", "tw_cli");  // must be in PATH or use absolute path.
+ #else
+ 	rconfig::set_default_data("system/smartctl_binary", "smartctl-nc.exe");  // use no-console version by default.
