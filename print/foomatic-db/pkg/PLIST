@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/04/15 19:16:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/07/08 23:28:17 ajacoutot Exp $
 share/foomatic/
 share/foomatic/db/
 share/foomatic/db/oldprinterids
@@ -1607,6 +1607,7 @@ share/foomatic/db/source/PPD/Lanier/PXL/Lanier-Pro_1357EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PXL/Lanier-Pro_906EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Lanier/PXL/Lanier-Pro_907EX_PXL.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/
+share/foomatic/db/source/PPD/Lexmark/Lexmark_6500e_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C510.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C520.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C522.ppd.gz
@@ -1627,6 +1628,7 @@ share/foomatic/db/source/PPD/Lexmark/Lexmark_C912.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C920_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C930.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_C935.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_C950_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_E260.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_E260d.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_E260dn.ppd.gz
@@ -1658,6 +1660,7 @@ share/foomatic/db/source/PPD/Lexmark/Lexmark_X466dwe.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_X543.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_X544.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_X546.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_X548_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_X651de.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_X652de.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_X654de.ppd.gz
@@ -1673,6 +1676,7 @@ share/foomatic/db/source/PPD/Lexmark/Lexmark_X864de.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_X920_Series.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_X940e.ppd.gz
 share/foomatic/db/source/PPD/Lexmark/Lexmark_X945e.ppd.gz
+share/foomatic/db/source/PPD/Lexmark/Lexmark_X950_Series.ppd.gz
 share/foomatic/db/source/PPD/NRG/
 share/foomatic/db/source/PPD/NRG/PS/
 share/foomatic/db/source/PPD/NRG/PS/NRG-10515_10518_10512_PS.ppd.gz
@@ -3314,6 +3318,7 @@ share/foomatic/db/source/printer/Brother-HL-1850_70N.xml
 share/foomatic/db/source/printer/Brother-HL-1870N.xml
 share/foomatic/db/source/printer/Brother-HL-2030.xml
 share/foomatic/db/source/printer/Brother-HL-2035.xml
+share/foomatic/db/source/printer/Brother-HL-2040.xml
 share/foomatic/db/source/printer/Brother-HL-2060.xml
 share/foomatic/db/source/printer/Brother-HL-2140.xml
 share/foomatic/db/source/printer/Brother-HL-2170W.xml
@@ -3580,6 +3585,7 @@ share/foomatic/db/source/printer/DEC-LN03.xml
 share/foomatic/db/source/printer/DEC-LN07.xml
 share/foomatic/db/source/printer/DEC-LN17.xml
 share/foomatic/db/source/printer/Dell-1110.xml
+share/foomatic/db/source/printer/Dell-3000cn.xml
 share/foomatic/db/source/printer/Dell-3010cn.xml
 share/foomatic/db/source/printer/Dell-3100cn.xml
 share/foomatic/db/source/printer/Dell-M5200.xml
@@ -3772,6 +3778,7 @@ share/foomatic/db/source/printer/Epson-LQ-500.xml
 share/foomatic/db/source/printer/Epson-LQ-570plus.xml
 share/foomatic/db/source/printer/Epson-LQ-850.xml
 share/foomatic/db/source/printer/Epson-LX-1050.xml
+share/foomatic/db/source/printer/Epson-LX-300plus.xml
 share/foomatic/db/source/printer/Epson-MC_10000.xml
 share/foomatic/db/source/printer/Epson-MC_2000.xml
 share/foomatic/db/source/printer/Epson-MC_5000.xml
@@ -3782,6 +3789,7 @@ share/foomatic/db/source/printer/Epson-ME_320_Series.xml
 share/foomatic/db/source/printer/Epson-ME_32_Series.xml
 share/foomatic/db/source/printer/Epson-ME_330_Series.xml
 share/foomatic/db/source/printer/Epson-ME_33_Series.xml
+share/foomatic/db/source/printer/Epson-ME_340_Series.xml
 share/foomatic/db/source/printer/Epson-ME_520_Series.xml
 share/foomatic/db/source/printer/Epson-ME_560W_Series.xml
 share/foomatic/db/source/printer/Epson-ME_620F_Series.xml
@@ -3801,6 +3809,8 @@ share/foomatic/db/source/printer/Epson-MJ_930C.xml
 share/foomatic/db/source/printer/Epson-MachJet.xml
 share/foomatic/db/source/printer/Epson-N10_N11_Series.xml
 share/foomatic/db/source/printer/Epson-NX125_NX127_Series.xml
+share/foomatic/db/source/printer/Epson-NX130_Series.xml
+share/foomatic/db/source/printer/Epson-NX130_TX130_Series.xml
 share/foomatic/db/source/printer/Epson-NX420_Series.xml
 share/foomatic/db/source/printer/Epson-NX620_Series.xml
 share/foomatic/db/source/printer/Epson-PM-A750.xml
@@ -3908,6 +3918,7 @@ share/foomatic/db/source/printer/Epson-PictureMate_PM_310.xml
 share/foomatic/db/source/printer/Epson-S22_Series.xml
 share/foomatic/db/source/printer/Epson-SQ_1170.xml
 share/foomatic/db/source/printer/Epson-SX125_Series.xml
+share/foomatic/db/source/printer/Epson-SX130_Series.xml
 share/foomatic/db/source/printer/Epson-SX218_Series.xml
 share/foomatic/db/source/printer/Epson-SX420W_Series.xml
 share/foomatic/db/source/printer/Epson-SX525WD_Series.xml
@@ -4100,6 +4111,7 @@ share/foomatic/db/source/printer/Epson-Stylus_Photo_PX810FW.xml
 share/foomatic/db/source/printer/Epson-Stylus_Photo_R1800.xml
 share/foomatic/db/source/printer/Epson-Stylus_Photo_R1900.xml
 share/foomatic/db/source/printer/Epson-Stylus_Photo_R200.xml
+share/foomatic/db/source/printer/Epson-Stylus_Photo_R2000.xml
 share/foomatic/db/source/printer/Epson-Stylus_Photo_R210.xml
 share/foomatic/db/source/printer/Epson-Stylus_Photo_R220.xml
 share/foomatic/db/source/printer/Epson-Stylus_Photo_R240.xml
@@ -4204,6 +4216,8 @@ share/foomatic/db/source/printer/Epson-TX120_NX120_Series.xml
 share/foomatic/db/source/printer/Epson-TX120_Series.xml
 share/foomatic/db/source/printer/Epson-TX121_Series.xml
 share/foomatic/db/source/printer/Epson-TX125_Series.xml
+share/foomatic/db/source/printer/Epson-TX130_Series.xml
+share/foomatic/db/source/printer/Epson-TX133_TX135_Series.xml
 share/foomatic/db/source/printer/Epson-TX220_NX220_Series.xml
 share/foomatic/db/source/printer/Epson-TX220_Series.xml
 share/foomatic/db/source/printer/Epson-TX320F_Series.xml
@@ -5468,6 +5482,7 @@ share/foomatic/db/source/printer/Lexmark-4039_10plus.xml
 share/foomatic/db/source/printer/Lexmark-4076.xml
 share/foomatic/db/source/printer/Lexmark-5000.xml
 share/foomatic/db/source/printer/Lexmark-5700.xml
+share/foomatic/db/source/printer/Lexmark-6500e.xml
 share/foomatic/db/source/printer/Lexmark-7000.xml
 share/foomatic/db/source/printer/Lexmark-7200.xml
 share/foomatic/db/source/printer/Lexmark-C500n.xml
@@ -5517,6 +5532,7 @@ share/foomatic/db/source/printer/Lexmark-C935.xml
 share/foomatic/db/source/printer/Lexmark-C935dn.xml
 share/foomatic/db/source/printer/Lexmark-C935dtn.xml
 share/foomatic/db/source/printer/Lexmark-C935hdn.xml
+share/foomatic/db/source/printer/Lexmark-C950.xml
 share/foomatic/db/source/printer/Lexmark-E120.xml
 share/foomatic/db/source/printer/Lexmark-E120n.xml
 share/foomatic/db/source/printer/Lexmark-E210.xml
@@ -5593,6 +5609,7 @@ share/foomatic/db/source/printer/Lexmark-X466dwe.xml
 share/foomatic/db/source/printer/Lexmark-X543.xml
 share/foomatic/db/source/printer/Lexmark-X544.xml
 share/foomatic/db/source/printer/Lexmark-X546.xml
+share/foomatic/db/source/printer/Lexmark-X548.xml
 share/foomatic/db/source/printer/Lexmark-X560n.xml
 share/foomatic/db/source/printer/Lexmark-X642e.xml
 share/foomatic/db/source/printer/Lexmark-X651de.xml
@@ -5615,6 +5632,9 @@ share/foomatic/db/source/printer/Lexmark-X920.xml
 share/foomatic/db/source/printer/Lexmark-X925.xml
 share/foomatic/db/source/printer/Lexmark-X940e.xml
 share/foomatic/db/source/printer/Lexmark-X945e.xml
+share/foomatic/db/source/printer/Lexmark-X950.xml
+share/foomatic/db/source/printer/Lexmark-X952.xml
+share/foomatic/db/source/printer/Lexmark-X954.xml
 share/foomatic/db/source/printer/Lexmark-Z11.xml
 share/foomatic/db/source/printer/Lexmark-Z12.xml
 share/foomatic/db/source/printer/Lexmark-Z13.xml
