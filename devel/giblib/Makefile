@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/15 19:45:58 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/07/08 12:20:49 jasper Exp $
 
 COMMENT=		utility library including a imlib2 wrapper
 
@@ -28,5 +28,7 @@ USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib"
+
+FAKE_FLAGS+=		docsdir=${PREFIX}/share/doc/giblib/
 
 .include <bsd.port.mk>

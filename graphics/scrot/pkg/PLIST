@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2004/09/15 00:50:11 espie Exp $
-bin/scrot
+@comment $OpenBSD: PLIST,v 1.3 2011/07/08 12:20:49 jasper Exp $
+@bin bin/scrot
 @man man/man1/scrot.1
 share/doc/scrot/
 share/doc/scrot/AUTHORS

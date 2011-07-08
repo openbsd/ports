@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/17 08:05:16 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/07/08 12:20:49 jasper Exp $
 
 COMMENT=		commandline screen capture util
 
 DISTNAME=		scrot-0.8
-REVISION =		1
+REVISION =		2
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://www.linuxbrit.co.uk/scrot/
@@ -26,5 +26,7 @@ LIB_DEPENDS=            devel/giblib \
 
 USE_GROFF =		Yes
 CONFIGURE_STYLE=	gnu
+
+FAKE_FLAGS+=		docsdir=${PREFIX}/share/doc/scrot/
 
 .include <bsd.port.mk>
