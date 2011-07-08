@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/05/18 01:03:52 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/07/08 18:51:23 robert Exp $
 
 COMMENT-main =	template engine for PHP
 COMMENT-docs =	documentation for Smarty
@@ -9,6 +9,8 @@ PKGNAME-main =	smarty-${VERSION}
 DISTNAME-docs =	Smarty-2.6.14-docs
 PKGNAME-docs =	smarty-docs-${VERSION}
 CATEGORIES =	devel www
+
+REVISION =	0
 
 HOMEPAGE =	http://www.smarty.net
 
@@ -29,8 +31,7 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 
 MULTI_PACKAGES = -main -docs
 
-PHP_VERSION =	5
-RUN_DEPENDS-main = www/php${PHP_VERSION}/core
+MODULES=	lang/php
 
 CHROOT_DIR =	/var/www
 
