@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.10 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.11 2011/07/08 17:13:29 naddy Exp $
+
+BROKEN=		obsolete, does not build with modern libpng
 
 DIST_SUBDIR?=			amaya
 CATEGORIES?=			www
