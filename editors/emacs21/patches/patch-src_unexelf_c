@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_unexelf.c,v 1.5 2003/07/05 00:27:08 naddy Exp $
---- src/unexelf.c.orig	Tue Oct 15 16:21:22 2002
-+++ src/unexelf.c	Fri Jun 27 00:18:44 2003
+$OpenBSD: patch-src_unexelf_c,v 1.1 2011/07/08 09:41:46 jasper Exp $
+--- src/unexelf.c.orig	Tue Oct 15 16:21:44 2002
++++ src/unexelf.c	Fri Jul  8 11:37:20 2011
 @@ -537,7 +537,12 @@ typedef struct {
  
  #ifdef __OpenBSD__

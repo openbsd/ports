@@ -1,6 +1,7 @@
---- Makefile.orig	Sat Dec 16 18:56:41 2000
-+++ Makefile	Wed May 30 10:16:06 2001
-@@ -20,7 +20,7 @@
+$OpenBSD: patch-Makefile,v 1.4 2011/07/08 09:41:46 jasper Exp $
+--- Makefile.orig	Wed Sep 24 14:02:07 2003
++++ Makefile	Fri Jul  8 11:36:15 2011
+@@ -20,7 +20,7 @@ modules_install:
  	-install -m 755 modules/xttfm.ttfm $(prefix)/share/fonts/install/
  
  ttfinfo: ttfinfo.o
