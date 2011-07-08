@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/07/08 20:56:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2011/07/08 21:08:46 kili Exp $
 .include <bsd.own.mk>
 
 COMMENT-main=	PDF rendering library
@@ -21,7 +21,7 @@ SHARED_LIBS +=	poppler-qt4          7.0
 
 HOMEPAGE=	http://poppler.freedesktop.org/
 
-MAINTAINER=    Matthias Kilian <kili@openbsd.org>
+MAINTAINER=	Matthias Kilian <kili@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_FTP=	Yes
