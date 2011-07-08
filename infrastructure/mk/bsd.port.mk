@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1093 2011/07/08 05:17:40 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1094 2011/07/08 22:44:16 ajacoutot Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -137,10 +137,10 @@ APM_ARCHS = amd64 arm i386 loongson macppc sparc sparc64
 LP64_ARCHS = alpha amd64 hppa64 sparc64 mips64 mips64el
 NO_SHARED_ARCHS = m88k vax
 GCC4_ARCHS = amd64 i386 hppa loongson macppc mips64 mips64el mvmeppc powerpc \
-	sgi socppc sparc64
+	sgi socppc sparc sparc64
 GCC3_ARCHS = alpha arm armish beagle gumstix hppa64 \
 	landisk palm sh zaurus
-GCC2_ARCHS = aviion luna88k m68k m88k mac68k mvme68k mvme88k sparc vax
+GCC2_ARCHS = aviion luna88k m68k m88k mac68k mvme68k mvme88k vax
 
 # Set NO_SHARED_LIBS for those machines that don't support shared libraries.
 .for _m in ${MACHINE_ARCH}
