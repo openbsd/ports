@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/07/08 17:41:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2011/07/08 20:56:51 ajacoutot Exp $
 .include <bsd.own.mk>
 
 COMMENT-main=	PDF rendering library
@@ -57,6 +57,7 @@ MODULES+=	x11/qt4
 CONFIGURE_ARGS+=	--disable-poppler-qt4
 .endif
 
+# XXX g-ir-scanner failure with gcc3
 .if ${COMPILER_VERSION:L:Mgcc4*}
 PKG_ARGS+= 	-DGCC4=1
 BUILD_DEPENDS+=	devel/gobject-introspection
