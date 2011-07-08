@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.127 2011/06/22 12:03:30 landry Exp $
+# $OpenBSD: Makefile,v 1.128 2011/07/08 11:07:32 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -8,11 +8,12 @@ COMMENT-lightning =	Mozilla Thunderbird calendar extension
 
 MOZILLA_VERSION =	3.1.11
 MOZILLA_BRANCH =	1.9.2
-MOZILLA_PROJECT =	mozilla-thunderbird
+MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
+REVISION-main =		0
 PKGNAME-lightning =	lightning-1.0beta2
 EPOCH-lightning =	0
 REVISION-lightning =	19
@@ -64,7 +65,7 @@ CONFIGURE_STYLE =	autoconf no-autoheader
 LIB_DEPENDS-main =	${LIB_DEPENDS}
 WANTLIB-main =		${WANTLIB}
 LIB_DEPENDS-lightning = ${BUILD_PKGPATH},-main
-WANTLIB-lightning =	mozilla-thunderbird/mozjs mozilla-thunderbird/xpcom c m stdc++ nspr4 plc4 plds4
+WANTLIB-lightning =	thunderbird/mozjs thunderbird/xpcom c m stdc++ nspr4 plc4 plds4
 BUILD_DEPENDS +=	archivers/unzip #to unzip xpi
 
 # build lightning xpi

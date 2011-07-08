@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2011/01/14 22:53:42 landry Exp $
-@conflict mozilla-thunderbird-<=3.0.5
+@comment $OpenBSD: PLIST-main,v 1.5 2011/07/08 11:07:32 landry Exp $
+@conflict mozilla-thunderbird-<=3.1.11
 @pkgpath mail/mozilla-thunderbird
-bin/thunderbird
+bin/${MOZILLA_PROJECT}
 ${MOZILLA_PROJECT}/
 ${MOZILLA_PROJECT}/application.ini
 ${MOZILLA_PROJECT}/chrome/
@@ -300,13 +300,13 @@ ${MOZILLA_PROJECT}/defaults/messenger/
 ${MOZILLA_PROJECT}/defaults/messenger/mailViews.dat
 ${MOZILLA_PROJECT}/defaults/pref/
 ${MOZILLA_PROJECT}/defaults/pref/all-l10n.js
-${MOZILLA_PROJECT}/defaults/pref/all-thunderbird.js
+${MOZILLA_PROJECT}/defaults/pref/all-${MOZILLA_PROJECT}.js
 ${MOZILLA_PROJECT}/defaults/pref/channel-prefs.js
 ${MOZILLA_PROJECT}/defaults/pref/composer.js
 ${MOZILLA_PROJECT}/defaults/pref/mailnews.js
 ${MOZILLA_PROJECT}/defaults/pref/mdn.js
 ${MOZILLA_PROJECT}/defaults/pref/smime.js
-${MOZILLA_PROJECT}/defaults/pref/thunderbird-branding.js
+${MOZILLA_PROJECT}/defaults/pref/${MOZILLA_PROJECT}-branding.js
 ${MOZILLA_PROJECT}/defaults/profile/
 ${MOZILLA_PROJECT}/defaults/profile/localstore.rdf
 ${MOZILLA_PROJECT}/defaults/profile/mimeTypes.rdf
@@ -477,14 +477,14 @@ ${MOZILLA_PROJECT}/res/ua.css
 ${MOZILLA_PROJECT}/res/unixcharset.properties
 ${MOZILLA_PROJECT}/res/viewsource.css
 ${MOZILLA_PROJECT}/run-mozilla.sh
-@bin ${MOZILLA_PROJECT}/thunderbird-bin
+@bin ${MOZILLA_PROJECT}/${MOZILLA_PROJECT}-bin
+share/applications/${MOZILLA_PROJECT}.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
-share/applications/thunderbird.desktop
 %%debug%%
 !%%debug%%
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
-@exec TEMP=`mktemp -d` && cd %D/mozilla-thunderbird && env HOME=$TEMP LD_LIBRARY_PATH=%D/mozilla-thunderbird ./regxpcom && rm -fr $TEMP
-@unexec rm -f %D/mozilla-thunderbird/components/compreg.dat
-@unexec rm -f %D/mozilla-thunderbird/components/xpti.dat
-@unexec rm -Rf %D/mozilla-thunderbird/updates
+@exec TEMP=`mktemp -d` && cd %D/thunderbird && env HOME=$TEMP LD_LIBRARY_PATH=%D/thunderbird ./regxpcom && rm -fr $TEMP
+@unexec rm -f %D/thunderbird/components/compreg.dat
+@unexec rm -f %D/thunderbird/components/xpti.dat
+@unexec rm -Rf %D/thunderbird/updates
