@@ -1,0 +1,24 @@
+$OpenBSD: patch-fet_c,v 1.1 2011/07/08 14:52:38 jasper Exp $
+
+From 1e21d9da8f923aa75aea01110b8cab81f5395ec0 Mon Sep 17 00:00:00 2001
+From: Daniel Beer <dlbeer@gmail.com>
+Date: Wed, 6 Jul 2011 09:32:36 +1200
+Subject: [PATCH] Added support for MSP430FR5739.
+
+Use "load" instead of "prog" for programming.
+
+--- fet.c.orig	Tue Jun 14 03:27:10 2011
++++ fet.c	Fri Jul  8 16:50:32 2011
+@@ -568,6 +568,12 @@ static int identify_new(struct fet_device *dev, const 
+ 		return -1;
+ 	}
+ 
++	/* This packet seems to be necessary in order to program on the
++	 * MSP430FR5739 development board.
++	 */
++	if (xfer(dev, 0x30, NULL, 0, 0) < 0)
++		printc_dbg("fet: warning: message 0x30 failed\n");
++
+ 	return 0;
+ }
+ 
