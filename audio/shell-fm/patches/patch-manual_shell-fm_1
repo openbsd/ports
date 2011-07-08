@@ -1,0 +1,18 @@
+$OpenBSD: patch-manual_shell-fm_1,v 1.1 2011/07/08 18:32:34 dcoppa Exp $
+
+Add mute/unmute support using 'm' key
+(upstream git commit c94473084607ff5761b1257fb735dd96e14bb016)
+
+--- manual/shell-fm.1.orig	Wed May 25 12:35:38 2011
++++ manual/shell-fm.1	Fri Jul  8 20:20:12 2011
+@@ -125,7 +125,9 @@ Increase volume.
+ .TP
+ .B -
+ Decrease volume.
+-.PP
++.TP
++.B m
++Mute/unmute.
+ .SH SETUP
+ Before you start, you should have created the directories
+ .B ~/.shell-fm

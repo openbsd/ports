@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2011/04/16 14:57:34 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.12 2011/07/08 18:32:34 dcoppa Exp $
 
 COMMENT=		console based player for last.fm radio streams
 
-DISTNAME=		shell-fm-0.7
-REVISION=		3
+DISTNAME=		shell-fm-0.8
 CATEGORIES=		audio
 
 HOMEPAGE=		http://nex.scrapping.cc/shell-fm/
@@ -16,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ao c m mad tag tag_c
+WANTLIB +=		ao c m mad tag tag_c
 
 MASTER_SITES=		http://distfiles.nl/
 
@@ -24,10 +23,11 @@ LIB_DEPENDS=		audio/libao \
 			audio/libmad \
 			audio/taglib
 
-USE_GMAKE=		yes
-USE_GROFF =		Yes
-FAKE_FLAGS=		DESTDIR="${WRKINST}${PREFIX}"
+USE_GMAKE=		Yes
 
-NO_REGRESS=		yes
+FAKE_FLAGS=		INSTALL_MAN="${INSTALL_MAN}" \
+			INSTALL_PROGRAM="${INSTALL_PROGRAM}"
+
+NO_REGRESS=		Yes
 
 .include <bsd.port.mk>

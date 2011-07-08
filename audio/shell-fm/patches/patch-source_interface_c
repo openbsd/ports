@@ -1,0 +1,55 @@
+$OpenBSD: patch-source_interface_c,v 1.1 2011/07/08 18:32:34 dcoppa Exp $
+
+Add mute/unmute support using 'm' key
+(upstream git commit c94473084607ff5761b1257fb735dd96e14bb016)
+
+--- source/interface.c.orig	Wed May 25 12:35:38 2011
++++ source/interface.c	Fri Jul  8 14:34:48 2011
+@@ -49,6 +49,8 @@ char * shellescape(const char *);
+ 
+ void print_help(void);
+ 
++void mute();
++
+ void handle_keyboard_input() {
+ 	int key, result;
+ 	char customkey[8] = { 0 }, * marked = NULL;
+@@ -228,6 +230,10 @@ void handle_keyboard_input() {
+ 			volume_down();
+ 			break;
+ 
++		case 'm':
++			mute();
++			break;
++
+ 		case 'u':
+ 			preview(playlist);
+ 			break;
+@@ -586,7 +592,8 @@ void print_help(void) {
+ 		"S = stop                          | s = similiar artist\n"
+ 		"T = tag track/artist/album        | u = show upcoming tracks in playlist\n"
+ 		"U = unlove track                  | + = increase volume\n"
+-		"- = decrease volume               | C = reload configuration\n",
++		"- = decrease volume               | C = reload configuration\n"
++		"m = mute/unmute\n",
+ 		stderr
+ 	);
+ 
+@@ -612,6 +619,17 @@ void volume_up() {
+ 
+ void volume_down() {
+ 	set_volume(volume - 1);
++}
++
++void mute() {
++  if(muted) {
++    set_volume(saved_volume);
++    muted = 0;
++  } else {
++    saved_volume = volume;
++    set_volume(0);
++    muted = 1;
++  }
+ }
+ 
+ void set_volume(int new_volume) {
