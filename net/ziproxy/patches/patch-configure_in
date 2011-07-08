@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_in,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- configure.in.orig	Wed Jul  6 16:14:38 2011
++++ configure.in	Wed Jul  6 16:14:50 2011
+@@ -24,7 +24,7 @@ USE_LIB(jpeg)
+ AC_CHECK_LIB(jpeg, jpeg_start_decompress,, AC_MSG_ERROR([libjpeg not found.]))
+ 
+ USE_LIB(png)
+-AC_CHECK_LIB(png, png_check_sig,, AC_MSG_ERROR([libpng not found.]), -lz -lm)
++AC_CHECK_LIB(png, png_sig_cmp,, AC_MSG_ERROR([libpng not found.]), -lz -lm)
+ 
+ USE_LIB(pthread)
+ AC_CHECK_LIB(pthread, pthread_create,, AC_MSG_ERROR([libpthread not found.]), -lpthread)

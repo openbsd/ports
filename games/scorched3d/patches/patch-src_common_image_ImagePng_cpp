@@ -1,0 +1,51 @@
+$OpenBSD: patch-src_common_image_ImagePng_cpp,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- src/common/image/ImagePng.cpp.orig	Wed Jul  6 17:27:07 2011
++++ src/common/image/ImagePng.cpp	Wed Jul  6 17:28:23 2011
+@@ -150,7 +150,7 @@ struct user_read_struct
+ 
+ static void user_png_error(png_structp png_ptr, png_const_charp msg) 
+ {
+-	longjmp(png_ptr->jmpbuf,1);
++	png_longjmp(png_ptr,1);
+ }
+ 
+ static void user_png_warning(png_structp png_ptr, png_const_charp msg) 
+@@ -189,7 +189,7 @@ bool ImagePng::loadFromBuffer(NetBuffer &buffer, bool 
+ 	info_ptr = png_create_info_struct(png_ptr);
+ 	if (info_ptr == NULL)
+ 	{
+-	  png_destroy_read_struct(&png_ptr, png_infopp_NULL, png_infopp_NULL);
++	  png_destroy_read_struct(&png_ptr, NULL, NULL);
+ 	  return false;
+ 	}
+ 
+@@ -200,7 +200,7 @@ bool ImagePng::loadFromBuffer(NetBuffer &buffer, bool 
+ 	if (setjmp(png_jmpbuf(png_ptr)))
+ 	{
+ 	  /* Free all of the memory associated with the png_ptr and info_ptr */
+-	  png_destroy_read_struct(&png_ptr, &info_ptr, png_infopp_NULL);
++	  png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
+ 	  /* If we get here, we had a problem reading the file */
+ 	  return false;
+ 	}
+@@ -258,7 +258,7 @@ bool ImagePng::loadFromBuffer(NetBuffer &buffer, bool 
+ 	}
+ 	else
+ 	{
+-		png_destroy_read_struct(&png_ptr, &info_ptr, png_infopp_NULL);
++		png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
+ 
+ 		Logger::log(S3D::formatStringBuffer(
+ 			"Invalid PNG format.\n"
+@@ -272,7 +272,7 @@ bool ImagePng::loadFromBuffer(NetBuffer &buffer, bool 
+ 	// END NEW CODE
+ 
+ 	/* clean up after the read, and free any memory allocated - REQUIRED */
+-	png_destroy_read_struct(&png_ptr, &info_ptr, png_infopp_NULL);
++	png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
+ 
+ 	/* that's it */
+ 	return true;

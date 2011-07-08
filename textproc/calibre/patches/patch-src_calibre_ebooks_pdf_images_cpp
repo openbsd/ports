@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_calibre_ebooks_pdf_images_cpp,v 1.1 2011/07/08 20:38:00 naddy Exp $
+
+Fix build with png-1.5.
+
+--- src/calibre/ebooks/pdf/images.cpp.orig	Wed Jul  6 18:39:44 2011
++++ src/calibre/ebooks/pdf/images.cpp	Wed Jul  6 18:41:30 2011
+@@ -301,7 +301,7 @@ void PNGWriter::write_splash_bitmap(SplashBitmap *bitm
+ 
+ void calibre_png_mem_write(png_structp png_ptr, png_bytep data, png_size_t length) {
+     if (!png_ptr || length < 1) return;
+-    vector<char> *buf = static_cast< vector<char>* >(png_ptr->io_ptr);
++    vector<char> *buf = static_cast< vector<char>* >(png_get_io_ptr(png_ptr));
+     buf->reserve(buf->capacity() + length); 
+     do {
+         buf->push_back(static_cast<char>(*data));

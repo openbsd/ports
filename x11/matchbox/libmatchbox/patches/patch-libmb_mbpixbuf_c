@@ -1,0 +1,26 @@
+$OpenBSD: patch-libmb_mbpixbuf_c,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- libmb/mbpixbuf.c.orig	Tue Jul  5 23:25:58 2011
++++ libmb/mbpixbuf.c	Tue Jul  5 23:27:08 2011
+@@ -247,7 +247,7 @@ _load_png_file( const char *file, 
+     return NULL;
+   }
+ 
+-  if ( setjmp( png_ptr->jmpbuf ) ) {
++  if ( setjmp( png_jmpbuf( png_ptr ) ) ) {
+     png_destroy_read_struct( &png_ptr, &info_ptr, NULL);
+     fclose(fd);
+     return NULL;
+@@ -269,8 +269,8 @@ _load_png_file( const char *file, 
+       ( color_type == PNG_COLOR_TYPE_GRAY_ALPHA ))
+     png_set_gray_to_rgb(png_ptr);
+  
+-  if ( info_ptr->color_type == PNG_COLOR_TYPE_RGB_ALPHA 
+-       || info_ptr->color_type == PNG_COLOR_TYPE_GRAY_ALPHA
++  if ( png_get_color_type ( png_ptr, info_ptr ) == PNG_COLOR_TYPE_RGB_ALPHA 
++       || png_get_color_type ( png_ptr, info_ptr ) == PNG_COLOR_TYPE_GRAY_ALPHA
+        )
+     *has_alpha = 1;
+   else

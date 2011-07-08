@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_zip_zpng_c,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- src/zip/zpng.c.orig	Wed Jul  6 11:41:15 2011
++++ src/zip/zpng.c	Wed Jul  6 11:41:26 2011
+@@ -83,8 +83,6 @@ int Png_Dump(const char * filename, unsigned short wid
+ 		8, PNG_COLOR_TYPE_RGB_ALPHA, PNG_INTERLACE_NONE,
+ 		PNG_COMPRESSION_TYPE_DEFAULT, PNG_FILTER_TYPE_DEFAULT);
+ 	
+-	info_ptr->color_type=PNG_COLOR_TYPE_RGB_ALPHA;
+-
+ 	/*Allocate an array of scanline pointers*/
+ 	row_pointers=(png_bytep*)malloc(height*sizeof(png_bytep));
+ 	for (i=0;i<height;i++)

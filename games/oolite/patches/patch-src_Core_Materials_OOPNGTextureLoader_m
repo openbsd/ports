@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_Core_Materials_OOPNGTextureLoader_m,v 1.1 2011/01/15 10:13:23 sebastia Exp $
+$OpenBSD: patch-src_Core_Materials_OOPNGTextureLoader_m,v 1.2 2011/07/08 20:38:01 naddy Exp $
 
-missing header
+* Missing header.
+* Fix build with png-1.5.
 
---- src/Core/Materials/OOPNGTextureLoader.m.orig	Fri Jan 14 12:58:52 2011
-+++ src/Core/Materials/OOPNGTextureLoader.m	Fri Jan 14 12:59:09 2011
+--- src/Core/Materials/OOPNGTextureLoader.m.orig	Mon Sep 21 12:53:30 2009
++++ src/Core/Materials/OOPNGTextureLoader.m	Tue Jul  5 17:06:57 2011
 @@ -50,6 +50,9 @@ SOFTWARE.
  #import "OOFunctionAttributes.h"
  #import "OOLogging.h"
@@ -14,3 +15,21 @@ missing header
  
  
  void png_error(png_structp, png_const_charp) NO_RETURN_FUNC;
+@@ -242,7 +245,7 @@ static void PNGError(png_structp png, png_const_charp 
+ {
+ 	OOPNGTextureLoader		*loader = nil;
+ 	
+-	loader = png->error_ptr;
++	loader = png_get_error_ptr(png);
+ 	OOLog(@"texture.load.png.error", @"***** A PNG loading error occurred for %@: %s", [loader path], message);
+ }
+ 
+@@ -251,7 +254,7 @@ static void PNGWarning(png_structp png, png_const_char
+ {
+ 	OOPNGTextureLoader		*loader = nil;
+ 	
+-	loader = png->error_ptr;
++	loader = png_get_error_ptr(png);
+ 	OOLog(@"texture.load.png.warning", @"***** A PNG loading warning occurred for %@: %s", [loader path], message);
+ }
+ 

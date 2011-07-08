@@ -1,0 +1,15 @@
+$OpenBSD: patch-src-IL_src_il_icon_c,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix for png-1.5.
+
+--- src-IL/src/il_icon.c.orig	Wed Jul  6 15:09:04 2011
++++ src-IL/src/il_icon.c	Wed Jul  6 15:10:14 2011
+@@ -525,7 +525,7 @@ ILboolean ico_readpng_get_image(ICOIMAGE *Icon, ILdoub
+ 
+ 	// Expand low-bit-depth grayscale images to 8 bits
+ 	if (ico_color_type == PNG_COLOR_TYPE_GRAY && bit_depth < 8) {
+-		png_set_gray_1_2_4_to_8(ico_png_ptr);
++		png_set_expand_gray_1_2_4_to_8(ico_png_ptr);
+ 	}
+ 
+ 	// Expand RGB images with transparency to full alpha channels

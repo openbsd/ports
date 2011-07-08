@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/16 11:23:29 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/07/08 20:38:02 naddy Exp $
 
 COMMENT =	challenging 2D motocross platform game
 
@@ -37,7 +37,8 @@ LIB_DEPENDS =	devel/sdl-mixer \
 USE_GMAKE =		Yes
 USE_GROFF =		Yes
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+			    -I${LOCALBASE}/include/libpng" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 			LIBS="-lGL -lm -pthread"
 

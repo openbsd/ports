@@ -1,0 +1,42 @@
+$OpenBSD: patch-png_c,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- png.c.orig	Wed Jul  6 17:16:01 2011
++++ png.c	Wed Jul  6 17:17:57 2011
+@@ -75,7 +75,7 @@ static void output_error(png_structp png_ptr, png_cons
+ {
+   debug(" #error ");
+   output_warn( png_ptr, str);
+-  longjmp(png_ptr->jmpbuf, 1);	/* return control to outer routine */
++  png_longjmp(png_ptr, 1);	/* return control to outer routine */
+ }
+ 
+ 
+@@ -164,7 +164,7 @@ static int pngHeader(png_structpp png_pp,
+     png_destroy_read_struct(png_pp, info_pp, end_pp);
+     return 0;
+   }
+-  if (setjmp((*png_pp)->jmpbuf)) {
++  if (setjmp(png_jmpbuf(*png_pp))) {
+     /* On error */
+     png_destroy_read_struct(png_pp, info_pp, end_pp);
+     return 0;
+@@ -220,7 +220,7 @@ int pngIdent(char *fullname, char *name)
+     zclose(zinput_file);
+     return 0;
+   }
+-  if (setjmp(png_ptr->jmpbuf)) {
++  if (setjmp(png_jmpbuf(png_ptr))) {
+     /* On error */
+     freeImage(image);
+     png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
+@@ -308,7 +308,7 @@ Image *pngLoad(char *fullname, char *name, unsigned in
+   case PNG_COLOR_TYPE_GRAY_ALPHA:
+   case PNG_COLOR_TYPE_GRAY:
+     if (bit_depth < 8)
+-      png_set_gray_1_2_4_to_8(png_ptr);  /* 1 pixlel 1 byte */
++      png_set_expand_gray_1_2_4_to_8(png_ptr);  /* 1 pixlel 1 byte */
+     image = newRGBImage(width, height, 8);
+     image->rgb.used = 256;
+     for (i = 0; i < 256; i++) {

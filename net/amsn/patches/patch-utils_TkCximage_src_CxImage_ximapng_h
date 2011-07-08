@@ -1,0 +1,24 @@
+$OpenBSD: patch-utils_TkCximage_src_CxImage_ximapng_h,v 1.1 2011/07/08 20:38:00 naddy Exp $
+
+Fix build with png-1.5.
+
+--- utils/TkCximage/src/CxImage/ximapng.h.orig	Thu Jul  7 15:23:22 2011
++++ utils/TkCximage/src/CxImage/ximapng.h	Thu Jul  7 15:39:39 2011
+@@ -23,6 +23,8 @@
+ 
+ extern "C" {
+ #include <png.h>
++#include <pngstruct.h>
++#include <pnginfo.h>
+ }
+ 
+ class CxImagePNG: public CxImage
+@@ -65,7 +67,7 @@ class CxImagePNG: public CxImage (protected)
+     static void PNGAPI user_error_fn(png_structp png_ptr,png_const_charp error_msg)
+ 	{
+ 		strncpy((char*)png_ptr->error_ptr,error_msg,255);
+-		longjmp(png_ptr->jmpbuf, 1);
++		png_longjmp(png_ptr, 1);
+ 	}
+ };
+ 

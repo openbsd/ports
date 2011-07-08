@@ -1,0 +1,15 @@
+$OpenBSD: patch-win32_pngtoico_c,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- win32/pngtoico.c.orig	Tue Jul  5 23:12:57 2011
++++ win32/pngtoico.c	Tue Jul  5 23:13:37 2011
+@@ -188,7 +188,7 @@ read_png(const char *file)
+     goto perrexit;
+   }
+ 
+-  if ( setjmp(png_ptr->jmpbuf) ) {
++  if ( setjmp(png_jmpbuf(png_ptr)) ) {
+     fprintf(stderr, "%s: PNG format error\n", file);
+     goto errexit;
+   }

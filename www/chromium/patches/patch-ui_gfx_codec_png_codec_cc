@@ -1,0 +1,11 @@
+$OpenBSD: patch-ui_gfx_codec_png_codec_cc,v 1.1 2011/07/08 20:38:02 naddy Exp $
+--- ui/gfx/codec/png_codec.cc.orig	Mon Jul  4 15:57:42 2011
++++ ui/gfx/codec/png_codec.cc	Mon Jul  4 15:57:54 2011
+@@ -15,6 +15,7 @@
+ extern "C" {
+ #if defined(USE_SYSTEM_LIBPNG)
+ #include <png.h>
++#include <zlib.h>
+ #else
+ #include "third_party/libpng/png.h"
+ #endif

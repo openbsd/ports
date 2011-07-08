@@ -1,0 +1,15 @@
+$OpenBSD: patch-lib-src_enigma-core_IMG_SavePNG_c,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- lib-src/enigma-core/IMG_SavePNG.c.orig	Tue Jul  5 17:25:44 2011
++++ lib-src/enigma-core/IMG_SavePNG.c	Tue Jul  5 17:26:11 2011
+@@ -84,7 +84,7 @@ int IMG_SavePNG_RW(SDL_Surface *face, SDL_RWops *src) 
+                 png_bytep *row_pointers = 0;
+ 
+                 /* Set error handling. */
+-                if (setjmp(png_ptr->jmpbuf)) {
++                if (setjmp(png_jmpbuf(png_ptr))) {
+                     IMG_SetError("Error writing the PNG file");
+                 }
+                 else {

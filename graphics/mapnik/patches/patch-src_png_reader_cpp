@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_png_reader_cpp,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- src/png_reader.cpp.orig	Tue Jul  5 18:18:28 2011
++++ src/png_reader.cpp	Tue Jul  5 18:18:53 2011
+@@ -82,7 +82,7 @@ namespace mapnik
+     {
+         png_size_t check;
+         check = (png_size_t)fread(data, (png_size_t)1, length,
+-                                  (FILE *)png_ptr->io_ptr);
++                                  (FILE *)png_get_io_ptr(png_ptr));
+ 
+         if (check != length)
+         {

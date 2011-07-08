@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_celestia_imagecapture_cpp,v 1.1 2011/07/08 20:38:01 naddy Exp $
+--- src/celestia/imagecapture.cpp.orig	Tue Jul  5 18:11:09 2011
++++ src/celestia/imagecapture.cpp	Tue Jul  5 18:11:26 2011
+@@ -29,6 +29,7 @@ extern "C" {
+ #include "../celestia/Celestia.app.skel/Contents/Frameworks/Headers/png.h"
+ #else
+ #include "png.h"
++#include <zlib.h>
+ #endif
+ 
+ // Define png_jmpbuf() in case we are using a pre-1.0.6 version of libpng

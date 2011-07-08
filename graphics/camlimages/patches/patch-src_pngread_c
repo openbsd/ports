@@ -1,0 +1,42 @@
+$OpenBSD: patch-src_pngread_c,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- src/pngread.c.orig	Wed Jul  6 12:21:41 2011
++++ src/pngread.c	Wed Jul  6 12:23:21 2011
+@@ -69,7 +69,7 @@ value read_png_file_as_rgb24( name )
+   }
+ 
+   /* error handling */
+-  if (setjmp(png_ptr->jmpbuf)) {
++  if (setjmp(png_jmpbuf(png_ptr))) {
+     /* Free all of the memory associated with the png_ptr and info_ptr */
+     png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp)NULL);
+     fclose(fp);
+@@ -134,7 +134,7 @@ value read_png_file_as_rgb24( name )
+     png_set_rows(png_ptr, info_ptr, row_pointers);
+ 
+     /* Later, we can return something */
+-    if (setjmp(png_ptr->jmpbuf)) {
++    if (setjmp(png_jmpbuf(png_ptr))) {
+       /* Free all of the memory associated with the png_ptr and info_ptr */
+       png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp)NULL);
+       fclose(fp);
+@@ -243,7 +243,7 @@ value read_png_file( name )
+   }
+ 
+   /* error handling */
+-  if (setjmp(png_ptr->jmpbuf)) {
++  if (setjmp(png_jmpbuf(png_ptr))) {
+     /* Free all of the memory associated with the png_ptr and info_ptr */
+     png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp)NULL);
+     fclose(fp);
+@@ -302,7 +302,7 @@ value read_png_file( name )
+     png_set_rows(png_ptr, info_ptr, row_pointers);
+ 
+     /* Later, we can return something */
+-    if (setjmp(png_ptr->jmpbuf)) {
++    if (setjmp(png_jmpbuf(png_ptr))) {
+       /* Free all of the memory associated with the png_ptr and info_ptr */
+       png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp)NULL);
+       fclose(fp);

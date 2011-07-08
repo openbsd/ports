@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/03/25 21:12:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2011/07/08 20:38:00 naddy Exp $
 
 SHARED_LIBS +=	jbig2dec             0.0      # 0.0
 
@@ -27,7 +27,8 @@ LIB_DEPENDS =		graphics/png
 
 USE_LIBTOOL =		Yes
 SEPARATE_BUILD =	concurrent
-CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION =	2.63
+CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS =	--with-libpng=${LOCALBASE}
 CFLAGS +=		-I${LOCALBASE}/include/libpng
 CONFIGURE_ENV =		LDFLAGS="`pkg-config --libs libpng`"

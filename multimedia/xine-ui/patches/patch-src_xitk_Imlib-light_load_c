@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_xitk_Imlib-light_load_c,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- src/xitk/Imlib-light/load.c.orig	Wed Jul  6 10:58:51 2011
++++ src/xitk/Imlib-light/load.c	Wed Jul  6 11:00:28 2011
+@@ -61,7 +61,7 @@ unsigned char *_LoadPNG(ImlibData * id, FILE * f, int 
+       png_destroy_read_struct(&png_ptr, NULL, NULL);
+       return NULL;
+     }
+-  if (info_ptr->color_type == PNG_COLOR_TYPE_RGB_ALPHA)
++  if (png_get_color_type(png_ptr, info_ptr) == PNG_COLOR_TYPE_RGB_ALPHA)
+     {
+       png_destroy_read_struct(&png_ptr, &info_ptr, NULL);
+       return NULL;

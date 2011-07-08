@@ -1,0 +1,33 @@
+$OpenBSD: patch-Pgn_cpp,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- Pgn.cpp.orig	Tue Jul  5 21:23:09 2011
++++ Pgn.cpp	Tue Jul  5 21:24:06 2011
+@@ -414,7 +414,7 @@ int DecompressPng16(unsigned char *compressedData, int
+ 
+   png_read_info(pngPtr, infoPtr);
+ 
+-  if (infoPtr -> color_type == PNG_COLOR_TYPE_PALETTE)
++  if (png_get_color_type(pngPtr, infoPtr) == PNG_COLOR_TYPE_PALETTE)
+   {
+     png_set_expand(pngPtr);
+   }
+@@ -565,7 +565,7 @@ int DecompressPng24(unsigned char *compressedData, int
+ 
+   png_read_info( pngPtr, infoPtr ) ;
+ 
+-  if (infoPtr -> color_type == PNG_COLOR_TYPE_PALETTE)
++  if (png_get_color_type(pngPtr, infoPtr) == PNG_COLOR_TYPE_PALETTE)
+   {
+     png_set_expand(pngPtr);
+   }
+@@ -709,7 +709,7 @@ int DecompressPng32(unsigned char *compressedData, int
+   png_read_info(pngPtr, infoPtr) ;
+ 
+ 
+-  if (infoPtr -> color_type == PNG_COLOR_TYPE_PALETTE)
++  if (png_get_color_type(pngPtr, infoPtr) == PNG_COLOR_TYPE_PALETTE)
+   {
+     png_set_expand(pngPtr);
+   }

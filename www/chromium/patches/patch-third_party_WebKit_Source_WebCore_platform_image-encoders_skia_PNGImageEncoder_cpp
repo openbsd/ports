@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_WebKit_Source_WebCore_platform_image-encoders_skia_PNGImageEncoder_cpp,v 1.1 2011/07/08 20:38:02 naddy Exp $
+--- third_party/WebKit/Source/WebCore/platform/image-encoders/skia/PNGImageEncoder.cpp.orig	Mon Jul  4 21:58:26 2011
++++ third_party/WebKit/Source/WebCore/platform/image-encoders/skia/PNGImageEncoder.cpp	Mon Jul  4 21:59:44 2011
+@@ -44,7 +44,7 @@ namespace WebCore {
+ 
+ static void writeOutput(png_structp png, png_bytep data, png_size_t size)
+ {
+-    static_cast<Vector<unsigned char>*>(png->io_ptr)->append(data, size);
++    static_cast<Vector<unsigned char>*>(png_get_io_ptr(png))->append(data, size);
+ }
+ 
+ static void preMultipliedBGRAtoRGBA(const void* pixels, int pixelCount, unsigned char* output)

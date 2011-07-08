@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/07/07 15:19:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.21 2011/07/08 20:38:00 naddy Exp $
 
 COMMENT=	multi-tabbed terminal emulator
 
@@ -26,7 +26,8 @@ LIB_DEPENDS=	graphics/jpeg \
 WANTLIB=	ICE SM X11 Xrender Xpm c fontconfig freetype util m z \
 		Xft Xau Xdmcp expat pthread-stubs xcb jpeg png
 
-CONFIGURE_STYLE=gnu
+AUTOCONF_VERSION=2.61
+CONFIGURE_STYLE=autoconf
 CONFIGURE_ARGS+=--enable-menubar \
 		--with-x \
 		--enable-ttygid=utmp \

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_calibre_ebooks_pdf_images_h,v 1.1 2011/07/08 20:38:00 naddy Exp $
+
+Fix build with png-1.5.
+
+--- src/calibre/ebooks/pdf/images.h.orig	Wed Jul  6 18:40:34 2011
++++ src/calibre/ebooks/pdf/images.h	Wed Jul  6 18:40:45 2011
+@@ -11,6 +11,7 @@
+ #include <GfxState.h>
+ #include <splash/SplashBitmap.h>
+ #include <png.h>
++#include <zlib.h>
+ #include <jpeglib.h>
+ #include "utils.h"
+ 

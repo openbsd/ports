@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_imageio_format_Makefile_in,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- src/imageio/format/Makefile.in.orig	Tue Jul  5 21:06:38 2011
++++ src/imageio/format/Makefile.in	Tue Jul  5 21:06:51 2011
+@@ -161,7 +161,7 @@ CATALOGS = @CATALOGS@
+ CATOBJEXT = @CATOBJEXT@
+ CC = @CC@
+ CCDEPMODE = @CCDEPMODE@
+-CFLAGS = @CFLAGS@ $(AM_CFLAGS) -I$(srcdir) -I$(srcdir)/../.. -Werror \
++CFLAGS = @CFLAGS@ $(AM_CFLAGS) -I$(srcdir) -I$(srcdir)/../.. \
+ 	-g -rdynamic
+ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@

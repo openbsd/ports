@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_sp-image_cpp,v 1.1 2011/07/08 20:38:00 naddy Exp $
+
+Fix build with png-1.5.
+
+--- src/sp-image.cpp.orig	Wed Jul  6 18:23:19 2011
++++ src/sp-image.cpp	Wed Jul  6 18:23:45 2011
+@@ -388,7 +388,7 @@ static bool readPngAndHeaders( PushPull &youme, gint &
+                 {
+                     char* name = 0;
+                     int compression_type = 0;
+-                    char* profile = 0;
++                    png_byte* profile = 0;
+                     png_uint_32 proflen = 0;
+                     if ( png_get_iCCP(pngPtr, infoPtr, &name, &compression_type, &profile, &proflen) ) {
+ //                                         g_message("Found an iCCP chunk named [%s] with %d bytes and comp %d", name, proflen, compression_type);

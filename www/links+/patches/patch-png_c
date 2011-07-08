@@ -1,0 +1,42 @@
+$OpenBSD: patch-png_c,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- png.c.orig	Wed Jul  6 11:27:06 2011
++++ png.c	Wed Jul  6 11:28:03 2011
+@@ -48,7 +48,7 @@ void img_my_png_warning(png_structp a, png_const_charp
+ /* Error for from-web PNG images. */
+ void img_my_png_error(png_structp png_ptr, png_const_charp error_string)
+ {
+-	longjmp(png_ptr->jmpbuf,1);
++	png_longjmp(png_ptr,1);
+ }
+ 
+ void png_info_callback(png_structp png_ptr, png_infop info_ptr)
+@@ -203,7 +203,7 @@ void png_start(struct cached_image *cimg)
+ #ifdef DEBUG
+ 	if (!info_ptr) internal ("png_create_info_struct failed\n");
+ #endif /* #ifdef DEBUG */
+-	if (setjmp(png_ptr->jmpbuf)){
++	if (setjmp(png_jmpbuf(png_ptr))){
+ error:
+ 		png_destroy_read_struct(&png_ptr, &info_ptr,
+ 			(png_infopp)NULL);
+@@ -213,7 +213,7 @@ error:
+ 	png_set_progressive_read_fn(png_ptr, NULL,
+ 				    png_info_callback, png_row_callback,
+ 				    png_end_callback);
+-   	if (setjmp(png_ptr->jmpbuf)) goto error;
++   	if (setjmp(png_jmpbuf(png_ptr))) goto error;
+ 	decoder=mem_alloc(sizeof(*decoder));
+ 	decoder->png_ptr=png_ptr;
+ 	decoder->info_ptr=info_ptr;
+@@ -232,7 +232,7 @@ void png_restart(struct cached_image *cimg, unsigned c
+ 	png_ptr=((struct png_decoder *)(cimg->decoder))->png_ptr;
+ 	info_ptr=((struct png_decoder *)(cimg->decoder))->info_ptr;
+ 	end_callback_hit=0;
+-	if (setjmp(png_ptr->jmpbuf)){
++	if (setjmp(png_jmpbuf(png_ptr))){
+ 		img_end(cimg);
+ 		return;
+ 	}

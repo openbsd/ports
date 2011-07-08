@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_IMG_savepng_cpp,v 1.1 2011/07/08 20:38:02 naddy Exp $
+
+Fix build with png-1.5.
+
+--- src/IMG_savepng.cpp.orig	Tue Jul  5 15:57:25 2011
++++ src/IMG_savepng.cpp	Tue Jul  5 15:57:56 2011
+@@ -27,6 +27,7 @@
+ 
+ #ifdef IMPLEMENT_SAVE_PNG
+ #include <png.h>
++#include <zlib.h>
+ #endif
+ 
+ #include <stdlib.h>
+@@ -131,7 +132,7 @@ int IMG_SavePNG_RW(SDL_RWops *src, SDL_Surface *surf,i
+ 		goto savedone;
+ 	}
+ 	/* setup custom writer functions */
+-	png_set_write_fn(png_ptr,(voidp)src,png_write_data,NULL);
++	png_set_write_fn(png_ptr,src,png_write_data,NULL);
+ 
+ 	if (setjmp(png_jmpbuf(png_ptr))){
+ 		SDL_SetError("Unknown error writing PNG");

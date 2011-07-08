@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_init_c,v 1.5 2010/12/02 07:48:42 matthieu Exp $
---- src/init.c.orig	Wed Dec  1 22:43:45 2010
-+++ src/init.c	Wed Dec  1 22:43:45 2010
-@@ -3239,7 +3239,7 @@
+$OpenBSD: patch-src_init_c,v 1.6 2011/07/08 20:38:00 naddy Exp $
+--- src/init.c.orig	Fri Jun 13 13:08:13 2008
++++ src/init.c	Thu Jul  7 09:13:48 2011
+@@ -3239,7 +3239,7 @@ rxvt_create_show_windows( rxvt_t *r, int argc, const c
      XGCValues		    gcvalue;
      unsigned long	    gcmask;
  #ifndef NO_FRILLS

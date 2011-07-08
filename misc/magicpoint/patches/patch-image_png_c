@@ -1,0 +1,24 @@
+$OpenBSD: patch-image_png_c,v 1.1 2011/07/08 20:38:00 naddy Exp $
+
+Fix build with png-1.5.
+
+--- image/png.c.orig	Wed Apr 11 02:37:00 2001
++++ image/png.c	Thu Jul  7 09:09:50 2011
+@@ -86,7 +86,7 @@ pngLoad(fullname, name, verbose)
+ 		return NULL;
+ 	}
+ 
+-	if (setjmp(png_ptr->jmpbuf)) {
++	if (setjmp(png_jmpbuf(png_ptr))) {
+ 		png_destroy_read_struct(&png_ptr, &info_ptr, (png_infopp)NULL);
+ 		fclose(fp);
+ 		return NULL;
+@@ -134,7 +134,7 @@ pngLoad(fullname, name, verbose)
+ 	} 
+ 
+ 	if (colortype == PNG_COLOR_TYPE_GRAY && bitdepth < 8){
+-		png_set_gray_1_2_4_to_8(png_ptr);
++		png_set_expand_gray_1_2_4_to_8(png_ptr);
+ 	}
+ 
+ 	if (png_get_valid(png_ptr, info_ptr, PNG_INFO_tRNS)){

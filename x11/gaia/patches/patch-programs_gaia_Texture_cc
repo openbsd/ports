@@ -1,0 +1,15 @@
+$OpenBSD: patch-programs_gaia_Texture_cc,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- programs/gaia/Texture.cc.orig	Wed Jul  6 15:30:39 2011
++++ programs/gaia/Texture.cc	Wed Jul  6 15:30:50 2011
+@@ -308,7 +308,7 @@ void Texture::LoadPNG(int source, ...) {
+ 		switch (color_type) {
+ 		case PNG_COLOR_TYPE_GRAY:
+ 			if (bit_depth < 8)
+-				png_set_gray_1_2_4_to_8(png_ptr);
++				png_set_expand_gray_1_2_4_to_8(png_ptr);
+ 			m_glInternalFormat = GL_LUMINANCE8;
+ 			m_glFormat = GL_LUMINANCE;
+ 			break;

@@ -1,0 +1,32 @@
+$OpenBSD: patch-src_image_c,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- src/image.c.orig	Wed Jul  6 16:17:52 2011
++++ src/image.c	Wed Jul  6 17:09:51 2011
+@@ -27,6 +27,7 @@
+ #undef GLOBAL
+ 
+ #include <png.h>
++#include <zlib.h>
+ 
+ #ifdef JP2K
+ #include <jasper/jasper.h>
+@@ -407,7 +408,7 @@ int png2bitmap(char *inbuf, int insize, raw_bitmap **o
+ 	bmp = new_raw_bitmap();
+ 	*out = bmp;
+ 
+-	png_set_read_fn(png_ptr,(voidp)&desc,mem_to_png);
++	png_set_read_fn(png_ptr,&desc,mem_to_png);
+ 	
+ 	png_read_info(png_ptr,info_ptr);
+ 	png_get_IHDR(png_ptr,info_ptr,(png_uint_32*)&(bmp->width),
+@@ -457,7 +458,7 @@ int png2bitmap(char *inbuf, int insize, raw_bitmap **o
+ 				color_type == PNG_COLOR_TYPE_GRAY_ALPHA)
+ 	{
+ 		grayscale=1;	
+-        if(bit_depth < 8) png_set_gray_1_2_4_to_8(png_ptr);
++        if(bit_depth < 8) png_set_expand_gray_1_2_4_to_8(png_ptr);
+ 	}else grayscale=0;
+ 	
+ 	if (bit_depth == 16)

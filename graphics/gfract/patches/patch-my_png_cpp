@@ -1,0 +1,15 @@
+$OpenBSD: patch-my_png_cpp,v 1.1 2011/07/08 20:38:01 naddy Exp $
+
+Fix build with png-1.5.
+
+--- my_png.cpp.orig	Wed Jul  6 15:34:02 2011
++++ my_png.cpp	Wed Jul  6 15:34:19 2011
+@@ -58,7 +58,7 @@ void save_file(image_info* img, char* filename)
+         return;
+     }
+ 
+-    if (setjmp(png_ptr->jmpbuf)) {
++    if (setjmp(png_jmpbuf(png_ptr))) {
+         fprintf(stderr, "Internal error in libpng\n");
+         if (png_pal)
+             delete[] png_pal;
