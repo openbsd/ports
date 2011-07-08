@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/07/08 18:23:17 robert Exp $
+# $OpenBSD: Makefile,v 1.10 2011/07/08 18:40:45 robert Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
@@ -11,8 +11,8 @@ CATEGORIES=	www devel
 
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION-main=	0
-REVISION-utils=	0
+REVISION-main=	1
+REVISION-utils=	1
 
 HOMEPAGE=	http://pear.php.net/
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
@@ -37,6 +37,8 @@ PREFIX-utils=	/usr/local
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
+SUBST_VARS=	MODPHP_BIN
+
 do-install:
 	@perl -pi -e "s,%%PREFIX%%,${WRKINST}${PREFIX-main},g" ${WRKSRC}/go-pear
 	@${MODPHP_BIN} -nq ${WRKSRC}/go-pear
@@ -45,10 +47,13 @@ do-install:
 	@mv ${WRKINST}${PREFIX-main}/share/doc/pear ${WRKINST}${PREFIX-utils}/share/doc/
 	@rm -rf ${WRKINST}${PREFIX-main}/share ${WRKINST}${PREFIX-main}/etc
 
-	@find ${WRKINST}${PREFIX-main} -name "*.php" -exec perl -pi -e "s,${WRKINST},,g" {} \; 
+	@find ${WRKINST}${PREFIX-main} -name "*.php" -exec perl -pi -e "s,${WRKINST},,g" {} \;
 	@find ${WRKINST}${PREFIX-utils}/bin -type f -exec perl -pi -e "s,${WRKINST},,g" {} \;
 
-	@patch -d ${WRKINST}${PREFIX-main}/pear < ${FILESDIR}/patch-lib_PEAR_Config_php
+	for _f in patch-usr_local_bin_pear patch-usr_local_bin_peardev \
+		patch-usr_local_bin_pecl patch-var_www_pear_lib_PEAR_Config_php; do \
+		patch -d ${WRKINST} < ${FILESDIR}/$${_f}; done
+	find ${WRKINST}/usr/local/bin -type f -exec ${SUBST_CMD} {} \;
 	@perl -pi -e "s,OPENBSD_PEAR_ROOT,'${PREFIX-main}/pear',g" \
 		${WRKINST}${PREFIX-main}/pear/lib/PEAR/Config.php
 	@touch ${WRKINST}${PREFIX-main}/pear/.lock

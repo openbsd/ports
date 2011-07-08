@@ -1,0 +1,15 @@
+--- usr/local/bin/pear.orig	Fri Jul  8 20:29:55 2011
++++ usr/local/bin/pear	Fri Jul  8 20:30:19 2011
+@@ -4,10 +4,10 @@
+ if test "x$PHP_PEAR_PHP_BIN" != "x"; then
+   PHP="$PHP_PEAR_PHP_BIN"
+ else
+-  if test "/usr/local/bin/php" = '@'php_bin'@'; then
++  if test "php-${MODPHP_BIN}" = '@'php_bin'@'; then
+     PHP=php 
+   else
+-    PHP="/usr/local/bin/php"
++    PHP="${MODPHP_BIN}"
+   fi
+ fi
+ 
