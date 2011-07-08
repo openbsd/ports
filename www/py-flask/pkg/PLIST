@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/28 00:20:20 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/08 08:11:04 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/Flask-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
@@ -11,6 +11,8 @@ lib/python${MODPY_VERSION}/site-packages/flask/__init__.py
 lib/python${MODPY_VERSION}/site-packages/flask/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/flask/app.py
 lib/python${MODPY_VERSION}/site-packages/flask/app.pyc
+lib/python${MODPY_VERSION}/site-packages/flask/blueprints.py
+lib/python${MODPY_VERSION}/site-packages/flask/blueprints.pyc
 lib/python${MODPY_VERSION}/site-packages/flask/config.py
 lib/python${MODPY_VERSION}/site-packages/flask/config.pyc
 lib/python${MODPY_VERSION}/site-packages/flask/ctx.py
@@ -31,9 +33,15 @@ lib/python${MODPY_VERSION}/site-packages/flask/templating.py
 lib/python${MODPY_VERSION}/site-packages/flask/templating.pyc
 lib/python${MODPY_VERSION}/site-packages/flask/testing.py
 lib/python${MODPY_VERSION}/site-packages/flask/testing.pyc
+lib/python${MODPY_VERSION}/site-packages/flask/views.py
+lib/python${MODPY_VERSION}/site-packages/flask/views.pyc
 lib/python${MODPY_VERSION}/site-packages/flask/wrappers.py
 lib/python${MODPY_VERSION}/site-packages/flask/wrappers.pyc
 share/examples/py-flask/
+share/examples/py-flask/blueprint-app/
+share/examples/py-flask/blueprint-app/xerox/
+share/examples/py-flask/blueprint-app/xerox/__init__.py
+share/examples/py-flask/blueprint-app/xerox/default_config.py
 share/examples/py-flask/flaskr/
 share/examples/py-flask/flaskr/README
 share/examples/py-flask/flaskr/flaskr.py
