@@ -1,0 +1,525 @@
+$OpenBSD: patch-lavtools_png2yuv_c,v 1.1 2011/07/08 20:36:09 naddy Exp $
+
+Fix build with png-1.5.
+
+--- lavtools/png2yuv.c.orig	Thu Nov  8 10:31:50 2007
++++ lavtools/png2yuv.c	Mon Jul  4 17:49:05 2011
+@@ -49,12 +49,9 @@ png2yuv
+ 
+ #include "subsample.h"
+ #include "colorspace.h"
+-//#include "mplexconsts.hh"
+ 
+ #define DEFAULT_CHROMA_MODE Y4M_CHROMA_420JPEG
+ 
+-#define MAXPIXELS (2800*1152)  /**< Maximum size of final image */
+-
+ typedef struct _parameters 
+ {
+   char *pngformatstr;
+@@ -70,14 +67,10 @@ typedef struct _parameters 
+   int ss_mode; /**< subsampling mode (based on ssm_id from subsample.h) */
+ 
+   int new_width; /// new MPEG2 width, in case the original one is uneven
++  int new_height; /// new MPEG2 width, in case the original one is uneven
+ } parameters_t;
+ 
+ 
+-struct _parameters *sh_param; 
+-png_structp png_ptr;
+-png_infop info_ptr, end_info;
+-uint8_t *raw0, *raw1, *raw2;  /* buffer for RGB first, and then Y/Cb/Cr planes of decoded PNG */
+-
+ /*
+  * The User Interface parts 
+  */
+@@ -152,8 +145,6 @@ static void parse_commandline(int argc, char ** argv, 
+   param->interleave = -1;
+   param->verbose = 1;
+   param->ss_mode = DEFAULT_CHROMA_MODE;
+-  //param->mza_filename = NULL;
+-  //param->make_z_alpha = 0;
+ 
+   /* parse options */
+   for (;;) {
+@@ -240,94 +231,44 @@ static void parse_commandline(int argc, char ** argv, 
+     }
+ }
+ 
+-void png_separation(png_structp png_ptr, png_row_infop row_info, png_bytep data)
+-{
+-  int row_nr = png_ptr->row_number; // internal variable ? 
+-  int i, width = row_info->width; 
+-  int new_width = sh_param->new_width;
+ 
+-  /* contents of row_info:
+-   *  png_uint_32 width      width of row
+-   *  png_uint_32 rowbytes   number of bytes in row
+-   *  png_byte color_type    color type of pixels
+-   *  png_byte bit_depth     bit depth of samples
+-   *  png_byte channels      number of channels (1-4)
+-   *  png_byte pixel_depth   bits per pixel (depth*channels)
+-   */
+-
+-  //mjpeg_debug("PNG YUV transformation callback; color_type is %d row_number %d\n", 
+-  //	 row_info->color_type, row_nr);
+-
+-  if(row_info->color_type == PNG_COLOR_TYPE_GRAY) // only Z available
+-    {
+-      //mjpeg_debug("Grayscale to YUV, row %d", row_nr);
+-      for (i = 0; i < width; i++)
+-	{
+-	  raw0[i + row_nr * new_width] = data[i];
+-	  raw1[i + row_nr * new_width] = data[i];
+-	  raw2[i + row_nr * new_width] = data[i];
+-	}
+-      return;
+-    }
+-
+-  if(row_info->color_type == PNG_COLOR_TYPE_RGB) // Z and Alpha available
+-    {
+-      //mjpeg_info("RGB to YUV, row %d", row_nr);
+-      for (i = 0; i < width; i++)
+-	{
+-	  raw0[i + row_nr * new_width] = data[i*3];
+-	  raw1[i + row_nr * new_width] = data[i*3 + 1];
+-	  raw2[i + row_nr * new_width] = data[i*3 + 2];
+-	}
+-      return;
+-    }
+-
+-  mjpeg_error_exit1("mpegz: UNKNOWN COLOR FORMAT %d in PNG transformation !\n", row_info->color_type);
+-}
+-
+-
+ /*
+  * The file handling parts 
+  */
+ /** 
+ Reads one PNG file. 
+-@param process Process the image data (0 for initial parameter determination)
++@param process Process the image data (NULL for initial parameter determination)
+ @returns -1 on failure, 1 on sucess
++@on success returns RGB data in the second, yuv, parameter
+ */
+-int decode_png(const char *pngname, int process, parameters_t *param)
++int decode_png(const char *pngname, uint8_t *yuv[], parameters_t *param)
+ {
+-  int num_pass = 1;
+-  int bit_depth, color_type;
++  png_structp png_ptr;
++  png_infop info_ptr;
+   FILE *pngfile;
+-  //png_byte hdptr[8];
+ 
+-  /* Now open this PNG file, and examine its header to retrieve the 
+-     YUV4MPEG info that shall be written */
+-  pngfile = fopen(pngname, "rb");
+-  if (!pngfile)
+-    {
+-      perror("PNG file open failed:");
+-      return -1;
+-    }
++  /* libpng needs two structs - a png_struct and a png_info, there is no
++   * need to make the third, another png_info, because that is only used
++   * to store data (such as textual information) that can come after the
++   * PNG image.  This code only cares about the image.
++   */
++  info_ptr = NULL;
++  pngfile = NULL;
++  png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
++  if (!png_ptr)
++    mjpeg_error_exit1("%s: Could not allocate PNG read struct !", pngname);
+ 
+-  //fread(hdptr, 1, 8, pngfile);
+-
+-#if 0 
+-  bool is_png = !png_sig_cmp(hdptr, 0, 8);
+-  if (!is_png)
++  /* This needs to be done immediately after creation of the png_struct
++   * because storage allocation failures will longjmp back to here:
++   */
++  if (setjmp(png_jmpbuf(png_ptr)))
+     {
+-      mjpeg_error("%s is _no_ PNG file !\n");
++      png_destroy_read_struct(&png_ptr, &info_ptr, 0);
++      if (pngfile) (void)fclose(pngfile);
++      mjpeg_error("%s: Corrupted PNG file !", pngname);
+       return -1;
+     }
+-#endif
+   
+-  png_ptr = png_create_read_struct(PNG_LIBPNG_VER_STRING, NULL, NULL, NULL);
+-  if (!png_ptr)
+-    mjpeg_error_exit1("%s: Could not allocate PNG read struct !", pngname);
+-  
+-  png_init_io(png_ptr, pngfile);
+-  //png_set_sig_bytes(png_ptr, 8);
+-  
+   info_ptr = png_create_info_struct(png_ptr);
+   if (!info_ptr)
+     {
+@@ -336,79 +277,101 @@ int decode_png(const char *pngname, int process, param
+       mjpeg_error_exit1("%s: Could not allocate PNG info struct !", pngname);
+     }
+   
+-  end_info = png_create_info_struct(png_ptr);
+-  if (!end_info)
++  /* Now open this PNG file, and examine its header to retrieve the 
++     YUV4MPEG info that shall be written */
++  pngfile = fopen(pngname, "rb");
++  if (!pngfile)
+     {
+-      png_destroy_read_struct(&png_ptr, &info_ptr,
+-			      (png_infopp)NULL);
+-      mjpeg_error_exit1("%s: Could not allocate PNG end info struct !", pngname);
++      perror(pngname);
++      png_error(png_ptr, "PNG file open failed");
+     }
+-  
+-  if (setjmp(png_jmpbuf(png_ptr)))
++
++  png_init_io(png_ptr, pngfile);
++
++  if (yuv)
+     {
+-      png_destroy_read_struct(&png_ptr, &info_ptr,
+-			      &end_info);
+-      mjpeg_error("%s: Corrupted PNG file !", pngname);
+-      return -1;
++      png_uint_32 nr, input_height, input_width, output_height, output_width;
++      uint8_t *r, *g, *b;
++      png_bytepp rows;
++
++      /* The code uses png_read_png to obtain a complete buffered copy of the
++       * PNG file reduced (or expanded) to 8 bit RGB.  This is a little wasteful
++       * in the case of a non-interlaced image - the code could work row by
++       * row without buffering the whole image - but the interlaced case is
++       * almost impossible to handle this way so it is better to be simple and
++       * correct.
++       */
++#     if PNG_LIBPNG_VER >= 10500 && PNG_LIBPNG_VER < 10502
++	  /* There is a bug in 1.5 before 1.5.2 which causes png_read_png to
++	   * whine most terribly on interlaced images, this stops it:
++	   */
++          (void)png_set_interlace_handling(png_ptr);
++#     endif
++      png_read_png(png_ptr, info_ptr, PNG_TRANSFORM_STRIP_16 |
++	PNG_TRANSFORM_STRIP_ALPHA | PNG_TRANSFORM_EXPAND |
++	PNG_TRANSFORM_GRAY_TO_RGB /* requires libpng 1.4 or later */, 0);
++
++      /* And return the separated data to the parameters. */
++      rows = png_get_rows(png_ptr, info_ptr);
++
++      /* Since the PNG files for the frames are separate the actual PNG file 
++       * that was read could be unrelated - a random width and height.  Because
++       * the output may be interleaved the output height may be twice the input
++       * PNG height.  Because the MPEG code requires an even width the output
++       * width may be one more than the original frame width.
++       *
++       * For the interleaving the PNG data is smashed into the lower half of
++       * the yuv rows.  For the other cases the input data is cropped or
++       * top-lefted as appropriate.
++       */
++      output_height = param->new_height;
++
++      input_height = png_get_image_height(png_ptr, info_ptr);
++      if (input_height > output_height)
++          input_height = output_height;
++
++      output_width = param->new_width;
++
++      input_width = png_get_image_width(png_ptr, info_ptr);
++      if (input_width > output_width)
++        input_width = output_width;
++
++      /* Breaking up the RGB data is not hard to do, the separated channels are
++       * simply packed into the three raw yuv arrays with new_width values per
++       * row.
++       */
++      r = yuv[0];
++      g = yuv[1];
++      b = yuv[2];
++      for (nr=0; nr<input_height; ++nr)
++        {
++	  png_uint_32 nc;
++	  png_bytep row = *rows++;
++
++	  for (nc=0; nc<input_width; ++nc)
++	    {
++	    	*r++ = *row++;
++		*g++ = *row++;
++		*b++ = *row++;
++	    }
++	
++	  /* Pad the output: */
++	  for (; nc<output_width; ++nc)
++	    *r++ = *g++ = *b++ = 0;
++	}
+     }
+-  
+-  if (process)
+-    png_set_read_user_transform_fn(png_ptr, png_separation);
+-  png_read_png(png_ptr, info_ptr, PNG_TRANSFORM_STRIP_16 | PNG_TRANSFORM_STRIP_ALPHA, NULL);
+-  
+-  if (png_get_IHDR(png_ptr, info_ptr, &param->width, &param->height, &bit_depth,
+-		       //   &color_type, &interlace_type, &compression_type, &filter_type))
+-		   &color_type, NULL, NULL, NULL))	
+-    num_pass = png_set_interlace_handling(png_ptr);
+   else
+-    mjpeg_error_exit1("PNG header reading failed !!\n");
+-#if 0 
+-  mjpeg_info("Reading info struct...\n");
+-  png_read_info(png_ptr, info_ptr);
+-  mjpeg_info("Done...\n");
+-  
+-  if (png_get_IHDR(png_ptr, info_ptr, &param->width, &param->height, &bit_depth,
+-		       //   &color_type, &interlace_type, &compression_type, &filter_type))
+-		   &color_type, NULL, NULL, NULL))	
+-    num_pass = png_set_interlace_handling(png_ptr);
+-  else
+-    mjpeg_error_exit1("PNG header reading failed !!\n");
+-  
+-  if (process)
+     {
+-      printf("%d passes needed\n\n", num_pass);
+-      
+-      if (bit_depth != 8 && bit_depth != 16)
+-	{
+-	  mjpeg_error_exit1("Invalid bit_depth %d, only 8 and 16 bit allowed !!\n", bit_depth);
+-	}
+-      
+-      png_set_strip_16(png_ptr); // always has to strip the 16bit input, MPEG can't handle it	  
+-      png_set_strip_alpha(png_ptr); // Alpha can't be processed until Z/Alpha is integrated
+-      
+-      printf("\nAllocating row buffer...");
+-      png_set_read_user_transform_fn(png_ptr, png_separation);
+-      png_bytep row_buf = (png_bytep)png_malloc(png_ptr,
+-						png_get_rowbytes(png_ptr, info_ptr));
+-      
+-      for (int n=0; n < num_pass; n++)
+-	for (int y=0; y < sh_param->height; y++)
+-	  {
+-	    printf("Writing row data for pass %d\n", n);
+-	    png_read_rows(png_ptr, (png_bytepp)&row_buf, NULL, 1);
+-	  }
+-      
+-      png_free(png_ptr, row_buf);	      
++      /* Just return the image width and height in *param */
++      png_read_info(png_ptr, info_ptr);
++
++      param->width = png_get_image_width(png_ptr, info_ptr);
++      param->height = png_get_image_height(png_ptr, info_ptr);
+     }
+-  png_read_end(png_ptr, info_ptr);
+-#endif  
+-  if (setjmp(png_ptr->jmpbuf)) {
+-    png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
+-    return 2;
+-    }
+ 
++  /* Successful exit: */
++  png_destroy_read_struct(&png_ptr, &info_ptr, 0);
+   fclose(pngfile);
+-
+   return 1;
+ }
+ 
+@@ -419,13 +382,17 @@ int decode_png(const char *pngname, int process, param
+  */
+ static int init_parse_files(parameters_t *param)
+ { 
+-  char pngname[255];
++  char pngname[PATH_MAX+1]; /* See POSIX 1003.1 section 2.9.5 */
+ 
+   snprintf(pngname, sizeof(pngname), 
+ 	   param->pngformatstr, param->begin);
+   mjpeg_debug("Analyzing %s to get the right pic params", pngname);
+   
+-  if (decode_png(pngname, 0, param) == -1)
++  /* The first frame (the param->begin frame) determines the height and
++   * width of the output.  Passing NULL instead of yuv (see below) causes
++   * decode_png to fill in param with the image dimensions.
++   */
++  if (decode_png(pngname, NULL, param) == -1)
+     mjpeg_error_exit1("Reading of %s failed.\n", pngname);
+ 
+   mjpeg_info("Image dimensions are %ux%u",
+@@ -455,6 +422,7 @@ static int init_parse_files(parameters_t *param)
+ 
+   if (!(param->interleave) && (param->interlace != Y4M_ILACE_NONE)) 
+     {
++      /* So the height in 'param' might be twice the PNG input height:*/
+       param->height *= 2;
+       mjpeg_info("Non-interleaved fields (image height doubled)");
+     }
+@@ -466,33 +434,29 @@ static int init_parse_files(parameters_t *param)
+ static int generate_YUV4MPEG(parameters_t *param)
+ {
+   uint32_t frame;
+-  //size_t pngsize;
+-  char pngname[FILENAME_MAX];
+-  uint8_t *yuv[3];  /* buffer for Y/U/V planes of decoded PNG */
++  uint8_t *yuv[3];  /* Buffers, initially for R,G,B then Y,Cb,Cr */
+   y4m_stream_info_t streaminfo;
+   y4m_frame_info_t frameinfo;
+ 
+-  if ((param->width % 2) == 0)
+-    param->new_width = param->width;
+-  else
+-    {
+-      param->new_width = ((param->width >> 1) + 1) << 1;
+-      printf("Setting new, even image width %d", param->new_width);
+-    }
++  /* Make the output even, so the output may be one larger than the
++   * original PNG image width.
++   */
++  param->new_width = param->width + (param->width & 1);
++  param->new_height = param->height + (param->height & 1);
+ 
+   mjpeg_info("Now generating YUV4MPEG stream.");
+   y4m_init_stream_info(&streaminfo);
+   y4m_init_frame_info(&frameinfo);
+ 
+   y4m_si_set_width(&streaminfo, param->new_width);
+-  y4m_si_set_height(&streaminfo, param->height);
++  y4m_si_set_height(&streaminfo, param->new_height);
+   y4m_si_set_interlace(&streaminfo, param->interlace);
+   y4m_si_set_framerate(&streaminfo, param->framerate);
+   y4m_si_set_chroma(&streaminfo, param->ss_mode);
+ 
+-  yuv[0] = (uint8_t *)malloc(param->new_width * param->height * sizeof(yuv[0][0]));
+-  yuv[1] = (uint8_t *)malloc(param->new_width * param->height * sizeof(yuv[1][0]));
+-  yuv[2] = (uint8_t *)malloc(param->new_width * param->height * sizeof(yuv[2][0]));
++  yuv[0] = (uint8_t *)malloc(param->new_width * param->new_height * sizeof(yuv[0][0]));
++  yuv[1] = (uint8_t *)malloc(param->new_width * param->new_height * sizeof(yuv[1][0]));
++  yuv[2] = (uint8_t *)malloc(param->new_width * param->new_height * sizeof(yuv[2][0]));
+ 
+   y4m_write_stream_header(STDOUT_FILENO, &streaminfo);
+ 
+@@ -500,15 +464,13 @@ static int generate_YUV4MPEG(parameters_t *param)
+        (frame < param->numframes + param->begin) || (param->numframes == -1);
+        frame++) 
+     {
+-      //      if (frame < 25)
+-      //      else      
+-      //snprintf(pngname, sizeof(pngname), param->pngformatstr, frame - 25);
++      char pngname[PATH_MAX+1];
+       snprintf(pngname, sizeof(pngname), param->pngformatstr, frame);
+             
+-      raw0 = yuv[0];
+-      raw1 = yuv[1];
+-      raw2 = yuv[2];
+-      if (decode_png(pngname, 1, param) == -1)
++      /* decode_png reads the PNG into the yuv buffers as r,g,b [0..255]
++       * values.
++       */
++      if (decode_png(pngname, yuv, param) == -1)
+ 	{
+ 	  mjpeg_info("Read from '%s' failed:  %s", pngname, strerror(errno));
+ 	  if (param->numframes == -1) 
+@@ -523,79 +485,18 @@ static int generate_YUV4MPEG(parameters_t *param)
+ 	} 
+       else 
+ 	{
+-#if 0 
+-	  mjpeg_debug("Preparing frame");
+-	  
+-	  /* Now open this PNG file, and examine its header to retrieve the 
+-	     YUV4MPEG info that shall be written */
+-
+-	  if ((param->interlace == Y4M_ILACE_NONE) || (param->interleave == 1)) 
+-	    {
+-	      mjpeg_info("Processing non-interlaced/interleaved %s.", 
+-			 pngname, pngsize);
+-
+-	      decode_png(imagedata, 0, 420, yuv[0], yuv[1], yuv[2], 
+-			 param->width, param->height, param->new_width);
+-	      
+-#if 0 
+-	      if (param->make_z_alpha)
+-		{
+-		  mjpeg_info("Writing Z/Alpha data.\n");
+-		  za_write(real_z_imagemap, param->width, param->height,z_alpha_fp,frame);
+-		}
+-#endif
+-	    } 
+-	  else 
+-	    {
+-	      mjpeg_error_exit1("Can't handle interlaced PNG information (yet) since there is no standard for it.\n"
+-				"Use interleaved mode (-L option) to create interlaced material.");
+-
+-	      switch (param->interlace) 
+-		{		  
+-		case Y4M_ILACE_TOP_FIRST:
+-		  mjpeg_info("Processing interlaced, top-first %s", pngname);
+-#if 0 
+-		  decode_jpeg_raw(jpegdata, jpegsize,
+-				  Y4M_ILACE_TOP_FIRST,
+-				  420, param->width, param->height,
+-				  yuv[0], yuv[1], yuv[2]);
+-#endif
+-		  break;
+-		case Y4M_ILACE_BOTTOM_FIRST:
+-		  mjpeg_info("Processing interlaced, bottom-first %s", pngname);
+-#if 0 
+-		  decode_jpeg_raw(jpegdata, jpegsize,
+-				  Y4M_ILACE_BOTTOM_FIRST,
+-				  420, param->width, param->height,
+-				  yuv[0], yuv[1], yuv[2]);
+-#endif
+-		  break;
+-		default:
+-		  mjpeg_error_exit1("FATAL logic error?!?");
+-		  break;
+-		}
+-	    }
+-#endif
+ 	  mjpeg_debug("Converting frame to YUV format.");
+ 	  /* Transform colorspace, then subsample (in place) */
+-	  convert_RGB_to_YCbCr(yuv, param->height *  param->new_width);
+-	  chroma_subsample(param->ss_mode, yuv, param->new_width, param->height);
++	  convert_RGB_to_YCbCr(yuv, param->new_height *  param->new_width);
++	  chroma_subsample(param->ss_mode, yuv, param->new_width, param->new_height);
+ 
+ 	  mjpeg_debug("Frame decoded, now writing to output stream.");
+ 	}
+-      
++
+       mjpeg_debug("Frame decoded, now writing to output stream.");
+       y4m_write_frame(STDOUT_FILENO, &streaminfo, &frameinfo, yuv);
+     }
+ 
+-#if 0 
+-  if (param->make_z_alpha)
+-    {
+-      za_write_end(z_alpha_fp);
+-      fclose(z_alpha_fp);
+-    }
+-#endif
+-
+   y4m_fini_stream_info(&streaminfo);
+   y4m_fini_frame_info(&frameinfo);
+   free(yuv[0]);
+@@ -614,7 +515,6 @@ static int generate_YUV4MPEG(parameters_t *param)
+ int main(int argc, char ** argv)
+ { 
+   parameters_t param;
+-  sh_param = &param;
+ 
+   y4m_accept_extensions(1);
+ 
+@@ -632,13 +532,3 @@ int main(int argc, char ** argv)
+ 
+   return 0;
+ }
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-

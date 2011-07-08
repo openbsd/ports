@@ -1,0 +1,23 @@
+$OpenBSD: patch-f_wrpng_c,v 1.1 2011/07/08 20:36:09 naddy Exp $
+
+Fix build with png-1.5.
+
+--- f_wrpng.c.pat.orig	Wed Mar 28 18:23:14 2007
++++ f_wrpng.c	Wed Jul  6 11:06:59 2011
+@@ -20,6 +20,7 @@
+ #include "w_msgpanel.h"
+ #include "w_setup.h"
+ #include <png.h>
++#include <zlib.h>
+ 
+ /*
+  * Write PNG file from rgb data
+@@ -59,7 +60,7 @@ write_png(FILE *file, unsigned char *data, int type, u
+     }
+ 
+     /* set long jump recovery here */
+-    if (setjmp(png_ptr->jmpbuf)) {
++    if (setjmp(png_jmpbuf(png_ptr))) {
+ 	/* if we get here there was a problem reading the file */
+ 	png_destroy_write_struct(&png_ptr, &info_ptr);
+ 	return False;

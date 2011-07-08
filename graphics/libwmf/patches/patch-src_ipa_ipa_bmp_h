@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_ipa_ipa_bmp_h,v 1.1 2011/07/08 20:36:09 naddy Exp $
+--- src/ipa/ipa/bmp.h.orig	Mon Jul  4 14:32:20 2011
++++ src/ipa/ipa/bmp.h	Mon Jul  4 14:32:47 2011
+@@ -66,7 +66,7 @@ static void ldr_bmp_png (wmfAPI* API,wmfBMP_Draw_t* bm
+ 		return;
+ 	}
+ 
+-	if (setjmp (png_ptr->jmpbuf))
++	if (setjmp (png_jmpbuf(png_ptr)))
+ 	{	WMF_DEBUG (API,"Failed to write bitmap as PNG! (setjmp failed)");
+ 		png_destroy_write_struct (&png_ptr,&info_ptr);
+ 		wmf_free (API,buffer);

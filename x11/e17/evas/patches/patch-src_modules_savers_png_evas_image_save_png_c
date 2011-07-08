@@ -1,0 +1,58 @@
+$OpenBSD: patch-src_modules_savers_png_evas_image_save_png_c,v 1.1 2011/07/08 20:36:09 naddy Exp $
+
+Fix build with png-1.5.
+
+--- src/modules/savers/png/evas_image_save_png.c.orig	Fri Jan 28 20:09:47 2011
++++ src/modules/savers/png/evas_image_save_png.c	Mon Jul  4 16:25:38 2011
+@@ -38,7 +38,7 @@ save_image_png(RGBA_Image *im, const char *file, int c
+    unsigned int        x, y, j;
+    png_bytep           row_ptr, png_data = NULL;
+    png_color_8         sig_bit;
+-   int                 num_passes = 1, pass;
++   int                 num_passes = 1, pass, p_interlace;
+ 
+    if (!im || !im->image.data || !file)
+       return 0;
+@@ -63,11 +63,11 @@ save_image_png(RGBA_Image *im, const char *file, int c
+ 	goto close_file;
+      }
+ 
++   p_interlace = PNG_INTERLACE_NONE;
+    if (interlace)
+      {
+ #ifdef PNG_WRITE_INTERLACING_SUPPORTED
+-	png_ptr->interlaced = PNG_INTERLACE_ADAM7;
+-	num_passes = png_set_interlace_handling(png_ptr);
++	p_interlace = PNG_INTERLACE_ADAM7;
+ #endif
+      }
+ 
+@@ -84,7 +84,7 @@ save_image_png(RGBA_Image *im, const char *file, int c
+ 	evas_common_convert_argb_unpremul(data, im->cache_entry.w * im->cache_entry.h);
+ 	png_init_io(png_ptr, f);
+         png_set_IHDR(png_ptr, info_ptr, im->cache_entry.w, im->cache_entry.h, 8,
+-		     PNG_COLOR_TYPE_RGB_ALPHA, png_ptr->interlaced,
++		     PNG_COLOR_TYPE_RGB_ALPHA, p_interlace,
+ 		     PNG_COMPRESSION_TYPE_BASE, PNG_FILTER_TYPE_BASE);
+ #ifdef WORDS_BIGENDIAN
+ 	png_set_swap_alpha(png_ptr);
+@@ -97,7 +97,7 @@ save_image_png(RGBA_Image *im, const char *file, int c
+ 	data = im->image.data;
+ 	png_init_io(png_ptr, f);
+ 	png_set_IHDR(png_ptr, info_ptr, im->cache_entry.w, im->cache_entry.h, 8,
+-		     PNG_COLOR_TYPE_RGB, png_ptr->interlaced,
++		     PNG_COLOR_TYPE_RGB, p_interlace,
+ 		     PNG_COMPRESSION_TYPE_BASE, PNG_FILTER_TYPE_BASE);
+ 	png_data = alloca(im->cache_entry.w * 3 * sizeof(char));
+      }
+@@ -111,6 +111,10 @@ save_image_png(RGBA_Image *im, const char *file, int c
+    png_write_info(png_ptr, info_ptr);
+    png_set_shift(png_ptr, &sig_bit);
+    png_set_packing(png_ptr);
++
++#ifdef PNG_WRITE_INTERLACING_SUPPORTED
++     num_passes = png_set_interlace_handling(png_ptr);
++#endif
+ 
+    for (pass = 0; pass < num_passes; pass++)
+      {

@@ -1,0 +1,133 @@
+$OpenBSD: patch-plug-ins_common_file-mng_c,v 1.1 2011/07/08 20:36:09 naddy Exp $
+
+Fix build with png-1.5.
+
+--- plug-ins/common/file-mng.c.orig	Fri Jul  2 16:51:56 2010
++++ plug-ins/common/file-mng.c	Tue Jul  5 11:11:15 2011
+@@ -799,6 +799,13 @@ mng_save_image (const gchar  *filename,
+       png_infop       png_info_ptr;
+       FILE           *infile, *outfile;
+       int             num_passes;
++      int             color_type;
++      png_colorp      palette;
++      int             num_palette;
++      int             bit_depth;
++      png_bytep       trans_alpha;
++      int             num_trans;
++      png_color_16p   trans_color;
+       int             tile_height;
+       guchar        **layer_pixels, *layer_pixel;
+       int             pass, j, k, begin, end, num;
+@@ -969,7 +976,7 @@ mng_save_image (const gchar  *filename,
+           goto err3;
+         }
+ 
+-      if (setjmp (png_ptr->jmpbuf) != 0)
++      if (setjmp (png_jmpbuf(png_ptr)) != 0)
+         {
+           g_warning ("HRM saving PNG in mng_save_image()");
+           png_destroy_write_struct (&png_ptr, &png_info_ptr);
+@@ -981,37 +988,31 @@ mng_save_image (const gchar  *filename,
+       png_init_io (png_ptr, outfile);
+       png_set_compression_level (png_ptr, mng_data.compression_level);
+ 
+-      png_info_ptr->width = layer_cols;
+-      png_info_ptr->height = layer_rows;
+-      png_info_ptr->interlace_type = (mng_data.interlaced == 0 ? 0 : 1);
+-      png_info_ptr->bit_depth = 8;
+-
++      bit_depth = 8;
+       switch (layer_drawable_type)
+         {
+         case GIMP_RGB_IMAGE:
+-          png_info_ptr->color_type = PNG_COLOR_TYPE_RGB;
++          color_type = PNG_COLOR_TYPE_RGB;
+           break;
+         case GIMP_RGBA_IMAGE:
+-          png_info_ptr->color_type = PNG_COLOR_TYPE_RGB_ALPHA;
++          color_type = PNG_COLOR_TYPE_RGB_ALPHA;
+           break;
+         case GIMP_GRAY_IMAGE:
+-          png_info_ptr->color_type = PNG_COLOR_TYPE_GRAY;
++          color_type = PNG_COLOR_TYPE_GRAY;
+           break;
+         case GIMP_GRAYA_IMAGE:
+-          png_info_ptr->color_type = PNG_COLOR_TYPE_GRAY_ALPHA;
++          color_type = PNG_COLOR_TYPE_GRAY_ALPHA;
+           break;
+         case GIMP_INDEXED_IMAGE:
+-          png_info_ptr->color_type = PNG_COLOR_TYPE_PALETTE;
+-          png_info_ptr->valid |= PNG_INFO_PLTE;
+-          png_info_ptr->palette =
+-            (png_colorp) gimp_image_get_colormap (image_id, &num_colors);
+-          png_info_ptr->num_palette = num_colors;
+-          break;
+         case GIMP_INDEXEDA_IMAGE:
+-          png_info_ptr->color_type = PNG_COLOR_TYPE_PALETTE;
+-          layer_has_unique_palette =
+-            respin_cmap (png_ptr, png_info_ptr, layer_remap,
+-                         image_id, layer_drawable);
++          color_type = PNG_COLOR_TYPE_PALETTE;
++          gimp_image_get_colormap (image_id, &num_colors);
++          if (num_palette <= 2)
++            bit_depth = 1;
++          else if (num_palette <= 4)
++            bit_depth = 2;
++          else if (num_palette <= 16)
++            bit_depth = 4;
+           break;
+         default:
+           g_warning ("This can't be!\n");
+@@ -1021,16 +1022,14 @@ mng_save_image (const gchar  *filename,
+           goto err3;
+         }
+ 
+-      if ((png_info_ptr->valid & PNG_INFO_PLTE) == PNG_INFO_PLTE)
+-        {
+-          if (png_info_ptr->num_palette <= 2)
+-            png_info_ptr->bit_depth = 1;
+-          else if (png_info_ptr->num_palette <= 4)
+-            png_info_ptr->bit_depth = 2;
+-          else if (png_info_ptr->num_palette <= 16)
+-            png_info_ptr->bit_depth = 4;
+-        }
++      png_set_IHDR(png_ptr, png_info_ptr, layer_cols, layer_rows, bit_depth, color_type, (mng_data.interlaced == 0 ? PNG_INTERLACE_NONE : PNG_INTERLACE_ADAM7), PNG_COMPRESSION_TYPE_DEFAULT, PNG_FILTER_TYPE_DEFAULT);
+ 
++      if (layer_drawable_type == GIMP_INDEXED_IMAGE)
++        png_set_PLTE(png_ptr, png_info_ptr, (png_colorp) gimp_image_get_colormap (image_id, &num_colors), num_colors);
++      else if (layer_drawable_type == GIMP_INDEXEDA_IMAGE)
++        layer_has_unique_palette =
++          respin_cmap (png_ptr, png_info_ptr, layer_remap,
++                       image_id, layer_drawable);
+       png_write_info (png_ptr, png_info_ptr);
+ 
+       if (mng_data.interlaced != 0)
+@@ -1038,8 +1037,8 @@ mng_save_image (const gchar  *filename,
+       else
+         num_passes = 1;
+ 
+-      if ((png_info_ptr->color_type == PNG_COLOR_TYPE_PALETTE) &&
+-          (png_info_ptr->bit_depth < 8))
++      if ((png_get_color_type(png_ptr, png_info_ptr) == PNG_COLOR_TYPE_PALETTE) &&
++          (png_get_bit_depth(png_ptr, png_info_ptr) < 8))
+         png_set_packing (png_ptr);
+ 
+       tile_height = gimp_tile_height ();
+@@ -1065,7 +1064,7 @@ mng_save_image (const gchar  *filename,
+               gimp_pixel_rgn_get_rect (&layer_pixel_rgn, layer_pixel, 0,
+                                        begin, layer_cols, num);
+ 
+-              if ((png_info_ptr->valid & PNG_INFO_tRNS) == PNG_INFO_tRNS)
++              if (png_get_tRNS(png_ptr, png_info_ptr, &trans_alpha, &num_trans, &trans_color) != 0)
+                 {
+                   for (j = 0; j < num; j++)
+                     {
+@@ -1077,7 +1076,7 @@ mng_save_image (const gchar  *filename,
+                     }
+                 }
+               else
+-                if (((png_info_ptr->valid & PNG_INFO_PLTE) == PNG_INFO_PLTE)
++                if ((png_get_PLTE(png_ptr, png_info_ptr, &palette, &num_palette) != 0)
+                     && (layer_bpp == 2))
+                 {
+                   for (j = 0; j < num; j++)

@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_xfns_c,v 1.1 2011/07/08 20:36:09 naddy Exp $
+
+Fix build with png-1.5.
+
+--- src/xfns.c.orig	Mon Jul  4 17:41:10 2011
++++ src/xfns.c	Mon Jul  4 17:41:40 2011
+@@ -8541,7 +8541,7 @@ my_png_error (png_ptr, msg)
+ {
+   xassert (png_ptr != NULL);
+   image_error ("PNG error: %s", build_string (msg), Qnil);
+-  longjmp (png_ptr->jmpbuf, 1);
++  png_longjmp (png_ptr, 1);
+ }
+ 
+ 
+@@ -8699,7 +8699,7 @@ png_load (f, img)
+ 
+   /* Set error jump-back.  We come back here when the PNG library
+      detects an error.  */
+-  if (setjmp (png_ptr->jmpbuf))
++  if (setjmp (png_jmpbuf(png_ptr)))
+     {
+     error:
+       if (png_ptr)

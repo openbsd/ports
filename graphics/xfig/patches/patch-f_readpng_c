@@ -1,0 +1,52 @@
+$OpenBSD: patch-f_readpng_c,v 1.1 2011/07/08 20:36:09 naddy Exp $
+
+Fix build with png-1.5.
+
+--- f_readpng.c.pat.orig	Wed Mar 28 18:23:14 2007
++++ f_readpng.c	Wed Jul  6 11:06:59 2011
+@@ -44,6 +44,8 @@ read_png(FILE *file, int filetype, F_pic *pic)
+     int		    num_palette;
+     png_colorp	    palette;
+     png_color_16    background;
++    double		gamma;
++    png_color_16p	file_background;
+ 
+     /* make scale factor smaller for metric */
+     float scale = (appres.INCHES ?
+@@ -73,7 +75,7 @@ read_png(FILE *file, int filetype, F_pic *pic)
+     }
+ 
+     /* set long jump recovery here */
+-    if (setjmp(png_ptr->jmpbuf)) {
++    if (setjmp(png_jmpbuf(png_ptr))) {
+ 	/* if we get here there was a problem reading the file */
+ 	png_destroy_read_struct(&png_ptr, &info_ptr, &end_info);
+ 	close_picfile(file,filetype);
+@@ -90,14 +92,14 @@ read_png(FILE *file, int filetype, F_pic *pic)
+     png_get_IHDR(png_ptr, info_ptr, &w, &h, &bit_depth, &color_type,
+ 	&interlace_type, &compression_type, &filter_type);
+ 
+-    if (info_ptr->valid & PNG_INFO_gAMA)
+-	png_set_gamma(png_ptr, 2.2, info_ptr->gamma);
++    if (png_get_gAMA(png_ptr, info_ptr, &gamma))
++	png_set_gamma(png_ptr, 2.2, gamma);
+     else
+ 	png_set_gamma(png_ptr, 2.2, 0.45);
+ 
+-    if (info_ptr->valid & PNG_INFO_bKGD)
++    if (png_get_bKGD(png_ptr, info_ptr, &file_background))
+ 	/* set the background to the one supplied */
+-	png_set_background(png_ptr, &info_ptr->background,
++	png_set_background(png_ptr, file_background,
+ 		PNG_BACKGROUND_GAMMA_FILE, 1, 1.0);
+     else {
+ 	/* blend the canvas background using the alpha channel */
+@@ -136,7 +138,7 @@ read_png(FILE *file, int filetype, F_pic *pic)
+ 
+ 	if (png_get_PLTE(png_ptr, info_ptr, &palette, &num_palette)) {
+ 	    png_get_hIST(png_ptr, info_ptr, &histogram);
+-	    png_set_dither(png_ptr, palette, num_palette, 256, histogram, 0);
++	    png_set_quantize(png_ptr, palette, num_palette, 256, histogram, 0);
+ 	}
+     }
+     if (color_type == PNG_COLOR_TYPE_GRAY || color_type == PNG_COLOR_TYPE_GRAY_ALPHA) {
