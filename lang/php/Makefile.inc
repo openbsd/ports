@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.13 2011/07/06 23:56:08 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.14 2011/07/08 17:45:08 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -9,11 +9,6 @@ COMMENT-fastcgi=	stand-alone FastCGI version of PHP
 
 PKGNAME-main?=		php-${V}
 PKGNAME-fastcgi?=	php-fastcgi-${V}
-
-REVISION-main=		0
-REVISION-soap=		0
-REVISION-xmlrpc=	0
-REVISION-xsl=		0
 
 DISTFILES=		php-${V}.tar.gz
 
@@ -31,7 +26,8 @@ MASTER_SITES=		http://us2.php.net/distributions/ \
 			http://no.php.net/distributions/ \
 			http://uk.php.net/distributions/
 MASTER_SITES0=		http://blade2k.humppa.hu/ \
-			http://download.suhosin.org/
+			http://download.suhosin.org/ \
+			http://didy.avioc.org/FreeBSD/ports/distfiles/
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
