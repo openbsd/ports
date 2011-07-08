@@ -1,7 +1,7 @@
-$OpenBSD: patch-socket.c,v 1.2 2002/04/17 21:38:11 naddy Exp $
+$OpenBSD: patch-socket_c,v 1.1 2011/07/08 11:19:35 jasper Exp $
 --- socket.c.orig	Wed Sep  9 16:14:34 1992
-+++ socket.c	Wed Apr 17 23:20:31 2002
-@@ -18,6 +18,8 @@ Please read the file COPYRIGHT for furth
++++ socket.c	Fri Jul  8 13:17:27 2011
+@@ -18,6 +18,8 @@ Please read the file COPYRIGHT for further details.
  #else
  #include <string.h>
  #endif
@@ -10,7 +10,7 @@ $OpenBSD: patch-socket.c,v 1.2 2002/04/17 21:38:11 naddy Exp $
  #include "globals.h"
  
  /* global variables */
-@@ -37,6 +39,8 @@ char *pipe_program = NULL ;	/* program t
+@@ -37,6 +39,8 @@ char *pipe_program = NULL ;	/* program to execute in t
  void server A((int port, char *service_name)) ;
  void handle_server_connection A((void)) ;
  void client A((char *host, int port, char *service_name)) ;

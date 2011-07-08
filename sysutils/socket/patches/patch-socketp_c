@@ -1,7 +1,7 @@
-$OpenBSD: patch-socketp.c,v 1.2 2002/04/17 21:38:11 naddy Exp $
+$OpenBSD: patch-socketp_c,v 1.1 2011/07/08 11:19:35 jasper Exp $
 --- socketp.c.orig	Sun Aug  9 03:41:42 1992
-+++ socketp.c	Wed Apr 17 23:20:31 2002
-@@ -11,10 +11,16 @@ Please read the file COPYRIGHT for furth
++++ socketp.c	Fri Jul  8 13:17:27 2011
+@@ -11,10 +11,16 @@ Please read the file COPYRIGHT for further details.
  #include <sys/socket.h>
  #include <sys/errno.h>
  #include <netinet/in.h>

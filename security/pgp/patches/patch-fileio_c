@@ -1,6 +1,7 @@
---- fileio.c.orig	Fri Apr  2 14:46:36 1999
-+++ fileio.c	Fri Apr  2 14:47:58 1999
-@@ -1636,7 +1636,11 @@
+$OpenBSD: patch-fileio_c,v 1.1 2011/07/08 11:19:35 jasper Exp $
+--- fileio.c.orig	Wed Apr 24 18:53:56 1996
++++ fileio.c	Fri Jul  8 13:16:26 2011
+@@ -1636,7 +1636,11 @@ char const *const manual_dirs[] =
      PGP_SYSTEM_DIR, "SYS$LOGIN:", "SYS$LOGIN:[pgp]",
      "SYS$LOGIN:[pgp26]", "SYS$LOGIN:[pgp263]", "[-]",
  #elif defined(UNIX)

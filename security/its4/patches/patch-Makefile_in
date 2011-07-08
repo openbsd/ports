@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile.in,v 1.4 2011/06/01 23:34:53 kili Exp $
---- Makefile.in.orig	Tue Oct  2 18:00:02 2001
-+++ Makefile.in	Wed Jun  1 19:06:42 2011
+$OpenBSD: patch-Makefile_in,v 1.1 2011/07/08 11:19:35 jasper Exp $
+--- Makefile.in.orig	Wed Oct  3 00:00:02 2001
++++ Makefile.in	Fri Jul  8 13:14:14 2011
 @@ -10,10 +10,10 @@ pure: $(OBJECTS)
  	purify 	$(CC) -o $(PROGNAME) $(OBJECTS)
  

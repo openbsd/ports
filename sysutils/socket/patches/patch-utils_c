@@ -1,7 +1,7 @@
-$OpenBSD: patch-utils.c,v 1.2 2002/04/17 21:38:11 naddy Exp $
+$OpenBSD: patch-utils_c,v 1.1 2011/07/08 11:19:35 jasper Exp $
 --- utils.c.orig	Wed Sep  9 16:31:16 1992
-+++ utils.c	Wed Apr 17 23:20:31 2002
-@@ -25,8 +25,10 @@ Please read the file COPYRIGHT for furth
++++ utils.c	Fri Jul  8 13:17:27 2011
+@@ -25,8 +25,10 @@ Please read the file COPYRIGHT for further details.
  #else
  #include <sys/resource.h>
  #endif

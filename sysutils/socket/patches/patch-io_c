@@ -1,7 +1,7 @@
-$OpenBSD: patch-io.c,v 1.2 2002/04/17 21:38:11 naddy Exp $
+$OpenBSD: patch-io_c,v 1.1 2011/07/08 11:19:35 jasper Exp $
 --- io.c.orig	Sun Aug 30 19:15:26 1992
-+++ io.c	Wed Apr 17 23:20:31 2002
-@@ -16,6 +16,8 @@ Please read the file COPYRIGHT for furth
++++ io.c	Fri Jul  8 13:17:27 2011
+@@ -16,6 +16,8 @@ Please read the file COPYRIGHT for further details.
  #endif
  #include <errno.h>
  #include <stdio.h>
