@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/12 09:58:51 kevlo Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/08 18:03:46 jasper Exp $
 
 COMMENT=	simplified-traditional chinese translate tool
 
 DISTNAME=	cconv-0.6.2
+REVISION=	0
 
 CATEGORIES=	chinese converters
 
@@ -26,6 +27,8 @@ MODULES=	converters/libiconv
 
 USE_LIBTOOL=	Yes
 CONFIGURE_STYLE=gnu
+
+FAKE_FLAGS=	includedir=${PREFIX}/include/cconv/
 
 post-patch:
 	@perl -i -pe 's:UTF-TW:UTF8-TW:g' ${WRKSRC}/main.c
