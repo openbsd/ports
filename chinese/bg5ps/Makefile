@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2011/06/08 17:31:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/07/08 09:35:54 jasper Exp $
 
 COMMENT=	convert Big5/GB encoded files to postscript
 
 DISTNAME=	bg5ps-1.3.0
 PKGNAME=	zh-${DISTNAME}
-REVISION=	5
+REVISION=	6
 CATEGORIES=	chinese x11
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -31,6 +31,7 @@ NO_REGRESS=	Yes
 pre-configure:
 	perl -pi -e \
 		"s|/usr/local/bin/python.*|${MODPY_BIN}|" ${WRKSRC}/bg5ps
+	${SUBST_CMD} ${WRKSRC}/bg5ps.conf
 
 MAKE_FLAGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include/freetype1" \
 		LDFLAGS=-L${LOCALBASE}/lib \

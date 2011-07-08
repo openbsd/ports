@@ -1,5 +1,5 @@
 --- bg5ps.orig	Mon Feb 14 21:46:43 2000
-+++ bg5ps	Sun Apr  6 15:59:34 2003
++++ bg5ps	Fri Jul  8 11:33:55 2011
 @@ -1,4 +1,4 @@
 -#!/usr/bin/python
 +#!/usr/local/bin/python2.1
@@ -24,7 +24,7 @@
  
  #Output only even or odd
  oddPages=true
-@@ -443,10 +443,10 @@ mpage -2 big5.txt | bg5ps -en big5 -nps 
+@@ -443,10 +443,10 @@ mpage -2 big5.txt | bg5ps -en big5 -nps y > test.ps
                  exec l
              cf.close()
          else:
