@@ -1,5 +1,6 @@
---- doc/Makefile.in.orig	Mon Jul 20 01:22:29 2009
-+++ doc/Makefile.in	Wed Jul 22 21:34:37 2009
+$OpenBSD: patch-doc_Makefile_in,v 1.1 2011/07/08 11:32:17 jasper Exp $
+--- doc/Makefile.in.orig	Wed Mar 10 23:24:07 2010
++++ doc/Makefile.in	Fri Jul  8 13:28:21 2011
 @@ -8,7 +8,7 @@ prefix		= @prefix@
  exec_prefix	= @exec_prefix@
  bindir		= @bindir@

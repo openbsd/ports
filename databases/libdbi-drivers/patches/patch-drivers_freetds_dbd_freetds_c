@@ -1,8 +1,9 @@
-$OpenBSD: patch-drivers_freetds_dbd_freetds.c,v 1.1.1.1 2009/06/02 00:58:58 merdely Exp $
+$OpenBSD: patch-drivers_freetds_dbd_freetds_c,v 1.1 2011/07/08 11:32:17 jasper Exp $
 
 From FreeBSD.
---- drivers/freetds/dbd_freetds.c.orig	Mon Dec 31 17:10:44 2007
-+++ drivers/freetds/dbd_freetds.c	Sun May 31 16:36:09 2009
+
+--- drivers/freetds/dbd_freetds.c.orig	Mon Dec 31 23:10:44 2007
++++ drivers/freetds/dbd_freetds.c	Fri Jul  8 13:29:38 2011
 @@ -454,6 +454,7 @@ dbi_result_t *dbd_list_tables(dbi_conn_t * conn, const
  {
      dbi_result_t *res;

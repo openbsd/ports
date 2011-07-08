@@ -1,10 +1,10 @@
-$OpenBSD: patch-make.1,v 1.4 2011/04/20 20:51:41 naddy Exp $
+$OpenBSD: patch-make_1,v 1.1 2011/07/08 11:32:17 jasper Exp $
 
 Since we install GNU make as gmake replace make with gmake in the
 manpage where it makes sense.
 
 --- make.1.orig	Thu Jun  4 08:30:27 2009
-+++ make.1	Sat Oct 23 16:23:21 2010
++++ make.1	Fri Jul  8 13:27:28 2011
 @@ -1,8 +1,8 @@
 -.TH MAKE 1 "22 August 1989" "GNU" "LOCAL USER COMMANDS"
 +.TH GMAKE 1L "22 August 1989" "GNU" "LOCAL USER COMMANDS"

@@ -1,6 +1,6 @@
-$OpenBSD: patch-gnats_cmds.c,v 1.4 2007/12/28 17:11:25 espie Exp $
+$OpenBSD: patch-gnats_cmds_c,v 1.1 2011/07/08 11:32:17 jasper Exp $
 --- gnats/cmds.c.orig	Sun Feb  4 21:56:10 2001
-+++ gnats/cmds.c	Fri Dec 28 18:00:24 2007
++++ gnats/cmds.c	Fri Jul  8 13:28:43 2011
 @@ -115,28 +115,26 @@ get_text ()
  {
    register FILE *tf;

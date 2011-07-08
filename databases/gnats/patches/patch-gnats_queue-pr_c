@@ -1,6 +1,6 @@
-$OpenBSD: patch-gnats_queue-pr.c,v 1.4 2003/08/25 23:33:56 brad Exp $
---- gnats/queue-pr.c.orig	Wed Nov 25 07:15:20 1998
-+++ gnats/queue-pr.c	Wed Jul  2 13:37:12 2003
+$OpenBSD: patch-gnats_queue-pr_c,v 1.1 2011/07/08 11:32:17 jasper Exp $
+--- gnats/queue-pr.c.orig	Wed Nov 25 15:15:20 1998
++++ gnats/queue-pr.c	Fri Jul  8 13:28:43 2011
 @@ -78,9 +78,11 @@ fork_gnats (filename)
  
    int pid; /* pid_t */

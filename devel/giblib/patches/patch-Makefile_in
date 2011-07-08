@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile.in,v 1.2 2004/11/09 19:26:43 naddy Exp $
---- Makefile.in.orig	Tue Sep 14 14:18:52 2004
-+++ Makefile.in	Tue Sep 14 14:19:15 2004
+$OpenBSD: patch-Makefile_in,v 1.1 2011/07/08 11:32:17 jasper Exp $
+--- Makefile.in.orig	Sat Sep  4 17:03:31 2004
++++ Makefile.in	Fri Jul  8 13:26:28 2011
 @@ -95,7 +95,7 @@ VERSION = @VERSION@
  SUBDIRS = giblib
  
