@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.952 2011/06/30 12:08:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.953 2011/07/08 09:01:22 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -912,6 +912,7 @@
      SUBDIR += popt
      SUBDIR += proj
      SUBDIR += protobuf
+     SUBDIR += protobuf-c
      SUBDIR += pscan
      SUBDIR += pth
      SUBDIR += ptlib
