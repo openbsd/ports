@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/07/06 14:14:06 kili Exp $
-#
-# Credits to Matt Jibson. He did the initial work on this port and many
-# tools it depends on.
+# $OpenBSD: Makefile,v 1.33 2011/07/08 18:00:58 kili Exp $
 
 SHARED_ONLY=		Yes
 
