@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2011/05/30 21:11:44 rpointel Exp $
+# $OpenBSD: Makefile,v 1.27 2011/07/08 07:39:37 jasper Exp $
 
 VERSION =		2.6
 PATCHLEVEL =		.6
-REVISION =		4
+REVISION =		5
 SHARED_LIBS =		python2.6 1.0
 
 AUTOCONF_VERSION =	2.65
