@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/06/02 10:46:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/07/08 21:46:36 robert Exp $
 
 COMMENT=	ActiveSync protocol implementation	
 
@@ -7,7 +7,7 @@ DISTNAME=	z-push-${V}-685
 PKGNAME=	z-push-${V}
 CATEGORIES=	mail www
 
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://z-push.sourceforge.net/
 
@@ -30,8 +30,9 @@ INSTDIR=	${PREFIX}/z-push
 TINSTDIR=	${TRUEPREFIX}/z-push
 SUBST_VARS=	INSTDIR TINSTDIR
 
+MODULES=	lang/php
 RUN_DEPENDS=	mail/zarafa/zarafa,-web \
-		www/php5/extensions,-imap
+		lang/php/${MODPHP_VERSION},-imap
 
 do-install:
 	cp -Rp ${WRKSRC} ${INSTDIR}

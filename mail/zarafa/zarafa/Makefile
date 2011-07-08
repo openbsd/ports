@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.94 2011/07/08 02:14:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2011/07/08 21:45:05 robert Exp $
 
 COMMENT-main=	MS Exchange groupware suite replacement
 COMMENT-web=	zarafa webaccess frontend and MAPI extensions for PHP
@@ -7,8 +7,8 @@ PKGNAME=	zarafa-${V}
 PKGNAME-main=	zarafa-${V}
 PKGNAME-web=	zarafa-webaccess-${V}
 
-REVISION-main=	12
-REVISION-web=	3
+REVISION-main=	13
+REVISION-web=	4
 
 CATEGORIES=	mail www productivity
 
@@ -26,10 +26,10 @@ SHARED_LIBS +=  zarafasync           2.0      # 1.0
 MULTI_PACKAGES=	-main -web
 
 MODULES=	devel/gettext \
-		lang/python
+		lang/python \
+		lang/php
 
-BUILD_DEPENDS=	www/php5/core \
-		textproc/xmlto \
+BUILD_DEPENDS=	textproc/xmlto \
 		net/curl \
 		devel/boost \
 		textproc/clucene
@@ -59,7 +59,7 @@ WANTLIB-web += execinfo freebusy ical icalmapi icalss icudata icui18n
 WANTLIB-web += icuuc inetmapi mapi uuid vmime-zarafa
 
 LIB_DEPENDS-web= ${BASE_PKGPATH}>=7.0.0
-RUN_DEPENDS-web= www/php5/core \
+RUN_DEPENDS-web= ${MODPHP_RUN_DEPENDS} \
 		${MODGETTEXT_RUN_DEPENDS}
 
 # XXX  ../../common/.libs/libcommon_mapi.so.1.0: undefined reference to
@@ -90,7 +90,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 		LDFLAGS="-L${LOCALBASE}/lib -lexecinfo \
 			-L${LOCALBASE}/lib/zarafa" \
 		ZAFARA_LDFLAGS="-L${LOCALBASE}/lib/zarafa" \
-		PHP_SYSCONF_DIR="${PREFIX-web}/conf/php5" \
+		PHP_SYSCONF_DIR="${SYSCONFDIR}/php-${MODPHP_VERSION}" \
 		ac_cv_lib_pam_pam_start=no
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
@@ -107,7 +107,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-ical-prefix=${LOCALBASE}/include \
 		--with-clucene-lib-prefix=${LOCALBASE}/lib \
 		--with-clucene-include-prefix=${LOCALBASE}/include \
-		--with-python=${MODPY_BIN}
+		--with-python=${MODPY_BIN} \
+		--with-php-config=${MODPHP_PHP_CONFIG}
 
 # XXX in-tree heimdal does not provide krb5_free_unparsed_name()
 CONFIGURE_ARGS+= --with-krb5-config=/usr/bin/true
@@ -148,7 +149,8 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${INSTDIR}
-	${INSTALL_DATA_DIR} ${WRKINST}/${PREFIX-web}/{include,conf/php5.sample}
+	${INSTALL_DATA_DIR} ${WRKINST}/${PREFIX-web}/include \
+		${PREFIX}/share/examples/php-${MODPHP_VERSION}
 
 	${SUBST_CMD} ${WRKBUILD}/php-webclient-ajax/config.php.dist
 	find ${WRKBUILD}/php-webclient-ajax -name \*.orig -or -name \*.bak \
@@ -157,7 +159,7 @@ post-install:
 		tar -xf - -C ${WRKINST}${INSTDIR}
 	${INSTALL_DATA} ${WRKINST}${INSTDIR}/debug.php \
 		${WRKINST}${INSTDIR}/debug.php.disabled
-	${INSTALL_DATA} /dev/null ${WRKINST}${INSTDIR}/debug.txt 
+	${INSTALL_DATA} /dev/null ${WRKINST}${INSTDIR}/debug.txt
 	${SUBST_CMD} -c ${FILESDIR}/zarafa.conf \
 		${WRKINST}/${INSTDIR}/zarafa.conf.dist
 	find ${PREFIX}/share/php -type f \
@@ -180,7 +182,7 @@ post-install:
 	mv ${PREFIX}/share/examples/zarafa.ini \
 		${PREFIX}/share/examples/zarafa
 	mv ${PREFIX}/share/examples/zarafa/zarafa.ini \
-		${WRKINST}/${PREFIX-web}/conf/php5.sample/${MODULE_NAME}.ini.dist
+		${PREFIX}/share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
 	mv ${PREFIX}/share/php ${WRKINST}${PREFIX-web}/include/php
 	rm ${PREFIX}/share/examples/zarafa/unix.cfg
 	rm ${PREFIX}/share/doc/zarafa/ssl-certificates.sh

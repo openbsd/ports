@@ -1,7 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/28 15:55:07 sthen Exp $
-conf/php5.sample/
-conf/php5.sample/mailparse.ini
-lib/
-lib/php/
-lib/php/modules/
-lib/php/modules/mailparse.so
+@comment $OpenBSD: PLIST,v 1.2 2011/07/08 21:46:36 robert Exp $
+lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
+share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
+@sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini

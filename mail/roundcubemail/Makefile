@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.38 2011/06/03 19:17:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2011/07/08 21:46:36 robert Exp $
 
 COMMENT =	imap4 webmail client
 
 DISTNAME =	roundcubemail-0.5.3
 CATEGORIES =	mail www
 HOMEPAGE =	http://www.roundcube.net/
+
+REVISION =	0
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -25,12 +27,11 @@ INSTDIR =	${PREFIX}/roundcubemail
 TINSTDIR =	${TRUEPREFIX}/roundcubemail
 SUBST_VARS =	INSTDIR TINSTDIR
 
-RUN_DEPENDS =	www/php5/core \
-		www/php5/extensions,-mbstring \
-		www/php5/extensions,-mcrypt \
-		www/php5/extensions,-pspell \
+MODULES =	lang/php
+RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-mcrypt \
+		lang/php/${MODPHP_VERSION},-pspell \
 		sysutils/pecl-fileinfo \
-		php5-mysql-*|php5-pgsql-*|php5-sqlite-*:www/php5/extensions,-sqlite
+		php-mysql-*|php-pgsql-*|php-sqlite-*:lang/php/${MODPHP_VERSION},-sqlite
 
 do-install:
 	cp -Rp ${WRKDIST} ${INSTDIR}

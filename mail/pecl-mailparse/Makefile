@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/08 21:46:36 robert Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	PHP extension for parsing and working with rfc822/MIME mail
 
 DISTNAME =	mailparse-2.1.5
 PKGNAME =	pecl-${DISTNAME}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	www mail
 
 HOMEPAGE =	http://pecl.php.net/package/mailparse
@@ -25,18 +25,17 @@ EXTRACT_SUFX =	.tgz
 AUTOCONF_VERSION =	2.52
 AUTOMAKE_VERSION =	1.4
 
+MODULES=	lang/php
+
 BUILD_DEPENDS =	www/pear \
-		www/php5/extensions,-mbstring:patch \
+		lang/php/${MODPHP_VERSION},-main:patch \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-RUN_DEPENDS =	www/php5/core \
-		www/php5/extensions,-mbstring
 
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV =	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
-PREFIX =	/var/www
 FAKE_FLAGS =	INSTALL_ROOT=${WRKINST}
 SUBST_VARS =	LOCALBASE
 
@@ -47,14 +46,10 @@ NO_REGRESS =	Yes
 USE_LIBTOOL =	Yes
 LIBTOOL_FLAGS =	--tag=disable-static
 
-pre-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/phpize
-	@ln -s ${WRKDIR}/www/php5/extensions/php-5* ${WRKDIR}/php
+MODPHP_DO_SAMPLE=	mailparse
+MODPHP_DO_PHPIZE=	Yes
 
-post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/conf/php5.sample
-	@echo "extension=mailparse.so" > \
-	    ${PREFIX}/conf/php5.sample/mailparse.ini
-	@chown ${BINOWN}:${BINGRP} ${PREFIX}/lib/php/modules/mailparse.so
+post-extract:
+	ln -s ${WRKDIR}/lang/php/${MODPHP_VERSION}/php-* ${WRKDIR}/php
 
 .include <bsd.port.mk>
