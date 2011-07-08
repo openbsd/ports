@@ -1,6 +1,6 @@
---- src/Makefile.orig	Sat Nov 11 19:42:41 1995
-+++ src/Makefile	Fri Jul  8 11:31:35 2011
-@@ -93,7 +93,7 @@ aix:
+--- src/Makefile.orig	Wed May 28 01:21:10 1997
++++ src/Makefile	Wed May 28 01:19:40 1997
+@@ -93,7 +93,7 @@
  	$(MAKE) O=$O CC=cc CFLAGS="$(CFLAGS)" all
  
  bsd:
@@ -9,7 +9,7 @@
  
  Wall:
  	@$(MAKE) clean
-@@ -131,7 +131,7 @@ $O/lat_ctx: lat_ctx.c timing.c bench.h
+@@ -131,7 +131,7 @@
  
  $O/lat_pagefault:  lat_pagefault.c timing.c bench.h
  	if [ $O = ../bin/linux -o $O = ../bin/bsd ];                               \
