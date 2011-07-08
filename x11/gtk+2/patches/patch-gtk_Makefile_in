@@ -1,6 +1,4 @@
-$OpenBSD: patch-gtk_Makefile_in,v 1.30 2011/06/16 08:38:41 ajacoutot Exp $
-
-Fix use of grep(1) as we don't support the -o switch.
+$OpenBSD: patch-gtk_Makefile_in,v 1.31 2011/07/08 02:08:25 ajacoutot Exp $
 
 XXX Link the new icon names to their old icon names
 because some applications are broken. Use this until
@@ -191,15 +189,6 @@ https://bugzilla.gnome.org/show_bug.cgi?id=629878
  
  @CROSS_COMPILING_FALSE@gtk_update_icon_cache_program = \
  @CROSS_COMPILING_FALSE@	   ./gtk-update-icon-cache
-@@ -2771,7 +2935,7 @@ gtktypefuncs.c: @REBUILD@ $(top_srcdir)/gtk/*.h $(top_
- 	echo '#include <gtk/gtk.h>' > xgen-gtfsrc.c && \
- 	  ${CPP} $(DEFS) $(INCLUDES) -DGTK_ENABLE_BROKEN $(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) xgen-gtfsrc.c | \
- 	  grep '^GType\s*g[td]k_[a-zA-Z0-9_]*_get_type\s*(void)' | \
--	  grep -o '\bg[td]k_[a-zA-Z0-9_]*_get_type\b' | \
-+	  awk '{ print $$2 }' | grep -E "gdk_[a-zA-Z0-9_].*_get_type$$|gtk_[a-zA-Z0-9_].*_get_type$$" | \
- 	  sed '{ s/^/*tp++ = /; s/$$/();/; }' | \
- 	  sort > xgen-gtf \
- 	&& cp xgen-gtf $@ && rm -f xgen-gtf
 @@ -2887,6 +3051,88 @@ stamp-icons: $(STOCK_ICONS)
  	   && $(LN_S) folder.png user-desktop.png 			\
  	   && $(RM) user-home.png 					\
