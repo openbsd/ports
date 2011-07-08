@@ -1,0 +1,12 @@
+$OpenBSD: patch-libpng_3,v 1.1 2011/07/08 20:34:37 naddy Exp $
+--- libpng.3.orig	Sun Jul  3 08:20:25 2011
++++ libpng.3	Sun Jul  3 08:20:40 2011
+@@ -1122,7 +1122,7 @@ rebuilt from scripts/pnglibconf.dfa using awk or it mu
+ 
+ Hand editing is achieved by copying scripts/pnglibconf.h.prebuilt and changing
+ the lines defining the supported features, paying very close attention to the
+-'option' information in scripts/pnglibconf.dfa that describes those features and
++\&'option' information in scripts/pnglibconf.dfa that describes those features and
+ their requirements.  This is easy to get wrong.
+ 
+ B. Configuration using DFA_XTRA

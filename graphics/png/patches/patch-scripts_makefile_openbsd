@@ -1,7 +1,7 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.32 2011/06/23 22:50:27 naddy Exp $
---- scripts/makefile.openbsd.orig	Fri Jun 25 18:31:16 2010
-+++ scripts/makefile.openbsd	Mon Jun 20 13:22:02 2011
-@@ -7,11 +7,12 @@
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.33 2011/07/08 20:34:37 naddy Exp $
+--- scripts/makefile.openbsd.orig	Thu Mar 31 18:23:42 2011
++++ scripts/makefile.openbsd	Sun Jul  3 19:09:39 2011
+@@ -7,12 +7,11 @@
  # and license in png.h
  
  PREFIX?= /usr/local
@@ -10,31 +10,33 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.32 2011/06/23 22:50:27 naddy Exp $
 -MANDIR= ${PREFIX}/man/cat
 +MANDIR= ${PREFIX}/man/man
 +INCDIR= ${PREFIX}/include/libpng
-+DOCDIR= ${PREFIX}/share/doc/png
  
--SHLIB_MAJOR=	0
--SHLIB_MINOR=	1.2.44
- 
+-SHLIB_MAJOR=	15
+-SHLIB_MINOR=	1.5.2
+-
  LIB=	png
  SRCS=	png.c pngerror.c pngget.c pngmem.c pngpread.c \
-@@ -25,24 +26,42 @@ CPPFLAGS+= -I${.CURDIR} -DPNG_NO_MMX_CODE
+ 	pngread.c pngrio.c pngrtran.c pngrutil.c pngset.c pngtrans.c \
+@@ -25,12 +24,30 @@ CPPFLAGS+= -I${.CURDIR}
  
  NOPROFILE= Yes
  
--CLEANFILES+= pngtest.o pngtest
-+CLEANFILES+= pngtest.o pngtest libpng-config
+-CLEANFILES+= pngtest.o pngtest pnglibconf.h
++CLEANFILES+= pngtest.o pngtest pngvalid.o pngvalid pnglibconf.h libpng-config
  
  MAN=	libpng.3 libpngpf.3 png.5
--DOCS = ANNOUNCE CHANGES INSTALL KNOWNBUG LICENSE README TODO Y2KINFO libpng.txt
-+DOCS = libpng-1.2.44.txt
+-DOCS = ANNOUNCE CHANGES INSTALL KNOWNBUG LICENSE README TODO Y2KINFO \
+-       libpng-manual.txt
  
-+all: ${_LIBS} libpng-config libpng.pc
++all: pnglibconf.h ${_LIBS} libpng-config libpng.pc
++
++beforedepend: pnglibconf.h
 +
 +libpng.pc:
-+	cat scripts/libpng.pc.in | sed -e s\!@prefix@!$(PREFIX)! \
-+		-e s\!@exec_prefix@!$(BINDIR)! -e s\!@libdir@!$(LIBDIR)! \
-+		-e s\!@includedir@!$(INCDIR)!  \
-+		-e s\!@PNGLIB_VERSION@!$(PNGLIB_VERSION)!> libpng.pc
++	sed < scripts/libpng.pc.in -e s'!@prefix@!$(PREFIX)!' \
++		-e 's!@exec_prefix@!$(BINDIR)!' -e 's!@libdir@!$(LIBDIR)!' \
++		-e 's!@includedir@!$(INCDIR)!'  \
++		-e 's!@PNGLIB_VERSION@!$(PNGLIB_VERSION)!' > libpng.pc
 +
 +libpng-config:
 +	( cat scripts/libpng-config-head.in; \
@@ -46,17 +48,27 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.32 2011/06/23 22:50:27 naddy Exp $
 +	cat scripts/libpng-config-body.in ) > libpng-config
 +	chmod +x libpng-config
 +
- pngtest.o:	pngtest.c
- 	${CC} ${CPPFLAGS} ${CFLAGS} -c ${.ALLSRC} -o ${.TARGET}
- 
+ # see scripts/pnglibconf.mak for more options
+ pnglibconf.h: scripts/pnglibconf.h.prebuilt
+ 	cp scripts/pnglibconf.h.prebuilt $@
+@@ -41,13 +58,20 @@ pngtest.o:	pngtest.c
  pngtest:	pngtest.o
  	${CC} ${LDFLAGS} ${.ALLSRC} -o ${.TARGET} -L${.OBJDIR} -lpng -lz -lm
  
 -test:	pngtest
-+test regress:	pngtest
- 	cd ${.OBJDIR} && env \
- 		LD_LIBRARY_PATH="${.OBJDIR}" ${.OBJDIR}/pngtest
+-	cd ${.OBJDIR} && env \
+-		LD_LIBRARY_PATH="${.OBJDIR}" ${.OBJDIR}/pngtest
++pngvalid.o:	pngvalid.c
++	${CC} ${CPPFLAGS} ${CFLAGS} -c ${.ALLSRC} -o ${.TARGET}
  
++pngvalid:	pngvalid.o
++	${CC} ${LDFLAGS} ${.ALLSRC} -o ${.TARGET} -L${.OBJDIR} -lpng -lz -lm
++
++test regress:	pngtest pngvalid
++	@LD_LIBRARY_PATH="${.OBJDIR}" srcdir=. ./test-pngtest.sh
++	@LD_LIBRARY_PATH="${.OBJDIR}" ./test-pngvalid-simple.sh
++	@LD_LIBRARY_PATH="${.OBJDIR}" ./test-pngvalid-full.sh
++
  beforeinstall:
 -	if [ ! -d ${DESTDIR}${PREFIX}/include/libpng ]; then \
 -	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${PREFIX}/include; \
@@ -65,24 +77,22 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.32 2011/06/23 22:50:27 naddy Exp $
  	fi
  	if [ ! -d ${DESTDIR}${LIBDIR} ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}; \
-@@ -56,21 +75,24 @@ beforeinstall:
+@@ -61,22 +85,19 @@ beforeinstall:
  	if [ ! -d ${DESTDIR}${MANDIR}5 ]; then \
  	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${MANDIR}5; \
  	fi
 -	if [ ! -d ${DESTDIR}${PREFIX}/share/doc/png ]; then \
 -	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${PREFIX}/share/doc/png; \
-+	if [ ! -d ${DESTDIR}${DOCDIR} ]; then \
-+	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${DOCDIR}; \
- 	fi
 +	if [ ! -d ${DESTDIR}${LIBDIR}/pkgconfig ]; then \
 +	  ${INSTALL} -d -o root -g wheel ${DESTDIR}${LIBDIR}/pkgconfig; \
-+	fi
+ 	fi
  
  afterinstall:
  	@rm -f ${DESTDIR}${LIBDIR}/libpng_pic.a
  	@rm -f ${DESTDIR}${LIBDIR}/debug/libpng.a
 -	@rm -f ${DESTDIR}${PREFIX}/include/png.h
 -	@rm -f ${DESTDIR}${PREFIX}/include/pngconf.h
+-	@rm -f ${DESTDIR}${PREFIX}/include/pnglibconf.h
  	@rmdir ${DESTDIR}${LIBDIR}/debug 2>/dev/null || true
 +	${INSTALL} ${INSTALL_COPY} -o ${BINOWN} -g ${BINGRP} \
 +		-m ${BINMODE} libpng-config ${DESTDIR}${BINDIR}
@@ -91,9 +101,8 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.32 2011/06/23 22:50:27 naddy Exp $
 +		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${INCDIR}
  	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
 -		-m ${NONBINMODE} ${HDRS} ${DESTDIR}${PREFIX}/include
-+		-m ${NONBINMODE} libpng.pc ${DESTDIR}${LIBDIR}/pkgconfig
- 	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
+-	${INSTALL} ${INSTALL_COPY} -o ${SHAREOWN} -g ${SHAREGRP} \
 -		-m ${NONBINMODE} ${DOCS} ${DESTDIR}${PREFIX}/share/doc/png
-+		-m ${NONBINMODE} ${DOCS} ${DESTDIR}${DOCDIR}
++		-m ${NONBINMODE} libpng.pc ${DESTDIR}${LIBDIR}/pkgconfig
  
  .include <bsd.lib.mk>
