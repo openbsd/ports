@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/07/08 22:31:59 robert Exp $
+# $OpenBSD: Makefile,v 1.53 2011/07/08 22:40:30 robert Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -13,9 +13,9 @@ FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
 
-REVISION-main=		0
-REVISION-web=		1
-REVISION-server=	1
+REVISION-main=		1
+REVISION-web=		2
+REVISION-server=	2
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -33,6 +33,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=zabbix/}
 
 MODULES=		converters/libiconv lang/php
 USE_GROFF =		Yes
+MODPHP_BUILDDEP =	No
 
 MULTI_PACKAGES =	-main -web
 PSEUDO_FLAVORS =	no_server
@@ -70,7 +71,8 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 
 PREFIX-web =		/var/www
 LIB_DEPENDS-web =
-RUN_DEPENDS-web =	lang/php/${MODPHP_VERSION},-gd
+RUN_DEPENDS-web =	${MODPHP_RUN_DEPENDS} \
+			lang/php/${MODPHP_VERSION},-gd
 WANTLIB-web =
 ZABBIX_WEB =		${PREFIX-web}/zabbix
 
