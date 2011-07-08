@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2011/06/04 19:03:20 kili Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2011/07/08 17:41:46 jasper Exp $
 @conflict poppler-qt-<0.5.4p0
 @pkgpath print/poppler
 %%SHARED%%
+%%GCC4%%
 @comment @bin bin/pdffonts
 @comment @bin bin/pdfimages
 @comment @bin bin/pdfinfo

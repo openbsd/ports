@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/07/07 15:30:49 kili Exp $
+# $OpenBSD: Makefile,v 1.51 2011/07/08 17:41:46 jasper Exp $
 .include <bsd.own.mk>
 
 COMMENT-main=	PDF rendering library
@@ -11,6 +11,8 @@ CATEGORIES=	print
 PKGNAME-main=	poppler-$V
 FULLPKGNAME-qt=	poppler-qt-$V
 FULLPKGNAME-qt4=poppler-qt4-$V
+
+REVISION-main=	0
 
 SHARED_LIBS +=	poppler              10.0
 SHARED_LIBS +=	poppler-glib         8.0
@@ -55,6 +57,15 @@ MODULES+=	x11/qt4
 CONFIGURE_ARGS+=	--disable-poppler-qt4
 .endif
 
+.if ${COMPILER_VERSION:L:Mgcc4*}
+PKG_ARGS+= 	-DGCC4=1
+BUILD_DEPENDS+=	devel/gobject-introspection
+CONFIGURE_ARGS+=--enable-introspection
+.else
+PKG_ARGS+=	-DGCC4=0
+CONFIGURE_ARGS+=--disable-introspection
+.endif
+
 MODULES+=	devel/gettext converters/libiconv
 
 LIB_DEPENDS-main=${MODGETTEXT_LIB_DEPENDS} \
@@ -85,7 +96,6 @@ WANTLIB-qt4=	${cWANTLIB} ICE QtCore QtGui QtXml SM X11 Xau Xdmcp Xext Xi \
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= --enable-xpdf-headers \
-		--disable-introspection \
 		--disable-poppler-cpp \
 		--enable-utils \
 		--enable-zlib
