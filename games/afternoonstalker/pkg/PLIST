@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.7 2009/12/22 16:27:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/07/08 22:39:38 ajacoutot Exp $
 @bin bin/afternoonstalker
 @man man/man6/afternoonstalker.6
 share/afternoonstalker/
-share/afternoonstalker/level1.set
-share/afternoonstalker/level2.set
+share/afternoonstalker/maze0.set
+share/afternoonstalker/maze1.set
+share/afternoonstalker/maze2.set
 share/applications/afternoonstalker.desktop
 share/pixmaps/
 share/pixmaps/afternoonstalker.png
