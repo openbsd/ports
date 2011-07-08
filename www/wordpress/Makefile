@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2011/05/02 19:15:44 merdely Exp $
+# $OpenBSD: Makefile,v 1.33 2011/07/08 22:53:25 robert Exp $
 
 COMMENT =	standard compliant weblog
 
 DISTNAME =	wordpress-3.1.2
+REVISION =	0
 CATEGORIES =	www
 
 HOMEPAGE =	http://wordpress.org/
@@ -16,7 +17,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${HOMEPAGE}
 
-RUN_DEPENDS =	www/php5/extensions,-mysql
+MODULES =	lang/php
+
+RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-mysql
 
 NO_BUILD =	Yes
 NO_REGRESS =	Yes

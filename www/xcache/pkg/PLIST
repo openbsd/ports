@@ -1,13 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/09/02 11:57:31 sthen Exp $
-@comment conf/php5.sample/
-@group bin
-conf/php5.sample/xcache.ini.dist
-@sample conf/php5.sample/xcache.ini
-@comment lib/
-@comment lib/php/
-@comment lib/php/modules/
-lib/php/modules/xcache.so
-@group
+@comment $OpenBSD: PLIST,v 1.5 2011/07/08 22:52:23 robert Exp $
+lib/php-${MODPHP_VERSION}/modules/xcache.so
+share/examples/php-${MODPHP_VERSION}/xcache.ini
+@sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/xcache.ini
+@cwd ${WEBROOT}
 xcache/
 xcache/admin/
 xcache/admin/common-en.lang.php

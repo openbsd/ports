@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/16 20:24:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/08 22:52:23 robert Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	fast and stable PHP opcode cacher
 
 VERSION=	1.3.2
+REVISION=	0
 DISTNAME=	xcache-${VERSION}
 CATEGORIES=	www
 MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${VERSION}/
@@ -21,10 +22,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 AUTOCONF_VERSION=	2.59
 
+MODULES=		lang/php
+
 BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
-			www/php5/core \
 			devel/re2c>=0.13.4
-RUN_DEPENDS+=		www/php5/core
+
+WEBROOT=		/var/www
+SUBST_VARS=		WEBROOT
 
 USE_LIBTOOL=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
@@ -32,7 +36,6 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--enable-xcache
 CONFIGURE_ENV=		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
-PREFIX=		/var/www
 DESTDIRNAME=	INSTALL_ROOT
 
 NO_REGRESS=	Yes
@@ -44,19 +47,19 @@ FLAVOR?=
 CONFIGURE_ARGS+=	--enable-xcache-coverager
 .endif
 
-pre-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/phpize
+MODPHP_DO_PHPIZE=	Yes
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/xcache
-	${INSTALL_DATA_DIR} ${PREFIX}/xcache/admin
-	${INSTALL_DATA_DIR} ${PREFIX}/conf/php5.sample
-	cd ${WRKSRC}/admin && ${INSTALL_DATA} * ${PREFIX}/xcache/admin
-	${INSTALL_DATA} ${WRKSRC}/xcache.ini ${PREFIX}/conf/php5.sample/xcache.ini.dist
+	${INSTALL_DATA_DIR} ${WRKINST}/${WEBROOT}/xcache
+	${INSTALL_DATA_DIR} ${WRKINST}/${WEBROOT}/xcache/admin
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${MODPHP_VERSION}
+	cd ${WRKSRC}/admin && ${INSTALL_DATA} * ${WRKINST}/${WEBROOT}/xcache/admin
+	${INSTALL_DATA} ${WRKSRC}/xcache.ini \
+		${PREFIX}/share/examples/php-${MODPHP_VERSION}
 
 .if ${FLAVOR:L:Mcoverager}
-	${INSTALL_DATA_DIR} ${PREFIX}/xcache/coverager
-	cd ${WRKSRC}/coverager && ${INSTALL_DATA} * ${PREFIX}/xcache/coverager
+	${INSTALL_DATA_DIR} ${WRKINST}/${WEBROOT}/xcache/coverager
+	cd ${WRKSRC}/coverager && ${INSTALL_DATA} * ${WRKINST}/${WEBROOT}/xcache/coverager
 .endif
 
 .include <bsd.port.mk>
