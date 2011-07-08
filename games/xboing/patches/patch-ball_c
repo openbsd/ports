@@ -1,0 +1,11 @@
+$OpenBSD: patch-ball_c,v 1.1 2011/07/08 11:42:09 jasper Exp $
+--- ball.c.orig	Fri Nov 22 02:28:46 1996
++++ ball.c	Fri Jul  8 13:37:55 2011
+@@ -50,7 +50,6 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <math.h>
+-#include <values.h>
+ #include <xpm.h>
+ #include <X11/Xos.h>
+ 

@@ -1,6 +1,6 @@
-$OpenBSD: patch-bonus.c,v 1.2 2004/03/05 22:56:42 naddy Exp $
---- bonus.c.orig	1996-11-22 02:28:46.000000000 +0100
-+++ bonus.c	2004-03-05 23:30:39.000000000 +0100
+$OpenBSD: patch-bonus_c,v 1.1 2011/07/08 11:42:09 jasper Exp $
+--- bonus.c.orig	Fri Nov 22 02:28:46 1996
++++ bonus.c	Fri Jul  8 13:37:55 2011
 @@ -311,7 +311,7 @@ void DrawTitleText(display, window)
  	XFlush(display);
  

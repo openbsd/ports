@@ -1,6 +1,6 @@
-$OpenBSD: patch-gcc_c-typeck.c,v 1.1 2005/01/04 23:05:54 espie Exp $
+$OpenBSD: patch-gcc_c-typeck_c,v 1.1 2011/07/08 11:42:09 jasper Exp $
 --- gcc/c-typeck.c.orig	Thu Apr  1 18:20:12 2004
-+++ gcc/c-typeck.c	Mon Jan  3 10:17:41 2005
++++ gcc/c-typeck.c	Fri Jul  8 13:38:32 2011
 @@ -3232,18 +3232,19 @@ static void
  pedantic_lvalue_warning (code)
       enum tree_code code;

@@ -1,6 +1,6 @@
-$OpenBSD: patch-sl.1,v 1.1.1.1 2009/01/07 23:01:35 kili Exp $
---- sl.1.orig	Sun May 11 14:03:29 2008
-+++ sl.1	Sun May 11 14:52:03 2008
+$OpenBSD: patch-sl_1,v 1.1 2011/07/08 11:42:09 jasper Exp $
+--- sl.1.orig	Tue Jan 18 18:23:25 1994
++++ sl.1	Fri Jul  8 13:37:14 2011
 @@ -1,34 +1,33 @@
 -.\"
 -.\"  Copyright 1993 Toyoda Masashi.
@@ -21,7 +21,7 @@ $OpenBSD: patch-sl.1,v 1.1.1.1 2009/01/07 23:01:35 kili Exp $
 +.ds Nm Sl
 +.ds nm sl
 +.ds Vn 3.02
-+.TH \*(nm 1 "$Date: 2009/01/07 23:01:35 $"
++.TH \*(nm 1 "$Date: 2011/07/08 11:42:09 $"
 +.SH NAME
 +\*(nm \- Steam Locomotive.
 +.SH SYNOPSIS

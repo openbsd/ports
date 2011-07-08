@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile.in,v 1.4 2007/12/06 15:45:23 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.1 2011/07/08 11:42:09 jasper Exp $
 --- Makefile.in.orig	Sun Jan 28 19:22:32 2007
-+++ Makefile.in	Thu Dec  6 16:41:56 2007
++++ Makefile.in	Fri Jul  8 13:37:31 2011
 @@ -11,11 +11,10 @@
  
  # If xbl must NOT run with SGID bit (for protect scores files) then

@@ -1,11 +1,11 @@
-$OpenBSD: patch-make-target-contrib.sh,v 1.3 2011/05/12 02:11:52 joshe Exp $
+$OpenBSD: patch-make-target-contrib_sh,v 1.1 2011/07/08 11:42:09 jasper Exp $
 
 Only run the contrib tests if $RUN_CONTRIB_TESTS is not empty.  This
 allows the contribs to be build when USE_SYSTRACE=Yes, and the tests
 to be run later in do-regress.
 
---- make-target-contrib.sh.orig	Fri Nov  5 19:50:28 2010
-+++ make-target-contrib.sh	Sun Nov  7 07:03:48 2010
+--- make-target-contrib.sh.orig	Mon May  9 04:49:39 2011
++++ make-target-contrib.sh	Fri Jul  8 13:39:44 2011
 @@ -43,6 +43,7 @@ export SBCL SBCL_BUILDING_CONTRIB
  # as SB-RT and SB-GROVEL, but FIXME: there's probably a better
  # solution.  -- CSR, 2003-05-30

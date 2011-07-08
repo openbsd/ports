@@ -1,6 +1,6 @@
-$OpenBSD: patch-highscore.c,v 1.4 2007/12/07 10:25:46 ajacoutot Exp $
+$OpenBSD: patch-highscore_c,v 1.1 2011/07/08 11:42:09 jasper Exp $
 --- highscore.c.orig	Fri Nov 22 02:28:46 1996
-+++ highscore.c	Fri Dec  7 09:53:24 2007
++++ highscore.c	Fri Jul  8 13:37:55 2011
 @@ -55,6 +55,7 @@
  #include <time.h>
  #include <file.h>

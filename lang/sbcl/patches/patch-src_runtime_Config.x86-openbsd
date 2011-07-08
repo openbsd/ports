@@ -1,9 +1,0 @@
-$OpenBSD: patch-src_runtime_Config.x86-openbsd,v 1.2 2009/11/17 10:45:00 pirofti Exp $
---- src/runtime/Config.x86-openbsd.orig	Sun Feb  3 10:34:58 2008
-+++ src/runtime/Config.x86-openbsd	Thu Feb  5 08:41:33 2009
-@@ -24,5 +24,3 @@ OS_LIBS += -lutil
- 
- LINKFLAGS += -export-dynamic
- LDFLAGS += -export-dynamic
--
--CFLAGS =  -g -Wall -O2
