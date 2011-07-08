@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/26 07:20:12 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/07/08 22:39:14 ajacoutot Exp $
 
 COMMENT=	astrosmash clone for X
 
-DISTNAME=	cosmosmash-1.4.4
-REVISION =	0
+DISTNAME=	cosmosmash-1.4.5
 
 CATEGORIES=	games
 
@@ -15,11 +14,11 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-WANTLIB += SDL SDL_image SDL_mixer c m pthread stdc++ flatzebra-0.1>=1
+WANTLIB += SDL SDL_image SDL_mixer c flatzebra-0.1 m pthread stdc++
 
 MASTER_SITES=	http://sarrazip.com/dev/
 
-LIB_DEPENDS=	devel/flatzebra>=0.1.4
+LIB_DEPENDS=	devel/flatzebra>=0.1.5
 RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GROFF =	Yes
