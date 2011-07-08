@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1 2011/06/12 00:20:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/08 21:20:49 sthen Exp $
 
 FW_DRIVER=	pgt
 FW_VER=		1.2
 DISTNAME=	pgt-firmware-${FW_VER}
-REVISION=	1
+REVISION=	2
 
 MAINTAINER=	Marcus Glocker <mglocker@openbsd.org>
 
