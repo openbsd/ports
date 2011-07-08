@@ -1,0 +1,12 @@
+$OpenBSD: patch-fns_h,v 1.1 2011/07/08 09:44:02 jasper Exp $
+--- fns.h.orig	Fri Jul  8 11:42:53 2011
++++ fns.h	Fri Jul  8 11:42:53 2011
+@@ -47,7 +47,7 @@ char	*getprop();
+ Window	getwprop();
+ int 	getiprop();
+ int 	getstate();
+-void	setstate();
++void	_setstate();
+ void	setlabel();
+ void	getproto();
+ void	gettrans();

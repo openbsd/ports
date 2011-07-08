@@ -1,6 +1,7 @@
---- manage.c.orig	Wed Nov 29 22:08:48 2000
-+++ manage.c	Wed Nov 29 22:08:48 2000
-@@ -135,7 +135,7 @@
+$OpenBSD: patch-manage_c,v 1.1 2011/07/08 09:44:02 jasper Exp $
+--- manage.c.orig	Fri Jul  8 11:42:53 2011
++++ manage.c	Fri Jul  8 11:42:53 2011
+@@ -135,7 +135,7 @@ int mapped;
  			active(c);
  		else
  			setactive(c, 0);
@@ -9,7 +10,7 @@
  	}
  	if (current && (current != c))
  		cmapfocus(current);
-@@ -195,7 +195,7 @@
+@@ -195,7 +195,7 @@ Client *c;
  	XReparentWindow(dpy, c->window, c->screen->root, c->x, c->y);
  	gravitate(c, 0);
  	XRemoveFromSaveSet(dpy, c->window);
@@ -18,7 +19,7 @@
  
  	/* flush any errors */
  	ignore_badwindow = 1;
-@@ -452,7 +452,7 @@
+@@ -452,7 +452,7 @@ Atom a;
  }
  
  void

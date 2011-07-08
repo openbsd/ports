@@ -1,8 +1,8 @@
-$OpenBSD: patch-w3mir.PL,v 1.1.1.1 2000/11/30 15:44:32 avsm Exp $
---- w3mir.PL.orig	Thu Nov 30 22:39:40 2000
-+++ w3mir.PL	Thu Nov 30 22:40:31 2000
+$OpenBSD: patch-w3mir_PL,v 1.1 2011/07/08 09:44:02 jasper Exp $
+--- w3mir.PL.orig	Sun Feb  4 22:21:47 2001
++++ w3mir.PL	Fri Jul  8 11:43:23 2011
 @@ -69,7 +69,6 @@ __END__
- #!/local/bin/perl5 -w
+ #!/usr/bin/perl -w
  # Perl 5.002 or later.  w3mir is mostly tested with perl 5.004
  #
 -use lib '/hom/janl/lib/perl';
