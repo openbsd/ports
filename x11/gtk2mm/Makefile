@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2011/07/07 08:00:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2011/07/08 12:18:37 jasper Exp $
 
 COMMENT=	C++ interface for gtk2+
 
 GNOME_PROJECT=	gtkmm
-GNOME_VERSION=	2.24.1
+GNOME_VERSION=	2.24.2
 
 PKGNAME=	gtk2mm-${GNOME_VERSION}
 
@@ -32,9 +32,7 @@ WANTLIB += sigc-2.0 atk-1.0 cairo cairomm-1.0 atkmm-1.6
 MODULES=	devel/gettext \
 		x11/gnome
 
-TAR=		${LOCALBASE}/bin/gtar
-BUILD_DEPENDS=	archivers/gtar \
-		devel/mm-common
+EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=	devel/atk2mm \
 		devel/pangomm>=2.27 \

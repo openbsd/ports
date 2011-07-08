@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/07/07 08:00:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/07/08 12:18:37 jasper Exp $
 @conflict gtk2mm-docs-*
 @pkgpath x11/gtk2mm,-main
 @pkgpath x11/gtk2mm,-docs
@@ -556,10 +556,6 @@ share/doc/gtkmm-2.4/reference/html/classGdk_1_1Window-members.html
 share/doc/gtkmm-2.4/reference/html/classGdk_1_1Window.html
 share/doc/gtkmm-2.4/reference/html/classGdk_1_1Window__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGdk_1_1Window__inherit__graph.png
-share/doc/gtkmm-2.4/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01Gtk_1_1RecentInfo_01_4_01_4-members.html
-share/doc/gtkmm-2.4/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01Gtk_1_1RecentInfo_01_4_01_4.html
-share/doc/gtkmm-2.4/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01Gtk_1_1RecentInfo_01_4_01_4__coll__graph.png
-share/doc/gtkmm-2.4/reference/html/classGlib_1_1Value_3_01Glib_1_1RefPtr_3_01Gtk_1_1RecentInfo_01_4_01_4__inherit__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1AboutDialog-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1AboutDialog.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1AboutDialog__coll__graph.png
@@ -728,7 +724,6 @@ share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntryText.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntryText_1_1TextModelColumns-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntryText_1_1TextModelColumns.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntryText_1_1TextModelColumns__coll__graph.png
-share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntryText_1_1TextModelColumns__inherit__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntryText__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntryText__inherit__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboBoxEntry__coll__graph.png
@@ -749,10 +744,7 @@ share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDownItem-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDownItem.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDownItem__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDownItem__inherit__graph.png
-share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDown__Helpers_1_1ComboDropDownList-members.html
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDown__Helpers_1_1ComboDropDownList.html
-share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDown__Helpers_1_1ComboDropDownList__coll__graph.png
-share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDown__Helpers_1_1ComboDropDownList__inherit__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDown__coll__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1ComboDropDown__inherit__graph.png
 share/doc/gtkmm-2.4/reference/html/classGtk_1_1Combo__coll__graph.png
