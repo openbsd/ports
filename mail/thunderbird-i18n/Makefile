@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2011/06/22 19:12:59 landry Exp $
+# $OpenBSD: Makefile,v 1.45 2011/07/08 11:08:59 landry Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -8,6 +8,7 @@ PKG_ARCH=	*
 V=		3.1.11
 NAME=		thunderbird-i18n
 PKGNAME=	${NAME}-${V}
+REVISION=	0
 
 CATEGORIES=	mail
 
@@ -28,7 +29,7 @@ LANGUAGES=	af be bg ca cs da de el en-GB es-AR es-ES eu fi fr \
 		pt-BR pt-PT ru sk sv-SE tr uk zh-CN zh-TW
 
 BUILD_DEPENDS=	archivers/unzip
-RUN_DEPENDS=	mozilla-thunderbird-${V}:mail/mozilla-thunderbird
+RUN_DEPENDS=	thunderbird-${V}:mail/mozilla-thunderbird
 
 DIST_SUBDIR=	${NAME}-${V}
 NO_BUILD=	Yes
