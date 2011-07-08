@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/22 08:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/08 23:05:31 robert Exp $
 
 COMMENT=		OpenID authentication for PHP
 
 DISTNAME=		php-openid-2.1.2
+REVISION=		0
 CATEGORIES=		www security
 
 # Apache 2.0 license
@@ -27,10 +28,10 @@ PREFIX=                 /var/www
 INSTDIR=                ${PREFIX}/pear/lib/
 SUBST_VARS=             INSTDIR
 
-PHP_VERSION=	5
+MODULES=	lang/php
 RUN_DEPENDS=	databases/pear-DB \
-		www/php${PHP_VERSION}/extensions,-gmp \
-		www/php${PHP_VERSION}/extensions,-curl
+		lang/php/${MODPHP_VERSION},-gmp \
+		lang/php/${MODPHP_VERSION},-curl
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}

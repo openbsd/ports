@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/06/02 13:41:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/07/08 23:01:39 robert Exp $
 
 COMMENT=	all-in-one wiki/groupware/CMS solution
 
@@ -6,7 +6,7 @@ V=		4.2
 DISTNAME=	tikiwiki-${V}
 CATEGORIES=	www
 
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	http://tikiwiki.org/
 
@@ -27,10 +27,11 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/tikiwiki
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	www/php5/extensions,-gd \
-		www/php5/extensions,-xmlrpc \
-		www/php5/extensions,-mbstring \
-		www/php5/extensions,-mysqli
+MODULES=	lang/php
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
+		lang/php/${MODPHP_VERSION},-xmlrpc \
+		lang/php/${MODPHP_VERSION},-mbstring \
+		lang/php/${MODPHP_VERSION},-mysqli
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}

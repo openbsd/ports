@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/06/24 09:04:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2011/07/08 23:04:53 robert Exp $
 
 COMMENT=		web-based double opt-in newsletter manager
 
 DISTNAME=		phplist-2.10.14
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -25,8 +26,9 @@ PREFIX=			/var/www
 INSTDIR=		${PREFIX}/lists
 SUBST_VARS=		INSTDIR
 
-RUN_DEPENDS=		www/php5/extensions,-mysql \
-			www/php5/extensions,-imap \
+MODULES=		lang/php
+RUN_DEPENDS=		lang/php/${MODPHP_VERSION},-mysql \
+			lang/php/${MODPHP_VERSION},-imap \
 			net/pear-HTTP-Request
 
 do-install:

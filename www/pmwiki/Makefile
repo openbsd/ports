@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/23 13:06:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/07/08 23:01:39 robert Exp $
 
 COMMENT=	wiki-based system for collaborative creation of websites
 
 DISTNAME=	pmwiki-2.2.21
+REVISION=	0
 EXTRACT_SUFX=	.tgz
 
 CATEGORIES=	www
@@ -25,7 +26,7 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/pmwiki
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	www/php5/core
+MODULES=	lang/php
 
 do-install:
 	@cd ${PREFIX} && tar zxf ${FULLDISTDIR}/${DISTFILES}

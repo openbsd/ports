@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2011/06/02 13:41:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/07/08 23:01:39 robert Exp $
 
 COMMENT=	bacula(8) web interface
 
 DISTNAME=	webacula-5.0.3
 
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	www sysutils
 
@@ -18,8 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=webacula/}
 
-RUN_DEPENDS=	www/php5/extensions,-gd \
-		php5-pdo_pgsql-*|php5-pdo_mysql-*|php5-pdo_sqlite-*:www/php5/extensions,-pdo_pgsql \
+MODULES=	lang/php
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
+		php-pdo_pgsql-*|php-pdo_mysql-*|php-pdo_sqlite-*:lang/php/${MODPHP_VERSION},-pdo_pgsql \
 		www/zendframework>=1.10.8p1 \
 		sysutils/bacula,pgsql,-server
 

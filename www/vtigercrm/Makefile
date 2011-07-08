@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/03 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2011/07/08 23:01:39 robert Exp $
 
 COMMENT=	customer relationship management (CRM) software
 
 DISTNAME=	vtigercrm-5.2.1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.vtiger.com/
@@ -26,10 +26,10 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/vtigercrm
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	www/php5/core \
-		www/php5/extensions,-gd \
-		www/php5/extensions,-imap \
-		www/php5/extensions,-mysql
+MODULES=	lang/php
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
+		lang/php/${MODPHP_VERSION},-imap \
+		lang/php/${MODPHP_VERSION},-mysql
 
 do-install:
 	@tar zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${PREFIX}

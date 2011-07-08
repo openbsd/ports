@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.27 2011/06/23 06:52:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2011/07/08 23:01:39 robert Exp $
 
 COMMENT=	web-based payroll and time management suite
 
 V=		3.5.1
+REVISION=	0
 DISTNAME=	TimeTrex_Standard_Edition_v${V}
 PKGNAME=	timetrex-${V}
 CATEGORIES=	www productivity
@@ -19,9 +20,10 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=timetrex/}
 
-RUN_DEPENDS=	www/php5/extensions,-gd \
-		www/php5/extensions,-soap \
-		php5-mysql-*|php5-pgsql-*:www/php5/extensions,-mysql \
+MODULES=	lang/php
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
+		lang/php/${MODPHP_VERSION},-soap \
+		php-mysql-*|php-pgsql-*:lang/php/${MODPHP_VERSION},-mysql \
 		www/pear
 
 NO_BUILD=	Yes

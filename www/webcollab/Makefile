@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/07/08 23:01:39 robert Exp $
 
 COMMENT=	collaborative web-based system for project management
 
 V=		1.70
 DISTNAME=	webcollab-${V}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 
 HOMEPAGE=	http://webcollab.sourceforge.net/
@@ -19,7 +19,8 @@ PERMIT_DISTFILES_FTP=  Yes
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=webcollab/}
 
-RUN_DEPENDS=	www/php5/extensions,-mysql
+MODULES=	lang/php
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-mysql
 
 EXTRACT_ONLY=
 NO_BUILD=	Yes

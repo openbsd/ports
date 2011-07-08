@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/08 23:01:39 robert Exp $
 
 COMMENT=		webbased rss reader with standalone look and feel
 
 DISTNAME=		tt-rss-1.3.3
+REVISION=		0
 CATEGORIES=		www
 
 HOMEPAGE=		http://tt-rss.org/
@@ -26,10 +27,9 @@ PREFIX=			/var/www
 INSTDIR=		${PREFIX}/tt-rss/
 SUBST_VARS=		INSTDIR
 
-PHP_VERSION=	5
-RUN_DEPENDS=	www/php${PHP_VERSION}/extensions,-mbstring \
-		www/php${PHP_VERSION}/extensions,-pgsql \
-		www/php${PHP_VERSION}/extensions,-xmlrpc
+MODULES=	lang/php
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-pgsql \
+		lang/php/${MODPHP_VERSION},-xmlrpc
 
 do-install:
 	@cp -Rp ${WRKDIST} ${INSTDIR}

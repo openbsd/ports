@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2011/05/02 17:16:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/08 23:01:39 robert Exp $
 
 COMMENT=		web frontend to symon
 DISTNAME=		syweb-0.63
+REVISION=		0
 CATEGORIES=		www sysutils
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
@@ -21,8 +22,8 @@ NO_BUILD=		Yes
 
 PREFIX=			/var/www
 
-RUN_DEPENDS=		net/rrdtool \
-			www/php5/core>=5.2
+MODULES=		lang/php
+RUN_DEPENDS=		net/rrdtool
 
 WRKDIST=		${WRKDIR}/syweb
 
