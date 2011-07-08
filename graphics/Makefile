@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.294 2011/07/07 14:19:51 naddy Exp $
+# $OpenBSD: Makefile,v 1.295 2011/07/08 07:19:43 naddy Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -186,7 +186,6 @@
      SUBDIR += pngcrush
      SUBDIR += potrace
      SUBDIR += povray
-     SUBDIR += povray,no_x11
      SUBDIR += pstoedit
      SUBDIR += py-Imaging,python2.4
      SUBDIR += py-Imaging
