@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.54 2011/07/02 10:41:59 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.55 2011/07/08 11:08:11 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -204,6 +204,8 @@ my $stem_extensions = {
 	'dovecot-sieve' => 'dovecot-pigeonhole',
 	'wormux' => 'warmux',
 	'tightvnc-viewer' => 'ssvnc-viewer',
+	'mozilla-firefox' => 'firefox',
+	'mozilla-thunderbird' => 'thunderbird',
 };
 
 # ->is_base_system($handle, $state):
