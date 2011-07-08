@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/16 09:49:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/08 22:38:08 ajacoutot Exp $
 %%SHARED%%
 include/flatzebra-0.1/
 include/flatzebra-0.1/flatzebra/
 include/flatzebra-0.1/flatzebra/Couple.h
 include/flatzebra-0.1/flatzebra/GameEngine.h
+include/flatzebra-0.1/flatzebra/Joystick.h
 include/flatzebra-0.1/flatzebra/KeyState.h
 include/flatzebra-0.1/flatzebra/PixmapArray.h
 include/flatzebra-0.1/flatzebra/PixmapLoadError.h
