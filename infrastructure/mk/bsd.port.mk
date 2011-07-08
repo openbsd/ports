@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1092 2011/07/05 15:11:20 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1093 2011/07/08 05:17:40 naddy Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1235,7 +1235,7 @@ EXTRACT_CASES += *.shar.gz|*.shar.Z|*.sh.gz|*.sh.Z) \
 	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${_PERL_FIX_SHAR} | /bin/sh;;
 EXTRACT_CASES += *.shar | *.sh) \
 	${_PERL_FIX_SHAR} ${FULLDISTDIR}/$$archive | /bin/sh;;
-EXTRACT_CASES += *.tar.gz) \
+EXTRACT_CASES += *.tar.gz|*.tgz) \
 	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | ${TAR} xf -;;
 EXTRACT_CASES += *.gz) \
 	${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive >`basename $$archive .gz`;;
