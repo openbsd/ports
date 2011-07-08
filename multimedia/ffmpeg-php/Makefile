@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/07/07 01:06:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/08 21:57:03 robert Exp $
 
 SHARED_ONLY=	Yes
 
@@ -27,15 +27,14 @@ NO_REGRESS=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
 
-MODULES=	converters/libiconv
+MODULES=	converters/libiconv lang/php
 
 BUILD_DEPENDS=	www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=	graphics/ffmpeg \
 		graphics/gd
-RUN_DEPENDS=	www/php5/core \
-		www/php5/extensions,-gd
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd
 
 WANTLIB += avcodec avformat avutil bz2 expat fontconfig freetype gd
 WANTLIB += gsm jpeg m mp3lame ogg orc-0.4 png schroedinger-1.0
@@ -51,12 +50,7 @@ CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -lgd -lfreetype" \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 CONFIGURE_STYLE=gnu
 
-pre-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/phpize
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/conf/php5.sample
-	@echo "extension=ffmpeg.so" > \
-		${PREFIX}/conf/php5.sample/ffmpeg.ini
+MODPHP_DO_SAMPLE=	ffmpeg
+MODPHP_DO_PHPIZE=	Yes
 
 .include <bsd.port.mk>
