@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2011/07/02 09:48:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.115 2011/07/08 18:24:00 robert Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -59,6 +59,7 @@
      SUBDIR += parrot
      SUBDIR += petite-chez
      SUBDIR += pfe
+     SUBDIR += php
      SUBDIR += pm3
      SUBDIR += processing
      SUBDIR += pugs

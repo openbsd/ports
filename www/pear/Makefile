@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/07/08 18:23:17 robert Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
@@ -10,6 +10,9 @@ PKGNAME-utils=	pear-utils-${VERSION}
 CATEGORIES=	www devel
 
 EXTRACT_SUFX=	.tar.bz2
+
+REVISION-main=	0
+REVISION-utils=	0
 
 HOMEPAGE=	http://pear.php.net/
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
@@ -24,9 +27,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MULTI_PACKAGES=		-main -utils
 
-BUILD_DEPENDS=		www/php5/core
-RUN_DEPENDS-main=	www/php5/core \
-			www/pear,-utils
+MODULES=		lang/php
+RUN_DEPENDS-main=	www/pear,-utils
 
 # Most of pear have to live in /var/www where apache is chroot'ed to.
 PREFIX-main=	/var/www
@@ -37,7 +39,7 @@ NO_REGRESS=	Yes
 
 do-install:
 	@perl -pi -e "s,%%PREFIX%%,${WRKINST}${PREFIX-main},g" ${WRKSRC}/go-pear
-	@${LOCALBASE}/bin/php -nq ${WRKSRC}/go-pear
+	@${MODPHP_BIN} -nq ${WRKSRC}/go-pear
 
 	@mv ${WRKINST}${PREFIX-main}/bin ${WRKINST}${PREFIX-utils}/
 	@mv ${WRKINST}${PREFIX-main}/share/doc/pear ${WRKINST}${PREFIX-utils}/share/doc/
