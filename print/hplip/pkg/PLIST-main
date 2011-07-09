@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2011/06/07 15:47:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2011/07/09 00:30:28 ajacoutot Exp $
 @conflict hplip-docs-*
 @conflict hplip-gui-<3.11.3p0
 bin/hp-check
@@ -87,6 +87,8 @@ share/hplip/__init__.pyc
 share/hplip/align.py
 share/hplip/align.pyc
 share/hplip/base/
+share/hplip/base/LedmWifi.py
+share/hplip/base/LedmWifi.pyc
 share/hplip/base/__init__.py
 share/hplip/base/__init__.pyc
 share/hplip/base/codes.py
@@ -294,6 +296,4 @@ share/hplip/unload.py
 share/hplip/unload.pyc
 share/hplip/wificonfig.py
 share/hplip/wificonfig.pyc
-share/polkit-1/
-share/polkit-1/actions/
 share/polkit-1/actions/com.hp.hplip.policy
