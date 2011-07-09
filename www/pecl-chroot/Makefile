@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/07/09 00:04:11 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2011/07/09 00:37:40 robert Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,7 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/php
 BUILD_DEPENDS=	www/pear
-RUN_DEPENDS=	www/php5/core
 
 CONFIGURE_STYLE=gnu
 

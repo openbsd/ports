@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/06/24 11:17:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2011/07/09 00:42:02 robert Exp $
 
 SHARED_ONLY=	Yes
 
@@ -18,11 +18,11 @@ PKGNAME-mysql =	cherokee-mysql-${VERSION}
 PKGNAME-geoip =	cherokee-geoip-${VERSION}
 PKGNAME-streaming = cherokee-streaming-${VERSION}
 
-REVISION-main =	3
-REVISION-geoip = 0
-REVISION-ldap =	1
-REVISION-mysql = 0
-REVISION-streaming = 3
+REVISION-main =	4
+REVISION-geoip = 1
+REVISION-ldap =	2
+REVISION-mysql = 1
+REVISION-streaming = 4
 
 SHARED_LIBS =	cherokee-base		0.0 \
 		cherokee-client		0.0 \
@@ -35,10 +35,10 @@ HOMEPAGE =	http://www.cherokee-project.com/
 MAINTAINER =	Fernando Quintero <fernando.a.quintero@gmail.com>
 
 # GPLv2
-PERMIT_PACKAGE_CDROM =	Yes 
-PERMIT_PACKAGE_FTP =	Yes 
-PERMIT_DISTFILES_CDROM =Yes 
-PERMIT_DISTFILES_FTP =	Yes 
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM =Yes
+PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${HOMEPAGE}download/${DIR}/${VERSION}/ \
 		http://ftp.heanet.ie/mirrors/cherokee/${DIR}/${VERSION}/ \
@@ -47,10 +47,10 @@ MASTER_SITES =	${HOMEPAGE}download/${DIR}/${VERSION}/ \
 
 MULTI_PACKAGES =-main -ldap -mysql -geoip -streaming
 
-MODULES =	lang/python
+MODULES =	lang/python lang/php
 
 BUILD_DEPENDS =	textproc/py-docutils \
-		www/php5/core,-fastcgi
+		lang/php/${MODPHP_VERSION},-fastcgi
 
 LIB_DEPENDS-main =	devel/pcre
 WANTLIB-main =		c crypto pcre pthread ssl
@@ -86,10 +86,10 @@ FAKE_FLAGS =	cherokeeconfdir="${PREFIX}/share/examples/cherokee/etc" \
 		cherokeewwwdir="${PREFIX}/share/examples/cherokee/www" \
 		cherokeewwwimagesdir="${PREFIX}/share/examples/cherokee/www/images"
 
-CONFIGURE_STYLE =	gnu	
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
-			PHPCGI="${LOCALBASE}/bin/php-fastcgi" \
+			PHPCGI="${LOCALBASE}/bin/php-fastcgi-${MODPHP_VERSION}" \
 			ac_cv_func_getgrnam_r=no
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--disable-static \
@@ -103,7 +103,7 @@ CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
 			--with-geoip \
 			--with-ldap \
 			--with-mysql \
-			--with-ffmpeg 
+			--with-ffmpeg
 
 .ifdef DEBUG
 CFLAGS +=		-O0 -g3

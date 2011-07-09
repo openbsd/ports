@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:52 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/09 00:45:15 robert Exp $
 
 COMMENT =	free open-source SQL full-text search engine
 
@@ -18,7 +18,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES =	${HOMEPAGE}/downloads/
 
-MODULES =	converters/libiconv
+MODULES =	converters/libiconv lang/php
+
+MODPHP_BUILDDEP=No
 
 WANTLIB =	c expat m stdc++
 
@@ -40,11 +42,10 @@ LIB_DEPENDS +=	databases/mysql
 WANTLIB +=	crypto ssl z mysqlclient
 .endif
 
-# Needs php5 with pdo_mysql setup.
+# Needs php with pdo_mysql setup.
 REGRESS_IS_INTERACTIVE=	Yes
-PHP_VERSION=    	5
-REGRESS_DEPENDS=www/php${PHP_VERSION}/extensions,-mysql \
-		www/php${PHP_VERSION}/extensions,-pdo_mysql
+REGRESS_DEPENDS=lang/php/${MODPHP_VERSION},-mysql \
+		lang/php/${MODPHP_VERSION},-pdo_mysql
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sphinx
