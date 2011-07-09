@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/02 17:09:32 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/09 00:03:44 ajacoutot Exp $
 
 COMMENT=	fine-grained privileges PolicyKit helper for CUPS
 
-DISTNAME=	cups-pk-helper-0.1.2
+DISTNAME=	cups-pk-helper-0.1.3
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	print sysutils
@@ -33,7 +33,6 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/cups-pk-helper
 
