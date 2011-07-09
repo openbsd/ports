@@ -1,4 +1,0 @@
-This is the core PHP binary compiled with FastCGI support
-(www.fastcgi.com). FastCGI deployments are generally faster than
-using PHP as a CGI, since the processes stay resident in memory
-between requests.

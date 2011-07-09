@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-fastcgi,v 1.2 2008/12/09 21:52:31 robert Exp $
-@bin bin/php-fastcgi

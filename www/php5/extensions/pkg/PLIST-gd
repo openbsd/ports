@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST-gd,v 1.5 2007/11/05 10:11:10 robert Exp $
-@conflict php4-gd-*
-@pkgpath www/php5/extensions,-gd,hardened
-conf/php5.sample/gd.ini
-lib/php/modules/gd.so
