@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_celestia_winmain_cpp,v 1.1 2009/11/17 23:12:16 ajacoutot Exp $
---- src/celestia/winmain.cpp.orig	Tue Nov 17 15:26:12 2009
-+++ src/celestia/winmain.cpp	Tue Nov 17 15:26:25 2009
-@@ -1384,7 +1384,7 @@ BOOL APIENTRY SelectDisplayModeProc(HWND hDlg,
+$OpenBSD: patch-src_celestia_winmain_cpp,v 1.2 2011/07/09 01:41:13 ajacoutot Exp $
+--- src/celestia/winmain.cpp.orig	Sun Jun  5 18:11:13 2011
++++ src/celestia/winmain.cpp	Sat Jul  9 03:23:48 2011
+@@ -1385,7 +1385,7 @@ BOOL APIENTRY SelectDisplayModeProc(HWND hDlg,
              bind_textdomain_codeset("celestia", CurrentCP());
              SendMessage(hwnd, CB_INSERTSTRING, -1,
                          reinterpret_cast<LPARAM>(_("Windowed Mode")));

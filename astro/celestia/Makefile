@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2010/12/31 07:10:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/07/09 01:41:13 ajacoutot Exp $
 
 COMMENT=	free space simulator and planetarium
 
-DISTNAME=	celestia-1.6.0
-
-REVISION=	5
+DISTNAME=	celestia-1.6.1
 
 CATEGORIES=	astro x11
 
@@ -27,6 +25,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += jpeg m ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 pangox-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb z
 WANTLIB += gdkglext-x11-1.0 gtkglext-x11-1.0 lua theora
+WANTLIB += Xxf86vm drm gthread-2.0 xcb-render xcb-shm
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	x11/gtkglext \
@@ -40,7 +39,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib -lm -lGL"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--with-gtk \
 		--with-lua \
