@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/07/08 23:01:39 robert Exp $
+# $OpenBSD: Makefile,v 1.18 2011/07/09 03:32:26 robert Exp $
 
 COMMENT=	all-in-one wiki/groupware/CMS solution
 
@@ -30,7 +30,6 @@ SUBST_VARS=	INSTDIR
 MODULES=	lang/php
 RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-xmlrpc \
-		lang/php/${MODPHP_VERSION},-mbstring \
 		lang/php/${MODPHP_VERSION},-mysqli
 
 do-install:
