@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.90 2011/07/06 13:46:44 kili Exp $
+#	$OpenBSD: Makefile,v 1.91 2011/07/09 13:50:58 ajacoutot Exp $
 
     SUBDIR =
     SUBDIR += a2ps,a4
@@ -72,6 +72,5 @@
     SUBDIR += texlive
     SUBDIR += transfig
     SUBDIR += unpaper
-    SUBDIR += xpp
 
 .include <bsd.port.subdir.mk>
