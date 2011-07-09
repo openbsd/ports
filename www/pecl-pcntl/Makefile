@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/04/25 15:01:28 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2011/07/09 00:04:11 robert Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PHP support for process control
 DISTNAME=	pecl-pcntl-1.0
+REVISION=	0
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 CATEGORIES=	www
 
@@ -16,16 +17,11 @@ PERMIT_DISTFILES_FTP=	Yes
 AUTOCONF_VERSION=	2.62
 AUTOMAKE_VERSION=	1.9
 
-BUILD_DEPENDS=	www/pear \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-RUN_DEPENDS=	www/php5/core
+MODULES=	lang/php
+BUILD_DEPENDS=	www/pear
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
-PREFIX=		/var/www
 DESTDIRNAME=	INSTALL_ROOT
 
 NO_REGRESS=	Yes
@@ -33,12 +29,7 @@ NO_REGRESS=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 
-pre-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/phpize
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/conf/php5.sample
-	@echo "extension=pcntl.so" > \
-		${PREFIX}/conf/php5.sample/pcntl.ini
+MODPHP_DO_SAMPLE=	pcntl
+MODPHP_DO_PHPIZE=	Yes
 
 .include <bsd.port.mk>

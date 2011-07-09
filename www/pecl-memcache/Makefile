@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/22 08:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/07/09 00:04:11 robert Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PHP interface to memcached
 
 DISTNAME=	memcache-3.0.4
+REVISION=	0
 PKGNAME=	pecl-${DISTNAME}
 CATEGORIES=	www
 
@@ -21,38 +22,22 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://pecl.php.net/get/
 EXTRACT_SUFX=	.tgz
 
-AUTOCONF_VERSION=	2.59
-AUTOMAKE_VERSION=	1.4
-
-BUILD_DEPENDS=	www/pear \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-RUN_DEPENDS=	www/php5/core
+MODULES=	lang/php
+BUILD_DEPENDS=	www/pear
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--with-zlib-dir=/usr
-CONFIGURE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION}
+CONFIGURE_ARGS+=	--with-zlib-dir=/usr
 
-PREFIX=		/var/www
 DESTDIRNAME=	INSTALL_ROOT
 
 NO_REGRESS=	Yes
 
 USE_LIBTOOL=	Yes
 
-pre-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/phpize
+MODPHP_DO_SAMPLE=	memcache
+MODPHP_DO_PHPIZE=	Yes
 
 post-configure:
 	@perl -pi -e 's,(finish_cmds=").*,\1" #,g' ${WRKSRC}/libtool
-
-post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pecl-memcache
-	@${INSTALL_DATA} ${WRKSRC}/example.php \
-		${PREFIX}/share/examples/pecl-memcache
-	@${INSTALL_DATA_DIR} ${PREFIX}/conf/php5.sample
-	@echo "extension=memcache.so" > \
-		${PREFIX}/conf/php5.sample/memcache.ini
 
 .include <bsd.port.mk>

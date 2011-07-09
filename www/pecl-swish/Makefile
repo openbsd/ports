@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:52 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/09 00:04:11 robert Exp $
 
 SHARED_ONLY =	Yes
 COMMENT =	PHP interface to swish-e
 
 DISTNAME =	swish-0.3.0
+REVISION =	0
 PKGNAME =	pecl-${DISTNAME}
 CATEGORIES =	www
 EXTRACT_SUFX =	.tgz
@@ -19,37 +20,26 @@ PERMIT_DISTFILES_FTP =		Yes
 
 WANTLIB =	m pcre pcreposix swish-e z
 
+AUTOCONF_VERSION =	2.59
+AUTOMAKE_VERSION =	1.4
+
+MODULES =	lang/php
 LIB_DEPENDS =	textproc/swish-e
 BUILD_DEPENDS =	www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
-RUN_DEPENDS =	www/php5/core
 
-PREFIX =	/var/www
 DESTDIRNAME =	INSTALL_ROOT
 
 USE_LIBTOOL =	Yes
 NO_REGRESS =	Yes
 
-AUTOCONF_VERSION =	2.59
-AUTOMAKE_VERSION =	1.4
-
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ENV =		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-			AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
-pre-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/phpize
+MODPHP_DO_SAMPLE=	swish
+MODPHP_DO_PHPIZE=	Yes
 
 post-configure:
 	@perl -pi -e 's,(finish_cmds=").*,\1" #,g' ${WRKSRC}/libtool
-
-post-install:
-	@${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pecl-swish
-	@${INSTALL_DATA} ${WRKSRC}/swish.php \
-		${PREFIX}/share/examples/pecl-swish
-	@${INSTALL_DATA_DIR} ${PREFIX}/conf/php5.sample
-	@echo "extension=swish.so" > \
-		${PREFIX}/conf/php5.sample/swish.ini
 
 .include <bsd.port.mk>

@@ -1,14 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/12/20 01:06:50 sthen Exp $
-@comment conf/php5.sample/
-@group bin
-conf/php5.sample/apc.ini
-@comment lib/
-@comment lib/php/
-@comment lib/php/modules/
-@owner root
-lib/php/modules/apc.so
-@owner
-@group daemon
+@comment $OpenBSD: PLIST,v 1.5 2011/07/09 00:04:11 robert Exp $
+lib/php-${MODPHP_VERSION}/modules/apc.so
+share/examples/php-${MODPHP_VERSION}/apc.ini
+share/php-${MODPHP_VERSION}/include/ext/apc/
+share/php-${MODPHP_VERSION}/include/ext/apc/apc_serializer.h
+@cwd ${WEBROOT}
 pecl-APC/
 pecl-APC/INSTALL
 pecl-APC/apc.php

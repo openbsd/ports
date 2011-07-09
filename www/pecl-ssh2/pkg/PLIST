@@ -1,11 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/04/27 02:35:33 jolan Exp $
-@comment conf/php5.sample/
-@group bin
-conf/php5.sample/ssh2.ini
-@comment lib/
-@comment lib/php/
-@comment lib/php/modules/
-@owner root
-lib/php/modules/ssh2.so
-@owner
-@group
+@comment $OpenBSD: PLIST,v 1.2 2011/07/09 00:04:11 robert Exp $
+lib/php-${MODPHP_VERSION}/modules/${MODULE_NAME}.so
+share/examples/php-${MODPHP_VERSION}/${MODULE_NAME}.ini
+@sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/${MODULE_NAME}.ini

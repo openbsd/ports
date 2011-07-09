@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/03/16 07:21:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/09 00:04:11 robert Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	support for PHP archives (.phar)
 DISTNAME=	phar-2.0.0
 PKGNAME=	pecl-${DISTNAME}
-REVISION=	1
+REVISION=	2
 EXTRACT_SUFX=	.tgz
 MASTER_SITES=	http://pecl.php.net/get/
 CATEGORIES=	www
@@ -18,20 +18,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-AUTOCONF_VERSION=	2.62
-AUTOMAKE_VERSION=	1.9
-
-BUILD_DEPENDS=	www/pear \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
-RUN_DEPENDS=	www/php5/core \
-		www/php5/extensions,-bz2
+MODULES=	lang/php
+BUILD_DEPENDS=	www/pear
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-bz2
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV=	AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION}
 
-PREFIX=		/var/www
 DESTDIRNAME=	INSTALL_ROOT
 
 NO_REGRESS=	Yes
@@ -39,12 +31,7 @@ NO_REGRESS=	Yes
 USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS+=	--tag=disable-static
 
-pre-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/phpize
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/conf/php5.sample
-	@echo "extension=phar.so" > \
-		${PREFIX}/conf/php5.sample/phar.ini
+MODPHP_DO_SAMPLE=	phar
+MODPHP_DO_PHPIZE=	Yes
 
 .include <bsd.port.mk>
