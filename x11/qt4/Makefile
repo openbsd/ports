@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2011/07/08 05:04:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2011/07/09 10:59:35 espie Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -251,6 +251,7 @@ WANTLIB-examples =	${WANTLIB} ${commonWANTLIB} lib/qt4/QtDesigner \
 
 LIB_DEPENDS-html =
 WANTLIB-html =
+RUN_DEPENDS-html =
 PKG_ARCH-html =	*
 
 .include <bsd.own.mk>
