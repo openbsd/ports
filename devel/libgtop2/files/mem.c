@@ -1,4 +1,4 @@
-/* $OpenBSD: mem.c,v 1.8 2011/05/26 08:07:22 jasper Exp $	*/
+/* $OpenBSD: mem.c,v 1.9 2011/07/09 08:04:14 jasper Exp $	*/
 
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
@@ -57,8 +57,8 @@ static struct nlist nlst [] = {
 };
 
 /* MIB array for sysctl */
-static int mib [] = { CTL_VM, VM_METER };
-static int mib_uvmexp [] = { CTL_VM, VM_UVMEXP };
+static int vmmeter_mib [] = { CTL_VM, VM_METER };
+static int uvmexp_mib  [] = { CTL_VM, VM_UVMEXP };
 
 /* Init function. */
 
@@ -106,14 +106,14 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 
 	/* Get the data from sysctl */
 	length_vmt = sizeof (vmt);
-	if (sysctl (mib, 2, &vmt, &length_vmt, NULL, 0)) {
-		glibtop_warn_io_r (server, "sysctl (vm.meter)");
+	if (sysctl (vmmeter_mib, 2, &vmt, &length_vmt, NULL, 0)) {
+		glibtop_warn_io_r (server, "sysctl (vm.vmmeter)");
 		return;
 	}
 
 	length_uvmexp = sizeof (uvmexp);
-	if (sysctl (mib_uvmexp, 2, &uvmexp, &length_uvmexp, NULL, 0)) {
-		glibtop_warn_io_r (server, "sysctl (uvmexp)");
+	if (sysctl (uvmexp_mib, 2, &uvmexp, &length_uvmexp, NULL, 0)) {
+		glibtop_warn_io_r (server, "sysctl (vm.uvmexp)");
 		return;
 	}
 
