@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/07/06 23:56:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/07/09 01:14:47 robert Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -15,10 +15,10 @@ PKGNAME-utils=	mapserver-utils-${V}
 PKGNAME-php=	php5-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
 
-REVISION-main=	0
-REVISION-utils=	0
-REVISION-php=	0
-REVISION-perl=	0
+REVISION-main=	1
+REVISION-utils=	1
+REVISION-php=	1
+REVISION-perl=	1
 
 CATEGORIES=	geo www
 
@@ -33,10 +33,10 @@ MAINTAINER=	Landry Breuil <landry@openbsd.org>
 
 MASTER_SITES=	http://download.osgeo.org/mapserver/
 
-MODULES=	devel/gettext
+MODULES=	devel/gettext lang/php
+MODPHP_RUNDEP=	No
 
-BUILD_DEPENDS=	www/php5/core \
-		graphics/agg
+BUILD_DEPENDS=	graphics/agg
 
 LIB_DEPENDS=	devel/proj \
 		graphics/cairo \
@@ -44,8 +44,7 @@ LIB_DEPENDS=	devel/proj \
 		geo/geos \
 		graphics/gd
 
-RUN_DEPENDS-php=	www/php5/core
-
+RUN_DEPENDS-php=	${MODPHP_RUN_DEPENDS}
 
 WANTLIB += crypto curl expat freetype idn jpeg m png pq ssl xml2 z proj
 WANTLIB += gdal geos_c gd stdc++
@@ -66,7 +65,7 @@ CONFIGURE_ARGS=	--with-proj=${LOCALBASE} \
 		--without-pdf \
 		--with-freetype=${X11BASE}/bin \
 		--with-gdal=${LOCALBASE}/bin/gdal-config \
-		--with-php=${LOCALBASE}/share/php5/include \
+		--with-php=${LOCALBASE}/share/php-${MODPHP_VERSION}/include \
 		--with-postgis=${LOCALBASE}/bin/pg_config \
 		--with-geos=${LOCALBASE}/bin/geos-config \
 		--with-ogr=${LOCALBASE}/bin/gdal-config \
@@ -89,7 +88,6 @@ UTILS=	shp2img legend shptree shptreevis shptreetst scalebar \
 	sortshp tile4ms msencrypt
 
 PREFIX-main=	/var/www
-PREFIX-php=	/var/www
 
 SUBST_VARS+=	PREFIX-php PREFIX-main
 
@@ -98,16 +96,16 @@ post-build:
 
 do-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${PREFIX-main}/cgi-bin
-	${INSTALL_DATA_DIR} ${WRKINST}/${PREFIX-php}/lib/php/modules
-	${INSTALL_DATA_DIR} ${DESTDIR}/${PREFIX-php}/conf/php5.sample
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/php-${MODPHP_VERSION}/modules
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${MODPHP_VERSION}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mapserver/php
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mapserver/perl
 
 	${INSTALL_PROGRAM} ${WRKSRC}/mapserv ${WRKINST}/${PREFIX-main}/cgi-bin
 	${INSTALL_DATA} ${WRKSRC}/mapscript/php/php_mapscript.so \
-		${WRKINST}/${PREFIX-php}/lib/php/modules/mapscript.so
+		${PREFIX}/lib/php-${MODPHP_VERSION}/modules/mapscript.so
 	echo "; Enable Mapscript extension module\nextension=mapscript.so" \
-		> ${WRKINST}/${PREFIX-php}/conf/php5.sample/mapscript.ini
+		> ${PREFIX}/share/examples/php-${MODPHP_VERSION}/mapscript.ini
 .for i in ${UTILS}
 	${INSTALL_PROGRAM} ${WRKSRC}/${i} ${PREFIX}/bin/
 .endfor
