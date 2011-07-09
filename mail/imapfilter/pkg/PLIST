@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/09/02 18:35:22 simon Exp $
-bin/imapfilter
+@comment $OpenBSD: PLIST,v 1.2 2011/07/09 12:53:52 dcoppa Exp $
+@bin bin/imapfilter
 @man man/man1/imapfilter.1
 @man man/man5/imapfilter_config.5
 share/examples/imapfilter/
-share/examples/imapfilter/sample.config.lua
-share/examples/imapfilter/sample.extend.lua
+share/examples/imapfilter/config.lua
+share/examples/imapfilter/extend.lua
 share/imapfilter/
 share/imapfilter/account.lua
 share/imapfilter/auxiliary.lua

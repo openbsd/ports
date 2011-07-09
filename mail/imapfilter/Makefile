@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/07/09 12:53:52 dcoppa Exp $
 
 COMMENT=	remote IMAP filtering utility
 
-DISTNAME=	imapfilter-2.0.10
+DISTNAME=	imapfilter-2.2.3
 CATEGORIES=	mail
 
 HOMEPAGE=	http://imapfilter.hellug.gr/
 
-MASTER_SITES=	${HOMEPAGE}source/
+MASTER_SITES=	http://spacehopper.org/mirrors/ \
+		https://github.com/downloads/lefcha/imapfilter/
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
@@ -35,7 +36,7 @@ NO_REGRESS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/imapfilter
-	${INSTALL_DATA} ${WRKSRC}/sample.{config,extend}.lua \
-		${PREFIX}/share/examples/imapfilter
+	${INSTALL_DATA} ${WRKSRC}/samples/{config,extend}.lua \
+		${PREFIX}/share/examples/imapfilter/
 
 .include <bsd.port.mk>
