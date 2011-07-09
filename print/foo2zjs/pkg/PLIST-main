@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2011/05/11 07:45:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2011/07/09 00:36:11 ajacoutot Exp $
 @conflict foomatic-db-<4.0.20091207p1
 @unexec-delete rm -f %D/share/foo2hiperc/icm/*
 @unexec-delete rm -f %D/share/foo2hp/icm/*
@@ -29,6 +29,7 @@ bin/foo2xqx-wrapper
 bin/foo2zjs-pstops
 bin/foo2zjs-wrapper
 @bin bin/gipddecode
+@bin bin/hbpldecode
 @bin bin/hipercdecode
 @bin bin/lavadecode
 @bin bin/oakdecode
@@ -58,6 +59,7 @@ bin/printer-profile
 @man man/man1/foo2zjs-wrapper.1
 @man man/man1/foo2zjs.1
 @man man/man1/gipddecode.1
+@man man/man1/hbpldecode.1
 @man man/man1/hipercdecode.1
 @man man/man1/lavadecode.1
 @man man/man1/oakdecode.1
@@ -114,10 +116,6 @@ share/foo2zjs/firmware/
 share/foo2zjs/gamma-lookup.ps
 share/foo2zjs/gamma.ps
 share/foo2zjs/icm/
-share/foomatic/
-share/foomatic/db/
-share/foomatic/db/source/
-share/foomatic/db/source/PPD/
 share/foomatic/db/source/PPD/foo2zjs/
 share/foomatic/db/source/PPD/foo2zjs/Generic-OAKT_Printer.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Generic-ZjStream_Printer.ppd.gz
@@ -166,6 +164,7 @@ share/foomatic/db/source/PPD/foo2zjs/Minolta-magicolor_2300_DL.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Minolta-magicolor_2430_DL.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C110.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C3100.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Oki-C310dn.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C3200.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C3300.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Oki-C3400.ppd.gz
@@ -180,6 +179,7 @@ share/foomatic/db/source/PPD/foo2zjs/Olivetti-d-Color_P160W.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-300.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-310.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-315.ppd.gz
+share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-325.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-600.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-610.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Samsung-CLP-620.ppd.gz
@@ -189,7 +189,6 @@ share/foomatic/db/source/PPD/foo2zjs/Samsung-CLX-3175.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6110.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6115MFP.ppd.gz
 share/foomatic/db/source/PPD/foo2zjs/Xerox-Phaser_6121MFP.ppd.gz
-share/foomatic/db/source/driver/
 share/foomatic/db/source/driver/foo2hiperc.xml
 share/foomatic/db/source/driver/foo2hp.xml
 share/foomatic/db/source/driver/foo2lava.xml
@@ -202,7 +201,6 @@ share/foomatic/db/source/driver/foo2zjs-z1.xml
 share/foomatic/db/source/driver/foo2zjs-z2.xml
 share/foomatic/db/source/driver/foo2zjs-z3.xml
 share/foomatic/db/source/driver/foo2zjs.xml
-share/foomatic/db/source/opt/
 share/foomatic/db/source/opt/foo2hiperc-ColorMode.xml
 share/foomatic/db/source/opt/foo2hiperc-Compression.xml
 share/foomatic/db/source/opt/foo2hiperc-Duplex.xml
@@ -256,6 +254,7 @@ share/foomatic/db/source/opt/foo2xqx-InputSlot.xml
 share/foomatic/db/source/opt/foo2xqx-MediaType.xml
 share/foomatic/db/source/opt/foo2xqx-Resolution.xml
 share/foomatic/db/source/opt/foo2xxx-Copies.xml
+share/foomatic/db/source/opt/foo2xxx-Halftone.xml
 share/foomatic/db/source/opt/foo2xxx-Nup.xml
 share/foomatic/db/source/opt/foo2xxx-NupOrient.xml
 share/foomatic/db/source/opt/foo2xxx-Quality.xml
@@ -275,7 +274,6 @@ share/foomatic/db/source/opt/foo2zjs-z2-MediaType.xml
 share/foomatic/db/source/opt/foo2zjs-z2-PageSize.xml
 share/foomatic/db/source/opt/foo2zjs-z3-MediaType.xml
 share/foomatic/db/source/opt/foo2zjs-z3-PageSize.xml
-share/foomatic/db/source/printer/
 share/foomatic/db/source/printer/Generic-OAKT_Printer.xml
 share/foomatic/db/source/printer/Generic-ZjStream_Printer.xml
 share/foomatic/db/source/printer/HP-Color_LaserJet_1500.xml
@@ -323,6 +321,7 @@ share/foomatic/db/source/printer/Minolta-magicolor_2300_DL.xml
 share/foomatic/db/source/printer/Minolta-magicolor_2430_DL.xml
 share/foomatic/db/source/printer/Oki-C110.xml
 share/foomatic/db/source/printer/Oki-C3100.xml
+share/foomatic/db/source/printer/Oki-C310dn.xml
 share/foomatic/db/source/printer/Oki-C3200.xml
 share/foomatic/db/source/printer/Oki-C3300.xml
 share/foomatic/db/source/printer/Oki-C3400.xml
@@ -337,6 +336,7 @@ share/foomatic/db/source/printer/Olivetti-d-Color_P160W.xml
 share/foomatic/db/source/printer/Samsung-CLP-300.xml
 share/foomatic/db/source/printer/Samsung-CLP-310.xml
 share/foomatic/db/source/printer/Samsung-CLP-315.xml
+share/foomatic/db/source/printer/Samsung-CLP-325.xml
 share/foomatic/db/source/printer/Samsung-CLP-600.xml
 share/foomatic/db/source/printer/Samsung-CLP-610.xml
 share/foomatic/db/source/printer/Samsung-CLP-620.xml
