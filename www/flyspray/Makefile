@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/09 00:14:45 robert Exp $
 
 COMMENT =	web-based bug tracking system
 
 DISTNAME =	flyspray-0.9.9.6
+REVISION =	0
 CATEGORIES =	www devel
 
 HOMEPAGE =	http://flyspray.org/
@@ -26,7 +27,8 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/flyspray
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	www/php5/extensions,-mysql
+MODULES=	lang/php
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-mysql
 
 do-extract:
 	@mkdir -p ${WRKDIST}

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:49 espie Exp $ 
+# $OpenBSD: Makefile,v 1.4 2011/07/09 00:14:46 robert Exp $
 
 COMMENT=	simple and clean multi-user web file manager
 
 DISTNAME=	mollify_1.6.5.5
+REVISION=	0
 PKGNAME=	${DISTNAME:S/_/-/}
 EXTRACT_SUFX=	.zip
 CATEGORIES=	www
@@ -27,7 +28,7 @@ WRKDIST=	${WRKDIR}/mollify
 
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	www/php5/core
+MODULES=	lang/php
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR}

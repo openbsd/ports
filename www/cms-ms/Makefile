@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/07 19:46:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/07/09 00:14:45 robert Exp $
 
 COMMENT=		easy to use and powerfull CMS
 
 DISTNAME=		cmsmadesimple-1.9.4-full
+REVISION=		0
 PKGNAME=		${DISTNAME:S/-full//}
 CATEGORIES=		www
 
@@ -25,11 +26,10 @@ PREFIX= 		/var/www
 INSTDIR=		${PREFIX}/cms/
 SUBST_VARS=		INSTDIR
 
-
-PHP_VERSION=	5
+MODULES=	lang/php
 RUN_DEPENDS=	devel/smarty \
-		www/php${PHP_VERSION}/extensions,-gd \
-		www/php${PHP_VERSION}/extensions,-mysql
+		lang/php/${MODPHP_VERSION},-gd \
+		lang/php/${MODPHP_VERSION},-mysql
 
 do-install:
 	@${INSTALL_DATA_DIR} ${INSTDIR}

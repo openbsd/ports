@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2010/07/30 11:27:06 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2011/07/09 00:14:45 robert Exp $
 
 MAINTAINER ?= Stuart Henderson <sthen@openbsd.org>
 
@@ -8,7 +8,7 @@ PERMIT_PACKAGE_FTP ?=		Yes
 PERMIT_DISTFILES_CDROM ?=	Yes
 PERMIT_DISTFILES_FTP ?=		Yes
 
-MODULES += www/horde
+MODULES += lang/php www/horde
 
 NO_BUILD ?= Yes
 NO_REGRESS ?= Yes

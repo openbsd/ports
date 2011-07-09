@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/02 13:41:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/07/09 00:14:45 robert Exp $
 
 COMMENT=	PHP OpenID implementation
 
@@ -8,7 +8,7 @@ BASE_URL=	http://source.keyboard-monkeys.org
 DISTNAME=	cid-${V}
 PKGNAME=	community-id-${V}
 
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	www security
 
@@ -24,10 +24,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${BASE_URL}/attachments/download/110/
 
-# php5-gd-*-!no_x11 because we need freetype support
-RUN_DEPENDS=	php5-gd-*-!no_x11:www/php5/extensions,-gd \
-		www/php5/extensions,-gmp \
-		www/php5/extensions,-mysqli
+MODULES=	lang/php
+
+# php-gd-*-!no_x11 because we need freetype support
+RUN_DEPENDS=	php-gd-*-!no_x11:lang/php/${MODPHP_VERSION},-gd \
+		lang/php/${MODPHP_VERSION},-gmp \
+		lang/php/${MODPHP_VERSION},-mysqli
 
 WRKDIST=	${WRKDIR}/communityid
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:48 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/09 00:14:45 robert Exp $
 
 COMMENT =	fast, light, user-friendly web forum
 
-V=1.4.2
+V=		1.4.2
 DISTNAME =	fluxbb-${V}
 CATEGORIES =	www
-REVISION=0
+REVISION=	1
 
 HOMEPAGE =	http://fluxbb.org/
 
@@ -28,7 +28,8 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/fluxbb
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	www/php5/extensions,-mysql
+MODULES=	lang/php
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-mysql
 
 do-extract:
 	@mkdir -p ${WRKDIST}

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/09 00:14:45 robert Exp $
 
 COMMENT=	building material for websites
 
 V=		5.0.0
 DISTNAME=	concrete${V}_2
 PKGNAME=	concrete5-${V}
+REVISION=	0
 EXTRACT_SUFX=	.zip
 CATEGORIES=	www
 HOMEPAGE=	http://www.concrete5.org/
@@ -26,8 +27,9 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/concrete5
 SUBST_VARS=	INSTDIR
 
+MODULES=	lang/php
 BUILD_DEPENDS=	archivers/unzip
-RUN_DEPENDS=	www/php5/extensions,-mysql
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-mysql
 
 do-install:
 	@cd ${PREFIX} && ${UNZIP} -oq ${FULLDISTDIR}/${DISTFILES}

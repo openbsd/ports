@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.17 2011/06/02 13:41:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/07/09 00:14:45 robert Exp $
 
 COMMENT =	powerful content management system
- 
-DISTNAME =	drupal-6.22
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
-REVISION=	0
 
-RUN_DEPENDS = 	www/php5/core \
-	php5-mysql-*|php5-mysqli-*|php5-pgsql-*:www/php5/extensions,-mysql \
-		www/php5/extensions,-gd \
-		www/php5/extensions,-mbstring
-		
+DISTNAME =	drupal-6.22
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX}
+REVISION =	1
+
+RUN_DEPENDS=	php-mysql-*|php-mysqli-*|php-pgsql-*:lang/php/${MODPHP_VERSION},-mysql \
+		lang/php/${MODPHP_VERSION},-gd
+
 do-install:
 		mkdir -p ${PREFIX}/${DRUPAL_ROOT}
 		# copy base distrib

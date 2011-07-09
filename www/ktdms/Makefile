@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2011/06/02 13:41:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/07/09 00:14:46 robert Exp $
 
 COMMENT=	web-based document management system
 
 V=		3.5.1
 DISTNAME=	ktdms-${V}
-REVISION=	3
+REVISION=	4
 DISTFILES=	ktdms-src-oss-${V}.tgz
 
 CATEGORIES=	www
@@ -27,11 +27,10 @@ INSTDIR=	${PREFIX}/ktdms
 SUBST_VARS=	INSTDIR
 WRKDIST=	${WRKDIR}/knowledgeTree-OSS
 
-RUN_DEPENDS=	www/php5/core \
-		www/php5/extensions,-mbstring \
-		www/php5/extensions,-gd \
-		www/php5/extensions,-mysql \
-		www/php5/extensions,-ldap \
+MODULES=	lang/php
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd \
+		lang/php/${MODPHP_VERSION},-mysql \
+		lang/php/${MODPHP_VERSION},-ldap \
 		www/pear \
 		databases/pear-DB \
 		devel/pear-Log \

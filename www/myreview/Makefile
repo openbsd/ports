@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2011/04/02 16:56:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/07/09 00:14:46 robert Exp $
 
 COMMENT=	web-based conference management software
 
 V=		1.9.9
 DISTNAME=	myreview_${V:S/./_/g}
 PKGNAME=	myreview-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} myreview_v1.pdf:0
@@ -30,8 +30,9 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/myreview
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	www/php5/extensions,-mysql
-		
+MODULES=	lang/php
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-mysql
+
 do-install:
 	@cd ${PREFIX} && tar -zxf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 	@mv ${INSTDIR}/DBInfo.php ${INSTDIR}/DBInfo.php.sample

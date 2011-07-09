@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2011/01/05 11:51:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/07/09 00:14:46 robert Exp $
 
 COMMENT =	web-based collaborative editing environment
 
 DISTNAME =	mediawiki-1.15.5
-REVISION =	0
+REVISION =	1
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.mediawiki.org/
@@ -26,7 +26,8 @@ PREFIX=		/var/www
 INSTDIR=	${PREFIX}/mediawiki
 SUBST_VARS=	INSTDIR
 
-RUN_DEPENDS=	www/php5/extensions,-gd
+MODULES=	lang/php
+RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-gd
 
 do-install:
 	@mv ${WRKDIST} ${INSTDIR}
