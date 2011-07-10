@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2011/04/11 14:47:17 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2011/07/10 12:21:47 jasper Exp $
 
 COMMENT=		source code suggestions for Haskell
 
-DISTNAME=		hlint-1.8.3
-REVISION=		1
+DISTNAME=		hlint-1.8.13
 CATEGORIES=		devel
 
 HOMEPAGE=		http://community.haskell.org/~ndm/hlint/
@@ -25,11 +24,11 @@ MODGHC_BUILD=		cabal hackage haddock register
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/cpphs,-lib \
-			devel/hscolour>=1.17 \
+			devel/hscolour>=1.17,<1.20 \
 			devel/hs-syb \
-			devel/hs-transformers \
-			devel/hs-uniplate \
-			lang/hs-haskell-src-exts>=1.9.6
+			devel/hs-transformers<0.3 \
+			devel/hs-uniplate>=1.5,<1.7 \
+			lang/hs-haskell-src-exts>=1.11.*
 LIB_DEPENDS=		devel/gmp
 
 post-install:

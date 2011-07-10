@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/11 14:47:17 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/07/10 12:21:47 jasper Exp $
 @bin bin/hlint
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/Apply.hi
@@ -16,6 +16,7 @@ lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Hint/
 lib/ghc/${DISTNAME}/Hint/All.hi
 lib/ghc/${DISTNAME}/Hint/Bracket.hi
+lib/ghc/${DISTNAME}/Hint/Duplicate.hi
 lib/ghc/${DISTNAME}/Hint/Extensions.hi
 lib/ghc/${DISTNAME}/Hint/Import.hi
 lib/ghc/${DISTNAME}/Hint/Lambda.hi
@@ -68,4 +69,4 @@ share/hs-${DISTNAME}/HLint.hs
 share/hs-${DISTNAME}/Test.hs
 share/hs-${DISTNAME}/hlint.ghci
 share/hs-${DISTNAME}/hs-lint.el
-share/hs-${DISTNAME}/report.html
+share/hs-${DISTNAME}/report_template.html
