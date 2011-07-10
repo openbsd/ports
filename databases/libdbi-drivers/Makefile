@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/07/06 22:56:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/07/10 10:17:14 espie Exp $
 
 V =			0.8.3-1
 COMMENT-main =		mysql driver for libdbi
@@ -51,18 +51,22 @@ CONFIGURE_ARGS =	--disable-docs \
 WANTLIB-main =		crypto m ssl z mysqlclient dbi
 LIB_DEPENDS-main =	databases/mysql \
 			databases/libdbi
+RUN_DEPENDS-main =
 
 WANTLIB-pgsql =		m pq dbi com_err crypto ssl
 LIB_DEPENDS-pgsql =	databases/postgresql \
 			databases/libdbi
+RUN_DEPENDS-pgsql =
 
 WANTLIB-sqlite =	m sqlite dbi
 LIB_DEPENDS-sqlite =	databases/sqlite \
 			databases/libdbi
+RUN_DEPENDS-sqlite =
 
 WANTLIB-sqlite3 =	m sqlite3 dbi
 LIB_DEPENDS-sqlite3 =	databases/sqlite3 \
 			databases/libdbi
+RUN_DEPENDS-sqlite3 =
 
 WANTLIB-freetds =	m ct dbi gcrypt gmp gnutls gpg-error hogweed \
 			nettle tasn1 z ${MODGETTEXT_WANTLIB}
