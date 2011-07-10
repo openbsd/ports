@@ -1,4 +1,4 @@
-/* $OpenBSD: mem.c,v 1.9 2011/07/09 08:04:14 jasper Exp $	*/
+/* $OpenBSD: mem.c,v 1.10 2011/07/10 14:42:39 jasper Exp $	*/
 
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
@@ -28,6 +28,7 @@
 
 #include <glibtop_suid.h>
 
+#include <sys/mount.h>
 #include <sys/sysctl.h>
 #include <sys/vmmeter.h>
 #include <uvm/uvm_extern.h>
@@ -38,6 +39,7 @@ static const unsigned long _glibtop_sysdeps_mem =
 (1L << GLIBTOP_MEM_FREE) +
 (1L << GLIBTOP_MEM_SHARED) +
 (1L << GLIBTOP_MEM_BUFFER) +
+(1L << GLIBTOP_MEM_CACHED) +
 (1L << GLIBTOP_MEM_USER) + (1L << GLIBTOP_MEM_LOCKED);
 
 #ifndef LOG1024
@@ -59,6 +61,7 @@ static struct nlist nlst [] = {
 /* MIB array for sysctl */
 static int vmmeter_mib [] = { CTL_VM, VM_METER };
 static int uvmexp_mib  [] = { CTL_VM, VM_UVMEXP };
+static int bcstats_mib [] = { CTL_VFS, VFS_GENERIC, VFS_BCACHESTAT };
 
 /* Init function. */
 
@@ -93,6 +96,8 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 	size_t length_vmt;
 	struct uvmexp uvmexp;
 	size_t length_uvmexp;
+	struct bcachestats bcstats;
+	size_t length_bcstats;
 	u_int v_used_count;
 	u_int v_total_count;
 	u_int v_free_count;
@@ -108,12 +113,21 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 	length_vmt = sizeof (vmt);
 	if (sysctl (vmmeter_mib, 2, &vmt, &length_vmt, NULL, 0)) {
 		glibtop_warn_io_r (server, "sysctl (vm.vmmeter)");
+		bzero(&vmt, sizeof(length_vmt));
 		return;
 	}
 
 	length_uvmexp = sizeof (uvmexp);
 	if (sysctl (uvmexp_mib, 2, &uvmexp, &length_uvmexp, NULL, 0)) {
 		glibtop_warn_io_r (server, "sysctl (vm.uvmexp)");
+		bzero(&uvmexp, sizeof(length_uvmexp));
+		return;
+	}
+
+	length_bcstats = sizeof (bcstats);
+	if (sysctl (bcstats_mib, 3, &bcstats, &length_bcstats, NULL, 0)) {
+		glibtop_warn_io_r (server, "sysctl (vfs.generic.bcstats)");
+		bzero(&bcstats, sizeof(length_bcstats));
 		return;
 	}
 
@@ -132,9 +146,10 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 	buf->free  = (guint64) pagetok (v_free_count) << LOG1024;
 	buf->locked = (guint64) pagetok (uvmexp.wired) << LOG1024;
 	buf->shared = (guint64) pagetok (vmt.t_rmshr) << LOG1024;
+	buf->cached = (guint64) pagetok (bcstats.numbufpages) << LOG1024;
 	buf->buffer = 0;
 
-	buf->user = buf->total - buf->free - buf->shared - buf->buffer;
+	buf->user = buf->total - buf->free - buf->cached - buf->buffer;
 
 	/* Set the values to return */
 	buf->flags = _glibtop_sysdeps_mem;
