@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2005/02/23 20:14:34 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/10 16:50:37 jasper Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/SSH/
 ${P5SITE}/Net/SSH/Perl/
@@ -32,6 +32,7 @@ ${P5SITE}/Net/SSH/Perl/Comp/Zlib.pm
 ${P5SITE}/Net/SSH/Perl/Config.pm
 ${P5SITE}/Net/SSH/Perl/Constants.pm
 ${P5SITE}/Net/SSH/Perl/Handle/
+${P5SITE}/Net/SSH/Perl/Handle.pm
 ${P5SITE}/Net/SSH/Perl/Handle/SSH1.pm
 ${P5SITE}/Net/SSH/Perl/Handle/SSH2.pm
 ${P5SITE}/Net/SSH/Perl/Kex/
@@ -46,6 +47,9 @@ ${P5SITE}/Net/SSH/Perl/Mac.pm
 ${P5SITE}/Net/SSH/Perl/Packet.pm
 ${P5SITE}/Net/SSH/Perl/SSH1.pm
 ${P5SITE}/Net/SSH/Perl/SSH2.pm
+${P5SITE}/Net/SSH/Perl/Subsystem/
+${P5SITE}/Net/SSH/Perl/Subsystem/Client.pm
+${P5SITE}/Net/SSH/Perl/Subsystem/Server.pm
 ${P5SITE}/Net/SSH/Perl/Util/
 ${P5SITE}/Net/SSH/Perl/Util.pm
 ${P5SITE}/Net/SSH/Perl/Util/Authfile.pm
@@ -80,6 +84,7 @@ ${P5SITE}/Net/SSH/Perl/Util/Term.pm
 @man man/man3p/Net::SSH::Perl::Comp::Zlib.3p
 @man man/man3p/Net::SSH::Perl::Config.3p
 @man man/man3p/Net::SSH::Perl::Constants.3p
+@man man/man3p/Net::SSH::Perl::Handle.3p
 @man man/man3p/Net::SSH::Perl::Kex.3p
 @man man/man3p/Net::SSH::Perl::Kex::DH1.3p
 @man man/man3p/Net::SSH::Perl::Key.3p
@@ -90,4 +95,13 @@ ${P5SITE}/Net/SSH/Perl/Util/Term.pm
 @man man/man3p/Net::SSH::Perl::Packet.3p
 @man man/man3p/Net::SSH::Perl::SSH1.3p
 @man man/man3p/Net::SSH::Perl::SSH2.3p
+@man man/man3p/Net::SSH::Perl::Subsystem::Client.3p
+@man man/man3p/Net::SSH::Perl::Subsystem::Server.3p
 @man man/man3p/Net::SSH::Perl::Util.3p
+share/examples/p5-Net-SSH-Perl/
+share/examples/p5-Net-SSH-Perl/cmd.pl
+share/examples/p5-Net-SSH-Perl/pscp
+share/examples/p5-Net-SSH-Perl/pssh
+share/examples/p5-Net-SSH-Perl/pssh-keygen
+share/examples/p5-Net-SSH-Perl/remoteinteract.pl
+share/examples/p5-Net-SSH-Perl/remoteinteract2.pl
