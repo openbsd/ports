@@ -1,4 +1,4 @@
-/* $OpenBSD: cpu.c,v 1.6 2011/05/31 14:19:18 jasper Exp $	*/
+/* $OpenBSD: cpu.c,v 1.7 2011/07/10 15:23:01 jasper Exp $	*/
 
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
@@ -70,14 +70,14 @@ glibtop_get_cpu_p (glibtop *server, glibtop_cpu *buf)
 
 	length = sizeof (cpts);
 	if (sysctl (mib2, mib_length, cpts, &length, NULL, 0)) {
-		glibtop_warn_io_r (server, "sysctl");
+		glibtop_warn_io_r (server, "sysctl (kern.cptime)");
 		return;
 	}
 
 	/* Get the clockrate data */
 	length = sizeof (struct clockinfo);
 	if (sysctl (mib, mib_length, &ci, &length, NULL, 0)) {
-		glibtop_warn_io_r (server, "sysctl");
+		glibtop_warn_io_r (server, "sysctl (kern.clockrate)");
 		return;
 	}
 

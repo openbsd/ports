@@ -1,4 +1,4 @@
-/* $OpenBSD: mem.c,v 1.10 2011/07/10 14:42:39 jasper Exp $	*/
+/* $OpenBSD: mem.c,v 1.11 2011/07/10 15:23:01 jasper Exp $	*/
 
 /* Copyright (C) 1998 Joshua Sled
    This file is part of LibGTop 1.0.
@@ -35,12 +35,10 @@
 #include <uvm/uvm_param.h>
 
 static const unsigned long _glibtop_sysdeps_mem =
-(1L << GLIBTOP_MEM_TOTAL) + (1L << GLIBTOP_MEM_USED) +
-(1L << GLIBTOP_MEM_FREE) +
-(1L << GLIBTOP_MEM_SHARED) +
-(1L << GLIBTOP_MEM_BUFFER) +
-(1L << GLIBTOP_MEM_CACHED) +
-(1L << GLIBTOP_MEM_USER) + (1L << GLIBTOP_MEM_LOCKED);
+(1L << GLIBTOP_MEM_TOTAL)  + (1L << GLIBTOP_MEM_USED) +
+(1L << GLIBTOP_MEM_FREE)   + (1L << GLIBTOP_MEM_SHARED) +
+(1L << GLIBTOP_MEM_BUFFER) + (1L << GLIBTOP_MEM_CACHED) +
+(1L << GLIBTOP_MEM_USER)   + (1L << GLIBTOP_MEM_LOCKED);
 
 #ifndef LOG1024
 #define LOG1024		10
@@ -93,14 +91,12 @@ void
 glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 {
 	struct vmtotal vmt;
-	size_t length_vmt;
 	struct uvmexp uvmexp;
-	size_t length_uvmexp;
 	struct bcachestats bcstats;
-	size_t length_bcstats;
 	u_int v_used_count;
 	u_int v_total_count;
 	u_int v_free_count;
+	size_t length;
 
 	glibtop_init_p (server, (1L << GLIBTOP_SYSDEPS_MEM), 0);
 
@@ -110,24 +106,24 @@ glibtop_get_mem_p (glibtop *server, glibtop_mem *buf)
 		return;
 
 	/* Get the data from sysctl */
-	length_vmt = sizeof (vmt);
-	if (sysctl (vmmeter_mib, 2, &vmt, &length_vmt, NULL, 0)) {
+	length = sizeof (vmt);
+	if (sysctl (vmmeter_mib, 2, &vmt, &length, NULL, 0)) {
 		glibtop_warn_io_r (server, "sysctl (vm.vmmeter)");
-		bzero(&vmt, sizeof(length_vmt));
+		bzero(&vmt, sizeof(length));
 		return;
 	}
 
-	length_uvmexp = sizeof (uvmexp);
-	if (sysctl (uvmexp_mib, 2, &uvmexp, &length_uvmexp, NULL, 0)) {
+	length = sizeof (uvmexp);
+	if (sysctl (uvmexp_mib, 2, &uvmexp, &length, NULL, 0)) {
 		glibtop_warn_io_r (server, "sysctl (vm.uvmexp)");
-		bzero(&uvmexp, sizeof(length_uvmexp));
+		bzero(&uvmexp, sizeof(length));
 		return;
 	}
 
-	length_bcstats = sizeof (bcstats);
-	if (sysctl (bcstats_mib, 3, &bcstats, &length_bcstats, NULL, 0)) {
+	length = sizeof (bcstats);
+	if (sysctl (bcstats_mib, 3, &bcstats, &length, NULL, 0)) {
 		glibtop_warn_io_r (server, "sysctl (vfs.generic.bcstats)");
-		bzero(&bcstats, sizeof(length_bcstats));
+		bzero(&bcstats, sizeof(length));
 		return;
 	}
 

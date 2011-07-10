@@ -1,4 +1,4 @@
-/* $OpenBSD: swap.c,v 1.6 2011/05/25 10:44:34 jasper Exp $	*/
+/* $OpenBSD: swap.c,v 1.7 2011/07/10 15:23:01 jasper Exp $	*/
 
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
@@ -79,7 +79,7 @@ glibtop_get_swap_p (glibtop *server, glibtop_swap *buf)
 
 	length_uvmexp = sizeof (uvmexp);
 	if (sysctl (mib_uvmexp, 2, &uvmexp, &length_uvmexp, NULL, 0)) {
-		glibtop_warn_io_r (server, "sysctl (uvmexp)");
+		glibtop_warn_io_r (server, "sysctl (vm.uvmexp)");
 		return;
 	}
 
