@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.192 2011/07/02 23:10:25 edd Exp $
+# $OpenBSD: Makefile,v 1.193 2011/07/10 13:31:55 jasper Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	alpha amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -13,7 +13,7 @@ SUBST_VARS += 		PREFIX CONFDIR
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		8
+REVISION =		9
 
 CATEGORIES =		x11 multimedia
 
