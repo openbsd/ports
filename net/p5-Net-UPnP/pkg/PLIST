@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2008/10/08 17:16:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/07/10 16:45:58 jasper Exp $
 ${P5SITE}/Net/
 ${P5SITE}/Net/UPnP/
 ${P5SITE}/Net/UPnP.pm
@@ -6,6 +6,7 @@ ${P5SITE}/Net/UPnP/AV/
 ${P5SITE}/Net/UPnP/AV/Container.pm
 ${P5SITE}/Net/UPnP/AV/Content.pm
 ${P5SITE}/Net/UPnP/AV/Item.pm
+${P5SITE}/Net/UPnP/AV/MediaRenderer.pm
 ${P5SITE}/Net/UPnP/AV/MediaServer.pm
 ${P5SITE}/Net/UPnP/ActionResponse.pm
 ${P5SITE}/Net/UPnP/ControlPoint.pm
@@ -20,6 +21,7 @@ ${P5SITE}/Net/UPnP/Service.pm
 @man man/man3p/Net::UPnP::AV::Container.3p
 @man man/man3p/Net::UPnP::AV::Content.3p
 @man man/man3p/Net::UPnP::AV::Item.3p
+@man man/man3p/Net::UPnP::AV::MediaRenderer.3p
 @man man/man3p/Net::UPnP::AV::MediaServer.3p
 @man man/man3p/Net::UPnP::ActionResponse.3p
 @man man/man3p/Net::UPnP::ControlPoint.3p
@@ -31,8 +33,10 @@ ${P5SITE}/Net/UPnP/Service.pm
 @man man/man3p/Net::UPnP::Service.3p
 share/examples/p5-Net-UPnP/
 share/examples/p5-Net-UPnP/dms2vodcast.pl
+share/examples/p5-Net-UPnP/upnpavchk.pl
 share/examples/p5-Net-UPnP/upnpavdump.pl
 share/examples/p5-Net-UPnP/upnpavsimple.pl
+share/examples/p5-Net-UPnP/upnpchk.pl
 share/examples/p5-Net-UPnP/upnpdump.pl
 share/examples/p5-Net-UPnP/upnpgwdump.pl
 share/examples/p5-Net-UPnP/upnpgwtool.pl
