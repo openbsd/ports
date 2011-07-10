@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/07/08 23:04:53 robert Exp $
+# $OpenBSD: Makefile,v 1.14 2011/07/10 19:28:46 jasper Exp $
 
 COMMENT=	tool to handle the administration of PostgreSQL over the web
 
@@ -20,6 +20,8 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=phppgadmin/}
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 PKG_ARCH=	*
+
+MODULES=	lang/php
 
 PREFIX=		/var/www
 INSTDIR=	${PREFIX}/phpPgAdmin
