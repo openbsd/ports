@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/11 14:45:14 kili Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/07/10 12:20:40 jasper Exp $
 @bin bin/HsColour
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
@@ -6,6 +6,7 @@ lib/ghc/${DISTNAME}/Language/
 lib/ghc/${DISTNAME}/Language/Haskell/
 lib/ghc/${DISTNAME}/Language/Haskell/HsColour/
 lib/ghc/${DISTNAME}/Language/Haskell/HsColour.hi
+lib/ghc/${DISTNAME}/Language/Haskell/HsColour/ACSS.hi
 lib/ghc/${DISTNAME}/Language/Haskell/HsColour/ANSI.hi
 lib/ghc/${DISTNAME}/Language/Haskell/HsColour/Anchors.hi
 lib/ghc/${DISTNAME}/Language/Haskell/HsColour/CSS.hi
@@ -28,6 +29,7 @@ lib/ghc/${DISTNAME}/unregister.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENCE-GPL
 share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/Language-Haskell-HsColour-ACSS.html
 share/doc/hs-${DISTNAME}/html/Language-Haskell-HsColour-ANSI.html
 share/doc/hs-${DISTNAME}/html/Language-Haskell-HsColour-Anchors.html
 share/doc/hs-${DISTNAME}/html/Language-Haskell-HsColour-CSS.html
@@ -50,6 +52,7 @@ share/doc/hs-${DISTNAME}/html/hscolour.haddock
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/mini_Language-Haskell-HsColour-ACSS.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Haskell-HsColour-ANSI.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Haskell-HsColour-Anchors.html
 share/doc/hs-${DISTNAME}/html/mini_Language-Haskell-HsColour-CSS.html
@@ -70,4 +73,6 @@ share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif
 share/doc/hs-${DISTNAME}/html/synopsis.png
 share/hs-${DISTNAME}/
+share/hs-${DISTNAME}/data/
+share/hs-${DISTNAME}/data/rgb24-example-.hscolour
 share/hs-${DISTNAME}/hscolour.css
