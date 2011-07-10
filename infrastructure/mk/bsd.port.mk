@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1094 2011/07/08 22:44:16 ajacoutot Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1095 2011/07/10 17:15:08 jasper Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -131,15 +131,14 @@ ARCH ?!= uname -m
 
 ALL_ARCHS = alpha amd64 arm armish arm hppa hppa64 i386 landisk \
 	loongson luna88k m68k m88k mac68k macppc mips64 mips64el \
-	mvme68k mvme88k mvmeppc palm sgi socppc sparc sparc64 vax zaurus
+	mvme68k mvme88k palm sgi socppc sparc sparc64 vax zaurus
 # not all powerpc have apm(4), hence the use of macppc
 APM_ARCHS = amd64 arm i386 loongson macppc sparc sparc64
 LP64_ARCHS = alpha amd64 hppa64 sparc64 mips64 mips64el
 NO_SHARED_ARCHS = m88k vax
-GCC4_ARCHS = amd64 i386 hppa loongson macppc mips64 mips64el mvmeppc powerpc \
-	sgi socppc sparc sparc64
-GCC3_ARCHS = alpha arm armish beagle gumstix hppa64 \
-	landisk palm sh zaurus
+GCC4_ARCHS = amd64 arm armish beagle gumstix i386 hppa loongson macppc mips64 \
+	mips64el mvmeppc palm powerpc sgi socppc sparc sparc64 zaurus
+GCC3_ARCHS = alpha hppa64 landisk sh
 GCC2_ARCHS = aviion luna88k m68k m88k mac68k mvme68k mvme88k vax
 
 # Set NO_SHARED_LIBS for those machines that don't support shared libraries.
