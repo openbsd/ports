@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/07/09 00:14:45 robert Exp $
+# $OpenBSD: Makefile,v 1.9 2011/07/10 19:30:51 jasper Exp $
 
 COMMENT=	modular framework for web-based applications
 
@@ -27,7 +27,6 @@ RUN_DEPENDS+=	databases/pear-DB \
 		www/pear-HTTP-WebDAV-Server \
 		www/pear-SOAP \
 		www/pecl-geoip \
-		www/php5/core>=5.2.0 \
 		lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-mcrypt \
 		php-mysql-*|php-pgsql-*:lang/php/${MODPHP_VERSION},-pgsql
