@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/24 19:49:43 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/10 19:35:17 kili Exp $
 
 # This port is not wired to the build by intention. It's not even
 # meant to be build, because it's just a helper port to avoid
@@ -7,7 +7,7 @@
 
 COMMENT =		data for lilypond regression tests
 
-DISTNAME =		lilypond-test-baseline-2.12.3
+DISTNAME =		lilypond-test-baseline-2.14.1
 
 CATEGORIES =		print
 
