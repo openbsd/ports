@@ -1,4 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.3 2004/09/14 23:31:46 espie Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/07/10 12:02:24 jasper Exp $
+bin/format-sql
+${P5SITE}/DBIx/
+${P5SITE}/DBIx/Class/
+${P5SITE}/DBIx/Class/Storage/
+${P5SITE}/DBIx/Class/Storage/Debug/
+${P5SITE}/DBIx/Class/Storage/Debug/PrettyPrint.pm
 ${P5SITE}/SQL/
+${P5SITE}/SQL/Abstract/
 ${P5SITE}/SQL/Abstract.pm
+${P5SITE}/SQL/Abstract/Test.pm
+${P5SITE}/SQL/Abstract/Tree.pm
+@man man/man3p/DBIx::Class::Storage::Debug::PrettyPrint.3p
 @man man/man3p/SQL::Abstract.3p
+@man man/man3p/SQL::Abstract::Test.3p
+@man man/man3p/SQL::Abstract::Tree.3p
