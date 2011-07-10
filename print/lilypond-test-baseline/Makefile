@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/10 19:35:17 kili Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/10 19:38:17 jasper Exp $
 
 # This port is not wired to the build by intention. It's not even
-# meant to be build, because it's just a helper port to avoid
+# meant to be built, because it's just a helper port to avoid
 # downloading that huge distfile if you only want to build lilypond
 # and not run the regression tests.
 

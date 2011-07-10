@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/07/03 21:49:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/10 19:38:17 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -36,7 +36,7 @@ NO_REGRESS=		Yes
 
 PROCESSING_HOME=	${PREFIX}/share/processing/
 
-# Thrash > 125M of files we don't care about: the pre-compiled Java binaries
+# Trash > 125M of files we don't care about: the pre-compiled Java binaries
 # for Linux. And adjust the wrapper script.
 do-build:
 	rm -fr ${WRKSRC}/java/ ${WRKSRC}/lib/preferences.txt.orig
