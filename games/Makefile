@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.230 2011/07/05 07:51:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.231 2011/07/10 09:58:30 jasper Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -103,6 +103,7 @@
      SUBDIR += lostpixels
      SUBDIR += love
      SUBDIR += maelstrom
+     SUBDIR += manaplus
      SUBDIR += micropolis
      SUBDIR += mirrormagic
      SUBDIR += mnemosyne
