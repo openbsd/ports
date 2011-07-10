@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/06/30 17:02:42 jim Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/10 12:17:42 jasper Exp $
 ${P5SITE}/PPIx/
 ${P5SITE}/PPIx/Regexp/
 ${P5SITE}/PPIx/Regexp.pm
@@ -33,7 +33,9 @@ ${P5SITE}/PPIx/Regexp/Token/Backreference.pm
 ${P5SITE}/PPIx/Regexp/Token/Backtrack.pm
 ${P5SITE}/PPIx/Regexp/Token/CharClass/
 ${P5SITE}/PPIx/Regexp/Token/CharClass.pm
+${P5SITE}/PPIx/Regexp/Token/CharClass/POSIX/
 ${P5SITE}/PPIx/Regexp/Token/CharClass/POSIX.pm
+${P5SITE}/PPIx/Regexp/Token/CharClass/POSIX/Unknown.pm
 ${P5SITE}/PPIx/Regexp/Token/CharClass/Simple.pm
 ${P5SITE}/PPIx/Regexp/Token/Code.pm
 ${P5SITE}/PPIx/Regexp/Token/Comment.pm
@@ -62,6 +64,7 @@ ${P5SITE}/PPIx/Regexp/Token/Unknown.pm
 ${P5SITE}/PPIx/Regexp/Token/Unmatched.pm
 ${P5SITE}/PPIx/Regexp/Token/Whitespace.pm
 ${P5SITE}/PPIx/Regexp/Tokenizer.pm
+${P5SITE}/PPIx/Regexp/Util.pm
 @man man/man3p/PPIx::Regexp.3p
 @man man/man3p/PPIx::Regexp::Constant.3p
 @man man/man3p/PPIx::Regexp::Dumper.3p
@@ -91,6 +94,7 @@ ${P5SITE}/PPIx/Regexp/Tokenizer.pm
 @man man/man3p/PPIx::Regexp::Token::Backtrack.3p
 @man man/man3p/PPIx::Regexp::Token::CharClass.3p
 @man man/man3p/PPIx::Regexp::Token::CharClass::POSIX.3p
+@man man/man3p/PPIx::Regexp::Token::CharClass::POSIX::Unknown.3p
 @man man/man3p/PPIx::Regexp::Token::CharClass::Simple.3p
 @man man/man3p/PPIx::Regexp::Token::Code.3p
 @man man/man3p/PPIx::Regexp::Token::Comment.3p
@@ -118,3 +122,4 @@ ${P5SITE}/PPIx/Regexp/Tokenizer.pm
 @man man/man3p/PPIx::Regexp::Token::Unmatched.3p
 @man man/man3p/PPIx::Regexp::Token::Whitespace.3p
 @man man/man3p/PPIx::Regexp::Tokenizer.3p
+@man man/man3p/PPIx::Regexp::Util.3p

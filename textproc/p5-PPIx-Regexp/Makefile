@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/10 12:17:42 jasper Exp $
 
 COMMENT=		parse regular expressions
 
 MODULES=		cpan
-DISTNAME=		PPIx-Regexp-0.007
-REVISION=		0
+DISTNAME=		PPIx-Regexp-0.020
 CATEGORIES=		textproc
 USE_GROFF =		Yes
 
@@ -15,6 +14,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 CPAN_AUTHOR=		WYANT
+
+CONFIGURE_STYLE=	modbuild
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/p5-List-MoreUtils \
