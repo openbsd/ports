@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/10 12:17:36 jasper Exp $
 
 COMMENT=		extensions to PPI
 
 MODULES=		cpan
-DISTNAME=		PPIx-Utilities-1.000001
-REVISION=		0
+DISTNAME=		PPIx-Utilities-1.001000
 CATEGORIES=		textproc
 USE_GROFF =		Yes
 
@@ -16,8 +15,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 CPAN_AUTHOR=		ELLIOTJS
 
+CONFIGURE_STYLE=	modbuild
+
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		devel/p5-Exception-Class
+RUN_DEPENDS=		devel/p5-Exception-Class \
+			devel/p5-Readonly \
+			textproc/p5-PPI
 
 REGRESS_DEPENDS=	devel/p5-Test-Deep
 
