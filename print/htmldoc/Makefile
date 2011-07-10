@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/20 09:48:39 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/07/10 09:40:57 jasper Exp $
 
 COMMENT=	convert HTML pages to PDF/PS format
 
@@ -6,13 +6,13 @@ V=			1.8.27
 DISTNAME=		htmldoc-${V}
 CATEGORIES=     	print www
 
-REVISION=		5
+REVISION=		6
 
 HOMEPAGE=		http://www.htmldoc.org/
 
 MAINTAINER=		Benoit Lecocq <benoit@openbsd.org>
 
-# GPL
+# GPLv2 with OpenSSL exception.
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
@@ -26,20 +26,13 @@ MASTER_SITES=		ftp://ftp.easysw.com/pub/htmldoc/${V}/ \
 			ftp://ftp.funet.fi/pub/mirrors/ftp.easysw.com/pub/htmldoc/${V}/ \
 			ftp://ftp.rz.tu-bs.de/pub/mirror/ftp.easysw.com/ftp/pub/htmldoc/${V}/
 
-FLAVORS=		no_x11
-FLAVOR?=
 USE_GROFF =		Yes
 
-.if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS+=	--without-gui
 LIB_DEPENDS=		graphics/jpeg \
 			graphics/png
-.else
-LIB_DEPENDS=		x11/fltk
-WANTLIB+=		X11 Xau Xdmcp Xext Xpm fltk fltk_images pthread
-.endif
 
 CONFIGURE_STYLE=	gnu dest
+CONFIGURE_ARGS+=	--without-gui
 CONFIGURE_ENV= 		LDFLAGS="-L${LOCALBASE}/lib" \
 			CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include \
 				-I${LOCALBASE}/include/libpng" \

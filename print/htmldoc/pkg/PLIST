@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.5 2006/09/23 10:14:34 steven Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/07/10 09:40:57 jasper Exp $
+@pkgpath print/htmldoc,no_x11
 bin/htmldoc
 @man man/man1/htmldoc.1
 share/doc/htmldoc/
