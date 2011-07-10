@@ -1,4 +1,4 @@
-/* $OpenBSD: proctime.c,v 1.4 2011/05/31 14:02:26 jasper Exp $	*/
+/* $OpenBSD: proctime.c,v 1.5 2011/07/10 15:29:26 jasper Exp $	*/
 
 /* Copyright (C) 1998-99 Martin Baulig
    This file is part of LibGTop 1.0.
@@ -66,11 +66,8 @@ _glibtop_init_proc_time_p (glibtop *server)
  */
 
 static void
-calcru(p, up, sp, ip)
-     struct proc *p;
-     struct timeval *up;
-     struct timeval *sp;
-     struct timeval *ip;
+calcru(struct proc *p, struct timeval *up, struct timeval *sp,
+    struct timeval *ip)
 {
 	quad_t totusec;
 	u_quad_t u, st, ut, it, tot;
