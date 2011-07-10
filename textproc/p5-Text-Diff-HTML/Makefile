@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/07/10 12:17:30 jasper Exp $
 
 COMMENT=		XHTML format for Text::Diff::Unified
 
 MODULES=		cpan
-DISTNAME=		Text-Diff-HTML-0.06
-REVISION=		0
+DISTNAME=		Text-Diff-HTML-0.07
 CATEGORIES=		textproc www
 USE_GROFF =		Yes
 
