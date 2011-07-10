@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/14 21:56:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/10 14:46:50 jasper Exp $
 
 COMMENT=	sytem monitor for GNOME
 
 GNOME_PROJECT=	gnome-system-monitor
 GNOME_VERSION=	3.0.1
 
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	sysutils
 
@@ -32,7 +32,7 @@ MODULES=	devel/dconf \
 
 RUN_DEPENDS=	x11/gnome/icon-theme
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	devel/libgtop2>=2.28.1p8 \
+LIB_DEPENDS=	devel/libgtop2>=2.28.3p23 \
 		devel/libwnck3 \
 		x11/gnome/librsvg \
 		x11/gtk3mm
