@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2011/06/21 08:44:09 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.32 2011/07/11 10:09:26 giovanni Exp $
 @group daemon
 piwik/
 piwik/LEGALNOTICE
@@ -145,6 +145,8 @@ piwik/core/SegmentExpression.php
 piwik/core/Session/
 piwik/core/Session.php
 piwik/core/Session/Namespace.php
+piwik/core/Session/SaveHandler/
+piwik/core/Session/SaveHandler/DbTable.php
 piwik/core/Site.php
 piwik/core/Smarty.php
 piwik/core/SmartyPlugins/
@@ -1625,7 +1627,6 @@ piwik/plugins/Referers/images/searchEngines/www.fixsuche.de.png
 piwik/plugins/Referers/images/searchEngines/www.flix.de.png
 piwik/plugins/Referers/images/searchEngines/www.gigablast.com.png
 piwik/plugins/Referers/images/searchEngines/www.gnadenmeer.de.png
-piwik/plugins/Referers/images/searchEngines/www.google.com.png
 piwik/plugins/Referers/images/searchEngines/www.google.interia.pl.png
 piwik/plugins/Referers/images/searchEngines/www.goyellow.de.png
 piwik/plugins/Referers/images/searchEngines/www.gulesider.no.png
@@ -2060,6 +2061,7 @@ piwik/plugins/UserSettings/images/browsers/AV.gif
 piwik/plugins/UserSettings/images/browsers/AW.gif
 piwik/plugins/UserSettings/images/browsers/BB.gif
 piwik/plugins/UserSettings/images/browsers/BE.gif
+piwik/plugins/UserSettings/images/browsers/BP.gif
 piwik/plugins/UserSettings/images/browsers/BX.gif
 piwik/plugins/UserSettings/images/browsers/CA.gif
 piwik/plugins/UserSettings/images/browsers/CH.gif
@@ -2124,6 +2126,7 @@ piwik/plugins/UserSettings/images/os/OS2.gif
 piwik/plugins/UserSettings/images/os/POS.gif
 piwik/plugins/UserSettings/images/os/PS3.gif
 piwik/plugins/UserSettings/images/os/PSP.gif
+piwik/plugins/UserSettings/images/os/QNX.gif
 piwik/plugins/UserSettings/images/os/SBA.gif
 piwik/plugins/UserSettings/images/os/SOS.gif
 piwik/plugins/UserSettings/images/os/SYL.gif
