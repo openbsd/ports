@@ -1,0 +1,4 @@
+The milter-checkrcpt plugin can be used with the milter API of
+sendmail(8) to filter mails with invalid recipients.  The validity of a
+recipient address is determined by querying another mail server over
+SMTP.

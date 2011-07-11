@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/11 12:12:53 okan Exp $
+@newgroup _milter-checkrcpt:679
+@newuser _milter-checkrcpt:679:_milter-checkrcpt:daemon:milter-checkrcpt Account:/nonexistent:/sbin/nologin
+@extraunexec rm -rf /var/spool/milter-checkrcpt/*
+@bin libexec/milter-checkrcpt
+@man man/man8/milter-checkrcpt.8
+@rcscript ${RCDIR}/milter_checkrcpt
+@mode 700
+@owner _milter-checkrcpt
+@group _milter-checkrcpt
+@sample /var/spool/milter-checkrcpt/

@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: milter_checkrcpt.rc,v 1.1.1.1 2011/07/11 12:12:53 okan Exp $
+
+daemon="${TRUEPREFIX}/libexec/milter-checkrcpt"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1
