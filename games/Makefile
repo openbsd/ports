@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.231 2011/07/10 09:58:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.232 2011/07/11 16:34:07 jasper Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -134,7 +134,6 @@
      SUBDIR += qgo
      SUBDIR += qstat
      SUBDIR += quake
-     SUBDIR += quake,gl
      SUBDIR += quake2
      SUBDIR += rftg
      SUBDIR += ri-li
