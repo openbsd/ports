@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:51 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/07/11 21:10:33 sthen Exp $
 
 COMMENT=	C++ client API for PostgreSQL
 
 DISTNAME=	libpqxx-2.5.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	databases
 SHARED_LIBS +=	pqxx                 1.0      # .0.0
 
-HOMEPAGE=	http://gborg.postgresql.org/project/libpqxx/
+HOMEPAGE=	http://pqxx.org/development/libpqxx/
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,8 +17,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += pq>=4
 
-MASTER_SITES=	http://gborg.postgresql.org/download/libpqxx/stable/ \
-		ftp://gborg.postgresql.org/pub/libpqxx/stable/
+MASTER_SITES=	http://pqxx.org/download/software/libpqxx/ \
+		ftp://pqxx.org/software/libpqxx/
 
 LIB_DEPENDS=	databases/postgresql
 
