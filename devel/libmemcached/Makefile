@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2011/06/02 17:09:31 kili Exp $
+# $OpenBSD: Makefile,v 1.10 2011/07/11 14:04:42 jasper Exp $
 
 COMMENT=		C C++ API for memcached
 
 VERSION=		0.48
 DISTNAME=		libmemcached-${VERSION}
+REVISION=		0
 CATEGORIES=		devel misc
 
 HOMEPAGE=		http://libmemcached.org/
@@ -22,10 +23,6 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-
-MODULES=		gcc3
-MODGCC3_ARCHES=		sparc
-MODGCC3_LANGS=		c++
 
 USE_GROFF =	Yes
 WANTLIB += c event m pthread sasl2

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2011/06/14 10:12:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/07/11 14:04:42 jasper Exp $
 
 COMMENT=		International Components for Unicode
 
 VERSION=		4.8
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME=		icu4c-${VERSION}
+REVISION=		0
 SO_VERSION=		4.0
 .for _lib in icudata icui18n icuio icule iculx icutest icutu icuuc
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
@@ -28,10 +29,6 @@ WANTLIB=		c m pthread stdc++
 MASTER_SITES=		http://download.icu-project.org/files/icu4c/${VERSION}/ \
 			${MASTER_SITE_SOURCEFORGE:=icu/}
 EXTRACT_SUFX=		.tgz
-
-MODULES=		gcc3
-MODGCC3_ARCHES=		sparc
-MODGCC3_LANGS=		c++
 
 USE_GMAKE=		Yes
 USE_GROFF=		Yes

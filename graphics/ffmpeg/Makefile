@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.74 2011/06/27 13:36:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.75 2011/07/11 14:04:42 jasper Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		20110408
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 
@@ -26,9 +26,6 @@ PERMIT_PACKAGE_CDROM=	patents
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-MODULES=	gcc3
-MODGCC3_ARCHES=	sparc
 
 WANTLIB=	SDL X11 Xext Xfixes bz2 c gsm m mp3lame ogg orc-0.4 \
 		pthread schroedinger-1.0>=2 sndio speex theoradec \

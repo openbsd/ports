@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/07/11 14:04:42 jasper Exp $
 
 COMMENT=		mpd client library
 
 VERSION=		0.20.0
 DISTNAME=		libmpd-${VERSION}
+REVISION=		0
 SHARED_LIBS=		mpd	3.2	#.3.0
 CATEGORIES=		audio
 
@@ -25,8 +26,6 @@ WANTLIB=		glib-2.0 pcre
 USE_LIBTOOL=		Yes
 CONFIGURE_STYLE=	gnu
 
-MODULES=		devel/gettext gcc3
-MODGCC3_ARCHES= 	sparc
-MODGCC3_LANGS=		c
+MODULES=		devel/gettext
 
 .include <bsd.port.mk>

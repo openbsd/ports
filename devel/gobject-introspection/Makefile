@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/06/28 10:41:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2011/07/11 14:04:42 jasper Exp $
 
 COMMENT=		GObject Introspection
 
@@ -6,7 +6,7 @@ GNOME_VERSION=		0.10.8
 GNOME_PROJECT=		gobject-introspection
 CATEGORIES=		devel
 
-REVISION=		7
+REVISION=		8
 
 SHARED_LIBS +=  girepository-1.0     1.0      # 1.0
 
@@ -24,9 +24,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext \
 			lang/python \
-			x11/gnome \
-			gcc3
-MODGCC3_ARCHES =        sparc
+			x11/gnome
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += m pcre pthread z

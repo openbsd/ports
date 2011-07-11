@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2011/01/15 01:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/11 14:04:42 jasper Exp $
 
 COMMENT =	extensible C++ library for XMPP clients and components
 
-REVISION =	1
+REVISION =	2
 DISTNAME =	gloox-1.0
 SHARED_LIBS =	gloox 0.0
 CATEGORIES =	net devel
@@ -18,9 +18,7 @@ PERMIT_PACKAGE_FTP =		Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
-MODULES =			devel/gettext gcc3
-MODGCC3_ARCHES =		sparc
-MODGCC3_LANGS =			c++
+MODULES =			devel/gettext
 WANTLIB =			idn m stdc++ ssl crypto z
 LIB_DEPENDS =			devel/libidn
 

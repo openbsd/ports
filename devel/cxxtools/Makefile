@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/01/15 01:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/11 14:04:42 jasper Exp $
 
 COMMENT=		various reusable C++-components
 
 DISTNAME=		cxxtools-1.4.7
-REVISION=		0
+REVISION=		1
 SHARED_LIBS +=	cxxtools             2.0      # .5.0
 CATEGORIES=		devel
 
@@ -22,12 +22,7 @@ MASTER_SITES=		http://www.tntnet.org/download/
 
 MODULES=		converters/libiconv
 
-MODULES+=		gcc3
-MODGCC3_ARCHES= 	sparc
-MODGCC3_LANGS=		c++
-
 USE_LIBTOOL=		Yes
-
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu

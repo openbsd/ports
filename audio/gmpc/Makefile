@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2010/11/26 07:07:56 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2011/07/11 14:04:42 jasper Exp $
 
 COMMENT=		GNOME music player client
 
 VERSION=		0.20.0
 DISTNAME=		gmpc-${VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		audio
 
@@ -29,10 +29,7 @@ WANTLIB=		ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=musicpd/}
 
-MODULES=		devel/gettext gcc3 textproc/intltool
-
-MODGCC3_ARCHES= 	sparc
-MODGCC3_LANGS=  	c
+MODULES=		devel/gettext textproc/intltool
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
