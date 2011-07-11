@@ -1,0 +1,26 @@
+$OpenBSD: patch-Makefile_common_in,v 1.1.1.1 2011/07/11 19:49:58 kili Exp $
+--- Makefile.common.in.orig	Thu Jun 23 23:22:48 2011
++++ Makefile.common.in	Thu Jun 23 23:28:36 2011
+@@ -52,6 +52,7 @@ INSTALL = @INSTALL@
+ INSTALL_DATA = @INSTALL_DATA@
+ UNINSTALL_DATA = rm -f
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
++DESTDIR =
+ prefix = @prefix@
+ exec_prefix = @exec_prefix@
+ bindir = @bindir@
+@@ -67,10 +68,10 @@ man1dir = $(mandir)/man1
+ 
+ # ------------------- defines -------------------------
+ 
+-INSTALL_BIN = echo installing $$file to $(bindir);$(INSTALL_PROGRAM) $$file $(bindir)/`echo $$file|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`
+-UNINSTALL_BIN = ff=`echo $$file|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`;echo rm -f $(bindir)/$$ff;rm -f $(bindir)/$$ff
+-INSTALL_MAN1 = ff=$(srcdir)/$$file.1; inst=`echo $$file | sed '$(transform)'`.1; echo "$(INSTALL_DATA) $$ff $(man1dir)/$$inst"; $(INSTALL_DATA) $$ff $(man1dir)/$$inst
+-UNINSTALL_MAN1 = ff=$(srcdir)/$$file.1; inst=`echo $$file | sed '$(transform)'`.1; echo "rm -f $(man1dir)/$$inst"; rm -f $(man1dir)/$$inst
++INSTALL_BIN = echo installing $$file to $(DESTDIR)$(bindir);$(INSTALL_PROGRAM) $$file $(DESTDIR)$(bindir)/`echo $$file|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`
++UNINSTALL_BIN = ff=`echo $$file|sed 's/$(EXEEXT)$$//'|sed '$(transform)'|sed 's/$$/$(EXEEXT)/'`;echo rm -f $(DESTDIR)$(bindir)/$$ff;rm -f $(DESTDIR)$(bindir)/$$ff
++INSTALL_MAN1 = ff=$(srcdir)/$$file.1; inst=`echo $$file | sed '$(transform)'`.1; echo "$(INSTALL_DATA) $$ff $(DESTDIR)$(man1dir)/$$inst"; $(INSTALL_DATA) $$ff $(DESTDIR)$(man1dir)/$$inst
++UNINSTALL_MAN1 = ff=$(srcdir)/$$file.1; inst=`echo $$file | sed '$(transform)'`.1; echo "rm -f $(DESTDIR)$(man1dir)/$$inst"; rm -f $(DESTDIR)$(man1dir)/$$inst
+ 
+ #%.o: %.c
+ #	$(C) $< -o $@

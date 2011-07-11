@@ -1,0 +1,14 @@
+$OpenBSD: patch-avi2swf_Makefile_in,v 1.1.1.1 2011/07/11 19:49:58 kili Exp $
+--- avi2swf/Makefile.in.orig	Thu Jun 23 23:35:06 2011
++++ avi2swf/Makefile.in	Thu Jun 23 23:35:28 2011
+@@ -25,8 +25,8 @@ avi2swf$(E): avi2swf.$(O) v2swf.$(O) videoreader_avifi
+ 	$(STRIP) avi2swf$(E)
+ 
+ install:
+-	$(mkinstalldirs) $(bindir)
+-	$(mkinstalldirs) $(man1dir)
++	$(mkinstalldirs) $(DESTDIR)$(bindir)
++	$(mkinstalldirs) $(DESTDIR)$(man1dir)
+ 	@file=avi2swf;$(INSTALL_BIN);$(INSTALL_MAN1)
+ 	
+ uninstall:

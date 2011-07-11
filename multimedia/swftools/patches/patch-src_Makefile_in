@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2011/07/11 19:49:58 kili Exp $
+--- src/Makefile.in.orig	Thu Jun 23 23:19:27 2011
++++ src/Makefile.in	Thu Jun 23 23:21:04 2011
+@@ -129,8 +129,8 @@ swfc$(E): parser.$(O) swfc.$(O) swfc-feedback.$(O) swf
+ 	$(STRIP) $@
+ 
+ install:
+-	$(mkinstalldirs) $(bindir)
+-	$(mkinstalldirs) $(man1dir)
++	$(mkinstalldirs) $(DESTDIR)$(bindir)
++	$(mkinstalldirs) $(DESTDIR)$(man1dir)
+ 	@for file in $(programs) $(opt_programs); do if test -f $$file;then $(INSTALL_BIN);$(INSTALL_MAN1);fi;done
+ 	
+ uninstall:

@@ -1,0 +1,38 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/11 19:49:58 kili Exp $
+@bin bin/as3compile
+@bin bin/font2swf
+@bin bin/gif2swf
+@bin bin/jpeg2swf
+@bin bin/pdf2swf
+@bin bin/png2swf
+@bin bin/swfbbox
+@bin bin/swfc
+@bin bin/swfcombine
+@bin bin/swfdump
+@bin bin/swfextract
+@bin bin/swfrender
+@bin bin/swfstrings
+@bin bin/wav2swf
+@man man/man1/as3compile.1
+@man man/man1/font2swf.1
+@man man/man1/gif2swf.1
+@man man/man1/jpeg2swf.1
+@man man/man1/pdf2swf.1
+@man man/man1/png2swf.1
+@man man/man1/swfbbox.1
+@man man/man1/swfc.1
+@man man/man1/swfcombine.1
+@man man/man1/swfdump.1
+@man man/man1/swfextract.1
+@comment man/man1/swfrender.1
+@man man/man1/swfstrings.1
+@man man/man1/wav2swf.1
+share/swftools/
+share/swftools/swfs/
+share/swftools/swfs/PreLoaderTemplate.swf
+share/swftools/swfs/default_loader.swf
+share/swftools/swfs/default_viewer.swf
+share/swftools/swfs/keyboard_viewer.swf
+share/swftools/swfs/simple_viewer.swf
+share/swftools/swfs/swft_loader.swf
+share/swftools/swfs/tessel_loader.swf

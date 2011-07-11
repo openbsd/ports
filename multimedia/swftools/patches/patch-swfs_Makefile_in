@@ -1,0 +1,48 @@
+$OpenBSD: patch-swfs_Makefile_in,v 1.1.1.1 2011/07/11 19:49:58 kili Exp $
+--- swfs/Makefile.in.orig	Thu Jun 23 23:35:39 2011
++++ swfs/Makefile.in	Thu Jun 23 23:40:03 2011
+@@ -34,26 +34,26 @@ PreLoaderTemplate.swf: $(programs)
+ 	./PreLoaderTemplate$(E) || true
+ 
+ install:
+-	$(mkinstalldirs) $(pkgdatadir)
+-	$(mkinstalldirs) $(pkgdatadir)/swfs
+-	$(INSTALL_DATA) ./simple_viewer.swf $(pkgdatadir)/swfs/simple_viewer.swf
+-	$(INSTALL_DATA) ./keyboard_viewer.swf $(pkgdatadir)/swfs/keyboard_viewer.swf
+-	$(INSTALL_DATA) ./PreLoaderTemplate.swf $(pkgdatadir)/swfs/PreLoaderTemplate.swf
+-	$(INSTALL_DATA) ./tessel_loader.swf $(pkgdatadir)/swfs/tessel_loader.swf
+-	$(INSTALL_DATA) ./swft_loader.swf $(pkgdatadir)/swfs/swft_loader.swf
+-	test -f $(pkgdatadir)/swfs/default_viewer.swf -o -L $(pkgdatadir)/swfs/default_viewer.swf || \
+-	    $(LN_S) $(pkgdatadir)/swfs/simple_viewer.swf $(pkgdatadir)/swfs/default_viewer.swf;
+-	test -f $(pkgdatadir)/swfs/default_loader.swf -o -L $(pkgdatadir)/swfs/default_loader.swf || \
+-	    $(LN_S) $(pkgdatadir)/swfs/tessel_loader.swf $(pkgdatadir)/swfs/default_loader.swf;
++	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)
++	$(mkinstalldirs) $(DESTDIR)$(pkgdatadir)/swfs
++	$(INSTALL_DATA) ./simple_viewer.swf $(DESTDIR)$(pkgdatadir)/swfs/simple_viewer.swf
++	$(INSTALL_DATA) ./keyboard_viewer.swf $(DESTDIR)$(pkgdatadir)/swfs/keyboard_viewer.swf
++	$(INSTALL_DATA) ./PreLoaderTemplate.swf $(DESTDIR)$(pkgdatadir)/swfs/PreLoaderTemplate.swf
++	$(INSTALL_DATA) ./tessel_loader.swf $(DESTDIR)$(pkgdatadir)/swfs/tessel_loader.swf
++	$(INSTALL_DATA) ./swft_loader.swf $(DESTDIR)$(pkgdatadir)/swfs/swft_loader.swf
++	test -f $(DESTDIR)$(pkgdatadir)/swfs/default_viewer.swf -o -L $(DESTDIR)$(pkgdatadir)/swfs/default_viewer.swf || \
++	    $(LN_S) $(pkgdatadir)/swfs/simple_viewer.swf $(DESTDIR)$(pkgdatadir)/swfs/default_viewer.swf;
++	test -f $(DESTDIR)$(pkgdatadir)/swfs/default_loader.swf -o -L $(DESTDIR)$(pkgdatadir)/swfs/default_loader.swf || \
++	    $(LN_S) $(pkgdatadir)/swfs/tessel_loader.swf $(DESTDIR)$(pkgdatadir)/swfs/default_loader.swf;
+ 		
+ uninstall:
+-	$(UNINSTALL_DATA) $(pkgdatadir)/swfs/simple_viewer.swf
+-	$(UNINSTALL_DATA) $(pkgdatadir)/swfs/keyboard_viewer.swf
+-	$(UNINSTALL_DATA) $(pkgdatadir)/swfs/PreLoaderTemplate.swf
+-	$(UNINSTALL_DATA) $(pkgdatadir)/swfs/tessel_loader.swf
+-	$(UNINSTALL_DATA) $(pkgdatadir)/swfs/swft_loader.swf
+-	$(UNINSTALL_DATA) $(pkgdatadir)/swfs/default_viewer.swf
+-	$(UNINSTALL_DATA) $(pkgdatadir)/swfs/default_loader.swf
++	$(UNINSTALL_DATA) $(DESTDIR)$(pkgdatadir)/swfs/simple_viewer.swf
++	$(UNINSTALL_DATA) $(DESTDIR)$(pkgdatadir)/swfs/keyboard_viewer.swf
++	$(UNINSTALL_DATA) $(DESTDIR)$(pkgdatadir)/swfs/PreLoaderTemplate.swf
++	$(UNINSTALL_DATA) $(DESTDIR)$(pkgdatadir)/swfs/tessel_loader.swf
++	$(UNINSTALL_DATA) $(DESTDIR)$(pkgdatadir)/swfs/swft_loader.swf
++	$(UNINSTALL_DATA) $(DESTDIR)$(pkgdatadir)/swfs/default_viewer.swf
++	$(UNINSTALL_DATA) $(DESTDIR)$(pkgdatadir)/swfs/default_loader.swf
+ 
+ clean: 
+ 	rm -f *.o *.obj *.lo *.a *.lib *.la gmon.out 
