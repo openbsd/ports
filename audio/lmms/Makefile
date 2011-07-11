@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/11 12:08:24 jasper Exp $
 
 SHARED_ONLY =		Yes
 
+ONLY_FOR_ARCHS =	${GCC4_ARCHS}
+
 COMMENT =		music studio with tracking, sampling and MIDI
 DISTNAME =		lmms-0.4.8
+REVISION =		0
 
 CATEGORIES =		audio
 HOMEPAGE =		http://lmms.sourceforge.net/
@@ -24,9 +27,7 @@ WANTLIB =		ICE SM QtGui QtXml X11 Xext Xft Xinerama c fltk jack \
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=lmms/}
 EXTRACT_SUFX =		.tar.bz2
 
-MODULES =		x11/qt4 devel/cmake gcc4
-MODGCC4_ARCHES =	*
-MODGCC4_LANGS =		c c++
+MODULES =		x11/qt4 devel/cmake
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info

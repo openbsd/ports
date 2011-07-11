@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/26 07:20:11 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/07/11 12:08:24 jasper Exp $
+
+ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 SHARED_ONLY=   	Yes
 
@@ -6,6 +8,7 @@ COMMENT=	GTK+2 subtitles editor
 
 V=		0.37.1
 DISTNAME=	subtitleeditor-${V}
+REVISION=	0
 
 CATEGORIES=	graphics editors
 
@@ -21,16 +24,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://download.gna.org/subtitleeditor/${V:R}/
 
-.include <bsd.own.mk>
-.if ${COMPILER_VERSION:L:Mgcc4*}
-WANTLIB +=	stdc++
-.else
-MODULES += 	gcc4
-MODGCC4_ARCHES =*
-MODGCC4_LANGS =	c++ 
-WANTLIB +=	estdc++
-.endif
-
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 atkmm-1.6 c cairo
 WANTLIB += cairomm-1.0 expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
@@ -43,7 +36,7 @@ WANTLIB += pcre enchant xml++-2.6 gstaudio-0.10 gsttag-0.10
 WANTLIB += gstinterfaces-0.10 gstvideo-0.10 gstpbutils-0.10
 WANTLIB += GL Xxf86vm drm gstcontroller-0.10 gstdataprotocol-0.10
 WANTLIB += gstreamermm-0.10 gstcdda-0.10 gstnetbuffer-0.10 gstrtp-0.10
-
+WANTLIB += stdc++
 
 BUILD_DEPENDS=	multimedia/gstreamer-0.10/plugins-good \
 		devel/iso-codes
@@ -59,9 +52,9 @@ RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-good \
 MODULES+=	devel/gettext \
 		textproc/intltool
 
-USE_GMAKE=      Yes
-USE_LIBTOOL=    Yes
-USE_GROFF =	Yes
+USE_GMAKE=	Yes
+USE_LIBTOOL=	Yes
+USE_GROFF=	Yes
 
 LIBTOOL_FLAGS= --tag=disable-static
 

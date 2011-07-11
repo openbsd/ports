@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.52 2011/07/05 11:34:27 landry Exp $
+# $OpenBSD: Makefile,v 1.53 2011/07/11 12:08:24 jasper Exp $
+
+ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT =	open source web browser engine for Gtk+
 
 V =		1.4.2
 DISTNAME =	webkit-${V}
+REVISION =	0
 EPOCH =		0
 CATEGORIES =	www
 
@@ -36,16 +39,6 @@ MODULES =	devel/gettext \
 
 MODPY_RUNDEP =	No
 
-.include <bsd.own.mk>
-.if ${COMPILER_VERSION:L:Mgcc4*}
-STDCPPLIB = stdc++
-.else
-MODULES += 	gcc4
-MODGCC4_ARCHES =*
-MODGCC4_LANGS =	c c++
-STDCPPLIB = estdc++
-.endif
-
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include -I${X11BASE}/include" \
@@ -57,7 +50,6 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--enable-spellcheck
 
 MAKE_FILE =	GNUmakefile
-MAKE_FLAGS =	STDCPPLIB=${STDCPPLIB}
 
 RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-ffmpeg \
 		multimedia/gstreamer-0.10/plugins-bad \
@@ -71,7 +63,7 @@ WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gstreamer-0.10 gstbase-0.10 gstvideo-0.10 gstapp-0.10 gstpbutils-0.10 \
 		icudata icui18n icuuc sqlite3 xslt enchant soup-2.4 \
 		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread GL Xxf86vm drm xcb-shm \
-		z cairo pixman-1 png pthread-stubs xcb xml2 ${STDCPPLIB}
+		z cairo pixman-1 png pthread-stubs xcb xml2 stdc++
 
 LIB_DEPENDS =	multimedia/gstreamer-0.10/core \
 		multimedia/gstreamer-0.10/plugins-base \

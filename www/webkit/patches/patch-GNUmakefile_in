@@ -1,4 +1,4 @@
-$OpenBSD: patch-GNUmakefile_in,v 1.12 2011/07/05 11:34:27 landry Exp $
+$OpenBSD: patch-GNUmakefile_in,v 1.13 2011/07/11 12:08:24 jasper Exp $
 install GtkLauncher, remove silent build lines, fix lpthread/pthread
 --- GNUmakefile.in.orig	Fri Jul  1 01:08:07 2011
 +++ GNUmakefile.in	Fri Jul  1 09:26:33 2011
@@ -63,15 +63,6 @@ install GtkLauncher, remove silent build lines, fix lpthread/pthread
  libJavaScriptCore_la_CXXFLAGS = \
  	$(global_cxxflags) \
  	$(libJavaScriptCore_la_CFLAGS)
-@@ -20182,7 +20183,7 @@ Programs_minidom_LDADD = \
- 	 libJavaScriptCore.la \
- 	 $(WINMM_LIBS) \
- 	 -lm \
--	 -lstdc++
-+	 -l${STDCPPLIB}
- 
- Programs_minidom_LDFLAGS = \
- 	-no-install \
 @@ -21245,12 +21246,13 @@ dist_webresources_DATA = \
  @ENABLE_WEBKIT2_FALSE@	$(XT_CFLAGS)
  

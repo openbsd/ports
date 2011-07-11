@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2011/05/11 06:56:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2011/07/11 12:08:24 jasper Exp $
+
+ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =	maze game resembling boulderdash
 
 DISTNAME =	rocksndiamonds-3.3.0.1
+REVISION =	1
 CATEGORIES =	games x11
-REVISION =	0
 
 HOMEPAGE =	http://www.artsoft.org/rocksndiamonds/
 
@@ -30,10 +32,6 @@ MAKE_FLAGS =	CC="${CC}" MAKE="${MAKE_PROGRAM}" X11_PATH="${X11BASE}" \
 		RW_GAME_DIR="/var/games/rocksndiamonds"
 
 ALL_TARGET =	sdl
-
-# XXX segfaults with gcc3
-MODULES +=	gcc4
-MODGCC4_ARCHES =*
 
 NO_REGRESS =	Yes
 
