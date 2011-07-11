@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/03/18 23:05:44 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/11 04:13:17 jeremy Exp $
 
 COMMENT =	fast Date/DateTime classes for ruby
 
-DISTNAME =	home_run-1.0.2
+DISTNAME =	home_run-1.0.3
 CATEGORIES =	devel
 
 HOMEPAGE=	http://github.com/jeremyevans/home_run
