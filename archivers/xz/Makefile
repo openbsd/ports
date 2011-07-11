@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/05/27 19:08:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2011/07/11 12:13:03 jasper Exp $
 
 COMMENT=	LZMA compression and decompression tools
 
 DISTNAME=	xz-5.0.3
+REVISION=	0
 SHARED_LIBS=	lzma                 1.0      # .5.3
 CATEGORIES=	archivers
 
@@ -18,13 +19,12 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}
 
-MODULES=	devel/gettext gcc3
-MODGCC3_ARCHES=	sparc
+MODULES=	devel/gettext
 
 WANTLIB=	c
 
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 SEPARATE_BUILD=	simple
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

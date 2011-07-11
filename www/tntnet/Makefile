@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/03/14 09:15:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2011/07/11 12:13:03 jasper Exp $
 
 COMMENT=		modular webapplication server for C++
 
 DISTNAME=		tntnet-1.6.2
-REVISION=		1
+REVISION=		2
 CATEGORIES=		www devel
 
 HOMEPAGE=		http://www.tntnet.org/
@@ -28,10 +28,6 @@ WANTLIB += c crypto cxxtools>=2 m pthread ssl stdc++ z
 MASTER_SITES=		${HOMEPAGE}download/
 
 MODULES=		converters/libiconv
-
-MODULES+=		gcc3
-MODGCC3_ARCHES= 	sparc
-MODGCC3_LANGS=		c++
 
 BUILD_DEPENDS=		archivers/zip
 LIB_DEPENDS= 		devel/cxxtools

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2011/03/03 21:40:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/07/11 12:13:03 jasper Exp $
 
 COMMENT=		Gameboy Advance emulator
 
 VERSION=		1.7.2
 DISTNAME=		VisualBoyAdvance-src-${VERSION}
 PKGNAME=		vba-${VERSION}
-REVISION=		8
+REVISION=		9
 CATEGORIES=		emulators
 
 HOMEPAGE=		http://vba.ngemu.com/
@@ -27,10 +27,6 @@ WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		xcb-render xcb-shm
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=vba/}
-
-MODULES=		gcc3
-MODGCC3_ARCHES=         sparc
-MODGCC3_LANGS=          c c++
 
 VMEM_WARNING=		Yes
 

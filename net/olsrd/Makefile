@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/07/06 23:56:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/07/11 12:13:03 jasper Exp $
 
 COMMENT-main=		OLSR routing daemon
 COMMENT-gui=		OLSR routing daemon GUI
@@ -9,9 +9,9 @@ DISTNAME=		olsrd-${VERSION}
 PKGNAME-main=		olsrd-${VERSION}
 PKGNAME-gui=		olsrd-gui-${VERSION}
 PKGNAME-plugins=	olsrd-plugins-${VERSION}
-REVISION-main=		1
-REVISION-gui=		2
-REVISION-plugins=	1
+REVISION-main=		2
+REVISION-gui=		3
+REVISION-plugins=	2
 
 CATEGORIES=	net
 
@@ -50,8 +50,7 @@ USE_GMAKE=	Yes
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
-MODULES=	gcc3 devel/gettext
-MODGCC3_ARCHES=	sparc
+MODULES=	devel/gettext
 
 ALL_TARGET=	build_all
 MAKE_FLAGS=	DEBUG=0

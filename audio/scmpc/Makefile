@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/05/15 14:56:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/07/11 12:13:03 jasper Exp $
 
 COMMENT=		client for MPD to submit tracks to Last.fm
 CATEGORIES=		audio
@@ -15,11 +15,6 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c confuse curl glib-2.0
 
 MASTER_SITES=		https://github.com/downloads/cmende/scmpc/
-
-# XXX: Still needed?
-#MODULES=		gcc3
-#MODGCC3_ARCHES= 	sparc
-#MODGCC3_LANGS=		c
 
 MODULES+=		devel/gettext
 
