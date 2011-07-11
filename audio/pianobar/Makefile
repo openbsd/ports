@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/07/10 11:01:05 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.17 2011/07/11 13:31:14 dcoppa Exp $
 
 COMMENT =	console client for pandora
 
 DISTNAME =	pianobar-2011.07.09
+REVISION =	0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	audio
 
@@ -48,8 +49,6 @@ USE_GMAKE =	Yes
 NO_REGRESS =	Yes
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pianobar
-	${INSTALL_DATA} ${WRKSRC}/COPYING ${PREFIX}/share/doc/pianobar
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pianobar
 	${INSTALL_DATA} ${WRKSRC}/contrib/config-example \
 		${PREFIX}/share/examples/pianobar/config
