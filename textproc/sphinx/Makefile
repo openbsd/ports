@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/07/09 00:45:15 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2011/07/11 08:22:29 robert Exp $
 
 COMMENT =	free open-source SQL full-text search engine
 
 DISTNAME =	sphinx-0.9.8.1
-REVISION =	0
+REVISION =	1
 CATEGORIES =	textproc
 
 HOMEPAGE =	http://www.sphinxsearch.com/
@@ -21,6 +21,7 @@ MASTER_SITES =	${HOMEPAGE}/downloads/
 MODULES =	converters/libiconv lang/php
 
 MODPHP_BUILDDEP=No
+MODPHP_RUNDEP=No
 
 WANTLIB =	c expat m stdc++
 
