@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/15 19:46:00 espie Exp $
-
-NOT_FOR_ARCHS=	arm
+# $OpenBSD: Makefile,v 1.18 2011/07/11 12:26:20 jasper Exp $
 
 COMMENT=	free and complete CORBA-compliant implementation
 

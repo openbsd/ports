@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.45 2011/05/29 20:41:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2011/07/11 12:26:20 jasper Exp $
 
 BROKEN-hppa=	gcc bug
 
 COMMENT=	graphical adventure game interpreter
 DISTNAME=	scummvm-1.3.0
-REVISION=	0
+REVISION=	1
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=scummvm/}
 
@@ -49,17 +49,6 @@ NO_REGRESS=	Yes
 USE_GMAKE=	Yes
 
 MAKE_ENV+=	CXXFLAGS="${CXXFLAGS}" CXX="${CXX}" VERBOSE_BUILD=1
-
-# XXX gcc3 compiling compact.cpp with -O2 gobbles 800MB
-# ICE on sparc with >= -O1
-.if ${MACHINE_ARCH} == "sparc"
-CXXFLAGS+=	-O0
-.endif
-
-# prevent ICE
-.if ${MACHINE_ARCH} == "arm"
-CXXFLAGS+=	-O1
-.endif
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/scummvm

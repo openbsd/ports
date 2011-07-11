@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/06/08 18:00:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/07/11 12:26:20 jasper Exp $
 
 COMMENT-main=	eXtensible Open Router Platform
 
@@ -10,7 +10,6 @@ CATEGORIES=	net
 HOMEPAGE=	http://www.xorp.org/
 
 BROKEN-sparc64=	ICE in route_table_fanout.cc
-BROKEN-arm=	xorpsh_print_routes.cc fails
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
