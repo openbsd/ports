@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2010/09/12 19:02:53 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2011/07/11 19:15:03 jasper Exp $
 
 CATEGORIES=	devel devel/avr
 
@@ -10,3 +10,5 @@ CONFIGURE_ARGS+=	--target=avr		\
 			--program-prefix=avr-	\
 			--disable-shared	\
 			--disable-nls
+# XXX: Breaks with -Wbounded 
+CONFIGURE)ARGS+=	--disable-werror
