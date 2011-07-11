@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/07/08 18:40:45 robert Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/11 06:22:49 robert Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
@@ -11,8 +11,8 @@ CATEGORIES=	www devel
 
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION-main=	1
-REVISION-utils=	1
+REVISION-main=	2
+REVISION-utils=	2
 
 HOMEPAGE=	http://pear.php.net/
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
@@ -28,6 +28,7 @@ PERMIT_DISTFILES_FTP=	Yes
 MULTI_PACKAGES=		-main -utils
 
 MODULES=		lang/php
+BUILD_DEPENDS=		${_MODPHP_BUILD_DEPENDS}
 RUN_DEPENDS-main=	www/pear,-utils
 
 # Most of pear have to live in /var/www where apache is chroot'ed to.
