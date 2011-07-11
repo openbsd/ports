@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/01/06 04:24:23 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/11 04:14:17 jeremy Exp $
 
 COMMENT =	build and package Ruby extensions using Rake as glue
 
-DISTNAME =	rake-compiler-0.7.5
-REVISION =	1
+DISTNAME =	rake-compiler-0.7.9
 CATEGORIES =	devel
 
 HOMEPAGE =	http://github.com/luislavena/rake-compiler
@@ -27,6 +26,8 @@ pre-configure:
 	${SUBST_CMD} -DMAKE_PROGRAM=${MAKE_PROGRAM} \
 		${WRKSRC}/lib/rake/extensiontask.rb \
 		${WRKSRC}/tasks/bin/cross-ruby.rake
+	rm ${WRKSRC}/lib/rake/extensiontask.rb.beforesubst \
+		${WRKSRC}/tasks/bin/cross-ruby.rake.beforesubst
 
 REGRESS_DEPENDS = devel/ruby-isolate,${MODRUBY_FLAVOR}
 MODRUBY_REGRESS = rake rspec
