@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.2 2011/07/08 07:22:32 dcoppa Exp $
---- configure.orig	Fri Jan  8 20:26:18 2010
-+++ configure	Thu Jul  7 15:44:35 2011
-@@ -906,7 +906,6 @@ CXX
+$OpenBSD: patch-configure,v 1.3 2011/07/11 05:25:31 dcoppa Exp $
+--- configure.orig	Sat Apr 30 19:24:59 2011
++++ configure	Sat Jul  9 02:36:18 2011
+@@ -904,7 +904,6 @@ CXX
  CXXFLAGS
  CCC
  CXXCPP'
@@ -9,7 +9,7 @@ $OpenBSD: patch-configure,v 1.2 2011/07/08 07:22:32 dcoppa Exp $
  
  # Initialize some variables set by options.
  ac_init_help=
-@@ -16887,7 +16886,7 @@ test -n "$PTHREAD_CC" || PTHREAD_CC="${CC}"
+@@ -15569,7 +15568,7 @@ test -n "$PTHREAD_CC" || PTHREAD_CC="${CC}"
  	# FIXME: -fPIC is required for -shared on many architectures,
  	# so we specify it here, but the right way would probably be to
  	# properly detect whether it is actually required.
@@ -18,25 +18,25 @@ $OpenBSD: patch-configure,v 1.2 2011/07/08 07:22:32 dcoppa Exp $
  	LIBS="$PTHREAD_LIBS $LIBS"
  	CC="$PTHREAD_CC"
  
-@@ -17019,7 +17018,7 @@ echo "${ECHO_T}no" >&6; }
+@@ -15649,7 +15648,7 @@ $as_echo "no" >&6; }
  	if test x"$done" = xno; then
- 	   { echo "$as_me:$LINENO: checking whether -lpthread fixes that" >&5
- echo $ECHO_N "checking whether -lpthread fixes that... $ECHO_C" >&6; }
+ 	   { $as_echo "$as_me:${as_lineno-$LINENO}: checking whether -lpthread fixes that" >&5
+ $as_echo_n "checking whether -lpthread fixes that... " >&6; }
 -	   LIBS="-lpthread $PTHREAD_LIBS $save_LIBS"
 +	   LIBS="-pthread $PTHREAD_LIBS $save_LIBS"
- 	   cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -17069,7 +17068,7 @@ rm -f core conftest.err conftest.$ac_objext conftest_i
+ 	   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ #include <pthread.h>
+@@ -15672,7 +15671,7 @@ rm -f core conftest.err conftest.$ac_objext \
  	   if test "x$done" = xyes; then
- 	      { echo "$as_me:$LINENO: result: yes" >&5
- echo "${ECHO_T}yes" >&6; }
+ 	      { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
 -	      PTHREAD_LIBS="-lpthread $PTHREAD_LIBS"
 +	      PTHREAD_LIBS="-pthread $PTHREAD_LIBS"
  	   else
- 	      { echo "$as_me:$LINENO: result: no" >&5
- echo "${ECHO_T}no" >&6; }
-@@ -17294,12 +17293,6 @@ echo "$as_me: WARNING: could not find an STL hash_map"
+ 	      { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ $as_echo "no" >&6; }
+@@ -15947,14 +15946,6 @@ $as_echo "$as_me: WARNING: could not find an STL hash_
     fi
  
  
@@ -45,6 +45,8 @@ $OpenBSD: patch-configure,v 1.2 2011/07/08 07:22:32 dcoppa Exp $
 -#   too.
 -export CFLAGS
 -export CXXFLAGS
+-
+-
 -subdirs="$subdirs gtest"
  
  
