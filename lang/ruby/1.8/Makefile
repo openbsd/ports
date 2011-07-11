@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/05/25 18:20:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/07/11 04:15:19 jeremy Exp $
 
 COMMENT-main=		object oriented script language with threads
 COMMENT-iconv=		libiconv interface for ruby
@@ -6,15 +6,13 @@ COMMENT-gdbm=		gdbm interface for ruby
 COMMENT-tk=		tk interface for ruby
 
 VERSION=		1.8.7
-PATCHLEVEL=		334
+PATCHLEVEL=		352
 
 SHARED_LIBS=		ruby18 0.0
 PKGNAME-main=		ruby-${VERSION}.${PATCHLEVEL}
 PKGNAME-iconv=		ruby-iconv-${VERSION}.${PATCHLEVEL}
 PKGNAME-gdbm=		ruby-gdbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-tk=		ruby-tk-${VERSION}.${PATCHLEVEL}
-
-REVISION-main=		0
 
 PKGSPEC-main=		ruby->=1.8,<1.9
 
