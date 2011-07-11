@@ -1,8 +1,12 @@
 Quake is a 3D action game, which can be played both single-user as multi-
-user. This package holds a binary server for Quake World.
+user. This package holds server binaries.
 
-Note that you must have quake datafiles from elsewhere. The directory
-in which you launch quake should contain the following:
+Note that you must have quake datafiles from elsewhere.
+
+System wide data directory  : ${PREFIX}/share/quakeforge
+Per-user game data directory: ~/.quakeforge
+
+One of those directories should contain the following:
 
 ./id1/
 ./id1/pak0.pak

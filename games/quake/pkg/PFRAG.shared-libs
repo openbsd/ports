@@ -1,0 +1,20 @@
+@comment $OpenBSD: PFRAG.shared-libs,v 1.1 2011/07/11 16:33:06 jasper Exp $
+@lib lib/libQFcd.so.${LIBQFcd_VERSION}
+@lib lib/libQFconsole.so.${LIBQFconsole_VERSION}
+@lib lib/libQFgamecode.so.${LIBQFgamecode_VERSION}
+@lib lib/libQFgib.so.${LIBQFgib_VERSION}
+@lib lib/libQFimage.so.${LIBQFimage_VERSION}
+@lib lib/libQFjs.so.${LIBQFjs_VERSION}
+@lib lib/libQFmodels.so.${LIBQFmodels_VERSION}
+@lib lib/libQFmodels_gl.so.${LIBQFmodels_gl_VERSION}
+@lib lib/libQFmodels_sw.so.${LIBQFmodels_sw_VERSION}
+@lib lib/libQFrenderer_gl.so.${LIBQFrenderer_gl_VERSION}
+@lib lib/libQFrenderer_sw32.so.${LIBQFrenderer_sw32_VERSION}
+@lib lib/libQFruamoko.so.${LIBQFruamoko_VERSION}
+@lib lib/libQFsound.so.${LIBQFsound_VERSION}
+@lib lib/libQFutil.so.${LIBQFutil_VERSION}
+lib/quakeforge/plugins/cd_file.so
+lib/quakeforge/plugins/cd_sdl.so
+lib/quakeforge/plugins/console_client.so
+lib/quakeforge/plugins/console_server.so
+lib/quakeforge/plugins/snd_output_disk.so
