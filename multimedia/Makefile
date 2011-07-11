@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/06/23 09:04:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2011/07/11 19:50:22 kili Exp $
 
      SUBDIR =
      SUBDIR += atomicparsley
@@ -48,6 +48,7 @@
      SUBDIR += streamdvd
      SUBDIR += subrip
      SUBDIR += subtitleripper
+     SUBDIR += swftools
      SUBDIR += transcode
      SUBDIR += vitunes
      SUBDIR += x264
