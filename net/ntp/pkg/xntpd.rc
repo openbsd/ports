@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: ntpd.rc,v 1.5 2010/12/27 14:50:23 ajacoutot Exp $
+# $OpenBSD: xntpd.rc,v 1.1 2011/07/11 17:43:14 landry Exp $
 
 daemon="${TRUEPREFIX}/sbin/ntpd"
 

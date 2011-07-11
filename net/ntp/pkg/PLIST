@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2010/11/10 21:21:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2011/07/11 17:43:14 landry Exp $
 @conflict ntp-doc-*
 @pkgpath net/ntp,-main
 @man man/man1/ntp-keygen.1
@@ -233,4 +233,4 @@ share/examples/ntp/malarky.conf
 share/examples/ntp/pogo.conf
 share/examples/ntp/rackety.conf
 @extra ${SYSCONFDIR}/ntp.conf
-@rcscript ${RCDIR}/ntpd
+@rcscript ${RCDIR}/xntpd
