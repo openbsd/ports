@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/12 08:18:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/12 10:50:59 sthen Exp $
 
 COMMENT=	web-based MySQL management
 
 V=		0.4.2
+REVISION=	0
 DISTNAME=	chive_$V
 PKGNAME=	${DISTNAME:S/_/-/}
 WRKDIST=	${WRKDIR}/chive
@@ -31,12 +32,12 @@ PKG_ARCH=	*
 
 PREFIX=		/var/www
 SUBST_VARS=	INSTDIR
-INSTDIR=	${PREFIX}/chive
+INSTDIR=	${TRUEPREFIX}/chive
 
 do-install:
-	${INSTALL_DATA_DIR} ${INSTDIR} ${PREFIX}/conf/modules.samples
-	cd ${WRKSRC} && pax -rw * ${INSTDIR}
+	${INSTALL_DATA_DIR} ${WRKINST}${INSTDIR} ${PREFIX}/conf/modules.samples
+	cd ${WRKSRC} && pax -rw * ${WRKINST}${INSTDIR}
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
-	    -c ${FILESDIR}/chive.conf ${INSTDIR}/chive.conf.default
+	    -c ${FILESDIR}/chive.conf ${WRKINST}${INSTDIR}/chive.conf.default
 
 .include <bsd.port.mk>
