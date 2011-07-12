@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.12 2011/06/02 13:41:42 ajacoutot Exp $
+$OpenBSD: README,v 1.13 2011/07/12 07:37:33 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -113,7 +113,6 @@ related ports under the x11/gnome category)
    * gnome-applets2-battstat - applet for monitoring battery level
    * gnome-main-menu - alternative menu applet
    * gnome-nettool - interface for various networking tools
-   * gnome-system-tools - sytem configuration GUI for desktops
    * gnomebaker - CD/DVD burning application
    * nautilus-sendto - integrate applications into Nautilus
    * pessulus - lockdown editor for desktop

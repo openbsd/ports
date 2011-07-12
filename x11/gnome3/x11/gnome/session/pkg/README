@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.8 2011/06/25 16:18:07 ajacoutot Exp $
+$OpenBSD: README,v 1.9 2011/07/12 07:37:33 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -122,7 +122,6 @@ Utilities
     * conduit - all-in-one synchronization application
     * gconf-editor - editor for GConf settings
     * gnome-nettool - interface for various networking tools
-    * gnome-system-tools - sytem configuration GUI for desktops
     * gnome-tweak-tool - tool to tweak hidden GTK/GNOME settings
     * gnomebaker - CD/DVD burning application
     * nautilus-sendto - integrate applications into Nautilus

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2011/05/01 18:14:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.83 2011/07/12 07:37:33 ajacoutot Exp $
 
 COMMENT=		GNOME shell and file manager
 
@@ -11,7 +11,6 @@ COMMENT=		GNOME shell and file manager
 # x11/gnome/nautilus-open-terminal
 # x11/gnome/nautilus-sendto
 # x11/gnome/seahorse-plugins
-# x11/gnome/system-tools
 # x11/gnome/totem
 # x11/gnome/tracker
 
