@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/06/28 16:00:55 sebastia Exp $
+# $OpenBSD: Makefile,v 1.26 2011/07/12 07:15:01 sebastia Exp $
 
      SUBDIR =
      SUBDIR += addresses
@@ -11,6 +11,7 @@
      SUBDIR += fisicalab
      SUBDIR += ftp
      SUBDIR += gemas
+     SUBDIR += gmines
      SUBDIR += gnumail
      SUBDIR += gorm
      SUBDIR += graphos
