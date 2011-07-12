@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.243 2011/07/08 18:17:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.244 2011/07/12 07:35:54 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -172,7 +172,6 @@
      SUBDIR += symon
      SUBDIR += sysgen
      SUBDIR += syslog-ng
-     SUBDIR += system-tools-backends
      SUBDIR += tabled
      SUBDIR += tarsnap
      SUBDIR += tcplist
