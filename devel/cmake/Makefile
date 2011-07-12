@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/05/02 15:59:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2011/07/12 08:35:29 dcoppa Exp $
 
 VMEM_WARNING =	Yes
 
@@ -6,7 +6,7 @@ HOMEPAGE =	http://www.cmake.org/
 CATEGORIES =	devel
 COMMENT =	portable build system
 DISTNAME =	cmake-2.8.4
-REVISION =	2
+REVISION =	3
 MASTER_SITES =	${HOMEPAGE}files/v2.8/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
@@ -35,11 +35,6 @@ SEPARATE_BUILD =	simple
 USE_GROFF =		Yes
 
 REGRESS_TARGET =	test
-
-# XXX eats all memory
-.if ${MACHINE_ARCH} == "arm"
-CFLAGS +=		-O0
-.endif
 
 MAKE_FLAGS +=		VERBOSE=1
 
