@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.953 2011/07/08 09:01:22 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.954 2011/07/12 07:40:47 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -275,7 +275,6 @@
      SUBDIR += libnotify
      SUBDIR += libofx
      SUBDIR += liboil
-     SUBDIR += liboobs
      SUBDIR += liboop
      SUBDIR += libopensync
      SUBDIR += libpeas
