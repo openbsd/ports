@@ -1,10 +1,10 @@
-$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.12 2010/06/07 20:03:55 sthen Exp $
+$OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.13 2011/07/12 19:54:39 sthen Exp $
 
 - more useful defaults
 - create /var/run/asterisk with sane ownership/perms
 
---- contrib/scripts/safe_asterisk.orig	Tue Jan 12 03:25:20 2010
-+++ contrib/scripts/safe_asterisk	Mon Jun  7 17:32:16 2010
+--- contrib/scripts/safe_asterisk.orig	Thu May  5 16:04:24 2011
++++ contrib/scripts/safe_asterisk	Mon Jul 11 23:45:36 2011
 @@ -2,9 +2,9 @@
  # vim:textwidth=80:tabstop=4:shiftwidth=4:smartindent:autoindent
  
@@ -51,7 +51,7 @@ $OpenBSD: patch-contrib_scripts_safe_asterisk,v 1.12 2010/06/07 20:03:55 sthen E
 +
  # Check if Asterisk is already running.  If it is, then bug out, because
  # starting safe_asterisk when Asterisk is running is very bad.
- VERSION=`${ASTSBINDIR}/asterisk -rx 'core show version'`
+ VERSION=`${ASTSBINDIR}/asterisk -nrx 'core show version'`
 @@ -71,7 +85,7 @@ else
  			fi
  		fi

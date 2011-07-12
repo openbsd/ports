@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.37 2011/05/11 15:07:15 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.38 2011/07/12 19:54:39 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -291,6 +291,7 @@ lib/asterisk/modules/func_extstate.so
 lib/asterisk/modules/func_frame_trace.so
 lib/asterisk/modules/func_global.so
 lib/asterisk/modules/func_groupcount.so
+lib/asterisk/modules/func_iconv.so
 lib/asterisk/modules/func_lock.so
 lib/asterisk/modules/func_logic.so
 lib/asterisk/modules/func_math.so
@@ -433,6 +434,8 @@ share/asterisk/sounds/en/conf-usermenu.gsm
 share/asterisk/sounds/en/conf-userswilljoin.gsm
 share/asterisk/sounds/en/conf-userwilljoin.gsm
 share/asterisk/sounds/en/conf-waitforleader.gsm
+share/asterisk/sounds/en/confbridge-join.gsm
+share/asterisk/sounds/en/confbridge-leave.gsm
 share/asterisk/sounds/en/core-sounds-en.txt
 share/asterisk/sounds/en/demo-abouttotry.gsm
 share/asterisk/sounds/en/demo-congrats.gsm
@@ -847,6 +850,7 @@ share/asterisk/sounds/en/vm-youhave.gsm
 share/asterisk/sounds/en_AU/
 share/asterisk/sounds/es/
 share/asterisk/sounds/fr/
+share/asterisk/sounds/ru/
 share/asterisk/static-http/
 share/asterisk/static-http/ajamdemo.html
 share/asterisk/static-http/astman.css
