@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/07/12 12:44:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/12 17:09:12 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.0.3.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -41,7 +41,7 @@ WANTLIB += sqlite3 ssl stdc++ svn_client-1 svn_delta-1 svn_diff-1
 WANTLIB += svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1
 WANTLIB += svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1 svn_repos-1
 WANTLIB += svn_subr-1 svn_wc-1 util vala-0.12 vte2_90 webkitgtk-3.0
-WANTLIB += xcb xcb-render xcb-shm xml2 xslt z
+WANTLIB += xcb xcb-render xcb-shm xml2 xslt z icudata icui18n icuuc
 WANTLIB += ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=		devel/autogen>=5.6.5 \
@@ -49,10 +49,9 @@ BUILD_DEPENDS=		devel/autogen>=5.6.5 \
 RUN_DEPENDS=		misc/shared-mime-info
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/glade \
-			devel/subversion \
+			devel/subversion,gnome_keyring \
 			devel/vte,gtk3 \
 			lang/vala \
-			math/graphviz \
 			textproc/icu4c \
 			x11/gnome/devhelp \
 			x11/gnome/gdl \
@@ -67,10 +66,12 @@ MODGNOME_HELP_FILES=	Yes
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-plugin-subversion \
-			--enable-graphviz \
 			--enable-gtk-doc=no \
 			--enable-introspection \
 			--enable-vala
+
+# adds dependency on libgnomeui
+CONFIGURE_ARGS+=	--disable-graphviz
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
