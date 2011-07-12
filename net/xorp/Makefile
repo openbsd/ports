@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/07/11 12:26:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2011/07/12 16:25:47 sthen Exp $
 
 COMMENT-main=	eXtensible Open Router Platform
 
@@ -32,15 +32,13 @@ USE_LIBTOOL=	Yes
 LIBTOOL_FLAGS=	--tag=disable-shared
 
 MODULES=	lang/python
-MODPY_BUILDDEP=	no
 MODPY_RUNDEP=	no
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-optimize --disable-debug
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config ${WRKSRC}/cli/libtecla
 
-REGRESS_DEPENDS=	shells/bash \
-			${MODPY_RUN_DEPENDS}
+REGRESS_DEPENDS=	shells/bash
 
 # some regression tests must be run as root
 do-regress:
