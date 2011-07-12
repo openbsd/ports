@@ -1,11 +1,12 @@
-$OpenBSD: patch-capplet_vino-preferences_ui,v 1.1.1.1 2011/07/11 19:21:48 jasper Exp $
---- capplet/vino-preferences.ui.orig	Mon Jul 11 19:12:01 2011
-+++ capplet/vino-preferences.ui	Mon Jul 11 19:12:11 2011
-@@ -262,9 +262,10 @@
+$OpenBSD: patch-capplet_vino-preferences_ui,v 1.2 2011/07/12 07:41:55 ajacoutot Exp $
+--- capplet/vino-preferences.ui.orig	Mon May  2 18:38:15 2011
++++ capplet/vino-preferences.ui	Tue Jul 12 08:13:56 2011
+@@ -261,10 +261,11 @@
+                             <property name="position">1</property>
                            </packing>
                          </child>
-                         <child>
 +			<!-- Disabled, as it's not supported on OpenBSD.
+                         <child>
                            <object class="GtkCheckButton" id="use_upnp_toggle">
                              <property name="label" translatable="yes">_Configure network automatically to accept connections</property>
 -                            <property name="visible">True</property>
@@ -13,11 +14,11 @@ $OpenBSD: patch-capplet_vino-preferences_ui,v 1.1.1.1 2011/07/11 19:21:48 jasper
                              <property name="can_focus">True</property>
                              <property name="receives_default">False</property>
                              <property name="use_underline">True</property>
-@@ -273,6 +274,7 @@
-                           <packing>
+@@ -274,6 +275,7 @@
                              <property name="position">2</property>
                            </packing>
-+			-->
                          </child>
++			-->
                        </object>
                        <packing>
+                         <property name="padding">12</property>
