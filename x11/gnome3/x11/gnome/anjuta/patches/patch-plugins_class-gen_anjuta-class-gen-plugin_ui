@@ -1,6 +1,11 @@
-$OpenBSD: patch-plugins_class-gen_anjuta-class-gen-plugin_ui,v 1.1.1.1 2011/07/12 11:28:50 jasper Exp $
+$OpenBSD: patch-plugins_class-gen_anjuta-class-gen-plugin_ui,v 1.2 2011/07/12 11:40:43 jasper Exp $
+
+commit fb548a947430eb8af84face45a8c95780833fc01
+Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date:   Tue Jul 12 11:34:02 2011 +0200
 
     Add 'BSD' as a valid license in the Class Generator
+    
     https://bugzilla.gnome.org/show_bug.cgi?id=654445
 
 --- plugins/class-gen/anjuta-class-gen-plugin.ui.orig	Thu Mar  3 16:28:01 2011
