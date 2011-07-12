@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2011/07/08 18:24:13 robert Exp $
+# $OpenBSD: Makefile,v 1.51 2011/07/12 21:25:38 espie Exp $
 
 COMMENT =	exceptions to pkg_add rules
 CATEGORIES =	devel databases
 DISTFILES =
 
 # API.rev
-PKGNAME =	quirks-1.48
+PKGNAME =	quirks-1.49
 PKG_ARCH =	*
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
@@ -21,6 +21,9 @@ PERLDIR =	${PREFIX}/libdata/perl5/site_perl
 
 do-install:
 	${INSTALL_DATA_DIR} ${PERLDIR}/OpenBSD
+	${INSTALL_DATA_DIR} ${PERLDIR}/OpenBSD/Quirks
 	${INSTALL_DATA} ${FILESDIR}/Quirks.pm ${PERLDIR}/OpenBSD/Quirks.pm
+	${INSTALL_DATA} ${FILESDIR}/Quirks/texlive.pm \
+	    ${PERLDIR}/OpenBSD/Quirks/texlive.pm
 
 .include <bsd.port.mk>
