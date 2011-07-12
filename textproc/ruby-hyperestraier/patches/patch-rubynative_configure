@@ -1,51 +1,47 @@
-$OpenBSD: patch-rubynative_configure,v 1.2 2010/09/23 22:15:32 jeremy Exp $
+$OpenBSD: patch-rubynative_configure,v 1.3 2011/07/12 18:06:23 jeremy Exp $
 --- rubynative/configure.orig	Mon Dec 24 17:53:40 2007
-+++ rubynative/configure	Mon Sep 13 12:44:01 2010
-@@ -1228,8 +1228,8 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
++++ rubynative/configure	Fri Jul  8 09:01:02 2011
+@@ -1228,8 +1228,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
  # Export variables
 -RUBY="ruby"
 -RDOC="rdoc"
-+RUBY="ruby18"
-+RDOC="rdoc18"
  MYRBLIBDIR=/usr/local/lib/ruby/site_ruby
  MYRUNPATH=""
  
-@@ -1258,7 +1258,7 @@ fi
+@@ -1258,7 +1256,7 @@ fi
  # Setting the default prefix
  if test "$prefix" = NONE
  then
 -  prefix=`ruby -rrbconfig -e 'puts(Config::CONFIG.fetch("prefix"))'`
-+  prefix=`ruby18 -rrbconfig -e 'puts(Config::CONFIG.fetch("prefix"))'`
++  prefix=`$RUBY -rrbconfig -e 'puts(Config::CONFIG.fetch("prefix"))'`
  fi
  
  
-@@ -1270,22 +1270,22 @@ fi
+@@ -1268,24 +1266,8 @@ fi
+ #================================================================
  
- # Ruby interpreter
- printf 'checking RUBY... '
+ 
+-# Ruby interpreter
+-printf 'checking RUBY... '
 -if which ruby > /dev/null
-+if which ruby18 > /dev/null
- then
+-then
 -  RUBY=`which ruby`
-+  RUBY=`which ruby18`
- fi
- printf '%s\n' "$RUBY"
- 
- # Other building tools
- printf 'checking RDOC... '
+-fi
+-printf '%s\n' "$RUBY"
+-
+-# Other building tools
+-printf 'checking RDOC... '
 -if which rdoc > /dev/null
-+if which rdoc18 > /dev/null
- then
+-then
 -  RDOC=`which rdoc`
-+  RDOC=`which rdoc18`
- fi
- printf '%s\n' "$RDOC"
- 
+-fi
+-printf '%s\n' "$RDOC"
+-
  # Librarh path
 -myrblibdir=`ruby -rrbconfig -e 'puts(Config::CONFIG.fetch("sitelibdir"))'`
-+myrblibdir=`ruby18 -rrbconfig -e 'puts(Config::CONFIG.fetch("sitearchdir"))'`
++myrblibdir=`$RUBY -rrbconfig -e 'puts(Config::CONFIG.fetch("sitearchdir"))'`
  if test -n "$myrblibdir"
  then
    MYRBLIBDIR="$myrblibdir"
