@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/06/08 18:00:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/07/12 11:01:08 sebastia Exp $
 
 COMMENT=        XMPP transport/gateway
 
 DISTNAME =	spectrum-1.4.7
-REVISION =	1
+REVISION =	2
 CATEGORIES=     net
 
 HOMEPAGE=       http://spectrum.im/
@@ -27,10 +27,9 @@ LIB_DEPENDS=	net/py-xmpppy \
 RUN_DEPENDS =	net/py-xmpppy
 
 SPVARDIR=	/var/spectrum
-# not using CONFIGURE_STYLE=cmake from cmake module, rolling own in 
-# pre-build. Otherwise make configure will work, but afterwards make 
-# will fail with python2.6 unable to find ./setup.py
-CONFIGURE_STYLE=none
+
+CONFIGURE_STYLE=cmake
+CONFIGURE_ENV += LDFLAGS=-pthread
 USE_GROFF =	Yes
 NO_REGRESS=	Yes
 SUBST_VARS=    	SPVARDIR
@@ -39,9 +38,6 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/spectrumctl/spectrumctl.py \
 		${WRKSRC}/spectrumctl/spectrum/env.py ${WRKSRC}/spectrum.cfg \
 		${WRKSRC}/spectrumctl/spectrum/spectrum.py
-
-post-configure:
-	cd ${WRKSRC} && ${LOCALBASE}/bin/cmake .
 
 post-install:
 	${INSTALL_DATA} ${WRKDIST}/schemas/mysql_schema.sql \
