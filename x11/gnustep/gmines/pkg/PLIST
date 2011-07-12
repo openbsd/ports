@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/12 07:11:47 sebastia Exp $
+bin/GMines
+libexec/GNUstep/
+libexec/GNUstep/GMines.app/
+@bin libexec/GNUstep/GMines.app/GMines
+libexec/GNUstep/GMines.app/Resources/
+libexec/GNUstep/GMines.app/Resources/GMines.desktop
+libexec/GNUstep/GMines.app/Resources/GMines.tiff
+libexec/GNUstep/GMines.app/Resources/Info-gnustep.plist
+libexec/GNUstep/GMines.app/stamp.make
