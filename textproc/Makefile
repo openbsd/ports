@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.331 2011/06/23 08:48:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.332 2011/07/12 18:08:05 jeremy Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -290,6 +290,7 @@
      SUBDIR += ruby-hpricot,ruby19
      SUBDIR += ruby-htmlentities
      SUBDIR += ruby-hyperestraier
+     SUBDIR += ruby-hyperestraier,ruby19
      SUBDIR += ruby-icalendar
      SUBDIR += ruby-liquid
      SUBDIR += ruby-markaby
