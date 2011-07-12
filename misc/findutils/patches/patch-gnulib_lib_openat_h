@@ -1,0 +1,12 @@
+$OpenBSD: patch-gnulib_lib_openat_h,v 1.1 2011/07/12 18:08:41 matthew Exp $
+--- gnulib/lib/openat.h.orig	Sun May 10 14:23:57 2009
++++ gnulib/lib/openat.h	Tue Jul 12 10:14:29 2011
+@@ -53,6 +53,8 @@
+    there's no real reason to differ.  */
+ #ifndef AT_SYMLINK_NOFOLLOW
+ # define AT_SYMLINK_NOFOLLOW 4096
++#endif
++#ifndef AT_REMOVEDIR
+ # define AT_REMOVEDIR 1
+ #endif
+ 
