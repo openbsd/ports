@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-ui,v 1.7 2011/06/02 07:16:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.8 2011/07/12 15:32:16 ajacoutot Exp $
+@conflict libgda-<4.2.8p1v2
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
 @bin bin/gdaui-demo-${GDA_MAJOR}
@@ -289,6 +290,27 @@ share/icons/hicolor/24x24/apps/gda-control-center.png
 share/icons/hicolor/256x256/apps/gda-control-center.png
 share/icons/hicolor/32x32/apps/gda-control-center.png
 share/icons/hicolor/48x48/apps/gda-control-center.png
+share/libgda-${GDA_MAJOR}/demo/
+share/libgda-${GDA_MAJOR}/demo/basic_form.c
+share/libgda-${GDA_MAJOR}/demo/cloud.c
+share/libgda-${GDA_MAJOR}/demo/combo.c
+share/libgda-${GDA_MAJOR}/demo/custom_layout.xml
+share/libgda-${GDA_MAJOR}/demo/data_model_dir.c
+share/libgda-${GDA_MAJOR}/demo/ddl_queries.c
+share/libgda-${GDA_MAJOR}/demo/demo_db.db
+share/libgda-${GDA_MAJOR}/demo/form.c
+share/libgda-${GDA_MAJOR}/demo/form_data_layout.c
+share/libgda-${GDA_MAJOR}/demo/form_pict.c
+share/libgda-${GDA_MAJOR}/demo/form_rw.c
+share/libgda-${GDA_MAJOR}/demo/grid.c
+share/libgda-${GDA_MAJOR}/demo/grid_data_layout.c
+share/libgda-${GDA_MAJOR}/demo/grid_pict.c
+share/libgda-${GDA_MAJOR}/demo/grid_rw.c
+share/libgda-${GDA_MAJOR}/demo/linked_grid_form.c
+share/libgda-${GDA_MAJOR}/demo/linked_model_param.c
+share/libgda-${GDA_MAJOR}/demo/login.c
+share/libgda-${GDA_MAJOR}/demo/provider_sel.c
+share/libgda-${GDA_MAJOR}/demo/tree.c
 share/libgda-${GDA_MAJOR}/dtd/gdaui-layout.dtd
 share/libgda-${GDA_MAJOR}/icons/
 share/libgda-${GDA_MAJOR}/icons/hicolor/
@@ -323,6 +345,9 @@ share/libgda-${GDA_MAJOR}/icons/hicolor/scalable/actions/
 share/libgda-${GDA_MAJOR}/icons/hicolor/scalable/actions/bookmark-view.svg
 share/libgda-${GDA_MAJOR}/icons/hicolor/scalable/actions/glade.svg
 share/libgda-${GDA_MAJOR}/icons/hicolor/scalable/actions/history-view.svg
+share/libgda-${GDA_MAJOR}/import_encodings.xml
+share/libgda-${GDA_MAJOR}/language-specs/
+share/libgda-${GDA_MAJOR}/language-specs/gda-sql.lang
 share/libgda-${GDA_MAJOR}/pixmaps/
 share/libgda-${GDA_MAJOR}/pixmaps/bin-attachment-16x16.png
 share/libgda-${GDA_MAJOR}/pixmaps/gda-browser-action.png
@@ -358,6 +383,7 @@ share/libgda-${GDA_MAJOR}/pixmaps/gda-browser.png
 share/libgda-${GDA_MAJOR}/pixmaps/gda-control-center-newcnc.png
 share/libgda-${GDA_MAJOR}/pixmaps/gda-control-center.png
 share/libgda-${GDA_MAJOR}/pixmaps/gdaui-generic.png
+share/libgda-${GDA_MAJOR}/server_operation.glade
 share/libgda-${GDA_MAJOR}/ui/
 share/libgda-${GDA_MAJOR}/ui/gdaui-entry-number.xml
 share/libgda-${GDA_MAJOR}/ui/gdaui-entry-string.xml

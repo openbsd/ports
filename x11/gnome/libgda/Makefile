@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/06/10 20:01:02 naddy Exp $
+# $OpenBSD: Makefile,v 1.39 2011/07/12 15:32:16 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -23,7 +23,8 @@ PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-ui=		0
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -59,7 +60,9 @@ DESKTOP_FILES=		Yes
 
 SUBST_VARS=		GDA_MAJOR
 
-PSEUDO_FLAVORS=		no_ldap no_mdb no_mysql no_pgsql no_ui
+# no no_ldap PSEUDO_FLAVOR because we need the headers in -main
+# since some are referenced by other headers
+PSEUDO_FLAVORS=		no_mdb no_mysql no_pgsql no_ui
 FLAVOR?=
 
 MULTI_PACKAGES=		-main
@@ -152,7 +155,7 @@ CONFIGURE_ARGS+=	--with-mysql="${LOCALBASE}"
 .endif
 
 .if ${FLAVOR:L:Mno_pgsql}
-CONFIGURE_ARGS+=	--without-postgresql
+CONFIGURE_ARGS+=	--without-postgres
 .else
 RUN_DEPENDS-pgsql=	${MODGETTEXT_RUN_DEPENDS}
 MULTI_PACKAGES+=	-pgsql
@@ -163,9 +166,7 @@ LIB_DEPENDS-pgsql=	${LIB_DEPENDS} \
 CONFIGURE_ARGS+=	--with-postgres="${LOCALBASE}"
 .endif
 
-.if ${FLAVOR:L:Mno_ldap}
-CONFIGURE_ARGS+=	--without-ldap
-.else
+# ldap (no PSEUDO_FLAVORS, see above)
 RUN_DEPENDS-ldap=	${MODGETTEXT_RUN_DEPENDS}
 MULTI_PACKAGES+=	-ldap
 WANTLIB-ldap=		${WANTLIB} crypto gda-4.0 gssapi krb5 lber-2.4 \
@@ -173,6 +174,5 @@ WANTLIB-ldap=		${WANTLIB} crypto gda-4.0 gssapi krb5 lber-2.4 \
 LIB_DEPENDS-ldap=	x11/gnome/libgda \
 			databases/openldap
 CONFIGURE_ARGS+=	--with-ldap
-.endif
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2011/06/02 15:54:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2011/07/12 15:32:16 ajacoutot Exp $
 @conflict libgda-db4-*
-@conflict libgda-ldap-<4.2.8p0
+@conflict libgda-ldap-<4.2.8p0v0
 @pkgpath x11/gnome/libgda,-odbc
 bin/gda-list-config
 @bin bin/gda-list-config-${GDA_MAJOR}
@@ -463,35 +463,11 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/virtual_connection.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/writable_data_model.png
 share/libgda-${GDA_MAJOR}/
 share/libgda-${GDA_MAJOR}/bdb_specs_dsn.xml
-share/libgda-${GDA_MAJOR}/demo/
-share/libgda-${GDA_MAJOR}/demo/basic_form.c
-share/libgda-${GDA_MAJOR}/demo/cloud.c
-share/libgda-${GDA_MAJOR}/demo/combo.c
-share/libgda-${GDA_MAJOR}/demo/custom_layout.xml
-share/libgda-${GDA_MAJOR}/demo/data_model_dir.c
-share/libgda-${GDA_MAJOR}/demo/ddl_queries.c
-share/libgda-${GDA_MAJOR}/demo/demo_db.db
-share/libgda-${GDA_MAJOR}/demo/form.c
-share/libgda-${GDA_MAJOR}/demo/form_data_layout.c
-share/libgda-${GDA_MAJOR}/demo/form_pict.c
-share/libgda-${GDA_MAJOR}/demo/form_rw.c
-share/libgda-${GDA_MAJOR}/demo/grid.c
-share/libgda-${GDA_MAJOR}/demo/grid_data_layout.c
-share/libgda-${GDA_MAJOR}/demo/grid_pict.c
-share/libgda-${GDA_MAJOR}/demo/grid_rw.c
-share/libgda-${GDA_MAJOR}/demo/linked_grid_form.c
-share/libgda-${GDA_MAJOR}/demo/linked_model_param.c
-share/libgda-${GDA_MAJOR}/demo/login.c
-share/libgda-${GDA_MAJOR}/demo/provider_sel.c
-share/libgda-${GDA_MAJOR}/demo/tree.c
 share/libgda-${GDA_MAJOR}/dtd/
 share/libgda-${GDA_MAJOR}/dtd/libgda-array.dtd
 share/libgda-${GDA_MAJOR}/dtd/libgda-paramlist.dtd
 share/libgda-${GDA_MAJOR}/dtd/libgda-server-operation.dtd
-share/libgda-${GDA_MAJOR}/import_encodings.xml
 share/libgda-${GDA_MAJOR}/information_schema.xml
-share/libgda-${GDA_MAJOR}/language-specs/
-share/libgda-${GDA_MAJOR}/language-specs/gda-sql.lang
 share/libgda-${GDA_MAJOR}/php/
 share/libgda-${GDA_MAJOR}/php/README
 share/libgda-${GDA_MAJOR}/php/gda-clean.php
@@ -503,7 +479,6 @@ share/libgda-${GDA_MAJOR}/php/gda-setup.php
 share/libgda-${GDA_MAJOR}/php/gda-tester.php
 share/libgda-${GDA_MAJOR}/php/gda-utils.php
 share/libgda-${GDA_MAJOR}/php/gda-worker.php
-share/libgda-${GDA_MAJOR}/server_operation.glade
 share/libgda-${GDA_MAJOR}/sqlcipher_specs_add_column.xml
 share/libgda-${GDA_MAJOR}/sqlcipher_specs_auth.xml
 share/libgda-${GDA_MAJOR}/sqlcipher_specs_create_db.xml
