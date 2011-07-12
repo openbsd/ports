@@ -1,3 +1,4 @@
-VTE is an experimental terminal emulator widget for use with GTK+ 3.0.
-This package contains the files needed for building applications using
-VTE.
+VTE is a library (libvte) implementing a terminal emulator widget for
+GTK+, and a minimal sample application (vte) using that.  Vte is
+mainly used in gnome-terminal, but can also be used to embed a
+console/terminal in games, editors, IDEs, etc.
