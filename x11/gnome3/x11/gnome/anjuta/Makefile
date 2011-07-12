@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/07/12 17:09:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/12 17:36:27 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -57,8 +57,6 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			x11/gnome/gdl \
 			x11/gnome/libgda \
 			x11/gtksourceview3
-
-USE_LIBTOOL=		yes
 
 LIBTOOL_FLAGS=		--tag=disable-static
 DESKTOP_FILES=		Yes
