@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1097 2011/07/12 04:26:47 ajacoutot Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1098 2011/07/12 08:08:01 ajacoutot Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2785,9 +2785,9 @@ _internal-clean:
 .  endif
 .endif
 .if ${_clean:L:Mpackages} || ${_clean:L:Mpackage} && ${_clean:L:Msub}
-	rm -f ${_PACKAGE_COOKIES}
+	rm -f ${_PACKAGE_COOKIES} ${_UPDATE_COOKIES}
 .elif ${_clean:L:Mpackage}
-	rm -f ${_PACKAGE_COOKIES${SUBPACKAGE}}
+	rm -f ${_PACKAGE_COOKIES${SUBPACKAGE}} ${_UPDATE_COOKIE${SUBPACKAGE}}
 .endif
 .if ${_clean:L:Mreadmes}
 	rm -f ${_READMES}
