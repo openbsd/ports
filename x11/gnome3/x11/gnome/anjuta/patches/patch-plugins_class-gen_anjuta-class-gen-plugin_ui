@@ -1,0 +1,17 @@
+$OpenBSD: patch-plugins_class-gen_anjuta-class-gen-plugin_ui,v 1.1.1.1 2011/07/12 11:28:50 jasper Exp $
+
+    Add 'BSD' as a valid license in the Class Generator
+    https://bugzilla.gnome.org/show_bug.cgi?id=654445
+
+--- plugins/class-gen/anjuta-class-gen-plugin.ui.orig	Thu Mar  3 16:28:01 2011
++++ plugins/class-gen/anjuta-class-gen-plugin.ui	Tue Jul 12 11:51:07 2011
+@@ -32,6 +32,9 @@
+         <col id="0" translatable="yes">Lesser General Public License (LGPL)</col>
+       </row>
+       <row>
++        <col id="0" translatable="yes">Berkeley Software Distribution License (BSD)</col>
++      </row>
++      <row>
+         <col id="0" translatable="yes">No License</col>
+       </row>
+     </data>

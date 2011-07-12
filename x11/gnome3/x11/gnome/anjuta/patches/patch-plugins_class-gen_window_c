@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_class-gen_window_c,v 1.1.1.1 2011/07/12 11:28:50 jasper Exp $
+
+    Add 'BSD' as a valid license in the Class Generator
+    https://bugzilla.gnome.org/show_bug.cgi?id=654445
+
+--- plugins/class-gen/window.c.orig	Tue Jan 11 01:13:08 2011
++++ plugins/class-gen/window.c	Tue Jul 12 11:51:07 2011
+@@ -1268,6 +1268,7 @@ cg_window_create_value_heap (CgWindow *window)
+ 	static const gchar *LICENSES[] = {
+ 		"GPL",
+ 		"LGPL",
++		"BSD",
+ 		"NONE"
+ 	};
+ 
