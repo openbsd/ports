@@ -1,10 +1,13 @@
-$OpenBSD: patch-src_gui_c,v 1.15 2011/07/04 13:32:55 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.16 2011/07/12 08:12:29 dcoppa Exp $
 
 Fix an issue when alsa is not being used
 (upstream svn revision r2151)
 
---- src/gui.c.orig	Mon Jul  4 14:43:40 2011
-+++ src/gui.c	Mon Jul  4 14:44:57 2011
+Raise event on incomplete QuickTime file, and mark it for retry
+(fix apple.com/trailers) - upstream svn revision r2152
+
+--- src/gui.c.orig	Mon Jun 27 16:59:45 2011
++++ src/gui.c	Mon Jul 11 10:19:19 2011
 @@ -5073,7 +5073,7 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
      gtk_spin_button_set_value(GTK_SPIN_BUTTON(config_volume), gm_pref_store_get_int(gm_store, VOLUME));
      gm_pref_store_free(gm_store);
@@ -14,3 +17,15 @@ Fix an issue when alsa is not being used
      gtk_entry_set_alignment(GTK_ENTRY(config_volume), 1);
      gtk_widget_show(config_volume);
      i++;
+@@ -6052,6 +6052,11 @@ void player_attribute_changed_callback(GmtkMediaTracke
+         g_strlcpy(idledata->media_info, text, 1024);
+         g_thread_create(get_cover_art, metadata, FALSE, NULL);
+         break;
++
++	case ATTRIBUTE_RETRY_ON_FULL_CACHE:
++		idledata->retry_on_full_cache = gmtk_media_player_get_attribute_boolean (GMTK_MEDIA_PLAYER(media), ATTRIBUTE_RETRY_ON_FULL_CACHE);
++		break;		
++			
+     default:
+         if (verbose) {
+             printf("Unhandled attribute change %i\n", attribute);

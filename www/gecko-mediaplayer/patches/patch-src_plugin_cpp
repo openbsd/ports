@@ -1,0 +1,73 @@
+$OpenBSD: patch-src_plugin_cpp,v 1.6 2011/07/12 08:12:29 dcoppa Exp $
+
+Fix apple.com/trailers (upstream svn revisions r468 and r470)
+
+--- src/plugin.cpp.orig	Mon Jun 20 17:00:33 2011
++++ src/plugin.cpp	Tue Jul 12 09:31:06 2011
+@@ -1320,7 +1320,7 @@ int progress_callback(void *clientp, double dltotal, d
+     ListItem *item = (ListItem *) clientp;
+     gdouble percent, rate;
+     gchar *text;
+-    gboolean ok_to_play;
++    gboolean ok_to_play = FALSE;
+     gint id;
+     gboolean ready;
+     gboolean newwindow;
+@@ -1364,8 +1364,6 @@ int progress_callback(void *clientp, double dltotal, d
+                                         rate);
+                 }
+                 send_signal_with_string(plugin, item, "SetProgressText", text);
+-                if (!item->opened)
+-                    send_signal_with_string(plugin, item, "SetURL", item->src);
+                 if (plugin->post_dom_events && plugin->id != NULL) {
+                     postDOMEvent(plugin->mInstance, plugin->id, "qt_progress");
+                     postDOMEvent(plugin->mInstance, plugin->id, "qt_durationchange");
+@@ -1391,7 +1389,6 @@ int progress_callback(void *clientp, double dltotal, d
+             if (ok_to_play == FALSE) {
+                 if (item->bitrate == 0 && item->bitrate_requests < 5
+                     && ((gint) (percent * 100) > item->bitrate_requests)) {
+-                    item->bitrate = request_bitrate(plugin, item, item->local);
+                     item->bitrate_requests++;
+                 }
+                 if (item->bitrate > 0) {
+@@ -1418,6 +1415,7 @@ int progress_callback(void *clientp, double dltotal, d
+             if (!item->streaming) {
+                 printf("in progress_callback\n");
+                 plugin->playlist = list_parse_qt(plugin->playlist, item);
++                plugin->playlist = list_parse_qt2(plugin->playlist, item);
+                 plugin->playlist = list_parse_asx(plugin->playlist, item);
+                 plugin->playlist = list_parse_qml(plugin->playlist, item);
+                 plugin->playlist = list_parse_ram(plugin->playlist, item);
+@@ -1493,13 +1491,14 @@ gpointer CURLGetURLNotify(gpointer data)
+ 
+             }
+             fclose(local);
+-            printf("fetched %s to %s\n", item->src, item->local);
++            printf("fetched %s to %s opened = %i\n", item->src, item->local, item->opened);
++            send_signal_with_double(plugin, item, "SetCachePercent", 1.0);
+             send_signal_with_double(plugin, item, "SetCachePercent", 0.0);
+             item->retrieved = TRUE;
+         }
+ 
+ 
+-        if ((!item->opened)) {
++        if (!item->opened) {
+             id = item->controlid;
+             path = g_strdup(item->path);
+             ready = item->playerready;
+@@ -1509,13 +1508,14 @@ gpointer CURLGetURLNotify(gpointer data)
+             if (!item->streaming) {
+                 printf("in CURLGetURLNotify\n");
+                 plugin->playlist = list_parse_qt(plugin->playlist, item);
++                plugin->playlist = list_parse_qt2(plugin->playlist, item);
+                 plugin->playlist = list_parse_asx(plugin->playlist, item);
+                 plugin->playlist = list_parse_qml(plugin->playlist, item);
+                 plugin->playlist = list_parse_ram(plugin->playlist, item);
+             }
+             // printf("item->play = %i\n", item->play);
+             // printf("item->src = %i\n", item->src);
+-            // printf("calling open_location from Write\n");
++            // printf("calling open_location from CURLGetURLNotify\n");
+             if (item->play) {
+                 send_signal_with_integer(plugin, item, "SetGUIState", PLAYING);
+                 open_location(plugin, item, TRUE);
