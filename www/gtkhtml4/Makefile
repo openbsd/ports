@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/14 10:20:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/12 05:17:52 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		lightweight HTML rendering/printing/editing engine
 
 GNOME_PROJECT=		gtkhtml
 GNOME_VERSION=		4.0.1
+
+REVISION=		0
 
 API_VERSION=		4.0
 SUBST_VARS=		API_VERSION
@@ -52,7 +54,7 @@ RUN_DEPENDS=		devel/iso-codes \
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=        ${CONFIGURE_SHARED}
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .include <bsd.port.mk>
