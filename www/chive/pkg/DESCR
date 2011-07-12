@@ -1,0 +1,7 @@
+Chive is a next generation MySQL database management tool. The
+web-based user interface supports most of the common operations
+needed by software developers and database admins (databases,
+tables, indices, keys, triggers, views, routines, privilege
+management, import/export).
+
+Chive aims to be an alternative to phpMyAdmin.
