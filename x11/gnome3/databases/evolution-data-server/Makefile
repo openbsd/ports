@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/07/03 17:14:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/07/12 09:25:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		unified backend for PIM programs
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.0.2.1
 
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		databases
 
@@ -61,7 +61,11 @@ LIB_DEPENDS= 		databases/db/v4 \
 
 YACC=			bison
 
-CONFIGURE_STYLE= 	gnu
+# should be 2.66
+AUTOCONF_VERSION=	2.65
+AUTOMAKE_VERSION=	1.9
+
+CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
 			--enable-introspection \
