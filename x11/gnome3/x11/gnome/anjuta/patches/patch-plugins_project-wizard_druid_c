@@ -1,7 +1,9 @@
-$OpenBSD: patch-plugins_project-wizard_druid_c,v 1.1.1.1 2011/07/12 11:28:50 jasper Exp $
+$OpenBSD: patch-plugins_project-wizard_druid_c,v 1.2 2011/07/12 12:06:52 jasper Exp $
 
-OpenBSD doesn't have PackageKit support, so don't bother showing
-the button to install missing packages.
+    OpenBSD doesn't have PackageKit support, so don't bother showing
+    the button to install missing packages.
+
+    https://bugzilla.gnome.org/show_bug.cgi?id=654463
 
 --- plugins/project-wizard/druid.c.orig	Tue Jul 12 10:53:59 2011
 +++ plugins/project-wizard/druid.c	Tue Jul 12 10:54:47 2011

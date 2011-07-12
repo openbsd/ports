@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/12 11:28:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/12 12:06:52 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.0.3.0
+REVISION=		0
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -75,6 +76,8 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/plugins/project-wizard/templates/python.wiz.in
+	${SUBST_CMD} ${WRKSRC}/plugins/project-wizard/templates/python.wiz.in \
+		${WRKSRC}/plugins/project-wizard/templates/pygtk/src/main.py \
+		${WRKSRC}/plugins/project-wizard/templates/python/src/main.py
 
 .include <bsd.port.mk>
