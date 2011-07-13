@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2011/06/02 17:09:31 kili Exp $
+# $OpenBSD: Makefile,v 1.22 2011/07/13 22:24:05 jasper Exp $
 
 COMMENT=	library to handle various audio file formats
 
-DISTNAME=	libsndfile-1.0.24
+DISTNAME=	libsndfile-1.0.25
 CATEGORIES=	audio
 HOMEPAGE=	http://www.mega-nerd.com/libsndfile/
-SHARED_LIBS +=	sndfile              3.3      # .1.24
+SHARED_LIBS +=	sndfile              3.3      # .1.25
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
