@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/04/09 21:53:41 jsg Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/07/13 22:20:31 naddy Exp $
 @bin bin/${CONFIG}-cpp-${GCC_V}
 @bin bin/${CONFIG}-gcc-${GCC_V}
 @bin bin/${CONFIG}-llvm-c++
@@ -30,7 +30,6 @@ lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/ammintrin.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/com_err.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/emmintrin.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/limits.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/locale.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/mm3dnow.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/mm_malloc.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/mmintrin.h
@@ -61,15 +60,13 @@ lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/ssp/unistd.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/stddef.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/stdio.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/stdlib.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/string.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/sys/
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/sys/param.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/sys/types.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/syslimits.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/time.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/tmmintrin.h
-lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/unistd.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/unwind.h
+lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/wchar.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/include/xmmintrin.h
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/
 lib/llvm-gcc-${LLVM_V}/gcc/${CONFIG}/${GCC_V}/install-tools/fixinc.sh

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/04/09 21:53:41 jsg Exp $
+# $OpenBSD: Makefile,v 1.17 2011/07/13 22:20:31 naddy Exp $
 
 # Note: library search order doesn't match base compilers
 # (/usr/local/include before /usr/include).
@@ -15,6 +15,7 @@ GCC_V =		4.2.1
 LLVM_V =	2.9
 DISTNAME =	llvm-gcc-4.2-${LLVM_V}.source
 PKGNAME =	${DISTNAME:S/.source//:S/gcc-/gcc/}
+REVISION =	0
 EXTRACT_SUFX=	.tgz
 
 SHARED_LIBS =	ssp	1.0 \
