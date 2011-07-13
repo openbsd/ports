@@ -1,9 +1,12 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2011/06/20 18:09:51 jasper Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2011/07/13 19:43:22 jasper Exp $
 
-It makes no sense to explicitly run pkg-config like this;
-g-ir-scanner's --pkg is meant for this.
+commit 16607f8b5e182389b6a228079a577cfca2ea9cf2
+Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date:   Mon Jun 20 19:36:42 2011 +0200
 
-https://bugzilla.gnome.org/show_bug.cgi?id=653031 
+    Don't bypass g-ir-scanner's --pkg, especially when that's already passed.
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=653031
 
 --- src/Makefile.in.orig	Mon Jun 20 19:33:27 2011
 +++ src/Makefile.in	Mon Jun 20 19:33:35 2011
