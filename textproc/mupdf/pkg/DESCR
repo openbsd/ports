@@ -1,20 +1,20 @@
-MuPDF is a lightweight PDF viewer and toolkit written in portable C.
+MuPDF is a lightweight PDF and XPS viewer.
 
-The renderer in MuPDF is tailored for high quality anti-aliased graphics.
-It renders text with metrics and spacing accurate to within fractions of a
-pixel for the highest fidelity in reproducing the look of a printed page
-on screen.
+The renderer in MuPDF is tailored for high quality anti-aliased
+graphics. It renders text with metrics and spacing accurate to within
+fractions of a pixel for the highest fidelity in reproducing the look of
+a printed page on screen.
 
-MuPDF has a small footprint.  A binary that includes the standard Roman
-fonts is only one megabyte.  A build with full CJK support (including an
-Asian font) is approximately five megabytes.
+MuPDF is also small, fast, and yet complete. It supports PDF 1.7 with
+transparency, encryption, hyperlinks, annotations, searching and more.
+It also reads OpenXPS documents.
 
-MuPDF has support for all non-interactive PDF 1.7 features, and the
-toolkit provides a simple API for accessing the internal structures of the
-PDF document.
+We don't support interactive features such as form filling, javascript
+and transitions. MuPDF is written modularly, so such features can be
+added on by integrators if they so desire.
 
-Command line utilities are included:  pdfdraw, to render pages and output
+Command line utilities include:  pdfdraw, to render pages and output
 PNM image files.  pdfshow, to print and examine the objects in a PDF file.
-pdfclean, to decompress and pretty print the streams and objects in PDF
+pdfclean, to decompress and pretty-print the streams and objects in PDF
 files and also to extract individual pages.  pdfinfo_mupdf, to display
 information about objects.  pdfextract, to extract individual objects.

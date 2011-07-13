@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2011/03/25 21:13:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2011/07/13 21:48:48 sthen Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-V =		0.8.15
-REVISION =	0
+V =		0.8.165
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-$V
 WRKDIST =	${WRKDIR}/mupdf-$V
@@ -22,6 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =	X11 Xext c freetype jbig2dec jpeg>=62 m openjpeg z
 
+# http://git.ghostscript.com/?p=mupdf.git;a=summary
 MASTER_SITES =	${HOMEPAGE}download/ \
 		${HOMEPAGE}download/archive/
 
@@ -38,19 +38,13 @@ NO_REGRESS =	Yes
 MAKE_ENV +=     CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CC=${CC} CXX=${CXX} \
 		MANDIR="${WRKINST}${PREFIX}/man/man1" build= verbose=1
 
-CFLAGS +=	-Ifitz -Imupdf -I${LOCALBASE}/include
-LDFLAGS +=	-L${LOCALBASE}/lib
-FAKE_FLAGS =	prefix=${WRKINST}${PREFIX}
+FAKE_FLAGS =	prefix=${WRKINST}${PREFIX} mandir=${WRKINST}${PREFIX}/man
 
-# the normal build embeds fonts into c files which take gobs of ram to
-# compile (too much for some arch, even with -O0). fontres pulls them in
-# via the assember instead.
 pre-configure:
-	cp ${FILESDIR}/fontres.c ${WRKSRC}/mupdf/
 	${SUBST_CMD} ${WRKSRC}/debian/mupdf.pc
 
 post-install:
-	# don't want to conflict with xpdf's pdfinfo
+	# don't conflict with xpdf's pdfinfo
 	mv ${PREFIX}/bin/pdfinfo ${PREFIX}/bin/pdfinfo_mupdf
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ \
 	    ${PREFIX}/share/application-registry/ ${PREFIX}/share/pixmaps \
