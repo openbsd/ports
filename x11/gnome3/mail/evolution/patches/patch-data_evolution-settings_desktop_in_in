@@ -1,6 +1,12 @@
-$OpenBSD: patch-data_evolution-settings_desktop_in_in,v 1.1.1.1 2011/07/13 13:11:45 ajacoutot Exp $
+$OpenBSD: patch-data_evolution-settings_desktop_in_in,v 1.2 2011/07/13 13:51:23 jasper Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=654525
+commit 2b342a4d9c020270da929a900b55105fc83bd57b
+Author: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date:   Wed Jul 13 15:49:25 2011 +0200
+
+    Add more categories to settings desktop file.
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=654525
 
 --- data/evolution-settings.desktop.in.in.orig	Wed Jul 13 08:05:53 2011
 +++ data/evolution-settings.desktop.in.in	Wed Jul 13 08:06:02 2011
