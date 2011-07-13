@@ -1,0 +1,14 @@
+$OpenBSD: patch-data_evolution-settings_desktop_in_in,v 1.1.1.1 2011/07/13 13:11:45 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=654525
+
+--- data/evolution-settings.desktop.in.in.orig	Wed Jul 13 08:05:53 2011
++++ data/evolution-settings.desktop.in.in	Wed Jul 13 08:06:02 2011
+@@ -5,6 +5,6 @@ Exec=evolution-settings
+ Icon=evolution
+ Terminal=false
+ Type=Application
+-Categories=GNOME;GTK;Settings;X-GNOME-PersonalSettings;
++Categories=GNOME;GTK;Settings;X-GNOME-PersonalSettings;Network;
+ OnlyShowIn=GNOME;
+ StartupNotify=true

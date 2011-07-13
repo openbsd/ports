@@ -1,0 +1,57 @@
+@comment $OpenBSD: PLIST-plugins,v 1.1.1.1 2011/07/13 13:11:46 ajacoutot Exp $
+%%SHARED%%
+@comment lib/evolution/${R}/plugins/liborg-gnome-audio-inline.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-audio-inline.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-backup-restore.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-backup-restore.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-dbx-import.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-dbx-import.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-email-custom-header.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-email-custom-header.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-attachment-reminder.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-attachment-reminder.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-bbdb.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-evolution-bbdb.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-face.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-face.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-mail-notification.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-mail-notification.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-mail-to-task.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-mail-to-task.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-mailing-list-actions.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-mailing-list-actions.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-prefer-plain.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-prefer-plain.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-save-calendar.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-save-calendar.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-templates.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-templates.la
+@comment lib/evolution/${R}/plugins/liborg-gnome-vcard-inline.a
+@comment lib/evolution/${R}/plugins/liborg-gnome-vcard-inline.la
+lib/evolution/${R}/plugins/org-gnome-audio-inline.eplug
+lib/evolution/${R}/plugins/org-gnome-backup-restore.eplug
+lib/evolution/${R}/plugins/org-gnome-dbx-import.eplug
+lib/evolution/${R}/plugins/org-gnome-email-custom-header.eplug
+lib/evolution/${R}/plugins/org-gnome-evolution-attachment-reminder.eplug
+lib/evolution/${R}/plugins/org-gnome-evolution-bbdb.eplug
+lib/evolution/${R}/plugins/org-gnome-face.eplug
+lib/evolution/${R}/plugins/org-gnome-mail-notification.eplug
+lib/evolution/${R}/plugins/org-gnome-mail-to-task.eplug
+lib/evolution/${R}/plugins/org-gnome-mailing-list-actions.eplug
+lib/evolution/${R}/plugins/org-gnome-prefer-plain.eplug
+lib/evolution/${R}/plugins/org-gnome-save-calendar.eplug
+lib/evolution/${R}/plugins/org-gnome-templates.eplug
+lib/evolution/${R}/plugins/org-gnome-vcard-inline.eplug
+@bin libexec/evolution/${R}/evolution-backup
+share/evolution/${R}/errors/org-gnome-attachment-reminder.error
+share/evolution/${R}/errors/org-gnome-backup-restore.error
+share/evolution/${R}/errors/org-gnome-face.error
+share/evolution/${R}/errors/org-gnome-mailing-list-actions.error
+@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+${SCHEMAS_INSTDIR}/apps-evolution-attachment-reminder.schemas
+${SCHEMAS_INSTDIR}/apps-evolution-mail-notification.schemas
+${SCHEMAS_INSTDIR}/apps-evolution-mail-prompts-checkdefault.schemas
+${SCHEMAS_INSTDIR}/apps-evolution-template-placeholders.schemas
+${SCHEMAS_INSTDIR}/apps_evolution_email_custom_header.schemas
+${SCHEMAS_INSTDIR}/apps_evolution_eplugin_face.schemas
+@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null

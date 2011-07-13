@@ -1,0 +1,13 @@
+$OpenBSD: patch-mail_em-utils_h,v 1.1.1.1 2011/07/13 13:11:45 ajacoutot Exp $
+--- mail/em-utils.h.orig	Mon Sep 13 14:18:10 2010
++++ mail/em-utils.h	Wed Sep 29 19:21:20 2010
+@@ -23,8 +23,8 @@
+ #ifndef __EM_UTILS_H__
+ #define __EM_UTILS_H__
+ 
+-#include <gtk/gtk.h>
+ #include <sys/types.h>
++#include <gtk/gtk.h>
+ #include <camel/camel.h>
+ 
+ #include <mail/e-mail-reader.h>

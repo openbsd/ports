@@ -1,0 +1,45 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2011/07/13 13:11:45 ajacoutot Exp $
+
+From 1f002e02aaa2bcd0f8128937940b025cf13b0828 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Tue, 12 Jul 2011 21:28:14 +0000
+Subject: Fix OpenBSD/FreeBSD support
+
+--- configure.ac.orig	Mon Apr 25 09:02:53 2011
++++ configure.ac	Wed Jul 13 04:21:18 2011
+@@ -99,6 +99,10 @@ dnl	-DE_CAL_DISABLE_DEPRECATED
+ AM_CPPFLAGS="$WARNING_FLAGS -fno-strict-aliasing"
+ AC_SUBST(AM_CPPFLAGS)
+ 
++AC_CANONICAL_HOST
++AC_DEFINE_UNQUOTED(VERSION_COMMENT, "", [Define if you want a comment appended to the version number])
++
++dnl This must stay after AC_CANONICAL_HOST, which defines $host.
+ case "$host" in
+ *openbsd*|*freebsd*)
+ 	dnl Do not set '-Wl,--no-undefined' on freebsd/openbsd
+@@ -108,8 +112,6 @@ case "$host" in
+ 	;;
+ esac
+ 
+-AC_CANONICAL_HOST
+-AC_DEFINE_UNQUOTED(VERSION_COMMENT, "", [Define if you want a comment appended to the version number])
+ 
+ dnl *************************************
+ dnl Put the ACLOCAL flags in the Makefile
+@@ -200,6 +202,15 @@ case "$host" in
+ 	SOFTOKN3_LIB=''
+ 	CHAMPLAIN_REQUIREMENT=''
+ 	GEOCLUE_REQUIREMENT=''
++	;;
++*openbsd*|*freebsd*)
++	os_win32=no
++	NO_UNDEFINED=''
++	SOEXT='.so'
++	SA_JUNK_PLUGIN=sa-junk-plugin
++	BF_JUNK_PLUGIN=bogo-junk-plugin
++	DL_LIB=''
++	SOFTOKN3_LIB='-lsoftokn3'
+ 	;;
+ *)
+ 	os_win32=no
