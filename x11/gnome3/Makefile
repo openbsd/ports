@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2011/06/13 12:23:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/07/13 13:11:09 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += databases
      SUBDIR += devel
      SUBDIR += graphics
+     SUBDIR += mail
      SUBDIR += sysutils
      SUBDIR += www
      SUBDIR += x11
