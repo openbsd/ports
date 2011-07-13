@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/13 13:11:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/13 13:58:37 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -8,6 +8,8 @@ GNOME_VERSION=		3.0.2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
+
+REVISION=		0
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -151,5 +153,7 @@ post-configure:
 
 post-install:
 	find ${PREFIX}/share/evolution/${R}/default -perm 444 -exec chmod 644 {} \;
+# originally designed for MeeGo (https://bugzilla.gnome.org/show_bug.cgi?id=654525)
+	rm ${PREFIX}/share/applications/evolution-settings.desktop
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/07/13 13:11:46 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/07/13 13:58:37 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
 @bin bin/evolution
@@ -546,7 +546,6 @@ libexec/evolution/${R}/evolution-addressbook-clean
 @bin libexec/evolution/${R}/evolution-addressbook-export
 @bin libexec/evolution/${R}/evolution-alarm-notify
 @bin libexec/evolution/${R}/killev
-share/applications/evolution-settings.desktop
 share/applications/evolution.desktop
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/evolution/
