@@ -1,9 +1,12 @@
-$OpenBSD: patch-configure_ac,v 1.1 2011/07/12 09:25:32 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2011/07/13 02:17:57 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=654444
+From 27e8a5713a345fc276deb74daa26e982bd87dec7 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Tue, 12 Jul 2011 11:26:39 +0000
+Subject: Move the "$host" down when $host is actually set and don't set DL_LIB
 
 --- configure.ac.orig	Mon May 23 17:06:26 2011
-+++ configure.ac	Tue Jul 12 10:33:07 2011
++++ configure.ac	Wed Jul 13 04:17:16 2011
 @@ -185,15 +185,6 @@ AM_CPPFLAGS="$WARNING_FLAGS -fno-strict-aliasing"
  AC_SUBST(AM_CPPFLAGS)
  
@@ -20,10 +23,11 @@ https://bugzilla.gnome.org/show_bug.cgi?id=654444
  dnl ******************************
  dnl Initialize maintainer mode
  dnl ******************************
-@@ -265,6 +256,15 @@ dnl Gtk Doc stuff
+@@ -265,6 +256,16 @@ dnl Gtk Doc stuff
  dnl ******************************
  GTK_DOC_CHECK(1.9)
  
++dnl This must appear after AC_CANONICAL_HOST, which defines $host.
 +case "$host" in
 +*openbsd*|*freebsd*)
 +	dnl Do not set '-Wl,--no-undefined' on freebsd/openbsd
@@ -36,7 +40,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=654444
  dnl ******************************
  dnl Check for Win32
  dnl ******************************
-@@ -278,6 +278,13 @@ case "$host" in
+@@ -278,6 +279,13 @@ case "$host" in
  	LIBEXECDIR_IN_SERVER_FILE='../../../libexec'
  	AC_CACHE_VAL(ac_cv_have_addrinfo, [ac_cv_have_addrinfo=yes])
  	AC_DEFINE(_WIN32_WINNT, 0x501, [To get getaddrinfo etc declarations])
