@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/02 10:10:37 jasper Exp $
-
-# XXX: Upstream doesn't keep old files; if updating please mirror or ask jasper@
+# $OpenBSD: Makefile,v 1.3 2011/07/13 11:39:24 jasper Exp $
 
 COMMENT=	deductive database system similar to Prolog
 
@@ -18,7 +16,7 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c m
 
 MASTER_SITES=		${HOMEPAGE} \
-			http://distfiles.nl/
+			${MASTER_SITE_SOURCEFORGE:=datalog/}
 
 MODULES=		lang/lua
 
