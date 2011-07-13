@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.264 2011/07/11 12:14:32 okan Exp $
+# $OpenBSD: Makefile,v 1.265 2011/07/13 02:39:00 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -50,7 +50,6 @@
      SUBDIR += evolution
      SUBDIR += evolution-exchange
      SUBDIR += evolution-plugin-rss
-     SUBDIR += evolution-plugin-webcal
      SUBDIR += exim
      SUBDIR += exim,ldap
      SUBDIR += exim,mysql
