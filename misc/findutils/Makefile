@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/07/12 18:08:41 matthew Exp $
+# $OpenBSD: Makefile,v 1.20 2011/07/13 14:10:22 naddy Exp $
 
 COMMENT=		finds and then operates on files
 
@@ -24,6 +24,10 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--program-prefix="g"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+# We don't have fdopendir() but the included gnulib assumes we do if it
+# finds openat(), so poison the autoconf cache.
+CONFIGURE_ENV+=		ac_cv_func_openat=no
+
 MAKE_FLAGS=		localstatedir=/var/db
 USE_GROFF =		Yes
 
