@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/10/18 18:36:45 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/13 15:27:44 dcoppa Exp $
 
 COMMENT=	SixXS automatic IPv6 connectivity client utility
 
 VERSION=	20070115
 DISTNAME=	aiccu_${VERSION}
 PKGNAME=	aiccu-${VERSION}
+REVISION=	0
 CATEGORIES=	net
 HOMEPAGE=	http://www.sixxs.net/tools/aiccu/
 
