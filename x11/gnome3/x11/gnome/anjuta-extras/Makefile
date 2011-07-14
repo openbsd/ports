@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/14 09:08:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/14 13:25:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,8 @@ COMMENT=	extra plugins for Anjuta IDE
 
 GNOME_PROJECT=	anjuta-extras
 GNOME_VERSION=	3.1.3
+
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -30,6 +32,10 @@ WANTLIB += xcb-shm xml2 z
 MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
+
+# plugins/scintilla/{FilePath.cxx,aneditor-priv.h,aneditor.cxx}
+# https://bugzilla.gnome.org/show_bug.cgi?id=631157
+CFLAGS +=	-Dunix -DMAX_PATH=PATH_MAX
 
 LIB_DEPENDS=	x11/gnome/anjuta>=3.1.3
 
