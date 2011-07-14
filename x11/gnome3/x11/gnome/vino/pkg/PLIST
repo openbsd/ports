@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/11 19:21:48 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/14 19:04:21 ajacoutot Exp $
 @bin bin/vino-passwd
 @bin bin/vino-preferences
 @bin libexec/vino-server
+share/GConf/
+share/GConf/gsettings/
+share/GConf/gsettings/org.gnome.Vino.convert
 share/applications/vino-preferences.desktop
 share/dbus-1/
 share/dbus-1/services/

@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/12 07:41:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/14 19:04:21 ajacoutot Exp $
 
 COMMENT=	GNOME desktop sharing server
 
 GNOME_PROJECT=	vino
-GNOME_VERSION=	3.0.2
-
-REVISION=	0
+GNOME_VERSION=	3.0.3
 
 CATEGORIES=	net
 
@@ -33,7 +31,7 @@ WANTLIB += xcb-shm xml2 z
 LIB_DEPENDS=	devel/libnotify \
 		devel/libsoup \
 		devel/libunique3 \
-		net/avahi,no_gtk,no_mono,no_qt3,no_qt4 \
+		net/avahi,no_gui,no_mono,no_qt3,no_qt4 \
 		net/telepathy/telepathy-glib \
 		security/gnutls \
 		x11/gnome/libgnome-keyring
