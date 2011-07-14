@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.12 2011/05/22 08:21:39 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.13 2011/07/14 10:48:32 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: May 22 2011 $
+.Dd $Mdocdate: July 14 2011 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -38,7 +38,8 @@
 .Ek
 .Sh DESCRIPTION
 .Nm
-is used to build ports on a cluster of machines.
+is used to build ports on a cluster of machines, or on a single machine
+with several cores.
 Its name is an acronym for
 .Sq distributed ports builder .
 .Nm
@@ -74,7 +75,7 @@ Defaults to 10 seconds.
 .It Ar STUCK_TIMEOUT
 Timeout (in seconds * speed factor) after which tasks that don't show
 any progress will be killed.
-This can be set on a per-core basis as the 
+This can be set on a per-core basis as the
 .Sq stuck
 property.
 Note that this will always be divided by the core's speed factor.
@@ -88,6 +89,8 @@ Create
 jobs for fetching files.
 Those are separate from the build jobs, since they don't consume cpu, and they
 run on the localhost.
+Defaults to 2.
+Can be set to 0 to bypass fetching jobs entirely.
 .It Fl h Ar hosts
 File with hosts to use for building.
 One host per line, plus properties, such as:
@@ -179,8 +182,55 @@ and coming back up, build errors, or builds not progressing.
 .Nm
 figures out in which order to build things on the fly, and constantly
 displays information relative to what's currently building.
-There's a list currently running, one line per task, with the task name,
-local pid, the build host name, and advancement based on the log file size.
+There's a list of what is currently running, one line per job.
+Those jobs are ordered in strict chronological order, which means that
+long running builds will tend to percolate to the top of the list.
+Normal jobs look like this:
+.Bd -literal -offset indent
+www/mozilla-firefox(build) [9452] 41% unchanged for 92 seconds
+.Ed
+.Pp
+This contains:
+.Bl -dash
+.It
+the pkgpath being built,
+.It
+the step currently being run,
+.It
+the pid running that task (note that this is always a pid on the host
+running dpb: for distributed builds, it will be an
+.Xr ssh 1
+to another machine),
+.It
+the current size of the log file (displayed as a percentage if option
+.Fl b
+has been used),
+.It
+and a possible notice that things might be stuck when
+the log file doesn't change for long periods.
+.El
+.Pp
+And fetch jobs look like this:
+.Bd -literal -offset indent
+>dist-3.0.tgz(#1) [4321] 25%
+.Ed
+.Pp
+This contains:
+.Bl -dash
+.It
+the file being fetched
+.It
+the number of the
+.Ev MASTER_SITE
+being tried
+.It
+the pid of the
+.Xr ftp 1
+process (note that fetch jobs are always local).
+.It
+a progress percentage.
+.El
+.Pp
 This is followed by a three-line display:
 .Bl -tag -width BB=
 .It I=
@@ -211,9 +261,13 @@ In general, those numbers will be slightly higher than the actual number
 of packages being built, since several paths may lead to the same package.
 .Pp
 .Nm
-uses some heuristics to try to maximise Q as soon as possible.
+uses some heuristics to try to maximise the queue as soon as possible.
 There are also provisions for a feedback-directed build, where information from
 previous builds can be used to try to build long-running jobs first.
+.Pp
+Similarly, fetches will use the continue option of
+.Xr ftp 1 ,
+since distfiles are checksummed after the fetch anyways.
 .Sh LOCKS AND ERRORS
 When building a package,
 .Nm
@@ -285,7 +339,10 @@ the corresponding machine.
 .Sh FILES
 Apart from producing packages,
 .Nm
-will create a number of log files under
+creates temporary files as
+.Pa ${FULLDISTDIR}/${DISTFILE}.part .
+.Nm
+will also create a large number of log files under
 .Pa ${PORTSDIR}/logs/{$ARCH} :
 .Bl -tag -width engine.log
 .It Pa build.log
@@ -310,9 +367,10 @@ List of pkgpath frequencies, filled at end of LISTING if
 .Fl a .
 Will be automatically reused when restarting a build: a quick LISTING of
 the most important dependencies will happen before the general LISTING.
-.It Pa size.log
-Size of work directory at the end of each build, built only with
-.Fl s .
+.It Pa dist/<distfile>.log
+Log of the
+.Xr ftp 1
+process(es) that attempted to fetch the distfile.
 .It Pa engine.log
 Build engine log.
 Each line corresponds to a state change for a pkgpath and starts with the pid
@@ -344,6 +402,16 @@ pkgpath to build.
 pkgpath put back in the buildable queue, after job that was running in
 the same directory returned.
 .El
+.It Pa fetch/bad.log
+List of URLs that did not lead to a correct distfile, either because
+they were not responding, or because of incorrect checksums.
+.It Pa fetch/distfiles.log
+Full list of distfiles seen through this build.
+Can be used to remove old distfiles.
+.It Pa fetch/good.log
+List of URLs that fetched correctly, along with timing statistics.
+.It Pa fetch/manually.log
+List of pkgpaths that require manual intervention, in human-readable form.
 .It Pa <hostname>-stop
 Not a logfile at all, but created by the user to stop hostname creating
 new jobs.
@@ -364,6 +432,9 @@ When using
 contains the list of decisions to build/not rebuild a given pkgpath.
 .It Pa signature.log
 Discrepancies between hosts that prevent them from starting up.
+.It Pa size.log
+Size of work directory at the end of each build, built only with
+.Fl s .
 .It Pa stats.log
 Simple log of the B=... line summaries.
 Mostly useful for making plots and tweaking performance.
@@ -381,10 +452,11 @@ performs best with lots of paths to build.
 When just used to build a few ports, there's a high risk of starvation
 as there are bottlenecks in parts of the tree.
 .Pp
-The
-.Fl f
-option is somewhat experimental.
-It doesn't have any good heuristics yet when faced with a lot of distfiles to get.
+Fetch jobs don't deal with checksum changes yet:
+if a fetch fails because of a wrong checksum, if you update the distinfo
+file and remove the lock,
+.Nm
+won't pick it up.
 .Pp
 .Nm
 considers all pkgpaths it explores as valid candidates for packages.
@@ -478,16 +550,3 @@ we can get away with installing stuff on a single machine.
 We should probably keep the pkgnames around with the pkgpath in the build-log,
 so that we give more credibility to build times that correspond to the
 exact same pkgnames.
-.Pp
-We should integrate mirroring functionalities.
-This mostly involves having
-.Sq special
-jobs with no cpu requirements that can run locally,
-and to have a step prior to
-.Sq tobuild ,
-where fetch would occur.
-The same logic that was used for pkgpaths should be used to handle distfiles,
-and we should probably add some kind of lock based on the ftp site being
-used to grab distfiles.
-(This is low priority, as most build machines currently being used already
-have the distfiles).
