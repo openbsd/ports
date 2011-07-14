@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.11 2011/06/04 12:56:54 espie Exp $
+# $OpenBSD: Port.pm,v 1.12 2011/07/14 11:03:35 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -134,6 +134,8 @@ sub run
 	for my $dist (values %{$job->{v}{info}{DIST}}) {
 		if (!$dist->checksum($dist->filename)) {
 			$exit = 1;
+		} else {
+			unlink($dist->tempfilename);
 		}
 	}
 	exit($exit);
