@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.21 2011/06/02 17:09:25 espie Exp $
+# $OpenBSD: dpb,v 1.22 2011/07/14 11:02:50 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -89,12 +89,13 @@ sub handle_options
 		},
 	};
 
-	$state->SUPER::handle_options('aceqrRsuUvh:xA:f:j:m:P:b:L:S:t:T:',
+	$state->SUPER::handle_options('aceqrRstuUvh:xA:f:j:m:P:b:L:S:',
     "[-acerRsuUvx] [-A arch] [-f N] [-j N] [-P plist] [-h hosts] [-L logdir]",
     "[-b log] [-t ctimeout] [-m threshold] [path ...]");
     	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
 	$state->{logdir} //= $ENV{LOGDIR} // 
 	    join("/", $state->ports, "logs", $state->arch);
+	$state->{opt}{f} //= 2;
 	if (defined $state->opt('j')) {
 		if ($state->localarch ne $state->arch) {
 			$state->usage(
@@ -103,6 +104,9 @@ sub handle_options
 		if ($state->opt('j') !~ m/^\d+$/) {
 			$state->usage("-j takes a numerical argument");
 		}
+	}
+	if ($state->opt('f') !~ m/^\d+$/) {
+		$state->usage("-f takes a numerical argument");
 	}
 	$state->{logger} = DPB::Logger->new($state->logdir, $state->opt('c'));
 	$state->heuristics->set_logger($state->logger);
