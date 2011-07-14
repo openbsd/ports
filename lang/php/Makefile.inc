@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.15 2011/07/09 00:41:44 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.16 2011/07/14 12:40:48 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -36,8 +36,7 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-PHP_CONFIG_PATH=	/var/www/conf
-PHP_CONFIG_FILE=	${PHP_CONFIG_PATH}/php-${PV}.ini
+MODPHP_CONFIG_PATH=	/var/www/conf
 
 # where the main php module is stored (outside the chroot)
 APACHE_MODULE_SUBDIR=	lib/php-${PV}
@@ -68,7 +67,7 @@ MAKE_ENV=               ${CONFIGURE_ENV}
 CONFIGURE_ARGS+=	--enable-shared \
 			--disable-static \
 			--disable-rpath \
-			--with-config-file-path=${PHP_CONFIG_PATH} \
+			--with-config-file-path=${SYSCONFDIR} \
 			--enable-inline-optimization \
 			--with-pic \
 			--with-pear=${LOCALBASE}/share/php-${PV} \
@@ -300,10 +299,10 @@ LIB_DEPENDS-xsl=	textproc/libxslt
 WANTLIB-xsl=		${MODLIBICONV_WANTLIB} m xml2 z xslt>=3 exslt
 
 # some variables to substitute
-SUBST_VARS=	PHP_CONFIG_FILE PHP_CONFIG_PATH PV ^MODULE_NAME
+SUBST_VARS=	MODPHP_CONFIG_PATH PV ^MODULE_NAME
 PHP_VERSION=	${V}
 
-.for i in TRUEPREFIX PHP_CONFIG_FILE MODULES_DIR PHP_VERSION APACHE_MODULE_DIR
+.for i in TRUEPREFIX MODULES_DIR PHP_VERSION APACHE_MODULE_DIR
 PHPXS_SUBST+= -e 's,${i},${${i}},'
 .endfor
 
@@ -336,6 +335,7 @@ INSTALL_TARGET= install-headers install-build install-programs
 DESTDIRNAME=	INSTALL_ROOT
 
 pre-configure:
+	${SUBST_CMD} ${WRKSRC}/main/php_ini.c
 	@perl -pi -e "s,OPENBSD_PEAR_ROOT,'${CHROOT_DIR}/pear',g" \
 		${WRKSRC}/scripts/phpize.in \
 		${WRKSRC}/scripts/php-config.in
