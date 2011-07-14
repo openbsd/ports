@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/14 05:20:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/14 05:39:29 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += evolution
      SUBDIR += evolution-exchange
+     SUBDIR += evolution-rss
 
 .include <bsd.port.subdir.mk>
