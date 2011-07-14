@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/03/21 17:06:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2011/07/14 15:02:18 naddy Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
@@ -97,6 +97,14 @@ CONFIGURE_ENV+=		CPPFLAGS="-I/usr/include/readline \
 			QMAKEBIN4=qmake4 \
 			QMAKE=${LOCALBASE}/bin/${QMAKEBIN4} \
 			PKG_CONFIG_LIBDIR="${LOCALBASE}/lib/qt4/pkgconfig:${LOCALBASE}/lib/qt4"
+
+# configure mistakenly assumes xattr support if it finds any of the
+# openat() family of functions, so poison the autoconf cache.
+# None of these functions are used outside the code for Solaris xattr 
+# as of 5.0.2.
+.for ac_func in openat fstatat unlinkat fchownat futimesat
+CONFIGURE_ENV+=		ac_cv_func_${ac_func}=no
+.endfor
 
 .if ${FLAVOR:L:Mno_server}
 CONFIGURE_ARGS+=	--enable-client-only \
