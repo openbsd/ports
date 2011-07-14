@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.57 2011/07/12 21:25:38 espie Exp $
+# $OpenBSD: Quirks.pm,v 1.58 2011/07/14 05:36:57 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -238,6 +238,7 @@ my $stem_extensions = {
 	'php5-tidy' => 'php-tidy',
 	'php5-xmlrpc' => 'php-xmlrpc',
 	'php5-xsl' => 'php-xsl',
+	'evolution-plugin-rss' => 'evolution-rss',
 };
 
 # ->is_base_system($handle, $state):
