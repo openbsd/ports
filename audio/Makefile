@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.263 2011/06/20 08:27:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.264 2011/07/14 14:14:46 dcoppa Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -167,6 +167,7 @@
      SUBDIR += py-tagpy
      SUBDIR += py-vorbis
      SUBDIR += py-xmms
+     SUBDIR += py-zeya
      SUBDIR += pykaraoke
      SUBDIR += pympd
      SUBDIR += rhythmbox
