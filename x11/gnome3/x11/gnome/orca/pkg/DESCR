@@ -1,0 +1,5 @@
+Orca is a free, open source, flexible, and extensible screen reader
+that provides access to the graphical desktop via user-customizable
+combinations of speech, braille, and/or magnification.
+Orca works with applications and toolkits that support the assistive
+technology service provider interface (AT-SPI).
