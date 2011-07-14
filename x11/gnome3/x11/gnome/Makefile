@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2011/07/12 11:32:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2011/07/14 09:08:49 jasper Exp $
 
      SUBDIR =
      SUBDIR += anjuta
+     SUBDIR += anjuta-extras
      SUBDIR += backgrounds
      SUBDIR += controlcenter
      SUBDIR += desktop
