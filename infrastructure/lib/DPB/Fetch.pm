@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.11 2011/06/04 12:58:24 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.12 2011/07/14 11:03:49 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -90,7 +90,7 @@ sub fullpkgpath
 sub tempfilename
 {
 	my $self = shift;
-	return $self->{distdir}."/".$self->{name}.".part";
+	return $self->filename.".part";
 }
 
 sub filename
