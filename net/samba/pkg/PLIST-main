@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.15 2011/01/17 17:58:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.16 2011/07/14 08:42:02 sthen Exp $
 @conflict samba-docs-<=3.5.0
 @pkgpath ${BASE_PKGPATH}
 @bin bin/eventlogadm
@@ -182,6 +182,7 @@ lib/samba/vfs/xattr_tdb.so
 @man man/man8/vfs_xattr_tdb.8
 @man man/man8/winbindd.8
 share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/samba/
 share/doc/samba/README
 share/examples/samba/
 @sample ${SYSCONFDIR}/samba/
