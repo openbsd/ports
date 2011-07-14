@@ -1,0 +1,18 @@
+$OpenBSD: patch-MoinMoin_support_werkzeug_templates_py,v 1.1 2011/07/14 22:34:55 fgsch Exp $
+
+werkzeug: Removed a dummy import. Not only is it unnecessary, but also no
+longer supported in Python 2.7. This fixes #447 (werkzeug bugtracker).
+
+Patch from upstream Mercurial:
+http://hg.moinmo.in/moin/1.9/rev/a4a7f275b7b3
+
+--- MoinMoin/support/werkzeug/templates.py.orig	Thu Jul 14 01:24:37 2011
++++ MoinMoin/support/werkzeug/templates.py	Thu Jul 14 01:24:44 2011
+@@ -12,7 +12,6 @@ import sys
+ import re
+ import __builtin__ as builtins
+ from compiler import ast, parse
+-from compiler.consts import SC_LOCAL, SC_GLOBAL, SC_FREE, SC_CELL
+ from compiler.pycodegen import ModuleCodeGenerator
+ from tokenize import PseudoToken
+ from werkzeug import utils
