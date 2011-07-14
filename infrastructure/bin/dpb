@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.22 2011/07/14 11:02:50 espie Exp $
+# $OpenBSD: dpb,v 1.23 2011/07/14 12:44:39 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -78,7 +78,7 @@ sub handle_options
 			while (<$fh>) {
 				chomp;
 				next if m/^\#/;
-				unshift @main::ARGV, $_;
+				push @main::ARGV, $_;
 			}
 		},
 		b => sub {
