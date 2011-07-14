@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/20 17:22:41 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/07/14 18:48:50 ajacoutot Exp $
 
 COMMENT=	LDAP Administration Tool
 
@@ -44,8 +44,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=	--enable-networkmanager=no
 
 # XXX main window hangs on startup
-#BUILDS_DEPENDS+= net/avahi,-mono
-#RUN_DEPENDS+= net/avahi,-mono
+#BUILDS_DEPENDS+= net/avahi,-mono,no_gui,no_qt3,no_qt4
+#RUN_DEPENDS+= net/avahi,-mono,no_gui,no_qt3,no_qt4
 CONFIGURE_ARGS=	--enable-avahi=no
 
 .include <bsd.port.mk>
