@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/07/12 17:36:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/07/14 09:07:53 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		3.0.3.0
-REVISION=		2
+GNOME_VERSION=		3.1.3
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -57,6 +56,9 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			x11/gnome/gdl \
 			x11/gnome/libgda \
 			x11/gtksourceview3
+
+# XXX: Remove when updating to a stable release
+BUILD_DEPENDS+=		devel/bison
 
 LIBTOOL_FLAGS=		--tag=disable-static
 DESKTOP_FILES=		Yes

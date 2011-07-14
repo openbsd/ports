@@ -1,0 +1,21 @@
+$OpenBSD: patch-configure,v 1.1 2011/07/14 09:07:53 jasper Exp $
+
+Let configure pickup the right bison; can be removed when updating
+to a stable release.
+
+--- configure.orig	Thu Jul 14 09:48:55 2011
++++ configure	Thu Jul 14 09:48:57 2011
+@@ -4731,9 +4731,10 @@ fi
+ done
+ test -n "$YACC" || YACC="yacc"
+ 
+-if test "$YACC" != "bison -y"; then
+-	as_fn_error $? "bison is required" "$LINENO" 5
+-fi
++#if test "$YACC" != "bison -y"; then
++#	as_fn_error $? "bison is required" "$LINENO" 5
++#fi
++YACC="bison -y"
+ ac_ext=c
+ ac_cpp='$CPP $CPPFLAGS'
+ ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
