@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST-gtk3,v 1.1 2011/07/14 18:48:15 ajacoutot Exp $
+lib/libavahi-ui-gtk3.a
+lib/libavahi-ui-gtk3.la
+@lib lib/libavahi-ui-gtk3.so.${LIBavahi-ui-gtk3_VERSION}
+lib/pkgconfig/avahi-ui-gtk3.pc

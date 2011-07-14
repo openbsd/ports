@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST-gui,v 1.1 2011/07/14 18:48:15 ajacoutot Exp $
+@conflict avahi-gtk-<0.6.30p2
+bin/avahi-bookmarks
+bin/avahi-discover
+@bin bin/avahi-discover-standalone
+bin/bshell
+@bin bin/bssh
+bin/bvnc
+lib/avahi/
+lib/avahi/service-types.db
+lib/python${MODPY_VERSION}/site-packages/avahi/
+lib/python${MODPY_VERSION}/site-packages/avahi/ServiceTypeDatabase.py
+lib/python${MODPY_VERSION}/site-packages/avahi/__init__.py
+lib/python${MODPY_VERSION}/site-packages/avahi/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/avahi/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/avahi_discover/
+lib/python${MODPY_VERSION}/site-packages/avahi_discover/__init__.py
+lib/python${MODPY_VERSION}/site-packages/avahi_discover/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/avahi_discover/__init__.pyo
+@man man/man1/avahi-bookmarks.1
+@man man/man1/avahi-discover.1
+@man man/man1/bssh.1
+@man man/man1/bvnc.1
+share/applications/avahi-discover.desktop
+share/applications/bssh.desktop
+share/applications/bvnc.desktop
+share/avahi/interfaces/
+share/avahi/interfaces/avahi-discover.ui
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

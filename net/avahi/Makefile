@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.64 2011/06/22 15:27:55 shadchin Exp $
+# $OpenBSD: Makefile,v 1.65 2011/07/14 18:48:15 ajacoutot Exp $
 
 COMMENT-main=	framework for Multicast DNS Service Discovery
-COMMENT-gtk=	GUI client utilities for avahi
+COMMENT-gtk=	gtk+2 avahi-ui libraries
+COMMENT-gtk3=	gtk+3 avahi-ui libraries
+COMMENT-gui=	GUI client utilities for avahi
 COMMENT-mono=	mono (.NET) bindings for avahi
 COMMENT-qt3=	qt3 bindings for avahi
 COMMENT-qt4=	qt4 bindings for avahi
+COMMENT-ui=	common avahi-ui header for gtk+2 and gtk+3
 
 V=		0.6.30
 DISTNAME=	avahi-${V}
@@ -12,15 +15,18 @@ CATEGORIES=	net devel
 
 PKGNAME-main=	avahi-${V}
 PKGNAME-gtk=	avahi-gtk-${V}
+PKGNAME-gtk3=	avahi-gtk3-${V}
+PKGNAME-gui=	avahi-gui-${V}
 PKGNAME-mono=	mono-avahi-${V}
 PKGNAME-qt3=	avahi-qt3-${V}
 PKGNAME-qt4=	avahi-qt4-${V}
+PKGNAME-ui=	avahi-ui-${V}
 
-REVISION-main=	1
-REVISION-gtk=	1
-REVISION-mono=	0
-REVISION-qt3=	0
-REVISION-qt4=	0
+REVISION-main=	2
+REVISION-gtk=	2
+REVISION-mono=	1
+REVISION-qt3=	1
+REVISION-qt4=	1
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -42,15 +48,13 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	${HOMEPAGE}/download/
 
-PSEUDO_FLAVORS=	no_gtk no_mono no_qt3 no_qt4
-FLAVOR?=	no_gtk no_mono no_qt3 no_qt4
+PSEUDO_FLAVORS=	no_gui no_mono no_qt3 no_qt4
+FLAVOR?=	no_gui no_mono no_qt3 no_qt4
 
 MULTI_PACKAGES=	-main
 
 MODULES=	devel/gettext \
 		textproc/intltool
-
-USE_GROFF =	Yes
 
 BUILD_DEPENDS=	converters/xmltoman \
 		devel/gobject-introspection
@@ -91,31 +95,76 @@ CONFIGURE_ARGS+= --disable-mono \
 		--disable-monodoc
 .endif
 
-.if !${FLAVOR:L:Mno_gtk} || ${BUILD_MONO:L} == "yes"
-SHARED_LIBS +=  avahi-ui             0.0      # .1.0
-MULTI_PACKAGES+= -gtk
+.if !${FLAVOR:L:Mno_gui} || ${BUILD_MONO:L} == "yes"
+### common
 MODULES+=	lang/python
 BUILD_DEPENDS+=	lang/python/${MODPY_VERSION},-gdbm \
 		x11/py-gtk2 \
 		x11/dbus-python
+
+### -gtk
+SHARED_LIBS +=  avahi-ui             0.0      # .1.0
+MULTI_PACKAGES+= -gtk
 LIB_DEPENDS-gtk= ${MODGETTEXT_LIB_DEPENDS} \
+		x11/gtk+2 \
 		net/avahi
-RUN_DEPENDS-gtk= ${MODPY_RUN_DEPENDS} \
-		lang/python/${MODPY_VERSION},-gdbm \
-		x11/py-gtk2 \
-		x11/dbus-python \
-		devel/py-twisted/web \
-		devel/desktop-file-utils
+RUN_DEPENDS-gtk= ${MODGETTEXT_RUN_DEPENDS} \
+		net/avahi,-ui,no_mono,no_qt3,no_qt4
 WANTLIB-gtk=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
-		Xi Xinerama Xrandr Xrender atk-1.0 c cairo dbus-1 \
+		Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 \
 		expat fontconfig freetype gdbm gdk-x11-2.0 gthread-2.0 \
 		gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0 \
 		pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs xcb z \
 		xcb-render avahi-client avahi-common GL Xxf86vm drm xcb-shm \
-		avahi-core avahi-glib ${MODGETTEXT_WANTLIB}
+		avahi-glib ${MODGETTEXT_WANTLIB}
+
+### -gtk3
+SHARED_LIBS +=  avahi-ui-gtk3             0.0 # 1.4
+MULTI_PACKAGES+= -gtk3
+LIB_DEPENDS-gtk3= ${MODGETTEXT_LIB_DEPENDS} \
+		x11/gtk+3 \
+		net/avahi
+RUN_DEPENDS-gtk3= ${MODGETTEXT_RUN_DEPENDS} \
+		net/avahi,-ui,no_mono,no_qt3,no_qt4
+WANTLIB-gtk3 += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB-gtk3 += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 avahi-client
+WANTLIB-gtk3 += avahi-common avahi-glib cairo cairo-gobject
+WANTLIB-gtk3 += dbus-1 drm expat fontconfig freetype gdbm gdk-3 gdk_pixbuf-2.0
+WANTLIB-gtk3 += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB-gtk3 += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-gtk3 += pcre pixman-1 png pthread pthread-stubs xcb xcb-render
+WANTLIB-gtk3 += xcb-shm z ${MODGETTEXT_WANTLIB}
+
+### -gui
+MULTI_PACKAGES+= -gui
+LIB_DEPENDS-gui= ${MODGETTEXT_LIB_DEPENDS} \
+		net/avahi,-gtk3,no_mono,no_qt3,no_qt4
+RUN_DEPENDS-gui= ${MODGETTEXT_RUN_DEPENDS} \
+		${MODPY_RUN_DEPENDS} \
+		lang/python/${MODPY_VERSION},-gdbm \
+		x11/py-gtk2 \
+		x11/dbus-python \
+		devel/py-twisted/web \
+		devel/desktop-file-utils
+WANTLIB-gui += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB-gui += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 avahi-client
+WANTLIB-gui += avahi-common avahi-core avahi-glib avahi-ui-gtk3 c
+WANTLIB-gui += cairo cairo-gobject dbus-1 drm expat fontconfig freetype
+WANTLIB-gui += gdbm gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB-gui += gobject-2.0 gthread-2.0 gtk-3 m pango-1.0
+WANTLIB-gui += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
+WANTLIB-gui += pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB-gui += ${MODGETTEXT_WANTLIB}
+
+### -ui
+MULTI_PACKAGES+= -ui
+LIB_DEPENDS-ui= # empty
+RUN_DEPENDS-ui= net/avahi
+WANTLIB-ui= # empty
 .else
-CONFIGURE_ARGS+= -disable-gtk \
+CONFIGURE_ARGS+= --disable-gtk \
+		--disable-gtk3 \
 		--disable-python \
 		--disable-pygtk \
 		--disable-python-dbus
@@ -181,8 +230,7 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--disable-doxygen-doc \
 		--disable-doxygen-dot \
 		--disable-doxygen-xml \
-		--disable-doxygen-html \
-		--disable-gtk3
+		--disable-doxygen-html
 
 # don't link with libssp from the gcc4 port
 # __guard and __stack_smash_handler are part of libc
