@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.148 2011/07/12 07:35:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.149 2011/07/14 09:41:08 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -78,7 +78,6 @@
      SUBDIR += metacity,gtk2
      SUBDIR += mime-data
      SUBDIR += mono-gnome
-     SUBDIR += mono-gnome-desktop
      SUBDIR += mono-keyring
      SUBDIR += moserial
      SUBDIR += mousetweaks
