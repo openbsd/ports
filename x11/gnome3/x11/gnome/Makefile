@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/07/14 09:08:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2011/07/14 13:27:10 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -25,6 +25,7 @@
      SUBDIR += nautilus
      SUBDIR += nautilus-open-terminal
      SUBDIR += nettool
+     SUBDIR += orca
      SUBDIR += panel
      SUBDIR += power-manager
      SUBDIR += screensaver
