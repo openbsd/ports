@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/12/04 16:50:48 espie Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/14 09:53:58 espie Exp $
 @option always-update
 libdata/perl5/site_perl/OpenBSD/
+libdata/perl5/site_perl/OpenBSD/Quirks/
 libdata/perl5/site_perl/OpenBSD/Quirks.pm
+libdata/perl5/site_perl/OpenBSD/Quirks/texlive.pm
