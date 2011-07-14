@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/14 06:08:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/14 13:42:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.2.90-20110621
 PKGNAME=		evolution-rss-${GNOME_VERSION:S/-/./}
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		mail
 
@@ -52,7 +52,6 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		devel/libsoup,-gnome \
 			mail/evolution,-main>=3.0.2
 
-DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	evolution-rss
 
 CONFIGURE_STYLE=	gnu
@@ -88,5 +87,10 @@ do-configure:
 
 pre-configure:
 	perl -pi -e 's,sed -i -e,perl -pi -e,g' ${WRKSRC}/src/Makefile.in
+
+# evolution-import-rss requires an argument, so there is no point in
+# providing a menu entry that is run without a way to give an arg.
+post-install:
+	rm ${PREFIX}/share/applications/evolution-rss.desktop
 
 .include <bsd.port.mk>
