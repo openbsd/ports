@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.39 2011/07/06 21:25:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2011/07/15 13:23:19 dcoppa Exp $
 
 COMMENT=		fast, small, dynamic and awesome window manager
 
 DISTNAME=		awesome-3.4.10
-REVISION=		4
+REVISION=		5
 EXTRACT_SUFX=		.tar.bz2
 CATEGORIES=		x11
 
@@ -61,7 +61,7 @@ CONFIGURE_ARGS=		-DCOMPRESS_MANPAGES=off
 NO_REGRESS=		Yes
 
 pre-install:
-	@find ${WRKDIST}/lib -name '*.lua.in.orig' -print0 | xargs -0 rm
+	@find ${WRKDIST} -name '*.lua.in.orig' -print0 | xargs -0 rm
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/awesome
