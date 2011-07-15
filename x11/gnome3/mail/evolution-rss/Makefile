@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/07/14 13:42:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/15 12:41:44 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -88,8 +88,11 @@ do-configure:
 pre-configure:
 	perl -pi -e 's,sed -i -e,perl -pi -e,g' ${WRKSRC}/src/Makefile.in
 
-# evolution-import-rss requires an argument, so there is no point in
-# providing a menu entry that is run without a way to give an arg.
+# XXX the desktop file is there for "News" category integration by other
+# applications -- unfortunately, setting NoDisplay= or ShowOnlyIn= will
+# make applications ignore it, but we don't want evolution-import-rss to
+# appear in the menu since it takes an argument which we have no way to
+# give -- so remove the file for now.
 post-install:
 	rm ${PREFIX}/share/applications/evolution-rss.desktop
 
