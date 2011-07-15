@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2011/07/15 07:06:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	VNC Client for the GNOME Desktop
 
 GNOME_VERSION=	2.30.3
 GNOME_PROJECT=	vinagre
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net
 
@@ -38,7 +38,7 @@ MODULES=	devel/gettext \
 
 RUN_DEPENDS=	misc/shared-mime-info>=0.21
 LIB_DEPENDS=	x11/gnome/panel \
-		x11/gtk-vnc>=0.4.0 \
+		STEM-*-gtk2:x11/gtk-vnc,gtk2 \
 		net/telepathy/telepathy-glib \
 		net/avahi,-gtk,no_mono,no_qt3,no_qt4
 
