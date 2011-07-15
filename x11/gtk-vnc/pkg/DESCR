@@ -1,0 +1,7 @@
+gtk-vnc is a project providing client side APIs for the RFB protocol /
+VNC remote desktop technology.
+
+It is built using coroutines allowing it to be completely asynchronous
+while remaining single threaded. It provides two core C libraries,
+libgvnc for interacting with the core RFB protocol and libgtk-vnc for a
+GTK display widget.
