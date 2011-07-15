@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/05/03 06:48:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/07/15 07:33:16 jasper Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 macppc
 
@@ -18,7 +18,8 @@ PKGNAME-main =		openarena-${V}
 PKGNAME-server =	openarena-server-${V}
 PKGNAME-data =		openarena-data-${V}
 
-PKG_ARCH-data =		amd64,i386,macppc
+PKG_ARCH-data = 	*
+REVISION-data=		0
 
 DISTNAME =		oa${V:S/.//g}
 DISTFILES =		${DISTNAME}.zip openarena-engine-${E_V}-1.tar.bz2
