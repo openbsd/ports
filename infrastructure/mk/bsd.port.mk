@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1099 2011/07/12 10:04:00 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1100 2011/07/15 23:11:00 fgsch Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1533,6 +1533,7 @@ _RUN_DEP2 = ${RUN_DEPENDS${SUBPACKAGE}:${_mod}}
 _RUN_DEP3 = ${RUN_DEPENDS${SUBPACKAGE}:${_mod}}
 
 _REGRESS_DEP2 = ${REGRESS_DEPENDS:${_mod}}
+_REGRESS_DEP3 = ${_REGRESS_DEP2}
 
 .  if ${NO_SHARED_LIBS:L} != "yes"
 _RUN_DEP2 += ${LIB_DEPENDS${SUBPACKAGE}:${_mod}}
@@ -3045,8 +3046,8 @@ _license-check:
 .  endif
 .endfor
 
-# run-depends-list, build-depends-list, lib-depends-list
-.for _i in RUN BUILD LIB
+# run-depends-list, build-depends-list, lib-depends-list, regress-depends-list
+.for _i in RUN BUILD LIB REGRESS
 ${_i:L}-depends-list:
 .  if !empty(_${_i}_DEP3)
 	@echo -n "This port requires \""
@@ -3498,8 +3499,8 @@ _all_phony = ${_recursive_depends_targets} \
 	post-patch post-regress pre-build pre-configure pre-extract pre-fake \
 	pre-fetch pre-install pre-package pre-patch pre-regress prepare \
 	print-build-depends print-run-depends readme readmes rebuild \
-	regress-depends run-depends run-depends-list show-required-by \
-	subpackage uninstall mirror-maker-fetch _print-pkgspec \
+	regress-depends regress-depends-list run-depends run-depends-list \
+    show-required-by subpackage uninstall mirror-maker-fetch _print-pkgspec \
 	lock unlock \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
 	port-wantlib-args fake-wantlib-args no-wantlib-args
