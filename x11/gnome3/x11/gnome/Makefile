@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/07/14 14:40:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2011/07/15 08:28:53 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -17,6 +17,7 @@
      SUBDIR += icon-theme-extras
      SUBDIR += icon-theme-symbolic
      SUBDIR += keyring
+     SUBDIR += krb5-auth-dialog
      SUBDIR += libgnome-keyring
      SUBDIR += libgnomekbd
      SUBDIR += libgweather
