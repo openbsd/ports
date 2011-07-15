@@ -1,6 +1,6 @@
-$OpenBSD: patch-scripts_makefile_openbsd,v 1.33 2011/07/08 20:34:37 naddy Exp $
---- scripts/makefile.openbsd.orig	Thu Mar 31 18:23:42 2011
-+++ scripts/makefile.openbsd	Sun Jul  3 19:09:39 2011
+$OpenBSD: patch-scripts_makefile_openbsd,v 1.34 2011/07/15 11:10:40 naddy Exp $
+--- scripts/makefile.openbsd.orig	Thu Jul  7 05:24:50 2011
++++ scripts/makefile.openbsd	Fri Jul  8 18:50:50 2011
 @@ -7,12 +7,11 @@
  # and license in png.h
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-scripts_makefile_openbsd,v 1.33 2011/07/08 20:34:37 naddy Exp $
 +INCDIR= ${PREFIX}/include/libpng
  
 -SHLIB_MAJOR=	15
--SHLIB_MINOR=	1.5.2
+-SHLIB_MINOR=	1.5.4
 -
  LIB=	png
  SRCS=	png.c pngerror.c pngget.c pngmem.c pngpread.c \

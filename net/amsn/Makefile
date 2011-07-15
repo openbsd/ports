@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.18 2011/07/08 20:38:00 naddy Exp $
+#$OpenBSD: Makefile,v 1.19 2011/07/15 11:10:40 naddy Exp $
 
 COMMENT=	open source MSN Messenger clone
 
@@ -9,7 +9,7 @@ CATEGORIES=	net
 
 # CxImage requires access to internal png headers.
 # This must be in sync with graphics/png
-PNG_V=		1.5.2
+PNG_V=		1.5.4
 
 HOMEPAGE=	http://www.amsn-project.net/
 
