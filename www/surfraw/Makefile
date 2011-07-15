@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/22 08:36:54 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/07/15 13:26:56 benoit Exp $
 
 COMMENT =	command line interface to popular WWW search engines
 
-DISTNAME =	surfraw-2.2.7
+DISTNAME =	surfraw-2.2.8
 CATEGORIES =	www
 
 HOMEPAGE =	http://surfraw.alioth.debian.org/
@@ -18,7 +18,6 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${HOMEPAGE}/dist/
 
 CONFIGURE_STYLE = 	gnu
-USE_GMAKE =		yes
 USE_GROFF =		Yes
 
 pre-configure:
