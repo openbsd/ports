@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.16 2011/07/14 12:40:48 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.17 2011/07/15 12:57:42 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -102,6 +102,7 @@ CONFIGURE_ARGS+= 	--with-openssl \
 			--enable-mbstring \
 			--enable-exif \
 			--enable-zend-multibyte \
+			--enable-fastcgi
 
 REGRESS_TARGET=		test
 REGRESS_FLAGS=		NO_INTERACTION=1
