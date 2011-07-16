@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/03/16 18:18:04 sebastia Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/16 15:06:57 sebastia Exp $
 
 VMEM_WARNING =	yes
 COMMENT =	garmin gps map management tool
 
-DISTNAME =	qlandkartegt-1.1.1
+DISTNAME =	qlandkartegt-1.2.2
 CATEGORIES =	geo x11
 
 HOMEPAGE =	http://www.qlandkarte.org/
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP =		Yes
 MODULES =	devel/cmake x11/qt4
 WANTLIB +=	GL GLU ICE SM X11 Xext c m pthread stdc++ z gdal gps>=19
 WANTLIB +=	exif QtDBus QtGui QtNetwork QtOpenGL QtSql QtXml QtCore proj
-WANTLIB +=	QtWebKit QtXmlPatterns phonon
+WANTLIB +=	QtWebKit QtXmlPatterns phonon jpeg
 LIB_DEPENDS +=	devel/proj \
 		x11/qt4 \
 		graphics/libexif \
