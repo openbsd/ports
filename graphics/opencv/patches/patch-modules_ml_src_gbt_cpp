@@ -1,7 +1,7 @@
-$OpenBSD: patch-modules_ml_src_gbt_cpp,v 1.1.1.1 2011/06/24 09:30:21 jasper Exp $
---- modules/ml/src/gbt.cpp.orig	Sat May 14 12:36:21 2011
-+++ modules/ml/src/gbt.cpp	Sat May 14 12:35:56 2011
-@@ -11,7 +11,7 @@
+$OpenBSD: patch-modules_ml_src_gbt_cpp,v 1.2 2011/07/16 22:43:57 espie Exp $
+--- modules/ml/src/gbt.cpp.orig	Sun Dec  5 04:35:25 2010
++++ modules/ml/src/gbt.cpp	Sat Jul 16 23:20:10 2011
+@@ -11,7 +11,7 @@ using namespace std;
  #define CV_CMP_FLOAT(a,b) ((a) < (b))
  static CV_IMPLEMENT_QSORT_EX( icvSortFloat, float, CV_CMP_FLOAT, float)
  
