@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/06/08 17:37:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/07/16 06:59:07 ajacoutot Exp $
 
 COMMENT=		CUPS bindings for Python
 
-MODPY_EGG_VERSION=	1.9.55
+MODPY_EGG_VERSION=	1.9.57
 DISTNAME=		pycups-${MODPY_EGG_VERSION}
 PKGNAME=		py-cups-${MODPY_EGG_VERSION}
-
-REVISION=		1
 
 CATEGORIES=		print
 
@@ -20,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += cups
+WANTLIB += cups ${MODPY_WANTLIB}
 
 MASTER_SITES=		http://cyberelk.net/tim/data/pycups/
 EXTRACT_SUFX=		.tar.bz2
@@ -28,7 +26,8 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES=		converters/libiconv \
 			lang/python
 
-LIB_DEPENDS=		print/cups
+LIB_DEPENDS=		print/cups \
+			${MODPY_LIB_DEPENDS}
 
 CFLAGS+=		-I${LOCALBASE}/include -DVERSION=\"${MODPY_EGG_VERSION}\"
 LDFLAGS+=		-L${LOCALBASE}/lib
