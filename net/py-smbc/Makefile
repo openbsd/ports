@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/08 18:00:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/16 06:58:13 ajacoutot Exp $
 
 COMMENT=	Python bindings to wrap the libsmbclient API
 
-MODPY_EGG_VERSION=	1.0.10
+MODPY_EGG_VERSION=	1.0.11
 DISTNAME=	pysmbc-${MODPY_EGG_VERSION}
 PKGNAME=	py-smbc-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	net
 
@@ -19,14 +18,15 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += smbclient
+WANTLIB += smbclient ${MODPY_WANTLIB}
 
 MASTER_SITES=	${MASTER_SITE_PYPI:=p/pysmbc/}
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
 
-LIB_DEPENDS=	net/samba
+LIB_DEPENDS=	net/samba \
+		${MODPY_LIB_DEPENDS}
 
 CFLAGS+=	-I${LOCALBASE}/include -DVERSION=\"${MODPY_EGG_VERSION}\"
 LDFLAGS+=	-L${LOCALBASE}/lib
