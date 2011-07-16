@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/27 06:37:07 sebastia Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/16 15:08:21 sebastia Exp $
 
 COMMENT =	tetris like puzzle game
 
-DISTNAME =	LapisPuzzle-1.1.0
-REVISION =	0
+DISTNAME =	LapisPuzzle-1.2
 CATEGORIES =	games
 
 HOMEPAGE =	http://gap.nongnu.org/lapispuzzle/
