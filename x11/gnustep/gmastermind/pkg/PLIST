@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/16 15:17:57 sebastia Exp $
+bin/GMastermind
+libexec/GNUstep/
+libexec/GNUstep/GMastermind.app/
+@bin libexec/GNUstep/GMastermind.app/GMastermind
+libexec/GNUstep/GMastermind.app/Resources/
+libexec/GNUstep/GMastermind.app/Resources/French.lproj/
+libexec/GNUstep/GMastermind.app/Resources/French.lproj/Localizable.strings
+libexec/GNUstep/GMastermind.app/Resources/GMastermind.desktop
+libexec/GNUstep/GMastermind.app/Resources/GMastermind.tiff
+libexec/GNUstep/GMastermind.app/Resources/Info-gnustep.plist
+libexec/GNUstep/GMastermind.app/stamp.make
