@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/16 15:21:43 sebastia Exp $
+bin/Sudoku
+libexec/GNUstep/
+libexec/GNUstep/Sudoku.app/
+libexec/GNUstep/Sudoku.app/Resources/
+libexec/GNUstep/Sudoku.app/Resources/Info-gnustep.plist
+libexec/GNUstep/Sudoku.app/Resources/Sudoku.desktop
+libexec/GNUstep/Sudoku.app/Resources/Sudoku.tiff
+@bin libexec/GNUstep/Sudoku.app/Sudoku
+libexec/GNUstep/Sudoku.app/stamp.make
