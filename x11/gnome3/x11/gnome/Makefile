@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/07/15 08:28:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/07/16 06:29:27 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -40,6 +40,7 @@
      SUBDIR += user-docs
      SUBDIR += utils
      SUBDIR += video-arcade
+     SUBDIR += vinagre
      SUBDIR += vino
      SUBDIR += yelp
      SUBDIR += zenity
