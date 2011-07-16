@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2011/05/14 21:56:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2011/07/16 13:25:18 ajacoutot Exp $
 
 COMMENT=	SIP and H.323 compatible conferencing application
 
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	3.2.7
 
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	net multimedia
 
@@ -34,7 +34,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	net/avahi,no_gtk,no_mono,no_qt3,no_qt4 \
+LIB_DEPENDS=	net/avahi \
 		net/opal \
 		devel/sdl \
 		databases/evolution-data-server \
