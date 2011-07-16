@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.79 2011/05/30 21:11:44 rpointel Exp $
+# $OpenBSD: Makefile.inc,v 1.80 2011/07/16 20:22:48 sthen Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -25,7 +25,7 @@ PKGNAME-tkinter=	python-tkinter-${VERSION}${PATCHLEVEL}
 PKGNAME-tools=	python-tools-${VERSION}${PATCHLEVEL}
 CATEGORIES=	lang
 MASTER_SITES=	http://www.python.org/ftp/${PSUBDIR}/ \
-		http://python.mirrors.pair.com/pub/${PSUBDIR}/
+		http://sunsite.informatik.rwth-aachen.de/python/ftp/${PSUBDIR}/
 PSUBDIR?=	python/${VERSION}${PATCHLEVEL}
 EXTRACT_SUFX=	.tgz
 
