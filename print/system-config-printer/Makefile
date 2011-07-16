@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2011/06/08 17:37:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2011/07/16 07:00:04 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
-DISTNAME=		system-config-printer-1.3.3
-REVISION=		0
+DISTNAME=		system-config-printer-1.3.4
 
 CATEGORIES=		print sysutils
 
@@ -28,8 +27,8 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/gettext \
 			devel/py-notify \
-			net/py-smbc \
-			print/py-cups>=1.9.55 \
+			net/py-smbc>=1.0.11 \
+			print/py-cups>=1.9.57 \
 			textproc/py-xml \
 			x11/dbus-python \
 			x11/gnome/py-gnome-desktop \

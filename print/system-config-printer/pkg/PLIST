@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/06/02 16:16:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/07/16 07:00:04 ajacoutot Exp $
 bin/scp-dbus-service
 bin/system-config-printer
 bin/system-config-printer-applet
@@ -72,8 +72,6 @@ share/locale/ja/LC_MESSAGES/system-config-printer.mo
 share/locale/ka/LC_MESSAGES/system-config-printer.mo
 share/locale/kn/LC_MESSAGES/system-config-printer.mo
 share/locale/ko/LC_MESSAGES/system-config-printer.mo
-share/locale/lo/
-share/locale/lo/LC_MESSAGES/
 share/locale/lo/LC_MESSAGES/system-config-printer.mo
 share/locale/lv/LC_MESSAGES/system-config-printer.mo
 share/locale/mai/LC_MESSAGES/system-config-printer.mo
@@ -108,13 +106,10 @@ share/locale/vi/LC_MESSAGES/system-config-printer.mo
 share/locale/zh_CN/LC_MESSAGES/system-config-printer.mo
 share/locale/zh_TW/LC_MESSAGES/system-config-printer.mo
 share/system-config-printer/
-share/system-config-printer/GroupsPane.py
-share/system-config-printer/GroupsPaneModel.py
 share/system-config-printer/HIG.py
 share/system-config-printer/PhysicalDevice.py
 share/system-config-printer/SearchCriterion.py
 share/system-config-printer/ToolbarSearchEntry.py
-share/system-config-printer/XmlHelper.py
 share/system-config-printer/applet.py
 share/system-config-printer/asyncconn.py
 share/system-config-printer/asyncipp.py
