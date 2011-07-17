@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/11 14:59:17 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/07/17 06:36:38 benoit Exp $
 lib/python${MODPY_VERSION}/site-packages/dns/
 lib/python${MODPY_VERSION}/site-packages/dns/__init__.py
 lib/python${MODPY_VERSION}/site-packages/dns/__init__.pyc
@@ -14,6 +14,8 @@ lib/python${MODPY_VERSION}/site-packages/dns/exception.py
 lib/python${MODPY_VERSION}/site-packages/dns/exception.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/flags.py
 lib/python${MODPY_VERSION}/site-packages/dns/flags.pyc
+lib/python${MODPY_VERSION}/site-packages/dns/hash.py
+lib/python${MODPY_VERSION}/site-packages/dns/hash.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/inet.py
 lib/python${MODPY_VERSION}/site-packages/dns/inet.pyc
 lib/python${MODPY_VERSION}/site-packages/dns/ipv4.py
@@ -178,3 +180,4 @@ share/examples/py-dnspython/name.py
 share/examples/py-dnspython/reverse.py
 share/examples/py-dnspython/reverse_name.py
 share/examples/py-dnspython/xfr.py
+share/examples/py-dnspython/zonediff.py

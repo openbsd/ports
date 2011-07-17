@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2011/06/13 08:47:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/07/17 06:36:36 benoit Exp $
 
 COMMENT=		DNS toolkit for Python
 
-MODPY_EGG_VERSION=	1.8.0
+MODPY_EGG_VERSION=	1.9.4
 DISTNAME=		dnspython-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.dnspython.org/
