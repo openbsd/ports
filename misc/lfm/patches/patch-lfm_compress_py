@@ -1,0 +1,15 @@
+$OpenBSD: patch-lfm_compress_py,v 1.1.1.1 2011/07/17 20:23:46 sthen Exp $
+
+Incompatible GNU tar option
+
+--- lfm/compress.py.orig	Thu Jul 14 12:19:36 2011
++++ lfm/compress.py	Thu Jul 14 12:19:48 2011
+@@ -111,7 +111,7 @@ class PackagerTGZ(PackagerBase):
+     exts = ('.tar.gz', '.tgz', '.tar.Z')
+     need_tar = True
+     uncompress_prog = compress_prog = sysprogs['gzip']
+-    uncompress_cmd = uncompress_prog + ' -d \"%s\" -c | ' + sysprogs['tar'] + ' xfi -'
++    uncompress_cmd = uncompress_prog + ' -d \"%s\" -c | ' + sysprogs['tar'] + ' xf -'
+     compress_cmd = sysprogs['tar'] + ' cf - \"%s\" | ' + compress_prog + ' > \"%s\"'
+     compressXXX_cmd = sysprogs['tar'] + ' cf - %s | ' + compress_prog + ' > \"%s\"'
+ 

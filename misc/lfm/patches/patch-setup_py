@@ -1,0 +1,15 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2011/07/17 20:23:46 sthen Exp $
+
+Fix manpage path
+
+--- setup.py.orig	Thu Jul 14 11:45:34 2011
++++ setup.py	Thu Jul 14 11:45:45 2011
+@@ -57,7 +57,7 @@ setup(name = 'lfm',
+                     'lfm/config', 'lfm/pyview'],
+       scripts = ['lfm/lfm', 'lfm/pyview'],
+       data_files = [('share/doc/lfm', DOC_FILES),
+-                    ('share/man/man1', MAN_FILES)]
++                    ('man/man1', MAN_FILES)]
+ #      **addargs
+      )
+ 

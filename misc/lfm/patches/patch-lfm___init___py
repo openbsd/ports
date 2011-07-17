@@ -1,0 +1,15 @@
+$OpenBSD: patch-lfm___init___py,v 1.1.1.1 2011/07/17 20:23:46 sthen Exp $
+
+Change default .rar handler
+
+--- lfm/__init__.py.orig	Thu Jul 14 11:45:30 2011
++++ lfm/__init__.py	Thu Jul 14 11:46:01 2011
+@@ -46,7 +46,7 @@ sysprogs = { 'tar': 'tar',
+              'gzip': 'gzip',
+              'zip': 'zip',
+              'unzip': 'unzip',
+-             'rar': 'rar',
++             'rar': 'unrar',
+              '7z': '7z',
+              'xz': 'xz',
+              'grep': 'grep',

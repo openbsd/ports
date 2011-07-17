@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/17 20:23:46 sthen Exp $
+bin/lfm
+bin/pyview
+lib/python${MODPY_VERSION}/site-packages/lfm/
+lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/lfm/__init__.py
+lib/python${MODPY_VERSION}/site-packages/lfm/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/lfm/actions.py
+lib/python${MODPY_VERSION}/site-packages/lfm/actions.pyc
+lib/python${MODPY_VERSION}/site-packages/lfm/compress.py
+lib/python${MODPY_VERSION}/site-packages/lfm/compress.pyc
+lib/python${MODPY_VERSION}/site-packages/lfm/config.py
+lib/python${MODPY_VERSION}/site-packages/lfm/config.pyc
+lib/python${MODPY_VERSION}/site-packages/lfm/files.py
+lib/python${MODPY_VERSION}/site-packages/lfm/files.pyc
+lib/python${MODPY_VERSION}/site-packages/lfm/lfm.py
+lib/python${MODPY_VERSION}/site-packages/lfm/lfm.pyc
+lib/python${MODPY_VERSION}/site-packages/lfm/messages.py
+lib/python${MODPY_VERSION}/site-packages/lfm/messages.pyc
+lib/python${MODPY_VERSION}/site-packages/lfm/pyview.py
+lib/python${MODPY_VERSION}/site-packages/lfm/pyview.pyc
+lib/python${MODPY_VERSION}/site-packages/lfm/utils.py
+lib/python${MODPY_VERSION}/site-packages/lfm/utils.pyc
+lib/python${MODPY_VERSION}/site-packages/lfm/vfs.py
+lib/python${MODPY_VERSION}/site-packages/lfm/vfs.pyc
+@man man/man1/lfm.1
+@man man/man1/pyview.1
+share/doc/lfm/
+share/doc/lfm/COPYING
+share/doc/lfm/ChangeLog
+share/doc/lfm/NEWS
+share/doc/lfm/README
+share/doc/lfm/README.pyview
+share/doc/lfm/TODO

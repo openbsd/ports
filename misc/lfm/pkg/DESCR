@@ -1,0 +1,19 @@
+Last File Manager is a powerful file manager for the UNIX console.
+It has a curses interface and is written in Python.
+
+Some of the features you can find in lfm:
+
+    console-based file manager for UNIX platforms
+    1-pane or 2-pane view
+    tabs
+    bookmarks
+    history
+    vfs for compressed files
+    dialogs with entry completion
+    PowerCLI, a command line interface with advanced features
+    fast access to the shell
+    direct integration of find/grep, df and other tools
+    color files by extension [Andrey Skvortsov]
+    support for different file names encodings
+    fast file viewer with text and binary modes
+    ...and many others
