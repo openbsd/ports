@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/06/02 16:02:33 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/07/17 15:32:44 rpointel Exp $
 lib/python${MODPY_VERSION}/site-packages/redis/
 lib/python${MODPY_VERSION}/site-packages/redis-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/redis-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -13,5 +13,3 @@ lib/python${MODPY_VERSION}/site-packages/redis/connection.py
 lib/python${MODPY_VERSION}/site-packages/redis/connection.pyc
 lib/python${MODPY_VERSION}/site-packages/redis/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/redis/exceptions.pyc
-lib/python${MODPY_VERSION}/site-packages/redis/types.py
-lib/python${MODPY_VERSION}/site-packages/redis/types.pyc
