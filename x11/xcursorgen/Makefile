@@ -1,38 +1,34 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/07/17 08:34:46 matthieu Exp $
 
-COMMENT=	X11 Cursors themes generator
-DIST_VERS=	1.0.3
-XORG_VERS=	7.5
-DISTNAME=	xcursorgen-${DIST_VERS}
-PKGNAME=	xcursorgen-${XORG_VERS}
-CATEGORIES=	x11
+COMMENT =	X11 Cursors themes generator
+DIST_VERS =	1.0.4
+XORG_VERS =	7.6
+DISTNAME =	xcursorgen-${DIST_VERS}
+PKGNAME =	xcursorgen-${XORG_VERS}
+CATEGORIES =	x11
 
-HOMEPAGE=	http://wiki.X.Org/
+HOMEPAGE =	http://wiki.X.Org/
 
-MAINTAINER=	Matthieu Herrb <matthieu@openbsd.org>
+MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 
-LIB_DEPENDS=	graphics/png
+LIB_DEPENDS =	graphics/png
 
 # X11
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =		Yes
+PERMIT_PACKAGE_FTP =		Yes
+PERMIT_DISTFILES_CDROM =	Yes
+PERMIT_DISTFILES_FTP =		Yes
 
-MASTER_SITES=	ftp://ftp.x.org/pub/X11R${XORG_VERS}/src/app/ \
+MASTER_SITES =	ftp://ftp.x.org/pub/individual/app/ \
 		ftp://x.mirrors.skynet.be/pub/ftp.x.org/pub/X11R${XORG_VERS}/src/app/
 
-WANTLIB=		Xrender Xcursor X11 Xfixes Xdmcp Xau c m z \
-			pthread-stubs xcb png
+WANTLIB =		Xcursor X11 c m png z
 
-SEPARATE_BUILD= 	concurrent
-USE_GROFF =	Yes
-AUTOCONF_VERSION=	2.63
-CONFIGURE_STYLE=	autoconf no-autoheader
-CONFIGURE_ENV= 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-			ACLOCAL="aclocal -I ${X11BASE}/share/aclocal" \
-MAKE_FLAGS+= 		AUTOCONF_VERSION=${AUTOCONF_VERSION}
+SEPARATE_BUILD = 	concurrent
+USE_GROFF =		Yes
+AUTOCONF_VERSION =	2.65
+CONFIGURE_STYLE =	gnu
 
-NO_REGRESS=		Yes
+NO_REGRESS =		Yes
 
 .include <bsd.port.mk>
