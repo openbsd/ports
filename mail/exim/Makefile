@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2011/05/11 12:57:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.83 2011/07/17 20:15:59 sthen Exp $
 
 CATEGORIES =		mail
 COMMENT-main =		flexible mail transfer agent
@@ -8,11 +8,11 @@ DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
 FULLPKGPATH-eximon =	${PKGPATH},-eximon
-REVISION-main = 	0
-MASTER_SITES =		ftp://ftp.exim.org/pub/exim/exim4/ \
-			ftp://ftp.exim.org/pub/exim/exim4/old/ \
-			http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/ \
-			ftp://mirror.switch.ch/mirror/exim/exim/exim4/
+REVISION-main =		1
+MASTER_SITES =		http://ftp.exim.org/pub/exim/exim4/ \
+			http://ftp.exim.org/pub/exim/exim4/old/ \
+			ftp://ftp.exim.org/pub/exim/exim4/ \
+			http://mirror.switch.ch/ftp/mirror/exim/exim/exim4/
 
 HOMEPAGE =		http://www.exim.org/
 
@@ -106,11 +106,17 @@ pre-fake:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/exim
-	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/exim/configure ${PREFIX}/share/examples/exim
+	${INSTALL_DATA} ${WRKINST}${SYSCONFDIR}/exim/configure \
+	    ${PREFIX}/share/examples/exim
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/exim
 	${INSTALL_DATA} ${WRKSRC}/doc/spec.txt ${PREFIX}/share/doc/exim
 	${INSTALL_DATA} ${WRKSRC}/doc/README.SIEVE ${PREFIX}/share/doc/exim
 	${INSTALL_DATA} ${WRKSRC}/doc/filter.txt ${PREFIX}/share/doc/exim
+	${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} \
+	    ${FILESDIR}/mailer.conf.exim \
+	    ${PREFIX}/share/doc/exim/mailer.conf.exim
+	${INSTALL_SCRIPT} ${FILESDIR}/exim-enable ${FILESDIR}/exim-disable \
+	    ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/doc/exim.8 ${PREFIX}/man/man8
 
 .include <bsd.port.mk>

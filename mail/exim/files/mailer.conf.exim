@@ -1,0 +1,6 @@
+# $OpenBSD: mailer.conf.exim,v 1.1 2011/07/17 20:15:59 sthen Exp $
+
+sendmail        ${TRUEPREFIX}/bin/exim
+send-mail       ${TRUEPREFIX}/bin/exim
+mailq           ${TRUEPREFIX}/bin/exim -bp
+newaliases      /usr/bin/true

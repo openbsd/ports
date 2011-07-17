@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.2 2011/05/11 12:57:48 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.3 2011/07/17 20:15:59 sthen Exp $
 @pkgpath mail/exim
 @pkgpath mail/exim,no_exiscan
 @pkgpath mail/exim,no_exiscan,no_x11
@@ -28,9 +28,13 @@ bin/exiqgrep
 bin/exiqsumm
 bin/exiwhat
 @man man/man8/exim.8
+sbin/exim-disable
+sbin/exim-enable
 share/doc/exim/
 share/doc/exim/README.SIEVE
 share/doc/exim/filter.txt
+share/doc/exim/mailer.conf.exim
+@sample ${SYSCONFDIR}/mailer.conf.exim
 share/doc/exim/spec.txt
 share/examples/exim/
 @sample ${SYSCONFDIR}/exim/
@@ -39,3 +43,6 @@ share/examples/exim/configure
 @owner _exim
 @group _exim
 @sample /var/spool/exim/
+@owner
+@group
+@rcscript ${RCDIR}/exim

@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $OpenBSD: exim-disable,v 1.1 2011/07/17 20:15:59 sthen Exp $
+
+if [ ! -f /etc/mailer.conf.pre-exim ]; then
+    echo "can't find /etc/mailer.conf.pre-exim, exim not disabled"
+    exit 1
+fi
+
+if [ -f /etc/mailer.conf ]; then
+    mv -f /etc/mailer.conf /etc/mailer.conf.exim
+    mv -f /etc/mailer.conf.pre-exim /etc/mailer.conf
+    echo "exim mailer.conf disabled, old mailer.conf enabled"
+else
+    echo "can't find /etc/mailer.conf, exim not disabled"
+fi

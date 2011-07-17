@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $OpenBSD: exim-enable,v 1.1 2011/07/17 20:15:59 sthen Exp $
+
+if [ -f /etc/mailer.conf.exim ]; then
+    if [ -f /etc/mailer.conf ]; then
+        mv -f /etc/mailer.conf /etc/mailer.conf.pre-exim
+        echo "old /etc/mailer.conf saved as /etc/mailer.conf.pre-exim"
+    fi
+    mv -f /etc/mailer.conf.exim /etc/mailer.conf
+    echo "exim /etc/mailer.conf enabled"
+    echo ""
+    echo "NOTE: do not forget to add sendmail_flags=NO to"
+    echo "      /etc/rc.conf.local to disable sendmail." 
+    echo ""
+    echo "NOTE: do not forget to add exim to pkg_scripts in"
+    echo "      /etc/rc.conf.local to start exim automatically." 
+    echo ""
+    echo "NOTE: do not forget to remove the \"sendmail clientmqueue runner\""
+    echo "      from root's crontab."
+else
+    echo "can't find /etc/mailer.conf.exim, exim not enabled"
+fi

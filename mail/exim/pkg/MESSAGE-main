@@ -1,14 +1,9 @@
-To replace sendmail with exim, change /etc/mailer.conf to:
+To replace sendmail with exim, install a new mailer.conf using the
+following command:
 
-sendmail        /usr/local/bin/exim
-send-mail       /usr/local/bin/exim
-mailq           /usr/local/bin/exim -bp
-newaliases      /usr/bin/true
+    ${PREFIX}/sbin/exim-enable
 
-See mailwrapper(8) for more information.
+If you want to restore sendmail, this is done using the following
+command:
 
-NOTE: do not forget to add sendmail_flags="-bd -q30m" to
-      /etc/rc.conf.local to startup exim correctly.
-
-NOTE: do not forget to remove the "sendmail clientmqueue runner"
-      from root's crontab.
+    ${PREFIX}/sbin/exim-disable

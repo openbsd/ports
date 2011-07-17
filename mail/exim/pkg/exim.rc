@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $OpenBSD: exim.rc,v 1.1 2011/07/17 20:15:59 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/exim"
+daemon_flags="-bd -q30m"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon}"
+
+rc_pre() {
+	[ ! -f /etc/mailer.conf.exim ]
+}
+
+rc_cmd $1
