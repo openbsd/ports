@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2011/07/01 11:10:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.134 2011/07/17 06:35:42 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT-main=	VideoLAN client; multimedia player
 V=		1.0.6
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	32
+REVISION-main=	33
 REVISION-jack=	5
 REVISION-web=	7
 CATEGORIES=	x11

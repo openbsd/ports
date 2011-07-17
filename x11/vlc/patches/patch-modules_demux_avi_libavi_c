@@ -1,0 +1,25 @@
+$OpenBSD: patch-modules_demux_avi_libavi_c,v 1.1 2011/07/17 06:35:42 ajacoutot Exp $
+
+Fix heap-based buffer overflow. CVE-2011-2588
+
+--- modules/demux/avi/libavi.c.orig	Wed Jul 13 17:14:50 2011
++++ modules/demux/avi/libavi.c	Wed Jul 13 17:16:43 2011
+@@ -379,7 +379,8 @@ static int AVI_ChunkRead_strf( stream_t *s, avi_chunk_
+         case( AVIFOURCC_vids ):
+             p_strh->strh.i_samplesize = 0; /* XXX for ffmpeg avi file */
+             p_chk->strf.vids.i_cat = VIDEO_ES;
+-            p_chk->strf.vids.p_bih = malloc( p_chk->common.i_chunk_size );
++            p_chk->strf.vids.p_bih = malloc( __MAX( p_chk->common.i_chunk_size,
++                                         sizeof( *p_chk->strf.vids.p_bih ) ) );
+             AVI_READ4BYTES( p_chk->strf.vids.p_bih->biSize );
+             AVI_READ4BYTES( p_chk->strf.vids.p_bih->biWidth );
+             AVI_READ4BYTES( p_chk->strf.vids.p_bih->biHeight );
+@@ -395,7 +396,7 @@ static int AVI_ChunkRead_strf( stream_t *s, avi_chunk_
+             {
+                 p_chk->strf.vids.p_bih->biSize = p_chk->common.i_chunk_size;
+             }
+-            if( p_chk->common.i_chunk_size - sizeof(BITMAPINFOHEADER) > 0 )
++            if( p_chk->common.i_chunk_size > sizeof(BITMAPINFOHEADER) )
+             {
+                 memcpy( &p_chk->strf.vids.p_bih[1],
+                         p_buff + 8 + sizeof(BITMAPINFOHEADER), /* 8=fourrc+size */
