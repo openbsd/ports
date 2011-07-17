@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/07 16:36:19 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2011/07/17 19:47:13 jasper Exp $
 
 COMMENT=	user-friendly package browser and manager
 
 DISTNAME=	pkg_mgr-0.2.1
+REVISION=	0
 CATEGORIES=	sysutils
 
 HOMEPAGE=	http://rhaalovely.net/pkg_mgr.html
@@ -26,5 +27,8 @@ RUN_DEPENDS=	devel/p5-Curses-UI \
 		databases/sqlports,-compact
 
 PKG_ARCH=	*
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/OpenBSD/PackageManager/DBIModel.pm
 
 .include <bsd.port.mk>

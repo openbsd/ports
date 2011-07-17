@@ -1,0 +1,12 @@
+$OpenBSD: patch-OpenBSD_PackageManager_DBIModel_pm,v 1.1 2011/07/17 19:47:13 jasper Exp $
+--- OpenBSD/PackageManager/DBIModel.pm.orig	Thu Jul 14 14:36:44 2011
++++ OpenBSD/PackageManager/DBIModel.pm	Thu Jul 14 14:37:09 2011
+@@ -50,7 +50,7 @@ sub init
+ 	$self->{orphaned} = (); # list of orphaned ids
+ 	$self->{portslist} = undef; # key=category id, value=port id array
+ 	$self->{dbh}->disconnect if defined $self->{dbh};
+-	$self->{dbh} = DBI->connect("dbi:SQLite:/usr/local/share/sqlports-compact");
++	$self->{dbh} = DBI->connect("dbi:SQLite:${LOCALBASE}/share/sqlports-compact");
+ 	$self->get_allports;
+ 	$self->update_installed;
+ }
