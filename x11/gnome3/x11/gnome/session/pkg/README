@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.9 2011/07/12 07:37:33 ajacoutot Exp $
+$OpenBSD: README,v 1.10 2011/07/17 08:30:52 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -95,10 +95,11 @@ Graphics & Multimedia
 
     * byzanz - makes a desktop recording optimized for webpages
     * eog-plugins - plugins for EOG
-    * evince (+nautilus-evince) - viewer for multiple document formats
+    * evince - viewer for multiple document formats
     * f-spot - photo management application
     * gnome-games (+gnome-games-extra-data) - collection of games
     * gnome-video-arcade - MAME front-end
+    * nautilus-evince - display document information in the properties window
     * nautilus-totem - display media information in the properties window
     * rhythmbox - music management application
     * simple-scan - simple scanning utility
@@ -125,6 +126,7 @@ Utilities
     * gnome-tweak-tool - tool to tweak hidden GTK/GNOME settings
     * gnomebaker - CD/DVD burning application
     * nautilus-sendto - integrate applications into Nautilus
+    * nautilus-file-roller - handle archives directly from Nautilus
     * pessulus - lockdown editor for desktop
     * seahorse (+seahorse-plugins) - encryption, keys and passwords manager
     * vinagre - VNC Client (remote Desktop client)
