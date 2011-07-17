@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2011/05/04 09:08:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.141 2011/07/17 20:14:30 sthen Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -43,6 +43,7 @@
      SUBDIR += impress
      SUBDIR += jive
      SUBDIR += ktimeclock
+     SUBDIR += lfm
      SUBDIR += lifelines
      SUBDIR += logjam
      SUBDIR += magicpoint
