@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.63 2011/06/08 17:41:57 rpointel Exp $
+# $OpenBSD: Makefile,v 1.64 2011/07/17 20:09:15 sthen Exp $
 
 COMMENT=	SAX-based render library for SVG files
 
 GNOME_PROJECT=	librsvg
 GNOME_VERSION=	2.34.0
 
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=	rsvg-2         28.0           # .34.0
 
@@ -25,8 +25,7 @@ WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm xml2
 WANTLIB += z
 
 MODULES=	devel/gettext \
-		x11/gnome \
-		lang/python
+		x11/gnome
 
 LIB_DEPENDS=	graphics/gdk-pixbuf2 \
 		devel/pango \
@@ -39,7 +38,5 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-theme \
 		--with-svgz \
 		--with-croco
-
-MODPY_ADJ_FILES=	rsvg.in
 
 .include <bsd.port.mk>
