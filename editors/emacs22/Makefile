@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/07/06 22:56:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2011/07/18 19:05:53 naddy Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self-documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -8,8 +8,8 @@ DISTNAME=		emacs-${VERSION}
 PKGNAME-main=		emacs-${VERSION}
 FULLPKGNAME-el=		emacs-el-${VERSION}
 FULLPKGPATH-el=		editors/emacs22,-el
-REVISION-main=		9
-REVISION-el=		1
+REVISION-main=		10
+REVISION-el=		2
 
 CATEGORIES=		editors
 
@@ -49,6 +49,8 @@ MAKE_ENV=		INSTALL_EMACS="${INSTALL_SCRIPT}" \
 SUBST_VARS=		GCCARCH VERSION
 
 WANTLIB-main=		c m ncurses ossaudio
+WANTLIB-el=
+LIB_DEPENDS-el=
 
 .if ${FLAVOR:L:Mno_x11}
 .  if ${FLAVOR:L:Mgtk}
