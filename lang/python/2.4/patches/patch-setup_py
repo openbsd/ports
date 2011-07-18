@@ -1,6 +1,6 @@
-$OpenBSD: patch-setup_py,v 1.5 2010/11/15 20:55:24 sthen Exp $
---- setup.py.orig	Mon Oct  9 03:41:25 2006
-+++ setup.py	Fri Dec 26 13:14:40 2008
+$OpenBSD: patch-setup_py,v 1.6 2011/07/18 15:32:18 naddy Exp $
+--- setup.py.orig	Sun Oct  8 11:41:25 2006
++++ setup.py	Mon Jul 18 08:25:57 2011
 @@ -17,6 +17,11 @@ from distutils.command.install_lib import install_lib
  # This global variable is used to hold the list of modules to be disabled.
  disabled_module_list = []
@@ -105,7 +105,7 @@ $OpenBSD: patch-setup_py,v 1.5 2010/11/15 20:55:24 sthen Exp $
  
          if platform in ('linux2', 'freebsd4', 'freebsd5', 'freebsd6'):
              exts.append( Extension('ossaudiodev', ['ossaudiodev.c']) )
-+        if platform in ('openbsd4'):
++        if platform.startswith('openbsd'):
 +            exts.append( Extension('ossaudiodev', ['ossaudiodev.c'],
 +                                   libraries=['ossaudio']) )
  

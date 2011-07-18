@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.80 2011/07/16 20:22:48 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.81 2011/07/18 15:32:18 naddy Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -118,7 +118,7 @@ MAKE_FLAGS+=	LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
 MAKE_FLAGS+=	LDFLAGS='-L${WRKSRC}'
 FAKE_FLAGS+=	RANLIB=:
 
-ALL_TARGET?=	everything ./Lib/plat-openbsd4
+ALL_TARGET?=	everything ./Lib/plat-openbsd5
 
 post-extract:
 	rm -r ${WRKDIST}/Modules/expat
