@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2011/01/19 18:14:59 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2011/07/18 19:06:37 naddy Exp $
 
 COMMENT =		the enlightened window manager
 DISTNAME =		enlightenment-0.16.999.54504
 EXTRACT_SUFX=		.tar.bz2
 
-REVISION =		1
+REVISION =		2
 EPOCH =			0
 
 # BSD

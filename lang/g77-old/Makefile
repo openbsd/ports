@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/21 20:17:53 naddy Exp $
+# $OpenBSD: Makefile,v 1.8 2011/07/18 19:06:36 naddy Exp $
 
 .include <bsd.own.mk>
 .  if ${COMPILER_VERSION:L:Mgcc4*}
@@ -11,7 +11,7 @@ ONLY_FOR_ARCHS =	${GCC2_ARCHS}
 
 V =			2.95.3
 PKGNAME =		g77-$V
-REVISION =		2
+REVISION =		3
 DISTFILES = 		g77-openbsd-2.95.3.tgz \
 			libiberty-includes-openbsd.tgz
 

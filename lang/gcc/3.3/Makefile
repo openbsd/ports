@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2011/01/15 01:07:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.50 2011/07/18 19:06:36 naddy Exp $
 
 ONLY_FOR_ARCHS =	alpha amd64 i386 m68k sparc sparc64 powerpc vax
 
@@ -23,7 +23,14 @@ SHARED_LIBS =	estdc++		6.0 \
 		objc		2.0 \
 		objc_gc		2.0
 
-EPOCH = 	0
+REVISION-main =		0
+REVISION-c++ =		0
+#REVISION-estdc =
+REVISION-g77 =		0
+REVISION-java =		0
+REVISION-objc =		0
+REVISION-ada =		0
+EPOCH = 		0
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
