@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/07/14 16:27:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/18 09:08:22 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -9,7 +9,7 @@ GNOME_VERSION=		3.0.2
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 
-REVISION-main=		1
+REVISION-main=		2
 REVISION-plugins=	0
 
 # Only get the first x.y which is needed in the PLIST.
@@ -124,7 +124,8 @@ YACC=			bison
 AUTOCONF_VERSION=	2.65
 AUTOMAKE_VERSION=	1.9
 CONFIGURE_STYLE=	autoconf
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+				-DBOGOFILTER_BINARY="\\\"${LOCALBASE}/bin/bogofilter\\\""" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}lib \
 				-Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib \
 				-Wl,--as-needed"
@@ -142,10 +143,6 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ARGS+=	--disable-image-inline
 
 FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/plugins/bogo-junk-plugin/bf-junk-filter.c \
-		${WRKSRC}/plugins/sa-junk-plugin/em-junk-filter.c
 
 # needed to prevent lazy bindings failures on pthreads(3) functions
 post-configure:
