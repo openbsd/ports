@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.84 2011/07/06 13:49:17 kili Exp $
+# $OpenBSD: Makefile,v 1.85 2011/07/18 20:24:36 kili Exp $
 
 COMMENT=	GNU PostScript interpreter
 
 VERSION=	9.02
 DISTNAME=	ghostscript-${VERSION}
+REVISION=	0
 CATEGORIES=	print lang
 SHARED_LIBS=	gs	13.0
 
@@ -158,6 +159,16 @@ FT_BRIDGE=	0
 
 NO_REGRESS=	Yes
 
+# Simulate ./configure.
+post-configure:
+	sed -e 's!@prefix@!${PREFIX}!' \
+	    -e 's!@exec_prefix@!${PREFIX}!' \
+	    -e 's!@bindir@!${PREFIX}/bin!' \
+	    -e '/GS_LIB/s!/usr!${PREFIX}!' \
+	    -e 's!@SED_EXTENDED_REGEX_OPT@!-nEe!' \
+	    -e 's!@GS@!gs!' \
+	    ${WRKSRC}/cups/pstopxl.in > ${WRKSRC}/cups/pstopxl
+
 # Avoid surprises in update-patches.
 # Use the old-style (non-autoconf) build.
 post-extract:
@@ -200,6 +211,10 @@ post-install:
 		ln -sf ps2pdf.1 ps2pdf13.1 && \
 		ln -sf ps2pdf.1 ps2pdf14.1 && \
 		ln -sf ps2ps.1 eps2eps.1
+	${INSTALL_SCRIPT_DIR} ${PREFIX}/libexec/cups/filter
+	${INSTALL_SCRIPT} ${WRKSRC}/cups/pstopxl ${PREFIX}/libexec/cups/filter
+	${INSTALL_DATA_DIR} ${PREFIX}/share/cups/model
+	${INSTALL_DATA} ${WRKSRC}/cups/*.ppd ${PREFIX}/share/cups/model
 
 # Device list based on configure.ac:
 # X_DEVS (skipping x11_ and x11alt_, since those are dependencies of

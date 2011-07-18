@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.20 2011/07/06 13:49:17 kili Exp $
+@comment $OpenBSD: PLIST,v 1.21 2011/07/18 20:24:36 kili Exp $
 @pkgpath print/ghostscript/afpl${FLAVOR_STRING}
 @pkgpath print/ghostscript/gnu${FLAVOR_STRING},cups
 %%SHARED%%
@@ -35,6 +35,9 @@ bin/ps2ps2
 bin/pv.sh
 bin/unix-lpr.sh
 bin/wftopfa
+libexec/cups/
+libexec/cups/filter/
+libexec/cups/filter/pstopxl
 man/de/
 man/de/man1/
 @man man/de/man1/dvipdf.1
@@ -77,6 +80,10 @@ man/de/man1/
 @man man/man1/ps2pdfwr.1
 @man man/man1/ps2ps.1
 @man man/man1/wftopfa.1
+share/cups/
+share/cups/model/
+share/cups/model/pxlcolor.ppd
+share/cups/model/pxlmono.ppd
 share/ghostscript/${VERSION}/
 share/ghostscript/${VERSION}/Resource/
 share/ghostscript/${VERSION}/Resource/CMap/
