@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_Savegame_SavedGame_h,v 1.1 2011/07/18 10:57:01 jasper Exp $
+--- src/Savegame/SavedGame.h.orig	Tue Apr 12 01:18:45 2011
++++ src/Savegame/SavedGame.h	Wed Apr 13 00:33:31 2011
+@@ -23,11 +23,10 @@
+ #include <vector>
+ #include <string>
+ 
+-#define USER_DIR "./USER/"
+-
+ namespace OpenXcom
+ {
+ 
++class File;
+ class Ruleset;
+ class GameTime;
+ class Country;

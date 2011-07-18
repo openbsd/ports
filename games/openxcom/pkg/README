@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.1.1.1 2011/07/05 07:50:33 ajacoutot Exp $
+$OpenBSD: README,v 1.2 2011/07/18 10:57:01 jasper Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -9,9 +9,7 @@ In order to play the game you need original data from
 For a system wide installation you can copy them to:
     ${PREFIX}/share/openxcom/DATA/
 
-You can also make a user specific installation like this:
-    $ mkdir ~/ufoxcom
-    $ cp -r ${PREFIX}/share/openxcom ~/ufoxcom
+For a user specific installation you can copy them to your home:
+    ~/.openxcom/DATA/ 
 
-Now you need to put the original data under ~/ufoxcom/DATA and to run
-the game, execute 'openxcom-bin' under ~/ufoxcom.
+Once data has been set up you can execute 'openxcom'.

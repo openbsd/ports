@@ -1,0 +1,59 @@
+$OpenBSD: patch-src_File_File_h,v 1.1 2011/07/18 10:57:01 jasper Exp $
+--- src/File/File.h.orig	Wed Apr 13 03:18:11 2011
++++ src/File/File.h	Wed Apr 13 02:22:10 2011
+@@ -0,0 +1,55 @@
++/*
++ * Copyright (c) 2011 Antti Harri <iku@openbsd.fi>
++ *
++ * This file is part of OpenXcom.
++ *
++ * OpenXcom is free software: you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation, either version 3 of the License, or
++ * (at your option) any later version.
++ *
++ * OpenXcom is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with OpenXcom.  If not, see <http://www.gnu.org/licenses/>.
++ */
++#ifndef OPENXCOM_FILE_H
++#define OPENXCOM_FILE_H
++
++#include <string>
++
++namespace OpenXcom
++{
++
++/**
++ * The game data that gets written to disk when the game is saved.
++ * A saved game holds all the variable info in a game like funds,
++ * game time, current bases and contents, world activities, score, etc.
++ */
++class File
++{
++private:
++	std::string userdir;
++	/// Gets the path of the user dir.
++	void getUserDir();
++public:
++	/// Initialize.
++	File();
++	/// Clean up.
++	~File();
++	/// Checks and creates the directory if necessary.
++	bool checkPath(std::string);
++	/// Gets the path of the savegames.
++	std::string getSavegameDir();
++	/// Gets the path of the screenshots.
++	std::string getScreenshotDir();
++	/// Gets the path of the configuration.
++	std::string getConfigDir();
++};
++
++}
++
++#endif

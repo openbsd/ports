@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Menu_LanguageState_cpp,v 1.1 2011/07/18 10:57:01 jasper Exp $
+--- src/Menu/LanguageState.cpp.orig	Sat Jun  4 00:04:45 2011
++++ src/Menu/LanguageState.cpp	Sat Jul 16 20:22:15 2011
+@@ -91,7 +91,7 @@ LanguageState::~LanguageState()
+ void LanguageState::changeLanguage(const std::string &lang)
+ {
+ 	std::stringstream ss;
+-	ss << _game->getResourcePack()->getFolder() << "Language/" << lang;
++	ss << OPENXCOMDATA << "/Language/" << lang;
+ 	Language *l = new Language();
+ 	l->loadLng(ss.str());
+ 	_game->setLanguage(l);

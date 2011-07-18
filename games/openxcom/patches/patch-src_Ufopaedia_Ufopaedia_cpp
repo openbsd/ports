@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Ufopaedia_Ufopaedia_cpp,v 1.1 2011/07/18 10:57:01 jasper Exp $
+--- src/Ufopaedia/Ufopaedia.cpp.orig	Sat Jun  4 00:04:45 2011
++++ src/Ufopaedia/Ufopaedia.cpp	Sat Jul 16 20:24:34 2011
+@@ -152,7 +152,7 @@ namespace OpenXcom
+ 	{
+ 		// set game language
+ 		std::stringstream ss;
+-		ss << game->getResourcePack()->getFolder() << "Language/English.lng";
++		ss << OPENXCOMDATA << "/Language/English.lng";
+ 		Language *l = new Language();
+ 		l->loadLng(ss.str());
+ 		game->setLanguage(l);

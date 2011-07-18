@@ -1,0 +1,107 @@
+$OpenBSD: patch-src_File_File_cpp,v 1.1 2011/07/18 10:57:01 jasper Exp $
+--- src/File/File.cpp.orig	Wed Apr 13 03:18:08 2011
++++ src/File/File.cpp	Wed Apr 13 02:45:50 2011
+@@ -0,0 +1,103 @@
++/*
++ * Copyright (c) 2011 Antti Harri <iku@openbsd.fi>
++ *
++ * This file is part of OpenXcom.
++ *
++ * OpenXcom is free software: you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License as published by
++ * the Free Software Foundation, either version 3 of the License, or
++ * (at your option) any later version.
++ *
++ * OpenXcom is distributed in the hope that it will be useful,
++ * but WITHOUT ANY WARRANTY; without even the implied warranty of
++ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
++ * GNU General Public License for more details.
++ *
++ * You should have received a copy of the GNU General Public License
++ * along with OpenXcom.  If not, see <http://www.gnu.org/licenses/>.
++ */
++#include "File.h"
++#include "../Engine/Exception.h"
++
++#ifndef _WIN32
++#include <stdio.h>
++#include <stdlib.h>
++#include <sys/param.h>
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <errno.h>
++#endif
++
++namespace OpenXcom
++{
++
++
++/**
++ * Initialize
++ */
++File::File()
++{
++	// Old style, use it as default case.
++	userdir = "./USER/";
++	#ifdef _WIN32
++	#else
++		char *homedir;
++		char path2[MAXPATHLEN];
++		// XXX: errno
++		if ((homedir = getenv("HOME")) == NULL)
++			return;
++		if (snprintf(path2, MAXPATHLEN, "%s/.openxcom/", homedir) == -1)
++			throw Exception("Failed to get userdir.");
++		// mkdir it if it doesn't exist.
++		if (mkdir(path2, 0755) != 0 && errno != EEXIST)
++			throw Exception("mkdir() failed on userdir."); // XXX: errno
++		userdir = path2;
++	#endif
++	
++}
++
++/**
++ * Destructor
++ */
++File::~File()
++{
++}
++
++/**
++ * Checks and creates the directory if necessary.
++ */
++bool File::checkPath(std::string p)
++{
++	if (mkdir(p.c_str(), 0755) != 0 && errno != EEXIST)
++		throw Exception("mkdir() failed."); // XXX: errno
++	return true;
++}
++
++/**
++ * Gets the path of the savegames.
++ */
++std::string File::getSavegameDir()
++{
++	if (checkPath(userdir + "savegames/"))
++		return userdir + "savegames/";
++}
++
++/**
++ * Gets the path of the screenshots.
++ */
++std::string File::getScreenshotDir()
++{
++	if (checkPath(userdir + "screenshots/"))
++	return userdir + "screenshots/";
++}
++
++/**
++ * Gets the path of the configuration.
++ */
++std::string File::getConfigDir()
++{
++	// For example: $HOME/.openxcom/config
++	return userdir;
++}
++
++}

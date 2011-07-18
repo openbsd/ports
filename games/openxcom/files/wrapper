@@ -1,5 +1,18 @@
 #!/bin/sh
 #
-# wrapper for running openxcom
+# Wrapper for running OpenXcom.
 
-cd ${TRUEPREFIX}/share/openxcom && ./openxcom-bin
+# Test case-insensitively and pick the first one.
+dir=$(find \
+	"${HOME}/.openxcom/DATA" \
+	"${TRUEPREFIX}/share/openxcom/DATA" \
+	-mindepth 1 -maxdepth 1 -iname "geodata" 2>/dev/null | head -n 1)
+dir=${dir%/*/*}
+
+if [ -z "$dir" ]; then
+	echo "Error: no data available."
+	echo "Look in ${TRUEPREFIX}/share/doc/pkg-readmes for extra documentation."
+	exit 1
+fi
+
+cd "$dir" && openxcom-bin "$@"

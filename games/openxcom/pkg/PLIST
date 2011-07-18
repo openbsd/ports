@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/05 07:50:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/18 10:57:01 jasper Exp $
 bin/openxcom
 @bin bin/openxcom-bin
 share/doc/pkg-readmes/${FULLPKGNAME}
@@ -22,5 +22,3 @@ share/openxcom/DATA/SoldierName/French.nam
 share/openxcom/DATA/SoldierName/German.nam
 share/openxcom/DATA/SoldierName/Japanese.nam
 share/openxcom/DATA/SoldierName/Russian.nam
-share/openxcom/USER/
-share/openxcom/USER/README.txt
