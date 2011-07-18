@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile.inc,v 1.3 2010/10/22 15:32:33 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2011/07/18 17:10:25 jasper Exp $
 
 CONFIG=		arm-elf
 PKGNAME?=	${CONFIG}-${DISTNAME}
-CATEGORIES=	devel
+CATEGORIES+=	devel devel/arm-elf
 
 MAINTAINER=	Sebastian Trahm <basti@schleifi.com>
 
