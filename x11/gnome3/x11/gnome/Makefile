@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/07/16 06:29:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2011/07/18 11:28:36 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += anjuta
@@ -32,6 +32,7 @@
      SUBDIR += power-manager
      SUBDIR += screensaver
      SUBDIR += seahorse
+     SUBDIR += seahorse-plugins
      SUBDIR += session
      SUBDIR += settings-daemon
      SUBDIR += system-monitor
