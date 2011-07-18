@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.33 2011/07/08 18:00:58 kili Exp $
+# $OpenBSD: Makefile,v 1.34 2011/07/18 20:20:14 landry Exp $
 
 SHARED_ONLY=		Yes
-
-BROKEN-hppa=		SIGILL during build
 
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
