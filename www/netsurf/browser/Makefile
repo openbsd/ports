@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/07/18 20:10:11 landry Exp $
 
 COMMENT =		lightweight web browser
 
 NETSURF_PROJECT =	netsurf
-NETSURF_VERSION =	2.6
-REVISION=		0
+NETSURF_VERSION =	2.7
 
 CATEGORIES=		www
 
 HOMEPAGE=		http://www.netsurf-browser.org/
 MASTER_SITES =		${HOMEPAGE}downloads/releases/
 
-MODULE =		devel/gettext
+MODULES =		devel/gettext
 
-LIB_DEPENDS =		www/netsurf/hubbub \
-			www/netsurf/libcss \
-			www/netsurf/libnsgif \
-			www/netsurf/libnsbmp \
+LIB_DEPENDS =		www/netsurf/hubbub>=0.1.0 \
+			www/netsurf/libcss>=0.1.0 \
+			www/netsurf/libnsgif>=0.0.3 \
+			www/netsurf/libnsbmp>=0.0.3 \
 			graphics/libmng \
 			x11/gtk+2 \
 			devel/libglade2 \
@@ -29,9 +28,9 @@ WANTLIB +=		pangoft2-1.0 parserutils png wapcaplet xml2
 WANTLIB += 		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += 		Xi Xinerama Xrandr Xrender c crypto expat fontconfig
 WANTLIB += 		freetype m pixman-1 pthread pthread-stubs ssl xcb
-WANTLIB +=		xcb-render xcb-render-util z gdk_pixbuf-2.0
+WANTLIB +=		xcb-render z gdk_pixbuf-2.0 GL Xxf86vm drm
 WANTLIB +=		hubbub css nsgif nsbmp mng gdk-x11-2.0 gtk-x11-2.0
-WANTLIB +=		glade-2.0 rsvg-2 curl
+WANTLIB +=		glade-2.0 rsvg-2 curl xcb-shm
 
 WRKDIST =		${WRKDIR}/netsurf
 

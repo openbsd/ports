@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1.1.1 2010/06/29 20:11:13 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2011/07/18 20:10:11 landry Exp $
 
 CATEGORIES +=	www/netsurf
 
@@ -17,7 +17,6 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 DESTDIRNAME =	${DESTDIR}
-WRKDIST ?=	${WRKDIR}/${DISTNAME:S/-src//}
 
 REGRESS_TARGET =test
 USE_GMAKE =	Yes
