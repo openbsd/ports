@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/04 15:12:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/18 13:45:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		3.0.2
+
+REVISION=		0
 
 SHARED_LIBS +=	cryptui              1.0      # .0.0
 
