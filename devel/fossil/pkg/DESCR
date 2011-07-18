@@ -8,6 +8,11 @@ In addition to distributed version control, it supports distributed bug
 tracking and wiki, with a built-in web interface, in a single easy-to-use
 integrated package.
 
+Fossil provides the ability to sign your commits using gnupg. But, just
+installing it alone is not enough. You also need to run the following:
+
+$ fossil settings clearsign on -global
+
 This package can be built with a static FLAVOR, which makes it easier
 to use in a chrooted apache environment.  ${TRUEPREFIX}/bin/fossil must
 be copied to /var/www/bin.  Note that it requires /var/tmp in the
