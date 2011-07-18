@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/05/02 17:22:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2011/07/18 17:26:41 naddy Exp $
 
 COMMENT=	Emacs Lisp-like runtime library
 
@@ -29,9 +29,6 @@ MODULES=		devel/gettext
 LIB_DEPENDS=		databases/gdbm \
 			devel/gmp \
 			devel/libffi
-
-GNU_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OSREV}
-SUBST_VARS=		GNU_ARCH VERSION
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes

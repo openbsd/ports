@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2011/05/02 17:22:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2011/07/18 17:26:41 naddy Exp $
 
 COMMENT=	GTK+ binding for librep Lisp environment
 
@@ -33,9 +33,6 @@ RUN_DEPENDS=		lang/librep>=0.92.0
 LIB_DEPENDS= 		x11/gtk+2
 
 MODULES=		devel/gettext
-
-GNU_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd${OSREV}
-SUBST_VARS=		GNU_ARCH VERSION
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
