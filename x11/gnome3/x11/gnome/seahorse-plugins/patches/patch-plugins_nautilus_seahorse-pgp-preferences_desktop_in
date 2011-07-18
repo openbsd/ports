@@ -1,0 +1,15 @@
+$OpenBSD: patch-plugins_nautilus_seahorse-pgp-preferences_desktop_in,v 1.1.1.1 2011/07/18 11:27:56 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=654773
+
+--- plugins/nautilus/seahorse-pgp-preferences.desktop.in.orig	Sun Jul 17 10:38:05 2011
++++ plugins/nautilus/seahorse-pgp-preferences.desktop.in	Sun Jul 17 10:44:06 2011
+@@ -5,7 +5,7 @@ Exec=seahorse-preferences
+ Terminal=false
+ Type=Application
+ Icon=seahorse-preferences
+-Categories=GNOME;GTK;Settings;X-GNOME-PersonalSettings;
++Categories=GNOME;GTK;Settings;X-GNOME-PersonalSettings;Security;Utility;
+ StartupNotify=true
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=seahorse
