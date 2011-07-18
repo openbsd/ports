@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/18 17:37:51 rpointel Exp $
+%%SHARED%%
+include/google/
+include/google/cmockery.h
+lib/libcmockery.a
+lib/libcmockery.la
+share/doc/${FULLPKGNAME}/
+share/doc/${FULLPKGNAME}/AUTHORS
+share/doc/${FULLPKGNAME}/COPYING
+share/doc/${FULLPKGNAME}/ChangeLog
+share/doc/${FULLPKGNAME}/INSTALL
+share/doc/${FULLPKGNAME}/NEWS
+share/doc/${FULLPKGNAME}/README
+share/doc/${FULLPKGNAME}/index.html
+share/doc/${FULLPKGNAME}/makefile
