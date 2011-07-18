@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/06/29 20:11:13 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/18 20:02:54 landry Exp $
 
 COMMENT =		utility library for parser building
 
 NETSURF_PROJECT =	libparserutils
-NETSURF_VERSION =	0.0.2
+NETSURF_VERSION =	0.1.0
 
 CATEGORIES =		devel
-SHARED_LIBS =		parserutils 0.0 #0.0.2
+SHARED_LIBS =		parserutils 1.0 #0.1.0
 
 pre-build:
 	echo "CFLAGS += -DWITH_ICONV_FILTER" \
