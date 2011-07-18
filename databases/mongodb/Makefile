@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/02 00:26:32 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/18 19:56:18 fgsch Exp $
 
 COMMENT =	scalable, high-performance document-oriented database
 
-DISTNAME =	mongodb-src-r1.8.1
+DISTNAME =	mongodb-src-r1.8.2
 PKGNAME =	${DISTNAME:S/src-r//}
 
 SHARED_LIBS =	mongoclient	0.0
