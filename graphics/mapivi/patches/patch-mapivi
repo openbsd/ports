@@ -1,7 +1,7 @@
-$OpenBSD: patch-mapivi,v 1.4 2008/07/02 14:26:22 landry Exp $
+$OpenBSD: patch-mapivi,v 1.5 2011/07/18 10:00:32 giovanni Exp $
 --- mapivi.orig	Thu Feb 21 21:53:44 2008
-+++ mapivi	Thu Mar 13 20:25:24 2008
-@@ -148,11 +148,11 @@ if (($EvilOS) and (defined $ENV{APPDATA}) and ($maprog
++++ mapivi	Mon Jul 18 11:51:32 2011
+@@ -148,12 +148,12 @@ if (($EvilOS) and (defined $ENV{APPDATA}) and ($maprog
  # for windows we use this path
  $maprogsdir     = $ENV{APPDATA}."/maprogs" if defined $ENV{APPDATA};
  my $configdir   = "$maprogsdir/mapivi";   # the configuration dir
@@ -11,10 +11,12 @@ $OpenBSD: patch-mapivi,v 1.4 2008/07/02 14:26:22 landry Exp $
  my $splashAvail = (eval "require Tk::Splash")  ? 1 : 0 ;
  my $splash;
 -my $logo = "$configdir/logo.jpg";
+-if ($splashAvail and -f $logo) {
 +my $logo = "${PREFIX}/share/mapivi/pics/logo.jpg";
- if ($splashAvail and -f $logo) {
++if ($splashAvail and -f $logo and -d $configdir) {
    # Splash->Show parameters: $image, $width, $height, $title, $overrideredirect
    $splash = Tk::Splash->Show($logo, 844, 259, "", 1);
+ }
 @@ -360,7 +360,7 @@ my $nrToConvert     = 0;
  my $maxCommentLength = 2**16 - 3; # a comment block may have max 64kB
  
@@ -33,27 +35,29 @@ $OpenBSD: patch-mapivi,v 1.4 2008/07/02 14:26:22 landry Exp $
  # short comment about the usage of the external programs
  my %exprogscom = (
  		   "convert"        => "build thumbnails",
-@@ -456,10 +456,7 @@ my %exprogscom = (
+@@ -456,11 +456,8 @@ my %exprogscom = (
  		   "mogrify"        => "change the size/quality of pictures",
  		   "montage"        => "combine pictures to e.g. index prints",
  		   "gimp-remote"    => "edit pictures with The GIMP (only UNIX)",
 -		   "gimp-win-remote"=> "edit pictures with The GIMP (only windows)",
 -		   "xwd"            => "make a screenshot of a window or desktop",
  		   "identify"       => "describe the format and characteristics of a picture",
--		   "thunderbird"    => "send pictures via email",
- 		   "mozilla-thunderbird" => "send pictures via email",
+ 		   "thunderbird"    => "send pictures via email",
+-		   "mozilla-thunderbird" => "send pictures via email",
  		   "exiftool"       => "Read/write meta information in image files",
  		  );
-@@ -473,9 +470,7 @@ my %exprogsres = (
+ # where to find the external programs (resources)
+@@ -473,10 +470,8 @@ my %exprogsres = (
  		   "mogrify"        => "Image Magick http://www.imagemagick.org",
  		   "montage"        => "Image Magick http://www.imagemagick.org",
  		   "gimp-remote"    => "The GIMP http://www.gimp.org",
 -		   "gimp-win-remote"=> "gimp-win-remote http://sourceforge.net/projects/gimp-win-remote/",
  		   "identify"       => "Image Magick http://www.imagemagick.org",
--		   "thunderbird"    => "http://www.mozilla.org/projects/thunderbird/",
- 		   "mozilla-thunderbird" => "http://www.mozilla.org/projects/thunderbird/",
+ 		   "thunderbird"    => "http://www.mozilla.org/projects/thunderbird/",
+-		   "mozilla-thunderbird" => "http://www.mozilla.org/projects/thunderbird/",
  		   "exiftool"       => "http://owl.phy.queensu.ca/~phil/exiftool/",	
  		  );
+ 
 @@ -544,7 +539,7 @@ my %config = (
  			  "ColorThumbBG"    => "azure3",
  			  "ColorProgress"   => "#106dba",
@@ -71,6 +75,15 @@ $OpenBSD: patch-mapivi,v 1.4 2008/07/02 14:26:22 landry Exp $
  			  "ConvertUmlaut"   => 1,   # convert german umlaute (e.g. ä -> ae etc.)
  			  "DeadPixelStr"    => "1300,846,3 85,411,3 7,365,3 1529,185,3 1593,201,3 1387,1003,3 1957,1057,3 50,1043,2 615,935,3", # info about the dead pixels of your camera see: http://www.zero-based.org/software/jpegpixi/
  			  "DeadPixelMethod" => "linear",
+@@ -795,7 +789,7 @@ my %config = (
+ 			  "MailPicNoChange" => 0,
+ 			  "MailPicMaxLength"=> 800,
+ 			  "MailPicQuality"  => 75,
+-              "MailTool"        => 'mozilla-thunderbird',
++              "MailTool"        => 'thunderbird',
+ 			  "winDirRequesterAskAgain" => 1,
+ 			  "FuzzyBorderWidth"=> 10,
+ 			  "FuzzyBorderBlur" => 10,
 @@ -1083,7 +1077,7 @@ ENIIJZtY4oUFGKCwQgw13KBDDz8UcUQTPlBc0cUSAhEEwAANVLBBCC
  dKyyLnF00kjQlkTSR9GqxBKzyS6bEbY0EestAAEBADs=
  EOF
