@@ -1,0 +1,17 @@
+You can enable this module by creating a symbolic
+link from ${SYSCONFDIR}/php-${PV}.sample/${MODULE_NAME}.ini to
+${SYSCONFDIR}/php-${PV}/${MODULE_NAME}.ini.
+
+ln -fs ${SYSCONFDIR}/php-${PV}.sample/${MODULE_NAME}.ini \
+	${SYSCONFDIR}/php-${PV}/${MODULE_NAME}.ini
+
+When using the OpenBSD Apache server, the runtime loader will need to
+pre-load the pthread shared library. While the php binary is linked with
+-pthread, httpd is not and the pecl-imagick module uses libraries from
+ImageMagick which need pthread functions.
+To do so, create a login(1) class under /etc/login.conf(5) named after
+the Apache rc.d(8) script, i.e. "httpd":
+
+httpd:\
+	:setenv=LD_PRELOAD=/usr/lib/libpthread.so:\
+	:tc=daemon:
