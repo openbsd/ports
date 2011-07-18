@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_makefiles_Makefile_top,v 1.1.1.1 2010/06/29 20:11:13 landry Exp $
---- build/makefiles/Makefile.top.orig	Fri Jun 25 18:53:05 2010
-+++ build/makefiles/Makefile.top	Fri Jun 25 18:54:01 2010
-@@ -94,8 +94,8 @@ endif
+$OpenBSD: patch-build_makefiles_Makefile_top,v 1.2 2011/07/18 20:05:48 landry Exp $
+--- build/makefiles/Makefile.top.orig	Sun Mar 13 04:30:18 2011
++++ build/makefiles/Makefile.top	Sun Jun 19 00:18:27 2011
+@@ -92,8 +92,8 @@ endif
  # Makefile variables
  ##############################################################################
  
@@ -12,7 +12,7 @@ $OpenBSD: patch-build_makefiles_Makefile_top,v 1.1.1.1 2010/06/29 20:11:13 landr
  
  ##############################################################################
  # Exported variables (also OUTPUT, further down)
-@@ -188,8 +188,8 @@ endif
+@@ -185,8 +185,8 @@ endif
  ifeq ($(findstring lib,$(COMPONENT_TYPE)),lib)
    ifeq ($(findstring lib-shared,$(COMPONENT_TYPE)),lib-shared)
      SHAREDLIBNAME := lib$(COMPONENT)$(LIBEXT)
@@ -23,7 +23,7 @@ $OpenBSD: patch-build_makefiles_Makefile_top,v 1.1.1.1 2010/06/29 20:11:13 landr
    else
      OUTPUT := $(BUILDDIR)/lib$(COMPONENT)$(LIBEXT)
    endif
-@@ -204,14 +204,6 @@ endif
+@@ -201,14 +201,6 @@ endif
  .PHONY: all test coverage profile docs clean distclean install uninstall \
  	__default __precov __partial_clean __postshared
  
@@ -38,16 +38,16 @@ $OpenBSD: patch-build_makefiles_Makefile_top,v 1.1.1.1 2010/06/29 20:11:13 landr
  # Default target
  all: $(PRE_TARGETS) $(OUTPUT) $(POST_TARGETS)
  
-@@ -272,7 +264,7 @@ __required = $(if $(REQUIRED_PKGS), \
- # Install a pkg-config control file ($1) to the specified location ($2)
+@@ -269,7 +261,7 @@ __required = $(if $(REQUIRED_PKGS),Requires: $(subst $
  define install_pkgconfig
+ 	$(Q)$(ECHO) $(ECHOFLAGS) "sed -e... $1 >$(BUILDDIR)/$(1:.in=)"
  	$(Q)$(SED) \
 -		-e 's#PREFIX#$(PREFIX)#' \
 +		-e 's#PREFIX#$(TRUEPREFIX)#' \
  		-e 's#MAJOR#$(major-version)#' \
  		-e 's#MINOR#$(minor-version)#' \
  		-e 's#PATCH#$(patch-version)#' \
-@@ -287,8 +279,6 @@ endef
+@@ -284,8 +276,6 @@ endef
  # TODO: Is this scheme portable?
  define install_shared_lib
    $(INSTALL) $(INSTALLFLAGS) -m 755 $1 $2/$(notdir $1)

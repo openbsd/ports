@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/18 20:05:47 landry Exp $
 
 COMMENT =		HTML parser
 
 NETSURF_PROJECT =	hubbub
-NETSURF_VERSION =	0.0.2
+NETSURF_VERSION =	0.1.0
 
 CATEGORIES =		www
-SHARED_LIBS =		hubbub 0.0 #0.0.2
+SHARED_LIBS =		hubbub 1.0 #0.1.0
 
 LIB_DEPENDS =		www/netsurf/libparserutils
 WANTLIB =		parserutils
