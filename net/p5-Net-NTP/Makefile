@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/04 15:18:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/19 20:03:26 gsoares Exp $
 
 COMMENT =	Perl extension for decoding NTP server responses
 
-DISTNAME =	Net-NTP-1.2
+DISTNAME =	Net-NTP-1.3
 CATEGORIES =	net
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
@@ -15,7 +15,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
 
-MODCPAN_EXAMPLES =	Yes
-MODCPAN_EXAMPLES_DIST =	eg
+RUN_DEPENDS =	net/p5-IO-Socket-INET6
+
+# requires access to pool.ntp.org
+REGRESS_IS_INTERACTIVE =Yes
 
 .include <bsd.port.mk>

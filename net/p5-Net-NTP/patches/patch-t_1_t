@@ -1,9 +1,11 @@
-$OpenBSD: patch-t_1_t,v 1.1.1.1 2010/12/04 15:18:18 benoit Exp $
---- t/1.t.orig	Sat Nov 27 22:52:39 2010
-+++ t/1.t	Sat Nov 27 22:53:32 2010
-@@ -12,4 +12,4 @@
+$OpenBSD: patch-t_1_t,v 1.2 2011/07/19 20:03:26 gsoares Exp $
+
+do regress tests.
+
+--- t/1.t.orig	Mon Jun 27 17:50:17 2011
++++ t/1.t	Mon Jun 27 17:50:27 2011
+@@ -3,3 +3,4 @@ use Test::More tests => 1;
+ BEGIN { use_ok('Net::NTP') };
  
- # Insert your test code below, the Test::More module is use()ed here so read
- # its man page ( perldoc Test::More ) for help writing this test script.
--my $ntp = get_ntp_response();
+ #########################
 +my $ntp = get_ntp_response("pool.ntp.org", 123);
