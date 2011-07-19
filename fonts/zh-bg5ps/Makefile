@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:14:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/19 19:15:19 jasper Exp $
 
 COMMENT=	convert Big5/GB encoded files to postscript
 
 DISTNAME=	bg5ps-1.3.0
 PKGNAME=	zh-${DISTNAME}
-REVISION=	7
+REVISION=	8
 CATEGORIES=	fonts chinese x11
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
@@ -20,7 +20,7 @@ WANTLIB=		c m ttf
 MASTER_SITES=	${MASTER_SITE_BACKUP}
 
 MODULES=	lang/python
-RUN_DEPENDS=	fonts/arphicttf
+RUN_DEPENDS=	fonts/zh-arphicttf
 LIB_DEPENDS=	print/freetype
 
 # python.port.mk overrides various targets when CONFIGURE_STYLE is empty
