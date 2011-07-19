@@ -1,5 +1,5 @@
 #!${LOCALBASE}/bin/lua
--- $OpenBSD: yt.lua,v 1.31 2011/05/30 20:28:54 martynas Exp $
+-- $OpenBSD: yt.lua,v 1.32 2011/07/19 16:29:46 jasper Exp $
 -- Fetch videos from YouTube.com/Videos.Google.com, and convert to MPEG.
 -- Written by Pedro Martelletto and Martynas Venckus.  Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -183,7 +183,7 @@ for i = 1, table.getn(urls) do
       io.stderr:write("Converting ...\n")
       assert(os.execute(cmd) == 0, "Failed")
       os.remove(flv)
-      io.stderr:write("Done. Video saved in " .. mp4 .. ".\n")
+      io.stderr:write("Done. Video saved in " .. mp4 .. "\n")
    end
 end
 
