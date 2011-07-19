@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1 2011/07/19 09:19:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/19 16:51:27 jasper Exp $
 
      SUBDIR =
      SUBDIR += acrofonts
@@ -36,6 +36,7 @@
      SUBDIR += zh-arphicttf
      SUBDIR += zh-bg5pdf
      SUBDIR += zh-bg5ps
+     SUBDIR += zh-kcfonts
      SUBDIR += zh-taipeifonts
      SUBDIR += zh-wqy-bitmapfont
      SUBDIR += zh-wqy-zenhei-ttf
