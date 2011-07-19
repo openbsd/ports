@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.58 2011/07/14 05:36:57 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.59 2011/07/19 09:21:25 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -239,6 +239,16 @@ my $stem_extensions = {
 	'php5-xmlrpc' => 'php-xmlrpc',
 	'php5-xsl' => 'php-xsl',
 	'evolution-plugin-rss' => 'evolution-rss',
+	'sazanami-ttf' => 'ja-sazanami-ttf',
+	'mplus-ttf' => 'ja-mplus-ttf',
+	'kanjistrokeorders-ttf' => 'ja-kanjistrokeorders-ttf',
+	'baekmuk-fonts' => 'ko-baekmuk-fonts',
+	'baekmuk-ttf' => 'ko-baekmuk-ttf',
+	'hanterm-fonts' => 'ko-hanterm-fonts',
+	'pscyr' => 'ru-pscyr',
+	'wqy-zenhei-ttf' => 'zh-wqy-zenhei-ttf',
+	'wqy-bitmapfont' => 'zh-wqy-bitmapfont',
+	'ptsans' => 'ru-ptsans'
 };
 
 # ->is_base_system($handle, $state):
