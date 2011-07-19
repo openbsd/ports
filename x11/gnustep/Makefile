@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/07/19 06:31:34 sebastia Exp $
+# $OpenBSD: Makefile,v 1.29 2011/07/19 14:00:18 sebastia Exp $
 
      SUBDIR =
      SUBDIR += addresses
@@ -24,6 +24,7 @@
      SUBDIR += gworkspace
      SUBDIR += highlighterkit
      SUBDIR += imageviewer
+     SUBDIR += jigsaw
      SUBDIR += lapispuzzle
      SUBDIR += laternamagica
      SUBDIR += make
@@ -34,6 +35,7 @@
      SUBDIR += price
      SUBDIR += projectcenter
      SUBDIR += remotedesk
+     SUBDIR += renaissance
      SUBDIR += rsskit
      SUBDIR += simpleagenda
      SUBDIR += sudoku
@@ -41,5 +43,6 @@
      SUBDIR += terminal
      SUBDIR += timemon
      SUBDIR += webservices
+     SUBDIR += zipper
 
 .include <bsd.port.subdir.mk>
