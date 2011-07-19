@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/11/08 23:24:40 jeremy Exp $
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/ncurses_bin.so
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/ncurses.rb
+@comment $OpenBSD: PLIST,v 1.7 2011/07/19 18:04:21 jeremy Exp $
+${MODRUBY_SITEDIR}/ncurses.rb
+${MODRUBY_SITEARCHDIR}/ncurses_bin.so
 ${MODRUBY_RELDOCDIR}/
 ${MODRUBY_RELDOCDIR}/ncurses/
 ${MODRUBY_RELDOCDIR}/ncurses/README
