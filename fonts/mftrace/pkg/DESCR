@@ -1,0 +1,2 @@
+mftrace is a small Python program that lets you trace a TeX bitmap font into
+a PFA or PFB font (PostScript Type1 Scalable Font) or TTF (TrueType) font.
