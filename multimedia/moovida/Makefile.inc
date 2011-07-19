@@ -41,4 +41,4 @@ RUN_DEPENDS +=	audio/libgpod,-python \
 		www/twill \
 		x11/dbus-python \
 		x11/py-gtk2 \
-		x11/liberation-fonts
+		fonts/liberation-fonts

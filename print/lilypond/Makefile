@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/07/18 20:20:14 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2011/07/19 09:20:47 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -69,7 +69,7 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/glib2 \
 			devel/pango
 RUN_DEPENDS=		print/ghostscript/gnu
-BUILD_DEPENDS= 		print/mftrace \
+BUILD_DEPENDS= 		fonts/mftrace \
 			devel/bison \
 			archivers/bzip2 \
 			devel/autoconf/${AUTOCONF_VERSION} \

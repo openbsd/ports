@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2011/06/21 17:54:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2011/07/19 09:20:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	lightweight window manager
 
 GNOME_PROJECT=	metacity
 GNOME_VERSION=	2.34.1
+REVISION=	0
 
 SHARED_LIBS +=  metacity-private     1.0      # .0.0
 
@@ -59,7 +60,7 @@ PATCH_LIST +=	patch-* gtk2-patch-src_metacity_schemas_in_in
 .else
 # defaults to the "Adwaita" theme and "Cantarell" font
 RUN_DEPENDS +=	x11/gnome/themes-standard \
-		x11/cantarell-fonts
+		fonts/cantarell-fonts
 .endif
 
 post-install:
