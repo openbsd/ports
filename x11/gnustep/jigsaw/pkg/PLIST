@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 13:50:39 sebastia Exp $
+bin/Jigsaw
+libexec/GNUstep/
+libexec/GNUstep/Jigsaw.app/
+@bin libexec/GNUstep/Jigsaw.app/Jigsaw
+libexec/GNUstep/Jigsaw.app/Resources/
+libexec/GNUstep/Jigsaw.app/Resources/GPuzzle2.tiff
+libexec/GNUstep/Jigsaw.app/Resources/Info-gnustep.plist
+libexec/GNUstep/Jigsaw.app/Resources/Jigsaw.desktop
+libexec/GNUstep/Jigsaw.app/Resources/fractal.tiff
+libexec/GNUstep/Jigsaw.app/stamp.make
