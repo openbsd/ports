@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:16:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/19 19:16:20 jasper Exp $
 
 COMMENT-main=	improved artwiz fonts
 COMMENT-de=	improved artwiz fonts (german pack)
@@ -13,8 +13,8 @@ PKGNAME-se=	${NAME}-se-${V}
 CATEGORIES=	fonts x11
 
 REVISION-main=	5
-REVISION-de=	1
-REVISION-se=	1
+REVISION-de=	2
+REVISION-se=	2
 
 HOMEPAGE=	http://artwizaleczapka.sourceforge.net/
 
@@ -41,8 +41,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 
 MULTI_PACKAGES=	-main -de -se
 
-RUN_DEPENDS-de=	x11/artwiz-aleczapka>=${V}
-RUN_DEPENDS-se=	x11/artwiz-aleczapka>=${V}
+RUN_DEPENDS-de=	${BASE_PKGPATH}>=${V}
+RUN_DEPENDS-se=	${BASE_PKGPATH}>=${V}
 
 do-install:
 	${X11BASE}/bin/mkfontdir ${WRKSRC}
