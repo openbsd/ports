@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.48 2011/07/19 09:27:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2011/07/19 19:55:18 jasper Exp $
 
 COMMENT=	color vt102 terminal emulator with transparency support
 
 DISTNAME=	aterm-0.4.2
-REVISION=	4
+REVISION=	5
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -35,7 +35,7 @@ FLAVORS=	big5
 FLAVOR?=
 
 .if ${FLAVOR:L:Mbig5}
-RUN_DEPENDS=	fonts/taipeifonts
+RUN_DEPENDS=	fonts/zh-taipeifonts
 PATCH_LIST=	patch-* big5-patch-src_Makefile_in
 
 CONFIGURE_ARGS+= --enable-big5
