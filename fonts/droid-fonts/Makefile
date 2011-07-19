@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:16:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/19 16:46:09 jasper Exp $
 
 PKG_ARCH=	*
 
@@ -18,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://download.damieng.com/fonts/redistributed/
+MASTER_SITES=	http://distfiles.nl/
 
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
