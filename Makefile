@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2010/08/20 23:11:07 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2011/07/19 09:28:52 jasper Exp $
 # $FreeBSD: Makefile,v 1.36 1997/10/04 15:54:31 jkh Exp $
 #
 
@@ -45,6 +45,7 @@ SUBDIR += devel
 SUBDIR += editors
 SUBDIR += education
 SUBDIR += emulators
+SUBDIR += fonts
 SUBDIR += games
 SUBDIR += geo
 SUBDIR += graphics
