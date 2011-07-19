@@ -1,17 +1,9 @@
-$OpenBSD: patch-bin_jruby_bash,v 1.1 2011/03/18 23:01:22 jeremy Exp $
---- bin/jruby.bash.orig	Tue Feb  8 11:26:58 2011
-+++ bin/jruby.bash	Tue Feb  8 11:28:11 2011
+$OpenBSD: patch-bin_jruby_bash,v 1.2 2011/07/19 17:57:47 jeremy Exp $
+--- bin/jruby.bash.orig	Thu Jul  7 11:19:33 2011
++++ bin/jruby.bash	Mon Jul 11 21:32:16 2011
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!${TRUEPREFIX}/bin/bash
  # -----------------------------------------------------------------------------
  # jruby.bash - Start Script for the JRuby interpreter
  #
-@@ -20,6 +20,7 @@ case "`uname`" in
- esac
- 
- # ----- Verify and Set Required Environment Variables -------------------------
-+JAVA_HOME=$(javaPathHelper -h jruby)
- JAVA_VM=-client
- 
- ## resolve links - $0 may be a link to  home

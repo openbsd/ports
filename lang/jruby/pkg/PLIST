@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/06/02 00:11:50 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/07/19 17:57:47 jeremy Exp $
 jruby/
 jruby/bin/
 jruby/bin/ast
@@ -6,7 +6,7 @@ jruby/bin/gem
 jruby/bin/jgem
 jruby/bin/jirb
 jruby/bin/jirb_swing
-jruby/bin/jruby
+@bin jruby/bin/jruby
 jruby/bin/jrubyc
 jruby/bin/rake
 jruby/bin/rdoc
@@ -15,9 +15,6 @@ jruby/bin/testrb
 jruby/lib/
 jruby/lib/jruby-complete.jar
 jruby/lib/native/
-jruby/lib/native/${JFFI_ARCH}/
-jruby/lib/native/${JFFI_ARCH}/libjffi-1.0.so
-jruby/lib/native/${JFFI_ARCH}/libjruby-cext.so
 jruby/lib/native/include/
 jruby/lib/native/include/config.h
 jruby/lib/native/include/ruby/
@@ -34,6 +31,9 @@ jruby/lib/native/include/ruby/rubysig.h
 jruby/lib/native/include/ruby/st.h
 jruby/lib/native/include/ruby/st_sizes.h
 jruby/lib/native/include/ruby/version.h
+jruby/lib/native/${JFFI_ARCH}/
+jruby/lib/native/${JFFI_ARCH}/libjffi-1.0.so
+jruby/lib/native/${JFFI_ARCH}/libjruby-cext.so
 jruby/lib/ruby/
 jruby/lib/ruby/1.8/
 jruby/lib/ruby/1.8/.document
@@ -1252,9 +1252,68 @@ jruby/lib/ruby/1.9/yaml/syck.rb
 jruby/lib/ruby/gems/
 jruby/lib/ruby/gems/1.8/
 jruby/lib/ruby/gems/1.8/cache/
+jruby/lib/ruby/gems/1.8/cache/jruby-launcher-${JRUBY_LAUNCHER_V}-java.gem
 jruby/lib/ruby/gems/1.8/cache/rake-${RAKE_V}.gem
 jruby/lib/ruby/gems/1.8/doc/
 jruby/lib/ruby/gems/1.8/gems/
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/.dep.inc
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/COPYING
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/Makefile
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/README.txt
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/Rakefile
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/argnames.h
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/argparser.cpp
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/argparser.h
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/unix/
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/unix/OpenBSD/
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/unix/OpenBSD/argparser.o
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/unix/OpenBSD/argparser.o.d
+@bin jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/unix/OpenBSD/jruby-launcher
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/unix/OpenBSD/jrubyexe.o
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/unix/OpenBSD/jrubyexe.o.d
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/unix/OpenBSD/ng.o
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/unix/OpenBSD/ng.o.d
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/unix/OpenBSD/strlcpy.o
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/unix/OpenBSD/strlcpy.o.d
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/unix/OpenBSD/unixlauncher.o
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/unix/OpenBSD/unixlauncher.o.d
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/unix/OpenBSD/utilsfuncs.o
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/build/unix/OpenBSD/utilsfuncs.o.d
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/extconf.rb
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/inc/
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/inc/Makefile-conf.mk
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/inc/Makefile-impl.mk
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/inc/Makefile-rules.mk
+@bin jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/jruby
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/jruby.cpp
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/jrubyexe.cpp
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/jvmlauncher.cpp
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/jvmlauncher.h
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/lib/
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/lib/jruby-launcher.rb
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/lib/rubygems/
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/lib/rubygems/defaults/
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/lib/rubygems/defaults/jruby_native.rb
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/nbexecloader.h
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/ng.c
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/platformlauncher.cpp
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/platformlauncher.h
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/rb_w32_cmdvector.h
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/resources/
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/resources/jruby.ico
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/resources/jruby.rc
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/spec/
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/spec/launcher_spec.rb
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/spec/spec_helper.rb
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/strlcpy.c
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/unixlauncher.cpp
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/unixlauncher.h
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/utilsfuncs.cpp
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/utilsfuncs.h
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/utilsfuncswin.cpp
+jruby/lib/ruby/gems/1.8/gems/jruby-launcher-${JRUBY_LAUNCHER_V}-java/version.h
 jruby/lib/ruby/gems/1.8/gems/rake-${RAKE_V}/
 jruby/lib/ruby/gems/1.8/gems/rake-${RAKE_V}/CHANGES
 jruby/lib/ruby/gems/1.8/gems/rake-${RAKE_V}/MIT-LICENSE
@@ -1391,11 +1450,13 @@ jruby/lib/ruby/gems/1.8/gems/sources-0.0.1/
 jruby/lib/ruby/gems/1.8/gems/sources-0.0.1/lib/
 jruby/lib/ruby/gems/1.8/gems/sources-0.0.1/lib/sources.rb
 jruby/lib/ruby/gems/1.8/specifications/
+jruby/lib/ruby/gems/1.8/specifications/jruby-launcher-${JRUBY_LAUNCHER_V}-java.gemspec
 jruby/lib/ruby/gems/1.8/specifications/rake-${RAKE_V}.gemspec
 jruby/lib/ruby/gems/1.8/specifications/sources-0.0.1.gemspec
 jruby/lib/ruby/site_ruby/
 jruby/lib/ruby/site_ruby/1.8/
 jruby/lib/ruby/site_ruby/1.8/gauntlet_rubygems.rb
+jruby/lib/ruby/site_ruby/1.8/java/
 jruby/lib/ruby/site_ruby/1.8/rbconfig/
 jruby/lib/ruby/site_ruby/1.8/rbconfig/datadir.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/
@@ -1438,6 +1499,7 @@ jruby/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/defaults/
 jruby/lib/ruby/site_ruby/1.8/rubygems/defaults.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/defaults/jruby.rb
+jruby/lib/ruby/site_ruby/1.8/rubygems/defaults/jruby_native.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/dependency.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/dependency_installer.rb
 jruby/lib/ruby/site_ruby/1.8/rubygems/dependency_list.rb
@@ -1542,6 +1604,10 @@ jruby/lib/ruby/site_ruby/shared/ffi/platform.rb
 jruby/lib/ruby/site_ruby/shared/ffi/platform/errno.rb.ffi
 jruby/lib/ruby/site_ruby/shared/ffi/platform/etc.rb.ffi
 jruby/lib/ruby/site_ruby/shared/ffi/platform/fcntl.rb.ffi
+jruby/lib/ruby/site_ruby/shared/ffi/platform/socket.rb.ffi
+jruby/lib/ruby/site_ruby/shared/ffi/platform/stat.rb.ffi
+jruby/lib/ruby/site_ruby/shared/ffi/platform/sysconf.rb.ffi
+jruby/lib/ruby/site_ruby/shared/ffi/platform/syslog.rb.ffi
 jruby/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/
 jruby/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/errno.rb
 jruby/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/etc.rb
@@ -1553,10 +1619,6 @@ jruby/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/sysconf.rb
 jruby/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/syslog.rb
 jruby/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/types.conf
 jruby/lib/ruby/site_ruby/shared/ffi/platform/${FFI_ARCH}/zlib.rb
-jruby/lib/ruby/site_ruby/shared/ffi/platform/socket.rb.ffi
-jruby/lib/ruby/site_ruby/shared/ffi/platform/stat.rb.ffi
-jruby/lib/ruby/site_ruby/shared/ffi/platform/sysconf.rb.ffi
-jruby/lib/ruby/site_ruby/shared/ffi/platform/syslog.rb.ffi
 jruby/lib/ruby/site_ruby/shared/ffi/platform/zlib.rb.ffi
 jruby/lib/ruby/site_ruby/shared/ffi/pointer.rb
 jruby/lib/ruby/site_ruby/shared/ffi/rbx.rb
@@ -12087,6 +12149,3 @@ jruby/share/ri/1.8/system/created.rid
 jruby/share/ri/1.8/system/fatal/
 jruby/share/ri/1.8/system/fatal/cdesc-fatal.yaml
 jruby/share/ri_cache.bin.gz
-jruby/tool/
-jruby/tool/nailgun/
-@bin jruby/tool/nailgun/ng

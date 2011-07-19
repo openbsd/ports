@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.21 2011/06/02 00:11:50 jeremy Exp $
+# $OpenBSD: Makefile,v 1.22 2011/07/19 17:57:47 jeremy Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	pure-Java implementation of the Ruby language
 
-V =		1.6.2
+V =		1.6.3
 DISTNAME =	jruby-src-${V}
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
@@ -32,9 +32,9 @@ USE_GMAKE =	Yes
 WANTLIB =	c m stdc++
 
 BUILD_DEPENDS =	devel/apache-ant \
+		shells/bash \
 		${RUN_DEPENDS}
-RUN_DEPENDS =	java/javaPathHelper \
-		shells/bash
+RUN_DEPENDS =	java/javaPathHelper
 
 MAKE_ENV =	JAVA_HOME=${JAVA_HOME} ANT_OPTS="-Xms384m -Xmx384m" \
 			MAKE=${MAKE_PROGRAM}
@@ -47,14 +47,27 @@ JFFI_HOME =	${WRKDIST}/jffi
 JFFI_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}-OpenBSD
 FFI_ARCH =	${JFFI_ARCH:L}
 RAKE_V =	0.8.7
-SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH RAKE_V
+JRUBY_LAUNCHER_V =	1.0.7
+SUBST_VARS =	JRUBY_HOME JFFI_ARCH FFI_ARCH RAKE_V JRUBY_LAUNCHER_V
 
 post-extract:
 	mv ${WRKDIR}/wmeissner-jffi-e0d10e9 ${JFFI_HOME}
+	# Unpack the jruby-launcher gem, since it needs to be patched
+	cp ${WRKSRC}/build_lib/jruby-launcher-${JRUBY_LAUNCHER_V}-java{,-orig}.gem
+	cd ${WRKSRC} && mkdir jruby-launcher && tar xf \
+		build_lib/jruby-launcher-${JRUBY_LAUNCHER_V}-java.gem \
+		&& cd jruby-launcher && tar zxf ../data.tar.gz
 
 pre-configure:
+	# Rebuild the jruby-launcher gem
+	cd ${WRKSRC}/jruby-launcher && find . -type f \! -name '*.orig'  -print | \
+		pax -wz -s '/^\.\///' -f ../data.tar.gz
+	cd ${WRKSRC} && tar cf \
+		build_lib/jruby-launcher-${JRUBY_LAUNCHER_V}-java.gem \
+		data.tar.gz metadata.gz
 	# SUBST_CMD causes problems because $\( -> $(
-	perl -pi -e 's,\$$\{LOCALBASE\},'${LOCALBASE}',' ${WRKSRC}/lib/ruby/site_ruby/shared/mkmf.rb
+	perl -pi -e 's,\$$\{LOCALBASE\},'${LOCALBASE}',' \
+		${WRKSRC}/lib/ruby/site_ruby/shared/mkmf.rb
 	rm ${WRKSRC}/lib/ruby/site_ruby/shared/mkmf.rb.orig
 
 do-build:
@@ -65,9 +78,6 @@ do-build:
 		${SETENV} ${MAKE_ENV} \
 		PATH=$$PATH:/usr/local/jdk-1.7.0/bin \
 		${MAKE_PROGRAM}
-	cd ${WRKSRC}/tool/nailgun && \
-		${SETENV} ${CONFIGURE_ENV} ./configure && \
-		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
 	cd ${WRKSRC} && ${ANT_CMD} jar-complete
 
 post-build:
@@ -91,13 +101,11 @@ do-install:
 	cd ${WRKBUILD} && tar -cf - share | \
 		tar -C ${JRUBY_HOME} -xf -
 	${SET_ENV} ${MAKE_ENV} PATH=${JRUBY_HOME}/bin:$$PATH HOME=${WRKBUILD} \
-		make=${LOCALBASE}/bin/gmake \
-		${PREFIX}/jruby/bin/jruby ${PREFIX}/jruby/bin/gem install \
-		--local --no-rdoc --no-ri ${WRKBUILD}/build_lib/rake*.gem
-	${INSTALL_DATA_DIR} ${JRUBY_HOME}/tool/nailgun
-	${INSTALL_PROGRAM} ${WRKSRC}/tool/nailgun/ng ${JRUBY_HOME}/tool/nailgun
-	chown -R ${SHAREOWN}:${SHAREGRP} ${JRUBY_HOME}/lib ${JRUBY_HOME}/share \
-		${JRUBY_HOME}/tool
+		make=${LOCALBASE}/bin/gmake ${PREFIX}/jruby/bin/jruby \
+		${PREFIX}/jruby/bin/gem install --local --no-rdoc --no-ri \
+		${WRKBUILD}/build_lib/{rake*,jruby-launcher*-java}.gem 
+	mkdir -p ${JRUBY_HOME}/lib/ruby/site_ruby/1.8/java
+	chown -R ${SHAREOWN}:${SHAREGRP} ${JRUBY_HOME}/lib ${JRUBY_HOME}/share
 
 do-regress:
 	cd ${WRKSRC} && ${ANT_CMD} test

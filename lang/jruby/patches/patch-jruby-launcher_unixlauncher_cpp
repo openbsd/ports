@@ -1,0 +1,36 @@
+$OpenBSD: patch-jruby-launcher_unixlauncher_cpp,v 1.1 2011/07/19 17:57:47 jeremy Exp $
+
+Attempt to replicate the following shell code:
+
+JAVA_HOME=$(javaPathHelper -h jruby)
+
+Without this, if the JAVA_HOME environment variable is not
+defined, bin/jruby will segfault when run.
+
+--- jruby-launcher/unixlauncher.cpp.orig	Wed Dec 31 16:00:00 1969
++++ jruby-launcher/unixlauncher.cpp	Mon Jul 11 22:54:17 2011
+@@ -20,6 +20,8 @@ UnixLauncher::~UnixLauncher() {
+ }
+ 
+ int UnixLauncher::run(int argc, char* argv[], char* envp[]) {
++    FILE * java_home_pipe;
++    char java_home_path[256];
+     platformDir = argv[0];
+     if (!initPlatformDir() || !parseArgs(argc - 1, argv + 1)) {
+         return 255;
+@@ -38,6 +40,15 @@ int UnixLauncher::run(int argc, char* argv[], char* en
+ 
+     string java("");
+ 
++    if(java_home_pipe = popen("javaPathHelper -h jruby", "r")) {
++      size_t bytes_read;
++      bytes_read = fread(java_home_path, 1, 255, java_home_pipe);
++      if (bytes_read > 0) { 
++        java_home_path[bytes_read-1] = '\0';
++        setenv("JAVA_HOME", java_home_path, 1);
++      }
++      pclose(java_home_pipe);
++    }
+     if (getenv("JAVACMD") != NULL) {
+         java = getenv("JAVACMD");
+     } else {

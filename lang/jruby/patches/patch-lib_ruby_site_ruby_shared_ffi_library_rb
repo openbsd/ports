@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_ruby_site_ruby_shared_ffi_library_rb,v 1.1 2010/11/07 16:37:42 jeremy Exp $
---- lib/ruby/site_ruby/shared/ffi/library.rb.orig	Sat Nov  6 12:37:39 2010
-+++ lib/ruby/site_ruby/shared/ffi/library.rb	Sat Nov  6 12:41:53 2010
-@@ -7,6 +7,7 @@ module FFI
+$OpenBSD: patch-lib_ruby_site_ruby_shared_ffi_library_rb,v 1.2 2011/07/19 17:57:47 jeremy Exp $
+--- lib/ruby/site_ruby/shared/ffi/library.rb.orig	Thu Jul  7 11:19:34 2011
++++ lib/ruby/site_ruby/shared/ffi/library.rb	Mon Jul 11 21:32:16 2011
+@@ -61,6 +61,7 @@ module FFI
  
      def ffi_lib(*names)
        lib_flags = defined?(@ffi_lib_flags) ? @ffi_lib_flags : FFI::DynamicLibrary::RTLD_LAZY | FFI::DynamicLibrary::RTLD_LOCAL
@@ -9,7 +9,7 @@ $OpenBSD: patch-lib_ruby_site_ruby_shared_ffi_library_rb,v 1.1 2010/11/07 16:37:
        ffi_libs = names.map do |name|
          if name == FFI::CURRENT_PROCESS
            FFI::DynamicLibrary.open(nil, FFI::DynamicLibrary::RTLD_LAZY | FFI::DynamicLibrary::RTLD_LOCAL)
-@@ -32,7 +33,7 @@ module FFI
+@@ -86,7 +87,7 @@ module FFI
            lib
          end
        end
