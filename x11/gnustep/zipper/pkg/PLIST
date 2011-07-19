@@ -1,0 +1,17 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/19 13:58:02 sebastia Exp $
+bin/Zipper
+libexec/GNUstep/Zipper.app/
+libexec/GNUstep/Zipper.app/Resources/
+libexec/GNUstep/Zipper.app/Resources/FileIcon.tiff
+libexec/GNUstep/Zipper.app/Resources/Info-gnustep.plist
+libexec/GNUstep/Zipper.app/Resources/MainMenu-GNUstep.gsmarkup
+libexec/GNUstep/Zipper.app/Resources/Preferences.gsmarkup
+libexec/GNUstep/Zipper.app/Resources/Zipper.desktop
+libexec/GNUstep/Zipper.app/Resources/Zipper.gsmarkup
+libexec/GNUstep/Zipper.app/Resources/ZipperInfo.plist
+libexec/GNUstep/Zipper.app/Resources/no_order.tiff
+libexec/GNUstep/Zipper.app/Resources/sort_ascending.tiff
+libexec/GNUstep/Zipper.app/Resources/sort_descending.tiff
+libexec/GNUstep/Zipper.app/Resources/zipper.tiff
+@bin libexec/GNUstep/Zipper.app/Zipper
+libexec/GNUstep/Zipper.app/stamp.make

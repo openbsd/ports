@@ -1,0 +1,4 @@
+Zipper consists only of a single window, displaying the contents of the
+selected archive. Currently, you can view and extract .tar, .tar.gz,
+.tar.bz2, .rar, .lha, .lhz, .zip and .7z archives. Further it allows to
+create .tar.gz archives.

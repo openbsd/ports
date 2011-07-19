@@ -1,0 +1,16 @@
+$OpenBSD: patch-PreferencesController_m,v 1.1.1.1 2011/07/19 13:58:02 sebastia Exp $
+
+Allow the preferences to remember where to find the 7zip binary
+
+--- PreferencesController.m.orig	Wed Apr 27 19:32:12 2011
++++ PreferencesController.m	Wed Apr 27 19:33:45 2011
+@@ -37,6 +37,9 @@
+ 	// lzx
+ 	string = [Preferences lzxExecutable];
+ 	[_lzxTextField setStringValue:string];
++	// 7z
++	string = [Preferences sevenZipExecutable];
++	[_sevenZipTextField setStringValue:string];
+ 	// bsd tar checkbox
+ 	tarFlag = [Preferences isBsdTar];
+ 	[_bsdTarButon setState:tarFlag];
