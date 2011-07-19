@@ -1,0 +1,14 @@
+$OpenBSD: patch-GNUmakefile,v 1.1.1.1 2011/07/19 06:30:42 sebastia Exp $
+
+we want to build cddb bundle 
+
+--- GNUmakefile.orig	Thu Jan 17 12:12:22 2008
++++ GNUmakefile	Mon Jun 20 10:51:40 2011
+@@ -8,6 +8,7 @@ SUBPROJECTS = \
+ else
+ SUBPROJECTS = \
+ 	AudioCD \
++	Cddb \
+ 	AudioCD/AudioCDPrefs
+ endif
+ 
