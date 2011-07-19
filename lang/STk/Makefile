@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2011/07/18 19:06:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.40 2011/07/19 07:29:37 jasper Exp $
 
 COMMENT=	Scheme interpreter with Tk interface
 
 STK_VERSION=	4.0.1
 DISTNAME=	STk-${STK_VERSION}
-REVISION=	15
+REVISION=	16
 CATEGORIES=	lang
 
 HOMEPAGE=	http://kaolin.unice.fr/STk/
@@ -26,7 +26,7 @@ DESTDIRNAME=	root
 
 NO_REGRESS=	Yes
 
-STK_ARCH=	OpenBSD-$(OSREV)-$(MACHINE)
+STK_ARCH=	OpenBSD-$(MACHINE)
 SUBST_VARS=	STK_VERSION STK_ARCH
 
 .include <bsd.port.mk>
