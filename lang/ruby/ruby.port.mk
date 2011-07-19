@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.44 2011/03/24 21:26:59 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.45 2011/07/19 17:26:30 jeremy Exp $
 
 # ruby module
 
@@ -191,8 +191,16 @@ SUBST_VARS +=		^MODRUBY_RELDOCDIR ^MODRUBY_RELEXAMPLEDIR
 
 .if ${MODRUBY_REV} == jruby
 MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-java
+MODRUBY_SITEDIR =	jruby/lib/ruby/site_ruby/${MODRUBY_LIBREV}
+MODRUBY_SITEARCHDIR =	${MODRUBY_SITEDIR}/java
+.elif ${MODRUBY_REV} == rbx
+MODRUBY_ARCH=		${MACHINE_ARCH}-openbsd
+MODRUBY_SITEDIR =	lib/rubinius/site/
+MODRUBY_SITEARCHDIR =	${MODRUBY_SITEDIR}/${MODRUBY_ARCH}
 .else
-MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
+MODRUBY_ARCH=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd
+MODRUBY_SITEDIR =	lib/ruby/site_ruby/${MODRUBY_LIBREV}
+MODRUBY_SITEARCHDIR =	${MODRUBY_SITEDIR}/${MODRUBY_ARCH}
 .endif
 
 # Assume that we want to automatically add ruby to BUILD_DEPENDS
@@ -390,7 +398,8 @@ do-install: ${MODRUBY_INSTALL_COOKIE}
 .endif
 
 # These are mostly used by the non-gem ports.
-SUBST_VARS+=		MODRUBY_LIBREV MODRUBY_ARCH
+SUBST_VARS+=		^MODRUBY_SITEARCHDIR ^MODRUBY_SITEDIR MODRUBY_LIBREV \
+			MODRUBY_ARCH
 
 # regression stuff
 
