@@ -1,0 +1,6 @@
+GNUstep Renaissance allows you to describe your user interfaces (that
+is, the windows in your application, and the buttons, boxes, textfields,
+etc in the windows) in simple and intuitive XML files, using an open,
+standard format describing the logic of the interface. GNUstep
+Renaissance can then, at run time, generate the user interfaces (using
+the native host OpenStep-like libraries) by reading the XML files.
