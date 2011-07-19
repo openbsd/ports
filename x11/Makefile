@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.460 2011/07/18 08:04:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.461 2011/07/19 09:22:50 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -9,9 +9,6 @@
      SUBDIR += aewm
      SUBDIR += afterstep
      SUBDIR += amiwm
-     SUBDIR += anonymous-pro
-     SUBDIR += arabeyes-ttf
-     SUBDIR += artwiz-aleczapka
      SUBDIR += asapm
      SUBDIR += asclock
      SUBDIR += asfiles
@@ -32,7 +29,6 @@
      SUBDIR += bluetile
      SUBDIR += bricons
      SUBDIR += bwidget
-     SUBDIR += cantarell-fonts
      SUBDIR += chbg
      SUBDIR += compiz
      SUBDIR += ctwm
@@ -44,13 +40,11 @@
      SUBDIR += dmenu
      SUBDIR += driconf
      SUBDIR += driftnet
-     SUBDIR += droid-fonts
      SUBDIR += dwm
      SUBDIR += dzen2
      SUBDIR += e16keyedit
      SUBDIR += e17
      SUBDIR += echinus
-     SUBDIR += ecoliercourt-fonts
      SUBDIR += emelfm2
      SUBDIR += emiclock
      SUBDIR += enlightenment
@@ -58,8 +52,6 @@
      SUBDIR += eterm,kanji
      SUBDIR += evilwm
      SUBDIR += extace
-     SUBDIR += farsi-bfonts-ttf
-     SUBDIR += farsifonts-ttf
      SUBDIR += fbpanel
      SUBDIR += fleditor
      SUBDIR += fltk
@@ -68,9 +60,6 @@
      SUBDIR += fluxter
      SUBDIR += flvw
      SUBDIR += flwm
-     SUBDIR += freefarsi-ttf
-     SUBDIR += freefont-ttf
-     SUBDIR += freefonts
      SUBDIR += freerdp
      SUBDIR += fsv
      SUBDIR += fvwm2
@@ -129,14 +118,12 @@
      SUBDIR += icon-naming-utils
      SUBDIR += icontool
      SUBDIR += idesk
-     SUBDIR += inconsolata-font
      SUBDIR += industrial-icon-theme
      SUBDIR += ion
      SUBDIR += irrlicht
      SUBDIR += isomaster
      SUBDIR += itk
      SUBDIR += iwidgets
-     SUBDIR += jmk-fonts
      SUBDIR += jwm
      SUBDIR += kde
      SUBDIR += kdirstat
@@ -146,9 +133,7 @@
      SUBDIR += kountdown
      SUBDIR += krusader
      SUBDIR += lablgtk2
-     SUBDIR += league-fonts
      SUBDIR += libdnd
-     SUBDIR += liberation-fonts
      SUBDIR += libgdiplus
      SUBDIR += libsexy
      SUBDIR += libxdg-basedir
@@ -161,7 +146,6 @@
      SUBDIR += mowitz
      SUBDIR += mplayer
      SUBDIR += mrxvt
-     SUBDIR += msttcorefonts
      SUBDIR += mterm
      SUBDIR += mxconns
      SUBDIR += nagstamon
@@ -206,7 +190,6 @@
      SUBDIR += podbrowser
      SUBDIR += polkit-gnome,gtk2
      SUBDIR += polkit-qt4
-     SUBDIR += ptsans
      SUBDIR += pwm
      SUBDIR += py-Xlib
      SUBDIR += py-gtk2
@@ -247,7 +230,6 @@
      SUBDIR += slim-themes
      SUBDIR += slock
      SUBDIR += smplayer
-     SUBDIR += spranq-ecofont-ttf
      SUBDIR += stalonetray
      SUBDIR += swisswatch
      SUBDIR += tangerine-icon-theme
@@ -255,7 +237,6 @@
      SUBDIR += tango-icon-theme-extras
      SUBDIR += tellico
      SUBDIR += terminator
-     SUBDIR += terminus-font
      SUBDIR += thewidgetfactory
      SUBDIR += tilda
      SUBDIR += tint
@@ -271,7 +252,6 @@
      SUBDIR += treewm
      SUBDIR += tvtwm
      SUBDIR += type1inst
-     SUBDIR += un-fonts
      SUBDIR += unclutter
      SUBDIR += vdesk
      SUBDIR += viewfax
@@ -302,8 +282,6 @@
      SUBDIR += wmtz
      SUBDIR += wmweather
      SUBDIR += wmx
-     SUBDIR += wqy-bitmapfont
-     SUBDIR += wqy-zenhei-ttf
      SUBDIR += wterm
      SUBDIR += wxSVG
      SUBDIR += wxWidgets

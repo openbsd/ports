@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2011/03/21 15:35:39 shadchin Exp $
+# $OpenBSD: Makefile,v 1.14 2011/07/19 09:22:50 jasper Exp $
 
      SUBDIR =
      SUBDIR += d1489
-     SUBDIR += pscyr
      SUBDIR += xruskb
      SUBDIR += xruskb,motif
 

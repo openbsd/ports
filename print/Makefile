@@ -1,9 +1,8 @@
-#	$OpenBSD: Makefile,v 1.92 2011/07/10 09:41:27 jasper Exp $
+#	$OpenBSD: Makefile,v 1.93 2011/07/19 09:22:50 jasper Exp $
 
     SUBDIR =
     SUBDIR += a2ps,a4
     SUBDIR += a2ps,letter
-    SUBDIR += acrofonts
     SUBDIR += acroread
     SUBDIR += afm
     SUBDIR += apsfilter
@@ -43,7 +42,6 @@
     SUBDIR += lout
     SUBDIR += lss
     SUBDIR += lyx
-    SUBDIR += mftrace
     SUBDIR += mpage,a4
     SUBDIR += mpage,legal
     SUBDIR += mpage,letter
@@ -51,7 +49,6 @@
     SUBDIR += pdfjam
     SUBDIR += pdflib
     SUBDIR += pdfshuffler
-    SUBDIR += pkfonts
     SUBDIR += poppler
     SUBDIR += poppler-data
     SUBDIR += ps2eps
