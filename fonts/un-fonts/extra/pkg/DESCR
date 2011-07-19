@@ -1,0 +1,18 @@
+Un-fonts comes from the HLaTeX type1 fonts made in 1998 by Koaunghi Un,
+he designed type1 fonts to use with Korean TeX(HLaTeX) and released them
+under the GNU GPL license.
+
+They were converted to TrueType with FontForge(PfaEdit) by Won-kyu Park
+in 2003.
+
+This package contains the extra families (10 fonts)
+ * UnPen, UnPenheulim: script
+ * UnTaza: typewriter style
+ * UnBom: decorative
+ * UnShinmun
+ * UnYetgul: old Korean printing style
+ * UnJamoSora, UnJamoNovel, UnJamoDotum, UnJamoBatang
+
+Project maintainers:
+ * Won-kyu Park <wkpark@kldp.org>
+ * Jungshik Shin <jshin@mailaps.org>

@@ -1,0 +1,15 @@
+--- Makefile.orig	Sun Apr  6 16:03:35 2003
++++ Makefile	Sun Apr  6 16:04:12 2003
+@@ -29,11 +29,8 @@ ETCDIR = /etc/chinese/
+ 
+ all: ttf2psm
+ 
+-%.o : %.c
+-	$(CC) -c $(CFLAGS) $(INCLUDEDIR) $< -o $@
+-
+ ttf2psm: $(OBJS)
+-	$(CC) $(CFLAGS) $(INCLUDEDIR) $(LIBS) -o ttf2psm $(OBJS)
++	$(CC) $(CFLAGS) $(LDFLAGS) $(LIBS) -o ttf2psm $(OBJS)
+ 
+ install: all bg5ps bg5ps.conf
+ 	mkdir -p $(ETCDIR)
