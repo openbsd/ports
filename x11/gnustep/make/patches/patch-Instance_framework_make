@@ -1,16 +1,16 @@
-$OpenBSD: patch-Instance_framework_make,v 1.8 2011/04/18 11:30:47 sebastia Exp $
---- Instance/framework.make.orig	Mon Feb 15 00:13:47 2010
-+++ Instance/framework.make	Thu Apr 14 19:51:45 2011
-@@ -252,7 +252,7 @@ FRAMEWORK_CURRENT_LIBRARY_DIR = $(GNUSTEP_BUILD_DIR)/$
- ifneq ($(BUILD_DLL), yes)
- 
- FRAMEWORK_LIBRARY_FILE = lib$(GNUSTEP_INSTANCE)$(SHARED_LIBEXT)
+$OpenBSD: patch-Instance_framework_make,v 1.9 2011/07/19 06:23:28 sebastia Exp $
+--- Instance/framework.make.orig	Sat Apr 30 09:59:20 2011
++++ Instance/framework.make	Mon Jun  6 13:32:39 2011
+@@ -258,7 +258,7 @@ ifeq ($(findstring darwin, $(GNUSTEP_TARGET_OS)), darw
+ VERSION_FRAMEWORK_LIBRARY_FILE = lib$(GNUSTEP_INSTANCE).$(VERSION).$(SHARED_LIBEXT)
+ SONAME_FRAMEWORK_FILE = lib$(GNUSTEP_INSTANCE).$(INTERFACE_VERSION).$(SHARED_LIBEXT)
+ else
 -VERSION_FRAMEWORK_LIBRARY_FILE = $(FRAMEWORK_LIBRARY_FILE).$(VERSION)
 +VERSION_FRAMEWORK_LIBRARY_FILE = $(FRAMEWORK_LIBRARY_FILE).$(INTERFACE_VERSION)
  SONAME_FRAMEWORK_FILE = $(FRAMEWORK_LIBRARY_FILE).$(INTERFACE_VERSION)
+ endif
  
- else # BUILD_DLL
-@@ -557,13 +557,13 @@ $(GNUSTEP_BUILD_DIR)/$(GNUSTEP_INSTANCE).framework/$(G
+@@ -564,13 +564,13 @@ $(GNUSTEP_BUILD_DIR)/$(GNUSTEP_INSTANCE).framework/$(G
  $(GNUSTEP_BUILD_DIR)/$(GNUSTEP_INSTANCE).framework/$(GNUSTEP_TARGET_LDIR)/$(GNUSTEP_INSTANCE): $(GNUSTEP_BUILD_DIR)/$(GNUSTEP_INSTANCE).framework/$(GNUSTEP_TARGET_LDIR)/
  ifeq ($(MAKE_CURRENT_VERSION),yes)
  	$(ECHO_NOTHING)cd $(GNUSTEP_BUILD_DIR)/$(GNUSTEP_INSTANCE).framework/$(GNUSTEP_TARGET_LDIR); \
@@ -28,7 +28,7 @@ $OpenBSD: patch-Instance_framework_make,v 1.8 2011/04/18 11:30:47 sebastia Exp $
  endif
  endif
  endif
-@@ -591,7 +591,7 @@ endif
+@@ -598,7 +598,7 @@ endif
  	$(LIB_LINK_CMD) || $(RM) $(FRAMEWORK_FILE) ; \
  	(cd $(LIB_LINK_OBJ_DIR); \
  	  $(RM_LN_S) $(GNUSTEP_INSTANCE); \
@@ -37,7 +37,7 @@ $OpenBSD: patch-Instance_framework_make,v 1.8 2011/04/18 11:30:47 sebastia Exp $
  	$(END_ECHO)
  
  ifeq ($(GNUSTEP_MAKE_PARALLEL_BUILDING), no)
-@@ -679,18 +679,14 @@ endif
+@@ -686,18 +686,14 @@ endif
  	$(RM_LN_S) $(FRAMEWORK_LIBRARY_FILE); \
  	$(RM_LN_S) $(SONAME_FRAMEWORK_FILE); \
  	$(RM_LN_S) $(VERSION_FRAMEWORK_LIBRARY_FILE); \

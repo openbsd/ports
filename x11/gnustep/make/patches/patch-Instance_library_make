@@ -1,12 +1,12 @@
-$OpenBSD: patch-Instance_library_make,v 1.3 2009/10/06 19:21:28 ajacoutot Exp $
---- Instance/library.make.orig	Thu Mar 19 17:59:53 2009
-+++ Instance/library.make	Tue Oct  6 20:36:23 2009
-@@ -184,7 +184,7 @@ endif
- ifneq ($(BUILD_DLL),yes)
- 
- LIBRARY_FILE = $(LIBRARY_NAME_WITH_LIB)$(SHARED_LIBEXT)
+$OpenBSD: patch-Instance_library_make,v 1.4 2011/07/19 06:23:28 sebastia Exp $
+--- Instance/library.make.orig	Sat Apr 30 09:59:20 2011
++++ Instance/library.make	Mon Jun  6 13:31:34 2011
+@@ -190,7 +190,7 @@ ifeq ($(findstring darwin, $(GNUSTEP_TARGET_OS)), darw
+ VERSION_LIBRARY_FILE = $(LIBRARY_NAME_WITH_LIB).$(VERSION)$(SHARED_LIBEXT)
+ SONAME_LIBRARY_FILE  = $(LIBRARY_NAME_WITH_LIB).$(INTERFACE_VERSION)$(SHARED_LIBEXT)
+ else
 -VERSION_LIBRARY_FILE = $(LIBRARY_FILE).$(VERSION)
 +VERSION_LIBRARY_FILE = $(LIBRARY_FILE).$(INTERFACE_VERSION)
  SONAME_LIBRARY_FILE  = $(LIBRARY_FILE).$(INTERFACE_VERSION)
+ endif
  
- else # BUILD_DLL
