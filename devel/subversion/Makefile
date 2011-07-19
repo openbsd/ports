@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2011/07/18 19:06:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.94 2011/07/19 18:00:16 jeremy Exp $
 
 COMMENT-main=		subversion revision control system
 COMMENT-perl=		perl interface to subversion
@@ -21,7 +21,7 @@ FULLPKGPATH-ap2=	devel/subversion,-ap2
 REVISION-main=		1
 REVISION-python=	0
 REVISION-perl=		0
-REVISION-ruby=		1
+REVISION-ruby=		2
 REVISION-ap2=		0
 
 SO_VERSION=	1.2

@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/07/12 18:06:23 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/07/19 18:00:16 jeremy Exp $
 bin/estcmd${BIN_SUFFIX}.rb
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/estraier.so
+${MODRUBY_SITEARCHDIR}/estraier.so
 ${MODRUBY_RELEXAMPLEDIR}/
 ${MODRUBY_RELEXAMPLEDIR}/hyperestraier/
 ${MODRUBY_RELEXAMPLEDIR}/hyperestraier/example001.rb

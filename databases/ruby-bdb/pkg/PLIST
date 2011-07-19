@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/08 23:24:39 jeremy Exp $
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/bdb.so
+@comment $OpenBSD: PLIST,v 1.3 2011/07/19 18:00:16 jeremy Exp $
+${MODRUBY_SITEARCHDIR}/bdb.so
 ${MODRUBY_RELDOCDIR}/
 ${MODRUBY_RELDOCDIR}/bdb/
 ${MODRUBY_RELDOCDIR}/bdb/Changes

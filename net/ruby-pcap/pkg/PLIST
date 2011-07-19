@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/12/23 10:39:39 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/07/19 18:00:16 jeremy Exp $
 @conflict ruby-pcaprub-msf-*
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/${MODRUBY_ARCH}/pcap.so
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/pcap_misc.rb
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/pcaplet.rb
+${MODRUBY_SITEDIR}/pcap_misc.rb
+${MODRUBY_SITEDIR}/pcaplet.rb
+${MODRUBY_SITEARCHDIR}/pcap.so
 ${MODRUBY_RELDOCDIR}/
 ${MODRUBY_RELDOCDIR}/pcap/
 ${MODRUBY_RELDOCDIR}/pcap/Capture.html
