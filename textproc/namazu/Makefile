@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/07/19 13:44:19 sthen Exp $
 
 COMMENT=	small to medium scale full-text search engine
-DISTNAME=	namazu-2.0.20
-REVISION =	0
+DISTNAME=	namazu-2.0.21
 
-SHARED_LIBS+=	nmz 0.0	# .8.1
+SHARED_LIBS+=	nmz 0.1	# .8.3
 
 CATEGORIES=	textproc
 HOMEPAGE=	http://www.namazu.org/
