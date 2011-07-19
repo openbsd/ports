@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/07/18 19:06:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2011/07/19 17:08:54 jeremy Exp $
 
 COMMENT-main =		object oriented script language with threads
 COMMENT-gdbm =		gdbm interface for Ruby
@@ -6,7 +6,7 @@ COMMENT-dbm =		Berkley DB interface for Ruby
 COMMENT-tk=		tk interface for ruby
 
 VERSION =		1.9.2
-PATCHLEVEL =		180
+PATCHLEVEL =		290
 RUBYLIBREV =		1.9.1
 
 SHARED_LIBS =		ruby19 0.0
@@ -14,11 +14,6 @@ PKGNAME-main =		ruby-${VERSION}.${PATCHLEVEL}
 PKGNAME-gdbm =		ruby-gdbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-dbm =		ruby-dbm-${VERSION}.${PATCHLEVEL}
 PKGNAME-tk =		ruby-tk-${VERSION}.${PATCHLEVEL}
-
-REVISION-main = 	1
-REVISION-gdbm =		0
-REVISION-dbm =		0
-REVISION-tk =		0
 
 PKGSPEC-main =		ruby->=1.9,<1.10
 
@@ -33,8 +28,8 @@ CONFIGURE_ENV =		LIBruby19_VERSION=${LIBruby19_VERSION}
 MODULES =		converters/libiconv
 USE_GROFF =		Yes
 
-WANTLIB-main =		c crypto ffi m ncurses pthread readline ssl termcap \
-			util yaml z ${MODLIBICONV_WANTLIB}
+WANTLIB-main =		c crypto ffi m ncurses ncursesw pthread readline ssl \
+			termcap util yaml z ${MODLIBICONV_WANTLIB}
 LIB_DEPENDS-main =	${MODLIBICONV_LIB_DEPENDS} \
 			devel/libyaml \
 			devel/libffi
@@ -66,10 +61,17 @@ LIB_DEPENDS-tk =	tk->=8.5,<8.6:x11/tk/8.5 \
 RUN_DEPENDS-tk =	
 .endif
 
-# Known threading bootstraptest failures on i386 and macppc
-# Known endian issues in fiddle/dl on sparc64
-# Known bugs in OpenSSL extension on sparc64
-REGRESS_DEPENDS =	${FULLPKGNAME-main}:${BUILD_PKGPATH}
 SUBST_VARS +=		RUBYLIBREV
+
+# Known threading bootstraptest failures on i386 and macppc
+# Occassional threading bootstrap failure on amd64
+# Known endian issues in fiddle/dl on sparc64
+# Known encoding related failure in one REXML test
+REGRESS_DEPENDS =	${FULLPKGNAME-main}:${BUILD_PKGPATH}
+
+do-regress:
+	-cd ${WRKSRC} && make test-sample
+	-cd ${WRKSRC} && make btest-ruby
+	cd ${WRKSRC} && make test-all
 
 .include <bsd.port.mk>
