@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.4 2011/06/08 20:36:56 robert Exp $
---- chrome/app/generated_resources.grd.orig	Wed Jun  8 10:18:50 2011
-+++ chrome/app/generated_resources.grd	Wed Jun  8 17:35:31 2011
+$OpenBSD: patch-chrome_app_generated_resources_grd,v 1.5 2011/07/19 19:20:20 naddy Exp $
+--- chrome/app/generated_resources.grd.orig	Fri Jun 24 02:01:46 2011
++++ chrome/app/generated_resources.grd	Tue Jul 19 08:15:14 2011
 @@ -1000,7 +1000,7 @@ Other platform defines such as use_titlecase are decla
            Preferences...
          </message>
@@ -28,3 +28,12 @@ $OpenBSD: patch-chrome_app_generated_resources_grd,v 1.4 2011/06/08 20:36:56 rob
          <!-- Unity and some other GNOME configurations now have a permanent,
               Mac-like menu bar that lives outside the window at the top of the
               screen. The following strings should be in Linux style, not Mac
+@@ -12114,7 +12114,7 @@ Keep your key file in a safe place. You will need it t
+       Import bookmarks now...
+     </message>
+ 
+-    <if expr="os == 'linux2' or os == 'openbsd4' or os=='freebsd6'">
++    <if expr="os == 'linux2' or os.find('openbsd') != -1 or os=='freebsd6'">
+       <!-- Linux proxy configuration fallback help -->
+       <message name="IDS_ABOUT_LINUX_PROXY_CONFIG_TITLE" desc="Title of HTML page shown on systems where system proxy configuration is unsupported.">
+         Proxy Configuration Help
