@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.25 2011/05/22 16:24:15 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/07/19 09:23:26 jasper Exp $
 
 COMMENT=	Chinese(Big5) VT100 terminal emulator for X
 
 DISTNAME=       crxvt-2.10-2
 PKGNAME=        zh-crxvt-2.10.2
-REVISION=	1
+REVISION=	2
 CATEGORIES=     chinese 
 
 MASTER_SITES=   ftp://ftp.tw.openbsd.org/pub/OpenBSD/distfiles/ \
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP=   no license
 
 WANTLIB=		c X11
 
-RUN_DEPENDS=	chinese/taipeifonts
+RUN_DEPENDS=	fonts/taipeifonts
 
 USE_GROFF =	Yes
 
