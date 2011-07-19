@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure,v 1.1 2011/07/19 17:09:56 jeremy Exp $
+
+Override the os setting to remove OpenBSD version from it,
+so ports don't have to be bumped when OpenBSD version changes.
+
+--- configure.orig	Mon Jul 18 16:42:20 2011
++++ configure	Mon Jul 18 16:42:55 2011
+@@ -24,7 +24,7 @@ class Configure
+     # TODO: conditionalize for Windows
+     @host = `./rakelib/config.guess`.chomp
+     /([^-]+)-([^-]+)-(.*)/ =~ @host
+-    @cpu, @vendor, @os = $1, $2, $3
++    @cpu, @vendor, @os = $1, $2, "openbsd"
+     @little_endian = false
+     @sizeof_long = 0
+ 
