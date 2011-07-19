@@ -1,4 +1,4 @@
-# $OpenBSD: gnustep.port.mk,v 1.15 2011/05/05 22:56:16 sebastia Exp $
+# $OpenBSD: gnustep.port.mk,v 1.16 2011/07/19 06:19:49 sebastia Exp $
 
 # until tested on others
 ONLY_FOR_ARCHS =	i386 amd64 macppc
@@ -42,9 +42,11 @@ RUN_DEPENDS += ${MODGNUSTEP_RUN_DEPENDS}
 MAKE_ENV +=	messages=yes
 
 .ifdef DEBUG
+CONFIGURE_ARGS +=       --enable-debug --disable-strip
 MAKE_ENV +=	debug=yes strip=no
 .else
-MAKE_ENV +=	debug=no
+CONFIGURE_ARGS +=       --disable-debug --enable-strip
+MAKE_ENV +=	debug=no strip=yes
 .endif
 
 MASTER_SITE_GNUSTEP = ftp://ftp.gnustep.org/pub/gnustep/
