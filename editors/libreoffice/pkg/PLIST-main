@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2011/07/02 15:22:39 robert Exp $
+@comment $OpenBSD: PLIST-main,v 1.18 2011/07/19 09:09:22 ajacoutot Exp $
 @conflict openoffice-*
 @pkgpath editors/openoffice3,-main
 %%SHARED%%
@@ -22,7 +22,6 @@ bin/sdraw
 bin/simpress
 bin/smath
 bin/soffice
-bin/soffice.beforesubst
 bin/soffice${BV}
 bin/swriter
 bin/unopkg

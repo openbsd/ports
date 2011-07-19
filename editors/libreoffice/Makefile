@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2011/07/06 18:29:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2011/07/19 09:09:22 ajacoutot Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -16,7 +16,7 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 
-REVISION-main=	0
+REVISION-main=	1
 
 EPOCH=		0
 
@@ -313,6 +313,7 @@ pre-patch:
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/soffice.sh ${PREFIX}/bin/soffice
 	${SUBST_CMD} ${PREFIX}/bin/soffice
+	rm ${PREFIX}/bin/soffice.beforesubst
 
 	cd ${PREFIX}/bin && \
 	for _a in sbase scalc sdraw simpress smath swriter \
