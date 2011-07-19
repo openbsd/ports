@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2011/07/17 08:30:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/07/19 09:34:19 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.0.2
 
-REVISION=		9
+REVISION=		10
 
 CATEGORIES=		x11
 
@@ -55,7 +55,7 @@ RUN_DEPENDS+=	STEM-*-!gtk2:x11/gnome/metacity \
 		x11/polkit-gnome
 
 # Defaults from gsettings-desktop-schema.
-RUN_DEPENDS+=	x11/cantarell-fonts \
+RUN_DEPENDS+=	fonts/cantarell-fonts \
 		x11/gnome/backgrounds>=3 \
 		x11/gnome/themes-standard
 
