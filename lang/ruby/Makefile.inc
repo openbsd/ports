@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2010/09/23 22:04:13 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2011/07/19 17:28:48 jeremy Exp $
 
 SHARED_ONLY ?=	Yes
 
@@ -28,7 +28,7 @@ CONFIGURE_ENV +=	PREFIX="${PREFIX}" \
 
 INSTALL_TARGET ?=	install install-doc
 REV ?=			${VERSION:R}
-SUB ?=			${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
+SUB ?=			${MACHINE_ARCH:S/amd64/x86_64/}-openbsd
 SUBST_VARS +=		SUB REV
 
 # Building the ruby documentation consumes lots of memory.
