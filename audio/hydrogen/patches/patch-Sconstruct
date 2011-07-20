@@ -1,12 +1,12 @@
-$OpenBSD: patch-Sconstruct,v 1.1 2010/01/11 05:11:32 jakemsr Exp $
---- Sconstruct.orig	Mon Sep  7 14:31:13 2009
-+++ Sconstruct	Sat Jan  2 02:22:51 2010
+$OpenBSD: patch-Sconstruct,v 1.2 2011/07/20 12:08:24 sthen Exp $
+--- Sconstruct.orig	Mon Sep  7 22:31:13 2009
++++ Sconstruct	Wed Jul 20 12:45:04 2011
 @@ -47,20 +47,21 @@ def get_platform_flags( opts ):
  
  	env = Environment( options = opts )
  
 -	if sys.platform == "linux2" or sys.platform == "darwin":
-+	if sys.platform == "linux2" or sys.platform == "darwin" or sys.platform == "openbsd4":
++	if sys.platform == "linux2" or sys.platform == "darwin" or sys.platform.find('openbsd') != -1:
  		if str(env['debug']) == "1":
  			cppflags += ['-Wall',  '-g2', '-ggdb', '-O0'] 
  			for flag in env["optflags"].split(" "):
@@ -29,7 +29,7 @@ $OpenBSD: patch-Sconstruct,v 1.1 2010/01/11 05:11:32 jakemsr Exp $
  	if sys.platform == 'linux2':
  		ldflags.append('-lasound')
  
-+	elif sys.platform == 'openbsd4':
++	elif sys.platform.find('openbsd') != -1:
 +		for flag in env["localinc"].split(" "):
 +			includes.append(flag)
 +		for flag in env["locallib"].split(" "):
