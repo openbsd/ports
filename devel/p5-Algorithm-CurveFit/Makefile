@@ -1,12 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:44:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/07/20 17:25:10 gsoares Exp $
 
 COMMENT =	nonlinear least squares curve fitting
 
-DISTNAME =	Algorithm-CurveFit-1.04
-REVISION =	1
+DISTNAME =	Algorithm-CurveFit-1.05
 CATEGORIES =	devel
-HOMEPAGE =	http://search.cpan.org/~smueller/Algorithm-CurveFit/
-MAINTAINER =	Markus Bergkvist <markus.bergkvist@telia.com>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
@@ -17,7 +14,6 @@ PERMIT_DISTFILES_FTP =		Yes
 CPAN_AUTHOR =	SMUELLER
 
 MODULES =	cpan
-USE_GROFF =	Yes
 RUN_DEPENDS =	math/p5-Math-MatrixReal \
 		math/p5-Math-Symbolic
 
