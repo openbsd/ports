@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/20 18:04:48 jasper Exp $
+${P5SITE}/System/
+${P5SITE}/System/Command.pm
+@man man/man3p/System::Command.3p
