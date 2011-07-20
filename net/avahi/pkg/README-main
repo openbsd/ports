@@ -1,0 +1,12 @@
+$OpenBSD: README-main,v 1.1 2011/07/20 08:45:00 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+For proper functionality, multicast(4) needs to be enabled. To do so,
+add the following line to /etc/rc.conf.local(8):
+    multicast_host=YES
+
+Note that you MUST have a system-wide D-BUS daemon running BEFORE
+starting avahi.
