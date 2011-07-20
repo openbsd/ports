@@ -1,0 +1,5 @@
+#!/bin/ksh
+# for VoIP we need to have threading
+export LD_PRELOAD=libpthread.so
+
+exec ${TRUEPREFIX}/lib/coccinella/Coccinella.tcl

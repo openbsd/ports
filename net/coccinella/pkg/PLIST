@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/01 13:09:54 sebastia Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/07/20 16:43:18 sebastia Exp $
 bin/coccinella
 lib/coccinella/
+lib/coccinella/Coccinella.tcl
 lib/coccinella/TclXML/
 @comment lib/coccinella/TclXML/CHANGES
 lib/coccinella/TclXML/pkgIndex.tcl

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2011/03/12 09:41:31 sebastia Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/20 16:43:18 sebastia Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		XMPP client with whiteboard
 
-REVISION =		1
+REVISION =		2
 DISTNAME =		Coccinella-0.96.20Src
 PKGNAME =		${DISTNAME:S/Src$//:L}
 CATEGORIES =		net
@@ -21,9 +21,6 @@ PERMIT_DISTFILES_FTP =		Yes
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=coccinella/}	
 
 MODULES =		x11/tk
-
-# No dependencies to sound and telephony yet, due to the reason those
-# need to be ported to sndio first
 RUN_DEPENDS =		audio/snack \
 			devel/itcl \
 			graphics/tkpng \
@@ -31,6 +28,7 @@ RUN_DEPENDS =		audio/snack \
 			misc/memchan \
 			net/tcludp \
 			security/tcltls \
+			telephony/iaxclient,-tcl \
 			x11/tkdnd \
 			x11/tkhtml \
 			x11/tktray \
@@ -56,7 +54,10 @@ do-install:
 		${INSTALL_DATA} pkgIndex.tcl ${PREFIX}/lib/coccinella
 	rm ${PREFIX}/lib/coccinella/lib/Init.tcl.* \
 		${PREFIX}/lib/coccinella/show_own_jid.patch
-	${INSTALL_SCRIPT} ${WRKSRC}/Coccinella.tcl ${PREFIX}/bin/coccinella
+	${INSTALL_SCRIPT} ${WRKSRC}/Coccinella.tcl ${PREFIX}/lib/coccinella
+	${SUBST_CMD} -c -o ${BINOWN} -g ${BINGRP} ${FILESDIR}/coccinella \
+				${PREFIX}/bin/coccinella
+	chmod 755 ${PREFIX}/bin/coccinella
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/coccinella
 	cd ${WRKSRC} && ${INSTALL_DATA} README.txt READMEs/README-xmpp \
 		READMEs/README-sounds \
