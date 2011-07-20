@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Mono_WebServer_FastCgi_ConfigurationManager_xml,v 1.1.1.1 2011/07/20 14:53:24 robert Exp $
+$OpenBSD: patch-src_Mono_WebServer_FastCgi_ConfigurationManager_xml,v 1.2 2011/07/20 14:58:28 ajacoutot Exp $
 --- src/Mono.WebServer.FastCgi/ConfigurationManager.xml.orig	Wed Jul 20 16:33:50 2011
 +++ src/Mono.WebServer.FastCgi/ConfigurationManager.xml	Wed Jul 20 16:33:54 2011
 @@ -42,7 +42,7 @@
@@ -10,10 +10,3 @@ $OpenBSD: patch-src_Mono_WebServer_FastCgi_ConfigurationManager_xml,v 1.1.1.1 20
  		<Description>
  			<para>Specifies the type of socket to listen on. Valid
  			values are "pipe", "unix", and "tcp".</para>
-@@ -255,4 +255,4 @@
- 			<para>Prints log messages to the console.</para>
- 		</Description>
- 	</Setting>
--</ConfigurationManager>
-\ No newline at end of file
-+</ConfigurationManager>
