@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/08 17:50:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/20 07:09:45 ajacoutot Exp $
 
 COMMENT=		dbus debugger
 
 MODPY_EGG_VERSION=	0.1.12
 DISTNAME=		d-feet-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 CATEGORIES=		sysutils x11
 
 EXTRACT_SUFX=		.tar.bz2
@@ -25,8 +25,7 @@ MODPY_SETUPTOOLS=	Yes
 BUILD_DEPENDS=		x11/py-gtk2
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/dbus-python \
-			x11/gnome/py-gnome-desktop
-
+			x11/py-gtk2
 
 NO_REGRESS=		Yes
 
