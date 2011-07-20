@@ -1,13 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2011/03/17 14:02:51 jasper Exp $
-
-ONLY_FOR_ARCHS =${GCC4_ARCHS}
+# $OpenBSD: Makefile,v 1.9 2011/07/20 06:54:43 jasper Exp $
 
 COMMENT=	interactive electronics designing software
 
-V=		0.5.2b
-DISTNAME=	fritzing.2011.02.18.source
+V=		0.6.2b
+DISTNAME=	fritzing.2011.07.11.source
 PKGNAME=	fritzing-$V
-REVISION=	0
 CATEGORIES=	cad
 
 HOMEPAGE=	http://fritzing.org/
@@ -24,8 +21,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES=	${HOMEPAGE}/download/$V/source-tarball/
 EXTRACT_SUFX=	.tar.bz2
 
-WANTLIB +=	QtGui QtNetwork QtSql QtSvg QtWebKit QtXml
-WANTLIB +=	c m pthread stdc++ z
+WANTLIB +=	QtGui QtNetwork QtSql QtSvg QtXml c m pthread stdc++ z
 
 MODULES=        x11/qt4
 NO_REGRESS=	Yes
@@ -36,7 +32,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/phoenix.pro ${WRKSRC}/src/fapplication.cpp
-	cd ${WRKSRC} && rm -fr src/lib/boost_1_43_0
+	cd ${WRKSRC} && rm -r src/lib/boost_1_43_0
 
 # -DLINUX_32 gets added to CFLAGS, though it's only used to figure out
 # if there is a newer version of the 32-bit Linux binary on the upstream

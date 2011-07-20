@@ -1,11 +1,11 @@
-$OpenBSD: patch-pri_utils_pri,v 1.1 2011/03/15 20:39:58 jasper Exp $
+$OpenBSD: patch-pri_utils_pri,v 1.2 2011/07/20 06:54:43 jasper Exp $
 
 - Remove bundled boost and use the system-wide version instead.
 
---- pri/utils.pri.orig	Tue Mar 15 21:12:48 2011
-+++ pri/utils.pri	Tue Mar 15 21:13:00 2011
+--- pri/utils.pri.orig	Mon Jul 11 17:50:14 2011
++++ pri/utils.pri	Wed Jul 20 00:00:21 2011
 @@ -17,8 +17,6 @@
- # $Date: 2011/03/15 20:39:58 $
+ # $Date: 2011/07/20 06:54:43 $
  # ********************************************************************/
  
 -INCLUDEPATH += src/lib/boost_1_43_0
