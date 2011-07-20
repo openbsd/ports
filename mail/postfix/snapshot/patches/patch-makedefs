@@ -1,0 +1,12 @@
+$OpenBSD: patch-makedefs,v 1.5 2011/07/20 15:15:31 landry Exp $
+--- makedefs.orig	Wed Jul 20 08:33:44 2011
++++ makedefs	Wed Jul 20 08:34:00 2011
+@@ -152,6 +152,8 @@ case "$SYSTEM.$RELEASE" in
+ 		;;
+   OpenBSD.4*)	SYSTYPE=OPENBSD4
+ 		;;
++  OpenBSD.5*)	SYSTYPE=OPENBSD5
++		;;
+   ekkoBSD.1*)	SYSTYPE=EKKOBSD1
+ 		;;
+    NetBSD.1*)	SYSTYPE=NETBSD1
