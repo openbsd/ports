@@ -1,0 +1,31 @@
+$OpenBSD: patch-dialects_n+obsd_dproc_c,v 1.1 2011/07/20 13:50:08 sthen Exp $
+--- dialects/n+obsd/dproc.c.orig	Wed May 11 13:54:00 2005
++++ dialects/n+obsd/dproc.c	Tue Jul 19 10:27:27 2011
+@@ -172,7 +172,10 @@ gather_proc_info()
+ 	static int pofb = 0;
+ #endif	/* defined(HASFSTRUCT) */
+ 
+-#if	defined(HASKVMGETPROC2)
++#if	defined(HASKVMGETPROCS)
++	struct kinfo_proc *p;
++#define	KVMPROCSZ	sizeof(struct kinfo_proc)
++#elif	defined(HASKVMGETPROC2)
+ 	struct kinfo_proc2 *p;
+ #define	KVMPROCSZ2	sizeof(struct kinfo_proc2)
+ #else	/* !defined(HASKVMGETPROC2) */
+@@ -183,11 +186,13 @@ gather_proc_info()
+  * Read the process table.
+  */
+ 
+-#if	defined(HASKVMGETPROC2)
++#if	defined(HASKVMGETPROCS)
++	P = kvm_getprocs(Kd, KERN_PROC_ALL, 0, KVMPROCSZ, &Np);
++#elif	defined(HASKVMGETPROC2)
+ 	P = kvm_getproc2(Kd, KERN_PROC_ALL, 0, KVMPROCSZ2, &Np);
+ #else	/* !defined(HASKVMGETPROC2) */
+ 	P = kvm_getprocs(Kd, KERN_PROC_ALL, 0, &Np);
+-#endif	/* defined(HASKVMGETPROC2) &/
++#endif	/* defined(HASKVMGETPROC2) */
+ 
+ 	if (!P) {
+ 	    (void) fprintf(stderr, "%s: can't read process table: %s\n",
