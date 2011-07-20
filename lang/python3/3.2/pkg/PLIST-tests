@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-tests,v 1.1.1.1 2011/06/27 18:44:15 rpointel Exp $
+@comment $OpenBSD: PLIST-tests,v 1.2 2011/07/20 12:06:57 rpointel Exp $
 lib/python3.2/test/
 lib/python3.2/test/185test.db
 lib/python3.2/test/Sine-1000Hz-300ms.aif
@@ -13,8 +13,6 @@ lib/python3.2/test/__pycache__/autotest.cpython-32.pyc
 lib/python3.2/test/__pycache__/autotest.cpython-32.pyo
 lib/python3.2/test/__pycache__/buffer_tests.cpython-32.pyc
 lib/python3.2/test/__pycache__/buffer_tests.cpython-32.pyo
-lib/python3.2/test/__pycache__/cjkencodings_test.cpython-32.pyc
-lib/python3.2/test/__pycache__/cjkencodings_test.cpython-32.pyo
 lib/python3.2/test/__pycache__/curses_tests.cpython-32.pyc
 lib/python3.2/test/__pycache__/curses_tests.cpython-32.pyo
 lib/python3.2/test/__pycache__/datetimetester.cpython-32.pyc
@@ -163,6 +161,8 @@ lib/python3.2/test/__pycache__/test_codecencodings_cn.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_codecencodings_cn.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_codecencodings_hk.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_codecencodings_hk.cpython-32.pyo
+lib/python3.2/test/__pycache__/test_codecencodings_iso2022.cpython-32.pyc
+lib/python3.2/test/__pycache__/test_codecencodings_iso2022.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_codecencodings_jp.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_codecencodings_jp.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_codecencodings_kr.cpython-32.pyc
@@ -445,6 +445,8 @@ lib/python3.2/test/__pycache__/test_module.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_module.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_modulefinder.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_modulefinder.cpython-32.pyo
+lib/python3.2/test/__pycache__/test_msilib.cpython-32.pyc
+lib/python3.2/test/__pycache__/test_msilib.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_multibytecodec.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_multibytecodec.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_multibytecodec_support.cpython-32.pyc
@@ -681,6 +683,8 @@ lib/python3.2/test/__pycache__/test_threadsignals.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_threadsignals.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_time.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_time.cpython-32.pyo
+lib/python3.2/test/__pycache__/test_timeit.cpython-32.pyc
+lib/python3.2/test/__pycache__/test_timeit.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_timeout.cpython-32.pyc
 lib/python3.2/test/__pycache__/test_timeout.cpython-32.pyo
 lib/python3.2/test/__pycache__/test_tk.cpython-32.pyc
@@ -817,7 +821,37 @@ lib/python3.2/test/cfgparser.1
 lib/python3.2/test/cfgparser.2
 lib/python3.2/test/cfgparser.3
 lib/python3.2/test/check_soundcard.vbs
-lib/python3.2/test/cjkencodings_test.py
+lib/python3.2/test/cjkencodings/
+lib/python3.2/test/cjkencodings/big5-utf8.txt
+lib/python3.2/test/cjkencodings/big5.txt
+lib/python3.2/test/cjkencodings/big5hkscs-utf8.txt
+lib/python3.2/test/cjkencodings/big5hkscs.txt
+lib/python3.2/test/cjkencodings/cp949-utf8.txt
+lib/python3.2/test/cjkencodings/cp949.txt
+lib/python3.2/test/cjkencodings/euc_jisx0213-utf8.txt
+lib/python3.2/test/cjkencodings/euc_jisx0213.txt
+lib/python3.2/test/cjkencodings/euc_jp-utf8.txt
+lib/python3.2/test/cjkencodings/euc_jp.txt
+lib/python3.2/test/cjkencodings/euc_kr-utf8.txt
+lib/python3.2/test/cjkencodings/euc_kr.txt
+lib/python3.2/test/cjkencodings/gb18030-utf8.txt
+lib/python3.2/test/cjkencodings/gb18030.txt
+lib/python3.2/test/cjkencodings/gb2312-utf8.txt
+lib/python3.2/test/cjkencodings/gb2312.txt
+lib/python3.2/test/cjkencodings/gbk-utf8.txt
+lib/python3.2/test/cjkencodings/gbk.txt
+lib/python3.2/test/cjkencodings/hz-utf8.txt
+lib/python3.2/test/cjkencodings/hz.txt
+lib/python3.2/test/cjkencodings/iso2022_jp-utf8.txt
+lib/python3.2/test/cjkencodings/iso2022_jp.txt
+lib/python3.2/test/cjkencodings/iso2022_kr-utf8.txt
+lib/python3.2/test/cjkencodings/iso2022_kr.txt
+lib/python3.2/test/cjkencodings/johab-utf8.txt
+lib/python3.2/test/cjkencodings/johab.txt
+lib/python3.2/test/cjkencodings/shift_jis-utf8.txt
+lib/python3.2/test/cjkencodings/shift_jis.txt
+lib/python3.2/test/cjkencodings/shift_jisx0213-utf8.txt
+lib/python3.2/test/cjkencodings/shift_jisx0213.txt
 lib/python3.2/test/cmath_testcases.txt
 lib/python3.2/test/curses_tests.py
 lib/python3.2/test/datetimetester.py
@@ -1134,6 +1168,7 @@ lib/python3.2/test/test_code.py
 lib/python3.2/test/test_codeccallbacks.py
 lib/python3.2/test/test_codecencodings_cn.py
 lib/python3.2/test/test_codecencodings_hk.py
+lib/python3.2/test/test_codecencodings_iso2022.py
 lib/python3.2/test/test_codecencodings_jp.py
 lib/python3.2/test/test_codecencodings_kr.py
 lib/python3.2/test/test_codecencodings_tw.py
@@ -1280,6 +1315,7 @@ lib/python3.2/test/test_minidom.py
 lib/python3.2/test/test_mmap.py
 lib/python3.2/test/test_module.py
 lib/python3.2/test/test_modulefinder.py
+lib/python3.2/test/test_msilib.py
 lib/python3.2/test/test_multibytecodec.py
 lib/python3.2/test/test_multibytecodec_support.py
 lib/python3.2/test/test_multiprocessing.py
@@ -1398,6 +1434,7 @@ lib/python3.2/test/test_threading.py
 lib/python3.2/test/test_threading_local.py
 lib/python3.2/test/test_threadsignals.py
 lib/python3.2/test/test_time.py
+lib/python3.2/test/test_timeit.py
 lib/python3.2/test/test_timeout.py
 lib/python3.2/test/test_tk.py
 lib/python3.2/test/test_tokenize.py

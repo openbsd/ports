@@ -1,0 +1,11 @@
+$OpenBSD: patch-Lib_test_test_capi_py,v 1.1 2011/07/20 12:06:57 rpointel Exp $
+--- Lib/test/test_capi.py.orig	Sat Jul  9 08:58:50 2011
++++ Lib/test/test_capi.py	Mon Jul 11 15:15:28 2011
+@@ -91,6 +91,7 @@
+         if False and support.verbose:
+             print("(%i)"%(len(l),))
+ 
++    @unittest.skipIf(sys.platform.startswith("openbsd"), "blocking on OpenBSD")
+     def test_pendingcalls_threaded(self):
+ 
+         #do every callback on a separate thread

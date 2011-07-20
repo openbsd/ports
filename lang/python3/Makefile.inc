@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.2 2011/06/29 11:58:31 rpointel Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2011/07/20 12:06:57 rpointel Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -8,21 +8,17 @@
 SHARED_ONLY=	Yes
 
 COMMENT-main=	interpreted object-oriented programming language
-#COMMENT-bsddb=	Berkeley db module for Python
 COMMENT-gdbm=	GNU dbm module for Python
 COMMENT-idle=	IDE for Python
 COMMENT-tests=	Python test suite
 COMMENT-tkinter=tk GUI module for Python
-#COMMENT-tools=	extra tools for Python
 
 DISTNAME=	Python-${VERSION}${PATCHLEVEL}
 PKGNAME-main=	python3-${VERSION}${PATCHLEVEL}
-#PKGNAME-bsddb=	python3-bsddb-${VERSION}${PATCHLEVEL}
 PKGNAME-gdbm=	python3-gdbm-${VERSION}${PATCHLEVEL}
 PKGNAME-idle=	python3-idle-${VERSION}${PATCHLEVEL}
 PKGNAME-tests=	python3-tests-${VERSION}${PATCHLEVEL}
 PKGNAME-tkinter=python3-tkinter-${VERSION}${PATCHLEVEL}
-#PKGNAME-tools=	python3-tools-${VERSION}${PATCHLEVEL}
 CATEGORIES=	lang
 MASTER_SITES=	http://www.python.org/ftp/${PSUBDIR}/ \
 		http://python.mirrors.pair.com/pub/${PSUBDIR}/
@@ -40,7 +36,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-#MULTI_PACKAGES=	-main -tests -tools -gdbm -idle -tkinter -bsddb
 MULTI_PACKAGES=		-main -tests -gdbm -idle -tkinter
 
 # Python 2.6 lists BSD db 4.6.x as unstable on most architectures (see
@@ -58,14 +53,10 @@ LIB_DEPENDS-main =	archivers/bzip2
 RUN_DEPENDS-main =
 WANTLIB-main =		ssl panelw m crypto c util z readline pthread \
 			ncursesw stdc++ expat bz2 ffi
-#.if ${VERSION} == "2.5" || ${VERSION} == "2.6" || ${VERSION} == "2.7"
 LIB_DEPENDS-main +=	databases/sqlite3 \
 			devel/libffi
 WANTLIB-main +=		sqlite3
-#.endif
 
-#LIB_DEPENDS-bsddb =	databases/db/v4
-#WANTLIB-bsddb =		lib/db4/db>=4
 LIB_DEPENDS-gdbm =	databases/gdbm \
 			lang/python3/${VERSION},-main
 WANTLIB-gdbm =		gdbm>=3 python${VERSION}m
@@ -121,7 +112,7 @@ MAKE_FLAGS+=	LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
 MAKE_FLAGS+=	LDFLAGS='-L${WRKSRC}'
 FAKE_FLAGS+=	RANLIB=:
 
-ALL_TARGET?=	everything ./Lib/plat-openbsd4
+ALL_TARGET?=	everything ./Lib/plat-openbsd5
 
 post-extract:
 	rm -r ${WRKDIST}/Modules/expat
