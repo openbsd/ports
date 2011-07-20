@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1100 2011/07/15 23:11:00 fgsch Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1101 2011/07/20 08:46:20 sthen Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2293,7 +2293,7 @@ ${_WRKDIR_COOKIE}:
 	@rm -rf ${WRKDIR}
 	@mkdir -p ${WRKDIR} ${WRKDIR}/bin ${DEPDIR}
 #	@ln -s ${LOCALBASE}/bin/pkg-config ${WRKDIR}/bin
-.if ${USE_CCACHE:L} == "yes"
+.if ${USE_CCACHE:L} == "yes" && ${NO_CCACHE:L} == "no"
 	@${ECHO_MSG} "===>  Enabling ccache for ${FULLPKGNAME}${_MASTER}"
 	@ln -s ${LOCALBASE}/bin/ccache ${WRKDIR}/bin/gcc
 	@ln -s ${LOCALBASE}/bin/ccache ${WRKDIR}/bin/g++
