@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/20 21:42:49 schwarze Exp $
+${P5SITE}/Authen/
+${P5SITE}/Authen/NTLM/
+${P5SITE}/Authen/NTLM.pm
+${P5SITE}/Authen/NTLM/DES.pm
+${P5SITE}/Authen/NTLM/MD4.pm
+@man man/man3p/Authen::NTLM.3p
