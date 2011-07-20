@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2011/06/08 17:36:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/07/20 06:12:11 ajacoutot Exp $
 
 COMMENT=	genealogical research and analysis management program system
 
-DISTNAME=	gramps-3.2.5
-REVISION =	0
+DISTNAME=	gramps-3.2.6
 
 CATEGORIES=	misc x11
 
@@ -20,16 +19,15 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gramps/}
 MODULES=	lang/python \
 		textproc/intltool
 
-BUILD_DEPENDS=	x11/gnome/doc-utils \
-		x11/gnome/py-gnome
+BUILD_DEPENDS=	x11/py-gtk2
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/xdg-utils \
 		${MODPY_RUN_DEPENDS:S/python/python-bsddb/},-bsddb \
 		math/graphviz \
 		misc/shared-mime-info \
 		x11/gnome/librsvg \
-		x11/gnome/py-gnome-desktop \
-		x11/gnome/py-gnome-extras
+		x11/py-gtk2 \
+		www/py-webkitgtk
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/12/14 23:40:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/07/20 06:12:11 ajacoutot Exp $
 bin/gramps
 man/fr/
 man/fr/man1/
@@ -2737,11 +2737,15 @@ share/gramps/plugins/webreport/webplugins.gpr.pyo
 share/gramps/soundex.py
 share/gramps/soundex.pyc
 share/gramps/soundex.pyo
+share/icons/gnome/
+share/icons/gnome/48x48/
+share/icons/gnome/48x48/mimetypes/
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-gedcom.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-geneweb.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-gramps-package.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-gramps-xml.png
 share/icons/gnome/48x48/mimetypes/gnome-mime-application-x-gramps.png
+share/icons/gnome/scalable/
 share/icons/gnome/scalable/mimetypes/
 share/icons/gnome/scalable/mimetypes/gnome-mime-application-x-gedcom.svg
 share/icons/gnome/scalable/mimetypes/gnome-mime-application-x-geneweb.svg
