@@ -1,0 +1,4 @@
+Git::Repository is a Perl interface to Git, for scripted interactions
+with repositories. It's a low-level interface that allows calling any
+Git command, whether porcelain or plumbing, including bidirectional
+commands such as git commit-tree.
