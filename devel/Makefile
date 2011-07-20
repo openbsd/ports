@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.955 2011/07/18 17:39:45 rpointel Exp $
+# $OpenBSD: Makefile,v 1.956 2011/07/20 18:07:38 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -583,6 +583,7 @@
      SUBDIR += p5-Getopt-Euclid
      SUBDIR += p5-Getopt-Long-Descriptive
      SUBDIR += p5-Getopt-Simple
+     SUBDIR += p5-Git-Repository
      SUBDIR += p5-Glib2
      SUBDIR += p5-Graph
      SUBDIR += p5-Guard
@@ -767,6 +768,7 @@
      SUBDIR += p5-Sub-Override
      SUBDIR += p5-Sub-Uplevel
      SUBDIR += p5-Sys-SigAction
+     SUBDIR += p5-System-Command
      SUBDIR += p5-TAP-Parser
      SUBDIR += p5-Taint-Runtime
      SUBDIR += p5-Task-Weaken
