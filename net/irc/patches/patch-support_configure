@@ -1,0 +1,21 @@
+$OpenBSD: patch-support_configure,v 1.1 2011/07/20 14:22:48 naddy Exp $
+--- support/configure.orig	Tue Jun  6 16:35:29 2000
++++ support/configure	Wed Jul 20 08:16:35 2011
+@@ -246,7 +246,7 @@ EOF
+   -logdir | --logdir | --logdi | --logd)
+     ac_prev=logdir ;;
+   -logdir=* | --logdir=* | --logdi=* | --logd=*)
+-    logdir="$ac_optarg/" ;;
++    logdir="$ac_optarg" ;;
+ 
+   -mandir | --mandir | --mandi | --mand | --man | --ma | --m)
+     ac_prev=mandir ;;
+@@ -1296,7 +1296,7 @@ fi
+ fi
+ 
+ irc_cv_solaris_2=no
+-if test "$irc_sun" = no; then
++if test "$irc_cv_sun" = no; then
+   echo "$ac_t""no" 1>&6
+ else
+   if uname -r 2>/dev/null | grep "^5" >/dev/null; then
