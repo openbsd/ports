@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/10/18 20:52:06 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/20 17:30:28 gsoares Exp $
 
 COMMENT =	implement the data type "matrix of reals"
-DISTNAME =	Math-MatrixReal-2.05
+DISTNAME =	Math-MatrixReal-2.08
 CATEGORIES =	math
-HOMEPAGE =	http://search.cpan.org/~leto/Math-MatrixReal/
-MAINTAINER =	Markus Bergkvist <markus.bergkvist@telia.com>
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
@@ -17,6 +15,5 @@ MODCPAN_EXAMPLES=	Yes
 MODCPAN_EXAMPLES_DIST=	example
 
 CONFIGURE_STYLE =	modbuild
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>
