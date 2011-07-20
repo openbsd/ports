@@ -1,11 +1,11 @@
-$OpenBSD: patch-admin_SystemStats_py,v 1.1 2010/12/20 07:51:58 ajacoutot Exp $
+$OpenBSD: patch-admin_SystemStats_py,v 1.2 2011/07/20 15:26:00 sthen Exp $
 --- admin/SystemStats.py.orig	Mon Dec 13 08:01:04 2010
 +++ admin/SystemStats.py	Fri Dec 17 06:20:44 2010
 @@ -45,6 +45,8 @@ def get_system_stats():
              _stats = System_stats__Darwin()
          elif sys.platform.startswith ('freebsd'):
              _stats = System_stats__FreeBSD()
-+        elif sys.platform.startswith ('openbsd4'):
++        elif sys.platform.startswith ('openbsd'):
 +            _stats = System_stats__OpenBSD()
  
      assert _stats, "Not implemented"
