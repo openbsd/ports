@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.35 2011/06/08 17:35:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2011/07/20 12:56:53 sthen Exp $
 
 COMMENT =	3D creation software
 
 DISTNAME =	blender-2.49b
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	graphics
 
@@ -39,7 +39,7 @@ NO_REGRESS =	Yes
 CFLAGS +=	-fPIC -funsigned-char -fno-strict-aliasing
 
 post-extract:
-	@cd ${WRKSRC}/config && cp openbsd3-config.py openbsd4-config.py
+	@cd ${WRKSRC}/config && cp openbsd3-config.py openbsd-config.py
 
 ALL_TARGET =	blendernogame
 

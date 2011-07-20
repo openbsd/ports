@@ -1,7 +1,16 @@
-$OpenBSD: patch-SConstruct,v 1.6 2009/10/25 22:41:25 steven Exp $
---- SConstruct.orig	Tue Sep  1 17:23:49 2009
-+++ SConstruct	Sat Oct 10 19:25:41 2009
-@@ -596,7 +596,7 @@ if env['WITH_BF_PLAYER']:
+$OpenBSD: patch-SConstruct,v 1.7 2011/07/20 12:56:54 sthen Exp $
+--- SConstruct.orig	Tue Sep  1 16:23:49 2009
++++ SConstruct	Wed Jul 20 13:39:38 2011
+@@ -143,6 +143,8 @@ env.SConscriptChdir(0)
+ crossbuild = B.arguments.get('BF_CROSS', None)
+ if crossbuild and platform!='win32':
+ 	platform = 'linuxcross'
++if platform.find('openbsd') != -1:
++	platform = 'openbsd'
+ 
+ env['OURPLATFORM'] = platform
+ 
+@@ -596,7 +598,7 @@ if env['WITH_BF_PLAYER']:
  
  if not env['WITH_BF_GAMEENGINE']:
  	blendernogame = env.Alias('blendernogame', B.program_list)
