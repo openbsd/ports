@@ -1,0 +1,32 @@
+# $OpenBSD
+
+COMMENT=	ASP.NET implementations for Mono
+
+V=		2.10.2
+DISTNAME=	xsp-${V}
+PKGNAME=	mono-xsp-${V}
+
+EXTRACT_SUFX=	.tar.bz2
+
+CATEGORIES=	www devel
+
+HOMEPAGE=	http://www.mono-project.com/ASP.NET
+MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/xsp/
+
+MAINTAINER=	Robet Nagy <robert@openbsd.org>
+
+# MIT
+PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE_FTP=	Yes
+PERMIT_DISTFILES_CDROM= Yes
+PERMIT_DISTFILES_FTP=	Yes
+
+MODULES=	lang/mono
+
+BUILD_DEPENDS+=	misc/findutils
+
+CONFIGURE_STYLE=gnu
+
+USE_GMAKE=	Yes
+
+.include <bsd.port.mk>
