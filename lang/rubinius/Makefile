@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2011/07/19 17:09:56 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2011/07/20 22:51:32 jeremy Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT =	Ruby virtual machine and core library
 
-V=		1.2.3
-DISTNAME =	rubinius-${V}-20110315
+V=		1.2.4
+DISTNAME =	rubinius-${V}-20110705
 PKGNAME =	rubinius-$V
-REVISION =	2
 
 CATEGORIES =	lang lang/ruby
 
