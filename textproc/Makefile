@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.332 2011/07/12 18:08:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.333 2011/07/20 16:48:58 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -259,6 +259,7 @@
      SUBDIR += py-chardet
      SUBDIR += py-cssutils
      SUBDIR += py-docutils
+     SUBDIR += py-enchant
      SUBDIR += py-epydoc
      SUBDIR += py-feedparser
      SUBDIR += py-jaxml
