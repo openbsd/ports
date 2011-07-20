@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/22 08:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/07/20 20:42:13 naddy Exp $
 
 COMMENT=	GTK-based BDF font editor
 
 DISTNAME=	gbdfed-1.6
 REVISION=	0
 
-CATEGORIES=	x11
+CATEGORIES=	x11 fonts
 HOMEPAGE=	http://www.math.nmsu.edu/~mleisher/Software/gbdfed/
 
 # BSD
