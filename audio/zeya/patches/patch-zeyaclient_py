@@ -1,0 +1,12 @@
+$OpenBSD: patch-zeyaclient_py,v 1.1.1.1 2011/07/20 07:54:58 dcoppa Exp $
+--- zeyaclient.py.orig	Mon Jul 11 11:38:24 2011
++++ zeyaclient.py	Mon Jul 11 11:42:34 2011
+@@ -99,7 +99,7 @@ def run(server_path):
+         for song in matching_songs:
+             print "\r%s - %s" % (song['title'], song['artist'])
+             song_url = "%s/getcontent?key=%d" % (server_path, song['key'])
+-            p = subprocess.Popen(["/usr/bin/ogg123", "-q", song_url])
++            p = subprocess.Popen(["${LOCALBASE}/bin/ogg123", "-q", song_url])
+             try:
+                 p.communicate()
+             except KeyboardInterrupt:

@@ -1,0 +1,32 @@
+$OpenBSD: patch-zeya_py,v 1.1.1.1 2011/07/20 07:54:58 dcoppa Exp $
+--- zeya.py.orig	Tue Sep 21 08:13:42 2010
++++ zeya.py	Mon Jul 11 18:59:16 2011
+@@ -50,6 +50,10 @@ try:
+ except (ImportError, AttributeError):
+     import simplejson as json
+ 
++modules_dir = '${TRUEPREFIX}/lib/zeya'
++
++sys.path.append(modules_dir)
++
+ import backends
+ import decoders
+ import options
+@@ -347,7 +351,7 @@ def run_server(backend, bind_address, port, bitrate, b
+                'playlists': playlists }
+ 
+     library_repr = json.dumps(output, ensure_ascii=False)
+-    basedir = os.path.abspath(os.path.dirname(os.path.realpath(sys.argv[0])))
++    basedir = modules_dir
+ 
+     auth_data = None
+     if basic_auth_file is not None:
+@@ -357,7 +361,7 @@ def run_server(backend, bind_address, port, bitrate, b
+             auth_data[s_user] = s_pass
+     zeya_handler = ZeyaHandler(backend,
+                                library_repr,
+-                               os.path.join(basedir, 'resources'),
++                               '${TRUEPREFIX}/share/zeya',
+                                bitrate,
+                                auth_type=NO_AUTH if basic_auth_file is None else BASIC_AUTH,
+                                auth_data=auth_data,

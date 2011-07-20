@@ -1,0 +1,16 @@
+#!/bin/sh
+#
+# $OpenBSD: zeya.rc,v 1.1.1.1 2011/07/20 07:54:58 dcoppa Exp $
+
+daemon="${TRUEPREFIX}/sbin/zeya"
+daemon_flags="--path=/var/tmp"
+daemon_user="_zeya"
+
+. /etc/rc.d/rc.subr
+
+pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

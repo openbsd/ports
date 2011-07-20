@@ -1,0 +1,32 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/20 07:54:58 dcoppa Exp $
+@pkgpath audio/py-zeya
+@newgroup _zeya:680
+@newuser _zeya:680:_zeya:daemon:zeya user:/nonexistent:/sbin/nologin
+bin/zeyaclient
+lib/zeya/
+lib/zeya/backends.py
+lib/zeya/common.py
+lib/zeya/decoders.py
+lib/zeya/directory.py
+lib/zeya/m3u.py
+lib/zeya/options.py
+lib/zeya/pls.py
+lib/zeya/rhythmbox.py
+@man man/man1/zeyaclient.1
+@man man/man8/zeya.8
+sbin/zeya
+share/zeya/
+share/zeya/clear_search.png
+share/zeya/favicon.png
+share/zeya/library.html
+share/zeya/next.png
+share/zeya/pause.png
+share/zeya/play.png
+share/zeya/previous.png
+share/zeya/repeat.png
+share/zeya/search.png
+share/zeya/shuffle.png
+share/zeya/spinner.gif
+share/zeya/zeya.css
+share/zeya/zeya.js
+@rcscript ${RCDIR}/zeya

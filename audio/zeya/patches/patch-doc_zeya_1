@@ -1,0 +1,20 @@
+$OpenBSD: patch-doc_zeya_1,v 1.1.1.1 2011/07/20 07:54:58 dcoppa Exp $
+--- doc/zeya.1.orig	Tue Sep 21 08:13:42 2010
++++ doc/zeya.1	Thu Jul 14 15:46:11 2011
+@@ -5,7 +5,7 @@
+ \\$2 \(la\\$1\(ra\\$3
+ ..
+ .if \n(.g .mso www.tmac
+-.TH zeya 1 2009-10-19 "" ""
++.TH zeya 8 2009-10-19 "" ""
+ .SH NAME
+ zeya \- a web music server
+ .SH SYNOPSIS
+@@ -67,7 +67,3 @@ format.
+ .SH COPYRIGHT
+ Zeya was written by Phil Sung and Samson Yeung and is licensed
+ under the terms of the GNU Affero GPL license, version 3 or later.
+-.SH "SEE ALSO"
+-\*(T<\fI/usr/share/doc/zeya/README\fR\*(T>
+-.PP
+-\*(T<\fI/usr/share/doc/zeya/TODO\fR\*(T>
