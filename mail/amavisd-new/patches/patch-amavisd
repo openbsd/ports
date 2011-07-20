@@ -1,7 +1,7 @@
-$OpenBSD: patch-amavisd,v 1.8 2009/10/13 13:29:18 giovanni Exp $
---- amavisd.orig	Thu Jun 25 14:39:01 2009
-+++ amavisd	Mon Jul 20 17:49:14 2009
-@@ -22083,6 +22083,7 @@ sub initializeSpamAssassin {
+$OpenBSD: patch-amavisd,v 1.9 2011/07/20 14:46:20 giovanni Exp $
+--- amavisd.orig	Fri Jul  1 18:21:07 2011
++++ amavisd	Tue Jul 12 10:39:35 2011
+@@ -24679,6 +24679,7 @@ sub new_SpamAssassin_instance {
      rules_filename       => $sa_configpath,
      site_rules_filename  => $sa_siteconfigpath,
  #   LOCAL_STATE_DIR   => '/var/lib',

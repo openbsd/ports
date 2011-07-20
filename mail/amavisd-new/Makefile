@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2011/05/24 16:04:16 giovanni Exp $
+# $OpenBSD: Makefile,v 1.23 2011/07/20 14:46:20 giovanni Exp $
 
 COMMENT=		interface between mailer MTA and content checkers
 
-DISTNAME=		amavisd-new-2.6.6
+DISTNAME=		amavisd-new-2.7.0
 CATEGORIES=		mail security
 
-HOMEPAGE=		http://www.ijs.si/software/amavisd/
+HOMEPAGE=		http://www.amavis.org/
 MAINTAINER=		Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
@@ -47,6 +47,11 @@ NO_REGRESS=		Yes
 
 PKG_ARCH=		*
 
+pre-configure:
+	@perl -pi -e 's,/var/amavis,/var/amavisd,g' ${WRKSRC}/amavisd-*
+	@perl -pi -e "s,= 'vscan',= '_vscan',g" ${WRKSRC}/amavisd-signer \
+		${WRKSRC}/amavisd.conf ${WRKSRC}/amavisd.conf-default
+
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd ${PREFIX}/sbin/amavisd
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-agent \
@@ -55,8 +60,12 @@ do-install:
 			${PREFIX}/bin/amavisd-nanny
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-release \
 			${PREFIX}/bin/amavisd-release
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-signer \
+			${PREFIX}/bin/amavisd-signer
 	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-snmp-subagent \
 			${PREFIX}/bin/amavisd-snmp-subagent
+	${INSTALL_SCRIPT} ${WRKSRC}/amavisd-submit \
+			${PREFIX}/bin/amavisd-submit
 	${INSTALL_SCRIPT} ${WRKSRC}/p0f-analyzer.pl \
 			${PREFIX}/bin/p0f-analyzer.pl
 	${INSTALL_DATA} ${WRKSRC}/JpegTester.pm \
@@ -78,7 +87,5 @@ do-install:
 			${PREFIX}/share/examples/amavisd-new/amavisd.conf
 	${INSTALL_DATA} ${WRKSRC}/amavisd.conf-default \
 			${PREFIX}/share/examples/amavisd-new/amavisd.conf-default
-	${INSTALL_DATA} ${WRKSRC}/amavisd.conf-sample \
-			${PREFIX}/share/examples/amavisd-new/amavisd.conf-sample
 
 .include <bsd.port.mk>

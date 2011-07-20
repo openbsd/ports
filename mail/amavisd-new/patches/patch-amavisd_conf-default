@@ -1,0 +1,27 @@
+$OpenBSD: patch-amavisd_conf-default,v 1.1 2011/07/20 14:46:20 giovanni Exp $
+--- amavisd.conf-default.orig	Fri Jul  1 18:20:56 2011
++++ amavisd.conf-default	Tue Jul 12 14:59:33 2011
+@@ -20,9 +20,9 @@ use strict;
+ # $mydomain   = ... no useful default, should be set if used in expressions
+ # $snmp_contact  = '';
+ # $snmp_location = '';
+-# $daemon_user   = undef;
+-# $daemon_group  = undef;
+-# $MYHOME        = '/var/amavis';
++$daemon_user   = _vscan;
++$daemon_group  = _vscan;
++$MYHOME        = '/var/amavisd';
+ # $TEMPBASE      = $MYHOME;                # after-default
+ # $db_home       = "$MYHOME/db";           # after-default
+ # $pid_file      = "$MYHOME/amavisd.pid";  # after-default
+@@ -355,8 +355,8 @@ use strict;
+ #   ['zip',  \&do_unzip],
+ #   ['kmz',  \&do_unzip],
+ #   ['7z',   \&do_7zip,       ['7zr','7za','7z'] ],
+-#   ['rar',  \&do_unrar,      \$unrar],
+-#   ['arj',  \&do_unarj,      \$unarj],
++#   ['rar',  \&do_7zip,       '7z'],
++#   ['arj',  \&do_7zip,      '7z'],
+ #   ['arc',  \&do_arc,        \$arc],
+ #   ['zoo',  \&do_zoo,        \$zoo],
+ #   ['lha',  \&do_lha,        \$lha],
