@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.956 2011/07/20 18:07:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.957 2011/07/21 01:37:56 edd Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1006,6 +1006,7 @@
      SUBDIR += qt-creator
      SUBDIR += qt4-eventsview
      SUBDIR += quirks
+     SUBDIR += radare2
      SUBDIR += rapidsvn
      SUBDIR += rats
      SUBDIR += re2c
