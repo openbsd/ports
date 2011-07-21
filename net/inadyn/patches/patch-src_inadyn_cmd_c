@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_inadyn_cmd_c,v 1.1.1.1 2011/07/21 12:17:02 pea Exp $
+--- src/inadyn_cmd.c.orig	Fri May  6 13:40:40 2011
++++ src/inadyn_cmd.c	Fri May  6 13:41:14 2011
+@@ -650,7 +650,7 @@ static RC_TYPE set_change_persona_handler(CMD_DATA *p_
+ 			}
+ 		}
+ 
+-		if (sscanf(arg, "%[a-z]", username) != 1)
++		if (sscanf(arg, "%[_a-z]", username) != 1)
+ 		{
+ 			return RC_DYNDNS_INVALID_OPTION;
+ 		}

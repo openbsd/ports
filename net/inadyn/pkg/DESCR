@@ -1,0 +1,7 @@
+inadyn is a C based client used to update DNS entries.  This is a fork of
+the original INADYN implementation from Narcis Ilisei. Most of the fixes
+and additions from the new "upstream" by Christoph Brill have been added.
+However, this project is not a fork off of Christoph's repository, but
+rather a reengineered version of the original 1.96.2 release with all
+additional patches audited and merged separately. Additionally a further
+set of code cleanups, features and bug fixes have been added.

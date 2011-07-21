@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_ip_c,v 1.1.1.1 2011/07/21 12:17:02 pea Exp $
+--- src/ip.c.orig	Fri May  6 13:05:07 2011
++++ src/ip.c	Fri May  6 13:05:51 2011
+@@ -17,6 +17,9 @@
+  */
+ 
+ #define MODULE_TAG ""
++#include <sys/types.h>
++#include <netinet/in.h>
++#include <arpa/nameser.h>
+ #include <resolv.h>
+ #include <stdlib.h>
+ #include <string.h>

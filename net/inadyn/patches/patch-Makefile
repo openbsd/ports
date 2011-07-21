@@ -1,0 +1,30 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2011/07/21 12:17:02 pea Exp $
+--- Makefile.orig	Mon Feb 28 09:34:36 2011
++++ Makefile	Tue May 10 11:05:15 2011
+@@ -16,7 +16,7 @@ CC           ?= $(CROSS)gcc
+ prefix       ?= /usr/local
+ sysconfdir   ?= /etc
+ datadir       = $(prefix)/share/doc/inadyn
+-mandir        = $(prefix)/share/man
++mandir        = $(prefix)/man
+ 
+ # This magic trick looks like a comment, but works on BSD PMake
+ #include <config.mk>
+@@ -27,14 +27,14 @@ BASE_OBJS     = src/base64utils.o src/md5.o src/dyndns
+ 		src/os.o src/os_psos.o src/tcp.o src/inadyn_cmd.o
+ OBJS	      = $(BASE_OBJS) $(CFG_OBJ) $(EXTRA_OBJS)
+ CFLAGS        = -Iinclude -DVERSION_STRING=\"$(VERSION)\" $(CFG_INC) $(EXTRA_CFLAGS)
+-CFLAGS       += -O2 -W -Wall
+-LDLIBS       += -lresolv $(EXTRA_LIBS)
++CFLAGS       ?= -O2 -W -Wall
++LDLIBS       += $(EXTRA_LIBS)
+ DISTFILES     = README COPYING LICENSE
+ 
+ # Pattern rules
+ .c.o:
+ 	@printf "  CC      $@\n"
+-	@$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
++	$(CC) $(CFLAGS) $(CPPFLAGS) -c -o $@ $<
+ 
+ # Build rules
+ all: $(EXEC)

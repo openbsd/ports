@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/21 12:17:02 pea Exp $
+@newgroup _inadyn:681
+@newuser _inadyn:681:_inadyn:daemon:inadyn daemon:/nonexistent:/sbin/nologin
+@man man/man5/inadyn.conf.5
+@man man/man8/inadyn.8
+@bin sbin/inadyn
+share/doc/inadyn/
+share/doc/inadyn/COPYING
+share/doc/inadyn/LICENSE
+share/doc/inadyn/README
+share/examples/inadyn/
+share/examples/inadyn/inadyn.conf
+@mode 640
+@owner _inadyn
+@sample ${SYSCONFDIR}/inadyn.conf
+@mode
+@owner
+@rcscript ${RCDIR}/inadyn
