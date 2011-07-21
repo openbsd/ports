@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.707 2011/07/08 09:31:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.708 2011/07/21 12:19:11 pea Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -129,6 +129,7 @@
      SUBDIR += igmpproxy
      SUBDIR += ii
      SUBDIR += ike-scan
+     SUBDIR += inadyn
      SUBDIR += iodine
      SUBDIR += ipaudit
      SUBDIR += ipcad
