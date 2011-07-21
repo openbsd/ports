@@ -1,0 +1,15 @@
+Dokuwiki has been installed into ${INSTDIR}
+
+With Apache, this directory must be granted at least with this:
+     AllowOverride Limit
+
+You should point this to the DocumentRoot of your web-server:
+   # ln -s ../dokuwiki /var/www/htdocs/dokuwiki
+
+Then add to your httpd.conf:
+   <Directory /var/www/dokuwiki>
+	AllowOverride Limit
+   </Directory>
+
+Proceed to complete the installation by opening install.php in your browser.
+If you are upgrading your installation, don't forget to remove install.php.
