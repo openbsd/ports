@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/04/27 18:36:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/07/21 06:37:09 ajacoutot Exp $
 include/gstreamermm-${VERSION}/
 include/gstreamermm-${VERSION}/gstreamermm/
 include/gstreamermm-${VERSION}/gstreamermm.h
@@ -34,6 +34,8 @@ include/gstreamermm-${VERSION}/gstreamermm/colorbalance.h
 include/gstreamermm-${VERSION}/gstreamermm/colorbalancechannel.h
 include/gstreamermm-${VERSION}/gstreamermm/decodebin.h
 include/gstreamermm-${VERSION}/gstreamermm/decodebin2.h
+include/gstreamermm-${VERSION}/gstreamermm/discoverer.h
+include/gstreamermm-${VERSION}/gstreamermm/discovererinfo.h
 include/gstreamermm-${VERSION}/gstreamermm/element.h
 include/gstreamermm-${VERSION}/gstreamermm/elementfactory.h
 include/gstreamermm-${VERSION}/gstreamermm/enums.h
@@ -48,6 +50,7 @@ include/gstreamermm-${VERSION}/gstreamermm/filesink.h
 include/gstreamermm-${VERSION}/gstreamermm/filesrc.h
 include/gstreamermm-${VERSION}/gstreamermm/filter.h
 include/gstreamermm-${VERSION}/gstreamermm/format.h
+include/gstreamermm-${VERSION}/gstreamermm/funnel.h
 include/gstreamermm-${VERSION}/gstreamermm/gdpdepay.h
 include/gstreamermm-${VERSION}/gstreamermm/gdppay.h
 include/gstreamermm-${VERSION}/gstreamermm/ghostpad.h
@@ -118,6 +121,8 @@ include/gstreamermm-${VERSION}/gstreamermm/private/colorbalance_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/colorbalancechannel_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/decodebin2_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/decodebin_p.h
+include/gstreamermm-${VERSION}/gstreamermm/private/discoverer_p.h
+include/gstreamermm-${VERSION}/gstreamermm/private/discovererinfo_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/element_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/elementfactory_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/enums_p.h
@@ -132,6 +137,7 @@ include/gstreamermm-${VERSION}/gstreamermm/private/filesink_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/filesrc_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/filter_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/format_p.h
+include/gstreamermm-${VERSION}/gstreamermm/private/funnel_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/gdpdepay_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/gdppay_p.h
 include/gstreamermm-${VERSION}/gstreamermm/private/ghostpad_p.h
@@ -434,6 +440,30 @@ share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DecodeBin2__coll__gr
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DecodeBin2__inherit__graph.png
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DecodeBin__coll__graph.png
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DecodeBin__inherit__graph.png
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Discoverer-members.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Discoverer.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererAudioInfo-members.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererAudioInfo.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererAudioInfo__coll__graph.png
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererAudioInfo__inherit__graph.png
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererContainerInfo-members.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererContainerInfo.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererContainerInfo__coll__graph.png
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererContainerInfo__inherit__graph.png
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererInfo-members.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererInfo.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererInfo__coll__graph.png
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererInfo__inherit__graph.png
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererStreamInfo-members.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererStreamInfo.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererStreamInfo__coll__graph.png
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererStreamInfo__inherit__graph.png
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererVideoInfo-members.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererVideoInfo.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererVideoInfo__coll__graph.png
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DiscovererVideoInfo__inherit__graph.png
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Discoverer__coll__graph.png
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Discoverer__inherit__graph.png
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DoubleRange-members.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1DoubleRange.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Element-members.html
@@ -540,6 +570,10 @@ share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Fraction.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1FractionRange-members.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1FractionRange.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1FractionRange__coll__graph.png
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Funnel-members.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Funnel.html
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Funnel__coll__graph.png
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1Funnel__inherit__graph.png
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1GDPDepay-members.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1GDPDepay.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1GDPDepay__coll__graph.png
@@ -678,6 +712,7 @@ share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1MessageMixerOptionCh
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1MessageMixerOptionsListChanged-members.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1MessageMixerOptionsListChanged.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1MessageMixerOptionsListChanged__coll__graph.png
+share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1MessageMixerOptionsListChanged__inherit__graph.png
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1MessageMixerRecordToggled-members.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1MessageMixerRecordToggled.html
 share/doc/gstreamermm-${VERSION}/reference/html/classGst_1_1MessageMixerRecordToggled__coll__graph.png
@@ -1203,8 +1238,6 @@ share/doc/gstreamermm-${VERSION}/reference/html/namespaces.html
 share/doc/gstreamermm-${VERSION}/reference/html/nav_f.png
 share/doc/gstreamermm-${VERSION}/reference/html/nav_h.png
 share/doc/gstreamermm-${VERSION}/reference/html/open.png
-share/doc/gstreamermm-${VERSION}/reference/html/pages.html
-share/doc/gstreamermm-${VERSION}/reference/html/since_0_10.html
 share/doc/gstreamermm-${VERSION}/reference/html/structGst_1_1VideoRectangle-members.html
 share/doc/gstreamermm-${VERSION}/reference/html/structGst_1_1VideoRectangle.html
 share/doc/gstreamermm-${VERSION}/reference/html/tab_a.png
