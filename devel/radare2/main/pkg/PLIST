@@ -1,0 +1,117 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/21 01:35:51 edd Exp $
+%%SHARED%%
+bin/r2
+@bin bin/rabin2
+@bin bin/radare2
+@bin bin/radiff2
+@bin bin/rafind2
+@bin bin/rahash2
+@bin bin/ranal2
+@bin bin/rarc2
+bin/rarc2-tool
+@bin bin/rasc2
+@bin bin/rasm2
+@bin bin/rax2
+include/libr/
+include/libr/btree.h
+include/libr/list.h
+include/libr/r.h
+include/libr/r_anal.h
+include/libr/r_asm.h
+include/libr/r_bin.h
+include/libr/r_bp.h
+include/libr/r_cmd.h
+include/libr/r_config.h
+include/libr/r_cons.h
+include/libr/r_core.h
+include/libr/r_crypto.h
+include/libr/r_db.h
+include/libr/r_debug.h
+include/libr/r_diff.h
+include/libr/r_flags.h
+include/libr/r_flist.h
+include/libr/r_fs.h
+include/libr/r_hash.h
+include/libr/r_io.h
+include/libr/r_lang.h
+include/libr/r_lib.h
+include/libr/r_line.h
+include/libr/r_list.h
+include/libr/r_parse.h
+include/libr/r_print.h
+include/libr/r_reg.h
+include/libr/r_search.h
+include/libr/r_sign.h
+include/libr/r_socket.h
+include/libr/r_syscall.h
+include/libr/r_th.h
+include/libr/r_types.h
+include/libr/r_types_base.h
+include/libr/r_userconf.h
+include/libr/r_util.h
+lib/pkgconfig/
+lib/pkgconfig/r_anal.pc
+lib/pkgconfig/r_asm.pc
+lib/pkgconfig/r_bin.pc
+lib/pkgconfig/r_bp.pc
+lib/pkgconfig/r_cmd.pc
+lib/pkgconfig/r_config.pc
+lib/pkgconfig/r_cons.pc
+lib/pkgconfig/r_core.pc
+lib/pkgconfig/r_debug.pc
+lib/pkgconfig/r_diff.pc
+lib/pkgconfig/r_flags.pc
+lib/pkgconfig/r_fs.pc
+lib/pkgconfig/r_hash.pc
+lib/pkgconfig/r_io.pc
+lib/pkgconfig/r_lang.pc
+lib/pkgconfig/r_lib.pc
+lib/pkgconfig/r_line.pc
+lib/pkgconfig/r_parse.pc
+lib/pkgconfig/r_print.pc
+lib/pkgconfig/r_reg.pc
+lib/pkgconfig/r_search.pc
+lib/pkgconfig/r_sign.pc
+lib/pkgconfig/r_socket.pc
+lib/pkgconfig/r_syscall.pc
+lib/pkgconfig/r_util.pc
+lib/radare2/
+lib/radare2/0.8.1/
+lib/radare2/0.8.1/radare.lua
+lib/radare2/0.8.1/radare.py
+lib/radare2/0.8.1/radare.rb
+@man man/man1/r2.1
+@man man/man1/rabin2.1
+@man man/man1/radare2.1
+@man man/man1/radiff2.1
+@man man/man1/rafind2.1
+@man man/man1/rahash2.1
+@man man/man1/ranal2.1
+@man man/man1/rarc2-tool.1
+@man man/man1/rarc2.1
+@man man/man1/rasc2.1
+@man man/man1/rasm2.1
+@man man/man1/rax2.1
+@man man/man1/rsc2.1
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/doc/radare2/
+share/doc/radare2/bindiff
+share/doc/radare2/changes-from-1.x
+share/doc/radare2/dospart
+share/doc/radare2/fortunes
+share/doc/radare2/idc2rdb.idc
+share/doc/radare2/idc2rdb.pl
+share/doc/radare2/iocache
+share/doc/radare2/iphone
+share/doc/radare2/lang-plugins
+share/doc/radare2/maemo
+share/doc/radare2/oo
+share/doc/radare2/osx
+share/doc/radare2/plugins
+share/doc/radare2/releases
+share/doc/radare2/rgraph
+share/doc/radare2/solaris
+share/doc/radare2/static
+share/doc/radare2/static-plugins
+share/doc/radare2/syntax
+share/doc/radare2/windows

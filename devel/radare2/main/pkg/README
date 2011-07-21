@@ -1,0 +1,44 @@
+$OpenBSD: README,v 1.1.1.1 2011/07/21 01:35:51 edd Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Additional Dependencies
+=======================
+
+If you need to assemble x86/amd64 asm then you should install nasm
+(devel/nasm), although this is not essential to the use of radare2.
+
+NOTE: nasm is not available for all architectures on OpenBSD.
+
+Bindings
+========
+
+For now, we have only enabled the Vala bindings (as the radare-bindings2
+package). Further languages may be enabled in the future.
+
+Known Issues
+============
+
+Backtraces
+----------
+
+The 'dbt' command (debug backtrace) is broken.
+
+Arches
+------
+
+Some arches have been disabled. Eg. powerpc:
+
+02:03 <sthen_p> needs more work on powerpc ;)
+02:03 <sthen_p> $ r2 /bin/ls
+02:03 <sthen_p> Cannot use 'unknown' anal plugin.
+02:03 <sthen_p> asm.arch: cannot find (unknown)
+02:03 <sthen_p> Cannot use 'unknown' anal plugin.
+02:03 <sthen_p> r_syscall_setup: Unknown os/arch 'openbsd'/'unknown'
+
+Reporting bugs
+--------------
+
+Please file bugs at ${HOMEPAGE}.
