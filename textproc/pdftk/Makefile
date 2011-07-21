@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/20 10:09:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/21 12:29:21 dcoppa Exp $
 
 COMMENT=	pdf swiss army knife
 VERSION=	1.44
@@ -33,7 +33,7 @@ GCJ?=		gcj
 GCJH?=		gcjh
 GJAR?=		ejar
 
-CONFIG=		$(MACHINE)-unknown-openbsd$(OSREV)
+CONFIG=		$(MACHINE_ARCH)-unknown-openbsd$(OSREV)
 GCJFLAGS?=	${CXXFLAGS}
 CPPFLAGS+=	-fdollars-in-identifiers \
 		-DPATH_DELIM=0x2f \
