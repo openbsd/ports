@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2011/07/08 11:08:59 landry Exp $
+# $OpenBSD: Makefile,v 1.67 2011/07/22 10:04:15 landry Exp $
 
 # keep in sync with working archs.. sigh
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
@@ -33,7 +33,7 @@ LANGUAGES=	af ar ast be bg bn-BD bn-IN br ca cs cy da de el en-GB en-US en-ZA eo
 BUILD_DEPENDS=	archivers/unzip
 RUN_DEPENDS=	firefox-${V}:www/mozilla-firefox
 
-DIST_SUBDIR=	${NAME}-${V}
+DIST_SUBDIR=	mozilla/${NAME}-${V}
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 EXTRACT_ONLY=
@@ -44,13 +44,13 @@ SUBPACKAGE?=	-en-GB
 .for i in ${LANGUAGES}
 MULTI_PACKAGES+=-$i
 DISTFILES+=	$i.xpi
-REVISION-$i=	0
+REVISION-$i=	1
 PKGNAME-$i=	${NAME}-$i-${V}
 COMMENT-$i=	$i language pack for Firefox
 LPACKDIR-$i=	${PREFIX}/lib/firefox-$V/extensions/langpack-$i@firefox.mozilla.org
 .endfor
 PKGNAME-en-GB=	${NAME}-en-GB-${V}
-REVISION-af=	1
+REVISION-af=	2
 
 # use the same for all subpackages
 MESSAGE=	${PKGDIR}/MESSAGE
