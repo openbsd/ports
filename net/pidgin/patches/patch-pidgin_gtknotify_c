@@ -1,11 +1,11 @@
-$OpenBSD: patch-pidgin_gtknotify_c,v 1.12 2010/06/10 20:13:33 steven Exp $
---- pidgin/gtknotify.c.orig	Sat May 29 21:24:00 2010
-+++ pidgin/gtknotify.c	Fri Jun  4 21:42:39 2010
-@@ -1230,7 +1230,16 @@ uri_command(const char *command, gboolean sync)
+$OpenBSD: patch-pidgin_gtknotify_c,v 1.13 2011/07/22 06:44:45 jasper Exp $
+--- pidgin/gtknotify.c.orig	Wed Jun 22 03:32:30 2011
++++ pidgin/gtknotify.c	Wed Jul 13 01:09:31 2011
+@@ -1222,7 +1222,16 @@ uri_command(const char *command, gboolean sync)
  			g_error_free(error);
  		}
  		else
-+#if HAVE_SIGNAL_H
++#ifdef HAVE_SIGNAL_H
 +		{
 +			extern int real_status;
 +

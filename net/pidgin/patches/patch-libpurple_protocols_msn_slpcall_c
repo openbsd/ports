@@ -1,0 +1,16 @@
+$OpenBSD: patch-libpurple_protocols_msn_slpcall_c,v 1.1 2011/07/22 06:44:45 jasper Exp $
+--- libpurple/protocols/msn/slpcall.c.orig	Thu Jul 14 13:05:46 2011
++++ libpurple/protocols/msn/slpcall.c	Thu Jul 14 13:06:32 2011
+@@ -490,12 +490,10 @@ got_sessionreq(MsnSlpCall *slpcall, const char *branch
+ 		if (img != NULL) {
+ 			/* DATA PREP */
+ 			slpmsg = msn_slpmsg_dataprep_new(slpcall);
+-			msn_slpmsg_set_slplink(slpmsg, slplink);
+ 			msn_slplink_queue_slpmsg(slplink, slpmsg);
+ 
+ 			/* DATA */
+ 			slpmsg = msn_slpmsg_obj_new(slpcall, img);
+-			msn_slpmsg_set_slplink(slpmsg, slplink);
+ 			msn_slplink_queue_slpmsg(slplink, slpmsg);
+ 			purple_imgstore_unref(img);
+ 

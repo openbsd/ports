@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-libpurple,v 1.15 2011/07/07 08:28:04 dcoppa Exp $
+@comment $OpenBSD: PLIST-libpurple,v 1.16 2011/07/22 06:44:45 jasper Exp $
 @conflict pidgin-<2.5.6p3
 @pkgpath net/pidgin
 @pkgpath net/pidgin,-libpurple,gtkspell
@@ -103,7 +103,6 @@ lib/purple-2/libmxit.so
 lib/purple-2/libmyspace.so
 lib/purple-2/libnovell.so
 @lib lib/purple-2/liboscar.so.${LIBoscar_VERSION}
-lib/purple-2/libqq.so
 lib/purple-2/libsametime.so
 lib/purple-2/libsilcpurple.so
 lib/purple-2/libsimple.so
@@ -129,6 +128,7 @@ share/purple/ca-certs/America_Online_Root_Certification_Authority_1.pem
 share/purple/ca-certs/CAcert_Class3.pem
 share/purple/ca-certs/CAcert_Root.pem
 share/purple/ca-certs/Deutsche_Telekom_Root_CA_2.pem
+share/purple/ca-certs/DigiCertHighAssuranceCA-3.pem
 share/purple/ca-certs/Entrust.net_Secure_Server_CA.pem
 share/purple/ca-certs/Equifax_Secure_CA.pem
 share/purple/ca-certs/Equifax_Secure_Global_eBusiness_CA-1.pem
