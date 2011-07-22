@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.170 2011/06/18 22:41:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.171 2011/07/22 20:15:47 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -15,7 +15,7 @@ V_DOVECOT=	2.0.13
 DISTNAME=	dovecot-${V_DOVECOT}
 PKGNAME=	dovecot-${V_DOVECOT}
 PKGNAME-server=	dovecot-${V_DOVECOT}
-REVISION-server= 4
+REVISION-server= 5
 PKGNAME-ldap=	dovecot-ldap-${V_DOVECOT}
 PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
 PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
