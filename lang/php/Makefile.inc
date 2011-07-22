@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.17 2011/07/15 12:57:42 robert Exp $
+# $OpenBSD: Makefile.inc,v 1.18 2011/07/22 10:19:23 sthen Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -347,6 +347,11 @@ DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
 MESSAGE-${i}=		${.CURDIR}/../files/MESSAGE-ext
 UNMESSAGE-${i}=		${.CURDIR}/../files/UNMESSAGE-ext
 PKGNAME-${i}=		php-${i}-${V}
+.if ${V:M5.2*}
+PKGSPEC-${i}=		php-${i}->=5.2,<5.3
+.else if ${V:M5.3*}
+PKGSPEC-${i}=		php-${i}->=5.3,<5.4
+.endif
 RUN_DEPENDS-${i}+=	php-${V}:lang/php/${PV}
 .endfor
 
