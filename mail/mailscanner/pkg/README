@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.2 2011/06/02 13:41:39 ajacoutot Exp $
+$OpenBSD: README,v 1.3 2011/07/22 19:57:20 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -56,12 +56,15 @@ To activate this package, you must do the following for sendmail:
         echo -n ' sm-mta-queue'; /usr/sbin/sendmail -q30s -L sm-mta-queue
   fi
 
-  # MailScanner outbound queue
-  if [ -x ${TRUEPREFIX}/bin/check_mailscanner ]; then
-        echo -n ' MailScanner'; ${TRUEPREFIX}/bin/check_mailscanner
-  fi
+4. Add the following to /etc/rc.conf.local:
 
-4. Add the following to root's crontab:
+  pkg_scripts="${pkg_scripts} mailscanner"
+
+5. Add the following to root's crontab:
 
   # Check the status of MailScanner every hour
   0       *       *       *       *       ${TRUEPREFIX}/bin/check_mailscanner -q
+
+
+For other MTAs, configure according to MailScanner's documentation,
+and follow steps 4 and 5 above.

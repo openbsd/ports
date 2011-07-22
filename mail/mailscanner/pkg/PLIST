@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2010/11/16 09:17:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/07/22 19:57:20 sthen Exp $
 @conflict clamav-<0.94
 bin/MailScanner
 bin/Quick.Peek
@@ -1077,3 +1077,4 @@ share/examples/MailScanner/spam.lists.conf
 @sample ${SYSCONFDIR}/MailScanner/spam.lists.conf
 share/examples/MailScanner/virus.scanners.conf
 @sample ${SYSCONFDIR}/MailScanner/virus.scanners.conf
+@rcscript ${RCDIR}/mailscanner
