@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/06/22 14:52:11 landry Exp $
+# $OpenBSD: Makefile,v 1.31 2011/07/22 05:25:27 landry Exp $
 
 COMMENT =		Mozilla calendar
 
@@ -10,7 +10,7 @@ MOZILLA_CODENAME =	calendar
 
 DISTNAME =		thunderbird-${TB_VERSION}.source
 EPOCH =			0
-REVISION =		6
+REVISION =		7
 
 MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${TB_VERSION}/source/
 
@@ -40,8 +40,9 @@ MODPY_RUN_DEP =	No
 NO_REGRESS =	Yes
 
 # use files and patches from mail/mozilla-thunderbird
-PATCHDIR =		${PORTSDIR}/mail/mozilla-thunderbird/patches
-FILESDIR =		${PORTSDIR}/mail/mozilla-thunderbird/files
+# XXX impossible until we can build sb from tb 5+
+# PATCHDIR =		${PORTSDIR}/mail/mozilla-thunderbird/patches
+# FILESDIR =		${PORTSDIR}/mail/mozilla-thunderbird/files
 
 MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/directory/sdks/c-sdk/config/autoconf
 

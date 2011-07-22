@@ -1,0 +1,14 @@
+$OpenBSD: patch-mozilla_gfx_src_thebes_Makefile_in,v 1.3 2011/07/22 05:25:27 landry Exp $
+--- mozilla/gfx/src/thebes/Makefile.in.orig	Wed Jun 23 19:46:36 2010
++++ mozilla/gfx/src/thebes/Makefile.in	Wed Jul  7 08:43:19 2010
+@@ -149,6 +149,10 @@ DEFINES += -DMOZ_ENABLE_GTK2
+ CXXFLAGS += $(MOZ_PANGO_CFLAGS)
+ endif
+ 
++ifdef MOZ_ENABLE_COREXFONTS
++EXTRA_DSO_LDOPTS += -lpangox-1.0
++endif
++
+ ifeq ($(MOZ_WIDGET_TOOLKIT),os2)
+ CXXFLAGS += $(CAIRO_FT_CFLAGS)
+ endif
