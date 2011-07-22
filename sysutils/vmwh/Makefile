@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/02 13:41:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/07/22 13:26:42 dcoppa Exp $
 
 ONLY_FOR_ARCHS =amd64 i386
 
 COMMENT =	vmware userland helper for X
 
-V =		0.20101029
-DISTNAME =	jcs-vmwh-ebb7669
+V =		0.20110616
+DISTNAME =	jcs-vmwh-8249e85
 PKGNAME =	vmwh-${V}
-REVISION =	1
 CATEGORIES =	sysutils x11
 
 HOMEPAGE =	https://github.com/jcs/vmwh/
@@ -18,7 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =	http://distfiles.nl/
+MASTER_SITES =	http://spacehopper.org/mirrors/
 
 WANTLIB +=	c
 
