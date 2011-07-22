@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/07/15 12:57:42 robert Exp $
+# $OpenBSD: Makefile,v 1.16 2011/07/22 10:28:54 sthen Exp $
 
 # doesn't set USE_LIBTOOL but use the bundled one because it needs some
 # specific options we don't have.
@@ -9,7 +9,7 @@ SUHOSIN_PHPV=	5.2.16
 SUHOSIN_P_V=	0.9.7
 
 REVISION=		3
-REVISION-main=		4
+REVISION-main=		5
 REVISION-fastcgi=	6
 
 INI_TEMPLATES=	dist recommended
