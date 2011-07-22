@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/07/08 22:31:59 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2011/07/22 10:20:10 sthen Exp $
 
 COMMENT=	graphical network traffic map
 
 DISTNAME=	php-weathermap-0.97a
-REVISION=	1
+REVISION=	2
 EXTRACT_SUFX=	.zip
 
 CATEGORIES=	net www

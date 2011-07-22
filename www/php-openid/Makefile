@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/07/08 23:05:31 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/22 10:20:10 sthen Exp $
 
 COMMENT=		OpenID authentication for PHP
 
 DISTNAME=		php-openid-2.1.2
-REVISION=		0
+REVISION=		1
 CATEGORIES=		www security
 
 # Apache 2.0 license

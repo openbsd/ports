@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/07/08 18:46:16 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2011/07/22 10:20:10 sthen Exp $
 
 COMMENT =	SQLite database abstraction layer for PHP
 
@@ -10,7 +10,7 @@ CATEGORIES =	net databases
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 MODULES =	lang/php www/pear
 
-REVISION =	0
+REVISION =	1
 
 # PHP License
 PERMIT_PACKAGE_CDROM =	Yes
