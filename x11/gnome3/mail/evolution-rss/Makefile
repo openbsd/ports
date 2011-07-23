@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/07/18 11:52:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/07/23 08:08:16 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -67,8 +67,8 @@ MASTER_SITES=		http://distfiles.bsdfrog.org/
 WRKDIST=		${WRKDIR}/evolution-rss-0.2.90
 
 BUILD_DEPENDS +=	x11/gnome/common \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			${MODGNU_AUTOCONF_DEPENDS}
+			devel/autoconf/${AUTOCONF_VERSION} \
+			devel/automake/${AUTOMAKE_VERSION}
 
 USE_LIBTOOL=		gnu
 AUTOCONF_VERSION=	2.65
