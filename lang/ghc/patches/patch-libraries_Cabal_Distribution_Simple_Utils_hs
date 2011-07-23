@@ -1,0 +1,27 @@
+$OpenBSD: patch-libraries_Cabal_Distribution_Simple_Utils_hs,v 1.1 2011/07/23 16:38:54 kili Exp $
+
+Don't strip the error message down to something stupid like `resource
+exhausted' (which represents 13 different values of errno).
+
+--- libraries/Cabal/Distribution/Simple/Utils.hs.orig	Mon Jun 13 19:10:10 2011
++++ libraries/Cabal/Distribution/Simple/Utils.hs	Sat Jul 23 17:15:16 2011
+@@ -241,18 +241,7 @@ topHandler prog = catch prog handle
+       hPutStr stderr (mesage pname)
+       exitWith (ExitFailure 1)
+       where
+-        mesage pname = wrapText (pname ++ ": " ++ file ++ detail)
+-        file         = case ioeGetFileName ioe of
+-                         Nothing   -> ""
+-                         Just path -> path ++ location ++ ": "
+-#if defined(__HUGS__) || (defined(__GLASGOW_HASKELL__) && __GLASGOW_HASKELL__ < 608)
+-        location     = ""
+-#else
+-        location     = case ioeGetLocation ioe of
+-                         l@(n:_) | n >= '0' && n <= '9' -> ':' : l
+-                         _                              -> ""
+-#endif
+-        detail       = ioeGetErrorString ioe
++        mesage pname = wrapText (pname ++ ": " ++ show ioe)
+ 
+ -- | Non fatal conditions that may be indicative of an error or problem.
+ --
