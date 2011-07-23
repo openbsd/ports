@@ -1,0 +1,3 @@
+WebKit is a web content engine, derived from KHTML and KJS from
+KDE, and used primarily in Apple's Safari browser.
+These are the Haskell bindings for the WebKit library.
