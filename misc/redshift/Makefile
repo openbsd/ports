@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2011/07/17 08:05:36 rpointel Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/23 19:48:09 kili Exp $
 
 COMMENT=	automatic color temperature adjustment
 
 V=		1.7
 DISTNAME=	redshift-${V}
+REVISION=	0
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	misc
@@ -16,16 +17,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xau Xdmcp Xext Xxf86vm c glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 m pthread pthread-stubs xcb xcb-randr ORBit-2
-WANTLIB += gconf-2 gio-2.0
+WANTLIB += X11 Xxf86vm c dbus-1 dbus-glib-1 gconf-2 geoclue glib-2.0
+WANTLIB += gobject-2.0 gthread-2.0 m pthread xcb xcb-randr xml2
 
 MASTER_SITES=	http://launchpad.net/redshift/trunk/${V:C/^([0-9]+\.[0-9]+).*/\1/}/+download/
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/py-gtk2 \
 		devel/py-xdg
-LIB_DEPENDS=	devel/gconf2
+LIB_DEPENDS=	devel/gconf2 \
+		geo/geoclue
 
 MODULES=	devel/gettext \
 		lang/python
@@ -39,6 +40,7 @@ USE_GMAKE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--enable-randr \
 		--enable-vidmode \
+		--enable-geoclue \
 		--enable-gnome-clock \
 		--enable-gui
 
