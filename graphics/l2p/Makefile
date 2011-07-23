@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/07/23 13:32:44 espie Exp $
 
 COMMENT=		create PNG images from LaTeX expressions
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://redsymbol.net/media/software/l2p/dist/
+MASTER_SITES=		http://static.redsymbol.net/software/l2p/dist/
 EXTRACT_SUFX=		.tgz
 
 RUN_DEPENDS=		graphics/ImageMagick \
