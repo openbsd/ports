@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.77 2011/06/02 13:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2011/07/24 16:29:28 benoit Exp $
 
 COMMENT-main =	GIT - Tree History Storage Tool
 COMMENT-svn =	GIT - subversion interoperability tools
 COMMENT-x11 =	GIT - graphical tools
 
-V =		1.7.5
+V =		1.7.6
 DISTNAME =	git-${V}
 PKGNAME-main =	${DISTNAME}
 PKGNAME-svn =	git-svn-${V}
 PKGNAME-x11 =	git-x11-${V}
 CATEGORIES =	devel
-
-REVISION-main=	0
 
 HOMEPAGE =	http://git-scm.com/
 
@@ -116,6 +114,7 @@ post-install:
 	chown -R ${BINOWN}:${BINGRP} ${PREFIX}/libexec/git
 	cd ${WRKBUILD}/gitweb && \
 		${MAKE_ENV} ${MAKE_PROGRAM} gitwebdir=${TRUEPREFIX}/share/gitweb install
+	perl -pi -e "s|${WRKINST}||g" ${PREFIX}/share/gitweb/gitweb.cgi
 	${INSTALL_DATA} ${WRKBUILD}/gitweb/README ${PREFIX}/share/gitweb
 
 do-regress:

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.49 2011/04/29 11:09:12 stsp Exp $
+@comment $OpenBSD: PLIST-main,v 1.50 2011/07/24 16:29:32 benoit Exp $
 @pkgpath devel/git
 @bin bin/git
 bin/git-cvsserver
@@ -108,7 +108,9 @@ libexec/git/git-pull
 libexec/git/git-quiltimport
 @bin libexec/git/git-read-tree
 libexec/git/git-rebase
+libexec/git/git-rebase--am
 libexec/git/git-rebase--interactive
+libexec/git/git-rebase--merge
 @bin libexec/git/git-receive-pack
 @bin libexec/git/git-reflog
 libexec/git/git-relink
@@ -132,6 +134,8 @@ libexec/git/git-request-pull
 @bin libexec/git/git-rm
 libexec/git/git-send-email
 @bin libexec/git/git-send-pack
+libexec/git/git-sh-i18n
+@bin libexec/git/git-sh-i18n--envsubst
 libexec/git/git-sh-setup
 @bin libexec/git/git-shell
 @bin libexec/git/git-shortlog
@@ -268,6 +272,8 @@ libexec/git/git-web--browse
 @man man/man1/git-rm.1
 @man man/man1/git-send-email.1
 @man man/man1/git-send-pack.1
+@man man/man1/git-sh-i18n--envsubst.1
+@man man/man1/git-sh-i18n.1
 @man man/man1/git-sh-setup.1
 @man man/man1/git-shell.1
 @man man/man1/git-shortlog.1
@@ -325,6 +331,7 @@ share/doc/git/cmds-synchelpers.txt
 share/doc/git/cmds-synchingrepositories.txt
 share/doc/git/config.txt
 share/doc/git/date-formats.txt
+share/doc/git/diff-config.txt
 share/doc/git/diff-format.txt
 share/doc/git/diff-generate-patch.txt
 share/doc/git/diff-options.txt
@@ -549,6 +556,10 @@ share/doc/git/git-send-email.html
 share/doc/git/git-send-email.txt
 share/doc/git/git-send-pack.html
 share/doc/git/git-send-pack.txt
+share/doc/git/git-sh-i18n--envsubst.html
+share/doc/git/git-sh-i18n--envsubst.txt
+share/doc/git/git-sh-i18n.html
+share/doc/git/git-sh-i18n.txt
 share/doc/git/git-sh-setup.html
 share/doc/git/git-sh-setup.txt
 share/doc/git/git-shell.html

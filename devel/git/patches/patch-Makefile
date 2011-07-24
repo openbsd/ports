@@ -1,6 +1,7 @@
---- Makefile.orig	Sun Apr 24 19:48:31 2011
-+++ Makefile	Thu Apr 28 18:00:03 2011
-@@ -262,7 +262,7 @@ endif
+$OpenBSD: patch-Makefile,v 1.32 2011/07/24 16:29:30 benoit Exp $
+--- Makefile.orig	Mon Jun 27 00:26:13 2011
++++ Makefile	Sat Jul 16 14:44:47 2011
+@@ -271,7 +271,7 @@
  
  # CFLAGS and LDFLAGS are for the users to override from the command line.
  
@@ -9,7 +10,7 @@
  LDFLAGS =
  ALL_CFLAGS = $(CPPFLAGS) $(CFLAGS)
  ALL_LDFLAGS = $(LDFLAGS)
-@@ -281,32 +281,25 @@ STRIP ?= strip
+@@ -289,12 +289,12 @@
  # runtime figures out where they are based on the path to the executable.
  # This can help installing the suite in a relocatable way.
  
@@ -25,21 +26,7 @@
  sharedir = $(prefix)/share
  gitwebdir = $(sharedir)/gitweb
  template_dir = share/git-core/templates
- htmldir = share/doc/git-doc
--ifeq ($(prefix),/usr)
--sysconfdir = /etc
--ETC_GITCONFIG = $(sysconfdir)/gitconfig
--ETC_GITATTRIBUTES = $(sysconfdir)/gitattributes
--else
--sysconfdir = $(prefix)/etc
--ETC_GITCONFIG = etc/gitconfig
--ETC_GITATTRIBUTES = etc/gitattributes
--endif
-+ETC_GITCONFIG = $(SYSCONFDIR)/gitconfig
-+ETC_GITATTRIBUTES = $(SYSCONFDIR)/gitattributes
- lib = lib
- # DESTDIR=
- pathsep = :
+@@ -307,7 +307,7 @@
  
  export prefix bindir sharedir sysconfdir gitwebdir
  
@@ -48,7 +35,7 @@
  AR = ar
  RM = rm -f
  DIFF = diff
-@@ -314,10 +307,10 @@ TAR = tar
+@@ -315,10 +315,10 @@
  FIND = find
  INSTALL = install
  RPMBUILD = rpmbuild
@@ -62,7 +49,7 @@
  PTHREAD_CFLAGS =
  GCOV = gcov
  
-@@ -942,13 +935,14 @@ ifeq ($(uname_S),FreeBSD)
+@@ -949,13 +949,14 @@
  	HAVE_PATHS_H = YesPlease
  endif
  ifeq ($(uname_S),OpenBSD)
@@ -80,7 +67,7 @@
  endif
  ifeq ($(uname_S),NetBSD)
  	ifeq ($(shell expr "$(uname_R)" : '[01]\.'),2)
-@@ -1289,7 +1283,7 @@ endif
+@@ -1314,7 +1315,7 @@
  EXTLIBS += -lz
  
  ifndef NO_OPENSSL
@@ -89,7 +76,7 @@
  	ifdef OPENSSLDIR
  		BASIC_CFLAGS += -I$(OPENSSLDIR)/include
  		OPENSSL_LINK = -L$(OPENSSLDIR)/$(lib) $(CC_LD_DYNPATH)$(OPENSSLDIR)/$(lib)
-@@ -2135,7 +2129,7 @@ export NO_SVN_TESTS
+@@ -2146,7 +2147,7 @@
  
  ### Testing rules
  
