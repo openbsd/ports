@@ -1,3 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2010/12/29 08:32:33 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/24 15:48:12 benoit Exp $
+${P5SITE}/Redis/
 ${P5SITE}/Redis.pm
+${P5SITE}/Redis/Hash.pm
+${P5SITE}/Redis/List.pm
 @man man/man3p/Redis.3p
+@man man/man3p/Redis::Hash.3p
+@man man/man3p/Redis::List.3p
