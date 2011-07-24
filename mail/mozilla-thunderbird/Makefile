@@ -1,48 +1,35 @@
-# $OpenBSD: Makefile,v 1.129 2011/07/11 11:45:30 landry Exp $
+# $OpenBSD: Makefile,v 1.130 2011/07/24 07:10:12 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
+BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 # Don't forget to update productivity/sunbird if patches changes.
 
-MOZILLA_VERSION =	3.1.11
-MOZILLA_BRANCH =	1.9.2
+MOZILLA_VERSION =	5.0
+MOZILLA_BRANCH =	miramar
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-REVISION-main =		0
-PKGNAME-lightning =	lightning-1.0beta2
+PKGNAME-lightning =	lightning-1.0beta4
 EPOCH-lightning =	0
-REVISION-lightning =	20
 
 # need to be in synch with SO_VERSION in mail/enigmail/thunderbird
-SO_VERSION =	17.1
+SO_VERSION =	18.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
 # bumped and/or SO_VERSION changes, remember to update enigmail's
 # SO_VERSION and LIB_DEPENDS to match.
 
-MOZILLA_LIBS =	accessibility appcomps auth autoconfig caps chardet chrome commandlines \
-	calbasecomps composer cookie docshell embedcomponents fileview \
-	gkgfxthebes gklayout gkplugin htmlpars i18n imgicon imglib2 import \
-	intlapp jar50 jsctypes jsd mailcomps mork mozfind mozldap msgsmime necko \
-	nsappshell permissions pipboot pipnss pippki pref rdf remoteservice \
-	satchel spellchecker storagecomps system-pref tkautocomplete \
-	toolkitcomps txmgr uconv ucvmath universalchardet unixproxy webbrwsr \
-	widget_gtk2 windowds xpautocomplete xpconnect xpinstall zipwriter \
-	gfxpsshar gkgfx gtkxtbin ldap60 ldif60 mozjs prldap60 ssldap60 \
-	thebes xpcom xpcom_core xul nullplugin unixprintplugin
+MOZILLA_LIBS = ldap60 ldif60 mozalloc prldap60 xpcom xul calbasecomps
 
-FLAVOR ?=
-.if ${FLAVOR:L:Mdebug}
-MOZILLA_LIBS +=	addrbook bayesflt fts3tok mailview mime mimeemitter msgbase \
-	msgcompose msgdb msgimap msglocal msgmdn msgnews vcard msgbaseutil
-.else
-MOZILLA_LIBS+=	mail
-.endif
+#.if ${FLAVOR:L:Mdebug}
+#MOZILLA_LIBS +=	addrbook bayesflt fts3tok mailview mime mimeemitter msgbase \
+#	msgcompose msgdb msgimap msglocal msgmdn msgnews vcard msgbaseutil
+#.endif
 
 CATEGORIES=	mail news
 
@@ -58,14 +45,24 @@ MODPY_RUNDEP =	No
 # Regression tests are too hard to adapt to run here
 NO_REGRESS =	Yes
 
-MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/directory/sdks/c-sdk/config/autoconf
+MODGNU_CONFIG_GUESS_DIRS +=	${WRKSRC}/ldap/sdks/c-sdk/config/autoconf
 
 CONFIGURE_STYLE =	autoconf no-autoheader
+CONFIGURE_ARGS +=	--enable-official-branding
+CONFIGURE_ARGS +=	--with-system-libevent=/usr/
+CONFIGURE_ARGS +=	--with-system-zlib=/usr/ --with-system-bz2=${LOCALBASE}
+WANTLIB +=	event
+
+# XXX solved in firefox by patch-config-autoconf_mk_in ?
+CONFIGURE_ENV +=	CPPFLAGS=-I${X11BASE}/include
 
 LIB_DEPENDS-main =	${LIB_DEPENDS}
 WANTLIB-main =		${WANTLIB}
-LIB_DEPENDS-lightning = ${BUILD_PKGPATH},-main
-WANTLIB-lightning =	thunderbird/mozjs thunderbird/xpcom c m stdc++ nspr4 plc4 plds4
+LIB_DEPENDS-lightning = STEM->=${MOZILLA_VERSION}:${BUILD_PKGPATH},-main
+WANTLIB-lightning =	lib/thunderbird-${MOZILLA_VERSION}/xpcom \
+			lib/thunderbird-${MOZILLA_VERSION}/xul \
+			lib/thunderbird-${MOZILLA_VERSION}/mozalloc \
+			c m stdc++ nspr4 plc4 plds4
 BUILD_DEPENDS +=	archivers/unzip #to unzip xpi
 
 # build lightning xpi
@@ -74,16 +71,21 @@ CONFIGURE_ARGS +=	--enable-calendar \
 
 ALL_TARGET =	default
 
-MOZILLA_DATADIRS =	chrome components defaults dictionaries extensions \
-			greprefs isp modules plugins res
-
-MOZILLA_AUTOCONF_DIRS =		directory/sdks/c-sdk mozilla mozilla/js/src
+MOZILLA_AUTOCONF_DIRS =		ldap/sdks/c-sdk mozilla mozilla/js/src
 MOZILLA_SUBST_FILES +=		config/autoconf.mk.in
 
 # guid for gdata-provider comes from em:id in install.rdf
-GDATADIR =	${MOZ}/extensions/{a62ef8ec-5fdc-40c2-873c-223b8a6925cc}
-
+GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} \
+	lightning {e2fda1a4-762b-4020-b5ad-a41df1933103} \
+	calendar-timezones calendar-timezones@mozilla.org
+EXTDIR =	${PREFIX}/lib/${_MOZ_PROJECT_SHORT}-${MOZILLA_VERSION}/extensions/
 post-install:
-	unzip -q ${MOB}/../xpi-stage/gdata-provider.xpi -d ${GDATADIR}
+.for xpi guid in ${GUIDS}
+	unzip -q ${MOB}/../xpi-stage/${xpi}.xpi -d ${EXTDIR}/${guid}
+.endfor
+	# install desktop file
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${_MOZ_PROJECT_SHORT}.desktop \
+		${PREFIX}/share/applications/${_MOZ_PROJECT_SHORT}.desktop ; \
 
 .include <bsd.port.mk>

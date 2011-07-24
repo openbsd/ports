@@ -1,9 +1,9 @@
-$OpenBSD: patch-mozilla_widget_src_qt_nsIdleServiceQt_cpp,v 1.1 2010/04/03 09:26:46 landry Exp $
---- mozilla/widget/src/qt/nsIdleServiceQt.cpp.orig	Sat Dec  5 02:56:52 2009
-+++ mozilla/widget/src/qt/nsIdleServiceQt.cpp	Sat Jan 16 16:28:38 2010
-@@ -72,7 +72,7 @@ static void Initialize()
-     sInitialized = PR_TRUE;
+$OpenBSD: patch-mozilla_widget_src_qt_nsIdleServiceQt_cpp,v 1.2 2011/07/24 07:10:12 landry Exp $
+--- mozilla/widget/src/qt/nsIdleServiceQt.cpp.orig	Fri Jan 14 23:21:59 2011
++++ mozilla/widget/src/qt/nsIdleServiceQt.cpp	Sun Feb 13 23:01:39 2011
+@@ -77,7 +77,7 @@ static void Initialize()
  
+ #ifndef MOZ_PLATFORM_MAEMO
      // This will leak - See comments in ~nsIdleServiceQt().
 -    PRLibrary* xsslib = PR_LoadLibrary("libXss.so.1");
 +    PRLibrary* xsslib = PR_LoadLibrary("libXss.so");

@@ -1,0 +1,11 @@
+$OpenBSD: patch-mozilla_ipc_chromium_src_base_file_util_h,v 1.1 2011/07/24 07:10:12 landry Exp $
+--- mozilla/ipc/chromium/src/base/file_util.h.orig	Sat May 28 00:43:47 2011
++++ mozilla/ipc/chromium/src/base/file_util.h	Mon May 30 17:12:06 2011
+@@ -15,6 +15,7 @@
+ #elif defined(ANDROID)
+ #include <sys/stat.h>
+ #elif defined(OS_POSIX) 
++#include <sys/types.h>
+ #include <fts.h>
+ #include <sys/stat.h>
+ #endif

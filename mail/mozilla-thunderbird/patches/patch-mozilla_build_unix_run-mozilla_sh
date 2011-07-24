@@ -1,12 +1,12 @@
-$OpenBSD: patch-mozilla_build_unix_run-mozilla_sh,v 1.1 2010/10/27 12:54:34 landry Exp $
+$OpenBSD: patch-mozilla_build_unix_run-mozilla_sh,v 1.2 2011/07/24 07:10:12 landry Exp $
 help finding our debugger
---- mozilla/build/unix/run-mozilla.sh.orig	Wed Oct 13 17:40:57 2010
-+++ mozilla/build/unix/run-mozilla.sh	Wed Oct 27 12:59:15 2010
-@@ -105,25 +105,7 @@ moz_test_binary()
+--- mozilla/build/unix/run-mozilla.sh.orig	Fri Jan 14 23:21:21 2011
++++ mozilla/build/unix/run-mozilla.sh	Sun Feb 13 23:19:41 2011
+@@ -103,25 +103,7 @@ moz_test_binary()
  ##########################################################################
  moz_get_debugger()
  {
--	debuggers="ddd gdb dbx bdb"
+-	debuggers="ddd gdb dbx bdb native-gdb"
 -	debugger="notfound"
 -	done="no"
 -	for d in $debuggers

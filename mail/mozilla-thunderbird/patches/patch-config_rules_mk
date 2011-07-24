@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_rules_mk,v 1.5 2010/07/27 17:01:16 landry Exp $
---- config/rules.mk.orig	Wed Jul  7 11:48:43 2010
-+++ config/rules.mk	Wed Jul  7 11:49:28 2010
-@@ -605,6 +605,12 @@ endif
+$OpenBSD: patch-config_rules_mk,v 1.6 2011/07/24 07:10:12 landry Exp $
+--- config/rules.mk.orig	Fri Jan 14 23:02:04 2011
++++ config/rules.mk	Mon Feb 14 21:53:50 2011
+@@ -622,6 +622,12 @@ endif
  endif
  endif
  
@@ -11,6 +11,6 @@ $OpenBSD: patch-config_rules_mk,v 1.5 2010/07/27 17:01:16 landry Exp $
 +endif
 +endif
 +
- ifeq ($(OS_ARCH),Linux)
- ifneq (,$(filter mips mipsel,$(OS_TEST)))
- ifeq ($(MODULE),layout)
+ #
+ # HP-UXBeOS specific section: for COMPONENTS only, add -Bsymbolic flag
+ # which uses internal symbols first

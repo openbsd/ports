@@ -1,7 +1,8 @@
-$OpenBSD: patch-mozilla_js_src_nanojit_NativeSparc_cpp,v 1.2 2010/07/27 17:01:16 landry Exp $
---- mozilla/js/src/nanojit/NativeSparc.cpp.orig	Wed Jun 23 19:46:39 2010
-+++ mozilla/js/src/nanojit/NativeSparc.cpp	Wed Jul  7 08:43:19 2010
-@@ -38,6 +38,7 @@
+$OpenBSD: patch-mozilla_js_src_nanojit_NativeSparc_cpp,v 1.3 2011/07/24 07:10:12 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=633857
+--- mozilla/js/src/nanojit/NativeSparc.cpp.orig	Fri Jan 14 23:21:34 2011
++++ mozilla/js/src/nanojit/NativeSparc.cpp	Sun Feb 13 23:01:39 2011
+@@ -39,6 +39,7 @@
   *
   * ***** END LICENSE BLOCK ***** */
  
