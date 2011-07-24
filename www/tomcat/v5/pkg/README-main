@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.4 2011/07/04 07:41:37 dcoppa Exp $
+$OpenBSD: README-main,v 1.5 2011/07/24 11:11:58 dcoppa Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -25,19 +25,13 @@ Tomcat on OpenBSD uses the `${SYSCONFDIR}/tomcat' directory for its configuratio
 files. `$CATALINA_BASE' is `${CATALINA_BASE}'. All files contained within
 these directories should be owned by the _tomcat user.
 
-The startup.sh script has been modified to get important environment
-variables from `${SYSCONFDIR}/tomcat/tomcat.rc'. You should define environment
-variables such as JAVA_HOME and JAVA_OPTS in `${SYSCONFDIR}/tomcat/tomcat.rc'.
-
-With the following command Tomcat is started as user `_tomcat':
-$ sudo -u _tomcat ${TRUEPREFIX}/tomcat/bin/startup.sh
-
-If you want Tomcat to serve on privileged ports (e.g. 80), then makes
-sure the Connector port is 80 in your `${SYSCONFDIR}/tomcat/server.xml', or even
-more secure: redirect all tcp traffic to port 80 to Tomcat's default
-listener port 8080 using a pf.conf(5) rule like:
+If you want Tomcat to serve on privileged ports (e.g. 80), redirect all
+tcp traffic to port 80 to Tomcat's default listener port 8080 using a
+pf.conf(5) rule like:
 
    pass in quick on $NIC proto tcp to port 80 rdr-to 127.0.0.1 port 8080
+
+or use relayd(8) to forward the connection.
 
 If you are upgrading and use database drivers, don't forget to copy them
 into ${TRUEPREFIX}/tomcat/common/lib. If you use ssi or cgi, remember to

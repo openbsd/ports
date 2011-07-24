@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/07/04 07:41:37 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.18 2011/07/24 11:11:58 dcoppa Exp $
 
 COMMENT-main=	Java servlet 2.4 and Java server pages 2.0 server
 COMMENT-admin=	administration web application
@@ -10,6 +10,7 @@ PKGNAME=	tomcat-${V}
 PKGNAME-main=	tomcat-${V}
 PKGNAME-admin=	tomcat-admin-${V}
 PKGNAME-examples=tomcat-examples-${V}
+REVISION-main=	0
 CATEGORIES=	www
 
 DISTFILES=	${DISTNAME}.tar.gz \
@@ -71,11 +72,6 @@ do-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${CONFDIR}/Catalina/localhost
 	${INSTALL_DATA} ${WRKDIST}/conf/Catalina/localhost/* \
 		${WRKINST}/${CONFDIR}/Catalina/localhost
-	@${SUBST_CMD} -o ${BINOWN} -g ${BINGRP} \
-		${PREFIX}/tomcat/bin/setclasspath.sh
-	@${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c \
-		${FILESDIR}/tomcat.rc \
-		${SAMPLEDIR}/tomcat.rc
 	rm -r ${PREFIX}/tomcat/bin/[xi]64
 	find ${WRKINST} \
 		-name \*.beforesubst -or \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.7 2010/11/29 21:26:01 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.8 2011/07/24 11:11:58 dcoppa Exp $
 @conflict jakarta-tomcat-*
 @pkgpath www/jakarta-tomcat/v5
 @pkgpath www/tomcat/v5
@@ -55,12 +55,6 @@ share/examples/tomcat/tomcat-users.xml
 @group _tomcat
 @sample ${SYSCONFDIR}/tomcat/tomcat-users.xml
 @mode
-@owner
-@group
-share/examples/tomcat/tomcat.rc
-@owner _tomcat
-@group _tomcat
-@sample ${SYSCONFDIR}/tomcat/tomcat.rc
 @owner
 @group
 share/examples/tomcat/web.xml
@@ -178,4 +172,5 @@ tomcat/server/webapps/manager/manager-howto.html
 tomcat/server/webapps/manager/manager.xml
 tomcat/server/webapps/manager/status.xsd
 tomcat/server/webapps/manager/xform.xsl
+@rcscript ${RCDIR}/tomcat
 @extraunexec rm -rf ${CATALINA_BASE}/logs/* ${CATALINA_BASE}/work/*
