@@ -1,0 +1,12 @@
+$OpenBSD: patch-ldap_sdks_c-sdk_configure_in,v 1.1 2011/07/24 07:31:57 landry Exp $
+--- ldap/sdks/c-sdk/configure.in.orig	Sun Feb 13 12:23:20 2011
++++ ldap/sdks/c-sdk/configure.in	Sun Feb 13 12:23:37 2011
+@@ -1853,7 +1853,7 @@ mips-sony-newsos*)
+     AC_DEFINE(HAVE_SOCKLEN_T)
+     CFLAGS="$CFLAGS -ansi -Wall"
+     CXXFLAGS="$CXXFLAGS -ansi -Wall"
+-    DLL_SUFFIX=so.1.0
++    DLL_SUFFIX=so.${SO_VERSION}
+     DSO_CFLAGS=-fPIC
+     USE_NSPR_THREADS=1
+     DSO_LDOPTS='-shared -fPIC'

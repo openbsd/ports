@@ -1,0 +1,38 @@
+$OpenBSD: patch-mozilla_ipc_chromium_src_chrome_common_ipc_message_utils_h,v 1.1 2011/07/24 07:31:57 landry Exp $
+--- mozilla/ipc/chromium/src/chrome/common/ipc_message_utils.h.orig	Mon Jun 27 05:10:42 2011
++++ mozilla/ipc/chromium/src/chrome/common/ipc_message_utils.h	Sun Jul  3 02:14:44 2011
+@@ -219,7 +219,33 @@ struct ParamTraits<unsigned long> {
+   }
+ };
+ 
+-#if !(defined(OS_MACOSX) || defined(OS_WIN) || (defined(CHROMIUM_MOZILLA_BUILD) && defined(OS_LINUX) && defined(ARCH_CPU_64_BITS)))
++#if defined(OS_OPENBSD) && defined(ARCH_CPU_64_BITS)
++template <>
++struct ParamTraits<unsigned long long> {
++  typedef unsigned long long param_type;
++  static void Write(Message* m, const param_type& p) {
++    m->WriteData(reinterpret_cast<const char*>(&p), sizeof(param_type));
++  }
++  static bool Read(const Message* m, void** iter, param_type* r) {
++    const char *data;
++    int data_size = 0;
++    bool result = m->ReadData(iter, &data, &data_size);
++    if (result && data_size == sizeof(param_type)) {
++      memcpy(r, data, sizeof(param_type));
++    } else {
++      result = false;
++      NOTREACHED();
++    }
++
++    return result;
++  }
++  static void Log(const param_type& p, std::wstring* l) {
++    l->append(StringPrintf(L"%ull", p));
++  }
++};
++#endif
++
++#if !(defined(OS_MACOSX) || defined(OS_OPENBSD) || defined(OS_WIN) || (defined(CHROMIUM_MOZILLA_BUILD) && defined(OS_LINUX) && defined(ARCH_CPU_64_BITS)))
+ // There size_t is a synonym for |unsigned long| ...
+ template <>
+ struct ParamTraits<size_t> {

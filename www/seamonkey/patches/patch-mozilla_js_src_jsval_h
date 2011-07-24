@@ -1,0 +1,13 @@
+$OpenBSD: patch-mozilla_js_src_jsval_h,v 1.1 2011/07/24 07:31:57 landry Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=599764
+--- mozilla/js/src/jsval.h.orig	Mon Jun 27 05:10:45 2011
++++ mozilla/js/src/jsval.h	Sat Jul  2 11:40:43 2011
+@@ -823,7 +823,7 @@ extern "C++"
+ #else /* defined(JS_USE_JSVAL_JSID_STRUCT_TYPES) */
+ 
+ /* Use different primitive types so overloading works. */
+-typedef JSVAL_ALIGNMENT uint64 jsval;
++typedef JSVAL_ALIGNMENT uint64_t jsval;
+ typedef ptrdiff_t              jsid;
+ 
+ /* Internal helper macros */

@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_content_media_nsAudioStream_cpp,v 1.1 2011/07/24 07:31:57 landry Exp $
+--- mozilla/content/media/nsAudioStream.cpp.orig	Mon Jun 27 05:10:31 2011
++++ mozilla/content/media/nsAudioStream.cpp	Sat Jul  2 11:40:43 2011
+@@ -566,7 +566,7 @@ PRInt64 nsAudioStreamLocal::GetSampleOffset()
+ #if defined(XP_WIN)
+   positionType = SA_POSITION_WRITE_HARDWARE;
+ #endif
+-  PRInt64 position = 0;
++  int64_t position = 0;
+   if (sa_stream_get_position(static_cast<sa_stream_t*>(mAudioHandle),
+                              positionType, &position) == SA_SUCCESS) {
+     return position / sizeof(short);

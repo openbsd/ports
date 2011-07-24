@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_ipc_chromium_src_base_platform_thread_posix_cc,v 1.1 2011/07/24 07:31:57 landry Exp $
+--- mozilla/ipc/chromium/src/base/platform_thread_posix.cc.orig	Mon Jun 27 05:10:41 2011
++++ mozilla/ipc/chromium/src/base/platform_thread_posix.cc	Sun Jul  3 02:14:43 2011
+@@ -33,6 +33,8 @@ PlatformThreadId PlatformThread::CurrentId() {
+   // into the kernel.
+ #if defined(OS_MACOSX)
+   return mach_thread_self();
++#elif defined(__OpenBSD__)
++  return getpid();
+ #elif defined(OS_LINUX)
+   return syscall(__NR_gettid);
+ #endif

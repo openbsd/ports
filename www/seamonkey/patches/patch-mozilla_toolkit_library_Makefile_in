@@ -1,10 +1,13 @@
-$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.1 2010/12/01 15:00:12 dcoppa Exp $
---- mozilla/toolkit/library/Makefile.in.orig	Mon Nov 29 16:26:49 2010
-+++ mozilla/toolkit/library/Makefile.in	Mon Nov 29 16:27:33 2010
-@@ -283,6 +283,9 @@ ifdef MOZ_ENABLE_QT
- EXTRA_DSO_LDOPTS += $(MOZ_QT_LDFLAGS)
+$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.2 2011/07/24 07:31:57 landry Exp $
+--- mozilla/toolkit/library/Makefile.in.orig	Wed Jul  6 10:50:59 2011
++++ mozilla/toolkit/library/Makefile.in	Fri Jul 22 09:45:40 2011
+@@ -253,6 +253,12 @@ ifdef MOZ_ENABLE_LIBXUL
+ include $(srcdir)/libxul-rules.mk
  endif
  
++# GTK2 widget and Sydney audio sndio backends.
++EXTRA_DSO_LDOPTS += -lsndio
++
 +# Needed by nsAuthGSSAPI
 +EXTRA_DSO_LDOPTS += -lkrb5 -lcrypto
 +

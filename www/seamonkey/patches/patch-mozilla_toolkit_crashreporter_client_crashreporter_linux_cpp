@@ -1,9 +1,9 @@
-$OpenBSD: patch-mozilla_toolkit_crashreporter_client_crashreporter_linux_cpp,v 1.1 2010/04/03 09:30:14 landry Exp $
---- mozilla/toolkit/crashreporter/client/crashreporter_linux.cpp.orig	Sat Dec  5 02:56:50 2009
-+++ mozilla/toolkit/crashreporter/client/crashreporter_linux.cpp	Sat Jan 16 16:28:37 2010
-@@ -557,11 +557,11 @@ typedef const GnomeModuleInfo * (*_libgnomeui_module_i
+$OpenBSD: patch-mozilla_toolkit_crashreporter_client_crashreporter_linux_cpp,v 1.2 2011/07/24 07:31:57 landry Exp $
+--- mozilla/toolkit/crashreporter/client/crashreporter_linux.cpp.orig	Wed May 11 22:24:03 2011
++++ mozilla/toolkit/crashreporter/client/crashreporter_linux.cpp	Sun May 15 11:12:19 2011
+@@ -364,11 +364,11 @@ typedef const GnomeModuleInfo * (*_libgnomeui_module_i
  
- static void TryInitGnome()
+ void TryInitGnome()
  {
 -  gnomeLib = dlopen("libgnome-2.so.0", RTLD_LAZY);
 +  gnomeLib = dlopen("libgnome-2.so", RTLD_LAZY);

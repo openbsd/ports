@@ -1,11 +1,11 @@
-$OpenBSD: patch-mozilla_js_src_xpconnect_src_Makefile_in,v 1.1 2010/04/03 09:30:14 landry Exp $
---- mozilla/js/src/xpconnect/src/Makefile.in.orig	Sat Dec  5 02:56:03 2009
-+++ mozilla/js/src/xpconnect/src/Makefile.in	Sat Jan 16 16:28:49 2010
-@@ -220,6 +220,7 @@ dom_quickstubs.h dom_quickstubs.cpp: $(srcdir)/dom_qui
+$OpenBSD: patch-mozilla_js_src_xpconnect_src_Makefile_in,v 1.2 2011/07/24 07:31:57 landry Exp $
+--- mozilla/js/src/xpconnect/src/Makefile.in.orig	Mon Jun 27 05:10:49 2011
++++ mozilla/js/src/xpconnect/src/Makefile.in	Sat Jul  2 11:40:43 2011
+@@ -207,6 +207,7 @@ dom_quickstubs.cpp: $(srcdir)/dom_quickstubs.qsconf \
  	  --makedepend-output $(MDDEPDIR)/dom_qsgen.pp \
  	  $(ENABLE_TRACEABLE_FLAGS) \
  	  $(srcdir)/dom_quickstubs.qsconf
-+	patch -p0 -d $(srcdir) -i $(srcdir)/dom_quickstubs.cpp.diff
++	perl -pi.bak -e 's/(nsCOMPtr<nsIVariant> arg1)\(/$$1 = nsCOMPtr<nsIVariant>(/' dom_quickstubs.cpp
  
  GARBAGE += \
  		dom_quickstubs.h \

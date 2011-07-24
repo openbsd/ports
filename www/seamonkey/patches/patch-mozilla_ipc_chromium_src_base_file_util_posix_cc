@@ -1,0 +1,72 @@
+$OpenBSD: patch-mozilla_ipc_chromium_src_base_file_util_posix_cc,v 1.1 2011/07/24 07:31:57 landry Exp $
+--- mozilla/ipc/chromium/src/base/file_util_posix.cc.orig	Mon Jun 27 05:10:41 2011
++++ mozilla/ipc/chromium/src/base/file_util_posix.cc	Sun Jul  3 02:14:43 2011
+@@ -71,8 +71,8 @@ int CountFilesCreatedAfter(const FilePath& path,
+           (strcmp(ent->d_name, "..") == 0))
+         continue;
+ 
+-      struct stat64 st;
+-      int test = stat64(path.Append(ent->d_name).value().c_str(), &st);
++      struct stat st;
++      int test = stat(path.Append(ent->d_name).value().c_str(), &st);
+       if (test != 0) {
+         LOG(ERROR) << "stat64 failed: " << strerror(errno);
+         continue;
+@@ -106,8 +106,8 @@ int CountFilesCreatedAfter(const FilePath& path,
+ // here.
+ bool Delete(const FilePath& path, bool recursive) {
+   const char* path_str = path.value().c_str();
+-  struct stat64 file_info;
+-  int test = stat64(path_str, &file_info);
++  struct stat file_info;
++  int test = stat(path_str, &file_info);
+   if (test != 0) {
+     // The Windows version defines this condition as success.
+     bool ret = (errno == ENOENT || errno == ENOTDIR);
+@@ -286,19 +286,19 @@ bool CopyDirectory(const FilePath& from_path,
+ }
+ 
+ bool PathExists(const FilePath& path) {
+-  struct stat64 file_info;
+-  return (stat64(path.value().c_str(), &file_info) == 0);
++  struct stat file_info;
++  return (stat(path.value().c_str(), &file_info) == 0);
+ }
+ 
+ bool PathIsWritable(const FilePath& path) {
+   FilePath test_path(path);
+-  struct stat64 file_info;
+-  if (stat64(test_path.value().c_str(), &file_info) != 0) {
++  struct stat file_info;
++  if (stat(test_path.value().c_str(), &file_info) != 0) {
+     // If the path doesn't exist, test the parent dir.
+     test_path = test_path.DirName();
+     // If the parent dir doesn't exist, then return false (the path is not
+     // directly writable).
+-    if (stat64(test_path.value().c_str(), &file_info) != 0)
++    if (stat(test_path.value().c_str(), &file_info) != 0)
+       return false;
+   }
+   if (S_IWOTH & file_info.st_mode)
+@@ -311,8 +311,8 @@ bool PathIsWritable(const FilePath& path) {
+ }
+ 
+ bool DirectoryExists(const FilePath& path) {
+-  struct stat64 file_info;
+-  if (stat64(path.value().c_str(), &file_info) == 0)
++  struct stat file_info;
++  if (stat(path.value().c_str(), &file_info) == 0)
+     return S_ISDIR(file_info.st_mode);
+   return false;
+ }
+@@ -449,8 +449,8 @@ bool CreateDirectory(const FilePath& full_path) {
+ }
+ 
+ bool GetFileInfo(const FilePath& file_path, FileInfo* results) {
+-  struct stat64 file_info;
+-  if (stat64(file_path.value().c_str(), &file_info) != 0)
++  struct stat file_info;
++  if (stat(file_path.value().c_str(), &file_info) != 0)
+     return false;
+   results->is_directory = S_ISDIR(file_info.st_mode);
+   results->size = file_info.st_size;

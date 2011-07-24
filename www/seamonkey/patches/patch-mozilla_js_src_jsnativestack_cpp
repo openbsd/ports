@@ -1,0 +1,12 @@
+$OpenBSD: patch-mozilla_js_src_jsnativestack_cpp,v 1.1 2011/07/24 07:31:57 landry Exp $
+--- mozilla/js/src/jsnativestack.cpp.orig	Sat May 28 00:43:51 2011
++++ mozilla/js/src/jsnativestack.cpp	Mon May 30 14:28:49 2011
+@@ -50,7 +50,7 @@
+ #elif defined(XP_MACOSX) || defined(DARWIN) || defined(XP_UNIX)
+ # include <pthread.h>
+ 
+-# if defined(__FreeBSD__)
++# if defined(__FreeBSD__) || defined (__OpenBSD__)
+ #  include <pthread_np.h>
+ # endif
+ 

@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_layout_build_Makefile_in,v 1.1 2010/04/03 09:30:14 landry Exp $
---- mozilla/layout/build/Makefile.in.orig	Sat Dec  5 02:56:14 2009
-+++ mozilla/layout/build/Makefile.in	Sat Jan 16 16:28:49 2010
-@@ -263,6 +263,10 @@ ifneq (,$(filter gtk2,$(MOZ_WIDGET_TOOLKIT)))
+$OpenBSD: patch-mozilla_layout_build_Makefile_in,v 1.2 2011/07/24 07:31:57 landry Exp $
+--- mozilla/layout/build/Makefile.in.orig	Mon Jun 27 05:10:50 2011
++++ mozilla/layout/build/Makefile.in	Sat Jul  2 11:40:43 2011
+@@ -281,6 +281,10 @@ ifneq (,$(filter gtk2,$(MOZ_WIDGET_TOOLKIT)))
  EXTRA_DSO_LDOPTS += $(XLDFLAGS) $(XLIBS)
  endif
  
@@ -10,5 +10,5 @@ $OpenBSD: patch-mozilla_layout_build_Makefile_in,v 1.1 2010/04/03 09:30:14 landr
 +		    $(NULL)
 +
  ifdef MOZ_SYDNEYAUDIO
- ifeq ($(OS_ARCH),Darwin)
- OS_LIBS += -framework CoreAudio -framework AudioToolbox -framework AudioUnit -framework Carbon
+ ifeq ($(OS_ARCH),Linux)
+ EXTRA_DSO_LDOPTS += $(MOZ_ALSA_LIBS)

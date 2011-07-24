@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_xpcom_io_SpecialSystemDirectory_cpp,v 1.1 2010/04/03 09:30:15 landry Exp $
---- mozilla/xpcom/io/SpecialSystemDirectory.cpp.orig	Sat Dec  5 02:56:52 2009
-+++ mozilla/xpcom/io/SpecialSystemDirectory.cpp	Sat Jan 16 16:28:38 2010
-@@ -447,7 +447,7 @@ GetUnixXDGUserDirectory(SystemDirectories aSystemDirec
+$OpenBSD: patch-mozilla_xpcom_io_SpecialSystemDirectory_cpp,v 1.2 2011/07/24 07:31:57 landry Exp $
+--- mozilla/xpcom/io/SpecialSystemDirectory.cpp.orig	Mon Jun 27 05:11:20 2011
++++ mozilla/xpcom/io/SpecialSystemDirectory.cpp	Sat Jul  2 11:40:44 2011
+@@ -485,7 +485,7 @@ GetUnixXDGUserDirectory(SystemDirectories aSystemDirec
      if (NS_FAILED(rv))
          return rv;
      if (!exists) {
