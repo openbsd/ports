@@ -1,31 +1,33 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/07/11 12:16:29 landry Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/07/24 07:35:14 landry Exp $
 @conflict enigmail-<=1.0.1
 @pkgpath mail/enigmail,main
 @pkgpath mail/enigmail
-thunderbird/extensions/${GUID}/
-thunderbird/extensions/${GUID}/chrome/
-thunderbird/extensions/${GUID}/chrome.manifest
-thunderbird/extensions/${GUID}/chrome/enigmail.jar
-thunderbird/extensions/${GUID}/components/
-thunderbird/extensions/${GUID}/components/enigMsgCompFields.js
-thunderbird/extensions/${GUID}/components/enigmail.js
-thunderbird/extensions/${GUID}/components/enigmail.xpt
-thunderbird/extensions/${GUID}/components/enigmime.xpt
-thunderbird/extensions/${GUID}/components/enigprefs-service.js
-thunderbird/extensions/${GUID}/components/ipc.xpt
-@lib thunderbird/extensions/${GUID}/components/libenigmime.so.${LIBenigmime_VERSION}
-@lib thunderbird/extensions/${GUID}/components/libipc.so.${LIBipc_VERSION}
-thunderbird/extensions/${GUID}/defaults/
-thunderbird/extensions/${GUID}/defaults/pref/
-thunderbird/extensions/${GUID}/defaults/pref/enigmail.js
-thunderbird/extensions/${GUID}/defaults/preferences/
-thunderbird/extensions/${GUID}/defaults/preferences/enigmail.js
-thunderbird/extensions/${GUID}/install.rdf
-thunderbird/extensions/${GUID}/platform/
-thunderbird/extensions/${GUID}/platform/OpenBSD/
-thunderbird/extensions/${GUID}/platform/OpenBSD/components/
-@lib thunderbird/extensions/${GUID}/platform/OpenBSD/components/libenigmime.so.${LIBenigmime_VERSION}
-@lib thunderbird/extensions/${GUID}/platform/OpenBSD/components/libipc.so.${LIBipc_VERSION}
-thunderbird/extensions/${GUID}/wrappers/
-thunderbird/extensions/${GUID}/wrappers/gpg-agent-wrapper.sh
-thunderbird/extensions/${GUID}/wrappers/gpg-wrapper.sh
+lib/thunderbird-5.0/extensions/${GUID}/
+lib/thunderbird-5.0/extensions/${GUID}/chrome/
+lib/thunderbird-5.0/extensions/${GUID}/chrome.manifest
+lib/thunderbird-5.0/extensions/${GUID}/chrome/enigmail.jar
+lib/thunderbird-5.0/extensions/${GUID}/components/
+lib/thunderbird-5.0/extensions/${GUID}/components/enigMsgCompFields.js
+lib/thunderbird-5.0/extensions/${GUID}/components/enigmail.js
+lib/thunderbird-5.0/extensions/${GUID}/components/enigmail.xpt
+lib/thunderbird-5.0/extensions/${GUID}/components/enigmime.xpt
+lib/thunderbird-5.0/extensions/${GUID}/components/enigprefs-service.js
+lib/thunderbird-5.0/extensions/${GUID}/components/ipc.xpt
+lib/thunderbird-5.0/extensions/${GUID}/defaults/
+lib/thunderbird-5.0/extensions/${GUID}/defaults/pref/
+lib/thunderbird-5.0/extensions/${GUID}/defaults/pref/enigmail.js
+lib/thunderbird-5.0/extensions/${GUID}/defaults/preferences/
+lib/thunderbird-5.0/extensions/${GUID}/defaults/preferences/enigmail.js
+lib/thunderbird-5.0/extensions/${GUID}/install.rdf
+lib/thunderbird-5.0/extensions/${GUID}/modules/
+lib/thunderbird-5.0/extensions/${GUID}/modules/commonFuncs.jsm
+lib/thunderbird-5.0/extensions/${GUID}/modules/enigmailCommon.jsm
+lib/thunderbird-5.0/extensions/${GUID}/modules/subprocess.jsm
+lib/thunderbird-5.0/extensions/${GUID}/platform/
+lib/thunderbird-5.0/extensions/${GUID}/platform/OpenBSD/
+lib/thunderbird-5.0/extensions/${GUID}/platform/OpenBSD/components/
+@lib lib/thunderbird-5.0/extensions/${GUID}/platform/OpenBSD/components/libenigmime.so.${LIBenigmime_VERSION}
+@lib lib/thunderbird-5.0/extensions/${GUID}/platform/OpenBSD/components/libipc.so.${LIBipc_VERSION}
+lib/thunderbird-5.0/extensions/${GUID}/wrappers/
+lib/thunderbird-5.0/extensions/${GUID}/wrappers/gpg-agent-wrapper.sh
+lib/thunderbird-5.0/extensions/${GUID}/wrappers/gpg-wrapper.sh

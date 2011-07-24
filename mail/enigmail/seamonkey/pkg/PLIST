@@ -1,25 +1,33 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/08/02 08:45:32 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/07/24 07:35:14 landry Exp $
 @conflict enigmail-seamonkey-<=1.0.1
 @pkgpath mail/enigmail,-seamonkey
 @pkgpath mail/enigmail-seamonkey
-seamonkey/extensions/${GUID}/
-seamonkey/extensions/${GUID}/chrome/
-seamonkey/extensions/${GUID}/chrome.manifest
-seamonkey/extensions/${GUID}/chrome/enigmail.jar
-seamonkey/extensions/${GUID}/components/
-seamonkey/extensions/${GUID}/components/enigMsgCompFields.js
-seamonkey/extensions/${GUID}/components/enigmail.js
-seamonkey/extensions/${GUID}/components/enigmail.xpt
-seamonkey/extensions/${GUID}/components/enigmime.xpt
-seamonkey/extensions/${GUID}/components/enigprefs-service.js
-seamonkey/extensions/${GUID}/components/ipc.xpt
-@lib seamonkey/extensions/${GUID}/components/libenigmime.so.${LIBenigmime_VERSION}
-seamonkey/extensions/${GUID}/defaults/
-seamonkey/extensions/${GUID}/defaults/pref/
-seamonkey/extensions/${GUID}/defaults/pref/enigmail.js
-seamonkey/extensions/${GUID}/defaults/preferences/
-seamonkey/extensions/${GUID}/defaults/preferences/enigmail.js
-seamonkey/extensions/${GUID}/install.rdf
-seamonkey/extensions/${GUID}/wrappers/
-seamonkey/extensions/${GUID}/wrappers/gpg-agent-wrapper.sh
-seamonkey/extensions/${GUID}/wrappers/gpg-wrapper.sh
+lib/seamonkey-2.2/extensions/${GUID}/
+lib/seamonkey-2.2/extensions/${GUID}/chrome/
+lib/seamonkey-2.2/extensions/${GUID}/chrome.manifest
+lib/seamonkey-2.2/extensions/${GUID}/chrome/enigmail.jar
+lib/seamonkey-2.2/extensions/${GUID}/components/
+lib/seamonkey-2.2/extensions/${GUID}/components/enigMsgCompFields.js
+lib/seamonkey-2.2/extensions/${GUID}/components/enigmail.js
+lib/seamonkey-2.2/extensions/${GUID}/components/enigmail.xpt
+lib/seamonkey-2.2/extensions/${GUID}/components/enigmime.xpt
+lib/seamonkey-2.2/extensions/${GUID}/components/enigprefs-service.js
+lib/seamonkey-2.2/extensions/${GUID}/components/ipc.xpt
+lib/seamonkey-2.2/extensions/${GUID}/defaults/
+lib/seamonkey-2.2/extensions/${GUID}/defaults/pref/
+lib/seamonkey-2.2/extensions/${GUID}/defaults/pref/enigmail.js
+lib/seamonkey-2.2/extensions/${GUID}/defaults/preferences/
+lib/seamonkey-2.2/extensions/${GUID}/defaults/preferences/enigmail.js
+lib/seamonkey-2.2/extensions/${GUID}/install.rdf
+lib/seamonkey-2.2/extensions/${GUID}/modules/
+lib/seamonkey-2.2/extensions/${GUID}/modules/commonFuncs.jsm
+lib/seamonkey-2.2/extensions/${GUID}/modules/enigmailCommon.jsm
+lib/seamonkey-2.2/extensions/${GUID}/modules/subprocess.jsm
+lib/seamonkey-2.2/extensions/${GUID}/platform/
+lib/seamonkey-2.2/extensions/${GUID}/platform/OpenBSD/
+lib/seamonkey-2.2/extensions/${GUID}/platform/OpenBSD/components/
+@lib lib/seamonkey-2.2/extensions/${GUID}/platform/OpenBSD/components/libenigmime.so.${LIBenigmime_VERSION}
+@lib lib/seamonkey-2.2/extensions/${GUID}/platform/OpenBSD/components/libipc.so.${LIBipc_VERSION}
+lib/seamonkey-2.2/extensions/${GUID}/wrappers/
+lib/seamonkey-2.2/extensions/${GUID}/wrappers/gpg-agent-wrapper.sh
+lib/seamonkey-2.2/extensions/${GUID}/wrappers/gpg-wrapper.sh

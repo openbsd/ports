@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2010/11/26 07:51:00 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2011/07/24 07:35:14 landry Exp $
 
 SHARED_ONLY =	Yes
 
@@ -15,11 +15,11 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://www.mozilla-enigmail.org/download/source/
 
-BUILD_DEPENDS =	${MOZAPP_PKGPATH}:configure \
+BUILD_DEPENDS =	${MOZAPP_PKGSTEM}:${MOZAPP_PKGPATH}:configure \
 		archivers/unzip
 RUN_DEPENDS =	security/gnupg
 LIB_DEPENDS =	${MOZAPP_PKGPATH},-main
-WANTLIB =	c m nspr4 plc4 plds4 stdc++ ${MOZAPP_DIR}/xpcom ${MOZAPP_DIR}/xpcom_core
+WANTLIB =	c m nspr4 plc4 plds4 stdc++ ${MOZAPP_DIR}/xpcom ${MOZAPP_DIR}/xul ${MOZAPP_DIR}/mozalloc
 
 USE_GMAKE =	Yes
 NO_REGRESS =	Yes
@@ -37,23 +37,26 @@ GUID =		{847b3a00-7ab1-11d4-8f02-006008948af5}
 SUBST_VARS =	GUID
 
 post-extract:
-	@perl -pi -e 's|(genxpi.*) (\$$\(TARGET_XPCOM_ABI\))|\1 "\2"|g' \
+	# strip off the TARGET_XPCOM_ABI variable part
+	perl -pi -e 's|(genxpi.*) (\$$\(TARGET_XPCOM_ABI\))|\1 "\2"|g' \
 		${WRKDIST}/Makefile.in
-	@perl -pi -e 's|[-_]?\$${xpcomAbi}||g' ${WRKDIST}/genxpi
-	@mv ${WRKDIST} ${MOZBASE}/mailnews/extensions
+	# strip xpcomABI from platform and ABI in chrome.manifest
+	perl -pi -e 's|[-_]?\$${xpcomAbi}||g ; s| ABI=.\$${platform}.||g' ${WRKDIST}/genxpi
+	mv ${WRKDIST} ${MOZBASE}/mailnews/extensions
 
 do-build:
-	@cd ${MOZBASE} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} export
-	@cd ${MOZBASE}/mozilla/modules/libreg && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
-	@cd ${MOZBASE}/mozilla/xpcom/string && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
-	@cd ${MOZBASE}/mozilla/xpcom && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
-	@cd ${MOZBASE}/mozilla/xpcom/obsolete && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
-	@cd ${WRKSRC} && ./makemake -r
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} xpi
+	cd ${MOZBASE}/mozilla && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} tier_base
+	cd ${MOZBASE}/mozilla && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} tier_js
+	cd ${MOZBASE}/mozilla && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} tier_platform
+	cd ${MOZBASE} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} export
+	cd ${WRKSRC} && ./makemake -r
+	# hax: switch to jar format to generate enigmail.jar
+	perl -pi -e 's|MOZ_CHROME_FILE_FORMAT.*|MOZ_CHROME_FILE_FORMAT=jar|' ${MOZBASE}/config/autoconf.mk
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} xpi
 
 do-install:
 	${INSTALL_DATA_DIR} ${GLOBALDIR}
 	unzip -q ${MOZBIN}/${ENIGMAIL_XPI} -d ${GLOBALDIR}
-	cp ${GLOBALDIR}/platform/OpenBSD*/components/lib*.so.* \
-		${GLOBALDIR}/components/
+	# enigmail 1.2 works in seamonkey 2.2 so adjust install.rdf
+	perl -pi -e 's|<em:maxVersion>2.1.*</em:maxVersion>|<em:maxVersion>2.2.*</em:maxVersion>|' ${GLOBALDIR}/install.rdf
