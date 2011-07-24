@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/28 11:18:58 bluhm Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/24 20:53:13 bluhm Exp $
 
 COMMENT =		add/extend SSL support for common perl modules
 
-DISTNAME =		Net-SSLGlue-0.7
+DISTNAME =		Net-SSLGlue-0.8
 
 CATEGORIES =		security net
 
