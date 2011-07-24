@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/06/08 17:41:58 rpointel Exp $
+# $OpenBSD: Makefile,v 1.20 2011/07/24 09:14:58 edd Exp $
 
 ONLY_FOR_ARCHS= ${APM_ARCHS}
 
@@ -14,7 +14,7 @@ HOMEPAGE=	http://code.google.com/p/tint2/
 
 MAINTAINER=	Edd Barrett <edd@openbsd.org>
 
-# MIT
+# GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
