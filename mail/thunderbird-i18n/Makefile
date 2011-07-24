@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.45 2011/07/08 11:08:59 landry Exp $
+# $OpenBSD: Makefile,v 1.46 2011/07/24 07:13:01 landry Exp $
 
 # keep in sync with www/mozilla/mozilla.port.mk
-ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
+ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 PKG_ARCH=	*
 
-V=		3.1.11
+V=		5.0
 NAME=		thunderbird-i18n
 PKGNAME=	${NAME}-${V}
-REVISION=	0
 
 CATEGORIES=	mail
 
@@ -24,16 +23,17 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${V}/linux-i686/xpi/
 
-LANGUAGES=	af be bg ca cs da de el en-GB es-AR es-ES eu fi fr \
-		ga-IE he hu it ja ko lt nb-NO nl nn-NO pa-IN pl \
-		pt-BR pt-PT ru sk sv-SE tr uk zh-CN zh-TW
+LANGUAGES=	ar bg br ca cs da de en-GB en-US es-AR es-ES et eu fi fr \
+		fy-NL ga-IE gd gl he hu is it ja ko lt nb-NO nl nn-NO pa-IN pl \
+		pt-BR pt-PT rm ru si sk sl sq sv-SE ta-LK tr uk zh-TW
 
 BUILD_DEPENDS=	archivers/unzip
 RUN_DEPENDS=	thunderbird-${V}:mail/mozilla-thunderbird
 
-DIST_SUBDIR=	${NAME}-${V}
+DIST_SUBDIR=	mozilla/${NAME}-${V}
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
+EXTRACT_ONLY=
 
 # define one language for the main package
 SUBPACKAGE?=	-en-GB
@@ -49,20 +49,12 @@ PKGNAME-en-GB=	${NAME}-en-GB-${V}
 
 # use the same for all subpackages
 MESSAGE=	${PKGDIR}/MESSAGE
-
-do-extract:
-.for i in ${LANGUAGES}
-	@mkdir -p ${WRKDIR}/$i
-	@${UNZIP} -oq ${FULLDISTDIR}/$i.xpi -d ${WRKDIR}/$i
-.endfor
+SUBST_VARS=	V
 
 do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/lib/thunderbird-$V/extensions
 .for i in ${LANGUAGES}
-	${INSTALL_DATA_DIR} ${LPACKDIR-$i}/chrome ${LPACKDIR-$i}/defaults/pref
-	${INSTALL_DATA} ${WRKSRC}/$i/chrome.manifest ${LPACKDIR-$i}
-	${INSTALL_DATA} ${WRKSRC}/$i/install.rdf ${LPACKDIR-$i}
-	${INSTALL_DATA} ${WRKSRC}/$i/chrome/$i.jar ${LPACKDIR-$i}/chrome
-	${INSTALL_DATA} ${WRKSRC}/$i/defaults/pref/all-l10n.js ${LPACKDIR-$i}/defaults/pref
+	${INSTALL_DATA} ${FULLDISTDIR}/$i.xpi ${PREFIX}/lib/thunderbird-$V/extensions/langpack-$i@thunderbird.mozilla.org.xpi
 .endfor
 
 .include <bsd.port.mk>

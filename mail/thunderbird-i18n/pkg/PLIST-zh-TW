@@ -1,9 +1,2 @@
-@comment $OpenBSD: PLIST-zh-TW,v 1.4 2010/04/05 20:05:16 landry Exp $
-mozilla-thunderbird/extensions/langpack-zh-TW@thunderbird.mozilla.org/
-mozilla-thunderbird/extensions/langpack-zh-TW@thunderbird.mozilla.org/chrome/
-mozilla-thunderbird/extensions/langpack-zh-TW@thunderbird.mozilla.org/chrome.manifest
-mozilla-thunderbird/extensions/langpack-zh-TW@thunderbird.mozilla.org/chrome/zh-TW.jar
-mozilla-thunderbird/extensions/langpack-zh-TW@thunderbird.mozilla.org/defaults/
-mozilla-thunderbird/extensions/langpack-zh-TW@thunderbird.mozilla.org/defaults/pref/
-mozilla-thunderbird/extensions/langpack-zh-TW@thunderbird.mozilla.org/defaults/pref/all-l10n.js
-mozilla-thunderbird/extensions/langpack-zh-TW@thunderbird.mozilla.org/install.rdf
+@comment $OpenBSD: PLIST-zh-TW,v 1.5 2011/07/24 07:13:01 landry Exp $
+lib/thunderbird-${V}/extensions/langpack-zh-TW@thunderbird.mozilla.org.xpi

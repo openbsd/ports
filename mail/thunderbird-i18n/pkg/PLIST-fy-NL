@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-fy-NL,v 1.1 2011/07/24 07:13:01 landry Exp $
+lib/thunderbird-${V}/extensions/langpack-fy-NL@thunderbird.mozilla.org.xpi
