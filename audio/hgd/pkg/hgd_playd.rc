@@ -1,13 +1,10 @@
 #!/bin/sh
 #
-# $OpenBSD: hgd_playd.rc,v 1.1.1.1 2011/03/17 14:38:42 edd Exp $
+# $OpenBSD: hgd_playd.rc,v 1.2 2011/07/25 23:07:49 edd Exp $
 
 daemon="${TRUEPREFIX}/sbin/hgd-playd"
 daemon_user="_hgd"
 
 . /etc/rc.d/rc.subr
-
-rc_bg=YES
-rc_reload=NO
 
 rc_cmd $1

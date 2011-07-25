@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/22 08:21:28 edd Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/07/25 23:07:49 edd Exp $
+%%python%%
 @newgroup _hgd:665
 @newuser _hgd:665:_hgd:daemon:HGD Server:/var/empty:/sbin/nologin
 @bin bin/hgdc
@@ -6,6 +7,7 @@
 @man man/man1/hgd-netd.1
 @man man/man1/hgd-playd.1
 @man man/man1/hgdc.1
+@man man/man7/hgd-proto.7
 @bin sbin/hgd-admin
 @bin sbin/hgd-netd
 @bin sbin/hgd-playd
@@ -14,6 +16,7 @@ share/doc/hgd/README
 share/examples/hgd/
 share/examples/hgd/hgd.rc
 share/examples/hgd/hgdc.rc
+@sample ${SYSCONFDIR}/hgd/plugins/
 @rcscript ${RCDIR}/hgd_netd
 @rcscript ${RCDIR}/hgd_playd
 @owner _hgd
