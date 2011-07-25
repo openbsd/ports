@@ -1,0 +1,3 @@
+To change the default configuration options, copy the provided
+${TRUEPREFIX}/share/examples/ncmpcpp/{config,keys} to ~/.ncmpcpp/
+and modify them as necessary.

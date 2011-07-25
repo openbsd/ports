@@ -1,0 +1,28 @@
+$OpenBSD: patch-src_ncmpcpp_cpp,v 1.1.1.1 2011/07/25 20:08:23 dcoppa Exp $
+
+Fix song info resize
+(upstream git commit 4338008a34d9881c9002ea7e84ad68f0b11bd98e)
+
+The header window doesn't have a shortcut to the "Outputs" screen
+(http://www.musicpd.org/mantis/view.php?id=3282)
+
+--- src/ncmpcpp.cpp.orig	Thu Apr 21 02:31:02 2011
++++ src/ncmpcpp.cpp	Wed Jul 20 15:42:07 2011
+@@ -147,6 +147,7 @@ namespace
+ 		myPlaylistEditor->hasToBeResized = 1;
+ 		myLyrics->hasToBeResized = 1;
+ 		mySelectedItemsAdder->hasToBeResized = 1;
++		mySongInfo->hasToBeResized = 1;
+ 		
+ #		ifdef HAVE_CURL_CURL_H
+ 		myLastfm->hasToBeResized = 1;
+@@ -412,6 +413,9 @@ int main(int argc, char *argv[])
+ #				ifdef ENABLE_VISUALIZER
+ 				*wHeader << "  " << fmtBold << char(Key.Visualizer[0]) << fmtBoldEnd << ":Music visualizer";
+ #				endif // ENABLE_VISUALIZER
++#				ifdef ENABLE_OUTPUTS
++				*wHeader << "  " << fmtBold << char(Key.Outputs[0]) << fmtBoldEnd << ":Outputs";
++#				endif // ENABLE_OUTPUTS
+ #				ifdef ENABLE_CLOCK
+ 				*wHeader << "  " << fmtBold << char(Key.Clock[0]) << fmtBoldEnd << ":Clock";
+ #				endif // ENABLE_CLOCK

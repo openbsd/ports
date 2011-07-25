@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_clock_cpp,v 1.1.1.1 2011/07/25 20:08:23 dcoppa Exp $
+
+Unbreak compilation
+
+--- src/clock.cpp.orig	Tue Jul 19 17:58:09 2011
++++ src/clock.cpp	Tue Jul 19 18:02:47 2011
+@@ -115,7 +115,8 @@ void Clock::Update()
+ 		return;
+ 	gettimeofday(&past, 0);
+ 	
+-	tm *time = localtime(&past.tv_sec);
++	time_t tmp = past.tv_sec;
++	tm *time = localtime(&tmp);
+ 	
+ 	mask = 0;
+ 	Set(time->tm_sec % 10, 0);

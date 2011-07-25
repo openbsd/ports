@@ -1,0 +1,23 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.1.1.1 2011/07/25 20:08:23 dcoppa Exp $
+--- doc/Makefile.in.orig	Thu Apr 21 02:33:28 2011
++++ doc/Makefile.in	Wed Jul 20 06:52:49 2011
+@@ -283,15 +283,15 @@ uninstall-man1:
+ 	  cd "$(DESTDIR)$(man1dir)" && rm -f $$files; }
+ install-docDATA: $(doc_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(docdir)" || $(MKDIR_P) "$(DESTDIR)$(docdir)"
+-	@list='$(doc_DATA)'; test -n "$(docdir)" || list=; \
++	$(MKDIR_P) "${PREFIX}/share/examples/ncmpcpp"
++	@list='$(doc_DATA)'; \
+ 	for p in $$list; do \
+ 	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+ 	  echo "$$d$$p"; \
+ 	done | $(am__base_list) | \
+ 	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(docdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(docdir)" || exit $$?; \
++	  echo " $(INSTALL_DATA) $$files '${PREFIX}/share/examples/ncmpcpp'"; \
++	  $(INSTALL_DATA) $$files "${PREFIX}/share/examples/ncmpcpp" || exit $$?; \
+ 	done
+ 
+ uninstall-docDATA:
