@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_utils_aLinkCreator_docs_alc_1,v 1.1 2011/07/25 14:46:58 dcoppa Exp $
+
+Fix typo
+
+--- src/utils/aLinkCreator/docs/alc.1.orig	Mon Sep 14 21:26:03 2009
++++ src/utils/aLinkCreator/docs/alc.1	Mon Jul 25 16:35:23 2011
+@@ -6,7 +6,7 @@ aLinkCreator \- the aMule ED2k link creator
+ .SH DESCRIPTION
+ \fBalc\fR is a graphical utility to create an ED2k link to any file on your computer.
+ 
+-This programm doesn't take any arguments.
++This program doesn't take any arguments.
+ .SH REPORTING BUGS
+ Please report bugs either on our forum (\fIhttp://forum.amule.org/\fR), or in our bugtracker (\fIhttp://bugs.amule.org/\fR).
+ Please do not report bugs in e-mail, neither to our mailing list nor directly to any team member.

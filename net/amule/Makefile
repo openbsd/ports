@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/06/24 08:42:31 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.22 2011/07/25 14:46:57 dcoppa Exp $
 
 COMMENT-main =	another eDonkey P2P file sharing client
 COMMENT-web =	webserver interface to amuled
@@ -13,6 +13,7 @@ MULTI_PACKAGES =-main -web -daemon
 PKGNAME-main =	amule-$V
 PKGNAME-daemon =amuled-$V
 PKGNAME-web =	amuleweb-$V
+REVISION-main =	0
 
 # GPL
 PERMIT_PACKAGE_CDROM =	Yes
