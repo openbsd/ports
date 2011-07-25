@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/12/03 11:45:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/07/25 14:24:54 gsoares Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,9 +6,8 @@ COMMENT=	module for sending and receiving multicast messages
 
 MODULES=	cpan
 DISTNAME=	IO-Socket-Multicast-1.12
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
-USE_GROFF =	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
@@ -20,5 +19,7 @@ PERMIT_DISTFILES_FTP=   Yes
 
 RUN_DEPENDS=	net/p5-IO-Interface>=0.94
 BUILD_DEPENDS=	${RUN_DEPENDS}
+
+MODCPAN_EXAMPLES=	Yes
 
 .include <bsd.port.mk>
