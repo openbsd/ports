@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/07/20 17:30:28 gsoares Exp $
+# $OpenBSD: Makefile,v 1.6 2011/07/25 20:40:47 gsoares Exp $
 
 COMMENT =	implement the data type "matrix of reals"
 DISTNAME =	Math-MatrixReal-2.08
 CATEGORIES =	math
+USE_GROFF =	Yes
 
 # Perl
 PERMIT_PACKAGE_CDROM =		Yes
