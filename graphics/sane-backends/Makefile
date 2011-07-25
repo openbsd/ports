@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/06/16 10:14:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2011/07/25 14:36:45 ajacoutot Exp $
 
 COMMENT=	API for accessing scanners, backends
 
@@ -22,7 +22,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB += c jpeg m tiff usb z
 
 MASTER_SITES=	ftp://ftp.sane-project.org/pub/sane/${DISTNAME}/ \
-		ftp://ftp.sane-project.org/pub/sane/old-versions/${DISTNAME}/
+		ftp://ftp.sane-project.org/pub/sane/old-versions/${DISTNAME}/ \
+		ftp://ftp2.sane-project.org/pub/sane/${DISTNAME}/
 
 LIB_DEPENDS=	graphics/tiff \
 		devel/libusb
