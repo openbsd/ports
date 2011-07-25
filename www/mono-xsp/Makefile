@@ -6,6 +6,8 @@ V=		2.10.2
 DISTNAME=	xsp-${V}
 PKGNAME=	mono-xsp-${V}
 
+REVISION=	0
+
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	www devel
@@ -13,7 +15,7 @@ CATEGORIES=	www devel
 HOMEPAGE=	http://www.mono-project.com/ASP.NET
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/xsp/
 
-MAINTAINER=	Robet Nagy <robert@openbsd.org>
+MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
