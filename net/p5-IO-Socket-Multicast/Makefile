@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/07/25 14:24:54 gsoares Exp $
+# $OpenBSD: Makefile,v 1.15 2011/07/25 19:50:50 gsoares Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,6 +8,7 @@ MODULES=	cpan
 DISTNAME=	IO-Socket-Multicast-1.12
 REVISION=	1
 CATEGORIES=	net
+USE_GROFF=	Yes
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
