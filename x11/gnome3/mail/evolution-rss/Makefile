@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/07/23 08:08:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/07/25 10:26:38 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.2.90-20110621
 PKGNAME=		evolution-rss-${GNOME_VERSION:S/-/./}
 
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		mail
 
@@ -52,6 +52,7 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		devel/libsoup,-gnome \
 			mail/evolution,-main>=3.0.2
 
+DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	evolution-rss
 
 CONFIGURE_STYLE=	gnu
@@ -93,8 +94,9 @@ pre-configure:
 # applications -- unfortunately, setting NoDisplay= or ShowOnlyIn= will
 # make applications ignore it, but we don't want evolution-import-rss to
 # appear in the menu since it takes an argument which we have no way to
-# give -- so remove the file for now.
+# give -- so add NoDisplay anyway.
 post-install:
-	rm ${PREFIX}/share/applications/evolution-rss.desktop
+	echo 'NoDisplay=true' >> \
+		${PREFIX}/share/applications/evolution-rss.desktop
 
 .include <bsd.port.mk>
