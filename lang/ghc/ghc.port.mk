@@ -1,4 +1,4 @@
-# $OpenBSD: ghc.port.mk,v 1.23 2011/06/30 21:26:15 kili Exp $
+# $OpenBSD: ghc.port.mk,v 1.24 2011/07/25 21:45:15 kili Exp $
 # Module for Glasgow Haskell Compiler
 
 # Not yet ported to other architectures
@@ -69,10 +69,8 @@ MODCABAL_configure = \
 	cd ${WRKSRC} && \
 	for s in ${MODGHC_SETUP_SCRIPT}; do \
 		test -f "$$s" && \
-		printf '\#!/bin/sh\nexec %s %s "$$@"\n' \
-			${LOCALBASE}/bin/runghc \
-			$$s > ${MODGHC_SETUP_PROG} && \
-		chmod +x ${MODGHC_SETUP_PROG} && \
+		${MODGHC_BIN} --make \
+			-o ${MODGHC_SETUP_PROG} "$$s" && \
 		break; \
 	done && \
 	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MODGHC_SETUP_CONF_ENV} \
