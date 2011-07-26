@@ -1,5 +1,5 @@
 #!${LOCALBASE}/bin/lua
--- $OpenBSD: yt.lua,v 1.32 2011/07/19 16:29:46 jasper Exp $
+-- $OpenBSD: yt.lua,v 1.33 2011/07/26 12:53:26 jsg Exp $
 -- Fetch videos from YouTube.com/Videos.Google.com, and convert to MPEG.
 -- Written by Pedro Martelletto and Martynas Venckus.  Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -71,6 +71,9 @@ for i = 1, table.getn(urls) do
    -- Look for the video title.
    pattern = "<title>%s*(.-)%s*</title>"
    title = assert(string.match(body, pattern))
+   -- strip html elements
+   title = string.gsub(title, "&[^ ]*;", "")
+   title = string.gsub(title, "%s*- YouTube%s*", "")
 
    -- Fetch high quality if available, just take the first format for now
    --  5  320x 240 H.263/MP3 mono FLV
