@@ -1,17 +1,12 @@
-$OpenBSD: patch-client_dconf-client_vala,v 1.1 2011/05/30 15:51:51 ajacoutot Exp $
-
-From 03066011b7fe3a58d451d93a134022b0607ff1dc Mon Sep 17 00:00:00 2001
-From: Ryan Lortie <desrt@desrt.ca>
-Date: Tue, 10 May 2011 10:15:53 +0000
-Subject: Don't compare VariantType by pointer value
+$OpenBSD: patch-client_dconf-client_vala,v 1.2 2011/07/26 15:13:45 ajacoutot Exp $
 
 From 70d1b330a7a09a555a1c66c17dc5111e08e77b8b Mon Sep 17 00:00:00 2001
 From: Ryan Lortie <desrt@desrt.ca>
 Date: Tue, 10 May 2011 10:16:20 +0000
 Subject: Properly support watching in DConfClient
 
---- client/dconf-client.vala.orig	Mon May 30 17:41:21 2011
-+++ client/dconf-client.vala	Mon May 30 17:41:09 2011
+--- client/dconf-client.vala.orig	Tue Jul 26 16:44:38 2011
++++ client/dconf-client.vala	Tue Jul 26 17:06:04 2011
 @@ -8,18 +8,48 @@ namespace DConf {
  		WatchFunc watch_func;
  		Engine engine;
@@ -60,13 +55,4 @@ Subject: Properly support watching in DConfClient
 +					}
  				}
  				connection = system;
- 			}
-@@ -27,7 +57,7 @@ namespace DConf {
- 			foreach (var message in dcem.parameters) {
- 				var reply = connection.call_sync (dcem.bus_name, dcem.object_path, dcem.interface_name, dcem.method_name,
- 				                                  message, dcem.reply_type, DBusCallFlags.NONE, -1, cancellable);
--				if (dcem.reply_type != VariantType.UNIT) {
-+				if (!dcem.reply_type.equal (VariantType.UNIT)) {
- 					reply.get ("(s)", out tag);
- 				}
  			}
