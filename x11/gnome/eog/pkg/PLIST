@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2010/09/30 07:38:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.25 2011/07/26 15:36:26 ajacoutot Exp $
 @bin bin/eog
 include/eog-2.20/
 include/eog-2.20/eog/
@@ -28,14 +28,14 @@ include/eog-2.20/eog/eog-window.h
 lib/eog/
 lib/eog/plugins/
 lib/eog/plugins/fullscreen.eog-plugin
-lib/eog/plugins/libfullscreen.a
-lib/eog/plugins/libfullscreen.la
+@comment lib/eog/plugins/libfullscreen.a
+@comment lib/eog/plugins/libfullscreen.la
 lib/eog/plugins/libfullscreen.so
-lib/eog/plugins/libreload.a
-lib/eog/plugins/libreload.la
+@comment lib/eog/plugins/libreload.a
+@comment lib/eog/plugins/libreload.la
 lib/eog/plugins/libreload.so
-lib/eog/plugins/libstatusbar-date.a
-lib/eog/plugins/libstatusbar-date.la
+@comment lib/eog/plugins/libstatusbar-date.a
+@comment lib/eog/plugins/libstatusbar-date.la
 lib/eog/plugins/libstatusbar-date.so
 lib/eog/plugins/reload.eog-plugin
 lib/eog/plugins/statusbar-date.eog-plugin

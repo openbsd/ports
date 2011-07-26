@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/01/04 06:45:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/26 15:36:26 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,8 @@ COMMENT=	extra plugins for anjuta
 
 GNOME_PROJECT=	anjuta-extras
 GNOME_VERSION=	2.32.1.1
+
+REVISION=	0
 
 CATEGORIES=	devel
 

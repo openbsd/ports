@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2011/04/07 08:32:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.22 2011/07/26 15:36:27 ajacoutot Exp $
 bin/gmenu-simple-editor
 include/gnome-menus/
 include/gnome-menus/gmenu-tree.h
@@ -26,8 +26,8 @@ lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/menufilewriter.pyo
 lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/menutreemodel.py
 lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/menutreemodel.pyc
 lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/menutreemodel.pyo
-lib/python${MODPY_VERSION}/site-packages/gmenu.a
-lib/python${MODPY_VERSION}/site-packages/gmenu.la
+@comment lib/python${MODPY_VERSION}/site-packages/gmenu.a
+@comment lib/python${MODPY_VERSION}/site-packages/gmenu.la
 lib/python${MODPY_VERSION}/site-packages/gmenu.so
 share/applications/gmenu-simple-editor.desktop
 share/desktop-directories/

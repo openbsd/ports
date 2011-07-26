@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/04/01 07:33:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/07/26 15:36:27 ajacoutot Exp $
 @bin bin/magnifier
 include/gnome-mag-1.0/
 include/gnome-mag-1.0/magnifier/
@@ -7,8 +7,8 @@ lib/bonobo/servers/GNOME_Magnifier.server
 lib/libgnome-mag.a
 lib/libgnome-mag.la
 @lib lib/libgnome-mag.so.${LIBgnome-mag_VERSION}
-lib/orbit-2.0/GNOME_Magnifier_module.a
-lib/orbit-2.0/GNOME_Magnifier_module.la
+@comment lib/orbit-2.0/GNOME_Magnifier_module.a
+@comment lib/orbit-2.0/GNOME_Magnifier_module.la
 lib/orbit-2.0/GNOME_Magnifier_module.so
 lib/pkgconfig/gnome-mag-1.0.pc
 @man man/man1/magnifier.1

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/09/30 07:50:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/07/26 15:36:26 ajacoutot Exp $
 lib/gedit-2/plugins/bookmarks.gedit-plugin
 lib/gedit-2/plugins/bracketcompletion.gedit-plugin
 lib/gedit-2/plugins/bracketcompletion.py
@@ -72,20 +72,20 @@ lib/gedit-2/plugins/joinlines.gedit-plugin
 lib/gedit-2/plugins/joinlines.py
 lib/gedit-2/plugins/joinlines.pyc
 lib/gedit-2/plugins/joinlines.pyo
-lib/gedit-2/plugins/libbookmarks.a
-lib/gedit-2/plugins/libbookmarks.la
+@comment lib/gedit-2/plugins/libbookmarks.a
+@comment lib/gedit-2/plugins/libbookmarks.la
 lib/gedit-2/plugins/libbookmarks.so
-lib/gedit-2/plugins/libcharmap.a
-lib/gedit-2/plugins/libcharmap.la
+@comment lib/gedit-2/plugins/libcharmap.a
+@comment lib/gedit-2/plugins/libcharmap.la
 lib/gedit-2/plugins/libcharmap.so
-lib/gedit-2/plugins/libdrawspaces.a
-lib/gedit-2/plugins/libdrawspaces.la
+@comment lib/gedit-2/plugins/libdrawspaces.a
+@comment lib/gedit-2/plugins/libdrawspaces.la
 lib/gedit-2/plugins/libdrawspaces.so
-lib/gedit-2/plugins/libshowtabbar.a
-lib/gedit-2/plugins/libshowtabbar.la
+@comment lib/gedit-2/plugins/libshowtabbar.a
+@comment lib/gedit-2/plugins/libshowtabbar.la
 lib/gedit-2/plugins/libshowtabbar.so
-lib/gedit-2/plugins/libwordcompletion.a
-lib/gedit-2/plugins/libwordcompletion.la
+@comment lib/gedit-2/plugins/libwordcompletion.a
+@comment lib/gedit-2/plugins/libwordcompletion.la
 lib/gedit-2/plugins/libwordcompletion.so
 lib/gedit-2/plugins/multiedit/
 lib/gedit-2/plugins/multiedit.gedit-plugin

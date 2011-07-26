@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2011/04/04 13:31:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2011/07/26 15:36:26 ajacoutot Exp $
 
 COMMENT=	GNOME component and compound document system
 
 GNOME_PROJECT=	libbonobo
 GNOME_VERSION=	2.32.1
+
+REVISION=	0
 
 SHARED_LIBS +=	bonobo-activation    6.0      # .4.0
 SHARED_LIBS +=	bonobo-2             2.0      # .0.0

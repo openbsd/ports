@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.25 2011/04/04 13:31:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2011/07/26 15:36:26 ajacoutot Exp $
 %%SHARED%%
 @bin bin/activation-client
 @bin bin/bonobo-activation-run-query
@@ -60,8 +60,8 @@ lib/bonobo-2.0/
 lib/bonobo-2.0/samples/
 @bin lib/bonobo-2.0/samples/bonobo-echo-2
 lib/bonobo/monikers/
-lib/bonobo/monikers/libmoniker_std_2.a
-lib/bonobo/monikers/libmoniker_std_2.la
+@comment lib/bonobo/monikers/libmoniker_std_2.a
+@comment lib/bonobo/monikers/libmoniker_std_2.la
 lib/bonobo/servers/
 lib/bonobo/servers/Bonobo_CosNaming_NamingContext.server
 lib/bonobo/servers/Bonobo_Moniker_std.server
@@ -71,8 +71,8 @@ lib/libbonobo-2.la
 lib/libbonobo-activation.a
 lib/libbonobo-activation.la
 lib/orbit-2.0/
-lib/orbit-2.0/Bonobo_module.a
-lib/orbit-2.0/Bonobo_module.la
+@comment lib/orbit-2.0/Bonobo_module.a
+@comment lib/orbit-2.0/Bonobo_module.la
 lib/pkgconfig/
 lib/pkgconfig/bonobo-activation-2.0.pc
 lib/pkgconfig/libbonobo-2.0.pc

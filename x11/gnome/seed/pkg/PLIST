@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/05/27 21:03:03 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/07/26 15:36:27 ajacoutot Exp $
 %%SHARED%%
 @bin bin/seed
 include/seed-gtk3/
@@ -9,36 +9,36 @@ lib/libseed-gtk3.a
 lib/libseed-gtk3.la
 lib/pkgconfig/seed.pc
 lib/seed-gtk3/
-lib/seed-gtk3/libseed_DynamicObject.a
-lib/seed-gtk3/libseed_DynamicObject.la
-lib/seed-gtk3/libseed_cairo.a
-lib/seed-gtk3/libseed_cairo.la
-lib/seed-gtk3/libseed_canvas.a
-lib/seed-gtk3/libseed_canvas.la
-lib/seed-gtk3/libseed_dbusnative.a
-lib/seed-gtk3/libseed_dbusnative.la
-lib/seed-gtk3/libseed_example.a
-lib/seed-gtk3/libseed_example.la
-lib/seed-gtk3/libseed_ffi.a
-lib/seed-gtk3/libseed_ffi.la
-lib/seed-gtk3/libseed_gettext.a
-lib/seed-gtk3/libseed_gettext.la
-lib/seed-gtk3/libseed_gtkbuilder.a
-lib/seed-gtk3/libseed_gtkbuilder.la
-lib/seed-gtk3/libseed_libxml.a
-lib/seed-gtk3/libseed_libxml.la
-lib/seed-gtk3/libseed_mpfr.a
-lib/seed-gtk3/libseed_mpfr.la
-lib/seed-gtk3/libseed_multiprocessing.a
-lib/seed-gtk3/libseed_multiprocessing.la
-lib/seed-gtk3/libseed_os.a
-lib/seed-gtk3/libseed_os.la
-lib/seed-gtk3/libseed_readline.a
-lib/seed-gtk3/libseed_readline.la
-lib/seed-gtk3/libseed_sandbox.a
-lib/seed-gtk3/libseed_sandbox.la
-lib/seed-gtk3/libseed_sqlite.a
-lib/seed-gtk3/libseed_sqlite.la
+@comment lib/seed-gtk3/libseed_DynamicObject.a
+@comment lib/seed-gtk3/libseed_DynamicObject.la
+@comment lib/seed-gtk3/libseed_cairo.a
+@comment lib/seed-gtk3/libseed_cairo.la
+@comment lib/seed-gtk3/libseed_canvas.a
+@comment lib/seed-gtk3/libseed_canvas.la
+@comment lib/seed-gtk3/libseed_dbusnative.a
+@comment lib/seed-gtk3/libseed_dbusnative.la
+@comment lib/seed-gtk3/libseed_example.a
+@comment lib/seed-gtk3/libseed_example.la
+@comment lib/seed-gtk3/libseed_ffi.a
+@comment lib/seed-gtk3/libseed_ffi.la
+@comment lib/seed-gtk3/libseed_gettext.a
+@comment lib/seed-gtk3/libseed_gettext.la
+@comment lib/seed-gtk3/libseed_gtkbuilder.a
+@comment lib/seed-gtk3/libseed_gtkbuilder.la
+@comment lib/seed-gtk3/libseed_libxml.a
+@comment lib/seed-gtk3/libseed_libxml.la
+@comment lib/seed-gtk3/libseed_mpfr.a
+@comment lib/seed-gtk3/libseed_mpfr.la
+@comment lib/seed-gtk3/libseed_multiprocessing.a
+@comment lib/seed-gtk3/libseed_multiprocessing.la
+@comment lib/seed-gtk3/libseed_os.a
+@comment lib/seed-gtk3/libseed_os.la
+@comment lib/seed-gtk3/libseed_readline.a
+@comment lib/seed-gtk3/libseed_readline.la
+@comment lib/seed-gtk3/libseed_sandbox.a
+@comment lib/seed-gtk3/libseed_sandbox.la
+@comment lib/seed-gtk3/libseed_sqlite.a
+@comment lib/seed-gtk3/libseed_sqlite.la
 @man man/man1/seed.1
 share/doc/seed/
 share/doc/seed/AUTHORS

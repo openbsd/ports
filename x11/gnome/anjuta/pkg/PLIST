@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/04/07 12:45:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/07/26 15:36:26 ajacoutot Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -146,7 +146,7 @@ lib/anjuta/language-manager.plugin
 lib/anjuta/libanjuta-build-basic-autotools.so
 @comment lib/anjuta/libanjuta-class-gen.la
 lib/anjuta/libanjuta-class-gen.so
-lib/anjuta/libanjuta-class-inheritance.la
+@comment lib/anjuta/libanjuta-class-inheritance.la
 lib/anjuta/libanjuta-class-inheritance.so
 @comment lib/anjuta/libanjuta-cvs-plugin.la
 lib/anjuta/libanjuta-cvs-plugin.so
@@ -180,13 +180,13 @@ lib/anjuta/libanjuta-project-import.so
 lib/anjuta/libanjuta-project-manager.so
 @comment lib/anjuta/libanjuta-project-wizard.la
 lib/anjuta/libanjuta-project-wizard.so
-lib/anjuta/libanjuta-python-loader.la
+@comment lib/anjuta/libanjuta-python-loader.la
 lib/anjuta/libanjuta-python-loader.so
 @comment lib/anjuta/libanjuta-run-program.la
 lib/anjuta/libanjuta-run-program.so
 @comment lib/anjuta/libanjuta-search.la
 lib/anjuta/libanjuta-search.so
-lib/anjuta/libanjuta-snippets-manager.la
+@comment lib/anjuta/libanjuta-snippets-manager.la
 lib/anjuta/libanjuta-snippets-manager.so
 @comment lib/anjuta/libanjuta-sourceview.la
 lib/anjuta/libanjuta-sourceview.so

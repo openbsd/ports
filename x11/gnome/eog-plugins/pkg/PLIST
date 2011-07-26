@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/03/07 19:29:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/07/26 15:36:26 ajacoutot Exp $
 lib/eog/plugins/console.py
 lib/eog/plugins/console.pyc
 lib/eog/plugins/console.pyo
@@ -7,20 +7,20 @@ lib/eog/plugins/exif-display.eog-plugin
 lib/eog/plugins/exif-display/exif-display-config.ui
 lib/eog/plugins/exif-display/exif-display.ui
 lib/eog/plugins/fit-to-width.eog-plugin
-lib/eog/plugins/libexif-display.a
-lib/eog/plugins/libexif-display.la
+@comment lib/eog/plugins/libexif-display.a
+@comment lib/eog/plugins/libexif-display.la
 lib/eog/plugins/libexif-display.so
-lib/eog/plugins/libfit-to-width.a
-lib/eog/plugins/libfit-to-width.la
+@comment lib/eog/plugins/libfit-to-width.a
+@comment lib/eog/plugins/libfit-to-width.la
 lib/eog/plugins/libfit-to-width.so
-lib/eog/plugins/libmap.a
-lib/eog/plugins/libmap.la
+@comment lib/eog/plugins/libmap.a
+@comment lib/eog/plugins/libmap.la
 lib/eog/plugins/libmap.so
-lib/eog/plugins/libpostasa.a
-lib/eog/plugins/libpostasa.la
+@comment lib/eog/plugins/libpostasa.a
+@comment lib/eog/plugins/libpostasa.la
 lib/eog/plugins/libpostasa.so
-lib/eog/plugins/libsend-by-mail.a
-lib/eog/plugins/libsend-by-mail.la
+@comment lib/eog/plugins/libsend-by-mail.a
+@comment lib/eog/plugins/libsend-by-mail.la
 lib/eog/plugins/libsend-by-mail.so
 lib/eog/plugins/map.eog-plugin
 lib/eog/plugins/postasa/

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.43 2011/04/07 09:29:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2011/07/26 15:36:27 ajacoutot Exp $
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
 @bin bin/panel-test-applets
@@ -16,8 +16,8 @@ include/panel-2.0/panel-applet.h
 lib/girepository-1.0/PanelApplet-3.0.typelib
 lib/gnome-panel/
 lib/gnome-panel/modules/
-lib/gnome-panel/modules/libpanel-applets-bonobo.a
-lib/gnome-panel/modules/libpanel-applets-bonobo.la
+@comment lib/gnome-panel/modules/libpanel-applets-bonobo.a
+@comment lib/gnome-panel/modules/libpanel-applets-bonobo.la
 lib/gnome-panel/modules/libpanel-applets-bonobo.so
 lib/libpanel-applet-2.a
 lib/libpanel-applet-2.la

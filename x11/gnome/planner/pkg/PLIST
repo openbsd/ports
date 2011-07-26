@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/07/05 07:48:52 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/07/26 15:36:27 ajacoutot Exp $
 @bin bin/planner
 include/planner-1.0/
 include/planner-1.0/libplanner/
@@ -25,34 +25,34 @@ lib/libplanner-1.la
 lib/pkgconfig/libplanner-1.pc
 lib/planner/
 lib/planner/file-modules/
-lib/planner/file-modules/libmrp-xml.a
-lib/planner/file-modules/libmrp-xml.la
+@comment lib/planner/file-modules/libmrp-xml.a
+@comment lib/planner/file-modules/libmrp-xml.la
 lib/planner/file-modules/libmrp-xml.so
-lib/planner/file-modules/libmrp-xsl.a
-lib/planner/file-modules/libmrp-xsl.la
+@comment lib/planner/file-modules/libmrp-xsl.a
+@comment lib/planner/file-modules/libmrp-xsl.la
 lib/planner/file-modules/libmrp-xsl.so
 lib/planner/plugins/
-lib/planner/plugins/libhtml-plugin.a
-lib/planner/plugins/libhtml-plugin.la
+@comment lib/planner/plugins/libhtml-plugin.a
+@comment lib/planner/plugins/libhtml-plugin.la
 lib/planner/plugins/libhtml-plugin.so
-lib/planner/plugins/libmsp-plugin.a
-lib/planner/plugins/libmsp-plugin.la
+@comment lib/planner/plugins/libmsp-plugin.a
+@comment lib/planner/plugins/libmsp-plugin.la
 lib/planner/plugins/libmsp-plugin.so
-lib/planner/plugins/libpython-plugin.a
-lib/planner/plugins/libpython-plugin.la
+@comment lib/planner/plugins/libpython-plugin.a
+@comment lib/planner/plugins/libpython-plugin.la
 lib/planner/plugins/libpython-plugin.so
-lib/planner/plugins/libxmlplanner-plugin.a
-lib/planner/plugins/libxmlplanner-plugin.la
+@comment lib/planner/plugins/libxmlplanner-plugin.a
+@comment lib/planner/plugins/libxmlplanner-plugin.la
 lib/planner/plugins/libxmlplanner-plugin.so
 lib/planner/storage-modules/
-lib/planner/storage-modules/libstorage-mrproject-1.a
-lib/planner/storage-modules/libstorage-mrproject-1.la
+@comment lib/planner/storage-modules/libstorage-mrproject-1.a
+@comment lib/planner/storage-modules/libstorage-mrproject-1.la
 lib/planner/storage-modules/libstorage-mrproject-1.so
-lib/python${MODPY_VERSION}/site-packages/planner.a
-lib/python${MODPY_VERSION}/site-packages/planner.la
+@comment lib/python${MODPY_VERSION}/site-packages/planner.a
+@comment lib/python${MODPY_VERSION}/site-packages/planner.la
 lib/python${MODPY_VERSION}/site-packages/planner.so
-lib/python${MODPY_VERSION}/site-packages/plannerui.a
-lib/python${MODPY_VERSION}/site-packages/plannerui.la
+@comment lib/python${MODPY_VERSION}/site-packages/plannerui.a
+@comment lib/python${MODPY_VERSION}/site-packages/plannerui.la
 lib/python${MODPY_VERSION}/site-packages/plannerui.so
 @man man/man1/planner.1
 share/applications/planner.desktop
