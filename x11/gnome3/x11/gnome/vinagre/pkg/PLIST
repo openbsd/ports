@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/16 06:28:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/26 15:19:31 ajacoutot Exp $
 @bin bin/vinagre
 include/vinagre-3.0/
 include/vinagre-3.0/vinagre/
@@ -31,14 +31,14 @@ lib/vinagre-3.0/girepository-1.0/Vinagre-3.0.typelib
 lib/vinagre-3.0/plugins/
 lib/vinagre-3.0/plugins/im-status.js
 lib/vinagre-3.0/plugins/im-status.plugin
-lib/vinagre-3.0/plugins/librdp.a
-lib/vinagre-3.0/plugins/librdp.la
+@comment lib/vinagre-3.0/plugins/librdp.a
+@comment lib/vinagre-3.0/plugins/librdp.la
 lib/vinagre-3.0/plugins/librdp.so
-lib/vinagre-3.0/plugins/libreversevnc.a
-lib/vinagre-3.0/plugins/libreversevnc.la
+@comment lib/vinagre-3.0/plugins/libreversevnc.a
+@comment lib/vinagre-3.0/plugins/libreversevnc.la
 lib/vinagre-3.0/plugins/libreversevnc.so
-lib/vinagre-3.0/plugins/libvnc.a
-lib/vinagre-3.0/plugins/libvnc.la
+@comment lib/vinagre-3.0/plugins/libvnc.a
+@comment lib/vinagre-3.0/plugins/libvnc.la
 lib/vinagre-3.0/plugins/libvnc.so
 lib/vinagre-3.0/plugins/rdp.plugin
 lib/vinagre-3.0/plugins/reverse-vnc.plugin
