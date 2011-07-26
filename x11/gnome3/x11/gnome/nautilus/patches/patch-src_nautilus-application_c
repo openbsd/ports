@@ -1,25 +1,24 @@
-$OpenBSD: patch-src_nautilus-application_c,v 1.1 2011/06/16 12:50:49 ajacoutot Exp $
+$OpenBSD: patch-src_nautilus-application_c,v 1.2 2011/07/26 07:04:27 ajacoutot Exp $
 
-https://bugzilla.gnome.org/show_bug.cgi?id=652724
+From 3caf41765453c3c4cf9a73aae87b185d099598f9 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Mon, 20 Jun 2011 16:34:47 +0000
+Subject: Turn nautilus_window_close() into a virtual method.
 
---- src/nautilus-application.c.orig	Thu Jun 16 14:31:06 2011
-+++ src/nautilus-application.c	Thu Jun 16 14:31:20 2011
-@@ -567,14 +567,16 @@ nautilus_application_close_all_windows (NautilusApplic
- 		NautilusWindow *window;
- 		
- 		window = NAUTILUS_WINDOW (l->data);
+--- src/nautilus-application.c.orig	Tue May 24 20:46:25 2011
++++ src/nautilus-application.c	Tue Jul 26 08:55:15 2011
+@@ -562,14 +562,6 @@ nautilus_application_close_all_windows (NautilusApplic
+ 	GList *l;
+ 	
+ 	list_copy = g_list_copy (gtk_application_get_windows (GTK_APPLICATION (self)));
+-	/* First hide all window to get the feeling of quick response */
+-	for (l = list_copy; l != NULL; l = l->next) {
+-		NautilusWindow *window;
+-		
+-		window = NAUTILUS_WINDOW (l->data);
 -		gtk_widget_hide (GTK_WIDGET (window));
-+		if (!NAUTILUS_IS_DESKTOP_WINDOW (window))
-+			gtk_widget_hide (GTK_WIDGET (window));
- 	}
- 
+-	}
+-
  	for (l = list_copy; l != NULL; l = l->next) {
  		NautilusWindow *window;
  		
- 		window = NAUTILUS_WINDOW (l->data);
--		nautilus_window_close (window);
-+		if (!NAUTILUS_IS_DESKTOP_WINDOW (window))
-+			nautilus_window_close (window);
- 	}
- 	g_list_free (list_copy);
- }
