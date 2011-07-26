@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/15 08:11:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/26 06:05:58 ajacoutot Exp $
 
 COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
-GNOME_VERSION=		3.1.3
+GNOME_VERSION=		3.1.4
 
 EXTRACT_SUFX=		.tar.xz
 
