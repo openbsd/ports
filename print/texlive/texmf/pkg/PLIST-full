@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-full,v 1.12 2011/06/13 16:40:52 edd Exp $
+@comment $OpenBSD: PLIST-full,v 1.13 2011/07/26 18:04:57 edd Exp $
 @conflict teTeX_texmf-*
 @conflict texlive_texmf-docs-<2010
 @conflict texlive_texmf-minimal-<2010
@@ -27624,11 +27624,11 @@ share/texmf/tex/context/
 share/texmf/tex/context/asymptote/
 share/texmf/tex/context/asymptote/colo-asy.tex
 share/texmf/tex/latex/
-share/texmf/tex/latex/asymptote/
-share/texmf/tex/latex/asymptote/asycolors.sty
-share/texmf/tex/latex/asymptote/asymptote.sty
-share/texmf/tex/latex/asymptote/latexmkrc
-share/texmf/tex/latex/asymptote/ocg.sty
+@comment share/texmf/tex/latex/asymptote/
+@comment share/texmf/tex/latex/asymptote/asycolors.sty
+@comment share/texmf/tex/latex/asymptote/asymptote.sty
+@comment share/texmf/tex/latex/asymptote/latexmkrc
+@comment share/texmf/tex/latex/asymptote/ocg.sty
 share/texmf/texdoc/
 share/texmf/texdoc/texdoc.cnf
 share/texmf/texdoctk/
