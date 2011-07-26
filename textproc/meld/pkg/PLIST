@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/05/09 17:38:56 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/07/26 15:19:10 ajacoutot Exp $
 bin/meld
 lib/python${MODPY_VERSION}/site-packages/meld/
 lib/python${MODPY_VERSION}/site-packages/meld/meld/
@@ -20,6 +20,9 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/filediff.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/filemerge.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/filemerge.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/filemerge.pyo
+lib/python${MODPY_VERSION}/site-packages/meld/meld/linkmap.py
+lib/python${MODPY_VERSION}/site-packages/meld/meld/linkmap.pyc
+lib/python${MODPY_VERSION}/site-packages/meld/meld/linkmap.pyo
 lib/python${MODPY_VERSION}/site-packages/meld/meld/matchers.py
 lib/python${MODPY_VERSION}/site-packages/meld/meld/matchers.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/matchers.pyo
@@ -151,6 +154,8 @@ lib/python${MODPY_VERSION}/site-packages/meld/meld/vcview.pyc
 lib/python${MODPY_VERSION}/site-packages/meld/meld/vcview.pyo
 share/applications/meld.desktop
 share/doc/meld/
+share/gnome/
+share/gnome/help/
 share/gnome/help/meld/
 share/gnome/help/meld/C/
 share/gnome/help/meld/C/meld.xml
@@ -233,6 +238,7 @@ share/meld/ui/patch-dialog.ui
 share/meld/ui/preferences.ui
 share/meld/ui/vcview-ui.xml
 share/meld/ui/vcview.ui
+share/omf/
 share/omf/meld/
 share/omf/meld/meld-C.omf
 share/omf/meld/meld-es.omf
