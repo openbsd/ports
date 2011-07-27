@@ -1,5 +1,4 @@
-Imager is a perl module for creating and manipulating 24 bit images.
-
-Flavors:
-	libs  - build with t1, freetype, png, jpeg, tiff
-		graphic libraries
+Imager is a module for creating and altering images. It can read and
+write various image formats, draw primitive shapes like lines,and
+polygons, blend multiple images together in various ways, scale, crop,
+render text and more.
