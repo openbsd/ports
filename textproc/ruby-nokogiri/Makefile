@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2011/03/25 16:46:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2011/07/27 18:17:09 jeremy Exp $
 
 COMMENT=		HTML, XML, SAX and Reader parser
 
-DISTNAME=		nokogiri-1.4.4
+DISTNAME=		nokogiri-1.5.0
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://nokogiri.rubyforge.org/nokogiri
@@ -25,8 +25,8 @@ MODULES=		lang/ruby converters/libiconv
 CONFIGURE_STYLE=	ruby gem ext
 
 MODRUBY_REGRESS=	rake
-REGRESS_DEPENDS =	devel/ruby-rake-compiler,${MODRUBY_FLAVOR} \
-			devel/ruby-minitest,${MODRUBY_FLAVOR}>=2.0.2 \
+REGRESS_DEPENDS =	devel/ruby-rake-compiler,${MODRUBY_FLAVOR}>=0.7.9 \
+			devel/ruby-minitest,${MODRUBY_FLAVOR}>=2.2.2 \
 			devel/ruby-hoe,${MODRUBY_FLAVOR}>=2.8.0
 
 .include <bsd.port.mk>
