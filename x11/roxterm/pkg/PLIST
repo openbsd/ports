@@ -1,26 +1,43 @@
-@comment $OpenBSD: PLIST,v 1.6 2009/12/21 20:46:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/07/27 09:49:58 pea Exp $
 @bin bin/roxterm
 @bin bin/roxterm-config
+man/es/
+man/es/man1/
+@man man/es/man1/roxterm-config.1
+@man man/es/man1/roxterm.1
+@man man/man1/roxterm-config.1
+@man man/man1/roxterm.1
 share/applications/roxterm.desktop
 share/doc/roxterm/
-share/doc/roxterm/imgs/
-share/doc/roxterm/imgs/project-support.jpg
-share/doc/roxterm/imgs/roxterm_logo.png
-share/doc/roxterm/imgs/sflogo.png
-share/doc/roxterm/index.html
+share/doc/roxterm/en/
+share/doc/roxterm/en/guide.html
+share/doc/roxterm/en/index.html
+share/doc/roxterm/en/installation.html
+share/doc/roxterm/en/news.html
+share/doc/roxterm/es/
+share/doc/roxterm/es/guide.html
+share/doc/roxterm/es/index.html
+share/doc/roxterm/es/installation.html
+share/doc/roxterm/es/news.html
+share/doc/roxterm/lib/
+share/doc/roxterm/lib/favicon.ico
+share/doc/roxterm/lib/header.png
+share/doc/roxterm/lib/logo_text.png
+share/doc/roxterm/lib/roxterm.css
+share/doc/roxterm/lib/roxterm_ie.css
+share/doc/roxterm/lib/roxterm_logo.png
+share/doc/roxterm/lib/sprites.png
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/roxterm.svg
-share/locale/en/LC_MESSAGES/roxterm.mo
-share/locale/en_GB/
-share/locale/en_GB/LC_MESSAGES/
-share/locale/en_GB/LC_MESSAGES/roxterm.mo
+share/locale/es/LC_MESSAGES/roxterm.mo
 share/roxterm/
 share/roxterm/Config/
 share/roxterm/Config/Colours/
 share/roxterm/Config/Colours/GTK
+share/roxterm/Config/Colours/Tango
 share/roxterm/Config/Shortcuts/
 share/roxterm/Config/Shortcuts/Default
 share/roxterm/roxterm-config.glade
