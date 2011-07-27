@@ -1,0 +1,16 @@
+$OpenBSD: patch-data_ui_rhythmbox-ui_xml,v 1.1.1.1 2011/07/27 10:07:50 ajacoutot Exp $
+
+audiocd plugin requires cdda support in gvfs which we do not provide as
+this would require HAL or gudev.
+
+--- data/ui/rhythmbox-ui.xml.orig	Sat Jul 23 09:20:55 2011
++++ data/ui/rhythmbox-ui.xml	Sat Jul 23 09:21:27 2011
+@@ -4,8 +4,6 @@
+       <menuitem name="MusicImportFileMenu" action="MusicImportFile"/>
+       <menuitem name="MusicImportFolderMenu" action="MusicImportFolder"/>
+       <separator/>
+-      <menuitem name="MusicCheckDevices" action="MusicCheckDevices"/>
+-      <separator/>
+       <menu name="PlaylistMenu" action="Playlist">
+ 	<menuitem name="MusicPlaylistNewPlaylistMenu" action="MusicPlaylistNewPlaylist"/>
+ 	<menuitem name="MusicPlaylistNewAutomaticPlaylistMenu" action="MusicPlaylistNewAutomaticPlaylist"/>
