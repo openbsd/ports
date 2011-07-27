@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_utils_aLinkCreator_docs_Makefile_in,v 1.1 2011/07/27 13:11:59 dcoppa Exp $
+--- src/utils/aLinkCreator/docs/Makefile.in.orig	Wed Jul 27 13:14:32 2011
++++ src/utils/aLinkCreator/docs/Makefile.in	Wed Jul 27 13:15:04 2011
+@@ -467,7 +467,7 @@ uninstall-am: uninstall-info-am
+ 
+ install-data-hook:
+ 	@test -z "`echo $(SELECTED_MANPAGES)`" || \
+-	for file in $(SELECTED_MANPAGES); do \
++	for file in `echo $(SELECTED_MANPAGES) | sed -e 's/.orig//g'`; do \
+ 		lang=`echo $$file |  sed -e 's/^[^.]*\.//'`; \
+ 		if test $$lang = 1; then \
+ 			echo " $(mkinstalldirs) $(DESTDIR)$(mandir)/man1" ; \

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2011/06/24 08:42:31 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2011/07/27 13:11:59 dcoppa Exp $
 @pkgpath net/amule
 @bin bin/alc
 @bin bin/alcc
@@ -99,17 +99,16 @@ share/cas/
 share/cas/stat.png
 share/cas/tmp.html
 share/doc/amule/
-@comment share/doc/amule/Doxyfile
 @comment share/doc/amule/ABOUT-NLS
 @comment share/doc/amule/Changelog
-@comment share/doc/amule/EC_Protocol.txt
+share/doc/amule/EC_Protocol.txt
 share/doc/amule/ED2K-Links.HOWTO
 @comment share/doc/amule/INSTALL
 share/doc/amule/README
 @comment share/doc/amule/TODO
 @comment share/doc/amule/amule-win32.HOWTO.txt
 share/doc/amule/amulesig.txt
-share/doc/amule/license.txt
+@comment share/doc/amule/license.txt
 @comment share/doc/amule/socks4.protocol
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
