@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.295 2011/07/08 07:19:43 naddy Exp $
+# $OpenBSD: Makefile,v 1.296 2011/07/27 15:31:19 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -128,6 +128,7 @@
      SUBDIR += libmng
      SUBDIR += libmpeg2
      SUBDIR += libpano13
+     SUBDIR += libqrencode
      SUBDIR += libraw
      SUBDIR += libungif
      SUBDIR += libvidcap
