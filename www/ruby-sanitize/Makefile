@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/27 06:45:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/27 18:21:54 jeremy Exp $
 
 COMMENT=		whitelist-based HTML sanitizer
 
-DISTNAME=		sanitize-2.0.2
+DISTNAME=		sanitize-2.0.3
 CATEGORIES=		www textproc
 
 HOMEPAGE=		https://github.com/rgrove/sanitize/
@@ -14,7 +14,7 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=            textproc/ruby-nokogiri,${MODRUBY_FLAVOR}
+RUN_DEPENDS=            textproc/ruby-nokogiri,${MODRUBY_FLAVOR}>=1.4.4,<1.6
 
 MODULES=		lang/ruby
 CONFIGURE_STYLE=	ruby gem
