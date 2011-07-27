@@ -1,13 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/03/25 16:45:20 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/07/27 18:13:57 jeremy Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.autotest
+${GEM_LIB}/gems/${DISTNAME}/.gemtest
 ${GEM_LIB}/gems/${DISTNAME}/History.txt
 ${GEM_LIB}/gems/${DISTNAME}/Manifest.txt
 ${GEM_LIB}/gems/${DISTNAME}/README.txt
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/design_rationale.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/hoe/
+${GEM_LIB}/gems/${DISTNAME}/lib/hoe/minitest.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/minitest/
 ${GEM_LIB}/gems/${DISTNAME}/lib/minitest/autorun.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/minitest/benchmark.rb
