@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/17 08:05:15 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/07/27 15:16:19 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	generate and manipulate images
 
 DISTNAME=	Imager-0.61
-REVISION=	2
+REVISION=	3
 CATEGORIES=	graphics
 MODULES=	cpan
 
@@ -27,7 +27,7 @@ FLAVOR?=
 LIB_DEPENDS=	devel/t1lib \
 		graphics/png \
 		graphics/jpeg \
-		:graphics/tiff
+		graphics/tiff
 WANTLIB +=	t1>=3 png>=2 jpeg>=62 tiff>=35
 CONFIGURE_ARGS=	--enable jpeg,tiff,png,ungif,T1-fonts,freetype2 \
 		--incpath="${LOCALBASE}/include:${X11BASE}/include" \
