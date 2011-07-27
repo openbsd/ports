@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/24 14:44:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/07/27 18:20:49 edd Exp $
 
 COMMENT=		powerful descriptive vector graphics language
 
 DISTNAME=		asymptote-2.10.src
 PKGNAME=		${DISTNAME:S/.src//g}
-REVISION =		0
+REVISION =		1
 CATEGORIES=		graphics
 
 HOMEPAGE=		http://asymptote.sourceforge.net/
@@ -25,7 +25,7 @@ WANTLIB += gc glut gsl gslcblas sigsegv fftw3
 
 BUILD_DEPENDS=		print/texlive/base
 RUN_DEPENDS=		graphics/py-Imaging \
-			print/texlive/base \
+			print/texlive/texmf,-full \
 			${MODPY_TKINTER_DEPENDS}
 
 LIB_DEPENDS=		devel/boehm-gc \
