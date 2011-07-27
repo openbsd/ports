@@ -1,10 +1,10 @@
-#       $OpenBSD: Makefile,v 1.2 2010/10/27 09:36:34 jasper Exp $
+#       $OpenBSD: Makefile,v 1.3 2011/07/27 18:17:27 todd Exp $
 # Makefile prepared Sat Feb 13 11:r7:14 PST 2010 by Ted Walther <ted@reactor-core.org>
 
 COMMENT=	newLISP is a LISP like, general purpose scripting language
-DISTNAME=	newlisp-10.2.16
+V=		10.3.2
+DISTNAME=	newlisp-$V
 CATEGORIES=	lang
-REVISION=	0
 HOMEPAGE=	http://newlisp.org/
 MAINTAINER=	Ted Walther <ted@reactor-core.org>
 
@@ -27,5 +27,6 @@ CONFIGURE_ARGS +=	--enable-readline
 REGRESS_TARGET=		check
 
 WRKBUILD=		${WRKSRC}
+SUBST_VARS=		V
 
 .include <bsd.port.mk>
