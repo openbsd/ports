@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.10 2011/07/06 18:57:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/27 07:08:50 ajacoutot Exp $
+
+BROKEN=		does not work with new FFmpeg
 
 COMMENT=	video converter for the Playstation Portable
 
