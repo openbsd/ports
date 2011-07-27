@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure,v 1.1 2011/07/14 09:07:53 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2011/07/27 10:39:00 jasper Exp $
 
 Let configure pickup the right bison; can be removed when updating
 to a stable release.
 
---- configure.orig	Thu Jul 14 09:48:55 2011
-+++ configure	Thu Jul 14 09:48:57 2011
-@@ -4731,9 +4731,10 @@ fi
+--- configure.orig	Mon Jul 25 10:55:12 2011
++++ configure	Wed Jul 27 12:12:47 2011
+@@ -4733,9 +4733,10 @@ fi
  done
  test -n "$YACC" || YACC="yacc"
  
