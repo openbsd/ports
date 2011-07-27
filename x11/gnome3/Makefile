@@ -1,6 +1,7 @@
-# $OpenBSD: Makefile,v 1.25 2011/07/13 13:11:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/07/27 10:07:33 ajacoutot Exp $
 
      SUBDIR =
+     SUBDIR += audio
      SUBDIR += databases
      SUBDIR += devel
      SUBDIR += graphics
