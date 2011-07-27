@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/27 10:48:21 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/27 11:00:03 jasper Exp $
 @bin bin/gitg
 include/libgitg-1.0/
 include/libgitg-1.0/libgitg/
@@ -67,8 +67,10 @@ share/locale/nl/LC_MESSAGES/gitg.mo
 share/locale/pa/LC_MESSAGES/gitg.mo
 share/locale/pt_BR/LC_MESSAGES/gitg.mo
 share/locale/ro/LC_MESSAGES/gitg.mo
+share/locale/ru/LC_MESSAGES/gitg.mo
 share/locale/sl/LC_MESSAGES/gitg.mo
 share/locale/sv/LC_MESSAGES/gitg.mo
+share/locale/uk/LC_MESSAGES/gitg.mo
 share/locale/zh_CN/LC_MESSAGES/gitg.mo
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
