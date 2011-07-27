@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/06/02 00:13:41 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/07/27 03:41:26 jeremy Exp $
 ${GEM_BIN}/edit_json.rb${GEM_BIN_SUFFIX}
 ${GEM_BIN}/prettify_json.rb${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
@@ -8,8 +8,9 @@ ${GEM_LIB}/gems/${DISTNAME}/CHANGES
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
 ${GEM_LIB}/gems/${DISTNAME}/COPYING-json-jruby
 ${GEM_LIB}/gems/${DISTNAME}/GPL
-${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/README-json-jruby.markdown
+${GEM_LIB}/gems/${DISTNAME}/README.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/TODO
 ${GEM_LIB}/gems/${DISTNAME}/VERSION
@@ -105,6 +106,8 @@ ${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/StringDecoder.java
 ${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/StringEncoder.java
 ${GEM_LIB}/gems/${DISTNAME}/java/src/json/ext/Utils.java
 ${GEM_LIB}/gems/${DISTNAME}/json-java.gemspec
+${GEM_LIB}/gems/${DISTNAME}/json.gemspec
+${GEM_LIB}/gems/${DISTNAME}/json_pure.gemspec
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/json/
 ${GEM_LIB}/gems/${DISTNAME}/lib/json.rb
