@@ -1,5 +1,3 @@
 gitg is a git repository viewer targeting gtk+/GNOME. One of its main
 objectives is to provide a more unified user experience for git
-frontends across multiple desktops. It does this not be writing a
-cross-platform application, but by close collaboration with similar
-clients for other operating systems (like GitX for OS X).
+frontends across multiple desktops.
