@@ -1,7 +1,25 @@
-$OpenBSD: patch-src_Makefile,v 1.1 2011/03/21 19:58:28 simon Exp $
---- src/Makefile.orig	Fri Mar  4 16:31:20 2011
-+++ src/Makefile	Sun Mar 20 18:05:46 2011
-@@ -21,7 +21,7 @@ ifeq ($(USE_TCMALLOC),yes)
+$OpenBSD: patch-src_Makefile,v 1.2 2011/07/28 08:57:32 dcoppa Exp $
+--- src/Makefile.orig	Fri Jul 22 12:22:26 2011
++++ src/Makefile	Wed Jul 27 09:41:11 2011
+@@ -4,7 +4,7 @@
+ 
+ release_hdr := $(shell sh -c './mkreleasehdr.sh')
+ uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
+-OPTIMIZATION?=-O2
++# OPTIMIZATION?=-O2
+ 
+ CCCOLOR="\033[34m"
+ LINKCOLOR="\033[34;1m"
+@@ -25,7 +25,7 @@ ifeq ($(uname_S),SunOS)
+ else
+   CFLAGS?= -std=c99 -pedantic $(OPTIMIZATION) -Wall -W $(ARCH) $(PROF)
+   CCLINK?= -lm -pthread
+-  DEBUG?= -g -rdynamic -ggdb 
++# DEBUG?= -g -rdynamic -ggdb 
+ endif
+ 
+ ifeq ($(USE_TCMALLOC),yes)
+@@ -34,10 +34,14 @@ ifeq ($(USE_TCMALLOC),yes)
  endif
  CCOPT= $(CFLAGS) $(CCLINK) $(ARCH) $(PROF)
  
@@ -10,8 +28,32 @@ $OpenBSD: patch-src_Makefile,v 1.1 2011/03/21 19:58:28 simon Exp $
  INSTALL_BIN= $(PREFIX)/bin
  INSTALL= cp -p
  
-@@ -142,7 +142,7 @@ dep:
- 	$(CC) -MM *.c
++ifndef INSTALL_DIR
++  INSTALL_DIR= mkdir -p
++endif
++
+ OBJ = adlist.o ae.o anet.o dict.o redis.o sds.o zmalloc.o lzf_c.o lzf_d.o pqsort.o zipmap.o sha1.o ziplist.o release.o networking.o util.o object.o db.o replication.o rdb.o t_string.o t_list.o t_set.o t_zset.o t_hash.o config.o aof.o vm.o pubsub.o multi.o debug.o sort.o intset.o syncio.o slowlog.o
+ BENCHOBJ = ae.o anet.o redis-benchmark.o sds.o adlist.o zmalloc.o
+ CLIOBJ = anet.o sds.o adlist.o redis-cli.o zmalloc.o release.o
+@@ -124,16 +128,13 @@ zipmap.o: zipmap.c zmalloc.h
+ zmalloc.o: zmalloc.c config.h zmalloc.h
+ 
+ dependencies:
+-	@printf '%b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)hiredis$(ENDCOLOR)
+ 	cd ../deps/hiredis && $(MAKE) static ARCH="$(ARCH)"
+-	@printf '%b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)linenoise$(ENDCOLOR)
+ 	cd ../deps/linenoise && $(MAKE) ARCH="$(ARCH)"
+ 
+ redis-server: $(OBJ)
+ 	$(QUIET_LINK)$(CC) -o $(PRGNAME) $(CCOPT) $(DEBUG) $(OBJ)
+ 
+ redis-benchmark: dependencies $(BENCHOBJ)
+-	@printf '%b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)hiredis$(ENDCOLOR)
+ 	cd ../deps/hiredis && $(MAKE) static ARCH="$(ARCH)"
+ 	$(QUIET_LINK)$(CC) -o $(BENCHPRGNAME) $(CCOPT) $(DEBUG) $(BENCHOBJ) ../deps/hiredis/libhiredis.a
+ 
+@@ -162,7 +163,7 @@ dep:
+ 	$(CC) -MM *.c -I ../deps/hiredis -I ../deps/linenoise
  
  test: redis-server
 -	(cd ..; tclsh8.5 tests/test_helper.tcl --tags "${TAGS}" --file "${FILE}")
@@ -19,3 +61,12 @@ $OpenBSD: patch-src_Makefile,v 1.1 2011/03/21 19:58:28 simon Exp $
  
  bench:
  	./redis-benchmark
+@@ -189,7 +190,7 @@ noopt:
+ 	$(MAKE) PROF="-pg" ARCH="-arch i386"
+ 
+ install: all
+-	mkdir -p $(INSTALL_BIN)
++	$(INSTALL_DIR) $(INSTALL_BIN)
+ 	$(INSTALL) $(PRGNAME) $(INSTALL_BIN)
+ 	$(INSTALL) $(BENCHPRGNAME) $(INSTALL_BIN)
+ 	$(INSTALL) $(CLIPRGNAME) $(INSTALL_BIN)

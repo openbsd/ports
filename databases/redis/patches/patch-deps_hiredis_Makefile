@@ -1,0 +1,40 @@
+$OpenBSD: patch-deps_hiredis_Makefile,v 1.1 2011/07/28 08:57:32 dcoppa Exp $
+--- deps/hiredis/Makefile.orig	Fri Jul 22 12:22:26 2011
++++ deps/hiredis/Makefile	Wed Jul 27 09:40:00 2011
+@@ -6,7 +6,7 @@ OBJ = net.o hiredis.o sds.o async.o
+ BINS = hiredis-example hiredis-test
+ 
+ uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
+-OPTIMIZATION?=-O3
++# OPTIMIZATION?=-O3
+ ifeq ($(uname_S),SunOS)
+   CFLAGS?=-std=c99 -pedantic $(OPTIMIZATION) -fPIC -Wall -W -D__EXTENSIONS__ -D_XPG6 $(ARCH) $(PROF)
+   CCLINK?=-ldl -lnsl -lsocket -lm -lpthread
+@@ -37,13 +37,17 @@ endif
+ endif
+ 
+ CCOPT= $(CFLAGS) $(CCLINK)
+-DEBUG?= -g -ggdb
++# DEBUG?= -g -ggdb
+ 
+ PREFIX?= /usr/local
+ INSTALL_INC= $(PREFIX)/include/hiredis
+ INSTALL_LIB= $(PREFIX)/lib
+ INSTALL= cp -a
+ 
++ifndef INSTALL_DIR
++  INSTALL_DIR= mkdir -p
++endif
++
+ all: ${DYLIBNAME} ${BINS}
+ 
+ # Deps (use make dep to generate this)
+@@ -95,7 +99,7 @@ dep:
+ 	$(CC) -MM *.c
+ 
+ install: ${DYLIBNAME} ${STLIBNAME}
+-	mkdir -p $(INSTALL_INC) $(INSTALL_LIB)
++	$(INSTALL_DIR) $(INSTALL_INC) $(INSTALL_LIB)
+ 	$(INSTALL) hiredis.h async.h adapters $(INSTALL_INC)
+ 	$(INSTALL) ${DYLIBNAME} ${STLIBNAME} $(INSTALL_LIB)
+ 

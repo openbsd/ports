@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.12 2011/06/27 13:11:32 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.13 2011/07/28 08:57:32 dcoppa Exp $
 
 COMMENT =		persistent key-value database
-DISTNAME =		redis-2.2.11
+DISTNAME =		redis-2.2.12
 CATEGORIES =		databases
 HOMEPAGE =		http://redis.io/
 
@@ -21,8 +21,11 @@ USE_GMAKE =		Yes
 
 FAKE_FLAGS =		INSTALL_TOP=${WRKINST}${PREFIX}
 
-# Replace cp by install
-MAKE_FLAGS =		INSTALL="${INSTALL_PROGRAM}"
+# Replace cp/mkdir with our install commands
+# Enable verbose compilation
+MAKE_FLAGS =		INSTALL="${INSTALL_PROGRAM}" \
+			INSTALL_DIR="${INSTALL_DATA_DIR}" \
+			V=1
 
 WANTLIB += 		c m pthread
 
