@@ -1,9 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.5 2010/11/09 18:44:14 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/07/28 08:37:43 robert Exp $
 bin/facter
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/Cfkey.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/application.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/architecture.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/arp.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/domain.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/ec2.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/facterversion.rb
@@ -14,6 +16,7 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/hostname.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/id.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/interfaces.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/ipaddress.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/ipaddress6.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/iphostnumber.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/kernel.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/kernelmajversion.rb
@@ -50,6 +53,7 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/util/confine.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/util/fact.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/util/ip.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/util/loader.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/util/macaddress.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/util/macosx.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/util/manufacturer.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/util/memory.rb
@@ -63,8 +67,10 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/util/uptime.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/util/values.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/util/virtual.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/util/vlans.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/util/xendomains.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/virtual.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/vlans.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/facter/xendomains.rb
 ${MODRUBY_RELEXAMPLEDIR}/
 ${MODRUBY_RELEXAMPLEDIR}/facter/
 ${MODRUBY_RELEXAMPLEDIR}/facter/facter.conf
