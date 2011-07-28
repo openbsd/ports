@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.131 2011/07/28 08:12:50 landry Exp $
+# $OpenBSD: Makefile,v 1.132 2011/07/28 20:30:30 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
+COMMENT-enigmail =	Mozilla Thunderbird GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
@@ -12,11 +13,18 @@ MOZILLA_BRANCH =	miramar
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
 
-MULTI_PACKAGES =	-main -lightning
+MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
 REVISION-main =		0
 PKGNAME-lightning =	lightning-1.0beta4
+PKGNAME-enigmail =	enigmail-1.2
+REVISION-enigmail =	0
 EPOCH-lightning =	0
+
+MASTER_SITES0 =	http://www.mozilla-enigmail.org/download/source/
+DISTFILES +=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}.source.tar.bz2 \
+		enigmail-1.2.tar.gz:0
+EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
 # need to be in synch with SO_VERSION in mail/enigmail/thunderbird
 SO_VERSION =	18.0
@@ -25,7 +33,7 @@ SO_VERSION =	18.0
 # bumped and/or SO_VERSION changes, remember to update enigmail's
 # SO_VERSION and LIB_DEPENDS to match.
 
-MOZILLA_LIBS = ldap60 ldif60 mozalloc prldap60 xpcom xul calbasecomps
+MOZILLA_LIBS = ldap60 ldif60 mozalloc prldap60 xpcom xul calbasecomps enigmime ipc
 
 #.if ${FLAVOR:L:Mdebug}
 #MOZILLA_LIBS +=	addrbook bayesflt fts3tok mailview mime mimeemitter msgbase \
@@ -66,6 +74,10 @@ WANTLIB-lightning =	lib/thunderbird-${MOZILLA_VERSION}/xpcom \
 			c m stdc++ nspr4 plc4 plds4
 BUILD_DEPENDS +=	archivers/unzip #to unzip xpi
 
+RUN_DEPENDS-enigmail =	security/gnupg
+LIB_DEPENDS-enigmail =	${LIB_DEPENDS-lightning}
+WANTLIB-enigmail =	${WANTLIB-lightning}
+
 # build lightning xpi
 CONFIGURE_ARGS +=	--enable-calendar \
 			--enable-official-branding
@@ -75,10 +87,22 @@ ALL_TARGET =	default
 MOZILLA_AUTOCONF_DIRS =		ldap/sdks/c-sdk mozilla mozilla/js/src
 MOZILLA_SUBST_FILES +=		config/autoconf.mk.in
 
+ENIGMAIL_DIR =	${WRKSRC}/mailnews/extensions/enigmail
+
+post-build:
+	# build enigmail
+	cd ${ENIGMAIL_DIR} && ./makemake -r
+	cd ${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM}
+	cd ${MOB}/chrome/enigmail && zip -r ../enigmail.jar .
+	cd ${ENIGMAIL_DIR} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} xpi
+
+GNU_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}
 # guid for gdata-provider comes from em:id in install.rdf
 GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} \
 	lightning {e2fda1a4-762b-4020-b5ad-a41df1933103} \
-	calendar-timezones calendar-timezones@mozilla.org
+	calendar-timezones calendar-timezones@mozilla.org \
+	../bin/enigmail-1.2-openbsd-${GNU_ARCH} {847b3a00-7ab1-11d4-8f02-006008948af5}
+
 EXTDIR =	${PREFIX}/lib/${_MOZ_PROJECT_SHORT}-${MOZILLA_VERSION}/extensions/
 post-install:
 .for xpi guid in ${GUIDS}

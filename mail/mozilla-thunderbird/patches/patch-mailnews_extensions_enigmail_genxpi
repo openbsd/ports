@@ -1,0 +1,32 @@
+$OpenBSD: patch-mailnews_extensions_enigmail_genxpi,v 1.1 2011/07/28 20:30:30 landry Exp $
+Remove ABI=xxx marker and xpcomAbi from lib naming.
+--- mailnews/extensions/enigmail/genxpi.orig	Sun Jul 24 20:58:41 2011
++++ mailnews/extensions/enigmail/genxpi	Sun Jul 24 20:58:42 2011
+@@ -62,7 +62,7 @@ cd "$cwd"
+ if [ "$xpcomAbi" = "" ] ; then
+   xpcomAbi="unknown"
+ fi
+-platform=${osArch}_${xpcomAbi}
++platform=${osArch}
+ # Pepare install.rdf
+ sed 's/<!-- targetPlatform placeholder -->/<em:targetPlatform>'${platform}'<\/em:targetPlatform>/' < ${srcDir}/package/install.rdf > ${targetDir}/install.rdf.t1
+ 
+@@ -74,14 +74,14 @@ if [ ${platform} = OS2_x86-gcc3 ]; then
+   enigDllFile=platform/${platform}/components/${enigmimeDll}
+   ipcDllFile=platform/${platform}/components/${ipcDll}
+ else
+-  enigDllFile=platform/${platform}/components/${libPrefix}enigmime-${xpcomAbi}${dllSuffix}
+-  ipcDllFile=platform/${platform}/components/${libPrefix}ipc-${xpcomAbi}${dllSuffix}
++  enigDllFile=platform/${platform}/components/${libPrefix}enigmime${dllSuffix}
++  ipcDllFile=platform/${platform}/components/${libPrefix}ipc${dllSuffix}
+ fi
+ 
+ # Prepare chrome.manifest
+ cat  ${srcDir}/package/chrome.manifest | \
+-sed  's/##ENIGMIMEDLL-PLACEHOLDER##/binary-component platform\/'${platform}'\/components\/'`basename ${enigDllFile}`' ABI='${platform}'/' | \
+-sed  's/##IPCDLL-PLACEHOLDER##/binary-component platform\/'${platform}'\/components\/'`basename ${ipcDllFile}`' ABI='${platform}'/' \
++sed  's/##ENIGMIMEDLL-PLACEHOLDER##/binary-component platform\/'${platform}'\/components\/'`basename ${enigDllFile}`'/' | \
++sed  's/##IPCDLL-PLACEHOLDER##/binary-component platform\/'${platform}'\/components\/'`basename ${ipcDllFile}`'/' \
+ > ${targetDir}/chrome.manifest
+ 
+ # Prepare languages other than en-US
