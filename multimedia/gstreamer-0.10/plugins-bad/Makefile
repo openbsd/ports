@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2011/07/11 04:26:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2011/07/28 06:44:13 ajacoutot Exp $
 
 COMMENT-main =		bad elements for GStreamer
 COMMENT-neon =		neon element for GStreamer (plugins-bad)
@@ -11,7 +11,7 @@ PKGNAME-main =		gstreamer-plugins-bad-${V}
 PKGNAME-neon =		gstreamer-neon-${V}
 PKGNAME-mjpeg =		gstreamer-mjpeg-${V}
 
-REVISION-main =		3
+REVISION-main =		4
 REVISION-neon =		0
 REVISION-mjpeg =	0
 
@@ -34,7 +34,8 @@ REGRESS_DEPENDS +=	${BASE_PKGPATH},${i}
 
 LIB_DEPENDS =		${P}/core>=0.10
 RUN_DEPENDS =		${BUILD_PKGPATH}
-BUILD_DEPENDS +=        audio/ladspa
+BUILD_DEPENDS +=        audio/ladspa \
+			graphics/libexif
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += BPM GL SDL SoundTouch X11 Xau Xdamage Xdmcp Xext Xfixes
@@ -58,7 +59,6 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			audio/soundtouch \
 			devel/sdl \
 			graphics/jasper \
-			graphics/libexif \
 			multimedia/libass \
 			multimedia/libmms \
 			multimedia/libvpx \
