@@ -1,0 +1,34 @@
+$OpenBSD: patch-mozilla_modules_libimg_png_pngerror_c,v 1.1 2011/07/28 08:12:50 landry Exp $
+Fix for CVE-2011-2691 backported from png 1.4.8
+--- mozilla/modules/libimg/png/pngerror.c.orig	Fri Jun 24 22:18:28 2011
++++ mozilla/modules/libimg/png/pngerror.c	Tue Jul 26 22:55:43 2011
+@@ -88,11 +88,11 @@ void PNGAPI
+ png_err(png_structp png_ptr)
+ {
+    if (png_ptr != NULL && png_ptr->error_fn != NULL)
+-      (*(png_ptr->error_fn))(png_ptr, '\0');
++      (*(png_ptr->error_fn))(png_ptr, "");
+ 
+    /* If the custom handler doesn't exist, or if it returns,
+       use the default handler, which will not return. */
+-   png_default_error(png_ptr, '\0');
++   png_default_error(png_ptr, "");
+ }
+ #endif /* PNG_ERROR_TEXT_SUPPORTED */
+ 
+@@ -181,8 +181,13 @@ png_format_buffer(png_structp png_ptr, png_charp buffe
+    {
+       buffer[iout++] = ':';
+       buffer[iout++] = ' ';
+-      png_memcpy(buffer + iout, error_message, PNG_MAX_ERROR_TEXT);
+-      buffer[iout + PNG_MAX_ERROR_TEXT - 1] = '\0';
++
++      iin = 0;
++      while (iin < PNG_MAX_ERROR_TEXT-1 && error_message[iin] != '\0')
++         buffer[iout++] = error_message[iin++];
++
++      /* iin < PNG_MAX_ERROR_TEXT, so the following is safe: */
++      buffer[iout] = '\0';
+    }
+ }
+ 
