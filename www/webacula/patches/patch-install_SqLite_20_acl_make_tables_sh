@@ -1,0 +1,12 @@
+$OpenBSD: patch-install_SqLite_20_acl_make_tables_sh,v 1.1 2011/07/28 09:24:35 ajacoutot Exp $
+--- install/SqLite/20_acl_make_tables.sh.orig	Wed Jul 27 11:39:03 2011
++++ install/SqLite/20_acl_make_tables.sh	Wed Jul 27 11:39:29 2011
+@@ -274,7 +274,7 @@ CREATE TABLE webacula_php_session (
+ END-OF-DATA
+ 
+ # access by apache
+-chgrp apache ${db_name_sqlite}
++chgrp www ${db_name_sqlite}
+ chmod g+rw ${db_name_sqlite}
+ 
+ echo "Sqlite : Webacula ACLs created"

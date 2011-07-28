@@ -1,8 +1,15 @@
-$OpenBSD: patch-application_config_ini,v 1.1.1.1 2011/03/21 18:01:09 ajacoutot Exp $
---- application/config.ini.orig	Mon Mar 21 15:13:26 2011
-+++ application/config.ini	Mon Mar 21 15:15:41 2011
-@@ -10,20 +10,20 @@ db.config.host = localhost
- db.config.username = root
+$OpenBSD: patch-application_config_ini,v 1.2 2011/07/28 09:24:35 ajacoutot Exp $
+--- application/config.ini.orig	Wed May 11 10:20:56 2011
++++ application/config.ini	Thu Jul 28 10:47:40 2011
+@@ -5,25 +5,25 @@
+ 
+ [general]
+ ;; supported adapters : PDO_MYSQL, PDO_PGSQL, PDO_SQLITE  
+-db.adapter = PDO_MYSQL
++db.adapter = PDO_PGSQL
+ db.config.host = localhost
+-db.config.username = root
++db.config.username = postgres
  db.config.password =
  db.config.dbname = bacula
 -;; for Sqlite db.config.dbname = "/full patch/bacula.db"
@@ -14,7 +21,7 @@ $OpenBSD: patch-application_config_ini,v 1.1.1.1 2011/03/21 18:01:09 ajacoutot E
 +def.timezone = "Europe/London"
  
  ;; if locale undefined, webacula use autodetect
- ;; avaliable locales : en, de, fr, pt_BR, ru, it, es
+ ;; avaliable locales : en, cs, de, fr, pt_BR, ru, it, es
  ; locale = "en"
  
  ;; see INSTALL file for details
@@ -25,14 +32,14 @@ $OpenBSD: patch-application_config_ini,v 1.1.1.1 2011/03/21 18:01:09 ajacoutot E
 +bacula.bconsole = "${LOCALBASE}/sbin/bconsole"
 +bacula.bconsolecmd = "-n -c ${SYSCONFDIR}/bacula/bconsole.conf"
  
- ;; Directory "tmpdir" which will be saved the file, which contains a list of files to restore.
- ;; This directory and files in it should be available to read the Director service.
-@@ -73,7 +73,7 @@ db.config.host = localhost
- db.config.username = wbuser
- db.config.password = "wbpass"
- db.config.dbname = webacula
--;; for Sqlite db.config.dbname = "/var/lib/sqlite/webacula.db"
-+;; for Sqlite db.config.dbname = "/var/db/sqlite/webacula.db"
+ ;; time to live data (session and temporary data tables) for restore files (sec)
+ ; default = 1h
+@@ -62,7 +62,7 @@ fontsize   = 10
  
+ [webacula]
  email.to_admin = root@localhost
- email.from = webacula@localhost
+-email.from = webacula@localhost
++email.from = root@localhost
+ 
+ 
+ 

@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.4 2011/06/02 13:41:42 ajacoutot Exp $
+$OpenBSD: README,v 1.5 2011/07/28 09:24:35 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,40 +6,34 @@ $OpenBSD: README,v 1.4 2011/06/02 13:41:42 ajacoutot Exp $
 
 Webacula has been installed into ${INSTDIR}
 
+*** Upgrading users: refer to the "Update from prior version" section in
+*** ${INSTDIR}/webacula/docs/txt/install.txt
+
 Database creation
 =================
 
-Depending on the database you wish to access, you'll need the
-corresponding PHP module.  e.g:
+You need to install the PHP module corresponding to the database used by
+your bacula(8) installation. e.g:
     for PostreSQL you'll need to install php5-pdo_pgsql
     for MySQL you'll need to install php5-pdo_mysql
     for SQLite3 you'll need to install php5-pdo_sqlite
 
-Note that this is needed for both the webacula DB itself and the one
-used by bacula(8) so you may need two different modules if using
-different RDBMS.
-
-To setup the webacula DB, run the following commands according to the
-RDBMS that webacula will use. While it is not advised to modify
-"db_name" you may want to ajust "db_user", "db_password" and "host" in
-these scripts.
+To add the webacula DB tables, run the following commands according to
+the RDBMS that bacula(8) uses. Note that prior to run these commands,
+you will have to ajust at least "db_name", "db_user", "db_pwd" and
+"webacula_root_pwd" in ${INSTDIR}/install/db.conf.
 Also note that the scripts can take arguments:
-    e.g. ./webacula_postgresql_create_database.sh -U postgres
+    e.g. ./10_make_tables.sh -U postgres
 
-* MySQL
-    # cd ${INSTDIR}/install && ./webacula_mysql_create_database.sh
-    # cd ${INSTDIR}/install && ./webacula_mysql_make_tables.sh
+* change to the directory matching your DB (PostgreSql, MySql or SqLite)
+    # cd ${INSTDIR}/install/PostgreSql
 
-* PostgreSQL
-    # cd ${INSTDIR}/install && ./webacula_postgresql_create_database.sh
-    # cd ${INSTDIR}/install && ./webacula_postgresql_make_tables.sh
+* run the included scripts to create the webacula tables
+    # ./10_make_tables.sh
+    # ./20_acl_make_tables.sh
 
-* SQLite3
-    # mkdir -p /var/www/var/db/sqlite/
-    # cd ${INSTDIR}/install && ./webacula_sqlite_create_database.sh
-    # chown -R www /var/www/var/db/sqlite
-    # chmod 0700 /var/www/var/db/sqlite
-    # chmod 0600 /var/www/var/db/sqlite/webacula.db
+When using SQLite3, make sure that the "www" user|group has write access
+to the directory containing the DB as well as the DB file itself.
 
 Running Webacula under chroot(8)ed Apache
 =========================================
@@ -75,23 +69,14 @@ is available from the chroot(8).
 Then you may want to adapt "def.timezone" according to your current
 location.
 
-Under [webacula] you need to configure the way you will connect to the
-webacula DB.
-Then you may want to adapt "email.to_admin" and "email.from" according
-to your site.
-
-You should add the following cron(8) job to the root's crontab to clean
-old temporary files:
-    0 1 * * *	find /var/www/tmp/ -name "webacula*" -type f -mtime -24 -exec rm -f {} \;
+Under [webacula] you may want to adapt "email.to_admin" and "email.from"
+according to your site.
 
 After restarting your webserver, you can access webacula at:
     http://<hostname>/webacula/
 
-*** WARNING!
-By default *anyone* can access the webacula interface from localhost.
-A sample commented configuration for http basic authentication is
-available in /var/www/conf/modules.sample/webacula.conf and you are
-STRONGLY ADVISED to enable and edit it to your needs.
+The built-in admin username is "root" and the password is the one you
+configured in "webacula_root_pwd" (${INSTDIR}/install/db.conf).
 
 Bacula messages configuration
 =============================
@@ -108,5 +93,5 @@ Messages {
   catalog = all, !skipped, !saved
 }
 
-The reload bacula-dir(8):
+Then reload bacula-dir(8):
     # /etc/rc.d/bacula_dir reload

@@ -1,0 +1,12 @@
+$OpenBSD: patch-install_db_conf,v 1.1 2011/07/28 09:24:35 ajacoutot Exp $
+--- install/db.conf.orig	Thu Jul 28 10:49:12 2011
++++ install/db.conf	Thu Jul 28 10:49:24 2011
+@@ -4,7 +4,7 @@
+ db_name="bacula"
+ # for Sqlite only
+ db_name_sqlite="/var/bacula/working/bacula.db"
+-db_user="root"
++db_user="postgres"
+ 
+ # CHANGE_THIS
+ db_pwd=""

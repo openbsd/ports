@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2011/07/22 10:20:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2011/07/28 09:24:35 ajacoutot Exp $
 
 COMMENT=	bacula(8) web interface
 
-DISTNAME=	webacula-5.0.3
-
-REVISION=	8
+DISTNAME=	webacula-5.5
 
 CATEGORIES=	www sysutils
 
@@ -36,11 +34,8 @@ SUBST_VARS=	INSTDIR TINSTDIR
 do-install:
 	mv ${WRKSRC} ${INSTDIR}
 	${SUBST_CMD} ${INSTDIR}/application/config.ini \
-		${INSTDIR}/install/webacula.conf
-.for i in install/webacula_mysql_create_database.sh \
-	install/webacula_postgresql_create_database.sh \
-	install/webacula_postgresql_make_tables.sh \
-	application/config.ini
+		${INSTDIR}/install/apache/webacula.conf
+.for i in install/db.conf application/config.ini
 	mv ${INSTDIR}/$i ${INSTDIR}/$i.dist
 .endfor
 	${SUBST_CMD} -c ${FILESDIR}/webacula-chroot-bconsole.sh \
