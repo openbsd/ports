@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/07/09 01:14:47 robert Exp $
+# $OpenBSD: Makefile,v 1.13 2011/07/28 08:35:34 jasper Exp $
 
 MULTI_PACKAGES=	-utils -main -php -perl
 SHARED_ONLY=	Yes
@@ -8,17 +8,12 @@ COMMENT-utils=	mapserver utilities
 COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 
-V =		6.0.0
+V =		6.0.1
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-utils=	mapserver-utils-${V}
 PKGNAME-php=	php5-mapscript-${V}
 PKGNAME-perl=	p5-mapscript-${V}
-
-REVISION-main=	1
-REVISION-utils=	1
-REVISION-php=	1
-REVISION-perl=	1
 
 CATEGORIES=	geo www
 
