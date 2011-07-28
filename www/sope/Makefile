@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2011/07/21 06:27:21 sebastia Exp $
+# $OpenBSD: Makefile,v 1.17 2011/07/28 11:22:30 sebastia Exp $
 
 COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
 VERSION =		1.3.8
-DISTNAME =		SOPE-${VERSION}a
-PKGNAME-main =		sope-${VERSION}.0
-PKGNAME-mysql =		sope-mysql-${VERSION}.0
-PKGNAME-postgres =	sope-postgres-${VERSION}.0
+DISTNAME =		SOPE-${VERSION}b
+PKGNAME-main =		sope-${VERSION}.1
+PKGNAME-mysql =		sope-mysql-${VERSION}.1
+PKGNAME-postgres =	sope-postgres-${VERSION}.1
 
 SO_MAJOR=	0
 SO_MINOR=	1
@@ -44,9 +44,9 @@ WANTLIB-postgres = 	gnustep-base m objc GDLAccess EOControl pq
 LIB_DEPENDS-main=	x11/gnustep/base \
 			databases/openldap \
 			${MODLIBICONV_LIB_DEPENDS}
-LIB_DEPENDS-mysql =	${BASE_PKGPATH}=${VERSION}.0 \
+LIB_DEPENDS-mysql =	${BASE_PKGPATH}=${VERSION}.1 \
 			databases/mysql
-LIB_DEPENDS-postgres =	${BASE_PKGPATH}=${VERSION}.0 \
+LIB_DEPENDS-postgres =	${BASE_PKGPATH}=${VERSION}.1 \
 			databases/postgresql
 
 WRKDIST=	${WRKDIR}/${DISTNAME}
