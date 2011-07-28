@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2011/07/21 06:30:44 sebastia Exp $
+# $OpenBSD: Makefile,v 1.15 2011/07/28 11:25:22 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
 VERSION =	1.3.8
-DISTNAME =	SOGo-${VERSION}a
-PKGNAME =	sogo-${VERSION}.0
+DISTNAME =	SOGo-${VERSION}b
+PKGNAME =	sogo-${VERSION}.1
 
 SHLIB_VERSION =	1.1
 .for _lib in GDLContentStore NGCards OGoContentStore \
