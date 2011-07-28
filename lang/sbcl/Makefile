@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/05/12 02:11:52 joshe Exp $
+# $OpenBSD: Makefile,v 1.9 2011/07/28 20:54:23 jasper Exp $
 
 # not yet ported to other arches
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 
 COMMENT=		compiler and runtime system for ANSI Common Lisp
 
-V =			1.0.48
+V =			1.0.50
 DISTNAME=		sbcl-${V}-source
 PKGNAME=		sbcl-${V}
 WRKDIST=		${WRKDIR}/sbcl-${V}
@@ -53,6 +53,20 @@ USE_GMAKE=		Yes
 PORTHOME=		${TMPDIR}
 MAKE_ENV=		GNUMAKE=${GMAKE} INSTALL_ROOT=${PREFIX} \
 			MAN_DIR=${PREFIX}/man INFO_DIR=${PREFIX}/info
+
+# Upstream asks that packagers append something like this to the
+# version to distinguish official tarballs from third-party packages.
+.if defined(REVISION) && !empty(REVISION)
+LOCAL_VERSION =		openbsd.${REVISION}
+.else
+LOCAL_VERSION =		openbsd
+.endif
+VERSION_FILE =		${WRKSRC}/version.lisp-expr
+
+pre-configure:
+	sed 's/^"\([0-9.]*\)"$$/"\1.${LOCAL_VERSION}"/' \
+		< ${VERSION_FILE} > ${VERSION_FILE}.new
+	mv ${VERSION_FILE}.new ${VERSION_FILE}
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} /bin/sh make.sh \

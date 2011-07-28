@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/05/12 02:11:52 joshe Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/07/28 20:54:23 jasper Exp $
 %%amd64%%
 %%i386%%
 %%powerpc%%
@@ -97,6 +97,7 @@ lib/sbcl/sb-grovel/sb-grovel.fasl
 lib/sbcl/sb-introspect/
 lib/sbcl/sb-introspect/introspect.fasl
 lib/sbcl/sb-introspect/introspect.lisp
+lib/sbcl/sb-introspect/load-test.lisp
 lib/sbcl/sb-introspect/sb-introspect.asd
 lib/sbcl/sb-introspect/sb-introspect.fasl
 lib/sbcl/sb-introspect/test-driver.lisp
