@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2011/05/11 07:45:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2011/07/28 08:38:57 robert Exp $
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppet/*
@@ -17,15 +17,35 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/agent.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/apply.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/catalog.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/cert.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/certificate.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/certificate_request.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/certificate_revocation_list.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/config.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/describe.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/device.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/doc.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/face_base.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/facts.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/file.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/filebucket.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/help.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/indirection_base.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/inspect.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/key.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/kick.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/man.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/master.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/node.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/parser.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/plugin.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/queue.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/report.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/resource.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/resource_type.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/secret_agent.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/status.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/configurer/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/configurer.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/configurer/downloader.rb
@@ -58,6 +78,36 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/external/pson/pure.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/external/pson/pure/generator.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/external/pson/pure/parser.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/external/pson/version.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/catalog/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/catalog.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/catalog/select.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/certificate.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/certificate_request.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/certificate_revocation_list.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/config.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/facts.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/file/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/file.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/file/download.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/file/store.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/help/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/help.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/help/action.erb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/help/face.erb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/help/global.erb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/help/man.erb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/key.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/man.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/node.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/parser.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/plugin.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/report.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/resource.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/resource_type.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/secret_agent.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/status.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/feature/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/feature/base.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/feature/pson.rb
@@ -65,6 +115,7 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/feature/rack.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/feature/rails.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/feature/rubygems.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/feature/selinux.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/feature/ssh.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/feature/stomp.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/feature/zlib.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/file_bucket/
@@ -100,6 +151,7 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/catalog/active_record.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/catalog/compiler.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/catalog/queue.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/catalog/rest.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/catalog/static_compiler.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/catalog/yaml.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/certificate/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/certificate/ca.rb
@@ -113,16 +165,23 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/certificate_revocation_li
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/certificate_revocation_list/ca.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/certificate_revocation_list/file.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/certificate_revocation_list/rest.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/certificate_status/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/certificate_status.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/certificate_status/file.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/certificate_status/rest.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/code.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/couch.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/direct_file_server.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/envelope.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/exec.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/face.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/facts/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/facts/active_record.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/facts/couch.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/facts/facter.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/facts/inventory_active_record.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/facts/memory.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/facts/network_device.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/facts/rest.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/facts/yaml.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/file.rb
@@ -141,6 +200,8 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/file_metadata/file_server
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/file_metadata/rest.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/file_server.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/indirection.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/inventory/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/inventory/yaml.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/key/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/key/ca.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/key/file.rb
@@ -159,6 +220,7 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/queue.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/report/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/report/processor.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/report/rest.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/report/yaml.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/request.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/resource/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/resource/ral.rb
@@ -178,6 +240,16 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/status/local.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/status/rest.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/terminus.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/indirector/yaml.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/interface/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/interface.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/interface/action.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/interface/action_builder.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/interface/action_manager.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/interface/documentation.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/interface/face_collection.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/interface/option.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/interface/option_builder.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/interface/option_manager.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/metatype/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/metatype/manager.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/module.rb
@@ -244,8 +316,10 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/node/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/node.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/node/environment.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/node/facts.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/node/inventory.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parameter/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parameter.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parameter/path.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parameter/value.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parameter/value_collection.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/
@@ -262,29 +336,35 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/casestatement.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/collection.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/collexpr.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/comparison_operator.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/definition.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/else.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/function.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/hostclass.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/ifstatement.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/in_operator.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/leaf.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/match_operator.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/minus.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/node.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/nop.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/not.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/relationship.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/resource.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/resource_defaults.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/resource_instance.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/resource_override.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/resource_reference.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/resourceparam.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/selector.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/tag.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/top_level_construct.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/ast/vardef.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/collector.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/compiler.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/files.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/functions/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/functions.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/functions/create_resources.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/functions/defined.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/functions/extlookup.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/parser/functions/fail.rb
@@ -325,8 +405,10 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/property/list.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/property/ordered_list.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/aixobject.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/augeas/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/augeas/augeas.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/cisco.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/computer/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/computer/computer.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/confine/
@@ -340,16 +422,23 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/confine_collection.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/confiner.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/cron/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/cron/crontab.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/exec/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/exec/posix.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/exec/shell.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/file/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/file/posix.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/file/win32.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/group/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/group/aix.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/group/directoryservice.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/group/groupadd.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/group/ldap.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/group/pw.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/host/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/host/parsed.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/interface/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/interface/base.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/interface/cisco.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/ldap.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/macauthorization/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/macauthorization/macauthorization.rb
@@ -368,6 +457,7 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/nameservice.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/nameservice/directoryservice.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/nameservice/objectadd.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/nameservice/pw.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/network_device.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/aix.rb
@@ -377,16 +467,18 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/apt.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/aptitude.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/aptrpm.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/blastwave.rb
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/darwinport.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/dpkg.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/fink.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/freebsd.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/gem.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/hpux.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/macports.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/nim.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/openbsd.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/pip.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/pkg.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/pkgdmg.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/pkgutil.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/portage.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/ports.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/portupgrade.rb
@@ -419,17 +511,21 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/service/redhat.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/service/runit.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/service/smf.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/service/src.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/service/upstart.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/ssh_authorized_key/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/ssh_authorized_key/parsed.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/sshkey/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/sshkey/parsed.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/user/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/user/aix.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/user/directoryservice.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/user/hpux.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/user/ldap.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/user/pw.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/user/user_role_add.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/user/useradd.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/vlan/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/vlan/cisco.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/zfs/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/zfs/solaris.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/zone/
@@ -443,10 +539,13 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/rails/database/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/rails/database/001_add_created_at_to_all_tables.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/rails/database/002_remove_duplicated_index_on_all_tables.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/rails/database/003_add_environment_to_host.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/rails/database/004_add_inventory_service_tables.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/rails/database/schema.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/rails/fact_name.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/rails/fact_value.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/rails/host.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/rails/inventory_fact.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/rails/inventory_node.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/rails/param_name.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/rails/param_value.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/rails/puppet_tag.rb
@@ -497,7 +596,6 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/sslcertificates.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/sslcertificates/ca.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/sslcertificates/certificate.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/sslcertificates/inventory.rb
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/sslcertificates/monkey_patch.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/sslcertificates/support.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/status.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/transaction/
@@ -531,6 +629,7 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/file/type.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/filebucket.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/group.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/host.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/interface.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/k5login.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/macauthorization.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/mailalias.rb
@@ -555,6 +654,7 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/notify.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/package.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/port.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/resources.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/router.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/schedule.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/selboolean.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/selmodule.rb
@@ -564,6 +664,7 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/sshkey.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/stage.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/tidy.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/user.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/vlan.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/whit.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/yumrepo.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/type/zfs.rb
@@ -578,23 +679,13 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/backups.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/cacher.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/checksums.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/classgen.rb
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/command_line/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/command_line.rb
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/command_line/filebucket
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/command_line/pi
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/command_line/puppet
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/command_line/puppetca
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/command_line/puppetd
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/command_line/puppetdoc
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/command_line/puppetmasterd
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/command_line/puppetqd
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/command_line/puppetrun
-lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/command_line/ralsh
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/constant_inflector.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/diff.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/docs.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/errors.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/execution.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/execution_stub.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/feature.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/file_locking.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/fileparsing.rb
@@ -620,8 +711,24 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/methodhelper.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/metric.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/monkey_patches.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/nagios_maker.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/network_device/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/network_device.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/network_device/base.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/network_device/cisco/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/network_device/cisco.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/network_device/cisco/device.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/network_device/cisco/facts.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/network_device/cisco/interface.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/network_device/config.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/network_device/ipcalc.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/network_device/transport/
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/network_device/transport.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/network_device/transport/base.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/network_device/transport/ssh.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/network_device/transport/telnet.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/package.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/pidlock.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/plugins.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/posix.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/provider_features.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/pson.rb
@@ -657,18 +764,46 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/tagging.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/user_attr.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/warnings.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/zaml.rb
-@comment These manual pages are _totally_ broken
-@comment @man man/man5/puppet.conf.5
-@comment @man man/man8/filebucket.8
-@comment @man man/man8/pi.8
-@comment @man man/man8/puppet.8
-@comment @man man/man8/puppetca.8
-@comment @man man/man8/puppetd.8
-@comment @man man/man8/puppetdoc.8
-@comment @man man/man8/puppetmasterd.8
-@comment @man man/man8/puppetqd.8
-@comment @man man/man8/puppetrun.8
-@comment @man man/man8/ralsh.8
+@man man/man5/puppet.conf.5
+@man man/man8/filebucket.8
+@man man/man8/pi.8
+@man man/man8/puppet-agent.8
+@man man/man8/puppet-apply.8
+@man man/man8/puppet-catalog.8
+@man man/man8/puppet-cert.8
+@man man/man8/puppet-certificate.8
+@man man/man8/puppet-certificate_request.8
+@man man/man8/puppet-certificate_revocation_list.8
+@man man/man8/puppet-config.8
+@man man/man8/puppet-describe.8
+@man man/man8/puppet-device.8
+@man man/man8/puppet-doc.8
+@man man/man8/puppet-facts.8
+@man man/man8/puppet-file.8
+@man man/man8/puppet-filebucket.8
+@man man/man8/puppet-help.8
+@man man/man8/puppet-inspect.8
+@man man/man8/puppet-key.8
+@man man/man8/puppet-kick.8
+@man man/man8/puppet-man.8
+@man man/man8/puppet-master.8
+@man man/man8/puppet-node.8
+@man man/man8/puppet-parser.8
+@man man/man8/puppet-plugin.8
+@man man/man8/puppet-queue.8
+@man man/man8/puppet-report.8
+@man man/man8/puppet-resource.8
+@man man/man8/puppet-resource_type.8
+@man man/man8/puppet-secret_agent.8
+@man man/man8/puppet-status.8
+@man man/man8/puppet.8
+@man man/man8/puppetca.8
+@man man/man8/puppetd.8
+@man man/man8/puppetdoc.8
+@man man/man8/puppetmasterd.8
+@man man/man8/puppetqd.8
+@man man/man8/puppetrun.8
+@man man/man8/ralsh.8
 sbin/puppetca
 sbin/puppetd
 sbin/puppetmasterd
