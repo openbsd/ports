@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/19 22:31:33 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/07/28 12:11:43 jasper Exp $
 
 COMMENT=	console based Jabber client
 
@@ -31,5 +31,7 @@ CONFIGURE_STYLE= gnu autoconf no-autoheader
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include"
 USE_GROFF =	Yes
+
+FAKE_FLAGS=	Examplesdir=${PREFIX}/share/examples/freetalk/
 
 .include <bsd.port.mk>
