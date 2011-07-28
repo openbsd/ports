@@ -1,4 +1,4 @@
-$OpenBSD: README-web,v 1.3 2011/06/02 13:41:40 ajacoutot Exp $
+$OpenBSD: README-web,v 1.4 2011/07/28 10:51:54 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -21,11 +21,11 @@ check the process, so it erroneously reports it as not running).
 Some changes from the default configuration are required -
 you can do this by creating symbolic links as follows:
 
-# ln -s ${PREFIX-web}/conf/modules.sample/zabbix.conf \
-        ${PREFIX-web}/conf/modules
+    # ln -s ${PREFIX-web}/conf/modules.sample/zabbix.conf \
+      ${PREFIX-web}/conf/modules
 
-# ln -fs ${PREFIX-web}/conf/php5.sample/zabbix.ini \
-        ${PREFIX-web}/conf/php5/zabbix.ini
+    # ln -fs ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/zabbix.ini \
+      ${SYSCONFDIR}/php-${MODPHP_VERSION}/zabbix.ini
 
 Zabbix requires a timezone to be configured in PHP; zabbix.ini
 sets this to UTC, you may like to adjust this. After making these

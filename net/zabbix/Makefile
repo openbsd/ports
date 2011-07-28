@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2011/07/22 10:20:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.55 2011/07/28 10:51:54 ajacoutot Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -14,7 +14,7 @@ FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
 
 REVISION-main=		1
-REVISION-web=		3
+REVISION-web=		4
 REVISION-server=	2
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -118,10 +118,10 @@ post-install:
 	${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} \
 		${FILESDIR}/zabbix.conf \
 		${DESTDIR}${PREFIX-web}/conf/modules.sample/zabbix.conf
-	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/conf/php5.sample
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${MODPHP_VERSION}
 	${SUBST_CMD} -c -o ${SHAREOWN} -g ${SHAREGRP} \
 		${FILESDIR}/zabbix.ini \
-		${DESTDIR}${PREFIX-web}/conf/php5.sample/zabbix.ini
+		${PREFIX}/share/examples/php-${MODPHP_VERSION}/zabbix.ini
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/schema
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/data
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zabbix/data/images

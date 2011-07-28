@@ -1,9 +1,7 @@
-@comment $OpenBSD: PLIST-web,v 1.13 2011/04/25 07:42:37 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.14 2011/07/28 10:51:54 ajacoutot Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 conf/modules.sample/zabbix.conf
-@comment conf/php5.sample/
-conf/php5.sample/zabbix.ini
 zabbix/
 zabbix/acknow.php
 zabbix/actionconf.php
@@ -477,5 +475,9 @@ zabbix/usergrps.php
 zabbix/users.php
 zabbix/vtext.php
 zabbix/warning.php
+@cwd ${LOCALBASE}
+share/examples/php-${MODPHP_VERSION}/
+share/examples/php-${MODPHP_VERSION}/zabbix.ini
+@sample ${SYSCONFDIR}/php-${MODPHP_VERSION}.sample/zabbix.ini
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${FULLPKGNAME}
