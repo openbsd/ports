@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.11 2011/04/07 08:09:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.12 2011/07/28 18:07:28 jasper Exp $
 @pkgpath devel/libsoup
 @pkgpath devel/libsoup,ssl
 %%SHARED%%
@@ -62,11 +62,15 @@ share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthDomain.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthDomainBasic.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupAuthDomainDigest.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupContentSniffer.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookie.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJar.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJarSqlite.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupCookieJarText.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupLogger.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupMessage.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupMessageBody.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupMessageHeaders.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupMultipart.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupProxyURIResolver.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupServer.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSession.html
@@ -74,6 +78,7 @@ share/gtk-doc/html/libsoup-${API_VERSION}/SoupSessionAsync.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSessionFeature.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSessionSync.html
 share/gtk-doc/html/libsoup-${API_VERSION}/SoupSocket.html
+share/gtk-doc/html/libsoup-${API_VERSION}/SoupURI.html
 share/gtk-doc/html/libsoup-${API_VERSION}/annotation-glossary.html
 share/gtk-doc/html/libsoup-${API_VERSION}/ch01.html
 share/gtk-doc/html/libsoup-${API_VERSION}/ch02.html
@@ -89,11 +94,6 @@ share/gtk-doc/html/libsoup-${API_VERSION}/left.png
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-GValue-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-HTML-Form-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-Soup-Miscellaneous-Utilities.html
-share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-SoupCookie.html
-share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-SoupMessageBody.html
-share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-SoupMessageHeaders.html
-share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-SoupMultipart.html
-share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-SoupURI.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-XMLRPC-Support.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-soup-gnome-features.html
 share/gtk-doc/html/libsoup-${API_VERSION}/libsoup-${API_VERSION}-soup-method.html
