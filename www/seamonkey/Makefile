@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2011/07/28 20:32:39 landry Exp $
+# $OpenBSD: Makefile,v 1.85 2011/07/28 20:48:56 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -126,6 +126,8 @@ post-install:
 .for xpi guid in ${GUIDS}
 	${UNZIP} -oq ${MOB}/../xpi-stage/${xpi}.xpi -d ${EXTDIR}/${guid}
 .endfor
+	# enigmail 1.2 works in seamonkey 2.2 so adjust install.rdf
+	perl -pi -e 's|<em:maxVersion>2.1.*</em:maxVersion>|<em:maxVersion>2.2.*</em:maxVersion>|' ${EXTDIR}/{847b3a00-7ab1-11d4-8f02-006008948af5}/install.rdf
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${_MOZ_PROJECT_SHORT}.desktop \
