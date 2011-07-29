@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.70 2011/07/29 06:52:55 bentley Exp $
+# $OpenBSD: OpenBSD,v 1.71 2011/07/29 12:14:00 nigel Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -84,6 +84,7 @@
 50.87		4.37		"steven"	# Steven Mestdagh
 51.0333		-114.0500	"pvalchev"	# Peter Valchev
 51.05		3.60		"wvdputte"	# Wim Vandeputte
+51.395466	-0.759525	"nigel"		# Nigel Taylor
 51.46		-0.13		"fgsch"		# Federico G. Schwindt
 51.8365		5.00271		"jasper"	# Jasper Lievisse Adriaanse
 51.6		-114.1		"deraadt"	# Theo de Raadt
