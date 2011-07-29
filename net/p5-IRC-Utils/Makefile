@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/05/28 08:19:52 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/07/29 13:51:27 gsoares Exp $
 
-COMMENT=	common utilities for IRC-related tasks 
+COMMENT=	common utilities for IRC-related tasks
 
 MODULES=	cpan
-DISTNAME=	IRC-Utils-0.10
+DISTNAME=	IRC-Utils-0.11
 CATEGORIES=	net
 
 MAINTAINER=	Wen Heping <wenheping@gmail.com>
