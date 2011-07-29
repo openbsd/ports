@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/15 12:51:59 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/29 14:19:33 mpi Exp $
 
 COMMENT =	style neutral scalable cursor themes
 
 VERSION =	0.4
 DISTNAME =	vanilla-dmz-${VERSION}
+REVISION =	0
 PKGNAME =	xcursor-dmz-${VERSION}
 CATEGORIES =	x11
 
 HOMEPAGE =	http://jimmac.musichall.cz/themes.php?skin=7
 
-MAINTAINER =	Martin Pieuchot <mp@nolizard.org>
+MAINTAINER =	Martin Pieuchot <mpi@openbsd.org>
 
 # CC by-sa 3.0
 PERMIT_PACKAGE_CDROM =	Yes
