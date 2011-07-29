@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.21 2011/07/29 06:25:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2011/07/29 18:04:52 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	advanced general purpose calculator
 
 GNOME_PROJECT=	genius
-GNOME_VERSION=	1.0.13
+GNOME_VERSION=	1.0.14
+
+EXTRACT_SUFX=	.tar.xz
 
 HOMEPAGE=	http://www.jirka.org/genius.html
 
