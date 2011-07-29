@@ -1,10 +1,10 @@
-$OpenBSD: patch-setup_py,v 1.4 2010/08/01 11:59:18 ajacoutot Exp $
---- setup.py.orig	Fri Jun 25 17:17:24 2010
-+++ setup.py	Sun Aug  1 13:54:44 2010
-@@ -5,5 +5,5 @@ setup (name="pycups",
+$OpenBSD: patch-setup_py,v 1.5 2011/07/29 16:56:09 ajacoutot Exp $
+--- setup.py.orig	Tue Jul 26 13:23:35 2011
++++ setup.py	Fri Jul 29 18:38:56 2011
+@@ -61,5 +61,5 @@ setup (name="pycups",
         ext_modules=[Extension("cups",
                                ["cupsmodule.c", "cupsconnection.c",
                                 "cupsppd.c", "cupsipp.c"],
--                              libraries=["cups"],
+-                              libraries=libraries,
 +                              libraries=["cups", "iconv"],
                                define_macros=[("VERSION", '"%s"' % VERSION)])])
