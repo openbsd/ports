@@ -1,7 +1,7 @@
-$OpenBSD: patch-probe_printer_py,v 1.2 2011/07/16 07:00:04 ajacoutot Exp $
---- probe_printer.py.orig	Tue Jul 12 14:24:28 2011
-+++ probe_printer.py	Sat Jul 16 08:47:48 2011
-@@ -260,7 +260,7 @@ class PrinterFinder:
+$OpenBSD: patch-probe_printer_py,v 1.3 2011/07/29 16:56:32 ajacoutot Exp $
+--- probe_printer.py.orig	Thu Jul 28 18:04:13 2011
++++ probe_printer.py	Fri Jul 29 18:47:58 2011
+@@ -268,7 +268,7 @@ class PrinterFinder:
          null = file ("/dev/null", "r+")
          try:
              debugprint ("snmp: trying")

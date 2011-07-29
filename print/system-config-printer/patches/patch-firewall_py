@@ -1,15 +1,15 @@
-$OpenBSD: patch-firewall_py,v 1.1 2011/05/04 09:10:52 ajacoutot Exp $
+$OpenBSD: patch-firewall_py,v 1.2 2011/07/29 16:56:32 ajacoutot Exp $
 
 Disable firewall checks.
 
---- firewall.py.orig	Wed Mar 16 17:44:41 2011
-+++ firewall.py	Wed May  4 11:01:26 2011
-@@ -83,26 +83,13 @@ class Firewall:
+--- firewall.py.orig	Thu Jul 28 18:04:13 2011
++++ firewall.py	Fri Jul 29 18:49:26 2011
+@@ -88,26 +88,13 @@ class Firewall:
          self._client_error_handler (exc)
  
      def write (self):
 -        try:
--            self._firewall.write (pickle.dumps (self._fw_data[0]))
+-            self._firewall.write (json.dumps (self._fw_data[0]))
 -        except:
 -            pass
 +        pass
