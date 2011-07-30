@@ -1,0 +1,55 @@
+$OpenBSD: patch-Source_WebCore_platform_network_soup_ResourceHandleSoup_cpp,v 1.1 2011/07/30 08:09:30 landry Exp $
+Allow setting max-conns and max-conns-per-host without overwriting the given values.
+https://bugs.webkit.org/show_bug.cgi?id=64355
+http://trac.webkit.org/changeset/91954
+--- Source/WebCore/platform/network/soup/ResourceHandleSoup.cpp.orig	Fri Jul 29 07:08:55 2011
++++ Source/WebCore/platform/network/soup/ResourceHandleSoup.cpp	Fri Jul 29 07:11:02 2011
+@@ -149,13 +149,6 @@ ResourceHandle::~ResourceHandle()
+ 
+ static void ensureSessionIsInitialized(SoupSession* session)
+ {
+-    // Values taken from http://stevesouders.com/ua/index.php following
+-    // the rule "Do What Every Other Modern Browser Is Doing". They seem
+-    // to significantly improve page loading time compared to soup's
+-    // default values.
+-    static const int maxConnections = 60;
+-    static const int maxConnectionsPerHost = 6;
+-
+     if (g_object_get_data(G_OBJECT(session), "webkit-init"))
+         return;
+ 
+@@ -177,11 +170,6 @@ static void ensureSessionIsInitialized(SoupSession* se
+         g_object_unref(requester);
+     }
+ 
+-    g_object_set(session,
+-                 SOUP_SESSION_MAX_CONNS, maxConnections,
+-                 SOUP_SESSION_MAX_CONNS_PER_HOST, maxConnectionsPerHost,
+-                 NULL);
+-
+     g_object_set_data(G_OBJECT(session), "webkit-init", reinterpret_cast<void*>(0xdeadbeef));
+ }
+ 
+@@ -850,7 +838,21 @@ static bool startNonHTTPRequest(ResourceHandle* handle
+ 
+ SoupSession* ResourceHandle::defaultSession()
+ {
+-    static SoupSession* session = createSoupSession();
++    static SoupSession* session = 0;
++    // Values taken from http://stevesouders.com/ua/index.php following
++    // the rule "Do What Every Other Modern Browser Is Doing". They seem
++    // to significantly improve page loading time compared to soup's
++    // default values.
++    static const int maxConnections = 60;
++    static const int maxConnectionsPerHost = 6;
++
++    if (!session) {
++        session = createSoupSession();
++        g_object_set(session,
++                     SOUP_SESSION_MAX_CONNS, maxConnections,
++                     SOUP_SESSION_MAX_CONNS_PER_HOST, maxConnectionsPerHost, 
++                     NULL);
++    }
+ 
+     return session;
+ }
