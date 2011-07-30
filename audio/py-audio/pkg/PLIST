@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/30 06:46:37 fgsch Exp $
+lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/_portaudio.so
+lib/python${MODPY_VERSION}/site-packages/pyaudio.py
+lib/python${MODPY_VERSION}/site-packages/pyaudio.pyc

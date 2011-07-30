@@ -1,0 +1,12 @@
+$OpenBSD: patch-setup_py,v 1.1.1.1 2011/07/30 06:46:37 fgsch Exp $
+--- setup.py.orig	Mon Jul 25 08:48:37 2011
++++ setup.py	Mon Jul 25 08:51:41 2011
+@@ -56,7 +56,7 @@ portaudio_path = os.environ.get("PORTAUDIO_PATH", "./p
+ 
+ pyaudio_module_sources = ['src/_portaudiomodule.c']
+ 
+-include_dirs = []
++include_dirs = [os.path.join(os.environ.get('LOCALBASE'), 'include'),]
+ external_libraries = []
+ extra_compile_args = ['-fno-strict-aliasing']
+ extra_link_args = []
