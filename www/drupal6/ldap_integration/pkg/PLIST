@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/11/09 10:33:21 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/30 19:43:05 stephan Exp $
 @owner ${DRUPAL_OWNER}
 @group ${DRUPAL_GROUP}
 ${DRUPAL_MODS}ldap_integration/
@@ -12,6 +12,7 @@ ${DRUPAL_MODS}ldap_integration/ldapauth.admin.inc
 ${DRUPAL_MODS}ldap_integration/ldapauth.admin.js
 ${DRUPAL_MODS}ldap_integration/ldapauth.info
 ${DRUPAL_MODS}ldap_integration/ldapauth.install
+${DRUPAL_MODS}ldap_integration/ldapauth.install.orig
 ${DRUPAL_MODS}ldap_integration/ldapauth.module
 ${DRUPAL_MODS}ldap_integration/ldapauth.theme.inc
 ${DRUPAL_MODS}ldap_integration/ldapdata.admin.inc

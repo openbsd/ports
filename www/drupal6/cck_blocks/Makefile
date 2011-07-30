@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/07/30 19:43:05 stephan Exp $
 
 COMMENT =	module to present selected CCK fields as block
 
-MAINTAINER =	Stephan A. Rickauer <stephan@openbsd.org>
-
 DISTNAME = 	cck_blocks-6.x-1.3
 PKGNAME =	drupal6-cck_blocks-1.3
-REVISION =	0
+REVISION =	1
 
 RUN_DEPENDS =   www/drupal6/cck
 
