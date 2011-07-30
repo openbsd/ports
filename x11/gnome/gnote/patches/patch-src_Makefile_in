@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2011/05/06 11:25:46 jasper Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2011/07/30 18:22:12 ajacoutot Exp $
 
 Use pkg-config to pickup uuid.
 https://bugzilla.gnome.org/show_bug.cgi?id=649486
 
---- src/Makefile.in.orig	Sat Apr 30 20:40:31 2011
-+++ src/Makefile.in	Thu May  5 19:29:46 2011
-@@ -471,14 +471,14 @@ EXTRA_DIST = gnote-applet.in
+--- src/Makefile.in.orig	Sat Jul 30 13:03:14 2011
++++ src/Makefile.in	Sat Jul 30 19:57:52 2011
+@@ -474,14 +474,14 @@ EXTRA_DIST = gnote-applet.in
  INCLUDES = -I$(top_srcdir)
  AM_CPPFLAGS = @LIBGTKMM_CFLAGS@ @LIBGLIBMM_CFLAGS@ @GCONF_CFLAGS@ \
  	@GTK_CFLAGS@ @GTKSPELL_CFLAGS@ @LIBXML_CFLAGS@ \

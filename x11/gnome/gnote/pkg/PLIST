@@ -1,29 +1,29 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/06 11:25:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/07/30 18:22:12 ajacoutot Exp $
 @pkgpath x11/gnome/tomboy
 @bin bin/gnote
 lib/gnote/
 lib/gnote/addins/
-lib/gnote/addins/0.7.4/
-@comment lib/gnote/addins/0.7.4/backlinks.la
-lib/gnote/addins/0.7.4/backlinks.so
-@comment lib/gnote/addins/0.7.4/bugzilla.la
-lib/gnote/addins/0.7.4/bugzilla.so
-@comment lib/gnote/addins/0.7.4/exporttohtml.la
-lib/gnote/addins/0.7.4/exporttohtml.so
-@comment lib/gnote/addins/0.7.4/fixedwidth.la
-lib/gnote/addins/0.7.4/fixedwidth.so
-@comment lib/gnote/addins/0.7.4/inserttimestamp.la
-lib/gnote/addins/0.7.4/inserttimestamp.so
-@comment lib/gnote/addins/0.7.4/noteoftheday.la
-lib/gnote/addins/0.7.4/noteoftheday.so
-@comment lib/gnote/addins/0.7.4/printnotes.la
-lib/gnote/addins/0.7.4/printnotes.so
-@comment lib/gnote/addins/0.7.4/stickynoteimport.la
-lib/gnote/addins/0.7.4/stickynoteimport.so
-@comment lib/gnote/addins/0.7.4/tomboyimport.la
-lib/gnote/addins/0.7.4/tomboyimport.so
-@comment lib/gnote/addins/0.7.4/underline.la
-lib/gnote/addins/0.7.4/underline.so
+lib/gnote/addins/${GNOME_VERSION}/
+@comment lib/gnote/addins/${GNOME_VERSION}/backlinks.la
+lib/gnote/addins/${GNOME_VERSION}/backlinks.so
+@comment lib/gnote/addins/${GNOME_VERSION}/bugzilla.la
+lib/gnote/addins/${GNOME_VERSION}/bugzilla.so
+@comment lib/gnote/addins/${GNOME_VERSION}/exporttohtml.la
+lib/gnote/addins/${GNOME_VERSION}/exporttohtml.so
+@comment lib/gnote/addins/${GNOME_VERSION}/fixedwidth.la
+lib/gnote/addins/${GNOME_VERSION}/fixedwidth.so
+@comment lib/gnote/addins/${GNOME_VERSION}/inserttimestamp.la
+lib/gnote/addins/${GNOME_VERSION}/inserttimestamp.so
+@comment lib/gnote/addins/${GNOME_VERSION}/noteoftheday.la
+lib/gnote/addins/${GNOME_VERSION}/noteoftheday.so
+@comment lib/gnote/addins/${GNOME_VERSION}/printnotes.la
+lib/gnote/addins/${GNOME_VERSION}/printnotes.so
+@comment lib/gnote/addins/${GNOME_VERSION}/stickynoteimport.la
+lib/gnote/addins/${GNOME_VERSION}/stickynoteimport.so
+@comment lib/gnote/addins/${GNOME_VERSION}/tomboyimport.la
+lib/gnote/addins/${GNOME_VERSION}/tomboyimport.so
+@comment lib/gnote/addins/${GNOME_VERSION}/underline.la
+lib/gnote/addins/${GNOME_VERSION}/underline.so
 @man man/man1/gnote.1
 share/applications/gnote.desktop
 share/gnome/help/gnote/
@@ -48,6 +48,27 @@ share/gnome/help/gnote/C/figures/note-template.png
 share/gnome/help/gnote/C/figures/notebook-icon.png
 share/gnome/help/gnote/C/gnote.xml
 share/gnome/help/gnote/C/legal.xml
+share/gnome/help/gnote/cs/
+share/gnome/help/gnote/cs/figures/
+share/gnome/help/gnote/cs/figures/add-notebook-search.png
+share/gnome/help/gnote/cs/figures/add-to-notebook.png
+share/gnome/help/gnote/cs/figures/delete-notebook.png
+share/gnome/help/gnote/cs/figures/gnote-main-menu.png
+share/gnome/help/gnote/cs/figures/gnote-new-note.png
+share/gnome/help/gnote/cs/figures/gnote-panel.png
+share/gnome/help/gnote/cs/figures/gnote-pindown.png
+share/gnome/help/gnote/cs/figures/gnote-pinup.png
+share/gnome/help/gnote/cs/figures/gnote-preferences-add-ins.png
+share/gnome/help/gnote/cs/figures/gnote-preferences-editing.png
+share/gnome/help/gnote/cs/figures/gnote-preferences-hotkeys.png
+share/gnome/help/gnote/cs/figures/gnote-preferences-synchronization.png
+share/gnome/help/gnote/cs/figures/gnote-tools.png
+share/gnome/help/gnote/cs/figures/move-notes-search.png
+share/gnome/help/gnote/cs/figures/new-notebook.png
+share/gnome/help/gnote/cs/figures/note-template.png
+share/gnome/help/gnote/cs/figures/notebook-icon.png
+share/gnome/help/gnote/cs/gnote.xml
+share/gnome/help/gnote/cs/legal.xml
 share/gnome/help/gnote/de/
 share/gnome/help/gnote/de/figures/
 share/gnome/help/gnote/de/figures/add-notebook-search.png
@@ -287,6 +308,7 @@ share/locale/uk/LC_MESSAGES/gnote.mo
 share/locale/zh_CN/LC_MESSAGES/gnote.mo
 share/omf/gnote/
 share/omf/gnote/gnote-C.omf
+share/omf/gnote/gnote-cs.omf
 share/omf/gnote/gnote-de.omf
 share/omf/gnote/gnote-el.omf
 share/omf/gnote/gnote-es.omf
