@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/11/29 15:05:07 stephan Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/30 19:52:31 stephan Exp $
 
 COMMENT =	password strength checking and validation routines
 
-MAINTAINER =	Stephan A. Rickauer <stephan@openbsd.org>
-
 DISTNAME = 	password_strength-6.x-1.0
 PKGNAME =	drupal6-password_strength-1.0
+REVISION = 	1
 
 .include <bsd.port.mk>
