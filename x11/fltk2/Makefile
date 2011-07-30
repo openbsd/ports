@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/21 14:42:34 benoit Exp $
+# $OpenBSD: Makefile,v 1.13 2011/07/30 07:55:14 benoit Exp $
 
 COMMENT =	fast light toolkit
 
@@ -6,13 +6,12 @@ V =		7725
 DISTNAME =	fltk-2.0.x-r${V}
 PKGNAME =	fltk2-2.0.${V}
 
+REVISION =	0
 EPOCH =		0
 
 CATEGORIES =	x11
 
 HOMEPAGE =	http://www.fltk.org/
-
-MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
 # FLTK/GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
