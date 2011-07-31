@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/23 14:47:09 kili Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/31 09:56:10 nigel Exp $
 
 COMMENT =		WebKit bindings for Haskell
 DISTNAME =		webkit-0.12.1
 CATEGORIES =		www
+REVISION =		0
 
 MAINTAINER =		Jona Joachim <jaj@hcl-club.lu>
 
@@ -19,7 +20,8 @@ RUN_DEPENDS =	x11/hs-gtk>=0.12.0 \
 		graphics/hs-cairo>=0.12.0 \
 		devel/hs-pango>=0.12.0 \
 		devel/hs-glib>=0.12.0 \
-		devel/hs-mtl
+		devel/hs-mtl \
+		www/webkit>=1.1.15
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		devel/gtk2hs-buildtools
 
