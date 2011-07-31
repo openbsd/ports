@@ -1,0 +1,46 @@
+$OpenBSD: patch-lib_WWW_YouTube_Download_pm,v 1.1 2011/07/31 18:09:57 landry Exp $
+
+- unbreak after recent youtube changes
+- error out when extracting JSON fails
+- support for another url type
+- youtu.be shortener support
+
+--- lib/WWW/YouTube/Download.pm.orig	Sun May 29 15:32:20 2011
++++ lib/WWW/YouTube/Download.pm	Sat Jul 30 22:44:24 2011
+@@ -170,9 +170,17 @@ sub _get_args {
+             $data = JSON->new->utf8(1)->decode($json);
+             last;
+         }
++        elsif ($_ && /^\s*'PLAYER_CONFIG'\s*:\s*({.*})\s*$/) {
++            $data = JSON->new->utf8(1)->decode($1);
++            last;
++        }
+     }
+ 
+-    return $data->{args};
++    if ($data->{args}) {
++        return $data->{args};
++    } else {
++        Carp::croak "failed to extract JSON data.";
++    }
+ }
+ 
+ sub _parse_fmt_url_map {
+@@ -214,13 +222,16 @@ sub _suffix {
+ 
+ sub _video_id {
+     my $stuff = shift;
+-    if ($stuff =~ m{/.*?[?&;]v=([^&#?=/;]+)}) {
++    if ($stuff =~ m{/.*?[?&;!]v=([^&#?=/;]+)}) {
+         return $1;
+     }
+     elsif ($stuff =~ m{/(?:e|v|embed)/([^&#?=/;]+)}) {
+         return $1;
+     }
+     elsif ($stuff =~ m{#p/(?:u|search)/\d+/([^&?/]+)}) {
++        return $1;
++    }
++    elsif ($stuff =~ m{youtu.be/([^&#?=/;]+)}) {
+         return $1;
+     }
+     else {

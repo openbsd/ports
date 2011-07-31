@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/25 13:04:17 todd Exp $
+# $OpenBSD: Makefile,v 1.2 2011/07/31 18:09:57 landry Exp $
 
 COMMENT =	simple YouTube interface for downloading videos
 
 MODULES =	cpan
-DISTNAME =	WWW-YouTube-Download-0.25
+DISTNAME =	WWW-YouTube-Download-0.27
 CATEGORIES =	www
 
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
@@ -24,9 +24,5 @@ RUN_DEPENDS =	www/p5-libwww \
 		www/p5-URI \
 		converters/p5-JSON \
 		www/p5-HTML-Parser
-
-post-extract:
-	find -d "${WRKDIST}" \
-		-type d -name PaxHeader -exec rm -rf "{}" \;
 
 .include <bsd.port.mk>
