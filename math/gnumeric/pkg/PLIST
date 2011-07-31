@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2011/06/17 09:37:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2011/07/31 20:51:08 ajacoutot Exp $
 %%SHARED%%
 bin/gnumeric
 @bin bin/gnumeric-${VERSION}
@@ -712,6 +712,7 @@ share/gnome/help/gnumeric/C/figures/printing-preview.png
 share/gnome/help/gnumeric/C/figures/printing-setup-header-config.png
 share/gnome/help/gnumeric/C/figures/printing-setup-header.png
 share/gnome/help/gnumeric/C/figures/printing-setup-page.png
+share/gnome/help/gnumeric/C/figures/printing-setup-printarea.png
 share/gnome/help/gnumeric/C/figures/printing-setup-sheet.png
 share/gnome/help/gnumeric/C/figures/selection-1.png
 share/gnome/help/gnumeric/C/figures/selection-10.png
@@ -836,6 +837,7 @@ share/gnumeric/${VERSION}/ui/autofilter-top10.ui
 share/gnumeric/${VERSION}/ui/autoformat.ui
 share/gnumeric/${VERSION}/ui/autosave.ui
 share/gnumeric/${VERSION}/ui/cell-comment.ui
+share/gnumeric/${VERSION}/ui/cell-format-cond.ui
 share/gnumeric/${VERSION}/ui/cell-format.ui
 share/gnumeric/${VERSION}/ui/cell-sort.ui
 share/gnumeric/${VERSION}/ui/chi-squared.ui
