@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/07/29 08:00:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/07/31 14:48:19 kili Exp $
 @conflict e2fs-uuid-*
 @conflict uuid-*
-@conflict ossp-uuid-<=1.6.2
+@conflict ossp-uuid-<1.6.2p1
 @pkgpath sysutils/e2fsprogs,-main
 @pkgpath sysutils/e2fsprogs,-uuid
 @bin bin/chattr
