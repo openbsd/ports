@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:44:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/08/01 19:30:31 stephan Exp $
 
 COMMENT =	roles with composition parameters
 
 DISTNAME =	MooseX-Role-Parameterized-0.19 
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 MODULES =	cpan
 USE_GROFF =	Yes
-
-MAINTAINER =	Stephan A. Rickauer <stephan@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes

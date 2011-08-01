@@ -1,13 +1,11 @@
-@comment $OpenBSD: PLIST,v 1.11 2009/11/06 15:28:09 stephan Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/08/01 19:30:31 stephan Exp $
 @group daemon
 lib/
 lib/php/
 pear/data/Log/
 pear/data/Log/misc/
 pear/data/Log/misc/log.sql
-@group
 pear/doc/
-@group daemon
 pear/doc/Log/
 pear/doc/Log/docs/
 pear/doc/Log/docs/guide.txt

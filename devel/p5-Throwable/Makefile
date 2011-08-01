@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:44:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/08/01 19:30:31 stephan Exp $
 
 COMMENT =	a role for classes that can be thrown
 
 MODULES =	cpan
 DISTNAME =	Throwable-0.102080
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 CPAN_AUTHOR =	RJBS
 USE_GROFF =	Yes
-
-MAINTAINER =	Stephan A. Rickauer <stephan@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
