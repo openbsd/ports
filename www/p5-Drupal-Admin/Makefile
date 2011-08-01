@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:46:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/08/01 19:36:02 stephan Exp $
 
 COMMENT = 		screen scraping Perl API to some Drupal admin functions
 
 DISTNAME =		Drupal-Admin-0.04
-REVISION =		0
+REVISION =		1
 CATEGORIES =		www devel
 MODULES =		cpan
 USE_GROFF =		Yes
-
-MAINTAINER =		Stephan A. Rickauer <stephan@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
