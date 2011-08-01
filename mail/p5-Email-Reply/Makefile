@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:45:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/08/01 19:42:19 stephan Exp $
 
 COMMENT=	module to generate replies to e-mail messages.
 
 MODULES=	cpan
 DISTNAME=	Email-Reply-1.202
-REVISION=	1
+REVISION=	2
 CATEGORIES=	mail
 USE_GROFF =	Yes
-
-MAINTAINER=	Stephan A. Rickauer <stephan@openbsd.org>
 
 # Same as Perl
 PERMIT_PACKAGE_CDROM=	Yes
