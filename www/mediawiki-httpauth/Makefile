@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/08/01 10:56:21 jasper Exp $
 
 COMMENT =	MediaWiki extension for http based authentication
 
 V =		0.1
 DISTNAME =	mediawiki-httpauth-${V}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	www
 
-MAINTAINER =	Stephan A. Rickauer <stephan@openbsd.org>
+MAINTAINER =	Wen Heping <wenheping@gmail.com>
 
 HOMEPAGE =	http://www.mediawiki.org/wiki/Extension:HttpAuth
 MASTER_SITES =	http://github.com/oremj/mediawiki-http-auth/tarball/v${V}/

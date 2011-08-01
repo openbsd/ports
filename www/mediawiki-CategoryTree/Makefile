@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/08/01 10:56:21 jasper Exp $
 
 COMMENT =	dynamic view of the wiki's category structure as a tree
 
 V =		48711
 DISTNAME =	CategoryTree-MW1.15-r${V}
 PKGNAME =	mediawiki-CategoryTree-${V}
+REVISION =	0
 CATEGORIES =	www
 
-MAINTAINER =	Stephan A. Rickauer <stephan@openbsd.org>
+MAINTAINER =	Wen Heping <wenheping@gmail.com>
 
 HOMEPAGE =	http://www.mediawiki.org/wiki/Extension:CategoryTree
 MASTER_SITES =	http://upload.wikimedia.org/ext-dist/
