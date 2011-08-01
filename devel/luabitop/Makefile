@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/08/01 02:13:45 jolan Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	library for bitwise operations in lua
 DISTNAME=	LuaBitOp-1.0.1
 PKGNAME=	luabitop-1.0.1
+REVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://bitop.luajit.org/download/
 
 HOMEPAGE=	http://bitop.luajit.org/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # MIT
 PERMIT_DISTFILES_CDROM=	Yes

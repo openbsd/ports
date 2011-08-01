@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/08/01 02:13:45 jolan Exp $
 
 COMMENT=	puzzle game resembling the arcade game Qix
 DISTNAME=	late-0.1.0
+REVISION=	0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=late/}
@@ -15,8 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 WANTLIB=		SDL X11 Xext c m pthread pthread-stubs stdc++ \
 			usbhid xcb SDL_image
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 LIB_DEPENDS=	devel/sdl-image
 

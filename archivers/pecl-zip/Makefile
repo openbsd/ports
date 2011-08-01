@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/07/08 18:25:40 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2011/08/01 02:13:45 jolan Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,8 +10,6 @@ MASTER_SITES=	http://pecl.php.net/get/
 CATEGORIES=	archivers www
 
 HOMEPAGE=	http://pecl.php.net/package/zip/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # PHP License
 PERMIT_PACKAGE_CDROM=	Yes
@@ -27,7 +25,7 @@ BUILD_DEPENDS=	www/pear \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 
-REVISION =	1
+REVISION =	2	
 WANTLIB=	z
 
 CONFIGURE_STYLE=gnu

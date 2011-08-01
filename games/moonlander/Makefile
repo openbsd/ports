@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/08/01 02:13:45 jolan Exp $
 
 COMMENT=	clone of atari game
 DISTNAME=	moon-lander-1.0
 PKGNAME=	moonlander-1.0
-REVISION =	0
+REVISION =	1
 CATEGORIES=	games x11
 MASTER_SITES=	http://downloads.daveblood.com/lunar_lander/
 
 HOMEPAGE=	http://magigames.org/moonlander.html
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

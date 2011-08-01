@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2011/06/20 13:14:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2011/08/01 02:13:45 jolan Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	posix library for the lua language
 DISTNAME=	luaposix-5.1.4
 EPOCH=		0
+REVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://luaforge.net/frs/download.php/3572/
 
 HOMEPAGE=	http://luaforge.net/projects/luaposix/
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # Public domain
 PERMIT_PACKAGE_CDROM=	Yes

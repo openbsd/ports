@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.8 2010/10/18 19:20:42 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/08/01 02:13:45 jolan Exp $
 
 COMMENT=	Visual Basic .NET support for Mono
 DISTNAME=	mono-basic-2.8
+REVISION=	0
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/mono-basic/
 
 HOMEPAGE=	http://www.mono-project.com/Visual_Basic
-
-MAINTAINER=	Jolan Luff <jolan@openbsd.org>
 
 # LGPL v2
 PERMIT_DISTFILES_CDROM=	Yes
