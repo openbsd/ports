@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/30 11:04:14 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/08/01 11:35:34 edd Exp $
 @bin bin/asy
 bin/xasy
 @info info/asy-faq.info
@@ -445,6 +445,4 @@ share/texmf/tex/latex/asymptote/asymptote.sty
 share/texmf/tex/latex/asymptote/latexmkrc
 share/texmf/tex/latex/asymptote/ocg.sty
 @exec mktexlsr > /dev/null 2>&1
-@exec texlinks
 @unexec-delete mktexlsr > /dev/null 2>&1
-@unexec-delete texlinks
