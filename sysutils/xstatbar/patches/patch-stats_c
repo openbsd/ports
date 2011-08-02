@@ -1,0 +1,19 @@
+$OpenBSD: patch-stats_c,v 1.5 2011/08/02 15:17:43 ajacoutot Exp $
+
+If devinfo.type != AUDIO_MIXER_CLASS is true, xstatbar will never make
+progress and loop forever. Fix it by trying the next device.
+
+--- stats.c.orig	Tue Aug  2 17:10:04 2011
++++ stats.c	Tue Aug  2 17:11:47 2011
+@@ -101,8 +101,10 @@ volume_init()
+    devinfo.index = 0;
+    while (ioctl(volume.dev_fd, AUDIO_MIXER_DEVINFO, &devinfo) >= 0) {
+ 
+-      if (devinfo.type != AUDIO_MIXER_CLASS)
++      if (devinfo.type != AUDIO_MIXER_CLASS) {
++         devinfo.index++;
+          continue;
++      }
+ 
+       if (strncmp(devinfo.label.name, AudioCoutputs, MAX_AUDIO_DEV_LEN) == 0)
+          oclass_idx = devinfo.index;
