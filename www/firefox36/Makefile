@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/06/22 12:32:21 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2011/08/02 19:24:38 naddy Exp $
 
 COMMENT =	Mozilla web browser
 
@@ -8,6 +8,8 @@ MOZILLA_VERSION =	3.6.18
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	firefox36
 MOZILLA_CODENAME =	browser
+
+REVISION =	0
 
 SO_VERSION =	22.2
 # NOTE: Must bump minor version if any shlib's are removed from the

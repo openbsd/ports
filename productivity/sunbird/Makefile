@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/07/22 05:25:27 landry Exp $
+# $OpenBSD: Makefile,v 1.32 2011/08/02 19:24:38 naddy Exp $
 
 COMMENT =		Mozilla calendar
 
@@ -10,7 +10,7 @@ MOZILLA_CODENAME =	calendar
 
 DISTNAME =		thunderbird-${TB_VERSION}.source
 EPOCH =			0
-REVISION =		7
+REVISION =		8
 
 MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${TB_VERSION}/source/
 
