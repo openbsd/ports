@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/06/08 17:40:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/08/03 13:20:50 dcoppa Exp $
 
 COMMENT =	distributed version control system by Canonical
 
 MODPY_EGG_VERSION = 2.2.2
 DISTNAME =	bzr-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://bazaar-vcs.org/
