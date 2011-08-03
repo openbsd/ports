@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/06/23 22:58:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2011/08/03 15:21:18 robert Exp $
 
 COMMENT=		small tiling window manager
 
@@ -7,6 +7,8 @@ SHARED_LIBS=		swmhack 0.0
 DISTNAME=		scrotwm-0.9.32
 EXTRACT_SUFX=		.tgz
 CATEGORIES=		x11
+
+REVISION=		0
 
 HOMEPAGE=		http://www.scrotwm.org/
 MAINTAINER=		Marco Peereboom <marco@peereboom.us>
