@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.16 2011/07/06 17:11:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/08/16 10:06:58 landry Exp $
 
 COMMENT =	mailing list manager with web interface
 
-VERSION =	6.1.3
+VERSION =	6.1.6
 DISTNAME =	sympa-${VERSION}
-
-REVISION =	5
 
 CATEGORIES =	mail www
 
 HOMEPAGE =	http://www.sympa.org
-MAINTAINER =	Landry Breuil <gaston@gcu.info>
+MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,7 +16,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		${HOMEPAGE}/distribution/old/ \
+MASTER_SITES =		${HOMEPAGE}/distribution/ \
 			http://distfiles.nl/
 
 MODULES =	perl

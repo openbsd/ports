@@ -1,16 +1,7 @@
-$OpenBSD: patch-src_etc_script_create_db_SQLite,v 1.1 2010/12/30 17:51:25 landry Exp $
-fix typos: https://sourcesup.cru.fr/tracker/?func=detail&atid=167&aid=7371&group_id=23 
---- src/etc/script/create_db.SQLite.orig	Mon Jun  7 11:00:38 2010
-+++ src/etc/script/create_db.SQLite	Mon Dec 20 17:52:29 2010
-@@ -5,7 +5,7 @@ CREATE TABLE user_table (
-   	password_user		text,
- 	last_login_date_user	integer,	
- 	last_login_host_user	text,
--        wrong_login_count_user  integer,,
-+        wrong_login_count_user  integer,
- 	cookie_delay_user	integer,
- 	lang_user		text,
- 	attributes_user		text,
+$OpenBSD: patch-src_etc_script_create_db_SQLite,v 1.2 2011/08/16 10:06:58 landry Exp $
+fix non-sqlite keywords ?
+--- src/etc/script/create_db.SQLite.orig	Mon Jan 17 08:53:45 2011
++++ src/etc/script/create_db.SQLite	Sun Aug  7 11:40:00 2011
 @@ -26,11 +26,11 @@ CREATE TABLE subscriber_table (
  	bounce_subscriber	text,
  	bounce_address_subscriber text,
@@ -77,7 +68,7 @@ fix typos: https://sourcesup.cru.fr/tracker/?func=detail&atid=167&aid=7371&group
 -	dkim_selector_bulkspool varchar(50),
 -	dkim_d_bulkspool varchar(50),
 -	dkim_i_bulkspool varchar(50),
--	dkim_header_list_bulkspool' varchar(500),
+-	dkim_header_list_bulkspool varchar(500),
 +        dkim_privatekey_bulkspool  text,
 +	dkim_selector_bulkspool text,
 +	dkim_d_bulkspool text,
