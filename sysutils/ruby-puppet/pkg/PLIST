@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2011/07/28 08:38:57 robert Exp $
+@comment $OpenBSD: PLIST,v 1.16 2011/08/16 10:13:37 robert Exp $
 @newgroup _puppet:580
 @newuser _puppet:580:580:daemon:Puppet user:/var/empty:/sbin/nologin
 @extraunexec rm -rf ${SYSCONFDIR}/puppet/*
@@ -17,6 +17,7 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/agent.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/apply.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/ca.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/catalog.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/cert.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/application/certificate.rb
@@ -80,6 +81,7 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/external/pson/pure/parser.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/external/pson/version.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/ca.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/catalog/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/catalog.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/catalog/select.rb
@@ -100,7 +102,9 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/help/global.erb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/help/man.erb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/key.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/man.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/node/
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/node.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/node/clean.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/parser.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/plugin.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/face/report.rb
@@ -475,6 +479,7 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/hpux.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/macports.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/nim.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/openbsd.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/pacman.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/pip.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/pkg.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/provider/package/pkgdmg.rb
@@ -764,6 +769,7 @@ lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/tagging.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/user_attr.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/warnings.rb
 lib/ruby/site_ruby/${MODRUBY_LIBREV}/puppet/util/zaml.rb
+lib/ruby/site_ruby/${MODRUBY_LIBREV}/semver.rb
 @man man/man5/puppet.conf.5
 @man man/man8/filebucket.8
 @man man/man8/pi.8
