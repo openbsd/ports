@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2011/07/22 10:20:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2011/08/16 08:29:13 sthen Exp $
 
 COMMENT =	imap4 webmail client
 
-DISTNAME =	roundcubemail-0.5.3
+DISTNAME =	roundcubemail-0.5.4
 CATEGORIES =	mail www
 HOMEPAGE =	http://www.roundcube.net/
-
-REVISION =	1
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 

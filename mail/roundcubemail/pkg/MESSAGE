@@ -3,7 +3,6 @@ directory. You can configure this as follows:
 
 # ln -s ${PREFIX}/conf/modules.sample/roundcubemail.conf \
         ${PREFIX}/conf/modules
-# apachectl stop
-# apachectl start
+# /etc/rc.d/httpd restart
 
 Next, follow ${INSTDIR}/INSTALL or ${INSTDIR}/UPGRADING
