@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/06/16 07:40:30 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/08/16 16:23:08 rpointel Exp $
 bin/pygmentize
 lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/Pygments-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -71,6 +71,8 @@ lib/python${MODPY_VERSION}/site-packages/pygments/lexers/dotnet.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/dotnet.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/functional.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/functional.pyc
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/hdl.py
+lib/python${MODPY_VERSION}/site-packages/pygments/lexers/hdl.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/math.py
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/math.pyc
 lib/python${MODPY_VERSION}/site-packages/pygments/lexers/other.py
