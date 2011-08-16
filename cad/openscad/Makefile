@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/29 18:55:37 matthew Exp $
+# $OpenBSD: Makefile,v 1.2 2011/08/16 18:09:09 matthew Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller
 
-V =			2011.04
+V =			2011.06
 DISTNAME =		openscad-${V}
 
 CATEGORIES =		cad
@@ -26,7 +26,6 @@ DISTFILES =		openscad-${V}.src.tar.gz
 
 MODULES =		x11/qt4
 BUILD_DEPENDS =		devel/bison \
-			devel/cmake \
 			devel/flex \
 			math/eigen2
 LIB_DEPENDS =		devel/boost \
@@ -35,16 +34,17 @@ LIB_DEPENDS =		devel/boost \
 			graphics/glew \
 			graphics/opencsg \
 			math/cgal
-			
-CONFIGURE_ENV =		EIGEN2DIR=${LOCALBASE}/include/eigen2
+
+QMAKE_ENV =		EIGEN2DIR=${LOCALBASE}/include/eigen2
+QMAKE_FLAGS =		VERSION=${V}
 MAKE_ENV =		INSTALL_ROOT=${DESTDIR}
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/openscad.pro
 	ln -sf ${LOCALBASE}/bin/gflex ${WRKDIR}/bin/flex
 	ln -sf ${LOCALBASE}/bin/bison ${WRKDIR}/bin/yacc
 
 do-configure:
-	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} qmake4 openscad.pro
+	cd ${WRKSRC} && \
+	    ${SETENV} ${QMAKE_ENV} qmake4 ${QMAKE_FLAGS} openscad.pro
 
 .include <bsd.port.mk>
