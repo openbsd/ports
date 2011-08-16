@@ -1,0 +1,65 @@
+$OpenBSD: patch-lib_FlashVideo_Site_Youtube_pm,v 1.1 2011/08/16 08:23:09 sthen Exp $
+--- lib/FlashVideo/Site/Youtube.pm.orig	Fri Aug  5 18:00:19 2011
++++ lib/FlashVideo/Site/Youtube.pm	Fri Aug  5 18:00:42 2011
+@@ -133,11 +133,61 @@ sub find_video {
+     } elsif($info{fmt_url_map}) {
+       debug "Using fmt_url_map method from info";
+       return $self->download_fmt_map($prefs, $browser, $title, \%info, $info{fmt_url_map});
++    } elsif($info{url_encoded_fmt_stream_map}) {
++      debug "Using url_encoded_fmt_stream_map method from info";
++      return $self->download_url_encoded_fmt_stream_map($prefs, $browser, $title, \%info, $info{url_encoded_fmt_stream_map});
+     }
+   }
+ 
+   # Try old get_video method, just incase.
+   return download_get_video($browser, $prefs, $video_id, $title, $t);
++}
++
++sub download_url_encoded_fmt_stream_map {
++  my($self, $prefs, $browser, $title, $info, $fmt_map) = @_;
++
++  my $fmt_url_map = parse_youtube_url_encoded_fmt_stream_map($fmt_map);
++
++  if (!$title and $browser->uri->as_string =~ m'/user/.*?#') {
++    my $video_id = (split /\//, $browser->uri->fragment)[-1];
++
++    my %info = get_youtube_video_info($browser->clone, $video_id);
++
++    $title = $info->{title};
++  }
++
++  my $preferred_quality = $prefs->quality->choose(map { $fmt_url_map->{$_->{id}}
++      ? { resolution => $_->{resolution}, url => $fmt_url_map->{$_->{id}} }
++      : () } @formats);
++
++  $browser->allow_redirects;
++
++  return $preferred_quality->{url}, title_to_filename($title, "mp4");
++}
++
++sub parse_youtube_url_encoded_fmt_stream_map {
++  my($raw_map) = @_;;
++
++  my $map = {};
++
++  foreach my $params (split /,/, $raw_map) {
++    
++    my $format = "";
++    my $url = "";
++    
++    foreach my $pair (split /&/, $params) {
++      my ($name, $value) = split /=/, $pair;
++      if ($name eq "itag"){
++        $format = $value;
++      } elsif ($name eq "url") {
++        $url = uri_unescape($value);
++      }
++    }
++    
++    $map->{$format} = $url;
++  }
++  
++  return $map;
+ }
+ 
+ sub download_fmt_map {
