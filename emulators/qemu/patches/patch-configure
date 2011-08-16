@@ -1,12 +1,12 @@
-$OpenBSD: patch-configure,v 1.17 2011/05/23 23:43:28 sthen Exp $
---- configure.orig	Fri May  6 15:01:43 2011
-+++ configure	Mon May 23 12:58:28 2011
-@@ -223,13 +223,11 @@ sdl_config="${cross_prefix}${SDL_CONFIG-sdl-config}"
+$OpenBSD: patch-configure,v 1.18 2011/08/16 21:24:42 sthen Exp $
+--- configure.orig	Thu Aug  4 17:24:34 2011
++++ configure	Sun Aug  7 21:47:00 2011
+@@ -229,13 +229,11 @@ sdl_config="${cross_prefix}${SDL_CONFIG-sdl-config}"
  
  # default flags for all hosts
  QEMU_CFLAGS="-fno-strict-aliasing $QEMU_CFLAGS"
 -CFLAGS="-g $CFLAGS"
- QEMU_CFLAGS="-Wall -Wundef -Wendif-labels -Wwrite-strings -Wmissing-prototypes $QEMU_CFLAGS"
+ QEMU_CFLAGS="-Wall -Wundef -Wwrite-strings -Wmissing-prototypes $QEMU_CFLAGS"
  QEMU_CFLAGS="-Wstrict-prototypes -Wredundant-decls $QEMU_CFLAGS"
  QEMU_CFLAGS="-D_GNU_SOURCE -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE $QEMU_CFLAGS"
  QEMU_CFLAGS="-D_FORTIFY_SOURCE=2 $QEMU_CFLAGS"
@@ -15,7 +15,7 @@ $OpenBSD: patch-configure,v 1.17 2011/05/23 23:43:28 sthen Exp $
  
  # make source path absolute
  source_path=`cd "$source_path"; pwd`
-@@ -275,6 +273,12 @@ elif check_define __s390__ ; then
+@@ -281,6 +279,12 @@ elif check_define __s390__ ; then
    else
      cpu="s390"
    fi
@@ -28,7 +28,7 @@ $OpenBSD: patch-configure,v 1.17 2011/05/23 23:43:28 sthen Exp $
  else
    cpu=`uname -m`
  fi
-@@ -295,7 +299,7 @@ case "$cpu" in
+@@ -301,7 +305,7 @@ case "$cpu" in
    armv*l)
      cpu="armv4l"
    ;;
@@ -37,24 +37,25 @@ $OpenBSD: patch-configure,v 1.17 2011/05/23 23:43:28 sthen Exp $
      cpu="hppa"
    ;;
    mips*)
-@@ -934,7 +938,6 @@ fi
- gcc_flags="-Wold-style-declaration -Wold-style-definition -Wtype-limits"
- gcc_flags="-Wformat-security -Wformat-y2k -Winit-self -Wignored-qualifiers $gcc_flags"
- gcc_flags="-Wmissing-include-dirs -Wempty-body -Wnested-externs $gcc_flags"
--gcc_flags="-fstack-protector-all $gcc_flags"
- cat > $TMPC << EOF
- int main(void) { return 0; }
- EOF
-@@ -1345,7 +1348,7 @@ int main(void) {
+@@ -1513,11 +1517,17 @@ int main(void) {
+     return 0;
  }
  EOF
++  if $pkg_config libpng --modversion >/dev/null 2>&1; then
++    vnc_png_cflags=`$pkg_config libpng --cflags 2> /dev/null`
++    vnc_png_libs=`$pkg_config libpng --libs 2> /dev/null`
++  else
      vnc_png_cflags=""
--    vnc_png_libs="-lpng"
-+    vnc_png_libs="-lpng -lz -lm"
+     vnc_png_libs="-lpng"
++  fi
    if compile_prog "$vnc_png_cflags" "$vnc_png_libs" ; then
      vnc_png=yes
      libs_softmmu="$vnc_png_libs $libs_softmmu"
-@@ -1760,7 +1763,7 @@ fi
++    QEMU_CFLAGS="$QEMU_CFLAGS $vnc_png_cflags"
+   else
+     if test "$vnc_png" = "yes" ; then
+       feature_not_found "vnc-png"
+@@ -1844,7 +1854,7 @@ fi
  
  ##########################################
  # pthread probe
@@ -63,19 +64,19 @@ $OpenBSD: patch-configure,v 1.17 2011/05/23 23:43:28 sthen Exp $
  
  pthread=no
  cat > $TMPC << EOF
-@@ -2329,8 +2332,9 @@ fi
+@@ -2546,8 +2556,9 @@ fi
  # End of CC checks
  # After here, no more $cc or $ld runs
  
 -if test "$debug" = "no" ; then
 -  CFLAGS="-O2 $CFLAGS"
 +if test "$debug" = "yes" ; then
-+  CFLAGS="-O0 -g $CFLAGS"
-+  LDFLAGS="-g $LDFLAGS"
++  CFLAGS="$CFLAGS -O0 -g"
++  LDFLAGS="$LDFLAGS -g"
  fi
  
  # Consult white-list to determine whether to enable werror
-@@ -2788,7 +2792,7 @@ echo "TOOLS=$tools" >> $config_host_mak
+@@ -3048,7 +3059,7 @@ echo "TOOLS=$tools" >> $config_host_mak
  echo "ROMS=$roms" >> $config_host_mak
  echo "MAKE=$make" >> $config_host_mak
  echo "INSTALL=$install" >> $config_host_mak
@@ -83,8 +84,8 @@ $OpenBSD: patch-configure,v 1.17 2011/05/23 23:43:28 sthen Exp $
 +echo "INSTALL_DIR=$install -d -m0755" >> $config_host_mak
  echo "INSTALL_DATA=$install -m0644 -p" >> $config_host_mak
  echo "INSTALL_PROG=$install -m0755 -p" >> $config_host_mak
- echo "CC=$cc" >> $config_host_mak
-@@ -3223,7 +3227,11 @@ if test "$gprof" = "yes" ; then
+ echo "PYTHON=$python" >> $config_host_mak
+@@ -3520,7 +3531,11 @@ if test "$gprof" = "yes" ; then
    fi
  fi
  

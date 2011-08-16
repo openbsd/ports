@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.72 2011/07/19 06:05:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2011/08/16 21:24:42 sthen Exp $
 
 # no success building on other archs yet
-ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc64
-VMEM_WARNING =		yes
+ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc sparc64
 
 COMMENT =		multi system emulator
 
-DISTNAME =		qemu-0.14.1
-REVISION =		4
+DISTNAME =		qemu-0.15.0
 CATEGORIES =		emulators
-MASTER_SITES =		${MASTER_SITE_SAVANNAH:=qemu/}
+MASTER_SITES =		http://wiki.qemu.org/download/ \
+			${MASTER_SITE_SAVANNAH:=qemu/}
 
 HOMEPAGE =		http://www.qemu.org/
 
@@ -21,14 +20,20 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-WANTLIB =		c jpeg m ncurses ossaudio png pthread util z
+WANTLIB =		c curl jpeg m ncurses ossaudio png pthread util z
 
 BUILD_DEPENDS =		textproc/texi2html
 LIB_DEPENDS =		graphics/jpeg \
-			graphics/png
+			graphics/png \
+			net/curl
 
 MAKE_ENV =		V=1
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples
+
+EXTRA_CFLAGS=		-I${LOCALBASE}/include
+EXTRA_LDFLAGS=		-L${LOCALBASE}/lib
+
+VMEM_WARNING =		Yes
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	simple
@@ -37,31 +42,39 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--mandir=${PREFIX}/man \
 			--cc="${CC}" \
 			--host-cc="${CC}" \
-			--extra-cflags="-I${LOCALBASE}/include \
-					-I${LOCALBASE}/include/libpng" \
-			--extra-ldflags=-L${LOCALBASE}/lib \
-			--disable-curl \
+			--extra-cflags="${EXTRA_CFLAGS}" \
+			--extra-ldflags="${EXTRA_LDFLAGS}" \
+			--disable-guest-agent \
+			--disable-smartcard-nss \
+			--disable-spice \
 			--disable-uuid \
+			--disable-usb-redir \
 			--disable-vnc-sasl \
 			--disable-vnc-tls
 
-.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mmips64*}
-CONFIGURE_ARGS +=	--disable-bsd-user
-PKG_ARGS+=	-Dbsduser=0
+.if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Msparc64}
+PKG_ARGS +=		-Dbsduser=1
 .else
-PKG_ARGS+=	-Dbsduser=1
+CONFIGURE_ARGS +=	--disable-bsd-user
+PKG_ARGS +=		-Dbsduser=0
 .endif
 
 FLAVORS =		debug no_x11
 FLAVOR ?=
 
 .if ${FLAVOR:L:Mno_x11}
-CONFIGURE_ARGS +=	--disable-sdl
+CONFIGURE_ARGS +=	--disable-sdl --disable-opengl
 .else
+WANTLIB +=		GL SDL X11
+
 LIB_DEPENDS +=		devel/sdl
 
-WANTLIB +=		SDL X11
+EXTRA_CFLAGS +=		-I${X11BASE}/include
+EXTRA_LDFLAGS +=	-L${X11BASE}/lib
 .endif
+
+# until the system headers are fixed properly.
+EXTRA_CFLAGS +=		-Wno-redundant-decls
 
 .if ${FLAVOR:L:Mdebug}
 CONFIGURE_ARGS +=	--enable-debug
