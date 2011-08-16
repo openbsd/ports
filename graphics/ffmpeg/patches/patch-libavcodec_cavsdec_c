@@ -1,0 +1,16 @@
+$OpenBSD: patch-libavcodec_cavsdec_c,v 1.1 2011/08/16 19:01:47 sthen Exp $
+
+Fix insufficient boundary check. oCERT #2011-002
+
+--- libavcodec/cavsdec.c.orig	Sat Aug 13 19:35:06 2011
++++ libavcodec/cavsdec.c	Sat Aug 13 19:36:04 2011
+@@ -115,7 +115,8 @@ static inline int get_ue_code(GetBitContext *gb, int o
+ static int decode_residual_block(AVSContext *h, GetBitContext *gb,
+                                  const struct dec_2dvlc *r, int esc_golomb_order,
+                                  int qp, uint8_t *dst, int stride) {
+-    int i, level_code, esc_code, level, run, mask;
++    int i, esc_code, level, mask;
++    unsigned int level_code, run;
+     DCTELEM level_buf[65];
+     uint8_t run_buf[65];
+     DCTELEM *block = h->block;
