@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/08/16 08:35:07 sthen Exp $
 
 COMMENT-main=	nagios service check acceptor
 COMMENT-client=	nagios service check acceptor - client
 
-VERSION=	2.7.2
-DISTNAME=	nsca-${VERSION}
+# packaged from Icinga git repo.
+VERSION=	2.8pre20100831
+DISTNAME=	icinga-nsca-${VERSION}
+WRKDIST=	${WRKDIR}/icinga-nsca
 PKGNAME-main=	nsca-${VERSION}
 PKGNAME-client=	nsca-client-${VERSION}
 CATEGORIES=	net
@@ -17,7 +19,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=nagios/}
+MASTER_SITES=		http://spacehopper.org/mirrors/
 
 WANTLIB=		c mcrypt>=8
 LIB_DEPENDS=		security/libmcrypt

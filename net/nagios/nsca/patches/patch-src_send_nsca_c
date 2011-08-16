@@ -1,8 +1,8 @@
-$OpenBSD: patch-src_send_nsca_c,v 1.1.1.1 2006/03/13 18:18:22 bernd Exp $
---- src/send_nsca.c.orig	Fri Feb  3 13:09:00 2006
-+++ src/send_nsca.c	Fri Feb  3 13:09:14 2006
+$OpenBSD: patch-src_send_nsca_c,v 1.2 2011/08/16 08:35:07 sthen Exp $
+--- src/send_nsca.c.orig	Tue Aug 31 13:47:57 2010
++++ src/send_nsca.c	Thu Apr 21 12:31:16 2011
 @@ -25,7 +25,7 @@ time_t start_time,end_time;
- int server_port=DEFAULT_SERVER_PORT;
+ char *server_port=DEFAULT_SERVER_PORT;
  char server_name[MAX_HOST_ADDRESS_LENGTH];
  char password[MAX_INPUT_BUFFER]="";
 -char config_file[MAX_INPUT_BUFFER]="send_nsca.cfg";
