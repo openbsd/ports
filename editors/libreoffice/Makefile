@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/07/19 09:09:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2011/08/16 08:11:51 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		3.4
-VERSION=	3.4.1.3
+VERSION=	3.4.2.3
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-bootstrap-${VERSION}
 PKGNAME=	libreoffice-${VERSION}
@@ -15,8 +15,6 @@ PKGNAME-main=	libreoffice-${VERSION}
 PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
-
-REVISION-main=	1
 
 EPOCH=		0
 
@@ -72,8 +70,7 @@ DISTFILES+=	${EDISTFILES} \
 		af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz:0 \
 		881af2b7dca9b8259abbca00bbbc004d-LinLibertineG-20110101.zip:0 \
 		ca4870d899fd7e943ffc310a5421ad4d-liberation-fonts-ttf-1.06.0.20100721.tar.gz:0 \
-		cf8a6967f7de535ae257fa411c98eb88-mdds_0.3.0.tar.bz2:0 \
-		d0b5af6e408b8d2958f3d83b5244f5e8-hyphen-2.4.tar.gz:0 \
+		0ff7d225d087793c8c2c680d77aac3e7-mdds_0.5.3.tar.bz2:0 \
 		48a9f787f43a09c0a9b7b00cd1fddbbf-hyphen-2.7.1.tar.gz:0 \
 		3404ab6b1792ae5f16bbd603bd1e1d03-libformula-1.1.7.zip:0 \
 		d4c4d91ab3a8e52a2e69d48d34ef4df4-core.zip:0 \
