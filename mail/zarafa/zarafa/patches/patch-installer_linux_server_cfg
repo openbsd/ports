@@ -1,6 +1,6 @@
-$OpenBSD: patch-installer_linux_server_cfg,v 1.10 2011/06/02 12:46:37 ajacoutot Exp $
---- installer/linux/server.cfg.orig	Wed Apr 20 16:39:10 2011
-+++ installer/linux/server.cfg	Mon May  2 13:17:54 2011
+$OpenBSD: patch-installer_linux_server_cfg,v 1.11 2011/08/16 15:01:17 ajacoutot Exp $
+--- installer/linux/server.cfg.orig	Tue Aug  2 11:47:12 2011
++++ installer/linux/server.cfg	Sun Aug 14 04:49:53 2011
 @@ -39,16 +39,16 @@ local_admin_users	= root
  system_email_address	= postmaster@localhost
  
@@ -110,3 +110,9 @@ $OpenBSD: patch-installer_linux_server_cfg,v 1.10 2011/06/02 12:46:37 ajacoutot 
  
  # Everyone is a special internal group, which contains every user and group
  # You may want to disable this group from the Global Addressbook by setting
+@@ -383,4 +384,4 @@ sync_gab_realtime = yes
+ 
+ # Disable features for users. Default all features are disabled. This
+ # list is space separated. Currently valid values: imap
+-disabled_features = imap pop3
++disabled_features =

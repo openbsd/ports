@@ -1,12 +1,12 @@
-$OpenBSD: patch-spooler_Makefile_in,v 1.11 2011/06/10 15:55:00 ajacoutot Exp $
---- spooler/Makefile.in.orig	Thu Jun  9 22:21:31 2011
-+++ spooler/Makefile.in	Fri Jun 10 13:33:17 2011
-@@ -292,7 +292,7 @@ zarafa_spooler_LDADD = ${top_builddir}/inetmapi/libine
- 	${top_builddir}/common/libcommon_mapi.la \
+$OpenBSD: patch-spooler_Makefile_in,v 1.12 2011/08/16 15:01:17 ajacoutot Exp $
+--- spooler/Makefile.in.orig	Tue Aug  2 11:47:41 2011
++++ spooler/Makefile.in	Sun Aug 14 04:48:09 2011
+@@ -299,7 +299,7 @@ zarafa_spooler_LDADD = ${top_builddir}/inetmapi/libine
  	${top_builddir}/common/libcommon_util.la \
  	${top_builddir}/common/libcommon_ssl.la \
+ 	${top_builddir}/ECtools/zarafa-archiver/libarchiver.la \
 -	$(PROG_LIBS)
 +	$(PROG_LIBS) $(SSL_LIBS)
  
- zarafa_dagent_SOURCES = DAgent.cpp rules.cpp rules.h LMTP.cpp LMTP.h
- zarafa_spooler_SOURCES = Spooler.cpp mailer.cpp mailer.h
+ zarafa_dagent_SOURCES = DAgent.cpp rules.cpp rules.h LMTP.cpp LMTP.h archive.cpp archive.h
+ zarafa_spooler_SOURCES = Spooler.cpp mailer.cpp mailer.h archive.cpp archive.h

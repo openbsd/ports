@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/06/27 14:31:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/08/16 15:01:17 ajacoutot Exp $
 
 COMMENT=	modified libvmime library for Zarafa
 
@@ -7,7 +7,6 @@ DISTNAME=	libvmime-${VMIME_V}
 PKGNAME=	zarafa-libvmime-${VMIME_V}
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	0
 EPOCH=		0
 
 WRKDIST=	${WRKDIR}/libvmime-${VMIME_V}

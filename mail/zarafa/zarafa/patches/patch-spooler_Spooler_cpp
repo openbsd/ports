@@ -1,10 +1,10 @@
-$OpenBSD: patch-spooler_Spooler_cpp,v 1.7 2011/07/01 23:23:02 robert Exp $
+$OpenBSD: patch-spooler_Spooler_cpp,v 1.8 2011/08/16 15:01:17 ajacoutot Exp $
 
 XXX to be revisited
 
---- spooler/Spooler.cpp.orig	Wed Jun 22 00:02:19 2011
-+++ spooler/Spooler.cpp	Sat Jul  2 01:07:50 2011
-@@ -1213,6 +1213,7 @@ int main(int argc, char *argv[]) {
+--- spooler/Spooler.cpp.orig	Tue Aug  2 15:02:47 2011
++++ spooler/Spooler.cpp	Sun Aug 14 04:45:52 2011
+@@ -1214,6 +1214,7 @@ int main(int argc, char *argv[]) {
  	if (g_lpConfig->HasWarnings())
  		LogConfigErrors(g_lpConfig, g_lpLogger);
  
@@ -12,7 +12,7 @@ XXX to be revisited
  	// detect linuxthreads, which is too broken to correctly run the spooler
  	if (!bForked) {
  		char buffer[256];
-@@ -1224,7 +1225,13 @@ int main(int argc, char *argv[]) {
+@@ -1225,7 +1226,13 @@ int main(int argc, char *argv[]) {
  			g_lpLogger->Log(EC_LOGLEVEL_FATAL, "WARNING: the zarafa-spooler will only be able to send one message at a time.");
  		}
  	}
@@ -26,7 +26,7 @@ XXX to be revisited
  	// set socket filename
  	if (!szPath)
  		szPath = g_lpConfig->GetSetting("server_socket");
-@@ -1321,11 +1328,8 @@ int main(int argc, char *argv[]) {
+@@ -1322,11 +1329,8 @@ int main(int argc, char *argv[]) {
  		if (bNPTL) {
  			g_lpLogger->Log(EC_LOGLEVEL_DEBUG, "Joining signal thread");
  			pthread_join(signal_thread, NULL);

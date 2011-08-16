@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure,v 1.15 2011/06/10 15:55:00 ajacoutot Exp $
---- configure.orig	Thu Jun  9 22:21:21 2011
-+++ configure	Fri Jun 10 13:34:10 2011
-@@ -21920,13 +21920,13 @@ fi
+$OpenBSD: patch-configure,v 1.16 2011/08/16 15:01:17 ajacoutot Exp $
+--- configure.orig	Tue Aug  2 11:47:36 2011
++++ configure	Sun Aug 14 04:45:51 2011
+@@ -21934,13 +21934,13 @@ fi
  
  # Everything uses pthread
  # check lib, but do not set in link list, but use -pthread instead (gnu c/c++ only?)
@@ -18,7 +18,7 @@ $OpenBSD: patch-configure,v 1.15 2011/06/10 15:55:00 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -22045,7 +22045,7 @@ else
+@@ -22059,7 +22059,7 @@ else
    with_distro=rhel
  fi
  
@@ -27,7 +27,7 @@ $OpenBSD: patch-configure,v 1.15 2011/06/10 15:55:00 ajacoutot Exp $
     { echo "$as_me:$LINENO: result: unknown distro, using rhel instead" >&5
  echo "${ECHO_T}unknown distro, using rhel instead" >&6; }
     with_distro=rhel
-@@ -24445,7 +24445,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then
+@@ -24459,7 +24459,7 @@ if test "${ac_cv_lib_intl_strftime+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -36,7 +36,7 @@ $OpenBSD: patch-configure,v 1.15 2011/06/10 15:55:00 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -24505,7 +24505,7 @@ if test $ac_cv_lib_intl_strftime = yes; then
+@@ -24519,7 +24519,7 @@ if test $ac_cv_lib_intl_strftime = yes; then
  #define HAVE_STRFTIME 1
  _ACEOF
  
@@ -45,7 +45,7 @@ $OpenBSD: patch-configure,v 1.15 2011/06/10 15:55:00 ajacoutot Exp $
  fi
  
  fi
-@@ -26019,7 +26019,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
+@@ -26035,7 +26035,7 @@ if test `eval echo '${'$as_ac_Header'}'` = yes; then
  _ACEOF
  
  		VMIME_CFLAGS=-I$VMIME_PREFIX
@@ -54,7 +54,7 @@ $OpenBSD: patch-configure,v 1.15 2011/06/10 15:55:00 ajacoutot Exp $
  
  else
  
-@@ -27536,13 +27536,13 @@ sed 's/^/| /' conftest.$ac_ext >&5
+@@ -27552,13 +27552,13 @@ sed 's/^/| /' conftest.$ac_ext >&5
  	 { echo "$as_me:$LINENO: result: no" >&5
  echo "${ECHO_T}no" >&6; }
  
@@ -71,7 +71,7 @@ $OpenBSD: patch-configure,v 1.15 2011/06/10 15:55:00 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -27602,7 +27602,7 @@ if test $ac_cv_lib_crypt_crypt = yes; then
+@@ -27618,7 +27618,7 @@ if test $ac_cv_lib_crypt_crypt = yes; then
  #define HAVE_LIBCRYPT 1
  _ACEOF
  
@@ -80,7 +80,7 @@ $OpenBSD: patch-configure,v 1.15 2011/06/10 15:55:00 ajacoutot Exp $
  
  else
    { { echo "$as_me:$LINENO: error: required library libcrypt missing or unusable" >&5
-@@ -27696,7 +27696,7 @@ if test "${ac_cv_lib_ssl_SSL_accept+set}" = set; then
+@@ -27712,7 +27712,7 @@ if test "${ac_cv_lib_ssl_SSL_accept+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -89,7 +89,7 @@ $OpenBSD: patch-configure,v 1.15 2011/06/10 15:55:00 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -28803,7 +28803,7 @@ if test "${ac_cv_lib_intl_gettext+set}" = set; then
+@@ -28819,7 +28819,7 @@ if test "${ac_cv_lib_intl_gettext+set}" = set; then
    echo $ECHO_N "(cached) $ECHO_C" >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -98,7 +98,7 @@ $OpenBSD: patch-configure,v 1.15 2011/06/10 15:55:00 ajacoutot Exp $
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -28859,7 +28859,7 @@ fi
+@@ -28875,7 +28875,7 @@ fi
  { echo "$as_me:$LINENO: result: $ac_cv_lib_intl_gettext" >&5
  echo "${ECHO_T}$ac_cv_lib_intl_gettext" >&6; }
  if test $ac_cv_lib_intl_gettext = yes; then
