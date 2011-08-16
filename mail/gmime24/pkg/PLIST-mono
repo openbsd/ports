@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST-mono,v 1.1 2010/11/25 15:37:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST-mono,v 1.2 2011/08/16 15:00:31 ajacoutot Exp $
+lib/mono/
+lib/mono/gac/
 lib/mono/gac/gmime-sharp/
 lib/mono/gac/gmime-sharp/2.4.0.0__2b75c2ad004c52e4/
 lib/mono/gac/gmime-sharp/2.4.0.0__2b75c2ad004c52e4/gmime-sharp.dll
