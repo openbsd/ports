@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_renderer_pepper_plugin_delegate_impl_cc,v 1.1 2011/06/08 20:36:56 robert Exp $
---- content/renderer/pepper_plugin_delegate_impl.cc.orig	Wed Jun  8 10:34:09 2011
-+++ content/renderer/pepper_plugin_delegate_impl.cc	Wed Jun  8 10:34:29 2011
-@@ -112,7 +112,7 @@ class PlatformImage2DImpl
+$OpenBSD: patch-content_renderer_pepper_plugin_delegate_impl_cc,v 1.2 2011/08/16 08:17:44 robert Exp $
+--- content/renderer/pepper_plugin_delegate_impl.cc.orig	Wed Jul 27 10:01:09 2011
++++ content/renderer/pepper_plugin_delegate_impl.cc	Tue Aug  2 20:12:17 2011
+@@ -116,7 +116,7 @@ class PlatformImage2DImpl
          dib_(dib) {
    }
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_renderer_pepper_plugin_delegate_impl_cc,v 1.1 2011/06/08
    // On Mac, we have to tell the browser to free the transport DIB.
    virtual ~PlatformImage2DImpl() {
      if (dib_.get()) {
-@@ -130,7 +130,7 @@ class PlatformImage2DImpl
+@@ -134,7 +134,7 @@ class PlatformImage2DImpl
      *byte_count = dib_->size();
  #if defined(OS_WIN)
      return reinterpret_cast<intptr_t>(dib_->handle());
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_renderer_pepper_plugin_delegate_impl_cc,v 1.1 2011/06/08
      return static_cast<intptr_t>(dib_->handle().fd);
  #elif defined(OS_LINUX)
      return static_cast<intptr_t>(dib_->handle());
-@@ -758,7 +758,7 @@ PepperPluginDelegateImpl::CreateImage2D(int width, int
+@@ -774,7 +774,7 @@ PepperPluginDelegateImpl::CreateImage2D(int width, int
    uint32 buffer_size = width * height * 4;
  
    // Allocate the transport DIB and the PlatformCanvas pointing to it.

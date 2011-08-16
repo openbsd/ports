@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_common_common_param_traits_h,v 1.1 2011/06/08 20:36:56 robert Exp $
---- content/common/common_param_traits.h.orig	Wed Jun  8 12:38:24 2011
-+++ content/common/common_param_traits.h	Wed Jun  8 15:23:37 2011
-@@ -187,7 +187,7 @@ struct ParamTraits<TransportDIB::Id> {
+$OpenBSD: patch-content_common_common_param_traits_h,v 1.2 2011/08/16 08:17:44 robert Exp $
+--- content/common/common_param_traits.h.orig	Wed Jul 27 10:01:09 2011
++++ content/common/common_param_traits.h	Tue Aug  2 20:12:17 2011
+@@ -195,7 +195,7 @@ struct ParamTraits<TransportDIB::Id> {
  };
  #endif
  

@@ -1,46 +1,24 @@
-$OpenBSD: patch-net_net_gyp,v 1.5 2011/06/08 20:36:56 robert Exp $
---- net/net.gyp.orig	Mon Jun  6 11:11:30 2011
-+++ net/net.gyp	Wed Jun  8 09:58:36 2011
-@@ -146,12 +146,12 @@
+$OpenBSD: patch-net_net_gyp,v 1.6 2011/08/16 08:17:44 robert Exp $
+--- net/net.gyp.orig	Tue Aug  2 20:40:39 2011
++++ net/net.gyp	Tue Aug  2 20:41:14 2011
+@@ -145,12 +145,8 @@
          'base/net_util_win.cc',
          'base/network_change_notifier.cc',
          'base/network_change_notifier.h',
 -        'base/network_change_notifier_linux.cc',
 -        'base/network_change_notifier_linux.h',
-+        #'base/network_change_notifier_linux.cc',
-+        #'base/network_change_notifier_linux.h',
          'base/network_change_notifier_mac.cc',
          'base/network_change_notifier_mac.h',
 -        'base/network_change_notifier_netlink_linux.cc',
 -        'base/network_change_notifier_netlink_linux.h',
-+        #'base/network_change_notifier_netlink_linux.cc',
-+        #'base/network_change_notifier_netlink_linux.h',
          'base/network_change_notifier_win.cc',
          'base/network_change_notifier_win.h',
          'base/network_config_watcher_mac.cc',
-@@ -256,7 +256,6 @@
-             'dependencies': [
+@@ -731,7 +727,6 @@
                '../build/linux/system.gyp:gconf',
                '../build/linux/system.gyp:gdk',
+               '../build/linux/system.gyp:gio',
 -              '../build/linux/system.gyp:libresolv',
              ],
              'conditions': [
                ['use_openssl==1', {
-@@ -1059,7 +1058,7 @@
-             ],
-           }
-         ],
--        [ 'OS == "linux"', {
-+        [ 'OS == "linux" or OS=="openbsd"', {
-           'conditions': [
-             ['linux_use_tcmalloc==1', {
-               'dependencies': [
-@@ -1232,7 +1231,7 @@
-             }],
-           ],
-         }],
--        ['OS == "linux"', {
-+        ['OS == "linux" or OS=="openbsd"', {
-           'conditions': [
-             ['linux_use_tcmalloc==1', {
-               'dependencies': [

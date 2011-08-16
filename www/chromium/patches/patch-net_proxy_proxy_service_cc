@@ -1,7 +1,7 @@
-$OpenBSD: patch-net_proxy_proxy_service_cc,v 1.3 2011/06/08 20:36:56 robert Exp $
---- net/proxy/proxy_service.cc.orig	Wed Jun  8 12:19:09 2011
-+++ net/proxy/proxy_service.cc	Wed Jun  8 12:19:36 2011
-@@ -31,7 +31,7 @@
+$OpenBSD: patch-net_proxy_proxy_service_cc,v 1.4 2011/08/16 08:17:44 robert Exp $
+--- net/proxy/proxy_service.cc.orig	Wed Jul 27 10:01:09 2011
++++ net/proxy/proxy_service.cc	Tue Aug  2 20:12:19 2011
+@@ -34,7 +34,7 @@
  #elif defined(OS_MACOSX)
  #include "net/proxy/proxy_config_service_mac.h"
  #include "net/proxy/proxy_resolver_mac.h"
@@ -10,7 +10,7 @@ $OpenBSD: patch-net_proxy_proxy_service_cc,v 1.3 2011/06/08 20:36:56 robert Exp 
  #include "net/proxy/proxy_config_service_linux.h"
  #endif
  
-@@ -807,7 +807,7 @@ ProxyConfigService* ProxyService::CreateSystemProxyCon
+@@ -850,7 +850,7 @@ ProxyConfigService* ProxyService::CreateSystemProxyCon
    NOTREACHED() << "ProxyConfigService for ChromeOS should be created in "
                 << "profile_io_data.cc::CreateProxyConfigService.";
    return NULL;

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_test_testing_browser_process_h,v 1.5 2011/06/08 20:36:56 robert Exp $
---- chrome/test/testing_browser_process.h.orig	Mon Jun  6 11:12:00 2011
-+++ chrome/test/testing_browser_process.h	Wed Jun  8 09:58:36 2011
-@@ -50,7 +50,7 @@ class TestingBrowserProcess : public BrowserProcess {
+$OpenBSD: patch-chrome_test_testing_browser_process_h,v 1.6 2011/08/16 08:17:44 robert Exp $
+--- chrome/test/testing_browser_process.h.orig	Wed Jul 27 10:01:40 2011
++++ chrome/test/testing_browser_process.h	Tue Aug  2 20:12:17 2011
+@@ -54,7 +54,7 @@ class TestingBrowserProcess : public BrowserProcess {
  
    virtual IOThread* io_thread();
  

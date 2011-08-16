@@ -1,7 +1,7 @@
-$OpenBSD: patch-ui_ui_gfx_gypi,v 1.1 2011/06/08 20:36:56 robert Exp $
---- ui/ui_gfx.gypi.orig	Wed Jun  8 12:23:04 2011
-+++ ui/ui_gfx.gypi	Wed Jun  8 12:23:24 2011
-@@ -150,6 +150,7 @@
+$OpenBSD: patch-ui_ui_gfx_gypi,v 1.2 2011/08/16 08:17:44 robert Exp $
+--- ui/ui_gfx.gypi.orig	Wed Jul 27 10:01:56 2011
++++ ui/ui_gfx.gypi	Tue Aug  2 20:12:21 2011
+@@ -151,6 +151,7 @@
              'gfx/native_widget_types_gtk.cc',
            ],
          }],

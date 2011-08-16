@@ -1,8 +1,8 @@
-$OpenBSD: patch-third_party_WebKit_Source_WebCore_bindings_v8_custom_V8InspectorFrontendHostCustom_cpp,v 1.2 2011/04/29 13:18:01 robert Exp $
---- third_party/WebKit/Source/WebCore/bindings/v8/custom/V8InspectorFrontendHostCustom.cpp.orig	Tue Apr 26 10:04:17 2011
-+++ third_party/WebKit/Source/WebCore/bindings/v8/custom/V8InspectorFrontendHostCustom.cpp	Thu Apr 28 11:17:49 2011
-@@ -52,6 +52,8 @@ v8::Handle<v8::Value> V8InspectorFrontendHost::platfor
-     return v8String("freebsd");
+$OpenBSD: patch-third_party_WebKit_Source_WebCore_bindings_v8_custom_V8InspectorFrontendHostCustom_cpp,v 1.3 2011/08/16 08:17:44 robert Exp $
+--- third_party/WebKit/Source/WebCore/bindings/v8/custom/V8InspectorFrontendHostCustom.cpp.orig	Wed Jul 27 10:07:30 2011
++++ third_party/WebKit/Source/WebCore/bindings/v8/custom/V8InspectorFrontendHostCustom.cpp	Tue Aug  2 20:12:19 2011
+@@ -56,6 +56,8 @@ v8::Handle<v8::Value> V8InspectorFrontendHost::platfor
+     return v8String("solaris");
  #elif defined(OS_WIN)
      return v8String("windows");
 +#elif defined(OS_OPENBSD)

@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.1 2011/06/08 20:36:56 robert Exp $
---- content/renderer/render_process_impl.cc.orig	Wed Jun  8 10:35:21 2011
-+++ content/renderer/render_process_impl.cc	Wed Jun  8 10:36:00 2011
-@@ -128,7 +128,7 @@ TransportDIB* RenderProcessImpl::CreateTransportDIB(si
+$OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.2 2011/08/16 08:17:44 robert Exp $
+--- content/renderer/render_process_impl.cc.orig	Wed Jul 27 10:01:09 2011
++++ content/renderer/render_process_impl.cc	Tue Aug  2 20:12:17 2011
+@@ -124,7 +124,7 @@ TransportDIB* RenderProcessImpl::CreateTransportDIB(si
  #if defined(OS_WIN) || defined(OS_LINUX)
    // Windows and Linux create transport DIBs inside the renderer
    return TransportDIB::Create(size, transport_dib_next_sequence_number_++);
@@ -10,7 +10,7 @@ $OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.1 2011/06/08 20:36:5
    // Mac creates transport DIBs in the browser, so we need to do a sync IPC to
    // get one.  The TransportDIB is cached in the browser.
    TransportDIB::Handle handle;
-@@ -145,7 +145,7 @@ void RenderProcessImpl::FreeTransportDIB(TransportDIB*
+@@ -141,7 +141,7 @@ void RenderProcessImpl::FreeTransportDIB(TransportDIB*
    if (!dib)
      return;
  
@@ -19,7 +19,7 @@ $OpenBSD: patch-content_renderer_render_process_impl_cc,v 1.1 2011/06/08 20:36:5
    // On Mac we need to tell the browser that it can drop a reference to the
    // shared memory.
    IPC::Message* msg = new ViewHostMsg_FreeTransportDIB(dib->id());
-@@ -163,7 +163,7 @@ skia::PlatformCanvas* RenderProcessImpl::GetDrawingCan
+@@ -159,7 +159,7 @@ skia::PlatformCanvas* RenderProcessImpl::GetDrawingCan
    int width = rect.width();
    int height = rect.height();
    const size_t stride = skia::PlatformCanvas::StrideForWidth(rect.width());

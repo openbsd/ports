@@ -1,0 +1,15 @@
+$OpenBSD: patch-media_video_capture_linux_video_capture_device_linux_cc,v 1.1 2011/08/16 08:17:44 robert Exp $
+--- media/video/capture/linux/video_capture_device_linux.cc.orig	Wed Aug  3 14:00:03 2011
++++ media/video/capture/linux/video_capture_device_linux.cc	Wed Aug  3 14:00:37 2011
+@@ -6,7 +6,11 @@
+ 
+ #include <errno.h>
+ #include <fcntl.h>
++#if defined(OS_OPENBSD)
++#include <sys/videoio.h>
++#else
+ #include <linux/videodev2.h>
++#endif
+ #include <sys/ioctl.h>
+ #include <sys/mman.h>
+ 

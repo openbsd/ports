@@ -1,6 +1,6 @@
-$OpenBSD: patch-chrome_browser_process_singleton_linux_cc,v 1.4 2011/03/16 10:52:46 robert Exp $
---- chrome/browser/process_singleton_linux.cc.orig	Fri Mar 11 10:01:43 2011
-+++ chrome/browser/process_singleton_linux.cc	Wed Mar 16 10:25:55 2011
+$OpenBSD: patch-chrome_browser_process_singleton_linux_cc,v 1.5 2011/08/16 08:17:44 robert Exp $
+--- chrome/browser/process_singleton_linux.cc.orig	Wed Jul 27 10:01:52 2011
++++ chrome/browser/process_singleton_linux.cc	Tue Aug  2 20:12:17 2011
 @@ -55,6 +55,13 @@
  #include <set>
  #include <string>
@@ -15,7 +15,7 @@ $OpenBSD: patch-chrome_browser_process_singleton_linux_cc,v 1.4 2011/03/16 10:52
  #include "base/base_paths.h"
  #include "base/basictypes.h"
  #include "base/command_line.h"
-@@ -314,10 +321,42 @@ void DisplayProfileInUseError(const std::string& lock_
+@@ -315,10 +322,42 @@ void DisplayProfileInUseError(const std::string& lock_
  }
  
  bool IsChromeProcess(pid_t pid) {

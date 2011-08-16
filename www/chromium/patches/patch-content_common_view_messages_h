@@ -1,7 +1,7 @@
-$OpenBSD: patch-content_common_view_messages_h,v 1.1 2011/06/08 20:36:56 robert Exp $
---- content/common/view_messages.h.orig	Wed Jun  8 10:30:17 2011
-+++ content/common/view_messages.h	Wed Jun  8 10:30:30 2011
-@@ -1783,7 +1783,7 @@ IPC_SYNC_MESSAGE_CONTROL1_1(ViewHostMsg_AllocateShared
+$OpenBSD: patch-content_common_view_messages_h,v 1.2 2011/08/16 08:17:44 robert Exp $
+--- content/common/view_messages.h.orig	Wed Jul 27 10:01:09 2011
++++ content/common/view_messages.h	Tue Aug  2 20:12:17 2011
+@@ -1773,7 +1773,7 @@ IPC_SYNC_MESSAGE_CONTROL1_1(ViewHostMsg_AllocateShared
  IPC_MESSAGE_CONTROL1(ViewHostMsg_SuddenTerminationChanged,
                       bool /* enabled */)
  

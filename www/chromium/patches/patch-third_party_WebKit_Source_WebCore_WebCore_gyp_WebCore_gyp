@@ -1,39 +1,39 @@
-$OpenBSD: patch-third_party_WebKit_Source_WebCore_WebCore_gyp_WebCore_gyp,v 1.3 2011/06/08 20:36:56 robert Exp $
---- third_party/WebKit/Source/WebCore/WebCore.gyp/WebCore.gyp.orig	Mon Jun  6 11:17:07 2011
-+++ third_party/WebKit/Source/WebCore/WebCore.gyp/WebCore.gyp	Wed Jun  8 09:58:36 2011
-@@ -1060,7 +1060,7 @@
-             '<(chromium_src_dir)/gpu/gpu.gyp:gles2_c_lib',
-           ],
+$OpenBSD: patch-third_party_WebKit_Source_WebCore_WebCore_gyp_WebCore_gyp,v 1.4 2011/08/16 08:17:44 robert Exp $
+--- third_party/WebKit/Source/WebCore/WebCore.gyp/WebCore.gyp.orig	Wed Aug  3 18:01:32 2011
++++ third_party/WebKit/Source/WebCore/WebCore.gyp/WebCore.gyp	Wed Aug  3 18:02:49 2011
+@@ -986,7 +986,7 @@
+             'include_dirs+++': ['../dom'],
+           },
          }],
--        ['OS=="linux" or OS=="freebsd"', {
-+        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
-           'dependencies': [
-             '<(chromium_src_dir)/build/linux/system.gyp:fontconfig',
-             '<(chromium_src_dir)/build/linux/system.gyp:gtk',
-@@ -1267,7 +1267,7 @@
-         ['exclude', 'platform/text/TextEncodingDetectorNone\\.cpp$'],
-       ],
-       'conditions': [
--        ['OS=="linux" or OS=="freebsd"', {
-+        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
-           'sources/': [
-             # Cherry-pick files excluded by the broader regular expressions above.
-             ['include', 'platform/chromium/KeyCodeConversionGtk\\.cpp$'],
-@@ -1386,7 +1386,7 @@
-             ['exclude', 'platform/graphics/FontPlatformData\\.cpp$']
+-        ['(OS=="linux" or OS=="win") and "WTF_USE_WEBAUDIO_FFTW=1" in feature_defines', {
++        ['(OS=="linux" or OS=="win" or OS=="openbsd") and "WTF_USE_WEBAUDIO_FFTW=1" in feature_defines', {
+           'include_dirs': [
+             '<(chromium_src_dir)/third_party/fftw/api',
            ],
+@@ -1194,7 +1194,7 @@
+             'include_dirs++': ['../dom'],
+           },
          }],
--        ['OS!="linux" and OS!="freebsd"', {
-+        ['OS!="linux" and OS!="freebsd" and OS!="openbsd"', {
-           'sources/': [
-             ['exclude', '(Gtk|Linux)\\.cpp$'],
-             ['exclude', 'Harfbuzz[^/]+\\.(cpp|h)$'],
-@@ -1459,7 +1459,7 @@
-           # warnings about uninitialized this.
-           'cflags': ['-Wno-uninitialized'],
+-        ['(OS=="linux" or OS=="win") and "WTF_USE_WEBAUDIO_FFTW=1" in feature_defines', {
++        ['(OS=="linux" or OS=="win" or OS=="openbsd") and "WTF_USE_WEBAUDIO_FFTW=1" in feature_defines', {
+           # This directory needs to be on the include path for multiple sub-targets of webcore.
+           'direct_dependent_settings': {
+             'include_dirs': [
+@@ -1202,7 +1202,7 @@
+             ],
+           },
          }],
--        ['OS!="linux" and OS!="freebsd"', {
-+        ['OS!="linux" and OS!="freebsd" and OS!="openbsd"', {
-           'sources/': [
-             ['exclude', '(Gtk|Linux)\\.cpp$'],
-           ],
+-        ['(OS=="mac" or OS=="linux" or OS=="win") and "WTF_USE_WEBAUDIO_FFMPEG=1" in feature_defines', {
++        ['(OS=="mac" or OS=="linux" or OS=="win" or OS=="openbsd") and "WTF_USE_WEBAUDIO_FFMPEG=1" in feature_defines', {
+           # This directory needs to be on the include path for multiple sub-targets of webcore.
+           'direct_dependent_settings': {
+             'include_dirs': [
+@@ -1708,7 +1708,7 @@
+             'include_dirs+++': ['../dom'],
+           },
+         }],
+-        ['OS=="linux" and "WTF_USE_WEBAUDIO_FFTW=1" in feature_defines', {
++        ['(OS=="linux" or OS=="openbsd") and "WTF_USE_WEBAUDIO_FFTW=1" in feature_defines', {
+           # FIXME: (kbr) figure out how to make these dependencies
+           # work in a cross-platform way. Attempts to use
+           # "link_settings" and "libraries" in conjunction with the

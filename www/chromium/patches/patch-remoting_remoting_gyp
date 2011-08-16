@@ -1,22 +1,23 @@
-$OpenBSD: patch-remoting_remoting_gyp,v 1.4 2011/06/08 20:36:56 robert Exp $
---- remoting/remoting.gyp.orig	Wed Jun  8 12:19:53 2011
-+++ remoting/remoting.gyp	Wed Jun  8 16:25:52 2011
-@@ -233,12 +233,12 @@
-         'host/screen_recorder.cc',
-         'host/screen_recorder.h',
+$OpenBSD: patch-remoting_remoting_gyp,v 1.5 2011/08/16 08:17:44 robert Exp $
+--- remoting/remoting.gyp.orig	Wed Aug  3 09:18:42 2011
++++ remoting/remoting.gyp	Wed Aug  3 15:13:52 2011
+@@ -70,7 +70,6 @@
+           ],
+           'link_settings': {
+             'libraries': [
+-              '-ldl',
+               '-lX11',
+               '-lXrender',
+               '-lXext',
+@@ -340,6 +339,7 @@
+         'host/support_access_verifier.h',
          'host/user_authenticator.h',
--        'host/user_authenticator_linux.cc',
+         'host/user_authenticator_linux.cc',
 +        'host/user_authenticator_bsd.cc',
          'host/user_authenticator_mac.cc',
          'host/user_authenticator_win.cc',
        ],
-       'conditions': [
--        ['OS=="linux"', {
-+        ['OS=="linux" or OS=="openbsd"', {
-           'dependencies': [
-             '../build/linux/system.gyp:gtk',
-           ],
-@@ -251,7 +251,6 @@
+@@ -357,7 +357,6 @@
                '-lX11',
                '-lXdamage',
                '-lXtst',
@@ -24,12 +25,3 @@ $OpenBSD: patch-remoting_remoting_gyp,v 1.4 2011/06/08 20:36:56 robert Exp $
                '-lXext'
              ],
            },
-@@ -555,7 +554,7 @@
-         'run_all_unittests.cc',
-       ],
-       'conditions': [
--        ['OS=="linux"', {
-+        ['OS=="linux" or OS=="openbsd"', {
-           'dependencies': [
-             '../app/app.gyp:app_base',
-             # Needed for the following #include chain:

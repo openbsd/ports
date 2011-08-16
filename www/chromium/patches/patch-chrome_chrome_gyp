@@ -1,44 +1,15 @@
-$OpenBSD: patch-chrome_chrome_gyp,v 1.6 2011/06/08 20:36:56 robert Exp $
---- chrome/chrome.gyp.orig	Wed Jun  8 10:24:19 2011
-+++ chrome/chrome.gyp	Wed Jun  8 10:25:59 2011
-@@ -72,6 +72,10 @@
-           }],
-         ],
-       },],
-+      ['OS=="openbsd" or OS=="openbsd"', {
-+        'platform_locale_settings_grd':
-+            'app/resources/locale_settings_linux.grd',
-+      },],
-       ['OS=="mac"', {
-         'tweak_info_plist_path': 'tools/build/mac/tweak_info_plist',
-         'nacl_defines': [
-@@ -419,7 +423,7 @@
-         '..',
-       ],
-       'conditions': [
--        ['OS=="linux"', {
-+        ['OS=="linux" or OS=="openbsd"', {
-           'dependencies': [
+$OpenBSD: patch-chrome_chrome_gyp,v 1.7 2011/08/16 08:17:44 robert Exp $
+--- chrome/chrome.gyp.orig	Tue Aug  2 20:29:43 2011
++++ chrome/chrome.gyp	Wed Aug  3 11:13:06 2011
+@@ -473,6 +473,11 @@
              '../build/linux/system.gyp:gtk',
-           ],
-@@ -769,7 +773,7 @@
-             'service/cloud_print/print_system_win.cc',
            ],
          }],
--        ['OS=="linux"', {
-+        ['OS=="linux" or OS=="openbsd"', {
-           'dependencies': [
-             '../build/linux/system.gyp:gtk',
-           ],
-@@ -798,6 +802,11 @@
-                 ],
-               },
-             }],
-+          ],
-+        }],
 +        ['OS=="openbsd"', {
 +          'include_dirs': [
 +            '/usr/local/include',
-           ],
-         }],
-         ['remoting==1', {
++          ],
++        }],
+       ],
+     },
+     {

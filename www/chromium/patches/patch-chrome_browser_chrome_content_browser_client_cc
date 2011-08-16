@@ -1,0 +1,21 @@
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.1 2011/08/16 08:17:44 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig	Wed Aug  3 19:12:00 2011
++++ chrome/browser/chrome_content_browser_client.cc	Wed Aug  3 19:12:20 2011
+@@ -48,7 +48,7 @@
+ #include "net/base/cookie_monster.h"
+ #include "net/base/cookie_options.h"
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX)
+ #include "base/linux_util.h"
+ #include "chrome/browser/crash_handler_host_linux.h"
+ #endif
+@@ -323,7 +323,7 @@ void ChromeContentBrowserClient::RevealFolderInOS(cons
+ #endif
+ }
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_POSIX) && !defined(OS_MACOSX)
+ int ChromeContentBrowserClient::GetCrashSignalFD(
+     const std::string& process_type) {
+   if (process_type == switches::kRendererProcess)

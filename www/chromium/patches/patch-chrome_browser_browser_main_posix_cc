@@ -1,15 +1,6 @@
-$OpenBSD: patch-chrome_browser_browser_main_posix_cc,v 1.2 2011/06/08 20:36:56 robert Exp $
---- chrome/browser/browser_main_posix.cc.orig	Wed Jun  8 10:19:46 2011
-+++ chrome/browser/browser_main_posix.cc	Wed Jun  8 17:17:36 2011
-@@ -21,7 +21,7 @@
- #include "chrome/common/chrome_switches.h"
- #include "content/browser/browser_thread.h"
- 
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_OPENBSD)) && !defined(OS_CHROMEOS)
- #include "chrome/browser/printing/print_dialog_gtk.h"
- #endif
- 
+$OpenBSD: patch-chrome_browser_browser_main_posix_cc,v 1.3 2011/08/16 08:17:44 robert Exp $
+--- chrome/browser/browser_main_posix.cc.orig	Tue Aug  2 20:20:23 2011
++++ chrome/browser/browser_main_posix.cc	Tue Aug  2 20:20:57 2011
 @@ -216,7 +216,7 @@ void BrowserMainPartsPosix::PreEarlyInitialization() {
    if (!fd_limit_string.empty()) {
      base::StringToInt(fd_limit_string, &fd_limit);
@@ -19,12 +10,3 @@ $OpenBSD: patch-chrome_browser_browser_main_posix_cc,v 1.2 2011/06/08 20:36:56 r
    // We use quite a few file descriptors for our IPC, and the default limit on
    // the Mac is low (256), so bump it up if there is no explicit override.
    if (fd_limit == 0) {
-@@ -255,7 +255,7 @@ void BrowserMainPartsPosix::PostMainMessageLoopStart()
-     }
-   }
- 
--#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_OPENBSD)) && !defined(OS_CHROMEOS)
-   printing::PrintingContextCairo::SetCreatePrintDialogFunction(
-       &PrintDialogGtk::CreatePrintDialog);
- #endif  // defined(OS_LINUX) && !defined(OS_CHROMEOS)

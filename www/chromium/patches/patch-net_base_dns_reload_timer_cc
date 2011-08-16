@@ -1,0 +1,12 @@
+$OpenBSD: patch-net_base_dns_reload_timer_cc,v 1.1 2011/08/16 08:17:44 robert Exp $
+--- net/base/dns_reload_timer.cc.orig	Thu Aug  4 13:51:04 2011
++++ net/base/dns_reload_timer.cc	Thu Aug  4 13:51:18 2011
+@@ -4,7 +4,7 @@
+ 
+ #include "net/base/dns_reload_timer.h"
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
++#if defined(OS_POSIX) && !defined(OS_MACOSX)
+ #include "base/lazy_instance.h"
+ #include "base/threading/thread_local_storage.h"
+ #include "base/time.h"

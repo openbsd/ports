@@ -1,0 +1,15 @@
+$OpenBSD: patch-third_party_libphonenumber_cpp_src_phonenumberutil_cc,v 1.1 2011/08/16 08:17:44 robert Exp $
+--- third_party/libphonenumber/cpp/src/phonenumberutil.cc.orig	Wed Aug  3 14:01:58 2011
++++ third_party/libphonenumber/cpp/src/phonenumberutil.cc	Wed Aug  3 14:05:38 2011
+@@ -348,9 +348,9 @@ void FormatAccordingToFormats(
+ bool IsNationalNumberSuffixOfTheOther(const PhoneNumber& first_number,
+                                       const PhoneNumber& second_number) {
+   const string& first_number_national_number =
+-      SimpleItoa(first_number.national_number());
++      SimpleItoa((uint64)first_number.national_number());
+   const string& second_number_national_number =
+-      SimpleItoa(second_number.national_number());
++      SimpleItoa((uint64)second_number.national_number());
+   // Note that HasSuffixString returns true if the numbers are equal.
+   return HasSuffixString(first_number_national_number,
+                          second_number_national_number) ||

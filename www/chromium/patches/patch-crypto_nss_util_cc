@@ -1,6 +1,6 @@
-$OpenBSD: patch-crypto_nss_util_cc,v 1.1 2011/06/08 20:36:56 robert Exp $
---- crypto/nss_util.cc.orig	Wed Jun  8 10:16:52 2011
-+++ crypto/nss_util.cc	Wed Jun  8 10:17:40 2011
+$OpenBSD: patch-crypto_nss_util_cc,v 1.2 2011/08/16 08:17:44 robert Exp $
+--- crypto/nss_util.cc.orig	Wed Jul 27 10:01:09 2011
++++ crypto/nss_util.cc	Tue Aug  2 20:12:17 2011
 @@ -16,6 +16,9 @@
  #if defined(OS_LINUX)
  #include <linux/nfs_fs.h>
@@ -34,4 +34,4 @@ $OpenBSD: patch-crypto_nss_util_cc,v 1.1 2011/06/08 20:36:56 robert Exp $
 +#endif  // defined(OS_LINUX) || defined(OS_OPENBSD)
  }
  
- // A helper class that acquires the SECMOD list read lock while the
+ PK11SlotInfo* FindSlotWithTokenName(const std::string& token_name) {

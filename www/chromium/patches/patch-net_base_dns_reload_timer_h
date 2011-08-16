@@ -1,0 +1,12 @@
+$OpenBSD: patch-net_base_dns_reload_timer_h,v 1.1 2011/08/16 08:17:44 robert Exp $
+--- net/base/dns_reload_timer.h.orig	Thu Aug  4 13:51:26 2011
++++ net/base/dns_reload_timer.h	Thu Aug  4 13:51:32 2011
+@@ -8,7 +8,7 @@
+ 
+ #include "build/build_config.h"
+ 
+-#if defined(OS_POSIX) && !defined(OS_MACOSX) && !defined(OS_OPENBSD)
++#if defined(OS_POSIX) && !defined(OS_MACOSX)
+ namespace net {
+ 
+ // DnsReloadTimerExpired tests the thread local DNS reload timer and, if it has

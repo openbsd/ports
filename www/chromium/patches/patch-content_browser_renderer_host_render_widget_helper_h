@@ -1,6 +1,6 @@
-$OpenBSD: patch-content_browser_renderer_host_render_widget_helper_h,v 1.1 2011/04/29 13:18:01 robert Exp $
---- content/browser/renderer_host/render_widget_helper.h.orig	Thu Apr 28 11:30:04 2011
-+++ content/browser/renderer_host/render_widget_helper.h	Thu Apr 28 11:30:17 2011
+$OpenBSD: patch-content_browser_renderer_host_render_widget_helper_h,v 1.2 2011/08/16 08:17:44 robert Exp $
+--- content/browser/renderer_host/render_widget_helper.h.orig	Wed Jul 27 10:01:08 2011
++++ content/browser/renderer_host/render_widget_helper.h	Tue Aug  2 20:12:17 2011
 @@ -112,7 +112,7 @@ class RenderWidgetHelper
                          const base::TimeDelta& max_delay,
                          IPC::Message* msg);
@@ -21,7 +21,7 @@ $OpenBSD: patch-content_browser_renderer_host_render_widget_helper_h,v 1.1 2011/
    // browser, and it is the caller's repsonsibility to call
 @@ -184,7 +184,7 @@ class RenderWidgetHelper
    // Called on the IO thread to resume a cross-site response.
-   void OnCrossSiteClosePageACK(const ViewMsg_ClosePage_Params& params);
+   void OnCrossSiteSwapOutACK(const ViewMsg_SwapOut_Params& params);
  
 -#if defined(OS_MACOSX)
 +#if defined(OS_MACOSX) || defined(OS_OPENBSD)

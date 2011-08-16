@@ -1,61 +1,16 @@
-$OpenBSD: patch-webkit_plugins_ppapi_ppapi_plugin_instance_cc,v 1.3 2011/06/08 20:36:56 robert Exp $
---- webkit/plugins/ppapi/ppapi_plugin_instance.cc.orig	Wed Jun  8 12:23:55 2011
-+++ webkit/plugins/ppapi/ppapi_plugin_instance.cc	Wed Jun  8 12:24:22 2011
-@@ -67,7 +67,7 @@
+$OpenBSD: patch-webkit_plugins_ppapi_ppapi_plugin_instance_cc,v 1.4 2011/08/16 08:17:44 robert Exp $
+--- webkit/plugins/ppapi/ppapi_plugin_instance.cc.orig	Wed Aug  3 09:27:23 2011
++++ webkit/plugins/ppapi/ppapi_plugin_instance.cc	Wed Aug  3 09:27:33 2011
+@@ -69,7 +69,7 @@
  #include "printing/metafile_impl.h"
  #endif
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_OPENBSD)
+-#if defined(OS_LINUX) || defined(OS_WIN)
++#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_OPENBSD)
  #include "printing/metafile.h"
  #include "printing/metafile_skia_wrapper.h"
  #endif
-@@ -353,7 +353,7 @@ PluginInstance::PluginInstance(PluginDelegate* delegat
-       plugin_selection_interface_(NULL),
-       plugin_zoom_interface_(NULL),
-       checked_for_plugin_messaging_interface_(false),
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_OPENBSD)
-       canvas_(NULL),
- #endif  // defined(OS_LINUX)
-       plugin_print_interface_(NULL),
-@@ -388,7 +388,7 @@ PluginInstance::~PluginInstance() {
-   module_->InstanceDeleted(this);
- 
-   ResourceTracker::Get()->InstanceDeleted(pp_instance_);
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_OPENBSD)
-   ranges_.clear();
- #endif  // defined(OS_LINUX)
- }
-@@ -1064,7 +1064,7 @@ int PluginInstance::PrintBegin(const gfx::Rect& printa
-   if (!num_pages)
-     return 0;
-   current_print_settings_ = print_settings;
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_OPENBSD)
-   canvas_ = NULL;
-   ranges_.clear();
- #endif  // defined(OS_LINUX)
-@@ -1075,7 +1075,7 @@ bool PluginInstance::PrintPage(int page_number, WebKit
-   DCHECK(plugin_print_interface_);
-   PP_PrintPageNumberRange_Dev page_range;
-   page_range.first_page_number = page_range.last_page_number = page_number;
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_OPENBSD)
-   ranges_.push_back(page_range);
-   canvas_ = canvas;
-   return true;
-@@ -1110,7 +1110,7 @@ bool PluginInstance::PrintPageHelper(PP_PrintPageNumbe
- void PluginInstance::PrintEnd() {
-   // Keep a reference on the stack. See NOTE above.
-   scoped_refptr<PluginInstance> ref(this);
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_OPENBSD)
-   // This hack is here because all pages need to be written to PDF at once.
-   if (!ranges_.empty())
-     PrintPageHelper(&(ranges_.front()), ranges_.size(), canvas_);
-@@ -1232,7 +1232,7 @@ bool PluginInstance::PrintPDFOutput(PP_Resource print_
+@@ -1299,7 +1299,7 @@ bool PluginInstance::PrintPDFOutput(PP_Resource print_
  #endif  // defined(OS_WIN)
  
    bool ret = false;

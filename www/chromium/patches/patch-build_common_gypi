@@ -1,16 +1,16 @@
-$OpenBSD: patch-build_common_gypi,v 1.8 2011/06/15 19:41:02 robert Exp $
---- build/common.gypi.orig	Mon Jun  6 11:11:46 2011
-+++ build/common.gypi	Wed Jun  8 09:58:35 2011
-@@ -95,7 +95,7 @@
+$OpenBSD: patch-build_common_gypi,v 1.9 2011/08/16 08:17:44 robert Exp $
+--- build/common.gypi.orig	Tue Aug  2 20:15:36 2011
++++ build/common.gypi	Wed Aug  3 09:30:30 2011
+@@ -98,7 +98,7 @@
        'file_manager_extension%': 0,
  
        # Python version.
--      'python_ver%': '2.5',
-+      'python_ver%': '${MODPY_VERSION}',
+-      'python_ver%': '2.6',
++      'python_ver%': '2.7',
  
        # Set ARM-v7 compilation flags
        'armv7%': 0,
-@@ -316,7 +316,7 @@
+@@ -354,7 +354,7 @@
      'linux_strip_reliability_tests%': 0,
  
      # Enable TCMalloc.
@@ -19,7 +19,7 @@ $OpenBSD: patch-build_common_gypi,v 1.8 2011/06/15 19:41:02 robert Exp $
  
      # Disable TCMalloc's debugallocation.
      'linux_use_debugallocation%': 0,
-@@ -337,7 +337,7 @@
+@@ -377,7 +377,7 @@
  
      # Used to disable Native Client at compile time, for platforms where it
      # isn't supported
@@ -28,7 +28,7 @@ $OpenBSD: patch-build_common_gypi,v 1.8 2011/06/15 19:41:02 robert Exp $
  
      # Set Thumb compilation flags.
      'arm_thumb%': 0,
-@@ -405,7 +405,7 @@
+@@ -445,7 +445,7 @@
          # This is used to tweak build flags for gcc 4.4.
          'gcc_version%': '<!(python <(DEPTH)/build/compiler_version.py)',
          # Figure out the python architecture to decide if we build pyauto.
@@ -37,16 +37,7 @@ $OpenBSD: patch-build_common_gypi,v 1.8 2011/06/15 19:41:02 robert Exp $
          'conditions': [
            ['branding=="Chrome"', {
              'linux_breakpad%': 1,
-@@ -478,7 +478,7 @@
-         ],
-       }],
- 
--      ['OS=="mac" or (OS=="linux" and chromeos==0 and target_arch!="arm")', {
-+      ['OS=="mac" or OS=="openbsd" or (OS=="linux" and chromeos==0 and target_arch!="arm")', {
-         'use_cups%': 1,
-       }, {
-         'use_cups%': 0,
-@@ -779,7 +779,7 @@
+@@ -850,7 +850,7 @@
                ['exclude', '(^|/)(gtk|x11)_[^/]*\\.(h|cc)$'],
              ],
            }],

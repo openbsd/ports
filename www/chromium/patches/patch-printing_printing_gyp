@@ -1,43 +1,13 @@
-$OpenBSD: patch-printing_printing_gyp,v 1.5 2011/06/08 20:36:56 robert Exp $
---- printing/printing.gyp.orig	Mon Jun  6 11:11:26 2011
-+++ printing/printing.gyp	Wed Jun  8 09:58:36 2011
-@@ -150,6 +150,11 @@
-                 ],
-               },
-             }],
-+            ['OS=="openbsd"', {
-+              'include_dirs': [
-+                '/usr/local/include',
-+              ],
-+            }],
-           ],
-         }],
-       ],
-@@ -178,7 +183,7 @@
-         'units_unittest.cc',
-       ],
-       'conditions': [
--        ['OS!="linux"', {'sources/': [['exclude', '_cairo_unittest\\.cc$']]}],
-+        ['OS!="linux" and OS!="openbsd"', {'sources/': [['exclude', '_cairo_unittest\\.cc$']]}],
-         ['OS!="mac"', {'sources/': [['exclude', '_mac_unittest\\.(cc|mm?)$']]}],
-         ['OS!="win"', {'sources/': [['exclude', '_win_unittest\\.cc$']]
-           }, {  # else: OS=="win"
-@@ -189,14 +194,12 @@
-             'dependencies': [
-               '../build/linux/system.gyp:gtk',
-            ],
--        }],
--        ['OS=="linux"', {
--          'conditions': [
--            ['linux_use_tcmalloc==1', {
-+            'conditions': [
-+              ['linux_use_tcmalloc==1', {
-               'dependencies': [
-                 '../base/allocator/allocator.gyp:allocator',
--              ],
--            }],
+$OpenBSD: patch-printing_printing_gyp,v 1.6 2011/08/16 08:17:44 robert Exp $
+--- printing/printing.gyp.orig	Tue Aug  2 20:44:45 2011
++++ printing/printing.gyp	Wed Aug  3 11:12:50 2011
+@@ -210,6 +210,9 @@
+                   ]
+                 },
+               }, {
++                'include_dirs': [
++                  '/usr/local/include',
 +                ],
-+              }],
-           ],
-         }],
-       ],
+                 'link_settings': {
+                   'libraries': [
+                     '<!@(cups-config --libs)',
