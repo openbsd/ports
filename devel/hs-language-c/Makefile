@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/04/11 14:47:17 kili Exp $
+# $OpenBSD: Makefile,v 1.12 2011/08/16 19:46:48 kili Exp $
 
 COMMENT =		analysis and generation of C code in Haskell
 
 DISTNAME =		language-c-0.3.2.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.sivity.net/projects/language.c/
@@ -22,7 +22,9 @@ MODGHC_BUILD =		cabal hackage haddock register
 
 BUILD_DEPENDS =		devel/alex \
 			devel/happy \
-			devel/hs-syb
+			${RUN_DEPENDS}
+
+RUN_DEPENDS =		devel/hs-syb
 
 NO_REGRESS =		Yes
 
