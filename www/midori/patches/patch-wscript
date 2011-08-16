@@ -1,7 +1,7 @@
-$OpenBSD: patch-wscript,v 1.15 2011/05/02 19:01:10 landry Exp $
+$OpenBSD: patch-wscript,v 1.16 2011/08/16 07:49:16 landry Exp $
 We don't need those files installed..
---- wscript.orig	Mon May  2 02:06:21 2011
-+++ wscript	Mon May  2 10:04:08 2011
+--- wscript.orig	Tue Aug  2 00:06:36 2011
++++ wscript	Tue Aug  2 09:06:41 2011
 @@ -68,7 +68,7 @@ def rc_file(self, node):
      self.compiled_tasks.append (rctask)
  rc_file = extension ('.rc')(rc_file)
@@ -11,7 +11,7 @@ We don't need those files installed..
  
  def configure (conf):
      def option_checkfatal (option, desc):
-@@ -408,7 +408,7 @@ def build (bld):
+@@ -401,7 +401,7 @@ def build (bld):
              'AUTHORS COPYING ChangeLog EXPAT README data/faq.html data/faq.css')
  
      # Install default configuration
