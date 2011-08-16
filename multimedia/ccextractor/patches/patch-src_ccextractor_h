@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_ccextractor_h,v 1.1.1.1 2011/08/16 14:12:58 espie Exp $
+--- src/ccextractor.h.orig	Sun Jul 31 14:43:33 2011
++++ src/ccextractor.h	Sun Jul 31 14:43:41 2011
+@@ -32,6 +32,15 @@ typedef int64_t LLONG;
+ #include "708.h"
+ #include "bitstream.h"
+ 
++#ifdef __OpenBSD__
++#define FOPEN64 fopen
++#define OPEN open
++#define FSEEK fseek
++#define FTELL ftell
++#define LSEEK lseek
++#define FSTAT fstat
++
++#else
+ #ifdef _WIN32
+ #define FOPEN64 fopen
+ #define OPEN _open
+@@ -62,6 +71,7 @@ typedef struct _stati64 FSTATSTRUCT;
+ #define TELL tell
+ #include <stdint.h>
+ #endif 
++#endif
+ 
+ #ifndef int64_t_C
+ #define int64_t_C(c)     (c ## LL)

@@ -1,0 +1,17 @@
+Closed captions are TV subtitles that you can turn on and off. The
+term Closed Captions refer to TV subtitles in NTSC, such as the US
+or Canada. In Europe Teletext (usually page 888) is used for
+subtitling.
+
+CCExtractor supports only American TV captions. It will not work
+with European or Australian subtitles.
+
+Basically, it can extract closed captions from an mpeg stream (such as
+a DVD) and produce srt files with both the subtitles and timing information.
+
+Note that closed captions sometimes are ALL CAPS, so further processing might
+be needed.
+
+In the simplest case, mplayer -subcc can tell you if closed captions exist.
+Then use mplayer -dumpstream to dump the full video stream, and ccextractor
+on the resulting file to get the subtitles (for instance).
