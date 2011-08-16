@@ -1,7 +1,7 @@
-$OpenBSD: patch-cocci_ml,v 1.2 2011/06/16 23:24:49 sthen Exp $
---- cocci.ml.orig	Fri Jun  3 17:55:52 2011
-+++ cocci.ml	Thu Jun 16 23:48:24 2011
-@@ -263,8 +263,8 @@ let show_or_not_diff2 cfile outfile =
+$OpenBSD: patch-cocci_ml,v 1.3 2011/08/16 08:26:16 sthen Exp $
+--- cocci.ml.orig	Wed Aug 10 20:10:48 2011
++++ cocci.ml	Thu Aug 11 15:49:26 2011
+@@ -266,8 +266,8 @@ let show_or_not_diff2 cfile outfile =
  
  	let line =
  	  match !Flag_parsing_c.diff_lines with
@@ -9,10 +9,10 @@ $OpenBSD: patch-cocci_ml,v 1.2 2011/06/16 23:24:49 sthen Exp $
 -	  | Some n -> "diff -U "^n^" -p "^cfile^" "^outfile in
 +	  | None ->   "gdiff -u -p " ^ cfile ^ " " ^ outfile
 +	  | Some n -> "gdiff -U "^n^" -p "^cfile^" "^outfile in
- 	let xs =
- 	  let res = Common.cmd_to_list line in
- 	  match (!Flag.patch,res) with
-@@ -501,7 +501,7 @@ let worth_trying cfiles tokens =
+ 	let res = Common.cmd_to_list line in
+ 	let res =
+ 	  List.map
+@@ -526,7 +526,7 @@ let worth_trying cfiles tokens =
  	| _ -> s
  
        ) in
@@ -21,7 +21,7 @@ $OpenBSD: patch-cocci_ml,v 1.2 2011/06/16 23:24:49 sthen Exp $
        in
        (match Sys.command com with
        | 0 (* success *) -> true
-@@ -1995,7 +1995,7 @@ let check_duplicate_modif2 xs =
+@@ -2032,7 +2032,7 @@ let check_duplicate_modif2 xs =
                match res2 with
                | None -> false
                | Some res2 ->

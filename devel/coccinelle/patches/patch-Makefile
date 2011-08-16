@@ -1,7 +1,7 @@
-$OpenBSD: patch-Makefile,v 1.1 2011/06/16 23:24:49 sthen Exp $
---- Makefile.orig	Thu Jun 16 23:49:44 2011
-+++ Makefile	Thu Jun 16 23:50:02 2011
-@@ -331,7 +331,7 @@ install-common:
+$OpenBSD: patch-Makefile,v 1.2 2011/08/16 08:26:16 sthen Exp $
+--- Makefile.orig	Wed Aug 10 20:10:48 2011
++++ Makefile	Thu Aug 11 14:44:53 2011
+@@ -341,7 +341,7 @@ install-common:
  	$(INSTALL_DATA) commons/*.cmi $(DESTDIR)$(SHAREDIR)/commons/
  	$(INSTALL_DATA) globals/iteration.cmi $(DESTDIR)$(SHAREDIR)/globals/
  	$(INSTALL_DATA) docs/spatch.1 $(DESTDIR)$(MANDIR)/man1/
