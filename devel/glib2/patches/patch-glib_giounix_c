@@ -1,0 +1,24 @@
+$OpenBSD: patch-glib_giounix_c,v 1.1 2011/08/16 15:03:46 ajacoutot Exp $
+
+From 230efe70f418017e809e99710e0519f716edebe3 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Sat, 13 Aug 2011 23:23:36 +0000
+Subject: open(2): POSIX compatibility.
+
+--- glib/giounix.c.orig	Thu Dec  2 20:54:01 2010
++++ glib/giounix.c	Mon Aug 15 16:29:44 2011
+@@ -524,7 +524,13 @@ g_io_channel_new_file (const gchar *filename,
+     }
+ 
+   create_mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH | S_IWOTH;
+-  fid = open (filename, flags, create_mode);
++
++  do
++    {
++      fid = open (filename, flags, create_mode);
++    }
++  while (fid == -1 && errno == EINTR);
++
+   if (fid == -1)
+     {
+       int err = errno;
