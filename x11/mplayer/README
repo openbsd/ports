@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2011/07/02 23:10:25 edd Exp $
+$OpenBSD: README,v 1.4 2011/08/17 15:12:15 edd Exp $
 
 Porting notes for MPlayer
 =========================
@@ -37,18 +37,6 @@ External FAAC linkage (and graphics/ffmpeg's external FAAC linkage)
 was disabled due to conflicting licenses. Only the FFmpeg's
 internal "ffaac" encoder remains for use with encoding AAC in mencoder.
 https://bugs.launchpad.net/ubuntu/+source/faac/+bug/374900
-
-FFmpeg Ogg Demuxer Bug
-----------------------
-
-The pkg/README details a bug in the FFmpeg Ogg demuxer; You can test the
-existence of this bug with this URL:
-http://icecast.version6.net:8888/okul.ogg
-
-When a song ends, MPlayer will stall saying it cannot fill the cache.
-
-Bug reported upstream here (it's an FFmpeg bug):
-https://roundup.ffmpeg.org/issue2337
 
 Rolling a Distfile
 ------------------

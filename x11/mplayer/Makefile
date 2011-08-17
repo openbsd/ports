@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2011/07/10 13:31:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.194 2011/08/17 15:12:15 edd Exp $
 
 # May not be hard to add more.
 ONLY_FOR_ARCHS =	alpha amd64 arm i386 mips64 mips64el powerpc sparc64
@@ -13,7 +13,7 @@ SUBST_VARS += 		PREFIX CONFDIR
 # Distfiles must be hand-rolled, see README
 N =			mplayer
 DISTNAME =		mplayer-${V}
-REVISION =		9
+REVISION =		10
 
 CATEGORIES =		x11 multimedia
 
@@ -43,7 +43,7 @@ MODULES +=	converters/libiconv
 LIB_DEPENDS =	graphics/png \
 		graphics/jpeg \
 		graphics/libungif \
-		graphics/ffmpeg>=20110408 \
+		graphics/ffmpeg>=20110408p5 \
 		audio/cdparanoia>=3.a9.8 \
 		audio/speex \
 		audio/libogg \
