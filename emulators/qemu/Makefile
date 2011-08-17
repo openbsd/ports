@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2011/08/16 21:24:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.74 2011/08/17 08:50:25 sthen Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc sparc64
@@ -51,6 +51,10 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--disable-usb-redir \
 			--disable-vnc-sasl \
 			--disable-vnc-tls
+
+.if ${MACHINE_ARCH:Msparc}
+CONFIGURE_ARGS +=	--sparc_cpu=v7
+.endif
 
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386} || ${MACHINE_ARCH:Msparc64}
 PKG_ARGS +=		-Dbsduser=1
