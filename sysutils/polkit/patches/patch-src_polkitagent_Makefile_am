@@ -1,10 +1,4 @@
-$OpenBSD: patch-src_polkitagent_Makefile_am,v 1.2 2011/04/28 13:09:07 ajacoutot Exp $
-
-From c29a6fd701df08e10e384cce65356af9a5a559f3 Mon Sep 17 00:00:00 2001
-From: Benjamin Otte <otte@redhat.com>
-Date: Fri, 11 Mar 2011 13:01:27 +0000
-Subject: introspection: Add --c-include to the gir files
-
+$OpenBSD: patch-src_polkitagent_Makefile_am,v 1.3 2011/08/17 16:59:27 ajacoutot Exp $
 --- src/polkitagent/Makefile.am.orig	Sat Feb 26 23:23:53 2011
 +++ src/polkitagent/Makefile.am	Wed Apr 27 19:10:36 2011
 @@ -89,6 +89,9 @@ endif
@@ -17,11 +11,3 @@ Subject: introspection: Add --c-include to the gir files
  
  polkit_agent_helper_1_CFLAGS  = 					\
          -D_POLKIT_COMPILATION                                  		\
-@@ -120,6 +123,7 @@ PolkitAgent-1.0.gir: libpolkit-agent-1.la $(INTROSPECT
- 		--pkg=glib-2.0 					\
- 		--pkg=gobject-2.0 				\
- 		--pkg=gio-2.0 					\
-+		--c-include='polkitagent/polkitagent.h'		\
- 		--libtool=$(top_builddir)/libtool		\
-                 -I$(top_srcdir)/src	 			\
- 	        -D_POLKIT_COMPILATION                   	\
