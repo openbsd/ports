@@ -1,12 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/10/24 10:45:31 robert Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/08/17 07:08:20 rpointel Exp $
 bin/rst2html
 bin/rst2latex
 bin/rst2man
-bin/rst2newlatex
 bin/rst2odt
 bin/rst2odt_prepstyles
 bin/rst2pseudoxml
 bin/rst2s5
+bin/rst2xetex
 bin/rst2xml
 bin/rstpep2html
 lib/python${MODPY_VERSION}/site-packages/docutils/
@@ -19,6 +19,8 @@ lib/python${MODPY_VERSION}/site-packages/docutils/_string_template_compat.py
 lib/python${MODPY_VERSION}/site-packages/docutils/_string_template_compat.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/core.py
 lib/python${MODPY_VERSION}/site-packages/docutils/core.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/error_reporting.py
+lib/python${MODPY_VERSION}/site-packages/docutils/error_reporting.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/examples.py
 lib/python${MODPY_VERSION}/site-packages/docutils/examples.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/frontend.py
@@ -54,6 +56,8 @@ lib/python${MODPY_VERSION}/site-packages/docutils/languages/it.py
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/it.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/ja.py
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/ja.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/languages/lt.py
+lib/python${MODPY_VERSION}/site-packages/docutils/languages/lt.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/nl.py
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/nl.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/pl.py
@@ -70,6 +74,15 @@ lib/python${MODPY_VERSION}/site-packages/docutils/languages/zh_cn.py
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/zh_cn.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/zh_tw.py
 lib/python${MODPY_VERSION}/site-packages/docutils/languages/zh_tw.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/math/
+lib/python${MODPY_VERSION}/site-packages/docutils/math/__init__.py
+lib/python${MODPY_VERSION}/site-packages/docutils/math/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/math/latex2mathml.py
+lib/python${MODPY_VERSION}/site-packages/docutils/math/latex2mathml.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/math/math2html.py
+lib/python${MODPY_VERSION}/site-packages/docutils/math/math2html.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/math/unimathsymbols2tex.py
+lib/python${MODPY_VERSION}/site-packages/docutils/math/unimathsymbols2tex.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/nodes.py
 lib/python${MODPY_VERSION}/site-packages/docutils/nodes.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/
@@ -163,6 +176,8 @@ lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/it.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/it.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/ja.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/ja.pyc
+lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/lt.py
+lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/lt.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/nl.py
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/nl.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/parsers/rst/languages/pl.py
@@ -192,13 +207,6 @@ lib/python${MODPY_VERSION}/site-packages/docutils/readers/doctree.py
 lib/python${MODPY_VERSION}/site-packages/docutils/readers/doctree.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/readers/pep.py
 lib/python${MODPY_VERSION}/site-packages/docutils/readers/pep.pyc
-lib/python${MODPY_VERSION}/site-packages/docutils/readers/python/
-lib/python${MODPY_VERSION}/site-packages/docutils/readers/python/__init__.py
-lib/python${MODPY_VERSION}/site-packages/docutils/readers/python/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/docutils/readers/python/moduleparser.py
-lib/python${MODPY_VERSION}/site-packages/docutils/readers/python/moduleparser.pyc
-lib/python${MODPY_VERSION}/site-packages/docutils/readers/python/pynodes.py
-lib/python${MODPY_VERSION}/site-packages/docutils/readers/python/pynodes.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/readers/standalone.py
 lib/python${MODPY_VERSION}/site-packages/docutils/readers/standalone.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/statemachine.py
@@ -241,14 +249,9 @@ lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/__init__.py
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/default.tex
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/titlepage.tex
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/latex2e/xelatex.tex
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/manpage.py
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/manpage.pyc
-lib/python${MODPY_VERSION}/site-packages/docutils/writers/newlatex2e/
-lib/python${MODPY_VERSION}/site-packages/docutils/writers/newlatex2e/__init__.py
-lib/python${MODPY_VERSION}/site-packages/docutils/writers/newlatex2e/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/docutils/writers/newlatex2e/base.tex
-lib/python${MODPY_VERSION}/site-packages/docutils/writers/newlatex2e/unicode_map.py
-lib/python${MODPY_VERSION}/site-packages/docutils/writers/newlatex2e/unicode_map.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/null.py
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/null.pyc
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/odf_odt/
@@ -299,5 +302,8 @@ lib/python${MODPY_VERSION}/site-packages/docutils/writers/s5_html/themes/small-b
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/s5_html/themes/small-white/
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/s5_html/themes/small-white/framing.css
 lib/python${MODPY_VERSION}/site-packages/docutils/writers/s5_html/themes/small-white/pretty.css
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/xetex/
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/xetex/__init__.py
+lib/python${MODPY_VERSION}/site-packages/docutils/writers/xetex/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/roman.py
 lib/python${MODPY_VERSION}/site-packages/roman.pyc

@@ -1,24 +1,25 @@
-$OpenBSD: patch-setup_py,v 1.4 2010/10/24 10:45:31 robert Exp $
---- setup.py.orig	Sun Oct 24 12:32:19 2010
-+++ setup.py	Sun Oct 24 12:34:03 2010
-@@ -162,16 +162,16 @@ what-you-see-is-what-you-get plaintext markup syntax."
+$OpenBSD: patch-setup_py,v 1.5 2011/08/17 07:08:20 rpointel Exp $
+--- setup.py.orig	Mon Jun 27 13:38:56 2011
++++ setup.py	Mon Jul 25 14:30:41 2011
+@@ -166,17 +166,17 @@
                       ['docutils/writers/odf_odt/styles.odt']),
                       ]
                     + s5_theme_files),
 -    'scripts' : ['tools/rst2html.py',
 -                 'tools/rst2s5.py',
 -                 'tools/rst2latex.py',
--                 'tools/rst2newlatex.py',
++    'scripts' : ['tools/rst2html',
++                 'tools/rst2s5',
++                 'tools/rst2latex',
+                  # 'tools/rst2newlatex.py',
+-                 'tools/rst2xetex.py',
 -                 'tools/rst2man.py',
 -                 'tools/rst2xml.py',
 -                 'tools/rst2pseudoxml.py',
 -                 'tools/rstpep2html.py',
 -                 'tools/rst2odt.py',
 -                 'tools/rst2odt_prepstyles.py',
-+    'scripts' : ['tools/rst2html',
-+                 'tools/rst2s5',
-+                 'tools/rst2latex',
-+                 'tools/rst2newlatex',
++                 'tools/rst2xetex',
 +                 'tools/rst2man',
 +                 'tools/rst2xml',
 +                 'tools/rst2pseudoxml',
@@ -28,7 +29,7 @@ $OpenBSD: patch-setup_py,v 1.4 2010/10/24 10:45:31 robert Exp $
                   ],}
  """Distutils setup parameters."""
  
-@@ -212,6 +212,8 @@ List of (module name, minimum __version__ string, [att
+@@ -217,6 +217,8 @@
  def get_extras():
      extras = []
      for module_name, version, attributes in extra_modules:

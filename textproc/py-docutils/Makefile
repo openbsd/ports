@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2011/06/08 18:09:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/08/17 07:08:20 rpointel Exp $
 
 COMMENT =	process plaintext documentation into other formats
 
-MODPY_EGG_VERSION = 0.7
+MODPY_EGG_VERSION = 0.8
 DISTNAME =	docutils-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION=	0
 CATEGORIES =	textproc
 
 MAINTAINER =	Ben Lovett <ben@tilderoot.com>
@@ -23,7 +22,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=docutils/}
 MODULES =	lang/python
 
 pre-build:
-.for file in 2html 2s5 2latex 2newlatex 2man 2xml 2pseudoxml pep2html 2odt 2odt_prepstyles
+.for file in 2html 2s5 2latex 2xetex 2man 2xml 2pseudoxml 2odt 2odt_prepstyles pep2html
 	@mv ${WRKSRC}/tools/rst${file}{.py,}
 .endfor
 
