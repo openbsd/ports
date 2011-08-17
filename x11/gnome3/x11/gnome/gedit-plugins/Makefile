@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/07/05 14:24:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/08/17 12:56:06 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
-GNOME_VERSION=		3.0.5
+GNOME_VERSION=		3.0.7
 
 CATEGORIES=		editors
 
