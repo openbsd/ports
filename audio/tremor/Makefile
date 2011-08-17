@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/06/29 11:41:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/08/17 12:35:23 jasper Exp $
 
 COMMENT=	integer-only, fully Ogg Vorbis compliant decoder library
 
@@ -22,13 +22,12 @@ BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
 AUTOCONF_VERSION=2.61
 AUTOMAKE_VERSION=1.9
 
-USE_LIBTOOL=	Yes
+# autogen.sh needs libtoolize and our libtool doesn't grok
+# --version-script
+USE_LIBTOOL=	gnu
 CONFIGURE_STYLE=gnu
 
 WRKDIST=	${WRKDIR}/Tremor
-
-# autogen.sh needs libtoolize
-BUILD_DEPENDS +=	devel/libtool
 
 pre-configure:
 	cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
