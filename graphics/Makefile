@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.296 2011/07/27 15:31:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.297 2011/08/17 19:05:00 jasper Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -177,6 +177,7 @@
      SUBDIR += p5-Image-MetaData-JPEG
      SUBDIR += p5-Image-Size
      SUBDIR += p5-Imager
+     SUBDIR += p5-Imager-QRCode
      SUBDIR += p5-SVG
      SUBDIR += p5-SVG-Graph
      SUBDIR += pdfmod
