@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/17 19:04:13 jasper Exp $
+${P5ARCH}/Imager/QRCode.pm
+${P5ARCH}/auto/Imager/QRCode/
+${P5ARCH}/auto/Imager/QRCode/QRCode.bs
+${P5ARCH}/auto/Imager/QRCode/QRCode.so
+@man man/man3p/Imager::QRCode.3p
+share/examples/p5-Imager-QRCode/
+share/examples/p5-Imager-QRCode/generate.pl
