@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/07/05 21:25:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/08/17 15:43:52 nigel Exp $
 
 SHARED_ONLY=		Yes
 
@@ -47,6 +47,6 @@ do-build:
 
 do-install:
 	cd ${WRKSRC} && ${SET_ENV} ${MAKE_ENV} \
-		${SUDO} ${LOCALBASE}/bin/bash build.sh -i
+		${LOCALBASE}/bin/bash build.sh -i
 
 .include <bsd.port.mk>
