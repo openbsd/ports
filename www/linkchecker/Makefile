@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.33 2011/06/08 18:15:29 rpointel Exp $
+# $OpenBSD: Makefile,v 1.34 2011/08/17 17:13:10 landry Exp $
 
 COMMENT=	checks HTML documents for broken links
 
-MODPY_EGG_VERSION=6.2
+MODPY_EGG_VERSION=7.1
 DISTNAME=	LinkChecker-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:L}
-
-REVISION=	0
 
 CATEGORIES=    	www
 
 HOMEPAGE=	http://linkchecker.sourceforge.net/
+
+MAINTAINER=	Amit Kulkarni <amitkulz@gmail.com>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,6 +25,8 @@ MODULES=	lang/python
 
 MODPY_DISTUTILS_INSTALLARGS=	--no-compile
 USE_GROFF =	Yes
+
+WANTLIB+=	${MODPY_WANTLIB}
 
 BUILD_DEPENDS=	net/py-dns
 
