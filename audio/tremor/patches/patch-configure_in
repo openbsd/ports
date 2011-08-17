@@ -1,0 +1,39 @@
+$OpenBSD: patch-configure_in,v 1.1 2011/08/17 12:38:35 jasper Exp $
+--- configure.in.orig	Tue Mar 25 22:56:24 2008
++++ configure.in	Sat Jul 30 20:33:10 2011
+@@ -59,13 +59,13 @@ else
+         case $host in 
+         arm-*-*)
+                 DEBUG="-g -Wall -D__NO_MATH_INLINES -fsigned-char -D_ARM_ASSEM_"
+-                CFLAGS="-O2 -D_ARM_ASSEM_ -fsigned-char"
+-                PROFILE="-W -pg -g -O2 -D_ARM_ASSEM_ -fsigned-char -fno-inline-functions";;
++                CFLAGS="-D_ARM_ASSEM_ -fsigned-char"
++                PROFILE="-W -pg -g -D_ARM_ASSEM_ -fsigned-char -fno-inline-functions";;
+ 
+         *)
+                 DEBUG="-g -Wall -D__NO_MATH_INLINES -fsigned-char"
+-                CFLAGS="-O2 -Wall -fsigned-char"
+-                PROFILE="-Wall -pg -g -O2 -fsigned-char -fno-inline-functions";;
++                CFLAGS="-Wall -fsigned-char"
++                PROFILE="-Wall -pg -g -fsigned-char -fno-inline-functions";;
+         esac
+ fi
+ CFLAGS="$CFLAGS $cflags_save -D_REENTRANT"
+@@ -76,16 +76,7 @@ LDFLAGS="$LDFLAGS $ldflags_save"
+ AC_PROG_LD
+ AC_PROG_LD_GNU
+ if test "x$lt_cv_prog_gnu_ld" = "xyes"; then
+-   SHLIB_VERSION_ARG="Wl,--version-script=Version_script"
+-
+-   dnl Set extra linker options
+-   case "$target_os" in
+-  linux* | solaris* )
+-    SHLIB_VERSION_ARG="-Wl,--version-script=Version_script"
+-    ;;
+-  *)
+-    ;;
+-   esac
++   SHLIB_VERSION_ARG="-Wl,--version-script=Version_script"
+    LDFLAGS="$LDFLAGS $SHLIB_VERSION_ARG"
+ fi
+ 
