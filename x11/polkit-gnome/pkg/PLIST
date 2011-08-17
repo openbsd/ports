@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/07/01 22:04:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/08/17 16:59:47 ajacoutot Exp $
 %%SHARED%%
 include/polkit-gtk-1/
 include/polkit-gtk-1/polkitgtk/
@@ -39,6 +39,7 @@ share/locale/el/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/en_GB/
 share/locale/en_GB/LC_MESSAGES/
 share/locale/en_GB/LC_MESSAGES/polkit-gnome-1.mo
+share/locale/eo/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/es/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/eu/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/fi/LC_MESSAGES/polkit-gnome-1.mo
@@ -94,6 +95,7 @@ share/locale/te/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/polkit-gnome-1.mo
+share/locale/tr/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/uk/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/vi/LC_MESSAGES/polkit-gnome-1.mo
 share/locale/zh_CN/LC_MESSAGES/polkit-gnome-1.mo
