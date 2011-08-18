@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.957 2011/07/21 01:37:56 edd Exp $
+# $OpenBSD: Makefile,v 1.958 2011/08/18 09:58:19 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1041,6 +1041,7 @@
      SUBDIR += ruby-gem_plugin
      SUBDIR += ruby-gems
      SUBDIR += ruby-gettext
+     SUBDIR += ruby-gir_ffi
      SUBDIR += ruby-highline
      SUBDIR += ruby-hoe
      SUBDIR += ruby-home_run
