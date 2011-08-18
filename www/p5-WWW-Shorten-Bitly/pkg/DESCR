@@ -1,0 +1,5 @@
+WWW::Shorten::Bitly provides an easy interface for shortening URLs using
+http://bit.ly. In addition to shortening URLs, you can pull statistics
+that bit.ly gathers regarding each shortened WWW::Shorten::Bitly uses
+XML::Simple to convert the xml response for the meta info and click
+stats to create a hashref of the results.
