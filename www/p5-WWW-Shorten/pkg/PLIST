@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/18 07:58:39 jasper Exp $
+bin/shorten
+${P5SITE}/WWW/Shorten/
+${P5SITE}/WWW/Shorten.pm
+${P5SITE}/WWW/Shorten/LinkToolbot.pm
+${P5SITE}/WWW/Shorten/Linkz.pm
+${P5SITE}/WWW/Shorten/MakeAShorterLink.pm
+${P5SITE}/WWW/Shorten/Metamark.pm
+${P5SITE}/WWW/Shorten/TinyClick.pm
+${P5SITE}/WWW/Shorten/TinyURL.pm
+${P5SITE}/WWW/Shorten/Tinylink.pm
+${P5SITE}/WWW/Shorten/_dead.pm
+${P5SITE}/WWW/Shorten/generic.pm
+@man man/man1/shorten.1
+@man man/man3p/WWW::Shorten.3p
+@man man/man3p/WWW::Shorten::LinkToolbot.3p
+@man man/man3p/WWW::Shorten::Linkz.3p
+@man man/man3p/WWW::Shorten::MakeAShorterLink.3p
+@man man/man3p/WWW::Shorten::Metamark.3p
+@man man/man3p/WWW::Shorten::TinyClick.3p
+@man man/man3p/WWW::Shorten::TinyURL.3p
+@man man/man3p/WWW::Shorten::Tinylink.3p
+@man man/man3p/WWW::Shorten::_dead.3p
+@man man/man3p/WWW::Shorten::generic.3p
