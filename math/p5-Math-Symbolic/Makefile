@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:11 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/08/18 19:04:16 jasper Exp $
 
 COMMENT =	symbolic calculations for Perl
-DISTNAME =	Math-Symbolic-0.603
+DISTNAME =	Math-Symbolic-0.606
 CATEGORIES =	math
-HOMEPAGE =	http://search.cpan.org/~smueller/Math-Symbolic/
 MAINTAINER =	Markus Bergkvist <markus.bergkvist@telia.com>
 
 # Perl
@@ -20,6 +19,5 @@ RUN_DEPENDS =	devel/p5-Parse-RecDescent
 MAKE_ENV +=	TEST_POD=1
 
 CONFIGURE_STYLE =	modbuild
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>
