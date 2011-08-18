@@ -1,4 +1,4 @@
-# $OpenBSD: i386,v 1.51 2011/03/15 19:50:11 jasper Exp $
+# $OpenBSD: i386,v 1.52 2011/08/18 19:14:26 naddy Exp $
 # This is the master list of subdirs used to choose i386 packages.
 # Use with ${PORTSDIR}/infrastructure/package/check-plist
 # to create actual SUBDIRLIST to pass to ports main Makefile.
@@ -46,7 +46,7 @@ textproc/xpdf
 #x11/kde/office3
 #x11/kde/edu3
 #x11/kde/games3
-graphics/digikam
+#graphics/digikam
 x11/windowmaker
 x11/windowmaker-extra
 www/tidyp
@@ -60,8 +60,8 @@ audio/mp3cddb
 editors/nano
 textproc/antiword
 editors/ted
-lang/python/2.6
-lang/python/2.6,-tools
+lang/python/2.7
+lang/python/2.7,-tools
 www/mod_perl
 games/xkobo,harder
 games/xlife
@@ -71,7 +71,7 @@ x11/xglobe
 graphics/mpeg_play
 benchmarks/tcpblast
 www/links
-graphics/gqview
+graphics/gpicview
 net/epic4
 net/irssi
 security/bsd-airtools
@@ -122,15 +122,15 @@ textproc/ispell,-spanish
 net/unbound
 net/ldns/libldns
 x11/scrotwm
-x11/terminus-font
-#x11/liberation-fonts
+fonts/terminus-font
+#fonts/liberation-fonts
 #math/moo
 net/ipcalc
 net/ladvd
 #sysutils/pkg_mgr
 math/gnuplot
-games/crack-attack
-#emulators/qemu
+#games/crack-attack
+emulators/qemu
 databases/sqlitebrowser
 print/cups
 x11/tk/8.5
@@ -138,6 +138,7 @@ lang/ruby/1.8
 lang/g77
 devel/libf2c
 devel/git
+devel/subversion
 net/openvpn
 net/rtorrent
 www/lighttpd
