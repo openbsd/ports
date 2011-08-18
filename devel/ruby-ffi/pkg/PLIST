@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/03/10 23:51:36 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/08/18 09:49:12 jasper Exp $
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.require_paths
@@ -21,7 +21,34 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/io.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/library.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/managedstruct.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/memorypointer.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/i386-darwin/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/i386-darwin/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/i386-linux/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/i386-linux/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/i386-openbsd/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/i386-openbsd/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/i386-solaris/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/i386-solaris/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/i386-windows/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/i386-windows/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc-aix/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc-aix/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc-darwin/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/powerpc-darwin/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/sparc-solaris/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/sparc-solaris/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/sparcv9-solaris/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/sparcv9-solaris/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-darwin/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-darwin/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-linux/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-linux/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-openbsd/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-openbsd/types.conf
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-solaris/
+${GEM_LIB}/gems/${DISTNAME}/lib/ffi/platform/x86_64-solaris/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/pointer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/struct.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/struct_layout_builder.rb
@@ -31,7 +58,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/tools/generator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/tools/generator_task.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/tools/struct_generator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/tools/types_generator.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/ffi/types.conf
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/types.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/union.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/ffi/variadic.rb
@@ -44,6 +70,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/buffer_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/callback_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/custom_param_type.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/custom_type_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/ffi/dup_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/enum_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/errno_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/ffi/ffi_spec.rb
