@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1 2011/08/18 10:51:08 edd Exp $
+--- src/Makefile.in.orig	Mon Aug 15 16:19:18 2011
++++ src/Makefile.in	Mon Aug 15 16:19:34 2011
+@@ -75,7 +75,7 @@ COFLAGS=@COFLAGS@
+ CWFLAGS=@CWFLAGS@
+ CIFLAGS=@CIFLAGS@
+ CMFLAGS=@CMFLAGS@
+-CPFLAGS=
++CPFLAGS=@CPPFLAGS@
+ CFLAGS=	$(CWFLAGS) $(COFLAGS) $(CIFLAGS) $(CMFLAGS) $(CPFLAGS)
+ LDFLAGS=@LDFLAGS@ $(CPFLAGS)
+ 

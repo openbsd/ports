@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/07/18 19:06:37 naddy Exp $
+# $OpenBSD: Makefile,v 1.36 2011/08/18 10:51:08 edd Exp $
 
 COMMENT =		Prolog for the real world
 
@@ -6,7 +6,7 @@ V =			5.10.4
 XV =			6.6.66
 DISTNAME =		pl-$V
 PKGNAME =		swi-prolog-$V
-REVISION =		2
+REVISION =		3
 CATEGORIES =		lang
 
 SHARED_LIBS =		pl	3.0
@@ -28,6 +28,9 @@ AUTOCONF_DIR =		${WRKSRC}/src ${WRKSRC}/packages/semweb
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/src \
 				${WRKSRC}/packages/jpl \
 				${WRKSRC}/packages/xpce/src
+
+CONFIGURE_ENV +=	LDFLAGS=-L${LOCALBASE}/lib \
+			CPPFLAGS=-I${LOCALBASE}/include
 CONFIGURE_ARGS =	--enable-mt \
 			--disable-custom-flags \
 			--with-world \
@@ -42,7 +45,10 @@ MAKE_FLAGS =		SONAMEOPT= \
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		graphics/jpeg
-WANTLIB +=  c m ncursesw pthread pthread-stubs readline z
+LIB_DEPENDS =		devel/gmp
+
+WANTLIB +=	ICE SM X11 Xext Xft Xinerama Xpm Xt c crypto gmp jpeg m
+WANTLIB +=	ncursesw pthread readline ssl z
 
 FULLARCH =		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd${OSREV}
 SUBST_VARS =		V XV FULLARCH BOOT
