@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.958 2011/08/18 09:58:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.959 2011/08/18 12:27:09 mpi Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -997,6 +997,7 @@
      SUBDIR += py-zopeinterface
      SUBDIR += py-zopetesting
      SUBDIR += pybugz
+     SUBDIR += pyflakes
      SUBDIR += pygame
      SUBDIR += pylint
      SUBDIR += pyrex
