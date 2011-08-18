@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2009/01/15 23:08:52 djm Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/08/18 12:53:35 shadchin Exp $
 lib/python${MODPY_VERSION}/site-packages/pytz/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -8,6 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VER
 lib/python${MODPY_VERSION}/site-packages/pytz-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/pytz/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pytz/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/pytz/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/pytz/exceptions.pyc
 lib/python${MODPY_VERSION}/site-packages/pytz/reference.py
 lib/python${MODPY_VERSION}/site-packages/pytz/reference.pyc
 lib/python${MODPY_VERSION}/site-packages/pytz/tzfile.py
@@ -94,6 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Asuncion
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Atikokan
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Atka
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Bahia
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Bahia_Banderas
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Barbados
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Belem
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Belize
@@ -159,19 +162,23 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Kentucky/
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Kentucky/Louisville
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Kentucky/Monticello
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Knox_IN
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Kralendijk
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/La_Paz
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Lima
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Los_Angeles
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Louisville
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Lower_Princes
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Maceio
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Managua
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Manaus
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Marigot
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Martinique
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Matamoros
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Mazatlan
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Mendoza
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Menominee
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Merida
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Metlakatla
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Mexico_City
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Miquelon
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Moncton
@@ -185,8 +192,10 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Nipigon
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Nome
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Noronha
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/North_Dakota/
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/North_Dakota/Beulah
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/North_Dakota/Center
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/North_Dakota/New_Salem
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Ojinaga
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Panama
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Pangnirtung
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Paramaribo
@@ -203,12 +212,14 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Regina
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Resolute
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Rio_Branco
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Rosario
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Santa_Isabel
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Santarem
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Santiago
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Santo_Domingo
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Sao_Paulo
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Scoresbysund
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Shiprock
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/Sitka
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/St_Barthelemy
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/St_Johns
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/America/St_Kitts
@@ -232,6 +243,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Antarctica/
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Antarctica/Casey
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Antarctica/Davis
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Antarctica/DumontDUrville
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Antarctica/Macquarie
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Antarctica/Mawson
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Antarctica/McMurdo
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Antarctica/Palmer
@@ -282,6 +294,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Kabul
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Kamchatka
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Karachi
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Kashgar
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Kathmandu
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Katmandu
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Kolkata
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Krasnoyarsk
@@ -295,6 +308,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Makassar
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Manila
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Muscat
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Nicosia
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Novokuznetsk
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Novosibirsk
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Omsk
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Asia/Oral
@@ -538,6 +552,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Apia
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Auckland
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Chatham
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Chuuk
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Easter
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Efate
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Enderbury
@@ -563,6 +578,7 @@ lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Noumea
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Pago_Pago
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Palau
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Pitcairn
+lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Pohnpei
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Ponape
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Port_Moresby
 lib/python${MODPY_VERSION}/site-packages/pytz/zoneinfo/Pacific/Rarotonga
