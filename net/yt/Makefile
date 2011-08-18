@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.42 2011/07/26 12:53:26 jsg Exp $
+# $OpenBSD: Makefile,v 1.43 2011/08/18 08:27:33 jsg Exp $
 
 COMMENT=	fetch YouTube and Google videos
 
-PKGNAME=	yt-18
-REVISION=	0
+PKGNAME=	yt-19
 CATEGORIES=	net www
 DISTFILES=
 

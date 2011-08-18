@@ -1,5 +1,5 @@
 #!${LOCALBASE}/bin/lua
--- $OpenBSD: yt.lua,v 1.33 2011/07/26 12:53:26 jsg Exp $
+-- $OpenBSD: yt.lua,v 1.34 2011/08/18 08:27:33 jsg Exp $
 -- Fetch videos from YouTube.com/Videos.Google.com, and convert to MPEG.
 -- Written by Pedro Martelletto and Martynas Venckus.  Public domain.
 -- Example: lua yt.lua http://www.youtube.com/watch?v=c5uoo1Kl_uA
@@ -23,20 +23,22 @@ base_url = "http://www.youtube.com/get_video_info"
 -- Usage and supported options.
 prog = {
    name = arg[0],
-   usage = "[-C] [-n] [-o=output] url ...",
+   usage = "[-cC] [-o=output] url ...",
 }
 options = Options {
    Option {{"C"}, "continue previous transfer"},
-   Option {{"n"}, "do not convert video"},
+   Option {{"c"}, "convert video"},
    Option {{"o"}, "change output filename", "Req", "filename"},
 }
 
 -- from lua-users.org StringRecipes
 function url_decode(str)
-   str = string.gsub (str, "+", " ")
-   str = string.gsub (str, "%%(%x%x)",
-       function(h) return string.char(tonumber(h,16)) end)
-   str = string.gsub (str, "\r\n", "\n")
+   while (string.find(str, "%%%x%x")) do
+      str = string.gsub (str, "+", " ")
+      str = string.gsub (str, "%%(%x%x)",
+          function(h) return string.char(tonumber(h,16)) end)
+      str = string.gsub (str, "\r\n", "\n")
+   end
    return str
 end
 
@@ -75,35 +77,6 @@ for i = 1, table.getn(urls) do
    title = string.gsub(title, "&[^ ]*;", "")
    title = string.gsub(title, "%s*- YouTube%s*", "")
 
-   -- Fetch high quality if available, just take the first format for now
-   --  5  320x 240 H.263/MP3 mono FLV
-   --  6  320x 240 H.263/MP3 mono FLV
-   -- 13  176x 144 3GP/AMR mono 3GP 
-   -- 17  176x 144 3GP/AAC mono 3GP
-   -- 18  480x 360 480x270 H.264/AAC stereo MP4
-   -- 22 1280x 720 H.264/AAC stereo MP4
-   -- 34  320x 240 H.264/AAC stereo FLV
-   -- 35  640x 480 640x360 H.264/AAC stereo FLV
-   -- 37 1920x1024 H.264/AAC MP4 AVC
-   mpeg4 = false
-   pattern = "fmt_map=([%d]+)"
-   if (string.match(body, pattern) ~= nil) then
-      format = string.match(body, pattern)
-      -- format 37 isn't in fmt_map so fake it
---[[
-      if (string.match(body, "IS_HD_AVAILABLE':%s*true") ~= nil) then
-         format = "37"
-      end
-]]--
-      nf = tonumber(format)
-      if nf == 18 or nf == 22 or nf == 37 then
-         mpeg4 = true
-      end
-      fmt = "&fmt=" .. format
-   else
-      fmt = ""
-   end
-
    -- Build a name for the files the video will be stored in.
    if opts.o then
       file = opts.o
@@ -112,36 +85,21 @@ for i = 1, table.getn(urls) do
       file = string.lower(file)
    end
 
-   -- Build flv and mp4 file names.
-   if file == "-" then
-      opts.n = 0
-      flv = file
-   else
-      flv = file .. ".flv"
-   end
-   mp4 = file .. ".mp4"
-
-   -- Escape the file names.
-   e_flv = string.format("%q", flv)
-   e_mp4 = string.format("%q", mp4)
-
    -- Look for the video ID.
    pattern = "VIDEO_ID':%s*['\"]([^'\"]*)['\"]"
    video_id = string.match(body, pattern)
 
    -- Check for error such as "This video is not available in your country."
-   error_pattern = "class=\"yt%-alert%-content\">%s+(.-)%s*\n*</div>"
---[[
+   error_pattern = "unavailable%-message\"%s* class=\"\">%s*(.-)\n*</div>"
    err = string.match(body, error_pattern)
    if err then
       io.stderr:write(err .. "\n")
       return
    end
-]]--
 
    if video_id then
       url = string.format("%q", base_url .. "?video_id=" .. video_id
-         .. "&eurl=&el=detailpage&ps=default&gl=US&hl=en" .. fmt)
+         .. "&eurl=&el=detailpage&ps=default&gl=US&hl=en")
 
       -- Look for the download URL
       url = string.match(url, "\"(.*)\"")
@@ -153,8 +111,9 @@ for i = 1, table.getn(urls) do
          proxy = os.getenv("http_proxy")
       })
       body = table.concat(t)
-      encurl = string.match(body, "7C(http.-id%%3D.-)%%")
-      url = string.format("\"%s\"", url_decode(encurl))
+      body = url_decode(body)
+      encurl = string.match(body, "url=(http[^,=&]-cache.-type.-)[&;]")
+      url = string.format("\"%s\"", encurl)
    else
       -- We assume it's Google Video URL.
       pattern = "/googleplayer.swf%?videoUrl(.-)thumbnailUrl"
@@ -165,28 +124,40 @@ for i = 1, table.getn(urls) do
       url = string.format("%q", url)
    end
 
-   -- Fetch the video.
-   if mpeg4 == true then
-        e_file = e_mp4
-        o_file = mp4
+   -- Build flv and mp4 file names.
+   mpeg4 = false
+
+   if file == "-" then
+      opts.n = 0
+      o_file = file
    else
-        e_file = e_flv
-        o_file = flv
+      if string.find(url, "video/mp4") then
+         ext = "mp4"
+         mpeg4 = true
+      elseif string.find(url, "video/webm") then
+         ext = "webm"
+      else
+         ext = "flv"
+      end
+      o_file = string.format("%s.%s", file, ext)
    end
-   
+
+   o_mp4 = file .. ".mp4"
+   e_file = string.format("%q", o_file)
+   e_mp4 = string.format("%q", o_mp4)
+
    cmd = string.gsub(fetch, "<(%w+)>", { arguments = arguments,
       url = url, file = e_file })
    assert(os.execute(cmd) == 0, "Failed")
 
    -- Convert it to MPEG.
-   if opts.n or mpeg4 == true then
-      io.stderr:write("Done. Video saved in " .. o_file .. ".\n")
-   else
-      cmd = string.gsub(convert, "<(%w+)>", { flv = e_flv, mp4 = e_mp4 })
+   if opts.c and mpeg4 ~= true then
+      cmd = string.gsub(convert, "<(%w+)>", { flv = e_file, mp4 = e_mp4 })
       io.stderr:write("Converting ...\n")
       assert(os.execute(cmd) == 0, "Failed")
-      os.remove(flv)
-      io.stderr:write("Done. Video saved in " .. mp4 .. "\n")
+      os.remove(o_file)
+      io.stderr:write("Done. Video saved in " .. o_mp4 .. "\n")
+   else
+      io.stderr:write("Done. Video saved in " .. o_file .. ".\n")
    end
 end
-
