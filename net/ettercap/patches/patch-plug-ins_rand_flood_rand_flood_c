@@ -1,0 +1,15 @@
+$OpenBSD: patch-plug-ins_rand_flood_rand_flood_c,v 1.1 2011/08/18 19:23:22 naddy Exp $
+
+Conflicting definition used elsewhere.
+
+--- plug-ins/rand_flood/rand_flood.c.orig	Wed Aug 10 19:15:10 2011
++++ plug-ins/rand_flood/rand_flood.c	Wed Aug 10 19:15:21 2011
+@@ -54,7 +54,7 @@ struct arp_eth_header {
+ 
+ #define FAKE_PCK_LEN sizeof(struct eth_header)+sizeof(struct arp_header)+sizeof(struct arp_eth_header)
+ struct packet_object fake_po;
+-char fake_pck[FAKE_PCK_LEN];
++static char fake_pck[FAKE_PCK_LEN];
+ 
+ 
+ /* protos */
