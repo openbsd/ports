@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.959 2011/08/18 12:27:09 mpi Exp $
+# $OpenBSD: Makefile,v 1.960 2011/08/18 15:00:35 mpi Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -905,6 +905,7 @@
      SUBDIR += pear-PHPUnit2
      SUBDIR += pear-System-Command
      SUBDIR += pear-Validate
+     SUBDIR += pep8
      SUBDIR += perltidy
      SUBDIR += physfs
      SUBDIR += pkgconfig
