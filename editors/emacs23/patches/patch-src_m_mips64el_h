@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_m_mips64el_h,v 1.2 2011/03/29 20:56:42 jasper Exp $
---- src/m/mips64el.h.orig	Tue Mar 29 21:55:24 2011
-+++ src/m/mips64el.h	Tue Mar 29 21:59:14 2011
-@@ -0,0 +1,104 @@
+$OpenBSD: patch-src_m_mips64el_h,v 1.3 2011/08/18 09:25:19 jasper Exp $
+--- src/m/mips64el.h.orig	Mon Aug  1 10:49:43 2011
++++ src/m/mips64el.h	Mon Aug  1 10:52:02 2011
+@@ -0,0 +1,82 @@
 +/* machine description file template.
 +   Copyright (C) 1985, 1986 Free Software Foundation, Inc.
 +
@@ -37,21 +37,6 @@ $OpenBSD: patch-src_m_mips64el_h,v 1.2 2011/03/29 20:56:42 jasper Exp $
 +
 +#define NO_ARG_ARRAY
 +
-+/* Define WORD_MACHINE if addresses and such have
-+ * to be corrected before they can be used as byte counts.  */
-+
-+#define WORD_MACHINE
-+
-+/* Now define a symbol for the cpu type, if your compiler
-+   does not define it automatically:
-+   Ones defined so far include vax, m68000, ns16000, pyramid,
-+   orion, tahoe, APOLLO and many others */
-+
-+/* Use type int rather than a union, to represent Lisp_Object */
-+/* This is desirable for most machines.  */
-+
-+#define NO_UNION_TYPE
-+
 +/* Define EXPLICIT_SIGN_EXTEND if XINT must explicitly sign-extend
 +   the 24-bit bit field into an int.  In other words, if bit fields
 +   are always unsigned.
@@ -77,11 +62,6 @@ $OpenBSD: patch-src_m_mips64el_h,v 1.2 2011/03/29 20:56:42 jasper Exp $
 +
 +#define VIRT_ADDR_VARIES
 +
-+/* Define C_ALLOCA if this machine does not support a true alloca
-+   and the one written in C should be used instead. */
-+
-+#define C_ALLOCA
-+
 +/* Define NO_REMAP if memory segmentation makes it not work well
 +   to change the boundary between the text section and data section
 +   when Emacs is dumped.  If you define this, the preloaded Lisp
@@ -104,5 +84,3 @@ $OpenBSD: patch-src_m_mips64el_h,v 1.2 2011/03/29 20:56:42 jasper Exp $
 +#define NO_SOCK_SIGIO
 +
 +#define TEXT_START 0x0000000000400000L
-+
-+#define BROKEN_NOCOMBRELOC
