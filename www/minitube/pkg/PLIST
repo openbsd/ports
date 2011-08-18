@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/05/17 11:33:46 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/08/18 10:40:15 dcoppa Exp $
 @bin bin/minitube
 share/applications/minitube.desktop
 share/icons/hicolor/
@@ -36,6 +36,7 @@ share/minitube/locale/bg.qm
 share/minitube/locale/bg_BG.qm
 share/minitube/locale/ca_ES.qm
 share/minitube/locale/cs_CZ.qm
+share/minitube/locale/da.qm
 share/minitube/locale/de_DE.qm
 share/minitube/locale/el.qm
 share/minitube/locale/el_GR.qm
@@ -43,6 +44,7 @@ share/minitube/locale/en_US.qm
 share/minitube/locale/es.qm
 share/minitube/locale/es_AR.qm
 share/minitube/locale/es_ES.qm
+share/minitube/locale/fa.qm
 share/minitube/locale/fi.qm
 share/minitube/locale/fi_FI.qm
 share/minitube/locale/fr_FR.qm
@@ -50,12 +52,15 @@ share/minitube/locale/gl.qm
 share/minitube/locale/he_IL.qm
 share/minitube/locale/hr.qm
 share/minitube/locale/hr_HR.qm
+share/minitube/locale/hu.qm
 share/minitube/locale/hu_HU.qm
+share/minitube/locale/ia.qm
 share/minitube/locale/id.qm
 share/minitube/locale/id_ID.qm
 share/minitube/locale/it_IT.qm
 share/minitube/locale/ja_JP.qm
 share/minitube/locale/jv.qm
+share/minitube/locale/km.qm
 share/minitube/locale/lv.qm
 share/minitube/locale/nb_NO.qm
 share/minitube/locale/nl.qm
@@ -66,9 +71,11 @@ share/minitube/locale/pt_PT.qm
 share/minitube/locale/ro.qm
 share/minitube/locale/ro_RO.qm
 share/minitube/locale/ru_RU.qm
+share/minitube/locale/sl.qm
 share/minitube/locale/sq.qm
 share/minitube/locale/sr.qm
 share/minitube/locale/sv_SE.qm
+share/minitube/locale/th.qm
 share/minitube/locale/tr_TR.qm
 share/minitube/locale/uk.qm
 share/minitube/locale/uk_UA.qm

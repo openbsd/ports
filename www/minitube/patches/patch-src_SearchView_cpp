@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_SearchView_cpp,v 1.3 2011/08/18 10:40:15 dcoppa Exp $
+
+Disable checking for new versions at startup
+
+--- src/SearchView.cpp.orig	Sat Aug  6 15:25:30 2011
++++ src/SearchView.cpp	Sat Aug  6 15:25:56 2011
+@@ -180,10 +180,6 @@ SearchView::SearchView(QWidget *parent) : QWidget(pare
+ 
+     updateChecker = 0;
+ 
+-#ifndef APP_MAC_STORE
+-    checkForUpdate();
+-#endif
+-
+ }
+ 
+ void SearchView::updateRecentKeywords() {
