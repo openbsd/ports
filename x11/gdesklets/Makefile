@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/06/08 17:37:07 rpointel Exp $
+# $OpenBSD: Makefile,v 1.25 2011/08/18 19:45:49 naddy Exp $
 
 SHARED_ONLY=		Yes
 
@@ -39,7 +39,8 @@ LIB_DEPENDS=		devel/libgtop2 \
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			misc/shared-mime-info \
