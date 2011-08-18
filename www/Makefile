@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.525 2011/08/18 07:59:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.526 2011/08/18 08:01:28 jasper Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
-     SUBDIR += amaya          # requires Motif (lesstif works)
+     SUBDIR += amaya
      SUBDIR += analog
      SUBDIR += ap2-mod_fastcgi
      SUBDIR += ap2-mod_fcgid
