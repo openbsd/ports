@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/07/12 19:54:12 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2011/08/18 19:22:31 sthen Exp $
 
 COMMENT-main=	eXtensible Open Router Platform
 
@@ -10,7 +10,6 @@ CATEGORIES=	net
 HOMEPAGE=	http://www.xorp.org/
 
 BROKEN-sparc64=	ICE in route_table_fanout.cc
-BROKEN-arm=	asyncio.cc fails
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
