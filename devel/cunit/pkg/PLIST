@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2008/08/29 09:18:39 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/08/19 08:04:02 jasper Exp $
 %%SHARED%%
 include/CUnit/
 include/CUnit/Automated.h
@@ -6,6 +6,7 @@ include/CUnit/Basic.h
 include/CUnit/CUCurses.h
 include/CUnit/CUError.h
 include/CUnit/CUnit.h
+include/CUnit/CUnit_intl.h
 include/CUnit/Console.h
 include/CUnit/MyMem.h
 include/CUnit/TestDB.h
@@ -13,6 +14,8 @@ include/CUnit/TestRun.h
 include/CUnit/Util.h
 lib/libcunit.a
 lib/libcunit.la
+lib/pkgconfig/
+lib/pkgconfig/cunit.pc
 @man man/man3/CUnit.3
 share/CUnit/
 share/CUnit/CUnit-List.dtd
@@ -31,6 +34,7 @@ share/doc/CUnit/headers/Basic.h
 share/doc/CUnit/headers/CUCurses.h
 share/doc/CUnit/headers/CUError.h
 share/doc/CUnit/headers/CUnit.h
+share/doc/CUnit/headers/CUnit_intl.h
 share/doc/CUnit/headers/Console.h
 share/doc/CUnit/headers/MyMem.h
 share/doc/CUnit/headers/TestDB.h

@@ -1,0 +1,45 @@
+Declaration of 'index' shadows declaration in string.h.
+
+$OpenBSD: patch-CUnit_Sources_Framework_TestDB_c,v 1.1 2011/08/19 08:04:02 jasper Exp $
+--- CUnit/Sources/Framework/TestDB.c.orig	Sat Jun  3 05:25:02 2006
++++ CUnit/Sources/Framework/TestDB.c	Thu Aug 18 22:13:03 2011
+@@ -966,16 +966,16 @@ CU_pSuite CU_get_suite_by_name(const char* szSuiteName
+ }
+ 
+ /*------------------------------------------------------------------------*/
+-CU_pSuite CU_get_suite_by_index(unsigned int index, CU_pTestRegistry pRegistry)
++CU_pSuite CU_get_suite_by_index(unsigned int idx, CU_pTestRegistry pRegistry)
+ {
+   CU_pSuite result = NULL;
+   unsigned int i;
+ 
+   assert(NULL != pRegistry);
+ 
+-  if ((index > 0) && (index <= f_pTestRegistry->uiNumberOfSuites)) {
++  if ((idx > 0) && (idx <= f_pTestRegistry->uiNumberOfSuites)) {
+     result = f_pTestRegistry->pSuite;
+-    for (i=1 ; i<index ; ++i) {
++    for (i=1 ; i<idx ; ++i) {
+       result = result->pNext;
+     }
+   }
+@@ -1005,16 +1005,16 @@ CU_pTest CU_get_test_by_name(const char* szTestName, C
+ }
+ 
+ /*------------------------------------------------------------------------*/
+-CU_pTest CU_get_test_by_index(unsigned int index, CU_pSuite pSuite)
++CU_pTest CU_get_test_by_index(unsigned int idx, CU_pSuite pSuite)
+ {
+   CU_pTest result = NULL;
+   unsigned int i;
+ 
+   assert(NULL != pSuite);
+   
+-  if ((index > 0) && (index <= pSuite->uiNumberOfTests)) {
++  if ((idx > 0) && (idx <= pSuite->uiNumberOfTests)) {
+     result = pSuite->pTest;
+-    for (i=1 ; i<index ; ++i) {
++    for (i=1 ; i<idx ; ++i) {
+       result = result->pNext;
+     }
+   }

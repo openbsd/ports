@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2011/01/01 16:14:41 rpointel Exp $
+# $OpenBSD: Makefile,v 1.6 2011/08/19 08:04:02 jasper Exp $
 
 COMMENT =		c unit testing framework
 
-VER =			2.1-0
+VER =			2.1-2
 DISTNAME =		CUnit-${VER}
 PKGNAME =		cunit-${VER:S/-/./}
-REVISION =		0
 
-SHARED_LIBS =		cunit	0.0
+SHARED_LIBS =		cunit	1.0
 
 CATEGORIES =		devel
 
@@ -22,14 +21,16 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=cunit/}
-EXTRACT_SUFX =		-src.tar.gz
+EXTRACT_SUFX =		-src.tar.bz2
+
+FAKE_FLAGS +=		docdir=${PREFIX}/share/doc/CUnit/ \
+			dochdrdir=${PREFIX}/share/doc/CUnit/headers/
 
 USE_LIBTOOL =		Yes
-USE_GROFF =		Yes
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ENV =		LDFLAGS="-lncurses"
 CONFIGURE_ARGS +=	--enable-curses
-AUTOCONF_VERSION =	2.59
+AUTOCONF_VERSION =	2.67
 
 WANTLIB += ncurses
 
