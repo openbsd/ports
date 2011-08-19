@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.960 2011/08/18 15:00:35 mpi Exp $
+# $OpenBSD: Makefile,v 1.961 2011/08/19 07:13:00 landry Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -232,6 +232,7 @@
      SUBDIR += json-c
      SUBDIR += json-glib
      SUBDIR += kdbg
+     SUBDIR += kdiff3
      SUBDIR += lam
      SUBDIR += libIDL
      SUBDIR += libJudy
