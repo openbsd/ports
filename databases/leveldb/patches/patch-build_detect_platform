@@ -1,0 +1,18 @@
+$OpenBSD: patch-build_detect_platform,v 1.1.1.1 2011/08/19 06:44:00 jasper Exp $
+
+Add OpenBSD support: http://code.google.com/p/leveldb/issues/detail?id=31
+
+--- build_detect_platform.orig	Wed Jul 27 03:46:25 2011
++++ build_detect_platform	Thu Aug 18 17:06:57 2011
+@@ -35,6 +35,11 @@ case `uname -s` in
+         echo "PLATFORM_CFLAGS=-D_REENTRANT -DOS_FREEBSD"  >> build_config.mk
+         echo "PLATFORM_LDFLAGS=-lpthread" >> build_config.mk
+         ;;
++    OpenBSD)
++        PLATFORM=OS_OPENBSD
++        echo "PLATFORM_CFLAGS=-D_REENTRANT -DOS_OPENBSD"  >> build_config.mk
++        echo "PLATFORM_LDFLAGS=-pthread" >> build_config.mk
++        ;;
+     *)
+         echo "Unknown platform!"
+         exit 1

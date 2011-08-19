@@ -1,0 +1,67 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2011/08/19 06:44:00 jasper Exp $
+
+- Allow ${CC} and ${OPT} to be overriden, to help packagers.
+  http://code.google.com/p/leveldb/issues/detail?id=32
+
+- Provide a shared library
+  http://code.google.com/p/leveldb/issues/detail?id=27
+
+--- Makefile.orig	Fri Aug  5 22:40:49 2011
++++ Makefile	Thu Aug 18 17:18:19 2011
+@@ -2,13 +2,15 @@
+ # Use of this source code is governed by a BSD-style license that can be
+ # found in the LICENSE file. See the AUTHORS file for names of contributors.
+ 
+-CC = g++
++CC ?= g++
+ 
++SONAME_MAJOR?=0
++SONAME_MINOR?=0
+ #-----------------------------------------------
+ # Uncomment exactly one of the lines labelled (A), (B), and (C) below
+ # to switch between compilation modes.
+ 
+-OPT = -O2 -DNDEBUG       # (A) Production use (optimized mode)
++OPT ?= -O2 -DNDEBUG       # (A) Production use (optimized mode)
+ # OPT = -g2              # (B) Debug mode, w/ full line-level debugging symbols
+ # OPT = -O2 -g2 -DNDEBUG # (C) Profiling mode: opt, but w/debugging symbols
+ #-----------------------------------------------
+@@ -36,7 +38,7 @@ else
+ GOOGLE_PERFTOOLS_LDFLAGS=
+ endif
+ 
+-CFLAGS = -c -I. -I./include $(PORT_CFLAGS) $(PLATFORM_CFLAGS) $(OPT) $(SNAPPY_CFLAGS)
++CFLAGS += -c -I. -I./include $(PORT_CFLAGS) $(PLATFORM_CFLAGS) $(OPT) $(SNAPPY_CFLAGS) -fPIC
+ 
+ LDFLAGS=$(PLATFORM_LDFLAGS) $(SNAPPY_LDFLAGS) $(GOOGLE_PERFTOOLS_LDFLAGS)
+ 
+@@ -102,20 +104,28 @@ PROGRAMS = db_bench $(TESTS)
+ BENCHMARKS = db_bench_sqlite3 db_bench_tree_db
+ 
+ LIBRARY = libleveldb.a
++SHARED_LIBRARY = libleveldb.so
+ 
+-all: $(LIBRARY)
++all: $(LIBRARY) $(SHARED_LIBRARY)
+ 
+ check: $(PROGRAMS) $(TESTS)
+ 	for t in $(TESTS); do echo "***** Running $$t"; ./$$t || exit 1; done
+ 
+ clean:
+ 	-rm -f $(PROGRAMS) $(BENCHMARKS) $(LIBRARY) */*.o */*/*.o ios-x86/*/*.o ios-arm/*/*.o
++	-rm -f $(SHARED_LIBRARY).* $(SHARED_LIBRARY)
+ 	-rm -rf ios-x86/* ios-arm/*
+ 	-rm build_config.mk
+ 
+ $(LIBRARY): $(LIBOBJECTS)
+ 	rm -f $@
+ 	$(AR) -rs $@ $(LIBOBJECTS)
++
++$(SHARED_LIBRARY): $(LIBOBJECTS)
++	rm -f $@
++	$(CC) -shared -Wl,-soname -Wl,$@.$(SONAME_MAJOR) $(LIBOBJECTS) $(LDFLAGS) -o $@.$(SONAME_MAJOR).$(SONAME_MINOR)
++	ln -s $@.$(SONAME_MAJOR).$(SONAME_MINOR) $@.$(SONAME_MAJOR)
++	ln -s $@.$(SONAME_MAJOR).$(SONAME_MINOR) $@
+ 
+ db_bench: db/db_bench.o $(LIBOBJECTS) $(TESTUTIL)
+ 	$(CC) $(LDFLAGS) db/db_bench.o $(LIBOBJECTS) $(TESTUTIL) -o $@

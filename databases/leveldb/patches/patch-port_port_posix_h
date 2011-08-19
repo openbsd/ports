@@ -1,0 +1,36 @@
+$OpenBSD: patch-port_port_posix_h,v 1.1.1.1 2011/08/19 06:44:00 jasper Exp $
+
+Add OpenBSD support: http://code.google.com/p/leveldb/issues/detail?id=31
+
+--- port/port_posix.h.orig	Wed Jul 27 03:46:25 2011
++++ port/port_posix.h	Thu Aug 18 17:06:57 2011
+@@ -7,7 +7,11 @@
+ #ifndef STORAGE_LEVELDB_PORT_PORT_POSIX_H_
+ #define STORAGE_LEVELDB_PORT_PORT_POSIX_H_
+ 
+-#if defined(OS_MACOSX) || defined(OS_FREEBSD)
++#if defined(OS_OPENBSD)
++  #include <sys/types.h>
++#endif
++
++#if defined(OS_MACOSX) || defined(OS_FREEBSD) || defined(OS_OPENBSD)
+   #include <machine/endian.h>
+ #elif defined(OS_SOLARIS)
+   #include <sys/isa_defs.h>
+@@ -33,13 +37,14 @@
+ #define IS_LITTLE_ENDIAN (__BYTE_ORDER == __LITTLE_ENDIAN)
+ #endif
+ 
+-#if defined(OS_MACOSX) || defined(OS_SOLARIS) || defined(OS_FREEBSD)
++#if defined(OS_MACOSX) || defined(OS_SOLARIS) || defined(OS_FREEBSD) || \
++	defined(OS_OPENBSD)
+ #define fread_unlocked fread
+ #define fwrite_unlocked fwrite
+ #define fflush_unlocked fflush
+ #endif
+ 
+-#if defined(OS_MACOSX) || defined(OS_FREEBSD)
++#if defined(OS_MACOSX) || defined(OS_FREEBSD) || defined(OS_OPENBSD)
+ #define fdatasync fsync
+ #endif
+ 

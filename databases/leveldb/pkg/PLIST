@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/19 06:44:00 jasper Exp $
+%%SHARED%%
+lib/libleveldb.a
+share/doc/leveldb/
+share/doc/leveldb/bench/
+share/doc/leveldb/bench/db_bench_sqlite3.cc
+share/doc/leveldb/bench/db_bench_tree_db.cc
+share/doc/leveldb/benchmark.html
+share/doc/leveldb/doc.css
+share/doc/leveldb/impl.html
+share/doc/leveldb/index.html
+share/doc/leveldb/log_format.txt
+share/doc/leveldb/table_format.txt
