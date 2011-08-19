@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2011/07/19 09:20:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2011/08/19 20:26:46 kili Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
 
-VERSION=		2.14.1
+VERSION=		2.14.2
 DISTNAME=		lilypond-${VERSION}
 DISTNAME-docs=		${DISTNAME}-1.documentation
 PKGNAME-main=		lilypond-${VERSION}
