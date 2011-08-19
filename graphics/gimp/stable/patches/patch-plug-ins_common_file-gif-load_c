@@ -1,0 +1,55 @@
+$OpenBSD: patch-plug-ins_common_file-gif-load_c,v 1.1 2011/08/19 08:57:07 jasper Exp $
+
+file-gif-load: fix heap corruption and buffer overflow (CVE-2011-2896)
+
+Patch from upstream git: 376ad788c1a1c31d40f18494889c383f6909ebfc
+
+--- plug-ins/common/file-gif-load.c.orig	Sat Jul  3 00:51:56 2010
++++ plug-ins/common/file-gif-load.c	Thu Aug 18 19:22:01 2011
+@@ -697,7 +697,8 @@ LZWReadByte (FILE *fd,
+   static gint firstcode, oldcode;
+   static gint clear_code, end_code;
+   static gint table[2][(1 << MAX_LZW_BITS)];
+-  static gint stack[(1 << (MAX_LZW_BITS)) * 2], *sp;
++#define STACK_SIZE ((1 << (MAX_LZW_BITS)) * 2)
++  static gint stack[STACK_SIZE], *sp;
+   gint        i;
+ 
+   if (just_reset_LZW)
+@@ -772,7 +773,7 @@ LZWReadByte (FILE *fd,
+ 
+           return firstcode;
+         }
+-      else if (code == end_code)
++      else if (code == end_code || code > max_code)
+         {
+           gint   count;
+           guchar buf[260];
+@@ -791,13 +792,14 @@ LZWReadByte (FILE *fd,
+ 
+       incode = code;
+ 
+-      if (code >= max_code)
++      if (code == max_code)
+         {
+-          *sp++ = firstcode;
++          if (sp < &(stack[STACK_SIZE]))
++            *sp++ = firstcode;
+           code = oldcode;
+         }
+ 
+-      while (code >= clear_code)
++      while (code >= clear_code && sp < &(stack[STACK_SIZE]))
+         {
+           *sp++ = table[1][code];
+           if (code == table[0][code])
+@@ -808,7 +810,8 @@ LZWReadByte (FILE *fd,
+           code = table[0][code];
+         }
+ 
+-      *sp++ = firstcode = table[1][code];
++      if (sp < &(stack[STACK_SIZE]))
++        *sp++ = firstcode = table[1][code];
+ 
+       if ((code = max_code) < (1 << MAX_LZW_BITS))
+         {
