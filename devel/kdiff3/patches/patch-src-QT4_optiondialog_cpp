@@ -1,0 +1,11 @@
+$OpenBSD: patch-src-QT4_optiondialog_cpp,v 1.1.1.1 2011/08/19 07:12:11 landry Exp $
+--- src-QT4/optiondialog.cpp.orig	Wed Aug 17 22:02:08 2011
++++ src-QT4/optiondialog.cpp	Wed Aug 17 22:02:29 2011
+@@ -34,6 +34,7 @@
+ #include <QPixmap>
+ #include <QFrame>
+ #include <QVBoxLayout>
++#include <QDir>
+ 
+ #include <kapplication.h>
+ #include <kcolorbutton.h>
