@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.198 2011/06/10 05:51:01 rpointel Exp $
+# $OpenBSD: Makefile,v 1.199 2011/08/19 06:44:21 jasper Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -23,6 +23,7 @@
      SUBDIR += jxplorer
      SUBDIR += keximdb
      SUBDIR += lbdb
+     SUBDIR += leveldb
      SUBDIR += libdbi
      SUBDIR += libdbi-drivers
      SUBDIR += libpqxx
