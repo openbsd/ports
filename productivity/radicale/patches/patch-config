@@ -1,34 +1,45 @@
-$OpenBSD: patch-config,v 1.3 2011/04/17 14:54:47 sthen Exp $
---- config.orig	Sat Aug  7 13:22:58 2010
-+++ config	Fri Apr 15 17:42:39 2011
-@@ -15,9 +15,9 @@ daemon = False
+$OpenBSD: patch-config,v 1.4 2011/08/19 20:35:34 sthen Exp $
+--- config.orig	Wed Jun 15 20:03:33 2011
++++ config	Mon Aug  1 23:41:44 2011
+@@ -22,9 +22,9 @@ pid =
  # SSL flag, enable HTTPS protocol
  ssl = False
- # SSL certificate path (if needed)
+ # SSL certificate path
 -certificate = /etc/apache2/ssl/server.crt
 +certificate = ${SYSCONFDIR}/radicale/server.crt
- # SSL private key (if needed)
+ # SSL private key
 -key = /etc/apache2/ssl/server.key
 +key = ${SYSCONFDIR}/radicale/private/server.key
  
  [encoding]
  # Encoding for responding requests
-@@ -32,14 +32,15 @@ type = fake
- # Personal calendars only available for logged in users (if needed)
- personal = False
- # Htpasswd filename (if needed)
--filename = /etc/radicale/users
-+filename = ${SYSCONFDIR}/radicale/users
- # Htpasswd encryption method (if needed)
+@@ -41,10 +41,10 @@ public_users = public
+ # Usernames used for private calendars, separated by a comma
+ private_users = private
+ # Htpasswd filename
+-htpasswd_filename = /etc/radicale/users
++htpasswd_filename = ${SYSCONFDIR}/radicale/users
+ # Htpasswd encryption method
  # Value: plain | sha1 | crypt
--encryption = crypt
-+# (For sha1, use htpasswd -s ${SYSCONFDIR}/radicale/users username)
-+encryption = sha1
+-htpasswd_encryption = crypt
++htpasswd_encryption = sha1
+ # LDAP server URL, with protocol and port
+ ldap_url = ldap://localhost:389/
+ # LDAP base path
+@@ -59,14 +59,14 @@ ldap_password =
  
  [storage]
- # Folder for storing local calendars,
- # created if not present
+ # Folder for storing local calendars, created if not present
 -folder = ~/.config/radicale/calendars
 +folder = /var/db/radicale/calendars
  
- # vim:ft=cfg
+ [logging]
+ # Logging configuration file
+ # If no config is given, simple information is printed on the standard output
+ # For more information about the syntax of the configuration file, see:
+ # http://docs.python.org/library/logging.config.html
+-config = /etc/radicale/logging
++config = ${SYSCONFDIR}/radicale/logging
+ # Set the default logging level to debug
+ debug = False
+ # Store all environment variables (including those set in the shell)

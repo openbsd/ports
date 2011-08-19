@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/04/17 14:54:47 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/08/19 20:35:34 sthen Exp $
 @newgroup _radicale:672
 @newuser _radicale:672:_radicale:daemon:radicale user:/nonexistent:/sbin/nologin
 bin/radicale
@@ -7,16 +7,18 @@ lib/python${MODPY_VERSION}/site-packages/radicale/
 lib/python${MODPY_VERSION}/site-packages/radicale/__init__.py
 lib/python${MODPY_VERSION}/site-packages/radicale/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/acl/
+lib/python${MODPY_VERSION}/site-packages/radicale/acl/LDAP.py
+lib/python${MODPY_VERSION}/site-packages/radicale/acl/LDAP.pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/acl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/radicale/acl/__init__.pyc
-lib/python${MODPY_VERSION}/site-packages/radicale/acl/fake.py
-lib/python${MODPY_VERSION}/site-packages/radicale/acl/fake.pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/acl/htpasswd.py
 lib/python${MODPY_VERSION}/site-packages/radicale/acl/htpasswd.pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/config.py
 lib/python${MODPY_VERSION}/site-packages/radicale/config.pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/ical.py
 lib/python${MODPY_VERSION}/site-packages/radicale/ical.pyc
+lib/python${MODPY_VERSION}/site-packages/radicale/log.py
+lib/python${MODPY_VERSION}/site-packages/radicale/log.pyc
 lib/python${MODPY_VERSION}/site-packages/radicale/xmlutils.py
 lib/python${MODPY_VERSION}/site-packages/radicale/xmlutils.pyc
 share/doc/pkg-readmes/${FULLPKGNAME}

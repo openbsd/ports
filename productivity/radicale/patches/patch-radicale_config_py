@@ -1,9 +1,9 @@
-$OpenBSD: patch-radicale_config_py,v 1.3 2011/05/06 15:35:47 sthen Exp $
---- radicale/config.py.orig	Sun Jan  9 16:45:29 2011
-+++ radicale/config.py	Fri May  6 16:24:23 2011
-@@ -43,18 +43,18 @@ INITIAL_CONFIG = {
-         "port": "5232",
+$OpenBSD: patch-radicale_config_py,v 1.4 2011/08/19 20:35:34 sthen Exp $
+--- radicale/config.py.orig	Wed Jun 15 20:03:33 2011
++++ radicale/config.py	Mon Aug  1 23:44:48 2011
+@@ -43,8 +43,8 @@ INITIAL_CONFIG = {
          "daemon": "False",
+         "pid": "",
          "ssl": "False",
 -        "certificate": "/etc/apache2/ssl/server.crt",
 -        "key": "/etc/apache2/ssl/server.key"},
@@ -12,24 +12,33 @@ $OpenBSD: patch-radicale_config_py,v 1.3 2011/05/06 15:35:47 sthen Exp $
      "encoding": {
          "request": "utf-8",
          "stock": "utf-8"},
-     "acl": {
-         "type": "fake",
-         "personal": "False",
--        "filename": "/etc/radicale/users",
-+        "filename": "${SYSCONFDIR}/radicale/users",
-         "encryption": "crypt"},
+@@ -52,7 +52,7 @@ INITIAL_CONFIG = {
+         "type": "None",
+         "public_users": "public",
+         "private_users": "private",
+-        "httpasswd_filename": "/etc/radicale/users",
++        "httpasswd_filename": "${SYSCONFDIR}/radicale/users",
+         "httpasswd_encryption": "crypt",
+         "ldap_url": "ldap://localhost:389/",
+         "ldap_base": "ou=users,dc=example,dc=com",
+@@ -60,9 +60,9 @@ INITIAL_CONFIG = {
+         "ldap_binddn": "",
+         "ldap_password": ""},
      "storage": {
--        "folder": os.path.expanduser("~/.config/radicale/calendars")}}
-+        "folder": "/var/db/radicale/calendars"}}
+-        "folder": os.path.expanduser("~/.config/radicale/calendars")},
++        "folder": "/var/db/radicale/calendars"},
+     "logging": {
+-        "config": "/etc/radicale/logging",
++        "config": "${SYSCONFDIR}/radicale/logging",
+         "debug": "False",
+         "full_environment": "False"}}
  
- # Create a ConfigParser and configure it
- _CONFIG_PARSER = ConfigParser()
-@@ -64,7 +64,7 @@ for section, values in INITIAL_CONFIG.items():
+@@ -74,7 +74,7 @@ for section, values in INITIAL_CONFIG.items():
      for key, value in values.items():
          _CONFIG_PARSER.set(section, key, value)
  
 -_CONFIG_PARSER.read("/etc/radicale/config")
 +_CONFIG_PARSER.read("${SYSCONFDIR}/radicale/config")
  _CONFIG_PARSER.read(os.path.expanduser("~/.config/radicale/config"))
- 
- # Wrap config module into ConfigParser instance
+ if 'RADICALE_CONFIG' in os.environ:
+     _CONFIG_PARSER.read(os.environ['RADICALE_CONFIG'])
