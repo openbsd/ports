@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/08/20 16:47:05 landry Exp $
-
-BROKEN-sparc64 =	fails a lot of regression tests
+# $OpenBSD: Makefile,v 1.16 2011/08/20 16:48:37 landry Exp $
 
 COMMENT=	virtual machine designed for interpreted languages
 
