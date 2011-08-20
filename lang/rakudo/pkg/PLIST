@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/05/22 20:23:27 landry Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/08/20 16:47:54 landry Exp $
 %%SHARED%%
 bin/panda
 @bin bin/perl6
@@ -29,8 +29,6 @@ lib/parrot/${PARROT_VERSION}/languages/perl6/lib/File/Find.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/File/Find.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/File/Mkdir.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/File/Mkdir.pm
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/File/Tools.pir
-lib/parrot/${PARROT_VERSION}/languages/perl6/lib/File/Tools.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Server/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/HTTP/Server/Simple/
@@ -95,6 +93,9 @@ lib/parrot/${PARROT_VERSION}/languages/perl6/lib/SVG/Plot/Pie.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/SVG/Plot/Pie.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/SVG/Plot/Positioned.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/SVG/Plot/Positioned.pm
+lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Shell/
+lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Shell/Command.pir
+lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Shell/Command.pm
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Term/
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Term/ANSIColor.pir
 lib/parrot/${PARROT_VERSION}/languages/perl6/lib/Term/ANSIColor.pm
@@ -126,6 +127,7 @@ share/doc/rakudo/announce/2010.11
 share/doc/rakudo/announce/2010.12
 share/doc/rakudo/announce/2011.01
 share/doc/rakudo/announce/2011.04
+share/doc/rakudo/announce/2011.07
 share/doc/rakudo/announce/CREDITS
 share/doc/rakudo/announce/LICENSE
 share/doc/rakudo/announce/README

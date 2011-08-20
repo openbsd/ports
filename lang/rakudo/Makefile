@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2011/05/22 20:23:27 landry Exp $
+# $OpenBSD: Makefile,v 1.7 2011/08/20 16:47:54 landry Exp $
 
 COMMENT =		Rakudo Perl 6 compiler
 
 PORTNAME =		rakudo
-VERSION =		2011.04
+VERSION =		2011.07
 DISTNAME =		${PORTNAME}-star-${VERSION}
 PKGNAME =		${PORTNAME}-${VERSION}
 
-PARROT_VERSION =	3.3.0
+PARROT_VERSION =	3.6.0
 SUBST_VARS +=		PARROT_VERSION
 
 CATEGORIES =		lang perl6
@@ -29,7 +29,7 @@ VMEM_WARNING =		Yes
 
 MASTER_SITES =		http://cloud.github.com/downloads/rakudo/star/
 
-LIB_DEPENDS =		lang/parrot=3.3.0 \
+LIB_DEPENDS =		lang/parrot>=${PARROT_VERSION} \
 			textproc/icu4c
 
 FAKE_FLAGS =		PERL6LIB="${WRKINST}${PREFIX}/lib/parrot/${PARROT_VERSION}/languages/perl6/lib"
