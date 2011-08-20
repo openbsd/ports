@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/08/20 15:00:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/08/20 15:26:52 sthen Exp $
 
 COMMENT =	simple CalDAV calendar server
 
@@ -17,8 +17,7 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		${MASTER_SITE_PYPI:=R/Radicale/} \
-			http://spacehopper.org/mirrors/
+MASTER_SITES =		${MASTER_SITE_PYPI:=R/Radicale/}
 
 MODULES =		lang/python
 MODPY_ADJ_FILES =	radicale.py
