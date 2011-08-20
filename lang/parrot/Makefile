@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2011/05/22 20:22:08 landry Exp $
+# $OpenBSD: Makefile,v 1.15 2011/08/20 16:47:05 landry Exp $
 
 BROKEN-sparc64 =	fails a lot of regression tests
 
 COMMENT=	virtual machine designed for interpreted languages
 
-V=		3.3.0
+V=		3.6.0
 DISTNAME=	parrot-$V
 CATEGORIES=	lang perl6
-SHARED_LIBS=	parrot	2.0
+SHARED_LIBS=	parrot	3.0
 
 HOMEPAGE=	http://www.parrot.org/
 

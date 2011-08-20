@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/05/22 20:22:08 landry Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/08/20 16:47:05 landry Exp $
 %%SHARED%%
 @bin bin/ops2c
 @bin bin/parrot
@@ -11,6 +11,7 @@
 @bin bin/pbc_dump
 @bin bin/pbc_merge
 @bin bin/pbc_to_exe
+@bin bin/winxed
 include/parrot/
 include/parrot/${V}/
 include/parrot/${V}/imcc/
@@ -157,6 +158,7 @@ include/parrot/${V}/pmc/pmc_packfiledirectory.h
 include/parrot/${V}/pmc/pmc_packfileopmap.h
 include/parrot/${V}/pmc/pmc_packfilerawsegment.h
 include/parrot/${V}/pmc/pmc_packfilesegment.h
+include/parrot/${V}/pmc/pmc_packfileview.h
 include/parrot/${V}/pmc/pmc_parrotinterpreter.h
 include/parrot/${V}/pmc/pmc_parrotlibrary.h
 include/parrot/${V}/pmc/pmc_parrotthread.h
@@ -215,6 +217,7 @@ lib/parrot/${V}/include/interptrace.pasm
 lib/parrot/${V}/include/iterator.pasm
 lib/parrot/${V}/include/libpaths.pasm
 lib/parrot/${V}/include/longopt.pasm
+lib/parrot/${V}/include/parrot_version.pir
 lib/parrot/${V}/include/parrotlib.pbc
 lib/parrot/${V}/include/pmctypes.pasm
 lib/parrot/${V}/include/signal.pasm
@@ -283,6 +286,8 @@ lib/parrot/${V}/languages/tge/TGE/Parser.pg
 lib/parrot/${V}/languages/tge/TGE/Rule.pir
 lib/parrot/${V}/languages/tge/TGE/Tree.pir
 lib/parrot/${V}/languages/tge/tgc.pir
+lib/parrot/${V}/languages/winxed/
+lib/parrot/${V}/languages/winxed/winxed.pbc
 lib/parrot/${V}/library/
 lib/parrot/${V}/library/Archive/
 lib/parrot/${V}/library/Archive/Tar.pbc
@@ -466,7 +471,6 @@ lib/parrot/${V}/library/dumper.pir
 lib/parrot/${V}/library/libpcre.pbc
 lib/parrot/${V}/library/libpcre.pir
 lib/parrot/${V}/library/ncurses.declarations
-lib/parrot/${V}/library/ncurses.pasm
 lib/parrot/${V}/library/ncurses.pbc
 lib/parrot/${V}/library/ncurses.pir
 lib/parrot/${V}/library/nqp-rx.pbc
@@ -482,7 +486,6 @@ lib/parrot/${V}/library/pcore.pir
 lib/parrot/${V}/library/pcre.pbc
 lib/parrot/${V}/library/pcre.pir
 lib/parrot/${V}/library/postgres.declarations
-lib/parrot/${V}/library/postgres.pasm
 lib/parrot/${V}/library/postgres.pir
 lib/parrot/${V}/library/random_lib.pir
 lib/parrot/${V}/library/uuid.pbc
@@ -497,7 +500,6 @@ lib/parrot/${V}/tools/dev/
 lib/parrot/${V}/tools/dev/create_language.pl
 lib/parrot/${V}/tools/dev/gen_makefile.pl
 lib/parrot/${V}/tools/dev/mk_language_shell.pl
-lib/parrot/${V}/tools/dev/ncidef2pir.pl
 lib/parrot/${V}/tools/dev/pbc_to_exe.pir
 lib/parrot/${V}/tools/dev/pprof2cg.pl
 lib/parrot/${V}/tools/dev/reconfigure.pl
@@ -693,7 +695,6 @@ share/doc/parrot/${V}/examples/benchmarks/oofib.py
 share/doc/parrot/${V}/examples/benchmarks/oofib.rb
 share/doc/parrot/${V}/examples/benchmarks/oon.txt
 share/doc/parrot/${V}/examples/benchmarks/overload.pir
-share/doc/parrot/${V}/examples/benchmarks/overload.pl
 share/doc/parrot/${V}/examples/benchmarks/primes.c
 share/doc/parrot/${V}/examples/benchmarks/primes.pasm
 share/doc/parrot/${V}/examples/benchmarks/primes.pl
@@ -1054,6 +1055,14 @@ share/doc/parrot/${V}/pod/compiler_faq.pod
 share/doc/parrot/${V}/pod/configuration.pod
 share/doc/parrot/${V}/pod/debug.pod
 share/doc/parrot/${V}/pod/debugger.pod
+share/doc/parrot/${V}/pod/deprecations/
+share/doc/parrot/${V}/pod/deprecations/deprecations.pod
+share/doc/parrot/${V}/pod/deprecations/deprecations_2_6.pod
+share/doc/parrot/${V}/pod/deprecations/deprecations_2_9.pod
+share/doc/parrot/${V}/pod/deprecations/deprecations_3_0.pod
+share/doc/parrot/${V}/pod/deprecations/deprecations_3_3.pod
+share/doc/parrot/${V}/pod/deprecations/deprecations_3_6.pod
+share/doc/parrot/${V}/pod/deprecations/how_to_deprecate.pod
 share/doc/parrot/${V}/pod/dev/
 share/doc/parrot/${V}/pod/dev/byteorder.pod
 share/doc/parrot/${V}/pod/dev/c_functions.pod
@@ -1249,6 +1258,7 @@ src/parrot/${V}/pmc/packfiledirectory.dump
 src/parrot/${V}/pmc/packfileopmap.dump
 src/parrot/${V}/pmc/packfilerawsegment.dump
 src/parrot/${V}/pmc/packfilesegment.dump
+src/parrot/${V}/pmc/packfileview.dump
 src/parrot/${V}/pmc/parrotinterpreter.dump
 src/parrot/${V}/pmc/parrotlibrary.dump
 src/parrot/${V}/pmc/parrotthread.dump
