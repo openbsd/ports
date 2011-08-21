@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2011/06/08 18:15:29 rpointel Exp $
+# $OpenBSD: Makefile,v 1.9 2011/08/21 14:29:50 jasper Exp $
 
 COMMENT=	web framework for python
 
-VERSION=	0.34
+VERSION=	0.36
 DISTNAME=	web.py-${VERSION}
 PKGNAME=	py-webpy-${VERSION}
-REVISION=	0
 CATEGORIES=	www
 
 MASTER_SITES=	${HOMEPAGE}/static/
@@ -21,7 +20,8 @@ MODULES=	lang/python
 
 SUBST_VARS=	VERSION
 
-REGRESS_DEPENDS= databases/py-sqlite2
+REGRESS_DEPENDS= databases/py-sqlite2 \
+		${BASE_PKGPATH}
 
 do-regress:
 	cd ${WRKSRC} && ${MODPY_BIN} ./web/test.py 

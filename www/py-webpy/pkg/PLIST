@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/05/01 18:08:01 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/08/21 14:29:51 jasper Exp $
 lib/python${MODPY_VERSION}/site-packages/web/
 lib/python${MODPY_VERSION}/site-packages/web.py-${VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/web/__init__.py
@@ -24,6 +24,8 @@ lib/python${MODPY_VERSION}/site-packages/web/httpserver.py
 lib/python${MODPY_VERSION}/site-packages/web/httpserver.pyc
 lib/python${MODPY_VERSION}/site-packages/web/net.py
 lib/python${MODPY_VERSION}/site-packages/web/net.pyc
+lib/python${MODPY_VERSION}/site-packages/web/python23.py
+lib/python${MODPY_VERSION}/site-packages/web/python23.pyc
 lib/python${MODPY_VERSION}/site-packages/web/session.py
 lib/python${MODPY_VERSION}/site-packages/web/session.pyc
 lib/python${MODPY_VERSION}/site-packages/web/template.py
@@ -41,3 +43,7 @@ lib/python${MODPY_VERSION}/site-packages/web/wsgi.pyc
 lib/python${MODPY_VERSION}/site-packages/web/wsgiserver/
 lib/python${MODPY_VERSION}/site-packages/web/wsgiserver/__init__.py
 lib/python${MODPY_VERSION}/site-packages/web/wsgiserver/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/web/wsgiserver/ssl_builtin.py
+lib/python${MODPY_VERSION}/site-packages/web/wsgiserver/ssl_builtin.pyc
+lib/python${MODPY_VERSION}/site-packages/web/wsgiserver/ssl_pyopenssl.py
+lib/python${MODPY_VERSION}/site-packages/web/wsgiserver/ssl_pyopenssl.pyc
