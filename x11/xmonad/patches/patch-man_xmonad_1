@@ -1,0 +1,12 @@
+$OpenBSD: patch-man_xmonad_1,v 1.1 2011/08/21 17:32:28 kili Exp $
+--- man/xmonad.1.orig	Fri Dec 24 01:42:54 2010
++++ man/xmonad.1	Sun Aug 21 19:10:40 2011
+@@ -87,7 +87,7 @@ Launch terminal
+ .RE
+ .TP
+ .B mod-p
+-Launch dmenu
++Launch dmenu_run
+ .RS
+ .RE
+ .TP
