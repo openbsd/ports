@@ -1,0 +1,17 @@
+$OpenBSD: patch-src_plugins_avcodec_avcodec_c,v 1.1 2011/08/21 16:37:08 jasper Exp $
+
+fix libavcodec initialisation. from upstream git:
+
+http://git.xmms.se/xmms2/xmms2-devel/commit/?id=71666f5ac8465fc40c8220043174f45e7088c3f0
+
+--- src/plugins/avcodec/avcodec.c.orig	Thu Aug 11 17:03:17 2011
++++ src/plugins/avcodec/avcodec.c	Thu Aug 11 17:03:39 2011
+@@ -219,6 +219,8 @@ xmms_avcodec_init (xmms_xform_t *xform)
+ 	data->codecctx->block_align = data->block_align;
+ 	data->codecctx->extradata = data->extradata;
+ 	data->codecctx->extradata_size = data->extradata_size;
++	data->codecctx->codec_id = codec->id;
++	data->codecctx->codec_type = codec->type;
+ 
+ 	if (avcodec_open (data->codecctx, codec) < 0) {
+ 		XMMS_DBG ("Opening decoder '%s' failed", codec->name);
