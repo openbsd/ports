@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.20 2011/07/07 01:06:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2011/08/21 08:46:19 ajacoutot Exp $
 
-COMMENT=	reencode many media file formats to Ogg Theora
+COMMENT=	re-encode many media file formats to Ogg Theora
 
 N=		ffmpeg2theora
-DISTNAME=	${N}-0.27
-REVISION=	4
+DISTNAME=	${N}-0.28
 CATEGORIES=	multimedia
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://www.v2v.cc/~j/${N}/
 
 # GPLv3
-PERMIT_PACKAGE_CDROM=	patents in ffmpeg
+PERMIT_PACKAGE_CDROM=	patents in FFmpeg
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
@@ -23,7 +22,7 @@ WANTLIB += vorbis vorbisenc vpx x264 z
 
 MASTER_SITES=	${HOMEPAGE}downloads/
 
-LIB_DEPENDS=	graphics/ffmpeg>=20080620p10 \
+LIB_DEPENDS=	graphics/ffmpeg>=20110408p5 \
 		audio/libvorbis \
 		multimedia/libtheora
 
@@ -31,6 +30,7 @@ MODULES=	devel/scons converters/libiconv
 
 MODSCONS_FLAGS=	libkate=0
 USE_GROFF=	Yes
+NO_REGRESS=	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/${N} ${PREFIX}/bin
