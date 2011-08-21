@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.333 2011/07/20 16:48:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.334 2011/08/21 22:54:22 bentley Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -17,6 +17,7 @@
      SUBDIR += clo++
      SUBDIR += clucene
      SUBDIR += dblatex
+     SUBDIR += diction
      SUBDIR += diffstat
      SUBDIR += discount
      SUBDIR += docbook
