@@ -1,4 +1,4 @@
-$OpenBSD: patch-ghc_mk,v 1.5 2011/04/25 22:06:43 kili Exp $
+$OpenBSD: patch-ghc_mk,v 1.6 2011/08/21 21:38:04 kili Exp $
 
 Include utf8-string and xhtml for now, because of dependencies.
 Including *any* of those INTREE_ONLY_PACKAGES in the ghc packages
@@ -6,8 +6,11 @@ wasn't the brightest idea I had (see mtl library hell). The two
 libraries left can and will be replaced by separate ports when
 needed.
 
---- ghc.mk.orig	Sat Mar 26 19:10:06 2011
-+++ ghc.mk	Mon Apr 25 17:21:44 2011
+Fix the bindist-list (for building the bootstrapper); without this,
+gtar creates an archive which our tar can't extract.
+
+--- ghc.mk.orig	Mon Jun 13 19:10:05 2011
++++ ghc.mk	Sat Aug 20 20:14:19 2011
 @@ -290,7 +290,7 @@ include rules/bindist.mk
  # They do not say "this package will be built"; see $(PACKAGES_xx) for that
  
@@ -17,3 +20,12 @@ needed.
  
  # Packages that, if present, must be built by the stage2 compiler,
  # because they use TH and/or annotations, or depend on other stage2
+@@ -1037,6 +1037,8 @@ unix-binary-dist-prep:
+ 	echo "GHC_CABAL_INPLACE  = utils/ghc-cabal/dist-install/build/tmp/ghc-cabal" >> $(BIN_DIST_MK)
+ 	cd $(BIN_DIST_PREP_DIR) && autoreconf
+ 	"$(RM)" $(RM_OPTS) $(BIN_DIST_PREP_TAR)
++	sed 's@/\./@/@g' ${BIN_DIST_LIST} | sort -u > ${BIN_DIST_LIST}.new
++	mv ${BIN_DIST_LIST}.new ${BIN_DIST_LIST}
+ # h means "follow symlinks", e.g. if aclocal.m4 is a symlink to a source
+ # tree then we want to include the real file, not a symlink to it
+ 	cd bindistprep && "$(TAR_CMD)" hcf - -T ../$(BIN_DIST_LIST) | bzip2 -c > ../$(BIN_DIST_PREP_TAR_BZ2)

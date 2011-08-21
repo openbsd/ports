@@ -1,0 +1,14 @@
+$OpenBSD: patch-libraries_integer-simple_integer-simple_cabal,v 1.1 2011/08/21 21:38:04 kili Exp $
+
+Only used for building a bootstrapper; the real package uses
+integer-gmp.
+
+--- libraries/integer-simple/integer-simple.cabal.orig	Mon Jun 13 19:10:11 2011
++++ libraries/integer-simple/integer-simple.cabal	Sat Aug 20 16:34:48 2011
+@@ -19,5 +19,5 @@ Library {
+                 NoImplicitPrelude
+     -- We need to set the package name to integer-simple
+     -- (without a version number) as it's magic.
+-    ghc-options: -package-name integer-simple -Wall -Werror
++    ghc-options: -package-name integer-simple -Wall
+ }
