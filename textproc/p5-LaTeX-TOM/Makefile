@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/12/03 11:46:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/08/21 14:19:08 jasper Exp $
 
 COMMENT=		parse, analyze and manipulate LaTeX documents
 
-DISTNAME=		LaTeX-TOM-1.00
-REVISION=		0
+DISTNAME=		LaTeX-TOM-1.01
 CATEGORIES=		textproc
 
 MODULES=		cpan
