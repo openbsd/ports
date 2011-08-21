@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/06/30 08:23:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/08/21 14:37:53 jasper Exp $
 
 COMMENT=	tempo/pitch audio processing library
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 
 USE_LIBTOOL=	Yes
 
-AUTOCONF_VERSION=2.59
+AUTOCONF_VERSION=2.61
 AUTOMAKE_VERSION=1.9
 
 CONFIGURE_STYLE=gnu
@@ -38,7 +38,7 @@ MAKE_FLAGS=	AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 
 pre-configure:
 	cd ${WRKSRC} && \
-		touch NEWS README AUTHORS ChangeLog && \
+		touch NEWS README AUTHORS ChangeLog && env \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		autoreconf -i
