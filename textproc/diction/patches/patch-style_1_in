@@ -1,0 +1,17 @@
+$OpenBSD: patch-style_1_in,v 1.1.1.1 2011/08/21 22:52:30 bentley Exp $
+--- style.1.in.orig	Sat Jul 23 18:11:22 2011
++++ style.1.in	Sat Jul 23 18:12:22 2011
+@@ -1,4 +1,3 @@
+-' et
+ .TH STYLE 1 "@UPDATED@" "GNU" "User commands"
+ .SH NAME \"{{{roff}}}\"{{{
+ style \- analyse surface characteristics of a document
+@@ -232,7 +231,7 @@ Fog Index = 0.4*(wds/sent+100*((wds >= 3 syll)/wds))
+ .\".RE
+ .\"}}}
+ .IP "Lix formula" \"{{{
+-The Lix formula developed by Björnsson from Sweden is very simple and
++The Lix formula developed by Bj\(:ornsson from Sweden is very simple and
+ employs a mapping table as well:
+ .sp
+ .\"{{{ Lix

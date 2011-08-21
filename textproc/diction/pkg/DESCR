@@ -1,0 +1,9 @@
+Diction and style are two old standard Unix commands. Diction identifies
+wordy and commonly misused phrases. Style analyses surface
+characteristics of a document, including sentence length and other
+readability measures.
+
+These programs cannot help you structure a document well, but they can
+help to avoid poor wording and compare the readability (not the
+understandability!) of your documents with others. Both commands support
+English and German documents.
