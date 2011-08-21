@@ -1,16 +1,7 @@
-$OpenBSD: patch-lib_clamav-wrapper,v 1.2 2008/11/07 02:33:58 brad Exp $
---- lib/clamav-wrapper.orig	Fri Sep  5 04:55:29 2008
-+++ lib/clamav-wrapper	Thu Nov  6 20:24:55 2008
-@@ -51,7 +51,7 @@
- 
- # You may want to check this script for bash-isms
- 
--TempDir="/tmp/clamav.$$"
-+TempDir="`mktemp -d /var/spool/MailScanner/clamav.XXXXXXXXXXXXXXX`"
- ClamUser="clamav"
- ClamGroup="clamav"
- 
-@@ -98,23 +98,23 @@ ExtraScanOptions=""
+$OpenBSD: patch-lib_clamav-wrapper,v 1.3 2011/08/21 11:03:26 sthen Exp $
+--- lib/clamav-wrapper.orig	Sat Aug 20 08:32:02 2011
++++ lib/clamav-wrapper	Sat Aug 20 21:38:21 2011
+@@ -99,23 +99,23 @@ ExtraScanOptions=""
  # LESS COMMON unpackers, which probably aren't installed by default
  # (hence disabled)
  # Uncomment ONE of the following lines if you have unrar installed
