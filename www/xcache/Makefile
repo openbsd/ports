@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/07/08 22:52:23 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2011/08/21 09:26:58 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	fast and stable PHP opcode cacher
 
 VERSION=	1.3.2
-REVISION=	0
+REVISION=	1
 DISTNAME=	xcache-${VERSION}
 CATEGORIES=	www
 MASTER_SITES=	http://xcache.lighttpd.net/pub/Releases/${VERSION}/
@@ -48,6 +48,8 @@ CONFIGURE_ARGS+=	--enable-xcache-coverager
 .endif
 
 MODPHP_DO_PHPIZE=	Yes
+MODPHP_DO_SAMPLE=	xcache
+MESSAGE=		${PKGDIR}/MESSAGE
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}/${WEBROOT}/xcache
