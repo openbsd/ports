@@ -1,7 +1,7 @@
-$OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.7 2011/04/25 07:42:36 ajacoutot Exp $
---- misc/conf/zabbix_proxy.conf.orig	Fri Apr 15 21:17:30 2011
-+++ misc/conf/zabbix_proxy.conf	Mon Apr 25 08:17:22 2011
-@@ -94,6 +94,7 @@ LogFile=/tmp/zabbix_proxy.log
+$OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.8 2011/08/21 09:21:02 ajacoutot Exp $
+--- misc/conf/zabbix_proxy.conf.orig	Thu Aug  4 10:23:14 2011
++++ misc/conf/zabbix_proxy.conf	Sun Aug 21 11:01:16 2011
+@@ -104,6 +104,7 @@ LogFile=/tmp/zabbix_proxy.log
  # Mandatory: no
  # Default:
  # PidFile=/tmp/zabbix_proxy.pid
@@ -9,7 +9,7 @@ $OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.7 2011/04/25 07:42:36 ajacoutot 
  
  ### Option: DBHost
  #	Database host name.
-@@ -126,7 +127,7 @@ DBName=zabbix
+@@ -136,7 +137,7 @@ DBName=zabbix
  # Default:
  # DBUser=
  
@@ -18,7 +18,7 @@ $OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.7 2011/04/25 07:42:36 ajacoutot 
  
  ### Option: DBPassword
  #	Database password. Ignored for SQLite.
-@@ -142,6 +143,7 @@ DBUser=root
+@@ -152,6 +153,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # DBSocket=/tmp/mysql.sock
@@ -26,7 +26,7 @@ $OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.7 2011/04/25 07:42:36 ajacoutot 
  
  # Option: DBPort
  #	Database port when not using local socket. Ignored for SQLite.
-@@ -372,6 +374,7 @@ DBUser=root
+@@ -374,6 +376,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # ExternalScripts=/etc/zabbix/externalscripts
@@ -34,7 +34,7 @@ $OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.7 2011/04/25 07:42:36 ajacoutot 
  
  ### Option: FpingLocation
  #	Location of fping.
-@@ -380,6 +383,7 @@ DBUser=root
+@@ -382,6 +385,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # FpingLocation=/usr/sbin/fping
@@ -42,7 +42,7 @@ $OpenBSD: patch-misc_conf_zabbix_proxy_conf,v 1.7 2011/04/25 07:42:36 ajacoutot 
  
  ### Option: Fping6Location
  #	Location of fping6.
-@@ -389,6 +393,7 @@ DBUser=root
+@@ -391,6 +395,7 @@ DBUser=root
  # Mandatory: no
  # Default:
  # Fping6Location=/usr/sbin/fping6

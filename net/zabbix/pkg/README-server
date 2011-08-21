@@ -1,8 +1,13 @@
-$OpenBSD: README-server,v 1.4 2011/06/02 13:41:40 ajacoutot Exp $
+$OpenBSD: README-server,v 1.5 2011/08/21 09:21:02 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
 +-----------------------------------------------------------------------
+
+NOTE for users updating from version <1.8.6 using a node-based
+distributed setup, see
+    http://www.zabbix.com/rn1.8.6.php
+for improving performance of configuration syncing.
 
 The original documentation is available as a PDF file at
     ${HOMEPAGE}

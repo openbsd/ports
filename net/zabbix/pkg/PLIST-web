@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-web,v 1.14 2011/07/28 10:51:54 ajacoutot Exp $
+@comment $OpenBSD: PLIST-web,v 1.15 2011/08/21 09:21:02 ajacoutot Exp $
 @pkgpath net/zabbix,-web,mysql
 @pkgpath net/zabbix,-web,pgsql
 conf/modules.sample/zabbix.conf
@@ -25,6 +25,7 @@ zabbix/api/classes/class.chost.php
 zabbix/api/classes/class.chostgroup.php
 zabbix/api/classes/class.cimage.php
 zabbix/api/classes/class.citem.php
+zabbix/api/classes/class.citemkey.php
 zabbix/api/classes/class.cmaintenance.php
 zabbix/api/classes/class.cmap.php
 zabbix/api/classes/class.cmediatype.php
