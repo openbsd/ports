@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.19 2011/06/15 19:34:45 sthen Exp $
---- configure.in.orig	Tue Jun 14 21:17:28 2011
-+++ configure.in	Wed Jun 15 19:57:56 2011
-@@ -1566,8 +1566,7 @@ DSO_EXPORTS=""
+$OpenBSD: patch-configure_in,v 1.20 2011/08/22 10:03:25 giovanni Exp $
+--- configure.in.orig	Thu Aug  4 04:24:05 2011
++++ configure.in	Sun Aug 14 10:44:16 2011
+@@ -1582,8 +1582,7 @@ DSO_EXPORTS=""
  			;;
  		*openbsd*)  BLDSHARED="true"
  			LDSHFLAGS="-shared"
@@ -11,7 +11,7 @@ $OpenBSD: patch-configure_in,v 1.19 2011/06/15 19:34:45 sthen Exp $
  			PICFLAG="-fPIC"
  			AC_DEFINE(STAT_ST_BLOCKSIZE,512,[The size of a block])
  			AC_DEFINE(BROKEN_GETGRNAM,1,[Does getgrnam work correctly])
-@@ -1713,38 +1712,6 @@ if test x"$BLDSHARED" = x"true" ; then
+@@ -1729,38 +1728,6 @@ if test x"$BLDSHARED" = x"true" ; then
  fi
  
  AC_MSG_RESULT($BLDSHARED)
