@@ -1,2 +1,2 @@
-@comment $OpenBSD: PFRAG.shared,v 1.3 2011/04/05 18:40:44 ajacoutot Exp $
-@lib lib/libvala-0.12.so.${LIBvala-0.12_VERSION}
+@comment $OpenBSD: PFRAG.shared,v 1.4 2011/08/22 12:32:12 jasper Exp $
+@lib lib/libvala-${API_V}.so.${LIBvala-0.12_VERSION}

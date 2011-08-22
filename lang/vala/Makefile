@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2011/06/01 16:14:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/08/22 12:32:12 jasper Exp $
 
 COMMENT=		compiler for the GObject type system
 
 GNOME_PROJECT=		vala
 GNOME_VERSION=		0.12.1
+API_V=			0.12
 
 EXTRACT_SUFX=		.tar.xz
 
@@ -40,6 +41,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-vapigen
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
+
+SUBST_VARS+=		API_V
 
 pre-configure:
 	perl -pi -e 's,/bin/bash,${LOCALBASE}/bin/bash,g' \
