@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.45 2011/07/19 17:26:30 jeremy Exp $
+# $OpenBSD: ruby.port.mk,v 1.46 2011/08/22 17:53:38 espie Exp $
 
 # ruby module
 
@@ -235,10 +235,6 @@ pre-configure:
 .  endif
 .endif
 
-MODRUBY_EXTRACT_COOKIE = ${WRKDIR}/.modruby_extract_done
-MODRUBY_BUILD_COOKIE = ${WRKBUILD}/.modruby_build_done
-MODRUBY_INSTALL_COOKIE = ${WRKINST}/.modruby_install_done
-
 .if ${CONFIGURE_STYLE:L:Mext} || ${CONFIGURE_STYLE:L:Mextconf}
 # Ruby C exensions are specific to an arch and are loaded as
 # shared libraries (not compiled into ruby), so set SHARED_ONLY
@@ -329,52 +325,55 @@ GEM_FLAGS+=	--format-executable
 # under WRKDIST so it can be patched easily to remove or change dependencies.
 # Remove any signing of packages, as patching the gem could then break the
 # signatures.
-${MODRUBY_EXTRACT_COOKIE}:
-	mkdir -p ${WRKDIST} ${_GEM_CONTENT}
-	cd ${_GEM_CONTENT} && tar -xf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}
-	cd ${WRKDIST} && tar -xzf ${_GEM_DATAFILE} && rm ${_GEM_DATAFILE}
-	gzcat ${_GEM_CONTENT}/metadata.gz > ${WRKDIST}/.metadata
-	rm -f ${_GEM_CONTENT}/*.gz.sig
+MODRUBY_EXTRACT_TARGET = \
+    mkdir -p ${WRKDIST} ${_GEM_CONTENT}; \
+    cd ${_GEM_CONTENT} && tar -xf ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX}; \
+    cd ${WRKDIST} && tar -xzf ${_GEM_DATAFILE} && rm ${_GEM_DATAFILE}; \
+    gzcat ${_GEM_CONTENT}/metadata.gz > ${WRKDIST}/.metadata; \
+    rm -f ${_GEM_CONTENT}/*.gz.sig
 
 # Rebuild the gem manually after possible patching, then install it to a
 # temporary directory (not the final directory under fake, since that would
 # require root access and building C extensions as root).
-${MODRUBY_BUILD_COOKIE}:
-	if [ -f ${WRKDIST}/.metadata ]; then \
-		cd ${WRKDIST} && gzip .metadata && \
-			mv .metadata.gz ${_GEM_CONTENT}/metadata.gz; \
-	fi
-	cd ${WRKDIST} && find . -type f \! -name '*.orig'  -print | \
-		pax -wz -s '/^\.\///' -f ${_GEM_DATAFILE}
-	cd ${_GEM_CONTENT} && tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz
-	mkdir -p ${GEM_BASE}
-	env -i ${MAKE_ENV} HOME=${GEM_BASE}/.. GEM_HOME=${GEM_BASE} \
-		${GEM} install ${GEM_FLAGS} ${WRKDIR}/${_GEM_PATCHED} \
-		-- ${CONFIGURE_ARGS}
+MODRUBY_BUILD_TARGET = \
+    if [ -f ${WRKDIST}/.metadata ]; then \
+	    cd ${WRKDIST} && gzip .metadata && \
+		    mv .metadata.gz ${_GEM_CONTENT}/metadata.gz; \
+    fi; \
+    cd ${WRKDIST} && find . -type f \! -name '*.orig'  -print | \
+	    pax -wz -s '/^\.\///' -f ${_GEM_DATAFILE}; \
+    cd ${_GEM_CONTENT} && tar -cf ${WRKDIR}/${_GEM_PATCHED} *.gz; \
+    mkdir -p ${GEM_BASE}; \
+    env -i ${MAKE_ENV} HOME=${GEM_BASE}/.. GEM_HOME=${GEM_BASE} \
+	    ${GEM} install ${GEM_FLAGS} ${WRKDIR}/${_GEM_PATCHED} \
+	    -- ${CONFIGURE_ARGS}
 
 # Take the temporary gem directory, install the binary stub files to
 # the appropriate directory, and move and fix ownership the gem library
 # files.
-${MODRUBY_INSTALL_COOKIE}:
-	if [ -d ${GEM_BASE_BIN} ]; then \
-		${INSTALL_DATA_DIR} ${PREFIX}/${GEM_BIN}; \
-		for f in ${GEM_BASE_BIN}/*; do \
-			${INSTALL_SCRIPT} $$f ${PREFIX}/${GEM_BIN}; \
-		done; \
-		rm -r ${GEM_BASE_BIN}; \
-	fi
-	${INSTALL_DATA_DIR} ${GEM_ABS_PATH}
-	cd ${GEM_BASE_LIB} && mv * ${GEM_ABS_PATH}
-	chown -R ${SHAREOWN}:${SHAREGRP} ${GEM_ABS_PATH}
+MODRUBY_INSTALL_TARGET = \
+    if [ -d ${GEM_BASE_BIN} ]; then \
+	    ${INSTALL_DATA_DIR} ${PREFIX}/${GEM_BIN}; \
+	    for f in ${GEM_BASE_BIN}/*; do \
+		    ${INSTALL_SCRIPT} $$f ${PREFIX}/${GEM_BIN}; \
+	    done; \
+	    rm -r ${GEM_BASE_BIN}; \
+    fi; \
+    ${INSTALL_DATA_DIR} ${GEM_ABS_PATH}; \
+    cd ${GEM_BASE_LIB} && mv * ${GEM_ABS_PATH}; \
+    chown -R ${SHAREOWN}:${SHAREGRP} ${GEM_ABS_PATH}
 
 .  if !target(do-extract)
-do-extract: ${MODRUBY_EXTRACT_COOKIE}
+do-extract: 
+	${MODRUBY_EXTRACT_TARGET}
 .  endif
 .  if !target(do-build)
-do-build: ${MODRUBY_BUILD_COOKIE}
+do-build: 
+	${MODRUBY_BUILD_TARGET}
 .  endif
 .  if !target(do-install)
-do-install: ${MODRUBY_INSTALL_COOKIE}
+do-install: 
+	${MODRUBY_INSTALL_TARGET}
 .  endif
 
 .elif ${CONFIGURE_STYLE:L:Msetup}
@@ -382,18 +381,20 @@ MODRUBY_configure= \
 	cd ${WRKSRC}; ${SETENV} ${CONFIGURE_ENV} ${RUBY} setup.rb config \
 		--prefix=${PREFIX} ${CONFIGURE_ARGS};
 
-${MODRUBY_BUILD_COOKIE}:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RUBY} setup.rb setup
+MODRUBY_BUILD_TARGET = \
+    cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RUBY} setup.rb setup
 
-${MODRUBY_INSTALL_COOKIE}:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RUBY} setup.rb install \
+MODRUBY_INSTALL_TARGET = \
+    cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${RUBY} setup.rb install \
 		--prefix=${DESTDIR}
 
 .  if !target(do-build)
-do-build: ${MODRUBY_BUILD_COOKIE}
+do-build: 
+	${MODRUBY_BUILD_TARGET}
 .  endif
 .  if !target(do-install)
-do-install: ${MODRUBY_INSTALL_COOKIE}
+do-install: 
+	${MODRUBY_INSTALL_TARGET}
 .  endif
 .endif
 
