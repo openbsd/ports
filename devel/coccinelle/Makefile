@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/08/16 08:26:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2011/08/22 00:37:49 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	program matching and transformation engine
 
 # if updating, check for any additional use of diff/grep which
 # may need to be switched to gdiff/ggrep
-DISTNAME =	coccinelle-1.0.0-rc5
+DISTNAME =	coccinelle-1.0.0-rc6
 PKGNAME =	${DISTNAME:S/-rc/rc/}
 EXTRACT_SUFX =	.tgz
 
@@ -56,7 +56,7 @@ pre-configure:
 # "all.opt"=only build native binaries (but regression
 # tests didn't work with this)
 ALL_TARGET =	world
-INSTALL_TARGET = install-common install-def
+INSTALL_TARGET = install-common install-def install-man
 PKG_ARGS +=	-DOCAMLOPT=.opt
 .else
 WANTLIB +=	curses

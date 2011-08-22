@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/06/16 23:24:49 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/08/22 00:37:50 sthen Exp $
 bin/spatch
-@comment bin/spatch.byte
-@comment bin/spatch.opt
 lib/dllpycaml_stubs.so
 @man man/man1/spatch.1
 @man man/man3/Coccilib.3
