@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.268 2011/07/20 21:47:46 schwarze Exp $
+# $OpenBSD: Makefile,v 1.269 2011/08/22 08:04:47 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -172,6 +172,7 @@
      SUBDIR += p5-POE-Component-SSLify
      SUBDIR += p5-Text-Password-Pronounceable
      SUBDIR += p5-Tie-EncryptedHash
+     SUBDIR += p11-kit
      SUBDIR += parse
      SUBDIR += passwdqc
      SUBDIR += pcsc-lite
