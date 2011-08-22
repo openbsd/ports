@@ -1,0 +1,10 @@
+$OpenBSD: patch-p11-kit_pkcs11_conf_example_in,v 1.1.1.1 2011/08/22 08:04:14 ajacoutot Exp $
+--- p11-kit/pkcs11.conf.example.in.orig	Mon Aug 22 08:55:50 2011
++++ p11-kit/pkcs11.conf.example.in	Mon Aug 22 08:55:54 2011
+@@ -1,6 +1,3 @@
+-# This is an example @p11_system_conf@ file. Copy it into
+-# place before use.
+-
+ # This setting controls whether to load user configuration from the
+ # ~/.pkcs11 directory. Possible values:
+ #    none: No user configuration (default)

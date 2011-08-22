@@ -1,0 +1,47 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/22 08:04:14 ajacoutot Exp $
+%%SHARED%%
+@bin bin/p11-kit
+include/p11-kit-1/
+include/p11-kit-1/p11-kit/
+include/p11-kit-1/p11-kit/p11-kit.h
+include/p11-kit-1/p11-kit/pin.h
+include/p11-kit-1/p11-kit/pkcs11.h
+include/p11-kit-1/p11-kit/uri.h
+lib/libp11-kit.a
+lib/libp11-kit.la
+lib/pkgconfig/
+lib/pkgconfig/p11-kit-1.pc
+share/examples/p11-kit/
+@sample ${SYSCONFDIR}/p11-kit/
+@sample ${SYSCONFDIR}/p11-kit/modules/
+share/examples/p11-kit/pkcs11.conf.example
+@sample ${SYSCONFDIR}/p11-kit/pkcs11.conf
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/p11-kit/
+share/gtk-doc/html/p11-kit/api-index-full.html
+share/gtk-doc/html/p11-kit/config-example.html
+share/gtk-doc/html/p11-kit/config-format.html
+share/gtk-doc/html/p11-kit/config-global.html
+share/gtk-doc/html/p11-kit/config-locations.html
+share/gtk-doc/html/p11-kit/config-module.html
+share/gtk-doc/html/p11-kit/config.html
+share/gtk-doc/html/p11-kit/gtk-doc.css
+share/gtk-doc/html/p11-kit/home.png
+share/gtk-doc/html/p11-kit/index.html
+share/gtk-doc/html/p11-kit/index.sgml
+share/gtk-doc/html/p11-kit/left.png
+share/gtk-doc/html/p11-kit/p11-kit-Future.html
+share/gtk-doc/html/p11-kit/p11-kit-Modules.html
+share/gtk-doc/html/p11-kit/p11-kit-PIN-Callbacks.html
+share/gtk-doc/html/p11-kit/p11-kit-URIs.html
+share/gtk-doc/html/p11-kit/p11-kit-Utilities.html
+share/gtk-doc/html/p11-kit/p11-kit.devhelp
+share/gtk-doc/html/p11-kit/p11-kit.devhelp2
+share/gtk-doc/html/p11-kit/reference.html
+share/gtk-doc/html/p11-kit/right.png
+share/gtk-doc/html/p11-kit/sharing-initialize.html
+share/gtk-doc/html/p11-kit/sharing-module.html
+share/gtk-doc/html/p11-kit/sharing.html
+share/gtk-doc/html/p11-kit/style.css
+share/gtk-doc/html/p11-kit/up.png
