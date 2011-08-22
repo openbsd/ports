@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/08/22 08:09:35 sebastia Exp $
+# $OpenBSD: Makefile,v 1.31 2011/08/22 20:09:43 espie Exp $
 
      SUBDIR =
      SUBDIR += addresses
@@ -43,7 +43,7 @@
      SUBDIR += systempreferences
      SUBDIR += terminal
      SUBDIR += timemon
-     SUBDIR += webserver
+#     SUBDIR += webserver
      SUBDIR += webservices
      SUBDIR += zipper
 
