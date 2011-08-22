@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.334 2011/08/21 22:54:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.335 2011/08/22 07:15:18 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -110,6 +110,7 @@
      SUBDIR += p5-Font-AFM
      SUBDIR += p5-Font-TTF
      SUBDIR += p5-HTML-Summary
+     SUBDIR += p5-LaTeX-Pod
      SUBDIR += p5-LaTeX-TOM
      SUBDIR += p5-LibXML-Common
      SUBDIR += p5-Libxml
