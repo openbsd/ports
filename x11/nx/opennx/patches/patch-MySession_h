@@ -1,0 +1,15 @@
+$OpenBSD: patch-MySession_h,v 1.1 2011/08/22 09:49:22 stsp Exp $
+
+- Fix resuming a suspended session.
+  From upstream svn -r574.
+
+--- MySession.h.orig	Sun Apr 26 01:17:10 2009
++++ MySession.h	Tue Aug  2 14:22:19 2011
+@@ -124,6 +124,7 @@ class MySession : public wxEvtHandler (private)
+     bool m_bIsShadow;
+     bool m_bCupsRunning;
+     bool m_bRemoveKey;
++    bool m_bNextCmd;
+     int m_iProgress;
+     int m_iReader;
+     int m_iHttpPort;
