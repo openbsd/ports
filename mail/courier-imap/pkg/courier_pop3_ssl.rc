@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: courier_pop3-ssl.rc,v 1.5 2011/03/20 13:06:23 ajacoutot Exp $
+# $OpenBSD: courier_pop3_ssl.rc,v 1.1 2011/08/22 07:57:25 giovanni Exp $
 
 daemon="${TRUEPREFIX}/libexec/pop3d-ssl.rc"
 
