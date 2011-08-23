@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_js_src_configure_in,v 1.3 2011/07/24 07:10:12 landry Exp $
---- mozilla/js/src/configure.in.orig	Sat May 28 00:43:50 2011
-+++ mozilla/js/src/configure.in	Mon May 30 14:28:49 2011
-@@ -1210,7 +1210,7 @@ WIN_TOP_SRC=
+$OpenBSD: patch-mozilla_js_src_configure_in,v 1.4 2011/08/23 20:19:33 landry Exp $
+--- mozilla/js/src/configure.in.orig	Fri Jul 29 10:09:11 2011
++++ mozilla/js/src/configure.in	Wed Aug  3 10:43:10 2011
+@@ -1186,7 +1186,7 @@ WIN_TOP_SRC=
  MOZ_USER_DIR=".mozilla"
  
  MOZ_JS_LIBS='-L$(libdir) -lmozjs'
@@ -10,7 +10,7 @@ $OpenBSD: patch-mozilla_js_src_configure_in,v 1.3 2011/07/24 07:10:12 landry Exp
  
  MOZ_COMPONENT_NSPR_LIBS='-L$(LIBXUL_DIST)/bin $(NSPR_LIBS)'
  
-@@ -2517,7 +2517,7 @@ ia64*-hpux*)
+@@ -2382,7 +2382,7 @@ ia64*-hpux*)
  	;;
  
  *-openbsd*)
@@ -19,7 +19,7 @@ $OpenBSD: patch-mozilla_js_src_configure_in,v 1.3 2011/07/24 07:10:12 landry Exp
      DSO_CFLAGS=''
      DSO_PIC_CFLAGS='-fPIC'
      DSO_LDOPTS='-shared -fPIC'
-@@ -2869,7 +2869,7 @@ arm*-*)
+@@ -2734,7 +2734,7 @@ arm*-*)
      AC_DEFINE(JS_CPU_ARM)
      AC_DEFINE(JS_NUNBOX32)
      ;;
@@ -27,8 +27,8 @@ $OpenBSD: patch-mozilla_js_src_configure_in,v 1.3 2011/07/24 07:10:12 landry Exp
 +sparc-*)
      ENABLE_TRACEJIT=1
      NANOJIT_ARCH=Sparc
-     AC_DEFINE(JS_CPU_SPARC)
-@@ -2951,7 +2951,7 @@ case "$target" in
+     ENABLE_METHODJIT=1
+@@ -2821,7 +2821,7 @@ case "$target" in
  *-solaris*)
      AC_DEFINE(AVMPLUS_UNIX)
      ;;
@@ -36,4 +36,4 @@ $OpenBSD: patch-mozilla_js_src_configure_in,v 1.3 2011/07/24 07:10:12 landry Exp
 +*-freebsd*|*-kfreebsd*|*-openbsd*)
      AC_DEFINE(AVMPLUS_UNIX)
      ;;
- *-gnu*)
+ *-openbsd*)

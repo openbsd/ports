@@ -1,0 +1,17 @@
+$OpenBSD: patch-mozilla_xpcom_io_nsAppFileLocationProvider_cpp,v 1.4 2011/08/23 20:19:33 landry Exp $
+--- mozilla/xpcom/io/nsAppFileLocationProvider.cpp.orig	Mon Aug  1 04:58:01 2011
++++ mozilla/xpcom/io/nsAppFileLocationProvider.cpp	Thu Aug  4 23:24:42 2011
+@@ -234,12 +234,7 @@ nsAppFileLocationProvider::GetFile(const char *prop, P
+     }
+ #ifdef XP_UNIX
+     else if (nsCRT::strcmp(prop, NS_SYSTEM_PLUGINS_DIR) == 0) {
+-        static const char *const sysLPlgDir = 
+-#if defined(HAVE_USR_LIB64_DIR) && defined(__LP64__)
+-          "/usr/lib64/mozilla/plugins";
+-#else
+-          "/usr/lib/mozilla/plugins";
+-#endif
++        static const char *const sysLPlgDir = "${LOCALBASE}/lib/mozilla/plugins";
+         rv = NS_NewNativeLocalFile(nsDependentCString(sysLPlgDir),
+                                    PR_FALSE, getter_AddRefs(localFile));
+     }

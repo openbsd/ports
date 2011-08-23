@@ -1,7 +1,7 @@
-$OpenBSD: patch-config_rules_mk,v 1.6 2011/07/24 07:10:12 landry Exp $
---- config/rules.mk.orig	Fri Jan 14 23:02:04 2011
-+++ config/rules.mk	Mon Feb 14 21:53:50 2011
-@@ -622,6 +622,12 @@ endif
+$OpenBSD: patch-config_rules_mk,v 1.7 2011/08/23 20:19:33 landry Exp $
+--- config/rules.mk.orig	Fri Jul 15 07:42:33 2011
++++ config/rules.mk	Sun Jul 31 22:20:15 2011
+@@ -623,6 +623,12 @@ endif
  endif
  endif
  

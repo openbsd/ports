@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_content_events_src_nsContentEventHandler_cpp,v 1.2 2011/07/24 07:10:12 landry Exp $
---- mozilla/content/events/src/nsContentEventHandler.cpp.orig	Mon Mar 14 14:57:11 2011
-+++ mozilla/content/events/src/nsContentEventHandler.cpp	Mon Mar 14 22:10:04 2011
-@@ -1029,7 +1029,8 @@ nsContentEventHandler::OnSelectionEvent(nsSelectionEve
+$OpenBSD: patch-mozilla_content_events_src_nsContentEventHandler_cpp,v 1.3 2011/08/23 20:19:33 landry Exp $
+--- mozilla/content/events/src/nsContentEventHandler.cpp.orig	Fri Jul 15 07:51:19 2011
++++ mozilla/content/events/src/nsContentEventHandler.cpp	Sun Jul 31 22:20:15 2011
+@@ -1028,7 +1028,8 @@ nsContentEventHandler::OnSelectionEvent(nsSelectionEve
    selPrivate->EndBatchChanges();
    NS_ENSURE_SUCCESS(rv, rv);
  

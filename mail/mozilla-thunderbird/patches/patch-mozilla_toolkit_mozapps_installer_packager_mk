@@ -1,8 +1,8 @@
-$OpenBSD: patch-mozilla_toolkit_mozapps_installer_packager_mk,v 1.1 2011/07/24 07:10:12 landry Exp $
+$OpenBSD: patch-mozilla_toolkit_mozapps_installer_packager_mk,v 1.2 2011/08/23 20:19:33 landry Exp $
 We don't want the sdk
---- mozilla/toolkit/mozapps/installer/packager.mk.orig	Sat May 28 00:44:36 2011
-+++ mozilla/toolkit/mozapps/installer/packager.mk	Mon May 30 14:28:56 2011
-@@ -718,7 +718,7 @@ endif
+--- mozilla/toolkit/mozapps/installer/packager.mk.orig	Fri Jul 15 07:51:48 2011
++++ mozilla/toolkit/mozapps/installer/packager.mk	Sun Jul 31 22:20:16 2011
+@@ -704,7 +704,7 @@ endif
  	$(NSINSTALL) -D $(DESTDIR)$(bindir)
  	$(RM) -f $(DESTDIR)$(bindir)/$(MOZ_APP_NAME)
  	ln -s $(installdir)/$(MOZ_APP_NAME) $(DESTDIR)$(bindir)

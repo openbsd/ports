@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.19 2011/07/24 07:10:12 landry Exp $
---- configure.in.orig	Sat May 28 00:35:41 2011
-+++ configure.in	Mon May 30 14:28:02 2011
+$OpenBSD: patch-configure_in,v 1.20 2011/08/23 20:19:33 landry Exp $
+--- configure.in.orig	Fri Jul 15 07:42:33 2011
++++ configure.in	Sun Jul 31 22:20:15 2011
 @@ -1126,7 +1126,7 @@ MOZ_PNG_LIBS='$(call EXPAND_LIBNAME_PATH,mozpng,$(DEPT
  MOZ_JS_STATIC_LIBS='-L$(LIBXUL_DIST)/bin -ljs_static'
  MOZ_JS_SHARED_LIBS='-L$(LIBXUL_DIST)/bin -lmozjs'
@@ -10,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.19 2011/07/24 07:10:12 landry Exp $
  XPCOM_FROZEN_LDOPTS='-L$(LIBXUL_DIST)/bin -lxpcom -lmozalloc'
  LIBXUL_LIBS='$(XPCOM_FROZEN_LDOPTS) -lxul'
  XPCOM_GLUE_LDOPTS='$(LIBXUL_DIST)/lib/$(LIB_PREFIX)xpcomglue_s.$(LIB_SUFFIX) $(XPCOM_FROZEN_LDOPTS)'
-@@ -5071,14 +5071,7 @@ dnl ==================================================
+@@ -5070,14 +5070,7 @@ dnl ==================================================
  
  # The GNOME component is built if one of
  # gnome-vfs, gio, gconf or libnotify is available.

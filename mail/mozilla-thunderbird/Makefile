@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2011/07/28 20:30:30 landry Exp $
+# $OpenBSD: Makefile,v 1.133 2011/08/23 20:19:33 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -8,26 +8,23 @@ BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 # Don't forget to bump mail/thunderbird-i18n after updates.
 # Don't forget to update productivity/sunbird if patches changes.
 
-MOZILLA_VERSION =	5.0
-MOZILLA_BRANCH =	miramar
+MOZILLA_VERSION =	6.0
+MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	mail
 
 MULTI_PACKAGES =	-main -lightning -enigmail
 PKGNAME-main =		${PKGNAME}
-REVISION-main =		0
-PKGNAME-lightning =	lightning-1.0beta4
-PKGNAME-enigmail =	enigmail-1.2
-REVISION-enigmail =	0
+PKGNAME-lightning =	lightning-1.0beta5
+PKGNAME-enigmail =	enigmail-1.3
 EPOCH-lightning =	0
 
 MASTER_SITES0 =	http://www.mozilla-enigmail.org/download/source/
 DISTFILES +=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}.source.tar.bz2 \
-		enigmail-1.2.tar.gz:0
+		enigmail-1.3.tar.gz:0
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
-# need to be in synch with SO_VERSION in mail/enigmail/thunderbird
-SO_VERSION =	18.0
+SO_VERSION =	19.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues. Whenever PKGNAME gets
 # bumped and/or SO_VERSION changes, remember to update enigmail's
@@ -107,6 +104,8 @@ EXTDIR =	${PREFIX}/lib/${_MOZ_PROJECT_SHORT}-${MOZILLA_VERSION}/extensions/
 post-install:
 .for xpi guid in ${GUIDS}
 	unzip -q ${MOB}/../xpi-stage/${xpi}.xpi -d ${EXTDIR}/${guid}
+	# fix maxVersion
+	perl -pi -e 's|<em:maxVersion>5.*</em:maxVersion>|<em:maxVersion>${MOZILLA_VERSION}</em:maxVersion>|' ${EXTDIR}/${guid}/install.rdf
 .endfor
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
