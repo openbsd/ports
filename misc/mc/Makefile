@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.40 2011/06/14 18:18:24 robert Exp $
+# $OpenBSD: Makefile,v 1.41 2011/08/23 08:28:42 robert Exp $
 
 COMMENT=		free Norton Commander clone with many useful features
 
-DISTNAME=		mc-4.7.5.2
+DISTNAME=		mc-4.7.5.3
 CATEGORIES=		misc
 
 HOMEPAGE=		http://www.midnight-commander.org/
 MASTER_SITES=		${HOMEPAGE}downloads/
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
+
+EXTRACT_SUFX=		.tar.bz2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
