@@ -1,6 +1,6 @@
-$OpenBSD: patch-pftop_c,v 1.14 2011/04/11 08:20:41 sthen Exp $
+$OpenBSD: patch-pftop_c,v 1.15 2011/08/23 11:42:11 sthen Exp $
 --- pftop.c.orig	Wed Nov  7 06:36:46 2007
-+++ pftop.c	Mon Apr 11 09:02:34 2011
++++ pftop.c	Tue Aug 23 12:41:14 2011
 @@ -127,6 +127,13 @@
  #define PT_NOROUTE(x) (0)
  #endif
@@ -311,7 +311,7 @@ $OpenBSD: patch-pftop_c,v 1.14 2011/04/11 08:20:41 sthen Exp $
  #ifdef HAVE_INOUT_COUNT
  	{
  		u_int64_t sz = COUNTER(s->bytes[0]) + COUNTER(s->bytes[1]);
-@@ -988,14 +1161,14 @@ print_state(pf_state_t * s, struct sc_ent * ent)
+@@ -988,18 +1161,18 @@ print_state(pf_state_t * s, struct sc_ent * ent)
  		print_fld_size(FLD_PKTS, COUNTER(s->packets[0]) +
  			       COUNTER(s->packets[1]));
  		print_fld_size(FLD_BYTES, sz);
@@ -330,6 +330,11 @@ $OpenBSD: patch-pftop_c,v 1.14 2011/04/11 08:20:41 sthen Exp $
  
  #endif
  #ifdef HAVE_PFSYNC_STATE
+-	print_fld_uint(FLD_RULE, s->rule);
++	print_fld_uint(FLD_RULE, ntohl(s->rule));
+ #else
+ #ifdef HAVE_RULE_NUMBER
+ 	print_fld_uint(FLD_RULE, s->rule.nr);
 @@ -1458,8 +1631,9 @@ tb_print_flags(u_int8_t f)
  void
  print_rule(struct pf_rule *pr)
