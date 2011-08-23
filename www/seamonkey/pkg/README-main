@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.2 2011/06/02 13:41:41 ajacoutot Exp $
+$OpenBSD: README-main,v 1.3 2011/08/23 20:25:25 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -8,23 +8,10 @@ To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
 
 Plugins
 =======
-Seamonkey looks for plugins in ~/.mozilla/plugins,
-${LOCALBASE}/lib/mozilla-plugins, and ${TRUEPREFIX}/seamonkey/plugins.
+Seamonkey looks for plugins in ~/.mozilla/plugins and
+${LOCALBASE}/lib/mozilla-plugins.
 If the environment variable MOZ_PLUGIN_PATH is specified, this
 location will be overridden.
-
-Using Java Applets
-==================
-To make Applets work, you must symlink (not copy) the file
-libjavaplugin_oji.so into one of the directories listed above.
-This might be done like the following:
-
-$ cd ~/.mozilla/plugins
-$ ln -s ${LOCALBASE}/jdk-1.5.0/jre/plugin/i386/ns7/libjavaplugin_oji.so .
-$   
-
-Information on building Java (on some platforms) can be found in
-http://www.openbsd.org/faq/faq13.html#javaflash
 
 Internationalization
 ====================

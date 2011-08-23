@@ -1,16 +1,29 @@
-$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.2 2011/07/24 07:31:57 landry Exp $
---- mozilla/toolkit/library/Makefile.in.orig	Wed Jul  6 10:50:59 2011
-+++ mozilla/toolkit/library/Makefile.in	Fri Jul 22 09:45:40 2011
-@@ -253,6 +253,12 @@ ifdef MOZ_ENABLE_LIBXUL
- include $(srcdir)/libxul-rules.mk
+$OpenBSD: patch-mozilla_toolkit_library_Makefile_in,v 1.3 2011/08/23 20:25:25 landry Exp $
+--- mozilla/toolkit/library/Makefile.in.orig	Fri Jul 15 07:51:48 2011
++++ mozilla/toolkit/library/Makefile.in	Sun Jul 31 22:33:53 2011
+@@ -168,12 +168,6 @@ EXTRA_DSO_LDOPTS += \
+ endif
  endif
  
+-ifneq (,$(filter GNU GNU_% NetBSD OpenBSD,$(OS_ARCH)))
+-ifdef MOZ_SYDNEYAUDIO
+-EXTRA_DSO_LDOPTS += -lossaudio
+-endif
+-endif
+-
+ ifdef MOZ_PLATFORM_MAEMO
+ EXTRA_DSO_LDOPTS += $(MOZ_PLATFORM_MAEMO_LIBS)
+ endif 
+@@ -250,6 +244,12 @@ ifeq ($(OS_ARCH),OpenBSD)
+ # Needed by nsAuthGSSAPI
+ EXTRA_DSO_LDOPTS += -lkrb5 -lcrypto
+ endif
++
 +# GTK2 widget and Sydney audio sndio backends.
 +EXTRA_DSO_LDOPTS += -lsndio
 +
 +# Needed by nsAuthGSSAPI
 +EXTRA_DSO_LDOPTS += -lkrb5 -lcrypto
-+
+ 
  ifdef MOZ_JAVAXPCOM
  dlldeps-javaxpcom.cpp: $(topsrcdir)/extensions/java/xpcom/src/dlldeps-javaxpcom.cpp
- 	$(INSTALL) $^ .

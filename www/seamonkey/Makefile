@@ -1,25 +1,23 @@
-# $OpenBSD: Makefile,v 1.86 2011/08/23 08:38:13 landry Exp $
+# $OpenBSD: Makefile,v 1.87 2011/08/23 20:25:24 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 COMMENT-enigmail =	Mozilla Seamonkey GnuPG extension
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
 
-MOZILLA_VERSION=	2.2
+MOZILLA_VERSION=	2.3
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 
 MULTI_PACKAGES =	-main -lightning -enigmail
-PKGNAME-main =		seamonkey-2.2
-REVISION-main =		0
-PKGNAME-lightning =	lightning-seamonkey-1.0beta4
-PKGNAME-enigmail =	enigmail-seamonkey-1.2
-REVISION-enigmail =	0
+PKGNAME-main =		${PKGNAME}
+PKGNAME-lightning =	lightning-seamonkey-1.0beta5
+PKGNAME-enigmail =	enigmail-seamonkey-1.3
 EPOCH-lightning =	0
 
 # must be in sync with SO_VERSION in main/enigmail/seamonkey
-SO_VERSION=	18.0
+SO_VERSION=	19.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS = ldap60 ldif60 mozalloc prldap60 suite xpcom xul calbasecomps enigmime ipc
@@ -59,11 +57,11 @@ LANGUAGES=	ca \
 		tr
 
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		enigmail-1.2.tar.gz
+		enigmail-1.3.tar.gz
 EXTRACT_CASES =	enigmail-*.tar.gz) ${GZIP_CMD} -dc ${FULLDISTDIR}/$$archive | tar -C comm-${MOZILLA_BRANCH}/mailnews/extensions/ -xf -;;
 
 DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} \
-		enigmail-1.2.tar.gz:1
+		enigmail-1.3.tar.gz:1
 .for language in ${LANGUAGES}
 DISTFILES+=	seamonkey-${MOZILLA_VERSION}.${language}.langpack.xpi:0
 .endfor
@@ -127,8 +125,6 @@ post-install:
 .for xpi guid in ${GUIDS}
 	${UNZIP} -oq ${MOB}/../xpi-stage/${xpi}.xpi -d ${EXTDIR}/${guid}
 .endfor
-	# enigmail 1.2 works in seamonkey 2.2 so adjust install.rdf
-	perl -pi -e 's|<em:maxVersion>2.1.*</em:maxVersion>|<em:maxVersion>2.2.*</em:maxVersion>|' ${EXTDIR}/{847b3a00-7ab1-11d4-8f02-006008948af5}/install.rdf
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${_MOZ_PROJECT_SHORT}.desktop \
