@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/08/02 19:24:38 naddy Exp $
+# $OpenBSD: Makefile,v 1.33 2011/08/23 08:38:13 landry Exp $
 
 COMMENT =		Mozilla calendar
 
@@ -12,7 +12,8 @@ DISTNAME =		thunderbird-${TB_VERSION}.source
 EPOCH =			0
 REVISION =		8
 
-MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${TB_VERSION}/source/
+MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${TB_VERSION}/source/ \
+		ftp://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${TB_VERSION}/source/
 
 CATEGORIES =	productivity mail
 

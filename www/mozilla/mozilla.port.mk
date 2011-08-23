@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.32 2011/07/24 07:48:20 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.33 2011/08/23 08:38:13 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -15,7 +15,8 @@ _MOZ_PROJECT_SHORT =	${MOZILLA_PROJECT:S/mozilla-//}
 
 HOMEPAGE ?=	http://www.mozilla.org/projects/${_MOZ_PROJECT_SHORT}
 
-MASTER_SITES ?=	http://releases.mozilla.org/pub/mozilla.org/${_MOZ_PROJECT_SHORT}/releases/${MOZILLA_VERSION}/source/
+MASTER_SITES ?=	http://releases.mozilla.org/pub/mozilla.org/${_MOZ_PROJECT_SHORT}/releases/${MOZILLA_VERSION}/source/ \
+		ftp://ftp.mozilla.org/pub/mozilla.org/${_MOZ_PROJECT_SHORT}/releases/${MOZILLA_VERSION}/source/
 DISTNAME ?=	${_MOZ_PROJECT_SHORT}-${MOZILLA_VERSION}.source
 EXTRACT_SUFX ?=	.tar.bz2
 DIST_SUBDIR ?=	mozilla

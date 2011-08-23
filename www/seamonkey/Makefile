@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2011/07/28 20:48:56 landry Exp $
+# $OpenBSD: Makefile,v 1.86 2011/08/23 08:38:13 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -32,7 +32,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES0=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${MOZILLA_VERSION}/langpack/
+MASTER_SITES0=	http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${MOZILLA_VERSION}/langpack/ \
+		ftp://ftp.mozilla.org/pub/mozilla.org/seamonkey/releases/${MOZILLA_VERSION}/langpack/
 MASTER_SITES1 =	http://www.mozilla-enigmail.org/download/source/
 
 LANGUAGES=	ca \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/07/30 07:55:53 landry Exp $
+# $OpenBSD: Makefile,v 1.9 2011/08/23 08:38:13 landry Exp $
 
 COMMENT =	Mozilla mobile web browser
 
@@ -22,7 +22,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/mobile/releases/${MOZILLA_VERSION}/source/
+MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/mobile/releases/${MOZILLA_VERSION}/source/ \
+		ftp://ftp.mozilla.org/pub/mozilla.org/mobile/releases/${MOZILLA_VERSION}/source/
 HOMEPAGE =	http://www.mozilla.com/en-US/mobile/
 
 # lots of logic in mozilla.port.mk
