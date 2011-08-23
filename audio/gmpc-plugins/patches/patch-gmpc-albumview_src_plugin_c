@@ -1,0 +1,12 @@
+$OpenBSD: patch-gmpc-albumview_src_plugin_c,v 1.1 2011/08/23 08:43:48 landry Exp $
+--- gmpc-albumview/src/plugin.c.orig	Thu Aug 18 09:45:50 2011
++++ gmpc-albumview/src/plugin.c	Thu Aug 18 09:46:13 2011
+@@ -926,7 +926,7 @@ static GObject *albumview_plugin_constructor(GType typ
+ }
+ static void albumview_plugin_finalize(GObject *obj) {
+     AlbumViewPlugin *self = (AlbumViewPlugin *)obj;
+-	AlbumViewPluginClass * klass = (g_type_class_peek (play_queue_plugin_get_type()));
++	AlbumViewPluginClass * klass = (g_type_class_peek (albumview_plugin_get_type()));
+ 	gpointer parent_class = g_type_class_peek_parent (klass);
+ 
+     g_log(AV_LOG_DOMAIN, G_LOG_LEVEL_DEBUG, "Destroying plugin");

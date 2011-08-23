@@ -1,22 +1,20 @@
-# $OpenBSD: Makefile,v 1.18 2011/05/16 08:24:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/08/23 08:43:48 landry Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT-main =		bundle of plugins for gmpc
 COMMENT-wikipedia =	wikipedia plugin for gmpc
 
-VERSION =	0.20.0
+VERSION =	11.8.16
 DISTNAME =	gmpc-plugins-${VERSION}
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		2
 PKGNAME-wikipedia =	gmpc-wikipedia-${VERSION}
-REVISION-wikipedia =	4
 
 CATEGORIES =	audio
 
-MAINTAINER =	Landry Breuil <gaston@gcu.info>
+MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
-HOMEPAGE =	http://gmpc.wikia.com/wiki/Gnome_Music_Player_Client
+HOMEPAGE =	http://gmpclient.org/plugins
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=musicpd/}
 
 # GPLv2
@@ -43,13 +41,12 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			audio/taglib>=1.5 \
 			x11/dbus-glib \
 			net/avahi
-WANTLIB-main = ${WANTLIB} dbus-1 glade-2.0 tag tag_c dbus-glib-1
+WANTLIB-main = ${WANTLIB} dbus-1 tag tag_c dbus-glib-1 pthread
 WANTLIB-main += avahi-client avahi-common avahi-glib
 
 LIB_DEPENDS-wikipedia =	${LIB_DEPENDS} \
 			www/webkit>=1.4.0v0
 WANTLIB-wikipedia =	${WANTLIB} \
-			ICE SM Xt enchant gailutil gstapp-0.10 gstbase-0.10 \
 			ICE SM Xt enchant gailutil gstapp-0.10 gstbase-0.10 \
 			gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 \
 			icudata icui18n icuuc jpeg soup-2.4 webkitgtk-1.0 xslt
@@ -77,6 +74,6 @@ CONFIGURE_ARGS+=--disable-mserver \
 		--disable-lirc
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		LDFLAGS="-L${LOCALBASE}/lib -liconv"
 
 .include <bsd.port.mk>
