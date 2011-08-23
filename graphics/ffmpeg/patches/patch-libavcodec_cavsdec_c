@@ -1,9 +1,10 @@
-$OpenBSD: patch-libavcodec_cavsdec_c,v 1.1 2011/08/16 19:01:47 sthen Exp $
+$OpenBSD: patch-libavcodec_cavsdec_c,v 1.2 2011/08/23 11:59:59 sthen Exp $
 
-Fix insufficient boundary check. oCERT #2011-002
+- Fix insufficient boundary check. oCERT #2011-002
+- Fix some crashes with invalid bitstreams. oCERT #2011-002
 
---- libavcodec/cavsdec.c.orig	Sat Aug 13 19:35:06 2011
-+++ libavcodec/cavsdec.c	Sat Aug 13 19:36:04 2011
+--- libavcodec/cavsdec.c.orig	Mon Mar 28 19:23:17 2011
++++ libavcodec/cavsdec.c	Mon Aug 22 21:06:48 2011
 @@ -115,7 +115,8 @@ static inline int get_ue_code(GetBitContext *gb, int o
  static int decode_residual_block(AVSContext *h, GetBitContext *gb,
                                   const struct dec_2dvlc *r, int esc_golomb_order,
@@ -14,3 +15,47 @@ Fix insufficient boundary check. oCERT #2011-002
      DCTELEM level_buf[65];
      uint8_t run_buf[65];
      DCTELEM *block = h->block;
+@@ -130,12 +131,14 @@ static int decode_residual_block(AVSContext *h, GetBit
+                 r++;
+             mask = -(level_code & 1);
+             level = (level^mask) - mask;
+-        } else {
++        } else if (level_code >= 0) {
+             level = r->rltab[level_code][0];
+             if(!level) //end of block signal
+                 break;
+             run   = r->rltab[level_code][1];
+             r += r->rltab[level_code][2];
++        } else {
++            break;
+         }
+         level_buf[i] = level;
+         run_buf[i] = run;
+@@ -189,7 +192,8 @@ static inline int decode_residual_inter(AVSContext *h)
+ 
+ static int decode_mb_i(AVSContext *h, int cbp_code) {
+     GetBitContext *gb = &h->s.gb;
+-    int block, pred_mode_uv;
++    unsigned pred_mode_uv;
++    int block;
+     uint8_t top[18];
+     uint8_t *left = NULL;
+     uint8_t *d;
+@@ -445,6 +449,8 @@ static inline int check_for_slice(AVSContext *h) {
+     if((show_bits_long(gb,24+align) & 0xFFFFFF) == 0x000001) {
+         skip_bits_long(gb,24+align);
+         h->stc = get_bits(gb,8);
++        if (h->stc >= h->mb_height)
++            return 0;
+         decode_slice_header(h,gb);
+         return 1;
+     }
+@@ -659,7 +665,7 @@ static int cavs_decode_frame(AVCodecContext * avctx,vo
+     buf_end = buf + buf_size;
+     for(;;) {
+         buf_ptr = ff_find_start_code(buf_ptr,buf_end, &stc);
+-        if(stc & 0xFFFFFE00)
++        if((stc & 0xFFFFFE00) || buf_ptr == buf_end)
+             return FFMAX(0, buf_ptr - buf - s->parse_context.last_index);
+         input_size = (buf_end - buf_ptr)*8;
+         switch(stc) {
