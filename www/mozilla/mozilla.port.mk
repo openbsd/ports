@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.33 2011/08/23 08:38:13 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.34 2011/08/23 20:09:54 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -26,17 +26,17 @@ MODMOZ_BUILD_DEPENDS =	devel/libIDL \
 			archivers/zip>=2.3
 
 MODMOZ_LIB_DEPENDS =	x11/gtk+2 \
-			devel/nspr>=4.8.7 \
-			security/nss>=3.12.9
+			devel/nspr>=4.8.9 \
+			security/nss>=3.12.11
 
-MODMOZ_WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
+MODMOZ_WANTLIB =	X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi \
 		Xinerama Xrandr Xrender Xt atk-1.0 c cairo crypto expat \
 		fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 jpeg krb5 m \
 		nspr4>=21 nss3>=25 pango-1.0 pangocairo-1.0 pangoft2-1.0 \
 		pixman-1 plc4>=21 plds4>=21 png pthread pthread-stubs \
 		smime3>=25 sndio softokn3>=25 ssl3>=25 stdc++ xcb \
-		xcb-render GL Xxf86vm drm xcb-shm z
+		xcb-render GL xcb-shm z
 
 # for all mozilla ports, build against systemwide sqlite3
 MODMOZ_WANTLIB +=	sqlite3
