@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.3 2011/06/02 13:41:41 ajacoutot Exp $
+$OpenBSD: README,v 1.4 2011/08/23 20:14:52 landry Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -32,8 +32,8 @@ your mailer.
 
 Plugins
 
-Firefox looks for plugins in ~/.mozilla/plugins,
-${TRUEPREFIX}/lib/mozilla/plugins, and ${TRUEPREFIX}/mozilla-firefox/plugins.
+Firefox looks for plugins in ~/.mozilla/plugins and
+${TRUEPREFIX}/lib/mozilla/plugins.
 If the environment variable MOZ_PLUGIN_PATH is specified, this
 location will be overridden.
 

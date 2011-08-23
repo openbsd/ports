@@ -1,8 +1,8 @@
-$OpenBSD: patch-memory_mozalloc_mozalloc_cpp,v 1.1 2011/03/30 21:39:14 landry Exp $
---- memory/mozalloc/mozalloc.cpp.orig	Thu Aug  5 21:51:32 2010
-+++ memory/mozalloc/mozalloc.cpp	Thu Aug  5 21:53:09 2010
-@@ -43,6 +43,7 @@
- #include <string.h>
+$OpenBSD: patch-memory_mozalloc_mozalloc_cpp,v 1.2 2011/08/23 20:14:52 landry Exp $
+--- memory/mozalloc/mozalloc.cpp.orig	Fri Jul 22 00:18:49 2011
++++ memory/mozalloc/mozalloc.cpp	Sat Jul 30 15:37:51 2011
+@@ -45,6 +45,7 @@
+ #include <sys/types.h>
  
  #if defined(MALLOC_H)
 +#include <sys/types.h>

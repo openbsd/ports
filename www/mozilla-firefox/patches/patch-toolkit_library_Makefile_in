@@ -1,9 +1,9 @@
-$OpenBSD: patch-toolkit_library_Makefile_in,v 1.8 2011/06/28 05:43:57 landry Exp $
+$OpenBSD: patch-toolkit_library_Makefile_in,v 1.9 2011/08/23 20:14:52 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=648726
 https://bugzilla.mozilla.org/show_bug.cgi?id=648730
---- toolkit/library/Makefile.in.orig	Fri May 27 18:12:47 2011
-+++ toolkit/library/Makefile.in	Tue May 31 22:18:40 2011
-@@ -158,6 +158,12 @@ OS_LIBS += \
+--- toolkit/library/Makefile.in.orig	Fri Jul 22 00:18:55 2011
++++ toolkit/library/Makefile.in	Sun Jul 31 19:42:21 2011
+@@ -157,6 +157,12 @@ OS_LIBS += \
  	$(NULL)
  endif
  
@@ -16,15 +16,16 @@ https://bugzilla.mozilla.org/show_bug.cgi?id=648730
  ifeq ($(OS_ARCH),Darwin)
  ifdef MOZ_SYDNEYAUDIO
  EXTRA_DSO_LDOPTS += \
-@@ -251,6 +257,11 @@ export:: $(RDF_UTIL_SRC_CPPSRCS) $(INTL_UNICHARUTIL_UT
- 
- ifdef MOZ_ENABLE_LIBXUL
- include $(srcdir)/libxul-rules.mk
-+endif
-+
-+ifeq ($(OS_ARCH),OpenBSD)
-+# Needed by nsAuthGSSAPI
-+OS_LIBS += -lkrb5 -lcrypto
+@@ -165,12 +171,6 @@ EXTRA_DSO_LDOPTS += \
+ 	-framework AudioToolbox \
+ 	-framework AudioUnit \
+ 	$(NULL)
+-endif
+-endif
+-
+-ifneq (,$(filter GNU GNU_% NetBSD OpenBSD,$(OS_ARCH)))
+-ifdef MOZ_SYDNEYAUDIO
+-EXTRA_DSO_LDOPTS += -lossaudio
+ endif
  endif
  
- ifdef MOZ_JAVAXPCOM

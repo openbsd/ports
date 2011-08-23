@@ -1,9 +1,9 @@
-$OpenBSD: patch-xulrunner_app_Makefile_in,v 1.5 2011/06/28 05:43:57 landry Exp $
+$OpenBSD: patch-xulrunner_app_Makefile_in,v 1.6 2011/08/23 20:14:52 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=648726
---- xulrunner/app/Makefile.in.orig	Fri May 27 18:13:00 2011
-+++ xulrunner/app/Makefile.in	Tue May 31 22:18:41 2011
-@@ -87,6 +87,12 @@ EXTRA_DSO_LIBS += xul
- endif
+--- xulrunner/app/Makefile.in.orig	Fri Jul 22 00:18:57 2011
++++ xulrunner/app/Makefile.in	Sat Jul 30 15:37:52 2011
+@@ -79,6 +79,12 @@ ifeq (cocoa,$(MOZ_WIDGET_TOOLKIT))
+ TK_LIBS := -framework Cocoa $(TK_LIBS)
  endif
  
 +ifeq ($(OS_ARCH),OpenBSD)

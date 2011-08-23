@@ -1,8 +1,8 @@
-$OpenBSD: patch-services_crypto_modules_WeaveCrypto_js,v 1.2 2011/06/28 05:43:57 landry Exp $
+$OpenBSD: patch-services_crypto_modules_WeaveCrypto_js,v 1.3 2011/08/23 20:14:52 landry Exp $
 Fix libnss3 opening
---- services/crypto/modules/WeaveCrypto.js.orig	Fri May 27 18:12:42 2011
-+++ services/crypto/modules/WeaveCrypto.js	Tue May 31 22:18:26 2011
-@@ -151,20 +151,19 @@ WeaveCrypto.prototype = {
+--- services/crypto/modules/WeaveCrypto.js.orig	Thu Aug 11 23:41:22 2011
++++ services/crypto/modules/WeaveCrypto.js	Fri Aug 19 11:16:12 2011
+@@ -158,12 +158,12 @@ WeaveCrypto.prototype = {
          Cc["@mozilla.org/psm;1"].getService(Ci.nsISupports);
  
          // Open the NSS library.
@@ -17,14 +17,3 @@ Fix libnss3 opening
              nsslib = ctypes.open(path);
          } catch(e) {
              // In case opening the library without a full path fails,
-             // try again with a full path.
--            let file = Services.dirsvc.get("GreD", Ci.nsILocalFile);
--            file.append(path);
--            this.log("Trying again with path " + file.path);
--            nsslib = ctypes.open(file.path);
-+            let path2 = '${LOCALBASE}/lib/libnss3.so.${NSS_SO_VERSION}';
-+            this.log("Trying again with path " + path2);
-+            nsslib = ctypes.open(path2);
-         }
- 
-         this.log("Initializing NSS types and function declarations...");
