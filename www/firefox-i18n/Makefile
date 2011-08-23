@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.68 2011/08/23 08:38:13 landry Exp $
+# $OpenBSD: Makefile,v 1.69 2011/08/23 20:16:15 landry Exp $
 
 # keep in sync with working archs.. sigh
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 PKG_ARCH=	*
 
-V=		5.0
+V=		6.0
 NAME=		firefox-i18n
 PKGNAME=	${NAME}-${V}
 
@@ -45,13 +45,11 @@ SUBPACKAGE?=	-en-GB
 .for i in ${LANGUAGES}
 MULTI_PACKAGES+=-$i
 DISTFILES+=	$i.xpi
-REVISION-$i=	1
 PKGNAME-$i=	${NAME}-$i-${V}
 COMMENT-$i=	$i language pack for Firefox
 LPACKDIR-$i=	${PREFIX}/lib/firefox-$V/extensions/langpack-$i@firefox.mozilla.org
 .endfor
 PKGNAME-en-GB=	${NAME}-en-GB-${V}
-REVISION-af=	2
 
 # use the same for all subpackages
 MESSAGE=	${PKGDIR}/MESSAGE
