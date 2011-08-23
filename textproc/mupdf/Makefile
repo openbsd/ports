@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/07/13 21:48:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.27 2011/08/23 19:05:45 jasper Exp $
 
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
@@ -32,6 +32,8 @@ LIB_DEPENDS =	graphics/jbig2dec \
 
 USE_GMAKE =	Yes
 USE_GROFF =	Yes
+
+VMEM_WARNING =	Yes
 
 NO_REGRESS =	Yes
 
