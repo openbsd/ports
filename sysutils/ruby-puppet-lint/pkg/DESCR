@@ -1,0 +1,2 @@
+Checks your Puppet manifests against the Puppetlabs style guide and
+alerts you to any discrepancies.
