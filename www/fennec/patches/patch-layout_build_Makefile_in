@@ -1,8 +1,8 @@
-$OpenBSD: patch-layout_build_Makefile_in,v 1.3 2011/06/28 22:01:18 landry Exp $
+$OpenBSD: patch-layout_build_Makefile_in,v 1.4 2011/08/23 20:55:53 landry Exp $
 https://bugzilla.mozilla.org/show_bug.cgi?id=648726
---- layout/build/Makefile.in.orig	Fri May 27 18:12:15 2011
-+++ layout/build/Makefile.in	Tue May 31 22:18:25 2011
-@@ -285,6 +285,9 @@ ifdef MOZ_SYDNEYAUDIO
+--- layout/build/Makefile.in.orig	Fri Aug 12 01:29:12 2011
++++ layout/build/Makefile.in	Tue Aug 23 22:47:12 2011
+@@ -284,6 +284,9 @@ endif
  ifeq ($(OS_ARCH),Linux)
  EXTRA_DSO_LDOPTS += $(MOZ_ALSA_LIBS)
  endif
