@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/06/14 13:19:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/08/23 08:23:09 robert Exp $
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
@@ -20,7 +20,6 @@ libdata/perl5/site_perl/RT/Action/NotifyGroup.pm
 libdata/perl5/site_perl/RT/Action/NotifyGroupAsComment.pm
 libdata/perl5/site_perl/RT/Action/RecordComment.pm
 libdata/perl5/site_perl/RT/Action/RecordCorrespondence.pm
-libdata/perl5/site_perl/RT/Action/ResolveMembers.pm
 libdata/perl5/site_perl/RT/Action/SendEmail.pm
 libdata/perl5/site_perl/RT/Action/SetPriority.pm
 libdata/perl5/site_perl/RT/Action/SetStatus.pm
@@ -223,6 +222,7 @@ sbin/rt-email-dashboards
 sbin/rt-email-digest
 sbin/rt-email-group-admin
 sbin/rt-fulltext-indexer
+sbin/rt-preferences-viewer
 sbin/rt-server
 sbin/rt-server.fcgi
 sbin/rt-session-viewer
@@ -235,6 +235,28 @@ sbin/rt-validator
 share/doc/pkg-readmes/${FULLPKGNAME}
 share/doc/rt3/
 share/doc/rt3/README
+share/doc/rt3/UPGRADING-2.0
+share/doc/rt3/UPGRADING-3.0
+share/doc/rt3/UPGRADING-3.2
+share/doc/rt3/UPGRADING-3.4
+share/doc/rt3/UPGRADING-3.6
+share/doc/rt3/UPGRADING-3.8
+share/doc/rt3/UPGRADING-4.0
+share/doc/rt3/UPGRADING.mysql
+share/doc/rt3/customizing/
+share/doc/rt3/customizing/articles_introduction.pod
+share/doc/rt3/customizing/templates.pod
+share/doc/rt3/customizing/timezones_in_charts.pod
+share/doc/rt3/extending/
+share/doc/rt3/extending/clickable_links.pod
+share/doc/rt3/extending/external_custom_fields.pod
+share/doc/rt3/extending/using_forms_widgets.pod
+share/doc/rt3/full_text_indexing.pod
+share/doc/rt3/glossary.pod
+share/doc/rt3/hacking.pod
+share/doc/rt3/network-diagram.svg
+share/doc/rt3/security.pod
+share/doc/rt3/web_deployment.pod
 share/examples/rt3/
 @sample ${SYSCONFDIR}/rt3/
 @sample ${SYSCONFDIR}/rt3/local/
@@ -500,6 +522,12 @@ share/examples/rt3/upgrade/4.0.0rc7/
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.0rc7/
 share/examples/rt3/upgrade/4.0.0rc7/content
 @sample ${SYSCONFDIR}/rt3/upgrade/4.0.0rc7/content
+share/examples/rt3/upgrade/4.0.1/
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.1/
+share/examples/rt3/upgrade/4.0.1/acl.Pg
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.1/acl.Pg
+share/examples/rt3/upgrade/4.0.1/content
+@sample ${SYSCONFDIR}/rt3/upgrade/4.0.1/content
 share/examples/rt3/upgrade/generate-rtaddressregexp
 @sample ${SYSCONFDIR}/rt3/upgrade/generate-rtaddressregexp
 share/examples/rt3/upgrade/generate-rtaddressregexp.in
@@ -517,6 +545,7 @@ share/examples/rt3/upgrade/upgrade-mysql-schema.pl
 @sample ${SYSCONFDIR}/rt3/upgrade/upgrade-mysql-schema.pl
 share/examples/rt3/upgrade/vulnerable-passwords
 @sample ${SYSCONFDIR}/rt3/upgrade/vulnerable-passwords
+share/examples/rt3/upgrade/vulnerable-passwords.in
 share/rt3/
 share/rt3/html/
 share/rt3/html/Admin/
@@ -691,7 +720,6 @@ share/rt3/html/Articles/Elements/BeforeMessageBox
 share/rt3/html/Articles/Elements/CheckSkipCreate
 share/rt3/html/Articles/Elements/CreateArticle
 share/rt3/html/Articles/Elements/GotoArticle
-share/rt3/html/Articles/Elements/Header
 share/rt3/html/Articles/Elements/IncludeArticle
 share/rt3/html/Articles/Elements/NewestArticles
 share/rt3/html/Articles/Elements/QuickSearch
@@ -754,6 +782,7 @@ share/rt3/html/Elements/EditTimeValue
 share/rt3/html/Elements/EmailInput
 share/rt3/html/Elements/Error
 share/rt3/html/Elements/Footer
+share/rt3/html/Elements/Framekiller
 share/rt3/html/Elements/GnuPG/
 share/rt3/html/Elements/GnuPG/KeyIssues
 share/rt3/html/Elements/GnuPG/SelectKeyForEncryption
@@ -1334,12 +1363,6 @@ share/rt3/html/NoAuth/images/tablesorter/bg.gif
 share/rt3/html/NoAuth/images/tablesorter/desc.gif
 share/rt3/html/NoAuth/images/test.png
 share/rt3/html/NoAuth/js/
-share/rt3/html/NoAuth/js/IE7/
-share/rt3/html/NoAuth/js/IE7/IE7.js
-share/rt3/html/NoAuth/js/IE7/IE8.js
-share/rt3/html/NoAuth/js/IE7/blank.gif
-share/rt3/html/NoAuth/js/IE7/ie7-recalc.js
-share/rt3/html/NoAuth/js/IE7/ie7-squish.js
 share/rt3/html/NoAuth/js/autohandler
 share/rt3/html/NoAuth/js/cascaded.js
 share/rt3/html/NoAuth/js/class.js
