@@ -1,7 +1,7 @@
-$OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_txt,v 1.4 2011/01/15 16:59:37 landry Exp $
---- mozilla/security/nss/lib/ckfw/builtins/certdata.txt.orig	Fri Dec  3 00:26:35 2010
-+++ mozilla/security/nss/lib/ckfw/builtins/certdata.txt	Thu Jan 13 14:02:49 2011
-@@ -17410,6 +17410,352 @@ CKA_TRUST_CODE_SIGNING CK_TRUST CKT_NETSCAPE_TRUST_UNK
+$OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_txt,v 1.5 2011/08/23 20:07:50 landry Exp $
+--- mozilla/security/nss/lib/ckfw/builtins/certdata.txt.orig	Thu Apr  7 01:59:09 2011
++++ mozilla/security/nss/lib/ckfw/builtins/certdata.txt	Sat Jul 30 16:22:25 2011
+@@ -15040,6 +15040,352 @@ CKA_TRUST_CODE_SIGNING CK_TRUST CKT_NETSCAPE_TRUST_UNK
  CKA_TRUST_STEP_UP_APPROVED CK_BBOOL CK_FALSE
  
  #
