@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_swft_readpng_c,v 1.1.1.1 2011/08/23 19:52:30 kili Exp $
+--- src/swft/readpng.c.orig	Mon Jul 25 20:51:42 2011
++++ src/swft/readpng.c	Mon Jul 25 21:00:35 2011
+@@ -50,8 +50,9 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ 
+-#include "png.h"        /* libpng header; includes zlib.h */
++#include "png.h"        /* libpng header */
+ #include "readpng.h"    /* typedefs, common macros, public prototypes */
++#include "zlib.h"       /* zlib header */
+ 
+ /* future versions of libpng will provide this macro: */
+ #ifndef png_jmpbuf
+@@ -87,7 +88,7 @@ int readpng_init(FILE *infile, ulg *pWidth, ulg *pHeig
+      * have used slightly more general png_sig_cmp() function instead */
+ 
+     fread(sig, 1, 8, infile);
+-    if (!png_check_sig(sig, 8))
++    if (png_sig_cmp(sig, 0, 8))
+         return 1;   /* bad signature */
+ 
+ 

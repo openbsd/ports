@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/23 19:52:30 kili Exp $
+@bin bin/swfmill
