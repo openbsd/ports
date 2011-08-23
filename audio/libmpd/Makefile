@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2011/07/11 14:04:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/08/23 08:41:51 landry Exp $
 
 COMMENT=		mpd client library
 
-VERSION=		0.20.0
+VERSION=		11.8.17
 DISTNAME=		libmpd-${VERSION}
-REVISION=		0
 SHARED_LIBS=		mpd	3.2	#.3.0
 CATEGORIES=		audio
 
-MAINTAINER=		Landry Breuil <gaston@gcu.info>
+MAINTAINER=		Landry Breuil <landry@openbsd.org>
 
-HOMEPAGE=		http://gmpc.wikia.com/?title=Libmpd
+HOMEPAGE =		http://gmpclient.org/
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
