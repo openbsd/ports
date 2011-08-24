@@ -1,5 +1,5 @@
---- nut.1.orig	Wed Dec  1 09:39:02 2010
-+++ nut.1	Wed Dec  1 09:39:05 2010
+--- nut.1.orig	Sun May 22 05:24:54 2011
++++ nut.1	Wed Aug 24 21:23:07 2011
 @@ -1,4 +1,4 @@
 -.\" manual page [] for nut
 +.\" manual page [] for nutdb
@@ -8,7 +8,7 @@
  .\" LP paragraph
 @@ -6,12 +6,12 @@
  .\" TP hanging label
- .TH "nut" "1" "2010.09.30" "" ""
+ .TH "nut" "1" "2011.05.22" "" ""
  .SH "NAME"
 -.B nut \- analyze meals with the USDA Nutrient Database
 +.B nutdb \- analyze meals with the USDA Nutrient Database
@@ -22,16 +22,16 @@
  allows you to record what you eat and analyze your meals for nutrient
  composition.  The database included is the 
  USDA Nutrient Database for Standard Reference, Release 23.
-@@ -39,7 +39,7 @@ You may add your own recipes to the database, 
- by creating them from the foods in the database.
- You can also add foods from the information on commercial food labels. The program is completely menu\-driven and there are no commands to learn.
+@@ -45,7 +45,7 @@ functions are made synchronous and explicit.
+ Both the console program and the GUI operate identically on the underlying
+ database.
  
 -.B NUT
 +.B NUTDB
  can be called with an optional argument to specify a database subdirectory.
  For example, if a user tracks meals for other family members, each person
  can have his own database, and each database is entirely separate.
-@@ -148,7 +148,7 @@ desired,
+@@ -157,7 +157,7 @@ desired,
  and provides an opportunity to adjust the weight of the servings to allow
  for water gained or lost in preparation.
  
@@ -40,7 +40,7 @@
  with an ordered list of ingredients and a nutrition statement. 
  The new food will have  additional nutrients that
  were not on the nutrition statement, but that the database says are in the food.
-@@ -172,10 +172,10 @@ the program are the USA standard 2000\-calorie Daily V
+@@ -181,10 +181,10 @@ the program are the USA standard 2000\-calorie Daily V
  customized options\-\-but users can always set the label's nutrient information in grams.
  Only Daily Value nutrients greater than zero are considered as
  constraints when
@@ -54,7 +54,7 @@
  that according
  to the food database, there is no way to match the ingredients with the
  constraints of the nutrition statement.
-@@ -184,11 +184,11 @@ edit the
+@@ -193,11 +193,11 @@ edit the
  nutrient values.
  Perhaps the food was so heavily fortified with vitamins
  that the user waited until
@@ -66,9 +66,9 @@
 -NUT's approximate recipe suggested.  The new food record is saved in the database
 +NUTDB's approximate recipe suggested.  The new food record is saved in the database
  in the same manner as a recipe.
+ This feature is only in the console program.
  
- To modify the serving size of an existing food, the food is selected
-@@ -302,7 +302,7 @@ non\-fiber carb as  "." and fiber as ":".
+@@ -328,7 +328,7 @@ non\-fiber carb as  "." and fiber as ":".
  
  .B Record 'The Usual'\-\-Customary Meals:
  When 
@@ -77,7 +77,7 @@
  asks what you are having, you can answer "the usual."  Specifically,
  this function allows you to record a customary meal, 
  and give it a name.  Later, when
-@@ -337,7 +337,7 @@ WLOG.txt        Weight Log records
+@@ -363,7 +363,7 @@ WLOG.txt        Weight Log records
  WLOG.old        Last deleted Weight Log
  WLOG.aux        Copy of Weight Log with fat and lean weights calculated
  fontsize        Font size that proportionally controls the GUI size
