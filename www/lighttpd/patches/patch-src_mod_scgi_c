@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_mod_scgi_c,v 1.3 2011/08/24 21:28:09 sthen Exp $
+--- src/mod_scgi.c.orig	Mon Jun 13 07:24:12 2011
++++ src/mod_scgi.c	Wed Aug 24 02:50:41 2011
+@@ -2296,7 +2296,7 @@ static handler_t scgi_write_request(server *srv, handl
+ 
+ 		/* fall through */
+ 	case FCGI_STATE_WRITE:
+-		ret = srv->network_backend_write(srv, con, hctx->fd, hctx->wb);
++		ret = srv->network_backend_write(srv, con, hctx->fd, hctx->wb, MAX_WRITE_LIMIT);
+ 
+ 		chunkqueue_remove_finished_chunks(hctx->wb);
+ 
