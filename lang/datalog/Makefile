@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/07/13 11:39:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/08/24 20:22:31 jasper Exp $
 
 COMMENT=	deductive database system similar to Prolog
 
 DISTNAME=	datalog-1.6
+REVISION=	0
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.ccs.neu.edu/home/ramsdell/tools/datalog/
