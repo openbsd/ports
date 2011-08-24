@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2011/08/23 20:34:09 landry Exp $
+# $OpenBSD: Makefile,v 1.51 2011/08/24 06:22:19 landry Exp $
 
 MOZILLA_VERSION =	1.9.2.20
-FFX_VERSION =		3.6.20
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_PROJECT =	xulrunner1.9
-DISTNAME =		firefox-${FFX_VERSION}.source
-MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/firefox/releases/${FFX_VERSION}/source/ \
-		ftp://ftp.mozilla.org/pub/mozilla.org/firefox/releases/${FFX_VERSION}/source/
+MOZILLA_DIST =		firefox
+MOZILLA_DIST_VERSION =	3.6.20
 
 SO_VERSION =		3.2
 # NOTE: Must bump minor version if any shlib's are removed from the

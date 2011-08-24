@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.34 2011/08/23 20:28:57 landry Exp $
+# $OpenBSD: Makefile,v 1.35 2011/08/24 06:22:19 landry Exp $
 
 COMMENT =		Mozilla calendar
 
 MOZILLA_PROJECT =	sunbird
-TB_VERSION =		3.1.11
 MOZILLA_VERSION =	1.0beta2
+MOZILLA_DIST =		thunderbird
+MOZILLA_DIST_VERSION =	3.1.11
 MOZILLA_BRANCH =	1.9.2
 MOZILLA_CODENAME =	calendar
 
-DISTNAME =		thunderbird-${TB_VERSION}.source
 EPOCH =			0
-REVISION =		9
+REVISION =		10
 
-MASTER_SITES =	http://releases.mozilla.org/pub/mozilla.org/thunderbird/releases/${TB_VERSION}/source/ \
-		ftp://ftp.mozilla.org/pub/mozilla.org/thunderbird/releases/${TB_VERSION}/source/
+HOMEPAGE =	http://www.mozilla.org/projects/calendar/sunbird/
 
 CATEGORIES =	productivity mail
 
