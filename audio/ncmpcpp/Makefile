@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/26 10:53:18 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.3 2011/08/24 20:32:50 jasper Exp $
 
 COMMENT =		ncurses mpd client inspired by ncmpc
 
@@ -19,7 +19,8 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MASTER_SITES =		${HOMEPAGE}
+MASTER_SITES =		${HOMEPAGE} \
+			http://distfiles.nl/
 
 WANTLIB =		c crypto curl idn m mpdclient \
 			ncursesw pthread ssl stdc++ tag z
