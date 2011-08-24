@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/08/24 10:39:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/08/24 17:44:27 jasper Exp $
 
 COMMENT =		lightweight multi-protocol & multi-source download utility
 DISTNAME =		aria2-1.12.0
@@ -37,6 +37,7 @@ CONFIGURE_ARGS +=	--with-sqlite3 \
 			--with-libexpat \
 			--without-libxml2
 
+# Prevent gcc 4.2.1 from running out of memory.
 .if ${MACHINE_ARCH:Mmips64*}
 CFLAGS +=		-O0
 .endif
