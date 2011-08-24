@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/20 09:48:38 espie Exp $
-
-NOT_FOR_ARCHS =		arm hppa hp300
+# $OpenBSD: Makefile,v 1.7 2011/08/24 20:57:24 naddy Exp $
 
 COMMENT =		No News is Good News (Fast CLI Point & Read Newsreader)
 DISTNAME =		nn-6.7.3
+REVISION =		0
 CATEGORIES =		news
 HOMEPAGE =		http://www.nndev.org
 
@@ -24,9 +23,12 @@ EXTRACT_SUFX =		.tar.Z
 
 USE_GROFF =		Yes
 NO_REGRESS =		Yes
+MAKE_ENV =		CC="${CC}"
 
 .if "${MACHINE_ARCH}" == "alpha"
 MFILE =			m-alpha.h
+.elif "${MACHINE_ARCH}" == "hppa"
+MFILE =			m-hp9000.h
 .elif "${MACHINE_ARCH}" == "m68k"
 MFILE = 		m-m680x0.h
 .elif "${MACHINE_ARCH}" == "m88k"
