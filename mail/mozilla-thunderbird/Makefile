@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2011/08/23 20:19:33 landry Exp $
+# $OpenBSD: Makefile,v 1.134 2011/08/24 06:19:51 landry Exp $
 
 COMMENT-main =		Mozilla e-mail, rss and usenet client
 COMMENT-lightning =	Mozilla Thunderbird calendar extension
@@ -100,7 +100,7 @@ GUIDS =	gdata-provider {a62ef8ec-5fdc-40c2-873c-223b8a6925cc} \
 	calendar-timezones calendar-timezones@mozilla.org \
 	../bin/enigmail-1.2-openbsd-${GNU_ARCH} {847b3a00-7ab1-11d4-8f02-006008948af5}
 
-EXTDIR =	${PREFIX}/lib/${_MOZ_PROJECT_SHORT}-${MOZILLA_VERSION}/extensions/
+EXTDIR =	${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/extensions/
 post-install:
 .for xpi guid in ${GUIDS}
 	unzip -q ${MOB}/../xpi-stage/${xpi}.xpi -d ${EXTDIR}/${guid}
@@ -109,7 +109,7 @@ post-install:
 .endfor
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${_MOZ_PROJECT_SHORT}.desktop \
-		${PREFIX}/share/applications/${_MOZ_PROJECT_SHORT}.desktop ; \
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
+		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop ; \
 
 .include <bsd.port.mk>

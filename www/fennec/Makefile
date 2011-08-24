@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/08/23 20:55:53 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2011/08/24 06:19:51 landry Exp $
 
 COMMENT =	Mozilla mobile web browser
 
@@ -73,7 +73,7 @@ post-install:
 		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VERSION}/fennec_icon.png
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${_MOZ_PROJECT_SHORT}.desktop \
-		${PREFIX}/share/applications/${_MOZ_PROJECT_SHORT}.desktop ; \
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
+		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop ; \
 
 .include <bsd.port.mk>

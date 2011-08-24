@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.188 2011/08/23 20:14:52 landry Exp $
+# $OpenBSD: Makefile,v 1.189 2011/08/24 06:19:51 landry Exp $
 
 COMMENT =	Mozilla web browser
 BROKEN-sparc64 =	https://bugzilla.mozilla.org/show_bug.cgi?id=577056
@@ -67,8 +67,8 @@ post-install:
 	cd ${PREFIX}/bin/ && ln -sf firefox mozilla-firefox
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${_MOZ_PROJECT_SHORT}.desktop \
-		${PREFIX}/share/applications/${_MOZ_PROJECT_SHORT}.desktop
+	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
+		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop
 
 	# link default48.png to default.png to be used by default by non-icccm compliant wm
 	ln ${PREFIX}/lib/firefox-${MOZILLA_VERSION}/chrome/icons/default/default{48,}.png
