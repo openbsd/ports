@@ -1,10 +1,10 @@
-$OpenBSD: patch-rf2500_c,v 1.4 2011/04/02 08:22:28 jasper Exp $
+$OpenBSD: patch-rf2500_c,v 1.5 2011/08/24 12:05:55 jasper Exp $
 
 - usb_bulk_read() returns 0 on timeout, not -1
 
---- rf2500.c.orig	Sun Feb  6 23:55:37 2011
-+++ rf2500.c	Sat Apr  2 10:03:14 2011
-@@ -221,8 +221,12 @@ transport_t rf2500_open(const char *devpath)
+--- rf2500.c.orig	Wed Aug 24 06:24:16 2011
++++ rf2500.c	Wed Aug 24 13:54:24 2011
+@@ -231,8 +231,12 @@ transport_t rf2500_open(const char *devpath, const cha
  #ifndef __APPLE__
  	while (usb_bulk_read(tr->handle, USB_FET_IN_EP,
  			     buf, sizeof(buf),
