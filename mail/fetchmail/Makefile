@@ -1,21 +1,27 @@
-# $OpenBSD: Makefile,v 1.127 2011/08/21 16:41:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.128 2011/08/24 19:18:57 sthen Exp $
 
 COMMENT=	mail retrieval utility for POP2, POP3, KPOP, IMAP and more
 
 DISTNAME=	fetchmail-6.3.21
+REVISION=	0
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=fetchmail/}
 
 HOMEPAGE=	http://fetchmail.berlios.de/
 
-# GPLv2(+)
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c crypto krb5 ssl
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			lang/python
+MODPY_BUILDDEP=		No
+MODPY_RUNDEP=		No
+MODPY_ADJ_FILES=	fetchmailconf.py
+SUBST_VARS+=		MODPY_LIBDIR
 BUILD_DEPENDS=		devel/bison
 
 SEPARATE_BUILD=		concurrent
@@ -37,8 +43,7 @@ post-extract:
 	@rm -f ${WRKSRC}/rcfile_y.[ch]
 
 pre-patch:
-	@sed -e "s|@PREFIX@|${LOCALBASE}|" \
-		${FILESDIR}/fetchmailconf > ${WRKDIR}/fetchmailconf
+	${SUBST_CMD} -c ${FILESDIR}/fetchmailconf ${WRKDIR}/fetchmailconf
 	@tbl ${WRKSRC}/fetchmail.man > ${WRKSRC}/fetchmail.tbl && \
 		cp -f ${WRKSRC}/fetchmail.tbl ${WRKSRC}/fetchmail.man
 

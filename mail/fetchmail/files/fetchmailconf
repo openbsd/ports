@@ -4,15 +4,12 @@
 # and runs the real fetchmailconf or alerts the user, as appropriate.
 #
 
-PREFIX=@PREFIX@
-
-if [ -x $PREFIX/bin/python ]; then
-	exec $PREFIX/libexec/fetchmailconf.bin
+if [ -x ${MODPY_BIN} -a -d ${MODPY_LIBDIR}/lib-tk ]; then
+	exec ${PREFIX}/libexec/fetchmailconf.bin
 else
 	cat <<EOF
-The fetchmailconf program requires Python, which does not appear to be
-installed on this system. Python can be found in the OpenBSD Ports
-Collection under lang/python.
+Please install the python and python-tkinter packages, then try running
+fetchmailconf again.
 EOF
 	exit 1
 fi
