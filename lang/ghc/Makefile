@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2011/07/23 16:38:54 kili Exp $
+# $OpenBSD: Makefile,v 1.58 2011/08/24 18:31:39 kili Exp $
 
 COMMENT-main =		compiler for the functional language Haskell
 COMMENT-doc =		documentation for GHC
@@ -139,5 +139,49 @@ do-regress:
 	exec ${SETENV} ${MAKE_ENV} HS_ENCODING=utf-8 \
 		${MAKE_PROGRAM} ${MAKE_FLAGS} \
 		PYTHON="${MODPY_BIN}"
+
+
+
+# It doesn't matter wether this is the actual date of the bootstrapper
+# build. It's just used to get different distfiles whenever new
+# bootstrappers have to be built.
+BOOTSTRAP_DATE =	20110824
+
+# Create a bootstrapper. This compiles a stripped-down version of
+# ghc and creates a `bindist', i.e. a tarball with binaries that
+# can be used for bootstrapping.
+# You have to install gtar in order to run this target!
+bootstrap: patch
+	cd ${WRKDIR} && rm -rf bin
+
+	echo HSCOLOUR_SRCS=NO > ${WRKSRC}/mk/build.mk
+	echo GhcLibHcOpts=-O -fgenerics -fasm >> ${WRKSRC}/mk/build.mk
+	echo GhcStage1HcOpts=-O -fasm >> ${WRKSRC}/mk/build.mk
+	echo GhcStage2HcOpts=-O -fasm >> ${WRKSRC}/mk/build.mk
+	echo SplitObjs=NO >> ${WRKSRC}/mk/build.mk
+	echo GhcLibWays=v >> ${WRKSRC}/mk/build.mk
+	echo GhcRTSWays= >> ${WRKSRC}/mk/build.mk
+	echo GhcWithInterpreter=NO >> ${WRKSRC}/mk/build.mk
+	echo INTEGER_LIBRARY=integer-simple >> ${WRKSRC}/mk/build.mk
+	echo SRC_CC_OPTS+=-g -O0 >> ${WRKSRC}/mk/build.mk
+	echo HADDOCK_DOCS=NO >> ${WRKSRC}/mk/build.mk
+	echo LATEX_DOCS=NO >> ${WRKSRC}/mk/build.mk
+	echo BUILD_DOCBOOK_HTML=NO >> ${WRKSRC}/mk/build.mk
+	echo BUILD_DOCBOOK_PDF=NO >> ${WRKSRC}/mk/build.mk
+	echo BUILD_DOCBOOK_PS=NO >> ${WRKSRC}/mk/build.mk
+	echo GhcWithSMP=NO >> ${WRKSRC}/mk/build.mk
+	echo INSTALL_BIN_OPTS=-s >> ${WRKSRC}/mk/build.mk
+
+	echo ${BOOTSTRAP_DATE} > ${WRKSRC}/VERSION_DATE
+
+	env CONFIGURE_ENV=RELEASE=NO ${MAKE} configure
+
+	env MAKE_ENV="AUTOCONF_VERSION=2.61 AUTOMAKE_VERSION=1.4" \
+	${MAKE} build ALL_TARGET="all binary-dist" \
+
+	cd ${WRKSRC} && \
+	pre=ghc-${MODGHC_VER}.$$(cat VERSION_DATE) && \
+	suf=unknown-openbsd.tar.bz2 && \
+	mv "$$pre-x86_64-$$suf" "$$pre-amd64-$$suf" || true
 
 .include <bsd.port.mk>
