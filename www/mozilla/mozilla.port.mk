@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.34 2011/08/23 20:09:54 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.35 2011/08/24 06:16:48 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS=	alpha amd64 arm i386 powerpc sparc64
@@ -11,13 +11,14 @@ PKGNAME ?=	${MOZILLA_PROJECT}-${MOZILLA_VERSION}
 
 MAINTAINER ?=	Landry Breuil <landry@openbsd.org>
 
-_MOZ_PROJECT_SHORT =	${MOZILLA_PROJECT:S/mozilla-//}
+MOZILLA_DIST ?=	${MOZILLA_PROJECT}
+MOZILLA_DIST_VERSION ?=	${MOZILLA_VERSION}
 
-HOMEPAGE ?=	http://www.mozilla.org/projects/${_MOZ_PROJECT_SHORT}
+HOMEPAGE ?=	http://www.mozilla.org/projects/${MOZILLA_DIST}
 
-MASTER_SITES ?=	http://releases.mozilla.org/pub/mozilla.org/${_MOZ_PROJECT_SHORT}/releases/${MOZILLA_VERSION}/source/ \
-		ftp://ftp.mozilla.org/pub/mozilla.org/${_MOZ_PROJECT_SHORT}/releases/${MOZILLA_VERSION}/source/
-DISTNAME ?=	${_MOZ_PROJECT_SHORT}-${MOZILLA_VERSION}.source
+MASTER_SITES ?=	http://releases.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/ \
+		ftp://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/
+DISTNAME ?=	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}.source
 EXTRACT_SUFX ?=	.tar.bz2
 DIST_SUBDIR ?=	mozilla
 
@@ -172,13 +173,13 @@ do-install:
 			-exec ${INSTALL_DATA} -m 644 {} ${MOZ}/{} \;
 	${INSTALL_DATA} ${MOB}/*.so.${SO_VERSION} ${MOB}/*.ini ${MOZ}
 	# install shell wrapper to ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${MOB}/${_MOZ_PROJECT_SHORT} ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${MOB}/${MOZILLA_PROJECT} ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${MOB}/run-mozilla.sh ${MOZ}
-	${INSTALL_PROGRAM} ${MOB}/${_MOZ_PROJECT_SHORT}-bin ${MOB}/mozilla-xremote-client ${MOZ}
+	${INSTALL_PROGRAM} ${MOB}/${MOZILLA_PROJECT}-bin ${MOB}/mozilla-xremote-client ${MOZ}
 	${INSTALL_PROGRAM} ${MOB}/regxpcom ${MOZ}
-	if [ -f ${FILESDIR}/${_MOZ_PROJECT_SHORT}.desktop ] ; then \
+	if [ -f ${FILESDIR}/${MOZILLA_PROJECT}.desktop ] ; then \
 		${INSTALL_DATA_DIR} ${PREFIX}/share/applications/ ; \
-		${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${_MOZ_PROJECT_SHORT}.desktop \
-			${PREFIX}/share/applications/${_MOZ_PROJECT_SHORT}.desktop ; \
+		${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} -c ${FILESDIR}/${MOZILLA_PROJECT}.desktop \
+			${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop ; \
 	fi ;
 .endif
