@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2011/06/05 15:16:48 robert Exp $
+# $OpenBSD: Makefile,v 1.62 2011/08/24 10:01:21 espie Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
@@ -93,7 +93,7 @@ pre-configure:
 
 # Force using the internal mcs compiler
 pre-build:
-	@mkdir ${WRKSRC}/mcs/build/deps
+	@mkdir -p ${WRKSRC}/mcs/build/deps
 	@touch ${WRKSRC}/mcs/build/deps/use-monolite
 
 .include <bsd.port.mk>
