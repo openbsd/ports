@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure,v 1.5 2011/04/15 18:50:06 ajacoutot Exp $
---- configure.orig	Fri Feb 18 13:30:24 2011
-+++ configure	Fri Apr 15 20:46:47 2011
+$OpenBSD: patch-configure,v 1.6 2011/08/25 10:40:29 ajacoutot Exp $
+--- configure.orig	Mon Jul 25 11:51:22 2011
++++ configure	Thu Aug 25 12:24:42 2011
 @@ -4038,15 +4038,15 @@ LIBS="$save_LIBS"
  
  # Checks for programs/directories which are used by Foomtic
@@ -10,8 +10,8 @@ $OpenBSD: patch-configure,v 1.5 2011/04/15 18:50:06 ajacoutot Exp $
 -SYSCONFSEARCHPATH=/etc:/usr/etc:/usr/local/etc:/var/etc
 -SBINSEARCHPATH=/usr/sbin:/sbin:/usr/local/sbin:/etc/sbin
 -BINSEARCHPATH=/usr/bin:/bin:/usr/local/bin
--DATASEARCHPATH=/usr/share:/usr/local/share:/usr/lib:/usr/local/lib:/opt
--LIBSEARCHPATH=/usr/lib:/lib:/usr/local/lib:/usr/local/libexec:/opt
+-DATASEARCHPATH=/usr/share:/usr/local/share:$libdir:/usr/local/lib:/opt
+-LIBSEARCHPATH=$libdir:/lib:/usr/local/lib:/usr/local/libexec:/opt
 -PTALPIPESSEARCHPATH=/var/run:/var:/var/ptal:/usr/var/run:/usr/var:/usr/var/ptal:/usr/local/var/run:/usr/local/var:/usr/local/var/ptal:/dev:/dev/ptal
 -MTINKPIPESSEARCHPATH=/var:/var/run:/usr/var/:/usr/var/run:/usr/local/var:/usr/local/var/run:/dev
 +SPOOLSEARCHPATH=/var/spool
@@ -20,7 +20,7 @@ $OpenBSD: patch-configure,v 1.5 2011/04/15 18:50:06 ajacoutot Exp $
 +SBINSEARCHPATH=/usr/sbin:/sbin:!!LOCALBASE!!/sbin:/etc/sbin
 +BINSEARCHPATH=/usr/bin:/bin:!!LOCALBASE!!/bin
 +DATASEARCHPATH=/usr/share:!!LOCALBASE!!/share:/usr/lib:!!LOCALBASE!!/lib
-+LIBSEARCHPATH=/usr/lib:/lib:!!LOCALBASE!!/lib:!!LOCALBASE!!/libexec:
++LIBSEARCHPATH=/usr/lib:/lib:!!LOCALBASE!!/lib:!!LOCALBASE!!/libexec
 +PTALPIPESSEARCHPATH=/var/run
 +MTINKPIPESSEARCHPATH=/var/run
  

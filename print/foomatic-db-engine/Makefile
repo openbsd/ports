@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2011/04/15 18:50:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/08/25 10:40:29 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD generator
 
-DISTNAME=		foomatic-db-engine-4.0.7
+DISTNAME=		foomatic-db-engine-4.0.8
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.linux-foundation.org/en/OpenPrinting/Database/Foomatic
@@ -68,10 +68,10 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2"
 			CUPS_LPC="${LOCALBASE}/sbin/lpc" \
 			CUPS_LP="${LOCALBASE}/bin/lp" \
 			CUPS_CANCEL="${LOCALBASE}/bin/cancel" \
-			CUPS_ENABLE="${LOCALBASE}/bin/enable" \
-			CUPS_DISABLE="${LOCALBASE}/bin/disable" \
-			CUPS_ACCEPT="${LOCALBASE}/sbin/accept" \
-			CUPS_REJECT="${LOCALBASE}/sbin/reject" \
+			CUPS_ENABLE="${LOCALBASE}/sbin/cupsenable" \
+			CUPS_DISABLE="${LOCALBASE}/sbin/cupsdisable" \
+			CUPS_ACCEPT="${LOCALBASE}/sbin/cupsaccept" \
+			CUPS_REJECT="${LOCALBASE}/sbin/cupsreject" \
 			CUPS_LPMOVE="${LOCALBASE}/sbin/lpmove" \
 			CUPS_LPOPTIONS="${LOCALBASE}/bin/lpoptions" \
 			CUPS_LPINFO="${LOCALBASE}/sbin/lpinfo" \
