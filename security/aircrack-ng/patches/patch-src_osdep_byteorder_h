@@ -1,10 +1,21 @@
-$OpenBSD: patch-src_osdep_byteorder_h,v 1.1 2011/05/21 11:19:24 fgsch Exp $
---- src/osdep/byteorder.h.orig	Fri Jan 22 01:01:28 2010
-+++ src/osdep/byteorder.h	Sun May  1 08:21:24 2011
-@@ -212,6 +212,19 @@
+$OpenBSD: patch-src_osdep_byteorder_h,v 1.2 2011/08/25 12:51:56 naddy Exp $
+--- src/osdep/byteorder.h.orig	Wed Aug 24 21:36:30 2011
++++ src/osdep/byteorder.h	Wed Aug 24 21:55:32 2011
+@@ -167,7 +167,7 @@
+ 	 * Solaris
+ 	 * -------
+ 	 */
+-	#if defined(__sparc__)
++	#if defined(__sun) && defined(__SVR4)
+ 	#include <sys/byteorder.h>
+ 	#include <sys/types.h>
+ 	#include <unistd.h>
+@@ -210,6 +210,19 @@
+ 	// FreeBSD
+ 	#ifdef __FreeBSD__
  		#include <machine/endian.h>
- 	#endif
- 
++	#endif
++
 +	#ifdef __OpenBSD__
 +		#include <machine/endian.h>
 +
@@ -16,8 +27,6 @@ $OpenBSD: patch-src_osdep_byteorder_h,v 1.1 2011/05/21 11:19:24 fgsch Exp $
 +		#define __le16_to_cpu(x)	letoh16(x)
 +
 +		#define AIRCRACK_NG_BYTE_ORDER_DEFINED
-+	#endif
-+
+ 	#endif
+ 
  	// XXX: Is there anything to include on OpenBSD/NetBSD/DragonFlyBSD/...?
- 
- 
