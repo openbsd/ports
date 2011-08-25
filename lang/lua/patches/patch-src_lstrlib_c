@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_lstrlib_c,v 1.3 2008/11/07 12:23:12 jsg Exp $
---- src/lstrlib.c.orig	Sat Jul 12 03:27:21 2008
-+++ src/lstrlib.c	Thu Nov  6 21:43:39 2008
+$OpenBSD: patch-src_lstrlib_c,v 1.4 2011/08/25 07:02:42 jasper Exp $
+--- src/lstrlib.c.orig	Wed Aug 24 22:24:32 2011
++++ src/lstrlib.c	Wed Aug 24 22:24:32 2011
 @@ -746,10 +746,9 @@ static const char *scanformat (lua_State *L, const cha
  
  static void addintlen (char *form) {
@@ -15,7 +15,7 @@ $OpenBSD: patch-src_lstrlib_c,v 1.3 2008/11/07 12:23:12 jsg Exp $
  }
  
  
-@@ -772,22 +771,24 @@ static int str_format (lua_State *L) {
+@@ -774,22 +773,24 @@ static int str_format (lua_State *L) {
        strfrmt = scanformat(L, strfrmt, form);
        switch (*strfrmt++) {
          case 'c': {
@@ -44,7 +44,7 @@ $OpenBSD: patch-src_lstrlib_c,v 1.3 2008/11/07 12:23:12 jsg Exp $
            break;
          }
          case 'q': {
-@@ -805,7 +806,7 @@ static int str_format (lua_State *L) {
+@@ -807,7 +808,7 @@ static int str_format (lua_State *L) {
              continue;  /* skip the `addsize' at the end */
            }
            else {

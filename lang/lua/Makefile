@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2010/10/24 21:06:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2011/08/25 07:02:42 jasper Exp $
 
 COMMENT=	powerful, light-weight programming language
 
 DISTNAME=	lua-5.1.4
-REVISION=	1
+REVISION=	2
 CATEGORIES=	lang
 
 MASTER_SITES=	http://www.lua.org/ftp/ \
@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.lua.org/ftp/ \
 		http://ftp.ntua.gr/pub/lang/lua/ \
 		http://ftp.chg.ru/pub/lang/lua/
 
-PATCHFILES=	patch-${DISTNAME}-2
+PATCHFILES=	patch-${DISTNAME}-3
 PATCH_DIST_ARGS=-z .bak.orig -d ${WRKSRC}/src
 
 HOMEPAGE=	http://www.lua.org/
