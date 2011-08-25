@@ -1,19 +1,23 @@
-$OpenBSD: patch-unix_Makefile_in,v 1.1.1.1 2011/03/12 08:53:52 sebastia Exp $
+$OpenBSD: patch-unix_Makefile_in,v 1.2 2011/08/25 12:50:28 naddy Exp $
 
+don't override CFLAGS
 sndio bits
 install to OpenBSD tcl layout
 
 
 --- unix/Makefile.in.orig	Wed Dec 14 12:29:39 2005
-+++ unix/Makefile.in	Mon Jan 17 13:55:43 2011
-@@ -29,7 +29,7 @@ TCL_VERSION = @TCLVER@
++++ unix/Makefile.in	Wed Aug 24 18:00:55 2011
+@@ -29,9 +29,9 @@ TCL_VERSION = @TCLVER@
  
  CC        = @CC@
  
 -INCLUDES  = ${XINCLUDES} @TCL_INCLUDE_SPEC@ -I${TCL_INCPATH} -I${TK_INCPATH} @AINC@ @NISTINC@
 +INCLUDES  = ${XINCLUDES} @TCL_INCLUDE_SPEC@ @TK_INCLUDE_SPEC@ -I${TCL_INCPATH} -I${TK_INCPATH} @AINC@ @NISTINC@
  
- CFLAGS    = -O @CFLAGS@ @AFLAG@ ${INCLUDES} @TCLAPI@ -I${GENERIC_DIR} @DEFS@
+-CFLAGS    = -O @CFLAGS@ @AFLAG@ ${INCLUDES} @TCLAPI@ -I${GENERIC_DIR} @DEFS@
++CFLAGS    = @CFLAGS@ @AFLAG@ ${INCLUDES} @TCLAPI@ -I${GENERIC_DIR} @DEFS@
+ 
+ LIBSO     = -lc @ALIB@ @TCL_LIB_SPEC@
  
 @@ -124,6 +124,9 @@ jkAudIO_hp.o: $(UNIX_DIR)/jkAudIO_hp.c
  jkAudIO_sun.o: $(UNIX_DIR)/jkAudIO_sun.c

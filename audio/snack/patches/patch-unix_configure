@@ -1,9 +1,10 @@
-$OpenBSD: patch-unix_configure,v 1.1.1.1 2011/03/12 08:53:52 sebastia Exp $
+$OpenBSD: patch-unix_configure,v 1.2 2011/08/25 12:50:28 naddy Exp $
 
 mostly sndio bits
+don't clobber CFLAGS
 
 --- unix/configure.orig	Wed Dec 14 12:29:39 2005
-+++ unix/configure	Mon Jan 17 13:55:12 2011
++++ unix/configure	Wed Aug 24 18:00:33 2011
 @@ -308,7 +308,7 @@ ac_includes_default="\
  # include <unistd.h>
  #endif"
@@ -13,6 +14,15 @@ mostly sndio bits
  ac_subst_files=''
  
  # Initialize some variables set by options.
+@@ -1487,7 +1487,7 @@ if test "$TCL_SHARED_BUILD" = 0; then
+ echo "$as_me: error: Tcl and Tk must be configured with the --enable-shared flag" >&2;}
+    { (exit 1); exit 1; }; }
+ fi
+-CFLAGS=$TCL_SHLIB_CFLAGS
++CFLAGS="$CFLAGS $TCL_SHLIB_CFLAGS"
+ LD_SEARCH_FLAGS=$TCL_LD_SEARCH_FLAGS
+ SHLIB_LD=$TCL_SHLIB_LD
+ SHLIB_SUFFIX=$TCL_SHLIB_SUFFIX
 @@ -1554,11 +1554,16 @@ case $system in
  	AFLAG="-DOSS"
  	AOBJ="jkAudIO_oss.o"
