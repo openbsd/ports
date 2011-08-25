@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/08 08:39:02 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2011/08/25 09:20:27 ajacoutot Exp $
 
 COMMENT=	cryptographic library
 
-DISTNAME=	nettle-2.1
+DISTNAME=	nettle-2.2
 PKGNAME=	lib${DISTNAME}
-REVISION =	0
 
-SHARED_LIBS +=  hogweed                   0.0 # 2.0
-SHARED_LIBS +=  nettle                    0.0 # 4.0
+SHARED_LIBS +=  hogweed                   0.1 # 2.1
+SHARED_LIBS +=  nettle                    0.1 # 4.1
 
 CATEGORIES=	security devel
 
 HOMEPAGE=	http://www.lysator.liu.se/~nisse/nettle/
 
-# GPLv2 - LGPLv2.1
+# LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes

@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/04/15 16:08:01 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/08/25 09:20:27 ajacoutot Exp $
 %%SHARED%%
+@bin bin/nettle-hash
 @bin bin/nettle-lfib-stream
 @bin bin/pkcs1-conv
 @bin bin/sexp-conv
@@ -20,6 +21,7 @@ include/nettle/ctr.h
 include/nettle/des-compat.h
 include/nettle/des.h
 include/nettle/dsa.h
+include/nettle/gcm.h
 include/nettle/hmac.h
 include/nettle/knuth-lfib.h
 include/nettle/macros.h
