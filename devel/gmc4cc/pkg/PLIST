@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/25 18:53:35 jasper Exp $
+@bin bin/gmc4cc

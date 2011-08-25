@@ -1,0 +1,5 @@
+C compiler for the Gakken GMC-4 4-bit microcomputer.
+Output is in (optionally optimized) F-Maikon R-165 assembler.
+
+Use as:
+    gmc4cc < input.c > output.s
