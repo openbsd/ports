@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.1 2011/06/30 12:07:59 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.2 2011/08/25 07:10:47 jasper Exp $
 
 SHARED_ONLY?=		Yes
 
@@ -15,6 +15,7 @@ PERMIT_DISTFILES_CDROM?= Yes
 PERMIT_DISTFILES_FTP?=	Yes
 
 MASTER_SITES?=		http://distfiles.nl/
+DIST_SUBDIR=		libgit
 
 TAR?=			${LOCALBASE}/bin/gtar
 BUILD_DEPENDS+= 	archivers/gtar
