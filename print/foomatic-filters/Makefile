@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2011/06/02 13:41:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2011/08/25 10:39:46 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD print filters
 
-DISTNAME=		foomatic-filters-4.0.7
+DISTNAME=		foomatic-filters-4.0.9
 CATEGORIES=		print
-
-REVISION=		2
 
 HOMEPAGE=		http://www.linuxfoundation.org/en/OpenPrinting/Database/Foomatic
 
@@ -49,7 +47,8 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			ENSCRIPT="${LOCALBASE}/bin/enscript" \
 			MPAGE="${LOCALBASE}/bin/mpage"
 
-CONFIGURE_ARGS=		--enable-file-converter-check=no
+CONFIGURE_ARGS=		--enable-file-converter-check=no \
+			--enable-dbus=no # only useful for colord which we don't have yet
 
 MAKE_ENV=		${CONFIGURE_ENV}
 
