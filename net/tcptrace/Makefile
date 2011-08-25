@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/19 22:31:38 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/08/25 22:40:21 bluhm Exp $
 
 COMMENT=		TCP dump file analysis tool
 
 DISTNAME=		tcptrace-6.6.7
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 HOMEPAGE=		http://masaka.cs.ohiou.edu/software/tcptrace/
 MASTER_SITES=		${HOMEPAGE}download/

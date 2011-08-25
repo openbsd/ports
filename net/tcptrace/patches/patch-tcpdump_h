@@ -1,0 +1,13 @@
+$OpenBSD: patch-tcpdump_h,v 1.1 2011/08/25 22:40:21 bluhm Exp $
+--- tcpdump.h.orig	Wed Nov 19 15:38:08 2003
++++ tcpdump.h	Wed Feb  9 23:14:31 2011
+@@ -83,7 +83,8 @@ static char const GCC_UNUSED rcsid_tcpdump[] =
+ #define PCAP_DLT_PPP            9       /* Point-to-Point Protocol */
+ #define PCAP_DLT_FDDI		10	/* FDDI */
+ #define PCAP_DLT_ATM_RFC1483	11	/* LLC/SNAP encapsulated atm */
+-#define PCAP_DLT_RAW		12	/* raw IP */
++#define PCAP_DLT_LOOP		12	/* loopback type (af header) */
++#define PCAP_DLT_RAW		14	/* raw IP */
+ #define PCAP_DLT_C_HDLC         104     /* Cisco HDLC */
+ #define PCAP_DLT_IEEE802_11     105     /* IEEE 802.11 wireless */
+ #define PCAP_DLT_LINUX_SLL      113     /* Linux cooked socket */

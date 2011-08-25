@@ -1,0 +1,36 @@
+$OpenBSD: patch-tcpdump_c,v 1.3 2011/08/25 22:40:21 bluhm Exp $
+--- tcpdump.c.orig	Thu Oct  7 22:07:30 2004
++++ tcpdump.c	Sun May 22 22:54:01 2011
+@@ -189,6 +189,22 @@ static int callback(
+ 	memcpy((char*)ip_buf,buf+8,iplen-8);
+ 	callback_plast = ip_buf+iplen-8-1;
+ 	break;
++      case PCAP_DLT_LOOP:
++	/* loopback type (af header) */
++	switch (ntohl(*(u_int *)buf)) {
++	case AF_INET:
++		eth_header.ether_type = htons(ETHERTYPE_IP);
++		break;
++	case AF_INET6:
++		eth_header.ether_type = htons(ETHERTYPE_IPV6);
++		break;
++	default:
++		eth_header.ether_type = 0;
++	}
++	offset = 4;
++	memcpy((char *)ip_buf,buf+offset,iplen-offset);
++	callback_plast = ip_buf+iplen-offset-1;
++	break;
+       case PCAP_DLT_RAW:
+ 	/* raw IP */
+ 	offset = 0;
+@@ -363,6 +379,9 @@ pread_f *is_tcpdump(char *filename)
+       case PCAP_DLT_ATM_RFC1483:
+ 	eth_header.ether_type = htons(ETHERTYPE_IP);
+ 	physname = "ATM, LLC/SNAP encapsulated";
++	break;
++      case PCAP_DLT_LOOP:
++	physname = "LOOP";
+ 	break;
+       case PCAP_DLT_RAW:
+ 	eth_header.ether_type = htons(ETHERTYPE_IP);
