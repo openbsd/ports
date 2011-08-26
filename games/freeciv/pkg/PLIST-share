@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-share,v 1.10 2010/10/24 20:36:44 sthen Exp $
+@comment $OpenBSD: PLIST-share,v 1.11 2011/08/26 09:13:36 jasper Exp $
 share/freeciv/
 share/freeciv/civ1/
 share/freeciv/civ1.serv
 share/freeciv/civ1/buildings.ruleset
+share/freeciv/civ1/cities.ruleset
 share/freeciv/civ1/effects.ruleset
 share/freeciv/civ1/game.ruleset
 share/freeciv/civ1/governments.ruleset
