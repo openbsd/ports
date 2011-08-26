@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2010/12/17 22:06:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/08/26 09:22:06 jasper Exp $
 
 COMMENT=	client and server-side SOAP implementation
 
-DISTNAME=	SOAP-Lite-0.712
-REVISION=	0
+DISTNAME=	SOAP-Lite-0.713
 CATEGORIES=	www
-USE_GROFF =	Yes
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
