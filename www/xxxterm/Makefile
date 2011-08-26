@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.20 2011/07/18 19:48:39 kili Exp $
+# $OpenBSD: Makefile,v 1.21 2011/08/26 14:31:47 gsoares Exp $
 
 COMMENT =		vi-like minimalists web browser
-DISTNAME =		xxxterm-1.425
+DISTNAME =		xxxterm-1.500
 CATEGORIES =		www
 
 HOMEPAGE =		http://opensource.conformal.com/wiki/XXXTerm
@@ -41,6 +41,7 @@ do-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/xxxterm.conf ${EXAMPLEDIR}
 	${INSTALL_DATA} ${WRKSRC}/favorites ${EXAMPLEDIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/playflash.sh ${EXAMPLEDIR}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/xxxterm/
 	${INSTALL_DATA} ${WRKSRC}/xxxtermicon*.png ${PREFIX}/share/xxxterm/
 	${INSTALL_DATA} ${WRKSRC}/style.css ${PREFIX}/share/xxxterm/
