@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/07/06 04:18:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/08/26 11:30:32 jasper Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	2D adventure platformer game
 
-DISTNAME=	frogatto-1.1
+DISTNAME=	frogatto-1.1.1
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	games
