@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/28 19:49:09 dhill Exp $
+# $OpenBSD: Makefile,v 1.2 2011/08/26 09:14:53 jasper Exp $
 
 COMMENT=		bringing loggers and listeners together	
 
 MODULES=		cpan
-DISTNAME=		Log-Any-0.11
+DISTNAME=		Log-Any-0.13
 CATEGORIES=		devel
 
 MAINTAINER=		David Hill <dhill@openbsd.org>
