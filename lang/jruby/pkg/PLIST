@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/07/19 17:57:47 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/08/26 22:11:47 jeremy Exp $
 jruby/
 jruby/bin/
 jruby/bin/ast
@@ -65,6 +65,7 @@ jruby/lib/ruby/1.8/date2.rb
 jruby/lib/ruby/1.8/debug.rb
 jruby/lib/ruby/1.8/delegate.rb
 jruby/lib/ruby/1.8/digest/
+jruby/lib/ruby/1.8/digest.rb
 jruby/lib/ruby/1.8/digest/sha2.rb
 jruby/lib/ruby/1.8/dl/
 jruby/lib/ruby/1.8/dl.rb
