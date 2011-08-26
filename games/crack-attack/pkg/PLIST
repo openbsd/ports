@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2007/10/19 19:31:33 ajacoutot Exp $
-bin/crack-attack
+@comment $OpenBSD: PLIST,v 1.2 2011/08/26 09:14:11 sthen Exp $
+@bin bin/crack-attack
 @man man/man6/crack-attack.6
+share/applications/crack-attack.desktop
 share/crack-attack/
 share/crack-attack/clock_0.tga
 share/crack-attack/clock_1.tga
@@ -155,3 +156,7 @@ share/crack-attack/sign_x6.tga
 share/crack-attack/sign_x7.tga
 share/crack-attack/sign_x8.tga
 share/crack-attack/sign_x9.tga
+share/pixmaps/
+share/pixmaps/crack-attack.xpm
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

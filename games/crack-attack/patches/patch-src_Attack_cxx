@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_Attack_cxx,v 1.1 2009/04/09 13:01:53 jasper Exp $
---- src/Attack.cxx.orig        Sun Nov  9 18:45:06 2008
-+++ src/Attack.cxx     Sun Nov  9 18:45:58 2008
+$OpenBSD: patch-src_Attack_cxx,v 1.2 2011/08/26 09:14:11 sthen Exp $
+--- src/Attack.cxx.orig	Fri May 13 20:00:02 2005
++++ src/Attack.cxx	Thu Aug 25 14:44:25 2011
 @@ -83,6 +83,7 @@ int main ( int argc, char **argv )
    int height = -1, width = -1;
    
