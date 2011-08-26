@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/12/03 11:44:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/08/26 09:18:03 jasper Exp $
 
 COMMENT=        forbids warnings while testing
 
 MODULES=	cpan
-DISTNAME=	Test-NoWarnings-0.084
-REVISION=	0
+DISTNAME=	Test-NoWarnings-1.03
 CATEGORIES=     devel
-USE_GROFF =	Yes
 
 MAINTAINER=	Simon Bertrang <simon@openbsd.org>
 
@@ -16,7 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-RUN_DEPENDS=	devel/p5-Test-Tester
+RUN_DEPENDS=	devel/p5-Test-Tester>=0.107
 
 REGRESS_DEPENDS=devel/p5-Devel-StackTrace
 
