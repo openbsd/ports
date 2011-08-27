@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.962 2011/08/25 18:54:12 jasper Exp $
+# $OpenBSD: Makefile,v 1.963 2011/08/27 06:47:46 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -300,6 +300,7 @@
      SUBDIR += libvstr
      SUBDIR += libwnck
      SUBDIR += libwnck3
+     SUBDIR += libxsvf
      SUBDIR += libyajl
      SUBDIR += libyaml
      SUBDIR += llvm
