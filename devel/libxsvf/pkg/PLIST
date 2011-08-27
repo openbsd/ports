@@ -1,0 +1,27 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/27 06:46:20 jasper Exp $
+@bin bin/xsvftool-bp
+@bin bin/xsvftool-ft2232h
+@bin bin/xsvftool-gpio
+@bin bin/xsvftool-xpcu
+include/libxsvf.h
+lib/libxsvf.a
+share/doc/libxsvf/
+share/doc/libxsvf/xsvftool-xpcu/
+share/doc/libxsvf/xsvftool-xpcu/README
+share/doc/libxsvf/xsvftool-xpcu/erasecpld.svf
+share/doc/libxsvf/xsvftool-xpcu/firmware.ihx
+share/doc/libxsvf/xsvftool-xpcu/genfx2hrd.sh
+share/doc/libxsvf/xsvftool-xpcu/hardware.sh
+share/doc/libxsvf/xsvftool-xpcu/hardware.svf
+share/doc/libxsvf/xsvftool-xpcu/hardware.ucf
+share/doc/libxsvf/xsvftool-xpcu/hardware.v
+share/doc/libxsvf/xsvftool-xpcu/hardware_cksum_c.inc
+share/doc/libxsvf/xsvftool-xpcu/hardware_cksum_vl.inc
+share/doc/libxsvf/xsvftool-xpcu/prep_erasecpld.svf
+share/doc/libxsvf/xsvftool-xpcu/prep_firmware.ihx
+share/doc/libxsvf/xsvftool-xpcu/prep_hardware.svf
+share/doc/libxsvf/xsvftool-xpcu/reset-probe-impact.sh
+share/examples/libxsvf/
+share/examples/libxsvf/xsvftool-bp.c
+share/examples/libxsvf/xsvftool-ft2232h.c
+share/examples/libxsvf/xsvftool-gpio.c

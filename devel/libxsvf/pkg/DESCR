@@ -1,0 +1,6 @@
+libxsvf is a library that be used to access the JTAG interface on an
+embedded device using an embedded host processor or microcontroller
+instead of using an external JTAG probe.
+
+In addition to playing SVF and XSVF files this library is also capable
+of scanning the devices in the JTAG chain.

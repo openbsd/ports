@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makefile,v 1.1.1.1 2011/08/27 06:46:20 jasper Exp $
+--- Makefile.orig	Thu Aug 25 09:18:49 2011
++++ Makefile	Sat Aug 27 08:45:15 2011
+@@ -22,9 +22,9 @@
+ 
+ AR = ar
+ RANLIB = ranlib
+-CC = gcc
++CC ?= gcc
+ 
+-CFLAGS += -Wall -Os -ggdb -MD
++CFLAGS += -Wall -ggdb -MD $(EXTRA_CFLAGS)
+ #CFLAGS += -Wextra -Wno-unused-parameter -Werror
+ 
+ help:
+@@ -68,7 +68,7 @@ libxsvf.a: tap.o statename.o memname.o svf.o xsvf.o sc
+ xsvftool-gpio: libxsvf.a xsvftool-gpio.o
+ 
+ xsvftool-ft2232h: LDLIBS+=-lftdi
+-xsvftool-ft2232h: LDFLAGS+=-pthread
++xsvftool-ft2232h: LDFLAGS+=-pthread $(EXTRA_LDFLAGS)
+ xsvftool-ft2232h.o: CFLAGS+=-pthread
+ xsvftool-ft2232h: libxsvf.a xsvftool-ft2232h.o
+ 

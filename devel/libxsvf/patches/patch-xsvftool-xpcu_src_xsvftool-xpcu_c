@@ -1,0 +1,32 @@
+$OpenBSD: patch-xsvftool-xpcu_src_xsvftool-xpcu_c,v 1.1.1.1 2011/08/27 06:46:20 jasper Exp $
+
+Implement (read-only) fmemopen() which is only found in GLIBC.
+
+--- xsvftool-xpcu.src/xsvftool-xpcu.c.orig	Thu Aug 25 10:35:19 2011
++++ xsvftool-xpcu.src/xsvftool-xpcu.c	Thu Aug 25 10:36:49 2011
+@@ -542,6 +542,25 @@ static void help()
+ 	exit(1);
+ }
+ 
++#ifndef fmemopen
++#include <assert.h>
++
++FILE *fmemopen (void *, size_t, const char *);
++
++FILE *fmemopen (void *buf, size_t size, const char *opentype)
++{
++	FILE *f;
++
++	assert(strcmp(opentype, "r") == 0);
++
++	f = tmpfile();
++	fwrite(buf, 1, size, f);
++	rewind(f);
++
++	return f;
++}
++#endif
++
+ int main(int argc, char **argv)
+ {
+ 	int rc = 0;

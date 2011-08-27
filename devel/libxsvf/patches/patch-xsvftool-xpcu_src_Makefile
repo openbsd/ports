@@ -1,0 +1,27 @@
+$OpenBSD: patch-xsvftool-xpcu_src_Makefile,v 1.1.1.1 2011/08/27 06:46:20 jasper Exp $
+--- xsvftool-xpcu.src/Makefile.orig	Thu Aug 25 09:18:49 2011
++++ xsvftool-xpcu.src/Makefile	Sat Aug 27 08:45:23 2011
+@@ -22,9 +22,9 @@ USE_PREP_HARDWARE = 1
+ 
+ LIBXSVFDIR=..
+ 
+-CC = gcc
+-CFLAGS = -Wall -Wextra -Werror -Os -ggdb -I$(LIBXSVFDIR) -MD
+-LDFLAGS = -L$(LIBXSVFDIR)
++CC ?= gcc
++CFLAGS = -Wall -Wextra -ggdb -I$(LIBXSVFDIR) -MD $(EXTRA_CFLAGS)
++LDFLAGS = -L$(LIBXSVFDIR) $(EXTRA_LDFLAGS)
+ LDLIBS = -lusb -lreadline -lxsvf
+ 
+ SDCC = sdcc
+@@ -59,8 +59,8 @@ $(LIBXSVFDIR)/libxsvf.a:
+ 	$(MAKE) -C $(LIBXSVFDIR) libxsvf.a
+ 
+ hardware_cksum_vl.inc hardware_cksum_c.inc: hardware.sh hardware.ucf hardware.v
+-	echo "'h$$(cat $^ | md5sum | cut -c1-6 | tr a-z A-Z)" > hardware_cksum_vl.inc
+-	echo "\"$$(cat $^ | md5sum | cut -c1-6 | tr a-z A-Z)\"" > hardware_cksum_c.inc
++	echo "'h$$(cat $^ | md5 | cut -c1-6 | tr a-z A-Z)" > hardware_cksum_vl.inc
++	echo "\"$$(cat $^ | md5 | cut -c1-6 | tr a-z A-Z)\"" > hardware_cksum_c.inc
+ 
+ filedata.h: hardware.svf erasecpld.svf firmware.ihx
+ 	{ echo "unsigned char hardware_svf[] = { " && perl -pe 's/(.)/ord($$1).","/sge' hardware.svf && echo "};" && \
