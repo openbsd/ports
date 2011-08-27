@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.18 2011/07/22 10:19:23 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.19 2011/08/27 13:13:13 robert Exp $
 
 # This port currently only works with archs supporting dynamic loading
 # and has Apache that supports DSO's.
@@ -341,7 +341,7 @@ pre-configure:
 		${WRKSRC}/scripts/phpize.in \
 		${WRKSRC}/scripts/php-config.in
 
-.for i in ${MULTI_PACKAGES:N-main:N-fastcgi:S/-//g}
+.for i in ${MULTI_PACKAGES:N-main:N-fastcgi:N-fpm:S/-//g}
 MODULE_NAME-${i}=	${i}
 DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
 MESSAGE-${i}=		${.CURDIR}/../files/MESSAGE-ext
@@ -367,12 +367,16 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/php-${PV}
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cli/php ${PREFIX}/bin/php-${PV}
 	${INSTALL_PROGRAM} ${WRKBUILD}/sapi/cgi/php-cgi ${PREFIX}/bin/php-fastcgi-${PV}
+.if ${V:M5.3*}
+	${INSTALL_DATA} ${WRKBUILD}/sapi/fpm/php-fpm.conf \
+		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
+.endif
 	${INSTALL_DATA} ${.CURDIR}/../files/php.conf \
 		${PREFIX}/share/examples/php-${PV}/php.conf
 	@perl -pi -e "s,!!PREFIX!!,${TRUEPREFIX},g;s,!!PV!!,${PV},g" \
 		${PREFIX}/share/examples/php-${PV}/php.conf
 
-.for m in ${MULTI_PACKAGES:N-main:N-fastcgi:S/-//g}
+.for m in ${MULTI_PACKAGES:N-main:N-fastcgi:N-fpm:S/-//g}
 	${INSTALL_DATA} ${WRKBUILD}/modules/${m}.so \
 		${PREFIX}/${MODULES_SUBDIR}/${m}.so
 	echo "extension=${m}.so" > \

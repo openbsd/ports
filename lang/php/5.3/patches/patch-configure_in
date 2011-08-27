@@ -1,6 +1,6 @@
-$OpenBSD: patch-configure_in,v 1.3 2011/06/18 19:49:50 sthen Exp $
---- configure.in.orig.port	Sat Jun 18 12:14:45 2011
-+++ configure.in	Sat Jun 18 12:17:01 2011
+$OpenBSD: patch-configure_in,v 1.4 2011/08/27 13:13:13 robert Exp $
+--- configure.in.orig.port	Sat Aug  6 21:37:30 2011
++++ configure.in	Sat Aug  6 21:46:07 2011
 @@ -960,7 +960,7 @@ enable_static=yes
  
  case $php_build_target in
@@ -37,7 +37,7 @@ $OpenBSD: patch-configure_in,v 1.3 2011/06/18 19:49:50 sthen Exp $
  fi;
  
 -all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_ZEND_EX) \$(PHP_CLI_TARGET) $pharcmd"
-+all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_CLI_TARGET) \$(PHP_CGI_TARGET) $pharcmd"
++all_targets="$lcov_target \$(OVERALL_TARGET) \$(PHP_MODULES) \$(PHP_CLI_TARGET) \$(PHP_CGI_TARGET) \$(PHP_FPM_TARGET) $pharcmd"
  install_targets="$install_modules install-build install-headers install-programs $install_pear $pharcmd_install"
  
  case $PHP_SAPI in

@@ -1,16 +1,16 @@
-$OpenBSD: patch-aclocal_m4,v 1.4 2011/06/18 19:49:50 sthen Exp $
---- aclocal.m4.orig.port	Wed Jan  5 16:41:34 2011
-+++ aclocal.m4	Sat Jun 18 12:17:01 2011
+$OpenBSD: patch-aclocal_m4,v 1.5 2011/08/27 13:13:13 robert Exp $
+--- aclocal.m4.orig.port	Thu Mar 17 03:55:54 2011
++++ aclocal.m4	Sat Aug  6 21:37:33 2011
 @@ -194,7 +194,7 @@ dnl the path is interpreted relative to the top build-
  dnl
  dnl which array to append to?
  AC_DEFUN([PHP_ADD_SOURCES],[
 -  PHP_ADD_SOURCES_X($1, $2, $3, ifelse($4,cli,PHP_CLI_OBJS,ifelse($4,sapi,PHP_SAPI_OBJS,PHP_GLOBAL_OBJS)))
-+  PHP_ADD_SOURCES_X($1, $2, $3, ifelse($4,cli,PHP_CLI_OBJS,ifelse($4,sapi,PHP_SAPI_OBJS,ifelse($4,cgi,PHP_CGI_OBJS,PHP_GLOBAL_OBJS))))
++  PHP_ADD_SOURCES_X($1, $2, $3, ifelse($4,cli,PHP_CLI_OBJS,ifelse($4,sapi,PHP_SAPI_OBJS,ifelse($4,cgi,PHP_CGI_OBJS,ifelse($4,fpm,PHP_FPM_OBJS,PHP_GLOBAL_OBJS)))))
  ])
  
  dnl
-@@ -973,15 +973,7 @@ dnl ---------------------------------------------- Sha
+@@ -973,15 +973,8 @@ dnl ---------------------------------------------- Sha
    if test "$3" != "shared" && test "$3" != "yes" && test "$4" = "cli"; then
  dnl ---------------------------------------------- CLI static module
      [PHP_]translit($1,a-z_-,A-Z__)[_SHARED]=no
@@ -24,10 +24,11 @@ $OpenBSD: patch-aclocal_m4,v 1.4 2011/06/18 19:49:50 sthen Exp $
 -        ;;
 -    esac
 +    PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,cgi)
++    PHP_ADD_SOURCES(PHP_EXT_DIR($1),$2,$ac_extra,fpm)
      EXT_CLI_STATIC="$EXT_CLI_STATIC $1"
    fi
    PHP_ADD_BUILD_DIR($ext_builddir)
-@@ -1031,12 +1023,6 @@ You either need to build $1 shared or build $2 statica
+@@ -1031,12 +1024,6 @@ You either need to build $1 shared or build $2 statica
  build to be successful.
  ])
    fi
@@ -40,7 +41,7 @@ $OpenBSD: patch-aclocal_m4,v 1.4 2011/06/18 19:49:50 sthen Exp $
    dnl Some systems require that we link $2 to $1 when building
  ])
  
-@@ -2279,10 +2265,9 @@ AC_DEFUN([PHP_SETUP_KERBEROS],[
+@@ -2280,10 +2267,9 @@ AC_DEFUN([PHP_SETUP_KERBEROS],[
      if test "$PHP_KERBEROS_DIR"; then
        found_kerberos=yes
        PHP_ADD_LIBPATH($PHP_KERBEROS_DIR/$PHP_LIBDIR, $1)
@@ -53,7 +54,7 @@ $OpenBSD: patch-aclocal_m4,v 1.4 2011/06/18 19:49:50 sthen Exp $
        PHP_ADD_INCLUDE($PHP_KERBEROS_DIR/include)
      fi
    fi
-@@ -2330,7 +2315,7 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
+@@ -2331,7 +2317,7 @@ AC_DEFUN([PHP_SETUP_OPENSSL],[
        AC_MSG_ERROR([OpenSSL version 0.9.6 or greater required.])
      fi
  
@@ -62,7 +63,7 @@ $OpenBSD: patch-aclocal_m4,v 1.4 2011/06/18 19:49:50 sthen Exp $
        PHP_EVAL_LIBLINE($OPENSSL_LIBS, $1)
        PHP_EVAL_INCLINE($OPENSSL_INCS)
      fi
-@@ -4324,7 +4309,7 @@ bsdi[[45]]*)
+@@ -4325,7 +4311,7 @@ bsdi[[45]]*)
    need_version=no
    library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}$major $libname${shared_ext}'
    soname_spec='${libname}${release}${shared_ext}$major'

@@ -1,0 +1,11 @@
+--- sapi/fpm/Makefile.frag.orig.port	Thu Aug 25 19:33:35 2011
++++ sapi/fpm/Makefile.frag	Thu Aug 25 19:33:53 2011
+@@ -3,7 +3,7 @@
+ $(builddir)/fpm: 
+ 	@mkdir -p $(builddir)/fpm
+ 
+-$(SAPI_FPM_PATH): $(builddir)/fpm $(PHP_GLOBAL_OBJS) $(PHP_SAPI_OBJS) $(SAPI_EXTRA_DEPS)
++$(SAPI_FPM_PATH): $(builddir)/fpm $(PHP_GLOBAL_OBJS) $(PHP_FPM_OBJS) $(SAPI_EXTRA_DEPS)
+ 	$(BUILD_FPM)
+ 
+ $(builddir)/fpm/fpm_conf.lo: $(builddir)/../../main/build-defs.h
