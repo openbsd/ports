@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/28 05:35:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/08/27 08:19:09 ajacoutot Exp $
 
 COMMENT=	graphic library for GTK+2
 
-V=		2.23.5
+V=		2.24.0
 DISTNAME=	gdk-pixbuf-${V}
 
 EXTRACT_SUFX=	.tar.xz
