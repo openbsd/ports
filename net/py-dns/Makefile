@@ -1,27 +1,29 @@
-# $OpenBSD: Makefile,v 1.15 2011/06/08 18:00:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/08/27 10:28:25 fgsch Exp $
 
-COMMENT=	Python DNS library
+COMMENT =	Python DNS library
 
-VERSION=	2.3.3
-DISTNAME=	pydns-${VERSION}
-PKGNAME=	py-dns-${VERSION}
-REVISION=	2
-CATEGORIES=    	net
+MODPY_EGG_VERSION =	2.3.5
+DISTNAME =	pydns-${MODPY_EGG_VERSION}
+PKGNAME =	py-dns-${MODPY_EGG_VERSION}
+CATEGORIES =   	net
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=pydns/}
+HOMEPAGE =	http://pydns.sourceforge.net/
 
-HOMEPAGE=	http://pydns.sourceforge.net/
-
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
+MAINTAINER =	Jakob Schlyter <jakob@openbsd.org>
 
 # Python License
-PERMIT_PACKAGE_CDROM=	Yes
-PERMIT_PACKAGE_FTP=	Yes
-PERMIT_DISTFILES_CDROM=	Yes
-PERMIT_DISTFILES_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE_FTP =	Yes
+PERMIT_DISTFILES_CDROM = Yes
+PERMIT_DISTFILES_FTP =	Yes
 
-MODULES=	lang/python
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=pydns/}
 
-NO_REGRESS=	Yes
+MODULES =	lang/python
+
+do-regress:
+	cd ${WRKSRC}/tests && for test in *.py; do \
+	    PYTHONPATH=.. ${MODPY_BIN} $$test; \
+	done
 
 .include <bsd.port.mk>

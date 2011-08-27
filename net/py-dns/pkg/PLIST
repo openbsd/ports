@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2008/08/19 22:26:41 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/08/27 10:28:25 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/DNS/
 lib/python${MODPY_VERSION}/site-packages/DNS/Base.py
 lib/python${MODPY_VERSION}/site-packages/DNS/Base.pyc
@@ -27,4 +27,4 @@ lib/python${MODPY_VERSION}/site-packages/DNS/lazy.pyo
 lib/python${MODPY_VERSION}/site-packages/DNS/win32dns.py
 lib/python${MODPY_VERSION}/site-packages/DNS/win32dns.pyc
 lib/python${MODPY_VERSION}/site-packages/DNS/win32dns.pyo
-lib/python${MODPY_VERSION}/site-packages/pydns-2.3.3-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pydns-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
