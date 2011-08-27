@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/20 09:48:39 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/08/27 12:44:56 ajacoutot Exp $
 
 COMMENT=		LaTeX symbols selector
 
 DISTNAME=		lss-0.1.6
-REVISION=		4
+REVISION=		5
 CATEGORIES=		print x11
 
-HOMEPAGE=		http://clay.ll.pl/lss/
+HOMEPAGE=		http://clayo.org/lss/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
