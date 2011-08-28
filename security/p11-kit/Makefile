@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/08/22 08:04:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/08/28 13:46:51 naddy Exp $
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
 
@@ -30,6 +30,9 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 
 # no translation yet
 CONFIGURE_ARGS += --disable-nls
+
+# some warning options not available with gcc < 4
+CONFIGURE_ARGS += --disable-more-warnings
 
 FAKE_FLAGS=	exampledir=${PREFIX}/share/examples/p11-kit
 
