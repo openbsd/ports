@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/06/30 07:39:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/08/28 13:19:45 naddy Exp $
 
 COMMENT=	MPEG-2 and MPEG-4 AAC encoder
 
 DISTNAME=	faac-1.28
-REVISION=	0
+REVISION=	1
 CATEGORIES=    	audio
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=faac/}
 
