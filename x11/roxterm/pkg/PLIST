@@ -1,10 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/07/27 09:49:58 pea Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/08/28 15:39:10 jasper Exp $
 @bin bin/roxterm
 @bin bin/roxterm-config
-man/es/
-man/es/man1/
-@man man/es/man1/roxterm-config.1
-@man man/es/man1/roxterm.1
 @man man/man1/roxterm-config.1
 @man man/man1/roxterm.1
 share/applications/roxterm.desktop
@@ -14,11 +10,6 @@ share/doc/roxterm/en/guide.html
 share/doc/roxterm/en/index.html
 share/doc/roxterm/en/installation.html
 share/doc/roxterm/en/news.html
-share/doc/roxterm/es/
-share/doc/roxterm/es/guide.html
-share/doc/roxterm/es/index.html
-share/doc/roxterm/es/installation.html
-share/doc/roxterm/es/news.html
 share/doc/roxterm/lib/
 share/doc/roxterm/lib/favicon.ico
 share/doc/roxterm/lib/header.png
@@ -32,7 +23,6 @@ share/icons/hicolor/
 share/icons/hicolor/scalable/
 share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/roxterm.svg
-share/locale/es/LC_MESSAGES/roxterm.mo
 share/roxterm/
 share/roxterm/Config/
 share/roxterm/Config/Colours/
@@ -40,7 +30,7 @@ share/roxterm/Config/Colours/GTK
 share/roxterm/Config/Colours/Tango
 share/roxterm/Config/Shortcuts/
 share/roxterm/Config/Shortcuts/Default
-share/roxterm/roxterm-config.glade
+share/roxterm/roxterm-config.ui
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
