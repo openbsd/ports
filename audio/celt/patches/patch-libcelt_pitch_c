@@ -1,0 +1,15 @@
+$OpenBSD: patch-libcelt_pitch_c,v 1.3 2011/08/28 14:13:51 naddy Exp $
+
+Allow building with gcc3.
+
+--- libcelt/pitch.c.orig	Tue Aug 23 21:01:27 2011
++++ libcelt/pitch.c	Tue Aug 23 21:01:45 2011
+@@ -98,7 +98,7 @@ static void find_best_pitch(celt_word32 *xcorr, celt_w
+ }
+ 
+ #include "plc.h"
+-void pitch_downsample(celt_sig * restrict x[], celt_word16 * restrict x_lp, int len, int end, int _C, celt_sig * restrict xmem, celt_word16 * restrict filt_mem)
++void pitch_downsample(celt_sig * restrict * x, celt_word16 * restrict x_lp, int len, int end, int _C, celt_sig * restrict xmem, celt_word16 * restrict filt_mem)
+ {
+    int i;
+    celt_word32 ac[5];

@@ -1,0 +1,15 @@
+$OpenBSD: patch-libcelt_pitch_h,v 1.1 2011/08/28 14:13:51 naddy Exp $
+
+Allow building with gcc3.
+
+--- libcelt/pitch.h.orig	Tue Aug 23 20:57:39 2011
++++ libcelt/pitch.h	Tue Aug 23 20:57:55 2011
+@@ -41,7 +41,7 @@
+ 
+ #include "modes.h"
+ 
+-void pitch_downsample(celt_sig * restrict x[], celt_word16 * restrict x_lp, int len, int end, int _C, celt_sig * restrict xmem, celt_word16 * restrict filt_mem);
++void pitch_downsample(celt_sig * restrict * x, celt_word16 * restrict x_lp, int len, int end, int _C, celt_sig * restrict xmem, celt_word16 * restrict filt_mem);
+ 
+ void pitch_search(const CELTMode *m, const celt_word16 * restrict x_lp, celt_word16 * restrict y,
+                   int len, int max_pitch, int *pitch, celt_sig *xmem, int M);

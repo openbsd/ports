@@ -1,9 +1,22 @@
-$OpenBSD: patch-libcelt_celt_c,v 1.3 2011/04/05 14:17:55 dcoppa Exp $
+$OpenBSD: patch-libcelt_celt_c,v 1.4 2011/08/28 14:13:51 naddy Exp $
+
+Allow building with gcc3.
 
 Missing commas (from upstream git)
 
 --- libcelt/celt.c.orig	Tue Dec 21 03:14:48 2010
-+++ libcelt/celt.c	Thu Dec 30 14:11:11 2010
++++ libcelt/celt.c	Tue Aug 23 20:59:10 2011
+@@ -316,8 +316,8 @@ static void compute_mdcts(const CELTMode *mode, int sh
+ /** Compute the IMDCT and apply window for all sub-frames and 
+     all channels in a frame */
+ static void compute_inv_mdcts(const CELTMode *mode, int shortBlocks, celt_sig *X,
+-      celt_sig * restrict out_mem[],
+-      celt_sig * restrict overlap_mem[], int _C, int LM)
++      celt_sig * restrict * out_mem,
++      celt_sig * restrict * overlap_mem, int _C, int LM)
+ {
+    int c;
+    const int C = CHANNELS(_C);
 @@ -428,9 +428,9 @@ static void comb_filter(celt_word32 *y, celt_word32 *x
  
  static const signed char tf_select_table[4][8] = {

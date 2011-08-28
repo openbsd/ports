@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.1 2011/08/28 14:13:51 naddy Exp $
+
+-Wextra is not supported by gcc < 4.
+
+--- configure.orig	Tue Aug 23 19:02:06 2011
++++ configure	Tue Aug 23 19:02:21 2011
+@@ -11787,7 +11787,7 @@ CFLAGS="$saved_CFLAGS $SYMBOL_VISIBILITY"
+ 
+ 
+ if test $ac_cv_c_compiler_gnu = yes ; then
+-        CFLAGS="$CFLAGS -W -Wstrict-prototypes -Wall -Wextra -Wcast-align -Wnested-externs -Wshadow -Wno-parentheses -Wno-unused-parameter -Wno-sign-compare"
++        CFLAGS="$CFLAGS -W -Wstrict-prototypes -Wall -Wcast-align -Wnested-externs -Wshadow -Wno-parentheses -Wno-unused-parameter -Wno-sign-compare"
+ fi
+ 
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking for lrintf" >&5
