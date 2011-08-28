@@ -1,0 +1,7 @@
+#!/bin/ksh 
+#
+# $OpenBSD: scalac,v 1.1.1.1 2011/08/28 16:57:23 jasper Exp $
+
+JAVA_CMD=$(javaPathHelper -c scala)
+
+JAVACMD=${JAVA_CMD} ${TRUEPREFIX}/scala/bin/scalac "$@"
