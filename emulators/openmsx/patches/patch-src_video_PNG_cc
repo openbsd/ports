@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_video_PNG_cc,v 1.1.1.1 2011/08/28 18:57:51 bentley Exp $
+
+Fix build with libpng 1.5.x. From upstream r12214.
+
+--- src/video/PNG.cc.orig	Sun Aug 21 10:48:08 2011
++++ src/video/PNG.cc	Sun Aug 21 10:48:29 2011
+@@ -167,7 +167,7 @@ SDLSurfacePtr load(const std::string& filename)
+ 				"Attempted to create a surface with excessive height: "
+ 				<< height << ", max " << MAX_SIZE);
+ 		}
+-		int bpp = png.info->channels * 8;
++		int bpp = png_get_channels(png.ptr, png.info) * 8;
+ 		assert(bpp == 24 || bpp == 32);
+ 		Uint32 redMask, grnMask, bluMask, alpMask;
+ 		if (OPENMSX_BIGENDIAN) {

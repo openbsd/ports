@@ -1,0 +1,15 @@
+$OpenBSD: patch-build_libraries_py,v 1.1.1.1 2011/08/28 18:57:51 bentley Exp $
+
+Correctly find our tclConfig.sh. From upstream r12183.
+
+--- build/libraries.py.orig	Sun Jun 12 13:25:30 2011
++++ build/libraries.py	Sun Jun 12 13:26:13 2011
+@@ -396,7 +396,7 @@ class TCL(Library):
+ 				roots = (distroRoot, )
+ 			for root in roots:
+ 				if isdir(root):
+-					for libdir in ('lib', 'lib64'):
++					for libdir in ('lib', 'lib64', 'lib/tcl'):
+ 						libpath = root + '/' + libdir
+ 						if isdir(libpath):
+ 							yield libpath
