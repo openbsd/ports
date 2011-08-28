@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2011/07/08 18:24:00 robert Exp $
+# $OpenBSD: Makefile,v 1.116 2011/08/28 16:57:43 jasper Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -68,6 +68,7 @@
      SUBDIR += rubinius
      SUBDIR += ruby
      SUBDIR += sbcl
+     SUBDIR += scala
      SUBDIR += scheme-report
      SUBDIR += scheme48
      SUBDIR += scm
