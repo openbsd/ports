@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/04/21 07:03:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/08/28 07:15:58 ajacoutot Exp $
 %%SHARED%%
 @bin bin/notify-send
 include/libnotify/
@@ -24,7 +24,6 @@ share/gtk-doc/html/libnotify/index.html
 share/gtk-doc/html/libnotify/index.sgml
 share/gtk-doc/html/libnotify/left.png
 share/gtk-doc/html/libnotify/libnotify-notify.html
-share/gtk-doc/html/libnotify/libnotify.devhelp
 share/gtk-doc/html/libnotify/libnotify.devhelp2
 share/gtk-doc/html/libnotify/right.png
 share/gtk-doc/html/libnotify/style.css
