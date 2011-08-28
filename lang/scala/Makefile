@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/08/28 16:57:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/08/28 20:57:49 jasper Exp $
 
 COMMENT=	general purpose multi-paradigm programming language
 
 DISTNAME=	scala-2.9.0.1
+REVISION=	0
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.scala-lang.org/
@@ -19,7 +20,8 @@ EXTRACT_SUFX=	.tgz
 MODULES=	java
 MODJAVA_VER=	1.6+
 
-RUN_DEPENDS=	java/javaPathHelper
+RUN_DEPENDS=	java/javaPathHelper \
+		shells/bash
 
 SCALA_HOME=	${PREFIX}/scala/
 SCALA_SCRIPTS=	scala scalac scalap scaladoc
