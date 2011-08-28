@@ -1,0 +1,22 @@
+$OpenBSD: patch-docs_DevIL_manual_texi,v 1.1 2011/08/28 17:26:07 jasper Exp $
+
+Add missing INFO-DIR-SECTION to silence install-info(1)
+
+--- docs/DevIL_manual.texi.orig	Sun Aug 28 19:21:00 2011
++++ docs/DevIL_manual.texi	Sun Aug 28 19:24:02 2011
+@@ -13,6 +13,15 @@
+ @c version.texi is generated automatically
+ @include version.texi
+ 
++@ifinfo
++@format
++INFO-DIR-SECTION Libraries
++START-INFO-DIR-ENTRY
++* DevIL_manual: (devil_manual).         IL part of DevIL - handling images
++END-INFO-DIR-ENTRY
++@end format
++@end ifinfo
++
+ @copying
+ This is @code{DevIL @value{VERSION}} manual.
+ Last update is from @value{UPDATED}. 
