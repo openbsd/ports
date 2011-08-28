@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2010/11/27 11:54:53 espie Exp $
+# $OpenBSD: Makefile,v 1.98 2011/08/28 07:57:40 espie Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
@@ -17,11 +17,11 @@ FULLPKGNAME-html=	qt3-html-${VERSION}
 FULLPKGPATH-html=	x11/qt3,-html
 PKGNAME-sqlite2=	qt3-sqlite2-${VERSION}
 
-REVISION-mysql= 	2
-REVISION-postgresql= 	2
-REVISION-main= 		5
+REVISION-mysql= 	3
+REVISION-postgresql= 	3
+REVISION-main= 		6
 REVISION-html= 		1
-REVISION-sqlite2= 	2
+REVISION-sqlite2= 	3
 
 # the qt-mt library version number is used in a directory name.
 # when bumping, be sure to also bump MODQT3_PLUGINS in qt3.port.mk
@@ -153,16 +153,16 @@ LIB_DEPENDS=		graphics/png \
 			graphics/libmng
 WANTLIB=		GL GLU ICE SM X11>=10 Xcursor Xext Xft Xi Xinerama \
 			Xmu png mng \
-			Xrandr Xrender fontconfig freetype jpeg lcms m z
+			Xrandr Xrender fontconfig freetype jpeg lcms m stdc++ z
 
 
-WANTLIB-main=		${WANTLIB} pthread stdc++ c
+WANTLIB-main=		${WANTLIB} pthread c
 
 
 LIB_DEPENDS-mysql=	${LIB_DEPENDS} \
 			${BUILD_PKGPATH} \
 			databases/mysql
-WABTLIB-mysql=		${WANTLIB} qt-mt mysqlclient
+WANTLIB-mysql=		${WANTLIB} qt-mt mysqlclient
 
 LIB_DEPENDS-postgresql=	${LIB_DEPENDS} \
 			${BUILD_PKGPATH} \
@@ -172,7 +172,7 @@ WANTLIB-postgresql=	${WANTLIB} pq qt-mt
 LIB_DEPENDS-sqlite2=	${LIB_DEPENDS} \
 			${BUILD_PKGPATH} \
 			databases/sqlite
-WABTLIB-sqlite2=	${WANTLIB} qt-mt sqlite
+WANTLIB-sqlite2=	${WANTLIB} qt-mt sqlite
 
 LIB_DEPENDS-examples=	${LIB_DEPENDS} \
 			${BUILD_PKGPATH}
