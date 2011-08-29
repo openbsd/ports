@@ -1,0 +1,34 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/29 14:30:44 nigel Exp $
+%%SHARED%%
+${P5ARCH}/Tk/TableMatrix/
+${P5ARCH}/Tk/TableMatrix.pm
+${P5ARCH}/Tk/TableMatrix.pod
+${P5ARCH}/Tk/TableMatrix/Spreadsheet.pm
+${P5ARCH}/Tk/TableMatrix/SpreadsheetHideRows.pm
+${P5ARCH}/Tk/pTk/mm.h
+${P5ARCH}/Tk/pTk/tkTable.h
+${P5ARCH}/Tk/pTk/tkTableversion.h
+${P5ARCH}/Tk/pTk/version.h
+${P5ARCH}/auto/Tk/TableMatrix/
+${P5ARCH}/auto/Tk/TableMatrix/TableMatrix.bs
+${P5ARCH}/auto/Tk/TableMatrix/autosplit.ix
+@comment ${P5ARCH}/auto/Tk/pTk/extralibs.ld
+@man man/man3p/Tk::TableMatrix.3p
+@man man/man3p/Tk::TableMatrix::Spreadsheet.3p
+@man man/man3p/Tk::TableMatrix::SpreadsheetHideRows.3p
+share/examples/p5-Tk-TableMatrix/
+share/examples/p5-Tk-TableMatrix/SpreadsheetHideRows
+share/examples/p5-Tk-TableMatrix/TableMatrixSpreadsheetTest
+share/examples/p5-Tk-TableMatrix/TableMatrixTest
+share/examples/p5-Tk-TableMatrix/basic
+share/examples/p5-Tk-TableMatrix/buttons
+share/examples/p5-Tk-TableMatrix/command
+share/examples/p5-Tk-TableMatrix/debug
+share/examples/p5-Tk-TableMatrix/dynarows
+share/examples/p5-Tk-TableMatrix/edit_styles.pl
+share/examples/p5-Tk-TableMatrix/embeddedWindows.pl
+share/examples/p5-Tk-TableMatrix/maxsize
+share/examples/p5-Tk-TableMatrix/spreadsheet
+share/examples/p5-Tk-TableMatrix/tagBorderWidth
+share/examples/p5-Tk-TableMatrix/tagMerge
+share/examples/p5-Tk-TableMatrix/tagMerge2
