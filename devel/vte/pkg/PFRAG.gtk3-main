@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.gtk3-main,v 1.2 2011/06/14 22:20:24 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.gtk3-main,v 1.3 2011/08/29 06:21:46 ajacoutot Exp $
 @bin bin/vte2_90
 include/vte-2.90/
 include/vte-2.90/vte/
@@ -17,29 +17,26 @@ lib/libvte2_90.la
 lib/pkgconfig/vte-2.90.pc
 share/gir-1.0/Vte-2.90.gir
 share/gtk-doc/html/vte-2.90/
+share/gtk-doc/html/vte-2.90/VteReaper.html
 share/gtk-doc/html/vte-2.90/VteTerminal.html
+share/gtk-doc/html/vte-2.90/VteTerminalAccessible.html
 share/gtk-doc/html/vte-2.90/annotation-glossary.html
 share/gtk-doc/html/vte-2.90/api-index-0-20.html
 share/gtk-doc/html/vte-2.90/api-index-0-24.html
 share/gtk-doc/html/vte-2.90/api-index-0-26.html
 share/gtk-doc/html/vte-2.90/api-index-0-28.html
-share/gtk-doc/html/vte-2.90/api-index-0-30.html
 share/gtk-doc/html/vte-2.90/api-index-deprecated.html
 share/gtk-doc/html/vte-2.90/api-index-full.html
 share/gtk-doc/html/vte-2.90/ch01.html
 share/gtk-doc/html/vte-2.90/ch02.html
 share/gtk-doc/html/vte-2.90/ch03.html
-share/gtk-doc/html/vte-2.90/ch04s02.html
-share/gtk-doc/html/vte-2.90/ch04s03.html
-share/gtk-doc/html/vte-2.90/ch04s04.html
-share/gtk-doc/html/vte-2.90/ch04s05.html
-share/gtk-doc/html/vte-2.90/ch04s06.html
+share/gtk-doc/html/vte-2.90/deprecated-objects.html
 share/gtk-doc/html/vte-2.90/home.png
 share/gtk-doc/html/vte-2.90/index.html
 share/gtk-doc/html/vte-2.90/index.sgml
+share/gtk-doc/html/vte-2.90/internal-objects.html
 share/gtk-doc/html/vte-2.90/left.png
 share/gtk-doc/html/vte-2.90/licence.html
-share/gtk-doc/html/vte-2.90/migration-0-30.html
 share/gtk-doc/html/vte-2.90/object-hierarchy.html
 share/gtk-doc/html/vte-2.90/pt01.html
 share/gtk-doc/html/vte-2.90/right.png

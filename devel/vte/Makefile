@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.83 2011/08/17 15:37:28 nigel Exp $
+# $OpenBSD: Makefile,v 1.84 2011/08/29 06:21:46 ajacoutot Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
 COMMENT-pty-helper=	setuid helper for opening ptys
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.28.1
+GNOME_VERSION=		0.28.2
+
 PKGNAME-main=		${DISTNAME}
 PKGNAME-python= 	py-${DISTNAME}
 PKGNAME-pty-helper=	vte-ptyhelper-${GNOME_VERSION}
-
-REVISION-main=		1
-REVISION-python=	1
-REVISION-pty-helper=	0
 
 CATEGORIES=		devel
 
@@ -49,13 +46,12 @@ WANTLIB-main=		${WANTLIB} c pthread
 
 WANTLIB-pty-helper=	util c
 
-WANTLIB-python= 	${WANTLIB} ffi vte>=14
+WANTLIB-python= 	${WANTLIB} vte>=14
 
 BUILD_DEPENDS=		devel/gobject-introspection
 
 LIB_DEPENDS-python=	${LIB_DEPENDS-main} \
-			${BASE_PKGPATH} \
-			devel/libffi
+			${BASE_PKGPATH}
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 
 LIB_DEPENDS-pty-helper=	# empty
