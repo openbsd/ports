@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2007/09/16 00:29:15 merdely Exp $
+# $OpenBSD: Makefile,v 1.9 2011/08/29 14:12:17 jasper Exp $
 
 COMMENT=	Java program analyzer and checker
 
@@ -9,6 +9,7 @@ HOMEPAGE=	http://artho.com/jlint/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
+# GPLv2+
 PERMIT_PACKAGE_CDROM=  Yes
 PERMIT_PACKAGE_FTP=    Yes
 PERMIT_DISTFILES_CDROM=Yes
