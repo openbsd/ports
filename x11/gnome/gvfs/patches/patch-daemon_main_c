@@ -1,0 +1,20 @@
+$OpenBSD: patch-daemon_main_c,v 1.1 2011/08/29 15:12:50 ajacoutot Exp $
+
+From 9dcde52c3e6b8164180cfe8a60896b6d5e1e8c97 Mon Sep 17 00:00:00 2001
+From: Tomas Bzatek <tbzatek@redhat.com>
+Date: Mon, 29 Aug 2011 12:50:50 +0000
+Subject: Ignore SIGPIPE signals to avoid process termination on cancelled transfer
+
+--- daemon/main.c.orig	Mon May 23 16:38:05 2011
++++ daemon/main.c	Mon Aug 29 16:22:08 2011
+@@ -54,6 +54,10 @@ main (int argc, char *argv[])
+   textdomain (GETTEXT_PACKAGE);
+   
+   g_thread_init (NULL);
++
++#ifdef SIGPIPE
++  signal (SIGPIPE, SIG_IGN);
++#endif
+   
+   g_set_application_name (_("GVFS Daemon"));
+   context = g_option_context_new ("");
