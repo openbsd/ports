@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.461 2011/07/19 09:22:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.462 2011/08/29 14:42:13 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -173,6 +173,7 @@
      SUBDIR += p5-Gtk2-GladeXML
      SUBDIR += p5-Tk
      SUBDIR += p5-Tk-ProgressBar-Mac
+     SUBDIR += p5-Tk-TableMatrix
      SUBDIR += p5-Tk-Splash
      SUBDIR += p5-Tk-Stderr
      SUBDIR += p5-Wx
