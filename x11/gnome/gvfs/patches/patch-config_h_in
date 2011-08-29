@@ -1,16 +1,16 @@
-$OpenBSD: patch-config_h_in,v 1.1 2011/06/15 07:21:13 ajacoutot Exp $
+$OpenBSD: patch-config_h_in,v 1.2 2011/08/29 08:50:56 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=652623
 
---- config.h.in.orig	Wed Jun 15 08:59:13 2011
-+++ config.h.in	Wed Jun 15 08:59:34 2011
-@@ -192,6 +192,9 @@
- /* Define to 1 if you have the <termios.h> header file. */
- #undef HAVE_TERMIOS_H
+--- config.h.in.orig	Mon May 23 16:39:04 2011
++++ config.h.in	Mon Aug 29 10:44:48 2011
+@@ -198,6 +198,9 @@
+ /* Define to 1 if you have the `unlockpt' function. */
+ #undef HAVE_UNLOCKPT
  
 +/* Define to 1 if you have the <util.h> header file. */
 +#undef HAVE_UTIL_H
 +
- /* Define to 1 if you have the <unistd.h> header file. */
- #undef HAVE_UNISTD_H
+ /* Define to 1 if you have the <utmp.h> header file. */
+ #undef HAVE_UTMP_H
  
