@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/08/29 12:44:29 ajacoutot Exp $
 
 COMMENT=		GGZ Gaming Zone - base library
 
 DISTNAME=		libggz-$V
-REVISION =		2
+REVISION =		3
 SHARED_LIBS +=	ggz                  0.0      # .5.0
 
 CONFIGURE_ARGS+=	--with-gcrypt \
@@ -17,12 +17,5 @@ USE_GROFF =		Yes
 WANTLIB=		crypto gpg-error ssl pthread gcrypt
 
 LIB_DEPENDS=		security/libgcrypt
-
-# compiler takes insane amounts of time to compile
-.if ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "hppa"
-EXTRA_CFLAGS=	-O1
-.endif
-
-MAKE_FLAGS+=	EXTRA_CFLAGS=${EXTRA_CFLAGS}
 
 .include <bsd.port.mk>
