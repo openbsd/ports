@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.12 2011/07/14 11:03:49 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.13 2011/08/29 09:45:29 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -29,14 +29,8 @@ sub create
 {
 	my ($class, $file, $short, $site, $distinfo, $v, $distdir) = @_;
 
-	my $sz = $distinfo->{size}{$file};
+	my $sz = $distinfo->{size}{$file} // 0;
 	my $sha = $distinfo->{sha}{$file};
-	if (!defined $sz) {
-		die "Incomplete distinfo for $file: missing sz";
-	}
-	if (!defined $sha) {
-		die "Incomplete distinfo for $file: missing sha";
-	}
 	bless {
 		name => $file,
 		short => $short,
@@ -111,6 +105,11 @@ sub checksize
 	my ($self, $logger, $name) = @_;
 	# XXX if we matched once, then we match "forever"
 	return 1 if $self->{okay};
+	if ($self->{sz} == 0) {
+		my $fh = $logger->open('dist/'.$self->{name});
+		print $fh "incomplete distinfo: no size\n";
+	}
+		
 	if (!stat $name) {
 		return 0;
 	}
@@ -128,6 +127,11 @@ sub checksum
 	# XXX if we matched once, then we match "forever"
 	return 1 if $self->{okay};
 	print "checksum for $name: ";
+	if (!defined $self->{sha}) {
+		print "NONE\n";
+		return 0;
+	}
+		
 	if (OpenBSD::sha->new($name)->equals($self->{sha})) {
 		$self->{okay} = 1;
 		print "OK\n";
@@ -313,6 +317,11 @@ sub run
 	my $job = $core->job;
 	my $shell = $core->{shell};
 	my $site = $self->{site};
+	$self->redirect($job->{log});
+	if ($self->{sz} == 0) {
+		print STDERR "No size in distinfo\n";
+		exit(1);
+	}
 	my $ftp = OpenBSD::Paths->ftp;
 	$self->redirect($job->{log});
 	my @cmd = ($ftp, '-C', '-o', $job->{file}->tempfilename, '-v',
@@ -340,6 +349,10 @@ sub finalize
 	    $job->{file}->tempfilename)) {
 	    	$job->new_checksum_task($self, $core->{status});
 	} else {
+		if ($job->{file}->{sz} == 0) {
+			$job->{sites} = [];
+			return $job->bad_file($self, $core);
+		}
 		# Fetch exited okay, but the file is not the right size
 		if ($core->{status} == 0 ||
 		# definite error also if file is too large
