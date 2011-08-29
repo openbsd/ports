@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2011/03/14 09:17:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2011/08/29 21:30:01 kili Exp $
 
 COMMENT=		dependency manager for Java
 
 VERSION=		1.4.1
 DISTNAME=		ivy-${VERSION}-bin
 PKGNAME=		ivy-${VERSION}
-REVISION =		6
+REVISION =		7
 CATEGORIES=		devel java
 WRKDIST=		${WRKDIR}/ivy-${VERSION}
 
 HOMEPAGE=		http://incubator.apache.org/ivy/
-
-MAINTAINER=		Matthias Kilian <kili@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
