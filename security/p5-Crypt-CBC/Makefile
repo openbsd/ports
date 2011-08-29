@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.23 2010/12/03 11:46:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/08/29 10:58:26 jasper Exp $
 
 COMMENT=	cryptographic cipher block chaining mode
 
 MODULES=	cpan
 DISTNAME=	Crypt-CBC-2.30
-REVISION=	0
+REVISION=	1
 CATEGORIES=	security
 USE_GROFF =	Yes
 
 RUN_DEPENDS=	security/p5-Crypt-DES \
-		security/p5-Crypt-Blowfish
+		security/p5-Crypt-Blowfish \
+		security/p5-Crypt-Rijndael
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # Perl
