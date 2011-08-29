@@ -1,0 +1,9 @@
+$OpenBSD: patch-configure_ac,v 1.1 2011/08/29 09:54:51 espie Exp $
+--- configure.ac.orig	Fri Aug 29 20:59:00 2008
++++ configure.ac	Wed Aug 17 11:51:22 2011
+@@ -1,4 +1,4 @@
+-AC_INIT(src/libdvdcss.c)
++AC_INIT(libdvdcss, 1.2.10)
+ 
+ AC_PREREQ(2.50)
+ AC_CONFIG_AUX_DIR(.auto)

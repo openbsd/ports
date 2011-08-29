@@ -1,0 +1,50 @@
+$OpenBSD: patch-src_css_c,v 1.1 2011/08/29 09:54:51 espie Exp $
+--- src/css.c.orig	Fri Aug 29 20:42:47 2008
++++ src/css.c	Sun Aug 28 15:26:39 2011
+@@ -172,10 +172,13 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
+         {
+             char psz_key[KEY_SIZE * 3];
+             unsigned int k0, k1, k2, k3, k4;
++            int n;
+ 
+-            psz_key[KEY_SIZE * 3 - 1] = '\0';
++            memset(psz_key, 0, sizeof psz_key);
++            n = read( i_fd, psz_key, KEY_SIZE * 3 - 1 );
++            close( i_fd );
+ 
+-            if( read( i_fd, psz_key, KEY_SIZE * 3 - 1 ) == KEY_SIZE * 3 - 1
++            if( n == KEY_SIZE * 3 - 1
+                  && sscanf( psz_key, "%x:%x:%x:%x:%x",
+                             &k0, &k1, &k2, &k3, &k4 ) == 5 )
+             {
+@@ -189,9 +192,12 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
+                 /* Don't try to save it again */
+                 b_cache = 0;
+                 i_ret = 1;
++            } 
++            else if (n > 0 && strcmp(psz_key, PACKAGE_VERSION "\n") == 0) 
++            {
++                /* didn't crack it, negative caching */
++                return -1;
+             }
+-
+-            close( i_fd );
+         }
+     }
+ 
+@@ -203,6 +209,15 @@ int _dvdcss_title ( dvdcss_t dvdcss, int i_block )
+         if( i_ret < 0 )
+         {
+             print_error( dvdcss, "fatal error in vts css key" );
++            i_fd = open( dvdcss->psz_cachefile, O_RDWR|O_CREAT, 0644 );
++            if( i_fd >= 0 )
++            {
++                char message[sizeof(PACKAGE_VERSION) + 3];
++
++                sprintf( message, "%s\n", PACKAGE_VERSION);
++                write( i_fd, message, strlen(message) );
++                close( i_fd );
++            }
+             return i_ret;
+         }
+ 
