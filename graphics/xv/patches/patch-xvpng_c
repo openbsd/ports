@@ -1,9 +1,9 @@
-$OpenBSD: patch-xvpng_c,v 1.1 2011/07/08 20:36:09 naddy Exp $
+$OpenBSD: patch-xvpng_c,v 1.2 2011/08/29 18:07:44 espie Exp $
 
 Fix build with png-1.5.
 
---- xvpng.c.orig	Sun May 13 18:53:28 2007
-+++ xvpng.c	Wed Jul  6 12:19:25 2011
+--- xvpng.c.orig	Mon May 14 02:53:28 2007
++++ xvpng.c	Mon Aug 29 15:05:31 2011
 @@ -31,6 +31,7 @@
  
  #ifdef HAVE_PNG
@@ -500,7 +500,7 @@ Fix build with png-1.5.
  
    for (i = 0; i < pass; i++) {
      byte *p = pinfo->pic;
-@@ -1106,22 +1168,23 @@ int LoadPNG(fname, pinfo)
+@@ -1106,22 +1168,24 @@ int LoadPNG(fname, pinfo)
  
    png_read_end(png_ptr, info_ptr);
  
@@ -527,11 +527,12 @@ Fix build with png-1.5.
 +        strcat(pinfo->comment, text[i].key);
          strcat(pinfo->comment, "::");
 -        strcat(pinfo->comment, info_ptr->text[i].text);
-+        strcat(pinfo->comment, text[i].text);
++	if (text[i].text_length != 0)
++	    strcat(pinfo->comment, text[i].text);
          strcat(pinfo->comment, "\n");
        }
      }
-@@ -1143,7 +1206,7 @@ png_xv_error(png_ptr, message)
+@@ -1143,7 +1207,7 @@ png_xv_error(png_ptr, message)
  {
    SetISTR(ISTR_WARNING,"%s:  libpng error: %s", fbasename, message);
  
