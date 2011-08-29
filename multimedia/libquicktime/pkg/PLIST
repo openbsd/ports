@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.10 2010/11/04 20:14:50 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/08/29 11:23:19 jasper Exp $
 @bin bin/libquicktime_config
-bin/lqt-config
 @bin bin/lqt_transcode
 @bin bin/lqtplay
+@bin bin/lqtremux
 @bin bin/qt2text
 @bin bin/qtdechunk
 @bin bin/qtdump
@@ -12,6 +12,7 @@ bin/lqt-config
 @bin bin/qtyuv4toyuv
 include/lqt/
 include/lqt/colormodels.h
+include/lqt/compression.h
 include/lqt/lqt.h
 include/lqt/lqt_atoms.h
 include/lqt/lqt_codecinfo.h
@@ -19,37 +20,22 @@ include/lqt/lqt_qtvr.h
 include/lqt/lqt_version.h
 include/lqt/quicktime.h
 lib/libquicktime/
-lib/libquicktime.la
+lib/libquicktime.a
 @lib lib/libquicktime.so.${LIBquicktime_VERSION}
-@comment lib/libquicktime/lqt_audiocodec.la
 lib/libquicktime/lqt_audiocodec.so
-@comment lib/libquicktime/lqt_dv.la
 lib/libquicktime/lqt_dv.so
-lib/libquicktime/lqt_faac.la
-lib/libquicktime/lqt_faac.so
-lib/libquicktime/lqt_faad2.la
 lib/libquicktime/lqt_faad2.so
-@comment lib/libquicktime/lqt_ffmpeg.la
 lib/libquicktime/lqt_ffmpeg.so
-@comment lib/libquicktime/lqt_lame.la
 lib/libquicktime/lqt_lame.so
-@comment lib/libquicktime/lqt_mjpeg.la
 lib/libquicktime/lqt_mjpeg.so
-@comment lib/libquicktime/lqt_png.la
 lib/libquicktime/lqt_png.so
-@comment lib/libquicktime/lqt_rtjpeg.la
 lib/libquicktime/lqt_rtjpeg.so
-@comment lib/libquicktime/lqt_schroedinger.la
 lib/libquicktime/lqt_schroedinger.so
-@comment lib/libquicktime/lqt_videocodec.la
 lib/libquicktime/lqt_videocodec.so
-@comment lib/libquicktime/lqt_vorbis.la
 lib/libquicktime/lqt_vorbis.so
-lib/libquicktime/lqt_x264.la
 lib/libquicktime/lqt_x264.so
 lib/pkgconfig/libquicktime.pc
 @man man/man1/lqtplay.1
-share/aclocal/lqt.m4
 share/doc/libquicktime/
 share/doc/libquicktime/apiref/
 share/doc/libquicktime/apiref/annotated.html
@@ -102,6 +88,7 @@ share/doc/libquicktime/apiref/open.png
 share/doc/libquicktime/apiref/quicktime_8h.html
 share/doc/libquicktime/apiref/quicktime_8h_source.html
 share/doc/libquicktime/apiref/structlqt__codec__info__s.html
+share/doc/libquicktime/apiref/structlqt__image__size__t.html
 share/doc/libquicktime/apiref/structlqt__parameter__info__t.html
 share/doc/libquicktime/apiref/structquicktime__clap__t.html
 share/doc/libquicktime/apiref/structquicktime__colr__t.html

@@ -1,12 +1,7 @@
-$OpenBSD: patch-configure,v 1.11 2010/09/30 07:26:05 ajacoutot Exp $
-
-XXX make it compile with gtk+2 2.22 (*_DISABLE_DEPRECATED)
-lqt_gtk.c:944: warning: implicit declaration of function 'GTK_OBJECT_FLAGS'
-lqt_gtk.c:944: error: lvalue required as left operand of assignment
-
---- configure.orig	Tue Feb 23 21:43:36 2010
-+++ configure	Wed Sep 29 19:50:57 2010
-@@ -14553,7 +14553,7 @@ fi
+$OpenBSD: patch-configure,v 1.12 2011/08/29 11:23:19 jasper Exp $
+--- configure.orig	Tue Jul  5 15:36:53 2011
++++ configure	Tue Jul  5 17:43:07 2011
+@@ -14957,7 +14957,7 @@ fi
      VORBIS_LIBS="-L$prefix/lib"
    fi
  
@@ -15,28 +10,15 @@ lqt_gtk.c:944: error: lvalue required as left operand of assignment
    VORBISFILE_LIBS="-lvorbisfile"
    VORBISENC_LIBS="-lvorbisenc"
  
-@@ -14713,11 +14713,11 @@ if test "x$with_lame" != "xno"; then
+@@ -15117,11 +15117,7 @@ if test "x$with_lame" != "xno"; then
  OLD_CFLAGS=$CFLAGS
  OLD_LIBS=$LIBS
  
 -if test x$have_vorbis = xtrue; then
 -LIBS="$LIBS -lmp3lame -lvorbis -lm"
 -else
-+#if test x$have_vorbis = xtrue; then
-+#LIBS="$LIBS -lmp3lame -lvorbis -lm"
-+#else
  LIBS="$LIBS -lmp3lame -lm"
 -fi
-+#fi
  
  
  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for lame" >&5
-@@ -15837,7 +15837,7 @@ fi
- 
- 
- 
--GTK_CFLAGS="$GTK_CFLAGS -DGTK_DISABLE_DEPRECATED"
-+GTK_CFLAGS="$GTK_CFLAGS"
- 
- 
- have_libdv="false"
