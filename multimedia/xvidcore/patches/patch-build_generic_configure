@@ -1,7 +1,7 @@
-$OpenBSD: patch-build_generic_configure,v 1.5 2011/03/20 23:49:33 edd Exp $
---- build/generic/configure.orig	Mon Feb 14 12:29:29 2011
-+++ build/generic/configure	Sat Mar  5 16:55:23 2011
-@@ -1316,8 +1316,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+$OpenBSD: patch-build_generic_configure,v 1.6 2011/08/30 18:53:24 jasper Exp $
+--- build/generic/configure.orig	Mon May 23 06:22:01 2011
++++ build/generic/configure	Wed Jun 15 14:46:41 2011
+@@ -2243,8 +2243,6 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  
  
  
@@ -10,8 +10,8 @@ $OpenBSD: patch-build_generic_configure,v 1.5 2011/03/20 23:49:33 edd Exp $
  
  minimum_yasm_major_version=1
  minimum_nasm_minor_version=0
-@@ -3939,7 +3937,7 @@ echo "${ECHO_T}ok" >&6
- echo "${ECHO_T}ok" >&6
+@@ -4333,7 +4331,7 @@ $as_echo "ok" >&6; }
+ $as_echo "ok" >&6; }
  	STATIC_LIB="libxvidcore.\$(STATIC_EXTENSION)"
  	SHARED_LIB="libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR).\$(API_MINOR)"
 -	SPECIFIC_LDFLAGS="-Wl,-soname,libxvidcore.\$(SHARED_EXTENSION).\$(API_MAJOR) -shared -lc -lm"
@@ -19,7 +19,7 @@ $OpenBSD: patch-build_generic_configure,v 1.5 2011/03/20 23:49:33 edd Exp $
  	SPECIFIC_CFLAGS="-fPIC"
  	;;
       [cC][yY][gG][wW][iI][nN]*|mingw32*|mks*)
-@@ -4199,7 +4197,7 @@ echo "${ECHO_T}macho32" >&6
+@@ -4597,7 +4595,7 @@ $as_echo "macho32" >&6; }
  
         AS="$chosen_asm_prog"
         ASSEMBLY_EXTENSION="asm"
@@ -28,29 +28,29 @@ $OpenBSD: patch-build_generic_configure,v 1.5 2011/03/20 23:49:33 edd Exp $
         ASSEMBLY_SOURCES="SRC_${ARCHITECTURE}"
         if test "$ARCHITECTURE" = "X86_64" ; then
                 AFLAGS=${AFLAGS}" -DARCH_IS_X86_64"
-@@ -4614,13 +4612,13 @@ echo "${ECHO_T}$ac_cv_header_pthread_h" >&6
- 
- fi
- if test $ac_cv_header_pthread_h = yes; then
--  echo "$as_me:$LINENO: checking for pthread_create in -lpthread" >&5
--echo $ECHO_N "checking for pthread_create in -lpthread... $ECHO_C" >&6
-+  echo "$as_me:$LINENO: checking for pthread_create in -pthread" >&5
-+echo $ECHO_N "checking for pthread_create in -pthread... $ECHO_C" >&6
- if test "${ac_cv_lib_pthread_pthread_create+set}" = set; then
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -4733,13 +4731,13 @@ done
+ if test x"$pthread" = x"yes" ; then
+    ac_fn_c_check_header_mongrel "$LINENO" "pthread.h" "ac_cv_header_pthread_h" "$ac_includes_default"
+ if test "x$ac_cv_header_pthread_h" = xyes; then :
+-  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -lpthread" >&5
+-$as_echo_n "checking for pthread_create in -lpthread... " >&6; }
++  { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_create in -pthread" >&5
++$as_echo_n "checking for pthread_create in -pthread... " >&6; }
+ if ${ac_cv_lib_pthread_pthread_create+:} false; then :
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-lpthread  $LIBS"
 +LIBS="-pthread  $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -4680,7 +4678,7 @@ echo "$as_me:$LINENO: result: $ac_cv_lib_pthread_pthre
- echo "${ECHO_T}$ac_cv_lib_pthread_pthread_create" >&6
- if test $ac_cv_lib_pthread_pthread_create = yes; then
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -4771,7 +4769,7 @@ fi
+ $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
+ if test "x$ac_cv_lib_pthread_pthread_create" = xyes; then :
    SPECIFIC_CFLAGS="$SPECIFIC_CFLAGS -DHAVE_PTHREAD"
--		SPECIFIC_LDFLAGS="$SPECIFIC_LDFLAGS -lpthread"
-+		SPECIFIC_LDFLAGS="$SPECIFIC_LDFLAGS -pthread"
+-		 SPECIFIC_LDFLAGS="$SPECIFIC_LDFLAGS -lpthread"
++		 SPECIFIC_LDFLAGS="$SPECIFIC_LDFLAGS -pthread"
  else
-   { echo "$as_me:$LINENO: WARNING: Pthread not supported. No SMP support" >&5
- echo "$as_me: WARNING: Pthread not supported. No SMP support" >&2;}
+   { $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: Pthread not supported. No SMP support" >&5
+ $as_echo "$as_me: WARNING: Pthread not supported. No SMP support" >&2;}
