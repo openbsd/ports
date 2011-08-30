@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/08/28 18:57:50 bentley Exp $
+# $OpenBSD: Makefile,v 1.2 2011/08/30 05:02:48 bentley Exp $
 
 COMMENT =	MSX home computer emulator
 
 DISTNAME =	openmsx-0.8.1
+REVISION =	0
 
 CATEGORIES =	emulators
 
@@ -24,9 +25,7 @@ MAKE_ENV +=	INSTALL_BASE=${PREFIX}/share/openmsx \
 WANTLIB +=	GL c freetype m pthread stdc++ z ${MODTCL_LIB}
 WANTLIB +=	GLEW SDL SDL_ttf ogg png theoradec vorbis xml2
 
-LIB_DEPENDS =	audio/libogg \
-		audio/libvorbis \
-		devel/sdl \
+LIB_DEPENDS =	audio/libvorbis \
 		devel/sdl-ttf \
 		graphics/glew \
 		graphics/png \
