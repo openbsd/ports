@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/04/28 18:38:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2011/08/30 21:50:29 kili Exp $
 
 COMMENT=	free video editor
 
@@ -6,7 +6,7 @@ V=		2.4.4
 DISTNAME=	avidemux_${V}
 PKGNAME=	avidemux-${V}
 
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	multimedia
 
@@ -20,14 +20,14 @@ PERMIT_PACKAGE_FTP=	yes
 PERMIT_DISTFILES_CDROM=	yes
 PERMIT_DISTFILES_FTP=	yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender Xv atk-1.0 c cairo
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xv Xxf86vm atk-1.0 c cairo drm
 WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs sndio
-WANTLIB += stdc++ xcb xcb-render xcb-render-util z gdk_pixbuf-2.0
-WANTLIB += gdk-x11-2.0 gtk-x11-2.0 faac faad mp3lame vorbis vorbisenc
-WANTLIB += xml2 xvidcore x264
+WANTLIB += stdc++ xcb xcb-render xcb-shm z gdk_pixbuf-2.0 gdk-x11-2.0
+WANTLIB += gtk-x11-2.0 faad mp3lame vorbis vorbisenc xml2 xvidcore
+WANTLIB += x264
 
 MODULES=	devel/gettext
 
@@ -35,7 +35,6 @@ RUN_DEPENDS =	devel/desktop-file-utils
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=	x11/gtk+2 \
-		audio/faac \
 		audio/faad \
 		audio/lame \
 		audio/libvorbis \
@@ -59,12 +58,12 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--with-freetype2 \
 		--with-lame \
 		--with-fontconfig \
-		--with-faac \
 		--with-faad2 \
 		--without-libsdl \
 		--without-oss \
 		--without-esd \
 		--without-arts \
+		--without-faac \
 		--without-libdca \
 		--without-newfaad \
 		--without-aften \
@@ -74,8 +73,8 @@ CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
 		--disable-ssse3 \
 		--disable-altivec
 
-pre-configure:
-	@cd ${WRKSRC} && \
+post-patch:
+	@cd ${WRKSRC} && env \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		${MAKE_PROGRAM} -f Makefile.dist
