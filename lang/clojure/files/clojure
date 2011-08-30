@@ -1,7 +1,12 @@
 #!/bin/ksh 
 #
-# $OpenBSD: clojure,v 1.4 2011/08/24 07:50:40 jasper Exp $
+# $OpenBSD: clojure,v 1.5 2011/08/30 19:48:17 jasper Exp $
 
 JAVA_CMD=$(javaPathHelper -c clojure)
 
-rlwrap ${JAVA_CMD} -jar ${TRUEPREFIX}/clojure/clojure.jar "$@"
+# Try to find, and load clojure-contrib
+CONTRIB_JAR=${LOCALBASE}/share/java/classes/clojure-contrib.jar
+[ ! -r ${CONTRIB_JAR} ] || CONTRIB=${CONTRIB_JAR}
+   
+rlwrap ${JAVA_CMD} -classpath ${CONTRIB}:${TRUEPREFIX}/clojure/clojure.jar:. \
+        clojure.main "$@"
