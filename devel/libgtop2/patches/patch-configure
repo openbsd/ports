@@ -1,28 +1,7 @@
-$OpenBSD: patch-configure,v 1.16 2011/06/22 15:30:01 jasper Exp $
-
-commit cecf53394ba213c03b7165749eb011d3809de48d
-Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
-Date:   Wed Jun 22 17:22:26 2011 +0200
-
-    Use a more portable construct for doing substitutions.
-    
-    https://bugzilla.gnome.org/show_bug.cgi?id=652981
-
---- configure.orig	Fri Mar 25 15:54:05 2011
-+++ configure	Mon Jun 20 23:29:15 2011
-@@ -3231,9 +3231,9 @@ $as_echo "$found_introspection" >&6; }
-        INTROSPECTION_COMPILER=`$PKG_CONFIG --variable=g_ir_compiler gobject-introspection-1.0`
-        INTROSPECTION_GENERATE=`$PKG_CONFIG --variable=g_ir_generate gobject-introspection-1.0`
-        INTROSPECTION_GIRDIR=`$PKG_CONFIG --variable=girdir gobject-introspection-1.0`
--       INTROSPECTION_GIRDIR=${INTROSPECTION_GIRDIR/$datadir/\$(datadir)}
-+       INTROSPECTION_GIRDIR=`echo ${INTROSPECTION_GIRDIR} | sed -e "s|${datadir}|\\\$(datadir)|"`
-        INTROSPECTION_TYPELIBDIR="$($PKG_CONFIG --variable=typelibdir gobject-introspection-1.0)"
--       INTROSPECTION_TYPELIBDIR=${INTROSPECTION_TYPELIBDIR/$libdir/\$(libdir)}
-+       INTROSPECTION_TYPELIBDIR=`echo ${INTROSPECTION_TYPELIBDIR} | sed -e "s|${libdir}|\\\$(libdir)|"`
-        INTROSPECTION_CFLAGS=`$PKG_CONFIG --cflags gobject-introspection-1.0`
-        INTROSPECTION_LIBS=`$PKG_CONFIG --libs gobject-introspection-1.0`
-        INTROSPECTION_MAKEFILE=`$PKG_CONFIG --variable=datadir gobject-introspection-1.0`/gobject-introspection-1.0/Makefile.introspection
-@@ -7006,10 +7006,12 @@ newos6*)
+$OpenBSD: patch-configure,v 1.17 2011/08/30 12:24:53 jasper Exp $
+--- configure.orig	Tue Aug 30 13:48:13 2011
++++ configure	Tue Aug 30 13:51:10 2011
+@@ -7091,10 +7091,12 @@ newos6*)
    ;;
  
  openbsd*)
@@ -38,27 +17,7 @@ Date:   Wed Jun 22 17:22:26 2011 +0200
    fi
    ;;
  
-@@ -13049,12 +13051,18 @@ $as_echo_n "checking for libgtop sysdeps directory... 
- 	  libgtop_sysdeps_private_mountlist=yes
- 	  libgtop_sysdeps_private_fsusage=yes
- 	  ;;
--	netbsd*|openbsd*|bsdi*)
-+	netbsd*|bsdi*)
- 	  libgtop_sysdeps_dir=bsd
- 	  libgtop_use_machine_h=yes
- 	  libgtop_need_server=yes
- 	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod 2755 $(bindir)/libgtop_server2'
- 	  ;;
-+	openbsd*)
-+	  libgtop_sysdeps_dir=openbsd
-+	  libgtop_use_machine_h=yes
-+	  libgtop_need_server=yes
-+	  libgtop_postinstall='chgrp kmem $(bindir)/libgtop_server2 && chmod 2555 $(bindir)/libgtop_server2'
-+	  ;;
- 	freebsd*|kfreebsd*)
- 	  libgtop_sysdeps_dir=freebsd
- 	  libgtop_use_machine_h=yes
-@@ -14903,7 +14911,7 @@ if ${ac_cv_lib_intl_strftime+:} false; then :
+@@ -15007,7 +15009,7 @@ if ${ac_cv_lib_intl_strftime+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -67,7 +26,7 @@ Date:   Wed Jun 22 17:22:26 2011 +0200
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -14936,7 +14944,7 @@ $as_echo "$ac_cv_lib_intl_strftime" >&6; }
+@@ -15040,7 +15042,7 @@ $as_echo "$ac_cv_lib_intl_strftime" >&6; }
  if test "x$ac_cv_lib_intl_strftime" = xyes; then :
    $as_echo "#define HAVE_STRFTIME 1" >>confdefs.h
  
@@ -76,7 +35,7 @@ Date:   Wed Jun 22 17:22:26 2011 +0200
  fi
  
  fi
-@@ -15674,7 +15682,7 @@ if ${ac_cv_lib_intl_bindtextdomain+:} false; then :
+@@ -15778,7 +15780,7 @@ if ${ac_cv_lib_intl_bindtextdomain+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -85,7 +44,7 @@ Date:   Wed Jun 22 17:22:26 2011 +0200
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -15711,7 +15719,7 @@ if ${ac_cv_lib_intl_ngettext+:} false; then :
+@@ -15815,7 +15817,7 @@ if ${ac_cv_lib_intl_ngettext+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -94,7 +53,7 @@ Date:   Wed Jun 22 17:22:26 2011 +0200
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -15748,7 +15756,7 @@ if ${ac_cv_lib_intl_dgettext+:} false; then :
+@@ -15852,7 +15854,7 @@ if ${ac_cv_lib_intl_dgettext+:} false; then :
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -103,7 +62,7 @@ Date:   Wed Jun 22 17:22:26 2011 +0200
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -15885,7 +15893,7 @@ fi
+@@ -15989,7 +15991,7 @@ fi
          #
          if test "$gt_cv_func_dgettext_libintl" = "yes" ; then
            glib_save_LIBS="$LIBS"
@@ -112,7 +71,7 @@ Date:   Wed Jun 22 17:22:26 2011 +0200
            unset ac_cv_func_bind_textdomain_codeset
            for ac_func in bind_textdomain_codeset
  do :
-@@ -15917,7 +15925,7 @@ done
+@@ -16021,7 +16023,7 @@ done
        fi
  
        if test "$gt_cv_func_dgettext_libintl" = "yes"; then
@@ -121,7 +80,7 @@ Date:   Wed Jun 22 17:22:26 2011 +0200
        fi
  
        if test "$gt_cv_have_gettext" = "yes"; then
-@@ -16232,11 +16240,6 @@ glib_save_datarootdir="$datarootdir"
+@@ -16336,11 +16338,6 @@ glib_save_datarootdir="$datarootdir"
  test "x$prefix" = xNONE && prefix=$ac_default_prefix
  test "x$exec_prefix" = xNONE && exec_prefix=$prefix
  datarootdir=`eval echo "${datarootdir}"`
@@ -133,7 +92,7 @@ Date:   Wed Jun 22 17:22:26 2011 +0200
  prefix="$glib_save_prefix"
  exec_prefix="$glib_save_exec_prefix"
  datarootdir="$glib_save_datarootdir"
-@@ -17394,9 +17397,9 @@ else
+@@ -17498,9 +17495,9 @@ else
    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
@@ -144,12 +103,3 @@ Date:   Wed Jun 22 17:22:26 2011 +0200
  int
  main ()
  {
-@@ -18280,7 +18283,7 @@ fi
- 
- 
- 
--ac_config_files="$ac_config_files Makefile libgtop.spec po/Makefile.in misc/Makefile include/Makefile include/glibtop/Makefile sysdeps/Makefile sysdeps/common/Makefile sysdeps/stub/Makefile sysdeps/stub_suid/Makefile sysdeps/sun4/Makefile sysdeps/osf1/Makefile sysdeps/linux/Makefile sysdeps/freebsd/Makefile sysdeps/solaris/Makefile sysdeps/aix/Makefile sysdeps/bsd/Makefile sysdeps/darwin/Makefile sysdeps/cygwin/Makefile src/Makefile src/daemon/Makefile lib/Makefile examples/Makefile doc/Makefile doc/reference/Makefile doc/reference/version.xml libgtop-2.0.pc libgtopconfig.h"
-+ac_config_files="$ac_config_files Makefile libgtop.spec po/Makefile.in misc/Makefile include/Makefile include/glibtop/Makefile sysdeps/Makefile sysdeps/common/Makefile sysdeps/stub/Makefile sysdeps/stub_suid/Makefile sysdeps/sun4/Makefile sysdeps/osf1/Makefile sysdeps/linux/Makefile sysdeps/freebsd/Makefile sysdeps/solaris/Makefile sysdeps/aix/Makefile sysdeps/bsd/Makefile sysdeps/darwin/Makefile sysdeps/cygwin/Makefile sysdeps/openbsd/Makefile src/Makefile src/daemon/Makefile lib/Makefile examples/Makefile doc/Makefile doc/reference/Makefile doc/reference/version.xml libgtop-2.0.pc libgtopconfig.h"
- 
- 
- cat >confcache <<\_ACEOF
