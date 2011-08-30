@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/04 15:18:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/08/30 07:56:18 jasper Exp $
 %%SHARED%%
 @bin bin/gssdp-device-sniffer
 include/gssdp-1.0/
@@ -24,6 +24,7 @@ share/gtk-doc/html/gssdp/
 share/gtk-doc/html/gssdp/GSSDPClient.html
 share/gtk-doc/html/gssdp/GSSDPResourceBrowser.html
 share/gtk-doc/html/gssdp/GSSDPResourceGroup.html
+share/gtk-doc/html/gssdp/annotation-glossary.html
 share/gtk-doc/html/gssdp/ch01.html
 share/gtk-doc/html/gssdp/gssdp-Error-codes.html
 share/gtk-doc/html/gssdp/gssdp.devhelp

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/05 17:14:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/08/30 07:56:18 jasper Exp $
 
 COMMENT=		API for handling SSDP resource discovery and announcement
 
 GNOME_PROJECT=		gssdp
-GNOME_VERSION=		0.10.0
-REVISION=		0
+GNOME_VERSION=		0.12.0
 
-SHARED_LIBS +=  gssdp-1.0            0.0      # 2.0
+SHARED_LIBS +=  gssdp-1.0            1.0      # 3.0
 CATEGORIES=		net devel
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -16,6 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+
+EXTRACT_SUFX=		.tar.xz
 
 MODULES=		devel/gettext \
 			x11/gnome
