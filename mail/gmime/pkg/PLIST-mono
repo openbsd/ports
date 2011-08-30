@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-mono,v 1.1 2011/08/30 06:45:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST-mono,v 1.2 2011/08/30 07:12:21 ajacoutot Exp $
+@pkgpath mail/gmime24,-mono
 lib/mono/
 lib/mono/gac/
 lib/mono/gac/gmime-sharp/

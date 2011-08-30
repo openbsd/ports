@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2011/08/30 06:45:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/08/30 07:12:21 ajacoutot Exp $
 @pkgpath mail/gmime
 @pkgpath mail/gmime24
+@pkgpath mail/gmime24,-main
 %%SHARED%%
 @bin bin/gmime-uudecode
 @bin bin/gmime-uuencode
