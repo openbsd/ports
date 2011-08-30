@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2011/08/29 22:49:39 bluhm Exp $
+# $OpenBSD: Makefile,v 1.13 2011/08/30 18:31:12 bluhm Exp $
 
 COMMENT =		iterative SPF lookup
 
-DISTNAME =		Mail-SPF-Iterator-1.09
+DISTNAME =		Mail-SPF-Iterator-1.10
 
 CATEGORIES =		mail
 
@@ -15,7 +15,6 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =		cpan
-USE_GROFF =		Yes
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		net/p5-Net-DNS>=0.62 \
 			www/p5-URI
