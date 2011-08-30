@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2011/07/06 22:56:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2011/08/30 17:16:35 jasper Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -12,13 +12,13 @@ ECLIPSE_VER=		3.2.2
 DISTNAME=		eclipse-sourceBuild-srcIncluded-${ECLIPSE_VER}
 PKGNAME=		eclipse-sdk-${ECLIPSE_VER}
 PKGNAME-main=		eclipse-sdk-${ECLIPSE_VER}
-REVISION-main=		16
+REVISION-main=		17
 PKGNAME-swt=		swt-${ECLIPSE_VER}
-REVISION-swt=		2
+REVISION-swt=		3
 PKGNAME-gnome=		swt-gnome-${ECLIPSE_VER}
-REVISION-gnome=		3
+REVISION-gnome=		4
 PKGNAME-browser=	swt-browser-${ECLIPSE_VER}
-REVISION-browser=	4
+REVISION-browser=	5
 SHARED_LIBS=		swt-atk-gtk-3236	4.0 \
 			swt-awt-gtk-3236	4.0 \
 			swt-gtk-3236		4.0 \
@@ -28,7 +28,7 @@ SHARED_LIBS=		swt-atk-gtk-3236	4.0 \
 			swt-mozilla-gtk-3236	4.0 \
 			swt-glx-gtk-3236	4.0
 
-CATEGORIES=		devel/eclipse java 
+CATEGORIES=		devel/eclipse 
 
 HOMEPAGE=		http://www.eclipse.org/
 

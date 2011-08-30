@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/08/28 20:57:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/08/30 17:16:36 jasper Exp $
 
 COMMENT=	general purpose multi-paradigm programming language
 
 DISTNAME=	scala-2.9.0.1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.scala-lang.org/

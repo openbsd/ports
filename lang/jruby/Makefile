@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/08/26 22:11:47 jeremy Exp $
+# $OpenBSD: Makefile,v 1.24 2011/08/30 17:16:36 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,6 +8,7 @@ V =		1.6.4
 DISTNAME =	jruby-src-${V}
 PKGNAME =	jruby-${V}
 CATEGORIES =	lang lang/ruby
+REVISION =	0
 DISTFILES =	${DISTNAME}.tar.gz \
 		wmeissner-jffi-1.0.2-0-ge0d10e9.tar.gz:0
 

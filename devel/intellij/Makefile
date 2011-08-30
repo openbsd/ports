@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/06/02 13:41:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/08/30 17:16:36 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,9 +7,9 @@ COMMENT=		IntelliJ Java IDE
 V=			9.0.4
 DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
-CATEGORIES=		java devel
+CATEGORIES=		devel
 
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://www.jetbrains.com/idea/
 
