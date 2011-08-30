@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2011/08/30 19:48:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/08/30 19:52:22 jasper Exp $
 
 COMMENT =		Lisp-1 dialect for the Java Virtual Machine
 
 V =			1.2.1
 DISTNAME =		clojure-${V}
-REVISION =		2
+REVISION =		3
 EXTRACT_SUFX =		.zip
 PKG_ARCH =		*
 
@@ -12,7 +12,7 @@ CATEGORIES =		lang
 
 HOMEPAGE =		http://www.clojure.org/
 
-MAINTAINER=		Ian Darwin <ian@openbsd.org>
+MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Eclipse Public License EPL 1.0
 PERMIT_PACKAGE_CDROM =	Yes
