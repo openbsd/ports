@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/08/29 15:07:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/08/30 10:49:02 nigel Exp $
 
 COMMENT=	Java Native Access (JNA)
 
@@ -21,7 +21,9 @@ EXTRACT_SUFX=	.zip
 MODULES=	java
 MODJAVA_VER=	1.6+
 
-BUILD_DEPENDS=	devel/apache-ant
+BUILD_DEPENDS=	devel/apache-ant \
+		devel/gmake \
+		sysutils/ggrep
 
 WRKDIST= 	${WRKDIR}/twall-jna-d928d42/
 
