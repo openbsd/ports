@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.45 2011/04/21 07:05:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2011/08/30 06:49:52 ajacoutot Exp $
+
+BROKEN=			doesn't build with new gmime, upstream dead
 
 COMMENT=		mail notification for freedesktop.org-compliant system trays
 
