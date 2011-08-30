@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/04 15:28:05 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/08/30 07:57:35 jasper Exp $
 %%SHARED%%
 bin/gupnp-binding-tool
 include/gupnp-1.0/
@@ -19,16 +19,11 @@ include/gupnp-1.0/libgupnp/gupnp-service.h
 include/gupnp-1.0/libgupnp/gupnp-types.h
 include/gupnp-1.0/libgupnp/gupnp-xml-doc.h
 include/gupnp-1.0/libgupnp/gupnp.h
-lib/girepository-1.0/
 lib/girepository-1.0/GUPnP-1.0.typelib
 lib/libgupnp-1.0.a
 lib/libgupnp-1.0.la
-lib/pkgconfig/
 lib/pkgconfig/gupnp-1.0.pc
-share/gir-1.0/
 share/gir-1.0/GUPnP-1.0.gir
-share/gtk-doc/
-share/gtk-doc/html/
 share/gtk-doc/html/gupnp/
 share/gtk-doc/html/gupnp/GUPnPContext.html
 share/gtk-doc/html/gupnp/GUPnPContextManager.html
