@@ -1,10 +1,10 @@
-$OpenBSD: patch-Makefile_in,v 1.12 2011/07/09 00:30:28 ajacoutot Exp $
+$OpenBSD: patch-Makefile_in,v 1.13 2011/08/30 08:55:55 ajacoutot Exp $
 
 libcompat is needed because hplip uses ftime(3).
 
---- Makefile.in.orig	Sat May 14 20:28:44 2011
-+++ Makefile.in	Sat Jul  9 02:05:35 2011
-@@ -4022,10 +4022,10 @@ cups_drv = prnt/drv/hpcups.drv
+--- Makefile.in.orig	Sun Jul 24 21:15:12 2011
++++ Makefile.in	Tue Aug 30 10:32:02 2011
+@@ -4032,10 +4032,10 @@ cups_drv = prnt/drv/hpcups.drv
  @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@        scan/sane/soaphti.h scan/sane/soapi.h scan/sane/xml.c scan/sane/xml.h scan/sane/ledm.h scan/sane/ledmi.h scan/sane/ledm.c \
  @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@        scan/sane/bb_ledm.c scan/sane/http.h scan/sane/http.c
  
@@ -17,7 +17,7 @@ libcompat is needed because hplip uses ftime(3).
  #libsane_hpaio_la_CFLAGS = -DWITH_NONAMESPACES -DSOAP_DEBUG
  @HPLIP_BUILD_TRUE@@SCAN_BUILD_TRUE@libsane_hpaio_la_CFLAGS = $(DBUS_CFLAGS)
  
-@@ -4049,7 +4049,7 @@ cups_drv = prnt/drv/hpcups.drv
+@@ -4059,7 +4059,7 @@ cups_drv = prnt/drv/hpcups.drv
  # hp-mkuri.
  @HPLIP_BUILD_TRUE@hp_mkuridir = $(bindir)
  @HPLIP_BUILD_TRUE@hp_mkuri_SOURCES = io/hpmud/hp-mkuri.c
@@ -26,7 +26,7 @@ libcompat is needed because hplip uses ftime(3).
  @HPLIP_BUILD_TRUE@hp_mkuri_CFLAGS = -DCONFDIR=\"$(hplip_confdir)\"
  
  # hpmud.rules
-@@ -4240,7 +4240,7 @@ cups_drv = prnt/drv/hpcups.drv
+@@ -4250,7 +4250,7 @@ cups_drv = prnt/drv/hpcups.drv
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_SOURCES = prnt/hpijs/PrinterProperties.cpp prnt/hpijs/PrinterProperties.h prnt/hpijs/bug.h
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hppgsz_CFLAGS = $(libapdk_la_CFLAGS)
@@ -35,7 +35,7 @@ libcompat is needed because hplip uses ftime(3).
  
  # hplip.desktop
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@hplip_desktopdir = $(icondir)
-@@ -4312,8 +4312,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4322,8 +4322,8 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  
  @HPIJS_INSTALL_TRUE@hpijs_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  @HPIJS_INSTALL_TRUE@hpijs_CFLAGS = $(libapdk_la_CFLAGS)
@@ -46,7 +46,7 @@ libcompat is needed because hplip uses ftime(3).
  
  # hpcups
  #if NEW_HPCUPS
-@@ -4351,7 +4351,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4361,7 +4361,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  @HPCUPS_INSTALL_TRUE@        prnt/hpcups/dj4100PrintModes.h
  
  @HPCUPS_INSTALL_TRUE@hpcups_CXXFLAGS = $(APDK_ENDIAN_FLAG)
@@ -55,7 +55,7 @@ libcompat is needed because hplip uses ftime(3).
  #else
  #hpcupsdir = $(cupsfilterdir)
  #hpcups_PROGRAMS = hpcups
-@@ -4359,9 +4359,9 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -4369,9 +4369,9 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  #hpcups_CXXFLAGS = $(libapdk_la_CXXFLAGS)
  #hpcups_CFLAGS = $(libapdk_la_CFLAGS)
  #if HPCUPS_ONLY_BUILD
@@ -67,7 +67,7 @@ libcompat is needed because hplip uses ftime(3).
  #endif #HPCUPS_ONLY_BUILD
  #endif # NEW_HPCUPS
  # hpcupsfax
-@@ -8287,7 +8287,7 @@ install-data-am: install-cupsdrv2DATA install-cupsdrvD
+@@ -8297,7 +8297,7 @@ install-data-am: install-cupsdrv2DATA install-cupsdrvD
  	install-cupsextLTLIBRARIES install-dist_baseDATA \
  	install-dist_cacSCRIPTS install-dist_cmdSCRIPTS \
  	install-dist_copierDATA install-dist_faxDATA \
@@ -76,7 +76,7 @@ libcompat is needed because hplip uses ftime(3).
  	install-dist_hpcupsfaxppdDATA install-dist_hpfaxSCRIPTS \
  	install-dist_hpijsfaxppdDATA install-dist_hplipSCRIPTS \
  	install-dist_hplip_stateDATA install-dist_images_128x128DATA \
-@@ -8302,7 +8302,7 @@ install-data-am: install-cupsdrv2DATA install-cupsdrvD
+@@ -8312,7 +8312,7 @@ install-data-am: install-cupsdrv2DATA install-cupsdrvD
  	install-dist_policykit_dbus_shareDATA \
  	install-dist_policykit_policyDATA install-dist_postscriptDATA \
  	install-dist_ppdDATA install-dist_prntDATA \
@@ -85,7 +85,7 @@ libcompat is needed because hplip uses ftime(3).
  	install-dist_scanDATA install-dist_ui4DATA install-dist_uiDATA \
  	install-dist_unrelDATA install-dist_www0DATA \
  	install-dist_www3DATA install-dist_www4DATA install-docDATA \
-@@ -8496,17 +8496,6 @@ uninstall-am: uninstall-binPROGRAMS uninstall-cupsdrv2
+@@ -8506,17 +8506,6 @@ uninstall-am: uninstall-binPROGRAMS uninstall-cupsdrv2
  
  
  install-data-hook:
