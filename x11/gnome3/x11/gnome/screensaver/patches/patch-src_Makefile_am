@@ -1,26 +1,39 @@
-$OpenBSD: patch-src_Makefile_am,v 1.2 2011/05/31 14:27:49 ajacoutot Exp $
+$OpenBSD: patch-src_Makefile_am,v 1.3 2011/08/30 12:18:18 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=651554
 
 --- src/Makefile.am.orig	Tue Mar  8 15:33:01 2011
-+++ src/Makefile.am	Tue May 31 12:28:14 2011
-@@ -80,6 +80,7 @@ test_passwd_SOURCES = 			\
++++ src/Makefile.am	Tue Aug 30 11:35:15 2011
+@@ -63,6 +63,10 @@ gnome_screensaver_command_LDADD =	\
+ 	$(GNOME_SCREENSAVER_COMMAND_LIBS)	\
+ 	$(NULL)
+ 
++AUTH_SOURCES =				\
++	gs-auth-@AUTH_SCHEME@.c		\
++	$(NULL)
++
+ test_fade_SOURCES = 			\
+ 	test-fade.c 			\
+ 	gs-fade.c	 		\
+@@ -79,7 +83,7 @@ test_fade_LDADD =			\
+ test_passwd_SOURCES = 			\
  	test-passwd.c 			\
  	gs-auth.h			\
- 	gs-auth-pam.c			\
-+	gs-auth-bsdauth.c		\
+-	gs-auth-pam.c			\
++	$(AUTH_SOURCES)			\
  	setuid.c			\
  	setuid.h			\
  	subprocs.c			\
-@@ -138,6 +139,7 @@ gnome_screensaver_dialog_SOURCES = 	\
+@@ -137,7 +141,7 @@ gnome_screensaver_dialog_SOURCES = 	\
+ 	subprocs.c			\
  	subprocs.h			\
  	gs-auth.h			\
- 	gs-auth-pam.c			\
-+	gs-auth-bsdauth.c		\
+-	gs-auth-pam.c			\
++	$(AUTH_SOURCES)			\
  	$(NULL)
  
  gnome_screensaver_dialog_LDADD =	\
-@@ -213,8 +215,7 @@ install-exec-hook:
+@@ -213,8 +217,7 @@ install-exec-hook:
  	@if [ "x@NEED_SETUID@" = "xyes" ]; then \
  	    echo "***" ; \
  	    echo "***  Warning: gnome-screensaver has been compiled with support for" ; \

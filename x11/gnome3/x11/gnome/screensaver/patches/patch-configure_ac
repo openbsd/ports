@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.2 2011/05/31 14:27:49 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.3 2011/08/30 12:18:18 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=651554
 
 --- configure.ac.orig	Mon Apr  4 16:27:55 2011
-+++ configure.ac	Tue May 31 16:10:13 2011
-@@ -459,6 +459,38 @@ if test "$ac_macosx" = yes; then
++++ configure.ac	Tue Aug 30 12:32:39 2011
+@@ -459,6 +459,45 @@ if test "$ac_macosx" = yes; then
  fi
  
  dnl ---------------------------------------------------------------------------
@@ -13,54 +13,86 @@ https://bugzilla.gnome.org/show_bug.cgi?id=651554
 +
 +have_bsdauth=no
 +with_bsdauth_req=unspecified
++NEED_SETUID=no
 +
 +case "$host" in                                                                                       
 +  *-openbsd*)                                                                                         
-+    have_bsdauth=yes
++    with_bsdauth=yes
++    AUTH_SCHEME=bsdauth
 +    NEED_SETUID=no
 +    if test "x$enable_locking" = "xyes"; then
 +      with_bsdauth_req=yes
 +      NEED_SETUID=yes
 +    fi
-+    AC_SUBST(NEED_SETUID)
 +esac  
 +
-+if test "$have_bsdauth" = yes ; then
++if test "$with_bsdauth" = yes ; then
 +  AC_CACHE_CHECK([for BSD Authentication], ac_cv_bsdauth,
 +    [AC_TRY_X_COMPILE([#include <stdlib.h>
 +                       #include <unistd.h>
 +                       #include <sys/types.h>
 +                       #include <bsd_auth.h>],
 +      [int ok = auth_userokay("x", 0, "x", "x");],
-+      [have_bsdauth=yes],
-+      [have_bsdauth=no])])
-+  if test "$have_bsdauth" = yes; then
-+    AC_DEFINE(HAVE_BSDAUTH, 1, [Define to 1 if using bsd_auth(3) authentication])
++      [ac_cv_bsdauth=yes],
++      [ac_cv_bsdauth=no])])
++  if test "$ac_cv_bsdauth" = yes; then
++    have_bsdauth=yes
 +  fi
 +fi
++
++if test "$have_bsdauth" = yes; then
++  AC_DEFINE(HAVE_BSDAUTH, 1, [Define to 1 if using bsd_auth(3) authentication])
++fi
++
++AC_SUBST(NEED_SETUID)
 +
 +dnl ---------------------------------------------------------------------------
  dnl - Check for PAM
  dnl ---------------------------------------------------------------------------
  
-@@ -518,7 +550,9 @@ if test "x$have_pam" = "xyes"; then
+@@ -478,12 +517,13 @@ fi
+ AC_SUBST(PAM_PREFIX)
+ 
+ have_pam=no
+-if test "x$enable_locking" = "xyes"; then
++if test "x$enable_locking" = "xyes" -a "x$have_bsdauth" = "xno"; then
+ AC_CHECK_LIB(pam, pam_start, have_pam=yes)
+ fi
+ 
+ if test "x$have_pam" = "xyes"; then
+         AUTH_LIBS="${AUTH_LIBS} -lpam"
++        AUTH_SCHEME=pam
+         # On Linux, sigtimedwait() is in libc; on Solaris, it's in librt.
+         have_timedwait=no
+         AC_CHECK_LIB(c, sigtimedwait, [have_timedwait=yes])
+@@ -517,14 +557,17 @@ if test "x$have_pam" = "xyes"; then
+           AC_MSG_RESULT(unknown)
          fi
  
- else
--	AC_MSG_ERROR("PAM libraries not found")
-+	if test "x$have_bsdauth" = "xno" ; then
-+	    AC_MSG_ERROR("PAM libraries not found")
-+	fi
+-else
++elif test "x$have_bsdauth" = "xno"; then
+ 	AC_MSG_ERROR("PAM libraries not found")
  fi
  AC_SUBST(HAVE_PAM)
  AC_SUBST(AUTH_LIBS)
-@@ -717,7 +751,12 @@ echo "
++AC_SUBST(AUTH_SCHEME)
+ 
+-AC_CHECK_HEADERS([security/pam_modutil.h security/pam_ext.h])
+-AC_CHECK_LIB(pam, pam_syslog, [AC_DEFINE(HAVE_PAM_SYSLOG, [], [Define to 1 if you have the pam_syslog function])])
++if test "x$have_pam" = "xyes"; then
++  AC_CHECK_HEADERS([security/pam_modutil.h security/pam_ext.h])
++  AC_CHECK_LIB(pam, pam_syslog, [AC_DEFINE(HAVE_PAM_SYSLOG, [], [Define to 1 if you have the pam_syslog function])])
++fi
+ 
+ dnl test whether struct pam_message is const (Linux) or not (Sun)
+ if test "x$have_pam" = "xyes"; then
+@@ -717,7 +760,12 @@ echo "
  
          Screen locking enabled:   ${enable_locking}
          Show keyboard indicator:  ${with_kbd_layout_indicator}
 +"
 +
-+if test "x$have_bsdauth" = "xno" ; then
++if test "x$have_pam" = "xyes" ; then
 +echo "\
          PAM prefix:               ${PAM_PREFIX}
  
