@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.269 2011/08/30 06:55:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.270 2011/08/30 12:25:31 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.51 1997/11/14 22:56:43 hoek Exp $
 #
  
@@ -77,7 +77,6 @@
      SUBDIR += ldapvacation
      SUBDIR += libetpan
      SUBDIR += libspf2
-     SUBDIR += mail-notification
      SUBDIR += mailcrypt
      SUBDIR += maildrop
      SUBDIR += mailgraph
