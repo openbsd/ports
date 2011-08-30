@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.24 2011/05/08 13:20:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2011/08/30 06:48:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-0.97
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11 misc
 
@@ -17,17 +17,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo cairomm-1.0
-WANTLIB += crypto dbus-1 expat fontconfig freetype gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4
-WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB += idn m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
-WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 ssl
-WANTLIB += stdc++ xcb xml2 z e2fs-uuid xcb-render
-WANTLIB += gtkmm-2.4>=7 gdkmm-2.4 atkmm-1.6 xml++-2.6 gmime-2.4
-WANTLIB += curl>=13 tag>=7 sqlite3>=13 dbus-glib-1>=4 exif>=12
-WANTLIB += textcat xapian GL Xxf86vm drm xcb-shm
+WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender assuan atk-1.0 atkmm-1.6 c cairo cairomm-1.0
+WANTLIB += crypto curl dbus-1 dbus-glib-1 e2fs-uuid exif expat
+WANTLIB += fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0 gdkmm-2.4
+WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmime-2.6 gmodule-2.0
+WANTLIB += gobject-2.0 gpg-error gpgme-pthread gthread-2.0 gtk-x11-2.0
+WANTLIB += gtkmm-2.4 idn m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pangomm-1.4 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += sigc-2.0 sqlite3 ssl stdc++ tag textcat xapian xcb
+WANTLIB += xcb-render xcb-shm xml++-2.6 xml2 z
 
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=pinot/}
 
@@ -41,7 +40,7 @@ BUILD_DEPENDS=	devel/boost \
 # XXX catppt - catdvi
 LIB_DEPENDS=	x11/gtk2mm \
 		textproc/libxml++ \
-		gmime->=2.4,<2.6:mail/gmime24 \
+		mail/gmime>=2.6.0 \
 		net/curl \
 		audio/taglib \
 		databases/sqlite3 \

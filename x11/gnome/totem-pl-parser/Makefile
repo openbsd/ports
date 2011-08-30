@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/05/10 17:11:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.34 2011/08/30 06:48:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,8 @@ COMMENT=	GObject-based parsing library
 
 GNOME_PROJECT=	totem-pl-parser
 GNOME_VERSION=	2.32.5
+
+REVISION=	0
 
 SHARED_LIBS +=	totem-plparser		3.0 # .17.0
 SHARED_LIBS +=	totem-plparser-mini	3.0 # .17.0
@@ -20,16 +22,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += archive bz2 dbus-1 expat gcrypt gio-2.0 glib-2.0 gmime-2.4
+WANTLIB += archive bz2 dbus-1 expat gcrypt gio-2.0 glib-2.0 gmime-2.6
 WANTLIB += gmodule-2.0 gnome-keyring gobject-2.0 gpg-error gthread-2.0
-WANTLIB += lzma m pcre soup-2.4 soup-gnome-2.4 sqlite3 xml2 z
+WANTLIB += lzma m pcre soup-2.4 soup-gnome-2.4 sqlite3 xml2 z assuan
+WANTLIB += gpgme-pthread
 
 MODULES=	devel/gettext \
 		x11/gnome
 
 BUILD_DEPENDS=	devel/gobject-introspection
 
-LIB_DEPENDS=	gmime->=2.4,<2.6:mail/gmime24 \
+LIB_DEPENDS=	mail/gmime>=2.6.0 \
 		textproc/libxml \
 		devel/libsoup,-gnome \
 		archivers/libarchive
