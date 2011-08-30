@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2011/05/14 21:29:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/08/30 09:59:30 sthen Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
 COMMENT-x11 =		gapcmon - GUI for apcupsd
 
-DISTNAME =		apcupsd-3.14.8
+DISTNAME =		apcupsd-3.14.9
 PKGNAME-main =		${DISTNAME}
-REVISION-main = 	2
 PKGNAME-cgi =		${DISTNAME:S/-/-cgi-/}
 PKGNAME-x11 =		${DISTNAME:S/-/-x11-/}
-REVISION-x11 = 		2
 
 CATEGORIES =		sysutils
 
@@ -17,7 +15,7 @@ HOMEPAGE =		http://www.apcupsd.com
 
 MAINTAINER =		Kirill Bychkov <yason@linklevel.net>
 
-# GPLv2 
+# GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
@@ -31,7 +29,6 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=apcupsd/}
 
 CONFIGURE_STYLE =	gnu old # old prevents overriding sysconfdir
 USE_GMAKE =		Yes
-USE_GROFF =		Yes
 MAKE_FLAGS =		VERBOSE=2
 
 WEB_ROOT =		/var/www
@@ -44,10 +41,10 @@ CONFIGURE_ARGS =	--mandir=${PREFIX}/man \
 			--with-cgi-bin=${WEB_ROOT}/cgi-bin/apcupsd \
 			--with-lock-dir=/var/run \
 			--with-nisip=127.0.0.1 \
+			--enable-test \
 			--enable-usb
 
 PSEUDO_FLAVORS =	no_x11
-FLAVORS =		snmp
 FLAVOR ?=
 
 MULTI_PACKAGES =	-main
@@ -55,7 +52,7 @@ MULTI_PACKAGES =	-main
 MULTI_PACKAGES +=	-cgi
 PREFIX-cgi =		${WEB_ROOT}
 CONFIGURE_ARGS +=	--enable-cgi
-WANTLIB-cgi = 		c pthread gd
+WANTLIB-cgi =		c pthread gd
 LIB_DEPENDS-cgi =	graphics/gd
 RUN_DEPENDS-cgi =
 
@@ -68,19 +65,12 @@ LIB_DEPENDS-x11 =	devel/gconf2 \
 RUN_DEPENDS-x11 =	devel/desktop-file-utils \
 			${MODGETTEXT_RUN_DEPENDS}
 
-WANTLIB-x11 += ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
-WANTLIB-x11 += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
-WANTLIB-x11 += freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB-x11 += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
-WANTLIB-x11 += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png
-WANTLIB-x11 += pthread-stubs xcb-render xcb z ${WANTLIB} c pthread
-WANTLIB-x11 += GL X11-xcb Xxf86vm drm xcb-shm
-.endif
-
-.if ${FLAVOR:L:Msnmp}
-CONFIGURE_ARGS +=	--enable-net-snmp
-LIB_DEPENDS-main +=	net/net-snmp
-WANTLIB-main =		${WANTLIB} crypto netsnmp
+WANTLIB-x11 += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB-x11 += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype gconf-2
+WANTLIB-x11 += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB-x11 += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB-x11 += pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb-render
+WANTLIB-x11 += xcb-shm xcb z ${WANTLIB}
 .endif
 
 FAKE_FLAGS =		sysconfdir=${TRUEPREFIX}/share/examples/apcupsd/etc

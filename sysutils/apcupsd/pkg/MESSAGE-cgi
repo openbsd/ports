@@ -5,6 +5,6 @@ This switch is on by default.
 To run scripts in chrooted apache (default behaviour), configuration
 files must be available to the webserver:
 # mv ${SYSCONFDIR}/apcupsd /var/www/${SYSCONFDIR}/apcupsd
-# ln -s /var/www/${SYSCONFIDR}/apcupsd ${SYSCONFDIR}/
+# ln -s /var/www/${SYSCONFDIR}/apcupsd ${SYSCONFDIR}/
 And some libraries must be copied in:
 # ${WEB_ROOT}/cgi-bin/apcupsd/copy-libs.sh

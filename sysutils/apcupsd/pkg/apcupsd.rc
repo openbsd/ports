@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $OpenBSD: apcupsd.rc,v 1.1 2011/08/30 09:59:30 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/apcupsd"
+daemon_flags="--kill-on-powerfail"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_pre() {
+	if [ -f ${SYSCONFDIR}/apcupsd/powerfail ]; then
+		rm -f ${SYSCONFDIR}/apcupsd/powerfail
+	fi
+}
+
+rc_cmd $1

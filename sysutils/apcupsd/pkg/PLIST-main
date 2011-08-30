@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-main,v 1.1.1.1 2010/05/25 21:56:33 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/08/30 09:59:30 sthen Exp $
+@pkgpath sysutils/apcupsd,snmp
 @group bin
 @man man/man5/apcupsd.conf.5
 @man man/man8/apcaccess.8
@@ -11,8 +12,8 @@ sbin/apcupsctl
 @bin sbin/apcupsd
 @bin sbin/smtp
 @comment share/applications/
-share/doc/apcupsd/
 @group
+share/doc/apcupsd/
 share/doc/apcupsd/COPYING
 share/doc/apcupsd/COPYRIGHT
 share/doc/apcupsd/DISCLAIMER
@@ -82,3 +83,4 @@ share/examples/apcupsd/status/SmartUPS700-2.status
 share/examples/apcupsd/status/SmartUPS700.status
 share/examples/apcupsd/status/newbackupspro1.status
 share/examples/apcupsd/status/newbackupspro2.status
+@rcscript ${RCDIR}/apcupsd
