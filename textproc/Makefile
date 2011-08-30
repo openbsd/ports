@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.335 2011/08/22 07:15:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.336 2011/08/30 08:54:40 jasper Exp $
 # $FreeBSD: Makefile,v 1.15 1997/11/22 00:31:24 jseger Exp $
 
      SUBDIR =
@@ -323,6 +323,7 @@
      SUBDIR += sphinx
      SUBDIR += sphinx,pgsql
      SUBDIR += spiff
+     SUBDIR += stringtemplate
      SUBDIR += swish-e
      SUBDIR += tcpdf
      SUBDIR += texi2html
