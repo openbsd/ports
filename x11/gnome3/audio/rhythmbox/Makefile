@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/27 10:07:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/08/30 06:52:57 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		2.90.1
+
+REVISION=		0
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -24,7 +26,7 @@ WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
 WANTLIB += archive atk-1.0 bz2 c cairo cairo-gobject dbus-1 dbus-glib-1
 WANTLIB += drm expat ffi fontconfig freetype gconf-2 gcrypt gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 girepository-1.0 glib-2.0 gmime-2.4
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 girepository-1.0 glib-2.0 gmime-2.6
 WANTLIB += gmodule-2.0 gnome-keyring gnome-media-profiles-3.0
 WANTLIB += gobject-2.0 gpg-error gpod gstbase-0.10 gstcontroller-0.10
 WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gsttag-0.10
@@ -32,7 +34,7 @@ WANTLIB += gstvideo-0.10 gthread-2.0 gtk-3 json-glib-1.0 lzma
 WANTLIB += m notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
 WANTLIB += peas-1.0 peas-gtk-1.0 pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 totem-plparser xcb
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += xcb-render xcb-shm xml2 z assuan gpgme-pthread
 
 MODULES=		devel/gettext \
 			x11/gnome \

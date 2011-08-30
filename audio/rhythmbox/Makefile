@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2011/06/15 09:33:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2011/08/30 06:52:57 ajacoutot Exp $
 
 # coherence plugin is installed but not activated by default so we don't
 # enforce dependency on multimedia/coherence to lower requirements
@@ -8,7 +8,7 @@ COMMENT=		music management application for GNOME
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		0.12.8
 
-REVISION =		14
+REVISION =		15
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -30,13 +30,13 @@ WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
 WANTLIB += atk-1.0 avahi-client avahi-common avahi-glib c cairo
 WANTLIB += dbus-1 dbus-glib-1 drm expat ffi fontconfig freetype
 WANTLIB += gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmime-2.4 gmodule-2.0 gnome-keyring gnome-media-profiles
+WANTLIB += gmime-2.6 gmodule-2.0 gnome-keyring gnome-media-profiles
 WANTLIB += gobject-2.0 gpg-error gpod gstbase-0.10 gstcontroller-0.10
 WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 totem-plparser
-WANTLIB += util xcb xcb-render xcb-shm xml2 z
+WANTLIB += util xcb xcb-render xcb-shm xml2 z assuan gpgme-pthread
 WANTLIB += ${MODPY_WANTLIB} archive bz2 lzma
 
 MODULES=		devel/gettext \

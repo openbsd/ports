@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2011/06/08 17:41:57 rpointel Exp $
+# $OpenBSD: Makefile,v 1.33 2011/08/30 06:52:57 ajacoutot Exp $
 
 COMMENT=		Python bindings for the GNOME desktop
 
 GNOME_PROJECT=		gnome-python-desktop
 GNOME_VERSION=		2.32.0
 PKGNAME=		py-gnome-desktop-${VERSION}
-REVISION=		5
+REVISION=		6
 
 HOMEPAGE=		http://www.pygtk.org/
 
@@ -22,7 +22,7 @@ WANTLIB += bonoboui-2 cairo camel-1.2 canberra canberra-gtk com_err
 WANTLIB += croco-0.6 crypto dbus-1 dbus-glib-1 drm ebook-1.2 ecal-1.2
 WANTLIB += edataserver-1.2 evdocument evview execinfo expat ffi
 WANTLIB += fontconfig freetype gailutil gconf-2 gcrypt gdata gdk-x11-2.0
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmime-2.4 gmodule-2.0
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0
 WANTLIB += gnome-2 gnome-desktop-2 gnome-keyring gnome-media-profiles
 WANTLIB += gnomecanvas-2 gnomeprint-2-2 gnomeprintui-2-2 gnomeui-2
 WANTLIB += gnomevfs-2 gnutls gobject-2.0 gpg-error gssapi gstreamer-0.10
@@ -33,7 +33,7 @@ WANTLIB += pcre pixman-1 plc4 plds4 png popt proxy pthread pthread-stubs
 WANTLIB += rsvg-2 smime3 soup-2.4 soup-gnome-2.4 sqlite3 ssl ssl3
 WANTLIB += startup-notification-1 tasn1 totem-plparser util vorbis
 WANTLIB += vorbisfile wnck-1 xcb xcb-atom xcb-aux xcb-event xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += xcb-shm xml2 z assuan gpgme-pthread
 
 MODULES=		devel/gettext \
 			lang/python \

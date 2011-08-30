@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2011/06/08 17:41:57 rpointel Exp $
+# $OpenBSD: Makefile,v 1.64 2011/08/30 06:52:57 ajacoutot Exp $
 
 COMMENT=	official media player for GNOME
 
 GNOME_PROJECT=	totem
 GNOME_VERSION=	2.32.0
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	multimedia
 
@@ -20,12 +20,12 @@ WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
 WANTLIB += atk-1.0 c cairo dbus-1 dbus-glib-1 expat ffi fontconfig
 WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmime-2.4 gmodule-2.0 gnome-keyring
+WANTLIB += glib-2.0 gmime-2.6 gmodule-2.0 gnome-keyring
 WANTLIB += gobject-2.0 gpg-error gstbase-0.10 gstreamer-0.10
 WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 unique-1.0
-WANTLIB += util xcb xml2 z xcb-render GL drm xcb-shm
+WANTLIB += util xcb xml2 z xcb-render GL drm xcb-shm assuan gpgme-pthread
 WANTLIB += gstaudio-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstvideo-0.10
 WANTLIB += gsttag-0.10 totem-plparser nautilus-extension
 WANTLIB += gmp gnutls hogweed nettle proxy tasn1 ${MODPY_WANTLIB}

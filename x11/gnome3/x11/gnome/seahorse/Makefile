@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/18 13:45:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/08/30 06:52:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		GNOME encryption interface
 GNOME_PROJECT=		seahorse
 GNOME_VERSION=		3.0.2
 
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	cryptui              1.0      # .0.0
 
@@ -31,7 +31,7 @@ WANTLIB += gobject-2.0 gpg-error gpgme gssapi gthread-2.0 gtk-3
 WANTLIB += krb5 lber-2.4 ldap-2.4 m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += sasl2 soup-2.4 ssl tasn1 xcb xcb-render xcb-shm xml2
-WANTLIB += z
+WANTLIB += z assuan
 
 BUILD_DEPENDS=		devel/gobject-introspection
 

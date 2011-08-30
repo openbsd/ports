@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/18 11:27:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/08/30 06:52:57 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,8 @@ COMMENT=	plugins and utilities for seahorse
 
 GNOME_PROJECT=	seahorse-plugins
 GNOME_VERSION=	2.91.6
+
+REVISION=	0
 
 # XXX until we have a stable 3.X release
 MASTER_SITES=	http://distfiles.bsdfrog.org/
@@ -27,7 +29,7 @@ WANTLIB += expat fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring gobject-2.0
 WANTLIB += gpg-error gpgme gthread-2.0 gtk-3 m nautilus-extension
 WANTLIB += notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z assuan
 
 LIB_DEPENDS=	x11/gnome/seahorse>=3.0.0 \
 		x11/gnome/nautilus

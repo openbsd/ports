@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/07/06 21:25:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/08/30 06:52:57 ajacoutot Exp $
 
 COMMENT-main=		official media player for GNOME
 COMMENT-nautilus=	totem properties plugin for nautilus
@@ -9,8 +9,8 @@ GNOME_VERSION=		3.0.1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-nautilus=	nautilus-${DISTNAME}
 
-REVISION-main=		4
-REVISION-nautilus=	2
+REVISION-main=		5
+REVISION-nautilus=	3
 
 SHARED_LIBS +=  totem                     0.0 # 0.0
 
@@ -35,13 +35,13 @@ WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm archive atk-1.0
 WANTLIB += bz2 cairo cairo-gobject dbus-1 drm expat fontconfig
 WANTLIB += freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmime-2.4 gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
+WANTLIB += gmime-2.6 gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
 WANTLIB += gstaudio-0.10 gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10
 WANTLIB += gstreamer-0.10 gsttag-0.10 gstvideo-0.10 gthread-2.0
 WANTLIB += gtk-3 lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 totem-plparser xcb xcb-render xcb-shm xml2
-WANTLIB += z
+WANTLIB += z assuan gpgme-pthread
 
 WANTLIB-main += ${WANTLIB} ICE SM Xtst c dbus-glib-1 ffi girepository-1.0
 WANTLIB-main += peas-1.0 peas-gtk-1.0 pthread

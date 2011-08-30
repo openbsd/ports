@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2011/07/06 14:01:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2011/08/30 06:52:57 ajacoutot Exp $
 
 COMMENT=	powerful desktop search tool and indexer
 
@@ -9,7 +9,7 @@ GNOME_VERSION=	0.8.18
 # as meta-tracker.
 PKGNAME=	meta-tracker-${VERSION}
 
-REVISION=	4
+REVISION=	5
 
 EVO_VERSION=	2.32
 SUBST_VARS=	EVO_VERSION
@@ -22,13 +22,13 @@ SHARED_LIBS +=  tracker-miner-0.8    0.0      # .800.0
 
 WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 asn1 atk-1.0
+WANTLIB += Xrender art_lgpl_2 asn1 atk-1.0 assuan gpgme-pthread
 WANTLIB += bonobo-2 bonobo-activation bonoboui-2 bz2
 WANTLIB += c cairo camel-1.2 camel-provider-1.2 com_err crypto
 WANTLIB += dbus-1 dbus-glib-1 ebook-1.2 edataserver-1.2 edataserverui-1.2
 WANTLIB += enchant execinfo exif expat fontconfig freetype
 WANTLIB += gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmime-2.4 gmodule-2.0 gnome-2
+WANTLIB += gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0 gnome-2
 WANTLIB += gnome-desktop-2 gnome-keyring gnomecanvas-2 gnomevfs-2
 WANTLIB += gobject-2.0 gpg-error gsf-1 gssapi gstbase-0.10
 WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 gtkhtml-3.14
