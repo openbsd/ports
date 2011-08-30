@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2011/07/18 19:32:53 rpointel Exp $
+# $OpenBSD: Makefile,v 1.41 2011/08/30 16:33:52 rpointel Exp $
 
 COMMENT =		fast, lightweight source control management
 
-MODPY_EGG_VERSION =	1.9
+MODPY_EGG_VERSION =	1.9.2
 DISTNAME =		mercurial-${MODPY_EGG_VERSION}
-REVISION =		0
 CATEGORIES =     	devel
 
 HOMEPAGE =		http://www.selenic.com/mercurial/
