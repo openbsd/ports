@@ -1,0 +1,15 @@
+$OpenBSD: patch-demos_regexp_cocci,v 1.1 2011/08/30 10:20:11 sthen Exp $
+
+syntax changed in rc7
+
+--- demos/regexp.cocci.orig	Sat Aug 27 21:59:25 2011
++++ demos/regexp.cocci	Sat Aug 27 21:59:30 2011
+@@ -30,7 +30,7 @@ print "Contains foo: %s" % x
+ 
+ @nocontain@
+ type t;
+-identifier foo !=~ "foo";
++identifier foo !~ "foo";
+ @@
+ 
+ t foo () {

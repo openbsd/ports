@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/08/22 00:37:49 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2011/08/30 10:20:11 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	program matching and transformation engine
 
 # if updating, check for any additional use of diff/grep which
 # may need to be switched to gdiff/ggrep
-DISTNAME =	coccinelle-1.0.0-rc6
+DISTNAME =	coccinelle-1.0.0-rc7
 PKGNAME =	${DISTNAME:S/-rc/rc/}
 EXTRACT_SUFX =	.tgz
 
@@ -34,6 +34,7 @@ REGRESS_DEPENDS =	${FULLPKGPATH}
 RUN_DEPENDS =		sysutils/findlib \
 			sysutils/ggrep \
 			textproc/gdiff
+# later:		devel/ocaml-pcre
 
 # asks questions at the end if it does better than expected
 REGRESS_IS_INTERACTIVE = Yes
