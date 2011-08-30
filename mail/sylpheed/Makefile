@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.94 2011/07/06 18:57:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.95 2011/08/30 06:54:11 ajacoutot Exp $
 
 COMMENT =		lightweight and user-friendly e-mail client
 
 DISTNAME =		sylpheed-3.1.1
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS += 	 	sylph-0                   2.0 # 2.0
 SHARED_LIBS += 		sylpheed-plugin-0         2.0 # 2.0
@@ -28,7 +28,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 dbus-1 dbus-glib-1 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 drm expat fontconfig freetype m pixman-1
 WANTLIB += pthread pthread-stubs gthread-2.0 pcre enchant pangoft2-1.0
 WANTLIB += png gpgme gpg-error gtkspell ssl stdc++ xcb xcb-render xcb-shm z
-WANTLIB += gtk-x11-2.0 gdk-x11-2.0 gtkspell
+WANTLIB += gtk-x11-2.0 gdk-x11-2.0 gtkspell assuan
 
 RUN_DEPENDS=	devel/desktop-file-utils
 MASTER_SITES =		http://sylpheed.sraoss.jp/sylpheed/v3.1/

@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.14 2010/12/28 23:51:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/08/30 06:54:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		console jabber client
 DISTNAME=		mcabber-0.10.1
 CATEGORIES=		net
+
+REVISION=		0
 
 HOMEPAGE=		http://www.lilotux.net/~mikael/mcabber/
 
@@ -23,7 +25,7 @@ MODULES=		devel/gettext
 
 WANTLIB=		c crypto gcrypt gpg-error ncursesw panelw pcre pthread \
 			ssl glib-2.0 gmodule-2.0 gpgme loudmouth-1>=3 \
-			idn otr
+			idn otr assuan
 
 LIB_DEPENDS=		devel/glib2 \
 			security/gpgme \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/06/13 20:52:26 landry Exp $
+# $OpenBSD: Makefile,v 1.46 2011/08/30 06:54:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ COMMENT-spamassassin=	spamassassin plugin
 
 V=			3.7.9
 DISTNAME=		claws-mail-${V}
-REVISION-main=		0
+REVISION-main=		1
 PKGNAME-main=		${DISTNAME}
 PKGNAME-bogofilter=	claws-mail-bogofilter-${V}
 PKGNAME-spamassassin=	claws-mail-spamassassin-${V}
@@ -52,7 +52,7 @@ WANTLIB=		X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 			GL Xxf86vm drm xcb-render xcb-shm
 
 WANTLIB-main=		${WANTLIB} ICE SM c dbus-1 gmp hogweed nettle \
-			pthread stdc++ tasn1 xcb-atom xcb-aux xcb-event \
+			pthread stdc++ tasn1 xcb-atom xcb-aux xcb-event assuan \
 			startup-notification-1 enchant gnutls gpgme dbus-glib-1
 
 WANTLIB-docs=
