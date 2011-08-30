@@ -1,0 +1,5 @@
+StringTemplate is a java template engine (with ports for C#, Python,
+Ruby, and Scala) for generating source code, web pages, emails, or any
+other formatted text output. StringTemplate is particularly good at
+multi-targeted code generators, multiple site skins, and
+internationalization/localization.
