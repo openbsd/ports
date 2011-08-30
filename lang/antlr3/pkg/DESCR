@@ -1,0 +1,9 @@
+ANTLR, ANother Tool for Language Recognition, (formerly PCCTS) is a
+language tool that provides a framework for constructing recognizers,
+compilers, and translators from grammatical descriptions containing
+Java, C#, Python, or C++ actions.
+
+ANTLR is popular because it is easy to understand, powerful, flexible,
+generates human-readable output, and comes with complete source.  ANTLR
+provides excellent support for tree construction, tree walking, and
+translation.
