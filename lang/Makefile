@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.116 2011/08/28 16:57:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.117 2011/08/30 07:19:51 jasper Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
      SUBDIR =
      SUBDIR += STk
      SUBDIR += antlr2
+     SUBDIR += antlr3
      SUBDIR += arena
      SUBDIR += chicken
      SUBDIR += classpath

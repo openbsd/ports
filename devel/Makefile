@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.963 2011/08/27 06:47:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.964 2011/08/30 07:18:20 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -58,6 +58,7 @@
      SUBDIR += codeblocks
      SUBDIR += codeworker
      SUBDIR += commoncpp
+     SUBDIR += commons-io
      SUBDIR += cook
      SUBDIR += coxpcall
      SUBDIR += cppcheck
