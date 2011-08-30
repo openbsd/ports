@@ -1,11 +1,14 @@
-# $OpenBSD: Makefile,v 1.2 2011/08/30 10:49:02 nigel Exp $
+# $OpenBSD: Makefile,v 1.3 2011/08/30 12:03:56 jasper Exp $
 
 COMMENT=	Java Native Access (JNA)
 
 V=		3.2.7
 DISTNAME=	twall-jna-$V-0-g3727f95
 PKGNAME=	jna-$V
+REVISION=	0
 CATEGORIES=	java devel
+
+MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 HOMEPAGE=	https://github.com/twall/jna
 
@@ -21,8 +24,9 @@ EXTRACT_SUFX=	.zip
 MODULES=	java
 MODJAVA_VER=	1.6+
 
+USE_GMAKE=	Yes
+
 BUILD_DEPENDS=	devel/apache-ant \
-		devel/gmake \
 		sysutils/ggrep
 
 WRKDIST= 	${WRKDIR}/twall-jna-d928d42/
