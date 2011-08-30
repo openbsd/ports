@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.21 2011/01/13 22:35:52 kurt Exp $
+# $OpenBSD: java.port.mk,v 1.22 2011/08/30 17:16:10 jasper Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -99,3 +99,6 @@ MODJAVA_JRERUN?=no
 .endif
 
 RUN_DEPENDS+= ${MODJAVA_RUN_DEPENDS}
+
+# Append 'java' to the list of categories.
+CATEGORIES+=	java
