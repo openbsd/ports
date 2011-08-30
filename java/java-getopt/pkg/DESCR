@@ -1,0 +1,4 @@
+The GNU Java getopt classes support short and long argument parsing in a
+manner 100% compatible with the version of GNU getopt with a mostly
+compatible programmer's interface as well. Note that this is a port, not
+a new implementation.

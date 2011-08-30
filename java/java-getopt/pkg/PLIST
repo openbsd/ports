@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/30 07:16:22 jasper Exp $
+share/java/
+share/java/classes/
+share/java/classes/gnu.getopt.jar
+share/java/getopt/
+share/java/getopt/allclasses-frame.html
+share/java/getopt/allclasses-noframe.html
+share/java/getopt/constant-values.html
+share/java/getopt/deprecated-list.html
+share/java/getopt/gnu/
+share/java/getopt/gnu/getopt/
+share/java/getopt/gnu/getopt/Getopt.html
+share/java/getopt/gnu/getopt/LongOpt.html
+share/java/getopt/gnu/getopt/package-frame.html
+share/java/getopt/gnu/getopt/package-summary.html
+share/java/getopt/gnu/getopt/package-tree.html
+share/java/getopt/help-doc.html
+share/java/getopt/index-all.html
+share/java/getopt/index.html
+share/java/getopt/overview-tree.html
+share/java/getopt/package-list
+share/java/getopt/resources/
+share/java/getopt/resources/inherit.gif
+share/java/getopt/stylesheet.css
