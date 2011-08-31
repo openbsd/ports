@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.462 2011/08/29 14:42:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.463 2011/08/31 15:17:37 mpi Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -80,6 +80,7 @@
      SUBDIR += gob2
      SUBDIR += goggles
      SUBDIR += golem
+     SUBDIR += gpointing-device-settings
      SUBDIR += gromit
      SUBDIR += gtk+
      SUBDIR += gtk+2
