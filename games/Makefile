@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.232 2011/07/11 16:34:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.233 2011/08/31 19:47:12 jasper Exp $
 # $FreeBSD: Makefile,v 1.91 1997/11/18 09:29:31 tg Exp $
 #
 
@@ -55,6 +55,7 @@
      SUBDIR += egoboo
      SUBDIR += einstein
      SUBDIR += enigma
+     SUBDIR += extremetuxracer
      SUBDIR += f1spirit
      SUBDIR += falconseye
      SUBDIR += fire
