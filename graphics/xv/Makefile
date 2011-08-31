@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.44 2011/05/25 09:09:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2011/08/31 22:28:59 espie Exp $
 
 COMMENT=	X11 image display and modification tool
 
 DISTNAME=	xv-3.10a
-REVISION=	10
+REVISION=	11
 CATEGORIES=	graphics x11
 
 MASTER_SITES=	ftp://ftp.mirrorservice.org/sites/ftp.cis.upenn.edu/pub/xv/ \
