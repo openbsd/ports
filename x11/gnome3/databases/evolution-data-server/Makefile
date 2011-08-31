@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2011/07/12 09:25:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/08/31 09:21:54 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.0.2.1
+GNOME_VERSION=		3.0.3
 
-REVISION=		3
+EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=		databases
 
@@ -61,8 +61,7 @@ LIB_DEPENDS= 		databases/db/v4 \
 
 YACC=			bison
 
-# should be 2.66
-AUTOCONF_VERSION=	2.65
+AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.9
 
 CONFIGURE_STYLE= 	autoconf

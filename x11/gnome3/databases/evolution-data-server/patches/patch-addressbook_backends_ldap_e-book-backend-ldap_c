@@ -1,7 +1,7 @@
-$OpenBSD: patch-addressbook_backends_ldap_e-book-backend-ldap_c,v 1.1.1.1 2011/05/17 17:07:32 ajacoutot Exp $
---- addressbook/backends/ldap/e-book-backend-ldap.c.orig	Thu Feb 17 11:51:12 2011
-+++ addressbook/backends/ldap/e-book-backend-ldap.c	Tue May 17 13:40:32 2011
-@@ -1205,11 +1205,11 @@ create_dn_from_contact (EContact *contact, gchar *root
+$OpenBSD: patch-addressbook_backends_ldap_e-book-backend-ldap_c,v 1.2 2011/08/31 09:21:54 ajacoutot Exp $
+--- addressbook/backends/ldap/e-book-backend-ldap.c.orig	Tue Jul 26 09:35:39 2011
++++ addressbook/backends/ldap/e-book-backend-ldap.c	Wed Aug 31 09:42:39 2011
+@@ -1209,11 +1209,11 @@ create_dn_from_contact (EContact *contact, gchar *root
  		}
  	}
  
