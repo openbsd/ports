@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/14 05:19:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/08/31 15:00:34 ajacoutot Exp $
 @bin bin/exchange-connector-setup-${EVO_VERSION}
 @comment lib/evolution-data-server/addressbook-backends/libebookbackendexchange.la
 lib/evolution-data-server/addressbook-backends/libebookbackendexchange.so
@@ -64,6 +64,7 @@ share/gtk-doc/html/evolution-exchange/evolution-exchange-test-utils.html
 share/gtk-doc/html/evolution-exchange/evolution-exchange-xntlm-des.html
 share/gtk-doc/html/evolution-exchange/evolution-exchange-xntlm-md4.html
 share/gtk-doc/html/evolution-exchange/evolution-exchange-xntlm.html
+share/gtk-doc/html/evolution-exchange/evolution-exchange.devhelp
 share/gtk-doc/html/evolution-exchange/evolution-exchange.devhelp2
 share/gtk-doc/html/evolution-exchange/home.png
 share/gtk-doc/html/evolution-exchange/index.html
