@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2011/07/18 09:08:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/08/31 09:22:41 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.0.2
+GNOME_VERSION=		3.0.3
+
+EXTRACT_SUFX=		.tar.xz
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
-
-REVISION-main=		2
-REVISION-plugins=	0
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -121,7 +120,7 @@ MODGCONF2_SCHEMAS_DIR=	evolution
 
 YACC=			bison
 
-AUTOCONF_VERSION=	2.65
+AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.9
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
