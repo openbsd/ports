@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/08 17:39:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/08/31 12:41:07 mpi Exp $
 
 COMMENT=		Python Abstract Syntax Tree New Generation
 
-DISTNAME=		logilab-astng-0.17.0
+DISTNAME=		logilab-astng-0.22.0
 PKGNAME=		py-${DISTNAME}
-REVISION =		3
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.logilab.org/projects/astng/
 
 MAINTAINER=		Andreas Bihlmaier <andreas.bihlmaier@gmx.de>
 
-# GPL
+# LGPLv2.1+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
@@ -21,10 +20,9 @@ MASTER_SITES=		ftp://ftp.logilab.fr/pub/astng/
 
 MODULES=		lang/python
 RUN_DEPENDS=		devel/py-logilab-common
-REGRESS_DEPENDS=	${RUN_DEPENDS} \
-			devel/pylint
+REGRESS_DEPENDS=	${RUN_DEPENDS}
 
 do-regress: install
-	cd ${WRKSRC}/test && ${MODPY_BIN} ./regrtest.py
+	@cd ${WRKSRC}/test && ${MODPY_BIN} /usr/local/bin/pytest
 
 .include <bsd.port.mk>
