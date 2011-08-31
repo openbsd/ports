@@ -1,0 +1,36 @@
+$OpenBSD: patch-filter_image-gif_c,v 1.2 2011/08/31 12:43:08 ajacoutot Exp $
+
+CVE-2011-2896 GIF decoder LZW decoder buffer overflow
+
+--- filter/image-gif.c.orig	Mon Jun 20 22:37:51 2011
++++ filter/image-gif.c	Wed Aug 31 14:37:19 2011
+@@ -648,11 +648,13 @@ gif_read_lzw(FILE *fp,			/* I - File to read from */
+ 
+     if (code == max_code)
+     {
+-      *sp++ = firstcode;
+-      code  = oldcode;
++      if (sp < (stack + 8192))
++	*sp++ = firstcode;
++
++      code = oldcode;
+     }
+ 
+-    while (code >= clear_code)
++    while (code >= clear_code && sp < (stack + 8192))
+     {
+       *sp++ = table[1][code];
+       if (code == table[0][code])
+@@ -661,8 +663,10 @@ gif_read_lzw(FILE *fp,			/* I - File to read from */
+       code = table[0][code];
+     }
+ 
+-    *sp++ = firstcode = table[1][code];
+-    code  = max_code;
++    if (sp < (stack + 8192))
++      *sp++ = firstcode = table[1][code];
++
++    code = max_code;
+ 
+     if (code < 4096)
+     {
