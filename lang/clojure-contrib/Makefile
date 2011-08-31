@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/08/30 19:02:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/08/31 13:10:29 jasper Exp $
 
 COMMENT=	contributed libraries for the Clojure programming language
 
-DISTNAME=	clojure-contrib-1.1.0
+V=		1.2.0
+DISTNAME=	clojure-contrib-$V
 CATEGORIES=	lang
 
-HOMEPAGE=	http://clojure-contrib.googlecode.com/
+HOMEPAGE=	https://github.com/richhickey/clojure-contrib
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -15,27 +16,28 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE}/files/
+# from http://clojure.org/downloads
+MASTER_SITES=	http://distfiles.nl/
 EXTRACT_SUFX=	.zip
 
 MODULES=	java
 MODJAVA_VER=	1.6+
 MODJAVA_JRERUN= Yes
 
-BUILD_DEPENDS=	devel/apache-ant \
-		${RUN_DEPENDS}
 RUN_DEPENDS=	lang/clojure
 
+NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
+# Newer version >= 1.2.0 require maven to build, which appears to have
+# hickups still. So for now use the pre-compiled jar.
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ant \
 		-Dclojure.jar=${LOCALBASE}/clojure/clojure.jar
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/java/{classes/,clojure-contrib/}
-	${INSTALL_DATA} ${WRKSRC}/clojure-contrib.jar \
-		${PREFIX}/share/java/classes/
-	cp -R ${WRKSRC}/doc/ ${PREFIX}/share/java/clojure-contrib/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/java/classes/
+	${INSTALL_DATA} ${WRKSRC}/target/clojure-contrib-$V.jar \
+		${PREFIX}/share/java/classes/clojure-contrib.jar
 
 .include <bsd.port.mk>

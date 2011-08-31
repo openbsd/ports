@@ -1,10 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/30 19:02:24 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/08/31 13:10:29 jasper Exp $
 share/java/
 share/java/classes/
 share/java/classes/clojure-contrib.jar
-share/java/clojure-contrib/
-share/java/clojure-contrib/doc/
-share/java/clojure-contrib/doc/datalog.markdown
-share/java/clojure-contrib/doc/pprint/
-share/java/clojure-contrib/doc/pprint/CommonLispFormat.markdown
-share/java/clojure-contrib/doc/pprint/PrettyPrinting.markdown
