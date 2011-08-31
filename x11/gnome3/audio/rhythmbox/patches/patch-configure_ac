@@ -1,11 +1,11 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2011/07/27 10:07:50 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2011/08/31 10:30:51 ajacoutot Exp $
 
 audiocd plugin requires cdda support in gvfs which we do not provide as
 this would require HAL or gudev.
 
---- configure.ac.orig	Sat Jul 23 09:19:30 2011
-+++ configure.ac	Sat Jul 23 09:19:41 2011
-@@ -343,11 +343,6 @@ fi
+--- configure.ac.orig	Mon Aug 22 23:08:28 2011
++++ configure.ac	Wed Aug 31 11:41:22 2011
+@@ -342,11 +342,6 @@ fi
  
  AC_CHECK_LIB(z, uncompress)
  

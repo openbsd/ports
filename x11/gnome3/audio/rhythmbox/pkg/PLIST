@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/27 10:07:51 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/08/31 10:30:51 ajacoutot Exp $
 @bin bin/rhythmbox
 include/rhythmbox/
 include/rhythmbox/backends/
@@ -256,6 +256,8 @@ share/dbus-1/services/org.gnome.Rhythmbox.service
 share/gir-1.0/MPID-3.0.gir
 share/gir-1.0/RB-3.0.gir
 share/glib-2.0/schemas/org.gnome.rhythmbox.gschema.xml
+share/gnome/
+share/gnome/help/
 share/gnome/help/rhythmbox/
 share/gnome/help/rhythmbox/C/
 share/gnome/help/rhythmbox/C/fdl-appendix.xml
@@ -355,6 +357,22 @@ share/gnome/help/rhythmbox/es/figures/rb-volume-changer.png
 share/gnome/help/rhythmbox/es/figures/rb-window-small.png
 share/gnome/help/rhythmbox/es/figures/rb-window.png
 share/gnome/help/rhythmbox/es/rhythmbox.xml
+share/gnome/help/rhythmbox/eu/
+share/gnome/help/rhythmbox/eu/figures/
+share/gnome/help/rhythmbox/eu/figures/rb-iradio-main.png
+share/gnome/help/rhythmbox/eu/figures/rb-notification-area-menu.png
+share/gnome/help/rhythmbox/eu/figures/rb-notification-window.png
+share/gnome/help/rhythmbox/eu/figures/rb-notification-zone.png
+share/gnome/help/rhythmbox/eu/figures/rb-podcast-main.png
+share/gnome/help/rhythmbox/eu/figures/rb-statusbar.png
+share/gnome/help/rhythmbox/eu/figures/rb-toolbar-prevplaynext.png
+share/gnome/help/rhythmbox/eu/figures/rb-toolbar-repeat.png
+share/gnome/help/rhythmbox/eu/figures/rb-toolbar-shuffle.png
+share/gnome/help/rhythmbox/eu/figures/rb-toolbar.png
+share/gnome/help/rhythmbox/eu/figures/rb-volume-changer.png
+share/gnome/help/rhythmbox/eu/figures/rb-window-small.png
+share/gnome/help/rhythmbox/eu/figures/rb-window.png
+share/gnome/help/rhythmbox/eu/rhythmbox.xml
 share/gnome/help/rhythmbox/fr/
 share/gnome/help/rhythmbox/fr/figures/
 share/gnome/help/rhythmbox/fr/figures/rb-iradio-main.png
@@ -634,6 +652,7 @@ share/man/
 share/man/man1/
 @man share/man/man1/rhythmbox-client.1
 @man share/man/man1/rhythmbox.1
+share/omf/
 share/omf/rhythmbox/
 share/omf/rhythmbox/rhythmbox-C.omf
 share/omf/rhythmbox/rhythmbox-cs.omf
@@ -641,6 +660,7 @@ share/omf/rhythmbox/rhythmbox-da.omf
 share/omf/rhythmbox/rhythmbox-de.omf
 share/omf/rhythmbox/rhythmbox-el.omf
 share/omf/rhythmbox/rhythmbox-es.omf
+share/omf/rhythmbox/rhythmbox-eu.omf
 share/omf/rhythmbox/rhythmbox-fr.omf
 share/omf/rhythmbox/rhythmbox-gl.omf
 share/omf/rhythmbox/rhythmbox-it.omf
@@ -768,12 +788,15 @@ share/rhythmbox/plugins/jamendo/jamendo-loading.ui
 share/rhythmbox/plugins/jamendo/jamendo-prefs.ui
 share/rhythmbox/plugins/jamendo/jamendo_logo.png
 share/rhythmbox/plugins/jamendo/jamendo_logo_medium.png
+share/rhythmbox/plugins/lyrics/
+share/rhythmbox/plugins/lyrics/lyrics-prefs.ui
 share/rhythmbox/plugins/replaygain/
 share/rhythmbox/plugins/replaygain/replaygain-prefs.ui
 share/rhythmbox/podcast-feed-properties.ui
 share/rhythmbox/podcast-prefs.ui
 share/rhythmbox/podcast-properties.ui
 share/rhythmbox/rhythmbox-ui.xml
+share/rhythmbox/rhythmbox.gep
 share/rhythmbox/song-info-multiple.ui
 share/rhythmbox/song-info.ui
 share/rhythmbox/sync-dialog.ui

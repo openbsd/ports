@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/08/30 06:52:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/08/31 10:30:51 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		2.90.1
+GNOME_VERSION=		2.90.1.1
 
-REVISION=		0
+EXTRACT_SUFX=		.tar.xz
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -22,19 +22,19 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
-WANTLIB += archive atk-1.0 bz2 c cairo cairo-gobject dbus-1 dbus-glib-1
-WANTLIB += drm expat ffi fontconfig freetype gconf-2 gcrypt gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 girepository-1.0 glib-2.0 gmime-2.6
-WANTLIB += gmodule-2.0 gnome-keyring gnome-media-profiles-3.0
-WANTLIB += gobject-2.0 gpg-error gpod gstbase-0.10 gstcontroller-0.10
-WANTLIB += gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10 gsttag-0.10
-WANTLIB += gstvideo-0.10 gthread-2.0 gtk-3 json-glib-1.0 lzma
-WANTLIB += m notify pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre
-WANTLIB += peas-1.0 peas-gtk-1.0 pixman-1 png pthread pthread-stubs
-WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 totem-plparser xcb
-WANTLIB += xcb-render xcb-shm xml2 z assuan gpgme-pthread
+WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm archive
+WANTLIB += assuan atk-1.0 bz2 c cairo cairo-gobject dbus-1 dbus-glib-1
+WANTLIB += drm expat ffi fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmime-2.6 gmodule-2.0
+WANTLIB += gnome-keyring gobject-2.0 gpg-error gpgme-pthread gpod
+WANTLIB += gstbase-0.10 gstcontroller-0.10 gstinterfaces-0.10
+WANTLIB += gstpbutils-0.10 gstreamer-0.10 gsttag-0.10 gstvideo-0.10
+WANTLIB += gthread-2.0 gtk-3 json-glib-1.0 lzma m notify pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
+WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 soup-gnome-2.4
+WANTLIB += sqlite3 totem-plparser xcb xcb-render xcb-shm xml2
+WANTLIB += z
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -45,7 +45,6 @@ BUILD_DEPENDS=		devel/gobject-introspection \
 			audio/libmusicbrainz
 
 LIB_DEPENDS=		devel/libpeas \
-			x11/gnome/libgnome-media-profiles \
 			audio/libgpod \
 			devel/json-glib \
 			devel/libnotify>=0.7.2 \
@@ -89,6 +88,9 @@ CONFIGURE_ARGS +=	--without-mtp
 # XXX requires media-keys support (i.e. pulseaudio) in gnome-settings-daemon
 CONFIGURE_ARGS +=	--disable-mmkeys
 
+# XXX requires new clutter-{x11,gst,gtk} and libmx
+CONFIGURE_ARGS +=	--disable-visualizer
+
 # XXX plugins subpackage?
 CONFIGURE_ARGS +=	--disable-browser-plugin
 CONFIGURE_ENV +=	MOZILLA_PLUGINDIR=${PREFIX}/lib/mozilla-plugins
@@ -107,10 +109,13 @@ post-install:
 ### XXX remove this chunk when updating to a 'real' release ############
 MASTER_SITES=		http://distfiles.bsdfrog.org/
 
+WRKDIST=		${WRKDIR}/rhythmbox
+
 BUILD_DEPENDS +=	x11/gnome/common \
 			devel/autoconf/${AUTOCONF_VERSION} \
 			devel/automake/${AUTOMAKE_VERSION} \
-			textproc/gtk-doc
+			textproc/gtk-doc \
+			devel/libtool
 
 AUTOCONF_VERSION=	2.65
 AUTOMAKE_VERSION=	1.11
