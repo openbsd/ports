@@ -1,5 +1,5 @@
 #!/usr/bin/perl
-# $OpenBSD: outdated-perl-ports,v 1.5 2010/09/03 12:58:14 giovanni Exp $
+# $OpenBSD: outdated-perl-ports,v 1.6 2011/08/31 11:24:19 jasper Exp $
 #
 # Copyright (c) 2003 Sam Smith <S@mSmith.net>
 #
@@ -20,8 +20,9 @@ use warnings;
 use Getopt::Std;
 
 # -d: show path to port (relative to $PORTSDIR)
-our $opt_d;
-getopts('d');
+# -m <maintainer>: search for a maintainer (name or address)
+our ($opt_d, $opt_m);
+getopts('dm:');
 
 # packages list. Change to a different mirror if you want.
 my $CPAN_packages_details="http://mirror.sov.uk.goscomb.net/CPAN/modules/02packages.details.txt.gz";
@@ -61,6 +62,9 @@ my @dir; # pkg subdir
 		if (defined $ENV{DEBUG}){print STDERR "$1\t$2\t$3\n";}
 
 		if ((defined $Modules{$2}) and ($Modules{$2} gt $3)) {
+			if ($opt_m) {
+				next unless ($line[5] =~ m/$opt_m/);
+			}
 			if ($opt_d) {
 				@dir = split /\//, $line[4];
 				print STDOUT "Out of date: $dir[0]/$1 vs $Modules{$2}. $line[5]\n";
