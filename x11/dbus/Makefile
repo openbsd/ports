@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/06/15 16:26:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2011/08/31 15:09:33 ajacoutot Exp $
 
 # OpenBSD has support for monotonic clock (CLOCK_MONOTONIC), however we
 # currently don't have most of the _POSIX_* defines in unistd.h (e.g.
@@ -12,6 +12,8 @@ COMMENT=	message bus system
 
 DISTNAME=	dbus-1.4.12
 EPOCH=		0
+
+REVISION=	0
 
 SHARED_LIBS +=	dbus-1	9.1 # .8.6
 CATEGORIES=	x11
