@@ -1,0 +1,3 @@
+GPointingDeviceSettings is a GUI tool for setting pointing device such
+as TrackPoint or Touchpad. Each UI can be written as dynamic loadable
+module, so a third party can add its own UI.

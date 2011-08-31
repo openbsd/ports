@@ -1,0 +1,23 @@
+$OpenBSD: patch-modules_gpds-touchpad-ui_c,v 1.1.1.1 2011/08/31 15:15:25 mpi Exp $
+
+Bug: https://bugzilla.gnome.org/show_bug.cgi?id=613022
+Fix: http://git.gnome.org/browse/gpointing-device-settings/commit/?id=70add06dec8413965f3e98b6ba9a3c82168ea72c
+---
+--- modules/gpds-touchpad-ui.c
++++ modules/gpds-touchpad-ui.c
+@@ -965,8 +965,14 @@
+         }
+     }
+ 
+-    if (!gpds_ui_get_gconf_int(ui, GPDS_TOUCHPAD_TAP_TIME_KEY, &value))
++    if (!gpds_ui_get_gconf_int(ui, GPDS_TOUCHPAD_TAP_TIME_KEY, &value) && !values) {
++        if (!gpds_xinput_ui_get_xinput_int_property(GPDS_XINPUT_UI(ui),
++                                                    GPDS_TOUCHPAD_TAP_TIME,
++                                                    &values, &n_values)) {
++            return;
++        }
+         value = values[0];
++    }
+ 
+     double_value = value;
+     object = gpds_ui_get_ui_object_by_name(GPDS_UI(ui), "tapping_time_scale");
