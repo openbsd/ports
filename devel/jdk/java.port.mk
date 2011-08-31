@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.23 2011/08/31 20:00:56 jasper Exp $
+# $OpenBSD: java.port.mk,v 1.24 2011/08/31 20:33:32 jasper Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -119,3 +119,13 @@ do-build:
 		-buildfile ${MODJAVA_BUILD_FILE} ${MODJAVA_BUILD_TARGET}
 .   endif 
 .endif
+
+# Convenience variables.
+# Ports that install .jar files for public use (ie, in ${MODJAVA_JAR_DIR})
+# please install unversioned .jar files. If a port installs
+# multiple .jar files, use a ${MODJAVA_JAR_DIR}/<project_name>/ prefix.
+# This will help other ports to pickup these classes.
+MODJAVA_SHARE_DIR = ${PREFIX}/share/java/
+MODJAVA_JAR_DIR   = ${MODJAVA_SHARE_DIR}/classes/
+MODJAVA_EXAMPLE_DIR = ${MODJAVA_SHARE_DIR}/examples/${DISTNAME}/
+MODJAVA_DOC_DIR   = ${MODJAVA_SHARE_DIR}/doc/${DISTNAME}/
