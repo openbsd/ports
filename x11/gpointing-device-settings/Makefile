@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/01 14:00:35 mpi Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/01 14:11:04 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,6 +6,8 @@ COMMENT =		tool for setting pointing devices
 
 DISTNAME =		gpointing-device-settings-1.5.1
 CATEGORIES =		x11 sysutils
+
+REVISION =		0
 
 SHARED_LIBS +=  gpds                      0.0 # 1.0
 
@@ -31,14 +33,14 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm z
 
-LIB_DEPENDS =		x11/gtk+2 \
-			x11/gnome/settings-daemon
-
 DESKTOP_FILES =		Yes
 MODGCONF2_SCHEMAS_DIR =	gpointing-device-settings
-
-BUILD_DEPENDS +=	archivers/gtar
 TAR =			${LOCALBASE}/bin/gtar
+
+LIB_DEPENDS =		x11/gtk+2
+RUN_DEPENDS =		x11/gnome/settings-daemon
+BUILD_DEPENDS =		archivers/gtar \
+			x11/gnome/settings-daemon
 
 LIBTOOL_FLAGS =		--tag=disable-static
 CONFIGURE_STYLE =	gnu
