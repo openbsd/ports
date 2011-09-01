@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/08/30 17:16:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/01 20:34:56 jasper Exp $
 
 COMMENT-main=		JDBC Driver for PostgreSQL
 COMMENT-docs=		API docs for PostgreSQL JDBC Driver
@@ -30,8 +30,9 @@ EXTRACT_SUFX=		.src.tar.gz
 MODULES=		java
 MODJAVA_VER?=		1.5+
 MODJAVA_JRERUN=		yes
+MODJAVA_BUILD=		ant
+MODJAVA_BUILD_TARGET=	all publicapi
 
-BUILD_DEPENDS=		devel/apache-ant
 REGRESS_DEPENDS=	databases/postgresql \
 			java/junit=3.8.2
 RUN_DEPENDS-docs=
@@ -39,9 +40,6 @@ RUN_DEPENDS-docs=
 JUNIT_JAR=		${LOCALBASE}/share/java/classes/junit-3.8.2/junit.jar
 
 WRKDIST=		${WRKDIR}/${DISTNAME}.src
-
-do-build:
-	cd ${WRKDIST} && JAVA_HOME=${JAVA_HOME} ant all publicapi
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/postgresql/java
