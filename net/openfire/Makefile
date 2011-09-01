@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/08/30 17:16:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/01 17:18:50 jasper Exp $
 
 COMMENT=	XMPP real time collaboration server
 DISTNAME=	openfire_src_3_7_0
@@ -21,8 +21,8 @@ NO_REGRESS=	yes
 MODULES=java
 MODJAVA_VER =	1.7+
 MODJAVA_JRE =	Yes
+MODJAVA_BUILD = ant
 
-BUILD_DEPENDS =	devel/apache-ant
 RUN_DEPENDS =	java/javaPathHelper
 
 MAKE_ENV+=      JAVA_HOME=${JAVA_HOME}
@@ -30,9 +30,6 @@ WRKDIST=	${WRKDIR}/openfire_src
 
 OPENFIREDEST=	${PREFIX}/openfire
 DATADIRS=	lib logs plugins resources
-
-do-build:
-	cd ${WRKSRC}/build && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant
 
 pre-install:
 	rm -rf ${WRKSRC}/target/openfire/resources/nativeAuth

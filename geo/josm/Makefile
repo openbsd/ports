@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/08/30 17:16:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/01 17:18:50 jasper Exp $
 
 COMMENT=		OpenStreetMap map editor
 
@@ -24,17 +24,16 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		java \
 			textproc/intltool
 MODJAVA_VER=		1.6+
+MODJAVA_BUILD=		ant
+MODJAVA_BUILD_ARGS=	-Dant.build.javac.source="1.5" \
+			-Dant.build.javac.target="1.5"
+MODJAVA_BUILD_TARGET=	dist
 MAKE_ENV+=		JAVA_HOME=${JAVA_HOME}
-USE_GROFF =		Yes
 
 BUILD_DEPENDS=		devel/apache-ant
 RUN_DEPENDS=		java/javaPathHelper \
 			devel/desktop-file-utils
 NO_REGRESS=		Yes
-
-do-build:
-	@cd ${WRKDIST} && exec ${SETENV} ${MAKE_ENV} ant -q \
-	-Dant.build.javac.source="1.5" -Dant.build.javac.target="1.5" dist
 
 INSTALL_DIR =		josm
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/08/30 17:16:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/01 17:18:50 jasper Exp $
 
 COMMENT=	Java library to assist with developing IO functionality
 
@@ -22,20 +22,15 @@ TAR=		${LOCALBASE}/bin/gtar
 
 MODULES=	java
 MODJAVA_VER=	1.6+
+MODJAVA_BUILD=	ant
 
-BUILD_DEPENDS=	archivers/gtar \
-		devel/apache-ant
+BUILD_DEPENDS=	archivers/gtar
 
 NO_REGRESS=	Yes
 
-JAR_DIR=	${PREFIX}/share/java/classes/
-
-do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant
-
 do-install:
-	${INSTALL_DATA_DIR} ${JAR_DIR}
+	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR}
 	${INSTALL_DATA} ${WRKSRC}/target/commons-io-$V.jar \
-		${JAR_DIR}/commons-io.jar
+		${MODJAVA_JAR_DIR}/commons-io.jar
 
 .include <bsd.port.mk>
