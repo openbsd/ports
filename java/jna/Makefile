@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/08/30 17:16:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/01 08:05:05 jasper Exp $
 
 COMMENT=	Java Native Access (JNA)
 
 V=		3.2.7
 DISTNAME=	twall-jna-$V-0-g3727f95
 PKGNAME=	jna-$V
-REVISION=	1
+REVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -23,26 +23,22 @@ EXTRACT_SUFX=	.zip
 
 MODULES=	java
 MODJAVA_VER=	1.6+
+MODJAVA_BUILD=	ant
+MODJAVA_BUILD_DIR=${WRKSRC}/jnalib/
 
+# jnalib/build.xml specifically wants gmake (and ggrep)
 USE_GMAKE=	Yes
 
-BUILD_DEPENDS=	devel/apache-ant \
-		sysutils/ggrep
+BUILD_DEPENDS=	sysutils/ggrep
 
 WRKDIST= 	${WRKDIR}/twall-jna-d928d42/
 
-JAR_DIR=	${PREFIX}/share/java/classes/
-DOC_DIR=	${PREFIX}/share/java/jna/
-
-do-build:
-	cd ${WRKSRC}/jnalib/ && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant
-
 do-install:
-	${INSTALL_DATA_DIR} ${JAR_DIR} ${DOC_DIR}
+	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR} ${MODJAVA_DOC_DIR}/jna/
 	${INSTALL_DATA} ${WRKSRC}/jnalib/build-*/openbsd-${ARCH}.jar \
-		${JAR_DIR}/jna-platform.jar
-	${INSTALL_DATA} ${WRKSRC}/jnalib/build-*/jna.jar ${JAR_DIR}
-	cp -r ${WRKSRC}/www/javadoc/ ${DOC_DIR}
+		${MODJAVA_JAR_DIR}/jna-platform.jar
+	${INSTALL_DATA} ${WRKSRC}/jnalib/build-*/jna.jar ${MODJAVA_JAR_DIR}
+	cp -r ${WRKSRC}/www/javadoc/ ${MODJAVA_DOC_DIR}
 
 do-regress:
 	cd ${WRKSRC}/jnalib/ && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant test
