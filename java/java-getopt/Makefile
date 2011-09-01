@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/08/30 17:16:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/01 08:06:28 jasper Exp $
 
 COMMENT=	Java port of GNU getopt family functions
 
 DISTNAME=	java-getopt-1.0.13
-REVISION=	0
+REVISION=	1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.urbanophile.com/arenn/hacking/download.html
@@ -20,21 +20,14 @@ WRKDIST=	${WRKDIR}
 
 MODULES=	java
 MODJAVA_VER=	1.6+
-
-BUILD_DEPENDS=	devel/apache-ant
-
-JAR_DIR=	${PREFIX}/share/java/classes/
-DOC_DIR=	${PREFIX}/share/java/getopt/
+MODJAVA_BUILD=	ant
 
 post-extract:
 	cp ${WRKSRC}/gnu/getopt/buildx.xml ${WRKSRC}/build.xml
 
-do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant
-
 do-install:
-	${INSTALL_DATA_DIR} ${JAR_DIR} ${DOC_DIR}
-	${INSTALL_DATA} ${WRKSRC}/build/lib/gnu.getopt.jar ${JAR_DIR}
-	cp -r ${WRKSRC}/build/api/* ${DOC_DIR}
+	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR} ${MODJAVA_DOC_DIR}/getopt/
+	${INSTALL_DATA} ${WRKSRC}/build/lib/gnu.getopt.jar ${MODJAVA_JAR_DIR}
+	cp -r ${WRKSRC}/build/api/* ${MODJAVA_DOC_DIR}/getopt/
 
 .include <bsd.port.mk>
