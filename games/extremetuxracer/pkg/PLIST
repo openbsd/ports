@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/31 19:46:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/09/01 12:26:29 sthen Exp $
 @bin bin/etracer
+share/applications/etracer.desktop
 share/etracer/
 share/etracer/courses/
 share/etracer/courses/contrib/
@@ -470,3 +471,7 @@ share/etracer/translations/sv_SE.tcl
 share/etracer/tux.tcl
 share/etracer/tux_snowboard.tcl
 share/etracer/tux_walk.tcl
+share/pixmaps/
+share/pixmaps/etracericon.svg
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
