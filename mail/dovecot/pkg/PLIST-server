@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.21 2011/07/22 20:15:47 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.22 2011/09/01 10:53:50 sthen Exp $
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
 @pkgpath mail/dovecot,-server,bdb,ldap,mysql,postgresql,sqlite
@@ -148,6 +148,8 @@ include/dovecot/ioloop-iolist.h
 include/dovecot/ioloop-notify-fd.h
 include/dovecot/ioloop.h
 include/dovecot/iostream-internal.h
+include/dovecot/ipc-client.h
+include/dovecot/ipc-server.h
 include/dovecot/ipwd.h
 include/dovecot/istream-attachment.h
 include/dovecot/istream-base64-encoder.h
@@ -384,6 +386,7 @@ libexec/dovecot/deliver
 @bin libexec/dovecot/gdbhelper
 @bin libexec/dovecot/imap
 @bin libexec/dovecot/imap-login
+@bin libexec/dovecot/ipc
 @bin libexec/dovecot/listview
 @bin libexec/dovecot/lmtp
 @bin libexec/dovecot/log
@@ -580,6 +583,7 @@ share/doc/dovecot/wiki/Pigeonhole.Sieve.Extensions.Vacation.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Extensions.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Plugins.Extdata.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Plugins.txt
+share/doc/dovecot/wiki/Pigeonhole.Sieve.Troubleshooting.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.Usage.txt
 share/doc/dovecot/wiki/Pigeonhole.Sieve.txt
 share/doc/dovecot/wiki/Pigeonhole.txt
