@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/08/30 17:16:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/01 17:24:31 jasper Exp $
 
 COMMENT=		Java interface to GeoIP database
 DISTNAME=		jeoip-0.5
@@ -21,8 +21,10 @@ MASTER_SITES=		http://www.darwinsys.com/freeware/
 MODULES=		java
 MODJAVA_VER=		1.5+
 MODJAVA_JRERUN=		Yes
-BUILD_DEPENDS=		devel/apache-ant>=1.6.1 \
-			java/junit=3.8.2
+MODJAVA_BUILD=		ant
+MODJAVA_BUILD_TARGET=	jar docs
+
+BUILD_DEPENDS=		java/junit=3.8.2
 REGRESS_DEPENDS=	net/GeoIP \
 			java/junit=3.8.2
 RUN_DEPENDS=		net/GeoIP\
@@ -32,14 +34,9 @@ MAKE_ENV=		JAVA_HOME=${JAVA_HOME} \
 
 WRKDIST=		${WRKDIR}/jeoip
 
-INSTALLDIR=		jeoip
-
-do-build:
-	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} ant jar docs
-
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/java/${INSTALLDIR}
-	${INSTALL_DATA} ${WRKDIST}/jeoip.jar ${PREFIX}/share/java/${INSTALLDIR}
+	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR}
+	${INSTALL_DATA} ${WRKDIST}/jeoip.jar ${MODJAVA_JAR_DIR}
 	${INSTALL_SCRIPT} ${WRKDIST}/unix/jeoip ${PREFIX}/bin
 
 do-regress:
