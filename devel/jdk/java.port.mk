@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.25 2011/09/01 08:03:47 jasper Exp $
+# $OpenBSD: java.port.mk,v 1.26 2011/09/01 17:13:51 jasper Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -112,11 +112,13 @@ CATEGORIES+=	java
     MODJAVA_BUILD_TARGET ?=
     MODJAVA_BUILD_FILE ?= build.xml
     MODJAVA_BUILD_DIR ?= ${WRKSRC}
+    MODJAVA_BUILD_ARGS ?=
 .   if !target(do-build)
 do-build:
 	cd ${MODJAVA_BUILD_DIR} && \
 		${SETENV} ${MAKE_ENV} ${LOCALBASE}/bin/ant \
-		-buildfile ${MODJAVA_BUILD_FILE} ${MODJAVA_BUILD_TARGET}
+		-buildfile ${MODJAVA_BUILD_FILE} ${MODJAVA_BUILD_TARGET} \
+		${MODJAVA_BUILD_ARGS}
 .   endif 
 .endif
 
