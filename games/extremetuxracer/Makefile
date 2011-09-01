@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/01 12:26:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/01 14:34:22 sthen Exp $
 
 COMMENT =		downhill racing game
 
 DISTNAME =		extremetuxracer-0.4
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -24,6 +24,7 @@ WANTLIB += m png pthread stdc++ z ${MODTCL_WANTLIB}
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=extremetuxracer/}
 
 MODULES =		lang/tcl
+BUILD_DEPENDS =		archivers/unzip
 RUN_DEPENDS =		devel/desktop-file-utils
 LIB_DEPENDS =		devel/sdl-mixer \
 			graphics/png \
@@ -37,9 +38,12 @@ CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 
 NO_REGRESS =		Yes
 
+post-build:
+	cd ${WRKSRC}; unzip etracericons.zip
+
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/etracericon.svg ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/etracericons/etracericon_48.png ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${FILESDIR}/etracer.desktop ${PREFIX}/share/applications
 
 .include <bsd.port.mk>
