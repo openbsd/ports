@@ -1,7 +1,7 @@
-$OpenBSD: patch-support_apxs_in,v 1.1 2007/01/16 01:12:26 deanna Exp $
---- support/apxs.in.orig	Tue Jul 11 23:38:44 2006
-+++ support/apxs.in	Sun Jan 14 20:22:59 2007
-@@ -645,13 +645,13 @@ __DATA__
+$OpenBSD: patch-support_apxs_in,v 1.2 2011/09/01 13:40:09 giovanni Exp $
+--- support/apxs.in.orig	Mon May 10 22:02:56 2010
++++ support/apxs.in	Wed Aug 31 11:53:53 2011
+@@ -647,13 +647,13 @@ __DATA__
  ##
  
  builddir=.
