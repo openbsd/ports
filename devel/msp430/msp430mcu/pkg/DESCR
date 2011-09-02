@@ -1,0 +1,2 @@
+msp430mcu provides C headers and binutils linker scripts for each of the
+over 300 microcontrollers in the MSP430 family.
