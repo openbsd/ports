@@ -49,12 +49,3 @@
              { $as_echo "$as_me:${as_lineno-$LINENO}: checking for perl cccdlflags needed on \"${target_os}\"" >&5
  $as_echo_n "checking for perl cccdlflags needed on \"${target_os}\"... " >&6; }
              eval `${PERL} -V:cccdlflags`
-@@ -10556,6 +10554,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- extern "C"
- #endif
- char request_init ();
-+int allow_severity = 1;
-+int deny_severity = 1;
- int
- main ()
- {

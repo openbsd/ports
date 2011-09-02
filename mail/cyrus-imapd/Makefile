@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2011/07/22 05:58:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2011/09/02 08:24:28 ajacoutot Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
@@ -9,7 +9,7 @@ PKGNAME-main=	${DISTNAME}
 FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 FULLPKGPATH-perl=mail/cyrus-imapd,-perl
 
-REVISION-main=	0
+REVISION-main=	1
 
 CATEGORIES=	mail
 
@@ -55,12 +55,12 @@ CONFIGURE_ARGS=	--with-service-path=${LOCALBASE}/libexec/cyrus-imapd \
 		--with-openssl=/usr \
 		--with-lock=fcntl \
 		--with-com_err=/usr \
-		--with-libwrap=/usr \
 		--with-gss_impl=heimdal \
 		--enable-gssapi=/usr \
 		--enable-idled \
 		--enable-murder \
 		--enable-nntp \
+		--without-libwrap \
 		--without-zephyr \
 		--without-snmp \
 		--with-ldap=no \
@@ -84,7 +84,7 @@ pre-patch:
 	cd ${WRKSRC} && ${PATCH} -s -z .drac -p1 < contrib/drac_auth.patch
 .endif
 
-WANTLIB-main +=	${WANTLIB} asn1 c com_err gssapi krb5 pthread wrap
+WANTLIB-main +=	${WANTLIB} asn1 c com_err gssapi krb5 pthread
 WANTLIB-main +=	pcre pcreposix
 WANTLIB-perl +=	${WANTLIB}
 
