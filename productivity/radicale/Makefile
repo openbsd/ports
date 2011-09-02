@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2011/08/22 08:43:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/02 09:56:02 sthen Exp $
 
 COMMENT =	simple CalDAV calendar server
 
-MODPY_EGG_VERSION = 0.6
+MODPY_EGG_VERSION = 0.6.1
 DISTNAME =	Radicale-${MODPY_EGG_VERSION}
 PKGNAME =	${DISTNAME:L}
-REVISION =	1
 CATEGORIES =	productivity net
 
 HOMEPAGE =	http://radicale.org/
@@ -31,9 +30,12 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/radicale
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/radicale
-	cd ${WRKSRC}; ${INSTALL_DATA} COPYING NEWS README \
+	cd ${WRKSRC}; ${INSTALL_DATA} COPYING NEWS.rst README \
 	    ${PREFIX}/share/doc/radicale/
 	${SUBST_CMD} -g ${SHAREGRP} -o ${SHAREOWN} -c ${WRKSRC}/config \
 	    ${PREFIX}/share/examples/radicale/config
+	${INSTALL_DATA} ${WRKSRC}/logging \
+	    ${PREFIX}/share/examples/radicale/logging
+	touch ${PREFIX}/share/examples/radicale/log
 
 .include <bsd.port.mk>
