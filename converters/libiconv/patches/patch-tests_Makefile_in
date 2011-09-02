@@ -1,0 +1,18 @@
+$OpenBSD: patch-tests_Makefile_in,v 1.1 2011/09/02 15:44:47 naddy Exp $
+
+If SEPARATE_BUILD is enabled,
+  check-stateless . FOO
+will check for a nonexistent ./FOO.IRREVERSIBLE.TXT and fail to take
+$(srcdir)/FOO.IRREVERSIBLE.TXT into consideration.
+
+--- tests/Makefile.in.orig	Thu Sep  1 21:38:16 2011
++++ tests/Makefile.in	Thu Sep  1 21:42:16 2011
+@@ -126,7 +126,7 @@ check : all table-from table-to ../src/iconv_no_i18n t
+ 	$(srcdir)/check-stateless $(srcdir) EUC-CN
+ 	$(srcdir)/check-stateless $(srcdir) GBK
+ 	$(srcdir)/check-stateless $(srcdir) CP936
+-	$(CC) $(LDFLAGS) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) $(srcdir)/gengb18030z.c ../srclib/libicrt.a -o gengb18030z && \
++	test $(srcdir) != . && cp $(srcdir)/GB18030.IRREVERSIBLE.TXT . ; $(CC) $(LDFLAGS) $(INCLUDES) $(CFLAGS) $(CPPFLAGS) $(srcdir)/gengb18030z.c ../srclib/libicrt.a -o gengb18030z && \
+ 	{ cat $(srcdir)/GB18030-BMP.TXT ; ./gengb18030z ; } | sort > GB18030.TXT && \
+ 	$(srcdir)/check-stateless . GB18030 && \
+ 	$(RM) -r gengb18030z@EXEEXT@ gengb18030z.dSYM GB18030.TXT
