@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/08/16 10:06:58 landry Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/03 08:22:05 landry Exp $
 
 COMMENT =	mailing list manager with web interface
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${HOMEPAGE}/distribution/ \
+			${HOMEPAGE}/distribution/old/ \
 			http://distfiles.nl/
 
 MODULES =	perl
