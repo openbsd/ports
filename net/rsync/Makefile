@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2011/04/02 15:13:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.63 2011/09/03 13:06:01 espie Exp $
 
 COMMENT =	mirroring/synchronization over low bandwidth links
 
@@ -6,9 +6,12 @@ DISTNAME =	rsync-3.0.8
 CATEGORIES =	net
 HOMEPAGE =	http://rsync.samba.org/
 
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
+
+FLAVORS =	iconv
+FLAVOR ?=
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
@@ -29,6 +32,12 @@ CONFIGURE_ARGS =--with-included-popt \
 		--with-rsyncd-conf="${SYSCONFDIR}/rsyncd.conf" \
 		--with-rsh="ssh -T" \
 		--with-nobody-group=_rsync
+
+.if ${FLAVOR:L:Miconv}
+CONFIGURE_ENV += CPPFLAGS='-I${LOCALBASE}/include' \
+		LDFLAGS='-L${LOCALBASE}/lib'
+MODULES += converters/libiconv
+.endif
 
 DOCDIR =	${PREFIX}/share/doc/rsync
 USE_GROFF =	Yes

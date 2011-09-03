@@ -9,3 +9,7 @@ allowing for secure updating.
 On the down side, rsync is not quite as versatile as rdist when it comes to
 mirroring only part of a hierarchy, though one can possibly use a perl
 wrapper to obtain the same adaptability.
+
+Flavor: iconv
+    extra dependency, for people wanting to bring files from other OSes with
+    more versatile filenames.
