@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2011/08/28 07:57:40 espie Exp $
+# $OpenBSD: Makefile,v 1.99 2011/09/03 08:21:14 landry Exp $
 # $FreeBSD: Makefile,v 1.33 1999/02/27 03:09:57 andreas Exp $
 
 COMMENT-main=		C++ X11 GUI toolkit
@@ -21,6 +21,7 @@ REVISION-mysql= 	3
 REVISION-postgresql= 	3
 REVISION-main= 		6
 REVISION-html= 		1
+REVISION-examples=	0
 REVISION-sqlite2= 	3
 
 # the qt-mt library version number is used in a directory name.
