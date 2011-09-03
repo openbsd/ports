@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1101 2011/07/20 08:46:20 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1102 2011/09/03 13:39:56 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -755,6 +755,12 @@ WRKINST ?= ${FAKEOBJDIR_${PKGPATH}}/${PKGNAME}${_FLAVOR_EXT2}
 WRKINST ?= ${WRKDIR}/fake-${ARCH}${_FLAVOR_EXT2}
 .endif
 
+.if ${SEPARATE_BUILD:L:Mflavored}
+OLD_WRKDIR_NAME = w-${PKGNAME}
+.else
+OLD_WRKDIR_NAME = w-${PKGNAME}${_FLAVOR_EXT2}
+.endif
+
 .if !empty(WRKOBJDIR_${PKGPATH})
 .  if ${SEPARATE_BUILD:L:Mflavored}
 WRKDIR ?= ${WRKOBJDIR_${PKGPATH}}/${PKGNAME}
@@ -762,11 +768,7 @@ WRKDIR ?= ${WRKOBJDIR_${PKGPATH}}/${PKGNAME}
 WRKDIR ?= ${WRKOBJDIR_${PKGPATH}}/${PKGNAME}${_FLAVOR_EXT2}
 .  endif
 .else
-.  if ${SEPARATE_BUILD:L:Mflavored}
-WRKDIR ?= ${.CURDIR}/w-${PKGNAME}
-.  else
-WRKDIR ?= ${.CURDIR}/w-${PKGNAME}${_FLAVOR_EXT2}
-.  endif
+WRKDIR ?= ${.CURDIR}/${OLD_WRKDIR_NAME}
 .endif
 
 WRKDIST ?= ${WRKDIR}/${DISTNAME}
@@ -1668,7 +1670,6 @@ _complete_pkgspec = \
 ###
 ### end of variable setup. Only targets now
 ###
-
 check-register:
 .if empty(PLIST_DB)
 	@exit 1
