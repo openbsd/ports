@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2011/04/12 22:59:07 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/09/04 09:22:43 sthen Exp $
 %%SHARED%%
 @bin bin/ffmpeg
 @bin bin/ffplay
@@ -91,6 +91,7 @@ share/doc/ffmpeg/ffprobe.html
 share/doc/ffmpeg/ffserver.html
 share/doc/ffmpeg/general.html
 share/doc/ffmpeg/libavfilter.html
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/ffmpeg/
 share/examples/ffmpeg/ffserver.conf
 share/ffmpeg/

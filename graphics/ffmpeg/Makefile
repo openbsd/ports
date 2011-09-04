@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.80 2011/08/28 11:17:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.81 2011/09/04 09:22:43 sthen Exp $
 
 COMMENT=	audio/video converter and streamer
 
 V=		20110408
 DISTNAME=	ffmpeg-git-${V}
 PKGNAME=	ffmpeg-${V}
-REVISION=	8
+REVISION=	9
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 
@@ -80,7 +80,6 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-indev=oss \
 		--disable-iwmmxt \
 		--disable-neon \
-		--disable-optimizations \
 		--disable-outdev=oss \
 		--enable-gpl \
 		--enable-libgsm \
@@ -105,8 +104,7 @@ CONFIGURE_ENV+=	LIBavcodec_EXTRALIBS="${LIBavcodec_EXTRALIBS}" \
 		LIBavutil_EXTRALIBS="${LIBavutil_EXTRALIBS}" \
 		LIBpostproc_EXTRALIBS="${LIBpostproc_EXTRALIBS}" \
 		LIBswscale_EXTRALIBS="${LIBswscale_EXTRALIBS}" \
-		TMPDIR=${WRKTMP} \
-		CPPFLAGS="-I${X11BASE}/include"
+		TMPDIR=${WRKTMP}
 
 VERSION_FLAGS=	libavcodec_VERSION=${LIBavcodec_VERSION} \
 		libavdevice_VERSION=${LIBavdevice_VERSION} \

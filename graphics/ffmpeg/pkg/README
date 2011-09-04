@@ -1,0 +1,20 @@
+$OpenBSD: README,v 1.1 2011/09/04 09:22:43 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+bktr(4) support (amd64/i386/powerpc only) may be controlled through the
+following environment variables:
+
+BKTR_DEV={0|1|2|3|4}: Selects device input (tuner, camera, ...)
+
+BKTR_FORMAT={1|2|3|4|5|6}:
+  1 PAL
+  2 NTSC
+  3 SECAM
+  4 PALN
+  5 PALM
+  6 NTSCJ
+
+BKTR_FREQUENCY=xxx.yy: Sets frequency in MHz
