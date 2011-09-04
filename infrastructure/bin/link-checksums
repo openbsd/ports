@@ -1,35 +1,121 @@
-#! /bin/sh
-# $OpenBSD: link-checksums,v 1.2 2010/09/08 11:06:12 espie Exp $
-# Written by Marc Espie, 2000
-# Public domain
+#! /usr/bin/perl
 
-# Sets up hard links under a distfiles mirror, so that 
-# files will be preserved against checksum changes as a last
-# ditch attempt.
+# ex:ts=8 sw=4:
+# $OpenBSD: link-checksums,v 1.3 2011/09/04 17:01:19 espie Exp $
+#
+# Copyright (c) 2011 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
-# Also see REFETCH in bsd.port.mk, and mirroring-ports (7)
+eval 'exec perl $0 "$@"'
+	if 0;
 
-DISTDIR=${DISTDIR:-/usr/ports/distfiles}
-cd ${DISTDIR}
-CIPHERS=${CIPHERS:-sha1 md5 rmd160 sha256}
+use warnings;
+use strict;
+use File::Find;
+use File::Path;
 
-bdir=by_cipher
-# Build the find so that existing cipher dirs are avoided
-exclude="-type d -name $bdir -prune"
-for ci in ${CIPHERS}
-do
-	exclude="${exclude} -o -type d -name $ci -prune"
-done
-echo "find . \( $exclude \) -o -type f -print"
-find . \( $exclude \) -o -type f -print | while read i
-do
-	file=`basename $i`
-	for ci in ${CIPHERS}
-	do
-		result=`cksum -a $ci -b <$i`
-		res=`echo $result|sed -e 's,\(..\).*,\1,'`
-		dir=$bdir/$ci/$res/$result
-		mkdir -p $dir
-		ln -f $i $dir/$file
-	done
-done
+sub create_tables
+{
+	my $db = shift;
+
+}
+
+my $distdir = $ENV{DISTDIR} // '/usr/ports/distfiles';
+my $ciphers = $ENV{CIPHERS} // 'sha1 md5 rmd160 sha256';
+my ($stat, $stat2) = (0, 0);
+my ($db, $update, $check);
+
+# set up DB if wanted (requires DBD::SQLite)
+if (defined $ENV{CIPHER_CACHE}) {
+	require DBI;
+
+	$db = DBI->connect("dbi:SQLite:dbname=$ENV{CIPHER_CACHE}", '', '');
+	$db->do(q{CREATE TABLE IF NOT EXISTS 
+		KNOWN(NAME TEXT PRIMARY KEY, TS INTEGER)});
+	$check = $db->prepare(q{SELECT TS FROM KNOWN WHERE NAME LIKE (?)});
+	$update = $db->prepare(q{INSERT OR REPLACE INTO KNOWN 
+		(NAME, TS) VALUES (?, ?)});
+
+}
+
+my @ciphers = split(/\s+/, $ciphers);
+
+my %ciphers = map {$_, 1} @ciphers;
+
+find(sub {
+	# don't recurse down own results
+	if (-d $_) {
+		if ($_ eq 'by_cipher' || $ciphers{$_}) {
+			$File::Find::prune = 1;
+		}
+		return;
+	}
+	# avoid DPB partial fetches
+	return if m/\.part$/;
+	$stat++;
+
+	# avoid rechecksumming
+	my ($ts, $filename);
+	if (defined $db) {
+		$ts = (stat _)[9];
+		$filename = $File::Find::name;
+		$filename =~ s/^\Q$distdir\E\///;
+		$check->execute($filename);
+		my $a = $check->fetchrow_arrayref;
+		if (defined $a) {
+			return if $a->[0] == $ts;
+		}
+	}
+
+	# compute all checksums in one pipe
+	$stat2++;
+	my $pid = open(my $pipe, '-|');
+	die "Can't fork: $!" if !defined $pid;
+	if ($pid == 0) {
+		close STDIN;
+		open STDIN, '<', $_;
+		exec {'cksum'} ('cksum', '-a', join(',', @ciphers), '-b');
+		exit 1;
+	}
+	# and grab results in order
+	my @list = @ciphers;
+	while (defined(my $result = <$pipe>)) {
+		my $ci = shift @list;
+		chomp $result;
+		if ($result =~ m/^(..)/) {
+			my $target = "by_cipher/$ci/$1/$result";
+			File::Path::make_path($target);
+			next if -f "$target/$_";
+			link $_, "$target/$_" or die "link: $!";
+		} else {
+			die "Bad result $result";
+		}
+	}
+	if (@list != 0) {
+		die "Error: missing checksum for $File::Find::name";
+	}
+	if (!close $pipe) {
+		die "cksum aborted: $?";
+	}
+	if (defined $db) {
+		$update->execute($filename, $ts);
+	}
+}, $distdir);
+
+print "$stat files seen";
+if (defined $db) {
+	print ", of which $stat2 new files\n";
+} else {
+	print "\n";
+}
