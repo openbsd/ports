@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.6 2011/09/05 08:25:48 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2011/09/05 08:28:42 jasper Exp $
 
 TARGET=			msp430
 
@@ -13,8 +13,8 @@ MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 # http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Devel:Uniarch
 HOMEPAGE?=		http://mspgcc4.sourceforge.net/
 
-# GPLv3
-# msp430mcu: BSD3
+# binutils/gcc/gdb: GPLv3
+# libc/msp430mcu: BSD3/ISC
 PERMIT_PACKAGE_CDROM?=   Yes
 PERMIT_PACKAGE_FTP?=     Yes
 PERMIT_DISTFILES_CDROM?= Yes
