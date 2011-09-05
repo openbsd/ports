@@ -1,11 +1,11 @@
-$OpenBSD: patch-sql_sql_parse_cc,v 1.9 2011/05/19 08:35:15 dcoppa Exp $
+$OpenBSD: patch-sql_sql_parse_cc,v 1.10 2011/09/05 07:11:23 giovanni Exp $
 
 Fix floating point string printing in MySQL status output
 (MySQL Bug #61205)
 
---- sql/sql_parse.cc.orig	Wed May 18 12:36:24 2011
-+++ sql/sql_parse.cc	Wed May 18 12:37:14 2011
-@@ -1558,7 +1558,7 @@ bool dispatch_command(enum enum_server_command command
+--- sql/sql_parse.cc.orig	Tue Apr 12 14:11:38 2011
++++ sql/sql_parse.cc	Thu Jun 30 10:57:33 2011
+@@ -1572,7 +1572,7 @@ bool dispatch_command(enum enum_server_command command
      length= my_snprintf(buff, buff_len - 1,
                          "Uptime: %lu  Threads: %d  Questions: %lu  "
                          "Slow queries: %lu  Opens: %lu  Flush tables: %lu  "

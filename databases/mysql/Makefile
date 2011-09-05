@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2011/06/22 07:28:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.194 2011/09/05 07:11:23 giovanni Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,19 +6,17 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	5.1.54
+VERSION=	5.1.58
 DISTNAME=	mysql-${VERSION}
 PKGNAME-main=	mysql-client-${VERSION}
-REVISION-main=	0
 PKGNAME-server=	mysql-server-${VERSION}
-REVISION-server=9
 PKGNAME-tests= 	mysql-tests-${VERSION}
 CATEGORIES=	databases
 V=		MySQL-5.1
 MASTER_SITES=	${MASTER_SITE_MYSQL:=Downloads/$V/}
 
-SHARED_LIBS=	mysqlclient_r		20.0 \
-		mysqlclient		20.0
+SHARED_LIBS=	mysqlclient_r	20.0 \
+		mysqlclient	20.0
 
 HOMEPAGE=	http://www.mysql.com/
 
@@ -35,8 +33,10 @@ DB_DIR?=	/var/mysql
 SOCKET_DIR=	/var/run/mysql
 SUBST_VARS=	DB_DIR SOCKET_DIR VERSION
 
+.include <bsd.own.mk>
+
 # XXX gcc bug, gcc/3.3.5
-.if ${MACHINE_ARCH} == "alpha"
+.if ${MACHINE_ARCH} == "alpha" && ${COMPILER_VERSION} != "gcc4"
 CFLAGS+=	-mbwx
 .endif
 
@@ -64,8 +64,6 @@ CONFIGURE_ARGS+= --localstatedir="${DB_DIR}" \
 		 --without-docs \
 		 --without-readline
 
-.include <bsd.own.mk>
-
 .if ${COMPILER_VERSION:L:Mgcc[34]}
 CONFIGURE_ARGS+= --with-client-ldflags=-lsupc++ \
 		 --with-mysqld-ldflags=-lsupc++
@@ -81,7 +79,7 @@ RUN_DEPENDS-server=	${BASE_PKGPATH}>=5.1,<5.2 \
 			databases/p5-DBD-mysql
 LIB_DEPENDS-server=	${BASE_PKGPATH}>=5.1,<5.2
 
-WANTLIB-server=		${WANTLIB} crypto mysqlclient ssl stdc++ wrap z
+WANTLIB-server=		${WANTLIB} crypto mysqlclient ssl wrap z
 WANTLIB-main=		${WANTLIB} crypto ncursesw readline ssl z
 WANTLIB-tests=		${WANTLIB}
 
