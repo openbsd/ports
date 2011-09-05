@@ -1,7 +1,7 @@
-$OpenBSD: patch-html_Makefile_in,v 1.6 2009/09/12 12:35:20 sturm Exp $
---- html/Makefile.in.orig	Wed Jul  8 00:34:51 2009
-+++ html/Makefile.in	Thu Sep 10 07:15:44 2009
-@@ -33,46 +33,46 @@ distclean: clean
+$OpenBSD: patch-html_Makefile_in,v 1.7 2011/09/05 14:56:46 sthen Exp $
+--- html/Makefile.in.orig	Sun Jul 24 18:53:52 2011
++++ html/Makefile.in	Tue Jul 26 14:02:08 2011
+@@ -33,52 +33,52 @@ distclean: clean
  devclean: distclean
  
  install:
@@ -14,9 +14,11 @@ $OpenBSD: patch-html_Makefile_in,v 1.6 2009/09/12 12:35:20 sturm Exp $
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/images/logos
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/includes
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/includes/rss
+-	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/includes/rss/extlib
 -	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)/ssi
 -	$(INSTALL) -m 664 $(INSTALL_OPTS) robots.txt $(DESTDIR)$(HTMLDIR)
--	$(INSTALL) -m 664 $(INSTALL_OPTS) docs/robots.txt $(DESTDIR)$(HTMLDIR)/docs
+-#	$(INSTALL) -m 664 $(INSTALL_OPTS) docs/robots.txt $(DESTDIR)$(HTMLDIR)/docs
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/media
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/stylesheets
@@ -26,9 +28,11 @@ $OpenBSD: patch-html_Makefile_in,v 1.6 2009/09/12 12:35:20 sturm Exp $
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/images
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/images/logos
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/includes
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/includes/rss
++	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/includes/rss/extlib
 +	$(BSD_INSTALL_DATA_DIR) $(DESTDIR)$(HTMLDIR)/ssi
 +	$(BSD_INSTALL_DATA) robots.txt $(DESTDIR)$(HTMLDIR)
-+	$(BSD_INSTALL_DATA) docs/robots.txt $(DESTDIR)$(HTMLDIR)/docs
++#	$(BSD_INSTALL_DATA) docs/robots.txt $(DESTDIR)$(HTMLDIR)/docs
  # Remove old HTML files (PHP files are used now)
  	rm -f $(DESTDIR)$(HTMLDIR)/index.html
  	rm -f $(DESTDIR)$(HTMLDIR)/main.html
@@ -45,12 +49,12 @@ $OpenBSD: patch-html_Makefile_in,v 1.6 2009/09/12 12:35:20 sturm Exp $
  	for file in contexthelp/*.html; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/contexthelp; done
 +	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR)/contexthelp; done
- 	for file in docs/*.html; \
--	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/docs; done
-+	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR)/docs; done
- 	for file in docs/images/*.*; \
--	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/docs/images; done
-+	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR)/docs/images; done
+ #	for file in docs/*.html; \
+-#	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/docs; done
++#	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR)/docs; done
+ #	for file in docs/images/*.*; \
+-#	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/docs/images; done
++#	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR)/docs/images; done
  	for file in images/*.gif; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/images; done
 +	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR)/images; done
@@ -69,6 +73,13 @@ $OpenBSD: patch-html_Makefile_in,v 1.6 2009/09/12 12:35:20 sturm Exp $
  	for file in includes/*.*; \
 -	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/includes; done
 +	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR)/includes; done
+-	for file in includes/rss/*; \
++	for file in includes/rss/*.*; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/includes/rss; done
++	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR)/includes/rss; done
+ 	for file in includes/rss/extlib/*; \
+-	do $(INSTALL) -m 664 $(INSTALL_OPTS) $$file $(DESTDIR)$(HTMLDIR)/includes/rss/extlib; done
++	do $(BSD_INSTALL_DATA) $$file $(DESTDIR)$(HTMLDIR)/includes/rss/extlib; done
  
  install-unstripped:
  	$(MAKE) install
