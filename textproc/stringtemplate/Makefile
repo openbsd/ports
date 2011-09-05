@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/08/30 08:53:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/05 06:47:43 jasper Exp $
 
 COMMENT=	Java template engine for generating source code, etc
 
@@ -15,7 +15,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${HOMEPAGE:=download/}
+# upstream keeps re-rolling the distfile
+MASTER_SITES=	http://distfiles.nl/
 
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	#
