@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/01 17:18:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/05 06:55:16 jasper Exp $
 
 COMMENT=	XMPP real time collaboration server
 DISTNAME=	openfire_src_3_7_0
@@ -27,27 +27,28 @@ RUN_DEPENDS =	java/javaPathHelper
 
 MAKE_ENV+=      JAVA_HOME=${JAVA_HOME}
 WRKDIST=	${WRKDIR}/openfire_src
+WRKSRC= 	${WRKDIST}/build/
 
 OPENFIREDEST=	${PREFIX}/openfire
 DATADIRS=	lib logs plugins resources
 
 pre-install:
-	rm -rf ${WRKSRC}/target/openfire/resources/nativeAuth
-	mv ${WRKSRC}/target/openfire/resources/security ${WRKBUILD}
+	rm -rf ${WRKDIST}/target/openfire/resources/nativeAuth
+	mv ${WRKDIST}/target/openfire/resources/security ${WRKBUILD}
 
 do-install:
-	cd ${WRKSRC}/target/openfire && \
+	cd ${WRKDIST}/target/openfire && \
 		find ${DATADIRS} -type d \
 			-exec ${INSTALL_DATA_DIR} ${OPENFIREDEST}/{} \; && \
 		find ${DATADIRS} ! -type d \
 			-exec ${INSTALL_DATA} -m 644 {} ${OPENFIREDEST}/{} \;
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/openfire
-	${INSTALL_DATA} ${WRKSRC}/documentation/docs/*-guide.html \
+	${INSTALL_DATA} ${WRKDIST}/documentation/docs/*-guide.html \
 		${PREFIX}/share/doc/openfire
-	${INSTALL_DATA} ${WRKSRC}/documentation/docs/database.html \
+	${INSTALL_DATA} ${WRKDIST}/documentation/docs/database.html \
 		${PREFIX}/share/doc/openfire
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/openfire/security
-	${INSTALL_DATA} ${WRKSRC}/target/openfire/conf/openfire.xml \
+	${INSTALL_DATA} ${WRKDIST}/target/openfire/conf/openfire.xml \
 		${PREFIX}/share/examples/openfire
 	${INSTALL_DATA} ${WRKBUILD}/security/* \
 		${PREFIX}/share/examples/openfire/security
