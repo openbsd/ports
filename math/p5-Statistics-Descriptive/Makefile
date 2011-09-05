@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2011/06/01 17:10:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/05 12:06:41 jasper Exp $
 
 COMMENT =		basic descriptive statistical functions
 
-DISTNAME =		Statistics-Descriptive-3.0201
+DISTNAME =		Statistics-Descriptive-3.0202
 CATEGORIES =		math
 
 # perl
@@ -15,6 +15,6 @@ MODULES =		cpan
 
 CONFIGURE_STYLE =	modbuild
 MODCPAN_EXAMPLES =	Yes
-USE_GROFF =		Yes
+MAKE_ENV+=		TEST_POD=Yes
 
 .include <bsd.port.mk>
