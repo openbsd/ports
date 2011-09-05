@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/30 07:19:34 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/09/05 20:44:34 jasper Exp $
 share/java/
 share/java/classes/
-share/java/classes/antlr.jar
+share/java/classes/antlr3.jar
