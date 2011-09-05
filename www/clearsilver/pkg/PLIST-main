@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.5 2008/11/18 20:00:09 okan Exp $
-bin/cs
-bin/cs_static.cgi
-bin/cstest
+@comment $OpenBSD: PLIST-main,v 1.1 2011/09/05 17:12:35 okan Exp $
+@pkgpath www/clearsilver
+@pkgpath www/clearsilver,python
+@bin bin/cs
+@bin bin/cs_static.cgi
+@bin bin/cstest
 include/ClearSilver/
 include/ClearSilver/ClearSilver.h
 include/ClearSilver/cgi/
@@ -33,12 +35,6 @@ include/ClearSilver/util/wildmat.h
 lib/libneo_cgi.a
 lib/libneo_cs.a
 lib/libneo_utl.a
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/ClearSilver.pm
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/ClearSilver/
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/ClearSilver/ClearSilver.bs
-libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/auto/ClearSilver/ClearSilver.so
 libexec/mod_ecs.so
 @man man/man3/cBroadcast.3
 @man man/man3/cCreate.3
@@ -160,5 +156,3 @@ libexec/mod_ecs.so
 @man man/man3/skipRelease.3
 @man man/man3/skipSearch.3
 @man man/man3/wdb_keys.3
-@man man/man3p/ClearSilver.3p
-%%python%%
