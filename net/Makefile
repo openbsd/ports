@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.710 2011/09/03 13:06:23 espie Exp $
+# $OpenBSD: Makefile,v 1.711 2011/09/05 07:26:25 giovanni Exp $
 # $FreeBSD: Makefile,v 1.129 1997/11/20 13:47:40 itojun Exp $
 #
 
@@ -89,6 +89,7 @@
      SUBDIR += flowd
      SUBDIR += flvstreamer
      SUBDIR += fmirror
+     SUBDIR += fpdns
      SUBDIR += fping
      SUBDIR += freeradius
      SUBDIR += freetalk
