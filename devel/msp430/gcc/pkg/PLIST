@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/05/09 08:59:19 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/09/05 08:00:33 jasper Exp $
 @bin bin/msp430-c++
 @bin bin/msp430-cpp
 @bin bin/msp430-g++
@@ -9,10 +9,12 @@ bin/msp430-gccbug
 lib/gcc/
 lib/gcc/msp430/
 lib/gcc/msp430/${VERSION}/
+lib/gcc/msp430/${VERSION}/crt0ivtbl16.o
+lib/gcc/msp430/${VERSION}/crt0ivtbl32.o
+lib/gcc/msp430/${VERSION}/crt0ivtbl64.o
 lib/gcc/msp430/${VERSION}/include/
 lib/gcc/msp430/${VERSION}/include-fixed/
 lib/gcc/msp430/${VERSION}/include-fixed/README
-lib/gcc/msp430/${VERSION}/include-fixed/fixed
 lib/gcc/msp430/${VERSION}/include-fixed/limits.h
 lib/gcc/msp430/${VERSION}/include-fixed/syslimits.h
 lib/gcc/msp430/${VERSION}/include/float.h
@@ -32,26 +34,34 @@ lib/gcc/msp430/${VERSION}/install-tools/include/README
 lib/gcc/msp430/${VERSION}/install-tools/include/limits.h
 lib/gcc/msp430/${VERSION}/install-tools/macro_list
 lib/gcc/msp430/${VERSION}/install-tools/mkheaders.conf
+lib/gcc/msp430/${VERSION}/libcrt0.a
+lib/gcc/msp430/${VERSION}/libcrt0dwdt.a
 lib/gcc/msp430/${VERSION}/libgcc.a
 lib/gcc/msp430/${VERSION}/libgcov.a
-lib/gcc/msp430/${VERSION}/msp1/
-lib/gcc/msp430/${VERSION}/msp1/libgcc.a
-lib/gcc/msp430/${VERSION}/msp1/libgcov.a
-lib/gcc/msp430/${VERSION}/msp2/
-lib/gcc/msp430/${VERSION}/msp2/libgcc.a
-lib/gcc/msp430/${VERSION}/msp2/libgcov.a
-lib/gcc/msp430/${VERSION}/msp3/
-lib/gcc/msp430/${VERSION}/msp3/libgcc.a
-lib/gcc/msp430/${VERSION}/msp3/libgcov.a
-lib/gcc/msp430/${VERSION}/msp4/
-lib/gcc/msp430/${VERSION}/msp4/libgcc.a
-lib/gcc/msp430/${VERSION}/msp4/libgcov.a
-lib/gcc/msp430/${VERSION}/msp5/
-lib/gcc/msp430/${VERSION}/msp5/libgcc.a
-lib/gcc/msp430/${VERSION}/msp5/libgcov.a
-lib/gcc/msp430/${VERSION}/msp6/
-lib/gcc/msp430/${VERSION}/msp6/libgcc.a
-lib/gcc/msp430/${VERSION}/msp6/libgcov.a
+lib/gcc/msp430/${VERSION}/mcpu-430x/
+lib/gcc/msp430/${VERSION}/mcpu-430x/crt0ivtbl16.o
+lib/gcc/msp430/${VERSION}/mcpu-430x/crt0ivtbl32.o
+lib/gcc/msp430/${VERSION}/mcpu-430x/crt0ivtbl64.o
+lib/gcc/msp430/${VERSION}/mcpu-430x/libcrt0.a
+lib/gcc/msp430/${VERSION}/mcpu-430x/libcrt0dwdt.a
+lib/gcc/msp430/${VERSION}/mcpu-430x/libgcc.a
+lib/gcc/msp430/${VERSION}/mcpu-430x/libgcov.a
+lib/gcc/msp430/${VERSION}/mcpu-430x/mmpy-16/
+lib/gcc/msp430/${VERSION}/mcpu-430x/mmpy-16/crt0ivtbl16.o
+lib/gcc/msp430/${VERSION}/mcpu-430x/mmpy-16/crt0ivtbl32.o
+lib/gcc/msp430/${VERSION}/mcpu-430x/mmpy-16/crt0ivtbl64.o
+lib/gcc/msp430/${VERSION}/mcpu-430x/mmpy-16/libcrt0.a
+lib/gcc/msp430/${VERSION}/mcpu-430x/mmpy-16/libcrt0dwdt.a
+lib/gcc/msp430/${VERSION}/mcpu-430x/mmpy-16/libgcc.a
+lib/gcc/msp430/${VERSION}/mcpu-430x/mmpy-16/libgcov.a
+lib/gcc/msp430/${VERSION}/mmpy-16/
+lib/gcc/msp430/${VERSION}/mmpy-16/crt0ivtbl16.o
+lib/gcc/msp430/${VERSION}/mmpy-16/crt0ivtbl32.o
+lib/gcc/msp430/${VERSION}/mmpy-16/crt0ivtbl64.o
+lib/gcc/msp430/${VERSION}/mmpy-16/libcrt0.a
+lib/gcc/msp430/${VERSION}/mmpy-16/libcrt0dwdt.a
+lib/gcc/msp430/${VERSION}/mmpy-16/libgcc.a
+lib/gcc/msp430/${VERSION}/mmpy-16/libgcov.a
 libexec/gcc/
 libexec/gcc/msp430/
 libexec/gcc/msp430/${VERSION}/
@@ -59,12 +69,11 @@ libexec/gcc/msp430/${VERSION}/
 @bin libexec/gcc/msp430/${VERSION}/cc1plus
 @bin libexec/gcc/msp430/${VERSION}/collect2
 libexec/gcc/msp430/${VERSION}/install-tools/
-@bin libexec/gcc/msp430/${VERSION}/install-tools/fix-header
 libexec/gcc/msp430/${VERSION}/install-tools/fixinc.sh
 @bin libexec/gcc/msp430/${VERSION}/install-tools/fixincl
-libexec/gcc/msp430/${VERSION}/install-tools/fixproto
 libexec/gcc/msp430/${VERSION}/install-tools/mkheaders
 libexec/gcc/msp430/${VERSION}/install-tools/mkinstalldirs
+@bin libexec/gcc/msp430/${VERSION}/lto-wrapper
 @man man/man1/msp430-cpp.1
 @man man/man1/msp430-g++.1
 @man man/man1/msp430-gcc.1
