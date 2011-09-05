@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/07/07 00:22:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/05 18:24:08 jasper Exp $
 
 SHARED_ONLY =		Yes
 
@@ -15,7 +15,7 @@ PKGNAME-mysql =		rsyslog-mysql-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 CATEGORIES =		sysutils
 
-REVISION-main =		1
+REVISION-main =		2
 
 HOMEPAGE =		http://www.rsyslog.com/
 

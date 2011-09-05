@@ -1,6 +1,13 @@
-$OpenBSD: patch-tools_syslogd_c,v 1.1.1.1 2010/07/29 21:40:21 steven Exp $
---- tools/syslogd.c.orig	Wed Jul  7 11:43:39 2010
-+++ tools/syslogd.c	Sun Jul 25 21:39:57 2010
+$OpenBSD: patch-tools_syslogd_c,v 1.2 2011/09/05 18:24:08 jasper Exp $
+
+Last chunk:
+Security fix for CVE-2011-3200,
+rsyslog: parseLegacySyslogMsg off-by-two buffer overflow
+
+Patch from upstream via redhat: https://bugzilla.redhat.com/show_bug.cgi?id=727644
+
+--- tools/syslogd.c.orig	Thu Aug  5 11:33:54 2010
++++ tools/syslogd.c	Mon Sep  5 20:22:07 2011
 @@ -173,9 +173,8 @@ static rsRetVal GlobalClassExit(void);
  #endif
  #endif
@@ -13,3 +20,12 @@ $OpenBSD: patch-tools_syslogd_c,v 1.1.1.1 2010/07/29 21:40:21 steven Exp $
  
  #ifndef _PATH_MODDIR
  #       if defined(__FreeBSD__)
+@@ -1291,7 +1290,7 @@ int parseLegacySyslogMsg(msg_t *pMsg, int flags)
+ 		 * outputs so that only 32 characters max are used by default.
+ 		 */
+ 		i = 0;
+-		while(lenMsg > 0 && *p2parse != ':' && *p2parse != ' ' && i < CONF_TAG_MAXSIZE) {
++		while(lenMsg > 0 && *p2parse != ':' && *p2parse != ' ' && i < CONF_TAG_MAXSIZE - 2) {
+ 			bufParseTAG[i++] = *p2parse++;
+ 			--lenMsg;
+ 		}
