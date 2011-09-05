@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: link-checksums,v 1.4 2011/09/05 07:46:12 espie Exp $
+# $OpenBSD: link-checksums,v 1.5 2011/09/05 07:59:28 espie Exp $
 #
 # Copyright (c) 2011 Marc Espie <espie@openbsd.org>
 #
@@ -52,6 +52,17 @@ if (defined $ENV{CIPHER_CACHE}) {
 my @ciphers = split(/\s+/, $ciphers);
 
 my %ciphers = map {$_, 1} @ciphers;
+
+if (@ARGV > 0 && $ARGV[0] eq 'fix') {
+	$db->do(q{DELETE FROM KNOWN WHERE NAME LIKE '%/%'}) if defined $db;
+	find(sub {
+		return unless -d $_;
+		return unless $_ eq 'by_cipher';
+		$File::Find::prune = 1;
+		return if $File::Find::name eq "$distdir/by_cipher";
+		File::Path::remove_tree($_);
+	}, $distdir);
+}
 
 find(sub {
 	# don't recurse down own results
