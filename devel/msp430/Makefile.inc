@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2011/09/05 08:15:14 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.6 2011/09/05 08:25:48 jasper Exp $
 
 TARGET=			msp430
 
@@ -26,6 +26,10 @@ MASTER_SITES?=		${MASTER_SITE_SOURCEFORGE:=mspgcc/}
 # git://mspgcc.git.sourceforge.net/gitroot/mspgcc/
 # or from the official release tarballs.
 MASTER_SITES0=		http://distfiles.nl/mspgcc/
+
+# These are the patches intended for the LTS releases.
+MASTER_SITES1= ${MASTER_SITE_SOURCEFORGE:=mspgcc/Patches/LTS/20110716/}
+
 PATCH_DIST_STRIP?=	-p1
 
 EXTRACT_SUFX?=		.tar.bz2
