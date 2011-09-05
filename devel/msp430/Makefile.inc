@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2011/07/11 19:15:03 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2011/09/05 08:03:31 jasper Exp $
 
 TARGET=			msp430
 
@@ -6,17 +6,23 @@ CATEGORIES+=		devel devel/msp430
 
 MAINTAINER?=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
+# mspgcc4 was forked from mspgcc several years ago due to dormancy of the
+# original project. Currently mspgcc is being developed again and unifying
+# the different msp430 architectures (uniarch).
+# For a list of changes this uniarch approach brings, please refer to:
+# http://sourceforge.net/apps/mediawiki/mspgcc/index.php?title=Devel:Uniarch
 HOMEPAGE?=		http://mspgcc4.sourceforge.net/
 
 # GPLv3
+# msp430mcu: BSD3
 PERMIT_PACKAGE_CDROM?=   Yes
 PERMIT_PACKAGE_FTP?=     Yes
 PERMIT_DISTFILES_CDROM?= Yes
 PERMIT_DISTFILES_FTP?=   Yes
 
 # The patches on http://distfiles.nl/mspgcc/ are taken from
-# git://mspgcc4.git.sourceforge.net/gitroot/mspgcc4/mspgcc4
-
+# git://mspgcc.git.sourceforge.net/gitroot/mspgcc/
+# or from the official release tarballs.
 MASTER_SITES0=		http://distfiles.nl/mspgcc/
 PATCH_DIST_STRIP?=	-p1
 
