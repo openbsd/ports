@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/01 20:34:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/05 18:41:29 kili Exp $
 
 COMMENT-main=		JDBC Driver for PostgreSQL
 COMMENT-docs=		API docs for PostgreSQL JDBC Driver
@@ -68,7 +68,6 @@ pre-regress:
 	fi
 	${PG} ${LOCALBASE}/bin/initdb -A trust
 	${PG} ${LOCALBASE}/bin/pg_ctl -w start
-	${PG} ${LOCALBASE}/bin/createlang plpgsql template1
 	${PG} ${LOCALBASE}/bin/createuser -SDRli test
 	${PG} ${LOCALBASE}/bin/createdb -O test test
 
