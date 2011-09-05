@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.20 2011/07/17 09:56:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/05 17:13:56 sthen Exp $
 
 SHARED_LIBS =		rtmp 0.0
 
 COMMENT =		dump RTMP media streams
 
-DISTNAME =		rtmpdump-2.4
+DISTNAME =		rtmpdump-2.4pl1
 EXTRACT_SUFX =		.tgz
 
 CATEGORIES =		net
@@ -19,10 +19,11 @@ PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB =		c crypto pthread ssl z
 
-#MASTER_SITES =		${HOMEPAGE}download/
+# packaged from git://git.ffmpeg.org/rtmpdump
 MASTER_SITES =		http://spacehopper.org/mirrors/
 
-MAKE_FLAGS =		CC="${CC}" XCFLAGS="${CFLAGS}" OPT= THREADLIB=-pthread SO_VERSION=${LIBrtmp_VERSION}
+MAKE_FLAGS =		CC="${CC}" XCFLAGS="${CFLAGS}" OPT= \
+			THREADLIB=-pthread SO_VERSION=${LIBrtmp_VERSION}
 
 USE_GROFF =		Yes
 NO_REGRESS =		Yes
