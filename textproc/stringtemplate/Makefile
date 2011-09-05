@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/05 06:47:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/05 20:19:30 jasper Exp $
 
 COMMENT=	Java template engine for generating source code, etc
 
@@ -27,11 +27,9 @@ NO_REGRESS=	Yes
 MODULES=	java
 MODJAVA_VER=	1.6+
 
-JAR_DIR=	${PREFIX}/share/java/classes/
-
 do-install:
-	${INSTALL_DATA_DIR} ${JAR_DIR}
+	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR}
 	${INSTALL_DATA} ${FULLDISTDIR}/${DISTNAME}${EXTRACT_SUFX} \
-		${JAR_DIR}/stringtemplate.jar
+		${MODJAVA_JAR_DIR}/stringtemplate.jar
 
 .include <bsd.port.mk>
