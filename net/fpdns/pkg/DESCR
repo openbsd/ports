@@ -1,0 +1,9 @@
+fpdns is a program that remotely determines DNS server versions.
+It does this by sending a series of borderline DNS queries which
+are compared against a table of responses and server versions.
+
+False positives or incorrect versions may be reported when trying
+to identify a set of servers residing behind a load-balancing
+apparatus where the servers are of different implementations, when
+a specific implementation behaves like a forwarder, behind a firewall
+without statefull inspection or without Application Intelligence.
