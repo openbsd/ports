@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/02 07:06:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/05 08:15:14 jasper Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	C headers and binutils linker scripts for msp430
 
 DISTNAME=	msp430mcu-20110613
-
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mspgcc/}
 
 CONFIGURE_STYLE=#empty
 

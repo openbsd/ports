@@ -1,10 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/05 08:01:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/05 08:15:14 jasper Exp $
 
 COMMENT=		GNU libc for msp430
 
 DISTNAME=		${TARGET}-libc-20110612
-
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mspgcc/}
 
 RUN_DEPENDS=		devel/msp430/gcc>=4.5.3
 BUILD_DEPENDS=		${RUN_DEPENDS}
