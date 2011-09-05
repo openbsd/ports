@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.19 2011/07/12 15:32:16 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.20 2011/09/05 14:28:55 ajacoutot Exp $
 @conflict libgda-db4-*
 @conflict libgda-ldap-<4.2.8p0v0
 @pkgpath x11/gnome/libgda,-odbc
@@ -9,15 +9,6 @@ bin/gda-list-server-op
 bin/gda-sql
 @bin bin/gda-sql-${GDA_MAJOR}
 @bin bin/gda-test-connection-${GDA_MAJOR}
-bin/gda_trml2html/
-bin/gda_trml2html/__init__.py
-bin/gda_trml2html/trml2html.py
-bin/gda_trml2html/utils.py
-bin/gda_trml2pdf/
-bin/gda_trml2pdf/__init__.py
-bin/gda_trml2pdf/color.py
-bin/gda_trml2pdf/trml2pdf.py
-bin/gda_trml2pdf/utils.py
 include/libgda-${GDA_MAJOR}/
 include/libgda-${GDA_MAJOR}/libgda/
 include/libgda-${GDA_MAJOR}/libgda-report/
@@ -245,13 +236,13 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/SqlIdentifiers.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/architecture.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/architecture.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/blobs_example.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch05s03.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch06s02.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch04.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch06s03.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch07s02.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch07s03.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch07s07.html
-share/gtk-doc/html/libgda-${GDA_MAJOR}/ch10.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch08s02.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch08s03.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/ch08s07.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch11s02.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch11s07.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/ch11s08.html
@@ -325,6 +316,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/gda-sql-manual-icommands.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/gda-sql-manual-open.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/gda-sql-manual-run.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/gda-sql.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/gen:sql_identifiers.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/gen_blobs.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/getting_started.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/home.png
@@ -345,6 +337,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-5.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-6.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-7.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-8.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2-9.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-4-2.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index-deprecated.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/index.html
@@ -416,6 +409,7 @@ share/gtk-doc/html/libgda-${GDA_MAJOR}/migration-2-report.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/migration-2.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/misc.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/multi-threading.html
+share/gtk-doc/html/libgda-${GDA_MAJOR}/null_handling.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/other_examples.html
 share/gtk-doc/html/libgda-${GDA_MAJOR}/parser_gen.png
 share/gtk-doc/html/libgda-${GDA_MAJOR}/parser_prov.png
@@ -467,6 +461,15 @@ share/libgda-${GDA_MAJOR}/dtd/
 share/libgda-${GDA_MAJOR}/dtd/libgda-array.dtd
 share/libgda-${GDA_MAJOR}/dtd/libgda-paramlist.dtd
 share/libgda-${GDA_MAJOR}/dtd/libgda-server-operation.dtd
+share/libgda-${GDA_MAJOR}/gda_trml2html/
+share/libgda-${GDA_MAJOR}/gda_trml2html/__init__.py
+share/libgda-${GDA_MAJOR}/gda_trml2html/trml2html.py
+share/libgda-${GDA_MAJOR}/gda_trml2html/utils.py
+share/libgda-${GDA_MAJOR}/gda_trml2pdf/
+share/libgda-${GDA_MAJOR}/gda_trml2pdf/__init__.py
+share/libgda-${GDA_MAJOR}/gda_trml2pdf/color.py
+share/libgda-${GDA_MAJOR}/gda_trml2pdf/trml2pdf.py
+share/libgda-${GDA_MAJOR}/gda_trml2pdf/utils.py
 share/libgda-${GDA_MAJOR}/information_schema.xml
 share/libgda-${GDA_MAJOR}/php/
 share/libgda-${GDA_MAJOR}/php/README
@@ -475,6 +478,7 @@ share/libgda-${GDA_MAJOR}/php/gda-config.php
 share/libgda-${GDA_MAJOR}/php/gda-exception.php
 share/libgda-${GDA_MAJOR}/php/gda-front.php
 share/libgda-${GDA_MAJOR}/php/gda-meta.php
+share/libgda-${GDA_MAJOR}/php/gda-secure-config.php
 share/libgda-${GDA_MAJOR}/php/gda-setup.php
 share/libgda-${GDA_MAJOR}/php/gda-tester.php
 share/libgda-${GDA_MAJOR}/php/gda-utils.php
@@ -525,6 +529,7 @@ share/locale/dz/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/el/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/en_CA/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/en_GB/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
+share/locale/eo/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/es/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/eu/LC_MESSAGES/libgda-${GDA_MAJOR}.mo
 share/locale/fa/LC_MESSAGES/libgda-${GDA_MAJOR}.mo

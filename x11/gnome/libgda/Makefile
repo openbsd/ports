@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/07/29 20:42:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2011/09/05 14:28:55 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -10,7 +10,7 @@ COMMENT-pgsql=		PostreSQL backend for libgda
 COMMENT-ui=		GTK+ extension and tools for libgda
 
 GNOME_PROJECT=		libgda
-GNOME_VERSION=		4.2.8
+GNOME_VERSION=		4.2.9
 
 # NOTE: when major version changes, increment GDA_MAJOR accordingly and
 # bump "x11/gnome/libgdamm"
@@ -22,10 +22,6 @@ PKGNAME-mdb=		libgda-mdb-${GNOME_VERSION}
 PKGNAME-mysql=		libgda-mysql-${GNOME_VERSION}
 PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
-
-REVISION-main=		1
-REVISION-ui=		2
-REVISION-pgsql=		0
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -96,7 +92,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4/" \
 
 FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
 
-WANTLIB-main += ${WANTLIB} c gcrypt gpg-error ncurses pthread png
+WANTLIB-main += ${WANTLIB} c gcrypt gpg-error ncurses pthread
 WANTLIB-main += readline soup-2.4 xslt crypto gdk_pixbuf-2.0
 
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
@@ -171,7 +167,7 @@ CONFIGURE_ARGS+=	--with-postgres="${LOCALBASE}"
 RUN_DEPENDS-ldap=	${MODGETTEXT_RUN_DEPENDS}
 MULTI_PACKAGES+=	-ldap
 WANTLIB-ldap=		${WANTLIB} crypto gda-4.0 gssapi krb5 lber-2.4 \
-			ldap-2.4 sasl2 ssl
+			ldap-2.4 sasl2 ssl asn1 com_err
 LIB_DEPENDS-ldap=	x11/gnome/libgda \
 			databases/openldap
 CONFIGURE_ARGS+=	--with-ldap
