@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/08 18:09:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/05 12:38:36 jasper Exp $
 
 COMMENT =		ebook management application
 
 # 0.7.46 and higher have problems repainting their windows..
-DISTNAME =		calibre-0.7.45
-REVISION =		2
+DISTNAME =		calibre-0.8.17
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 
@@ -19,10 +18,16 @@ PERMIT_DISTFILES_FTP =	Yes
 MODULES =		lang/python \
 			x11/qt4
 
+WANTLIB +=		MagickCore MagickWand QtGui X11 Xext c fontconfig m
+WANTLIB +=		stdc++ chm icudata icui18n icuio icuuc poppler png
+WANTLIB +=		${MODPY_WANTLIB}
+
 LIB_DEPENDS=		devel/chmlib \
 			graphics/ImageMagick \
 			graphics/libwmf \
+			graphics/png \
 			print/poppler,-qt4 \
+			print/poppler \
 			textproc/icu4c
 RUN_DEPENDS =		devel/py-dateutil \
 			devel/xdg-utils \
@@ -33,7 +38,7 @@ RUN_DEPENDS =		devel/py-dateutil \
 			textproc/py-lxml>=2.2.8 \
 			textproc/py-pdf \
 			www/py-beautifulsoup \
-			www/py-cherrypy2 \
+			www/py-CherryPy \
 			www/py-mechanize \
 			x11/py-qt4>=4.8.2p1 \
 			www/py-mechanize
@@ -65,11 +70,21 @@ MODPY_DISTUTILS_INSTALL =	install --prefix=${LOCALBASE} \
 # Remove bundled cherrypy and pyPdf so it uses the system versions
 pre-configure:
 	cd ${WRKSRC} && (rm -rf src/cherrypy src/pyPdf ; \
-	    find . -name '*.py' -exec \
-	    perl -pi -e 's,#!/usr/bin/env python,#!${MODPY_BIN},' {} \; )
+		find . -name '*.py' -print0 | xargs -0 perl -pi -e \
+		's,#!/usr/bin/env python(2)?,#!${MODPY_BIN},' )
 
 do-install:
 	${_MODPY_CMD} ${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
 	${CHMOD} 755 ${PREFIX}/bin/calibre-mount-helper
+	${INSTALL_DATA_DIR} ${PREFIX}/share/calibre/recipes
+	cd ${WRKSRC}/recipes && find . -type f -exec \
+	    ${INSTALL_DATA} {} ${PREFIX}/share/calibre/recipes/ \;
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/lib/calibre
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+		${PREFIX}/share/calibre
+
 
 .include <bsd.port.mk>
