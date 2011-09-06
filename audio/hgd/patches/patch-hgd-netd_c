@@ -1,0 +1,34 @@
+$OpenBSD: patch-hgd-netd_c,v 1.1 2011/09/06 21:33:40 edd Exp $
+
+Fix for #77, seg fault when a client attempts to queue without being logged in.
+
+--- hgd-netd.c.orig	Sun Jul 24 18:29:43 2011
++++ hgd-netd.c	Sat Aug 27 22:51:01 2011
+@@ -303,6 +303,13 @@ hgd_cmd_queue(struct hgd_session *sess, char **args)
+ 	ssize_t			write_ret;
+ 	char			*filename, *tag_artist, *tag_title;
+ 
++	if (sess->user == NULL) {
++		hgd_sock_send_line(sess->sock_fd, sess->ssl,
++		    "err|user_not_identified");
++		ret = HGD_FAIL;
++		goto clean;
++	}
++
+ 	if ((flood_limit >= 0) &&
+ 	    (hgd_num_tracks_user(sess->user->name) >= flood_limit)) {
+ 
+@@ -320,13 +327,6 @@ hgd_cmd_queue(struct hgd_session *sess, char **args)
+ 	if ((bytes == 0) || ((long int) bytes > max_upload_size)) {
+ 		DPRINTF(HGD_D_WARN, "Incorrect file size");
+ 		hgd_sock_send_line(sess->sock_fd, sess->ssl, "err|size");
+-		ret = HGD_FAIL;
+-		goto clean;
+-	}
+-
+-	if (sess->user == NULL) {
+-		hgd_sock_send_line(sess->sock_fd, sess->ssl,
+-		    "err|user_not_identified");
+ 		ret = HGD_FAIL;
+ 		goto clean;
+ 	}
