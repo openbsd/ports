@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-docs,v 1.1.1.1 2007/04/11 12:54:25 kili Exp $
+@comment $OpenBSD: PLIST-docs,v 1.2 2011/09/06 19:28:36 kili Exp $
 share/doc/postgresql-jdbc/
 share/doc/postgresql-jdbc/allclasses-frame.html
 share/doc/postgresql-jdbc/allclasses-noframe.html
@@ -14,6 +14,16 @@ share/doc/postgresql-jdbc/org/postgresql/PGNotification.html
 share/doc/postgresql-jdbc/org/postgresql/PGRefCursorResultSet.html
 share/doc/postgresql-jdbc/org/postgresql/PGResultSetMetaData.html
 share/doc/postgresql-jdbc/org/postgresql/PGStatement.html
+share/doc/postgresql-jdbc/org/postgresql/copy/
+share/doc/postgresql-jdbc/org/postgresql/copy/CopyIn.html
+share/doc/postgresql-jdbc/org/postgresql/copy/CopyManager.html
+share/doc/postgresql-jdbc/org/postgresql/copy/CopyOperation.html
+share/doc/postgresql-jdbc/org/postgresql/copy/CopyOut.html
+share/doc/postgresql-jdbc/org/postgresql/copy/PGCopyInputStream.html
+share/doc/postgresql-jdbc/org/postgresql/copy/PGCopyOutputStream.html
+share/doc/postgresql-jdbc/org/postgresql/copy/package-frame.html
+share/doc/postgresql-jdbc/org/postgresql/copy/package-summary.html
+share/doc/postgresql-jdbc/org/postgresql/copy/package-tree.html
 share/doc/postgresql-jdbc/org/postgresql/ds/
 share/doc/postgresql-jdbc/org/postgresql/ds/PGConnectionPoolDataSource.html
 share/doc/postgresql-jdbc/org/postgresql/ds/PGPooledConnection.html
@@ -62,10 +72,18 @@ share/doc/postgresql-jdbc/org/postgresql/ssl/package-frame.html
 share/doc/postgresql-jdbc/org/postgresql/ssl/package-summary.html
 share/doc/postgresql-jdbc/org/postgresql/ssl/package-tree.html
 share/doc/postgresql-jdbc/org/postgresql/util/
+share/doc/postgresql-jdbc/org/postgresql/util/PGInterval.html
+share/doc/postgresql-jdbc/org/postgresql/util/PGmoney.html
 share/doc/postgresql-jdbc/org/postgresql/util/PGobject.html
+share/doc/postgresql-jdbc/org/postgresql/util/ServerErrorMessage.html
 share/doc/postgresql-jdbc/org/postgresql/util/package-frame.html
 share/doc/postgresql-jdbc/org/postgresql/util/package-summary.html
 share/doc/postgresql-jdbc/org/postgresql/util/package-tree.html
+share/doc/postgresql-jdbc/org/postgresql/xa/
+share/doc/postgresql-jdbc/org/postgresql/xa/PGXADataSource.html
+share/doc/postgresql-jdbc/org/postgresql/xa/package-frame.html
+share/doc/postgresql-jdbc/org/postgresql/xa/package-summary.html
+share/doc/postgresql-jdbc/org/postgresql/xa/package-tree.html
 share/doc/postgresql-jdbc/overview-frame.html
 share/doc/postgresql-jdbc/overview-summary.html
 share/doc/postgresql-jdbc/overview-tree.html
