@@ -1,4 +1,4 @@
-$OpenBSD: patch-server_gam_kqueue_c,v 1.6 2009/12/28 17:23:23 phessler Exp $
+$OpenBSD: patch-server_gam_kqueue_c,v 1.7 2011/09/06 11:48:04 ajacoutot Exp $
 
 From FreeBSD:
 Make sure that excluded paths do not get opened (but rather they will be
@@ -6,14 +6,16 @@ polled).
 
 OpenBSD doesn't have sysctlbyname, use sysctl(3) instead.
 
+Enable the polling backend along with kqueue, making NFS work again.
+
 Fix "enumeration value... not handled in switch" warnings.
 
 OpenBSD does not have maxfilesperproc, which means max_open_files will
 default to "0" and kqueue will never be used. Instead, use get+setrlimit
 to get a correct value.
 
---- server/gam_kqueue.c.orig	Wed Jul  4 07:50:41 2007
-+++ server/gam_kqueue.c	Mon Dec 28 09:40:41 2009
+--- server/gam_kqueue.c.orig	Wed Jul  4 15:50:41 2007
++++ server/gam_kqueue.c	Fri Sep  2 14:45:19 2011
 @@ -31,7 +31,8 @@
   *           - kqueue needs to be moved out the UFS code.
   *
@@ -135,7 +137,7 @@ to get a correct value.
      }
  }
  
-@@ -1125,6 +1137,9 @@ gam_kqueue_init (void)
+@@ -1125,7 +1137,12 @@ gam_kqueue_init (void)
    GIOChannel *channel;
    unsigned int maxfiles;
    unsigned int maxfilesperproc;
@@ -143,9 +145,12 @@ to get a correct value.
 +  size_t len;
 +  struct rlimit rlp;
  
++  gam_poll_basic_init ();
++
    kq = kqueue();
    if (kq < 0)
-@@ -1133,11 +1148,16 @@ gam_kqueue_init (void)
+     {
+@@ -1133,11 +1150,16 @@ gam_kqueue_init (void)
        return FALSE;
      }
  
@@ -165,7 +170,7 @@ to get a correct value.
    /*
     * We make sure to:
     *	- never paralyze the system (CFG_GLOBAL_FILE_RESERVE_RATIO)
-@@ -1145,6 +1165,22 @@ gam_kqueue_init (void)
+@@ -1145,6 +1167,22 @@ gam_kqueue_init (void)
     */
  
    maxfiles *= CFG_GLOBAL_FILE_RESERVE_RATIO;
