@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/01/04 09:46:51 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/09/06 20:09:18 sthen Exp $
 @pkgpath www/kronolith
 @group daemon
 ${INSTDIR}/
@@ -145,6 +145,8 @@ ${INSTDIR}/lib/tests/bug2813.phpt
 ${INSTDIR}/lib/tests/bug6031.phpt
 ${INSTDIR}/lib/tests/bug7068.ics
 ${INSTDIR}/lib/tests/bug7068.phpt
+${INSTDIR}/lib/tests/fromicalendar.ics
+${INSTDIR}/lib/tests/fromicalendar.phpt
 ${INSTDIR}/lib/tests/recurrence.phpt
 ${INSTDIR}/lib/tests/toicalendar.phpt
 ${INSTDIR}/lib/version.php
@@ -331,6 +333,8 @@ ${INSTDIR}/scripts/upgrades/2006-08-20_fix_recur_int_fields.mysql.sql
 ${INSTDIR}/scripts/upgrades/2006-08-20_fix_recur_int_fields.pgsql.sql
 ${INSTDIR}/scripts/upgrades/2008-09-23_fix_group_uid.sql
 ${INSTDIR}/scripts/upgrades/convert_datatree_shares_to_sql.php
+${INSTDIR}/scripts/upgrades/convert_sql_shares_to_sqlng.php
+${INSTDIR}/scripts/upgrades/sharesng.sql
 ${INSTDIR}/search.php
 ${INSTDIR}/templates/
 ${INSTDIR}/templates/attendees/
