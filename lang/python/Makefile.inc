@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.81 2011/07/18 15:32:18 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.82 2011/09/06 20:58:08 rpointel Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -84,18 +84,14 @@ PKG_ARGS+=	-Dmm=0
 PKG_ARGS+=	-Dmm=1
 .endif
 
-# XXX fix ctypes on powerpc for python2.6
-# The ctypes module is not supported on all platforms (in particular, ARM)
-.if ${VERSION} == "2.5" || ${VERSION} == "2.6" || ${VERSION} == "2.7"
-.  if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
-      ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64" || \
-      ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "m68k" || \
-      ${MACHINE_ARCH:Mmips64*} || \
-      ( ${MACHINE_ARCH} == "powerpc" && ( ${VERSION} != "2.6" && ${VERSION} != "2.7" ) )
-PKG_ARGS+=	-Dctypes=1
-.  else
+# The ctypes module depends of devel/libffi, not supported on all platforms
+.if ${VERSION} == "2.4" || ${MACHINE_ARCH:Marm}
 PKG_ARGS+=	-Dctypes=0
-.  endif
+.else
+PKG_ARGS+=	-Dctypes=1
+LIB_DEPENDS-main += devel/libffi
+CONFIGURE_ARGS +=	--with-system-ffi
+WANTLIB-main +=	ffi
 .endif
 
 USE_GROFF =	Yes
