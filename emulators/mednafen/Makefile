@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/14 21:04:51 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/06 19:21:52 jasper Exp $
 
 COMMENT =	emulates numerous game consoles
 
@@ -32,6 +32,8 @@ LIB_DEPENDS =	audio/libcdio \
 		devel/sdl-net
 		
 WRKDIST =	${WRKDIR}/mednafen
+
+VMEM_WARNING =	Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL" \
