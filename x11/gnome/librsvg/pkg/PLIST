@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2011/04/05 14:42:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2011/09/06 22:37:18 ajacoutot Exp $
 @bin bin/rsvg-convert
 include/librsvg-2.0/
 include/librsvg-2.0/librsvg/
@@ -6,13 +6,19 @@ include/librsvg-2.0/librsvg/librsvg-enum-types.h
 include/librsvg-2.0/librsvg/librsvg-features.h
 include/librsvg-2.0/librsvg/rsvg-cairo.h
 include/librsvg-2.0/librsvg/rsvg.h
+lib/gdk-pixbuf-2.0/
+lib/gdk-pixbuf-2.0/2.10.0/
+lib/gdk-pixbuf-2.0/2.10.0/loaders/
 @comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.a
 @comment lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.la
 lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.so
 lib/librsvg-2.a
 lib/librsvg-2.la
 @lib lib/librsvg-2.so.${LIBrsvg-2_VERSION}
+lib/pkgconfig/
 lib/pkgconfig/librsvg-2.0.pc
+share/gtk-doc/
+share/gtk-doc/html/
 share/gtk-doc/html/rsvg-2.0/
 share/gtk-doc/html/rsvg-2.0/RsvgHandle.html
 share/gtk-doc/html/rsvg-2.0/annotation-glossary.html
