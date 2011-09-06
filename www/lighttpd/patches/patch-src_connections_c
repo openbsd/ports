@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_connections_c,v 1.15 2011/08/24 21:28:09 sthen Exp $
+$OpenBSD: patch-src_connections_c,v 1.16 2011/09/06 08:49:51 sthen Exp $
 --- src/connections.c.orig	Sun Apr 24 11:55:46 2011
-+++ src/connections.c	Wed Aug 24 02:50:41 2011
-@@ -617,8 +617,9 @@ static int connection_handle_write_prepare(server *srv
++++ src/connections.c	Mon Sep  5 20:38:50 2011
+@@ -445,6 +445,7 @@ static int connection_handle_write_prepare(server *srv
+ 		default:
+ 			switch(con->http_status) {
+ 			case 400: /* bad request */
++			case 401: /* authorization required */
+ 			case 414: /* overload request header */
+ 			case 505: /* unknown protocol */
+ 			case 207: /* this was webdav */
+@@ -617,8 +618,9 @@ static int connection_handle_write_prepare(server *srv
  }
  
  static int connection_handle_write(server *srv, connection *con) {
@@ -12,7 +20,7 @@ $OpenBSD: patch-src_connections_c,v 1.15 2011/08/24 21:28:09 sthen Exp $
  		if (con->file_finished) {
  			connection_set_state(srv, con, CON_STATE_RESPONSE_END);
  			joblist_append(srv, con);
-@@ -635,6 +636,7 @@ static int connection_handle_write(server *srv, connec
+@@ -635,6 +637,7 @@ static int connection_handle_write(server *srv, connec
  		joblist_append(srv, con);
  		break;
  	case 1:
@@ -20,7 +28,7 @@ $OpenBSD: patch-src_connections_c,v 1.15 2011/08/24 21:28:09 sthen Exp $
  		con->is_writable = 0;
  
  		/* not finished yet -> WRITE */
-@@ -1251,8 +1253,6 @@ static handler_t connection_handle_fdevent(server *srv
+@@ -1251,8 +1254,6 @@ static handler_t connection_handle_fdevent(server *srv
  			log_error_write(srv, __FILE__, __LINE__, "ds",
  					con->fd,
  					"handle write failed.");
@@ -29,7 +37,7 @@ $OpenBSD: patch-src_connections_c,v 1.15 2011/08/24 21:28:09 sthen Exp $
  		}
  	}
  
-@@ -1667,8 +1667,6 @@ int connection_state_machine(server *srv, connection *
+@@ -1667,8 +1668,6 @@ int connection_state_machine(server *srv, connection *
  							con->fd,
  							"handle write failed.");
  					connection_set_state(srv, con, CON_STATE_ERROR);
