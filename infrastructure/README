@@ -34,7 +34,7 @@ build/out-of-date
 install/make-plist
 	perl helper for the make plist target.
 
-templates/network.conf
+db/network.conf
 	Distfiles configuration. Tweakable by the user.
 
 db/user.list
