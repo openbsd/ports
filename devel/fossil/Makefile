@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2011/07/18 16:50:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2011/09/06 15:02:20 jasper Exp $
 
 COMMENT =		simple distributed software configuration management
 
-VERSION =		20110713230341
+VERSION =		20110901182519
 DISTNAME =		fossil-src-${VERSION}
 PKGNAME =		fossil-${VERSION}
 CATEGORIES =		devel www
@@ -10,8 +10,7 @@ CATEGORIES =		devel www
 MAINTAINER =		James Turner <james@calminferno.net>
 
 HOMEPAGE =		http://fossil-scm.org/
-MASTER_SITES =		${HOMEPAGE}download/ \
-			http://bsdgroup.org/fossil/
+MASTER_SITES =		${HOMEPAGE}download/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -34,6 +33,7 @@ MODULES =		lang/tcl
 
 REGRESS_DEPENDS =	${MODTCL_RUN_DEPENDS}
 
+MAKE_FILE =		Makefile.classic
 MAKE_FLAGS +=		BCC="${CC}"
 
 do-regress:
