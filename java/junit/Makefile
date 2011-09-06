@@ -1,20 +1,16 @@
-# $OpenBSD: Makefile,v 1.24 2011/08/30 17:16:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/09/06 16:58:30 jasper Exp $
 
 COMMENT=	regression testing utility for use with the Java language
 
-VERSION=	3.8.2
+VERSION=	4.9
 DISTNAME=	junit${VERSION}
 PKGNAME=	junit-${VERSION}
-REVISION=	7
-# INSTALLDIR must not be set to ${PKGNAME}. Doing so will break
-# the regress target in dependant ports if the patch level is bumped.
-INSTALLDIR=	junit-${VERSION}
-SUBST_VARS+=	INSTALLDIR
+
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.junit.org/
 
-MAINTAINER=		Ian Darwin <ian@openbsd.org>
+MAINTAINER=	Ian Darwin <ian@openbsd.org>
 
 # Common Public License - v1.0
 # Commercial distribution defend and indemnify clauses
@@ -23,34 +19,27 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	No
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=junit/}
-EXTRACT_SUFX=	.zip 
+# github is bad for getting reliable distfiles from.
+MASTER_SITES=	http://distfiles.nl/
+EXTRACT_SUFX=	.zip
 
 MODULES=	java
-MODJAVA_VER=	1.4+
+MODJAVA_VER=	1.6+
 MODJAVA_JRERUN=	yes
 
-BUILD_DEPENDS=	devel/apache-ant
+NO_BUILD=	Yes
+NO_REGRESS=	Yes
 
-MAKE_ENV=	JAVA_HOME=${JAVA_HOME}
-
-post-extract:
-		cp ${FILESDIR}/build.xml ${WRKDIST}
-
-do-build:
-		@cd ${WRKDIST} && exec ${SETENV} ${MAKE_ENV} ant -q \
-		-Dant.build.javac.source="1.4" -Dant.build.javac.target="1.4"
+JAR_DIR=	${PREFIX}/share/java/classes/junit/
+DOC_DIR=	${PREFIX}/share/java/junit/
 
 do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/java/classes/${INSTALLDIR}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/java/${INSTALLDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.html ${PREFIX}/share/java/${INSTALLDIR}
-	${INSTALL_DATA} ${WRKSRC}/cpl-v10.html ${PREFIX}/share/java/${INSTALLDIR}
-	cp ${WRKSRC}/*.jar ${PREFIX}/share/java/classes/${INSTALLDIR}
-	cp -R ${WRKSRC}/doc ${PREFIX}/share/java/${INSTALLDIR}
-	cp -R ${WRKSRC}/javadoc ${PREFIX}/share/java/${INSTALLDIR}
+	${INSTALL_DATA_DIR} ${JAR_DIR} ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/README.html ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/cpl-v10.html ${DOC_DIR}
+	cp ${WRKSRC}/junit-${VERSION}.jar ${JAR_DIR}/junit.jar
+	cp ${WRKSRC}/junit-${VERSION}-src.jar ${JAR_DIR}/junit-src.jar
+	cp -R ${WRKSRC}/doc ${DOC_DIR}
+	cp -R ${WRKSRC}/javadoc ${DOC_DIR}
 
-do-regress:
-	${JAVA_HOME}/bin/java -cp ${WRKSRC}/build junit.tests.AllTests
-
-.include <bsd.port.mk> 
+.include <bsd.port.mk>
