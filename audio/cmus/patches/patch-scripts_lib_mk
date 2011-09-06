@@ -1,0 +1,12 @@
+$OpenBSD: patch-scripts_lib_mk,v 1.1.1.1 2011/09/06 07:10:56 landry Exp $
+--- scripts/lib.mk.orig	Thu May 26 20:47:33 2011
++++ scripts/lib.mk	Mon Jul  4 16:23:00 2011
+@@ -12,7 +12,7 @@
+ 
+ # build verbosity (0-2), default is 1
+ ifneq ($(origin V),command line)
+-  V := 1
++  V := 2
+ endif
+ ifneq ($(findstring s,$(MAKEFLAGS)),)
+   V := 0

@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST-main,v 1.1.1.1 2011/09/06 07:10:56 landry Exp $
+@bin bin/cmus
+@bin bin/cmus-remote
+lib/cmus/
+lib/cmus/ip/
+lib/cmus/ip/mad.so
+lib/cmus/ip/vorbis.so
+lib/cmus/ip/wav.so
+lib/cmus/op/
+lib/cmus/op/sndio.so
+@man man/man1/cmus-remote.1
+@man man/man1/cmus.1
+@man man/man7/cmus-tutorial.7
+share/cmus/
+share/cmus/cyan.theme
+share/cmus/default.theme
+share/cmus/gray-88.theme
+share/cmus/green-mono-88.theme
+share/cmus/green.theme
+share/cmus/rc
+share/cmus/xterm-white.theme
+share/examples/cmus/
+share/examples/cmus/cmus-status-display
