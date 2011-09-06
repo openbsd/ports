@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/06 07:10:56 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/06 07:19:29 ajacoutot Exp $
 
 COMMENT-main=		ncurses-based music player
 COMMENT-flac=		FLAC input plugin for cmus
@@ -9,6 +9,10 @@ DISTNAME=		cmus-v$(V)
 PKGNAME-main=		cmus-$(V)
 PKGNAME-flac=		cmus-flac-$(V)
 PKGNAME-wavpack=	cmus-wavpack-$(V)
+
+REVISION-main=		0
+REVISION-flac=		0
+REVISION-wavpack=	0
 
 CATEGORIES=		audio
 
@@ -27,17 +31,18 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=cmus/}
 SHARED_ONLY=		Yes
 MULTI_PACKAGES=		-main -flac -wavpack
 
-WANTLIB-main=		c m pthread sndio ncursesw mad>=2 iconv
+MODULES=		converters/libiconv
 
-LIB_DEPENDS=		audio/libmad \
-			converters/libiconv
+WANTLIB-main=		c m pthread sndio ncursesw mad>=2 ${MODLIBICONV_WANTLIB}
+
+LIB_DEPENDS=		audio/libmad
 
 LIB_DEPENDS-flac=	audio/flac audio/libogg
 RUN_DEPENDS-flac=	audio/cmus
 WANTLIB-flac=		FLAC>=5 ogg m
-LIB_DEPENDS-wavpack=	audio/wavpack
+LIB_DEPENDS-wavpack=	audio/wavpack ${MODLIBICONV_LIB_DEPENDS}
 RUN_DEPENDS-wavpack=	audio/cmus
-WANTLIB-wavpack=	wavpack m iconv
+WANTLIB-wavpack=	wavpack m ${MODLIBICONV_WANTLIB}
 
 USE_GMAKE=		Yes
 
