@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/01/04 09:46:52 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/09/06 20:09:27 sthen Exp $
 @pkgpath www/nag
 ${INSTDIR}/
 ${INSTDIR}/COPYING
@@ -248,7 +248,9 @@ ${INSTDIR}/scripts/upgrades/2004-09-13_add_uid_field.php
 ${INSTDIR}/scripts/upgrades/2006-04-18_add_creator_and_assignee_fields.php
 ${INSTDIR}/scripts/upgrades/2008-09-23_fix_group_uid.sql
 ${INSTDIR}/scripts/upgrades/convert_datatree_shares_to_sql.php
+${INSTDIR}/scripts/upgrades/convert_sql_shares_to_sqlng.php
 ${INSTDIR}/scripts/upgrades/create_missing_add_histories_sql.php
+${INSTDIR}/scripts/upgrades/sharesng.sql
 ${INSTDIR}/search.php
 ${INSTDIR}/task.php
 ${INSTDIR}/tasklists/
