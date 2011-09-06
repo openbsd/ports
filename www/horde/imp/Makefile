@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2011/07/22 10:20:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/06 20:09:12 sthen Exp $
 
 COMMENT=	highly configurable pop3/imap4 webmail client
 
 HORDE_NAME=	IMP
 
 # GPLv2
-DISTNAME=	imp-h3-4.3.9
-REVISION=	1
+DISTNAME=	imp-h3-4.3.10
 CATEGORIES=	mail
 
 RUN_DEPENDS=	net/pear-HTTP-Request \
