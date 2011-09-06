@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/05 08:57:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/06 16:59:13 jasper Exp $
 
 COMMENT=		Java interface to GeoIP database
 DISTNAME=		jeoip-0.5
-REVISION=		7
+REVISION=		8 
 CATEGORIES=		geo net
 PKG_ARCH=		*
 
@@ -24,13 +24,13 @@ MODJAVA_JRERUN=		Yes
 MODJAVA_BUILD=		ant
 MODJAVA_BUILD_TARGET=	jar docs
 
-BUILD_DEPENDS=		java/junit=3.8.2
+BUILD_DEPENDS=		java/junit
 REGRESS_DEPENDS=	net/GeoIP \
-			java/junit=3.8.2
+			java/junit
 RUN_DEPENDS=		net/GeoIP\
  			java/javaPathHelper
 MAKE_ENV=		JAVA_HOME=${JAVA_HOME} \
-			CLASSPATH=${LOCALBASE}/share/java/classes/junit-3.8.2/junit.jar
+			CLASSPATH=${LOCALBASE}/share/java/classes/junit/junit.jar
 
 WRKDIST=		${WRKDIR}/jeoip
 
