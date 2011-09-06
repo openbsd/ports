@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/07 19:54:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/06 18:55:14 sthen Exp $
 
 COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games
@@ -10,6 +10,8 @@ DISTNAME=	stone_soup-${VERSION}-nodeps
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	stone-soup-${VERSION}
 REVISION=	0
+
+BROKEN-arm=	tilegen.elf loops burning cpu
 
 WRKDIST = 	${WRKDIR}/stone_soup-${VERSION}
 WRKSRC = 	${WRKDIST}/source
