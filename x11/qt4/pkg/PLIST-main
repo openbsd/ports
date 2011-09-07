@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.28 2011/04/03 13:35:31 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.29 2011/09/07 09:54:07 espie Exp $
 @pkgpath x11/qt4
 @pkgpath x11/qt4,-phonon
 %%SHARED%%
@@ -2984,6 +2984,8 @@ lib/qt4/imports/Qt/labs/gestures/
 lib/qt4/imports/Qt/labs/gestures/qmldir
 lib/qt4/imports/Qt/labs/particles/
 lib/qt4/imports/Qt/labs/particles/qmldir
+lib/qt4/imports/Qt/labs/shaders/
+lib/qt4/imports/Qt/labs/shaders/qmldir
 lib/qt4/imports/QtWebKit/
 lib/qt4/imports/QtWebKit/qmldir
 lib/qt4/include
@@ -3084,6 +3086,8 @@ lib/qt4/mkspecs/common/symbian/stl-off/new
 lib/qt4/mkspecs/common/symbian/symbian-makefile.conf
 lib/qt4/mkspecs/common/symbian/symbian-mmp.conf
 lib/qt4/mkspecs/common/symbian/symbian.conf
+lib/qt4/mkspecs/common/symbian/symbianincludes.h
+lib/qt4/mkspecs/common/symbian/template.applite
 lib/qt4/mkspecs/common/unix.conf
 lib/qt4/mkspecs/common/wince/
 lib/qt4/mkspecs/common/wince/qmake.conf
@@ -3159,6 +3163,7 @@ lib/qt4/mkspecs/features/symbian/moc.prf
 lib/qt4/mkspecs/features/symbian/nested_exceptions.prf
 lib/qt4/mkspecs/features/symbian/opengl.prf
 lib/qt4/mkspecs/features/symbian/platform_paths.prf
+lib/qt4/mkspecs/features/symbian/prepend_includepath.prf
 lib/qt4/mkspecs/features/symbian/qt.prf
 lib/qt4/mkspecs/features/symbian/qt_config.prf
 lib/qt4/mkspecs/features/symbian/release.prf
@@ -3166,6 +3171,7 @@ lib/qt4/mkspecs/features/symbian/run_on_phone.prf
 lib/qt4/mkspecs/features/symbian/sis_targets.prf
 lib/qt4/mkspecs/features/symbian/stl.prf
 lib/qt4/mkspecs/features/symbian/stl_off.prf
+lib/qt4/mkspecs/features/symbian/symbian_appbooster.prf
 lib/qt4/mkspecs/features/symbian/symbian_building.prf
 lib/qt4/mkspecs/features/symbian/thread.prf
 lib/qt4/mkspecs/features/testcase.prf
@@ -3446,13 +3452,23 @@ lib/qt4/mkspecs/solaris-g++-64/qmake.conf
 lib/qt4/mkspecs/solaris-g++-64/qplatformdefs.h
 lib/qt4/mkspecs/solaris-g++/qmake.conf
 lib/qt4/mkspecs/solaris-g++/qplatformdefs.h
-lib/qt4/mkspecs/symbian/
 lib/qt4/mkspecs/symbian-abld/
 lib/qt4/mkspecs/symbian-abld/qmake.conf
 lib/qt4/mkspecs/symbian-abld/qplatformdefs.h
+lib/qt4/mkspecs/symbian-armcc/
+lib/qt4/mkspecs/symbian-armcc/features/
+lib/qt4/mkspecs/symbian-armcc/features/default_post.prf
+lib/qt4/mkspecs/symbian-armcc/qmake.conf
+lib/qt4/mkspecs/symbian-armcc/qplatformdefs.h
+lib/qt4/mkspecs/symbian-gcce/
+lib/qt4/mkspecs/symbian-gcce/features/
+lib/qt4/mkspecs/symbian-gcce/features/default_post.prf
+lib/qt4/mkspecs/symbian-gcce/qmake.conf
+lib/qt4/mkspecs/symbian-gcce/qplatformdefs.h
 lib/qt4/mkspecs/symbian-sbsv2/
 lib/qt4/mkspecs/symbian-sbsv2/flm/
 lib/qt4/mkspecs/symbian-sbsv2/flm/qt/
+lib/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_clean.flm
 lib/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_emulator_deployment.flm
 lib/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_extra_pre_targetdep.flm
 lib/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_post_link.flm
@@ -3460,16 +3476,6 @@ lib/qt4/mkspecs/symbian-sbsv2/flm/qt/qmake_store_build.flm
 lib/qt4/mkspecs/symbian-sbsv2/flm/qt/qt.xml
 lib/qt4/mkspecs/symbian-sbsv2/qmake.conf
 lib/qt4/mkspecs/symbian-sbsv2/qplatformdefs.h
-lib/qt4/mkspecs/symbian/linux-armcc/
-lib/qt4/mkspecs/symbian/linux-armcc/features/
-lib/qt4/mkspecs/symbian/linux-armcc/features/default_post.prf
-lib/qt4/mkspecs/symbian/linux-armcc/qmake.conf
-lib/qt4/mkspecs/symbian/linux-armcc/qplatformdefs.h
-lib/qt4/mkspecs/symbian/linux-gcce/
-lib/qt4/mkspecs/symbian/linux-gcce/features/
-lib/qt4/mkspecs/symbian/linux-gcce/features/default_post.prf
-lib/qt4/mkspecs/symbian/linux-gcce/qmake.conf
-lib/qt4/mkspecs/symbian/linux-gcce/qplatformdefs.h
 lib/qt4/mkspecs/tru64-cxx/
 lib/qt4/mkspecs/tru64-cxx/qmake.conf
 lib/qt4/mkspecs/tru64-cxx/qplatformdefs.h
@@ -3679,6 +3685,7 @@ lib/qt4/translations/assistant_de.qm
 lib/qt4/translations/assistant_fr.qm
 lib/qt4/translations/assistant_hu.qm
 lib/qt4/translations/assistant_ja.qm
+lib/qt4/translations/assistant_ko.qm
 lib/qt4/translations/assistant_pl.qm
 lib/qt4/translations/assistant_ru.qm
 lib/qt4/translations/assistant_sl.qm
@@ -3690,6 +3697,7 @@ lib/qt4/translations/designer_de.qm
 lib/qt4/translations/designer_fr.qm
 lib/qt4/translations/designer_hu.qm
 lib/qt4/translations/designer_ja.qm
+lib/qt4/translations/designer_ko.qm
 lib/qt4/translations/designer_pl.qm
 lib/qt4/translations/designer_ru.qm
 lib/qt4/translations/designer_sl.qm
@@ -3701,6 +3709,7 @@ lib/qt4/translations/linguist_de.qm
 lib/qt4/translations/linguist_fr.qm
 lib/qt4/translations/linguist_hu.qm
 lib/qt4/translations/linguist_ja.qm
+lib/qt4/translations/linguist_ko.qm
 lib/qt4/translations/linguist_pl.qm
 lib/qt4/translations/linguist_ru.qm
 lib/qt4/translations/linguist_sl.qm
@@ -3712,6 +3721,7 @@ lib/qt4/translations/qt_cs.qm
 lib/qt4/translations/qt_da.qm
 lib/qt4/translations/qt_de.qm
 lib/qt4/translations/qt_es.qm
+lib/qt4/translations/qt_fa.qm
 lib/qt4/translations/qt_fr.qm
 lib/qt4/translations/qt_gl.qm
 lib/qt4/translations/qt_he.qm
@@ -3719,8 +3729,10 @@ lib/qt4/translations/qt_help_cs.qm
 lib/qt4/translations/qt_help_da.qm
 lib/qt4/translations/qt_help_de.qm
 lib/qt4/translations/qt_help_fr.qm
+lib/qt4/translations/qt_help_gl.qm
 lib/qt4/translations/qt_help_hu.qm
 lib/qt4/translations/qt_help_ja.qm
+lib/qt4/translations/qt_help_ko.qm
 lib/qt4/translations/qt_help_pl.qm
 lib/qt4/translations/qt_help_ru.qm
 lib/qt4/translations/qt_help_sl.qm
@@ -3729,6 +3741,7 @@ lib/qt4/translations/qt_help_zh_CN.qm
 lib/qt4/translations/qt_help_zh_TW.qm
 lib/qt4/translations/qt_hu.qm
 lib/qt4/translations/qt_ja.qm
+lib/qt4/translations/qt_ko.qm
 lib/qt4/translations/qt_pl.qm
 lib/qt4/translations/qt_pt.qm
 lib/qt4/translations/qt_ru.qm
@@ -3740,6 +3753,7 @@ lib/qt4/translations/qt_zh_CN.qm
 lib/qt4/translations/qt_zh_TW.qm
 lib/qt4/translations/qtconfig_hu.qm
 lib/qt4/translations/qtconfig_ja.qm
+lib/qt4/translations/qtconfig_ko.qm
 lib/qt4/translations/qtconfig_pl.qm
 lib/qt4/translations/qtconfig_ru.qm
 lib/qt4/translations/qtconfig_sl.qm
@@ -3748,6 +3762,7 @@ lib/qt4/translations/qtconfig_zh_CN.qm
 lib/qt4/translations/qtconfig_zh_TW.qm
 lib/qt4/translations/qvfb_hu.qm
 lib/qt4/translations/qvfb_ja.qm
+lib/qt4/translations/qvfb_ko.qm
 lib/qt4/translations/qvfb_pl.qm
 lib/qt4/translations/qvfb_ru.qm
 lib/qt4/translations/qvfb_sl.qm

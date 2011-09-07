@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.9 2011/04/03 13:35:31 dcoppa Exp $
+@comment $OpenBSD: PFRAG.shared-main,v 1.10 2011/09/07 09:54:07 espie Exp $
 %%GCC4%%
 @lib lib/libQt3Support.so.${LIBQt3Support_VERSION}
 @lib lib/libQtCLucene.so.${LIBQtCLucene_VERSION}
@@ -23,6 +23,7 @@
 lib/qt4/imports/Qt/labs/folderlistmodel/libqmlfolderlistmodelplugin.so
 lib/qt4/imports/Qt/labs/gestures/libqmlgesturesplugin.so
 lib/qt4/imports/Qt/labs/particles/libqmlparticlesplugin.so
+lib/qt4/imports/Qt/labs/shaders/libqmlshadersplugin.so
 lib/qt4/imports/QtWebKit/libqmlwebkitplugin.so
 @lib lib/qt4/libQt3Support.so.${LIBQt3Support_VERSION}
 @lib lib/qt4/libQtCLucene.so.${LIBQtCLucene_VERSION}
@@ -61,5 +62,5 @@ lib/qt4/plugins/imageformats/libqsvg.so
 lib/qt4/plugins/imageformats/libqtiff.so
 lib/qt4/plugins/inputmethods/libqimsw-multi.so
 lib/qt4/plugins/phonon_backend/libphonon_gstreamer.so
-lib/qt4/plugins/qmltooling/libtcpserver.so
+lib/qt4/plugins/qmltooling/libqmldbg_tcp.so
 lib/qt4/plugins/script/libqtscriptdbus.so

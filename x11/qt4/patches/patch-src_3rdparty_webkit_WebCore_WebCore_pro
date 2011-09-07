@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_3rdparty_webkit_WebCore_WebCore_pro,v 1.3 2010/10/28 14:55:47 espie Exp $
---- src/3rdparty/webkit/WebCore/WebCore.pro.orig	Fri Sep 10 11:05:18 2010
-+++ src/3rdparty/webkit/WebCore/WebCore.pro	Sun Oct 24 14:20:31 2010
-@@ -67,9 +67,9 @@ CONFIG(standalone_package) {
+$OpenBSD: patch-src_3rdparty_webkit_WebCore_WebCore_pro,v 1.4 2011/09/07 09:54:07 espie Exp $
+--- src/3rdparty/webkit/WebCore/WebCore.pro.orig	Tue Aug 23 14:02:27 2011
++++ src/3rdparty/webkit/WebCore/WebCore.pro	Mon Sep  5 11:19:03 2011
+@@ -66,9 +66,9 @@ CONFIG(standalone_package) {
      isEmpty(JSC_GENERATED_SOURCES_DIR):JSC_GENERATED_SOURCES_DIR = ../JavaScriptCore/generated
  
      !CONFIG(release, debug|release) {

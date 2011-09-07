@@ -1,6 +1,6 @@
-$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.13 2010/10/28 14:55:47 espie Exp $
---- qmake/generators/unix/unixmake2.cpp.orig	Fri Sep 10 11:04:41 2010
-+++ qmake/generators/unix/unixmake2.cpp	Sun Oct 24 12:32:06 2010
+$OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.14 2011/09/07 09:54:07 espie Exp $
+--- qmake/generators/unix/unixmake2.cpp.orig	Tue Aug 23 14:02:27 2011
++++ qmake/generators/unix/unixmake2.cpp	Mon Sep  5 11:19:03 2011
 @@ -80,6 +80,9 @@ UnixMakefileGenerator::writeMakefile(QTextStream &t)
  {
  
@@ -59,7 +59,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.13 2010/10/28 14:55:47 e
              if(!project->isEmpty("QMAKE_POST_LINK"))
                  t << "\n\t" << var("QMAKE_POST_LINK");
              t << endl << endl;
-@@ -997,6 +989,10 @@ void UnixMakefileGenerator::init2()
+@@ -998,6 +990,10 @@ void UnixMakefileGenerator::init2()
      project->values("VER_MAJ").append(l[0]);
      project->values("VER_MIN").append(l[1]);
      project->values("VER_PAT").append(l[2]);
@@ -70,7 +70,7 @@ $OpenBSD: patch-qmake_generators_unix_unixmake2_cpp,v 1.13 2010/10/28 14:55:47 e
      if(project->isEmpty("QMAKE_FRAMEWORK_VERSION"))
          project->values("QMAKE_FRAMEWORK_VERSION").append(project->values("VER_MAJ").first());
  
-@@ -1134,7 +1130,7 @@ void UnixMakefileGenerator::init2()
+@@ -1135,7 +1131,7 @@ void UnixMakefileGenerator::init2()
                                                              project->first("VER_MIN") +  "." +
                                                              project->first("VER_PAT"));
              }

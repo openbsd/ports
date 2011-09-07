@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.26 2011/04/03 13:35:31 dcoppa Exp $
+@comment $OpenBSD: PLIST-examples,v 1.27 2011/09/07 09:54:07 espie Exp $
 @conflict qt4-<=4.2.2
 %%SHARED%%
 %%GCC4%%
@@ -1227,6 +1227,44 @@ lib/qt4/examples/declarative/positioners/add.png
 lib/qt4/examples/declarative/positioners/del.png
 lib/qt4/examples/declarative/positioners/positioners.qml
 lib/qt4/examples/declarative/positioners/positioners.qmlproject
+lib/qt4/examples/declarative/shadereffects/
+lib/qt4/examples/declarative/shadereffects/main.cpp
+lib/qt4/examples/declarative/shadereffects/qml/
+lib/qt4/examples/declarative/shadereffects/qml/Curtain.qml
+lib/qt4/examples/declarative/shadereffects/qml/CurtainEffect.qml
+lib/qt4/examples/declarative/shadereffects/qml/DropShadow.qml
+lib/qt4/examples/declarative/shadereffects/qml/DropShadowEffect.qml
+lib/qt4/examples/declarative/shadereffects/qml/Grayscale.qml
+lib/qt4/examples/declarative/shadereffects/qml/GrayscaleEffect.qml
+lib/qt4/examples/declarative/shadereffects/qml/ImageMask.qml
+lib/qt4/examples/declarative/shadereffects/qml/ImageMaskEffect.qml
+lib/qt4/examples/declarative/shadereffects/qml/RadialWave.qml
+lib/qt4/examples/declarative/shadereffects/qml/RadialWaveEffect.qml
+lib/qt4/examples/declarative/shadereffects/qml/Water.qml
+lib/qt4/examples/declarative/shadereffects/qml/WaterEffect.qml
+lib/qt4/examples/declarative/shadereffects/qml/images/
+lib/qt4/examples/declarative/shadereffects/qml/images/Curtain.jpg
+lib/qt4/examples/declarative/shadereffects/qml/images/DropShadow.jpg
+lib/qt4/examples/declarative/shadereffects/qml/images/Grayscale.jpg
+lib/qt4/examples/declarative/shadereffects/qml/images/ImageMask.jpg
+lib/qt4/examples/declarative/shadereffects/qml/images/RadialWave.jpg
+lib/qt4/examples/declarative/shadereffects/qml/images/Water.jpg
+lib/qt4/examples/declarative/shadereffects/qml/images/back.png
+lib/qt4/examples/declarative/shadereffects/qml/images/bg.jpg
+lib/qt4/examples/declarative/shadereffects/qml/images/desaturate.jpg
+lib/qt4/examples/declarative/shadereffects/qml/images/drop_shadow.png
+lib/qt4/examples/declarative/shadereffects/qml/images/fabric.jpg
+lib/qt4/examples/declarative/shadereffects/qml/images/flower.png
+lib/qt4/examples/declarative/shadereffects/qml/images/image1.jpg
+lib/qt4/examples/declarative/shadereffects/qml/images/image2.jpg
+lib/qt4/examples/declarative/shadereffects/qml/images/qt-logo.png
+lib/qt4/examples/declarative/shadereffects/qml/images/shader_effects.jpg
+lib/qt4/examples/declarative/shadereffects/qml/images/sky.jpg
+lib/qt4/examples/declarative/shadereffects/qml/images/toolbar.png
+lib/qt4/examples/declarative/shadereffects/qml/images/wave.jpg
+lib/qt4/examples/declarative/shadereffects/qml/main.qml
+@bin lib/qt4/examples/declarative/shadereffects/shadereffects
+lib/qt4/examples/declarative/shadereffects/shadereffects.pro
 lib/qt4/examples/declarative/sqllocalstorage/
 lib/qt4/examples/declarative/sqllocalstorage/hello.qml
 lib/qt4/examples/declarative/sqllocalstorage/sqllocalstorage.qmlproject
@@ -1265,6 +1303,10 @@ lib/qt4/examples/declarative/touchinteraction/gestures/gestures.qmlproject
 lib/qt4/examples/declarative/touchinteraction/mousearea/
 lib/qt4/examples/declarative/touchinteraction/mousearea/mousearea-example.qml
 lib/qt4/examples/declarative/touchinteraction/mousearea/mousearea.qmlproject
+lib/qt4/examples/declarative/touchinteraction/pincharea/
+lib/qt4/examples/declarative/touchinteraction/pincharea/flickresize.qml
+lib/qt4/examples/declarative/touchinteraction/pincharea/pincharea.qmlproject
+lib/qt4/examples/declarative/touchinteraction/pincharea/qt-logo.jpg
 lib/qt4/examples/declarative/touchinteraction/touchinteraction.qmlproject
 lib/qt4/examples/declarative/toys/
 lib/qt4/examples/declarative/toys/README
@@ -3098,6 +3140,7 @@ lib/qt4/examples/tools/plugandpaint/plugindialog.cpp
 lib/qt4/examples/tools/plugandpaint/plugindialog.h
 lib/qt4/examples/tools/plugandpaint/plugins/
 lib/qt4/examples/tools/plugandpaint/plugins/libpnp_basictools.a
+lib/qt4/examples/tools/plugandpaint/plugins/libpnp_basictools.prl
 lib/qt4/examples/tools/plugandpaintplugins/
 lib/qt4/examples/tools/plugandpaintplugins/basictools/
 lib/qt4/examples/tools/plugandpaintplugins/basictools/basictools.pro
@@ -3301,6 +3344,35 @@ lib/qt4/examples/tutorials/modelview/7_selections/mainwindow.cpp
 lib/qt4/examples/tutorials/modelview/7_selections/mainwindow.h
 @bin lib/qt4/examples/tutorials/modelview/7_selections/mv_selections
 lib/qt4/examples/tutorials/modelview/modelview.pro
+lib/qt4/examples/tutorials/threads/
+lib/qt4/examples/tutorials/threads/clock/
+@bin lib/qt4/examples/tutorials/threads/clock/clock
+lib/qt4/examples/tutorials/threads/clock/clock.pro
+lib/qt4/examples/tutorials/threads/clock/clockthread.cpp
+lib/qt4/examples/tutorials/threads/clock/clockthread.h
+lib/qt4/examples/tutorials/threads/clock/main.cpp
+lib/qt4/examples/tutorials/threads/helloconcurrent/
+@bin lib/qt4/examples/tutorials/threads/helloconcurrent/helloconcurrent
+lib/qt4/examples/tutorials/threads/helloconcurrent/helloconcurrent.cpp
+lib/qt4/examples/tutorials/threads/helloconcurrent/helloconcurrent.pro
+lib/qt4/examples/tutorials/threads/hellothread/
+@bin lib/qt4/examples/tutorials/threads/hellothread/hellothread
+lib/qt4/examples/tutorials/threads/hellothread/hellothread.cpp
+lib/qt4/examples/tutorials/threads/hellothread/hellothread.h
+lib/qt4/examples/tutorials/threads/hellothread/hellothread.pro
+lib/qt4/examples/tutorials/threads/hellothread/main.cpp
+lib/qt4/examples/tutorials/threads/hellothreadpool/
+@bin lib/qt4/examples/tutorials/threads/hellothreadpool/hellothreadpool
+lib/qt4/examples/tutorials/threads/hellothreadpool/hellothreadpool.cpp
+lib/qt4/examples/tutorials/threads/hellothreadpool/hellothreadpool.pro
+lib/qt4/examples/tutorials/threads/movedobject/
+lib/qt4/examples/tutorials/threads/movedobject/main.cpp
+@bin lib/qt4/examples/tutorials/threads/movedobject/movedobject
+lib/qt4/examples/tutorials/threads/movedobject/movedobject.pro
+lib/qt4/examples/tutorials/threads/movedobject/thread.cpp
+lib/qt4/examples/tutorials/threads/movedobject/thread.h
+lib/qt4/examples/tutorials/threads/movedobject/workerobject.cpp
+lib/qt4/examples/tutorials/threads/movedobject/workerobject.h
 lib/qt4/examples/tutorials/tutorials.pro
 lib/qt4/examples/uitools/
 lib/qt4/examples/uitools/multipleinheritance/

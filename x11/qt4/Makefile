@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2011/07/09 10:59:35 espie Exp $
+# $OpenBSD: Makefile,v 1.89 2011/09/07 09:54:07 espie Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -23,14 +23,14 @@ PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
-REVISION-mysql =	0
-REVISION-postgresql =	0
-REVISION-examples =	0
-REVISION-sqlite2 =	0
-REVISION-sqlite =	0
-REVISION-tds =		1
-REVISION-main =		0
-REVISION-debug =	0
+#REVISION-mysql =	0
+#REVISION-postgresql =	0
+#REVISION-examples =	0
+#REVISION-sqlite2 =	0
+#REVISION-sqlite =	0
+#REVISION-tds =		0
+#REVISION-main =	0
+#REVISION-debug =	0
 
 
 SHARED_LIBS =	Qt3Support 8.0 \
@@ -56,8 +56,8 @@ SHARED_LIBS =	Qt3Support 8.0 \
 		QtDeclarative 0.0 
 
 
-VERSION =	4.7.3
-PKGVERSION =	4.7.3
+VERSION =	4.7.4
+PKGVERSION =	4.7.4
 DISTNAME =	qt-everywhere-opensource-src-${VERSION}
 
 CATEGORIES =	x11
@@ -192,61 +192,59 @@ LIB_DEPENDS =
 WANTLIB =
 RUN_DEPENDS =
 
-commonWANTLIB =		ICE Xrender c GLU SM freetype pthread Xinerama \
-			Xext GL Xi m X11>=10 z fontconfig \
-			expat png>=2
-commonLIB_DEPENDS =	graphics/png
+commonWANTLIB =		c GLU pthread GL m
 
 sqlWANTLIB =		m lib/qt4/QtCore>=4 QtSql
-sqlLIB_DEPENDS = 	${BASE_PKGPATH}
 
 RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
-LIB_DEPENDS-main =	${LIB_DEPENDS} ${commonLIB_DEPENDS} \
+LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			devel/glib2 \
 			graphics/jpeg \
 			graphics/libmng \
-			multimedia/gstreamer-0.10/plugins-base
-WANTLIB-main =		${WANTLIB} ${commonWANTLIB} jpeg mng \
+			multimedia/gstreamer-0.10/plugins-base \
+			graphics/png
+WANTLIB-main =		${commonWANTLIB} jpeg mng \
 			lcms tiff gobject-2.0 gstvideo-0.10 \
 			gstbase-0.10 gstreamer-0.10 xml2 \
 			gobject-2.0 gmodule-2.0 gstinterfaces-0.10 \
-			${MODGETTEXT_WANTLIB} glib-2.0 gthread-2.0 gstaudio-0.10
+			${MODGETTEXT_WANTLIB} glib-2.0 gthread-2.0 \
+			gstaudio-0.10 ICE SM X11>=10 Xext Xi Xinerama \
+			Xrender expat fontconfig freetype png>=2 z
 
 
-LIB_DEPENDS-mysql =	${sqlLIB_DEPENDS} \
+LIB_DEPENDS-mysql =	${BASE_PKGPATH} \
 			databases/mysql
-WANTLIB-mysql =		${WANTLIB} ${sqlWANTLIB} \
+WANTLIB-mysql =		${sqlWANTLIB} \
 			crypto ssl pthread z mysqlclient_r
 
 
-LIB_DEPENDS-postgresql =${sqlLIB_DEPENDS} \
+LIB_DEPENDS-postgresql =${BASE_PKGPATH} \
 			databases/postgresql
-WANTLIB-postgresql =	${WANTLIB} ${sqlWANTLIB}  pq
+WANTLIB-postgresql =	${sqlWANTLIB}  pq
 			
 
-LIB_DEPENDS-sqlite2 =	${sqlLIB_DEPENDS} \
+LIB_DEPENDS-sqlite2 =	${BASE_PKGPATH} \
 			databases/sqlite
-WANTLIB-sqlite2 =	${WANTLIB} ${sqlWANTLIB} sqlite
+WANTLIB-sqlite2 =	${sqlWANTLIB} sqlite
 
 
-LIB_DEPENDS-sqlite =	${sqlLIB_DEPENDS} \
+LIB_DEPENDS-sqlite =	${BASE_PKGPATH} \
 			databases/sqlite3
-WANTLIB-sqlite =	${WANTLIB} ${sqlWANTLIB} sqlite3
+WANTLIB-sqlite =	${sqlWANTLIB} sqlite3
 
 
-LIB_DEPENDS-tds =	${sqlLIB_DEPENDS} \
+LIB_DEPENDS-tds =	${BASE_PKGPATH} \
 			databases/freetds
-WANTLIB-tds =		${WANTLIB} ${sqlWANTLIB} sybdb
+WANTLIB-tds =		${sqlWANTLIB} sybdb
 
-LIB_DEPENDS-examples =	${commonLIB_DEPENDS} \
-			${BASE_PKGPATH}
-WANTLIB-examples =	${WANTLIB} ${commonWANTLIB} lib/qt4/QtDesigner \
+LIB_DEPENDS-examples =	${BASE_PKGPATH}
+WANTLIB-examples =	${commonWANTLIB} lib/qt4/QtDesigner \
 			lib/qt4/QtCore lib/qt4/QtGui lib/qt4/QtNetwork \
 			lib/qt4/QtOpenGL lib/qt4/QtSql lib/qt4/QtXml \
 			lib/qt4/QtSvg lib/qt4/QtTest lib/qt4/Qt3Support \
 			lib/qt4/QtDBus \
 			lib/qt4/QtScript lib/qt4/QtScriptTools \
-			lib/qt4/QtHelp lib/qt4/QtCLucene lib/qt4/phonon \
+			lib/qt4/QtHelp lib/qt4/phonon \
 			lib/qt4/QtMultimedia lib/qt4/QtDeclarative
 
 LIB_DEPENDS-html =
@@ -259,9 +257,10 @@ PKG_ARCH-html =	*
 .if ${COMPILER_VERSION:L:Mgcc4*}
 CONFIGURE_ARGS +=	-platform openbsd-g++4
 PKG_ARGS += -DGCC4=1
-WANTLIB += stdc++
+commonWANTLIB += stdc++
+sqlWANTLIB += stdc++
 LIB_DEPENDS-examples +=	${BASE_PKGPATH}
-WANTLIB-examples +=	sqlite3 lib/qt4/QtWebKit lib/qt4/QtXmlPatterns
+WANTLIB-examples +=	lib/qt4/QtWebKit lib/qt4/QtXmlPatterns
 LIB_DEPENDS-main += databases/sqlite3
 WANTLIB-main += sqlite3
 .else
