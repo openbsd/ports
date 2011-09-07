@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.19 2011/04/05 20:28:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/07 13:21:11 nigel Exp $
 
 COMMENT =	web and CGI vulnerability scanner with SSL support
 
 DISTNAME =	nikto-2.1.4
 EPOCH = 	0
+REVISION = 	0
 CATEGORIES =	security www
 
 HOMEPAGE =	http://www.cirt.net/nikto2
 
-MAINTAINER =	Rui Reis <rui@openbsd.org>
+MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
