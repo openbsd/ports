@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/06/03 21:38:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2011/09/07 10:29:35 jasper Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.0      # .0.0
@@ -20,11 +20,11 @@ PKGNAME-mysql=	freeradius-mysql-$V
 PKGNAME-pgsql=	freeradius-pgsql-$V
 PKGNAME-ldap=	freeradius-ldap-$V
 
-REVISION-main=	3
-REVISION-iodbc= 0
-REVISION-mysql= 0
-REVISION-pgsql= 0
-REVISION-ldap=	0
+REVISION-main=	4
+REVISION-iodbc= 1
+REVISION-mysql= 1
+REVISION-pgsql= 1
+REVISION-ldap=	1
 
 CATEGORIES=	net security
 
@@ -33,7 +33,7 @@ MASTER_SITES=	ftp://ftp.freeradius.org/pub/radius/ \
 
 HOMEPAGE=	http://www.freeradius.org/
 
-MAINTAINER=	Rui Reis <rui@openbsd.org>
+MAINTAINER=	Pierre-Emmanuel Andre <pea@openbsd.org>
 
 # GPLv2 - LGPLv2 - OpenSSL exemption
 PERMIT_PACKAGE_CDROM=	Yes
