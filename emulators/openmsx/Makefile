@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/08/30 05:02:48 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/07 01:35:41 bentley Exp $
 
 COMMENT =	MSX home computer emulator
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_CDROM =claims GPLv2, but no copyright notices in source files
 PERMIT_DISTFILES_FTP =	claims GPLv2, but no copyright notices in source files
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=openmsx/}
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	simple
 
 MAKE_ENV +=	INSTALL_BASE=${PREFIX}/share/openmsx \
 		INSTALL_BINARY_DIR=${PREFIX}/bin \
