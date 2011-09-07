@@ -1,0 +1,15 @@
+$OpenBSD: patch-test_test_integration_pending_rb,v 1.1 2011/09/07 16:02:40 jeremy Exp $
+
+Fix hang when running the test suite using rubinius.  skip would be
+better but rubinius uses ruby 1.8 stdlib and doesn't support it.
+
+--- test/test_integration_pending.rb.orig	Wed Sep  7 08:27:23 2011
++++ test/test_integration_pending.rb	Wed Sep  7 08:29:07 2011
+@@ -21,6 +21,7 @@ class TC_Integration_Pending < Test::Unit::TestCase
+ 
+   def test_busy_handler_outwait
+     skip("not working in 1.9") if RUBY_VERSION >= '1.9'
++    return if defined?(RUBY_ENGINE) && RUBY_ENGINE == 'rbx'
+ 
+     busy = Mutex.new
+     busy.lock
