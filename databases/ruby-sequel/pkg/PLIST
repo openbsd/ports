@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/06/03 17:25:56 jeremy Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/09/07 16:52:36 jeremy Exp $
 ${GEM_BIN}/sequel${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -15,6 +15,7 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/association_basics.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/doc/cheat_sheet.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/doc/dataset_basics.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/doc/dataset_filtering.rdoc
+${GEM_LIB}/gems/${DISTNAME}/doc/mass_assignment.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/doc/migration.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/doc/model_hooks.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/doc/opening_databases.rdoc
@@ -58,6 +59,9 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.21.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.22.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.23.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.24.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.25.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.26.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.27.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.3.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.4.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.5.0.txt
@@ -65,8 +69,10 @@ ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.6.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.7.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.8.0.txt
 ${GEM_LIB}/gems/${DISTNAME}/doc/release_notes/3.9.0.txt
+${GEM_LIB}/gems/${DISTNAME}/doc/schema_modification.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/doc/sharding.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/doc/sql.rdoc
+${GEM_LIB}/gems/${DISTNAME}/doc/testing.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/doc/validations.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/doc/virtual_rows.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/lib/
@@ -102,6 +108,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/mysql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/mysql2.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/odbc/
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/odbc.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/odbc/db2.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/odbc/mssql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/openbase.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/oracle.rb
@@ -111,6 +118,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/shared/access.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/shared/informix.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/shared/mssql.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/shared/mysql.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/shared/mysql_prepared_statements.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/shared/oracle.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/shared/postgres.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/sequel/adapters/shared/progress.rb
