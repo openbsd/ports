@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.269 2011/08/22 08:04:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.270 2011/09/07 16:57:30 jeremy Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -206,6 +206,7 @@
      SUBDIR += rarcrack
      SUBDIR += rdp
      SUBDIR += ruby-bcrypt
+     SUBDIR += ruby-bcrypt,rbx
      SUBDIR += ruby-bcrypt,ruby19
      SUBDIR += ruby-ezcrypto
      SUBDIR += ruby-openid
