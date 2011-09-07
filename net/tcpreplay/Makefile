@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.31 2011/03/27 16:40:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2011/09/07 13:23:50 nigel Exp $
 
 COMMENT=	resend network traffic saved by tcpdump
 
 DISTNAME=	tcpreplay-3.4.4
+REVISION =	0
 CATEGORIES=	net
 
 HOMEPAGE=	http://tcpreplay.synfin.net
 
-MAINTAINER=	Rui Reis <rui@openbsd.org>
+MAINTAINER=	Nigel Taylor <nigel@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes

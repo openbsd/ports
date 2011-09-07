@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/20 17:22:42 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/07 13:27:13 nigel Exp $
 
 COMMENT=		forensic toolkit based on TCT
 
 DISTNAME=		sleuthkit-3.0.1
+REVISION =		0
 CATEGORIES=		sysutils security
 
 SHARED_LIBS=		tsk3 4.3
 
 HOMEPAGE=		http://www.sleuthkit.org/
 
-MAINTAINER=		Rui Reis <rui@openbsd.org>
+MAINTAINER=		Nigel Taylor <nigel@openbsd.org>
 
 # CPLv1 & IBM & GPLv2
 PERMIT_PACKAGE_CDROM=	commercial contributor must indemnify all others

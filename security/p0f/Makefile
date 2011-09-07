@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.21 2010/11/20 17:22:44 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/09/07 13:25:32 nigel Exp $
 
 COMMENT=		passive OS fingerprinting tool
 
 DISTNAME=		p0f-2.0.8
-REVISION =		1
+REVISION =		2
 EXTRACT_SUFX=		.tgz
 CATEGORIES=     	security net
 
 HOMEPAGE=		http://lcamtuf.coredump.cx/p0f.shtml
 
-MAINTAINER=		Rui Reis <rui@openbsd.org>
+MAINTAINER=		Nigel Taylor <nigel@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 

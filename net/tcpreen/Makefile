@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/19 22:31:38 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/07 13:23:07 nigel Exp $
 
 COMMENT=		simple tcp re-engineering tool
 
 DISTNAME=		tcpreen-1.4.4
-REVISION=		0
+REVISION=		1
 CATEGORIES=		net
 
 HOMEPAGE=		http://www.remlab.net/tcpreen/
 
-MAINTAINER=		Rui Reis <rui@openbsd.org>
+MAINTAINER=		Nigel Taylor <nigel@openbsd.org>
 
 MASTER_SITES=		http://www.remlab.net/files/tcpreen/stable/
 
