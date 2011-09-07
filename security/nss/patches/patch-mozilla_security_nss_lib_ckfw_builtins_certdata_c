@@ -1,16 +1,7 @@
-$OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.7 2011/09/06 19:39:34 landry Exp $
+$OpenBSD: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v 1.8 2011/09/07 05:22:52 landry Exp $
 Don't handmerge it, cd to builtins and run gmake generate after patching certdata.txt
---- mozilla/security/nss/lib/ckfw/builtins/certdata.c.orig	Fri Sep  2 22:25:44 2011
-+++ mozilla/security/nss/lib/ckfw/builtins/certdata.c	Fri Sep  2 22:25:47 2011
-@@ -35,7 +35,7 @@
-  *
-  * ***** END LICENSE BLOCK ***** */
- #ifdef DEBUG
--static const char CVS_ID[] = "@(#) $RCSfile: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v $ $Revision: 1.7 $ $Date: 2011/09/06 19:39:34 $""; @(#) $RCSfile: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v $ $Revision: 1.7 $ $Date: 2011/09/06 19:39:34 $";
-+static const char CVS_ID[] = "@(#) $RCSfile: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v $ $Revision: 1.7 $ $Date: 2011/09/06 19:39:34 $""; @(#) $RCSfile: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v $ $Revision: 1.7 $ $Date: 2011/09/06 19:39:34 $";
- #endif /* DEBUG */
- 
- #ifndef BUILTINS_H
+--- mozilla/security/nss/lib/ckfw/builtins/certdata.c.orig	Fri Sep  2 21:39:06 2011
++++ mozilla/security/nss/lib/ckfw/builtins/certdata.c	Wed Sep  7 07:20:30 2011
 @@ -1075,6 +1075,18 @@ static const CK_ATTRIBUTE_TYPE nss_builtins_types_338 
  static const CK_ATTRIBUTE_TYPE nss_builtins_types_339 [] = {
   CKA_CLASS,  CKA_TOKEN,  CKA_PRIVATE,  CKA_MODIFIABLE,  CKA_LABEL,  CKA_CERT_SHA1_HASH,  CKA_CERT_MD5_HASH,  CKA_ISSUER,  CKA_SERIAL_NUMBER,  CKA_TRUST_SERVER_AUTH,  CKA_TRUST_EMAIL_PROTECTION,  CKA_TRUST_CODE_SIGNING,  CKA_TRUST_STEP_UP_APPROVED
@@ -30,15 +21,6 @@ Don't handmerge it, cd to builtins and run gmake generate after patching certdat
  #ifdef DEBUG
  static const NSSItem nss_builtins_items_0 [] = {
    { (void *)&cko_data, (PRUint32)sizeof(CK_OBJECT_CLASS) },
-@@ -1083,7 +1095,7 @@ static const NSSItem nss_builtins_items_0 [] = {
-   { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
-   { (void *)"CVS ID", (PRUint32)7 },
-   { (void *)"NSS", (PRUint32)4 },
--  { (void *)"@(#) $RCSfile: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v $ $Revision: 1.7 $ $Date: 2011/09/06 19:39:34 $""; @(#) $RCSfile: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v $ $Revision: 1.7 $ $Date: 2011/09/06 19:39:34 $", (PRUint32)165 }
-+  { (void *)"@(#) $RCSfile: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v $ $Revision: 1.7 $ $Date: 2011/09/06 19:39:34 $""; @(#) $RCSfile: patch-mozilla_security_nss_lib_ckfw_builtins_certdata_c,v $ $Revision: 1.7 $ $Date: 2011/09/06 19:39:34 $", (PRUint32)165 }
- };
- #endif /* DEBUG */
- static const NSSItem nss_builtins_items_1 [] = {
 @@ -14780,6 +14792,332 @@ static const NSSItem nss_builtins_items_222 [] = {
    { (void *)&ck_true, (PRUint32)sizeof(CK_BBOOL) },
    { (void *)&ck_false, (PRUint32)sizeof(CK_BBOOL) },
