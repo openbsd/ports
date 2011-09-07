@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_LibRaw_libraw_libraw_types_h,v 1.1 2011/09/07 11:37:39 naddy Exp $
+
+ushort is already defined in <sys/types.h> and gcc3 warns about this and
+aborts with -Werror.
+
+--- src/LibRaw/libraw/libraw_types.h.orig	Tue Sep  6 17:38:47 2011
++++ src/LibRaw/libraw/libraw_types.h	Tue Sep  6 17:40:40 2011
+@@ -56,7 +56,7 @@ typedef unsigned long long UINT64;
+ #endif
+ 
+ typedef unsigned char uchar;
+-typedef unsigned short ushort;
++/*typedef unsigned short ushort;*/
+ 
+ #ifdef WIN32
+ #ifdef LIBRAW_NODLL
