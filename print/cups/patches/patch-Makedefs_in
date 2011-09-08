@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makedefs_in,v 1.5 2010/04/07 13:55:30 ajacoutot Exp $
---- Makedefs.in.orig	Wed May 27 01:27:06 2009
-+++ Makedefs.in	Wed Apr  7 15:28:43 2010
+$OpenBSD: patch-Makedefs_in,v 1.6 2011/09/08 10:33:12 ajacoutot Exp $
+--- Makedefs.in.orig	Wed May  4 06:28:00 2011
++++ Makedefs.in	Fri Sep  2 10:42:54 2011
 @@ -41,13 +41,13 @@ SHELL		=	/bin/sh
  # Installation programs...
  #
@@ -20,10 +20,10 @@ $OpenBSD: patch-Makedefs_in,v 1.5 2010/04/07 13:55:30 ajacoutot Exp $
  
  #
  # Default user, group, and system groups for the scheduler...
-@@ -83,15 +83,15 @@ LIBCUPSDRIVER	=	@LIBCUPSDRIVER@
- LIBCUPSIMAGE	=	@LIBCUPSIMAGE@
+@@ -84,15 +84,15 @@ LIBCUPSIMAGE	=	@LIBCUPSIMAGE@
  LIBCUPSMIME	=	@LIBCUPSMIME@
  LIBCUPSPPDC	=	@LIBCUPSPPDC@
+ LIBCUPSSTATIC	=	@LIBCUPSSTATIC@
 -LIBJPEG		=	@LIBJPEG@
 -LIBLDAP		=	@LIBLDAP@
 +LIBJPEG		=	-L${LOCALBASE}/lib @LIBJPEG@
@@ -42,7 +42,7 @@ $OpenBSD: patch-Makedefs_in,v 1.5 2010/04/07 13:55:30 ajacoutot Exp $
  LIBWRAP		=	@LIBWRAP@
  LIBZ		=	@LIBZ@
  
-@@ -258,7 +258,7 @@ DBUSDIR		=	@DBUSDIR@
+@@ -273,7 +273,7 @@ DBUSDIR		=	@DBUSDIR@
  # Rules...
  #
  

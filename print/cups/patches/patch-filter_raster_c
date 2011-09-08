@@ -1,10 +1,10 @@
-$OpenBSD: patch-filter_raster_c,v 1.1 2011/06/28 11:52:38 ajacoutot Exp $
+$OpenBSD: patch-filter_raster_c,v 1.2 2011/09/08 10:33:12 ajacoutot Exp $
 
 raster.c:154: error: 'intptr_t' undeclared (first use in this function)
 
---- filter/raster.c.orig	Tue Jun 28 13:40:29 2011
-+++ filter/raster.c	Tue Jun 28 13:40:51 2011
-@@ -44,6 +44,8 @@
+--- filter/raster.c.orig	Tue May  3 23:31:49 2011
++++ filter/raster.c	Fri Sep  2 09:33:11 2011
+@@ -45,6 +45,8 @@
   * Include necessary headers...
   */
  

@@ -1,7 +1,7 @@
-$OpenBSD: patch-config-scripts_cups-compiler_m4,v 1.4 2011/07/05 16:36:04 kili Exp $
---- config-scripts/cups-compiler.m4.orig	Sat Jun 11 00:59:36 2011
-+++ config-scripts/cups-compiler.m4	Tue Jul  5 16:58:53 2011
-@@ -123,7 +123,7 @@ if test -n "$GCC"; then
+$OpenBSD: patch-config-scripts_cups-compiler_m4,v 1.5 2011/09/08 10:33:12 ajacoutot Exp $
+--- config-scripts/cups-compiler.m4.orig	Fri Jun 10 23:16:18 2011
++++ config-scripts/cups-compiler.m4	Fri Sep  2 09:33:11 2011
+@@ -108,7 +108,7 @@ if test -n "$GCC"; then
  	if test -z "$OPTIM"; then
  		if test "x$with_optim" = x; then
  			# Default to optimize-for-size and debug
@@ -10,7 +10,7 @@ $OpenBSD: patch-config-scripts_cups-compiler_m4,v 1.4 2011/07/05 16:36:04 kili E
  		else
  			OPTIM="$with_optim $OPTIM"
  		fi
-@@ -151,16 +151,9 @@ if test -n "$GCC"; then
+@@ -136,16 +136,9 @@ if test -n "$GCC"; then
  	# that depend on a fixed address for common functions.
  	AC_MSG_CHECKING(if GCC supports -fPIE)
  	OLDCFLAGS="$CFLAGS"

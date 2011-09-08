@@ -1,6 +1,6 @@
-$OpenBSD: patch-config-scripts_cups-common_m4,v 1.5 2011/06/28 11:52:38 ajacoutot Exp $
---- config-scripts/cups-common.m4.orig	Tue Jun 28 05:15:59 2011
-+++ config-scripts/cups-common.m4	Tue Jun 28 13:32:08 2011
+$OpenBSD: patch-config-scripts_cups-common_m4,v 1.6 2011/09/08 10:33:12 ajacoutot Exp $
+--- config-scripts/cups-common.m4.orig	Mon Jul 25 22:24:24 2011
++++ config-scripts/cups-common.m4	Fri Sep  2 09:33:11 2011
 @@ -133,7 +133,6 @@ AC_CHECK_HEADER(bstring.h,AC_DEFINE(HAVE_BSTRING_H))
  AC_CHECK_HEADER(usersec.h,AC_DEFINE(HAVE_USERSEC_H))
  AC_CHECK_HEADER(sys/ioctl.h,AC_DEFINE(HAVE_SYS_IOCTL_H))
@@ -8,4 +8,4 @@ $OpenBSD: patch-config-scripts_cups-common_m4,v 1.5 2011/06/28 11:52:38 ajacouto
 -AC_CHECK_HEADER(sys/ucred.h,AC_DEFINE(HAVE_SYS_UCRED_H))
  AC_CHECK_HEADER(scsi/sg.h,AC_DEFINE(HAVE_SCSI_SG_H))
  
- dnl Checks for statfs and its many headers...
+ dnl Checks for iconv.h and iconv_open

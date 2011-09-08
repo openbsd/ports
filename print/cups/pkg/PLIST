@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2011/06/28 11:52:38 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2011/09/08 10:33:12 ajacoutot Exp $
 @conflict LPRng-*
 @newgroup _cups:541
 @newuser _cups:541:541:daemon:CUPS printer spooler daemon:/var/empty:/sbin/nologin
@@ -8,6 +8,7 @@
 bin/cups-config
 @bin bin/cupstestdsc
 @bin bin/cupstestppd
+@bin bin/ipptool
 @bin bin/lp
 @bin bin/lpoptions
 @bin bin/lppasswd
@@ -50,10 +51,11 @@ lib/libcupsppdc.a
 libexec/cups/
 libexec/cups/backend/
 libexec/cups/backend/http
+libexec/cups/backend/https
 @bin libexec/cups/backend/ipp
+libexec/cups/backend/ipps
 @bin libexec/cups/backend/lpd
 @bin libexec/cups/backend/parallel
-@bin libexec/cups/backend/scsi
 @bin libexec/cups/backend/serial
 libexec/cups/backend/smb
 @bin libexec/cups/backend/snmp
@@ -68,6 +70,7 @@ libexec/cups/cgi-bin/
 libexec/cups/daemon/
 @bin libexec/cups/daemon/cups-deviced
 @bin libexec/cups/daemon/cups-driverd
+@bin libexec/cups/daemon/cups-exec
 @bin libexec/cups/daemon/cups-lpd
 @bin libexec/cups/daemon/cups-polld
 libexec/cups/driver/
@@ -77,7 +80,6 @@ libexec/cups/filter/
 @bin libexec/cups/filter/commandtopclx
 @bin libexec/cups/filter/commandtops
 @bin libexec/cups/filter/gziptoany
-@bin libexec/cups/filter/hpgltops
 @bin libexec/cups/filter/imagetops
 @bin libexec/cups/filter/imagetoraster
 @bin libexec/cups/filter/pdftops
@@ -88,6 +90,7 @@ libexec/cups/filter/rastertodymo
 @bin libexec/cups/filter/rastertohp
 @bin libexec/cups/filter/rastertolabel
 @bin libexec/cups/filter/rastertopclx
+@bin libexec/cups/filter/rastertopwg
 @bin libexec/cups/filter/texttops
 libexec/cups/monitor/
 @bin libexec/cups/monitor/bcp
@@ -100,6 +103,7 @@ libexec/cups/notifier/
 @man man/man1/cups-config.1
 @man man/man1/cupstestdsc.1
 @man man/man1/cupstestppd.1
+@man man/man1/ipptool.1
 @man man/man1/lp.1
 @man man/man1/lpoptions.1
 @man man/man1/lppasswd.1
@@ -116,6 +120,7 @@ libexec/cups/notifier/
 @man man/man5/client.conf.5
 @man man/man5/cups-snmp.conf.5
 @man man/man5/cupsd.conf.5
+@man man/man5/ipptoolfile.5
 @man man/man5/mailto.conf.5
 @man man/man5/mime.convs.5
 @man man/man5/mime.types.5
@@ -166,49 +171,9 @@ share/cups/banners/secret
 share/cups/banners/standard
 share/cups/banners/topsecret
 share/cups/banners/unclassified
-share/cups/charmaps/
-share/cups/charmaps/euc-cn.txt
-share/cups/charmaps/euc-jp.txt
-share/cups/charmaps/euc-kr.txt
-share/cups/charmaps/euc-tw.txt
-share/cups/charmaps/iso-8859-1.txt
-share/cups/charmaps/iso-8859-10.txt
-share/cups/charmaps/iso-8859-11.txt
-share/cups/charmaps/iso-8859-13.txt
-share/cups/charmaps/iso-8859-14.txt
-share/cups/charmaps/iso-8859-15.txt
-share/cups/charmaps/iso-8859-16.txt
-share/cups/charmaps/iso-8859-2.txt
-share/cups/charmaps/iso-8859-3.txt
-share/cups/charmaps/iso-8859-4.txt
-share/cups/charmaps/iso-8859-5.txt
-share/cups/charmaps/iso-8859-6.txt
-share/cups/charmaps/iso-8859-7.txt
-share/cups/charmaps/iso-8859-8.txt
-share/cups/charmaps/iso-8859-9.txt
-share/cups/charmaps/jis-x0213.txt
-share/cups/charmaps/koi8-r.txt
-share/cups/charmaps/koi8-u.txt
-share/cups/charmaps/mac-roman.txt
-share/cups/charmaps/windows-1250.txt
-share/cups/charmaps/windows-1251.txt
-share/cups/charmaps/windows-1252.txt
-share/cups/charmaps/windows-1253.txt
-share/cups/charmaps/windows-1254.txt
-share/cups/charmaps/windows-1255.txt
-share/cups/charmaps/windows-1256.txt
-share/cups/charmaps/windows-1257.txt
-share/cups/charmaps/windows-1258.txt
-share/cups/charmaps/windows-1361.txt
-share/cups/charmaps/windows-874.txt
-share/cups/charmaps/windows-932.txt
-share/cups/charmaps/windows-936.txt
-share/cups/charmaps/windows-949.txt
-share/cups/charmaps/windows-950.txt
 share/cups/charsets/
 share/cups/charsets/utf-8
 share/cups/data/
-share/cups/data/HPGLprolog
 share/cups/data/psglyphs
 share/cups/data/testprint
 share/cups/drv/
@@ -230,6 +195,17 @@ share/cups/fonts/Monospace
 share/cups/fonts/Monospace-Bold
 share/cups/fonts/Monospace-BoldOblique
 share/cups/fonts/Monospace-Oblique
+share/cups/ipptool/
+share/cups/ipptool/create-printer-subscription.test
+share/cups/ipptool/get-completed-jobs.test
+share/cups/ipptool/get-jobs.test
+share/cups/ipptool/ipp-1.1.test
+share/cups/ipptool/ipp-2.0.test
+share/cups/ipptool/ipp-2.1.test
+share/cups/ipptool/testfile.jpg
+share/cups/ipptool/testfile.pdf
+share/cups/ipptool/testfile.ps
+share/cups/ipptool/testfile.txt
 share/cups/mime/
 share/cups/mime/mime.convs
 share/cups/mime/mime.types
@@ -922,6 +898,8 @@ share/doc/cups/help/man-cupsenable.html
 share/doc/cups/help/man-cupstestdsc.html
 share/doc/cups/help/man-cupstestppd.html
 share/doc/cups/help/man-filter.html
+share/doc/cups/help/man-ipptool.html
+share/doc/cups/help/man-ipptoolfile.html
 share/doc/cups/help/man-lp.html
 share/doc/cups/help/man-lpadmin.html
 share/doc/cups/help/man-lpc.html

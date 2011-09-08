@@ -1,28 +1,20 @@
-# $OpenBSD: Makefile,v 1.112 2011/08/31 12:43:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2011/09/08 10:33:12 ajacoutot Exp $
 
 COMMENT=	Common Unix Printing System
 
-VERSION=	1.4.8
+VERSION=	1.5.0
 DISTNAME=	cups-${VERSION}-source
 PKGNAME=	cups-${VERSION}
 
-REVISION=	0
-
-# Allow both ulpt(4) and libusb based backends to work together.
-# See http://www.cups.org/str.php?L3357
-PATCHFILES=	usb-backend-both-usblp-and-libusb.dpatch:0
-MASTER_SITES0=	http://www.cups.org/strfiles/3357/
-PATCH_DIST_STRIP= -p1
-
 CATEGORIES=	print sysutils
 
-# XXX ghostscript needs to dlopen() libcupsimage.so.4
-SHARED_LIBS+=	cupsimage	4.0
-SHARED_LIBS+=	cups		5.0
-SHARED_LIBS+=	cupscgi		0.0
-SHARED_LIBS+=	cupsdriver	0.0
-SHARED_LIBS+=	cupsmime	0.0
-SHARED_LIBS+=	cupsppdc	0.0
+# XXX ghostscript needs to dlopen() libcupsimage.so.5
+SHARED_LIBS+=	cupsimage	5.0
+SHARED_LIBS+=	cups		6.0
+SHARED_LIBS+=	cupscgi		1.0
+SHARED_LIBS+=	cupsdriver	1.0
+SHARED_LIBS+=	cupsmime	1.0
+SHARED_LIBS+=	cupsppdc	1.0
 
 HOMEPAGE=	http://www.cups.org/
 
@@ -67,8 +59,6 @@ LIBS_ENV=	LIBcups_VERSION=${LIBcups_VERSION} \
 		LIBcupsmime_VERSION=${LIBcupsmime_VERSION} \
 		LIBcupsppdc_VERSION=${LIBcupsppdc_VERSION} \
 
-MAKE_ENV=	${LIBS_ENV}
-
 FAKE_FLAGS=	BINMODE=${BINMODE} \
 		SHAREMODE=${SHAREMODE} \
 		DBUSDIR=${DESTDIR}${PREFIX}/share/examples/cups/dbus-1/system.d \
@@ -81,6 +71,13 @@ AUTOMAKE_VERSION= 1.9
 
 USE_GMAKE=	Yes
 USE_GROFF=	Yes
+
+MAKE_ENV=	${LIBS_ENV}
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
+			-I${LOCALBASE}/include/libpng" \
+		LDFLAGS="-L${LOCALBASE}/lib" \
+		${LIBS_ENV}
 
 CONFIGURE_STYLE= gnu dest
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
@@ -97,7 +94,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--without-php \
 		--without-python \
 		--enable-image \
-		--enable-tcp-wrappers \
 		--enable-dbus \
 		--enable-texttops \
 		--enable-raw-printing \
@@ -109,12 +105,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-launchd \
 		--disable-pap \
 		--disable-slp \
+		--disable-tcp-wrappers \
 		--disable-default-shared
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
-			-I${LOCALBASE}/include/libpng" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		${LIBS_ENV}
 
 FLAVORS=	ldap
 FLAVOR?=

@@ -1,15 +1,15 @@
-$OpenBSD: patch-config-scripts_cups-pdf_m4,v 1.2 2010/03/31 16:20:02 ajacoutot Exp $
+$OpenBSD: patch-config-scripts_cups-pdf_m4,v 1.3 2011/09/08 10:33:12 ajacoutot Exp $
 
 Security fix for CVE-2009-3608, CVE-2009-3609.
 CUPS "pdftops" Filter Data Handling Integer Overflow Vulnerabilities
 
 Patch from Ubuntu: poppler-based-pdftops-fixes.dpatch
 
---- config-scripts/cups-pdf.m4.orig	Sat Aug  8 00:30:30 2009
-+++ config-scripts/cups-pdf.m4	Thu Dec 10 15:28:50 2009
-@@ -79,6 +79,12 @@ case "x$with_pdftops" in
- 	;;
- esac
+--- config-scripts/cups-pdf.m4.orig	Sat May  7 00:53:53 2011
++++ config-scripts/cups-pdf.m4	Fri Sep  2 09:33:11 2011
+@@ -103,6 +103,12 @@ else
+ 	DEFAULT_PDFTOPS="#"
+ fi
  
 +if test "x$CUPS_PDFTOPS" != x; then
 +	if `$CUPS_PDFTOPS -h 2>&1 | grep -q -- -origpagesizes 2>/dev/null`; then
@@ -19,4 +19,4 @@ Patch from Ubuntu: poppler-based-pdftops-fixes.dpatch
 +
  AC_DEFINE_UNQUOTED(CUPS_PDFTOPS, "$CUPS_PDFTOPS")
  AC_DEFINE_UNQUOTED(CUPS_GHOSTSCRIPT, "$CUPS_GHOSTSCRIPT")
- AC_SUBST(PDFTOPS)
+ AC_SUBST(DEFAULT_PDFTOPS)

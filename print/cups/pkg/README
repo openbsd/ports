@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.10 2011/07/06 16:03:08 ajacoutot Exp $
+$OpenBSD: README,v 1.11 2011/09/08 10:33:12 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -23,8 +23,8 @@ splix...
 To be able to use CUPS printers from GTK applications, the corresponding
 package needs to be installed: gtk+2-cups and/or gtk+3-cups.
 
-This package supports both ulpt(4) and libusb for printing to USB
-devices. ulpt(4) should work out of the box, however:
+CUPS supports both ulpt(4) and libusb for printing to USB devices.
+ulpt(4) should work out of the box, however:
 * ulpt(4) does not support select() which is used by CUPS to know when
 the device can accept more data (http://www.cups.org/str.php?L3028)
 * it won't be able to automatically detect the corresponding driver/PPD
