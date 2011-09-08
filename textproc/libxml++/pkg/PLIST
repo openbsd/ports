@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/04/17 07:15:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/09/08 07:39:34 ajacoutot Exp $
 %%SHARED%%
 include/libxml++-2.6/
 include/libxml++-2.6/libxml++/
@@ -221,13 +221,13 @@ share/doc/libxml++-2.6/reference/html/graph_legend.html
 share/doc/libxml++-2.6/reference/html/graph_legend.png
 share/doc/libxml++-2.6/reference/html/hierarchy.html
 share/doc/libxml++-2.6/reference/html/index.html
-share/doc/libxml++-2.6/reference/html/inherit__graph__0.png
-share/doc/libxml++-2.6/reference/html/inherit__graph__1.png
-share/doc/libxml++-2.6/reference/html/inherit__graph__2.png
-share/doc/libxml++-2.6/reference/html/inherit__graph__3.png
-share/doc/libxml++-2.6/reference/html/inherit__graph__4.png
-share/doc/libxml++-2.6/reference/html/inherit__graph__5.png
-share/doc/libxml++-2.6/reference/html/inherit__graph__6.png
+share/doc/libxml++-2.6/reference/html/inherit_graph_0.png
+share/doc/libxml++-2.6/reference/html/inherit_graph_1.png
+share/doc/libxml++-2.6/reference/html/inherit_graph_2.png
+share/doc/libxml++-2.6/reference/html/inherit_graph_3.png
+share/doc/libxml++-2.6/reference/html/inherit_graph_4.png
+share/doc/libxml++-2.6/reference/html/inherit_graph_5.png
+share/doc/libxml++-2.6/reference/html/inherit_graph_6.png
 share/doc/libxml++-2.6/reference/html/inherits.html
 share/doc/libxml++-2.6/reference/html/namespacemembers.html
 share/doc/libxml++-2.6/reference/html/namespacemembers_enum.html
