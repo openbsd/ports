@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/03/18 20:14:58 naddy Exp $
+# $OpenBSD: Makefile,v 1.53 2011/09/08 11:13:30 jasper Exp $
 
 COMMENT=	extract, list, and test RAR archives
 
@@ -10,13 +10,13 @@ COMMENT=	extract, list, and test RAR archives
 # by "4.00".
 
 PKGNAME=	unrar-4.00
-EPOCH=		0
+EPOCH=		1
 DISTNAME=	unrarsrc-4.0.7
 CATEGORIES=	archivers
 
 HOMEPAGE=	http://www.rarlab.com/
 
-MAINTAINER=	Rui Reis <rui@openbsd.org>
+MAINTAINER=	Amit Kulkarni <amitkulz@gmail.com>
 
 # nonstandard
 PERMIT_PACKAGE_CDROM=	Yes
