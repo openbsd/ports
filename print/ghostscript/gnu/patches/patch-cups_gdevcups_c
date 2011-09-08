@@ -1,4 +1,4 @@
-$OpenBSD: patch-cups_gdevcups_c,v 1.5 2011/07/06 13:49:17 kili Exp $
+$OpenBSD: patch-cups_gdevcups_c,v 1.6 2011/09/08 10:34:06 ajacoutot Exp $
 --- cups/gdevcups.c.orig	Mon Mar  7 16:40:13 2011
 +++ cups/gdevcups.c	Tue Jun 28 13:37:01 2011
 @@ -70,6 +70,7 @@
@@ -56,8 +56,8 @@ $OpenBSD: patch-cups_gdevcups_c,v 1.5 2011/07/06 13:49:17 kili Exp $
  
 +  if (!cups->libCupsReady) {
 +    void *handle;
-+    if (!(handle = dlopen("libcupsimage.so.4", 0))) {
-+      eprintf1("ERROR: libcupsimage.so.4: %s\n", dlerror());
++    if (!(handle = dlopen("libcupsimage.so.5", 0))) {
++      eprintf1("ERROR: libcupsimage.so.5: %s\n", dlerror());
 +      return -1;
 +    }
 +    if (!(cups->cupsRasterClose = dlsym(handle, "cupsRasterClose"))) {
