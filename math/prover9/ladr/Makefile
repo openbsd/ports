@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/07/05 09:13:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/08 14:48:25 naddy Exp $
 
 COMMENT=		Library for Automated Deduction Research
 
 DISTNAME=		LADR-Dec-2007
 PKGNAME=		${DISTNAME:L:S/-Dec//}
-REVISION =		1
+REVISION =		2
 
 MASTER_SITES=		${HOMEPAGE}/download/
 
@@ -16,7 +16,7 @@ UTIL_FILES=		utilities/attack \
 			utilities/looper \
 			utilities/prover9-mace4
 
-MAKE_ENV+=		XFLAGS="${CFLAGS}"
+MAKE_FLAGS=		CC="${CC}" CFLAGS="${CFLAGS}"
 
 REGRESS_TARGET=		test1 test2 test3
 
@@ -29,7 +29,7 @@ pre-configure:
 .endfor
 
 do-build:
-	@cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} ${ALL_TARGET}
+	@cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} ${ALL_TARGET}
 
 do-install:
 	${INSTALL_DATA_DIR} ${BIN_DIR} ${EXAMPLE_DIR}/{mace4,prover9}
