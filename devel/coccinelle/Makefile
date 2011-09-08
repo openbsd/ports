@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/08/30 10:20:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/08 20:09:00 sthen Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,6 +7,7 @@ COMMENT =	program matching and transformation engine
 # if updating, check for any additional use of diff/grep which
 # may need to be switched to gdiff/ggrep
 DISTNAME =	coccinelle-1.0.0-rc7
+REVISION =	0
 PKGNAME =	${DISTNAME:S/-rc/rc/}
 EXTRACT_SUFX =	.tgz
 
@@ -46,10 +47,6 @@ CONFIGURE_ENV =		MAKE_PROGRAM=${MAKE_PROGRAM}
 REGRESS_TARGET =	test
 SUBST_VARS +=		MAKE_PROGRAM
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/pycaml/Makefile
-	perl -pi -e s,/usr/local,${TRUEPREFIX},g ${WRKSRC}/scripts/spatch*
-
 # can't use MODOCAML_NATIVE here because we need not
 # just native code, but also dynlink
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
@@ -63,5 +60,13 @@ PKG_ARGS +=	-DOCAMLOPT=.opt
 WANTLIB +=	curses
 PKG_ARGS +=	-DOCAMLOPT=
 .endif
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/configure ${WRKSRC}/pycaml/Makefile
+	perl -pi -e s,/usr/local,${TRUEPREFIX},g ${WRKSRC}/scripts/spatch*
+
+post-install:
+	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py \
+	    ${PREFIX}/share/coccinelle/python/coccilib
 
 .include <bsd.port.mk>

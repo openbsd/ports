@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/08/22 00:37:50 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/09/08 20:09:00 sthen Exp $
 bin/spatch
 lib/dllpycaml_stubs.so
 @man man/man1/spatch.1
@@ -60,21 +60,34 @@ share/coccinelle/parsing_c/visitor_c.cmi
 share/coccinelle/python/
 share/coccinelle/python/coccilib/
 share/coccinelle/python/coccilib/__init__.py
+share/coccinelle/python/coccilib/__init__.pyc
 share/coccinelle/python/coccilib/coccigui/
 share/coccinelle/python/coccilib/coccigui/__init__.py
+share/coccinelle/python/coccilib/coccigui/__init__.pyc
 share/coccinelle/python/coccilib/coccigui/coccigui.py
+share/coccinelle/python/coccilib/coccigui/coccigui.pyc
 share/coccinelle/python/coccilib/coccigui/pycoccimodel.py
+share/coccinelle/python/coccilib/coccigui/pycoccimodel.pyc
 share/coccinelle/python/coccilib/coccigui/pygui.glade
 share/coccinelle/python/coccilib/coccigui/pygui.gladep
 share/coccinelle/python/coccilib/coccigui/vim.py
+share/coccinelle/python/coccilib/coccigui/vim.pyc
 share/coccinelle/python/coccilib/coccigui/vimcom.py
+share/coccinelle/python/coccilib/coccigui/vimcom.pyc
 share/coccinelle/python/coccilib/coccigui/vimeditor.py
+share/coccinelle/python/coccilib/coccigui/vimeditor.pyc
 share/coccinelle/python/coccilib/coccigui/vimembed.py
+share/coccinelle/python/coccilib/coccigui/vimembed.pyc
 share/coccinelle/python/coccilib/elems.py
+share/coccinelle/python/coccilib/elems.pyc
 share/coccinelle/python/coccilib/org.py
+share/coccinelle/python/coccilib/org.pyc
 share/coccinelle/python/coccilib/output.py
+share/coccinelle/python/coccilib/output.pyc
 share/coccinelle/python/coccilib/report.py
+share/coccinelle/python/coccilib/report.pyc
 share/coccinelle/python/coccilib/trac.py
+share/coccinelle/python/coccilib/trac.pyc
 @bin share/coccinelle/spatch${OCAMLOPT}
 share/coccinelle/standard.h
 share/coccinelle/standard.iso
