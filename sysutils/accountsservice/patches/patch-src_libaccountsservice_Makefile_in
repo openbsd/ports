@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_libaccountsservice_Makefile_in,v 1.1.1.1 2011/05/22 10:57:32 ajacoutot Exp $
---- src/libaccountsservice/Makefile.in.orig	Sun May 22 12:29:39 2011
-+++ src/libaccountsservice/Makefile.in	Sun May 22 12:29:47 2011
-@@ -323,7 +323,7 @@ libaccountsservice_la_LDFLAGS = \
+$OpenBSD: patch-src_libaccountsservice_Makefile_in,v 1.2 2011/09/08 13:15:52 ajacoutot Exp $
+--- src/libaccountsservice/Makefile.in.orig	Sun Sep  4 22:12:02 2011
++++ src/libaccountsservice/Makefile.in	Thu Sep  8 14:14:07 2011
+@@ -324,7 +324,7 @@ libaccountsservice_la_LDFLAGS = \
  
  libaccountsservice_la_LIBADD = \
          $(LIBACCOUNTSSERVICE_LIBS)                                            \

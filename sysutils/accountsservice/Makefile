@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/07/04 05:16:47 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/08 13:15:52 ajacoutot Exp $
 
 COMMENT=	D-Bus interface for user account query and manipulation
 
-DISTNAME=	accountsservice-0.6.12
-EXTRACT_SUFX=	.tar.bz2
-
-REVISION=	10
+DISTNAME=	accountsservice-0.6.14
+EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS +=  accountsservice           0.0 # 0.0
 
@@ -33,6 +31,8 @@ BUILD_DEPENDS=	devel/gobject-introspection
 
 LIB_DEPENDS=	sysutils/polkit \
 		x11/dbus-glib
+
+RUN_DEPENDS=	sysutils/consolekit
 
 USE_GMAKE=	Yes
 
