@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.199 2011/08/19 06:44:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.200 2011/09/08 17:14:10 sthen Exp $
 # $FreeBSD: Makefile,v 1.24 1997/10/04 23:32:05 andreas Exp $
 #
      SUBDIR =
@@ -10,7 +10,6 @@
      SUBDIR += directoryassistant
      SUBDIR += evolution-data-server
      SUBDIR += freetds
-     SUBDIR += freetds,msdblib
      SUBDIR += gdbm
      SUBDIR += gnats
      SUBDIR += gq
