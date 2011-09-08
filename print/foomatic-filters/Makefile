@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.30 2011/08/25 10:39:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/09/08 11:45:57 ajacoutot Exp $
 
 COMMENT=		Foomatic PPD print filters
 
 DISTNAME=		foomatic-filters-4.0.9
 CATEGORIES=		print
+REVISION=		0
 
 HOMEPAGE=		http://www.linuxfoundation.org/en/OpenPrinting/Database/Foomatic
 
@@ -25,7 +26,8 @@ MASTER_SITES=		http://www.linuxprinting.org/download/foomatic/ \
 BUILD_DEPENDS=		${MODGNU_AUTOMAKE_DEPENDS}
 
 RUN_DEPENDS=		print/ghostscript/gnu \
-			print/a2ps
+			print/a2ps \
+			print/gstoraster
 
 AUTOMAKE_VERSION=1.10
 AUTOCONF_VERSION=2.61
