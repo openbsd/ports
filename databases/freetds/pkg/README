@@ -1,0 +1,22 @@
+$OpenBSD: README,v 1.1 2011/09/08 17:13:51 sthen Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+The main FreeTDS package uses GnuTLS if making an encrypted connection.
+This requires thread support; due to limitations of OpenBSD's current
+userland threads implementation, it is not always possible to load the
+correct library automatically.
+
+If you see errors like "undefined symbol 'pthread_mutex_unlock'" or
+processes exiting when making a connection to an encrypted server, you
+will need to manually load the pthread shared library; you can do this
+by setting "LD_PRELOAD=/usr/lib/libpthread.so" in the environment.
+
+Alternatively you may use the "openssl" flavor of the port; the licenses
+of FreeTDS and OpenSSL are incompatible, therefore compiled packages may not
+be distributed, so you will need to build this yourself.
+
+Note that this does not apply for cleartext connections; the problem is
+only seen when the encryption library is initialized.
