@@ -1,7 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/05/31 13:00:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/09/08 07:27:10 ajacoutot Exp $
 @bin bin/gnome-screensaver
 @bin bin/gnome-screensaver-command
-lib/pkgconfig/gnome-screensaver.pc
 @mode u+s
 @bin libexec/gnome-screensaver-dialog
 @mode

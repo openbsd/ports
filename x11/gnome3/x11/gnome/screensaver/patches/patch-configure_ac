@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.3 2011/08/30 12:18:18 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.4 2011/09/08 07:27:10 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=651554
 
---- configure.ac.orig	Mon Apr  4 16:27:55 2011
-+++ configure.ac	Tue Aug 30 12:32:39 2011
-@@ -459,6 +459,45 @@ if test "$ac_macosx" = yes; then
+--- configure.ac.orig	Tue Sep  6 21:38:29 2011
++++ configure.ac	Thu Sep  8 09:05:00 2011
+@@ -448,6 +448,45 @@ if test "$ac_macosx" = yes; then
  fi
  
  dnl ---------------------------------------------------------------------------
@@ -50,7 +50,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=651554
  dnl - Check for PAM
  dnl ---------------------------------------------------------------------------
  
-@@ -478,12 +517,13 @@ fi
+@@ -467,12 +506,13 @@ fi
  AC_SUBST(PAM_PREFIX)
  
  have_pam=no
@@ -65,7 +65,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=651554
          # On Linux, sigtimedwait() is in libc; on Solaris, it's in librt.
          have_timedwait=no
          AC_CHECK_LIB(c, sigtimedwait, [have_timedwait=yes])
-@@ -517,14 +557,17 @@ if test "x$have_pam" = "xyes"; then
+@@ -506,14 +546,17 @@ if test "x$have_pam" = "xyes"; then
            AC_MSG_RESULT(unknown)
          fi
  
@@ -86,7 +86,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=651554
  
  dnl test whether struct pam_message is const (Linux) or not (Sun)
  if test "x$have_pam" = "xyes"; then
-@@ -717,7 +760,12 @@ echo "
+@@ -695,7 +738,12 @@ echo "
  
          Screen locking enabled:   ${enable_locking}
          Show keyboard indicator:  ${with_kbd_layout_indicator}
