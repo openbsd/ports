@@ -1,0 +1,14 @@
+$OpenBSD: patch-prnt_hpps_hppsfilter_c,v 1.1 2011/09/08 10:34:25 ajacoutot Exp $
+
+Fix build fix cups >=1.5.
+
+--- prnt/hpps/hppsfilter.c.orig	Thu Sep  8 10:32:54 2011
++++ prnt/hpps/hppsfilter.c	Thu Sep  8 10:36:47 2011
+@@ -38,6 +38,7 @@
+ #include <unistd.h>
+ #include <fcntl.h>
+ #include <cups/cups.h>
++#include <cups/ppd.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/08/30 08:55:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2011/09/08 10:34:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -16,6 +16,9 @@ PKGNAME-hpijs=	hpijs-${V}
 PKGNAME-hpcups=	hpcups-${V}
 PKGNAME-libs=	hplip-libs-${V}
 PKGNAME-gui=	hplip-gui-${V}
+
+REVISION-main=	0
+REVISION-hpcups=0
 
 SHARED_LIBS +=  hpmud		2.0 # .0.6
 SHARED_LIBS +=  hpip		2.0 # .0.1
@@ -50,7 +53,7 @@ BUILD_DEPENDS=	sysutils/polkit
 
 LIB_DEPENDS-main=${LIB_DEPENDS} \
 		graphics/sane-backends \
-		print/cups \
+		print/cups>=1.5.0 \
 		print/hplip,-libs
 RUN_DEPENDS-main=${MODPY_RUN_DEPENDS} \
 		print/py-reportlab/reportlab \
@@ -70,7 +73,7 @@ RUN_DEPENDS-hpijs= print/foomatic-filters
 WANTLIB-hpcups += ${cWANTLIB} png tiff z asn1 gssapi krb5 ssl
 WANTLIB-hpcups += c jpeg stdc++ hpip cups cupsimage
 LIB_DEPENDS-hpcups= print/hplip,-libs \
-		print/cups
+		print/cups>=1.5.0
 
 WANTLIB-libs +=	${cWANTLIB} netsnmp usb
 LIB_DEPENDS-libs= net/net-snmp \

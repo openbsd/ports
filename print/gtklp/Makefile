@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2011/03/02 06:40:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/08 10:34:25 ajacoutot Exp $
 
 COMMENT=	GTK+2 frontend to CUPS
 
 DISTNAME=	gtklp-1.2.8
 CATEGORIES=	print sysutils x11
+
+REVISION=	0
 
 EXTRACT_SUFX=	.src.tar.gz
 
@@ -29,7 +31,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=gtklp/}
 MODULES=	devel/gettext
 
 LIB_DEPENDS=	x11/gtk+2 \
-		print/cups
+		print/cups>=1.5.0
 
 USE_LIBTOOL=	Yes
 USE_GMAKE=	Yes

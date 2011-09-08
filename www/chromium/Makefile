@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/09/04 20:44:47 robert Exp $
+# $OpenBSD: Makefile,v 1.68 2011/09/08 10:35:16 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
@@ -6,6 +6,8 @@ COMMENT=		Chromium browser
 
 V=			13.0.782.220
 DISTNAME=		chromium-${V}
+
+REVISION=		0
 
 CATEGORIES=		www
 
@@ -62,7 +64,7 @@ LIB_DEPENDS=	devel/libexecinfo \
 		textproc/libxslt \
 		x11/gtk+2 \
 		audio/speex \
-		print/cups
+		print/cups>=1.5.0
 
 .include <bsd.own.mk>
 

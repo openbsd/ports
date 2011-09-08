@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.38 2011/06/22 13:50:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.39 2011/09/08 10:34:25 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	DTP program
 DISTNAME=	scribus-1.3.4
-REVISION=	15
+REVISION=	16
 CATEGORIES=	print
 
 # These are actually internal modules, not generic shared libs
@@ -41,7 +41,7 @@ LIB_DEPENDS=	graphics/jpeg \
 		graphics/png \
 		graphics/tiff \
 		${MODPY_LIB_DEPENDS} \
-		print/cups \
+		print/cups>=1.5 \
 		textproc/libxml
 
 USE_GMAKE=	Yes

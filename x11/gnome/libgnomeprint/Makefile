@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2011/07/29 20:42:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2011/09/08 10:34:43 ajacoutot Exp $
 
 COMMENT=		printing framework for GNOME
 
 GNOME_PROJECT=		libgnomeprint
 GNOME_VERSION=		2.18.8
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=	gnomeprint-2-2 2.1            # .1.0
 
