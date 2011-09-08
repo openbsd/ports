@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2011/01/11 10:07:06 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/08 16:34:02 naddy Exp $
 
 COMMENT =		curses media indexer and player for vi users
 
 DISTNAME =		vitunes-2.2
+REVISION =		0
 
 CATEGORIES =		multimedia
 
-HOMEPAGE =		http://www.vitunes.org/
+HOMEPAGE =		http://vitunes.org/
 
 MAINTAINER =		Laurent Fanis <laurent@openbsd.org>
 
