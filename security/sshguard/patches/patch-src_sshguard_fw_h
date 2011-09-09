@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_sshguard_fw_h,v 1.1 2011/09/09 20:13:28 naddy Exp $
+
+Allow building with gcc3.
+
+--- src/sshguard_fw.h.orig	Fri Sep  9 22:07:03 2011
++++ src/sshguard_fw.h	Fri Sep  9 22:07:20 2011
+@@ -85,7 +85,7 @@ int fw_block(const char *restrict addr, int addrkind, 
+  *
+  * @return FWALL_OK or FWALL_ERR
+  */
+-int fw_block_list(const char *restrict addresses[], int addrkind, const int service_codes[]);
++int fw_block_list(const char *restrict *addresses, int addrkind, const int service_codes[]);
+ 
+ 
+ /**
