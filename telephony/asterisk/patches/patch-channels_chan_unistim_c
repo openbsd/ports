@@ -1,24 +1,11 @@
-$OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
+$OpenBSD: patch-channels_chan_unistim_c,v 1.5 2011/09/09 15:29:21 sthen Exp $
 
-# Patch is from https://bugs.digium.com/view.php?id=18229, in particular, chan_unistim.c.r299906-6.diff
---- channels/chan_unistim.c.orig	Thu May  5 23:53:45 2011
-+++ channels/chan_unistim.c	Wed Jul 20 08:03:39 2011
-@@ -32,5 +32,14 @@
-  * \ingroup channel_drivers
-  */
- 
-+/*
-+    TODO: Fix playback of pickupfile in gsm format when bridged channel in alaw, that cause
-+   chan->writetrans to be empty when gsm frames played
-+    TODO: Fix blocking thread when sending dtmf tone
-+    TODO: Start timer on ouutbound call only when call connected, now unistim_answer calles right after Dial executed
-+    TODO: Fix deadlock, when call comes to Unistim phones from SIP, and picked up by SIP
-+    TODO: Ability to retrieve back call after call transfer
-+ *  */
-+
- #include "asterisk.h"
- 
-@@ -69,6 +78,8 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.4 $")
+Patch is from https://issues.asterisk.org/jira/browse/18229
+https://issues.asterisk.org/jira/secure/attachment/38296/chan_unistim.c.1.8.2.2-9.diff
+
+--- channels/chan_unistim.c.orig	Thu Jul 14 21:13:06 2011
++++ channels/chan_unistim.c	Mon Sep  5 12:28:22 2011
+@@ -73,6 +73,8 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.5 $")
  #include "asterisk/musiconhold.h"
  #include "asterisk/causes.h"
  #include "asterisk/indications.h"
@@ -27,7 +14,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  
  /*! Beware, G729 and G723 are not supported by asterisk, except with the proper licence */
  #define CAPABILITY AST_FORMAT_ALAW | AST_FORMAT_ULAW    /* | AST_FORMAT_G729A | AST_FORMAT_G723_1 */
-@@ -78,11 +89,14 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.4 $")
+@@ -82,11 +84,14 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.5 $")
  #define DEFAULTCALLERNAME       " "
  #define DEFAULTHEIGHT	 3
  #define USTM_LOG_DIR	    "unistimHistory"
@@ -42,7 +29,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  /*! Try x times before removing the phone */
  #define NB_MAX_RETRANSMIT       8
  /*! Nb of milliseconds waited when no events are scheduled */
-@@ -99,8 +113,9 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.4 $")
+@@ -103,8 +108,9 @@ ASTERISK_FILE_VERSION(__FILE__, "$Revision: 1.5 $")
  #define MAX_ENTRY_LOG	   30
  
  #define SUB_REAL		0
@@ -54,7 +41,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  
  enum autoprovision {
  	AUTOPROVISIONING_NO = 0,
-@@ -181,6 +196,14 @@ enum autoprov_extn {
+@@ -185,6 +191,14 @@ enum autoprov_extn {
  
  #define FAV_MAX_LENGTH		  0x0A
  
@@ -69,7 +56,16 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  static void dummy(char *unused, ...)
  {
  	return;
-@@ -252,7 +275,10 @@ enum phone_state {
+@@ -222,7 +236,7 @@ static struct {
+ } qos = { 0, 0, 0, 0 };
+ 
+ static struct io_context *io;
+-static struct sched_context *sched;
++static struct ast_sched_context *sched;
+ static struct sockaddr_in public_ip = { 0, };
+ /*! give the IP address for the last packet received */
+ static struct sockaddr_in address_from;
+@@ -256,7 +270,10 @@ enum phone_state {
  	STATE_DIALPAGE,
  	STATE_RINGING,
  	STATE_CALL,
@@ -80,7 +76,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	STATE_CLEANING,
  	STATE_HISTORY
  };
-@@ -303,45 +329,17 @@ enum phone_key {
+@@ -307,45 +324,17 @@ enum phone_key {
  	KEY_INDEX = 0x7f
  };
  
@@ -135,7 +131,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  
  struct wsabuf {
  	u_long len;
-@@ -361,7 +359,7 @@ struct systemtime {
+@@ -365,7 +354,7 @@ struct systemtime {
  
  struct unistim_subchannel {
  	ast_mutex_t lock;
@@ -144,7 +140,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	unsigned int subtype;
  	/*! Asterisk channel used by the subchannel */
  	struct ast_channel *owner;
-@@ -369,9 +367,14 @@ struct unistim_subchannel {
+@@ -373,9 +362,14 @@ struct unistim_subchannel {
  	struct unistim_line *parent;
  	/*! RTP handle */
  	struct ast_rtp_instance *rtp;
@@ -159,7 +155,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  };
  
  /*!
-@@ -383,14 +386,10 @@ struct unistim_line {
+@@ -387,14 +381,10 @@ struct unistim_line {
  	char name[80];
  	/*! Like USTM/200\@black */
  	char fullname[80];
@@ -174,7 +170,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	/*! CallerID Number */
  	char cid_num[AST_MAX_EXTENSION];
  	/*! Mailbox for MWI */
-@@ -415,6 +414,7 @@ struct unistim_line {
+@@ -419,6 +409,7 @@ struct unistim_line {
  	char parkinglot[AST_MAX_CONTEXT];
  	struct unistim_line *next;
  	struct unistim_device *parent;
@@ -182,7 +178,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  };
  
  /*! 
-@@ -423,19 +423,21 @@ struct unistim_line {
+@@ -427,19 +418,21 @@ struct unistim_line {
  static struct unistim_device {
  	int receiver_state;	      /*!< state of the receiver (see ReceiverState) */
  	int size_phone_number;	  /*!< size of the phone number */
@@ -213,7 +209,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	char maintext0[25];		     /*!< when the phone is idle, display this string on line 0 */
  	char maintext1[25];		     /*!< when the phone is idle, display this string on line 1 */
  	char maintext2[25];		     /*!< when the phone is idle, display this string on line 2 */
-@@ -446,12 +448,16 @@ static struct unistim_device {
+@@ -450,12 +443,16 @@ static struct unistim_device {
  	struct ast_tone_zone *tz;	       /*!< Tone zone for res_indications (ring, busy, congestion) */
  	char ringvolume;			/*!< Ring volume */
  	char ringstyle;			 /*!< Ring melody */
@@ -231,7 +227,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	char lst_cid[TEXT_LENGTH_MAX];  /*!< Last callerID received */
  	char lst_cnm[TEXT_LENGTH_MAX];  /*!< Last callername recevied */
  	char call_forward[AST_MAX_EXTENSION];   /*!< Forward number */
-@@ -459,15 +465,14 @@ static struct unistim_device {
+@@ -463,15 +460,14 @@ static struct unistim_device {
  	int previous_output;	    /*!< Previous output */
  	int volume;				     /*!< Default volume */
  	int mute;				       /*!< Mute mode */
@@ -250,7 +246,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	struct unistimsession *session;
  	struct unistim_device *next;
  } *devices = NULL;
-@@ -490,9 +495,23 @@ static struct unistimsession {
+@@ -494,9 +490,23 @@ static struct unistimsession {
  	struct wsabuf wsabufsend[MAX_BUF_NUMBER];      /*!< Size of each paquet stored in the buffer array & pointer to this buffer */
  	unsigned char buf[MAX_BUF_NUMBER][MAX_BUF_SIZE];	/*!< Buffer array used to keep the lastest non-acked paquets */
  	struct unistim_device *device;
@@ -275,7 +271,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  /*!
   * \page Unistim datagram formats
   *
-@@ -624,10 +643,14 @@ static const unsigned char packet_send_date_time2[] = 
+@@ -628,10 +638,14 @@ static const unsigned char packet_send_date_time2[] = 
  };
  static const unsigned char packet_send_Contrast[] =
  	{ 0x17, 0x04, 0x24, /*Contrast */ 0x08 };
@@ -294,7 +290,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  static const unsigned char packet_send_icon[] = { 0x17, 0x05, 0x14, /*pos */ 0x00, /*icon */ 0x25 };      /* display an icon in front of the text zone */
  static const unsigned char packet_send_S7[] = { 0x17, 0x06, 0x0f, 0x30, 0x07, 0x07 };
  static const unsigned char packet_send_set_pos_cursor[] =
-@@ -658,6 +681,23 @@ static const unsigned char packet_send_status2[] =
+@@ -662,6 +676,23 @@ static const unsigned char packet_send_status2[] =
  	{ 0x17, 0x0b, 0x19, /* pos [08|28|48|68] */ 0x00, /* text */ 0x20, 0x20, 0x20, 0x20,
  0x20, 0x20, 0x20 /* end_text */  };
  
@@ -318,10 +314,11 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  static const unsigned char packet_send_led_update[] = { 0x19, 0x04, 0x00, 0x00 };
  
  static const unsigned char packet_send_query_basic_manager_04[] = { 0x1a, 0x04, 0x01, 0x04 };
-@@ -718,14 +758,129 @@ static const struct ast_channel_tech unistim_tech = {
+@@ -722,15 +753,125 @@ static const struct ast_channel_tech unistim_tech = {
  	.bridge = ast_rtp_instance_bridge,
  };
  
+-static void display_last_error(const char *sz_msg)
 +static void send_start_rtp(struct unistim_subchannel *);
 +
 +static void send_callerid_screen(struct unistimsession *, struct unistim_subchannel *sub);
@@ -333,13 +330,16 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
 +static int find_language(const char*);
 +
 +struct unistim_menu_item options_menu[] =
-+{
+ {
+-	time_t cur_time;
+-	
+-	time(&cur_time);
 +    {"Change codec", STATE_SELECTCODEC, handle_select_codec},
 +    {"Contrast", STATE_SELECTCONTRAST, handle_select_contrast},
 +    {"Language", STATE_SELECTLANGUAGE, handle_select_language},
 +    {NULL, 0, NULL}
 +};
-+
+ 
 +struct unistim_languages options_languages[] =
 +{
 +    {"English", "en", ISO_8859_1, NULL},
@@ -437,21 +437,16 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
 +        return str;
 +}
 +
- static void display_last_error(const char *sz_msg)
- {
--	time_t cur_time;
-+	/*time_t cur_time;
- 	
--	time(&cur_time);
-+	time(&cur_time);*/
- 
++static void display_last_error(const char *sz_msg)
++{
  	/* Display the error message */
 -	ast_log(LOG_WARNING, "%s %s : (%u) %s\n", ctime(&cur_time), sz_msg, errno,
-+	ast_log(LOG_WARNING, "%s : (%u) %s\n", /*ctime(&cur_time),*/ sz_msg, errno,
- 			strerror(errno));
+-			strerror(errno));
++	ast_log(LOG_WARNING, "%s : (%u) %s\n", sz_msg, errno, strerror(errno));
  }
  
-@@ -951,10 +1106,44 @@ static void send_start_timer(struct unistimsession *pt
+ static unsigned int get_tick_count(void)
+@@ -955,10 +1096,44 @@ static void send_start_timer(struct unistimsession *pt
  	BUFFSEND;
  	if (unistimdebug)
  		ast_verb(0, "Sending start timer\n");
@@ -498,7 +493,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  static void send_stop_timer(struct unistimsession *pte)
  {
  	BUFFSEND;
-@@ -964,7 +1153,7 @@ static void send_stop_timer(struct unistimsession *pte
+@@ -968,7 +1143,7 @@ static void send_stop_timer(struct unistimsession *pte
  	send_client(SIZE_HEADER + sizeof(packet_send_stop_timer), buffsend, pte);
  }
  
@@ -507,7 +502,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  {
  	BUFFSEND;
  	if (unistimdebug)
-@@ -1022,9 +1211,9 @@ static void send_tone(struct unistimsession *pte, uint
+@@ -1026,9 +1201,9 @@ static void send_tone(struct unistimsession *pte, uint
  
  /* Positions for favorites
   |--------------------|
@@ -520,7 +515,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  */
  
  /* status (icons) : 00 = nothing, 2x/3x = see parser.h, 4x/5x = blink fast, 6x/7x = blink slow */
-@@ -1041,44 +1230,122 @@ send_favorite(unsigned char pos, unsigned char status,
+@@ -1045,44 +1220,122 @@ send_favorite(unsigned char pos, unsigned char status,
  	buffsend[10] = pos;
  	buffsend[24] = pos;
  	buffsend[25] = status;
@@ -657,7 +652,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			if (d->sp[i] == pte->device) {  /* It's us ? */
  				if (d->softkeyicon[i] != status) {      /* Avoid resending the same icon */
  					d->softkeyicon[i] = status;
-@@ -1091,30 +1358,40 @@ static void change_favorite_icon(struct unistimsession
+@@ -1095,30 +1348,40 @@ static void change_favorite_icon(struct unistimsession
  	}
  }
  
@@ -707,7 +702,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	struct unistimsession *cur, *prev = NULL;
  	ast_mutex_lock(&sessionlock);
  	cur = sessions;
-@@ -1128,12 +1405,11 @@ static void close_client(struct unistimsession *s)
+@@ -1132,12 +1395,11 @@ static void close_client(struct unistimsession *s)
  	if (cur) {				      /* Session found ? */
  		if (cur->device) {	      /* This session was registered ? */
  			s->state = STATE_CLEANING;
@@ -723,7 +718,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			if (sub) {
  				if (sub->owner) {       /* Call in progress ? */
  					if (unistimdebug)
-@@ -1143,7 +1419,7 @@ static void close_client(struct unistimsession *s)
+@@ -1147,7 +1409,7 @@ static void close_client(struct unistimsession *s)
  			} else
  				ast_log(LOG_WARNING, "Freeing a client with no subchannel !\n");
  			if (!ast_strlen_zero(s->device->extension_number))
@@ -732,7 +727,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			cur->device->session = NULL;
  		} else {
  			if (unistimdebug)
-@@ -1207,6 +1483,12 @@ send_text(unsigned char pos, unsigned char inverse, st
+@@ -1211,6 +1473,12 @@ send_text(unsigned char pos, unsigned char inverse, st
  {
  	int i;
  	BUFFSEND;
@@ -745,7 +740,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	if (unistimdebug)
  		ast_verb(0, "Sending text at pos %d, inverse flag %d\n", pos, inverse);
  	memcpy(buffsend + SIZE_HEADER, packet_send_text, sizeof(packet_send_text));
-@@ -1366,12 +1648,21 @@ static void send_texttitle(struct unistimsession *pte,
+@@ -1370,12 +1638,21 @@ static void send_texttitle(struct unistimsession *pte,
  
  }
  
@@ -767,7 +762,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	if (unistimdebug)
  		ast_verb(0, "Sending Time & Date\n");
  	memcpy(buffsend + SIZE_HEADER, packet_send_date_time, sizeof(packet_send_date_time));
-@@ -1444,6 +1735,43 @@ static void send_cursor_pos(struct unistimsession *pte
+@@ -1448,6 +1725,43 @@ static void send_cursor_pos(struct unistimsession *pte
  	return;
  }
  
@@ -811,7 +806,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  static void rcv_resume_connection_with_server(struct unistimsession *pte)
  {
  	BUFFSEND;
-@@ -1484,37 +1812,91 @@ static int unistim_register(struct unistimsession *s)
+@@ -1488,37 +1802,91 @@ static int unistim_register(struct unistimsession *s)
  	return 1;
  }
  
@@ -922,7 +917,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  static void rcv_mac_addr(struct unistimsession *pte, const unsigned char *buf)
  {
  	BUFFSEND;
-@@ -1548,6 +1930,7 @@ static void rcv_mac_addr(struct unistimsession *pte, c
+@@ -1552,6 +1920,7 @@ static void rcv_mac_addr(struct unistimsession *pte, c
  				d = devices;
  				while (d) {
  					if (!strcasecmp(d->name, "template")) {
@@ -930,7 +925,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  						/* Found, cloning this entry */
  						if (!(newd = ast_malloc(sizeof(*newd)))) {
  							ast_mutex_unlock(&devicelock);
-@@ -1561,8 +1944,9 @@ static void rcv_mac_addr(struct unistimsession *pte, c
+@@ -1565,8 +1934,9 @@ static void rcv_mac_addr(struct unistimsession *pte, c
  							return;
  						}
  
@@ -942,7 +937,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  							ast_free(newd);
  							ast_free(newl);
  							ast_mutex_unlock(&devicelock);
-@@ -1573,16 +1957,16 @@ static void rcv_mac_addr(struct unistimsession *pte, c
+@@ -1577,16 +1947,16 @@ static void rcv_mac_addr(struct unistimsession *pte, c
  						ast_copy_string(newd->name, addrmac, sizeof(newd->name));
  						if (newd->extension == EXTENSION_NONE)
  							newd->extension = EXTENSION_ASK;
@@ -963,7 +958,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  						snprintf(newl->fullname, sizeof(newl->fullname), "USTM/%s@%s",
  								 newl->name, newd->name);
  						/* Go to the end of the linked chain */
-@@ -1626,16 +2010,16 @@ static void rcv_mac_addr(struct unistimsession *pte, c
+@@ -1630,16 +2000,16 @@ static void rcv_mac_addr(struct unistimsession *pte, c
  				pte->state = STATE_EXTENSION;
  			else {
  				/* Yes, because of a phone reboot. We don't ask again for the TN */
@@ -983,7 +978,18 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  				pte->state = STATE_EXTENSION;
  			else
  				pte->state = STATE_MAINPAGE;
-@@ -1729,11 +2113,11 @@ static int write_history(struct unistimsession *pte, c
+@@ -1724,20 +2094,18 @@ static int write_history(struct unistimsession *pte, c
+ 
+ 	snprintf(tmp, sizeof(tmp), "%s/%s", ast_config_AST_LOG_DIR, USTM_LOG_DIR);
+ 	if (ast_mkdir(tmp, 0770)) {
+-		if (errno != EEXIST) {
+-			display_last_error("Unable to create directory for history");
+-			return -1;
+-		}
++                ast_log(LOG_WARNING, "Unable to create directory for history");
++                return -1;
+ 	}
+ 
  	ast_localtime(&now, &atm, NULL);
  	if (ismissed) {
  		if (way == 'i')
@@ -998,7 +1004,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	snprintf(line1, sizeof(line1), "%04d/%02d/%02d %02d:%02d:%02d %s",
  			 atm.tm_year + 1900, atm.tm_mon + 1, atm.tm_mday, atm.tm_hour,
  			 atm.tm_min, atm.tm_sec, tmp2);
-@@ -1851,41 +2235,14 @@ static int write_history(struct unistimsession *pte, c
+@@ -1855,41 +2223,14 @@ static int write_history(struct unistimsession *pte, c
  	return 0;
  }
  
@@ -1046,13 +1052,19 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  }
  
  static int attempt_transfer(struct unistim_subchannel *p1, struct unistim_subchannel *p2)
-@@ -1919,21 +2276,11 @@ static int attempt_transfer(struct unistim_subchannel 
- 		   ast_quiet_chan(peerb);
- 		   ast_quiet_chan(peerc);
- 		   ast_quiet_chan(peerd); */
+@@ -1919,25 +2260,13 @@ static int attempt_transfer(struct unistim_subchannel 
+ 	}
+ 
+ 	if (peera && peerb && peerc && (peerb != peerc)) {
+-		/*ast_quiet_chan(peera);
+-		   ast_quiet_chan(peerb);
+-		   ast_quiet_chan(peerc);
+-		   ast_quiet_chan(peerd); */
 +		unistim_quiet_chan(peera);
 +		unistim_quiet_chan(peerb);
 +		unistim_quiet_chan(peerc);
++                /* if (peerd)
++                        unistim_quiet_chan(peerd); */
  
 -		if (peera->cdr && peerb->cdr) {
 -			peerb->cdr = ast_cdr_append(peerb->cdr, peera->cdr);
@@ -1068,11 +1080,11 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
 -		}
 -		peerc->cdr = NULL;
 -
-+		ast_debug(4, "UNISTIM transfer: trying to masquerade %s into %s\n", peerc->name, peerb->name);
++                ast_debug(4, "UNISTIM transfer: trying to masquerade %s into %s\n", peerc->name, peerb->name);
  		if (ast_channel_masquerade(peerb, peerc)) {
  			ast_log(LOG_WARNING, "Failed to masquerade %s into %s\n", peerb->name,
  					peerc->name);
-@@ -1971,32 +2318,118 @@ void change_callerid(struct unistimsession *pte, int t
+@@ -1975,32 +2304,122 @@ void change_callerid(struct unistimsession *pte, int t
  	memcpy(data, callerid, size);
  }
  
@@ -1192,18 +1204,23 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
 +				ast_queue_hangup_with_cause(sub_transf->owner, AST_CAUSE_NORMAL_CLEARING);
  			else
  				ast_log(LOG_WARNING, "threeway sub without owner\n");
- 		} else
+-		} else
++		} else {
  			ast_verb(0, "USTM(%s@%s-%d) channel already destroyed\n", sub->parent->name,
 -						sub->parent->parent->name, sub->subtype);
 -	}
 -	change_callerid(pte, 0, pte->device->redial_number);
 +						pte->device->name, sub->softkey);
++                    /* XXX Crash because of outputing strings in log? probably sub->parent->name going wrong
++                     * when buttons very fast pressed
++                     */
++                }
 +	}        
 +        change_callerid(pte, 0, pte->device->redial_number);
  	change_callerid(pte, 1, "");
  	write_history(pte, 'o', pte->device->missed_call);
  	pte->device->missed_call = 0;
-@@ -2004,9 +2437,10 @@ static void close_call(struct unistimsession *pte)
+@@ -2008,9 +2427,10 @@ static void close_call(struct unistimsession *pte)
  	return;
  }
  
@@ -1215,7 +1232,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	return;
  }
  
-@@ -2018,7 +2452,7 @@ static void *unistim_ss(void *data)
+@@ -2022,7 +2442,7 @@ static void *unistim_ss(void *data)
  	struct unistimsession *s = l->parent->session;
  	int res;
  
@@ -1224,7 +1241,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	ast_copy_string(chan->exten, s->device->phone_number, sizeof(chan->exten));
  	ast_copy_string(s->device->redial_number, s->device->phone_number,
  					sizeof(s->device->redial_number));
-@@ -2026,85 +2460,50 @@ static void *unistim_ss(void *data)
+@@ -2030,85 +2450,50 @@ static void *unistim_ss(void *data)
  	res = ast_pbx_run(chan);
  	if (res) {
  		ast_log(LOG_WARNING, "PBX exited non-zero\n");
@@ -1342,7 +1359,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	/* Setting up RTP of the phone */
  	if (public_ip.sin_family == 0)  /* NAT IP override ?   */
  		memcpy(&public, &us, sizeof(public));   /* No defined, using IP from recvmsg  */
-@@ -2117,35 +2516,35 @@ static void start_rtp(struct unistim_subchannel *sub)
+@@ -2121,35 +2506,35 @@ static void start_rtp(struct unistim_subchannel *sub)
  		ast_verb(0, "Starting phone RTP stack. Our public IP is %s\n",
  					ast_inet_ntoa(public.sin_addr));
  	}
@@ -1388,7 +1405,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			memcpy(buffsend + 28, &public.sin_addr, sizeof(public.sin_addr));
  			buffsend[20] = (htons(sin.sin_port) & 0xff00) >> 8;
  			buffsend[21] = (htons(sin.sin_port) & 0x00ff);
-@@ -2164,18 +2563,17 @@ static void start_rtp(struct unistim_subchannel *sub)
+@@ -2168,18 +2553,17 @@ static void start_rtp(struct unistim_subchannel *sub)
  			buffsend[11] = codec;
  		}
  		buffsend[12] = codec;
@@ -1410,7 +1427,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			memcpy(buffsend + 28, &public.sin_addr, sizeof(public.sin_addr));
  			buffsend[20] = (htons(sin.sin_port) & 0xff00) >> 8;
  			buffsend[21] = (htons(sin.sin_port) & 0x00ff);
-@@ -2194,8 +2592,7 @@ static void start_rtp(struct unistim_subchannel *sub)
+@@ -2198,8 +2582,7 @@ static void start_rtp(struct unistim_subchannel *sub)
  			buffsend[12] = codec;
  		}
  		buffsend[11] = codec;
@@ -1420,7 +1437,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	} else {
  		uint16_t rtcpsin_port = htons(us.sin_port) + 1; /* RTCP port is RTP + 1 */
  
-@@ -2229,73 +2626,152 @@ static void start_rtp(struct unistim_subchannel *sub)
+@@ -2233,73 +2616,152 @@ static void start_rtp(struct unistim_subchannel *sub)
  		buffsend[46] = (htons(sin.sin_port) & 0x00ff);
  		buffsend[47] = (rtcpsin_port & 0xff00) >> 8;
  		buffsend[48] = (rtcpsin_port & 0x00ff);
@@ -1455,7 +1472,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
 -			ast_verb(0, "Country code != 2 char, using US tone\n");
 -		send_tone(pte, 350, 440);
 +	if (!sub->parent) {
-+		ast_log(LOG_WARNING, "start_rtp with a null line !\n");
++		ast_log(LOG_WARNING, "start_rtp with a null line!\n");
  		return;
  	}
 -	i = 0;
@@ -1469,15 +1486,15 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
 -		}
 -		i++;
 +	if (!sub->parent->parent) {
-+		ast_log(LOG_WARNING, "start_rtp with a null device !\n");
++		ast_log(LOG_WARNING, "start_rtp with a null device!\n");
 +		return;
  	}
 +	if (!sub->parent->parent->session) {
-+		ast_log(LOG_WARNING, "start_rtp with a null session !\n");
++		ast_log(LOG_WARNING, "start_rtp with a null session!\n");
 +		return;
 +	}
 +        if (!sub->owner) {
-+		ast_log(LOG_WARNING, "start_rtp with a null asterisk channel !\n");
++		ast_log(LOG_WARNING, "start_rtp with a null asterisk channel!\n");
 +		return;
 +	}
 +	sout = sub->parent->parent->session->sout;
@@ -1621,7 +1638,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			send_led_update(pte, 0);
  			return;
  		}
-@@ -2305,107 +2781,217 @@ static void handle_dial_page(struct unistimsession *pt
+@@ -2309,191 +2771,268 @@ static void handle_dial_page(struct unistimsession *pt
  			send_select_output(pte, OUTPUT_SPEAKER, pte->device->volume, MUTE_OFF);
  		else
  			send_select_output(pte, pte->device->output, pte->device->volume, MUTE_OFF);
@@ -1760,9 +1777,15 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  {
  	struct ast_channel *c;
  	struct unistim_subchannel *sub;
++        int softkey;
  	pthread_t t;
++
  	s->state = STATE_CALL;
 -	sub = s->device->lines->subs[SUB_REAL];
+-	if (!sub) {
+-		ast_log(LOG_NOTICE, "No available lines on: %s\n", s->device->name);
+-		return;
+-	}
 +        s->sout.sin_family = AF_INET;
 +
 +        sub = get_sub(s->device, SUB_THREEWAY);
@@ -1819,28 +1842,20 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
 +                return;
 +        }
 +
++        softkey = get_avail_softkey(s, NULL);
++        if (softkey == -1) {
++            ast_log(LOG_WARNING, "Have no avail softkey for calling\n");
++            return;
++        }
 +	sub = get_sub(s->device, SUB_REAL);
- 	if (!sub) {
--		ast_log(LOG_NOTICE, "No available lines on: %s\n", s->device->name);
--		return;
--	}
-+                sub = alloc_sub(s->device, SUB_REAL);
++        if (sub) { /* have already call assigned */
++                sub_hold(s, sub); /* Need to put on hold */
 +        }
-+        if (sub->owner) { /* have already call assigned */
-+                /* Need to put on hold */
-+                sub_hold(s, sub);
-+                sub = alloc_sub(s->device, SUB_REAL);
-+        }
-+        if (!sub->parent) {
-+                int i = get_avail_softkey(s, NULL);
-+                if (i == -1) {
-+                    ast_log(LOG_WARNING, "Have no avail softkey for calling\n");
-+                    return;
-+                }
-+                sub->parent = s->device->sline[i];
-+                s->device->ssub[i] = sub;
-+                sub->softkey = i;
-+        }
++        sub = alloc_sub(s->device, SUB_REAL);
++        sub->parent = s->device->sline[softkey];
++        s->device->ssub[softkey] = sub;
++        sub->softkey = softkey;
++        
 +        if (unistimdebug)
 +                ast_verb(0, "Using softkey %d, line %p\n", sub->softkey, sub->parent);
 +        send_favorite_short(sub->softkey, FAV_ICON_OFFHOOK_BLACK, s);
@@ -1891,7 +1906,10 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  
  			/* start switch */
  			if (ast_pthread_create(&t, NULL, unistim_ss, c)) {
-@@ -2415,81 +3001,51 @@ static void HandleCallOutgoing(struct unistimsession *
+-				display_last_error("Unable to create switch thread");
++				ast_log(LOG_WARNING, "Unable to create switch thread\n");
+ 				ast_queue_hangup_with_cause(c, AST_CAUSE_SWITCH_CONGESTION);
+ 			}
  		} else
  			ast_log(LOG_WARNING, "Unable to create channel for %s@%s\n",
  					sub->parent->name, s->device->name);
@@ -2007,7 +2025,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  		ast_verb(0, "Handle Call Incoming for %s@%s\n", sub->parent->name,
  					s->device->name);
  	start_rtp(sub);
-@@ -2497,16 +3053,16 @@ static void HandleCallIncoming(struct unistimsession *
+@@ -2501,16 +3040,16 @@ static void HandleCallIncoming(struct unistimsession *
  		ast_log(LOG_WARNING, "Unable to create channel for %s@%s\n", sub->parent->name,
  				s->device->name);
  	ast_queue_control(sub->owner, AST_CONTROL_ANSWER);
@@ -2028,7 +2046,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	write_history(s, 'i', 0);
  	return;
  }
-@@ -2515,8 +3071,10 @@ static int unistim_do_senddigit(struct unistimsession 
+@@ -2519,8 +3058,10 @@ static int unistim_do_senddigit(struct unistimsession 
  {
  	struct ast_frame f = { .frametype = AST_FRAME_DTMF, .subclass.integer = digit, .src = "unistim" };
  	struct unistim_subchannel *sub;
@@ -2041,7 +2059,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  		ast_log(LOG_WARNING, "Unable to find subchannel in dtmf senddigit\n");
  		return -1;
  	}
-@@ -2526,65 +3084,78 @@ static int unistim_do_senddigit(struct unistimsession 
+@@ -2530,65 +3071,80 @@ static int unistim_do_senddigit(struct unistimsession 
  
  	if (unistimdebug)
  		ast_verb(0, "Send Digit %c\n", digit);
@@ -2127,14 +2145,16 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
 +        /* Make an action on selected favorite key */
 +        if (!pte->device->ssub[keynum]) { /* Key have no assigned call */
 +                send_favorite_selected(FAV_LINE_ICON, pte);
-+                sub_hold(pte, sub);
 +                if (is_key_line(pte->device, keynum)) {
 +                        if (unistimdebug)
 +                                ast_verb(0, "Handle line w/o sub - dialpage\n");
 +                        pte->device->selected = keynum;
++                        sub_hold(pte, sub); /* Put active call on hold */
 +                        send_stop_timer(pte);
 +                        handle_dial_page(pte);
 +                } else if (is_key_favorite(pte->device, keynum)) {
++                        /* Put active call on hold in handle_call_outgoing function, after preparation and
++                         checking if lines available for calling */
 +                        if (unistimdebug)
 +                                ast_verb(0, "Handle favorite w/o sub - dialing\n");
 +                        if ((pte->device->output == OUTPUT_HANDSET) &&
@@ -2172,7 +2192,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	if ((keycode >= KEY_0) && (keycode <= KEY_SHARP)) {
  		if (keycode == KEY_SHARP)
  			keycode = '#';
-@@ -2601,9 +3172,17 @@ static void key_call(struct unistimsession *pte, char 
+@@ -2605,9 +3161,17 @@ static void key_call(struct unistimsession *pte, char 
  		close_call(pte);
  		break;
  	case KEY_FUNC2:
@@ -2192,7 +2212,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  		if (pte->device->output == OUTPUT_HEADPHONE)
  			send_select_output(pte, OUTPUT_HANDSET, pte->device->volume, MUTE_OFF);
  		else
-@@ -2617,82 +3196,71 @@ static void key_call(struct unistimsession *pte, char 
+@@ -2621,82 +3185,71 @@ static void key_call(struct unistimsession *pte, char 
  							 MUTE_OFF);
  		break;
  	case KEY_MUTE:
@@ -2315,7 +2335,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	if (keycode == KEY_FUNC3) {
  		if (pte->device->size_phone_number <= 1)
  			keycode = KEY_FUNC4;
-@@ -2701,50 +3269,32 @@ static void key_dial_page(struct unistimsession *pte, 
+@@ -2705,50 +3258,32 @@ static void key_dial_page(struct unistimsession *pte, 
  			keycode = pte->device->phone_number[pte->device->size_phone_number] + 0x10;
  		}
  	}
@@ -2377,7 +2397,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	}
  
  	if (pte->device->call_forward[0] == -1) {
-@@ -2754,7 +3304,9 @@ static void key_dial_page(struct unistimsession *pte, 
+@@ -2758,7 +3293,9 @@ static void key_dial_page(struct unistimsession *pte, 
  			show_main_page(pte);
  		} else if ((keycode == KEY_FUNC2) || (keycode == KEY_HANGUP)) {
  			pte->device->call_forward[0] = '\0';
@@ -2388,7 +2408,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  		}
  		return;
  	}
-@@ -2765,40 +3317,43 @@ static void key_dial_page(struct unistimsession *pte, 
+@@ -2769,40 +3306,43 @@ static void key_dial_page(struct unistimsession *pte, 
  		ast_copy_string(pte->device->phone_number, pte->device->redial_number,
  						sizeof(pte->device->phone_number));
  	case KEY_FUNC1:
@@ -2453,7 +2473,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  		break;
  	case KEY_LOUDSPK:
  		if (pte->device->output == OUTPUT_SPEAKER) {
-@@ -2823,10 +3378,50 @@ static void key_dial_page(struct unistimsession *pte, 
+@@ -2827,16 +3367,56 @@ static void key_dial_page(struct unistimsession *pte, 
  	return;
  }
  
@@ -2505,7 +2525,15 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  {
  	char buf[30], buf2[5];
  
-@@ -2842,7 +3437,7 @@ static void HandleSelectCodec(struct unistimsession *p
+ 	pte->state = STATE_SELECTCODEC;
+-	strcpy(buf, "Using codec ");
+-	sprintf(buf2, "%d", pte->device->codec_number);
++	strcpy(buf, ustmtext("Using codec", pte));
++	sprintf(buf2, " %d", pte->device->codec_number);
+ 	strcat(buf, buf2);
+ 	strcat(buf, " (G711u=0,");
+ 
+@@ -2846,7 +3426,7 @@ static void HandleSelectCodec(struct unistimsession *p
  	send_blink_cursor(pte);
  	send_cursor_pos(pte, TEXT_LINE2 + SELECTCODEC_START_ENTRY_POS);
  	pte->size_buff_entry = 0;
@@ -2514,7 +2542,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	return;
  }
  
-@@ -2900,19 +3495,110 @@ static void key_select_codec(struct unistimsession *pt
+@@ -2904,19 +3484,110 @@ static void key_select_codec(struct unistimsession *pt
  	return;
  }
  
@@ -2629,7 +2657,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	pte->size_buff_entry = 0;
  	return;
  }
-@@ -2984,8 +3670,8 @@ static void key_select_extension(struct unistimsession
+@@ -2988,8 +3659,8 @@ static void key_select_extension(struct unistimsession
  				d = d->next;
  			}
  			ast_mutex_unlock(&devicelock);
@@ -2640,7 +2668,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			send_cursor_pos(pte,
  						  (unsigned char) (TEXT_LINE2 + SELECTEXTENSION_START_ENTRY_POS +
  										   pte->size_buff_entry));
-@@ -2993,9 +3679,9 @@ static void key_select_extension(struct unistimsession
+@@ -2997,9 +3668,9 @@ static void key_select_extension(struct unistimsession
  		} else {
  			ast_copy_string(pte->device->extension_number, pte->buff_entry,
  							pte->size_buff_entry + 1);
@@ -2653,7 +2681,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  				send_cursor_pos(pte,
  							  (unsigned char) (TEXT_LINE2 +
  											   SELECTEXTENSION_START_ENTRY_POS +
-@@ -3015,12 +3701,13 @@ static void key_select_extension(struct unistimsession
+@@ -3019,12 +3690,13 @@ static void key_select_extension(struct unistimsession
  	return;
  }
  
@@ -2669,7 +2697,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			if (i == pos) {
  				pos++;
  				continue;
-@@ -3044,22 +3731,37 @@ static void show_entry_history(struct unistimsession *
+@@ -3048,22 +3720,37 @@ static void show_entry_history(struct unistimsession *
  		return;
  	}
  	line[sizeof(line) - 1] = '\0';
@@ -2712,7 +2740,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	fclose(*f);
  
  	snprintf(line, sizeof(line), "Call %03d/%03d", pte->buff_entry[2],
-@@ -3069,20 +3771,20 @@ static void show_entry_history(struct unistimsession *
+@@ -3073,20 +3760,20 @@ static void show_entry_history(struct unistimsession *
  	if (pte->buff_entry[2] == 1)
  		strcpy(func1, "       ");
  	else
@@ -2739,7 +2767,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  {
  	char tmp[AST_CONFIG_MAX_PATH];
  	char count;
-@@ -3117,12 +3819,13 @@ static void show_history(struct unistimsession *pte, c
+@@ -3121,12 +3808,13 @@ static void show_history(struct unistimsession *pte, c
  		return;
  	if (!pte->device->callhistory)
  		return;
@@ -2754,7 +2782,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	show_entry_history(pte, &f);
  	pte->state = STATE_HISTORY;
  }
-@@ -3130,60 +3833,73 @@ static void show_history(struct unistimsession *pte, c
+@@ -3134,60 +3822,73 @@ static void show_history(struct unistimsession *pte, c
  static void show_main_page(struct unistimsession *pte)
  {
  	char tmpbuf[TEXT_LENGTH_MAX + 1];
@@ -2853,7 +2881,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  		pte->device->missed_call = 0;
  	}
  	if ((keycode >= KEY_0) && (keycode <= KEY_SHARP)) {
-@@ -3193,6 +3909,7 @@ static void key_main_page(struct unistimsession *pte, 
+@@ -3197,6 +3898,7 @@ static void key_main_page(struct unistimsession *pte, 
  	}
  	switch (keycode) {
  	case KEY_FUNC1:
@@ -2861,7 +2889,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  		handle_dial_page(pte);
  		break;
  	case KEY_FUNC2:
-@@ -3206,7 +3923,7 @@ static void key_main_page(struct unistimsession *pte, 
+@@ -3210,7 +3912,7 @@ static void key_main_page(struct unistimsession *pte, 
  
  		ast_copy_string(pte->device->phone_number, pte->device->redial_number,
  						sizeof(pte->device->phone_number));
@@ -2870,7 +2898,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  		break;
  	case KEY_FUNC3:
  		if (!ast_strlen_zero(pte->device->call_forward)) {
-@@ -3214,7 +3931,7 @@ static void key_main_page(struct unistimsession *pte, 
+@@ -3218,7 +3920,7 @@ static void key_main_page(struct unistimsession *pte, 
  			memmove(pte->device->call_forward + 1, pte->device->call_forward,
  					sizeof(pte->device->call_forward));
  			pte->device->call_forward[0] = '\0';
@@ -2879,7 +2907,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			pte->device->output = OUTPUT_HANDSET;   /* Seems to be reseted somewhere */
  			show_main_page(pte);
  			break;
-@@ -3224,9 +3941,9 @@ static void key_main_page(struct unistimsession *pte, 
+@@ -3228,9 +3930,9 @@ static void key_main_page(struct unistimsession *pte, 
  		break;
  	case KEY_FUNC4:
  		if (pte->device->extension == EXTENSION_ASK) {
@@ -2891,7 +2919,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  		} else if (pte->device->extension == EXTENSION_TN) {
  			ast_mutex_lock(&devicelock);
  			strcpy(pte->device->id, pte->device->extension_number);
-@@ -3235,26 +3952,25 @@ static void key_main_page(struct unistimsession *pte, 
+@@ -3239,26 +3941,25 @@ static void key_main_page(struct unistimsession *pte, 
  			pte->device->session = NULL;
  			pte->device = NULL;
  			ast_mutex_unlock(&devicelock);
@@ -2929,7 +2957,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  		break;
  	case KEY_LOUDSPK:
  		send_select_output(pte, OUTPUT_SPEAKER, pte->device->volume, MUTE_OFF);
-@@ -3279,44 +3995,41 @@ static void key_history(struct unistimsession *pte, ch
+@@ -3283,44 +3984,41 @@ static void key_history(struct unistimsession *pte, ch
  	FILE *f;
  	char count;
  	long offset;
@@ -2995,7 +3023,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			break;
  		ast_copy_string(pte->device->redial_number, pte->device->lst_cid,
  						sizeof(pte->device->redial_number));
-@@ -3339,6 +4052,20 @@ static void key_history(struct unistimsession *pte, ch
+@@ -3343,6 +4041,20 @@ static void key_history(struct unistimsession *pte, ch
  			show_history(pte, 'i');
  		break;
  	}
@@ -3016,7 +3044,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	return;
  }
  
-@@ -3349,7 +4076,7 @@ static void init_phone_step2(struct unistimsession *pt
+@@ -3353,7 +4065,7 @@ static void init_phone_step2(struct unistimsession *pt
  		ast_verb(0, "Sending S4\n");
  	memcpy(buffsend + SIZE_HEADER, packet_send_s4, sizeof(packet_send_s4));
  	send_client(SIZE_HEADER + sizeof(packet_send_s4), buffsend, pte);
@@ -3025,7 +3053,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	send_date_time3(pte);
  	if (unistimdebug)
  		ast_verb(0, "Sending S7\n");
-@@ -3374,9 +4101,13 @@ static void init_phone_step2(struct unistimsession *pt
+@@ -3378,9 +4090,13 @@ static void init_phone_step2(struct unistimsession *pt
  	send_client(SIZE_HEADER + sizeof(packet_send_S7), buffsend, pte);
  	send_led_update(pte, 0);
  	send_ping(pte);
@@ -3041,7 +3069,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			return;
  		} else {
  			int i;
-@@ -3384,8 +4115,8 @@ static void init_phone_step2(struct unistimsession *pt
+@@ -3388,8 +4104,8 @@ static void init_phone_step2(struct unistimsession *pt
  
  			for (i = 1; i < 6; i++)
  				send_favorite(i, 0, pte, "");
@@ -3052,7 +3080,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			strcpy(tmp, "MAC = ");
  			strcat(tmp, pte->macaddr);
  			send_text(TEXT_LINE2, TEXT_NORMAL, pte, tmp);
-@@ -3439,8 +4170,8 @@ static void process_request(int size, unsigned char *b
+@@ -3443,8 +4159,8 @@ static void process_request(int size, unsigned char *b
  		char keycode = buf[13];
  
  		if (unistimdebug)
@@ -3063,7 +3091,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  
  		switch (pte->state) {
  		case STATE_INIT:
-@@ -3466,10 +4197,19 @@ static void process_request(int size, unsigned char *b
+@@ -3470,10 +4186,19 @@ static void process_request(int size, unsigned char *b
  		case STATE_EXTENSION:
  			key_select_extension(pte, keycode);
  			break;
@@ -3084,7 +3112,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			key_history(pte, keycode);
  			break;
  		default:
-@@ -3487,13 +4227,15 @@ static void process_request(int size, unsigned char *b
+@@ -3491,13 +4216,15 @@ static void process_request(int size, unsigned char *b
  			send_select_output(pte, OUTPUT_HEADPHONE, pte->device->volume, MUTE_OFF);
  		else
  			send_select_output(pte, OUTPUT_HANDSET, pte->device->volume, MUTE_OFF);
@@ -3103,7 +3131,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			send_select_output(pte, OUTPUT_HANDSET, pte->device->volume, MUTE_OFF);
  			handle_dial_page(pte);
  		}
-@@ -3507,7 +4249,7 @@ static void process_request(int size, unsigned char *b
+@@ -3511,7 +4238,7 @@ static void process_request(int size, unsigned char *b
  		pte->device->receiver_state = STATE_ONHOOK;
  		if (pte->state == STATE_CALL)
  			close_call(pte);
@@ -3112,7 +3140,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			close_call(pte);
  		else if (pte->state == STATE_EXTENSION)
  			return;
-@@ -3705,13 +4447,52 @@ static struct unistimsession *channel_to_session(struc
+@@ -3709,13 +4436,52 @@ static struct unistimsession *channel_to_session(struc
  	return sub->parent->parent->session;
  }
  
@@ -3167,7 +3195,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  
  	session = channel_to_session(ast);
  	if (!session) {
-@@ -3720,6 +4501,7 @@ static int unistim_call(struct ast_channel *ast, char 
+@@ -3724,6 +4490,7 @@ static int unistim_call(struct ast_channel *ast, char 
  	}
  
  	sub = ast->tech_pvt;
@@ -3175,7 +3203,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	if ((ast->_state != AST_STATE_DOWN) && (ast->_state != AST_STATE_RESERVED)) {
  		ast_log(LOG_WARNING, "unistim_call called on %s, neither down nor reserved\n",
  				ast->name);
-@@ -3730,58 +4512,49 @@ static int unistim_call(struct ast_channel *ast, char 
+@@ -3734,58 +4501,49 @@ static int unistim_call(struct ast_channel *ast, char 
  		ast_verb(3, "unistim_call(%s)\n", ast->name);
  
  	session->state = STATE_RINGING;
@@ -3269,7 +3297,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  
  	s = channel_to_session(ast);
  	sub = ast->tech_pvt;
-@@ -3801,32 +4574,43 @@ static int unistim_hangup(struct ast_channel *ast)
+@@ -3805,32 +4563,43 @@ static int unistim_hangup(struct ast_channel *ast)
  		return 0;
  	}
  	l = sub->parent;
@@ -3326,7 +3354,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  		return 0;
  	}
  	ast_mutex_lock(&sub->lock);
-@@ -3834,34 +4618,26 @@ static int unistim_hangup(struct ast_channel *ast)
+@@ -3838,34 +4607,26 @@ static int unistim_hangup(struct ast_channel *ast)
  	ast->tech_pvt = NULL;
  	sub->alreadygone = 0;
  	ast_mutex_unlock(&sub->lock);
@@ -3380,7 +3408,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	if (sub->rtp) {
  		if (unistimdebug)
  			ast_verb(0, "Destroying RTP session\n");
-@@ -3869,16 +4645,27 @@ static int unistim_hangup(struct ast_channel *ast)
+@@ -3873,16 +4634,27 @@ static int unistim_hangup(struct ast_channel *ast)
  		sub->rtp = NULL;
  	} else if (unistimdebug)
  		ast_verb(0, "No RTP session to destroy\n");
@@ -3418,7 +3446,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	return 0;
  }
  
-@@ -3888,6 +4675,7 @@ static int unistim_answer(struct ast_channel *ast)
+@@ -3892,6 +4664,7 @@ static int unistim_answer(struct ast_channel *ast)
  	int res = 0;
  	struct unistim_subchannel *sub;
  	struct unistim_line *l;
@@ -3426,7 +3454,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	struct unistimsession *s;
  
  	s = channel_to_session(ast);
-@@ -3897,18 +4685,19 @@ static int unistim_answer(struct ast_channel *ast)
+@@ -3901,18 +4674,19 @@ static int unistim_answer(struct ast_channel *ast)
  	}
  	sub = ast->tech_pvt;
  	l = sub->parent;
@@ -3453,7 +3481,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	if (ast->_state != AST_STATE_UP)
  		ast_setstate(ast, AST_STATE_UP);
  	return res;
-@@ -4046,14 +4835,16 @@ static int unistim_write(struct ast_channel *ast, stru
+@@ -4050,14 +4824,16 @@ static int unistim_write(struct ast_channel *ast, stru
  			return 0;
  		}
  	} else {
@@ -3473,7 +3501,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			return -1;
  		}
  	}
-@@ -4122,7 +4913,13 @@ static char *control2str(int ind)
+@@ -4126,7 +4902,13 @@ static char *control2str(int ind)
  		return "Key Radio";
  	case AST_CONTROL_RADIO_UNKEY:
  		return "Un-Key Radio";
@@ -3488,7 +3516,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  		return "Stop tone";
  	}
  	return "UNKNOWN";
-@@ -4149,8 +4946,8 @@ static int unistim_indicate(struct ast_channel *ast, i
+@@ -4153,8 +4935,8 @@ static int unistim_indicate(struct ast_channel *ast, i
  	struct unistimsession *s;
  
  	if (unistimdebug) {
@@ -3499,7 +3527,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	}
  
  	s = channel_to_session(ast);
-@@ -4163,7 +4960,7 @@ static int unistim_indicate(struct ast_channel *ast, i
+@@ -4167,7 +4949,7 @@ static int unistim_indicate(struct ast_channel *ast, i
  	switch (ind) {
  	case AST_CONTROL_RINGING:
  		if (ast->_state != AST_STATE_UP) {
@@ -3508,7 +3536,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			in_band_indication(ast, l->parent->tz, "ring");
  			s->device->missed_call = -1;
  			break;
-@@ -4172,7 +4969,7 @@ static int unistim_indicate(struct ast_channel *ast, i
+@@ -4176,7 +4958,7 @@ static int unistim_indicate(struct ast_channel *ast, i
  	case AST_CONTROL_BUSY:
  		if (ast->_state != AST_STATE_UP) {
  			sub->alreadygone = 1;
@@ -3517,7 +3545,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			in_band_indication(ast, l->parent->tz, "busy");
  			s->device->missed_call = -1;
  			break;
-@@ -4181,7 +4978,7 @@ static int unistim_indicate(struct ast_channel *ast, i
+@@ -4185,7 +4967,7 @@ static int unistim_indicate(struct ast_channel *ast, i
  	case AST_CONTROL_CONGESTION:
  		if (ast->_state != AST_STATE_UP) {
  			sub->alreadygone = 1;
@@ -3526,7 +3554,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			in_band_indication(ast, l->parent->tz, "congestion");
  			s->device->missed_call = -1;
  			break;
-@@ -4195,13 +4992,23 @@ static int unistim_indicate(struct ast_channel *ast, i
+@@ -4199,13 +4981,23 @@ static int unistim_indicate(struct ast_channel *ast, i
  		break;
  	case AST_CONTROL_PROGRESS:
  	case AST_CONTROL_SRCUPDATE:
@@ -3552,7 +3580,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	default:
  		ast_log(LOG_WARNING, "Don't know how to indicate condition %d\n", ind);
  		return -1;
-@@ -4214,6 +5021,7 @@ static struct unistim_subchannel *find_subchannel_by_n
+@@ -4218,6 +5010,7 @@ static struct unistim_subchannel *find_subchannel_by_n
  {
  	struct unistim_line *l;
  	struct unistim_device *d;
@@ -3560,7 +3588,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	char line[256];
  	char *at;
  	char *device;
-@@ -4237,12 +5045,22 @@ static struct unistim_subchannel *find_subchannel_by_n
+@@ -4241,12 +5034,22 @@ static struct unistim_subchannel *find_subchannel_by_n
  			if (unistimdebug)
  				ast_verb(0, "Found device: %s\n", d->name);
  			/* Found the device */
@@ -3587,7 +3615,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  					if (at) {       /* Other options ? */
  						at++;   /* Skip slash */
  						if (*at == 'r') {       /* distinctive ring */
-@@ -4258,16 +5076,20 @@ static struct unistim_subchannel *find_subchannel_by_n
+@@ -4262,16 +5065,20 @@ static struct unistim_subchannel *find_subchannel_by_n
  								if (unistimdebug)
  									ast_verb(0, "Distinctive ring : style #%d volume %d\n",
  										 ring_style, ring_volume);
@@ -3613,16 +3641,19 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  		}
  		d = d->next;
  	}
-@@ -4293,7 +5115,7 @@ static int unistim_senddigit_end(struct ast_channel *a
+@@ -4297,9 +5104,9 @@ static int unistim_senddigit_end(struct ast_channel *a
  	struct ast_frame f = { 0, };
  	struct unistim_subchannel *sub;
  
 -	sub = pte->device->lines->subs[SUB_REAL];
 +	sub = get_sub(pte->device, SUB_REAL);
  
- 	if (!sub->owner || sub->alreadygone) {
+-	if (!sub->owner || sub->alreadygone) {
++	if (!sub || !sub->owner || sub->alreadygone) {
  		ast_log(LOG_WARNING, "Unable to find subchannel in dtmf senddigit_end\n");
-@@ -4428,7 +5250,7 @@ static int unistim_sendtext(struct ast_channel *ast, c
+ 		return -1;
+ 	}
+@@ -4432,7 +5239,7 @@ static int unistim_sendtext(struct ast_channel *ast, c
  		if (pte->device->height == 1) {
  			send_text(TEXT_LINE0, TEXT_NORMAL, pte, text);
  		} else {
@@ -3631,7 +3662,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			send_text(TEXT_LINE1, TEXT_NORMAL, pte, text);
  		}
  		if (size <= TEXT_LENGTH_MAX) {
-@@ -4456,7 +5278,7 @@ static int unistim_send_mwi_to_peer(struct unistimsess
+@@ -4460,7 +5267,7 @@ static int unistim_send_mwi_to_peer(struct unistimsess
  	struct ast_event *event;
  	int new;
  	char *mailbox, *context;
@@ -3640,7 +3671,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  
  	context = mailbox = ast_strdupa(peer->mailbox);
  	strsep(&context, "@");
-@@ -4510,9 +5332,9 @@ static struct ast_channel *unistim_new(struct unistim_
+@@ -4514,9 +5321,9 @@ static struct ast_channel *unistim_new(struct unistim_
  	}
  	l = sub->parent;
  	tmp = ast_channel_alloc(1, state, l->cid_num, NULL, l->accountcode, l->exten,
@@ -3652,7 +3683,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	if (!tmp) {
  		ast_log(LOG_WARNING, "Unable to allocate channel structure\n");
  		return NULL;
-@@ -4550,8 +5372,8 @@ static struct ast_channel *unistim_new(struct unistim_
+@@ -4554,8 +5361,8 @@ static struct ast_channel *unistim_new(struct unistim_
  	tmp->rawreadformat = fmt;
  	tmp->tech_pvt = sub;
  	tmp->tech = &unistim_tech;
@@ -3663,7 +3694,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	sub->owner = tmp;
  	ast_mutex_lock(&usecnt_lock);
  	usecnt++;
-@@ -4575,14 +5397,14 @@ static struct ast_channel *unistim_new(struct unistim_
+@@ -4579,14 +5386,14 @@ static struct ast_channel *unistim_new(struct unistim_
  		}
  	}
  	tmp->priority = 1;
@@ -3686,7 +3717,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	}
  
  	return tmp;
-@@ -4631,8 +5453,8 @@ static void *do_monitor(void *data)
+@@ -4635,8 +5442,8 @@ static void *do_monitor(void *data)
  				dw_timeout = cur->timeout - tick;
  			/* Checking if the phone is logged on for a new MWI */
  			if (cur->device) {
@@ -3697,7 +3728,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  					DEBUG_TIMER("Checking mailbox for MWI\n");
  					unistim_send_mwi_to_peer(cur, tick);
  					break;
-@@ -4702,7 +5524,8 @@ static struct ast_channel *unistim_request(const char 
+@@ -4706,7 +5513,8 @@ static struct ast_channel *unistim_request(const char 
  										   int *cause)
  {
  	format_t oldformat;
@@ -3707,7 +3738,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	struct ast_channel *tmpc = NULL;
  	char tmp[256];
  	char *dest = data;
-@@ -4726,22 +5549,39 @@ static struct ast_channel *unistim_request(const char 
+@@ -4730,22 +5538,39 @@ static struct ast_channel *unistim_request(const char 
  		ast_log(LOG_NOTICE, "Unistim channels require a device\n");
  		return NULL;
  	}
@@ -3753,7 +3784,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	sub->parent->capability = format;
  	tmpc = unistim_new(sub, AST_STATE_DOWN, requestor ? requestor->linkedid : NULL);
  	if (!tmpc)
-@@ -4760,7 +5600,6 @@ static char *unistim_info(struct ast_cli_entry *e, int
+@@ -4764,7 +5589,6 @@ static char *unistim_info(struct ast_cli_entry *e, int
  	struct unistim_line *line;
  	struct unistim_subchannel *sub;
  	struct unistimsession *s;
@@ -3761,7 +3792,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	struct ast_channel *tmp;
  
  	switch (cmd) {
-@@ -4778,44 +5617,55 @@ static char *unistim_info(struct ast_cli_entry *e, int
+@@ -4782,44 +5606,55 @@ static char *unistim_info(struct ast_cli_entry *e, int
  	if (a->argc != e->args)
  		return CLI_SHOWUSAGE;
  
@@ -3845,7 +3876,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  				s->device, s);
  		s = s->next;
  	}
-@@ -4973,7 +5823,7 @@ static void unquote(char *out, const char *src, int ma
+@@ -4977,7 +5812,7 @@ static void unquote(char *out, const char *src, int ma
  	return;
  }
  
@@ -3854,7 +3885,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  {
  	char line[256];
  	char *at;
-@@ -5048,7 +5898,7 @@ static int ParseBookmark(const char *text, struct unis
+@@ -5052,7 +5887,7 @@ static int ParseBookmark(const char *text, struct unis
  	ast_copy_string(d->softkeylabel[p], line, sizeof(d->softkeylabel[p]));
  	ast_copy_string(d->softkeynumber[p], number, sizeof(d->softkeynumber[p]));
  	if (unistimdebug)
@@ -3863,7 +3894,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  					p, d->softkeylabel[p], d->softkeynumber[p], d->softkeyicon[p]);
  	return 1;
  }
-@@ -5079,15 +5929,29 @@ static void finish_bookmark(void)
+@@ -5083,15 +5918,29 @@ static void finish_bookmark(void)
  	}
  }
  
@@ -3896,7 +3927,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  
  	/* First, we need to know if we already have this name in our list */
  	/* Get a lock for the device chained list */
-@@ -5104,22 +5968,39 @@ static struct unistim_device *build_device(const char 
+@@ -5108,22 +5957,39 @@ static struct unistim_device *build_device(const char 
  			}
  			/* we're reloading right now */
  			create = 0;
@@ -3943,7 +3974,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	ast_copy_string(context, DEFAULTCONTEXT, sizeof(context));
  	d->contrast = -1;
  	d->output = OUTPUT_HANDSET;
-@@ -5127,12 +6008,16 @@ static struct unistim_device *build_device(const char 
+@@ -5131,12 +5997,16 @@ static struct unistim_device *build_device(const char 
  	d->volume = VOLUME_LOW;
  	d->mute = MUTE_OFF;
  	d->height = DEFAULTHEIGHT;
@@ -3960,7 +3991,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	nbsoftkey = 0;
  	while (v) {
  		if (!strcasecmp(v->name, "rtp_port"))
-@@ -5173,19 +6058,25 @@ static struct unistim_device *build_device(const char 
+@@ -5177,19 +6047,25 @@ static struct unistim_device *build_device(const char 
  			ringvolume = atoi(v->value);
  		else if (!strcasecmp(v->name, "ringstyle"))
  			ringstyle = atoi(v->value);
@@ -3992,7 +4023,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  		else if (!strcasecmp(v->name, "amaflags")) {
  			int y;
  			y = ast_cdr_amaflags2int(v->value);
-@@ -5193,17 +6084,17 @@ static struct unistim_device *build_device(const char 
+@@ -5197,17 +6073,17 @@ static struct unistim_device *build_device(const char 
  				ast_log(LOG_WARNING, "Invalid AMA flags: %s at line %d\n", v->value,
  						v->lineno);
  			else
@@ -4016,7 +4047,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  		else if (!strcasecmp(v->name, "linelabel"))
  			unquote(linelabel, v->value, sizeof(linelabel) - 1);
  		else if (!strcasecmp(v->name, "extension")) {
-@@ -5220,103 +6111,93 @@ static struct unistim_device *build_device(const char 
+@@ -5224,103 +6100,93 @@ static struct unistim_device *build_device(const char 
  				ast_log(LOG_WARNING,
  						"More than 6 softkeys defined. Ignoring new entries.\n");
  			else {
@@ -4177,7 +4208,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	if ((autoprovisioning == AUTOPROVISIONING_TN) &&
  		(!ast_strlen_zero(d->extension_number))) {
  		d->extension = EXTENSION_TN;
-@@ -5329,8 +6210,6 @@ static struct unistim_device *build_device(const char 
+@@ -5333,8 +6199,6 @@ static struct unistim_device *build_device(const char 
  	} else if (ast_strlen_zero(d->id)) {
  		if (strcmp(d->name, "template")) {
  			ast_log(LOG_ERROR, "You must specify the mac address with device=\n");
@@ -4186,7 +4217,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			if (d->tz) {
  				d->tz = ast_tone_zone_unref(d->tz);
  			}
-@@ -5343,8 +6222,6 @@ static struct unistim_device *build_device(const char 
+@@ -5347,8 +6211,6 @@ static struct unistim_device *build_device(const char 
  		d->rtp_port = 10000;
  	if (d->contrast == -1)
  		d->contrast = 8;
@@ -4195,7 +4226,16 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	if (ast_strlen_zero(d->maintext1))
  		strcpy(d->maintext1, d->name);
  	if (ast_strlen_zero(d->titledefault)) {
-@@ -5430,8 +6307,13 @@ static int reload_config(void)
+@@ -5356,7 +6218,7 @@ static struct unistim_device *build_device(const char 
+ 		struct timeval cur_time = ast_tvnow();
+ 
+ 		if ((ast_localtime(&cur_time, &tm, 0)) == 0 || ast_strlen_zero(tm.tm_zone)) {
+-			display_last_error("Error in ast_localtime()");
++			ast_log(LOG_WARNING, "Error in ast_localtime()");
+ 			ast_copy_string(d->titledefault, "UNISTIM for*", 12);
+ 		} else {
+ 			if (strlen(tm.tm_zone) < 4) {
+@@ -5434,8 +6296,13 @@ static int reload_config(void)
                  } else if (!strcasecmp(v->name, "cos_audio")) {
                          if (ast_str2cos(v->value, &qos.cos_audio))
                              ast_log(LOG_WARNING, "Invalid cos_audio value at line %d, refer to QoS documentation\n", v->lineno);
@@ -4210,7 +4250,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  				autoprovisioning = AUTOPROVISIONING_NO;
  			else if (!strcasecmp(v->value, "yes"))
  				autoprovisioning = AUTOPROVISIONING_YES;
-@@ -5489,44 +6371,57 @@ static int reload_config(void)
+@@ -5493,44 +6360,57 @@ static int reload_config(void)
  	d = devices;
  	while (d) {
  		if (d->to_delete) {
@@ -4299,7 +4339,7 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  			if (d->session) {
  				if (sessions == d->session)
  					sessions = d->session->next;
-@@ -5570,9 +6465,15 @@ static int reload_config(void)
+@@ -5574,9 +6454,15 @@ static int reload_config(void)
  	ast_mutex_lock(&sessionlock);
  	s = sessions;
  	while (s) {
@@ -4317,3 +4357,14 @@ $OpenBSD: patch-channels_chan_unistim_c,v 1.4 2011/07/20 07:06:00 sthen Exp $
  	}
  	ast_mutex_unlock(&sessionlock);
  	/* We don't recreate a socket when reloading (locks would be necessary). */
+@@ -5689,8 +6575,9 @@ buff_failed:
+ static int unload_module(void)
+ {
+ 	/* First, take us out of the channel loop */
+-	if (sched)
++	if (sched) {
+ 		sched_context_destroy(sched);
++	}
+ 
+ 	ast_cli_unregister_multiple(unistim_cli, ARRAY_LEN(unistim_cli));
+ 

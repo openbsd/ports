@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.38 2011/07/12 19:54:39 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.39 2011/09/09 15:29:21 sthen Exp $
 @conflict asterisk-sounds-<=1.2.1p2
 @conflict asterisk-curl-*
 @conflict asterisk-fax-*
@@ -382,8 +382,8 @@ share/asterisk/phoneprov/polycom.xml
 share/asterisk/phoneprov/polycom_line.xml
 share/asterisk/phoneprov/snom-mac.xml
 share/asterisk/sounds/
-share/asterisk/sounds/.${SOUNDS_CORE}
 share/asterisk/sounds/en/
+share/asterisk/sounds/en/.${SOUNDS_CORE}
 share/asterisk/sounds/en/CHANGES-asterisk-core-en-${SVER_CORE}
 share/asterisk/sounds/en/CREDITS-asterisk-core-en-${SVER_CORE}
 share/asterisk/sounds/en/LICENSE-asterisk-core-en-${SVER_CORE}
@@ -847,10 +847,6 @@ share/asterisk/sounds/en/vm-undeleted.gsm
 share/asterisk/sounds/en/vm-unknown-caller.gsm
 share/asterisk/sounds/en/vm-whichbox.gsm
 share/asterisk/sounds/en/vm-youhave.gsm
-share/asterisk/sounds/en_AU/
-share/asterisk/sounds/es/
-share/asterisk/sounds/fr/
-share/asterisk/sounds/ru/
 share/asterisk/static-http/
 share/asterisk/static-http/ajamdemo.html
 share/asterisk/static-http/astman.css
