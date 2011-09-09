@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.61 2011/09/02 08:24:28 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2011/09/09 06:46:39 ajacoutot Exp $
 
 COMMENT-main=	Cyrus IMAP server
 COMMENT-perl=	perl utils for the Cyrus IMAP server
 
-V=		2.4.10
+V=		2.4.11
 DISTNAME=	cyrus-imapd-${V}
 PKGNAME-main=	${DISTNAME}
 FULLPKGNAME-perl=cyrus-imapd-perl-${V}
 FULLPKGPATH-perl=mail/cyrus-imapd,-perl
-
-REVISION-main=	1
 
 CATEGORIES=	mail
 

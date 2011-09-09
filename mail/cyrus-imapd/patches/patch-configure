@@ -1,5 +1,5 @@
---- configure.orig	Mon Jul  4 17:06:30 2011
-+++ configure	Tue Jul  5 23:36:08 2011
+--- configure.orig	Thu Sep  8 21:03:38 2011
++++ configure	Fri Sep  9 08:38:25 2011
 @@ -5062,9 +5062,7 @@ CFLAGS=$save_CFLAGS
  fi
  
@@ -44,8 +44,8 @@
      PERL_SUBDIRS="imap"
      PERL="${with_perl}"
      case "${target_os}" in
--        linux*|netbsd*)
-+        linux*|netbsd*|openbsd*)
+-        linux*|netbsd*|freebsd*|dragonfly*)
++        linux*|netbsd*|freebsd*|dragonfly*|openbsd*)
              { $as_echo "$as_me:${as_lineno-$LINENO}: checking for perl cccdlflags needed on \"${target_os}\"" >&5
  $as_echo_n "checking for perl cccdlflags needed on \"${target_os}\"... " >&6; }
              eval `${PERL} -V:cccdlflags`
