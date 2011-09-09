@@ -1,0 +1,16 @@
+$OpenBSD: patch-src_menu_c,v 1.1 2011/09/09 09:51:43 dcoppa Exp $
+
+feh_reload_image: fix regression of old caching issue
+(upstream git commit 04690171c47c99e584fe1ae9d5ebed913ac5ba99)
+
+--- src/menu.c.orig	Mon Sep  5 11:00:25 2011
++++ src/menu.c	Fri Sep  9 11:30:03 2011
+@@ -1302,7 +1302,7 @@ void feh_menu_cb(feh_menu * m, feh_menu_item * i, int 
+ 			winwidget_render_image(m->fehwin, 1, 0);
+ 			break;
+ 		case CB_RELOAD:
+-			feh_reload_image(m->fehwin, 0, 0);
++			feh_reload_image(m->fehwin, 0, 1);
+ 			break;
+ 		case CB_REMOVE:
+ 			feh_filelist_image_remove(m->fehwin, 0);
