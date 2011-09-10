@@ -10,6 +10,9 @@ PKGPATH points to a PATHS entry corresponding to the stripped down version of
 FULLPKGPATH, without flavors or subpackage markers, or is null if FULLPKGPATH
 is already stripped.  Every other FULLPKGPATH, PKGPATH, DEPENDSPATH entry
 in the database points to this table.
+The FULLPKGPATH is complete, including flavors markers (but not pseudo 
+flavors, tack on PSEUDO_FLAVOR for that). For every port with MULTI_PACKAGES 
+settings, one entry is written for each SUBPACKAGE.
 
 - Ports(FULLPKGPATH, ...)
 holds all the information retrieved through various variables that is not
@@ -33,6 +36,7 @@ stored in specialized tables, e.g.,:
     PKGNAME 
     PKGSPEC
     PKG_ARCH 
+    PSEUDO_FLAVOR
     PSEUDO_FLAVORS 
     REGRESS_IS_INTERACTIVE 
     REVISION

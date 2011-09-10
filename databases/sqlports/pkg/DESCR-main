@@ -33,6 +33,7 @@ holds all the information retrieved through various variables, e.g.,:
     PKGNAME 
     PKGSPEC
     PKG_ARCH 
+    PSEUDO_FLAVOR
     PSEUDO_FLAVORS 
     REGRESS_IS_INTERACTIVE 
     REVISION
@@ -49,8 +50,9 @@ with 1/0. Variables not present in a given port are left undefined.
 
 Note that USE_LIBTOOL is 3-valued: 2 is gnu, 1 is yes, undef is no.
 
-The FULLPKGPATH is complete, including flavors markers. For each port with
-MULTI_PACKAGES setting, another entry is written with the correct SUBPACKAGE.  
+The FULLPKGPATH is complete, including flavors markers (but not pseudo 
+flavors, tack on PSEUDO_FLAVOR for that). For every port with MULTI_PACKAGES 
+settings, one entry is written for each SUBPACKAGE.
 
 - Paths (FULLPKGPATH, PKGPATH)
 PKGPATH is the stripped down version or FULLPKGPATH, without flavors 
