@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1103 2011/09/10 08:05:12 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1104 2011/09/10 08:20:56 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -113,7 +113,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 	REGRESS_IS_INTERACTIVE \
 	PERMIT_DISTFILES_CDROM PERMIT_DISTFILES_FTP \
 	CONFIGURE_STYLE USE_LIBTOOL SEPARATE_BUILD \
-	SHARED_LIBS TARGETS FLAVOR \
+	SHARED_LIBS TARGETS PSEUDO_FLAVOR \
 	MAINTAINER AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
@@ -517,6 +517,7 @@ BUILD_PKGPATH := ${PKGPATH}
 _PKG_ARGS =
 _README_DIR = ${LOCALBASE}/share/doc/pkg-readmes
 
+PSEUDO_FLAVOR =
 # (applies only to PLIST for now)
 .if !empty(FLAVORS)
 .  for _i in ${FLAVORS:L}
@@ -528,6 +529,8 @@ BUILD_PKGPATH := ${BUILD_PKGPATH},${_i}
 .    if empty(PSEUDO_FLAVORS:L:M${_i})
 FLAVOR_EXT := ${FLAVOR_EXT}-${_i}
 BASE_PKGPATH := ${BASE_PKGPATH},${_i}
+.    else
+PSEUDO_FLAVOR := ${PSEUDO_FLAVOR},${_i}
 .    endif
 _PKG_ARGS += -D${_i}=1
 .    endif
