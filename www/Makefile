@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.528 2011/09/05 20:43:02 landry Exp $
+# $OpenBSD: Makefile,v 1.529 2011/09/10 06:16:51 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -464,7 +464,6 @@
      SUBDIR += trac
      SUBDIR += trac-ldapplugin
      SUBDIR += tracnav
-     SUBDIR += transproxy
      SUBDIR += tt-rss
      SUBDIR += twiki
      SUBDIR += twill
