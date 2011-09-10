@@ -1,25 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.2 2011/07/20 12:06:57 rpointel Exp $
---- configure.in.orig	Sat Jul  9 08:58:56 2011
-+++ configure.in	Wed Jul 20 10:19:37 2011
-@@ -320,7 +320,7 @@
-     # As this has a different meaning on Linux, only define it on OpenBSD
-     AC_DEFINE(_BSD_SOURCE, 1, [Define on OpenBSD to activate all library features])
-     ;;
--  OpenBSD/4.@<:@789@:>@)
-+  OpenBSD/4.@<:@789@:>@ | OpenBSD/5.*)
-     # OpenBSD undoes our definition of __BSD_VISIBLE if _XOPEN_SOURCE is
-     # also defined. This can be overridden by defining _BSD_SOURCE
-     # As this has a different meaning on Linux, only define it on OpenBSD
-@@ -755,7 +755,7 @@
- 	      PY3LIBRARY=libpython3.so
- 	  fi
-           ;;
--    Linux*|GNU*|NetBSD*|FreeBSD*|DragonFly*)
-+    Linux*|GNU*|NetBSD*|FreeBSD*|OpenBSD*|DragonFly*)
- 	  LDLIBRARY='libpython$(LDVERSION).so'
- 	  BLDLIBRARY='-L. -lpython$(LDVERSION)'
- 	  RUNSHARED=LD_LIBRARY_PATH=`pwd`:${LD_LIBRARY_PATH}
-@@ -1772,7 +1772,7 @@
+$OpenBSD: patch-configure_in,v 1.3 2011/09/10 05:16:20 rpointel Exp $
+--- configure.in.orig	Sat Sep  3 18:16:50 2011
++++ configure.in	Mon Sep  5 20:00:17 2011
+@@ -1773,7 +1773,7 @@
  	BSD/OS*/4*)
  		LDSHARED="gcc -shared"
  		LDCXXSHARED="g++ -shared";;
@@ -28,7 +10,7 @@ $OpenBSD: patch-configure_in,v 1.2 2011/07/20 12:06:57 rpointel Exp $
  		if [[ "`$CC -dM -E - </dev/null | grep __ELF__`" != "" ]]
  		then
  			LDSHARED='$(CC) -shared'
-@@ -1780,22 +1780,6 @@
+@@ -1781,22 +1781,6 @@
  		else
  			LDSHARED="ld -Bshareable"
  		fi;;
@@ -51,7 +33,7 @@ $OpenBSD: patch-configure_in,v 1.2 2011/07/20 12:06:57 rpointel Exp $
  	NetBSD*|DragonFly*)
  		LDSHARED='$(CC) -shared'
  		LDCXXSHARED='$(CXX) -shared';;
-@@ -1945,9 +1929,14 @@
+@@ -1946,9 +1930,14 @@
  
  # only check for sem_init if thread support is requested
  if test "$with_threads" = "yes" -o -z "$with_threads"; then

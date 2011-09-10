@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.3 2011/07/20 12:06:57 rpointel Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2011/09/10 05:16:20 rpointel Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -68,28 +68,6 @@ LIB_DEPENDS-tkinter =	${MODTK_LIB_DEPENDS} \
 			lang/python3/${VERSION},-main
 WANTLIB-tkinter =	X11 ${MODTK_WANTLIB} python${VERSION}m
 
-#.if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
-    ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH:Mmips64*}
-#PATCH_LIST =		patch-* sup64-*
-#PKG_ARGS+=	-Dmm=0
-#.else
-#PKG_ARGS+=	-Dmm=1
-#.endif
-
-# XXX fix ctypes on powerpc for python2.6
-# The ctypes module is not supported on all platforms (in particular, ARM)
-#.if ${VERSION} == "2.5" || ${VERSION} == "2.6" || ${VERSION} == "2.7"
-#.  if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
-#      ${MACHINE_ARCH} == "sparc" || ${MACHINE_ARCH} == "sparc64" || \
-#      ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "m68k" || \
-#      ${MACHINE_ARCH:Mmips64*} || \
-#      ( ${MACHINE_ARCH} == "powerpc" && ( ${VERSION} != "2.6" && ${VERSION} != "2.7" ) )
-#PKG_ARGS+=	-Dctypes=1
-#.  else
-#PKG_ARGS+=	-Dctypes=0
-#.  endif
-#.endif
-
 USE_GROFF =	Yes
 
 CONFIGURE_STYLE=	autoconf
@@ -126,7 +104,10 @@ post-build:
 		's@#! */usr/bin/env +python@#!${PREFIX}/bin/python${VERSION}@' \
 		${WRKSRC}/Tools/scripts/pydoc3
 
-#post-install:
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/python${VERSION}
+	${INSTALL_DATA} ${FILESDIR}/CHANGES.OpenBSD \
+		${PREFIX}/share/doc/python${VERSION}/CHANGES.OpenBSD
 #	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/pydoc \
 #		${PREFIX}/bin/pydoc${VERSION}
 #	@sed -e "s,@VERSION@,${VERSION},g" -e "s,@LOCALBASE@,${LOCALBASE},g" \
@@ -134,9 +115,6 @@ post-build:
 #	${INSTALL_SCRIPT} ${WRKSRC}/idle ${PREFIX}/bin/idle${VERSION}
 #	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python${VERSION}; \
 #		tar -xf -)
-#	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/python${VERSION}
-#	${INSTALL_DATA} ${FILESDIR}/CHANGES.OpenBSD \
-#		${PREFIX}/share/doc/python${VERSION}/CHANGES.OpenBSD
 #	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/2to3 \
 #		${PREFIX}/bin/python${VERSION}-2to3
 
