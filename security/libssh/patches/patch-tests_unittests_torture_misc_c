@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_unittests_torture_misc_c,v 1.1.1.1 2011/07/18 17:38:47 rpointel Exp $
---- tests/unittests/torture_misc.c.orig	Tue May 31 16:29:52 2011
-+++ tests/unittests/torture_misc.c	Fri Jul  8 15:25:08 2011
-@@ -195,7 +195,8 @@
+$OpenBSD: patch-tests_unittests_torture_misc_c,v 1.2 2011/09/10 11:56:42 naddy Exp $
+--- tests/unittests/torture_misc.c.orig	Tue Aug  9 14:48:21 2011
++++ tests/unittests/torture_misc.c	Fri Sep  9 21:16:02 2011
+@@ -195,7 +195,8 @@ int torture_run_tests(void) {
  #ifdef _WIN32
          unit_test(torture_path_expand_tilde_win),
  #else

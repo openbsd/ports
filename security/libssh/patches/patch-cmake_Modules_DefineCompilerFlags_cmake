@@ -1,0 +1,27 @@
+$OpenBSD: patch-cmake_Modules_DefineCompilerFlags_cmake,v 1.1 2011/09/10 11:56:42 naddy Exp $
+
+Check for compiler flags not available with gcc < 4.
+
+--- cmake/Modules/DefineCompilerFlags.cmake.orig	Fri Sep  9 21:36:39 2011
++++ cmake/Modules/DefineCompilerFlags.cmake	Fri Sep  9 21:40:29 2011
+@@ -10,9 +10,19 @@ if (UNIX AND NOT WIN32)
+     if (${CMAKE_C_COMPILER_ID} MATCHES GNU)
+         # add -Wconversion ?
+         set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=gnu99 -pedantic -pedantic-errors")
+-        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wextra -Wshadow -Wmissing-prototypes -Wdeclaration-after-statement")
++        set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wall -Wshadow -Wmissing-prototypes")
+         set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wunused -Wfloat-equal -Wpointer-arith -Wwrite-strings -Wformat-security")
+         set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wmissing-format-attribute")
++
++	check_c_compiler_flag("-Wextra" WITH_WEXTRA)
++	if (WITH_WEXTRA)
++	    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wextra")
++        endif (WITH_WEXTRA)
++
++	check_c_compiler_flag("-Wdeclaration-after-statement" WITH_WDECL)
++	if (WITH_WDECL)
++	    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wdeclaration-after-statement")
++        endif (WITH_WDECL)
+ 
+         # with -fPIC
+         check_c_compiler_flag("-fPIC" WITH_FPIC)
