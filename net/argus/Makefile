@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/12/27 14:50:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/10 11:55:26 naddy Exp $
 
 COMMENT =	Audit Record Generation and Utilization System
 
@@ -27,7 +27,6 @@ MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/config
 BUILD_DEPENDS =		devel/bison
 
 MAKE_FLAGS =		CCOPT=
-CFLAGS +=		-DSYSCONFDIR=\\\"${SYSCONFDIR}\\\"
 INSTALL_TARGET =	install
 
 post-install:
