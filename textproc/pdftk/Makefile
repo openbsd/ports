@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/21 12:29:21 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/10 13:39:48 armani Exp $
 
 COMMENT=	pdf swiss army knife
 VERSION=	1.44
+REVISION=	0
 DISTNAME=	pdftk-$(VERSION)
 EXTRACT_SUFX=	-src.zip
 CATEGORIES=	textproc
 
-MAINTAINER=	Christopher Zimmermann <madroach@zakweb.org>
+MAINTAINER=	Christopher Zimmermann <madroach@zakweb.de>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
