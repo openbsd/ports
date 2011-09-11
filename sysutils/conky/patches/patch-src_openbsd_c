@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_openbsd_c,v 1.12 2011/07/06 12:50:15 jasper Exp $
+$OpenBSD: patch-src_openbsd_c,v 1.13 2011/09/11 18:53:28 dcoppa Exp $
 
 declarations in common.h got changed, but upstream forgot to do the
 corresponding changes into openbsd.c
@@ -6,7 +6,7 @@ corresponding changes into openbsd.c
 Adapt to new OpenBSD kinfo_proc API.
 
 --- src/openbsd.c.orig	Tue Oct  5 23:29:36 2010
-+++ src/openbsd.c	Wed Jul  6 14:30:14 2011
++++ src/openbsd.c	Mon Jul 18 14:04:55 2011
 @@ -140,7 +140,7 @@ int check_mount(char *s)
  	return 0;
  }
@@ -93,7 +93,7 @@ Adapt to new OpenBSD kinfo_proc API.
  	for (i = 0; i < n_processes; i++) {
  		if (p[i].p_stat == SRUN) {
  			cnt++;
-@@ -295,6 +301,7 @@ void update_running_processes()
+@@ -295,10 +301,11 @@ void update_running_processes()
  	}
  
  	info.run_procs = cnt;
@@ -101,6 +101,11 @@ Adapt to new OpenBSD kinfo_proc API.
  }
  
  /* new SMP code can be enabled by commenting the following line */
+-#define OLDCPU
++/* #define OLDCPU */
+ 
+ #ifdef OLDCPU
+ struct cpu_load_struct {
 @@ -343,7 +350,7 @@ void get_cpu_count()
  #endif
  }
@@ -186,7 +191,34 @@ Adapt to new OpenBSD kinfo_proc API.
  	processes = malloc(n_processes * sizeof(struct process));
  
  	for (i = 0; i < n_processes; i++) {
-@@ -784,7 +786,6 @@ inline void proc_find_top(struct process **cpu, struct
+@@ -740,6 +742,8 @@ inline void proc_find_top(struct process **cpu, struct
+ 			processes[j].pid = p[i].p_pid;
+ 			processes[j].name = strndup(p[i].p_comm, text_buffer_size);
+ 			processes[j].amount = 100.0 * p[i].p_pctcpu / FSCALE;
++			processes[j].vsize = p[i].p_vm_map_size;
++			processes[j].rss = p[i].p_vm_rssize * PAGE_SIZE;
+ 			j++;
+ 		}
+ 	}
+@@ -752,6 +756,8 @@ inline void proc_find_top(struct process **cpu, struct
+ 		tmp->pid = processes[i].pid;
+ 		tmp->amount = processes[i].amount;
+ 		tmp->name = strndup(processes[i].name, text_buffer_size);
++		tmp->vsize = processes[i].vsize;
++		tmp->rss = processes[i].rss;
+ 
+ 		ttmp = mem[i];
+ 		mem[i] = tmp;
+@@ -769,6 +775,8 @@ inline void proc_find_top(struct process **cpu, struct
+ 		tmp->pid = processes[i].pid;
+ 		tmp->amount = processes[i].amount;
+ 		tmp->name = strndup(processes[i].name, text_buffer_size);
++		tmp->vsize = processes[i].vsize;
++		tmp->rss = processes[i].rss;
+ 
+ 		ttmp = cpu[i];
+ 		cpu[i] = tmp;
+@@ -784,7 +792,6 @@ inline void proc_find_top(struct process **cpu, struct
  	free(processes);
  }
  
@@ -194,7 +226,7 @@ Adapt to new OpenBSD kinfo_proc API.
  #define	APMDEV		"/dev/apm"
  #define	APM_UNKNOWN	255
  
-@@ -908,7 +909,6 @@ char *get_apm_battery_time()
+@@ -908,7 +915,6 @@ char *get_apm_battery_time()
  	return out;
  }
  
@@ -202,7 +234,7 @@ Adapt to new OpenBSD kinfo_proc API.
  
  /* empty stubs so conky links */
  void prepare_update()
-@@ -923,8 +923,4 @@ int get_entropy_avail(unsigned int *val)
+@@ -923,8 +929,4 @@ int get_entropy_avail(unsigned int *val)
  int get_entropy_poolsize(unsigned int *val)
  {
  	return 1;

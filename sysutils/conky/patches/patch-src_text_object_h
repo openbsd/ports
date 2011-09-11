@@ -1,6 +1,15 @@
-$OpenBSD: patch-src_text_object_h,v 1.1 2011/04/27 12:55:11 dcoppa Exp $
---- src/text_object.h.orig	Tue Apr 19 19:42:09 2011
-+++ src/text_object.h	Tue Apr 19 19:42:32 2011
+$OpenBSD: patch-src_text_object_h,v 1.2 2011/09/11 18:53:28 dcoppa Exp $
+--- src/text_object.h.orig	Tue Oct  5 23:29:36 2010
++++ src/text_object.h	Mon Jul 18 14:05:17 2011
+@@ -166,7 +166,7 @@ enum text_object_type {
+ 	OBJ_wireless_link_qual_perc,
+ 	OBJ_wireless_link_bar,
+ #endif /* __linux__ */
+-#if defined(__FreeBSD__) || defined(__linux__)
++#if defined(__FreeBSD__) || defined(__OpenBSD__) || defined(__linux__)
+ 	OBJ_if_up,
+ #endif
+ 	OBJ_if_empty,
 @@ -311,7 +311,7 @@ enum text_object_type {
  	OBJ_pop3_unseen,
  	OBJ_pop3_used,
