@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/08 17:13:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.52 2011/09/11 05:53:37 ajacoutot Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
@@ -26,7 +26,9 @@ AUTOMAKE_VERSION=1.10 # should be 1.11.1
 MODULES=	devel/gettext
 BUILD_DEPENDS=	devel/doxygen>=1.7.2 \
 		textproc/docbook-dsssl \
-		textproc/openjade
+		textproc/openjade \
+		${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS=	databases/iodbc,-main
 
 # requires database server
