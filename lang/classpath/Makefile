@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/06 07:20:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/11 18:20:51 jasper Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS=	i386 amd64 sparc64
 COMMENT=	essential libraries for java
 
 DISTNAME=	classpath-0.98
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	lang java
 
@@ -33,10 +33,10 @@ MODGCC4_LANGS=	java
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	archivers/zip \
-		lang/antlr2>=2.7.5p0
+		lang/antlr3>=3.4p0
 
 RUN_DEPENDS=	lang/gcc/4.2,-java,java \
-		lang/antlr2>=2.7.5p0
+		lang/antlr3>=3.4p0
 
 LIB_DEPENDS=	x11/gtk+2 \
 		x11/dbus-glib \
@@ -71,7 +71,7 @@ CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--enable-gtk-peer \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib \
-		--with-antlr-jar=${LOCALBASE}/share/java/classes/antlr2.jar
+		--with-antlr-jar=${LOCALBASE}/share/java/classes/antlr3.jar
 
 EXTRACT_CASES+= *.jar) true ;;
 
