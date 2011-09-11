@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.52 2011/09/11 05:53:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2011/09/11 12:38:57 sthen Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 DISTNAME=	freetds-0.91
+REVISION=	0
 
 SHARED_LIBS += ct                   4.0      # .4.0
 SHARED_LIBS += sybdb                6.0      # .5.0
@@ -22,9 +23,10 @@ WANTLIB += c iodbc iodbcinst ncurses pthread readline
 MASTER_SITES=	http://www.ibiblio.org/pub/Linux/ALPHA/freetds/stable/
 
 AUTOCONF_VERSION=2.65
-AUTOMAKE_VERSION=1.10 # should be 1.11.1
+AUTOMAKE_VERSION=1.11
 MODULES=	devel/gettext
-BUILD_DEPENDS=	devel/doxygen>=1.7.2 \
+BUILD_DEPENDS=  devel/doxygen>=1.7.2 \
+		devel/libtool,-ltdl \
 		textproc/docbook-dsssl \
 		textproc/openjade \
 		${MODGNU_AUTOCONF_DEPENDS} \
@@ -54,7 +56,7 @@ PERMIT_PACKAGE_FTP=	incompatible license
 .else
 LIB_DEPENDS+=		security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls
-WANTLIB+=		gmp gnutls hogweed nettle tasn1 z
+WANTLIB+=		gmp gnutls hogweed nettle p11-kit tasn1 z
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 .endif
