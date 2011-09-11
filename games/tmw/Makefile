@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2011/06/25 18:58:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/11 12:15:12 armani Exp $
 
 COMMENT-main =	free open source 2D MMORPG
 COMMENT-music =	music addon for TMW
 
 DISTNAME =	tmw-0.5.2
+REVISION =	0
 
 V_MUSIC =	0.3
 
@@ -16,8 +17,6 @@ DISTFILES =	${DISTNAME}.tar.bz2 \
 		tmwmusic-${V_MUSIC}.tar.gz
 
 HOMEPAGE =	http://www.themanaworld.org/
-
-MAINTAINER =	Jonathan Armani <armani@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes
