@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2011/07/26 15:19:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/11 11:01:35 ajacoutot Exp $
 
 COMMENT=	graphical diff and merge tool
 
 GNOME_VERSION=	1.5.2
 GNOME_PROJECT=	meld
+REVISION=	0
 
 CATEGORIES=	textproc x11
 
@@ -19,8 +20,7 @@ MODULES=	lang/python \
 		textproc/intltool \
 		x11/gnome
 
-RUN_DEPENDS=	x11/gnome/py-gnome \
-		x11/py-gtksourceview
+RUN_DEPENDS=	x11/py-gtk2
 
 MODGNOME_HELP_FILES= Yes
 DESKTOP_FILES=	Yes
