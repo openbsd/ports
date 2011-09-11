@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/04/11 20:02:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/11 14:10:32 naddy Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ MOZILLA_PROJECT =	spidermonkey
 DISTNAME =		firefox-${FFX_VERSION}.source
 PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION}
 EPOCH =		0
-REVISION =	0
+REVISION =	1
 
 SO_VERSION =	0.0
 SHARED_LIBS =	mozjs ${SO_VERSION}
@@ -51,8 +51,9 @@ WANTLIB =	c m pthread readline nspr4 ncurses plc4 plds4 stdc++
 WRKDIST =	${WRKDIR}/mozilla-${MOZILLA_BRANCH}/js/src
 USE_GMAKE =	yes
 CONFIGURE_STYLE =	autoconf no-autoheader
-CONFIGURE_ARGS =	--with-pthread \
+CONFIGURE_ARGS =	--with-pthreads \
 			--with-system-nspr \
+			--disable-optimize \
 			--enable-readline \
 			--enable-ctypes \
 			--enable-threadsafe
