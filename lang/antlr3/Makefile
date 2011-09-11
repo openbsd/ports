@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/05 20:44:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/11 18:24:24 jasper Exp $
 
 # keep in sync with classpath archs
 ONLY_FOR_ARCHS=	i386 amd64 sparc64
@@ -8,7 +8,7 @@ COMMENT=        ANother Tool for Language Recognition
 V=		3.4
 DISTNAME=	antlr-${V}-complete
 PKGNAME=	antlr3-${V}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	lang java
 
