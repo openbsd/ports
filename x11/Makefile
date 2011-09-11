@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.463 2011/08/31 15:17:37 mpi Exp $
+# $OpenBSD: Makefile,v 1.464 2011/09/11 10:40:15 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -166,7 +166,6 @@
      SUBDIR += oroborus
      SUBDIR += osd_clock
      SUBDIR += p5-AnyEvent-I3
-     SUBDIR += p5-Gnome2-Canvas
      SUBDIR += p5-Gtk2
      SUBDIR += p5-Gtk2-Ex-FormFactory
      SUBDIR += p5-Gtk2-Ex-PodViewer
