@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/22 05:36:49 rpointel Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/11 10:23:19 landry Exp $
 
 COMMENT =		interface between perl web frameworks and web servers
 
 MODULES =		cpan
+REVISION =		0
 DISTNAME =		Plack-0.9980
 CATEGORIES =		www
 MAINTAINER =		Abel Abraham Camarillo Ojeda <acamari@verlet.org>
@@ -23,6 +24,7 @@ RUN_DEPENDS =		devel/p5-Devel-StackTrace>=1.23 \
 			net/p5-Test-TCP>=0.11 \
 			sysutils/p5-Filesys-Notify-Simple \
 			www/p5-libwww>=5.814 \
+			www/p5-libapreq \
 			www/p5-HTTP-Body>=1.06 \
 			www/p5-URI>=1.36
 
