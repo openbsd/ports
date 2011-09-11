@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/11 16:32:27 fgsch Exp $
 
 COMMENT=		Ruby Development Tools for Eclipse IDE
 
@@ -26,8 +26,6 @@ MODULES=		lang/ruby
 MODRUBY_BUILDDEP=	No
 RUN_DEPENDS=		devel/eclipse/sdk>=3.1
 			
-
-USE_ZIP=		Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 

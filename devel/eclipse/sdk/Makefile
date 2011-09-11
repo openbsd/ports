@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2011/08/30 17:16:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.65 2011/09/11 16:32:27 fgsch Exp $
 
 SHARED_ONLY=		Yes
 ONLY_FOR_ARCHS=		amd64 i386
@@ -60,7 +60,6 @@ BUILD_DEPENDS=		devel/xulrunner/1.9,-devel>=1.9 \
 			devel/apache-ant>=1.6.1
 
 USE_GMAKE=		Yes
-USE_ZIP=		Yes
 
 MULTI_PACKAGES=		-main -swt -gnome -browser
 

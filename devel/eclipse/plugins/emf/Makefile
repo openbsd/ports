@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/11 16:32:27 fgsch Exp $
 
 COMMENT=		Eclipse Modeling Framework (EMF)
 
@@ -23,7 +23,6 @@ MASTER_SITES=		http://download.eclipse.org/modeling/emf/emf/downloads/drops/${V}
 
 RUN_DEPENDS=		devel/eclipse/sdk>=3.2
 
-USE_ZIP=		Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 

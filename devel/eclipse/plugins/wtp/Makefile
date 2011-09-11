@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/11 16:32:27 fgsch Exp $
 
 COMMENT=		Web Tools Platform for Eclipse
 
@@ -26,7 +26,6 @@ BUILD_DEPENDS=		archivers/gtar
 RUN_DEPENDS=		devel/eclipse/plugins/emf>=2.2.0 \
 			devel/eclipse/plugins/gef>=3.2.2
 
-USE_ZIP=		Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 

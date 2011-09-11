@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/05 18:24:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/11 16:32:27 fgsch Exp $
 
 COMMENT=		Perl plugin for Eclipse IDE
 
@@ -24,7 +24,6 @@ MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=e-p-i-c/}
 
 RUN_DEPENDS=		devel/eclipse/sdk>=3.1
 
-USE_ZIP=		Yes
 NO_BUILD=		Yes
 NO_REGRESS=		Yes
 
