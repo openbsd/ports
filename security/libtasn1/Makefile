@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/12/12 16:29:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/11 12:36:12 sthen Exp $
 
 COMMENT=		Abstract Syntax Notation One structure parser library
 
@@ -14,12 +14,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	ftp://ftp.gnutls.org/pub/gnutls/libtasn1/ \
-		ftp://ftp.gnupg.org/gcrypt/alpha/gnutls/libtasn1/ \
-		ftp://ftp.mirrors.wiretapped.net/pub/security/network-security/gnutls/libtasn1/ \
-		http://www.gnu.org/software/gnutls/releases/libtasn1/ \
-		http://josefsson.org/gnutls/releases/libtasn1/ \
-		http://www.mirrors.wiretapped.net/security/network-security/gnutls/libtasn1/
+MASTER_SITES=	${MASTER_SITE_GNU:=libtasn1/}
 
 WANTLIB=		c
 
