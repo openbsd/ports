@@ -1,7 +1,16 @@
-$OpenBSD: patch-configure_ac,v 1.5 2008/10/17 12:46:33 landry Exp $
---- configure.ac.orig	Fri Oct  3 05:19:26 2008
-+++ configure.ac	Sat Oct  4 16:02:26 2008
-@@ -640,6 +640,7 @@ else
+$OpenBSD: patch-configure_ac,v 1.6 2011/09/11 14:16:06 naddy Exp $
+--- configure.ac.orig	Sat Apr  9 10:45:59 2011
++++ configure.ac	Wed Sep  7 21:37:45 2011
+@@ -153,7 +153,7 @@ if test x"$_gcc_psign" = xyes ; then
+ 	CFLAGS="$CFLAGS -Wno-pointer-sign"
+ fi
+ 
+-CFLAGS="$CFLAGS -Wall -Wno-pointer-sign"
++CFLAGS="$CFLAGS -Wall"
+ 
+ if test $USE_MAINTAINER_MODE = yes; then
+ 	CFLAGS="-g -Wall -Wno-pointer-sign"
+@@ -679,6 +679,7 @@ else
  	AC_CHECK_LIB(resolv, res_query, LDAP_LIBS="$LDAP_LIBS -lresolv")
  	AC_CHECK_LIB(socket, bind, LDAP_LIBS="$LDAP_LIBS -lsocket")
  	AC_CHECK_LIB(nsl, gethostbyaddr, LDAP_LIBS="$LDAP_LIBS -lnsl")
@@ -9,7 +18,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2008/10/17 12:46:33 landry Exp $
  	AC_CHECK_LIB(lber, ber_get_tag, LDAP_LIBS="$LDAP_LIBS -llber",,
  		     $LDAP_LIBS)
  
-@@ -655,7 +656,8 @@ else
+@@ -694,7 +695,8 @@ else
  
  		AC_CHECK_LIB(ldap, ldap_start_tls_s,
  	     		     [ ac_cv_have_tls=yes ],
@@ -19,7 +28,7 @@ $OpenBSD: patch-configure_ac,v 1.5 2008/10/17 12:46:33 landry Exp $
  
  	fi
  
-@@ -715,7 +717,7 @@ if test "$ac_cv_enable_jpilot" = yes; then
+@@ -754,7 +756,7 @@ if test "$ac_cv_enable_jpilot" = yes; then
  				   AC_DEFINE(USE_JPILOT, 1, Define if you want JPilot support in addressbook.) ])
  	fi
  
