@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/10 10:43:06 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/11 16:12:34 ajacoutot Exp $
 
 COMMENT =		database of packages for use with locate(1)
 
-DISTNAME =		pkglocatedb-0.2
+DISTNAME =		pkglocatedb-0.3
 DISTFILES =
 
 CATEGORIES =		databases
@@ -20,8 +20,9 @@ do-build:
 
 do-install:
 	${INSTALL_DATA} ${WRKBUILD}/pkglocatedb ${PREFIX}/share
-	${SUBST_CMD} -o root -g bin -c ${FILESDIR}/pkglocate ${PREFIX}/bin/pkglocate
-	chmod ${BINMODE} ${PREFIX}/bin/pkglocate
+	${SUBST_CMD} -o root -g bin -c ${FILESDIR}/pkglocate ${PREFIX}/bin/pkg_locate
+	chmod ${BINMODE} ${PREFIX}/bin/pkg_locate
+	ln -s ${TRUEPREFIX}/bin/pkg_locate ${PREFIX}/bin/pkglocate
 
 NO_REGRESS =		Yes
 
