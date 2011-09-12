@@ -1,5 +1,0 @@
-This package contains a few media utilities for the GNOME desktop:
-    * the GNOME GStreamer-based audio mixer
-    * a volume level meter
-    * the GNOME Sound Recorder
-    * the GStreamer properties capplet

@@ -1,0 +1,4 @@
+This package contains a few media utilities for the GNOME desktop:
+
+    * the GNOME Sound Recorder
+    * the GStreamer Multimedia Systems Selector
