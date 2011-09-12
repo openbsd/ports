@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.161 2011/09/12 08:06:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.162 2011/09/12 08:24:34 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.0.2
 
-REVISION=		12
+REVISION=		13
 
 CATEGORIES=		x11
 
@@ -30,7 +30,7 @@ MODULES=	devel/gettext \
 
 BUILD_DEPENDS=	textproc/xmlto \
 		x11/gnome/settings-daemon \
-		STEM-*-!gtk2:devel/gconf2,-gtk
+		devel/gconf2,-gtk
 LIB_DEPENDS=	devel/libexecinfo \
 		x11/gtk+3 \
 		devel/gconf2 \
@@ -39,7 +39,7 @@ LIB_DEPENDS=	devel/libexecinfo \
 RUN_DEPENDS=	x11/gnome/settings-daemon \
 		sysutils/consolekit \
 		x11/xdg-user-dirs-gtk>=0.8p6 \
-		STEM-*-!gtk2:devel/gconf2,-gtk
+		devel/gconf2,-gtk
 
 # gnome.session+gnome-fallback.session RequiredComponents.
 RUN_DEPENDS+=	notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
@@ -50,7 +50,7 @@ RUN_DEPENDS+=	notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:s
 # gnome-fallback.session RequiredComponents.
 # polkit-gnome isn't strictly *required* but then we will loose the
 # polkit authentication dialog in the gnome-fallback session.
-RUN_DEPENDS+=	STEM-*-!gtk2:x11/gnome/metacity \
+RUN_DEPENDS+=	x11/gnome/metacity \
 		x11/gnome/panel>=3 \
 		x11/polkit-gnome
 
