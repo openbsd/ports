@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2011/09/12 08:21:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2011/09/12 08:43:00 ajacoutot Exp $
 
 COMMENT-main=	configuration database system for GNOME
 COMMENT-polkit=	PolicyKit integration for GConf2
@@ -12,7 +12,7 @@ PKGNAME-polkit=	gconf2-polkit-${GNOME_VERSION}
 PKGNAME-gtk=	gconf2-sanity-check-${GNOME_VERSION}
 
 REVISION-main=	0
-REVISION-gtk=	0
+REVISION-gtk=	1
 REVISION-polkit=0
 
 SHARED_LIBS +=	gconf-2              6.2      # 5.5
@@ -80,7 +80,8 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
 		--without-openldap \
 		--enable-introspection \
-		--enable-defaults-service
+		--enable-defaults-service \
+		--with-gtk=3.0
 
 USE_GROFF=	Yes
 
