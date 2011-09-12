@@ -1,4 +1,4 @@
-$OpenBSD: patch-editor_dconf-model_vala,v 1.5 2011/06/22 16:08:15 ajacoutot Exp $
+$OpenBSD: patch-editor_dconf-model_vala,v 1.6 2011/09/12 18:20:34 jasper Exp $
 
 From 9d6096ff7790cb39f2cd1638d98b211556c73ff9 Mon Sep 17 00:00:00 2001
 From: Robert Ancell <robert.ancell@canonical.com>
@@ -10,8 +10,13 @@ From: Ryan Lortie <desrt@desrt.ca>
 Date: Wed, 22 Jun 2011 15:46:40 +0000
 Subject: Add change watching to dconf-editor
 
---- editor/dconf-model.vala.orig	Wed Jun 22 17:50:47 2011
-+++ editor/dconf-model.vala	Wed Jun 22 17:50:54 2011
+From a15d9621fc7019b01968df737da4f2d3772d3fb2 Mon Sep 17 00:00:00 2001
+From: Ryan Lortie <desrt@desrt.ca>
+Date: Sun, 03 Jul 2011 15:10:26 +0000
+Subject: Deal with incompatible changes in Vala
+
+--- editor/dconf-model.vala.orig	Mon Sep 12 17:12:30 2011
++++ editor/dconf-model.vala	Mon Sep 12 17:12:24 2011
 @@ -118,6 +118,12 @@ public class Key : GLib.Object
  
      public signal void value_changed();
@@ -34,7 +39,19 @@ Subject: Add change watching to dconf-editor
      }
  
      public void set_to_default()
-@@ -456,7 +464,7 @@ public class EnumModel: GLib.Object, Gtk.TreeModel
+@@ -341,7 +349,11 @@ public class KeyModel: GLib.Object, Gtk.TreeModel
+         return iter_nth_child(out iter, null, path.get_indices()[0]);
+     }
+ 
++#if VALA_0_14
++    public Gtk.TreePath? get_path(Gtk.TreeIter iter)
++#else
+     public Gtk.TreePath get_path(Gtk.TreeIter iter)
++#endif
+     {
+         var path = new Gtk.TreePath();
+         path.append_index(get_key(iter).index);
+@@ -456,7 +468,7 @@ public class EnumModel: GLib.Object, Gtk.TreeModel
              return typeof(int);
      }
      
@@ -43,7 +60,7 @@ Subject: Add change watching to dconf-editor
      {
          iter.stamp = 0;
          iter.user_data = value;
-@@ -464,9 +472,9 @@ public class EnumModel: GLib.Object, Gtk.TreeModel
+@@ -464,9 +476,9 @@ public class EnumModel: GLib.Object, Gtk.TreeModel
          iter.user_data3 = value;
      }
  
@@ -55,7 +72,19 @@ Subject: Add change watching to dconf-editor
      }
  
      public bool get_iter(out Gtk.TreeIter iter, Gtk.TreePath path)
-@@ -556,10 +564,23 @@ public class SettingsModel: GLib.Object, Gtk.TreeModel
+@@ -477,7 +489,11 @@ public class EnumModel: GLib.Object, Gtk.TreeModel
+         return iter_nth_child(out iter, null, path.get_indices()[0]);
+     }
+ 
++#if VALA_0_14
++    public Gtk.TreePath? get_path(Gtk.TreeIter iter)
++#else
+     public Gtk.TreePath get_path(Gtk.TreeIter iter)
++#endif
+     {
+         var path = new Gtk.TreePath();
+         path.append_index((int)get_enum_value(iter).index);
+@@ -556,10 +572,23 @@ public class SettingsModel: GLib.Object, Gtk.TreeModel
      public DConf.Client client;
      private Directory root;
  
@@ -80,3 +109,15 @@ Subject: Add change watching to dconf-editor
  
          schemas = new SchemaList();
          try
+@@ -632,7 +661,11 @@ public class SettingsModel: GLib.Object, Gtk.TreeModel
+         return true;
+     }
+ 
++#if VALA_0_14
++    public Gtk.TreePath? get_path(Gtk.TreeIter iter)
++#else
+     public Gtk.TreePath get_path(Gtk.TreeIter iter)
++#endif
+     {
+         var path = new Gtk.TreePath();
+         for (var d = get_directory(iter); d != root; d = d.parent)
