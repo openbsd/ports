@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.18 2011/09/12 17:41:13 ajacoutot Exp $
+$OpenBSD: README,v 1.19 2011/09/12 18:35:44 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -14,7 +14,6 @@ install at least the following packages:
         file-roller \
         gdm \
         gedit \
-        gnome-audio \
         gnome-control-center \
         gnome-keyring \
         gnome-system-monitor \
