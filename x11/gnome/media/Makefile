@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.44 2011/04/13 06:47:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2011/09/12 07:49:52 ajacoutot Exp $
+
+BROKEN=		needs an update
 
 COMMENT-main=	GNOME media utilities
 COMMENT-glade3=	GNOME media profiles catalog for Glade3
