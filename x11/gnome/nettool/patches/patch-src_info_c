@@ -1,18 +1,24 @@
-$OpenBSD: patch-src_info_c,v 1.1.1.1 2010/04/10 16:51:07 ajacoutot Exp $
---- src/info.c.orig	Tue Sep 22 15:30:34 2009
-+++ src/info.c	Tue Mar 30 15:42:12 2010
-@@ -20,6 +20,10 @@
+$OpenBSD: patch-src_info_c,v 1.2 2011/09/12 07:28:53 jasper Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=652713
+https://bugzilla.gnome.org/show_bug.cgi?id=647896
+
+--- src/info.c.orig	Thu Dec  2 10:26:14 2010
++++ src/info.c	Thu Jun 16 12:43:17 2011
+@@ -20,6 +20,12 @@
  #include <gtk/gtk.h>
  #include <glib/gi18n.h>
  #include <glib/gprintf.h>
++#if defined (__FreeBSD__) || defined (__OpenBSD__)
 +#include <sys/types.h>
 +#include <string.h>
 +#include <errno.h>
 +#include <unistd.h>
++#endif
  
  #ifdef HAVE_CONFIG_H
  #  include <config.h>
-@@ -37,6 +41,9 @@
+@@ -37,6 +43,9 @@
  #include <sys/ioctl.h>
  #include <stdlib.h>
  #include <net/if.h>
@@ -22,20 +28,12 @@ $OpenBSD: patch-src_info_c,v 1.1.1.1 2010/04/10 16:51:07 ajacoutot Exp $
  
  #include <glibtop.h>
  #include <glibtop/netlist.h>
-@@ -61,6 +68,7 @@ static InfoInterfaceDescription info_iface_desc [] = {
- 	{ N_("Ethernet Interface"),      INFO_INTERFACE_ETH,     "16_ethernet.xpm", "eth",        NULL },
- 	{ N_("Wireless Interface"),      INFO_INTERFACE_WLAN,    "wavelan-16.png",  "wlan",       NULL },
- 	{ N_("Modem Interface"),         INFO_INTERFACE_PPP,     "16_ppp.xpm",      "ppp",        NULL },
-+	{ N_("Modem Interface"),         INFO_INTERFACE_PPP,     "16_ppp.xpm",      "tun",        NULL },
- 	{ N_("Parallel Line Interface"), INFO_INTERFACE_PLIP,    "16_plip.xpm",     "plip",       NULL },
- 	{ N_("Infrared Interface"),      INFO_INTERFACE_IRLAN,   "irda-16.png",     "irlan",      NULL },
- 	{ N_("Loopback Interface"),      INFO_INTERFACE_LO,      "16_loopback.xpm", "lo",         NULL },
-@@ -131,9 +139,44 @@ info_get_interface_from_dev_name (const gchar *dev_nam
+@@ -131,9 +140,39 @@ info_get_interface_from_dev_name (const gchar *dev_nam
  {
  	gint i;
  	gchar *path;
--	
 +	gchar *dev_type = NULL;
+ 	
 +#if defined (__FreeBSD__) || defined (__OpenBSD__)
 +	int s;
 +	struct ifmediareq ifmr;
@@ -50,17 +48,11 @@ $OpenBSD: patch-src_info_c,v 1.1.1.1 2010/04/10 16:51:07 ajacoutot Exp $
 +				case IFM_ETHER:
 +					dev_type = "eth";
 +					break;
-+				case IFM_FDDI:
-+#ifdef IFM_TOKEN
-+				case IFM_TOKEN:
-+#endif
-+#ifdef IFM_ATM
-+				case IFM_ATM:
-+#endif
-+					dev_type = "other_type";
-+					break;
 +				case IFM_IEEE80211:
 +					dev_type = "wlan";
++					break;
++				default:
++					dev_type = "other_type";
 +					break;
 +			}
 +		}
@@ -77,3 +69,19 @@ $OpenBSD: patch-src_info_c,v 1.1.1.1 2010/04/10 16:51:07 ajacoutot Exp $
  			(*iface) = g_strdup_printf ("%s (%s)", _(info_iface_desc[i].name), dev_name);
  			if (info_iface_desc[i].pixbuf == NULL) {
  				path = g_build_filename (PIXMAPS_DIR, info_iface_desc[i].icon, NULL);
+@@ -200,13 +239,13 @@ info_load_iface (Netinfo *info)
+ 	gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (info->combo), renderer, TRUE);
+ 	gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (info->combo), renderer,
+ 					"pixbuf", 0, NULL);
+-	g_object_unref (renderer);
++	/* g_object_unref (renderer); */
+ 
+ 	renderer = gtk_cell_renderer_text_new ();
+ 	gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (info->combo), renderer, TRUE);
+ 	gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (info->combo), renderer,
+ 					"markup", 1, NULL);
+-	g_object_unref (renderer);
++	/* g_object_unref (renderer); */
+ 
+ 	gtk_combo_box_set_active (GTK_COMBO_BOX (info->combo), 0);
+ }

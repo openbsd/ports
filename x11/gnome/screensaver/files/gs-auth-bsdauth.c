@@ -1,4 +1,4 @@
-/* $OpenBSD: gs-auth-bsdauth.c,v 1.2 2010/07/16 10:04:35 ajacoutot Exp $
+/* $OpenBSD: gs-auth-bsdauth.c,v 1.3 2011/09/12 07:28:54 jasper Exp $
  * gs-auth-bsdauth.c --- verifying typed passwords with bsd_auth(3)
  *
  * Copyright (c) 1993-1998 Jamie Zawinski <jwz@jwz.org>

@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-#	$OpenBSD: krb5-config,v 1.1 2010/09/12 20:29:24 ajacoutot Exp $
+#	$OpenBSD: krb5-config,v 1.2 2011/09/12 07:28:53 jasper Exp $
 #
 
 case x$1 in

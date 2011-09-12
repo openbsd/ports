@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/12 07:28:53 jasper Exp $
 
 COMMENT=	library for gnome keyring integration
 
 GNOME_PROJECT=	libgnome-keyring
-GNOME_VERSION=	2.32.0
+GNOME_VERSION=	3.0.3
 
-SHARED_LIBS +=  gnome-keyring        6.0      # .1.1
+SHARED_LIBS +=  gnome-keyring        6.0      # 1.1
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,6 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += dbus-1 glib-2.0 gpg-error pcre gcrypt
+
+EXTRACT_SUFX=	.tar.xz
 
 MODULES=	devel/gettext \
 		x11/gnome

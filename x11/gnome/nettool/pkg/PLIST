@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.3 2010/09/30 07:36:10 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/09/12 07:28:54 jasper Exp $
 @bin bin/gnome-nettool
 share/applications/gnome-nettool.desktop
+share/glib-2.0/schemas/org.gnome.gnome-nettool.gschema.xml
 share/gnome-nettool/
 share/gnome-nettool/pixmaps/
 share/gnome-nettool/pixmaps/16_ethernet.xpm
@@ -139,6 +140,7 @@ share/locale/ta/LC_MESSAGES/gnome-nettool.mo
 share/locale/te/LC_MESSAGES/gnome-nettool.mo
 share/locale/th/LC_MESSAGES/gnome-nettool.mo
 share/locale/tr/LC_MESSAGES/gnome-nettool.mo
+share/locale/ug/LC_MESSAGES/gnome-nettool.mo
 share/locale/uk/LC_MESSAGES/gnome-nettool.mo
 share/locale/uz/LC_MESSAGES/gnome-nettool.mo
 share/locale/uz@cyrillic/LC_MESSAGES/gnome-nettool.mo
@@ -148,6 +150,7 @@ share/locale/xh/LC_MESSAGES/gnome-nettool.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-nettool.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-nettool.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-nettool.mo
+share/omf/
 share/omf/gnome-nettool/
 share/omf/gnome-nettool/gnome-nettool-C.omf
 share/omf/gnome-nettool/gnome-nettool-ca.omf
@@ -170,3 +173,5 @@ share/omf/gnome-nettool/gnome-nettool-zh_CN.omf
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

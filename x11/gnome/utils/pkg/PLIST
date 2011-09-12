@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.26 2010/09/30 07:39:36 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.27 2011/09/12 07:28:55 jasper Exp $
 @bin bin/baobab
 @bin bin/gnome-dictionary
+@bin bin/gnome-font-viewer
 bin/gnome-panel-screenshot
 @bin bin/gnome-screenshot
 @bin bin/gnome-search-tool
 @bin bin/gnome-system-log
+@bin bin/gnome-thumbnail-font
 include/gdict-1.0/
 include/gdict-1.0/gdict/
 include/gdict-1.0/gdict/gdict-client-context.h
@@ -20,25 +22,26 @@ include/gdict-1.0/gdict/gdict-strategy-chooser.h
 include/gdict-1.0/gdict/gdict-utils.h
 include/gdict-1.0/gdict/gdict-version.h
 include/gdict-1.0/gdict/gdict.h
-lib/bonobo/servers/GNOME_DictionaryApplet.server
 lib/libgdict-1.0.a
 lib/libgdict-1.0.la
 @lib lib/libgdict-1.0.so.${LIBgdict-1.0_VERSION}
 lib/pkgconfig/gdict-1.0.pc
-@bin libexec/gnome-dictionary-applet
 @man man/man1/baobab.1
 @man man/man1/gnome-dictionary.1
 @man man/man1/gnome-screenshot.1
 @man man/man1/gnome-search-tool.1
 @man man/man1/gnome-system-log.1
+share/GConf/gsettings/gnome-screenshot.convert
+share/GConf/gsettings/logview.convert
 share/applications/baobab.desktop
 share/applications/gnome-dictionary.desktop
+share/applications/gnome-font-viewer.desktop
 share/applications/gnome-screenshot.desktop
 share/applications/gnome-search-tool.desktop
 share/applications/gnome-system-log.desktop
 share/baobab/
-share/baobab/baobab-dialog-scan-props.ui
 share/baobab/baobab-main-window.ui
+share/baobab/baobab-preferences-dialog.ui
 share/baobab/pixmaps/
 share/baobab/pixmaps/shot.png
 share/gdict-1.0/
@@ -46,7 +49,10 @@ share/gdict-1.0/sources/
 share/gdict-1.0/sources/default.desktop
 share/gdict-1.0/sources/spanish.desktop
 share/gdict-1.0/sources/thai.desktop
-share/gnome-2.0/ui/GNOME_DictionaryApplet.xml
+share/glib-2.0/schemas/org.gnome.baobab.gschema.xml
+share/glib-2.0/schemas/org.gnome.dictionary.gschema.xml
+share/glib-2.0/schemas/org.gnome.gnome-screenshot.gschema.xml
+share/glib-2.0/schemas/org.gnome.gnome-system-log.gschema.xml
 share/gnome-dictionary/
 share/gnome-dictionary/gnome-dictionary-preferences.ui
 share/gnome-dictionary/gnome-dictionary-source.ui
@@ -198,6 +204,16 @@ share/gnome/help/baobab/pl/figures/baobab_ringschart1.png
 share/gnome/help/baobab/pl/figures/baobab_ringschart2.png
 share/gnome/help/baobab/pl/figures/baobab_treemaps.png
 share/gnome/help/baobab/pl/figures/baobab_window.png
+share/gnome/help/baobab/pt_BR/
+share/gnome/help/baobab/pt_BR/baobab.xml
+share/gnome/help/baobab/pt_BR/figures/
+share/gnome/help/baobab/pt_BR/figures/baobab_fullscan.png
+share/gnome/help/baobab/pt_BR/figures/baobab_prefs.png
+share/gnome/help/baobab/pt_BR/figures/baobab_remote.png
+share/gnome/help/baobab/pt_BR/figures/baobab_ringschart1.png
+share/gnome/help/baobab/pt_BR/figures/baobab_ringschart2.png
+share/gnome/help/baobab/pt_BR/figures/baobab_treemaps.png
+share/gnome/help/baobab/pt_BR/figures/baobab_window.png
 share/gnome/help/baobab/ru/
 share/gnome/help/baobab/ru/baobab.xml
 share/gnome/help/baobab/ru/figures/
@@ -208,6 +224,16 @@ share/gnome/help/baobab/ru/figures/baobab_ringschart1.png
 share/gnome/help/baobab/ru/figures/baobab_ringschart2.png
 share/gnome/help/baobab/ru/figures/baobab_treemaps.png
 share/gnome/help/baobab/ru/figures/baobab_window.png
+share/gnome/help/baobab/sl/
+share/gnome/help/baobab/sl/baobab.xml
+share/gnome/help/baobab/sl/figures/
+share/gnome/help/baobab/sl/figures/baobab_fullscan.png
+share/gnome/help/baobab/sl/figures/baobab_prefs.png
+share/gnome/help/baobab/sl/figures/baobab_remote.png
+share/gnome/help/baobab/sl/figures/baobab_ringschart1.png
+share/gnome/help/baobab/sl/figures/baobab_ringschart2.png
+share/gnome/help/baobab/sl/figures/baobab_treemaps.png
+share/gnome/help/baobab/sl/figures/baobab_window.png
 share/gnome/help/baobab/sv/
 share/gnome/help/baobab/sv/baobab.xml
 share/gnome/help/baobab/sv/figures/
@@ -414,6 +440,17 @@ share/gnome/help/gnome-dictionary/ru/figures/gnome-dictionary-lookup.png
 share/gnome/help/gnome-dictionary/ru/figures/gnome-dictionary-preferences-print.png
 share/gnome/help/gnome-dictionary/ru/figures/gnome-dictionary-preferences-source.png
 share/gnome/help/gnome-dictionary/ru/gnome-dictionary.xml
+share/gnome/help/gnome-dictionary/sl/
+share/gnome/help/gnome-dictionary/sl/figures/
+share/gnome/help/gnome-dictionary/sl/figures/gnome-dictionary-add-source.png
+share/gnome/help/gnome-dictionary/sl/figures/gnome-dictionary-applet-window.png
+share/gnome/help/gnome-dictionary/sl/figures/gnome-dictionary-applet.png
+share/gnome/help/gnome-dictionary/sl/figures/gnome-dictionary-application.png
+share/gnome/help/gnome-dictionary/sl/figures/gnome-dictionary-find.png
+share/gnome/help/gnome-dictionary/sl/figures/gnome-dictionary-lookup.png
+share/gnome/help/gnome-dictionary/sl/figures/gnome-dictionary-preferences-print.png
+share/gnome/help/gnome-dictionary/sl/figures/gnome-dictionary-preferences-source.png
+share/gnome/help/gnome-dictionary/sl/gnome-dictionary.xml
 share/gnome/help/gnome-dictionary/sv/
 share/gnome/help/gnome-dictionary/sv/figures/
 share/gnome/help/gnome-dictionary/sv/figures/gnome-dictionary-add-source.png
@@ -505,6 +542,10 @@ share/gnome/help/gnome-search-tool/ru/
 share/gnome/help/gnome-search-tool/ru/figures/
 share/gnome/help/gnome-search-tool/ru/figures/gnome-search-tool_window.png
 share/gnome/help/gnome-search-tool/ru/gnome-search-tool.xml
+share/gnome/help/gnome-search-tool/sl/
+share/gnome/help/gnome-search-tool/sl/figures/
+share/gnome/help/gnome-search-tool/sl/figures/gnome-search-tool_window.png
+share/gnome/help/gnome-search-tool/sl/gnome-search-tool.xml
 share/gnome/help/gnome-search-tool/sv/
 share/gnome/help/gnome-search-tool/sv/figures/
 share/gnome/help/gnome-search-tool/sv/figures/gnome-search-tool_window.png
@@ -575,6 +616,10 @@ share/gnome/help/gnome-system-log/ru/
 share/gnome/help/gnome-system-log/ru/figures/
 share/gnome/help/gnome-system-log/ru/figures/syslog_window.png
 share/gnome/help/gnome-system-log/ru/gnome-system-log.xml
+share/gnome/help/gnome-system-log/sl/
+share/gnome/help/gnome-system-log/sl/figures/
+share/gnome/help/gnome-system-log/sl/figures/syslog_window.png
+share/gnome/help/gnome-system-log/sl/gnome-system-log.xml
 share/gnome/help/gnome-system-log/sv/
 share/gnome/help/gnome-system-log/sv/figures/
 share/gnome/help/gnome-system-log/sv/figures/syslog_window.png
@@ -621,8 +666,17 @@ share/gtk-doc/html/gdict/right.png
 share/gtk-doc/html/gdict/sources.html
 share/gtk-doc/html/gdict/style.css
 share/gtk-doc/html/gdict/up.png
+share/icons/hicolor/16x16/apps/baobab.png
+share/icons/hicolor/16x16/apps/logview.png
+share/icons/hicolor/22x22/apps/baobab.png
+share/icons/hicolor/22x22/apps/logview.png
 share/icons/hicolor/24x24/apps/baobab.png
-share/icons/hicolor/scalable/apps/baobab.svg
+share/icons/hicolor/256x256/apps/baobab.png
+share/icons/hicolor/256x256/apps/logview.png
+share/icons/hicolor/32x32/apps/baobab.png
+share/icons/hicolor/32x32/apps/logview.png
+share/icons/hicolor/48x48/apps/baobab.png
+share/icons/hicolor/48x48/apps/logview.png
 share/locale/af/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/am/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/ar/LC_MESSAGES/gnome-utils-2.0.mo
@@ -712,6 +766,7 @@ share/locale/xh/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-utils-2.0.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-utils-2.0.mo
+share/omf/
 share/omf/baobab/
 share/omf/baobab/baobab-C.omf
 share/omf/baobab/baobab-ca.omf
@@ -727,7 +782,9 @@ share/omf/baobab/baobab-fr.omf
 share/omf/baobab/baobab-it.omf
 share/omf/baobab/baobab-oc.omf
 share/omf/baobab/baobab-pl.omf
+share/omf/baobab/baobab-pt_BR.omf
 share/omf/baobab/baobab-ru.omf
+share/omf/baobab/baobab-sl.omf
 share/omf/baobab/baobab-sv.omf
 share/omf/baobab/baobab-uk.omf
 share/omf/baobab/baobab-zh_CN.omf
@@ -748,6 +805,7 @@ share/omf/gnome-dictionary/gnome-dictionary-fr.omf
 share/omf/gnome-dictionary/gnome-dictionary-it.omf
 share/omf/gnome-dictionary/gnome-dictionary-oc.omf
 share/omf/gnome-dictionary/gnome-dictionary-ru.omf
+share/omf/gnome-dictionary/gnome-dictionary-sl.omf
 share/omf/gnome-dictionary/gnome-dictionary-sv.omf
 share/omf/gnome-dictionary/gnome-dictionary-uk.omf
 share/omf/gnome-dictionary/gnome-dictionary-zh_CN.omf
@@ -766,6 +824,7 @@ share/omf/gnome-search-tool/gnome-search-tool-it.omf
 share/omf/gnome-search-tool/gnome-search-tool-ko.omf
 share/omf/gnome-search-tool/gnome-search-tool-oc.omf
 share/omf/gnome-search-tool/gnome-search-tool-ru.omf
+share/omf/gnome-search-tool/gnome-search-tool-sl.omf
 share/omf/gnome-search-tool/gnome-search-tool-sv.omf
 share/omf/gnome-search-tool/gnome-search-tool-uk.omf
 share/omf/gnome-search-tool/gnome-search-tool-zh_CN.omf
@@ -784,6 +843,7 @@ share/omf/gnome-system-log/gnome-system-log-it.omf
 share/omf/gnome-system-log/gnome-system-log-ko.omf
 share/omf/gnome-system-log/gnome-system-log-oc.omf
 share/omf/gnome-system-log/gnome-system-log-ru.omf
+share/omf/gnome-system-log/gnome-system-log-sl.omf
 share/omf/gnome-system-log/gnome-system-log-sv.omf
 share/omf/gnome-system-log/gnome-system-log-uk.omf
 share/omf/gnome-system-log/gnome-system-log-zh_CN.omf
@@ -791,13 +851,13 @@ share/pixmaps/gsearchtool/
 share/pixmaps/gsearchtool/thumbnail_frame.png
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/baobab.schemas
-${SCHEMAS_INSTDIR}/gnome-dictionary.schemas
-${SCHEMAS_INSTDIR}/gnome-screenshot.schemas
 ${SCHEMAS_INSTDIR}/gnome-search-tool.schemas
-${SCHEMAS_INSTDIR}/gnome-system-log.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+share/thumbnailers/
+share/thumbnailers/gnome-font-viewer.thumbnailer
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

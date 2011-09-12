@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2011/05/19 08:31:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/12 07:28:53 jasper Exp $
 
 COMMENT=	base icon theme extension for special UI contexts
 
 GNOME_PROJECT=	gnome-icon-theme-symbolic
-GNOME_VERSION=	2.30.0
-REVISION=	1
+GNOME_VERSION=	3.0.0
+REVISION=	2
 
 CATEGORIES=	x11
 
@@ -16,7 +16,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	x11/gnome
 
-BUILD_DEPENDS=	x11/icon-naming-utils
+BUILD_DEPENDS=	x11/icon-naming-utils \
+		x11/icontool
 RUN_DEPENDS=	x11/gnome/icon-theme
 
 PKG_ARCH=	*
@@ -26,5 +27,11 @@ USE_LIBTOOL=	No
 CONFIGURE_ENV=	ac_cv_path_GIT=false \
 		ac_cv_path_INKSCAPE=false \
 		ac_cv_path_ICONTOOL_RENDER=false
+CONFIGURE_ARGS=	--enable-icon-mapping
+
+# no need to build_depends on gtk+2|gtk+3, we run gtk-update-icon-cache
+# at pkg_add time if it is available
+post-extract:
+	ln -sf /usr/bin/true ${WRKDIR}/bin/gtk-update-icon-cache
 
 .include <bsd.port.mk>

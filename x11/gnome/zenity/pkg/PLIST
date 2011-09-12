@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2010/09/30 07:47:14 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.18 2011/09/12 07:28:55 jasper Exp $
 bin/gdialog
 @bin bin/zenity
 @man man/man1/zenity.1
@@ -200,6 +200,20 @@ share/gnome/help/zenity/ru/figures/zenity-question-screenshot.png
 share/gnome/help/zenity/ru/figures/zenity-text-screenshot.png
 share/gnome/help/zenity/ru/figures/zenity-warning-screenshot.png
 share/gnome/help/zenity/ru/zenity.xml
+share/gnome/help/zenity/sl/
+share/gnome/help/zenity/sl/figures/
+share/gnome/help/zenity/sl/figures/zenity-calendar-screenshot.png
+share/gnome/help/zenity/sl/figures/zenity-entry-screenshot.png
+share/gnome/help/zenity/sl/figures/zenity-error-screenshot.png
+share/gnome/help/zenity/sl/figures/zenity-fileselection-screenshot.png
+share/gnome/help/zenity/sl/figures/zenity-information-screenshot.png
+share/gnome/help/zenity/sl/figures/zenity-list-screenshot.png
+share/gnome/help/zenity/sl/figures/zenity-notification-screenshot.png
+share/gnome/help/zenity/sl/figures/zenity-progress-screenshot.png
+share/gnome/help/zenity/sl/figures/zenity-question-screenshot.png
+share/gnome/help/zenity/sl/figures/zenity-text-screenshot.png
+share/gnome/help/zenity/sl/figures/zenity-warning-screenshot.png
+share/gnome/help/zenity/sl/zenity.xml
 share/gnome/help/zenity/sv/
 share/gnome/help/zenity/sv/figures/
 share/gnome/help/zenity/sv/figures/zenity-calendar-screenshot.png
@@ -264,6 +278,7 @@ share/locale/el/LC_MESSAGES/zenity.mo
 share/locale/en@shaw/LC_MESSAGES/zenity.mo
 share/locale/en_CA/LC_MESSAGES/zenity.mo
 share/locale/en_GB/LC_MESSAGES/zenity.mo
+share/locale/eo/LC_MESSAGES/zenity.mo
 share/locale/es/LC_MESSAGES/zenity.mo
 share/locale/et/LC_MESSAGES/zenity.mo
 share/locale/eu/LC_MESSAGES/zenity.mo
@@ -344,6 +359,7 @@ share/omf/zenity/zenity-fr.omf
 share/omf/zenity/zenity-oc.omf
 share/omf/zenity/zenity-pt_BR.omf
 share/omf/zenity/zenity-ru.omf
+share/omf/zenity/zenity-sl.omf
 share/omf/zenity/zenity-sv.omf
 share/omf/zenity/zenity-uk.omf
 share/omf/zenity/zenity-zh_CN.omf

@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_nautilus-desktop-window_c,v 1.1 2011/09/12 07:28:53 jasper Exp $
+
+From 3caf41765453c3c4cf9a73aae87b185d099598f9 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Mon, 20 Jun 2011 16:34:47 +0000
+Subject: Turn nautilus_window_close() into a virtual method.
+
+--- src/nautilus-desktop-window.c.orig	Mon Apr 25 19:01:26 2011
++++ src/nautilus-desktop-window.c	Tue Jul 26 08:55:15 2011
+@@ -284,6 +284,13 @@ real_sync_title (NautilusWindow *window,
+ }
+ 
+ static void
++real_window_close (NautilusWindow *window)
++{
++	/* stub, does nothing */
++	return;
++}
++
++static void
+ nautilus_desktop_window_class_init (NautilusDesktopWindowClass *klass)
+ {
+ 	GtkWidgetClass *wclass = GTK_WIDGET_CLASS (klass);
+@@ -300,6 +307,7 @@ nautilus_desktop_window_class_init (NautilusDesktopWin
+ 	nclass->window_type = NAUTILUS_WINDOW_DESKTOP;
+ 	nclass->sync_title = real_sync_title;
+ 	nclass->get_icon = real_get_icon;
++	nclass->close = real_window_close;
+ 
+ 	g_type_class_add_private (klass, sizeof (NautilusDesktopWindowDetails));
+ }

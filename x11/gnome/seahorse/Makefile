@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.51 2011/05/14 21:29:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2011/09/12 07:28:54 jasper Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		manage encryption keys
+COMMENT=		GNOME encryption interface
 
 GNOME_PROJECT=		seahorse
-GNOME_VERSION=		2.32.0
-REVISION=		6
+GNOME_VERSION=		3.0.2
+
+REVISION=		1
 
 SHARED_LIBS +=	cryptui              1.0      # .0.0
 
@@ -20,27 +21,27 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender asn1 atk-1.0
-WANTLIB += c cairo com_err crypto dbus-1 dbus-glib-1 expat fontconfig
-WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gnutls gobject-2.0 gpg-error
-WANTLIB += gssapi gthread-2.0 gtk-x11-2.0 krb5 m pango-1.0 pangocairo-1.0
+WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += asn1 atk-1.0 avahi-client avahi-common avahi-glib c
+WANTLIB += cairo cairo-gobject com_err crypto dbus-1 dbus-glib-1
+WANTLIB += drm expat fontconfig freetype gck gcr-3 gcrypt gdk-3
+WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring
+WANTLIB += gobject-2.0 gpg-error gpgme gssapi gthread-2.0 gtk-3
+WANTLIB += krb5 lber-2.4 ldap-2.4 m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += sasl2 ssl tasn1 xcb xml2 z xcb-render xcb-render-util
-WANTLIB += lber-2.4 ldap-2.4 notify soup-2.4 gpgme gnome-keyring>=6 gcr>=1
-WANTLIB += gp11 avahi-client avahi-common avahi-glib
+WANTLIB += sasl2 soup-2.4 ssl tasn1 xcb xcb-render xcb-shm xml2
+WANTLIB += z assuan
 
 BUILD_DEPENDS=		devel/gobject-introspection
 
 LIB_DEPENDS=		databases/openldap \
-			devel/libnotify>=0.7.2 \
+			x11/gnome/libgnome-keyring>=3.0.0 \
+			x11/gnome/keyring>=3.0.0 \
+			devel/libnotify \
 			devel/libsoup \
 			security/gpgme \
-			x11/gnome/libgnome-keyring \
-			x11/gnome/keyring>=2.30.0 \
-			net/avahi \
-			x11/gtk+2
+			net/avahi
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -50,17 +51,22 @@ MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	seahorse
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
 			--enable-introspection \
 			--enable-hkp \
 			--enable-ldap \
+			--enable-libnotify \
+			--enable-pkcs11 \
 			--enable-pgp \
 			--enable-sharing \
-			--disable-update-mime-database
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
+			--enable-ssh \
+			--disable-update-mime-database \
+			--with-gtk=3
+USE_GROFF=	Yes
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/seahorse
 

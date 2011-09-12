@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.60 2011/04/13 06:47:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2011/09/12 07:28:55 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
-GNOME_VERSION=		2.32.0
-REVISION=		3
+GNOME_VERSION=		3.0.1
+
+REVISION=		0
 
 SHARED_LIBS +=  gdict-1.0      6.1      # .6.7
 
@@ -16,28 +17,26 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
-WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 GL Xxf86vm drm xcb-shm
-WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c
-WANTLIB += cairo crypto dbus-1 dbus-glib-1 expat fontconfig freetype
-WANTLIB += gailutil gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gnomevfs-2 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 kvm ltdl m ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png popt pthread pthread-stubs
-WANTLIB += ssl util vorbis vorbisfile xcb  xcb-render
-WANTLIB += xml2 z canberra canberra-gtk gnome-2 gnomecanvas-2 gtop-2.0
-WANTLIB += panel-applet-2
+WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += atk-1.0 c cairo cairo-gobject canberra canberra-gtk3
+WANTLIB += drm expat fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += gtk-3 gtop-2.0 kvm ltdl m ogg pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm z
 
-LIB_DEPENDS=		audio/libcanberra,-gtk \
-			x11/gnome/libgnome \
-			x11/gnome/libgnomecanvas \
-			devel/libgtop2 \
-			x11/gnome/panel
-# needed for at least baobab and gnome-system-log
-RUN_DEPENDS=		x11/gnome/gvfs
+LIB_DEPENDS=		audio/libcanberra,-gtk3 \
+			devel/libgtop2
+BUILD_DEPENDS= 		devel/gsettings-desktop-schemas
+# gvfs needed by baobab
+# nautilus (org.gnome.nautilus.preferences) needed by gnome-screenshot 
+RUN_DEPENDS=		devel/gsettings-desktop-schemas \
+			x11/gnome/nautilus \
+			x11/gnome/gvfs
 
-MODULES=		devel/gconf2 \
+MODULES=		devel/dconf \
+			devel/gconf2 \
 			devel/gettext \
 			x11/gnome
 
@@ -48,10 +47,9 @@ MODGCONF2_SCHEMAS_DIR=	gnome-utils
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
 			--with-grep="/usr/bin/grep" \
-			--disable-shave \
 			--enable-ipv6
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
+USE_GROFF =		Yes
 
 .include <bsd.port.mk>

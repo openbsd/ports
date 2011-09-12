@@ -1,6 +1,6 @@
-$OpenBSD: patch-gnome-panel_panel-menu-bar_c,v 1.1 2009/11/15 17:36:38 ajacoutot Exp $
---- gnome-panel/panel-menu-bar.c.orig	Tue Sep  8 02:08:42 2009
-+++ gnome-panel/panel-menu-bar.c	Sun Nov 15 16:26:56 2009
+$OpenBSD: patch-gnome-panel_panel-menu-bar_c,v 1.2 2011/09/12 07:28:54 jasper Exp $
+--- gnome-panel/panel-menu-bar.c.orig	Wed May 18 11:12:53 2011
++++ gnome-panel/panel-menu-bar.c	Wed May 18 11:14:30 2011
 @@ -29,6 +29,7 @@
  #include "panel-menu-bar.h"
  
@@ -9,12 +9,12 @@ $OpenBSD: patch-gnome-panel_panel-menu-bar_c,v 1.1 2009/11/15 17:36:38 ajacoutot
  #include <glib/gi18n.h>
  
  #include <libpanel-util/panel-error.h>
-@@ -135,12 +136,20 @@ static void
+@@ -125,11 +126,20 @@ panel_menu_bar_setup_tooltip (PanelMenuBar *menubar)
+ static void
  panel_menu_bar_init (PanelMenuBar *menubar)
  {
- 	GtkWidget *image;
 +	gchar     *xdgMenuPrefix, *applicationsMenu;
- 
++
  	menubar->priv = PANEL_MENU_BAR_GET_PRIVATE (menubar);
  
  	menubar->priv->info = NULL;

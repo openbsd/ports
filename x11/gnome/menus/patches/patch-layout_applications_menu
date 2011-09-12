@@ -1,4 +1,4 @@
-$OpenBSD: patch-layout_applications_menu,v 1.2 2009/01/07 19:46:05 jasper Exp $
+$OpenBSD: patch-layout_applications_menu,v 1.3 2011/09/12 07:28:53 jasper Exp $
 --- layout/applications.menu.orig	Mon Jan  7 23:27:42 2008
 +++ layout/applications.menu	Wed Feb  6 11:18:13 2008
 @@ -8,8 +8,8 @@

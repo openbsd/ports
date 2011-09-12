@@ -1,88 +1,95 @@
-@comment $OpenBSD: PLIST,v 1.14 2011/04/20 20:02:06 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2011/09/12 07:28:55 jasper Exp $
 @pkgpath x11/gnome/totem,xine
 @bin bin/totem
 @bin bin/totem-audio-preview
 @bin bin/totem-video-indexer
 @bin bin/totem-video-thumbnailer
-lib/nautilus/
-lib/nautilus/extensions-2.0/
-@comment lib/nautilus/extensions-2.0/libtotem-properties-page.a
-@comment lib/nautilus/extensions-2.0/libtotem-properties-page.la
-lib/nautilus/extensions-2.0/libtotem-properties-page.so
+include/totem/
+include/totem/1.0/
+include/totem/1.0/totem-cell-renderer-video.h
+include/totem/1.0/totem-dirs.h
+include/totem/1.0/totem-interface.h
+include/totem/1.0/totem-plugin.h
+include/totem/1.0/totem-video-list.h
+include/totem/1.0/totem.h
+lib/girepository-1.0/Totem-1.0.typelib
+lib/libtotem.a
+lib/libtotem.la
+@lib lib/libtotem.so.${LIBtotem_VERSION}
+lib/pkgconfig/totem.pc
 lib/totem/
 lib/totem/plugins/
 lib/totem/plugins/dbus/
+lib/totem/plugins/dbus/dbus-service.plugin
 lib/totem/plugins/dbus/dbus-service.py
 lib/totem/plugins/dbus/dbus-service.pyc
 lib/totem/plugins/dbus/dbus-service.pyo
-lib/totem/plugins/dbus/dbus-service.totem-plugin
-lib/totem/plugins/gromit/
-lib/totem/plugins/gromit/gromit.totem-plugin
-@comment lib/totem/plugins/gromit/libgromit.a
-@comment lib/totem/plugins/gromit/libgromit.la
-lib/totem/plugins/gromit/libgromit.so
 lib/totem/plugins/jamendo/
+lib/totem/plugins/jamendo/jamendo.plugin
 lib/totem/plugins/jamendo/jamendo.py
 lib/totem/plugins/jamendo/jamendo.pyc
 lib/totem/plugins/jamendo/jamendo.pyo
-lib/totem/plugins/jamendo/jamendo.totem-plugin
 lib/totem/plugins/jamendo/jamendo.ui
 lib/totem/plugins/media-player-keys/
 @comment lib/totem/plugins/media-player-keys/libmedia_player_keys.a
 @comment lib/totem/plugins/media-player-keys/libmedia_player_keys.la
 lib/totem/plugins/media-player-keys/libmedia_player_keys.so
-lib/totem/plugins/media-player-keys/media-player-keys.totem-plugin
+lib/totem/plugins/media-player-keys/media-player-keys.plugin
 lib/totem/plugins/ontop/
 @comment lib/totem/plugins/ontop/libontop.a
 @comment lib/totem/plugins/ontop/libontop.la
 lib/totem/plugins/ontop/libontop.so
-lib/totem/plugins/ontop/ontop.totem-plugin
+lib/totem/plugins/ontop/ontop.plugin
 lib/totem/plugins/opensubtitles/
 lib/totem/plugins/opensubtitles/hash.py
 lib/totem/plugins/opensubtitles/hash.pyc
 lib/totem/plugins/opensubtitles/hash.pyo
+lib/totem/plugins/opensubtitles/opensubtitles.plugin
 lib/totem/plugins/opensubtitles/opensubtitles.py
 lib/totem/plugins/opensubtitles/opensubtitles.pyc
 lib/totem/plugins/opensubtitles/opensubtitles.pyo
-lib/totem/plugins/opensubtitles/opensubtitles.totem-plugin
 lib/totem/plugins/opensubtitles/opensubtitles.ui
 lib/totem/plugins/properties/
 @comment lib/totem/plugins/properties/libmovie-properties.a
 @comment lib/totem/plugins/properties/libmovie-properties.la
 lib/totem/plugins/properties/libmovie-properties.so
-lib/totem/plugins/properties/movie-properties.totem-plugin
+lib/totem/plugins/properties/movie-properties.plugin
 lib/totem/plugins/screensaver/
 @comment lib/totem/plugins/screensaver/libscreensaver.a
 @comment lib/totem/plugins/screensaver/libscreensaver.la
 lib/totem/plugins/screensaver/libscreensaver.so
-lib/totem/plugins/screensaver/screensaver.totem-plugin
+lib/totem/plugins/screensaver/screensaver.plugin
 lib/totem/plugins/screenshot/
 lib/totem/plugins/screenshot/gallery.ui
 lib/totem/plugins/screenshot/gnome-screenshot.ui
 @comment lib/totem/plugins/screenshot/libscreenshot.a
 @comment lib/totem/plugins/screenshot/libscreenshot.la
 lib/totem/plugins/screenshot/libscreenshot.so
-lib/totem/plugins/screenshot/screenshot.totem-plugin
+lib/totem/plugins/screenshot/screenshot.plugin
 lib/totem/plugins/skipto/
 @comment lib/totem/plugins/skipto/libskipto.a
 @comment lib/totem/plugins/skipto/libskipto.la
 lib/totem/plugins/skipto/libskipto.so
-lib/totem/plugins/skipto/skipto.totem-plugin
+lib/totem/plugins/skipto/skipto.plugin
 lib/totem/plugins/skipto/skipto.ui
 lib/totem/plugins/thumbnail/
 @comment lib/totem/plugins/thumbnail/libthumbnail.a
 @comment lib/totem/plugins/thumbnail/libthumbnail.la
 lib/totem/plugins/thumbnail/libthumbnail.so
-lib/totem/plugins/thumbnail/thumbnail.totem-plugin
-lib/totem/plugins/totem/
-lib/totem/plugins/totem/__init__.py
-lib/totem/plugins/totem/__init__.pyc
-lib/totem/plugins/totem/__init__.pyo
+lib/totem/plugins/thumbnail/thumbnail.plugin
 libexec/totem/
 libexec/totem/totem-bugreport.py
 @man man/man1/totem-video-thumbnailer.1
 @man man/man1/totem.1
+share/GConf/gsettings/jamendo.convert
+share/GConf/gsettings/opensubtitles.convert
+share/GConf/gsettings/totem.convert
 share/applications/totem.desktop
+share/gir-1.0/Totem-1.0.gir
+share/glib-2.0/schemas/org.gnome.totem.enums.xml
+share/glib-2.0/schemas/org.gnome.totem.gschema.xml
+share/glib-2.0/schemas/org.gnome.totem.plugins.jamendo.gschema.xml
+share/glib-2.0/schemas/org.gnome.totem.plugins.opensubtitles.gschema.xml
 share/gnome/help/totem/
 share/gnome/help/totem/C/
 share/gnome/help/totem/C/figures/
@@ -283,6 +290,17 @@ share/gnome/help/totem/pt_BR/figures/totem_start_window.png
 share/gnome/help/totem/pt_BR/figures/totem_volume_maximum_button.png
 share/gnome/help/totem/pt_BR/figures/totem_volume_mute_button.png
 share/gnome/help/totem/pt_BR/totem.xml
+share/gnome/help/totem/ro/
+share/gnome/help/totem/ro/figures/
+share/gnome/help/totem/ro/figures/totem_next_button.png
+share/gnome/help/totem/ro/figures/totem_pause_button.png
+share/gnome/help/totem/ro/figures/totem_play_button.png
+share/gnome/help/totem/ro/figures/totem_previous_button.png
+share/gnome/help/totem/ro/figures/totem_show_playlist_button.png
+share/gnome/help/totem/ro/figures/totem_start_window.png
+share/gnome/help/totem/ro/figures/totem_volume_maximum_button.png
+share/gnome/help/totem/ro/figures/totem_volume_mute_button.png
+share/gnome/help/totem/ro/totem.xml
 share/gnome/help/totem/ru/
 share/gnome/help/totem/ru/figures/
 share/gnome/help/totem/ru/figures/totem_next_button.png
@@ -294,6 +312,17 @@ share/gnome/help/totem/ru/figures/totem_start_window.png
 share/gnome/help/totem/ru/figures/totem_volume_maximum_button.png
 share/gnome/help/totem/ru/figures/totem_volume_mute_button.png
 share/gnome/help/totem/ru/totem.xml
+share/gnome/help/totem/sl/
+share/gnome/help/totem/sl/figures/
+share/gnome/help/totem/sl/figures/totem_next_button.png
+share/gnome/help/totem/sl/figures/totem_pause_button.png
+share/gnome/help/totem/sl/figures/totem_play_button.png
+share/gnome/help/totem/sl/figures/totem_previous_button.png
+share/gnome/help/totem/sl/figures/totem_show_playlist_button.png
+share/gnome/help/totem/sl/figures/totem_start_window.png
+share/gnome/help/totem/sl/figures/totem_volume_maximum_button.png
+share/gnome/help/totem/sl/figures/totem_volume_mute_button.png
+share/gnome/help/totem/sl/totem.xml
 share/gnome/help/totem/sv/
 share/gnome/help/totem/sv/figures/
 share/gnome/help/totem/sv/figures/totem_next_button.png
@@ -353,7 +382,6 @@ share/gtk-doc/html/totem/
 share/gtk-doc/html/totem/BaconVideoWidget.html
 share/gtk-doc/html/totem/TotemCellRendererVideo.html
 share/gtk-doc/html/totem/TotemObject.html
-share/gtk-doc/html/totem/TotemPlugin.html
 share/gtk-doc/html/totem/TotemVideoList.html
 share/gtk-doc/html/totem/annotation-glossary.html
 share/gtk-doc/html/totem/api-index-deprecated.html
@@ -364,10 +392,12 @@ share/gtk-doc/html/totem/index.html
 share/gtk-doc/html/totem/index.sgml
 share/gtk-doc/html/totem/ix02.html
 share/gtk-doc/html/totem/ix03.html
+share/gtk-doc/html/totem/ix04.html
 share/gtk-doc/html/totem/left.png
 share/gtk-doc/html/totem/right.png
 share/gtk-doc/html/totem/style.css
 share/gtk-doc/html/totem/totem-Interface.html
+share/gtk-doc/html/totem/totem-TotemPlugin.html
 share/gtk-doc/html/totem/totem-plugins.html
 share/gtk-doc/html/totem/totem.devhelp
 share/gtk-doc/html/totem/totem.devhelp2
@@ -380,12 +410,14 @@ share/icons/hicolor/22x22/apps/totem.png
 share/icons/hicolor/22x22/devices/totem-tv.png
 share/icons/hicolor/24x24/apps/totem.png
 share/icons/hicolor/24x24/devices/totem-tv.png
+share/icons/hicolor/256x256/apps/totem.png
 share/icons/hicolor/32x32/apps/totem.png
 share/icons/hicolor/32x32/devices/totem-tv.png
 share/icons/hicolor/48x48/apps/totem.png
 share/icons/hicolor/48x48/devices/totem-tv.png
-share/icons/hicolor/scalable/apps/totem.svg
+share/icons/hicolor/scalable/actions/view-sidebar-symbolic.svg
 share/icons/hicolor/scalable/devices/totem-tv.svg
+share/locale/af/LC_MESSAGES/totem.mo
 share/locale/am/LC_MESSAGES/totem.mo
 share/locale/ar/LC_MESSAGES/totem.mo
 share/locale/as/LC_MESSAGES/totem.mo
@@ -409,6 +441,7 @@ share/locale/el/LC_MESSAGES/totem.mo
 share/locale/en@shaw/LC_MESSAGES/totem.mo
 share/locale/en_CA/LC_MESSAGES/totem.mo
 share/locale/en_GB/LC_MESSAGES/totem.mo
+share/locale/eo/LC_MESSAGES/totem.mo
 share/locale/es/LC_MESSAGES/totem.mo
 share/locale/et/LC_MESSAGES/totem.mo
 share/locale/eu/LC_MESSAGES/totem.mo
@@ -418,6 +451,9 @@ share/locale/fr/LC_MESSAGES/totem.mo
 share/locale/ga/LC_MESSAGES/totem.mo
 share/locale/gl/LC_MESSAGES/totem.mo
 share/locale/gu/LC_MESSAGES/totem.mo
+share/locale/gv/
+share/locale/gv/LC_MESSAGES/
+share/locale/gv/LC_MESSAGES/totem.mo
 share/locale/he/LC_MESSAGES/totem.mo
 share/locale/hi/LC_MESSAGES/totem.mo
 share/locale/hr/LC_MESSAGES/totem.mo
@@ -471,6 +507,7 @@ share/locale/xh/LC_MESSAGES/totem.mo
 share/locale/zh_CN/LC_MESSAGES/totem.mo
 share/locale/zh_HK/LC_MESSAGES/totem.mo
 share/locale/zh_TW/LC_MESSAGES/totem.mo
+share/omf/
 share/omf/totem/
 share/omf/totem/totem-C.omf
 share/omf/totem/totem-bg.omf
@@ -490,33 +527,31 @@ share/omf/totem/totem-oc.omf
 share/omf/totem/totem-pa.omf
 share/omf/totem/totem-pl.omf
 share/omf/totem/totem-pt_BR.omf
+share/omf/totem/totem-ro.omf
 share/omf/totem/totem-ru.omf
+share/omf/totem/totem-sl.omf
 share/omf/totem/totem-sv.omf
 share/omf/totem/totem-uk.omf
 share/omf/totem/totem-zh_CN.omf
 share/omf/totem/totem-zh_HK.omf
 share/omf/totem/totem-zh_TW.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/totem-handlers.schemas
-${SCHEMAS_INSTDIR}/totem-video-thumbnail.schemas
-${SCHEMAS_INSTDIR}/totem.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+share/thumbnailers/
+share/thumbnailers/totem.thumbnailer
 share/totem/
 share/totem/filmholes-big-left.png
 share/totem/filmholes-big-right.png
 share/totem/filmholes.png
 share/totem/fullscreen.ui
+share/totem/mozilla-viewer.css
 share/totem/mozilla-viewer.ui
 share/totem/playlist.ui
-share/totem/plugins.ui
 share/totem/properties.ui
 share/totem/totem.ui
 share/totem/uri.ui
 share/totem/video-list.ui
-share/vala/vapi/totem.deps
-share/vala/vapi/totem.vapi
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

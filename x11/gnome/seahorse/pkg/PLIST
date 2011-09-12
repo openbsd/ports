@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/04/07 08:23:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2011/09/12 07:28:54 jasper Exp $
 @bin bin/seahorse
 @bin bin/seahorse-daemon
 include/libcryptui/
@@ -75,6 +75,10 @@ share/gnome/help/seahorse/ru/
 share/gnome/help/seahorse/ru/figures/
 share/gnome/help/seahorse/ru/figures/seahorse-window.png
 share/gnome/help/seahorse/ru/seahorse.xml
+share/gnome/help/seahorse/sl/
+share/gnome/help/seahorse/sl/figures/
+share/gnome/help/seahorse/sl/figures/seahorse-window.png
+share/gnome/help/seahorse/sl/seahorse.xml
 share/gnome/help/seahorse/sv/
 share/gnome/help/seahorse/sv/figures/
 share/gnome/help/seahorse/sv/figures/seahorse-window.png
@@ -158,6 +162,7 @@ share/icons/hicolor/22x22/apps/seahorse-preferences.png
 share/icons/hicolor/22x22/apps/seahorse.png
 share/icons/hicolor/24x24/apps/seahorse-preferences.png
 share/icons/hicolor/24x24/apps/seahorse.png
+share/icons/hicolor/256x256/apps/seahorse.png
 share/icons/hicolor/32x32/apps/seahorse-preferences.png
 share/icons/hicolor/32x32/apps/seahorse.png
 share/icons/hicolor/48x48/apps/seahorse-preferences.png
@@ -182,6 +187,7 @@ share/locale/el/LC_MESSAGES/seahorse.mo
 share/locale/en@shaw/LC_MESSAGES/seahorse.mo
 share/locale/en_CA/LC_MESSAGES/seahorse.mo
 share/locale/en_GB/LC_MESSAGES/seahorse.mo
+share/locale/eo/LC_MESSAGES/seahorse.mo
 share/locale/es/LC_MESSAGES/seahorse.mo
 share/locale/et/LC_MESSAGES/seahorse.mo
 share/locale/eu/LC_MESSAGES/seahorse.mo
@@ -231,11 +237,13 @@ share/locale/ta/LC_MESSAGES/seahorse.mo
 share/locale/te/LC_MESSAGES/seahorse.mo
 share/locale/th/LC_MESSAGES/seahorse.mo
 share/locale/tr/LC_MESSAGES/seahorse.mo
+share/locale/ug/LC_MESSAGES/seahorse.mo
 share/locale/uk/LC_MESSAGES/seahorse.mo
 share/locale/vi/LC_MESSAGES/seahorse.mo
 share/locale/zh_CN/LC_MESSAGES/seahorse.mo
 share/locale/zh_HK/LC_MESSAGES/seahorse.mo
 share/locale/zh_TW/LC_MESSAGES/seahorse.mo
+share/omf/
 share/omf/seahorse/
 share/omf/seahorse/seahorse-C.omf
 share/omf/seahorse/seahorse-ca.omf
@@ -250,17 +258,16 @@ share/omf/seahorse/seahorse-it.omf
 share/omf/seahorse/seahorse-ja.omf
 share/omf/seahorse/seahorse-oc.omf
 share/omf/seahorse/seahorse-ru.omf
+share/omf/seahorse/seahorse-sl.omf
 share/omf/seahorse/seahorse-sv.omf
 share/omf/seahorse/seahorse-vi.omf
 share/omf/seahorse/seahorse-zh_CN.omf
-share/pixmaps/
 share/pixmaps/seahorse/
 share/pixmaps/seahorse/22x22/
 share/pixmaps/seahorse/22x22/seahorse-key-personal.png
 share/pixmaps/seahorse/22x22/seahorse-key-ssh.png
 share/pixmaps/seahorse/22x22/seahorse-key.png
 share/pixmaps/seahorse/22x22/seahorse-person.png
-share/pixmaps/seahorse/22x22/seahorse-share-keys.png
 share/pixmaps/seahorse/22x22/seahorse-sign-bad.png
 share/pixmaps/seahorse/22x22/seahorse-sign-ok.png
 share/pixmaps/seahorse/22x22/seahorse-sign.png
@@ -269,7 +276,6 @@ share/pixmaps/seahorse/48x48/seahorse-key-personal.png
 share/pixmaps/seahorse/48x48/seahorse-key-ssh.png
 share/pixmaps/seahorse/48x48/seahorse-key.png
 share/pixmaps/seahorse/48x48/seahorse-person.png
-share/pixmaps/seahorse/48x48/seahorse-share-keys.png
 share/pixmaps/seahorse/48x48/seahorse-sign-bad.png
 share/pixmaps/seahorse/48x48/seahorse-sign-ok.png
 share/pixmaps/seahorse/48x48/seahorse-sign-unknown.png
@@ -279,7 +285,6 @@ share/pixmaps/seahorse/scalable/seahorse-key-personal.svg
 share/pixmaps/seahorse/scalable/seahorse-key-ssh.svg
 share/pixmaps/seahorse/scalable/seahorse-key.svg
 share/pixmaps/seahorse/scalable/seahorse-person.svg
-share/pixmaps/seahorse/scalable/seahorse-share-keys.svg
 share/pixmaps/seahorse/scalable/seahorse-sign-bad.svg
 share/pixmaps/seahorse/scalable/seahorse-sign-ok.svg
 share/pixmaps/seahorse/scalable/seahorse-sign-unknown.svg

@@ -1,14 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.9 2010/09/30 09:29:26 jasper Exp $
-@bin bin/dwell-click-applet
+@comment $OpenBSD: PLIST,v 1.10 2011/09/12 07:28:53 jasper Exp $
 @bin bin/mousetweaks
-@bin bin/pointer-capture-applet
-lib/bonobo/
-lib/bonobo/servers/
-lib/bonobo/servers/DwellClick_Factory.server
-lib/bonobo/servers/PointerCapture_Factory.server
-@man man/man1/dwell-click-applet.1
 @man man/man1/mousetweaks.1
-@man man/man1/pointer-capture-applet.1
+share/GConf/
+share/GConf/gsettings/
+share/GConf/gsettings/mousetweaks.convert
+@comment share/dbus-1/
+@comment share/dbus-1/services/
+share/glib-2.0/schemas/org.gnome.mousetweaks.enums.xml
+share/glib-2.0/schemas/org.gnome.mousetweaks.gschema.xml
+@comment share/gnome-panel/
+@comment share/gnome-panel/applets/
 share/gnome/help/mousetweaks/
 share/gnome/help/mousetweaks/C/
 share/gnome/help/mousetweaks/C/figures/
@@ -181,6 +182,23 @@ share/gnome/help/mousetweaks/oc/figures/mouse-a11y-ssc-checkbox.png
 share/gnome/help/mousetweaks/oc/figures/mouse-a11y-ssc-delay-slider.png
 share/gnome/help/mousetweaks/oc/figures/mouse-a11y-tab.png
 share/gnome/help/mousetweaks/oc/mousetweaks.xml
+share/gnome/help/mousetweaks/sl/
+share/gnome/help/mousetweaks/sl/figures/
+share/gnome/help/mousetweaks/sl/figures/mouse-a11y-dwell-checkbox.png
+share/gnome/help/mousetweaks/sl/figures/mouse-a11y-dwell-click-type-applet.png
+share/gnome/help/mousetweaks/sl/figures/mouse-a11y-dwell-click-type-window.png
+share/gnome/help/mousetweaks/sl/figures/mouse-a11y-dwell-ctw-checkbox.png
+share/gnome/help/mousetweaks/sl/figures/mouse-a11y-dwell-delay-slider.png
+share/gnome/help/mousetweaks/sl/figures/mouse-a11y-dwell-gesture-mapping.png
+share/gnome/help/mousetweaks/sl/figures/mouse-a11y-dwell-mode-choice.png
+share/gnome/help/mousetweaks/sl/figures/mouse-a11y-dwell-motion-treshold.png
+share/gnome/help/mousetweaks/sl/figures/mouse-a11y-pointer-capture-context-menu.png
+share/gnome/help/mousetweaks/sl/figures/mouse-a11y-pointer-capture-locked.png
+share/gnome/help/mousetweaks/sl/figures/mouse-a11y-pointer-capture-preferences.png
+share/gnome/help/mousetweaks/sl/figures/mouse-a11y-ssc-checkbox.png
+share/gnome/help/mousetweaks/sl/figures/mouse-a11y-ssc-delay-slider.png
+share/gnome/help/mousetweaks/sl/figures/mouse-a11y-tab.png
+share/gnome/help/mousetweaks/sl/mousetweaks.xml
 share/gnome/help/mousetweaks/sv/
 share/gnome/help/mousetweaks/sv/figures/
 share/gnome/help/mousetweaks/sv/figures/mouse-a11y-dwell-checkbox.png
@@ -229,6 +247,7 @@ share/locale/de/LC_MESSAGES/mousetweaks.mo
 share/locale/el/LC_MESSAGES/mousetweaks.mo
 share/locale/en@shaw/LC_MESSAGES/mousetweaks.mo
 share/locale/en_GB/LC_MESSAGES/mousetweaks.mo
+share/locale/eo/LC_MESSAGES/mousetweaks.mo
 share/locale/es/LC_MESSAGES/mousetweaks.mo
 share/locale/et/LC_MESSAGES/mousetweaks.mo
 share/locale/eu/LC_MESSAGES/mousetweaks.mo
@@ -245,6 +264,7 @@ share/locale/ja/LC_MESSAGES/mousetweaks.mo
 share/locale/kn/LC_MESSAGES/mousetweaks.mo
 share/locale/ko/LC_MESSAGES/mousetweaks.mo
 share/locale/lt/LC_MESSAGES/mousetweaks.mo
+share/locale/lv/LC_MESSAGES/mousetweaks.mo
 share/locale/mai/LC_MESSAGES/mousetweaks.mo
 share/locale/mk/LC_MESSAGES/mousetweaks.mo
 share/locale/ml/LC_MESSAGES/mousetweaks.mo
@@ -270,21 +290,19 @@ share/locale/ta/LC_MESSAGES/mousetweaks.mo
 share/locale/te/LC_MESSAGES/mousetweaks.mo
 share/locale/th/LC_MESSAGES/mousetweaks.mo
 share/locale/tr/LC_MESSAGES/mousetweaks.mo
+share/locale/ug/LC_MESSAGES/mousetweaks.mo
 share/locale/uk/LC_MESSAGES/mousetweaks.mo
 share/locale/vi/LC_MESSAGES/mousetweaks.mo
 share/locale/zh_CN/LC_MESSAGES/mousetweaks.mo
 share/locale/zh_HK/LC_MESSAGES/mousetweaks.mo
 share/locale/zh_TW/LC_MESSAGES/mousetweaks.mo
 share/mousetweaks/
-share/mousetweaks/DwellClick.xml
-share/mousetweaks/PointerCapture.xml
 share/mousetweaks/double-click.png
 share/mousetweaks/drag-click.png
-share/mousetweaks/dwell-click-applet.ui
 share/mousetweaks/mousetweaks.ui
-share/mousetweaks/pointer-capture-applet.ui
 share/mousetweaks/right-click.png
 share/mousetweaks/single-click.png
+share/omf/
 share/omf/mousetweaks/
 share/omf/mousetweaks/mousetweaks-C.omf
 share/omf/mousetweaks/mousetweaks-ca.omf
@@ -296,10 +314,8 @@ share/omf/mousetweaks/mousetweaks-es.omf
 share/omf/mousetweaks/mousetweaks-fr.omf
 share/omf/mousetweaks/mousetweaks-it.omf
 share/omf/mousetweaks/mousetweaks-oc.omf
+share/omf/mousetweaks/mousetweaks-sl.omf
 share/omf/mousetweaks/mousetweaks-sv.omf
 share/omf/mousetweaks/mousetweaks-zh_CN.omf
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/mousetweaks.schemas
-${SCHEMAS_INSTDIR}/pointer-capture-applet.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

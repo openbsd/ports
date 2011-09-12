@@ -1,12 +1,14 @@
-# $OpenBSD: Makefile,v 1.38 2011/07/15 07:06:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2011/09/12 07:28:55 jasper Exp $
 
 SHARED_ONLY=	Yes
 
-COMMENT=	VNC Client for the GNOME Desktop
+COMMENT=	remote desktop viewer for GNOME
 
-GNOME_VERSION=	2.30.3
+GNOME_VERSION=	3.0.2
 GNOME_PROJECT=	vinagre
-REVISION=	2
+REVISION=	0
+
+EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=	net
 
@@ -18,43 +20,44 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
-WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 c cairo crypto dbus-1 dbus-glib-1 expat
-WANTLIB += fontconfig freetype gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 pthread pthread-stubs ssl
-WANTLIB += util xcb xcb-render xcb-render-util xml2 z png
-WANTLIB += art_lgpl_2 avahi-client avahi-common avahi-glib avahi-gobject
-WANTLIB += avahi-ui bonobo-2 bonobo-activation bonoboui-2
-WANTLIB += gdbm gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 gnutls
-WANTLIB += gtk-vnc-1.0 gvnc-1.0 panel-applet-2 popt sasl2 tasn1
-WANTLIB += canberra ltdl ogg vorbis vorbisfile telepathy-glib
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 avahi-client
+WANTLIB += avahi-common avahi-glib avahi-gobject avahi-ui-gtk3
+WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm expat
+WANTLIB += ffi fontconfig freetype gcrypt gdbm gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gmp gnome-keyring
+WANTLIB += gnutls gobject-2.0 gpg-error gthread-2.0 gtk-3 gtk-vnc-2.0
+WANTLIB += gvnc-1.0 hogweed m nettle pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
+WANTLIB += pthread pthread-stubs sasl2 tasn1 telepathy-glib util
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome \
-		devel/gconf2
+		devel/dconf
 
-RUN_DEPENDS=	misc/shared-mime-info>=0.21
-LIB_DEPENDS=	x11/gnome/panel \
-		STEM-*-gtk2:x11/gtk-vnc,gtk2 \
+RUN_DEPENDS=	misc/shared-mime-info>=0.21 \
+		x11/rdesktop
+LIB_DEPENDS=	devel/libpeas \
+		STEM-*-!gtk2:x11/gtk-vnc \
+		x11/gnome/panel \
 		net/telepathy/telepathy-glib \
-		net/avahi,-gtk,no_mono,no_qt3,no_qt4
+		net/avahi,-gtk3,no_mono,no_qt3,no_qt4
 
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=	Yes
-MODGCONF2_SCHEMAS_DIR=	vinagre
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-avahi \
-		--enable-telepathy=yes
+		--enable-introspection \
+		--with-avahi \
+		--with-telepathy \
+		--without-panelapplet \
+		--disable-spice
 
-# XXX console does not spawn (pthreads(3) or vte bug?)
+# XXX console does not spawn (needs grantpt, ptsname...)
 CONFIGURE_ARGS+= --enable-ssh=no
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =	Yes
 
 .include <bsd.port.mk>

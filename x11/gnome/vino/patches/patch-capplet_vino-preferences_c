@@ -1,0 +1,15 @@
+$OpenBSD: patch-capplet_vino-preferences_c,v 1.1 2011/09/12 07:28:55 jasper Exp $
+
+Don't read use_upnp_toggle ui settings, it won't work for us.
+
+--- capplet/vino-preferences.c.orig	Mon Jul 11 19:16:15 2011
++++ capplet/vino-preferences.c	Mon Jul 11 19:16:24 2011
+@@ -352,7 +352,7 @@ vino_preferences_connect_ui (VinoPreferences *app,
+     { "authentication-methods", "password_toggle",       "active",    G_SETTINGS_BIND_DEFAULT, get_authtype,        set_authtype        },
+     { "authentication-methods", "password_box",          "sensitive", G_SETTINGS_BIND_GET,     get_authtype,        NULL                },
+     { "vnc-password",           "password_entry",        "text",      G_SETTINGS_BIND_DEFAULT, get_password,        set_password        },
+-    { "use-upnp",               "use_upnp_toggle",       "active",    G_SETTINGS_BIND_DEFAULT, NULL,                NULL                },
++/*    { "use-upnp",               "use_upnp_toggle",       "active", G_SETTINGS_BIND_DEFAULT, NULL,                NULL                }, */
+ 
+     { "enabled",                "notification_settings", "sensitive", G_SETTINGS_BIND_GET,     NULL,                NULL                },
+ 

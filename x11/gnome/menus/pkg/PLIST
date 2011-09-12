@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.22 2011/07/26 15:36:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.23 2011/09/12 07:28:53 jasper Exp $
 bin/gmenu-simple-editor
 include/gnome-menus/
 include/gnome-menus/gmenu-tree.h
+lib/girepository-1.0/
 lib/girepository-1.0/GMenu-2.0.typelib
 lib/libgnome-menu.a
 lib/libgnome-menu.la
@@ -37,19 +38,14 @@ share/desktop-directories/Education.directory
 share/desktop-directories/Game.directory
 share/desktop-directories/Graphics.directory
 share/desktop-directories/Hardware.directory
-share/desktop-directories/InternetAndNetwork.directory
-share/desktop-directories/LookAndFeel.directory
 share/desktop-directories/Network.directory
 share/desktop-directories/Office.directory
 share/desktop-directories/Personal.directory
-share/desktop-directories/Settings-System.directory
-share/desktop-directories/Settings.directory
 share/desktop-directories/System-Tools.directory
 share/desktop-directories/System.directory
 share/desktop-directories/Utility-Accessibility.directory
 share/desktop-directories/Utility.directory
 share/desktop-directories/X-GNOME-Menu-Applications.directory
-share/desktop-directories/X-GNOME-Menu-System.directory
 share/desktop-directories/X-GNOME-Other.directory
 share/examples/gnome-menus/
 share/examples/gnome-menus/xdg/
@@ -58,8 +54,7 @@ share/examples/gnome-menus/xdg/menus/
 @sample ${SYSCONFDIR}/xdg/menus/
 share/examples/gnome-menus/xdg/menus/applications.menu
 @sample ${SYSCONFDIR}/xdg/menus/gnome-applications.menu
-share/examples/gnome-menus/xdg/menus/settings.menu
-@sample ${SYSCONFDIR}/xdg/menus/settings.menu
+share/gir-1.0/
 share/gir-1.0/GMenu-2.0.gir
 share/gnome-menus/
 share/gnome-menus/examples/
@@ -78,9 +73,13 @@ share/locale/be@latin/LC_MESSAGES/gnome-menus.mo
 share/locale/bg/LC_MESSAGES/gnome-menus.mo
 share/locale/bn/LC_MESSAGES/gnome-menus.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-menus.mo
+share/locale/br/
+share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/gnome-menus.mo
 share/locale/ca/LC_MESSAGES/gnome-menus.mo
 share/locale/ca@valencia/LC_MESSAGES/gnome-menus.mo
+share/locale/crh/
+share/locale/crh/LC_MESSAGES/
 share/locale/crh/LC_MESSAGES/gnome-menus.mo
 share/locale/cs/LC_MESSAGES/gnome-menus.mo
 share/locale/cy/LC_MESSAGES/gnome-menus.mo
@@ -128,6 +127,8 @@ share/locale/id/LC_MESSAGES/gnome-menus.mo
 share/locale/ig/
 share/locale/ig/LC_MESSAGES/
 share/locale/ig/LC_MESSAGES/gnome-menus.mo
+share/locale/io/
+share/locale/io/LC_MESSAGES/
 share/locale/io/LC_MESSAGES/gnome-menus.mo
 share/locale/is/LC_MESSAGES/gnome-menus.mo
 share/locale/it/LC_MESSAGES/gnome-menus.mo
@@ -143,6 +144,9 @@ share/locale/ku/LC_MESSAGES/gnome-menus.mo
 share/locale/ky/
 share/locale/ky/LC_MESSAGES/
 share/locale/ky/LC_MESSAGES/gnome-menus.mo
+share/locale/lo/
+share/locale/lo/LC_MESSAGES/
+share/locale/lo/LC_MESSAGES/gnome-menus.mo
 share/locale/lt/LC_MESSAGES/gnome-menus.mo
 share/locale/lv/LC_MESSAGES/gnome-menus.mo
 share/locale/mai/LC_MESSAGES/gnome-menus.mo
@@ -180,6 +184,8 @@ share/locale/th/LC_MESSAGES/gnome-menus.mo
 share/locale/tr/LC_MESSAGES/gnome-menus.mo
 share/locale/ug/LC_MESSAGES/gnome-menus.mo
 share/locale/uk/LC_MESSAGES/gnome-menus.mo
+share/locale/uz@cyrillic/
+share/locale/uz@cyrillic/LC_MESSAGES/
 share/locale/uz@cyrillic/LC_MESSAGES/gnome-menus.mo
 share/locale/vi/LC_MESSAGES/gnome-menus.mo
 share/locale/xh/LC_MESSAGES/gnome-menus.mo

@@ -1,4 +1,10 @@
-$OpenBSD: patch-src_netstat_h,v 1.2 2010/04/21 13:31:44 ajacoutot Exp $
+$OpenBSD: patch-src_netstat_h,v 1.3 2011/09/12 07:28:53 jasper Exp $
+
+From 50b013254dfe239af364599f8ebfed14853e9390 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Wed, 15 Jun 2011 08:42:19 +0000
+Subject: Add initial support (routing) for OpenBSD.
+
 --- src/netstat.h.orig	Tue Mar 30 06:11:19 2010
 +++ src/netstat.h	Wed Apr 21 11:33:10 2010
 @@ -30,10 +30,16 @@

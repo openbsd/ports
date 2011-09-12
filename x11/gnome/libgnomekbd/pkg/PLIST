@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.11 2010/09/30 07:43:18 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/09/12 07:28:53 jasper Exp $
 @bin bin/gkbd-indicator-plugins-capplet
+@bin bin/gkbd-keyboard-display
 include/libgnomekbd/
+include/libgnomekbd/gkbd-configuration.h
 include/libgnomekbd/gkbd-desktop-config.h
 include/libgnomekbd/gkbd-indicator-config.h
 include/libgnomekbd/gkbd-indicator-plugin.h
@@ -9,6 +11,8 @@ include/libgnomekbd/gkbd-keyboard-config.h
 include/libgnomekbd/gkbd-keyboard-drawing.h
 include/libgnomekbd/gkbd-status.h
 include/libgnomekbd/gkbd-util.h
+lib/girepository-1.0/
+lib/girepository-1.0/Gkbd-3.0.typelib
 lib/libgnomekbd.a
 lib/libgnomekbd.la
 @lib lib/libgnomekbd.so.${LIBgnomekbd_VERSION}
@@ -17,8 +21,21 @@ lib/libgnomekbdui.la
 @lib lib/libgnomekbdui.so.${LIBgnomekbdui_VERSION}
 lib/pkgconfig/libgnomekbd.pc
 lib/pkgconfig/libgnomekbdui.pc
+share/GConf/
+share/GConf/gsettings/
+share/GConf/gsettings/libgnomekbd.convert
 share/applications/gkbd-indicator-plugins-capplet.desktop
+share/applications/gkbd-keyboard-display.desktop
+share/gir-1.0/
+share/gir-1.0/Gkbd-3.0.gir
+share/glib-2.0/schemas/org.gnome.libgnomekbd.desktop.gschema.xml
+share/glib-2.0/schemas/org.gnome.libgnomekbd.gschema.xml
+share/glib-2.0/schemas/org.gnome.libgnomekbd.keyboard.gschema.xml
 share/libgnomekbd/
+share/libgnomekbd/icons/
+share/libgnomekbd/icons/kbdled-caps-lock.svg
+share/libgnomekbd/icons/kbdled-num-lock.svg
+share/libgnomekbd/icons/kbdled-scroll-lock.svg
 share/libgnomekbd/ui/
 share/libgnomekbd/ui/gkbd-indicator-plugins.ui
 share/libgnomekbd/ui/gkbd-indicator-plugins_add.ui
@@ -86,14 +103,13 @@ share/locale/ta/LC_MESSAGES/libgnomekbd.mo
 share/locale/te/LC_MESSAGES/libgnomekbd.mo
 share/locale/th/LC_MESSAGES/libgnomekbd.mo
 share/locale/tr/LC_MESSAGES/libgnomekbd.mo
+share/locale/ug/LC_MESSAGES/libgnomekbd.mo
 share/locale/uk/LC_MESSAGES/libgnomekbd.mo
 share/locale/vi/LC_MESSAGES/libgnomekbd.mo
 share/locale/zh_CN/LC_MESSAGES/libgnomekbd.mo
 share/locale/zh_HK/LC_MESSAGES/libgnomekbd.mo
 share/locale/zh_TW/LC_MESSAGES/libgnomekbd.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/desktop_gnome_peripherals_keyboard_xkb.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

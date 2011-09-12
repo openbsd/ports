@@ -1,0 +1,19 @@
+$OpenBSD: patch-libyelp_yelp-view_c,v 1.1 2011/09/12 07:28:55 jasper Exp $
+
+No PackageKit on OpenBSD.
+
+--- libyelp/yelp-view.c.orig	Mon Jun  6 18:52:37 2011
++++ libyelp/yelp-view.c	Mon Jun  6 18:53:01 2011
+@@ -1648,10 +1648,12 @@ view_show_error_page (YelpView *view,
+             scheme = "ghelp";
+             pkg = struri + 6;
+         }
++#ifndef __OpenBSD__
+         if (pkg != NULL)
+             content_end = g_markup_printf_escaped ("<p><a href='install-%s:%s'>%s</a></p>",
+                                                    scheme, pkg,
+                                                    _("Search for packages containing this document."));
++#endif
+         g_free (struri);
+     }
+ 

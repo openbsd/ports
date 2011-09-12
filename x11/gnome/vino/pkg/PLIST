@@ -1,8 +1,13 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/09/30 07:47:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/09/12 07:28:55 jasper Exp $
 @bin bin/vino-passwd
 @bin bin/vino-preferences
 @bin libexec/vino-server
+share/GConf/
+share/GConf/gsettings/
+share/GConf/gsettings/org.gnome.Vino.convert
 share/applications/vino-preferences.desktop
+share/dbus-1/
+share/dbus-1/services/
 share/dbus-1/services/org.freedesktop.Telepathy.Client.Vino.service
 share/examples/vino/
 share/examples/vino/xdg/
@@ -11,6 +16,8 @@ share/examples/vino/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/vino/xdg/autostart/vino-server.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/vino-server.desktop
+share/glib-2.0/schemas/org.gnome.Vino.enums.xml
+share/glib-2.0/schemas/org.gnome.Vino.gschema.xml
 share/locale/ar/LC_MESSAGES/vino.mo
 share/locale/as/LC_MESSAGES/vino.mo
 share/locale/ast/LC_MESSAGES/vino.mo
@@ -94,10 +101,6 @@ share/locale/xh/LC_MESSAGES/vino.mo
 share/locale/zh_CN/LC_MESSAGES/vino.mo
 share/locale/zh_HK/LC_MESSAGES/vino.mo
 share/locale/zh_TW/LC_MESSAGES/vino.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/vino-server.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/telepathy/
 share/telepathy/clients/
 share/telepathy/clients/Vino.client
@@ -107,3 +110,5 @@ share/vino/vino-prompt.ui
 share/vino/webservices
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

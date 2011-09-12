@@ -1,4 +1,4 @@
-$OpenBSD: patch-help_totem-docs_h,v 1.1 2009/11/29 09:24:25 ajacoutot Exp $
+$OpenBSD: patch-help_totem-docs_h,v 1.2 2011/09/12 07:28:54 jasper Exp $
 
 XXX In function `about_action_callback':
 error: syntax error before string constant

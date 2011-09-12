@@ -1,11 +1,45 @@
-$OpenBSD: patch-src_Makefile_am,v 1.2 2009/10/14 09:55:24 ajacoutot Exp $
---- src/Makefile.am.orig	Thu Aug 20 01:19:14 2009
-+++ src/Makefile.am	Wed Oct 14 11:35:09 2009
-@@ -146,6 +146,7 @@ gnome_screensaver_dialog_SOURCES = 	\
- EXTRA_gnome_screensaver_dialog_SOURCES = \
- 	gs-auth-pam.c		\
- 	gs-auth-helper.c	\
-+	gs-auth-bsdauth.c	\
- 	gs-auth-pwent.c		\
+$OpenBSD: patch-src_Makefile_am,v 1.3 2011/09/12 07:28:54 jasper Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=651554
+
+--- src/Makefile.am.orig	Tue Sep  6 21:33:55 2011
++++ src/Makefile.am	Thu Sep  8 09:05:00 2011
+@@ -60,6 +60,10 @@ gnome_screensaver_command_LDADD =	\
+ 	$(GNOME_SCREENSAVER_COMMAND_LIBS)	\
  	$(NULL)
  
++AUTH_SOURCES =				\
++	gs-auth-@AUTH_SCHEME@.c		\
++	$(NULL)
++
+ test_fade_SOURCES = 			\
+ 	test-fade.c 			\
+ 	gs-fade.c	 		\
+@@ -76,7 +80,7 @@ test_fade_LDADD =			\
+ test_passwd_SOURCES = 			\
+ 	test-passwd.c 			\
+ 	gs-auth.h			\
+-	gs-auth-pam.c			\
++	$(AUTH_SOURCES)			\
+ 	setuid.c			\
+ 	setuid.h			\
+ 	subprocs.c			\
+@@ -134,7 +138,7 @@ gnome_screensaver_dialog_SOURCES = 	\
+ 	subprocs.c			\
+ 	subprocs.h			\
+ 	gs-auth.h			\
+-	gs-auth-pam.c			\
++	$(AUTH_SOURCES)			\
+ 	$(NULL)
+ 
+ gnome_screensaver_dialog_LDADD =	\
+@@ -210,8 +214,7 @@ install-exec-hook:
+ 	@if [ "x@NEED_SETUID@" = "xyes" ]; then \
+ 	    echo "***" ; \
+ 	    echo "***  Warning: gnome-screensaver has been compiled with support for" ; \
+-	    echo "***           shadow passwords.  If your system actually uses shadow" ; \
+-	    echo "***           passwords then it must be installed as a setuid root" ; \
++	    echo "***           bsdauth(3) and must be installed as a setuid root" ; \
+ 	    echo "***           program in order for locking to work.  To do this, you" ; \
+ 	    echo "***           must run:" ; \
+ 	    echo "***" ; \

@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.32 2011/04/07 09:21:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.33 2011/09/12 07:28:53 jasper Exp $
+%%SHARED%%
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
 @bin bin/nautilus-connect-server
-@bin bin/nautilus-file-management-properties
 include/nautilus/
 include/nautilus/libnautilus-extension/
 include/nautilus/libnautilus-extension/nautilus-column-provider.h
@@ -16,23 +16,34 @@ include/nautilus/libnautilus-extension/nautilus-menu-provider.h
 include/nautilus/libnautilus-extension/nautilus-menu.h
 include/nautilus/libnautilus-extension/nautilus-property-page-provider.h
 include/nautilus/libnautilus-extension/nautilus-property-page.h
-lib/girepository-1.0/Nautilus-2.0.typelib
+lib/girepository-1.0/
+lib/girepository-1.0/Nautilus-3.0.typelib
 lib/libnautilus-extension.a
 lib/libnautilus-extension.la
+lib/nautilus/
+lib/nautilus/extensions-3.0/
+@comment lib/nautilus/extensions-3.0/libnautilus-sendto.a
+@comment lib/nautilus/extensions-3.0/libnautilus-sendto.la
 lib/pkgconfig/libnautilus-extension.pc
 @bin libexec/nautilus-convert-metadata
 @man man/man1/nautilus-connect-server.1
-@man man/man1/nautilus-file-management-properties.1
 @man man/man1/nautilus.1
+share/GConf/gsettings/nautilus.convert
 share/applications/nautilus-autorun-software.desktop
-share/applications/nautilus-browser.desktop
-share/applications/nautilus-computer.desktop
-share/applications/nautilus-file-management-properties.desktop
-share/applications/nautilus-folder-handler.desktop
-share/applications/nautilus-home.desktop
 share/applications/nautilus.desktop
-share/applications/network-scheme.desktop
-share/gir-1.0/Nautilus-2.0.gir
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.gnome.Nautilus.service
+share/examples/nautilus/
+share/examples/nautilus/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/nautilus/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/nautilus/xdg/autostart/nautilus-autostart.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/nautilus-autostart.desktop
+share/gir-1.0/
+share/gir-1.0/Nautilus-3.0.gir
+share/glib-2.0/schemas/org.gnome.nautilus.gschema.xml
 share/gtk-doc/html/libnautilus-extension/
 share/gtk-doc/html/libnautilus-extension/ch01.html
 share/gtk-doc/html/libnautilus-extension/home.png
@@ -56,21 +67,10 @@ share/gtk-doc/html/libnautilus-extension/pt01.html
 share/gtk-doc/html/libnautilus-extension/right.png
 share/gtk-doc/html/libnautilus-extension/style.css
 share/gtk-doc/html/libnautilus-extension/up.png
-share/icons/hicolor/
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/nautilus.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/nautilus.png
-share/icons/hicolor/24x24/
-share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/nautilus.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/nautilus.png
-share/icons/hicolor/scalable/
-share/icons/hicolor/scalable/apps/
 share/icons/hicolor/scalable/apps/nautilus.svg
 share/locale/af/LC_MESSAGES/nautilus.mo
 share/locale/am/LC_MESSAGES/nautilus.mo
@@ -217,7 +217,6 @@ share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/nautilus.mo
 share/mime/packages/nautilus.xml
 share/nautilus/
-share/nautilus/browser.xml
 share/nautilus/icons/
 share/nautilus/icons/hicolor/
 share/nautilus/icons/hicolor/16x16/
@@ -231,38 +230,7 @@ share/nautilus/icons/hicolor/48x48/emblems/
 share/nautilus/icons/hicolor/48x48/emblems/emblem-note.png
 share/nautilus/nautilus-extras.placeholder
 share/nautilus/nautilus-suggested.placeholder
-share/nautilus/patterns/
-share/nautilus/patterns/blue_gray_rough.png
-share/nautilus/patterns/blue_ridge.png
-share/nautilus/patterns/blue_type.png
-share/nautilus/patterns/brushed_metal.png
-share/nautilus/patterns/burlap.jpg
-share/nautilus/patterns/camouflage.png
-share/nautilus/patterns/chalk.jpg
-share/nautilus/patterns/cork.png
-share/nautilus/patterns/countertop.png
-share/nautilus/patterns/dark-gnome.jpg
-share/nautilus/patterns/dots.png
-share/nautilus/patterns/fibers.png
-share/nautilus/patterns/fleur_de_lis.png
-share/nautilus/patterns/floral.png
-share/nautilus/patterns/fossil.png
-share/nautilus/patterns/gnome.jpg
-share/nautilus/patterns/green_weave.png
-share/nautilus/patterns/ice.png
-share/nautilus/patterns/manila_paper.png
-share/nautilus/patterns/moss_ridge.png
-share/nautilus/patterns/numbers.png
-share/nautilus/patterns/ocean_stripes.png
-share/nautilus/patterns/purple_marble.png
-share/nautilus/patterns/reset.png
-share/nautilus/patterns/ridged_paper.png
-share/nautilus/patterns/rough_paper.png
-share/nautilus/patterns/sky_ridge.png
-share/nautilus/patterns/snow_ridge.png
-share/nautilus/patterns/stucco.jpg
-share/nautilus/patterns/terracotta.png
-share/nautilus/patterns/wavy_white.png
+share/nautilus/nautilus.css
 share/nautilus/ui/
 share/nautilus/ui/nautilus-bookmarks-window.ui
 share/nautilus/ui/nautilus-desktop-icon-view-ui.xml
@@ -270,27 +238,17 @@ share/nautilus/ui/nautilus-directory-view-ui.xml
 share/nautilus/ui/nautilus-file-management-properties.ui
 share/nautilus/ui/nautilus-icon-view-ui.xml
 share/nautilus/ui/nautilus-list-view-ui.xml
-share/nautilus/ui/nautilus-navigation-window-ui.xml
 share/nautilus/ui/nautilus-shell-ui.xml
-share/nautilus/ui/nautilus-spatial-window-ui.xml
-share/pixmaps/
+share/nautilus/ui/nautilus-toolbar-ui.xml
 share/pixmaps/nautilus/
 share/pixmaps/nautilus/audio.svg
-share/pixmaps/nautilus/backgrounds.png
-share/pixmaps/nautilus/chit_frame.png
-share/pixmaps/nautilus/colors.png
-share/pixmaps/nautilus/emblems.png
-share/pixmaps/nautilus/erase.png
 share/pixmaps/nautilus/knob.png
 share/pixmaps/nautilus/thumbnail_frame.png
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/apps_nautilus_preferences.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-%%SHARED%%
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @exec %D/bin/update-mime-database %D/share/mime
 @unexec-delete %D/bin/update-mime-database %D/share/mime
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

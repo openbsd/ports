@@ -1,10 +1,10 @@
-$OpenBSD: patch-gnome-session_gsm-dbus-client_c,v 1.4 2011/04/06 18:33:03 ajacoutot Exp $
+$OpenBSD: patch-gnome-session_gsm-dbus-client_c,v 1.5 2011/09/12 07:28:54 jasper Exp $
 
 dbus_message_get_path() can return NULL
 
---- gnome-session/gsm-dbus-client.c.orig	Tue Feb  9 14:22:01 2010
-+++ gnome-session/gsm-dbus-client.c	Wed Apr  6 20:30:07 2011
-@@ -213,10 +213,11 @@ client_dbus_filter_function (DBusConnection *connectio
+--- gnome-session/gsm-dbus-client.c.orig	Tue Mar 22 21:31:43 2011
++++ gnome-session/gsm-dbus-client.c	Wed May 18 14:37:20 2011
+@@ -212,10 +212,11 @@ client_dbus_filter_function (DBusConnection *connectio
  
          path = dbus_message_get_path (message);
  

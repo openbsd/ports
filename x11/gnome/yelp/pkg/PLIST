@@ -1,7 +1,49 @@
-@comment $OpenBSD: PLIST,v 1.25 2010/09/30 07:47:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.26 2011/09/12 07:28:55 jasper Exp $
+%%SHARED%%
 bin/gnome-help
 @bin bin/yelp
+include/libyelp/
+include/libyelp/yelp-bookmarks.h
+include/libyelp/yelp-docbook-document.h
+include/libyelp/yelp-document.h
+include/libyelp/yelp-help-list.h
+include/libyelp/yelp-info-document.h
+include/libyelp/yelp-location-entry.h
+include/libyelp/yelp-mallard-document.h
+include/libyelp/yelp-man-document.h
+include/libyelp/yelp-settings.h
+include/libyelp/yelp-simple-document.h
+include/libyelp/yelp-sqlite-storage.h
+include/libyelp/yelp-storage.h
+include/libyelp/yelp-transform.h
+include/libyelp/yelp-types.h
+include/libyelp/yelp-uri.h
+include/libyelp/yelp-view.h
+lib/libyelp.a
+lib/libyelp.la
 share/applications/yelp.desktop
+share/glib-2.0/schemas/org.gnome.yelp.gschema.xml
+share/gtk-doc/html/libyelp/
+share/gtk-doc/html/libyelp/YelpDocument.html
+share/gtk-doc/html/libyelp/YelpLocationEntry.html
+share/gtk-doc/html/libyelp/YelpSettings.html
+share/gtk-doc/html/libyelp/YelpSimpleDocument.html
+share/gtk-doc/html/libyelp/YelpUri.html
+share/gtk-doc/html/libyelp/YelpView.html
+share/gtk-doc/html/libyelp/api-index-full.html
+share/gtk-doc/html/libyelp/ch01.html
+share/gtk-doc/html/libyelp/ch01s02.html
+share/gtk-doc/html/libyelp/home.png
+share/gtk-doc/html/libyelp/index.html
+share/gtk-doc/html/libyelp/index.sgml
+share/gtk-doc/html/libyelp/left.png
+share/gtk-doc/html/libyelp/libyelp-yelp-error.html
+share/gtk-doc/html/libyelp/libyelp.devhelp
+share/gtk-doc/html/libyelp/libyelp.devhelp2
+share/gtk-doc/html/libyelp/object-tree.html
+share/gtk-doc/html/libyelp/right.png
+share/gtk-doc/html/libyelp/style.css
+share/gtk-doc/html/libyelp/up.png
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/192x192/
@@ -33,7 +75,6 @@ share/locale/da/LC_MESSAGES/yelp.mo
 share/locale/de/LC_MESSAGES/yelp.mo
 share/locale/dz/LC_MESSAGES/yelp.mo
 share/locale/el/LC_MESSAGES/yelp.mo
-share/locale/en@shaw/LC_MESSAGES/yelp.mo
 share/locale/en_CA/LC_MESSAGES/yelp.mo
 share/locale/en_GB/LC_MESSAGES/yelp.mo
 share/locale/eo/LC_MESSAGES/yelp.mo
@@ -58,8 +99,6 @@ share/locale/is/LC_MESSAGES/yelp.mo
 share/locale/it/LC_MESSAGES/yelp.mo
 share/locale/ja/LC_MESSAGES/yelp.mo
 share/locale/ka/LC_MESSAGES/yelp.mo
-share/locale/kk/
-share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/yelp.mo
 share/locale/kn/LC_MESSAGES/yelp.mo
 share/locale/ko/LC_MESSAGES/yelp.mo
@@ -86,8 +125,6 @@ share/locale/mn/LC_MESSAGES/yelp.mo
 share/locale/mr/LC_MESSAGES/yelp.mo
 share/locale/ms/LC_MESSAGES/yelp.mo
 share/locale/nb/LC_MESSAGES/yelp.mo
-share/locale/nds/
-share/locale/nds/LC_MESSAGES/
 share/locale/nds/LC_MESSAGES/yelp.mo
 share/locale/ne/LC_MESSAGES/yelp.mo
 share/locale/nl/LC_MESSAGES/yelp.mo
@@ -99,8 +136,6 @@ share/locale/oc/LC_MESSAGES/yelp.mo
 share/locale/or/LC_MESSAGES/yelp.mo
 share/locale/pa/LC_MESSAGES/yelp.mo
 share/locale/pl/LC_MESSAGES/yelp.mo
-share/locale/ps/
-share/locale/ps/LC_MESSAGES/
 share/locale/ps/LC_MESSAGES/yelp.mo
 share/locale/pt/LC_MESSAGES/yelp.mo
 share/locale/pt_BR/LC_MESSAGES/yelp.mo
@@ -138,13 +173,51 @@ share/locale/zh_TW/LC_MESSAGES/yelp.mo
 share/locale/zu/
 share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/yelp.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/yelp.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/yelp/
 share/yelp/default.css
+share/yelp/dtd/
+share/yelp/dtd/catalog
+share/yelp/dtd/docbookx.dtd
+share/yelp/dtd/isoamsa.ent
+share/yelp/dtd/isoamsb.ent
+share/yelp/dtd/isoamsc.ent
+share/yelp/dtd/isoamsn.ent
+share/yelp/dtd/isoamso.ent
+share/yelp/dtd/isoamsr.ent
+share/yelp/dtd/isobox.ent
+share/yelp/dtd/isocyr1.ent
+share/yelp/dtd/isocyr2.ent
+share/yelp/dtd/isodia.ent
+share/yelp/dtd/isogrk1.ent
+share/yelp/dtd/isogrk2.ent
+share/yelp/dtd/isogrk3.ent
+share/yelp/dtd/isogrk4.ent
+share/yelp/dtd/isolat1.ent
+share/yelp/dtd/isolat2.ent
+share/yelp/dtd/isonum.ent
+share/yelp/dtd/isopub.ent
+share/yelp/dtd/isotech.ent
 share/yelp/icons/
+share/yelp/icons/hicolor/
+share/yelp/icons/hicolor/16x16/
+share/yelp/icons/hicolor/16x16/status/
+share/yelp/icons/hicolor/16x16/status/bookmark.png
+share/yelp/icons/hicolor/16x16/status/yelp-page-task.png
+share/yelp/icons/hicolor/16x16/status/yelp-page-tip.png
+share/yelp/icons/hicolor/16x16/status/yelp-page-ui.png
+share/yelp/icons/hicolor/16x16/status/yelp-page-video.png
+share/yelp/icons/hicolor/scalable/
+share/yelp/icons/hicolor/scalable/actions/
+share/yelp/icons/hicolor/scalable/actions/yelp-bookmark-add-symbolic.svg
+share/yelp/icons/hicolor/scalable/actions/yelp-bookmark-remove-symbolic.svg
+share/yelp/icons/hicolor/scalable/status/
+share/yelp/icons/hicolor/scalable/status/yelp-page-problem-symbolic.svg
+share/yelp/icons/hicolor/scalable/status/yelp-page-search-symbolic.svg
+share/yelp/icons/hicolor/scalable/status/yelp-page-symbolic.svg
+share/yelp/icons/hicolor/scalable/status/yelp-page-task-symbolic.svg
+share/yelp/icons/hicolor/scalable/status/yelp-page-tip-symbolic.svg
+share/yelp/icons/hicolor/scalable/status/yelp-page-ui-symbolic.svg
+share/yelp/icons/hicolor/scalable/status/yelp-page-video-symbolic.svg
 share/yelp/icons/yelp-icon-caution.png
 share/yelp/icons/yelp-icon-important.png
 share/yelp/icons/yelp-icon-note.png
@@ -157,16 +230,11 @@ share/yelp/icons/yelp-watermark-blockquote-201D.png
 share/yelp/icons/yelp-watermark-blockquote-201E.png
 share/yelp/important_docs.xml
 share/yelp/info.xml
+share/yelp/jquery-1.4.2.min.js
+share/yelp/jquery-ui-1.8.custom.min.js
 share/yelp/man.xml
 share/yelp/scrollkeeper.xml
 share/yelp/toc.xml
-share/yelp/ui/
-share/yelp/ui/yelp-bookmarks-add.ui
-share/yelp/ui/yelp-bookmarks.ui
-share/yelp/ui/yelp-open-location.ui
-share/yelp/ui/yelp-preferences.ui
-share/yelp/ui/yelp-search-ui.xml
-share/yelp/ui/yelp-ui.xml
 share/yelp/xslt/
 share/yelp/xslt/db-title.xsl
 share/yelp/xslt/db2html.xsl
@@ -177,7 +245,9 @@ share/yelp/xslt/search2html.xsl
 share/yelp/xslt/toc2html.xsl
 share/yelp/xslt/yelp-common.xsl
 share/yelp/yelp.js
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

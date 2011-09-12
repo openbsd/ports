@@ -1,6 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/03/31 16:41:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/09/12 07:28:54 jasper Exp $
 @bin bin/gnome-system-monitor
 share/applications/gnome-system-monitor.desktop
+share/glib-2.0/schemas/org.gnome.gnome-system-monitor.enums.xml
+share/glib-2.0/schemas/org.gnome.gnome-system-monitor.gschema.xml
 share/gnome/help/gnome-system-monitor/
 share/gnome/help/gnome-system-monitor/C/
 share/gnome/help/gnome-system-monitor/C/figures/
@@ -195,6 +197,22 @@ share/gnome/help/gnome-system-monitor/pa/figures/sortMenu2.png
 share/gnome/help/gnome-system-monitor/pa/figures/systemMonitor.png
 share/gnome/help/gnome-system-monitor/pa/figures/viewMenu.png
 share/gnome/help/gnome-system-monitor/pa/gnome-system-monitor.xml
+share/gnome/help/gnome-system-monitor/sl/
+share/gnome/help/gnome-system-monitor/sl/figures/
+share/gnome/help/gnome-system-monitor/sl/figures/addColumn.png
+share/gnome/help/gnome-system-monitor/sl/figures/changePriority.png
+share/gnome/help/gnome-system-monitor/sl/figures/colorPanel.png
+share/gnome/help/gnome-system-monitor/sl/figures/columnContextMenu.png
+share/gnome/help/gnome-system-monitor/sl/figures/gnome-system-monitor_window.png
+share/gnome/help/gnome-system-monitor/sl/figures/memoryMaps.png
+share/gnome/help/gnome-system-monitor/sl/figures/moreInfo.png
+share/gnome/help/gnome-system-monitor/sl/figures/processListing.png
+share/gnome/help/gnome-system-monitor/sl/figures/sortButton.png
+share/gnome/help/gnome-system-monitor/sl/figures/sortMenu.png
+share/gnome/help/gnome-system-monitor/sl/figures/sortMenu2.png
+share/gnome/help/gnome-system-monitor/sl/figures/systemMonitor.png
+share/gnome/help/gnome-system-monitor/sl/figures/viewMenu.png
+share/gnome/help/gnome-system-monitor/sl/gnome-system-monitor.xml
 share/gnome/help/gnome-system-monitor/sv/
 share/gnome/help/gnome-system-monitor/sv/figures/
 share/gnome/help/gnome-system-monitor/sv/figures/addColumn.png
@@ -312,6 +330,7 @@ share/locale/vi/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-system-monitor.mo
+share/omf/
 share/omf/gnome-system-monitor/
 share/omf/gnome-system-monitor/gnome-system-monitor-C.omf
 share/omf/gnome-system-monitor/gnome-system-monitor-ar.omf
@@ -325,16 +344,14 @@ share/omf/gnome-system-monitor/gnome-system-monitor-es.omf
 share/omf/gnome-system-monitor/gnome-system-monitor-fr.omf
 share/omf/gnome-system-monitor/gnome-system-monitor-oc.omf
 share/omf/gnome-system-monitor/gnome-system-monitor-pa.omf
+share/omf/gnome-system-monitor/gnome-system-monitor-sl.omf
 share/omf/gnome-system-monitor/gnome-system-monitor-sv.omf
 share/omf/gnome-system-monitor/gnome-system-monitor-zh_CN.omf
-share/pixmaps/
 share/pixmaps/gnome-system-monitor/
 share/pixmaps/gnome-system-monitor/download.svg
 share/pixmaps/gnome-system-monitor/side.png
 share/pixmaps/gnome-system-monitor/upload.svg
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/gnome-system-monitor.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

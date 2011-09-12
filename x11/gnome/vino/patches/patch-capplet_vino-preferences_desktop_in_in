@@ -1,0 +1,19 @@
+$OpenBSD: patch-capplet_vino-preferences_desktop_in_in,v 1.1 2011/09/12 07:28:55 jasper Exp $
+
+commit c4cbb311e2033650aef8d11e95cc83aef7f95540
+Author: David King <amigadave@amigadave.com>
+Date:   Fri Jul 1 19:45:38 2011 +0200
+
+    Add more categories to preferences desktop file
+
+--- capplet/vino-preferences.desktop.in.in.orig	Mon Jul 11 17:11:29 2011
++++ capplet/vino-preferences.desktop.in.in	Mon Jul 11 17:11:44 2011
+@@ -6,7 +6,7 @@ Icon=preferences-desktop-remote-desktop
+ Terminal=false
+ Type=Application
+ StartupNotify=true
+-Categories=GNOME;GTK;Settings;X-GNOME-NetworkSettings;
++Categories=GNOME;GTK;Settings;X-GNOME-NetworkSettings;RemoteAccess;Network;
+ OnlyShowIn=GNOME;
+ X-GNOME-Bugzilla-Bugzilla=GNOME
+ X-GNOME-Bugzilla-Product=vino

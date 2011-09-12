@@ -1,8 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/10/14 10:11:55 ajacoutot Exp $
-lib/nautilus/
-lib/nautilus/extensions-2.0/
-@comment lib/nautilus/extensions-2.0/libnautilus-open-terminal.la
-lib/nautilus/extensions-2.0/libnautilus-open-terminal.so
+@comment $OpenBSD: PLIST,v 1.5 2011/09/12 07:28:53 jasper Exp $
+@comment lib/nautilus/extensions-3.0/libnautilus-open-terminal.la
+lib/nautilus/extensions-3.0/libnautilus-open-terminal.so
 share/locale/ar/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/as/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/be/LC_MESSAGES/nautilus-open-terminal.mo
@@ -10,6 +8,7 @@ share/locale/be@latin/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/bg/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/bn_IN/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/ca/LC_MESSAGES/nautilus-open-terminal.mo
+share/locale/ca@valencia/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/cs/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/da/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/de/LC_MESSAGES/nautilus-open-terminal.mo
@@ -26,6 +25,7 @@ share/locale/gl/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/gu/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/he/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/hu/LC_MESSAGES/nautilus-open-terminal.mo
+share/locale/id/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/it/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/ja/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/ka/LC_MESSAGES/nautilus-open-terminal.mo
@@ -50,6 +50,8 @@ share/locale/rw/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/sk/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/sl/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/sr/LC_MESSAGES/nautilus-open-terminal.mo
+share/locale/sr@Latn/
+share/locale/sr@Latn/LC_MESSAGES/
 share/locale/sr@Latn/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/sv/LC_MESSAGES/nautilus-open-terminal.mo
 share/locale/ta/LC_MESSAGES/nautilus-open-terminal.mo

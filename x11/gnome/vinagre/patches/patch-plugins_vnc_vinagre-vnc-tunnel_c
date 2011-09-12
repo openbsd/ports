@@ -1,4 +1,4 @@
-$OpenBSD: patch-plugins_vnc_vinagre-vnc-tunnel_c,v 1.1 2010/04/24 09:45:22 ajacoutot Exp $
+$OpenBSD: patch-plugins_vnc_vinagre-vnc-tunnel_c,v 1.2 2011/09/12 07:28:55 jasper Exp $
 --- plugins/vnc/vinagre-vnc-tunnel.c.orig	Sat Apr 24 11:15:11 2010
 +++ plugins/vnc/vinagre-vnc-tunnel.c	Sat Apr 24 11:15:30 2010
 @@ -20,6 +20,7 @@

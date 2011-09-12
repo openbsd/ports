@@ -1,2 +1,6 @@
-This package contains general GNOME user documentation which is not 
-directly associated with any particular GNOME application or package.
+This package contains documents which will be packaged together and
+shipped as gnome-user-docs in the core GNOME distribution.  They should 
+be documents targetted for end-users of GNOME and have general GNOME
+applicability.
+The GNOME Documentation Project (GDP) is responsible for this
+documentation.

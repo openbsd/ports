@@ -1,4 +1,4 @@
-$OpenBSD: patch-add-include-prefix,v 1.2 2004/06/23 03:26:18 marcm Exp $
+$OpenBSD: patch-add-include-prefix,v 1.3 2011/09/12 07:28:53 jasper Exp $
 --- add-include-prefix.orig	2003-09-19 03:04:08.000000000 -0600
 +++ add-include-prefix	2004-06-21 00:10:02.000000000 -0600
 @@ -1 +1 @@

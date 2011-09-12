@@ -1,10 +1,18 @@
-# $OpenBSD: Makefile,v 1.64 2011/08/30 06:52:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2011/09/12 07:28:54 jasper Exp $
 
-COMMENT=	official media player for GNOME
+COMMENT-main=		official media player for GNOME
+COMMENT-nautilus=	totem properties plugin for nautilus
 
-GNOME_PROJECT=	totem
-GNOME_VERSION=	2.32.0
-REVISION=	6
+GNOME_PROJECT=		totem
+GNOME_VERSION=		3.0.1
+
+PKGNAME-main=		${DISTNAME}
+PKGNAME-nautilus=	nautilus-${DISTNAME}
+
+REVISION-main=		5
+REVISION-nautilus=	3
+
+SHARED_LIBS +=  totem                     0.0 # 0.0
 
 CATEGORIES=	multimedia
 
@@ -16,45 +24,52 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
-WANTLIB += atk-1.0 c cairo dbus-1 dbus-glib-1 expat ffi fontconfig
-WANTLIB += freetype gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmime-2.6 gmodule-2.0 gnome-keyring
-WANTLIB += gobject-2.0 gpg-error gstbase-0.10 gstreamer-0.10
-WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 unique-1.0
-WANTLIB += util xcb xml2 z xcb-render GL drm xcb-shm assuan gpgme-pthread
-WANTLIB += gstaudio-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstvideo-0.10
-WANTLIB += gsttag-0.10 totem-plparser nautilus-extension
-WANTLIB += gmp gnutls hogweed nettle proxy tasn1 ${MODPY_WANTLIB}
+MULTI_PACKAGES=	-main -nautilus
 
-MODULES=	devel/gettext \
+MODULES=	devel/dconf \
+		devel/gettext \
 		lang/python \
-		x11/gnome \
-		devel/gconf2
+		x11/gnome
 
-BUILD_DEPENDS+=	x11/py-gtk2 \
-		devel/py-gdata \
-		devel/iso-codes \
-		multimedia/gstreamer-0.10/plugins-good>=0.10.24p2 \
-		lang/vala
-RUN_DEPENDS+=	x11/gnome/settings-daemon \
-		x11/py-gtk2 \
-		devel/iso-codes \
-		x11/gromit \
-		devel/py-gdata \
-		devel/py-xdg \
-		x11/dbus-python
-LIB_DEPENDS+=	${MODPY_LIB_DEPENDS} \
-		multimedia/gstreamer-0.10/plugins-base>=0.10.29 \
-		x11/gnome/totem-pl-parser>=2.28.1 \
-		x11/gnome/nautilus
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm archive atk-1.0
+WANTLIB += bz2 cairo cairo-gobject dbus-1 drm expat fontconfig
+WANTLIB += freetype gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmime-2.6 gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
+WANTLIB += gstaudio-0.10 gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10
+WANTLIB += gstreamer-0.10 gsttag-0.10 gstvideo-0.10 gthread-2.0
+WANTLIB += gtk-3 lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread-stubs soup-2.4 soup-gnome-2.4
+WANTLIB += sqlite3 totem-plparser xcb xcb-render xcb-shm xml2
+WANTLIB += z assuan gpgme-pthread
+
+WANTLIB-main += ${WANTLIB} ICE SM Xtst c dbus-glib-1 ffi girepository-1.0
+WANTLIB-main += peas-1.0 peas-gtk-1.0 pthread
+
+WANTLIB-nautilus += ${WANTLIB} nautilus-extension
+
+BUILD_DEPENDS+= 	devel/iso-codes \
+			lang/vala \
+			multimedia/gstreamer-0.10/plugins-good>=0.10.30
+
+RUN_DEPENDS-main+=	devel/iso-codes \
+			devel/py-xdg \
+			x11/dbus-python \
+			x11/gnome/settings-daemon
+
+LIB_DEPENDS-main+=	${MODGETTEXT_LIB_DEPENDS} \
+			multimedia/gstreamer-0.10/plugins-base>=0.10.30 \
+			x11/gnome/totem-pl-parser>=2.32.4 \
+			devel/gobject-introspection \
+			devel/libpeas
+
+RUN_DEPENDS-nautilus=	x11/gnome/totem,-main
+LIB_DEPENDS-nautilus=	x11/gnome/nautilus \
+			x11/gnome/totem-pl-parser
 
 # while the following are not "required" for totem to run, there's no
 # point in using a media player that can't play most modern media files
-RUN_DEPENDS+=	multimedia/gstreamer-0.10/plugins-good \
+RUN_DEPENDS-main+=multimedia/gstreamer-0.10/plugins-good \
 		multimedia/gstreamer-0.10/plugins-ffmpeg>=0.10.5
 
 # gst-inspect-0.10 needs to access ${HOME}
@@ -62,12 +77,13 @@ PORTHOME=	${WRKDIR}
 
 DESKTOP_FILES=	Yes
 MODGNOME_HELP_FILES=Yes
-MODGCONF2_SCHEMAS_DIR= totem
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
-# Browser bemused lirc mythtv sample-python sample-vala sidebar-test
-# publish iplayer pythonconsole coherence_upnp tracker galago youtube
-TOTEM_PLUGINS=	"gromit media-player-keys ontop properties \
+# im-status gromit iplayer jamendo lirc media-player-keys ontop opensubtitles
+# properties publish pythonconsole save-file sample-python sample-vala
+# screensaver screenshot sidebar-test skipto thumbnail tracker youtube
+# zeitgeist-dp
+TOTEM_PLUGINS=	"media-player-keys ontop properties \
 		screensaver skipto thumbnail \
 		opensubtitles jamendo screenshot dbus-service"
 
@@ -82,16 +98,12 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-nautilus \
 		--enable-python \
 		--enable-vala \
+		--enable-introspection \
 		--disable-easy-codec-installation \
 		--disable-browser-plugins \
 		--disable-gmp-plugin \
 		--disable-narrowspace-plugin \
 		--disable-mully-plugin \
 		--disable-cone-plugin
-
-post-install:
-	${INSTALL_DATA_DIR}  ${PREFIX}/share/vala/vapi
-	${INSTALL_DATA} ${WRKSRC}/bindings/vala/totem.{deps,vapi} \
-		${PREFIX}/share/vala/vapi
 
 .include <bsd.port.mk>

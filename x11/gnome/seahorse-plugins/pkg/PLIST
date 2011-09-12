@@ -1,43 +1,15 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/05/07 13:16:34 ajacoutot Exp $
-@bin bin/seahorse-agent
+@comment $OpenBSD: PLIST,v 1.8 2011/09/12 07:28:54 jasper Exp $
 @bin bin/seahorse-preferences
 @bin bin/seahorse-tool
-lib/bonobo/servers/GNOME_SeahorseApplet.server
-lib/gedit-2/
-lib/gedit-2/plugins/
-@comment lib/gedit-2/plugins/libseahorse-pgp.la
-lib/gedit-2/plugins/libseahorse-pgp.so
-lib/gedit-2/plugins/seahorse-pgp.gedit-plugin
-lib/nautilus/
-lib/nautilus/extensions-2.0/
-@comment lib/nautilus/extensions-2.0/libnautilus-seahorse.la
-lib/nautilus/extensions-2.0/libnautilus-seahorse.so
-@bin lib/seahorse/seahorse-applet
-@man man/man1/seahorse-agent.1
+@comment lib/nautilus/extensions-3.0/libnautilus-seahorse.la
+lib/nautilus/extensions-3.0/libnautilus-seahorse.so
 @man man/man1/seahorse-tool.1
 share/applications/seahorse-pgp-encrypted.desktop
 share/applications/seahorse-pgp-keys.desktop
 share/applications/seahorse-pgp-preferences.desktop
 share/applications/seahorse-pgp-signature.desktop
-share/gnome-2.0/ui/GNOME_SeahorseApplet.xml
-share/gnome/help/seahorse-applet/
-share/gnome/help/seahorse-applet/C/
-share/gnome/help/seahorse-applet/C/legal.xml
-share/gnome/help/seahorse-applet/C/seahorse-applet.xml
-share/gnome/help/seahorse-applet/es/
-share/gnome/help/seahorse-applet/es/seahorse-applet.xml
-share/gnome/help/seahorse-applet/fr/
-share/gnome/help/seahorse-applet/fr/seahorse-applet.xml
-share/gnome/help/seahorse-applet/it/
-share/gnome/help/seahorse-applet/it/seahorse-applet.xml
-share/gnome/help/seahorse-applet/oc/
-share/gnome/help/seahorse-applet/oc/seahorse-applet.xml
-share/gnome/help/seahorse-applet/ru/
-share/gnome/help/seahorse-applet/ru/seahorse-applet.xml
-share/gnome/help/seahorse-applet/sv/
-share/gnome/help/seahorse-applet/sv/seahorse-applet.xml
-share/gnome/help/seahorse-applet/vi/
-share/gnome/help/seahorse-applet/vi/seahorse-applet.xml
+share/gnome/
+share/gnome/help/
 share/gnome/help/seahorse-plugins/
 share/gnome/help/seahorse-plugins/C/
 share/gnome/help/seahorse-plugins/C/legal.xml
@@ -62,10 +34,14 @@ share/gnome/help/seahorse-plugins/oc/
 share/gnome/help/seahorse-plugins/oc/seahorse-plugins.xml
 share/gnome/help/seahorse-plugins/ru/
 share/gnome/help/seahorse-plugins/ru/seahorse-plugins.xml
+share/gnome/help/seahorse-plugins/sl/
+share/gnome/help/seahorse-plugins/sl/seahorse-plugins.xml
 share/gnome/help/seahorse-plugins/sv/
 share/gnome/help/seahorse-plugins/sv/seahorse-plugins.xml
 share/gnome/help/seahorse-plugins/vi/
 share/gnome/help/seahorse-plugins/vi/seahorse-plugins.xml
+share/gnome/help/seahorse-plugins/zh_CN/
+share/gnome/help/seahorse-plugins/zh_CN/seahorse-plugins.xml
 share/icons/hicolor/48x48/apps/seahorse-applet.png
 share/icons/hicolor/scalable/apps/seahorse-applet.svg
 share/locale/ar/LC_MESSAGES/seahorse-plugins.mo
@@ -87,6 +63,7 @@ share/locale/el/LC_MESSAGES/seahorse-plugins.mo
 share/locale/en@shaw/LC_MESSAGES/seahorse-plugins.mo
 share/locale/en_CA/LC_MESSAGES/seahorse-plugins.mo
 share/locale/en_GB/LC_MESSAGES/seahorse-plugins.mo
+share/locale/eo/LC_MESSAGES/seahorse-plugins.mo
 share/locale/es/LC_MESSAGES/seahorse-plugins.mo
 share/locale/et/LC_MESSAGES/seahorse-plugins.mo
 share/locale/eu/LC_MESSAGES/seahorse-plugins.mo
@@ -99,6 +76,7 @@ share/locale/he/LC_MESSAGES/seahorse-plugins.mo
 share/locale/hi/LC_MESSAGES/seahorse-plugins.mo
 share/locale/hr/LC_MESSAGES/seahorse-plugins.mo
 share/locale/hu/LC_MESSAGES/seahorse-plugins.mo
+share/locale/id/LC_MESSAGES/seahorse-plugins.mo
 share/locale/it/LC_MESSAGES/seahorse-plugins.mo
 share/locale/ja/LC_MESSAGES/seahorse-plugins.mo
 share/locale/kn/LC_MESSAGES/seahorse-plugins.mo
@@ -135,21 +113,13 @@ share/locale/ta/LC_MESSAGES/seahorse-plugins.mo
 share/locale/te/LC_MESSAGES/seahorse-plugins.mo
 share/locale/th/LC_MESSAGES/seahorse-plugins.mo
 share/locale/tr/LC_MESSAGES/seahorse-plugins.mo
+share/locale/ug/LC_MESSAGES/seahorse-plugins.mo
 share/locale/uk/LC_MESSAGES/seahorse-plugins.mo
 share/locale/vi/LC_MESSAGES/seahorse-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/seahorse-plugins.mo
 share/locale/zh_HK/LC_MESSAGES/seahorse-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/seahorse-plugins.mo
 share/mime/packages/seahorse.xml
-share/omf/seahorse-applet/
-share/omf/seahorse-applet/seahorse-applet-C.omf
-share/omf/seahorse-applet/seahorse-applet-es.omf
-share/omf/seahorse-applet/seahorse-applet-fr.omf
-share/omf/seahorse-applet/seahorse-applet-it.omf
-share/omf/seahorse-applet/seahorse-applet-oc.omf
-share/omf/seahorse-applet/seahorse-applet-ru.omf
-share/omf/seahorse-applet/seahorse-applet-sv.omf
-share/omf/seahorse-applet/seahorse-applet-vi.omf
 share/omf/seahorse-plugins/
 share/omf/seahorse-plugins/seahorse-plugins-C.omf
 share/omf/seahorse-plugins/seahorse-plugins-ca.omf
@@ -162,8 +132,10 @@ share/omf/seahorse-plugins/seahorse-plugins-fr.omf
 share/omf/seahorse-plugins/seahorse-plugins-it.omf
 share/omf/seahorse-plugins/seahorse-plugins-oc.omf
 share/omf/seahorse-plugins/seahorse-plugins-ru.omf
+share/omf/seahorse-plugins/seahorse-plugins-sl.omf
 share/omf/seahorse-plugins/seahorse-plugins-sv.omf
 share/omf/seahorse-plugins/seahorse-plugins-vi.omf
+share/omf/seahorse-plugins/seahorse-plugins-zh_CN.omf
 share/pixmaps/seahorse-applet.svg
 share/pixmaps/seahorse-plugins/
 share/pixmaps/seahorse-plugins/22x22/
@@ -208,13 +180,10 @@ share/pixmaps/seahorse-plugins/scalable/seahorse-sign-unknown.svg
 share/pixmaps/seahorse-plugins/scalable/seahorse-sign.svg
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/seahorse-gedit.schemas
 ${SCHEMAS_INSTDIR}/seahorse-plugins.schemas
 @exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/seahorse-plugins/
 share/seahorse-plugins/ui/
-share/seahorse-plugins/ui/seahorse-agent-cache.xml
-share/seahorse-plugins/ui/seahorse-applet-preferences.xml
 share/seahorse-plugins/ui/seahorse-multi-encrypt.xml
 share/seahorse-plugins/ui/seahorse-notify.xml
 share/seahorse-plugins/ui/seahorse-prefs.xml

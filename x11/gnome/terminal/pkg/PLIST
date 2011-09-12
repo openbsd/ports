@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2010/11/13 18:47:23 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.32 2011/09/12 07:28:54 jasper Exp $
 @bin bin/gnome-terminal
 share/applications/gnome-terminal.desktop
 share/gnome-terminal/
@@ -8,7 +8,6 @@ share/gnome-terminal/keybinding-editor.ui
 share/gnome-terminal/profile-manager.ui
 share/gnome-terminal/profile-new-dialog.ui
 share/gnome-terminal/profile-preferences.ui
-share/gnome-terminal/skey-challenge.ui
 share/gnome-terminal/terminal.about
 share/gnome-terminal/terminal.xml
 share/gnome/help/gnome-terminal/
@@ -101,6 +100,11 @@ share/gnome/help/gnome-terminal/ru/figures/
 share/gnome/help/gnome-terminal/ru/figures/gnome-terminal-default.png
 share/gnome/help/gnome-terminal/ru/figures/gnome-terminal-tabbed.png
 share/gnome/help/gnome-terminal/ru/gnome-terminal.xml
+share/gnome/help/gnome-terminal/sl/
+share/gnome/help/gnome-terminal/sl/figures/
+share/gnome/help/gnome-terminal/sl/figures/gnome-terminal-default.png
+share/gnome/help/gnome-terminal/sl/figures/gnome-terminal-tabbed.png
+share/gnome/help/gnome-terminal/sl/gnome-terminal.xml
 share/gnome/help/gnome-terminal/sv/
 share/gnome/help/gnome-terminal/sv/figures/
 share/gnome/help/gnome-terminal/sv/figures/gnome-terminal-default.png
@@ -230,6 +234,7 @@ share/omf/gnome-terminal/gnome-terminal-oc.omf
 share/omf/gnome-terminal/gnome-terminal-pt_BR.omf
 share/omf/gnome-terminal/gnome-terminal-ro.omf
 share/omf/gnome-terminal/gnome-terminal-ru.omf
+share/omf/gnome-terminal/gnome-terminal-sl.omf
 share/omf/gnome-terminal/gnome-terminal-sv.omf
 share/omf/gnome-terminal/gnome-terminal-uk.omf
 share/omf/gnome-terminal/gnome-terminal-zh_CN.omf

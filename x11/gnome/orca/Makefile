@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2011/06/08 17:41:57 rpointel Exp $
+# $OpenBSD: Makefile,v 1.28 2011/09/12 07:28:54 jasper Exp $
 
-COMMENT=		assistive technology for people with visual impairments
+COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
-GNOME_VERSION=		2.32.1
+GNOME_VERSION=		3.1.4
 
-REVISION=		2
+EXTRACT_SUFX=		.tar.xz
 
 HOMEPAGE=		http://live.gnome.org/Orca
 
@@ -19,18 +19,18 @@ MODULES=		lang/python \
 			x11/gnome
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		x11/gnome/py-gnome-desktop \
-			x11/gnome/mag \
-			x11/gnome/py-atspi \
-			x11/gnome/speech \
-			x11/dbus-python \
-			devel/py-xdg
+RUN_DEPENDS=		x11/gnome/py-atspi \
+			x11/py-gtk2 \
+			devel/py-xdg \
+			x11/dbus-python
 
 DESKTOP_FILES=		Yes
+MODGNOME_HELP_FILES=	Yes
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =		Yes
+
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/orca/
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/orca/espeechfactory.py

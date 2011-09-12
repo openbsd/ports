@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2011/05/19 14:43:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2011/09/12 07:28:52 jasper Exp $
 
 COMMENT=	base icon theme for GNOME
 
 GNOME_PROJECT=	gnome-icon-theme
-GNOME_VERSION=	2.30.3
-REVISION=	3
+GNOME_VERSION=	3.0.0
+REVISION=	2
 
 CATEGORIES=	x11
 
@@ -16,10 +16,9 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	x11/gnome
 
-BUILD_DEPENDS=	devel/gettext \
-		x11/icon-naming-utils>=0.8.90
+BUILD_DEPENDS=	x11/icon-naming-utils>=0.8.90
 
-# Rational: except for QT/KDE ports, gtk+ should already be in the
+# Rational: except for QT/KDE ports, gtk+2 should already be in the
 # dependency chain for ports installing share/icons/ files (i.e. no need
 # to explicitely add it) and if we have svg icons without their png
 # counterpart and librsvg is not part of the dependency chain then we
@@ -33,12 +32,18 @@ PKG_ARCH=	*
 
 USE_LIBTOOL=	No
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		ac_cv_path_GIT=false \
-		ac_cv_path_INKSCAPE=false \
-		ac_cv_path_ICONTOOL_RENDER=false
+		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--enable-icon-mapping \
+		--disable-nls
 
 EXAMPLEDIR=	${PREFIX}/share/examples/${GNOME_PROJECT}
+
+FAKE_FLAGS=	pkgconfigdir=${PREFIX}/lib/pkgconfig
+
+# no need to build_depends on gtk+2|gtk+3, we run gtk-update-icon-cache
+# at pkg_add time if it is available
+post-extract:
+	ln -sf /usr/bin/true ${WRKDIR}/bin/gtk-update-icon-cache
 
 post-install:
 # Unbreak gtk+2 applications that use gnome-icon-theme, when 

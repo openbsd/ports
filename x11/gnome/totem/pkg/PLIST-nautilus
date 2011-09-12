@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-nautilus,v 1.1 2011/09/12 07:28:55 jasper Exp $
+lib/nautilus/
+lib/nautilus/extensions-3.0/
+@comment lib/nautilus/extensions-3.0/libtotem-properties-page.a
+@comment lib/nautilus/extensions-3.0/libtotem-properties-page.la
+lib/nautilus/extensions-3.0/libtotem-properties-page.so
