@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/07/26 15:36:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.46 2011/09/12 12:04:17 jasper Exp $
 
 COMMENT=	libraries for the GNOME project
 
@@ -14,6 +14,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 m pcre pthread
 WANTLIB += ssl util xml2 z bonobo-2 bonobo-activation gnomevfs-2

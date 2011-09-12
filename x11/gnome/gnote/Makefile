@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/07/30 18:22:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/12 12:04:16 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,6 @@ GNOME_PROJECT=		gnote
 GNOME_VERSION=		0.7.5
 
 SUBST_VARS=		GNOME_VERSION
-EXTRACT_SUFX=		.tar.xz
 
 HOMEPAGE=		http://live.gnome.org/Gnote
 

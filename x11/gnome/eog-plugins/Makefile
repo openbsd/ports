@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/12 07:26:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/12 12:04:16 jasper Exp $
 
 COMMENT=		plugins for EOG
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/12 07:33:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2011/09/12 12:04:16 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += GL ICE ORBit-2 SM X11 X11-xcb Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender

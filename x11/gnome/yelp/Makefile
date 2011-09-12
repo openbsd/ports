@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.67 2011/09/12 07:28:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2011/09/12 12:04:20 jasper Exp $
 
 COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		3.0.4
-
-EXTRACT_SUFX=		.tar.xz
 
 SHARED_LIBS +=  yelp                      0.0 # 0.0
 

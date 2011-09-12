@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/09/12 08:02:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2011/09/12 12:04:16 jasper Exp $
 
 BROKEN=		needs an update (GNOME3)
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += ORBit-2 X11 Xau Xcomposite Xcursor avahi-client camel-1.2
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender opal

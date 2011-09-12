@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/07/27 18:44:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/12 12:04:16 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,8 +22,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
-
-EXTRACT_SUFX=		.tar.xz
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo

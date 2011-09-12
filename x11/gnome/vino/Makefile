@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/12 07:28:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2011/09/12 12:04:20 jasper Exp $
 
 COMMENT=	GNOME desktop sharing server
 
@@ -6,8 +6,6 @@ GNOME_PROJECT=	vino
 GNOME_VERSION=	3.0.3
 
 REVISION=	0
-
-EXTRACT_SUFX=		.tar.xz
 
 CATEGORIES=	net
 

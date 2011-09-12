@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2011/09/12 08:24:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2011/09/12 12:04:17 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -31,8 +31,6 @@ WANTLIB += startup-notification-1 canberra-gtk canberra gtop-2.0
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
-
-EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=	devel/startup-notification \
 		audio/libcanberra,-gtk \

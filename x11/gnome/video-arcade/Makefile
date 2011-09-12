@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/12 07:28:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/09/12 12:04:20 jasper Exp $
 
 COMMENT=	MAME front-end for GNOME
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += GL ICE SM X11 XRes Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0

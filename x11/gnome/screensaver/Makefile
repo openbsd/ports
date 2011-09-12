@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2011/09/12 07:28:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2011/09/12 12:04:17 jasper Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
 GNOME_PROJECT=	gnome-screensaver
 GNOME_VERSION=	3.0.1
-
-EXTRACT_SUFX=	.tar.xz
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
