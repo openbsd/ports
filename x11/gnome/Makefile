@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.159 2011/09/12 14:14:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.160 2011/09/12 14:38:38 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -80,8 +80,6 @@
      SUBDIR += settings-daemon
      SUBDIR += system-monitor
      SUBDIR += terminal
-     SUBDIR += themes
-     SUBDIR += themes-extras
      SUBDIR += themes-standard
      SUBDIR += totem
      SUBDIR += totem-pl-parser
