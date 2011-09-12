@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.28 2011/06/21 17:54:25 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.29 2011/09/12 08:24:06 ajacoutot Exp $
+@pkgpath x11/gnome/metacity,gtk2
 @bin bin/metacity
 @bin bin/metacity-message
 @bin bin/metacity-theme-viewer

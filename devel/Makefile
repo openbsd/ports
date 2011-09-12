@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.965 2011/09/12 07:48:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.966 2011/09/12 08:21:08 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -105,7 +105,6 @@
      SUBDIR += fribidi
      SUBDIR += gconf-editor
      SUBDIR += gconf2
-     SUBDIR += gconf2,gtk2
      SUBDIR += gconfmm
      SUBDIR += geany
      SUBDIR += geotiff

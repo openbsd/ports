@@ -1,3 +1,4 @@
-@comment $OpenBSD: PLIST-gtk,v 1.1 2011/05/14 21:34:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gtk,v 1.2 2011/09/12 08:21:08 ajacoutot Exp $
+@pkgpath devel/gconf2,-gtk,gtk2
 @conflict gconf2-<2.32.3p0
 @bin libexec/gconf-sanity-check-2

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2011/07/19 09:20:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.65 2011/09/12 08:24:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -39,7 +39,9 @@ LIB_DEPENDS=	devel/startup-notification \
 		devel/libgtop2
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		x11/gnome/doc-utils
-RUN_DEPENDS=	x11/gnome/zenity
+RUN_DEPENDS=	x11/gnome/zenity \
+		x11/gnome/themes-standard \
+		fonts/cantarell-fonts
 
 SEPARATE_BUILD=	concurrent
 DESKTOP_FILES=	Yes
@@ -49,19 +51,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 USE_GROFF =	Yes
-
-FLAVORS=	gtk2
-FLAVOR?=
-
-.if ${FLAVOR:L:Mgtk2}
-# defaults to the "Clearlooks" theme
-RUN_DEPENDS +=	x11/gnome/themes
-PATCH_LIST +=	patch-* gtk2-patch-src_metacity_schemas_in_in
-.else
-# defaults to the "Adwaita" theme and "Cantarell" font
-RUN_DEPENDS +=	x11/gnome/themes-standard \
-		fonts/cantarell-fonts
-.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/metacity

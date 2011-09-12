@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.154 2011/09/12 07:56:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.155 2011/09/12 08:24:06 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -61,7 +61,6 @@
      SUBDIR += media
      SUBDIR += menus
      SUBDIR += metacity
-     SUBDIR += metacity,gtk2
      SUBDIR += mime-data
      SUBDIR += mono-gnome
      SUBDIR += mono-keyring
