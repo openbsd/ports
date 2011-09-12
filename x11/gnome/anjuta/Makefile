@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2011/09/12 15:03:16 ajacoutot Exp $
-
-BROKEN=			needs an update that depends on vala >= 0.13.3
+# $OpenBSD: Makefile,v 1.31 2011/09/12 20:20:18 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		3.1.5
+GNOME_VERSION=		3.1.91
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -39,7 +37,7 @@ WANTLIB += pcre pixman-1 png pthread pthread-stubs sasl2 soup-2.4
 WANTLIB += sqlite3 ssl stdc++ svn_client-1 svn_delta-1 svn_diff-1
 WANTLIB += svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1
 WANTLIB += svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1 svn_repos-1
-WANTLIB += svn_subr-1 svn_wc-1 util vala-0.12 vte2_90 webkitgtk-3.0
+WANTLIB += svn_subr-1 svn_wc-1 util vala-0.14 vte2_90 webkitgtk-3.0
 WANTLIB += xcb xcb-render xcb-shm xml2 xslt z icudata icui18n icuuc
 WANTLIB += ${MODPY_WANTLIB}
 
@@ -50,7 +48,7 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/glade \
 			devel/subversion,gnome_keyring \
 			devel/vte,gtk3 \
-			lang/vala \
+			lang/vala>=0.13.4 \
 			textproc/icu4c \
 			x11/gnome/devhelp \
 			x11/gnome/gdl \
