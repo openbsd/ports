@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/12 08:13:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/12 09:17:11 jasper Exp $
 
 COMMENT=	PolicyKit integration for GNOME/GTK+2
 
@@ -71,9 +71,7 @@ post-install:
 	${SUBST_CMD} -o ${SHAREOWN} -g ${SHAREGRP} \
 		-c ${FILESDIR}/polkit-gnome-authentication-agent-1.desktop \
 		${PREFIX}/share/examples/polkit-gnome/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
-.if ! ${FLAVOR:L:Mgtk2}
 	echo 'AutostartCondition=GNOME3 if-session gnome-fallback' >> \
 		${PREFIX}/share/examples/polkit-gnome/xdg/autostart/polkit-gnome-authentication-agent-1.desktop
-.endif
 
 .include <bsd.port.mk>
