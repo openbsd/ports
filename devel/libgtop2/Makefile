@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2011/08/30 12:24:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.84 2011/09/12 12:07:25 jasper Exp $
 
 COMMENT=		portable library for obtaining system information
 
@@ -17,8 +17,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-EXTRACT_SUFX=		.tar.xz
 
 WANTLIB += Xau c kvm pcre pthread glib-2.0
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.84 2011/08/29 06:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.85 2011/09/12 12:07:25 jasper Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
@@ -27,8 +27,6 @@ PERMIT_DISTFILES_FTP=	Yes
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
-
-EXTRACT_SUFX=		.tar.xz
 
 MODPY_RUNDEP=		No
 MULTI_PACKAGES= 	-main -pty-helper

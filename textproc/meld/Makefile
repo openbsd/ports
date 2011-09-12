@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/11 11:01:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/12 12:07:26 jasper Exp $
 
 COMMENT=	graphical diff and merge tool
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+EXTRACT_SUFX=		.tar.bz2
 
 MODULES=	lang/python \
 		textproc/intltool \

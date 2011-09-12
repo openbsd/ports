@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/22 09:30:38 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/12 12:07:26 jasper Exp $
 
 COMMENT=	simple network library
 
@@ -14,6 +14,8 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
+
+EXTRACT_SUFX=		.tar.bz2
 
 MODULES=	devel/gettext \
 		x11/gnome

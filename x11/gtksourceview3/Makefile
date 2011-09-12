@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/07/01 11:16:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/12 12:07:26 jasper Exp $
 
 COMMENT=		text widget that extends GTK3's GtkTextView widget
 
@@ -25,8 +25,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext \
 			x11/gnome
-
-EXTRACT_SUFX=		.tar.xz
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 cairo cairo-gobject

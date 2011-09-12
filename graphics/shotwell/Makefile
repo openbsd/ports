@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/05/16 08:35:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/12 12:07:26 jasper Exp $
 
 COMMENT =	digital photo organizer
 
@@ -6,7 +6,6 @@ DISTNAME =	shotwell-0.9.1
 CATEGORIES =	graphics
 MASTER_SITES =	http://yorba.org/download/shotwell/0.9/
 HOMEPAGE =	http://yorba.org/shotwell/
-EXTRACT_SUFX =	.tar.bz2
 REVISION =	2
 
 # LGPLv2

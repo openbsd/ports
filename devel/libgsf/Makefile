@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2011/06/22 21:16:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2011/09/12 12:07:25 jasper Exp $
 
 COMMENT=		GNOME Structured File library
 
@@ -21,6 +21,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += bz2 c gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 m pcre png pthread xml2 z

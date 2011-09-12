@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/07/04 11:39:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/12 12:07:26 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -25,8 +25,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		devel/gettext \
 			x11/gnome
-
-EXTRACT_SUFX=		.tar.xz
 
 WANTLIB += ORBit-2 c dbus-1 dbus-glib-1 gconf-2 gcrypt gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring gobject-2.0 gpg-error

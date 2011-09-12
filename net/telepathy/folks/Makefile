@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/04/26 19:04:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/12 12:07:26 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -14,6 +14,8 @@ HOMEPAGE=		${HOMEPAGE_TP:=Folks}
 
 MODULES=		devel/gettext \
 			x11/gnome
+
+EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += c dbus-1 dbus-glib-1 gee gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 m ncurses pcre pthread readline

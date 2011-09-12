@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2011/06/14 11:49:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2011/09/12 12:07:25 jasper Exp $
 
 COMMENT=	C++ interface for glib2
 
@@ -7,8 +7,6 @@ GNOME_VERSION=	2.28.2
 
 V=		2.4
 SUBST_VARS=	V
-
-EXTRACT_SUFX=	.tar.xz
 
 PKGNAME=	glib2mm-${GNOME_VERSION}
 

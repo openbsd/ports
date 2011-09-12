@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/04/28 10:49:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/12 12:07:25 jasper Exp $
 
 COMMENT =	map viewer using Openstreetmap data
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
+
+EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE =	gnu
 DESKTOP_FILES =		yes

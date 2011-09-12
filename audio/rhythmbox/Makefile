@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.76 2011/09/12 07:26:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2011/09/12 12:07:24 jasper Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		2.90.1.1
-
-EXTRACT_SUFX=		.tar.xz
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 

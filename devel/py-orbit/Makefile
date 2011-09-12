@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/06/08 17:39:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/09/12 12:07:25 jasper Exp $
 
 COMMENT=	ORBit2 Python bindings
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB =	m util IDL-2 pcre glib-2.0 gmodule-2.0 gobject-2.0 \
 		gthread-2.0 ORBit-2 ORBit-imodule-2

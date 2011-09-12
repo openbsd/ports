@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/06/08 17:40:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2011/09/12 12:07:25 jasper Exp $
 
 COMMENT=		library for loading GLADE interface files at runtime
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB=	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
 		Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig \

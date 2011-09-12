@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2011/09/12 07:26:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2011/09/12 12:07:26 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -41,8 +41,6 @@ WANTLIB += png pthread pthread-stubs seed-gtk3 soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 startup-notification-1 stdc++ webkitgtk-3.0
 WANTLIB += xcb xcb-atom xcb-aux xcb-event xcb-render xcb-shm xml2
 WANTLIB += xslt z
-
-EXTRACT_SUFX=	.tar.xz
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/iso-codes \

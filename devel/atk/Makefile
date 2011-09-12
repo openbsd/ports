@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/06/13 17:18:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2011/09/12 12:07:24 jasper Exp $
 
 COMMENT=	accessibility toolkit used by gtk+
 
@@ -24,8 +24,6 @@ WANTLIB += pcre glib-2.0 gobject-2.0 gthread-2.0
 
 MODULES=	devel/gettext \
 		x11/gnome
-
-EXTRACT_SUFX=	.tar.xz
 
 BUILD_DEPENDS=	devel/gobject-introspection
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/03/30 07:56:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/12 12:07:25 jasper Exp $
 
 COMMENT=	common build utilities for GNOME C++ binding libraries
 
@@ -17,6 +17,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+EXTRACT_SUFX=		.tar.bz2
 
 MODULES=	x11/gnome
 

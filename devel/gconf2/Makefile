@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2011/09/12 08:43:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2011/09/12 12:07:25 jasper Exp $
 
 COMMENT-main=	configuration database system for GNOME
 COMMENT-polkit=	PolicyKit integration for GConf2
@@ -31,6 +31,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
+
+EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += c gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 pcre pthread z

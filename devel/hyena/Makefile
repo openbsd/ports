@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/05/03 08:28:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/12 12:07:25 jasper Exp $
 
 COMMENT=	GUI and non-GUI C-sharp code library
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+EXTRACT_SUFX=		.tar.bz2
 
 MODULES=	lang/mono \
 		x11/gnome

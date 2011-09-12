@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/22 10:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/12 12:07:25 jasper Exp $
 
 COMMENT =	Mastermind clone reflexion game
 
@@ -17,6 +17,7 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	http://download.gna.org/gnome-mastermind/
+EXTRACT_SUFX=		.tar.bz2
 
 MODULES =	devel/gettext \
 		x11/gnome

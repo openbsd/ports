@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/05/09 17:03:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/12 12:07:26 jasper Exp $
 
 COMMENT=	integration of xdg-user-dirs into GNOME/gtk+
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig

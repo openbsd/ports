@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/07/07 16:59:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.44 2011/09/12 12:07:24 jasper Exp $
 
 COMMENT=		high-performance CORBA Object Request Broker
 
@@ -19,6 +19,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
+
+EXTRACT_SUFX=		.tar.bz2
+
 WANTLIB=		c m pcre pthread
 
 MODULES=		devel/gettext \
