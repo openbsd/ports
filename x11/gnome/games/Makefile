@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.47 2011/06/08 17:41:57 rpointel Exp $
+# $OpenBSD: Makefile,v 1.48 2011/09/12 07:49:42 jasper Exp $
+
+BROKEN= 		update needs fixed clutter/Mesa
 
 COMMENT=		collection of games for the GNOME desktop
 

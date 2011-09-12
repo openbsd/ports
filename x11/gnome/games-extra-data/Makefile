@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/22 08:36:57 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/12 07:49:42 jasper Exp $
+
+BROKEN= 		update needs fixed clutter/Mesa
 
 COMMENT=		extra themes and artwork for GNOME games
 
