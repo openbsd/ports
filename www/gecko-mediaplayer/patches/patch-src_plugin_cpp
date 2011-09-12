@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_plugin_cpp,v 1.6 2011/07/12 08:12:29 dcoppa Exp $
+$OpenBSD: patch-src_plugin_cpp,v 1.7 2011/09/12 08:27:38 dcoppa Exp $
 
 Fix apple.com/trailers (upstream svn revisions r468 and r470)
+Fix return value for the CURLGetURLNotify function (upstream svn r473)
 
 --- src/plugin.cpp.orig	Mon Jun 20 17:00:33 2011
-+++ src/plugin.cpp	Tue Jul 12 09:31:06 2011
++++ src/plugin.cpp	Mon Sep 12 10:18:11 2011
 @@ -1320,7 +1320,7 @@ int progress_callback(void *clientp, double dltotal, d
      ListItem *item = (ListItem *) clientp;
      gdouble percent, rate;
@@ -71,3 +72,11 @@ Fix apple.com/trailers (upstream svn revisions r468 and r470)
              if (item->play) {
                  send_signal_with_integer(plugin, item, "SetGUIState", PLAYING);
                  open_location(plugin, item, TRUE);
+@@ -1549,6 +1549,7 @@ gpointer CURLGetURLNotify(gpointer data)
+ 
+         }
+     }
++    return NULL;
+ }
+ 
+ 
