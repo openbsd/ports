@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/12 18:02:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/12 18:08:26 naddy Exp $
 
 COMMENT-main=	fully featured POP3 and IMAP4 proxy server
 COMMENT-ldap=	LDAP backend for perdition mail proxy
@@ -52,7 +52,7 @@ CONFIGURE_ARGS+=	--enable-ssl \
 
 NO_REGRESS=Yes
 
-PSEUDO_FLAVORS=		no_bdb no_ldap no_mysql no_pgsql
+PSEUDO_FLAVORS=		no_ldap no_mysql no_pgsql
 FLAVOR?=
 
 MULTI_PACKAGES= 	-main
