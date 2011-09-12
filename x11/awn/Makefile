@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2011/06/08 17:35:54 rpointel Exp $
+# $OpenBSD: Makefile,v 1.22 2011/09/12 08:44:56 jasper Exp $
+
+BROKEN= 		needs an update
 
 COMMENT=		avant window navigator
 
