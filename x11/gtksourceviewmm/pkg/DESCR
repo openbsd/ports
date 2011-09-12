@@ -1,3 +1,0 @@
-gtksourceviewmm is a C++ wrapper for the gtksourceview widget library.
-It offers all the power of gtksourceview with an interface familiar to
-C++ developers, including users of the gtkmm library.

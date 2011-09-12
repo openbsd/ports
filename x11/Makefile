@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.467 2011/09/12 08:47:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.468 2011/09/12 09:16:36 jasper Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -103,7 +103,6 @@
      SUBDIR += gtkhotkey
      SUBDIR += gtksourceview
      SUBDIR += gtksourceview3
-     SUBDIR += gtksourceviewmm
      SUBDIR += gtksourceviewmm3
      SUBDIR += gxmessage
      SUBDIR += hicolor-icon-theme
