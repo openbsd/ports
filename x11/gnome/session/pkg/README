@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.16 2011/09/12 08:06:22 ajacoutot Exp $
+$OpenBSD: README,v 1.17 2011/09/12 09:10:53 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -67,7 +67,6 @@ Development
     * ghex - HEX editor
     * glade - user interface builder
     * gnome-devel-docs - developer documentation
-    * gnome-development-monitor - GUI to follow GNOME development activity
 
 Graphics & Multimedia
 ---------------------
@@ -77,7 +76,6 @@ Graphics & Multimedia
     * evince - viewer for multiple document formats
     * f-spot - photo management application
     * gnome-games (+gnome-games-extra-data) - collection of games
-    * gnome-video-arcade - MAME front-end
     * nautilus-evince - display document information in the properties window
     * nautilus-totem - display media information in the properties window
     * rhythmbox - music management application
@@ -90,7 +88,6 @@ Office & Productivity
     * abiword - WYSIWYG word processor
     * gcalctool - desktop calculator
     * gnumeric - spreadsheet application
-    * hamster-applet - time tracker applet
     * meta-tracker - powerful desktop search tool and indexer
     * planner - project management
     * gnote - desktop note-taking
@@ -99,14 +96,12 @@ Utilities
 ---------
 
     * alacarte - simple menu editing tool
-    * conduit - all-in-one synchronization application
     * gconf-editor - editor for GConf settings
     * gnome-nettool - interface for various networking tools
     * gnome-tweak-tool - tool to tweak hidden GTK/GNOME settings
     * gnomebaker - CD/DVD burning application
     * nautilus-sendto - integrate applications into Nautilus
     * nautilus-file-roller - handle archives directly from Nautilus
-    * pessulus - lockdown editor for desktop
     * seahorse (+seahorse-plugins) - encryption, keys and passwords manager
     * vinagre - VNC Client (remote Desktop client)
     * vino - VNC server (allows remote access to your Desktop)
