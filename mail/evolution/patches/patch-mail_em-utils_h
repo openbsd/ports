@@ -1,4 +1,4 @@
-$OpenBSD: patch-mail_em-utils_h,v 1.4 2010/09/30 08:01:26 ajacoutot Exp $
+$OpenBSD: patch-mail_em-utils_h,v 1.5 2011/09/12 07:26:19 ajacoutot Exp $
 --- mail/em-utils.h.orig	Mon Sep 13 14:18:10 2010
 +++ mail/em-utils.h	Wed Sep 29 19:21:20 2010
 @@ -23,8 +23,8 @@

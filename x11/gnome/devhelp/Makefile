@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.48 2011/06/11 15:25:33 naddy Exp $
+# $OpenBSD: Makefile,v 1.49 2011/09/12 07:26:20 ajacoutot Exp $
 
 COMMENT=	API documentation browser for GNOME
 
 GNOME_PROJECT=	devhelp
-GNOME_VERSION=	2.32.0
+GNOME_VERSION=	3.0.0
+REVISION=	1
 
-REVISION=	6
-
-SHARED_LIBS +=	devhelp-2             0.0        # 1.0
+SHARED_LIBS +=  devhelp-3                 0.0 # 0.0
 
 CATEGORIES=	textproc
 
@@ -19,19 +18,16 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE SM X11 XRes Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c
-WANTLIB += cairo dbus-1 dbus-glib-1 enchant execinfo expat fontconfig
-WANTLIB += freetype gailutil gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10
-WANTLIB += gthread-2.0 gtk-x11-2.0 icui18n jpeg webkitgtk-1.0
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
-WANTLIB += png pthread pthread-stubs soup-2.4 sqlite3 stdc++
-WANTLIB += xcb xcb-atom xcb-aux xcb-event xcb-render
-WANTLIB += xml2 xslt z gstapp-0.10 wnck-1 ORBit-2 unique-1.0
-WANTLIB += GL Xxf86vm drm gstinterfaces-0.10 icudata icuuc xcb-shm
-WANTLIB += startup-notification-1
+WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm
+WANTLIB += atk-1.0 c cairo cairo-gobject drm enchant expat fontconfig
+WANTLIB += freetype gailutil-3 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gstapp-0.10 gstbase-0.10 gstinterfaces-0.10
+WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
+WANTLIB += gtk-3 icudata icui18n icuuc jpeg m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += soup-2.4 sqlite3 stdc++ webkitgtk-3.0 xcb xcb-render
+WANTLIB += xcb-shm xml2 xslt z
 
 MODULES=	devel/gettext \
 		lang/python \
@@ -39,11 +35,7 @@ MODULES=	devel/gettext \
 		devel/gconf2
 
 BUILD_DEPENDS=	x11/gnome/doc-utils
-LIB_DEPENDS=	devel/libwnck \
-		devel/startup-notification \
-		devel/ORBit2 \
-		devel/libunique \
-		www/webkit>=1.4.0v0
+LIB_DEPENDS=	www/webkit,gtk3
 
 DESKTOP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	devhelp

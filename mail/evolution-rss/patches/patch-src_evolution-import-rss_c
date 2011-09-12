@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_evolution-import-rss_c,v 1.1 2011/09/12 07:26:19 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=654591
+
+--- src/evolution-import-rss.c.orig	Thu Jul 14 08:00:11 2011
++++ src/evolution-import-rss.c	Thu Jul 14 08:00:17 2011
+@@ -33,7 +33,7 @@
+ #include <gio/gio.h>
+ 
+ #define d(x)
+-#define EVOLUTION "/opt/gnome-dev/bin/evolution&"
++#define EVOLUTION "evolution&"
+ 
+ #define RSS_DBUS_PATH "/org/gnome/feed/Reader"
+ #define RSS_DBUS_SERVICE "org.gnome.feed.Reader"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2011/05/28 08:15:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2011/09/12 07:26:19 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ COMMENT-dvi=	evince document viewer backend for dvi documents
 COMMENT-nautilus= evince plugin for nautilus
 
 GNOME_PROJECT=	evince
-GNOME_VERSION=	2.32.0
+GNOME_VERSION=	3.0.2
 
 MAJ_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=	MAJ_V
@@ -20,12 +20,13 @@ PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
-REVISION-main=	4
-REVISION-nautilus= 0
+REVISION-main=	1
+REVISION-djvu=	0
 REVISION-dvi=	0
+REVISION-nautilus=0
 
-SHARED_LIBS +=  evdocument 1.0                   # .2.0
-SHARED_LIBS +=  evview     1.0                   # .2.0
+SHARED_LIBS +=  evdocument3               0.0 # 3.0
+SHARED_LIBS +=  evview3                   0.0 # 3.0
 
 HOMEPAGE=	http://www.gnome.org/projects/evince/
 
@@ -40,66 +41,64 @@ PERMIT_DISTFILES_CDROM=	Yes
 
 MODULES=	devel/gettext \
 		x11/gnome \
-		devel/gconf2 \
 		devel/dconf
 
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	x11/gnome/icon-theme \
-		devel/gobject-introspection
+		devel/gobject-introspection \
+		devel/gsettings-desktop-schemas
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
-WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0
+WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gtk-3 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
-WANTLIB += GL X11-xcb Xxf86vm drm xcb-shm
-WANTLIB += xcb xcb-render z gthread-2.0
+WANTLIB += GL  Xxf86vm drm xcb-shm
+WANTLIB += xcb xcb-render z gthread-2.0 cairo-gobject m
 
-WANTLIB-main=	${WANTLIB} ICE ORBit-2 SM c dbus-1 \
+LIB_DEPENDS=	x11/gtk+3
+
+WANTLIB-main=	${WANTLIB} ICE SM c dbus-1 gailutil-3 gdk-x11-2.0 \
 		gnome-keyring gs gcrypt gpg-error \
 		jpeg pthread tiff xml2 lcms openjpeg \
 		poppler poppler-glib spectre gnome-keyring \
-		gailutil stdc++ ${MODGCONF2_WANTLIB}
+		stdc++
 LIB_DEPENDS-main= print/poppler \
 		print/libspectre \
 		x11/gnome/libgnome-keyring \
-		${MODGCONF2_LIB_DEPENDS} \
-		${MODGETTEXT_LIB_DEPENDS}
+		${LIB_DEPENDS}
 RUN_DEPENDS-main= ${RUN_DEPENDS} \
+		devel/gsettings-desktop-schemas \
 		misc/shared-mime-info \
 		print/ghostscript/gnu \
 		x11/gnome/icon-theme
 
-WANTLIB-djvu=	${WANTLIB} jpeg evdocument djvulibre
+WANTLIB-djvu=	${WANTLIB} jpeg evdocument3 djvulibre
 # port-lib-depends-check misses these ones because the depending lib
 # is under lib/evince/3/backends/
 # we don't need qt3 support in djvulibre, hence no_x11
-LIB_DEPENDS-djvu= ${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-djvu= ${LIB_DEPENDS} \
 		${BASE_PKGPATH} \
 		graphics/djvulibre,no_x11
-RUN_DEPENDS-djvu= ${MODGCONF2_RUN_DEPENDS}
 
-WANTLIB-dvi=	${WANTLIB} gs evdocument kpathsea spectre ICE SM
+WANTLIB-dvi=	${WANTLIB} gs evdocument3 kpathsea spectre ICE SM \
+		c jpeg
 # port-lib-depends-check misses these ones because the depending lib
 # is under lib/evince/3/backends/
-LIB_DEPENDS-dvi= ${MODGETTEXT_LIB_DEPENDS} \
+LIB_DEPENDS-dvi= ${LIB_DEPENDS} \
 		${BASE_PKGPATH} \
 		print/texlive/base \
 		print/libspectre
-RUN_DEPENDS-dvi= ${MODGCONF2_RUN_DEPENDS}
 
-WANTLIB-nautilus= ${WANTLIB} gthread-2.0 nautilus-extension evdocument
+WANTLIB-nautilus= ${WANTLIB} gthread-2.0 nautilus-extension evdocument3
 LIB_DEPENDS-nautilus= ${BASE_PKGPATH} \
-		${MODGETTEXT_LIB_DEPENDS} \
-		${MODLIBICONV_LIB_DEPENDS} \
+		${LIB_DEPENDS} \
 		x11/gnome/nautilus
 RUN_DEPENDS-nautilus=
 
 MODGNOME_HELP_FILES= 	Yes
 DESKTOP_FILES=		Yes
-MODGCONF2_SCHEMAS_DIR=  evince
-MODGCONF2_LIBDEP= 	No
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
@@ -112,12 +111,10 @@ CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-gtk-doc \
 		--disable-static \
 		--disable-comics \
-		--disable-impress \
 		--enable-introspection \
 		--enable-nautilus \
 		--enable-djvu \
-		--enable-dvi \
-		--enable-pixbuf
+		--enable-dvi
 
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \

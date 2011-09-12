@@ -1,29 +1,20 @@
-$OpenBSD: patch-src_Makefile_in,v 1.1 2011/04/07 19:41:32 jasper Exp $
+$OpenBSD: patch-src_Makefile_in,v 1.2 2011/09/12 07:26:20 ajacoutot Exp $
 
-Correctly set the the symbol/identifier prefix which would otherwise
-cause a warning: "Namespace is empty; likely causes are [...]"
+commit 16607f8b5e182389b6a228079a577cfca2ea9cf2
+Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date:   Mon Jun 20 19:36:42 2011 +0200
 
---- src/Makefile.in.orig	Thu Apr  7 21:36:40 2011
-+++ src/Makefile.in	Thu Apr  7 21:37:18 2011
-@@ -1585,7 +1585,9 @@ stamp-ephy-dbus-client-bindings.h: $(top_srcdir)/data/
- @HAVE_INTROSPECTION_TRUE@                                      $(EPHY_GIR_C_FILES) epiphany
- @HAVE_INTROSPECTION_TRUE@	$(AM_V_GEN) PKG_CONFIG_PATH=$(top_builddir)/data:$$PKG_CONFIG_PATH \
- @HAVE_INTROSPECTION_TRUE@	$(INTROSPECTION_SCANNER) -v \
--@HAVE_INTROSPECTION_TRUE@		--namespace Epiphany \
-+@HAVE_INTROSPECTION_TRUE@		--identifier-prefix=Ephy \
-+@HAVE_INTROSPECTION_TRUE@		--symbol-prefix=ephy \
-+@HAVE_INTROSPECTION_TRUE@		--namespace=Epiphany \
- @HAVE_INTROSPECTION_TRUE@		--nsversion=$(EPIPHANY_API_VERSION) \
- @HAVE_INTROSPECTION_TRUE@		--add-include-path=. \
- @HAVE_INTROSPECTION_TRUE@		--add-include-path=$(srcdir) \
-@@ -1593,8 +1595,8 @@ stamp-ephy-dbus-client-bindings.h: $(top_srcdir)/data/
- @HAVE_INTROSPECTION_TRUE@		--include=libxml2-2.0 \
- @HAVE_INTROSPECTION_TRUE@		--include=WebKit-1.0 \
- @HAVE_INTROSPECTION_TRUE@		--program=./epiphany \
--@HAVE_INTROSPECTION_TRUE@		--output $@ \
--@HAVE_INTROSPECTION_TRUE@		--pkg epiphany-$(EPIPHANY_API_VERSION) \
-+@HAVE_INTROSPECTION_TRUE@		--output=$@ \
-+@HAVE_INTROSPECTION_TRUE@		--pkg=epiphany-$(EPIPHANY_API_VERSION) \
- @HAVE_INTROSPECTION_TRUE@		-DEPIPHANY_COMPILATION \
- @HAVE_INTROSPECTION_TRUE@		-I$(top_srcdir)/embed \
- @HAVE_INTROSPECTION_TRUE@		-I$(top_srcdir)/lib \
+    Don't bypass g-ir-scanner's --pkg, especially when that's already passed.
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=653031
+
+--- src/Makefile.in.orig	Mon Jun 20 19:33:27 2011
++++ src/Makefile.in	Mon Jun 20 19:33:35 2011
+@@ -1575,7 +1575,6 @@ stamp-ephy-dbus-client-bindings.h: $(top_srcdir)/data/
+ @HAVE_INTROSPECTION_TRUE@		--pkg=gtk+-3.0 \
+ @HAVE_INTROSPECTION_TRUE@		--pkg=libxml-2.0 \
+ @HAVE_INTROSPECTION_TRUE@		--output=$@ \
+-@HAVE_INTROSPECTION_TRUE@		`pkg-config --libs libxml-2.0 gtk+-3.0` \
+ @HAVE_INTROSPECTION_TRUE@		$(top_srcdir)/lib/egg/egg-editable-toolbar.h \
+ @HAVE_INTROSPECTION_TRUE@		$(top_srcdir)/lib/egg/egg-toolbars-model.h \
+ @HAVE_INTROSPECTION_TRUE@		$(top_srcdir)/lib/egg/egg-editable-toolbar.c \

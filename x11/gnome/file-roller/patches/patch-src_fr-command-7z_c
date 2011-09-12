@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_fr-command-7z_c,v 1.2 2009/10/12 19:01:08 jasper Exp $
+$OpenBSD: patch-src_fr-command-7z_c,v 1.3 2011/09/12 07:26:20 ajacoutot Exp $
 
 Fix a crasher possible with 7z files.
 
---- src/fr-command-7z.c.orig	Mon Oct 12 20:49:39 2009
-+++ src/fr-command-7z.c	Mon Oct 12 20:50:18 2009
-@@ -130,6 +130,7 @@ list__process_line (char     *line,
+--- src/fr-command-7z.c.orig	Tue Mar  1 19:51:35 2011
++++ src/fr-command-7z.c	Mon May 23 10:20:44 2011
+@@ -129,6 +129,7 @@ list__process_line (char     *line,
  			}
  			else {
  				fdata = p7z_comm->fdata;
@@ -12,7 +12,7 @@ Fix a crasher possible with 7z files.
  				if (fdata->dir)
  					fdata->name = dir_name_from_path (fdata->full_path);
  				else
-@@ -137,6 +138,7 @@ list__process_line (char     *line,
+@@ -136,6 +137,7 @@ list__process_line (char     *line,
  				fdata->path = remove_level_from_path (fdata->full_path);
  				fr_command_add_file (comm, fdata);
  				p7z_comm->fdata = NULL;

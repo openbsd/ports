@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/04/22 07:48:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/12 07:26:19 ajacoutot Exp $
 
 # No NTLM support in OpenLDAP; Plaintext password authentication will be
 # used when connecting to the Global Catalog server. Consider installing
@@ -7,14 +7,19 @@
 
 SHARED_ONLY=	Yes
 
-COMMENT=	Evolution connector for MS Exchange
+COMMENT=	evolution connector for MS Exchange
 
 GNOME_PROJECT=	evolution-exchange
-GNOME_VERSION=	2.32.3
+GNOME_VERSION=	3.0.3
+
+EXTRACT_SUFX=	.tar.xz
+
+SHARED_LIBS +=  exchange                  0.0 # 0.0
+SHARED_LIBS +=  xntlm                     0.0 # 0.0
 
 CATEGORIES=	mail
 
-EVO_VERSION=	2.32
+EVO_VERSION=	3.0
 SUBST_VARS=	EVO_VERSION
 
 HOMEPAGE=	http://projects.gnome.org/evolution/
@@ -28,66 +33,64 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender asn1
-WANTLIB += atk-1.0 c cairo camel-1.2 camel-provider-1.2 canberra
-WANTLIB += canberra-gtk com_err crypto db dbus-1 dbus-glib-1 ebackend-1.2
-WANTLIB += ebook-1.2 ecal-1.2 edata-book-1.2 edata-cal-1.2 edataserver-1.2
-WANTLIB += edataserverui-1.2 egroupwise-1.2 enchant
-WANTLIB += execinfo expat fontconfig freetype gailutil gcrypt
-WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gnome-desktop-2 gnome-keyring
-WANTLIB += gobject-2.0 gpg-error gssapi gthread-2.0 gtk-x11-2.0
-WANTLIB += gtkhtml-3.14 ical icalss icalvcal krb5
-WANTLIB += ltdl m nspr4 nss3 ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += sasl2 smime3 soup-2.4 sqlite3 ssl ssl3 startup-notification-1
-WANTLIB += stdc++ unique-1.0 vorbis vorbisfile xcb xcb-atom
-WANTLIB += xcb-aux xcb-event xcb-render xml2 z
-WANTLIB += gdata gtkhtml-editor-3.14 lber-2.4 ldap-2.4 nssutil3
-WANTLIB += soup-gnome-2.4 GL Xxf86vm drm softokn3 xcb-shm
-WANTLIB += lib/evolution/${EVO_VERSION}/art_lgpl
-WANTLIB += lib/evolution/${EVO_VERSION}/gnomecanvas
-WANTLIB += lib/evolution/${EVO_VERSION}/essmime
-WANTLIB += lib/evolution/${EVO_VERSION}/emformat
-WANTLIB += lib/evolution/${EVO_VERSION}/evolution-mail
-WANTLIB += lib/evolution/${EVO_VERSION}/evolution-smime
-WANTLIB += lib/evolution/${EVO_VERSION}/filter
-WANTLIB += lib/evolution/${EVO_VERSION}/menus
+WANTLIB += GL ICE ORBit-2 SM X11 X11-xcb Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += Xxf86vm asn1 atk-1.0 c cairo cairo-gobject camel-1.2
+WANTLIB += camel-provider-1.2 canberra canberra-gtk3 com_err crypto
+WANTLIB += db dbus-1 dbus-glib-1 drm ebackend-1.2 ebook-1.2 ecal-1.2
+WANTLIB += edata-book-1.2 edata-cal-1.2 edataserver-1.2 edataserverui-3.0
+WANTLIB += egroupwise-1.2 enchant execinfo expat fontconfig freetype
+WANTLIB += gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gnome-desktop-3 gnome-keyring gobject-2.0
+WANTLIB += gpg-error gssapi gthread-2.0 gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0
+WANTLIB += ical icalss icalvcal krb5 lber-2.4 ldap-2.4 ltdl m
+WANTLIB += nspr4 nss3 nssutil3 ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += sasl2 smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 startup-notification-1
+WANTLIB += stdc++ unique-3.0 vorbis vorbisfile xcb xcb-aux xcb-render
+WANTLIB += xcb-shm xml2 z
+WANTLIB += lib/evolution/${EVO_VERSION}/composer
 WANTLIB += lib/evolution/${EVO_VERSION}/eabutil
 WANTLIB += lib/evolution/${EVO_VERSION}/econtacteditor
 WANTLIB += lib/evolution/${EVO_VERSION}/econtactlisteditor
-WANTLIB += lib/evolution/${EVO_VERSION}/composer
-WANTLIB += lib/evolution/${EVO_VERSION}/eshell
+WANTLIB += lib/evolution/${EVO_VERSION}/emformat
+WANTLIB += lib/evolution/${EVO_VERSION}/emiscwidgets
+WANTLIB += lib/evolution/${EVO_VERSION}/eshell.
+WANTLIB += lib/evolution/${EVO_VERSION}/essmime
 WANTLIB += lib/evolution/${EVO_VERSION}/etable
 WANTLIB += lib/evolution/${EVO_VERSION}/etext
-WANTLIB += lib/evolution/${EVO_VERSION}/evolution-a11y
-WANTLIB += lib/evolution/${EVO_VERSION}/emiscwidgets
 WANTLIB += lib/evolution/${EVO_VERSION}/eutil
+WANTLIB += lib/evolution/${EVO_VERSION}/evolution-a11y
+WANTLIB += lib/evolution/${EVO_VERSION}/evolution-mail.
+WANTLIB += lib/evolution/${EVO_VERSION}/evolution-smime
+WANTLIB += lib/evolution/${EVO_VERSION}/filter
+WANTLIB += lib/evolution/${EVO_VERSION}/gnomecanvas
+WANTLIB += lib/evolution/${EVO_VERSION}/menus
 
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-LIB_DEPENDS=	mail/evolution,-main>=2.32.2
+LIB_DEPENDS=	mail/evolution,-main>=3.0.2
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
 MODGCONF2_SCHEMAS_DIR= evolution-exchange
 
-CONFIGURE_STYLE= gnu
+AUTOCONF_VERSION=2.68
+AUTOMAKE_VERSION=1.9
+
+CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
 		--disable-static \
+		--disable-gtk-doc \
 		--with-krb5=/usr \
 		--with-krb5-includes=/usr/include/kerberosV \
 		--with-static-ldap=no \
 		--with-openldap=${LOCALBASE} \
 		--with-libdb=${LOCALBASE}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-
-pre-configure:
-	perl -pi -e 's,-lpthread,-pthread,g' ${WRKSRC}/configure
+		LDFLAGS="-L${LOCALBASE}/lib \
+			-Wl,-rpath,${TRUEPREFIX}/lib/evolution-exchange/${EVO_VERSION}:${TRUEPREFIX}/lib"
 
 .include <bsd.port.mk>

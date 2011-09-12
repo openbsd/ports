@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2010/09/30 07:32:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2011/09/12 07:26:19 ajacoutot Exp $
 @bin bin/gconf-editor
 @man man/man1/gconf-editor.1
 share/applications/gconf-editor.desktop
@@ -137,6 +137,16 @@ share/gnome/help/gconf-editor/ru/figures/entry-schema.png
 share/gnome/help/gconf-editor/ru/figures/entry-string.png
 share/gnome/help/gconf-editor/ru/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/ru/gconf-editor.xml
+share/gnome/help/gconf-editor/sl/
+share/gnome/help/gconf-editor/sl/figures/
+share/gnome/help/gconf-editor/sl/figures/entry-blank.png
+share/gnome/help/gconf-editor/sl/figures/entry-bool.png
+share/gnome/help/gconf-editor/sl/figures/entry-list.png
+share/gnome/help/gconf-editor/sl/figures/entry-number.png
+share/gnome/help/gconf-editor/sl/figures/entry-schema.png
+share/gnome/help/gconf-editor/sl/figures/entry-string.png
+share/gnome/help/gconf-editor/sl/figures/gconf_editor_anno_window.png
+share/gnome/help/gconf-editor/sl/gconf-editor.xml
 share/gnome/help/gconf-editor/sv/
 share/gnome/help/gconf-editor/sv/figures/
 share/gnome/help/gconf-editor/sv/figures/entry-blank.png
@@ -177,6 +187,21 @@ share/gnome/help/gconf-editor/zh_CN/figures/entry-schema.png
 share/gnome/help/gconf-editor/zh_CN/figures/entry-string.png
 share/gnome/help/gconf-editor/zh_CN/figures/gconf_editor_anno_window.png
 share/gnome/help/gconf-editor/zh_CN/gconf-editor.xml
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
+share/icons/hicolor/16x16/apps/gconf-editor.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
+share/icons/hicolor/22x22/apps/gconf-editor.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
+share/icons/hicolor/24x24/apps/gconf-editor.png
+share/icons/hicolor/256x256/
+share/icons/hicolor/256x256/apps/
+share/icons/hicolor/256x256/apps/gconf-editor.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/gconf-editor.png
 share/icons/hicolor/48x48/
 share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/gconf-editor.png
@@ -203,6 +228,7 @@ share/locale/el/LC_MESSAGES/gconf-editor.mo
 share/locale/en@shaw/LC_MESSAGES/gconf-editor.mo
 share/locale/en_CA/LC_MESSAGES/gconf-editor.mo
 share/locale/en_GB/LC_MESSAGES/gconf-editor.mo
+share/locale/eo/LC_MESSAGES/gconf-editor.mo
 share/locale/es/LC_MESSAGES/gconf-editor.mo
 share/locale/et/LC_MESSAGES/gconf-editor.mo
 share/locale/eu/LC_MESSAGES/gconf-editor.mo
@@ -266,6 +292,7 @@ share/locale/xh/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_CN/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_HK/LC_MESSAGES/gconf-editor.mo
 share/locale/zh_TW/LC_MESSAGES/gconf-editor.mo
+share/omf/
 share/omf/gconf-editor/
 share/omf/gconf-editor/gconf-editor-C.omf
 share/omf/gconf-editor/gconf-editor-ca.omf
@@ -279,6 +306,7 @@ share/omf/gconf-editor/gconf-editor-it.omf
 share/omf/gconf-editor/gconf-editor-oc.omf
 share/omf/gconf-editor/gconf-editor-pt_BR.omf
 share/omf/gconf-editor/gconf-editor-ru.omf
+share/omf/gconf-editor/gconf-editor-sl.omf
 share/omf/gconf-editor/gconf-editor-sv.omf
 share/omf/gconf-editor/gconf-editor-th.omf
 share/omf/gconf-editor/gconf-editor-uk.omf

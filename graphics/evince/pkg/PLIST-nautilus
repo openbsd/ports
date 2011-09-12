@@ -1,5 +1,3 @@
-@comment $OpenBSD: PLIST-nautilus,v 1.2 2010/12/01 14:46:59 ajacoutot Exp $
-lib/nautilus/
-lib/nautilus/extensions-2.0/
-@comment lib/nautilus/extensions-2.0/libevince-properties-page.la
-lib/nautilus/extensions-2.0/libevince-properties-page.so
+@comment $OpenBSD: PLIST-nautilus,v 1.3 2011/09/12 07:26:19 ajacoutot Exp $
+@comment lib/nautilus/extensions-${MAJ_V}/libevince-properties-page.la
+lib/nautilus/extensions-${MAJ_V}/libevince-properties-page.so

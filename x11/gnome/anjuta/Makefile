@@ -1,17 +1,13 @@
-# $OpenBSD: Makefile,v 1.27 2011/07/26 15:36:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2011/09/12 07:26:20 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
-COMMENT=		versatile IDE for C and C++
+COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		2.32.1.1
+GNOME_VERSION=		3.1.5
 
-REVISION=		5
-
-SHARED_LIBS +=  anjuta-foocanvas     0.0      # 0.0
-SHARED_LIBS +=  anjuta               0.0      # 0.0
-SHARED_LIBS +=  python_plugin        0.0      # 0.0
+SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
 CATEGORIES=		devel
 
@@ -23,68 +19,77 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		devel/gconf2 \
+EXTRACT_SUFX=		.tar.xz
+
+MODULES=		devel/dconf \
 			devel/gettext \
 			lang/python \
 			x11/gnome
 
-WANTLIB += ICE ORBit-2 SM X11 XRes Xau Xcomposite Xcursor Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt apr-1
-WANTLIB += aprutil-1 asn1 atk-1.0 c cairo crypto db dbus-1 dbus-glib-1
-WANTLIB += devhelp-2 enchant execinfo expat fontconfig freetype
-WANTLIB += gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gpg-error
-WANTLIB += gssapi gstbase-0.10 gstpbutils-0.10 gstreamer-0.10
-WANTLIB += gstvideo-0.10 gthread-2.0 gtk-x11-2.0 icui18n
-WANTLIB += jpeg krb5 m ncurses neon pango-1.0 pangocairo-1.0 gdl-1
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += sasl2 soup-2.4 sqlite3 ssl startup-notification-1 stdc++ vte
-WANTLIB += unique-1.0 util webkitgtk-1.0 wnck-1 xcb xcb-atom
-WANTLIB += xcb-aux xcb-event xcb-render xml2 xslt z
-WANTLIB += gstapp-0.10 gladeui-1 gtksourceview-2.0 gstinterfaces-0.10
-WANTLIB += svn_client-1 svn_delta-1 svn_diff-1 svn_fs-1 svn_fs_base-1
-WANTLIB += svn_fs_fs-1 svn_ra-1 svn_ra_local-1 svn_ra_svn-1 svn_repos-1
-WANTLIB += svn_subr-1 svn_wc-1 svn_fs_util-1 svn_ra_neon-1 cdt
-WANTLIB += gda-4.0 ltdl gnome-keyring gvc graph pathplan
-WANTLIB += ${MODPY_WANTLIB} GL Xxf86vm drm icudata icuuc xcb-shm
+WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm
+WANTLIB += apr-1 aprutil-1 asn1 atk-1.0 c cairo cairo-gobject
+WANTLIB += crypto db devhelp-3 drm enchant expat fontconfig freetype
+WANTLIB += gailutil-3 gconf-2 gdk-3 gdk_pixbuf-2.0 gdl-3 gio-2.0
+WANTLIB += gladeui-2 glib-2.0 gmodule-2.0 gobject-2.0 gssapi gstapp-0.10
+WANTLIB += gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10
+WANTLIB += gstvideo-0.10 gthread-2.0 gtk-3 gtksourceview-3.0 jpeg
+WANTLIB += krb5 m ncurses neon pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs sasl2 soup-2.4
+WANTLIB += sqlite3 ssl stdc++ svn_client-1 svn_delta-1 svn_diff-1
+WANTLIB += svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1
+WANTLIB += svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1 svn_repos-1
+WANTLIB += svn_subr-1 svn_wc-1 util vala-0.12 vte2_90 webkitgtk-3.0
+WANTLIB += xcb xcb-render xcb-shm xml2 xslt z icudata icui18n icuuc
+WANTLIB += ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=		devel/autogen>=5.6.5 \
-			devel/p5-Locale-gettext \
 			devel/gobject-introspection
-RUN_DEPENDS=		misc/shared-mime-info \
-			devel/p5-Locale-gettext
+RUN_DEPENDS=		misc/shared-mime-info
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
-			devel/glade3 \
-			devel/subversion \
-			devel/vte \
-			math/graphviz \
+			devel/glade \
+			devel/subversion,gnome_keyring \
+			devel/vte,gtk3 \
+			lang/vala \
+			textproc/icu4c \
+			x11/gnome/devhelp \
 			x11/gnome/gdl \
 			x11/gnome/libgda \
-			x11/gtksourceview
+			x11/gtksourceview3
 
-# XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
-# instead of the actual library
-USE_LIBTOOL=	gnu
+# XXX: Remove when updating to a stable release
+BUILD_DEPENDS+=		devel/bison
 
 LIBTOOL_FLAGS=		--tag=disable-static
 DESKTOP_FILES=		Yes
 MODGNOME_HELP_FILES=	Yes
-MODGCONF2_SCHEMAS_DIR=	anjuta
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-plugin-subversion \
 			--enable-gtk-doc=no \
-			--enable-debug \
-			--enable-introspection
+			--enable-introspection \
+			--enable-vala
 
-# XXX re-enable when it supports vala>=0.12.0
-CONFIGURE_ARGS+=	--disable-vala
+# adds dependency on libgnomeui
+CONFIGURE_ARGS+=	--disable-graphviz
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =		Yes
+
+# The Symbol Browser plugin isn't built on OpenBSD due to the lack of an
+# shm_open() implementation. So remove the "Symbol Browser" as a requirement
+# from these templates. It's just a really-nice-to-have, instead of a must-have.
+post-extract:
+	cd ${WRKSRC}/plugins/project-wizard/templates/ && \
+		for t in `find . -type f -name '*.anjuta'`; \
+		do \
+			sed '/<plugin name="Symbol Browser/,/<\/plugin>/d' \
+				$$t > $$t.new && mv $$t.new $$t; \
+		done
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/configure
+	${SUBST_CMD} ${WRKSRC}/plugins/project-wizard/templates/python.wiz.in \
+		${WRKSRC}/plugins/project-wizard/templates/pygtk/src/main.py \
+		${WRKSRC}/plugins/project-wizard/templates/python/src/main.py
 
 .include <bsd.port.mk>

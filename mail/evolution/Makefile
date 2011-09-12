@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.125 2011/07/03 17:14:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.126 2011/09/12 07:26:19 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		2.32.3
+GNOME_VERSION=		3.0.3
+
+EXTRACT_SUFX=		.tar.xz
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
-
-REVISION-main=		0
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -30,7 +30,7 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 SO_VERSION=		6.0
 
 .for _lib in \
-art_lgpl gnomecanvas eutil evolution-a11y filter emiscwidgets etext \
+gnomecanvas eutil evolution-a11y filter emiscwidgets etext \
 etimezonedialog etable menus eshell essmime evolution-smime emformat \
 eabutil evolution-addressbook-importers econtacteditor \
 econtactlisteditor composer evolution-mail evolution-mail-importers \
@@ -38,44 +38,49 @@ evolution-calendar evolution-mail-settings evolution-calendar-importers
 SHARED_LIBS+=	${_lib}	${SO_VERSION}
 .endfor
 
-# LGPLv2+
+# # GPLv2+ - LGPLv2+ - OpenLDAP license - GFDL 1.1
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender asn1
-WANTLIB += atk-1.0 c cairo com_err crypto dbus-1 dbus-glib-1
-WANTLIB += enchant execinfo expat fontconfig freetype
-WANTLIB += gailutil gcrypt gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring canberra
-WANTLIB += gobject-2.0 gpg-error gssapi gthread-2.0 gtk-x11-2.0
-WANTLIB += ical krb5 m nspr4 pango-1.0 camel-1.2 camel-provider-1.2
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
-WANTLIB += png pthread pthread-stubs sqlite3 startup-notification-1
-WANTLIB += stdc++ xcb xcb-atom xcb-aux xcb-event xcb-render
-WANTLIB += xml2 z gtkhtml-3.14 gtkhtml-editor-3.14
-WANTLIB += gdata soup-gnome-2.4 gdata ebook-1.2
-WANTLIB += ecal-1.2 edataserver-1.2 edataserverui-1.2 unique-1.0
-WANTLIB += gnome-desktop-2 nss3 smime3 ssl3 notify soup-2.4
-WANTLIB += GL Xxf86vm db drm ebackend-1.2 egroupwise-1.2
-WANTLIB += icalss icalvcal nssutil3 softokn3 xcb-shm
+WANTLIB += GL ICE ORBit-2 SM X11 X11-xcb Xau Xcomposite Xcursor
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
+WANTLIB += Xxf86vm asn1 atk-1.0 c cairo cairo-gobject camel-1.2
+WANTLIB += camel-provider-1.2 canberra com_err crypto
+WANTLIB += db dbus-1 dbus-glib-1 drm ebackend-1.2 ebook-1.2 ecal-1.2
+WANTLIB += edataserver-1.2 edataserverui-3.0 egroupwise-1.2 enchant
+WANTLIB += execinfo expat fontconfig freetype gailutil-3
+WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gnome-desktop-3 gnome-keyring gobject-2.0
+WANTLIB += gpg-error gssapi gthread-2.0 gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0
+WANTLIB += ical icalss icalvcal krb5
+WANTLIB += m notify nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread
+WANTLIB += pthread-stubs smime3 softokn3 soup-2.4 sqlite3 ssl3
+WANTLIB += startup-notification-1 stdc++ unique-3.0
+WANTLIB += xcb xcb-aux xcb-render xcb-shm xml2 z
 
-WANTLIB-main += ${WANTLIB} vorbisfile canberra-gtk
-WANTLIB-main += gweather icalss icalvcal ogg db gtkimageview
-WANTLIB-main += icalss icalvcal ldap-2.4 ltdl ogg pst softokn3
-WANTLIB-main += ebackend-1.2 egroupwise-1.2 vorbis
-WANTLIB-main += ltdl ogg vorbis vorbisfile
+WANTLIB-main += ${WANTLIB}
+WANTLIB-main += canberra-gtk3 gdata gweather-3 ldap-2.4 ltdl ogg pst
+WANTLIB-main += vorbis vorbisfile
 
-WANTLIB-plugins += ${WANTLIB} gstreamer-0.10
-WANTLIB-plugins += lib/evolution/${R}/composer lib/evolution/${R}/emformat
-WANTLIB-plugins += lib/evolution/${R}/eshell lib/evolution/${R}/evolution-calendar
-WANTLIB-plugins += lib/evolution/${R}/evolution-mail lib/evolution/${R}/emiscwidgets
-WANTLIB-plugins += lib/evolution/${R}/eutil lib/evolution/${R}/art_lgpl
-WANTLIB-plugins += lib/evolution/${R}/etable lib/evolution/${R}/etext
-WANTLIB-plugins += lib/evolution/${R}/evolution-a11y lib/evolution/${R}/menus
-WANTLIB-plugins += lib/evolution/${R}/filter lib/evolution/${R}/gnomecanvas
+WANTLIB-plugins += ${WANTLIB}
+WANTLIB-plugins += gstreamer-0.10
+WANTLIB-plugins += lib/evolution/${R}/eabutil
+WANTLIB-plugins += lib/evolution/${R}/composer
+WANTLIB-plugins += lib/evolution/${R}/emformat
+WANTLIB-plugins += lib/evolution/${R}/emiscwidgets
+WANTLIB-plugins += lib/evolution/${R}/eshell
+WANTLIB-plugins += lib/evolution/${R}/etable
+WANTLIB-plugins += lib/evolution/${R}/etext
+WANTLIB-plugins += lib/evolution/${R}/eutil
+WANTLIB-plugins += lib/evolution/${R}/evolution-a11y
+WANTLIB-plugins += lib/evolution/${R}/evolution-calendar
+WANTLIB-plugins += lib/evolution/${R}/evolution-mail
+WANTLIB-plugins += lib/evolution/${R}/filter
+WANTLIB-plugins += lib/evolution/${R}/gnomecanvas
+WANTLIB-plugins += lib/evolution/${R}/menus
 
 MULTI_PACKAGES=		-main -plugins
 
@@ -92,23 +97,22 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			x11/hicolor-icon-theme \
 			x11/gnome/icon-theme
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			devel/libunique \
+			devel/libunique3 \
 			converters/libpst \
 			databases/evolution-data-server>=2.32.2 \
 			databases/openldap \
 			devel/libnotify>=0.7.2 \
-			devel/libsoup \
-			graphics/gtkimageview \
 			security/nss \
 			x11/gnome/desktop \
-			www/gtkhtml3 \
-			audio/libcanberra,-gtk
+			www/gtkhtml4 \
+			audio/libcanberra,-gtk3
 
 LIB_DEPENDS-plugins=	${LIB_DEPENDS} \
-			multimedia/gstreamer-0.10/core \
-			mail/evolution,-main>=${GNOME_VERSION}
+			mail/evolution,-main>=${GNOME_VERSION} \
+			multimedia/gstreamer-0.10/core
 # needed for the audio-inline plugin
-RUN_DEPENDS-plugins=	multimedia/gstreamer-0.10/plugins-good
+RUN_DEPENDS-plugins=	${MODGCONF2_RUN_DEPENDS} \
+			multimedia/gstreamer-0.10/plugins-good
 
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
@@ -116,37 +120,37 @@ MODGCONF2_SCHEMAS_DIR=	evolution
 
 YACC=			bison
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.68
+AUTOMAKE_VERSION=	1.9
+CONFIGURE_STYLE=	autoconf
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
+				-DBOGOFILTER_BINARY="\\\"${LOCALBASE}/bin/bogofilter\\\""" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}lib \
+				-Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib \
+				-Wl,--as-needed"
+
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
-			--enable-nss=yes \
-			--enable-smime=yes \
 			--enable-plugins=all \
-			--disable-mono \
+			--disable-nm \
 			--with-openldap="${LOCALBASE}" \
 			--with-sub-version=" OpenBSD/Ports" \
 			--with-krb5=/usr \
-			--with-krb5-includes=/usr/include/kerberosV \
-			--disable-nm \
-			--disable-python
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib \
-				-Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib \
-				-Wl,--as-needed" \
-			PTHREAD_LIB="-pthread"
+			--with-krb5-includes=/usr/include/kerberosV
+
+# no gtkimageview release for gtk+3
+CONFIGURE_ARGS+=	--disable-image-inline
 
 FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/evolution/xdg/autostart
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/plugins/bogo-junk-plugin/bf-junk-filter.c \
-		${WRKSRC}/plugins/sa-junk-plugin/em-junk-filter.c
 
 # needed to prevent lazy bindings failures on pthreads(3) functions
 post-configure:
 	perl -pi -e 's|-Wl,--as-needed||g' \
-		${WRKBUILD}/{shell,calendar/gui/alarm-notify,plugins/backup-restore}/Makefile
+		${WRKBUILD}/{shell,calendar/gui/alarm-notify,plugins/backup-restore,capplet,capplet/settings}/Makefile
 
 post-install:
 	find ${PREFIX}/share/evolution/${R}/default -perm 444 -exec chmod 644 {} \;
+# originally designed for MeeGo (https://bugzilla.gnome.org/show_bug.cgi?id=654525)
+	rm ${PREFIX}/share/applications/evolution-settings.desktop
 
 .include <bsd.port.mk>

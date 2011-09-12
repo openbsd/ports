@@ -1,41 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/07/26 15:36:26 ajacoutot Exp $
-lib/eog/plugins/console.py
-lib/eog/plugins/console.pyc
-lib/eog/plugins/console.pyo
+@comment $OpenBSD: PLIST,v 1.7 2011/09/12 07:26:20 ajacoutot Exp $
+lib/eog/
+lib/eog/plugins/
 lib/eog/plugins/exif-display/
-lib/eog/plugins/exif-display.eog-plugin
+lib/eog/plugins/exif-display.plugin
 lib/eog/plugins/exif-display/exif-display-config.ui
 lib/eog/plugins/exif-display/exif-display.ui
-lib/eog/plugins/fit-to-width.eog-plugin
+lib/eog/plugins/fit-to-width.plugin
 @comment lib/eog/plugins/libexif-display.a
 @comment lib/eog/plugins/libexif-display.la
 lib/eog/plugins/libexif-display.so
 @comment lib/eog/plugins/libfit-to-width.a
 @comment lib/eog/plugins/libfit-to-width.la
 lib/eog/plugins/libfit-to-width.so
-@comment lib/eog/plugins/libmap.a
-@comment lib/eog/plugins/libmap.la
-lib/eog/plugins/libmap.so
-@comment lib/eog/plugins/libpostasa.a
-@comment lib/eog/plugins/libpostasa.la
-lib/eog/plugins/libpostasa.so
 @comment lib/eog/plugins/libsend-by-mail.a
 @comment lib/eog/plugins/libsend-by-mail.la
 lib/eog/plugins/libsend-by-mail.so
-lib/eog/plugins/map.eog-plugin
-lib/eog/plugins/postasa/
-lib/eog/plugins/postasa.eog-plugin
-lib/eog/plugins/postasa/postasa-config.xml
-lib/eog/plugins/postasa/postasa-uploads.xml
-lib/eog/plugins/pythonconsole.eog-plugin
-lib/eog/plugins/pythonconsole.py
-lib/eog/plugins/pythonconsole.pyc
-lib/eog/plugins/pythonconsole.pyo
-lib/eog/plugins/send-by-mail.eog-plugin
-lib/eog/plugins/slideshowshuffle.eog-plugin
-lib/eog/plugins/slideshowshuffle.py
-lib/eog/plugins/slideshowshuffle.pyc
-lib/eog/plugins/slideshowshuffle.pyo
+lib/eog/plugins/send-by-mail.plugin
+share/glib-2.0/schemas/org.gnome.eog.plugins.exif-display.gschema.xml
 share/locale/ar/LC_MESSAGES/eog-plugins.mo
 share/locale/as/LC_MESSAGES/eog-plugins.mo
 share/locale/be@latin/LC_MESSAGES/eog-plugins.mo
@@ -81,3 +62,5 @@ share/locale/vi/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_CN/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_HK/LC_MESSAGES/eog-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/eog-plugins.mo
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2010/11/16 08:55:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2011/09/12 07:26:19 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
 @bin bin/evolution
@@ -21,7 +21,6 @@ include/evolution-${R}/calendar/gui/comp-util.h
 include/evolution-${R}/calendar/gui/dialogs/
 include/evolution-${R}/calendar/gui/dialogs/alarm-dialog.h
 include/evolution-${R}/calendar/gui/dialogs/alarm-list-dialog.h
-include/evolution-${R}/calendar/gui/dialogs/cal-prefs-dialog.h
 include/evolution-${R}/calendar/gui/dialogs/calendar-setup.h
 include/evolution-${R}/calendar/gui/dialogs/cancel-comp.h
 include/evolution-${R}/calendar/gui/dialogs/changed-comp.h
@@ -84,6 +83,7 @@ include/evolution-${R}/calendar/gui/tag-calendar.h
 include/evolution-${R}/calendar/gui/weekday-picker.h
 include/evolution-${R}/composer/
 include/evolution-${R}/composer/e-composer-actions.h
+include/evolution-${R}/composer/e-composer-activity.h
 include/evolution-${R}/composer/e-composer-common.h
 include/evolution-${R}/composer/e-composer-from-header.h
 include/evolution-${R}/composer/e-composer-header-table.h
@@ -96,10 +96,9 @@ include/evolution-${R}/composer/e-msg-composer.h
 include/evolution-${R}/e-util/
 include/evolution-${R}/e-util/e-account-utils.h
 include/evolution-${R}/e-util/e-activity.h
-include/evolution-${R}/e-util/e-alert-activity.h
 include/evolution-${R}/e-util/e-alert-dialog.h
+include/evolution-${R}/e-util/e-alert-sink.h
 include/evolution-${R}/e-util/e-alert.h
-include/evolution-${R}/e-util/e-binding.h
 include/evolution-${R}/e-util/e-bit-array.h
 include/evolution-${R}/e-util/e-categories-config.h
 include/evolution-${R}/e-util/e-charset.h
@@ -114,12 +113,9 @@ include/evolution-${R}/e-util/e-file-utils.h
 include/evolution-${R}/e-util/e-html-utils.h
 include/evolution-${R}/e-util/e-icon-factory.h
 include/evolution-${R}/e-util/e-import.h
-include/evolution-${R}/e-util/e-io-activity.h
-include/evolution-${R}/e-util/e-logger.h
 include/evolution-${R}/e-util/e-marshal.h
 include/evolution-${R}/e-util/e-mktemp.h
 include/evolution-${R}/e-util/e-module.h
-include/evolution-${R}/e-util/e-non-intrusive-error-dialog.h
 include/evolution-${R}/e-util/e-plugin-ui.h
 include/evolution-${R}/e-util/e-plugin-util.h
 include/evolution-${R}/e-util/e-plugin.h
@@ -135,15 +131,17 @@ include/evolution-${R}/e-util/e-sorter.h
 include/evolution-${R}/e-util/e-text-event-processor-emacs-like.h
 include/evolution-${R}/e-util/e-text-event-processor-types.h
 include/evolution-${R}/e-util/e-text-event-processor.h
-include/evolution-${R}/e-util/e-timeout-activity.h
 include/evolution-${R}/e-util/e-ui-manager.h
 include/evolution-${R}/e-util/e-unicode.h
+include/evolution-${R}/e-util/e-util-enums.h
+include/evolution-${R}/e-util/e-util-enumtypes.h
 include/evolution-${R}/e-util/e-util.h
 include/evolution-${R}/e-util/e-xml-utils.h
 include/evolution-${R}/e-util/gconf-bridge.h
 include/evolution-${R}/em-format/
 include/evolution-${R}/em-format/em-format-quote.h
 include/evolution-${R}/em-format/em-format.h
+include/evolution-${R}/em-format/em-inline-filter.h
 include/evolution-${R}/em-format/em-stripsig-filter.h
 include/evolution-${R}/filter/
 include/evolution-${R}/filter/e-filter-code.h
@@ -158,41 +156,6 @@ include/evolution-${R}/filter/e-filter-part.h
 include/evolution-${R}/filter/e-filter-rule.h
 include/evolution-${R}/filter/e-rule-context.h
 include/evolution-${R}/filter/e-rule-editor.h
-include/evolution-${R}/libart_lgpl/
-include/evolution-${R}/libart_lgpl/art_affine.h
-include/evolution-${R}/libart_lgpl/art_alphagamma.h
-include/evolution-${R}/libart_lgpl/art_bpath.h
-include/evolution-${R}/libart_lgpl/art_filterlevel.h
-include/evolution-${R}/libart_lgpl/art_gray_svp.h
-include/evolution-${R}/libart_lgpl/art_misc.h
-include/evolution-${R}/libart_lgpl/art_pathcode.h
-include/evolution-${R}/libart_lgpl/art_point.h
-include/evolution-${R}/libart_lgpl/art_rect.h
-include/evolution-${R}/libart_lgpl/art_rect_svp.h
-include/evolution-${R}/libart_lgpl/art_rect_uta.h
-include/evolution-${R}/libart_lgpl/art_render.h
-include/evolution-${R}/libart_lgpl/art_rgb.h
-include/evolution-${R}/libart_lgpl/art_rgb_affine.h
-include/evolution-${R}/libart_lgpl/art_rgb_affine_private.h
-include/evolution-${R}/libart_lgpl/art_rgb_rgba_affine.h
-include/evolution-${R}/libart_lgpl/art_rgb_svp.h
-include/evolution-${R}/libart_lgpl/art_svp.h
-include/evolution-${R}/libart_lgpl/art_svp_intersect.h
-include/evolution-${R}/libart_lgpl/art_svp_ops.h
-include/evolution-${R}/libart_lgpl/art_svp_point.h
-include/evolution-${R}/libart_lgpl/art_svp_render_aa.h
-include/evolution-${R}/libart_lgpl/art_svp_vpath.h
-include/evolution-${R}/libart_lgpl/art_svp_vpath_stroke.h
-include/evolution-${R}/libart_lgpl/art_svp_wind.h
-include/evolution-${R}/libart_lgpl/art_uta.h
-include/evolution-${R}/libart_lgpl/art_uta_rect.h
-include/evolution-${R}/libart_lgpl/art_uta_svp.h
-include/evolution-${R}/libart_lgpl/art_uta_vpath.h
-include/evolution-${R}/libart_lgpl/art_vpath.h
-include/evolution-${R}/libart_lgpl/art_vpath_bpath.h
-include/evolution-${R}/libart_lgpl/art_vpath_dash.h
-include/evolution-${R}/libart_lgpl/art_vpath_svp.h
-include/evolution-${R}/libart_lgpl/libart.h
 include/evolution-${R}/libgnomecanvas/
 include/evolution-${R}/libgnomecanvas/gailcanvas.h
 include/evolution-${R}/libgnomecanvas/gailcanvasgroup.h
@@ -203,16 +166,10 @@ include/evolution-${R}/libgnomecanvas/gailcanvastext.h
 include/evolution-${R}/libgnomecanvas/gailcanvastextfactory.h
 include/evolution-${R}/libgnomecanvas/gailcanvaswidget.h
 include/evolution-${R}/libgnomecanvas/gailcanvaswidgetfactory.h
-include/evolution-${R}/libgnomecanvas/gnome-canvas-bpath.h
-include/evolution-${R}/libgnomecanvas/gnome-canvas-clipgroup.h
 include/evolution-${R}/libgnomecanvas/gnome-canvas-i18n.h
-include/evolution-${R}/libgnomecanvas/gnome-canvas-line.h
-include/evolution-${R}/libgnomecanvas/gnome-canvas-path-def.h
 include/evolution-${R}/libgnomecanvas/gnome-canvas-pixbuf.h
-include/evolution-${R}/libgnomecanvas/gnome-canvas-polygon.h
-include/evolution-${R}/libgnomecanvas/gnome-canvas-rect-ellipse.h
+include/evolution-${R}/libgnomecanvas/gnome-canvas-rect.h
 include/evolution-${R}/libgnomecanvas/gnome-canvas-rich-text.h
-include/evolution-${R}/libgnomecanvas/gnome-canvas-shape.h
 include/evolution-${R}/libgnomecanvas/gnome-canvas-text.h
 include/evolution-${R}/libgnomecanvas/gnome-canvas-util.h
 include/evolution-${R}/libgnomecanvas/gnome-canvas-widget.h
@@ -223,7 +180,10 @@ include/evolution-${R}/mail/e-mail-attachment-bar.h
 include/evolution-${R}/mail/e-mail-backend.h
 include/evolution-${R}/mail/e-mail-browser.h
 include/evolution-${R}/mail/e-mail-display.h
+include/evolution-${R}/mail/e-mail-enums.h
+include/evolution-${R}/mail/e-mail-enumtypes.h
 include/evolution-${R}/mail/e-mail-folder-pane.h
+include/evolution-${R}/mail/e-mail-folder-utils.h
 include/evolution-${R}/mail/e-mail-label-action.h
 include/evolution-${R}/mail/e-mail-label-dialog.h
 include/evolution-${R}/mail/e-mail-label-list-store.h
@@ -236,10 +196,14 @@ include/evolution-${R}/mail/e-mail-notebook-view.h
 include/evolution-${R}/mail/e-mail-paned-view.h
 include/evolution-${R}/mail/e-mail-reader-utils.h
 include/evolution-${R}/mail/e-mail-reader.h
+include/evolution-${R}/mail/e-mail-session-utils.h
+include/evolution-${R}/mail/e-mail-session.h
 include/evolution-${R}/mail/e-mail-sidebar.h
+include/evolution-${R}/mail/e-mail-store-utils.h
 include/evolution-${R}/mail/e-mail-store.h
 include/evolution-${R}/mail/e-mail-tag-editor.h
 include/evolution-${R}/mail/e-mail-view.h
+include/evolution-${R}/mail/e-mail.h
 include/evolution-${R}/mail/em-account-editor.h
 include/evolution-${R}/mail/em-composer-utils.h
 include/evolution-${R}/mail/em-config.h
@@ -260,10 +224,9 @@ include/evolution-${R}/mail/em-format-html-display.h
 include/evolution-${R}/mail/em-format-html-print.h
 include/evolution-${R}/mail/em-format-html.h
 include/evolution-${R}/mail/em-html-stream.h
-include/evolution-${R}/mail/em-inline-filter.h
 include/evolution-${R}/mail/em-junk.h
 include/evolution-${R}/mail/em-search-context.h
-include/evolution-${R}/mail/em-subscribe-editor.h
+include/evolution-${R}/mail/em-subscription-editor.h
 include/evolution-${R}/mail/em-sync-stream.h
 include/evolution-${R}/mail/em-utils.h
 include/evolution-${R}/mail/em-vfolder-context.h
@@ -275,7 +238,6 @@ include/evolution-${R}/mail/mail-folder-cache.h
 include/evolution-${R}/mail/mail-mt.h
 include/evolution-${R}/mail/mail-ops.h
 include/evolution-${R}/mail/mail-send-recv.h
-include/evolution-${R}/mail/mail-session.h
 include/evolution-${R}/mail/mail-tools.h
 include/evolution-${R}/mail/mail-vfolder.h
 include/evolution-${R}/mail/message-list.h
@@ -295,7 +257,9 @@ include/evolution-${R}/misc/e-account-combo-box.h
 include/evolution-${R}/misc/e-account-manager.h
 include/evolution-${R}/misc/e-account-tree-view.h
 include/evolution-${R}/misc/e-action-combo-box.h
+include/evolution-${R}/misc/e-activity-bar.h
 include/evolution-${R}/misc/e-activity-proxy.h
+include/evolution-${R}/misc/e-alert-bar.h
 include/evolution-${R}/misc/e-attachment-button.h
 include/evolution-${R}/misc/e-attachment-dialog.h
 include/evolution-${R}/misc/e-attachment-handler-image.h
@@ -328,6 +292,7 @@ include/evolution-${R}/misc/e-menu-tool-action.h
 include/evolution-${R}/misc/e-menu-tool-button.h
 include/evolution-${R}/misc/e-online-button.h
 include/evolution-${R}/misc/e-paned.h
+include/evolution-${R}/misc/e-picture-gallery.h
 include/evolution-${R}/misc/e-popup-action.h
 include/evolution-${R}/misc/e-popup-menu.h
 include/evolution-${R}/misc/e-preferences-window.h
@@ -501,7 +466,7 @@ lib/evolution/${R}/
 @comment lib/evolution/${R}/libgnomecanvas.la
 @comment lib/evolution/${R}/libmenus.a
 @comment lib/evolution/${R}/libmenus.la
-@comment lib/evolution/${R}/modules/
+lib/evolution/${R}/modules/
 @comment lib/evolution/${R}/modules/libevolution-module-addressbook.a
 @comment lib/evolution/${R}/modules/libevolution-module-addressbook.la
 @comment lib/evolution/${R}/modules/libevolution-module-calendar.a
@@ -512,8 +477,12 @@ lib/evolution/${R}/
 @comment lib/evolution/${R}/modules/libevolution-module-mail.la
 @comment lib/evolution/${R}/modules/libevolution-module-mailto-handler.a
 @comment lib/evolution/${R}/modules/libevolution-module-mailto-handler.la
+@comment lib/evolution/${R}/modules/libevolution-module-offline-alert.a
+@comment lib/evolution/${R}/modules/libevolution-module-offline-alert.la
 @comment lib/evolution/${R}/modules/libevolution-module-plugin-lib.a
 @comment lib/evolution/${R}/modules/libevolution-module-plugin-lib.la
+@comment lib/evolution/${R}/modules/libevolution-module-plugin-manager.a
+@comment lib/evolution/${R}/modules/libevolution-module-plugin-manager.la
 @comment lib/evolution/${R}/modules/libevolution-module-startup-wizard.a
 @comment lib/evolution/${R}/modules/libevolution-module-startup-wizard.la
 lib/evolution/${R}/plugins/
@@ -537,24 +506,18 @@ lib/evolution/${R}/plugins/
 @comment lib/evolution/${R}/plugins/liborg-gnome-evolution-webdav.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-image-inline.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-image-inline.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-imap-features.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-imap-features.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-itip-formatter.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-mark-all-read.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-mark-all-read.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-plugin-manager.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-plugin-manager.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-pst-import.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-pst-import.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-publish-calendar.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-publish-calendar.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-vcard-inline.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-vcard-inline.la
 lib/evolution/${R}/plugins/org-gnome-addressbook-file.eplug
 lib/evolution/${R}/plugins/org-gnome-bogo-junk-plugin.eplug
 lib/evolution/${R}/plugins/org-gnome-calendar-file.eplug
@@ -566,19 +529,16 @@ lib/evolution/${R}/plugins/org-gnome-evolution-caldav.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-google.eplug
 lib/evolution/${R}/plugins/org-gnome-evolution-webdav.eplug
 lib/evolution/${R}/plugins/org-gnome-groupwise-features.eplug
-lib/evolution/${R}/plugins/org-gnome-image-inline.eplug
 lib/evolution/${R}/plugins/org-gnome-imap-features.eplug
 lib/evolution/${R}/plugins/org-gnome-itip-formatter.eplug
 lib/evolution/${R}/plugins/org-gnome-mark-all-read.eplug
-lib/evolution/${R}/plugins/org-gnome-plugin-manager.eplug
 lib/evolution/${R}/plugins/org-gnome-pst-import.eplug
 lib/evolution/${R}/plugins/org-gnome-publish-calendar.eplug
 lib/evolution/${R}/plugins/org-gnome-sa-junk-plugin.eplug
-lib/evolution/${R}/plugins/org-gnome-vcard-inline.eplug
-lib/pkgconfig/evolution-calendar.pc
-lib/pkgconfig/evolution-mail.pc
-lib/pkgconfig/evolution-plugin.pc
-lib/pkgconfig/evolution-shell.pc
+lib/pkgconfig/evolution-calendar-${R}.pc
+lib/pkgconfig/evolution-mail-${R}.pc
+lib/pkgconfig/evolution-plugin-${R}.pc
+lib/pkgconfig/evolution-shell-${R}.pc
 libexec/evolution/
 libexec/evolution/${R}/
 libexec/evolution/${R}/csv2vcard
@@ -586,8 +546,8 @@ libexec/evolution/${R}/evolution-addressbook-clean
 @bin libexec/evolution/${R}/evolution-addressbook-export
 @bin libexec/evolution/${R}/evolution-alarm-notify
 @bin libexec/evolution/${R}/killev
-share/applications/evolution-settings.desktop
 share/applications/evolution.desktop
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/evolution/
 share/evolution/${R}/
 share/evolution/${R}/addresstypes.xml
@@ -689,6 +649,7 @@ share/evolution/${R}/errors/
 share/evolution/${R}/errors/addressbook.error
 share/evolution/${R}/errors/calendar.error
 share/evolution/${R}/errors/e-system.error
+share/evolution/${R}/errors/evolution-offline-alert.error
 share/evolution/${R}/errors/filter.error
 share/evolution/${R}/errors/mail-composer.error
 share/evolution/${R}/errors/mail.error
@@ -1136,11 +1097,10 @@ share/evolution/${R}/ui/
 share/evolution/${R}/ui/alarm-dialog.ui
 share/evolution/${R}/ui/alarm-list-dialog.ui
 share/evolution/${R}/ui/alarm-notify.ui
-share/evolution/${R}/ui/cal-prefs-dialog.ui
 share/evolution/${R}/ui/contact-editor.ui
 share/evolution/${R}/ui/contact-list-editor.ui
+share/evolution/${R}/ui/e-calendar-preferences.ui
 share/evolution/${R}/ui/e-delegate-dialog.ui
-share/evolution/${R}/ui/e-itip-control.ui
 share/evolution/${R}/ui/e-send-options.ui
 share/evolution/${R}/ui/e-table-config.ui
 share/evolution/${R}/ui/e-timezone-dialog.ui
@@ -1167,6 +1127,7 @@ share/evolution/${R}/ui/ldap-config.ui
 share/evolution/${R}/ui/mail-config.ui
 share/evolution/${R}/ui/mail-dialogs.ui
 share/evolution/${R}/ui/memo-page.ui
+share/evolution/${R}/ui/notification.ui
 share/evolution/${R}/ui/org-gnome-email-custom-header.ui
 share/evolution/${R}/ui/properties.ui
 share/evolution/${R}/ui/proxy-add-dialog.ui
@@ -1213,6 +1174,8 @@ share/examples/evolution/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/evolution/xdg/autostart/evolution-alarm-notify.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/evolution-alarm-notify.desktop
+share/gnome/
+share/gnome/help/
 share/gnome/help/evolution/
 share/gnome/help/evolution/C/
 share/gnome/help/evolution/C/evolution.xml
@@ -1225,8 +1188,6 @@ share/gnome/help/evolution/C/figures/delgt-add.png
 share/gnome/help/evolution/C/figures/evo_Wcal_prop_a.png
 share/gnome/help/evolution/C/figures/evo_adv_search_a.png
 share/gnome/help/evolution/C/figures/evo_attachreminder_plugin.png
-share/gnome/help/evolution/C/figures/evo_backup_prgsbar.png
-share/gnome/help/evolution/C/figures/evo_backup_warning.png
 share/gnome/help/evolution/C/figures/evo_blink.png
 share/gnome/help/evolution/C/figures/evo_cal_callout_a.png
 share/gnome/help/evolution/C/figures/evo_calender_appointmnt.png
@@ -1268,8 +1229,6 @@ share/gnome/help/evolution/C/figures/exchng-rec-mails.png
 share/gnome/help/evolution/C/figures/exchng-rec-options.png
 share/gnome/help/evolution/C/figures/filter-new-fig.png
 share/gnome/help/evolution/C/figures/folder_plus.png
-share/gnome/help/evolution/C/figures/folder_size_mapi.png
-share/gnome/help/evolution/C/figures/folder_size_preference.png
 share/gnome/help/evolution/C/figures/google_cal_view.png
 share/gnome/help/evolution/C/figures/groupwise_resend.png
 share/gnome/help/evolution/C/figures/groupwise_resend_retract.png
@@ -1293,8 +1252,6 @@ share/gnome/help/evolution/cs/figures/delgt-add.png
 share/gnome/help/evolution/cs/figures/evo_Wcal_prop_a.png
 share/gnome/help/evolution/cs/figures/evo_adv_search_a.png
 share/gnome/help/evolution/cs/figures/evo_attachreminder_plugin.png
-share/gnome/help/evolution/cs/figures/evo_backup_prgsbar.png
-share/gnome/help/evolution/cs/figures/evo_backup_warning.png
 share/gnome/help/evolution/cs/figures/evo_blink.png
 share/gnome/help/evolution/cs/figures/evo_cal_callout_a.png
 share/gnome/help/evolution/cs/figures/evo_calender_appointmnt.png
@@ -1336,8 +1293,6 @@ share/gnome/help/evolution/cs/figures/exchng-rec-mails.png
 share/gnome/help/evolution/cs/figures/exchng-rec-options.png
 share/gnome/help/evolution/cs/figures/filter-new-fig.png
 share/gnome/help/evolution/cs/figures/folder_plus.png
-share/gnome/help/evolution/cs/figures/folder_size_mapi.png
-share/gnome/help/evolution/cs/figures/folder_size_preference.png
 share/gnome/help/evolution/cs/figures/google_cal_view.png
 share/gnome/help/evolution/cs/figures/groupwise_resend.png
 share/gnome/help/evolution/cs/figures/groupwise_resend_retract.png
@@ -1361,8 +1316,6 @@ share/gnome/help/evolution/de/figures/delgt-add.png
 share/gnome/help/evolution/de/figures/evo_Wcal_prop_a.png
 share/gnome/help/evolution/de/figures/evo_adv_search_a.png
 share/gnome/help/evolution/de/figures/evo_attachreminder_plugin.png
-share/gnome/help/evolution/de/figures/evo_backup_prgsbar.png
-share/gnome/help/evolution/de/figures/evo_backup_warning.png
 share/gnome/help/evolution/de/figures/evo_blink.png
 share/gnome/help/evolution/de/figures/evo_cal_callout_a.png
 share/gnome/help/evolution/de/figures/evo_calender_appointmnt.png
@@ -1404,8 +1357,6 @@ share/gnome/help/evolution/de/figures/exchng-rec-mails.png
 share/gnome/help/evolution/de/figures/exchng-rec-options.png
 share/gnome/help/evolution/de/figures/filter-new-fig.png
 share/gnome/help/evolution/de/figures/folder_plus.png
-share/gnome/help/evolution/de/figures/folder_size_mapi.png
-share/gnome/help/evolution/de/figures/folder_size_preference.png
 share/gnome/help/evolution/de/figures/google_cal_view.png
 share/gnome/help/evolution/de/figures/groupwise_resend.png
 share/gnome/help/evolution/de/figures/groupwise_resend_retract.png
@@ -1429,8 +1380,6 @@ share/gnome/help/evolution/el/figures/delgt-add.png
 share/gnome/help/evolution/el/figures/evo_Wcal_prop_a.png
 share/gnome/help/evolution/el/figures/evo_adv_search_a.png
 share/gnome/help/evolution/el/figures/evo_attachreminder_plugin.png
-share/gnome/help/evolution/el/figures/evo_backup_prgsbar.png
-share/gnome/help/evolution/el/figures/evo_backup_warning.png
 share/gnome/help/evolution/el/figures/evo_blink.png
 share/gnome/help/evolution/el/figures/evo_cal_callout_a.png
 share/gnome/help/evolution/el/figures/evo_calender_appointmnt.png
@@ -1472,8 +1421,6 @@ share/gnome/help/evolution/el/figures/exchng-rec-mails.png
 share/gnome/help/evolution/el/figures/exchng-rec-options.png
 share/gnome/help/evolution/el/figures/filter-new-fig.png
 share/gnome/help/evolution/el/figures/folder_plus.png
-share/gnome/help/evolution/el/figures/folder_size_mapi.png
-share/gnome/help/evolution/el/figures/folder_size_preference.png
 share/gnome/help/evolution/el/figures/google_cal_view.png
 share/gnome/help/evolution/el/figures/groupwise_resend.png
 share/gnome/help/evolution/el/figures/groupwise_resend_retract.png
@@ -1497,8 +1444,6 @@ share/gnome/help/evolution/en_GB/figures/delgt-add.png
 share/gnome/help/evolution/en_GB/figures/evo_Wcal_prop_a.png
 share/gnome/help/evolution/en_GB/figures/evo_adv_search_a.png
 share/gnome/help/evolution/en_GB/figures/evo_attachreminder_plugin.png
-share/gnome/help/evolution/en_GB/figures/evo_backup_prgsbar.png
-share/gnome/help/evolution/en_GB/figures/evo_backup_warning.png
 share/gnome/help/evolution/en_GB/figures/evo_blink.png
 share/gnome/help/evolution/en_GB/figures/evo_cal_callout_a.png
 share/gnome/help/evolution/en_GB/figures/evo_calender_appointmnt.png
@@ -1540,8 +1485,6 @@ share/gnome/help/evolution/en_GB/figures/exchng-rec-mails.png
 share/gnome/help/evolution/en_GB/figures/exchng-rec-options.png
 share/gnome/help/evolution/en_GB/figures/filter-new-fig.png
 share/gnome/help/evolution/en_GB/figures/folder_plus.png
-share/gnome/help/evolution/en_GB/figures/folder_size_mapi.png
-share/gnome/help/evolution/en_GB/figures/folder_size_preference.png
 share/gnome/help/evolution/en_GB/figures/google_cal_view.png
 share/gnome/help/evolution/en_GB/figures/groupwise_resend.png
 share/gnome/help/evolution/en_GB/figures/groupwise_resend_retract.png
@@ -1565,8 +1508,6 @@ share/gnome/help/evolution/es/figures/delgt-add.png
 share/gnome/help/evolution/es/figures/evo_Wcal_prop_a.png
 share/gnome/help/evolution/es/figures/evo_adv_search_a.png
 share/gnome/help/evolution/es/figures/evo_attachreminder_plugin.png
-share/gnome/help/evolution/es/figures/evo_backup_prgsbar.png
-share/gnome/help/evolution/es/figures/evo_backup_warning.png
 share/gnome/help/evolution/es/figures/evo_blink.png
 share/gnome/help/evolution/es/figures/evo_cal_callout_a.png
 share/gnome/help/evolution/es/figures/evo_calender_appointmnt.png
@@ -1608,8 +1549,6 @@ share/gnome/help/evolution/es/figures/exchng-rec-mails.png
 share/gnome/help/evolution/es/figures/exchng-rec-options.png
 share/gnome/help/evolution/es/figures/filter-new-fig.png
 share/gnome/help/evolution/es/figures/folder_plus.png
-share/gnome/help/evolution/es/figures/folder_size_mapi.png
-share/gnome/help/evolution/es/figures/folder_size_preference.png
 share/gnome/help/evolution/es/figures/google_cal_view.png
 share/gnome/help/evolution/es/figures/groupwise_resend.png
 share/gnome/help/evolution/es/figures/groupwise_resend_retract.png
@@ -1633,8 +1572,6 @@ share/gnome/help/evolution/eu/figures/delgt-add.png
 share/gnome/help/evolution/eu/figures/evo_Wcal_prop_a.png
 share/gnome/help/evolution/eu/figures/evo_adv_search_a.png
 share/gnome/help/evolution/eu/figures/evo_attachreminder_plugin.png
-share/gnome/help/evolution/eu/figures/evo_backup_prgsbar.png
-share/gnome/help/evolution/eu/figures/evo_backup_warning.png
 share/gnome/help/evolution/eu/figures/evo_blink.png
 share/gnome/help/evolution/eu/figures/evo_cal_callout_a.png
 share/gnome/help/evolution/eu/figures/evo_calender_appointmnt.png
@@ -1676,8 +1613,6 @@ share/gnome/help/evolution/eu/figures/exchng-rec-mails.png
 share/gnome/help/evolution/eu/figures/exchng-rec-options.png
 share/gnome/help/evolution/eu/figures/filter-new-fig.png
 share/gnome/help/evolution/eu/figures/folder_plus.png
-share/gnome/help/evolution/eu/figures/folder_size_mapi.png
-share/gnome/help/evolution/eu/figures/folder_size_preference.png
 share/gnome/help/evolution/eu/figures/google_cal_view.png
 share/gnome/help/evolution/eu/figures/groupwise_resend.png
 share/gnome/help/evolution/eu/figures/groupwise_resend_retract.png
@@ -1701,8 +1636,6 @@ share/gnome/help/evolution/fr/figures/delgt-add.png
 share/gnome/help/evolution/fr/figures/evo_Wcal_prop_a.png
 share/gnome/help/evolution/fr/figures/evo_adv_search_a.png
 share/gnome/help/evolution/fr/figures/evo_attachreminder_plugin.png
-share/gnome/help/evolution/fr/figures/evo_backup_prgsbar.png
-share/gnome/help/evolution/fr/figures/evo_backup_warning.png
 share/gnome/help/evolution/fr/figures/evo_blink.png
 share/gnome/help/evolution/fr/figures/evo_cal_callout_a.png
 share/gnome/help/evolution/fr/figures/evo_calender_appointmnt.png
@@ -1744,8 +1677,6 @@ share/gnome/help/evolution/fr/figures/exchng-rec-mails.png
 share/gnome/help/evolution/fr/figures/exchng-rec-options.png
 share/gnome/help/evolution/fr/figures/filter-new-fig.png
 share/gnome/help/evolution/fr/figures/folder_plus.png
-share/gnome/help/evolution/fr/figures/folder_size_mapi.png
-share/gnome/help/evolution/fr/figures/folder_size_preference.png
 share/gnome/help/evolution/fr/figures/google_cal_view.png
 share/gnome/help/evolution/fr/figures/groupwise_resend.png
 share/gnome/help/evolution/fr/figures/groupwise_resend_retract.png
@@ -1769,8 +1700,6 @@ share/gnome/help/evolution/gl/figures/delgt-add.png
 share/gnome/help/evolution/gl/figures/evo_Wcal_prop_a.png
 share/gnome/help/evolution/gl/figures/evo_adv_search_a.png
 share/gnome/help/evolution/gl/figures/evo_attachreminder_plugin.png
-share/gnome/help/evolution/gl/figures/evo_backup_prgsbar.png
-share/gnome/help/evolution/gl/figures/evo_backup_warning.png
 share/gnome/help/evolution/gl/figures/evo_blink.png
 share/gnome/help/evolution/gl/figures/evo_cal_callout_a.png
 share/gnome/help/evolution/gl/figures/evo_calender_appointmnt.png
@@ -1812,8 +1741,6 @@ share/gnome/help/evolution/gl/figures/exchng-rec-mails.png
 share/gnome/help/evolution/gl/figures/exchng-rec-options.png
 share/gnome/help/evolution/gl/figures/filter-new-fig.png
 share/gnome/help/evolution/gl/figures/folder_plus.png
-share/gnome/help/evolution/gl/figures/folder_size_mapi.png
-share/gnome/help/evolution/gl/figures/folder_size_preference.png
 share/gnome/help/evolution/gl/figures/google_cal_view.png
 share/gnome/help/evolution/gl/figures/groupwise_resend.png
 share/gnome/help/evolution/gl/figures/groupwise_resend_retract.png
@@ -1837,8 +1764,6 @@ share/gnome/help/evolution/mk/figures/delgt-add.png
 share/gnome/help/evolution/mk/figures/evo_Wcal_prop_a.png
 share/gnome/help/evolution/mk/figures/evo_adv_search_a.png
 share/gnome/help/evolution/mk/figures/evo_attachreminder_plugin.png
-share/gnome/help/evolution/mk/figures/evo_backup_prgsbar.png
-share/gnome/help/evolution/mk/figures/evo_backup_warning.png
 share/gnome/help/evolution/mk/figures/evo_blink.png
 share/gnome/help/evolution/mk/figures/evo_cal_callout_a.png
 share/gnome/help/evolution/mk/figures/evo_calender_appointmnt.png
@@ -1880,8 +1805,6 @@ share/gnome/help/evolution/mk/figures/exchng-rec-mails.png
 share/gnome/help/evolution/mk/figures/exchng-rec-options.png
 share/gnome/help/evolution/mk/figures/filter-new-fig.png
 share/gnome/help/evolution/mk/figures/folder_plus.png
-share/gnome/help/evolution/mk/figures/folder_size_mapi.png
-share/gnome/help/evolution/mk/figures/folder_size_preference.png
 share/gnome/help/evolution/mk/figures/google_cal_view.png
 share/gnome/help/evolution/mk/figures/groupwise_resend.png
 share/gnome/help/evolution/mk/figures/groupwise_resend_retract.png
@@ -1905,8 +1828,6 @@ share/gnome/help/evolution/oc/figures/delgt-add.png
 share/gnome/help/evolution/oc/figures/evo_Wcal_prop_a.png
 share/gnome/help/evolution/oc/figures/evo_adv_search_a.png
 share/gnome/help/evolution/oc/figures/evo_attachreminder_plugin.png
-share/gnome/help/evolution/oc/figures/evo_backup_prgsbar.png
-share/gnome/help/evolution/oc/figures/evo_backup_warning.png
 share/gnome/help/evolution/oc/figures/evo_blink.png
 share/gnome/help/evolution/oc/figures/evo_cal_callout_a.png
 share/gnome/help/evolution/oc/figures/evo_calender_appointmnt.png
@@ -1948,8 +1869,6 @@ share/gnome/help/evolution/oc/figures/exchng-rec-mails.png
 share/gnome/help/evolution/oc/figures/exchng-rec-options.png
 share/gnome/help/evolution/oc/figures/filter-new-fig.png
 share/gnome/help/evolution/oc/figures/folder_plus.png
-share/gnome/help/evolution/oc/figures/folder_size_mapi.png
-share/gnome/help/evolution/oc/figures/folder_size_preference.png
 share/gnome/help/evolution/oc/figures/google_cal_view.png
 share/gnome/help/evolution/oc/figures/groupwise_resend.png
 share/gnome/help/evolution/oc/figures/groupwise_resend_retract.png
@@ -1973,8 +1892,6 @@ share/gnome/help/evolution/ru/figures/delgt-add.png
 share/gnome/help/evolution/ru/figures/evo_Wcal_prop_a.png
 share/gnome/help/evolution/ru/figures/evo_adv_search_a.png
 share/gnome/help/evolution/ru/figures/evo_attachreminder_plugin.png
-share/gnome/help/evolution/ru/figures/evo_backup_prgsbar.png
-share/gnome/help/evolution/ru/figures/evo_backup_warning.png
 share/gnome/help/evolution/ru/figures/evo_blink.png
 share/gnome/help/evolution/ru/figures/evo_cal_callout_a.png
 share/gnome/help/evolution/ru/figures/evo_calender_appointmnt.png
@@ -2016,8 +1933,6 @@ share/gnome/help/evolution/ru/figures/exchng-rec-mails.png
 share/gnome/help/evolution/ru/figures/exchng-rec-options.png
 share/gnome/help/evolution/ru/figures/filter-new-fig.png
 share/gnome/help/evolution/ru/figures/folder_plus.png
-share/gnome/help/evolution/ru/figures/folder_size_mapi.png
-share/gnome/help/evolution/ru/figures/folder_size_preference.png
 share/gnome/help/evolution/ru/figures/google_cal_view.png
 share/gnome/help/evolution/ru/figures/groupwise_resend.png
 share/gnome/help/evolution/ru/figures/groupwise_resend_retract.png
@@ -2030,6 +1945,70 @@ share/gnome/help/evolution/ru/figures/quick_add_a.png
 share/gnome/help/evolution/ru/figures/quick_reference.png
 share/gnome/help/evolution/ru/figures/stock_search.png
 share/gnome/help/evolution/ru/figures/ver_view_a.png
+share/gnome/help/evolution/sl/
+share/gnome/help/evolution/sl/evolution.xml
+share/gnome/help/evolution/sl/figures/
+share/gnome/help/evolution/sl/figures/attach_reminder_a.png
+share/gnome/help/evolution/sl/figures/calendar_preference_display.png
+share/gnome/help/evolution/sl/figures/categories_a.png
+share/gnome/help/evolution/sl/figures/contacts_mainwindow_a.png
+share/gnome/help/evolution/sl/figures/delgt-add.png
+share/gnome/help/evolution/sl/figures/evo_Wcal_prop_a.png
+share/gnome/help/evolution/sl/figures/evo_adv_search_a.png
+share/gnome/help/evolution/sl/figures/evo_attachreminder_plugin.png
+share/gnome/help/evolution/sl/figures/evo_blink.png
+share/gnome/help/evolution/sl/figures/evo_cal_callout_a.png
+share/gnome/help/evolution/sl/figures/evo_calender_appointmnt.png
+share/gnome/help/evolution/sl/figures/evo_calstatus_a.png
+share/gnome/help/evolution/sl/figures/evo_caltasks_a.png
+share/gnome/help/evolution/sl/figures/evo_contacteditor_a.png
+share/gnome/help/evolution/sl/figures/evo_delegate_permission_a.png
+share/gnome/help/evolution/sl/figures/evo_dialog-info.png
+share/gnome/help/evolution/sl/figures/evo_dialog-warning.png
+share/gnome/help/evolution/sl/figures/evo_edit_search.png
+share/gnome/help/evolution/sl/figures/evo_exchng_mapi.png
+share/gnome/help/evolution/sl/figures/evo_flag_follow_up_a.png
+share/gnome/help/evolution/sl/figures/evo_gwreceive_a.png
+share/gnome/help/evolution/sl/figures/evo_gwstatustrack.png
+share/gnome/help/evolution/sl/figures/evo_imapreceive_a.png
+share/gnome/help/evolution/sl/figures/evo_junk_a.png
+share/gnome/help/evolution/sl/figures/evo_label_a.png
+share/gnome/help/evolution/sl/figures/evo_labels_a.png
+share/gnome/help/evolution/sl/figures/evo_mail_a.png
+share/gnome/help/evolution/sl/figures/evo_mail_callout_a.png
+share/gnome/help/evolution/sl/figures/evo_maildirreceive_a.png
+share/gnome/help/evolution/sl/figures/evo_mboxreceive_a.png
+share/gnome/help/evolution/sl/figures/evo_memo_a.png
+share/gnome/help/evolution/sl/figures/evo_mhreceive_a.png
+share/gnome/help/evolution/sl/figures/evo_newmail.png
+share/gnome/help/evolution/sl/figures/evo_newmess_a.png
+share/gnome/help/evolution/sl/figures/evo_offline.png
+share/gnome/help/evolution/sl/figures/evo_popreceive_a.png
+share/gnome/help/evolution/sl/figures/evo_proxyadd_a.png
+share/gnome/help/evolution/sl/figures/evo_rule_a.png
+share/gnome/help/evolution/sl/figures/evo_send_option_a.png
+share/gnome/help/evolution/sl/figures/evo_send_setup_a.png
+share/gnome/help/evolution/sl/figures/evo_sendstatus_a.png
+share/gnome/help/evolution/sl/figures/evo_shd_memo_a.png
+share/gnome/help/evolution/sl/figures/evo_usereceive_a.png
+share/gnome/help/evolution/sl/figures/evolution_contact_preference.png
+share/gnome/help/evolution/sl/figures/evolution_mail_preference.png
+share/gnome/help/evolution/sl/figures/exchng-rec-mails.png
+share/gnome/help/evolution/sl/figures/exchng-rec-options.png
+share/gnome/help/evolution/sl/figures/filter-new-fig.png
+share/gnome/help/evolution/sl/figures/folder_plus.png
+share/gnome/help/evolution/sl/figures/google_cal_view.png
+share/gnome/help/evolution/sl/figures/groupwise_resend.png
+share/gnome/help/evolution/sl/figures/groupwise_resend_retract.png
+share/gnome/help/evolution/sl/figures/local_ics_calendar.png
+share/gnome/help/evolution/sl/figures/mailer_preferences.png
+share/gnome/help/evolution/sl/figures/meeting.png
+share/gnome/help/evolution/sl/figures/minus.png
+share/gnome/help/evolution/sl/figures/plus.png
+share/gnome/help/evolution/sl/figures/quick_add_a.png
+share/gnome/help/evolution/sl/figures/quick_reference.png
+share/gnome/help/evolution/sl/figures/stock_search.png
+share/gnome/help/evolution/sl/figures/ver_view_a.png
 share/gnome/help/evolution/sv/
 share/gnome/help/evolution/sv/evolution.xml
 share/gnome/help/evolution/sv/figures/
@@ -2041,8 +2020,6 @@ share/gnome/help/evolution/sv/figures/delgt-add.png
 share/gnome/help/evolution/sv/figures/evo_Wcal_prop_a.png
 share/gnome/help/evolution/sv/figures/evo_adv_search_a.png
 share/gnome/help/evolution/sv/figures/evo_attachreminder_plugin.png
-share/gnome/help/evolution/sv/figures/evo_backup_prgsbar.png
-share/gnome/help/evolution/sv/figures/evo_backup_warning.png
 share/gnome/help/evolution/sv/figures/evo_blink.png
 share/gnome/help/evolution/sv/figures/evo_cal_callout_a.png
 share/gnome/help/evolution/sv/figures/evo_calender_appointmnt.png
@@ -2084,8 +2061,6 @@ share/gnome/help/evolution/sv/figures/exchng-rec-mails.png
 share/gnome/help/evolution/sv/figures/exchng-rec-options.png
 share/gnome/help/evolution/sv/figures/filter-new-fig.png
 share/gnome/help/evolution/sv/figures/folder_plus.png
-share/gnome/help/evolution/sv/figures/folder_size_mapi.png
-share/gnome/help/evolution/sv/figures/folder_size_preference.png
 share/gnome/help/evolution/sv/figures/google_cal_view.png
 share/gnome/help/evolution/sv/figures/groupwise_resend.png
 share/gnome/help/evolution/sv/figures/groupwise_resend_retract.png
@@ -2109,8 +2084,6 @@ share/gnome/help/evolution/zh_CN/figures/delgt-add.png
 share/gnome/help/evolution/zh_CN/figures/evo_Wcal_prop_a.png
 share/gnome/help/evolution/zh_CN/figures/evo_adv_search_a.png
 share/gnome/help/evolution/zh_CN/figures/evo_attachreminder_plugin.png
-share/gnome/help/evolution/zh_CN/figures/evo_backup_prgsbar.png
-share/gnome/help/evolution/zh_CN/figures/evo_backup_warning.png
 share/gnome/help/evolution/zh_CN/figures/evo_blink.png
 share/gnome/help/evolution/zh_CN/figures/evo_cal_callout_a.png
 share/gnome/help/evolution/zh_CN/figures/evo_calender_appointmnt.png
@@ -2152,8 +2125,6 @@ share/gnome/help/evolution/zh_CN/figures/exchng-rec-mails.png
 share/gnome/help/evolution/zh_CN/figures/exchng-rec-options.png
 share/gnome/help/evolution/zh_CN/figures/filter-new-fig.png
 share/gnome/help/evolution/zh_CN/figures/folder_plus.png
-share/gnome/help/evolution/zh_CN/figures/folder_size_mapi.png
-share/gnome/help/evolution/zh_CN/figures/folder_size_preference.png
 share/gnome/help/evolution/zh_CN/figures/google_cal_view.png
 share/gnome/help/evolution/zh_CN/figures/groupwise_resend.png
 share/gnome/help/evolution/zh_CN/figures/groupwise_resend_retract.png
@@ -2192,9 +2163,7 @@ share/gtk-doc/html/eshell/eshell-Container-for-Signatures.html
 share/gtk-doc/html/eshell/eshell-Date-and-Time-Formatting.html
 share/gtk-doc/html/eshell/eshell-Dialog-Utilities-(Legacy).html
 share/gtk-doc/html/eshell/eshell-EPoolv.html
-share/gtk-doc/html/eshell/eshell-Error-Logging.html
 share/gtk-doc/html/eshell/eshell-GConf-Bridge.html
-share/gtk-doc/html/eshell/eshell-GObject-Property-Bindings.html
 share/gtk-doc/html/eshell/eshell-Icon-Utilities-(Legacy).html
 share/gtk-doc/html/eshell/eshell-Mail-Accounts.html
 share/gtk-doc/html/eshell/eshell-Miscellaneous-Utilities.html
@@ -2207,7 +2176,6 @@ share/gtk-doc/html/eshell/eshell-Shell-Utilities.html
 share/gtk-doc/html/eshell/eshell-Text-to-HTML-Conversion.html
 share/gtk-doc/html/eshell/eshell-User-Alert-Handling.html
 share/gtk-doc/html/eshell/eshell-e-signature-utils.html
-share/gtk-doc/html/eshell/eshell.devhelp
 share/gtk-doc/html/eshell/eshell.devhelp2
 share/gtk-doc/html/eshell/home.png
 share/gtk-doc/html/eshell/index.html
@@ -2229,6 +2197,7 @@ share/icons/hicolor/24x24/apps/evolution-mail.png
 share/icons/hicolor/24x24/apps/evolution-memos.png
 share/icons/hicolor/24x24/apps/evolution-tasks.png
 share/icons/hicolor/24x24/apps/evolution.png
+share/icons/hicolor/256x256/apps/evolution.png
 share/icons/hicolor/32x32/apps/evolution-mail.png
 share/icons/hicolor/32x32/apps/evolution-memos.png
 share/icons/hicolor/32x32/apps/evolution-tasks.png
@@ -2237,7 +2206,6 @@ share/icons/hicolor/48x48/apps/evolution-mail.png
 share/icons/hicolor/48x48/apps/evolution-memos.png
 share/icons/hicolor/48x48/apps/evolution-tasks.png
 share/icons/hicolor/48x48/apps/evolution.png
-share/icons/hicolor/scalable/apps/evolution.svg
 share/locale/af/LC_MESSAGES/evolution-${R}.mo
 share/locale/am/LC_MESSAGES/evolution-${R}.mo
 share/locale/ar/LC_MESSAGES/evolution-${R}.mo
@@ -2265,6 +2233,7 @@ share/locale/en_AU/LC_MESSAGES/
 share/locale/en_AU/LC_MESSAGES/evolution-${R}.mo
 share/locale/en_CA/LC_MESSAGES/evolution-${R}.mo
 share/locale/en_GB/LC_MESSAGES/evolution-${R}.mo
+share/locale/eo/LC_MESSAGES/evolution-${R}.mo
 share/locale/es/LC_MESSAGES/evolution-${R}.mo
 share/locale/et/LC_MESSAGES/evolution-${R}.mo
 share/locale/eu/LC_MESSAGES/evolution-${R}.mo
@@ -2320,6 +2289,7 @@ share/locale/ta/LC_MESSAGES/evolution-${R}.mo
 share/locale/te/LC_MESSAGES/evolution-${R}.mo
 share/locale/th/LC_MESSAGES/evolution-${R}.mo
 share/locale/tr/LC_MESSAGES/evolution-${R}.mo
+share/locale/ug/LC_MESSAGES/evolution-${R}.mo
 share/locale/uk/LC_MESSAGES/evolution-${R}.mo
 share/locale/vi/LC_MESSAGES/evolution-${R}.mo
 share/locale/wa/LC_MESSAGES/evolution-${R}.mo
@@ -2329,6 +2299,7 @@ share/locale/zh_HK/LC_MESSAGES/evolution-${R}.mo
 share/locale/zh_TW/LC_MESSAGES/evolution-${R}.mo
 share/mime-info/
 share/mime-info/evolution.mime
+share/omf/
 share/omf/evolution/
 share/omf/evolution/evolution-C.omf
 share/omf/evolution/evolution-cs.omf
@@ -2342,9 +2313,9 @@ share/omf/evolution/evolution-gl.omf
 share/omf/evolution/evolution-mk.omf
 share/omf/evolution/evolution-oc.omf
 share/omf/evolution/evolution-ru.omf
+share/omf/evolution/evolution-sl.omf
 share/omf/evolution/evolution-sv.omf
 share/omf/evolution/evolution-zh_CN.omf
-@unexec %D/bin/gconftool-2 --direct --config-source=`%D/bin/gconftool-2 --get-default-source` --unset /apps/evolution/eplugin/disabled
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 ${SCHEMAS_INSTDIR}/
 ${SCHEMAS_INSTDIR}/apps_evolution_addressbook.schemas

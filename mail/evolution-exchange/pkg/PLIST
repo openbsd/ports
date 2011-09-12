@@ -1,12 +1,22 @@
-@comment $OpenBSD: PLIST,v 1.6 2010/04/27 08:21:35 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/09/12 07:26:19 ajacoutot Exp $
 @bin bin/exchange-connector-setup-${EVO_VERSION}
-@comment lib/evolution-data-server-1.2/camel-providers/libcamelexchange.la
-lib/evolution-data-server-1.2/camel-providers/libcamelexchange.so
-lib/evolution-data-server-1.2/camel-providers/libcamelexchange.urls
-@comment lib/evolution-data-server-1.2/extensions/libebookbackendexchange.la
-lib/evolution-data-server-1.2/extensions/libebookbackendexchange.so
-@comment lib/evolution-data-server-1.2/extensions/libecalbackendexchange.la
-lib/evolution-data-server-1.2/extensions/libecalbackendexchange.so
+@comment lib/evolution-data-server/addressbook-backends/libebookbackendexchange.la
+lib/evolution-data-server/addressbook-backends/libebookbackendexchange.so
+@comment lib/evolution-data-server/calendar-backends/libecalbackendexchange.la
+lib/evolution-data-server/calendar-backends/libecalbackendexchange.so
+@comment lib/evolution-data-server/camel-providers/libcamelexchange.la
+lib/evolution-data-server/camel-providers/libcamelexchange.so
+lib/evolution-data-server/camel-providers/libcamelexchange.urls
+lib/evolution-exchange/
+lib/evolution-exchange/${EVO_VERSION}/
+@comment lib/evolution-exchange/${EVO_VERSION}/libevolution-exchange-shared.la
+lib/evolution-exchange/${EVO_VERSION}/libevolution-exchange-shared.so
+@comment lib/evolution-exchange/${EVO_VERSION}/libexchange-storage.la
+lib/evolution-exchange/${EVO_VERSION}/libexchange-storage.so
+@comment lib/evolution-exchange/${EVO_VERSION}/libexchange.la
+@lib lib/evolution-exchange/${EVO_VERSION}/libexchange.so.${LIBexchange_VERSION}
+@comment lib/evolution-exchange/${EVO_VERSION}/libxntlm.la
+@lib lib/evolution-exchange/${EVO_VERSION}/libxntlm.so.${LIBxntlm_VERSION}
 @comment lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-exchange-operations.la
 lib/evolution/${EVO_VERSION}/plugins/liborg-gnome-exchange-operations.so
 lib/evolution/${EVO_VERSION}/plugins/org-gnome-exchange-operations.eplug
@@ -146,6 +156,7 @@ share/locale/ta/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/te/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/th/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/tr/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
+share/locale/ug/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/uk/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/vi/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo
 share/locale/xh/LC_MESSAGES/evolution-exchange-${EVO_VERSION}.mo

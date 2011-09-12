@@ -1,4 +1,4 @@
-$OpenBSD: patch-metadata_test-metadata_c,v 1.4 2009/07/12 20:05:23 ajacoutot Exp $
+$OpenBSD: patch-metadata_test-metadata_c,v 1.5 2011/09/12 07:26:18 ajacoutot Exp $
 --- metadata/test-metadata.c.orig	Tue Jun 30 01:38:57 2009
 +++ metadata/test-metadata.c	Mon Jul  6 08:36:00 2009
 @@ -92,7 +92,7 @@ load_metadata_cb (gpointer file)

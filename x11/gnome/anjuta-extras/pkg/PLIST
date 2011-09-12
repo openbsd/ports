@@ -1,35 +1,30 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/07/26 15:36:26 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/09/12 07:26:20 ajacoutot Exp $
 lib/anjuta/anjuta-editor.plugin
 lib/anjuta/anjuta-sample.plugin
 lib/anjuta/anjuta-scratchbox.plugin
 @comment lib/anjuta/libanjuta-editor.la
 lib/anjuta/libanjuta-editor.so
-@comment lib/anjuta/libanjuta-profiler.la
-lib/anjuta/libanjuta-profiler.so
 @comment lib/anjuta/libanjuta-sample.la
 lib/anjuta/libanjuta-sample.so
 @comment lib/anjuta/libanjuta-scratchbox.la
 lib/anjuta/libanjuta-scratchbox.so
-lib/anjuta/profiler.plugin
 share/anjuta/glade/anjuta-editor-scintilla.ui
 share/anjuta/glade/anjuta-scratchbox-panel.png
 share/anjuta/glade/anjuta-scratchbox.ui
-share/anjuta/glade/profiler-call-graph.ui
-share/anjuta/glade/profiler-flat-profile.ui
-share/anjuta/glade/profiler-function-call-tree.ui
-share/anjuta/glade/profiler.ui
 share/anjuta/properties/
 share/anjuta/properties/anjuta.properties
 share/anjuta/properties/styles.properties
 share/anjuta/properties/user.properties
 share/anjuta/ui/anjuta-sample.ui
-share/anjuta/ui/profiler.xml
+share/glib-2.0/schemas/org.gnome.anjuta.scintilla.gschema.xml
+share/glib-2.0/schemas/org.gnome.anjuta.scratchbox.gschema.xml
 share/locale/ar/LC_MESSAGES/anjuta-extras.mo
 share/locale/az/LC_MESSAGES/anjuta-extras.mo
 share/locale/be/LC_MESSAGES/anjuta-extras.mo
 share/locale/be@latin/LC_MESSAGES/anjuta-extras.mo
 share/locale/bg/LC_MESSAGES/anjuta-extras.mo
 share/locale/ca/LC_MESSAGES/anjuta-extras.mo
+share/locale/ca@valencia/LC_MESSAGES/anjuta-extras.mo
 share/locale/cs/LC_MESSAGES/anjuta-extras.mo
 share/locale/da/LC_MESSAGES/anjuta-extras.mo
 share/locale/de/LC_MESSAGES/anjuta-extras.mo
@@ -68,6 +63,7 @@ share/locale/pa/LC_MESSAGES/anjuta-extras.mo
 share/locale/pl/LC_MESSAGES/anjuta-extras.mo
 share/locale/pt/LC_MESSAGES/anjuta-extras.mo
 share/locale/pt_BR/LC_MESSAGES/anjuta-extras.mo
+share/locale/ro/LC_MESSAGES/anjuta-extras.mo
 share/locale/ru/LC_MESSAGES/anjuta-extras.mo
 share/locale/rw/LC_MESSAGES/anjuta-extras.mo
 share/locale/si/LC_MESSAGES/anjuta-extras.mo
@@ -87,11 +83,8 @@ share/locale/zh_HK/LC_MESSAGES/anjuta-extras.mo
 share/locale/zh_TW/LC_MESSAGES/anjuta-extras.mo
 share/pixmaps/anjuta/anjuta-editor-scintilla-plugin-48.png
 share/pixmaps/anjuta/anjuta-editor-scintilla-plugin.svg
-share/pixmaps/anjuta/anjuta-profiler-plugin-48.png
-share/pixmaps/anjuta/anjuta-profiler-plugin.svg
 share/pixmaps/anjuta/anjuta-sample-plugin-48.png
 share/pixmaps/anjuta/anjuta-sample-plugin.svg
 share/pixmaps/anjuta/anjuta-scratchbox-48.png
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/share/schemas/anjuta/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/anjuta-editor-scintilla.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/share/schemas/anjuta/*.schemas > /dev/null
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
