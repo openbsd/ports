@@ -1,7 +1,0 @@
-gnome-keyring is a program that keep password and other secrets for
-users. It is run as a daemon in the session, similar to ssh-agent, and
-other applications can locate it by an environment variable.
- 
-The program can manage several keyrings, each with its own master
-password, and there is also a session keyring which is never stored to
-disk, but forgotten when the session ends.
