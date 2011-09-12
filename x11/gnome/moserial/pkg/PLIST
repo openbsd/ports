@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/04 10:00:38 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/09/12 07:36:49 jasper Exp $
 @bin bin/moserial
 @man man/man1/moserial.1
 share/applications/moserial.desktop
@@ -7,7 +7,6 @@ share/gnome/help/
 share/gnome/help/moserial/
 share/gnome/help/moserial/C/
 share/gnome/help/moserial/C/figures/
-share/gnome/help/moserial/C/figures/authorizations.png
 share/gnome/help/moserial/C/figures/connect.png
 share/gnome/help/moserial/C/figures/disconnect.png
 share/gnome/help/moserial/C/figures/main-toolbar.png
@@ -30,7 +29,6 @@ share/gnome/help/moserial/C/legal.xml
 share/gnome/help/moserial/C/moserial.xml
 share/gnome/help/moserial/cs/
 share/gnome/help/moserial/cs/figures/
-share/gnome/help/moserial/cs/figures/authorizations.png
 share/gnome/help/moserial/cs/figures/connect.png
 share/gnome/help/moserial/cs/figures/disconnect.png
 share/gnome/help/moserial/cs/figures/main-toolbar.png
@@ -52,7 +50,6 @@ share/gnome/help/moserial/cs/figures/stop-recording.png
 share/gnome/help/moserial/cs/moserial.xml
 share/gnome/help/moserial/de/
 share/gnome/help/moserial/de/figures/
-share/gnome/help/moserial/de/figures/authorizations.png
 share/gnome/help/moserial/de/figures/connect.png
 share/gnome/help/moserial/de/figures/disconnect.png
 share/gnome/help/moserial/de/figures/main-toolbar.png
@@ -74,7 +71,6 @@ share/gnome/help/moserial/de/figures/stop-recording.png
 share/gnome/help/moserial/de/moserial.xml
 share/gnome/help/moserial/es/
 share/gnome/help/moserial/es/figures/
-share/gnome/help/moserial/es/figures/authorizations.png
 share/gnome/help/moserial/es/figures/connect.png
 share/gnome/help/moserial/es/figures/disconnect.png
 share/gnome/help/moserial/es/figures/main-toolbar.png
@@ -96,7 +92,6 @@ share/gnome/help/moserial/es/figures/stop-recording.png
 share/gnome/help/moserial/es/moserial.xml
 share/gnome/help/moserial/fr/
 share/gnome/help/moserial/fr/figures/
-share/gnome/help/moserial/fr/figures/authorizations.png
 share/gnome/help/moserial/fr/figures/connect.png
 share/gnome/help/moserial/fr/figures/disconnect.png
 share/gnome/help/moserial/fr/figures/main-toolbar.png
@@ -118,7 +113,6 @@ share/gnome/help/moserial/fr/figures/stop-recording.png
 share/gnome/help/moserial/fr/moserial.xml
 share/gnome/help/moserial/sl/
 share/gnome/help/moserial/sl/figures/
-share/gnome/help/moserial/sl/figures/authorizations.png
 share/gnome/help/moserial/sl/figures/connect.png
 share/gnome/help/moserial/sl/figures/disconnect.png
 share/gnome/help/moserial/sl/figures/main-toolbar.png
@@ -140,7 +134,6 @@ share/gnome/help/moserial/sl/figures/stop-recording.png
 share/gnome/help/moserial/sl/moserial.xml
 share/gnome/help/moserial/sv/
 share/gnome/help/moserial/sv/figures/
-share/gnome/help/moserial/sv/figures/authorizations.png
 share/gnome/help/moserial/sv/figures/connect.png
 share/gnome/help/moserial/sv/figures/disconnect.png
 share/gnome/help/moserial/sv/figures/main-toolbar.png
@@ -170,6 +163,7 @@ share/locale/de/LC_MESSAGES/moserial.mo
 share/locale/es/LC_MESSAGES/moserial.mo
 share/locale/fr/LC_MESSAGES/moserial.mo
 share/locale/gl/LC_MESSAGES/moserial.mo
+share/locale/ja/LC_MESSAGES/moserial.mo
 share/locale/ko/LC_MESSAGES/moserial.mo
 share/locale/nb/LC_MESSAGES/moserial.mo
 share/locale/pt_BR/LC_MESSAGES/moserial.mo

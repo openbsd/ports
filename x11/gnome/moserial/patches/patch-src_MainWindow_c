@@ -1,15 +1,27 @@
-$OpenBSD: patch-src_MainWindow_c,v 1.1.1.1 2011/07/04 10:00:38 jasper Exp $
+$OpenBSD: patch-src_MainWindow_c,v 1.2 2011/09/12 07:36:49 jasper Exp $
 
 Tweak message if the device can't be opened.
 
---- src/MainWindow.c.orig	Thu May 19 17:13:24 2011
-+++ src/MainWindow.c	Sat Jul  2 18:24:05 2011
-@@ -1347,7 +1347,7 @@ static gboolean moserial_main_window_startConnection (
- 		GtkMessageDialog* _tmp1_;
- 		GtkMessageDialog* dialog;
- 		gtk_toggle_tool_button_set_active (self->priv->connectButton, FALSE);
--		dialog = (_tmp1_ = g_object_ref_sink ((GtkMessageDialog*) gtk_message_dialog_new (self->priv->gtkWindow, GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, _tmp0_ = g_strdup_printf ("%s: %s", _ ("Error: Could not open device"), settings_get_device (self->priv->currentSettings)))), _g_free0 (_tmp0_), _tmp1_);
-+		dialog = (_tmp1_ = g_object_ref_sink ((GtkMessageDialog*) gtk_message_dialog_new (self->priv->gtkWindow, GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, _tmp0_ = g_strdup_printf ("%s: %s\n%s", _ ("Error: Could not open device"), settings_get_device (self->priv->currentSettings), _ ("Make sure you are a member of the dialer group")))), _g_free0 (_tmp0_), _tmp1_);
- 		gtk_dialog_run ((GtkDialog*) dialog);
- 		gtk_object_destroy ((GtkObject*) dialog);
- 		result = FALSE;
+--- src/MainWindow.c.orig	Thu Sep  1 14:19:00 2011
++++ src/MainWindow.c	Thu Sep  1 14:58:59 2011
+@@ -2211,6 +2211,7 @@ static gboolean moserial_main_window_startConnection (
+ 		GtkToggleToolButton* _tmp3_;
+ 		GtkWindow* _tmp4_;
+ 		const gchar* _tmp5_ = NULL;
++		const gchar* _tmp51_ = NULL;
+ 		Settings* _tmp6_;
+ 		const gchar* _tmp7_;
+ 		const gchar* _tmp8_;
+@@ -2226,10 +2227,11 @@ static gboolean moserial_main_window_startConnection (
+ 		gtk_toggle_tool_button_set_active (_tmp3_, FALSE);
+ 		_tmp4_ = self->priv->gtkWindow;
+ 		_tmp5_ = _ ("Error: Could not open device");
++		_tmp51_ = _ ("Make sure you are a member of the dialer group");
+ 		_tmp6_ = self->priv->currentSettings;
+ 		_tmp7_ = settings_get_device (_tmp6_);
+ 		_tmp8_ = _tmp7_;
+-		_tmp9_ = g_strdup_printf ("%s: %s", _tmp5_, _tmp8_);
++		_tmp9_ = g_strdup_printf ("%s: %s\n%s", _tmp5_, _tmp8_, _tmp51_);
+ 		_tmp10_ = _tmp9_;
+ 		_tmp11_ = (GtkMessageDialog*) gtk_message_dialog_new (_tmp4_, GTK_DIALOG_DESTROY_WITH_PARENT, GTK_MESSAGE_ERROR, GTK_BUTTONS_CLOSE, _tmp10_);
+ 		_tmp12_ = g_object_ref_sink (_tmp11_);

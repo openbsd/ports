@@ -1,10 +1,10 @@
-$OpenBSD: patch-src_SerialConnection_c,v 1.1.1.1 2011/07/04 10:00:38 jasper Exp $
+$OpenBSD: patch-src_SerialConnection_c,v 1.2 2011/09/12 07:36:49 jasper Exp $
 
 Add missing baud rates defines.
 
---- src/SerialConnection.c.orig	Sat Jul  2 00:45:22 2011
-+++ src/SerialConnection.c	Sat Jul  2 00:47:39 2011
-@@ -30,6 +30,26 @@
+--- src/SerialConnection.c.orig	Thu Sep  1 14:52:57 2011
++++ src/SerialConnection.c	Thu Sep  1 14:53:31 2011
+@@ -33,6 +33,26 @@
  #include <sys/ioctl.h>
  #include <glib/gi18n-lib.h>
  
