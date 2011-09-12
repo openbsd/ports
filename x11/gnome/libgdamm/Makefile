@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/12 12:04:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/12 15:32:14 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		C++ interface to libgda
 
 GNOME_PROJECT=		libgdamm
-GNOME_VERSION=		4.1.2
+GNOME_VERSION=		4.99.3
 
-SHARED_LIBS +=  gdamm-4.0            1.1      # 12.0
+SHARED_LIBS +=  gdamm-5.0            0.0     # 13.0
 
 CATEGORIES+=		databases
 
-GDA_MAJOR=		4.0
+GDA_MAJOR=		5.0
+SUBST_VARS+=		GDA_MAJOR
 
 HOMEPAGE=		http://www.gtkmm.org/
 
@@ -32,20 +33,16 @@ WANTLIB += dbus-1 gcrypt gnome-keyring gpg-error
 
 TAR=			${LOCALBASE}/bin/gtar
 BUILD_DEPENDS=		archivers/gtar \
-			devel/m4 \
-			devel/mm-common
+			devel/m4
 
 LIB_DEPENDS=		devel/glib2mm \
-			x11/gnome/libgda
+			x11/gnome/libgda>=4.99.4
 
-
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED}
+CONFIGURE_ARGS= 	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-
-SUBST_VARS+=		GDA_MAJOR
-
-# XXX when updating, check that this is still needed
-CONFIGURE_ENV+=	MMDOCTOOLDIR=`pkg-config --variable=doctooldir mm-common-util`
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			ac_cv_path_DOT= \
+			ac_cv_path_XSLTPROC= \
+			ac_cv_path_DOXYGEN=
 
 .include <bsd.port.mk>

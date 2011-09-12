@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/04/27 08:41:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/09/12 15:32:14 ajacoutot Exp $
 include/libgdamm-${GDA_MAJOR}/
 include/libgdamm-${GDA_MAJOR}/libgdamm/
 include/libgdamm-${GDA_MAJOR}/libgdamm.h
@@ -84,7 +84,7 @@ include/libgdamm-${GDA_MAJOR}/libgdamm/xatransaction.h
 lib/libgdamm-${GDA_MAJOR}/
 lib/libgdamm-${GDA_MAJOR}.a
 lib/libgdamm-${GDA_MAJOR}.la
-@lib lib/libgdamm-${GDA_MAJOR}.so.${LIBgdamm-4.0_VERSION}
+@lib lib/libgdamm-${GDA_MAJOR}.so.${LIBgdamm-5.0_VERSION}
 lib/libgdamm-${GDA_MAJOR}/include/
 lib/libgdamm-${GDA_MAJOR}/include/libgdammconfig.h
 lib/pkgconfig/libgdamm-${GDA_MAJOR}.pc
@@ -355,13 +355,13 @@ share/doc/libgdamm-${GDA_MAJOR}/reference/html/group__DataModels.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/group__libgdammEnums.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/hierarchy.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/index.html
-share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit__graph__0.png
-share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit__graph__1.png
-share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit__graph__2.png
-share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit__graph__3.png
-share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit__graph__4.png
-share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit__graph__5.png
-share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit__graph__6.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit_graph_0.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit_graph_1.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit_graph_2.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit_graph_3.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit_graph_4.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit_graph_5.png
+share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherit_graph_6.png
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/inherits.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/modules.html
 share/doc/libgdamm-${GDA_MAJOR}/reference/html/namespaceGnome.html
