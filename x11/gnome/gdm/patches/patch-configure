@@ -1,15 +1,7 @@
-$OpenBSD: patch-configure,v 1.18 2010/11/08 19:28:32 ajacoutot Exp $
---- configure.orig	Thu Jun  3 22:34:33 2010
-+++ configure	Mon Nov  8 19:38:46 2010
-@@ -32153,7 +32153,6 @@ fi
- if test x$with_tcp_wrappers = xno ; then
- 	echo "TCP wrappers disabled"
- else
--  LIBWRAP_PATH=""
-   case "$host" in
-     *-*-solaris*)
- 	if test -f /usr/lib/libwrap.so; then
-@@ -32208,6 +32207,8 @@ cat >>conftest.$ac_ext <<_ACEOF
+$OpenBSD: patch-configure,v 1.19 2011/09/12 07:39:21 ajacoutot Exp $
+--- configure.orig	Tue May 31 18:25:21 2011
++++ configure	Thu Jun 16 15:03:29 2011
+@@ -22399,6 +22399,8 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  #ifdef __cplusplus
  extern "C"
  #endif
@@ -18,45 +10,16 @@ $OpenBSD: patch-configure,v 1.18 2010/11/08 19:28:32 ajacoutot Exp $
  char hosts_ctl ();
  int
  main ()
-@@ -32373,7 +32374,6 @@ else
-   $as_echo "$as_me: failed program was:" >&5
- sed 's/^/| /' conftest.$ac_ext >&5
- 
--	LIBWRAP_PATH=""
+@@ -24076,6 +24078,12 @@ else
+   am__EXEEXT_TRUE='#'
+   am__EXEEXT_FALSE=
  fi
- 
- rm -rf conftest.dSYM
-@@ -34956,9 +34956,9 @@ case "$host" in
- 	;;
- *openbsd*)
- 	HOST_GDM_USER_PATH="/bin:/usr/bin"
--	HOST_HALT_COMMAND="/sbin/halt -p;/usr/bin/poweroff;/sbin/poweroff;/sbin/shutdown -h now;/usr/sbin/shutdown -h now"
--	HOST_REBOOT_COMMAND="/usr/bin/reboot;/sbin/reboot;/sbin/shutdown -r now;/usr/sbin/shutdown -r now"
--	HOST_SUSPEND_COMMAND="/usr/bin/zzz"
-+	HOST_HALT_COMMAND="/sbin/halt -p;/sbin/shutdown -hp now"
-+	HOST_REBOOT_COMMAND="/sbin/reboot;/sbin/shutdown -r now"
-+	HOST_SUSPEND_COMMAND="/usr/sbin/zzz"
- 	HOST_XSESSION_SHELL=/bin/sh
- 	HOST_SOUND_PROGRAM="$real_gdm_prefix/bin/play"
- 	HOST_GDMGNOMESESSIONCMD=gnome-session
-@@ -35076,13 +35076,19 @@ else
-    X_CONFIG_OPTIONS="-audit 0"
- fi
- 
++
 +case $host in
 +    i386-*-openbsd*|amd64-*-openbsd*)
 +        X_CONFIG_OPTIONS="$X_CONFIG_OPTIONS vt5"
 +        ;;
 +esac
-+
- # Use Xephyr if it is available.  It works better than Xnest since Xephyr
- # supports the Xserver extensions, even if on a remote machine.
- #
- X_XNEST_UNSCALED_FONTPATH="true"
- if test -x $X_SERVER_PATH/Xephyr; then
-     X_XNEST_CMD="$X_SERVER_PATH/Xephyr"
--    X_XNEST_CONFIG_OPTIONS="-audit 0"
-+    X_XNEST_CONFIG_OPTIONS="-screen 800x600 -audit 0"
- else
-     if test -x /usr/openwin/bin/Xnest; then
-         # If on Solaris, Xnest is only shipped with the Xsun Xserver, so
+ 
+ if test -z "${MAINTAINER_MODE_TRUE}" && test -z "${MAINTAINER_MODE_FALSE}"; then
+   as_fn_error $? "conditional \"MAINTAINER_MODE\" was never defined.

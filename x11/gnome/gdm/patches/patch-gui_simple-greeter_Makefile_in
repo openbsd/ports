@@ -1,0 +1,12 @@
+$OpenBSD: patch-gui_simple-greeter_Makefile_in,v 1.1 2011/09/12 07:39:21 ajacoutot Exp $
+--- gui/simple-greeter/Makefile.in.orig	Thu Jun 16 15:31:00 2011
++++ gui/simple-greeter/Makefile.in	Thu Jun 16 15:31:16 2011
+@@ -474,7 +474,7 @@ AM_CPPFLAGS = \
+ 	-DGDMCONFDIR=\"$(gdmconfdir)\"                  \
+ 	-DDATADIR=\""$(datadir)"\"		 	\
+ 	-DSYSCONFDIR=\""$(sysconfdir)"\"		\
+-	-DLIBLOCALEDIR=\""$(prefix)/lib/locale"\"	\
++	-DLIBLOCALEDIR=\""/usr/share/locale"\"	\
+ 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" 	\
+ 	-DUIDIR=\""$(pkgdatadir)"\"			\
+ 	-DLIBEXECDIR=\""$(libexecdir)"\" 		\

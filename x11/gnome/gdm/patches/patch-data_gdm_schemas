@@ -1,0 +1,18 @@
+$OpenBSD: patch-data_gdm_schemas,v 1.1 2011/09/12 07:39:21 ajacoutot Exp $
+--- data/gdm.schemas.orig	Thu Jun 16 19:06:12 2011
++++ data/gdm.schemas	Thu Jun 16 19:06:36 2011
+@@ -15,12 +15,12 @@
+     <schema>
+       <key>daemon/User</key>
+       <signature>s</signature>
+-      <default>gdm</default>
++      <default>_gdm</default>
+     </schema>
+     <schema>
+       <key>daemon/Group</key>
+       <signature>s</signature>
+-      <default>gdm</default>
++      <default>_gdm</default>
+     </schema>
+     <schema>
+       <key>daemon/AutomaticLoginEnable</key>

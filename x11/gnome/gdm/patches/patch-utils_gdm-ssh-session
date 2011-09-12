@@ -1,8 +1,0 @@
-$OpenBSD: patch-utils_gdm-ssh-session,v 1.2 2009/03/19 08:26:42 ajacoutot Exp $
---- utils/gdm-ssh-session.orig	Thu Mar 19 09:00:37 2009
-+++ utils/gdm-ssh-session	Thu Mar 19 09:01:23 2009
-@@ -13,3 +13,4 @@ fi
- # for now can bet set using the $USERNAME@ convention
- # @@@ should it do an ssh-add so the user doesn't have to enter its passphrase again?
- ssh -A -X -T -n "$TARGETHOST" -p "$TARGETPORT" /etc/X11/Xsession
-+ssh -A -Y -T -n "$TARGETHOST" -p "$TARGETPORT" /etc/X11/xdm/Xsession

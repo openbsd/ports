@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_greeter-autostart_at-spi-registryd-wrapper_desktop_in_in,v 1.1 2011/09/12 07:39:21 ajacoutot Exp $
+--- data/greeter-autostart/at-spi-registryd-wrapper.desktop.in.in.orig	Tue Jun 21 09:41:42 2011
++++ data/greeter-autostart/at-spi-registryd-wrapper.desktop.in.in	Tue Jun 21 09:41:54 2011
+@@ -1,7 +1,7 @@
+ [Desktop Entry]
+ Type=Application
+ _Name=AT-SPI Registry Wrapper
+-Exec=@AT_SPI_REGISTRYD_DIR@/at-spi-registryd
++Exec=@AT_SPI_REGISTRYD_DIR@/at-spi2-registryd
+ OnlyShowIn=GNOME;
+ AutostartCondition=GNOME /desktop/gnome/interface/accessibility
+ X-GNOME-Autostart-Phase=Initialization

@@ -1,30 +1,29 @@
-$OpenBSD: patch-config_Xsession_in,v 1.12 2010/08/21 19:08:17 ajacoutot Exp $
---- config/Xsession.in.orig	Thu Jun  3 03:06:25 2010
-+++ config/Xsession.in	Thu Aug  5 18:43:40 2010
+$OpenBSD: patch-data_Xsession_in,v 1.1 2011/09/12 07:39:21 ajacoutot Exp $
+--- data/Xsession.in.orig	Mon Mar  7 18:40:37 2011
++++ data/Xsession.in	Thu Jun 16 15:03:29 2011
 @@ -23,6 +23,8 @@
  # based on:
  # $XConsortium: Xsession /main/10 1995/12/18 18:21:28 gildea $
  
-+PATH=$PATH:${LOCALBASE}/bin
++PATH="$PATH:${LOCALBASE}/bin"
 +
  command="$@"
  
  # this will go into the .xsession-errors along with all other echo's
-@@ -202,6 +204,9 @@ if [ "x$command" = "xdefault" ] ; then
+@@ -178,6 +180,9 @@ if [ "x$command" = "xdefault" ] ; then
      command="/etc/X11/xinit/Xclients"
    elif [ -x /etc/X11/Xclients ]; then
      command="/etc/X11/Xclients"
 +  elif [ -x "/etc/X11/xdm/Xsession" ]; then
-+    # Load the OpenBSD default Xsession...
++    # Load the default OpenBSD
 +    command="/etc/X11/xdm/Xsession"
    else
      if [ -n "$zenity" ] ; then
  	disptext=`gettextfunc "System has no Xclients file, so starting a failsafe xterm session.  Windows will have focus only if the mouse pointer is above them.  To get out of this mode type 'exit' in the window."`
-@@ -213,12 +218,32 @@ if [ "x$command" = "xdefault" ] ; then
+@@ -189,12 +194,19 @@ if [ "x$command" = "xdefault" ] ; then
    fi
  fi
  
-+# Only add ssh-agent if: 
 +#  * gnome-session is not used (in which case gnome-keyring handles
 +#    ssh-agent functionality)
 +#  * OpenBSD default Xsession isn't used (as it already starts ssh-agent)
@@ -38,18 +37,6 @@ $OpenBSD: patch-config_Xsession_in,v 1.12 2010/08/21 19:08:17 ajacoutot Exp $
      echo "$0: ssh-agent not found!"
 +fi
 +
-+fi
-+
-+# add seahorse-agent if found
-+seahorseagent="`gdmwhich seahorse-agent`"
-+if [ -n "$seahorseagent" ] && [ -x "$seahorseagent" ] && [ -z "$GPG_AGENT_INFO" ] ; then
-+    eval `$seahorseagent`
-+fi
-+
-+# GDM 2.20.X is too old to support new versions of ConsoleKit natively
-+cklaunch="`gdmwhich ck-launch-session`"
-+if [ -n "$cklaunch" ] && [ -x "$cklaunch" ] && [ -z "$XDG_SESSION_COOKIE" ] ; then
-+    command="$cklaunch $command"
  fi
  
  echo "$0: Setup done, will execute: $command"
