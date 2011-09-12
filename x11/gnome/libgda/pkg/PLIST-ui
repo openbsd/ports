@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-ui,v 1.11 2011/09/05 14:28:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST-ui,v 1.12 2011/09/12 15:31:15 ajacoutot Exp $
 @conflict libgda-<4.2.8p1v2
 @bin bin/gda-browser-${GDA_MAJOR}
 @bin bin/gda-control-center-${GDA_MAJOR}
@@ -40,7 +40,7 @@ lib/libgda-${GDA_MAJOR}/plugins/gdaui-entry-text-spec.xml
 @comment lib/libgda-${GDA_MAJOR}/plugins/libgda-ui-plugins.la
 lib/libgda-${GDA_MAJOR}/plugins/libgda-ui-plugins.so
 lib/libgda-ui-${GDA_MAJOR}.la
-@lib lib/libgda-ui-${GDA_MAJOR}.so.${LIBgda-ui-4.0_VERSION}
+@lib lib/libgda-ui-${GDA_MAJOR}.so.${LIBgda-ui-5.0_VERSION}
 lib/pkgconfig/libgda-ui-${GDA_MAJOR}.pc
 share/applications/gda-browser-${GDA_MAJOR}.desktop
 share/applications/gda-control-center-${GDA_MAJOR}.desktop
@@ -384,36 +384,24 @@ share/gnome/help/gda-browser/zh_CN/transactions.page
 share/gnome/help/gda-browser/zh_CN/variables.page
 share/gnome/help/gda-browser/zh_CN/virtual-connections.page
 share/gtk-doc/html/gda-browser/
+share/gtk-doc/html/gda-browser/BrowserConnection.html
+share/gtk-doc/html/gda-browser/BrowserCore.html
+share/gtk-doc/html/gda-browser/BrowserFavorites.html
+share/gtk-doc/html/gda-browser/BrowserPerspective.html
+share/gtk-doc/html/gda-browser/BrowserWindow.html
+share/gtk-doc/html/gda-browser/CcGrayBar.html
+share/gtk-doc/html/gda-browser/MgrFavorites.html
 share/gtk-doc/html/gda-browser/UILayout.png
 share/gtk-doc/html/gda-browser/code_orga.html
 share/gtk-doc/html/gda-browser/core.html
 share/gtk-doc/html/gda-browser/extrawidgets.html
-share/gtk-doc/html/gda-browser/fdl-section1.html
-share/gtk-doc/html/gda-browser/fdl-section10.html
-share/gtk-doc/html/gda-browser/fdl-section2.html
-share/gtk-doc/html/gda-browser/fdl-section3.html
-share/gtk-doc/html/gda-browser/fdl-section4.html
-share/gtk-doc/html/gda-browser/fdl-section5.html
-share/gtk-doc/html/gda-browser/fdl-section6.html
-share/gtk-doc/html/gda-browser/fdl-section7.html
-share/gtk-doc/html/gda-browser/fdl-section8.html
-share/gtk-doc/html/gda-browser/fdl-section9.html
-share/gtk-doc/html/gda-browser/fdl-using.html
-share/gtk-doc/html/gda-browser/fdl.html
+share/gtk-doc/html/gda-browser/gda-browser-BrowserPage.html
+share/gtk-doc/html/gda-browser/gda-browser-Data-Manager-perspective.html
+share/gtk-doc/html/gda-browser/gda-browser-Query-Exec-perspective.html
+share/gtk-doc/html/gda-browser/gda-browser-Schema-Browser-perspective.html
 share/gtk-doc/html/gda-browser/gda-browser-Support-functions.html
-share/gtk-doc/html/gda-browser/gda-browser-browser-connection.html
-share/gtk-doc/html/gda-browser/gda-browser-browser-core.html
-share/gtk-doc/html/gda-browser/gda-browser-browser-favorites.html
-share/gtk-doc/html/gda-browser/gda-browser-browser-page.html
-share/gtk-doc/html/gda-browser/gda-browser-browser-perspective.html
-share/gtk-doc/html/gda-browser/gda-browser-browser-window.html
-share/gtk-doc/html/gda-browser/gda-browser-cc-gray-bar.html
-share/gtk-doc/html/gda-browser/gda-browser-data-manager-perspective.html
-share/gtk-doc/html/gda-browser/gda-browser-mgr-favorites.html
+share/gtk-doc/html/gda-browser/gda-browser-UiFormgrid.html
 share/gtk-doc/html/gda-browser/gda-browser-popup-container.html
-share/gtk-doc/html/gda-browser/gda-browser-query-exec-perspective.html
-share/gtk-doc/html/gda-browser/gda-browser-schema-browser-perspective.html
-share/gtk-doc/html/gda-browser/gda-browser-ui-formgrid.html
 share/gtk-doc/html/gda-browser/gda-browser.devhelp
 share/gtk-doc/html/gda-browser/gda-browser.devhelp2
 share/gtk-doc/html/gda-browser/home.png
