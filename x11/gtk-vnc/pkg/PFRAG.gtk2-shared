@@ -1,2 +1,0 @@
-@comment $OpenBSD: PFRAG.gtk2-shared,v 1.1 2011/07/15 07:06:06 ajacoutot Exp $
-@lib lib/libgtk-vnc-1.0.so.${LIBgtk-vnc-1.0_VERSION}

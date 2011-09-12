@@ -1,8 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/07/15 07:06:06 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/09/12 08:47:23 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 @pkgpath ${BASE_PKGPATH},-main
+@pkgpath x11/gtk-vnc,gtk2
 %%SHARED%%
 @bin bin/gvnccapture
+include/gtk-vnc-2.0/
+include/gtk-vnc-2.0/vncdisplay.h
+include/gtk-vnc-2.0/vncdisplayenums.h
+include/gtk-vnc-2.0/vncgrabsequence.h
+include/gtk-vnc-2.0/vncimageframebuffer.h
 include/gvnc-1.0/
 include/gvnc-1.0/vncbaseframebuffer.h
 include/gvnc-1.0/vnccolormap.h
@@ -14,14 +20,19 @@ include/gvnc-1.0/vncpixelformat.h
 include/gvnc-1.0/vncutil.h
 lib/girepository-1.0/
 lib/girepository-1.0/GVnc-1.0.typelib
+lib/girepository-1.0/GtkVnc-2.0.typelib
+lib/libgtk-vnc-2.0.a
+lib/libgtk-vnc-2.0.la
 lib/libgvnc-1.0.a
 lib/libgvnc-1.0.la
 @lib lib/libgvnc-1.0.so.${LIBgvnc-1.0_VERSION}
 lib/pkgconfig/
+lib/pkgconfig/gtk-vnc-2.0.pc
 lib/pkgconfig/gvnc-1.0.pc
 @man man/man1/gvnccapture.1
 share/gir-1.0/
 share/gir-1.0/GVnc-1.0.gir
+share/gir-1.0/GtkVnc-2.0.gir
 share/locale/ca/LC_MESSAGES/gtk-vnc.mo
 share/locale/ca@valencia/
 share/locale/ca@valencia/LC_MESSAGES/
@@ -60,5 +71,3 @@ share/locale/th/LC_MESSAGES/gtk-vnc.mo
 share/locale/zh_CN/LC_MESSAGES/gtk-vnc.mo
 share/locale/zh_HK/LC_MESSAGES/gtk-vnc.mo
 share/locale/zh_TW/LC_MESSAGES/gtk-vnc.mo
-%%gtk2%%
-!%%gtk2%%
