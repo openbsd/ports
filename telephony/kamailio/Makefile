@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/26 14:44:27 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/12 18:02:35 naddy Exp $
 
 COMMENT-main =		mature and flexible open source SIP server
 
@@ -7,7 +7,7 @@ SHARED_ONLY =		Yes
 VERSION =		1.5.4
 DISTNAME =		kamailio-${VERSION}-tls_src
 PKGNAME-main =		kamailio-${VERSION}
-REVISION-main =		0
+REVISION-main =		1
 PKGNAME-mysql =		kamailio-mysql-${VERSION}
 PKGNAME-postgresql =	kamailio-postgresql-${VERSION}
 #PKGNAME-radius =	kamailio-radius-${VERSION}		TODO
