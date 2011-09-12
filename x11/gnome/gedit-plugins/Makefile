@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2011/09/12 07:26:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2011/09/12 08:48:42 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		3.0.7
+
+REVISION=		0
 
 CATEGORIES=		editors
 
@@ -37,7 +39,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/vte,gtk3 \
 			x11/dbus-python \
 			x11/gnome/gedit>3.0.0 \
-			STEM-*-!gtk2:x11/gnome/gucharmap
+			x11/gnome/gucharmap
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
