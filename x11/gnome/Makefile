@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2011/09/12 08:46:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.158 2011/09/12 13:46:53 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -49,7 +49,6 @@
      SUBDIR += libgnome-keyring
      SUBDIR += libgnome-media-profiles
      SUBDIR += libgnomecanvas
-     SUBDIR += libgnomecups
      SUBDIR += libgnomekbd
      SUBDIR += libgnomeprint
      SUBDIR += libgnomeui
