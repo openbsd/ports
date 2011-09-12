@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.19 2011/09/12 18:35:44 ajacoutot Exp $
+$OpenBSD: README,v 1.20 2011/09/12 18:55:43 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -38,7 +38,7 @@ below).
 Installing more packages
 ========================
 If your needs aren't satisfied yet, there are many other packages
-you can install. The most important ones will be mentioned by category.
+you can install. The most obvious ones will be mentioned by category.
 (if you have access to an OpenBSD ports tree, you can find most GNOME
 related ports under the x11/gnome category)
 
@@ -98,8 +98,9 @@ Utilities
     * gnome-nettool - interface for various networking tools
     * gnome-tweak-tool - tool to tweak hidden GTK/GNOME settings
     * gnomebaker - CD/DVD burning application
-    * nautilus-sendto - integrate applications into Nautilus
     * nautilus-file-roller - handle archives directly from Nautilus
+    * nautilus-open-terminal - open a terminal under a nautilus folder path
+    * nautilus-sendto - integrate applications into Nautilus
     * seahorse (+seahorse-plugins) - encryption, keys and passwords manager
     * vinagre - VNC Client (remote Desktop client)
     * vino - VNC server (allows remote access to your Desktop)
