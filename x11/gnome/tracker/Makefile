@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.64 2011/08/30 06:52:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2011/09/12 08:02:55 ajacoutot Exp $
+
+BROKEN=		needs an update (GNOME3)
 
 COMMENT=	powerful desktop search tool and indexer
 

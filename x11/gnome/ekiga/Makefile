@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.40 2011/07/16 13:25:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2011/09/12 08:02:55 ajacoutot Exp $
+
+BROKEN=		needs an update (GNOME3)
 
 COMMENT=	SIP and H.323 compatible conferencing application
 

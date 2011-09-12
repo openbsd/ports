@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.70 2011/06/08 17:41:57 rpointel Exp $
+# $OpenBSD: Makefile,v 1.71 2011/09/12 08:02:55 ajacoutot Exp $
+
+BROKEN=			needs an update (GNOME3)
 
 COMMENT= 		telepathy based messenger for GNOME
 
