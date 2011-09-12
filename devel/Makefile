@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.964 2011/08/30 07:18:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.965 2011/09/12 07:48:37 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -103,7 +103,6 @@
      SUBDIR += fossil
      SUBDIR += fox
      SUBDIR += fribidi
-     SUBDIR += gal2
      SUBDIR += gconf-editor
      SUBDIR += gconf2
      SUBDIR += gconf2,gtk2
@@ -118,7 +117,6 @@
      SUBDIR += git
      SUBDIR += git-cola
      SUBDIR += glade
-     SUBDIR += glade3
      SUBDIR += glib
      SUBDIR += glib2
      SUBDIR += glib2mm

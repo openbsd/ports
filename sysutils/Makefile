@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.245 2011/08/23 14:22:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.246 2011/09/12 07:48:37 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -15,7 +15,6 @@
      SUBDIR += bacula,pgsql
      SUBDIR += bacula,sqlite3
      SUBDIR += bchunk
-     SUBDIR += bubblemon
      SUBDIR += bubblemon-dockapp
      SUBDIR += cdrtools
      SUBDIR += cfengine

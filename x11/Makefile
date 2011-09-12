@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.464 2011/09/11 10:40:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.465 2011/09/12 07:48:38 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -194,7 +194,6 @@
      SUBDIR += pwm
      SUBDIR += py-Xlib
      SUBDIR += py-gtk2
-     SUBDIR += py-gtksourceview
      SUBDIR += py-kiwi
      SUBDIR += py-osd
      SUBDIR += py-qt3
