@@ -1,0 +1,17 @@
+$OpenBSD: patch-panels_keyboard_cc-keyboard-item_c,v 1.1.1.1 2011/09/12 07:29:32 ajacoutot Exp $
+
+From a6d3ad6af357731da213695ac37e04afc8a79448 Mon Sep 17 00:00:00 2001
+From: Florian Müllner <fmuellner@gnome.org>
+Date: Wed, 29 Jun 2011 04:12:10 +0000
+Subject: keyboard: Fix a small memory leak
+
+--- panels/keyboard/cc-keyboard-item.c.orig	Fri Apr 29 10:40:29 2011
++++ panels/keyboard/cc-keyboard-item.c	Sat Jul  2 01:22:46 2011
+@@ -410,6 +410,7 @@ binding_changed (GSettings *settings,
+   value = g_settings_get_string (item->settings, item->key);
+   item->editable = g_settings_is_writable (item->settings, item->key);
+   _set_binding (item, value, FALSE);
++  g_free (value);
+   g_object_notify (G_OBJECT (item), "binding");
+ }
+ 

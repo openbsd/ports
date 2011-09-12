@@ -1,0 +1,12 @@
+$OpenBSD: patch-panels_user-accounts_Makefile_in,v 1.1.1.1 2011/09/12 07:29:32 ajacoutot Exp $
+--- panels/user-accounts/Makefile.in.orig	Tue May 24 10:49:28 2011
++++ panels/user-accounts/Makefile.in	Tue May 24 11:13:07 2011
+@@ -376,7 +376,7 @@ ccpanelsdir = $(PANELS_DIR)
+ ccpanels_LTLIBRARIES = libuser-accounts.la
+ AM_CPPFLAGS = -DDATADIR=\""$(datadir)"\" \
+ 	-DUIDIR=\""$(pkgdatadir)/ui/user-accounts"\" \
+-	-DLIBLOCALEDIR=\""$(prefix)/lib/locale"\" \
++	-DLIBLOCALEDIR=\""/usr/share/locale"\" \
+ 	-DGNOMELOCALEDIR=\""$(datadir)/locale"\" \
+ 	-DUM_PIXMAP_DIR=\""$(pkgdatadir)/pixmaps"\" \
+ 	-I$(srcdir)/../common/ $(PANEL_CFLAGS) \
