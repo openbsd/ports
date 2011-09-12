@@ -1,0 +1,25 @@
+$OpenBSD: patch-libavcodec_h263dec_c,v 1.4 2011/09/12 21:04:49 sthen Exp $
+
+- Adjust dummy frame threshold for packed DivX.
+- Fix another packed DivX issue.
+
+--- libavcodec/h263dec.c.orig	Thu Sep  8 15:47:57 2011
++++ libavcodec/h263dec.c	Thu Sep  8 15:49:20 2011
+@@ -386,7 +386,7 @@ uint64_t time= rdtsc();
+ 
+ 
+ retry:
+-    if(s->divx_packed && s->xvid_build>=0 && s->bitstream_buffer_size){
++    if(s->divx_packed && s->bitstream_buffer_size){
+         int i;
+         for(i=0; i<buf_size-3; i++){
+             if(buf[i]==0 && buf[i+1]==0 && buf[i+2]==1){
+@@ -700,7 +700,7 @@ frame_end:
+         int current_pos= get_bits_count(&s->gb)>>3;
+         int startcode_found=0;
+ 
+-        if(buf_size - current_pos > 5){
++        if(buf_size - current_pos > 7){
+             int i;
+             for(i=current_pos; i<buf_size-3; i++){
+                 if(buf[i]==0 && buf[i+1]==0 && buf[i+2]==1 && buf[i+3]==0xB6){

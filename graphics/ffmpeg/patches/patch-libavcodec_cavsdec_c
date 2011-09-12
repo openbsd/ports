@@ -1,11 +1,12 @@
-$OpenBSD: patch-libavcodec_cavsdec_c,v 1.3 2011/08/24 09:26:41 sthen Exp $
+$OpenBSD: patch-libavcodec_cavsdec_c,v 1.4 2011/09/12 21:04:49 sthen Exp $
 
 - Fix insufficient boundary check. oCERT #2011-002
 - Fix some crashes with invalid bitstreams. oCERT #2011-002
 - Check run value validity.
+- Avoid possible crash with crafted input.
 
 --- libavcodec/cavsdec.c.orig	Mon Mar 28 19:23:17 2011
-+++ libavcodec/cavsdec.c	Tue Aug 23 16:33:20 2011
++++ libavcodec/cavsdec.c	Thu Sep  8 14:16:46 2011
 @@ -115,7 +115,8 @@ static inline int get_ue_code(GetBitContext *gb, int o
  static int decode_residual_block(AVSContext *h, GetBitContext *gb,
                                   const struct dec_2dvlc *r, int esc_golomb_order,
@@ -40,6 +41,15 @@ $OpenBSD: patch-libavcodec_cavsdec_c,v 1.3 2011/08/24 09:26:41 sthen Exp $
          }
          level_buf[i] = level;
          run_buf[i] = run;
+@@ -163,7 +168,7 @@ static inline int decode_residual_inter(AVSContext *h)
+ 
+     /* get coded block pattern */
+     int cbp= get_ue_golomb(&h->s.gb);
+-    if(cbp > 63){
++    if(cbp > 63U){
+         av_log(h->s.avctx, AV_LOG_ERROR, "illegal inter cbp\n");
+         return -1;
+     }
 @@ -189,7 +194,8 @@ static inline int decode_residual_inter(AVSContext *h)
  
  static int decode_mb_i(AVSContext *h, int cbp_code) {
@@ -50,6 +60,15 @@ $OpenBSD: patch-libavcodec_cavsdec_c,v 1.3 2011/08/24 09:26:41 sthen Exp $
      uint8_t top[18];
      uint8_t *left = NULL;
      uint8_t *d;
+@@ -222,7 +228,7 @@ static int decode_mb_i(AVSContext *h, int cbp_code) {
+     /* get coded block pattern */
+     if(h->pic_type == FF_I_TYPE)
+         cbp_code = get_ue_golomb(gb);
+-    if(cbp_code > 63){
++    if(cbp_code > 63U){
+         av_log(h->s.avctx, AV_LOG_ERROR, "illegal intra cbp\n");
+         return -1;
+     }
 @@ -445,6 +451,8 @@ static inline int check_for_slice(AVSContext *h) {
      if((show_bits_long(gb,24+align) & 0xFFFFFF) == 0x000001) {
          skip_bits_long(gb,24+align);

@@ -1,0 +1,31 @@
+$OpenBSD: patch-libavcodec_mjpegdec_c,v 1.1 2011/09/12 21:04:49 sthen Exp $
+
+- Actually search for and parse RSTn.
+- Better RSTn skiping.
+
+--- libavcodec/mjpegdec.c.orig	Thu Sep  8 16:05:53 2011
++++ libavcodec/mjpegdec.c	Thu Sep  8 16:05:58 2011
+@@ -840,11 +840,19 @@ static int mjpeg_decode_scan(MJpegDecodeContext *s, in
+                 }
+             }
+ 
+-            if (s->restart_interval && !--s->restart_count) {
++            if (s->restart_interval) --s->restart_count;
++            i= 8+((-get_bits_count(&s->gb))&7);
++            if (s->restart_interval && show_bits(&s->gb, i)  == (1<<i)-1){ /* skip RSTn */
++                int pos= get_bits_count(&s->gb);
+                 align_get_bits(&s->gb);
+-                skip_bits(&s->gb, 16); /* skip RSTn */
+-                for (i=0; i<nb_components; i++) /* reset dc */
+-                    s->last_dc[i] = 1024;
++                while(show_bits(&s->gb, 8) == 0xFF)
++                    skip_bits(&s->gb, 8);
++                if((get_bits(&s->gb, 8)&0xF8) == 0xD0){
++                    for (i=0; i<nb_components; i++) /* reset dc */
++                        s->last_dc[i] = 1024;
++                }else{
++                    skip_bits_long(&s->gb, pos - get_bits_count(&s->gb));
++                }
+             }
+         }
+     }

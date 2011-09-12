@@ -1,6 +1,6 @@
-$OpenBSD: patch-libavformat_wv_c,v 1.1 2011/08/03 18:44:07 dcoppa Exp $
+$OpenBSD: patch-libavformat_wv_c,v 1.2 2011/09/12 21:04:49 sthen Exp $
 
-- Skip blocks with no samples.
+Skip blocks with no samples.
 
 --- libavformat/wv.c.orig	Sat Jul 30 00:49:36 2011
 +++ libavformat/wv.c	Sat Jul 30 00:51:21 2011
