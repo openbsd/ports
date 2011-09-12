@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.42 2011/09/12 12:04:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2011/09/12 13:44:45 ajacoutot Exp $
 
 COMMENT=		printing framework for GNOME
 
 GNOME_PROJECT=		libgnomeprint
 GNOME_VERSION=		2.18.8
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=	gnomeprint-2-2 2.1            # .1.0
 
@@ -18,12 +18,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
+WANTLIB += X11 art_lgpl_2 expat fontconfig freetype glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 m pango-1.0 pangoft2-1.0 pcre
+WANTLIB += xcb xml2 z
 
-WANTLIB += X11 Xau Xdmcp asn1 crypto cups expat fontconfig freetype
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gssapi gthread-2.0
-WANTLIB += krb5 m pcre pthread-stubs ssl xcb z pango-1.0 pangoft2-1.0
-WANTLIB += art_lgpl_2 xml2 gnomecups-1.0
+EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext \
 			x11/gnome
@@ -31,12 +30,11 @@ MODULES=		devel/gettext \
 BUILD_DEPENDS=		devel/bison
 LIB_DEPENDS=		devel/pango \
 			graphics/libart \
-			textproc/libxml \
-			x11/gnome/libgnomecups
+			textproc/libxml
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \
-			--with-cups
+			--without-cups
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

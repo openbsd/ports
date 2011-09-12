@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2011/07/29 20:42:26 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/09/12 13:44:46 ajacoutot Exp $
 %%SHARED%%
 include/libgnomeprint-2.2/
 include/libgnomeprint-2.2/libgnomeprint/
@@ -75,8 +75,6 @@ lib/libgnomeprint/${VERSION}/modules/filters/libgnomeprint-select.so
 @comment lib/libgnomeprint/${VERSION}/modules/filters/libgnomeprint-zoom.a
 @comment lib/libgnomeprint/${VERSION}/modules/filters/libgnomeprint-zoom.la
 lib/libgnomeprint/${VERSION}/modules/filters/libgnomeprint-zoom.so
-@comment lib/libgnomeprint/${VERSION}/modules/libgnomeprintcups.a
-@comment lib/libgnomeprint/${VERSION}/modules/libgnomeprintcups.la
 @comment lib/libgnomeprint/${VERSION}/modules/libgnomeprintlpd.a
 @comment lib/libgnomeprint/${VERSION}/modules/libgnomeprintlpd.la
 lib/libgnomeprint/${VERSION}/modules/libgnomeprintlpd.so
