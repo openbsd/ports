@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2011/09/12 12:07:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.78 2011/09/12 20:00:43 jasper Exp $
 
 COMMENT=		integrated music management application for GNOME
 
@@ -99,7 +99,7 @@ REGRESS_IS_INTERACTIVE=	x11
 post-install:
 # needs media-keys support in G-S-D
 	find ${PREFIX} -type d -name mmkeys | xargs -r rm -rf
-# needs gnome-keyring python bindings (py-gnome-desktop)
+# needs gnome-keyring python bindings (used to be in py-gnome-desktop)
 	find ${PREFIX} -type d -name magnatune | xargs -r rm -rf
 # needs ZeitgeistClient
 	find ${PREFIX} -type d -name rbzeitgeist | xargs -r rm -rf
