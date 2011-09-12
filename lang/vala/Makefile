@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.39 2011/09/12 12:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2011/09/12 18:19:53 jasper Exp $
 
 COMMENT=		compiler for the GObject type system
 
 GNOME_PROJECT=		vala
-GNOME_VERSION=		0.12.1
-API_V=			0.12
+GNOME_VERSION=		0.13.4
+API_V=			0.14
 
-SHARED_LIBS +=  vala-0.12                 0.0 # 0.0
+SHARED_LIBS +=  vala-0.14                 0.0 # 0.0
 
 CATEGORIES=		lang
 
@@ -34,13 +34,13 @@ REGRESS_DEPENDS=	shells/bash
 
 USE_GROFF=		Yes
 
+SUBST_VARS+=		API_V
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-vapigen
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
-
-SUBST_VARS+=		API_V
 
 pre-configure:
 	perl -pi -e 's,/bin/bash,${LOCALBASE}/bin/bash,g' \

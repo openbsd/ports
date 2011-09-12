@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2011/08/22 12:32:12 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.25 2011/09/12 18:19:53 jasper Exp $
 %%SHARED%%
 bin/vala
 bin/vala-${API_V}
@@ -94,6 +94,8 @@ share/vala-${API_V}/vapi/gdu.deps
 share/vala-${API_V}/vapi/gdu.vapi
 share/vala-${API_V}/vapi/gedit-2.20.deps
 share/vala-${API_V}/vapi/gedit-2.20.vapi
+share/vala-${API_V}/vapi/gedit.deps
+share/vala-${API_V}/vapi/gedit.vapi
 share/vala-${API_V}/vapi/gio-2.0.vapi
 share/vala-${API_V}/vapi/gio-unix-2.0.deps
 share/vala-${API_V}/vapi/gio-unix-2.0.vapi
@@ -156,6 +158,8 @@ share/vala-${API_V}/vapi/gtkmozembed.deps
 share/vala-${API_V}/vapi/gtkmozembed.vapi
 share/vala-${API_V}/vapi/gtksourceview-2.0.deps
 share/vala-${API_V}/vapi/gtksourceview-2.0.vapi
+share/vala-${API_V}/vapi/gtksourceview-3.0.deps
+share/vala-${API_V}/vapi/gtksourceview-3.0.vapi
 share/vala-${API_V}/vapi/gudev-1.0.deps
 share/vala-${API_V}/vapi/gudev-1.0.vapi
 share/vala-${API_V}/vapi/hal.deps
@@ -199,6 +203,7 @@ share/vala-${API_V}/vapi/liboobs-1.vapi
 share/vala-${API_V}/vapi/libosso.vapi
 share/vala-${API_V}/vapi/libpanelapplet-2.0.deps
 share/vala-${API_V}/vapi/libpanelapplet-2.0.vapi
+share/vala-${API_V}/vapi/libpeas-1.0.vapi
 share/vala-${API_V}/vapi/libpq.vapi
 share/vala-${API_V}/vapi/librsvg-2.0.deps
 share/vala-${API_V}/vapi/librsvg-2.0.vapi
@@ -238,6 +243,7 @@ share/vala-${API_V}/vapi/rasqal.vapi
 share/vala-${API_V}/vapi/readline.vapi
 share/vala-${API_V}/vapi/rest-0.6.deps
 share/vala-${API_V}/vapi/rest-0.6.vapi
+share/vala-${API_V}/vapi/rest-0.7.vapi
 share/vala-${API_V}/vapi/rest-extras-0.6.deps
 share/vala-${API_V}/vapi/rest-extras-0.6.vapi
 share/vala-${API_V}/vapi/sdl-gfx.deps
@@ -261,6 +267,8 @@ share/vala-${API_V}/vapi/twitter-glib-1.0.vapi
 share/vala-${API_V}/vapi/unique-1.0.deps
 share/vala-${API_V}/vapi/unique-1.0.vapi
 share/vala-${API_V}/vapi/v4l2.vapi
+share/vala-${API_V}/vapi/vte-2.90.deps
+share/vala-${API_V}/vapi/vte-2.90.vapi
 share/vala-${API_V}/vapi/vte.deps
 share/vala-${API_V}/vapi/vte.vapi
 share/vala-${API_V}/vapi/webkit-1.0.deps
