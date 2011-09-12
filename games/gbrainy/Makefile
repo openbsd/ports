@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/12 12:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/09/12 15:46:44 ajacoutot Exp $
 
 COMMENT=	brain teaser game
 
@@ -17,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
 MASTER_SITES=	http://gent.softcatala.org/jmas/gbrainy/
-EXTRACT_SUFX=		.tar.bz2
+EXTRACT_SUFX=		.tar.gz
 
 MODULES=	textproc/intltool \
 		lang/mono \
