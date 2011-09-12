@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.297 2011/08/17 19:05:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.298 2011/09/12 14:07:43 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.55 1997/11/03 12:12:27 tg Exp $
 #
 
@@ -79,6 +79,7 @@
      SUBDIR += gmt
      SUBDIR += gocr
      SUBDIR += goocanvas
+     SUBDIR += goocanvas2
      SUBDIR += gphoto2
      SUBDIR += gpicview
      SUBDIR += gracula
