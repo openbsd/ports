@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure_ac,v 1.1 2011/09/12 14:48:15 jasper Exp $
+
+Disable -Werror by not pretending to be a git checkout.
+
+--- configure.ac.orig	Mon Sep 12 16:39:26 2011
++++ configure.ac	Mon Sep 12 16:39:29 2011
+@@ -5,7 +5,7 @@ dnl need to do this here so intltool-update doesn't di
+ PACKAGE=byzanz
+ dnl when going to/from release please set the nano (fourth number) right !
+ dnl releases only do Wall, cvs and prerelease does Werror too
+-AS_VERSION($PACKAGE, TOOLS_VERSION, 0, 3, 0, 1, BYZANZ_CVS="no", BYZANZ_CVS="yes")
++AS_VERSION($PACKAGE, TOOLS_VERSION, 0, 3, 0, 1, BYZANZ_CVS="no", BYZANZ_CVS="no")
+ 
+ dnl AM_MAINTAINER_MODE only provides the option to configure to enable it
+ AM_MAINTAINER_MODE

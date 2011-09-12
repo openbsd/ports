@@ -1,15 +1,16 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/03/02 15:00:46 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/09/12 14:48:15 jasper Exp $
 @bin bin/byzanz-playback
 @bin bin/byzanz-record
-lib/bonobo/
-lib/bonobo/servers/
-lib/bonobo/servers/ByzanzApplet.server
 @bin libexec/byzanz-applet
 @man man/man1/byzanz-playback.1
 @man man/man1/byzanz-record.1
-share/gnome-2.0/
-share/gnome-2.0/ui/
-share/gnome-2.0/ui/byzanzapplet.xml
+share/byzanz/
+share/byzanz/byzanzapplet.xml
+share/dbus-1/services/org.gnome.panel.applet.ByzanzAppletFactory.service
+share/gnome-panel/
+share/gnome-panel/4.0/
+share/gnome-panel/4.0/applets/
+share/gnome-panel/4.0/applets/org.gnome.ByzanzApplet.panel-applet
 share/icons/
 share/icons/hicolor/
 share/icons/hicolor/22x22/
@@ -47,6 +48,7 @@ share/locale/ru/LC_MESSAGES/byzanz.mo
 share/locale/sl/LC_MESSAGES/byzanz.mo
 share/locale/sv/LC_MESSAGES/byzanz.mo
 share/locale/tr/LC_MESSAGES/byzanz.mo
+share/locale/uk/LC_MESSAGES/byzanz.mo
 share/locale/vi/LC_MESSAGES/byzanz.mo
 share/locale/zh_CN/LC_MESSAGES/byzanz.mo
 @unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
