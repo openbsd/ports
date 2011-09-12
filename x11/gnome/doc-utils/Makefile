@@ -1,4 +1,8 @@
-# $OpenBSD: Makefile,v 1.47 2011/09/12 12:04:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2011/09/12 13:21:59 ajacoutot Exp $
+
+# This port does set MODGNOME_HELP_FILES on purpose: it would create a
+# dependency on itself. We do not enforce dependency on x11/gnome/yelp
+# either because it would bring lots of other dependencies.
 
 COMMENT=	collection of documentation utilities for the GNOME project
 
