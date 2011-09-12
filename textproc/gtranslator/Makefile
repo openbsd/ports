@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/12 12:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/09/12 15:30:14 ajacoutot Exp $
+
+BROKEN=		does not compile with new libgda
 
 SHARED_ONLY=	Yes
 
@@ -43,7 +45,7 @@ LIB_DEPENDS=	x11/gnome/gdl \
 		x11/gnome/utils \
 		x11/gtksourceview \
 		textproc/gtkspell \
-		STEM-*-gtk2:x11/gnome/gucharmap,gtk2 \
+		gtk2:x11/gnome/gucharmap \
 		x11/gnome/libgda \
 		devel/libunique \
 		devel/json-glib
