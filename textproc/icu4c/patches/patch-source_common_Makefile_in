@@ -1,10 +1,10 @@
-$OpenBSD: patch-source_common_Makefile_in,v 1.5 2010/04/05 21:40:24 landry Exp $
---- source/common/Makefile.in.orig	Sat Mar 20 11:18:11 2010
-+++ source/common/Makefile.in	Sat Mar 20 11:19:31 2010
+$OpenBSD: patch-source_common_Makefile_in,v 1.6 2011/09/12 06:45:53 ajacoutot Exp $
+--- source/common/Makefile.in.orig	Tue Jul 19 23:16:28 2011
++++ source/common/Makefile.in	Mon Sep 12 08:22:55 2011
 @@ -63,7 +63,7 @@ endif
  CPPFLAGS += -I$(srcdir) -I$(top_srcdir)/i18n $(LIBCPPFLAGS) $(CPPFLAGSICUUC)
  # we want DEFS here, because we want icucfg.h
- DEFS += -DU_COMMON_IMPLEMENTATION @DEFS@ 
+ DEFS += -DU_COMMON_IMPLEMENTATION -DU_HAVE_ICUCFG 
 -LDFLAGS += $(LDFLAGSICUUC)
 +LDFLAGS += -fPIC $(LDFLAGSICUUC)
  
