@@ -1,10 +1,20 @@
-$OpenBSD: patch-panels_printers_pp-new-printer-dialog_c,v 1.1.1.1 2011/09/12 07:29:32 ajacoutot Exp $
+$OpenBSD: patch-panels_printers_pp-new-printer-dialog_c,v 1.2 2011/09/12 17:24:56 ajacoutot Exp $
+
+Fix build with cups >=1.5.0.
 
 No PackageKit on OpenBSD.
 
 --- panels/printers/pp-new-printer-dialog.c.orig	Mon May  9 12:31:40 2011
-+++ panels/printers/pp-new-printer-dialog.c	Wed Jun  1 12:58:26 2011
-@@ -971,6 +971,7 @@ new_printer_add_button_cb (GtkButton *button,
++++ panels/printers/pp-new-printer-dialog.c	Mon Sep 12 19:12:04 2011
+@@ -31,6 +31,7 @@
+ #include <gtk/gtk.h>
+ 
+ #include <cups/cups.h>
++#include <cups/ppd.h>
+ 
+ #include "pp-new-printer-dialog.h"
+ #include "pp-utils.h"
+@@ -971,6 +972,7 @@ new_printer_add_button_cb (GtkButton *button,
                             pp->devices[device_id].device_uri,
                             pp->devices[device_id].device_location);
  
@@ -12,7 +22,7 @@ No PackageKit on OpenBSD.
            if (ppd_name == NULL || ppd_name->ppd_match_level < PPD_EXACT_MATCH)
              {
                /* Try PackageKit to install printer driver */
-@@ -1028,6 +1029,7 @@ new_printer_add_button_cb (GtkButton *button,
+@@ -1028,6 +1030,7 @@ new_printer_add_button_cb (GtkButton *button,
                    g_free (device_ids);
                  }
              }
@@ -20,7 +30,7 @@ No PackageKit on OpenBSD.
  
            /* Add the new printer */
            if (ppd_name && ppd_name->ppd_name)
-@@ -1154,8 +1156,10 @@ new_printer_add_button_cb (GtkButton *button,
+@@ -1154,8 +1157,10 @@ new_printer_add_button_cb (GtkButton *button,
  
  
                /* Set default PaperSize according to the locale */
