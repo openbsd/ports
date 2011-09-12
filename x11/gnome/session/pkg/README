@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.14 2011/09/12 07:28:54 jasper Exp $
+$OpenBSD: README,v 1.15 2011/09/12 08:05:37 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -20,34 +20,18 @@ install at least the following packages:
         gnome-power-manager \
         gnome-system-monitor \
         gnome-terminal \
-        gnome-util
+        gnome-utils
 
 Login into GNOME
 ================
 Login can be made using the GNOME Login Manager: GDM. Or you can add the
 following line corresponding to your login preference:
-    exec ${TRUEPREFIX}/bin/gnome-session
+    exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
 in ~/.xinitrc when using startx(1)
 in ~/.xsession when using xdm(1)
 
-If you want to use the ConsoleKit and Polkit frameworks and that you do
-not login using GDM, you will have to prepend the following line to your
-session startup command: ${LOCALBASE}/bin/ck-launch-session.
-    e.g. exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
-
 A note about accessibility
 ==========================
-If you want to make the GNOME applications "accessible" (e.g. nautilus),
-you'll need to install the libgail-gnome package which adds ATK
-interfaces for libbonoboui and libgnomeui widgets (see below).
-
-Note that the at-spi accessibility provider is being deprecated in favor
-of at-spi2. However the following applications are only able to work
-with the deprecated CORBA-based implementation: dasher, gok,
-libgail-gnome and gnome-mag.
-To enable it, run the following command:
-    gconftool-2 --set --type bool /desktop/gnome/interface/at-spi-corba true
-
 Dependency on a11y packages is never enforced so to activate an
 assistive technology you need to explicitely install the corresponding
 package (see "Accessibility" under the "Installing more package" section
