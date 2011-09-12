@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.465 2011/09/12 07:48:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.466 2011/09/12 08:13:31 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -189,7 +189,7 @@
      SUBDIR += piewm
      SUBDIR += pinot
      SUBDIR += podbrowser
-     SUBDIR += polkit-gnome,gtk2
+     SUBDIR += polkit-gnome
      SUBDIR += polkit-qt4
      SUBDIR += pwm
      SUBDIR += py-Xlib
