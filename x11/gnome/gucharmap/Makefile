@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/09/12 08:35:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2011/09/12 08:53:54 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -39,7 +39,6 @@ USE_LIBTOOL=		gnu
 MODGNOME_HELP_FILES=	Yes
 DESKTOP_FILES=		Yes
 MODGCONF2_SCHEMAS_DIR=	gucharmap
-
 
 LIB_DEPENDS+=		x11/gtk+3,-main
 
