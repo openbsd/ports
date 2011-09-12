@@ -1,22 +1,32 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/03/22 08:25:18 landry Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/09/12 18:23:26 jasper Exp $
 @bin bin/postler
 @bin bin/postler-mbsync
+share/applications/postler-compose.desktop
 share/applications/postler.desktop
 share/doc/postler/
 share/doc/postler/COPYING
 share/doc/postler/README
+share/icons/hicolor/scalable/actions/edit-undo-archive.svg
 share/icons/hicolor/scalable/apps/internet-mail.svg
+share/locale/ar/LC_MESSAGES/postler.mo
 share/locale/da/LC_MESSAGES/postler.mo
 share/locale/de/LC_MESSAGES/postler.mo
 share/locale/fi/LC_MESSAGES/postler.mo
+share/locale/fr/LC_MESSAGES/postler.mo
 share/locale/gl/LC_MESSAGES/postler.mo
 share/locale/he/LC_MESSAGES/postler.mo
+share/locale/hr/LC_MESSAGES/postler.mo
 share/locale/it/LC_MESSAGES/postler.mo
 share/locale/ja/LC_MESSAGES/postler.mo
+share/locale/nl/LC_MESSAGES/postler.mo
 share/locale/pl/LC_MESSAGES/postler.mo
 share/locale/pt/LC_MESSAGES/postler.mo
+share/locale/pt_BR/LC_MESSAGES/postler.mo
 share/locale/ru/LC_MESSAGES/postler.mo
+share/locale/sk/LC_MESSAGES/postler.mo
 share/locale/sv/LC_MESSAGES/postler.mo
+share/locale/ug/LC_MESSAGES/postler.mo
+share/locale/uk/LC_MESSAGES/postler.mo
 share/locale/zh_CN/LC_MESSAGES/postler.mo
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

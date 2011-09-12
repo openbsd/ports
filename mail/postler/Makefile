@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/12 18:02:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/12 18:23:26 jasper Exp $
 
 COMMENT =	lightweight mail user agent
 
-XFCE_VERSION =	0.1.1
+# git clone of 0d21f7a7c5d8281ae5302756433956bca0522660
+XFCE_VERSION =	0.1.1.1
 XFCE_GOODIE =	postler
-
-REVISION =	6
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail
@@ -17,6 +16,8 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 HOMEPAGE =	https://launchpad.net/postler
+MASTER_SITES =	http://distfiles.nl/
+EXTRACT_SUFX =	.tar.gz
 MODULES =	x11/xfce4 devel/waf
 
 DESKTOP_FILES =	Yes
@@ -28,7 +29,9 @@ LIB_DEPENDS =	www/webkit>=1.4.0v0 \
 		audio/libcanberra \
 		devel/libunique
 
-CONFIGURE_ARGS+=	--disable-libindicate
+CONFIGURE_ARGS+=	--disable-libindicate \
+			--disable-libfolks \
+			--disable-libstemmer
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		lang/vala>=0.12.0
