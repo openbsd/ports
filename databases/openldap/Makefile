@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2011/09/12 10:04:48 espie Exp $
+# $OpenBSD: Makefile,v 1.106 2011/09/12 21:02:23 naddy Exp $
 
 COMMENT-main=	Open source LDAP software (client)
 COMMENT-server=	Open source LDAP software (server)
@@ -78,7 +78,7 @@ CPPFLAGS +=		-I${LOCALBASE}/include/sasl
 
 LIB_DEPENDS-server =	${LIB_DEPENDS-main} \
 			textproc/icu4c \
-			db->=4.6.21,<5|db->=4.6.21v0,<5v0:databases/db/v4
+			databases/db/v4
 			
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include/sasl -I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib/db4 -L${LOCALBASE}/lib" 
