@@ -1,7 +1,6 @@
-$OpenBSD: patch-src_CameraTable_vala,v 1.3 2011/04/05 18:43:43 ajacoutot Exp $
-We don't have gudev.. won't be able to detect cameras
---- src/CameraTable.vala.orig	Mon Apr  4 19:54:29 2011
-+++ src/CameraTable.vala	Tue Apr  5 11:47:42 2011
+$OpenBSD: patch-src_camera_CameraTable_vala,v 1.1 2011/09/12 18:22:19 jasper Exp $
+--- src/camera/CameraTable.vala.orig	Mon Sep 12 18:36:24 2011
++++ src/camera/CameraTable.vala	Mon Sep 12 18:38:06 2011
 @@ -26,7 +26,6 @@ public class CameraTable {
      
      private static CameraTable instance = null;
@@ -19,7 +18,7 @@ We don't have gudev.. won't be able to detect cameras
          volume_monitor = VolumeMonitor.get();
          volume_monitor.volume_changed.connect(on_volume_changed);
          volume_monitor.volume_added.connect(on_volume_changed);
-@@ -105,31 +102,6 @@ public class CameraTable {
+@@ -105,30 +102,6 @@ public class CameraTable {
      private string[] get_all_usb_cameras() {
          string[] cameras = new string[0];
          
@@ -47,11 +46,10 @@ We don't have gudev.. won't be able to detect cameras
 -                cameras += camera;
 -            }
 -        }
--        
+         
          return cameras;
      }
-     
-@@ -204,24 +176,6 @@ public class CameraTable {
+@@ -204,24 +177,8 @@ public class CameraTable {
              "/dev/bus/usb/%s".printf(port.substring(4).replace(",", "/")) : null;
      }
      
@@ -72,11 +70,12 @@ We don't have gudev.. won't be able to detect cameras
 -        }
 -        return null;
 -    }
--
+ 
++
      private void update_camera_table() throws GPhotoError {
          // need to do this because virtual ports come and go in the USB world (and probably others)
          GPhoto.PortInfoList port_info_list;
-@@ -311,23 +265,6 @@ public class CameraTable {
+@@ -311,23 +268,6 @@ public class CameraTable {
                  continue;
              }
              
@@ -100,7 +99,7 @@ We don't have gudev.. won't be able to detect cameras
              if (null == display_name) {
                  // Default to GPhoto detected name.
                  display_name = name;
-@@ -365,13 +302,6 @@ public class CameraTable {
+@@ -365,13 +305,7 @@ public class CameraTable {
          }
      }
      
@@ -111,6 +110,7 @@ We don't have gudev.. won't be able to detect cameras
 -        // update to occur when they come in all at once
 -        camera_update_scheduler.after_timeout(UPDATE_DELAY_MSEC, true);
 -    }
++
      
      public void on_volume_changed(Volume volume) {
          camera_update_scheduler.after_timeout(UPDATE_DELAY_MSEC, true);

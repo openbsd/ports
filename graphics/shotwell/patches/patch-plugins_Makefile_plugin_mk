@@ -1,7 +1,7 @@
-$OpenBSD: patch-plugins_Makefile_plugin_mk,v 1.1 2011/04/05 18:43:43 ajacoutot Exp $
---- plugins/Makefile.plugin.mk.orig	Mon Apr  4 19:54:27 2011
-+++ plugins/Makefile.plugin.mk	Tue Apr  5 11:13:32 2011
-@@ -32,7 +32,7 @@ SRC_FILES := ../common/Resources.vala $(SRC_FILES)
+$OpenBSD: patch-plugins_Makefile_plugin_mk,v 1.2 2011/09/12 18:22:19 jasper Exp $
+--- plugins/Makefile.plugin.mk.orig	Thu Sep  8 20:56:57 2011
++++ plugins/Makefile.plugin.mk	Mon Sep 12 18:46:08 2011
+@@ -32,16 +32,16 @@ SRC_FILES := ../common/Resources.vala $(SRC_FILES)
  CFILES := $(notdir $(SRC_FILES:.vala=.c))
  OFILES := $(notdir $(SRC_FILES:.vala=.o))
  
@@ -10,9 +10,11 @@ $OpenBSD: patch-plugins_Makefile_plugin_mk,v 1.1 2011/04/05 18:43:43 ajacoutot E
  LDFLAGS := `pkg-config --print-errors --libs $(EXT_PKGS)` $(LDFLAGS)
  DEFINES := -D_VERSION='"$(PLUGINS_VERSION)"' -DGETTEXT_PACKAGE='"shotwell"'
  
-@@ -41,7 +41,7 @@ all: $(PLUGIN).so
+ all: $(PLUGIN).so
+ 
  .stamp: $(SRC_FILES) $(MAKE_FILES) $(HEADER_FILES)
- 	$(VALAC) -g --enable-checking --fatal-warnings --save-temps --compile \
+-	$(VALAC) -g --enable-checking --fatal-warnings --save-temps --compile \
++	$(VALAC) -g --enable-checking --save-temps --compile \
  		--vapidir=../ $(foreach pkg,$(PKGS),--pkg=$(pkg)) \
 -		-X -I../.. -X -fPIC \
 +		-X -I${LOCALBASE}/include -X -I../.. -X -fPIC \

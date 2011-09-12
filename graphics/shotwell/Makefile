@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/12 15:50:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/12 18:22:19 jasper Exp $
 
 COMMENT =	digital photo organizer
 
-DISTNAME =	shotwell-0.9.1
+DISTNAME =	shotwell-0.11.1
 CATEGORIES =	graphics
-MASTER_SITES =	http://yorba.org/download/shotwell/0.9/
+MASTER_SITES =	http://yorba.org/download/shotwell/0.11/
 HOMEPAGE =	http://yorba.org/shotwell/
-REVISION =	2
+EXTRACT_SUFX =	.tar.bz2
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -14,19 +14,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 c cairo
+WANTLIB += drm exif exiv2 expat fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gee gexiv2 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gphoto2 gphoto2_port gstbase-0.10 gstpbutils-0.10
+WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pixman-1 png pthread pthread-stubs
+WANTLIB += soup-2.4 sqlite3 stdc++ unique-1.0 usb webkitgtk-1.0
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
-WANTLIB =	X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes Xi \
-		Xinerama Xrandr Xrender atk-1.0 c cairo expat fontconfig \
-		freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 png \
-		pthread-stubs xcb z ORBit-2 exif json-glib-1.0 \
-		gconf-2 gthread-2.0 pthread soup-2.4 sqlite3 usb \
-		xcb-render xml2 exiv2 stdc++ gee gphoto2 gstbase-0.10 gstreamer-0.10 \
-		gphoto2_port unique-1.0 webkitgtk-1.0 raw gexiv2 gdk-x11-2.0 \
-		gdk_pixbuf-2.0 gtk-x11-2.0 GL Xxf86vm drm xcb-shm
-
-MODULES =	devel/gettext x11/gnome devel/gconf2
+MODULES =	devel/gettext x11/gnome
 
 MODGNOME_HELP_FILES =	Yes
 DESKTOP_FILES =		yes
@@ -38,7 +36,6 @@ BUILD_DEPENDS =	lang/vala>=0.12
 LIB_DEPENDS =	x11/gtk+2 \
 		graphics/libgexiv2 \
 		graphics/libraw \
-		devel/json-glib \
 		www/webkit>=1.4.0v0 \
 		devel/libunique \
 		devel/libgee \
@@ -47,7 +44,7 @@ LIB_DEPENDS =	x11/gtk+2 \
 NO_REGRESS =	Yes
 # beware : configure is an horrible homemade shell script
 CONFIGURE_STYLE =	simple
-CONFIGURE_ARGS =	--disable-schemas-install \
+CONFIGURE_ARGS =	--disable-schemas-compile \
 			--disable-desktop-update \
 			--disable-icon-update
 
