@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/09/12 18:20:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2011/09/12 18:21:38 jasper Exp $
 
 COMMENT=		XML parser that extends the Vala.Parser
 
@@ -37,8 +37,5 @@ AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE=	autoconf gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-#pre-configure:
-#	${SETENV} AUTOCONF_VERSION=${AUTOCONF_VERSION} autoconf
 
 .include <bsd.port.mk>
