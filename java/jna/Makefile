@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/01 08:05:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/12 12:50:24 nigel Exp $
 
 COMMENT=	Java Native Access (JNA)
 
@@ -33,11 +33,16 @@ BUILD_DEPENDS=	sysutils/ggrep
 
 WRKDIST= 	${WRKDIR}/twall-jna-d928d42/
 
+_BD = build
+.if ${MACHINE_ARCH} != "i386"
+_BD = build-*
+.endif
+
 do-install:
 	${INSTALL_DATA_DIR} ${MODJAVA_JAR_DIR} ${MODJAVA_DOC_DIR}/jna/
-	${INSTALL_DATA} ${WRKSRC}/jnalib/build-*/openbsd-${ARCH}.jar \
+	${INSTALL_DATA} ${WRKSRC}/jnalib/${_BD}/openbsd-${ARCH}.jar \
 		${MODJAVA_JAR_DIR}/jna-platform.jar
-	${INSTALL_DATA} ${WRKSRC}/jnalib/build-*/jna.jar ${MODJAVA_JAR_DIR}
+	${INSTALL_DATA} ${WRKSRC}/jnalib/${_BD}/jna.jar ${MODJAVA_JAR_DIR}
 	cp -r ${WRKSRC}/www/javadoc/ ${MODJAVA_DOC_DIR}
 
 do-regress:
