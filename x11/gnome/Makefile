@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.160 2011/09/12 14:38:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.161 2011/09/13 13:01:32 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -25,6 +25,7 @@
      SUBDIR += games-extra-data
      SUBDIR += gcalctool
      SUBDIR += gdl
+     SUBDIR += gdl1
      SUBDIR += gdm
      SUBDIR += gedit
      SUBDIR += gedit-plugins
