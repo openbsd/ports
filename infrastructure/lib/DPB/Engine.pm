@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.25 2011/06/03 13:38:58 espie Exp $
+# $OpenBSD: Engine.pm,v 1.26 2011/09/13 09:46:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -211,6 +211,15 @@ sub end_build
 	$self->{engine}{heuristics}->finish_special($v);
 }
 
+# for fetch-only, we do the same as Build, except we're never happy
+package DPB::SubEngine::NoBuild;
+
+our @ISA = qw(DPB::SubEngine::Build);
+sub is_done
+{
+	return 0;
+}
+
 package DPB::SubEngine::Fetch;
 our @ISA = qw(DPB::SubEngine);
 sub new_queue
@@ -266,7 +275,8 @@ sub new
 	    locks => [],
 	    requeued => [],
 	    ignored => []}, $class;
-	$o->{buildable} = DPB::SubEngine::Build->new($o, $state->builder);
+	$o->{buildable} = ($state->{fetch_only} ? "DPB::SubEngine::NoBuild"
+	    : "DPB::SubEngine::Build")->new($o, $state->builder);
 	if ($state->opt('f')) {
 		$o->{tofetch} = DPB::SubEngine::Fetch->new($o);
 	}
@@ -331,7 +341,9 @@ sub fetchcount
 {
 	my ($self, $q, $t)= @_;
 	return () unless defined $self->{tofetch};
-	if ($q < 30) {
+	if ($self->{state}{fetch_only}) {
+		$self->{tofetch}{queue}->set_fetchonly;
+	} elsif ($q < 30) {
 		$self->{tofetch}{queue}->set_h1;
 	} else {
 		$self->{tofetch}{queue}->set_h2;
@@ -372,7 +384,7 @@ sub stats
 	my $line = $self->statline;
 	if ($line ne $self->{statline}) {
 		$self->{statline} = $line;
-		print $fh $self->{ts}, " ", $line, "\n";
+		print $fh $$, " ", $self->{ts}, " ", $line, "\n";
 	}
 }
 
@@ -511,7 +523,8 @@ sub new_path
 			$self->log_fetch($v);
 			delete $v->{info}{FETCH_MANUALLY};
 		}
-		if (defined $v->{info}{IGNORE}) {
+		if (defined $v->{info}{IGNORE} && 
+		    !$self->{state}->{fetch_only}) {
 			push(@{$self->{ignored}}, $v);
 			return;
 		}

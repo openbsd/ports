@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Heuristics.pm,v 1.9 2011/07/14 11:03:13 espie Exp $
+# $OpenBSD: Heuristics.pm,v 1.10 2011/09/13 09:46:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -498,6 +498,11 @@ sub set_h2
 	bless shift, "DPB::Heuristics::FetchQueue2";
 }
 
+sub set_fetchonly
+{
+	bless shift, "DPB::Heuristics::FetchOnlyQueue";
+}
+
 sub sorted
 {
 	my $self = shift;
@@ -544,6 +549,16 @@ sub sorted_values
 	return [sort
 	    {$h->measure($a->{path}) <=> $h->measure($b->{path})}
 	    @l];
+}
+
+package DPB::Heuristics::FetchOnlyQueue;
+our @ISA = qw(DPB::Heuristics::FetchQueue);
+
+# for fetch-only, grab all files, largest ones first.
+sub sorted_values
+{
+	my $self = shift;
+	return [sort {$a->{sz} <=> $b->{sz}} values %{$self->{o}}];
 }
 
 1;

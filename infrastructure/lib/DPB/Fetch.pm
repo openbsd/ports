@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.14 2011/08/30 17:44:28 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.15 2011/09/13 09:46:53 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -183,7 +183,7 @@ sub read_checksums
 
 sub build_distinfo
 {
-	my ($self, $h) = @_;
+	my ($self, $h, $fetch_only) = @_;
 	my $distinfo = {};
 	for my $v (values %$h) {
 		my $info = $v->{info};
@@ -222,7 +222,10 @@ sub build_distinfo
 			$files->{$file} = $file;
 		}
 		for my $d (keys %{$info->{SUPDISTFILES}}) {
-			&$build($d);
+			my $file = &$build($d);
+			if ($fetch_only) {
+				$files->{$file} = $file;
+			}
 		}
 		for my $k (qw(DIST_SUBDIR CHECKSUM_FILE DISTFILES
 		    PATCHFILES SUPDISTFILES MASTER_SITES MASTER_SITES0
