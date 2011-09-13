@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/20 18:05:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/13 06:59:46 jasper Exp $
 
 COMMENT = 	Perl interface to Git repositories
 
 MODULES =	cpan
-DISTNAME =	Git-Repository-1.21
+DISTNAME =	Git-Repository-1.22
 CATEGORIES =	devel
 USE_GROFF =	Yes
 
