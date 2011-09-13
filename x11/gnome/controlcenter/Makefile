@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/09/12 12:04:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2011/09/13 06:39:11 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.0.2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gnome-control-center      0.0 # 1.0
 
@@ -18,19 +18,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
-WANTLIB += GL ICE ORBit-2 SM X11 X11-xcb Xau Xcomposite Xcursor
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += Xxf86vm asn1 atk-1.0 c cairo cairo-gobject crypto cups
-WANTLIB += dbus-1 dbus-glib-1 drm execinfo expat fontconfig freetype
+WANTLIB += GL ORBit-2 X11 X11-xcb Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += asn1 atk-1.0 c cairo cairo-gobject crypto cups dbus-1
+WANTLIB += dbus-glib-1 drm execinfo expat fontconfig freetype
 WANTLIB += gconf-2 gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gnome-desktop-3 gnome-menu gnomekbd gnomekbdui gobject-2.0
 WANTLIB += gssapi gthread-2.0 gtk-3 gtop-2.0 krb5 kvm m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png polkit-gobject-1
-WANTLIB += pthread pthread-stubs ssl startup-notification-1 upower-glib
-WANTLIB += xcb xcb-atom xcb-aux xcb-event xcb-render xcb-shm xkbfile
-WANTLIB += xklavier xml2 z
+WANTLIB += pthread pthread-stubs ssl startup-notification-1 xcb
+WANTLIB += xcb-aux xcb-render xcb-shm xkbfile xklavier xml2 z
+
+EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext \
 			x11/gnome

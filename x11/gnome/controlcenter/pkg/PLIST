@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.14 2011/09/12 07:31:17 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.15 2011/09/13 06:39:11 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @pkgpath x11/gnome/controlcenter2
@@ -177,6 +177,7 @@ share/gnome-control-center/ui/user-accounts/language-chooser.ui
 share/gnome-control-center/ui/user-accounts/password-dialog.ui
 share/gnome-control-center/ui/user-accounts/photo-dialog.ui
 share/gnome-control-center/ui/user-accounts/user-accounts-dialog.ui
+share/gnome/help/
 share/gnome/help/control-center/
 share/gnome/help/control-center/C/
 share/gnome/help/control-center/C/config-accessibility-keyboard.xml
