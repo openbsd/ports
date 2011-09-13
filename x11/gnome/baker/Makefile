@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/12 12:04:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/13 05:44:43 ajacoutot Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
@@ -16,8 +16,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB=	ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp \
 		Xext Xfixes Xi Xinerama Xrandr Xrender art_lgpl_2 atk-1.0 \
