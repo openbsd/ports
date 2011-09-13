@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/05 12:38:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/13 07:00:48 jasper Exp $
 
 COMMENT =		ebook management application
 
-# 0.7.46 and higher have problems repainting their windows..
-DISTNAME =		calibre-0.8.17
+DISTNAME =		calibre-0.8.18
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 
