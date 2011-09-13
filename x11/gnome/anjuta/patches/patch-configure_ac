@@ -1,0 +1,27 @@
+$OpenBSD: patch-configure_ac,v 1.1 2011/09/13 08:37:47 jasper Exp $
+--- configure.ac.orig	Mon Sep  5 14:29:14 2011
++++ configure.ac	Tue Sep 13 10:24:13 2011
+@@ -79,10 +79,7 @@ AC_PROG_LEX
+ if test "$LEX" != "flex"; then
+ 	AC_MSG_ERROR(flex is required)
+ fi
+-AC_PROG_YACC
+-if test "$YACC" != "bison -y"; then
+-	AC_MSG_ERROR(bison is required)
+-fi
++YACC="bison -y"
+ AC_LANG([C])
+ AC_LANG([C++])
+ AC_PROG_CXX
+@@ -285,10 +282,7 @@ fi
+ 
+ AM_CONDITIONAL(HAVE_PYTHON, [test x$have_python = xyes])
+ 
+-PKG_CHECK_MODULES([PLUGIN_SYMBOL_DB],
+-     [libgda-5.0 >= $GDA5_REQUIRED],,
+-     [PKG_CHECK_MODULES([PLUGIN_SYMBOL_DB],
+-         [libgda-4.0 >= $GDA4_REQUIRED])])
++PKG_CHECK_MODULES([PLUGIN_SYMBOL_DB], [])
+ 
+ dnl Setup Anjuta Library flags
+ dnl --------------------------
