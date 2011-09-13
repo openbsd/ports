@@ -1,2 +1,0 @@
-@comment $OpenBSD: PLIST-gnome,v 1.2 2008/10/14 02:16:46 kevlo Exp $
-@bin libexec/uim-toolbar-applet

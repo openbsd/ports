@@ -1,13 +1,10 @@
-@comment $OpenBSD: PLIST-gtk,v 1.6 2010/09/30 07:28:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST-gtk,v 1.7 2011/09/13 06:42:50 jasper Exp $
 @bin bin/uim-dict-gtk
 @bin bin/uim-im-switcher-gtk
 @bin bin/uim-input-pad-ja
 @bin bin/uim-pref-gtk
 @bin bin/uim-toolbar-gtk
 @bin bin/uim-toolbar-gtk-systray
-lib/bonobo/
-lib/bonobo/servers/
-lib/bonobo/servers/GNOME_UimApplet.server
 @comment lib/gtk-2.0/2.10.0/immodules/im-uim.a
 @comment lib/gtk-2.0/2.10.0/immodules/im-uim.la
 lib/gtk-2.0/2.10.0/immodules/im-uim.so

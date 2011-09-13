@@ -1,5 +1,6 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2009/12/21 21:25:28 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2011/09/13 06:42:50 jasper Exp $
 @pkgpath inputmethods/uim
+@pkgpath inputmethods/uim,-gnome
 @bin bin/uim-el-agent
 @bin bin/uim-el-helper-agent
 @bin bin/uim-fep

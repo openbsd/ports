@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.34 2011/06/06 15:10:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.35 2011/09/13 06:42:50 jasper Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
 COMMENT-qt=	uim for QT
 COMMENT-kde=	uim for KDE
-COMMENT-gnome=	uim for GNOME
 
 SHARED_ONLY=	Yes
 CATEGORIES=	inputmethods japanese chinese
@@ -17,13 +16,11 @@ PKGNAME-main=	uim-$V
 PKGNAME-gtk=	uim-gtk-$V
 PKGNAME-qt=	uim-qt-$V
 PKGNAME-kde=	uim-kde-$V
-PKGNAME-gnome=	uim-gnome-$V
 
-REVISION-main=	4
-REVISION-gtk=	7
+REVISION-main=	5
+REVISION-gtk=	8
 REVISION-qt=	3
 REVISION-kde=	3
-REVISION-gnome=	9
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
@@ -36,7 +33,7 @@ SHARED_LIBS +=	uim-scm              0.0      # .0.0
 SHARED_LIBS +=	uim                  1.0      # .6.0
 SHARED_LIBS +=	uim-custom           0.0      # .2.0
 
-MULTI_PACKAGES=	-main -gtk -qt -kde -gnome
+MULTI_PACKAGES=	-main -gtk -qt -kde
 
 CONFIGURE_STYLE=	autoconf
 
@@ -66,7 +63,7 @@ WANTLIB-main=	${Wcommon} curses \
 
 uim_LIB_DEPENDS=inputmethods/uim
 
-#common to -qt, -kde, -gtk and -gnome
+#common to -qt, -kde, and -gtk
 Wx =	GL Xinerama Xrandr Xcursor Xdamage Xfixes Xi Xxf86vm drm
 
 LIB_DEPENDS-qt=		${MODQT_LIB_DEPENDS} \
@@ -91,25 +88,12 @@ WANTLIB-kde =	${Wqt} idn util art_lgpl_2 kdecore>=7 DCOP kdefx kdeui \
 LIB_DEPENDS-gtk =	${LIB_DEPENDS-main} ${uim_LIB_DEPENDS} \
 			x11/gtk+2
 
-#common to -gtk and -gnome
-Wgtk =		${Wcommon} ${Wx} gio-2.0 glib-2.0 gmodule-2.0 pangoft2-1.0 \
+WANTLIB-gtk=	${Wcommon} ${Wx} gio-2.0 glib-2.0 gmodule-2.0 pangoft2-1.0 \
 		gobject-2.0 pango-1.0 atk-1.0 uim gcroots uim-scm \
 		pangocairo-1.0 cairo png Xcomposite xcb-render xcb-shm \
 		pcre pixman-1 gtk-x11-2.0 \
-		gdk-x11-2.0 gdk_pixbuf-2.0 gthread-2.0 pthread
-
-WANTLIB-gtk=	${Wgtk} anthy anthydic uim-custom
-
-LIB_DEPENDS-gnome =	inputmethods/uim \
-			x11/gtk+2 \
-			x11/gnome/panel
-
-WANTLIB-gnome=	${Wgtk} ICE SM crypto gthread-2.0 pthread ssl \
-		ORBit-2 ORBitCosNaming-2 art_lgpl_2 bonobo-2 \
-		bonobo-activation gconf-2 gnome-2 gnomecanvas-2 \
-		popt xml2 bonoboui-2 gnome-keyring gnomevfs-2 \
-		dbus-1 dbus-glib-1 gailutil util panel-applet-2 \
-		canberra gcrypt gpg-error ltdl ogg vorbis vorbisfile
+		gdk-x11-2.0 gdk_pixbuf-2.0 gthread-2.0 pthread anthy anthydic \
+		uim-custom
 
 MAKE_FLAGS=	moduledir='${LOCALBASE}/lib/gtk-2.0/2.10.0/immodules' \
 		UIM_QT_LDFLAGS='-pthread -L${X11BASE}/lib -L${MODQT_LIBDIR} -lqt-mt -lXext -lX11' \
