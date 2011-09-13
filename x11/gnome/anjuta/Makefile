@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/09/13 09:20:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2011/09/13 11:07:32 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.1.91
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -96,5 +96,11 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/plugins/project-wizard/templates/python.wiz.in \
 		${WRKSRC}/plugins/project-wizard/templates/pygtk/src/main.py \
 		${WRKSRC}/plugins/project-wizard/templates/python/src/main.py
+
+# XXX cf .patch-manuals_anjuta-manual_Makefile_in
+post-install:
+	rm ${PREFIX}/share/gnome/help/anjuta-manual/C/figures/anjuta_logo.png
+	${INSTALL_DATA} ${WRKSRC}/pixmaps/anjuta_logo.png \
+		${PREFIX}/share/gnome/help/anjuta-manual/C/figures/anjuta_logo.png
 
 .include <bsd.port.mk>

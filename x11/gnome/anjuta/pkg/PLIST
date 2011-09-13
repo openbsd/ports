@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.12 2011/09/13 09:20:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.13 2011/09/13 11:07:32 ajacoutot Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -599,6 +599,8 @@ share/gnome/help/anjuta-manual/C/debug-thread.page
 share/gnome/help/anjuta-manual/C/debug-tips.page
 share/gnome/help/anjuta-manual/C/debug-watch.page
 share/gnome/help/anjuta-manual/C/directory-project-backend.page
+share/gnome/help/anjuta-manual/C/figures/
+share/gnome/help/anjuta-manual/C/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/C/index.page
 share/gnome/help/anjuta-manual/C/project-manager-file.page
 share/gnome/help/anjuta-manual/C/project-manager-library.page
@@ -640,6 +642,8 @@ share/gnome/help/anjuta-manual/cs/debug-thread.page
 share/gnome/help/anjuta-manual/cs/debug-tips.page
 share/gnome/help/anjuta-manual/cs/debug-watch.page
 share/gnome/help/anjuta-manual/cs/directory-project-backend.page
+share/gnome/help/anjuta-manual/cs/figures/
+share/gnome/help/anjuta-manual/cs/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/cs/index.page
 share/gnome/help/anjuta-manual/cs/project-manager-file.page
 share/gnome/help/anjuta-manual/cs/project-manager-library.page
@@ -681,6 +685,8 @@ share/gnome/help/anjuta-manual/da/debug-thread.page
 share/gnome/help/anjuta-manual/da/debug-tips.page
 share/gnome/help/anjuta-manual/da/debug-watch.page
 share/gnome/help/anjuta-manual/da/directory-project-backend.page
+share/gnome/help/anjuta-manual/da/figures/
+share/gnome/help/anjuta-manual/da/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/da/index.page
 share/gnome/help/anjuta-manual/da/project-manager-file.page
 share/gnome/help/anjuta-manual/da/project-manager-library.page
@@ -722,6 +728,8 @@ share/gnome/help/anjuta-manual/de/debug-thread.page
 share/gnome/help/anjuta-manual/de/debug-tips.page
 share/gnome/help/anjuta-manual/de/debug-watch.page
 share/gnome/help/anjuta-manual/de/directory-project-backend.page
+share/gnome/help/anjuta-manual/de/figures/
+share/gnome/help/anjuta-manual/de/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/de/index.page
 share/gnome/help/anjuta-manual/de/project-manager-file.page
 share/gnome/help/anjuta-manual/de/project-manager-library.page
@@ -763,6 +771,8 @@ share/gnome/help/anjuta-manual/el/debug-thread.page
 share/gnome/help/anjuta-manual/el/debug-tips.page
 share/gnome/help/anjuta-manual/el/debug-watch.page
 share/gnome/help/anjuta-manual/el/directory-project-backend.page
+share/gnome/help/anjuta-manual/el/figures/
+share/gnome/help/anjuta-manual/el/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/el/index.page
 share/gnome/help/anjuta-manual/el/project-manager-file.page
 share/gnome/help/anjuta-manual/el/project-manager-library.page
@@ -804,6 +814,8 @@ share/gnome/help/anjuta-manual/es/debug-thread.page
 share/gnome/help/anjuta-manual/es/debug-tips.page
 share/gnome/help/anjuta-manual/es/debug-watch.page
 share/gnome/help/anjuta-manual/es/directory-project-backend.page
+share/gnome/help/anjuta-manual/es/figures/
+share/gnome/help/anjuta-manual/es/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/es/index.page
 share/gnome/help/anjuta-manual/es/project-manager-file.page
 share/gnome/help/anjuta-manual/es/project-manager-library.page
@@ -845,6 +857,8 @@ share/gnome/help/anjuta-manual/eu/debug-thread.page
 share/gnome/help/anjuta-manual/eu/debug-tips.page
 share/gnome/help/anjuta-manual/eu/debug-watch.page
 share/gnome/help/anjuta-manual/eu/directory-project-backend.page
+share/gnome/help/anjuta-manual/eu/figures/
+share/gnome/help/anjuta-manual/eu/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/eu/index.page
 share/gnome/help/anjuta-manual/eu/project-manager-file.page
 share/gnome/help/anjuta-manual/eu/project-manager-library.page
@@ -886,6 +900,8 @@ share/gnome/help/anjuta-manual/fr/debug-thread.page
 share/gnome/help/anjuta-manual/fr/debug-tips.page
 share/gnome/help/anjuta-manual/fr/debug-watch.page
 share/gnome/help/anjuta-manual/fr/directory-project-backend.page
+share/gnome/help/anjuta-manual/fr/figures/
+share/gnome/help/anjuta-manual/fr/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/fr/index.page
 share/gnome/help/anjuta-manual/fr/project-manager-file.page
 share/gnome/help/anjuta-manual/fr/project-manager-library.page
@@ -927,6 +943,8 @@ share/gnome/help/anjuta-manual/ja/debug-thread.page
 share/gnome/help/anjuta-manual/ja/debug-tips.page
 share/gnome/help/anjuta-manual/ja/debug-watch.page
 share/gnome/help/anjuta-manual/ja/directory-project-backend.page
+share/gnome/help/anjuta-manual/ja/figures/
+share/gnome/help/anjuta-manual/ja/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/ja/index.page
 share/gnome/help/anjuta-manual/ja/project-manager-file.page
 share/gnome/help/anjuta-manual/ja/project-manager-library.page
@@ -968,6 +986,8 @@ share/gnome/help/anjuta-manual/oc/debug-thread.page
 share/gnome/help/anjuta-manual/oc/debug-tips.page
 share/gnome/help/anjuta-manual/oc/debug-watch.page
 share/gnome/help/anjuta-manual/oc/directory-project-backend.page
+share/gnome/help/anjuta-manual/oc/figures/
+share/gnome/help/anjuta-manual/oc/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/oc/index.page
 share/gnome/help/anjuta-manual/oc/project-manager-file.page
 share/gnome/help/anjuta-manual/oc/project-manager-library.page
@@ -1009,6 +1029,8 @@ share/gnome/help/anjuta-manual/pt_BR/debug-thread.page
 share/gnome/help/anjuta-manual/pt_BR/debug-tips.page
 share/gnome/help/anjuta-manual/pt_BR/debug-watch.page
 share/gnome/help/anjuta-manual/pt_BR/directory-project-backend.page
+share/gnome/help/anjuta-manual/pt_BR/figures/
+share/gnome/help/anjuta-manual/pt_BR/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/pt_BR/index.page
 share/gnome/help/anjuta-manual/pt_BR/project-manager-file.page
 share/gnome/help/anjuta-manual/pt_BR/project-manager-library.page
@@ -1050,6 +1072,8 @@ share/gnome/help/anjuta-manual/sl/debug-thread.page
 share/gnome/help/anjuta-manual/sl/debug-tips.page
 share/gnome/help/anjuta-manual/sl/debug-watch.page
 share/gnome/help/anjuta-manual/sl/directory-project-backend.page
+share/gnome/help/anjuta-manual/sl/figures/
+share/gnome/help/anjuta-manual/sl/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/sl/index.page
 share/gnome/help/anjuta-manual/sl/project-manager-file.page
 share/gnome/help/anjuta-manual/sl/project-manager-library.page
@@ -1091,6 +1115,8 @@ share/gnome/help/anjuta-manual/sv/debug-thread.page
 share/gnome/help/anjuta-manual/sv/debug-tips.page
 share/gnome/help/anjuta-manual/sv/debug-watch.page
 share/gnome/help/anjuta-manual/sv/directory-project-backend.page
+share/gnome/help/anjuta-manual/sv/figures/
+share/gnome/help/anjuta-manual/sv/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/sv/index.page
 share/gnome/help/anjuta-manual/sv/project-manager-file.page
 share/gnome/help/anjuta-manual/sv/project-manager-library.page
@@ -1132,6 +1158,8 @@ share/gnome/help/anjuta-manual/th/debug-thread.page
 share/gnome/help/anjuta-manual/th/debug-tips.page
 share/gnome/help/anjuta-manual/th/debug-watch.page
 share/gnome/help/anjuta-manual/th/directory-project-backend.page
+share/gnome/help/anjuta-manual/th/figures/
+share/gnome/help/anjuta-manual/th/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/th/index.page
 share/gnome/help/anjuta-manual/th/project-manager-file.page
 share/gnome/help/anjuta-manual/th/project-manager-library.page
@@ -1173,6 +1201,8 @@ share/gnome/help/anjuta-manual/uk/debug-thread.page
 share/gnome/help/anjuta-manual/uk/debug-tips.page
 share/gnome/help/anjuta-manual/uk/debug-watch.page
 share/gnome/help/anjuta-manual/uk/directory-project-backend.page
+share/gnome/help/anjuta-manual/uk/figures/
+share/gnome/help/anjuta-manual/uk/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/uk/index.page
 share/gnome/help/anjuta-manual/uk/project-manager-file.page
 share/gnome/help/anjuta-manual/uk/project-manager-library.page
@@ -1214,6 +1244,8 @@ share/gnome/help/anjuta-manual/zh_CN/debug-thread.page
 share/gnome/help/anjuta-manual/zh_CN/debug-tips.page
 share/gnome/help/anjuta-manual/zh_CN/debug-watch.page
 share/gnome/help/anjuta-manual/zh_CN/directory-project-backend.page
+share/gnome/help/anjuta-manual/zh_CN/figures/
+share/gnome/help/anjuta-manual/zh_CN/figures/anjuta_logo.png
 share/gnome/help/anjuta-manual/zh_CN/index.page
 share/gnome/help/anjuta-manual/zh_CN/project-manager-file.page
 share/gnome/help/anjuta-manual/zh_CN/project-manager-library.page
