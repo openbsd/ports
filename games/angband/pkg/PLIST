@@ -1,34 +1,41 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/05/11 06:56:42 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/09/13 10:28:39 edd Exp $
 @extraunexec rm /var/games/angband/*/* 2>/dev/null || true
 @group games
 @mode g+s
-bin/angband
+@bin bin/angband
 @mode
 share/angband/
-@comment share/angband/apex/
-@comment share/angband/bone/
-@comment share/angband/data/
 share/angband/edit/
 share/angband/edit/artifact.txt
-share/angband/edit/cost_adj.txt
 share/angband/edit/ego_item.txt
 share/angband/edit/flavor.txt
+share/angband/edit/hints.txt
 share/angband/edit/limits.txt
 share/angband/edit/monster.txt
+share/angband/edit/monster_base.txt
+share/angband/edit/names.txt
 share/angband/edit/object.txt
+share/angband/edit/object_base.txt
 share/angband/edit/p_class.txt
 share/angband/edit/p_hist.txt
 share/angband/edit/p_race.txt
+share/angband/edit/pain.txt
+share/angband/edit/pit.txt
 share/angband/edit/shop_own.txt
+share/angband/edit/spell.txt
+share/angband/edit/store.txt
 share/angband/edit/terrain.txt
 share/angband/edit/vault.txt
 share/angband/file/
+share/angband/file/crown.txt
 share/angband/file/dead.txt
 share/angband/file/news.txt
 share/angband/help/
+share/angband/help/330.txt
 share/angband/help/attack.txt
 share/angband/help/birth.txt
 share/angband/help/command.txt
+share/angband/help/debug.txt
 share/angband/help/dungeon.txt
 share/angband/help/general.txt
 share/angband/help/help.hlp
@@ -36,62 +43,93 @@ share/angband/help/option.txt
 share/angband/help/playing.txt
 share/angband/help/version.txt
 share/angband/info/
+share/angband/info/readme.txt
 share/angband/pref/
 share/angband/pref/flvr-dvg.prf
 share/angband/pref/flvr-new.prf
+share/angband/pref/flvr-nmd.prf
 share/angband/pref/flvr-xxx.prf
-share/angband/pref/font-ami.prf
-share/angband/pref/font-dos.prf
-share/angband/pref/font-ibm.prf
+share/angband/pref/font-gcu.prf
 share/angband/pref/font-mac.prf
+share/angband/pref/font-sdl.prf
 share/angband/pref/font-win.prf
 share/angband/pref/font-x11.prf
 share/angband/pref/font-xxx.prf
 share/angband/pref/font.prf
-share/angband/pref/graf-ami.prf
 share/angband/pref/graf-dvg.prf
-share/angband/pref/graf-gcu.prf
-share/angband/pref/graf-ibm.prf
-share/angband/pref/graf-lsl.prf
-share/angband/pref/graf-mac.prf
 share/angband/pref/graf-new.prf
-share/angband/pref/graf-win.prf
-share/angband/pref/graf-x11.prf
+share/angband/pref/graf-nmd.prf
 share/angband/pref/graf-xxx.prf
 share/angband/pref/graf.prf
 share/angband/pref/message.prf
-share/angband/pref/pref-acn.prf
-share/angband/pref/pref-ami.prf
-share/angband/pref/pref-dos.prf
-share/angband/pref/pref-emx.prf
-share/angband/pref/pref-gcu.prf
-share/angband/pref/pref-mac.prf
-share/angband/pref/pref-win.prf
-share/angband/pref/pref-x11.prf
 share/angband/pref/pref.prf
-share/angband/pref/user-mac.prf
 share/angband/pref/user.prf
 share/angband/pref/xtra-dvg.prf
 share/angband/pref/xtra-new.prf
+share/angband/pref/xtra-nmd.prf
 share/angband/pref/xtra-xxx.prf
-@comment share/angband/save/
-share/angband/script/
-share/angband/script/birth.lua
-share/angband/script/event.lua
-share/angband/script/init.lua
-share/angband/script/object.lua
-share/angband/script/player.lua
-share/angband/script/spell.lua
-share/angband/script/store.lua
-share/angband/script/test.lua
-share/angband/script/trace.lua
-share/angband/user/
 share/angband/xtra/
+share/angband/xtra/angband.glade
 share/angband/xtra/font/
-share/angband/xtra/font/16x16.txt
+share/angband/xtra/font/10x14x.fon
+share/angband/xtra/font/10x14xb.fon
+share/angband/xtra/font/10x20x.fon
+share/angband/xtra/font/12x18x.fon
+share/angband/xtra/font/12x24x.fon
+share/angband/xtra/font/16x16x.fon
+share/angband/xtra/font/16x24x.fon
+share/angband/xtra/font/5x8x.fon
+share/angband/xtra/font/6x10x.fon
+share/angband/xtra/font/6x12x.fon
+share/angband/xtra/font/6x13x.fon
+share/angband/xtra/font/6x13xb.fon
+share/angband/xtra/font/7x13x.fon
+share/angband/xtra/font/7x13xb.fon
+share/angband/xtra/font/8x12x.fon
+share/angband/xtra/font/8x12xb.fon
+share/angband/xtra/font/8x13x.fon
+share/angband/xtra/font/8x16x.fon
+share/angband/xtra/font/8x8x.fon
+share/angband/xtra/font/8x8xb.fon
+share/angband/xtra/font/9x15x.fon
+share/angband/xtra/font/9x15xb.fon
+@comment --- Sound/gfx will be enabled later, needs sdl
+@comment --- These would go in a PFRAG.sdl
+@comment share/angband/xtra/graf/
+@comment share/angband/xtra/graf/16x16.png
+@comment share/angband/xtra/graf/32x32.png
+@comment share/angband/xtra/graf/8x16.png
+@comment share/angband/xtra/graf/8x8.png
+@comment share/angband/xtra/icon/
+@comment share/angband/xtra/icon/att-128.png
+@comment share/angband/xtra/icon/att-16.png
+@comment share/angband/xtra/icon/att-256.png
+@comment share/angband/xtra/icon/att-32.png
+@comment share/angband/xtra/icon/att-512.png
+@comment share/angband/xtra/sound/
+@comment share/angband/xtra/sound/breath.wav
+@comment share/angband/xtra/sound/clunk.wav
+@comment share/angband/xtra/sound/death.wav
+@comment share/angband/xtra/sound/destroy.wav
+@comment share/angband/xtra/sound/drop.wav
+@comment share/angband/xtra/sound/eat.wav
+@comment share/angband/xtra/sound/flee.wav
+@comment share/angband/xtra/sound/hallu.wav
+@comment share/angband/xtra/sound/hit.wav
+@comment share/angband/xtra/sound/hit1.wav
+@comment share/angband/xtra/sound/kill.wav
+@comment share/angband/xtra/sound/kill1.wav
+@comment share/angband/xtra/sound/level.wav
+@comment share/angband/xtra/sound/miss.wav
+@comment share/angband/xtra/sound/miss1.wav
+@comment share/angband/xtra/sound/money.wav
+@comment share/angband/xtra/sound/opendoor.wav
+@comment share/angband/xtra/sound/shutdoor.wav
+@comment share/angband/xtra/sound/sound.cfg
+@comment share/angband/xtra/sound/thump.wav
+@comment share/angband/xtra/sound/vomit.wav
 @mode 775
 @sample /var/games/angband/
 @sample /var/games/angband/apex/
 @sample /var/games/angband/save/
-@sample /var/games/angband/data/
-@sample /var/games/angband/bone/
+@sample /var/games/angband/user/

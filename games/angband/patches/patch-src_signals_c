@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_signals_c,v 1.1 2011/09/13 10:28:39 edd Exp $
+
+Turn off signal handlers so that angband may be debugged
+
+--- src/signals.c.orig	Sun Sep 11 22:18:29 2011
++++ src/signals.c	Sun Sep 11 22:20:28 2011
+@@ -300,12 +300,16 @@ void signals_init(void)
+ 	(void)(*signal_aux)(SIGIOT, handle_signal_abort);
+ #endif
+ 
++#if 0
+ #ifdef SIGBUS
+ 	(void)(*signal_aux)(SIGBUS, handle_signal_abort);
+ #endif
++#endif
+ 
++#if 0
+ #ifdef SIGSEGV
+ 	(void)(*signal_aux)(SIGSEGV, handle_signal_abort);
++#endif
+ #endif
+ 
+ #ifdef SIGTERM
