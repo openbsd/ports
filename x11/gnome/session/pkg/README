@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.20 2011/09/12 18:55:43 ajacoutot Exp $
+$OpenBSD: README,v 1.21 2011/09/13 07:38:34 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -110,5 +110,4 @@ Themes
 
     * gnome-icon-theme-extras - extra icons
     * gnome-icon-theme-symbolic - theme extension for special UI contexts
-    * gnome-themes-extras - extra themes
     * tango-icon-theme (+tango-icon-theme-extras) - Tango icon theme
