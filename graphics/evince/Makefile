@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2011/09/12 12:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2011/09/13 12:37:37 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,8 +20,8 @@ PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
-REVISION-main=	1
-REVISION-djvu=	0
+REVISION-main=	2
+REVISION-djvu=	1
 REVISION-dvi=	0
 REVISION-nautilus=0
 
@@ -66,7 +66,8 @@ WANTLIB-main=	${WANTLIB} ICE SM c dbus-1 gailutil-3 gdk-x11-2.0 \
 		jpeg pthread tiff xml2 lcms openjpeg \
 		poppler poppler-glib spectre gnome-keyring \
 		stdc++
-LIB_DEPENDS-main= print/poppler \
+# we don't need qt3 nor qt4 support in poppler
+LIB_DEPENDS-main= print/poppler,no_qt,no_qt4 \
 		print/libspectre \
 		x11/gnome/libgnome-keyring \
 		${LIB_DEPENDS}
