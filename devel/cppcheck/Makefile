@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2011/05/01 21:08:49 gsoares Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/13 13:39:49 gsoares Exp $
 
 COMMENT =		C/C++ static checker
 
-DISTNAME =		cppcheck-1.48
+DISTNAME =		cppcheck-1.50
 
 CATEGORIES =		devel
 
 HOMEPAGE =		http://cppcheck.sourceforge.net/
 
-MAINTAINER =		Igor Zinovik <zinovik.igor@gmail.com>
+MAINTAINER =		Gleydson Soares <gsoares@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
