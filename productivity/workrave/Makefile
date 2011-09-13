@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2011/07/27 17:46:22 naddy Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/13 07:50:51 jasper Exp $
 
 COMMENT=		reminder program for prevention of RSI
 
-DISTNAME=		workrave-1.9.3
+DISTNAME=		workrave-1.9.4
 CATEGORIES=		productivity x11
-
-REVISION=		2
 
 HOMEPAGE=		http://www.workrave.org/
 
@@ -15,26 +13,22 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
-WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender Xtst art_lgpl_2 atk-1.0
-WANTLIB += bonobo-2 bonobo-activation bonoboui-2 c
-WANTLIB += cairo cairomm-1.0 crypto dbus-1 dbus-glib-1 expat fontconfig
-WANTLIB += freetype gailutil gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
-WANTLIB += gnome-2 gnomecanvas-2 gnomevfs-2 gobject-2.0 gthread-2.0
-WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pangomm-1.4 pcre pixman-1 png popt pthread pthread-stubs
-WANTLIB += sigc-2.0 ssl stdc++ util xcb xcb-render
-WANTLIB += xml2 z atkmm-1.6 xcb-shm
-WANTLIB += gstreamer-0.10 panel-applet-2 gdkmm-2.4 gtkmm-2.4
-WANTLIB += GL Xxf86vm canberra drm ltdl ogg vorbis vorbisfile
+WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
+WANTLIB += atk-1.0 atkmm-1.6 c cairo cairomm-1.0 dbus-1 dbus-glib-1
+WANTLIB += drm expat fontconfig freetype gconf-2 gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gdkmm-2.4 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
+WANTLIB += gobject-2.0 gstreamer-0.10 gthread-2.0 gtk-x11-2.0
+WANTLIB += gtkmm-2.4 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
+WANTLIB += pcre pixman-1 png pthread pthread-stubs sigc-2.0 stdc++
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=workrave/}
 
 BUILD_DEPENDS=		devel/py-cheetah
-LIB_DEPENDS=		multimedia/gstreamer-0.10/core \
-			x11/gnome/panel \
+LIB_DEPENDS=		devel/gconf2 \
+			multimedia/gstreamer-0.10/core \
+			x11/dbus-glib \
 			x11/gtk2mm
 
 MODULES=		devel/gettext \
@@ -44,12 +38,13 @@ MODULES=		devel/gettext \
 USE_LIBTOOL=		Yes
 USE_GMAKE=		Yes
 
-CFLAGS+=		-DNDEBUG
-
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-xml \
 			--disable-pulse \
 			--enable-dbus
+
+# XXX: Disabled for now as workrave isn't ported to libpanel-applet-4.0 yet
+CONFIGURE_ARGS+=	--disable-gnome
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 

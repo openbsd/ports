@@ -1,20 +1,7 @@
-$OpenBSD: patch-configure,v 1.5 2011/01/16 20:34:40 ajacoutot Exp $
---- configure.orig	Sat Dec 11 18:05:26 2010
-+++ configure	Sat Jan 15 00:01:32 2011
-@@ -16954,9 +16954,9 @@ then
- else
-    OPT=2
- 
--   CFLAGS="${CFLAGS} -O${OPT} -g -DNDEBUG"
--   CXXFLAGS="${CXXFLAGS} -O${OPT} -g -DNDEBUG"
--   LDFLAGS="${LDFLAGS} -g"
-+   CFLAGS="${CFLAGS}"
-+   CXXFLAGS="${CXXFLAGS}"
-+   LDFLAGS="${LDFLAGS}"
- fi
- 
- if test "x$config_tracing" = "xyes"
-@@ -20661,13 +20661,13 @@ fi
+$OpenBSD: patch-configure,v 1.6 2011/09/13 07:50:51 jasper Exp $
+--- configure.orig	Tue Sep 13 09:25:49 2011
++++ configure	Tue Sep 13 09:27:05 2011
+@@ -20763,13 +20763,13 @@ fi
    fi
  
    if test -z "$LIBPTHREAD"; then
@@ -31,7 +18,7 @@ $OpenBSD: patch-configure,v 1.5 2011/01/16 20:34:40 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -20698,7 +20698,7 @@ fi
+@@ -20800,7 +20800,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_create" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_create" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_create" = x""yes; then :
@@ -40,7 +27,7 @@ $OpenBSD: patch-configure,v 1.5 2011/01/16 20:34:40 ajacoutot Exp $
  fi
  
    fi
-@@ -26608,13 +26608,13 @@ rm -f core conftest.err conftest.$ac_objext \
+@@ -26767,13 +26767,13 @@ rm -f core conftest.err conftest.$ac_objext \
          if test -n "$gl_have_pthread"; then
            # The program links fine without libpthread. But it may actually
            # need to link with libpthread in order to create multiple threads.
@@ -57,7 +44,7 @@ $OpenBSD: patch-configure,v 1.5 2011/01/16 20:34:40 ajacoutot Exp $
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -26645,7 +26645,7 @@ fi
+@@ -26804,7 +26804,7 @@ fi
  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_kill" >&5
  $as_echo "$ac_cv_lib_pthread_pthread_kill" >&6; }
  if test "x$ac_cv_lib_pthread_pthread_kill" = x""yes; then :
@@ -66,31 +53,3 @@ $OpenBSD: patch-configure,v 1.5 2011/01/16 20:34:40 ajacoutot Exp $
               # On Solaris and HP-UX, most pthread functions exist also in libc.
               # Therefore pthread_in_use() needs to actually try to create a
               # thread: pthread_create from libc will fail, whereas
-@@ -26661,13 +26661,13 @@ fi
- 
-         else
-           # Some library is needed. Try libpthread and libc_r.
--          { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -lpthread" >&5
--$as_echo_n "checking for pthread_kill in -lpthread... " >&6; }
-+          { $as_echo "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -pthread" >&5
-+$as_echo_n "checking for pthread_kill in -pthread... " >&6; }
- if test "${ac_cv_lib_pthread_pthread_kill+set}" = set; then :
-   $as_echo_n "(cached) " >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lpthread  $LIBS"
-+LIBS="-pthread  $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
-@@ -26699,8 +26699,8 @@ fi
- $as_echo "$ac_cv_lib_pthread_pthread_kill" >&6; }
- if test "x$ac_cv_lib_pthread_pthread_kill" = x""yes; then :
-   gl_have_pthread=yes
--             LIBTHREAD=-lpthread LTLIBTHREAD=-lpthread
--             LIBMULTITHREAD=-lpthread LTLIBMULTITHREAD=-lpthread
-+             LIBTHREAD=-pthread LTLIBTHREAD=-pthread
-+             LIBMULTITHREAD=-pthread LTLIBMULTITHREAD=-pthread
- fi
- 
-           if test -z "$gl_have_pthread"; then
