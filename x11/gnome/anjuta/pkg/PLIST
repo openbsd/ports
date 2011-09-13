@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.11 2011/09/12 07:26:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.12 2011/09/13 09:20:54 jasper Exp $
 @conflict gnome-build-*
 @pkgpath x11/gnome/build
 @bin bin/anjuta
@@ -575,7 +575,6 @@ share/gnome/help/anjuta-manual/C/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/C/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/C/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/C/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/C/anjuta_logo.png
 share/gnome/help/anjuta-manual/C/autotools-build-build.page
 share/gnome/help/anjuta-manual/C/autotools-build-clean.page
 share/gnome/help/anjuta-manual/C/autotools-build-compile.page
@@ -617,7 +616,6 @@ share/gnome/help/anjuta-manual/cs/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/cs/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/cs/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/cs/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/cs/anjuta_logo.png
 share/gnome/help/anjuta-manual/cs/autotools-build-build.page
 share/gnome/help/anjuta-manual/cs/autotools-build-clean.page
 share/gnome/help/anjuta-manual/cs/autotools-build-compile.page
@@ -659,7 +657,6 @@ share/gnome/help/anjuta-manual/da/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/da/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/da/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/da/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/da/anjuta_logo.png
 share/gnome/help/anjuta-manual/da/autotools-build-build.page
 share/gnome/help/anjuta-manual/da/autotools-build-clean.page
 share/gnome/help/anjuta-manual/da/autotools-build-compile.page
@@ -701,7 +698,6 @@ share/gnome/help/anjuta-manual/de/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/de/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/de/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/de/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/de/anjuta_logo.png
 share/gnome/help/anjuta-manual/de/autotools-build-build.page
 share/gnome/help/anjuta-manual/de/autotools-build-clean.page
 share/gnome/help/anjuta-manual/de/autotools-build-compile.page
@@ -743,7 +739,6 @@ share/gnome/help/anjuta-manual/el/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/el/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/el/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/el/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/el/anjuta_logo.png
 share/gnome/help/anjuta-manual/el/autotools-build-build.page
 share/gnome/help/anjuta-manual/el/autotools-build-clean.page
 share/gnome/help/anjuta-manual/el/autotools-build-compile.page
@@ -785,7 +780,6 @@ share/gnome/help/anjuta-manual/es/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/es/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/es/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/es/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/es/anjuta_logo.png
 share/gnome/help/anjuta-manual/es/autotools-build-build.page
 share/gnome/help/anjuta-manual/es/autotools-build-clean.page
 share/gnome/help/anjuta-manual/es/autotools-build-compile.page
@@ -827,7 +821,6 @@ share/gnome/help/anjuta-manual/eu/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/eu/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/eu/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/eu/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/eu/anjuta_logo.png
 share/gnome/help/anjuta-manual/eu/autotools-build-build.page
 share/gnome/help/anjuta-manual/eu/autotools-build-clean.page
 share/gnome/help/anjuta-manual/eu/autotools-build-compile.page
@@ -869,7 +862,6 @@ share/gnome/help/anjuta-manual/fr/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/fr/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/fr/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/fr/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/fr/anjuta_logo.png
 share/gnome/help/anjuta-manual/fr/autotools-build-build.page
 share/gnome/help/anjuta-manual/fr/autotools-build-clean.page
 share/gnome/help/anjuta-manual/fr/autotools-build-compile.page
@@ -911,7 +903,6 @@ share/gnome/help/anjuta-manual/ja/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/ja/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/ja/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/ja/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/ja/anjuta_logo.png
 share/gnome/help/anjuta-manual/ja/autotools-build-build.page
 share/gnome/help/anjuta-manual/ja/autotools-build-clean.page
 share/gnome/help/anjuta-manual/ja/autotools-build-compile.page
@@ -953,7 +944,6 @@ share/gnome/help/anjuta-manual/oc/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/oc/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/oc/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/oc/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/oc/anjuta_logo.png
 share/gnome/help/anjuta-manual/oc/autotools-build-build.page
 share/gnome/help/anjuta-manual/oc/autotools-build-clean.page
 share/gnome/help/anjuta-manual/oc/autotools-build-compile.page
@@ -995,7 +985,6 @@ share/gnome/help/anjuta-manual/pt_BR/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/pt_BR/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/pt_BR/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/pt_BR/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/pt_BR/anjuta_logo.png
 share/gnome/help/anjuta-manual/pt_BR/autotools-build-build.page
 share/gnome/help/anjuta-manual/pt_BR/autotools-build-clean.page
 share/gnome/help/anjuta-manual/pt_BR/autotools-build-compile.page
@@ -1037,7 +1026,6 @@ share/gnome/help/anjuta-manual/sl/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/sl/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/sl/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/sl/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/sl/anjuta_logo.png
 share/gnome/help/anjuta-manual/sl/autotools-build-build.page
 share/gnome/help/anjuta-manual/sl/autotools-build-clean.page
 share/gnome/help/anjuta-manual/sl/autotools-build-compile.page
@@ -1079,7 +1067,6 @@ share/gnome/help/anjuta-manual/sv/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/sv/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/sv/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/sv/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/sv/anjuta_logo.png
 share/gnome/help/anjuta-manual/sv/autotools-build-build.page
 share/gnome/help/anjuta-manual/sv/autotools-build-clean.page
 share/gnome/help/anjuta-manual/sv/autotools-build-compile.page
@@ -1121,7 +1108,6 @@ share/gnome/help/anjuta-manual/th/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/th/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/th/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/th/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/th/anjuta_logo.png
 share/gnome/help/anjuta-manual/th/autotools-build-build.page
 share/gnome/help/anjuta-manual/th/autotools-build-clean.page
 share/gnome/help/anjuta-manual/th/autotools-build-compile.page
@@ -1163,7 +1149,6 @@ share/gnome/help/anjuta-manual/uk/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/uk/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/uk/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/uk/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/uk/anjuta_logo.png
 share/gnome/help/anjuta-manual/uk/autotools-build-build.page
 share/gnome/help/anjuta-manual/uk/autotools-build-clean.page
 share/gnome/help/anjuta-manual/uk/autotools-build-compile.page
@@ -1205,7 +1190,6 @@ share/gnome/help/anjuta-manual/zh_CN/anjuta-code-indentation.page
 share/gnome/help/anjuta-manual/zh_CN/anjuta-code-symbols.page
 share/gnome/help/anjuta-manual/zh_CN/anjuta-glade-signals.page
 share/gnome/help/anjuta-manual/zh_CN/anjuta-glade-start.page
-share/gnome/help/anjuta-manual/zh_CN/anjuta_logo.png
 share/gnome/help/anjuta-manual/zh_CN/autotools-build-build.page
 share/gnome/help/anjuta-manual/zh_CN/autotools-build-clean.page
 share/gnome/help/anjuta-manual/zh_CN/autotools-build-compile.page
