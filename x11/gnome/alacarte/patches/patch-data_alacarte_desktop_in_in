@@ -1,0 +1,22 @@
+$OpenBSD: patch-data_alacarte_desktop_in_in,v 1.1 2011/09/13 07:20:37 ajacoutot Exp $
+
+From b227c32ba5fe7f15884c26efd47d10950d16720c Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Mon, 22 Aug 2011 18:13:08 +0000
+Subject: use startup notification
+
+https://bugzilla.gnome.org/show_bug.cgi?id=658880
+
+--- data/alacarte.desktop.in.in.orig	Tue Sep 13 09:00:14 2011
++++ data/alacarte.desktop.in.in	Tue Sep 13 09:00:37 2011
+@@ -4,8 +4,8 @@ _Comment=Change which applications are shown on the ma
+ Exec=alacarte
+ Terminal=false
+ Type=Application
+-StartupNotify=false
+-Categories=GNOME;Settings;DesktopSettings;
++StartupNotify=true
++Categories=GNOME;Settings;DesktopSettings;Utility;
+ NotShowIn=KDE;
+ Icon=alacarte
+ X-GNOME-Bugzilla-Bugzilla=GNOME

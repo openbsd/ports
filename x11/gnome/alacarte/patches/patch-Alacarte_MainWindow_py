@@ -1,7 +1,22 @@
-$OpenBSD: patch-Alacarte_MainWindow_py,v 1.1 2011/01/18 19:11:06 landry Exp $
-try gnome-desktop-item-edit, and if not found fallback to exo-desktop-item-edit
+$OpenBSD: patch-Alacarte_MainWindow_py,v 1.2 2011/09/13 07:20:37 ajacoutot Exp $
+
+From 8c33986006604f4fa308c439466f7de9b5c9227a Mon Sep 17 00:00:00 2001
+From: Josselin Mouette <joss@debian.org>
+Date: Mon, 22 Aug 2011 18:47:47 +0000
+Subject: Fix Python error on startup with gnome-menus 2.91.6+
+
+Try gnome-desktop-item-edit, and if not found fallback to exo-desktop-item-edit.
+
 --- Alacarte/MainWindow.py.orig	Tue Sep  8 16:24:13 2009
-+++ Alacarte/MainWindow.py	Tue Jan 18 17:55:29 2011
++++ Alacarte/MainWindow.py	Tue Sep 13 08:54:29 2011
+@@ -71,7 +71,6 @@ class MainWindow:
+ 	def run(self):
+ 		self.loadMenus()
+ 		self.editor.applications.tree.add_monitor(self.menuChanged, None)
+-		self.editor.settings.tree.add_monitor(self.menuChanged, None)
+ 		self.tree.get_object('mainwindow').show_all()
+ 		gtk.main()
+ 
 @@ -295,7 +294,10 @@ class MainWindow:
  		else:
  			parent = menus[iter][2]
