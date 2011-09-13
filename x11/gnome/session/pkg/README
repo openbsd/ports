@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.22 2011/09/13 08:15:38 ajacoutot Exp $
+$OpenBSD: README,v 1.23 2011/09/13 09:15:25 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -54,7 +54,7 @@ Communication
     * ekiga - SIP and H.323 conferencing application
     * empathy - Telepathy based messenger for e.g. MSN, Jabber, etc
     * epiphany (+epiphany-extensions) - lightweight and simple web browser
-    * evolution (+evolution-plugins) - integrated email and PIM software
+    * evolution (+evolution-plugins +evolution-rss) - integrated email and PIM software
 
 Development
 -----------
