@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_Ewmh_cc,v 1.5 2011/09/13 09:31:47 dcoppa Exp $
+
+Fix a bug causing argb32 application icons to appear garbled
+(upstream git commit 1da473bab9fa7b18ae925f8e084465c4c81bc3c9)
+
+--- src/Ewmh.cc.orig	Thu Feb 24 17:00:37 2011
++++ src/Ewmh.cc	Mon Sep 12 20:57:19 2011
+@@ -198,13 +198,23 @@ void extractNetWmIcon(Atom net_wm_icon, WinClient& win
+     Display* dpy = FbTk::App::instance()->display();
+     int scrn = winclient.screen().screenNumber();
+ 
++    // the icon will not be used by the client but by
++    // 'menu', 'iconbar', 'titlebar'. all these entities
++    // are created based upon the rootwindow and
++    // the default depth. if we would use winclient.depth()
++    // and winclient.drawable() here we might get into trouble
++    // (xfce4-terminal, skype .. 32bit visuals vs 24bit fluxbox
++    // entities)
++    Drawable parent = winclient.screen().rootWindow().drawable();
++    unsigned int depth = DefaultDepth(dpy, scrn);
++
+     // pick the smallest icon size atm
+     // TODO: find a better criteria
+     width = icon_data.begin()->first.first;
+     height = icon_data.begin()->first.second;
+ 
+     // tmp image for the pixmap
+-    XImage* img_pm = XCreateImage(dpy, DefaultVisual(dpy, scrn), winclient.depth(),
++    XImage* img_pm = XCreateImage(dpy, DefaultVisual(dpy, scrn), depth,
+                                   ZPixmap,
+                                   0, NULL, width, height, 32, 0);
+     if (!img_pm) {
+@@ -280,8 +290,8 @@ void extractNetWmIcon(Atom net_wm_icon, WinClient& win
+ 
+     // the final icon
+     FbTk::PixmapWithMask icon;
+-    icon.pixmap() = FbTk::FbPixmap(winclient.drawable(), width, height, winclient.depth());
+-    icon.mask() = FbTk::FbPixmap(winclient.drawable(), width, height, 1);
++    icon.pixmap() = FbTk::FbPixmap(parent, width, height, depth);
++    icon.mask() = FbTk::FbPixmap(parent, width, height, 1);
+ 
+     FbTk::GContext gc_pm(icon.pixmap());
+     FbTk::GContext gc_mask(icon.mask());
