@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/09/13 07:20:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2011/09/14 06:25:06 ajacoutot Exp $
 
 COMMENT=		easy GNOME menu editing tool
 
@@ -23,6 +23,10 @@ BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/gettext \
 			x11/py-gtk2>=2.8.6 \
 			gnome-panel-*|exo->0.6:x11/gnome/panel
+
+# should be taken care of by the gnome-panel dependency, but our port
+# can use exo instead for XFCE users
+BUILD_DEPENDS+=		x11/gnome/menus
 
 DESKTOP_FILES=		Yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
