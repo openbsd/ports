@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/12 12:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/14 15:35:40 jasper Exp $
 
 COMMENT=	GTK C code documentation system
 
-GNOME_VERSION=	1.17
+GNOME_VERSION=	1.18
 GNOME_PROJECT=	gtk-doc
 
 CATEGORIES=    	textproc devel
@@ -14,8 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		x11/gnome \
 			lang/python
@@ -38,6 +36,8 @@ RUN_DEPENDS=		textproc/openjade \
 			editors/vim,no_x11
 
 REGRESS_DEPENDS=	shells/bash
+
+FAKE_FLAGS=		pkgconfigdir=${PREFIX}/lib/pkgconfig/
 
 post-extract:
 	cp ${LOCALBASE}/share/xml/docbook/catalog.xml \
