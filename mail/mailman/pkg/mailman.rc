@@ -1,12 +1,13 @@
 #!/bin/sh
 #
-# $OpenBSD: mailman.rc,v 1.8 2011/01/05 16:05:54 ajacoutot Exp $
+# $OpenBSD: mailman.rc,v 1.9 2011/09/14 01:56:30 william Exp $
 
 daemon="${TRUEPREFIX}/lib/mailman/bin/mailmanctl"
 daemon_flags="-s -q"
 
 . /etc/rc.d/rc.subr
 
+pexp="${MODPY_BIN} ${daemon}${daemon_flags:+ ${daemon_flags}}"
 rc_reload=NO
 
 rc_start() {
