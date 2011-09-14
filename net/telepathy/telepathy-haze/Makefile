@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/06/08 18:03:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/14 13:35:24 jasper Exp $
 
 COMMENT=		flexible communications framework, libpurple component
 
@@ -24,7 +24,6 @@ MODPY_RUNDEP=		No
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-USE_GROFF =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/configure

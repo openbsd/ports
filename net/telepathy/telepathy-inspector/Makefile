@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/06/08 18:03:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/09/14 13:35:24 jasper Exp $
 
 COMMENT=	display information about a given connection manager
 
@@ -27,6 +27,5 @@ LIB_DEPENDS=		devel/libglade2 \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV+=		ac_cv_prog_PYTHON="${MODPY_BIN}"
 USE_LIBTOOL=		No
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>

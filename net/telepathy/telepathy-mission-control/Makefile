@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/06/08 18:03:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/14 13:35:24 jasper Exp $
 
 COMMENT=		abstraction layer between apps and connection managers
 
@@ -31,6 +31,5 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_prog_PYTHON="${MODPY_BIN}"
-USE_GROFF =		Yes
 
 .include <bsd.port.mk>

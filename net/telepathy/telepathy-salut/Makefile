@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/06/08 18:03:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/09/14 13:35:24 jasper Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
@@ -26,7 +26,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
 			ac_cv_prog_PYTHON="${MODPY_BIN}"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED}
-USE_GROFF =		Yes
 
 REGRESS_DEPENDS=	textproc/py-xmldiff
 
