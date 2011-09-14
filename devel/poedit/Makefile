@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/12 18:02:34 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/14 19:42:02 naddy Exp $
 
 COMMENT=	cross-platform gettext catalogs (PO-files) editor
 
@@ -29,17 +29,10 @@ CONFIGURE_STYLE=gnu
 
 CONFIGURE_ARGS=	--disable-spellchecking
 
-PSEUDO_FLAVORS=	no_db
-FLAVOR?=
-
-.if ${FLAVOR:L:Mno_db}
-CONFIGURE_ARGS+=--disable-transmem
-.else
 LIB_DEPENDS +=	databases/db/v4
 WANTLIB +=	db>=4
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib/db4" \
 		CPPFLAGS="-I${LOCALBASE}/include/db4"
-.endif
 
 .include <bsd.port.mk>
