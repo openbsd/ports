@@ -1,19 +1,10 @@
-$OpenBSD: patch-Lib_test_test_signal_py,v 1.3 2011/07/07 21:32:39 jasper Exp $
+$OpenBSD: patch-Lib_test_test_signal_py,v 1.4 2011/09/14 09:23:11 fgsch Exp $
 
 workarounds for breakage caused by libpthread
 
---- Lib/test/test_signal.py.orig	Sun Nov 21 14:34:58 2010
-+++ Lib/test/test_signal.py	Wed Jul  6 15:54:12 2011
-@@ -362,6 +362,8 @@ class SiginterruptTest(unittest.TestCase):
-         i = self.readpipe_interrupted()
-         self.assertTrue(i)
- 
-+    @unittest.skipIf(sys.platform in ('openbsd3', 'openbsd4', 'openbsd5'),
-+        'siginterrupt not reliable (does not mix well with threading) on some BSDs.')
-     def test_siginterrupt_off(self):
-         """If a signal handler is installed and siginterrupt is called with
-         a false value for the second argument, when that signal arrives, it
-@@ -461,8 +463,8 @@ class ItimerTest(unittest.TestCase):
+--- Lib/test/test_signal.py.orig	Sun Nov 21 13:34:58 2010
++++ Lib/test/test_signal.py	Sat Sep 10 17:13:14 2011
+@@ -461,8 +461,8 @@ class ItimerTest(unittest.TestCase):
          self.assertEqual(self.hndl_called, True)
  
      # Issue 3864. Unknown if this affects earlier versions of freebsd also.
