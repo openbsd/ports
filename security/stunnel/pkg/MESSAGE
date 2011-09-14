@@ -2,8 +2,3 @@ After stunnel is installed, you have to create a server certificate and
 put the result in /etc/ssl/private/stunnel.pem. For more information on
 how to create certificates, read ssl(8). For more information on stunnel,
 read stunnel(8).
-
-You can edit /etc/rc.local so that stunnel is started automatically:
-    if [ -x ${PREFIX}/sbin/stunnel ]; then
-        echo -n ' stunnel';       ${PREFIX}/sbin/stunnel
-    fi
