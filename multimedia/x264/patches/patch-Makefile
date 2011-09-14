@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.7 2011/03/12 21:07:09 jakemsr Exp $
---- Makefile.orig	Fri Feb 25 16:45:04 2011
-+++ Makefile	Fri Feb 25 22:17:05 2011
+$OpenBSD: patch-Makefile,v 1.8 2011/09/14 09:23:49 ajacoutot Exp $
+--- Makefile.orig	Tue Aug 30 16:45:04 2011
++++ Makefile	Thu Sep  1 00:21:08 2011
 @@ -87,7 +87,9 @@ ifdef ARCH_X86
  ASFLAGS += -Icommon/x86/
  SRCS   += common/x86/mc-c.c common/x86/predict-c.c
@@ -21,51 +21,55 @@ $OpenBSD: patch-Makefile,v 1.7 2011/03/12 21:07:09 jakemsr Exp $
 +SOBJSO = $(SRCSO:%.c=%.so)
  DEP  = depend
  
- .PHONY: all default fprofiled clean distclean install uninstall dox test testclean
-@@ -143,8 +147,8 @@ libx264.a: .depend $(OBJS) $(OBJASM)
- 	$(AR) rc libx264.a $(OBJS) $(OBJASM)
- 	$(RANLIB) libx264.a
+ .PHONY: all default fprofiled clean distclean install uninstall dox test testclean lib-static lib-shared cli install-lib-dev install-lib-static install-lib-shared install-cli
+@@ -147,11 +151,11 @@ $(LIBX264): .depend $(OBJS) $(OBJASM)
+ 	$(AR)$@ $(OBJS) $(OBJASM)
+ 	$(if $(RANLIB), $(RANLIB) $@)
  
 -$(SONAME): .depend $(OBJS) $(OBJASM) $(OBJSO)
--	$(CC) -shared -o $@ $(OBJS) $(OBJASM) $(OBJSO) $(SOFLAGS) $(LDFLAGS)
+-	$(LD)$@ $(OBJS) $(OBJASM) $(OBJSO) $(SOFLAGS) $(LDFLAGS)
 +$(SONAME): .depend $(SOBJS) $(SOBJASM) $(SOBJSO)
-+	$(CC) -shared -fPIC -o $@ $(SOBJS) $(SOBJASM) $(SOBJSO) $(SOFLAGS) $(LDFLAGS)
++	$(LD)$@ $(SOBJS) $(SOBJASM) $(SOBJSO) $(SOFLAGS) $(LDFLAGS)
  
- x264$(EXE): $(OBJCLI) libx264.a
- 	$(CC) -o $@ $+ $(LDFLAGSCLI) $(LDFLAGS)
-@@ -156,10 +160,21 @@ checkasm: tools/checkasm.o libx264.a
+ x264$(EXE): .depend $(OBJCLI) $(CLI_LIBX264)
+-	$(LD)$@ $(OBJCLI) $(CLI_LIBX264) $(LDFLAGSCLI) $(LDFLAGS)
++	$(LD)$@ $(OBJCLI) -L. -lx264 $(LDFLAGSCLI) $(LDFLAGS)
+ 
+ checkasm: tools/checkasm.o $(LIBX264)
+ 	$(LD)$@ $+ $(LDFLAGS)
+@@ -160,10 +164,21 @@ checkasm: tools/checkasm.o $(LIBX264)
  	$(AS) $(ASFLAGS) -o $@ $<
- 	-@ $(STRIP) -x $@ # delete local/anonymous symbols, so they don't show up in oprofile
+ 	-@ $(if $(STRIP), $(STRIP) -x $@) # delete local/anonymous symbols, so they don't show up in oprofile
  
 +%.so: %.asm
-+	$(AS) $(ASFLAGS) -DPIC -o $@ &<
-+	-@ $(STRIP) -x $@ # delete local/anonymous symbols, so they don't show up in oprofile
++	$(AS) $(ASFLAGS) -DPIC -o $@ $<
++	-@ $(if $(STRIP), $(STRIP) -x $@) # delete local/anonymous symbols, so they don't show up in oprofile
 +
  %.o: %.S
  	$(AS) $(ASFLAGS) -o $@ $<
- 	-@ $(STRIP) -x $@ # delete local/anonymous symbols, so they don't show up in oprofile
+ 	-@ $(if $(STRIP), $(STRIP) -x $@) # delete local/anonymous symbols, so they don't show up in oprofile
  
 +%.so: %.S
 +	$(AS) $(ASFLAGS) -DPIC -o $@ $<
-+	-@ $(STRIP) -x $@ # delete local/anonymous symbols, so they don't show up in oprofile
++	-@ $(if $(STRIP), $(STRIP) -x $@) # delete local/anonymous symbols, so they don't show up in oprofile
 +
 +%.so: %.c
 +	$(CC) $(CFLAGS) -fPIC -c -o $@ $<
 +
  .depend: config.mak
  	@rm -f .depend
- 	@$(foreach SRC, $(SRCS) $(SRCCLI) $(SRCSO), $(CC) $(CFLAGS) $(SRC) -MT $(SRC:%.c=%.o) -MM -g0 1>> .depend;)
+ 	@$(foreach SRC, $(SRCS) $(SRCCLI) $(SRCSO), $(CC) $(CFLAGS) $(SRC) $(DEPMT) $(SRC:%.c=%.o) $(DEPMM) 1>> .depend;)
 @@ -203,7 +218,7 @@ fprofiled:
  endif
  
  clean:
--	rm -f $(OBJS) $(OBJASM) $(OBJCLI) $(OBJSO) $(SONAME) *.a x264 x264.exe .depend TAGS
-+	rm -f $(OBJS) $(SOBJS) $(OBJASM) $(SOBJASM) $(OBJCLI) $(OBJSO) $(SONAME) *.a x264 x264.exe .depend TAGS
+-	rm -f $(OBJS) $(OBJASM) $(OBJCLI) $(OBJSO) $(SONAME) *.a *.lib *.exp *.pdb x264 x264.exe .depend TAGS
++	rm -f $(OBJS) $(SOBJS) $(OBJASM) $(SOBJASM) $(OBJCLI) $(OBJSO) $(SONAME) *.a *.lib *.exp *.pdb x264 x264.exe .depend TAGS
  	rm -f checkasm checkasm.exe tools/checkasm.o tools/checkasm-a.o
- 	rm -f $(SRC2:%.c=%.gcda) $(SRC2:%.c=%.gcno)
- 	- sed -e 's/ *-fprofile-\(generate\|use\)//g' config.mak > config.mak2 && mv config.mak2 config.mak
-@@ -226,7 +241,6 @@ install: x264$(EXE) $(SONAME)
- ifeq ($(SYS),MINGW)
+ 	rm -f $(SRC2:%.c=%.gcda) $(SRC2:%.c=%.gcno) *.dyn pgopti.dpi pgopti.dpi.lock
+ 
+@@ -231,7 +246,6 @@ install-lib-shared: lib-shared install-lib-dev
+ ifeq ($(SYS),WINDOWS)
  	$(if $(SONAME), install -m 755 $(SONAME) $(DESTDIR)$(bindir))
  else
 -	$(if $(SONAME), ln -f -s $(SONAME) $(DESTDIR)$(libdir)/libx264.$(SOSUFFIX))
