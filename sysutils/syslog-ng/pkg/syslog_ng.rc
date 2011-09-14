@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# $OpenBSD: syslog_ng.rc,v 1.1 2011/09/14 02:34:06 william Exp $
+
+daemon="${PREFIX}/sbin/syslog-ng"
+
+. /etc/rc.d/rc.subr
+
+rc_cmd $1
