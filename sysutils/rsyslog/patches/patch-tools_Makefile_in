@@ -1,0 +1,13 @@
+$OpenBSD: patch-tools_Makefile_in,v 1.1 2011/09/14 21:25:39 naddy Exp $
+--- tools/Makefile.in.orig	Tue Sep 13 23:09:17 2011
++++ tools/Makefile.in	Tue Sep 13 23:11:24 2011
+@@ -141,7 +141,8 @@ CPP = @CPP@
+ CPPFLAGS = @CPPFLAGS@
+ CXX = @CXX@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = @DEFS@ -DSYSLOGD_PIDNAME=\"rsyslogd.pid\" \
++	-DCONFIGFILE=\"$(sysconfdir)/rsyslog.conf\"
+ DEPDIR = @DEPDIR@
+ DL_LIBS = @DL_LIBS@
+ DSYMUTIL = @DSYMUTIL@

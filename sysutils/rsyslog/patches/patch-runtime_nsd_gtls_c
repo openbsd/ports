@@ -1,0 +1,38 @@
+$OpenBSD: patch-runtime_nsd_gtls_c,v 1.1 2011/09/14 21:25:39 naddy Exp $
+
+GnuTLS >= 2.12 does not depend on libgcrypt initialization any longer
+and may in fact not use libgcrypt at all.
+
+--- runtime/nsd_gtls.c.orig	Wed Sep 14 03:05:03 2011
++++ runtime/nsd_gtls.c	Wed Sep 14 03:06:21 2011
+@@ -29,7 +29,9 @@
+ #include <string.h>
+ #include <gnutls/gnutls.h>
+ #include <gnutls/x509.h>
++#if GNUTLS_VERSION_NUMBER <= 0x020b00
+ #include <gcrypt.h>
++#endif
+ #include <errno.h>
+ #include <sys/stat.h>
+ #include <unistd.h>
+@@ -53,7 +55,9 @@
+ #define CRLFILE "crl.pem"
+ 
+ 
++#if GNUTLS_VERSION_NUMBER <= 0x020b00
+ GCRY_THREAD_OPTION_PTHREAD_IMPL;
++#endif
+ MODULE_TYPE_LIB
+ 
+ /* static data */
+@@ -559,8 +563,10 @@ gtlsGlblInit(void)
+ 	uchar *cafile;
+ 	DEFiRet;
+ 
++#if GNUTLS_VERSION_NUMBER <= 0x020b00
+ 	/* gcry_control must be called first, so that the thread system is correctly set up */
+ 	gcry_control (GCRYCTL_SET_THREAD_CBS, &gcry_threads_pthread);
++#endif
+ 	CHKgnutls(gnutls_global_init());
+ 	
+ 	/* X509 stuff */
