@@ -1,11 +1,11 @@
-@comment $OpenBSD: PLIST-gui,v 1.4 2009/12/22 00:31:23 sthen Exp $
+@comment $OpenBSD: PLIST-gui,v 1.5 2011/09/15 20:24:16 sthen Exp $
 bin/sshvnc
 bin/ssvnc
 bin/tsvnc
 lib/ssvnc/
 lib/ssvnc/sshvnc
 lib/ssvnc/ssvnc
-@comment lib/ssvnc/ssvnc.bak
+@comment lib/ssvnc/ssvnc.beforesubst
 @comment lib/ssvnc/ssvnc.orig
 lib/ssvnc/ssvnc_cmd
 lib/ssvnc/tsvnc
@@ -18,7 +18,6 @@ lib/ssvnc/util/stunnel-server.conf
 @bin lib/ssvnc/vncstorepw
 @man man/man1/ssvnc.1
 %%SHARED%%
-@comment share/applications/
 share/applications/ssvnc.desktop
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
