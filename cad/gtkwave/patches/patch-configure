@@ -1,10 +1,10 @@
-$OpenBSD: patch-configure,v 1.1 2011/03/04 13:25:41 jasper Exp $
+$OpenBSD: patch-configure,v 1.2 2011/09/15 15:01:45 jasper Exp $
 
 Using -lpthread is verboten!
 
---- configure.orig	Fri Feb 25 11:38:02 2011
-+++ configure	Fri Feb 25 11:38:18 2011
-@@ -4290,13 +4290,13 @@ _ACEOF
+--- configure.orig	Sun Aug  7 23:10:58 2011
++++ configure	Thu Sep  8 13:22:04 2011
+@@ -4452,13 +4452,13 @@ _ACEOF
  fi
  
  
@@ -21,7 +21,7 @@ Using -lpthread is verboten!
  cat >conftest.$ac_ext <<_ACEOF
  /* confdefs.h.  */
  _ACEOF
-@@ -4353,7 +4353,7 @@ if test $ac_cv_lib_pthread_main = yes; then
+@@ -4515,7 +4515,7 @@ if test $ac_cv_lib_pthread_main = yes; then
  #define HAVE_LIBPTHREAD 1
  _ACEOF
  
