@@ -11,3 +11,5 @@ data structure.
 
 Beyond collateral evolutions, Coccinelle is successfully used (by INRIA
 and others) for finding and fixing bugs in systems code.
+
+See also: http://home.regit.org/technical-articles/coccinelle-for-the-newbie/
