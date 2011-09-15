@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/15 16:52:31 naddy Exp $
 
 COMMENT =		XML manipulation library
 
 VERSION =		0.18.3
 DISTNAME =		libnxml-${VERSION}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		textproc
 MASTER_SITES =		http://www.autistici.org/bakunin/libnxml/
 SHARED_LIBS =		nxml 0.0 # 18.3
 
-HOMEPAGE=	${MASTER_SITES}/doc
+HOMEPAGE=		http://www.autistici.org/bakunin/libnxml/doc
 
 # LGPL v2.1
 PERMIT_PACKAGE_CDROM=	Yes
