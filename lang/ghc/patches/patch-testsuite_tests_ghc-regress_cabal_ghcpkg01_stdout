@@ -1,0 +1,51 @@
+$OpenBSD: patch-testsuite_tests_ghc-regress_cabal_ghcpkg01_stdout,v 1.1 2011/09/15 17:23:29 kili Exp $
+--- testsuite/tests/ghc-regress/cabal/ghcpkg01.stdout.orig	Wed Jun 15 02:36:50 2011
++++ testsuite/tests/ghc-regress/cabal/ghcpkg01.stdout	Wed Sep 14 21:44:08 2011
+@@ -13,6 +13,7 @@ package-url: http://www.haskell.org/ghc
+ description: A Test Package
+ category: none
+ author: simonmar@microsoft.com
++pkgpath:
+ exposed: True
+ exposed-modules: A
+ hidden-modules: B C.D
+@@ -44,6 +45,7 @@ package-url: http://www.haskell.org/ghc
+ description: A Test Package
+ category: none
+ author: simonmar@microsoft.com
++pkgpath:
+ exposed: True
+ exposed-modules: A
+ hidden-modules: B C.D
+@@ -81,6 +83,7 @@ package-url: http://www.haskell.org/ghc
+ description: A Test Package (new version)
+ category: none
+ author: simonmar@microsoft.com
++pkgpath:
+ exposed: False
+ exposed-modules: A
+ hidden-modules: B C.D C.E
+@@ -112,6 +115,7 @@ package-url: http://www.haskell.org/ghc
+ description: A Test Package (new version)
+ category: none
+ author: simonmar@microsoft.com
++pkgpath:
+ exposed: False
+ exposed-modules: A
+ hidden-modules: B C.D C.E
+@@ -144,6 +148,7 @@ package-url: http://www.haskell.org/ghc
+ description: A Test Package
+ category: none
+ author: simonmar@microsoft.com
++pkgpath:
+ exposed: True
+ exposed-modules: A
+ hidden-modules: B C.D
+@@ -182,6 +187,7 @@ package-url: http://www.haskell.org/ghc
+ description: A Test Package
+ category: none
+ author: simonmar@microsoft.com
++pkgpath:
+ exposed: False
+ exposed-modules: A
+ hidden-modules: B C.D
