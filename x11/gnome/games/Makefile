@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2011/09/12 12:04:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2011/09/15 20:36:56 espie Exp $
 
 BROKEN= 		update needs fixed clutter/Mesa
 
@@ -38,14 +38,14 @@ MODULES=		devel/gconf2 \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		devel/gobject-introspection \
-			x11/gnome/py-gnome-desktop
+BUILD_DEPENDS=		devel/gobject-introspection
+#			x11/gnome/py-gnome-desktop
 LIB_DEPENDS=		graphics/clutter/clutter-gtk \
 			lang/guile \
 			x11/gnome/librsvg \
 			audio/libcanberra,-gtk
-RUN_DEPENDS=		x11/gnome/py-gnome-desktop \
-			multimedia/gstreamer-0.10/plugins-good
+RUN_DEPENDS=		multimedia/gstreamer-0.10/plugins-good
+#			x11/gnome/py-gnome-desktop
 REGRESS_DEPENDS=	devel/check
 
 # XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
