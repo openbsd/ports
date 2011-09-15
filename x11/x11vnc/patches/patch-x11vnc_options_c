@@ -1,10 +1,10 @@
-$OpenBSD: patch-x11vnc_options_c,v 1.1 2011/01/19 21:37:43 sthen Exp $
+$OpenBSD: patch-x11vnc_options_c,v 1.2 2011/09/15 20:27:29 sthen Exp $
 
 don't use xrecord for now; https://bugs.freedesktop.org/show_bug.cgi?id=30032
 
---- x11vnc/options.c.orig	Wed Jan 19 20:48:40 2011
-+++ x11vnc/options.c	Wed Jan 19 20:48:52 2011
-@@ -240,7 +240,7 @@ time_t pad_geometry_time = 0;
+--- x11vnc/options.c.orig	Wed Aug 10 23:31:32 2011
++++ x11vnc/options.c	Wed Sep 14 15:56:22 2011
+@@ -249,7 +249,7 @@ time_t pad_geometry_time = 0;
  int use_snapfb = 0;
  
  int use_xrecord = 0;

@@ -1,15 +1,14 @@
-$OpenBSD: patch-x11vnc_ssltools_h,v 1.1 2011/01/17 10:10:29 sthen Exp $
+$OpenBSD: patch-x11vnc_ssltools_h,v 1.2 2011/09/15 20:27:29 sthen Exp $
 
-- OpenBSD's grep(1) doesn't support `\>' as end of the word match, but
-  it does support `[[:>:]]' (patched another way upstream)
+- use [[:>:]] for end-of-word matching in grep(1), \> is a gnu extension
 - fix path to su(1)
 
---- x11vnc/ssltools.h.orig	Fri Sep 10 04:46:47 2010
-+++ x11vnc/ssltools.h	Sun Jan 16 17:18:33 2011
-@@ -1003,10 +1003,10 @@ char find_display[] = 
- "			else\n"
- "				skip=\":$skip\"\n"
+--- x11vnc/ssltools.h.orig	Wed Aug 10 23:31:32 2011
++++ x11vnc/ssltools.h	Wed Sep 14 16:03:27 2011
+@@ -1012,10 +1012,10 @@ char find_display[] = 
  "			fi\n"
+ "			skip2=`echo \"$skip\" | sed -e 's/\\.[0-9][0-9]*$//'`\n"
+ "\n"
 -"			if echo \"$skip\" | grep \":$dtry1\\>\" > /dev/null; then\n"
 +"			if echo \"$skip\" | grep \":$dtry1[[:>:]]\" > /dev/null; then\n"
  "				mat=1\n"
@@ -18,8 +17,8 @@ $OpenBSD: patch-x11vnc_ssltools_h,v 1.1 2011/01/17 10:10:29 sthen Exp $
 +"			elif echo \"$skip\" | grep \":$dtry2[[:>:]]\" > /dev/null; then\n"
  "				mat=1\n"
  "				break\n"
- "			fi\n"
-@@ -1135,7 +1135,7 @@ char find_display[] = 
+ "			elif [ \"X$skip2\" = \"X:$dtry1\" ]; then\n"
+@@ -1150,7 +1150,7 @@ char find_display[] = 
  "# who(1) output column 2:\n"
  "#gone=`last $user | grep 'gone.*no.logout' | awk '{print $2}' | grep '^:' | sed -e 's,/.*,,' | tr '\\n' '|'`\n"
  "#gone=\"${gone}__quite_impossible__\"\n"
@@ -28,7 +27,7 @@ $OpenBSD: patch-x11vnc_ssltools_h,v 1.1 2011/01/17 10:10:29 sthen Exp $
  "#    | awk '{print $2}' | sed -e 's,/.*$,,'`\n"
  "\n"
  "poss=\"\"\n"
-@@ -1880,7 +1880,7 @@ char create_display[] = 
+@@ -1909,7 +1909,7 @@ char create_display[] = 
  "		rm -f $ctmp1 $ctmp2\n"
  "		XAUTHORITY=$authfile\n"
  "		export XAUTHORITY\n"
@@ -37,24 +36,32 @@ $OpenBSD: patch-x11vnc_ssltools_h,v 1.1 2011/01/17 10:10:29 sthen Exp $
  "	else\n"
  "		$have_xauth -f $authfile nextract -           :$N | $have_xauth nmerge -\n"
  "		$have_xauth -f $authfile nextract - `hostname`:$N | $have_xauth nmerge -\n"
-@@ -2371,15 +2371,15 @@ char create_display[] = 
+@@ -2408,23 +2408,23 @@ char create_display[] = 
  "	curr_try=`echo \"$curr_try\" | sed -e  's/[+.-]xdmcp//'`\n"
  "	curr_try=`echo \"$curr_try\" | sed -e  's/[+.-]redirect//'`\n"
  "\n"
 -"	if echo \"$curr_try\"   | grep -i '^Xdummy\\>' > /dev/null; then\n"
 +"	if echo \"$curr_try\"   | grep -i '^Xdummy[[:>:]]' > /dev/null; then\n"
  "		try_Xdummy\n"
+ "	elif echo \"$curr_try\" | grep -i '^Xdummy$'  > /dev/null; then\n"
+ "		try_Xdummy\n"
 -"	elif echo \"$curr_try\" | grep -i '^Xvfb\\>'   > /dev/null; then\n"
 +"	elif echo \"$curr_try\" | grep -i '^Xvfb[[:>:]]'   > /dev/null; then\n"
+ "		try_Xvfb\n"
+ "	elif echo \"$curr_try\" | grep -i '^Xvfb$'    > /dev/null; then\n"
  "		try_Xvfb\n"
 -"	elif echo \"$curr_try\" | grep -i '^Xvnc\\>'   > /dev/null; then\n"
 +"	elif echo \"$curr_try\" | grep -i '^Xvnc[[:>:]]'   > /dev/null; then\n"
  "		try_Xvnc\n"
+ "	elif echo \"$curr_try\" | grep -i '^Xvnc$'    > /dev/null; then\n"
+ "		try_Xvnc\n"
 -"	elif echo \"$curr_try\" | grep -i '^Xsrv\\>'   > /dev/null; then\n"
 +"	elif echo \"$curr_try\" | grep -i '^Xsrv[[:>:]]'   > /dev/null; then\n"
+ "		try_Xsrv\n"
+ "	elif echo \"$curr_try\" | grep -i '^Xsrv$'    > /dev/null; then\n"
  "		try_Xsrv\n"
 -"	elif echo \"$curr_try\" | grep -i '^X\\>'      > /dev/null; then\n"
 +"	elif echo \"$curr_try\" | grep -i '^X[[:>:]]'      > /dev/null; then\n"
  "		try_X\n"
- "	fi\n"
- "	if [ \"X$result\" = \"X1\" ]; then\n"
+ "	elif echo \"$curr_try\" | grep -i '^X$'       > /dev/null; then\n"
+ "		try_X\n"
