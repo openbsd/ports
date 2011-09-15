@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/09/15 10:26:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2011/09/15 10:54:05 ajacoutot Exp $
 
 # gnome-volume-control needs pulseaudio.
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME media utilities
 
 GNOME_PROJECT=	gnome-media
 GNOME_VERSION=	2.91.2
-REVISION=	0
+REVISION=	1
 
 # GPLv2/GFDLv1.1/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -40,9 +40,7 @@ MODGNOME_HELP_FILES= 	Yes
 DESKTOP_FILES=		Yes
 
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		CFLAGS="-I${LOCALBASE}/include ${CFLAGS}" \
-		CDROM_HOST="bsd"
+		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 # XXX recording doesn't work and "Device" appears as "Unsupported" in
