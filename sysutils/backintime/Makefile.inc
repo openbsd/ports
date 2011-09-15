@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.4 2011/03/03 13:49:27 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.5 2011/09/15 06:54:41 ajacoutot Exp $
 
-V=		1.0.6
+V=		1.0.8
 BASENAME=	backintime-${V}
 DISTNAME=	${BASENAME}_src
 

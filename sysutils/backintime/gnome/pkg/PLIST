@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/05 16:39:11 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/09/15 06:54:41 ajacoutot Exp $
 bin/backintime-gnome
 @man man/man1/backintime-gnome.1
 share/applications/backintime-gnome.desktop
@@ -20,7 +20,6 @@ share/backintime/plugins/gnomeplugin.py
 @comment share/gnome/help/backintime/
 @comment share/gnome/help/backintime/C/
 @comment share/gnome/help/backintime/C/backintime.xml
-@comment share/gnome/help/backintime/C/figures/
 @comment share/gnome/help/backintime/C/legal.xml
 @comment share/omf/backintime/
 @comment share/omf/backintime/backintime-C.omf
