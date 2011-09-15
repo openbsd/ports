@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/15 20:20:06 sthen Exp $
+bin/coccigrep
+lib/python${MODPY_VERSION}/site-packages/coccigrep/
+lib/python${MODPY_VERSION}/site-packages/coccigrep-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/coccigrep-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/coccigrep-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/coccigrep-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/coccigrep-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/coccigrep/__init__.py
+lib/python${MODPY_VERSION}/site-packages/coccigrep/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/coccigrep/coccigrep.cfg
+@sample ${SYSCONFDIR}/coccigrep
+lib/python${MODPY_VERSION}/site-packages/coccigrep/coccigrep.py
+lib/python${MODPY_VERSION}/site-packages/coccigrep/coccigrep.pyc
+lib/python${MODPY_VERSION}/site-packages/coccigrep/data/
+lib/python${MODPY_VERSION}/site-packages/coccigrep/data/deref.cocci
+lib/python${MODPY_VERSION}/site-packages/coccigrep/data/func.cocci
+lib/python${MODPY_VERSION}/site-packages/coccigrep/data/set.cocci
+lib/python${MODPY_VERSION}/site-packages/coccigrep/data/test.cocci
+lib/python${MODPY_VERSION}/site-packages/coccigrep/data/used.cocci
+share/doc/coccigrep/
+share/doc/coccigrep/README.rst
