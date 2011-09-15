@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/12 12:04:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/15 08:09:28 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	plugins and utilities for seahorse
 GNOME_PROJECT=	seahorse-plugins
 GNOME_VERSION=	2.91.6
 
-REVISION=	0
+REVISION=	1
 
 # XXX until we have a stable 3.X release
 MASTER_SITES=	http://distfiles.bsdfrog.org/
