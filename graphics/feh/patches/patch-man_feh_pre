@@ -1,0 +1,51 @@
+$OpenBSD: patch-man_feh_pre,v 1.6 2011/09/15 13:27:09 dcoppa Exp $
+
+Sync manpage with reality
+(upstream git commit 036b3d197202e4dd0aa50291a5bf10ded0079e3c)
+
+--- man/feh.pre.orig	Sun Sep 11 12:51:04 2011
++++ man/feh.pre	Thu Sep 15 15:17:10 2011
+@@ -137,8 +137,7 @@ Extra actions which can be set and triggered using the
+ .
+ .It Cm -Z , --auto-zoom
+ .
+-Zoom pictures to screen size in fullscreen
+-.Pq affected by Cm --stretch No and Cm --ignore-aspect .
++Zoom pictures to screen size in fullscreen / fixed geometry mode.
+ .
+ .It Cm -x , --borderless
+ .
+@@ -165,10 +164,9 @@ the caption will be looked for in
+ .
+ .It Cm -L , --customlist Ar format
+ .
+-Use
++Don't display images, print image info according to
+ .Ar format
+-.Pq printf-like string containing image info specifiers
+-for list output.  See
++instead.  See
+ .Sx FORMAT SPECIFIERS .
+ .
+ .It Cm --cycle-once
+@@ -261,17 +259,13 @@ screen size. The only exception is a
+ of 100, in which case images will always be shown at 100% zoom, no matter
+ their dimensions.
+ .
+-.It Cm -g , --geometry Ar width No x Ar height
++.It Cm -g , --geometry Ar width No x Ar height Op + Ar x No + Ar y
+ .
+ Limit (and don't change) the window size.  Takes an X-style geometry
+ .Ar string
+-like 640x480.
+-Note that larger images will be zoomed out to fit but you can see them at 1:1
++like 640x480 with optional +x+y window offset.
++Note that larger images will be zoomed out to fit, but you can see them at 1:1
+ by clicking the zoom button.
+-.
+-.It Cm -h , --help
+-.
+-display help output and exit.
+ .
+ .It Cm -Y , --hide-pointer
+ .

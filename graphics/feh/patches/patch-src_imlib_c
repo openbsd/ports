@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_imlib_c,v 1.9 2011/09/15 13:27:09 dcoppa Exp $
+
+Fix a memory leak when using feh --reload on http URLs
+(upstream git commit af2a44237a7b5cebbf0d03375ed742809da15a59)
+
+--- src/imlib.c.orig	Sun Sep 11 12:51:04 2011
++++ src/imlib.c	Thu Sep 15 15:14:23 2011
+@@ -151,13 +151,14 @@ int feh_load_image(Imlib_Image * im, feh_file * file)
+ 			/* Http, no reload, slideshow. Let's keep this image on hand... */
+ 			free(file->filename);
+ 			file->filename = estrdup(tmpname);
++
++			if (!opt.keep_http)
++				add_file_to_rm_filelist(tmpname);
+ 		} else {
+ 			/* Don't cache the image if we're doing reload + http (webcams etc) */
+ 			if (!opt.keep_http)
+ 				unlink(tmpname);
+ 		}
+-		if (!opt.keep_http)
+-			add_file_to_rm_filelist(tmpname);
+ 		free(tmpname);
+ 	} else {
+ 		*im = imlib_load_image_with_error_return(file->filename, &err);
