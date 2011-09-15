@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.24 2011/09/14 08:38:40 ajacoutot Exp $
+$OpenBSD: README,v 1.25 2011/09/15 07:46:00 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -10,14 +10,15 @@ The gnome-session package only takes care of installing minimal GNOME
 libraries.  For a satisfying GNOME user experience, it is advised to
 install at least the following packages:
     $ sudo pkg_add \
-        eog \
-        file-roller \
-        gedit \
-        gnome-control-center \
-        gnome-keyring \
-        gnome-system-monitor \
-        gnome-terminal \
-        gnome-utils
+	eog \
+	file-roller \
+	gedit \
+	gnome-control-center \
+	gnome-keyring \
+	gnome-media \
+	gnome-system-monitor \
+	gnome-terminal \
+	gnome-utils
 
 Starting the GNOME Desktop
 ==========================
