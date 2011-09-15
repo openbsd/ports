@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.966 2011/09/12 08:21:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.967 2011/09/15 15:50:45 sthen Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -343,6 +343,7 @@
      SUBDIR += netbeans
      SUBDIR += nspr
      SUBDIR += ocaml-calendar
+     SUBDIR += ocaml-pcre
      SUBDIR += ode
      SUBDIR += omake
      SUBDIR += opencm
