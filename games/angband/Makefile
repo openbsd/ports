@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/13 10:28:38 edd Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/15 12:30:30 edd Exp $
 # Original from: Robert Ruehlmann
 
 COMMENT=		rogue-like game with X11 support
@@ -6,6 +6,7 @@ COMMENT-no_x11=		rogue-like game
 
 V =			3.3.0
 V_DLDIR =		${V:C/\.[0-9]$//}
+REVISION =		0
 DISTNAME=		angband-v${V}
 PKGNAME=		angband-${V}
 CATEGORIES=     	games
@@ -27,7 +28,7 @@ MASTER_SITES =		${HOMEPAGE}/downloads/${V_DLDIR}/
 			
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--with-setgid=games \
-			--with-varpath=/var/games/angband/ \
+			--with-varpath=/var/games/angband \
 			--with-configpath=${PREFIX}/share/angband \
 			--bindir=${PREFIX}/bin \
 			--disable-sdl-mixer	# defaults to ON

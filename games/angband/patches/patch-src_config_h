@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_config_h,v 1.1 2011/09/13 10:28:39 edd Exp $
+$OpenBSD: patch-src_config_h,v 1.2 2011/09/15 12:30:30 edd Exp $
 
 This was preventing shared saved games/scores from working.
-Build system bug?
+Build system bug -- applied upstream.
 
 --- src/config.h.orig	Sun Sep 11 19:51:10 2011
 +++ src/config.h	Sun Sep 11 19:54:41 2011

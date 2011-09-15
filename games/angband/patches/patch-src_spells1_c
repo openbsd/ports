@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_spells1_c,v 1.1 2011/09/13 10:28:39 edd Exp $
+$OpenBSD: patch-src_spells1_c,v 1.2 2011/09/15 12:30:30 edd Exp $
 
-Fixes the scroll of light bug #1533
+Fixes the scroll of light bug #1533. Applied upstream.
 
 --- src/spells1.c.orig	Mon Sep 12 20:47:46 2011
 +++ src/spells1.c	Mon Sep 12 20:56:10 2011
