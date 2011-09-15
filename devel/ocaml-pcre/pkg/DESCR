@@ -1,0 +1,13 @@
+This OCaml-library interfaces the PCRE (Perl-compatible regular expression)
+library which is written in C. it can be used for matching regular expressions
+which are written in the PERL style.
+ 
+It is reentrant - and thus thread safe. This is not the case with the "Str"
+module of OCaml, which builds on the GNU "regex"-library. Using reentrant
+libraries also means more convenience for programmers. They do not have to
+reason about states in which the library might be in.
+ 
+The high-level functions for replacement and substitution, all implemented
+in OCaml, are much faster than the ones of the "Str"-module. In fact, when
+compiled to native code, they even seem to be significantly faster than
+those of PERL.
