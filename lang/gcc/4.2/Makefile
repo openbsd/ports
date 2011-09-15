@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2011/07/18 19:06:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.62 2011/09/15 17:25:34 espie Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -42,18 +42,47 @@ SHARED_LIBS =	estdc++		11.0 \
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
 USE_GROFF =	Yes
-PSEUDO_FLAVORS = c++ fortran objc java ada
-.if ${MACHINE_ARCH} == "i386"
-FLAVOR ?= c++ fortran objc ada java
-.endif
-.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "sparc64"
-FLAVOR ?= c++ fortran objc java
-.else
-FLAVOR ?= c++ fortran objc
+PSEUDO_FLAVORS = no_c++ no_fortran no_objc no_java no_ada
+FLAVOR ?= 
+
+ONLY_FOR_ARCHS-ada = i386
+ONLY_FOR_ARCHS-java = amd64 sparc64 i386
+
+MULTI_PACKAGES = -main
+
+BUILD = c
+
+.if !${FLAVOR:L:Mno_fortran}
+MULTI_PACKAGES += -f95
+BUILD += fortran
 .endif
 
-.if ${FLAVOR:L:Mjava}
-FLAVOR += c++
+.if !${FLAVOR:L:Mno_objc}
+MULTI_PACKAGES += -objc
+BUILD += objc
+.endif
+
+.if !${FLAVOR:L:Mno_java}
+MULTI_PACKAGES += -java
+.  for _a in ${MACHINE_ARCH} ${ARCH}
+.    if ${ONLY_FOR_ARCHS-java:M${_a}}
+BUILD += java
+.    endif
+.  endfor
+.endif
+
+.if !${FLAVOR:L:Mno_ada}
+MULTI_PACKAGES += -ada
+.  for _a in ${MACHINE_ARCH} ${ARCH}
+.    if ${ONLY_FOR_ARCHS-ada:M${_a}}
+BUILD += ada
+.    endif
+.  endfor
+.endif
+
+.if !${FLAVOR:L:Mno_c++} || ${BUILD:Mjava}
+MULTI_PACKAGES += -c++ -estdc
+BUILD += c++
 .endif
 
 DISTFILES =  ${DISTNAME}.tar.bz2
@@ -65,8 +94,6 @@ USE_LIBTOOL =	Yes
 
 BUILD_DEPENDS += devel/bison
 
-
-MULTI_PACKAGES = -main
 
 REGRESS_DEPENDS = 	devel/dejagnu \
 			devel/autogen
@@ -81,29 +108,24 @@ CONFIGURE_STYLE =	gnu
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC} ${WRKSRC}/gcc
 
 LANGS = c
-.if ${FLAVOR:L:Mc++}
+.if ${BUILD:Mc++}
 LANGS := ${LANGS},c++
-MULTI_PACKAGES += -c++ -estdc
 REGRESS_DEPENDS += 	libstdc++->=4.2,<4.3|libstdc++->=4.2v0,<4.3v0:${BUILD_PKGPATH},-estdc
 .endif
-.if ${FLAVOR:L:Mfortran}
+.if ${BUILD:Mfortran}
 LANGS := ${LANGS},fortran
-MULTI_PACKAGES += -f95
 CONFIGURE_ARGS += --with-gmp=${LOCALBASE}
 .endif
-.if ${FLAVOR:L:Mobjc}
+.if ${BUILD:Mobjc}
 LANGS := ${LANGS},objc
-MULTI_PACKAGES += -objc
 .endif
-.if ${FLAVOR:L:Mjava}
+.if ${BUILD:Mjava}
 LANGS := ${LANGS},java
-MULTI_PACKAGES += -java
 BUILD_DEPENDS += archivers/zip>=2.3p0
 CONFIGURE_ARGS += --enable-libgcj
 .endif
-.if ${FLAVOR:L:Mada}
+.if ${BUILD:Mada}
 LANGS := ${LANGS},ada
-MULTI_PACKAGES += -ada
 DISTFILES += ${ADASTRAP}:0
 CONFIGURE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
 MAKE_ENV = ADAC=${WRKDIR}/bin/egcc GNATBIND=${WRKDIR}/bin/gnatbind
@@ -124,7 +146,7 @@ post-extract:
 .endfor
 
 post-install:
-.if ${FLAVOR:L:Mada}
+.if ${BUILD:Mada} == "yes"
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/adainclude
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gcc/*/$V/adalib
 .endif
