@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/15 08:24:23 ajacoutot Exp $
 
 COMMENT=	simple xrandr config tool
 
-DISTNAME=	lxrandr-0.1.1
-REVISION=	0
+DISTNAME=	lxrandr-0.1.2
 
 CATEGORIES=	x11 sysutils
 
@@ -15,12 +14,12 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes cairo
-WANTLIB += Xi Xinerama Xrandr Xrender c expat fontconfig freetype
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 png
-WANTLIB += m pixman-1 pthread pthread-stubs xcb xcb-render xcb-render-util
-WANTLIB += z atk-1.0 gdk-x11-2.0 gdk_pixbuf-2.0 gtk-x11-2.0 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0
+WANTLIB += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
+WANTLIB += Xrandr Xrender atk-1.0 c cairo expat fontconfig freetype
+WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs xcb
+WANTLIB += xcb-render xcb-shm z
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=lxde/}
 
@@ -31,7 +30,8 @@ MODULES+=	textproc/intltool
 LIB_DEPENDS=	x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils
 
-USE_GROFF =	Yes
+USE_GROFF=	Yes
+USE_GMAKE=	Yes
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
