@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1104 2011/09/10 08:20:56 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1105 2011/09/15 17:19:36 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1653,20 +1653,21 @@ _parse_spec = \
 	esac; unset IFS; ${_flavor_fragment}
 
 _compute_default = \
-	if ! default=`eval $$toset exec ${MAKE} _print-packagename`; then \
-		echo 1>&2 "Problem with dependency ${_i}"; \
+	if set -- `eval $$toset exec ${MAKE} _print-metadata`; then \
+		default=$$1; pkgspec=$$2; pkgpath=$$3; \
+	else \
+		echo 1>&2 "Problem with dependency $$d"; \
 		exit 1; \
 	fi
-
-_set_pkg2default= pkg=`eval $$toset exec ${MAKE} _print-pkgspec`
-_set_stem2default=stem=`echo $$default|${_version2stem}`; \
-		pkg="$$stem$${pkg\#STEM}"
 
 _complete_pkgspec = \
 	${_compute_default}; \
 	case "X$$pkg" in \
-	X) ${_set_pkg2default};; \
-	XSTEM*) ${_set_stem2default};; \
+	X) \
+		pkg=$$pkgspec;; \
+	XSTEM*) \
+		stem=`echo $$default|${_version2stem}`; \
+		pkg="$$stem$${pkg\#STEM}";; \
 	esac
 
 
@@ -1880,8 +1881,8 @@ _internal-prepare: _internal-build-depends _internal-buildlib-depends \
 
 # and the rules for the actual dependencies
 
-_print-pkgspec:
-	@echo '${PKGSPEC${SUBPACKAGE}}'
+_print-metadata:
+	@echo '${FULLPKGNAME${SUBPACKAGE}}' '${PKGSPEC${SUBPACKAGE}}' '${FULLPKGPATH${SUBPACKAGE}}'
 
 _print-packagename:
 .if ${_FULL_PACKAGE_NAME:L} == "yes"
@@ -1894,6 +1895,7 @@ _print-packagename:
 .  if !target(${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=],-,g})
 ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=],-,g}: ${_WRKDIR_COOKIE}
 	@unset DEPENDS_TARGET _MASTER WRKDIR|| true; \
+	d='${_i}'; \
 	echo '${_i}'|{ \
 		${_parse_spec}; \
 		checkinstall=true; \
@@ -1917,18 +1919,7 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 			exit 1;; \
 		esac; \
 		toset="$$toset _SOLVING_DEP=Yes"; \
-		${_compute_default}; \
-		case "X$$pkg" in \
-		X) \
-			if ! ${_set_pkg2default}; \
-			then \
-				${ECHO_MSG} "===> Error in evaluating dependency ${_i}"; \
-				${REPORT_PROBLEM}; \
-				exit 1; \
-			fi;; \
-		XSTEM*) \
-			${_set_stem2default};; \
-		esac; \
+		${_complete_pkgspec}; \
 		what=$$pkg; \
 		if ! ${PKG_INFO} ${PKGDB_LOCK} -q -r "$$pkg" $$default; \
 		then \
@@ -3084,7 +3075,7 @@ print-package-args: ${lib_depends_args} ${wantlib_args}
 
 run-depends-args:
 .for _i in ${RUN_DEPENDS${SUBPACKAGE}}
-	@echo '${_i}' |{ \
+	@d='${_i}'; echo '${_i}' |{ \
 		${_parse_spec}; \
 		${_complete_pkgspec}; \
 		echo "-P $$subdir:$$pkg:$$default"; \
@@ -3095,7 +3086,7 @@ run-depends-args:
 # since we're trying to figure out what's actually needed
 all-lib-depends-args:
 .for _i in ${LIB_DEPENDS${SUBPACKAGE}}
-	@echo '${_i}' |{ \
+	@d='${_i}'; echo '${_i}' |{ \
 		${_parse_spec}; \
 		${_complete_pkgspec}; \
 		echo "-P $$subdir:$$pkg:$$default"; \
@@ -3109,7 +3100,7 @@ lib-depends-args wantlib-args port-wantlib-args fake-wantlib-args:
 
 lib-depends-args:
 .  for _i in ${LIB_DEPENDS${SUBPACKAGE}}
-	@echo '${_i}'|{ \
+	@d='${_i}'; echo '${_i}'|{ \
 		${_parse_spec}; \
 		${_complete_pkgspec}; \
 		libs=`eval $$toset ${MAKE} print-plist-libs`; \
@@ -3504,7 +3495,7 @@ _all_phony = ${_recursive_depends_targets} \
 	pre-fetch pre-install pre-package pre-patch pre-regress prepare \
 	print-build-depends print-run-depends readme readmes rebuild \
 	regress-depends regress-depends-list run-depends run-depends-list \
-    show-required-by subpackage uninstall mirror-maker-fetch _print-pkgspec \
+    show-required-by subpackage uninstall mirror-maker-fetch _print-metadata \
 	lock unlock \
 	run-depends-args lib-depends-args all-lib-depends-args wantlib-args \
 	port-wantlib-args fake-wantlib-args no-wantlib-args
