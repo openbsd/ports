@@ -1,0 +1,48 @@
+$OpenBSD: patch-packages_xpce_src_img_gifread_c,v 1.1 2011/09/15 15:36:54 jasper Exp $
+
+From bb328029beb148691edc031d9db9cf0a503c8247 Mon Sep 17 00:00:00 2001
+From: Jan Wielemaker <J.Wielemaker@cs.vu.nl>
+Date: Thu, 18 Aug 2011 11:46:53 +0200
+Subject: [PATCH] SECURITY: Bug#7 Gif-reader bufferoverflow.  Petr Pisar.
+
+From 30fbc4e030cbef5871e1b96c31458116ce3e2ee8 Mon Sep 17 00:00:00 2001
+From: Jan Wielemaker <J.Wielemaker@cs.vu.nl>
+Date: Thu, 18 Aug 2011 16:26:44 +0200
+Subject: [PATCH] SECURITY: Bug#7: More gif-read fixes.
+
+--- packages/xpce/src/img/gifread.c.orig	Wed Sep 14 21:46:22 2011
++++ packages/xpce/src/img/gifread.c	Wed Sep 14 21:46:43 2011
+@@ -466,7 +466,7 @@ LZWReadByte(IOSTREAM * fd, int flag, int input_code_si
+       firstcode = oldcode = GetCode(fd, code_size, FALSE);
+     }
+     while (firstcode == clear_code);
+-    return firstcode;
++    return (firstcode&255);
+   }
+   if (sp > stack)
+     return *--sp;
+@@ -505,11 +505,11 @@ LZWReadByte(IOSTREAM * fd, int flag, int input_code_si
+     incode = code;
+ 
+     if (code == max_code)
+-    {
+-      *sp++ = firstcode;
++    { if ( sp < stack+sizeof(stack) )	/* stack is UCHAR */
++	*sp++ = firstcode;
+       code = oldcode;
+     }
+-    while (code >= clear_code)
++    while (code >= clear_code && sp < stack+sizeof(stack) )
+     {
+       *sp++ = vals[code];
+       if (code == (int) next[code])
+@@ -520,7 +520,8 @@ LZWReadByte(IOSTREAM * fd, int flag, int input_code_si
+       code = next[code];
+     }
+ 
+-    *sp++ = firstcode = vals[code];
++    if ( sp < stack+sizeof(stack) )
++      *sp++ = firstcode = vals[code];
+ 
+     if ((code = max_code) < (1 << MAX_LZW_BITS))
+     {
