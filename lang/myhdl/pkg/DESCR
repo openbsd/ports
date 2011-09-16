@@ -1,0 +1,5 @@
+MyHDL is an open source Python package that lets you go from Python to
+silicon. With MyHDL, you can use Python as a hardware description and
+verification language. Furthermore, you can convert MyHDL code, that was
+developed towards implementation, to Verilog and VHDL automatically, and
+take it to a silicon implementation from there.
