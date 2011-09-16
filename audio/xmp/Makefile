@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/08/28 19:15:46 shadchin Exp $
+# $OpenBSD: Makefile,v 1.44 2011/09/16 08:26:11 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -13,6 +13,9 @@ PKGNAME-audacious=	audacious-${DISTNAME}
 PKGNAME-bmp=		bmp-${DISTNAME}
 PKGNAME-xmms=		xmms-${DISTNAME}
 CATEGORIES=		audio
+REVISION-audacious =	0
+REVISION-bmp =		0
+REVISION-xmms =		0
 
 HOMEPAGE=		http://xmp.sourceforge.net/
 

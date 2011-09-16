@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/16 08:26:11 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	XMMS input plugin for MP3 files
 DISTNAME=	xmms-mad-0.10
 CATEGORIES=	audio
 HOMEPAGE=	http://xmms-mad.sourceforge.net/	
+REVISION =	0
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 

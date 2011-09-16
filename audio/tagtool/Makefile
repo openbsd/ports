@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2011/04/08 13:38:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/16 08:26:11 espie Exp $
 
 COMMENT=	Ogg Vorbis and MP3 files tagger
 
 DISTNAME=	tagtool-0.12.3
-REVISION=	11
+REVISION=	12
 CATEGORIES=	audio
 
 MAINTAINER=	Vlad Glagolev <stealth@sourcemage.org>

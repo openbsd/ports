@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/04/21 07:04:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/16 08:26:10 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ VERSION=		0.20.0
 DISTNAME=		gmpc-libnotify-${VERSION}
 CATEGORIES=		audio
 
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://gmpc.wikia.com/wiki/Plugins
 

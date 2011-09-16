@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2010/12/30 11:11:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 08:26:09 espie Exp $
 
 COMMENT=	extract various archive file formats
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-REVISION =	0
+REVISION =	1
 WANTLIB=	c
 
 MASTER_SITES=	${HOMEPAGE}/download/

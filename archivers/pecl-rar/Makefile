@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/08/01 02:13:45 jolan Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 08:26:09 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ EXTRACT_SUFX=	.tgz
 MASTER_SITES=	http://pecl.php.net/get/
 CATEGORIES=	archivers www
 
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://pecl.php.net/package/rar/
 

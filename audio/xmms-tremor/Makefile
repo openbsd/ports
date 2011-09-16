@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/18 12:03:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/16 08:26:11 espie Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=	Ogg Vorbis input plugin for XMMS using tremor
 DISTNAME=	xmms-tremor-1.0
-REVISION=	3
+REVISION=	4
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	audio
 MASTER_SITES=	http://mirror1.pdaxrom.org/source/src/

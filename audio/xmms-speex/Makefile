@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/18 12:03:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 08:26:11 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	XMMS input plugin to play Speex files
 V=		0.9.2b
 DISTNAME=	speex-xmms-$V
 PKGNAME=	xmms-speex-$V
-REVISION=	2
+REVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/06 07:19:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 08:26:10 espie Exp $
 
 COMMENT-main=		ncurses-based music player
 COMMENT-flac=		FLAC input plugin for cmus
@@ -11,8 +11,8 @@ PKGNAME-flac=		cmus-flac-$(V)
 PKGNAME-wavpack=	cmus-wavpack-$(V)
 
 REVISION-main=		0
-REVISION-flac=		0
-REVISION-wavpack=	0
+REVISION-flac=		1
+REVISION-wavpack=	1
 
 CATEGORIES=		audio
 

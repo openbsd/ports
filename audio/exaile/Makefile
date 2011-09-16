@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.19 2011/08/31 09:27:57 giovanni Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/16 08:26:10 espie Exp $
 
 COMMENT =	music manager and player for GTK+ written in Python
 
 V =		0.3.2
 P =		2
 DISTNAME =	exaile-${V}.${P}
+REVISION =	0
 
 CATEGORIES =	audio x11
 

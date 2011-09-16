@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/06/08 17:31:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/09/16 08:26:10 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	Python wrapper module for the ao library
 MODPY_EGG_VERSION=0.82
 DISTNAME=	pyao-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION =	7
+REVISION =	8
 CATEGORIES=	audio
 HOMEPAGE=	http://ekyo.nerim.net/software/pyogg/
 

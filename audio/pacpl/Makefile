@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/15 00:22:48 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/16 08:26:10 espie Exp $
 
 PKG_ARCH=		*
 
@@ -11,8 +11,9 @@ DISTNAME=		pacpl-${V}
 PKGNAME-main=		pacpl-${V}
 REVISION-main=		0
 PKGNAME-konqueror=	pacpl-konqueror-${V}
-REVISION-konqueror=	0
+REVISION-konqueror=	1
 PKGNAME-amarok=		pacpl-amarok-${V}
+REVISION-amarok =	0
 CATEGORIES=		audio converters perl5
 
 HOMEPAGE=		http://pacpl.sourceforge.net/

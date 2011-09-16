@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/07/11 12:08:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 08:26:10 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		music studio with tracking, sampling and MIDI
 DISTNAME =		lmms-0.4.8
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		audio
 HOMEPAGE =		http://lmms.sourceforge.net/

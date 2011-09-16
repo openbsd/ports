@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/15 00:22:46 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/16 08:26:10 espie Exp $
 
 COMMENT=		wm-dockapp; displays the earth on an icon
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-REVISION =	2
+REVISION =	3
 WANTLIB=		X11 Xext Xpm c m z jpeg tiff png ungif wraster
 
 MASTER_SITES=		${HOMEPAGE}

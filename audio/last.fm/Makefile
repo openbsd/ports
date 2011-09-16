@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/06/08 15:19:13 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 08:26:10 espie Exp $
 
 COMMENT =		official Last.fm client
 
 VER =			1.5.4.27091
 DISTNAME =		lastfm-${VER}+dfsg
 PKGNAME =		last.fm-${VER}
-REVISION =		2
+REVISION =		3
 
 SHARED_ONLY =		Yes
 

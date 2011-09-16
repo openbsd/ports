@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/18 12:03:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/16 08:26:11 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	FM radio input plug-in for XMMS
 
 DISTNAME=	xmms-FMRadio-1.5
 PKGNAME=	${DISTNAME:L}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	audio x11
 
 HOMEPAGE=	http://silicone.free.fr/xmms-FMRadio/

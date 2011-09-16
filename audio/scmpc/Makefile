@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2011/07/11 12:13:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/16 08:26:11 espie Exp $
 
 COMMENT=		client for MPD to submit tracks to Last.fm
 CATEGORIES=		audio
 DISTNAME=		scmpc-0.3.1
+REVISION =		0
 
 HOMEPAGE=		http://cmende.github.com/scmpc/
 

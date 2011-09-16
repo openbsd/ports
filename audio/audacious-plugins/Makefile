@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/07/05 05:44:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.37 2011/09/16 08:26:10 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -8,9 +8,9 @@ COMMENT-jack =		jack plugin for audacious
 V =			2.4.5
 DISTNAME =		audacious-plugins-$V
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		1
+REVISION-main =		2
 PKGNAME-jack =		audacious-jack-$V
-REVISION-jack =		0
+REVISION-jack =		1
 
 CATEGORIES =		audio multimedia
 

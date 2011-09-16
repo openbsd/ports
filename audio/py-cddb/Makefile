@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/06/08 17:31:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/16 08:26:10 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	CDDB audio CD track info access in Python
 
 DISTNAME=	CDDB-1.4
 PKGNAME=	py-${DISTNAME:L}
-REVISION =	4
+REVISION =	5
 CATEGORIES=	audio
 
 HOMEPAGE=	http://cddb-py.sourceforge.net/

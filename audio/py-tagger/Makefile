@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2011/06/08 17:31:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 08:26:11 espie Exp $
 
 COMMENT=	Python ID3 tag reader/writer module
 
 DISTNAME=	pytagger-0.5
 PKGNAME=	${DISTNAME:S/^py/py-/}
-REVISION =	3
+REVISION =	4
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.liquidx.net/pytagger/

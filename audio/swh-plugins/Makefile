@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/29 12:06:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 08:26:11 espie Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		LADSPA plugins from Steve Harris
 DISTNAME =		swh-plugins-0.4.15
 CATEGORIES =		audio
+REVISION =		0
 
 HOMEPAGE =		http://plugin.org.uk/
 

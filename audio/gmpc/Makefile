@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2011/08/23 08:42:45 landry Exp $
+# $OpenBSD: Makefile,v 1.40 2011/09/16 08:26:10 espie Exp $
 
 COMMENT=		GNOME music player client
 
 VERSION=		11.8.16
 DISTNAME=		gmpc-${VERSION}
+REVISION =		0
 
 CATEGORIES=		audio
 

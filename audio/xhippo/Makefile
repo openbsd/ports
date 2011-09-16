@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.35 2010/12/30 08:53:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2011/09/16 08:26:11 espie Exp $
 
 COMMENT=	generic playlist manager for UNIX
 
 DISTNAME=	xhippo-3.5
 CATEGORIES=	audio
+REVISION =	0
 
 HOMEPAGE=	http://www.gnu.org/software/xhippo/
 

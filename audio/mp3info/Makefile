@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2010/11/15 00:22:47 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2011/09/16 08:26:10 espie Exp $
 
 COMMENT=	MP3 technical info viewer and ID3 1.x tag editor
 
 DISTNAME=	mp3info-0.8.5a
-REVISION=	6
+REVISION=	7
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.ibiblio.org/mp3info/

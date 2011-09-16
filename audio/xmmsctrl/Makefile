@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/03/04 16:12:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 08:26:11 espie Exp $
 
 COMMENT=	small utility to control XMMS from the command line
 
 DISTNAME=	xmmsctrl-1.9
-REVISION=	2
+REVISION=	3
 CATEGORIES=	audio
 
 HOMEPAGE=	http://www.cs.aau.dk/~adavid/utils/
