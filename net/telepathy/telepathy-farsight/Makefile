@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/16 11:13:40 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/16 19:53:11 jasper Exp $
 
 COMMENT=		flexible communications framework, farsight2 component
 
-DISTNAME=		telepathy-farsight-0.0.16
-
-REVISION=		2
+DISTNAME=		telepathy-farsight-0.0.18
 
 HOMEPAGE=		${HOMEPAGE_TP:=Telepathy-Farsight}
 
-SHARED_LIBS +=  telepathy-farsight   0.0      # .0.4
+SHARED_LIBS +=  telepathy-farsight   1.0      # .1.5
 
 MASTER_SITES=		${MASTER_SITES_TP:=telepathy-farsight/}
 
@@ -21,7 +19,7 @@ MODULES=		devel/gettext \
 			lang/python
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
-			net/farsight2 \
+			net/farsight2>=0.0.28 \
 			STEM->=0.14.3:net/telepathy/telepathy-glib
 
 CONFIGURE_STYLE=	gnu
@@ -32,6 +30,5 @@ CONFIGURE_ENV+=		ac_cv_prog_PYTHON="${MODPY_BIN}"
 pre-configure:
 	@ln -s ${LOCALBASE}/bin/python${MODPY_VERSION}-config \
 		${WRKDIR}/bin/python-config
-
 
 .include <bsd.port.mk>
