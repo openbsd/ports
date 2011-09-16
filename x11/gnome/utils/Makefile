@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2011/09/12 12:04:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2011/09/16 12:29:15 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		GNOME utility programs
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		3.0.1
 
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gdict-1.0      6.1      # .6.7
 

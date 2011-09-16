@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/09/12 13:21:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2011/09/16 12:29:13 espie Exp $
 
 # This port does set MODGNOME_HELP_FILES on purpose: it would create a
 # dependency on itself. We do not enforce dependency on x11/gnome/yelp
@@ -8,7 +8,7 @@ COMMENT=	collection of documentation utilities for the GNOME project
 
 GNOME_PROJECT=	gnome-doc-utils
 GNOME_VERSION=	0.20.6
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 

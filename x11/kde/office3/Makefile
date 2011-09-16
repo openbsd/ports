@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.70 2011/01/15 19:09:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2011/09/16 12:29:16 espie Exp $
 
 COMMENT=		office suite for KDE
 
 VERSION=		1.6.3
-REVISION =		19
+REVISION =		20
 CATEGORIES=		x11 x11/kde productivity
 VMEM_WARNING=		Yes
 MASTER_SITES?=		${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}

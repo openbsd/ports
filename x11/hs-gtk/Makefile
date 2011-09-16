@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/04/23 14:32:51 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 12:29:15 espie Exp $
 
 COMMENT =		Haskell bindings to gtk+2
 
 DISTNAME =		gtk-0.12.0
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel x11
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/

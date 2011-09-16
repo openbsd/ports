@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 12:29:15 espie Exp $
 
 COMMENT =	GTK+2 widget to display large amounts of numerical data
 
 DISTNAME =	gtkdatabox-0.9.1.1
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	gtkdatabox 0.0
 

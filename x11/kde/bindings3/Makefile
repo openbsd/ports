@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2011/07/19 18:00:16 jeremy Exp $
+# $OpenBSD: Makefile,v 1.76 2011/09/16 12:29:16 espie Exp $
 
 COMMENT = 		K Desktop Environment, extra language support
 CATEGORIES =		x11 x11/kde devel
@@ -16,7 +16,7 @@ LIB_DEPENDS =	x11/kde/libs3 \
 		x11/qt3 \
 		${MODRUBY_LIB_DEPENDS}
 
-REVISION =	15
+REVISION =	16
 #XXX missing -rpath to /usr/local ?
 USE_LIBTOOL =	gnu
 USE_GROFF =	Yes

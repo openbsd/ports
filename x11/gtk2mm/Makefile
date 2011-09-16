@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2011/09/12 12:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2011/09/16 12:29:15 espie Exp $
 
 COMMENT=	C++ interface for gtk2+
 
 GNOME_PROJECT=	gtkmm
 GNOME_VERSION=	2.24.2
+REVISION=	0
 
 PKGNAME=	gtk2mm-${GNOME_VERSION}
 

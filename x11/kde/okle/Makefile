@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/16 12:29:16 espie Exp $
 
 COMMENT= 		kde front end for ogle
 CATEGORIES=		x11 x11/kde 
@@ -17,7 +17,7 @@ USE_LIBTOOL=	Yes
 
 MODULES=	x11/kde devel/gettext
 
-REVISION = 5
+REVISION = 6
 WANTLIB += ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c dvdcontrol fam idn \
 	jpeg lib/kde3/DCOP lib/kde3/kdecore>=4 lib/kde3/kdefx lib/kde3/kdesu \
 	lib/kde3/kdeui lib/kde3/kio lib/kde3/kwalletclient m msgevents png \

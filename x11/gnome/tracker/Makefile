@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2011/09/12 12:04:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2011/09/16 12:29:14 espie Exp $
 
 BROKEN=		needs an update (GNOME3)
 
@@ -11,7 +11,7 @@ GNOME_VERSION=	0.8.18
 # as meta-tracker.
 PKGNAME=	meta-tracker-${VERSION}
 
-REVISION=	5
+REVISION=	6
 
 EVO_VERSION=	2.32
 SUBST_VARS=	EVO_VERSION

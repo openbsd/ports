@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2010/11/22 08:37:06 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/16 12:29:18 espie Exp $
 
 COMMENT-main=	X11 keyboard accessibility tool
 COMMENT-gui=	GUI for xkbset
@@ -7,7 +7,7 @@ DISTNAME=	xkbset-0.5
 PKGNAME-main=	xkbset-0.5
 REVISION-main=	1
 PKGNAME-gui=	xkbset-gui-0.5
-REVISION-gui=	0
+REVISION-gui=	1
 CATEGORIES=	x11
 MAINTAINER=	Sebastian Stark <seb@todesplanet.de>
 

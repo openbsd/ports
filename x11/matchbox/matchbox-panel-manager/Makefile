@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 12:29:16 espie Exp $
 
 COMMENT=		tray configuration utility
 DISTNAME=		matchbox-panel-manager-0.1
-REVISION=		3
+REVISION=		4
 
 MASTER_SITES=		${MASTER_SITES_MATCHBOX:=matchbox-panel-manager/0.1/}
 

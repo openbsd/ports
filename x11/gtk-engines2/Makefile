@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2011/09/12 12:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2011/09/16 12:29:15 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ GNOME_VERSION=		2.20.2
 
 # warning: PKGNAME does not default to ${DISTNAME}
 PKGNAME=		gtk-engines2-${GNOME_VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		x11
 

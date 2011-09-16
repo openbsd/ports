@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/09/15 20:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2011/09/16 12:29:13 espie Exp $
 
 BROKEN= 		update needs fixed clutter/Mesa
 
@@ -7,7 +7,7 @@ COMMENT=		collection of games for the GNOME desktop
 GNOME_PROJECT=		gnome-games
 GNOME_VERSION=		2.32.1
 
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=  games-support-gi          0.0 # 0.0
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/01/18 20:01:46 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 12:29:18 espie Exp $
 
 COMMENT =	Thunar old vfs compat
 
 XFCE_PROJECT =	thunar-vfs
 XFCE_VERSION =	1.2.0
 SHARED_LIBS +=  thunar-vfs-1              5.2 # 5.1
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2011/09/12 12:04:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2011/09/16 12:29:14 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=		gucharmap
 GNOME_VERSION=		3.0.1
 
 SHARED_LIBS +=  gucharmap_2_90            0.0 # 7.0
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		http://live.gnome.org/Gucharmap
 

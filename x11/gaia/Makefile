@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/25 08:58:49 sebastia Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/16 12:29:13 espie Exp $
 
 COMMENT=	3D earth viewer with GPS support
 
 DISTNAME=	gaia-0.1.2
-REVISION=	6
+REVISION=	7
 CATEGORIES=	x11 geo
 
 EXTRACT_SUFX=	.tar.bz2

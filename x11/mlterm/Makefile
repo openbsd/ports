@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.27 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2011/09/16 12:29:16 espie Exp $
 
 COMMENT=	color terminal emulator with unicode support
 DISTNAME=	mlterm-2.9.0
-REVISION=	11
+REVISION=	12
 
 SHARED_LIBS=	kik	10.0 \
 		mkf	13.0

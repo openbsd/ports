@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2011/09/12 12:04:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2011/09/16 12:29:14 espie Exp $
 
 COMMENT=		utility library for XKB
 
 GNOME_PROJECT=		libxklavier
 GNOME_VERSION=		5.1
 
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  xklavier             17.0     # .17.0
 

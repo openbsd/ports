@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/16 12:29:15 espie Exp $
 
 COMMENT=		small tool to make annotations on the screen
 
 DISTNAME=		gromit-20041213
-REVISION=		9
+REVISION=		10
 CATEGORIES=		x11
 
 HOMEPAGE=		http://www.home.unix-ag.org/simon/gromit/

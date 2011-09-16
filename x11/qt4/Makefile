@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.89 2011/09/07 09:54:07 espie Exp $
+# $OpenBSD: Makefile,v 1.90 2011/09/16 12:29:17 espie Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -23,14 +23,14 @@ PKGNAME-debug =		qt4-debug-${PKGVERSION}
 FULLPKGNAME-html =	qt4-html-${PKGVERSION}
 FULLPKGPATH-html =	${BASE_PKGPATH},-html
 
-#REVISION-mysql =	0
-#REVISION-postgresql =	0
-#REVISION-examples =	0
-#REVISION-sqlite2 =	0
-#REVISION-sqlite =	0
-#REVISION-tds =		0
-#REVISION-main =	0
-#REVISION-debug =	0
+REVISION-mysql =	0
+REVISION-postgresql =	0
+REVISION-examples =	0
+REVISION-sqlite2 =	0
+REVISION-sqlite =	0
+REVISION-tds =		0
+REVISION-main =		0
+REVISION-debug =	0
 
 
 SHARED_LIBS =	Qt3Support 8.0 \

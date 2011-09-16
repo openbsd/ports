@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2011/09/12 15:50:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.106 2011/09/16 12:29:13 espie Exp $
 
 BROKEN=			greeter doesn't start; port to bsd_auth(3)
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		3.0.4
+REVISION=	0
 
 HOMEPAGE=		http://projects.gnome.org/gdm/
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 12:29:16 espie Exp $
 
 COMMENT=	widget that looks just like a Mac OS 9 progress bar
 
 DISTNAME=	Tk-ProgressBar-Mac-1.2
 PKGNAME=	p5-${DISTNAME}
+REVISION=	0
 CATEGORIES=	x11 devel perl5
 
 # GPL

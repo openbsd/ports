@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2011/07/17 06:35:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2011/09/16 12:29:17 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,9 +7,9 @@ COMMENT-main=	VideoLAN client; multimedia player
 V=		1.0.6
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	33
-REVISION-jack=	5
-REVISION-web=	7
+REVISION-main=	34
+REVISION-jack=	6
+REVISION-web=	8
 CATEGORIES=	x11
 MASTER_SITES=	http://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.bz2

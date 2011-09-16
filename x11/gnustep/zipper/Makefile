@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 13:58:02 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 12:29:15 espie Exp $
 
 COMMENT =	tool for inspecting compressed archvies
 
 DISTNAME =	Zipper-1.3
+REVISION=	0
 
 HOMEPAGE =	http://xanthippe.dyndns.org/Zipper/
 MASTER_SITES =	${HOMEPAGE}

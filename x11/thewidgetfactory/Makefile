@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/22 08:37:04 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 12:29:17 espie Exp $
 
 COMMENT=	showcase for GTK+ 2 widgets
 
 DISTNAME=	thewidgetfactory-0.2.1
-REVISION=	3
+REVISION=	4
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.stellingwerff.com/?page_id=10

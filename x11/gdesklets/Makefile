@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/08/18 19:45:49 naddy Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/16 12:29:13 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		mini programs for your desktop
 
 V=			0.36.3
 DISTNAME=		gdesklets-${V}
-REVISION=		0
+REVISION=		1
 
 EXTRACT_SUFX=		.tar.bz2
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/13 13:01:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 12:29:13 espie Exp $
 
 COMMENT=	GNOME 2 Docking Library
 
 GNOME_PROJECT=	gdl
 GNOME_VERSION=	2.30.1
+REVISION=	0
 
 EXTRACT_SUFX=	.tar.bz2
 

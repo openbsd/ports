@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/12 12:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2011/09/16 12:29:17 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	GTK+2 Python bindings
 GNOME_PROJECT=	pygtk
 GNOME_VERSION=	2.24.0
 PKGNAME=	py-gtk2-${VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 

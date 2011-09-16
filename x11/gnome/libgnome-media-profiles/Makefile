@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/12 12:04:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 12:29:14 espie Exp $
 
 COMMENT=	media profiles management library
 
 GNOME_PROJECT=	libgnome-media-profiles
 GNOME_VERSION=	3.0.0
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  gnome-media-profiles-3.0  0.0 # 0.0
 

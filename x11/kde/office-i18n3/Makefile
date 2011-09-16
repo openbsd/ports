@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/16 12:29:16 espie Exp $
 
 LANGS= ca cs cy da de el en_GB es et eu fi fr \
 	hu it ja lv ms nb nl pl pt pt_BR ru sk sl sr sr@Latn \
@@ -44,7 +44,7 @@ CONFIGURE_ARGS+=-C
 DESCR=${PKGDIR}/DESCR
 MODKDE_NODEBUG=Yes
 
-REVISION =	0
+REVISION =	1
 
 # kdgantt.mo is already in kde-i18n
 post-install:

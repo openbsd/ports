@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2011/05/19 14:43:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2011/09/16 12:29:15 espie Exp $
 
 COMMENT = 		K Desktop Environment, additional artwork
 CATEGORIES =		x11 x11/kde
@@ -17,7 +17,7 @@ CONFIGURE_ENV +=	XSCREENSAVER=${LOCALBASE}/libexec/xscreensaver
 BUILD_DEPENDS =		x11/xscreensaver,-data,no_gle
 RUN_DEPENDS =		x11/xscreensaver,-data,no_gle
 
-REVISION =	8
+REVISION =	9
 
 WANTLIB = GL GLU ICE SM X11 Xau Xdamage Xdmcp Xext Xfixes Xrender Xt Xxf86vm \
 	art_lgpl_2 artsflow artsflow_idl artskde audiofile c drm fam glib-2.0 \

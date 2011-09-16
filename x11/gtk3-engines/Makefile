@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/12 12:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 12:29:15 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		collection of theme engines for GTK+3
 
 GNOME_PROJECT=		gtk-engines
 GNOME_VERSION=		2.91.1
+REVISION=	0
 
 # warning: PKGNAME does not default to ${DISTNAME}
 PKGNAME=		gtk3-engines-${GNOME_VERSION}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/11/22 08:37:01 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2011/09/16 12:29:15 espie Exp $
 
 COMMENT = 		K Desktop Environment, admin tools
 CATEGORIES =		x11 x11/kde
@@ -14,7 +14,7 @@ FLAVORS =	debug
 
 SEPARATE_BUILD =	flavored
 
-REVISION =	4
+REVISION =	5
 WANTLIB = ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c fam idn jpeg kabc \
 	kresources kwalletclient lib/kde3/DCOP lib/kde3/kdecore>=6 \
 	lib/kde3/kdefx lib/kde3/kdeprint lib/kde3/kdesu lib/kde3/kdeui \

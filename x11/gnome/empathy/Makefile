@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2011/09/12 12:04:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2011/09/16 12:29:13 espie Exp $
 
 BROKEN=			needs an update (GNOME3)
 
@@ -7,7 +7,7 @@ COMMENT= 		telepathy based messenger for GNOME
 GNOME_PROJECT=		empathy
 GNOME_VERSION=		2.34.0
 
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		net
 

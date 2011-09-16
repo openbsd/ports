@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2010/12/05 13:15:46 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2011/09/16 12:29:16 espie Exp $
 
 COMMENT = 		web development tool
 CATEGORIES =		x11 x11/kde
@@ -24,7 +24,7 @@ SEPARATE_BUILD = 	flavored
 
 USE_LIBTOOL =		gnu
 
-REVISION = 4
+REVISION = 5
 WANTLIB = ICE SM X11 Xau Xdmcp Xext Xrender art_lgpl_2 c cvsservice exslt fam \
 	gcrypt gpg-error idn jpeg kmdi knewstuff lib/kde3/DCOP lib/kde3/kabc \
 	lib/kde3/katepartinterfaces lib/kde3/kdecore>=6 lib/kde3/kdefx \

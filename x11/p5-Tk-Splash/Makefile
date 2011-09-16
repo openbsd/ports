@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:46:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 12:29:16 espie Exp $
 
 COMMENT=	splash screen widget
 
 DISTNAME=	Tk-Splash-0.14
-REVISION=	0
+REVISION=	1
 CATEGORIES=	x11 devel
 
 # GPL

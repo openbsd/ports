@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/09/12 12:04:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2011/09/16 12:29:13 espie Exp $
 
 BROKEN=		needs an update (GNOME3)
 
@@ -7,7 +7,7 @@ COMMENT=	SIP and H.323 compatible conferencing application
 GNOME_PROJECT=	ekiga
 GNOME_VERSION=	3.2.7
 
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	net multimedia
 

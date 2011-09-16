@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/16 12:29:16 espie Exp $
 
 COMMENT=	fast and lightweight file manager
 
 DISTNAME=	pcmanfm-0.3.5.10
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	x11
 

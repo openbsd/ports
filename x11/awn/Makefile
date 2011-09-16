@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/12 08:44:56 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/16 12:29:12 espie Exp $
 
 BROKEN= 		needs an update
 
@@ -6,7 +6,7 @@ COMMENT=		avant window navigator
 
 V=			0.3.2
 DISTNAME=		avant-window-navigator-$V
-REVISION=		13
+REVISION=		14
 
 SHARED_LIBS +=	awn                  0.0      # .0.1
 

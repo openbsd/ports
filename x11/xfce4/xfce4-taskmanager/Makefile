@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/01/18 21:11:15 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 12:29:18 espie Exp $
 
 COMMENT=	Xfce4 task manager and system monitor
 
 XFCE_VERSION=	1.0.0
 XFCE_GOODIE=	xfce4-taskmanager
-REVISION=	2
+REVISION=	3
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes

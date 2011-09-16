@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/07/06 21:25:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 12:29:13 espie Exp $
 #
 COMMENT =		color selector in GTK2
 
 DISTNAME =		gcolor2-0.4
-REVISION =		2
+REVISION =		3
 CATEGORIES =		x11
 
 HOMEPAGE =		http://gcolor2.sourceforge.net/

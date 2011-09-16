@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.46 2011/09/12 12:04:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.47 2011/09/16 12:29:14 espie Exp $
 
 COMMENT=	libraries for the GNOME project
 
 GNOME_PROJECT=	libgnome
 GNOME_VERSION=	2.32.1
 
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	gnome-2		2402.0   # .3000.0
 

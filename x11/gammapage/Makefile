@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/06/08 17:36:48 rpointel Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 12:29:13 espie Exp $
 
 COMMENT=	gamma-adjusting utility
 
 DISTNAME=	GAMMApage-0.5
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	x11
 EXTRACT_SUFX=	.tar.bz2

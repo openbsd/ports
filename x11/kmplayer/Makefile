@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/07/06 21:25:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 12:29:16 espie Exp $
 
 
 BROKEN=		Need to resolve various issues
@@ -7,7 +7,7 @@ CATEGORIES=	x11	x11/kde
 DISTNAME=	kmplayer-0.6.4
 EXTRACT_SUFX=	.tar.bz2
 
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS=	kparts_kmplayer  0.0 \
 		kdeinit_kmplayer 0.0

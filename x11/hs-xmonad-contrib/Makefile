@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2011/04/23 14:32:51 kili Exp $
+# $OpenBSD: Makefile,v 1.16 2011/09/16 12:29:15 espie Exp $
 
 COMMENT =		third party xmonad extensions
 
 DISTNAME =		xmonad-contrib-0.9.2
-REVISION =		2
+REVISION =		3
 CATEGORIES =		x11
 HOMEPAGE =		http://www.xmonad.org/
 

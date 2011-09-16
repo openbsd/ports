@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/22 08:37:03 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/16 12:29:16 espie Exp $
 
 COMMENT=	configuration utility for openbox
 
 DISTNAME=	obconf-2.0.3
-REVISION=	8
+REVISION=	9
 CATEGORIES=	x11
 
 HOMEPAGE=	http://icculus.org/openbox/index.php/Obconf

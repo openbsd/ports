@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/12 12:04:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 12:29:15 espie Exp $
 
 COMMENT=	XSLT stylesheets for yelp
 
 GNOME_PROJECT=	yelp-xsl
 GNOME_VERSION=	3.0.2
+REVISION=	0
 
 # GPLv2 - LGPLv2.1 - MIT
 PERMIT_PACKAGE_CDROM=	Yes

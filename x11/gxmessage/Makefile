@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/16 12:29:15 espie Exp $
 
 COMMENT=	GTK+2 based xmessage(1) clone
 
 DISTNAME=	gxmessage-2.12.4
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	x11
 

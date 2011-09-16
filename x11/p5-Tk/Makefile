@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2010/12/03 11:46:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2011/09/16 12:29:16 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -11,7 +11,7 @@ DISTNAME=	Tk-${VERSION}
 PKGNAME-main=	p5-Tk-${VERSION}
 REVISION-main=	1
 PKGNAME-demo=	p5-Tk-demo-${VERSION}
-REVISION-demo=	1
+REVISION-demo=	2
 CATEGORIES=	x11 devel
 
 # GPL + custom

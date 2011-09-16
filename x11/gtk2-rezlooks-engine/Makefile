@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/22 08:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 12:29:15 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		Clearlooks based GTK+ 2.x engine
 V=			0.6
 DISTNAME=		39179-rezlooks-$V
 PKGNAME=		gtk2-rezlooks-engine-$V
-REVISION=		0
+REVISION=		1
 CATEGORIES=		x11
 
 # GPLv2

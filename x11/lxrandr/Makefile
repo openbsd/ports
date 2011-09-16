@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/15 08:24:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 12:29:16 espie Exp $
 
 COMMENT=	simple xrandr config tool
 
 DISTNAME=	lxrandr-0.1.2
+REVISION=	0
 
 CATEGORIES=	x11 sysutils
 

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.69 2011/09/12 12:04:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2011/09/16 12:29:14 espie Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
 GNOME_VERSION=	3.0.1
-REVISION=	0
+REVISION=	1
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes

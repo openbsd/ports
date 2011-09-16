@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/20 15:07:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 12:29:17 espie Exp $
 
 COMMENT-main=		GTK+2 remote desktop client, VNC and XDMCP plugins
 COMMENT-rdp=		GTK+2 remote desktop client, RDP plugin
@@ -11,6 +11,7 @@ DISTNAME=		remmina-plugins-$V
 PKGNAME-main=		remmina-plugins-$V
 PKGNAME-rdp=		remmina-plugins-rdp-$V
 PKGNAME-telepathy=	remmina-plugins-telepathy-$V
+REVISION =		0
 
 MULTI_PACKAGES= 	-main -rdp -telepathy
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2011/09/16 12:29:16 espie Exp $
 
 COMMENT = 		K Desktop Environment, network applications
 CATEGORIES =		x11 x11/kde
@@ -23,7 +23,7 @@ RUN_DEPENDS +=	security/qca-tls
 
 SEPARATE_BUILD =	flavored
 
-REVISION = 	5
+REVISION = 	6
 WANTLIB = GL ICE SM X11 Xau Xcursor Xdamage Xdmcp Xext Xfixes Xft Xi Xinerama \
 	Xmu Xrandr Xrender Xss Xt Xtst Xxf86vm art_lgpl_2 c crypto drm expat \
 	fam fontconfig freetype gdk glib glib-2.0 gmodule gmodule-2.0 gtk idn \

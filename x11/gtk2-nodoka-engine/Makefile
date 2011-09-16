@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2011/04/17 14:36:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 12:29:15 espie Exp $
 
 COMMENT =	GTK+2 engine from Fedora
 
 VERSION =	0.7.5
 DISTNAME =	gtk-nodoka-engine-${VERSION}
 PKGNAME =	gtk2-nodoka-engine-${VERSION}
+REVISION=	0
 
 CATEGORIES =	x11
 

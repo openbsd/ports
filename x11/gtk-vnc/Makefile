@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/09/12 12:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2011/09/16 12:29:15 espie Exp $
 
 COMMENT=		VNC viewer widget for GTK
 
@@ -7,7 +7,7 @@ GNOME_VERSION=		0.4.3
 
 PKGNAME=		${DISTNAME}
 
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=  gtk-vnc-2.0               0.0 # 0.2
 SHARED_LIBS +=  gvnc-1.0             0.0 # 0.1

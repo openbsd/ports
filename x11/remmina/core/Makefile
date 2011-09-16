@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1 2011/04/20 15:18:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 12:29:17 espie Exp $
 
 COMMENT=		GTK+2 remote desktop client
 
 DISTNAME=		remmina-0.9.3
+REVISION=	0
 
 WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 avahi-client

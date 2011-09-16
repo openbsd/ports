@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/04/29 07:01:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 12:29:15 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,6 +7,7 @@ COMMENT=	Equinox GTK+2 engine
 V=		1.50
 DISTNAME=	121881-equinox-${V}
 PKGNAME=	gtk2-equinox-engine-${V}
+REVISION=	0
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		140449-equinox-themes-${V}${EXTRACT_SUFX}

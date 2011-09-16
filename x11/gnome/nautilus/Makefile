@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.85 2011/09/12 12:04:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.86 2011/09/16 12:29:14 espie Exp $
 
 COMMENT=		GNOME file manager
 
@@ -16,7 +16,7 @@ COMMENT=		GNOME file manager
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.0.2
 
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 

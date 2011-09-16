@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/01 14:11:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 12:29:15 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -7,7 +7,7 @@ COMMENT =		tool for setting pointing devices
 DISTNAME =		gpointing-device-settings-1.5.1
 CATEGORIES =		x11 sysutils
 
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  gpds                      0.0 # 1.0
 

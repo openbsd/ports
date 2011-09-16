@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.81 2011/09/16 12:29:17 espie Exp $
 
 COMMENT-main=		window manager that emulates NEXTSTEP(tm)
 COMMENT-lang=		language subpackage for Window Maker
@@ -8,7 +8,7 @@ DISTNAME=		WindowMaker-${V}
 PKGNAME-main=		${DISTNAME:L}
 REVISION-main=		10
 FULLPKGNAME-lang=       windowmaker-lang-${V}
-REVISION-lang=		1
+REVISION-lang=		2
 SHARED_LIBS=		wraster 5.0
 CATEGORIES=		x11 x11/windowmaker
 

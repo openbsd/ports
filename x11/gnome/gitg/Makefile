@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/12 12:04:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 12:29:13 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		git repository viewer for gtk+/GNOME
 GNOME_PROJECT=		gitg
 GNOME_VERSION=		0.2.4
 SHARED_LIBS +=  gitg-1.0                  0.0 # 0.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 

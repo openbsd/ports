@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/08/29 14:30:44 nigel Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 12:29:16 espie Exp $
 
 SHARED_ONLY =	Yes
 
 COMMENT =	create and manipulate tables
 
 DISTNAME =	Tk-TableMatrix-1.23
+REVISION=	0
 CATEGORIES =	x11 devel
 CPAN_AUTHOR =   CERNEY
 

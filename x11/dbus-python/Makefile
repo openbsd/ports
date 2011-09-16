@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2011/06/08 17:36:12 rpointel Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/16 12:29:12 espie Exp $
 
 COMMENT =	dbus bindings for Python
 
 DISTNAME =	dbus-python-0.84.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	x11
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2010/11/22 08:37:02 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2011/09/16 12:29:16 espie Exp $
 
 LANGS = af ar az be bg bn br bs ca cs csb cy da de el en_GB eo es et eu fa \
 	fi fr fy ga gl he hi hr hu is it ja kk km ko lt lv mk mn ms nb nds \
@@ -11,6 +11,7 @@ PATCH_LANGS =
 I = index.docbook
 C = index.cache.bz2
 
+REVISION = 0
 FLAVOR ?= fr
 SUBST_VARS = I C
 .if ${FLAVOR:L:Msr@latn}

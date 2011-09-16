@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2010/11/22 08:36:56 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2011/09/16 12:29:13 espie Exp $
 
 COMMENT=	color X11 terminal emulator with transparency support
 COMMENT-kanji=	color japanese terminal emulator with transparency support
@@ -9,6 +9,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 PKGNAME=	eterm-$V		# also see below
 SHARED_LIBS +=	Eterm                1.0      # .0.0
 CATEGORIES=	x11
+REVISION=	0
 
 HOMEPAGE=	http://www.eterm.org/
 

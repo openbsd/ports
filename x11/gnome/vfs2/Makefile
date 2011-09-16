@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2011/09/12 12:04:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2011/09/16 12:29:15 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ GNOME_VERSION=		2.24.4
 
 PKGNAME=		gnome-vfs2-${VERSION}
 
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=	gnomevfs-2           2400.0   # .2400.0
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2011/08/30 06:48:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/16 12:29:17 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	personal search and metasearch
 
 DISTNAME=	pinot-0.97
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11 misc
 

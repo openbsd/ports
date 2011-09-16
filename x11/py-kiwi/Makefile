@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/08 17:41:58 rpointel Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 12:29:17 espie Exp $
 
 COMMENT=		framework and a set of enhanced PyGTK widgets
 
 V=			1.9.26
 DISTNAME=		kiwi-$V
 PKGNAME=		py-kiwi-$V
-REVISION=		3
+REVISION=		4
 CATEGORIES=		x11 devel
 
 HOMEPAGE=		http://www.async.com.br/projects/kiwi/

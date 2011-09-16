@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.11 2011/06/08 17:37:40 rpointel Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 12:29:13 espie Exp $
 
 COMMENT =	GVfs mountpoint manager
 
 XFCE_VERSION =	0.4.1
 XFCE_GOODIE =	gigolo
-REVISION=	2
+REVISION=	3
 
 CATEGORIES =	x11
 

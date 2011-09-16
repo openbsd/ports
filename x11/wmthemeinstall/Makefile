@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/22 08:37:05 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/16 12:29:17 espie Exp $
 # $FreeBSD: ports/x11-wm/wmthemeinstall/Makefile,v 1.5 2000/10/05 06:42:57 reg Exp $
 
 COMMENT=		neat theme manager for Window Maker
@@ -6,7 +6,7 @@ COMMENT=		neat theme manager for Window Maker
 DISTNAME=		wmthemeinstall-0.62
 CATEGORIES=		x11 x11/windowmaker
 
-REVISION=		0
+REVISION=		1
 
 MAINTAINER=		Peter Stromberg <wilfried@openbsd.org>
 
