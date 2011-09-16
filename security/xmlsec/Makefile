@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/07/20 20:56:00 gsoares Exp $
+# $OpenBSD: Makefile,v 1.30 2011/09/16 11:41:39 espie Exp $
 
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
@@ -7,6 +7,7 @@ VERSION=	1.2.18
 DISTNAME=	xmlsec1-${VERSION}
 PKGNAME-main=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
+REVISION-main =	0
 CATEGORIES=	security
 SHARED_LIBS=	xmlsec1-gnutls	5.0 \
 		xmlsec1-openssl	4.0 \

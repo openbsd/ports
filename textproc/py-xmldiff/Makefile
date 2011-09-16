@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/08 18:09:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 11:41:41 espie Exp $
 
 COMMENT=		show differences between XML files/DOM trees
 
 MODPY_EGG_VERSION=	0.6.10
 DISTNAME=		xmldiff-${MODPY_EGG_VERSION}
 PKGNAME=		py-xmldiff-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.logilab.org/859/

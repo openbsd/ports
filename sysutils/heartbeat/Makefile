@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/05/11 07:45:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/09/16 11:41:39 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,11 +10,11 @@ DISTNAME=	obs-2.1.2-15
 VERSION=	2.1.2.15
 PKGNAME=	heartbeat-${VERSION}
 PKGNAME-main=	heartbeat-${VERSION}
-REVISION-main =	7
+REVISION-main =	8
 PKGNAME-gui=	heartbeat-gui-${VERSION}
-REVISION-gui =	5
+REVISION-gui =	6
 PKGNAME-snmp=	heartbeat-snmp-${VERSION}
-REVISION-snmp =	5
+REVISION-snmp =	6
 
 EXTRACT_SUFX=   .tar.bz2
 CATEGORIES=     sysutils

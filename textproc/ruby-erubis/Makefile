@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/01/06 04:24:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/16 11:41:41 espie Exp $
 
 COMMENT=		pure Ruby implementation of eRuby
 
 DISTNAME=		erubis-2.6.6
-REVISION =		0
+REVISION =		1
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.kuwata-lab.com/erubis/

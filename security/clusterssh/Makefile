@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2011/05/10 09:56:06 kevlo Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 11:41:38 espie Exp $
 
 COMMENT=	secure concurrent multi-server terminal control
 
 DISTNAME=	App-ClusterSSH-4.00_07
 PKGNAME=	clusterssh-4.00.07
+REVISION=		0
 
 CATEGORIES=	security
 

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2011/08/16 10:13:37 robert Exp $
+# $OpenBSD: Makefile,v 1.34 2011/09/16 11:41:40 espie Exp $
 
 COMMENT=	centralised configuration management for networks
 
 VERSION=	2.7.3
 DISTNAME=	puppet-${VERSION}
+REVISION=	0
 PKGNAME=	ruby-${DISTNAME}
 CATEGORIES=	sysutils net
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2010/11/22 09:34:10 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2011/09/16 11:41:39 espie Exp $
 
 COMMENT-main=	parallelized login hacker
 COMMENT-gui=	GTK frontend for hydra
@@ -8,7 +8,7 @@ DISTNAME=	hydra-5.4-src
 PKGNAME-main=	hydra-${VERSION}
 REVISION-main=	1
 PKGNAME-gui=	hydra-gui-${VERSION}
-REVISION-gui=	4
+REVISION-gui=	5
 CATEGORIES=    	security
 
 HOMEPAGE=	http://thc.org/thc-hydra/

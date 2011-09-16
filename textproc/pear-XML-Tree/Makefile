@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/06/04 11:41:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 11:41:41 espie Exp $
 
 COMMENT=	classes to represent XML data in PHP
 
 DISTNAME=	XML_Tree-1.1
-REVISION =	2
+REVISION =	3
 CATEGORIES=	textproc
 
 MODULES=	www/pear

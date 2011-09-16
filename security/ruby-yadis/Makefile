@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2011/03/19 09:18:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 11:41:39 espie Exp $
 
 COMMENT =	library for verifying and serving OpenID identities
 
 DISTNAME = ruby-${PKGNAME}
 PKGNAME = yadis-0.3.4
-REVISION = 3
+REVISION = 4
 CATEGORIES = security
 
 MAINTAINER =	Paul Irofti <pirofti@openbsd.org>

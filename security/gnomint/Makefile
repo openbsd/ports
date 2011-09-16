@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/05/14 21:29:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 11:41:38 espie Exp $
 
 COMMENT=	X.509 Certification Authority management tool
 
 DISTNAME=	gnomint-1.2.1
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	security x11
 

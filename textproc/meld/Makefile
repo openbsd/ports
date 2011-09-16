@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/12 12:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/09/16 11:41:41 espie Exp $
 
 COMMENT=	graphical diff and merge tool
 
 GNOME_VERSION=	1.5.2
 GNOME_PROJECT=	meld
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc x11
 

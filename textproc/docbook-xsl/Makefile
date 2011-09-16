@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/20 19:56:48 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 11:41:40 espie Exp $
 
 COMMENT=	docbook XSL modular stylesheet
 
 DISTNAME=	docbook-xsl-1.68.1
-REVISION =	2
+REVISION =	3
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://docbook.sourceforge.net/projects/xsl/

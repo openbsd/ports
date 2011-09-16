@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2011/07/18 10:28:44 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.16 2011/09/16 11:41:40 espie Exp $
 
 COMMENT=	text document format for writing documents and man pages 
 
 DISTNAME=	asciidoc-8.6.5
+REVISION=	0
 CATEGORIES=	textproc
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>

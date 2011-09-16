@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/06/08 18:09:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 11:41:41 espie Exp $
 
 COMMENT=		text-to-HTML conversion tool
 
 MODPY_EGG_VERSION=	2.0.3
 DISTNAME=		Markdown-${MODPY_EGG_VERSION}
 PKGNAME=		markdown-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://www.freewisdom.org/projects/python-markdown/

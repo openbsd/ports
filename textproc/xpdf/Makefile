@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.79 2011/04/10 18:02:55 jasper Exp $
+# $OpenBSD: Makefile,v 1.80 2011/09/16 11:41:42 espie Exp $
 
 COMMENT-main=	PDF viewer for X11
 COMMENT-utils=	PDF conversion tools
 
 DISTNAME=	xpdf-3.02
 PKGNAME-main=	xpdf-3.02.5
-REVISION-main=	2
+REVISION-main=	3
 PKGNAME-utils=	xpdf-utils-3.02.5
+REVISION-utils =	0
 CATEGORIES=	textproc x11
 
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \

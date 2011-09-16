@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.27 2011/05/01 12:32:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2011/09/16 11:41:40 espie Exp $
 
 PKG_ARCH=	*
 
 COMMENT=	technical documentation XML/SGML definitions
 
 DISTNAME=	docbook-4.5
+REVISION=	0
 DIST_SUBDIR=	docbook
 CATEGORIES=	textproc
 

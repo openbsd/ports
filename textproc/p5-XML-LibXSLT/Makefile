@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2010/11/20 19:56:50 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2011/09/16 11:41:41 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	fast XSLT module for perl
 MODULES=	cpan devel/gettext
 
 DISTNAME=	XML-LibXSLT-1.68
-REVISION=	3
+REVISION=	4
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

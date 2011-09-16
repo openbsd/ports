@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2011/01/06 04:24:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 11:41:41 espie Exp $
 
 COMMENT =	encode/decode Adobe's binary-to-text
 
 DISTNAME =	Ascii85-0.9.0
 PKGNAME =	${DISTNAME:L}
-REVISION =	3
+REVISION =	4
 CATEGORIES =	textproc
 
 # mit

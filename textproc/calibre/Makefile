@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/13 07:00:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 11:41:40 espie Exp $
 
 COMMENT =		ebook management application
 
 DISTNAME =		calibre-0.8.18
+REVISION=	0
 CATEGORIES =		textproc
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=calibre/}
 

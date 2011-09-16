@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/06/08 17:43:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/16 11:41:39 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	Python Cryptographic Toolkit
 MODPY_EGG_VERSION= 0.9
 DISTNAME=	cryptkit-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	6
+REVISION=	7
 CATEGORIES=    	security devel
 
 HOMEPAGE=	http://sourceforge.net/projects/cryptkit/

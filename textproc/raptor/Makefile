@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/20 19:56:51 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 11:41:41 espie Exp $
 
 COMMENT=		RDF Parser Toolkit for Redland
 DISTNAME=		raptor-1.4.18
-REVISION=		1
+REVISION=		2
 CATEGORIES=		textproc
 
 SHARED_LIBS=		raptor	2.0 # .2.0

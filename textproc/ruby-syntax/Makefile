@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/12/20 18:21:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 11:41:42 espie Exp $
 
 COMMENT =	module for using syntax highlighting in ruby
 
 DISTNAME =	syntax-1.0.0
 CATEGORIES =	textproc
 
-REVISION =	0
+REVISION =	1
 
 # MIT License
 PERMIT_PACKAGE_CDROM=	Yes

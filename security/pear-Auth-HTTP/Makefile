@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/20 17:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 11:41:39 espie Exp $
 
 COMMENT=	HTTP authentication
 
 V=		2.1.6
 DISTNAME=	Auth_HTTP-${V}
 PKGNAME=	pear-Auth-HTTP-${V}
-REVISION =	0
+REVISION =	1
 CATEGORIES=	security
 
 MODULES=	www/pear

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/12 15:30:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/16 11:41:40 espie Exp $
 
 BROKEN=		does not compile with new libgda
 
@@ -9,7 +9,7 @@ COMMENT=	gettext(1) files editor for GNOME
 GNOME_PROJECT=	gtranslator
 GNOME_VERSION=	1.9.13
 
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	textproc devel
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/01/06 04:24:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 11:41:40 espie Exp $
 
 COMMENT =	ruby scripting framework
 
 DISTNAME =	thor-0.14.6
-REVISION =	0
+REVISION =	1
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://github.com/wycats/thor

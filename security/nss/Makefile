@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/09/06 19:39:34 landry Exp $
+# $OpenBSD: Makefile,v 1.24 2011/09/16 11:41:39 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -13,7 +13,7 @@ SO_VERSION=		28.0
 SHARED_LIBS+=		${_lib} ${SO_VERSION}
 .endfor
 CATEGORIES=		security
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://www.mozilla.org/projects/security/pki/nss/
 

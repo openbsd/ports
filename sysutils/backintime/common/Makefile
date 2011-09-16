@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/15 09:05:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 11:41:39 espie Exp $
 
 COMMENT=	simple backup tool -- common files
 
 PKGNAME=	backintime-common-${V}
-REVISION=	0
+REVISION=	1
 
 WRKSRC=		${WRKDIST}/common
 

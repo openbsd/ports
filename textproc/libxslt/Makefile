@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/06/08 18:09:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2011/09/16 11:41:41 espie Exp $
 
 COMMENT-main=		XSLT C Library for GNOME
 COMMENT-python= 	Python bindings for libxslt
@@ -7,8 +7,8 @@ VERSION=		1.1.26
 DISTNAME=		libxslt-${VERSION}
 PKGNAME-main=		libxslt-${VERSION}
 PKGNAME-python= 	py-libxslt-${VERSION}
-REVISION-main=		2
-REVISION-python=	2
+REVISION-main=		3
+REVISION-python=	3
 SHARED_LIBS=		exslt	9.8 \
 			xslt	3.8
 

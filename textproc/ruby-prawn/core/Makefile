@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/03/02 16:02:27 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 11:41:42 espie Exp $
 
 COMMENT =	Fast, Nimble PDF Generation For Ruby - prawn-core
 
 DISTNAME =	prawn-core-${VERSION}
-REVISION =	3
+REVISION =	4
 
 MODRUBY_REGRESS =	rake
 NO_REGRESS =		Yes # untill ruby-test-spec has been imported.

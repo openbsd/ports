@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/01/06 04:24:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/16 11:41:42 espie Exp $
 
 COMMENT =	generate random strings from most regular expressions
 
 DISTNAME =	randexp-0.1.5
-REVISION =	1
+REVISION =	2
 CATEGORIES =	textproc
 
 # MIT

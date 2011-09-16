@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/01/06 04:24:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 11:41:42 espie Exp $
 
 COMMENT =	conforming pdf parser
 
 DISTNAME =	pdf-reader-0.7.7
-REVISION =	3
+REVISION =	4
 CATEGORIES =	textproc
 
 # mit

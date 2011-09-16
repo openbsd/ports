@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/20 17:22:44 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/16 11:41:39 espie Exp $
 
 COMMENT=	OTP and S/Key calculator for X
 
 DISTNAME=	otpCalc-0.97
-REVISION=	4
+REVISION=	5
 CATEGORIES=    	security
 
 HOMEPAGE=	http://original.killa.net/infosec/otpCalc/

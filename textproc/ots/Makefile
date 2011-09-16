@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.10 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/16 11:41:41 espie Exp $
 
 COMMENT=	open source tool for summarizing texts
 DISTNAME=	ots-0.4.2
-REVISION=	2
+REVISION=	3
 SHARED_LIBS=	ots-1	4.2
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=libots/}

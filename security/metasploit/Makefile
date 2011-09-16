@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/23 12:39:14 stephan Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 11:41:39 espie Exp $
 
 COMMENT-main = 	penetration testing resources
 COMMENT-mysql = penetration testing resources (mysql backend)
@@ -10,6 +10,7 @@ PKGNAME-main =	metasploit-${V}
 PKGNAME-mysql =	metasploit-mysql-${V}
 PKGNAME-pgsql =	metasploit-pgssql-${V}
 DISTNAME =	framework-${V}
+REVISION =	0
 
 EXTRACT_SUFX =	.tar.bz2
 

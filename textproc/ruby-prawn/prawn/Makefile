@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/06 04:24:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 11:41:42 espie Exp $
 
 COMMENT =	Fast, Nimble PDF Generation For Ruby -- ruby-prawn
 
 DISTNAME =	prawn-${VERSION}
-REVISION =	3
+REVISION =	4
 
 RUN_DEPENDS =	textproc/ruby-prawn/core,${MODRUBY_FLAVOR} \
 		textproc/ruby-prawn/layout,${MODRUBY_FLAVOR} \

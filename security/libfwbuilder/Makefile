@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2011/04/12 12:38:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/16 11:41:39 espie Exp $
 
 COMMENT=	libraries for fwbuilder
 DISTNAME=	libfwbuilder-4.1.3
+REVISION=		0
 CATEGORIES=	net security
 SHARED_LIBS=	fwbuilder	16.0 \
 		fwcompiler	16.0

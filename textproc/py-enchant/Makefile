@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/08/26 08:23:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 11:41:41 espie Exp $
 
 COMMENT=	spellchecking library for Python
 
 MODPY_EGG_VERSION=	1.6.5
 DISTNAME=	pyenchant-${MODPY_EGG_VERSION}
 PKGNAME=	py-enchant-${MODPY_EGG_VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 

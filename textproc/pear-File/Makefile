@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/06/04 11:41:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 11:41:41 espie Exp $
 
 COMMENT=	common file and directory routines for PHP
 
 DISTNAME=	File-1.2.2
-REVISION =	1
+REVISION =	2
 CATEGORIES=	textproc
 
 MODULES=	www/pear

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2010/12/22 19:50:05 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/16 11:41:41 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	perl interface for several perl XML modules
 
 DISTNAME=	XML-LibXML-Common-0.13
-REVISION=	4
+REVISION=	5
 CATEGORIES=	textproc
 USE_GROFF =	Yes
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/07/06 21:09:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 11:41:39 espie Exp $
 
 COMMENT=	good-looking ssh-agent pass-phrase dialog
 
 DISTNAME =	ssh-askpass-fullscreen-0.4
-REVISION=	3
+REVISION=	4
 CATEGORIES=	security
 
 MASTER_SITES =	http://www.cgabriel.org/download/ssh-askpass-fullscreen/

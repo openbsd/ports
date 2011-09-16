@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/06/08 18:09:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/16 11:41:42 espie Exp $
 
 COMMENT=	utility to turn simply formatted text into markup 
 
 DISTNAME=	txt2tags-2.6
-REVISION=	0
+REVISION=	1
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://txt2tags.org/

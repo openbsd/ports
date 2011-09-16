@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/12 19:58:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 11:41:38 espie Exp $
 
 COMMENT=	command line utility to run programs as root
 
 DISTNAME=	gksu-polkit-0.0.2
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS +=  gksu-polkit               0.0 # 0.1
 

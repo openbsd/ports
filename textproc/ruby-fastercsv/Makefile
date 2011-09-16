@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/03/14 17:40:34 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/16 11:41:41 espie Exp $
 
 COMMENT=	faster Ruby CSV library
 
 DISTNAME=	fastercsv-1.5.4
+REVISION=	0
 CATEGORIES=	textproc
 
 # GPLv2
