@@ -1,0 +1,17 @@
+$OpenBSD: patch-Makefile,v 1.1 2011/09/16 13:35:49 naddy Exp $
+
+gcc3 throws a spurious warning that a variable might be used uninitialized.
+
+--- Makefile.orig	Fri Sep 16 15:08:28 2011
++++ Makefile	Fri Sep 16 15:12:11 2011
+@@ -16,7 +16,9 @@ WARNFLAGS := -Wall -W -Wundef -Wpointer-arith -Wcast-a
+ # BeOS/Haiku/AmigaOS4 standard library headers create warnings
+ ifneq ($(TARGET),beos)
+   ifneq ($(TARGET),amiga)
+-    WARNFLAGS := $(WARNFLAGS) -Werror
++    ifneq ($(TARGET),OpenBSD)
++      WARNFLAGS := $(WARNFLAGS) -Werror
++    endif
+   endif
+ endif
+ CFLAGS := -D_BSD_SOURCE -I$(CURDIR)/include/ \
