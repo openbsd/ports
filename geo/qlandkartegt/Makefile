@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 09:48:11 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 13:08:48 sebastia Exp $
 
 VMEM_WARNING =	yes
 COMMENT =	garmin gps map management tool
 
-DISTNAME =	qlandkartegt-1.2.2
-REVISION=		0
+DISTNAME =	qlandkartegt-1.2.3
 CATEGORIES =	geo x11
 
 HOMEPAGE =	http://www.qlandkarte.org/
