@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/08/18 12:22:31 mpi Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/09/16 22:05:21 sthen Exp $
 bin/pyflakes
 lib/python${MODPY_VERSION}/site-packages/pyflakes/
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pyflakes-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pyflakes/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyflakes/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pyflakes/checker.py
