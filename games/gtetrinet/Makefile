@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/07/06 23:56:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/09/16 09:48:10 espie Exp $
 
 MULTI_PACKAGES=	-main -themes
 
@@ -6,9 +6,9 @@ COMMENT-main=	tetrinet client
 COMMENT-themes=	collection of gtetrinet themes
 DISTNAME=	gtetrinet-0.7.11
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	14
+REVISION-main=	15
 PKGNAME-themes=	gtetrinet-themes-20070623
-REVISION-themes=1
+REVISION-themes=2
 CATEGORIES=	x11 games
 
 HOMEPAGE=	http://gtetrinet.sourceforge.net/

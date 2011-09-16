@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/15 23:22:08 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/16 09:48:09 espie Exp $
 
 COMMENT=	UAE amiga emulator
 DISTNAME=	uae-0.8.25
-REVISION=	7
+REVISION=	8
 CATEGORIES=	emulators x11
 
 HOMEPAGE=	http://uae.coresystems.de/

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/06/27 06:33:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 09:48:10 espie Exp $
 
 COMMENT=	offline maps viewer
 
 MODPY_EGG_VERSION=	0.7.6.1
 DISTNAME=	GMapCatcher-${MODPY_EGG_VERSION}
 PKGNAME=	gmapcatcher-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=	geo x11
 

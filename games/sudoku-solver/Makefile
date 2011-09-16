@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/06/23 22:50:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/16 09:48:10 espie Exp $
 
 COMMENT=	sudoku puzzle solver with cli, gui, and web ui
 
 DISTNAME=	sudoku-solver-1.0.1
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=    	games www x11
 

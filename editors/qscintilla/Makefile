@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/08/23 11:20:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 09:48:09 espie Exp $
 
 # XXX: Upstream doesn't keep old files; if updating please mirror or ask sthen@
 
@@ -6,6 +6,7 @@ COMMENT =	Qt4 port of the Scintilla source code editor
 
 VERSION =	2.5.1
 DISTNAME =	QScintilla-gpl-${VERSION}
+REVISION=		0
 PKGNAME =	qscintilla-${VERSION}
 CATEGORIES =	editors x11
 

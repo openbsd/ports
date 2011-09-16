@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2011/06/08 17:35:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 09:48:11 espie Exp $
 
 COMMENT =		Pyrex generated python interface to PROJ.4 library
 
 MODPY_EGG_VERSION =	1.8.9
 DISTNAME =		pyproj-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		geo
 

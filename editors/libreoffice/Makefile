@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2011/09/14 19:12:18 naddy Exp $
+# $OpenBSD: Makefile,v 1.45 2011/09/16 09:48:09 espie Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -14,9 +14,9 @@ PKGNAME=	libreoffice-${VERSION}
 PKGNAME-main=	libreoffice-${VERSION}
 PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
-REVISION-main=	1
-REVISION-kde=	0
-REVISION-java=	1
+REVISION-main=	2
+REVISION-kde=	1
+REVISION-java=	2
 CATEGORIES=	editors productivity
 
 EPOCH=		0
@@ -118,6 +118,7 @@ COMMENT-i18n-$l=	$l language pack for LibreOffice
 RUN_DEPENDS-i18n-$l=	editors/libreoffice
 WANTLIB-i18n-$l=
 LIB_DEPENDS-i18n-$l=
+REVISION-i18n-$l =	0
 .endfor
 .endif
 

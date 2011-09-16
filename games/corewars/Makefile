@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/16 11:23:26 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/16 09:48:09 espie Exp $
 
 COMMENT=	computer simulation game
 
 DISTNAME=	corewars-0.9.13
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	games x11
 

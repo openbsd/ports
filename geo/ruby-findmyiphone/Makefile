@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/01/06 04:24:23 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 09:48:11 espie Exp $
 
 COMMENT=		Ruby library to physically locate iPhones
 
 DISTNAME=		findmyiphone-0.2.0
-REVISION=		5
+REVISION=		6
 CATEGORIES=		geo
 
 HOMEPAGE=		http://github.com/mattb/findmyiphone

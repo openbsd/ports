@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/16 09:48:10 espie Exp $
 
 COMMENT=	go client and fully featured sgf editor
 
 DISTNAME=	qgo-1.5.4
-REVISION =	0
+REVISION =	1
 CATEGORIES=	games
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

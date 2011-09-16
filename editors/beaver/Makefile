@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/07/06 18:29:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/16 09:48:08 espie Exp $
 
 COMMENT=	lightweight Gtk text editor with syntax highlighting
 
@@ -6,7 +6,7 @@ DISTNAME=	beaver0_3_0_1
 PKGNAME=	beaver-0.3.0.1
 CATEGORIES=	editors	
 
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	http://www.nongnu.org/beaver/
 # XXX should use ${MASTER_SITE_SAVANNAH:=beaver/} but % in the

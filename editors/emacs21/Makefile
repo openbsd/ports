@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2011/07/18 19:06:36 naddy Exp $
+# $OpenBSD: Makefile,v 1.56 2011/09/16 09:48:08 espie Exp $
 
 COMMENT-main=		GNU editor: extensible, customizable, self documenting
 COMMENT-el=		elisp sources for those who want to read/modify them
@@ -12,8 +12,8 @@ FULLPKGPATH-el=		editors/emacs21,-el
 FULLPKGNAME-leim=	emacs-leim-${VERSION}
 FULLPKGPATH-leim=	editors/emacs21,-leim
 REVISION-main=		16
-REVISION-el=		3
-REVISION-leim=		3
+REVISION-el=		4
+REVISION-leim=		4
 
 CATEGORIES=		editors
 

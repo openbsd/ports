@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/19 09:16:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 09:48:09 espie Exp $
 
 COMMENT=		asian font pack for acroread
 
 PKGNAME=		acrofonts-7.0
-REVISION=		0
+REVISION=		1
 CATEGORIES=		fonts print
 
 HOMEPAGE=		http://www.adobe.com/products/acrobat/readstep.html

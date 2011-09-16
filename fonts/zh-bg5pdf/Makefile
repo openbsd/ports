@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/19 19:19:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 09:48:09 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	convert Big5 encoded files to PDF
 
 DISTNAME=	bg5pdf-1.0.0
 PKGNAME=	zh-${DISTNAME}
-REVISION=	10
+REVISION=	11
 CATEGORIES=	fonts chinese print
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

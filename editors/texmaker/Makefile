@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/04/28 17:06:11 shadchin Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/16 09:48:09 espie Exp $
 # $FreeBSD: ports/editors/texmaker/Makefile,v 1.2 2004/01/09 09:16:33 krion Exp $
 
 COMMENT=		LaTeX development environment
 DISTNAME=		texmaker-3.0.2
+REVISION=		0
 CATEGORIES=		editors
 
 HOMEPAGE=		http://www.xm1math.net/texmaker/

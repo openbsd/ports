@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2011/04/05 14:42:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.84 2011/09/16 09:48:08 espie Exp $
 
 COMMENT=	free cross-platform WYSIWYG word processor
 
@@ -6,7 +6,7 @@ VERSION=	2.8.6
 MAJORVER=	${VERSION:C/..$//}
 DISTNAME=	abiword-${VERSION}
 
-REVISION=	2
+REVISION=	3
 
 # Merge a patch from Fedora to change default font from Times Roman to
 # DejaVu Serif.: fixes font corruption issue on machines where

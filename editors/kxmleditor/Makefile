@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.35 2011/07/06 18:29:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2011/09/16 09:48:09 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	XML editor for KDE
 
 DISTNAME=	kxmleditor-1.1.3
-REVISION=	6
+REVISION=	7
 CATEGORIES=	editors x11 x11/kde
 
 SHARED_LIBS=	kxmleditorpart	2.0

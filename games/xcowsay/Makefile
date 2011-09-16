@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/16 11:23:28 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 09:48:10 espie Exp $
 
 COMMENT =		displays a cute cow and message on your desktop
 DISTNAME =		xcowsay-1.1
-REVISION=		2
+REVISION=		3
 CATEGORIES =		games
 
 HOMEPAGE =		http://www.doof.me.uk/xcowsay/

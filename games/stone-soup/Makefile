@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/06 18:55:14 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 09:48:10 espie Exp $
 
 COMMENT = 	dungeon crawl stone soup
 CATEGORIES = 	games
@@ -9,7 +9,7 @@ VERSION = 	0.7.2
 DISTNAME=	stone_soup-${VERSION}-nodeps
 EXTRACT_SUFX=	.tar.bz2
 PKGNAME=	stone-soup-${VERSION}
-REVISION=	0
+REVISION=	1
 
 BROKEN-arm=	tilegen.elf loops burning cpu
 

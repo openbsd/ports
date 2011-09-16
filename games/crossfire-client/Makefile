@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.29 2010/11/16 11:23:26 espie Exp $
+# $OpenBSD: Makefile,v 1.30 2011/09/16 09:48:09 espie Exp $
 
 COMMENT=	graphical networked AD&D style game
 
 VERSION=	1.11.0
 DISTNAME=	crossfire-client-${VERSION}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	games x11
 
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \

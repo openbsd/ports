@@ -1,10 +1,10 @@
- # $OpenBSD: Makefile,v 1.5 2011/06/28 11:55:51 jasper Exp $
+ # $OpenBSD: Makefile,v 1.6 2011/09/16 09:48:10 espie Exp $
 
 COMMENT =		modernization of the classic DOS game Scorched Earth
 
 DISTNAME =		Scorched3D-43.1c-src
 PKGNAME =		${DISTNAME:L:S/-src//}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games x11
 

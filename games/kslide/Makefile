@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/16 11:23:27 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/16 09:48:10 espie Exp $
 
 COMMENT=	puzzle game for KDE
 
 DISTNAME=	kslide-0.90
-REVISION =	2
+REVISION =	3
 CATEGORIES=	games
 
 HOMEPAGE=	http://perso.wanadoo.fr/coquelle/taquin/

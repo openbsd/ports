@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.13 2011/04/07 17:02:48 giovanni Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/16 09:48:09 espie Exp $
 
 COMMENT =	powerful and simple qt4 editor
 
 V =		29.0.1
 DISTNAME =	tea-${V}
 PKGNAME =	teaqt-${V}
+REVISION=		0
 CATEGORIES =	editors x11
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=tea-editor/}
 EXTRACT_SUFX =	.tar.bz2

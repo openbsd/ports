@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2011/05/11 06:56:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2011/09/16 09:48:10 espie Exp $
 # $FreeBSD: Makefile,v 1.13 1997/12/25 22:29:17 asami Exp $
 
 COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.4.3
 DISTNAME =	nethack-$V
 PKGNAME =	${DISTNAME}
-REVISION =	4
+REVISION =	5
 CATEGORIES =	games
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nethack/} \

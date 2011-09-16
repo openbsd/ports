@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.5 2010/11/16 11:23:25 espie Exp $
+#	$OpenBSD: Makefile,v 1.6 2011/09/16 09:48:09 espie Exp $
 PKG_ARCH-main =		*
 PKG_ARCH-hires =	*
 
@@ -9,7 +9,7 @@ DISTNAME =		marathoninfinity-${V}
 PKGNAME-main =		marathoninfinity-${V}
 REVISION-main =		0
 PKGNAME-hires =		marathoninfinity-hires-${V}
-REVISION-hires =	0
+REVISION-hires =	1
 HOMEPAGE =		http://source.bungie.org/get/
 
 DISTFILES =		MarathonInfinity.zip

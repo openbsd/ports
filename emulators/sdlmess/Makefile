@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/07/06 18:29:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/16 09:48:09 espie Exp $
 
 # Other archs have not been tested
 ONLY_FOR_ARCHS =	amd64 i386
@@ -8,7 +8,7 @@ COMMENT =		emulates game consoles and old home computers
 V =			0.132
 DISTNAME =		sdlmess${V:S/.//}
 PKGNAME =		sdlmess-${V}
-REVISION=		5
+REVISION=		6
 
 CATEGORIES =		emulators games
 

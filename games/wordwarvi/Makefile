@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/06 18:41:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 09:48:10 espie Exp $
 
 COMMENT =		editor war arcade game
 
 DISTNAME =		wordwarvi-1.00
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 

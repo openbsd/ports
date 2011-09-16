@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/22 10:16:08 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/16 09:48:10 espie Exp $
 
 COMMENT=	silly little game based on Spacetaxi for the C64
 
 DISTNAME=	taxipilot-0.7.2
-REVISION =	2
+REVISION =	3
 CATEGORIES=	games
 
 HOMEPAGE=	http://taxipilot.sourceforge.net/

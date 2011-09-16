@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/02 09:54:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 09:48:10 espie Exp $
 
 COMMENT=		2D games framework for use with Lua
 
 V=			0.7.2
 DISTNAME=		love-$V-linux-src
 PKGNAME=		love-$V
+REVISION=		0
 
 HOMEPAGE=		http://love2d.org/
 

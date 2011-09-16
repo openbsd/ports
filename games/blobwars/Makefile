@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/05/08 21:47:44 kili Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 09:48:09 espie Exp $
 
 COMMENT =	2D arcade game
 
 DISTNAME =	blobwars-1.19
+REVISION=		0
 
 CATEGORIES =	games
 

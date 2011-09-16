@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2011/06/02 17:09:31 kili Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/16 09:48:10 espie Exp $
 
 COMMENT=		library to provide a Gtk+ widget to display maps
 
 DISTNAME=		libchamplain-${VERSION}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  champlain-0.8       0.0          # 1.2
 SHARED_LIBS +=  champlain-gtk-0.8   0.0          # 1.2

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/27 17:45:56 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 09:48:10 espie Exp $
 
 COMMENT =	extended client for The Mana World
 
 V =		1.1.6.26
 DISTNAME =	manaplus-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games x11
 

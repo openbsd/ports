@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/06/16 04:24:17 rpointel Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/16 09:48:09 espie Exp $
 
 COMMENT-main =		easy to use LaTeX and ConTeXt editor
 COMMENT-python =	Python scripting for TeXworks
@@ -10,9 +10,9 @@ DISTNAME =		texworks-${V}-r759
 PKGNAME-main =		texworks-${V}
 PKGNAME-lua =		texworks-lua-${V}
 PKGNAME-python =	texworks-python-${V}
-REVISION-main = 	0
-REVISION-python =	1
-REVISION-lua =		0
+REVISION-main = 	1
+REVISION-python =	2
+REVISION-lua =		1
 
 WRKDIST =		${WRKDIR}/texworks-${V}
 

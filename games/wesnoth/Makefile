@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.40 2011/07/20 18:37:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2011/09/16 09:48:10 espie Exp $
 
 COMMENT=	fantasy turn-based strategy game
 
 DISTNAME=	wesnoth-1.8.6
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	games x11
 

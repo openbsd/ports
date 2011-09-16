@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/08/26 09:14:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/16 09:48:09 espie Exp $
 
 COMMENT=	OpenGL game based on SNES classic Tetris Attack
 
 DISTNAME=	crack-attack-1.1.14
-REVISION=	7
+REVISION=	8
 CATEGORIES=	games
 
 MAINTAINER=	Mattieu Baptiste <mattieu.b@free.fr>

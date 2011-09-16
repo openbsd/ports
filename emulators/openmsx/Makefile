@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/07 01:35:41 bentley Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 09:48:09 espie Exp $
 
 COMMENT =	MSX home computer emulator
 
 DISTNAME =	openmsx-0.8.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	emulators
 

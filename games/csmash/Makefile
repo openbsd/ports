@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/16 11:23:26 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 09:48:09 espie Exp $
 
 COMMENT=	Cannon Smash 3D table tennis
 
 DISTNAME=	csmash-0.6.6
-REVISION=	3
+REVISION=	4
 CATEGORIES=	games
 HOMEPAGE=	http://cannonsmash.sourceforge.net/
 
