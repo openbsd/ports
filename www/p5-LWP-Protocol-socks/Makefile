@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.2 2011/03/08 21:51:27 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 18:08:06 nigel Exp $
 
 COMMENT =	adds support for SOCKS to p5-libwww
 
-DISTNAME =	LWP-Protocol-socks-1.3
+DISTNAME =	LWP-Protocol-socks-1.5
 CATEGORIES =	www
 CPAN_AUTHOR =	SCR
 
-MAINTAINER =	Nigel Taylor <njtaylor@asterisk.demon.co.uk>
+MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE_CDROM =	Yes
