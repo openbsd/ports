@@ -1,0 +1,17 @@
+$OpenBSD: patch-menuselect_mxml_Makefile_in,v 1.1 2011/09/16 12:49:21 naddy Exp $
+--- menuselect/mxml/Makefile.in.orig	Thu Sep 15 19:04:42 2011
++++ menuselect/mxml/Makefile.in	Thu Sep 15 19:05:02 2011
+@@ -23,11 +23,11 @@
+ AR		=	@AR@
+ ARFLAGS		=	@ARFLAGS@
+ CC		=	@CC@
+-CFLAGS		=	$(OPTIM) @CFLAGS@ @CPPFLAGS@
++CFLAGS		=	@CFLAGS@ @CPPFLAGS@
+ CP		=	@CP@
+ DSO		=	@DSO@
+ DSOFLAGS	=	@DSOFLAGS@
+-LDFLAGS		=	$(OPTIM) @LDFLAGS@
++LDFLAGS		=	@LDFLAGS@
+ INSTALL		=	@INSTALL@
+ LIBMXML		=	@LIBMXML@
+ LN		=	@LN@ -s
