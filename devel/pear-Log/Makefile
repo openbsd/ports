@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2011/08/01 19:30:31 stephan Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/16 09:24:53 espie Exp $
 
 COMMENT =	logging utilities for PHP
 
 DISTNAME =	Log-1.11.5
 CATEGORIES =	devel
-REVISION = 	0
+REVISION = 	1
 
 HOMEPAGE =	http://pear.php.net/package/Log/
 

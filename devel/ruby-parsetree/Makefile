@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2011/01/06 04:24:23 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/16 09:24:57 espie Exp $
 
 COMMENT =	extracts the parse tree for an entire class or a method
 
 DISTNAME =	ParseTree-3.0.4
 PKGNAME =	${DISTNAME:L}
-REVISION =	3
+REVISION =	4
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.zenspider.com/ZSS/Products/ParseTree/

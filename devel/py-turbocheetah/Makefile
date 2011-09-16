@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/08 17:39:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/16 09:24:56 espie Exp $
 
 COMMENT=		plugin to support use of Cheetah templates
 
 VERSION=		1.0
 DISTNAME=		TurboCheetah-${VERSION}
 PKGNAME=		py-turbocheetah-${VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES=		devel
 

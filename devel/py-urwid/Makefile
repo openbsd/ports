@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/06/08 17:39:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 09:24:56 espie Exp $
 
 COMMENT =	console user interface library for python
 
 MODPY_EGG_VERSION = 0.9.9.1
 DISTNAME =	urwid-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel
 
 HOMEPAGE =	http://excess.org/urwid/

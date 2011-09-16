@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/01/06 04:24:22 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 09:24:57 espie Exp $
 
 COMMENT =	toolkit for building modeling frameworks
 
 VERSION =	3.0.3
 DISTNAME =	activemodel-${VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 # MIT License

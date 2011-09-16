@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/06 20:03:52 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 09:24:51 espie Exp $
 
 COMMENT =	compares and merges multiple files or directories
 CATEGORIES =	devel x11/kde
 HOMEPAGE =	http://kdiff3.sourceforge.net/
 
 DISTNAME =	kdiff3-0.9.96
+REVISION=		0
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=kdiff3/}
 MODULES =	x11/qt4

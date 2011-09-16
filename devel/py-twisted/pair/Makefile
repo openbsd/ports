@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/06/20 10:25:33 eric Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:56 espie Exp $
 
 COMMENT=	low-level networking for Twisted
 
@@ -7,6 +7,7 @@ CATEGORIES+=	net
 VERSION=	11.0.0
 DISTNAME=	TwistedPair-${VERSION}
 PKGNAME=	py-twisted-pair-${VERSION}
+REVISION=		0
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedPair
 

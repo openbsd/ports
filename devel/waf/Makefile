@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2011/06/08 17:40:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/16 09:24:58 espie Exp $
 
 COMMENT=	Python-based build system
 
 DISTNAME=	waf-1.5.18
 CATEGORIES=	devel
-REVISION =		0
+REVISION =		1
 EXTRACT_SUFX=	.tar.bz2
 
 HOMEPAGE=	http://waf.googlecode.com/

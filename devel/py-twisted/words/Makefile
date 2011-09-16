@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2011/06/20 10:25:33 eric Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/16 09:24:56 espie Exp $
 
 COMMENT=	chat and instant messaging module for Twisted
 
 VERSION=	11.0.0
 DISTNAME=	TwistedWords-${VERSION}
 PKGNAME=	py-twisted-words-${VERSION}
+REVISION=		0
 
 HOMEPAGE=	http://twistedmatrix.com/trac/wiki/TwistedWords
 

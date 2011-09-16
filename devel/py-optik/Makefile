@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2011/06/08 17:39:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/16 09:24:55 espie Exp $
 
 COMMENT=	command line parsing library for Python
 
 MODPY_EGG_VERSION = 1.5.3
 DISTNAME =	optik-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 CATEGORIES =   	devel
 
 HOMEPAGE =	http://optik.sourceforge.net/

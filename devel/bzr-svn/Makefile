@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/08 17:40:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 09:24:49 espie Exp $
 
 COMMENT=	bzr plugin that adds support for foreign svn repositories
 
 MODPY_EGG_VERSION= 1.0.4
 DISTNAME=	bzr-svn-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES=	devel
 
 HOMEPAGE=	http://launchpad.net/bzr-svn

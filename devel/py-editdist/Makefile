@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/06/08 17:39:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:55 espie Exp $
 
 COMMENT=		calculate Levenshtein distance between two strings
 
 MODPY_EGG_VERSION=	0.3
 DISTNAME=		py-editdist-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 CATEGORIES=    		devel
 
 HOMEPAGE=		http://www.mindrot.org/projects/py-editdist/

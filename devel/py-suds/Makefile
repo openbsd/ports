@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/13 12:49:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 09:24:56 espie Exp $
 
 COMMENT =		lightweight python SOAP client
 
 MODPY_EGG_VERSION =	0.4
 DISTNAME =		suds-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES =		devel
 

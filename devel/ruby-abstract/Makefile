@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/01/06 04:24:22 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 09:24:56 espie Exp $
 
 COMMENT=		abstract methods for Ruby
 
 DISTNAME=		abstract-1.0.0
-REVISION=		4
+REVISION=		5
 CATEGORIES=		devel
 
 HOMEPAGE=		http://abstract.rubyforge.org/

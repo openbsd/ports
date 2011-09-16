@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/05/01 17:29:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 09:24:51 espie Exp $
 
 COMMENT =		type-level programming library
 
 DISTNAME =		type-level-0.2.4
+REVISION=		0
 CATEGORIES =		devel
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>

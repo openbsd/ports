@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/06/04 11:41:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/16 09:24:52 espie Exp $
 
 COMMENT=	configuration file library for PHP
 
 DISTNAME=	Config-1.10.7
-REVISION =	1
+REVISION =	2
 CATEGORIES=	devel
 
 MODULES=	www/pear

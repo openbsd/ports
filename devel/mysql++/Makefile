@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/12/05 18:24:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2011/09/16 09:24:52 espie Exp $
 
 SHARED_ONLY =		Yes
 
@@ -8,7 +8,7 @@ COMMENT-docs =		C++ API for MySQL documentation
 VERSION =		3.0.9
 DISTNAME =		mysql++-${VERSION}
 PKGNAME-main =		${DISTNAME}
-REVISION-main =		0
+REVISION-main =		1
 PKGNAME-docs =		mysql++-docs-${VERSION}
 SHARED_LIBS += mysqlpp	4.0	# 3
 CATEGORIES =		devel

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/08/30 17:16:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/16 09:24:51 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -9,7 +9,7 @@ DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
 
-REVISION=		1
+REVISION=		2
 
 HOMEPAGE=		http://www.jetbrains.com/idea/
 

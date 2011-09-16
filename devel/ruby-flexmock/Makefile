@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/01/06 04:24:23 jeremy Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/16 09:24:57 espie Exp $
 
 COMMENT=	simple mock object for unit testing
 
 DISTNAME=	flexmock-0.8.6
-REVISION =	3
+REVISION =	4
 CATEGORIES=	devel
 
 # BSD-like

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/20 18:05:12 jeremy Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 09:24:57 espie Exp $
 
 COMMENT =	embed C code in your ruby script
 
 DISTNAME =	ffi-inliner-0.2.4
 CATEGORIES =	devel
+REVISION=		0
 
 HOMEPAGE =	http://github.com/remogatto/ffi-inliner
 

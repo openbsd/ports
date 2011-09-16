@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/11 16:32:27 fgsch Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/16 09:24:49 espie Exp $
 
 COMMENT=		Ruby Development Tools for Eclipse IDE
 
 V=			0.8.0
 DISTNAME=		org.rubypeople.rdt-0.8.0.604272100PRD
 PKGNAME=		eclipse-plugin-rdt-${V}
-REVISION=		2
+REVISION=		3
 CATEGORIES=		devel/eclipse/plugins lang/ruby
 
 HOMEPAGE=		http://rubyeclipse.sourceforge.net/

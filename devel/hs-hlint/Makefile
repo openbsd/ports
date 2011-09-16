@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/07/10 12:21:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/16 09:24:50 espie Exp $
 
 COMMENT=		source code suggestions for Haskell
 
 DISTNAME=		hlint-1.8.13
+REVISION =		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://community.haskell.org/~ndm/hlint/

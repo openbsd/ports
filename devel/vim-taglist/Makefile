@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/04/29 13:27:20 landry Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 09:24:58 espie Exp $
 
 COMMENT =	source code browser plugin for the Vim text editor
 
 DISTNAME =	taglist_45
 PKGNAME =	vim-taglist-4.5
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel editors
 EXTRACT_SUFX =	.zip
 

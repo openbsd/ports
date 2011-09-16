@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 09:24:49 espie Exp $
 
 COMMENT =	patch-set and bug tracking system for CVS
 
 DISTNAME =	cvstrac-2.0.1
 PKGNAME =	${DISTNAME}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel www
 
 HOMEPAGE =	http://www.cvstrac.org/

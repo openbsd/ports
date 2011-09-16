@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:49 espie Exp $
 
 COMMENT=		SubVersion (CVS replacement) plug-in for Eclipse IDE
 
@@ -7,6 +7,7 @@ DISTNAME=		site-${V}
 PKGNAME=		eclipse-plugin-subclipse-${V}
 CATEGORIES=		devel/eclipse/plugins java
 EXTRACT_SUFX=		.zip
+REVISION =		0
 
 MAINTAINER=		Ian Darwin <ian@openbsd.org>
 

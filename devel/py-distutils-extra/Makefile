@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/06/08 17:39:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:55 espie Exp $
 
 COMMENT=		add support for i18n, documentation and icons to distutils
 
 VERSION=		1.91.2
 DISTNAME=		python-distutils-extra_${VERSION}
 PKGNAME=		py-distutils-extra-${VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES=		devel
 

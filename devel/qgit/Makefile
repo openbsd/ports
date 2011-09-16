@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 09:24:56 espie Exp $
 
 COMMENT =	qt git repository viewer
 CATEGORIES =	devel x11
 HOMEPAGE =	http://digilander.libero.it/mcostalba/
 
 DISTNAME =	qgit-1.5.7
-REVISION =	1
+REVISION =	2
 EXTRACT_SUFX =	.tar.bz2
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qgit/}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/15 19:45:57 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 09:24:49 espie Exp $
 
 COMMENT =	Python development plug-in for Eclipse
 
@@ -7,7 +7,7 @@ SVN =		2788
 SUBST_VARS =	V SVN
 DISTNAME =	org.python.pydev.feature-${V}.${SVN}
 PKGNAME =	py-dev-${V}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel lang/python
 

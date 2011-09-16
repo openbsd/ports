@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/12 12:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/16 09:24:52 espie Exp $
 
 COMMENT =	library for writing single instance GTK+2 applications
 
 GNOME_PROJECT =	libunique
 GNOME_VERSION =	1.1.6
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  unique-1.0           2.0      # .100.6
 CATEGORIES =	devel

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2011/08/18 12:52:32 shadchin Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 09:24:54 espie Exp $
 
 COMMENT=		I18N/L10N tools for Python
 
 MODPY_EGG_VERSION=	0.9.6
 DISTNAME=		Babel-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
+REVISION=		0
 CATEGORIES=    		devel
 
 HOMEPAGE=		http://babel.edgewall.org/

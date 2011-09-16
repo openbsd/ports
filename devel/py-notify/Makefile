@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.14 2011/06/08 17:39:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/16 09:24:55 espie Exp $
 
 COMMENT=		python bindings for libnotify
 
 V=			0.1.1
 DISTNAME=		notify-python-${V}
 PKGNAME=		py-notify-${V}
-REVISION =		9
+REVISION =		10
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.galago-project.org/

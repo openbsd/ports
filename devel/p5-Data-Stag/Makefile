@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/03 11:44:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 09:24:52 espie Exp $
 
 COMMENT =		structured tags datastructures
 
 DISTNAME =		Data-Stag-0.11
-REVISION =		0
+REVISION =		1
 CATEGORIES =		devel
 USE_GROFF =		Yes
 

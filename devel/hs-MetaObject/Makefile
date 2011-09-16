@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/04/11 14:46:29 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:50 espie Exp $
 
 COMMENT =		meta-object system for Haskell based on Perl 6
 
 DISTNAME =		MetaObject-0.0.6
-REVISION =		3
+REVISION =		4
 CATEGORIES =		devel
 
 # BSD3

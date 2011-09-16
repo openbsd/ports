@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/04/25 15:09:15 kili Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 09:24:50 espie Exp $
 
 COMMENT=		DSL for embedded hard realtime applications
 
 DISTNAME=		atom-1.0.9
+REVISION =		0
 CATEGORIES=		devel lang
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>

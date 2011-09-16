@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/11 14:35:33 kili Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/16 09:24:50 espie Exp $
 
 COMMENT =		deep evaluation of data structures
 
 DISTNAME =		deepseq-1.1.0.2
+REVISION =		0
 CATEGORIES =		devel
 
 MAINTAINER =		Matthias Kilian <kili@openbsd.org>

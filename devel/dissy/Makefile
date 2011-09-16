@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/06/08 17:40:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 09:24:49 espie Exp $
 
 COMMENT =		graphical frontend to the objdump disassembler
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION = 	9
 DISTNAME =		dissy-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 HOMEPAGE =		http://code.google.com/p/dissy/
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Jonathan Armani <armani@openbsd.org>
 

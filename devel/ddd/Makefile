@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2011/04/10 18:01:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2011/09/16 09:24:49 espie Exp $
 
 COMMENT=	Data Display Debugger, graphical front-end for GDB, etc
 
 DISTNAME=	ddd-3.3.12
-REVISION =	2
+REVISION =	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU:=ddd/}
 

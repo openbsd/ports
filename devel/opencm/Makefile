@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2010/11/15 19:46:00 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2011/09/16 09:24:52 espie Exp $
 
 COMMENT=		OpenCM change management system
 
@@ -7,7 +7,7 @@ sV=			-2
 DISTFILES=		opencm-${V}${sV}-src.tgz
 DISTNAME=		opencm-${V}
 PKGNAME=		opencm-${V}
-REVISION =		1
+REVISION =		2
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.opencm.org/

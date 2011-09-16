@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/01/06 04:24:23 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 09:24:58 espie Exp $
 
 COMMENT=	extensions to ruby's String class
 
 DISTNAME=	stringex-1.1.0
-REVISION =	0
+REVISION =	1
 CATEGORIES=	devel
 
 # MIT

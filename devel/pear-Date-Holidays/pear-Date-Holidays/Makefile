@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/05 17:36:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 09:24:53 espie Exp $
 
 COMMENT =	holiday classes for PHP
 DISTNAME =	Date_Holidays-0.21.4
+REVISION=		0
 
 # BSD
 

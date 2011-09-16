@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2011/01/03 19:47:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2011/09/16 09:24:48 espie Exp $
 
 COMMENT=	convert ASP code to PHP code
 
 DISTNAME=	asp2php-0.77.3
-REVISION=	5
+REVISION=	6
 CATEGORIES=	devel www
 
 HOMEPAGE=	http://asp2php.naken.cc/

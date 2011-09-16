@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/12 12:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/16 09:24:55 espie Exp $
 
 COMMENT=	ORBit2 Python bindings
 
 GNOME_VERSION=	2.24.0
 GNOME_PROJECT=	pyorbit
 PKGNAME=	py-orbit-${VERSION}
-REVISION =	1
+REVISION =	2
 CATEGORIES=	devel
 
 HOMEPAGE=	http://www.pygtk.org/

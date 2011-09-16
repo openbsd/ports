@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2011/09/12 12:07:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2011/09/16 09:24:48 espie Exp $
 
 COMMENT=	accessibility toolkit used by gtk+
 
 GNOME_PROJECT=	atk
 GNOME_VERSION=	2.0.1
+REVISION =	0
 
 SHARED_LIBS +=	atk-1.0             2800.1   # 9.1
 

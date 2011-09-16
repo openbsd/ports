@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/06/04 11:41:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/16 09:24:52 espie Exp $
 
 COMMENT=	date and timezone classes for PHP
 
 DISTNAME=	Date-1.4.6
-REVISION =	1
+REVISION =	2
 CATEGORIES=	devel
 
 MODULES=	www/pear

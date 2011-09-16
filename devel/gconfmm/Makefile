@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/12 12:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/16 09:24:49 espie Exp $
 
 COMMENT=		C++ interface to GConf
 
 GNOME_PROJECT=		gconfmm
 GNOME_VERSION=		2.28.2
+REVISION =		0
 
 SHARED_LIBS +=		gconfmm-2.6	0.1	# .1.6
 

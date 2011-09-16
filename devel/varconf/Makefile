@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/04/07 17:41:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/16 09:24:58 espie Exp $
 
 COMMENT=	configuration system for the STAGE server
 
 DISTNAME=	varconf-0.6.6
+REVISION=		0
 SHARED_LIBS=    varconf-1.0 0.0 # 0.0
 CATEGORIES=	devel
 

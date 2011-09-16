@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/26 07:19:00 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 09:24:49 espie Exp $
 
 COMMENT=		Configuration tool for Struts web framework
 
 V=4.8
 DISTNAME=		struts-console-${V}
 PKGNAME=		eclipse-plugin-struts-console-${V}
+REVISION =		0
 
 CATEGORIES=		devel/eclipse/plugins java
 

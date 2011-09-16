@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/03/24 20:08:31 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 09:24:58 espie Exp $
 
 COMMENT=	code coverage tool for Ruby
 
 DISTNAME=	rcov-0.9.9
+REVISION=		0
 CATEGORIES=	devel
 
 MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>

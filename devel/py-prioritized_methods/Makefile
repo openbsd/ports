@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/08 17:39:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 09:24:55 espie Exp $
 
 COMMENT =		extension to PEAK-Rules to prioritize methods
 
 MODPY_EGG_VERSION =	0.2.1
 DISTNAME =		prioritized_methods-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

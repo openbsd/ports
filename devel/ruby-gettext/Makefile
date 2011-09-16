@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/01/06 04:24:23 jeremy Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/16 09:24:57 espie Exp $
 
 COMMENT=		Ruby interface to gettext
 
 DISTNAME=		gettext-2.0.4
-REVISION =		4
+REVISION =		5
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.yotabanana.com/hiki/ruby-gettext.html

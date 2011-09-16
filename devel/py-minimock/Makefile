@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/08 17:39:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 09:24:55 espie Exp $
 
 COMMENT=		the simplest possible mock library, for Python
 
 MODPY_EGG_VERSION=	1.2.5
 DISTNAME=		MiniMock-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES=		devel
 

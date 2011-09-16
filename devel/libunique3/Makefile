@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/12 12:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 09:24:52 espie Exp $
 
 COMMENT =	library for writing single instance GTK+3 applications
 
 GNOME_PROJECT =	libunique
 GNOME_VERSION =	3.0.2
+REVISION=		0
 
 PKGNAME=	${GNOME_PROJECT}3-${GNOME_VERSION}
 

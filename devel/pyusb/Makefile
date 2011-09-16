@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2011/06/08 17:39:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/16 09:24:56 espie Exp $
 SHARED_ONLY=	Yes
 
 COMMENT=		python interface to libusb
 MODPY_EGG_VERSION=	0.4.1
 DISTNAME=		pyusb-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=pyusb/}
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/08 17:39:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 09:24:55 espie Exp $
 
 COMMENT =	Mox is a mock object framework for Python
 
 MODPY_EGG_VERSION =0.5.0
 DISTNAME =	mox-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 CATEGORIES =	devel
 
 HOMEPAGE =	http://code.google.com/p/pymox/

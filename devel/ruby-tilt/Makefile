@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/03/24 03:16:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:58 espie Exp $
 
 COMMENT =	generic interface to multiple Ruby template engines 
 
 DISTNAME =	tilt-1.2.2
+REVISION=		0
 CATEGORIES =	devel textproc
 
 HOMEPAGE =	http://github.com/rtomayko/tilt

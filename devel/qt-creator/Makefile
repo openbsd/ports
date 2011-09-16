@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:08 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:56 espie Exp $
 
 COMMENT =		cross-platform IDE for use with Qt
 
 V = 			1.3.1
 DISTNAME =		qt-creator-${V}-src
 PKGNAME =		qt-creator-${V}
-REVISION =		2
+REVISION =		3
 EXTRACT_SUFX = 		.zip
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 

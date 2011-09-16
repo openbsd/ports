@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.62 2011/09/12 12:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.63 2011/09/16 09:24:52 espie Exp $
 
 COMMENT=		GNOME Structured File library
 
 GNOME_PROJECT=		libgsf
 GNOME_VERSION=		1.14.21
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 

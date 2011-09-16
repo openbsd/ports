@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/01/06 04:24:23 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:58 espie Exp $
 
 COMMENT =	provides a registry of file types
 
 DISTNAME =	polyglot-0.3.1
-REVISION =	0
+REVISION =	1
 CATEGORIES =	devel
 
 HOMEPAGE =	http://polyglot.rubyforge.org/

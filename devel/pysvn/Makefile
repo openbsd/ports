@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/08 17:39:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 09:24:56 espie Exp $
 
 COMMENT =		python interface to subversion
 
 MODPY_EGG_VERSION =	1.7.2
 DISTNAME = 		pysvn-${MODPY_EGG_VERSION}
-REVISION = 		1
+REVISION = 		2
 PKGNAME = 		py-pysvn-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 

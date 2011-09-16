@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/06/08 17:39:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 09:24:56 espie Exp $
 
 COMMENT =		Commandline client for Bugzilla bug tracking systems
 
 MODPY_EGG_VERSION =	0.8.0
 DISTNAME =		pybugz-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 CATEGORIES =		devel
 
 HOMEPAGE =		http://www.liquidx.net/pybugz/

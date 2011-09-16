@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2011/09/12 12:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2011/09/16 09:24:52 espie Exp $
 
 COMMENT=		window navigator construction kit
 
 GNOME_PROJECT=		libwnck
 GNOME_VERSION=		2.30.7
+REVISION=		0
 
 SHARED_LIBS +=	wnck-1               24.0     # .25.26
 

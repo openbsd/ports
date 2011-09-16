@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/26 07:19:01 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 09:24:56 espie Exp $
 
 COMMENT =	remote svn repository dump
 CATEGORIES =	devel
 
 DISTNAME =	rsvndump-0.5.2
+REVISION=		0
 
 HOMEPAGE =	http://rsvndump.sourceforge.net/
 

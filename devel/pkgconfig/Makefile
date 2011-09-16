@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/07/08 17:57:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2011/09/16 09:24:54 espie Exp $
 
 COMMENT=		tool for managing library compile/link flags
 
@@ -7,6 +7,7 @@ IGNORE=			Replaced with BSD clone in OpenBSD 4.1
 VERSION=		0.26
 DISTNAME=		pkg-config-${VERSION}
 PKGNAME=		pkgconfig-${VERSION}
+REVISION=		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://www.freedesktop.org/software/pkgconfig/

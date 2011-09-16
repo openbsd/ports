@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/05/11 23:40:05 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/16 09:24:58 espie Exp $
 
 COMMENT=		Ruby timezone library
 
 DISTNAME=		tzinfo-0.3.27
+REVISION=		0
 CATEGORIES=		devel
 
 HOMEPAGE=		http://tzinfo.rubyforge.org/

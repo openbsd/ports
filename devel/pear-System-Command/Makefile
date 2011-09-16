@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/04 11:41:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 09:24:53 espie Exp $
 
 COMMENT=	commandline execution interface
 
 DISTNAME=	System_Command-1.0.7
+REVISION=		0
 CATEGORIES=	devel
 
 MODULES=	www/pear

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 19:46:07 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:54 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	portable tools library
 
 DISTNAME=	ptlib-2.6.7
+REVISION=		0
 
 SHARED_LIBS=	pt	3.0	# 2.4.2
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.31 2011/07/01 11:28:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2011/09/16 09:24:49 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	small and lightweight IDE
 
 DISTNAME=	geany-0.20
+REVISION =	0
 
 CATEGORIES=	devel
 
