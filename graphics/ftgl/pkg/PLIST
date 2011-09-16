@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/06/06 05:18:56 phessler Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/09/16 17:22:13 phessler Exp $
 %%SHARED%%
 include/FTGL/
 include/FTGL/FTBBox.h
@@ -7,6 +7,7 @@ include/FTGL/FTBuffer.h
 include/FTGL/FTBufferFont.h
 include/FTGL/FTBufferGlyph.h
 include/FTGL/FTExtrdGlyph.h
+include/FTGL/FTFace.h
 include/FTGL/FTFont.h
 include/FTGL/FTGLBitmapFont.h
 include/FTGL/FTGLExtrdFont.h
@@ -16,11 +17,13 @@ include/FTGL/FTGLPolygonFont.h
 include/FTGL/FTGLTextureFont.h
 include/FTGL/FTGlyph.h
 include/FTGL/FTLayout.h
+include/FTGL/FTLibrary.h
 include/FTGL/FTOutlineGlyph.h
 include/FTGL/FTPixmapGlyph.h
 include/FTGL/FTPoint.h
 include/FTGL/FTPolyGlyph.h
 include/FTGL/FTSimpleLayout.h
+include/FTGL/FTSize.h
 include/FTGL/FTTextureGlyph.h
 include/FTGL/ftgl.h
 lib/libftgl.a

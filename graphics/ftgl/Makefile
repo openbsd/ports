@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2011/06/06 22:08:42 kili Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 17:22:13 phessler Exp $
 
 COMMENT =		font rendering library for OpenGL applications
 
 V =			2.1.3
 DISTNAME =		ftgl-$V-rc5
 PKGNAME =		ftgl-$Vrc5
+REVISION =		0
 EPOCH =			0
 SHARED_LIBS =		ftgl	0.0	# 2.1
 CATEGORIES =		graphics
@@ -35,5 +36,12 @@ CONFIGURE_ENV +=	ac_cv_path_DOXYGEN=no
 # so add this workaround to prevent pkg-config from choking.
 pre-configure:
 	perl -pi -e 's,\@PACKAGE_VERSION\@,${V},' ${WRKSRC}/ftgl.pc.in
+
+post-install:
+	${INSTALL_DATA} \
+		${WRKSRC}/src/FTLibrary.h \
+		${WRKSRC}/src/FTFace.h \
+		${WRKSRC}/src/FTSize.h \
+		${PREFIX}/include/FTGL/
 
 .include <bsd.port.mk>
