@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/20 19:56:49 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 20:13:46 nigel Exp $
 
 COMMENT=	object-oriented SGML parser
 
@@ -27,7 +27,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE}
 
-BUILD_DEPENDS+=	textproc/xmlto
+BUILD_DEPENDS +=	textproc/xmlto \
+			textproc/docbook
 
 post-install:
 	mv ${PREFIX}/share/doc/{OpenSP,opensp}
