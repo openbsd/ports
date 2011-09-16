@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/16 19:53:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/16 20:00:46 jasper Exp $
 
 COMMENT=		flexible communications framework, farsight2 component
 
 DISTNAME=		telepathy-farsight-0.0.18
+REVISION=		0
 
 HOMEPAGE=		${HOMEPAGE_TP:=Telepathy-Farsight}
 
@@ -20,7 +21,7 @@ MODULES=		devel/gettext \
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			net/farsight2>=0.0.28 \
-			STEM->=0.14.3:net/telepathy/telepathy-glib
+			net/telepathy/telepathy-glib>=0.14.3
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
