@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2010/09/23 13:44:17 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/09/16 19:54:03 jasper Exp $
 @bin bin/mc-tool
 @bin bin/mc-wait-for-name
 include/mission-control-5.5/
@@ -6,6 +6,7 @@ include/mission-control-5.5/mission-control-plugins/
 include/mission-control-5.5/mission-control-plugins/account-storage.h
 include/mission-control-5.5/mission-control-plugins/account.h
 include/mission-control-5.5/mission-control-plugins/dbus-acl.h
+include/mission-control-5.5/mission-control-plugins/debug.h
 include/mission-control-5.5/mission-control-plugins/dispatch-operation-policy.h
 include/mission-control-5.5/mission-control-plugins/dispatch-operation.h
 include/mission-control-5.5/mission-control-plugins/loader.h
@@ -15,7 +16,6 @@ include/mission-control-5.5/mission-control-plugins/request-policy.h
 include/mission-control-5.5/mission-control-plugins/request.h
 lib/libmission-control-plugins.la
 @lib lib/libmission-control-plugins.so.${LIBmission-control-plugins_VERSION}
-lib/mission-control-plugins.0/
 lib/pkgconfig/mission-control-plugins.pc
 @bin libexec/mission-control-5
 @man man/man1/mc-tool.1
@@ -24,11 +24,13 @@ lib/pkgconfig/mission-control-plugins.pc
 share/dbus-1/services/org.freedesktop.Telepathy.AccountManager.service
 share/dbus-1/services/org.freedesktop.Telepathy.MissionControl5.service
 share/gtk-doc/html/mission-control-plugins/
+share/gtk-doc/html/mission-control-plugins/McpAccountManager.html
 share/gtk-doc/html/mission-control-plugins/McpAccountStorage.html
 share/gtk-doc/html/mission-control-plugins/McpDispatchOperation.html
 share/gtk-doc/html/mission-control-plugins/McpDispatchOperationPolicy.html
 share/gtk-doc/html/mission-control-plugins/McpRequest.html
 share/gtk-doc/html/mission-control-plugins/McpRequestPolicy.html
+share/gtk-doc/html/mission-control-plugins/annotation-glossary.html
 share/gtk-doc/html/mission-control-plugins/api-index-full.html
 share/gtk-doc/html/mission-control-plugins/ch01.html
 share/gtk-doc/html/mission-control-plugins/ch02.html
@@ -39,7 +41,6 @@ share/gtk-doc/html/mission-control-plugins/index.html
 share/gtk-doc/html/mission-control-plugins/index.sgml
 share/gtk-doc/html/mission-control-plugins/left.png
 share/gtk-doc/html/mission-control-plugins/mission-control-plugins-Plugin-loader-and-global-functions.html
-share/gtk-doc/html/mission-control-plugins/mission-control-plugins-account.html
 share/gtk-doc/html/mission-control-plugins/mission-control-plugins.devhelp
 share/gtk-doc/html/mission-control-plugins/mission-control-plugins.devhelp2
 share/gtk-doc/html/mission-control-plugins/object-tree.html
