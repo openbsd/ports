@@ -1,0 +1,9 @@
+Jim is a small footprint implementation of the Tcl programming language
+written from scratch. Currently Jim Tcl is very feature complete with an
+extensive test suite. There are some Tcl commands and features which are
+not implemented (and likely never will be), including namespaces, traces
+and Tk. However Jim Tcl offers a number of both Tcl8.5 and Tcl8.6
+features ({*}, dict, lassign, tailcall and optional UTF-8 support) and
+some unique features. These unique features include [lambda] with
+garbage collection, a general GC/references system, arrays as syntax
+sugar for [dict]tionaries, object-based I/O and more.

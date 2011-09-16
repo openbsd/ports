@@ -1,0 +1,47 @@
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2011/09/16 20:07:35 jasper Exp $
+
+- Install docs into the right directory.
+- Add shared library versioning to libjim.
+
+--- Makefile.in.orig	Thu Sep 15 17:33:15 2011
++++ Makefile.in	Fri Sep 16 17:41:20 2011
+@@ -29,6 +29,8 @@ VPATH := @srcdir@
+ @if JIM_STATICLIB
+ LIBJIM := libjim.a
+ @else
++SONAME_MAJOR?=0
++SONAME_MINOR?=0
+ LIBJIM := libjim.so
+ SH_LIBJIM := $(LIBJIM)
+ CC += $(SH_CFLAGS)
+@@ -63,15 +65,14 @@ $(JIMSH): $(LIBJIM) jimsh.o initjimsh.o
+ 
+ @if JIM_INSTALL
+ install: all docs @TCL_EXTS@ install-exec
+-	mkdir -p $(DESTDIR)$(prefix)/lib/jim
+-	cp $(LIBJIM) $(DESTDIR)$(prefix)/lib
+-	cp @srcdir@/README.extensions @C_EXT_SHOBJS@ @TCL_EXTS@ $(DESTDIR)$(prefix)/lib/jim
++	mkdir -p $(DESTDIR)$(prefix)/share/doc/jim
++	cp $(LIBJIM).$(SONAME_MAJOR).$(SONAME_MINOR) $(DESTDIR)$(prefix)/lib
++	cp @srcdir@/README.extensions @C_EXT_SHOBJS@ @TCL_EXTS@ $(DESTDIR)$(prefix)/share/doc/jim/
+ 	mkdir -p $(DESTDIR)$(prefix)/include
+ 	cp @srcdir@/jim.h @srcdir@/jim-eventloop.h @srcdir@/jim-nvp.h @srcdir@/jim-signal.h \
+ 		@srcdir@/jim-subcmd.h @srcdir@/jim-win32compat.h $(DESTDIR)$(prefix)/include
+ 	cp jim-config.h $(DESTDIR)$(prefix)/include
+-	mkdir -p $(DESTDIR)$(prefix)/doc/jim
+-	cp Tcl.html $(DESTDIR)$(prefix)/doc/jim
++	cp Tcl.html $(DESTDIR)$(prefix)/share/doc/jim
+ 
+ install-exec: all
+ 	mkdir -p $(DESTDIR)$(prefix)/bin
+@@ -109,7 +110,9 @@ $(LIBJIM): $(OBJS)
+ 	$(RANLIB) $@
+ @else
+ $(LIBJIM): $(OBJS)
+-	$(CC) $(CFLAGS) $(LDFLAGS) $(SH_LDFLAGS) -o $@ $(OBJS) $(LDLIBS)
++	$(CC) -shared -Wl,-soname -Wl,$@.$(SONAME_MAJOR) $(OBJS) $(SH_LDFLAGS) $(CFLAGS) $(LDLIBS) -o $@.$(SONAME_MAJOR).$(SONAME_MINOR)
++	ln -s $@.$(SONAME_MAJOR).$(SONAME_MINOR) $@.$(SONAME_MAJOR)
++	ln -s $@.$(SONAME_MAJOR).$(SONAME_MINOR) $@
+ @endif
+ 
+ # Note that $> $^ is for compatibility with both GNU make and BSD make
