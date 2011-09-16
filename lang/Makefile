@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.121 2011/09/16 13:46:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.122 2011/09/16 20:08:48 jasper Exp $
 # $FreeBSD: Makefile,v 1.89 1997/11/24 09:24:06 tg Exp $
 #
 
@@ -40,6 +40,7 @@
      SUBDIR += iverilog
      SUBDIR += jamvm
      SUBDIR += jikes
+     SUBDIR += jimtcl
      SUBDIR += jruby
      SUBDIR += kaffe
      SUBDIR += librep
