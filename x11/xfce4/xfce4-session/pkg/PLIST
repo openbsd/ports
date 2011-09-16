@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2011/01/18 21:34:59 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/09/16 21:03:46 landry Exp $
 @conflict xfce4-toys-*
 %%SHARED%%
 @bin bin/xfce4-session
@@ -64,10 +64,16 @@ share/doc/xfce4-session/html/ru/index.html
 share/doc/xfce4-session/html/sv/
 share/doc/xfce4-session/html/sv/images
 share/doc/xfce4-session/html/sv/index.html
+share/doc/xfce4-session/html/tr/
+share/doc/xfce4-session/html/tr/images
+share/doc/xfce4-session/html/tr/index.html
 share/doc/xfce4-session/html/ug/
 share/doc/xfce4-session/html/ug/images
 share/doc/xfce4-session/html/ug/index.html
 share/doc/xfce4-session/html/xfce4-session.css
+share/doc/xfce4-session/html/zh_CN/
+share/doc/xfce4-session/html/zh_CN/images
+share/doc/xfce4-session/html/zh_CN/index.html
 share/examples/xfce4-session/
 @sample ${SYSCONFDIR}/xdg/
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/
@@ -199,6 +205,9 @@ share/locale/sv/LC_MESSAGES/xfce4-session.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/xfce4-session.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/xfce4-session.mo
 share/locale/tr/LC_MESSAGES/xfce4-session.mo
 share/locale/ug/
 share/locale/ug/LC_MESSAGES/
