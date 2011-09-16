@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.246 2011/09/12 07:48:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.247 2011/09/16 11:29:02 espie Exp $
 # $FreeBSD: Makefile,v 1.26 1997/11/20 08:58:51 tg Exp $
 
      SUBDIR =
@@ -124,8 +124,6 @@
      SUBDIR += p5-Unix-Statgrab
      SUBDIR += p5-Unix-Syslog
      SUBDIR += pecl-fileinfo
-     SUBDIR += py-daemon
-     SUBDIR += py-lockfile
      SUBDIR += pciutils
      SUBDIR += pftop
      SUBDIR += pkg_mgr
@@ -133,6 +131,8 @@
      SUBDIR += pscpug
      SUBDIR += pstree
      SUBDIR += pv
+     SUBDIR += py-daemon
+     SUBDIR += py-lockfile
      SUBDIR += radiusreport
      SUBDIR += radmind
      SUBDIR += rancid
