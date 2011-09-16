@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/16 21:01:45 jasper Exp $
 
 COMMENT=		modular geoinformation service on top of D-Bus
 
@@ -16,7 +16,8 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=		http://folks.o-hand.com/jku/geoclue-releases/
+MASTER_SITES=		http://folks.o-hand.com/jku/geoclue-releases/ \
+			http://distfiles.nl/
 
 MODULES=		devel/gettext
 
