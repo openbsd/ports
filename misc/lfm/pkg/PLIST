@@ -1,8 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/07/17 20:23:46 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/09/16 22:08:32 sthen Exp $
 bin/lfm
 bin/pyview
 lib/python${MODPY_VERSION}/site-packages/lfm/
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/lfm-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/lfm/__init__.py
 lib/python${MODPY_VERSION}/site-packages/lfm/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/lfm/actions.py
