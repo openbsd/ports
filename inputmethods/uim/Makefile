@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/09/13 06:42:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.36 2011/09/16 10:02:38 espie Exp $
 
 COMMENT-main=	multilingual input method library
 COMMENT-gtk=	uim for GTK
@@ -17,10 +17,10 @@ PKGNAME-gtk=	uim-gtk-$V
 PKGNAME-qt=	uim-qt-$V
 PKGNAME-kde=	uim-kde-$V
 
-REVISION-main=	5
-REVISION-gtk=	8
-REVISION-qt=	3
-REVISION-kde=	3
+REVISION-main=	6
+REVISION-gtk=	9
+REVISION-qt=	4
+REVISION-kde=	4
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

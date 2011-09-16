@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 10:02:38 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	scim input method module for pinyin
 
 DISTNAME=	scim-pinyin-0.5.91
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	inputmethods chinese
 

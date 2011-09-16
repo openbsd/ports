@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2010/11/17 19:37:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/16 10:02:37 espie Exp $
 
 COMMENT =		kde interface to exif
 CATEGORIES =		graphics devel x11 x11/kde
 DISTNAME =		libkexif-0.2.5
-REVISION =		1
+REVISION =		2
 SHARED_LIBS =		kexif	2.2
 EXTRACT_SUFX =		.tar.bz2
 HOMEPAGE =		http://extragear.kde.org/apps/kipi/

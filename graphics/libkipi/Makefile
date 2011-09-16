@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2011/07/06 18:41:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/16 10:02:37 espie Exp $
 
 COMMENT =		kde image plugins api
 CATEGORIES =		graphics devel x11 x11/kde
 V =			0.1.6
 DISTNAME =		libkipi-$V
-REVISION =		1
+REVISION =		2
 SHARED_LIBS +=	kipi                 1.4      # .2.0
 EXTRACT_SUFX =		.tar.bz2
 HOMEPAGE =		http://extragear.kde.org/apps/kipi/

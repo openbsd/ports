@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/04/23 14:32:51 kili Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 10:02:37 espie Exp $
 
 COMMENT =		Haskell bindings to cairo
 
 DISTNAME =		cairo-0.12.0
-REVISION =		0
+REVISION =		1
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://www.haskell.org/gtk2hs/

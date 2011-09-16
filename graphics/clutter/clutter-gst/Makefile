@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/04/07 13:10:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 10:02:36 espie Exp $
 
 COMMENT=		clutter GStreamer integration library
 
 DISTNAME=		clutter-gst-${API_VERSION}.0
-REVISION=		1
+REVISION=		2
 SHARED_LIBS +=  clutter-gst-0.10    0.0      # .1000.0
 
 MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter-gst/${MAJOR}/}

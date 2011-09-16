@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2011/06/12 10:11:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/09/16 10:02:36 espie Exp $
 
 COMMENT=	gtk2 comic book viewer
 
 DISTNAME=	comix-4.0.3
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	graphics
 

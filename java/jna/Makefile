@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/12 12:50:24 nigel Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 10:02:39 espie Exp $
 
 COMMENT=	Java Native Access (JNA)
 
 V=		3.2.7
 DISTNAME=	twall-jna-$V-0-g3727f95
 PKGNAME=	jna-$V
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	Jasper Lievisse Adriaanse <jasper@openbsd.org>

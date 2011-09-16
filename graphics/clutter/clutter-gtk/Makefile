@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/07 11:22:04 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/16 10:02:36 espie Exp $
 
 COMMENT=		GTK+2 widget for clutter
 
 DISTNAME=		clutter-gtk-${API_VERSION}.2
-REVISION=		4
+REVISION=		5
 SHARED_LIBS +=  clutter-gtk-0.10      0.0      # .0.0
 
 MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter-gtk/${MAJOR}/}

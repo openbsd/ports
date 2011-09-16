@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2011/07/19 12:33:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 10:02:36 espie Exp $
 
 COMMENT=	lightweight Gtk+2 based image viewer
 
 DISTNAME=	geeqie-1.0
 CATEGORIES=	graphics
 
-REVISION=	0
+REVISION=	1
 
 EPOCH=		0
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2011/01/06 08:38:29 landry Exp $
+# $OpenBSD: Makefile,v 1.29 2011/09/16 10:02:38 espie Exp $
 
 COMMENT=	flash rendering library
 
 DISTNAME=	swfdec-0.8.4
-REVISION=	3
+REVISION=	4
 SHARED_LIBS +=	swfdec-0.8           0.0      # .90.0
 SHARED_LIBS +=	swfdec-gtk-0.8       0.0      # .90.0
 CATEGORIES=	graphics

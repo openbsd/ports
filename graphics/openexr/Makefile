@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/05/02 18:54:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/16 10:02:37 espie Exp $
 
 COMMENT-main=	high dynamic range image format
 COMMENT-tools=	image viewing tools for OpenEXR
@@ -9,7 +9,7 @@ DISTNAME=	openexr-$V
 PKGNAME-main=	OpenEXR-$V
 REVISION-main = 1
 PKGNAME-tools=  OpenEXR-tools-$V
-REVISION-tools =	0
+REVISION-tools =	1
 PKGNAME-doc=	OpenEXR-doc-$V
 SHARED_LIBS=	IlmImf               4.0      # .6.0	
 CATEGORIES=	graphics

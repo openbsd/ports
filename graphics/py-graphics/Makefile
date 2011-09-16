@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2011/06/13 15:09:57 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 10:02:37 espie Exp $
 
 COMMENT=	multimedia framework for Python
 
 MODPY_EGG_VERSION= 1.5
 DISTNAME=	PyGraphics-${MODPY_EGG_VERSION}
 PKGNAME=	py-graphics-${MODPY_EGG_VERSION}
-REVISION=	2
+REVISION=	3
 EPOCH=		0
 
 CATEGORIES=	graphics

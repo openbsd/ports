@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/08 17:35:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 10:02:37 espie Exp $
 
 COMMENT =	toolkit for developing mapping applications
 
 DISTNAME =	mapnik-0.7.1
-REVISION =	0
+REVISION =	1
 EXTRACT_SUFX =	.tar.bz2
 
 SHARED_LIBS =	mapnik 0.0 #0.7

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/11 11:19:12 armani Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/16 10:02:37 espie Exp $
 
 COMMENT=	SVG vector drawing application
 
 DISTNAME=	inkscape-0.48.2
+REVISION=		0
 CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=inkscape/}
 

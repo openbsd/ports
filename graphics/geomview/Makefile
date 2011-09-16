@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/11 07:43:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 10:02:36 espie Exp $
 
 COMMENT =		geometry viewer for OOGL file formats
 
 DISTNAME =		geomview-1.9.4
+REVISION=		0
 CATEGORIES =		graphics
 
 HOMEPAGE =		http://www.geomview.org

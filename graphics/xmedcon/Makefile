@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2011/04/18 22:17:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/16 10:02:38 espie Exp $
 
 COMMENT =	medical image conversion
 
 DISTNAME =	xmedcon-0.10.7
-REVISION =	0
+REVISION =	1
 SHARED_LIBS =	mdc	2.1	# .2.1
 CATEGORIES =	graphics
 

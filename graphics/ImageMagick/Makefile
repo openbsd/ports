@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2011/09/12 16:48:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.115 2011/09/16 10:02:36 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ VER=			6.6.6
 DASHVER=		10
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=		Magick++	14.0	# .1.0
 SHARED_LIBS +=		MagickCore	2.0	# .1.0

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/08 17:35:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 10:02:38 espie Exp $
 
 COMMENT = 		Python charting module
 
 MODPY_EGG_VERSION =	0.3.0
 DISTNAME = 		pycha-${MODPY_EGG_VERSION}
-REVISION=		2
+REVISION=		3
 CATEGORIES = 		graphics
 
 HOMEPAGE = 		http://www.lorenzogil.com/projects/pycha/

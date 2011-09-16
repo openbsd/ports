@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:12 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 10:02:36 espie Exp $
 
 COMMENT =		identify control points from groups of overlapping images
 
 DISTNAME =		autopano-sift-C-2.5.1
+REVISION=		0
 PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		graphics

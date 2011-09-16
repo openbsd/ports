@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 10:02:38 espie Exp $
 
 COMMENT =	personal dictionary manager for anthy
 
 DISTNAME =	kasumi-2.5
 
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	japanese
 

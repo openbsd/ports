@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/17 08:05:15 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 10:02:37 espie Exp $
 
 COMMENT =		OpenEXR bindings for CTL
 DISTNAME =		openexr_ctl-1.0.1
+REVISION=		0
 
 PKGNAME =		${DISTNAME:S/_/-/}
 

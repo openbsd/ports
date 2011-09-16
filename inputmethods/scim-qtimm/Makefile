@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 10:02:38 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	scim plugin for qt
 
 DISTNAME=	scim-qtimm-0.9.4
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	inputmethods
 

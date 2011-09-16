@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/07/18 09:19:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 10:02:37 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	PHP support for the ImageMagick library
 
 DISTNAME=	imagick-2.3.0
 PKGNAME=	pecl-${DISTNAME}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	graphics www
 
 HOMEPAGE=	http://pecl.php.net/package/imagick/

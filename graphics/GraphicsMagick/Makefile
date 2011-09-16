@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2011/07/07 01:06:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/16 10:02:36 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	image processing tools with stable ABI
 
 DISTNAME=	GraphicsMagick-1.3.12
-REVISION=	1
+REVISION=	2
 CATEGORIES=	graphics devel
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=graphicsmagick/}
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/06 14:07:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 10:02:37 espie Exp $
 
 COMMENT=	GObject wrapper around exiv2
 CATEGORIES=	graphics
 DISTNAME=	libgexiv2-0.2.2
+REVISION=		0
 
 SHARED_LIBS +=	gexiv2	0.0 # .0.0
 

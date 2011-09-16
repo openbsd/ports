@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2011/03/14 09:17:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/16 10:02:36 espie Exp $
 
 COMMENT=		fractal program with GTK interface
 DISTNAME=		gfract-0.33
-REVISION=		8
+REVISION=		9
 DISTFILES=		${DISTNAME}.tar.gz \
 			gfract-palettes-0.1.tar.gz
 CATEGORIES=		graphics math

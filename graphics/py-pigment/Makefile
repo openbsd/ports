@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/08 17:35:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 10:02:37 espie Exp $
 
 COMMENT =	python bindings for pigment
 
@@ -7,7 +7,7 @@ CATEGORIES =	graphics
 V=		0.3.12
 DISTNAME =	pigment-python-$V
 PKGNAME =	py-pigment-$V
-REVISION=	3
+REVISION=	4
 MASTER_SITES =	http://elisa.fluendo.com/static/download/pigment/
 
 # LGPLv2.1

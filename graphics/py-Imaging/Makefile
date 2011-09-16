@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/06/12 08:44:44 rpointel Exp $
+# $OpenBSD: Makefile,v 1.54 2011/09/16 10:02:37 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -17,10 +17,10 @@ PKGNAME-bin=		py-Imaging-bin-${MODPY_EGG_VERSION}
 FULLPKGNAME-docs=	py-Imaging-docs-${MODPY_EGG_VERSION}
 FULLPKGPATH-docs=	graphics/py-Imaging,-docs
 
-REVISION-main=		4
-REVISION-examples=	3
-REVISION-bin=		3
-REVISION-docs=		3
+REVISION-main=		5
+REVISION-examples=	4
+REVISION-bin=		4
+REVISION-docs=		4
 
 CATEGORIES=		graphics
 

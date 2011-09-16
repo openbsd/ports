@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.73 2011/08/19 08:57:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.74 2011/09/16 10:02:36 espie Exp $
 
 COMMENT=	GNU Image Manipulation Program
 
 DISTNAME=	gimp-2.6.11
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS=	gimp-2.0	271.0	\
 		gimpbase-2.0	271.0	\

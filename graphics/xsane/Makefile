@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2011/06/16 10:16:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/09/16 10:02:38 espie Exp $
 
 COMMENT=	scanner frontend for SANE
 
 DISTNAME=	xsane-0.998
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	graphics
 

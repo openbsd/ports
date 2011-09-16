@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/17 08:05:14 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/16 10:02:37 espie Exp $
 
 COMMENT-main=		draw maps and charts
 COMMENT-high=		high resolution coastline data for GMT
@@ -9,7 +9,9 @@ DISTNAME=		GMT$V
 PKGNAME-main=		gmt-$V
 REVISION-main =		2
 PKGNAME-high=		gmt-high-$V
+REVISION-high =		0
 PKGNAME-full=		gmt-full-$V
+REVISION-full =		0
 CATEGORIES=		graphics geo
 
 HOMEPAGE=		http://gmt.soest.hawaii.edu/

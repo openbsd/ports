@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/29 18:00:03 matthew Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 10:02:37 espie Exp $
 
 COMMENT =		Constructive Solid Geometry rendering library
 
 V =			1.3.1
 DISTNAME =		OpenCSG-${V}
+REVISION=		0
 PKGNAME =		opencsg-${V}
 
 SHARED_ONLY =		Yes

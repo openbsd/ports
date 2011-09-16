@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/03/07 19:20:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/16 10:02:36 espie Exp $
 
 COMMENT=		C++ interface for cairo
 
 DISTNAME=		cairomm-1.9.8
+REVISION=		0
 SHARED_LIBS=		cairomm-1.0	5.0 # .5.0
 CATEGORIES=		graphics
 

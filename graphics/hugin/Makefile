@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/05/30 09:06:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/16 10:02:37 espie Exp $
 
 VMEM_WARNING =		Yes
 SHARED_ONLY =		Yes
@@ -6,6 +6,7 @@ SHARED_ONLY =		Yes
 COMMENT =		panorama image stitcher
 
 DISTNAME =		hugin-2011.0.0
+REVISION=		0
 EXTRACT_SUFX =		.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with

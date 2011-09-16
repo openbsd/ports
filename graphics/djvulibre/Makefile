@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2011/04/05 14:12:35 shadchin Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/16 10:02:36 espie Exp $
 
 COMMENT=	view, decode and encode DjVu files
 
 DISTNAME=	djvulibre-3.5.24
-REVISION=	0
+REVISION=	1
 SHARED_LIBS=	djvulibre 24.0
 CATEGORIES=	graphics print
 

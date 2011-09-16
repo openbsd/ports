@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2011/06/08 17:35:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/16 10:02:37 espie Exp $
 
 COMMENT=	Python interface to Graphviz's Dot
 
 V=		0.9.10
 DISTNAME=	pydot-$V
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	6
+REVISION=	7
 CATEGORIES=	graphics
 
 HOMEPAGE=	http://dkbza.org/pydot.html
