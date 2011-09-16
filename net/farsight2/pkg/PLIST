@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/03/02 07:32:59 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/09/16 19:52:58 jasper Exp $
 include/gstreamer-0.10/gst/farsight/
 include/gstreamer-0.10/gst/farsight/fs-base-conference.h
 include/gstreamer-0.10/gst/farsight/fs-candidate.h
@@ -9,6 +9,7 @@ include/gstreamer-0.10/gst/farsight/fs-enum-types.h
 include/gstreamer-0.10/gst/farsight/fs-interfaces.h
 include/gstreamer-0.10/gst/farsight/fs-participant.h
 include/gstreamer-0.10/gst/farsight/fs-plugin.h
+include/gstreamer-0.10/gst/farsight/fs-rtp.h
 include/gstreamer-0.10/gst/farsight/fs-session.h
 include/gstreamer-0.10/gst/farsight/fs-stream-transmitter.h
 include/gstreamer-0.10/gst/farsight/fs-stream.h
@@ -59,14 +60,16 @@ share/gtk-doc/html/farsight2-libs-0.10/ch03.html
 share/gtk-doc/html/farsight2-libs-0.10/ch04.html
 share/gtk-doc/html/farsight2-libs-0.10/ch05.html
 share/gtk-doc/html/farsight2-libs-0.10/ch06.html
+share/gtk-doc/html/farsight2-libs-0.10/ch07.html
 share/gtk-doc/html/farsight2-libs-0.10/farsight2-libs-0.10.devhelp
 share/gtk-doc/html/farsight2-libs-0.10/farsight2-libs-0.10.devhelp2
 share/gtk-doc/html/farsight2-libs-0.10/farsight2-libs-FsCandidate.html
 share/gtk-doc/html/farsight2-libs-0.10/farsight2-libs-FsCodec.html
 share/gtk-doc/html/farsight2-libs-0.10/farsight2-libs-FsPlugin.html
 share/gtk-doc/html/farsight2-libs-0.10/farsight2-libs-Network-interfaces-discovery.html
+share/gtk-doc/html/farsight2-libs-0.10/farsight2-libs-RTP-Specific-types.html
+share/gtk-doc/html/farsight2-libs-0.10/farsight2-libs-Utility-functions.html
 share/gtk-doc/html/farsight2-libs-0.10/farsight2-libs-fs-session.html
-share/gtk-doc/html/farsight2-libs-0.10/farsight2-libs-fs-utils.html
 share/gtk-doc/html/farsight2-libs-0.10/home.png
 share/gtk-doc/html/farsight2-libs-0.10/index.html
 share/gtk-doc/html/farsight2-libs-0.10/index.sgml
