@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2010/11/15 00:22:45 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/16 15:06:19 naddy Exp $
 
 COMMENT=	library for reading and writing streaming archives
 
-DISTNAME=	libarchive-2.8.4
-REVISION=	0
+DISTNAME=	libarchive-2.8.5
 SHARED_LIBS=	archive		6.0	# .10.3
 CATEGORIES=	archivers
 HOMEPAGE=	http://code.google.com/p/libarchive/
@@ -18,7 +17,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://libarchive.googlecode.com/files/
 
-WANTLIB=	c expat z bz2>=10 lzma
+WANTLIB=	c expat z bz2 lzma
 LIB_DEPENDS=	archivers/bzip2 \
 		archivers/xz
 
