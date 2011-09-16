@@ -1,10 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.5 2011/08/31 12:42:24 mpi Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2011/09/16 21:47:41 jasper Exp $
 bin/epylint
 bin/pylint
 bin/pyreverse
 bin/symilar
 lib/python${MODPY_VERSION}/site-packages/pylint/
-lib/python${MODPY_VERSION}/site-packages/${FULLPKGNAME}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pylint-${VERSION}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/pylint/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pylint/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/pylint/__pkginfo__.py
