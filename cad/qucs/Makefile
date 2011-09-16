@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/15 15:20:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 08:14:53 jasper Exp $
 
 COMMENT=	graphical circuit design and simulation tool
 
 DISTNAME=	qucs-0.0.16
+REVISION=	0
 CATEGORIES=	cad
 
 HOMEPAGE=	http://qucs.sourceforge.net/
