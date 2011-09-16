@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2011/08/27 10:28:25 fgsch Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/16 11:13:39 espie Exp $
 
 COMMENT =	Python DNS library
 
 MODPY_EGG_VERSION =	2.3.5
 DISTNAME =	pydns-${MODPY_EGG_VERSION}
 PKGNAME =	py-dns-${MODPY_EGG_VERSION}
+REVISION=		0
 CATEGORIES =   	net
 
 HOMEPAGE =	http://pydns.sourceforge.net/

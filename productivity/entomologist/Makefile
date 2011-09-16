@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/04/12 19:33:56 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 11:13:41 espie Exp $
 
 COMMENT =	bug tracker client
 DISTNAME =	entomologist-0.6
+REVISION=		0
 CATEGORIES =	productivity
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=entomologist/}

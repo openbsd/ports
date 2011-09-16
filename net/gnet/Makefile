@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/12 12:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/16 11:13:38 espie Exp $
 
 COMMENT=	simple network library
 
@@ -6,6 +6,7 @@ GNOME_PROJECT=	gnet
 GNOME_VERSION=	2.0.8
 SHARED_LIBS +=  gnet-2.0             1.0      # .8.0
 CATEGORIES=	net
+REVISION=		0
 
 HOMEPAGE=	http://www.gnetlibrary.org/
 

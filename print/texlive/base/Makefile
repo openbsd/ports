@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.50 2011/06/14 21:11:24 edd Exp $
+# $OpenBSD: Makefile,v 1.51 2011/09/16 11:13:41 espie Exp $
 
 COMMENT =		base binaries for TeXLive typesetting distribution
 
 DISTNAME = 		texlive-${DIST_V}-source
 PKGNAME =		texlive_base-${V}
-REVISION =		3
+REVISION =		4
 
 SHARED_LIBS =		kpathsea	3.0
 SHARED_LIBS +=		ptexenc		0.0

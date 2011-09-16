@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/22 08:27:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 11:13:40 espie Exp $
 
 COMMENT=		GUI for synergy
 
 DISTNAME=		qsynergy-0.9.1
+REVISION=		0
 CATEGORIES=		net x11
 
 HOMEPAGE=		http://sourceforge.net/projects/qsynergy/

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/06/29 10:40:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 11:13:39 espie Exp $
 
 COMMENT =		python wrapper for the ENet library
 
 MODPY_EGG_VERSION =	1.0
 DISTNAME =		py-enet-${MODPY_EGG_VERSION}
+REVISION=		0
 CATEGORIES =		net
 
 MAINTAINER =		James Turner <james@calminferno.net>

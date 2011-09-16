@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/07/06 18:57:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/16 11:13:41 espie Exp $
 
 COMMENT=		Z39.50/SR client and API library
 DISTNAME=		yaz-3.0.49
 CATEGORIES=		net
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS+=		yaz		1.1	# 3.0
 SHARED_LIBS+=		yaz_icu		1.2	# 3.0

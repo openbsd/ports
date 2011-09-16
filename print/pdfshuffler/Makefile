@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/08 17:37:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 11:13:41 espie Exp $
 
 COMMENT =		merge, split, rotate and crop PDF documents
 DISTNAME =		pdfshuffler-0.5.1
-REVISION =		1
+REVISION =		2
 CATEGORIES =		print
 
 HOMEPAGE =		http://sourceforge.net/projects/pdfshuffler/

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2011/07/07 20:43:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/16 11:13:38 espie Exp $
 
 COMMENT=	graphical MIB browser
 
 DISTNAME=	mbrowse-0.4.3
+REVISION=		0
 CATEGORIES=	net
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=mbrowse/}

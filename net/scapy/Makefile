@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2011/06/08 18:00:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/16 11:13:40 espie Exp $
 
 COMMENT=	powerful interactive packet manipulation in python
 
 MODPY_EGG_VERSION=	2.1.0
 DISTNAME=		scapy-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 

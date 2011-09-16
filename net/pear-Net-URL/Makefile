@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/06/04 11:41:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/16 11:13:39 espie Exp $
 
 COMMENT=	easy parsing of URLs for PHP
 
 DISTNAME=	Net_URL-1.0.14
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 MODULES=	www/pear

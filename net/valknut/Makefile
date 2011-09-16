@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2011/07/04 11:18:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/16 11:13:41 espie Exp $
 
 COMMENT=	Graphical Direct-Connect client
 
 DISTNAME=	valknut-0.3.7
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 HOMEPAGE=	http://wxdcgui.sourceforge.net/

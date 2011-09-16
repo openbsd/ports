@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/13 08:47:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/16 11:13:39 espie Exp $
 
 COMMENT =		GeoIP Python API
 
 MODPY_EGG_VERSION =	1.2.5
-REVISION =		2
+REVISION =		3
 DISTNAME =		GeoIP-Python-${MODPY_EGG_VERSION}
 PKGNAME =		py-GeoIP-${MODPY_EGG_VERSION}
 CATEGORIES =		net

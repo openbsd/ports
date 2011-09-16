@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/14 03:47:02 lum Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/16 11:13:38 espie Exp $
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
 V=		3.5.1
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
+REVISION=		0
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	net

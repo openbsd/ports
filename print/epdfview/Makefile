@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2011/06/08 18:26:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2011/09/16 11:13:41 espie Exp $
 
 COMMENT=	lightweight PDF document viewer
 
 DISTNAME=	epdfview-0.1.8
+REVISION=		0
 CATEGORIES=	print
 HOMEPAGE=	http://trac.emma-soft.com/epdfview/
 

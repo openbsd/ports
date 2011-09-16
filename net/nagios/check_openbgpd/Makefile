@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:34 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 11:13:38 espie Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		Nagios plugin to monitor OpenBGPd peers
 DISTNAME=		check_openbgpd-1.5
+REVISION=		0
 CATEGORIES=		sysutils net
 
 MAINTAINER=		Andrew Fresh <andrew@afresh1.com>

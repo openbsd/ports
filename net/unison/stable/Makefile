@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2011/05/24 17:46:40 giovanni Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/16 11:13:41 espie Exp $
 
 COMMENT=	multi-platform file synchronization tool
 
 V=		2.40.63
+REVISION =	0
 
 MASTER_SITES=	${HOMEPAGE}download/releases/stable/
 

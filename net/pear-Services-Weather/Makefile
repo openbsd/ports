@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/06/04 11:41:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/16 11:13:39 espie Exp $
 
 COMMENT=	interface to various online weather-services for PHP
 
 DISTNAME=	Services_Weather-1.4.0
-REVISION=	2
+REVISION=	3
 CATEGORIES=	net
 
 MODULES=	www/pear

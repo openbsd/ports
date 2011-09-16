@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/05/11 12:03:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 11:13:40 espie Exp $
 
 COMMENT=		SNMP trap handler written
 
 DISTNAME=		snmptt_1.3
 PKGNAME=		${DISTNAME:S/_/-/}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 

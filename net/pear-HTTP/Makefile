@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/04 11:41:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/16 11:13:39 espie Exp $
 
 COMMENT=	miscellaneous HTTP utilities for PHP
 
 DISTNAME=	HTTP-1.3.6
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 
 MODULES=	www/pear

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/14 13:35:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/09/16 11:13:41 espie Exp $
 
 COMMENT=	display information about a given connection manager
 
 DISTNAME=	telepathy-inspector-0.5.3
-REVISION=	8
+REVISION=	9
 
 HOMEPAGE=	${HOMEPAGE_TP:=Telepathy Inspector}
 

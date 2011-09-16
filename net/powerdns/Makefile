@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/05/11 12:03:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/16 11:13:39 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,6 +22,11 @@ CATEGORIES=		net
 HOMEPAGE=		http://www.powerdns.com/
 
 REVISION-main=		0
+REVISION-mysql =	0
+REVISION-pgsql =	0
+REVISION-sqlite =	0
+REVISION-sqlite3 =	0
+REVISION-ldap =		0
 
 MULTI_PACKAGES=		-main
 

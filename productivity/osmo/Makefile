@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2011/04/21 07:06:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/16 11:13:42 espie Exp $
 
 COMMENT=	handy personal organizer
 
 DISTNAME=	osmo-0.2.8
-REVISION=	3
+REVISION=	4
 CATEGORIES=	productivity
 
 HOMEPAGE=	http://clayo.org/osmo/

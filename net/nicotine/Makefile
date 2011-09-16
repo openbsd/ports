@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/06/08 18:00:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/16 11:13:39 espie Exp $
 
 COMMENT=	gtk soulseek client written in Python
 
 DISTNAME=	nicotine-1.0.8
-REVISION=	5
+REVISION=	6
 CATEGORIES=	net x11
 
 HOMEPAGE=	http://nicotine.thegraveyard.org/

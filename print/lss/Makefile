@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/08/27 12:44:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/16 11:13:41 espie Exp $
 
 COMMENT=		LaTeX symbols selector
 
 DISTNAME=		lss-0.1.6
-REVISION=		5
+REVISION=		6
 CATEGORIES=		print x11
 
 HOMEPAGE=		http://clayo.org/lss/

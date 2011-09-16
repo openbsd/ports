@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.81 2010/11/19 22:31:39 espie Exp $
+# $OpenBSD: Makefile,v 1.82 2011/09/16 11:13:41 espie Exp $
 
 COMMENT=	GTK+2 IRC client
 
 MAJOR=		2.8
 VERSION=	${MAJOR}.8
 DISTNAME=	xchat-${VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net x11
 

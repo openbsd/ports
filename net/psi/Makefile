@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/19 22:31:37 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/09/16 11:13:39 espie Exp $
 
 COMMENT=	multiplatform Jabber client
 
 DISTNAME=	psi-0.10
-REVISION=	0
+REVISION=	1
 CATEGORIES=	net
 
 HOMEPAGE=	http://psi-im.org/

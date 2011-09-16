@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/07/06 18:57:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 11:13:41 espie Exp $
 
 COMMENT=	lightweight PDF document viewer with vi bindings
 
 DISTNAME=	apvlv-0.0.9.6
-REVISION=	4
+REVISION=	5
 CATEGORIES=	print
 HOMEPAGE=	http://code.google.com/p/apvlv/
 

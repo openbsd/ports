@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2011/06/20 17:56:43 rpointel Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/16 11:13:38 espie Exp $
 
 COMMENT=	icecast source for streaming MP3
 
 DISTNAME=	ices-0.4
-REVISION=	8
+REVISION=	9
 CATEGORIES=	net audio
 
 HOMEPAGE=	http://www.icecast.org/ices.php

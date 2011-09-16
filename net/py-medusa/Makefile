@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2011/06/08 18:00:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 11:13:40 espie Exp $
 
 COMMENT=		Python framework for async socket-based servers
 
 DISTNAME=		medusa-0.5.4
 PKGNAME=		py-${DISTNAME}
-REVISION=		3
+REVISION=		4
 CATEGORIES=		net devel
 
 HOMEPAGE=		http://www.amk.ca/python/code/medusa.html

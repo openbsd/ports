@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/08/30 17:16:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 11:13:41 espie Exp $
 
 COMMENT =	desktop bugzilla browser
 
 DISTNAME =	deskzilla-lite-2_1
 PKGNAME =	${DISTNAME:S/_/./}
-REVISION =	1
+REVISION =	2
 EXTRACT_SUFX=	.zip
 
 PKG_ARCH =	*

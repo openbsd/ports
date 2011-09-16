@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2011/07/06 18:57:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/16 11:13:42 espie Exp $
 
 COMMENT=	project management tool
 
 DISTNAME=	taskjuggler-2.4.1
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	productivity
 

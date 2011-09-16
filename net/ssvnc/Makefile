@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/15 20:24:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/16 11:13:40 espie Exp $
 
 COMMENT-gui =		enhanced TightVNC client GUI and wrappers
 COMMENT-main =		enhanced TightVNC client
@@ -10,6 +10,7 @@ PKGNAME =		ssvnc-$V
 EPOCH =			0
 FULLPKGNAME-gui =	ssvnc-$V
 FULLPKGNAME-main =	ssvnc-viewer-$V
+REVISION-gui =		0
 
 CATEGORIES =		net x11
 

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/19 22:31:38 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/16 11:13:40 espie Exp $
 
 COMMENT=		snmp command line utility
 
 DISTNAME=		scli-0.3.1
+REVISION=		0
 CATEGORIES=		net
 
 MASTER_SITES=		ftp://ftp.ibr.cs.tu-bs.de/pub/local/scli/	

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.39 2011/09/08 10:34:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2011/09/16 11:13:41 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	DTP program
 DISTNAME=	scribus-1.3.4
-REVISION=	16
+REVISION=	17
 CATEGORIES=	print
 
 # These are actually internal modules, not generic shared libs

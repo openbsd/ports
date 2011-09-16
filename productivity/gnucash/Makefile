@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/09/12 12:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2011/09/16 11:13:41 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT =	gnucash
 GNOME_VERSION =	2.2.9
 DOC_VERSION = 	2.2.0
 
-REVISION=	6
+REVISION=	7
 
 SHARED_LIBS +=	gnc-backend-file-utils	0.0	# .0.0
 SHARED_LIBS +=	gnc-business-ledger	0.0	# .0.0

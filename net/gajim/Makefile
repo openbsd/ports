@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.48 2011/09/13 08:00:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2011/09/16 11:13:38 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	jabber client written in pygtk
 DISTNAME=	gajim-0.14.4
+REVISION=		0
 CATEGORIES=	net x11
 
 MASTER_SITES=	${HOMEPAGE}/downloads/0.14/

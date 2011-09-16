@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/01/10 18:32:14 sebastia Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 11:13:39 espie Exp $
 
 COMMENT =	POCO C++ libraries for network based applications
 
 VERSION =	1.4.0
 DISTNAME =	poco-${VERSION}-all
 PKGNAME =	poco-${VERSION}
+REVISION=		0
 CATEGORIES =	net devel
 SHLIB_VERSION =	0.1
 .for _lib in PocoMySQL PocoNetSSL PocoODBC PocoSQLite PocoZip \

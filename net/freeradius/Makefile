@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/09/07 10:29:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2011/09/16 11:13:38 espie Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.0      # .0.0
@@ -21,10 +21,10 @@ PKGNAME-pgsql=	freeradius-pgsql-$V
 PKGNAME-ldap=	freeradius-ldap-$V
 
 REVISION-main=	4
-REVISION-iodbc= 1
-REVISION-mysql= 1
-REVISION-pgsql= 1
-REVISION-ldap=	1
+REVISION-iodbc= 2
+REVISION-mysql= 2
+REVISION-pgsql= 2
+REVISION-ldap=	2
 
 CATEGORIES=	net security
 

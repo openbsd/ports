@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2011/04/21 11:23:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/16 11:13:38 espie Exp $
 
 COMMENT=	Nagios Remote Plugin Executor
 
 # packaged from Icinga git repo.
 DISTNAME=	icinga-nrpe-2.12.20100914
+REVISION=		0
 PKGNAME=	${DISTNAME:S/icinga-//}
 WRKDIST=	${WRKDIR}/icinga-nrpe
 CATEGORIES=	net

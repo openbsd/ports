@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/08 17:37:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 11:13:43 espie Exp $
 
 COMMENT =	command-line oriented todo list system
 
@@ -6,7 +6,7 @@ CATEGORIES =	productivity
 
 MODPY_EGG_VERSION = 0.10
 DISTNAME =	yokadi-${MODPY_EGG_VERSION}.0
-REVISION =	1
+REVISION =	2
 
 MASTER_SITES =	${HOMEPAGE}/download/
 HOMEPAGE =	http://yokadi.github.com/

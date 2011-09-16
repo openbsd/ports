@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2010/11/19 22:31:39 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 11:13:41 espie Exp $
 
 COMMENT-main=	IRC client for Emacs
 COMMENT-el=	elisp sources of zenirc
 
 VERSION=	2.112
 DISTNAME=	zenirc-${VERSION}
+REVISION=		0
 PKGNAME-main=	emacs-zenirc-${VERSION}
 PKGNAME-el=	emacs-zenirc-el-${VERSION}
 CATEGORIES=	net

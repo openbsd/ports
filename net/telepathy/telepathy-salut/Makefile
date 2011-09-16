@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/14 13:35:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/09/16 11:13:41 espie Exp $
 
 COMMENT=		flexible communications framework, local-link component
 
 DISTNAME=		telepathy-salut-0.4.0
-REVISION=		0
+REVISION=		1
 
 MASTER_SITES=		${MASTER_SITES_TP:=telepathy-salut/}
 

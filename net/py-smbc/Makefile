@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/08/23 06:39:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 11:13:40 espie Exp $
 
 COMMENT=	Python bindings to wrap the libsmbclient API
 
 MODPY_EGG_VERSION=	1.0.11.1
 DISTNAME=	pysmbc-${MODPY_EGG_VERSION}
 PKGNAME=	py-smbc-${MODPY_EGG_VERSION}
+REVISION=		0
 
 CATEGORIES=	net
 

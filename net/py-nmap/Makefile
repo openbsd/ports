@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2011/06/08 18:00:50 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 11:13:40 espie Exp $
 
 COMMENT =		python interface to the nmap scan data
 
 MODPY_EGG_VERSION =	0.1.4
 DISTNAME =		python-nmap-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/python/py/}
-REVISION =		2
+REVISION =		3
 CATEGORIES =		net
 
 HOMEPAGE =		http://xael.org/norman/python/python-nmap/

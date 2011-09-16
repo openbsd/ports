@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/06/01 23:40:21 kili Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/16 11:13:41 espie Exp $
 
 COMMENT=		filter to print a wide range of file formats
 
 DISTNAME=		apsfilter-7.2.8
-REVISION=		2
+REVISION=		3
 CATEGORIES=		print
 
 HOMEPAGE=		http://www.apsfilter.org/

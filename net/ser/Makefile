@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2010/11/19 22:31:38 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/16 11:13:40 espie Exp $
 
 COMMENT=	SIP Express Router
 
@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS= i386 sparc
 VERSION=	0.8.10
 DISTNAME=	ser-${VERSION}_src
 PKGNAME=	ser-${VERSION}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 WANTLIB=	c expat z lib/mysql/mysqlclient>=10
 
