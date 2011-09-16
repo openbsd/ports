@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/07/19 18:00:51 jeremy Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/16 12:00:09 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -6,7 +6,7 @@ COMMENT =	Nginx module for deploying Ruby applications
 
 DISTNAME =	passenger-3.0.7
 PKGNAME =	ruby-${DISTNAME}
-REVISION =	2
+REVISION =	3
 CATEGORIES =	www
 
 HOMEPAGE =	http://www.modrails.com/

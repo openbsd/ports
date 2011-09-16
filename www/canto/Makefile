@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/08 18:15:28 rpointel Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 12:00:06 espie Exp $
 
 COMMENT =	ncurses Atom/RSS newsreader for the console
 DISTNAME =	canto-0.7.10
-REVISION =	1
+REVISION =	2
 CATEGORIES =	www
 
 MASTER_SITES =	http://codezen.org/static/

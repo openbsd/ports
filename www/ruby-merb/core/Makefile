@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/01/06 04:24:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 12:00:08 espie Exp $
 
 COMMENT =	fast, lightweight MVC framework for Ruby - merb-core
 
 DISTNAME =	merb-core-${VERSION}
-REVISION =	0
+REVISION =	1
 
 RUN_DEPENDS =	devel/ruby-extlib,${MODRUBY_FLAVOR}>=0.9.13 \
 		textproc/ruby-erubis,${MODRUBY_FLAVOR}>=2.6.2 \

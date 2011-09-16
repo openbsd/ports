@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/16 12:00:07 espie Exp $
 
 COMMENT=	Apache MySQL authentication module
 
-REVISION=	6
+REVISION=	7
 VERSION=	3.2
 DISTNAME=	mod_auth_mysql-${VERSION}
 CATEGORIES=	www

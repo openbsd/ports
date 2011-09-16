@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/03/24 22:01:08 landry Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/16 12:00:08 espie Exp $
 
 COMMENT=	console RSS aggregator
 
 DISTNAME=	raggle-0.4.4
-REVISION =	3
+REVISION =	4
 
 CATEGORIES=	www news
 

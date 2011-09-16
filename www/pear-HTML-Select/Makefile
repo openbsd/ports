@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/06/04 11:41:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 12:00:07 espie Exp $
 
 COMMENT=	class for generating HTML form select elements for PHP
 
 DISTNAME=	HTML_Select-1.2.1
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2011/01/06 04:24:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 12:00:09 espie Exp $
 
 COMMENT =	lightweight and user friendly HTTP client library for Ruby
 
 DISTNAME =	thin_http-0.1.1
-REVISION =	3
+REVISION =	4
 CATEGORIES =	www
 
 MAINTAINER =	Clint Pachl <pachl@ecentryx.com>

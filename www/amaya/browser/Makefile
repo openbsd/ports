@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/07/07 00:22:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2011/09/16 12:00:06 espie Exp $
 #
 # Many variables moved to ../Makefile.inc
 
@@ -7,7 +7,7 @@ COMMENT=		test-bed browser/authoring tool of the W3C
 AMAYA_VERSION=		5.1
 DISTNAME=		amaya-src-${AMAYA_VERSION}
 PKGNAME=		amaya-${AMAYA_VERSION}
-REVISION=		7
+REVISION=		8
 
 HOMEPAGE=		http://www.w3.org/Amaya/
 

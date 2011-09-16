@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/16 12:00:07 espie Exp $
 
 COMMENT=	Apache module for logging to an SQL database
 
-REVISION=	5
+REVISION=	6
 DISTNAME=	mod_log_sql-1.18
 CATEGORIES=	www
 

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/08 18:15:29 rpointel Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 12:00:08 espie Exp $
 
 COMMENT=		simple Python framework for web-based applications
 
 MODPY_EGG_VERSION=	2.6
 DISTNAME=		Quixote-${MODPY_EGG_VERSION}
 PKGNAME=		py-quixote-${MODPY_EGG_VERSION}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		www
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 12:00:10 espie Exp $
 
 COMMENT-main =	yahoo ui library toolkit
 COMMENT-docs =	yahoo ui library examples
@@ -9,6 +9,7 @@ EXTRACT_SUFX =	.zip
 DISTNAME =	yui_${V}
 PKGNAME-main =	yui-${V}
 PKGNAME-docs =	yui-doc-${V}
+REVISION-docs =	0
 MULTI_PACKAGES = -main -docs
 
 HOMEPAGE =	http://developer.yahoo.com/yui/

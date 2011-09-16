@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/07/11 06:22:49 robert Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 12:00:07 espie Exp $
 
 COMMENT-main=	base classes for common PHP tasks
 COMMENT-utils=	utilities for managing pear extensions
@@ -12,7 +12,7 @@ CATEGORIES=	www devel
 EXTRACT_SUFX=	.tar.bz2
 
 REVISION-main=	2
-REVISION-utils=	2
+REVISION-utils=	3
 
 HOMEPAGE=	http://pear.php.net/
 MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \

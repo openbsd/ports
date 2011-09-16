@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/07/09 00:04:11 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 12:00:07 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	php bindings for the libssh2 library
 DISTNAME=	ssh2-0.11.0
 EXTRACT_SUFX=	.tgz
 PKGNAME=	pecl-${DISTNAME}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 
 HOMEPAGE=	http://pecl.php.net/package/ssh2/

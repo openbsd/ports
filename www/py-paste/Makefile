@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/08 18:15:29 rpointel Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/16 12:00:08 espie Exp $
 
 COMMENT =		tools for using web server gateway interface stack
 
 MODPY_EGG_VERSION =	1.7.2
 DISTNAME =		Paste-${MODPY_EGG_VERSION}
 PKGNAME =		py-paste-${MODPY_EGG_VERSION}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 

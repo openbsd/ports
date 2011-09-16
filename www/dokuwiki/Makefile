@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/07/21 09:52:28 pea Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 12:00:06 espie Exp $
 
 COMMENT =	standards compliant, simple to use Wiki
 
 DISTNAME = 	dokuwiki-2011-05-25a
 PKGNAME = 	${DISTNAME:S/-05-/.05./}
+REVISION=	0
 CATEGORIES =	www
 HOMEPAGE =	http://www.dokuwiki.org/dokuwiki
 

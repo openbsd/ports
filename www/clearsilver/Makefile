@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/09/05 17:12:35 okan Exp $
+# $OpenBSD: Makefile,v 1.24 2011/09/16 12:00:06 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -9,7 +9,7 @@ COMMENT-python=	python bindings for clearsilver
 V=		0.10.4
 DISTNAME=	clearsilver-${V}
 EPOCH=		0
-REVISION=	6
+REVISION=	7
 PKGNAME-main=	${DISTNAME}
 PKGNAME-perl=	clearsilver-perl-${V}
 PKGNAME-python=	clearsilver-python-${V}

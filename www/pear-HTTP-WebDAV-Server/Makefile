@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2010/07/30 23:52:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 12:00:07 espie Exp $
 
 COMMENT=	helper class for PHP WebDAV server implementations
 
 V=		1.0.0RC4
 DISTNAME=	HTTP_WebDAV_Server-$V
 PKGNAME=	pear-HTTP-WebDAV-Server-${V:L}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www
 
 MODULES=	www/pear

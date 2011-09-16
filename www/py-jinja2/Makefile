@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/06/08 18:15:29 rpointel Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 12:00:08 espie Exp $
 
 COMMENT =		fast, optionally sandboxed, Python template engine
 
 MODPY_EGG_VERSION =	2.5.5
 DISTNAME =		Jinja2-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www devel
 

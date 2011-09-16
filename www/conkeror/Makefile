@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2010/12/21 20:47:48 joshe Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 12:00:06 espie Exp $
 
 COMMENT =		keyboard-oriented Mozilla-based browser
 
 DATE =			20101215
 GITREV =		d81cecae9ec9bde209e2cfa0cd4d98a97428d380
 DISTNAME =		conkeror-0.9.3.${DATE}
+REVISION=	0
 
 CATEGORIES =		www
 

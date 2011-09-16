@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/27 18:21:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 12:00:09 espie Exp $
 
 COMMENT=		whitelist-based HTML sanitizer
 
 DISTNAME=		sanitize-2.0.3
+REVISION=	0
 CATEGORIES=		www textproc
 
 HOMEPAGE=		https://github.com/rgrove/sanitize/

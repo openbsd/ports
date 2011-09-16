@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2011/07/03 22:14:42 zinke Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/16 12:00:07 espie Exp $
 
 COMMENT=	pythonic, object-oriented web development framework
 
 MODPY_EGG_VERSION=	3.2.0
-REVISION=		0
+REVISION=		1
 DISTNAME=		CherryPy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		www

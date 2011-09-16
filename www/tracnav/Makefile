@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2011/06/08 18:15:30 rpointel Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 12:00:09 espie Exp $
 
 COMMENT=	customizable navigation bar for trac's wiki
 
 MODPY_EGG_VERSION= 4.1
 DISTNAME=	TracNav-${MODPY_EGG_VERSION}
-REVISION=	1
+REVISION=	2
 EXTRACT_SUFX=	.zip
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	www devel

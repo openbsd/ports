@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/01/06 04:24:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/16 12:00:08 espie Exp $
 
 COMMENT =	merb-auth support for slices
 
 DISTNAME =	merb-auth-slice-password-1.1.1
-REVISION =	0
+REVISION =	1
 
 RUN_DEPENDS =	www/ruby-merb/slices,${MODRUBY_FLAVOR}>=1.1,<2.0 \
 		www/ruby-merb/auth-more,${MODRUBY_FLAVOR}>=1.1.1,<1.2 \

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2010/11/22 08:36:47 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/16 12:00:06 espie Exp $
 
 COMMENT=	CSS editor
 
 DISTNAME=	cssed-0.4.0
-REVISION=	9
+REVISION=	10
 CATEGORIES=	www editors
 
 HOMEPAGE=	http://cssed.sourceforge.net/

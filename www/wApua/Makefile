@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/11/22 08:36:55 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 12:00:09 espie Exp $
 
 COMMENT=		browser for wap/wml
 
 DISTNAME=		wApua-0.06
-REVISION=		0
+REVISION=		1
 CATEGORIES=		www
 
 HOMEPAGE=		http://fsinfo.noone.org/~abe/wApua/

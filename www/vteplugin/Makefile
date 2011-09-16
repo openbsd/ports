@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2011/06/08 18:15:30 rpointel Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/16 12:00:09 espie Exp $
 
 COMMENT =	npapi vte-based terminal for web browsers
 
 DISTNAME =	vteplugin-0.1
-REVISION =	6
+REVISION =	7
 CATEGORIES =	www x11
 
 # WTFPL

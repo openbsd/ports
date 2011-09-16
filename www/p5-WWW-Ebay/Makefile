@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2010/12/03 11:46:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 12:00:07 espie Exp $
 
 COMMENT=		search and manage eBay accounts
 
 DISTNAME=		WWW-Ebay-0.094
-REVISION=		0
+REVISION=		1
 CATEGORIES=		www
 
 # perl

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2010/12/08 22:13:25 jeremy Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/16 12:00:09 espie Exp $
 
 COMMENT =	fast, lightweight MVC framework for Ruby
 
 DISTNAME =	merb-${VERSION}
+REVISION=	0
 
 RUN_DEPENDS =	databases/ruby-do_sqlite3,${MODRUBY_FLAVOR}>=0.10.0 \
 		databases/ruby-datamapper/data_mapper,${MODRUBY_FLAVOR}>=0.10.0 \

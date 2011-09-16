@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/06/08 18:15:29 rpointel Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 12:00:07 espie Exp $
 
 COMMENT =	http proxy to authenticate using NTLM
 
 DISTNAME =	ntlmaps-0.9.9.0.1
-REVISION=	3
+REVISION=	4
 CATEGORIES =	www
 HOMEPAGE =	http://ntlmaps.sourceforge.net/
 

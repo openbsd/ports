@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/06/04 11:41:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 12:00:07 espie Exp $
 
 COMMENT=	base package for HTML handling in PHP5
 
 DISTNAME=	HTML_Page2-0.5.0beta
-REVISION=	1
+REVISION=	2
 CATEGORIES=	www devel
 
 MODULES=	www/pear

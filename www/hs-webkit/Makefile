@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/31 09:56:10 nigel Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 12:00:06 espie Exp $
 
 COMMENT =		WebKit bindings for Haskell
 DISTNAME =		webkit-0.12.1
 CATEGORIES =		www
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Jona Joachim <jaj@hcl-club.lu>
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/05/16 08:24:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2011/09/16 12:00:07 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		simple GTK desktop news aggregator
 DISTNAME=		liferea-1.6.5
 CATEGORIES=		www x11
 
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		http://liferea.sourceforge.net/
 

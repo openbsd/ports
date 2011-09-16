@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2011/07/09 00:04:11 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 12:00:07 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PHP upload progress meter
 
 DISTNAME=	uploadprogress-1.0.1
-REVISION=	0
+REVISION=	1
 PKGNAME=	pecl-${DISTNAME}
 CATEGORIES=	www
 
