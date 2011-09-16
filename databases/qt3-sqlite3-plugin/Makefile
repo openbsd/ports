@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2010/12/05 21:38:19 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/16 08:48:04 espie Exp $
 
 SHARED_ONLY=	Yes
 COMMENT=	qt3 sqlite3 plugin
@@ -10,7 +10,7 @@ MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 V=		0.2
 DISTNAME=	23011-qt-sqlite3-$V
 PKGNAME=	qt3-sqlite3-$V
-REVISION=	2
+REVISION=	3
 
 WRKDIST=	${WRKDIR}/qt-sqlite3-${V}
 

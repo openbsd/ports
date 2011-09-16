@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/05/11 15:27:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2011/09/16 08:48:03 espie Exp $
 
 COMMENT-main=	read microsoft Access MDB
 COMMENT-gmdb=	graphical interface to MDB tools
@@ -8,8 +8,8 @@ PKGNAME-main=	mdbtools-${DATE}
 PKGNAME-gmdb=	gmdb-${DATE}
 HOMEPAGE=	http://mdbtools.sourceforge.net/
 
-REVISION-main=	5
-REVISION-gmdb=	8
+REVISION-main=	6
+REVISION-gmdb=	9
 
 CATEGORIES=	databases converters
 MASTER_SITES=	ftp://quatramaran.ens.fr/pub/espie/

@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/08/16 18:09:09 matthew Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 08:48:02 espie Exp $
 
 COMMENT =		the programmer's solid 3D CAD modeller
 
 V =			2011.06
 DISTNAME =		openscad-${V}
+REVISION =		0
 
 CATEGORIES =		cad
 

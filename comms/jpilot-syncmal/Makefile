@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2011/01/03 11:11:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/16 08:48:02 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	MAL plugin for J-Pilot
 
 DISTNAME=	jpilot-syncmal-0.81
-REVISION=	1
+REVISION=	2
 CATEGORIES=	comms palm
 
 HOMEPAGE=	http://www.jlogday.com/code/syncmal/

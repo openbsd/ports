@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/08/19 07:58:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/16 08:48:02 espie Exp $
 
 COMMENT=	interactive electronics designing software
 
@@ -6,6 +6,7 @@ V=		0.6.3
 DISTNAME=	fritzing.$V.source
 PKGNAME=	fritzing-$V
 CATEGORIES=	cad
+REVISION =	0
 
 HOMEPAGE=	http://fritzing.org/
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2010/11/15 00:22:49 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/16 08:48:02 espie Exp $
 
 COMMENT=	NEC2 antenna simulator visualizer
 
@@ -7,7 +7,7 @@ BROKEN-arm=	makedepend infinite loop
 
 VERSION=	1.35
 DISTNAME=	xnecview-${VERSION}
-REVISION=	7
+REVISION=	8
 EXTRACT_SUFX=	.tgz
 
 MASTER_SITES=	http://wwwhome.cs.utwente.nl/~ptdeboer/ham/xnecview/

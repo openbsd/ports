@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/16 08:48:02 espie Exp $
 
 COMMENT=	X DX cluster watcher
 
 VERSION=	2.4
 DISTNAME=	xdx-${VERSION}
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=    	comms hamradio
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/04/14 17:15:15 jeremy Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 08:48:04 espie Exp $
 
 BROKEN-mips64el= hangs when compiling sqlite3.o
 
@@ -6,6 +6,7 @@ COMMENT =	ruby SQLite3 embedded database library
 
 DISTNAME =	amalgalite-1.1.2
 CATEGORIES =	databases
+REVISION =	0
 
 HOMEPAGE =	http://copiousfreetime.rubyforge.org/amalgalite/
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2010/11/15 00:22:50 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 08:48:02 espie Exp $
 
 COMMENT=	radio contest logger
 
 DISTNAME=	tlf-0.9.30
-REVISION=	0
+REVISION=	1
 CATEGORIES=	comms hamradio
 
 HOMEPAGE=	http://home.iae.nl/users/reinc/TLF-0.2.html

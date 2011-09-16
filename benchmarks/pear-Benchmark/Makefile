@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/06/04 11:41:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/16 08:48:01 espie Exp $
 
 COMMENT=	framework to benchmark PHP scripts or function calls
 
 DISTNAME=	Benchmark-1.2.6
-REVISION=	1
+REVISION=	2
 CATEGORIES=	benchmarks
 
 MODULES=	www/pear

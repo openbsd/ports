@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/01/03 19:47:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 08:48:03 espie Exp $
 
 CATEGORIES=	databases x11 x11/kde
 COMMENT=	MDB (access) file migration driver for kexi
@@ -7,7 +7,7 @@ VERSION=	1.6.1
 MASTER_SITES=	${MASTER_SITE_KDE:S@$@stable/koffice-${VERSION}/src/@}
 DISTNAME=	keximdb-1.1.0
 DIST_SUBDIR=	kde
-REVISION=	3
+REVISION=	4
 HOMEPAGE=	http://www.kexi-project.org/wiki/wikiview/index.php?MDBDriver
 
 SHARED_ONLY=	Yes

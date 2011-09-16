@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/15 00:22:54 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/16 08:48:05 espie Exp $
 
 COMMENT =	gui for sqlite
 CATEGORIES =	databases x11
 
 DISTNAME =	sqliteman-1.2.0
-REVISION =	1
+REVISION =	2
 
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sqliteman/}
 HOMEPAGE =	http://sourceforge.net/projects/sqliteman/

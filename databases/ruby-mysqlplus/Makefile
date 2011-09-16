@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/03/25 16:39:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 08:48:05 espie Exp $
 
 COMMENT=	enhanced ruby mysql driver, supporting async and threading
 
 DISTNAME=	mysqlplus-0.1.2
-REVISION =	0
+REVISION =	1
 CATEGORIES=	databases
 
 HOMEPAGE=	http://github.com/oldmoe/mysqlplus

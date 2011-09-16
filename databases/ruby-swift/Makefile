@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2011/03/14 18:31:07 jeremy Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 08:48:05 espie Exp $
 
 COMMENT =	fast database API and ORM for ruby 1.9
 
 DISTNAME =	swift-0.9.1
 CATEGORIES =	databases
+REVISION =	0
 
 MAINTAINER =	Jeremy Evans <jeremy@openbsd.org>
 

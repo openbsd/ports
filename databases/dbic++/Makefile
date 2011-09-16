@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/08/17 15:43:52 nigel Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/16 08:48:02 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,6 +8,7 @@ DISTNAME=		deepfryed-dbicpp-g466860f
 PKGNAME=		dbic++-0.5.6
 CATEGORIES=		databases
 HOMEPAGE=		https://github.com/deepfryed/dbicpp
+REVISION =		0
 
 SHARED_LIBS +=  dbdmysql                  1.0 # 0.0
 SHARED_LIBS +=  dbdpg                     1.0 # 0.0

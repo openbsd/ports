@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.33 2011/02/10 01:44:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.34 2011/09/16 08:48:04 espie Exp $
 
 COMMENT =	object relation model implementation for ruby
 
 VERSION =	3.0.3
 DISTNAME =	activerecord-${VERSION}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	databases
 
 # MIT License

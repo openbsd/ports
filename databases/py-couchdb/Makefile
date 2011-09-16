@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2011/06/08 17:33:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/16 08:48:03 espie Exp $
 
 COMMENT =	Python library for working with CouchDB
 
 MODPY_EGG_VERSION = 0.8
 DISTNAME =	CouchDB-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =		0
+REVISION =	1
 
 CATEGORIES =	databases devel
 

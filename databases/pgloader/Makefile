@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/06/08 17:33:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/16 08:48:03 espie Exp $
 
 COMMENT=	import CSV data and Large Object to PostgreSQL
 
 DISTNAME=	pgloader-2.3.2
-REVISION =	1
+REVISION =	2
 CATEGORIES=	databases
 
 HOMEPAGE=	http://pgfoundry.org/projects/pgloader/
