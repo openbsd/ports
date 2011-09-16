@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.21 2011/06/08 17:36:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/09/16 10:31:23 espie Exp $
 
 COMMENT =	python package to retrieve data of the IMDb movie database
 
 MODPY_EGG_VERSION = 4.6
 DISTNAME =	IMDbPY-${MODPY_EGG_VERSION}
 PKGNAME =	py-imdb-${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES =	misc devel
 
 HOMEPAGE =	http://imdbpy.sourceforge.net/

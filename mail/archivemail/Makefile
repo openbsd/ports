@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2011/06/08 17:50:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/16 10:31:21 espie Exp $
 
 COMMENT=	archive and compress your old email
 
 VERSION=	0.7.2
 DISTNAME=	archivemail-${VERSION}
-REVISION =	2
+REVISION =	3
 CATEGORIES=	mail
 
 MAINTAINER=	Mathieu Sauve-Frankel <msf@openbsd.org>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/08/30 07:12:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/16 10:31:21 espie Exp $
 
 COMMENT-main=	MIME messages creation and parsing library
 COMMENT-mono=	mono bindings for gmime
@@ -9,7 +9,7 @@ DISTNAME=	gmime-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-mono=	gmime-sharp-${V}
 
-REVISION-main=	0
+REVISION-main=	1
 REVISION-mono=	0
 
 EXTRACT_SUFX=	.tar.bz2

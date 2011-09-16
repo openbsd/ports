@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2011/06/08 17:50:10 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/16 10:31:22 espie Exp $
 
 COMMENT=	external SPF policy checker for postfix
 
 MODPY_EGG_VERSION=	0.7.1
 DISTNAME=	pypolicyd-spf-${MODPY_EGG_VERSION}
 PKGNAME=	py-policyd-spf-${MODPY_EGG_VERSION}
-REVISION =	3
+REVISION =	4
 CATEGORIES=	mail
 
 HOMEPAGE=	http://www.openspf.org

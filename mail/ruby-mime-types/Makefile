@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/01/06 04:24:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 10:31:22 espie Exp $
 
 COMMENT=		MIME type library for Ruby
 
 DISTNAME=		mime-types-1.16
-REVISION=		3
+REVISION=		4
 CATEGORIES=		mail
 
 HOMEPAGE=		http://mime-types.rubyforge.org/

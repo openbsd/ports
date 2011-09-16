@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/06/25 19:12:36 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/16 10:31:22 espie Exp $
 
 # vax:	no fenv.h support
 NOT_FOR_ARCHS =		vax
@@ -7,7 +7,7 @@ COMMENT =		Computational Geometry Algorithms Library
 
 DISTNAME =		CGAL-3.8
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 SHARED_ONLY =		Yes
 SHARED_LIBS =		CGAL		0.0 \

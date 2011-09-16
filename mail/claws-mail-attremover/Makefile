@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/08/01 19:42:19 stephan Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 10:31:21 espie Exp $
 
 SHARED_ONLY =	Yes
 
@@ -7,7 +7,7 @@ COMMENT =	remove attachments from emails
 VERSION =	1.0.12
 DISTNAME =	att_remover-${VERSION}
 PKGNAME =	claws-mail-attremover-${VERSION}
-REVISION =	4
+REVISION =	5
 MASTER_SITES =	http://www.claws-mail.org/downloads/plugins/
 CATEGORIES =	mail
 DIST_SUBDIR =	claws

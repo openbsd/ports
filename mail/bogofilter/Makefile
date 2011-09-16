@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/12 18:02:35 naddy Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/16 10:31:21 espie Exp $
 
 COMMENT =	bayesian spam filter
 
 DISTNAME =	bogofilter-1.1.6
-REVISION =	2
+REVISION =	3
 CATEGORIES =	mail
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>

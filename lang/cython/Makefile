@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/07/01 12:41:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 10:31:20 espie Exp $
 
 COMMENT =		C-Extensions for Python
 
 MODPY_EGG_VERSION = 	0.14.1
 DISTNAME =		Cython-${MODPY_EGG_VERSION}
+REVISION=		0
 PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		lang

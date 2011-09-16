@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2011/09/12 12:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2011/09/16 10:31:22 espie Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
 GNOME_PROJECT=		gnumeric
 GNOME_VERSION=		1.10.17
+REVISION=		0
 
 CATEGORIES=    		math
 

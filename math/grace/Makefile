@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2011/04/10 18:02:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2011/09/16 10:31:22 espie Exp $
 
 COMMENT=	GRaphing, Advanced Computation and Exploration of data
 
 DISTNAME=	grace-5.1.15
-REVISION=	4
+REVISION=	5
 CATEGORIES=	math
 
 HOMEPAGE=	http://plasma-gate.weizmann.ac.il/Grace/

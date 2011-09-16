@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/12 18:23:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/16 10:31:22 espie Exp $
 
 COMMENT =	lightweight mail user agent
 
 # git clone of 0d21f7a7c5d8281ae5302756433956bca0522660
 XFCE_VERSION =	0.1.1.1
 XFCE_GOODIE =	postler
+REVISION=		0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 CATEGORIES =	mail

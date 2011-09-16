@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/03/17 14:00:56 sebastia Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/16 10:31:23 espie Exp $
 
 COMMENT =		small SRCP client to control digital model trains
 
 DISTNAME =		dtcltiny-0.8.4
+REVISION=		0
 CATEGORIES =		misc x11
 
 HOMEPAGE =		http://dtcltiny.sourceforge.net/

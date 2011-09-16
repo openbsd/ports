@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.172 2011/09/01 10:53:50 sthen Exp $
+# $OpenBSD: Makefile,v 1.173 2011/09/16 10:31:21 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -19,6 +19,10 @@ PKGNAME-ldap=	dovecot-ldap-${V_DOVECOT}
 PKGNAME-mysql=	dovecot-mysql-${V_DOVECOT}
 PKGNAME-postgresql= dovecot-postgresql-${V_DOVECOT}
 PKGNAME-sqlite=	dovecot-sqlite-${V_DOVECOT}
+REVISION-ldap =	0
+REVISION-mysql =	0
+REVISION-postgresql =	0
+REVISION-sqlite =	0
 CATEGORIES=	mail
 MASTER_SITES=	${HOMEPAGE}releases/${V_MAJOR}/
 

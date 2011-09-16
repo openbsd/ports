@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.23 2011/06/08 17:36:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2011/09/16 10:31:22 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	fast array facility to the Python language
 VERSION=	23.1
 DISTNAME=	Numeric-${VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION =	6
+REVISION =	7
 CATEGORIES=	math
 
 HOMEPAGE=	http://people.csail.mit.edu/jrennie/python/numeric/

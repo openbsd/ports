@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.12 2011/06/13 21:04:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/16 10:31:20 espie Exp $
 
 COMMENT = 	embeddable common-lisp
 CATEGORIES = 	lang
 
 V =		11.1.1
 DISTNAME = 	ecl-$V
+REVISION=		0
 SHARED_LIBS +=	ecl	2.0
 
 HOMEPAGE = 	http://ecls.sourceforge.net/

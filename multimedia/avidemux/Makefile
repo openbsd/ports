@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/08/30 21:50:29 kili Exp $
+# $OpenBSD: Makefile,v 1.34 2011/09/16 10:31:23 espie Exp $
 
 COMMENT=	free video editor
 
@@ -6,7 +6,7 @@ V=		2.4.4
 DISTNAME=	avidemux_${V}
 PKGNAME=	avidemux-${V}
 
-REVISION=	8
+REVISION=	9
 
 CATEGORIES=	multimedia
 

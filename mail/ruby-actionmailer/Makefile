@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.28 2011/01/06 04:24:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.29 2011/09/16 10:31:22 espie Exp $
 
 COMMENT=	easy email delivery and testing for ruby
 
 VERSION=	3.0.3
 DISTNAME=	actionmailer-${VERSION}
-REVISION =	0
+REVISION =	1
 CATEGORIES=	mail
 
 # MIT License

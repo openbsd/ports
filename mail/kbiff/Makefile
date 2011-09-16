@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2011/09/16 10:31:21 espie Exp $
 
 COMMENT=		new mail notification utility for KDE
 
 DISTNAME=		kbiff-3.8
-REVISION =		3
+REVISION =		4
 SHARED_LIBS=		kbiff 2.0
 CATEGORIES=		mail
 EXTRACT_SUFX=		.tar.bz2

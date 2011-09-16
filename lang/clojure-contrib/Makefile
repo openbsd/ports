@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2011/08/31 13:10:29 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 10:31:20 espie Exp $
 
 COMMENT=	contributed libraries for the Clojure programming language
 
 V=		1.2.0
 DISTNAME=	clojure-contrib-$V
+REVISION=		0
 CATEGORIES=	lang
 
 HOMEPAGE=	https://github.com/richhickey/clojure-contrib

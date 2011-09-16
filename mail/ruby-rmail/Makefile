@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/01/06 04:24:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/16 10:31:22 espie Exp $
 
 COMMENT=	Ruby library to create and parse MIME messages
 
 DISTNAME=	rmail-1.0.0
-REVISION =	5
+REVISION =	6
 CATEGORIES=	mail
 
 HOMEPAGE=	http://github.com/matta/rubymail

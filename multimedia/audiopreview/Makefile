@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 10:31:23 espie Exp $
 
 COMMENT =	tool to play previews of audio and video files
 
 DISTNAME =	audiopreview-0.6
+REVISION=		0
 
 CATEGORIES =	multimedia
 

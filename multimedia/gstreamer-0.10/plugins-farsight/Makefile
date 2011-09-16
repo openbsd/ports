@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/07/07 23:18:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/16 10:31:23 espie Exp $
 
 COMMENT =		farsight element for GStreamer
 
@@ -6,7 +6,7 @@ V =			0.12.11
 DISTNAME =		gst-plugins-farsight-$V
 PKGNAME =		gstreamer-plugins-farsight-$V
 
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		http://farsight.freedesktop.org/
 MASTER_SITES =		${HOMEPAGE}/releases/gst-plugins-farsight/

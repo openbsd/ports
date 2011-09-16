@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/12 07:26:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 10:31:21 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.2.90-20110621
 PKGNAME=		evolution-rss-${GNOME_VERSION:S/-/./}
 
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		mail
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/07/27 07:08:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 10:31:24 espie Exp $
 
 BROKEN=		does not work with new FFmpeg
 
@@ -6,7 +6,7 @@ COMMENT=	video converter for the Playstation Portable
 
 V=		0.3
 DISTNAME=	pspvc-${V}
-REVISION=	6
+REVISION=	7
 DISTFILES=	pspvc-install-${V}.tar.gz
 CATEGORIES=	multimedia
 

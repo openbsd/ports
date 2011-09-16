@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/01/06 04:24:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/16 10:31:22 espie Exp $
 
 COMMENT=	simple creation of MIME email messages in Ruby
 
 DISTNAME=	mailfactory-1.4.0
-REVISION=	3
+REVISION=	4
 CATEGORIES=	mail
 
 HOMEPAGE=	http://rubyforge.org/projects/mailfactory/

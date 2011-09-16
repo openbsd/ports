@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.83 2011/07/17 20:15:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.84 2011/09/16 10:31:21 espie Exp $
 
 CATEGORIES =		mail
 COMMENT-main =		flexible mail transfer agent
@@ -8,7 +8,7 @@ DISTNAME =		exim-${VERSION}
 PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
 FULLPKGPATH-eximon =	${PKGPATH},-eximon
-REVISION-main =		1
+REVISION-main =		2
 MASTER_SITES =		http://ftp.exim.org/pub/exim/exim4/ \
 			http://ftp.exim.org/pub/exim/exim4/old/ \
 			ftp://ftp.exim.org/pub/exim/exim4/ \

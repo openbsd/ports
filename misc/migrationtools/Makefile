@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2010/11/19 07:23:12 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/16 10:31:23 espie Exp $
 
 COMMENT=	perl scripts for migrating system information to LDAP
 
 DISTNAME=	MigrationTools-46
 PKGNAME=	${DISTNAME:L}
+REVISION=		0
 CATEGORIES=	misc
 
 MASTER_SITES=	http://www.padl.com/download/

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2011/09/12 18:19:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2011/09/16 10:31:21 espie Exp $
 
 COMMENT=		compiler for the GObject type system
 
 GNOME_PROJECT=		vala
 GNOME_VERSION=		0.13.4
 API_V=			0.14
+REVISION=		0
 
 SHARED_LIBS +=  vala-0.14                 0.0 # 0.0
 

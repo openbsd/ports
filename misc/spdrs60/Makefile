@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/04/29 06:39:54 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/16 10:31:23 espie Exp $
 
 COMMENT =	graphical SRCP client to control a digital model railway
 
 DISTNAME =	spdrs60-0.5.6
-REVISION =	0
+REVISION =	1
 CATEGORIES =	misc x11
 
 HOMEPAGE =	http://spdrs60.sourceforge.net/

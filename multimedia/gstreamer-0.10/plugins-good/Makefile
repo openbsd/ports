@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2011/07/07 23:18:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2011/09/16 10:31:23 espie Exp $
 
 COMMENT-main =		good elements for GStreamer
 COMMENT-aalib =		aalib element for GStreamer (plugins-good)
@@ -13,10 +13,10 @@ PKGNAME-aalib =		gstreamer-aalib-${V}
 PKGNAME-dv =		gstreamer-dv-${V}
 PKGNAME-caca =		gstreamer-libcaca-${V}
 
-REVISION-main = 	0
-REVISION-aalib = 	0
-REVISION-dv = 		0
-REVISION-caca = 	0
+REVISION-main = 	1
+REVISION-aalib = 	1
+REVISION-dv = 		1
+REVISION-caca = 	1
 
 EPOCH-main =		0
 

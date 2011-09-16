@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.25 2011/04/10 18:02:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/16 10:31:23 espie Exp $
 
 COMMENT=	X11/Motif schedule planner with calendar
 
 DISTNAME=	plan-1.10.1
-REVISION=	0
+REVISION=	1
 CATEGORIES=	misc
 
 HOMEPAGE=	http://www.bitrot.de/plan.html

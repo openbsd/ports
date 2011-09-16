@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2011/01/06 04:24:24 jeremy Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 10:31:22 espie Exp $
 
 COMMENT =	MIME library for Ruby
 
 DISTNAME =	mime-0.1
-REVISION =	3
+REVISION =	4
 CATEGORIES =	mail
 
 MAINTAINER =	Clint Pachl <pachl@ecentryx.com>

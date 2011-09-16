@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/04/10 18:02:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/16 10:31:21 espie Exp $
 
 CATEGORIES=	lang
 ONLY_FOR_ARCHS=	i386
@@ -12,7 +12,7 @@ PERMIT_DISTFILES_CDROM=Yes
 
 V=1.1.15
 DISTNAME=	pm3-$V
-REVISION=	0
+REVISION=	1
 MAINTAINER=	Marc Espie <espie@openbsd.org>
 
 DISTFILES=	pm3-$V-src.tgz pm3-${V}a-OpenBSD_386-boot.tgz:1

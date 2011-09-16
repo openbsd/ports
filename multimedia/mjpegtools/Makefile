@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2010/11/22 09:30:38 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/09/16 10:31:23 espie Exp $
 
 COMMENT=		tools to edit/modify/encode video streams
 
 DISTNAME=		mjpegtools-1.9.0rc3
-REVISION=		6
+REVISION=		7
 CATEGORIES=		multimedia
 SHARED_LIBS=		lavfile		4.0 \
 			lavfile-1.9	4.0 \

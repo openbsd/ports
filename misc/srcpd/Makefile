@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2010/12/27 14:50:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/16 10:31:23 espie Exp $
 
 COMMENT =	daemon to control digital model railroad systems
 
 DISTNAME =	srcpd-2.1.1
 CATEGORIES =	misc net
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	http://srcpd.sourceforge.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=srcpd/}

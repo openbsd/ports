@@ -1,10 +1,11 @@
 # Icon library port
-# $OpenBSD: Makefile,v 1.22 2010/11/17 08:05:17 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/16 10:31:21 espie Exp $
 
 COMMENT=	useful and interesting programs for Icon
 
 VERSION=9.4.3
 DISTNAME=	icon.v943src
+REVISION=		0
 PKGNAME=	icon-lib-${VERSION}
 #DIST_SUBDIR=icon/${VERSION}
 DISTFILES=	icon.v943src.tgz

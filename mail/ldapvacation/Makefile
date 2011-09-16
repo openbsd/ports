@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/06/23 22:50:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/16 10:31:21 espie Exp $
 
 COMMENT=	return 'I am not here' indication stored in a LDAP tree
 
 DISTNAME=	ldapvacation-1.1.3
-REVISION =	1
+REVISION =	2
 
 CATEGORIES=    	mail
 

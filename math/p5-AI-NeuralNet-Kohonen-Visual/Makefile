@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2010/12/03 11:45:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/16 10:31:22 espie Exp $
 
 COMMENT=		visualisation of Kohonen's Self-Organizing Maps
 
 DISTNAME=		AI-NeuralNet-Kohonen-Visual-0.3
-REVISION=		0
+REVISION=		1
 CATEGORIES=		math x11
 
 # perl

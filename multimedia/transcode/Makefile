@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2011/06/27 21:17:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2011/09/16 10:31:24 espie Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.5
-REVISION=	11
+REVISION=	12
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_BERLIOS:=tcforge/}
 EXTRACT_SUFX=	.tar.bz2

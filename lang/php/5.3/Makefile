@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2011/08/27 13:13:13 robert Exp $
+# $OpenBSD: Makefile,v 1.16 2011/09/16 10:31:21 espie Exp $
 
 PV=		5.3
 V=		${PV}.8
 SUHOSIN_PHPV=	${V}
 SUHOSIN_P_V=	0.9.10
+REVISION =	0
 
 INI_TEMPLATES=	development production
 
