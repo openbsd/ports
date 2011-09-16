@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1106 2011/09/16 08:26:11 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1107 2011/09/16 20:02:20 kili Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1653,12 +1653,14 @@ _parse_spec = \
 	esac; unset IFS; ${_flavor_fragment}
 
 _compute_default = \
+	set -f; \
 	if set -- `eval $$toset exec ${MAKE} _print-metadata`; then \
 		default=$$1; pkgspec=$$2; pkgpath=$$3; \
 	else \
 		echo 1>&2 "Problem with dependency $$d"; \
 		exit 1; \
-	fi
+	fi; \
+	set +f
 
 _complete_pkgspec = \
 	${_compute_default}; \
