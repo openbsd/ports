@@ -1,0 +1,9 @@
+FreeHDL is a compiler/simulator suite for the hardware description
+language VHDL.  VHDL'93 as well as VHDL'87 standards are supported.
+
+FreeHDL translates the original VHDL source FILEs into C++. Then, the
+C++ source can be compiled and linked to the kernel to build the
+simulation program. Starting the generated executable will simulate the
+corresponding VHDL model. The actual build process to generate the
+simulator from the VHDL source is a complex process which is handled by
+the gvhdl script.
