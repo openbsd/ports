@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.45 2011/09/16 09:24:52 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2011/09/16 14:28:07 jasper Exp $
 
 COMMENT=		library for loading GLADE interface files at runtime
 
 GNOME_VERSION=		2.6.4
 GNOME_PROJECT=		libglade
 PKGNAME=		libglade2-${GNOME_VERSION}
-REVISION=		1
+REVISION=		7
+EPOCH=			0
 SHARED_LIBS +=	glade-2.0            1.0      # .0.8
 
 CATEGORIES=		devel
