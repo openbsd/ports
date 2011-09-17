@@ -1,0 +1,71 @@
+#!/usr/bin/perl
+# $OpenBSD: arduinoboot,v 1.1.1.1 2011/09/17 16:41:30 jasper Exp $
+# Copyright (c) 2011 Chris Kuethe <ckuethe@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+use strict;
+use warnings;
+use autodie;
+
+my (%B, $cmd, $file, $type, $port, $prog, $speed);
+%B = readfile("${TRUEPREFIX}/share/arduino/boards.txt");
+
+if ((1 == @ARGV) && ($ARGV[0] eq "-l")) {
+	print "Boards:\n";
+	foreach $_ (sort keys(%B)) {
+		printf("  %-12s = %s\n", $_, $B{$_}->{"name"});
+	}
+	system("avrdude -c ?");
+	exit;
+}
+
+if ((@ARGV < 2) || (@ARGV > 4)) {
+	print "Usage:\t$0 <boardtype> <port> [<programmer> [speed]]\n";
+	print "\t$0 -l\n";
+	exit;
+}
+
+chomp ($type = $ARGV[0]);
+chomp ($port = $ARGV[1]);
+
+$prog = (3 == @ARGV) ? $ARGV[2] : $B{$type}->{"upload.protocol"};
+$speed = (4 == @ARGV) ? $ARGV[3] : $B{$type}->{"upload.speed"};
+
+$file = "${TRUEPREFIX}/share/arduino/bootloaders/" .
+	$B{$type}->{"bootloader.path"} . "/" . $B{$type}->{"bootloader.file"};
+
+$cmd  = sprintf("avrdude -q -e -u -p %s -c %s -P %s -b %d",
+	$B{$type}->{"build.mcu"}, $prog, $port, $speed);
+$cmd .= sprintf(" -U lock:w:%s:m", $B{$type}->{"bootloader.unlock_bits"});
+$cmd .= sprintf(" -U lfuse:w:%s:m", $B{$type}->{"bootloader.low_fuses"});
+$cmd .= sprintf(" -U hfuse:w:%s:m", $B{$type}->{"bootloader.high_fuses"});
+$cmd .= sprintf(" -U efuse:w:%s:m", $B{$type}->{"bootloader.extended_fuses"});
+$cmd .= sprintf(" -U flash:w:%s", $file);
+$cmd .= sprintf(" -U lock:w:%s:m", $B{$type}->{"bootloader.lock_bits"});
+
+print $cmd . "\n";
+system $cmd;
+
+###########################################################################
+
+sub readfile {
+	my %H;
+	open (my $F, $_[0]);
+	while (<$F>) {
+		next unless (/^([A-Za-z0-9_]+)\.([A-Za-z0-9_\.]+)=(.+)$/);
+		$H{$1}->{$2} = $3;
+	}
+	close ($F);
+	return %H;
+}

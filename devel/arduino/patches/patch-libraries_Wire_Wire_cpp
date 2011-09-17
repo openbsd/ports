@@ -1,0 +1,12 @@
+$OpenBSD: patch-libraries_Wire_Wire_cpp,v 1.1.1.1 2011/09/17 16:41:31 jasper Exp $
+--- libraries/Wire/Wire.cpp.orig	Mon Jun  6 15:15:56 2011
++++ libraries/Wire/Wire.cpp	Mon Jun  6 15:15:39 2011
+@@ -21,7 +21,7 @@ extern "C" {
+   #include <stdlib.h>
+   #include <string.h>
+   #include <inttypes.h>
+-  #include "twi.h"
++  #include "utility/twi.h"
+ }
+ 
+ #include "Wire.h"

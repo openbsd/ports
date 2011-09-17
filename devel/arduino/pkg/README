@@ -1,0 +1,19 @@
+$OpenBSD: README,v 1.1.1.1 2011/09/17 16:41:31 jasper Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+This port contains the libraries/headers as well as examples and documentation
+needed to start developing with Arduino.
+
+For now it doesn't contain the frontend application yet, instead a Makefile
+and various helper scripts are provided. Please use
+${TRUEPREFIX}/bin/arduinoproject to create a new project directory.
+
+Syntax highlighting
+===================
+
+* vim:   http://www.vim.org/scripts/script.php?script_id=2654
+* emacs: https://github.com/bookest/arduino-mode
+

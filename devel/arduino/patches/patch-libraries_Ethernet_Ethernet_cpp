@@ -1,0 +1,13 @@
+$OpenBSD: patch-libraries_Ethernet_Ethernet_cpp,v 1.1.1.1 2011/09/17 16:41:31 jasper Exp $
+
+Adjust include path, so we don't have to mess around in BSDmakefile
+with adjusting include paths just for Ethernet.
+
+--- libraries/Ethernet/Ethernet.cpp.orig	Fri Sep 16 15:11:08 2011
++++ libraries/Ethernet/Ethernet.cpp	Fri Sep 16 15:11:20 2011
+@@ -1,4 +1,4 @@
+-#include "w5100.h"
++#include "utility/w5100.h"
+ #include "Ethernet.h"
+ 
+ // XXX: don't make assumptions about the value of MAX_SOCK_NUM.

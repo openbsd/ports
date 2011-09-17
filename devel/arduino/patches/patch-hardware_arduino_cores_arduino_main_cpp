@@ -1,0 +1,11 @@
+$OpenBSD: patch-hardware_arduino_cores_arduino_main_cpp,v 1.1.1.1 2011/09/17 16:41:31 jasper Exp $
+--- hardware/arduino/cores/arduino/main.cpp.orig	Mon Jun  6 23:53:09 2011
++++ hardware/arduino/cores/arduino/main.cpp	Mon Jun  6 23:53:36 2011
+@@ -12,3 +12,7 @@ int main(void)
+ 	return 0;
+ }
+ 
++// http://www.arduino.cc/playground/OpenBSD/CLI
++extern "C" void __cxa_pure_virtual(void) {
++	while(1);
++}
