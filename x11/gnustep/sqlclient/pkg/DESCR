@@ -1,0 +1,8 @@
+The SQLClient library is designed to provide a simple interface to SQL
+databases for GNUstep applications. It does not attempt the sort of
+abstraction provided by the much more sophisticated GDL2 library but
+rather allows applications to directly execute SQL queries and
+statements.
+
+SQLClient provides for the Objective-C programmer much the same thing
+that JDBC provides for the Java programmer.

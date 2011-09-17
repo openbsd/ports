@@ -1,0 +1,53 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/17 07:26:08 sebastia Exp $
+include/SQLClient/
+include/SQLClient/SQLClient.h
+lib/GNUstep/Bundles/
+lib/GNUstep/Bundles/SQLClient/
+lib/GNUstep/Bundles/SQLClient/ECPG.bundle/
+@bin lib/GNUstep/Bundles/SQLClient/ECPG.bundle/ECPG
+lib/GNUstep/Bundles/SQLClient/ECPG.bundle/Resources/
+lib/GNUstep/Bundles/SQLClient/ECPG.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/SQLClient/ECPG.bundle/stamp.make
+lib/GNUstep/Bundles/SQLClient/ECPG_libs.bundle/
+@bin lib/GNUstep/Bundles/SQLClient/ECPG_libs.bundle/ECPG_libs
+lib/GNUstep/Bundles/SQLClient/ECPG_libs.bundle/Resources/
+lib/GNUstep/Bundles/SQLClient/ECPG_libs.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/SQLClient/ECPG_libs.bundle/stamp.make
+lib/GNUstep/Bundles/SQLClient/MySQL.bundle/
+@bin lib/GNUstep/Bundles/SQLClient/MySQL.bundle/MySQL
+lib/GNUstep/Bundles/SQLClient/MySQL.bundle/Resources/
+lib/GNUstep/Bundles/SQLClient/MySQL.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/SQLClient/MySQL.bundle/stamp.make
+lib/GNUstep/Bundles/SQLClient/MySQL_libs.bundle/
+@bin lib/GNUstep/Bundles/SQLClient/MySQL_libs.bundle/MySQL_libs
+lib/GNUstep/Bundles/SQLClient/MySQL_libs.bundle/Resources/
+lib/GNUstep/Bundles/SQLClient/MySQL_libs.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/SQLClient/MySQL_libs.bundle/stamp.make
+lib/GNUstep/Bundles/SQLClient/Postgres.bundle/
+@bin lib/GNUstep/Bundles/SQLClient/Postgres.bundle/Postgres
+lib/GNUstep/Bundles/SQLClient/Postgres.bundle/Resources/
+lib/GNUstep/Bundles/SQLClient/Postgres.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/SQLClient/Postgres.bundle/stamp.make
+lib/GNUstep/Bundles/SQLClient/Postgres_libs.bundle/
+@bin lib/GNUstep/Bundles/SQLClient/Postgres_libs.bundle/Postgres_libs
+lib/GNUstep/Bundles/SQLClient/Postgres_libs.bundle/Resources/
+lib/GNUstep/Bundles/SQLClient/Postgres_libs.bundle/Resources/Info-gnustep.plist
+lib/GNUstep/Bundles/SQLClient/Postgres_libs.bundle/stamp.make
+lib/GNUstep/Bundles/SQLClient/SQLite.bundle/
+lib/GNUstep/Bundles/SQLClient/SQLite.bundle/Resources/
+lib/GNUstep/Bundles/SQLClient/SQLite.bundle/Resources/Info-gnustep.plist
+@bin lib/GNUstep/Bundles/SQLClient/SQLite.bundle/SQLite
+lib/GNUstep/Bundles/SQLClient/SQLite.bundle/stamp.make
+lib/GNUstep/Bundles/SQLClient/SQLite_libs.bundle/
+lib/GNUstep/Bundles/SQLClient/SQLite_libs.bundle/Resources/
+lib/GNUstep/Bundles/SQLClient/SQLite_libs.bundle/Resources/Info-gnustep.plist
+@bin lib/GNUstep/Bundles/SQLClient/SQLite_libs.bundle/SQLite_libs
+lib/GNUstep/Bundles/SQLClient/SQLite_libs.bundle/stamp.make
+@lib lib/libSQLClient.so.${LIBSQLClient_VERSION}
+share/doc/GNUstep/
+share/doc/GNUstep/SQLClient/
+share/doc/GNUstep/SQLClient/OrderedSymbolDeclarations.plist
+share/doc/GNUstep/SQLClient/SQLClient.gsdoc
+share/doc/GNUstep/SQLClient/SQLClient.html
+share/doc/GNUstep/SQLClient/SQLClient.igsdoc
+share/doc/GNUstep/SQLClient/dependencies
