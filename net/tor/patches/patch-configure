@@ -1,0 +1,25 @@
+$OpenBSD: patch-configure,v 1.14 2011/09/17 10:39:26 sthen Exp $
+--- configure.orig	Sat Sep 17 00:55:21 2011
++++ configure	Sat Sep 17 00:56:22 2011
+@@ -5511,8 +5511,8 @@ for ac_lib in '' pthread; do
+   if test -z "$ac_lib"; then
+     ac_res="none required"
+   else
+-    ac_res=-l$ac_lib
+-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++    ac_res=-$ac_lib
++    LIBS="-$ac_lib  $ac_func_search_save_LIBS"
+   fi
+   rm -f conftest.$ac_objext conftest$ac_exeext
+ if { (ac_try="$ac_link"
+@@ -5594,8 +5594,8 @@ for ac_lib in '' pthread; do
+   if test -z "$ac_lib"; then
+     ac_res="none required"
+   else
+-    ac_res=-l$ac_lib
+-    LIBS="-l$ac_lib  $ac_func_search_save_LIBS"
++    ac_res=-$ac_lib
++    LIBS="-$ac_lib  $ac_func_search_save_LIBS"
+   fi
+   rm -f conftest.$ac_objext conftest$ac_exeext
+ if { (ac_try="$ac_link"
