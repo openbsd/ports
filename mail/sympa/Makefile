@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/03 08:22:05 landry Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/17 13:16:45 landry Exp $
 
 COMMENT =	mailing list manager with web interface
 
-VERSION =	6.1.6
+VERSION =	6.1.7
 DISTNAME =	sympa-${VERSION}
 
 CATEGORIES =	mail www
@@ -49,7 +49,7 @@ BUILD_DEPENDS =	devel/gettext
 WANTLIB =	c
 
 RUN_DEPENDS =	archivers/p5-Archive-Zip \
-		converters/p5-Unicode-LineBreak \
+		converters/p5-Unicode-LineBreak>=2011.05 \
 		databases/p5-DBI \
 		devel/gettext \
 		devel/p5-IO-stringy \
