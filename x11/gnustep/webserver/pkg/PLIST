@@ -1,0 +1,16 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/17 07:23:58 sebastia Exp $
+include/WebServer/
+include/WebServer/WebServer.h
+include/WebServer/WebServerBundles.h
+include/WebServer/WebServerHTML.h
+@lib lib/libWebServer.so.${LIBWebServer_VERSION}
+share/doc/GNUstep/WebServer/
+share/doc/GNUstep/WebServer/OrderedSymbolDeclarations.plist
+share/doc/GNUstep/WebServer/WebServer.gsdoc
+share/doc/GNUstep/WebServer/WebServer.html
+share/doc/GNUstep/WebServer/WebServer.igsdoc
+share/doc/GNUstep/WebServer/WebServerBundles.gsdoc
+share/doc/GNUstep/WebServer/WebServerBundles.html
+share/doc/GNUstep/WebServer/WebServerHTML.gsdoc
+share/doc/GNUstep/WebServer/WebServerHTML.html
+share/doc/GNUstep/WebServer/dependencies
