@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/08/22 20:09:43 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2011/09/17 07:28:18 sebastia Exp $
 
      SUBDIR =
      SUBDIR += addresses
@@ -39,11 +39,12 @@
      SUBDIR += renaissance
      SUBDIR += rsskit
      SUBDIR += simpleagenda
+     SUBDIR += sqlclient
      SUBDIR += sudoku
      SUBDIR += systempreferences
      SUBDIR += terminal
      SUBDIR += timemon
-#     SUBDIR += webserver
+     SUBDIR += webserver
      SUBDIR += webservices
      SUBDIR += zipper
 
