@@ -1,4 +1,4 @@
-# $OpenBSD: python3.port.mk,v 1.1.1.1 2011/06/27 18:44:13 rpointel Exp $
+# $OpenBSD: python3.port.mk,v 1.2 2011/09/17 12:05:33 rpointel Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -6,6 +6,10 @@
 SHARED_ONLY=		Yes
 
 CATEGORIES+=		lang/python3
+
+# Prefix PKGNAME with py3- by default and strip potential 
+# existing py|python prefix, override if needed
+PKGNAME ?= py3-${DISTNAME:C/py(thon|-?)//}
 
 MODPY_VERSION?=	3.2
 .if ${MODPY_VERSION} == 3.2
