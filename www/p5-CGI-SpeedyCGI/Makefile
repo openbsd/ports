@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/17 17:46:35 jakob Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/17 18:05:00 jakob Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,7 +8,7 @@ MODULES=	cpan
 VERSION=	2.22
 DISTNAME=	CGI-SpeedyCGI-${VERSION}
 PKGNAME=	p5-CGI-SpeedyCGI-${VERSION}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	www
 
 HOMEPAGE=	http://daemoninc.com/SpeedyCGI/
