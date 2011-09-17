@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.171 2011/07/21 12:13:54 pea Exp $
+$OpenBSD: user.list,v 1.172 2011/09/17 15:38:30 landry Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -190,3 +190,4 @@ id  user		group		port options
 679 _milter-checkrcpt	_milter-checkrcpt	mail/milter-checkrcpt
 680 _zeya		_zeya		audio/zeya
 681 _inadyn		_inadyn		net/inadyn
+682 _backuppc		_backuppc	sysutils/backuppc
