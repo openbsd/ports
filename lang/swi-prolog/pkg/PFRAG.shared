@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.7 2011/04/28 18:59:18 jasper Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.8 2011/09/17 16:06:32 edd Exp $
 @lib lib/libpl.so.${LIBpl_VERSION}
 lib/swipl-${V}/lib/${FULLARCH}/cgi.so
 lib/swipl-${V}/lib/${FULLARCH}/crypt.so
@@ -27,6 +27,7 @@ lib/swipl-${V}/lib/${FULLARCH}/streaminfo.so
 lib/swipl-${V}/lib/${FULLARCH}/table.so
 lib/swipl-${V}/lib/${FULLARCH}/time.so
 lib/swipl-${V}/lib/${FULLARCH}/turtle.so
+lib/swipl-${V}/lib/${FULLARCH}/uid.so
 lib/swipl-${V}/lib/${FULLARCH}/unix.so
 lib/swipl-${V}/lib/${FULLARCH}/uri.so
 lib/swipl-${V}/lib/${FULLARCH}/zlib4pl.so

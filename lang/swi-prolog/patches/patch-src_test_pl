@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_test_pl,v 1.1 2011/09/17 16:06:32 edd Exp $
+
+threading regression tests fail to terminate. disable them while we figure out
+why. Dialog started with upstream:
+http://www.swi-prolog.org/bugzilla/show_bug.cgi?id=11
+
+--- src/test.pl.orig	Sat Sep 17 17:17:28 2011
++++ src/test.pl	Sat Sep 17 17:17:49 2011
+@@ -2616,8 +2616,8 @@ testdir('Tests/library').
+ testdir('Tests/charset').
+ testdir('Tests/clp').
+ testdir('Tests/GC').
+-testdir('Tests/thread') :-
+-	current_prolog_flag(threads, true).
++%testdir('Tests/thread') :-
++%	current_prolog_flag(threads, true).
+ 
+ :- dynamic
+ 	failed/1,

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/04/28 18:59:18 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/09/17 16:06:32 edd Exp $
 %%SHARED%%
 bin/swipl
 bin/swipl-ld
@@ -9,12 +9,12 @@ lib/pkgconfig/swipl.pc
 lib/swipl-${V}/
 lib/swipl-${V}/Makefile
 lib/swipl-${V}/bin/
-lib/swipl-${V}/bin/swipl.home
 lib/swipl-${V}/bin/${FULLARCH}/
 @bin lib/swipl-${V}/bin/${FULLARCH}/swipl
 @bin lib/swipl-${V}/bin/${FULLARCH}/swipl-ld
 @bin lib/swipl-${V}/bin/${FULLARCH}/swipl-rc
 lib/swipl-${V}/bin/${FULLARCH}/xpce
+lib/swipl-${V}/bin/swipl.home
 lib/swipl-${V}/boot/
 lib/swipl-${V}/boot/apply.pl
 lib/swipl-${V}/boot/attvar.pl
@@ -175,6 +175,7 @@ lib/swipl-${V}/doc/Manual/next.gif
 lib/swipl-${V}/doc/Manual/operators.html
 lib/swipl-${V}/doc/Manual/opsummary.html
 lib/swipl-${V}/doc/Manual/option.html
+lib/swipl-${V}/doc/Manual/optparse.html
 lib/swipl-${V}/doc/Manual/ordsets.html
 lib/swipl-${V}/doc/Manual/overrule.html
 lib/swipl-${V}/doc/Manual/overview.html
@@ -370,6 +371,7 @@ lib/swipl-${V}/library/am_match.pl
 lib/swipl-${V}/library/ansi_term.pl
 lib/swipl-${V}/library/apply.pl
 lib/swipl-${V}/library/apply_macros.pl
+lib/swipl-${V}/library/arithmetic.pl
 lib/swipl-${V}/library/assoc.pl
 lib/swipl-${V}/library/backcomp.pl
 lib/swipl-${V}/library/base32.pl
@@ -496,6 +498,7 @@ lib/swipl-${V}/library/help.pl
 lib/swipl-${V}/library/helpidx.pl
 lib/swipl-${V}/library/hotfix.pl
 lib/swipl-${V}/library/http/
+lib/swipl-${V}/library/http/INDEX.pl
 lib/swipl-${V}/library/http/README
 lib/swipl-${V}/library/http/dcg_basics.pl
 lib/swipl-${V}/library/http/html_head.pl
@@ -558,6 +561,7 @@ lib/swipl-${V}/library/nb_set.pl
 lib/swipl-${V}/library/occurs.pl
 lib/swipl-${V}/library/operators.pl
 lib/swipl-${V}/library/option.pl
+lib/swipl-${V}/library/optparse.pl
 lib/swipl-${V}/library/ordsets.pl
 lib/swipl-${V}/library/oset.pl
 lib/swipl-${V}/library/pairs.pl
@@ -624,6 +628,7 @@ lib/swipl-${V}/library/record.pl
 lib/swipl-${V}/library/rewrite.pl
 lib/swipl-${V}/library/rlimit.pl
 lib/swipl-${V}/library/semweb/
+lib/swipl-${V}/library/semweb/INDEX.pl
 lib/swipl-${V}/library/semweb/README
 lib/swipl-${V}/library/semweb/dc.rdfs
 lib/swipl-${V}/library/semweb/eor.rdfs
@@ -670,6 +675,7 @@ lib/swipl-${V}/library/threadutil.pl
 lib/swipl-${V}/library/time.pl
 lib/swipl-${V}/library/tty.pl
 lib/swipl-${V}/library/ugraphs.pl
+lib/swipl-${V}/library/uid.pl
 lib/swipl-${V}/library/unicode/
 lib/swipl-${V}/library/unicode/blocks.pl
 lib/swipl-${V}/library/unicode/unicode_data.pl
@@ -1100,7 +1106,6 @@ lib/swipl-${V}/xpce-${XV}/lib/${FULLARCH}/
 lib/swipl-${V}/xpce-${XV}/man/
 lib/swipl-${V}/xpce-${XV}/man/faq/
 lib/swipl-${V}/xpce-${XV}/man/faq/faq.html
-lib/swipl-${V}/xpce-${XV}/man/index.obj
 lib/swipl-${V}/xpce-${XV}/man/reference/
 lib/swipl-${V}/xpce-${XV}/man/reference/bug_fixes.doc
 lib/swipl-${V}/xpce-${XV}/man/reference/changes.doc
@@ -1300,7 +1305,6 @@ lib/swipl-${V}/xpce-${XV}/man/reference/objects.doc
 lib/swipl-${V}/xpce-${XV}/man/reference/predicates.doc
 lib/swipl-${V}/xpce-${XV}/man/reference/tools.doc
 lib/swipl-${V}/xpce-${XV}/man/reference/topics.doc
-lib/swipl-${V}/xpce-${XV}/man/xpce-client.1
 lib/swipl-${V}/xpce-${XV}/pl/
 lib/swipl-${V}/xpce-${XV}/pl/Makefile
 lib/swipl-${V}/xpce-${XV}/pl/swipl.rc
@@ -1320,10 +1324,8 @@ lib/swipl-${V}/xpce-${XV}/prolog/boot/pce_portray.pl
 lib/swipl-${V}/xpce-${XV}/prolog/boot/pce_principal.pl
 lib/swipl-${V}/xpce-${XV}/prolog/boot/pce_realise.pl
 lib/swipl-${V}/xpce-${XV}/prolog/contrib/
-lib/swipl-${V}/xpce-${XV}/prolog/contrib/README
 lib/swipl-${V}/xpce-${XV}/prolog/contrib/contrib.pl
 lib/swipl-${V}/xpce-${XV}/prolog/contrib/rubik/
-lib/swipl-${V}/xpce-${XV}/prolog/contrib/rubik/README
 lib/swipl-${V}/xpce-${XV}/prolog/contrib/rubik/maplist.pl
 lib/swipl-${V}/xpce-${XV}/prolog/contrib/rubik/rubik.pl
 lib/swipl-${V}/xpce-${XV}/prolog/contrib/rubik/rubikpce.pl
@@ -1359,7 +1361,6 @@ lib/swipl-${V}/xpce-${XV}/prolog/lib/compatibility/global.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/compatibility/resource.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/compatibility/send.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/dialog/
-lib/swipl-${V}/xpce-${XV}/prolog/lib/dialog/README
 lib/swipl-${V}/xpce-${XV}/prolog/lib/dialog/attribute.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/dialog/behaviour.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/dialog/bitmaps/
@@ -1388,7 +1389,6 @@ lib/swipl-${V}/xpce-${XV}/prolog/lib/dialog/prompter.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/dialog/proto.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/dialog/util.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/doc/
-lib/swipl-${V}/xpce-${XV}/prolog/lib/doc/README
 lib/swipl-${V}/xpce-${XV}/prolog/lib/doc/browser.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/doc/emit.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/doc/form.pl
@@ -1414,7 +1414,6 @@ lib/swipl-${V}/xpce-${XV}/prolog/lib/doc/xml_hierarchy.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/dragdict.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/dragdrop.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/draw/
-lib/swipl-${V}/xpce-${XV}/prolog/lib/draw/README
 lib/swipl-${V}/xpce-${XV}/prolog/lib/draw/align.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/draw/attribute.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/draw/canvas.pl
@@ -1448,6 +1447,7 @@ lib/swipl-${V}/xpce-${XV}/prolog/lib/emacs/html_mode.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/emacs/java_mode.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/emacs/language_mode.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/emacs/latex_mode.pl
+lib/swipl-${V}/xpce-${XV}/prolog/lib/emacs/logtalk_mode.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/emacs/man_mode.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/emacs/outline_mode.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/emacs/prolog_colour.pl
@@ -1473,7 +1473,6 @@ lib/swipl-${V}/xpce-${XV}/prolog/lib/gradient.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/gui_tracer.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/help_message.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/http/
-lib/swipl-${V}/xpce-${XV}/prolog/lib/http/README
 lib/swipl-${V}/xpce-${XV}/prolog/lib/http/html_hierarchy.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/http/html_refman.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/http/html_write.pl
@@ -1575,7 +1574,6 @@ lib/swipl-${V}/xpce-${XV}/prolog/lib/pce_xref.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/pcedraw.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/persistent_frame.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/plot/
-lib/swipl-${V}/xpce-${XV}/prolog/lib/plot/README
 lib/swipl-${V}/xpce-${XV}/prolog/lib/plot/axis.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/plot/barchart.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/plot/demo.pl
@@ -1608,11 +1606,11 @@ lib/swipl-${V}/xpce-${XV}/prolog/lib/tabular.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/toc_filesystem.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/toolbar.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/trace/
-lib/swipl-${V}/xpce-${XV}/prolog/lib/trace/README
 lib/swipl-${V}/xpce-${XV}/prolog/lib/trace/break.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/trace/browse.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/trace/browse_xref.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/trace/clause.pl
+lib/swipl-${V}/xpce-${XV}/prolog/lib/trace/emacs_debug_modes.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/trace/exceptions.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/trace/gui.pl
 lib/swipl-${V}/xpce-${XV}/prolog/lib/trace/icons/

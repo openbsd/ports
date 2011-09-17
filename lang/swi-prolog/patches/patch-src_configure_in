@@ -1,7 +1,7 @@
-$OpenBSD: patch-src_configure_in,v 1.6 2011/04/08 07:55:16 jasper Exp $
---- src/configure.in.orig	Mon Mar 28 18:10:29 2011
-+++ src/configure.in	Fri Apr  8 09:40:12 2011
-@@ -488,6 +488,10 @@ case "$ARCH" in
+$OpenBSD: patch-src_configure_in,v 1.7 2011/09/17 16:06:32 edd Exp $
+--- src/configure.in.orig	Fri Aug 19 15:31:28 2011
++++ src/configure.in	Sat Sep 17 11:34:22 2011
+@@ -498,6 +498,10 @@ case "$PLARCH" in
  		  [String used to prefix all symbols requested through dlsym()])
  	CMFLAGS="-no-cpp-precomp"
  	;;
@@ -12,7 +12,7 @@ $OpenBSD: patch-src_configure_in,v 1.6 2011/04/08 07:55:16 jasper Exp $
    *cygwin*)
  	SO_EXT="dll"
  	SO_pic=""
-@@ -563,7 +567,7 @@ esac
+@@ -587,7 +591,7 @@ esac
  		  [ static pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;
  		    pthread_mutex_lock(&m);
  		    pthread_mutex_unlock(&m);
