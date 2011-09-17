@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.23 2011/09/12 07:26:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2011/09/17 14:15:32 ajacoutot Exp $
 @bin bin/rhythmbox
 include/rhythmbox/
 include/rhythmbox/backends/
@@ -150,20 +150,6 @@ lib/rhythmbox/plugins/iradio/
 lib/rhythmbox/plugins/iradio/iradio.plugin
 @comment lib/rhythmbox/plugins/iradio/libiradio.la
 lib/rhythmbox/plugins/iradio/libiradio.so
-lib/rhythmbox/plugins/jamendo/
-lib/rhythmbox/plugins/jamendo/JamendoConfigureDialog.py
-lib/rhythmbox/plugins/jamendo/JamendoConfigureDialog.pyc
-lib/rhythmbox/plugins/jamendo/JamendoConfigureDialog.pyo
-lib/rhythmbox/plugins/jamendo/JamendoSaxHandler.py
-lib/rhythmbox/plugins/jamendo/JamendoSaxHandler.pyc
-lib/rhythmbox/plugins/jamendo/JamendoSaxHandler.pyo
-lib/rhythmbox/plugins/jamendo/JamendoSource.py
-lib/rhythmbox/plugins/jamendo/JamendoSource.pyc
-lib/rhythmbox/plugins/jamendo/JamendoSource.pyo
-lib/rhythmbox/plugins/jamendo/jamendo.plugin
-lib/rhythmbox/plugins/jamendo/jamendo.py
-lib/rhythmbox/plugins/jamendo/jamendo.pyc
-lib/rhythmbox/plugins/jamendo/jamendo.pyo
 lib/rhythmbox/plugins/lyrics/
 lib/rhythmbox/plugins/lyrics/AstrawebParser.py
 lib/rhythmbox/plugins/lyrics/AstrawebParser.pyc
@@ -716,7 +702,6 @@ share/rhythmbox/icons/hicolor/22x22/places/playlist-automatic.png
 share/rhythmbox/icons/hicolor/22x22/places/playlist.png
 share/rhythmbox/icons/hicolor/24x24/
 share/rhythmbox/icons/hicolor/24x24/places/
-share/rhythmbox/icons/hicolor/24x24/places/jamendo.png
 share/rhythmbox/icons/hicolor/24x24/places/magnatune.png
 share/rhythmbox/icons/hicolor/32x32/
 share/rhythmbox/icons/hicolor/32x32/actions/
@@ -783,11 +768,6 @@ share/rhythmbox/plugins/iradio/
 share/rhythmbox/plugins/iradio/iradio-initial.xspf
 share/rhythmbox/plugins/iradio/iradio-ui.xml
 share/rhythmbox/plugins/iradio/station-properties.ui
-share/rhythmbox/plugins/jamendo/
-share/rhythmbox/plugins/jamendo/jamendo-loading.ui
-share/rhythmbox/plugins/jamendo/jamendo-prefs.ui
-share/rhythmbox/plugins/jamendo/jamendo_logo.png
-share/rhythmbox/plugins/jamendo/jamendo_logo_medium.png
 share/rhythmbox/plugins/lyrics/
 share/rhythmbox/plugins/lyrics/lyrics-prefs.ui
 share/rhythmbox/plugins/replaygain/
