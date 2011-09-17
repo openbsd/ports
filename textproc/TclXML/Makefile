@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.19 2011/01/05 19:28:35 landry Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/17 18:02:28 jakob Exp $
 
 COMMENT=	pure-Tcl implementation of XML parser
 
 DISTNAME=	TclXML-1.2.1
-REVISION =	1
+REVISION =	2
 CATEGORIES=	textproc
 
 MASTER_SITES=	ftp://ftp.zveno.com/TclXML/
-
-MAINTAINER=	Jakob Schlyter <jakob@openbsd.org>
 
 # custom
 PERMIT_PACKAGE_CDROM=	Yes
