@@ -1,0 +1,26 @@
+$OpenBSD: patch-sysdeps_openbsd_procmap_c,v 1.1 2011/09/17 17:43:44 jasper Exp $
+--- sysdeps/openbsd/procmap.c.orig	Sat Sep 17 18:59:40 2011
++++ sysdeps/openbsd/procmap.c	Sat Sep 17 19:14:25 2011
+@@ -64,7 +64,11 @@ _glibtop_init_proc_map_p (glibtop *server)
+ 	server->sysdeps.proc_map = _glibtop_sysdeps_proc_map;
+ }
+ 
+-/* Provides detailed information about a process. */
++/*
++ * Provides detailed information about a process.
++ * Due to the fact we are only requested info about one process, it's possible
++ * the process has been reaped before we get to kvm_getproc2. Tough luck.
++ */
+ 
+ glibtop_map_entry *
+ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_map *buf,
+@@ -124,7 +128,8 @@ glibtop_get_proc_map_p (glibtop *server, glibtop_proc_
+ 
+ 	/* I tested this a few times with `mmap'; as soon as you write
+ 	 * to the mmap'ed area, the object type changes from OBJT_VNODE
+-	 * to OBJT_DEFAULT so it seems this really works. */
++	 * to OBJT_DEFAULT so it seems this really works.
++	 */
+ 
+ 	do {
+ 		glibtop_map_entry *mentry;

@@ -1,0 +1,17 @@
+$OpenBSD: patch-sysdeps_openbsd_procargs_c,v 1.1 2011/09/17 17:43:44 jasper Exp $
+--- sysdeps/openbsd/procargs.c.orig	Sat Sep 17 18:58:14 2011
++++ sysdeps/openbsd/procargs.c	Sat Sep 17 18:59:23 2011
+@@ -58,8 +58,11 @@ glibtop_get_proc_args_p (glibtop *server, glibtop_proc
+ 
+ 	memset (buf, 0, sizeof (glibtop_proc_args));
+ 
+-	/* swapper, init, pagedaemon, vmdaemon, update - this doen't work. */
+-	if (pid < 5) return NULL;
++	/*
++	 * Don't bother with PIDs below 20, because everything below this
++	 * number is highly likely to be a kernel thread.
++	 */
++	if (pid < 19) return NULL;
+ 
+ 	glibtop_suid_enter (server);
+ 
