@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.969 2011/09/17 12:17:13 rpointel Exp $
+# $OpenBSD: Makefile,v 1.970 2011/09/17 16:43:22 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -14,6 +14,7 @@
      SUBDIR += apr-util,ldap
      SUBDIR += apr-util,mt
      SUBDIR += apr-util,mt,ldap
+     SUBDIR += arduino
      SUBDIR += argp-standalone
      SUBDIR += argtable
      SUBDIR += arm-elf
