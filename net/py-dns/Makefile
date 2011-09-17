@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/17 17:49:28 jakob Exp $
 
 COMMENT =	Python DNS library
 
@@ -9,8 +9,6 @@ REVISION=		0
 CATEGORIES =   	net
 
 HOMEPAGE =	http://pydns.sourceforge.net/
-
-MAINTAINER =	Jakob Schlyter <jakob@openbsd.org>
 
 # Python License
 PERMIT_PACKAGE_CDROM =	Yes
