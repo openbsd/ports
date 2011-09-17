@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.6 2007/06/26 19:19:46 simon Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/09/17 10:29:44 sthen Exp $
 lib/${MODAPACHE_MODULE}
-@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
+@exec-update test ! -f ${MODAPACHE_FINAL} || cp -fp %D/%F ${MODAPACHE_FINAL}
 sbin/${MODAPACHE_ENABLE}
 share/doc/mod_gzip/
 share/doc/mod_gzip/browser.htm

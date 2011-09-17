@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/26 17:45:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/17 10:29:44 sthen Exp $
 
 COMMENT=	Apache module for implementing a framework for doing design
 
-REVISION=	2
+REVISION=	3
 DISTNAME=	mod_layout-3.4
 PKGNAME=	${DISTNAME}
 CATEGORIES=	www

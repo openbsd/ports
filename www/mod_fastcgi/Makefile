@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2010/09/26 17:45:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/17 10:29:44 sthen Exp $
 
 COMMENT=        Apache FastCGI module
 
-REVISION=	2
+REVISION=	3
 DISTNAME=	mod_fastcgi-SNAP-0811090952
 # temporary workaround: as the original distname would prevent a seamless
 # update use the last offical version and append the date of the snapshot

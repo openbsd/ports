@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 12:00:07 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/17 10:29:44 sthen Exp $
 
 COMMENT=		Apache LDAP based virtual hosts module
 
-REVISION=		8
+REVISION=		9
 DISTNAME=		mod_ldapvhost-1.0.2
 CATEGORIES=		www
 

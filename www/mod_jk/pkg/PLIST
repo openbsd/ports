@@ -1,6 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.7 2010/11/09 21:38:37 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.8 2011/09/17 10:29:44 sthen Exp $
 lib/${MODAPACHE_MODULE}
-@exec-update test -f ${MODAPACHE_FINAL} && cp -fp %D/%F ${MODAPACHE_FINAL}
+@exec-update test ! -f ${MODAPACHE_FINAL} || cp -fp %D/%F ${MODAPACHE_FINAL}
 sbin/${MODAPACHE_ENABLE}
 share/doc/mod_jk/
 share/doc/mod_jk/LICENSE

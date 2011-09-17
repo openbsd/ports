@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2010/09/26 17:45:14 sebastia Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/17 10:29:44 sthen Exp $
 
 COMMENT=	Apache module that provides randomized services
 
-REVISION=	6
+REVISION=	7
 DISTNAME=	mod_random-1.4
 CATEGORIES=	www
 

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/02 16:56:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/17 10:29:44 sthen Exp $
 
 COMMENT=	bandwidth limiter for Apache
 
 V=		2.1
-REVISION=	3
+REVISION=	4
 DISTFILES=	mod_bandwidth.c cleanlink.pl:0
 DISTNAME=	mod_bandwidth-${V}
 CATEGORIES=     www
