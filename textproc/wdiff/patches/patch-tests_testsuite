@@ -1,0 +1,18 @@
+$OpenBSD: patch-tests_testsuite,v 1.1 2011/09/17 10:51:22 sthen Exp $
+
+no workee with OpenBSD's sed
+
+--- tests/testsuite.orig	Fri Sep 16 22:35:35 2011
++++ tests/testsuite	Fri Sep 16 22:36:05 2011
+@@ -2380,9 +2380,9 @@ $as_echo "wdiff.at:193" >"$at_check_line_file"
+ # Need to work around a screen bug which might cause the first
+ # character to be lost: https://savannah.gnu.org/bugs/index.php?34200
+ { set +x
+-$as_echo "$at_srcdir/wdiff.at:196: sed 's/^ager/Pager/;s/\\r//g;' screenlog.0"
++$as_echo "$at_srcdir/wdiff.at:196: gsed 's/^ager/Pager/;s/\\r//g;' screenlog.0"
+ at_fn_check_prepare_trace "wdiff.at:196"
+-( $at_check_trace; sed 's/^ager/Pager/;s/\r//g;' screenlog.0
++( $at_check_trace; gsed 's/^ager/Pager/;s/\r//g;' screenlog.0
+ ) >>"$at_stdout" 2>>"$at_stderr"
+ at_status=$? at_failed=false
+ $at_check_filter

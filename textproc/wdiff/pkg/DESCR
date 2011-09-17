@@ -1,6 +1,6 @@
-wdiff  compares  two  files, finding which words have been
-deleted or added to old_file to get new_file.  A  word  is
-anything  between whitespace.  The output is collected and
-used to produce an annotated copy of new_file on  standard
-output.  Suitable  annotations  produce  a nice display of
-word differences between the original files.
+wdiff is a front end to diff for comparing files on a word per word basis.
+A word is anything between whitespace. This is useful for comparing two texts
+in which a few words have been changed and for which paragraphs have been
+refilled. It works by creating two temporary files, one word per line, and
+then executes diff on these files. It collects the diff output and uses it
+to produce a nicer display of word differences between the original files.

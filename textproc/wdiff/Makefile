@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2011/08/21 16:41:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/17 10:51:22 sthen Exp $
 
 COMMENT=	word differences between text files
 
-DISTNAME=	wdiff-0.6.5
+DISTNAME=	wdiff-1.0.1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_GNU:=wdiff/}
 
@@ -14,6 +14,8 @@ PERMIT_DISTFILES_FTP=	Yes
 WANTLIB=		c termcap 
 
 MODULES=		devel/gettext
+REGRESS_DEPENDS=	misc/screen \
+			textproc/gsed
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--prefix="${PREFIX}"
 USE_GMAKE=		Yes
