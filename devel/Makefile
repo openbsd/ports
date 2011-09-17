@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.968 2011/09/15 20:20:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.969 2011/09/17 12:17:13 rpointel Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1000,6 +1000,7 @@
      SUBDIR += py-xdg
      SUBDIR += py-zopeinterface
      SUBDIR += py-zopetesting
+     SUBDIR += py3-distribute
      SUBDIR += pybugz
      SUBDIR += pyflakes
      SUBDIR += pygame
