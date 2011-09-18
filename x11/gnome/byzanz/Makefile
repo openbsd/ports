@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/18 10:09:48 jasper Exp $
 
 COMMENT=		simple desktop recording tool
 
@@ -48,7 +48,9 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.11
 
-BUILD_DEPENDS+=		devel/libtool \
+BUILD_DEPENDS+=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool \
 			x11/gnome/common
 
 pre-configure:
