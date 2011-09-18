@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/18 22:25:13 landry Exp $
+${P5ARCH}/
+${P5ARCH}/File/
+${P5ARCH}/File/RsyncP/
+${P5ARCH}/File/RsyncP.pm
+${P5ARCH}/File/RsyncP/Digest.pm
+${P5ARCH}/File/RsyncP/FileIO.pm
+${P5ARCH}/File/RsyncP/FileList.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/File/
+${P5ARCH}/auto/File/RsyncP/
+${P5ARCH}/auto/File/RsyncP/Digest/
+${P5ARCH}/auto/File/RsyncP/Digest/Digest.bs
+${P5ARCH}/auto/File/RsyncP/Digest/Digest.so
+${P5ARCH}/auto/File/RsyncP/Digest/autosplit.ix
+${P5ARCH}/auto/File/RsyncP/FileList/
+${P5ARCH}/auto/File/RsyncP/FileList/FileList.bs
+${P5ARCH}/auto/File/RsyncP/FileList/FileList.so
+${P5ARCH}/auto/File/RsyncP/FileList/autosplit.ix
+@man man/man3p/File::RsyncP.3p
+@man man/man3p/File::RsyncP::Digest.3p
+@man man/man3p/File::RsyncP::FileIO.3p
+@man man/man3p/File::RsyncP::FileList.3p
