@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 10:02:36 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/18 10:16:49 jasper Exp $
 
 COMMENT =		geometry viewer for OOGL file formats
 
-DISTNAME =		geomview-1.9.4
+V =			1.9.4
+DISTNAME =		geomview-$V
 REVISION=		0
 CATEGORIES =		graphics
 
@@ -30,6 +31,8 @@ WANTLIB += stdc++ xcb z
 
 USE_GMAKE =	Yes
 USE_LIBTOOL = 	Yes
+
+SUBST_VARS +=	V
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS = --without-opengl
