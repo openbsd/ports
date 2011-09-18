@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-evolution,v 1.1 2011/09/18 08:36:56 ajacoutot Exp $
+@comment lib/evolution/3.0/plugins/liborg-freedesktop-Tracker-evolution-plugin.la
+lib/evolution/${EVO_VERSION}/plugins/liborg-freedesktop-Tracker-evolution-plugin.so
+lib/evolution/${EVO_VERSION}/plugins/org-freedesktop-Tracker-evolution-plugin.eplug
+share/dbus-1/services/org.freedesktop.Tracker1.Miner.EMails.service
+share/tracker/miners/tracker-miner-evolution.desktop

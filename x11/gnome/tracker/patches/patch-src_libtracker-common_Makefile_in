@@ -1,11 +1,12 @@
-$OpenBSD: patch-src_libtracker-common_Makefile_in,v 1.1 2011/05/07 16:17:26 ajacoutot Exp $
---- src/libtracker-common/Makefile.in.orig	Fri May  6 18:31:58 2011
-+++ src/libtracker-common/Makefile.in	Fri May  6 18:19:17 2011
-@@ -482,6 +482,7 @@ libtracker_common_la_LIBADD = \
- 	$(HAL_LIBS)					\
- 	$(DEVKIT_POWER_LIBS)				\
- 	$(DBUS_LIBS)					\
-+	-lkvm						\
- 	$(GIO_LIBS)					\
- 	$(GCOV_LIBS)					\
- 	$(GLIB2_LIBS)
+$OpenBSD: patch-src_libtracker-common_Makefile_in,v 1.2 2011/09/18 08:36:56 ajacoutot Exp $
+--- src/libtracker-common/Makefile.in.orig	Sat Sep 17 11:37:43 2011
++++ src/libtracker-common/Makefile.in	Sat Sep 17 11:38:31 2011
+@@ -500,7 +500,7 @@ libtracker_common_la_LDFLAGS = \
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE)
+ 
+ libtracker_common_la_LIBADD = $(BUILD_LIBS) $(LIBTRACKER_COMMON_LIBS) \
+-	$(am__append_5)
++	$(am__append_5) -lkvm
+ marshal_sources = \
+ 	tracker-marshal.h \
+ 	tracker-marshal.c

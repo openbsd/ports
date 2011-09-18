@@ -1,50 +1,35 @@
-# $OpenBSD: Makefile,v 1.67 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2011/09/18 08:36:56 ajacoutot Exp $
 
-BROKEN=		needs an update (GNOME3)
+# XXX Binary files patch-src_tracker-control_tracker-control-general_c
+# and patch-src_tracker-control_tracker-control-general_c.new differ
+DIFF_ARGS=	-a
 
-COMMENT=	powerful desktop search tool and indexer
+SHARED_ONLY=	Yes
+
+COMMENT-main=		powerful desktop search tool and indexer
+COMMENT-evolution=	(meta-)tracker indexer plugin for evolution
+COMMENT-nautilus=	(meta-)tracker tagging plugin for nautilus
 
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.8.18
+GNOME_VERSION=	0.12.1
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
 PKGNAME=	meta-tracker-${VERSION}
 
-REVISION=	6
+PKGNAME-main=		meta-tracker-${VERSION}
+PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
+PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
 
-EVO_VERSION=	2.32
-SUBST_VARS=	EVO_VERSION
+MAJ_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+EVO_VERSION=	3.0
+SUBST_VARS=	MAJ_V EVO_VERSION
 
-SHARED_LIBS +=  tracker-common       1.0      # .800.0
-SHARED_LIBS +=  tracker-client-0.8   0.0      # .800.0
-SHARED_LIBS +=  tracker-data         1.0      # .800.0
-SHARED_LIBS +=  tracker-extract-0.8  0.0      # .800.0
-SHARED_LIBS +=  tracker-miner-0.8    0.0      # .800.0
-
-WANTLIB += ICE ORBit-2 ORBitCosNaming-2 SM X11 Xau Xcomposite
-WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 asn1 atk-1.0 assuan gpgme-pthread
-WANTLIB += bonobo-2 bonobo-activation bonoboui-2 bz2
-WANTLIB += c cairo camel-1.2 camel-provider-1.2 com_err crypto
-WANTLIB += dbus-1 dbus-glib-1 ebook-1.2 edataserver-1.2 edataserverui-1.2
-WANTLIB += enchant execinfo exif expat fontconfig freetype
-WANTLIB += gailutil gconf-2 gcrypt gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gmime-2.6 gmodule-2.0 gnome-2
-WANTLIB += gnome-desktop-2 gnome-keyring gnomecanvas-2 gnomevfs-2
-WANTLIB += gobject-2.0 gpg-error gsf-1 gssapi gstbase-0.10
-WANTLIB += gstreamer-0.10 gthread-2.0 gtk-x11-2.0 gtkhtml-3.14
-WANTLIB += jpeg krb5 lcms m nspr4 nss3 ogg pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
-WANTLIB += png popt pthread pthread-stubs smime3 soup-2.4 sqlite3
-WANTLIB += ssl ssl3 startup-notification-1 stdc++ tiff unique-1.0
-WANTLIB += util xcb xcb-atom xcb-aux xcb-event xcb-render
-WANTLIB += xml2 z openjpeg soup-gnome-2.4 kvm
-WANTLIB += vorbis vorbisfile lib/evolution/${EVO_VERSION}/eutil exempi
-WANTLIB += gsttag-0.10 poppler-glib poppler panel-applet-2
-WANTLIB += nautilus-extension totem-plparser e2fs-uuid gee
-WANTLIB += canberra gtkhtml-editor-3.14 ltdl nssutil3
-WANTLIB += GL Xxf86vm drm xcb-shm
+SHARED_LIBS +=  tracker-common       2.0      # 1201.0
+SHARED_LIBS +=  tracker-data         2.0      # 1201.0
+SHARED_LIBS +=  tracker-sparql-0.12  0.0      # 1201.0
+SHARED_LIBS +=  tracker-extract-0.12 0.0      # 1201.0
+SHARED_LIBS +=  tracker-miner-0.12   0.0      # 1201.0
 
 HOMEPAGE=	http://tracker-project.org/
 
@@ -54,81 +39,113 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
 MODULES=	devel/gettext \
-		lang/python \
-		x11/gnome
+		x11/gnome \
+		devel/dconf
 
-LIB_DEPENDS=	audio/libvorbis \
-		devel/libgsf \
-		mail/evolution \
-		textproc/exempi>=2.1.1 \
-		multimedia/gstreamer-0.10/plugins-base>=0.10.25 \
-		print/poppler \
-		x11/gnome/panel \
-		x11/gnome/nautilus>=2.28.4p1 \
-		x11/gnome/totem-pl-parser>=2.28.1 \
-		sysutils/e2fsprogs>=1.41.4p5 \
-		devel/libgee
-BUILD_DEPENDS=	devel/xdg-utils \
-		lang/vala
-RUN_DEPENDS=	sysutils/gamin,-server \
-		devel/xdg-utils \
-		textproc/odt2txt
+MULTI_PACKAGES=	-main -evolution -nautilus
+
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm drm expat fontconfig
+WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += kvm m pcre pixman-1 pthread-stubs xcb xcb-render xcb-shm
+WANTLIB += z
+
+WANTLIB-main += ${WANTLIB}
+WANTLIB-main += ORBit-2 archive assuan atk-1.0 bz2 c cairo cairo-gobject
+WANTLIB-main += dbus-1 dbus-glib-1 e2fs-uuid enca exempi exif gconf-2
+WANTLIB-main += gcrypt gdk-3 gdk-x11-2.0 gdk_pixbuf-2.0 gee gif gmime-2.6
+WANTLIB-main += gnome-keyring gpg-error gpgme-pthread gsf-1 gtk-3 icudata
+WANTLIB-main += icui18n icuuc jpeg lcms lzma openjpeg panel-applet-4
+WANTLIB-main += pango-1.0 pangocairo-1.0 pangoft2-1.0 png poppler poppler-glib
+WANTLIB-main += pthread rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 stdc++
+WANTLIB-main += tag tag_c tiff totem-plparser upower-glib xml2
+
+WANTLIB-evolution += ${WANTLIB}
+WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-common
+WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-data
+WANTLIB-evolution += ICE ORBit-2 SM X11-xcb asn1 atk-1.0 cairo cairo-gobject
+WANTLIB-evolution += camel-1.2 camel-provider-1.2 com_err crypto db dbus-1
+WANTLIB-evolution += dbus-glib-1 e2fs-uuid ebackend-1.2 ebook-1.2 ecal-1.2
+WANTLIB-evolution += edataserver-1.2 edataserverui-3.0 egroupwise-1.2 enchant
+WANTLIB-evolution += execinfo gailutil-3 gconf-2 gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB-evolution += gnome-desktop-3 gnome-keyring gpg-error gssapi gtk-3
+WANTLIB-evolution += gtkhtml-4.0 gtkhtml-editor-4.0 ical icalss icalvcal
+WANTLIB-evolution += icui18n icuuc krb5 nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
+WANTLIB-evolution += pangoft2-1.0 plc4 plds4 png smime3 softokn3 soup-2.4
+WANTLIB-evolution += sqlite3 ssl3 startup-notification-1 stdc++ tracker-miner-0.12
+WANTLIB-evolution += tracker-sparql-0.12 unique-3.0 xcb-aux xml2
+WANTLIB-evolution += lib/evolution/${EVO_VERSION}/emiscwidgets
+WANTLIB-evolution += lib/evolution/${EVO_VERSION}/eshell
+WANTLIB-evolution += lib/evolution/${EVO_VERSION}/etable
+WANTLIB-evolution += lib/evolution/${EVO_VERSION}/etext
+WANTLIB-evolution += lib/evolution/${EVO_VERSION}/eutil
+WANTLIB-evolution += lib/evolution/${EVO_VERSION}/evolution-a11y
+WANTLIB-evolution += lib/evolution/${EVO_VERSION}/filter
+WANTLIB-evolution += lib/evolution/${EVO_VERSION}/gnomecanvas
+WANTLIB-evolution += lib/evolution/${EVO_VERSION}/menus
+
+WANTLIB-nautilus += ${WANTLIB}
+WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-common
+WANTLIB-nautilus += lib/tracker-${MAJ_V}/tracker-data
+WANTLIB-nautilus += atk-1.0 cairo cairo-gobject e2fs-uuid gdk-3 gdk_pixbuf-2.0
+WANTLIB-nautilus += gtk-3 icui18n icuuc nautilus-extension pango-1.0 pangocairo-1.0
+WANTLIB-nautilus += pangoft2-1.0 png sqlite3 tracker-sparql-0.12
+
+BUILD_DEPENDS=	lang/vala
+
+LIB_DEPENDS-main=	${LIB_DEPENDS} \
+			x11/gnome/panel \
+			x11/gnome/totem-pl-parser \
+			print/poppler \
+			devel/libgsf \
+			devel/libgee \
+			net/librest \
+			sysutils/upower \
+			textproc/exempi \
+			sysutils/e2fsprogs \
+			graphics/libexif \
+			graphics/libungif
+
+RUN_DEPENDS-evolution=	${MODGETTEXT_RUN_DEPENDS}
+LIB_DEPENDS-evolution=	${LIB_DEPENDS} \
+			x11/gnome/tracker,-main \
+			mail/evolution>=3.0.0
+
+RUN_DEPENDS-nautilus=	${MODGETTEXT_RUN_DEPENDS}
+LIB_DEPENDS-nautilus=	${LIB_DEPENDS} \
+			x11/gnome/tracker,-main \
+			x11/gnome/nautilus>=3.0.0
+
+LIBTOOL_FLAGS=	--tag=disable-static
 
 DESKTOP_FILES=	Yes
-MODPY_RUNDEP=	No
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-video-extractor=gstreamer \
-		--enable-gdkpixbuf \
-		--enable-gnome-keyring \
-		--enable-miner-evolution \
-		--enable-miner-kmail \
-		--enable-tracker-status-icon \
-		--enable-tracker-search-bar \
-		--enable-tracker-preferences \
-		--enable-exempi \
-		--enable-playlist \
-		--enable-nautilus-extension \
-		--enable-poppler-glib \
-		--enable-libexif \
-		--enable-libgsf \
-		--enable-libjpeg \
-		--enable-libtiff \
-		--enable-libxml2 \
-		--enable-libvorbis \
-		--enable-tracker-search-tool \
-		--enable-tracker-explorer \
-		--disable-unit-tests \
-		--disable-miner-rss \
-		--disable-libstreamanalyzer \
-		--disable-gcov \
-		--disable-maemo \
-		--disable-gstreamer-tagreadbin \
-		--disable-devkit-power \
-		--disable-hal \
-		--disable-libinotify \
-		--disable-quill \
-		--disable-gstreamer-helix \
-		--disable-unac \
-		--without-enca \
-		--disable-libiptcdata \
-		--disable-libflac
+		--disable-static \
+		--disable-gtk-doc \
+		--disable-functional-tests \
+		--enable-introspection \
+		--enable-generic-media-extractor=gtsreamer \
+		--disable-miner-thunderbird \
+		--disable-miner-firefox \
+		--disable-network-manager \
+		--disable-qt \
+		--with-gstreamer-backend=decodebin2
 
-# there is a check in configure, but no id3 plugin whatsoever in source
-CONFIGURE_ARGS+= --disable-id3lib
+# needs libgrss
+CONFIGURE_ARGS += --disable-miner-rss
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+# needs libiptcdata
+CONFIGURE_ARGS += --disable-libiptcdata
+
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib \
-			-Wl,-rpath,${TRUEPREFIX}/lib/tracker-${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}" \
-		EXEMPI_LIBS="`pkg-config --libs exempi-2.0` -lstdc++"
-USE_GROFF =	Yes
+			-Wl,-rpath,${TRUEPREFIX}/lib/tracker-${MAJ_V}"
 
-FAKE_FLAGS+=	sysconfdir=${PREFIX}/share/examples/meta-tracker/
+FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/meta-tracker/
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/miners/fs/tracker-miner-applications.c
+	${SUBST_CMD} ${WRKSRC}/src/tracker-needle/tracker-needle.vala
 
 .include <bsd.port.mk>

@@ -1,0 +1,4 @@
+Tracker (named meta-tracker on OpenBSD to prevent conflict with the
+audio/tracker port) is a search engine and that allows the user to find
+their data as fast as possible. Users can search for their files and
+search for content in their files too.
