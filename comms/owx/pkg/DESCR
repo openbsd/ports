@@ -1,0 +1,6 @@
+OWX (Open Wouxun) is an open-source program designed to program Wouxun
+transceivers. It was developed on Wouxun KG-UV2D and tested on KG-UVD1P
+(both identify as KG669V). Possibly other Wouxuns are supported too, but
+this is not guaranteed - use at your own risk and ALWAYS make backups!
+This software is highly experimental. Using it can result in rendering
+your radio unusable and your dog killed. You have been warned.

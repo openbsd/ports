@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_Makefile,v 1.1.1.1 2011/09/18 20:27:54 landry Exp $
+--- src/Makefile.orig	Sat Sep 17 22:30:02 2011
++++ src/Makefile	Sun Sep 18 13:13:44 2011
+@@ -7,8 +7,8 @@ RM	= rm -f
+ INSTALL	= install
+ LN	= ln
+ 
+-LIBXDIR	= /usr/local/libexec/
+-BINDIR	= /usr/local/bin/
++LIBXDIR	= $(PREFIX)/libexec/
++BINDIR	= $(PREFIX)/bin/
+ 
+ CXXFLAGS= -pipe -Wall -Wextra -O2 -g
+ LDFLAGS	= 
+@@ -33,11 +33,11 @@ install: all
+ 	$(INSTALL) -d $(LIBXDIR)
+ 	$(INSTALL) -m 755 $(NAME) $(LIBXDIR)
+ 	$(INSTALL) -d $(BINDIR)
+-	$(LN) -f -s $(LIBXDIR)$(NAME) $(BINDIR)$(NAME)-check
+-	$(LN) -f -s $(LIBXDIR)$(NAME) $(BINDIR)$(NAME)-get
+-	$(LN) -f -s $(LIBXDIR)$(NAME) $(BINDIR)$(NAME)-put
+-	$(LN) -f -s $(LIBXDIR)$(NAME) $(BINDIR)$(NAME)-export
+-	$(LN) -f -s $(LIBXDIR)$(NAME) $(BINDIR)$(NAME)-import
++	$(LN) -f -s $(TRUEPREFIX)/libexec/$(NAME) $(BINDIR)$(NAME)-check
++	$(LN) -f -s $(TRUEPREFIX)/libexec/$(NAME) $(BINDIR)$(NAME)-get
++	$(LN) -f -s $(TRUEPREFIX)/libexec/$(NAME) $(BINDIR)$(NAME)-put
++	$(LN) -f -s $(TRUEPREFIX)/libexec/$(NAME) $(BINDIR)$(NAME)-export
++	$(LN) -f -s $(TRUEPREFIX)/libexec/$(NAME) $(BINDIR)$(NAME)-import
+ 
+ .PHONY: clean
+ clean:

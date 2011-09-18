@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/18 20:27:54 landry Exp $
+bin/owx-check
+bin/owx-export
+bin/owx-get
+bin/owx-import
+bin/owx-put
+@bin libexec/owx
+share/doc/owx/
+share/doc/owx/README
