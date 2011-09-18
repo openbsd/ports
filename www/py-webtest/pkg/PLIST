@@ -1,18 +1,26 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2009/03/30 00:00:37 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/09/18 18:21:23 fgsch Exp $
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/webtest/
 lib/python${MODPY_VERSION}/site-packages/webtest/__init__.py
 lib/python${MODPY_VERSION}/site-packages/webtest/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/app.py
+lib/python${MODPY_VERSION}/site-packages/webtest/app.pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/compat.py
+lib/python${MODPY_VERSION}/site-packages/webtest/compat.pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/debugapp.py
 lib/python${MODPY_VERSION}/site-packages/webtest/debugapp.pyc
 lib/python${MODPY_VERSION}/site-packages/webtest/lint.py
 lib/python${MODPY_VERSION}/site-packages/webtest/lint.pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/lint3.py
+lib/python${MODPY_VERSION}/site-packages/webtest/lint3.pyc
+lib/python${MODPY_VERSION}/site-packages/webtest/sel.py
+lib/python${MODPY_VERSION}/site-packages/webtest/sel.pyc
 share/doc/py-webtest/
 share/doc/py-webtest/index.txt

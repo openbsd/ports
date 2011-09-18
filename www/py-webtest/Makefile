@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 12:00:08 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/18 18:21:23 fgsch Exp $
 
 COMMENT =	helper to test wsgi applications
 
-MODPY_EGG_VERSION = 1.2
+MODPY_EGG_VERSION = 1.3
 DISTNAME =	WebTest-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	2
 
 CATEGORIES =	www devel
 
