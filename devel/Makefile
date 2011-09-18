@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.970 2011/09/17 16:43:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.971 2011/09/18 22:25:55 landry Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -571,6 +571,7 @@
      SUBDIR += p5-File-Path-Expand
      SUBDIR += p5-File-ReadBackwards
      SUBDIR += p5-File-Remove
+     SUBDIR += p5-File-RsyncP
      SUBDIR += p5-File-ShareDir
      SUBDIR += p5-File-Slurp
      SUBDIR += p5-File-Sync
