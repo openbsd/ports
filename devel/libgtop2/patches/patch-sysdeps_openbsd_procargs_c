@@ -1,4 +1,11 @@
-$OpenBSD: patch-sysdeps_openbsd_procargs_c,v 1.1 2011/09/17 17:43:44 jasper Exp $
+$OpenBSD: patch-sysdeps_openbsd_procargs_c,v 1.2 2011/09/18 11:46:16 jasper Exp $
+
+commit dd46d6a00e4af444d423383abbc538436a170e2b
+Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date:   Sun Sep 18 13:42:13 2011 +0200
+
+    Don't bother with PIDs below 20 as they are highly likely to be kernel threads anyway.
+
 --- sysdeps/openbsd/procargs.c.orig	Sat Sep 17 18:58:14 2011
 +++ sysdeps/openbsd/procargs.c	Sat Sep 17 18:59:23 2011
 @@ -58,8 +58,11 @@ glibtop_get_proc_args_p (glibtop *server, glibtop_proc
