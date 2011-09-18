@@ -1,5 +1,0 @@
-@comment $OpenBSD: PFRAG.shared-main,v 1.2 2010/09/30 07:32:49 ajacoutot Exp $
-lib/GConf/2/libgconfbackend-oldxml.so
-lib/GConf/2/libgconfbackend-xml.so
-lib/gio/modules/libgsettingsgconfbackend.so
-@lib lib/libgconf-2.so.${LIBgconf-2_VERSION}

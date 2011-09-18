@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.63 2011/09/18 22:04:01 ajacoutot Exp $
 
 COMMENT-main=	configuration database system for GNOME
 COMMENT-polkit=	PolicyKit integration for GConf2
@@ -6,14 +6,15 @@ COMMENT-gtk=	GConf2 configuration checker
 
 GNOME_PROJECT=	GConf
 GNOME_VERSION=	2.32.4
+PKGNAME=	gconf2-${GNOME_VERSION}
 
 PKGNAME-main=	gconf2-${GNOME_VERSION}
 PKGNAME-polkit=	gconf2-polkit-${GNOME_VERSION}
 PKGNAME-gtk=	gconf2-sanity-check-${GNOME_VERSION}
 
-REVISION-main=	1
-REVISION-gtk=	2
-REVISION-polkit=1
+REVISION-main=	2
+REVISION-gtk=	3
+REVISION-polkit=2
 
 SHARED_LIBS +=	gconf-2              6.2      # 5.5
 
@@ -54,6 +55,12 @@ WANTLIB-gtk += xcb-shm xml2 cairo-gobject gdk-3 gtk-3
 
 MODULES=	devel/gettext \
 		x11/gnome
+
+# needed for gsettings-schema-convert(1)
+MODULES+=	lang/python
+MODPY_BUILDDEP=	No
+MODPY_RUNDEP=	No
+MODPY_ADJ_FILES=gsettings/gsettings-schema-convert
 
 MULTI_PACKAGES=	-main -polkit -gtk
 
