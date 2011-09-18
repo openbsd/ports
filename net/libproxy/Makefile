@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/18 19:57:30 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -14,8 +14,8 @@ PKGNAME-mozilla=	libproxy-mozilla-${VERSION}
 PKGNAME-webkit=		libproxy-webkit-${VERSION}
 
 REVISION-main=		5
-REVISION-mozilla=	3
-REVISION-webkit=	5
+REVISION-mozilla=	4
+REVISION-webkit=	6
 
 CATEGORIES=		net
 

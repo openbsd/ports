@@ -1,1 +1,1 @@
-This package contains the libproxy plugin for webkit-based browsers.
+WPAD/PAC script interpreter for gecko-based browsers using libproxy.
