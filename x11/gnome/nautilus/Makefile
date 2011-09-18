@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2011/09/18 06:46:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.88 2011/09/18 08:17:00 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -16,7 +16,7 @@ COMMENT=		GNOME file manager
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.0.2
 
-REVISION=		5
+REVISION=		6
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -60,9 +60,6 @@ LIB_DEPENDS=		x11/gnome/desktop \
 			graphics/libexif>=0.6.0 \
 			textproc/exempi
 
-# XXX add this line to LIB_DEPENDS when updating to 3.2
-# x11/gnome/tracker,-main,no_nautilus>=0.12.1
-
 DESKTOP_FILES=		Yes
 
 USE_GROFF=		Yes
@@ -73,8 +70,12 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--disable-packagekit \
 			--enable-libexif \
 			--enable-xmp \
-			--enable-introspection \
-			--enable-tracker
+			--enable-introspection
+
+# it would introduce a cyclic dependency with x11/gnome/tracker; also it
+# is better to keep the regular search for nautilus so that we can get
+# results from paths not indexed by tracker
+CONFIGURE_ARGS +=	--disable-tracker
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
