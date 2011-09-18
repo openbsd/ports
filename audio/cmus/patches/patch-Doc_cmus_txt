@@ -1,0 +1,12 @@
+$OpenBSD: patch-Doc_cmus_txt,v 1.1 2011/09/18 13:27:53 landry Exp $
+--- Doc/cmus.txt.orig	Sun Jul 24 11:42:22 2011
++++ Doc/cmus.txt	Sun Sep  4 22:55:19 2011
+@@ -860,7 +860,7 @@ id3_default_charset (ISO-8859-1)
+ lib_sort (artist album discnumber tracknumber title filename) [`Sort Keys`]
+ 	Sort keys for the sorted library view (2).
+ 
+-output_plugin [roar, pulse, alsa, arts, oss, sun]
++output_plugin [roar, pulse, alsa, arts, sndio, oss, sun]
+ 	Name of output plugin.
+ 
+ pl_sort () [`Sort Keys`]
