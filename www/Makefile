@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.529 2011/09/10 06:16:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.530 2011/09/18 22:44:18 landry Exp $
 # $FreeBSD: Makefile,v 1.65 1997/11/17 06:31:39 fenner Exp $
 
      SUBDIR =
@@ -71,7 +71,6 @@
      SUBDIR += japana
      SUBDIR += jesred
      SUBDIR += junkbuster
-     SUBDIR += kazehakase
      SUBDIR += ktdms
      SUBDIR += larbin
      SUBDIR += libcroco
