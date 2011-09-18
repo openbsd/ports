@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/18 12:13:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/18 15:45:18 ajacoutot Exp $
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
 
 DISTNAME=	p11-kit-0.6
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security
 
