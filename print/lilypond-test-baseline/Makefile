@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/07/10 19:38:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/18 17:18:09 espie Exp $
 
 # This port is not wired to the build by intention. It's not even
 # meant to be built, because it's just a helper port to avoid
@@ -26,6 +26,7 @@ MASTER_SITES =		http://openbsd.dead-parrot.de/distfiles/
 
 EXTRACT_SUFX =		.tar.bz2
 
+PLIST = 		/dev/null
 NO_BUILD =		Yes
 NO_REGRESS =		Yes
 
