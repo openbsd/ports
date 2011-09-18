@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/09/18 09:21:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2011/09/18 10:27:02 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -94,7 +94,8 @@ WANTLIB-nautilus += atk-1.0 cairo cairo-gobject e2fs-uuid gdk-3 gdk_pixbuf-2.0
 WANTLIB-nautilus += gtk-3 icui18n icuuc nautilus-extension pango-1.0 pangocairo-1.0
 WANTLIB-nautilus += pangoft2-1.0 png sqlite3 tracker-sparql-0.12
 
-BUILD_DEPENDS=	lang/vala
+BUILD_DEPENDS=	lang/vala \
+		devel/gobject-introspection
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			x11/gnome/panel \
