@@ -1,6 +1,6 @@
-$OpenBSD: patch-sysdeps_common_mountlist_c,v 1.1 2009/11/02 20:19:06 jasper Exp $
---- sysdeps/common/mountlist.c.orig	Thu Oct 29 00:26:32 2009
-+++ sysdeps/common/mountlist.c	Thu Oct 29 00:50:16 2009
+$OpenBSD: patch-sysdeps_common_mountlist_c,v 1.2 2011/09/18 11:24:59 jasper Exp $
+--- sysdeps/common/mountlist.c.orig	Wed Jun  1 17:40:47 2011
++++ sysdeps/common/mountlist.c	Sun Sep 18 13:22:28 2011
 @@ -52,7 +52,9 @@ static struct mount_entry *read_filesystem_list (void)
  
  #if defined (MOUNTED_GETFSSTAT)	/* __alpha running OSF_1 */
@@ -37,3 +37,13 @@ $OpenBSD: patch-sysdeps_common_mountlist_c,v 1.1 2009/11/02 20:19:06 jasper Exp 
  	me->me_dev = (dev_t) -1;	/* Magic; means not known yet. */
  	me->me_next = NULL;
  
+@@ -545,7 +556,9 @@ static gboolean ignore_mount_entry(const struct mount_
+ 		"devpts",
+ 		"fusectl",
+ 		"linprocfs",
++#ifndef __OpenBSD__
+ 		"mfs",
++#endif
+ 		"mntfs",
+ 		"mqueue",
+ 		"none",
