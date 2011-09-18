@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/16 12:00:08 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/18 17:58:07 fgsch Exp $
 
 COMMENT =	wsgi request and response object
 
-MODPY_EGG_VERSION = 0.9.7.1
+MODPY_EGG_VERSION = 1.1.1
 DISTNAME =	WebOb-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	2
 
 CATEGORIES =	www devel
 
-HOMEPAGE =	http://pythonpaste.org/webob/
+HOMEPAGE =	http://webob.org/
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
@@ -18,15 +17,12 @@ PERMIT_DISTFILES_CDROM = Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =	${MASTER_SITE_PYPI:=W/WebOb/}
+EXTRACT_SUFX =	.zip
 
 MODULES =	lang/python
 
 REGRESS_DEPENDS =	devel/py-nose \
-			devel/py-dtopt \
-			www/py-repoze-profile \
-			www/py-tempita \
-			www/py-webtest \
-			www/py-wsgiproxy
+			www/py-webtest
 
 MODPY_SETUPTOOLS =	Yes
 
@@ -34,6 +30,9 @@ DOCS =		differences.txt do-it-yourself.txt index.txt news.txt \
 		reference.txt
 EXAMPLES =	comment-example.txt file-example.txt jsonrpc-example.txt \
 		wiki-example.txt
+
+post-extract:
+	find ${WRKSRC} -perm 0666 -exec chmod 0644 {} \;
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-webob
