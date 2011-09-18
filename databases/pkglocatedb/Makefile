@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/18 17:18:59 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/18 19:29:58 espie Exp $
 
 COMMENT =		database of packages for use with locate(1)
 
@@ -32,6 +32,6 @@ NO_REGRESS =		Yes
 do-build: ${WRKBUILD}/pkglocatedb
 
 ${WRKBUILD}/subdirlist:
-	sqlite3 ${LOCALBASE}/share/sqlports-compact 'select min(paths.fullpkgpath||ports.pseudo_flavor) from paths join ports on paths.id=ports.fullpkgpath group by fullpkgname order by paths.fullpkgpath' >$@
+	sqlite3 ${LOCALBASE}/share/sqlports-compact 'select min(paths.fullpkgpath||ports.pseudo_flavor) from paths join ports on paths.id=ports.fullpkgpath group by fullpkgname order by paths.fullpkgpath' |sed -e s@x11/xscreensaver,-gle@x11/xscreensaver,,-gle@ >$@
 ${WRKBUILD}/pkglocatedb: ${WRKBUILD}/subdirlist
 	SUBDIRLIST=${WRKBUILD}/subdirlist pkg_mklocatedb -a -p ${PORTSDIR} > $@
