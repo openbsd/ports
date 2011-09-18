@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/18 15:45:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/18 21:38:42 ajacoutot Exp $
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
 
 DISTNAME=	p11-kit-0.6
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	security
 
@@ -27,7 +27,8 @@ USE_LIBTOOL=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc
+		--disable-gtk-doc \
+		--with-module-path=${PREFIX}/lib/pkcs11
 
 # no translation yet
 CONFIGURE_ARGS += --disable-nls
