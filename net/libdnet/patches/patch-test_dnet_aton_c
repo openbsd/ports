@@ -1,0 +1,14 @@
+$OpenBSD: patch-test_dnet_aton_c,v 1.1 2011/09/18 08:32:56 bluhm Exp $
+http://code.google.com/p/libdnet/issues/detail?id=17
+
+--- test/dnet/aton.c.orig	Mon Oct 14 17:42:10 2002
++++ test/dnet/aton.c	Thu Jan 20 03:26:57 2011
+@@ -86,7 +86,7 @@ off_aton(char *string, uint16_t *off)
+ 	} else {
+ 		i = strtol(string, &p, 10);
+ 		if (*string == '\0' || (*p != '\0' && *p != '+') ||
+-		    i > IP_OFFMASK)
++		    i > (IP_OFFMASK << 3))
+ 			return (-1);
+ 		*off = htons(((*p == '+') ? IP_MF : 0) | (i >> 3));
+ 	}
