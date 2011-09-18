@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.58 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.59 2011/09/18 20:51:46 espie Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -76,6 +76,9 @@ WANTLIB-web =
 ZABBIX_WEB =		${PREFIX-web}/zabbix
 
 FLAVOR ?=		no_server
+.if empty(FLAVOR)
+FLAVOR =		sqlite3
+.endif
 
 #if non-backend-related flavors are added, add them to
 #the following line as ":L:Nflavor1:Nflavor2" so that
