@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/17 11:02:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/18 20:24:44 pirofti Exp $
 
 COMMENT =	typical installation of a gnome desktop manager
 
 PKGNAME =	sis-gnome-0.1
-REVISION =	0
+REVISION =	1
 CATEGORIES =	x11
 NO_BUILD =	Yes
 DISTFILES =	
@@ -17,6 +17,6 @@ PERMIT_DISTFILES_CDROM =	Yes
 PERMIT_DISTFILES_FTP =		Yes
 
 do-install:
-	${INSTALL_SCRIPT} ${FILESDIR}/install.sh ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${FILESDIR}/sis-install.sh ${PREFIX}/bin
 
 .include <bsd.port.mk>
