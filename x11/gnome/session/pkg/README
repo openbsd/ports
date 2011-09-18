@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.26 2011/09/18 08:43:13 ajacoutot Exp $
+$OpenBSD: README,v 1.27 2011/09/18 09:20:40 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -6,9 +6,16 @@ $OpenBSD: README,v 1.26 2011/09/18 08:43:13 ajacoutot Exp $
 
 Installing the GNOME Desktop
 ============================
-The gnome-session package only takes care of installing minimal GNOME
-libraries.  For a satisfying GNOME user experience, it is advised to
-install at least the following packages:
+The gnome-session package only takes care of installing some core
+components. Running the GNOME Desktop requires several other packages.
+Below are examples of typical GNOME packages sets focused on standard
+usage (i.e. accessibility, development, and office type packages are
+left out on purpose).
+It is advised to _always_ install the "minimal" set (see also: the
+"Installing more packages" section below).
+
+"minimal" GNOME Desktop
+-----------------------
     $ sudo pkg_add \
 	eog \
 	file-roller \
@@ -20,6 +27,34 @@ install at least the following packages:
 	gnome-terminal \
 	gnome-utils
 
+"full" GNOME Desktop
+--------------------
+    $ sudo pkg_add \
+	alacarte \
+    	ekiga \
+	empathy \
+	epiphany-extensions \
+	evolution-meta-tracker \
+	evolution-plugins \
+	evolution-rss \
+	gedit-plugins \
+	eog-plugins \
+	gcalctool \
+	gnome-games-extra-data \
+	gnome-icon-theme-extras \
+	gnome-nettool \
+	gnome-tweak-tool \
+	nautilus-evince \
+	nautilus-file-roller \
+	nautilus-meta-tracker \
+	nautilus-sendto \
+	nautilus-totem \
+	rhythmbox \
+	seahorse-plugins \
+	simple-scan \
+	vinagre \
+	vino
+
 Starting the GNOME Desktop
 ==========================
 Before running gnome-session(1), a system-wide DBus daemon needs to be
@@ -30,6 +65,15 @@ Then the following line needs to be added:
     exec ${LOCALBASE}/bin/ck-launch-session ${TRUEPREFIX}/bin/gnome-session
 in ~/.xinitrc when using startx(1) (console login)
 in ~/.xsession when using xdm(1) (X Display Manager login)
+
+mDNS/DNS-SD support
+===================
+The avahi-daemon(8) daemon provides Zeroconf support (aka. Bonjour /
+Rendezvous) in GNOME. To make use of it, rc.conf.local(5) needs to
+contain the following line:
+    multicast_host=YES
+and "avahi_daemon" needs to be added to the "pkg_scripts" variable
+_after_ "dbus_daemon".
 
 A note about accessibility
 ==========================
