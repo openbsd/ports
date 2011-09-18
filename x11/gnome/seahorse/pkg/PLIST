@@ -1,26 +1,19 @@
-@comment $OpenBSD: PLIST,v 1.19 2011/09/12 07:28:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/09/18 20:32:15 ajacoutot Exp $
 @bin bin/seahorse
-@bin bin/seahorse-daemon
-include/libcryptui/
-include/libcryptui/cryptui-key-chooser.h
-include/libcryptui/cryptui-key-combo.h
-include/libcryptui/cryptui-key-list.h
-include/libcryptui/cryptui-key-store.h
-include/libcryptui/cryptui-keyset.h
-include/libcryptui/cryptui.h
-lib/girepository-1.0/CryptUI-0.0.typelib
-@comment lib/libcryptui.a
-@comment lib/libcryptui.la
-@lib lib/libcryptui.so.${LIBcryptui_VERSION}
-lib/pkgconfig/cryptui-0.0.pc
 lib/seahorse/
 @bin lib/seahorse/seahorse-ssh-askpass
 @bin lib/seahorse/xloadimage
-@man man/man1/seahorse-daemon.1
 @man man/man1/seahorse.1
+share/GConf/
+share/GConf/gsettings/
+share/GConf/gsettings/org.gnome.seahorse.convert
+share/GConf/gsettings/org.gnome.seahorse.manager.convert
 share/applications/seahorse.desktop
-share/dbus-1/services/org.gnome.seahorse.service
-share/gir-1.0/CryptUI-0.0.gir
+share/glib-2.0/schemas/org.gnome.seahorse.gschema.xml
+share/glib-2.0/schemas/org.gnome.seahorse.manager.gschema.xml
+share/glib-2.0/schemas/org.gnome.seahorse.window.gschema.xml
+share/gnome/
+share/gnome/help/
 share/gnome/help/seahorse/
 share/gnome/help/seahorse/C/
 share/gnome/help/seahorse/C/figures/
@@ -67,6 +60,10 @@ share/gnome/help/seahorse/ja/
 share/gnome/help/seahorse/ja/figures/
 share/gnome/help/seahorse/ja/figures/seahorse-window.png
 share/gnome/help/seahorse/ja/seahorse.xml
+share/gnome/help/seahorse/ko/
+share/gnome/help/seahorse/ko/figures/
+share/gnome/help/seahorse/ko/figures/seahorse-window.png
+share/gnome/help/seahorse/ko/seahorse.xml
 share/gnome/help/seahorse/oc/
 share/gnome/help/seahorse/oc/figures/
 share/gnome/help/seahorse/oc/figures/seahorse-window.png
@@ -91,80 +88,27 @@ share/gnome/help/seahorse/zh_CN/
 share/gnome/help/seahorse/zh_CN/figures/
 share/gnome/help/seahorse/zh_CN/figures/seahorse-window.png
 share/gnome/help/seahorse/zh_CN/seahorse.xml
-share/gtk-doc/html/libcryptui/
-share/gtk-doc/html/libcryptui/ch01.html
-share/gtk-doc/html/libcryptui/home.png
-share/gtk-doc/html/libcryptui/index.html
-share/gtk-doc/html/libcryptui/index.sgml
-share/gtk-doc/html/libcryptui/left.png
-share/gtk-doc/html/libcryptui/libcryptui-cryptui-defines.html
-share/gtk-doc/html/libcryptui/libcryptui-cryptui-key-chooser.html
-share/gtk-doc/html/libcryptui/libcryptui-cryptui-key-combo.html
-share/gtk-doc/html/libcryptui/libcryptui-cryptui-key-list.html
-share/gtk-doc/html/libcryptui/libcryptui-cryptui-key-store.html
-share/gtk-doc/html/libcryptui/libcryptui-cryptui-keyset.html
-share/gtk-doc/html/libcryptui/libcryptui-cryptui-marshal.html
-share/gtk-doc/html/libcryptui/libcryptui-cryptui.html
-share/gtk-doc/html/libcryptui/libcryptui.devhelp
-share/gtk-doc/html/libcryptui/libcryptui.devhelp2
-share/gtk-doc/html/libcryptui/right.png
-share/gtk-doc/html/libcryptui/style.css
-share/gtk-doc/html/libcryptui/up.png
-share/gtk-doc/html/libseahorse/
-share/gtk-doc/html/libseahorse/api-index-full.html
-share/gtk-doc/html/libseahorse/ch01.html
-share/gtk-doc/html/libseahorse/home.png
-share/gtk-doc/html/libseahorse/index.html
-share/gtk-doc/html/libseahorse/index.sgml
-share/gtk-doc/html/libseahorse/left.png
-share/gtk-doc/html/libseahorse/libseahorse-SeahorseKeyserverControl.html
-share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectModel.html
-share/gtk-doc/html/libseahorse/libseahorse-SeahorseObjectWidget.html
-share/gtk-doc/html/libseahorse/libseahorse-SeahorseOperation.html
-share/gtk-doc/html/libseahorse/libseahorse-SeahorseSecureEntry.html
-share/gtk-doc/html/libseahorse/libseahorse-SeahorseUnknown.html
-share/gtk-doc/html/libseahorse/libseahorse-SeahorseWidget.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-check-button-control.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-combo-keys.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-commands.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-context.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-dns-sd.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-gconf.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-gtkstock.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-libdialogs.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-marshal.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-object.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-passphrase.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-prefs.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-progress.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-secure-memory.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-servers.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-set-model.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-set.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-source.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-transfer-operation.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-types.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-unix-signal.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-unknown-source.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-util.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-validity.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-view.html
-share/gtk-doc/html/libseahorse/libseahorse-seahorse-xxx.html
-share/gtk-doc/html/libseahorse/libseahorse.devhelp
-share/gtk-doc/html/libseahorse/libseahorse.devhelp2
-share/gtk-doc/html/libseahorse/object-tree.html
-share/gtk-doc/html/libseahorse/right.png
-share/gtk-doc/html/libseahorse/style.css
-share/gtk-doc/html/libseahorse/up.png
+share/icons/hicolor/16x16/
+share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/seahorse-preferences.png
 share/icons/hicolor/16x16/apps/seahorse.png
+share/icons/hicolor/22x22/
+share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/seahorse-preferences.png
 share/icons/hicolor/22x22/apps/seahorse.png
+share/icons/hicolor/24x24/
+share/icons/hicolor/24x24/apps/
 share/icons/hicolor/24x24/apps/seahorse-preferences.png
 share/icons/hicolor/24x24/apps/seahorse.png
+share/icons/hicolor/256x256/
+share/icons/hicolor/256x256/apps/
 share/icons/hicolor/256x256/apps/seahorse.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/seahorse-preferences.png
 share/icons/hicolor/32x32/apps/seahorse.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/seahorse-preferences.png
 share/icons/hicolor/48x48/apps/seahorse.png
 share/locale/ar/LC_MESSAGES/seahorse.mo
@@ -256,12 +200,14 @@ share/omf/seahorse/seahorse-eu.omf
 share/omf/seahorse/seahorse-fr.omf
 share/omf/seahorse/seahorse-it.omf
 share/omf/seahorse/seahorse-ja.omf
+share/omf/seahorse/seahorse-ko.omf
 share/omf/seahorse/seahorse-oc.omf
 share/omf/seahorse/seahorse-ru.omf
 share/omf/seahorse/seahorse-sl.omf
 share/omf/seahorse/seahorse-sv.omf
 share/omf/seahorse/seahorse-vi.omf
 share/omf/seahorse/seahorse-zh_CN.omf
+share/pixmaps/
 share/pixmaps/seahorse/
 share/pixmaps/seahorse/22x22/
 share/pixmaps/seahorse/22x22/seahorse-key-personal.png
@@ -289,10 +235,6 @@ share/pixmaps/seahorse/scalable/seahorse-sign-bad.svg
 share/pixmaps/seahorse/scalable/seahorse-sign-ok.svg
 share/pixmaps/seahorse/scalable/seahorse-sign-unknown.svg
 share/pixmaps/seahorse/scalable/seahorse-sign.svg
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/seahorse.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/seahorse/
 share/seahorse/ui/
 share/seahorse/ui/seahorse-add-keyring.xml
@@ -311,7 +253,6 @@ share/seahorse/ui/seahorse-keyserver-results.ui
 share/seahorse/ui/seahorse-keyserver-results.xml
 share/seahorse/ui/seahorse-keyserver-search.xml
 share/seahorse/ui/seahorse-keyserver-sync.xml
-share/seahorse/ui/seahorse-notify.xml
 share/seahorse/ui/seahorse-pgp-generate.xml
 share/seahorse/ui/seahorse-pgp-private-key-properties.xml
 share/seahorse/ui/seahorse-pgp-public-key-properties.xml
@@ -323,7 +264,9 @@ share/seahorse/ui/seahorse-signer.xml
 share/seahorse/ui/seahorse-ssh-generate.xml
 share/seahorse/ui/seahorse-ssh-key-properties.xml
 share/seahorse/ui/seahorse-ssh-upload.xml
-@exec %D/bin/update-desktop-database
-@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
 @unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
