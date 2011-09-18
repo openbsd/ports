@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/06/07 18:24:02 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/18 16:23:00 naddy Exp $
 
 COMMENT =	zuma-like arkade game
 DISTNAME =	zaz-1.0.0
@@ -39,6 +39,6 @@ CONFIGURE_ENV =		CFLAGS="$(CFLAGS) -I${X11BASE}/include \
 				-I$(X11BASE)/include/freetype2 -pthread" \
 			CXXFLAGS="$(CXXFLAGS) -I${X11BASE}/include \
 				-I$(X11BASE)/include/freetype2 -pthread" \
-			LDFLAGS="-pthread -L${LOCALBASE}/lib"
+			LDFLAGS="-pthread -L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
