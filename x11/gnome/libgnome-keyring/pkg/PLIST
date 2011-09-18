@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/09/12 07:28:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/09/18 20:11:40 ajacoutot Exp $
 %%SHARED%%
 include/gnome-keyring-1/
 include/gnome-keyring-1/gnome-keyring-memory.h
@@ -26,7 +26,6 @@ share/gtk-doc/html/gnome-keyring/gnome-keyring-Non-pageable-Memory.html
 share/gtk-doc/html/gnome-keyring/gnome-keyring-Result-Codes.html
 share/gtk-doc/html/gnome-keyring/gnome-keyring-Search-Functionality.html
 share/gtk-doc/html/gnome-keyring/gnome-keyring-Simple-Password-Storage.html
-share/gtk-doc/html/gnome-keyring/gnome-keyring.devhelp
 share/gtk-doc/html/gnome-keyring/gnome-keyring.devhelp2
 share/gtk-doc/html/gnome-keyring/home.png
 share/gtk-doc/html/gnome-keyring/index.html
@@ -41,9 +40,13 @@ share/locale/af/LC_MESSAGES/libgnome-keyring.mo
 share/locale/ar/
 share/locale/ar/LC_MESSAGES/
 share/locale/ar/LC_MESSAGES/libgnome-keyring.mo
+share/locale/as/
+share/locale/as/LC_MESSAGES/
+share/locale/as/LC_MESSAGES/libgnome-keyring.mo
 share/locale/ast/
 share/locale/ast/LC_MESSAGES/
 share/locale/ast/LC_MESSAGES/libgnome-keyring.mo
+share/locale/be/LC_MESSAGES/libgnome-keyring.mo
 share/locale/bg/LC_MESSAGES/libgnome-keyring.mo
 share/locale/bn/
 share/locale/bn/LC_MESSAGES/
@@ -76,6 +79,9 @@ share/locale/gu/
 share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/libgnome-keyring.mo
 share/locale/he/LC_MESSAGES/libgnome-keyring.mo
+share/locale/hi/
+share/locale/hi/LC_MESSAGES/
+share/locale/hi/LC_MESSAGES/libgnome-keyring.mo
 share/locale/hu/LC_MESSAGES/libgnome-keyring.mo
 share/locale/id/LC_MESSAGES/libgnome-keyring.mo
 share/locale/it/LC_MESSAGES/libgnome-keyring.mo
