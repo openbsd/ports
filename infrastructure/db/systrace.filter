@@ -47,7 +47,17 @@
 	native-fchdir: permit
 	native-fchflags: permit
 	native-fchmod: permit
+	native-fchmodat: filename match "/tmp" then permit
+	native-fchmodat: filename match "/var/tmp" then permit
+	native-fchmodat: filename match "${TMPDIR}" then permit
+	native-fchmodat: filename match "${WRKDIR}" then permit
+	native-fchmodat: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-fchown: permit
+	native-fchownat: filename match "/tmp" then permit
+	native-fchownat: filename match "/var/tmp" then permit
+	native-fchownat: filename match "${TMPDIR}" then permit
+	native-fchownat: filename match "${WRKDIR}" then permit
+	native-fchownat: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-fcntl: permit
 	native-flock: permit
 	native-fork: permit
@@ -108,6 +118,11 @@
 	native-link: filename match "${TMPDIR}" and filename[1] match "${TMPDIR}" then permit
 	native-link: filename match "${WRKDIR}" and filename[1] match "${WRKDIR}" then permit
 	native-link: filename match "/<non-existent filename>: *" then deny[enoent]
+	native-linkat: filename match "/tmp" and filename[1] match "/tmp" then permit
+	native-linkat: filename match "/var/tmp" and filename[1] match "/var/tmp" then permit
+	native-linkat: filename match "${TMPDIR}" and filename[1] match "${TMPDIR}" then permit
+	native-linkat: filename match "${WRKDIR}" and filename[1] match "${WRKDIR}" then permit
+	native-linkat: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-listen: permit
 	native-lseek: permit
 	native-madvise: permit
@@ -115,6 +130,10 @@
 	native-mknod: filename match "/var/tmp" then permit
 	native-mknod: filename match "${TMPDIR}" then permit
 	native-mknod: filename match "${WRKDIR}" then permit
+	native-mknodat: filename match "/tmp" then permit
+	native-mknodat: filename match "/var/tmp" then permit
+	native-mknodat: filename match "${TMPDIR}" then permit
+	native-mknodat: filename match "${WRKDIR}" then permit
 	native-mincore: permit
 	native-mlock: permit
 	native-mlockall: permit
@@ -145,6 +164,15 @@
 	native-rename: filename match "${TMPDIR}" and filename[1] match "${WRKDIR}" then permit
 	native-rename: filename match "${WRKDIR}" and filename[1] match "${WRKDIR}" then permit
 	native-rename: filename match "/<non-existent filename>: *" then deny[enoent]
+	native-renameat: filename match "/tmp" and filename[1] match "/tmp" then permit
+	native-renameat: filename match "/tmp" and filename[1] match "/var/tmp" then permit
+	native-renameat: filename match "/tmp" and filename[1] match "${WRKDIR}" then permit
+	native-renameat: filename match "/var/tmp" and filename[1] match "/var/tmp" then permit
+	native-renameat: filename match "/var/tmp" and filename[1] match "${WRKDIR}" then permit
+	native-renameat: filename match "${TMPDIR}" and filename[1] match "${TMPDIR}" then permit
+	native-renameat: filename match "${TMPDIR}" and filename[1] match "${WRKDIR}" then permit
+	native-renameat: filename match "${WRKDIR}" and filename[1] match "${WRKDIR}" then permit
+	native-renameat: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-rfork: permit
 	native-select: permit
 	native-semctl: permit
@@ -189,6 +217,12 @@
 	native-symlink: filename match "${WRKDIR}" then permit
 	native-symlink: filename match "/<non-existent filename>: *" then deny[enoent]
 	native-symlink: string eq "" and filename eq "" then deny[enoent]
+	native-symlinkat: filename match "/tmp" then permit
+	native-symlinkat: filename match "/var/tmp" then permit
+	native-symlinkat: filename match "${TMPDIR}" then permit
+	native-symlinkat: filename match "${WRKDIR}" then permit
+	native-symlinkat: filename match "/<non-existent filename>: *" then deny[enoent]
+	native-symlinkat: string eq "" and filename eq "" then deny[enoent]
 	native-sync: permit
 	native-umask: permit
 	native-utimensat: permit
