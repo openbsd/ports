@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.87 2011/09/18 06:46:07 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -16,7 +16,7 @@ COMMENT=		GNOME file manager
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.0.2
 
-REVISION=		4
+REVISION=		5
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -32,15 +32,15 @@ PERMIT_DISTFILES_FTP=	Yes
 
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB += GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp
+WANTLIB += GL X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += c cairo cairo-gobject drm execinfo exempi exif expat
 WANTLIB += fontconfig freetype gailutil-3 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += startup-notification-1 xcb xcb-atom xcb-aux xcb-event
-WANTLIB += xcb-render xcb-shm xml2 z X11-xcb
+WANTLIB += startup-notification-1 xcb xcb-aux xcb-render xcb-shm
+WANTLIB += xml2 z
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -60,6 +60,9 @@ LIB_DEPENDS=		x11/gnome/desktop \
 			graphics/libexif>=0.6.0 \
 			textproc/exempi
 
+# XXX add this line to LIB_DEPENDS when updating to 3.2
+# x11/gnome/tracker,-main,no_nautilus>=0.12.1
+
 DESKTOP_FILES=		Yes
 
 USE_GROFF=		Yes
@@ -70,7 +73,8 @@ CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--disable-packagekit \
 			--enable-libexif \
 			--enable-xmp \
-			--enable-introspection
+			--enable-introspection \
+			--enable-tracker
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
