@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_ac,v 1.1 2011/09/13 08:37:47 jasper Exp $
---- configure.ac.orig	Mon Sep  5 14:29:14 2011
-+++ configure.ac	Tue Sep 13 10:24:13 2011
-@@ -79,10 +79,7 @@ AC_PROG_LEX
+$OpenBSD: patch-configure_ac,v 1.2 2011/09/18 19:26:52 jasper Exp $
+--- configure.ac.orig	Sun Sep 18 15:14:26 2011
++++ configure.ac	Sun Sep 18 17:44:15 2011
+@@ -80,10 +80,7 @@ AC_PROG_LEX
  if test "$LEX" != "flex"; then
  	AC_MSG_ERROR(flex is required)
  fi
@@ -13,7 +13,7 @@ $OpenBSD: patch-configure_ac,v 1.1 2011/09/13 08:37:47 jasper Exp $
  AC_LANG([C])
  AC_LANG([C++])
  AC_PROG_CXX
-@@ -285,10 +282,7 @@ fi
+@@ -294,10 +291,7 @@ fi
  
  AM_CONDITIONAL(HAVE_PYTHON, [test x$have_python = xyes])
  
@@ -23,5 +23,5 @@ $OpenBSD: patch-configure_ac,v 1.1 2011/09/13 08:37:47 jasper Exp $
 -         [libgda-4.0 >= $GDA4_REQUIRED])])
 +PKG_CHECK_MODULES([PLUGIN_SYMBOL_DB], [])
  
- dnl Setup Anjuta Library flags
- dnl --------------------------
+ dnl Disable packagekit support
+ dnl -----------------------------------
