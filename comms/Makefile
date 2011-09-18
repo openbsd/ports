@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2011/06/21 19:15:28 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2011/09/18 20:28:17 landry Exp $
 # $FreeBSD: Makefile,v 1.27 1997/11/22 14:56:56 peter Exp $
 
      SUBDIR =
@@ -25,6 +25,7 @@
      SUBDIR += minicom
      SUBDIR += obexftp
      SUBDIR += openobex
+     SUBDIR += owx
      SUBDIR += p5-Device-Gsm
      SUBDIR += p5-Device-Modem
      SUBDIR += p5-Device-SerialPort
