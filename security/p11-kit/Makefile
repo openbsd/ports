@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/18 12:02:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/18 12:13:41 ajacoutot Exp $
 
 COMMENT=	library for loading and enumurating of PKCS\#11 modules
 
 DISTNAME=	p11-kit-0.6
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -34,7 +35,7 @@ CONFIGURE_ARGS += --disable-nls
 # some warning options not available with gcc < 4
 CONFIGURE_ARGS += --disable-more-warnings
 
-FAKE_FLAGS=	exampledir=${PREFIX}/share/examples/p11-kit
+FAKE_FLAGS=	exampledir=${PREFIX}/share/examples/p11-kit/pkcs11
 
 pre-configure:
 	perl -pi -e 's,-lpthread,-pthread,g' ${WRKSRC}/configure
