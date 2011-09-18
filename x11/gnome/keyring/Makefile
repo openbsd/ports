@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2011/09/18 20:12:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2011/09/18 21:32:25 ajacoutot Exp $
 
-COMMENT=		password agent for the GNOME project
+COMMENT=	password agent for the GNOME project
 
-GNOME_PROJECT=		gnome-keyring
-GNOME_VERSION=		3.1.92
+GNOME_PROJECT=	gnome-keyring
+GNOME_VERSION=	3.1.92
+
+REVISION=	0
 
 SHARED_LIBS +=  gck-1                0.0      # 0.0
 SHARED_LIBS +=  gcr-3                1.0      # 1.0
@@ -30,6 +32,8 @@ DESKTOP_FILES=	Yes
 
 # only required during build for parsing ASN.1 files
 BUILD_DEPENDS=	security/libtasn1
+
+RUN_DEPENDS=	misc/shared-mime-info
 
 LIB_DEPENDS=	security/libgcrypt \
 		x11/dbus \
