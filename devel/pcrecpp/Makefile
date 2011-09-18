@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/18 20:14:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/18 20:18:02 jasper Exp $
 
 COMMENT=	perl-compatible regular expression C++ library
 
@@ -20,7 +20,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		stdc++
+WANTLIB=		m pcre stdc++
 
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
