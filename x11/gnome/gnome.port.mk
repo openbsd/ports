@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.44 2011/09/19 08:47:20 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.45 2011/09/19 09:07:24 jasper Exp $
 #
 # Module for GNOME related ports
 #
@@ -74,9 +74,9 @@ MODGNOME_CONFIGURE_ARGS_vala=--disable-vala
 .   endif
 .endif
 
-CONFIGURE_ARGS+=${MODGNOME_CONFIGURE_ARGS_goi} \
-		${MODGNOME_CONFIGURE_ARGS_gtkdoc} \
-		${MODGNOME_CONFIGURE_ARGS_vala}
+#CONFIGURE_ARGS+=${MODGNOME_CONFIGURE_ARGS_goi} \
+#		${MODGNOME_CONFIGURE_ARGS_gtkdoc} \
+#		${MODGNOME_CONFIGURE_ARGS_vala}
 
 .if defined(MODGNOME_BUILD_DEPENDS)
 BUILD_DEPENDS+=		${MODGNOME_BUILD_DEPENDS}
