@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/19 08:27:22 jasper Exp $
 
 COMMENT=		RCS parsing library for Python
 
-CHANGESET=		40d822c6febd
+CHANGESET=		75d93404707d
 # we just make up a version since changesets are SHA1 hashes
-VERSION=		20060714
-DISTNAME=		rcsparse-${CHANGESET}
+VERSION=		20090807
+DISTNAME=		${CHANGESET}
 EXTRACT_SUFX=		.tar.bz2
 PKGNAME=		rcsparse-${VERSION}
-REVISION =		6
 CATEGORIES=     	devel
 
 PERMIT_PACKAGE_CDROM=	Yes
@@ -17,8 +16,8 @@ PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 HOMEPAGE=		http://ww2.fs.ei.tum.de/~corecode/hg/rcsparse
-MASTER_SITES=		http://hg.recoil.org/dist/
-WRKDIST=		${WRKDIR}/-corecode-hg-rcsparse-${CHANGESET}
+MASTER_SITES=		http://ww2.fs.ei.tum.de/~corecode/hg/rcsparse/archive/
+WRKDIST=		${WRKDIR}/rcsparse-${CHANGESET}
 
 USE_GMAKE=		Yes
 MODULES=		lang/python
