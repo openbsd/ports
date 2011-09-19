@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.42 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: gnome.port.mk,v 1.43 2011/09/19 07:55:43 jasper Exp $
 #
 # Module for GNOME related ports
 #
@@ -21,13 +21,59 @@ MODULES+=		textproc/intltool
 MODGNOME_RUN_DEPENDS+=	devel/desktop-file-utils
 .endif
 
-# Set to 'yes' if there are .xml GNOME help files under share/gnome/help/
-# in the pkg list and it calls gnome_help_display() -- gnome-doc-utils is
-# here to make sure we have a dependency on rarian (scrollkeeper-*) and
-# have access to the gnome-doc-* tools (not always needed but easier).
+# XXX: Move to MODGNOME_TOOLS=yelp Only here for 5-day plan backward compat.
 .if defined(MODGNOME_HELP_FILES) && ${MODGNOME_HELP_FILES:L} == "yes"
 MODGNOME_BUILD_DEPENDS+=x11/gnome/doc-utils
-MODGNOME_RUN_DEPENDS+=	x11/gnome/yelp
+MODGNOME_RUN_DEPENDS+= x11/gnome/yelp
+.endif
+
+USE_GMAKE?=		Yes
+
+FAKE_FLAGS +=	itlocaledir="${PREFIX}/share/locale/"
+
+# Use MODGNOME_TOOLS to indicate certain tools are needed for building bindings
+# or for ensuring documentation is available. If an option is not set, it's
+# explicitly disabled.
+# Currently supported tools are:
+# * gobject-introspection: Build and enable GObject Introspection data.
+# * gtk-doc: Enable to build the included docs.
+# * vala: Enable vala bindings.
+# * yelp: Use this if there are any files under share/gnome/help/
+#   in the pkg list and it calls gnome_help_display() -- gnome-doc-utils [Ais
+#   here to make sure we have a dependency on rarian (scrollkeeper-*) and
+#   have access to the gnome-doc-* tools (not always needed but easier).
+#
+# Please note that if you're using multi-packages, you have to use the
+# MODGNOME_RUN_DEPENDS_${tool} in your multi package RUN_DEPENDS.
+
+.if defined(MODGNOME_TOOLS)
+.   if ${MODGNOME_TOOLS:Mgobject-introspection}
+        CONFIGURE_ARGS+=--enable-introspection
+        MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection
+.   else
+        CONFIGURE_ARGS+=--disable-introspection
+.   endif
+
+.   if ${MODGNOME_TOOLS:Mgtk-doc}
+        CONFIGURE_ARGS+=--enable-gtk-doc
+        MODGNOME_BUILD_DEPENDS+=textproc/gtk-doc
+.   else
+        CONFIGURE_ARGS+=--disable-gtk-doc
+.   endif
+
+.   if ${MODGNOME_TOOLS:Mvala}
+        CONFIGURE_ARGS+=--enable-vala
+        MODGNOME_BUILD_DEPENDS+=lang/vala
+.   else
+        CONFIGURE_ARGS+=--disable-vala
+.   endif
+
+.   if ${MODGNOME_TOOLS:Myelp}
+        MODGNOME_BUILD_DEPENDS+=x11/gnome/doc-utils
+	_yelp_depend=x11/gnome/yelp
+        MODGNOME_RUN_DEPENDS+=${_yelp_depend}
+        MODGNOME_RUN_DEPENDS_yelp=${_yelp_depend}
+.   endif
 .endif
 
 .if defined(MODGNOME_BUILD_DEPENDS)
@@ -37,7 +83,3 @@ BUILD_DEPENDS+=		${MODGNOME_BUILD_DEPENDS}
 .if defined(MODGNOME_RUN_DEPENDS)
 RUN_DEPENDS+=		${MODGNOME_RUN_DEPENDS}
 .endif
-
-USE_GMAKE?=		Yes
-
-FAKE_FLAGS +=	itlocaledir="${PREFIX}/share/locale/"
