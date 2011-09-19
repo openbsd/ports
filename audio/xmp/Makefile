@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2011/09/16 08:26:11 espie Exp $
+# $OpenBSD: Makefile,v 1.45 2011/09/19 13:48:15 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -67,6 +67,7 @@ CONFIGURE_STYLE=	gnu
 MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/scripts
 CONFIGURE_ARGS+=	--disable-oss \
 			--disable-alsa \
+			--disable-pulseaudio \
 			--enable-audacious-plugin \
 			--enable-bmp-plugin \
 			--enable-xmms-plugin
