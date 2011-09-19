@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.43 2011/09/19 07:55:43 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.44 2011/09/19 08:47:20 jasper Exp $
 #
 # Module for GNOME related ports
 #
@@ -35,7 +35,7 @@ FAKE_FLAGS +=	itlocaledir="${PREFIX}/share/locale/"
 # or for ensuring documentation is available. If an option is not set, it's
 # explicitly disabled.
 # Currently supported tools are:
-# * gobject-introspection: Build and enable GObject Introspection data.
+# * goi: Build and enable GObject Introspection data.
 # * gtk-doc: Enable to build the included docs.
 # * vala: Enable vala bindings.
 # * yelp: Use this if there are any files under share/gnome/help/
@@ -46,35 +46,37 @@ FAKE_FLAGS +=	itlocaledir="${PREFIX}/share/locale/"
 # Please note that if you're using multi-packages, you have to use the
 # MODGNOME_RUN_DEPENDS_${tool} in your multi package RUN_DEPENDS.
 
+MODGNOME_CONFIGURE_ARGS_gtkdoc=--disable-gtk-doc
+MODGNOME_CONFIGURE_ARGS_goi=--disable-introspection
+MODGNOME_CONFIGURE_ARGS_vala=--disable-vala
+
 .if defined(MODGNOME_TOOLS)
-.   if ${MODGNOME_TOOLS:Mgobject-introspection}
-        CONFIGURE_ARGS+=--enable-introspection
+.   if ${MODGNOME_TOOLS:Mgoi}
+        MODGOME_CONFIGURE_ARGS_goi+=--enable-introspection
         MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection
-.   else
-        CONFIGURE_ARGS+=--disable-introspection
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgtk-doc}
-        CONFIGURE_ARGS+=--enable-gtk-doc
+        MODGNOME_CONFIGURE_ARGS_gtkdoc+=--enable-gtk-doc
         MODGNOME_BUILD_DEPENDS+=textproc/gtk-doc
-.   else
-        CONFIGURE_ARGS+=--disable-gtk-doc
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mvala}
-        CONFIGURE_ARGS+=--enable-vala
+        MODGNOME_CONFIGURE_ARGS_vala+=--enable-vala
         MODGNOME_BUILD_DEPENDS+=lang/vala
-.   else
-        CONFIGURE_ARGS+=--disable-vala
 .   endif
 
 .   if ${MODGNOME_TOOLS:Myelp}
         MODGNOME_BUILD_DEPENDS+=x11/gnome/doc-utils
-	_yelp_depend=x11/gnome/yelp
+        _yelp_depend=x11/gnome/yelp
         MODGNOME_RUN_DEPENDS+=${_yelp_depend}
         MODGNOME_RUN_DEPENDS_yelp=${_yelp_depend}
 .   endif
 .endif
+
+CONFIGURE_ARGS+=${MODGNOME_CONFIGURE_ARGS_goi} \
+		${MODGNOME_CONFIGURE_ARGS_gtkdoc} \
+		${MODGNOME_CONFIGURE_ARGS_vala}
 
 .if defined(MODGNOME_BUILD_DEPENDS)
 BUILD_DEPENDS+=		${MODGNOME_BUILD_DEPENDS}
