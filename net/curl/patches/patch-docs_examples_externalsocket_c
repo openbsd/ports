@@ -1,0 +1,11 @@
+$OpenBSD: patch-docs_examples_externalsocket_c,v 1.1 2011/09/19 10:25:01 naddy Exp $
+--- docs/examples/externalsocket.c.orig	Mon Sep 19 11:20:13 2011
++++ docs/examples/externalsocket.c	Mon Sep 19 11:20:34 2011
+@@ -33,6 +33,7 @@
+ 
+ #include <sys/socket.h>       /*  socket definitions        */
+ #include <sys/types.h>        /*  socket types              */
++#include <netinet/in.h>
+ #include <arpa/inet.h>        /*  inet (3) funtions         */
+ #include <unistd.h>           /*  misc. UNIX functions      */
+ 
