@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2011/09/16 10:02:36 espie Exp $
+# $OpenBSD: Makefile,v 1.79 2011/09/19 07:31:45 ajacoutot Exp $
 
 COMMENT=	technical diagrams drawing tool
 
@@ -37,7 +37,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		lang/python
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng \

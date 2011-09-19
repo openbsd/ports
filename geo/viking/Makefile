@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 09:48:11 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/19 07:31:45 ajacoutot Exp $
 
 COMMENT =	GPS track manager
 
@@ -23,7 +23,7 @@ MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=viking/}
 MODULES =	devel/gettext x11/gnome
 
 CONFIGURE_STYLE =	gnu
-DESKTOP_FILES =		Yes
+MODGNOME_DESKTOP_FILE =		Yes
 MODGNOME_HELP_FILES =	Yes
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

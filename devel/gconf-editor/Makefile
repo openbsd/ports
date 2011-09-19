@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2011/09/19 07:31:45 ajacoutot Exp $
 
 COMMENT=	editor for the GConf configuration system
 
@@ -39,7 +39,7 @@ LIB_DEPENDS=	x11/gtk+3
 RUN_DEPENDS=	devel/gconf2,-polkit
 
 USE_GROFF=	Yes
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	gconf-editor
 

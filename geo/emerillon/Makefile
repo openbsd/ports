@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/19 07:31:45 ajacoutot Exp $
 
 COMMENT =	map viewer using Openstreetmap data
 
@@ -20,7 +20,7 @@ PERMIT_DISTFILES_FTP =	Yes
 EXTRACT_SUFX=		.tar.bz2
 
 CONFIGURE_STYLE =	gnu
-DESKTOP_FILES =		yes
+MODGNOME_DESKTOP_FILE =		yes
 
 MODULES=	devel/gettext \
 		x11/gnome \

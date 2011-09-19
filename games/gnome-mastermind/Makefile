@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/19 07:31:45 ajacoutot Exp $
 
 COMMENT =	Mastermind clone reflexion game
 
@@ -22,7 +22,7 @@ EXTRACT_SUFX=		.tar.bz2
 MODULES =	devel/gettext \
 		x11/gnome
 
-DESKTOP_FILES =	Yes
+MODGNOME_DESKTOP_FILE =	Yes
 LIB_DEPENDS =	x11/gtk+2 \
 		devel/gconf2
 RUN_DEPENDS +=	x11/gnome/librsvg

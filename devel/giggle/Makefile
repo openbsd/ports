@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/19 07:31:45 ajacoutot Exp $
 
 COMMENT=	gtk-based git repository viewer
 CATEGORIES=	devel x11
@@ -37,7 +37,7 @@ BUILD_DEPENDS+=	devel/git
 LIB_DEPENDS=	devel/vte \
 		x11/gtksourceview
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+=--disable-evolution-data-server
 

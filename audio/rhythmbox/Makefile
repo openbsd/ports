@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2011/09/17 14:15:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.81 2011/09/19 07:31:45 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
@@ -56,7 +56,7 @@ RUN_DEPENDS=		multimedia/gstreamer-0.10/py-gstreamer \
 # needed for sndio(7) support
 RUN_DEPENDS+=		multimedia/gstreamer-0.10/plugins-good
 
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGNOME_HELP_FILES=	Yes
 
 CONFIGURE_STYLE= 	gnu

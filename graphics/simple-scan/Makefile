@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 10:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/19 07:31:46 ajacoutot Exp $
 
 COMMENT=	simple scanning utility
 
@@ -39,7 +39,7 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	graphics/sane-backends \
 		x11/gtk+2
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_HELP_FILES= Yes
 MODGCONF2_SCHEMAS_DIR= simple-scan
 

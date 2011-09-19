@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 10:02:38 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/19 07:31:46 ajacoutot Exp $
 
 COMMENT =	digital photo organizer
 
@@ -28,7 +28,7 @@ WANTLIB += xcb xcb-render xcb-shm xml2 z
 MODULES =	devel/gettext x11/gnome
 
 MODGNOME_HELP_FILES =	Yes
-DESKTOP_FILES =		yes
+MODGNOME_DESKTOP_FILE =		yes
 
 RUN_DEPENDS +=	x11/gnome/librsvg
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 14:41:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/19 07:31:45 ajacoutot Exp $
 
 COMMENT=	brain teaser game
 
@@ -29,7 +29,7 @@ RUN_DEPENDS=	devel/mono-addins \
 		x11/gnome/librsvg \
 		x11/gnome/mono-gnome
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_HELP_FILES= Yes
 
 CONFIGURE_STYLE=gnu

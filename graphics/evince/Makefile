@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2011/09/16 10:02:36 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2011/09/19 07:31:45 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -100,7 +100,7 @@ LIB_DEPENDS-nautilus= ${BASE_PKGPATH} \
 RUN_DEPENDS-nautilus=
 
 MODGNOME_HELP_FILES= 	Yes
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 
 LIBTOOL_FLAGS=	--tag=disable-static
 

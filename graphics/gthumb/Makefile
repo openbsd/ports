@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/09/16 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2011/09/19 07:31:46 ajacoutot Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
@@ -47,7 +47,7 @@ LIB_DEPENDS=	devel/json-glib \
 RUN_DEPENDS=	misc/shared-mime-info
 
 MODGNOME_HELP_FILES=	Yes
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	gthumb
 
 CONFIGURE_STYLE=gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2011/09/19 07:31:45 ajacoutot Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
@@ -45,7 +45,7 @@ LIB_DEPENDS=	x11/gtk+3 \
 RUN_DEPENDS=	x11/gnome/devhelp \
 		devel/py-gobject
 
-DESKTOP_FILES= 	Yes
+MODGNOME_DESKTOP_FILE= 	Yes
 MODGNOME_HELP_FILES=	Yes
 
 CONFIGURE_STYLE=	gnu
