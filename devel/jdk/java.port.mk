@@ -1,4 +1,4 @@
-# $OpenBSD: java.port.mk,v 1.26 2011/09/01 17:13:51 jasper Exp $
+# $OpenBSD: java.port.mk,v 1.27 2011/09/19 20:03:20 jasper Exp $
 
 # Set MODJAVA_VER to x.y or x.y+ based on the version
 # of the jdk needed for the port. x.y  means any x.y jdk.
@@ -96,6 +96,10 @@ MODJAVA_JRERUN?=no
 .  endif
 .else
    ERRORS+="Fatal: MODJAVA_VER must be set to a valid value."
+.endif
+
+.if defined(JAVA_HOME)
+   SUBST_VARS += JAVA_HOME
 .endif
 
 RUN_DEPENDS+= ${MODJAVA_RUN_DEPENDS}

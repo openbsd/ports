@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 09:24:51 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/19 20:03:20 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -31,7 +31,6 @@ BUILD_DEPENDS=		${MODJAVA_RUN_DEPENDS}
 RUN_DEPENDS=		devel/desktop-file-utils
 
 NO_REGRESS=		Yes
-SUBST_VARS+=		JAVA_HOME
 
 WRKDIST=		${WRKDIR}/idea-IC-95.627
 IJ=			${PREFIX}/intellij
