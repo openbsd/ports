@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2011/09/19 19:13:17 jasper Exp $
 
 COMMENT=	C++ interface for gtk2+
 
@@ -20,8 +20,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender expat fontconfig freetype
