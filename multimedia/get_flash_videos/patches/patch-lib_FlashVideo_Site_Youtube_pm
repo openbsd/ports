@@ -1,7 +1,7 @@
-$OpenBSD: patch-lib_FlashVideo_Site_Youtube_pm,v 1.1 2011/08/16 08:23:09 sthen Exp $
---- lib/FlashVideo/Site/Youtube.pm.orig	Fri Aug  5 18:00:19 2011
-+++ lib/FlashVideo/Site/Youtube.pm	Fri Aug  5 18:00:42 2011
-@@ -133,11 +133,61 @@ sub find_video {
+$OpenBSD: patch-lib_FlashVideo_Site_Youtube_pm,v 1.2 2011/09/19 12:40:06 sthen Exp $
+--- lib/FlashVideo/Site/Youtube.pm.orig	Tue Jul 12 10:01:47 2011
++++ lib/FlashVideo/Site/Youtube.pm	Mon Sep 19 13:30:48 2011
+@@ -133,6 +133,9 @@ sub find_video {
      } elsif($info{fmt_url_map}) {
        debug "Using fmt_url_map method from info";
        return $self->download_fmt_map($prefs, $browser, $title, \%info, $info{fmt_url_map});
@@ -11,10 +11,10 @@ $OpenBSD: patch-lib_FlashVideo_Site_Youtube_pm,v 1.1 2011/08/16 08:23:09 sthen E
      }
    }
  
-   # Try old get_video method, just incase.
+@@ -140,6 +143,53 @@ sub find_video {
    return download_get_video($browser, $prefs, $video_id, $title, $t);
-+}
-+
+ }
+ 
 +sub download_url_encoded_fmt_stream_map {
 +  my($self, $prefs, $browser, $title, $info, $fmt_map) = @_;
 +
@@ -60,6 +60,17 @@ $OpenBSD: patch-lib_FlashVideo_Site_Youtube_pm,v 1.1 2011/08/16 08:23:09 sthen E
 +  }
 +  
 +  return $map;
- }
- 
++}
++
  sub download_fmt_map {
+   my($self, $prefs, $browser, $title, $info, $fmt_map) = @_;
+ 
+@@ -341,7 +391,7 @@ sub get_youtube_video_info {
+       "http://www.youtube.com/get_video_info?&video_id=%s&el=$el&ps=default&eurl=%s&hl=en_US&t=%s";
+ 
+     my $video_info_url = sprintf $video_info_url_template,
+-      uri_escape($video_id), uri_escape($url), uri_escape($t);
++      uri_escape($video_id), uri_escape($url), uri_escape_utf8($t);
+ 
+     debug "get_youtube_video_info: $video_info_url";
+ 
