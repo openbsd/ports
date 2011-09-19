@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/19 07:39:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/19 08:23:05 ajacoutot Exp $
 
 COMMENT =	lightweight mail user agent
 
@@ -21,7 +21,7 @@ MASTER_SITES =	http://distfiles.nl/
 EXTRACT_SUFX =	.tar.gz
 MODULES =	x11/xfce4 devel/waf
 
-MODGNOME_DESKTOP_FILE =	Yes
+MODXFCE_DESKTOP_FILE =	Yes
 NO_REGRESS =	Yes
 
 LIB_DEPENDS =	www/webkit>=1.4.0v0 \
