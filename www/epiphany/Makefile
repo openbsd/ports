@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2011/09/16 12:00:06 espie Exp $
+# $OpenBSD: Makefile,v 1.67 2011/09/19 07:39:06 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -58,7 +58,7 @@ MODULES=	devel/dconf \
 		x11/gnome
 
 LIBTOOL_FLAGS=		--tag=disable-static
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGNOME_HELP_FILES= 	Yes
 
 CONFIGURE_STYLE=gnu

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2011/09/16 10:31:22 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2011/09/19 07:39:05 ajacoutot Exp $
 
 COMMENT=		spreadsheet application for GNOME
 
@@ -38,7 +38,7 @@ LIB_DEPENDS=		goffice->=0.8.17,<0.8.18:devel/goffice \
 			devel/libgsf \
 			x11/gtk+2
 
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	gnumeric
 

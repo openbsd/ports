@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/17 07:44:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/19 07:39:05 ajacoutot Exp $
 
 COMMENT=		Gtk-based GUI client for Twitter
 
@@ -56,6 +56,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 
 .include <bsd.port.mk>

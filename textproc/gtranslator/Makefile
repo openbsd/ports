@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 11:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/19 07:39:06 ajacoutot Exp $
 
 BROKEN=		does not compile with new libgda
 
@@ -50,7 +50,7 @@ LIB_DEPENDS=	x11/gnome/gdl \
 		devel/libunique \
 		devel/json-glib
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_HELP_FILES= Yes
 
 CONFIGURE_STYLE=gnu

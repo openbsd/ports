@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.128 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.129 2011/09/19 07:39:05 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -114,7 +114,7 @@ RUN_DEPENDS-plugins=	${MODGCONF2_RUN_DEPENDS} \
 			multimedia/gstreamer-0.10/plugins-good
 
 MODGNOME_HELP_FILES=	Yes
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	evolution
 
 YACC=			bison

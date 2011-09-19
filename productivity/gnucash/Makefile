@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.40 2011/09/19 07:39:05 ajacoutot Exp $
 
 SHARED_ONLY =	Yes
 
@@ -54,7 +54,7 @@ MODULES =	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-DESKTOP_FILES =	Yes
+MODGNOME_DESKTOP_FILE =	Yes
 MODGCONF2_SCHEMAS_DIR = gnucash
 MODGNOME_HELP_FILES =	Yes
 

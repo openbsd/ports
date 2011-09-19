@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/19 07:39:05 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -52,7 +52,7 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		devel/libsoup,-gnome \
 			mail/evolution,-main>=3.0.2
 
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	evolution-rss
 
 CONFIGURE_STYLE=	gnu

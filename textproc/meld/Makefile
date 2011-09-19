@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 11:41:41 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/19 07:39:06 ajacoutot Exp $
 
 COMMENT=	graphical diff and merge tool
 
@@ -25,7 +25,7 @@ MODULES=	lang/python \
 RUN_DEPENDS=	x11/py-gtk2
 
 MODGNOME_HELP_FILES= Yes
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 
 SUBST_VARS+=	MODPY_SITEPKG
 CONFIGURE_STYLE=none

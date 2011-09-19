@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/19 07:39:05 ajacoutot Exp $
 
 COMMENT =	labels and business card designer
 
@@ -46,7 +46,7 @@ LIB_DEPENDS =	x11/gtk+3 \
 RUN_DEPENDS =	misc/shared-mime-info
 
 MODGNOME_HELP_FILES =	Yes
-DESKTOP_FILES =		Yes
+MODGNOME_DESKTOP_FILE =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
