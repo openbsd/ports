@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.141 2011/07/17 20:14:30 sthen Exp $
+# $OpenBSD: Makefile,v 1.142 2011/09/19 20:22:36 naddy Exp $
 # $FreeBSD: Makefile,v 1.121 1997/11/17 10:14:33 tg Exp $
 #
 
@@ -6,8 +6,8 @@
      SUBDIR += WordGenerator
      SUBDIR += amanda
      SUBDIR += astrolog
+     SUBDIR += bible-kjv
      SUBDIR += brltty
-     SUBDIR += brs
      SUBDIR += bsdiff
      SUBDIR += buffer
      SUBDIR += calentool
