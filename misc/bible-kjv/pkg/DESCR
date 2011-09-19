@@ -1,0 +1,6 @@
+bible-kjv (formerly Bible Retrieval System) is a text-retrieval
+program and user interface which is primarily designed to operate
+on the included text and concordance of the King James translation
+of the Bible, although it could, in principle, be used for any text.
+The search/browse engine allows searching and reading passages from
+scripture.  Includes full concordance.

@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/19 20:20:42 naddy Exp $
+@bin bin/bible
+@bin bin/randverse
+lib/bible.data
+lib/bible.data.conc
+@man man/man1/bible.1
+@man man/man1/randverse.1

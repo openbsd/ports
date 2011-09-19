@@ -1,0 +1,12 @@
+$OpenBSD: patch-makeindex_c,v 1.1.1.1 2011/09/19 20:20:42 naddy Exp $
+--- makeindex.c.orig	Sun Sep 18 17:41:45 2011
++++ makeindex.c	Sun Sep 18 17:41:59 2011
+@@ -94,7 +94,7 @@
+ int main(int argc,char **argv)
+ {
+     FILE	*fp;
+-    long	t;
++    time_t	t;
+     long	cur_line;
+     long	offset;
+     char	textbuff[TBSIZE];
