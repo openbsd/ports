@@ -1,27 +1,24 @@
-# $OpenBSD: Makefile,v 1.48 2011/09/16 11:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2011/09/19 15:59:57 sthen Exp $
 
 COMMENT-main=		UPS monitoring program supporting many brands
 COMMENT-cgi=		CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=		driver for monitoring UPS via SNMP
 COMMENT-xml=		driver for monitoring UPS via XML/HTTP
 
-DISTNAME=		nut-2.6.1
-REVISION-main=		0
-REVISION-cgi =		0
-REVISION-snmp =		0
-REVISION-xml =		0
+DISTNAME=		nut-2.6.2
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-cgi=		${DISTNAME:S/-/-cgi-/}
 PKGNAME-snmp=		${DISTNAME:S/-/-snmp-/}
 PKGNAME-xml=		${DISTNAME:S/-/-xml-/}
 
+SHARED_LIBS +=  upsclient            1.0      # 1.0
+SHARED_LIBS +=  nutscan              0.0      # 1.0
+
 CATEGORIES=		sysutils
 HOMEPAGE=		http://www.networkupstools.org/
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
-
-SHARED_LIBS+=		upsclient 1.0
 
 # GPLv2+, some scripts (not packaged) are GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -29,16 +26,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-COMMON =	c crypto
-WANTLIB-main +=	${COMMON} m ssl usb
+COMMON +=	c crypto pthread
+WANTLIB-main +=	${COMMON} ${WANTLIB} asn1 expat gssapi krb5 m ssl usb z
 WANTLIB-xml +=	${COMMON} ${WANTLIB} asn1 expat gssapi krb5 neon ssl z
-WANTLIB-cgi +=	${COMMON} ${WANTLIB} X11 Xau Xdmcp expat fontconfig
-WANTLIB-cgi +=	freetype gd jpeg m png pthread-stubs ssl upsclient xcb z
-WANTLIB-snmp +=	${COMMON} netsnmp
+WANTLIB-cgi +=	${COMMON} ${WANTLIB} X11 expat fontconfig
+WANTLIB-cgi +=	freetype gd jpeg m png ssl upsclient xcb z
+WANTLIB-snmp +=	${COMMON} m netsnmp
 
 MASTER_SITES=		${HOMEPAGE}source/2.6/
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext lang/python
+MODPY_RUNDEP=		No
 BUILD_DEPENDS+=		textproc/asciidoc \
 			textproc/docbook \
 			textproc/docbook-xsl
@@ -112,6 +110,7 @@ NO_REGRESS=		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/conf/upssched.conf.sample.in
+	ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${WEB_ROOT}/conf/nut/

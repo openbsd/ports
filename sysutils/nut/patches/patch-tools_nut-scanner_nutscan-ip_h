@@ -1,0 +1,11 @@
+$OpenBSD: patch-tools_nut-scanner_nutscan-ip_h,v 1.1 2011/09/19 15:59:57 sthen Exp $
+--- tools/nut-scanner/nutscan-ip.h.orig	Mon Sep 19 09:29:07 2011
++++ tools/nut-scanner/nutscan-ip.h	Mon Sep 19 09:29:42 2011
+@@ -19,6 +19,7 @@
+ #ifndef SCAN_IP
+ #define SCAN_IP
+ 
++#include <sys/types.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <arpa/inet.h>

@@ -1,14 +1,3 @@
-Once you have the config files under ${SYSCONFDIR}/nut set up properly, the
-following block can be added to your /etc/rc.local file to start nut.
-
-# Start Nut
-if [ -x ${PREFIX}/bin/upsdrvctl ]; then
-    echo -n ' nut'
-    ${PREFIX}/bin/upsdrvctl start > /dev/null 2>&1
-    ${PREFIX}/sbin/upsd > /dev/null 2>&1
-    ${PREFIX}/sbin/upsmon > /dev/null 2>&1
-fi
-
 The userid running NUT (normally ${NUT_USER}) must have access to the relevant
 device nodes. For a UPS connected by RS232, either add ${NUT_USER} to group
 "dialer" or change group of the relevant /dev/tty* device to ${NUT_USER}.

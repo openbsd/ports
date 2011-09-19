@@ -1,0 +1,17 @@
+#!/bin/sh
+#
+# $OpenBSD: upsmon.rc,v 1.1 2011/09/19 15:59:57 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/upsmon"
+
+. /etc/rc.d/rc.subr
+
+rc_reload() {
+	${daemon} -c reload
+}
+
+rc_stop() {
+	${daemon} -c stop
+}
+
+rc_cmd $1

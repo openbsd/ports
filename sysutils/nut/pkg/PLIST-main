@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.10 2011/06/02 10:37:08 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.11 2011/09/19 15:59:57 sthen Exp $
 @conflict upsd-*
 @pkgpath sysutils/nut
 @pkgpath sysutils/nut,no_cgi
@@ -8,6 +8,7 @@
 @newuser ${NUT_USER}:${NUT_ID}:${NUT_ID}::UPS User:/var/empty:/sbin/nologin
 %%SHARED%%
 @bin bin/apcsmart
+@bin bin/apcsmart-old
 @bin bin/bcmxcp
 @bin bin/bcmxcp_usb
 @bin bin/belkin
@@ -35,6 +36,7 @@
 @bin bin/mge-utalk
 @bin bin/microdowell
 @bin bin/newmge-shut
+@bin bin/nut-scanner
 @bin bin/oneac
 @bin bin/optiups
 @bin bin/powercom
@@ -61,9 +63,11 @@ bin/upssched-cmd
 @comment html/header.html
 @comment html/index.html
 html/nut-banner.png
+lib/libnutscan.a
+lib/libnutscan.la
+@lib lib/libnutscan.so.${LIBnutscan_VERSION}
 lib/libupsclient.a
 lib/libupsclient.la
-lib/pkgconfig/
 @man man/man5/hosts.conf.5
 @man man/man5/nut.conf.5
 @man man/man5/ups.conf.5
@@ -73,6 +77,7 @@ lib/pkgconfig/
 @man man/man5/upssched.conf.5
 @man man/man5/upsset.conf.5
 @man man/man5/upsstats.html.5
+@man man/man8/apcsmart-old.8
 @man man/man8/apcsmart.8
 @man man/man8/bcmxcp.8
 @man man/man8/bcmxcp_usb.8
@@ -98,6 +103,7 @@ lib/pkgconfig/
 @man man/man8/mge-shut.8
 @man man/man8/mge-utalk.8
 @man man/man8/microdowell.8
+@man man/man8/nut-scanner.8
 @man man/man8/nutupsdrv.8
 @man man/man8/oneac.8
 @man man/man8/optiups.8
@@ -209,3 +215,5 @@ share/examples/nut/upsset.conf.sample
 share/ups/
 share/ups/cmdvartab
 share/ups/driver.list
+@rcscript ${RCDIR}/upsd
+@rcscript ${RCDIR}/upsmon

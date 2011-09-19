@@ -1,0 +1,15 @@
+$OpenBSD: patch-tools_nut-usbinfo_pl,v 1.1 2011/09/19 15:59:57 sthen Exp $
+
+skip backup copy of patched files
+
+--- tools/nut-usbinfo.pl.orig	Mon Sep 19 09:32:58 2011
++++ tools/nut-usbinfo.pl	Mon Sep 19 09:34:32 2011
+@@ -211,7 +211,7 @@ sub gen_usb_files
+ 
+ sub find_usbdevs
+ {
+-	return $File::Find::prune = 1 if $_ eq '.svn';
++	return $File::Find::prune = 1 if $_ eq '.svn' or m/.*\.orig/;
+ 
+ 	my $nameFile=$_;
+ 	my $lastComment="";
