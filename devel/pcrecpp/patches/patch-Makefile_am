@@ -1,0 +1,92 @@
+$OpenBSD: patch-Makefile_am,v 1.1 2011/09/19 12:29:05 jasper Exp $
+--- Makefile.am.orig	Mon Sep 19 13:42:45 2011
++++ Makefile.am	Mon Sep 19 13:46:16 2011
+@@ -162,51 +162,14 @@ pcre_chartables.c: $(srcdir)/pcre_chartables.c.dist
+ endif # WITH_REBUILD_CHARTABLES
+ 
+ 
+-## The main pcre library
+-lib_LTLIBRARIES += libpcre.la
+-libpcre_la_SOURCES = \
+-  pcre_compile.c \
+-  pcre_config.c \
+-  pcre_dfa_exec.c \
+-  pcre_exec.c \
+-  pcre_fullinfo.c \
+-  pcre_get.c \
+-  pcre_globals.c \
+-  pcre_info.c \
+-  pcre_internal.h \
+-  pcre_maketables.c \
+-  pcre_newline.c \
+-  pcre_ord2utf8.c \
+-  pcre_refcount.c \
+-  pcre_study.c \
+-  pcre_tables.c \
+-  pcre_try_flipped.c \
+-  pcre_ucd.c \
+-  pcre_valid_utf8.c \
+-  pcre_version.c \
+-  pcre_xclass.c \
+-  ucp.h
+-
+-## This file is generated as part of the building process, so don't distribute.
+-nodist_libpcre_la_SOURCES = \
+-  pcre_chartables.c
+-
+ # The pcre_printint.src file is #included by some source files, so it must be
+ # distributed. The pcre_chartables.c.dist file is the default version of
+ # pcre_chartables.c, used unless --enable-rebuild-chartables is specified.
+ EXTRA_DIST += pcre_printint.src pcre_chartables.c.dist
+ 
+-libpcre_la_LDFLAGS = $(EXTRA_LIBPCRE_LDFLAGS)
+ 
+ CLEANFILES += pcre_chartables.c
+ 
+-## A version of the main pcre library that has a posix re API.
+-lib_LTLIBRARIES += libpcreposix.la
+-libpcreposix_la_SOURCES = \
+-  pcreposix.c
+-libpcreposix_la_LDFLAGS = $(EXTRA_LIBPCREPOSIX_LDFLAGS)
+-libpcreposix_la_LIBADD = libpcre.la
+-
+ ## There's a C++ library as well.
+ if WITH_PCRE_CPP
+ 
+@@ -216,8 +179,7 @@ libpcrecpp_la_SOURCES = \
+   pcrecpp.cc \
+   pcre_scanner.cc \
+   pcre_stringpiece.cc
+-libpcrecpp_la_LDFLAGS = $(EXTRA_LIBPCRECPP_LDFLAGS)
+-libpcrecpp_la_LIBADD = libpcre.la
++libpcrecpp_la_LDFLAGS = $(EXTRA_LIBPCRECPP_LDFLAGS) -lpcre
+ 
+ TESTS += pcrecpp_unittest
+ noinst_PROGRAMS += pcrecpp_unittest
+@@ -246,13 +208,13 @@ dist_noinst_SCRIPTS += RunTest
+ EXTRA_DIST += RunTest.bat
+ bin_PROGRAMS += pcretest
+ pcretest_SOURCES = pcretest.c
+-pcretest_LDADD = libpcreposix.la $(LIBREADLINE)
++pcretest_LDADD = -lpcreposix $(LIBREADLINE)
+ 
+ TESTS += RunGrepTest
+ dist_noinst_SCRIPTS += RunGrepTest
+ bin_PROGRAMS += pcregrep
+ pcregrep_SOURCES = pcregrep.c
+-pcregrep_LDADD = libpcreposix.la $(LIBZ) $(LIBBZ2)
++pcregrep_LDADD = -lpcreposix $(LIBZ) $(LIBBZ2)
+ 
+ EXTRA_DIST += \
+   testdata/grepinput \
+@@ -337,9 +299,8 @@ pcre.dll: $(DLL_OBJS)
+ 
+ # We have .pc files for pkg-config users.
+ pkgconfigdir = $(libdir)/pkgconfig
+-pkgconfig_DATA = libpcre.pc libpcreposix.pc
+ if WITH_PCRE_CPP
+-pkgconfig_DATA += libpcrecpp.pc
++pkgconfig_DATA = libpcrecpp.pc
+ endif
+ 
+ dist_man_MANS = \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/18 20:18:02 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/19 12:29:05 jasper Exp $
 
 COMMENT=	perl-compatible regular expression C++ library
 
@@ -20,7 +20,13 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=		m pcre stdc++
+WANTLIB=		c m pcre pcreposix stdc++
+
+AUTOMAKE_VERSION=	1.11
+AUTOCONF_VERSION=	2.68
+
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 
 USE_LIBTOOL=		Yes
 USE_GROFF =		Yes
@@ -36,8 +42,13 @@ CFLAGS+=	-O0
 
 HEADERS=		pcrecpparg.h pcre_stringpiece.h pcrecpp.h pcre_scanner.h
 
+pre-configure:
+	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=1.11 AUTOCONF_VERSION=2.68 \
+			autoconf
+	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=1.11 AUTOCONF_VERSION=2.68 \
+			automake
+
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/pcre-config ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/pcre{grep,test} ${PREFIX}/bin/
 .for h in ${HEADERS}
 	${INSTALL_DATA} ${WRKSRC}/$h ${PREFIX}/include/

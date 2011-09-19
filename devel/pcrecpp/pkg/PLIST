@@ -1,9 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/18 20:14:58 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/09/19 12:29:05 jasper Exp $
 @conflict pcre-*
 %%SHARED%%
-bin/pcre-config
-bin/pcregrep
-bin/pcretest
+@bin bin/pcregrep
+@bin bin/pcretest
 include/pcre_scanner.h
 include/pcre_stringpiece.h
 include/pcrecpp.h
