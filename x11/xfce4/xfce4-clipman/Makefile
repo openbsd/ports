@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2011/09/19 07:53:15 ajacoutot Exp $
 
 COMMENT=	Xfce4 clipboard history panel plugin
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
-MODGNOME_DESKTOP_FILE=	Yes
+MODXFCE_DESKTOP_FILE=	Yes
 
 LIB_DEPENDS+=	x11/xfce4/xfconf \
 		x11/xfce4/libxfcegui4 \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/19 07:53:15 ajacoutot Exp $
 
 COMMENT=	Xfce4 desktop screenshot panel plugin
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	x11/xfce4/xfce4-panel \
 		x11/xfce4/libxfcegui4 \
 		devel/libsoup
 
-MODGNOME_DESKTOP_FILE=	Yes
+MODXFCE_DESKTOP_FILE=	Yes
 
 WANTLIB=	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo expat \
