@@ -1,7 +1,15 @@
-$OpenBSD: patch-src_DiagnosticsDialog_cpp,v 1.1 2011/03/30 14:00:48 dcoppa Exp $
---- src/DiagnosticsDialog.cpp.orig	Mon Mar 28 18:07:18 2011
-+++ src/DiagnosticsDialog.cpp	Mon Mar 28 18:09:05 2011
-@@ -44,7 +44,7 @@ static void smallFontise( QWidget* w )
+$OpenBSD: patch-src_DiagnosticsDialog_cpp,v 1.2 2011/09/19 12:50:57 dcoppa Exp $
+--- src/DiagnosticsDialog.cpp.orig	Mon Sep 19 11:46:56 2011
++++ src/DiagnosticsDialog.cpp	Mon Sep 19 11:53:56 2011
+@@ -27,7 +27,6 @@
+ #include "container.h"
+ #include "lastfmapplication.h"
+ #include "libMoose/LastFmSettings.h"
+-#include "libFingerprint/FingerprintCollector.h"
+ 
+ #include <QProcess>
+ #include <QClipboard>
+@@ -44,7 +43,7 @@ static void smallFontise( QWidget* w )
      #endif
  
      QFont f = w->font();
@@ -10,7 +18,7 @@ $OpenBSD: patch-src_DiagnosticsDialog_cpp,v 1.1 2011/03/30 14:00:48 dcoppa Exp $
          f.setPointSize( f.pointSize() - 2 );
      #else
          f.setPointSize( 10 );
-@@ -71,7 +71,7 @@ DiagnosticsDialog::DiagnosticsDialog( QWidget *parent 
+@@ -71,7 +70,7 @@ DiagnosticsDialog::DiagnosticsDialog( QWidget *parent 
      smallFontise( ui.cachedTracksTitle );
      smallFontise( ui.fingerprintedTracksTitle );
  
@@ -19,3 +27,55 @@ $OpenBSD: patch-src_DiagnosticsDialog_cpp,v 1.1 2011/03/30 14:00:48 dcoppa Exp $
      // Qt 4.3.1 b0rked? as this is specified in Designer, but only works on Linux :(
      foreach ( QGroupBox* b, findChildren<QGroupBox*>() )
      {
+@@ -105,17 +104,7 @@ DiagnosticsDialog::DiagnosticsDialog( QWidget *parent 
+ 
+     connect( ui.scrobbleIpodButton, SIGNAL( clicked() ), SLOT( onScrobbleIpodClicked() ) );
+ 
+-    // Fingerprint collector
+-    ui.fpQueueSizeLabel->setText( "0" );
+-    connect( The::app().m_fpCollector, SIGNAL( trackFingerprintingStarted( TrackInfo ) ),
+-             this,                     SLOT( onTrackFingerprintingStarted( TrackInfo ) ),
+-             Qt::QueuedConnection );
+-    connect( The::app().m_fpCollector, SIGNAL( trackFingerprinted( TrackInfo ) ),
+-             this,                     SLOT( onTrackFingerprinted( TrackInfo ) ),
+-             Qt::QueuedConnection );
+-    connect( The::app().m_fpCollector, SIGNAL( cantFingerprintTrack( TrackInfo, QString ) ),
+-             this,                     SLOT( onCantFingerprintTrack( TrackInfo, QString ) ),
+-             Qt::QueuedConnection );
++    ui.tabWidget->removeTab( 2 );
+ 
+     m_logTimer = new QTimer( this );
+     connect( m_logTimer, SIGNAL( timeout() ),
+@@ -344,32 +333,6 @@ DiagnosticsDialog::onCopyToClipboard()
+ 
+ 
+ void
+-DiagnosticsDialog::onTrackFingerprintingStarted( TrackInfo track )
+-{
+-    ui.fpCurrentTrackLabel->setText( track.toString() );
+-    ui.fpQueueSizeLabel->setText( QString::number( The::app().m_fpCollector->queueSize() ) );
+-}
+-
+-
+-void
+-DiagnosticsDialog::onTrackFingerprinted( TrackInfo track  )
+-{
+-    ui.fpCurrentTrackLabel->setText( "" );
+-    ui.fpQueueSizeLabel->setText( QString::number( The::app().m_fpCollector->queueSize() ) );
+-    
+-    new QTreeWidgetItem( ui.fingerprintedTracksList, QStringList() << track.artist() << track.track() << track.album() );
+-}
+-
+-
+-void
+-DiagnosticsDialog::onCantFingerprintTrack( TrackInfo /* track */, QString /* reason */ )
+-{
+-    ui.fpCurrentTrackLabel->setText( "" );
+-    ui.fpQueueSizeLabel->setText( QString::number( The::app().m_fpCollector->queueSize() ) );
+-}
+-
+-
+-void 
+ DiagnosticsDialog::onLogPoll()
+ {
+     //Clear all state flags on the file stream

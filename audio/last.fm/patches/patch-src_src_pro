@@ -1,7 +1,13 @@
-$OpenBSD: patch-src_src_pro,v 1.2 2011/03/30 14:00:48 dcoppa Exp $
---- src/src.pro.orig	Tue Nov  2 19:13:07 2010
-+++ src/src.pro	Tue Mar 29 12:32:05 2011
-@@ -7,10 +7,6 @@ INCLUDEPATH += lib libFingerprint/recommendation-commo
+$OpenBSD: patch-src_src_pro,v 1.3 2011/09/19 12:50:57 dcoppa Exp $
+--- src/src.pro.orig	Mon Sep 19 12:38:56 2011
++++ src/src.pro	Mon Sep 19 12:39:48 2011
+@@ -2,15 +2,11 @@ TEMPLATE = app
+ TARGET = Last.fm
+ QT += gui network xml sql
+ 
+-INCLUDEPATH += lib libFingerprint/recommendation-commons
++INCLUDEPATH += lib
+ 
  PRECOMPILED_HEADER = precompiled.h
  CONFIG += precompile_header
  
@@ -12,7 +18,7 @@ $OpenBSD: patch-src_src_pro,v 1.2 2011/03/30 14:00:48 dcoppa Exp $
  
  #universal binaries cannot be built from precompiled headers
  mac:release:CONFIG -= precompile_header
-@@ -27,9 +23,8 @@ unix:!mac{
+@@ -27,17 +23,13 @@ unix:!mac{
  
  include( ../definitions.pro.inc )
  
@@ -24,12 +30,22 @@ $OpenBSD: patch-src_src_pro,v 1.2 2011/03/30 14:00:48 dcoppa Exp $
  
  breakpad {
      LIBS += -lbreakpad$$EXT
-@@ -210,6 +205,8 @@ unix:!mac {
+ }
  
+-LIBS += -L$$BIN_DIR -lLastFmFingerprint$$EXT
+-
+-
+ FORMS   = container.ui \
+           settingsdialog.ui \
+           settingsdialog_account.ui \
+@@ -211,7 +203,9 @@ unix:!mac {
      SOURCES += simplewizard_mac.cpp \
                 winstyleoverrides.cpp
-+
+ 
+-    LIBS += -lmad -lfftw3f
 +    QMAKE_LIBDIR += ${LOCALBASE}/lib
++
++    LIBS += -lmad
  
-     LIBS += -lmad -lfftw3f
- 
+     HEADERS -=  Bootstrapper/iTunesBootstrapper.h \
+                 Bootstrapper/PluginBootstrapper.h

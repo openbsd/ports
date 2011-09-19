@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 08:26:10 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/19 12:50:57 dcoppa Exp $
 
 COMMENT =		official Last.fm client
 
 VER =			1.5.4.27091
 DISTNAME =		lastfm-${VER}+dfsg
 PKGNAME =		last.fm-${VER}
-REVISION =		3
+REVISION =		4
 
 SHARED_ONLY =		Yes
 
 SHARED_LIBS =		Moose 0.0 \
-			LastFmTools 0.0 \
-			LastFmFingerprint 0.0
+			LastFmTools 0.0
 
 CATEGORIES =		audio
 
@@ -29,16 +28,14 @@ PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
 WANTLIB += X11 c m pthread sndio stdc++ z
-WANTLIB += QtGui>=8 QtNetwork>=7 QtSql>=7 QtXml>=7
-WANTLIB += fftw3f>=4 gpod>=600 mad samplerate>=1 portaudio
+WANTLIB += QtGui>=8 QtNetwork>=7 QtSql>=7
+WANTLIB += QtXml>=7 gpod>=700 mad portaudio
 
 MODULES =		x11/qt4
 
 LIB_DEPENDS =		audio/libgpod \
 			audio/libmad \
-			audio/libsamplerate \
 			audio/portaudio-svn \
-			math/fftw3,float \
 			${MODQT4_LIB_DEPENDS}>=4.7.2
 
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -50,8 +47,6 @@ LASTFM_LIBDIR = ${PREFIX}/lib/last.fm
 LASTFM_DATADIR = ${PREFIX}/share/last.fm
 MOOSELIB = ${WRKBUILD}/bin/libMoose.so.${LIBMoose_VERSION}
 TOOLSLIB = ${WRKBUILD}/bin/libLastFmTools.so.${LIBLastFmTools_VERSION}
-FPLIB = \
-${WRKBUILD}/bin/libLastFmFingerprint.so.${LIBLastFmFingerprint_VERSION}
 
 pre-patch:
 	cd ${WRKSRC}; perl -pi -e "s/\r$$//"\
@@ -59,8 +54,6 @@ pre-patch:
 
 pre-configure:
 	${SUBST_CMD} \
-	${WRKSRC}/src/libFingerprint/fplib/pro_qmake/fplib.pro \
-	${WRKSRC}/src/libFingerprint/libFingerprint.pro \
 	${WRKSRC}/src/libMoose/libMoose.pro \
 	${WRKSRC}/src/libMoose/MooseCommon.cpp \
 	${WRKSRC}/src/libUnicorn/libUnicorn.pro \
@@ -78,7 +71,6 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/last.fm ${PREFIX}/bin/last.fm
 	${INSTALL_DATA} ${MOOSELIB} ${PREFIX}/lib/
 	${INSTALL_DATA} ${TOOLSLIB} ${PREFIX}/lib/
-	${INSTALL_DATA} ${FPLIB} ${PREFIX}/lib/
 	${INSTALL_DATA_DIR} ${LASTFM_LIBDIR}/extensions
 	${INSTALL_DATA_DIR} ${LASTFM_LIBDIR}/services
 	${INSTALL_DATA} ${WRKBUILD}/bin/services/*.so \
