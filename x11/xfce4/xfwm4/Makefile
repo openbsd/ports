@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/03/03 21:08:19 landry Exp $
+# $OpenBSD: Makefile,v 1.33 2011/09/19 07:45:00 ajacoutot Exp $
 
 COMMENT=	Xfce4 window manager
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 
 LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.8.0 \
 		devel/libwnck \

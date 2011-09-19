@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2011/09/19 07:44:58 ajacoutot Exp $
 
 COMMENT=		GTK desktop calculator
 
@@ -36,7 +36,7 @@ YACC=			bison
 RUN_DEPENDS=		x11/gnome/gvfs
 
 MODGNOME_HELP_FILES=	Yes
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ARGS+=	--with-gtk=3.0
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \

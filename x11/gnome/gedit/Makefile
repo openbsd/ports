@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2011/09/19 07:44:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -43,7 +43,7 @@ RUN_DEPENDS=		devel/gobject-introspection \
 			devel/gsettings-desktop-schemas
 
 MODGNOME_HELP_FILES=	Yes
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

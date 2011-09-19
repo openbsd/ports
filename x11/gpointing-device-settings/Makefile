@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/19 07:44:59 ajacoutot Exp $
 
 SHARED_ONLY =		Yes
 
@@ -33,7 +33,7 @@ WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += xcb xcb-render xcb-shm z
 
-DESKTOP_FILES =		Yes
+MODGNOME_DESKTOP_FILE =		Yes
 MODGCONF2_SCHEMAS_DIR =	gpointing-device-settings
 TAR =			${LOCALBASE}/bin/gtar
 

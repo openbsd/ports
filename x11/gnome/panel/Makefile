@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.96 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.97 2011/09/19 07:44:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -64,7 +64,7 @@ RUN_DEPENDS+=	x11/gnome/screensaver
 RUN_DEPENDS+=	x11/gnome/user-docs
 
 MODGNOME_HELP_FILES= 	Yes
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-panel
 
 FAKE_FLAGS=	dbus_confdir=${PREFIX}/share/examples/gnome-panel/dbus-1/system.d

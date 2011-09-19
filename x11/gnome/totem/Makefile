@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2011/09/19 07:44:59 ajacoutot Exp $
 
 COMMENT-main=		official media player for GNOME
 COMMENT-nautilus=	totem properties plugin for nautilus
@@ -77,7 +77,7 @@ RUN_DEPENDS-main+=multimedia/gstreamer-0.10/plugins-good \
 # gst-inspect-0.10 needs to access ${HOME}
 PORTHOME=	${WRKDIR}
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_HELP_FILES=Yes
 USE_GROFF=	Yes
 

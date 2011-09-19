@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/19 07:44:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -38,7 +38,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 RUN_DEPENDS=		devel/git \
 			devel/gsettings-desktop-schemas
 
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-compile-warnings=no

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2011/09/18 10:27:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2011/09/19 07:44:59 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -122,7 +122,7 @@ LIB_DEPENDS-nautilus=	${LIB_DEPENDS} \
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2011/09/19 07:44:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -39,7 +39,7 @@ BUILD_DEPENDS=		devel/gobject-introspection
 USE_LIBTOOL=		gnu
 
 MODGNOME_HELP_FILES=	Yes
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	gucharmap
 
 LIB_DEPENDS+=		x11/gtk+3,-main

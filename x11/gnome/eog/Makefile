@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.66 2011/09/19 07:44:58 ajacoutot Exp $
 
 # Don't forget to check eog-plugins when updating this port!
 
@@ -47,7 +47,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			x11/gnome/icon-theme>=3.0.0
 
 MODGNOME_HELP_FILES=	Yes
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

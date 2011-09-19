@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/09/18 19:26:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2011/09/19 07:44:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -62,7 +62,7 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 BUILD_DEPENDS+=		devel/bison
 
 LIBTOOL_FLAGS=		--tag=disable-static
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGNOME_HELP_FILES=	Yes
 
 AUTOCONF_VERSION=	2.68

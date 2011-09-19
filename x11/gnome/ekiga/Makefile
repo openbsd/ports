@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2011/09/19 07:44:58 ajacoutot Exp $
 
 BROKEN=		needs an update (GNOME3)
 
@@ -45,7 +45,7 @@ LIB_DEPENDS=	net/avahi \
 		devel/libsigc++-2 \
 		devel/libnotify>=0.7.2
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_HELP_FILES=Yes
 MODGCONF2_SCHEMAS_DIR= ekiga
 USE_GROFF =	Yes

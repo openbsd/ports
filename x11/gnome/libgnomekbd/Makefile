@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2011/09/19 07:44:58 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -37,7 +37,7 @@ BUILD_DEPENDS=	devel/gobject-introspection
 LIB_DEPENDS=	x11/gnome/libxklavier \
 		x11/gtk+3
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--enable-introspection

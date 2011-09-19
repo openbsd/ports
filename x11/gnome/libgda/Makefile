@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2011/09/19 07:44:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -52,7 +52,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 MODGNOME_HELP_FILES=	Yes
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 
 SUBST_VARS=		GDA_MAJOR
 

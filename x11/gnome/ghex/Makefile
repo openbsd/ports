@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2011/09/19 07:44:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -33,7 +33,7 @@ MODULES=		devel/dconf \
 LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_HELP_FILES=	Yes
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ARGS+=	${ENABLE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

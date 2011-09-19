@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2011/09/19 07:44:58 ajacoutot Exp $
 
 COMMENT=	API documentation browser for GNOME
 
@@ -39,7 +39,7 @@ MODULES=	devel/gettext \
 BUILD_DEPENDS=	x11/gnome/doc-utils
 LIB_DEPENDS=	www/webkit,gtk3
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 MODGCONF2_SCHEMAS_DIR=	devhelp
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

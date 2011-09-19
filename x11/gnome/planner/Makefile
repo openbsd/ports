@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2011/09/19 07:44:59 ajacoutot Exp $
 
 COMMENT=		project management application
 
@@ -45,7 +45,7 @@ LIB_DEPENDS=		x11/gnome/libbonoboui \
 			${MODPY_LIB_DEPENDS}
 
 MODGNOME_HELP_FILES=	Yes
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	planner
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \

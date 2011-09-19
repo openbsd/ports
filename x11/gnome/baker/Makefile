@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/09/13 05:44:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2011/09/19 07:44:58 ajacoutot Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
@@ -41,7 +41,7 @@ RUN_DEPENDS=		misc/cdrdao \
 			sysutils/cdrtools \
 			sysutils/dvd+rw-tools
 
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGNOME_HELP_FILES=	Yes
 
 CONFIGURE_ARGS+=	--disable-libnotify

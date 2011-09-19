@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/19 07:44:59 ajacoutot Exp $
 
 COMMENT=	tweak hidden GTK/GNOME settings
 
@@ -25,7 +25,7 @@ RUN_DEPENDS=	devel/gsettings-desktop-schemas \
 
 MODPY_ADJ_FILES=gnome-tweak-tool
 
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 
 # XXX see post-install
 # https://bugzilla.gnome.org/show_bug.cgi?id=647132

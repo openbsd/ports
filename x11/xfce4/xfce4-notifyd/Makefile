@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/08/16 07:52:31 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/19 07:44:59 ajacoutot Exp $
 
 COMMENT=	Xfce4 alternative notification daemon
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 
 LIB_DEPENDS=	x11/xfce4/libxfce4ui \
 		x11/xfce4/xfconf

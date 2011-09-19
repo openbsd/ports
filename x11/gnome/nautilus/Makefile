@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2011/09/18 08:17:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.89 2011/09/19 07:44:59 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -60,7 +60,7 @@ LIB_DEPENDS=		x11/gnome/desktop \
 			graphics/libexif>=0.6.0 \
 			textproc/exempi
 
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 
 USE_GROFF=		Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/19 07:44:59 ajacoutot Exp $
 
 COMMENT=	MAME front-end for GNOME
 
@@ -40,7 +40,7 @@ LIB_DEPENDS=	databases/sqlite3 \
 		devel/libwnck3 \
 		multimedia/gstreamer-0.10/core
 
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGNOME_HELP_FILES=	Yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

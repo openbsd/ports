@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/19 07:44:59 ajacoutot Exp $
 
 COMMENT=	GNOME interface for various networking tools
 
@@ -34,7 +34,7 @@ BUILD_DEPENDS=	devel/gsettings-desktop-schemas
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
 MODGNOME_HELP_FILES=	Yes
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

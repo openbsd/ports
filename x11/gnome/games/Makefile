@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.52 2011/09/19 07:44:58 ajacoutot Exp $
 
 BROKEN= 		update needs fixed clutter/Mesa
 
@@ -52,7 +52,7 @@ REGRESS_DEPENDS=	devel/check
 # instead of the actual library
 USE_LIBTOOL=    	gnu
 
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-games
 

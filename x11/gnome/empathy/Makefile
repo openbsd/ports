@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.74 2011/09/19 07:44:58 ajacoutot Exp $
 
 BROKEN=			needs an update (GNOME3)
 
@@ -68,7 +68,7 @@ RUN_DEPENDS=		devel/iso-codes \
 			net/telepathy/telepathy-salut \
 			x11/gnome/icon-theme>=2.30.3
 
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	empathy
 

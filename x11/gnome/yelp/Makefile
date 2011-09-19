@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2011/09/19 07:44:59 ajacoutot Exp $
 
 COMMENT=		GNOME help browser
 
@@ -35,7 +35,7 @@ RUN_DEPENDS=		x11/gnome/yelp-xsl
 
 LIB_DEPENDS=		www/webkit,gtk3
 
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--disable-gtk-doc \

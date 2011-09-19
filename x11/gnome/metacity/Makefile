@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.69 2011/09/19 07:44:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,7 +42,7 @@ RUN_DEPENDS=	x11/gnome/zenity \
 		fonts/cantarell-fonts
 
 SEPARATE_BUILD=	concurrent
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 MODGCONF2_SCHEMAS_DIR= metacity
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED}

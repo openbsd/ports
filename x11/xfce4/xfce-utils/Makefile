@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/06/18 08:25:59 landry Exp $
+# $OpenBSD: Makefile,v 1.37 2011/09/19 07:44:59 ajacoutot Exp $
 
 COMMENT=	Xfce4 essential utilities and scripts
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 
 MODULES=	x11/xfce4
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 
 LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.8.0 \
 		x11/dbus-glib

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/09/18 21:20:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.30 2011/09/19 07:44:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -35,7 +35,7 @@ MODULES=	devel/gettext \
 		devel/gconf2
 
 MODGNOME_HELP_FILES=	Yes
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	seahorse-plugins
 
 LIBTOOL_FLAGS=	--tag=disable-static

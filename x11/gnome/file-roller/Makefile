@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2011/09/19 07:44:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -53,7 +53,7 @@ LIB_DEPENDS-nautilus=	x11/gnome/nautilus
 RUN_DEPENDS-nautilus=	x11/gnome/file-roller,-main
 
 MODGNOME_HELP_FILES=	Yes
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-packagekit

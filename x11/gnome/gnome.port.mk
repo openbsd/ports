@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.41 2011/09/12 12:02:39 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.42 2011/09/19 07:44:58 ajacoutot Exp $
 #
 # Module for GNOME related ports
 #
@@ -17,7 +17,7 @@ MODULES+=		textproc/intltool
 .endif
 
 # Set to 'yes' if there are .desktop files in the package list.
-.if defined(DESKTOP_FILES) && ${DESKTOP_FILES:L} == "yes"
+.if defined(MODGNOME_DESKTOP_FILE) && ${MODGNOME_DESKTOP_FILE:L} == "yes"
 MODGNOME_RUN_DEPENDS+=	devel/desktop-file-utils
 .endif
 

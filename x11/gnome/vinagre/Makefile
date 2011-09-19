@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.43 2011/09/19 07:44:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,7 +42,7 @@ LIB_DEPENDS=	devel/libpeas \
 		net/telepathy/telepathy-glib \
 		net/avahi,-gtk3,no_mono,no_qt3,no_qt4
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_HELP_FILES=	Yes
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

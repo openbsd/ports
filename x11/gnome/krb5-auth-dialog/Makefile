@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/19 07:44:58 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -37,7 +37,7 @@ LIB_DEPENDS=	x11/gnome/controlcenter
 
 MODGCONF2_SCHEMAS_DIR= krb5-auth-dialog
 MODGNOME_HELP_FILES= Yes
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 
 FAKE_FLAGS=	autostartdir=${PREFIX}/share/examples/krb5-auth-dialog/xdg/autostart \
 		smallicondir=${PREFIX}/share/icons/hicolor/22x22/apps

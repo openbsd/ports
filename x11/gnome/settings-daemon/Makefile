@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/09/13 05:55:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2011/09/19 07:44:59 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -39,7 +39,7 @@ LIB_DEPENDS=	devel/libnotify>=0.7.2 \
 # otherwise we end up without icons on minimal install
 RUN_DEPENDS=	x11/gnome/icon-theme
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 
 LIBTOOL_FLAGS=	--tag=disable-static
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.49 2011/09/19 07:44:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -25,7 +25,7 @@ MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
 
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		devel/gobject-introspection

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2011/09/19 07:44:58 ajacoutot Exp $
 
 COMMENT-main=	GNOME virtual file system
 COMMENT-smb=	samba module for GVFS
@@ -38,7 +38,7 @@ WANTLIB-main += bz2 lzma m soup-2.4 sqlite3
 WANTLIB-main += xml2 archive soup-gnome-2.4>=1
 WANTLIB-main += avahi-client avahi-common avahi-glib
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		archivers/libarchive \

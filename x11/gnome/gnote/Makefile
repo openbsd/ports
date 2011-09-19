@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/19 07:44:58 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -39,7 +39,7 @@ LIB_DEPENDS=		sysutils/e2fsprogs>=1.41.4p5 \
 			x11/gtk2mm
 
 MODGNOME_HELP_FILES=	Yes
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnote
 
 LIBTOOL_FLAGS+= 	--tag=disable-static

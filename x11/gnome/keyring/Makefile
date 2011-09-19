@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2011/09/18 21:32:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.61 2011/09/19 07:44:58 ajacoutot Exp $
 
 COMMENT=	password agent for the GNOME project
 
@@ -28,7 +28,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 
 # only required during build for parsing ASN.1 files
 BUILD_DEPENDS=	security/libtasn1

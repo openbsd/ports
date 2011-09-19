@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2011/09/19 07:44:58 ajacoutot Exp $
 
 COMMENT=		easy GNOME menu editing tool
 
@@ -28,7 +28,7 @@ RUN_DEPENDS=		devel/gettext \
 # can use exo instead for XFCE users
 BUILD_DEPENDS+=		x11/gnome/menus
 
-DESKTOP_FILES=		Yes
+MODGNOME_DESKTOP_FILE=		Yes
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

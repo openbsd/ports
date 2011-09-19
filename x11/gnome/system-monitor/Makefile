@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/19 07:44:59 ajacoutot Exp $
 
 COMMENT=	sytem monitor for GNOME
 
@@ -39,7 +39,7 @@ LIB_DEPENDS=	devel/libgtop2>=2.28.3p23 \
 		x11/gnome/librsvg \
 		x11/gtk3mm
 
-DESKTOP_FILES=	Yes
+MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_HELP_FILES= Yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
