@@ -1,0 +1,11 @@
+$OpenBSD: patch-base_allocator_allocator_gyp,v 1.1 2011/09/19 08:55:26 robert Exp $
+--- base/allocator/allocator.gyp.orig	Thu Aug 25 09:51:44 2011
++++ base/allocator/allocator.gyp	Thu Aug 25 09:51:53 2011
+@@ -338,7 +338,6 @@
+           # http://code.google.com/p/google-perftools/source/browse/trunk/Makefile.am
+           'cflags': [
+             '-Wno-sign-compare',
+-            '-Wno-unused-result',
+           ],
+           'cflags!': [
+             '-fvisibility=hidden',

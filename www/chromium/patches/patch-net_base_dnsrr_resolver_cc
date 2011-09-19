@@ -1,6 +1,6 @@
-$OpenBSD: patch-net_base_dnsrr_resolver_cc,v 1.3 2011/08/16 08:17:44 robert Exp $
---- net/base/dnsrr_resolver.cc.orig	Wed Jul 27 10:01:11 2011
-+++ net/base/dnsrr_resolver.cc	Thu Aug  4 13:50:43 2011
+$OpenBSD: patch-net_base_dnsrr_resolver_cc,v 1.4 2011/09/19 08:55:26 robert Exp $
+--- net/base/dnsrr_resolver.cc.orig	Tue Aug 23 10:28:31 2011
++++ net/base/dnsrr_resolver.cc	Wed Aug 24 10:54:23 2011
 @@ -4,6 +4,12 @@
  
  #include "net/base/dnsrr_resolver.h"
@@ -14,7 +14,7 @@ $OpenBSD: patch-net_base_dnsrr_resolver_cc,v 1.3 2011/08/16 08:17:44 robert Exp 
  #if defined(OS_POSIX)
  #include <resolv.h>
  #endif
-@@ -186,7 +192,11 @@ class RRResolverWorker {
+@@ -185,7 +191,11 @@ class RRResolverWorker {
  
      bool r = true;
      if ((_res.options & RES_INIT) == 0) {
@@ -26,7 +26,7 @@ $OpenBSD: patch-net_base_dnsrr_resolver_cc,v 1.3 2011/08/16 08:17:44 robert Exp 
          r = false;
      }
  
-@@ -194,14 +204,18 @@ class RRResolverWorker {
+@@ -193,14 +203,18 @@ class RRResolverWorker {
        unsigned long saved_options = _res.options;
        r = Do();
  

@@ -1,12 +1,12 @@
-$OpenBSD: patch-base_i18n_number_formatting_h,v 1.1 2011/02/08 09:43:02 espie Exp $
---- base/i18n/number_formatting.h.orig	Fri Jan 21 10:20:15 2011
-+++ base/i18n/number_formatting.h	Mon Jan 24 10:51:19 2011
-@@ -11,7 +11,7 @@
- 
- namespace base {
- 
+$OpenBSD: patch-base_i18n_number_formatting_h,v 1.2 2011/09/19 08:55:26 robert Exp $
+--- base/i18n/number_formatting.h.orig	Wed Aug 24 10:57:59 2011
++++ base/i18n/number_formatting.h	Wed Aug 24 10:58:05 2011
+@@ -14,7 +14,7 @@ namespace base {
+ // Return a number formatted with separators in the user's locale.
+ // Ex: FormatNumber(1234567)
+ //         => "1,234,567" in English, "1.234.567" in German
 -string16 FormatNumber(int64 number);
 +string16 FormatNumber(int64_t number);
  
- }  // namespace base
- 
+ // Return a number formatted with separators in the user's locale.
+ // Ex: FormatDouble(1234567.8, 1)

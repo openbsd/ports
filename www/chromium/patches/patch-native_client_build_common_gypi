@@ -1,7 +1,7 @@
-$OpenBSD: patch-native_client_build_common_gypi,v 1.5 2011/08/16 08:17:44 robert Exp $
---- native_client/build/common.gypi.orig	Wed Jul 27 10:03:26 2011
-+++ native_client/build/common.gypi	Tue Aug  2 20:12:19 2011
-@@ -371,7 +371,7 @@
+$OpenBSD: patch-native_client_build_common_gypi,v 1.6 2011/09/19 08:55:26 robert Exp $
+--- native_client/build/common.gypi.orig	Wed Sep 14 10:03:13 2011
++++ native_client/build/common.gypi	Fri Sep 16 18:17:23 2011
+@@ -377,7 +377,7 @@
      },
    },
    'conditions': [

@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_shell_integration_linux_cc,v 1.4 2011/06/08 20:36:56 robert Exp $
---- chrome/browser/shell_integration_linux.cc.orig	Mon Jun  6 11:12:10 2011
-+++ chrome/browser/shell_integration_linux.cc	Wed Jun  8 09:58:36 2011
-@@ -118,6 +118,8 @@ void CreateShortcutOnDesktop(const FilePath& shortcut_
+$OpenBSD: patch-chrome_browser_shell_integration_linux_cc,v 1.5 2011/09/19 08:55:26 robert Exp $
+--- chrome/browser/shell_integration_linux.cc.orig	Tue Aug 23 10:29:13 2011
++++ chrome/browser/shell_integration_linux.cc	Wed Aug 24 10:54:22 2011
+@@ -122,6 +122,8 @@ void CreateShortcutOnDesktop(const FilePath& shortcut_
    if (!PathService::Get(chrome::DIR_USER_DESKTOP, &desktop_path))
      return;
  
@@ -10,7 +10,7 @@ $OpenBSD: patch-chrome_browser_shell_integration_linux_cc,v 1.4 2011/06/08 20:36
    int desktop_fd = open(desktop_path.value().c_str(), O_RDONLY | O_DIRECTORY);
    if (desktop_fd < 0)
      return;
-@@ -146,6 +148,7 @@ void CreateShortcutOnDesktop(const FilePath& shortcut_
+@@ -150,6 +152,7 @@ void CreateShortcutOnDesktop(const FilePath& shortcut_
  
    if (HANDLE_EINTR(close(desktop_fd)) < 0)
      PLOG(ERROR) << "close";

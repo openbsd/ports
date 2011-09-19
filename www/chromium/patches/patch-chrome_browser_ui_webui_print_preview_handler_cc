@@ -1,10 +1,7 @@
-$OpenBSD: patch-chrome_browser_ui_webui_print_preview_handler_cc,v 1.1 2011/09/08 10:35:16 ajacoutot Exp $
-
-Fix build fix cups >=1.5.
-
---- chrome/browser/ui/webui/print_preview_handler.cc.orig	Thu Sep  8 11:20:59 2011
-+++ chrome/browser/ui/webui/print_preview_handler.cc	Thu Sep  8 11:21:22 2011
-@@ -37,6 +37,7 @@
+$OpenBSD: patch-chrome_browser_ui_webui_print_preview_handler_cc,v 1.2 2011/09/19 08:55:26 robert Exp $
+--- chrome/browser/ui/webui/print_preview_handler.cc.orig	Sat Sep 17 18:08:08 2011
++++ chrome/browser/ui/webui/print_preview_handler.cc	Sat Sep 17 18:09:27 2011
+@@ -46,6 +46,7 @@
  
  #if defined(USE_CUPS)
  #include <cups/cups.h>

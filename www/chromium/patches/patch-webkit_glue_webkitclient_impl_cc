@@ -1,6 +1,6 @@
-$OpenBSD: patch-webkit_glue_webkitclient_impl_cc,v 1.6 2011/08/16 08:17:44 robert Exp $
---- webkit/glue/webkitclient_impl.cc.orig	Wed Aug  3 09:26:50 2011
-+++ webkit/glue/webkitclient_impl.cc	Wed Aug  3 09:27:04 2011
+$OpenBSD: patch-webkit_glue_webkitclient_impl_cc,v 1.7 2011/09/19 08:55:26 robert Exp $
+--- webkit/glue/webkitclient_impl.cc.orig	Wed Sep 14 10:01:07 2011
++++ webkit/glue/webkitclient_impl.cc	Fri Sep 16 18:17:25 2011
 @@ -43,7 +43,7 @@
  #include "webkit/glue/websocketstreamhandle_impl.h"
  #include "webkit/glue/weburlloader_impl.h"

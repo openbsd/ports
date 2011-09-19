@@ -1,15 +1,21 @@
-$OpenBSD: patch-remoting_remoting_gyp,v 1.5 2011/08/16 08:17:44 robert Exp $
---- remoting/remoting.gyp.orig	Wed Aug  3 09:18:42 2011
-+++ remoting/remoting.gyp	Wed Aug  3 15:13:52 2011
-@@ -70,7 +70,6 @@
-           ],
-           'link_settings': {
-             'libraries': [
--              '-ldl',
-               '-lX11',
-               '-lXrender',
-               '-lXext',
-@@ -340,6 +339,7 @@
+$OpenBSD: patch-remoting_remoting_gyp,v 1.6 2011/09/19 08:55:26 robert Exp $
+--- remoting/remoting.gyp.orig	Sat Sep 17 11:19:25 2011
++++ remoting/remoting.gyp	Sat Sep 17 11:22:57 2011
+@@ -32,6 +32,13 @@
+         'plugin_extension': 'so',
+         'plugin_prefix': 'lib',
+       }],
++      ['OS=="openbsd"', {
++        'name_suffix': '- OpenBSD',
++        'remoting_it2me_os_files': [
++          'resources/linux/chromoting128.png',
++          'resources/linux/chromoting16.png',
++        ],
++      }],
+       ['OS=="linux" and chromeos==1', {
+         'name_suffix': '- Chromebook',
+         'remoting_it2me_os_files': [
+@@ -415,6 +422,7 @@
          'host/support_access_verifier.h',
          'host/user_authenticator.h',
          'host/user_authenticator_linux.cc',
@@ -17,7 +23,7 @@ $OpenBSD: patch-remoting_remoting_gyp,v 1.5 2011/08/16 08:17:44 robert Exp $
          'host/user_authenticator_mac.cc',
          'host/user_authenticator_win.cc',
        ],
-@@ -357,7 +357,6 @@
+@@ -432,7 +440,6 @@
                '-lX11',
                '-lXdamage',
                '-lXtst',

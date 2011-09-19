@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_h,v 1.5 2011/05/20 08:35:24 robert Exp $
---- media/audio/openbsd/audio_manager_openbsd.h.orig	Sat May  7 11:39:59 2011
-+++ media/audio/openbsd/audio_manager_openbsd.h	Thu May 19 14:20:55 2011
+$OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_h,v 1.6 2011/09/19 08:55:26 robert Exp $
+--- media/audio/openbsd/audio_manager_openbsd.h.orig	Tue Aug 23 10:28:23 2011
++++ media/audio/openbsd/audio_manager_openbsd.h	Wed Aug 24 10:54:23 2011
 @@ -5,15 +5,16 @@
  #ifndef MEDIA_AUDIO_OPENBSD_AUDIO_MANAGER_OPENBSD_H_
  #define MEDIA_AUDIO_OPENBSD_AUDIO_MANAGER_OPENBSD_H_
@@ -22,7 +22,7 @@ $OpenBSD: patch-media_audio_openbsd_audio_manager_openbsd_h,v 1.5 2011/05/20 08:
    // Implementation of AudioManager.
    virtual bool HasAudioOutputDevices();
    virtual bool HasAudioInputDevices();
-@@ -22,10 +23,12 @@ class AudioManagerOpenBSD : public AudioManagerBase {
+@@ -24,10 +25,12 @@ class AudioManagerOpenBSD : public AudioManagerBase {
    virtual void MuteAll();
    virtual void UnMuteAll();
  

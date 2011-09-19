@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.69 2011/09/16 12:00:06 espie Exp $
+# $OpenBSD: Makefile,v 1.70 2011/09/19 08:55:26 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 
 COMMENT=		Chromium browser
 
-V=			13.0.782.220
+V=			14.0.835.163
 DISTNAME=		chromium-${V}
-
-REVISION=		1
 
 CATEGORIES=		www
 
@@ -31,7 +29,7 @@ WANTLIB += gtk-x11-2.0 jpeg m nspr4 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pixman-1 plc4 plds4 png pthread pthread-stubs xcb xml2
 WANTLIB += z execinfo bz2 nss3 nssutil3 ssl3 smime3 softokn3 gconf-2
 WANTLIB += GL Xxf86vm drm stdc++ xcb-render xcb-shm
-WANTLIB += Xtst event xslt vpx kvm>=10.0 sndio speex
+WANTLIB += Xtst event xslt kvm>=10.0 sndio speex
 WANTLIB += cups gcrypt
 
 MASTER_SITES=	http://blade2k.humppa.hu/distfiles/ \
@@ -59,7 +57,6 @@ LIB_DEPENDS=	devel/libexecinfo \
 		archivers/bzip2 \
 		security/nss \
 		devel/gconf2 \
-		multimedia/libvpx \
 		x11/gnome/libgnome-keyring \
 		textproc/libxslt \
 		x11/gtk+2 \
@@ -91,11 +88,13 @@ GYP_DEFS=	-Duse_system_bzip2=1 \
 		-Duse_system_libxml=1 \
 		-Duse_system_speex=1 \
 		-Duse_system_sqlite=0 \
-		-Duse_system_vpx=1 \
+		-Duse_system_vpx=0 \
 		-Duse_system_yasm=1 \
 		-Duse_system_zlib=0 \
 		-Ddisable_nacl=1 \
 		-Ddisable_sse2=1 \
+		-Dlinux_use_tcmalloc=0 \
+		-Dlinux_strip_binary=1 \
 		-DOS=openbsd
 
 pre-configure:

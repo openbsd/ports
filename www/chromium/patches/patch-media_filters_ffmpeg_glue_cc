@@ -1,12 +1,12 @@
-$OpenBSD: patch-media_filters_ffmpeg_glue_cc,v 1.4 2011/08/16 08:17:44 robert Exp $
---- media/filters/ffmpeg_glue.cc.orig	Wed Jul 27 10:01:04 2011
-+++ media/filters/ffmpeg_glue.cc	Tue Aug  2 20:12:18 2011
+$OpenBSD: patch-media_filters_ffmpeg_glue_cc,v 1.5 2011/09/19 08:55:26 robert Exp $
+--- media/filters/ffmpeg_glue.cc.orig	Tue Aug 23 10:28:24 2011
++++ media/filters/ffmpeg_glue.cc	Wed Aug 24 10:54:23 2011
 @@ -45,7 +45,7 @@ static int WriteContext(URLContext* h, unsigned char* 
-   return AVERROR_IO;
+   return AVERROR(EIO);
  }
  
 -static int64 SeekContext(URLContext* h, int64 offset, int whence) {
 +static int64_t SeekContext(URLContext* h, int64_t offset, int whence) {
    FFmpegURLProtocol* protocol = ToProtocol(h->priv_data);
-   int64 new_offset = AVERROR_IO;
+   int64 new_offset = AVERROR(EIO);
    switch (whence) {

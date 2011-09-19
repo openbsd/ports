@@ -1,9 +1,9 @@
-$OpenBSD: patch-webkit_glue_webkit_glue_h,v 1.5 2011/08/16 08:17:44 robert Exp $
---- webkit/glue/webkit_glue.h.orig	Wed Jul 27 10:01:06 2011
-+++ webkit/glue/webkit_glue.h	Tue Aug  2 20:12:21 2011
-@@ -257,7 +257,7 @@ bool LaunchSelLdr(const char* alleged_url, int socket_
-                   void* nacl_process_handle, int* nacl_process_id);
- #endif
+$OpenBSD: patch-webkit_glue_webkit_glue_h,v 1.6 2011/09/19 08:55:26 robert Exp $
+--- webkit/glue/webkit_glue.h.orig	Wed Sep 14 10:01:07 2011
++++ webkit/glue/webkit_glue.h	Fri Sep 16 18:17:25 2011
+@@ -247,7 +247,7 @@ bool IsSingleProcess();
+ // Enables/Disables Spdy for requests afterwards. Used for benchmarking.
+ void EnableSpdy(bool enable);
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_OPENBSD)

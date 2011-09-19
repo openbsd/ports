@@ -1,7 +1,7 @@
-$OpenBSD: patch-ppapi_thunk_ppb_file_system_thunk_cc,v 1.1 2011/08/16 08:17:44 robert Exp $
---- ppapi/thunk/ppb_file_system_thunk.cc.orig	Wed Aug  3 13:38:18 2011
-+++ ppapi/thunk/ppb_file_system_thunk.cc	Wed Aug  3 13:38:29 2011
-@@ -28,7 +28,7 @@ PP_Bool IsFileSystem(PP_Resource resource) {
+$OpenBSD: patch-ppapi_thunk_ppb_file_system_thunk_cc,v 1.2 2011/09/19 08:55:26 robert Exp $
+--- ppapi/thunk/ppb_file_system_thunk.cc.orig	Tue Aug 23 10:28:27 2011
++++ ppapi/thunk/ppb_file_system_thunk.cc	Wed Aug 24 10:54:23 2011
+@@ -29,7 +29,7 @@ PP_Bool IsFileSystem(PP_Resource resource) {
  }
  
  int32_t Open(PP_Resource file_system,

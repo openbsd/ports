@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_browser_memory_purger_cc,v 1.4 2011/08/16 08:17:44 robert Exp $
---- chrome/browser/memory_purger.cc.orig	Tue Aug  2 20:21:35 2011
-+++ chrome/browser/memory_purger.cc	Tue Aug  2 20:21:59 2011
-@@ -135,7 +135,7 @@ void MemoryPurger::PurgeBrowser() {
+$OpenBSD: patch-chrome_browser_memory_purger_cc,v 1.5 2011/09/19 08:55:26 robert Exp $
+--- chrome/browser/memory_purger.cc.orig	Tue Aug 23 10:29:13 2011
++++ chrome/browser/memory_purger.cc	Wed Aug 24 10:54:22 2011
+@@ -127,7 +127,7 @@ void MemoryPurger::PurgeBrowser() {
    // * Purge AppCache memory.  Not yet implemented sufficiently.
    // * Browser-side DatabaseTracker.  Not implemented sufficiently.
  

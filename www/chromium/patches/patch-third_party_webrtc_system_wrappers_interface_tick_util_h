@@ -1,0 +1,12 @@
+$OpenBSD: patch-third_party_webrtc_system_wrappers_interface_tick_util_h,v 1.1 2011/09/19 08:55:26 robert Exp $
+--- third_party/webrtc/system_wrappers/interface/tick_util.h.orig	Wed Aug 24 17:24:40 2011
++++ third_party/webrtc/system_wrappers/interface/tick_util.h	Wed Aug 24 17:25:59 2011
+@@ -17,7 +17,7 @@
+ #if _WIN32
+ #include <windows.h>
+ #include <mmsystem.h>
+-#elif WEBRTC_LINUX
++#elif defined(WEBRTC_LINUX) && !defined(__OpenBSD__)
+ #include <ctime>
+ #else
+ #include <sys/time.h>

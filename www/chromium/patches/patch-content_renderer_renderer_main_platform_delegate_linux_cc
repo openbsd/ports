@@ -1,12 +1,12 @@
-$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.1 2011/06/08 20:36:56 robert Exp $
---- content/renderer/renderer_main_platform_delegate_linux.cc.orig	Mon Jun  6 11:11:28 2011
-+++ content/renderer/renderer_main_platform_delegate_linux.cc	Wed Jun  8 12:11:29 2011
+$OpenBSD: patch-content_renderer_renderer_main_platform_delegate_linux_cc,v 1.2 2011/09/19 08:55:26 robert Exp $
+--- content/renderer/renderer_main_platform_delegate_linux.cc.orig	Fri Sep 16 18:23:49 2011
++++ content/renderer/renderer_main_platform_delegate_linux.cc	Fri Sep 16 18:24:00 2011
 @@ -35,7 +35,7 @@ bool RendererMainPlatformDelegate::EnableSandbox() {
    // The seccomp sandbox is started in the renderer.
    // http://code.google.com/p/seccompsandbox/
  #if defined(ARCH_CPU_X86_FAMILY) && !defined(CHROMIUM_SELINUX) && \
 -    !defined(__clang__)
-+    !defined(__clang__) && !defined(OS_OPENBSD)
++    !defined(__clang__) && !defined(__OpenBSD__)
    // N.b. SupportsSeccompSandbox() returns a cached result, as we already
    // called it earlier in the zygote. Thus, it is OK for us to not pass in
    // a file descriptor for "/proc".

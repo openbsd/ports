@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_common_url_constants_cc,v 1.1 2011/09/19 08:55:26 robert Exp $
+--- chrome/common/url_constants.cc.orig	Wed Sep 14 10:01:58 2011
++++ chrome/common/url_constants.cc	Fri Sep 16 18:17:22 2011
+@@ -158,7 +158,7 @@ const char kChromeUIScreenshotPath[] = "screenshots";
+ const char kChromeUIThemePath[] = "theme";
+ const char kChromeUIThumbnailPath[] = "thumb";
+ 
+-#if defined(OS_LINUX)
++#if defined(OS_LINUX) || defined(OS_OPENBSD)
+ const char kChromeUILinuxProxyConfigHost[] = "linux-proxy-config";
+ const char kChromeUISandboxHost[] = "sandbox";
+ #endif

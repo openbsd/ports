@@ -1,8 +1,8 @@
-$OpenBSD: patch-build_common_gypi,v 1.9 2011/08/16 08:17:44 robert Exp $
---- build/common.gypi.orig	Tue Aug  2 20:15:36 2011
-+++ build/common.gypi	Wed Aug  3 09:30:30 2011
-@@ -98,7 +98,7 @@
-       'file_manager_extension%': 0,
+$OpenBSD: patch-build_common_gypi,v 1.10 2011/09/19 08:55:26 robert Exp $
+--- build/common.gypi.orig	Fri Sep 16 18:18:11 2011
++++ build/common.gypi	Sat Sep 17 11:23:00 2011
+@@ -131,7 +131,7 @@
+       'webui_task_manager%': 0,
  
        # Python version.
 -      'python_ver%': '2.6',
@@ -10,34 +10,25 @@ $OpenBSD: patch-build_common_gypi,v 1.9 2011/08/16 08:17:44 robert Exp $
  
        # Set ARM-v7 compilation flags
        'armv7%': 0,
-@@ -354,7 +354,7 @@
-     'linux_strip_reliability_tests%': 0,
+@@ -255,7 +255,7 @@
+         }],
  
-     # Enable TCMalloc.
--    'linux_use_tcmalloc%': 1,
-+    'linux_use_tcmalloc%': 0,
- 
-     # Disable TCMalloc's debugallocation.
-     'linux_use_debugallocation%': 0,
-@@ -377,7 +377,7 @@
- 
-     # Used to disable Native Client at compile time, for platforms where it
-     # isn't supported
--    'disable_nacl%': 0,
-+    'disable_nacl%': 1,
- 
-     # Set Thumb compilation flags.
-     'arm_thumb%': 0,
-@@ -445,7 +445,7 @@
+         # Enable smooth scrolling for Linux and ChromeOS
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="openbsd"', {
+           'enable_smooth_scrolling%': 1,
+         }, {
+           'enable_smooth_scrolling%': 0,
+@@ -516,7 +516,7 @@
          # This is used to tweak build flags for gcc 4.4.
          'gcc_version%': '<!(python <(DEPTH)/build/compiler_version.py)',
          # Figure out the python architecture to decide if we build pyauto.
 -        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/lib/libpython<(python_ver).so.1.0)',
-+        'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/local/lib/libpython<(python_ver).so.1.0)',
++	'python_arch%': '<!(<(DEPTH)/build/linux/python_arch.sh <(sysroot)/usr/local/lib/libpython<(python_ver).so.1.0)',
          'conditions': [
            ['branding=="Chrome"', {
              'linux_breakpad%': 1,
-@@ -850,7 +850,7 @@
+@@ -956,7 +956,7 @@
                ['exclude', '(^|/)(gtk|x11)_[^/]*\\.(h|cc)$'],
              ],
            }],
@@ -46,3 +37,21 @@ $OpenBSD: patch-build_common_gypi,v 1.9 2011/08/16 08:17:44 robert Exp $
              'sources/': [
                ['exclude', '_linux(_unittest)?\\.(h|cc)$'],
                ['exclude', '(^|/)linux/'],
+@@ -1088,7 +1088,7 @@
+           },
+         },
+         'conditions': [
+-          ['OS=="linux"', {
++          ['OS=="linux" or OS=="openbsd"', {
+             'cflags': [
+               '<@(debug_extra_cflags)',
+             ],
+@@ -1148,7 +1148,7 @@
+           ['win_use_allocator_shim==0', {
+             'defines': ['NO_TCMALLOC'],
+           }],
+-          ['OS=="linux"', {
++          ['OS=="linux" or OS=="openbsd"', {
+             'cflags': [
+              '<@(release_extra_cflags)',
+             ],

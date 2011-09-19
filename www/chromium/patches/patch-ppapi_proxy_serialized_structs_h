@@ -1,6 +1,6 @@
-$OpenBSD: patch-ppapi_proxy_serialized_structs_h,v 1.3 2011/08/16 08:17:44 robert Exp $
---- ppapi/proxy/serialized_structs.h.orig	Wed Jul 27 10:01:08 2011
-+++ ppapi/proxy/serialized_structs.h	Tue Aug  2 20:12:19 2011
+$OpenBSD: patch-ppapi_proxy_serialized_structs_h,v 1.4 2011/09/19 08:55:26 robert Exp $
+--- ppapi/proxy/serialized_structs.h.orig	Wed Sep 14 10:01:09 2011
++++ ppapi/proxy/serialized_structs.h	Fri Sep 16 18:17:23 2011
 @@ -115,7 +115,7 @@ struct PPBURLLoader_UpdateProgress_Params {
  
  #if defined(OS_WIN)

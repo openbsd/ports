@@ -1,0 +1,16 @@
+$OpenBSD: patch-third_party_openssl_openssl_crypto_ui_ui_openssl_c,v 1.1 2011/09/19 08:55:26 robert Exp $
+--- third_party/openssl/openssl/crypto/ui/ui_openssl.c.orig	Wed Sep 14 10:05:03 2011
++++ third_party/openssl/openssl/crypto/ui/ui_openssl.c	Fri Sep 16 18:17:24 2011
+@@ -212,6 +212,12 @@
+ #undef SGTTY
+ #endif
+ 
++#if defined(__OpenBSD__)
++#define TERMIOS
++#undef TERMIO
++#undef SGTTY
++#endif
++
+ #ifdef TERMIOS
+ # include <termios.h>
+ # define TTY_STRUCT		struct termios

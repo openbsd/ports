@@ -1,7 +1,7 @@
-$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.7 2011/08/16 08:17:44 robert Exp $
---- chrome/chrome_browser.gypi.orig	Tue Aug  2 20:28:46 2011
-+++ chrome/chrome_browser.gypi	Tue Aug  2 20:29:37 2011
-@@ -3681,8 +3681,7 @@
+$OpenBSD: patch-chrome_chrome_browser_gypi,v 1.8 2011/09/19 08:55:26 robert Exp $
+--- chrome/chrome_browser.gypi.orig	Wed Sep 14 10:02:00 2011
++++ chrome/chrome_browser.gypi	Fri Sep 16 18:17:22 2011
+@@ -3895,8 +3895,7 @@
            ],
            'link_settings': {
              'libraries': [

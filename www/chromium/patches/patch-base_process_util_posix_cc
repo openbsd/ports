@@ -1,26 +1,12 @@
-$OpenBSD: patch-base_process_util_posix_cc,v 1.4 2011/06/08 20:36:56 robert Exp $
---- base/process_util_posix.cc.orig	Mon Jun  6 11:11:47 2011
-+++ base/process_util_posix.cc	Wed Jun  8 12:29:53 2011
-@@ -104,11 +104,11 @@ int WaitpidWithTimeout(ProcessHandle handle, int64 wai
-   return status;
- }
+$OpenBSD: patch-base_process_util_posix_cc,v 1.5 2011/09/19 08:55:26 robert Exp $
+--- base/process_util_posix.cc.orig	Wed Aug 24 10:58:43 2011
++++ base/process_util_posix.cc	Wed Aug 24 11:00:22 2011
+@@ -127,7 +127,7 @@ int WaitpidWithTimeout(ProcessHandle handle, int64 wai
  
+ // Android has built-in crash handling.
+ #if !defined(OS_ANDROID)
 -void StackDumpSignalHandler(int signal, siginfo_t* info, ucontext_t* context) {
-+void StackDumpSignalHandler(int signal, siginfo_t* info /*, ucontext_t* context */) {
-   LOG(ERROR) << "Received signal " << signal;
-   debug::StackTrace().PrintBacktrace();
- 
--  // TODO(shess): Port to Linux.
-+  // TODO(shess): Port to Linux and OpenBSD.
- #if defined(OS_MACOSX)
-   // TODO(shess): Port to 64-bit.
- #if ARCH_CPU_32_BITS
-@@ -289,7 +289,7 @@ typedef scoped_ptr_malloc<DIR, ScopedDIRClose> ScopedD
-   static const rlim_t kSystemDefaultMaxFds = 8192;
-   static const char kFDDir[] = "/dev/fd";
- #elif defined(OS_OPENBSD)
--  static const rlim_t kSystemDefaultMaxFds = 256;
-+  static const rlim_t kSystemDefaultMaxFds = 128;
-   static const char kFDDir[] = "/dev/fd";
- #endif
++void StackDumpSignalHandler(int signal, siginfo_t* info/*, ucontext_t* context*/) {
+   if (debug::BeingDebugged())
+     debug::BreakDebugger();
  

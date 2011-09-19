@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.10 2011/08/16 08:17:44 robert Exp $
+@comment $OpenBSD: PLIST,v 1.11 2011/09/19 08:55:26 robert Exp $
 bin/chrome
 chrome/
 @bin chrome/chrome
@@ -109,6 +109,8 @@ chrome/resources/inspector/Images/localStorage.png
 chrome/resources/inspector/Images/paneAddButtons.png
 chrome/resources/inspector/Images/paneBottomGrow.png
 chrome/resources/inspector/Images/paneBottomGrowActive.png
+chrome/resources/inspector/Images/paneElementStateButtons.png
+chrome/resources/inspector/Images/paneFilterButtons.png
 chrome/resources/inspector/Images/paneGrowHandleLine.png
 chrome/resources/inspector/Images/paneRefreshButtons.png
 chrome/resources/inspector/Images/paneSettingsButtons.png
@@ -146,6 +148,10 @@ chrome/resources/inspector/Images/segmentSelectedEnd.png
 chrome/resources/inspector/Images/segmentSelectedEndChromium.png
 chrome/resources/inspector/Images/sessionStorage.png
 chrome/resources/inspector/Images/spinner.gif
+chrome/resources/inspector/Images/spinnerActive.gif
+chrome/resources/inspector/Images/spinnerActiveSelected.gif
+chrome/resources/inspector/Images/spinnerInactive.gif
+chrome/resources/inspector/Images/spinnerInactiveSelected.gif
 chrome/resources/inspector/Images/splitviewDimple.png
 chrome/resources/inspector/Images/splitviewDividerBackground.png
 chrome/resources/inspector/Images/statusbarBackground.png

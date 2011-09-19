@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_process_util_openbsd_cc,v 1.4 2011/06/08 21:23:04 robert Exp $
---- base/process_util_openbsd.cc.orig	Wed Jun  8 18:32:02 2011
-+++ base/process_util_openbsd.cc	Wed Jun  8 18:36:39 2011
+$OpenBSD: patch-base_process_util_openbsd_cc,v 1.5 2011/09/19 08:55:26 robert Exp $
+--- base/process_util_openbsd.cc.orig	Fri Sep 16 18:17:22 2011
++++ base/process_util_openbsd.cc	Sun Sep 18 12:32:09 2011
 @@ -0,0 +1,339 @@
 +// Copyright (c) 2009 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be

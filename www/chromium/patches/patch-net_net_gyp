@@ -1,10 +1,10 @@
-$OpenBSD: patch-net_net_gyp,v 1.6 2011/08/16 08:17:44 robert Exp $
---- net/net.gyp.orig	Tue Aug  2 20:40:39 2011
-+++ net/net.gyp	Tue Aug  2 20:41:14 2011
-@@ -145,12 +145,8 @@
-         'base/net_util_win.cc',
+$OpenBSD: patch-net_net_gyp,v 1.7 2011/09/19 08:55:26 robert Exp $
+--- net/net.gyp.orig	Fri Sep 16 18:25:56 2011
++++ net/net.gyp	Fri Sep 16 18:26:25 2011
+@@ -148,12 +148,8 @@
          'base/network_change_notifier.cc',
          'base/network_change_notifier.h',
+         'base/network_change_notifier_factory.h',
 -        'base/network_change_notifier_linux.cc',
 -        'base/network_change_notifier_linux.h',
          'base/network_change_notifier_mac.cc',
@@ -14,7 +14,7 @@ $OpenBSD: patch-net_net_gyp,v 1.6 2011/08/16 08:17:44 robert Exp $
          'base/network_change_notifier_win.cc',
          'base/network_change_notifier_win.h',
          'base/network_config_watcher_mac.cc',
-@@ -731,7 +727,6 @@
+@@ -752,7 +748,6 @@
                '../build/linux/system.gyp:gconf',
                '../build/linux/system.gyp:gdk',
                '../build/linux/system.gyp:gio',

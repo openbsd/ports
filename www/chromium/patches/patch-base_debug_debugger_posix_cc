@@ -1,17 +1,7 @@
-$OpenBSD: patch-base_debug_debugger_posix_cc,v 1.4 2011/06/08 20:36:56 robert Exp $
---- base/debug/debugger_posix.cc.orig	Mon Jun  6 11:11:46 2011
-+++ base/debug/debugger_posix.cc	Wed Jun  8 09:58:35 2011
-@@ -12,6 +12,9 @@
- #include <stdlib.h>
- #include <sys/param.h>
- #include <sys/stat.h>
-+#if defined(OS_OPENBSD)
-+#include <sys/param.h>
-+#endif
- #if !defined(OS_NACL)
- #include <sys/sysctl.h>
- #endif
-@@ -51,7 +54,7 @@ bool SpawnDebuggerOnProcess(unsigned /* process_id */)
+$OpenBSD: patch-base_debug_debugger_posix_cc,v 1.5 2011/09/19 08:55:26 robert Exp $
+--- base/debug/debugger_posix.cc.orig	Wed Aug 24 10:55:26 2011
++++ base/debug/debugger_posix.cc	Wed Aug 24 13:01:47 2011
+@@ -57,7 +57,7 @@ bool SpawnDebuggerOnProcess(unsigned /* process_id */)
    return false;
  }
  
@@ -20,7 +10,7 @@ $OpenBSD: patch-base_debug_debugger_posix_cc,v 1.4 2011/06/08 20:36:56 robert Ex
  
  // Based on Apple's recommended method as described in
  // http://developer.apple.com/qa/qa2004/qa1361.html
-@@ -72,6 +75,10 @@ bool BeingDebugged() {
+@@ -78,6 +78,10 @@ bool BeingDebugged() {
      KERN_PROC,
      KERN_PROC_PID,
      getpid()
@@ -31,7 +21,7 @@ $OpenBSD: patch-base_debug_debugger_posix_cc,v 1.4 2011/06/08 20:36:56 robert Ex
    };
  
    // Caution: struct kinfo_proc is marked __APPLE_API_UNSTABLE.  The source and
-@@ -89,7 +96,11 @@ bool BeingDebugged() {
+@@ -95,7 +99,11 @@ bool BeingDebugged() {
  
    // This process is being debugged if the P_TRACED flag is set.
    is_set = true;

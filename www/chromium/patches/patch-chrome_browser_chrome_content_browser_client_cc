@@ -1,17 +1,17 @@
-$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.1 2011/08/16 08:17:44 robert Exp $
---- chrome/browser/chrome_content_browser_client.cc.orig	Wed Aug  3 19:12:00 2011
-+++ chrome/browser/chrome_content_browser_client.cc	Wed Aug  3 19:12:20 2011
-@@ -48,7 +48,7 @@
- #include "net/base/cookie_monster.h"
+$OpenBSD: patch-chrome_browser_chrome_content_browser_client_cc,v 1.2 2011/09/19 08:55:26 robert Exp $
+--- chrome/browser/chrome_content_browser_client.cc.orig	Fri Sep 16 18:20:49 2011
++++ chrome/browser/chrome_content_browser_client.cc	Fri Sep 16 18:21:44 2011
+@@ -70,7 +70,7 @@
  #include "net/base/cookie_options.h"
+ #include "ui/base/resource/resource_bundle.h"
  
 -#if defined(OS_LINUX)
 +#if defined(OS_POSIX) && !defined(OS_MACOSX)
  #include "base/linux_util.h"
  #include "chrome/browser/crash_handler_host_linux.h"
  #endif
-@@ -323,7 +323,7 @@ void ChromeContentBrowserClient::RevealFolderInOS(cons
- #endif
+@@ -746,7 +746,7 @@ void ChromeContentBrowserClient::ChooseSavePath(
+       save_package, suggested_path, can_save_as_complete);
  }
  
 -#if defined(OS_LINUX)

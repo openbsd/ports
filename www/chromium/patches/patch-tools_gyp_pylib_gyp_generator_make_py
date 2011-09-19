@@ -1,7 +1,7 @@
-$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.4 2011/05/26 11:39:14 robert Exp $
---- tools/gyp/pylib/gyp/generator/make.py.orig	Fri May 20 10:55:35 2011
-+++ tools/gyp/pylib/gyp/generator/make.py	Thu May 26 11:19:24 2011
-@@ -129,13 +129,13 @@ ARFLAGS.target ?= %(ARFLAGS.target)s
+$OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.5 2011/09/19 08:55:26 robert Exp $
+--- tools/gyp/pylib/gyp/generator/make.py.orig	Wed Sep 14 10:20:05 2011
++++ tools/gyp/pylib/gyp/generator/make.py	Fri Sep 16 18:17:24 2011
+@@ -239,13 +239,13 @@ ARFLAGS.target ?= %(ARFLAGS.target)s
  # in gyp's make.py where ARFLAGS.host etc. is computed.
  # TODO(evan): move all cross-compilation logic to gyp-time so we don't need
  # to replicate this environment fallback in make as well.
@@ -21,13 +21,4 @@ $OpenBSD: patch-tools_gyp_pylib_gyp_generator_make_py,v 1.4 2011/05/26 11:39:14 
 +AR.host ?= $(AR)
  ARFLAGS.host := %(ARFLAGS.host)s
  
- # Flags to make gcc output dependency info.  Note that you need to be
-@@ -249,7 +249,7 @@ command_changed = $(or $(subst $(cmd_$(1)),,$(cmd_$@))
- # so we can check their command lines.
- #   $? -- new prerequisites
- #   $| -- order-only dependencies
--prereq_changed = $(filter-out $|,$?)
-+prereq_changed = $(filter-out FORCE_DO_CMD $|,$?)
- 
- # do_cmd: run a command via the above cmd_foo names, if necessary.
- # Should always run for a given target to handle command-line changes.
+ # Define a dir function that can handle spaces.

@@ -1,6 +1,6 @@
-$OpenBSD: patch-ui_gfx_surface_transport_dib_h,v 1.1 2011/06/08 20:36:56 robert Exp $
---- ui/gfx/surface/transport_dib.h.orig	Wed Jun  8 10:13:26 2011
-+++ ui/gfx/surface/transport_dib.h	Wed Jun  8 15:21:28 2011
+$OpenBSD: patch-ui_gfx_surface_transport_dib_h,v 1.2 2011/09/19 08:55:26 robert Exp $
+--- ui/gfx/surface/transport_dib.h.orig	Wed Sep 14 10:02:00 2011
++++ ui/gfx/surface/transport_dib.h	Fri Sep 16 18:17:25 2011
 @@ -8,7 +8,7 @@
  
  #include "base/basictypes.h"

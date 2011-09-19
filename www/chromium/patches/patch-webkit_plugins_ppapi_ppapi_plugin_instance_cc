@@ -1,21 +1,12 @@
-$OpenBSD: patch-webkit_plugins_ppapi_ppapi_plugin_instance_cc,v 1.4 2011/08/16 08:17:44 robert Exp $
---- webkit/plugins/ppapi/ppapi_plugin_instance.cc.orig	Wed Aug  3 09:27:23 2011
-+++ webkit/plugins/ppapi/ppapi_plugin_instance.cc	Wed Aug  3 09:27:33 2011
-@@ -69,7 +69,7 @@
- #include "printing/metafile_impl.h"
- #endif
- 
--#if defined(OS_LINUX) || defined(OS_WIN)
-+#if defined(OS_LINUX) || defined(OS_WIN) || defined(OS_OPENBSD)
- #include "printing/metafile.h"
- #include "printing/metafile_skia_wrapper.h"
- #endif
-@@ -1299,7 +1299,7 @@ bool PluginInstance::PrintPDFOutput(PP_Resource print_
+$OpenBSD: patch-webkit_plugins_ppapi_ppapi_plugin_instance_cc,v 1.5 2011/09/19 08:55:26 robert Exp $
+--- webkit/plugins/ppapi/ppapi_plugin_instance.cc.orig	Wed Sep 14 10:01:07 2011
++++ webkit/plugins/ppapi/ppapi_plugin_instance.cc	Fri Sep 16 18:17:25 2011
+@@ -1051,7 +1051,7 @@ bool PluginInstance::PrintPDFOutput(PP_Resource print_
  #endif  // defined(OS_WIN)
  
    bool ret = false;
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_OPENBSD)
+-#if defined(OS_LINUX) || (defined(OS_MACOSX) && defined(USE_SKIA))
++#if defined(OS_LINUX) || ((defined(OS_MACOSX) || defined(OS_OPENBSD)) && defined(USE_SKIA))
    // On Linux we just set the final bits in the native metafile
    // (NativeMetafile and PreviewMetafile must have compatible formats,
    // i.e. both PDF for this to work).

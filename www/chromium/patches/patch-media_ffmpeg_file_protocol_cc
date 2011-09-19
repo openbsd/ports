@@ -1,7 +1,7 @@
-$OpenBSD: patch-media_ffmpeg_file_protocol_cc,v 1.3 2011/04/29 13:18:01 robert Exp $
---- media/ffmpeg/file_protocol.cc.orig	Tue Apr 26 10:01:05 2011
-+++ media/ffmpeg/file_protocol.cc	Thu Apr 28 19:02:41 2011
-@@ -56,7 +56,7 @@ static int WriteContext(URLContext* h, unsigned char* 
+$OpenBSD: patch-media_ffmpeg_file_protocol_cc,v 1.4 2011/09/19 08:55:26 robert Exp $
+--- media/ffmpeg/file_protocol.cc.orig	Tue Aug 23 10:28:23 2011
++++ media/ffmpeg/file_protocol.cc	Wed Aug 24 10:54:23 2011
+@@ -60,7 +60,7 @@ static int WriteContext(URLContext* h, unsigned char* 
    return HANDLE_EINTR(write(GetHandle(h), buf, size));
  }
  

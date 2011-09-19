@@ -1,6 +1,6 @@
-$OpenBSD: patch-ui_gfx_gl_gl_implementation_linux_cc,v 1.1 2011/06/08 20:36:56 robert Exp $
---- ui/gfx/gl/gl_implementation_linux.cc.orig	Wed Jun  8 10:12:56 2011
-+++ ui/gfx/gl/gl_implementation_linux.cc	Wed Jun  8 10:13:04 2011
+$OpenBSD: patch-ui_gfx_gl_gl_implementation_linux_cc,v 1.2 2011/09/19 08:55:26 robert Exp $
+--- ui/gfx/gl/gl_implementation_linux.cc.orig	Wed Sep 14 10:02:00 2011
++++ ui/gfx/gl/gl_implementation_linux.cc	Fri Sep 16 18:17:24 2011
 @@ -84,7 +84,7 @@ bool InitializeGLBindings(GLImplementation implementat
        break;
      }

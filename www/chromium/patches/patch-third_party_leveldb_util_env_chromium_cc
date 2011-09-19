@@ -1,6 +1,6 @@
-$OpenBSD: patch-third_party_leveldb_util_env_chromium_cc,v 1.1 2011/08/16 08:17:44 robert Exp $
---- third_party/leveldb/util/env_chromium.cc.orig	Wed Aug  3 12:30:52 2011
-+++ third_party/leveldb/util/env_chromium.cc	Wed Aug  3 12:35:44 2011
+$OpenBSD: patch-third_party_leveldb_util_env_chromium_cc,v 1.2 2011/09/19 08:55:26 robert Exp $
+--- third_party/leveldb/util/env_chromium.cc.orig	Fri Sep 16 19:01:54 2011
++++ third_party/leveldb/util/env_chromium.cc	Fri Sep 16 19:25:22 2011
 @@ -29,7 +29,7 @@
  #include "base/win/win_util.h"
  #endif
@@ -19,16 +19,3 @@ $OpenBSD: patch-third_party_leveldb_util_env_chromium_cc,v 1.1 2011/08/16 08:17:
      if (!::file_util::GetFileSize(CreateFilePath(fname), &signed_size)) {
        *size = 0;
        s = Status::IOError(fname, "Could not determine file size.");
-@@ -417,10 +417,9 @@ class ChromiumEnv : public Env {
-     thread_id = mach_thread_self();
- #elif defined(OS_LINUX)
-     thread_id = syscall(__NR_gettid);
--#elif defined(OS_FREEBSD) || defined(OS_NACL)
-+#elif defined(OS_FREEBSD) || defined(OS_NACL) || defined(OS_OPENBSD)
-     // TODO(BSD): find a better thread ID
--    pthread_t tid = pthread_self();
--    memcpy(&thread_id, &tid, min(sizeof(r), sizeof(tid)));
-+    thread_id = reinterpret_cast<int64_t>(pthread_self());
- #endif
- 
-     // We try twice: the first time with a fixed-size stack allocated buffer,

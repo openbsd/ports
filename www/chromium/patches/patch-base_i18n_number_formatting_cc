@@ -1,12 +1,12 @@
-$OpenBSD: patch-base_i18n_number_formatting_cc,v 1.4 2011/08/16 08:17:44 robert Exp $
---- base/i18n/number_formatting.cc.orig	Wed Jul 27 10:01:28 2011
-+++ base/i18n/number_formatting.cc	Tue Aug  2 20:12:17 2011
-@@ -36,7 +36,7 @@ struct NumberFormatWrapper {
+$OpenBSD: patch-base_i18n_number_formatting_cc,v 1.5 2011/09/19 08:55:26 robert Exp $
+--- base/i18n/number_formatting.cc.orig	Wed Aug 24 10:57:42 2011
++++ base/i18n/number_formatting.cc	Wed Aug 24 10:57:51 2011
+@@ -41,7 +41,7 @@ LazyInstance<NumberFormatWrapper> g_number_format_floa
  
- static LazyInstance<NumberFormatWrapper> g_number_format(LINKER_INITIALIZED);
+ }  // namespace
  
 -string16 FormatNumber(int64 number) {
 +string16 FormatNumber(int64_t number) {
-   icu::NumberFormat* number_format = g_number_format.Get().number_format.get();
+   icu::NumberFormat* number_format =
+       g_number_format_int.Get().number_format.get();
  
-   if (!number_format) {

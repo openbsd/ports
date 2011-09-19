@@ -1,6 +1,6 @@
-$OpenBSD: patch-media_media_gyp,v 1.7 2011/08/16 08:17:44 robert Exp $
---- media/media.gyp.orig	Wed Jul 27 10:01:05 2011
-+++ media/media.gyp	Wed Aug  3 15:21:57 2011
+$OpenBSD: patch-media_media_gyp,v 1.8 2011/09/19 08:55:26 robert Exp $
+--- media/media.gyp.orig	Fri Sep 16 18:24:06 2011
++++ media/media.gyp	Fri Sep 16 18:24:59 2011
 @@ -56,6 +56,8 @@
          'audio/linux/alsa_util.h',
          'audio/linux/alsa_wrapper.cc',
@@ -10,17 +10,7 @@ $OpenBSD: patch-media_media_gyp,v 1.7 2011/08/16 08:17:44 robert Exp $
          'audio/openbsd/audio_manager_openbsd.cc',
          'audio/openbsd/audio_manager_openbsd.h',
          'audio/mac/audio_input_mac.cc',
-@@ -210,6 +212,9 @@
-           'link_settings': {
-             'libraries': [
-               '-lasound',
-+              '-lavcodec',
-+              '-lavformat',
-+              '-lavutil',
-             ],
-           },
-         }],
-@@ -219,11 +224,14 @@
+@@ -236,11 +238,14 @@
                          ['exclude', '\\.mm?$' ] ],
            'link_settings': {
              'libraries': [
@@ -35,7 +25,7 @@ $OpenBSD: patch-media_media_gyp,v 1.7 2011/08/16 08:17:44 robert Exp $
              'audio/openbsd/audio_manager_openbsd.cc',
              'audio/openbsd/audio_manager_openbsd.h',
            ],
-@@ -669,7 +677,6 @@
+@@ -669,7 +674,6 @@
            ],
            'libraries': [
              '-lGL',
@@ -43,7 +33,7 @@ $OpenBSD: patch-media_media_gyp,v 1.7 2011/08/16 08:17:44 robert Exp $
            ],
            'sources': [
              'tools/tile_render_bench/tile_render_bench.cc',
-@@ -749,7 +756,6 @@
+@@ -689,7 +693,6 @@
            ],
            'link_settings': {
              'libraries': [

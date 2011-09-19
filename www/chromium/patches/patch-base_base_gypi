@@ -1,6 +1,6 @@
-$OpenBSD: patch-base_base_gypi,v 1.7 2011/08/16 08:17:44 robert Exp $
---- base/base.gypi.orig	Tue Aug  2 20:13:45 2011
-+++ base/base.gypi	Tue Aug  2 20:15:07 2011
+$OpenBSD: patch-base_base_gypi,v 1.8 2011/09/19 08:55:26 robert Exp $
+--- base/base.gypi.orig	Wed Sep 14 10:01:29 2011
++++ base/base.gypi	Fri Sep 16 18:17:22 2011
 @@ -191,6 +191,7 @@
            'process_util.h',
            'process_util_linux.cc',
@@ -9,9 +9,9 @@ $OpenBSD: patch-base_base_gypi,v 1.7 2011/08/16 08:17:44 robert Exp $
            'process_util_posix.cc',
            'process_util_win.cc',
            'process_win.cc',
-@@ -371,12 +372,11 @@
-                 'message_pump_glib_x.cc',
-               ],
+@@ -383,12 +384,11 @@
+           }, {
+             'sources!' : [ 'message_pump_gtk.cc', ],
            }],
 -          [ 'OS != "linux"', {
 +          [ 'OS != "linux" and OS !="openbsd"', {
@@ -23,7 +23,7 @@ $OpenBSD: patch-base_base_gypi,v 1.7 2011/08/16 08:17:44 robert Exp $
                ],
              },
            ],
-@@ -491,6 +491,12 @@
+@@ -499,6 +499,12 @@
              ],
          }],
          [ 'OS == "freebsd" or OS == "openbsd"', {

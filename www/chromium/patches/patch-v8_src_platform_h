@@ -1,6 +1,6 @@
-$OpenBSD: patch-v8_src_platform_h,v 1.3 2011/06/10 07:41:24 robert Exp $
---- v8/src/platform.h.orig	Mon Jun  6 11:43:03 2011
-+++ v8/src/platform.h	Thu Jun  9 16:24:37 2011
+$OpenBSD: patch-v8_src_platform_h,v 1.4 2011/09/19 08:55:26 robert Exp $
+--- v8/src/platform.h.orig	Tue Aug 23 10:46:25 2011
++++ v8/src/platform.h	Wed Aug 24 13:42:33 2011
 @@ -123,7 +123,11 @@ namespace internal {
  
  // Use AtomicWord for a machine-sized pointer. It is assumed that
@@ -13,14 +13,3 @@ $OpenBSD: patch-v8_src_platform_h,v 1.3 2011/06/10 07:41:24 robert Exp $
  
  class Semaphore;
  class Mutex;
-@@ -287,6 +291,10 @@ class OS {
-   // of the CPU and the OS.  The bits in the answer correspond to the bit
-   // positions indicated by the members of the CpuFeature enum from globals.h
-   static uint64_t CpuFeaturesImpliedByPlatform();
-+
-+  // Maximum size of the virtual memory.  0 means there is no artificial
-+  // limit.
-+  static intptr_t MaxVirtualMemory();
- 
-   // Returns the double constant NAN
-   static double nan_value();

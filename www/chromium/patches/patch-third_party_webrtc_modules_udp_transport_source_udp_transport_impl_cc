@@ -1,0 +1,43 @@
+$OpenBSD: patch-third_party_webrtc_modules_udp_transport_source_udp_transport_impl_cc,v 1.1 2011/09/19 08:55:26 robert Exp $
+--- third_party/webrtc/modules/udp_transport/source/udp_transport_impl.cc.orig	Thu Aug 25 17:00:45 2011
++++ third_party/webrtc/modules/udp_transport/source/udp_transport_impl.cc	Thu Aug 25 17:06:13 2011
+@@ -25,11 +25,11 @@
+     #include <ctype.h>
+     #include <fcntl.h>
+     #include <netdb.h>
++    #include <sys/socket.h>
+     #include <net/if.h>
+     #include <netinet/in.h>
+     #include <stdlib.h>
+     #include <sys/ioctl.h>
+-    #include <sys/socket.h>
+     #include <sys/time.h>
+     #include <unistd.h>
+ #ifndef MAC_IPHONE
+@@ -41,7 +41,7 @@
+ #include <ifaddrs.h>
+ #include <machine/types.h>
+ #endif
+-#if defined(WEBRTC_LINUX)
++#if defined(WEBRTC_LINUX) && !defined(__OpenBSD__)
+ #include <linux/netlink.h>
+ #include <linux/rtnetlink.h>
+ #endif
+@@ -1069,7 +1069,7 @@ WebRtc_Word32 UdpTransportImpl::SetPCP(WebRtc_Word32 P
+         return -1;
+     }
+ 
+-#elif defined(WEBRTC_LINUX)
++#elif defined(WEBRTC_LINUX) && !defined(__OpenBSD__)
+     if (!rtpSock->SetSockopt(SOL_SOCKET, SO_PRIORITY, (WebRtc_Word8*) &PCP,
+                              sizeof(PCP)))
+     {
+@@ -2588,7 +2588,7 @@ WebRtc_Word32 UdpTransport::LocalHostAddressIPV6(WebRt
+     }
+     freeifaddrs(ptrIfAddrsStart);
+     return -1;
+-#elif defined(ANDROID)
++#elif defined(ANDROID) || defined(__OpenBSD__)
+     return -1;
+ #else // WEBRTC_LINUX
+     struct

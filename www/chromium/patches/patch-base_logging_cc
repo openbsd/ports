@@ -1,10 +1,10 @@
-$OpenBSD: patch-base_logging_cc,v 1.4 2011/06/08 20:36:56 robert Exp $
---- base/logging.cc.orig	Mon Jun  6 11:11:47 2011
-+++ base/logging.cc	Wed Jun  8 09:58:35 2011
-@@ -129,7 +129,7 @@ int32 CurrentThreadId() {
-   return mach_thread_self();
- #elif defined(OS_LINUX)
+$OpenBSD: patch-base_logging_cc,v 1.5 2011/09/19 08:55:26 robert Exp $
+--- base/logging.cc.orig	Wed Aug 24 10:58:14 2011
++++ base/logging.cc	Wed Aug 24 10:58:36 2011
+@@ -135,7 +135,7 @@ int32 CurrentThreadId() {
    return syscall(__NR_gettid);
+ #elif defined(OS_ANDROID)
+   return gettid();
 -#elif defined(OS_FREEBSD)
 +#elif defined(OS_FREEBSD) || defined(OS_OPENBSD)
    // TODO(BSD): find a better thread ID
