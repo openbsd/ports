@@ -1,6 +1,6 @@
-$OpenBSD: patch-tools_build_v2_tools_gcc_jam,v 1.3 2010/03/30 11:00:15 robert Exp $
+$OpenBSD: patch-tools_build_v2_tools_gcc_jam,v 1.4 2011/09/19 19:53:20 naddy Exp $
 --- tools/build/v2/tools/gcc.jam.orig	Wed Oct 28 08:47:51 2009
-+++ tools/build/v2/tools/gcc.jam	Sat Dec 26 09:57:06 2009
++++ tools/build/v2/tools/gcc.jam	Sun Sep 18 13:12:45 2011
 @@ -269,7 +269,7 @@ class gcc-pch-generator : pch-generator
  
          # return result of base class and pch-file property as usage-requirements
@@ -15,7 +15,7 @@ $OpenBSD: patch-tools_build_v2_tools_gcc_jam,v 1.3 2010/03/30 11:00:15 robert Ex
  # Declare flags and action for compilation.
  toolset.flags gcc.compile OPTIONS <optimization>off   : -O0 ;
 -toolset.flags gcc.compile OPTIONS <optimization>speed : -O3 ;
-+toolset.flags gcc.compile OPTIONS <optimization>speed : -O2 ;
++toolset.flags gcc.compile OPTIONS <optimization>speed : ;
  toolset.flags gcc.compile OPTIONS <optimization>space : -Os ;
  
  toolset.flags gcc.compile OPTIONS <inlining>off  : -fno-inline ;
