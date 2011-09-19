@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.91 2011/09/19 22:27:35 espie Exp $
 
 USE_GMAKE =		Yes
 COMMENT-debug =		C++ GUI toolkit, debug
@@ -31,6 +31,7 @@ REVISION-sqlite =	0
 REVISION-tds =		0
 REVISION-main =		0
 REVISION-debug =	0
+REVISION-html =		0
 
 
 SHARED_LIBS =	Qt3Support 8.0 \
