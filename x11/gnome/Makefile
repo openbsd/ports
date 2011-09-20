@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.162 2011/09/18 20:17:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.163 2011/09/20 21:15:49 jasper Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -74,6 +74,7 @@
      SUBDIR += power-manager
      SUBDIR += py-atspi
      SUBDIR += py-gnome
+     SUBDIR += rygel
      SUBDIR += screensaver
      SUBDIR += seahorse
      SUBDIR += seahorse-plugins
