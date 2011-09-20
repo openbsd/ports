@@ -1,0 +1,14 @@
+$OpenBSD: patch-Lib_test_test_fcntl_py,v 1.1.1.1 2011/09/20 10:51:26 fgsch Exp $
+http://bugs.python.org/issue12821
+--- Lib/test/test_fcntl.py.orig	Sat Aug 13 19:31:23 2011
++++ Lib/test/test_fcntl.py	Tue Aug 23 08:41:19 2011
+@@ -28,7 +28,8 @@
+                         'freebsd2', 'freebsd3', 'freebsd4', 'freebsd5',
+                         'freebsd6', 'freebsd7', 'freebsd8',
+                         'bsdos2', 'bsdos3', 'bsdos4',
+-                        'openbsd', 'openbsd2', 'openbsd3', 'openbsd4'):
++                        'openbsd', 'openbsd2', 'openbsd3', 'openbsd4',
++                        'openbsd5'):
+         if struct.calcsize('l') == 8:
+             off_t = 'l'
+             pid_t = 'i'

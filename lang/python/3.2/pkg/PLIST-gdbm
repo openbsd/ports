@@ -1,0 +1,2 @@
+@comment $OpenBSD: PLIST-gdbm,v 1.1.1.1 2011/09/20 10:51:26 fgsch Exp $
+lib/python3.2/lib-dynload/_gdbm.so

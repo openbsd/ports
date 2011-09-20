@@ -1,0 +1,44 @@
+$OpenBSD: patch-Modules_selectmodule_c,v 1.1.1.1 2011/09/20 10:51:26 fgsch Exp $
+--- Modules/selectmodule.c.orig	Wed Nov  3 13:27:33 2010
++++ Modules/selectmodule.c	Thu Jun  2 00:40:37 2011
+@@ -1215,6 +1215,7 @@ static PyTypeObject kqueue_queue_Type;
+  */
+ 
+ #define KQ_OFF(x) offsetof(kqueue_event_Object, x)
++#if !defined(__OpenBSD__)
+ static struct PyMemberDef kqueue_event_members[] = {
+     {"ident",           T_UINTPTRT,     KQ_OFF(e.ident)},
+     {"filter",          T_SHORT,        KQ_OFF(e.filter)},
+@@ -1224,6 +1225,19 @@ static struct PyMemberDef kqueue_event_members[] = {
+     {"udata",           T_UINTPTRT,     KQ_OFF(e.udata)},
+     {NULL} /* Sentinel */
+ };
++#else
++static struct PyMemberDef kqueue_event_members[] = {
++    {"ident",           T_UINT,         KQ_OFF(e.ident)},
++    {"filter",          T_SHORT,        KQ_OFF(e.filter)},
++    {"flags",           T_USHORT,       KQ_OFF(e.flags)},
++    {"fflags",          T_UINT,         KQ_OFF(e.fflags)},
++    {"data",            T_INT,          KQ_OFF(e.data)},
++    {"udata",           T_UINTPTRT,     KQ_OFF(e.udata)},
++    {NULL} /* Sentinel */
++};
++# undef INTPTRT_FMT_UNIT
++# define INTPTRT_FMT_UNIT   "i"
++#endif
+ #undef KQ_OFF
+ 
+ static PyObject *
+@@ -1285,10 +1299,10 @@ kqueue_event_richcompare(kqueue_event_Object *s, kqueu
+             Py_TYPE(s)->tp_name, Py_TYPE(o)->tp_name);
+         return NULL;
+     }
+-    if (((result = s->e.ident - o->e.ident) == 0) &&
++    if (((result = (int)(s->e.ident - o->e.ident)) == 0) &&
+         ((result = s->e.filter - o->e.filter) == 0) &&
+         ((result = s->e.flags - o->e.flags) == 0) &&
+-        ((result = s->e.fflags - o->e.fflags) == 0) &&
++        ((result = (int)(s->e.fflags - o->e.fflags)) == 0) &&
+         ((result = s->e.data - o->e.data) == 0) &&
+         ((result = s->e.udata - o->e.udata) == 0)
+        ) {
