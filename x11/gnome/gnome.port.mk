@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.45 2011/09/19 09:07:24 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.46 2011/09/20 20:50:33 jasper Exp $
 #
 # Module for GNOME related ports
 #
@@ -14,17 +14,14 @@ CATEGORIES+=		x11/gnome
 .if ${NO_BUILD:L} == "no"
 USE_LIBTOOL?=		Yes
 MODULES+=		textproc/intltool
+.   if defined(CONFIGURE_STYLE) && ${CONFIGURE_STYLE:Mgnu}
+        CONFIGURE_ARGS+=${CONFIGURE_SHARED}
+.   endif
 .endif
 
 # Set to 'yes' if there are .desktop files in the package list.
 .if defined(MODGNOME_DESKTOP_FILE) && ${MODGNOME_DESKTOP_FILE:L} == "yes"
 MODGNOME_RUN_DEPENDS+=	devel/desktop-file-utils
-.endif
-
-# XXX: Move to MODGNOME_TOOLS=yelp Only here for 5-day plan backward compat.
-.if defined(MODGNOME_HELP_FILES) && ${MODGNOME_HELP_FILES:L} == "yes"
-MODGNOME_BUILD_DEPENDS+=x11/gnome/doc-utils
-MODGNOME_RUN_DEPENDS+= x11/gnome/yelp
 .endif
 
 USE_GMAKE?=		Yes
@@ -52,17 +49,17 @@ MODGNOME_CONFIGURE_ARGS_vala=--disable-vala
 
 .if defined(MODGNOME_TOOLS)
 .   if ${MODGNOME_TOOLS:Mgoi}
-        MODGOME_CONFIGURE_ARGS_goi+=--enable-introspection
+        MODGNOME_CONFIGURE_ARGS_goi=--enable-introspection
         MODGNOME_BUILD_DEPENDS+=devel/gobject-introspection
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mgtk-doc}
-        MODGNOME_CONFIGURE_ARGS_gtkdoc+=--enable-gtk-doc
+        MODGNOME_CONFIGURE_ARGS_gtkdoc=--enable-gtk-doc
         MODGNOME_BUILD_DEPENDS+=textproc/gtk-doc
 .   endif
 
 .   if ${MODGNOME_TOOLS:Mvala}
-        MODGNOME_CONFIGURE_ARGS_vala+=--enable-vala
+        MODGNOME_CONFIGURE_ARGS_vala=--enable-vala
         MODGNOME_BUILD_DEPENDS+=lang/vala
 .   endif
 
@@ -74,9 +71,9 @@ MODGNOME_CONFIGURE_ARGS_vala=--disable-vala
 .   endif
 .endif
 
-#CONFIGURE_ARGS+=${MODGNOME_CONFIGURE_ARGS_goi} \
-#		${MODGNOME_CONFIGURE_ARGS_gtkdoc} \
-#		${MODGNOME_CONFIGURE_ARGS_vala}
+CONFIGURE_ARGS+=${MODGNOME_CONFIGURE_ARGS_goi} \
+		${MODGNOME_CONFIGURE_ARGS_gtkdoc} \
+		${MODGNOME_CONFIGURE_ARGS_vala}
 
 .if defined(MODGNOME_BUILD_DEPENDS)
 BUILD_DEPENDS+=		${MODGNOME_BUILD_DEPENDS}
