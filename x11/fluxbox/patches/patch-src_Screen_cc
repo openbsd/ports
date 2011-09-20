@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_Screen_cc,v 1.5 2011/04/24 17:32:24 dcoppa Exp $
+$OpenBSD: patch-src_Screen_cc,v 1.6 2011/09/20 09:59:38 dcoppa Exp $
 
 Use 'unsigned long' to feed XChangeProperty: fix crash at startup
 on sparc64 (commit 870d4d02ee9085f1d0910db3f6e6838749d6a1ce)
@@ -6,8 +6,11 @@ on sparc64 (commit 870d4d02ee9085f1d0910db3f6e6838749d6a1ce)
 Fix a use-after-free crash on restart/exit
 (commit 0b6c860fa0067c73216209878ed1ae46f541f571)
 
---- src/Screen.cc.orig	Tue Apr 19 11:33:07 2011
-+++ src/Screen.cc	Tue Apr 19 11:33:51 2011
+Fix a bug in the BScreen constructor
+(commit 3ad611928a86db3fdb4a8818da1394aa53eaeac7)
+
+--- src/Screen.cc.orig	Tue Sep 20 11:49:54 2011
++++ src/Screen.cc	Tue Sep 20 11:50:28 2011
 @@ -361,7 +361,7 @@ BScreen::BScreen(FbTk::ResourceManager &rm,
  
      // we're going to manage the screen, so now add our pid
@@ -17,6 +20,15 @@ Fix a use-after-free crash on restart/exit
  
      rootWindow().changeProperty(fluxbox->getFluxboxPidAtom(), XA_CARDINAL,
                                  sizeof(pid_t) * 8, PropModeReplace,
+@@ -376,7 +376,7 @@ BScreen::BScreen(FbTk::ResourceManager &rm,
+     unsigned char *ret_prop;
+     if (rootWindow().property(wm_check, 0l, 1l,
+             False, XA_WINDOW, &xa_ret_type, &ret_format, &ret_nitems,
+-            &ret_bytes_after, &ret_prop) == Success) {
++            &ret_bytes_after, &ret_prop) ) {
+         m_restart = (ret_prop != NULL);
+         XFree(ret_prop);
+     }
 @@ -504,6 +504,8 @@ BScreen::~BScreen() {
      if (! managed)
          return;
