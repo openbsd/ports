@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.38 2011/09/20 15:57:23 jasper Exp $
 
 SHARED_ONLY=	Yes
 SHARED_LIBS +=  freeradius-radius    4.0      # .0.0
@@ -78,7 +78,10 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	gnu
 USE_GROFF =	Yes
 
-BUILD_DEPENDS=	net/net-snmp
+TAR=			${LOCALBASE}/bin/gtar
+
+BUILD_DEPENDS=		archivers/gtar \
+			net/net-snmp
 LIB_DEPENDS-main =	databases/gdbm \
 			devel/libtool,-ltdl
 WANTLIB-main=		${WANTLIB} c com_err krb5 pcap pthread readline \
