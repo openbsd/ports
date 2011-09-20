@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/03/13 18:23:02 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/09/20 11:32:36 dcoppa Exp $
 @bin bin/ccmake
 @bin bin/cmake
 @bin bin/cpack
@@ -118,7 +118,10 @@ share/cmake/Modules/CPack.VolumeIcon.icns.in
 share/cmake/Modules/CPack.background.png.in
 share/cmake/Modules/CPack.cmake
 share/cmake/Modules/CPack.distribution.dist.in
+share/cmake/Modules/CPackBundle.cmake
+share/cmake/Modules/CPackComponent.cmake
 share/cmake/Modules/CPackDeb.cmake
+share/cmake/Modules/CPackNSIS.cmake
 share/cmake/Modules/CPackRPM.cmake
 share/cmake/Modules/CPackZIP.cmake
 share/cmake/Modules/CTest.cmake
@@ -141,6 +144,8 @@ share/cmake/Modules/CheckIncludeFileCXX.cmake
 share/cmake/Modules/CheckIncludeFiles.cmake
 share/cmake/Modules/CheckLibraryExists.cmake
 share/cmake/Modules/CheckLibraryExists.lists.in
+share/cmake/Modules/CheckPrototypeDefinition.c.in
+share/cmake/Modules/CheckPrototypeDefinition.cmake
 share/cmake/Modules/CheckSizeOf.cmake
 share/cmake/Modules/CheckStructHasMember.cmake
 share/cmake/Modules/CheckSymbolExists.cmake
@@ -150,19 +155,23 @@ share/cmake/Modules/CheckTypeSizeMap.cmake.in
 share/cmake/Modules/CheckVariableExists.c
 share/cmake/Modules/CheckVariableExists.cmake
 share/cmake/Modules/Compiler/
+share/cmake/Modules/Compiler/Absoft-Fortran.cmake
 share/cmake/Modules/Compiler/Clang-C.cmake
 share/cmake/Modules/Compiler/Clang-CXX.cmake
 share/cmake/Modules/Compiler/Cray-C.cmake
 share/cmake/Modules/Compiler/Cray-CXX.cmake
 share/cmake/Modules/Compiler/Cray-Fortran.cmake
 share/cmake/Modules/Compiler/G95-Fortran.cmake
+share/cmake/Modules/Compiler/GNU-ASM.cmake
 share/cmake/Modules/Compiler/GNU-C.cmake
 share/cmake/Modules/Compiler/GNU-CXX.cmake
 share/cmake/Modules/Compiler/GNU-Fortran.cmake
 share/cmake/Modules/Compiler/GNU.cmake
+share/cmake/Modules/Compiler/HP-ASM.cmake
 share/cmake/Modules/Compiler/HP-C.cmake
 share/cmake/Modules/Compiler/HP-CXX.cmake
 share/cmake/Modules/Compiler/HP-Fortran.cmake
+share/cmake/Modules/Compiler/Intel-ASM.cmake
 share/cmake/Modules/Compiler/Intel-C.cmake
 share/cmake/Modules/Compiler/Intel-CXX.cmake
 share/cmake/Modules/Compiler/Intel-Fortran.cmake
@@ -181,15 +190,18 @@ share/cmake/Modules/Compiler/PathScale.cmake
 share/cmake/Modules/Compiler/SCO-C.cmake
 share/cmake/Modules/Compiler/SCO-CXX.cmake
 share/cmake/Modules/Compiler/SCO.cmake
+share/cmake/Modules/Compiler/SunPro-ASM.cmake
 share/cmake/Modules/Compiler/SunPro-C.cmake
 share/cmake/Modules/Compiler/SunPro-CXX.cmake
 share/cmake/Modules/Compiler/SunPro-Fortran.cmake
 share/cmake/Modules/Compiler/VisualAge-C.cmake
 share/cmake/Modules/Compiler/VisualAge-CXX.cmake
 share/cmake/Modules/Compiler/VisualAge-Fortran.cmake
+share/cmake/Modules/Compiler/XL-ASM.cmake
 share/cmake/Modules/Compiler/XL-C.cmake
 share/cmake/Modules/Compiler/XL-CXX.cmake
 share/cmake/Modules/Compiler/XL-Fortran.cmake
+share/cmake/Modules/Compiler/XL.cmake
 share/cmake/Modules/Dart.cmake
 share/cmake/Modules/DartConfiguration.tcl.in
 share/cmake/Modules/Documentation.cmake
@@ -200,6 +212,7 @@ share/cmake/Modules/FeatureSummary.cmake
 share/cmake/Modules/FindALSA.cmake
 share/cmake/Modules/FindASPELL.cmake
 share/cmake/Modules/FindAVIFile.cmake
+share/cmake/Modules/FindArmadillo.cmake
 share/cmake/Modules/FindBISON.cmake
 share/cmake/Modules/FindBLAS.cmake
 share/cmake/Modules/FindBZip2.cmake
@@ -357,6 +370,7 @@ share/cmake/Modules/FortranCInterface/mymodule.f90
 share/cmake/Modules/FortranCInterface/mymodule_.c
 share/cmake/Modules/FortranCInterface/mysub.f
 share/cmake/Modules/FortranCInterface/symbol.c.in
+share/cmake/Modules/GNUInstallDirs.cmake
 share/cmake/Modules/GetPrerequisites.cmake
 share/cmake/Modules/ITKCompatibility.cmake
 share/cmake/Modules/InstallRequiredSystemLibraries.cmake
@@ -374,9 +388,11 @@ share/cmake/Modules/Platform/AIX-GNU-Fortran.cmake
 share/cmake/Modules/Platform/AIX-GNU.cmake
 share/cmake/Modules/Platform/AIX-VisualAge-C.cmake
 share/cmake/Modules/Platform/AIX-VisualAge-CXX.cmake
+share/cmake/Modules/Platform/AIX-XL-ASM.cmake
 share/cmake/Modules/Platform/AIX-XL-C.cmake
 share/cmake/Modules/Platform/AIX-XL-CXX.cmake
 share/cmake/Modules/Platform/AIX-XL-Fortran.cmake
+share/cmake/Modules/Platform/AIX-XL.cmake
 share/cmake/Modules/Platform/AIX.cmake
 share/cmake/Modules/Platform/BSDOS.cmake
 share/cmake/Modules/Platform/BeOS.cmake
@@ -403,6 +419,7 @@ share/cmake/Modules/Platform/CYGWIN-GNU.cmake
 share/cmake/Modules/Platform/CYGWIN-windres.cmake
 share/cmake/Modules/Platform/CYGWIN.cmake
 share/cmake/Modules/Platform/Catamount.cmake
+share/cmake/Modules/Platform/Darwin-Absoft-Fortran.cmake
 share/cmake/Modules/Platform/Darwin-GNU-C.cmake
 share/cmake/Modules/Platform/Darwin-GNU-CXX.cmake
 share/cmake/Modules/Platform/Darwin-GNU-Fortran.cmake
@@ -428,10 +445,16 @@ share/cmake/Modules/Platform/HP-UX-GNU-C.cmake
 share/cmake/Modules/Platform/HP-UX-GNU-CXX.cmake
 share/cmake/Modules/Platform/HP-UX-GNU-Fortran.cmake
 share/cmake/Modules/Platform/HP-UX-GNU.cmake
+share/cmake/Modules/Platform/HP-UX-HP-ASM.cmake
+share/cmake/Modules/Platform/HP-UX-HP-C.cmake
+share/cmake/Modules/Platform/HP-UX-HP-CXX.cmake
+share/cmake/Modules/Platform/HP-UX-HP-Fortran.cmake
+share/cmake/Modules/Platform/HP-UX-HP.cmake
 share/cmake/Modules/Platform/HP-UX.cmake
 share/cmake/Modules/Platform/Haiku.cmake
 share/cmake/Modules/Platform/IRIX.cmake
 share/cmake/Modules/Platform/IRIX64.cmake
+share/cmake/Modules/Platform/Linux-Absoft-Fortran.cmake
 share/cmake/Modules/Platform/Linux-Clang-C.cmake
 share/cmake/Modules/Platform/Linux-Clang-CXX.cmake
 share/cmake/Modules/Platform/Linux-GNU-C.cmake
@@ -487,6 +510,7 @@ share/cmake/Modules/Platform/Windows-GNU-C.cmake
 share/cmake/Modules/Platform/Windows-GNU-CXX.cmake
 share/cmake/Modules/Platform/Windows-GNU-Fortran.cmake
 share/cmake/Modules/Platform/Windows-GNU.cmake
+share/cmake/Modules/Platform/Windows-Intel-ASM.cmake
 share/cmake/Modules/Platform/Windows-Intel-C.cmake
 share/cmake/Modules/Platform/Windows-Intel-CXX.cmake
 share/cmake/Modules/Platform/Windows-Intel-Fortran.cmake
@@ -505,6 +529,7 @@ share/cmake/Modules/Platform/eCos.cmake
 share/cmake/Modules/Platform/gas.cmake
 share/cmake/Modules/Platform/kFreeBSD.cmake
 share/cmake/Modules/Platform/syllable.cmake
+share/cmake/Modules/ProcessorCount.cmake
 share/cmake/Modules/Qt4ConfigDependentSettings.cmake
 share/cmake/Modules/Qt4Macros.cmake
 share/cmake/Modules/RepositoryInfo.txt.in
