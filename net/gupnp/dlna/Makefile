@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/20 18:14:46 ajacoutot Exp $
 
 COMMENT=		DLNA integration for GUPnP
 
 GNOME_PROJECT=		gupnp-dlna
 GNOME_VERSION=		0.6.3
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gupnp-dlna-1.0       0.0      # 2.0
 
@@ -18,6 +18,9 @@ WANTLIB += xml2 z
 BUILD_DEPENDS=		devel/gobject-introspection
 LIB_DEPENDS=		multimedia/gstreamer-0.10/plugins-base \
 			net/gupnp/core
+
+# sndio(7) support
+RUN_DEPENDS=		multimedia/gstreamer-0.10/plugins-good
 
 CONFIGURE_ARGS+=	--disable-gtk-doc \
 			--enable-introspection
