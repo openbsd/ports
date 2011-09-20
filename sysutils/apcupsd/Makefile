@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/20 11:26:14 sthen Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
 COMMENT-x11 =		gapcmon - GUI for apcupsd
 
-DISTNAME =		apcupsd-3.14.9
+DISTNAME =		apcupsd-3.14.10
 PKGNAME-main =		${DISTNAME}
 PKGNAME-cgi =		${DISTNAME:S/-/-cgi-/}
 PKGNAME-x11 =		${DISTNAME:S/-/-x11-/}
-REVISION-x11 =		0
 
 CATEGORIES =		sysutils
 
@@ -30,6 +29,7 @@ MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=apcupsd/}
 
 CONFIGURE_STYLE =	gnu old # old prevents overriding sysconfdir
 USE_GMAKE =		Yes
+NO_REGRESS =		Yes
 MAKE_FLAGS =		VERBOSE=2
 
 WEB_ROOT =		/var/www
