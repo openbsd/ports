@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.28 2011/09/20 21:10:00 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -44,8 +44,7 @@ MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lgmp"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-update-mimedb \
+CONFIGURE_ARGS=	--disable-update-mimedb \
 		--disable-extra-gcc-optimization
 
 .include <bsd.port.mk>

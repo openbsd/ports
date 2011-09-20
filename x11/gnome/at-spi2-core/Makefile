@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/20 20:52:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/20 21:10:00 jasper Exp $
 
 COMMENT=	service interface for assistive technologies
 
@@ -32,8 +32,7 @@ MODGNOME_TOOLS= goi
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
-		--disable-xevie
+CONFIGURE_ARGS= --disable-xevie
 
 # connects to DBus
 REGRESS_IS_INTERACTIVE=	x11

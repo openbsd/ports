@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/09/20 20:52:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2011/09/20 21:10:01 jasper Exp $
 
 COMMENT-main=		official media player for GNOME
 COMMENT-nautilus=	totem properties plugin for nautilus
@@ -94,8 +94,7 @@ CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include " \
 		GST_REGISTRY=${WRKDIR}/registry.${MACHINE_ARCH}.bin
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-plugins=${TOTEM_PLUGINS} \
+CONFIGURE_ARGS=	--with-plugins=${TOTEM_PLUGINS} \
 		--with-dbus \
 		--enable-nautilus \
 		--enable-python \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/09/20 20:52:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2011/09/20 21:10:00 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -69,8 +69,7 @@ MODGNOME_TOOLS= 	goi vala yelp
 AUTOCONF_VERSION=	2.68
 
 CONFIGURE_STYLE=	autoconf gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-plugin-subversion
+CONFIGURE_ARGS+=	--enable-plugin-subversion
 
 # adds dependency on libgnomeui
 CONFIGURE_ARGS+=	--disable-graphviz

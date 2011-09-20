@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.73 2011/09/20 20:52:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.74 2011/09/20 21:10:01 jasper Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -122,8 +122,7 @@ LIBTOOL_FLAGS=	--tag=disable-static
 MODGNOME_TOOLS= 	goi vala
 MODGNOME_DESKTOP_FILE=	Yes
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static \
+CONFIGURE_ARGS=	--disable-static \
 		--disable-functional-tests \
 		--enable-generic-media-extractor=gtsreamer \
 		--disable-miner-thunderbird \

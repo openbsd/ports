@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.48 2011/09/20 21:10:00 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -75,8 +75,7 @@ MODGNOME_TOOLS= 	goi yelp
 
 LIBTOOL_FLAGS=		--tag=disable-static
 USE_GROFF =		Yes
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-static \
+CONFIGURE_ARGS+=	--disable-static \
 			--enable-system-sqlite \
 			--with-bdb="${LOCALBASE}" \
 			--without-firebird \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/09/20 20:52:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.39 2011/09/20 21:10:01 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -39,8 +39,7 @@ MODGNOME_TOOLS= goi
 
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-quvi \
+CONFIGURE_ARGS=	--disable-quvi \
 		--enable-libarchive
 
 .include <bsd.port.mk>

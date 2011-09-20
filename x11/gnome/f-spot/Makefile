@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.50 2011/09/20 21:10:00 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -58,8 +58,7 @@ MODGCONF2_SCHEMAS_DIR=	f-spot
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-shave=no \
+CONFIGURE_ARGS+=	--enable-shave=no \
 			--disable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

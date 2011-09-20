@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/20 20:52:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2011/09/20 21:10:01 jasper Exp $
 
 COMMENT=	MAME front-end for GNOME
 
@@ -45,8 +45,7 @@ MODGNOME_TOOLS= yelp
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-glade-catalog \
+CONFIGURE_ARGS=	--with-glade-catalog \
 		--with-wnck \
 		--with-history-file="${LOCALBASE}/share/sdlmame/history.dat"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2011/09/20 21:10:01 jasper Exp $
 
 COMMENT=		project management application
 
@@ -48,8 +48,7 @@ MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	planner
 
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
-			--disable-update-mimedb \
+CONFIGURE_ARGS+= 	--disable-update-mimedb \
 			--enable-python \
 			--enable-python-plugin=yes \
 			--enable-eds=no \

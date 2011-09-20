@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2011/09/20 21:10:00 jasper Exp $
 
 # Don't forget to check eog-plugins when updating this port!
 
@@ -51,8 +51,7 @@ MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-xmp \
+CONFIGURE_ARGS+=	--with-xmp \
 			--with-libexif
 
 .include <bsd.port.mk>

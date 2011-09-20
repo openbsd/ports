@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/20 20:52:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.32 2011/09/20 21:10:01 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -40,8 +40,7 @@ MODGCONF2_SCHEMAS_DIR=	seahorse-plugins
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static \
+CONFIGURE_ARGS=	--disable-static \
 		--disable-update-mime-database \
 		--disable-cpp-rtti \
 		--disable-applet \

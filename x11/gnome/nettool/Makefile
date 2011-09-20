@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/09/20 21:10:01 jasper Exp $
 
 COMMENT=	GNOME interface for various networking tools
 
@@ -38,6 +38,5 @@ MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

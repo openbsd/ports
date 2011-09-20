@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2011/09/20 20:52:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.45 2011/09/20 21:10:01 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -45,8 +45,7 @@ LIB_DEPENDS=	devel/libpeas \
 MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= goi yelp
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-avahi \
+CONFIGURE_ARGS=	--with-avahi \
 		--with-telepathy \
 		--without-panelapplet \
 		--disable-spice

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/09/20 20:52:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.68 2011/09/20 21:10:01 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -37,8 +37,7 @@ LIB_DEPENDS=		archivers/bzip2 \
 
 MODGCONF2_SCHEMAS_DIR=	gnome-vfs2
 
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
-			--disable-cdda \
+CONFIGURE_ARGS+= 	--disable-cdda \
 			--disable-avahi \
 			--disable-howl \
 			--disable-samba

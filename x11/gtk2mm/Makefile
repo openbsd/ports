@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/09/20 20:52:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.53 2011/09/20 21:10:01 jasper Exp $
 
 COMMENT=	C++ interface for gtk2+
 
@@ -40,8 +40,7 @@ LIB_DEPENDS=	devel/atk2mm \
 SEPARATE_BUILD=	concurrent
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-static \
+CONFIGURE_ARGS=	--enable-static \
 		--disable-dependency-tracking
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/20 21:10:01 jasper Exp $
 
 COMMENT=		GNOME power manager
 
@@ -42,7 +42,6 @@ LIB_DEPENDS=	sysutils/upower \
 FAKE_FLAGS=	autostartdir=${PREFIX}/share/examples/gnome-power-manager/xdg/autostart \
 		script_SCRIPTS=""
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		ac_cv_path_DOCBOOK2MAN=no \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2011/09/20 21:10:00 jasper Exp $
 
 COMMENT=	libraries for the GNOME project
 
@@ -35,8 +35,7 @@ LIB_DEPENDS=	x11/gnome/libbonobo \
 USE_GROFF =	Yes
 MODGCONF2_SCHEMAS_DIR= libgnome
 
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		--disable-esd
+CONFIGURE_ARGS+= --disable-esd
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

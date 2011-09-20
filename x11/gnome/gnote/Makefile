@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/20 21:10:00 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -47,8 +47,7 @@ LIBTOOL_FLAGS+= 	--tag=disable-static
 AUTOCONF_VERSION=	2.68
 
 CONFIGURE_STYLE=	autoconf gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-static
+CONFIGURE_ARGS+=	--disable-static
 # needs libpanelappletmm and dbus-c++
 CONFIGURE_ARGS+=	--disable-applet \
 			--disable-dbus

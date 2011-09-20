@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.22 2011/09/20 21:10:00 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -46,8 +46,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		KRB5_CFLAGS="-I/usr/include/kerberosV" \
 		KRB5_LIBS="-lgssapi -lkrb5 -lasn1 -lcrypto"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static \
+CONFIGURE_ARGS=	--disable-static \
 		--with-gtk=3.0 \
 		--enable-pkinit \
 		--disable-network-manager \

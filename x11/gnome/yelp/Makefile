@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2011/09/20 20:52:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.72 2011/09/20 21:10:01 jasper Exp $
 
 COMMENT=		GNOME help browser
 
@@ -37,8 +37,7 @@ LIB_DEPENDS=		www/webkit,gtk3
 
 MODGNOME_DESKTOP_FILE=		Yes
 
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
-			--enable-lzma \
+CONFIGURE_ARGS+= 	--enable-lzma \
 			--enable-bz2
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

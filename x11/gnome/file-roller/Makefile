@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.57 2011/09/20 21:10:00 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -56,8 +56,7 @@ RUN_DEPENDS-nautilus=	x11/gnome/file-roller,-main
 MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=		Yes
 
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-packagekit
+CONFIGURE_ARGS=		--disable-packagekit
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.76 2011/09/20 21:10:00 jasper Exp $
 
 BROKEN=			needs an update (GNOME3)
 
@@ -74,8 +74,7 @@ MODGCONF2_SCHEMAS_DIR=	empathy
 
 AUTOCONF_VERSION=	2.65
 CONFIGURE_STYLE=	autoconf gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-spell=Yes \
+CONFIGURE_ARGS+=	--enable-spell=Yes \
 			--enable-location=Yes \
 			--enable-map=Yes\
 			--enable-webkit=no \

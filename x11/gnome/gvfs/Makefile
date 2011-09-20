@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.57 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2011/09/20 21:10:00 jasper Exp $
 
 COMMENT-main=	GNOME virtual file system
 COMMENT-smb=	samba module for GVFS
@@ -56,8 +56,7 @@ LIB_DEPENDS-smb= ${LIB_DEPENDS} \
 AUTOCONF_VERSION=2.68
 CONFIGURE_STYLE=autoconf
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-cdda \
+CONFIGURE_ARGS=	--disable-cdda \
 		--disable-fuse \
 		--disable-hal \
 		--disable-afc \

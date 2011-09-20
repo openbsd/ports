@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.65 2011/09/20 20:52:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2011/09/20 21:10:01 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -46,8 +46,7 @@ MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-utils
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-grep="/usr/bin/grep" \
+CONFIGURE_ARGS+=	--with-grep="/usr/bin/grep" \
 			--enable-ipv6
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

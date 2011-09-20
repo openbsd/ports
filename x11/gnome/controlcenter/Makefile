@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/09/20 20:52:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2011/09/20 21:10:00 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -71,8 +71,7 @@ MODGNOME_DESKTOP_FILE=		Yes
 # provide a --with-incomplete-locales configure switch.
 CFLAGS +=       -DWITH_INCOMPLETE_LOCALES
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-update-mimedb \
+CONFIGURE_ARGS=	--disable-update-mimedb \
 		--without-cheese \
 		--enable-cups
 

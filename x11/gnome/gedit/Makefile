@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2011/09/20 21:10:00 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -45,8 +45,7 @@ MODGNOME_TOOLS= 	goi yelp
 MODGNOME_DESKTOP_FILE=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-python \
+CONFIGURE_ARGS=		--enable-python \
 			--disable-updater \
 			--enable-gvfs-metadata
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

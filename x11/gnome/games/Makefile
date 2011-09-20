@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.54 2011/09/20 21:10:00 jasper Exp $
 
 BROKEN= 		update needs fixed clutter/Mesa
 
@@ -57,8 +57,7 @@ MODGNOME_TOOLS= 	goi yelp
 MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-games
 
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
-			--localstatedir="/var" \
+CONFIGURE_ARGS+= 	--localstatedir="/var" \
 			--with-scores-group="games"
 
 # XXX

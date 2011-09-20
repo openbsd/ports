@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2011/09/20 21:10:01 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -41,8 +41,7 @@ RUN_DEPENDS=	archivers/zip \
 LIB_DEPENDS=	databases/evolution-data-server \
 		net/gupnp/core
 
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		--with-gajim=${LOCALBASE}
+CONFIGURE_ARGS+= --with-gajim=${LOCALBASE}
 
 LIBTOOL_FLAGS=	--tag=disable-static
 

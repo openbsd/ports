@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2011/09/20 20:52:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.73 2011/09/20 21:10:01 jasper Exp $
 
 COMMENT=	GNOME terminal
 
@@ -33,8 +33,7 @@ LIB_DEPENDS=	devel/vte,gtk3
 MODGNOME_TOOLS= yelp
 MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-terminal
-CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
-			--with-gtk=3.0
+CONFIGURE_ARGS= 	--with-gtk=3.0
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

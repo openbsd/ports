@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.76 2011/09/20 21:10:00 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -38,7 +38,6 @@ LIB_DEPENDS=		devel/startup-notification \
 
 MODGNOME_TOOLS= 	goi yelp
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ARGS+=	--with-gnome-distributor="OpenBSD Ports"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

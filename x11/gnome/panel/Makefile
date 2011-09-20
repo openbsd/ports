@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.99 2011/09/20 21:10:01 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -69,8 +69,7 @@ MODGCONF2_SCHEMAS_DIR=	gnome-panel
 
 FAKE_FLAGS=	dbus_confdir=${PREFIX}/share/examples/gnome-panel/dbus-1/system.d
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-network-manager \
+CONFIGURE_ARGS=	--disable-network-manager \
 		--enable-eds \
 		--enable-telepathy-glib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \

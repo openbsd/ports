@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.90 2011/09/20 20:52:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.91 2011/09/20 21:10:01 jasper Exp $
 
 COMMENT=		GNOME file manager
 
@@ -65,8 +65,7 @@ MODGNOME_DESKTOP_FILE=		Yes
 
 USE_GROFF=		Yes
 
-CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
-			--disable-update-mimedb \
+CONFIGURE_ARGS+= 	--disable-update-mimedb \
 			--disable-packagekit \
 			--enable-libexif \
 			--enable-xmp

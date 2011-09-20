@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/09/20 20:52:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.33 2011/09/20 21:10:01 jasper Exp $
 
 COMMENT=	GNOME desktop sharing server
 
@@ -41,8 +41,7 @@ LIB_DEPENDS=	devel/libnotify \
 MODGNOME_DESKTOP_FILE=		Yes
 MODGNOME_TOOLS= yelp
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-gnome-keyring \
+CONFIGURE_ARGS=	--with-gnome-keyring \
 		--with-avahi \
 		--enable-http-server=no \
 		--with-libnotify \
