@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.91 2011/09/20 21:10:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.92 2011/09/20 21:17:26 ajacoutot Exp $
+
+# XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
+CFLAGS +=	"-DG_CONST_RETURN=const"
 
 COMMENT=		GNOME file manager
 
@@ -16,7 +19,7 @@ COMMENT=		GNOME file manager
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		3.0.2
 
-REVISION=		6
+REVISION=		7
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 

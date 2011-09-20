@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/20 21:04:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/20 21:17:26 ajacoutot Exp $
+
+# XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)	
+CFLAGS +=	"-DG_CONST_RETURN=const"
 
 COMMENT-main=	file and directory monitoring system
 COMMENT-server=	gamin file monitoring server
@@ -13,7 +16,7 @@ PKGNAME-server=	${DISTNAME}
 PKGNAME-python=	py-gamin-${GNOME_VERSION}
 
 REVISION-main=	5
-REVISION-server=15
+REVISION-server=16
 REVISION-python=5
 
 SHARED_LIBS +=  gamin-1              0.0      # .1.10
@@ -39,7 +42,6 @@ PSEUDO_FLAVORS=	no_python no_server
 FLAVOR?=
 
 MODULES=	x11/gnome
-
 
 WANTLIB-main =
 LIB_DEPENDS-main =
