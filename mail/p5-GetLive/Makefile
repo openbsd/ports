@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2011/06/02 13:41:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/20 13:43:37 gsoares Exp $
 
 COMMENT=	automatically fetch hotmail.com email
 
-DISTNAME=	GetLive_2_3
-PKGNAME=	p5-GetLive-2.3
+DISTNAME=	GetLive_2_4
+PKGNAME=	p5-GetLive-2.4
 PKG_ARCH=	*
 CATEGORIES=	mail perl5
 EXTRACT_SUFX=	.tgz
-REVISION=	0
 
 MAINTAINER=	Michael Erdely <merdely@openbsd.org>
 
