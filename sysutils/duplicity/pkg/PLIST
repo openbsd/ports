@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2009/12/05 14:45:08 jim Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/09/20 21:49:34 ajacoutot Exp $
 bin/duplicity
 bin/rdiffdir
 lib/python${MODPY_VERSION}/site-packages/duplicity/
@@ -21,6 +21,10 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/cloudfilesbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/cloudfilesbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ftpbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ftpbackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ftpsbackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/ftpsbackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/gdocsbackend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/gdocsbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/giobackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/giobackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/hsibackend.py
@@ -35,6 +39,8 @@ lib/python${MODPY_VERSION}/site-packages/duplicity/backends/sshbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/sshbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/tahoebackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/tahoebackend.pyc
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/u1backend.py
+lib/python${MODPY_VERSION}/site-packages/duplicity/backends/u1backend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/webdavbackend.py
 lib/python${MODPY_VERSION}/site-packages/duplicity/backends/webdavbackend.pyc
 lib/python${MODPY_VERSION}/site-packages/duplicity/collections.py

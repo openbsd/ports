@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/20 21:49:34 ajacoutot Exp $
 
 COMMENT =	encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION = 0.6.10
+MODPY_EGG_VERSION = 0.6.15
 DISTNAME =	duplicity-${MODPY_EGG_VERSION}
-REVISION=	1
 
 CATEGORIES =	sysutils
 
@@ -21,8 +20,9 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MODULES =	lang/python
 
-WANTLIB +=	rsync
-LIB_DEPENDS +=	net/librsync
+WANTLIB +=	rsync ${MODPY_WANTLIB}
+LIB_DEPENDS +=	net/librsync \
+		${MODPY_LIB_DEPENDS}
 RUN_DEPENDS +=	net/py-boto \
 		net/ncftp \
 		security/py-gnupg
