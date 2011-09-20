@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.469 2011/09/17 10:59:21 pirofti Exp $
+# $OpenBSD: Makefile,v 1.470 2011/09/20 09:05:32 landry Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -177,6 +177,7 @@
      SUBDIR += p5-Wx
      SUBDIR += p5-X-Osd
      SUBDIR += p5-X11-Protocol
+     SUBDIR += parcellite
      SUBDIR += partiwm
      SUBDIR += pbrowser
      SUBDIR += pcmanfm
