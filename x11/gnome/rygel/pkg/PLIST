@@ -1,0 +1,132 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/20 21:14:49 jasper Exp $
+%%SHARED%%
+@bin bin/rygel
+@bin bin/rygel-preferences
+include/rygel-1.0/
+include/rygel-1.0/rygel.h
+lib/pkgconfig/rygel-1.0.pc
+lib/rygel-1.0/
+lib/rygel-1.0/librygel-external.a
+@comment lib/rygel-1.0/librygel-external.la
+lib/rygel-1.0/librygel-gst-launch.a
+@comment lib/rygel-1.0/librygel-gst-launch.la
+lib/rygel-1.0/librygel-mpris.a
+@comment lib/rygel-1.0/librygel-mpris.la
+lib/rygel-1.0/librygel-playbin.a
+@comment lib/rygel-1.0/librygel-playbin.la
+@man man/man1/rygel.1
+@man man/man5/rygel.conf.5
+share/applications/
+share/applications/rygel-preferences.desktop
+share/applications/rygel.desktop
+share/dbus-1/
+share/dbus-1/services/
+share/dbus-1/services/org.gnome.Rygel1.service
+share/examples/rygel/
+share/examples/rygel/rygel.conf
+@sample ${SYSCONFDIR}/rygel.conf
+share/icons/
+share/icons/hicolor/
+share/icons/hicolor/120x120/
+share/icons/hicolor/120x120/apps/
+share/icons/hicolor/120x120/apps/rygel.jpg
+share/icons/hicolor/120x120/apps/rygel.png
+share/icons/hicolor/32x32/
+share/icons/hicolor/32x32/apps/
+share/icons/hicolor/32x32/apps/rygel.png
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
+share/icons/hicolor/48x48/apps/rygel.jpg
+share/icons/hicolor/48x48/apps/rygel.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/rygel-small.svg
+share/icons/hicolor/scalable/apps/rygel.svg
+share/locale/af/
+share/locale/af/LC_MESSAGES/
+share/locale/af/LC_MESSAGES/rygel.mo
+share/locale/ar/
+share/locale/ar/LC_MESSAGES/
+share/locale/ar/LC_MESSAGES/rygel.mo
+share/locale/bg/LC_MESSAGES/rygel.mo
+share/locale/bn_IN/
+share/locale/bn_IN/LC_MESSAGES/
+share/locale/bn_IN/LC_MESSAGES/rygel.mo
+share/locale/ca/LC_MESSAGES/rygel.mo
+share/locale/ca@valencia/
+share/locale/ca@valencia/LC_MESSAGES/
+share/locale/ca@valencia/LC_MESSAGES/rygel.mo
+share/locale/cs/LC_MESSAGES/rygel.mo
+share/locale/da/LC_MESSAGES/rygel.mo
+share/locale/de/LC_MESSAGES/rygel.mo
+share/locale/el/LC_MESSAGES/rygel.mo
+share/locale/en_GB/
+share/locale/en_GB/LC_MESSAGES/
+share/locale/en_GB/LC_MESSAGES/rygel.mo
+share/locale/es/LC_MESSAGES/rygel.mo
+share/locale/et/LC_MESSAGES/rygel.mo
+share/locale/fr/LC_MESSAGES/rygel.mo
+share/locale/gl/LC_MESSAGES/rygel.mo
+share/locale/gu/
+share/locale/gu/LC_MESSAGES/
+share/locale/gu/LC_MESSAGES/rygel.mo
+share/locale/he/LC_MESSAGES/rygel.mo
+share/locale/hu/LC_MESSAGES/rygel.mo
+share/locale/id/LC_MESSAGES/rygel.mo
+share/locale/it/LC_MESSAGES/rygel.mo
+share/locale/ja/LC_MESSAGES/rygel.mo
+share/locale/kn/
+share/locale/kn/LC_MESSAGES/
+share/locale/kn/LC_MESSAGES/rygel.mo
+share/locale/ko/LC_MESSAGES/rygel.mo
+share/locale/lt/
+share/locale/lt/LC_MESSAGES/
+share/locale/lt/LC_MESSAGES/rygel.mo
+share/locale/lv/LC_MESSAGES/rygel.mo
+share/locale/nb/LC_MESSAGES/rygel.mo
+share/locale/nl/LC_MESSAGES/rygel.mo
+share/locale/pa/
+share/locale/pa/LC_MESSAGES/
+share/locale/pa/LC_MESSAGES/rygel.mo
+share/locale/pl/LC_MESSAGES/rygel.mo
+share/locale/pt/LC_MESSAGES/rygel.mo
+share/locale/pt_BR/LC_MESSAGES/rygel.mo
+share/locale/ro/LC_MESSAGES/rygel.mo
+share/locale/ru/LC_MESSAGES/rygel.mo
+share/locale/sl/LC_MESSAGES/rygel.mo
+share/locale/sr/LC_MESSAGES/rygel.mo
+share/locale/sr@latin/
+share/locale/sr@latin/LC_MESSAGES/
+share/locale/sr@latin/LC_MESSAGES/rygel.mo
+share/locale/sv/LC_MESSAGES/rygel.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
+share/locale/ta/LC_MESSAGES/rygel.mo
+share/locale/th/
+share/locale/th/LC_MESSAGES/
+share/locale/th/LC_MESSAGES/rygel.mo
+share/locale/tr/LC_MESSAGES/rygel.mo
+share/locale/ug/
+share/locale/ug/LC_MESSAGES/
+share/locale/ug/LC_MESSAGES/rygel.mo
+share/locale/uk/LC_MESSAGES/rygel.mo
+share/locale/vi/LC_MESSAGES/rygel.mo
+share/locale/zh_CN/LC_MESSAGES/rygel.mo
+share/locale/zh_HK/LC_MESSAGES/rygel.mo
+share/locale/zh_TW/LC_MESSAGES/rygel.mo
+share/rygel/
+share/rygel/rygel-preferences.ui
+share/rygel/xml/
+share/rygel/xml/AVTransport2.xml
+share/rygel/xml/ConnectionManager.xml
+share/rygel/xml/ContentDirectory.xml
+share/rygel/xml/MediaRenderer2.xml
+share/rygel/xml/MediaServer2.xml
+share/rygel/xml/RenderingControl2.xml
+share/rygel/xml/X_MS_MediaReceiverRegistrar1.xml
+share/vala/vapi/rygel-1.0.deps
+share/vala/vapi/rygel-1.0.vapi
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
+@unexec-delete %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true

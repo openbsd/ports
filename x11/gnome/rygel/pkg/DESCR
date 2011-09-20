@@ -1,0 +1,7 @@
+Rygel is a home media solution that allows you to easily share audio,
+video and pictures, and control of media player on your home network. In
+technical terms it is both a UPnP AV MediaServer and MediaRenderer
+implemented through a plug-in mechanism. Interoperability with other
+devices in the market is achieved by conformance to very strict
+requirements of DLNA and on the fly conversion of media to format that
+client devices are capable of handling.
