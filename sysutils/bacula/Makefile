@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2011/09/20 08:01:20 landry Exp $
 
 COMMENT-main=		network backup solution (client)
 COMMENT-server=		network backup solution (server)
@@ -54,6 +54,9 @@ NO_REGRESS=		yes
 PSEUDO_FLAVORS=		no_bat no_server
 FLAVORS=		pgsql mysql sqlite3
 FLAVOR?=		sqlite3
+.if empty(FLAVOR)
+FLAVOR =		sqlite3
+.endif
 
 CONFIGURE_ARGS=		--enable-smartalloc \
 			--prefix=${PREFIX} \
