@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:00:19 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/20 11:08:52 sthen Exp $
 
 COMMENT=	translate common internet acronyms
 
 DISTNAME=	wtf-20071004
+REVISION=	0
 CATEGORIES=	games
 
 # Public Domain
@@ -13,7 +14,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://www.mu.org/~mux/wtf/
 
-USE_GROFF =	Yes
 NO_BUILD=	Yes
 NO_REGRESS=	Yes
 
