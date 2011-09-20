@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2011/05/22 10:34:38 rpointel Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/20 08:09:11 landry Exp $
 
 COMMENT=		grep like tool, aimed at programmers
 
 MODULES=		cpan
-DISTNAME=		ack-1.94
+DISTNAME=		ack-1.96
 CPAN_AUTHOR=		PETDANCE
 CATEGORIES=		textproc
 
-MAINTAINER=		Pierre-Yves Ritschard <pyr@spootnik.org>
+MAINTAINER=		Pierre-Yves Ritschard <pyr@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=   Yes
