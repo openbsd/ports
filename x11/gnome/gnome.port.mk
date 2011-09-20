@@ -1,4 +1,4 @@
-# $OpenBSD: gnome.port.mk,v 1.46 2011/09/20 20:50:33 jasper Exp $
+# $OpenBSD: gnome.port.mk,v 1.47 2011/09/20 20:59:25 ajacoutot Exp $
 #
 # Module for GNOME related ports
 #
@@ -36,7 +36,7 @@ FAKE_FLAGS +=	itlocaledir="${PREFIX}/share/locale/"
 # * gtk-doc: Enable to build the included docs.
 # * vala: Enable vala bindings.
 # * yelp: Use this if there are any files under share/gnome/help/
-#   in the pkg list and it calls gnome_help_display() -- gnome-doc-utils [Ais
+#   in the pkg list and it calls gnome_help_display() -- gnome-doc-utils is
 #   here to make sure we have a dependency on rarian (scrollkeeper-*) and
 #   have access to the gnome-doc-* tools (not always needed but easier).
 #
