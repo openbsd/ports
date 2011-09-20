@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-idle,v 1.1.1.1 2011/09/20 10:51:26 fgsch Exp $
+@comment $OpenBSD: PLIST-idle,v 1.2 2011/09/20 12:29:38 fgsch Exp $
+@pkgpath lang/python3/3.2,-idle
 bin/idle3
 bin/idle3.2
 lib/python3.2/idlelib/

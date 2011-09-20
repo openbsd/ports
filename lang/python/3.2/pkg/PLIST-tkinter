@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST-tkinter,v 1.1.1.1 2011/09/20 10:51:30 fgsch Exp $
+@comment $OpenBSD: PLIST-tkinter,v 1.2 2011/09/20 12:29:38 fgsch Exp $
+@pkgpath lang/python3/3.2,-tkinter
 lib/python3.2/lib-dynload/_tkinter.so
 lib/python3.2/tkinter/
 lib/python3.2/tkinter/__init__.py
