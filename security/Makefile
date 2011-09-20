@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.271 2011/09/19 14:05:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.272 2011/09/20 23:02:38 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.23 1997/11/09 10:17:02 asami Exp $
 #
 
@@ -36,6 +36,7 @@
      SUBDIR += cyrus-sasl2,ldap
      SUBDIR += cyrus-sasl2,mysql
      SUBDIR += cyrus-sasl2,pgsql
+     SUBDIR += cyrus-sasl2,sqlite3
      SUBDIR += dante
      SUBDIR += despoof
      SUBDIR += dsniff
