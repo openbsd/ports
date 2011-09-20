@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/20 20:52:46 jasper Exp $
 
 COMMENT=		GNOME power manager
 
@@ -30,7 +30,7 @@ MODULES=	devel/dconf \
 		devel/gettext \
 		x11/gnome
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= yelp
 MODGNOME_DESKTOP_FILE=		Yes
 
 LIB_DEPENDS=	sysutils/upower \

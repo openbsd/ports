@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2011/09/20 20:52:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -43,10 +43,9 @@ LIB_DEPENDS=	devel/libpeas \
 		net/avahi,-gtk3,no_mono,no_qt3,no_qt4
 
 MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= goi yelp
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-introspection \
 		--with-avahi \
 		--with-telepathy \
 		--without-panelapplet \

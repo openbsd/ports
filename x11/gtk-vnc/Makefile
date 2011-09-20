@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2011/09/20 20:52:47 jasper Exp $
 
 COMMENT=		VNC viewer widget for GTK
 
@@ -36,17 +36,17 @@ WANTLIB += cairo-gobject gdk-3 gtk-3
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		${RUN_DEPENDS} \
-			devel/gobject-introspection
+BUILD_DEPENDS=		${RUN_DEPENDS}
 
 LIB_DEPENDS=		security/gnutls \
 			security/cyrus-sasl2 \
 			security/libgcrypt \
 			x11/gtk+3
 
+MODGNOME_TOOLS= 	goi
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--enable-introspection \
 			--without-examples \
 			--with-sasl \
 			--without-libview \

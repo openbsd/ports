@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/12 12:04:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2011/09/20 20:52:46 jasper Exp $
 
 COMMENT=		user interface components for GNOME
 
@@ -36,8 +36,7 @@ LIB_DEPENDS=	x11/gnome/libgnome-keyring \
 		x11/gnome/libgnomecanvas \
 		x11/gnome/libbonoboui
 
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
-		--disable-gtk-doc
+CONFIGURE_ARGS+=${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 

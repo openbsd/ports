@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/19 19:13:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2011/09/20 20:52:47 jasper Exp $
 
 COMMENT=	C++ interface for gtk2+
 
@@ -32,8 +32,6 @@ WANTLIB += sigc-2.0 atk-1.0 cairo cairomm-1.0 atkmm-1.6
 
 MODULES=	devel/gettext \
 		x11/gnome
-
-EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=	devel/atk2mm \
 		devel/pangomm>=2.27 \

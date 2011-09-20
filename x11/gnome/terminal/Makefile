@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.72 2011/09/20 20:52:47 jasper Exp $
 
 COMMENT=	GNOME terminal
 
@@ -30,7 +30,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
 LIB_DEPENDS=	devel/vte,gtk3
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= yelp
 MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-terminal
 CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \

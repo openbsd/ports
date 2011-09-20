@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2011/09/20 20:52:46 jasper Exp $
 
 BROKEN=			needs an update (GNOME3)
 
@@ -69,7 +69,7 @@ RUN_DEPENDS=		devel/iso-codes \
 			x11/gnome/icon-theme>=2.30.3
 
 MODGNOME_DESKTOP_FILE=		Yes
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 MODGCONF2_SCHEMAS_DIR=	empathy
 
 AUTOCONF_VERSION=	2.65

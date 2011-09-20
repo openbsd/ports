@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2011/09/20 20:52:46 jasper Exp $
 
 COMMENT=	libraries for the GNOME project
 
@@ -36,8 +36,7 @@ USE_GROFF =	Yes
 MODGCONF2_SCHEMAS_DIR= libgnome
 
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		--disable-esd \
-		--disable-gtk-doc
+		--disable-esd
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

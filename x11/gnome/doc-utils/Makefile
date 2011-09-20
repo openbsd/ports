@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.49 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.50 2011/09/20 20:52:46 jasper Exp $
 
-# This port does set MODGNOME_HELP_FILES on purpose: it would create a
+# This port does set MODGNOME_TOOLS=yelp on purpose: it would create a
 # dependency on itself. We do not enforce dependency on x11/gnome/yelp
 # either because it would bring lots of other dependencies.
 

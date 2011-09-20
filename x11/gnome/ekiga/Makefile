@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2011/09/20 20:52:46 jasper Exp $
 
 BROKEN=		needs an update (GNOME3)
 
@@ -46,7 +46,7 @@ LIB_DEPENDS=	net/avahi \
 		devel/libnotify>=0.7.2
 
 MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_HELP_FILES=Yes
+MODGNOME_TOOLS= yelp
 MODGCONF2_SCHEMAS_DIR= ekiga
 USE_GROFF =	Yes
 

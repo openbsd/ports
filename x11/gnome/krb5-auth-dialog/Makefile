@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/20 20:52:46 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -36,7 +36,7 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	x11/gnome/controlcenter
 
 MODGCONF2_SCHEMAS_DIR= krb5-auth-dialog
-MODGNOME_HELP_FILES= Yes
+MODGNOME_TOOLS= yelp
 MODGNOME_DESKTOP_FILE=	Yes
 
 FAKE_FLAGS=	autostartdir=${PREFIX}/share/examples/krb5-auth-dialog/xdg/autostart \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/18 21:32:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/20 20:52:46 jasper Exp $
 
 COMMENT=	interface components for OpenPGP
 
@@ -28,8 +28,6 @@ WANTLIB += gpg-error gpgme gthread-2.0 gtk-3 m notify pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
 
-BUILD_DEPENDS=	devel/gobject-introspection
-
 LIB_DEPENDS=	x11/dbus-glib \
 		security/gpgme \
 		x11/gtk+3 \
@@ -40,12 +38,12 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
+MODGNOME_TOOLS=goi
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
-		--enable-introspection \
 		--disable-update-mime-database
 
 .include <bsd.port.mk>

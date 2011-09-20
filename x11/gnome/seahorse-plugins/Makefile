@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/09/20 20:52:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -34,7 +34,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/gconf2
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS=yelp
 MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	seahorse-plugins
 

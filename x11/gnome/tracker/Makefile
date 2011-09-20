@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.72 2011/09/20 17:00:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.73 2011/09/20 20:52:47 jasper Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -94,9 +94,6 @@ WANTLIB-nautilus += atk-1.0 cairo cairo-gobject e2fs-uuid gdk-3 gdk_pixbuf-2.0
 WANTLIB-nautilus += gtk-3 icui18n icuuc nautilus-extension pango-1.0 pangocairo-1.0
 WANTLIB-nautilus += pangoft2-1.0 png sqlite3 tracker-sparql-0.12
 
-BUILD_DEPENDS=	lang/vala \
-		devel/gobject-introspection
-
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			x11/gnome/panel \
 			x11/gnome/totem-pl-parser \
@@ -122,13 +119,12 @@ LIB_DEPENDS-nautilus=	${LIB_DEPENDS} \
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
+MODGNOME_TOOLS= 	goi vala
 MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
-		--disable-gtk-doc \
 		--disable-functional-tests \
-		--enable-introspection \
 		--enable-generic-media-extractor=gtsreamer \
 		--disable-miner-thunderbird \
 		--disable-miner-firefox \

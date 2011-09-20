@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2011/09/20 20:52:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -22,6 +22,7 @@ PKGNAME-pgsql=		libgda-pgsql-${GNOME_VERSION}
 PKGNAME-ui=		libgda-ui-${GNOME_VERSION}
 
 REVISION =		0
+REVISION-main = 	1
 
 EPOCH-main=		2
 EPOCH-ldap=		0
@@ -51,7 +52,6 @@ WANTLIB += gpg-error
 MODULES=		devel/gettext \
 			x11/gnome
 
-MODGNOME_HELP_FILES=	Yes
 MODGNOME_DESKTOP_FILE=		Yes
 
 SUBST_VARS=		GDA_MAJOR
@@ -67,17 +67,16 @@ LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
 
 BUILD_DEPENDS=		databases/db/v4 \
-			databases/sqlite3 \
-			devel/gobject-introspection
+			databases/sqlite3
 
 REGRESS_DEPENDS=	devel/check
+
+MODGNOME_TOOLS= 	goi yelp
 
 LIBTOOL_FLAGS=		--tag=disable-static
 USE_GROFF =		Yes
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--disable-static \
-			--disable-gtk-doc \
-			--enable-introspection \
 			--enable-system-sqlite \
 			--with-bdb="${LOCALBASE}" \
 			--without-firebird \
@@ -95,7 +94,8 @@ FAKE_FLAGS=		configdir="${PREFIX}/share/examples/libgda"
 WANTLIB-main += ${WANTLIB} c gcrypt gpg-error ncurses pthread
 WANTLIB-main += readline soup-2.4 crypto gdk_pixbuf-2.0 png xslt
 
-RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-main=	${MODGETTEXT_RUN_DEPENDS} \
+			${MODGNOME_RUN_DEPENDS_yelp}
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/libsoup \
 			textproc/libxslt \

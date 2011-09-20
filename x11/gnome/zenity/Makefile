@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2011/09/16 12:29:15 espie Exp $
+# $OpenBSD: Makefile,v 1.48 2011/09/20 20:52:47 jasper Exp $
 
 COMMENT=		dialogs for GNOME
 
@@ -29,7 +29,7 @@ WANTLIB += z
 LIB_DEPENDS=		devel/libnotify>=0.7.2 \
 			x11/gtk+3
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 USE_LIBTOOL=		No
 CONFIGURE_ARGS= 	--enable-libnotify
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.51 2011/09/20 20:52:46 jasper Exp $
 
 COMMENT=	GNOME component and compound document system
 
@@ -37,8 +37,7 @@ USE_GROFF =	Yes
 # from some libbonobo header and might still be used inside libbonobo
 RUN_DEPENDS=   devel/popt
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

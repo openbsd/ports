@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/20 20:52:46 jasper Exp $
 
 COMMENT=		serial terminal for GNOME
 
@@ -28,7 +28,7 @@ WANTLIB += z
 LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_DESKTOP_FILE=		Yes
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include " \
 			LDFLAGS="-L${LOCALBASE}/lib"

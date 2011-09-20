@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2011/09/20 20:52:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -32,7 +32,7 @@ MODULES=		devel/dconf \
 
 LIB_DEPENDS=		x11/gtk+3
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ARGS+=	${ENABLE_SHARED}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.55 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.56 2011/09/20 20:52:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -45,14 +45,15 @@ RUN_DEPENDS-main=	archivers/gcpio \
 			archivers/unzip \
 			archivers/xz \
 			archivers/zip \
-			sysutils/cdrtools
+			sysutils/cdrtools \
+			${MODGNOME_RUN_DEPENDS_yelp}
 LIB_DEPENDS-main=	x11/gtk+3
 
 WANTLIB-nautilus=	${WANTLIB} nautilus-extension
 LIB_DEPENDS-nautilus=	x11/gnome/nautilus
 RUN_DEPENDS-nautilus=	x11/gnome/file-roller,-main
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

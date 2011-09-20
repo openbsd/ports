@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.75 2011/09/20 20:52:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -31,17 +31,15 @@ WANTLIB += xcb xcb-atom xcb-aux xcb-event xcb-render xcb-shm z
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		devel/gobject-introspection \
-			devel/gsettings-desktop-schemas
+BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 RUN_DEPENDS=		devel/gsettings-desktop-schemas
 LIB_DEPENDS=		devel/startup-notification \
 			x11/gtk+3
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	goi yelp
+
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
-CONFIGURE_ARGS+=	--with-gnome-distributor="OpenBSD Ports" \
-			--disable-gtk-doc \
-			--enable-introspection
+CONFIGURE_ARGS+=	--with-gnome-distributor="OpenBSD Ports"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

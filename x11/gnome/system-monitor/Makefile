@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.22 2011/09/20 20:52:47 jasper Exp $
 
 COMMENT=	sytem monitor for GNOME
 
@@ -40,7 +40,7 @@ LIB_DEPENDS=	devel/libgtop2>=2.28.3p23 \
 		x11/gtk3mm
 
 MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_HELP_FILES= Yes
+MODGNOME_TOOLS= yelp
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/09/20 14:51:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/09/20 20:52:47 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -30,19 +30,17 @@ WANTLIB += gpgme-pthread
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	devel/gobject-introspection
-
 LIB_DEPENDS=	mail/gmime>=2.6.0 \
 		textproc/libxml \
 		devel/libsoup,-gnome \
 		archivers/libarchive
 
+MODGNOME_TOOLS= goi
+
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
 		--disable-quvi \
-		--enable-libarchive \
-		--enable-introspection
+		--enable-libarchive
 
 .include <bsd.port.mk>

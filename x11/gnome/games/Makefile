@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2011/09/20 20:52:46 jasper Exp $
 
 BROKEN= 		update needs fixed clutter/Mesa
 
@@ -52,14 +52,14 @@ REGRESS_DEPENDS=	devel/check
 # instead of the actual library
 USE_LIBTOOL=    	gnu
 
+MODGNOME_TOOLS= 	goi yelp
+
 MODGNOME_DESKTOP_FILE=		Yes
-MODGNOME_HELP_FILES=	Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-games
 
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
 			--localstatedir="/var" \
-			--with-scores-group="games" \
-			--enable-introspection
+			--with-scores-group="games"
 
 # XXX
 # lightsoff and swell-foop need seed

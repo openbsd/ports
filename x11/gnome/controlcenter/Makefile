@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2011/09/20 20:52:45 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -64,7 +64,7 @@ RUN_DEPENDS+=		x11/gnome/screensaver
 RUN_DEPENDS+=		sysutils/accountsservice \
 			security/apg
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=		Yes
 
 # Language code is synced with gdm but gnome-control-center does not

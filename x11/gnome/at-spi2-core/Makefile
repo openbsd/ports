@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/20 20:52:45 jasper Exp $
 
 COMMENT=	service interface for assistive technologies
 
@@ -25,17 +25,15 @@ WANTLIB += pthread-stubs xcb z
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	devel/gobject-introspection
-
 LIB_DEPENDS=	x11/dbus \
 		devel/glib2
+
+MODGNOME_TOOLS= goi
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS= ${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
-		--disable-xevie \
-		--enable-introspection
+		--disable-xevie
 
 # connects to DBus
 REGRESS_IS_INTERACTIVE=	x11

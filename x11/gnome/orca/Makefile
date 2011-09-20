@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.32 2011/09/20 20:52:46 jasper Exp $
 
 COMMENT=		assistive screen reader
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=		x11/gnome/py-atspi \
 			x11/dbus-python
 
 MODGNOME_DESKTOP_FILE=		Yes
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

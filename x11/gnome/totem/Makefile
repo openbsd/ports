@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2011/09/20 20:52:47 jasper Exp $
 
 COMMENT-main=		official media player for GNOME
 COMMENT-nautilus=	totem properties plugin for nautilus
@@ -57,7 +57,8 @@ BUILD_DEPENDS+= 	devel/iso-codes \
 RUN_DEPENDS-main+=	devel/iso-codes \
 			devel/py-xdg \
 			x11/dbus-python \
-			x11/gnome/settings-daemon
+			x11/gnome/settings-daemon \
+			${MODGNOME_RUN_DEPENDS_yelp}
 
 LIB_DEPENDS-main+=	${MODGETTEXT_LIB_DEPENDS} \
 			multimedia/gstreamer-0.10/plugins-base>=0.10.30 \
@@ -78,7 +79,7 @@ RUN_DEPENDS-main+=multimedia/gstreamer-0.10/plugins-good \
 PORTHOME=	${WRKDIR}
 
 MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_HELP_FILES=Yes
+MODGNOME_TOOLS= goi yelp
 USE_GROFF=	Yes
 
 # im-status gromit iplayer jamendo lirc media-player-keys ontop opensubtitles
@@ -94,13 +95,11 @@ CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		CFLAGS="${CFLAGS} -I${LOCALBASE}/include " \
 		GST_REGISTRY=${WRKDIR}/registry.${MACHINE_ARCH}.bin
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
 		--with-plugins=${TOTEM_PLUGINS} \
 		--with-dbus \
 		--enable-nautilus \
 		--enable-python \
 		--enable-vala \
-		--enable-introspection \
 		--disable-easy-codec-installation \
 		--disable-browser-plugins \
 		--disable-gmp-plugin \

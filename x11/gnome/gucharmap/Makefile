@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2011/09/20 20:52:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -32,20 +32,17 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-BUILD_DEPENDS=		devel/gobject-introspection
-
 # XXX: the libtool wrapper script is passed as argument to g-ir-scanner,
 # instead of the actual library
 USE_LIBTOOL=		gnu
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	goi yelp
 MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	gucharmap
 
 LIB_DEPENDS+=		x11/gtk+3,-main
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-introspection \
 			--with-gtk=3.0
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

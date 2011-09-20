@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2011/09/20 20:52:47 jasper Exp $
 
 COMMENT=	MAME front-end for GNOME
 
@@ -41,12 +41,11 @@ LIB_DEPENDS=	databases/sqlite3 \
 		multimedia/gstreamer-0.10/core
 
 MODGNOME_DESKTOP_FILE=		Yes
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= yelp
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
 		--with-glade-catalog \
 		--with-wnck \
 		--with-history-file="${LOCALBASE}/share/sdlmame/history.dat"

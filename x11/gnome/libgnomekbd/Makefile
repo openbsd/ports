@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/09/20 20:52:46 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -33,14 +33,14 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
-BUILD_DEPENDS=	devel/gobject-introspection
+MODGNOME_TOOLS= goi
+
 LIB_DEPENDS=	x11/gnome/libxklavier \
 		x11/gtk+3
 
 MODGNOME_DESKTOP_FILE=	Yes
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-introspection
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

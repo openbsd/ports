@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.32 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2011/09/20 20:52:46 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -42,7 +42,6 @@ LIB_DEPENDS=	databases/evolution-data-server \
 		net/gupnp/core
 
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
 		--with-gajim=${LOCALBASE}
 
 LIBTOOL_FLAGS=	--tag=disable-static

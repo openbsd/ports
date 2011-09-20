@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.61 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2011/09/20 20:52:46 jasper Exp $
 
 COMMENT=	password agent for the GNOME project
 
@@ -45,7 +45,6 @@ CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-pam \
 		--disable-selinux \
 		--disable-tests \
-		--disable-gtk-doc \
 		--without-libcap-ng
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

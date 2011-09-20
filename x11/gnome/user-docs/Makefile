@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/19 13:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/20 20:52:47 jasper Exp $
 
 PKG_ARCH=		*
 
@@ -15,7 +15,7 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=		x11/gnome
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 
 USE_LIBTOOL=		No
 

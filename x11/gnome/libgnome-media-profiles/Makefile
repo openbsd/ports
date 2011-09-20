@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/20 20:52:46 jasper Exp $
 
 COMMENT=	media profiles management library
 
@@ -31,7 +31,8 @@ MODULES=	devel/gconf2 \
 		x11/gnome
 
 MODGCONF2_SCHEMAS_DIR=libgnome-media-profiles
-MODGNOME_HELP_FILES=Yes
+
+MODGNOME_TOOLS= yelp
 
 LIB_DEPENDS=	x11/gtk+3 \
 		multimedia/gstreamer-0.10/core

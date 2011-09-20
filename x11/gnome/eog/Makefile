@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2011/09/20 20:52:46 jasper Exp $
 
 # Don't forget to check eog-plugins when updating this port!
 
@@ -46,14 +46,13 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			misc/shared-mime-info>=0.21 \
 			x11/gnome/icon-theme>=3.0.0
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	goi yelp
 MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-xmp \
-			--with-libexif \
-			--enable-introspection
+			--with-libexif
 
 .include <bsd.port.mk>

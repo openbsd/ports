@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/20 20:52:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -38,7 +38,7 @@ LIB_DEPENDS=		sysutils/e2fsprogs>=1.41.4p5 \
 			textproc/libxslt \
 			x11/gtk2mm
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnote
 

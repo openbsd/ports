@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2011/09/20 20:52:46 jasper Exp $
 
 # gnome-volume-control needs pulseaudio.
 
@@ -36,7 +36,7 @@ RUN_DEPENDS=	multimedia/gstreamer-0.10/plugins-good
 LIB_DEPENDS=	multimedia/gstreamer-0.10/plugins-base \
 		x11/gtk+3
 
-MODGNOME_HELP_FILES= 	Yes
+MODGNOME_TOOLS= yelp
 MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \

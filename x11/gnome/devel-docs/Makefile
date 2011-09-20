@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/12 12:04:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/20 20:52:46 jasper Exp $
 
 COMMENT=		developer documentation for GNOME
 
@@ -15,7 +15,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		x11/gnome
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 
 PKG_ARCH=		*
 USE_LIBTOOL=		No

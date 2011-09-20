@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.26 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/20 20:52:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -24,7 +24,8 @@ MODULES=		devel/gettext \
 			devel/gconf2 \
 			x11/gnome
 
-BUILD_DEPENDS=		devel/gobject-introspection
+MODGNOME_TOOLS= 	goi
+
 LIB_DEPENDS=		devel/libsoup,-gnome \
 			x11/gtk+3
 
@@ -39,9 +40,7 @@ WANTLIB += xcb-render xcb-shm xml2 z
 
 MODGCONF2_SCHEMAS_DIR=	libgweather
 
-CONFIGURE_ARGS+=	--with-zoneinfo-dir="/usr/share/zoneinfo" \
-			--disable-gtk-doc \
-			--enable-introspection
+CONFIGURE_ARGS+=	--with-zoneinfo-dir="/usr/share/zoneinfo"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

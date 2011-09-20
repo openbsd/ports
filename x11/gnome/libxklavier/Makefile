@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.34 2011/09/20 20:52:46 jasper Exp $
 
 COMMENT=		utility library for XKB
 
@@ -31,7 +31,6 @@ LIB_DEPENDS=		devel/glib2 \
 			textproc/libxml
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
 			--with-xkb-base="${X11BASE}/share/X11/xkb/" \
 			--with-xkb-bin-base="${X11BASE}/bin/" \
 			--with-xmodmap-base="/usr/share/xmodmap"

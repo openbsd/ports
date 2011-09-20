@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2011/09/20 20:52:46 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -63,16 +63,14 @@ RUN_DEPENDS+=	x11/gnome/screensaver
 # yelp.desktop menu entry (from yelp: OnlyShowIn=GNOME;)
 RUN_DEPENDS+=	x11/gnome/user-docs
 
-MODGNOME_HELP_FILES= 	Yes
+MODGNOME_TOOLS= goi yelp
 MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-panel
 
 FAKE_FLAGS=	dbus_confdir=${PREFIX}/share/examples/gnome-panel/dbus-1/system.d
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
 		--disable-network-manager \
-		--enable-introspection \
 		--enable-eds \
 		--enable-telepathy-glib
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libpng" \

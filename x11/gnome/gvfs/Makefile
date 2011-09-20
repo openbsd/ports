@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2011/09/20 20:52:46 jasper Exp $
 
 COMMENT-main=	GNOME virtual file system
 COMMENT-smb=	samba module for GVFS
@@ -57,7 +57,6 @@ AUTOCONF_VERSION=2.68
 CONFIGURE_STYLE=autoconf
 
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
 		--disable-cdda \
 		--disable-fuse \
 		--disable-hal \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.56 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2011/09/20 20:52:47 jasper Exp $
 
 COMMENT=		GNOME encryption interface
 
@@ -37,7 +37,7 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/dconf
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

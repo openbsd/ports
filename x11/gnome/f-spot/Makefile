@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2011/09/20 20:52:46 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -41,7 +41,7 @@ MODULES=		devel/gettext \
 			devel/gconf2
 
 MODGNOME_DESKTOP_FILE=		Yes
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			shells/bash \

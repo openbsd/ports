@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2011/09/20 20:52:45 jasper Exp $
 
 COMMENT=		CD/DVD authoring application for GNOME
 
@@ -42,7 +42,7 @@ RUN_DEPENDS=		misc/cdrdao \
 			sysutils/dvd+rw-tools
 
 MODGNOME_DESKTOP_FILE=		Yes
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_ARGS+=	--disable-libnotify
 CONFIGURE_ENV+= 	LDFLAGS="-L${LOCALBASE}/lib" \

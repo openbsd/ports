@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/09/20 20:52:45 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.1.92
+REVISION=		0
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -41,8 +42,7 @@ WANTLIB += svn_subr-1 svn_wc-1 util vala-0.14 vte2_90 webkitgtk-3.0
 WANTLIB += xcb xcb-render xcb-shm xml2 xslt z icudata icui18n icuuc
 WANTLIB += ${MODPY_WANTLIB}
 
-BUILD_DEPENDS=		devel/autogen>=5.6.5 \
-			devel/gobject-introspection
+BUILD_DEPENDS=		devel/autogen>=5.6.5
 # libgda is needed by the symbol-db plugin, which we don't build on OpenBSD.
 # though GDA_CFLAGS is used in various Makefile's. So instead of changing
 # dozens of files, we just drop the LIB_DEPENDS and keep the BUILD_DEPENDS.
@@ -63,16 +63,14 @@ BUILD_DEPENDS+=		devel/bison
 
 LIBTOOL_FLAGS=		--tag=disable-static
 MODGNOME_DESKTOP_FILE=		Yes
-MODGNOME_HELP_FILES=	Yes
+
+MODGNOME_TOOLS= 	goi vala yelp
 
 AUTOCONF_VERSION=	2.68
 
 CONFIGURE_STYLE=	autoconf gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-plugin-subversion \
-			--enable-gtk-doc=no \
-			--enable-introspection \
-			--enable-vala
+			--enable-plugin-subversion
 
 # adds dependency on libgnomeui
 CONFIGURE_ARGS+=	--disable-graphviz

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/20 20:52:46 jasper Exp $
 
 COMMENT=	GNOME interface for various networking tools
 
@@ -33,7 +33,7 @@ LIB_DEPENDS=	devel/libgtop2 \
 BUILD_DEPENDS=	devel/gsettings-desktop-schemas
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= yelp
 MODGNOME_DESKTOP_FILE=		Yes
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

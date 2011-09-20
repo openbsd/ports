@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.65 2011/09/20 20:52:47 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -42,12 +42,11 @@ MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-utils
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
 			--with-grep="/usr/bin/grep" \
 			--enable-ipv6
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
