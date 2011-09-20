@@ -1,0 +1,67 @@
+$OpenBSD: patch-ext_Makefile,v 1.1 2011/09/20 14:03:20 uwe Exp $
+--- ext/Makefile.orig	Wed Jun  8 20:57:44 2011
++++ ext/Makefile	Mon Sep 12 01:24:45 2011
+@@ -1,7 +1,5 @@
+ #!/usr/bin/make -f
+ 
+-DESTDIR=
+-
+ build:
+ 
+ clean:
+@@ -9,36 +7,34 @@ clean:
+ install: install-bin install-lib install-conf install-plugins install-doc
+ 
+ install-bin:
+-	install -d $(DESTDIR)/usr/sbin
+-	install -d $(DESTDIR)/usr/bin
+-	cp mc-* $(DESTDIR)/usr/sbin
+-	cp mco $(DESTDIR)/usr/bin
+-	cp mcollectived.rb $(DESTDIR)/usr/sbin/mcollectived
++	install -d $(PREFIX)/sbin
++	install -d $(PREFIX)/bin
++	cp mc-* $(PREFIX)/sbin
++	cp mco $(PREFIX)/bin
++	cp mcollectived.rb $(PREFIX)/sbin/mcollectived
+ 
+ install-lib:
+-	install -d $(DESTDIR)/usr/lib/ruby/1.8/
+-	cp -a lib/* $(DESTDIR)/usr/lib/ruby/1.8/
++	install -d $(PREFIX)/lib/ruby/1.8/
++	cp -R lib/* $(PREFIX)/lib/ruby/1.8/
+ 
+ install-conf:
+-	install -d $(DESTDIR)/etc/mcollective/
+-	install -d $(DESTDIR)/etc/init.d
+-	cp -r etc/* $(DESTDIR)/etc/mcollective/
+-	cp mcollective.init $(DESTDIR)/etc/init.d/mcollective
+-	rm $(DESTDIR)/etc/mcollective/ssl/PLACEHOLDER
+-	rm $(DESTDIR)/etc/mcollective/ssl/clients/PLACEHOLDER
++	install -d $(PREFIX)/share/examples/mcollective/
++	cp -R etc/* $(PREFIX)/share/examples/mcollective/
++	rm $(PREFIX)/share/examples/mcollective/ssl/PLACEHOLDER
++	rm $(PREFIX)/share/examples/mcollective/ssl/clients/PLACEHOLDER
+ 
+ install-plugins:
+-	install -d $(DESTDIR)/usr/share/mcollective/
+-	cp -a plugins $(DESTDIR)/usr/share/mcollective/
++	install -d $(PREFIX)/share/mcollective/
++	cp -R plugins $(PREFIX)/share/mcollective/
+ 
+ install-doc:
+-	install -d $(DESTDIR)/usr/share/doc/
+-	cp -a doc  $(DESTDIR)/usr/share/doc/mcollective
++	install -d $(PREFIX)/share/doc/
++	cp -R doc  $(PREFIX)/share/doc/mcollective
+ 
+ uninstall:
+-	rm -f $(DESTDIR)/usr/sbin/mcollectived
+-	rm -rf $(DESTDIR)/usr/lib/ruby/1.8/mcollective*
+-	rm -rf $(DESTDIR)/usr/share/mcollective
+-	rm -rf $(DESTDIR)/etc/mcollective
++	rm -f $(PREFIX)/sbin/mcollectived
++	rm -rf $(PREFIX)/lib/ruby/1.8/mcollective*
++	rm -rf $(PREFIX)/share/mcollective
++	rm -rf $(PREFIX)/etc/mcollective
+ 
+ .PHONY: build clean install uninstall
