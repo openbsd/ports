@@ -1,8 +1,12 @@
-@comment $OpenBSD: PLIST-docs,v 1.21 2011/03/07 19:17:14 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.22 2011/09/20 21:09:34 ajacoutot Exp $
 @conflict glib2-<2.4.6
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gio/
+share/gtk-doc/html/gio/ExampleAnimal.html
+share/gtk-doc/html/gio/ExampleCat.html
+share/gtk-doc/html/gio/ExampleObject.html
+share/gtk-doc/html/gio/ExampleObjectManagerClient.html
 share/gtk-doc/html/gio/GAction.html
 share/gtk-doc/html/gio/GActionGroup.html
 share/gtk-doc/html/gio/GAppInfo.html
@@ -18,9 +22,16 @@ share/gtk-doc/html/gio/GConverter.html
 share/gtk-doc/html/gio/GCredentials.html
 share/gtk-doc/html/gio/GDBusAuthObserver.html
 share/gtk-doc/html/gio/GDBusConnection.html
-share/gtk-doc/html/gio/GDBusError.html
+share/gtk-doc/html/gio/GDBusInterface.html
+share/gtk-doc/html/gio/GDBusInterfaceSkeleton.html
 share/gtk-doc/html/gio/GDBusMessage.html
 share/gtk-doc/html/gio/GDBusMethodInvocation.html
+share/gtk-doc/html/gio/GDBusObject.html
+share/gtk-doc/html/gio/GDBusObjectManager.html
+share/gtk-doc/html/gio/GDBusObjectManagerClient.html
+share/gtk-doc/html/gio/GDBusObjectManagerServer.html
+share/gtk-doc/html/gio/GDBusObjectProxy.html
+share/gtk-doc/html/gio/GDBusObjectSkeleton.html
 share/gtk-doc/html/gio/GDBusProxy.html
 share/gtk-doc/html/gio/GDBusServer.html
 share/gtk-doc/html/gio/GDataInputStream.html
@@ -86,6 +97,10 @@ share/gtk-doc/html/gio/GTlsBackend.html
 share/gtk-doc/html/gio/GTlsCertificate.html
 share/gtk-doc/html/gio/GTlsClientConnection.html
 share/gtk-doc/html/gio/GTlsConnection.html
+share/gtk-doc/html/gio/GTlsDatabase.html
+share/gtk-doc/html/gio/GTlsFileDatabase.html
+share/gtk-doc/html/gio/GTlsInteraction.html
+share/gtk-doc/html/gio/GTlsPassword.html
 share/gtk-doc/html/gio/GTlsServerConnection.html
 share/gtk-doc/html/gio/GUnixConnection.html
 share/gtk-doc/html/gio/GUnixCredentialsMessage.html
@@ -106,6 +121,7 @@ share/gtk-doc/html/gio/api-index-2-22.html
 share/gtk-doc/html/gio/api-index-2-24.html
 share/gtk-doc/html/gio/api-index-2-26.html
 share/gtk-doc/html/gio/api-index-2-28.html
+share/gtk-doc/html/gio/api-index-2-30.html
 share/gtk-doc/html/gio/api-index-deprecated.html
 share/gtk-doc/html/gio/api-index-full.html
 share/gtk-doc/html/gio/application.html
@@ -129,15 +145,17 @@ share/gtk-doc/html/gio/ch29s02.html
 share/gtk-doc/html/gio/ch29s03.html
 share/gtk-doc/html/gio/ch29s04.html
 share/gtk-doc/html/gio/ch29s05.html
-share/gtk-doc/html/gio/ch29s06.html
 share/gtk-doc/html/gio/conversion.html
 share/gtk-doc/html/gio/extending-gio.html
 share/gtk-doc/html/gio/extending.html
 share/gtk-doc/html/gio/failable_initialization.html
 share/gtk-doc/html/gio/file_mon.html
 share/gtk-doc/html/gio/file_ops.html
+share/gtk-doc/html/gio/gdbus-codegen.html
 share/gtk-doc/html/gio/gdbus-convenience.html
 share/gtk-doc/html/gio/gdbus-lowlevel.html
+share/gtk-doc/html/gio/gdbus-org.gtk.GDBus.Example.ObjectManager.Animal.html
+share/gtk-doc/html/gio/gdbus-org.gtk.GDBus.Example.ObjectManager.Cat.html
 share/gtk-doc/html/gio/gdbus.html
 share/gtk-doc/html/gio/gio-D-Bus-Addresses.html
 share/gtk-doc/html/gio/gio-D-Bus-Introspection-Data.html
@@ -147,6 +165,7 @@ share/gtk-doc/html/gio/gio-Extension-Points.html
 share/gtk-doc/html/gio/gio-GContentType.html
 share/gtk-doc/html/gio/gio-GConverterInputstream.html
 share/gtk-doc/html/gio/gio-GConverterOutputstream.html
+share/gtk-doc/html/gio/gio-GDBusError.html
 share/gtk-doc/html/gio/gio-GFileAttribute.html
 share/gtk-doc/html/gio/gio-GIOError.html
 share/gtk-doc/html/gio/gio-GIOScheduler.html
@@ -196,6 +215,7 @@ share/gtk-doc/html/glib/api-index-2-22.html
 share/gtk-doc/html/glib/api-index-2-24.html
 share/gtk-doc/html/glib/api-index-2-26.html
 share/gtk-doc/html/glib/api-index-2-28.html
+share/gtk-doc/html/glib/api-index-2-30.html
 share/gtk-doc/html/glib/api-index-2-4.html
 share/gtk-doc/html/glib/api-index-2-6.html
 share/gtk-doc/html/glib/api-index-2-8.html
@@ -216,6 +236,7 @@ share/gtk-doc/html/glib/glib-Caches.html
 share/gtk-doc/html/glib/glib-Character-Set-Conversion.html
 share/gtk-doc/html/glib/glib-Commandline-option-parser.html
 share/gtk-doc/html/glib/glib-Data-Checksums.html
+share/gtk-doc/html/glib/glib-Data-HMACs.html
 share/gtk-doc/html/glib/glib-Datasets.html
 share/gtk-doc/html/glib/glib-Date-and-Time-Functions.html
 share/gtk-doc/html/glib/glib-Double-ended-Queues.html
@@ -267,6 +288,7 @@ share/gtk-doc/html/glib/glib-Threads.html
 share/gtk-doc/html/glib/glib-Timers.html
 share/gtk-doc/html/glib/glib-Trash-Stacks.html
 share/gtk-doc/html/glib/glib-Type-Conversion-Macros.html
+share/gtk-doc/html/glib/glib-UNIX-specific-utilities-and-integration.html
 share/gtk-doc/html/glib/glib-URI-Functions.html
 share/gtk-doc/html/glib/glib-Unicode-Manipulation.html
 share/gtk-doc/html/glib/glib-Version-Information.html
@@ -314,6 +336,7 @@ share/gtk-doc/html/gobject/api-index-2-22.html
 share/gtk-doc/html/gobject/api-index-2-24.html
 share/gtk-doc/html/gobject/api-index-2-26.html
 share/gtk-doc/html/gobject/api-index-2-28.html
+share/gtk-doc/html/gobject/api-index-2-30.html
 share/gtk-doc/html/gobject/api-index-2-4.html
 share/gtk-doc/html/gobject/api-index-2-6.html
 share/gtk-doc/html/gobject/api-index-2-8.html

@@ -1,7 +1,7 @@
-$OpenBSD: patch-tests_Makefile_in,v 1.20 2011/05/28 21:15:47 ajacoutot Exp $
---- tests/Makefile.in.orig	Sat Jan 29 03:46:14 2011
-+++ tests/Makefile.in	Mon Jan 31 10:14:44 2011
-@@ -643,8 +643,7 @@ test_programs = \
+$OpenBSD: patch-tests_Makefile_in,v 1.21 2011/09/20 21:09:34 ajacoutot Exp $
+--- tests/Makefile.in.orig	Sun Sep 18 16:07:00 2011
++++ tests/Makefile.in	Mon Sep 19 23:11:45 2011
+@@ -656,8 +656,7 @@ test_programs = \
  	thread-test				\
  	threadpool-test				\
  	type-test				\

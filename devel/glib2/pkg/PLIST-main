@@ -1,9 +1,10 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2011/05/28 21:15:47 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2011/09/20 21:09:34 ajacoutot Exp $
 @conflict glib2-fam-*
 @pkgpath devel/glib2
 @pkgpath devel/glib2,-fam
 @unexec-delete rm -f %D/share/glib-2.0/schemas/gschemas.compiled
 @bin bin/gdbus
+bin/gdbus-codegen
 @bin bin/gio-querymodules
 @bin bin/glib-compile-schemas
 @bin bin/glib-genmarshal
@@ -49,11 +50,19 @@ include/glib-2.0/gio/gdbusaddress.h
 include/glib-2.0/gio/gdbusauthobserver.h
 include/glib-2.0/gio/gdbusconnection.h
 include/glib-2.0/gio/gdbuserror.h
+include/glib-2.0/gio/gdbusinterface.h
+include/glib-2.0/gio/gdbusinterfaceskeleton.h
 include/glib-2.0/gio/gdbusintrospection.h
 include/glib-2.0/gio/gdbusmessage.h
 include/glib-2.0/gio/gdbusmethodinvocation.h
 include/glib-2.0/gio/gdbusnameowning.h
 include/glib-2.0/gio/gdbusnamewatching.h
+include/glib-2.0/gio/gdbusobject.h
+include/glib-2.0/gio/gdbusobjectmanager.h
+include/glib-2.0/gio/gdbusobjectmanagerclient.h
+include/glib-2.0/gio/gdbusobjectmanagerserver.h
+include/glib-2.0/gio/gdbusobjectproxy.h
+include/glib-2.0/gio/gdbusobjectskeleton.h
 include/glib-2.0/gio/gdbusproxy.h
 include/glib-2.0/gio/gdbusserver.h
 include/glib-2.0/gio/gdbusutils.h
@@ -127,6 +136,10 @@ include/glib-2.0/gio/gtlsbackend.h
 include/glib-2.0/gio/gtlscertificate.h
 include/glib-2.0/gio/gtlsclientconnection.h
 include/glib-2.0/gio/gtlsconnection.h
+include/glib-2.0/gio/gtlsdatabase.h
+include/glib-2.0/gio/gtlsfiledatabase.h
+include/glib-2.0/gio/gtlsinteraction.h
+include/glib-2.0/gio/gtlspassword.h
 include/glib-2.0/gio/gtlsserverconnection.h
 include/glib-2.0/gio/gvfs.h
 include/glib-2.0/gio/gvolume.h
@@ -135,6 +148,7 @@ include/glib-2.0/gio/gzlibcompressor.h
 include/glib-2.0/gio/gzlibdecompressor.h
 include/glib-2.0/glib/
 include/glib-2.0/glib-object.h
+include/glib-2.0/glib-unix.h
 include/glib-2.0/glib.h
 include/glib-2.0/glib/galloca.h
 include/glib-2.0/glib/garray.h
@@ -155,6 +169,7 @@ include/glib-2.0/glib/gdir.h
 include/glib-2.0/glib/gerror.h
 include/glib-2.0/glib/gfileutils.h
 include/glib-2.0/glib/ghash.h
+include/glib-2.0/glib/ghmac.h
 include/glib-2.0/glib/ghook.h
 include/glib-2.0/glib/ghostutils.h
 include/glib-2.0/glib/gi18n-lib.h
@@ -208,6 +223,7 @@ include/glib-2.0/gobject/gbinding.h
 include/glib-2.0/gobject/gboxed.h
 include/glib-2.0/gobject/gclosure.h
 include/glib-2.0/gobject/genums.h
+include/glib-2.0/gobject/glib-types.h
 include/glib-2.0/gobject/gmarshal.h
 include/glib-2.0/gobject/gobject.h
 include/glib-2.0/gobject/gobjectnotifyqueue.c
@@ -223,6 +239,32 @@ include/glib-2.0/gobject/gvaluearray.h
 include/glib-2.0/gobject/gvaluecollector.h
 include/glib-2.0/gobject/gvaluetypes.h
 @comment lib/charset.alias
+lib/gdbus-2.0/
+lib/gdbus-2.0/codegen/
+lib/gdbus-2.0/codegen/__init__.py
+lib/gdbus-2.0/codegen/__init__.pyc
+lib/gdbus-2.0/codegen/__init__.pyo
+lib/gdbus-2.0/codegen/codegen.py
+lib/gdbus-2.0/codegen/codegen.pyc
+lib/gdbus-2.0/codegen/codegen.pyo
+lib/gdbus-2.0/codegen/codegen_docbook.py
+lib/gdbus-2.0/codegen/codegen_docbook.pyc
+lib/gdbus-2.0/codegen/codegen_docbook.pyo
+lib/gdbus-2.0/codegen/codegen_main.py
+lib/gdbus-2.0/codegen/codegen_main.pyc
+lib/gdbus-2.0/codegen/codegen_main.pyo
+lib/gdbus-2.0/codegen/config.py
+lib/gdbus-2.0/codegen/config.pyc
+lib/gdbus-2.0/codegen/config.pyo
+lib/gdbus-2.0/codegen/dbustypes.py
+lib/gdbus-2.0/codegen/dbustypes.pyc
+lib/gdbus-2.0/codegen/dbustypes.pyo
+lib/gdbus-2.0/codegen/parser.py
+lib/gdbus-2.0/codegen/parser.pyc
+lib/gdbus-2.0/codegen/parser.pyo
+lib/gdbus-2.0/codegen/utils.py
+lib/gdbus-2.0/codegen/utils.pyc
+lib/gdbus-2.0/codegen/utils.pyo
 lib/gio/
 lib/gio/modules/
 @comment lib/gio/modules/libgiofam.a
@@ -240,7 +282,6 @@ lib/libgobject-2.0.a
 lib/libgobject-2.0.la
 lib/libgthread-2.0.a
 lib/libgthread-2.0.la
-lib/pkgconfig/
 lib/pkgconfig/gio-2.0.pc
 lib/pkgconfig/gio-unix-2.0.pc
 lib/pkgconfig/glib-2.0.pc
@@ -249,6 +290,7 @@ lib/pkgconfig/gmodule-export-2.0.pc
 lib/pkgconfig/gmodule-no-export-2.0.pc
 lib/pkgconfig/gobject-2.0.pc
 lib/pkgconfig/gthread-2.0.pc
+@man man/man1/gdbus-codegen.1
 @man man/man1/gdbus.1
 @man man/man1/gio-querymodules.1
 @man man/man1/glib-compile-schemas.1
@@ -259,7 +301,6 @@ lib/pkgconfig/gthread-2.0.pc
 @man man/man1/gsettings.1
 @man man/man1/gtester-report.1
 @man man/man1/gtester.1
-share/aclocal/
 share/aclocal/glib-2.0.m4
 share/aclocal/glib-gettext.m4
 share/aclocal/gsettings.m4
