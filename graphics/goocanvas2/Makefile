@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=		canvas widget for GTK+ based on Cairo
 
@@ -33,8 +33,7 @@ MODULES=		devel/gettext \
 LIB_DEPENDS=		x11/gtk+3
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-gtk-doc
+CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV=	 	LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 

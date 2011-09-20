@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/16 09:24:52 espie Exp $
+# $OpenBSD: Makefile,v 1.16 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT =	library for writing single instance GTK+2 applications
 
@@ -27,14 +27,12 @@ WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread-stubs xcb xcb-render
 WANTLIB += xcb-shm z
 
-BUILD_DEPENDS=		devel/gobject-introspection
+MODGNOME_TOOLS= 	goi
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
-			--enable-introspection \
 			--with-x
 
 MODULES =	devel/gettext \

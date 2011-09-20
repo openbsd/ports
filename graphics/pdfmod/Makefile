@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/19 07:31:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/20 20:51:52 jasper Exp $
 
 COMMENT=	simple application for modifying PDF documents
 
@@ -26,7 +26,7 @@ BUILD_DEPENDS=	devel/hyena \
 RUN_DEPENDS=	print/poppler \
 		x11/gnome/mono-gnome
 
-MODGNOME_HELP_FILES= Yes
+MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_STYLE=gnu

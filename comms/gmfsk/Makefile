@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/16 08:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=	GNOME multimode HF terminal
 
@@ -33,7 +33,7 @@ MODULES=		devel/gettext \
 			x11/gnome \
 			devel/gconf2
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 USE_GMAKE=		No
 MODGCONF2_SCHEMAS_DIR=	gmfsk
 

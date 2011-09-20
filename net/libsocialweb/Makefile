@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/12 12:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/20 20:51:52 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -31,7 +31,7 @@ WANTLIB += glib-2.0 gmodule-2.0 gnome-keyring gobject-2.0 gpg-error
 WANTLIB += gthread-2.0 json-glib-1.0 m pcre pthread rest-0.7 rest-extras-0.7
 WANTLIB += soup-2.4 soup-gnome-2.4 sqlite3 xml2 z
 
-BUILD_DEPENDS=		devel/gobject-introspection
+MODGNOME_TOOLS= 	goi
 LIB_DEPENDS=		devel/json-glib \
 			net/librest>=0.7.10
 
@@ -39,8 +39,6 @@ LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-static \
-			--enable-introspection \
 			--enable-all-services \
 			--with-online=always # Other choices are ConnMan and NM
 

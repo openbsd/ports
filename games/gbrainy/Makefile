@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/19 07:31:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=	brain teaser game
 
@@ -30,7 +30,7 @@ RUN_DEPENDS=	devel/mono-addins \
 		x11/gnome/mono-gnome
 
 MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_HELP_FILES= Yes
+MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

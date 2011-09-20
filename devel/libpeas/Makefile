@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 09:24:52 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=	gobject-based plugins engine
 
@@ -43,8 +43,9 @@ MODULES=	devel/gettext \
 
 RUN_DEPENDS=	devel/py-gobject
 
-BUILD_DEPENDS=	lang/vala \
-		devel/py-gobject
+BUILD_DEPENDS=	devel/py-gobject
+
+MODGNOME_TOOLS= vala
 
 LIB_DEPENDS=	devel/gobject-introspection \
 		x11/gnome/seed
@@ -54,10 +55,8 @@ LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
 		--disable-static \
-		--disable-gtk-doc \
 		--enable-seed \
-		--enable-python \
-		--enable-vala \
+		--enable-python
 
 # XXX
 # glade looks for libpeas-gtk-1.0.so instead of libpeas-gtk-1.0.so.XX

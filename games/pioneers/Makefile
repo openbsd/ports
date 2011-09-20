@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/19 07:31:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
@@ -39,7 +39,7 @@ RUN_DEPENDS=	x11/gnome/librsvg
 LIB_DEPENDS=	x11/gnome/libgnome
 
 MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_HELP_FILES=Yes
+MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_STYLE=gnu
 USE_GROFF =	Yes

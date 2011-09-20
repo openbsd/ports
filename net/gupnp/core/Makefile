@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/20 20:51:52 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -19,15 +19,13 @@ WANTLIB += gssdp-1.0 gthread-2.0 m pcre soup-2.4 xml2 z
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
 
-BUILD_DEPENDS=		devel/gobject-introspection
+MODGNOME_TOOLS= 	goi
 LIB_DEPENDS=		net/gssdp>=0.12.0 \
 			sysutils/e2fsprogs>=1.41.4p5
 
 MODPY_ADJ_FILES=	tools/gupnp-binding-tool
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
-			--enable-introspection \
 			--with-context-manager=unix
 
 .include <bsd.port.mk>

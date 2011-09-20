@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/19 07:39:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/20 20:51:52 jasper Exp $
 
 BROKEN=		does not compile with new libgda
 
@@ -51,11 +51,10 @@ LIB_DEPENDS=	x11/gnome/gdl \
 		devel/json-glib
 
 MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_HELP_FILES= Yes
+MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
 		--with-gtkspell \
 		--with-dictionary
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \

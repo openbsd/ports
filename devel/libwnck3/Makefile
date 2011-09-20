@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/16 09:24:52 espie Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=		window navigator construction kit
 
@@ -34,15 +34,13 @@ WANTLIB += xcb-render xcb-shm z
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		devel/gobject-introspection
+MODGNOME_TOOLS= 	goi
 LIB_DEPENDS=		x11/gtk+3 \
 			devel/startup-notification
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
 			--enable-startup-notification \
-			--enable-introspection \
 			--program-suffix=3
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

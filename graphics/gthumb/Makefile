@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2011/09/19 07:31:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.45 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
@@ -46,7 +46,7 @@ LIB_DEPENDS=	devel/json-glib \
 		databases/sqlite3
 RUN_DEPENDS=	misc/shared-mime-info
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	gthumb
 

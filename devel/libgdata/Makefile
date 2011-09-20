@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/12 12:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/20 20:51:51 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -33,16 +33,15 @@ WANTLIB += sqlite3 xml2 z
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		devel/gobject-introspection
 LIB_DEPENDS=		devel/libsoup,-gnome
 
 FAKE_FLAGS+=		DATADIRNAME="share"
 
+MODGNOME_TOOLS= 	goi
+
 LIBTOOL_FLAGS+= 	--tag=disable-static
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
-			--enable-introspection \
 			--enable-gnome
 
 .include <bsd.port.mk>

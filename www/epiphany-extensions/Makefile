@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/09/16 12:00:06 espie Exp $
+# $OpenBSD: Makefile,v 1.36 2011/09/20 20:51:52 jasper Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
@@ -46,7 +46,7 @@ LIB_DEPENDS=	www/webkit,gtk3
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= yelp
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

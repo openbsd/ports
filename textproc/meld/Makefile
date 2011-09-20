@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/19 07:39:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/20 20:51:52 jasper Exp $
 
 COMMENT=	graphical diff and merge tool
 
@@ -24,7 +24,7 @@ MODULES=	lang/python \
 
 RUN_DEPENDS=	x11/py-gtk2
 
-MODGNOME_HELP_FILES= Yes
+MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=	Yes
 
 SUBST_VARS+=	MODPY_SITEPKG

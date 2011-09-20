@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.86 2011/09/16 09:24:58 espie Exp $
+# $OpenBSD: Makefile,v 1.87 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
@@ -48,8 +48,6 @@ WANTLIB-pty-helper=	util c
 
 WANTLIB-python= 	${WANTLIB} vte>=14
 
-BUILD_DEPENDS=		devel/gobject-introspection
-
 LIB_DEPENDS-python=	${LIB_DEPENDS-main} \
 			${BASE_PKGPATH}
 RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
@@ -86,9 +84,10 @@ CONFIGURE_ARGS+=	--enable-python
 
 .endif
 
+MODGNOME_TOOLS= 	goi
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-introspection \
 			--disable-Bsymbolic
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.81 2011/09/19 07:31:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.82 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=		integrated music management application for GNOME
 
@@ -39,8 +39,7 @@ MODULES=		devel/gettext \
 			lang/python \
 			devel/dconf
 
-BUILD_DEPENDS=		devel/gobject-introspection \
-			audio/libmusicbrainz
+BUILD_DEPENDS=		audio/libmusicbrainz
 
 LIB_DEPENDS=		devel/libpeas \
 			audio/libgpod \
@@ -57,7 +56,7 @@ RUN_DEPENDS=		multimedia/gstreamer-0.10/py-gstreamer \
 RUN_DEPENDS+=		multimedia/gstreamer-0.10/plugins-good
 
 MODGNOME_DESKTOP_FILE=		Yes
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	goi yelp
 
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \

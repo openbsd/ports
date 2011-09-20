@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/12 12:07:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=		send desktop notifications to a notification daemon
 
@@ -26,16 +26,15 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 # gtk+3 is needed to build the tests
-BUILD_DEPENDS=		x11/gtk+3 \
-			devel/gobject-introspection
+BUILD_DEPENDS=		x11/gtk+3
 
 LIB_DEPENDS=		graphics/gdk-pixbuf2
+
+MODGNOME_TOOLS= 	goi
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
-			--enable-introspection
+CONFIGURE_ARGS= 	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

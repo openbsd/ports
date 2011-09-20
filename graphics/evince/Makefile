@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/09/19 07:31:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2011/09/20 20:51:51 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
-REVISION-main=	4
+REVISION-main=	5
 REVISION-djvu=	2
 REVISION-dvi=	1
 REVISION-nautilus=1
@@ -48,7 +48,6 @@ MODULES=	devel/gettext \
 USE_GROFF =	Yes
 
 BUILD_DEPENDS=	x11/gnome/icon-theme \
-		devel/gobject-introspection \
 		devel/gsettings-desktop-schemas
 
 WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
@@ -58,6 +57,8 @@ WANTLIB += gmodule-2.0 gobject-2.0 gtk-3 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += GL  Xxf86vm drm xcb-shm
 WANTLIB += xcb xcb-render z gthread-2.0 cairo-gobject m
+
+MODGNOME_TOOLS= 	goi
 
 LIB_DEPENDS=	x11/gtk+3
 
@@ -74,7 +75,8 @@ RUN_DEPENDS-main= ${RUN_DEPENDS} \
 		devel/gsettings-desktop-schemas \
 		misc/shared-mime-info \
 		print/ghostscript/gnu \
-		x11/gnome/icon-theme
+		x11/gnome/icon-theme \
+		${MODGNOME_RUN_DEPENDS_yelp}
 
 WANTLIB-djvu=	${WANTLIB} jpeg evdocument3 djvulibre
 # port-lib-depends-check misses these ones because the depending lib
@@ -99,7 +101,6 @@ LIB_DEPENDS-nautilus= ${BASE_PKGPATH} \
 		x11/gnome/nautilus
 RUN_DEPENDS-nautilus=
 
-MODGNOME_HELP_FILES= 	Yes
 MODGNOME_DESKTOP_FILE=		Yes
 
 LIBTOOL_FLAGS=	--tag=disable-static
@@ -110,10 +111,8 @@ USE_LIBTOOL=	gnu
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
 		--disable-static \
 		--disable-comics \
-		--enable-introspection \
 		--enable-nautilus \
 		--enable-djvu \
 		--enable-dvi

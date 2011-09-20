@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/16 11:41:40 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2011/09/20 20:51:52 jasper Exp $
 
 COMMENT=	GTK C code documentation system
 
@@ -20,7 +20,7 @@ MODULES=		x11/gnome \
 			lang/python
 
 MODPY_RUNDEP=		No
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \

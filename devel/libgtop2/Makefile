@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2011/09/18 11:24:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.88 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=		portable library for obtaining system information
 
@@ -24,15 +24,13 @@ WANTLIB += Xau c kvm pcre pthread glib-2.0
 MODULES=		devel/gettext \
 			x11/gnome
 
-BUILD_DEPENDS=		devel/gobject-introspection
-
 LIB_DEPENDS=		devel/glib2
 RUN_DEPENDS=		sysutils/lsof
 
+MODGNOME_TOOLS= 	goi
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+= 	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
-			--enable-introspection \
 			--without-libgtop-smp
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib" \

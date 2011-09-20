@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 09:24:51 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=		JSON parser for GLib-based libraries and applications
 
@@ -22,15 +22,14 @@ WANTLIB += pcre z glib-2.0 gobject-2.0 gthread-2.0 gio-2.0 gmodule-2.0
 
 MODULES=		devel/gettext x11/gnome
 
-BUILD_DEPENDS=          devel/gobject-introspection
 LIB_DEPENDS=		devel/glib2
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
 
+MODGNOME_TOOLS= 	goi
+
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
-			--enable-introspection
+CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

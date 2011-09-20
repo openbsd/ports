@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 09:24:51 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=	GObject based collection library 
 
@@ -23,18 +23,17 @@ PERMIT_DISTFILES_FTP=	Yes
 
 WANTLIB += pcre glib-2.0 gobject-2.0 gthread-2.0
 
-BUILD_DEPENDS=	lang/vala \
-		devel/gobject-introspection
+BUILD_DEPENDS=	lang/vala
 
 LIB_DEPENDS=	devel/glib2
 
 MODULES=	devel/gettext \
 		x11/gnome
 
+MODGNOME_TOOLS= goi
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-introspection \
 		--disable-doc
 
 .include <bsd.port.mk>

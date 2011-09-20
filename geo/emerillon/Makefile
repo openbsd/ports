@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/19 07:31:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT =	map viewer using Openstreetmap data
 
 GNOME_VERSION =	0.1.2
 GNOME_PROJECT =	emerillon
-REVISION=	3
+REVISION=	4
 
 CATEGORIES =	geo x11
 
@@ -29,12 +29,10 @@ MODULES=	devel/gettext \
 AUTOCONF_VERSION=	2.65
 CONFIGURE_STYLE=	autoconf
 MODGCONF2_SCHEMAS_DIR=	emerillon
-MODGNOME_HELP_FILES=	Yes
 CONFIGURE_ENV+= CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=--enable-introspection=no
 
-BUILD_DEPENDS = ${RUN_DEPENDS}
-RUN_DEPENDS =	lang/vala
+MODGNOME_TOOLS= 	goi vala yelp
+
 LIB_DEPENDS =	geo/libchamplain/core>=0.8.0 \
 		devel/ethos \
 		geo/geoclue \

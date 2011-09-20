@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/09/19 07:31:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
@@ -36,8 +36,7 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		lang/python
 
-BUILD_DEPENDS=	devel/gobject-introspection \
-		devel/py-gobject
+BUILD_DEPENDS=	devel/py-gobject
 
 LIB_DEPENDS=	x11/gtk+3 \
 		devel/libffi
@@ -46,12 +45,11 @@ RUN_DEPENDS=	x11/gnome/devhelp \
 		devel/py-gobject
 
 MODGNOME_DESKTOP_FILE= 	Yes
-MODGNOME_HELP_FILES=	Yes
+
+MODGNOME_TOOLS= goi yelp
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
-		--enable-introspection
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-pthread -I${LOCALBASE}/include"      \
 		LDFLAGS="-pthread -lutil -L${LOCALBASE}/lib"
 

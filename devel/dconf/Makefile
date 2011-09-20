@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2011/09/20 20:51:51 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -65,7 +65,6 @@ LIB_DEPENDS-editor=	x11/gtk+3
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
-CONFIGURE_ARGS=	--disable-gtk-doc
 
 FAKE_FLAGS=	completiondir=${PREFIX}/share/examples/dconf/bash_completion.d
 

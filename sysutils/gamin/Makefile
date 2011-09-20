@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.25 2011/09/20 20:51:52 jasper Exp $
 
 COMMENT-main=	file and directory monitoring system
 COMMENT-server=	gamin file monitoring server
@@ -76,7 +76,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -pthread" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
 CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
 		--disable-docs \
-		--disable-gtk-doc \
 		--disable-inotify \
 		--disable-dnotify \
 		--disable-hurd_mach_notify \

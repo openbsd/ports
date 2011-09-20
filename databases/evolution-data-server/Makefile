@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2011/09/16 08:48:02 espie Exp $
+# $OpenBSD: Makefile,v 1.94 2011/09/20 20:51:51 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -49,8 +49,7 @@ MODULES=		devel/gettext \
 			x11/gnome
 
 BUILD_DEPENDS=		devel/bison \
-			devel/gperf \
-			devel/gobject-introspection
+			devel/gperf
 LIB_DEPENDS= 		databases/db/v4 \
 			databases/openldap \
 			security/nss>=3.11.4p1 \
@@ -63,10 +62,10 @@ YACC=			bison
 AUTOCONF_VERSION=	2.68
 AUTOMAKE_VERSION=	1.9
 
+MODGNOME_TOOLS= 	goi
+
 CONFIGURE_STYLE= 	autoconf
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
-			--enable-introspection \
 			--enable-ssl \
 			--enable-smime \
 			--enable-ipv6 \

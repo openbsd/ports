@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.79 2011/09/19 07:31:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=	technical diagrams drawing tool
 
@@ -64,7 +64,7 @@ WANTLIB += bonoboui-2 crypto dbus-1 dbus-glib-1 gconf-2 gailutil
 WANTLIB += gnome-2 gnome-keyring gnomecanvas-2 gnomevfs-2 popt ssl
 WANTLIB += util canberra gcrypt gpg-error ltdl ogg vorbis vorbisfile
 WANTLIB += ${MODPY_WANTLIB} gnomeui-2
-MODGNOME_HELP_FILES= Yes
+MODGNOME_TOOLS= 	yelp
 .else
 # help is only installed and usable with yelp
 PATCH_LIST=	patch-* no_gnome-patch-*

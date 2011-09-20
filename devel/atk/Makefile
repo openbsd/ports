@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/09/16 09:24:48 espie Exp $
+# $OpenBSD: Makefile,v 1.41 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=	accessibility toolkit used by gtk+
 
@@ -26,7 +26,7 @@ WANTLIB += pcre glib-2.0 gobject-2.0 gthread-2.0
 MODULES=	devel/gettext \
 		x11/gnome
 
-BUILD_DEPENDS=	devel/gobject-introspection
+MODGNOME_TOOLS= goi
 
 LIB_DEPENDS=	devel/glib2
 
@@ -36,8 +36,6 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
-		--enable-introspection
+CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

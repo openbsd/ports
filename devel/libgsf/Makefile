@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2011/09/16 09:24:52 espie Exp $
+# $OpenBSD: Makefile,v 1.64 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT=		GNOME Structured File library
 
@@ -41,7 +41,6 @@ MODGCONF2_SCHEMAS_DIR=	libgsf
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
 			--without-bonobo \
 			--without-gnome-vfs \
 			--without-python \

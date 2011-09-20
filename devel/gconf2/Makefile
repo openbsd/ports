@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2011/09/18 22:04:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.64 2011/09/20 20:51:51 jasper Exp $
 
 COMMENT-main=	configuration database system for GNOME
 COMMENT-polkit=	PolicyKit integration for GConf2
@@ -64,8 +64,6 @@ MODPY_ADJ_FILES=gsettings/gsettings-schema-convert
 
 MULTI_PACKAGES=	-main -polkit -gtk
 
-BUILD_DEPENDS=	devel/gobject-introspection
-
 RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		devel/ORBit2 \
@@ -82,13 +80,13 @@ LIB_DEPENDS-gtk= ${LIB_DEPENDS} \
 		devel/gconf2 \
 		x11/gtk+3
 
+MODGNOME_TOOLS= 	goi
+
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-gtk-doc \
 		--without-openldap \
-		--enable-introspection \
 		--enable-defaults-service \
 		--with-gtk=3.0
 

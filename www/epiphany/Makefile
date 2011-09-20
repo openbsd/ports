@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.67 2011/09/19 07:39:06 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.68 2011/09/20 20:51:52 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -59,13 +59,11 @@ MODULES=	devel/dconf \
 
 LIBTOOL_FLAGS=		--tag=disable-static
 MODGNOME_DESKTOP_FILE=		Yes
-MODGNOME_HELP_FILES= 	Yes
+MODGNOME_TOOLS= goi yelp
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-introspection \
 		--disable-static \
-		--disable-gtk-doc \
 		--disable-zeroconf \
 		--with-distributor-name="OpenBSD ports" \
 		--with-ca-file=/etc/ssl/cert.pem \

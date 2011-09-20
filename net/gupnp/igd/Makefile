@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/20 20:51:52 jasper Exp $
 
 COMMENT=		library to handle UPnP IGD port mapping
 
@@ -18,11 +18,10 @@ WANTLIB += e2fs-uuid gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gssdp-1.0 gthread-2.0 gupnp-1.0 m pcre soup-2.4 xml2
 WANTLIB += z
 
-LIB_DEPENDS=		net/gupnp/core
-BUILD_DEPENDS=		devel/gobject-introspection \
-			devel/py-gobject
-RUN_DEPENDS=		devel/py-gobject
+MODGNOME_TOOLS= 	goi
 
-CONFIGURE_ARGS+=	--disable-gtk-doc
+LIB_DEPENDS=		net/gupnp/core
+BUILD_DEPENDS=		devel/py-gobject
+RUN_DEPENDS=		devel/py-gobject
 
 .include <bsd.port.mk>

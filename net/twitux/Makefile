@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/19 07:39:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/20 20:51:52 jasper Exp $
 
 COMMENT=		Gtk-based GUI client for Twitter
 
@@ -46,7 +46,7 @@ MODULES=	devel/gconf2 \
 
 MODGCONF2_SCHEMAS_DIR=	twitux
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \

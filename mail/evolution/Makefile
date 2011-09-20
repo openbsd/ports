@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.129 2011/09/19 07:39:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.130 2011/09/20 20:51:52 jasper Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
@@ -94,7 +94,8 @@ BUILD_DEPENDS=		devel/bison \
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			x11/hicolor-icon-theme \
-			x11/gnome/icon-theme
+			x11/gnome/icon-theme \
+			${MODGNOME_RUN_DEPENDS_yelp}
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/libunique3 \
 			converters/libpst \
@@ -113,7 +114,7 @@ LIB_DEPENDS-plugins=	${LIB_DEPENDS} \
 RUN_DEPENDS-plugins=	${MODGCONF2_RUN_DEPENDS} \
 			multimedia/gstreamer-0.10/plugins-good
 
-MODGNOME_HELP_FILES=	Yes
+MODGNOME_TOOLS= 	yelp
 MODGNOME_DESKTOP_FILE=		Yes
 MODGCONF2_SCHEMAS_DIR=	evolution
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/12 12:07:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/20 20:51:52 jasper Exp $
 
 COMMENT =	access web services that claim to be RESTful
 
@@ -30,14 +30,13 @@ WANTLIB += sqlite3 xml2 z
 
 MODULES =		devel/gettext \
 			x11/gnome
-BUILD_DEPENDS = 	devel/gobject-introspection
+MODGNOME_TOOLS= 	goi
+
 LIB_DEPENDS =		devel/libsoup,-gnome
 
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--disable-gtk-doc \
-			--with-gnome \
-			--enable-introspection
+			--with-gnome
 
 .include <bsd.port.mk>
