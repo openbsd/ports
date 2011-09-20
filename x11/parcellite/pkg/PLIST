@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/20 09:04:41 landry Exp $
+@bin bin/parcellite
+@man man/man1/parcellite.1
+share/applications/parcellite.desktop
+share/examples/parcellite/
+share/examples/parcellite/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/parcellite/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/parcellite/xdg/autostart/parcellite-startup.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/parcellite-startup.desktop
+share/locale/ca/LC_MESSAGES/parcellite.mo
+share/locale/cs/LC_MESSAGES/parcellite.mo
+share/locale/da/LC_MESSAGES/parcellite.mo
+share/locale/de/LC_MESSAGES/parcellite.mo
+share/locale/es/LC_MESSAGES/parcellite.mo
+share/locale/fr/LC_MESSAGES/parcellite.mo
+share/locale/hu/LC_MESSAGES/parcellite.mo
+share/locale/it/LC_MESSAGES/parcellite.mo
+share/locale/ja/LC_MESSAGES/parcellite.mo
+share/locale/nb/LC_MESSAGES/parcellite.mo
+share/locale/pl/LC_MESSAGES/parcellite.mo
+share/locale/pl_PL/
+share/locale/pl_PL/LC_MESSAGES/
+share/locale/pl_PL/LC_MESSAGES/parcellite.mo
+share/locale/pt_BR/LC_MESSAGES/parcellite.mo
+share/locale/ro/LC_MESSAGES/parcellite.mo
+share/locale/ru/LC_MESSAGES/parcellite.mo
+share/locale/sv/LC_MESSAGES/parcellite.mo
+share/locale/tr/LC_MESSAGES/parcellite.mo
+share/locale/zh_CN/LC_MESSAGES/parcellite.mo
+share/pixmaps/
+share/pixmaps/parcellite.png
+share/pixmaps/parcellite.svg
+share/pixmaps/parcellite.xpm
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

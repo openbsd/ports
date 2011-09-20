@@ -1,0 +1,10 @@
+Parcellite is a lightweight GTK+ clipboard manager. This is a stripped down,
+basic-features-only clipboard manager with a small memory footprint for those
+who like simplicity.
+
+Features
+* Keeps a clipboard history.
+* Various view options to display items the way you like it.
+* Daemon mode; guard your clipboard contents when you close applications.
+* Global hotkeys to display your items quickly.
+* Perform custom commands using clipboard contents.

@@ -1,0 +1,212 @@
+$OpenBSD: patch-doc_parcellite_1,v 1.1.1.1 2011/09/20 09:04:41 landry Exp $
+--- doc/parcellite.1.orig	Mon Sep  5 16:01:03 2011
++++ doc/parcellite.1	Fri Sep  9 23:45:06 2011
+@@ -1,93 +1,119 @@
+-.TH PARCELLITE 1 "August 7 2011"
+-.SH NAME
+-Parcellite \- Lightweight GTK+ Clipboard Manager
+-.SH SYNOPSIS
+-.B parcellite
+-[\fIOPTION\fR]
+-.SH DESCRIPTION
+-\fBParcellite\fR is a lightweight GTK+ clipboard manager. This is a stripped down,
+-basic\-features\-only clipboard manager with a small memory footprint for those
+-who like simplicity.
+-
+-\fBParcellite\fR features a clipboard CLI. Unrecognized options and the contents
+-of your standard input get copied to your clipboard. See \fBCLI EXAMPLES\fR.
+-
+-.B Look at the tool tips by hovering over each item in the prefrences dialog.
+-.SH
+-.B OPTIONS
+-.TP
+-.B \-?\fR, \fB\-\-help
++.Dd $Mdocdate: September 20 2011 $
++.Dt PARCELLITE 1
++.Os
++.Sh NAME
++.Nm Parcellite
++.Nd Lightweight GTK+ Clipboard Manager
++.Sh SYNOPSIS
++.Nm parcellite
++.Op Fl hdncp
++.Sh DESCRIPTION
++.Nm
++is a lightweight GTK+ clipboard manager.  This is a stripped down,
++basic-features-only clipboard manager with a small memory footprint
++for those who like simplicity.
++.Pp
++.Nm
++features a clipboard CLI. Unrecognized options and the
++contents of your standard input get copied to your clipboard. See
++.Sx CLI EXAMPLES .
++.Pp
++Look at the tool tips by hovering over each item in the preferences
++dialog.
++.Sh OPTIONS
++.Bl -tag -width Ds
++.It Fl ? , Fl Fl help
+ Show help options
+-.TP
+-.B \-d\fR, \fB\-\-daemon
+-Run as daemon. Use this mode if you just want \fBParcellite\fR to keep your clipboard
+-and primary contents safe
+-.TP
+-.B \-n\fR, \fB\-\-no-icon
++.It Fl d , Fl Fl daemon
++Run as daemon. Use this mode if you just want
++.Nm
++to keep your clipboard and primary contents safe
++.It Fl n , Fl Fl no-icon
+ Do not use status icon
+-.TP
+-.B \-c\fR, \fB\-\-clipboard
++.It Fl c , Fl Fl clipboard
+ Print clipboard contents
+-.B \-p\fR, \fB\-\-primary
++.It Fl p , Fl Fl primary
+ Print primary contents
+-.SH ACTIONS
+-\fBParcellite's\fR actions perform commands using the contents of your clipboard. "\fB%s\fR" in the command
+-is replaced with the clipboard contents.
+-.SH CLI EXAMPLES
+- echo "copied to clipboard" | parcellite
+- parcellite "copied to clipboard"
+- echo "copied to clipboard" | parcellite \-c
+-.SH Hotkeys
+- The available hotkey modifiers are <Ctrl>, <Alt> <Shift>, <Release>, <Meta>, <Super>, <Hyper>, <Mod[1\-5]>
+-.SH Preferences
+-Right-click on the parcellite icon in the systray to access the preferences.
+-
+-.SH Behavior Tab
+-.TP 
+-.B Clipboards 
+-generally checking all these boxes is appropriate.
+-.TP 
+-.B History 
+- Check 'Save history' to save history on close.
+- 'Position history' - Set the location where history appears. If unchecked, appears where the mouse is.
+- 'X' - X location in pixels. 0 is top of screen.
+- 'Y' - Y location in pixels. 0 is left of screen.
+-  
+- 'Max Data Size (MB)' -Set Maximum amount of data to copy for each entry in MBytes. 0 is no limit.
+-.TP
+-.B Miscellaneous
+- 'Search As You Type' - If checked, does a search-as-you-type. Turns red if not found. Goes to top (Alt-E) line when no chars are entered for search
+-  
+- 'Case Sensitive Search' - If checked, does case sensitive search.
+-
+- 'Ignore Whitespace Only' - If checked, will ignore any clipboard additions that contain only whitespace.
+-
+- 'Trim Whitespace' - If checked, will trim whitespace from beginning and end of entry.
+-
+- 'Trim Newlines' - If checked, will replace newlines with spaces.
+-
+-.SH Display Tab
+-.TP 
+- 'Show in Single line' does nothing
+-.TP 
+- 'Show in reverse order' reverses the history so the first entry is last and the last is first.
+-.TP 
+- 'Omit items' referrs to omitting characters that don't fit in the history window width. This is for display only.
+-
+-.SH History Dialog Behavior
+-.B use the Ctrl or Shift key in conjunction with right-click. 
+-.TP If you hold Ctrl, then it toggles the delete on a single item. 
+-.TP If you hold Shift while holding down right-click (this is like a right-drag), then it toggles each item as it enters the item.  
+-.TP To complete the delete, hit enter.
+-.SH SEE ALSO
+-.PP
+-Website: http://parcellite.sourceforge.net
+-.SH AUTHOR
+-Written by Gilberto "Xyhthyx" Miralla <xyhthyx@gmail.com>. Gilberto is no longer maintaining the project. 'Rickyrockrat' is his replacement.
+-.SH BUGS
+-Please include your ~/.config/parcellite/parcelliterc file when filing a bug.  This will give me your preferences.
+- Please report any bugs to the bug tracker via this web page:
+- http://sourceforge.net/projects/parcellite/support
+- Use the 'Bugs' under project trackers to file a bug if you are registered with Source Forge. If not, email rickyrockrat
+-(rickyrockrat at users.sourceforge.net), or click the 'project administers' in the link above.
+-
++.El
++.Sh ACTIONS
++.Nm
++\'s actions perform commands using the contents of your clipboard.
++"%s" in the command is replaced with the clipboard contents.
++.Sh CLI EXAMPLES
++.Bd -literal -offset indent
++echo "copied to clipboard" | parcellite
++parcellite "copied to clipboard"
++echo "copied to clipboard" | parcellite -c
++.Ed
++.Sh HOTKEYS
++The available hotkey modifiers are <Ctrl>, <Alt> <Shift>, <Release>,
++<Meta>, <Super>, <Hyper>, <Mod[1-5]>
++.Sh PREFERENCES
++Right-click on the
++.Nm
++icon in the systray to access the preferences.
++.Sh BEHAVIOR TAB
++.Bl -tag -width xxxx
++.It Ar Clipboards
++Generally checking all these boxes is appropriate.
++.It Ar History
++Check 'Save history' to save history on close.
++.Pp
++\'Position history' - Set the location where history
++appears. If unchecked, appears where the mouse is.
++.Pp
++\'X' - X location in pixels. 0 is top of screen.
++.Pp
++\'Y' - Y location in pixels. 0 is left of screen.
++.Pp
++\'Max Data Size (MB)' - Set maximum amount of data to copy for each
++entry in MBytes. 0 is no limit.
++.It Ar Miscellaneous
++\'Search As You Type' - If checked, does a search-as-you-type. Turns
++red if not found. Goes to top (Alt-E) line when no chars are entered
++for search
++.Pp
++\'Case Sensitive Search' - If checked, does case sensitive search.
++.Pp
++\'Ignore Whitespace Only' - If checked, will ignore any clipboard
++additions that contain only whitespace
++.Pp
++\'Trim Whitespace' - If checked, will trim whitespace from beginning
++and end of entry.
++.Pp
++\'Trim Newlines' - If checked, will replace newlines with spaces.
++.El
++.Sh DISPLAY TAB
++\'Show in Single line' does nothing
++.Pp
++\'Show in reverse order' reverses the history so the first entry is
++last and the last is first.
++.Pp
++\'Omit items' refers to omitting characters that don't fit in the
++history window width. This is for display only.
++.Sh HISTORY DIALOG BEHAVIOR
++use the Ctrl or Shift key in conjunction with right-click.
++.Pp
++If you hold Ctrl, then it toggles the delete on a single item.
++.Pp
++If you hold Shift while holding down right-click (this is like a
++right-drag), then it toggles each item as it enters the item.
++.Pp
++To complete the delete, hit enter.
++.Sh SEE ALSO
++Website:
++.Pa http://parcellite.sourceforge.net
++.Sh AUTHOR
++Written by Gilberto "Xyhthyx" Miralla <xyhthyx@gmail.com>. Gilberto
++is no longer maintaining the project. 'Rickyrockrat' is his
++replacement.
++.Sh BUGS
++Please include your ~/.config/parcellite/parcelliterc file when
++filing a bug.  This will give me your preferences.  Please report
++any bugs to the bug tracker via this web page:
++.Pa http://sourceforge.net/projects/parcellite/support
++.Pp
++Use the 'Bugs' under project trackers to file a bug if you are
++registered with Source Forge. If not, email rickyrockrat
++(rickyrockrat at users.sourceforge.net), or click the 'project
++administers' in the link above.
