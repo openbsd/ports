@@ -1,9 +1,13 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/20 10:51:26 fgsch Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/20 10:55:28 fgsch Exp $
 
 VERSION =		3.2
 PATCHLEVEL =		.2
 SHARED_LIBS =		python3.2m 1.0
 
+MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
+
 AUTOCONF_VERSION =	2.68
+CONFIGURE_ARGS +=	--with-cxx_main \
+			--with-system-expat
 
 .include <bsd.port.mk>
