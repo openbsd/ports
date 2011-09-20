@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2010/09/15 10:57:19 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/09/20 13:55:12 gsoares Exp $
 @group daemon
 phpldapadmin/
 @comment phpldapadmin/.cvsignore
@@ -21,6 +21,7 @@ phpldapadmin/doc/certs/ca-bundle.crt
 phpldapadmin/doc/certs/slapd.crt
 phpldapadmin/doc/certs/slapd.key
 phpldapadmin/doc/demo-reset.sh
+phpldapadmin/doc/ldif-Flintstones
 phpldapadmin/doc/ldif-Simpsons
 phpldapadmin/doc/ldif-example-com
 phpldapadmin/doc/ldif-example.com
@@ -632,6 +633,10 @@ phpldapadmin/locale/nl_BE/
 phpldapadmin/locale/nl_BE/LC_MESSAGES/
 phpldapadmin/locale/nl_BE/LC_MESSAGES/messages.mo
 phpldapadmin/locale/nl_BE/LC_MESSAGES/messages.po
+phpldapadmin/locale/oc_FR/
+phpldapadmin/locale/oc_FR/LC_MESSAGES/
+phpldapadmin/locale/oc_FR/LC_MESSAGES/messages.mo
+phpldapadmin/locale/oc_FR/LC_MESSAGES/messages.po
 phpldapadmin/locale/pl_PL/
 phpldapadmin/locale/pl_PL/LC_MESSAGES/
 phpldapadmin/locale/pl_PL/LC_MESSAGES/messages.mo
@@ -663,6 +668,7 @@ phpldapadmin/locale/zh_TW/LC_MESSAGES/messages.po
 phpldapadmin/queries/
 phpldapadmin/queries/SambaUsers.xml
 phpldapadmin/queries/UserList.xml
+phpldapadmin/queries/query.dtd
 phpldapadmin/templates/
 phpldapadmin/templates/creation/
 phpldapadmin/templates/creation/alias.xml
