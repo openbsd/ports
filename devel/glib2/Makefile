@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.131 2011/09/20 21:09:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2011/09/20 22:55:04 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -77,6 +77,10 @@ CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-selinux \
 			--disable-systemtap \
 			--disable-xattr
+
+# XXX tries to run automake-1.11 if installed
+# (check again when updating to a stable release)
+CONFIGURE_ARGS +=	--disable-maintainer-mode
 
 # OpenBSD has support for monotonic clock (CLOCK_MONOTONIC), however we
 # currently don't have most of the _POSIX_* defines in unistd.h (e.g.
