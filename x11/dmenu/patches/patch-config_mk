@@ -1,8 +1,8 @@
-$OpenBSD: patch-config_mk,v 1.8 2011/08/18 14:13:28 gsoares Exp $
---- config.mk.orig	Tue Jul 19 17:31:28 2011
-+++ config.mk	Tue Jul 26 10:00:34 2011
+$OpenBSD: patch-config_mk,v 1.9 2011/09/20 20:34:52 gsoares Exp $
+--- config.mk.orig	Mon Sep 19 06:48:13 2011
++++ config.mk	Tue Sep 20 11:00:07 2011
 @@ -2,11 +2,11 @@
- VERSION = 4.4
+ VERSION = 4.4.1
  
  # paths
 -PREFIX = /usr/local

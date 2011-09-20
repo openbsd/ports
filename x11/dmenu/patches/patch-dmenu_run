@@ -1,9 +1,9 @@
-$OpenBSD: patch-dmenu_run,v 1.1 2011/08/18 14:13:28 gsoares Exp $
+$OpenBSD: patch-dmenu_run,v 1.2 2011/09/20 20:34:52 gsoares Exp $
 
 dmenu: lsx conflicts with comms/lrzsz
 
---- dmenu_run.orig	Tue Jul 26 10:15:08 2011
-+++ dmenu_run	Tue Jul 26 10:15:18 2011
+--- dmenu_run.orig	Mon Sep 19 06:48:13 2011
++++ dmenu_run	Tue Sep 20 11:00:07 2011
 @@ -3,7 +3,7 @@ CACHE=${XDG_CACHE_HOME:-"$HOME/.cache"}/dmenu_run
  (
  	IFS=:
@@ -12,4 +12,4 @@ dmenu: lsx conflicts with comms/lrzsz
 +		mkdir -p "`dirname "$CACHE"`" && dmenu_lsx $PATH | sort -u > "$CACHE"
  	fi
  )
- cmd=`dmenu "$@" < "$CACHE"` && exec $cmd
+ cmd=`dmenu "$@" < "$CACHE"` && exec sh -c "$cmd"
