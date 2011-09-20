@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/03/31 22:56:28 fgsch Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/09/20 00:06:27 fgsch Exp $
 bin/coverage
 lib/python${MODPY_VERSION}/site-packages/coverage/
 lib/python${MODPY_VERSION}/site-packages/coverage-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
@@ -39,8 +39,12 @@ lib/python${MODPY_VERSION}/site-packages/coverage/html.pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/
 lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/coverage_html.js
 lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/index.html
-lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/jquery-1.3.2.min.js
+lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/jquery-1.4.3.min.js
+lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/jquery.hotkeys.js
+lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/jquery.isonscreen.js
 lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/jquery.tablesorter.min.js
+lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/keybd_closed.png
+lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/keybd_open.png
 lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/pyfile.html
 lib/python${MODPY_VERSION}/site-packages/coverage/htmlfiles/style.css
 lib/python${MODPY_VERSION}/site-packages/coverage/misc.py
