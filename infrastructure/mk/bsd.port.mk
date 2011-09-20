@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1107 2011/09/16 20:02:20 kili Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1108 2011/09/20 09:36:13 sthen Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -2305,7 +2305,7 @@ ${_WRKDIR_COOKIE}:
 ${_EXTRACT_COOKIE}: ${_WRKDIR_COOKIE} ${_SYSTRACE_COOKIE}
 	@${_MAKE} _internal-checksum _internal-prepare
 	@${ECHO_MSG} "===>  Extracting for ${FULLPKGNAME}${_MASTER}"
-.if ${_USE_XZ:L} != "no"
+.if ${_USE_XZ:L} != "no" && ${SHARED_ONLY:L} != "yes"
 	@echo ""; \
 	echo "*** WARNING: this port uses xz distfiles: it will not build on vax."; \
 	echo ""
