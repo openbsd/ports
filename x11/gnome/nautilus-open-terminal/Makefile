@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/20 22:54:25 jasper Exp $
 
 # dlopen() module
 SHARED_ONLY=	Yes
@@ -38,8 +38,7 @@ MODGCONF2_SCHEMAS_DIR= nautilus-open-terminal
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static
+CONFIGURE_ARGS=	--disable-static
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

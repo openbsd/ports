@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/20 22:54:25 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -35,8 +35,7 @@ RUN_DEPENDS+=		x11/gtk-engines2
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-static
+CONFIGURE_ARGS+=	--disable-static
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

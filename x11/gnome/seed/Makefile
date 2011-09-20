@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/12 12:04:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/20 22:54:25 jasper Exp $
 
 COMMENT=		GObject JavaScriptCore bridge
 
@@ -41,8 +41,7 @@ LIB_DEPENDS=		devel/gobject-introspection \
 			devel/mpfr>=3.0.1 \
 			www/webkit,gtk3
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-readline-module \
+CONFIGURE_ARGS+=	--enable-readline-module \
 			--enable-multiprocessing-module \
 			--enable-sqlite-module \
 			--enable-example-module \

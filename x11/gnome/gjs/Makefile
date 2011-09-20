@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/12 12:04:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/20 22:54:25 jasper Exp $
 
 COMMENT=		Javascript bindings for GNOME
 
@@ -47,7 +47,6 @@ LIB_DEPENDS=		devel/gobject-introspection \
 			x11/dbus-glib
 REGRESS_DEPENDS=	sysutils/e2fsprogs
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

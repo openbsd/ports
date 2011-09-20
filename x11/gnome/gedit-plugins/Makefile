@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2011/09/16 12:29:13 espie Exp $
+# $OpenBSD: Makefile,v 1.39 2011/09/20 22:54:25 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
@@ -41,8 +41,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 
 LIBTOOL_FLAGS=		--tag=disable-static
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-plugins=all
+CONFIGURE_ARGS+=	--with-plugins=all
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

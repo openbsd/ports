@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.177 2011/09/20 22:54:25 jasper Exp $
 
 COMMENT=		GNOME session
 
@@ -73,8 +73,7 @@ RUN_DEPENDS+=	devel/gconf2,-polkit
 
 MODGNOME_DESKTOP_FILE=		Yes
 
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-rebuilds \
+CONFIGURE_ARGS=	--disable-rebuilds \
 		--enable-docbook-docs
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

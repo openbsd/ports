@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/12 12:04:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/20 22:54:25 jasper Exp $
 
 COMMENT=	.NET language bindings for assorted GNOME libraries
 
@@ -45,8 +45,6 @@ DLLMAP_FILES=	art/art-sharp.dll.config \
 		gnome/gnome-sharp.dll.config \
 		gconf/GConf/gconf-sharp.dll.config \
 		gnomevfs/gnome-vfs-sharp.dll.config
-
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 pre-configure:
 	find ${WRKSRC} -name *\.pc.in -exec perl -pi \

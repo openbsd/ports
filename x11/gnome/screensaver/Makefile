@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.35 2011/09/20 22:54:25 jasper Exp $
 
 COMMENT=	screen saver and locker for GNOME
 
@@ -42,8 +42,7 @@ AUTOMAKE_VERSION= 1.11
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--localstatedir=/var \
+CONFIGURE_ARGS=	--localstatedir=/var \
 		--enable-docbook-docs \
 		--enable-locking \
 		--with-x \

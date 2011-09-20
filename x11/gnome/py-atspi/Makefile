@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/20 22:54:25 jasper Exp $
 
 COMMENT=	python bindings for at-spi2
 
@@ -26,8 +26,6 @@ PKG_ARCH=	*
 BUILD_DEPENDS=	devel/py-gobject
 RUN_DEPENDS=	devel/py-gobject \
 		x11/gnome/at-spi2-core
-
-CONFIGURE_ARGS= ${CONFIGURE_SHARED}
 
 # connects to DBus
 REGRESS_IS_INTERACTIVE=	x11

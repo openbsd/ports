@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/20 22:54:25 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -40,7 +40,6 @@ RUN_DEPENDS=		devel/git \
 
 MODGNOME_DESKTOP_FILE=		Yes
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-compile-warnings=no
+CONFIGURE_ARGS+=	--enable-compile-warnings=no
 
 .include <bsd.port.mk>

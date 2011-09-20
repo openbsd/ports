@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.50 2011/09/20 22:54:25 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -46,8 +46,7 @@ LIBTOOL_FLAGS=	--tag=disable-static
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static \
+CONFIGURE_ARGS=	--disable-static \
 		--disable-pulse \
 		--disable-packagekit \
 		--disable-gudev

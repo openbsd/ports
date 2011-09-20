@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/09/16 12:29:14 espie Exp $
+# $OpenBSD: Makefile,v 1.37 2011/09/20 22:54:25 jasper Exp $
 
 COMMENT=	GNOME Python bindings
 
@@ -48,7 +48,6 @@ LIBTOOL_FLAGS+=	--tag=disable-static
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 pre-configure:
 	@find ${WRKDIST} -name \*.py | \
