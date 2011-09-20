@@ -1,9 +1,8 @@
-@comment $OpenBSD: PFRAG.ldap,v 1.2 2008/05/14 07:38:42 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.ldap,v 1.3 2011/09/20 23:01:29 ajacoutot Exp $
 %%SHARED%%
-lib/sasl2/libldapdb.a
-lib/sasl2/libldapdb.la
+@comment lib/sasl2/libldapdb.a
+@comment lib/sasl2/libldapdb.la
 share/doc/sasl2/LDAP_SASLAUTHD
 share/examples/sasl2/saslauthd.conf
 @mode 640
 @sample ${SYSCONFDIR}/saslauthd.conf
-@mode

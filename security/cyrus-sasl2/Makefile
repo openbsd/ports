@@ -1,22 +1,23 @@
-# $OpenBSD: Makefile,v 1.61 2011/09/16 11:41:38 espie Exp $
+# $OpenBSD: Makefile,v 1.62 2011/09/20 23:01:29 ajacoutot Exp $
 
 COMMENT=	RFC 2222 SASL (Simple Authentication and Security Layer)
 
-DISTNAME=	cyrus-sasl-2.1.23
-REVISION=	9
+DISTNAME=	cyrus-sasl-2.1.25
 
-SHARED_LIBS=	anonymous	2.22 \
-		crammd5		2.22 \
-		digestmd5	2.22 \
-		gssapiv2	2.22 \
-		ldapdb		2.22 \
-		login		2.22 \
-		ntlm		2.22 \
-		otp		2.22 \
-		plain		2.22 \
-		sasl2		2.22 \
-		sasldb		2.22 \
-		sql		2.22
+SHARED_LIBS += anonymous       2.22 # 2.25
+SHARED_LIBS += crammd5         2.22 # 2.25
+SHARED_LIBS += digestmd5       2.22 # 2.25
+SHARED_LIBS += gssapiv2        2.22 # 2.25
+SHARED_LIBS += ldapdb          2.22 # 2.25
+SHARED_LIBS += login           2.22 # 2.25
+SHARED_LIBS += ntlm            2.22 # 2.25
+SHARED_LIBS += otp             2.22 # 2.25
+SHARED_LIBS += plain           2.22 # 2.25
+SHARED_LIBS += sasl2           2.23 # 2.25
+SHARED_LIBS += sasldb          2.22 # 2.25
+SHARED_LIBS += scram           0.0  # 2.25
+SHARED_LIBS += sql             2.22 # 2.25
+
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.cyrusimap.org/
@@ -31,30 +32,31 @@ PERMIT_DISTFILES_FTP=	yes
 
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-sasl/
 
-WANTLIB=	asn1 c com_err crypto gssapi krb5
+WANTLIB += asn1 c com_err crypto gssapi krb5
 
 USE_LIBTOOL=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
+
+CFLAGS +=	-fPIC
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ENV+=	LDFLAGS='${LDFLAGS}'
-CONFIGURE_ARGS+=${CONFIGURE_SHARED} \
+CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
+		--enable-static \
 		--with-saslauthd="/var/sasl2" \
 		--enable-gssapi="/usr" \
 		--with-gss_impl="heimdal" \
 		--with-plugindir=${PREFIX}/lib/sasl2 \
 		--enable-login \
-		--enable-static \
 		--enable-ntlm \
 		--enable-auth-sasldb \
 		--disable-sample
 
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/config ${WRKSRC}/saslauthd/config
 
-FLAVORS=	db4 ldap mysql pgsql sqlite
+FLAVORS=	db4 ldap mysql pgsql sqlite3
 FLAVOR?=
 
-BRKFLAVORMSG=	choose either mysql, pgsql or sqlite
+BRKFLAVORMSG=	choose either mysql, pgsql or sqlite3
 PKG_ARGS?=	-Dsql=0
 
 .if ${FLAVOR:L:Mdb4}
@@ -74,13 +76,13 @@ WANTLIB+=	ssl
 LIB_DEPENDS+=	openldap-client->=2,<3:databases/openldap
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE} \
 		--enable-ldapdb
-WANTLIB +=	ldap lber
+WANTLIB +=	lber lber-2.4 ldap ldap-2.4
 .else
 CONFIGURE_ARGS+=--without-ldap
 .endif
 
 .if ${FLAVOR:L:Mmysql}
-.if ${FLAVOR:L:Mpgsql} || ${FLAVOR:L:Msqlite}
+.if ${FLAVOR:L:Mpgsql} || ${FLAVOR:L:Msqlite3}
 ERRORS+=	${BRKFLAVORMSG}
 .endif
 PKG_ARGS=	-Dsql=1
@@ -89,46 +91,50 @@ WANTLIB+=	m ssl z lib/mysql/mysqlclient>=10
 CONFIGURE_ARGS+=--enable-sql \
 		--with-mysql \
 		--without-pgsql \
-		--without-sqlite
+		--without-sqlite3
 .endif
 
 .if ${FLAVOR:L:Mpgsql}
-.if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Msqlite}
+.if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Msqlite3}
 ERRORS+=	${BRKFLAVORMSG}
 .endif
 PKG_ARGS=	-Dsql=1
 LIB_DEPENDS+=	databases/postgresql
-WANTLIB +=	pq
+WANTLIB +=	pq ssl
 CONFIGURE_ARGS+=--enable-sql \
 		--without-mysql \
 		--with-pgsql \
-		--without-sqlite
+		--without-sqlite3
 CFLAGS+=	-I${LOCALBASE}/include/postgresql
 .endif
 
-.if ${FLAVOR:L:Msqlite}
+.if ${FLAVOR:L:Msqlite3}
 .if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Mpgsql}
 ERRORS+=		${BRKFLAVORMSG}
 .endif
 PKG_ARGS=	-Dsql=1
-LIB_DEPENDS+=	databases/sqlite
-WANTLIB +=	sqlite
+LIB_DEPENDS+=	databases/sqlite3
+WANTLIB +=	sqlite3
 CONFIGURE_ARGS+=--enable-sql \
 		--without-mysql \
 		--without-pgsql \
-		--with-sqlite
+		--with-sqlite3
 .endif
 
+post-extract:
+	rm ${WRKSRC}/cmulocal/sasl2.m4.orig
+
 pre-configure:
-	@perl -pi -e "s,/usr/local/etc,${SYSCONFDIR},g" \
+	perl -pi -e "s,/usr/local/etc,${SYSCONFDIR},g" \
 		${WRKSRC}/saslauthd/saslauthd.mdoc \
 		${WRKSRC}/saslauthd/LDAP_SASLAUTHD
+	perl -pi -e 's,-lresolv,,g' ${WRKSRC}/{,saslauthd}/configure
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/sasl2
 	${INSTALL_DATA} ${WRKSRC}/doc/{*.html,*.txt} ${PREFIX}/share/doc/sasl2
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sasl2
-.if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Mpgsql} || ${FLAVOR:L:Msqlite}
+.if ${FLAVOR:L:Mmysql} || ${FLAVOR:L:Mpgsql} || ${FLAVOR:L:Msqlite3}
 	${INSTALL_DATA} ${FILESDIR}/Sendmail.conf-sql \
 		${PREFIX}/share/examples/sasl2
 .endif

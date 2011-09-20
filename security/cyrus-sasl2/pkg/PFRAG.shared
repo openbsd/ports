@@ -1,4 +1,4 @@
-@comment $OpenBSD: PFRAG.shared,v 1.14 2007/07/07 15:03:35 ajacoutot Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.15 2011/09/20 23:01:29 ajacoutot Exp $
 @lib lib/libsasl2.so.${LIBsasl2_VERSION}
 @lib lib/sasl2/libanonymous.so.${LIBanonymous_VERSION}
 @lib lib/sasl2/libcrammd5.so.${LIBcrammd5_VERSION}
@@ -9,3 +9,4 @@
 @lib lib/sasl2/libotp.so.${LIBotp_VERSION}
 @lib lib/sasl2/libplain.so.${LIBplain_VERSION}
 @lib lib/sasl2/libsasldb.so.${LIBsasldb_VERSION}
+@lib lib/sasl2/libscram.so.${LIBscram_VERSION}

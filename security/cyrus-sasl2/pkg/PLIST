@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2011/07/03 22:51:25 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.22 2011/09/20 23:01:29 ajacoutot Exp $
 @conflict cyrus-sasl-*
 @extraunexec rm -rf /var/sasl2/*
 include/sasl/
@@ -12,24 +12,26 @@ include/sasl/saslutil.h
 lib/libsasl2.a
 lib/libsasl2.la
 lib/sasl2/
-lib/sasl2/libanonymous.a
-lib/sasl2/libanonymous.la
-lib/sasl2/libcrammd5.a
-lib/sasl2/libcrammd5.la
-lib/sasl2/libdigestmd5.a
-lib/sasl2/libdigestmd5.la
-lib/sasl2/libgssapiv2.a
-lib/sasl2/libgssapiv2.la
-lib/sasl2/liblogin.a
-lib/sasl2/liblogin.la
-lib/sasl2/libntlm.a
-lib/sasl2/libntlm.la
-lib/sasl2/libotp.a
-lib/sasl2/libotp.la
-lib/sasl2/libplain.a
-lib/sasl2/libplain.la
-lib/sasl2/libsasldb.a
-lib/sasl2/libsasldb.la
+@comment lib/sasl2/libanonymous.a
+@comment lib/sasl2/libanonymous.la
+@comment lib/sasl2/libcrammd5.a
+@comment lib/sasl2/libcrammd5.la
+@comment lib/sasl2/libdigestmd5.a
+@comment lib/sasl2/libdigestmd5.la
+@comment lib/sasl2/libgssapiv2.a
+@comment lib/sasl2/libgssapiv2.la
+@comment lib/sasl2/liblogin.a
+@comment lib/sasl2/liblogin.la
+@comment lib/sasl2/libntlm.a
+@comment lib/sasl2/libntlm.la
+@comment lib/sasl2/libotp.a
+@comment lib/sasl2/libotp.la
+@comment lib/sasl2/libplain.a
+@comment lib/sasl2/libplain.la
+@comment lib/sasl2/libsasldb.a
+@comment lib/sasl2/libsasldb.la
+@comment lib/sasl2/libscram.a
+@comment lib/sasl2/libscram.la
 @man man/man3/sasl.3
 @man man/man3/sasl_authorize_t.3
 @man man/man3/sasl_auxprop.3

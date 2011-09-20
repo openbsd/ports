@@ -1,7 +1,7 @@
-$OpenBSD: patch-saslauthd_Makefile_in,v 1.10 2011/07/03 22:51:25 naddy Exp $
---- saslauthd/Makefile.in.orig	Thu May  7 08:25:39 2009
-+++ saslauthd/Makefile.in	Sun Jul  3 15:38:13 2011
-@@ -620,9 +620,9 @@ dist-hook: saslauthd.8
+$OpenBSD: patch-saslauthd_Makefile_in,v 1.11 2011/09/20 23:01:29 ajacoutot Exp $
+--- saslauthd/Makefile.in.orig	Mon Sep 19 16:24:47 2011
++++ saslauthd/Makefile.in	Mon Sep 19 16:25:15 2011
+@@ -720,9 +720,9 @@ dist-hook: saslauthd.8
  saslauthd.8: saslauthd.mdoc
  	nroff -mdoc $(srcdir)/saslauthd.mdoc > $(srcdir)/saslauthd.8
  
@@ -10,6 +10,6 @@ $OpenBSD: patch-saslauthd_Makefile_in,v 1.10 2011/07/03 22:51:25 naddy Exp $
  	$(mkinstalldirs) $(DESTDIR)$(mandir)/man8
 -	$(INSTALL_DATA) $(srcdir)/saslauthd.8 $(DESTDIR)$(mandir)/man8/saslauthd.8
 +	$(INSTALL_DATA) $(srcdir)/saslauthd.mdoc $(DESTDIR)$(mandir)/man8/saslauthd.8
+ 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:
