@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/20 21:04:25 jasper Exp $
 
 # No NTLM support in OpenLDAP; Plaintext password authentication will be
 # used when connecting to the Global Catalog server. Consider installing
@@ -80,8 +80,7 @@ AUTOCONF_VERSION=2.68
 AUTOMAKE_VERSION=1.9
 
 CONFIGURE_STYLE= autoconf
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static \
+CONFIGURE_ARGS=	--disable-static \
 		--with-krb5=/usr \
 		--with-krb5-includes=/usr/include/kerberosV \
 		--with-static-ldap=no \

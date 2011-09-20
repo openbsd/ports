@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2011/09/20 21:04:25 jasper Exp $
 
 COMMENT=	flexible communications framework, logger component
 
@@ -32,7 +32,6 @@ MODGCONF2_SCHEMAS_DIR=	telepathy-logger
 MODPY_RUNDEP=		No
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 CONFIGURE_ENV=		ac_cv_prog_PYTHON="${MODPY_BIN}"
 
 REGRESS_IS_INTERACTIVE=x11

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2011/09/20 21:04:25 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -68,8 +68,7 @@ LIB_DEPENDS =	devel/goffice \
 
 CONFIGURE_STYLE =	gnu
 # --disable-ofx until libofx/libsp is fixed to work with .so
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-doxygen \
+CONFIGURE_ARGS +=	--disable-doxygen \
 			--disable-ofx
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2011/09/20 21:04:24 jasper Exp $
 
 COMMENT=	GObject based collection library 
 
@@ -33,7 +33,6 @@ MODULES=	devel/gettext \
 MODGNOME_TOOLS= goi
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-doc
+CONFIGURE_ARGS=	--disable-doc
 
 .include <bsd.port.mk>

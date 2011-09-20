@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/20 21:04:24 jasper Exp $
 
 COMMENT =	library for writing single instance GTK+2 applications
 
@@ -32,8 +32,7 @@ MODGNOME_TOOLS= 	goi
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--with-x
+CONFIGURE_ARGS =	--with-x
 
 MODULES =	devel/gettext \
 		x11/gnome

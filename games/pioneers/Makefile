@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/20 21:04:24 jasper Exp $
 
 COMMENT=	Settlers of Catan for GNOME/Gtk
 
@@ -46,8 +46,7 @@ USE_GROFF =	Yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_path_pngtopnm=""
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-protocol=IPv4
+CONFIGURE_ARGS=	--enable-protocol=IPv4
 
 pre-configure:
 	@perl -pi -e 's,games/pioneers,pioneers,g;' \

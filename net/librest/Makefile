@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/20 21:04:25 jasper Exp $
 
 COMMENT =	access web services that claim to be RESTful
 
@@ -36,7 +36,6 @@ LIB_DEPENDS =		devel/libsoup,-gnome
 
 CONFIGURE_STYLE =	gnu
 
-CONFIGURE_ARGS =	${CONFIGURE_SHARED} \
-			--with-gnome
+CONFIGURE_ARGS =	--with-gnome
 
 .include <bsd.port.mk>

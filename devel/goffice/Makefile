@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.41 2011/09/20 21:04:24 jasper Exp $
 
 # XXX on goffice version change,
 # update API_VERSION in math/gnumeric, bump PKGNAME then change the
@@ -42,7 +42,6 @@ LIB_DEPENDS=		devel/libgsf \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=		${CONFIGURE_SHARED}
 
 # XXX move to gsettings
 CONFIGURE_ARGS +=	--with-config-backend=gconf

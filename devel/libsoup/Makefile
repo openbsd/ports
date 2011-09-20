@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.65 2011/09/20 21:04:24 jasper Exp $
 
 COMMENT-main =		SOAP implementation in C
 COMMENT-gnome =		GNOME specific libsoup parts
@@ -57,8 +57,7 @@ MODULES =		devel/gettext \
 
 
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	${CONFIGURE_SHARED} \
-			--disable-more-warnings \
+CONFIGURE_ARGS +=	--disable-more-warnings \
 			--disable-tls-check
 # checking Apache version... 1.3.29 (Unix) (ignoring)
 # But this prevents needing apache2 for certain regress tests.

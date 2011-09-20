@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/20 21:04:25 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -25,7 +25,6 @@ LIB_DEPENDS=		net/gssdp>=0.12.0 \
 
 MODPY_ADJ_FILES=	tools/gupnp-binding-tool
 
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--with-context-manager=unix
+CONFIGURE_ARGS+=	--with-context-manager=unix
 
 .include <bsd.port.mk>

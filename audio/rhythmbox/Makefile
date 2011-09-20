@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.82 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.83 2011/09/20 21:04:24 jasper Exp $
 
 COMMENT=		integrated music management application for GNOME
 
@@ -61,8 +61,7 @@ MODGNOME_TOOLS= 	goi yelp
 CONFIGURE_STYLE= 	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-database=tree \
+CONFIGURE_ARGS=		--with-database=tree \
 			--with-gnome-keyring \
 			--with-ipod \
 			--with-mdns=avahi \

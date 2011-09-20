@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/20 21:04:24 jasper Exp $
 
 COMMENT=	brain teaser game
 
@@ -35,8 +35,7 @@ MODGNOME_TOOLS= 	yelp
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-tests
+CONFIGURE_ARGS=	--disable-tests
 
 DLLMAP_FILES=	src/Clients/Classical/gbrainy.exe.config.in \
 		src/Core/gbrainy.Core.dll.config.in

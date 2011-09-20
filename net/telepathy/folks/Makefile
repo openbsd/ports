@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/20 21:04:25 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -29,8 +29,7 @@ REGRESS_DEPENDS=	${FULLPKGNAME}:${BASE_PKGPATH}
 MODGNOME_TOOLS= 	goi vala
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-import-tool \
+CONFIGURE_ARGS+=	--enable-import-tool \
 			--enable-inspect-tool \
 # Not yet until libsocialweb is stable
 CONFIGURE_ARGS+=	--enable-libsocialweb-backend=no

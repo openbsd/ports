@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2011/09/20 21:04:25 jasper Exp $
 
 COMMENT=	GTK C code documentation system
 
@@ -23,8 +23,7 @@ MODPY_RUNDEP=		No
 MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--with-xml-catalog=${WRKDIR}/catalog.xml
+CONFIGURE_ARGS=		--with-xml-catalog=${WRKDIR}/catalog.xml
 
 # only files under tests/ are compiled but not installed
 PKG_ARCH=		*

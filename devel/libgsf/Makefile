@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.65 2011/09/20 21:04:24 jasper Exp $
 
 COMMENT=		GNOME Structured File library
 
@@ -40,8 +40,7 @@ MODGCONF2_LIBDEP=	No
 MODGCONF2_SCHEMAS_DIR=	libgsf
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
-			--without-bonobo \
+CONFIGURE_ARGS=		--without-bonobo \
 			--without-gnome-vfs \
 			--without-python \
 			--with-bz2 \

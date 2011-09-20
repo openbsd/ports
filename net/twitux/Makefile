@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/20 21:04:25 jasper Exp $
 
 COMMENT=		Gtk-based GUI client for Twitter
 
@@ -49,8 +49,7 @@ MODGCONF2_SCHEMAS_DIR=	twitux
 MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-dbus=yes \
+CONFIGURE_ARGS=	--enable-dbus=yes \
 		--enable-gnome-keyring=yes \
 		--enable-spell=yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

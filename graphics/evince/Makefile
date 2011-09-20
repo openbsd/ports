@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.69 2011/09/20 21:04:24 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -110,8 +110,7 @@ LIBTOOL_FLAGS=	--tag=disable-static
 USE_LIBTOOL=	gnu
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED} \
-		--disable-static \
+CONFIGURE_ARGS+= --disable-static \
 		--disable-comics \
 		--enable-nautilus \
 		--enable-djvu \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.87 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.88 2011/09/20 21:04:24 jasper Exp $
 
 COMMENT-main=		terminal emulation library
 COMMENT-python= 	python bindings for vte
@@ -87,8 +87,7 @@ CONFIGURE_ARGS+=	--enable-python
 MODGNOME_TOOLS= 	goi
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--disable-Bsymbolic
+CONFIGURE_ARGS+=	--disable-Bsymbolic
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

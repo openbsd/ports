@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.65 2011/09/20 21:04:24 jasper Exp $
 
 COMMENT-main=	configuration database system for GNOME
 COMMENT-polkit=	PolicyKit integration for GConf2
@@ -85,8 +85,7 @@ MODGNOME_TOOLS= 	goi
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--without-openldap \
+CONFIGURE_ARGS=	--without-openldap \
 		--enable-defaults-service \
 		--with-gtk=3.0
 

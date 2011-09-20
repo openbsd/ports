@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.81 2011/09/20 21:04:24 jasper Exp $
 
 COMMENT=	technical diagrams drawing tool
 
@@ -43,8 +43,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/libpng \
 		-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-cairo \
+CONFIGURE_ARGS=	--with-cairo \
 		--enable-db2html=no \
 		--with-hardbooks=no
 USE_GROFF =	Yes

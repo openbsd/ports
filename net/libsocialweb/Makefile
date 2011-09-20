@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/20 21:04:25 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -38,8 +38,7 @@ LIB_DEPENDS=		devel/json-glib \
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
-			--enable-all-services \
+CONFIGURE_ARGS+=	--enable-all-services \
 			--with-online=always # Other choices are ConnMan and NM
 
 .include <bsd.port.mk>

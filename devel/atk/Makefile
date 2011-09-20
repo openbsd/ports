@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.42 2011/09/20 21:04:24 jasper Exp $
 
 COMMENT=	accessibility toolkit used by gtk+
 
@@ -36,6 +36,5 @@ USE_LIBTOOL=	Yes
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>

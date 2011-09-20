@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2011/09/20 21:04:24 jasper Exp $
 
 COMMENT=	image viewer and browser for GNOME
 
@@ -53,8 +53,7 @@ MODGCONF2_SCHEMAS_DIR=	gthumb
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-libopenraw \
+CONFIGURE_ARGS=	--disable-libopenraw \
 		--disable-libbrasero \
 		--enable-libsoup \
 		--enable-gnome-keyring \

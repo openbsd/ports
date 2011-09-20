@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2011/09/20 21:04:25 jasper Exp $
 
 COMMENT=		collection of extensions for Epiphany
 
@@ -51,8 +51,7 @@ MODGNOME_TOOLS= yelp
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-static \
+CONFIGURE_ARGS=	--disable-static \
 		--enable-opensp=no
 
 # prevents implicit declarations by not setting *_DISABLE_DEPRECATED

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/20 21:04:25 jasper Exp $
 
 BROKEN=		does not compile with new libgda
 
@@ -54,8 +54,7 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--with-gtkspell \
+CONFIGURE_ARGS=	--with-gtkspell \
 		--with-dictionary
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/db4" \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/20 20:51:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/20 21:04:25 jasper Exp $
 
 COMMENT=		API for handling SSDP resource discovery and announcement
 
@@ -36,6 +36,5 @@ LIB_DEPENDS=		devel/libsoup \
 			x11/gtk+2
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED}
 
 .include <bsd.port.mk>
