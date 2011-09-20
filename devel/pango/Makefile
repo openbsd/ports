@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.57 2011/09/16 09:24:52 espie Exp $
+# $OpenBSD: Makefile,v 1.58 2011/09/20 21:11:27 ajacoutot Exp $
 
 COMMENT=		library for layout and rendering of text
 
-V=			1.28.4
+V=			1.29.3
 DISTNAME=		pango-${V}
 
-REVISION=		3
-
-SHARED_LIBS +=  pango-1.0            1802.0   # .2800.0
-SHARED_LIBS +=  pangox-1.0           1802.0   # .2800.0
-SHARED_LIBS +=  pangoft2-1.0         1802.0   # .2800.0
-SHARED_LIBS +=  pangoxft-1.0         1802.0   # .2800.0
-SHARED_LIBS +=  pangocairo-1.0       1802.0   # .2800.0
+SHARED_LIBS +=  pango-1.0            2903.0   # 2903.0
+SHARED_LIBS +=  pangox-1.0           2903.0   # 2903.0
+SHARED_LIBS +=  pangoft2-1.0         2903.0   # 2903.0
+SHARED_LIBS +=  pangoxft-1.0         2903.0   # 2903.0
+SHARED_LIBS +=  pangocairo-1.0       2903.0   # 2903.0
 
 CATEGORIES=		devel x11
 
@@ -23,11 +21,10 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB=	X11 Xau Xdmcp Xft Xrender c expat fontconfig freetype \
-		m pcre pixman-1 png pthread pthread-stubs xcb \
-		xcb-render GL Xdamage Xext Xfixes Xxf86vm drm xcb-shm z \
-		glib-2.0>=1800 gmodule-2.0>=1800 gobject-2.0>=1800 \
-		gthread-2.0>=1800 cairo>=9
+WANTLIB += GL X11 Xau Xdamage Xdmcp Xext Xfixes Xft Xrender Xxf86vm
+WANTLIB += c cairo drm expat ffi fontconfig freetype glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 m pcre pixman-1
+WANTLIB += png pthread pthread-stubs xcb xcb-render xcb-shm z
 
 MASTER_SITES=		${MASTER_SITE_GNOME:=sources/pango/${V:C/^([0-9]+\.[0-9]+).*/\1/}/}
 EXTRACT_SUFX=		.tar.bz2
@@ -36,7 +33,7 @@ MODULES=		devel/gettext
 
 BUILD_DEPENDS=		devel/gobject-introspection
 
-LIB_DEPENDS=		devel/glib2 \
+LIB_DEPENDS=		devel/glib2>=2.29.92 \
 			graphics/cairo
 
 USE_GMAKE=		Yes
