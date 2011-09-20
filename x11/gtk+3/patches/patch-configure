@@ -1,24 +1,10 @@
-$OpenBSD: patch-configure,v 1.5 2011/07/28 06:51:17 ajacoutot Exp $
-
-./configure[23737]: ${INTROSPECTION_GIRDIR/$datadir/\$(datadir)}: bad substitution
+$OpenBSD: patch-configure,v 1.6 2011/09/20 21:12:09 ajacoutot Exp $
 
 Do not force enable_man to yes.
 
---- configure.orig	Thu Jul 28 04:06:35 2011
-+++ configure	Thu Jul 28 08:25:58 2011
-@@ -23732,9 +23732,9 @@ $as_echo "$found_introspection" >&6; }
-        INTROSPECTION_COMPILER=`$PKG_CONFIG --variable=g_ir_compiler gobject-introspection-1.0`
-        INTROSPECTION_GENERATE=`$PKG_CONFIG --variable=g_ir_generate gobject-introspection-1.0`
-        INTROSPECTION_GIRDIR=`$PKG_CONFIG --variable=girdir gobject-introspection-1.0`
--       INTROSPECTION_GIRDIR=${INTROSPECTION_GIRDIR/$datadir/\$(datadir)}
-+       INTROSPECTION_GIRDIR=`echo ${INTROSPECTION_GIRDIR} | sed -e "s|${datadir}|\\\$(datadir)|"`
-        INTROSPECTION_TYPELIBDIR="$($PKG_CONFIG --variable=typelibdir gobject-introspection-1.0)"
--       INTROSPECTION_TYPELIBDIR=${INTROSPECTION_TYPELIBDIR/$libdir/\$(libdir)}
-+       INTROSPECTION_TYPELIBDIR=`echo ${INTROSPECTION_TYPELIBDIR} | sed -e "s|${libdir}|\\\$(libdir)|"`
-        INTROSPECTION_CFLAGS=`$PKG_CONFIG --cflags gobject-introspection-1.0`
-        INTROSPECTION_LIBS=`$PKG_CONFIG --libs gobject-introspection-1.0`
-        INTROSPECTION_MAKEFILE=`$PKG_CONFIG --variable=datadir gobject-introspection-1.0`/gobject-introspection-1.0/Makefile.introspection
-@@ -24161,7 +24161,7 @@ fi
+--- configure.orig	Mon Sep 19 23:39:29 2011
++++ configure	Tue Sep 20 10:14:15 2011
+@@ -24478,7 +24478,7 @@ fi
  
  # Check whether --enable-man was given.
  if test "${enable_man+set}" = set; then :

@@ -1,0 +1,11 @@
+$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.1 2011/09/20 21:12:09 ajacoutot Exp $
+--- gtk/gtkmountoperation-x11.c.orig	Tue Sep 20 11:10:25 2011
++++ gtk/gtkmountoperation-x11.c	Tue Sep 20 11:11:03 2011
+@@ -43,6 +43,7 @@
+ #include <errno.h>
+ 
+ #if defined(__OpenBSD__)
++#include <sys/param.h>
+ #include <kvm.h>
+ #include <fcntl.h>
+ #include <sys/sysctl.h>
