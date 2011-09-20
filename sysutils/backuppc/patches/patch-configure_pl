@@ -1,0 +1,63 @@
+$OpenBSD: patch-configure_pl,v 1.1.1.1 2011/09/20 11:36:55 landry Exp $
+--- configure.pl.orig	Mon Apr 25 05:31:55 2011
++++ configure.pl	Sat Sep 17 19:16:37 2011
+@@ -521,7 +523,7 @@ exit unless prompt("--> Do you want to continue?", "y"
+ #
+ # Create install directories
+ #
+-foreach my $dir ( qw(bin doc
++foreach my $dir ( qw(bin share/doc/backuppc
+ 		     lib/BackupPC/CGI
+ 		     lib/BackupPC/Config
+ 		     lib/BackupPC/Lang
+@@ -557,13 +559,7 @@ foreach my $dir ( ($Conf{CgiImageDir}) ) {
+ # Create other directories
+ #
+ foreach my $dir ( (
+-            "$Conf{TopDir}",
+-            "$Conf{TopDir}/pool",
+-            "$Conf{TopDir}/cpool",
+-            "$Conf{TopDir}/pc",
+-            "$Conf{TopDir}/trash",
+-            "$Conf{ConfDir}",
+-            "$Conf{LogDir}",
++            "$Conf{InstallDir}/share/examples/backuppc/"
+         ) ) {
+     mkpath("$DestDir$dir", 0, 0750) if ( !-d "$DestDir$dir" );
+     if ( !-d "$DestDir$dir"
+@@ -689,21 +685,21 @@ foreach my $init ( qw(gentoo-backuppc gentoo-backuppc.
+ printf("Making Apache configuration file for suid-perl\n");
+ InstallFile("httpd/src/BackupPC.conf", "httpd/BackupPC.conf", 0644);
+ 
+-printf("Installing docs in $DestDir$Conf{InstallDir}/doc\n");
++printf("Installing docs in $DestDir$Conf{InstallDir}/share/doc/backuppc\n");
+ foreach my $doc ( qw(BackupPC.pod BackupPC.html) ) {
+-    InstallFile("doc/$doc", "$DestDir$Conf{InstallDir}/doc/$doc", 0444);
++    InstallFile("doc/$doc", "$DestDir$Conf{InstallDir}/share/doc/backuppc/$doc", 0444);
+ }
+ 
+-printf("Installing config.pl and hosts in $DestDir$Conf{ConfDir}\n");
+-InstallFile("conf/hosts", "$DestDir$Conf{ConfDir}/hosts", 0644)
+-                    if ( !-f "$DestDir$Conf{ConfDir}/hosts" );
++printf("Installing config.pl and hosts in $DestDir$Conf{InstallDir}/share/examples/backuppc\n");
++InstallFile("conf/hosts", "$DestDir$Conf{InstallDir}/share/examples/backuppc/hosts", 0644)
++                    if ( !-f "$DestDir$Conf{InstallDir}/share/examples/backuppc/hosts" );
+ 
+ #
+ # Now do the config file.  If there is an existing config file we
+ # merge in the new config file, adding any new configuration
+ # parameters and deleting ones that are no longer needed.
+ #
+-my $dest = "$DestDir$Conf{ConfDir}/config.pl";
++my $dest = "$DestDir$Conf{InstallDir}/share/examples/backuppc/config.pl";
+ my ($distConf, $distVars) = ConfigParse("conf/config.pl");
+ my ($oldConf, $oldVars);
+ my ($newConf, $newVars) = ($distConf, $distVars);
+@@ -730,6 +726,7 @@ if ( !defined($Conf{CgiURL}) ) {
+     }
+ }
+ 
++$Conf{CgiURL} = "'http://$Conf{ServerHost}/BackupPC_Admin'";
+ #
+ # The smbclient commands have moved from hard-coded to the config file.
+ # $Conf{SmbClientArgs} no longer exists, so merge it into the new

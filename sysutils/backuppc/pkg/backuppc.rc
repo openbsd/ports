@@ -1,0 +1,13 @@
+#!/bin/sh
+#
+# $OpenBSD: backuppc.rc,v 1.1.1.1 2011/09/20 11:36:55 landry Exp $
+
+daemon="${TRUEPREFIX}/bin/BackupPC"
+daemon_flags="-d"
+daemon_user="_backuppc"
+
+. /etc/rc.d/rc.subr
+
+pexp="/usr/bin/perl.*BackupPC${daemon_flags:+ ${daemon_flags}}"
+
+rc_cmd $1

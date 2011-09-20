@@ -1,0 +1,15 @@
+BackupPC is a high-performance, enterprise-grade system for backing
+up Linux, WinXX, and MacOS PCs and laptops to a server's disk.
+BackupPC is highly configurable and easy to install and maintain.
+
+Given the ever decreasing cost of disks and raid systems, it is now
+practical and cost effective to backup a large number of machines onto
+a server's local disk or network storage. This is what BackupPC does.
+For some sites, this might be the complete backup solution. For other
+sites, additional permanent archives could be created by periodically
+backing up the server to tape.  A variety of Open Source systems are
+available for doing backup to tape.
+
+BackupPC is written in Perl and extracts backup data via rsync, or tar
+over ssh/rsh/nfs.  It is robust, reliable, well documented and freely
+available as Open Source on SourceForge.

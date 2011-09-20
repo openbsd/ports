@@ -1,0 +1,159 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/20 11:36:55 landry Exp $
+bin/BackupPC
+bin/BackupPC_Admin
+bin/BackupPC_Admin.fcgi
+bin/BackupPC_archive
+bin/BackupPC_archiveHost
+bin/BackupPC_archiveStart
+bin/BackupPC_attribPrint
+bin/BackupPC_dump
+bin/BackupPC_fixupBackupSummary
+bin/BackupPC_link
+bin/BackupPC_nightly
+bin/BackupPC_restore
+bin/BackupPC_sendEmail
+bin/BackupPC_serverMesg
+bin/BackupPC_tarCreate
+bin/BackupPC_tarExtract
+bin/BackupPC_tarPCCopy
+bin/BackupPC_trashClean
+bin/BackupPC_zcat
+bin/BackupPC_zipCreate
+lib/BackupPC/
+lib/BackupPC/Attrib.pm
+lib/BackupPC/CGI/
+lib/BackupPC/CGI/AdminOptions.pm
+lib/BackupPC/CGI/Archive.pm
+lib/BackupPC/CGI/ArchiveInfo.pm
+lib/BackupPC/CGI/Browse.pm
+lib/BackupPC/CGI/DirHistory.pm
+lib/BackupPC/CGI/EditConfig.pm
+lib/BackupPC/CGI/EmailSummary.pm
+lib/BackupPC/CGI/GeneralInfo.pm
+lib/BackupPC/CGI/HostInfo.pm
+lib/BackupPC/CGI/LOGlist.pm
+lib/BackupPC/CGI/Lib.pm
+lib/BackupPC/CGI/Queue.pm
+lib/BackupPC/CGI/RSS.pm
+lib/BackupPC/CGI/ReloadServer.pm
+lib/BackupPC/CGI/Restore.pm
+lib/BackupPC/CGI/RestoreFile.pm
+lib/BackupPC/CGI/RestoreInfo.pm
+lib/BackupPC/CGI/StartServer.pm
+lib/BackupPC/CGI/StartStopBackup.pm
+lib/BackupPC/CGI/StopServer.pm
+lib/BackupPC/CGI/Summary.pm
+lib/BackupPC/CGI/View.pm
+lib/BackupPC/Config/
+lib/BackupPC/Config.pm
+lib/BackupPC/Config/Meta.pm
+lib/BackupPC/FileZIO.pm
+lib/BackupPC/Lang/
+lib/BackupPC/Lang/cz.pm
+lib/BackupPC/Lang/de.pm
+lib/BackupPC/Lang/en.pm
+lib/BackupPC/Lang/es.pm
+lib/BackupPC/Lang/fr.pm
+lib/BackupPC/Lang/it.pm
+lib/BackupPC/Lang/nl.pm
+lib/BackupPC/Lang/pl.pm
+lib/BackupPC/Lang/pt_br.pm
+lib/BackupPC/Lang/zh_CN.pm
+lib/BackupPC/Lib.pm
+lib/BackupPC/PoolWrite.pm
+lib/BackupPC/Storage/
+lib/BackupPC/Storage.pm
+lib/BackupPC/Storage/Text.pm
+lib/BackupPC/View.pm
+lib/BackupPC/Xfer/
+lib/BackupPC/Xfer.pm
+lib/BackupPC/Xfer/Archive.pm
+lib/BackupPC/Xfer/Ftp.pm
+lib/BackupPC/Xfer/Protocol.pm
+lib/BackupPC/Xfer/Rsync.pm
+lib/BackupPC/Xfer/RsyncDigest.pm
+lib/BackupPC/Xfer/RsyncFileIO.pm
+lib/BackupPC/Xfer/Smb.pm
+lib/BackupPC/Xfer/Tar.pm
+lib/BackupPC/Zip/
+lib/BackupPC/Zip/FileMember.pm
+lib/Net/
+lib/Net/FTP/
+lib/Net/FTP/AutoReconnect.pm
+lib/Net/FTP/RetrHandle.pm
+share/backuppc/
+share/backuppc/0000000.gif
+share/backuppc/0000011.gif
+share/backuppc/0001000.gif
+share/backuppc/0010000.gif
+share/backuppc/0010001.gif
+share/backuppc/0011000.gif
+share/backuppc/0011001.gif
+share/backuppc/1000000.gif
+share/backuppc/1000100.gif
+share/backuppc/1001000.gif
+share/backuppc/1001100.gif
+share/backuppc/1010000.gif
+share/backuppc/1010001.gif
+share/backuppc/1011000.gif
+share/backuppc/1100000.gif
+share/backuppc/1100100.gif
+share/backuppc/1100101.gif
+share/backuppc/1100110.gif
+share/backuppc/1100111.gif
+share/backuppc/1101000.gif
+share/backuppc/1101100.gif
+share/backuppc/1101101.gif
+share/backuppc/1101110.gif
+share/backuppc/1101111.gif
+share/backuppc/1110000.gif
+share/backuppc/1110001.gif
+share/backuppc/1110100.gif
+share/backuppc/1110101.gif
+share/backuppc/1110110.gif
+share/backuppc/1110111.gif
+share/backuppc/1111000.gif
+share/backuppc/1111001.gif
+share/backuppc/1111100.gif
+share/backuppc/1111101.gif
+share/backuppc/1111110.gif
+share/backuppc/1111111.gif
+share/backuppc/BackupPC_stnd.css
+share/backuppc/BackupPC_stnd_orig.css
+share/backuppc/favicon.ico
+share/backuppc/icon-dir.png
+share/backuppc/icon-file.png
+share/backuppc/icon-hardlink.png
+share/backuppc/icon-symlink.png
+share/backuppc/logo.gif
+share/backuppc/sorttable.js
+share/doc/backuppc/
+share/doc/backuppc/BackupPC.html
+share/doc/backuppc/BackupPC.pod
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/backuppc/
+@owner _backuppc
+@sample /etc/backuppc/
+share/examples/backuppc/config.pl
+@sample /etc/backuppc/config.pl
+share/examples/backuppc/hosts
+@sample /etc/backuppc/hosts
+@owner
+share/examples/backuppc/httpd-backuppc.conf
+@sample /var/www/conf/modules.sample/backuppc.conf
+@mode 770
+@owner _backuppc
+@group _backuppc
+@sample /var/log/backuppc/
+@sample /var/db/backuppc/
+@sample /var/db/backuppc/cpool/
+@sample /var/db/backuppc/pc/
+@sample /var/db/backuppc/pool/
+@sample /var/db/backuppc/trash/
+@mode
+@owner
+@group
+@exec cp -pr ${PREFIX}/share/backuppc/ /var/www/
+@unexec rm -Rf /var/www/backuppc/
+@rcscript /etc/rc.d/backuppc
+@rcscript /etc/rc.d/wwbackuppc

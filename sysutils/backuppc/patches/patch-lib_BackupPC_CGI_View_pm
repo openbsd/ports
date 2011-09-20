@@ -1,0 +1,12 @@
+$OpenBSD: patch-lib_BackupPC_CGI_View_pm,v 1.1.1.1 2011/09/20 11:36:55 landry Exp $
+--- lib/BackupPC/CGI/View.pm.orig	Sat Sep 17 18:52:47 2011
++++ lib/BackupPC/CGI/View.pm	Sat Sep 17 18:53:14 2011
+@@ -86,7 +86,7 @@ sub action
+         $file = $bpc->ConfDir() . "/hosts";
+         $linkHosts = 1;
+     } elsif ( $type eq "docs" ) {
+-        $file = $bpc->InstallDir() . "/doc/BackupPC.html";
++        $file = $bpc->InstallDir() . "/share/doc/backuppc/BackupPC.html";
+     } elsif ( $host ne "" ) {
+         if ( !defined($In{num}) ) {
+             # get the latest LOG file

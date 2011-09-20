@@ -1,0 +1,38 @@
+$OpenBSD: patch-cgi-bin_BackupPC_Admin,v 1.1.1.1 2011/09/20 11:36:55 landry Exp $
+Use patch from http://users.k12system.com/mrwizard/backuppc-3.2.0-fastcgi.patch
+to allow fcgi workflow
+--- cgi-bin/BackupPC_Admin.orig	Sat Sep 17 17:22:41 2011
++++ cgi-bin/BackupPC_Admin	Sat Sep 17 17:24:46 2011
+@@ -49,13 +49,12 @@ use strict;
+ no  utf8;
+ use CGI;
+ use CGI::Carp qw(fatalsToBrowser);
++use CGI::Fast qw(:standard);
+ use lib "__INSTALLDIR__/lib";
+ 
+ use BackupPC::Lib;
+ use BackupPC::CGI::Lib qw(:all);
+ 
+-BackupPC::CGI::Lib::NewRequest;
+-
+ my %ActionDispatch = (
+     "summary"             	 => "Summary",
+     "Start_Incr_Backup"          => "StartStopBackup",
+@@ -84,6 +83,10 @@ my %ActionDispatch = (
+     "rss"                        => "RSS",
+ );
+ 
++while (my $q = new CGI::Fast) {
++  # This requires a change to lib/BackupPC/CGI/Lib.pm
++  # allowing the new CGI to be replaced with shift || new CGI
++  BackupPC::CGI::Lib::NewRequest($q);
+ #
+ # Set default actions, then call sub handler
+ #
+@@ -107,3 +110,6 @@ push(@INC, $installDir) if ( !grep($_ eq $installDir, 
+ require "BackupPC/CGI/$action.pm"
+ 	    if ( !defined($BackupPC::CGI::{"${action}::"}) );
+ $BackupPC::CGI::{"${action}::"}{action}();
++}
++
++exit 0;
