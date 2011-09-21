@@ -29,6 +29,8 @@ MD5 (rpm/pango-1.8.1-2.i386.rpm) = EPaYE2F9nEljLlTLjZUkrQ==
 MD5 (rpm/qt-3.3.4-15.5.i386.rpm) = WqER6jLxVjPEeZXO/UJm3g==
 MD5 (rpm/readline-5.0-3.i386.rpm) = iau9rz2idFMYfJFAuiViQQ==
 MD5 (rpm/termcap-5.4-7fc4.noarch.rpm) = OqxoaH+xBJDBirAgZO77yg==
+MD5 (rpm/xorg-x11-Mesa-libGL-6.8.2-37.FC4.49.2.1.i386.rpm) = IswqqCyZdDtd6yKrCbpJIw==
+MD5 (rpm/xorg-x11-Mesa-libGLU-6.8.2-37.FC4.49.2.1.i386.rpm) = KKxrWA06IsAq80+Wz6HuhQ==
 MD5 (rpm/xorg-x11-deprecated-libs-6.8.2-37.FC4.49.2.1.i386.rpm) = Ilj+tMv6oehm8idocJL/gg==
 MD5 (rpm/xorg-x11-libs-6.8.2-37.FC4.49.2.1.i386.rpm) = xsQXJvhW6oi4IYa+jgcdMQ==
 MD5 (rpm/zlib-1.2.2.2-5.fc4.i386.rpm) = ciLoTPpASTH/EeXks+2tXg==
@@ -63,6 +65,8 @@ RMD160 (rpm/pango-1.8.1-2.i386.rpm) = p9Y+1ikmnRmTMv/WEFD3Cq08knE=
 RMD160 (rpm/qt-3.3.4-15.5.i386.rpm) = Q17I/5YxuT0MMELzQEDIKYFSDlU=
 RMD160 (rpm/readline-5.0-3.i386.rpm) = +/F/EtgwySkvK2LOmmQiVWcMafw=
 RMD160 (rpm/termcap-5.4-7fc4.noarch.rpm) = Vnfxb7R87JuVsMMtEF4XaSZHIUA=
+RMD160 (rpm/xorg-x11-Mesa-libGL-6.8.2-37.FC4.49.2.1.i386.rpm) = vYzlBBObGFuVbYPt17JSZQ2kwL8=
+RMD160 (rpm/xorg-x11-Mesa-libGLU-6.8.2-37.FC4.49.2.1.i386.rpm) = l8wxPPi+0EntcLg9hNlTRNNLAJ8=
 RMD160 (rpm/xorg-x11-deprecated-libs-6.8.2-37.FC4.49.2.1.i386.rpm) = k0v/Oiutj1JZKcbxPHFZ3YLNM4M=
 RMD160 (rpm/xorg-x11-libs-6.8.2-37.FC4.49.2.1.i386.rpm) = LKtbwRl85GF3O8NYrbUcPNMBG4U=
 RMD160 (rpm/zlib-1.2.2.2-5.fc4.i386.rpm) = 8QZHzegcrhOMQqmQBuMz8BmhqIk=
@@ -97,6 +101,8 @@ SHA1 (rpm/pango-1.8.1-2.i386.rpm) = vwjpkZQnIKf7elb2TwhnbVicxNE=
 SHA1 (rpm/qt-3.3.4-15.5.i386.rpm) = X4DaJJgugjitRoPN0EvFEQj5/c8=
 SHA1 (rpm/readline-5.0-3.i386.rpm) = ptHDTFF5o0h6dQoGmFi6CEwjeVM=
 SHA1 (rpm/termcap-5.4-7fc4.noarch.rpm) = 06QD5zJDSBs23fJojej4xFZmFsc=
+SHA1 (rpm/xorg-x11-Mesa-libGL-6.8.2-37.FC4.49.2.1.i386.rpm) = w9IBPUOi42n0hh2XWYduuHchhnc=
+SHA1 (rpm/xorg-x11-Mesa-libGLU-6.8.2-37.FC4.49.2.1.i386.rpm) = 751yu5YXZcwQFC0iGDybRK9N9uQ=
 SHA1 (rpm/xorg-x11-deprecated-libs-6.8.2-37.FC4.49.2.1.i386.rpm) = BDh55ShvUukLqu1efVugwQixBqk=
 SHA1 (rpm/xorg-x11-libs-6.8.2-37.FC4.49.2.1.i386.rpm) = rU3DdUJVooVG0CrRaBx/Vk5kbCE=
 SHA1 (rpm/zlib-1.2.2.2-5.fc4.i386.rpm) = H9NI6/9NsCAkVyWpbt6Ssol9Mhs=
@@ -131,6 +137,8 @@ SHA256 (rpm/pango-1.8.1-2.i386.rpm) = aW6WPQR19YM1pSEthE2RPj6/MwfsRvz5hHNRVWJS0p
 SHA256 (rpm/qt-3.3.4-15.5.i386.rpm) = VVX6UX/d2VFi3aMUVMH+WbKiugRMfeJUVqRc+9XuhN0=
 SHA256 (rpm/readline-5.0-3.i386.rpm) = gYSKawHfRqeE1yuRoGhPRCjddP5QtfIrvyHMuOwrsuQ=
 SHA256 (rpm/termcap-5.4-7fc4.noarch.rpm) = Rm1W/EDRHIyl6aNd4TipwCFHZJSSCveLsfYSEJHq4SE=
+SHA256 (rpm/xorg-x11-Mesa-libGL-6.8.2-37.FC4.49.2.1.i386.rpm) = Ix4TcBf6FtsbNYr39y17ZvoTS2coNXPR1D9I592WxZM=
+SHA256 (rpm/xorg-x11-Mesa-libGLU-6.8.2-37.FC4.49.2.1.i386.rpm) = BgTyHNjxNEJnOPmJhmpaASXol4xi4ImXhse7XZXX7HM=
 SHA256 (rpm/xorg-x11-deprecated-libs-6.8.2-37.FC4.49.2.1.i386.rpm) = 7iPFgTOC3lyBtkvL6AXCSv6NiQBkaECO+WOpJClqZ0U=
 SHA256 (rpm/xorg-x11-libs-6.8.2-37.FC4.49.2.1.i386.rpm) = O+AwwMRCEYygWd1+iZ+Nsfl/hzohBpQyJ/CdGLfYXZI=
 SHA256 (rpm/zlib-1.2.2.2-5.fc4.i386.rpm) = kEOCuSMXBEVl+JUfZ3ANtgyGusrWWfPgBQwd/6QB/nA=
@@ -165,6 +173,8 @@ SIZE (rpm/pango-1.8.1-2.i386.rpm) = 278400
 SIZE (rpm/qt-3.3.4-15.5.i386.rpm) = 3579405
 SIZE (rpm/readline-5.0-3.i386.rpm) = 205922
 SIZE (rpm/termcap-5.4-7fc4.noarch.rpm) = 269472
+SIZE (rpm/xorg-x11-Mesa-libGL-6.8.2-37.FC4.49.2.1.i386.rpm) = 211833
+SIZE (rpm/xorg-x11-Mesa-libGLU-6.8.2-37.FC4.49.2.1.i386.rpm) = 284523
 SIZE (rpm/xorg-x11-deprecated-libs-6.8.2-37.FC4.49.2.1.i386.rpm) = 90470
 SIZE (rpm/xorg-x11-libs-6.8.2-37.FC4.49.2.1.i386.rpm) = 2660397
 SIZE (rpm/zlib-1.2.2.2-5.fc4.i386.rpm) = 49500

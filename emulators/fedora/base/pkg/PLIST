@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2009/07/30 17:35:35 sturm Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/09/21 15:22:05 sthen Exp $
 @conflict redhat_base-*
 emul/
 emul/fedora/
@@ -379,6 +379,10 @@ emul/fedora/usr/X11R6/lib/X11/locale/zh_TW/XLC_LOCALE
 emul/fedora/usr/X11R6/lib/X11/rgb.txt
 emul/fedora/usr/X11R6/lib/libFS.so.6
 emul/fedora/usr/X11R6/lib/libFS.so.${LIBFS_VERSION}
+emul/fedora/usr/X11R6/lib/libGL.so.1
+emul/fedora/usr/X11R6/lib/libGL.so.${LIBGL_VERSION}
+emul/fedora/usr/X11R6/lib/libGLU.so.1
+emul/fedora/usr/X11R6/lib/libGLU.so.${LIBGLU_VERSION}
 emul/fedora/usr/X11R6/lib/libGLw.so.1
 emul/fedora/usr/X11R6/lib/libGLw.so.${LIBGLw_VERSION}
 emul/fedora/usr/X11R6/lib/libI810XvMC.so.1
@@ -838,6 +842,7 @@ emul/fedora/usr/lib/gtk-2.0/2.4.0/loaders/libpixbufloader-tiff.so
 emul/fedora/usr/lib/gtk-2.0/2.4.0/loaders/libpixbufloader-wbmp.so
 emul/fedora/usr/lib/gtk-2.0/2.4.0/loaders/libpixbufloader-xbm.so
 emul/fedora/usr/lib/gtk-2.0/2.4.0/loaders/libpixbufloader-xpm.so
+emul/fedora/usr/lib/libGLU.so.1
 emul/fedora/usr/lib/libatk-1.0.so.0
 emul/fedora/usr/lib/libatk-1.0.so.0.901.0
 emul/fedora/usr/lib/libbfd-2.15.94.0.2.2.so

@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.15 2010/11/08 16:02:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/09/21 15:22:05 sthen Exp $
 
 COMMENT=	Linux compatibility package based on Fedora Core 4
 
 PKGNAME=	fedora_base-4.0
-REVISION=	8
+REVISION=	9
 # clean up after make plist:
 #	- perl -pi -e "s,^\@lib ,," pkg/PLIST
 #	- change the 2nd LIBXaw_version to LIBXaw7_version in pkg/PLIST
 SHARED_LIBS=	FS	6.0 \
+		GL	1.2 \
+		GLU     1.3 \
 		GLw	1.0 \
 		I810XvMC 1.0 \
 		ICE	6.3 \
@@ -100,6 +102,8 @@ RPMS=		atk-1.9.1-1.i386.rpm \
 		termcap-5.4-7fc4.noarch.rpm:0 \
 		xorg-x11-deprecated-libs-6.8.2-37.FC4.49.2.1.i386.rpm:0 \
 		xorg-x11-libs-6.8.2-37.FC4.49.2.1.i386.rpm:0 \
+		xorg-x11-Mesa-libGL-6.8.2-37.FC4.49.2.1.i386.rpm:0 \
+		xorg-x11-Mesa-libGLU-6.8.2-37.FC4.49.2.1.i386.rpm:0 \
 		zlib-1.2.2.2-5.fc4.i386.rpm:0
 
 REMOVE_DIRS=	usr/X11R6/man /usr/doc /usr/info /usr/man /usr/share/doc \
