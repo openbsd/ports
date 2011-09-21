@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2011/06/02 13:41:40 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/21 17:20:56 jasper Exp $
 
 COMMENT=	Prelude log analyzer
 
 DISTNAME=	prelude-lml-0.9.15
-REVISION=	5
+REVISION=	6
 
 WANTLIB += c gcrypt gnutls gpg-error m tasn1 z pcre prelude
 WANTLIB += gmp hogweed nettle pthread

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2010/10/18 17:47:54 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/21 17:20:56 jasper Exp $
 
 COMMENT=	library to determine file type
 V=		5.00
@@ -6,10 +6,9 @@ DISTNAME= 	file-${V}
 PKGNAME=	libmagic-${V}
 SHARED_LIBS=	magic	2.0
 CATEGORIES=	sysutils devel
+REVISION=	0
 
 HOMEPAGE=	ftp://ftp.astron.com/pub/file/
-
-MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

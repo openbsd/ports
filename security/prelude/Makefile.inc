@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.3 2011/05/30 10:05:03 espie Exp $
+# $OpenBSD: Makefile.inc,v 1.4 2011/09/21 17:20:56 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 CATEGORIES=	security
 
 HOMEPAGE=	http://www.prelude-ids.org/
-
-MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 # GPL
 PERMIT_DISTFILES_CDROM=	Yes

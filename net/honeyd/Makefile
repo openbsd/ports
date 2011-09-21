@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.31 2011/09/16 11:13:38 espie Exp $
+# $OpenBSD: Makefile,v 1.32 2011/09/21 17:20:56 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -10,8 +10,6 @@ MASTER_SITES=	http://www.citi.umich.edu/u/provos/honeyd/ \
 		http://niels.xtdnet.nl/honeyd/
 
 HOMEPAGE=	http://www.honeyd.org/
-
-MAINTAINER=     Rui Reis <rui@openbsd.org>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes

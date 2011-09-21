@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.7 2010/07/12 22:07:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/21 17:20:56 jasper Exp $
 
 COMMENT=	library for navigating to arbitrary packets in a trace file
 
 DISTNAME=	libpcapnav-0.8
-REVISION=	0
+REVISION=	1
 SHARED_LIBS=	pcapnav	1.0
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netdude/}
 
 HOMEPAGE=	http://netdude.sourceforge.net/doco/libpcapnav/
-
-MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes

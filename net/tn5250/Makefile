@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2010/10/18 18:36:59 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/21 17:20:56 jasper Exp $
 
 COMMENT=	5250 telnet protocol and terminal
 
 DISTNAME=	tn5250-0.17.3
-REVISION=	0
+REVISION=	1
 SHARED_LIBS=	5250	0.0
 CATEGORIES=	net
 
 HOMEPAGE=	http://tn5250.sourceforge.net/	
-
-MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 # LGPL
 PERMIT_PACKAGE_CDROM=	Yes

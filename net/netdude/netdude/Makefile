@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2010/11/19 22:31:35 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/21 17:20:56 jasper Exp $
 
 COMMENT=	network traffic visualization and editing tool
 
 DISTNAME=	netdude-0.4.8a
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=netdude/}
 
 HOMEPAGE=	http://netdude.sourceforge.net/
-
-MAINTAINER=	Rui Reis <rui@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
