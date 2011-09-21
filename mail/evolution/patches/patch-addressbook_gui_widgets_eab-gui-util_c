@@ -1,0 +1,15 @@
+$OpenBSD: patch-addressbook_gui_widgets_eab-gui-util_c,v 1.1 2011/09/21 13:27:59 jasper Exp $
+--- addressbook/gui/widgets/eab-gui-util.c.orig	Sun Sep 18 22:28:50 2011
++++ addressbook/gui/widgets/eab-gui-util.c	Mon Sep 19 23:25:11 2011
+@@ -655,7 +655,11 @@ get_locales (void)
+ 	gchar *dot;
+ 	gchar **split;
+ 
++#ifdef LC_ADDRESS
+ 	locale = g_strdup (setlocale (LC_ADDRESS, NULL));
++#else
++	locale = NULL;
++#endif
+ 	if (!locale)
+ 		return NULL;
+ 

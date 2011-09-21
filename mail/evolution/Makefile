@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.132 2011/09/21 10:12:41 jasper Exp $
+# $OpenBSD: Makefile,v 1.133 2011/09/21 13:27:59 jasper Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.0.3
-REVISION =		0
+GNOME_VERSION=		3.1.92
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
@@ -16,7 +15,8 @@ PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
 # mail/evolution-rss
 # mail/evolution-exchange
 # x11/gnome/tracker
-R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+#R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+R=			3.2 # XXX
 SUBST_VARS=		R
 
 CATEGORIES=		mail
@@ -48,7 +48,7 @@ WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xxf86vm asn1 atk-1.0 c cairo cairo-gobject camel-1.2
 WANTLIB += camel-provider-1.2 canberra com_err crypto
 WANTLIB += db dbus-1 dbus-glib-1 drm ebackend-1.2 ebook-1.2 ecal-1.2
-WANTLIB += edataserver-1.2 edataserverui-3.0 egroupwise-1.2 enchant
+WANTLIB += edataserver-1.2 edataserverui-3.0 enchant
 WANTLIB += execinfo expat fontconfig freetype gailutil-3
 WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnome-desktop-3 gnome-keyring gobject-2.0
@@ -99,12 +99,12 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/libunique3 \
 			converters/libpst \
-			databases/evolution-data-server>=2.32.2 \
+			databases/evolution-data-server>=3.1.91 \
 			databases/openldap \
 			devel/libnotify>=0.7.2 \
 			security/nss \
 			x11/gnome/desktop \
-			www/gtkhtml4 \
+			www/gtkhtml4>=4.1.91 \
 			audio/libcanberra,-gtk3
 
 LIB_DEPENDS-plugins=	${LIB_DEPENDS} \
@@ -132,6 +132,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 CONFIGURE_ARGS+=	--disable-gtk-doc \
 			--enable-plugins=all \
 			--disable-nm \
+			--disable-goa \
 			--with-openldap="${LOCALBASE}" \
 			--with-sub-version=" OpenBSD/Ports" \
 			--with-krb5=/usr \
