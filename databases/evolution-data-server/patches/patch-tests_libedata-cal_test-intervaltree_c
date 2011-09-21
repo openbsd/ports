@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_libedata-cal_test-intervaltree_c,v 1.1 2011/09/21 13:26:03 jasper Exp $
+--- tests/libedata-cal/test-intervaltree.c.orig	Sat Sep 17 09:53:50 2011
++++ tests/libedata-cal/test-intervaltree.c	Sat Sep 17 09:54:11 2011
+@@ -168,7 +168,7 @@ create_test_component (time_t start,
+ 	e_cal_component_set_dtend (comp, &dtend);
+ 	*/
+ 
+-	summary.value = g_strdup_printf ("%ld - %ld", start, end);
++	summary.value = g_strdup_printf ("%ld - %ld", (long int)start, (long int)end);
+ 	summary.altrep = NULL;
+ 
+ 	e_cal_component_set_summary (comp, &summary);

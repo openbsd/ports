@@ -1,12 +1,12 @@
-$OpenBSD: patch-camel_providers_local_camel-maildir-summary_c,v 1.4 2011/09/12 07:26:19 ajacoutot Exp $
---- camel/providers/local/camel-maildir-summary.c.orig	Thu Mar 10 10:50:18 2011
-+++ camel/providers/local/camel-maildir-summary.c	Tue May 17 13:40:32 2011
-@@ -376,7 +376,7 @@ static gchar *maildir_summary_next_uid_string (CamelFo
+$OpenBSD: patch-camel_providers_local_camel-maildir-summary_c,v 1.5 2011/09/21 13:26:03 jasper Exp $
+--- camel/providers/local/camel-maildir-summary.c.orig	Sun Sep  4 00:50:05 2011
++++ camel/providers/local/camel-maildir-summary.c	Sat Sep 17 09:57:03 2011
+@@ -378,7 +378,7 @@ static gchar *maildir_summary_next_uid_string (CamelFo
  				g_free (uid);
- 				g_usleep (2*G_USEC_PER_SEC);
+ 				g_usleep (2 * G_USEC_PER_SEC);
  			}
 -			uid = g_strdup_printf("%ld.%d_%u.%s", time(NULL), getpid(), nextuid, mds->priv->hostname);
 +			uid = g_strdup_printf("%lld.%d_%u.%s", (long long)time(NULL), getpid(), nextuid, mds->priv->hostname);
  			name = g_strdup_printf("%s/tmp/%s", cls->folder_path, uid);
  			retry++;
- 		} while (g_stat (name, &st) == 0 && retry<3);
+ 		} while (g_stat (name, &st) == 0 && retry < 3);

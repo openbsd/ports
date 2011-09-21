@@ -1,7 +1,7 @@
-$OpenBSD: patch-calendar_libedata-cal_e-cal-backend-intervaltree_c,v 1.4 2011/09/12 07:26:19 ajacoutot Exp $
---- calendar/libedata-cal/e-cal-backend-intervaltree.c.orig	Thu Mar 10 10:50:17 2011
-+++ calendar/libedata-cal/e-cal-backend-intervaltree.c	Tue May 17 13:40:32 2011
-@@ -589,8 +589,8 @@ e_intervaltree_node_dump (EIntervalTree *tree, EInterv
+$OpenBSD: patch-calendar_libedata-cal_e-cal-backend-intervaltree_c,v 1.5 2011/09/21 13:26:03 jasper Exp $
+--- calendar/libedata-cal/e-cal-backend-intervaltree.c.orig	Sun Sep  4 00:50:05 2011
++++ calendar/libedata-cal/e-cal-backend-intervaltree.c	Sat Sep 17 09:57:03 2011
+@@ -608,8 +608,8 @@ e_intervaltree_node_dump (EIntervalTree *tree,
  	*/
  	EIntervalTreePrivate *priv = tree->priv;
  	if (node != priv->nil)
