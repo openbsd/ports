@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.36 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.37 2011/09/21 13:38:05 ajacoutot Exp $
 
 COMMENT=	user interface builder for the gtk+3 toolkit
 
 GNOME_VERSION=	3.10.0
 GNOME_PROJECT= 	glade
 
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	devel
 
@@ -30,7 +30,7 @@ WANTLIB += cairo-gobject drm expat ffi fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs ${MODPY_WANTLIB} util
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += xcb xcb-render xcb-shm xml2 z kvm
 
 MODULES=	devel/gettext \
 		x11/gnome \
