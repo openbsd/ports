@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/21 08:01:26 giovanni Exp $
+${P5SITE}/Mail/
+${P5SITE}/Mail/SPF/
+${P5SITE}/Mail/SPF/Test/
+${P5SITE}/Mail/SPF/Test.pm
+${P5SITE}/Mail/SPF/Test/Base.pm
+${P5SITE}/Mail/SPF/Test/Case.pm
+${P5SITE}/Mail/SPF/Test/Scenario.pm
+@man man/man3p/Mail::SPF::Test.3p
+@man man/man3p/Mail::SPF::Test::Base.3p
+@man man/man3p/Mail::SPF::Test::Case.3p
+@man man/man3p/Mail::SPF::Test::Scenario.3p
