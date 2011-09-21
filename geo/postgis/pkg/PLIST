@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2010/11/04 13:45:54 eric Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/09/21 14:13:32 pea Exp $
 @bin bin/pgsql2shp
 @bin bin/shp2pgsql
 lib/postgresql/postgis-1.5.so
@@ -17,6 +17,7 @@ libexec/postgis/utils/test_geography_joinestimation.pl
 libexec/postgis/utils/test_joinestimation.pl
 @man man/man1/pgsql2shp.1
 @man man/man1/shp2pgsql.1
+share/doc/postgresql/
 share/doc/postgresql/postgis/
 share/doc/postgresql/postgis/README.postgis
 share/doc/postgresql/postgis/images/
