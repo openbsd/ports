@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/20 22:54:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/21 20:27:30 jasper Exp $
 
 COMMENT=		GObject JavaScriptCore bridge
 
 GNOME_PROJECT=		seed
-GNOME_VERSION=		3.0.0
-REVISION=		5
+GNOME_VERSION=		3.1.1.1 # XXX: git master as of 21-09-2011
 SHARED_LIBS +=  seed-gtk3                 0.0 # 0.0
 
 CATEGORIES=		devel www
@@ -15,8 +14,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-EXTRACT_SUFX=		.tar.bz2
 
 HOMEPAGE=		http://live.gnome.org/Seed
 
@@ -29,7 +26,7 @@ WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm enchant
 WANTLIB += expat ffi fontconfig freetype gailutil-3 gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gmp gobject-2.0
 WANTLIB += gstapp-0.10 gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10
-WANTLIB += gstreamer-0.10 gstvideo-0.10 gthread-2.0 gtk-3 icudata
+WANTLIB += gstreamer-0.10 gstvideo-0.10 gthread-2.0 gtk-3 kvm icudata
 WANTLIB += icui18n icuuc jpeg m mpfr pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += readline soup-2.4 sqlite3 stdc++ termcap util webkitgtk-3.0
@@ -37,9 +34,12 @@ WANTLIB += xcb xcb-render xcb-shm xml2 xslt z
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		x11/gnome/js-common
-LIB_DEPENDS=		devel/gobject-introspection \
+LIB_DEPENDS=		devel/gobject-introspection>=1.30.0 \
 			devel/mpfr>=3.0.1 \
 			www/webkit,gtk3
+
+# When updating, put back patch-*-Makefile_in
+MASTER_SITES=		http://distfiles.nl/
 
 CONFIGURE_ARGS+=	--enable-readline-module \
 			--enable-multiprocessing-module \
