@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/08/28 17:26:07 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/21 17:31:50 ajacoutot Exp $
 
 COMMENT=		library for powerful image loading capabilities
 
@@ -30,7 +30,7 @@ LIB_DEPENDS=		graphics/jasper \
 USE_LIBTOOL=		Yes
 
 AUTOCONF_VERSION=	2.61
-CONFIGURE_STYLE=	autoconf gnu
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS+=	--with-squish=no \
 			--with-zlib=yes
 # This would only install three binary examples, we'll install it manually.
