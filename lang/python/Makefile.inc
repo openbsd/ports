@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.82 2011/09/06 20:58:08 rpointel Exp $
+# $OpenBSD: Makefile.inc,v 1.83 2011/09/21 14:37:28 fgsch Exp $
 
 # IMPORTANT!  If you make any changes to the Python ports, be sure
 # to also update files/CHANGES.OpenBSD for your change.  This is a
@@ -40,11 +40,17 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+.if ${VERSION} < 3.2
+LIB_SUFX =	
 MULTI_PACKAGES=	-main -tests -tools -gdbm -idle -tkinter -bsddb
+.else
+LIB_SUFX =	m
+MULTI_PACKAGES=	-main -tests -gdbm -idle -tkinter
+.endif
 
 # Python 2.6 lists BSD db 4.6.x as unstable on most architectures (see
 # setup.py:allow_db_version). XXX revisit if databases/db/v4 is updated to 4.7
-.if ${VERSION} == "2.6" || ${VERSION} == "2.7"
+.if ${VERSION} == "2.7"
 ONLY_FOR_ARCHS-bsddb=	amd64 i386
 .endif
 
@@ -57,31 +63,33 @@ LIB_DEPENDS-main =	archivers/bzip2
 RUN_DEPENDS-main =
 WANTLIB-main =		ssl panelw m crypto c util z readline pthread \
 			ncursesw stdc++ expat ossaudio bz2
-.if ${VERSION} == "2.5" || ${VERSION} == "2.6" || ${VERSION} == "2.7"
+.if ${VERSION} != "2.4"
 LIB_DEPENDS-main +=	databases/sqlite3
 WANTLIB-main +=		sqlite3
 .endif
 
 LIB_DEPENDS-bsddb =	databases/db/v4 \
 			lang/python/${VERSION},-main
-WANTLIB-bsddb =		lib/db4/db>=4 python${VERSION}
+WANTLIB-bsddb =		lib/db4/db>=4 python${VERSION}${LIB_SUFX}
 LIB_DEPENDS-gdbm =	databases/gdbm \
 			lang/python/${VERSION},-main
-WANTLIB-gdbm =		gdbm>=3 python${VERSION}
+WANTLIB-gdbm =		gdbm>=3 python${VERSION}${LIB_SUFX}
 RUN_DEPENDS-idle =	${RUN_DEPENDS} \
 			lang/python/${VERSION},-tkinter
 # XXX Tcl/Tk version number handled in patch-setup_py
 MODULES +=		x11/tk
 LIB_DEPENDS-tkinter =	${MODTK_LIB_DEPENDS} \
 			lang/python/${VERSION},-main
-WANTLIB-tkinter =	X11 ${MODTK_WANTLIB} python${VERSION}
+WANTLIB-tkinter =	X11 ${MODTK_WANTLIB} python${VERSION}${LIB_SUFX}
 
+.if ${VERSION} < 3.2
 .if ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "amd64" || \
     ${MACHINE_ARCH} == "sparc64" || ${MACHINE_ARCH:Mmips64*}
 PATCH_LIST =		patch-* sup64-*
 PKG_ARGS+=	-Dmm=0
 .else
 PKG_ARGS+=	-Dmm=1
+.endif
 .endif
 
 # The ctypes module depends of devel/libffi, not supported on all platforms
@@ -109,7 +117,9 @@ CONFIGURE_ENV+= OPT='${CFLAGS} -DTHREAD_STACK_SIZE=${THREAD_STACK_SIZE} -fPIC' \
 		LDFLAGS='-L${LOCALBASE}/lib/' SVNVERSION=no \
 		LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
 MAKE_ENV+=	LOCALBASE=${LOCALBASE} X11BASE=${X11BASE}
+.if ${VERSION} < 3.2
 MAKE_FLAGS+=	LDLIBRARY=libpython${VERSION}.so.${LIBpython${VERSION}_VERSION}
+.endif
 MAKE_FLAGS+=	LD_LIBRARY_PATH=${WRKSRC} PATH="${WRKDIST}:${PORTPATH}"
 MAKE_FLAGS+=	LDFLAGS='-L${WRKSRC}'
 FAKE_FLAGS+=	RANLIB=:
@@ -122,8 +132,8 @@ post-extract:
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} Makefile
 
-ADJ_FILES = ${WRKSRC}/Tools/scripts/pydoc
-.if ${VERSION} == "2.6" || ${VERSION} == "2.7"
+ADJ_FILES = ${WRKSRC}/Tools/scripts/pydoc*
+.if ${VERSION} == "2.7"
 ADJ_FILES += ${WRKSRC}/Tools/scripts/2to3
 .endif
 
@@ -133,6 +143,7 @@ post-build:
 		${ADJ_FILES}
 
 post-install:
+.if ${VERSION} < 3.2
 	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/pydoc \
 		${PREFIX}/bin/pydoc${VERSION}
 	@sed -e "s,@VERSION@,${VERSION},g" -e "s,@LOCALBASE@,${LOCALBASE},g" \
@@ -140,10 +151,11 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/idle ${PREFIX}/bin/idle${VERSION}
 	@cd ${WRKSRC}; tar -cf - Tools | (cd ${PREFIX}/lib/python${VERSION}; \
 		tar -xf -)
+.endif
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/python${VERSION}
 	${INSTALL_DATA} ${FILESDIR}/CHANGES.OpenBSD \
 		${PREFIX}/share/doc/python${VERSION}/CHANGES.OpenBSD
-.if ${VERSION} == "2.6" || ${VERSION} == "2.7"
+.if ${VERSION} == "2.7"
 	${INSTALL_SCRIPT} ${WRKSRC}/Tools/scripts/2to3 \
 		${PREFIX}/bin/python${VERSION}-2to3
 .endif

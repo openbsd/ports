@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.42 2011/06/08 17:28:14 rpointel Exp $
+# $OpenBSD: python.port.mk,v 1.43 2011/09/21 14:37:28 fgsch Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -12,12 +12,11 @@ MODPY_VERSION?=		2.7
 MODPY_VSPEC = >=${MODPY_VERSION},<2.5
 .elif ${MODPY_VERSION} == 2.5
 MODPY_VSPEC = >=${MODPY_VERSION},<2.6
-.elif ${MODPY_VERSION} == 2.6
-MODPY_VSPEC = >=${MODPY_VERSION},<2.7
 .elif ${MODPY_VERSION} == 2.7
 MODPY_VSPEC = >=${MODPY_VERSION},<2.8
+.elif ${MODPY_VERSION} == 3.2
+MODPY_VSPEC = >=${MODPY_VERSION},<3.3
 .endif
-MODPYSPEC = python-${MODPY_VSPEC}
 
 .if ${MODPY_VERSION} < 2.6
 MODPY_JSON =		devel/py-simplejson
@@ -25,8 +24,12 @@ MODPY_JSON =		devel/py-simplejson
 MODPY_JSON =
 .endif
 
-MODPY_WANTLIB=		python${MODPY_VERSION}
-MODPY_RUN_DEPENDS=	${MODPYSPEC}:lang/python/${MODPY_VERSION}
+.if ${MODPY_VERSION} < 3.2
+MODPY_WANTLIB =	python${MODPY_VERSION}
+.else
+MODPY_WANTLIB = python${MODPY_VERSION}m
+.endif
+MODPY_RUN_DEPENDS=	lang/python/${MODPY_VERSION}
 MODPY_LIB_DEPENDS=	${MODPY_RUN_DEPENDS}
 _MODPY_BUILD_DEPENDS=	${MODPY_RUN_DEPENDS}
 
@@ -41,10 +44,15 @@ RUN_DEPENDS+=		${MODPY_RUN_DEPENDS}
 .endif
 
 MODPY_PRE_BUILD_STEPS = @:
-.if defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:U} == YES
+.if (defined(MODPY_SETUPTOOLS) && ${MODPY_SETUPTOOLS:U} == YES) || \
+    (defined(MODPY_DISTRIBUTE) && ${MODPY_DISTRIBUTE:U} == YES)
 # The setuptools module provides a package locator (site.py) that is
 # required at runtime for the pkg_resources stuff to work
+.if ${MODPY_SETUPTOOLS:U} == YES
 MODPY_SETUPUTILS_DEPEND?=devel/py-setuptools
+.else
+MODPY_SETUPUTILS_DEPEND ?= devel/py3-distribute
+.endif
 MODPY_RUN_DEPENDS+=	${MODPY_SETUPUTILS_DEPEND}
 BUILD_DEPENDS+=		${MODPY_SETUPUTILS_DEPEND}
 # The setuptools uses test target
@@ -59,7 +67,8 @@ MODPY_PRE_BUILD_STEPS +=	\
 	;mkdir -p ${_MODPY_SETUPTOOLS_FAKE_DIR} \
 	;exec >${_MODPY_SETUPTOOLS_FAKE_DIR}/__init__.py \
 	;echo 'def setup(*args, **kwargs):' \
-	;echo '    msg = "OpenBSD ports: MODPY_SETUPTOOLS = Yes is required"' \
+	;echo '    msg = "OpenBSD ports: MODPY_SETUPTOOLS = Yes or\\n" \' \
+	;echo '          "\\t\\t\\t  MODPY_DISTRIBUTE = Yes required"' \
 	;echo '    raise Exception(msg)' \
 	;echo 'Extension = Feature = find_packages = setup'
 _MODPY_USERBASE =	${WRKDIR}
