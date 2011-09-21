@@ -1,10 +1,16 @@
-$OpenBSD: patch-src_libgmtk_gmtk_media_player_c,v 1.1 2011/07/12 08:12:29 dcoppa Exp $
+$OpenBSD: patch-src_libgmtk_gmtk_media_player_c,v 1.2 2011/09/21 12:20:07 dcoppa Exp $
 
 Raise event on incomplete QuickTime file, and mark it for retry
 (fix apple.com/trailers) - upstream svn revision r2152
 
+Bugfix: ATTRIBUTE_FORCE_CACHE not being processed
+(upstream svn revision r44 of gmtk)
+
+Wait for the socket_id to be valid, but in plugin mode it may
+not so timeout (upstream svn revision r41 of gmtk)
+
 --- src/libgmtk/gmtk_media_player.c.orig	Tue Jun 28 18:19:18 2011
-+++ src/libgmtk/gmtk_media_player.c	Mon Jul 11 10:19:19 2011
++++ src/libgmtk/gmtk_media_player.c	Wed Sep 21 13:05:46 2011
 @@ -69,15 +69,27 @@ gboolean signal_event(gpointer data)
  
      if (event && event->event_name != NULL 
@@ -45,7 +51,7 @@ Raise event on incomplete QuickTime file, and mark it for retry
  
      event = g_new0(GmtkMediaPlayerEvent, 1);
      event->player = player;
-+	event->type = EVENT_TYPE_INT;
++    event->type = EVENT_TYPE_INT;
      event->event_name = g_strdup(name);
      event->event_data_int = value;
      g_idle_add(signal_event, event);
@@ -53,7 +59,7 @@ Raise event on incomplete QuickTime file, and mark it for retry
  
      event = g_new0(GmtkMediaPlayerEvent, 1);
      event->player = player;
-+	event->type = EVENT_TYPE_DOUBLE;
++    event->type = EVENT_TYPE_DOUBLE;
      event->event_name = g_strdup(name);
      event->event_data_double = value;
      g_idle_add(signal_event, event);
@@ -65,7 +71,7 @@ Raise event on incomplete QuickTime file, and mark it for retry
 +
 +    event = g_new0(GmtkMediaPlayerEvent, 1);
 +    event->player = player;
-+	event->type = EVENT_TYPE_BOOLEAN;
++    event->type = EVENT_TYPE_BOOLEAN;
 +    event->event_name = g_strdup(name);
 +    event->event_data_boolean = value;
 +    g_idle_add(signal_event, event);
@@ -77,7 +83,7 @@ Raise event on incomplete QuickTime file, and mark it for retry
  
      event = g_new0(GmtkMediaPlayerEvent, 1);
      event->player = player;
-+	event->type = EVENT_TYPE_ALLOCATION;
++    event->type = EVENT_TYPE_ALLOCATION;
      event->event_name = g_strdup(name);
      event->event_allocation = allocation;
      g_idle_add(signal_event, event);
@@ -85,30 +91,58 @@ Raise event on incomplete QuickTime file, and mark it for retry
      player->channel_in = NULL;
      player->channel_out = NULL;
      player->channel_err = NULL;
-+	player->retry_on_full_cache = FALSE;
++    player->retry_on_full_cache = FALSE;
  }
  
  static void gmtk_media_player_dispose(GObject * object)
-@@ -993,6 +1021,10 @@ gboolean gmtk_media_player_get_attribute_boolean(GmtkM
-         ret = player->hardware_ac3;
+@@ -908,6 +936,10 @@ void gmtk_media_player_set_attribute_boolean(GmtkMedia
+         player->hardware_ac3 = value;
          break;
  
-+	case ATTRIBUTE_RETRY_ON_FULL_CACHE:
-+		ret = player->retry_on_full_cache;
-+		break;
-+			
++    case ATTRIBUTE_FORCE_CACHE:
++        player->force_cache = value;
++        break;
++
      default:
          if (player->debug)
              printf("Unsupported Attribute\n");
-@@ -1788,6 +1820,7 @@ gpointer launch_mplayer(gpointer data)
+@@ -993,6 +1025,14 @@ gboolean gmtk_media_player_get_attribute_boolean(GmtkM
+         ret = player->hardware_ac3;
+         break;
+ 
++    case ATTRIBUTE_RETRY_ON_FULL_CACHE:
++	ret = player->retry_on_full_cache;
++	break;
++
++    case ATTRIBUTE_FORCE_CACHE:
++	ret = player->force_cache;
++	break;
++
+     default:
+         if (player->debug)
+             printf("Unsupported Attribute\n");
+@@ -1788,6 +1828,7 @@ gpointer launch_mplayer(gpointer data)
      player->title_is_menu = FALSE;
      player->enable_divx = TRUE;
      player->disable_xvmc = FALSE;
-+	player->retry_on_full_cache = FALSE;
++    player->retry_on_full_cache = FALSE;
  
      g_mutex_lock(player->thread_running);
  
-@@ -2477,6 +2510,11 @@ gboolean thread_reader_error(GIOChannel * source, GIOC
+@@ -1976,8 +2017,11 @@ gpointer launch_mplayer(gpointer data)
+         argv[argn++] = g_strdup_printf("-sub-fuzziness");
+         argv[argn++] = g_strdup_printf("%i", player->subtitle_fuzziness);
+ 
+-        while (player->socket_id == 0)
++        // wait for the socket_id to be valid, but in plugin mode it may not so timeout
++        i = 0;
++        while (player->socket_id == 0 && (i++ < 10))
+             g_usleep(100);
++
+         argv[argn++] = g_strdup_printf("-wid");
+         argv[argn++] = g_strdup_printf("0x%x", player->socket_id);
+ 
+@@ -2477,6 +2521,11 @@ gboolean thread_reader_error(GIOChannel * source, GIOC
          error_msg = g_strdup_printf(_("Compressed SWF format not supported"));
      }
  

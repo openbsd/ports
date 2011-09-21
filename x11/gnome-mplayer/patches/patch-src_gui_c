@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gui_c,v 1.16 2011/07/12 08:12:29 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.17 2011/09/21 12:20:07 dcoppa Exp $
 
 Fix an issue when alsa is not being used
 (upstream svn revision r2151)
@@ -6,9 +6,76 @@ Fix an issue when alsa is not being used
 Raise event on incomplete QuickTime file, and mark it for retry
 (fix apple.com/trailers) - upstream svn revision r2152
 
+Bugfix: ATTRIBUTE_FORCE_CACHE not being processed
+(upstream svn revision r2172)
+
+Bugfix: correctly set/initialize the media_device attribute
+(upstream svn revision r2165)
+
+Fix handling of mouse, panel and controls visibility when
+going to/returning from fullscreen (upstream svn r2167 - r2169)
+
+Bugfix: 'f' not going to/returning from fullscreen
+(upstream svn revision r2161)
+
 --- src/gui.c.orig	Mon Jun 27 16:59:45 2011
-+++ src/gui.c	Mon Jul 11 10:19:19 2011
-@@ -5073,7 +5073,7 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
++++ src/gui.c	Wed Sep 21 12:29:37 2011
+@@ -106,6 +106,7 @@ PLAYSTATE media_state_to_playstate(GmtkMediaPlayerMedi
+ void set_media_player_attributes(GtkWidget * widget)
+ {
+     gmtk_media_player_set_attribute_boolean(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_ENABLE_DEBUG, verbose);
++    gmtk_media_player_set_attribute_boolean(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_FORCE_CACHE, forcecache);
+     gmtk_media_player_set_attribute_double(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_CACHE_SIZE, cache_size);
+     gmtk_media_player_set_attribute_string(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_VO, vo);
+     gmtk_media_player_set_attribute_string(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_EXTRA_OPTS, extraopts);
+@@ -146,6 +147,7 @@ void set_media_player_attributes(GtkWidget * widget)
+     } else {
+         gmtk_media_player_set_attribute_boolean(GMTK_MEDIA_PLAYER(media), ATTRIBUTE_DISABLE_UPSCALING, FALSE);
+     }
++    gmtk_media_player_set_media_device(GMTK_MEDIA_PLAYER(media), idledata->device);
+ 
+ }
+ 
+@@ -1608,6 +1610,8 @@ void status_icon_context_callback(GtkStatusIcon * stat
+ gboolean motion_notify_callback(GtkWidget * widget, GdkEventMotion * event, gpointer data)
+ {
+     GTimeVal currenttime;
++    GtkAllocation fs_allocation;
++    GtkAllocation fs_controls_allocation;
+ 
+     g_get_current_time(&currenttime);
+     last_movement_time = currenttime.tv_sec;
+@@ -1617,7 +1621,17 @@ gboolean motion_notify_callback(GtkWidget * widget, Gd
+ 		printf("motion noticed at %li\n",currenttime.tv_sec);
+ 	}
+ */
+-    g_idle_add(make_panel_and_mouse_visible, NULL);
++    if (fullscreen) {
++	get_allocation(window, &fs_allocation);
++	get_allocation(controls_box, &fs_controls_allocation);
++	if (event->y > (fs_allocation.height - fs_controls_allocation.height)) {
++	    g_idle_add(make_panel_and_mouse_visible, NULL);
++	} else {
++	    hide_fs_controls();
++	}
++    } else {
++	g_idle_add(make_panel_and_mouse_visible, NULL);
++    }
+     return FALSE;
+ }
+ 
+@@ -1908,6 +1922,10 @@ gboolean window_key_callback(GtkWidget * widget, GdkEv
+                 delete_callback(NULL, NULL, NULL);
+             }
+             return FALSE;
++        case GDK_f:
++            if (idledata->videopresent)
++                gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menuitem_fullscreen), !fullscreen);
++            return FALSE;
+         case GDK_a:
+             if (gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem_view_aspect_follow_window))) {
+                 gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(menuitem_view_aspect_default), TRUE);
+@@ -5073,7 +5091,7 @@ void menuitem_config_callback(GtkMenuItem * menuitem, 
      gtk_spin_button_set_value(GTK_SPIN_BUTTON(config_volume), gm_pref_store_get_int(gm_store, VOLUME));
      gm_pref_store_free(gm_store);
      gtk_entry_set_width_chars(GTK_ENTRY(config_volume), 6);
@@ -17,7 +84,7 @@ Raise event on incomplete QuickTime file, and mark it for retry
      gtk_entry_set_alignment(GTK_ENTRY(config_volume), 1);
      gtk_widget_show(config_volume);
      i++;
-@@ -6052,6 +6052,11 @@ void player_attribute_changed_callback(GmtkMediaTracke
+@@ -6052,6 +6070,11 @@ void player_attribute_changed_callback(GmtkMediaTracke
          g_strlcpy(idledata->media_info, text, 1024);
          g_thread_create(get_cover_art, metadata, FALSE, NULL);
          break;

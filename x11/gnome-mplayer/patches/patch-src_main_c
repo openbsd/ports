@@ -1,15 +1,27 @@
-$OpenBSD: patch-src_main_c,v 1.11 2011/07/12 08:12:29 dcoppa Exp $
+$OpenBSD: patch-src_main_c,v 1.12 2011/09/21 12:20:07 dcoppa Exp $
 
 Raise event on incomplete QuickTime file, and mark it for retry
 (fix apple.com/trailers) - upstream svn revision r2152
 
+Set CDDB media type as TYPE_CD
+(upstream svn revision r2165)
+
 --- src/main.c.orig	Mon Jun 27 16:59:45 2011
-+++ src/main.c	Mon Jul 11 10:19:19 2011
++++ src/main.c	Wed Sep 21 13:31:40 2011
 @@ -534,6 +534,7 @@ gint play_iter(GtkTreeIter * playiter, gint restart_se
      idledata->width = width;
      idledata->height = height;
  
-+	idledata->retry_on_full_cache = FALSE;
++    idledata->retry_on_full_cache = FALSE;
      idledata->cachepercent = -1.0;
      g_strlcpy(idledata->info, uri, 1024);
      set_media_info(idledata);
+@@ -560,6 +561,8 @@ gint play_iter(GtkTreeIter * playiter, gint restart_se
+         } else if (g_str_has_prefix(uri, "dvd") || g_str_has_prefix(uri, "dvdnav")) {
+             gmtk_media_player_set_media_type(GMTK_MEDIA_PLAYER(media), TYPE_DVD);
+         } else if (g_str_has_prefix(uri, "cdda")) {
++            gmtk_media_player_set_media_type(GMTK_MEDIA_PLAYER(media), TYPE_CD);
++        } else if (g_str_has_prefix(uri, "cddb")) {
+             gmtk_media_player_set_media_type(GMTK_MEDIA_PLAYER(media), TYPE_CD);
+         } else if (g_str_has_prefix(uri, "vcd")) {
+             gmtk_media_player_set_media_type(GMTK_MEDIA_PLAYER(media), TYPE_VCD);
