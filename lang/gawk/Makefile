@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.18 2011/08/28 11:15:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/21 09:20:07 ajacoutot Exp $
 
 COMMENT=	GNU awk
 
@@ -23,7 +23,7 @@ MODULES=	devel/gettext
 LIB_DEPENDS=	devel/libsigsegv
 
 SUBST_VARS=	V
-USE_GROFF=	Yes
+
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
