@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.31 2011/07/01 06:39:17 giovanni Exp $
+@comment $OpenBSD: PLIST,v 1.32 2011/09/21 08:02:07 sthen Exp $
 @pkgpath mail/p5-Mail-SpamAssassin
 @newgroup _spamdaemon:506
 @newuser _spamdaemon:506:506:daemon:SpamAssassin:${LOCALSTATEDIR}:/sbin/nologin
@@ -192,10 +192,13 @@ ${P5SITE}/spamassassin-run.pod
 @man man/man3p/Mail::SpamAssassin::Util::RegistrarBoundaries.3p
 @man man/man3p/spamassassin-run.3p
 share/doc/SpamAssassin/
+share/doc/SpamAssassin/CREDITS
 share/doc/SpamAssassin/LICENSE
-share/doc/SpamAssassin/OpenBSD-SpamAssassin-mini-howto.html
+share/doc/SpamAssassin/NOTICE
 share/doc/SpamAssassin/README
+share/doc/SpamAssassin/TRADEMARK
 share/doc/SpamAssassin/UPGRADE
+share/doc/SpamAssassin/USAGE
 share/doc/SpamAssassin/procmailrc.example
 share/doc/SpamAssassin/sample-nonspam.txt
 share/doc/SpamAssassin/sample-spam.txt
@@ -210,6 +213,7 @@ share/doc/SpamAssassin/sql/bayes_mysql.sql
 share/doc/SpamAssassin/sql/bayes_pg.sql
 share/doc/SpamAssassin/sql/userpref_mysql.sql
 share/doc/SpamAssassin/sql/userpref_pg.sql
+share/doc/pkg-readmes/${FULLPKGNAME}
 share/examples/SpamAssassin/
 share/examples/SpamAssassin/init.pre
 @sample ${CONFDIR}/init.pre
