@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2011/09/16 09:24:55 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2011/09/21 08:21:51 ajacoutot Exp $
 
 COMMENT=	Python bindings for glib2 gobject
 
@@ -6,7 +6,7 @@ GNOME_PROJECT=	pygobject
 GNOME_VERSION=	2.28.6
 
 PKGNAME=	py-gobject-${GNOME_VERSION}
-REVISION=	1
+REVISION=	2
 
 EPOCH=		0
 
@@ -33,6 +33,8 @@ MODULES=	devel/gettext \
 		lang/python \
 		x11/gnome
 
+MODGNOME_TOOLS=	goi
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	graphics/py-cairo
 LIB_DEPENDS=	devel/glib2 \
@@ -40,9 +42,7 @@ LIB_DEPENDS=	devel/glib2 \
 		devel/gobject-introspection>=0.10.7p3
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--enable-introspection \
-		--enable-cairo
+CONFIGURE_ARGS=	--enable-cairo
 
 REGRESS_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 REGRESS_IS_INTERACTIVE= x11
