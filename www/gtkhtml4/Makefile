@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/21 13:27:11 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/21 16:25:12 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,8 @@ COMMENT=		lightweight HTML rendering/printing/editing engine
 
 GNOME_PROJECT=		gtkhtml
 GNOME_VERSION=		4.1.92
+
+REVISION=		0
 
 API_VERSION=		4.0
 SUBST_VARS=		API_VERSION
@@ -43,7 +45,8 @@ LIB_DEPENDS=		textproc/enchant \
 			x11/gtk+3
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		devel/iso-codes \
+RUN_DEPENDS=		devel/gsettings-desktop-schemas \
+			devel/iso-codes \
 			x11/gnome/icon-theme
 
 CONFIGURE_STYLE=	gnu
