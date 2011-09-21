@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.13 2010/12/12 06:04:20 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/21 09:12:43 ajacoutot Exp $
+
+ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	isometric RPG game
 
 M_V=		0.14
 DISTNAME=	freedroidrpg-${M_V}.1
+REVISION=	0
 CATEGORIES=	games x11
 
 HOMEPAGE=	http://freedroid.sourceforge.net/
@@ -21,16 +24,9 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=freedroid/freedroidRPG/freedroidRPG-${M
 WANTLIB=	GL SDL X11 c jpeg m ogg png pthread vorbis z \
 		SDL_image>=2 SDL_mixer>=3 execinfo
 
-
 LIB_DEPENDS=	devel/sdl-image \
 		devel/sdl-mixer \
 		devel/libexecinfo
-
-# needed to avoid a SIGSEGV
-# (int i corruption in enemy.c line 2056:
-# should be "0" or "1" instead of a nonsense negative value)
-MODULES+=	gcc4
-MODGCC4_ARCHES=	*
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include \
