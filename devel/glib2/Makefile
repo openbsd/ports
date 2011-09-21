@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.132 2011/09/20 22:55:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.133 2011/09/21 11:29:44 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -9,6 +9,8 @@ EXTRACT_SUFX=		.tar.xz
 
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
+
+REVISION-main=		0
 
 CATEGORIES=		devel
 
@@ -41,6 +43,7 @@ MODPY_RUNDEP=		No
 # Python is needed for the regress tests.
 MODPY_BUILDDEP=		Yes
 MODPY_ADJ_FILES=	glib/gtester-report \
+			codegen/gdbus-codegen.in \
 			gio/tests/gdbus-testserver.py
 
 WANTLIB-main += ${WANTLIB} c pthread z pcre fam ffi
