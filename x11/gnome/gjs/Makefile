@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/20 22:54:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/21 14:00:19 jasper Exp $
 
 COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
-GNOME_VERSION=		0.7.14
-REVISION=		0
+GNOME_VERSION=		1.29.17
 
-SHARED_LIBS +=  gjs                  0.0      # 0.0
-SHARED_LIBS +=  gjs-gi               0.0      # 0.0
-SHARED_LIBS +=  gjs-dbus             0.0      # 0.0
+SHARED_LIBS +=  gjs                  1.0      # 0.0
+SHARED_LIBS +=  gjs-dbus             1.0      # 0.0
+SHARED_LIBS +=  gjs-gdbus             1.0      # 0.0
 
 CATEGORIES=		devel
 
@@ -21,8 +20,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-EXTRACT_SUFX=		.tar.bz2
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -42,13 +39,17 @@ WANTLIB += ncursesw nspr4 pcre pixman-1 plc4 plds4 png pthread
 WANTLIB += pthread-stubs readline stdc++ xcb xcb-render xcb-shm
 WANTLIB += z
 
-LIB_DEPENDS=		devel/gobject-introspection \
+LIB_DEPENDS=		devel/gobject-introspection>=1.30.0 \
 			lang/spidermonkey \
 			x11/dbus-glib
 REGRESS_DEPENDS=	sysutils/e2fsprogs
 
+CONFIGURE_ARGS+=	--with-js-package="mozilla-js"
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	@perl -pi -e 's,%%LOCALBASE%%,${LOCALBASE},' ${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gjs/
