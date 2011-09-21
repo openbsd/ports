@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.76 2011/08/21 21:55:24 haesbaert Exp $
+# $OpenBSD: OpenBSD,v 1.77 2011/09/21 08:55:38 mikeb Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -99,7 +99,7 @@
 52.35447	4.630657	"otto"		# Otto Moerbeek
 52.3667		9.71667		"reyk"		# Reyk Floeter
 52.3717		9.73416		"phessler"	# Peter Hessler
-52.392104	9.758847	"mikeb"		# Mike Belopuhov
+50.7819		6.0856		"mikeb"		# Mike Belopuhov
 52.4144		12.5524		"sebastia"	# Sebastian Reitenbach
 52.5		21		"alek"		# Aleksander Piotrowski
 53.08566	8.13058		"fkr"		# Felix Kronlage
