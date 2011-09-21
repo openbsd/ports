@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.47 2011/09/21 08:21:51 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2011/09/21 13:37:14 ajacoutot Exp $
 
 COMMENT=	Python bindings for glib2 gobject
 
 GNOME_PROJECT=	pygobject
 GNOME_VERSION=	2.28.6
+EXTRACT_SUFX=	.tar.bz2
 
 PKGNAME=	py-gobject-${GNOME_VERSION}
 REVISION=	2
@@ -24,25 +25,21 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
-WANTLIB += ffi gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 m pcre z
+WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB += pcre z
 
 MODULES=	devel/gettext \
 		lang/python \
 		x11/gnome
 
-MODGNOME_TOOLS=	goi
-
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	graphics/py-cairo
-LIB_DEPENDS=	devel/glib2 \
-		devel/libffi \
-		devel/gobject-introspection>=0.10.7p3
+LIB_DEPENDS=	devel/glib2
 
 CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS=	--enable-cairo
+
+# not really needed because we don't add "goi" to MODGNOME_TOOLS,
+# however it is clearer to explicitely note that it is disabled --
+# introspection support for py-gobject is now in devel/py-gobject3
+CONFIGURE_ARGS=	--disable-introspection
 
 REGRESS_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 REGRESS_IS_INTERACTIVE= x11
