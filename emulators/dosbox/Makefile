@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.20 2010/11/15 23:22:08 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/21 09:15:21 jasper Exp $
+
+ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT=	x86 with DOS emulator targeted at playing games
+
 DISTNAME=	dosbox-0.74
-REVISION=	0
+REVISION=	1
 CATEGORIES=	games x11 emulators
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=dosbox/}
 
@@ -22,12 +25,8 @@ LIB_DEPENDS=	devel/sdl-net \
 		devel/sdl-sound \
 		graphics/png
 
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 NO_REGRESS=	Yes
-
-MODULES+=       gcc4
-MODGCC4_ARCHES= *
-MODGCC4_LANGS=  c c++
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=CPPFLAGS="-I${LOCALBASE}/include/libpng -I${LOCALBASE}/include" 
