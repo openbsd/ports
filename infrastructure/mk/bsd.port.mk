@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1108 2011/09/20 09:36:13 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1109 2011/09/21 09:02:09 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -264,12 +264,6 @@ ERRORS += "Fatal: unknown clean command: ${_w}\n(not in ${_okay_words})"
 NOMANCOMPRESS ?= Yes
 DEF_UMASK ?= 022
 
-.if exists(${.CURDIR}/Makefile.${ARCH})
-.include "${.CURDIR}/Makefile.${ARCH}"
-.elif exists(${.CURDIR}/Makefile.${MACHINE_ARCH})
-.include "${.CURDIR}/Makefile.${MACHINE_ARCH}"
-.endif
-
 # MODULES support
 # reserved name spaces: for module=NAME, modname*, _modname* variables and
 # targets.
@@ -337,31 +331,10 @@ FULLDISTDIR ?= ${DISTDIR}/${DIST_SUBDIR}
 FULLDISTDIR ?= ${DISTDIR}
 .endif
 
-.if exists(${.CURDIR}/patches.${ARCH})
-PATCHDIR ?= ${.CURDIR}/patches.${ARCH}
-.elif exists(${.CURDIR}/patches.${MACHINE_ARCH})
-PATCHDIR ?= ${.CURDIR}/patches.${MACHINE_ARCH}
-.else
 PATCHDIR ?= ${.CURDIR}/patches
-.endif
-
 PATCH_LIST ?= patch-*
-
-.if exists(${.CURDIR}/files.${ARCH})
-FILESDIR ?= ${.CURDIR}/files.${ARCH}
-.elif exists(${.CURDIR}/files.${MACHINE_ARCH})
-FILESDIR ?= ${.CURDIR}/files.${MACHINE_ARCH}
-.else
 FILESDIR ?= ${.CURDIR}/files
-.endif
-
-.if exists(${.CURDIR}/pkg.${ARCH})
-PKGDIR ?= ${.CURDIR}/pkg.${ARCH}
-.elif exists(${.CURDIR}/pkg.${MACHINE_ARCH})
-PKGDIR ?= ${.CURDIR}/pkg.${MACHINE_ARCH}
-.else
 PKGDIR ?= ${.CURDIR}/pkg
-.endif
 
 PREFIX ?= ${LOCALBASE}
 TRUEPREFIX ?= ${PREFIX}
