@@ -1,7 +1,7 @@
-$OpenBSD: patch-autoconf_aclocal_m4,v 1.5 2009/10/13 21:46:20 sthen Exp $
---- autoconf/aclocal.m4.orig	Mon Sep  7 03:10:49 2009
-+++ autoconf/aclocal.m4	Sat Oct 10 13:54:45 2009
-@@ -570,13 +570,13 @@ fi
+$OpenBSD: patch-autoconf_aclocal_m4,v 1.6 2011/09/21 22:01:56 sthen Exp $
+--- autoconf/aclocal.m4.orig	Mon Apr 11 03:37:07 2011
++++ autoconf/aclocal.m4	Wed Sep 21 20:21:08 2011
+@@ -571,13 +571,13 @@ fi
  
  dnl #Some defaults
  ELFLIB="lib\$(THIS_LIB).so"
@@ -18,7 +18,7 @@ $OpenBSD: patch-autoconf_aclocal_m4,v 1.5 2009/10/13 21:46:20 sthen Exp $
  INSTALL_MODULE="\$(INSTALL_DATA)"
  SLANG_DLL_CFLAGS=""
  M_LIB="-lm"
-@@ -701,6 +701,25 @@ case "$host_os" in
+@@ -702,6 +702,25 @@ case "$host_os" in
      ELF_LINK="\$(CC) \$(LDFLAGS) -shared -Wl,-O1 -Wl,--version-script,\$(VERSION_SCRIPT) -Wl,-soname,\$(ELFLIB_MAJOR)"
      ELF_DEP_LIBS="\$(DL_LIB)"
      CC_SHARED="\$(CC) \$(CFLAGS) -shared -fPIC"

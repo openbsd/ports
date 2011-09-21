@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.15 2009/10/13 21:46:20 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.16 2011/09/21 22:01:56 sthen Exp $
 %%SHARED%%
 @bin bin/slsh
 include/slang.h
@@ -33,6 +33,7 @@ share/slsh/arrayfuns.sl
 share/slsh/autoload.sl
 share/slsh/cmaps/
 share/slsh/cmaps/cool.map
+share/slsh/cmaps/coolwarm.map
 share/slsh/cmaps/copper.map
 share/slsh/cmaps/drywet.map
 share/slsh/cmaps/ds9b.map
@@ -55,12 +56,14 @@ share/slsh/cmaps/split.map
 share/slsh/cmaps/topo.map
 share/slsh/cmaps/wysiwyg.map
 share/slsh/cmdopt.sl
+share/slsh/csv.sl
 share/slsh/fcntl.sl
 share/slsh/fork.sl
 share/slsh/glob.sl
 share/slsh/help/
 share/slsh/help/arrayfuns.hlp
 share/slsh/help/cmdopt.hlp
+share/slsh/help/csvfuns.hlp
 share/slsh/help/forkfuns.hlp
 share/slsh/help/glob.hlp
 share/slsh/help/onigfuns.hlp
@@ -72,6 +75,8 @@ share/slsh/help/profile.hlp
 share/slsh/help/randfuns.hlp
 share/slsh/help/readascii.hlp
 share/slsh/help/require.hlp
+share/slsh/help/setfuns.hlp
+share/slsh/help/slsmg.hlp
 share/slsh/help/sockfuns.hlp
 share/slsh/help/structfuns.hlp
 share/slsh/iconv.sl
@@ -88,8 +93,10 @@ share/slsh/require.sl
 share/slsh/rline/
 share/slsh/rline/complete.sl
 share/slsh/rline/editfuns.sl
+share/slsh/rline/editor.sl
 share/slsh/rline/emacskeys.sl
 share/slsh/rline/history.sl
+share/slsh/rline/histsrch.sl
 share/slsh/rline/slrline.rc
 share/slsh/rline/vikeys.sl
 share/slsh/scripts/
@@ -97,8 +104,10 @@ share/slsh/scripts/jpegsize
 share/slsh/scripts/lsrpm
 share/slsh/scripts/sldb
 share/slsh/scripts/slprof
+share/slsh/scripts/slstkchk
 share/slsh/scripts/svnsh
 share/slsh/select.sl
+share/slsh/setfuns.sl
 share/slsh/sldb.sl
 share/slsh/sldbcore.sl
 share/slsh/sldbsock.sl
