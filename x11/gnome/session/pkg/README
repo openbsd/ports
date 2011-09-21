@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.27 2011/09/18 09:20:40 ajacoutot Exp $
+$OpenBSD: README,v 1.28 2011/09/21 09:42:25 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -125,6 +125,7 @@ Graphics & Multimedia
     * nautilus-evince - display document information in the properties window
     * nautilus-totem - display media information in the properties window
     * rhythmbox - music management application
+    * rygel - easily share, play and control audio/video media over the network
     * simple-scan - simple scanning utility
     * totem - multimedia player
 
