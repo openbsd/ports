@@ -1,0 +1,29 @@
+$OpenBSD: patch-gjs_context_c,v 1.1 2011/09/21 15:30:23 robert Exp $
+
+From 059f6a13bb5ed18060aa27bbe900575e6966efb0 Mon Sep 17 00:00:00 2001
+From: Colin Walters <walters@verbum.org>
+Date: Fri, 16 Sep 2011 14:28:16 +0000
+Subject: context: Add gjs_context_gc() wrapper
+
+--- gjs/context.c.orig	Fri Aug 12 09:33:26 2011
++++ gjs/context.c	Wed Sep 21 16:41:41 2011
+@@ -484,6 +484,19 @@ out:
+     return success;
+ }
+ 
++/**
++ * gjs_context_gc:
++ * @context: a #GjsContext
++ * 
++ * Initiate a full GC; may or may not block until complete.  This
++ * function just calls Spidermonkey JS_GC().
++ */ 
++void
++gjs_context_gc (GjsContext  *context)
++{
++    JS_GC(context->context);
++}
++
+ static JSBool
+ gjs_locale_to_unicode (JSContext  *context,
+ #ifdef JS_LOCALETOUNICODE_NEEDS_CONST_CHAR

@@ -1,0 +1,18 @@
+$OpenBSD: patch-gjs_context_h,v 1.1 2011/09/21 15:30:23 robert Exp $
+
+From 059f6a13bb5ed18060aa27bbe900575e6966efb0 Mon Sep 17 00:00:00 2001
+From: Colin Walters <walters@verbum.org>
+Date: Fri, 16 Sep 2011 14:28:16 +0000
+Subject: context: Add gjs_context_gc() wrapper
+
+--- gjs/context.h.orig	Fri Jun 10 00:31:56 2011
++++ gjs/context.h	Wed Sep 21 16:41:41 2011
+@@ -75,6 +75,8 @@ void            gjs_context_print_stack_stderr    (Gjs
+ 
+ void            gjs_context_maybe_gc              (GjsContext  *context);
+ 
++void            gjs_context_gc                    (GjsContext  *context);
++
+ void            gjs_dumpstack                     (void);
+ 
+ G_END_DECLS
