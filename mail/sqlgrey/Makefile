@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.3 2010/11/19 07:23:09 espie Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/21 07:49:15 giovanni Exp $
 
 COMMENT =	postfix greylist daemon
 
 DISTNAME =	sqlgrey-1.7.6
-
+REVISION =	0
 CATEGORIES =	mail
 
 HOMEPAGE =	http://sqlgrey.sf.net/
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=sqlgrey/}
-
-MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM =	Yes

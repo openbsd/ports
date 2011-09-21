@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.6 2010/11/22 08:36:49 espie Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/21 07:49:16 giovanni Exp $
 
 COMMENT=	little and fast Web crawler
 
 DISTNAME=	larbin-2.6.3
-REVISION=	0
+REVISION=	1
 CATEGORIES=	www
 
 HOMEPAGE=	http://larbin.sourceforge.net/index-eng.html
-
-MAINTAINER=	Giovanni Bechis <g.bechis@snb.it>
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes 
