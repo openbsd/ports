@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.66 2011/09/20 21:10:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.67 2011/09/21 08:02:48 ajacoutot Exp $
+
+# XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
+CFLAGS +=	"-DG_CONST_RETURN=const"
 
 SHARED_ONLY=		Yes
 
