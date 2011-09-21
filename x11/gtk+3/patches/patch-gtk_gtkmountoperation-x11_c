@@ -1,4 +1,10 @@
-$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.1 2011/09/20 21:12:09 ajacoutot Exp $
+$OpenBSD: patch-gtk_gtkmountoperation-x11_c,v 1.2 2011/09/21 14:05:58 ajacoutot Exp $
+
+From 3d165c1a902fc0a5f32898e406a79e53ed4bcc97 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Tue, 20 Sep 2011 09:57:49 +0000
+Subject: gtkmountoperation-x11: unbreak compilation on OpenBSD.
+
 --- gtk/gtkmountoperation-x11.c.orig	Tue Sep 20 11:10:25 2011
 +++ gtk/gtkmountoperation-x11.c	Tue Sep 20 11:11:03 2011
 @@ -43,6 +43,7 @@
