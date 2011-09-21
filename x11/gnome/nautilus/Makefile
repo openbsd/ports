@@ -1,7 +1,4 @@
-# $OpenBSD: Makefile,v 1.92 2011/09/20 21:17:26 ajacoutot Exp $
-
-# XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
-CFLAGS +=	"-DG_CONST_RETURN=const"
+# $OpenBSD: Makefile,v 1.93 2011/09/21 13:38:46 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -17,9 +14,7 @@ COMMENT=		GNOME file manager
 # x11/gnome/tracker
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		3.0.2
-
-REVISION=		7
+GNOME_VERSION=		3.1.92
 
 SHARED_LIBS +=  nautilus-extension   3.0      # 5.0
 
@@ -33,8 +28,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
 WANTLIB += GL X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += c cairo cairo-gobject drm execinfo exempi exif expat
@@ -43,7 +36,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
 WANTLIB += startup-notification-1 xcb xcb-aux xcb-render xcb-shm
-WANTLIB += xml2 z
+WANTLIB += xml2 z ffi kvm
 
 MODULES=		devel/gettext \
 			x11/gnome \

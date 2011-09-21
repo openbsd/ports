@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2011/09/12 07:28:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.34 2011/09/21 13:38:46 ajacoutot Exp $
 %%SHARED%%
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
@@ -61,7 +61,6 @@ share/gtk-doc/html/libnautilus-extension/libnautilus-extension-nautilus-menu-pro
 share/gtk-doc/html/libnautilus-extension/libnautilus-extension-nautilus-menu.html
 share/gtk-doc/html/libnautilus-extension/libnautilus-extension-nautilus-property-page-provider.html
 share/gtk-doc/html/libnautilus-extension/libnautilus-extension-nautilus-property-page.html
-share/gtk-doc/html/libnautilus-extension/libnautilus-extension.devhelp
 share/gtk-doc/html/libnautilus-extension/libnautilus-extension.devhelp2
 share/gtk-doc/html/libnautilus-extension/pt01.html
 share/gtk-doc/html/libnautilus-extension/right.png
@@ -230,7 +229,6 @@ share/nautilus/icons/hicolor/48x48/emblems/
 share/nautilus/icons/hicolor/48x48/emblems/emblem-note.png
 share/nautilus/nautilus-extras.placeholder
 share/nautilus/nautilus-suggested.placeholder
-share/nautilus/nautilus.css
 share/nautilus/ui/
 share/nautilus/ui/nautilus-bookmarks-window.ui
 share/nautilus/ui/nautilus-desktop-icon-view-ui.xml
@@ -241,7 +239,6 @@ share/nautilus/ui/nautilus-list-view-ui.xml
 share/nautilus/ui/nautilus-shell-ui.xml
 share/nautilus/ui/nautilus-toolbar-ui.xml
 share/pixmaps/nautilus/
-share/pixmaps/nautilus/audio.svg
 share/pixmaps/nautilus/knob.png
 share/pixmaps/nautilus/thumbnail_frame.png
 @exec %D/bin/gtk-update-icon-cache -q -f -t %D/share/icons/hicolor 2> /dev/null || true
