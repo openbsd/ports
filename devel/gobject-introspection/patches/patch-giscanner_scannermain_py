@@ -1,10 +1,10 @@
-$OpenBSD: patch-giscanner_scannermain_py,v 1.1 2011/04/07 09:38:12 jasper Exp $
+$OpenBSD: patch-giscanner_scannermain_py,v 1.2 2011/09/21 13:59:21 jasper Exp $
 
 Prime the scanner with two common directories for includes.
 
---- giscanner/scannermain.py.orig	Wed Nov 17 22:32:04 2010
-+++ giscanner/scannermain.py	Thu Apr  7 11:25:35 2011
-@@ -216,6 +216,8 @@ def process_packages(options, packages):
+--- giscanner/scannermain.py.orig	Fri Sep  9 22:48:44 2011
++++ giscanner/scannermain.py	Tue Sep 20 23:53:34 2011
+@@ -228,6 +228,8 @@ def process_packages(options, packages):
      parser = _get_option_parser()
      pkg_options, unused = parser.parse_args(filtered_output)
      options.cpp_includes.extend(pkg_options.cpp_includes)

@@ -1,14 +1,12 @@
-# $OpenBSD: Makefile,v 1.48 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.49 2011/09/21 13:59:21 jasper Exp $
 
 COMMENT=		GObject Introspection
 
-GNOME_VERSION=		0.10.8
+GNOME_VERSION=		1.30.0
 GNOME_PROJECT=		gobject-introspection
 CATEGORIES=		devel
 
-REVISION=		9
-
-SHARED_LIBS +=  girepository-1.0     1.0      # 1.0
+SHARED_LIBS +=  girepository-1.0     2.0      # 1.0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 			Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -22,8 +20,6 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
 MODULES=		devel/gettext \
 			lang/python \
 			x11/gnome
@@ -31,7 +27,7 @@ MODULES=		devel/gettext \
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += m pcre pthread z
 
-LIB_DEPENDS=		devel/glib2>=2.28.8p0 \
+LIB_DEPENDS=		devel/glib2>=2.29.7 \
 			devel/libffi
 BUILD_DEPENDS=		devel/bison \
 			graphics/cairo

@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/05/14 11:22:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/09/21 13:59:21 jasper Exp $
 bin/g-ir-annotation-tool
 @bin bin/g-ir-compiler
+bin/g-ir-doc-tool
 @bin bin/g-ir-generate
 bin/g-ir-scanner
 include/gobject-introspection-1.0/
@@ -9,7 +10,6 @@ include/gobject-introspection-1.0/gibaseinfo.h
 include/gobject-introspection-1.0/gicallableinfo.h
 include/gobject-introspection-1.0/giconstantinfo.h
 include/gobject-introspection-1.0/gienuminfo.h
-include/gobject-introspection-1.0/gierrordomaininfo.h
 include/gobject-introspection-1.0/gifieldinfo.h
 include/gobject-introspection-1.0/gifunctioninfo.h
 include/gobject-introspection-1.0/giinterfaceinfo.h
@@ -65,9 +65,15 @@ lib/gobject-introspection/giscanner/cachestore.pyo
 lib/gobject-introspection/giscanner/codegen.py
 lib/gobject-introspection/giscanner/codegen.pyc
 lib/gobject-introspection/giscanner/codegen.pyo
-lib/gobject-introspection/giscanner/config.py
-lib/gobject-introspection/giscanner/config.pyc
-lib/gobject-introspection/giscanner/config.pyo
+lib/gobject-introspection/giscanner/docbookdescription.py
+lib/gobject-introspection/giscanner/docbookdescription.pyc
+lib/gobject-introspection/giscanner/docbookdescription.pyo
+lib/gobject-introspection/giscanner/docbookwriter.py
+lib/gobject-introspection/giscanner/docbookwriter.pyc
+lib/gobject-introspection/giscanner/docbookwriter.pyo
+lib/gobject-introspection/giscanner/docmain.py
+lib/gobject-introspection/giscanner/docmain.pyc
+lib/gobject-introspection/giscanner/docmain.pyo
 lib/gobject-introspection/giscanner/dumper.py
 lib/gobject-introspection/giscanner/dumper.pyc
 lib/gobject-introspection/giscanner/dumper.pyo
@@ -89,6 +95,9 @@ lib/gobject-introspection/giscanner/libtoolimporter.pyo
 lib/gobject-introspection/giscanner/maintransformer.py
 lib/gobject-introspection/giscanner/maintransformer.pyc
 lib/gobject-introspection/giscanner/maintransformer.pyo
+lib/gobject-introspection/giscanner/mallardwriter.py
+lib/gobject-introspection/giscanner/mallardwriter.pyc
+lib/gobject-introspection/giscanner/mallardwriter.pyo
 lib/gobject-introspection/giscanner/message.py
 lib/gobject-introspection/giscanner/message.pyc
 lib/gobject-introspection/giscanner/message.pyo
@@ -159,7 +168,6 @@ share/gtk-doc/html/gi/gi-GIBaseInfo.html
 share/gtk-doc/html/gi/gi-GICallableInfo.html
 share/gtk-doc/html/gi/gi-GIConstantInfo.html
 share/gtk-doc/html/gi/gi-GIEnumInfo.html
-share/gtk-doc/html/gi/gi-GIErrorDomainInfo.html
 share/gtk-doc/html/gi/gi-GIFieldInfo.html
 share/gtk-doc/html/gi/gi-GIFunctionInfo.html
 share/gtk-doc/html/gi/gi-GIInterfaceInfo.html
@@ -172,6 +180,7 @@ share/gtk-doc/html/gi/gi-GITypeInfo.html
 share/gtk-doc/html/gi/gi-GIUnionInfo.html
 share/gtk-doc/html/gi/gi-GIVFuncInfo.html
 share/gtk-doc/html/gi/gi-ffi.html
+share/gtk-doc/html/gi/gi-gierrordomaininfo.html
 share/gtk-doc/html/gi/gi-gir-reference.html
 share/gtk-doc/html/gi/gi-gir.html
 share/gtk-doc/html/gi/gi-girepository.html
@@ -182,7 +191,6 @@ share/gtk-doc/html/gi/gi-overview.html
 share/gtk-doc/html/gi/gi-repository-structs.html
 share/gtk-doc/html/gi/gi-struct-hierarchy.html
 share/gtk-doc/html/gi/gi-typelib.html
-share/gtk-doc/html/gi/gi.devhelp
 share/gtk-doc/html/gi/gi.devhelp2
 share/gtk-doc/html/gi/girepository.html
 share/gtk-doc/html/gi/glib.html
