@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2011/08/30 07:16:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/21 13:38:40 jasper Exp $
 #
 
      SUBDIR =
+     SUBDIR += asm
      SUBDIR += java-getopt
      SUBDIR += javaPathHelper
      SUBDIR += jlint

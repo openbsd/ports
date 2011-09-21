@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.971 2011/09/18 22:25:55 landry Exp $
+# $OpenBSD: Makefile,v 1.972 2011/09/21 13:42:10 jasper Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -235,6 +235,7 @@
      SUBDIR += kdbg
      SUBDIR += kdiff3
      SUBDIR += lam
+     SUBDIR += leiningen
      SUBDIR += libIDL
      SUBDIR += libJudy
      SUBDIR += libast
