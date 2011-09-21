@@ -1,0 +1,12 @@
+$OpenBSD: patch-giscanner_sourcescanner_py,v 1.3 2011/09/21 14:03:50 jasper Exp $
+--- giscanner/sourcescanner.py.orig	Wed Sep 21 11:45:05 2011
++++ giscanner/sourcescanner.py	Wed Sep 21 11:45:33 2011
+@@ -274,7 +274,7 @@ class SourceScanner(object):
+ 
+         defines = ['__GI_SCANNER__']
+         undefs = []
+-        cpp_args = [os.environ.get('CC', 'cc'), '-E', '-C', '-I.', '-']
++        cpp_args = ['${CC}', '-E', '-C', '-I.', '-']
+ 
+         cpp_args += self._cpp_options
+         proc = subprocess.Popen(cpp_args,
