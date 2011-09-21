@@ -1,0 +1,61 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/21 07:59:25 giovanni Exp $
+@conflict p5-Mail-SPF-Query-*
+bin/spfquery
+${P5SITE}/Mail/
+${P5SITE}/Mail/SPF/
+${P5SITE}/Mail/SPF.pm
+${P5SITE}/Mail/SPF/Base.pm
+${P5SITE}/Mail/SPF/Exception.pm
+${P5SITE}/Mail/SPF/MacroString.pm
+${P5SITE}/Mail/SPF/Mech/
+${P5SITE}/Mail/SPF/Mech.pm
+${P5SITE}/Mail/SPF/Mech/A.pm
+${P5SITE}/Mail/SPF/Mech/All.pm
+${P5SITE}/Mail/SPF/Mech/Exists.pm
+${P5SITE}/Mail/SPF/Mech/IP4.pm
+${P5SITE}/Mail/SPF/Mech/IP6.pm
+${P5SITE}/Mail/SPF/Mech/Include.pm
+${P5SITE}/Mail/SPF/Mech/MX.pm
+${P5SITE}/Mail/SPF/Mech/PTR.pm
+${P5SITE}/Mail/SPF/Mod/
+${P5SITE}/Mail/SPF/Mod.pm
+${P5SITE}/Mail/SPF/Mod/Exp.pm
+${P5SITE}/Mail/SPF/Mod/Redirect.pm
+${P5SITE}/Mail/SPF/Record.pm
+${P5SITE}/Mail/SPF/Request.pm
+${P5SITE}/Mail/SPF/Result.pm
+${P5SITE}/Mail/SPF/SenderIPAddrMech.pm
+${P5SITE}/Mail/SPF/Server.pm
+${P5SITE}/Mail/SPF/Term.pm
+${P5SITE}/Mail/SPF/Util.pm
+${P5SITE}/Mail/SPF/v1/
+${P5SITE}/Mail/SPF/v1/Record.pm
+${P5SITE}/Mail/SPF/v2/
+${P5SITE}/Mail/SPF/v2/Record.pm
+@man man/man1/spfd.1
+@man man/man1/spfquery.1
+@man man/man3p/Mail::SPF.3p
+@man man/man3p/Mail::SPF::Base.3p
+@man man/man3p/Mail::SPF::MacroString.3p
+@man man/man3p/Mail::SPF::Mech.3p
+@man man/man3p/Mail::SPF::Mech::A.3p
+@man man/man3p/Mail::SPF::Mech::All.3p
+@man man/man3p/Mail::SPF::Mech::Exists.3p
+@man man/man3p/Mail::SPF::Mech::IP4.3p
+@man man/man3p/Mail::SPF::Mech::IP6.3p
+@man man/man3p/Mail::SPF::Mech::Include.3p
+@man man/man3p/Mail::SPF::Mech::MX.3p
+@man man/man3p/Mail::SPF::Mech::PTR.3p
+@man man/man3p/Mail::SPF::Mod.3p
+@man man/man3p/Mail::SPF::Mod::Exp.3p
+@man man/man3p/Mail::SPF::Mod::Redirect.3p
+@man man/man3p/Mail::SPF::Record.3p
+@man man/man3p/Mail::SPF::Request.3p
+@man man/man3p/Mail::SPF::Result.3p
+@man man/man3p/Mail::SPF::SenderIPAddrMech.3p
+@man man/man3p/Mail::SPF::Server.3p
+@man man/man3p/Mail::SPF::Term.3p
+@man man/man3p/Mail::SPF::Util.3p
+@man man/man3p/Mail::SPF::v1::Record.3p
+@man man/man3p/Mail::SPF::v2::Record.3p
+sbin/spfd

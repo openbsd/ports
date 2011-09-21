@@ -1,0 +1,5 @@
+Mail::SPF is an object-oriented implementation of Sender Policy
+Framework (SPF).  This class collection aims to fully conform to
+the SPF specification (RFC 4408) so as to serve both as a production
+quality SPF implementation and as a reference for other developers
+of SPF implementations.

@@ -1,0 +1,19 @@
+$OpenBSD: patch-Build_PL,v 1.1.1.1 2011/09/21 07:59:25 giovanni Exp $
+--- Build.PL.orig	Sat Oct 31 23:16:14 2009
++++ Build.PL	Thu Sep 15 10:32:49 2011
+@@ -63,13 +63,13 @@ my $build = $class->new(
+         Module::Build   => '0.2805',
+         Test::More      => 0,
+         Net::DNS::Resolver::Programmable
+-                        => 'v0.002.1',
++                        => 0,
+     },
+     script_files    => [
+         'bin/spfquery'
+     ],
+     install_path    => {
+-        'sbin'          => '/usr/sbin'
++        'sbin'          => '${WRKINST}${PREFIX}/sbin'
+     },
+     create_makefile_pl
+                     => 'passthrough',
