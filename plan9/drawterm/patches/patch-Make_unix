@@ -1,4 +1,4 @@
-$OpenBSD: patch-Make_unix,v 1.1.1.1 2011/08/18 08:04:03 jasper Exp $
+$OpenBSD: patch-Make_unix,v 1.2 2011/09/21 11:26:09 ajacoutot Exp $
 --- Make.unix.orig	Wed Aug 26 07:44:41 2009
 +++ Make.unix	Wed Jul 20 19:57:34 2011
 @@ -5,8 +5,8 @@ AR=ar
@@ -17,5 +17,5 @@ $OpenBSD: patch-Make_unix,v 1.1.1.1 2011/08/18 08:04:03 jasper Exp $
  
  libmachdep.a:
 -	arch=`uname -m|sed 's/i.86/386/;s/Power Macintosh/power/; s/x86_64/amd64/'`; \
-+	arch=`uname -m|sed 's/i.86/386/;s/Power Macintosh/power/; s/x86_64/amd64/; s/sparc64/sun4u/; s/sgi/mips/'`; \
++	arch=`uname -m|sed 's/i.86/386/;s/Power Macintosh/power/; s/x86_64/amd64/; s/sparc64/sun4u/; s/sgi/mips/; s/macppc/power/'`; \
  	(cd posix-$$arch &&  make)
