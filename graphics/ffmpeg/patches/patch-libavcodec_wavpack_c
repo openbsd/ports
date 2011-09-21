@@ -1,11 +1,11 @@
-$OpenBSD: patch-libavcodec_wavpack_c,v 1.1 2011/09/12 21:04:49 sthen Exp $
+$OpenBSD: patch-libavcodec_wavpack_c,v 1.2 2011/09/21 08:58:48 sthen Exp $
 
 - Fixed invalid access with corrupted extra bits sub-blocks.
 - Fixed invalid writes with corrupted bitstreams.
 - Fixed invalid access with corrupted bitstream.
 
---- libavcodec/wavpack.c.orig	Thu Sep  8 18:36:03 2011
-+++ libavcodec/wavpack.c	Thu Sep  8 18:46:09 2011
+--- libavcodec/wavpack.c.orig	Mon Mar 28 19:23:17 2011
++++ libavcodec/wavpack.c	Mon Sep 12 03:06:17 2011
 @@ -292,7 +292,14 @@ static int wv_get_value(WavpackFrameContext *ctx, GetB
              }
          }else{
@@ -116,30 +116,24 @@ $OpenBSD: patch-libavcodec_wavpack_c,v 1.1 2011/09/12 21:04:49 sthen Exp $
      if(!s->samples_left){
          if(crc != s->CRC){
              av_log(s->avctx, AV_LOG_ERROR, "CRC error\n");
-@@ -1113,7 +1134,7 @@ static int wavpack_decode_block(AVCodecContext *avctx,
+@@ -1098,6 +1119,10 @@ static int wavpack_decode_block(AVCodecContext *avctx,
+             samplecount = wv_unpack_stereo(s, &s->gb, samples, AV_SAMPLE_FMT_S32);
+         else
+             samplecount = wv_unpack_stereo(s, &s->gb, samples, AV_SAMPLE_FMT_FLT);
++
++        if (samplecount < 0)
++            return -1;
++
+         samplecount >>= 1;
+     }else{
+         const int channel_stride = avctx->channels;
+@@ -1108,6 +1133,9 @@ static int wavpack_decode_block(AVCodecContext *avctx,
+             samplecount = wv_unpack_mono(s, &s->gb, samples, AV_SAMPLE_FMT_S32);
+         else
+             samplecount = wv_unpack_mono(s, &s->gb, samples, AV_SAMPLE_FMT_FLT);
++
++        if (samplecount < 0)
++            return -1;
+ 
+         if(s->stereo && avctx->sample_fmt == AV_SAMPLE_FMT_S16){
              int16_t *dst = (int16_t*)samples + 1;
-             int16_t *src = (int16_t*)samples;
-             int cnt = samplecount;
--            while(cnt--){
-+            while(cnt-- > 0){
-                 *dst = *src;
-                 src += channel_stride;
-                 dst += channel_stride;
-@@ -1122,7 +1143,7 @@ static int wavpack_decode_block(AVCodecContext *avctx,
-             int32_t *dst = (int32_t*)samples + 1;
-             int32_t *src = (int32_t*)samples;
-             int cnt = samplecount;
--            while(cnt--){
-+            while(cnt-- > 0){
-                 *dst = *src;
-                 src += channel_stride;
-                 dst += channel_stride;
-@@ -1131,7 +1152,7 @@ static int wavpack_decode_block(AVCodecContext *avctx,
-             float *dst = (float*)samples + 1;
-             float *src = (float*)samples;
-             int cnt = samplecount;
--            while(cnt--){
-+            while(cnt-- > 0){
-                 *dst = *src;
-                 src += channel_stride;
-                 dst += channel_stride;
