@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_gui_c,v 1.17 2011/09/21 12:20:07 dcoppa Exp $
+$OpenBSD: patch-src_gui_c,v 1.18 2011/09/21 13:10:36 dcoppa Exp $
 
 Fix an issue when alsa is not being used
 (upstream svn revision r2151)
@@ -19,7 +19,7 @@ Bugfix: 'f' not going to/returning from fullscreen
 (upstream svn revision r2161)
 
 --- src/gui.c.orig	Mon Jun 27 16:59:45 2011
-+++ src/gui.c	Wed Sep 21 12:29:37 2011
++++ src/gui.c	Wed Sep 21 15:05:50 2011
 @@ -106,6 +106,7 @@ PLAYSTATE media_state_to_playstate(GmtkMediaPlayerMedi
  void set_media_player_attributes(GtkWidget * widget)
  {
@@ -89,10 +89,10 @@ Bugfix: 'f' not going to/returning from fullscreen
          g_thread_create(get_cover_art, metadata, FALSE, NULL);
          break;
 +
-+	case ATTRIBUTE_RETRY_ON_FULL_CACHE:
-+		idledata->retry_on_full_cache = gmtk_media_player_get_attribute_boolean (GMTK_MEDIA_PLAYER(media), ATTRIBUTE_RETRY_ON_FULL_CACHE);
-+		break;		
-+			
++    case ATTRIBUTE_RETRY_ON_FULL_CACHE:
++        idledata->retry_on_full_cache = gmtk_media_player_get_attribute_boolean (GMTK_MEDIA_PLAYER(media), ATTRIBUTE_RETRY_ON_FULL_CACHE);
++        break;
++
      default:
          if (verbose) {
              printf("Unhandled attribute change %i\n", attribute);

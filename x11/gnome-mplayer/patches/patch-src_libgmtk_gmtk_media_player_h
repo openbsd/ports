@@ -1,17 +1,17 @@
-$OpenBSD: patch-src_libgmtk_gmtk_media_player_h,v 1.1 2011/07/12 08:12:29 dcoppa Exp $
+$OpenBSD: patch-src_libgmtk_gmtk_media_player_h,v 1.2 2011/09/21 13:10:36 dcoppa Exp $
 
 Raise event on incomplete QuickTime file, and mark it for retry
 (fix apple.com/trailers) - upstream svn revision r2152
 
 --- src/libgmtk/gmtk_media_player.h.orig	Tue Jun 28 15:29:18 2011
-+++ src/libgmtk/gmtk_media_player.h	Mon Jul 11 10:19:19 2011
++++ src/libgmtk/gmtk_media_player.h	Wed Sep 21 14:48:22 2011
 @@ -170,7 +170,8 @@ typedef enum {
      ATTRIBUTE_ENABLE_FRAME_DROP,
      ATTRIBUTE_TITLE,
      ATTRIBUTE_ARTIST,
 -    ATTRIBUTE_ALBUM
 +    ATTRIBUTE_ALBUM,
-+	ATTRIBUTE_RETRY_ON_FULL_CACHE
++    ATTRIBUTE_RETRY_ON_FULL_CACHE
  } GmtkMediaPlayerMediaAttributes;
  
  typedef enum {
@@ -20,10 +20,10 @@ Raise event on incomplete QuickTime file, and mark it for retry
  } GmtkMediaPlayerCommand;
  
 +typedef enum {
-+	EVENT_TYPE_INT,
-+	EVENT_TYPE_DOUBLE,
-+	EVENT_TYPE_BOOLEAN,
-+	EVENT_TYPE_ALLOCATION
++    EVENT_TYPE_INT,
++    EVENT_TYPE_DOUBLE,
++    EVENT_TYPE_BOOLEAN,
++    EVENT_TYPE_ALLOCATION
 +} GmtkMediaPlayerEventType;
 +
  typedef struct _GmtkMediaPlayer GmtkMediaPlayer;
@@ -33,11 +33,11 @@ Raise event on incomplete QuickTime file, and mark it for retry
  
  typedef struct _GmtkMediaPlayerEvent {
      GmtkMediaPlayer *player;
-+	GmtkMediaPlayerEventType type;
++    GmtkMediaPlayerEventType type;
      gchar *event_name;
      gint event_data_int;
      gdouble event_data_double;
-+	gboolean event_data_boolean;
++    gboolean event_data_boolean;
      GtkAllocation *event_allocation;
  } GmtkMediaPlayerEvent;
  
@@ -45,7 +45,7 @@ Raise event on incomplete QuickTime file, and mark it for retry
      gchar *album;
      gboolean enable_divx;
      gboolean disable_xvmc;
-+	gboolean retry_on_full_cache;
++    gboolean retry_on_full_cache;
  
      gboolean deinterlace;
      gboolean frame_drop;
