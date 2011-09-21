@@ -1,0 +1,16 @@
+$OpenBSD: patch-mozilla_widget_src_xpwidgets_GfxInfoBase_h,v 1.1 2011/09/21 14:34:27 nigel Exp $
+https://bugzilla.mozilla.org/show_bug.cgi?id=681026
+https://hg.mozilla.org/mozilla-central/rev/bb708067dd57
+
+--- mozilla/widget/src/xpwidgets/GfxInfoBase.h.orig	Sat Sep  3 00:56:28 2011
++++ mozilla/widget/src/xpwidgets/GfxInfoBase.h	Tue Sep 20 22:24:19 2011
+@@ -84,6 +84,9 @@ class GfxInfoBase : public nsIGfxInfo, (public)
+   // Ideally, Init() would be void-return, but the rules of
+   // NS_GENERIC_FACTORY_CONSTRUCTOR_INIT require it be nsresult return.
+   virtual nsresult Init();
++  
++  // only useful on X11
++  NS_IMETHOD_(void) GetData() { }
+ 
+ protected:
+ 
