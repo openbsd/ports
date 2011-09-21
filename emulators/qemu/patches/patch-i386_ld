@@ -1,0 +1,24 @@
+$OpenBSD: patch-i386_ld,v 1.1 2011/09/21 09:02:30 sthen Exp $
+--- i386.ld.orig	Sat Aug 27 18:03:15 2011
++++ i386.ld	Sat Aug 27 18:03:33 2011
+@@ -42,16 +42,16 @@ SECTIONS
+   .rel.plt      :
+   {
+     *(.rel.plt)
+-    PROVIDE_HIDDEN (__rel_iplt_start = .);
++    PROVIDE (__rel_iplt_start = .);
+     *(.rel.iplt)
+-    PROVIDE_HIDDEN (__rel_iplt_end = .);
++    PROVIDE (__rel_iplt_end = .);
+   }
+   .rela.plt       :
+   {
+     *(.rela.plt)
+-    PROVIDE_HIDDEN (__rela_iplt_start = .);
++    PROVIDE (__rela_iplt_start = .);
+     *(.rela.iplt)
+-    PROVIDE_HIDDEN (__rela_iplt_end = .);
++    PROVIDE (__rela_iplt_end = .);
+   }
+   .init          : { *(.init)	} =0x47ff041f
+   .text      :

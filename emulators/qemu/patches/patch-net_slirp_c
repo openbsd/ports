@@ -1,0 +1,12 @@
+$OpenBSD: patch-net_slirp_c,v 1.1 2011/09/21 09:02:30 sthen Exp $
+--- net/slirp.c.orig	Tue Sep  6 22:49:47 2011
++++ net/slirp.c	Tue Sep  6 22:50:01 2011
+@@ -529,7 +529,7 @@ static int slirp_smb(SlirpState* s, const char *export
+     fclose(f);
+ 
+     snprintf(smb_cmdline, sizeof(smb_cmdline), "%s -s %s",
+-             SMBD_COMMAND, smb_conf);
++             CONFIG_SMBD_COMMAND, smb_conf);
+ 
+     if (slirp_add_exec(s->slirp, 0, smb_cmdline, &vserver_addr, 139) < 0) {
+         slirp_smb_cleanup(s);

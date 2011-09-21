@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2011/08/28 11:21:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.76 2011/09/21 09:02:30 sthen Exp $
 
 # no success building on other archs yet
 ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc sparc64
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	amd64 arm i386 mips64 mips64el powerpc sparc sparc64
 COMMENT =		multi system emulator
 
 DISTNAME =		qemu-0.15.0
-REVISION =		0
+REVISION =		1
 CATEGORIES =		emulators
 MASTER_SITES =		http://wiki.qemu.org/download/ \
 			${MASTER_SITE_SAVANNAH:=qemu/}
@@ -41,6 +41,7 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--sysconfdir=${SYSCONFDIR} \
 			--mandir=${PREFIX}/man \
+			--smbd=${LOCALBASE}/libexec/smbd \
 			--cc="${CC}" \
 			--host-cc="${CC}" \
 			--extra-cflags="${EXTRA_CFLAGS}" \
@@ -89,7 +90,6 @@ CONFIGURE_ARGS +=	--enable-debug
 REGRESS_TARGET =	test
 
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/net.h ${WRKSRC}/qemu-options.hx
 	@perl -pi -e 's|/dev/dsp|/dev/audio|g' ${WRKSRC}/audio/ossaudio.c
 
 post-install:

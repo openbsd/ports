@@ -1,12 +1,15 @@
-$OpenBSD: patch-net_h,v 1.3 2011/08/16 21:24:42 sthen Exp $
---- net.h.orig	Sat Jul 23 13:05:22 2011
-+++ net.h	Mon Jul 25 19:29:57 2011
-@@ -177,7 +177,7 @@ int do_netdev_del(Monitor *mon, const QDict *qdict, QO
- #ifdef __sun__
- #define SMBD_COMMAND "/usr/sfw/sbin/smbd"
- #else
+$OpenBSD: patch-net_h,v 1.4 2011/09/21 09:02:30 sthen Exp $
+--- net.h.orig	Mon Aug  8 14:28:42 2011
++++ net.h	Tue Sep  6 22:49:37 2011
+@@ -174,11 +174,6 @@ int do_netdev_del(Monitor *mon, const QDict *qdict, QO
+ 
+ #define DEFAULT_NETWORK_SCRIPT "/etc/qemu-ifup"
+ #define DEFAULT_NETWORK_DOWN_SCRIPT "/etc/qemu-ifdown"
+-#ifdef __sun__
+-#define SMBD_COMMAND "/usr/sfw/sbin/smbd"
+-#else
 -#define SMBD_COMMAND "/usr/sbin/smbd"
-+#define SMBD_COMMAND "${LOCALBASE}/libexec/smbd"
- #endif
+-#endif
  
  void qdev_set_nic_properties(DeviceState *dev, NICInfo *nd);
+ 
