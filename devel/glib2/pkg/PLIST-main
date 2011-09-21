@@ -1,8 +1,9 @@
-@comment $OpenBSD: PLIST-main,v 1.21 2011/09/20 21:09:34 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.22 2011/09/21 13:10:18 ajacoutot Exp $
 @conflict glib2-fam-*
 @pkgpath devel/glib2
 @pkgpath devel/glib2,-fam
 @unexec-delete rm -f %D/share/glib-2.0/schemas/gschemas.compiled
+@unexec-delete rm -f %D/lib/gio/modules/giomodule.cache
 @bin bin/gdbus
 bin/gdbus-codegen
 @bin bin/gio-querymodules
@@ -269,19 +270,25 @@ lib/gio/
 lib/gio/modules/
 @comment lib/gio/modules/libgiofam.a
 @comment lib/gio/modules/libgiofam.la
+lib/gio/modules/libgiofam.so
 lib/glib-2.0/
 lib/glib-2.0/include/
 lib/glib-2.0/include/glibconfig.h
 lib/libgio-2.0.a
 lib/libgio-2.0.la
+@lib lib/libgio-2.0.so.${LIBgio-2.0_VERSION}
 lib/libglib-2.0.a
 lib/libglib-2.0.la
+@lib lib/libglib-2.0.so.${LIBglib-2.0_VERSION}
 lib/libgmodule-2.0.a
 lib/libgmodule-2.0.la
+@lib lib/libgmodule-2.0.so.${LIBgmodule-2.0_VERSION}
 lib/libgobject-2.0.a
 lib/libgobject-2.0.la
+@lib lib/libgobject-2.0.so.${LIBgobject-2.0_VERSION}
 lib/libgthread-2.0.a
 lib/libgthread-2.0.la
+@lib lib/libgthread-2.0.so.${LIBgthread-2.0_VERSION}
 lib/pkgconfig/gio-2.0.pc
 lib/pkgconfig/gio-unix-2.0.pc
 lib/pkgconfig/glib-2.0.pc
@@ -511,5 +518,5 @@ share/locale/yi/LC_MESSAGES/glib20.mo
 share/locale/zh_CN/LC_MESSAGES/glib20.mo
 share/locale/zh_HK/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
-%%SHARED%%
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@exec %D/bin/gio-querymodules %D/lib/gio/modules/

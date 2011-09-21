@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.133 2011/09/21 11:29:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.134 2011/09/21 13:10:18 ajacoutot Exp $
 
 COMMENT-main=		general-purpose utility library
 COMMENT-docs=		glib2 documentation
@@ -10,7 +10,7 @@ EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		glib2-${VERSION}
 PKGNAME-docs=		glib2-docs-${VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 
 CATEGORIES=		devel
 
@@ -37,13 +37,8 @@ MULTI_PACKAGES=		-main -docs
 MODULES=		devel/gettext \
 			lang/python
 
-# Although gtester-report(1) and gdbus-codegen(1) are python scripts, we
-# do not want to force a dependency on python.
-MODPY_RUNDEP=		No
-# Python is needed for the regress tests.
-MODPY_BUILDDEP=		Yes
 MODPY_ADJ_FILES=	glib/gtester-report \
-			codegen/gdbus-codegen.in \
+			gio/gdbus-2.0/codegen/gdbus-codegen.in \
 			gio/tests/gdbus-testserver.py
 
 WANTLIB-main += ${WANTLIB} c pthread z pcre fam ffi
@@ -68,7 +63,6 @@ REGRESS_DEPENDS=	devel/desktop-file-utils \
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
-USE_GROFF=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
