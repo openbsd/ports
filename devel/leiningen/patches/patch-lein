@@ -1,0 +1,50 @@
+$OpenBSD: patch-lein,v 1.1.1.1 2011/09/21 13:40:16 jasper Exp $
+
+- Adjust paths to java, clojure and jar files
+
+--- lein.orig	Tue Sep 20 13:27:07 2011
++++ lein	Tue Sep 20 14:35:22 2011
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!${LOCALBASE}/bin/bash
+ 
+ # This variant of the lein script is meant for downstream packagers.
+ # It has all the cross-platform stuff stripped out as well as the
+@@ -27,7 +27,7 @@ done
+ 
+ # Support $JAVA_OPTS for backwards-compatibility.
+ JVM_OPTS=${JVM_OPTS:-"$JAVA_OPTS"}
+-JAVA_CMD=${JAVA_CMD:-"java"}
++JAVA_CMD=$(javaPathHelper -c clojure)
+ LEIN_HOME=${LEIN_HOME:-"$HOME/.lein"}
+ 
+ DEV_PLUGINS="$(ls -1 lib/dev/*jar 2> /dev/null)"
+@@ -62,8 +62,8 @@ unique_user_plugins () {
+ LEIN_PLUGIN_PATH="$(echo "$DEV_PLUGINS" | tr \\n :)"
+ LEIN_USER_PLUGIN_PATH="$(echo "$(unique_user_plugins)" | tr \\n :)"
+ CLASSPATH="$CLASSPATH:$LEIN_PLUGIN_PATH:$LEIN_USER_PLUGIN_PATH:test/:src/"
+-LEIN_JAR="$HOME/.lein/self-installs/leiningen-$LEIN_VERSION-standalone.jar"
+-CLOJURE_JAR="/usr/share/java/clojure-1.2.jar:/usr/share/java/asm3.jar"
++LEIN_JAR="${MODJAVA_SHARE_DIR}/lein/leiningen-standalone.jar"
++CLOJURE_JAR="${LOCALBASE}/clojure/clojure.jar:${MODJAVA_JAR_DIR}/asm.jar"
+ NULL_DEVICE=/dev/null
+ 
+ # apply context specific CLASSPATH entries
+@@ -78,7 +78,7 @@ else
+     SCRIPT="$0"
+ fi
+ 
+-SHARE_JARS="ant ant-launcher classworlds clojure-1.2 \
++SHARE_JARS="ant ant-launcher classworlds \
+ lucene-memory maven-ant-tasks maven-artifact maven-artifact-manager \
+ maven-error-diagnostics maven-model maven-settings maven-project maven-profile \
+ maven-repository-metadataplexus-container-default-alpha plexus-interpolation \
+@@ -86,7 +86,7 @@ plexus-utils wagon-file wagon-http-lightweight wagon-h
+ xml-apis lucene-core lucene-highlighter clucy robert-hooke lancet leiningen
+ backport-util-concurrent" # NFI why that last one is necessary
+ for JAR in $SHARE_JARS; do
+-    CLASSPATH="$CLASSPATH":"/usr/share/java/$JAR.jar"
++    CLASSPATH="$CLOJURE_JAR:$CLASSPATH":"${MODJAVA_JAR_DIR}/$JAR.jar"
+ done
+ 
+ if [ $DEBUG ]; then
