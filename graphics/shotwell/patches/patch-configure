@@ -1,9 +1,18 @@
-$OpenBSD: patch-configure,v 1.2 2011/04/05 18:43:43 ajacoutot Exp $
---- configure.orig	Mon Apr  4 19:54:30 2011
-+++ configure	Tue Apr  5 10:23:08 2011
+$OpenBSD: patch-configure,v 1.3 2011/09/22 17:34:45 landry Exp $
+--- configure.orig	Thu Sep  8 20:56:57 2011
++++ configure	Thu Sep 22 19:30:57 2011
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/sh
  #
  # Copyright 2009-2011 Yorba Foundation
  #
+@@ -129,7 +129,7 @@ do
+         
+         *)                  if [ ! $value ]
+                             then
+-                                abort $1
++                                echo "$1 is not a valid argument, FAIL"1
+                             fi
+                             
+                             variables="${variables}${option}=${value}\n"
