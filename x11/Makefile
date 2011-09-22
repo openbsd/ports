@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.470 2011/09/20 09:05:32 landry Exp $
+# $OpenBSD: Makefile,v 1.471 2011/09/22 13:18:05 landry Exp $
 # $FreeBSD: Makefile,v 1.178 1997/11/24 05:32:52 fenner Exp $
 
      SUBDIR =
@@ -132,6 +132,7 @@
      SUBDIR += kountdown
      SUBDIR += krusader
      SUBDIR += lablgtk2
+     SUBDIR += libdesktop-agnostic
      SUBDIR += libdnd
      SUBDIR += libgdiplus
      SUBDIR += libsexy
