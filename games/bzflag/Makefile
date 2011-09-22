@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2010/11/16 11:23:26 espie Exp $
+# $OpenBSD: Makefile,v 1.27 2011/09/22 23:08:49 jasper Exp $
 
 COMMENT=	graphical multiplayer 3D tank war game
 
-DISTNAME=	bzflag-2.0.16
-REVISION=	0
+DISTNAME=	bzflag-2.4.0
 CATEGORIES=	games x11
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=bzflag/}
 EXTRACT_SUFX=	.tar.bz2
@@ -15,9 +14,10 @@ PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
-WANTLIB=	GL GLEW GLU ICE SDL SM X11 Xau Xdmcp Xext Xrandr Xrender \
-		c cares crypto curl idn m ncurses pthread-stubs pthread \
-		sndio ssl stdc++ usbhid xcb z
+
+WANTLIB += GL GLEW GLU ICE SDL SM X11 Xdamage Xext Xfixes Xi Xmu
+WANTLIB += Xt Xxf86vm c cares crypto drm idn m ncurses pthread
+WANTLIB += sndio ssl stdc++ usbhid xcb z curl
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	devel/sdl \
@@ -29,7 +29,7 @@ RUN_DEPENDS=	devel/desktop-file-utils
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 USE_GROFF=	Yes
-AUTOCONF_VERSION= 2.61
+AUTOCONF_VERSION= 2.67
 CONFIGURE_STYLE= autoconf
 CONFIGURE_ARGS+= --disable-ccachetest \
 		 --with-glew
