@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/06/14 07:22:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/09/22 10:57:49 ajacoutot Exp $
 bin/gnome-tweak-tool
 lib/python${MODPY_VERSION}/site-packages/gtweak/
 lib/python${MODPY_VERSION}/site-packages/gtweak/__init__.py
@@ -16,6 +16,9 @@ lib/python${MODPY_VERSION}/site-packages/gtweak/gsettings.pyo
 lib/python${MODPY_VERSION}/site-packages/gtweak/gshellwrapper.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/gshellwrapper.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/gshellwrapper.pyo
+lib/python${MODPY_VERSION}/site-packages/gtweak/mainwindow.py
+lib/python${MODPY_VERSION}/site-packages/gtweak/mainwindow.pyc
+lib/python${MODPY_VERSION}/site-packages/gtweak/mainwindow.pyo
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweakmodel.py
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweakmodel.pyc
 lib/python${MODPY_VERSION}/site-packages/gtweak/tweakmodel.pyo
@@ -51,21 +54,31 @@ share/applications/gnome-tweak-tool.desktop
 share/gnome-tweak-tool/
 share/gnome-tweak-tool/shell.ui
 share/gnome-tweak-tool/welcome.png
+share/locale/ca/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/cs/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/da/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/de/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/el/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/es/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/fa/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/gl/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/he/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/hu/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/ja/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/lv/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/nb/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/pl/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/pt/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/ru/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/sl/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/sr/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/sr@latin/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/sv/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/uk/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/vi/LC_MESSAGES/gnome-tweak-tool.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/zh_HK/LC_MESSAGES/gnome-tweak-tool.mo
+share/locale/zh_TW/LC_MESSAGES/gnome-tweak-tool.mo
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database

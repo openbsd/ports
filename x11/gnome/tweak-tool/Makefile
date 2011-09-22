@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2011/09/19 07:44:59 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2011/09/22 10:57:49 ajacoutot Exp $
 
 COMMENT=	tweak hidden GTK/GNOME settings
 
 GNOME_PROJECT=	gnome-tweak-tool
-GNOME_VERSION=	3.0.5
-REVISION=	0
+GNOME_VERSION=	3.1.90
 
 CATEGORIES=	sysutils
 
@@ -21,7 +20,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/gsettings-desktop-schemas \
 		devel/gconf2 \
 		devel/gettext \
-		devel/py-gobject
+		devel/py-gobject3
 
 MODPY_ADJ_FILES=gnome-tweak-tool
 
@@ -30,6 +29,11 @@ MODGNOME_DESKTOP_FILE=		Yes
 # XXX see post-install
 # https://bugzilla.gnome.org/show_bug.cgi?id=647132
 #RUN_DEPENDS +=	x11/gnome/shell
+
+# XXX
+pre-configure:
+	perl -pi -e 's,PYGOBJECT_REQUIRED_VERSION\),PYGOBJECT_REQUIRED_VERSION,g' \
+		${WRKSRC}/configure
 
 post-install:
 	rm ${WRKINST}${MODPY_LIBDIR}/site-packages/gtweak/tweaks/tweak_shell{,_extensions}.p*
