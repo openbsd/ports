@@ -1,6 +1,6 @@
-$OpenBSD: patch-jdk_src_share_classes_java_lang_ClassLoader_java,v 1.5 2011/01/11 15:47:50 kurt Exp $
---- jdk/src/share/classes/java/lang/ClassLoader.java.orig	Thu Dec 16 17:11:53 2010
-+++ jdk/src/share/classes/java/lang/ClassLoader.java	Tue Jan  4 18:25:20 2011
+$OpenBSD: patch-jdk_src_share_classes_java_lang_ClassLoader_java,v 1.6 2011/09/22 20:26:48 kurt Exp $
+--- jdk/src/share/classes/java/lang/ClassLoader.java.orig	Mon Jun 27 13:28:16 2011
++++ jdk/src/share/classes/java/lang/ClassLoader.java	Wed Sep  7 09:44:08 2011
 @@ -27,6 +27,7 @@ package java.lang;
  import java.io.InputStream;
  import java.io.IOException;
@@ -17,7 +17,7 @@ $OpenBSD: patch-jdk_src_share_classes_java_lang_ClassLoader_java,v 1.5 2011/01/1
  import java.util.Collections;
  import java.util.Enumeration;
  import java.util.HashMap;
-@@ -1865,18 +1867,42 @@ public abstract class ClassLoader {
+@@ -1861,18 +1863,42 @@ public abstract class ClassLoader {
      }
  
      private static boolean loadLibrary0(Class fromClass, final File file) {

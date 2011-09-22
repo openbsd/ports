@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-jre,v 1.8 2011/01/13 22:35:52 kurt Exp $
+@comment $OpenBSD: PLIST-jre,v 1.9 2011/09/22 20:26:49 kurt Exp $
 @option no-default-conflict
 @conflict jre->=1.7,<1.8|jre->=1.7v0,<1.8v0
 ${JREHOME}/
@@ -36,6 +36,7 @@ ${JREHOME}/lib/ext/meta-index
 ${JREHOME}/lib/ext/sunec.jar
 ${JREHOME}/lib/ext/sunjce_provider.jar
 ${JREHOME}/lib/ext/sunpkcs11.jar
+${JREHOME}/lib/ext/zipfs.jar
 ${JREHOME}/lib/flavormap.properties
 ${JREHOME}/lib/fontconfig.bfc
 ${JREHOME}/lib/fontconfig.properties.src
@@ -75,8 +76,6 @@ ${JREHOME}/lib/${MACHINE_ARCH}/libsunec.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libunpack.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libverify.so
 ${JREHOME}/lib/${MACHINE_ARCH}/libzip.so
-${JREHOME}/lib/${MACHINE_ARCH}/native_threads/
-${JREHOME}/lib/${MACHINE_ARCH}/native_threads/libhpi.so
 ${JREHOME}/lib/${MACHINE_ARCH}/server/
 ${JREHOME}/lib/${MACHINE_ARCH}/server/Xusage.txt
 ${JREHOME}/lib/${MACHINE_ARCH}/server/libjsig.so
@@ -262,6 +261,7 @@ ${JREHOME}/lib/zi/America/Matamoros
 ${JREHOME}/lib/zi/America/Mazatlan
 ${JREHOME}/lib/zi/America/Menominee
 ${JREHOME}/lib/zi/America/Merida
+${JREHOME}/lib/zi/America/Metlakatla
 ${JREHOME}/lib/zi/America/Mexico_City
 ${JREHOME}/lib/zi/America/Miquelon
 ${JREHOME}/lib/zi/America/Moncton
@@ -275,6 +275,7 @@ ${JREHOME}/lib/zi/America/Nipigon
 ${JREHOME}/lib/zi/America/Nome
 ${JREHOME}/lib/zi/America/Noronha
 ${JREHOME}/lib/zi/America/North_Dakota/
+${JREHOME}/lib/zi/America/North_Dakota/Beulah
 ${JREHOME}/lib/zi/America/North_Dakota/Center
 ${JREHOME}/lib/zi/America/North_Dakota/New_Salem
 ${JREHOME}/lib/zi/America/Ojinaga
@@ -298,6 +299,7 @@ ${JREHOME}/lib/zi/America/Santiago
 ${JREHOME}/lib/zi/America/Santo_Domingo
 ${JREHOME}/lib/zi/America/Sao_Paulo
 ${JREHOME}/lib/zi/America/Scoresbysund
+${JREHOME}/lib/zi/America/Sitka
 ${JREHOME}/lib/zi/America/St_Johns
 ${JREHOME}/lib/zi/America/St_Kitts
 ${JREHOME}/lib/zi/America/St_Lucia
@@ -595,3 +597,4 @@ ${JREHOME}/man/man1/
 @man ${JREHOME}/man/man1/tnameserv.1
 @man ${JREHOME}/man/man1/unpack200.1
 %%client_vm%%
+${JREHOME}/release

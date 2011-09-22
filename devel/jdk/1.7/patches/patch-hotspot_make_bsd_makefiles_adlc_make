@@ -1,7 +1,7 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_adlc_make,v 1.1 2010/07/02 09:40:30 jakemsr Exp $
---- hotspot/make/bsd/makefiles/adlc.make.orig	Tue Dec 15 00:13:12 2009
-+++ hotspot/make/bsd/makefiles/adlc.make	Tue Dec 15 00:14:45 2009
-@@ -62,7 +62,7 @@ CPPFLAGS += -DASSERT
+$OpenBSD: patch-hotspot_make_bsd_makefiles_adlc_make,v 1.2 2011/09/22 20:26:47 kurt Exp $
+--- hotspot/make/bsd/makefiles/adlc.make.orig	Tue Sep  6 18:23:37 2011
++++ hotspot/make/bsd/makefiles/adlc.make	Wed Sep  7 09:44:08 2011
+@@ -61,7 +61,7 @@ CPPFLAGS += -DASSERT
  
  # CFLAGS_WARN holds compiler options to suppress/enable warnings.
  # Compiler warnings are treated as errors

@@ -1,29 +1,29 @@
-# $OpenBSD: Makefile,v 1.44 2011/05/03 09:35:56 landry Exp $
+# $OpenBSD: Makefile,v 1.45 2011/09/22 20:26:47 kurt Exp $
 
 SHARED_ONLY=	Yes
 ONLY_FOR_ARCHS=	i386 amd64
 
-COMMENT-main=	Java2(TM) SE Dev Kit v${V} Early Access ${B}
-COMMENT-jre=	Java2(TM) SE Runtime Environment v${V} Early Access ${B}
+COMMENT-main=	Java2(TM) SE Dev Kit v${V}
+COMMENT-jre=	Java2(TM) SE Runtime Environment v${V}
 V=		1.7.0.00
-B=		b122
+B=		b147
 PKGNAME=	jdk-${V}
-PKGNAME-main=	jdk-${V}${B:S/b/beta/}
-REVISION-main =	1
-PKGNAME-jre=	jre-${V}${B:S/b/beta/}
-REVISION-jre =	1
+PKGNAME-main=	jdk-${V}
+PKGNAME-jre=	jre-${V}
 EPOCH=		0
 
 # see openjdk/jaxp/jaxp.properties & openjdk/jaxws/jaxws.properties 
 # in ${WRKDIR} for names and download locations of extra distfiles
 
-JDK_SRC=	openjdk-7-ea-src-${B}-16_dec_2010.zip
-JAXP_SRC=	jaxp-1_4_4.zip
-JAXWS_SRC=	jdk7-jaxws2_2-2010_08_19.zip
+JDK_SRC=	openjdk-7-fcs-src-${B}-27_jun_2011.zip
+JAXP_SRC=	jaxp145_01.zip
+JAXWS_SRC=	jdk7-jaxws2_2_4-b03-2011_05_27.zip
 JAF_SRC=	jdk7-jaf-2010_08_19.zip
+PATCH_SET=	openjdk-7-patch-set-20110922.zip
 
-DISTFILES=	${JDK_SRC} ${JAXP_SRC}:0 ${JAXWS_SRC}:1 ${JAF_SRC}:1
-EXTRACT_ONLY=	${JDK_SRC}
+DISTFILES=	${JDK_SRC} ${JAXP_SRC}:0 ${JAXWS_SRC}:1 ${JAF_SRC}:2 ${PATCH_SET}:3
+EXTRACT_ONLY=	${JDK_SRC} ${PATCH_SET}
+DIST_SUBDIR=	jdk
 
 CATEGORIES=	devel/jdk java
 
@@ -38,12 +38,19 @@ HOMEPAGE=	http://openjdk.java.net/
 MASTER_SITES=	http://www.java.net/download/openjdk/jdk7/promoted/${B}/ \
 		http://openbsd.dead-parrot.de/distfiles/ \
 		http://distfiles.nl/
-MASTER_SITES0=  https://jaxp.dev.java.net/files/documents/913/152561/ \
+MASTER_SITES0=  http://download.java.net/jaxp/1.4.5/ \
 		http://icedtea.classpath.org/download/drops/ \
 		http://openbsd.dead-parrot.de/distfiles/ \
 		http://distfiles.nl/
-MASTER_SITES1=  http://java.net/downloads/jax-ws/JDK7/ \
+MASTER_SITES1=  http://download.java.net/glassfish/components/jax-ws/openjdk/jdk7/ \
 		http://icedtea.classpath.org/download/drops/ \
+		http://openbsd.dead-parrot.de/distfiles/ \
+		http://distfiles.nl/
+MASTER_SITES2=  http://java.net/downloads/jax-ws/JDK7/ \
+		http://icedtea.classpath.org/download/drops/ \
+		http://openbsd.dead-parrot.de/distfiles/ \
+		http://distfiles.nl/
+MASTER_SITES3=  http://www.intricatesoftware.com/distfiles/ \
 		http://openbsd.dead-parrot.de/distfiles/ \
 		http://distfiles.nl/
 
@@ -59,11 +66,11 @@ USE_GROFF =	Yes
 NO_REGRESS=	Yes
 
 .if ${FLAVOR:L:Mnative_bootstrap}
-INSTALLED!= (pkg_info -qe "jdk->=1.7.0.00beta122v0,<1.8v0" && echo yes) || echo no
+INSTALLED!= (pkg_info -qe "jdk->=1.7.0.00v0,<1.8v0" && echo yes) || echo no
 .if ${INSTALLED:L} != "yes"
-ERRORS += "Fatal: This flavor requires an installed 1.7.0.00beta122v0 jdk package or greater"
+ERRORS += "Fatal: This flavor requires an installed 1.7.0.00v0 or greater jdk package"
 .endif
-BUILD_DEPENDS+=	jdk->=1.7.0.00beta122v0,<1.8v0:devel/jdk/1.7
+BUILD_DEPENDS+=	jdk->=1.7.0.00v0,<1.8v0:devel/jdk/1.7
 ALT_BOOTDIR=	${LOCALBASE}/jdk-1.7.0
 .else
 BUILD_DEPENDS+=	jdk->=1.6,<1.7:devel/jdk/1.6
@@ -83,7 +90,7 @@ USE_GMAKE=	Yes
 MAKE_ENV=	ALT_BOOTDIR=${ALT_BOOTDIR} \
 		ALT_FREETYPE_HEADERS_PATH=${X11BASE}/include \
 		ALT_FREETYPE_LIB_PATH=${X11BASE}/lib \
-		ALT_DROPS_DIR=${DISTDIR} \
+		ALT_DROPS_DIR=${DISTDIR}/${DIST_SUBDIR} \
 		ALT_PACKAGE_PATH=${LOCALBASE} \
 		ALT_X11_PATH=${X11BASE} \
 		DEFAULT_LIBPATH="/usr/lib:${X11BASE}/lib:${LOCALBASE}/lib" \
@@ -91,6 +98,8 @@ MAKE_ENV=	ALT_BOOTDIR=${ALT_BOOTDIR} \
 		CC="${CC}" \
 		CXX="${CXX}" \
 		USERNAME=${USER} \
+		MILESTONE=fcs \
+		BUILD_NUMBER=b00 \
 		HOTSPOT_BUILD_JOBS=${HOTSPOT_BUILD_JOBS}
 
 #ALL_TARGET=	debug_build
@@ -123,7 +132,6 @@ COPYDIRS=	hotspot/agent/src/os/linux \
 		hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/linux \
 		hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/linux_amd64 \
 		hotspot/agent/src/share/classes/sun/jvm/hotspot/runtime/linux_x86 \
-		hotspot/src/os/linux/launcher \
 		hotspot/src/os/linux/vm \
 		hotspot/src/os_cpu/linux_x86/vm \
 		hotspot/src/os_cpu/linux_zero/vm \
@@ -150,38 +158,38 @@ COPYFILES=	hotspot/agent/src/share/classes/sun/jvm/hotspot/LinuxVtblAccess.java 
 		jdk/src/solaris/classes/sun/nio/fs/LinuxNativeDispatcher.java \
 		jdk/src/solaris/classes/sun/tools/attach/LinuxAttachProvider.java \
 		jdk/src/solaris/classes/sun/tools/attach/LinuxVirtualMachine.java \
-		jdk/src/solaris/hpi/include/largefile_linux.h \
 		jdk/src/solaris/native/java/net/linux_close.c \
 		jdk/src/solaris/native/sun/nio/fs/LinuxNativeDispatcher.c
 
-# create initial bsd src from linux src (except for threads_solaris.c)
+# create initial bsd src from linux src
 post-extract:
 	@for d in ${COPYDIRS}; do \
 		mkdir -p `echo ${WRKDIST}/$$d | sed 's/linux/bsd/g;'`; \
 		cd ${WRKDIST}/$$d; \
 		for f in *; do \
 			if [ -f $$f ]; then \
-				t=`echo ${WRKDIST}/$$d/$$f | sed 's/linux/bsd/g; s/Linux/Bsd/g'`; \
-				sed 's/linux/bsd/g; s/Linux/Bsd/g' < $$f > $$t; \
+				t=`echo ${WRKDIST}/$$d/$$f | sed 's/linux/bsd/g; s/Linux/Bsd/g; s/LINUX/BSD/g'`; \
+				sed 's/linux/bsd/g; s/Linux/Bsd/g; s/LINUX/BSD/g' < $$f > $$t; \
 			fi; \
 		done; \
 	done
 	@for f in ${COPYFILES}; do \
-		t=`echo $$f | sed 's/linux/bsd/g; s/Linux/Bsd/g'`; \
-		sed 's/linux/bsd/g; s/Linux/Bsd/g' < ${WRKDIST}/$$f > ${WRKDIST}/$$t; \
+		t=`echo $$f | sed 's/linux/bsd/g; s/Linux/Bsd/g; s/LINUX/BSD/g'`; \
+		sed 's/linux/bsd/g; s/Linux/Bsd/g; s/LINUX/BSD/g' < ${WRKDIST}/$$f > ${WRKDIST}/$$t; \
 	done
-	@sed 's/solaris/bsd/g; s/Solaris/Bsd/g' \
-		< ${WRKDIST}/jdk/src/solaris/hpi/native_threads/src/threads_solaris.c \
-		> ${WRKDIST}/jdk/src/solaris/hpi/native_threads/src/threads_bsd.c
-	@cp ${WRKDIST}/jdk/src/share/lib/security/java.security \
-		${WRKDIST}/jdk/src/share/lib/security/java.security-openbsd
 	@rm ${WRKDIST}/hotspot/agent/src/os/bsd/proc_service.h
 	@cp -f ${FILESDIR}/cacerts ${WRKDIST}/jdk/src/share/lib/security
 	@cp -f ${FILESDIR}/PLATFORM_API_BSDOS_PCM.c \
 		${WRKDIST}/jdk/src/solaris/native/com/sun/media/sound
+	@cd ${WRKDIST} && \
+		${PATCH} -p0 -z .orig.linux --quiet < ${WRKDIR}/${PATCH_SET:R}
+	@perl -pi -e 's|build-policy install-limited|build-policy install-unlimited|' \
+		${WRKDIST}/jdk/make/javax/crypto/Makefile
+
 
 post-build:
-	@rm -rf ${JDKIMAGEDIR}/man/ja ${JREIMAGEDIR}/man/ja
+	@rm -rf ${JDKIMAGEDIR}/man/ja ${JDKIMAGEDIR}/man/ja_JP.UTF-8 \
+		${JREIMAGEDIR}/man/ja ${JREIMAGEDIR}/man/ja_JP.UTF-8
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${JDKHOME}

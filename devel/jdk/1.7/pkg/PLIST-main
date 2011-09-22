@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.9 2011/01/13 22:35:52 kurt Exp $
+@comment $OpenBSD: PLIST-main,v 1.10 2011/09/22 20:26:49 kurt Exp $
 @option no-default-conflict
 @conflict jdk->=1.7,<1.8|jdk->=1.7v0,<1.8v0
 ${JDKHOME}/
@@ -13,6 +13,7 @@ ${JDKHOME}/bin/
 @bin ${JDKHOME}/bin/jar
 @bin ${JDKHOME}/bin/jarsigner
 @bin ${JDKHOME}/bin/java
+${JDKHOME}/bin/java-rmi.cgi
 @bin ${JDKHOME}/bin/javac
 @bin ${JDKHOME}/bin/javadoc
 @bin ${JDKHOME}/bin/javah
@@ -76,6 +77,8 @@ ${JDKHOME}/demo/applets/DitherTest/
 ${JDKHOME}/demo/applets/DitherTest/CardinalTextField.class
 ${JDKHOME}/demo/applets/DitherTest/DitherCanvas.class
 ${JDKHOME}/demo/applets/DitherTest/DitherControls.class
+${JDKHOME}/demo/applets/DitherTest/DitherMethod.class
+${JDKHOME}/demo/applets/DitherTest/DitherTest$1.class
 ${JDKHOME}/demo/applets/DitherTest/DitherTest.class
 ${JDKHOME}/demo/applets/DitherTest/DitherTest.java
 ${JDKHOME}/demo/applets/DitherTest/example1.html
@@ -184,6 +187,7 @@ ${JDKHOME}/demo/jfc/FileChooserDemo/FileChooserDemo.jar
 ${JDKHOME}/demo/jfc/FileChooserDemo/README.txt
 ${JDKHOME}/demo/jfc/FileChooserDemo/src.zip
 ${JDKHOME}/demo/jfc/Font2DTest/
+${JDKHOME}/demo/jfc/Font2DTest/Font2DTest.html
 ${JDKHOME}/demo/jfc/Font2DTest/Font2DTest.jar
 ${JDKHOME}/demo/jfc/Font2DTest/README.txt
 ${JDKHOME}/demo/jfc/Font2DTest/src.zip
@@ -201,19 +205,24 @@ ${JDKHOME}/demo/jfc/SampleTree/SampleTree.jar
 ${JDKHOME}/demo/jfc/SampleTree/src.zip
 ${JDKHOME}/demo/jfc/SwingApplet/
 ${JDKHOME}/demo/jfc/SwingApplet/README.txt
+${JDKHOME}/demo/jfc/SwingApplet/SwingApplet.html
 ${JDKHOME}/demo/jfc/SwingApplet/SwingApplet.jar
 ${JDKHOME}/demo/jfc/SwingApplet/src.zip
 ${JDKHOME}/demo/jfc/TableExample/
 ${JDKHOME}/demo/jfc/TableExample/README.txt
 ${JDKHOME}/demo/jfc/TableExample/TableExample.jar
 ${JDKHOME}/demo/jfc/TableExample/src.zip
+${JDKHOME}/demo/jfc/TransparentRuler/
+${JDKHOME}/demo/jfc/TransparentRuler/README.txt
+${JDKHOME}/demo/jfc/TransparentRuler/TransparentRuler.jar
+${JDKHOME}/demo/jfc/TransparentRuler/src.zip
 ${JDKHOME}/demo/jpda/
 ${JDKHOME}/demo/jpda/com/
 ${JDKHOME}/demo/jpda/com/sun/
 ${JDKHOME}/demo/jpda/com/sun/tools/
 ${JDKHOME}/demo/jpda/com/sun/tools/example/
 ${JDKHOME}/demo/jpda/com/sun/tools/example/README
-${JDKHOME}/demo/jpda/jpda.jar
+${JDKHOME}/demo/jpda/examples.jar
 ${JDKHOME}/demo/jpda/src.zip
 ${JDKHOME}/demo/jvmti/
 ${JDKHOME}/demo/jvmti/compiledMethodLoad/
@@ -342,6 +351,14 @@ ${JDKHOME}/demo/nbproject/jfc/TableExample/nbproject/file-targets.xml
 ${JDKHOME}/demo/nbproject/jfc/TableExample/nbproject/jdk.xml
 ${JDKHOME}/demo/nbproject/jfc/TableExample/nbproject/netbeans-targets.xml
 ${JDKHOME}/demo/nbproject/jfc/TableExample/nbproject/project.xml
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/build.properties
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/build.xml
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/nbproject/
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/nbproject/file-targets.xml
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/nbproject/jdk.xml
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/nbproject/netbeans-targets.xml
+${JDKHOME}/demo/nbproject/jfc/TransparentRuler/nbproject/project.xml
 ${JDKHOME}/demo/nbproject/management/
 ${JDKHOME}/demo/nbproject/management/FullThreadDump/
 ${JDKHOME}/demo/nbproject/management/FullThreadDump/build.properties
@@ -387,6 +404,7 @@ ${JDKHOME}/demo/nbproject/scripting/jconsole-plugin/nbproject/netbeans-targets.x
 ${JDKHOME}/demo/nbproject/scripting/jconsole-plugin/nbproject/project.xml
 ${JDKHOME}/demo/nio/
 ${JDKHOME}/demo/nio/zipfs/
+${JDKHOME}/demo/nio/zipfs/Demo.java
 ${JDKHOME}/demo/nio/zipfs/README.txt
 ${JDKHOME}/demo/nio/zipfs/src.zip
 ${JDKHOME}/demo/nio/zipfs/zipfs.jar
@@ -441,6 +459,7 @@ ${JDKHOME}/jre/lib/ext/meta-index
 ${JDKHOME}/jre/lib/ext/sunec.jar
 ${JDKHOME}/jre/lib/ext/sunjce_provider.jar
 ${JDKHOME}/jre/lib/ext/sunpkcs11.jar
+${JDKHOME}/jre/lib/ext/zipfs.jar
 ${JDKHOME}/jre/lib/flavormap.properties
 ${JDKHOME}/jre/lib/fontconfig.bfc
 ${JDKHOME}/jre/lib/fontconfig.properties.src
@@ -482,8 +501,6 @@ ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libsunec.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libunpack.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libverify.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/libzip.so
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/native_threads/
-${JDKHOME}/jre/lib/${MACHINE_ARCH}/native_threads/libhpi.so
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/Xusage.txt
 ${JDKHOME}/jre/lib/${MACHINE_ARCH}/server/libjsig.so
@@ -669,6 +686,7 @@ ${JDKHOME}/jre/lib/zi/America/Matamoros
 ${JDKHOME}/jre/lib/zi/America/Mazatlan
 ${JDKHOME}/jre/lib/zi/America/Menominee
 ${JDKHOME}/jre/lib/zi/America/Merida
+${JDKHOME}/jre/lib/zi/America/Metlakatla
 ${JDKHOME}/jre/lib/zi/America/Mexico_City
 ${JDKHOME}/jre/lib/zi/America/Miquelon
 ${JDKHOME}/jre/lib/zi/America/Moncton
@@ -682,6 +700,7 @@ ${JDKHOME}/jre/lib/zi/America/Nipigon
 ${JDKHOME}/jre/lib/zi/America/Nome
 ${JDKHOME}/jre/lib/zi/America/Noronha
 ${JDKHOME}/jre/lib/zi/America/North_Dakota/
+${JDKHOME}/jre/lib/zi/America/North_Dakota/Beulah
 ${JDKHOME}/jre/lib/zi/America/North_Dakota/Center
 ${JDKHOME}/jre/lib/zi/America/North_Dakota/New_Salem
 ${JDKHOME}/jre/lib/zi/America/Ojinaga
@@ -705,6 +724,7 @@ ${JDKHOME}/jre/lib/zi/America/Santiago
 ${JDKHOME}/jre/lib/zi/America/Santo_Domingo
 ${JDKHOME}/jre/lib/zi/America/Sao_Paulo
 ${JDKHOME}/jre/lib/zi/America/Scoresbysund
+${JDKHOME}/jre/lib/zi/America/Sitka
 ${JDKHOME}/jre/lib/zi/America/St_Johns
 ${JDKHOME}/jre/lib/zi/America/St_Kitts
 ${JDKHOME}/jre/lib/zi/America/St_Lucia
@@ -1036,7 +1056,12 @@ ${JDKHOME}/lib/tools.jar
 @comment @man ${JDKHOME}/man/man1/wsgen.1
 @comment @man ${JDKHOME}/man/man1/wsimport.1
 @comment @man ${JDKHOME}/man/man1/xjc.1
+${JDKHOME}/release
 ${JDKHOME}/sample/
+${JDKHOME}/sample/forkjoin/
+${JDKHOME}/sample/forkjoin/mergesort/
+${JDKHOME}/sample/forkjoin/mergesort/MergeDemo.java
+${JDKHOME}/sample/forkjoin/mergesort/MergeSort.java
 ${JDKHOME}/sample/jmx/
 ${JDKHOME}/sample/jmx/jmx-scandir/
 ${JDKHOME}/sample/jmx/jmx-scandir/build.properties
@@ -1105,6 +1130,14 @@ ${JDKHOME}/sample/jmx/jmx-scandir/truststore
 ${JDKHOME}/sample/nbproject/
 ${JDKHOME}/sample/nbproject/project.xml
 ${JDKHOME}/sample/nio/
+${JDKHOME}/sample/nio/chatserver/
+${JDKHOME}/sample/nio/chatserver/ChatServer.java
+${JDKHOME}/sample/nio/chatserver/Client.java
+${JDKHOME}/sample/nio/chatserver/ClientReader.java
+${JDKHOME}/sample/nio/chatserver/DataReader.java
+${JDKHOME}/sample/nio/chatserver/MessageReader.java
+${JDKHOME}/sample/nio/chatserver/NameReader.java
+${JDKHOME}/sample/nio/chatserver/README.txt
 ${JDKHOME}/sample/nio/file/
 ${JDKHOME}/sample/nio/file/AclEdit.java
 ${JDKHOME}/sample/nio/file/Chmod.java

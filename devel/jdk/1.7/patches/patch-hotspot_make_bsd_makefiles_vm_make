@@ -1,120 +1,14 @@
-$OpenBSD: patch-hotspot_make_bsd_makefiles_vm_make,v 1.4 2011/01/11 15:47:49 kurt Exp $
---- hotspot/make/bsd/makefiles/vm.make.orig	Mon Nov  1 13:15:19 2010
-+++ hotspot/make/bsd/makefiles/vm.make	Mon Nov  1 13:33:41 2010
-@@ -90,6 +90,10 @@ CPPFLAGS =           \
-   ${JRE_VERSION}     \
-   ${VM_DISTRO}
+$OpenBSD: patch-hotspot_make_bsd_makefiles_vm_make,v 1.5 2011/09/22 20:26:47 kurt Exp $
+--- hotspot/make/bsd/makefiles/vm.make.orig	Sun Sep 18 11:09:06 2011
++++ hotspot/make/bsd/makefiles/vm.make	Sun Sep 18 14:56:19 2011
+@@ -96,6 +96,10 @@ ifdef DEFAULT_LIBPATH
+ CPPFLAGS += -DDEFAULT_LIBPATH="\"$(DEFAULT_LIBPATH)\""
+ endif
  
-+ifdef DEFAULT_LIBPATH
-+CPPFLAGS += -DDEFAULT_LIBPATH="\"$(DEFAULT_LIBPATH)\""
++ifdef SHARK_LLVM_VERSION
++CPPFLAGS += -DSHARK_LLVM_VERSION="$(SHARK_LLVM_VERSION)"
 +endif
 +
  # CFLAGS_WARN holds compiler options to suppress/enable warnings.
  CFLAGS += $(CFLAGS_WARN/BYFILE)
  
-@@ -100,7 +104,7 @@ CFLAGS += $(CFLAGS/NOEX)
- CFLAGS += $(EXTRA_CFLAGS)
- LFLAGS += $(EXTRA_CFLAGS)
- 
--LIBS += -lm -ldl -lpthread
-+LIBS += -lm -pthread
- 
- # By default, link the *.o into the library, not the executable.
- LINK_INTO$(LINK_INTO) = LIBJVM
-@@ -114,9 +118,15 @@ include $(MAKEFILES_DIR)/dtrace.make
- #----------------------------------------------------------------------
- # JVM
- 
--JVM      = jvm
--LIBJVM   = lib$(JVM).so
--LIBJVM_G = lib$(JVM)$(G_SUFFIX).so
-+JVM    = jvm
-+ifeq ($(OS_VENDOR), Darwin)
-+  LIBJVM   = lib$(JVM).dylib
-+  LIBJVM_G = lib$(JVM)$(G_SUFFIX).dylib
-+  CFLAGS  += -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE
-+else
-+  LIBJVM   = lib$(JVM).so
-+  LIBJVM_G = lib$(JVM)$(G_SUFFIX).so
-+endif
- 
- JVM_OBJ_FILES = $(Obj_Files)
- 
-@@ -137,15 +147,7 @@ mapfile_reorder : mapfile $(REORDERFILE)
- vm.def: $(Res_Files) $(Obj_Files)
- 	sh $(GAMMADIR)/make/bsd/makefiles/build_vm_def.sh *.o > $@
- 
--ifeq ($(SHARK_BUILD), true)
--  STATIC_CXX = false
--else
--  ifeq ($(ZERO_LIBARCH), ppc64)
--    STATIC_CXX = false
--  else
--    STATIC_CXX = true
--  endif
--endif
-+STATIC_CXX = false
- 
- ifeq ($(LINK_INTO),AOUT)
-   LIBJVM.o                 =
-@@ -157,14 +159,21 @@ else
-   LFLAGS_VM$(LDNOMAP)      += $(MAPFLAG:FILENAME=$(LIBJVM_MAPFILE))
-   LFLAGS_VM                += $(SONAMEFLAG:SONAME=$(LIBJVM))
- 
-+  ifeq ($(OS_VENDOR), Darwin)
-+    LFLAGS_VM += -Xlinker -rpath -Xlinker @loader_path/.
-+    LFLAGS_VM += -Xlinker -rpath -Xlinker @loader_path/..
-+    LFLAGS_VM += -Xlinker -install_name -Xlinker @rpath/$(@F)
-+  endif
-+
-   # JVM is statically linked with libgcc[_s] and libstdc++; this is needed to
-   # get around library dependency and compatibility issues. Must use gcc not
-   # g++ to link.
-   ifeq ($(STATIC_CXX), true)
-     LFLAGS_VM              += $(STATIC_LIBGCC)
-     LIBS_VM                += $(STATIC_STDCXX)
-+    LINK_VM                = $(LINK_LIB.c)
-   else
--    LIBS_VM                += -lstdc++
-+    LINK_VM                = $(LINK_LIB.CC)
-   endif
- 
-   LIBS_VM                  += $(LIBS)
-@@ -177,7 +186,6 @@ ifeq ($(SHARK_BUILD), true)
-   LIBS_VM   += $(LLVM_LIBS)
- endif
- 
--LINK_VM = $(LINK_LIB.c)
- 
- # rule for building precompiled header
- $(PRECOMPILED_HEADER): $(Precompiled_Files)
-@@ -205,11 +213,6 @@ $(LD_SCRIPT): $(LIBJVM_MAPFILE)
- LD_SCRIPT_FLAG = -Wl,-T,$(LD_SCRIPT)
- endif
- 
--# With more recent Redhat releases (or the cutting edge version Fedora), if
--# SEBsd is configured to be enabled, the runtime linker will fail to apply
--# the text relocation to libjvm.so considering that it is built as a non-PIC
--# DSO. To workaround that, we run chcon to libjvm.so after it is built. See 
--# details in bug 6538311.
- $(LIBJVM): $(LIBJVM.o) $(LIBJVM_MAPFILE) $(LD_SCRIPT)
- 	$(QUIETLY) {                                                    \
- 	    echo Linking vm...;                                         \
-@@ -219,17 +222,6 @@ $(LIBJVM): $(LIBJVM.o) $(LIBJVM_MAPFILE) $(LD_SCRIPT)
- 	    $(LINK_LIB.CC/POST_HOOK)                                    \
- 	    rm -f $@.1; ln -s $@ $@.1;                                  \
- 	    [ -f $(LIBJVM_G) ] || { ln -s $@ $(LIBJVM_G); ln -s $@.1 $(LIBJVM_G).1; }; \
--            if [ \"$(CROSS_COMPILE_ARCH)\" = \"\" ] ; then                    \
--	      if [ -x /usr/sbin/sebsdenabled ] ; then                 \
--	        /usr/sbin/sebsdenabled;                               \
--                if [ $$? = 0 ] ; then					\
--		  /usr/bin/chcon -t textrel_shlib_t $@;                 \
--		  if [ $$? != 0 ]; then                                 \
--		    echo "ERROR: Cannot chcon $@";			\
--		  fi							\
--	        fi							\
--	      fi                                                        \
--            fi 								\
- 	}
- 
- DEST_JVM = $(JDK_LIBDIR)/$(VM_SUBDIR)/$(LIBJVM)
