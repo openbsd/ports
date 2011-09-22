@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.43 2011/09/19 07:53:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2011/09/22 10:56:38 landry Exp $
 
 COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel
-XFCE_VERSION=	4.8.5
+XFCE_VERSION=	4.8.6
 SHARED_LIBS=	xfce4panel-1.0	0.0	# 3.0
 
 # GPLv2
@@ -28,7 +28,7 @@ WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		gmodule-2.0 gobject-2.0 gtk-x11-2.0 m pango-1.0 \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
 		startup-notification-1 xfce4util z pthread-stubs xcb \
-		execinfo xcb-atom xcb-aux xcb-event gthread-2.0 pthread \
+		execinfo xcb-aux X11-xcb stdc++ gthread-2.0 pthread \
 		xcb-render exo-1 wnck-1 GL Xxf86vm dbus-1 dbus-glib-1 \
 		drm garcon-1 xcb-shm xfce4ui-1 xfconf-0
 
