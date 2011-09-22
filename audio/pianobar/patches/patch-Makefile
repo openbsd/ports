@@ -1,6 +1,6 @@
-$OpenBSD: patch-Makefile,v 1.8 2011/07/10 11:01:05 dcoppa Exp $
---- Makefile.orig	Sat Jul  9 10:40:54 2011
-+++ Makefile	Sun Jul 10 12:38:43 2011
+$OpenBSD: patch-Makefile,v 1.9 2011/09/22 14:28:13 dcoppa Exp $
+--- Makefile.orig	Thu Sep 22 12:34:19 2011
++++ Makefile	Thu Sep 22 16:15:22 2011
 @@ -6,15 +6,8 @@ LIBDIR:=${PREFIX}/lib
  INCDIR:=${PREFIX}/include
  MANDIR:=${PREFIX}/share/man
@@ -51,7 +51,7 @@ $OpenBSD: patch-Makefile,v 1.8 2011/07/10 11:01:05 dcoppa Exp $
  	${AR} rcs libpiano.a ${LIBPIANO_OBJ} ${LIBWAITRESS_OBJ} ${LIBEZXML_OBJ}
  
  %.o: %.c
-@@ -141,16 +132,10 @@ install: pianobar install-libpiano
+@@ -141,18 +132,12 @@ install: pianobar install-libpiano
  else
  install: pianobar
  endif
@@ -73,3 +73,5 @@ $OpenBSD: patch-Makefile,v 1.8 2011/07/10 11:01:05 dcoppa Exp $
 +	${INSTALL_DATA} libpiano.so.${LIBpiano_VERSION} ${DESTDIR}/${LIBDIR}/
 +	${INSTALL_DATA} libpiano.a ${DESTDIR}/${LIBDIR}/
 +	${INSTALL_DATA} src/libpiano/piano.h ${DESTDIR}/${INCDIR}/
+ 
+ .PHONY: install install-libpiano test debug all
