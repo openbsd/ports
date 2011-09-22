@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.13 2011/04/07 17:48:22 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.14 2011/09/22 16:45:17 ajacoutot Exp $
 @conflict glade3-<3.8.0p1
 @bin bin/glade
 @bin bin/glade-previewer
@@ -331,6 +331,8 @@ share/glade/pixmaps/hicolor/22x22/actions/widget-gtk-windowgroup.png
 share/glade/pixmaps/placeholder.png
 share/glade/pixmaps/plus.png
 share/glade/pixmaps/selector.png
+share/gnome/
+share/gnome/help/
 share/gnome/help/glade/
 share/gnome/help/glade/C/
 share/gnome/help/glade/C/figures/
@@ -540,6 +542,7 @@ share/locale/vi/LC_MESSAGES/glade.mo
 share/locale/zh_CN/LC_MESSAGES/glade.mo
 share/locale/zh_HK/LC_MESSAGES/glade.mo
 share/locale/zh_TW/LC_MESSAGES/glade.mo
+share/omf/
 share/omf/glade/
 share/omf/glade/glade-C.omf
 share/omf/glade/glade-bg.omf

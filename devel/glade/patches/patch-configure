@@ -1,0 +1,67 @@
+$OpenBSD: patch-configure,v 1.6 2011/09/22 16:45:17 ajacoutot Exp $
+
+From 4dd25f0b6110e3a6c02e22fb491a1016f80106c9 Mon Sep 17 00:00:00 2001
+From: Ignacio Casal Quinteiro <icq@gnome.org>
+Date: Mon, 19 Sep 2011 19:57:05 +0000
+Subject: Bump pygobject requisite to pygobject 3. Fixes bug #658667.
+
+--- configure.orig	Thu Sep 22 18:34:59 2011
++++ configure	Thu Sep 22 18:35:54 2011
+@@ -14278,10 +14278,10 @@ else
+ fi
+ 
+ 
+-PYGOBJECT_REQS=2.27.0
++PYGOBJECT_REQS=2.90.4
+ PYGOBJECT_REQUIRED_MAJOR=2
+-PYGOBJECT_REQUIRED_MINOR=27
+-PYGOBJECT_REQUIRED_MICRO=0
++PYGOBJECT_REQUIRED_MINOR=90
++PYGOBJECT_REQUIRED_MICRO=4
+ 
+ # Check whether --enable-python was given.
+ if test "${enable_python+set}" = set; then :
+@@ -14303,12 +14303,12 @@ if test -n "$PYGOBJECT_CFLAGS"; then
+     pkg_cv_PYGOBJECT_CFLAGS="$PYGOBJECT_CFLAGS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"pygobject-2.0 >= \${PYGOBJECT_REQUIRED_MAJOR}.\${PYGOBJECT_REQUIRED_MINOR}.\${PYGOBJECT_REQUIRED_MICRO}\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "pygobject-2.0 >= ${PYGOBJECT_REQUIRED_MAJOR}.${PYGOBJECT_REQUIRED_MINOR}.${PYGOBJECT_REQUIRED_MICRO}") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"pygobject-3.0 >= \${PYGOBJECT_REQUIRED_MAJOR}.\${PYGOBJECT_REQUIRED_MINOR}.\${PYGOBJECT_REQUIRED_MICRO}\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "pygobject-3.0 >= ${PYGOBJECT_REQUIRED_MAJOR}.${PYGOBJECT_REQUIRED_MINOR}.${PYGOBJECT_REQUIRED_MICRO}") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_PYGOBJECT_CFLAGS=`$PKG_CONFIG --cflags "pygobject-2.0 >= ${PYGOBJECT_REQUIRED_MAJOR}.${PYGOBJECT_REQUIRED_MINOR}.${PYGOBJECT_REQUIRED_MICRO}" 2>/dev/null`
++  pkg_cv_PYGOBJECT_CFLAGS=`$PKG_CONFIG --cflags "pygobject-3.0 >= ${PYGOBJECT_REQUIRED_MAJOR}.${PYGOBJECT_REQUIRED_MINOR}.${PYGOBJECT_REQUIRED_MICRO}" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -14319,12 +14319,12 @@ if test -n "$PYGOBJECT_LIBS"; then
+     pkg_cv_PYGOBJECT_LIBS="$PYGOBJECT_LIBS"
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+-    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"pygobject-2.0 >= \${PYGOBJECT_REQUIRED_MAJOR}.\${PYGOBJECT_REQUIRED_MINOR}.\${PYGOBJECT_REQUIRED_MICRO}\""; } >&5
+-  ($PKG_CONFIG --exists --print-errors "pygobject-2.0 >= ${PYGOBJECT_REQUIRED_MAJOR}.${PYGOBJECT_REQUIRED_MINOR}.${PYGOBJECT_REQUIRED_MICRO}") 2>&5
++    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"pygobject-3.0 >= \${PYGOBJECT_REQUIRED_MAJOR}.\${PYGOBJECT_REQUIRED_MINOR}.\${PYGOBJECT_REQUIRED_MICRO}\""; } >&5
++  ($PKG_CONFIG --exists --print-errors "pygobject-3.0 >= ${PYGOBJECT_REQUIRED_MAJOR}.${PYGOBJECT_REQUIRED_MINOR}.${PYGOBJECT_REQUIRED_MICRO}") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+-  pkg_cv_PYGOBJECT_LIBS=`$PKG_CONFIG --libs "pygobject-2.0 >= ${PYGOBJECT_REQUIRED_MAJOR}.${PYGOBJECT_REQUIRED_MINOR}.${PYGOBJECT_REQUIRED_MICRO}" 2>/dev/null`
++  pkg_cv_PYGOBJECT_LIBS=`$PKG_CONFIG --libs "pygobject-3.0 >= ${PYGOBJECT_REQUIRED_MAJOR}.${PYGOBJECT_REQUIRED_MINOR}.${PYGOBJECT_REQUIRED_MICRO}" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -14342,9 +14342,9 @@ else
+         _pkg_short_errors_supported=no
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+-	        PYGOBJECT_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "pygobject-2.0 >= ${PYGOBJECT_REQUIRED_MAJOR}.${PYGOBJECT_REQUIRED_MINOR}.${PYGOBJECT_REQUIRED_MICRO}" 2>&1`
++	        PYGOBJECT_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "pygobject-3.0 >= ${PYGOBJECT_REQUIRED_MAJOR}.${PYGOBJECT_REQUIRED_MINOR}.${PYGOBJECT_REQUIRED_MICRO}" 2>&1`
+         else
+-	        PYGOBJECT_PKG_ERRORS=`$PKG_CONFIG --print-errors "pygobject-2.0 >= ${PYGOBJECT_REQUIRED_MAJOR}.${PYGOBJECT_REQUIRED_MINOR}.${PYGOBJECT_REQUIRED_MICRO}" 2>&1`
++	        PYGOBJECT_PKG_ERRORS=`$PKG_CONFIG --print-errors "pygobject-3.0 >= ${PYGOBJECT_REQUIRED_MAJOR}.${PYGOBJECT_REQUIRED_MINOR}.${PYGOBJECT_REQUIRED_MICRO}" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$PYGOBJECT_PKG_ERRORS" >&5
