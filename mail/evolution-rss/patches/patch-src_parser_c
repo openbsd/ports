@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_parser_c,v 1.3 2011/09/22 10:55:13 jasper Exp $
+
+From 62d6e9a7a68dc90abd244431afb47de9826cb423 Mon Sep 17 00:00:00 2001
+From: Lucian Langa <lucilanga@gnome.org>
+Date: Thu, 07 Jul 2011 20:34:45 +0000
+Subject: Avoid camel_stream_printf().
+
+--- src/parser.c.orig	Sun Jun 19 17:27:29 2011
++++ src/parser.c	Thu Sep 22 12:43:43 2011
+@@ -185,7 +185,7 @@ xml_parse_sux (const char *buf, int len)
+ 	 * application/ is often misdetected as text/html
+ 	 */
+ 	mime_type = g_content_type_guess(NULL, (guchar *)buf, 100, &uncertain);
+-	dp("mime:%s, uncertain:%d\n", mime_type, uncertain);
++	d("mime:%s, uncertain:%d\n", mime_type, uncertain);
+ 	//feeding parsed anything other than xml results in blocking delays
+ 	//it's possible we can relax parser by using xmlErrorFunc
+ 	//UPDATE: add text/* - but exclude text/html I've seen huge delays because of this
