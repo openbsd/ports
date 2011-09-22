@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/16 11:41:39 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/22 11:42:01 landry Exp $
 
 COMMENT=	Prelude Management Console
 
 MODPY_EGG_VERSION=0.9.17
 DISTNAME=	prewikka-0.9.17
 PKGNAME=	prelude-${DISTNAME}
-REVISION=	5
+REVISION=	6
 
 MODULES=	lang/python
 
