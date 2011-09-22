@@ -6,4 +6,4 @@ compositing manager running. Examples of these are:
   - xfwm4 (x11/xfce4/xfwm4)
 
 avant-window-navigator has to be setup, you can do this by running
-"awn-manager" or by selecting "Awn Manager" from the menu.
+"awn-settings" or by selecting "Awn Settings" from the menu.

@@ -1,0 +1,12 @@
+$OpenBSD: patch-applet-activation_main_c,v 1.1 2011/09/22 13:20:37 landry Exp $
+--- applet-activation/main.c.orig	Tue Sep 20 19:38:44 2011
++++ applet-activation/main.c	Tue Sep 20 19:39:01 2011
+@@ -222,7 +222,7 @@ main(gint argc, gchar **argv)
+ 
+   if (strcmp(type, "Python") == 0)
+   {
+-    launch_applet_with ("python", path, exec, uid, window, panel_id);
++    launch_applet_with ("${MODPY_BIN}", path, exec, uid, window, panel_id);
+     return 0;
+   }
+ 
