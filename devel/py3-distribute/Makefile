@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/17 12:15:40 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/22 10:10:27 naddy Exp $
 
 COMMENT =		fork of setuptools Python packages
 
@@ -19,7 +19,7 @@ PERMIT_DISTFILES_FTP =	Yes
 
 MASTER_SITES =		${MASTER_SITE_PYPI:=d/distribute/}
 
-MODULES =		lang/python3
+MODULES =		lang/python
 
 NO_REGRESS =		Yes
 
