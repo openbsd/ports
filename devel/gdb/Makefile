@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/07/07 17:31:14 jasper Exp $
-
-ONLY_FOR_ARCHS=	amd64 i386
+# $OpenBSD: Makefile,v 1.9 2011/09/22 16:40:54 landry Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
