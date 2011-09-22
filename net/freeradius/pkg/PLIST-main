@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2011/06/03 21:38:44 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2011/09/22 13:57:29 pea Exp $
 @conflict radiusd-cistron-*
 @conflict radiusd-lucent-*
 @pkgpath net/freeradius
@@ -90,6 +90,8 @@ lib/freeradius/rlm_policy.so
 lib/freeradius/rlm_preprocess.so
 lib/freeradius/rlm_radutmp.so
 lib/freeradius/rlm_realm.so
+lib/freeradius/rlm_replicate.so
+lib/freeradius/rlm_soh.so
 lib/freeradius/rlm_sql.so
 lib/freeradius/rlm_sql_log.so
 lib/freeradius/rlm_sqlcounter.so
@@ -161,6 +163,7 @@ share/doc/freeradius/RADIUS-SQL.schema
 share/doc/freeradius/README
 share/doc/freeradius/Session-Type
 share/doc/freeradius/Simultaneous-Use
+share/doc/freeradius/SoH.txt
 share/doc/freeradius/aaa.rst
 share/doc/freeradius/ascend
 share/doc/freeradius/bay
@@ -236,6 +239,7 @@ share/doc/freeradius/rfc/rfc5580.txt
 share/doc/freeradius/rfc/rfc5607.txt
 share/doc/freeradius/rfc/rfc5904.txt
 share/doc/freeradius/rfc/rfc5997.txt
+share/doc/freeradius/rfc/rfc6158.txt
 share/doc/freeradius/rlm_dbm
 share/doc/freeradius/rlm_eap
 share/doc/freeradius/rlm_expiration
@@ -383,10 +387,18 @@ share/examples/freeradius/modules/radutmp
 @sample ${SYSCONFDIR}/raddb/modules/radutmp
 share/examples/freeradius/modules/realm
 @sample ${SYSCONFDIR}/raddb/modules/realm
+share/examples/freeradius/modules/redis
+@sample ${SYSCONFDIR}/raddb/modules/redis
+share/examples/freeradius/modules/rediswho
+@sample ${SYSCONFDIR}/raddb/modules/rediswho
+share/examples/freeradius/modules/replicate
+@sample ${SYSCONFDIR}/raddb/modules/replicate
 share/examples/freeradius/modules/smbpasswd
 @sample ${SYSCONFDIR}/raddb/modules/smbpasswd
 share/examples/freeradius/modules/smsotp
 @sample ${SYSCONFDIR}/raddb/modules/smsotp
+share/examples/freeradius/modules/soh
+@sample ${SYSCONFDIR}/raddb/modules/soh
 share/examples/freeradius/modules/sql_log
 @sample ${SYSCONFDIR}/raddb/modules/sql_log
 share/examples/freeradius/modules/sqlcounter_expire_on_login
@@ -438,6 +450,8 @@ share/examples/freeradius/sites-available/proxy-inner-tunnel
 @sample ${SYSCONFDIR}/raddb/sites-available/proxy-inner-tunnel
 share/examples/freeradius/sites-available/robust-proxy-accounting
 @sample ${SYSCONFDIR}/raddb/sites-available/robust-proxy-accounting
+share/examples/freeradius/sites-available/soh
+@sample ${SYSCONFDIR}/raddb/sites-available/soh
 share/examples/freeradius/sites-available/status
 @sample ${SYSCONFDIR}/raddb/sites-available/status
 share/examples/freeradius/sites-available/virtual.example.com
@@ -489,6 +503,7 @@ share/freeradius/dictionary.apc
 share/freeradius/dictionary.aptis
 share/freeradius/dictionary.aruba
 share/freeradius/dictionary.ascend
+share/freeradius/dictionary.ascend.illegal
 share/freeradius/dictionary.asn
 share/freeradius/dictionary.audiocodes
 share/freeradius/dictionary.avaya
@@ -510,6 +525,7 @@ share/freeradius/dictionary.compat
 share/freeradius/dictionary.cosine
 share/freeradius/dictionary.dhcp
 share/freeradius/dictionary.digium
+share/freeradius/dictionary.eltex
 share/freeradius/dictionary.epygi
 share/freeradius/dictionary.ericsson
 share/freeradius/dictionary.erx
@@ -542,6 +558,7 @@ share/freeradius/dictionary.merit
 share/freeradius/dictionary.microsoft
 share/freeradius/dictionary.mikrotik
 share/freeradius/dictionary.motorola
+share/freeradius/dictionary.motorola.illegal
 share/freeradius/dictionary.motorola.wimax
 share/freeradius/dictionary.navini
 share/freeradius/dictionary.netscreen
@@ -595,8 +612,10 @@ share/freeradius/dictionary.telebit
 share/freeradius/dictionary.telkom
 share/freeradius/dictionary.trapeze
 share/freeradius/dictionary.tropos
+share/freeradius/dictionary.ukerna
 share/freeradius/dictionary.unix
 share/freeradius/dictionary.usr
+share/freeradius/dictionary.usr.illegal
 share/freeradius/dictionary.utstarcom
 share/freeradius/dictionary.valemount
 share/freeradius/dictionary.versanet
