@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2011/09/21 13:28:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.76 2011/09/22 08:53:05 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -21,8 +21,9 @@ PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
 
-REVISION-main=	2
-REVISION-evolution=0
+REVISION-main=	3
+REVISION-evolution=1
+REVISION-nautilus=0
 
 MAJ_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 EVO_VERSION=	3.2
@@ -52,7 +53,7 @@ WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm drm expat fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += kvm m pcre pixman-1 pthread-stubs xcb xcb-render xcb-shm
-WANTLIB += z
+WANTLIB += z ffi
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += ORBit-2 archive assuan atk-1.0 bz2 c cairo cairo-gobject
@@ -70,7 +71,7 @@ WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-data
 WANTLIB-evolution += ICE ORBit-2 SM X11-xcb asn1 atk-1.0 cairo cairo-gobject
 WANTLIB-evolution += camel-1.2 camel-provider-1.2 com_err crypto db dbus-1
 WANTLIB-evolution += dbus-glib-1 e2fs-uuid ebackend-1.2 ebook-1.2 ecal-1.2
-WANTLIB-evolution += edataserver-1.2 edataserverui-3.0 egroupwise-1.2 enchant
+WANTLIB-evolution += edataserver-1.2 edataserverui-3.0 enchant
 WANTLIB-evolution += execinfo gailutil-3 gconf-2 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB-evolution += gnome-desktop-3 gnome-keyring gpg-error gssapi gtk-3
 WANTLIB-evolution += gtkhtml-4.0 gtkhtml-editor-4.0 ical icalss icalvcal
