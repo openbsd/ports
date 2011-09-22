@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2011/09/22 14:23:21 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -20,7 +20,7 @@ PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
 
-REVISION-main=	5
+REVISION-main=	6
 REVISION-djvu=	2
 REVISION-dvi=	1
 REVISION-nautilus=1
@@ -58,7 +58,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
 WANTLIB += GL  Xxf86vm drm xcb-shm
 WANTLIB += xcb xcb-render z gthread-2.0 cairo-gobject m
 
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS= goi yelp
 
 LIB_DEPENDS=	x11/gtk+3
 
