@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.22 2011/09/21 13:27:59 jasper Exp $
+@comment $OpenBSD: PLIST-main,v 1.23 2011/09/22 10:30:43 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
 @bin bin/evolution
@@ -469,8 +469,8 @@ lib/evolution/${R}/
 lib/evolution/${R}/modules/
 @comment lib/evolution/${R}/modules/libevolution-module-addressbook.a
 @comment lib/evolution/${R}/modules/libevolution-module-addressbook.la
-lib/evolution/${R}/modules/libevolution-module-bogofilter.a
-lib/evolution/${R}/modules/libevolution-module-bogofilter.la
+@comment lib/evolution/${R}/modules/libevolution-module-bogofilter.a
+@comment lib/evolution/${R}/modules/libevolution-module-bogofilter.la
 @comment lib/evolution/${R}/modules/libevolution-module-calendar.a
 @comment lib/evolution/${R}/modules/libevolution-module-calendar.la
 @comment lib/evolution/${R}/modules/libevolution-module-composer-autosave.a
@@ -485,8 +485,8 @@ lib/evolution/${R}/modules/libevolution-module-bogofilter.la
 @comment lib/evolution/${R}/modules/libevolution-module-plugin-lib.la
 @comment lib/evolution/${R}/modules/libevolution-module-plugin-manager.a
 @comment lib/evolution/${R}/modules/libevolution-module-plugin-manager.la
-lib/evolution/${R}/modules/libevolution-module-spamassassin.a
-lib/evolution/${R}/modules/libevolution-module-spamassassin.la
+@comment lib/evolution/${R}/modules/libevolution-module-spamassassin.a
+@comment lib/evolution/${R}/modules/libevolution-module-spamassassin.la
 @comment lib/evolution/${R}/modules/libevolution-module-startup-wizard.a
 @comment lib/evolution/${R}/modules/libevolution-module-startup-wizard.la
 lib/evolution/${R}/plugins/
