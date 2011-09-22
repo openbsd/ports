@@ -1,0 +1,4 @@
+This library provides an extensible configuration API, a unified
+virtual file system API, and a desktop item editor (all with
+pluggable backends) for GLib-based projects. It is not tied to any one
+desktop environment, although there are desktop-specific modules.

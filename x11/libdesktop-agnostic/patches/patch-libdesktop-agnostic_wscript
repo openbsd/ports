@@ -1,0 +1,48 @@
+$OpenBSD: patch-libdesktop-agnostic_wscript,v 1.1.1.1 2011/09/22 13:17:11 landry Exp $
+--- libdesktop-agnostic/wscript.orig	Tue Sep 20 22:39:43 2011
++++ libdesktop-agnostic/wscript	Tue Sep 20 22:42:46 2011
+@@ -123,7 +123,7 @@ def build(bld):
+     lib.packages_private = 'build'
+     lib.includes = '..'
+     lib.vapi_dirs = '../vapi'
+-    lib.vnum = bld.env['VNUM']
++    lib.vnum = bld.env['SO_VERSION']
+ 
+     vfs = bld.new_task_gen('cc', 'shlib')
+     vfs.source = ' '.join([
+@@ -144,7 +144,7 @@ def build(bld):
+     vfs.packages_private = 'posix-glob'
+     vfs.includes = '..'
+     vfs.vapi_dirs = '../vapi .'
+-    vfs.vnum = bld.env['VNUM']
++    vfs.vnum = bld.env['SO_VERSION']
+ 
+     cfg = bld.new_task_gen('cc', 'shlib')
+     cfg.source = ' '.join([
+@@ -164,7 +164,7 @@ def build(bld):
+     cfg.packages_private = 'hashtable-gtype-key'
+     cfg.includes = '..'
+     cfg.vapi_dirs = '../vapi .'
+-    cfg.vnum = bld.env['VNUM']
++    cfg.vnum = bld.env['SO_VERSION']
+ 
+     fdo = bld.new_task_gen('cc', 'shlib')
+     fdo.source = ' '.join([
+@@ -178,7 +178,7 @@ def build(bld):
+     fdo.uselib_local = 'desktop-agnostic-vfs'
+     fdo.vapi_dirs = '.'
+     fdo.includes = '..'
+-    fdo.vnum = bld.env['VNUM']
++    fdo.vnum = bld.env['SO_VERSION']
+ 
+     ui = bld.new_task_gen('cc', 'shlib')
+     ui.source = ' '.join([
+@@ -197,7 +197,7 @@ def build(bld):
+     ui.uselib_local = 'desktop-agnostic-fdo'
+     ui.vapi_dirs = '. ../vapi'
+     ui.includes = '..'
+-    ui.vnum = bld.env['VNUM']
++    ui.vnum = bld.env['SO_VERSION']
+ 
+     [task_module('cfg', 'config-impl')(bld, name)
+      for name in bld.env['BACKENDS_CFG']]

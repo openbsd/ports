@@ -1,0 +1,19 @@
+$OpenBSD: patch-wscript,v 1.1.1.1 2011/09/22 13:17:11 landry Exp $
+--- wscript.orig	Sun Mar 13 16:09:47 2011
++++ wscript	Tue Sep 20 23:01:20 2011
+@@ -92,6 +92,7 @@ def configure(conf):
+     conf.env['PROFILING'] = Options.options.profiling
+     conf.env['INTROSPECTION'] = not Options.options.no_gi
+     conf.env['VNUM'] = str(VNUM)
++    conf.env['SO_VERSION'] = os.environ['SO_VERSION']
+ 
+     conf.check_tool('gnu_dirs')
+     conf.check_tool('compiler_cc intltool misc python vala')
+@@ -183,6 +184,7 @@ version %d.%d.%d''' % ((str(conf.env['VALAC_VERSION'])
+ 
+     conf.env.append_value('CCFLAGS', '-D_GNU_SOURCE')
+     conf.env.append_value('CCFLAGS', '-DHAVE_BUILD_CONFIG_H')
++    conf.env.append_value('CCFLAGS', '-I../gen_src')
+ 
+     conf.write_config_header('build-config.h')
+ 

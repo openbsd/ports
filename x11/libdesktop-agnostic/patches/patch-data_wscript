@@ -1,0 +1,12 @@
+$OpenBSD: patch-data_wscript,v 1.1.1.1 2011/09/22 13:17:11 landry Exp $
+--- data/wscript.orig	Tue Sep 20 22:35:03 2011
++++ data/wscript	Tue Sep 20 22:35:34 2011
+@@ -46,7 +46,7 @@ def build(bld):
+         'DESKTOP_ENTRY_BACKEND': bld.env['BACKENDS_DE'][0],
+     }
+     ini.fun = misc.subst_func
+-    ini.install_path = '${SYSCONFDIR}/xdg/libdesktop-agnostic'
++    ini.install_path = '${PREFIX}/share/examples/libdesktop-agnostic'
+ 
+     if bld.env['GLADE_SUPPORT']:
+         bld.install_files('${GLADEUI_CATALOGDIR}', 'desktop-agnostic.xml')

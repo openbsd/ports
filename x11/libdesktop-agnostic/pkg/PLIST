@@ -1,0 +1,59 @@
+@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/22 13:17:11 landry Exp $
+@bin bin/lda-desktop-entry-editor
+@bin bin/lda-schema-to-gconf
+include/libdesktop-agnostic-1.0/
+include/libdesktop-agnostic-1.0/libdesktop-agnostic/
+include/libdesktop-agnostic-1.0/libdesktop-agnostic/config.h
+include/libdesktop-agnostic-1.0/libdesktop-agnostic/desktop-agnostic.h
+include/libdesktop-agnostic-1.0/libdesktop-agnostic/fdo.h
+include/libdesktop-agnostic-1.0/libdesktop-agnostic/ui.h
+include/libdesktop-agnostic-1.0/libdesktop-agnostic/vfs.h
+lib/desktop-agnostic/
+lib/desktop-agnostic/modules/
+lib/desktop-agnostic/modules/libda-cfg-gconf.so
+lib/desktop-agnostic/modules/libda-cfg-keyfile.so
+lib/desktop-agnostic/modules/libda-cfg-type-color.so
+lib/desktop-agnostic/modules/libda-fdo-glib.so
+lib/desktop-agnostic/modules/libda-module-guesser.so
+lib/desktop-agnostic/modules/libda-vfs-gio.so
+@lib lib/libdesktop-agnostic-cfg.so.${LIBdesktop-agnostic-cfg_VERSION}
+@lib lib/libdesktop-agnostic-fdo.so.${LIBdesktop-agnostic-fdo_VERSION}
+@lib lib/libdesktop-agnostic-ui.so.${LIBdesktop-agnostic-ui_VERSION}
+@lib lib/libdesktop-agnostic-vfs.so.${LIBdesktop-agnostic-vfs_VERSION}
+@lib lib/libdesktop-agnostic.so.${LIBdesktop-agnostic_VERSION}
+lib/pkgconfig/desktop-agnostic.pc
+lib/python${MODPY_VERSION}/site-packages/desktopagnostic/
+lib/python${MODPY_VERSION}/site-packages/desktopagnostic/__init__.py
+lib/python${MODPY_VERSION}/site-packages/desktopagnostic/config.so
+lib/python${MODPY_VERSION}/site-packages/desktopagnostic/desktopagnostic.so
+lib/python${MODPY_VERSION}/site-packages/desktopagnostic/fdo.so
+lib/python${MODPY_VERSION}/site-packages/desktopagnostic/ui.so
+lib/python${MODPY_VERSION}/site-packages/desktopagnostic/vfs.so
+share/examples/libdesktop-agnostic/
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/libdesktop-agnostic/
+share/examples/libdesktop-agnostic/desktop-agnostic.ini
+@sample ${SYSCONFDIR}/xdg/libdesktop-agnostic/desktop-agnostic.ini
+share/locale/en_US@piglatin/
+share/locale/en_US@piglatin/LC_MESSAGES/
+share/locale/en_US@piglatin/LC_MESSAGES/libdesktop-agnostic.mo
+share/pygtk/
+share/pygtk/2.0/
+share/pygtk/2.0/defs/
+share/pygtk/2.0/defs/desktopagnostic.defs
+share/pygtk/2.0/defs/desktopagnostic_config.defs
+share/pygtk/2.0/defs/desktopagnostic_fdo.defs
+share/pygtk/2.0/defs/desktopagnostic_ui.defs
+share/pygtk/2.0/defs/desktopagnostic_vfs.defs
+share/vala/
+share/vala/vapi/
+share/vala/vapi/desktop-agnostic-cfg.deps
+share/vala/vapi/desktop-agnostic-cfg.vapi
+share/vala/vapi/desktop-agnostic-fdo.deps
+share/vala/vapi/desktop-agnostic-fdo.vapi
+share/vala/vapi/desktop-agnostic-ui.deps
+share/vala/vapi/desktop-agnostic-ui.vapi
+share/vala/vapi/desktop-agnostic-vfs.deps
+share/vala/vapi/desktop-agnostic-vfs.vapi
+share/vala/vapi/desktop-agnostic.deps
+share/vala/vapi/desktop-agnostic.vapi
