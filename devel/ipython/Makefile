@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/16 09:24:51 espie Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/22 18:42:14 rpointel Exp $
 
 COMMENT=		enhanced interactive Python shell
 
-MODPY_EGG_VERSION=	0.10
+MODPY_EGG_VERSION=	0.11
 DISTNAME=		ipython-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
-REVISION=		2
 
-HOMEPAGE=		http://ipython.scipy.org/moin/
+HOMEPAGE=		http://ipython.org/
 
 MAINTAINER=		Will Maier <wcmaier@openbsd.org>
 
@@ -19,7 +18,7 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MASTER_SITES=	http://ipython.scipy.org/dist/${MODPY_EGG_VERSION}/
+MASTER_SITES=	${MASTER_SITE_PYPI:=i/ipython/}
 
 USE_GROFF =	Yes
 NO_REGRESS=	Yes

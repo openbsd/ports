@@ -1,24 +1,28 @@
-$OpenBSD: patch-setupbase_py,v 1.1 2008/12/27 15:29:55 fgsch Exp $
---- setupbase.py.orig	Sun Sep 14 22:26:16 2008
-+++ setupbase.py	Mon Dec 15 03:12:11 2008
-@@ -188,16 +188,16 @@ def find_data_files():
+$OpenBSD: patch-setupbase_py,v 1.2 2011/09/22 18:42:14 rpointel Exp $
+--- setupbase.py.orig	Sun Jul 31 06:36:48 2011
++++ setupbase.py	Fri Sep 16 07:49:37 2011
+@@ -202,7 +202,7 @@
      """
      
-     docdirbase  = 'share/doc/ipython'
--    manpagebase = 'share/man/man1'
-+    manpagebase = 'man/man1'
- 
+     docdirbase  = pjoin('share', 'doc', 'ipython')
+-    manpagebase = pjoin('share', 'man', 'man1')
++    manpagebase = pjoin('man', 'man1')
+     
      # Simple file lists can be made by hand
--    manpages  = filter(isfile, glob('docs/man/*.1.gz'))
-+    manpages  = filter(isfile, glob('docs/man/*.1'))
-     igridhelpfiles = filter(isfile, glob('IPython/Extensions/igrid_help.*'))
- 
+     manpages  = filter(isfile, glob(pjoin('docs','man','*.1.gz')))
+@@ -215,13 +215,13 @@
      # For nested structures, use the utility above
-     example_files = make_dir_struct('data','docs/examples',
--                                    pjoin(docdirbase,'examples'))
--    manual_files = make_dir_struct('data','docs/dist',pjoin(docdirbase,'manual'))
-+                                    pjoin('share/examples/ipython'))
-+    manual_files = make_dir_struct('data','docs/dist',pjoin(docdirbase))
+     example_files = make_dir_struct(
+         'data',
+-        pjoin('docs','examples'),
++        pjoin('share','examples', 'ipython'),
+         pjoin(docdirbase,'examples')
+     )
+     manual_files = make_dir_struct(
+         'data',
+         pjoin('docs','html'),
+-        pjoin(docdirbase,'manual')
++        pjoin(docdirbase)
+     )
  
      # And assemble the entire output list
-     data_files = [ ('data',manpagebase, manpages),
