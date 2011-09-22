@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/01/18 20:39:50 landry Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/09/22 22:04:08 landry Exp $
 @conflict xfce-mcs-manager-*
 @conflict xfce-mcs-plugins-*
 @bin bin/xfce4-accessibility-settings
@@ -61,6 +61,7 @@ share/locale/ja/LC_MESSAGES/xfce4-settings.mo
 share/locale/kk/
 share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/xfce4-settings.mo
+share/locale/ko/LC_MESSAGES/xfce4-settings.mo
 share/locale/lv/LC_MESSAGES/xfce4-settings.mo
 share/locale/nb/LC_MESSAGES/xfce4-settings.mo
 share/locale/nl/LC_MESSAGES/xfce4-settings.mo
@@ -77,6 +78,9 @@ share/locale/si/LC_MESSAGES/
 share/locale/si/LC_MESSAGES/xfce4-settings.mo
 share/locale/sk/LC_MESSAGES/xfce4-settings.mo
 share/locale/sv/LC_MESSAGES/xfce4-settings.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/xfce4-settings.mo
 share/locale/tr/LC_MESSAGES/xfce4-settings.mo
 share/locale/ug/
 share/locale/ug/LC_MESSAGES/

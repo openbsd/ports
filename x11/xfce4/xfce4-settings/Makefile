@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/19 07:53:16 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/22 22:04:07 landry Exp $
 
 COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings
-XFCE_VERSION=	4.8.2
+XFCE_VERSION=	4.8.3
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -26,7 +26,7 @@ WANTLIB =	X11 Xcursor Xi Xrandr c cairo dbus-glib-1 gdk-x11-2.0 gdk_pixbuf-2.0 \
 		Xinerama Xrender atk-1.0 dbus-1 execinfo expat fontconfig \
 		freetype gio-2.0 gmodule-2.0 pangocairo-1.0 pangoft2-1.0 \
 		pcre pixman-1 png pthread-stubs startup-notification-1 \
-		xcb xcb-atom xcb-aux xcb-event xcb-render xcb-shm drm \
+		xcb xcb-aux X11-xcb stdc++ xcb-render xcb-shm drm \
 		xkbfile xml2 z notify exo-1 xklavier xfconf-0
 
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-settings \
