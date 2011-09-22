@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_tracker-extract_tracker-extract-text_c,v 1.1 2011/09/22 18:34:24 ajacoutot Exp $
+--- src/tracker-extract/tracker-extract-text.c.orig	Thu Sep 22 19:58:29 2011
++++ src/tracker-extract/tracker-extract-text.c	Thu Sep 22 20:00:33 2011
+@@ -61,7 +61,11 @@ get_file_content (GFile *file,
+ 	/* Get filename from URI */
+ 	path = g_file_get_path (file);
+ 
++#if defined(__linux__)
+ 	fd = g_open (path, O_RDONLY | O_NOATIME, 0);
++#else
++	fd = g_open (path, O_RDONLY, 0);
++#endif
+ 
+ 	if (fd == -1) {
+ 		g_message ("Could not open file '%s': %s",

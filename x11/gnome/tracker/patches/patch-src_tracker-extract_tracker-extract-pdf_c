@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_tracker-extract_tracker-extract-pdf_c,v 1.1 2011/09/22 18:34:24 ajacoutot Exp $
+--- src/tracker-extract/tracker-extract-pdf.c.orig	Thu Sep 22 17:57:12 2011
++++ src/tracker-extract/tracker-extract-pdf.c	Thu Sep 22 20:25:12 2011
+@@ -310,7 +310,11 @@ tracker_extract_get_metadata (TrackerExtractInfo *info
+ 	file = tracker_extract_info_get_file (info);
+ 	filename = g_file_get_path (file);
+ 
++#if defined(__linux__)
+ 	fd = g_open (filename, O_RDONLY | O_NOATIME, 0);
++#else
++	fd = g_open (filename, O_RDONLY, 0);
++#endif
+ 
+ 	if (fd == -1) {
+ 		g_warning ("Could not open pdf file '%s': %s\n",

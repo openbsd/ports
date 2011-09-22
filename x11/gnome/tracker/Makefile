@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2011/09/22 08:53:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.77 2011/09/22 18:34:24 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -11,7 +11,7 @@ COMMENT-evolution=	(meta-)tracker indexer plugin for evolution
 COMMENT-nautilus=	(meta-)tracker tagging plugin for nautilus
 
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.12.1
+GNOME_VERSION=	0.12.2
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -20,10 +20,6 @@ PKGNAME=	meta-tracker-${VERSION}
 PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
-
-REVISION-main=	3
-REVISION-evolution=1
-REVISION-nautilus=0
 
 MAJ_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 EVO_VERSION=	3.2
@@ -70,7 +66,7 @@ WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-common
 WANTLIB-evolution += lib/tracker-${MAJ_V}/tracker-data
 WANTLIB-evolution += ICE ORBit-2 SM X11-xcb asn1 atk-1.0 cairo cairo-gobject
 WANTLIB-evolution += camel-1.2 camel-provider-1.2 com_err crypto db dbus-1
-WANTLIB-evolution += dbus-glib-1 e2fs-uuid ebackend-1.2 ebook-1.2 ecal-1.2
+WANTLIB-evolution += e2fs-uuid ebackend-1.2 ebook-1.2 ecal-1.2
 WANTLIB-evolution += edataserver-1.2 edataserverui-3.0 enchant
 WANTLIB-evolution += execinfo gailutil-3 gconf-2 gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB-evolution += gnome-desktop-3 gnome-keyring gpg-error gssapi gtk-3
@@ -78,7 +74,7 @@ WANTLIB-evolution += gtkhtml-4.0 gtkhtml-editor-4.0 ical icalss icalvcal
 WANTLIB-evolution += icui18n icuuc krb5 nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
 WANTLIB-evolution += pangoft2-1.0 plc4 plds4 png smime3 softokn3 soup-2.4
 WANTLIB-evolution += sqlite3 ssl3 startup-notification-1 stdc++ tracker-miner-0.12
-WANTLIB-evolution += tracker-sparql-0.12 unique-3.0 xcb-aux xml2
+WANTLIB-evolution += tracker-sparql-0.12 xcb-aux xml2
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/emiscwidgets
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/eshell
 WANTLIB-evolution += lib/evolution/${EVO_VERSION}/etable

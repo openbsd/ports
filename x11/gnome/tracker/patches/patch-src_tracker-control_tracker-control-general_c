@@ -1,6 +1,6 @@
-$OpenBSD: patch-src_tracker-control_tracker-control-general_c,v 1.1 2011/09/18 08:36:56 ajacoutot Exp $
---- src/tracker-control/tracker-control-general.c.orig	Tue Sep 13 11:20:17 2011
-+++ src/tracker-control/tracker-control-general.c	Sat Sep 17 17:44:39 2011
+$OpenBSD: patch-src_tracker-control_tracker-control-general_c,v 1.2 2011/09/22 18:34:24 ajacoutot Exp $
+--- src/tracker-control/tracker-control-general.c.orig	Thu Sep 22 17:28:30 2011
++++ src/tracker-control/tracker-control-general.c	Thu Sep 22 18:46:10 2011
 @@ -21,6 +21,16 @@
  
  #include <errno.h>
@@ -34,7 +34,7 @@ $OpenBSD: patch-src_tracker-control_tracker-control-general_c,v 1.1 2011/09/18 0
  
  static void
  log_handler (const gchar    *domain,
-@@ -610,47 +622,37 @@ tracker_control_general_run (void)
+@@ -611,47 +623,37 @@ tracker_control_general_run (void)
  	if (kill_option != TERM_NONE ||
  	    terminate_option != TERM_NONE ||
  	    list_processes) {
@@ -102,7 +102,7 @@ $OpenBSD: patch-src_tracker-control_tracker-control-general_c,v 1.1 2011/09/18 0
  					str = g_strdup_printf (_("Found process ID %d for '%s'"), pid, basename);
  					g_print ("%s\n", str);
  					g_free (str);
-@@ -702,14 +704,6 @@ tracker_control_general_run (void)
+@@ -703,14 +705,6 @@ tracker_control_general_run (void)
  
  				g_free (basename);
  			}

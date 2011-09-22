@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_tracker-extract_tracker-extract-tiff_c,v 1.1 2011/09/22 18:34:24 ajacoutot Exp $
+--- src/tracker-extract/tracker-extract-tiff.c.orig	Thu Sep 22 19:58:29 2011
++++ src/tracker-extract/tracker-extract-tiff.c	Thu Sep 22 20:00:48 2011
+@@ -291,7 +291,11 @@ tracker_extract_get_metadata (TrackerExtractInfo *info
+ 	metadata = tracker_extract_info_get_metadata_builder (info);
+ 	graph = tracker_extract_info_get_graph (info);
+ 
++#if defined(__linux__)
+ 	fd = g_open (filename, O_RDONLY | O_NOATIME, 0);
++#else
++	fd = g_open (filename, O_RDONLY, 0);
++#endif
+ 
+ 	if (fd == -1) {
+ 		g_warning ("Could not open tiff file '%s': %s\n",
