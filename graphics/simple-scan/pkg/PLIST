@@ -1,7 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/21 06:50:30 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/09/22 15:28:31 ajacoutot Exp $
 @bin bin/simple-scan
 @man man/man1/simple-scan.1
 share/applications/simple-scan.desktop
+share/glib-2.0/schemas/org.gnome.SimpleScan.gschema.xml
+share/gnome/
+share/gnome/help/
 share/gnome/help/simple-scan/
 share/gnome/help/simple-scan/C/
 share/gnome/help/simple-scan/C/adf.page
@@ -91,10 +94,6 @@ share/locale/ur/LC_MESSAGES/simple-scan.mo
 share/locale/vi/LC_MESSAGES/simple-scan.mo
 share/locale/zh_CN/LC_MESSAGES/simple-scan.mo
 share/locale/zh_TW/LC_MESSAGES/simple-scan.mo
-@unexec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-uninstall-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
-${SCHEMAS_INSTDIR}/
-${SCHEMAS_INSTDIR}/simple-scan.schemas
-@exec GCONF_CONFIG_SOURCE=`%D/bin/gconftool-2 --get-default-source` %D/bin/gconftool-2 --makefile-install-rule %D/${SCHEMAS_INSTDIR}/*.schemas > /dev/null
 share/simple-scan/
 share/simple-scan/icons/
 share/simple-scan/icons/hicolor/
@@ -117,5 +116,7 @@ share/simple-scan/icons/hicolor/scalable/
 share/simple-scan/icons/hicolor/scalable/actions/
 share/simple-scan/icons/hicolor/scalable/actions/object-crop.svg
 share/simple-scan/simple-scan.ui
+@exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
+@unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @exec %D/bin/update-desktop-database
 @unexec-delete %D/bin/update-desktop-database
