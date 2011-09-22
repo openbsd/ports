@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/09/22 16:01:02 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/09/22 17:07:04 ajacoutot Exp $
 @bin bin/peas-demo
 include/libpeas-1.0/
 include/libpeas-1.0/libpeas/
@@ -23,6 +23,8 @@ lib/libpeas-1.0.la
 lib/libpeas-1.0/loaders/
 @comment lib/libpeas-1.0/loaders/libcloader.la
 lib/libpeas-1.0/loaders/libcloader.so
+@comment lib/libpeas-1.0/loaders/libgjsloader.la
+lib/libpeas-1.0/loaders/libgjsloader.so
 @comment lib/libpeas-1.0/loaders/libpythonloader.la
 lib/libpeas-1.0/loaders/libpythonloader.so
 @comment lib/libpeas-1.0/loaders/libseedloader.la
@@ -31,6 +33,9 @@ lib/libpeas-gtk-1.0.la
 @lib lib/libpeas-gtk-1.0.so.${LIBpeas-gtk-1.0_VERSION}
 lib/peas-demo/
 lib/peas-demo/plugins/
+lib/peas-demo/plugins/gjshello/
+lib/peas-demo/plugins/gjshello/gjshello.js
+lib/peas-demo/plugins/gjshello/gjshello.plugin
 lib/peas-demo/plugins/helloworld/
 lib/peas-demo/plugins/helloworld/helloworld.plugin
 @comment lib/peas-demo/plugins/helloworld/libhelloworld.la
