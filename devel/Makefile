@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.973 2011/09/21 13:49:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.974 2011/09/22 13:54:11 landry Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -108,6 +108,7 @@
      SUBDIR += gconf-editor
      SUBDIR += gconf2
      SUBDIR += gconfmm
+     SUBDIR += gdb
      SUBDIR += geany
      SUBDIR += geotiff
      SUBDIR += gettext
