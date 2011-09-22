@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/21 09:15:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/22 15:51:26 landry Exp $
 
 SHARED_ONLY =		Yes
 
@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 
 COMMENT =		CALF LADSPA plugins
 DISTNAME =		calf-0.0.18.5
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		audio
 
