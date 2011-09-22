@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.43 2011/09/21 14:37:28 fgsch Exp $
+# $OpenBSD: python.port.mk,v 1.44 2011/09/22 09:44:40 sthen Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -17,6 +17,7 @@ MODPY_VSPEC = >=${MODPY_VERSION},<2.8
 .elif ${MODPY_VERSION} == 3.2
 MODPY_VSPEC = >=${MODPY_VERSION},<3.3
 .endif
+MODPYSPEC = python-${MODPY_VSPEC}
 
 .if ${MODPY_VERSION} < 2.6
 MODPY_JSON =		devel/py-simplejson
@@ -29,7 +30,7 @@ MODPY_WANTLIB =	python${MODPY_VERSION}
 .else
 MODPY_WANTLIB = python${MODPY_VERSION}m
 .endif
-MODPY_RUN_DEPENDS=	lang/python/${MODPY_VERSION}
+MODPY_RUN_DEPENDS=	${MODPYSPEC}:lang/python/${MODPY_VERSION}
 MODPY_LIB_DEPENDS=	${MODPY_RUN_DEPENDS}
 _MODPY_BUILD_DEPENDS=	${MODPY_RUN_DEPENDS}
 
