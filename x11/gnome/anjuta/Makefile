@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.39 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.40 2011/09/22 11:35:12 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.1.92
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -28,18 +28,19 @@ MODULES=		devel/dconf \
 WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xt Xxf86vm
 WANTLIB += apr-1 aprutil-1 asn1 atk-1.0 c cairo cairo-gobject
-WANTLIB += crypto db devhelp-3 drm enchant expat fontconfig freetype
-WANTLIB += gailutil-3 gconf-2 gdk-3 gdk_pixbuf-2.0 gdl-3 gio-2.0
-WANTLIB += gladeui-2 glib-2.0 gmodule-2.0 gobject-2.0 gssapi gstapp-0.10
-WANTLIB += gstbase-0.10 gstinterfaces-0.10 gstpbutils-0.10 gstreamer-0.10
-WANTLIB += gstvideo-0.10 gthread-2.0 gtk-3 gtksourceview-3.0 jpeg
-WANTLIB += krb5 m ncurses neon pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs sasl2 soup-2.4
-WANTLIB += sqlite3 ssl stdc++ svn_client-1 svn_delta-1 svn_diff-1
-WANTLIB += svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1 svn_ra-1
-WANTLIB += svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1 svn_repos-1
-WANTLIB += svn_subr-1 svn_wc-1 util vala-0.14 vte2_90 webkitgtk-3.0
-WANTLIB += xcb xcb-render xcb-shm xml2 xslt z icudata icui18n icuuc
+WANTLIB += crypto db devhelp-3 drm enchant expat ffi fontconfig
+WANTLIB += freetype gailutil-3 gconf-2 gdk-3 gdk_pixbuf-2.0 gdl-3
+WANTLIB += gio-2.0 gladeui-2 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gssapi gstapp-0.10 gstbase-0.10 gstinterfaces-0.10
+WANTLIB += gstpbutils-0.10 gstreamer-0.10 gstvideo-0.10 gthread-2.0
+WANTLIB += gtk-3 gtksourceview-3.0 icudata icui18n icuuc jpeg
+WANTLIB += krb5 kvm m ncurses neon pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 png pthread pthread-stubs sasl2
+WANTLIB += soup-2.4 sqlite3 ssl stdc++ svn_client-1 svn_delta-1
+WANTLIB += svn_diff-1 svn_fs-1 svn_fs_base-1 svn_fs_fs-1 svn_fs_util-1
+WANTLIB += svn_ra-1 svn_ra_local-1 svn_ra_neon-1 svn_ra_svn-1
+WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 util vala-0.14 vte2_90
+WANTLIB += webkitgtk-3.0 xcb xcb-render xcb-shm xml2 xslt z
 WANTLIB += ${MODPY_WANTLIB}
 
 BUILD_DEPENDS=		devel/autogen>=5.6.5
