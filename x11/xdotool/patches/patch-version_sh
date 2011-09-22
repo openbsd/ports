@@ -1,0 +1,11 @@
+$OpenBSD: patch-version_sh,v 1.1 2011/09/22 14:04:08 dcoppa Exp $
+--- version.sh.orig	Thu Sep 22 12:58:52 2011
++++ version.sh	Thu Sep 22 12:59:17 2011
+@@ -16,6 +16,7 @@ VERSION="$MAJOR.$RELEASE.$REVISION"
+ 
+ case $1 in
+   --major) echo "$MAJOR" ;;
++  --revision) echo "$REVISION" ;;
+   --header) 
+     echo "#ifndef _VERSION_H_"
+     echo "#define _VERSION_H_"
