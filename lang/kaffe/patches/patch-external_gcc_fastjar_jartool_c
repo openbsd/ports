@@ -1,6 +1,6 @@
-$OpenBSD: patch-external_gcc_fastjar_jartool_c,v 1.2 2006/04/20 04:42:38 kurt Exp $
+$OpenBSD: patch-external_gcc_fastjar_jartool_c,v 1.3 2011/09/22 21:15:31 jasper Exp $
 --- external/gcc/fastjar/jartool.c.orig	Tue Jan  3 10:27:01 2006
-+++ external/gcc/fastjar/jartool.c	Fri Apr 14 01:07:57 2006
++++ external/gcc/fastjar/jartool.c	Tue Sep 20 23:59:53 2011
 @@ -1591,6 +1591,31 @@ int create_central_header(int fd){
    return 0;
  }
@@ -33,7 +33,7 @@ $OpenBSD: patch-external_gcc_fastjar_jartool_c,v 1.2 2006/04/20 04:42:38 kurt Ex
  int extract_jar(int fd, char **files, int file_num){
    int rdamt;
    int out_a, in_a;
-@@ -1699,6 +1724,13 @@ int extract_jar(int fd, char **files, in
+@@ -1699,6 +1724,13 @@ int extract_jar(int fd, char **files, int file_num){
      pb_read(&pbf, filename, fnlen);
      filename[fnlen] = '\0';
  
@@ -47,7 +47,7 @@ $OpenBSD: patch-external_gcc_fastjar_jartool_c,v 1.2 2006/04/20 04:42:38 kurt Ex
  #ifdef DEBUG    
      printf("filename is %s\n", filename);
  #endif
-@@ -1706,11 +1738,13 @@ int extract_jar(int fd, char **files, in
+@@ -1706,11 +1738,13 @@ int extract_jar(int fd, char **files, int file_num){
      if(file_num > 0){
        handle = FALSE;
        
@@ -63,7 +63,7 @@ $OpenBSD: patch-external_gcc_fastjar_jartool_c,v 1.2 2006/04/20 04:42:38 kurt Ex
      }
  
      if(!handle)
-@@ -2007,17 +2041,25 @@ int list_jar(int fd, char **files, int f
+@@ -2007,17 +2041,25 @@ int list_jar(int fd, char **files, int file_num){
        }
        filename[fnlen] = '\0';
      

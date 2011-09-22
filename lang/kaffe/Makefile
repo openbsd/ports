@@ -1,11 +1,13 @@
-# $OpenBSD: Makefile,v 1.53 2011/09/16 10:31:21 espie Exp $
+# $OpenBSD: Makefile,v 1.54 2011/09/22 21:15:30 jasper Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc
 
 COMMENT-main=	kaffe.org's Java JDK1.4 compiler, runtime and libs
 
-DISTNAME=	kaffe-1.1.7
-REVISION-main=	12
+VER=		1.1.7
+DISTNAME=	kaffe-${VER}
+PKGNAME-main=	kaffe-${VER}
+REVISION-main=	13
 
 CATEGORIES=	lang
 
@@ -24,33 +26,33 @@ PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	devel/gettext
-# libtool needs to support -dlopen option
-USE_LIBTOOL=	gnu
 USE_GMAKE=	Yes
-USE_GROFF =	Yes
+USE_GROFF=	Yes
 
 BUILD_DEPENDS=	archivers/zip \
 		lang/jikes>=1.22p0
 LIB_DEPENDS=	x11/gtk+2 \
 		devel/gmp \
 		devel/libaudiofile \
-		audio/esound \
-		devel/libtool,-ltdl
+		audio/esound
 RUN_DEPENDS=	archivers/zip \
 		lang/jikes>=1.22p0
 
-WANTLIB += ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender Xtst atk-1.0 c cairo
-WANTLIB += expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0 gdk_pixbuf-2.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs sndio xcb z
-WANTLIB += gdk-x11-2.0 gtk-x11-2.0 gmp audiofile esd ltdl
+WANTLIB += GL ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xtst audiofile c cairo esd
+WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
+WANTLIB += gmp gtk-x11-2.0 m pcre pixman-1 png pthread pthread-stubs
+WANTLIB += sndio xcb xcb-render xcb-shm z
 
 SEPARATE_BUILD=	concurrent
 
 MULTI_PACKAGES=	-main
+
 PREFIX=		${LOCALBASE}/kaffe
 PREFIX-main=	${LOCALBASE}
+
+MAKE_ENV+= ${_lt_libs}
+MAKE_FLAGS+= ${_lt_libs}
 
 CONFIGURE_STYLE=gnu
 GNU_ARCH=	${MACHINE_ARCH:S/amd64/x86_64/}
@@ -60,12 +62,11 @@ MODGNU_CONFIG_GUESS_DIRS= \
 		${WRKSRC}/libraries/javalib/external/classpath \
 		${WRKSRC}/external/gcc/fastjar
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
-CONFIGURE_ARGS+= \
-		--with-iconv-prefix=${LOCALBASE} \
-		--disable-boehm-gc-configuration \
+CONFIGURE_ARGS+= --disable-boehm-gc-configuration \
+		--enable-static \
 		--with-engine=intrp
 
 post-install:
