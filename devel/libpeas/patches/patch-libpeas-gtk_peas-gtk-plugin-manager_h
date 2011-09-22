@@ -1,0 +1,27 @@
+$OpenBSD: patch-libpeas-gtk_peas-gtk-plugin-manager_h,v 1.1 2011/09/22 10:16:27 jasper Exp $
+
+From 394c8d940d8eae42afb30f00e9c2c366fbcfcda3 Mon Sep 17 00:00:00 2001
+From: Garrett Regier <alias301@gmail.com>
+Date: Sat, 11 Jun 2011 22:37:15 +0000
+Subject: No longer use Gtk[HV]Box as it is deprecated
+
+--- libpeas-gtk/peas-gtk-plugin-manager.h.orig	Thu Sep 22 12:13:05 2011
++++ libpeas-gtk/peas-gtk-plugin-manager.h	Thu Sep 22 12:13:19 2011
+@@ -43,7 +43,7 @@ typedef struct _PeasGtkPluginManagerPrivate PeasGtkPlu
+ 
+ struct _PeasGtkPluginManager
+ {
+-  GtkVBox vbox;
++  GtkBox vbox;
+ 
+   /*< private > */
+   PeasGtkPluginManagerPrivate *priv;
+@@ -51,7 +51,7 @@ struct _PeasGtkPluginManager
+ 
+ struct _PeasGtkPluginManagerClass
+ {
+-  GtkVBoxClass parent_class;
++  GtkBoxClass parent_class;
+ 
+   gpointer padding[8];
+ };

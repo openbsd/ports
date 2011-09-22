@@ -1,0 +1,58 @@
+$OpenBSD: patch-libpeas-gtk_peas-gtk-plugin-manager_c,v 1.1 2011/09/22 10:16:27 jasper Exp $
+
+From 394c8d940d8eae42afb30f00e9c2c366fbcfcda3 Mon Sep 17 00:00:00 2001
+From: Garrett Regier <alias301@gmail.com>
+Date: Sat, 11 Jun 2011 22:37:15 +0000
+Subject: No longer use Gtk[HV]Box as it is deprecated
+
+--- libpeas-gtk/peas-gtk-plugin-manager.c.orig	Sun Feb 13 17:08:45 2011
++++ libpeas-gtk/peas-gtk-plugin-manager.c	Thu Sep 22 11:59:31 2011
+@@ -76,7 +76,7 @@ enum {
+   PROP_VIEW
+ };
+ 
+-G_DEFINE_TYPE (PeasGtkPluginManager, peas_gtk_plugin_manager, GTK_TYPE_VBOX);
++G_DEFINE_TYPE (PeasGtkPluginManager, peas_gtk_plugin_manager, GTK_TYPE_BOX);
+ 
+ static gboolean
+ plugin_is_configurable (PeasGtkPluginManager *pm,
+@@ -266,13 +266,14 @@ show_configure_cb (GtkWidget            *widget,
+ 
+   if (peas_plugin_info_get_help_uri (info) != NULL)
+     {
+-      GtkWidget *buttonbox;
++      GtkWidget *hbuttonbox;
+       GtkWidget *help_button;
+ 
+-      buttonbox = gtk_dialog_get_action_area (GTK_DIALOG (conf_dlg));
++      hbuttonbox = gtk_dialog_get_action_area (GTK_DIALOG (conf_dlg));
+       help_button = gtk_button_new_from_stock (GTK_STOCK_HELP);
+-      gtk_container_add (GTK_CONTAINER (buttonbox), help_button);
+-      gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (buttonbox), help_button, TRUE);
++      gtk_container_add (GTK_CONTAINER (hbuttonbox), help_button);
++      gtk_button_box_set_child_secondary (GTK_BUTTON_BOX (hbuttonbox),
++                                          help_button, TRUE);
+ 
+       g_signal_connect (help_button,
+                         "clicked",
+@@ -374,6 +375,8 @@ peas_gtk_plugin_manager_init (PeasGtkPluginManager *pm
+                          "PeasGtk", "1.0", 0, NULL);
+ 
+   gtk_box_set_spacing (GTK_BOX (pm), 6);
++  gtk_orientable_set_orientation (GTK_ORIENTABLE (pm),
++                                  GTK_ORIENTATION_VERTICAL);
+ 
+   gtk_widget_push_composite_child ();
+ 
+@@ -390,9 +393,9 @@ peas_gtk_plugin_manager_init (PeasGtkPluginManager *pm
+   gtk_label_set_mnemonic_widget (GTK_LABEL (label), pm->priv->sw);
+   gtk_box_pack_start (GTK_BOX (pm), pm->priv->sw, TRUE, TRUE, 0);
+ 
+-  hbuttonbox = gtk_hbutton_box_new ();
+-  gtk_button_box_set_layout (GTK_BUTTON_BOX (hbuttonbox), GTK_BUTTONBOX_END);
++  hbuttonbox = gtk_button_box_new (GTK_ORIENTATION_HORIZONTAL);
+   gtk_box_set_spacing (GTK_BOX (hbuttonbox), 6);
++  gtk_button_box_set_layout (GTK_BUTTON_BOX (hbuttonbox), GTK_BUTTONBOX_END);
+   gtk_box_pack_start (GTK_BOX (pm), hbuttonbox, FALSE, FALSE, 0);
+ 
+   pm->priv->about_button = gtk_button_new_from_stock (GTK_STOCK_ABOUT);

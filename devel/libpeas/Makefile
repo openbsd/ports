@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/22 10:16:27 jasper Exp $
 
 COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	1.0.0
 
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	devel
 
