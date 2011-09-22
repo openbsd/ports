@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/19 07:39:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/22 10:33:00 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,11 +8,11 @@ GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.2.90-20110621
 PKGNAME=		evolution-rss-${GNOME_VERSION:S/-/./}
 
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		mail
 
-EVO_VERSION=		3.0
+EVO_VERSION=		3.2
 SUBST_VARS=		EVO_VERSION
 
 HOMEPAGE=		http://gnome.eu.org/evo/index.php/Evolution_RSS_Reader_Plugin
