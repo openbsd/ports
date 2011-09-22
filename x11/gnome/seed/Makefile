@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/09/21 20:27:30 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/22 08:03:12 ajacoutot Exp $
 
 COMMENT=		GObject JavaScriptCore bridge
 
 GNOME_PROJECT=		seed
-GNOME_VERSION=		3.1.1.1 # XXX: git master as of 21-09-2011
+GNOME_VERSION=		3.2.0
 SHARED_LIBS +=  seed-gtk3                 0.0 # 0.0
 
 CATEGORIES=		devel www
@@ -37,9 +37,6 @@ RUN_DEPENDS=		x11/gnome/js-common
 LIB_DEPENDS=		devel/gobject-introspection>=1.30.0 \
 			devel/mpfr>=3.0.1 \
 			www/webkit,gtk3
-
-# When updating, put back patch-*-Makefile_in
-MASTER_SITES=		http://distfiles.nl/
 
 CONFIGURE_ARGS+=	--enable-readline-module \
 			--enable-multiprocessing-module \

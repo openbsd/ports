@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/09/21 20:27:31 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/09/22 08:03:12 ajacoutot Exp $
 %%SHARED%%
 @bin bin/seed
 include/seed-gtk3/
@@ -82,6 +82,43 @@ share/doc/seed/tutorial/4.png
 share/doc/seed/tutorial/packing.png
 share/doc/seed/tutorial/packing.svg
 share/doc/seed/tutorial/tutorial.html
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/seed/
+share/gtk-doc/html/seed/GtkBuilder-module.html
+share/gtk-doc/html/seed/Sandbox-module.html
+share/gtk-doc/html/seed/api.html
+share/gtk-doc/html/seed/home.png
+share/gtk-doc/html/seed/index.html
+share/gtk-doc/html/seed/index.sgml
+share/gtk-doc/html/seed/ix01.html
+share/gtk-doc/html/seed/js.html
+share/gtk-doc/html/seed/left.png
+share/gtk-doc/html/seed/modules.html
+share/gtk-doc/html/seed/readline-module.html
+share/gtk-doc/html/seed/right.png
+share/gtk-doc/html/seed/seed-Contexts.html
+share/gtk-doc/html/seed/seed-Evaluation.html
+share/gtk-doc/html/seed/seed-Exceptions.html
+share/gtk-doc/html/seed/seed-Initialization.html
+share/gtk-doc/html/seed/seed-JS-Objects.html
+share/gtk-doc/html/seed/seed-JavaScript-Classes.html
+share/gtk-doc/html/seed/seed-Modules.html
+share/gtk-doc/html/seed/seed-Native-Functions.html
+share/gtk-doc/html/seed/seed-Native-Type-Conversion.html
+share/gtk-doc/html/seed/seed-Operating-on-Native-Types.html
+share/gtk-doc/html/seed/seed-SeedClosure.html
+share/gtk-doc/html/seed/seed-Signals.html
+share/gtk-doc/html/seed/seed-building.html
+share/gtk-doc/html/seed/seed-contact.html
+share/gtk-doc/html/seed/seed-importer.html
+share/gtk-doc/html/seed/seed-introduction.html
+share/gtk-doc/html/seed/seed.devhelp2
+share/gtk-doc/html/seed/seed.html
+share/gtk-doc/html/seed/sqlite-module.html
+share/gtk-doc/html/seed/style.css
+share/gtk-doc/html/seed/types.html
+share/gtk-doc/html/seed/up.png
 share/seed-gtk3/
 share/seed-gtk3/dbus.js
 share/seed-gtk3/extensions/
