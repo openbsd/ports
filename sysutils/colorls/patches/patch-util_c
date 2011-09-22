@@ -1,7 +1,66 @@
-$OpenBSD: patch-util_c,v 1.6 2009/10/29 20:10:39 naddy Exp $
+$OpenBSD: patch-util_c,v 1.7 2011/09/22 08:28:56 stsp Exp $
 --- util.c.orig	Wed Oct 28 00:59:21 2009
-+++ util.c	Thu Oct 29 20:21:26 2009
-@@ -59,7 +59,11 @@ void
++++ util.c	Thu Sep 22 09:53:40 2011
+@@ -41,10 +41,12 @@
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
++#include <wchar.h>
+ 
+ #include "ls.h"
+ #include "extern.h"
+ 
++#ifdef SMALL
+ int
+ putname(char *name)
+ {
+@@ -54,12 +56,57 @@ putname(char *name)
+ 		putchar((!isprint(*name) && f_nonprint) ? '?' : *name);
+ 	return len;
+ }
++#else
++int
++putname(char *name)
++{
++	int len;
++	wchar_t wc;
++	size_t n;
++	mbstate_t mbs;
++	int w;
+ 
++	len = 0;
++	bzero(&mbs, sizeof(mbs));
++	while (*name) {
++		n = mbrtowc(&wc, name, MB_CUR_MAX, &mbs);
++		if (n == 0)
++			break;
++		if (n == (size_t)-1 || n == (size_t)-2) {
++			/* Filename encoding doesn't match locale encoding.
++			 * Fall back to printing single bytes. */
++			while (*name) {
++				putchar((!isprint(*name) && f_nonprint)
++				    ? '?' : *name);
++				len++;
++				name++;
++			}
++			return len;
++		}
++		name += n;
++		if (!iswprint(wc) && f_nonprint) {
++			putchar('?');
++			len++;
++		} else {
++			putwchar(wc);
++			w = wcwidth(wc);
++			if (w > 0)
++				len += w;
++		}
++	}
++	return len;
++}
++#endif
++
+ void
  usage(void)
  {
  	(void)fprintf(stderr,
