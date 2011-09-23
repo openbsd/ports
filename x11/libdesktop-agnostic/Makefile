@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/23 08:06:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/23 08:09:18 ajacoutot Exp $
 
 COMMENT=		desktop-agnostic library, apis and tools
 
 V=			0.3.92
 DISTNAME=		libdesktop-agnostic-$V
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -38,8 +38,8 @@ WANTLIB = GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
 WANTLIB += c cairo drm expat ffi fontconfig freetype gconf-2 gdk-x11-2.0
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-x11-2.0 iconv intl m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs python2.7
+WANTLIB += gthread-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs ${MODPY_WANTLIB}
 WANTLIB += util xcb xcb-render xcb-shm z
 
 CONFIGURE_ARGS =	--config-backends=keyfile,gconf \
