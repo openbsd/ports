@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.73 2011/09/20 21:10:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.74 2011/09/23 08:49:41 ajacoutot Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
 GNOME_VERSION=	3.0.1
-REVISION=	1
+REVISION=	2
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,7 +28,7 @@ WANTLIB += vte2_90 xcb xcb-render xcb-shm z
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
-LIB_DEPENDS=	devel/vte,gtk3
+LIB_DEPENDS=	devel/vte
 
 MODGNOME_TOOLS= yelp
 MODGNOME_DESKTOP_FILE=		Yes

@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.32 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.33 2011/09/23 08:49:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	small and lightweight IDE
 
 DISTNAME=	geany-0.20
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	devel
 
@@ -37,7 +37,7 @@ WANTLIB += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread pthread-stubs stdc++ xcb
 WANTLIB += xcb-render xcb-shm z
 
-LIB_DEPENDS=	devel/vte \
+LIB_DEPENDS=	devel/vte,gtk2 \
 		x11/gtk+2
 RUN_DEPENDS=	devel/desktop-file-utils
 

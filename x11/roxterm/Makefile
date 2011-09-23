@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2011/09/16 12:29:17 espie Exp $
+# $OpenBSD: Makefile,v 1.23 2011/09/23 08:49:41 ajacoutot Exp $
 
 COMMENT=		terminal emulator for X
 
 DISTNAME=		roxterm-2.0.1
-REVISION=	0
+REVISION=		1
 CATEGORIES=		x11
 
 HOMEPAGE=		http://roxterm.sourceforge.net/
@@ -28,7 +28,7 @@ WANTLIB+=	GL ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 
 MODULES=		devel/gettext
 
-LIB_DEPENDS=		devel/vte \
+LIB_DEPENDS=		devel/vte,gtk2 \
 			x11/dbus-glib \
 			devel/libglade2 
 

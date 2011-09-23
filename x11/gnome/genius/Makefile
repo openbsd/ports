@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2011/09/23 08:49:41 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	advanced general purpose calculator
 
 GNOME_PROJECT=	genius
 GNOME_VERSION=	1.0.14
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	http://www.jirka.org/genius.html
 
@@ -37,7 +37,7 @@ RUN_DEPENDS +=	print/ghostscript/gnu
 LIB_DEPENDS=	x11/gtksourceview \
 		devel/gmp \
 		devel/mpfr \
-		devel/vte
+		devel/vte,gtk2
 
 MODGNOME_TOOLS= yelp
 MODGNOME_DESKTOP_FILE=	Yes

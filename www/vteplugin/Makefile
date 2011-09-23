@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.14 2011/09/16 12:00:09 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2011/09/23 08:49:41 ajacoutot Exp $
 
 COMMENT =	npapi vte-based terminal for web browsers
 
 DISTNAME =	vteplugin-0.1
-REVISION =	7
+REVISION =	8
 CATEGORIES =	www x11
 
 # WTFPL
@@ -27,7 +27,7 @@ MODULES =	devel/gettext \
 		devel/waf
 
 LIB_DEPENDS =	x11/gtk+2 \
-		devel/vte
+		devel/vte,gtk2
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/wscript

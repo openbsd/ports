@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2011/09/22 11:35:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2011/09/23 08:49:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
 GNOME_VERSION=		3.1.92
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -52,7 +52,7 @@ RUN_DEPENDS=		misc/shared-mime-info
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			devel/glade \
 			devel/subversion,gnome_keyring \
-			devel/vte,gtk3 \
+			devel/vte \
 			lang/vala>=0.13.4 \
 			textproc/icu4c \
 			x11/gnome/devhelp \

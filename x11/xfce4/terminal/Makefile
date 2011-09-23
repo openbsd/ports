@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/09/19 07:53:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.31 2011/09/23 08:49:41 ajacoutot Exp $
 
 COMMENT=	Xfce4 vte-based terminal
 
@@ -6,7 +6,7 @@ XFCE_VERSION=	0.4.8
 XFCE_GOODIE=	Terminal
 # :L is here for a reason
 PKGNAME=	xfce4-${DISTNAME:L}
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_DISTFILES_CDROM=	Yes
@@ -22,7 +22,7 @@ CONFIGURE_ARGS +=	--program-transform-name='s/Terminal/xfce4-terminal/' \
 
 LIB_DEPENDS=	x11/xfce4/exo \
 		x11/dbus-glib \
-		devel/vte
+		devel/vte,gtk2
 
 WANTLIB=	X11 atk-1.0 c dbus-1 gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 \
 		ICE SM Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes \
