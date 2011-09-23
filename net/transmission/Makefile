@@ -1,19 +1,18 @@
-# $OpenBSD: Makefile,v 1.67 2011/09/16 11:13:41 espie Exp $
+# $OpenBSD: Makefile,v 1.68 2011/09/23 09:12:32 naddy Exp $
+
+ONLY_FOR_ARCHS-qt= ${GCC4_ARCHS}
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gtk=	lightweight BitTorrent client with GTK+ interface
 COMMENT-qt=	lightweight BitTorrent client with Qt interface
 
-VER=		2.13
+VER=		2.33
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
-REVISION-main =	0
-REVISION-gtk =	0
-REVISION-qt =	0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
@@ -31,12 +30,15 @@ FLAVOR?=
 
 MULTI_PACKAGES=	-main
 
-WANTLIB=	c crypto curl event eventextra idn m pthread ssl z
+WANTLIB=	c crypto curl event_core event_extra idn m pthread ssl z
 WANTLIB-main=	${WANTLIB}
 
 MODULES=	devel/gettext textproc/intltool
 LIB_DEPENDS=	net/curl \
-		devel/libeventextra
+		devel/libevent2
+
+BUILD_DEPENDS=	archivers/gtar
+TAR=		${LOCALBASE}/bin/gtar
 
 USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
@@ -44,14 +46,12 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-shared \
 		--disable-libnotify \
 		--disable-libappindicator \
-		--disable-libcanberra \
-		--disable-gconf2
+		--disable-libcanberra
+# unaligned accesses throughout
+CONFIGURE_ARGS+=--disable-utp
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBEVENT_LIBS="-leventextra -levent" \
-		OPENSSL_CFLAGS="-I/usr/include" \
-		OPENSSL_LIBS="-lcrypto"
-MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if ${FLAVOR:L:Mno_gtk}
 CONFIGURE_ARGS+=--disable-gtk
@@ -80,11 +80,10 @@ RUN_DEPENDS-gtk=${PKGNAME-main}:net/transmission,-main \
 MULTI_PACKAGES+=-qt
 .endif
 
-ONLY_FOR_ARCHS-qt = ${GCC4_ARCHS}
 .if ${COMPILER_VERSION:L:Mgcc4*} && !${FLAVOR:L:Mno_qt}
 LIB_DEPENDS+=	x11/qt4
 WANTLIB-qt=	${WANTLIB} QtCore QtDBus QtGui QtNetwork QtXml \
-		dbus-1 expat fontconfig freetype stdc++
+		expat fontconfig freetype stdc++
 RUN_DEPENDS-qt=	${PKGNAME-main}:net/transmission,-main \
 		devel/desktop-file-utils
 

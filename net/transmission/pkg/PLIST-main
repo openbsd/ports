@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST-main,v 1.18 2011/01/10 08:35:16 fgsch Exp $
+@comment $OpenBSD: PLIST-main,v 1.19 2011/09/23 09:12:32 naddy Exp $
+@pkgpath net/transmission
 @newgroup _transmission:662
 @newuser _transmission:662:662:daemon:Transmission Account:/var/transmission:/sbin/nologin
-@pkgpath net/transmission
 @bin bin/transmission-cli
 @bin bin/transmission-create
 @bin bin/transmission-daemon

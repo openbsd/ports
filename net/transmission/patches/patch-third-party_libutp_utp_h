@@ -1,0 +1,13 @@
+$OpenBSD: patch-third-party_libutp_utp_h,v 1.1 2011/09/23 09:12:32 naddy Exp $
+--- third-party/libutp/utp.h.orig	Wed Sep 21 21:57:05 2011
++++ third-party/libutp/utp.h	Wed Sep 21 21:57:39 2011
+@@ -12,7 +12,9 @@
+ #pragma comment(lib,"ws2_32.lib")
+ #else
+ #include <stdlib.h>
++#include <sys/types.h>
+ #include <sys/socket.h>
++#include <netinet/in.h>
+ #include <arpa/inet.h>
+ #endif
+ 
