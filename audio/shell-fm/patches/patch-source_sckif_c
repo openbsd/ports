@@ -1,0 +1,27 @@
+$OpenBSD: patch-source_sckif_c,v 1.1 2011/09/23 10:30:54 dcoppa Exp $
+
+Avoid double free crash
+(upstream git commit 5a43a40df8f9b000c0f8e1c1e0b40813047620b3)
+
+--- source/sckif.c.orig	Wed May 25 12:35:38 2011
++++ source/sckif.c	Fri Sep 23 12:08:36 2011
+@@ -33,6 +33,7 @@
+ #include "getln.h"
+ #include "tag.h"
+ #include "select.h"
++#include "ropen.h"
+ #include "util.h"
+ 
+ #include "globals.h"
+@@ -191,10 +192,7 @@ void handle_client(int client_socket) {
+ 
+ 	if(disconnect) {
+ 		debug("removing client\n");
+-		shutdown(SHUT_RDWR, client_socket);
+-		close(client_socket);
+-		fclose(fd);
+-
++		fshutdown(& fd);
+ 		remove_handle(client_socket);
+ 	}
+ }

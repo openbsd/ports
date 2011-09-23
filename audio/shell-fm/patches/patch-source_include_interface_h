@@ -1,0 +1,15 @@
+$OpenBSD: patch-source_include_interface_h,v 1.1 2011/09/23 10:30:54 dcoppa Exp $
+
+Add mute/unmute support using 'm' key
+(upstream git commit c94473084607ff5761b1257fb735dd96e14bb016)
+
+--- source/include/interface.h.orig	Fri Sep 23 11:53:07 2011
++++ source/include/interface.h	Fri Sep 23 11:53:39 2011
+@@ -24,6 +24,7 @@ extern void quit();
+ extern void unlinknp();
+ extern void volume_up();
+ extern void volume_down();
++void mute();
+ void set_volume(int);
+ 
+ 
