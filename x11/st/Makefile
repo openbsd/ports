@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/23 14:41:31 zinke Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/23 19:11:41 ajacoutot Exp $
 
-COMMENT=		a simple X terminal
+COMMENT=		simple X terminal
 
 DISTNAME=		st-0.1.1
 DISTFILES=		0.1.1.tar.gz
 DIST_SUBDIR=		st
+
+REVISION=		0
 
 CATEGORIES=		x11
 
