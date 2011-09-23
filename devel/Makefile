@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.974 2011/09/22 13:54:11 landry Exp $
+# $OpenBSD: Makefile,v 1.975 2011/09/23 08:49:11 ajacoutot Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -1147,7 +1147,7 @@
      SUBDIR += vtags
      SUBDIR += vtcl
      SUBDIR += vte
-     SUBDIR += vte,gtk3
+     SUBDIR += vte,gtk2
      SUBDIR += waf
      SUBDIR += wcb
      SUBDIR += xdg-user-dirs
