@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2011/09/16 08:48:03 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2011/09/23 18:50:16 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -35,7 +35,9 @@ LIB_DEPENDS-main=	databases/openldap \
 WANTLIB-main +=		ldap_r>=7 lber>=7 sasl2>=2
 
 FLAVORS=		python2.4 python2.7
-FLAVOR?=		python2.7
+.if !defined(FLAVOR) || empty(FLAVOR)
+FLAVOR=			python2.7
+.endif
 
 .if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
 MULTI_PACKAGES= -main
