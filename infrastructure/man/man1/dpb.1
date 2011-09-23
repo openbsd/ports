@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.13 2011/07/14 10:48:32 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.14 2011/09/23 19:06:36 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: July 14 2011 $
+.Dd $Mdocdate: September 23 2011 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -45,9 +45,18 @@ Its name is an acronym for
 .Nm
 walks ports to figure out dependencies, and starts building ports
 as soon as it can.
-It can take
+.Pp
+On a clean machine,
+.Nm
+will run with sensible defaults if used without options.
+Note, however, that it will produce logs, lock files, packages, and package
+installations.
+.Pp
+.Nm
+can take
 .Ar pkgpath ...
 to build as parameters.
+.Pp
 Options are as follows:
 .Bl -tag -width pkgpathlonger
 .It Fl A Ar arch
@@ -55,7 +64,9 @@ Build packages for given architecture, selecting relevant hosts from the
 cluster.
 By default, the current host's architecture will be used.
 .It Fl a
-Walk the whole tree and builds all packages (default if no pkgpath is given).
+Walk the whole tree and builds all packages (default if no
+.Ar pkgpath
+is given).
 .It Fl b Ar logfile
 Prime the heuristics module with a previous build log, so that packages that
 take a long time to build will happen earlier.
