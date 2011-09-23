@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2011/04/07 11:38:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2011/09/23 08:04:51 jasper Exp $
 
 COMMENT=		OpenGL-based interactive canvas library
 
 DISTNAME=		clutter-${MAJOR}.6
-REVISION=		4
+REVISION=		5
 SHARED_LIBS +=  clutter-glx-1.0      0.0      # .0.6
 
 MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter/1.0/}
@@ -31,5 +31,8 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 
 CONFIGURE_ENV=          CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
                         LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+# XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
+CFLAGS +=      "-DG_CONST_RETURN=const"
 
 .include <bsd.port.mk>
