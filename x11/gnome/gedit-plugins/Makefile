@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.40 2011/09/23 08:49:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.41 2011/09/23 09:44:24 ajacoutot Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
 GNOME_VERSION=		3.0.7
 
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		editors
 
@@ -23,7 +23,7 @@ WANTLIB += drm expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 gtksourceview-3.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm xml2 z
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm xml2 z kvm
 
 MODULES=		devel/gettext \
 			lang/python \
