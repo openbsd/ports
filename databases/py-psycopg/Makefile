@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.45 2011/09/23 19:01:24 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2011/09/23 20:00:24 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -38,7 +38,7 @@ BUILD_DEPENDS=	databases/postgresql,-server
 RUN_DEPENDS=	databases/postgresql
 
 FLAVORS=	python2.4 python2.7
-.if empty(FLAVOR) || !defined(FLAVOR)
+.if !defined(FLAVOR) || empty(FLAVOR)
 FLAVOR=	python2.7
 .endif
 
