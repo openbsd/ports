@@ -1,4 +1,4 @@
-$OpenBSD: README-server,v 1.7 2011/06/06 08:43:59 sthen Exp $
+$OpenBSD: README-server,v 1.8 2011/09/23 09:46:14 pea Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -98,7 +98,7 @@ For example, add this to the login.conf(5) file:
 
 Rebuild the login.conf.db file if necessary:
 
-	# [ -f /etc/login/conf.db ] && cap_mkdb /etc/login.conf
+	# [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
 
 For more than about 250 connections, these numbers should be
 increased. Please report any changes and experiences to the package

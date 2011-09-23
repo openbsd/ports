@@ -1,26 +1,22 @@
-# $OpenBSD: Makefile,v 1.154 2011/09/16 08:48:03 espie Exp $
+# $OpenBSD: Makefile,v 1.155 2011/09/23 09:46:14 pea Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
 COMMENT-docs=	PostgreSQL RDBMS documentation
 COMMENT-contrib=PostgreSQL RDBMS contributions
 
-VERSION=	9.0.4
+VERSION=	9.1.0
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
 PKGNAME-docs=	postgresql-docs-${VERSION}
 PKGNAME-contrib=postgresql-contrib-${VERSION}
 
-REVISION-main =	0
-REVISION-server = 2
-REVISION-contrib = 0
-
 CATEGORIES=	databases
-SHARED_LIBS=	ecpg		7.2 \
-		ecpg_compat	4.2 \
-		pgtypes		4.1 \
-		pq		5.3
+SHARED_LIBS=	ecpg		7.3 \
+		ecpg_compat	4.3 \
+		pgtypes		4.2 \
+		pq		5.4
 
 HOMEPAGE=	http://www.postgresql.org/
 
@@ -65,6 +61,7 @@ CONFIGURE_ARGS=	--disable-rpath --with-openssl=/usr \
 		--docdir="${PREFIX}/share/doc/postgresql" \
 		--with-includes="${INCLUDES}" \
 		--with-libraries="${LOCALBASE}/lib" \
+		--with-system-tzdata="/usr/share/zoneinfo" \
 		--with-openssl \
 		--with-ossp-uuid \
 		--with-libxml \
@@ -81,6 +78,7 @@ CONFIGURE_ARGS+=--disable-spinlocks
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 
+ALL_TARGET=	world
 INSTALL_TARGET=	install-world
 
 LIB_DEPENDS-main= textproc/libxml
@@ -124,17 +122,10 @@ NO_REGRESS=	Yes
 
 DOCS=	${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
 	${WRKSRC}/INSTALL ${WRKSRC}/README \
-	${WRKSRC}/doc/README.mb.big5 ${WRKSRC}/doc/README.mb.jp \
 	${WRKSRC}/doc/TODO
-
-post-build:
-	cd ${WRKBUILD}/contrib && exec ${SETENV} ${MAKE_ENV} \
-	    ${MAKE_PROGRAM} ${MAKE_FLAGS} ${ALL_TARGET}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/postgresql
 	${INSTALL_DATA} ${DOCS} ${PREFIX}/share/doc/postgresql
-	cd ${WRKBUILD}/contrib && exec ${SETENV} ${MAKE_ENV} DESTDIR=${WRKINST} \
-		${MAKE_PROGRAM} ${MAKE_FLAGS} ${INSTALL_TARGET}
 
 .include <bsd.port.mk>
