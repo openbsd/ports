@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2010/11/25 13:19:36 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/09/23 15:02:13 dcoppa Exp $
 @bin bin/urxvt
 @bin bin/urxvtc
 @bin bin/urxvtd
@@ -31,3 +31,7 @@ lib/urxvt/urxvt.pm
 @man man/man1/urxvtd.1
 @man man/man3/urxvtperl.3
 @man man/man7/urxvt.7
+share/terminfo/
+share/terminfo/r/
+share/terminfo/r/rxvt-unicode
+share/terminfo/r/rxvt-unicode-256color
