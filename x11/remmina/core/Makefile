@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/23 08:49:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/23 10:23:27 naddy Exp $
 
 COMMENT=		GTK+2 remote desktop client
 
@@ -15,7 +15,7 @@ WANTLIB += pangoft2-1.0 pixman-1 png pthread pthread-stubs unique-1.0
 WANTLIB += vte xcb xcb-render xcb-shm z
 
 LIB_DEPENDS=		devel/libunique \
-			devel/vte,gtk2
+			devel/vte,gtk2 \
 			net/avahi,-gtk,no_mono,no_qt3,no_qt4 \
 			security/libgcrypt
 
