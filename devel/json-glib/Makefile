@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/23 08:09:57 jasper Exp $
 
 COMMENT=		JSON parser for GLib-based libraries and applications
 
@@ -23,9 +23,6 @@ WANTLIB += pcre z glib-2.0 gobject-2.0 gthread-2.0 gio-2.0 gmodule-2.0
 MODULES=		devel/gettext x11/gnome
 
 LIB_DEPENDS=		devel/glib2
-
-USE_GMAKE=		Yes
-USE_LIBTOOL=		Yes
 
 MODGNOME_TOOLS= 	goi
 
