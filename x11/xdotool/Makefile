@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/22 14:04:08 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/23 07:24:04 dcoppa Exp $
 
 COMMENT=	fake keyboard and mouse input
 
@@ -33,6 +33,8 @@ FAKE_FLAGS=	PREFIX="${PREFIX}" \
 		INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}"
 
+# The regression test suite has way too many dependencies, so leave
+# it disabled for now
 NO_REGRESS=	Yes
 
 .include <bsd.port.mk>
