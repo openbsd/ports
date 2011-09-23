@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2011/09/16 10:02:37 espie Exp $
+# $OpenBSD: Makefile,v 1.55 2011/09/23 19:35:57 espie Exp $
 
 SHARED_ONLY=		Yes
 
@@ -49,7 +49,9 @@ LIB_DEPENDS-main=	graphics/jpeg \
 			${MODTK_LIB_DEPENDS}
 
 FLAVORS=		python2.4 python2.7
-FLAVOR?=		python2.7
+.if !defined(FLAVOR) || empty(FLAVOR)
+FLAVOR=		python2.7
+.endif
 
 .if ${FLAVOR:L:Mpython2.4} && !${FLAVOR:L:Npython2.4}
 MULTI_PACKAGES= -main
