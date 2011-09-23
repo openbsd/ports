@@ -1,4 +1,4 @@
-#$OpenBSD: Makefile,v 1.19 2011/07/15 11:10:40 naddy Exp $
+#$OpenBSD: Makefile,v 1.20 2011/09/23 20:57:16 sthen Exp $
 
 COMMENT=	open source MSN Messenger clone
 
@@ -6,10 +6,6 @@ V=		0.98.4
 DISTNAME=	amsn-$V-src
 PKGNAME=	${DISTNAME:S/-src//}
 CATEGORIES=	net
-
-# CxImage requires access to internal png headers.
-# This must be in sync with graphics/png
-PNG_V=		1.5.4
 
 HOMEPAGE=	http://www.amsn-project.net/
 
@@ -38,6 +34,7 @@ RUN_DEPENDS+=	${MODTK_RUN_DEPENDS} \
 BUILD_DEPENDS=	${MODTK_BUILD_DEPENDS} \
 		security/tcltls \
 		graphics/png:configure
+# CxImage requires access to internal png headers.
 
 MODTK_THREADED= Yes
 MODULES=	devel/gettext \
@@ -52,7 +49,7 @@ CONFIGURE_ARGS+=--disable-libv4l \
 		--with-tk="${MODTK_LIBDIR}"
 
 CONFIGURE_ENV+=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include \
-		    -I${WRKDIR}/graphics/png/libpng-${PNG_V}" \
+		    -I${WRKDIR}/libpng" \
 		LDFLAGS="-lm -L${LOCALBASE}/lib" \
 		TK_INC_SPEC="${MODTK_INCDIR}/generic" \
 		TCLSH="${MODTCL_BIN}"
@@ -64,6 +61,7 @@ NO_REGRESS=	Yes # Generic tcl/tk tests.
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/amsn*
 	@${MODTCL_WISH_ADJ} ${WRKSRC}/amsn
+	ln -s ${WRKDIR}/graphics/png/libpng-* ${WRKDIR}/libpng
 
 post-install:
 .for a in amsn amsn-remote amsn-remote-CLI
