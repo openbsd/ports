@@ -1,4 +1,7 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/23 08:02:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/23 08:10:49 ajacoutot Exp $
+
+# XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
+CFLAGS +=      "-DG_CONST_RETURN=const"
 
 COMMENT =	plugin framework library
 
@@ -51,8 +54,5 @@ WANTLIB += freetype gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 gdk_pixbuf-2.0
 WANTLIB += pcre pixman-1 png pthread-stubs xcb z ffi
 WANTLIB += ${MODPY_WANTLIB} gtk-x11-2.0 gdk-x11-2.0
-
-# XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
-CFLAGS +=      "-DG_CONST_RETURN=const"
 
 .include <bsd.port.mk>
