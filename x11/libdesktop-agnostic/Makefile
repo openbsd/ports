@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/23 06:33:38 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/23 08:06:36 ajacoutot Exp $
 
 COMMENT=		desktop-agnostic library, apis and tools
 
 V=			0.3.92
 DISTNAME=		libdesktop-agnostic-$V
+
+REVISION=		0
 
 CATEGORIES=		x11
 
