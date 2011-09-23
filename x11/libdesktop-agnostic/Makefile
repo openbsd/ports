@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/22 13:17:11 landry Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/23 06:33:38 landry Exp $
 
 COMMENT=		desktop-agnostic library, apis and tools
 
@@ -25,7 +25,9 @@ SO_VERSION =		0.0
 SHARED_LIBS +=	${_lib}	${SO_VERSION}
 .endfor
 
-BUILD_DEPENDS=		lang/vala
+BUILD_DEPENDS=		lang/vala \
+			devel/py-gobject
+RUN_DEPENDS=		devel/py-gobject
 LIB_DEPENDS =		x11/gtk+2 \
 			devel/gconf2 \
 			${MODPY_LIB_DEPENDS}
