@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/16 10:02:36 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/23 08:29:37 jasper Exp $
 
 COMMENT=		GTK+2 widget for clutter
 
 DISTNAME=		clutter-gtk-${API_VERSION}.2
-REVISION=		5
+REVISION=		6
 SHARED_LIBS +=  clutter-gtk-0.10      0.0      # .0.0
 
 MASTER_SITES=		${MASTER_SITES_CLUTTER:=clutter-gtk/${MAJOR}/}
@@ -28,5 +28,8 @@ LIB_DEPENDS=		graphics/clutter/core>=1.0.6p3 \
 
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--enable-introspection
+
+# XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
+CFLAGS +=      "-DG_CONST_RETURN=const"
 
 .include <bsd.port.mk>
