@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/23 08:49:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/09/23 09:08:45 ajacoutot Exp $
 
 COMMENT =	npapi vte-based terminal for web browsers
 
 DISTNAME =	vteplugin-0.1
-REVISION =	8
+REVISION =	9
 CATEGORIES =	www x11
 
 # WTFPL
@@ -26,8 +26,7 @@ MASTER_SITES =	http://blog.renevier.net/public/
 MODULES =	devel/gettext \
 		devel/waf
 
-LIB_DEPENDS =	x11/gtk+2 \
-		devel/vte,gtk2
+LIB_DEPENDS =	devel/vte,gtk2
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/wscript
