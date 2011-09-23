@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/16 08:26:11 espie Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/23 08:51:26 dcoppa Exp $
 
 COMMENT =	html5-powered web music server
 
-MODPY_EGG_VERSION = 0.5
+MODPY_EGG_VERSION = 0.6
 DISTNAME =	zeya_${MODPY_EGG_VERSION}.orig
 PKGNAME =	zeya-${MODPY_EGG_VERSION}
-REVISION =	1
 CATEGORIES =	audio www
 
 HOMEPAGE =	http://web.psung.name/zeya/
 
-MASTER_SITES =	http://archive.ubuntu.com/ubuntu/pool/universe/z/zeya/ \
-		http://ftp.de.debian.org/debian/pool/main/z/zeya/
+MASTER_SITES =	http://ftp.de.debian.org/debian/pool/main/z/zeya/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
 
