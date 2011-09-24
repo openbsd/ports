@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.976 2011/09/23 08:51:50 naddy Exp $
+# $OpenBSD: Makefile,v 1.977 2011/09/24 19:10:37 kili Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -163,6 +163,8 @@
      SUBDIR += hs-bimap
      SUBDIR += hs-binary
      SUBDIR += hs-blaze-builder
+     SUBDIR += hs-blaze-builder-enumerator
+     SUBDIR += hs-case-insensitive
      SUBDIR += hs-cereal
      SUBDIR += hs-control-timeout
      SUBDIR += hs-convertible
