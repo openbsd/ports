@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/07/07 11:18:25 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/09/24 09:47:21 jasper Exp $
 
 COMMENT=	hfsplus filesystem access tool
 
@@ -41,11 +41,7 @@ WRKDIST=		${WRKDIR}/hfsplus-${VERSION}
 DOC=			bugs.html hfsp.html libhfsp.html
 
 post-patch:
-	@if [ -f ${LOCALBASE}/share/libtool/config/ltmain.sh ]; then \
-	    cd ${WRKDIST} && ln -s ${LOCALBASE}/share/libtool/config/ltmain.sh; \
-	else \
-	    cd ${WRKDIST} && ln -s ${LOCALBASE}/share/libtool/ltmain.sh; \
-	fi
+	@cd ${WRKDIST} && ln -s ${LOCALBASE}/share/libtool/config/ltmain.sh \
 	@cd ${WRKDIST} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		${MAKE_PROGRAM} -f Makefile.cvs all
