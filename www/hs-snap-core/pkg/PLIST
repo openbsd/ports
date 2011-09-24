@@ -1,15 +1,14 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/04/11 14:55:41 kili Exp $
-@bin bin/snap
+@comment $OpenBSD: PLIST,v 1.6 2011/09/24 19:08:45 kili Exp $
 lib/ghc/${DISTNAME}/
-lib/ghc/${DISTNAME}/Data/
-lib/ghc/${DISTNAME}/Data/CIByteString.hi
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Snap/
 lib/ghc/${DISTNAME}/Snap/Internal/
 lib/ghc/${DISTNAME}/Snap/Internal/Debug.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Http/
 lib/ghc/${DISTNAME}/Snap/Internal/Http/Types.hi
+lib/ghc/${DISTNAME}/Snap/Internal/Instances.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Iteratee/
+lib/ghc/${DISTNAME}/Snap/Internal/Iteratee/BoyerMooreHorspool.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Iteratee/Debug.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Parsing.hi
 lib/ghc/${DISTNAME}/Snap/Internal/Routing.hi
@@ -18,7 +17,9 @@ lib/ghc/${DISTNAME}/Snap/Iteratee.hi
 lib/ghc/${DISTNAME}/Snap/Types.hi
 lib/ghc/${DISTNAME}/Snap/Util/
 lib/ghc/${DISTNAME}/Snap/Util/FileServe.hi
+lib/ghc/${DISTNAME}/Snap/Util/FileUploads.hi
 lib/ghc/${DISTNAME}/Snap/Util/GZip.hi
+lib/ghc/${DISTNAME}/Snap/Util/Readable.hi
 lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
 lib/ghc/${DISTNAME}/register.sh
 @exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
@@ -27,16 +28,20 @@ lib/ghc/${DISTNAME}/unregister.sh
 share/doc/hs-${DISTNAME}/
 share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
-share/doc/hs-${DISTNAME}/html/Data-CIByteString.html
 share/doc/hs-${DISTNAME}/html/Snap-Internal-Debug.html
 share/doc/hs-${DISTNAME}/html/Snap-Internal-Http-Types.html
 share/doc/hs-${DISTNAME}/html/Snap-Internal-Iteratee-Debug.html
+share/doc/hs-${DISTNAME}/html/Snap-Internal-Parsing.html
 share/doc/hs-${DISTNAME}/html/Snap-Iteratee.html
 share/doc/hs-${DISTNAME}/html/Snap-Types.html
 share/doc/hs-${DISTNAME}/html/Snap-Util-FileServe.html
+share/doc/hs-${DISTNAME}/html/Snap-Util-FileUploads.html
 share/doc/hs-${DISTNAME}/html/Snap-Util-GZip.html
+share/doc/hs-${DISTNAME}/html/Snap-Util-Readable.html
+share/doc/hs-${DISTNAME}/html/doc-index-36.html
+share/doc/hs-${DISTNAME}/html/doc-index-60.html
+share/doc/hs-${DISTNAME}/html/doc-index-61.html
 share/doc/hs-${DISTNAME}/html/doc-index-62.html
-share/doc/hs-${DISTNAME}/html/doc-index-95.html
 share/doc/hs-${DISTNAME}/html/doc-index-A.html
 share/doc/hs-${DISTNAME}/html/doc-index-All.html
 share/doc/hs-${DISTNAME}/html/doc-index-B.html
@@ -48,6 +53,7 @@ share/doc/hs-${DISTNAME}/html/doc-index-G.html
 share/doc/hs-${DISTNAME}/html/doc-index-H.html
 share/doc/hs-${DISTNAME}/html/doc-index-I.html
 share/doc/hs-${DISTNAME}/html/doc-index-J.html
+share/doc/hs-${DISTNAME}/html/doc-index-K.html
 share/doc/hs-${DISTNAME}/html/doc-index-L.html
 share/doc/hs-${DISTNAME}/html/doc-index-M.html
 share/doc/hs-${DISTNAME}/html/doc-index-N.html
@@ -58,20 +64,23 @@ share/doc/hs-${DISTNAME}/html/doc-index-S.html
 share/doc/hs-${DISTNAME}/html/doc-index-T.html
 share/doc/hs-${DISTNAME}/html/doc-index-U.html
 share/doc/hs-${DISTNAME}/html/doc-index-W.html
+share/doc/hs-${DISTNAME}/html/doc-index-Y.html
 share/doc/hs-${DISTNAME}/html/doc-index.html
 share/doc/hs-${DISTNAME}/html/frames.html
 share/doc/hs-${DISTNAME}/html/haddock-util.js
 share/doc/hs-${DISTNAME}/html/hslogo-16.png
 share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
-share/doc/hs-${DISTNAME}/html/mini_Data-CIByteString.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Internal-Debug.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Internal-Http-Types.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Internal-Iteratee-Debug.html
+share/doc/hs-${DISTNAME}/html/mini_Snap-Internal-Parsing.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Iteratee.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Types.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Util-FileServe.html
+share/doc/hs-${DISTNAME}/html/mini_Snap-Util-FileUploads.html
 share/doc/hs-${DISTNAME}/html/mini_Snap-Util-GZip.html
+share/doc/hs-${DISTNAME}/html/mini_Snap-Util-Readable.html
 share/doc/hs-${DISTNAME}/html/minus.gif
 share/doc/hs-${DISTNAME}/html/ocean.css
 share/doc/hs-${DISTNAME}/html/plus.gif

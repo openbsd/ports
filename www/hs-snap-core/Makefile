@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/16 12:00:06 espie Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/24 19:08:45 kili Exp $
 
 COMMENT =		Snap Haskell Web Framework
 
-DISTNAME =		snap-core-0.2.16
-REVISION =		5
+DISTNAME =		snap-core-0.5.3.1
 CATEGORIES =		www
 HOMEPAGE =		http://snapframework.com/
 
@@ -15,25 +14,24 @@ PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
 
-MODULES =		converters/libiconv \
-			lang/ghc
+MODULES =		lang/ghc
 
 MODGHC_BUILD =		cabal hackage haddock register
 
-WANTLIB +=		c gmp m pthread util z
-
 RUN_DEPENDS +=		archivers/hs-zlib \
-			devel/hs-cereal \
+			devel/hs-blaze-builder \
+			devel/hs-case-insensitive \
 			devel/hs-directory-tree \
 			devel/hs-dlist \
-			devel/hs-iteratee \
+			devel/hs-enumerator \
 			devel/hs-MonadCatchIO-transformers \
-			devel/hs-monads-fd \
 			devel/hs-mtl \
-			devel/hs-transformers \
 			devel/hs-text \
+			devel/hs-transformers \
 			devel/hs-unix-compat \
+			devel/hs-vector \
 			textproc/hs-attoparsec \
+			textproc/hs-attoparsec-enumerator \
 			textproc/hs-bytestring-nums \
 			textproc/hs-bytestring-show
 BUILD_DEPENDS +=	${RUN_DEPENDS}
