@@ -1,7 +1,7 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
 #	from: @(#)bsd.subdir.mk	5.9 (Berkeley) 2/1/91
-#	$OpenBSD: bsd.port.subdir.mk,v 1.99 2011/03/20 19:28:07 espie Exp $
+#	$OpenBSD: bsd.port.subdir.mk,v 1.100 2011/09/24 07:36:03 espie Exp $
 #	FreeBSD Id: bsd.port.subdir.mk,v 1.20 1997/08/22 11:16:15 asami Exp
 #
 # The include file <bsd.port.subdir.mk> contains the default targets
@@ -59,6 +59,13 @@ ARCH ?!= uname -m
 
 ECHO_MSG ?= echo
 
+FULLPATH ?= No
+.if ${FULLPATH:L} == "yes"
+_FULLPATH = true
+.else
+_FULLPATH = false
+.endif
+
 # create a full list of SUBDIRS...
 .if empty(PKGPATH)
 _FULLSUBDIR := ${SUBDIR}
@@ -103,6 +110,7 @@ _subdir_fragment = \
 	_STARTDIR_SEEN=${_STARTDIR_SEEN}; \
 	unset SUBDIR SUBDIRLIST || true; \
 	export _STARTDIR_SEEN; \
+	_fullpath=${_FULLPATH}; \
 	for subdir in ${_FULLSUBDIR:QL}; do \
 		if ! $${_STARTDIR_SEEN}; then \
 			case "${STARTDIR}" in \
@@ -115,7 +123,7 @@ _subdir_fragment = \
 			esac; \
 		fi; \
 		${_SKIP_STUFF}; \
-		if ${_flavor_fragment}; then \
+		if ${_pflavor_fragment}; then \
 			eval $${echo_msg} "===\> $$subdir"; \
 			if ! (eval $$toset exec ${MAKE} $$target); then \
 				eval $${echo_msg} "===\> Exiting $$subdir with an error"; \

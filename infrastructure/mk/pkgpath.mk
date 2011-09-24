@@ -1,4 +1,4 @@
-# $OpenBSD: pkgpath.mk,v 1.35 2011/03/28 00:16:13 fgsch Exp $
+# $OpenBSD: pkgpath.mk,v 1.36 2011/09/24 07:36:02 espie Exp $
 # ex:ts=4 sw=4 filetype=make:
 #	pkgpath.mk - 2003 Marc Espie
 #	This file is in the public domain.
@@ -28,9 +28,9 @@ PKGDEPTH = ${PKGPATH:C|[^./][^/]*|..|g}/
 
 # Code to invoke to split dir,-multi,flavor
 
-_flavor_fragment = \
+_pflavor_fragment = \
 	unset FLAVOR SUBPACKAGE || true; \
-	multi=''; flavor=''; space=''; sawflavor=false; \
+	multi=''; flavor=''; space=''; sawflavor=$${_fullpath}; \
 	reported=false; found_dir=false; \
 	case "$$subdir" in \
 	"") \
@@ -83,6 +83,8 @@ _flavor_fragment = \
 	$$found_dir || $$reported || \
 	    echo 1>&2 ">> Broken dependency: $$dir non existent $$extra_msg"; \
 	$$found_dir
+
+_flavor_fragment = _fullpath=false; ${_pflavor_fragment}
 
 _depfile_fragment = \
 	case X$${_DEPENDS_FILE} in \
