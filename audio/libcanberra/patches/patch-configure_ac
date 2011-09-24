@@ -1,15 +1,6 @@
-$OpenBSD: patch-configure_ac,v 1.7 2011/04/13 06:47:22 ajacoutot Exp $
+$OpenBSD: patch-configure_ac,v 1.8 2011/09/24 06:45:57 ajacoutot Exp $
 --- configure.ac.orig	Thu Feb 24 22:55:54 2011
 +++ configure.ac	Tue Apr 12 15:02:53 2011
-@@ -91,7 +91,7 @@ dnl can give the proper place to find libltdl through 
- dnl variables like LDFLAGS and CPPFLAGS.
- 
- AC_CHECK_HEADER([ltdl.h],
--    [AC_CHECK_LIB([ltdl], [lt_dladvise_init], [LIBLTDL=-lltdl], [LIBLTDL=])],
-+    [AC_CHECK_LIB([ltdl], [lt_dlopen], [LIBLTDL=-lltdl], [LIBLTDL=])],
-     [LIBLTDL=])
- 
- AS_IF([test "x$LIBLTDL" = "x"],
 @@ -246,6 +246,36 @@ else
      HAVE_OSS=0
  fi

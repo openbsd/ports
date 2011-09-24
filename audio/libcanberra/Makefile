@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/16 08:26:10 espie Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/24 06:45:57 ajacoutot Exp $
 
 COMMENT-main=	implementation of the Freedesktop sound theme spec.
 COMMENT-gtk=	gtk+2 helper for libcanberra
@@ -97,7 +97,7 @@ CONFIGURE_ARGS= 	${CONFIGURE_SHARED} \
 			--disable-pulse \
 			--disable-tdb \
 			--disable-udev \
-			--enable-gtk-doc=no
+			--disable-gtk-doc
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
