@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.29 2011/09/24 12:23:41 ajacoutot Exp $
+$OpenBSD: README,v 1.30 2011/09/24 13:45:35 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -70,8 +70,11 @@ in ~/.xsession when using xdm(1) (X Display Manager login)
 mDNS/DNS-SD support
 ===================
 The avahi-daemon(8) daemon provides Zeroconf support (aka. Bonjour /
-Rendezvous) in GNOME. To make use of it, rc.conf.local(5) needs to
-contain the following line:
+Rendezvous) in GNOME. Several applications can optionally benefit from
+it (e.g. the "Network" shortcut in nautilus(1)) while some others
+will not work at all without it (e.g. seahorse-sharing(1)).
+
+To make use of it, rc.conf.local(5) needs to contain the following line:
     multicast_host=YES
 and "avahi_daemon" needs to be added to the "pkg_scripts" variable
 _after_ "dbus_daemon".
