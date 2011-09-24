@@ -1,16 +1,18 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/04/11 14:54:34 kili Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/09/24 19:08:10 kili Exp $
 lib/ghc/${DISTNAME}/
 lib/ghc/${DISTNAME}/HS${DISTNAME}.o
 lib/ghc/${DISTNAME}/Text/
 lib/ghc/${DISTNAME}/Text/Templating/
 lib/ghc/${DISTNAME}/Text/Templating/Heist/
 lib/ghc/${DISTNAME}/Text/Templating/Heist.hi
-lib/ghc/${DISTNAME}/Text/Templating/Heist/Constants.hi
 lib/ghc/${DISTNAME}/Text/Templating/Heist/Internal.hi
 lib/ghc/${DISTNAME}/Text/Templating/Heist/Splices/
 lib/ghc/${DISTNAME}/Text/Templating/Heist/Splices.hi
 lib/ghc/${DISTNAME}/Text/Templating/Heist/Splices/Apply.hi
 lib/ghc/${DISTNAME}/Text/Templating/Heist/Splices/Bind.hi
+lib/ghc/${DISTNAME}/Text/Templating/Heist/Splices/BindStrict.hi
+lib/ghc/${DISTNAME}/Text/Templating/Heist/Splices/Cache.hi
+lib/ghc/${DISTNAME}/Text/Templating/Heist/Splices/Html.hi
 lib/ghc/${DISTNAME}/Text/Templating/Heist/Splices/Ignore.hi
 lib/ghc/${DISTNAME}/Text/Templating/Heist/Splices/Markdown.hi
 lib/ghc/${DISTNAME}/Text/Templating/Heist/Splices/Static.hi
@@ -26,6 +28,9 @@ share/doc/hs-${DISTNAME}/LICENSE
 share/doc/hs-${DISTNAME}/html/
 share/doc/hs-${DISTNAME}/html/Text-Templating-Heist-Splices-Apply.html
 share/doc/hs-${DISTNAME}/html/Text-Templating-Heist-Splices-Bind.html
+share/doc/hs-${DISTNAME}/html/Text-Templating-Heist-Splices-BindStrict.html
+share/doc/hs-${DISTNAME}/html/Text-Templating-Heist-Splices-Cache.html
+share/doc/hs-${DISTNAME}/html/Text-Templating-Heist-Splices-Html.html
 share/doc/hs-${DISTNAME}/html/Text-Templating-Heist-Splices-Ignore.html
 share/doc/hs-${DISTNAME}/html/Text-Templating-Heist-Splices-Markdown.html
 share/doc/hs-${DISTNAME}/html/Text-Templating-Heist-Splices-Static.html
@@ -41,6 +46,9 @@ share/doc/hs-${DISTNAME}/html/index-frames.html
 share/doc/hs-${DISTNAME}/html/index.html
 share/doc/hs-${DISTNAME}/html/mini_Text-Templating-Heist-Splices-Apply.html
 share/doc/hs-${DISTNAME}/html/mini_Text-Templating-Heist-Splices-Bind.html
+share/doc/hs-${DISTNAME}/html/mini_Text-Templating-Heist-Splices-BindStrict.html
+share/doc/hs-${DISTNAME}/html/mini_Text-Templating-Heist-Splices-Cache.html
+share/doc/hs-${DISTNAME}/html/mini_Text-Templating-Heist-Splices-Html.html
 share/doc/hs-${DISTNAME}/html/mini_Text-Templating-Heist-Splices-Ignore.html
 share/doc/hs-${DISTNAME}/html/mini_Text-Templating-Heist-Splices-Markdown.html
 share/doc/hs-${DISTNAME}/html/mini_Text-Templating-Heist-Splices-Static.html
