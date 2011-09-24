@@ -1,0 +1,5 @@
+Contains renderers and parsers for both XML and HTML 5 document
+fragments, which share data structures wo that it's easy to work
+with both.  Document fragments are bits of documents, which are not
+constrained by some of the high-level structure rules (in particular,
+they may contain more than one root element).
