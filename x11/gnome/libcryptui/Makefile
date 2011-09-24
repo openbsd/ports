@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/24 11:42:20 ajacoutot Exp $
 
 COMMENT=	interface components for OpenPGP
 
 GNOME_PROJECT=	libcryptui
-GNOME_VERSION=	3.1.91
-
-REVISION=	0
+GNOME_VERSION=	3.2.0
 
 SHARED_LIBS +=	cryptui              2.0      # .0.0
 
@@ -26,7 +24,7 @@ WANTLIB += expat fontconfig freetype gcrypt gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-keyring gobject-2.0
 WANTLIB += gpg-error gpgme gthread-2.0 gtk-3 m notify pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm z ffi kvm
 
 LIB_DEPENDS=	x11/dbus-glib \
 		security/gpgme \
