@@ -1,0 +1,12 @@
+$OpenBSD: patch-common_PythonChecker_c,v 1.1.1.1 2011/09/24 12:21:03 ajacoutot Exp $
+--- common/PythonChecker.c.orig	Tue Sep 20 19:07:08 2011
++++ common/PythonChecker.c	Tue Sep 20 19:07:31 2011
+@@ -229,7 +229,7 @@ static GObject * deja_dup_python_checker_constructor (
+ 	self = DEJA_DUP_PYTHON_CHECKER (obj);
+ 	_tmp0_ = g_strdup_printf ("import %s", self->priv->_module);
+ 	import = _tmp0_;
+-	_tmp1_ = g_strdup ("python");
++	_tmp1_ = g_strdup ("${MODPY_BIN}");
+ 	_tmp2_ = g_strdup ("-c");
+ 	_tmp3_ = g_strdup (import);
+ 	_tmp4_ = g_new0 (gchar*, 3 + 1);

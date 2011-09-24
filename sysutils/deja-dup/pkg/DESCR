@@ -1,0 +1,10 @@
+Deja Dup is a simple backup tool. It hides the complexity of backing up
+the Right Way (encrypted, off-site, and regular) and uses duplicity as
+the backend.
+Features:
+    * Support for local, remote, or cloud backup locations, such as
+      Amazon S3, Rackspace Cloud Files, and Ubuntu One
+    * Securely encrypts and compresses your data
+    * Incrementally backs up, letting you restore from any backup
+    * Schedules regular backups
+    * Integrates well into your GNOME desktop
