@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2011/09/16 10:31:24 espie Exp $
+# $OpenBSD: Makefile,v 1.47 2011/09/24 09:40:53 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -73,9 +73,7 @@ AUTOCONF_VERSION= 2.61
 AUTOMAKE_VERSION= 1.9
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/autotools
 CONFIGURE_ARGS+=--enable-a52 \
-		--enable-a52-default-decoder \
 		--enable-bktr \
-		--disable-faac \
 		--enable-freetype2 \
 		--enable-lame \
 		--enable-libdv \
