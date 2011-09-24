@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.28 2011/09/21 09:42:25 ajacoutot Exp $
+$OpenBSD: README,v 1.29 2011/09/24 12:23:41 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -31,6 +31,7 @@ It is advised to _always_ install the "minimal" set (see also: the
 --------------------
     $ sudo pkg_add \
 	alacarte \
+	deja-dup \
     	ekiga \
 	empathy \
 	epiphany-extensions \
@@ -143,6 +144,7 @@ Utilities
 ---------
 
     * alacarte - simple menu editing tool
+    * deja-dup - simple (encrypted) backup tool
     * gconf-editor - editor for GConf settings
     * gnome-nettool - interface for various networking tools
     * gnome-tweak-tool - tool to tweak hidden GTK/GNOME settings
