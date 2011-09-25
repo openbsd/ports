@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.93 2011/09/21 13:38:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.94 2011/09/25 07:25:08 ajacoutot Exp $
 
 COMMENT=		GNOME file manager
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME file manager
 # the nautilus extensions directory changes:
 # (i.e. ${LOCALBASE}/lib/nautilus/extensions-3.0)
 # graphics/evince
+# sysutils/deja-dup
 # x11/gnome/file-roller
 # x11/gnome/main-menu
 # x11/gnome/nautilus-open-terminal
