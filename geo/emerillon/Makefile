@@ -1,10 +1,13 @@
-# $OpenBSD: Makefile,v 1.13 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/25 18:54:28 jasper Exp $
+
+# XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
+CFLAGS +=		"-DG_CONST_RETURN=const"
 
 COMMENT =	map viewer using Openstreetmap data
 
 GNOME_VERSION =	0.1.2
 GNOME_PROJECT =	emerillon
-REVISION=	4
+REVISION=	5
 
 CATEGORIES =	geo x11
 
