@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.13 2011/06/04 12:58:24 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.14 2011/09/25 10:40:25 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -110,7 +110,9 @@ sub complete_subdirs
 			next if defined $v->{info};
 			next if defined $v->{category};
 			if (defined $v->{tried}) {
-				$self->{engine}->add_fatal($v);
+				$self->{engine}->add_fatal($v) 
+				    if !defined $v->{errored};
+				$v->{errored} = 1;
 			} else {
 				$v->add_to_subdirlist(\@subdirlist);
 				$v->{tried} = 1;
