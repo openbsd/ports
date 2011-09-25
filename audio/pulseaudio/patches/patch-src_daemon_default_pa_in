@@ -1,9 +1,10 @@
-$OpenBSD: patch-src_daemon_default_pa_in,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
+$OpenBSD: patch-src_daemon_default_pa_in,v 1.2 2011/09/25 17:23:19 ajacoutot Exp $
 
 - Adjust path to soundfiles.
+- Use /dev/audio instead of /dev/dsp
 
 --- src/daemon/default.pa.in.orig	Thu Jun 23 22:18:54 2011
-+++ src/daemon/default.pa.in	Sat Sep 17 12:36:59 2011
++++ src/daemon/default.pa.in	Sun Sep 25 19:13:48 2011
 @@ -22,10 +22,10 @@
  .nofail
  
@@ -18,4 +19,15 @@ $OpenBSD: patch-src_daemon_default_pa_in,v 1.1.1.1 2011/09/25 09:30:52 robert Ex
 +#load-sample-lazy pulse-access ${LOCALBASE}/share/sounds/generic.wav
  
  .fail
+ 
+@@ -43,8 +43,8 @@ load-module module-augment-properties
+ ### see below -- for doing this automatically)
+ #load-module module-alsa-sink
+ #load-module module-alsa-source device=hw:1,0
+-#load-module module-oss device="/dev/dsp" sink_name=output source_name=input
+-#load-module module-oss-mmap device="/dev/dsp" sink_name=output source_name=input
++#load-module module-oss device="/dev/audio" sink_name=output source_name=input
++#load-module module-oss-mmap device="/dev/audio" sink_name=output source_name=input
+ #load-module module-null-sink
+ #load-module module-pipe-sink
  
