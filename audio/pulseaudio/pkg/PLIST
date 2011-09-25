@@ -1,7 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
-@newgroup _pulse:688
-@newgroup _pulse-access:689
-@newuser _pulse:688:688:daemon:Pulseaudio User:/var/run/pulse:/sbin/nologin
+@comment $OpenBSD: PLIST,v 1.2 2011/09/25 09:59:08 ajacoutot Exp $
+@newgroup _pulse:683
+@newgroup _pulse-access:684
+@newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
 bin/esdcompat
 @bin bin/pabrowse
 @bin bin/pacat

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/25 09:43:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/25 09:59:08 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -12,7 +12,7 @@ SHARED_LIBS +=  pulse-simple              0.0 # 0.3
 SHARED_LIBS +=  pulse                     0.0 # 12.4
 CATEGORIES=		audio
 
-REVISION=		0
+REVISION=		1
 
 SUBST_VARS+=		VERSION
 
