@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/25 10:23:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/25 11:05:53 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -7,7 +7,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		0.9.23
 DISTNAME=		pulseaudio-${VERSION}
 
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  pulse-browse              0.0 # 1.1
 SHARED_LIBS +=  pulse-mainloop-glib       0.0 # 0.4
@@ -43,7 +43,10 @@ USE_GMAKE=		Yes
 USE_LIBTOOL=		gnu
 LIBTOOL_FLAGS=		--tag=disable-static
 
-BUILD_DEPENDS+=		archivers/gtar
+# module-console-kit.so
+RUN_DEPENDS=		sysutils/consolekit
+
+BUILD_DEPENDS=		archivers/gtar
 LIB_DEPENDS=		audio/libsamplerate \
 			audio/speex \
 			databases/gdbm \
@@ -54,7 +57,7 @@ LIB_DEPENDS=		audio/libsamplerate \
 
 AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE=	autoconf gnu
-CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--disable-static \
 			--disable-atomic-arm-linux-helpers \
 			--with-system-user=_pulse \
@@ -63,11 +66,15 @@ CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
 			--with-database=gdbm \
 			--enable-x11 \
 			--disable-alsa \
+			--disable-asyncns \
+			--disable-bluez \
+			--disable-gtk2 \
 			--disable-jack \
 			--disable-hal \
 			--disable-hal-compat \
 			--disable-udev \
 			--disable-lirc \
+			--disable-solaris \
 			--disable-tcpwrap \
 			--enable-oss-output \
 			--enable-oss-wrapper \
@@ -77,7 +84,7 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 				-Wl,-rpath,${TRUEPREFIX}/lib/pulse-${VERSION}/modules/" \
 			PTHREAD_LIBS="-pthread"
 
-FAKE_FLAGS+=		xdgautostartdir="${PREFIX}/share/examples/pulseaudio/xdg/autostart" \
+FAKE_FLAGS=		xdgautostartdir="${PREFIX}/share/examples/pulseaudio/xdg/autostart" \
 			dbuspolicydir="${PREFIX}/share/examples/pulseaudio/dbus-1/system.d" \
 			pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse/"
 
