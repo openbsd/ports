@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/25 09:59:08 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/25 10:20:37 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,13 +6,15 @@ COMMENT=		cross-platform networked sound server
 
 VERSION=		0.9.23
 DISTNAME=		pulseaudio-${VERSION}
+
+REVISION=		2
+
 SHARED_LIBS +=  pulse-browse              0.0 # 1.1
 SHARED_LIBS +=  pulse-mainloop-glib       0.0 # 0.4
 SHARED_LIBS +=  pulse-simple              0.0 # 0.3
 SHARED_LIBS +=  pulse                     0.0 # 12.4
-CATEGORIES=		audio
 
-REVISION=		1
+CATEGORIES=		audio
 
 SUBST_VARS+=		VERSION
 
@@ -38,6 +40,7 @@ WANTLIB += ssl xcb z
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		gnu
+LIBTOOL_FLAGS=		--tag=disable-static
 
 BUILD_DEPENDS+=		archivers/gtar
 LIB_DEPENDS=		audio/libsamplerate \
@@ -51,6 +54,7 @@ LIB_DEPENDS=		audio/libsamplerate \
 AUTOCONF_VERSION=	2.68
 CONFIGURE_STYLE=	autoconf gnu
 CONFIGURE_ARGS+=	${CONFIGURE_SHARED} \
+			--disable-static \
 			--disable-atomic-arm-linux-helpers \
 			--with-system-user=_pulse \
 			--with-system-group=_pulse \
