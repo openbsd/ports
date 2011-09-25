@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.41 2011/09/23 08:49:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2011/09/25 17:25:38 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		3.1.92
-REVISION=		2
+GNOME_VERSION=		3.2.0
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -43,7 +42,8 @@ WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 util vala-0.14 vte2_90
 WANTLIB += webkitgtk-3.0 xcb xcb-render xcb-shm xml2 xslt z
 WANTLIB += ${MODPY_WANTLIB}
 
-BUILD_DEPENDS=		devel/autogen>=5.6.5
+BUILD_DEPENDS=		devel/autogen>=5.6.5 \
+			devel/bison
 # libgda is needed by the symbol-db plugin, which we don't build on OpenBSD.
 # though GDA_CFLAGS is used in various Makefile's. So instead of changing
 # dozens of files, we just drop the LIB_DEPENDS and keep the BUILD_DEPENDS.
@@ -59,8 +59,7 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			x11/gnome/gdl \
 			x11/gtksourceview3
 
-# XXX: Remove when updating to a stable release
-BUILD_DEPENDS+=		devel/bison
+BUILD_DEPENDS+=		
 
 LIBTOOL_FLAGS=		--tag=disable-static
 MODGNOME_DESKTOP_FILE=		Yes
