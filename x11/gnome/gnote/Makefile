@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.12 2011/09/25 17:33:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2011/09/25 18:47:28 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		desktop note-taking application written in C++
 
 GNOME_PROJECT=		gnote
 GNOME_VERSION=		0.8.0
+REVISION=		0
 
 SUBST_VARS=		GNOME_VERSION
 
@@ -35,7 +36,6 @@ BUILD_DEPENDS=		devel/boost>=1.42.0p6 \
 			devel/gsettings-desktop-schemas
 RUN_DEPENDS=		devel/gsettings-desktop-schemas
 LIB_DEPENDS=		sysutils/e2fsprogs>=1.41.4p5 \
-			textproc/gtkspell \
 			textproc/libxslt \
 			x11/gnome/panel \
 			x11/gtk3mm

@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure,v 1.1 2011/09/25 18:47:28 ajacoutot Exp $
+
+Don't shave the build.
+
+--- configure.orig	Sun Sep 25 20:40:49 2011
++++ configure	Sun Sep 25 20:41:37 2011
+@@ -18708,13 +18708,6 @@ SHAVE_SAVED_LIBTOOL=$LIBTOOL
+ 
+ LIBTOOL="\$(SHELL) \$(shavedir)/shave-libtool '\$(SHAVE_SAVED_LIBTOOL)'"
+ 
+-SHAVE_SAVED_CC=$CC
+-SHAVE_SAVED_CXX=$CXX
+-
+-
+-CC="\$(SHELL) \$(shavedir)/shave cc '\$(SHAVE_SAVED_CC)'"
+-CXX="\$(SHELL) \$(shavedir)/shave cxx '\$(SHAVE_SAVED_CXX)'"
+-
+ 
+ 
+ 
