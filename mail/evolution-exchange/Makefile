@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2011/09/21 13:30:23 jasper Exp $
+# $OpenBSD: Makefile,v 1.25 2011/09/25 08:25:53 ajacoutot Exp $
 
 # No NTLM support in OpenLDAP; Plaintext password authentication will be
 # used when connecting to the Global Catalog server. Consider installing
@@ -10,7 +10,7 @@ SHARED_ONLY=	Yes
 COMMENT=	evolution connector for MS Exchange
 
 GNOME_PROJECT=	evolution-exchange
-GNOME_VERSION=	3.1.92
+GNOME_VERSION=	3.2.0
 
 SHARED_LIBS +=  exchange                  0.0 # 0.0
 SHARED_LIBS +=  xntlm                     0.0 # 0.0
@@ -35,7 +35,7 @@ WANTLIB += GL ICE ORBit-2 SM X11 X11-xcb Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xxf86vm asn1 atk-1.0 c cairo cairo-gobject camel-1.2
 WANTLIB += camel-provider-1.2 canberra canberra-gtk3 com_err crypto
-WANTLIB += db dbus-1 dbus-glib-1 drm ebackend-1.2 ebook-1.2 ecal-1.2
+WANTLIB += db dbus-1 drm ebackend-1.2 ebook-1.2 ecal-1.2
 WANTLIB += edata-book-1.2 edata-cal-1.2 edataserver-1.2 edataserverui-3.0
 WANTLIB += enchant execinfo expat fontconfig freetype
 WANTLIB += gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
@@ -45,8 +45,8 @@ WANTLIB += ical icalss icalvcal krb5 lber-2.4 ldap-2.4 ltdl m
 WANTLIB += nspr4 nss3 nssutil3 ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += sasl2 smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 startup-notification-1
-WANTLIB += stdc++ unique-3.0 vorbis vorbisfile xcb xcb-aux xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += stdc++ vorbis vorbisfile xcb xcb-aux xcb-render
+WANTLIB += xcb-shm xml2 z ffi kvm
 WANTLIB += lib/evolution/${EVO_VERSION}/composer
 WANTLIB += lib/evolution/${EVO_VERSION}/eabutil
 WANTLIB += lib/evolution/${EVO_VERSION}/econtacteditor
