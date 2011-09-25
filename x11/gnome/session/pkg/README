@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.30 2011/09/24 13:45:35 ajacoutot Exp $
+$OpenBSD: README,v 1.31 2011/09/25 21:16:11 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -45,6 +45,7 @@ It is advised to _always_ install the "minimal" set (see also: the
 	gnome-icon-theme-extras \
 	gnome-nettool \
 	gnome-tweak-tool \
+	gnote \
 	nautilus-evince \
 	nautilus-file-roller \
 	nautilus-meta-tracker \
