@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_modules_module-detect_c,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
+$OpenBSD: patch-src_modules_module-detect_c,v 1.2 2011/09/25 18:16:46 ajacoutot Exp $
 --- src/modules/module-detect.c.orig	Thu Jun 23 22:18:54 2011
 +++ src/modules/module-detect.c	Thu Sep 22 12:44:14 2011
 @@ -120,6 +120,7 @@ static int detect_alsa(pa_core *c, int just_one) {
@@ -19,7 +19,7 @@ $OpenBSD: patch-src_modules_module-detect_c,v 1.1.1.1 2011/09/25 09:30:52 robert
 +    const char *dev;
 +    char args[64];
 +
-+    dev = getenv("AUDIODEV");
++    dev = getenv("AUDIODEVICE");
 +    if (!dev)
 +        dev = "/dev/audio";
 +
