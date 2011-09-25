@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2011/09/25 12:19:23 espie Exp $
+# $OpenBSD: Makefile,v 1.65 2011/09/25 14:12:10 espie Exp $
 
 ONLY_FOR_ARCHS = alpha i386 m68k sparc sparc64 powerpc vax amd64
 #BROKEN=adjust for types changes
@@ -48,7 +48,7 @@ FLAVOR ?=
 ONLY_FOR_ARCHS-ada = i386
 ONLY_FOR_ARCHS-java = amd64 sparc64 i386
 
-MULTI_PACKAGES = -main -f95 -objc -java -ada -c++ -estdc
+MULTI_PACKAGES = -main -f95 -objc -java -c++ -estdc -ada
 
 .include <bsd.port.arch.mk>
 
