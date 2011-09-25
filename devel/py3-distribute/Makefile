@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/22 10:10:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/25 13:36:18 fgsch Exp $
 
 COMMENT =		fork of setuptools Python packages
 
 MODPY_EGG_VERSION =	0.6.21
 DISTNAME =		distribute-${MODPY_EGG_VERSION}
+
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -20,6 +22,7 @@ PERMIT_DISTFILES_FTP =	Yes
 MASTER_SITES =		${MASTER_SITE_PYPI:=d/distribute/}
 
 MODULES =		lang/python
+MODPY_VERSION =		3.2
 
 NO_REGRESS =		Yes
 
