@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.20 2011/09/16 09:48:10 espie Exp $
+# $OpenBSD: Makefile,v 1.21 2011/09/25 18:30:53 jasper Exp $
+
+# XXX fix building with glib2 >= 2.29 (G_CONST_RETURN is deprecated)
+CFLAGS +=		"-DG_CONST_RETURN=const"
 
 COMMENT=		library to provide a Gtk+ widget to display maps
 
 DISTNAME=		libchamplain-${VERSION}
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  champlain-0.8       0.0          # 1.2
 SHARED_LIBS +=  champlain-gtk-0.8   0.0          # 1.2
