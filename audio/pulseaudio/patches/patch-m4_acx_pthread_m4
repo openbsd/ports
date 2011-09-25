@@ -1,0 +1,10 @@
+--- m4/acx_pthread.m4.orig	Thu Jun 23 22:18:54 2011
++++ m4/acx_pthread.m4	Thu Sep 22 12:28:19 2011
+@@ -235,6 +235,7 @@ if test "x$acx_pthread_ok" = xyes; then
+    check_inconsistencies=yes
+    case "${host_cpu}-${host_os}" in
+      *-darwin*) check_inconsistencies=no ;;
++     *-openbsd*) check_inconsistencies=no ;;
+    esac
+    if test x"$GCC" != xyes -o "x$check_inconsistencies" != xyes ; then
+       AC_MSG_RESULT([no])

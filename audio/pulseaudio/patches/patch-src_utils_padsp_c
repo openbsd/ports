@@ -1,0 +1,24 @@
+$OpenBSD: patch-src_utils_padsp_c,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
+
+- Fix path to soundcard.h
+- Add another output device
+
+--- src/utils/padsp.c.orig	Thu Jun 23 22:18:54 2011
++++ src/utils/padsp.c	Sat Sep 17 12:36:55 2011
+@@ -32,7 +32,7 @@
+ #define _LARGEFILE64_SOURCE 1
+ #endif
+ 
+-#include <sys/soundcard.h>
++#include <soundcard.h>
+ #include <sys/ioctl.h>
+ #include <pthread.h>
+ #include <unistd.h>
+@@ -1517,6 +1517,7 @@ static pa_bool_t is_audio_device_node(const char *path
+         pa_streq(path, "/dev/dsp") ||
+         pa_streq(path, "/dev/adsp") ||
+         pa_streq(path, "/dev/audio") ||
++	pa_streq(path, "/dev/sound") ||
+         pa_streq(path, "/dev/sndstat") ||
+         pa_streq(path, "/dev/mixer");
+ }

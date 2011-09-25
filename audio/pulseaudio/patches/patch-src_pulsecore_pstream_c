@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_pulsecore_pstream_c,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
+
+- Fix a lock-up.
+
+--- src/pulsecore/pstream.c.orig	Fri Nov 26 01:45:23 2010
++++ src/pulsecore/pstream.c	Thu Jun 23 11:36:14 2011
+@@ -181,14 +181,17 @@ static void do_something(pa_pstream *p) {
+     p->mainloop->defer_enable(p->defer_event, 0);
+ 
+     if (!p->dead && pa_iochannel_is_readable(p->io)) {
+-        if (do_read(p) < 0)
++        if (do_read(p) < 0) {
+             goto fail;
+-    } else if (!p->dead && pa_iochannel_is_hungup(p->io))
++	}
++    } else if (!p->dead && pa_iochannel_is_hungup(p->io)) {
+         goto fail;
++    }
+ 
+     if (!p->dead && pa_iochannel_is_writable(p->io)) {
+-        if (do_write(p) < 0)
++        if (do_write(p) < 0) {
+             goto fail;
++	}
+     }
+ 
+     pa_pstream_unref(p);

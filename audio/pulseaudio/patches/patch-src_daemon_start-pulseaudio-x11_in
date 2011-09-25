@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_daemon_start-pulseaudio-x11_in,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
+
+- --start doesn't work correctly (yet), so prefer -D.
+
+--- src/daemon/start-pulseaudio-x11.in.orig	Thu Jun 23 14:21:07 2011
++++ src/daemon/start-pulseaudio-x11.in	Thu Jun 23 14:21:15 2011
+@@ -21,7 +21,7 @@ set -e
+ 
+ [ -z "$PULSE_SERVER" ]
+ 
+-@PA_BINARY@ --start "$@"
++@PA_BINARY@ -D "$@"
+ 
+ if [ x"$DISPLAY" != x ] ; then
+ 

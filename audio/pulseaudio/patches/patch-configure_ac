@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure_ac,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
+
+- Fix path to soundcard.h
+
+--- configure.ac.orig	Thu Jun 23 22:56:05 2011
++++ configure.ac	Sat Sep 17 15:34:58 2011
+@@ -104,7 +104,7 @@ if test "x$M4" = xno ; then
+ fi
+ 
+ dnl Compiler flags
+-CC_CHECK_CFLAGS_APPEND([-Wall -W -Wextra -pipe -Wno-long-long -Winline -Wvla -Wno-overlength-strings -Wunsafe-loop-optimizations -Wundef -Wformat=2 -Wlogical-op -Wsign-compare -Wformat-security -Wmissing-include-dirs -Wformat-nonliteral -Wold-style-definition -Wpointer-arith -Winit-self -Wdeclaration-after-statement -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wredundant-decls -Wmissing-declarations -Wmissing-noreturn -Wshadow -Wendif-labels -Wcast-align -Wstrict-aliasing=2 -Wwrite-strings -Wno-unused-parameter -ffast-math -Wp,-D_FORTIFY_SOURCE=2 -fno-common -fdiagnostics-show-option])
++CC_CHECK_CFLAGS_APPEND([-Wall -W -Wextra -pipe -Wno-long-long -Winline -Wvla -Wno-overlength-strings -Wunsafe-loop-optimizations -Wundef -Wformat=2 -Wlogical-op -Wsign-compare -Wformat-security -Wmissing-include-dirs -Wformat-nonliteral -Wold-style-definition -Wpointer-arith -Winit-self -Wdeclaration-after-statement -Wfloat-equal -Wmissing-prototypes -Wstrict-prototypes -Wmissing-declarations -Wmissing-noreturn -Wshadow -Wendif-labels -Wcast-align -Wstrict-aliasing=2 -Wwrite-strings -Wno-unused-parameter -ffast-math -Wp,-D_FORTIFY_SOURCE=2 -fno-common -fdiagnostics-show-option])
+ 
+ dnl Linker flags.
+ dnl Check whether the linker supports the -version-script option.
+@@ -750,7 +750,7 @@ AC_ARG_ENABLE([oss-wrapper],
+         [oss_wrapper=auto])
+ 
+ if test "x${oss_output}" != xno || test "x${oss_wrapper}" != "xno"; then
+-    AC_CHECK_HEADERS([sys/soundcard.h],
++    AC_CHECK_HEADERS([soundcard.h],
+         [
+             if test "x${oss_output}" != "xno"; then
+                 AC_DEFINE([HAVE_OSS_OUTPUT], 1, [Have OSS output?])

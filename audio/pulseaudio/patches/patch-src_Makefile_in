@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_Makefile_in,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
+
+- Don't install ALSA and UDEV files on OpenBSD.
+
+--- src/Makefile.in.orig	Thu Jun 23 22:56:35 2011
++++ src/Makefile.in	Sat Sep 17 12:36:58 2011
+@@ -3008,7 +3008,7 @@ libpulsecommon_@PA_MAJORMINORMICRO@_la_CFLAGS = $(AM_C
+ libpulsecommon_@PA_MAJORMINORMICRO@_la_LDFLAGS = $(AM_LDFLAGS) \
+ 	-avoid-version $(am__append_14)
+ libpulsecommon_@PA_MAJORMINORMICRO@_la_LIBADD = $(AM_LIBADD) \
+-	$(LIBWRAP_LIBS) $(WINSOCK_LIBS) $(LTLIBICONV) \
++	$(LIBWRAP_LIBS) $(WINSOCK_LIBS) $(LTLIBICONV) -lexecinfo \
+ 	$(LIBSNDFILE_LIBS) $(am__append_16) $(am__append_20)
+ 
+ ###################################
+@@ -3411,7 +3411,7 @@ module_x11_cork_request_la_LIBADD = $(AM_LIBADD) $(X11
+ 
+ # OSS
+ liboss_util_la_SOURCES = modules/oss/oss-util.c modules/oss/oss-util.h
+-liboss_util_la_LDFLAGS = -avoid-version
++liboss_util_la_LDFLAGS = -avoid-version -lossaudio
+ liboss_util_la_LIBADD = libpulsecore-@PA_MAJORMINORMICRO@.la libpulsecommon-@PA_MAJORMINORMICRO@.la libpulse.la
+ module_oss_la_SOURCES = modules/oss/module-oss.c
+ module_oss_la_LDFLAGS = $(MODULE_LDFLAGS)
+@@ -8049,9 +8049,8 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-alsapathsDATA install-alsaprofilesetsDATA \
+-	install-dbuspolicyDATA install-pulseconfDATA \
+-	install-pulseincludeHEADERS install-udevrulesDATA \
++install-data-am: install-dbuspolicyDATA install-pulseconfDATA \
++	install-pulseincludeHEADERS \
+ 	install-xdgautostartDATA
+ 
+ install-dvi: install-dvi-recursive

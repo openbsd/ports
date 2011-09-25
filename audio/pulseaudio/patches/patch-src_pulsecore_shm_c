@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_pulsecore_shm_c,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
+--- src/pulsecore/shm.c.orig	Wed Sep 21 12:06:18 2011
++++ src/pulsecore/shm.c	Wed Sep 21 12:06:38 2011
+@@ -91,7 +91,7 @@ struct shm_marker {
+ #define SHM_MARKER_SIZE PA_ALIGN(sizeof(struct shm_marker))
+ 
+ static char *segment_name(char *fn, size_t l, unsigned id) {
+-    pa_snprintf(fn, l, "/pulse-shm-%u", id);
++    pa_snprintf(fn, l, "/tmp/pulse-shm-%u", id);
+     return fn;
+ }
+ 
+@@ -142,7 +142,7 @@ int pa_shm_create_rw(pa_shm *m, size_t size, pa_bool_t
+         pa_random(&m->id, sizeof(m->id));
+         segment_name(fn, sizeof(fn), m->id);
+ 
+-        if ((fd = shm_open(fn, O_RDWR|O_CREAT|O_EXCL, mode & 0444)) < 0) {
++        if ((fd = shm_open(fn, O_RDWR|O_CREAT|O_EXCL, mode & 0644)) < 0) {
+             pa_log("shm_open() failed: %s", pa_cstrerror(errno));
+             goto fail;
+         }

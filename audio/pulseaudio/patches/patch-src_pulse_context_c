@@ -1,0 +1,15 @@
+$OpenBSD: patch-src_pulse_context_c,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
+
+- --start doesn't work correctly (yet), so prefer -D.
+
+--- src/pulse/context.c.orig	Thu Jun 23 14:20:41 2011
++++ src/pulse/context.c	Thu Jun 23 14:20:48 2011
+@@ -704,7 +704,7 @@ static int context_autospawn(pa_context *c) {
+ 
+         /* Setup argv */
+         argv[n++] = c->conf->daemon_binary;
+-        argv[n++] = "--start";
++        argv[n++] = "-D";
+ 
+         while (n < PA_ELEMENTSOF(argv)-1) {
+             char *a;

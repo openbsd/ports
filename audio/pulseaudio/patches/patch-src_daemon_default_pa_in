@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_daemon_default_pa_in,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
+
+- Adjust path to soundfiles.
+
+--- src/daemon/default.pa.in.orig	Thu Jun 23 22:18:54 2011
++++ src/daemon/default.pa.in	Sat Sep 17 12:36:59 2011
+@@ -22,10 +22,10 @@
+ .nofail
+ 
+ ### Load something into the sample cache
+-#load-sample-lazy x11-bell /usr/share/sounds/gtk-events/activate.wav
+-#load-sample-lazy pulse-hotplug /usr/share/sounds/startup3.wav
+-#load-sample-lazy pulse-coldplug /usr/share/sounds/startup3.wav
+-#load-sample-lazy pulse-access /usr/share/sounds/generic.wav
++#load-sample-lazy x11-bell ${LOCALBASE}/share/sounds/gtk-events/activate.wav
++#load-sample-lazy pulse-hotplug ${LOCALBASE}/share/sounds/startup3.wav
++#load-sample-lazy pulse-coldplug ${LOCALBASE}/share/sounds/startup3.wav
++#load-sample-lazy pulse-access ${LOCALBASE}/share/sounds/generic.wav
+ 
+ .fail
+ 

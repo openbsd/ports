@@ -1,0 +1,19 @@
+$OpenBSD: patch-src_tests_rtpoll-test_c,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
+--- src/tests/rtpoll-test.c.orig	Thu Jun 23 12:38:04 2011
++++ src/tests/rtpoll-test.c	Thu Jun 23 12:38:24 2011
+@@ -42,6 +42,7 @@ static int worker(pa_rtpoll_item *w) {
+ }
+ 
+ int main(int argc, char *argv[]) {
++#ifdef SIGRTMIN
+     pa_rtpoll *p;
+     pa_rtpoll_item *i, *w;
+     struct pollfd *pollfd;
+@@ -80,6 +81,6 @@ int main(int argc, char *argv[]) {
+     pa_rtpoll_item_free(w);
+ 
+     pa_rtpoll_free(p);
+-
++#endif
+     return 0;
+ }
