@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.268 2011/09/06 07:11:23 landry Exp $
+# $OpenBSD: Makefile,v 1.269 2011/09/25 09:31:41 robert Exp $
 # $FreeBSD: Makefile,v 1.40 1997/11/16 22:49:20 fenner Exp $
 
      SUBDIR =
@@ -157,6 +157,7 @@
      SUBDIR += picard
      SUBDIR += pms
      SUBDIR += portaudio-svn
+     SUBDIR += pulseaudio
      SUBDIR += py-audio
      SUBDIR += py-ao
      SUBDIR += py-cddb
