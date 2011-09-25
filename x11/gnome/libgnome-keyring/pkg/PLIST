@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2011/09/18 20:11:40 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.6 2011/09/25 17:32:49 ajacoutot Exp $
 %%SHARED%%
 include/gnome-keyring-1/
 include/gnome-keyring-1/gnome-keyring-memory.h
@@ -130,6 +130,9 @@ share/locale/sv/LC_MESSAGES/libgnome-keyring.mo
 share/locale/ta/
 share/locale/ta/LC_MESSAGES/
 share/locale/ta/LC_MESSAGES/libgnome-keyring.mo
+share/locale/te/
+share/locale/te/LC_MESSAGES/
+share/locale/te/LC_MESSAGES/libgnome-keyring.mo
 share/locale/th/
 share/locale/th/LC_MESSAGES/
 share/locale/th/LC_MESSAGES/libgnome-keyring.mo
