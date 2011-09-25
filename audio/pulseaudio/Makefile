@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/25 09:43:36 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -11,6 +11,10 @@ SHARED_LIBS +=  pulse-mainloop-glib       0.0 # 0.4
 SHARED_LIBS +=  pulse-simple              0.0 # 0.3
 SHARED_LIBS +=  pulse                     0.0 # 12.4
 CATEGORIES=		audio
+
+REVISION=		0
+
+SUBST_VARS+=		VERSION
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 HOMEPAGE=		http://www.pulseaudio.org/
@@ -71,8 +75,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 FAKE_FLAGS+=		xdgautostartdir="${PREFIX}/share/examples/pulseaudio/xdg/autostart" \
 			dbuspolicydir="${PREFIX}/share/examples/pulseaudio/dbus-1/system.d" \
 			pulseconfdir="${PREFIX}/share/examples/pulseaudio/pulse/"
-
-SUBST_VARS+=		VERSION
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/daemon/default.pa.in \
