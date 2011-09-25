@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.16 2011/09/25 12:47:49 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.17 2011/09/25 12:53:55 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
@@ -13,40 +13,28 @@ include/gnome-control-center-1/libgnome-control-center/cc-shell.h
 include/gnome-control-center-1/libgnome-control-center/gconf-property-editor.h
 lib/control-center-1/
 lib/control-center-1/panels/
-@comment lib/control-center-1/panels/libbackground.a
 @comment lib/control-center-1/panels/libbackground.la
 lib/control-center-1/panels/libbackground.so
-@comment lib/control-center-1/panels/libdate_time.a
 @comment lib/control-center-1/panels/libdate_time.la
 lib/control-center-1/panels/libdate_time.so
-@comment lib/control-center-1/panels/libdisplay.a
 @comment lib/control-center-1/panels/libdisplay.la
 lib/control-center-1/panels/libdisplay.so
-@comment lib/control-center-1/panels/libinfo.a
 @comment lib/control-center-1/panels/libinfo.la
 lib/control-center-1/panels/libinfo.so
-@comment lib/control-center-1/panels/libkeyboard.a
 @comment lib/control-center-1/panels/libkeyboard.la
 lib/control-center-1/panels/libkeyboard.so
-@comment lib/control-center-1/panels/libmouse-properties.a
 @comment lib/control-center-1/panels/libmouse-properties.la
 lib/control-center-1/panels/libmouse-properties.so
-@comment lib/control-center-1/panels/libprinters.a
 @comment lib/control-center-1/panels/libprinters.la
 lib/control-center-1/panels/libprinters.so
-@comment lib/control-center-1/panels/libregion.a
 @comment lib/control-center-1/panels/libregion.la
 lib/control-center-1/panels/libregion.so
-@comment lib/control-center-1/panels/libscreen.a
 @comment lib/control-center-1/panels/libscreen.la
 lib/control-center-1/panels/libscreen.so
-@comment lib/control-center-1/panels/libsound.a
 @comment lib/control-center-1/panels/libsound.la
 lib/control-center-1/panels/libsound.so
-@comment lib/control-center-1/panels/libuniversal-access.a
 @comment lib/control-center-1/panels/libuniversal-access.la
 lib/control-center-1/panels/libuniversal-access.so
-@comment lib/control-center-1/panels/libuser-accounts.a
 @comment lib/control-center-1/panels/libuser-accounts.la
 lib/control-center-1/panels/libuser-accounts.so
 lib/libgnome-control-center.la
