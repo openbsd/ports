@@ -1,7 +1,8 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/09/25 11:05:53 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/09/25 15:26:04 ajacoutot Exp $
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683:daemon:PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
+@unexec-delete rm -rf /var/db/pulse
 bin/esdcompat
 @bin bin/pabrowse
 @bin bin/pacat

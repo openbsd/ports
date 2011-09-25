@@ -1,9 +1,10 @@
-$OpenBSD: patch-configure_ac,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
+$OpenBSD: patch-configure_ac,v 1.2 2011/09/25 15:26:04 ajacoutot Exp $
 
 - Fix path to soundcard.h
+- Use /var/db instead of /var/lib
 
 --- configure.ac.orig	Thu Jun 23 22:56:05 2011
-+++ configure.ac	Sat Sep 17 15:34:58 2011
++++ configure.ac	Sun Sep 25 17:21:24 2011
 @@ -104,7 +104,7 @@ if test "x$M4" = xno ; then
  fi
  
@@ -22,3 +23,15 @@ $OpenBSD: patch-configure_ac,v 1.1.1.1 2011/09/25 09:30:52 robert Exp $
          [
              if test "x${oss_output}" != "xno"; then
                  AC_DEFINE([HAVE_OSS_OUTPUT], 1, [Have OSS output?])
+@@ -1374,9 +1374,9 @@ fi
+ #### PulseAudio system runtime dir ####
+ PA_SYSTEM_RUNTIME_PATH="${localstatedir}/run/pulse"
+ AC_SUBST(PA_SYSTEM_RUNTIME_PATH)
+-PA_SYSTEM_CONFIG_PATH="${localstatedir}/lib/pulse"
++PA_SYSTEM_CONFIG_PATH="${localstatedir}/db/pulse"
+ AC_SUBST(PA_SYSTEM_CONFIG_PATH)
+-PA_SYSTEM_STATE_PATH="${localstatedir}/lib/pulse"
++PA_SYSTEM_STATE_PATH="${localstatedir}/db/pulse"
+ AC_SUBST(PA_SYSTEM_STATE_PATH)
+ 
+ ###################################
