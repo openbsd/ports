@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.12 2011/07/14 11:03:35 espie Exp $
+# $OpenBSD: Port.pm,v 1.13 2011/09/25 10:41:30 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -360,7 +360,9 @@ sub add_normal_tasks
 	if ($builder->{size}) {
 		push @todo, 'show-fake-size';
 	}
-	push @todo, 'clean';
+	if (!$builder->{dontclean}) {
+		push @todo, 'clean';
+	}
 	$self->add_tasks(map {DPB::Port::TaskFactory->create($_)} @todo);
 }
 

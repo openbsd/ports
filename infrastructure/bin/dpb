@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.24 2011/09/13 09:46:53 espie Exp $
+# $OpenBSD: dpb,v 1.25 2011/09/25 10:41:30 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -89,8 +89,8 @@ sub handle_options
 		},
 	};
 
-	$state->SUPER::handle_options('aceqrRstuUvh:xA:f:F:j:m:P:b:L:S:',
-    "[-acerRsuUvx] [-A arch] [-f N] [-F N][-j N] [-P plist] [-h hosts]",
+	$state->SUPER::handle_options('acCeqrRstuUvh:xA:f:F:j:m:P:b:L:S:',
+    "[-acCerRsuUvx] [-A arch] [-f N] [-F N][-j N] [-P plist] [-h hosts]",
     "[-L logdir] [-b log] [-t ctimeout] [-m threshold] [path ...]");
     	$state->{fullrepo} = join("/", $state->{repo}, $state->arch, "all");
 	$state->{logdir} //= $ENV{LOGDIR} // 

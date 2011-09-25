@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dpb.1,v 1.14 2011/09/23 19:06:36 espie Exp $
+.\"	$OpenBSD: dpb.1,v 1.15 2011/09/25 10:41:30 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: September 23 2011 $
+.Dd $Mdocdate: September 25 2011 $
 .Dt DPB 1
 .Os
 .Sh NAME
@@ -23,7 +23,7 @@
 .Sh SYNOPSIS
 .Nm dpb
 .Bk -words
-.Op Fl aceqrRsuUx
+.Op Fl acCeqrRsuUx
 .Op Fl A Ar arch
 .Op Fl b Ar logfile
 .Op Fl D Ar PARAM Ns = Ns Ar value
@@ -72,6 +72,9 @@ Prime the heuristics module with a previous build log, so that packages that
 take a long time to build will happen earlier.
 .It Fl c
 Clean port working directory and log before each build.
+.It Fl C
+Don't clean port working directory after build.
+Warning: requires insane amounts of diskspace for a full build.
 .It Fl D Ar PARAM Ns = Ns Ar value
 Set defined parameter to value.
 Known parameters are as follows:
