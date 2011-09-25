@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.23 2011/09/22 10:30:43 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.24 2011/09/25 08:04:45 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
 @bin bin/evolution
@@ -418,8 +418,6 @@ include/evolution-${R}/text/gal-a11y-e-text-factory.h
 include/evolution-${R}/text/gal-a11y-e-text.h
 lib/evolution/
 lib/evolution/${R}/
-@comment lib/evolution/${R}/libart_lgpl.a
-@comment lib/evolution/${R}/libart_lgpl.la
 @comment lib/evolution/${R}/libcomposer.a
 @comment lib/evolution/${R}/libcomposer.la
 @comment lib/evolution/${R}/libeabutil.a
@@ -490,12 +488,6 @@ lib/evolution/${R}/modules/
 @comment lib/evolution/${R}/modules/libevolution-module-startup-wizard.a
 @comment lib/evolution/${R}/modules/libevolution-module-startup-wizard.la
 lib/evolution/${R}/plugins/
-@comment lib/evolution/${R}/plugins/liborg-gnome-bogo-junk-plugin.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-bogo-junk-plugin.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-groupwise-features.la
-@comment lib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.a
-@comment lib/evolution/${R}/plugins/liborg-gnome-sa-junk-plugin.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.a
 @comment lib/evolution/${R}/plugins/liborg-gnome-addressbook-file.la
 @comment lib/evolution/${R}/plugins/liborg-gnome-calendar-file.a
@@ -4871,6 +4863,7 @@ share/gtk-doc/html/eshell/eshell-Shell-Utilities.html
 share/gtk-doc/html/eshell/eshell-Text-to-HTML-Conversion.html
 share/gtk-doc/html/eshell/eshell-User-Alert-Handling.html
 share/gtk-doc/html/eshell/eshell-e-signature-utils.html
+share/gtk-doc/html/eshell/eshell.devhelp
 share/gtk-doc/html/eshell/eshell.devhelp2
 share/gtk-doc/html/eshell/home.png
 share/gtk-doc/html/eshell/index.html

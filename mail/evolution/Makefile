@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.134 2011/09/22 10:30:43 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.135 2011/09/25 08:04:45 ajacoutot Exp $
 
 COMMENT-main=		integrated email and PIM software for GNOME
 COMMENT-plugins=	additionnal plugins for evolution
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.1.92
+GNOME_VERSION=		3.2.0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-plugins=	evolution-plugins-${GNOME_VERSION}
-
-REVISION-main=		0
 
 # Only get the first x.y which is needed in the PLIST.
 # NOTE: when major version changes, increment EVO_VERSION accordingly 
@@ -17,8 +15,7 @@ REVISION-main=		0
 # mail/evolution-rss
 # mail/evolution-exchange
 # x11/gnome/tracker
-#R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-R=			3.2 # XXX
+R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		R
 
 CATEGORIES=		mail
@@ -49,17 +46,17 @@ WANTLIB += GL ICE ORBit-2 SM X11 X11-xcb Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += Xxf86vm asn1 atk-1.0 c cairo cairo-gobject camel-1.2
 WANTLIB += camel-provider-1.2 canberra com_err crypto
-WANTLIB += db dbus-1 dbus-glib-1 drm ebackend-1.2 ebook-1.2 ecal-1.2
+WANTLIB += db dbus-1 drm ebackend-1.2 ebook-1.2 ecal-1.2
 WANTLIB += edataserver-1.2 edataserverui-3.0 enchant
 WANTLIB += execinfo expat fontconfig freetype gailutil-3
 WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gnome-desktop-3 gnome-keyring gobject-2.0
 WANTLIB += gpg-error gssapi gthread-2.0 gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0
-WANTLIB += ical icalss icalvcal krb5
+WANTLIB += ical icalss icalvcal krb5 ffi kvm
 WANTLIB += m notify nspr4 nss3 nssutil3 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread
 WANTLIB += pthread-stubs smime3 softokn3 soup-2.4 sqlite3 ssl3
-WANTLIB += startup-notification-1 stdc++ unique-3.0
+WANTLIB += startup-notification-1 stdc++
 WANTLIB += xcb xcb-aux xcb-render xcb-shm xml2 z
 
 WANTLIB-main += ${WANTLIB}
@@ -99,7 +96,6 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			x11/gnome/icon-theme \
 			${MODGNOME_RUN_DEPENDS_yelp}
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			devel/libunique3 \
 			converters/libpst \
 			databases/evolution-data-server>=3.1.91 \
 			databases/openldap \
@@ -117,7 +113,7 @@ RUN_DEPENDS-plugins=	${MODGCONF2_RUN_DEPENDS} \
 			multimedia/gstreamer-0.10/plugins-good
 
 MODGNOME_TOOLS= 	yelp
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
 MODGCONF2_SCHEMAS_DIR=	evolution
 
 YACC=			bison
@@ -131,10 +127,15 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 				-Wl,-rpath,${TRUEPREFIX}/lib/evolution/${R}:${TRUEPREFIX}/lib \
 				-Wl,--as-needed"
 
-CONFIGURE_ARGS+=	--disable-gtk-doc \
-			--enable-plugins=all \
+CONFIGURE_ARGS=		--enable-plugins=all \
 			--disable-nm \
 			--disable-goa \
+			--disable-sens \
+			--disable-connman \
+			--disable-mono \
+			--disable-python \
+			--disable-contact-maps \
+			--without-clutter \
 			--with-openldap="${LOCALBASE}" \
 			--with-sub-version=" OpenBSD/Ports" \
 			--with-krb5=/usr \
