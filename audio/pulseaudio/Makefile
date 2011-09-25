@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/25 10:20:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/25 10:23:41 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -30,7 +30,8 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=		http://freedesktop.org/software/pulseaudio/releases/
 TAR=			${LOCALBASE}/bin/gtar
 
-MODULES=		devel/gettext
+MODULES=		devel/gettext \
+			textproc/intltool
 
 WANTLIB += ICE ORBit-2 SM X11 X11-xcb Xext Xi Xtst avahi-client
 WANTLIB += avahi-common c crypto dbus-1 execinfo ffi gconf-2 gdbm
