@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2011/09/25 08:32:00 ajacoutot Exp $
 
 COMMENT =	library for writing single instance GTK+3 applications
 
@@ -18,8 +18,6 @@ PERMIT_PACKAGE_CDROM =	Yes
 PERMIT_PACKAGE_FTP =	Yes
 PERMIT_DISTFILES_CDROM =Yes
 PERMIT_DISTFILES_FTP =	Yes
-
-EXTRACT_SUFX=		.tar.bz2
 
 MODULES =		devel/gettext \
 			x11/gnome
