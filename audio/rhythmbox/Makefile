@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.83 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.84 2011/09/25 13:40:42 ajacoutot Exp $
 
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		2.90.1.2
+REVISION=		0
 
 SHARED_LIBS +=  rhythmbox-core       0.0      # .0.0
 
@@ -32,7 +33,7 @@ WANTLIB += gthread-2.0 gtk-3 json-glib-1.0 lzma m notify pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0
 WANTLIB += pixman-1 png pthread pthread-stubs soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 totem-plparser xcb xcb-render xcb-shm xml2
-WANTLIB += z
+WANTLIB += z kvm
 
 MODULES=		devel/gettext \
 			x11/gnome \
@@ -81,9 +82,6 @@ CONFIGURE_ARGS +=	--disable-vala
 # XXX requires libmtp >= 0.3
 CONFIGURE_ARGS +=	--without-mtp
 
-# XXX requires media-keys support (i.e. pulseaudio) in gnome-settings-daemon
-CONFIGURE_ARGS +=	--disable-mmkeys
-
 # XXX requires new clutter-{x11,gst,gtk} and libmx
 CONFIGURE_ARGS +=	--disable-visualizer
 
@@ -95,8 +93,6 @@ CONFIGURE_ENV +=	MOZILLA_PLUGINDIR=${PREFIX}/lib/mozilla-plugins
 REGRESS_IS_INTERACTIVE=	x11
 
 post-install:
-# needs media-keys support in G-S-D
-	find ${PREFIX} -type d -name mmkeys | xargs -r rm -rf
 # needs gnome-keyring python bindings (used to be in py-gnome-desktop)
 	find ${PREFIX} -type d -name magnatune | xargs -r rm -rf
 # needs ZeitgeistClient

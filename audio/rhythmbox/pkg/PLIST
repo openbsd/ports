@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.24 2011/09/17 14:15:32 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2011/09/25 13:40:42 ajacoutot Exp $
 @bin bin/rhythmbox
 include/rhythmbox/
 include/rhythmbox/backends/
@@ -185,6 +185,10 @@ lib/rhythmbox/plugins/lyrics/lyrics.plugin
 lib/rhythmbox/plugins/lyrics/lyrics.py
 lib/rhythmbox/plugins/lyrics/lyrics.pyc
 lib/rhythmbox/plugins/lyrics/lyrics.pyo
+lib/rhythmbox/plugins/mmkeys/
+@comment lib/rhythmbox/plugins/mmkeys/libmmkeys.la
+lib/rhythmbox/plugins/mmkeys/libmmkeys.so
+lib/rhythmbox/plugins/mmkeys/mmkeys.plugin
 lib/rhythmbox/plugins/mpris/
 @comment lib/rhythmbox/plugins/mpris/libmpris.la
 lib/rhythmbox/plugins/mpris/libmpris.so
