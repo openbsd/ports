@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/09/12 07:28:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2011/09/25 13:13:05 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gnome-settings-plugin.h
@@ -28,6 +28,8 @@ lib/gnome-settings-daemon-3.0/libhousekeeping.so
 lib/gnome-settings-daemon-3.0/libkeybindings.so
 @comment lib/gnome-settings-daemon-3.0/libkeyboard.la
 lib/gnome-settings-daemon-3.0/libkeyboard.so
+@comment lib/gnome-settings-daemon-3.0/libmedia-keys.la
+lib/gnome-settings-daemon-3.0/libmedia-keys.so
 @comment lib/gnome-settings-daemon-3.0/libmouse.la
 lib/gnome-settings-daemon-3.0/libmouse.so
 @comment lib/gnome-settings-daemon-3.0/libprint-notifications.la
@@ -42,6 +44,7 @@ lib/gnome-settings-daemon-3.0/libwacom.so
 lib/gnome-settings-daemon-3.0/libxrandr.so
 @comment lib/gnome-settings-daemon-3.0/libxsettings.la
 lib/gnome-settings-daemon-3.0/libxsettings.so
+lib/gnome-settings-daemon-3.0/media-keys.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/mouse.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/print-notifications.gnome-settings-plugin
 lib/gnome-settings-daemon-3.0/smartcard.gnome-settings-plugin
