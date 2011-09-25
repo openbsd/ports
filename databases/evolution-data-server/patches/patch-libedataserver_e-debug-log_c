@@ -1,0 +1,23 @@
+$OpenBSD: patch-libedataserver_e-debug-log_c,v 1.1 2011/09/25 06:41:58 ajacoutot Exp $
+
+e-debug-log.c:172: warning: passing argument 1 of 'localtime' from incompatible pointer type
+
+--- libedataserver/e-debug-log.c.orig	Sat Sep 24 05:32:52 2011
++++ libedataserver/e-debug-log.c	Sun Sep 25 08:25:03 2011
+@@ -160,6 +160,7 @@ e_debug_logv (gboolean is_milestone,
+ 	gchar *debug_str;
+ 	struct timeval tv;
+ 	struct tm tm;
++	time_t tmp = tv.tv_sec;
+ 
+ 	lock ();
+ 
+@@ -169,7 +170,7 @@ e_debug_logv (gboolean is_milestone,
+ 	str = g_strdup_vprintf (format, args);
+ 	gettimeofday (&tv, NULL);
+ 
+-	tm = *localtime (&tv.tv_sec);
++	tm = *localtime (&tmp);
+ 
+ 	debug_str = g_strdup_printf ("%p;%04d/%02d/%02d;%02d:%02d:%02d.%04d;(%s);%s",
+ 				     g_thread_self (),
