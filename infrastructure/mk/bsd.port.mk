@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1110 2011/09/25 07:59:49 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1111 2011/09/25 21:30:04 naddy Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -1134,7 +1134,7 @@ _PERL_FIX_SHAR ?= perl -ne 'print if $$s || ($$s = m:^\#(\!\s*/bin/sh\s*| This i
 .if ${_USE_XZ:L} != "no"
 BUILD_DEPENDS += archivers/xz
 EXTRACT_CASES += *.tar.xz) \
-	xzcat ${FULLDISTDIR}/$$archive| tar xf -;;
+	xzcat ${FULLDISTDIR}/$$archive| ${TAR} xf -;;
 .endif
 .if ${_USE_ZIP:L} != "no"
 BUILD_DEPENDS += archivers/unzip
