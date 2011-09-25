@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2011/09/23 09:12:32 naddy Exp $
-
-ONLY_FOR_ARCHS-qt= ${GCC4_ARCHS}
+# $OpenBSD: Makefile,v 1.69 2011/09/25 20:18:44 naddy Exp $
 
 COMMENT-main=	lightweight BitTorrent command line and daemon client
 COMMENT-gtk=	lightweight BitTorrent client with GTK+ interface
@@ -11,6 +9,7 @@ DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
 PKGNAME-qt=	transmission-qt-${VER}
+REVISION-gtk=	0
 CATEGORIES=	net
 HOMEPAGE=	http://www.transmissionbt.com/
 
@@ -25,10 +24,12 @@ PERMIT_DISTFILES_FTP=	Yes
 MASTER_SITES=	http://download.m0k.org/transmission/files/
 EXTRACT_SUFX=	.tar.bz2
 
+MULTI_PACKAGES=	-main -gtk -qt
+
+ONLY_FOR_ARCHS-qt=${GCC4_ARCHS}
+
 PSEUDO_FLAVORS=	no_gtk no_qt
 FLAVOR?=
-
-MULTI_PACKAGES=	-main
 
 WANTLIB=	c crypto curl event_core event_extra idn m pthread ssl z
 WANTLIB-main=	${WANTLIB}
@@ -53,13 +54,12 @@ CONFIGURE_ARGS+=--disable-utp
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-.if ${FLAVOR:L:Mno_gtk}
-CONFIGURE_ARGS+=--disable-gtk
-.else
-MULTI_PACKAGES+=-gtk
+.include <bsd.port.arch.mk>
+
+.if ${BUILD_PACKAGES:M-gtk}
 WANTLIB-gtk=	${WANTLIB} X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xxf86vm GL atk-1.0 cairo \
-		dbus-1 dbus-glib-1 drm expat fontconfig freetype \
+		dbus-1 dbus-glib-1 drm expat ffi fontconfig freetype \
 		gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gthread-2.0 gtk-x11-2.0 pango-1.0 pangoft2-1.0 \
 		Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo dbus-1 \
@@ -72,15 +72,11 @@ LIB_DEPENDS+=	x11/gtk+2 \
 RUN_DEPENDS-gtk=${PKGNAME-main}:net/transmission,-main \
 		devel/desktop-file-utils \
 		sysutils/gamin,-server,no_python
+.else
+CONFIGURE_ARGS+=--disable-gtk
 .endif
 
-.include <bsd.own.mk>
-
-.if !${FLAVOR:L:Mno_qt}
-MULTI_PACKAGES+=-qt
-.endif
-
-.if ${COMPILER_VERSION:L:Mgcc4*} && !${FLAVOR:L:Mno_qt}
+.if ${BUILD_PACKAGES:M-qt}
 LIB_DEPENDS+=	x11/qt4
 WANTLIB-qt=	${WANTLIB} QtCore QtDBus QtGui QtNetwork QtXml \
 		expat fontconfig freetype stdc++
