@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2011/09/25 17:33:14 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		desktop note-taking application written in C++
 
 GNOME_PROJECT=		gnote
-GNOME_VERSION=		0.7.5
-REVISION=	0
+GNOME_VERSION=		0.8.0
 
 SUBST_VARS=		GNOME_VERSION
 
@@ -18,39 +17,35 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-MODULES=		devel/gconf2 \
+MODULES=		devel/dconf \
 			devel/gettext \
 			x11/gnome
 
 WANTLIB += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB += atkmm-1.6 c cairo cairomm-1.0 drm e2fs-uuid enchant
-WANTLIB += expat fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gdkmm-2.4 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 gtk-x11-2.0 gtkmm-2.4 gtkspell
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
-WANTLIB += pcre pcrecpp pixman-1 png pthread pthread-stubs sigc-2.0
+WANTLIB += atkmm-1.6 c cairo cairo-gobject cairomm-1.0 drm e2fs-uuid
+WANTLIB += expat ffi fontconfig freetype gconf-2 gdk-3 gdk_pixbuf-2.0
+WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
+WANTLIB += gobject-2.0 gthread-2.0 gtk-3 gtkmm-3.0 kvm m panel-applet-4
+WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4 pcre
+WANTLIB += pcrecpp pixman-1 png pthread pthread-stubs sigc-2.0
 WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 xslt z
 
-BUILD_DEPENDS=		devel/boost>=1.42.0p6
+BUILD_DEPENDS=		devel/boost>=1.42.0p6 \
+			devel/gsettings-desktop-schemas
+RUN_DEPENDS=		devel/gsettings-desktop-schemas
 LIB_DEPENDS=		sysutils/e2fsprogs>=1.41.4p5 \
 			textproc/gtkspell \
 			textproc/libxslt \
-			x11/gtk2mm
+			x11/gnome/panel \
+			x11/gtk3mm
 
 MODGNOME_TOOLS= 	yelp
-MODGNOME_DESKTOP_FILE=		Yes
-MODGCONF2_SCHEMAS_DIR=	gnote
+MODGNOME_DESKTOP_FILE=	Yes
 
 LIBTOOL_FLAGS+= 	--tag=disable-static
 
-AUTOCONF_VERSION=	2.68
-
-CONFIGURE_STYLE=	autoconf gnu
 CONFIGURE_ARGS+=	--disable-static
-# needs libpanelappletmm and dbus-c++
-CONFIGURE_ARGS+=	--disable-applet \
-			--disable-dbus
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
