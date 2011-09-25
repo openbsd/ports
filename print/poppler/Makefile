@@ -1,5 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2011/09/16 11:13:41 espie Exp $
-.include <bsd.own.mk>
+# $OpenBSD: Makefile,v 1.55 2011/09/25 08:01:16 espie Exp $
 
 COMMENT-main=	PDF rendering library
 COMMENT-qt=	qt interface to PDF rendering library
@@ -36,24 +35,23 @@ MASTER_SITES=	${HOMEPAGE}
 PSEUDO_FLAVORS=no_qt no_qt4
 FLAVOR?=
 
-MULTI_PACKAGES=-main
+NOT_FOR_ARCHS-qt4 = arm
+
+MULTI_PACKAGES=-main -qt -qt4
+
+.include <bsd.port.arch.mk>
+
 
 cWANTLIB=	expat freetype fontconfig jpeg m z stdc++
 
 
-.if empty(FLAVOR:L:Mno_qt)
-MULTI_PACKAGES+=-qt
+.if ${BUILD_PACKAGES:M-qt}
 MODULES+=	x11/qt3
 .else
 CONFIGURE_ARGS+=	--disable-poppler-qt
 .endif
 
-NOT_FOR_ARCHS-qt4 = arm
-.if empty(FLAVOR:L:Mno_qt4)
-MULTI_PACKAGES+=-qt4
-.endif
-
-.if ${MULTI_PACKAGES:L:M-qt4} && ${MACHINE_ARCH} != "arm"
+.if ${BUILD_PACKAGES:M-qt4}
 MODULES+=	x11/qt4
 .else
 CONFIGURE_ARGS+=	--disable-poppler-qt4
