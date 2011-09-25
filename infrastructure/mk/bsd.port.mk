@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1109 2011/09/21 09:02:09 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1110 2011/09/25 07:59:49 espie Exp $
 #	$FreeBSD: bsd.port.mk,v 1.264 1996/12/25 02:27:44 imp Exp $
 #	$NetBSD: bsd.port.mk,v 1.62 1998/04/09 12:47:02 hubertf Exp $
 #
@@ -127,27 +127,6 @@ PATCH_CHECK_ONLY ?= No
 REFETCH ?= false
 
 # Constants used by the ports tree
-ARCH ?!= uname -m
-
-ALL_ARCHS = alpha amd64 arm armish arm hppa hppa64 i386 landisk \
-	loongson luna88k m68k m88k mac68k macppc mips64 mips64el \
-	mvme68k mvme88k palm sgi socppc sparc sparc64 vax zaurus
-# not all powerpc have apm(4), hence the use of macppc
-APM_ARCHS = amd64 arm i386 loongson macppc sparc sparc64
-LP64_ARCHS = alpha amd64 hppa64 sparc64 mips64 mips64el
-NO_SHARED_ARCHS = m88k vax
-GCC4_ARCHS = amd64 arm armish beagle gumstix i386 hppa loongson macppc mips64 \
-	mips64el mvmeppc palm powerpc sgi socppc sparc sparc64 zaurus
-GCC3_ARCHS = alpha hppa64 landisk sh
-GCC2_ARCHS = aviion luna88k m68k m88k mac68k mvme68k mvme88k vax
-
-# Set NO_SHARED_LIBS for those machines that don't support shared libraries.
-.for _m in ${MACHINE_ARCH}
-.  if !empty(NO_SHARED_ARCHS:M${_m})
-NO_SHARED_LIBS ?= Yes
-.  endif
-.endfor
-NO_SHARED_LIBS ?= No
 
 # Global path locations.
 PORTSDIR ?= /usr/ports
@@ -205,8 +184,11 @@ _PKG_DELETE += ${PKGDB_LOCK}
 # XXX tends to panic the OS
 PROTECT_MOUNT_POINTS ?=
 
-.if exists(${.CURDIR}/../Makefile.inc)
-.include "${.CURDIR}/../Makefile.inc"
+.if !defined(_MAKEFILE_INC_DONE)
+.  if exists(${.CURDIR}/../Makefile.inc)
+.    include "${.CURDIR}/../Makefile.inc"
+.  endif
+_MAKEFILE_INC_DONE = Yes
 .endif
 
 .if !defined(PERMIT_PACKAGE_CDROM) || !defined(PERMIT_PACKAGE_FTP) || \
@@ -314,12 +296,6 @@ TARGETS += MOD${_m}_${_t}
 .  endfor
 .endfor
 
-.if ${MACHINE_ARCH} != ${ARCH}
-PKG_ARCH ?= ${MACHINE_ARCH},${ARCH}
-.else
-PKG_ARCH ?= ${MACHINE_ARCH}
-.endif
-
 SHARED_ONLY ?= No
 SEPARATE_BUILD ?= No
 
@@ -399,15 +375,16 @@ ALL_FAKE_FLAGS += -j${MAKE_JOBS}
 .  endif
 .endif
 
-.if !defined(MULTI_PACKAGES) || empty(MULTI_PACKAGES)
-# XXX let's cheat so we always have MULTI_PACKAGES
-MULTI_PACKAGES = -
-SUBPACKAGE ?= -
-.else
-SUBPACKAGE ?= -main
+
+.if !defined(_BSD_PORT_ARCH_MK_INCLUDED)
+.  include "${PORTSDIR}/infrastructure/mk/bsd.port.arch.mk"
 .endif
 
-_MULTI_PACKAGES =
+.if ${MACHINE_ARCH} != ${ARCH}
+PKG_ARCH ?= ${MACHINE_ARCH},${ARCH}
+.else
+PKG_ARCH ?= ${MACHINE_ARCH}
+.endif
 
 REVISION ?=
 EPOCH ?=
@@ -415,47 +392,6 @@ EPOCH ?=
 .for _s in ${MULTI_PACKAGES}
 REVISION${_s} ?= ${REVISION}
 EPOCH${_s} ?= ${EPOCH}
-
-# ONLY_FOR_ARCHS/NOT_FOR_ARCHS are special
-.  if defined(ONLY_FOR_ARCHS)
-ONLY_FOR_ARCHS${_s} ?= ${ONLY_FOR_ARCHS}
-.  endif
-.  if defined(NOT_FOR_ARCHS)
-NOT_FOR_ARCHS${_s} ?= ${NOT_FOR_ARCHS}
-.  endif
-
-IGNORE${_s} ?=
-IGNORE${_s} += ${IGNORE}
-
-# compute _ARCH_OK for ignore
-.  if defined(ONLY_FOR_ARCHS${_s})
-_ARCH_OK = 0
-.    for __ARCH in ${MACHINE_ARCH} ${ARCH}
-.      if !empty(ONLY_FOR_ARCHS${_s}:M${__ARCH})
-_ARCH_OK = 1
-.      endif
-.    endfor
-.    if ${_ARCH_OK} == 0
-.      if ${MACHINE_ARCH} == "${ARCH}"
-IGNORE${_s} += "is only for ${ONLY_FOR_ARCHS${_s}}, not ${MACHINE_ARCH}"
-.      else
-IGNORE${_s} += "is only for ${ONLY_FOR_ARCHS${_s}}, not ${MACHINE_ARCH} \(${ARCH}\)"
-.      endif
-.    endif
-.  endif
-.  if defined(NOT_FOR_ARCHS${_s})
-.    for __ARCH in ${MACHINE_ARCH} ${ARCH}
-.      if !empty(NOT_FOR_ARCHS${_s}:M${__ARCH})
-IGNORE${_s} += "is not for ${NOT_FOR_ARCHS${_s}}"
-.      endif
-.    endfor
-.  endif
-
-# allow subpackages to vanish on architectures that don't
-# support them
-.  if empty(IGNORE${_s})
-_MULTI_PACKAGES += ${_s}
-.  endif
 .endfor
 
 FLAVOR ?=
@@ -509,6 +445,10 @@ _PKG_ARGS += -D${_i}=1
 .    endif
 .  endfor
 .endif
+#.if empty(FLAVOR)
+#BUILD_PKGPATH := ${BUILD_PKGPATH},
+#.endif
+
 .if ${NO_SHARED_LIBS:L} == "yes"
 _PKG_ARGS += -DSHARED_LIBS=0
 .else
@@ -614,7 +554,7 @@ _INSTALL_PRE_COOKIE =	${WRKINST}/.install_started
 _UPDATE_COOKIES =
 _FUPDATE_COOKIES =
 _INSTALL_COOKIES =
-.for _S in ${_MULTI_PACKAGES}
+.for _S in ${BUILD_PACKAGES}
 .  if !empty(UPDATE_COOKIES_DIR)
 _UPDATE_COOKIE${_S} =	${UPDATE_COOKIES_DIR}/${FULLPKGNAME${_S}}
 _FUPDATE_COOKIE${_S} =	${UPDATE_COOKIES_DIR}/F${FULLPKGNAME${_S}}
@@ -776,7 +716,7 @@ XAUTHORITY ?= ${HOME}/.Xauthority
 
 _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
 
-.for _s in ${_MULTI_PACKAGES}
+.for _s in ${BUILD_PACKAGES}
 PKGNAMES += ${FULLPKGNAME${_s}}
 .endfor
 
@@ -811,7 +751,7 @@ _PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${_S}
 .  endif
 .endfor
 
-.for _S in ${_MULTI_PACKAGES}
+.for _S in ${BUILD_PACKAGES}
 .  if ${PKG_ARCH${_S}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
 _PACKAGE_LINKS += ${MACHINE_ARCH}/all/${_PKGFILE${_S}} ${NO_ARCH}/${_PKGFILE${_S}}
 _PACKAGE_COOKIES${_S} += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${_S}}
@@ -1448,7 +1388,7 @@ _BUILDLIB_DEPENDS = ${LIB_DEPENDS}
 _BUILDWANTLIB = ${WANTLIB}
 # strip inter-multi-packages dependencies during building
 .for _path in ${PKGPATH:S,^mystuff/,,}
-.  for _s in ${_MULTI_PACKAGES}
+.  for _s in ${BUILD_PACKAGES}
 _BUILDLIB_DEPENDS += ${LIB_DEPENDS${_s}:N*\:${_path}:N*\:${_path},*:N${_path}:N${_path},*}
 _BUILDWANTLIB += ${WANTLIB${_s}}
 _LIB4${_s} = ${LIB_DEPENDS${_s}:M*\:${_path}} ${LIB_DEPENDS${_s}:M*\:${_path},*} ${LIB_DEPENDS${_s}:M${_path}} ${LIB_DEPENDS${_s}:M${_path},*}
