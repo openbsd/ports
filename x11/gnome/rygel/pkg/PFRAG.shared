@@ -1,5 +1,6 @@
-@comment $OpenBSD: PFRAG.shared,v 1.1.1.1 2011/09/20 21:14:49 jasper Exp $
+@comment $OpenBSD: PFRAG.shared,v 1.2 2011/09/26 18:28:16 jasper Exp $
 lib/rygel-1.0/librygel-external.so
 lib/rygel-1.0/librygel-gst-launch.so
+lib/rygel-1.0/librygel-media-export.so
 lib/rygel-1.0/librygel-mpris.so
 lib/rygel-1.0/librygel-playbin.so

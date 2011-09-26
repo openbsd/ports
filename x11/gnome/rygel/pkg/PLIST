@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2011/09/20 21:14:49 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.2 2011/09/26 18:28:16 jasper Exp $
 %%SHARED%%
 @bin bin/rygel
 @bin bin/rygel-preferences
@@ -10,13 +10,14 @@ lib/rygel-1.0/librygel-external.a
 @comment lib/rygel-1.0/librygel-external.la
 lib/rygel-1.0/librygel-gst-launch.a
 @comment lib/rygel-1.0/librygel-gst-launch.la
+lib/rygel-1.0/librygel-media-export.a
+@comment lib/rygel-1.0/librygel-media-export.la
 lib/rygel-1.0/librygel-mpris.a
 @comment lib/rygel-1.0/librygel-mpris.la
 lib/rygel-1.0/librygel-playbin.a
 @comment lib/rygel-1.0/librygel-playbin.la
 @man man/man1/rygel.1
 @man man/man5/rygel.conf.5
-share/applications/
 share/applications/rygel-preferences.desktop
 share/applications/rygel.desktop
 share/dbus-1/

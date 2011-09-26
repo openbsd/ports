@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/20 21:14:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/26 18:28:16 jasper Exp $
 
 COMMENT=		home media solution that allows easy media sharing
 
 GNOME_PROJECT=		rygel
 GNOME_VERSION=		0.12.2
+REVISION=		0
 
 CATEGORIES=		multimedia
 
@@ -39,7 +40,7 @@ MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= 	vala
 
 CONFIGURE_ARGS+=	--enable-mpris-plugin \
-			--disable-media-export-plugin \
+			--enable-media-export-plugin \
 			--enable-gst-launch-plugin \
 			--enable-external-plugin \
 			--disable-mediathek-plugin \
