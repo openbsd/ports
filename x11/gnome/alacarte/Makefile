@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.38 2011/09/19 07:44:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2011/09/26 14:02:18 jasper Exp $
+
+BROKEN= 		needs to be adjusted to new libgnome-menus API
 
 COMMENT=		easy GNOME menu editing tool
 
