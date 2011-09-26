@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.53 2011/09/26 10:53:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2011/09/26 13:23:15 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	3.0.3
-REVISION=	2
+REVISION=	3
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -40,8 +40,11 @@ LIB_DEPENDS=	devel/libnotify>=0.7.2 \
 		audio/pulseaudio \
 		audio/libcanberra,-gtk3
 
+BUILD_DEPENDS=	devel/gsettings-desktop-schemas
+RUN_DEPENDS=	devel/gsettings-desktop-schemas
+
 # otherwise we end up without icons on minimal install
-RUN_DEPENDS=	x11/gnome/icon-theme
+RUN_DEPENDS+=	x11/gnome/icon-theme
 
 MODGNOME_DESKTOP_FILE=	Yes
 
