@@ -1,7 +1,7 @@
-$OpenBSD: patch-configure_in,v 1.20 2011/08/22 10:03:25 giovanni Exp $
---- configure.in.orig	Thu Aug  4 04:24:05 2011
-+++ configure.in	Sun Aug 14 10:44:16 2011
-@@ -1582,8 +1582,7 @@ DSO_EXPORTS=""
+$OpenBSD: patch-configure_in,v 1.21 2011/09/26 09:32:12 sthen Exp $
+--- configure.in.orig	Tue Aug  9 13:17:47 2011
++++ configure.in	Mon Sep 12 17:40:48 2011
+@@ -1638,8 +1638,7 @@ DSO_EXPORTS=""
  			;;
  		*openbsd*)  BLDSHARED="true"
  			LDSHFLAGS="-shared"
@@ -11,42 +11,3 @@ $OpenBSD: patch-configure_in,v 1.20 2011/08/22 10:03:25 giovanni Exp $
  			PICFLAG="-fPIC"
  			AC_DEFINE(STAT_ST_BLOCKSIZE,512,[The size of a block])
  			AC_DEFINE(BROKEN_GETGRNAM,1,[Does getgrnam work correctly])
-@@ -1729,38 +1728,6 @@ if test x"$BLDSHARED" = x"true" ; then
- fi
- 
- AC_MSG_RESULT($BLDSHARED)
--
--saved_before_as_needed_ldflags="$LDFLAGS"
--for flags in "-Wl,--as-needed" "-Wl,-z,ignore" "-z ignore" ; do
--	saved_ldflags="$LDFLAGS"
--	AC_MSG_CHECKING([if $flags works])
--	LDFLAGS="$flags $saved_ldflags"
--	AC_TRY_LINK([],[],
--		[AC_MSG_RESULT([yes])
--		LD_AS_NEEDED_FLAG=$flags
--		ld_as_needed_flag_found=yes],
--		AC_MSG_RESULT([no]))
--	LDFLAGS="$LD_AS_NEEDED_FLAG $saved_ldflags"
--	test x"$ld_as_needed_flag_found" = xyes && break
--done
--
--# check if we have to disable LD_AS_NEEDED_FLAG:
--# On some systems for a veriety of reasons linking with
--# -Wl,--as-needed -lreadline -lncurses fails
--# we have to retest, if these combination is detected before.
--# Bugzilla #7209
--
--if test x$ac_cv_lib_readline_rl_callback_handler_install = xyes ; then
--	if test x$ld_as_needed_flag_found = xyes ; then
--		AC_MSG_CHECKING([if $LD_AS_NEEDED_FLAG works with readline])
--		# try if check no fails
--		save_LIBS=$LIBS
--		LIBS="$LIBS $TERMLIBS"
--		AC_TRY_LINK([], [rl_callback_handler_install();], [AC_MSG_RESULT([yes])],[ AC_MSG_RESULT([no]); LDFLAGS="$saved_before_as_needed_ldflags"])
--		LIBS="$save_LIBS"
--        fi
--fi
--
- 
- 
- # for historical reasons almost all linkers don't complain about unresolved

@@ -1,14 +1,8 @@
-@comment $OpenBSD: PLIST-main,v 1.17 2011/09/13 10:54:15 sthen Exp $
-@conflict samba-docs-<=3.5.0
+@comment $OpenBSD: PLIST-main,v 1.18 2011/09/26 09:32:12 sthen Exp $
+@conflict samba-docs-<3.6.0
 @pkgpath ${BASE_PKGPATH}
 @bin bin/eventlogadm
 bin/findsmb
-@bin bin/ldbadd
-@bin bin/ldbdel
-@bin bin/ldbedit
-@bin bin/ldbmodify
-@bin bin/ldbrename
-@bin bin/ldbsearch
 bin/mksmbpasswd
 @bin bin/net
 @bin bin/nmblookup
@@ -25,6 +19,7 @@ bin/mksmbpasswd
 @bin bin/smbpasswd
 @bin bin/smbspool
 @bin bin/smbstatus
+@bin bin/smbta-util
 bin/smbtar
 @bin bin/smbtree
 @bin bin/testparm
@@ -32,7 +27,6 @@ bin/smbtar
 include/libsmbclient.h
 include/netapi.h
 include/smb_share_modes.h
-include/wbc_async.h
 include/wbclient.h
 @lib lib/libnetapi.so.${LIBnetapi_VERSION}
 @lib lib/libsmbclient.so.${LIBsmbclient_VERSION}
@@ -50,6 +44,7 @@ lib/samba/fi.msg
 lib/samba/fr.msg
 lib/samba/gpext/
 lib/samba/idmap/
+lib/samba/idmap/autorid.so
 lib/samba/it.msg
 lib/samba/ja.msg
 lib/samba/libnetapi.so
@@ -66,7 +61,6 @@ lib/samba/nss_info/
 lib/samba/pdb/
 lib/samba/perfcount/
 lib/samba/pl.msg
-lib/samba/rpc/
 lib/samba/ru.msg
 lib/samba/tr.msg
 lib/samba/upcase.dat
@@ -77,11 +71,13 @@ lib/samba/vfs/acl_xattr.so
 lib/samba/vfs/audit.so
 lib/samba/vfs/cap.so
 lib/samba/vfs/catia.so
+lib/samba/vfs/crossrename.so
 lib/samba/vfs/default_quota.so
 lib/samba/vfs/expand_msdfs.so
 lib/samba/vfs/extd_audit.so
 lib/samba/vfs/fake_perms.so
 lib/samba/vfs/full_audit.so
+lib/samba/vfs/linux_xfs_sgid.so
 lib/samba/vfs/netatalk.so
 lib/samba/vfs/preopen.so
 lib/samba/vfs/readahead.so
@@ -93,6 +89,7 @@ lib/samba/vfs/shadow_copy2.so
 lib/samba/vfs/smb_traffic_analyzer.so
 lib/samba/vfs/streams_depot.so
 lib/samba/vfs/streams_xattr.so
+lib/samba/vfs/time_audit.so
 lib/samba/vfs/xattr_tdb.so
 @bin libexec/nmbd
 @bin libexec/smbd
@@ -133,6 +130,7 @@ lib/samba/vfs/xattr_tdb.so
 @man man/man8/eventlogadm.8
 @man man/man8/idmap_ad.8
 @man man/man8/idmap_adex.8
+@man man/man8/idmap_autorid.8
 @man man/man8/idmap_hash.8
 @man man/man8/idmap_ldap.8
 @man man/man8/idmap_nss.8
@@ -147,6 +145,7 @@ lib/samba/vfs/xattr_tdb.so
 @man man/man8/smbd.8
 @man man/man8/smbpasswd.8
 @man man/man8/smbspool.8
+@man man/man8/smbta-util.8
 @man man/man8/swat.8
 @man man/man8/tdbbackup.8
 @man man/man8/tdbdump.8
@@ -159,6 +158,7 @@ lib/samba/vfs/xattr_tdb.so
 @man man/man8/vfs_cap.8
 @man man/man8/vfs_catia.8
 @man man/man8/vfs_commit.8
+@man man/man8/vfs_crossrename.8
 @man man/man8/vfs_default_quota.8
 @man man/man8/vfs_dirsort.8
 @man man/man8/vfs_extd_audit.8
@@ -179,6 +179,7 @@ lib/samba/vfs/xattr_tdb.so
 @man man/man8/vfs_smb_traffic_analyzer.8
 @man man/man8/vfs_streams_depot.8
 @man man/man8/vfs_streams_xattr.8
+@man man/man8/vfs_time_audit.8
 @man man/man8/vfs_xattr_tdb.8
 @man man/man8/winbindd.8
 share/doc/pkg-readmes/${FULLPKGNAME}
@@ -186,9 +187,26 @@ share/doc/samba/
 share/doc/samba/README
 share/examples/samba/
 @sample ${SYSCONFDIR}/samba/
+share/examples/samba/ad-bench/
+share/examples/samba/ad-bench/README
+share/examples/samba/ad-bench/ad-bench.sh
+share/examples/samba/ad-bench/settings.sh
+share/examples/samba/ad-bench/test_utils.sh
+share/examples/samba/ad-bench/time_group.sh
+share/examples/samba/ad-bench/time_join.sh
+share/examples/samba/ad-bench/time_kinit.sh
+share/examples/samba/ad-bench/time_ldap.sh
+share/examples/samba/ad-bench/time_user.sh
+share/examples/samba/ad-bench/utils.sh
+share/examples/samba/bind9-patches/
+share/examples/samba/bind9-patches/0001-leave-the-question-section-in-update-responses.patch
+share/examples/samba/bind9-patches/0002-prevent-a-valgrind-uninitialised-memory-warning.patch
+share/examples/samba/bind9-patches/0003-don-t-compress-TSIG-names.patch
+share/examples/samba/bind9-patches/0004-If-tkey-gssapi-initialisation-fails-then-heck-for-th.patch
+share/examples/samba/bind9-patches/0005-windows-doesn-t-return-valid-GSSAPI-sequence-numbers.patch
+share/examples/samba/bind9-patches/README
 share/examples/samba/smb.conf.default
 @sample ${SYSCONFDIR}/samba/smb.conf
-@comment share/locale/de/LC_MESSAGES/pam_winbind.mo
 share/swat/
 share/swat/help/
 share/swat/help/welcome-no-samba-doc.html

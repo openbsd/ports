@@ -1,4 +1,4 @@
-$OpenBSD: README-main,v 1.6 2011/06/03 10:21:54 sthen Exp $
+$OpenBSD: README-main,v 1.7 2011/09/26 09:32:12 sthen Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -53,9 +53,10 @@ $ sudo pdbedit -a -u <username>
 or the old way if for smbpasswd
 $ sudo smbpasswd -a <username>
 
-An EXPERIMENTAL implementation of the SMB2 protocol has been added.
-SMB2 can be enabled by setting "max protocol = smb2". SMB2 is a new
-implementation of the SMB protocol used by Windows Vista and higher.
+Samba contains an implementation of the SMB2 protocol. It is
+disabled by default.SMB2 can be enabled by setting 
+"max protocol = smb2". SMB2 is a new implementation of the SMB 
+protocol used by Windows Vista and higher.
 
 To use Samba as a PDC the values of openfiles-max in /etc/login.conf
 and kern.maxfiles should be increased to 16384.
