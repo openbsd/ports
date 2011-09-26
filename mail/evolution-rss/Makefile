@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/25 08:38:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/26 10:05:40 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=		evolution-rss
 GNOME_VERSION=		0.2.90-20110621
 PKGNAME=		evolution-rss-${GNOME_VERSION:S/-/./}
 
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		mail
 
@@ -26,19 +26,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ORBit-2 X11 X11-xcb Xcomposite Xcursor Xdamage Xext
-WANTLIB += Xfixes Xi Xinerama Xrandr Xrender asn1 atk-1.0 c cairo
-WANTLIB += cairo-gobject camel-1.2 camel-provider-1.2 com_err
-WANTLIB += crypto dbus-1 ebook-1.2 ecal-1.2 edataserver-1.2 edataserverui-3.0
-WANTLIB += enchant execinfo expat ffi fontconfig freetype gailutil-3
-WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gnome-desktop-3 gnome-keyring gobject-2.0 gpg-error
-WANTLIB += gssapi gthread-2.0 gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0
-WANTLIB += ical icalss icalvcal krb5 kvm m nspr4 nss3 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 plc4 plds4
-WANTLIB += png pthread pthread-stubs smime3 soup-2.4 soup-gnome-2.4
-WANTLIB += sqlite3 ssl3 startup-notification-1 stdc++ xcb xcb-aux
-WANTLIB += xcb-render xcb-shm xml2 z
+WANTLIB += GL ORBit-2 X11 Xcomposite Xcursor Xdamage Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender asn1 atk-1.0 c cairo cairo-gobject
+WANTLIB += camel-1.2 camel-provider-1.2 com_err crypto dbus-1
+WANTLIB += ebook-1.2 ecal-1.2 edataserver-1.2 edataserverui-3.0
+WANTLIB += enchant expat ffi fontconfig freetype gailutil-3 gcrypt
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3
+WANTLIB += gnome-keyring gobject-2.0 gpg-error gssapi gthread-2.0
+WANTLIB += gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0 ical icalss icalvcal
+WANTLIB += krb5 kvm m nspr4 nss3 pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += smime3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3 stdc++
+WANTLIB += xcb xcb-render xcb-shm xml2 z
 WANTLIB += lib/evolution/${EVO_VERSION}/eshell
 WANTLIB += lib/evolution/${EVO_VERSION}/eutil
 
