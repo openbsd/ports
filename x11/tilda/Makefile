@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/23 08:49:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/26 19:49:01 jasper Exp $
 
 COMMENT=		drop-down terminal emulator
 
 DISTNAME=		tilda-0.9.6
-REVISION=		7
+REVISION=		8
 CATEGORIES=		x11
 
 HOMEPAGE=		http://tilda.sourceforge.net/
@@ -29,7 +29,7 @@ WANTLIB += GL Xxf86vm drm xcb-render xcb-shm
 RUN_DEPENDS=		devel/desktop-file-utils
 LIB_DEPENDS=		devel/libconfuse \
 			devel/libglade2 \
-			devel/vte,gtk2
+			devel/vte
 
 USE_GMAKE=		Yes
 USE_LIBTOOL=		Yes
