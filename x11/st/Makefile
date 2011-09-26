@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2011/09/23 19:11:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2011/09/26 09:32:46 sthen Exp $
 
 COMMENT=		simple X terminal
 
-DISTNAME=		st-0.1.1
-DISTFILES=		0.1.1.tar.gz
+DISTNAME=		0.1.1
+PKGNAME=		st-${DISTNAME}
 DIST_SUBDIR=		st
 
 REVISION=		0
@@ -26,6 +26,7 @@ MASTER_SITES=		http://hg.suckless.org/st/archive/
 
 MAKE_ENV=		LDFLAGS="${LDFLAGS}"
 FAKE_FLAGS=		DESTDIR=""
+WRKDIST=		${WRKDIR}/st-${DISTNAME}
 
 NO_REGRESS=		Yes
 
