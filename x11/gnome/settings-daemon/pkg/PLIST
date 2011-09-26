@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2011/09/25 13:13:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.20 2011/09/26 10:53:42 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gnome-settings-plugin.h
@@ -70,7 +70,8 @@ share/examples/gnome-settings-daemon/dbus-1/system.d/org.gnome.SettingsDaemon.Da
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.gnome.SettingsDaemon.DateTimeMechanism.conf
 share/examples/gnome-settings-daemon/gnome-settings-daemon/
 share/examples/gnome-settings-daemon/gnome-settings-daemon/xrandr/
-@sample ${SYSCONFDIR}/xrandr/
+@sample ${SYSCONFDIR}/gnome-settings-daemon/
+@sample ${SYSCONFDIR}/gnome-settings-daemon/xrandr/
 share/examples/gnome-settings-daemon/xdg/
 @sample ${SYSCONFDIR}/xdg/
 share/examples/gnome-settings-daemon/xdg/autostart/
