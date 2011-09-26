@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.55 2011/09/16 12:00:09 espie Exp $
+# $OpenBSD: Makefile,v 1.56 2011/09/26 20:15:29 landry Exp $
 
 ONLY_FOR_ARCHS=	${GCC4_ARCHS}
 
 COMMENT =	open source web browser engine for Gtk+
 
-V =		1.4.2
+V =		1.4.3
 DISTNAME =	webkit-${V}
-REVISION =	2
 EPOCH =		0
 CATEGORIES =	www
 
@@ -16,8 +15,8 @@ MASTER_SITES =	${HOMEPAGE}
 MAINTAINER =	Landry Breuil <gaston@gcu.info>
 
 # XXX should be handled in .if FLAVOR block
-SHARED_LIBS +=  webkitgtk-1.0 0.1                # .7.0
-SHARED_LIBS +=  webkitgtk-3.0 0.1                # .7.0
+SHARED_LIBS +=  webkitgtk-1.0 1.0                # .7.3
+SHARED_LIBS +=  webkitgtk-3.0 1.0                # .7.3
 
 # LGPLv2 and BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -55,14 +54,14 @@ RUN_DEPENDS =	multimedia/gstreamer-0.10/plugins-ffmpeg \
 		multimedia/gstreamer-0.10/plugins-bad \
 		multimedia/gstreamer-0.10/plugins-good
 
-WANTLIB =	ICE SM X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext \
+WANTLIB =	ICE SM X11 Xcomposite Xcursor Xdamage Xext \
 		Xfixes Xi Xinerama Xrandr Xrender Xt atk-1.0 c xcb-render \
 		expat fontconfig freetype gio-2.0 glib-2.0 gmodule-2.0 \
 		gobject-2.0 gthread-2.0 jpeg m gstinterfaces-0.10 \
 		gdk_pixbuf-2.0 \
 		gstreamer-0.10 gstbase-0.10 gstvideo-0.10 gstapp-0.10 gstpbutils-0.10 \
 		icudata icui18n icuuc sqlite3 xslt enchant soup-2.4 \
-		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread GL Xxf86vm drm xcb-shm \
+		pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pthread GL xcb-shm \
 		z cairo pixman-1 png pthread-stubs xcb xml2 stdc++
 
 LIB_DEPENDS =	multimedia/gstreamer-0.10/core \
