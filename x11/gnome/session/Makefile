@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.182 2011/09/26 10:19:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.183 2011/09/26 13:21:32 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		3.2.0
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -39,6 +40,10 @@ RUN_DEPENDS=	x11/gnome/settings-daemon \
 		sysutils/consolekit \
 		x11/xdg-user-dirs-gtk>=0.8p6 \
 		devel/gconf2,-gtk
+
+# only needed at runtime since the move from gconf to gsettings
+# (see NEWS in the source tarball)
+RUN_DEPENDS+=	devel/gsettings-desktop-schemas
 
 # gnome.session+gnome-fallback.session RequiredComponents.
 RUN_DEPENDS+=	notification-daemon-*|notification-daemon-xfce-*|xfce4-notifyd-*:sysutils/notification-daemon
