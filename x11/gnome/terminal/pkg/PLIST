@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.32 2011/09/12 07:28:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.33 2011/09/26 14:59:44 jasper Exp $
 @bin bin/gnome-terminal
 share/applications/gnome-terminal.desktop
+share/gnome/
 share/gnome-terminal/
 share/gnome-terminal/encodings-dialog.ui
 share/gnome-terminal/find-dialog.ui
@@ -10,6 +11,7 @@ share/gnome-terminal/profile-new-dialog.ui
 share/gnome-terminal/profile-preferences.ui
 share/gnome-terminal/terminal.about
 share/gnome-terminal/terminal.xml
+share/gnome/help/
 share/gnome/help/gnome-terminal/
 share/gnome/help/gnome-terminal/C/
 share/gnome/help/gnome-terminal/C/figures/
@@ -216,6 +218,7 @@ share/locale/xh/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-terminal.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-terminal.mo
+share/omf/
 share/omf/gnome-terminal/
 share/omf/gnome-terminal/gnome-terminal-C.omf
 share/omf/gnome-terminal/gnome-terminal-bg.omf

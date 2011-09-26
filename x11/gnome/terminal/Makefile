@@ -1,18 +1,15 @@
-# $OpenBSD: Makefile,v 1.74 2011/09/23 08:49:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2011/09/26 14:59:44 jasper Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.0.1
-REVISION=	2
+GNOME_VERSION=	3.2.0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
-
-EXTRACT_SUFX=		.tar.bz2
 
 MODULES=	devel/gconf2 \
 		devel/gettext \
@@ -24,16 +21,16 @@ WANTLIB += atk-1.0 c cairo cairo-gobject drm expat fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gthread-2.0 gtk-3 m ncurses pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += vte2_90 xcb xcb-render xcb-shm z
+WANTLIB += vte2_90 xcb xcb-render xcb-shm z kvm ffi
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
-LIB_DEPENDS=	devel/vte
+LIB_DEPENDS=	devel/vte3
 
-MODGNOME_TOOLS= yelp
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_TOOLS= 	yelp
+MODGNOME_DESKTOP_FILE=	Yes
 MODGCONF2_SCHEMAS_DIR=	gnome-terminal
-CONFIGURE_ARGS= 	--with-gtk=3.0
+
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
