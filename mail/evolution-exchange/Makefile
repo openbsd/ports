@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2011/09/25 08:25:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.26 2011/09/26 09:45:10 ajacoutot Exp $
 
 # No NTLM support in OpenLDAP; Plaintext password authentication will be
 # used when connecting to the Global Catalog server. Consider installing
@@ -11,6 +11,8 @@ COMMENT=	evolution connector for MS Exchange
 
 GNOME_PROJECT=	evolution-exchange
 GNOME_VERSION=	3.2.0
+
+REVISION=	0
 
 SHARED_LIBS +=  exchange                  0.0 # 0.0
 SHARED_LIBS +=  xntlm                     0.0 # 0.0
@@ -31,22 +33,20 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB += GL ICE ORBit-2 SM X11 X11-xcb Xau Xcomposite Xcursor
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += Xxf86vm asn1 atk-1.0 c cairo cairo-gobject camel-1.2
-WANTLIB += camel-provider-1.2 canberra canberra-gtk3 com_err crypto
-WANTLIB += db dbus-1 drm ebackend-1.2 ebook-1.2 ecal-1.2
-WANTLIB += edata-book-1.2 edata-cal-1.2 edataserver-1.2 edataserverui-3.0
-WANTLIB += enchant execinfo expat fontconfig freetype
-WANTLIB += gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gnome-desktop-3 gnome-keyring gobject-2.0
-WANTLIB += gpg-error gssapi gthread-2.0 gtk-3 gtkhtml-4.0 gtkhtml-editor-4.0
-WANTLIB += ical icalss icalvcal krb5 lber-2.4 ldap-2.4 ltdl m
-WANTLIB += nspr4 nss3 nssutil3 ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
-WANTLIB += sasl2 smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 startup-notification-1
-WANTLIB += stdc++ vorbis vorbisfile xcb xcb-aux xcb-render
-WANTLIB += xcb-shm xml2 z ffi kvm
+WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm
+WANTLIB += asn1 atk-1.0 c cairo cairo-gobject camel-1.2 camel-provider-1.2
+WANTLIB += canberra canberra-gtk3 com_err crypto db dbus-1 drm
+WANTLIB += ebackend-1.2 ebook-1.2 ecal-1.2 edata-book-1.2 edata-cal-1.2
+WANTLIB += edataserver-1.2 edataserverui-3.0 enchant expat ffi
+WANTLIB += fontconfig freetype gailutil-3 gcrypt gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-3 gnome-keyring
+WANTLIB += gobject-2.0 gpg-error gssapi gthread-2.0 gtk-3 gtkhtml-4.0
+WANTLIB += gtkhtml-editor-4.0 ical icalss icalvcal krb5 kvm lber-2.4
+WANTLIB += ldap-2.4 ltdl m nspr4 nss3 nssutil3 ogg pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 plc4 plds4 png pthread pthread-stubs
+WANTLIB += sasl2 smime3 softokn3 soup-2.4 sqlite3 ssl ssl3 stdc++
+WANTLIB += vorbis vorbisfile xcb xcb-render xcb-shm xml2 z
 WANTLIB += lib/evolution/${EVO_VERSION}/composer
 WANTLIB += lib/evolution/${EVO_VERSION}/eabutil
 WANTLIB += lib/evolution/${EVO_VERSION}/econtacteditor
