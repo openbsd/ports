@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2011/04/02 15:39:36 rpointel Exp $
+@comment $OpenBSD: PLIST,v 1.10 2011/09/26 10:12:46 sthen Exp $
 @bin bin/openttd
 @man man/man6/openttd.6
 share/applications/openttd.desktop
@@ -195,6 +195,19 @@ share/openttd/media/extra_grf/openttd.nfo
 share/openttd/media/extra_grf/openttdgui.nfo
 share/openttd/media/extra_grf/openttdgui.png
 share/openttd/media/extra_grf/overrides.nfo
+share/openttd/media/extra_grf/rivers/
+share/openttd/media/extra_grf/rivers/arctic.nfo
+share/openttd/media/extra_grf/rivers/arctic_brown.png
+share/openttd/media/extra_grf/rivers/arctic_snowy.png
+share/openttd/media/extra_grf/rivers/rapids.nfo
+share/openttd/media/extra_grf/rivers/rapids.png
+share/openttd/media/extra_grf/rivers/temperate.nfo
+share/openttd/media/extra_grf/rivers/temperate.png
+share/openttd/media/extra_grf/rivers/toyland.nfo
+share/openttd/media/extra_grf/rivers/toyland.png
+share/openttd/media/extra_grf/rivers/tropic.nfo
+share/openttd/media/extra_grf/rivers/tropic_desert.png
+share/openttd/media/extra_grf/rivers/tropic_forest.png
 share/openttd/media/extra_grf/roadstops.nfo
 share/openttd/media/extra_grf/roadstops.png
 share/openttd/media/extra_grf/shore.nfo
