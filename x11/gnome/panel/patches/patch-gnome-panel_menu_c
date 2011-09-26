@@ -1,6 +1,6 @@
-$OpenBSD: patch-gnome-panel_menu_c,v 1.6 2011/09/12 07:28:54 jasper Exp $
---- gnome-panel/menu.c.orig	Tue Mar 29 16:20:47 2011
-+++ gnome-panel/menu.c	Wed May 18 12:11:56 2011
+$OpenBSD: patch-gnome-panel_menu_c,v 1.7 2011/09/26 11:14:36 jasper Exp $
+--- gnome-panel/menu.c.orig	Mon Aug  1 19:39:56 2011
++++ gnome-panel/menu.c	Mon Sep 26 12:53:17 2011
 @@ -25,6 +25,7 @@
  #include "menu.h"
  
@@ -9,7 +9,7 @@ $OpenBSD: patch-gnome-panel_menu_c,v 1.6 2011/09/12 07:28:54 jasper Exp $
  
  #include <glib/gi18n.h>
  #include <gio/gio.h>
-@@ -1382,8 +1383,16 @@ GtkWidget *
+@@ -1400,8 +1401,16 @@ GtkWidget *
  create_main_menu (PanelWidget *panel)
  {
  	GtkWidget *main_menu;

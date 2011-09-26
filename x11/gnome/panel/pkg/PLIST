@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.45 2011/09/12 07:28:54 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.46 2011/09/26 11:14:36 jasper Exp $
 @bin bin/gnome-desktop-item-edit
 @bin bin/gnome-panel
 @bin bin/panel-test-applets
@@ -343,11 +343,11 @@ share/gtk-doc/html/panel-applet-4.0/index.html
 share/gtk-doc/html/panel-applet-4.0/index.sgml
 share/gtk-doc/html/panel-applet-4.0/left.png
 share/gtk-doc/html/panel-applet-4.0/overview.html
-share/gtk-doc/html/panel-applet-4.0/panel-applet-4.0.devhelp
 share/gtk-doc/html/panel-applet-4.0/panel-applet-4.0.devhelp2
 share/gtk-doc/html/panel-applet-4.0/panel-applet-GConf-Utilities.html
 share/gtk-doc/html/panel-applet-4.0/panel-applet-Panel-Applet-Factory.html
 share/gtk-doc/html/panel-applet-4.0/panel-applet-Panel-Applet.html
+share/gtk-doc/html/panel-applet-4.0/panel-applet.devhelp
 share/gtk-doc/html/panel-applet-4.0/port-gnome2.html
 share/gtk-doc/html/panel-applet-4.0/reference.html
 share/gtk-doc/html/panel-applet-4.0/right.png
