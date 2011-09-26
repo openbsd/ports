@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.13 2010/11/19 07:23:06 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2011/09/26 09:30:52 sthen Exp $
 
 COMMENT=	fetch, filter and deliver mail
 
 DISTNAME=	fdm-1.6
-REVISION =	1
+REVISION =	2
 CATEGORIES=	mail
 
 HOMEPAGE=       http://fdm.sourceforge.net/
@@ -15,11 +15,11 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-WANTLIB= c crypto ssl z tdb
+WANTLIB= c crypto ssl z tdb>=3.0
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=fdm/}
 
-LIB_DEPENDS +=	databases/tdb>=1.2.1
+LIB_DEPENDS +=	databases/tdb>=1.2.7
 
 FAKE_FLAGS=	PREFIX=${PREFIX}
 USE_GROFF =	Yes
