@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2011/09/26 06:20:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2011/09/26 07:54:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 GNOME_VERSION=		3.1.92
+REVISION=		0
 
 SHARED_LIBS +=  gnome-desktop-3      1.0      # 2.1
 
@@ -29,8 +30,7 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 RUN_DEPENDS=		devel/gsettings-desktop-schemas
-LIB_DEPENDS=		devel/startup-notification \
-			x11/gtk+3
+LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_TOOLS= 	goi yelp
 
