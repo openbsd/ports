@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.58 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.59 2011/09/26 14:32:35 ajacoutot Exp $
 
 COMMENT-main=	GNOME virtual file system
 COMMENT-smb=	samba module for GVFS
 
 GNOME_PROJECT=	gvfs
-GNOME_VERSION=	1.8.2
+GNOME_VERSION=	1.10.0
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-smb=	${GNOME_PROJECT}-smb-${GNOME_VERSION}
-
-REVISION-main=	8
-REVISION-smb=	1
 
 SHARED_LIBS +=  gvfscommon           3.0      # .0.0
 SHARED_LIBS +=  gvfscommon-dnssd     1.0      # .0.0
@@ -21,20 +18,18 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
 WANTLIB += c dbus-1 gio-2.0 glib-2.0>=2800
 WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 pcre pthread util
-WANTLIB += expat gpg-error z gcrypt gnome-keyring>=6
+WANTLIB += ffi gpg-error z gcrypt gnome-keyring>=6
 
 LIB_DEPENDS=	x11/gnome/libgnome-keyring
 
 WANTLIB-main +=	${WANTLIB}
-WANTLIB-main += bz2 lzma m soup-2.4 sqlite3
+WANTLIB-main += bz2 lzma m soup-2.4 sqlite3 expat
 WANTLIB-main += xml2 archive soup-gnome-2.4>=1
 WANTLIB-main += avahi-client avahi-common avahi-glib
 
@@ -57,6 +52,7 @@ AUTOCONF_VERSION=2.68
 CONFIGURE_STYLE=autoconf
 
 CONFIGURE_ARGS=	--disable-cdda \
+		--disable-bluray \
 		--disable-fuse \
 		--disable-hal \
 		--disable-afc \
@@ -64,6 +60,8 @@ CONFIGURE_ARGS=	--disable-cdda \
 		--disable-gphoto2 \
 		--disable-gudev \
 		--disable-udev \
+		--disable-gdu \
+		--enable-afp \
 		--enable-archive \
 		--enable-avahi \
 		--enable-http \
@@ -71,8 +69,6 @@ CONFIGURE_ARGS=	--disable-cdda \
 		--with-bash-completion-dir="${PREFIX}/share/gvfs"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-
-SUBST_VARS+=	GNOME_VERSION
 
 MULTI_PACKAGES=		-main
 PSEUDO_FLAVORS=		no_smb

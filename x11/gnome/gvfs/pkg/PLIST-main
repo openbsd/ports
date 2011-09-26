@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.20 2011/06/16 08:38:20 dcoppa Exp $
+@comment $OpenBSD: PLIST-main,v 1.21 2011/09/26 14:32:35 ajacoutot Exp $
 @pkgpath ${BASE_PKGPATH}
 %%SHARED%%
 @bin bin/gvfs-cat
@@ -6,6 +6,7 @@
 @bin bin/gvfs-info
 bin/gvfs-less
 @bin bin/gvfs-ls
+@bin bin/gvfs-mime
 @bin bin/gvfs-mkdir
 @bin bin/gvfs-monitor-dir
 @bin bin/gvfs-monitor-file
@@ -31,6 +32,8 @@ lib/libgvfscommon-dnssd.la
 lib/libgvfscommon.a
 lib/libgvfscommon.la
 @bin libexec/gvfsd
+@bin libexec/gvfsd-afp
+@bin libexec/gvfsd-afp-browse
 @bin libexec/gvfsd-archive
 @comment @bin libexec/gvfsd-burn
 @bin libexec/gvfsd-computer
@@ -56,6 +59,8 @@ share/gvfs/
 share/gvfs/gvfs-bash-completion.sh
 @sample ${SYSCONFDIR}/bash_completion.d/gvfs-bash-completion.sh
 share/gvfs/mounts/
+share/gvfs/mounts/afp-browse.mount
+share/gvfs/mounts/afp.mount
 share/gvfs/mounts/archive.mount
 @comment share/gvfs/mounts/burn.mount
 share/gvfs/mounts/computer.mount
@@ -73,6 +78,7 @@ share/locale/af/LC_MESSAGES/gvfs.mo
 share/locale/ar/LC_MESSAGES/gvfs.mo
 share/locale/as/LC_MESSAGES/gvfs.mo
 share/locale/ast/LC_MESSAGES/gvfs.mo
+share/locale/be/LC_MESSAGES/gvfs.mo
 share/locale/be@latin/LC_MESSAGES/gvfs.mo
 share/locale/bg/LC_MESSAGES/gvfs.mo
 share/locale/bn/LC_MESSAGES/gvfs.mo
