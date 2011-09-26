@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2011/09/25 12:53:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2011/09/26 07:33:25 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,7 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.0.2
-REVISION=		3
+REVISION=		4
 
 SHARED_LIBS +=  gnome-control-center      0.0 # 1.0
 
@@ -28,7 +28,7 @@ WANTLIB += gnomekbd gnomekbdui gobject-2.0 gssapi gthread-2.0
 WANTLIB += gtk-3 gtop-2.0 krb5 kvm ltdl m ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre pixman-1 png polkit-gobject-1 pthread
 WANTLIB += pthread-stubs pulse pulse-mainloop-glib sndfile ssl
-WANTLIB += startup-notification-1 vorbis vorbisfile xcb xcb-aux
+WANTLIB += vorbis vorbisfile xcb
 WANTLIB += xcb-render xcb-shm xkbfile xklavier xml2 z
 
 EXTRACT_SUFX=		.tar.bz2
