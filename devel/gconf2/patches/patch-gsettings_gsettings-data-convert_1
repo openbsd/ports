@@ -1,7 +1,7 @@
-$OpenBSD: patch-gsettings_gsettings-data-convert_1,v 1.1 2011/04/10 08:33:13 ajacoutot Exp $
---- gsettings/gsettings-data-convert.1.orig	Sun Apr 10 10:22:19 2011
-+++ gsettings/gsettings-data-convert.1	Sun Apr 10 10:22:31 2011
-@@ -30,7 +30,7 @@ gsettings-data-convert \- GConf to GSettings data migr
+$OpenBSD: patch-gsettings_gsettings-data-convert_1,v 1.2 2011/09/26 16:13:22 ajacoutot Exp $
+--- gsettings/gsettings-data-convert.1.orig	Sun Aug 14 16:30:42 2011
++++ gsettings/gsettings-data-convert.1	Mon Sep 26 18:02:33 2011
+@@ -39,7 +39,7 @@ gsettings-data-convert \- GConf to GSettings data migr
  reads values out of the users GConf database and stores them in GSettings\&.
  .PP
  The information about the mapping from GConf keys to GSettings keys is taken from files in

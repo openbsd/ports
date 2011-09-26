@@ -1,20 +1,16 @@
-# $OpenBSD: Makefile,v 1.65 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2011/09/26 16:13:22 ajacoutot Exp $
 
 COMMENT-main=	configuration database system for GNOME
 COMMENT-polkit=	PolicyKit integration for GConf2
 COMMENT-gtk=	GConf2 configuration checker
 
 GNOME_PROJECT=	GConf
-GNOME_VERSION=	2.32.4
+GNOME_VERSION=	3.2.0
 PKGNAME=	gconf2-${GNOME_VERSION}
 
 PKGNAME-main=	gconf2-${GNOME_VERSION}
 PKGNAME-polkit=	gconf2-polkit-${GNOME_VERSION}
 PKGNAME-gtk=	gconf2-sanity-check-${GNOME_VERSION}
-
-REVISION-main=	2
-REVISION-gtk=	3
-REVISION-polkit=2
 
 SHARED_LIBS +=	gconf-2              6.2      # 5.5
 
@@ -33,9 +29,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
-WANTLIB += c gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += c gio-2.0 glib-2.0 gmodule-2.0 ffi
 WANTLIB += gobject-2.0 gthread-2.0 pcre pthread z
 
 WANTLIB-main += ${WANTLIB} ORBit-2 m xml2 dbus-1 dbus-glib-1
@@ -52,6 +46,7 @@ WANTLIB-gtk += cairo drm expat fontconfig freetype gconf-2
 WANTLIB-gtk += gdk_pixbuf-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB-gtk += pangoft2-1.0 pixman-1 png pthread-stubs xcb xcb-render
 WANTLIB-gtk += xcb-shm xml2 cairo-gobject gdk-3 gtk-3
+WANTLIB-gtk += dbus-1 dbus-glib-1 kvm
 
 MODULES=	devel/gettext \
 		x11/gnome
