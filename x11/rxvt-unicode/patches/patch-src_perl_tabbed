@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_perl_tabbed,v 1.1 2011/09/26 15:18:37 dcoppa Exp $
+
+Bugfix: pty input was not properly dispatched to the active tabbed
+window when events were sent to the main window.
+(upstream cvs revision 1.26)
+
+--- src/perl/tabbed.orig	Mon Feb 21 08:39:52 2011
++++ src/perl/tabbed	Mon Sep 26 17:13:29 2011
+@@ -170,6 +170,14 @@ sub on_focus_out {
+    ()
+ }
+ 
++sub on_tt_write {
++    my ($self, $octets) = @_;
++
++    $self->{cur}->tt_write ($octets);
++
++    1
++}
++
+ sub on_key_press {
+    my ($self, $event) = @_;
+ 
