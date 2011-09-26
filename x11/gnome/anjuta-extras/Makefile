@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.16 2011/09/21 08:05:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2011/09/26 20:53:46 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	extra plugins for Anjuta IDE
 
 GNOME_PROJECT=	anjuta-extras
-GNOME_VERSION=	3.1.92
+GNOME_VERSION=	3.2.0
 
 CATEGORIES=	devel
 
@@ -23,7 +23,7 @@ WANTLIB += cairo cairo-gobject drm expat fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gdl-3 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 png pthread-stubs stdc++ util xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += xcb-shm xml2 z ffi kvm
 
 MODULES=	devel/dconf \
 		devel/gettext \
@@ -33,7 +33,7 @@ MODULES=	devel/dconf \
 # https://bugzilla.gnome.org/show_bug.cgi?id=631157
 CFLAGS +=	-DMAX_PATH=PATH_MAX
 
-LIB_DEPENDS=	x11/gnome/anjuta>=3.1.4
+LIB_DEPENDS=	x11/gnome/anjuta>=3.2.0
 
 LIBTOOL_FLAGS=	--tag=disable-static
 
