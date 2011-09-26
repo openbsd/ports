@@ -1,10 +1,9 @@
-@comment $OpenBSD: PLIST-docs,v 1.3 2011/09/20 21:12:09 ajacoutot Exp $
+@comment $OpenBSD: PLIST-docs,v 1.4 2011/09/26 07:14:50 ajacoutot Exp $
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/gail-libgail-util3/
 share/gtk-doc/html/gail-libgail-util3/gail-libgail-util3-GailMisc.html
 share/gtk-doc/html/gail-libgail-util3/gail-libgail-util3-GailTextUtil.html
-share/gtk-doc/html/gail-libgail-util3/gail-libgail-util3.devhelp
 share/gtk-doc/html/gail-libgail-util3/gail-libgail-util3.devhelp2
 share/gtk-doc/html/gail-libgail-util3/home.png
 share/gtk-doc/html/gail-libgail-util3/index.html
@@ -72,7 +71,6 @@ share/gtk-doc/html/gdk3/gdk3-Threads.html
 share/gtk-doc/html/gdk3/gdk3-Visuals.html
 share/gtk-doc/html/gdk3/gdk3-Windows.html
 share/gtk-doc/html/gdk3/gdk3-X-Window-System-Interaction.html
-share/gtk-doc/html/gdk3/gdk3.devhelp
 share/gtk-doc/html/gdk3/gdk3.devhelp2
 share/gtk-doc/html/gdk3/gobbler.png
 share/gtk-doc/html/gdk3/gumby.png
@@ -520,7 +518,6 @@ share/gtk-doc/html/gtk3/gtk3-Standard-Enumerations.html
 share/gtk-doc/html/gtk3/gtk3-Stock-Items.html
 share/gtk-doc/html/gtk3/gtk3-Testing.html
 share/gtk-doc/html/gtk3/gtk3-Themeable-Stock-Images.html
-share/gtk-doc/html/gtk3/gtk3.devhelp
 share/gtk-doc/html/gtk3/gtk3.devhelp2
 share/gtk-doc/html/gtk3/gtkbase.html
 share/gtk-doc/html/gtk3/gtkobjects.html
