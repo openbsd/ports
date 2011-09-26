@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/09/26 15:19:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2011/09/26 15:50:51 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME utility programs
 
 GNOME_PROJECT=		gnome-utils
 GNOME_VERSION=		3.2.0
+REVISION=		0
 
 SHARED_LIBS +=  gdict-1.0      6.1      # .6.7
 
@@ -28,9 +29,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			devel/libgtop2
 BUILD_DEPENDS= 		devel/gsettings-desktop-schemas
 # gvfs needed by baobab
-# nautilus (org.gnome.nautilus.preferences) needed by gnome-screenshot 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			x11/gnome/nautilus \
 			x11/gnome/gvfs
 
 MODULES=		devel/dconf \
