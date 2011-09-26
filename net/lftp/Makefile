@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.88 2011/05/04 00:59:30 kevlo Exp $
+# $OpenBSD: Makefile,v 1.89 2011/09/26 18:43:19 sthen Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
@@ -9,7 +9,7 @@ HOMEPAGE=	http://lftp.yar.ru/
 
 MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
-# GPLv2
+# GPLv3+
 PERMIT_PACKAGE_CDROM=   Yes
 PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
