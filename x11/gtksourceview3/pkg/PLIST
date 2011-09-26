@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2011/07/01 11:16:40 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.5 2011/09/26 19:56:28 jasper Exp $
 %%SHARED%%
 include/gtksourceview-${MAJOR_VERSION}/
 include/gtksourceview-${MAJOR_VERSION}/gtksourceview/
@@ -82,6 +82,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/
 share/gtksourceview-${MAJOR_VERSION}/language-specs/R.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/ada.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/asp.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/automake.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/awk.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/bennugd.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/bibtex.lang
@@ -123,6 +124,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/haskell-literate.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/haskell.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/html.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/idl.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/imagej.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/ini.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/java.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/javascript.lang
@@ -135,6 +137,7 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/lua.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/m4.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/makefile.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/mallard.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/markdown.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/matlab.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/nemerle.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/nsis.lang
@@ -152,12 +155,14 @@ share/gtksourceview-${MAJOR_VERSION}/language-specs/php.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/pkgconfig.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/po.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/prolog.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/protobuf.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/python.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/rpmspec.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/ruby.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/scheme.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/scilab.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/sh.lang
+share/gtksourceview-${MAJOR_VERSION}/language-specs/sml.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/sparql.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/sql.lang
 share/gtksourceview-${MAJOR_VERSION}/language-specs/systemverilog.lang
