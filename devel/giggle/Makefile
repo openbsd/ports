@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2011/09/23 08:49:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2011/09/26 14:30:29 jasper Exp $
 
 COMMENT=	gtk-based git repository viewer
 CATEGORIES=	devel x11
 GNOME_VERSION=	0.5
 GNOME_PROJECT=	giggle
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS +=  giggle               0.0      # 0.0
 SHARED_LIBS +=  giggle-git           0.0      # 0.0
@@ -34,7 +34,7 @@ WANTLIB += vte xcb xcb-render xcb-shm xml2 z
 
 RUN_DEPENDS=	devel/git
 BUILD_DEPENDS+=	devel/git
-LIB_DEPENDS=	devel/vte,gtk2 \
+LIB_DEPENDS=	devel/vte \
 		x11/gtksourceview
 
 MODGNOME_DESKTOP_FILE=	Yes
