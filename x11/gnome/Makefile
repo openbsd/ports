@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.163 2011/09/20 21:15:49 jasper Exp $
+# $OpenBSD: Makefile,v 1.164 2011/09/26 09:40:06 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += alacarte
@@ -78,6 +78,7 @@
      SUBDIR += screensaver
      SUBDIR += seahorse
      SUBDIR += seahorse-plugins
+     SUBDIR += seahorse-sharing
      SUBDIR += seed
      SUBDIR += session
      SUBDIR += settings-daemon
