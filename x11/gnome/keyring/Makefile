@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2011/09/26 06:25:20 ajacoutot Exp $
 
 COMMENT=	password agent for the GNOME project
 
 GNOME_PROJECT=	gnome-keyring
-GNOME_VERSION=	3.1.92
-
-REVISION=	0
+GNOME_VERSION=	3.2.0
 
 SHARED_LIBS +=  gck-1                0.0      # 0.0
 SHARED_LIBS +=  gcr-3                1.0      # 1.0
@@ -22,7 +20,7 @@ WANTLIB += cairo-gobject dbus-1 drm expat fontconfig freetype
 WANTLIB += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error gthread-2.0 gtk-3 m p11-kit pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm z
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm z ffi kvm
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -55,9 +53,6 @@ pre-configure:
 		${WRKSRC}/configure
 
 post-install:
-	# https://bugzilla.gnome.org/show_bug.cgi?id=659402
-	chmod 0555 ${PREFIX}/bin/gnome-keyring-daemon
-
 	mv ${WRKINST}/etc/xdg ${PREFIX}/share/examples/gnome-keyring
 
 .include <bsd.port.mk>
