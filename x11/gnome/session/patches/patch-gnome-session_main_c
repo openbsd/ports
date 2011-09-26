@@ -1,7 +1,7 @@
-$OpenBSD: patch-gnome-session_main_c,v 1.6 2011/09/12 07:28:54 jasper Exp $
---- gnome-session/main.c.orig	Tue Mar 22 21:31:43 2011
-+++ gnome-session/main.c	Wed May 18 14:37:20 2011
-@@ -325,6 +325,13 @@ main (int argc, char **argv)
+$OpenBSD: patch-gnome-session_main_c,v 1.7 2011/09/26 10:19:21 ajacoutot Exp $
+--- gnome-session/main.c.orig	Thu Sep  8 00:55:51 2011
++++ gnome-session/main.c	Mon Sep 26 11:33:41 2011
+@@ -334,6 +334,13 @@ main (int argc, char **argv)
           */
          gsm_util_setenv ("GNOME_DESKTOP_SESSION_ID", "this-is-deprecated");
  
@@ -14,4 +14,4 @@ $OpenBSD: patch-gnome-session_main_c,v 1.6 2011/09/12 07:28:54 jasper Exp $
 +
          client_store = gsm_store_new ();
  
- 
+         xsmp_server = gsm_xsmp_server_new (client_store);

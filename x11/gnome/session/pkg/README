@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.31 2011/09/25 21:16:11 ajacoutot Exp $
+$OpenBSD: README,v 1.32 2011/09/26 10:19:21 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -53,6 +53,7 @@ It is advised to _always_ install the "minimal" set (see also: the
 	nautilus-totem \
 	rhythmbox \
 	seahorse-plugins \
+	seahorse-sharing \
 	simple-scan \
 	vinagre \
 	vino
@@ -157,7 +158,8 @@ Utilities
     * nautilus-meta-tracker - edit (meta-)tracker-search(1) tags from within Nautilus
     * nautilus-open-terminal - open a terminal under a nautilus folder path
     * nautilus-sendto - integrate applications into Nautilus
-    * seahorse (+seahorse-plugins) - encryption, keys and passwords manager
+    * seahorse (+seahorse-plugins +seahorse-sharing)
+        - encryption, keys and passwords manager
     * vinagre - VNC Client (remote Desktop client)
     * vino - VNC server (allows remote access to your Desktop)
 

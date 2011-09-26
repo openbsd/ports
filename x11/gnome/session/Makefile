@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.181 2011/09/25 21:16:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.182 2011/09/26 10:19:21 ajacoutot Exp $
 
 COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
-GNOME_VERSION=		3.0.2
-
-REVISION=		29
+GNOME_VERSION=		3.2.0
 
 CATEGORIES=		x11
 
@@ -15,16 +13,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
 WANTLIB += GL ICE ORBit-2 SM X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender Xtst Xxf86vm
-WANTLIB += atk-1.0 c cairo cairo-gobject croco-0.6 dbus-1 dbus-glib-1
-WANTLIB += drm execinfo expat fontconfig freetype gconf-2 gdk-3
+WANTLIB += atk-1.0 c cairo cairo-gobject dbus-1 dbus-glib-1 drm
+WANTLIB += execinfo expat ffi fontconfig freetype gconf-2 gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += gthread-2.0 gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre pixman-1 png pthread pthread-stubs rsvg-2 upower-glib
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += gthread-2.0 gtk-3 json-glib-1.0 kvm m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
+WANTLIB += upower-glib xcb xcb-render xcb-shm z
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -37,7 +33,8 @@ LIB_DEPENDS=	devel/libexecinfo \
 		x11/gtk+3 \
 		devel/gconf2 \
 		x11/gnome/librsvg \
-		sysutils/upower
+		sysutils/upower \
+		devel/json-glib
 RUN_DEPENDS=	x11/gnome/settings-daemon \
 		sysutils/consolekit \
 		x11/xdg-user-dirs-gtk>=0.8p6 \
