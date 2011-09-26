@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2011/09/26 07:38:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.70 2011/09/26 08:11:32 ajacoutot Exp $
 
 # Don't forget to check eog-plugins when updating this port!
 
@@ -8,7 +8,7 @@ GNOME_PROJECT=		eog
 GNOME_VERSION=		3.0.2
 EXTRACT_SUFX=		.tar.bz2
 
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		graphics
 
@@ -35,7 +35,6 @@ MODULES=		devel/dconf \
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
 LIB_DEPENDS=		devel/libpeas \
-			devel/startup-notification \
 			graphics/lcms \
 			graphics/libexif \
 			textproc/exempi \
