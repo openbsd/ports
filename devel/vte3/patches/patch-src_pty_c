@@ -1,0 +1,27 @@
+$OpenBSD: patch-src_pty_c,v 1.1.1.1 2011/09/26 14:31:33 jasper Exp $
+
+Party revert to previous behaviour of returning -1, instead of failing
+to compile.
+
+--- src/pty.c.orig	Mon Aug 29 13:16:26 2011
++++ src/pty.c	Mon Sep 26 15:46:55 2011
+@@ -795,7 +795,8 @@ _vte_pty_ptsname(int master,
+                     "%s failed: %s", "ioctl(TIOCGPTN)", g_strerror(errno));
+         return NULL;
+ #else
+-#error no ptsname implementation for this platform
++#warning no ptsname implementation for this platform
++	return NULL;
+ #endif
+ }
+ 
+@@ -903,7 +904,8 @@ _vte_pty_unlockpt(int fd,
+         }
+         return TRUE;
+ #else
+-#error no unlockpt implementation for this platform
++#warning no unlockpt implementation for this platform
++	return -1;
+ #endif
+ }
+ 
