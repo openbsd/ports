@@ -1,11 +1,11 @@
-$OpenBSD: patch-vinagre_vinagre-ssh_c,v 1.2 2011/09/12 07:28:55 jasper Exp $
---- vinagre/vinagre-ssh.c.orig	Sat Apr 24 11:09:16 2010
-+++ vinagre/vinagre-ssh.c	Sat Apr 24 11:09:32 2010
-@@ -20,6 +20,7 @@
-  */
- 
- #include <config.h>
+$OpenBSD: patch-vinagre_vinagre-ssh_c,v 1.3 2011/09/26 17:32:12 jasper Exp $
+--- vinagre/vinagre-ssh.c.orig	Mon Sep 26 19:05:02 2011
++++ vinagre/vinagre-ssh.c	Mon Sep 26 19:05:30 2011
+@@ -30,6 +30,7 @@
+ #include <gio/gwin32inputstream.h>
+ #include <gio/gwin32outputstream.h>
+ #else /* !G_OS_WIN32 */
 +#include <arpa/inet.h>
  #include <netinet/in.h>
- #include <unistd.h>
- #include <fcntl.h>
+ #include <gio/gunixinputstream.h>
+ #include <gio/gunixoutputstream.h>

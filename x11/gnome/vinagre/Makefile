@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.45 2011/09/20 21:10:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.46 2011/09/26 17:32:12 jasper Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	remote desktop viewer for GNOME
 
-GNOME_VERSION=	3.0.2
+GNOME_VERSION=	3.2.0
 GNOME_PROJECT=	vinagre
-REVISION=	2
 
 CATEGORIES=	net
 
@@ -23,12 +22,12 @@ WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 avahi-client
 WANTLIB += avahi-common avahi-glib avahi-gobject avahi-ui-gtk3
 WANTLIB += c cairo cairo-gobject dbus-1 dbus-glib-1 drm expat
 WANTLIB += ffi fontconfig freetype gcrypt gdbm gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gmp gnome-keyring
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gmp gnome-keyring
 WANTLIB += gnutls gobject-2.0 gpg-error gthread-2.0 gtk-3 gtk-vnc-2.0
 WANTLIB += gvnc-1.0 hogweed m nettle pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre peas-1.0 peas-gtk-1.0 pixman-1 png
+WANTLIB += pangoft2-1.0 pcre pixman-1 png p11-kit stdc++
 WANTLIB += pthread pthread-stubs sasl2 tasn1 telepathy-glib util
-WANTLIB += xcb xcb-render xcb-shm xml2 z
+WANTLIB += xcb xcb-render xcb-shm xml2 z kvm
 
 MODULES=	devel/gettext \
 		x11/gnome \
@@ -43,7 +42,7 @@ LIB_DEPENDS=	devel/libpeas \
 		net/avahi,-gtk3,no_mono,no_qt3,no_qt4
 
 MODGNOME_DESKTOP_FILE=	Yes
-MODGNOME_TOOLS= goi yelp
+MODGNOME_TOOLS= 	yelp
 
 CONFIGURE_ARGS=	--with-avahi \
 		--with-telepathy \

@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.33 2011/09/20 21:10:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2011/09/26 17:32:22 jasper Exp $
 
 COMMENT=	GNOME desktop sharing server
 
 GNOME_PROJECT=	vino
-GNOME_VERSION=	3.0.3
-
-REVISION=	1
+GNOME_VERSION=	3.2.0
 
 CATEGORIES=	net
 
@@ -28,7 +26,7 @@ WANTLIB += gmodule-2.0 gmp gnome-keyring gnutls gobject-2.0 gpg-error
 WANTLIB += gthread-2.0 gtk-3 hogweed jpeg m nettle notify pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs soup-2.4 tasn1 telepathy-glib xcb xcb-render
-WANTLIB += xcb-shm xml2 z
+WANTLIB += xcb-shm xml2 z ffi kvm p11-kit stdc++
 
 LIB_DEPENDS=	devel/libnotify \
 		devel/libsoup \
@@ -38,7 +36,7 @@ LIB_DEPENDS=	devel/libnotify \
 		security/gnutls \
 		x11/gnome/libgnome-keyring
 
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
 MODGNOME_TOOLS= yelp
 
 CONFIGURE_ARGS=	--with-gnome-keyring \
@@ -47,6 +45,7 @@ CONFIGURE_ARGS=	--with-gnome-keyring \
 		--with-libnotify \
 		--with-telepathy \
 		--disable-ipv6
+
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
