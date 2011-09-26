@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2011/09/26 13:05:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.55 2011/09/26 13:37:17 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -33,7 +33,7 @@ MODULES=		devel/gettext \
 # instead of the actual library
 USE_LIBTOOL=		gnu
 
-#MODGNOME_TOOLS= 	goi yelp
+MODGNOME_TOOLS= 	goi yelp
 MODGNOME_DESKTOP_FILE=	Yes
 MODGCONF2_SCHEMAS_DIR=	gucharmap
 
