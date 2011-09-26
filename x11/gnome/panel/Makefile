@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.99 2011/09/20 21:10:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.100 2011/09/26 07:53:09 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -7,7 +7,7 @@ COMMENT=	GNOME panel
 GNOME_PROJECT=	gnome-panel
 GNOME_VERSION=	3.0.2
 
-REVISION=	6
+REVISION=	7
 
 SHARED_LIBS=	panel-applet-4            0.0 # 0.0
 
@@ -33,8 +33,8 @@ WANTLIB += gtk-3 gweather-3 ical icalss icalvcal krb5 m nspr4
 WANTLIB += nss3 nssutil3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += rsvg-2 smime3 soup-2.4 soup-gnome-2.4 sqlite3 ssl3
-WANTLIB += startup-notification-1 telepathy-glib wnck-3 xcb xcb-atom
-WANTLIB += xcb-aux xcb-event xcb-render xcb-shm xml2 z
+WANTLIB += startup-notification-1 telepathy-glib wnck-3 xcb
+WANTLIB += xcb-aux xcb-render xcb-shm xml2 z X11-xcb ffi kvm
 
 MODULES=	devel/dconf \
 		devel/gconf2 \
