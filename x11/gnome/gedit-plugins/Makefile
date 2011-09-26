@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.42 2011/09/26 14:34:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.43 2011/09/26 20:37:55 jasper Exp $
 
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
-GNOME_VERSION=		3.0.7
-
-REVISION=		4
+GNOME_VERSION=		3.2.0
 
 CATEGORIES=		editors
 
@@ -31,7 +29,7 @@ MODULES=		devel/gettext \
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			devel/gsettings-desktop-schemas
-LIB_DEPENDS=		devel/libpeas \
+LIB_DEPENDS=		devel/libpeas>=1.1.4p1 \
 			x11/gtksourceview3
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/vte3 \

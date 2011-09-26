@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.70 2011/09/20 21:10:00 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2011/09/26 20:37:48 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		lightweight GNOME text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		3.0.6
-REVISION=		1
+GNOME_VERSION=		3.2.0
 
 CATEGORIES=		editors
 
@@ -27,7 +26,7 @@ WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3
 WANTLIB += gtksourceview-3.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre peas-1.0 peas-gtk-1.0 pixman-1 png pthread pthread-stubs
-WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 z
+WANTLIB += stdc++ xcb xcb-render xcb-shm xml2 z kvm
 
 MODULES=		devel/dconf \
 			devel/gettext \
@@ -36,13 +35,13 @@ MODULES=		devel/dconf \
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			devel/iso-codes
-LIB_DEPENDS=		devel/libpeas \
+LIB_DEPENDS=		devel/libpeas>=1.1.4p1 \
 			textproc/enchant \
 			x11/gtksourceview3
 RUN_DEPENDS=		devel/gsettings-desktop-schemas
 
 MODGNOME_TOOLS= 	goi yelp
-MODGNOME_DESKTOP_FILE=		Yes
+MODGNOME_DESKTOP_FILE=	Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
 CONFIGURE_ARGS=		--enable-python \

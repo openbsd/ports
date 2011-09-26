@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2011/09/12 07:26:20 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.22 2011/09/26 20:37:48 jasper Exp $
 @bin bin/gedit
 bin/gnome-text-editor
 include/gedit-3.0/
@@ -207,6 +207,7 @@ share/gedit/plugins/snippets/lang/
 share/gedit/plugins/snippets/lang/snippets.lang
 share/gedit/plugins/snippets/latex.xml
 share/gedit/plugins/snippets/mallard.xml
+share/gedit/plugins/snippets/markdown.xml
 share/gedit/plugins/snippets/perl.xml
 share/gedit/plugins/snippets/php.xml
 share/gedit/plugins/snippets/python.xml
@@ -657,6 +658,52 @@ share/gnome/help/gedit/es/gedit-tabs.page
 share/gnome/help/gedit/es/gedit-undo-recent-action.page
 share/gnome/help/gedit/es/gedit-view-open-files-in-sidepane.page
 share/gnome/help/gedit/es/index.page
+share/gnome/help/gedit/eu/
+share/gnome/help/gedit/eu/figures/
+share/gnome/help/gedit/eu/figures/gedit-icon.png
+share/gnome/help/gedit/eu/figures/gedit-new-external-tool.png
+share/gnome/help/gedit/eu/figures/gedit-open-location.png
+share/gnome/help/gedit/eu/figures/gedit-side-pane1.png
+share/gnome/help/gedit/eu/figures/gedit-side-pane2.png
+share/gnome/help/gedit/eu/figures/gedit-side-pane3.png
+share/gnome/help/gedit/eu/figures/gedit3-screenshot.png
+share/gnome/help/gedit/eu/gedit-change-color-scheme.page
+share/gnome/help/gedit/eu/gedit-close-file.page
+share/gnome/help/gedit/eu/gedit-create-new-file.page
+share/gnome/help/gedit/eu/gedit-edit-as-root.page
+share/gnome/help/gedit/eu/gedit-files-basic.page
+share/gnome/help/gedit/eu/gedit-full-screen.page
+share/gnome/help/gedit/eu/gedit-open-files-from-sidepane.page
+share/gnome/help/gedit/eu/gedit-open-files.page
+share/gnome/help/gedit/eu/gedit-open-on-server.page
+share/gnome/help/gedit/eu/gedit-open-recent.page
+share/gnome/help/gedit/eu/gedit-plugin-guide.page
+share/gnome/help/gedit/eu/gedit-plugins-bracket-comp.page
+share/gnome/help/gedit/eu/gedit-plugins-change-case.page
+share/gnome/help/gedit/eu/gedit-plugins-doc-stats.page
+share/gnome/help/gedit/eu/gedit-plugins-external-tools.page
+share/gnome/help/gedit/eu/gedit-plugins-file-browser.page
+share/gnome/help/gedit/eu/gedit-plugins-insert-date-time.page
+share/gnome/help/gedit/eu/gedit-plugins-install.page
+share/gnome/help/gedit/eu/gedit-plugins-modelines.page
+share/gnome/help/gedit/eu/gedit-plugins-pyconsole.page
+share/gnome/help/gedit/eu/gedit-plugins-snippets.page
+share/gnome/help/gedit/eu/gedit-plugins-sort.page
+share/gnome/help/gedit/eu/gedit-plugins-tag-list.page
+share/gnome/help/gedit/eu/gedit-plugins-terminal.page
+share/gnome/help/gedit/eu/gedit-printing.page
+share/gnome/help/gedit/eu/gedit-quickstart.page
+share/gnome/help/gedit/eu/gedit-replace.page
+share/gnome/help/gedit/eu/gedit-save-file.page
+share/gnome/help/gedit/eu/gedit-search.page
+share/gnome/help/gedit/eu/gedit-shortcut-keys.page
+share/gnome/help/gedit/eu/gedit-spellcheck.page
+share/gnome/help/gedit/eu/gedit-syntax-highlighting.page
+share/gnome/help/gedit/eu/gedit-tabs-moving.page
+share/gnome/help/gedit/eu/gedit-tabs.page
+share/gnome/help/gedit/eu/gedit-undo-recent-action.page
+share/gnome/help/gedit/eu/gedit-view-open-files-in-sidepane.page
+share/gnome/help/gedit/eu/index.page
 share/gnome/help/gedit/fi/
 share/gnome/help/gedit/fi/figures/
 share/gnome/help/gedit/fi/figures/gedit-icon.png
