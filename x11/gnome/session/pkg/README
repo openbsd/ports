@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.32 2011/09/26 10:19:21 ajacoutot Exp $
+$OpenBSD: README,v 1.33 2011/09/26 15:52:09 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -25,7 +25,8 @@ It is advised to _always_ install the "minimal" set (see also: the
 	gnome-media \
 	gnome-system-monitor \
 	gnome-terminal \
-	gnome-utils
+	gnome-utils \
+	nautilus
 
 "full" GNOME Desktop
 --------------------
