@@ -1,12 +1,15 @@
-$OpenBSD: patch-src_tracker-extract_tracker-extract-gif_c,v 1.1 2011/09/22 18:34:24 ajacoutot Exp $
---- src/tracker-extract/tracker-extract-gif.c.orig	Thu Sep 22 19:58:29 2011
-+++ src/tracker-extract/tracker-extract-gif.c	Thu Sep 22 20:01:16 2011
-@@ -606,7 +606,11 @@ tracker_extract_get_metadata (TrackerExtractInfo *info
+$OpenBSD: patch-src_tracker-extract_tracker-extract-gif_c,v 1.2 2011/09/26 12:31:40 ajacoutot Exp $
+--- src/tracker-extract/tracker-extract-gif.c.orig	Mon Sep 26 11:26:47 2011
++++ src/tracker-extract/tracker-extract-gif.c	Mon Sep 26 12:30:46 2011
+@@ -606,10 +606,14 @@ tracker_extract_get_metadata (TrackerExtractInfo *info
  		return FALSE;
  	}
  
 +#if defined(__linux__)
  	fd = g_open (filename, O_RDONLY | O_NOATIME, 0);
+ 	if (fd == -1 && errno == EPERM) {
+ 		fd = g_open (filename, O_RDONLY, 0);
+ 	}
 +#else
 +	fd = g_open (filename, O_RDONLY, 0);
 +#endif

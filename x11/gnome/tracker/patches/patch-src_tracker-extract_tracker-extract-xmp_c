@@ -1,12 +1,15 @@
-$OpenBSD: patch-src_tracker-extract_tracker-extract-xmp_c,v 1.1 2011/09/22 18:34:24 ajacoutot Exp $
---- src/tracker-extract/tracker-extract-xmp.c.orig	Thu Sep 22 19:58:29 2011
-+++ src/tracker-extract/tracker-extract-xmp.c	Thu Sep 22 20:01:09 2011
-@@ -154,7 +154,11 @@ tracker_extract_get_metadata (TrackerExtractInfo *info
+$OpenBSD: patch-src_tracker-extract_tracker-extract-xmp_c,v 1.2 2011/09/26 12:31:40 ajacoutot Exp $
+--- src/tracker-extract/tracker-extract-xmp.c.orig	Mon Sep 26 11:27:38 2011
++++ src/tracker-extract/tracker-extract-xmp.c	Mon Sep 26 12:31:47 2011
+@@ -154,10 +154,14 @@ tracker_extract_get_metadata (TrackerExtractInfo *info
  	preupdate = tracker_extract_info_get_preupdate_builder (info);
  	metadata = tracker_extract_info_get_metadata_builder (info);
  
 +#if defined(__linux__)
  	fd = g_open (filename, O_RDONLY | O_NOATIME, 0);
+ 	if (fd == -1 && errno == EPERM) {
+ 		fd = g_open (filename, O_RDONLY, 0);
+ 	}
 +#else
 +	fd = g_open (filename, O_RDONLY, 0);
 +#endif

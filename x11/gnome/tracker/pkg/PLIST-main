@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.1 2011/09/18 08:36:56 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.2 2011/09/26 12:31:40 ajacoutot Exp $
 @bin bin/tracker-control
 @bin bin/tracker-explorer
 @bin bin/tracker-import
@@ -59,6 +59,8 @@ lib/tracker-${MAJ_V}/extract-modules/libextract-abw.so
 lib/tracker-${MAJ_V}/extract-modules/libextract-epub.so
 @comment lib/tracker-${MAJ_V}/extract-modules/libextract-gif.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-gif.so
+@comment lib/tracker-${MAJ_V}/extract-modules/libextract-gstreamer.la
+lib/tracker-${MAJ_V}/extract-modules/libextract-gstreamer.so
 @comment lib/tracker-${MAJ_V}/extract-modules/libextract-html.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-html.so
 @comment lib/tracker-${MAJ_V}/extract-modules/libextract-icon.la
@@ -67,8 +69,6 @@ lib/tracker-${MAJ_V}/extract-modules/libextract-icon.so
 lib/tracker-${MAJ_V}/extract-modules/libextract-jpeg.so
 @comment lib/tracker-${MAJ_V}/extract-modules/libextract-mp3.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-mp3.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-mplayer.la
-lib/tracker-${MAJ_V}/extract-modules/libextract-mplayer.so
 @comment lib/tracker-${MAJ_V}/extract-modules/libextract-msoffice-xml.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-msoffice-xml.so
 @comment lib/tracker-${MAJ_V}/extract-modules/libextract-msoffice.la
@@ -87,8 +87,6 @@ lib/tracker-${MAJ_V}/extract-modules/libextract-ps.so
 lib/tracker-${MAJ_V}/extract-modules/libextract-text.so
 @comment lib/tracker-${MAJ_V}/extract-modules/libextract-tiff.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-tiff.so
-@comment lib/tracker-${MAJ_V}/extract-modules/libextract-totem.la
-lib/tracker-${MAJ_V}/extract-modules/libextract-totem.so
 @comment lib/tracker-${MAJ_V}/extract-modules/libextract-xmp.la
 lib/tracker-${MAJ_V}/extract-modules/libextract-xmp.so
 lib/tracker-${MAJ_V}/libtracker-common.la
@@ -214,13 +212,14 @@ share/tracker/extract-rules/10-oasis.rule
 share/tracker/extract-rules/10-pdf.rule
 share/tracker/extract-rules/10-png.rule
 share/tracker/extract-rules/10-ps.rule
+share/tracker/extract-rules/10-svg.rule
 share/tracker/extract-rules/10-tiff.rule
 share/tracker/extract-rules/10-xmp.rule
 share/tracker/extract-rules/11-msoffice-xml.rule
+share/tracker/extract-rules/15-gstreamer-guess.rule
 share/tracker/extract-rules/15-playlist.rule
+share/tracker/extract-rules/90-gstreamer-generic.rule
 share/tracker/extract-rules/90-text-generic.rule
-share/tracker/extract-rules/93-mplayer-generic.rule
-share/tracker/extract-rules/93-totem-generic.rule
 share/tracker/icons/
 share/tracker/icons/tracker-miner-flickr.svg
 share/tracker/languages/

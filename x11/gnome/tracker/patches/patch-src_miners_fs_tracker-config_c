@@ -1,14 +1,14 @@
-$OpenBSD: patch-src_miners_fs_tracker-config_c,v 1.5 2011/09/18 09:21:34 ajacoutot Exp $
+$OpenBSD: patch-src_miners_fs_tracker-config_c,v 1.6 2011/09/26 12:31:40 ajacoutot Exp $
 
 Set some sane defaults (which can be changed in the preferences):
 * set default indexing speed to 10 (i.e. medium value 0->20)
 * don't index removable devices
 * stop indexing if available space is =< 5%
 
---- src/miners/fs/tracker-config.c.orig	Sun Sep 18 10:37:21 2011
-+++ src/miners/fs/tracker-config.c	Sun Sep 18 10:38:06 2011
-@@ -36,12 +36,12 @@
- #define DEFAULT_VERBOSITY                        0
+--- src/miners/fs/tracker-config.c.orig	Mon Sep 26 11:28:36 2011
++++ src/miners/fs/tracker-config.c	Mon Sep 26 12:28:06 2011
+@@ -37,12 +37,12 @@
+ #define DEFAULT_SCHED_IDLE                       1
  #define DEFAULT_INITIAL_SLEEP                    15       /* 0->1000 */
  #define DEFAULT_ENABLE_MONITORS                  TRUE
 -#define DEFAULT_THROTTLE                         0        /* 0->20 */

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2011/09/26 10:20:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.79 2011/09/26 12:31:40 ajacoutot Exp $
 
 # XXX Binary files patch-src_tracker-control_tracker-control-general_c
 # and patch-src_tracker-control_tracker-control-general_c.new differ
@@ -11,7 +11,7 @@ COMMENT-evolution=	(meta-)tracker indexer plugin for evolution
 COMMENT-nautilus=	(meta-)tracker tagging plugin for nautilus
 
 GNOME_PROJECT=	tracker
-GNOME_VERSION=	0.12.2
+GNOME_VERSION=	0.12.3
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
@@ -20,8 +20,6 @@ PKGNAME=	meta-tracker-${VERSION}
 PKGNAME-main=		meta-tracker-${VERSION}
 PKGNAME-evolution=	evolution-meta-tracker-${VERSION}
 PKGNAME-nautilus=	nautilus-meta-tracker-${VERSION}
-
-REVISION-evolution=	0
 
 MAJ_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 EVO_VERSION=	3.2
@@ -61,7 +59,8 @@ WANTLIB-main += gnome-keyring gpg-error gpgme-pthread gsf-1 gtk-3 icudata
 WANTLIB-main += icui18n icuuc jpeg lcms lzma openjpeg panel-applet-4
 WANTLIB-main += pango-1.0 pangocairo-1.0 pangoft2-1.0 png poppler poppler-glib
 WANTLIB-main += pthread rest-0.7 soup-2.4 soup-gnome-2.4 sqlite3 stdc++
-WANTLIB-main += tag tag_c tiff totem-plparser upower-glib xml2
+WANTLIB-main += tag tag_c tiff totem-plparser upower-glib xml2 gstvideo-0.10
+WANTLIB-main += gstbase-0.10 gstpbutils-0.10 gstreamer-0.10 gsttag-0.10
 
 WANTLIB-evolution += ${WANTLIB}
 WANTLIB-evolution += ICE ORBit-2 SM asn1 atk-1.0 cairo cairo-gobject camel-1.2
@@ -121,12 +120,10 @@ MODGNOME_DESKTOP_FILE=	Yes
 
 CONFIGURE_ARGS=	--disable-static \
 		--disable-functional-tests \
-		--enable-generic-media-extractor=gtsreamer \
 		--disable-miner-thunderbird \
 		--disable-miner-firefox \
 		--disable-network-manager \
-		--disable-qt \
-		--with-gstreamer-backend=decodebin2
+		--disable-qt
 
 # needs libgrss
 CONFIGURE_ARGS += --disable-miner-rss
