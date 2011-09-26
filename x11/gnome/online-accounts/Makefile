@@ -1,9 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2011/09/26 14:34:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.2 2011/09/26 14:55:34 ajacoutot Exp $
 
 COMMENT=		interfaces for interacting with online accounts
 
 GNOME_PROJECT=		gnome-online-accounts
 GNOME_VERSION=		3.1.91
+
+REVISION=		0
 
 SHARED_LIBS +=  goa-1.0              0.0      # .0.0
 SHARED_LIBS +=  goa-backend-1.0      0.0      # .0.0
@@ -40,8 +42,11 @@ MODGNOME_TOOLS= 	goi
 # instead of the actual library
 USE_LIBTOOL=		gnu
 
-CONFIGURE_ARGS+=	--enable-google \
-			--enable-twitter
+CONFIGURE_ARGS=		--localstatedir=/var \
+			--enable-google \
+			--enable-twitter \
+			--enable-yahoo \
+			--enable-facebook
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
