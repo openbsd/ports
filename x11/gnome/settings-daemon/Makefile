@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/25 13:13:05 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2011/09/26 07:12:11 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,7 +6,7 @@ COMMENT=	GNOME settings daemon
 
 GNOME_PROJECT=	gnome-settings-daemon
 GNOME_VERSION=	3.0.3
-REVISION=	0
+REVISION=	1
 
 # GPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -25,9 +25,8 @@ WANTLIB += gthread-2.0 gtk-3 krb5 kvm ltdl m notify nspr4 nss3
 WANTLIB += nssutil3 ogg pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png polkit-gobject-1 pthread
 WANTLIB += pthread-stubs pulse pulse-mainloop-glib smime3 sndfile
-WANTLIB += softokn3 sqlite3 ssl ssl3 startup-notification-1 vorbis
-WANTLIB += vorbisfile xcb xcb-aux xcb-render xcb-shm xkbfile xklavier
-WANTLIB += xml2 z
+WANTLIB += softokn3 sqlite3 ssl ssl3 vorbis vorbisfile xcb xcb-render
+WANTLIB += xcb-shm xkbfile xklavier xml2 z
 
 MODULES=	devel/gettext \
 		x11/gnome
