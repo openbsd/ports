@@ -1,10 +1,12 @@
-$OpenBSD: patch-src_pty_c,v 1.8 2010/10/13 16:20:23 ajacoutot Exp $
+$OpenBSD: patch-src_pty_c,v 1.9 2011/09/26 14:25:09 jasper Exp $
 
-Party revert to previous behaviour of returning -1, instead of failing
-to compile.
+- Party revert to previous behaviour of returning -1, instead of failing
+  to compile.
 
---- src/pty.c.orig	Sat Oct  9 05:41:51 2010
-+++ src/pty.c	Wed Oct 13 18:10:10 2010
+- Adjust gnome-pty-helper2 binary name.
+
+--- src/pty.c.orig	Tue Aug 16 23:52:48 2011
++++ src/pty.c	Mon Sep 26 15:44:22 2011
 @@ -795,7 +795,8 @@ _vte_pty_ptsname(int master,
                      "%s failed: %s", "ioctl(TIOCGPTN)", g_strerror(errno));
          return NULL;
@@ -25,3 +27,68 @@ to compile.
  #endif
  }
  
+@@ -1181,8 +1183,8 @@ _vte_pty_start_helper(GError **error)
+ 		close(tunnel);
+ 		close(_vte_pty_helper_tunnel);
+ 		/* Exec our helper. */
+-		execl(LIBEXECDIR "/gnome-pty-helper",
+-		      "gnome-pty-helper", NULL);
++		execl(LIBEXECDIR "/gnome-pty-helper2",
++		      "gnome-pty-helper2", NULL);
+ 		/* Bail. */
+ 		_exit(1);
+ 	}
+@@ -1197,7 +1199,7 @@ failure:
+ 
+         g_set_error(error, VTE_PTY_ERROR,
+                     VTE_PTY_ERROR_PTY_HELPER_FAILED,
+-                    "Failed to start gnome-pty-helper: %s",
++                    "Failed to start gnome-pty-helper2: %s",
+                     g_strerror (errsv));
+ 
+         if (tmp[0] != -1)
+@@ -1285,7 +1287,7 @@ _vte_pty_open_with_helper(VtePty *pty,
+                     &ops, sizeof(ops)) != sizeof(ops)) {
+                 g_set_error (error, VTE_PTY_ERROR,
+                               VTE_PTY_ERROR_PTY_HELPER_FAILED,
+-                              "Failed to send request to gnome-pty-helper: %s",
++                              "Failed to send request to gnome-pty-helper2: %s",
+                               g_strerror(errno));
+                 return FALSE;
+         }
+@@ -1295,7 +1297,7 @@ _vte_pty_open_with_helper(VtePty *pty,
+                     &ret, sizeof(ret)) != sizeof(ret)) {
+                 g_set_error (error, VTE_PTY_ERROR,
+                               VTE_PTY_ERROR_PTY_HELPER_FAILED,
+-                              "Failed to read response from gnome-pty-helper: %s",
++                              "Failed to read response from gnome-pty-helper2: %s",
+                               g_strerror(errno));
+                 return FALSE;
+         }
+@@ -1304,7 +1306,7 @@ _vte_pty_open_with_helper(VtePty *pty,
+         if (ret == 0) {
+                 g_set_error_literal (error, VTE_PTY_ERROR,
+                                       VTE_PTY_ERROR_PTY_HELPER_FAILED,
+-                                      "gnome-pty-helper failed to open pty");
++                                      "gnome-pty-helper2 failed to open pty");
+                 return FALSE;
+         }
+         _vte_debug_print(VTE_DEBUG_PTY, "Helper returns success.\n");
+@@ -1313,7 +1315,7 @@ _vte_pty_open_with_helper(VtePty *pty,
+                     &tag, sizeof(tag)) != sizeof(tag)) {
+                 g_set_error (error, VTE_PTY_ERROR,
+                               VTE_PTY_ERROR_PTY_HELPER_FAILED,
+-                              "Failed to read tag from gnome-pty-helper: %s",
++                              "Failed to read tag from gnome-pty-helper2: %s",
+                               g_strerror(errno));
+                 return FALSE;
+         }
+@@ -1330,7 +1332,7 @@ _vte_pty_open_with_helper(VtePty *pty,
+ 
+                 g_set_error (error, VTE_PTY_ERROR,
+                               VTE_PTY_ERROR_PTY_HELPER_FAILED,
+-                              "Failed to read master or slave pty from gnome-pty-helper: %s",
++                              "Failed to read master or slave pty from gnome-pty-helper2: %s",
+                               g_strerror(errsv));
+                 errno = errsv;
+                 return FALSE;

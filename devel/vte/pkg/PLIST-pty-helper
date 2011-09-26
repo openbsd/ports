@@ -1,7 +1,0 @@
-@comment $OpenBSD: PLIST-pty-helper,v 1.1 2011/05/13 22:01:46 jasper Exp $
-@conflict vte-<0.28.0p0
-@mode g+s
-@group utmp
-@bin libexec/gnome-pty-helper
-@mode
-@group

@@ -1,0 +1,16 @@
+$OpenBSD: patch-gnome-pty-helper_Makefile_in,v 1.6 2011/09/26 14:25:09 jasper Exp $
+
+Don't bother calling install-exec-hook. We already adjust
+permissions in PLIST.
+
+--- gnome-pty-helper/Makefile.in.orig	Mon Sep 26 15:48:00 2011
++++ gnome-pty-helper/Makefile.in	Mon Sep 26 15:49:08 2011
+@@ -580,7 +580,7 @@ install-dvi-am:
+ 
+ install-exec-am: install-libexecPROGRAMS
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-exec-hook
++	$(MAKE) $(AM_MAKEFLAGS)
+ install-html: install-html-am
+ 
+ install-html-am:
