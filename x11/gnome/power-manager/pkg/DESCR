@@ -1,3 +1,4 @@
-GNOME Power Manager is a GNOME session daemon that acts as a policy
-agent on top of UPower. GNOME Power Manager listens for system events
-and responds with user-configurable actions.
+GNOME Power Manager is a session daemon for the GNOME desktop
+environment that makes it easy to manage your laptop or desktop system.
+It listens for system events and responds with user-configurable
+actions.
