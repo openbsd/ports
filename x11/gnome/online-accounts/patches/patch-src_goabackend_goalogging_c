@@ -1,14 +1,20 @@
-$OpenBSD: patch-src_goabackend_goalogging_c,v 1.1.1.1 2011/09/26 14:34:15 jasper Exp $
+$OpenBSD: patch-src_goabackend_goalogging_c,v 1.2 2011/09/26 21:20:35 jasper Exp $
 
-SYS_gettid(2) returns the thread ID of the current process. Since that syscall
-isn't implemented on OpenBSD, getpid(2) comes close enough.
+commit 080c1d09636020a72878372dcb5895e1286c8293
+Author: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date:   Mon Sep 26 23:14:33 2011 +0200
 
---- src/goabackend/goalogging.c.orig	Mon Sep 26 14:45:46 2011
-+++ src/goabackend/goalogging.c	Mon Sep 26 14:47:20 2011
-@@ -207,7 +207,11 @@ goa_log (GoaLogLevel     level,
+    Kludge around lack of gettid(2) syscall on various systems.
+    
+    https://bugzilla.gnome.org/show_bug.cgi?id=660177
+
+--- src/goabackend/goalogging.c.orig	Thu Aug 25 15:50:26 2011
++++ src/goabackend/goalogging.c	Mon Sep 26 23:16:09 2011
+@@ -207,7 +207,12 @@ goa_log (GoaLogLevel     level,
        break;
      }
  
++ /* TODO: Need to find a portable way of getting the thread ID (#660177) */
 +#ifdef SYS_gettid
    thread_str = g_strdup_printf ("%d", (gint) syscall (SYS_gettid));
 +#else
