@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/05/28 08:15:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/09/26 09:44:09 ajacoutot Exp $
 include/gsettings-desktop-schemas/
 include/gsettings-desktop-schemas/gdesktop-enums.h
+lib/pkgconfig/
 lib/pkgconfig/gsettings-desktop-schemas.pc
 share/GConf/
 share/GConf/gsettings/
@@ -20,12 +21,18 @@ share/glib-2.0/schemas/org.gnome.desktop.session.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.sound.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.thumbnail-cache.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.thumbnailers.gschema.xml
+share/glib-2.0/schemas/org.gnome.system.locale.gschema.xml
 share/glib-2.0/schemas/org.gnome.system.proxy.gschema.xml
 share/locale/cs/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/de/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/eo/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/es/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/ja/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/nb/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/pt_BR/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sl/LC_MESSAGES/gsettings-desktop-schemas.mo
 share/locale/sv/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/vi/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/zh_CN/LC_MESSAGES/gsettings-desktop-schemas.mo
 @exec %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
 @unexec-delete %D/bin/glib-compile-schemas %D/share/glib-2.0/schemas >/dev/null
