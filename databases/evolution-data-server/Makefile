@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.97 2011/09/25 06:41:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.98 2011/09/26 17:03:27 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.2.0
+REVISION=		0
 
 # Only get the first x.y which is needed in the PLIST.
 R=			${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -45,7 +46,7 @@ WANTLIB += nss3 nssutil3 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre pixman-1 plc4 plds4 png pthread pthread-stubs
 WANTLIB += sasl2 smime3 soup-2.4 soup-gnome-2.4 sqlite3 ssl ssl3
 WANTLIB += xcb xcb-render xcb-shm xml2 z curl idn oauth ffi
-WANTLIB += kvm softokn3
+WANTLIB += kvm softokn3 goa-1.0
 
 MODULES=		devel/gettext \
 			lang/python \
@@ -56,10 +57,10 @@ BUILD_DEPENDS=		devel/bison \
 LIB_DEPENDS= 		databases/db/v4 \
 			databases/openldap \
 			net/liboauth \
-			security/nss>=3.11.4p1 \
 			textproc/libical \
 			x11/gnome/libgweather \
-			devel/libgdata>=0.10.1
+			devel/libgdata>=0.10.1 \
+			x11/gnome/online-accounts
 
 YACC=			bison
 
@@ -77,7 +78,6 @@ CONFIGURE_ARGS=		--enable-ssl \
 			--enable-ipv6 \
 			--enable-weather \
 			--enable-nntp \
-			--disable-goa \
 			--with-nss-libs="${LOCALBASE}/lib" \
 			--with-nss-includes="${LOCALBASE}/include/nss" \
 			--with-nspr-libs=${LOCALBASE}/lib \

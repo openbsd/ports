@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.24 2011/09/25 08:04:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.25 2011/09/26 17:05:04 ajacoutot Exp $
 @pkgpath mail/evolution
 %%SHARED%%
 @bin bin/evolution
@@ -479,6 +479,8 @@ lib/evolution/${R}/modules/
 @comment lib/evolution/${R}/modules/libevolution-module-mailto-handler.la
 @comment lib/evolution/${R}/modules/libevolution-module-offline-alert.a
 @comment lib/evolution/${R}/modules/libevolution-module-offline-alert.la
+@comment lib/evolution/${R}/modules/libevolution-module-online-accounts.a
+@comment lib/evolution/${R}/modules/libevolution-module-online-accounts.la
 @comment lib/evolution/${R}/modules/libevolution-module-plugin-lib.a
 @comment lib/evolution/${R}/modules/libevolution-module-plugin-lib.la
 @comment lib/evolution/${R}/modules/libevolution-module-plugin-manager.a
