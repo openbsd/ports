@@ -1,7 +1,7 @@
-$OpenBSD: patch-tdb_mk,v 1.1 2010/04/26 17:22:06 sthen Exp $
---- tdb.mk.orig	Mon Apr 19 13:06:58 2010
-+++ tdb.mk	Mon Apr 19 13:07:30 2010
-@@ -91,10 +91,10 @@ installheaders:: installdirs
+$OpenBSD: patch-tdb_mk,v 1.2 2011/09/26 09:30:08 sthen Exp $
+--- tdb.mk.orig	Sun Oct 17 18:50:26 2010
++++ tdb.mk	Mon Sep 26 09:37:55 2011
+@@ -94,10 +94,10 @@ installheaders:: installdirs
  installlibs:: all installdirs
  	cp tdb.pc $(DESTDIR)$(libdir)/pkgconfig
  	cp $(TDB_STLIB) $(TDB_SOLIB) $(DESTDIR)$(libdir)

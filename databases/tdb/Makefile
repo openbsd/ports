@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2010/04/26 17:22:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/26 09:30:08 sthen Exp $
 
 COMMENT=	trivial database library
 
-DISTNAME=	tdb-1.2.1
+DISTNAME=	tdb-1.2.7
 CATEGORIES=	databases
-SHARED_LIBS+=	tdb	2.0
+SHARED_LIBS+=	tdb	3.0
 
-MAINTAINER=    	Nicholas Marriott <nicm@users.sourceforge.net>
+MAINTAINER=	Nicholas Marriott <nicm@users.sourceforge.net>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
