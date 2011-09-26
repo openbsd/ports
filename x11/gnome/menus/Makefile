@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/26 10:47:35 jasper Exp $
+# $OpenBSD: Makefile,v 1.52 2011/09/26 11:03:12 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		implementation of the FreeDesktop Desktop Menu Spec
 
 GNOME_PROJECT=		gnome-menus
 GNOME_VERSION=		3.2.0
+REVISION=		0
 
 SHARED_LIBS +=  gnome-menu-3         0.0      # 0.0
 
@@ -19,6 +20,7 @@ WANTLIB += ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
 WANTLIB += pcre z
 
 MODULES=		devel/gettext \
+			lang/python \
 			x11/gnome
 
 # XXX: Re-enable (along with goo) when gmenu-simple-editor is fixed.
