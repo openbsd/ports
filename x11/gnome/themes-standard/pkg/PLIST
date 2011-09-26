@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/09/22 11:54:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/09/26 15:42:29 ajacoutot Exp $
 @conflict gnome-themes-<2.32.1p3
 @unexec rm -f %D/share/icons/Adwaita/icon-theme.cache
 @unexec rm -f %D/share/icons/HighContrast/icon-theme.cache
@@ -635,11 +635,13 @@ share/locale/pt/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/pt_BR/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/ro/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/ru/LC_MESSAGES/gnome-themes-standard.mo
+share/locale/sk/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/sl/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/sr/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/sr@latin/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/sv/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/ta/LC_MESSAGES/gnome-themes-standard.mo
+share/locale/te/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/th/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/tr/LC_MESSAGES/gnome-themes-standard.mo
 share/locale/ug/LC_MESSAGES/gnome-themes-standard.mo
