@@ -1,0 +1,12 @@
+$OpenBSD: patch-vinagre_vinagre-reverse-vnc-listener-dialog_c,v 1.1 2011/09/27 07:33:54 jasper Exp $
+--- vinagre/vinagre-reverse-vnc-listener-dialog.c.orig	Tue Sep 27 09:32:11 2011
++++ vinagre/vinagre-reverse-vnc-listener-dialog.c	Tue Sep 27 09:32:26 2011
+@@ -20,6 +20,8 @@
+ 
+ #include <config.h>
+ 
++#include <sys/types.h>
++#include <sys/socket.h>
+ #include <net/if.h>
+ #include <arpa/inet.h>
+ #include <netinet/in.h>
