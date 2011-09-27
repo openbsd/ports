@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.18 2011/09/12 07:28:55 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.19 2011/09/27 10:26:02 jasper Exp $
 bin/gdialog
 @bin bin/zenity
 @man man/man1/zenity.1
+share/gnome/
+share/gnome/help/
 share/gnome/help/zenity/
 share/gnome/help/zenity/C/
 share/gnome/help/zenity/C/figures/
@@ -32,6 +34,20 @@ share/gnome/help/zenity/bg/figures/zenity-question-screenshot.png
 share/gnome/help/zenity/bg/figures/zenity-text-screenshot.png
 share/gnome/help/zenity/bg/figures/zenity-warning-screenshot.png
 share/gnome/help/zenity/bg/zenity.xml
+share/gnome/help/zenity/ca/
+share/gnome/help/zenity/ca/figures/
+share/gnome/help/zenity/ca/figures/zenity-calendar-screenshot.png
+share/gnome/help/zenity/ca/figures/zenity-entry-screenshot.png
+share/gnome/help/zenity/ca/figures/zenity-error-screenshot.png
+share/gnome/help/zenity/ca/figures/zenity-fileselection-screenshot.png
+share/gnome/help/zenity/ca/figures/zenity-information-screenshot.png
+share/gnome/help/zenity/ca/figures/zenity-list-screenshot.png
+share/gnome/help/zenity/ca/figures/zenity-notification-screenshot.png
+share/gnome/help/zenity/ca/figures/zenity-progress-screenshot.png
+share/gnome/help/zenity/ca/figures/zenity-question-screenshot.png
+share/gnome/help/zenity/ca/figures/zenity-text-screenshot.png
+share/gnome/help/zenity/ca/figures/zenity-warning-screenshot.png
+share/gnome/help/zenity/ca/zenity.xml
 share/gnome/help/zenity/cs/
 share/gnome/help/zenity/cs/figures/
 share/gnome/help/zenity/cs/figures/zenity-calendar-screenshot.png
@@ -158,6 +174,20 @@ share/gnome/help/zenity/fr/figures/zenity-question-screenshot.png
 share/gnome/help/zenity/fr/figures/zenity-text-screenshot.png
 share/gnome/help/zenity/fr/figures/zenity-warning-screenshot.png
 share/gnome/help/zenity/fr/zenity.xml
+share/gnome/help/zenity/gl/
+share/gnome/help/zenity/gl/figures/
+share/gnome/help/zenity/gl/figures/zenity-calendar-screenshot.png
+share/gnome/help/zenity/gl/figures/zenity-entry-screenshot.png
+share/gnome/help/zenity/gl/figures/zenity-error-screenshot.png
+share/gnome/help/zenity/gl/figures/zenity-fileselection-screenshot.png
+share/gnome/help/zenity/gl/figures/zenity-information-screenshot.png
+share/gnome/help/zenity/gl/figures/zenity-list-screenshot.png
+share/gnome/help/zenity/gl/figures/zenity-notification-screenshot.png
+share/gnome/help/zenity/gl/figures/zenity-progress-screenshot.png
+share/gnome/help/zenity/gl/figures/zenity-question-screenshot.png
+share/gnome/help/zenity/gl/figures/zenity-text-screenshot.png
+share/gnome/help/zenity/gl/figures/zenity-warning-screenshot.png
+share/gnome/help/zenity/gl/zenity.xml
 share/gnome/help/zenity/oc/
 share/gnome/help/zenity/oc/figures/
 share/gnome/help/zenity/oc/figures/zenity-calendar-screenshot.png
@@ -256,6 +286,7 @@ share/gnome/help/zenity/zh_CN/figures/zenity-question-screenshot.png
 share/gnome/help/zenity/zh_CN/figures/zenity-text-screenshot.png
 share/gnome/help/zenity/zh_CN/figures/zenity-warning-screenshot.png
 share/gnome/help/zenity/zh_CN/zenity.xml
+share/locale/af/LC_MESSAGES/zenity.mo
 share/locale/am/LC_MESSAGES/zenity.mo
 share/locale/ar/LC_MESSAGES/zenity.mo
 share/locale/as/LC_MESSAGES/zenity.mo
@@ -344,9 +375,11 @@ share/locale/xh/LC_MESSAGES/zenity.mo
 share/locale/zh_CN/LC_MESSAGES/zenity.mo
 share/locale/zh_HK/LC_MESSAGES/zenity.mo
 share/locale/zh_TW/LC_MESSAGES/zenity.mo
+share/omf/
 share/omf/zenity/
 share/omf/zenity/zenity-C.omf
 share/omf/zenity/zenity-bg.omf
+share/omf/zenity/zenity-ca.omf
 share/omf/zenity/zenity-cs.omf
 share/omf/zenity/zenity-da.omf
 share/omf/zenity/zenity-de.omf
@@ -356,6 +389,7 @@ share/omf/zenity/zenity-es.omf
 share/omf/zenity/zenity-eu.omf
 share/omf/zenity/zenity-fi.omf
 share/omf/zenity/zenity-fr.omf
+share/omf/zenity/zenity-gl.omf
 share/omf/zenity/zenity-oc.omf
 share/omf/zenity/zenity-pt_BR.omf
 share/omf/zenity/zenity-ru.omf
