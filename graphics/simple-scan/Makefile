@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.15 2011/09/22 15:28:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.16 2011/09/27 08:05:31 ajacoutot Exp $
 
 COMMENT=	simple scanning utility
 
 GNOME_PROJECT=	simple-scan
-GNOME_VERSION=	3.1.91
+GNOME_VERSION=	3.2.0
 
 CATEGORIES=	graphics
 
@@ -31,8 +31,8 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	graphics/sane-backends \
 		x11/gtk+3
 
-#MODGNOME_DESKTOP_FILE=	Yes
-#MODGNOME_TOOLS= 	yelp
+MODGNOME_DESKTOP_FILE=	Yes
+MODGNOME_TOOLS= 	yelp
 
 USE_GMAKE=	Yes
 
