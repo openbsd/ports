@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 11:13:39 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/27 10:02:02 sthen Exp $
 
 COMMENT=	graphical network traffic map
 
 DISTNAME=	php-weathermap-0.97a
-REVISION=	3
+REVISION=	4
 EXTRACT_SUFX=	.zip
 
 CATEGORIES=	net www
@@ -35,7 +35,7 @@ INSTDIR=	${PREFIX}/weathermap
 SUBST_VARS=	INSTDIR
 
 do-configure:
-	perl -pi -e 's,^#!/usr/bin/php,#!${LOCALBASE}/bin/php,;' \
+	perl -pi -e 's,^#!/usr/bin/php,#!${MODPHP_BIN},;' \
 	    -e 's,/usr/bin/rrdtool,${LOCALBASE}/bin/rrdtool,;' \
 	    ${WRKSRC}/weathermap
 
