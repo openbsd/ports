@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/27 12:57:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/27 13:58:45 ajacoutot Exp $
 
 COMMENT=	C++ interface for gtk3+
 
 GNOME_PROJECT=	gtkmm
 GNOME_VERSION=	3.2.0
+REVISION=	0
 
 PKGNAME=	gtk3mm-${GNOME_VERSION}
 
@@ -20,6 +21,14 @@ PERMIT_PACKAGE_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 
+WANTLIB += GL X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0 atkmm-1.6
+WANTLIB += cairo cairo-gobject cairomm-1.0 drm expat ffi fontconfig
+WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 giomm-2.4 glib-2.0
+WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 gthread-2.0 gtk-3
+WANTLIB += kvm m pango-1.0 pangocairo-1.0 pangoft2-1.0 pangomm-1.4
+WANTLIB += pcre pixman-1 png pthread-stubs sigc-2.0 stdc++ xcb
+WANTLIB += xcb-render xcb-shm z
 
 MODULES=	devel/gettext \
 		x11/gnome
