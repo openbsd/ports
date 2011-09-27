@@ -1,0 +1,36 @@
+$OpenBSD: patch-simple-editor_GMenuSimpleEditor_menufilewriter_py,v 1.1 2011/09/27 10:22:26 jasper Exp $
+
+From f1c76629d33a616089a15bd034708d21e8bd9a87 Mon Sep 17 00:00:00 2001
+From: Vincent Untz <vuntz@gnome.org>
+Date: Tue, 27 Sep 2011 10:09:35 +0000
+Subject: editor: Fix to work with latest pygi
+
+https://bugzilla.gnome.org/show_bug.cgi?id=660112
+
+--- simple-editor/GMenuSimpleEditor/menufilewriter.py.orig	Tue Mar 22 19:25:58 2011
++++ simple-editor/GMenuSimpleEditor/menufilewriter.py	Tue Sep 27 12:14:29 2011
+@@ -19,7 +19,7 @@
+ import os
+ import errno
+ import pwd
+-import gobject
++from gi.repository import GObject
+ from gi.repository import Gtk
+ 
+ import menutreemodel
+@@ -86,7 +86,7 @@ class MenuFileWriter:
+ 
+     def __del__ (self):
+         for (path, id) in self.sync_idle_handlers.items():
+-            gobject.source_remove (id)
++            GObject.source_remove (id)
+ 
+     def __append_menu (self, contents, indent, iter, system_menu_file = None):
+         has_changes = False
+@@ -192,5 +192,5 @@ class MenuFileWriter:
+         if self.sync_idle_handlers.has_key (menu_file_path):
+             return
+ 
+-        id = gobject.idle_add (self.__sync_idle_handler_func, menu_file_path)
++        id = GObject.idle_add (self.__sync_idle_handler_func, menu_file_path)
+         self.sync_idle_handlers[menu_file_path] = id

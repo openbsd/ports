@@ -1,0 +1,52 @@
+$OpenBSD: patch-simple-editor_GMenuSimpleEditor_main_py,v 1.1 2011/09/27 10:22:26 jasper Exp $
+
+From f1c76629d33a616089a15bd034708d21e8bd9a87 Mon Sep 17 00:00:00 2001
+From: Vincent Untz <vuntz@gnome.org>
+Date: Tue, 27 Sep 2011 10:09:35 +0000
+Subject: editor: Fix to work with latest pygi
+
+https://bugzilla.gnome.org/show_bug.cgi?id=660112
+
+--- simple-editor/GMenuSimpleEditor/main.py.orig	Tue Mar 22 19:25:58 2011
++++ simple-editor/GMenuSimpleEditor/main.py	Tue Sep 27 12:14:29 2011
+@@ -17,11 +17,12 @@
+ #
+ 
+ def main (args):
++    import optparse
++
+     import locale
+     import gettext
+ 
+-    import gobject
+-    from gobject.option import OptionParser, make_option
++    from gi.repository import GObject
+ 
+     from gi.repository import Gtk
+ 
+@@ -31,18 +32,14 @@ def main (args):
+     locale.setlocale (locale.LC_ALL, "")
+     gettext.install (config.PACKAGE, config.LOCALEDIR)
+ 
+-    parser = OptionParser (
+-            option_list = [
+-		    # FIXME: remove this when we can get all the default
+-		    # options
+-                    make_option ("--version",
+-                                 action="store_true",
+-                                 dest="version",
+-                                 help=config.VERSION),
+-                ])
+-    parser.parse_args (args)
++    parser = optparse.OptionParser()
++    parser.add_option('--version', dest='version',
++                      action='store_true', default=False,
++                      help=config.VERSION)
+ 
+-    if parser.values.version:
++    (options, args) = parser.parse_args()
++
++    if options.version:
+         # Translators: %s is the version number 
+         print _("Simple Menu Editor %s") % (config.VERSION)
+     else:

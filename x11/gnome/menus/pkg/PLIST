@@ -1,4 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.24 2011/09/26 10:47:35 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.25 2011/09/27 10:22:26 jasper Exp $
+bin/gmenu-simple-editor
 include/gnome-menus-3.0/
 include/gnome-menus-3.0/gmenu-tree.h
 lib/girepository-1.0/GMenu-3.0.typelib
@@ -6,6 +7,26 @@ lib/libgnome-menu-3.a
 lib/libgnome-menu-3.la
 @lib lib/libgnome-menu-3.so.${LIBgnome-menu-3_VERSION}
 lib/pkgconfig/libgnome-menu-3.0.pc
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/__init__.py
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/__init__.pyc
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/__init__.pyo
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/config.py
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/config.pyc
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/config.pyo
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/main.py
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/main.pyc
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/main.pyo
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/maindialog.py
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/maindialog.pyc
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/maindialog.pyo
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/menufilewriter.py
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/menufilewriter.pyc
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/menufilewriter.pyo
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/menutreemodel.py
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/menutreemodel.pyc
+lib/python${MODPY_VERSION}/site-packages/GMenuSimpleEditor/menutreemodel.pyo
+share/applications/gmenu-simple-editor.desktop
 share/desktop-directories/
 share/desktop-directories/AudioVideo.directory
 share/desktop-directories/Development.directory
@@ -32,6 +53,9 @@ share/examples/gnome-menus/xdg/menus/
 share/examples/gnome-menus/xdg/menus/applications.menu
 @sample ${SYSCONFDIR}/xdg/menus/gnome-applications.menu
 share/gir-1.0/GMenu-3.0.gir
+share/gnome-menus/
+share/gnome-menus/ui/
+share/gnome-menus/ui/gmenu-simple-editor.ui
 share/locale/af/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/an/
 share/locale/an/LC_MESSAGES/
@@ -169,3 +193,5 @@ share/locale/zh_TW/LC_MESSAGES/gnome-menus-3.0.mo
 share/locale/zu/
 share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/gnome-menus-3.0.mo
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

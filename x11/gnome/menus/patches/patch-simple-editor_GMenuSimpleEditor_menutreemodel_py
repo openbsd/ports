@@ -1,0 +1,37 @@
+$OpenBSD: patch-simple-editor_GMenuSimpleEditor_menutreemodel_py,v 1.3 2011/09/27 10:22:26 jasper Exp $
+
+From f1c76629d33a616089a15bd034708d21e8bd9a87 Mon Sep 17 00:00:00 2001
+From: Vincent Untz <vuntz@gnome.org>
+Date: Tue, 27 Sep 2011 10:09:35 +0000
+Subject: editor: Fix to work with latest pygi
+
+https://bugzilla.gnome.org/show_bug.cgi?id=660112
+
+--- simple-editor/GMenuSimpleEditor/menutreemodel.py.orig	Mon Aug  1 19:38:29 2011
++++ simple-editor/GMenuSimpleEditor/menutreemodel.py	Tue Sep 27 12:14:29 2011
+@@ -18,7 +18,7 @@
+ 
+ import os
+ import os.path
+-import gobject
++from gi.repository import GObject
+ from gi.repository import Gio
+ from gi.repository import Gtk
+ from gi.repository import GdkPixbuf
+@@ -61,14 +61,14 @@ class MenuTreeModel (Gtk.TreeStore):
+             if menu_file == "applications.menu" and os.environ.has_key ("XDG_MENU_PREFIX"):
+                 menu_file = os.environ["XDG_MENU_PREFIX"] + menu_file
+ 
+-            tree = gobject.new (GMenu.Tree, menu_basename = menu_file, flags = GMenu.TreeFlags.INCLUDE_EXCLUDED|GMenu.TreeFlags.SORT_DISPLAY_NAME)
++            tree = GObject.new (GMenu.Tree, menu_basename = menu_file, flags = GMenu.TreeFlags.INCLUDE_EXCLUDED|GMenu.TreeFlags.SORT_DISPLAY_NAME)
+             tree.load_sync ()
+ 
+             self.__append_directory (tree.get_root_directory (), None, False, menu_file)
+ 
+             system_file = lookup_system_menu_file (menu_file)
+             if system_file:
+-                system_tree = gobject.new (GMenu.Tree, menu_path = system_file, flags = GMenu.TreeFlags.INCLUDE_EXCLUDED|GMenu.TreeFlags.SORT_DISPLAY_NAME)
++                system_tree = GObject.new (GMenu.Tree, menu_path = system_file, flags = GMenu.TreeFlags.INCLUDE_EXCLUDED|GMenu.TreeFlags.SORT_DISPLAY_NAME)
+                 system_tree.load_sync ()
+ 
+                 self.__append_directory (system_tree.get_root_directory (), None, True, menu_file)
