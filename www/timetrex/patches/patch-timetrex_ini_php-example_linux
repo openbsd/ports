@@ -1,4 +1,4 @@
-$OpenBSD: patch-timetrex_ini_php-example_linux,v 1.2 2011/06/23 06:52:32 ajacoutot Exp $
+$OpenBSD: patch-timetrex_ini_php-example_linux,v 1.3 2011/09/27 11:56:47 sthen Exp $
 --- timetrex.ini.php-example_linux.orig	Sun May 15 01:15:08 2011
 +++ timetrex.ini.php-example_linux	Thu Jun 23 08:44:44 2011
 @@ -17,19 +17,19 @@ base_url = /timetrex/interface
@@ -20,7 +20,7 @@ $OpenBSD: patch-timetrex_ini_php-example_linux,v 1.2 2011/06/23 06:52:32 ajacout
  ;
  ;Linux
 -php_cli = /usr/bin/php
-+php_cli = ${LOCALBASE}/bin/php
++php_cli = ${MODPHP_BIN}
  
  
  

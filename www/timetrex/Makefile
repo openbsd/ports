@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2011/09/16 12:00:09 espie Exp $
+# $OpenBSD: Makefile,v 1.31 2011/09/27 11:56:47 sthen Exp $
 
 COMMENT=	web-based payroll and time management suite
 
 V=		3.5.1
-REVISION=	2
+REVISION=	3
 DISTNAME=	TimeTrex_Standard_Edition_v${V}
 PKGNAME=	timetrex-${V}
 CATEGORIES=	www productivity
@@ -32,7 +32,7 @@ PKG_ARCH=	*
 
 PREFIX=		/var/www
 INSTDIR=	${PREFIX}/timetrex
-SUBST_VARS=	INSTDIR
+SUBST_VARS=	INSTDIR MODPHP_BIN
 
 do-install:
 	mv ${WRKSRC} ${INSTDIR}
