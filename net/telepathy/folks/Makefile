@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2011/09/25 17:55:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2011/09/27 06:28:37 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
-GNOME_VERSION=		0.6.3.1
+GNOME_VERSION=		0.6.3.2
 
 SHARED_LIBS +=  folks-telepathy           4.0 # 27.1
 SHARED_LIBS +=  folks                     4.0 # 27.1
