@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.978 2011/09/26 14:32:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.979 2011/09/27 19:04:04 landry Exp $
 # $FreeBSD: Makefile,v 1.85 1997/11/20 05:22:14 asami Exp $
 
      SUBDIR =
@@ -244,7 +244,6 @@
      SUBDIR += libast
      SUBDIR += libaudiofile
      SUBDIR += libavl
-     SUBDIR += libbfd
      SUBDIR += libbio
      SUBDIR += libclog
      SUBDIR += libconfig
