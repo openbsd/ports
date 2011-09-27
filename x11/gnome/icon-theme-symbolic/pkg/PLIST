@@ -1,7 +1,9 @@
-@comment $OpenBSD: PLIST,v 1.2 2011/09/12 07:28:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.3 2011/09/27 11:49:21 ajacoutot Exp $
 share/icons/gnome/scalable/
 share/icons/gnome/scalable/actions/
+share/icons/gnome/scalable/actions/action-unavailable-symbolic.svg
 share/icons/gnome/scalable/actions/document-open-recent-symbolic.svg
+share/icons/gnome/scalable/actions/document-open-symbolic.svg
 share/icons/gnome/scalable/actions/document-save-as-symbolic.svg
 share/icons/gnome/scalable/actions/document-save-symbolic.svg
 share/icons/gnome/scalable/actions/edit-clear-symbolic.svg
@@ -42,10 +44,16 @@ share/icons/gnome/scalable/actions/media-seek-backward-symbolic.svg
 share/icons/gnome/scalable/actions/media-seek-forward-symbolic.svg
 share/icons/gnome/scalable/actions/media-skip-backward-symbolic.svg
 share/icons/gnome/scalable/actions/media-skip-forward-symbolic.svg
+share/icons/gnome/scalable/actions/object-flip-horizontal-symbolic.svg
+share/icons/gnome/scalable/actions/object-flip-vertical-symbolic.svg
+share/icons/gnome/scalable/actions/object-rotate-left-symbolic.svg
+share/icons/gnome/scalable/actions/object-rotate-right-symbolic.svg
 share/icons/gnome/scalable/actions/process-stop-symbolic.svg
 share/icons/gnome/scalable/actions/system-run-symbolic.svg
 share/icons/gnome/scalable/actions/system-shutdown-symbolic.svg
 share/icons/gnome/scalable/actions/view-fullscreen-symbolic.svg
+share/icons/gnome/scalable/actions/view-grid-symbolic.svg
+share/icons/gnome/scalable/actions/view-list-symbolic.svg
 share/icons/gnome/scalable/actions/view-refresh-symbolic.svg
 share/icons/gnome/scalable/actions/view-restore-symbolic.svg
 share/icons/gnome/scalable/actions/window-close-symbolic.svg
@@ -75,7 +83,9 @@ share/icons/gnome/scalable/devices/camera-photo-symbolic.svg
 share/icons/gnome/scalable/devices/camera-web-symbolic.svg
 share/icons/gnome/scalable/devices/computer-symbolic.svg
 share/icons/gnome/scalable/devices/drive-harddisk-symbolic.svg
+share/icons/gnome/scalable/devices/input-dialpad-symbolic.svg
 share/icons/gnome/scalable/devices/input-keyboard-symbolic.svg
+share/icons/gnome/scalable/devices/input-touchpad-symbolic.svg
 share/icons/gnome/scalable/devices/media-optical-symbolic.svg
 share/icons/gnome/scalable/devices/phone-symbolic.svg
 share/icons/gnome/scalable/devices/printer-symbolic.svg
@@ -84,6 +94,7 @@ share/icons/gnome/scalable/emblems/
 share/icons/gnome/scalable/emblems/emblem-default-symbolic.svg
 share/icons/gnome/scalable/emblems/emblem-favorite-symbolic.svg
 share/icons/gnome/scalable/emblems/emblem-important-symbolic.svg
+share/icons/gnome/scalable/emblems/emblem-shared-symbolic.svg
 share/icons/gnome/scalable/emblems/emblem-synchronizing-symbolic.svg
 share/icons/gnome/scalable/mimetypes/
 share/icons/gnome/scalable/mimetypes/audio-x-generic-symbolic.svg
@@ -103,6 +114,7 @@ share/icons/gnome/scalable/places/network-server-symbolic.svg
 share/icons/gnome/scalable/places/network-workgroup-symbolic.svg
 share/icons/gnome/scalable/places/start-here-symbolic.svg
 share/icons/gnome/scalable/places/user-bookmarks-symbolic.svg
+share/icons/gnome/scalable/places/user-home-symbolic.svg
 share/icons/gnome/scalable/places/user-trash-symbolic.svg
 share/icons/gnome/scalable/status/
 share/icons/gnome/scalable/status/audio-volume-high-symbolic.svg
@@ -126,12 +138,15 @@ share/icons/gnome/scalable/status/bluetooth-active-symbolic.svg
 share/icons/gnome/scalable/status/bluetooth-disabled-symbolic.svg
 share/icons/gnome/scalable/status/changes-allow-symbolic.svg
 share/icons/gnome/scalable/status/changes-prevent-symbolic.svg
+share/icons/gnome/scalable/status/channel-insecure-symbolic.svg
+share/icons/gnome/scalable/status/channel-secure-symbolic.svg
 share/icons/gnome/scalable/status/dialog-error-symbolic.svg
 share/icons/gnome/scalable/status/dialog-information-symbolic.svg
 share/icons/gnome/scalable/status/dialog-password-symbolic.svg
 share/icons/gnome/scalable/status/dialog-question-symbolic.svg
 share/icons/gnome/scalable/status/dialog-warning-symbolic.svg
 share/icons/gnome/scalable/status/display-brightness-symbolic.svg
+share/icons/gnome/scalable/status/keyboard-brightness-symbolic.svg
 share/icons/gnome/scalable/status/mail-attachment-symbolic.svg
 share/icons/gnome/scalable/status/mail-read-symbolic.svg
 share/icons/gnome/scalable/status/mail-replied-symbolic.svg
@@ -174,6 +189,7 @@ share/icons/gnome/scalable/status/network-wireless-signal-good-symbolic.svg
 share/icons/gnome/scalable/status/network-wireless-signal-none-symbolic.svg
 share/icons/gnome/scalable/status/network-wireless-signal-ok-symbolic.svg
 share/icons/gnome/scalable/status/network-wireless-signal-weak-symbolic.svg
+share/icons/gnome/scalable/status/non-starred-symbolic.svg
 share/icons/gnome/scalable/status/printer-error-symbolic.svg
 share/icons/gnome/scalable/status/printer-printing-symbolic.svg
 share/icons/gnome/scalable/status/printer-warning-symbolic.svg
@@ -182,11 +198,12 @@ share/icons/gnome/scalable/status/security-low-symbolic.svg
 share/icons/gnome/scalable/status/security-medium-symbolic.svg
 share/icons/gnome/scalable/status/software-update-available-symbolic.svg
 share/icons/gnome/scalable/status/software-update-urgent-symbolic.svg
+share/icons/gnome/scalable/status/starred-symbolic.svg
+share/icons/gnome/scalable/status/touchpad-disabled-symbolic.svg
 share/icons/gnome/scalable/status/user-available-symbolic.svg
 share/icons/gnome/scalable/status/user-away-symbolic.svg
 share/icons/gnome/scalable/status/user-busy-symbolic.svg
 share/icons/gnome/scalable/status/user-idle-symbolic.svg
-share/icons/gnome/scalable/status/user-invisible-alt-symbolic.svg
 share/icons/gnome/scalable/status/user-invisible-symbolic.svg
 share/icons/gnome/scalable/status/user-offline-symbolic.svg
 share/icons/gnome/scalable/status/weather-clear-night-symbolic.svg
