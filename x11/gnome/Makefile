@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.165 2011/09/26 14:34:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.166 2011/09/27 10:28:34 jasper Exp $
 
      SUBDIR =
-     SUBDIR += alacarte
      SUBDIR += anjuta
      SUBDIR += anjuta-extras
      SUBDIR += at-spi2-atk
