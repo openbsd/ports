@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.19 2011/09/27 08:59:37 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2011/09/27 09:00:24 jasper Exp $
 
 COMMENT=		OSS replacement for Nomachine's nxclient
 
 DISTNAME=		opennx-0.16
-REVISION=		10
+REVISION=		11
 
 CATEGORIES=		sysutils
 
