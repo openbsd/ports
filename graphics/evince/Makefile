@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.70 2011/09/22 14:23:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.71 2011/09/27 13:14:00 jasper Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,9 +8,9 @@ COMMENT-dvi=	evince document viewer backend for dvi documents
 COMMENT-nautilus= evince plugin for nautilus
 
 GNOME_PROJECT=	evince
-GNOME_VERSION=	3.0.2
+GNOME_VERSION=	3.2.0
 
-MAJ_V=		${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
+MAJ_V=		3.0
 SUBST_VARS=	MAJ_V
 
 CATEGORIES=	graphics print
@@ -19,11 +19,6 @@ PKGNAME-main=	${DISTNAME}
 PKGNAME-djvu=	evince-djvu-${GNOME_VERSION}
 PKGNAME-dvi=	evince-dvi-${GNOME_VERSION}
 PKGNAME-nautilus= nautilus-evince-${GNOME_VERSION}
-
-REVISION-main=	6
-REVISION-djvu=	2
-REVISION-dvi=	1
-REVISION-nautilus=1
 
 SHARED_LIBS +=  evdocument3               0.0 # 3.0
 SHARED_LIBS +=  evview3                   0.0 # 3.0
@@ -39,8 +34,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 PERMIT_DISTFILES_FTP=	Yes
 PERMIT_DISTFILES_CDROM=	Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
 MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
@@ -50,13 +43,12 @@ USE_GROFF =	Yes
 BUILD_DEPENDS=	x11/gnome/icon-theme \
 		devel/gsettings-desktop-schemas
 
-WANTLIB += X11 Xau Xcomposite Xcursor Xdamage Xdmcp Xext Xfixes
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB += Xi Xinerama Xrandr Xrender atk-1.0 cairo expat fontconfig
 WANTLIB += freetype gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gtk-3 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread-stubs
-WANTLIB += GL  Xxf86vm drm xcb-shm
-WANTLIB += xcb xcb-render z gthread-2.0 cairo-gobject m
+WANTLIB += GL xcb-shm xcb xcb-render z gthread-2.0 cairo-gobject m ffi kvm
 
 MODGNOME_TOOLS= goi yelp
 
