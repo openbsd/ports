@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.32 2011/06/22 11:41:35 pea Exp $
+@comment $OpenBSD: PLIST,v 1.33 2011/09/27 13:30:24 pea Exp $
 @pkgpath shells/zsh,-main
 @shell bin/zsh
 %%SHARED%%
@@ -710,6 +710,7 @@ share/zsh/${V}/functions/colors
 share/zsh/${V}/functions/compaudit
 share/zsh/${V}/functions/compdump
 share/zsh/${V}/functions/compinit
+@comment share/zsh/${V}/functions/compinit.orig
 share/zsh/${V}/functions/compinstall
 share/zsh/${V}/functions/copy-earlier-word
 share/zsh/${V}/functions/cycle-completion-positions
