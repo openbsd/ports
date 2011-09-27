@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2011/09/27 12:15:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2011/09/27 17:17:37 jasper Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
 GNOME_VERSION=		3.2.0
+REVISION=		0
 
 SHARED_LIBS +=  gnome-control-center      0.0 # 1.0
 
@@ -48,9 +49,9 @@ LIB_DEPENDS=		x11/gnome/desktop \
 			audio/pulseaudio
 
 BUILD_DEPENDS=		x11/gnome/settings-daemon>=3.2.0 \
-			devel/gsettings-desktop-schemas
+			devel/gsettings-desktop-schemas>=3.0.2
 RUN_DEPENDS=		x11/gnome/settings-daemon>=3.2.0 \
-			devel/gsettings-desktop-schemas
+			devel/gsettings-desktop-schemas>=3.0.2
 
 # NOTE that a11y dependencies (e.g. mousetweaks, caribou...) are not
 # enforced on purpose.
