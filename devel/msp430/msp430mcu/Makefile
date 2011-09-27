@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2011/09/05 08:25:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.4 2011/09/27 19:20:25 jasper Exp $
 
 PKG_ARCH=	*
 
@@ -7,9 +7,9 @@ COMMENT=	C headers and binutils linker scripts for msp430
 DISTNAME=	msp430mcu-20110613
 REVISION=	0
 
-PATCHFILES=	msp430mcu-20110613-sf3400714.patch:1 \
-		msp430mcu-20110613-sf3379189.patch:1 \
-		msp430mcu-20110613-sf3384550.patch:1
+PATCHFILES=	msp430mcu-20110613-sf3379189.patch:1 \
+		msp430mcu-20110613-sf3384550.patch:1 \
+		msp430mcu-20110613-sf3400714.patch:1
 
 CONFIGURE_STYLE=#empty
 

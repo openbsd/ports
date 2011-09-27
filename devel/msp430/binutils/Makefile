@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2011/09/05 08:25:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2011/09/27 19:20:25 jasper Exp $
 
 COMMENT=		GNU binutils for msp430
 
@@ -10,11 +10,11 @@ PKGNAME=		${TARGET}-${DISTNAME}
 
 MASTER_SITES=		${MASTER_SITE_GNU:=binutils/}
 PATCHFILES=		msp430-binutils-${V}-${R}.patch:0 \
-			msp430-binutils-2.21.1-20110716-sf3400711.patch:1 \
-			msp430-binutils-2.21.1-20110716-sf3400750.patch:1 \
 			msp430-binutils-2.21.1-20110716-sf3143071.patch:1 \
+			msp430-binutils-2.21.1-20110716-sf3379341.patch:1 \
 			msp430-binutils-2.21.1-20110716-sf3386145.patch:1 \
-			msp430-binutils-2.21.1-20110716-sf3379341.patch:1
+			msp430-binutils-2.21.1-20110716-sf3400711.patch:1 \
+			msp430-binutils-2.21.1-20110716-sf3400750.patch:1
 
 WANTLIB=		c z
 

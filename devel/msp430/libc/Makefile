@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.5 2011/09/05 08:25:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2011/09/27 19:20:25 jasper Exp $
 
 COMMENT=		GNU libc for msp430
 
 DISTNAME=		${TARGET}-libc-20110612
 REVISION=		0
 
-PATCHFILES=		msp430-libc-20110612-sf3402836.patch:1 \
-			msp430-libc-20110612-sf3387164.patch:1
+PATCHFILES=		msp430-libc-20110612-sf3387164.patch:1 \
+			msp430-libc-20110612-sf3402836.patch:1
 
 RUN_DEPENDS=		devel/msp430/gcc>=4.5.3
 BUILD_DEPENDS=		${RUN_DEPENDS}

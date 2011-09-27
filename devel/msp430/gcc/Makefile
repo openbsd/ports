@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2011/09/05 08:25:48 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2011/09/27 19:20:25 jasper Exp $
 
 COMMENT=		GNU Compiler Collection for msp430
 
@@ -10,10 +10,10 @@ PKGNAME=		${TARGET}-${DISTNAME}
 
 MASTER_SITES= 		${MASTER_SITE_GCC:=releases/gcc-$(VERSION)/}
 PATCHFILES=		msp430-gcc-${VERSION}-${R}.patch:0 \
-			msp430-gcc-4.5.3-20110706-sf3394176.patch:1 \
-			msp430-gcc-4.5.3-20110706-sf3396639.patch:1 \
+			msp430-gcc-4.5.3-20110706-sf3370978.patch:1 \
 			msp430-gcc-4.5.3-20110706-sf3390964.patch:1 \
-			msp430-gcc-4.5.3-20110706-sf3370978.patch:1
+			msp430-gcc-4.5.3-20110706-sf3394176.patch:1 \
+			msp430-gcc-4.5.3-20110706-sf3396639.patch:1
 
 DISTFILES=		gcc-core-${VERSION}${EXTRACT_SUFX} \
 			gcc-g++-${VERSION}${EXTRACT_SUFX}
