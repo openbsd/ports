@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.66 2011/09/26 16:13:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.67 2011/09/27 09:24:53 ajacoutot Exp $
 
 COMMENT-main=	configuration database system for GNOME
 COMMENT-polkit=	PolicyKit integration for GConf2
-COMMENT-gtk=	GConf2 configuration checker
 
 GNOME_PROJECT=	GConf
 GNOME_VERSION=	3.2.0
@@ -10,13 +9,14 @@ PKGNAME=	gconf2-${GNOME_VERSION}
 
 PKGNAME-main=	gconf2-${GNOME_VERSION}
 PKGNAME-polkit=	gconf2-polkit-${GNOME_VERSION}
-PKGNAME-gtk=	gconf2-sanity-check-${GNOME_VERSION}
+
+REVISION-main=	0
+REVISION-polkit=0
 
 SHARED_LIBS +=	gconf-2              6.2      # 5.5
 
 CATEGORIES=	devel
 CATEGORIES-polkit= devel sysutils
-CATEGORIES-gtk= devel x11
 
 HOMEPAGE=	http://www.gnome.org/projects/gconf/
 
@@ -39,27 +39,19 @@ WANTLIB-polkit += ORBit-2 c dbus-1 dbus-glib-1 gio-2.0 glib-2.0
 WANTLIB-polkit += gmodule-2.0 gobject-2.0 gthread-2.0 pcre pthread z
 WANTLIB-polkit += dbus-1 dbus-glib-1
 
-WANTLIB-gtk += ${WANTLIB}
-WANTLIB-gtk += GL ORBit-2 X11 Xau Xcomposite Xcursor Xdamage Xdmcp
-WANTLIB-gtk += Xext Xfixes Xi Xinerama Xrandr Xrender Xxf86vm atk-1.0
-WANTLIB-gtk += cairo drm expat fontconfig freetype gconf-2
-WANTLIB-gtk += gdk_pixbuf-2.0 m pango-1.0 pangocairo-1.0
-WANTLIB-gtk += pangoft2-1.0 pixman-1 png pthread-stubs xcb xcb-render
-WANTLIB-gtk += xcb-shm xml2 cairo-gobject gdk-3 gtk-3
-WANTLIB-gtk += dbus-1 dbus-glib-1 kvm
-
 MODULES=	devel/gettext \
 		x11/gnome
 
-# needed for gsettings-schema-convert(1)
+# needed for gsettings-schema-convert(1) (-main)
 MODULES+=	lang/python
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 MODPY_ADJ_FILES=gsettings/gsettings-schema-convert
 
-MULTI_PACKAGES=	-main -polkit -gtk
+MULTI_PACKAGES=	-main -polkit
 
-RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS}
+RUN_DEPENDS-main= ${MODGETTEXT_RUN_DEPENDS} \
+		${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		devel/ORBit2 \
 		textproc/libxml \
@@ -70,21 +62,14 @@ LIB_DEPENDS-polkit= ${LIB_DEPENDS} \
 		devel/gconf2 \
 		sysutils/polkit
 
-RUN_DEPENDS-gtk= # empty
-LIB_DEPENDS-gtk= ${LIB_DEPENDS} \
-		devel/gconf2 \
-		x11/gtk+3
-
-MODGNOME_TOOLS= 	goi
+MODGNOME_TOOLS=	goi
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV= 	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--without-openldap \
 		--enable-defaults-service \
-		--with-gtk=3.0
-
-USE_GROFF=	Yes
+		--disable-gtk
 
 FAKE_FLAGS=	sysgconfdir=${PREFIX}/share/examples/gconf2 \
 		sysconfdir=${PREFIX}/share/examples/gconf2
