@@ -1,3 +1,9 @@
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Printing with CUPS
+==================
 To be able to use the CUPS backend for direct printing from the remote
 NX server to the local spooler, you need to make the following files
 executable by your user.
