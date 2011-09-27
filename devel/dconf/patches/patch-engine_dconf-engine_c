@@ -1,7 +1,7 @@
-$OpenBSD: patch-engine_dconf-engine_c,v 1.6 2011/07/02 18:50:55 ajacoutot Exp $
---- engine/dconf-engine.c.orig	Sat Jul  2 20:42:36 2011
-+++ engine/dconf-engine.c	Sat Jul  2 20:43:47 2011
-@@ -191,6 +191,11 @@ dconf_engine_refresh_user (DConfEngine *engine)
+$OpenBSD: patch-engine_dconf-engine_c,v 1.7 2011/09/27 06:25:10 ajacoutot Exp $
+--- engine/dconf-engine.c.orig	Sun Sep 11 21:07:26 2011
++++ engine/dconf-engine.c	Tue Sep 27 08:11:51 2011
+@@ -142,6 +142,11 @@ dconf_engine_refresh_user (DConfEngine *engine)
  {
    g_assert ((engine->gvdbs[0] == NULL) >= (engine->shm == NULL));
  

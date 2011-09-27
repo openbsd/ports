@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2011/09/20 20:51:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.29 2011/09/27 06:25:10 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,13 +6,10 @@ COMMENT-main=	configuration backend system
 COMMENT-editor=	editor for the dconf configuration storage system
 
 GNOME_PROJECT=	dconf
-GNOME_VERSION=	0.8.0
+GNOME_VERSION=	0.10.0
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-editor=	dconf-editor-${GNOME_VERSION}
-
-REVISION-main = 0
-REVISION-editor = 1
 
 SHARED_LIBS+=	dconf        0.0 # 0.0.0
 SHARED_LIBS+=	dconf-dbus-1 0.0 # 0.0.0
@@ -38,7 +35,7 @@ WANTLIB-main += ${WANTLIB} dbus-1
 WANTLIB-editor += ${WANTLIB} ${MODGETTEXT_WANTLIB}
 WANTLIB-editor += GL X11 Xcomposite Xcursor Xdamage Xext Xfixes
 WANTLIB-editor += Xi Xinerama Xrandr Xrender atk-1.0 cairo cairo-gobject
-WANTLIB-editor += expat fontconfig freetype gdk-3 gdk_pixbuf-2.0
+WANTLIB-editor += expat fontconfig freetype gdk-3 gdk_pixbuf-2.0 kvm
 WANTLIB-editor += gtk-3 m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1
 WANTLIB-editor += png pthread-stubs xcb xcb-render xcb-shm xml2 z dconf
 
@@ -51,16 +48,18 @@ MODULES=	devel/gettext \
 		x11/gnome \
 		devel/dconf
 
+MODGNOME_DESKTOP_FILE= Yes
+
 BUILD_DEPENDS=	lang/vala>=0.12.0
 
 RUN_DEPENDS-main=	# empty
 LIB_DEPENDS-main=	devel/glib2 \
 			x11/dbus
 
-RUN_DEPENDS-editor=	${MODGETTEXT_RUN_DEPENDS} \
-			${MODDCONF_RUN_DEPENDS} \
+RUN_DEPENDS-editor=	${RUN_DEPENDS} \
 			devel/desktop-file-utils
-LIB_DEPENDS-editor=	x11/gtk+3
+LIB_DEPENDS-editor=	${MODGETTEXT_LIB_DEPENDS} \
+			x11/gtk+3
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

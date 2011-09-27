@@ -1,6 +1,6 @@
-$OpenBSD: patch-client_Makefile_in,v 1.5 2011/05/09 08:43:45 ajacoutot Exp $
---- client/Makefile.in.orig	Mon May  9 10:10:12 2011
-+++ client/Makefile.in	Mon May  9 10:28:38 2011
+$OpenBSD: patch-client_Makefile_in,v 1.6 2011/09/27 06:25:10 ajacoutot Exp $
+--- client/Makefile.in.orig	Mon Sep 26 23:20:35 2011
++++ client/Makefile.in	Tue Sep 27 08:11:51 2011
 @@ -34,7 +34,7 @@ POST_INSTALL = :
  NORMAL_UNINSTALL = :
  PRE_UNINSTALL = :
@@ -10,7 +10,7 @@ $OpenBSD: patch-client_Makefile_in,v 1.5 2011/05/09 08:43:45 ajacoutot Exp $
  subdir = client
  DIST_COMMON = $(dconfinclude_HEADERS) $(srcdir)/Makefile.am \
  	$(srcdir)/Makefile.in $(srcdir)/dconf.pc.in dconf-client.c \
-@@ -228,13 +228,13 @@ top_srcdir = @top_srcdir@
+@@ -230,13 +230,13 @@ top_srcdir = @top_srcdir@
  AM_CFLAGS = -std=c89 -Wall -Wmissing-prototypes -Wwrite-strings -D__dconf_h__ -fPIC -DPIC
  INCLUDES = -I$(top_srcdir)/common -I$(top_srcdir)/gvdb -I$(top_srcdir)/engine $(gio_CFLAGS)
  shlibdir = $(libdir)
@@ -26,7 +26,7 @@ $OpenBSD: patch-client_Makefile_in,v 1.5 2011/05/09 08:43:45 ajacoutot Exp $
  libdconf_so_0_0_0_SOURCES = \
  	../common/dconf-shmdir.c	\
  	../common/dconf-paths.c		\
-@@ -322,8 +322,8 @@ uninstall-shlibPROGRAMS:
+@@ -324,8 +324,8 @@ uninstall-shlibPROGRAMS:
  
  clean-shlibPROGRAMS:
  	-test -z "$(shlib_PROGRAMS)" || rm -f $(shlib_PROGRAMS)
@@ -37,7 +37,7 @@ $OpenBSD: patch-client_Makefile_in,v 1.5 2011/05/09 08:43:45 ajacoutot Exp $
  	$(AM_V_CCLD)$(libdconf_so_0_0_0_LINK) $(libdconf_so_0_0_0_OBJECTS) $(libdconf_so_0_0_0_LDADD) $(LIBS)
  
  mostlyclean-compile:
-@@ -695,17 +695,12 @@ uninstall-am: uninstall-dconfincludeHEADERS uninstall-
+@@ -697,17 +697,12 @@ uninstall-am: uninstall-dconfincludeHEADERS uninstall-
  	uninstall-vapiDATA
  
  
