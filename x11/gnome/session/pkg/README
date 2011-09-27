@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.33 2011/09/26 15:52:09 ajacoutot Exp $
+$OpenBSD: README,v 1.34 2011/09/27 10:27:46 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -31,7 +31,6 @@ It is advised to _always_ install the "minimal" set (see also: the
 "full" GNOME Desktop
 --------------------
     $ sudo pkg_add \
-	alacarte \
 	deja-dup \
     	ekiga \
 	empathy \
@@ -149,7 +148,6 @@ Office & Productivity
 Utilities
 ---------
 
-    * alacarte - simple menu editing tool
     * deja-dup - simple (encrypted) backup tool
     * gconf-editor - editor for GConf settings
     * gnome-nettool - interface for various networking tools
