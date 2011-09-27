@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.65 2011/09/20 21:04:24 jasper Exp $
+# $OpenBSD: Makefile,v 1.66 2011/09/27 07:58:54 ajacoutot Exp $
 
 COMMENT-main =		SOAP implementation in C
 COMMENT-gnome =		GNOME specific libsoup parts
 
 GNOME_PROJECT =		libsoup
-GNOME_VERSION =		2.34.3
+GNOME_VERSION =		2.36.0
 
 PKGNAME-main =		${DISTNAME}
 PKGNAME-gnome =		${GNOME_PROJECT}-gnome-${GNOME_VERSION}
-REVISION-main =		0
-REVISION-gnome =	0
 
-SHARED_LIBS +=  soup-2.4             3.0      # .4.0
-SHARED_LIBS +=  soup-gnome-2.4       1.1      # .4.0
+SHARED_LIBS +=  soup-2.4             3.1      # .5.0
+SHARED_LIBS +=  soup-gnome-2.4       1.2      # .5.0
 
 API_VERSION =		2.4
 
@@ -29,16 +27,14 @@ PERMIT_PACKAGE_FTP=     Yes
 PERMIT_DISTFILES_CDROM= Yes
 PERMIT_DISTFILES_FTP=   Yes
 
-EXTRACT_SUFX=		.tar.bz2
-
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
-WANTLIB += m pcre xml2 z
+WANTLIB += m pcre xml2 z ffi
 
 MULTI_PACKAGES =	-main -gnome
 
 MODGNOME_TOOLS= 	goi
 
-RUN_DEPENDS =		net/glib2-networking
+RUN_DEPENDS =		net/glib2-networking>=2.30.0
 
 LIB_DEPENDS =		devel/glib2>=2.22.2 \
 			textproc/libxml
