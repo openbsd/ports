@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/03/30 08:05:05 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/09/27 12:26:20 ajacoutot Exp $
 @conflict gtk2mm-<2.14
 %%SHARED%%
 include/pangomm-1.4/
@@ -67,6 +67,7 @@ lib/pangomm-1.4/proc/
 lib/pangomm-1.4/proc/m4/
 lib/pangomm-1.4/proc/m4/convert.m4
 lib/pangomm-1.4/proc/m4/convert_pango.m4
+lib/pangomm-1.4/proc/m4/convert_pangomm.m4
 lib/pkgconfig/
 lib/pkgconfig/pangomm-1.4.pc
 share/devhelp/
@@ -252,28 +253,28 @@ share/doc/pangomm-1.4/reference/html/graph_legend.png
 share/doc/pangomm-1.4/reference/html/group__pangommEnums.html
 share/doc/pangomm-1.4/reference/html/hierarchy.html
 share/doc/pangomm-1.4/reference/html/index.html
-share/doc/pangomm-1.4/reference/html/inherit__graph__0.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__1.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__10.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__11.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__12.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__13.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__14.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__15.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__16.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__17.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__18.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__19.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__2.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__20.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__21.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__3.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__4.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__5.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__6.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__7.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__8.png
-share/doc/pangomm-1.4/reference/html/inherit__graph__9.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_0.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_1.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_10.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_11.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_12.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_13.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_14.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_15.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_16.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_17.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_18.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_19.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_2.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_20.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_21.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_3.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_4.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_5.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_6.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_7.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_8.png
+share/doc/pangomm-1.4/reference/html/inherit_graph_9.png
 share/doc/pangomm-1.4/reference/html/inherits.html
 share/doc/pangomm-1.4/reference/html/modules.html
 share/doc/pangomm-1.4/reference/html/namespacePango.html
