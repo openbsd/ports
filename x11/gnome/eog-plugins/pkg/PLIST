@@ -1,10 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2011/09/12 07:26:20 ajacoutot Exp $
-lib/eog/
-lib/eog/plugins/
-lib/eog/plugins/exif-display/
+@comment $OpenBSD: PLIST,v 1.8 2011/09/27 07:56:18 jasper Exp $
 lib/eog/plugins/exif-display.plugin
-lib/eog/plugins/exif-display/exif-display-config.ui
-lib/eog/plugins/exif-display/exif-display.ui
 lib/eog/plugins/fit-to-width.plugin
 @comment lib/eog/plugins/libexif-display.a
 @comment lib/eog/plugins/libexif-display.la
@@ -12,10 +7,21 @@ lib/eog/plugins/libexif-display.so
 @comment lib/eog/plugins/libfit-to-width.a
 @comment lib/eog/plugins/libfit-to-width.la
 lib/eog/plugins/libfit-to-width.so
+@comment lib/eog/plugins/libpostasa.a
+@comment lib/eog/plugins/libpostasa.la
+lib/eog/plugins/libpostasa.so
 @comment lib/eog/plugins/libsend-by-mail.a
 @comment lib/eog/plugins/libsend-by-mail.la
 lib/eog/plugins/libsend-by-mail.so
+lib/eog/plugins/postasa.plugin
 lib/eog/plugins/send-by-mail.plugin
+share/eog/plugins/
+share/eog/plugins/exif-display/
+share/eog/plugins/exif-display/exif-display-config.ui
+share/eog/plugins/exif-display/exif-display.ui
+share/eog/plugins/postasa/
+share/eog/plugins/postasa/postasa-config.xml
+share/eog/plugins/postasa/postasa-uploads.xml
 share/glib-2.0/schemas/org.gnome.eog.plugins.exif-display.gschema.xml
 share/locale/ar/LC_MESSAGES/eog-plugins.mo
 share/locale/as/LC_MESSAGES/eog-plugins.mo
@@ -41,6 +47,7 @@ share/locale/id/LC_MESSAGES/eog-plugins.mo
 share/locale/it/LC_MESSAGES/eog-plugins.mo
 share/locale/ja/LC_MESSAGES/eog-plugins.mo
 share/locale/kn/LC_MESSAGES/eog-plugins.mo
+share/locale/ko/LC_MESSAGES/eog-plugins.mo
 share/locale/lt/LC_MESSAGES/eog-plugins.mo
 share/locale/mk/LC_MESSAGES/eog-plugins.mo
 share/locale/ml/LC_MESSAGES/eog-plugins.mo
@@ -52,6 +59,7 @@ share/locale/pl/LC_MESSAGES/eog-plugins.mo
 share/locale/pt/LC_MESSAGES/eog-plugins.mo
 share/locale/pt_BR/LC_MESSAGES/eog-plugins.mo
 share/locale/ro/LC_MESSAGES/eog-plugins.mo
+share/locale/ru/LC_MESSAGES/eog-plugins.mo
 share/locale/sl/LC_MESSAGES/eog-plugins.mo
 share/locale/sq/LC_MESSAGES/eog-plugins.mo
 share/locale/sv/LC_MESSAGES/eog-plugins.mo

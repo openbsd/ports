@@ -1,0 +1,16 @@
+$OpenBSD: patch-configure_ac,v 1.4 2011/09/27 07:56:18 jasper Exp $
+
+Fix some stupid egrep(1) misusage causing this function to always
+return 1.
+
+--- configure.ac.orig	Tue Sep 27 09:25:50 2011
++++ configure.ac	Tue Sep 27 09:26:09 2011
+@@ -174,7 +174,7 @@ disabled_plugins=
+ # *******************
+ 
+ check_plugin_defined() {
+-	if echo "$2" | egrep "\b($1)\b" > /dev/null;
++	if echo "$2" | egrep "$1" > /dev/null;
+ 	then
+ 		return 1
+ 	else
