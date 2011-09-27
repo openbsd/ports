@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.51 2011/09/27 19:01:25 landry Exp $
+# $OpenBSD: Makefile,v 1.52 2011/09/27 21:39:35 sthen Exp $
 
 # XXX Don't even think of updating ocaml alone.
 # Do check that the ports that depend on it still work, or repair them. 
@@ -9,7 +9,7 @@ COMMENT=	ML language based on complete class-based objective system
 
 BASENAME=	ocaml-3.12
 DISTNAME=	${BASENAME}.0
-REVISION=	2
+REVISION=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://caml.inria.fr/pub/distrib/${BASENAME}/
 DOCFILES=	${BASENAME}-refman.html.tar.gz
@@ -42,7 +42,7 @@ FAKE_FLAGS=	PREFIX=${WRKINST}${PREFIX}
 USE_GMAKE=	Yes
 
 BUILD_DEPENDS +=${MODTK_BUILD_DEPENDS} \
-		devel/gdb
+		devel/libbfd
 RUN_DEPENDS +=	${MODTK_RUN_DEPENDS}
 LIB_DEPENDS +=	${MODTK_LIB_DEPENDS}
 WANTLIB +=	${MODTK_WANTLIB}
