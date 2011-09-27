@@ -1,17 +1,19 @@
-$OpenBSD: patch-setup_py,v 1.1.1.1 2008/10/18 11:17:59 ajacoutot Exp $
---- setup.py.orig	Sat Jul 26 05:58:29 2008
-+++ setup.py	Thu Oct 16 14:06:11 2008
-@@ -15,10 +15,12 @@ setup(name='python-policyd-spf',
-       py_modules=['policydspfsupp'],
+$OpenBSD: patch-setup_py,v 1.2 2011/09/27 10:17:12 giovanni Exp $
+--- setup.py.orig	Sun Nov 28 04:58:03 2010
++++ setup.py	Wed Aug 24 16:17:26 2011
+@@ -14,11 +14,13 @@ setup(name='python-policyd-spf',
+       py_modules=['policydspfsupp', 'policydspfuser'],
        keywords = ['Postfix','spf','email'],
        scripts = ['policyd-spf'],
 -      data_files=[(os.path.join('share', 'man', 'man1'),
 -          ['policyd-spf.1']), (os.path.join('share', 'man', 'man5'),
 -          ['policyd-spf.conf.5']), (os.path.join('../etc', 'python-policyd-spf'),
--          ['policyd-spf.conf'])],
+-          ['policyd-spf.conf']), (os.path.join('share', 'man', 'man5'),
+-          ['policyd-spf.peruser.5'])],
 +      data_files=[
 +	  ('man/man1',['policyd-spf.1']), 
-+	  ('man/man5',['policyd-spf.conf.5']), 
++	  ('man/man5',['policyd-spf.conf.5']),
++          ('man/man5',['policyd-spf.peruser.5']),
 +	  ('share/examples/py-policyd-spf',['policyd-spf.conf']),
 +	  ('share/examples/py-policyd-spf',['policyd-spf.conf.commented']),
 +	  ('share/doc/py-policyd-spf',['README.per_user_whitelisting'])],
