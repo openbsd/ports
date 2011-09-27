@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.3 2011/05/28 08:15:52 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2011/09/27 06:07:51 ajacoutot Exp $
 @conflict at-spi-<=1.32.0p3
 lib/gnome-settings-daemon-3.0/
 lib/gnome-settings-daemon-3.0/gtk-modules/
@@ -14,19 +14,23 @@ lib/gtk-3.0/modules/
 @comment lib/gtk-3.0/modules/libatk-bridge.la
 lib/gtk-3.0/modules/libatk-bridge.so
 share/glib-2.0/schemas/org.a11y.atspi.gschema.xml
+share/locale/an/LC_MESSAGES/at-spi2-atk.mo
 share/locale/ar/LC_MESSAGES/at-spi2-atk.mo
 share/locale/as/LC_MESSAGES/at-spi2-atk.mo
 share/locale/ast/LC_MESSAGES/at-spi2-atk.mo
+share/locale/be/LC_MESSAGES/at-spi2-atk.mo
 share/locale/bg/LC_MESSAGES/at-spi2-atk.mo
 share/locale/bn/LC_MESSAGES/at-spi2-atk.mo
 share/locale/bn_IN/LC_MESSAGES/at-spi2-atk.mo
 share/locale/ca/LC_MESSAGES/at-spi2-atk.mo
+share/locale/ca@valencia/LC_MESSAGES/at-spi2-atk.mo
 share/locale/cs/LC_MESSAGES/at-spi2-atk.mo
 share/locale/cy/LC_MESSAGES/at-spi2-atk.mo
 share/locale/da/LC_MESSAGES/at-spi2-atk.mo
 share/locale/de/LC_MESSAGES/at-spi2-atk.mo
 share/locale/el/LC_MESSAGES/at-spi2-atk.mo
 share/locale/en@shaw/LC_MESSAGES/at-spi2-atk.mo
+share/locale/en_CA/LC_MESSAGES/at-spi2-atk.mo
 share/locale/en_GB/LC_MESSAGES/at-spi2-atk.mo
 share/locale/eo/LC_MESSAGES/at-spi2-atk.mo
 share/locale/es/LC_MESSAGES/at-spi2-atk.mo
