@@ -1,9 +1,9 @@
-$OpenBSD: patch-lein,v 1.1.1.1 2011/09/21 13:40:16 jasper Exp $
+$OpenBSD: patch-lein,v 1.2 2011/09/27 09:16:41 jasper Exp $
 
 - Adjust paths to java, clojure and jar files
 
 --- lein.orig	Tue Sep 20 13:27:07 2011
-+++ lein	Tue Sep 20 14:35:22 2011
++++ lein	Tue Sep 27 11:07:58 2011
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!${LOCALBASE}/bin/bash
@@ -19,13 +19,11 @@ $OpenBSD: patch-lein,v 1.1.1.1 2011/09/21 13:40:16 jasper Exp $
  LEIN_HOME=${LEIN_HOME:-"$HOME/.lein"}
  
  DEV_PLUGINS="$(ls -1 lib/dev/*jar 2> /dev/null)"
-@@ -62,8 +62,8 @@ unique_user_plugins () {
- LEIN_PLUGIN_PATH="$(echo "$DEV_PLUGINS" | tr \\n :)"
+@@ -63,7 +63,7 @@ LEIN_PLUGIN_PATH="$(echo "$DEV_PLUGINS" | tr \\n :)"
  LEIN_USER_PLUGIN_PATH="$(echo "$(unique_user_plugins)" | tr \\n :)"
  CLASSPATH="$CLASSPATH:$LEIN_PLUGIN_PATH:$LEIN_USER_PLUGIN_PATH:test/:src/"
--LEIN_JAR="$HOME/.lein/self-installs/leiningen-$LEIN_VERSION-standalone.jar"
+ LEIN_JAR="$HOME/.lein/self-installs/leiningen-$LEIN_VERSION-standalone.jar"
 -CLOJURE_JAR="/usr/share/java/clojure-1.2.jar:/usr/share/java/asm3.jar"
-+LEIN_JAR="${MODJAVA_SHARE_DIR}/lein/leiningen-standalone.jar"
 +CLOJURE_JAR="${LOCALBASE}/clojure/clojure.jar:${MODJAVA_JAR_DIR}/asm.jar"
  NULL_DEVICE=/dev/null
  
