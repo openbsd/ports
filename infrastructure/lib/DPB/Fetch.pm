@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.15 2011/09/13 09:46:53 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.16 2011/09/27 17:12:56 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -299,6 +299,14 @@ sub finalize
 package DPB::Task::Fetch;
 our @ISA = qw(DPB::Task::Clocked);
 
+sub stopped_clock
+{
+	my ($self, $gap) = @_;
+	# note that we're missing time
+	$self->{got_suspended}++;
+	$self->SUPER::stopped_clock($gap);
+}
+
 sub new
 {
 	my ($class, $job) = @_;
@@ -363,7 +371,10 @@ sub finalize
 		    (stat _)[7] > $job->{file}->{sz}) {
 			unlink($job->{file}->tempfilename);
 		}
-		shift @{$job->{sites}};
+		# if we got suspended, well, might have to retry same site
+		if (!$self->{got_suspended}) {
+			shift @{$job->{sites}};
+		}
 		return $job->bad_file($self, $core);
 	}
 }
