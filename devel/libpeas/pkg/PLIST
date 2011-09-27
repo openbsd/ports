@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2011/09/22 17:07:04 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.7 2011/09/27 06:24:24 jasper Exp $
 @bin bin/peas-demo
 include/libpeas-1.0/
 include/libpeas-1.0/libpeas/
@@ -134,6 +134,7 @@ share/locale/sr/LC_MESSAGES/libpeas.mo
 share/locale/sr@latin/LC_MESSAGES/libpeas.mo
 share/locale/sv/LC_MESSAGES/libpeas.mo
 share/locale/ta/LC_MESSAGES/libpeas.mo
+share/locale/te/LC_MESSAGES/libpeas.mo
 share/locale/th/LC_MESSAGES/libpeas.mo
 share/locale/tr/LC_MESSAGES/libpeas.mo
 share/locale/ug/LC_MESSAGES/libpeas.mo
