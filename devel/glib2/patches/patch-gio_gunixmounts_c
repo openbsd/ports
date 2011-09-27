@@ -1,16 +1,11 @@
-$OpenBSD: patch-gio_gunixmounts_c,v 1.4 2011/09/20 21:09:34 ajacoutot Exp $
+$OpenBSD: patch-gio_gunixmounts_c,v 1.5 2011/09/27 06:05:28 ajacoutot Exp $
 
 https://bugzilla.gnome.org/show_bug.cgi?id=583330
 From FreeBSD: poll the list of mounted filesystems since we can't rely
 on checking for mtab updates like other systems.
 
-From 0db338bdb0e9a0216681b6db7286ffb0f1711db1 Mon Sep 17 00:00:00 2001
-From: Antoine Jacoutot <ajacoutot@openbsd.org>
-Date: Mon, 19 Sep 2011 23:18:45 +0000
-Subject: gunixmounts: Fix compilation on BSD
-
---- gio/gunixmounts.c.orig	Thu Sep 15 02:10:44 2011
-+++ gio/gunixmounts.c	Tue Sep 20 01:14:25 2011
+--- gio/gunixmounts.c.orig	Wed Sep 21 21:17:06 2011
++++ gio/gunixmounts.c	Tue Sep 27 07:52:34 2011
 @@ -153,6 +153,9 @@ struct _GUnixMountMonitor {
  
    GFileMonitor *fstab_monitor;
@@ -66,15 +61,7 @@ Subject: gunixmounts: Fix compilation on BSD
      "/var",
      "/var/crash",
      "/var/local",
-@@ -1023,6 +1037,7 @@ _g_get_unix_mount_points (void)
-   GList *return_list;
- #ifdef HAVE_SYS_SYSCTL_H
-   int usermnt = 0;
-+  size_t len = sizeof(usermnt);
-   struct stat sb;
- #endif
-   
-@@ -1108,6 +1123,10 @@ get_mounts_timestamp (void)
+@@ -1111,6 +1125,10 @@ get_mounts_timestamp (void)
        if (stat (monitor_file, &buf) == 0)
  	return (guint64)buf.st_mtime;
      }
@@ -85,7 +72,7 @@ Subject: gunixmounts: Fix compilation on BSD
    return 0;
  }
  
-@@ -1250,6 +1269,13 @@ g_unix_mount_monitor_finalize (GObject *object)
+@@ -1253,6 +1271,13 @@ g_unix_mount_monitor_finalize (GObject *object)
        g_object_unref (monitor->mtab_monitor);
      }
  
@@ -99,7 +86,7 @@ Subject: gunixmounts: Fix compilation on BSD
    the_mount_monitor = NULL;
  
    G_OBJECT_CLASS (g_unix_mount_monitor_parent_class)->finalize (object);
-@@ -1330,6 +1356,51 @@ mtab_file_changed (GFileMonitor      *monitor,
+@@ -1333,6 +1358,51 @@ mtab_file_changed (GFileMonitor      *monitor,
    g_signal_emit (mount_monitor, signals[MOUNTS_CHANGED], 0);
  }
  
@@ -151,7 +138,7 @@ Subject: gunixmounts: Fix compilation on BSD
  static void
  g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
  {
-@@ -1351,6 +1422,12 @@ g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
+@@ -1354,6 +1424,12 @@ g_unix_mount_monitor_init (GUnixMountMonitor *monitor)
        g_object_unref (file);
        
        g_signal_connect (monitor->mtab_monitor, "changed", (GCallback)mtab_file_changed, monitor);
