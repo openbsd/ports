@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.10 2011/06/15 10:09:31 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.11 2011/09/27 17:15:03 espie Exp $
 #
 # Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 #
@@ -189,6 +189,7 @@ sub zap_default
 	return $self unless defined $subpackage;
 	if ($subpackage->string eq $self->{multi}) {
 		my $o = bless {pkgpath => $self->{pkgpath},
+			sawflavor => $self->{sawflavor},
 			flavors => $self->copy_flavors}, ref($self);
 		return $o->normalize;
 	} else {
@@ -202,7 +203,7 @@ sub handle_default
 	my ($self, $h) = @_;
 	my $m = $self->zap_default($self->{info}->{SUBPACKAGE});
 	if ($m ne $self) {
-		#print $m->fullpkgpath, " vs. ", $self->fullpkgpath,"\n";
+#		print $m->fullpkgpath, " vs. ", $self->fullpkgpath,"\n";
 		$m->{info} = $self->{info};
 		$h->{$m} = $m;
 	}
