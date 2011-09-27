@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.21 2011/09/16 10:31:23 espie Exp $
+# $OpenBSD: Makefile,v 1.22 2011/09/27 21:29:16 sthen Exp $
 
 COMMENT=	genealogical research and analysis management program system
 
 DISTNAME=	gramps-3.2.6
-REVISION=		0
+REVISION=	1
 
 CATEGORIES=	misc x11
 
@@ -23,7 +23,7 @@ MODULES=	lang/python \
 BUILD_DEPENDS=	x11/py-gtk2
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/xdg-utils \
-		${MODPY_RUN_DEPENDS:S/python/python-bsddb/},-bsddb \
+		${MODPY_RUN_DEPENDS},-bsddb \
 		math/graphviz \
 		misc/shared-mime-info \
 		x11/gnome/librsvg \

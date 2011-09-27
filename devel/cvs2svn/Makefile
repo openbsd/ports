@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2011/09/16 09:24:49 espie Exp $
+# $OpenBSD: Makefile,v 1.9 2011/09/27 21:29:16 sthen Exp $
 
 COMMENT=		migrate repositories from CVS to Subversion/GIT/BZR
 
@@ -6,7 +6,7 @@ COMMENT=		migrate repositories from CVS to Subversion/GIT/BZR
 # otherwise you probably get the old files, not 404.
 MODPY_EGG_VERSION=	2.3.0
 DISTNAME=		cvs2svn-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 MASTER_SITES=		${HOMEPAGE}files/documents/1462/46528/
 
 CATEGORIES=		devel
@@ -21,9 +21,8 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MODULES=	lang/python
 
-# XXX YUCK
 RUN_DEPENDS=	devel/subversion,-python \
-		${MODPY_RUN_DEPENDS:S/python/python-bsddb/},-bsddb
+		${MODPY_RUN_DEPENDS},-bsddb
 
 REGRESS_DEPENDS=${RUN_DEPENDS}
 

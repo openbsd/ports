@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.43 2011/09/16 11:41:41 espie Exp $
+# $OpenBSD: Makefile,v 1.44 2011/09/27 21:29:16 sthen Exp $
 
 SHARED_ONLY=	Yes
 
@@ -38,7 +38,7 @@ WANTLIB += expat
 
 WANTLIB +=	${MODPY_WANTLIB}
 
-REGRESS_DEPENDS= python-tests-${MODPY_VSPEC}:lang/python/${MODPY_VERSION},-tests
+REGRESS_DEPENDS= lang/python/${MODPY_VERSION},-tests
 
 DOC_DIR=	${PREFIX}/share/doc/py-xml/
 SRC_DOCDIR=	${WRKSRC}/doc
