@@ -1,0 +1,28 @@
+$OpenBSD: patch-panels_region_gnome-region-panel-formats_c,v 1.1 2011/09/27 12:15:23 ajacoutot Exp $
+
+Fix build if some locale defines are missing.
+
+--- panels/region/gnome-region-panel-formats.c.orig	Tue Aug 23 10:23:42 2011
++++ panels/region/gnome-region-panel-formats.c	Tue Sep 27 11:59:53 2011
+@@ -132,6 +132,7 @@ update_examples_cb (GtkTreeSelection *selection, gpoin
+ 	g_free (locale);
+ 
+ 	/* Display measurement */
++#ifdef LC_MEASUREMENT
+ 	locale = g_strdup (setlocale (LC_MEASUREMENT, NULL));
+ 	setlocale (LC_MEASUREMENT, active_id);
+ 
+@@ -139,10 +140,13 @@ update_examples_cb (GtkTreeSelection *selection, gpoin
+ 	if (fmt && *fmt == 2)
+ 		gtk_label_set_text (GTK_LABEL (gtk_builder_get_object (builder, "measurement_format")), _("Imperial"));
+ 	else
++#endif
+ 		gtk_label_set_text (GTK_LABEL (gtk_builder_get_object (builder, "measurement_format")), _("Metric"));
+ 
++#ifdef LC_MEASUREMENT
+ 	setlocale (LC_MEASUREMENT, locale);
+ 	g_free (locale);
++#endif
+         g_free (active_id);
+ }
+ 

@@ -1,0 +1,21 @@
+$OpenBSD: patch-panels_info_hostnames-test_txt,v 1.1 2011/09/27 12:15:23 ajacoutot Exp $
+
+XXX unbreak build (special chars are not properly processed).
+
+--- panels/info/hostnames-test.txt.orig	Tue Sep 27 12:34:57 2011
++++ panels/info/hostnames-test.txt	Tue Sep 27 11:59:45 2011
+@@ -1,11 +1,11 @@
+ # Pretty hostname, tab, display hostname, tab, real hostname
+ Lennart's PC	Lennarts-PC	lennarts-pc
+-Müllers Computer	Mullers-Computer	mullers-computer
++Mullers Computer	Mullers-Computer	mullers-computer
+ Voran!	Voran	voran
+-Es war einmal ein Männlein	Es-war-einmal-ein-Mannlein	es-war-einmal-ein-mannlein
++Es war einmal ein Mannlein	Es-war-einmal-ein-Mannlein	es-war-einmal-ein-mannlein
+ Jawoll. Ist doch wahr!	Jawoll-Ist-doch-wahr	jawoll-ist-doch-wahr
+ レナート	localhost	localhost
+ !!!	localhost	localhost
+ ...zack!!! zack!...	zack-zack	zack-zack
+-Bãstien's computer... Foo-bar	Bastiens-computer-Foo-bar	bastiens-computer-foo-bar
++Bastien's computer... Foo-bar	Bastiens-computer-Foo-bar	bastiens-computer-foo-bar
+ 	localhost	localhost

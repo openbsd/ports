@@ -1,16 +1,10 @@
-@comment $OpenBSD: PLIST,v 1.17 2011/09/25 12:53:55 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.18 2011/09/27 12:15:23 ajacoutot Exp $
 @conflict control-center-1*
 @conflict control-center2-*
 @conflict gnome-media-<2.91.2p3
 @pkgpath x11/gnome/controlcenter2
 @bin bin/gnome-control-center
 @bin bin/gnome-sound-applet
-include/gnome-control-center-1/
-include/gnome-control-center-1/libgnome-control-center/
-include/gnome-control-center-1/libgnome-control-center/cc-lockbutton.h
-include/gnome-control-center-1/libgnome-control-center/cc-panel.h
-include/gnome-control-center-1/libgnome-control-center/cc-shell.h
-include/gnome-control-center-1/libgnome-control-center/gconf-property-editor.h
 lib/control-center-1/
 lib/control-center-1/panels/
 @comment lib/control-center-1/panels/libbackground.la
@@ -25,6 +19,8 @@ lib/control-center-1/panels/libinfo.so
 lib/control-center-1/panels/libkeyboard.so
 @comment lib/control-center-1/panels/libmouse-properties.la
 lib/control-center-1/panels/libmouse-properties.so
+@comment lib/control-center-1/panels/libonline-accounts.la
+lib/control-center-1/panels/libonline-accounts.so
 @comment lib/control-center-1/panels/libprinters.la
 lib/control-center-1/panels/libprinters.so
 @comment lib/control-center-1/panels/libregion.la
@@ -40,7 +36,6 @@ lib/control-center-1/panels/libuser-accounts.so
 lib/libgnome-control-center.la
 @lib lib/libgnome-control-center.so.${LIBgnome-control-center_VERSION}
 lib/pkgconfig/gnome-keybindings.pc
-lib/pkgconfig/libgnome-control-center.pc
 share/applications/gnome-background-panel.desktop
 share/applications/gnome-control-center.desktop
 share/applications/gnome-datetime-panel.desktop
@@ -48,6 +43,7 @@ share/applications/gnome-display-panel.desktop
 share/applications/gnome-info-panel.desktop
 share/applications/gnome-keyboard-panel.desktop
 share/applications/gnome-mouse-panel.desktop
+share/applications/gnome-online-accounts-panel.desktop
 share/applications/gnome-printers-panel.desktop
 share/applications/gnome-region-panel.desktop
 share/applications/gnome-screen-panel.desktop
@@ -156,6 +152,8 @@ share/gnome-control-center/pixmaps/right-ring-finger.png
 share/gnome-control-center/pixmaps/right-ring-finger.svg
 share/gnome-control-center/pixmaps/right-thumb.png
 share/gnome-control-center/pixmaps/right-thumb.svg
+share/gnome-control-center/pixmaps/wacom-stylus.svg
+share/gnome-control-center/pixmaps/wacom-tablet.svg
 share/gnome-control-center/sounds/
 share/gnome-control-center/sounds/gnome-sounds-default.xml
 share/gnome-control-center/ui/
@@ -216,6 +214,8 @@ share/gnome-control-center/ui/gnome-region-panel-layout-chooser.ui
 share/gnome-control-center/ui/gnome-region-panel-options-dialog.ui
 share/gnome-control-center/ui/gnome-region-panel.ui
 share/gnome-control-center/ui/info.ui
+share/gnome-control-center/ui/language-chooser.ui
+share/gnome-control-center/ui/online-accounts.ui
 share/gnome-control-center/ui/printers/
 share/gnome-control-center/ui/printers/new-printer-dialog.ui
 share/gnome-control-center/ui/printers/printers.ui
@@ -225,11 +225,9 @@ share/gnome-control-center/ui/uap.ui
 share/gnome-control-center/ui/user-accounts/
 share/gnome-control-center/ui/user-accounts/account-dialog.ui
 share/gnome-control-center/ui/user-accounts/account-fingerprint.ui
-share/gnome-control-center/ui/user-accounts/language-chooser.ui
 share/gnome-control-center/ui/user-accounts/password-dialog.ui
 share/gnome-control-center/ui/user-accounts/photo-dialog.ui
 share/gnome-control-center/ui/user-accounts/user-accounts-dialog.ui
-share/gnome/help/
 share/gnome/help/control-center/
 share/gnome/help/control-center/C/
 share/gnome/help/control-center/C/config-accessibility-keyboard.xml
@@ -268,6 +266,8 @@ share/gnome/help/control-center/it/
 share/gnome/help/control-center/it/control-center.xml
 share/gnome/help/control-center/ja/
 share/gnome/help/control-center/ja/control-center.xml
+share/gnome/help/control-center/ko/
+share/gnome/help/control-center/ko/control-center.xml
 share/gnome/help/control-center/oc/
 share/gnome/help/control-center/oc/control-center.xml
 share/gnome/help/control-center/pa/
@@ -296,21 +296,33 @@ share/gnome/help/control-center/zh_HK/
 share/gnome/help/control-center/zh_HK/control-center.xml
 share/gnome/help/control-center/zh_TW/
 share/gnome/help/control-center/zh_TW/control-center.xml
+share/icons/hicolor/16x16/apps/gnome-power-manager.png
+share/icons/hicolor/16x16/apps/goa-panel.png
 share/icons/hicolor/16x16/apps/multimedia-volume-control.png
 share/icons/hicolor/16x16/apps/multimedia-volume-control.svg
 share/icons/hicolor/16x16/apps/preferences-desktop-display.png
 share/icons/hicolor/16x16/apps/preferences-system-time.png
+share/icons/hicolor/22x22/apps/gnome-power-manager.png
+share/icons/hicolor/22x22/apps/goa-panel.png
 share/icons/hicolor/22x22/apps/multimedia-volume-control.png
 share/icons/hicolor/22x22/apps/multimedia-volume-control.svg
 share/icons/hicolor/22x22/apps/preferences-desktop-display.png
 share/icons/hicolor/22x22/apps/preferences-system-time.png
+share/icons/hicolor/24x24/apps/gnome-power-manager.png
+share/icons/hicolor/24x24/apps/goa-panel.png
 share/icons/hicolor/24x24/apps/multimedia-volume-control.png
 share/icons/hicolor/24x24/apps/preferences-desktop-display.png
+share/icons/hicolor/256x256/apps/gnome-power-manager.png
+share/icons/hicolor/256x256/apps/goa-panel.png
 share/icons/hicolor/256x256/apps/preferences-system-time.png
+share/icons/hicolor/32x32/apps/gnome-power-manager.png
+share/icons/hicolor/32x32/apps/goa-panel.png
 share/icons/hicolor/32x32/apps/multimedia-volume-control.png
 share/icons/hicolor/32x32/apps/multimedia-volume-control.svg
 share/icons/hicolor/32x32/apps/preferences-desktop-display.png
 share/icons/hicolor/32x32/apps/preferences-system-time.png
+share/icons/hicolor/48x48/apps/gnome-power-manager.png
+share/icons/hicolor/48x48/apps/goa-panel.png
 share/icons/hicolor/48x48/apps/multimedia-volume-control.png
 share/icons/hicolor/48x48/apps/preferences-system-time.png
 share/icons/hicolor/48x48/devices/audio-headset.svg
@@ -436,7 +448,6 @@ share/locale/nl/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/nl/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/nn/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/nn/LC_MESSAGES/gnome-control-center-2.0.mo
-share/locale/no/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/nso/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/oc/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/or/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
@@ -504,6 +515,7 @@ share/omf/control-center/control-center-fr.omf
 share/omf/control-center/control-center-gl.omf
 share/omf/control-center/control-center-it.omf
 share/omf/control-center/control-center-ja.omf
+share/omf/control-center/control-center-ko.omf
 share/omf/control-center/control-center-oc.omf
 share/omf/control-center/control-center-pa.omf
 share/omf/control-center/control-center-pl.omf

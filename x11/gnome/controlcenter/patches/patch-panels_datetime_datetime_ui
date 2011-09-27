@@ -1,20 +1,20 @@
-$OpenBSD: patch-panels_datetime_datetime_ui,v 1.1.1.1 2011/09/12 07:29:31 ajacoutot Exp $
+$OpenBSD: patch-panels_datetime_datetime_ui,v 1.2 2011/09/27 12:15:23 ajacoutot Exp $
 
 XXX don't show the NTP switch -- it requires /sbin/service, chkconfig or
 update-rc...
 
---- panels/datetime/datetime.ui.orig	Thu Jun 16 07:29:13 2011
-+++ panels/datetime/datetime.ui	Thu Jun 16 07:28:51 2011
-@@ -114,7 +114,7 @@
+--- panels/datetime/datetime.ui.orig	Mon Aug 29 16:08:11 2011
++++ panels/datetime/datetime.ui	Mon Sep 26 14:01:06 2011
+@@ -118,7 +118,7 @@
                          <property name="spacing">12</property>
                          <child>
                            <object class="GtkLabel" id="label3">
 -                            <property name="visible">True</property>
 +                            <property name="visible">False</property>
                              <property name="xalign">0</property>
-                             <property name="label" translatable="yes">Network Time</property>
-                           </object>
-@@ -124,7 +124,7 @@
+                             <property name="label" translatable="yes">_Network Time</property>
+                             <property name="use_underline">True</property>
+@@ -130,7 +130,7 @@
                          </child>
                          <child>
                            <object class="GtkSwitch" id="network_time_switch">
