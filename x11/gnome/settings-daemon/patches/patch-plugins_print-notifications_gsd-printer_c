@@ -1,0 +1,16 @@
+$OpenBSD: patch-plugins_print-notifications_gsd-printer_c,v 1.1 2011/09/27 09:35:06 ajacoutot Exp $
+
+Fix build if some locale defines are missing.
+
+--- plugins/print-notifications/gsd-printer.c.orig	Tue Sep 13 10:52:26 2011
++++ plugins/print-notifications/gsd-printer.c	Tue Sep 27 11:28:16 2011
+@@ -771,7 +771,9 @@ set_default_paper_size (const gchar *printer_name,
+         }
+ 
+         /* Set default PaperSize according to the locale */
++#ifdef LC_PAPER
+         locale = setlocale (LC_PAPER, NULL);
++#endif
+         if (!locale)
+                 locale = setlocale (LC_MESSAGES, NULL);
+ 
