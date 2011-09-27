@@ -1,7 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.8 2011/09/12 07:28:53 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.9 2011/09/27 08:49:39 ajacoutot Exp $
 @bin bin/krb5-auth-dialog
-@comment lib/control-center-1/panels/libka.la
-lib/control-center-1/panels/libka.so
 lib/krb5-auth-dialog/
 lib/krb5-auth-dialog/plugins/
 @comment lib/krb5-auth-dialog/plugins/libka-plugin-afs.la
@@ -9,7 +7,6 @@ lib/krb5-auth-dialog/plugins/libka-plugin-afs.so
 @comment lib/krb5-auth-dialog/plugins/libka-plugin-dummy.la
 lib/krb5-auth-dialog/plugins/libka-plugin-dummy.so
 @man man/man1/krb5-auth-dialog.1
-share/applications/gnome-ka-panel.desktop
 share/applications/krb5-auth-dialog.desktop
 share/dbus-1/services/org.gnome.KrbAuthDialog.service
 share/doc/krb5-auth-dialog/
@@ -21,7 +18,6 @@ share/examples/krb5-auth-dialog/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/krb5-auth-dialog/xdg/autostart/krb5-auth-dialog.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/krb5-auth-dialog.desktop
-share/gnome/help/
 share/gnome/help/krb5-auth-dialog/
 share/gnome/help/krb5-auth-dialog/C/
 share/gnome/help/krb5-auth-dialog/C/figures/
@@ -79,7 +75,6 @@ share/icons/hicolor/scalable/status/krb-expiring-ticket.svg
 share/icons/hicolor/scalable/status/krb-no-valid-ticket.svg
 share/icons/hicolor/scalable/status/krb-valid-ticket.svg
 share/krb5-auth-dialog/
-share/krb5-auth-dialog/ka-panel.ui
 share/krb5-auth-dialog/krb5-auth-dialog.ui
 share/locale/cs/LC_MESSAGES/krb5-auth-dialog.mo
 share/locale/da/LC_MESSAGES/krb5-auth-dialog.mo
